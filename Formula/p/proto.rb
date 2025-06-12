@@ -1,8 +1,8 @@
 class Proto < Formula
   desc "Pluggable multi-language version manager"
   homepage "https:moonrepo.devproto"
-  url "https:github.commoonrepoprotoarchiverefstagsv0.49.5.tar.gz"
-  sha256 "7286f4671ec263a8634c5aff01e4172a2fa2e8a9c57bade0942599d4bbcbe3fa"
+  url "https:github.commoonrepoprotoarchiverefstagsv0.50.0.tar.gz"
+  sha256 "6cc874c96164e0d39a2eea19885b11398b370b79bb7e376cf61613296dd9dd65"
   license "MIT"
   head "https:github.commoonrepoproto.git", branch: "master"
 
@@ -12,13 +12,13 @@ class Proto < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "534874101be26b7df3307ae35d345bbb4f615a57cea1b4db81137d4b3bfb77c3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8ff124c027fe9876d811421f19e7ac5a5c9c5e728a6f76e7eb6a6bb17e8ebf49"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "0d9673550c686e464e4e3b78ff6678e10bd9b430736b9ddbc2d721d0093fe0bd"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b2d88d134e9819234dc906bfabdf975b973784cd6a639fd31b942e5735faa2e8"
-    sha256 cellar: :any_skip_relocation, ventura:       "f7c5bf95dcf3613c39c5566e3d51d4c562d143d663f74292631eaea1b211cc90"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "05b76c37a213c9c3c020ee9c19edcf8eb2200e5c67ec408aca0d2246ab6344b9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "84ba822fa4ab809330719b1f5de00602e67ff1c8272a260af8be816984bb9155"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "08d0c7a6630c3b9f7431ac7cc025b6d7c33f9da635a96504ac4f15a1fe903886"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fa80492d03c860d704dbcb6bf690a6030555e78d5e2fe3598452fd7af2ed74a4"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "b3be9fed77b0798f5539ea59f5dddb63be4f4d401cd3468ff83e97c512bff32f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "40d648c1f77a2c6c307d06e7788e2034ce3d69e7329909268f0c8650b6c05b08"
+    sha256 cellar: :any_skip_relocation, ventura:       "475182f48d8d3ea37d3a79af6feea4cec97d266281358f94b8ce668341ff0a46"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "24e3f64f210908a00a5775d6de0f6e87a0d8901f542ad8e964a0cd04e29c4fce"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "efe2260719d08cc1ad2ae0da9e9dec3d65172ba79267931135d9f72bd64fb912"
   end
 
   depends_on "pkgconf" => :build

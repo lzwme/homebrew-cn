@@ -1,9 +1,9 @@
 class GccAT13 < Formula
   desc "GNU compiler collection"
   homepage "https:gcc.gnu.org"
-  url "https:ftp.gnu.orggnugccgcc-13.3.0gcc-13.3.0.tar.xz"
-  mirror "https:ftpmirror.gnu.orggccgcc-13.3.0gcc-13.3.0.tar.xz"
-  sha256 "0845e9621c9543a13f484e94584a49ffc0129970e9914624235fc1d061a0c083"
+  url "https:ftp.gnu.orggnugccgcc-13.4.0gcc-13.4.0.tar.xz"
+  mirror "https:ftpmirror.gnu.orggccgcc-13.4.0gcc-13.4.0.tar.xz"
+  sha256 "9c4ce6dbb040568fdc545588ac03c5cbc95a8dbf0c7aa490170843afb59ca8f5"
   license "GPL-3.0-or-later" => { with: "GCC-exception-3.1" }
 
   livecheck do
@@ -14,15 +14,13 @@ class GccAT13 < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256                               arm64_sequoia:  "cc01c9f4c79053bc25807069b3b9e8da3acc1b9828a623668c9917a143776ebc"
-    sha256                               arm64_sonoma:   "ff56bc82f41d769ff59131299f9d576df8b4a1162ef44acc3a1c45ffbbaa6f9c"
-    sha256                               arm64_ventura:  "2711d2616329446feb71d48fefd12e100b232f664dabee59873a961b8665239e"
-    sha256                               arm64_monterey: "80a178083c446e401c59c4fd6ebe4c28fde89b4f93f6446e5144ec25d9b8b6dc"
-    sha256                               sonoma:         "4c479e51e3e4dc9eefacd32a8fce5f8f0f707311df3e06e2f6b470dd8713a6eb"
-    sha256                               ventura:        "24838fe887472d23d42eefd4b3cb15461fa6974690ec84973d856c80f7ad27e7"
-    sha256                               monterey:       "2726062334206e315f78b1c354b32cfa0b9d3d94e0a20e5eefe8b12da70ca6b3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "20bb008fc2c3cdbb566161dc28be43f6302d71228a92e6543ce43b3addd63632"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d2e725ff21e23929d6d84f92e2b8f559df6ea6b6550cc55e647aaeb7dd345436"
+    sha256 arm64_sequoia: "77124ab1a9a3ad3b34ebd62ee47224ea4a06e16664c9ea567938d74182aa25b2"
+    sha256 arm64_sonoma:  "a28d7de1a36175bf4d18bd0a498593cfdd5303927ad9d805774e81459e7122a9"
+    sha256 arm64_ventura: "2c5dc4cbe473e1d7a663e3426db9b4b705478f20b05d2236aafa4f5463147ef9"
+    sha256 sonoma:        "ab3f2f0781e7b33deea8439ea0e694c1e01185db910233df0a050ade3c058370"
+    sha256 ventura:       "ed4349d9e7f8c3be2b4395b3b80b20c18fe798d27cc4c407347eaf66b72e724e"
+    sha256 arm64_linux:   "f758270e81aa9a99a5de900d932646f48b7d39e06d92e109fa3259419ea8adfe"
+    sha256 x86_64_linux:  "835e1dc4e1c6c13eab20f269e8b48650a69932a0316d051f2b1320f4cbb439b5"
   end
 
   # The bottles are built on systems with the CLT installed, and do not work
@@ -47,16 +45,8 @@ class GccAT13 < Formula
   # Branch from the Darwin maintainer of GCC, with a few generic fixes and
   # Apple Silicon support, located at https:github.comiainsgcc-13-branch
   patch do
-    url "https:raw.githubusercontent.comHomebrewformula-patchesbda0faddfbfb392e7b9c9101056b2c5ab2500508gccgcc-13.3.0.diff"
-    sha256 "c5e9236430ef6edbdda7de9ac70bf79e21628077a48322cec7f3f064ccfc243d"
-  end
-
-  # Apply additional commits to support Xcode 16 until the next release
-  patch do
-    on_macos do
-      url "https:github.comiainsgcc-13-branchcomparefa196a8618c62428a372fb251f9fa292d4f275c2..4fdcc027fcc235805c7cc4bede6948b9a00afe1e.patch"
-      sha256 "c41b217f1e6dc447e208ade4c76e86d5a95a1bd9790abc28bc9c2a4f09b7eb4e"
-    end
+    url "https:raw.githubusercontent.comHomebrewformula-patches8bbfd6c920e63f6ed1bf143771bfbfed0a3aaa1dgccgcc-13.4.0.diff"
+    sha256 "60b22ae7f5f78b41e12c51d8c6e99ba933a7e124454fe8cdbff7200505167949"
   end
 
   def install

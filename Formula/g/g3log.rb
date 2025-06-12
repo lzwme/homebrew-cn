@@ -1,29 +1,23 @@
 class G3log < Formula
   desc "Asynchronous, 'crash safe', logger that is easy to use"
   homepage "https:github.comKjellKodg3log"
-  url "https:github.comKjellKodg3logarchiverefstags2.5.tar.gz"
-  sha256 "04925eeed93668e4ad354f2f4b4b5e16e2d7b16ea42ab977409be4a96d64303b"
+  url "https:github.comKjellKodg3logarchiverefstags2.6.tar.gz"
+  sha256 "afd3d3d8de29825de408e1227be72f3bef8a01c2c0180c46271b4da9bb4fa509"
   license "Unlicense"
 
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "afd60f4b3f2836d1c109805c52c228d1cfe3b57d0adbea2357b70854be136288"
-    sha256 cellar: :any,                 arm64_sonoma:  "419b08bc605dba4fc9f50ff8db31b3861832b837782b5d18f6c794b9758662df"
-    sha256 cellar: :any,                 arm64_ventura: "1f66f23c672cc7e8a04fc004d1c2d847e91c0e3d051044b08fc288e6b6c11ca2"
-    sha256 cellar: :any,                 sonoma:        "deb369d21440cc5601f5917e7d9ead51781c1e3d9769fc956cad5042a2b6205b"
-    sha256 cellar: :any,                 ventura:       "09a0a989218c282177af00c096648b17146ed8ebba8f67b59722e3c81e7f1a50"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a73a2482c0bfdd4d96ef057fdaddf2170a21ed701e56be4be1c743645fce91c3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "31e5e0ae785a10bedd621c00c9d72cd7f7387f0ff7a5eef50b38b8da9fd3d9f1"
+    sha256 cellar: :any,                 arm64_sequoia: "53d72c30b9c9d193b8130c2801645c67504d5a2c12532984cbf478dd143f81ca"
+    sha256 cellar: :any,                 arm64_sonoma:  "b80a5c5242decc0bd7f779bad92027c92969928c67e5b89b1c6fb15e69a1b932"
+    sha256 cellar: :any,                 arm64_ventura: "c9a0603682f5e3e90ca5d878759b65898c92ad09707357f3581b0eae972412f6"
+    sha256 cellar: :any,                 sonoma:        "9d4fb3f8551b036e1fe0d92c3d7c1f999c7689337981d8e39126491ef5b4bcb1"
+    sha256 cellar: :any,                 ventura:       "62b18373fbcfcd6e4d096db1d501a5f49de0049dcb4d6bd8b41c54882e1dd1e9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d2df8ec1d0d5c4cdaeaf8568dbd20ba04216ce52f663fa03daccd046b5d66d0c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ae9c07ce3d886636fa40e90bab2e89bd0b8997b303a2470035c272f738098c7d"
   end
 
   depends_on "cmake" => :build
-
-  # Fix CMake 4.0 build
-  patch do
-    url "https:github.comKjellKodg3logcommit1894b060b91fe5b43e3d5eb42f5395448e4a0e4a.patch?full_index=1"
-    sha256 "4c513e8e1a0b809080d71d5087a4f7fcf18440d6a6623f254f7f76d2ae045df5"
-  end
 
   def install
     system "cmake", "-S", ".", "-B", "build", "-DADD_G3LOG_UNIT_TEST=OFF", *std_cmake_args

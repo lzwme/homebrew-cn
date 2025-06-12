@@ -6,16 +6,17 @@ class KeeperCommander < Formula
   url "https:files.pythonhosted.orgpackagesd6565911f0e6eeee11d2e72ee7ab3130513e8ad60e480eb4e108a50922c2fbf8keepercommander-17.1.1.tar.gz"
   sha256 "03abf94fb594ff6eec63a1ac9076c8a7e839723e13b0ade9afabcfc123270969"
   license "MIT"
+  revision 1
   head "https:github.comKeeper-SecurityCommander.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "b7871cb3bd9c1da3af06223125fc9adfa4a52e40a423796edbd4c2012694fbf3"
-    sha256 cellar: :any,                 arm64_sonoma:  "dcb39141e34a742a3af710a242a8613fdca098552abbf73d8bd5a8dff88be4f9"
-    sha256 cellar: :any,                 arm64_ventura: "5ec53c5ef36d78f617f8281e96c107eb31f39c415a957f90324ccccf816ff1d0"
-    sha256 cellar: :any,                 sonoma:        "5255ec6a821bc09bcc77ca7ccaaaf6160226e177a73f495a560044d23d1545b3"
-    sha256 cellar: :any,                 ventura:       "414a74996942c5497bac0656ac71a1335284313e535f13c69b94e60117b2e4b0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "857137bde6fdf856891a0cfb7385780a5cca6f1428e7f342efb003646c0975ca"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b89c49914a802d2bc1e96eaaeb81822eaeb130e12b07f2ee1049782a24b85d80"
+    sha256 cellar: :any,                 arm64_sequoia: "3fa374b9dd296a013db067102378b76e2b6a8ebbc5d98345cb83155ecb71eedd"
+    sha256 cellar: :any,                 arm64_sonoma:  "942c51ec4d681eba83598e57acda3c5a0ed3f51f095c9269af42617a1926b1e0"
+    sha256 cellar: :any,                 arm64_ventura: "4fd3d63803b9a48d4a83507cd01d211e35d95f5a57f14b867d809856dab44139"
+    sha256 cellar: :any,                 sonoma:        "8db9b0ea4adc8519a6f09c12f25538ee795856aebded17e9a398ae1db9406f67"
+    sha256 cellar: :any,                 ventura:       "c57bddbd5e5596f47624d3c31d19188402589adf87b31995ee9e3c0da2aa5f91"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c4dccd333f0283664c8965b849ee05a4b31c01108001990288266be5db1383d9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cd5f161afe881805012b007bcd86606f77a416307efb4e366f5045633a3500a4"
   end
 
   depends_on "pkgconf" => :build
@@ -282,8 +283,8 @@ class KeeperCommander < Formula
   end
 
   resource "requests" do
-    url "https:files.pythonhosted.orgpackages63702bf7780ad2d390a8d301ad0b550f1581eadbd9a20f896afe06353c2a2913requests-2.32.3.tar.gz"
-    sha256 "55365417734eb18255590a9ff9eb97e9e1da868d4ccd6402399eaf68af20a760"
+    url "https:files.pythonhosted.orgpackagese10a929373653770d8a0d7ea76c37de6e41f11eb07559b103b1c02cafb3f7cf8requests-2.32.4.tar.gz"
+    sha256 "27d0316682c8a29834d3264820024b62a36942083d52caf2f14c0591336d3422"
   end
 
   resource "rich" do

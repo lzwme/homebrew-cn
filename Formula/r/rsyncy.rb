@@ -1,24 +1,25 @@
 class Rsyncy < Formula
-  include Language::Python::Virtualenv
-
   desc "Statusprogress bar for rsync"
   homepage "https:github.comlaktakrsyncy"
-  url "https:github.comlaktakrsyncyarchiverefstagsv0.2.1.tar.gz"
-  sha256 "3832f71fbdfb3fbc3d135da91864abab44f16a9e9918d46389604a463bbf840f"
+  url "https:github.comlaktakrsyncyarchiverefstagsv2.1.0.tar.gz"
+  sha256 "d2b88602cd911d66a21750bec32a40fdfb3769a63b529bc0805d22c7a3b87ba2"
   license "MIT"
   head "https:github.comlaktakrsyncy.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "a67e111ca3ef8b9e2b4fd568b818e79fbb3ca6a8f1310d8707c2d79beb69e681"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d497726367711d8d1a895ead4a6fa888e797a523c027cbc4f4934173803c8c7e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d497726367711d8d1a895ead4a6fa888e797a523c027cbc4f4934173803c8c7e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "d497726367711d8d1a895ead4a6fa888e797a523c027cbc4f4934173803c8c7e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f55977e00c3f3332fff7a5c1e1496772a029495d444f864e0d2eb4f9e21119ff"
+    sha256 cellar: :any_skip_relocation, ventura:       "f55977e00c3f3332fff7a5c1e1496772a029495d444f864e0d2eb4f9e21119ff"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2b7ff0ec6c2c7e4564370e7ede4c760136fae508f3a9312b9ebacb4f0a0f1ef3"
   end
 
-  depends_on "python@3.13"
+  depends_on "go" => :build
   depends_on "rsync"
 
-  uses_from_macos "zlib"
-
   def install
-    virtualenv_install_with_resources
+    system "go", "build", *std_go_args(ldflags: "-s -w")
   end
 
   test do

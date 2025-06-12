@@ -6,14 +6,15 @@ class Localstack < Formula
   url "https://files.pythonhosted.org/packages/11/7a/6030f1bfebf4cbef70d01fec2b76653a363da10d5ae30ee60487fa81e040/localstack-4.5.0.tar.gz"
   sha256 "f8ebf3a9af1826c595cfe4196c6d52792152db374e437e1a574ac52aedc53a18"
   license "Apache-2.0"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "3e155db3147456b4be7dc72f6c544c9d9e4fd425d3689de227e127df3c40d442"
-    sha256 cellar: :any,                 arm64_sonoma:  "f9c1a8cf77bceb21e9ff6128f438c3d8c86be2ab8052e6e5712b1ab8636330aa"
-    sha256 cellar: :any,                 arm64_ventura: "98a67aeccdfe8e3d9632e2c391c76d72ab18f7f2ba69eb1ae82bf295fa7e9918"
-    sha256 cellar: :any,                 sonoma:        "00f0f29fb48ff85be905cd0589c9179c1bc8d0bfa6d53c192b120a21b785c165"
-    sha256 cellar: :any,                 ventura:       "abb29cc12c74e498094575510acdf34116742a5685026813370c93529ac8ab72"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0cd8da867b1949c96bfe5f1e6c8bc24ecfeb65c6db6b6662c354265796e39b19"
+    sha256 cellar: :any,                 arm64_sequoia: "a690ce426b00e0eb39eac29f3fe1697bb5c85cc6dea8f650e8aab048e536a953"
+    sha256 cellar: :any,                 arm64_sonoma:  "ebd226d643f856bf52b6b5e4c6e57a8ee5e1e57f71090336834536331ff73b0c"
+    sha256 cellar: :any,                 arm64_ventura: "09f767c8bb65c38b1d20968dba65df5add49152b045a14d203274165aaa2ebac"
+    sha256 cellar: :any,                 sonoma:        "4f8a73df338a4e066e35a3534b39051387ea5fe5a73594af68cfbe637bcf701d"
+    sha256 cellar: :any,                 ventura:       "ad0a61c3a417c9fd191611efe4401a094afc6768d182910aa99cab6f03fd93cf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2094a07e3835f5c39cf750859b8c80bff758e5ecf8f20f8b3651d98ad425c0a1"
   end
 
   depends_on "docker" => :test
@@ -133,8 +134,8 @@ class Localstack < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/63/70/2bf7780ad2d390a8d301ad0b550f1581eadbd9a20f896afe06353c2a2913/requests-2.32.3.tar.gz"
-    sha256 "55365417734eb18255590a9ff9eb97e9e1da868d4ccd6402399eaf68af20a760"
+    url "https://files.pythonhosted.org/packages/e1/0a/929373653770d8a0d7ea76c37de6e41f11eb07559b103b1c02cafb3f7cf8/requests-2.32.4.tar.gz"
+    sha256 "27d0316682c8a29834d3264820024b62a36942083d52caf2f14c0591336d3422"
   end
 
   resource "rich" do

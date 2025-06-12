@@ -6,15 +6,16 @@ class Molecule < Formula
   url "https://files.pythonhosted.org/packages/51/d8/3b029e082247fc988fa9869edf39dd3188d929db19f47e91181dff907db5/molecule-25.5.0.tar.gz"
   sha256 "585d8ce0ad493be3ae94de096f8b4a896ab9010a7ea36a869fdf5e29bd668f4b"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "b4c015d95677c3c04694fd66f2df65d1aebfd961ef9a47fb31ea92c523917c04"
-    sha256 cellar: :any,                 arm64_sonoma:  "bead756704af9c3c46d7e53dfa21fba49103941640c6ed29d7df7a2f5e99c5a2"
-    sha256 cellar: :any,                 arm64_ventura: "52c159be85a82f5bcf163866a5abcb9610ff9ea6a3459fcd6878343326f4c6fe"
-    sha256 cellar: :any,                 sonoma:        "6ae0c677bb3bbbe4f007a6040955c36e769ed10af3f7ddb0c674e8a9cead72c7"
-    sha256 cellar: :any,                 ventura:       "fd745c575c06c0de729e563750e5fda1668c21804232f22dc8704590553705c6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c137853eae19f72306d45a9da60e8aa4f264707b3c39dd483e0cb174d20d64d1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1e5cc87a7a385a35c8cd84a6fdfb43c416fa0547275a717e356dcb420b1d253d"
+    sha256 cellar: :any,                 arm64_sequoia: "e5b06a38c2bc38fb543e89a9a299ae19cd4bc340830dcd87e984fb7db229abbb"
+    sha256 cellar: :any,                 arm64_sonoma:  "333be3c67c93221f1b70fec38a3f0d55d06f72d659ed97b2e8e2db5fb75dc26a"
+    sha256 cellar: :any,                 arm64_ventura: "85954f4d7ff1683c9a218618cd97b2ca9cc2543bf66634162e4c48a10166df3f"
+    sha256 cellar: :any,                 sonoma:        "f4cc0b08694cad35fae4f77665959f752b1d1fdbe926990f95d1e47207a3e8fa"
+    sha256 cellar: :any,                 ventura:       "010d8d2f778fdc42ef3f3cf941915814484468fb2bf0f74b61ec62c031803213"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "16f7d2e8ca52da9d01aca5ea05281931d907ff937a50b3fa4dd5985535f3fdb3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0fb5e5489b0bc31d77bd8b32f1b2037e05ee90a0ab23c01eaa324d599727cb87"
   end
 
   depends_on "rust" => :build
@@ -96,8 +97,8 @@ class Molecule < Formula
   end
 
   resource "jsonschema" do
-    url "https://files.pythonhosted.org/packages/38/2e/03362ee4034a4c917f697890ccd4aec0800ccf9ded7f511971c75451deec/jsonschema-4.23.0.tar.gz"
-    sha256 "d71497fef26351a33265337fa77ffeb82423f3ea21283cd9467bb03999266bc4"
+    url "https://files.pythonhosted.org/packages/bf/d3/1cf5326b923a53515d8f3a2cd442e6d7e94fcc444716e879ea70a0ce3177/jsonschema-4.24.0.tar.gz"
+    sha256 "0b4e8069eb12aedfa881333004bccaec24ecef5a8a6a4b6df142b2cc9599d196"
   end
 
   resource "jsonschema-specifications" do
@@ -156,8 +157,8 @@ class Molecule < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/63/70/2bf7780ad2d390a8d301ad0b550f1581eadbd9a20f896afe06353c2a2913/requests-2.32.3.tar.gz"
-    sha256 "55365417734eb18255590a9ff9eb97e9e1da868d4ccd6402399eaf68af20a760"
+    url "https://files.pythonhosted.org/packages/e1/0a/929373653770d8a0d7ea76c37de6e41f11eb07559b103b1c02cafb3f7cf8/requests-2.32.4.tar.gz"
+    sha256 "27d0316682c8a29834d3264820024b62a36942083d52caf2f14c0591336d3422"
   end
 
   resource "resolvelib" do

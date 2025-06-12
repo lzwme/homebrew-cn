@@ -1395,6 +1395,7 @@ Homebrew-homebrew-core/Formula/d/depqbf.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/der-ascii.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/derby.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/descope.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/d/desed.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/desk.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/desktop-file-utils.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/detach.rb, Homebrew/homebrew-core, 0
@@ -3423,6 +3424,7 @@ Homebrew-homebrew-core/Formula/l/lcs.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/ld-find-code-refs.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/ldapvi.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/ldc.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/l/ldcli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/ldeep.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/ldid-procursus.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/ldid.rb, Homebrew/homebrew-core, 0
@@ -8133,7 +8135,6 @@ Homebrew-homebrew-cask/Casks/b/bindiff.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/b/bing-wallpaper.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/bingpaper.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/b/bino.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/b/binocs.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/birdfont.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/biscuit.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/b/bison-wallet.rb, Homebrew/homebrew-cask, 1
@@ -9341,6 +9342,7 @@ Homebrew-homebrew-cask/Casks/font/font-a/font-angkor.rb, Homebrew/homebrew-cask,
 Homebrew-homebrew-cask/Casks/font/font-a/font-anka-coder.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-a/font-annapurna-sil.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-a/font-annie-use-your-telescope.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-a/font-annotation-mono.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-a/font-anonymice-nerd-font.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-a/font-anonymice-powerline.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-a/font-anonymous-pro.rb, Homebrew/homebrew-cask, 0
@@ -12485,6 +12487,7 @@ Homebrew-homebrew-cask/Casks/l/little-navmap.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/l/little-snitch.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/little-snitch@4.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/little-snitch@5.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/l/little-snitch@nightly.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/live-home-3d.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/livebook.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/l/livetail.rb, Homebrew/homebrew-cask, 1
@@ -14522,6 +14525,7 @@ Homebrew-homebrew-cask/Casks/t/textadept.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/textbar.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/textbuddy.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/textexpander.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/t/textgrabber2.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/textmate.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/texts.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/textsniper.rb, Homebrew/homebrew-cask, 0

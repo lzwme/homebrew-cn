@@ -6,10 +6,11 @@ class GitReview < Formula
   url "https:files.pythonhosted.orgpackagesda92ddc922d34061791a4d0fd483ee4ffc5e026e93783b70fe5a29a129d0cf63git_review-2.5.0.tar.gz"
   sha256 "1bcffaef02848a5a3b066e8268c7d700a77cbd8b2e56b128d30f60cd431cf0a8"
   license "Apache-2.0"
+  revision 1
   head "https:opendev.orgopendevgit-review.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "da26337e70cdd57dd7c0de2d2fdf9f3d2ab8cd16101418e73826da5cb3167271"
+    sha256 cellar: :any_skip_relocation, all: "1848e410460ae0a20ba65e6dea9357907a5cd38b5f7afcf235702cf36b44c6fb"
   end
 
   depends_on "certifi"
@@ -28,8 +29,8 @@ class GitReview < Formula
   end
 
   resource "requests" do
-    url "https:files.pythonhosted.orgpackages63702bf7780ad2d390a8d301ad0b550f1581eadbd9a20f896afe06353c2a2913requests-2.32.3.tar.gz"
-    sha256 "55365417734eb18255590a9ff9eb97e9e1da868d4ccd6402399eaf68af20a760"
+    url "https:files.pythonhosted.orgpackagese10a929373653770d8a0d7ea76c37de6e41f11eb07559b103b1c02cafb3f7cf8requests-2.32.4.tar.gz"
+    sha256 "27d0316682c8a29834d3264820024b62a36942083d52caf2f14c0591336d3422"
   end
 
   resource "urllib3" do
@@ -50,6 +51,7 @@ class GitReview < Formula
     (testpath"foo").write "test file"
     system "git", "add", "foo"
     system "git", "commit", "-m", "test"
-    system bin"git-review", "--dry-run"
+    # submit code to `main` branch (default is `master`)
+    system bin"git-review", "--dry-run", "main"
   end
 end

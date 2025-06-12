@@ -1,18 +1,18 @@
 class ChainloopCli < Formula
   desc "CLI for interacting with Chainloop"
   homepage "https:docs.chainloop.dev"
-  url "https:github.comchainloop-devchainlooparchiverefstagsv1.5.0.tar.gz"
-  sha256 "d42320fbce3199e04431ac42c28541ef9c28fd71d39abde51b1bee9ee52420a7"
+  url "https:github.comchainloop-devchainlooparchiverefstagsv1.6.1.tar.gz"
+  sha256 "c2596a41c2f25e8fc4af0c9d7ae15067f49eb823a7da76ca7db67cd876383a70"
   license "Apache-2.0"
   head "https:github.comchainloop-devchainloop.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8388c16f85192f8945ffa6860ba9f019ff82f3570fe3bbd9aa9646c0eaedc406"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e2132ed60eefc74e7d642e88bbd81d0b6c75f032042d437749ff7dfebd3c0c3d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "8074f652627cd750a066ceeb3d1f1f7b88e6f83b39d825395d7e4c643f060cb5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9cb475fd104dce020a59edd52cb1dce00680f9f8594d424a645e4db3103eff78"
-    sha256 cellar: :any_skip_relocation, ventura:       "1f6af6a93136b34a0c4b18a63ea3675d49fb05f97ab6a347bdc9a5e3453db81d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "77801ad628fcab6c55cbdf0a77d3b6552d6e8577db04872937d64ca6af4c2d6b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "83b4be0d3b276b8a3075f675a03db036608cf5210eb7c9dab2ba9d76ba4c1c30"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5780cc6f87543cb7a4f996a8ce6a0b580f1bf2808c14a3cd4bf302d179799425"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "bb0caaa683e76173dbadbf3f970933bfeb39faf00e6cdfa62f72b878031530df"
+    sha256 cellar: :any_skip_relocation, sonoma:        "bebab2e80a0c5db37034840253c756237fa2faa3250819299bf1695556647a42"
+    sha256 cellar: :any_skip_relocation, ventura:       "8120a1d75b5b68bd54719d39132abb15bc1d7838edf09647b6ee62d670cb0e4c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "92b5ef03471fbdba9fdfceeaf63356f8ababaf1be162e8f25fc25e529d67f45d"
   end
 
   depends_on "go" => :build

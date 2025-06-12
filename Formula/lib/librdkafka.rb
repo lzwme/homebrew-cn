@@ -1,8 +1,8 @@
 class Librdkafka < Formula
   desc "Apache Kafka CC++ library"
   homepage "https:github.comconfluentinclibrdkafka"
-  url "https:github.comconfluentinclibrdkafkaarchiverefstagsv2.10.0.tar.gz"
-  sha256 "004b1cc2685d1d6d416b90b426a0a9d27327a214c6b807df6f9ea5887346ba3a"
+  url "https:github.comconfluentinclibrdkafkaarchiverefstagsv2.10.1.tar.gz"
+  sha256 "75f59a2d948276504afb25bcb5713a943785a413b84f9099d324d26b2021f758"
   license "BSD-2-Clause"
   head "https:github.comconfluentinclibrdkafka.git", branch: "master"
 
@@ -12,13 +12,13 @@ class Librdkafka < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "68447f0c1206d32ace33c25d736a441e09c339fa9bc2edc7b702a3158aa6e70d"
-    sha256 cellar: :any,                 arm64_sonoma:  "e7a756dc937b0a4b6db6aa66b053f60439979c789579f7ed26ad3b2b007a8827"
-    sha256 cellar: :any,                 arm64_ventura: "c50f1413ce074882c83c22e4736922561e8001ea0f05074396f6705855a7a17e"
-    sha256 cellar: :any,                 sonoma:        "f2c742931c5b92f686b6e4998bf44239fab7e3ac4d44d9893a6f4c8f4cd9af8a"
-    sha256 cellar: :any,                 ventura:       "416e501dbb5d0595a9739fa5bdf7052a07f15d2735be79211795ff400438a9de"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "affefbf0ce0dfeae5c7518ffa0b59d350b3b014a2270ef48cbe25765b29138cb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c094c66b454f17d96f7079454452c773a738e159d7f0960fd71a0dd59681ab79"
+    sha256 cellar: :any,                 arm64_sequoia: "83ae6f0840c49eb81c73f8061f28dedf43299a69b217cb33dd498871669147f4"
+    sha256 cellar: :any,                 arm64_sonoma:  "51e8271927eb0ef5d1460c988e47c8b1a9fd0ef3e5142fa80c51c639c4528a8e"
+    sha256 cellar: :any,                 arm64_ventura: "c6a4b69a2a6c06309ddd9ddef2289b2ab6c061e77172ed6fb90878aba3dd29f9"
+    sha256 cellar: :any,                 sonoma:        "62efd5b640361ef72fae11a941b2798bb6f8a7f029397931d562085c4e7ed3db"
+    sha256 cellar: :any,                 ventura:       "7808d242df4afd1ba37760e63b13989e0f24d2e622e10a3bee62788069ce5469"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7c51baaf05dcf0bf081f47873a1afc0b5641053119f966ab9125a27ec352c9cc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cf8df8326852ad6da7d94cb8fdd5a260af791839ec8ddecf889b141894ddaa8e"
   end
 
   depends_on "pkgconf" => :build

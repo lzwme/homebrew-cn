@@ -6,16 +6,17 @@ class Kaskade < Formula
   url "https:files.pythonhosted.orgpackagesb56a4a51af28c5537eb45ab7199a3220e25385171767e86ffabfb908ced2635ekaskade-4.0.5.tar.gz"
   sha256 "7eedc2040f8c32a1870dcd1018ac0e20e4feab3b9a45a8152764dcc11a6e860e"
   license "MIT"
+  revision 1
   head "https:github.comsauljabinkaskade.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "af3c008cd7d7925a9fe5a2dec583447d84ef9d60094eef614a9d00567a6a45f0"
-    sha256 cellar: :any,                 arm64_sonoma:  "3bcd9171e7c20353fc29d7b7465f483f70409bbf42927614ffbdd618af563e63"
-    sha256 cellar: :any,                 arm64_ventura: "1829b30097b5ca376813bca70346f2e07a4f0f5fb3f7fdb88b36b0251d816579"
-    sha256 cellar: :any,                 sonoma:        "47abd3344a6d3e6c300bc68b9faa1d2c34fa86760b0ae1d39f52fadd29b8e293"
-    sha256 cellar: :any,                 ventura:       "60dbc7a68b646de1e490fa3c8fd10274a48605699acf1d2b9ac62958524facf8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "42a0e0d5fbe2cda62540a28040ca5aaceed8e82d9aaf396a433a4ff9e83fc2e4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d694516be2d6a026e0f186271656d3e0de31f5a326ed8d6bb0437b90acd8bad0"
+    sha256 cellar: :any,                 arm64_sequoia: "43d68fada61340f7bc8944e4a66e30771683c68071786d06cdb19ca0ecb119d6"
+    sha256 cellar: :any,                 arm64_sonoma:  "a9926c931ae50ea256c431e7b2b0058e7e4115be343a719c76e4e7f905c752bb"
+    sha256 cellar: :any,                 arm64_ventura: "bb4394f0b9df844fe0bf8b3bf0f6ec78b3e6da85289bb4fcd09161562cb6ca33"
+    sha256 cellar: :any,                 sonoma:        "c19529a2356921b0791b2c7a965c569b7d119e1c6217de367ccd9687350041cb"
+    sha256 cellar: :any,                 ventura:       "38837b615cad246a9df79d037504183aa44c59034eead1a53e5f5c54a431dada"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4c64969560b0fa41c1817c8f6b472c6fb46a42844c8b11502c71b36defa1700f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9adfea964d552b9d600e2f2fe6004537da448a1d78827fb13c84498853bcded9"
   end
 
   depends_on "rust" => :build # for rpds-py
@@ -155,8 +156,8 @@ class Kaskade < Formula
   end
 
   resource "requests" do
-    url "https:files.pythonhosted.orgpackages63702bf7780ad2d390a8d301ad0b550f1581eadbd9a20f896afe06353c2a2913requests-2.32.3.tar.gz"
-    sha256 "55365417734eb18255590a9ff9eb97e9e1da868d4ccd6402399eaf68af20a760"
+    url "https:files.pythonhosted.orgpackagese10a929373653770d8a0d7ea76c37de6e41f11eb07559b103b1c02cafb3f7cf8requests-2.32.4.tar.gz"
+    sha256 "27d0316682c8a29834d3264820024b62a36942083d52caf2f14c0591336d3422"
   end
 
   resource "rich" do
@@ -180,8 +181,8 @@ class Kaskade < Formula
   end
 
   resource "typing-extensions" do
-    url "https:files.pythonhosted.orgpackagesf63723083fcd6e35492953e8d2aaaa68b860eb422b34627b13f2ce3eb6106061typing_extensions-4.13.2.tar.gz"
-    sha256 "e6c81219bd689f51865d9e372991c540bda33a0379d5573cddb9a3a23f7caaef"
+    url "https:files.pythonhosted.orgpackagesd1bc51647cd02527e87d05cb083ccc402f93e441606ff1f01739a62c8ad09ba5typing_extensions-4.14.0.tar.gz"
+    sha256 "8676b788e32f02ab42d9e7c61324048ae4c6d844a399eebace3d4979d75ceef4"
   end
 
   resource "uc-micro-py" do

@@ -6,18 +6,18 @@ class OnlykeyAgent < Formula
   url "https://files.pythonhosted.org/packages/68/80/e89b6c3680bedb1e14e99f0539ac805bddc7d8dd87c58805c64484966b7c/onlykey-agent-1.1.15.tar.gz"
   sha256 "49b19bec28dc0fb7053ef01266d8a9e7a078bb146214a641bdbb1feac6fc7ddb"
   license "LGPL-3.0-only"
-  revision 5
+  revision 6
 
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "1fd5cda3116c1be1b089204ffc6cc5e0a3b51d407f300449499c0b6a5054d24f"
-    sha256 cellar: :any,                 arm64_sonoma:  "d373f7b075ca5c08c796c93d8db07f04b50c77d3a1ed07c7312565175c7db351"
-    sha256 cellar: :any,                 arm64_ventura: "6a0c1ccdc2e25dddfdc479def452668e15c11ebd683553ef96915a90d365f518"
-    sha256 cellar: :any,                 sonoma:        "e5a219ca7395fbe4705ec88c9ad3cea3f36ad31c4754dd6e58e0a2810bd77847"
-    sha256 cellar: :any,                 ventura:       "783136c6cd5f5e28cae7a63822ed57a7b1ef0d5f9eb9e6e4b3eefb84e7743cb1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cc68591a1a7b0f542ccb0ad7694e4daee1574bc81b7d85f3c74457f8cb6516e5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0fe1781d31723a2e8e57e720ae38b3f8f93afc18e0f34124a539169912c16815"
+    sha256 cellar: :any,                 arm64_sequoia: "96b32e7cc840fe0bf3bf1436377dac7ff1ade862912b39e9a6d9e181f51aab8a"
+    sha256 cellar: :any,                 arm64_sonoma:  "7974b523c467d1596f4510eee8e28b606c9b0047927f3424690a29e6dd39bafe"
+    sha256 cellar: :any,                 arm64_ventura: "76775fb1b788a3400c2f20f2be653f182ebd7dbf559173bdb49532747f952243"
+    sha256 cellar: :any,                 sonoma:        "afb6da530494e63195026ed3175d0e6d44767385cff7f641126a8bf0ccd3f519"
+    sha256 cellar: :any,                 ventura:       "4bbd217022a81f2c23fa42f33d100013d83a8c869bfd29fc3844198817e55458"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "787ee6247ea864dae1fa303d55457525f17e2b34b3cb73cc422dcf5343cb97d6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0d49aa8266003774df76336a85cf8430f1e6faf66fbf90abbb4ae68b9b6a5935"
   end
 
   depends_on "pkgconf" => :build
@@ -55,13 +55,13 @@ class OnlykeyAgent < Formula
   end
 
   resource "configargparse" do
-    url "https://files.pythonhosted.org/packages/70/8a/73f1008adfad01cb923255b924b1528727b8270e67cb4ef41eabdc7d783e/ConfigArgParse-1.7.tar.gz"
-    sha256 "e7067471884de5478c58a511e529f0f9bd1c66bfef1dea90935438d6c23306d1"
+    url "https://files.pythonhosted.org/packages/85/4d/6c9ef746dfcc2a32e26f3860bb4a011c008c392b83eabdfb598d1a8bbe5d/configargparse-1.7.1.tar.gz"
+    sha256 "79c2ddae836a1e5914b71d58e4b9adbd9f7779d4e6351a637b7d2d9b6c46d3d9"
   end
 
   resource "cython" do
-    url "https://files.pythonhosted.org/packages/5b/d3/bb000603e46144db2e5055219bbddcf7ab3b10012fcb342695694fb88141/cython-3.1.1.tar.gz"
-    sha256 "505ccd413669d5132a53834d792c707974248088c4f60c497deb1b416e366397"
+    url "https://files.pythonhosted.org/packages/18/40/7b17cd866158238db704965da1b5849af261dbad393ea3ac966f934b2d39/cython-3.1.2.tar.gz"
+    sha256 "6bbf7a953fa6762dfecdec015e3b054ba51c0121a45ad851fa130f63f5331381"
   end
 
   resource "docutils" do
@@ -155,8 +155,8 @@ class OnlykeyAgent < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/63/70/2bf7780ad2d390a8d301ad0b550f1581eadbd9a20f896afe06353c2a2913/requests-2.32.3.tar.gz"
-    sha256 "55365417734eb18255590a9ff9eb97e9e1da868d4ccd6402399eaf68af20a760"
+    url "https://files.pythonhosted.org/packages/e1/0a/929373653770d8a0d7ea76c37de6e41f11eb07559b103b1c02cafb3f7cf8/requests-2.32.4.tar.gz"
+    sha256 "27d0316682c8a29834d3264820024b62a36942083d52caf2f14c0591336d3422"
   end
 
   resource "semver" do
@@ -165,8 +165,8 @@ class OnlykeyAgent < Formula
   end
 
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/8d/d2/ec1acaaff45caed5c2dedb33b67055ba9d4e96b091094df90762e60135fe/setuptools-80.8.0.tar.gz"
-    sha256 "49f7af965996f26d43c8ae34539c8d99c5042fbff34302ea151eaa9c207cd257"
+    url "https://files.pythonhosted.org/packages/18/5d/3bf57dcd21979b887f014ea83c24ae194cfcd12b9e0fda66b957c69d1fca/setuptools-80.9.0.tar.gz"
+    sha256 "f36b47402ecde768dbfafc46e8e4207b4360c654f1f3bb84475f0a28628fb19c"
   end
 
   resource "six" do

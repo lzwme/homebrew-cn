@@ -1,18 +1,18 @@
 class Libjuice < Formula
   desc "UDP Interactive Connectivity Establishment (ICE) library"
   homepage "https:github.compaullouisageneaulibjuice"
-  url "https:github.compaullouisageneaulibjuicearchiverefstagsv1.6.0.tar.gz"
-  sha256 "90a13ed7049b97af4dcb494e5a82ebbffc41d29f917d17f0aa1b0b651034ae4c"
+  url "https:github.compaullouisageneaulibjuicearchiverefstagsv1.6.1.tar.gz"
+  sha256 "14d7cfc1a541843c1678828ad52d860d043bd82ed39ff076b260565796e4e4ee"
   license "MPL-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "6bd090a24a94428cab57fb034e1455e0619c65d5a0a97985f90368b843be5598"
-    sha256 cellar: :any,                 arm64_sonoma:  "e7d063977b60306b38c406e11535fcfbdcb27dfb61e1bb3e9867ab98c98a4ee0"
-    sha256 cellar: :any,                 arm64_ventura: "efd9bbb6690c378921d744548057133dfe173fadddc71f68a989aa0df623c5f9"
-    sha256 cellar: :any,                 sonoma:        "99406c20337f6c8e4047378c776ab4746215fe62cc1c88f39ff05a8122f1acf4"
-    sha256 cellar: :any,                 ventura:       "19a281b7db9b022432d1b17d162de31527dcf4add8a24590f3b8e958bd4a4b6e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f408f03e6fb479d4a327f71c585fd6aaea1ae52b5217b8c4b42cb2e27014d0c2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eea94f4f7ffe75d7dfe4fc8fabf02996f92a2db2cb2debd5d32d60a23ad6d32e"
+    sha256 cellar: :any,                 arm64_sequoia: "6da0b5a713b960ec13a0d6b7e7d9c23a40d58a81c9e335441ad9196d2ddb7c08"
+    sha256 cellar: :any,                 arm64_sonoma:  "f828fccfc20b989be3c87b1571183d05e265b225d61d358e39c386ddf85b11d7"
+    sha256 cellar: :any,                 arm64_ventura: "c931b26636ad524503d258d8fc99c4da5e1af8326544540abbe6d8bfda774650"
+    sha256 cellar: :any,                 sonoma:        "372b3ee8a5c06a55904af8987b6caacf11f29675818ea892b77a6fe8cb8b0580"
+    sha256 cellar: :any,                 ventura:       "70fa825fe8677ab48fdc4b0ee9f3334e7e7743d0c754a85509f6139f279e097e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "21f55cd5900b41ca8010b0d9318efd4c398470b7f307477b14bb616448303806"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "da1a6722a0b89b733fcc78ba3a961057a0cc26714acacc973ace620dbf73e2e8"
   end
 
   depends_on "cmake" => :build

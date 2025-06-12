@@ -6,16 +6,17 @@ class Onionprobe < Formula
   url "https://files.pythonhosted.org/packages/17/7c/e016a43640336dd392cd7abcac375341b499f95cf6ebc92ce5eda5e4845f/onionprobe-1.3.0.tar.gz"
   sha256 "3024e0c737e38f4b9dce265d9e2bd7ef03879c46b2cd40c336a5161eb0affbd7"
   license "GPL-3.0-or-later"
+  revision 1
   head "https://gitlab.torproject.org/tpo/onion-services/onionprobe.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "9222f214b1620a345e9cf321b087dcc34542a7a98c74ff46555c3a9b52dd1a30"
-    sha256 cellar: :any,                 arm64_sonoma:  "2b5d468661d595f8f431d6e7ea60d7b39354a914c0b4573c432d2d6d36477fe8"
-    sha256 cellar: :any,                 arm64_ventura: "0a14c6c6d81752053ab04199df5e67e1749939bc39fb6df43890ebd325f37d60"
-    sha256 cellar: :any,                 sonoma:        "3a77783777dce8d656a6003f0cb8efd4df8cf9a93d45579b563a631bcb4da4c2"
-    sha256 cellar: :any,                 ventura:       "8afcf6e56779767135cd9b45a7d968d22d6a98e409c9ff29a747a4feb88dcb1f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "69261fbf674c9daa3cdecab548a8d20de52e6dc1e71945cb9d10fa2beaa43a80"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "38203b9e39cfecb4d59d439bc6f8f79f1df32e78532cb42297f215b223a3669f"
+    sha256 cellar: :any,                 arm64_sequoia: "a89081bed317a7c1c032075ed7e4a1fce938e4d1ae17f7c300a5a332951ecbe2"
+    sha256 cellar: :any,                 arm64_sonoma:  "9cce11e7fc23e9b3bf07c4eb19fd9f90b5d77888ce42f91218426ec77b62ae32"
+    sha256 cellar: :any,                 arm64_ventura: "da49763babba97351f1e5b5ef978acb89bf06f23e8545eaf7269642b5ac1c5a5"
+    sha256 cellar: :any,                 sonoma:        "ec2683d60ca0cf567f8ee2fb82c54bac943788821fb325d9616e6a9a9e015924"
+    sha256 cellar: :any,                 ventura:       "5d8125b3b26ae3ecc72572e1fb212e92e60b13b89999cefa3169b70dcb189ece"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9af984f808752a22916def4e94f701899d0ca3c2fa3c6a54234851d8d9b7751d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "81c9f6998872e11954555df70790e6faf9acce51604ca1eeb8ebc0f035f5062c"
   end
 
   depends_on "certifi"
@@ -25,8 +26,8 @@ class Onionprobe < Formula
   depends_on "tor"
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/16/b0/572805e227f01586461c80e0fd25d65a2115599cc9dad142fee4b747c357/charset_normalizer-3.4.1.tar.gz"
-    sha256 "44251f18cd68a75b56585dd00dae26183e102cd5e0f9f1466e6df5da2ed64ea3"
+    url "https://files.pythonhosted.org/packages/e4/33/89c2ced2b67d1c2a61c19c6751aa8902d46ce3dacb23600a283619f5a12d/charset_normalizer-3.4.2.tar.gz"
+    sha256 "5baececa9ecba31eff645232d59845c07aa030f0c81ee70184a90d35099a0e63"
   end
 
   resource "idna" do
@@ -35,8 +36,8 @@ class Onionprobe < Formula
   end
 
   resource "prometheus-client" do
-    url "https://files.pythonhosted.org/packages/62/14/7d0f567991f3a9af8d1cd4f619040c93b68f09a02b6d0b6ab1b2d1ded5fe/prometheus_client-0.21.1.tar.gz"
-    sha256 "252505a722ac04b0456be05c05f75f45d760c2911ffc45f2a06bcaed9f3ae3fb"
+    url "https://files.pythonhosted.org/packages/5e/cf/40dde0a2be27cc1eb41e333d1a674a74ce8b8b0457269cc640fd42b07cf7/prometheus_client-0.22.1.tar.gz"
+    sha256 "190f1331e783cf21eb60bca559354e0a4d4378facecf78f5428c39b675d20d28"
   end
 
   resource "pysocks" do
@@ -50,8 +51,8 @@ class Onionprobe < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/63/70/2bf7780ad2d390a8d301ad0b550f1581eadbd9a20f896afe06353c2a2913/requests-2.32.3.tar.gz"
-    sha256 "55365417734eb18255590a9ff9eb97e9e1da868d4ccd6402399eaf68af20a760"
+    url "https://files.pythonhosted.org/packages/e1/0a/929373653770d8a0d7ea76c37de6e41f11eb07559b103b1c02cafb3f7cf8/requests-2.32.4.tar.gz"
+    sha256 "27d0316682c8a29834d3264820024b62a36942083d52caf2f14c0591336d3422"
   end
 
   resource "stem" do
@@ -60,8 +61,8 @@ class Onionprobe < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/aa/63/e53da845320b757bf29ef6a9062f5c669fe997973f966045cb019c3f4b66/urllib3-2.3.0.tar.gz"
-    sha256 "f8c5449b3cf0861679ce7e0503c7b44b5ec981bec0d1d3795a07f1ba96f0204d"
+    url "https://files.pythonhosted.org/packages/8a/78/16493d9c386d8e60e442a35feac5e00f0913c0f4b7c217c11e8ec2ff53e0/urllib3-2.4.0.tar.gz"
+    sha256 "414bc6535b787febd7567804cc015fee39daab8ad86268f1310a9250697de466"
   end
 
   def install

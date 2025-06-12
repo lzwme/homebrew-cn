@@ -1,8 +1,8 @@
 class Libupnp < Formula
   desc "Portable UPnP development kit"
   homepage "https:pupnp.sourceforge.io"
-  url "https:github.compupnppupnpreleasesdownloadrelease-1.14.23libupnp-1.14.23.tar.bz2"
-  sha256 "8c5946432124cf69928edf049b6ac16a861c35fa70a8bf7aa8fad65359945218"
+  url "https:github.compupnppupnpreleasesdownloadrelease-1.14.24libupnp-1.14.24.tar.bz2"
+  sha256 "8dfde05f63e91644e907dcfb7305955ad064b4cf6e5103cb37a7c57c50d1dd11"
   license "BSD-3-Clause"
 
   livecheck do
@@ -11,13 +11,13 @@ class Libupnp < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "49edc3f9bbdd39958fcc8dc048480f2c4ef3e4d1f3d525d4a9c86a02197a8236"
-    sha256 cellar: :any,                 arm64_sonoma:  "b59e29b590345e846d69d46fec038ca7d850fd5c8bf2dcbb1cbca177dd57cf98"
-    sha256 cellar: :any,                 arm64_ventura: "c75b7403a6407f00a03a1a1dedf0f6b27027be35edfb4a09268c5e130b2a7528"
-    sha256 cellar: :any,                 sonoma:        "3db50b401b92c512e087b92f5a665450db68811eb7c5e2e70e124b9af17d93ba"
-    sha256 cellar: :any,                 ventura:       "6f55d3a00dc8e80993fc02439d6df8a3f6aa1f21881197a607e2cad85564f09f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "bc02440ee39ebfb96113830680be06c1d9eaf197946fb28261888e647ef2ae13"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6949c056fb3e265768758d2ffae5723e68ff9e3a9ef9c2d5ac3c9beac31af3ed"
+    sha256 cellar: :any,                 arm64_sequoia: "e403cd816e8de10c22429564e2236d5a050637adbfef519dd5b3d77608bb66af"
+    sha256 cellar: :any,                 arm64_sonoma:  "04df71a03d9b1b3d96d79b9d3f8d36c1d824abc44cdcaaf64bb35a8e4af7d383"
+    sha256 cellar: :any,                 arm64_ventura: "224f178d28e917c2884008949a3324a3591932fcc5dcbb72fed9f3b05162b700"
+    sha256 cellar: :any,                 sonoma:        "493baa1f587afae4b317cc04bd6eee8a595e0658bc466550d3a72b54ae879258"
+    sha256 cellar: :any,                 ventura:       "0098a2e2db061718ab02149ad3a70d71f6ba4450c406a814952a3781460f8da0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a5e4ba4cc9118f956eebb5a99eadc0e8185495658b76b62901118cb6baa49ee1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e8fb4ff72b291065c68d8640c7d54728773cc9937c9cfebda2b557ed972f532a"
   end
 
   def install

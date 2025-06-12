@@ -1,19 +1,19 @@
 class Ipget < Formula
   desc "Retrieve files over IPFS and save them locally"
   homepage "https:github.comipfsipget"
-  url "https:github.comipfsipgetarchiverefstagsv0.11.1.tar.gz"
-  sha256 "3dd56e9243ab59383d206c2b374980cc987c016a391976dd9dcf5bff33a96f35"
+  url "https:github.comipfsipgetarchiverefstagsv0.11.2.tar.gz"
+  sha256 "6c929d5ba324d9e0eeccf3e22ff0caa359e9937e3abdfda283caffe3fda5e2dc"
   license "MIT"
   head "https:github.comipfsipget.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d8ae441fecd189ca058e76d0acfb30e93a2fa8a04beffdaa27b1780d3f0ba34b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d963166f966424517640b342f72019fd6d1f5d7721a508f60d3841f512ded3d2"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "4e5a57ab51fe284bb42595846d991d16f16c9af8b9edc1ca59a8d4601abc2ffa"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f918f9a023d8f9259c75ed408752e6a0cfe660806ec2e9aef326ebaf19ac199f"
-    sha256 cellar: :any_skip_relocation, ventura:       "f5725f63532333b6729f26664512984c4e2914358344894c6c9cfe8fabf81245"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f21317d1628e7a600ef4480d5ab43d707ad7a1241fd873fb1afad2f9fac5674d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "304bebe13417bc89ee71aab782f6f528824b4fd3dae6d8bf6a01540b2e11832c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cb0f59e6ee28702711cbf7c289a391781ec47aa8388dda4f0dcfbec9ee023f60"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6f75a0ac07fee211ec4b7177d98c89ab7dc7736f644d9a86415f95147cf51722"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "52fa657e0315b0fea4187b6d4626ca92c0848de61ac68a86e651f097ca01d5b6"
+    sha256 cellar: :any_skip_relocation, sonoma:        "314066de6bb446eb676962d9ce5c47f9b63542085c7b357436ff9f0e78765157"
+    sha256 cellar: :any_skip_relocation, ventura:       "3682baa94e09d29956fe63930804cbd4a83714ff0eeb7342c4a4f0b1b8f1bb79"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0af805f7ab48f27dcb54299745fca9c2d1cb47241f3c10085e1a6c8766b74994"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "590ba364cc6aeb718b23ff5100b28a05b7d96809b5f253363cd9fbc78dd210f7"
   end
 
   depends_on "go" => :build
