@@ -6,17 +6,17 @@ class Sherlock < Formula
   url "https:files.pythonhosted.orgpackages0a95b4f7a399c43d1d57a703ddf08513411bbb0bfc6bbaabab7ad4e2c534bba7sherlock_project-0.15.0.tar.gz"
   sha256 "1ae2ef98a0d482039ff00743e702f28ddf4a0d6260b0fbc2579d680469874910"
   license "MIT"
+  revision 1
   head "https:github.comsherlock-projectsherlock.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d0a2c6ae47e5d3391640067caee4469d69392912f6b9530b4dcfb214931739bf"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0bd9c312722b023cef80727d0d04fdc93ea873fe6e1f1be5f227043b9fc0a993"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "bee52eaddd8ff1343a2492973124ebd446d97c244c0dc5fdf918622bd46a0654"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e099213deecf92bc33dacab6de0116557f0de88040e28b8a267ced36d145c976"
-    sha256 cellar: :any_skip_relocation, ventura:       "fe46918102a66ef86fc84fbe0552392f4539726260cce77470892d3927050f6e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d2e30faf82ba4007adfdeddb7fe05abd640a14178eab599c28f8c525685f9b0f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d7b9490e6049387495279cb2ca034791f732844af46231a352ff0c5973d08306"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9f1934b007467c16c8de87cc46f4c5d99dd65ad36b485004cb7228d40ef94bcb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "71c275e214c1916309100009cd34f197b3f3ed7872b851939319aebb67249552"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "b1932fd7ef54a8fdf29bd11d39828f209b30805658735be1c650e999dd97a383"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5469e2c619ceaa0365ca71bc950c80f2433f67a9f0cfd2aa1a880815d9106a8e"
+    sha256 cellar: :any_skip_relocation, ventura:       "67c769539e1073ec378140d5e71d4bbed3d623a3d9374f26fe2f1a7bc8f6b8c7"
+    sha256                               arm64_linux:   "733c8baba8e85159b2edb22b8ee1db3a8b15289c0c725ac517a2ea6937d3d30e"
+    sha256                               x86_64_linux:  "f6cac35eea2e8e33bc2d6948fea26c3b9c46e19a349df1b9536f3ae8dab0be14"
   end
 
   depends_on "cmake" => :build
@@ -29,8 +29,8 @@ class Sherlock < Formula
   end
 
   resource "charset-normalizer" do
-    url "https:files.pythonhosted.orgpackagesf24fe1808dc01273379acc506d18f1504eb2d299bd4131743b9fc54d7be4df1echarset_normalizer-3.4.0.tar.gz"
-    sha256 "223217c3d4f82c3ac5e29032b3f1c2eb0fb591b72161f86d93f5719079dae93e"
+    url "https:files.pythonhosted.orgpackagese43389c2ced2b67d1c2a61c19c6751aa8902d46ce3dacb23600a283619f5a12dcharset_normalizer-3.4.2.tar.gz"
+    sha256 "5baececa9ecba31eff645232d59845c07aa030f0c81ee70184a90d35099a0e63"
   end
 
   resource "colorama" do
@@ -39,8 +39,8 @@ class Sherlock < Formula
   end
 
   resource "et-xmlfile" do
-    url "https:files.pythonhosted.orgpackages3d5d0413a31d184a20c763ad741cc7852a659bf15094c24840c5bdd1754765cdet_xmlfile-1.1.0.tar.gz"
-    sha256 "8eb9e2bc2f8c97e37a2dc85a09ecdcdec9d8a396530a6d5a33b30b9a92da0c5c"
+    url "https:files.pythonhosted.orgpackagesd338af70d7ab1ae9d4da450eeec1fa3918940a5fafb9055e934af8d6eb0c2313et_xmlfile-2.0.0.tar.gz"
+    sha256 "dab3f4764309081ce75662649be815c4c9081e88f0837825f90fd28317d4da54"
   end
 
   resource "idna" do
@@ -54,8 +54,8 @@ class Sherlock < Formula
   end
 
   resource "pandas" do
-    url "https:files.pythonhosted.orgpackages9cd69f8431bacc2e19dca897724cd097b1bb224a6ad5433784a44b587c7c13afpandas-2.2.3.tar.gz"
-    sha256 "4f18ba62b61d7e192368b84517265a99b4d7ee8912f8708660fb4a366cc82667"
+    url "https:files.pythonhosted.orgpackages725148f713c4c728d7c55ef7444ba5ea027c26998d96d1a40953b346438602fcpandas-2.3.0.tar.gz"
+    sha256 "34600ab34ebf1131a7613a260a61dbe8b62c188ec0ea4c296da7c9a06b004133"
   end
 
   resource "pysocks" do
@@ -69,23 +69,23 @@ class Sherlock < Formula
   end
 
   resource "pytz" do
-    url "https:files.pythonhosted.orgpackages3a313c70bf7603cc2dca0f19bdc53b4537a797747a58875b552c8c413d963a3fpytz-2024.2.tar.gz"
-    sha256 "2aa355083c50a0f93fa581709deac0c9ad65cca8a9e9beac660adcbd493c798a"
+    url "https:files.pythonhosted.orgpackagesf8bfabbd3cdfb8fbc7fb3d4d38d320f2441b1e7cbe29be4f23797b4a2b5d8aacpytz-2025.2.tar.gz"
+    sha256 "360b9e3dbb49a209c21ad61809c7fb453643e048b38924c765813546746e81c3"
   end
 
   resource "requests" do
-    url "https:files.pythonhosted.orgpackages63702bf7780ad2d390a8d301ad0b550f1581eadbd9a20f896afe06353c2a2913requests-2.32.3.tar.gz"
-    sha256 "55365417734eb18255590a9ff9eb97e9e1da868d4ccd6402399eaf68af20a760"
+    url "https:files.pythonhosted.orgpackagese10a929373653770d8a0d7ea76c37de6e41f11eb07559b103b1c02cafb3f7cf8requests-2.32.4.tar.gz"
+    sha256 "27d0316682c8a29834d3264820024b62a36942083d52caf2f14c0591336d3422"
   end
 
   resource "requests-futures" do
-    url "https:files.pythonhosted.orgpackagesf3079140eb28a74f5ee0f256b8c99981f6d21f9f60af5721ca694176fd080687requests-futures-1.0.1.tar.gz"
-    sha256 "f55a4ef80070e2858e7d1e73123d2bfaeaf25b93fd34384d8ddf148e2b676373"
+    url "https:files.pythonhosted.orgpackages88f8175b823241536ba09da033850d66194c372c65c38804847ac9cef0239542requests_futures-1.0.2.tar.gz"
+    sha256 "6b7eb57940336e800faebc3dab506360edec9478f7b22dc570858ad3aa7458da"
   end
 
   resource "six" do
-    url "https:files.pythonhosted.orgpackages7139171f1c67cd00715f190ba0b100d606d440a28c93c7714febeca8b79af85esix-1.16.0.tar.gz"
-    sha256 "1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926"
+    url "https:files.pythonhosted.orgpackages94e7b2c673351809dca68a0e064b6af791aa332cf192da575fd474ed7d6f16a2six-1.17.0.tar.gz"
+    sha256 "ff70335d468e7eb6ec65b95b99d3a2836546063f63acc5171de367e834932a81"
   end
 
   resource "stem" do
@@ -94,13 +94,13 @@ class Sherlock < Formula
   end
 
   resource "tzdata" do
-    url "https:files.pythonhosted.orgpackagese134943888654477a574a86a98e9896bae89c7aa15078ec29f490fef2f1e5384tzdata-2024.2.tar.gz"
-    sha256 "7d85cc416e9382e69095b7bdf4afd9e3880418a2413feec7069d533d6b4e31cc"
+    url "https:files.pythonhosted.orgpackages95321a225d6164441be760d75c2c42e2780dc0873fe382da3e98a2e1e48361e5tzdata-2025.2.tar.gz"
+    sha256 "b60a638fcc0daffadf82fe0f57e53d06bdec2f36c4df66280ae79bce6bd6f2b9"
   end
 
   resource "urllib3" do
-    url "https:files.pythonhosted.orgpackagesed6322ba4ebfe7430b76388e7cd448d5478814d3032121827c12a2cc287e2260urllib3-2.2.3.tar.gz"
-    sha256 "e7d814a81dad81e6caf2ec9fdedb284ecc9c73076b62654547cc64ccdcae26e9"
+    url "https:files.pythonhosted.orgpackages8a7816493d9c386d8e60e442a35feac5e00f0913c0f4b7c217c11e8ec2ff53e0urllib3-2.4.0.tar.gz"
+    sha256 "414bc6535b787febd7567804cc015fee39daab8ad86268f1310a9250697de466"
   end
 
   def install

@@ -12,6 +12,7 @@ class Desed < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "c94d25fc45f6e6e18e492b7a1b0a99bc050010ef581964235718147f41a8721d"
     sha256 cellar: :any_skip_relocation, sonoma:        "2160dd4cfb4d6c16d5563112a6871a012c2968e2313514c48cf7323fa2d1e714"
     sha256 cellar: :any_skip_relocation, ventura:       "8d561d9e6c8f3d55f5a708ce24cc786b2975f227ec86414cf312409adc5130c7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3d7939fa70a8187c637bc200bbdcf9f3ff97950032b92425a2c9ccdbdb8141f2"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "74c7143b9c97e0dfa4bd338b665434834ffd17d5c1cd3582f346ae7498b5f2ad"
   end
 

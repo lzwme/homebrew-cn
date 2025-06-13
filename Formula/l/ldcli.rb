@@ -12,6 +12,7 @@ class Ldcli < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "964ac434235946fbc8845ca6149f36155428793747ea115ba840ebb675cf36df"
     sha256 cellar: :any_skip_relocation, sonoma:        "a38772c1dd6f6af380e43897e396908472881420571b2990ce1d5104501a10bd"
     sha256 cellar: :any_skip_relocation, ventura:       "5856accf4f9bd7ec17a34d7a5184f8b253e4fc0cd078432046210c80a4326b81"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "50aff5979423a57fd0a0bbe1d4a84bd0e7347f3cf27ea2d7faad251d9d1bc5ce"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "6f13544ef2d9b4c3bba419aadaacf4df17bb527428c49d15684d8abc3b74aba3"
   end
 

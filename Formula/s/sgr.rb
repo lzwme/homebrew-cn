@@ -6,18 +6,18 @@ class Sgr < Formula
   url "https:files.pythonhosted.orgpackagesdd617d6cf822edb39d2426f6f185c7fc4de0ad4b80e0da3e5f50d94952795c11splitgraph-0.3.12.tar.gz"
   sha256 "76a4476002b5ac5a2b9fba36b6fcffd85b878bcc25f5aae411387e04a5532459"
   license "Apache-2.0"
-  revision 13
+  revision 14
 
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "db20ed00c7f28d1884e5532dc0438ca59540790898fdbaf1c58c1eef36bd632d"
-    sha256 cellar: :any,                 arm64_sonoma:  "628f8550d5cc8827feaf871741a8deee69da3e65417cbea153bbc527f9c46515"
-    sha256 cellar: :any,                 arm64_ventura: "f2c5752758f3ce00735b23615e30592e2a82eee38852b20f51b39272c54f4d1e"
-    sha256 cellar: :any,                 sonoma:        "05ddb46cbe9fda4c3e515a497bf94a80217e3b2fdc9a23831840ba2f89c2d718"
-    sha256 cellar: :any,                 ventura:       "5ffa755152d082223726bcd875552ba15fa6bff72c39f9c9b79e6040c5f00878"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1ddd6bf34a9d009f71f6bf92e2954356e82b94e803c217e0e1dd85d8f36f3d43"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c32a6bd8f4646c852a5155ba5609308687042831becd2410595e598604c9d303"
+    sha256 cellar: :any,                 arm64_sequoia: "7485b10c51cb90010959f17809af83e7674462b8a1d84a5606bd5a0181c27629"
+    sha256 cellar: :any,                 arm64_sonoma:  "932b534c9740339132f1fa769236206a753ba9a8d2aa4a128145c82f289fbe86"
+    sha256 cellar: :any,                 arm64_ventura: "808887ba8146bc6104a500749553d38a0cc097731a0fb7424de40a02aab937c3"
+    sha256 cellar: :any,                 sonoma:        "84c0b5fb6184feaa0b8b515bd3c45fc8f993f2f9eb5bb0ed2dbbda267117674a"
+    sha256 cellar: :any,                 ventura:       "21deb66a3b70da99d0a48f5e306956df5a77a98ea0ff4dbe35145a27e1fa36f9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a386be11602cdf781dcc8f6b512937545cbd60e60b980bc664a5690840c4b32d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b1f7e6a756e02126681cd5d007315ce6e669769b187d6fa0c03e1d7db835d484"
   end
 
   depends_on "rust" => :build # for pydantic
@@ -33,8 +33,8 @@ class Sgr < Formula
   end
 
   resource "argon2-cffi" do
-    url "https:files.pythonhosted.orgpackages31fa57ec2c6d16ecd2ba0cf15f3c7d1c3c2e7b5fcb83555ff56d7ab10888ec8fargon2_cffi-23.1.0.tar.gz"
-    sha256 "879c3e79a2729ce768ebb7d36d4609e3a78a4ca2ec3a9f12286ca057e3d0db08"
+    url "https:files.pythonhosted.orgpackages0e89ce5af8a7d472a67cc819d5d998aa8c82c5d860608c4db9f46f1162d7dab9argon2_cffi-25.1.0.tar.gz"
+    sha256 "694ae5cc8a42f4c4e2bf2ca0e64e51e23a040c6a517a85074683d3959e1346c1"
   end
 
   resource "argon2-cffi-bindings" do
@@ -88,13 +88,13 @@ class Sgr < Formula
   end
 
   resource "joblib" do
-    url "https:files.pythonhosted.orgpackages30088bd4a0250247861420a040b33ccf42f43c426ac91d99405374ef117e5872joblib-1.5.0.tar.gz"
-    sha256 "d8757f955389a3dd7a23152e43bc297c2e0c2d3060056dad0feefc88a06939b5"
+    url "https:files.pythonhosted.orgpackagesdcfe0f5a938c54105553436dbff7a61dc4fed4b1b2c98852f8833beaf4d5968fjoblib-1.5.1.tar.gz"
+    sha256 "f4f86e351f39fe3d0d32a9f2c3d8af1ee4cec285aafcb27003dda5205576b444"
   end
 
   resource "jsonschema" do
-    url "https:files.pythonhosted.orgpackages382e03362ee4034a4c917f697890ccd4aec0800ccf9ded7f511971c75451deecjsonschema-4.23.0.tar.gz"
-    sha256 "d71497fef26351a33265337fa77ffeb82423f3ea21283cd9467bb03999266bc4"
+    url "https:files.pythonhosted.orgpackagesbfd31cf5326b923a53515d8f3a2cd442e6d7e94fcc444716e879ea70a0ce3177jsonschema-4.24.0.tar.gz"
+    sha256 "0b4e8069eb12aedfa881333004bccaec24ecef5a8a6a4b6df142b2cc9599d196"
   end
 
   resource "jsonschema-specifications" do
@@ -117,6 +117,7 @@ class Sgr < Formula
     sha256 "3add338892d580e0cb3b1a39e4a1b427ff9f687858fdd61097053742391a9f6b"
   end
 
+  # Manually update to latest version
   resource "pglast" do
     url "https:files.pythonhosted.orgpackagescd0912807f704dfc3afc2bab151ead20edb6cb34a673416042f2ba5f0d6f6606pglast-7.7.tar.gz"
     sha256 "5dfbfc1fa39819643a3b915a13668e43bbd6c0b014aadf5d0b4309e860bacbb0"
@@ -133,8 +134,8 @@ class Sgr < Formula
   end
 
   resource "pydantic" do
-    url "https:files.pythonhosted.orgpackages77ab5250d56ad03884ab5efd07f734203943c8a8ab40d551e208af81d0257bf2pydantic-2.11.4.tar.gz"
-    sha256 "32738d19d63a226a52eed76645a98ee07c1f410ee41d93b4afbfa85ed8111c2d"
+    url "https:files.pythonhosted.orgpackagesf0868ce9040065e8f924d642c58e4a344e33163a07f6b57f836d0d734e0ad3fbpydantic-2.11.5.tar.gz"
+    sha256 "7f853db3d0ce78ce8bbb148c401c2cdd6431b3473c0cdff2755c7690952a7b7a"
   end
 
   resource "pydantic-core" do
@@ -148,8 +149,8 @@ class Sgr < Formula
   end
 
   resource "requests" do
-    url "https:files.pythonhosted.orgpackages63702bf7780ad2d390a8d301ad0b550f1581eadbd9a20f896afe06353c2a2913requests-2.32.3.tar.gz"
-    sha256 "55365417734eb18255590a9ff9eb97e9e1da868d4ccd6402399eaf68af20a760"
+    url "https:files.pythonhosted.orgpackagese10a929373653770d8a0d7ea76c37de6e41f11eb07559b103b1c02cafb3f7cf8requests-2.32.4.tar.gz"
+    sha256 "27d0316682c8a29834d3264820024b62a36942083d52caf2f14c0591336d3422"
   end
 
   resource "rpds-py" do
@@ -163,8 +164,8 @@ class Sgr < Formula
   end
 
   resource "setuptools" do
-    url "https:files.pythonhosted.orgpackages8dd2ec1acaaff45caed5c2dedb33b67055ba9d4e96b091094df90762e60135fesetuptools-80.8.0.tar.gz"
-    sha256 "49f7af965996f26d43c8ae34539c8d99c5042fbff34302ea151eaa9c207cd257"
+    url "https:files.pythonhosted.orgpackages185d3bf57dcd21979b887f014ea83c24ae194cfcd12b9e0fda66b957c69d1fcasetuptools-80.9.0.tar.gz"
+    sha256 "f36b47402ecde768dbfafc46e8e4207b4360c654f1f3bb84475f0a28628fb19c"
   end
 
   resource "six" do
@@ -193,8 +194,8 @@ class Sgr < Formula
   end
 
   resource "typing-extensions" do
-    url "https:files.pythonhosted.orgpackagesf63723083fcd6e35492953e8d2aaaa68b860eb422b34627b13f2ce3eb6106061typing_extensions-4.13.2.tar.gz"
-    sha256 "e6c81219bd689f51865d9e372991c540bda33a0379d5573cddb9a3a23f7caaef"
+    url "https:files.pythonhosted.orgpackagesd1bc51647cd02527e87d05cb083ccc402f93e441606ff1f01739a62c8ad09ba5typing_extensions-4.14.0.tar.gz"
+    sha256 "8676b788e32f02ab42d9e7c61324048ae4c6d844a399eebace3d4979d75ceef4"
   end
 
   resource "typing-inspection" do

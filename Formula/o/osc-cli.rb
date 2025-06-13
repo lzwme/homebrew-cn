@@ -6,18 +6,18 @@ class OscCli < Formula
   url "https:files.pythonhosted.orgpackages02cdf1b796f5e7a301f6a3c0b910be07188cbfd329d2758e036d24ef26b4ee96osc-sdk-1.11.0.tar.gz"
   sha256 "d3b71b326b0698da1b9a503cd511a992fe578375fd01b30bdec0d63d8328af66"
   license "BSD-3-Clause"
-  revision 7
+  revision 8
 
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b5480ac70e1c6e5fc2704d8fbcfe1d58ccb068e67ac464b2181701b12314386d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b5480ac70e1c6e5fc2704d8fbcfe1d58ccb068e67ac464b2181701b12314386d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "b5480ac70e1c6e5fc2704d8fbcfe1d58ccb068e67ac464b2181701b12314386d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "668ded3aba21a8525fc876113e89ed7c0091d2bf83a94564f1710d49d25ef593"
-    sha256 cellar: :any_skip_relocation, ventura:       "668ded3aba21a8525fc876113e89ed7c0091d2bf83a94564f1710d49d25ef593"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3866b920f7dd7f489bfa721df763810338597bbd0eb747796f65fa9ffaca744b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3866b920f7dd7f489bfa721df763810338597bbd0eb747796f65fa9ffaca744b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dbdb9054c1453179f2d263b5982582ba142a6656a822bc085241b02f3fd1265c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dbdb9054c1453179f2d263b5982582ba142a6656a822bc085241b02f3fd1265c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "dbdb9054c1453179f2d263b5982582ba142a6656a822bc085241b02f3fd1265c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "1560352637ab7bd7d48dfd9efabdb2fa508adc081d707416a48b4c2096fcb54f"
+    sha256 cellar: :any_skip_relocation, ventura:       "1560352637ab7bd7d48dfd9efabdb2fa508adc081d707416a48b4c2096fcb54f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8caa74902e4f0660499891159a7fc666c224a312bee83ced94ac3b9379588e18"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8caa74902e4f0660499891159a7fc666c224a312bee83ced94ac3b9379588e18"
   end
 
   depends_on "certifi"
@@ -44,13 +44,13 @@ class OscCli < Formula
   end
 
   resource "requests" do
-    url "https:files.pythonhosted.orgpackages63702bf7780ad2d390a8d301ad0b550f1581eadbd9a20f896afe06353c2a2913requests-2.32.3.tar.gz"
-    sha256 "55365417734eb18255590a9ff9eb97e9e1da868d4ccd6402399eaf68af20a760"
+    url "https:files.pythonhosted.orgpackagese10a929373653770d8a0d7ea76c37de6e41f11eb07559b103b1c02cafb3f7cf8requests-2.32.4.tar.gz"
+    sha256 "27d0316682c8a29834d3264820024b62a36942083d52caf2f14c0591336d3422"
   end
 
   resource "setuptools" do
-    url "https:files.pythonhosted.orgpackages9e8bdc1773e8e5d07fd27c1632c45c1de856ac3dbf09c0147f782ca6d990cf15setuptools-80.7.1.tar.gz"
-    sha256 "f6ffc5f0142b1bd8d0ca94ee91b30c0ca862ffd50826da1ea85258a06fd94552"
+    url "https:files.pythonhosted.orgpackages185d3bf57dcd21979b887f014ea83c24ae194cfcd12b9e0fda66b957c69d1fcasetuptools-80.9.0.tar.gz"
+    sha256 "f36b47402ecde768dbfafc46e8e4207b4360c654f1f3bb84475f0a28628fb19c"
   end
 
   resource "termcolor" do
@@ -59,8 +59,8 @@ class OscCli < Formula
   end
 
   resource "typing-extensions" do
-    url "https:files.pythonhosted.orgpackagesf63723083fcd6e35492953e8d2aaaa68b860eb422b34627b13f2ce3eb6106061typing_extensions-4.13.2.tar.gz"
-    sha256 "e6c81219bd689f51865d9e372991c540bda33a0379d5573cddb9a3a23f7caaef"
+    url "https:files.pythonhosted.orgpackagesd1bc51647cd02527e87d05cb083ccc402f93e441606ff1f01739a62c8ad09ba5typing_extensions-4.14.0.tar.gz"
+    sha256 "8676b788e32f02ab42d9e7c61324048ae4c6d844a399eebace3d4979d75ceef4"
   end
 
   resource "urllib3" do

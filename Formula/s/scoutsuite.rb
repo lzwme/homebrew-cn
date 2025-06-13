@@ -6,19 +6,19 @@ class Scoutsuite < Formula
   url "https:files.pythonhosted.orgpackagesa9414f375fac81c66e1475c3ae18753a86191f253cdf24c29f28c8861d6bb984scoutsuite-5.14.0.tar.gz"
   sha256 "b021ad340196865093fb5d6e247f2596ec856e24cb39eb6e3e886923befd1208"
   license "GPL-2.0-only"
-  revision 2
+  revision 3
   head "https:github.comnccgroupScoutSuite.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "9813329245c18590902b05d7cf9bf670635fc812f360fd04bed78a2071d2d5c5"
-    sha256 cellar: :any,                 arm64_sonoma:  "65064351df4adb8e08172ed4a1b9b94c4900eb0093b33ccac1e00d6eab824ddb"
-    sha256 cellar: :any,                 arm64_ventura: "31eee275cfa2f6179f8dcef35d357cce557b3ffaa411cb68e8f52971e55bbbb2"
-    sha256 cellar: :any,                 sonoma:        "cfe62952ee4a127fa6c01a694ec7734f09c157feef2eaabd5960c02b80b56e12"
-    sha256 cellar: :any,                 ventura:       "cd706331e918fef2ffc5775ef0d06e55921c4278d9680ba6628c770e61141e56"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "67aeb28ac43a579bf5568700fb596b1144b73834f3f40ba39e083e43c006cc7f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "33efd6ad3191b65abc42b8f46d711c64664bcba5e1d9ee06832ad424a35742d2"
+    sha256 cellar: :any,                 arm64_sequoia: "96db74400db7580417bd19dd9171c713dbd1de8a17ac86bb53c13c790cb4126f"
+    sha256 cellar: :any,                 arm64_sonoma:  "b751753b949a7bb1374fa4865e0258c8bf3b0d08cbbeefe55dfc5ce44be27aa4"
+    sha256 cellar: :any,                 arm64_ventura: "dae86dc4b169aa3a2502cd8e0816dc93b4a9a4a224fc512af8860435e6fb6e01"
+    sha256 cellar: :any,                 sonoma:        "8470ae6cafc4fc2f44193fb4bfbbf48d4f24137df80a6ebd9fcd6f318eaf3910"
+    sha256 cellar: :any,                 ventura:       "3f45fc3af5042742176a5538c0b4453a73d88ba4b5a64f6feac91ab332fb89bc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "78c7f5e79b1d2a24f58dfdc0ac626a8a1f4f515462b7601ebd6b01da0bdbb444"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e4070a1c4c7bc420402f89235f0db1163539deb217baf57bb417a44bc90ca743"
   end
 
   depends_on "rust" => :build # for pydantic-core
@@ -58,8 +58,8 @@ class Scoutsuite < Formula
   end
 
   resource "aliyun-python-sdk-rds" do
-    url "https:files.pythonhosted.orgpackagesb5f5e16d80fe1ae7cc3e96a2cc8d5b8560a57febdf1299b46f27a43d3571ffddaliyun-python-sdk-rds-2.7.49.tar.gz"
-    sha256 "13e049e377d2c0ae3b6ce6bdd233b8c41476d5cc4556a8d8571773cb6a01fed5"
+    url "https:files.pythonhosted.orgpackagesbe9e6ba98c6e163419ef2bb5424ac7edd08e051decdb759873f556c9143998e6aliyun-python-sdk-rds-2.7.50.tar.gz"
+    sha256 "7841ca237b88d4750cca93c20519a8547c8132040680b3b722aba3a898b78e56"
   end
 
   resource "aliyun-python-sdk-sts" do
@@ -163,13 +163,13 @@ class Scoutsuite < Formula
   end
 
   resource "boto3" do
-    url "https:files.pythonhosted.orgpackagesb83827f7e3944daa6c8f4422e412ebf7073cbe9e59e14e7f3219a89b6c752837boto3-1.38.20.tar.gz"
-    sha256 "aa1424213678a249fe828fb9345deac5e33f9a2266fd1b23ec72e02857b018a2"
+    url "https:files.pythonhosted.orgpackagesf1cae7c1b5f7118fa3520f70ca11082472b64e2ffc4d81e7a4373339e4770f3aboto3-1.38.35.tar.gz"
+    sha256 "38a407e467b24914ce24e5816f53305288ea44072778f88d2b4b6a2cffbcb220"
   end
 
   resource "botocore" do
-    url "https:files.pythonhosted.orgpackages87c661fa4699aa7f6230cf018d110849388904493b4e179050b6f0fc20a0f353botocore-1.38.20.tar.gz"
-    sha256 "03a5027a207fc66cd0bf8cd1abb98db41fd4d23e6bd5f43f68586af9736240fc"
+    url "https:files.pythonhosted.orgpackagescd2e763918cd2b5af0345a38181bc5f16d1f6c32aad2a03b7738274cf068d864botocore-1.38.35.tar.gz"
+    sha256 "3c7032948e066eed5f91d64cd51ee9664d1db9beaf3279ac27da608176bb3d54"
   end
 
   resource "cachetools" do
@@ -212,11 +212,6 @@ class Scoutsuite < Formula
     sha256 "dc7051a0db5f2bd48665a990d3ec1cc305a466a77358ca4492826f41f283601e"
   end
 
-  resource "deprecated" do
-    url "https:files.pythonhosted.orgpackages989706afe62762c9a8a86af0cfb7bfdab22a43ad17138b07af5b1a58442690a2deprecated-1.2.18.tar.gz"
-    sha256 "422b6f6d859da6f2ef57857761bfb392480502a64c3028ca9bbe86085d72115d"
-  end
-
   resource "durationpy" do
     url "https:files.pythonhosted.orgpackages9da4e44218c2b394e31a6dd0d6b095c4e1f32d0be54c2a4b250032d717647babdurationpy-0.10.tar.gz"
     sha256 "1fa6893409a6e739c9c72334fc65cca1f355dbdd93405d30f726deb5bde42fba"
@@ -228,13 +223,13 @@ class Scoutsuite < Formula
   end
 
   resource "google-api-python-client" do
-    url "https:files.pythonhosted.orgpackages4fe6787c24738fc7c99de9289abe60bd64591800ae1cdf60db7b87e0e6ef9cddgoogle_api_python_client-2.169.0.tar.gz"
-    sha256 "0585bb97bd5f5bf3ed8d4bf624593e4c5a14d06c811d1952b07a1f94b4d12c51"
+    url "https:files.pythonhosted.orgpackages0269c0cec6be5878d4de161f64096edb3d4a2d1a838f036b8425ea8358d0dfb3google_api_python_client-2.172.0.tar.gz"
+    sha256 "dcb3b7e067154b2aa41f1776cf86584a5739c0ac74e6ff46fc665790dca0e6a6"
   end
 
   resource "google-auth" do
-    url "https:files.pythonhosted.orgpackages94a538c21d0e731bb716cffcf987bd9a3555cb95877ab4b616cfb96939933f20google_auth-2.40.1.tar.gz"
-    sha256 "58f0e8416a9814c1d86c9b7f6acf6816b51aba167b2c76821965271bac275540"
+    url "https:files.pythonhosted.orgpackages9e9be92ef23b84fa10a64ce4831390b7a4c2e53c0132568d99d4ae61d04c8855google_auth-2.40.3.tar.gz"
+    sha256 "500c3a29adedeb36ea9cf24b8d10858e152f2412e3ca37829b3fa18e33d63b77"
   end
 
   resource "google-auth-httplib2" do
@@ -243,8 +238,8 @@ class Scoutsuite < Formula
   end
 
   resource "google-cloud-appengine-logging" do
-    url "https:files.pythonhosted.orgpackagescbecac5eed8660dd49a68d425c1e9594a40dc0c757d3d06af1e7731e5ff5d4eegoogle_cloud_appengine_logging-1.6.1.tar.gz"
-    sha256 "f97bde36c7f7ff541123c2570813158bdda0c3f2385c8d32fdf1211c561ae56d"
+    url "https:files.pythonhosted.orgpackagese7ea85da73d4f162b29d24ad591c4ce02688b44094ee5f3d6c0cc533c2b23b23google_cloud_appengine_logging-1.6.2.tar.gz"
+    sha256 "4890928464c98da9eecc7bf4e0542eba2551512c0265462c10f3a3d2a6424b90"
   end
 
   resource "google-cloud-audit-log" do
@@ -253,8 +248,8 @@ class Scoutsuite < Formula
   end
 
   resource "google-cloud-container" do
-    url "https:files.pythonhosted.orgpackagesdc51621a72fe5ab3b2c0ee46dd79c47ad3ac9ddcff78d4c423ef198b2cbf44a0google_cloud_container-2.56.1.tar.gz"
-    sha256 "4000ee5cac27749bc60c45937ed3481915fbbf098925d928523702d70f2f4fa1"
+    url "https:files.pythonhosted.orgpackages6aa69ddc3fc102d4c6f628c72d1dcd45e59c34846e972e57db6194fd94254ffdgoogle_cloud_container-2.57.0.tar.gz"
+    sha256 "fa7e6f593f58348b98bd6dd59344c9a6038e9fba6c0b9858e23d9d278346f129"
   end
 
   resource "google-cloud-core" do
@@ -263,8 +258,8 @@ class Scoutsuite < Formula
   end
 
   resource "google-cloud-iam" do
-    url "https:files.pythonhosted.orgpackagesdb096825415e424501ad5f6a33b68d08680dc4a76842105c0343784f38f107ffgoogle_cloud_iam-2.19.0.tar.gz"
-    sha256 "99b96b702a431933eafde86b137e004522e841d5b980e035fca1b9091f53d86c"
+    url "https:files.pythonhosted.orgpackagesb5adab2b822f40861c451e8d91d6f6343fcd67cdc25c4c537dee86a70c7f0c4cgoogle_cloud_iam-2.19.1.tar.gz"
+    sha256 "f059c369ad98af6be3401f0f5d087775d775fb96833be1e9ab8048c422fb1bf4"
   end
 
   resource "google-cloud-kms" do
@@ -313,8 +308,8 @@ class Scoutsuite < Formula
   end
 
   resource "grpcio" do
-    url "https:files.pythonhosted.orgpackagesd133bf7bf9188cfce1c626e4c5d55523fec7f2f1d905e003df5da025f532916egrpcio-1.72.0rc1.tar.gz"
-    sha256 "221793dccd3332060f426975a041d319d6d57323d857d4afc25257ec4a5a67f3"
+    url "https:files.pythonhosted.orgpackages8e7bca3f561aeecf0c846d15e1b38921a60dffffd5d4113931198fbf455334eegrpcio-1.73.0.tar.gz"
+    sha256 "3af4c30918a7f0d39de500d11255f8d9da4f30e94a2033e70fe2a720e184bd8e"
   end
 
   resource "grpcio-status" do
@@ -348,8 +343,8 @@ class Scoutsuite < Formula
   end
 
   resource "importlib-metadata" do
-    url "https:files.pythonhosted.orgpackages3308c1395a292bb23fd03bdf572a1357c5a733d3eecbab877641ceacab23db6eimportlib_metadata-8.6.1.tar.gz"
-    sha256 "310b41d755445d74569f993ccfc22838295d9fe005425094fad953d7f15c8580"
+    url "https:files.pythonhosted.orgpackages7666650a33bd90f786193e4de4b3ad86ea60b53c89b669a5c7be931fac31cdb0importlib_metadata-8.7.0.tar.gz"
+    sha256 "d13b81ad223b890aa16c5471f2ac3056cf76c5f10f82d6f9292f0b415f389000"
   end
 
   resource "isodate" do
@@ -383,8 +378,8 @@ class Scoutsuite < Formula
   end
 
   resource "kubernetes" do
-    url "https:files.pythonhosted.orgpackagesb7e80598f0e8b4af37cd9b10d8b87386cf3173cb8045d834ab5f6ec347a758b3kubernetes-32.0.1.tar.gz"
-    sha256 "42f43d49abd437ada79a79a16bd48a604d3471a117a8347e87db693f2ba0ba28"
+    url "https:files.pythonhosted.orgpackagesae5219ebe8004c243fdfa78268a96727c71e08f00ff6fe69a301d0b7fcbce3c2kubernetes-33.1.0.tar.gz"
+    sha256 "f64d829843a54c251061a8e7a14523b521f2dc5c896cf6d65ccf348648a88993"
   end
 
   resource "more-itertools" do
@@ -428,13 +423,13 @@ class Scoutsuite < Formula
   end
 
   resource "oci" do
-    url "https:files.pythonhosted.orgpackages8e9438474b246701764be0424ff4ed62a5fe7c8d5c27c63ebf6461637b7d1cd2oci-2.152.1.tar.gz"
-    sha256 "87c185be9624b5ba9bcfd2e8ed619905a7c310f178cb42b70d31aadc5c6fc142"
+    url "https:files.pythonhosted.orgpackages66a66e9b94efabf8effc2060ee2e8f1b2f106f9c930052f7ab01fdb188177fadoci-2.154.1.tar.gz"
+    sha256 "44b034ca7c08e3809d9a4244b075af9fdd1d45cf8f05cee57722b59a15d3a04f"
   end
 
   resource "opentelemetry-api" do
-    url "https:files.pythonhosted.orgpackages9a8d1f5a45fbcb9a7d87809d460f09dc3399e3fbd31d7f3e14888345e9d29951opentelemetry_api-1.33.1.tar.gz"
-    sha256 "1c6055fc0a2d3f23a50c7e17e16ef75ad489345fd3df1f8b8af7c0bbf8a109e8"
+    url "https:files.pythonhosted.orgpackages4d5e94a8cb759e4e409022229418294e098ca7feca00eb3c467bb20cbd329bdaopentelemetry_api-1.34.1.tar.gz"
+    sha256 "64f0bd06d42824843731d05beea88d4d4b6ae59f9fe347ff7dfa2cc14233bbb3"
   end
 
   resource "oss2" do
@@ -453,8 +448,8 @@ class Scoutsuite < Formula
   end
 
   resource "portend" do
-    url "https:files.pythonhosted.orgpackages8ffcbcfc768996b438d6e4bde7a6c8cfd62089847b0f5381a0e0ec2d8ee6b202portend-3.2.0.tar.gz"
-    sha256 "5250a352c19c959d767cac878b829d93e5dc7625a5143399a2a00dc6628ffb72"
+    url "https:files.pythonhosted.orgpackagesb757be90f42996fc4f57d5742ef2c95f7f7bb8e9183af2cc11bff8e7df338888portend-3.2.1.tar.gz"
+    sha256 "aa9d40ab1f9e14bdb7d401f42210df35d017c9b97991baeb18568cedfb8c6489"
   end
 
   resource "proto-plus" do
@@ -518,8 +513,8 @@ class Scoutsuite < Formula
   end
 
   resource "requests" do
-    url "https:files.pythonhosted.orgpackages63702bf7780ad2d390a8d301ad0b550f1581eadbd9a20f896afe06353c2a2913requests-2.32.3.tar.gz"
-    sha256 "55365417734eb18255590a9ff9eb97e9e1da868d4ccd6402399eaf68af20a760"
+    url "https:files.pythonhosted.orgpackagese10a929373653770d8a0d7ea76c37de6e41f11eb07559b103b1c02cafb3f7cf8requests-2.32.4.tar.gz"
+    sha256 "27d0316682c8a29834d3264820024b62a36942083d52caf2f14c0591336d3422"
   end
 
   resource "requests-oauthlib" do
@@ -533,13 +528,13 @@ class Scoutsuite < Formula
   end
 
   resource "s3transfer" do
-    url "https:files.pythonhosted.orgpackagesfc9e73b14aed38ee1f62cd30ab93cd0072dec7fb01f3033d116875ae3e7b8b44s3transfer-0.12.0.tar.gz"
-    sha256 "8ac58bc1989a3fdb7c7f3ee0918a66b160d038a147c7b5db1500930a607e9a1c"
+    url "https:files.pythonhosted.orgpackagesed5d9dcc100abc6711e8247af5aa561fc07c4a046f72f659c3adea9a449e191as3transfer-0.13.0.tar.gz"
+    sha256 "f5e6db74eb7776a37208001113ea7aa97695368242b364d73e91c981ac522177"
   end
 
   resource "setuptools" do
-    url "https:files.pythonhosted.orgpackages8dd2ec1acaaff45caed5c2dedb33b67055ba9d4e96b091094df90762e60135fesetuptools-80.8.0.tar.gz"
-    sha256 "49f7af965996f26d43c8ae34539c8d99c5042fbff34302ea151eaa9c207cd257"
+    url "https:files.pythonhosted.orgpackages185d3bf57dcd21979b887f014ea83c24ae194cfcd12b9e0fda66b957c69d1fcasetuptools-80.9.0.tar.gz"
+    sha256 "f36b47402ecde768dbfafc46e8e4207b4360c654f1f3bb84475f0a28628fb19c"
   end
 
   resource "six" do
@@ -558,13 +553,13 @@ class Scoutsuite < Formula
   end
 
   resource "typing-extensions" do
-    url "https:files.pythonhosted.orgpackagesf63723083fcd6e35492953e8d2aaaa68b860eb422b34627b13f2ce3eb6106061typing_extensions-4.13.2.tar.gz"
-    sha256 "e6c81219bd689f51865d9e372991c540bda33a0379d5573cddb9a3a23f7caaef"
+    url "https:files.pythonhosted.orgpackagesd1bc51647cd02527e87d05cb083ccc402f93e441606ff1f01739a62c8ad09ba5typing_extensions-4.14.0.tar.gz"
+    sha256 "8676b788e32f02ab42d9e7c61324048ae4c6d844a399eebace3d4979d75ceef4"
   end
 
   resource "uritemplate" do
-    url "https:files.pythonhosted.orgpackagesd25a4742fdba39cd02a56226815abfa72fe0aa81c33bed16ed045647d6000ebauritemplate-4.1.1.tar.gz"
-    sha256 "4346edfc5c3b79f694bccd6d6099a322bbeb628dbf2cd86eea55a456ce5124f0"
+    url "https:files.pythonhosted.orgpackages9860f174043244c5306c9988380d2cb10009f91563fc4b31293d27e17201af56uritemplate-4.2.0.tar.gz"
+    sha256 "480c2ed180878955863323eea31b0ede668795de182617fef9c6ca09e6ec9d0e"
   end
 
   resource "urllib3" do
@@ -577,19 +572,14 @@ class Scoutsuite < Formula
     sha256 "3239df9f44da632f96012472805d40a23281a991027ce11d2f45a6f24ac4c3da"
   end
 
-  resource "wrapt" do
-    url "https:files.pythonhosted.orgpackagesc3fce91cc220803d7bc4db93fb02facd8461c37364151b8494762cc88b0fbcefwrapt-1.17.2.tar.gz"
-    sha256 "41388e9d4d1522446fe79d3213196bd9e3b301a336965b9e27ca2788ebd122f3"
-  end
-
   resource "zc-lockfile" do
     url "https:files.pythonhosted.orgpackages5b83a5432aa08312fc834ea594473385c005525e6a80d768a2ad246e78877afdzc.lockfile-3.0.post1.tar.gz"
     sha256 "adb2ee6d9e6a2333c91178dcb2c9b96a5744c78edb7712dc784a7d75648e81ec"
   end
 
   resource "zipp" do
-    url "https:files.pythonhosted.orgpackages3f50bad581df71744867e9468ebd0bcd6505de3b275e06f202c2cb016e3ff56fzipp-3.21.0.tar.gz"
-    sha256 "2c9958f6430a2040341a52eb608ed6dd93ef4392e02ffe219417c1b28b5dd1f4"
+    url "https:files.pythonhosted.orgpackagese3020f2892c661036d50ede074e376733dca2ae7c6eb617489437771209d4180zipp-3.23.0.tar.gz"
+    sha256 "a07157588a12518c9d4034df3fbbee09c814741a33ff63c05fa29d26a2404166"
   end
 
   def install

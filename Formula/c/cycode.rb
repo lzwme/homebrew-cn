@@ -3,24 +3,36 @@ class Cycode < Formula
 
   desc "Boost security in your dev lifecycle via SAST, SCA, Secrets & IaC scanning"
   homepage "https:github.comcycodehqcycode-cli"
-  url "https:files.pythonhosted.orgpackages98e10b87e092c2a05a193628b9f28fb4f243f2498f87a726b2262aae67e92e30cycode-3.1.0.tar.gz"
-  sha256 "de26d4df0f6a92df89923c87c6c46d244d944d2a092ea4a661ee866092fccb84"
+  url "https:files.pythonhosted.orgpackages5d0e218047f13e200fcd1b7f372bf9b10b64a18cb1b66da798fb2ac8a937d4f6cycode-3.2.0.tar.gz"
+  sha256 "b35b17ad7dfbf114997b2c916d3ed7420361483d88f0fdca5eb65028469a8420"
   license "MIT"
-  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "d8256c7cad464c9dcf03709ffe984ceeb49d5457e20ef83ccd360dd21ab1c328"
-    sha256 cellar: :any,                 arm64_sonoma:  "120feb325d4f26cf9044be31f676df468bdc5b0315c2a1210677a3aa00b65231"
-    sha256 cellar: :any,                 arm64_ventura: "f7625b6f93d23574b55583fbcfb8f2fd50efaa92bf6cb18968f94100618e14d2"
-    sha256 cellar: :any,                 sonoma:        "c38883e8a4ea5cd80e390950f6ba4ed896c24ed69290fb57aad23c29dc814cdf"
-    sha256 cellar: :any,                 ventura:       "f3e700e27dd382bfa91aba28afdc319834f0a1becb557893896e04f0512f553f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e3662b040eccb1c3a378c7bcda31d5468e48391cf8fafad09036dafd9744b36d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "940b0749abc389d80a83c75fb6458fd12492e25d4103742b1b7ebc75be3eb551"
+    sha256 cellar: :any,                 arm64_sequoia: "f7fec9e423c39ab687bb100806b1203b6e427484e3821cfbdddd4e9e9705eb52"
+    sha256 cellar: :any,                 arm64_sonoma:  "e1053ca4a7599bab9bcfd9ff865691b05801788b473fd6780d5d22acedcaa8ac"
+    sha256 cellar: :any,                 arm64_ventura: "d4a3e87db4ff728c253d787d9587fde78a140c390e08c84e30b72171e41566c5"
+    sha256 cellar: :any,                 sonoma:        "600e15f10e6f6e9738c6cda1ec809cd7f906dffb27770df4589b710666f11311"
+    sha256 cellar: :any,                 ventura:       "c544c07f34dd5c82cfe58bbedb389152193377aa8b5045d63b2da38aa7bee5ce"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ae2a001def524a92a566a55d7d7af5aa48d8085bfd25a6641f8ff4c8b3f9b727"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a267c0fa3ed8cffa5bcc85e7642c0679f8d58f6f5ac1fd9a16ac8ac52e978df8"
   end
 
+  depends_on "maturin" => :build # for mcp
+  depends_on "pkgconf" => :build
+  depends_on "rust" => :build # for mcp, upstream bug report, https:github.comPyO3maturinissues2642
   depends_on "certifi"
   depends_on "libyaml"
   depends_on "python@3.13"
+
+  resource "annotated-types" do
+    url "https:files.pythonhosted.orgpackagesee67531ea369ba64dcff5ec9c3402f9f51bf748cec26dde048a2f973a4eea7f5annotated_types-0.7.0.tar.gz"
+    sha256 "aff07c09a53a08bc8cfccb9c85b05f1aa9a2a6f23728d790723543408344ce89"
+  end
+
+  resource "anyio" do
+    url "https:files.pythonhosted.orgpackages957d4c1bd541d4dffa1b52bd83fb8527089e097a106fc90b467a7313b105f840anyio-4.9.0.tar.gz"
+    sha256 "673c0c244e15788651a4ff38710fea9675823028a6f08a5eda409e0c9840a028"
+  end
 
   resource "arrow" do
     url "https:files.pythonhosted.orgpackages2e000f6e8fcdb23ea632c866620cc872729ff43ed91d284c866b515c6342b173arrow-1.3.0.tar.gz"
@@ -62,6 +74,26 @@ class Cycode < Formula
     sha256 "c87e30b26253bf5418b01b0660f818967f3c503193838337fe5e573331249269"
   end
 
+  resource "h11" do
+    url "https:files.pythonhosted.orgpackages01ee02a2c011bdab74c6fb3c75474d40b3052059d95df7e73351460c8588d963h11-0.16.0.tar.gz"
+    sha256 "4e35b956cf45792e4caa5885e69fba00bdbc6ffafbfa020300e549b208ee5ff1"
+  end
+
+  resource "httpcore" do
+    url "https:files.pythonhosted.orgpackages069482699a10bca87a5556c9c59b5963f2d039dbd239f25bc2a63907a05a14cbhttpcore-1.0.9.tar.gz"
+    sha256 "6e34463af53fd2ab5d807f399a9b45ea31c3dfa2276f15a2c3f00afff6e176e8"
+  end
+
+  resource "httpx" do
+    url "https:files.pythonhosted.orgpackagesb1df48c586a5fe32a0f01324ee087459e112ebb7224f646c0b5023f5e79e9956httpx-0.28.1.tar.gz"
+    sha256 "75e98c5f16b0f35b567856f597f06ff2270a374470a5c2392242528e3e3e42fc"
+  end
+
+  resource "httpx-sse" do
+    url "https:files.pythonhosted.orgpackages4c608f4281fa9bbf3c8034fd54c0e7412e66edbab6bc74c4996bd616f8d0406ehttpx-sse-0.4.0.tar.gz"
+    sha256 "1e81a3a3070ce322add1d3529ed42eb5f70817f45ed6ec915ab753f961139721"
+  end
+
   resource "idna" do
     url "https:files.pythonhosted.orgpackagesf1707703c29685631f5a7590aa73f1f1d3fa9a380e654b86af429e0934a32f7didna-3.10.tar.gz"
     sha256 "12f65c9b470abda6dc35cf8e63cc574b1c52b11df2c86030af0ac09b01b13ea9"
@@ -75,6 +107,11 @@ class Cycode < Formula
   resource "marshmallow" do
     url "https:files.pythonhosted.orgpackages7040faa10dc4500bca85f41ca9d8cefab282dd23d0fcc7a9b5fab40691e72e76marshmallow-3.22.0.tar.gz"
     sha256 "4972f529104a220bb8637d595aa4c9762afbe7f7a77d82dc58c1615d70c5823e"
+  end
+
+  resource "mcp" do
+    url "https:files.pythonhosted.orgpackagesf2df8fefc0c6c7a5c66914763e3ff3893f9a03435628f6625d5e3b0dc45d73dbmcp-1.9.3.tar.gz"
+    sha256 "587ba38448e81885e5d1b84055cfcc0ca56d35cd0c58f50941cab01109405388"
   end
 
   resource "mdurl" do
@@ -92,6 +129,21 @@ class Cycode < Formula
     sha256 "52fd46ee46f6c8667692682c1fd7134edc65a2d2d084ebec1d295a6087fc0291"
   end
 
+  resource "pydantic" do
+    url "https:files.pythonhosted.orgpackagesf0868ce9040065e8f924d642c58e4a344e33163a07f6b57f836d0d734e0ad3fbpydantic-2.11.5.tar.gz"
+    sha256 "7f853db3d0ce78ce8bbb148c401c2cdd6431b3473c0cdff2755c7690952a7b7a"
+  end
+
+  resource "pydantic-core" do
+    url "https:files.pythonhosted.orgpackagesad885f2260bdfae97aabf98f1778d43f69574390ad787afb646292a638c923d4pydantic_core-2.33.2.tar.gz"
+    sha256 "7cb8bc3605c29176e1b105350d2e6474142d7c1bd1d9327c4a9bdb46bf827acc"
+  end
+
+  resource "pydantic-settings" do
+    url "https:files.pythonhosted.orgpackages671d42628a2c33e93f8e9acbde0d5d735fa0850f3e6a2f8cb1eb6c40b9a732acpydantic_settings-2.9.1.tar.gz"
+    sha256 "c509bf79d27563add44e8446233359004ed85066cd096d8b510f715e6ef5d268"
+  end
+
   resource "pygments" do
     url "https:files.pythonhosted.orgpackages7c2dc3338d48ea6cc0feb8446d8e6937e1408088a72a39937982cc6111d17f84pygments-2.19.1.tar.gz"
     sha256 "61c16d2a8576dc0649d9f39e089b5f02bcd27fba10d8fb4dcc28173f7a45151f"
@@ -105,6 +157,16 @@ class Cycode < Formula
   resource "python-dateutil" do
     url "https:files.pythonhosted.orgpackages66c00c8b6ad9f17a802ee498c46e004a0eb49bc148f2fd230864601a86dcf6dbpython-dateutil-2.9.0.post0.tar.gz"
     sha256 "37dd54208da7e1cd875388217d5e00ebd4179249f90fb72437e91a35459a0ad3"
+  end
+
+  resource "python-dotenv" do
+    url "https:files.pythonhosted.orgpackages882c7bb1416c5620485aa793f2de31d3df393d3686aa8a8506d11e10e13c5bafpython_dotenv-1.1.0.tar.gz"
+    sha256 "41f90bc6f5f177fb41f53e87666db362025010eb28f60a01c9143bfa33a2b2d5"
+  end
+
+  resource "python-multipart" do
+    url "https:files.pythonhosted.orgpackagesf387f44d7c9f274c7ee665a29b885ec97089ec5dc034c7f3fafa03da9e39a09epython_multipart-0.0.20.tar.gz"
+    sha256 "8dd0cab45b8e23064ae09147625994d090fa46f5b0d1e13af944c331a7fa9d13"
   end
 
   resource "pyyaml" do
@@ -142,6 +204,21 @@ class Cycode < Formula
     sha256 "26ea65a03958fa0c8a1c7e8c7a58fdc77221b8910f6be2131affade476898ad5"
   end
 
+  resource "sniffio" do
+    url "https:files.pythonhosted.orgpackagesa287a6771e1546d97e7e041b6ae58d80074f81b7d5121207425c964ddf5cfdbdsniffio-1.3.1.tar.gz"
+    sha256 "f4324edc670a0f49750a81b895f35c3adb843cca46f0530f79fc1babb23789dc"
+  end
+
+  resource "sse-starlette" do
+    url "https:files.pythonhosted.orgpackages8cf4989bc70cb8091eda43a9034ef969b25145291f3601703b82766e5172dfedsse_starlette-2.3.6.tar.gz"
+    sha256 "0382336f7d4ec30160cf9ca0518962905e1b69b72d6c1c995131e0a703b436e3"
+  end
+
+  resource "starlette" do
+    url "https:files.pythonhosted.orgpackages8bd00332bd8a25779a0e2082b0e179805ad39afad642938b371ae0882e7f880dstarlette-0.47.0.tar.gz"
+    sha256 "1f64887e94a447fed5f23309fb6890ef23349b7e478faa7b24a851cd4eb844af"
+  end
+
   resource "tenacity" do
     url "https:files.pythonhosted.orgpackagescd9491fccdb4b8110642462e653d5dcb27e7b674742ad68efd146367da7bdb10tenacity-9.0.0.tar.gz"
     sha256 "807f37ca97d62aa361264d497b0e31e92b8027044942bfa756160d908320d73b"
@@ -162,9 +239,19 @@ class Cycode < Formula
     sha256 "8676b788e32f02ab42d9e7c61324048ae4c6d844a399eebace3d4979d75ceef4"
   end
 
+  resource "typing-inspection" do
+    url "https:files.pythonhosted.orgpackagesf8b10c11f5058406b3af7609f121aaa6b609744687f1d158b3c3a5bf4cc94238typing_inspection-0.4.1.tar.gz"
+    sha256 "6ae134cc0203c33377d43188d4064e9b357dba58cff3185f22924610e70a9d28"
+  end
+
   resource "urllib3" do
     url "https:files.pythonhosted.orgpackagesc89365e479b023bbc46dab3e092bda6b0005424ea3217d711964ccdede3f9b1burllib3-1.26.19.tar.gz"
     sha256 "3e3d753a8618b86d7de333b4223005f68720bcd6a7d2bcb9fbd2229ec7c1e429"
+  end
+
+  resource "uvicorn" do
+    url "https:files.pythonhosted.orgpackagesdead713be230bcda622eaa35c28f0d328c3675c371238470abdea52417f17a8euvicorn-0.34.3.tar.gz"
+    sha256 "35919a9a979d7a59334b6b10e05d77c1d0d574c50e0fc98b8b1a0f165708b55a"
   end
 
   def install

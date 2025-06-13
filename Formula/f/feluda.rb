@@ -1,8 +1,8 @@
 class Feluda < Formula
   desc "Detect license usage restrictions in your project"
   homepage "https:github.comanistarkfeluda"
-  url "https:github.comanistarkfeludaarchiverefstags1.7.0.tar.gz"
-  sha256 "6f0fadf5133ddd0d7090d5cca85fbee742335942798a5d836e47f81cb41aa34a"
+  url "https:github.comanistarkfeludaarchiverefstags1.8.5.tar.gz"
+  sha256 "9e86ac73fe7aaada534992523b4f0a2ea7bbe44d5e89d0eec9dd898f77101bb4"
   license "MIT"
   head "https:github.comanistarkfeluda.git", branch: "main"
 
@@ -15,21 +15,20 @@ class Feluda < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "993b270638508c78a6ba5ec743c412d54732a6d138f02702aa9c389aad846c03"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "06b82c986266201e1e4e1b9523cc48e9614ffc4c94b926788ba5f3ad56d7f28e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "ec4b90283a9ab6f42d981d58313b7349a64a0d1747da6db711f88942423f1d9a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5f16a7a9eafc9cab27629c67a52006019fe2f5889ab067ef94bf057145b73b02"
-    sha256 cellar: :any_skip_relocation, ventura:       "4ad15cfb4d122c11d7702c092cbbd73cd3529505880001060f899f690d2069f4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4dd79e99b0e2be326a6f473cae8cf9f507b5dbf37d91d575d12062c0accf52fe"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "26d6c8c23cf54febb03d27e7e32613c91d39e2dcc87abfb2b5c9a9f5d4042c76"
+    sha256 cellar: :any,                 arm64_sequoia: "7e5d5ffe04a61b5a2be726c0d33955b4dd396ac079ac51c53989cf66bf158551"
+    sha256 cellar: :any,                 arm64_sonoma:  "2684a98b4166644cce073427df959de870322677951f169dc2c9177682d1df6f"
+    sha256 cellar: :any,                 arm64_ventura: "22c15356dc7fbb1d50a015b638d0cca1db7846fc5b1d1c38c521b9af82bb3b38"
+    sha256 cellar: :any,                 sonoma:        "bcedc4844a1b9de4cfecf625d055793aab33a80b4a9f627d31a2c71691e5a378"
+    sha256 cellar: :any,                 ventura:       "758820c3d717503668641fc5964c96df74b26abdb768915652a7b7eae28e2f27"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "94c6a7bc2d8ac6628b86135a34498611ce1f5db541dfdda687ce3c1c1e3f66a7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7d6dc544d9ad47de8fc92e360870a417ed62adb69bc228f3ac7b7c2c74e9f06e"
   end
 
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
+  depends_on "openssl@3"
 
-  on_linux do
-    depends_on "openssl@3"
-  end
+  uses_from_macos "zlib"
 
   def install
     system "cargo", "install", *std_cargo_args

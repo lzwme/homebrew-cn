@@ -9,7 +9,7 @@ cask "squirrel" do
   homepage "https:rime.im"
 
   livecheck do
-    url "https:rime.github.ioreleasesquirrelappcast.xml"
+    url "https:rime.imreleasesquirrelappcast.xml"
     strategy :sparkle
   end
 

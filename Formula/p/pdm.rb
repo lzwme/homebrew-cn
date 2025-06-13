@@ -6,16 +6,17 @@ class Pdm < Formula
   url "https:files.pythonhosted.orgpackages328cff7e0c846c573771001a207346cf6c6fb1902f2d530fb1e44d8fda0ca3c7pdm-2.24.2.tar.gz"
   sha256 "ce0d5e9005fe26238b8ba5cf0e37ac00acab2fb90f904bf0219a5e8445849dfb"
   license "MIT"
+  revision 1
   head "https:github.compdm-projectpdm.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c1ab08d63794b13b6806964c200441378201dea00cfa89d68c5624f81d860bb3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c85958fab0f122ffa3f05d36436d5368db94ddb92b8c259675957b71ad1fde9a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "8169cd21d82838cff6da1c59f0070735764c7a4c7170d9196718e34cff44fa25"
-    sha256 cellar: :any_skip_relocation, sonoma:        "71c18dadb57b9e384d1773abed1dc2226f4de410054c732802a9eb0c90dd150f"
-    sha256 cellar: :any_skip_relocation, ventura:       "5196886d1dd030d3998852c87837f6d6e743cb3eefef01ac6f61a14fe999281c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "edf15b71c5d669646d5fc9ae155b0df2b8df1f2a0f2aab17afa9cf6971a46451"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "85f91d260cbe9660d1283ed4bb46371377058ab8f925d440246eb81f424d9ec1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ad04c15a02f9aa4efd167658b0cd2122db6c406d276b42e8897a4c5551b06be7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "976a1cf61781b282c81e703154b792387dfa7bdff66dcb5f39d7dc6dc992e7a0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "51a500c9c003b7268d58ba2761eed13b7b0d95c00f5e9463a42a334ae230f571"
+    sha256 cellar: :any_skip_relocation, sonoma:        "38319338f91ca8b905f984e62aa296c6007dd6abd273e4abb600f132a943b0ee"
+    sha256 cellar: :any_skip_relocation, ventura:       "413a614d653916d235c55449355c4fce160c9d86fb93b5f6454a1912ea0b27d8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "591ed7efb5a9c560f75c668704c4424a6d4e3574b02348f2eb19cf92aaa573b4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4125382a825827845b393e205e3b0d5bab4a931426b4a6d0676e551018f07c3a"
   end
 
   depends_on "certifi"
@@ -112,8 +113,8 @@ class Pdm < Formula
   end
 
   resource "pbs-installer" do
-    url "https:files.pythonhosted.orgpackagesdc119c36105d532d19bc2553d3473c5c1bc6b148e269622a64efb8c7dbf4e4e8pbs_installer-2025.5.17.tar.gz"
-    sha256 "8e319b17662ae583e607d5fd46900cb2a7b31ee9ae0c695126c1b9b38e6a78a0"
+    url "https:files.pythonhosted.orgpackages3956014f660dbe4e5497c07640fe9d3e46189a8e0af29b77d59e362bce034f83pbs_installer-2025.6.10.tar.gz"
+    sha256 "31737014878c778f8c2d03d6a2a240bff37c56c25acf90f5b14f1a75f5b703b4"
   end
 
   resource "platformdirs" do
@@ -137,8 +138,8 @@ class Pdm < Formula
   end
 
   resource "requests" do
-    url "https:files.pythonhosted.orgpackages63702bf7780ad2d390a8d301ad0b550f1581eadbd9a20f896afe06353c2a2913requests-2.32.3.tar.gz"
-    sha256 "55365417734eb18255590a9ff9eb97e9e1da868d4ccd6402399eaf68af20a760"
+    url "https:files.pythonhosted.orgpackagese10a929373653770d8a0d7ea76c37de6e41f11eb07559b103b1c02cafb3f7cf8requests-2.32.4.tar.gz"
+    sha256 "27d0316682c8a29834d3264820024b62a36942083d52caf2f14c0591336d3422"
   end
 
   resource "resolvelib" do
@@ -167,8 +168,8 @@ class Pdm < Formula
   end
 
   resource "tomlkit" do
-    url "https:files.pythonhosted.orgpackagesb109a439bec5888f00a54b8b9f05fa94d7f901d6735ef4e55dcec9bc37b5d8fatomlkit-0.13.2.tar.gz"
-    sha256 "fff5fe59a87295b278abd31bec92c15d9bc4a06885ab12bcea52c71119392e79"
+    url "https:files.pythonhosted.orgpackagescc180bbf3884e9eaa38819ebe46a7bd25dcd56b67434402b66a58c4b8e552575tomlkit-0.13.3.tar.gz"
+    sha256 "430cf247ee57df2b94ee3fbe588e71d362a941ebb545dec29b53961d61add2a1"
   end
 
   resource "truststore" do

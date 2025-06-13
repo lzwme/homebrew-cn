@@ -8,6 +8,7 @@ cask "hacker-menu" do
   homepage "https:github.comowentherealhacker-menu"
 
   deprecate! date: "2024-06-12", because: :unmaintained
+  disable! date: "2025-06-12", because: :unmaintained
 
   app "Hacker Menu.app"
 
@@ -19,4 +20,8 @@ cask "hacker-menu" do
     "~LibraryPreferencescom.electron.hacker_menu.plist",
     "~LibrarySaved Application Statecom.electron.hacker_menu.savedState",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

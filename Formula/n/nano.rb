@@ -1,8 +1,8 @@
 class Nano < Formula
   desc "Free (GNU) replacement for the Pico text editor"
   homepage "https://www.nano-editor.org/"
-  url "https://www.nano-editor.org/dist/v8/nano-8.4.tar.xz"
-  sha256 "5ad29222bbd55624d87ea677928b3106a743114d6c6f9b41f36c97be2a8e628d"
+  url "https://www.nano-editor.org/dist/v8/nano-8.5.tar.xz"
+  sha256 "000b011d339c141af9646d43288f54325ff5c6e8d39d6e482b787bbc6654c26a"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -11,13 +11,13 @@ class Nano < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "d2f5ea1b33cec52869da9ca76f2965254dc1b85fcf496d5754353ccadafc4bbd"
-    sha256 arm64_sonoma:  "f17394e1f1723dea883838a5ffe80ca4d2936d90aec0ae978e1b170b99153286"
-    sha256 arm64_ventura: "ccc99590f0bb5322c290c25da9df6ee50afeabcc7b46a0c5307ab46826363232"
-    sha256 sonoma:        "8b32bd52654b34f36b0467c708682bc36e9ab88f136fc03c0ad420c757295b77"
-    sha256 ventura:       "861c213bcbcfda215fd4e12957b8f06f2bb18e6b5f5f75e0b3e86e4f9dff9e67"
-    sha256 arm64_linux:   "8eb34575f7aa47e1076a9c9225bd9997171f4a6db9961c5064bdcf7c993653f8"
-    sha256 x86_64_linux:  "3fcf803e2e1e8b8b732f97bc45d1df1ce043f1a5cc3023194195dc53ac415627"
+    sha256 arm64_sequoia: "a2c6f7d2abf651c5e9fa12e464738db4d7cf3ed3ada7d9ad0a13a2d9fce66b39"
+    sha256 arm64_sonoma:  "dbbdc447e9a165a723e5f2395804c8fd824bea746527e34fde490d0a87b29bca"
+    sha256 arm64_ventura: "c24147006511132f233eaa658ae8a61e66ca4acddf7714b63685ac49256f5940"
+    sha256 sonoma:        "3eeade09e4f74e9bd34d74fa7fbc6e761a342bc2035e659bce0dff2b36426c5d"
+    sha256 ventura:       "cdfadb0cfa473d0c65b40f2436af6a917f0c8c02014b329b685e2adfd16a0c8c"
+    sha256 arm64_linux:   "e710f0ffc9b17c3ab17a5feef2ba81f66adf0f2c93847c70bcb880f720578c2a"
+    sha256 x86_64_linux:  "3182fc3818321fe0b974a25b53684f4209fb8711498ebbda81bd9739affce571"
   end
 
   depends_on "pkgconf" => :build

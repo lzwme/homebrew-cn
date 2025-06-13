@@ -3,19 +3,18 @@ class Dvc < Formula
 
   desc "Git for data science projects"
   homepage "https:dvc.org"
-  url "https:files.pythonhosted.orgpackagesdb6d0cf6feca9d2100d470ab8d276961a96eb7fe462a47e46e1a69e8697ccaa0dvc-3.60.0.tar.gz"
-  sha256 "b334bad4301c69f59dd4ad036df76bc84eff6be63e621ed3cc9b3c6bbf92a2eb"
+  url "https:files.pythonhosted.orgpackages4a9c15060558c132a05d973fc8cb94a31eabb319c43d050945f2917c75ede3e1dvc-3.60.1.tar.gz"
+  sha256 "fe126823d22d0e51115ba695ccbbfac66a4163ff582a2541d7f4599464056ece"
   license "Apache-2.0"
-  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "6c3a46439ea572c12876d49eedc6ecc383ce81ba0a4b0369aeeb3fe039888dde"
-    sha256 cellar: :any,                 arm64_sonoma:  "a23ecaec7d010f377f635d8125b077e154ead4e6355584711d94c4069d4f9523"
-    sha256 cellar: :any,                 arm64_ventura: "9a34f7e84c702dcb4944ec4d91163d61cd45819efcbe15621c6a4d13cafc720c"
-    sha256 cellar: :any,                 sonoma:        "ca09fa0e7bd4d0267ed992ce0837d8905497084443961238caaacc7b308d2f00"
-    sha256 cellar: :any,                 ventura:       "34421b301d9c8346f9239dd635ea936b9aec9a6df854a61c6d99258a00712e75"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "99805f171264d8d4efea9f890240efc284bf8189a2cfd63b9475b3fe753a9368"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b18ad5f957ecee80a834f7f51e2ffdb9585b4ad1baa4d7bdd2b5c44ffac953bb"
+    sha256 cellar: :any,                 arm64_sequoia: "33a2d31dedcd018c94bd147cd270ceeab1e73b9b82cb4d7491604e99e6946b04"
+    sha256 cellar: :any,                 arm64_sonoma:  "1fddeee1191fd9558c1db7ae466e2107785615457501019f2f8e1e5b5803a356"
+    sha256 cellar: :any,                 arm64_ventura: "ccd27635ef9dc583f927ea5baf68c960263fde7f38d9d5d3d1923ec78f2736e5"
+    sha256 cellar: :any,                 sonoma:        "e3ee163f769ae9821d041aba81d3d974c2ec3bd8b47102a1b56dbf37ad41a9ad"
+    sha256 cellar: :any,                 ventura:       "2214c49a37c54a5e8671b0aa71109ddae080ba381cbdf7e1b2a1c8881f2f48bf"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b025b7edcd3bcbdc1122743531be1ca62b112f1eccb42c93d3264776357a812a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d808072c693d7ab1adbfb93f6b7e806cf35ab21846948c7ce83f7d4dfc9c653a"
   end
 
   depends_on "cmake" => :build # for pyarrow

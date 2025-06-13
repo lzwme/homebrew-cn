@@ -3,29 +3,32 @@ class Oterm < Formula
 
   desc "Terminal client for Ollama"
   homepage "https:github.comggozadoterm"
-  url "https:files.pythonhosted.orgpackages44447abc0b2149584545cea96c6d8fd9b14f800c7d1bd7ca9a9c45439084402coterm-0.13.1.tar.gz"
-  sha256 "ef01161329198d116d291b6c01ec60457f4e4465e185b8dad94c3c3de03f6b09"
+  url "https:files.pythonhosted.orgpackagesd125f242536cc12d4acdcaf0764c7b168fffc221d787ddacd914dca6d29153e7oterm-0.14.0.tar.gz"
+  sha256 "8a08b77012ff95ff47caec6a65d410733041d2046efffe56ba4af58c1ce8b592"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "7cdca9e3927ffac2a1e874a1b168eb2b8f5a2f43b6a3319a34f7704c6a1268cd"
-    sha256 cellar: :any,                 arm64_sonoma:  "73736388f0eef2db048f6cf8bedcb206d6f28f230c178e40cfff68d9d2606c26"
-    sha256 cellar: :any,                 arm64_ventura: "89426afa4aa82b3062e4e10be85c7797869b0b0cdd9157ed38b9955d55d17b39"
-    sha256 cellar: :any,                 sonoma:        "813fe5c694dc0fbea60980453bb1cc4e5717848d2863f357327d2d99740dbb08"
-    sha256 cellar: :any,                 ventura:       "0c88bbe24151cac4abf329855534ad732129b90cc46c0a7474e5de02a6e915e3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "32f0b0ced4878dbaebede3ba439d1e9b5a530ff15939d95511722a26f71d9b4e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "93ab4da9f391817818017a675a1555dec42b32643500a0377660e62c8611f619"
+    sha256 cellar: :any,                 arm64_sequoia: "d00693e311c375bcfdc7ebaa4c4c3a7785a91ed2430ebd66c5231a6faf85b260"
+    sha256 cellar: :any,                 arm64_sonoma:  "688099b24e24ba4c9070d75588ca5c1e1f0ce8a6b32b7cd55f3eb337e0bf6095"
+    sha256 cellar: :any,                 arm64_ventura: "9b322a2eebe346ce0637681f43628dde2a4991573eb22a878525fe12e78576e3"
+    sha256 cellar: :any,                 sonoma:        "20b894af729db7c114a3ffbafec0124646da0907a877b37fdf183aaa10c951c4"
+    sha256 cellar: :any,                 ventura:       "1068f96b730f967fd442ca306a909be1af40657b97c9d4f82b66bb9c0d693c6d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ba7427ad11333b77d053cec081166a13497cefb8d79a53d093255534c9833946"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "17f82762d825c9180d13f159606fda0c241905af2eaaf6a478fee9a9ca15e0b7"
   end
 
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "certifi"
+  depends_on "cffi"
+  depends_on "cryptography"
   depends_on "freetype"
   depends_on "jpeg-turbo"
   depends_on "libraqm"
   depends_on "libtiff"
   depends_on "little-cms2"
   depends_on "openjpeg"
+  depends_on "pycparser"
   depends_on "python@3.13"
 
   uses_from_macos "zlib"
@@ -50,6 +53,11 @@ class Oterm < Formula
     sha256 "673c0c244e15788651a4ff38710fea9675823028a6f08a5eda409e0c9840a028"
   end
 
+  resource "authlib" do
+    url "https:files.pythonhosted.orgpackagesa29db1e08d36899c12c8b894a44a5583ee157789f26fc4b176f8e4b6217b56e1authlib-1.6.0.tar.gz"
+    sha256 "4367d32031b7af175ad3a323d571dc7257b7099d55978087ceae4a0d88cd3210"
+  end
+
   resource "click" do
     url "https:files.pythonhosted.orgpackagesb92e0090cbf739cee7d23781ad4b89a9894a41538e4fcf4c31dcdd705b78eb8bclick-8.1.8.tar.gz"
     sha256 "ed53c9d8990d83c2a27deae68e4ee337473f6330c040a31d4225c9574d16096a"
@@ -61,8 +69,8 @@ class Oterm < Formula
   end
 
   resource "fastmcp" do
-    url "https:files.pythonhosted.orgpackages20ccd2c0e63d2b34681bef4e077611dae662ea722add13a83dc4ae08b6e0fd23fastmcp-2.5.2.tar.gz"
-    sha256 "761c92fb54f561136f631d7d98b4920152978f6f0a66a4cef689a7983fd05c8b"
+    url "https:files.pythonhosted.orgpackages8da3d5b2c47b25d13cca8108e077bf4a72b255b113fb525f4c22ce9ca5af9b08fastmcp-2.8.0.tar.gz"
+    sha256 "8a6427ece23d0a324d4be2043598c8b89a91b2b5688873d8ae1e7aeaa7960513"
   end
 
   resource "h11" do
@@ -101,8 +109,8 @@ class Oterm < Formula
   end
 
   resource "mcp" do
-    url "https:files.pythonhosted.orgpackagesf2df8fefc0c6c7a5c66914763e3ff3893f9a03435628f6625d5e3b0dc45d73dbmcp-1.9.3.tar.gz"
-    sha256 "587ba38448e81885e5d1b84055cfcc0ca56d35cd0c58f50941cab01109405388"
+    url "https:files.pythonhosted.orgpackages06f2dc2450e566eeccf92d89a00c3e813234ad58e2ba1e31d11467a09ac4f3b9mcp-1.9.4.tar.gz"
+    sha256 "cfb0bcd1a9535b42edaef89947b9e18a8feb49362e1cc059d6e7fc636f2cb09f"
   end
 
   resource "mdit-py-plugins" do
@@ -238,11 +246,6 @@ class Oterm < Formula
   resource "uvicorn" do
     url "https:files.pythonhosted.orgpackagesdead713be230bcda622eaa35c28f0d328c3675c371238470abdea52417f17a8euvicorn-0.34.3.tar.gz"
     sha256 "35919a9a979d7a59334b6b10e05d77c1d0d574c50e0fc98b8b1a0f165708b55a"
-  end
-
-  resource "websockets" do
-    url "https:files.pythonhosted.orgpackages21e626d09fab466b7ca9c7737474c52be4f76a40301b08362eb2dbc19dcc16c1websockets-15.0.1.tar.gz"
-    sha256 "82544de02076bafba038ce055ee6412d68da13ab47f0c60cab827346de828dee"
   end
 
   def install
