@@ -8,6 +8,8 @@ cask "exist-db" do
   desc "Native XML database and application platform"
   homepage "https:exist-db.orgexistappshomepageindex.html"
 
+  no_autobump! because: :requires_manual_review
+
   app "eXist-db.app"
 
   zap trash: "~LibraryApplication Supportorg.exist"

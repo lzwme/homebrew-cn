@@ -7,6 +7,8 @@ cask "brisync" do
   desc "Utility to automatically control the brightness of external displays"
   homepage "https:github.comczarnyBrisync"
 
+  no_autobump! because: :requires_manual_review
+
   depends_on macos: ">= :sierra"
 
   app "Brisync.app"

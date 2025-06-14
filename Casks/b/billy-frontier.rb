@@ -8,6 +8,8 @@ cask "billy-frontier" do
   desc "Arcade style, cowboys in space themed action game from Pangea Software"
   homepage "https:jorio.itch.iobillyfrontier"
 
+  no_autobump! because: :requires_manual_review
+
   app "Billy Frontier.app"
   artifact "Instructions.pdf", target: "~LibraryApplication SupportBillyFrontierInstructions.pdf"
 

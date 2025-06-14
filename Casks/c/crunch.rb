@@ -7,6 +7,8 @@ cask "crunch" do
   desc "PNG image optimiser"
   homepage "https:github.comchrissimpkinsCrunch"
 
+  no_autobump! because: :requires_manual_review
+
   app "Crunch.app"
 
   zap trash: [

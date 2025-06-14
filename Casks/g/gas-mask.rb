@@ -7,6 +7,8 @@ cask "gas-mask" do
   desc "Hosts file editormanager"
   homepage "https:github.com2ndalphagasmask"
 
+  no_autobump! because: :requires_manual_review
+
   auto_updates true
 
   app "Gas Mask.app"

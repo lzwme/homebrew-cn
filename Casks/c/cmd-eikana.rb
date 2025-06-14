@@ -7,6 +7,8 @@ cask "cmd-eikana" do
   name "⌘英かな"
   homepage "https:github.comiMasanaricmd-eikana"
 
+  no_autobump! because: :requires_manual_review
+
   app "⌘英かな.app"
 
   zap trash: "~LibraryPreferencesio.github.imasanari.cmd-eikana.plist"

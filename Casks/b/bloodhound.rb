@@ -10,6 +10,8 @@ cask "bloodhound" do
   desc "Six Degrees of Domain Admin"
   homepage "https:github.comBloodHoundADBloodHound"
 
+  no_autobump! because: :requires_manual_review
+
   app "BloodHound-darwin-#{arch}BloodHound.app"
 
   zap trash: [

@@ -7,6 +7,8 @@ cask "amd-power-gadget" do
   desc "Power management, monitoring and VirtualSMC plugin for AMD processors"
   homepage "https:github.comtrulyspinachSMCAMDProcessor"
 
+  no_autobump! because: :requires_manual_review
+
   depends_on macos: ">= :high_sierra"
   depends_on arch: :x86_64
 

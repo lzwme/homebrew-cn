@@ -7,6 +7,8 @@ cask "cilicon" do
   desc "Self-Hosted ephemeral CI on Apple Silicon"
   homepage "https:github.comtraderepublicCilicon"
 
+  no_autobump! because: :requires_manual_review
+
   depends_on macos: ">= :ventura"
   depends_on arch: :arm64
 

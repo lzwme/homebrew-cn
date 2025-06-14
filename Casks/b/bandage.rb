@@ -11,6 +11,8 @@ cask "bandage" do
   desc "Bioinformatics app for navigating de novo assembly graphs"
   homepage "https:rrwick.github.ioBandage"
 
+  no_autobump! because: :requires_manual_review
+
   depends_on macos: ">= :big_sur"
 
   app "Bandage.app"

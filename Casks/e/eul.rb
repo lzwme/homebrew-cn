@@ -7,6 +7,8 @@ cask "eul" do
   desc "Status monitoring"
   homepage "https:github.comgao-suneul"
 
+  no_autobump! because: :requires_manual_review
+
   depends_on macos: ">= :catalina"
 
   app "eul.app"

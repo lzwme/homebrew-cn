@@ -7,6 +7,8 @@ cask "color-studio" do
   desc "Coherent colour scheme creator"
   homepage "https:github.combernaferraricolor-studio"
 
+  no_autobump! because: :requires_manual_review
+
   app "Color StudioColor Studio.app"
 
   zap trash: [

@@ -7,6 +7,8 @@ cask "aria2gui" do
   desc "Graphical user interface for Aria2"
   homepage "https:github.comyangshun1029aria2gui"
 
+  no_autobump! because: :requires_manual_review
+
   disable! date: "2024-12-16", because: :discontinued
 
   app "Aria2GUI.app"

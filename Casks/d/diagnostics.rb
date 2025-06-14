@@ -7,6 +7,8 @@ cask "diagnostics" do
   desc "Diagnostic (crash) reports viewer"
   homepage "https:github.commacmadeDiagnostics"
 
+  no_autobump! because: :requires_manual_review
+
   app "Diagnostics.app"
 
   zap trash: [

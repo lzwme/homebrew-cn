@@ -8,6 +8,8 @@ cask "ballast" do
   desc "Status Bar app to keep the audio balance from drifting"
   homepage "https:jamsinclair.nzballast"
 
+  no_autobump! because: :requires_manual_review
+
   depends_on macos: ">= :monterey"
 
   app "ballast.app"

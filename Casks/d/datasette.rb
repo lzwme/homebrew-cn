@@ -8,6 +8,8 @@ cask "datasette" do
   desc "Desktop application that wraps Datasette"
   homepage "https:datasette.iodesktop"
 
+  no_autobump! because: :requires_manual_review
+
   depends_on macos: ">= :high_sierra"
 
   app "Datasette.app"

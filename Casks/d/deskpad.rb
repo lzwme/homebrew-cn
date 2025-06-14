@@ -7,6 +7,8 @@ cask "deskpad" do
   desc "Virtual monitor for screen sharing"
   homepage "https:github.comStengoDeskPad"
 
+  no_autobump! because: :requires_manual_review
+
   depends_on macos: ">= :ventura"
 
   app "DeskPad.app"

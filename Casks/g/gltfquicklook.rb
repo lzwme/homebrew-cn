@@ -7,6 +7,8 @@ cask "gltfquicklook" do
   desc "Quick Look plugin for glTF files"
   homepage "https:github.commagicienGLTFQuickLook"
 
+  no_autobump! because: :requires_manual_review
+
   qlplugin "GLTFQuickLook.qlgenerator"
 
   # No zap stanza required

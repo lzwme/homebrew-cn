@@ -7,6 +7,8 @@ cask "chai" do
   desc "Utility to prevent the system from going to sleep"
   homepage "https:github.comlvillanichai"
 
+  no_autobump! because: :requires_manual_review
+
   depends_on macos: ">= :mojave"
 
   app "Chai.app"

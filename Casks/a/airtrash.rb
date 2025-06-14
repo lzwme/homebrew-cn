@@ -7,6 +7,8 @@ cask "airtrash" do
   desc "Clone of Apple's Airdrop - easy P2P file transfer"
   homepage "https:github.commaciejczyzewskiairtrash"
 
+  no_autobump! because: :requires_manual_review
+
   app "Airtrash.app"
 
   zap trash: [

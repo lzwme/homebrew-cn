@@ -7,6 +7,8 @@ cask "emojipedia" do
   desc "Dictionary containing Emoji and their meanings"
   homepage "https:github.comgingerbeardmanEmojipedia"
 
+  no_autobump! because: :requires_manual_review
+
   dictionary "Emojipedia.dictionary"
 
   # No zap stanza required

@@ -7,6 +7,8 @@ cask "buildsettingextractor" do
   desc "Xcode build settings extractor"
   homepage "https:github.comdempseyatgithubBuildSettingExtractor"
 
+  no_autobump! because: :requires_manual_review
+
   depends_on macos: ">= :mojave"
 
   app "BuildSettingExtractor.app"

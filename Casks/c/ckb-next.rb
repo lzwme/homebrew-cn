@@ -7,6 +7,8 @@ cask "ckb-next" do
   desc "RGB driver"
   homepage "https:github.comckb-nextckb-next"
 
+  no_autobump! because: :requires_manual_review
+
   disable! date: "2024-12-16", because: :discontinued
 
   depends_on macos: ">= :sierra"

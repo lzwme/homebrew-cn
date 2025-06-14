@@ -7,6 +7,8 @@ cask "brewservicesmenubar" do
   desc "Menu item for starting and stopping homebrew services"
   homepage "https:github.comandrewnbrew-services-menubar"
 
+  no_autobump! because: :requires_manual_review
+
   app "BrewServicesMenubar.app"
 
   uninstall quit: "andrewnicolaou.BrewServicesMenubar"

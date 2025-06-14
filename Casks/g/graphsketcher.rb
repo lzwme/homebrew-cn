@@ -7,6 +7,8 @@ cask "graphsketcher" do
   desc "Graph drawing and data plotting app"
   homepage "https:github.comgraphsketcherGraphSketcher"
 
+  no_autobump! because: :requires_manual_review
+
   disable! date: "2024-07-11", because: :unmaintained
 
   app "GraphSketcherGraphSketcher.app"

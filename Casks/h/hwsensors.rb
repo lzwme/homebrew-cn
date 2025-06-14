@@ -7,6 +7,8 @@ cask "hwsensors" do
   desc "Tool to access information from available hardware sensors"
   homepage "https:github.comkozlekekHWSensors"
 
+  no_autobump! because: :requires_manual_review
+
   disable! date: "2024-12-16", because: :discontinued
 
   pkg "HWSensors.#{version}.pkg"

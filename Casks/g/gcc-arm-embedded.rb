@@ -19,6 +19,8 @@ cask "gcc-arm-embedded" do
     regex(href=.*?arm-gnu-toolchain-(\d+\.\d+\.\w+)-darwin-(?:\w+)-arm-none-eabi\.pkgi)
   end
 
+  no_autobump! because: :requires_manual_review
+
   pkg "arm-gnu-toolchain-#{version}-darwin-#{arch}-arm-none-eabi.pkg"
   binary "ApplicationsArmGNUToolchain#{pkg_version}arm-none-eabibinarm-none-eabi-addr2line"
   binary "ApplicationsArmGNUToolchain#{pkg_version}arm-none-eabibinarm-none-eabi-ar"

@@ -13,6 +13,8 @@ cask "celestia" do
     regex(href=.*?celestia[._-]v?(\d+(?:\.\d+)+)[._-]macOS\.zipi)
   end
 
+  no_autobump! because: :requires_manual_review
+
   app "Celestia.app"
 
   zap trash: [

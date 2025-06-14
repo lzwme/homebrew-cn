@@ -7,6 +7,8 @@ cask "blurred" do
   desc "Utility to dim backgroundinactive content in the screen"
   homepage "https:github.comdwarvesfblurred"
 
+  no_autobump! because: :requires_manual_review
+
   depends_on macos: ">= :catalina"
 
   app "Blurred.app"

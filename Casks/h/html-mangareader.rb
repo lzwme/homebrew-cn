@@ -7,6 +7,8 @@ cask "html-mangareader" do
   desc "Lightweight offline CBZCBR and image viewer with full continuous scrolling"
   homepage "https:github.comluejerryhtml-mangareader"
 
+  no_autobump! because: :requires_manual_review
+
   app "HTML Mangareader.app"
 
   zap trash: [

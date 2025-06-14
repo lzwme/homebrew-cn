@@ -7,6 +7,8 @@ cask "edex-ui" do
   desc "Sci-fi themed terminal emulator and system monitor"
   homepage "https:github.comGitSquarededex-ui"
 
+  no_autobump! because: :requires_manual_review
+
   disable! date: "2024-12-16", because: :discontinued
 
   app "eDEX-UI.app"

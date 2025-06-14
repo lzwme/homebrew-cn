@@ -7,6 +7,8 @@ cask "capslocknodelay" do
   desc "Removes delay when pressing the caps lock"
   homepage "https:github.comgkpln3CapsLockNoDelay"
 
+  no_autobump! because: :requires_manual_review
+
   depends_on macos: ">= :catalina"
 
   app "CapsLockNoDelay.app"

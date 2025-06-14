@@ -7,6 +7,8 @@ cask "eloquent" do
   desc "Freeopen-source Bible study application, based on the SWORD Project"
   homepage "https:github.commdbergmannEloquent"
 
+  no_autobump! because: :requires_manual_review
+
   auto_updates true
 
   app "Eloquent.app"

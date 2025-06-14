@@ -12,6 +12,8 @@ cask "alacritty" do
     strategy :github_latest
   end
 
+  no_autobump! because: :requires_manual_review
+
   app "Alacritty.app"
   binary "#{appdir}Alacritty.appContentsMacOSalacritty"
   binary "#{appdir}Alacritty.appContentsResources61alacritty",

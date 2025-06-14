@@ -5683,7 +5683,7 @@ Homebrew-homebrew-core/Formula/q/quran.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/q/qwt-qt5.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/q/qwt.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/q/qxmpp.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/r/r.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/r/r.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/r3.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/ra-multiplex.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rabbitmq-c.rb, Homebrew/homebrew-core, 1
@@ -11567,7 +11567,6 @@ Homebrew-homebrew-cask/Casks/font/font-t/font-tiro-tamil.rb, Homebrew/homebrew-c
 Homebrew-homebrew-cask/Casks/font/font-t/font-tiro-telugu.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-t/font-titan-one.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-t/font-titillium-web.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/font/font-t/font-titillium.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-t/font-togalite.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-t/font-tomorrow.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-t/font-tourney.rb, Homebrew/homebrew-cask, 1
@@ -14541,6 +14540,7 @@ Homebrew-homebrew-cask/Casks/t/the-clock.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/the-unarchiver.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/the-unofficial-homestuck-collection.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/thebrain.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/t/thebrowsercompany-dia.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/thedesk.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/theiaide.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/thelowtechguys-cling.rb, Homebrew/homebrew-cask, 0

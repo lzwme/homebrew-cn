@@ -7,6 +7,8 @@ cask "graphiql" do
   desc "Light, Electron-based Wrapper around GraphiQL"
   homepage "https:github.comskevygraphiql-app"
 
+  no_autobump! because: :requires_manual_review
+
   deprecate! date: "2024-07-11", because: :unmaintained
 
   app "GraphiQL.app"

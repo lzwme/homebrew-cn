@@ -6,6 +6,8 @@ cask "helium" do
   name "Helium"
   homepage "https:github.comkoushsupport-wikiwikiHelium-Desktop-Installer-and-Android-App"
 
+  no_autobump! because: :requires_manual_review
+
   app "Helium.app"
 
   uninstall quit: "com.koushikdutta.Helium"

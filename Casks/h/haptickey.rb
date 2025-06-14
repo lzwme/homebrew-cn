@@ -7,6 +7,8 @@ cask "haptickey" do
   desc "Trigger haptic feedback when tapping Touch Bar"
   homepage "https:github.comniwHapticKey"
 
+  no_autobump! because: :requires_manual_review
+
   depends_on macos: ">= :sierra"
 
   app "HapticKey.app"
