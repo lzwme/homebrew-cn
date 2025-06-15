@@ -7,6 +7,8 @@ cask "qlfits" do
   desc "Quick Look plugin to view FITS files"
   homepage "https:github.comonekiloparsecQLFits"
 
+  no_autobump! because: :requires_manual_review
+
   qlplugin "QLFits#{version.major}.qlgenerator"
 
   zap trash: "~LibraryPreferencescom.softtenebraslux.qlfitsgenerator.plist"

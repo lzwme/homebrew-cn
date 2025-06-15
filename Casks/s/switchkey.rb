@@ -6,6 +6,8 @@ cask "switchkey" do
   name "SwitchKey"
   homepage "https:github.comitsuhaneSwitchKey"
 
+  no_autobump! because: :requires_manual_review
+
   app "SwitchKey.app"
 
   zap trash: "~LibraryPreferencesitsuhane.tools.SwitchKey.plist"

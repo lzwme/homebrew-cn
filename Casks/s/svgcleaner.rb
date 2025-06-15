@@ -7,6 +7,8 @@ cask "svgcleaner" do
   desc "Tool to clean up SVG files by removing unnecessary data"
   homepage "https:github.comRazrFalconsvgcleaner-gui"
 
+  no_autobump! because: :requires_manual_review
+
   disable! date: "2024-12-16", because: :discontinued
 
   conflicts_with formula: "svgcleaner"

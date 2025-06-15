@@ -17,6 +17,8 @@ cask "fvim" do
     end
   end
 
+  no_autobump! because: :requires_manual_review
+
   app "FVim.app"
 
   zap trash: "~LibrarySaved Application Statecom.fvim.www.savedState"

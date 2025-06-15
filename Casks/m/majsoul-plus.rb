@@ -6,6 +6,8 @@ cask "majsoul-plus" do
   name "Majsoul Plus"
   homepage "https:github.comMajsoulPlusmajsoul-plus"
 
+  no_autobump! because: :requires_manual_review
+
   app "Majsoul Plus.app"
 
   caveats do

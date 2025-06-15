@@ -8,6 +8,8 @@ cask "otto-matic" do
   desc "Science fiction 3D actionadventure game from Pangea Software"
   homepage "https:jorio.itch.ioottomatic"
 
+  no_autobump! because: :requires_manual_review
+
   app "Otto Matic.app"
   artifact "Documentation", target: "~LibraryApplication SupportOttoMatic"
 

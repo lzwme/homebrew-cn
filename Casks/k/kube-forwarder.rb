@@ -7,6 +7,8 @@ cask "kube-forwarder" do
   name "Kube Forwarder"
   homepage "https:kube-forwarder.pixelpoint.io"
 
+  no_autobump! because: :requires_manual_review
+
   # https:github.compixel-pointkube-forwarderissues100#issuecomment-1065111816
   deprecate! date: "2024-07-17", because: :unmaintained
 

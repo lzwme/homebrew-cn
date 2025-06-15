@@ -8,6 +8,8 @@ cask "free-ruler" do
   desc "Horizontal and vertical rulers"
   homepage "https:www.pascal.comfreeruler"
 
+  no_autobump! because: :requires_manual_review
+
   depends_on macos: ">= :mojave"
 
   app "Free Ruler.app"

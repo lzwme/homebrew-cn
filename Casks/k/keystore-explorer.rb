@@ -16,6 +16,8 @@ cask "keystore-explorer" do
     regex((\d+(?:\.\d+)+)i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   app "KeyStore Explorer.app"
 
   zap trash: "~LibrarySaved Application Stateorg.kse.keystore-explorer.savedState"

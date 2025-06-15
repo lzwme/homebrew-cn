@@ -7,6 +7,8 @@ cask "proxy-audio-device" do
   desc "Sound and audio controller"
   homepage "https:github.combriankendallproxy-audio-device"
 
+  no_autobump! because: :requires_manual_review
+
   app "Proxy Audio Device Settings.app"
   artifact "ProxyAudioDevice.driver", target: "LibraryAudioPlug-InsHALProxyAudioDevice.driver"
 

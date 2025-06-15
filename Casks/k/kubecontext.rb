@@ -7,6 +7,8 @@ cask "kubecontext" do
   desc "Menu bar app for managing Kubernetes contexts"
   homepage "https:github.comturkenhKubeContext"
 
+  no_autobump! because: :requires_manual_review
+
   depends_on macos: ">= :big_sur"
 
   app "KubeContext.app"

@@ -7,6 +7,8 @@ cask "mediainfoex" do
   desc "Display file information in Finder contextual menu"
   homepage "https:github.comsbarexMediaInfo"
 
+  no_autobump! because: :requires_manual_review
+
   depends_on macos: ">= :big_sur"
 
   app "MediaInfoEx.app"

@@ -7,6 +7,8 @@ cask "ksnip" do
   desc "Screenshot and annotation tool"
   homepage "https:github.comksnipksnip"
 
+  no_autobump! because: :requires_manual_review
+
   app "ksnip.app"
 
   zap trash: [

@@ -7,6 +7,8 @@ cask "themeengine" do
   desc "App to edit compiled .car files"
   homepage "https:github.comalexzielenskiThemeEngine"
 
+  no_autobump! because: :requires_manual_review
+
   deprecate! date: "2024-10-31", because: :unmaintained
 
   app "ThemeEngine.app"

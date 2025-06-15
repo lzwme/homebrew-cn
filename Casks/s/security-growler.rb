@@ -6,6 +6,8 @@ cask "security-growler" do
   name "Security Growler"
   homepage "https:github.compiratesecurity-growler"
 
+  no_autobump! because: :requires_manual_review
+
   disable! date: "2024-12-16", because: :discontinued
 
   app "Security Growler.app"

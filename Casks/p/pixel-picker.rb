@@ -7,6 +7,8 @@ cask "pixel-picker" do
   desc "Menu bar application to pick colours from your screen"
   homepage "https:github.comacheronfailpixel-picker"
 
+  no_autobump! because: :requires_manual_review
+
   depends_on macos: ">= :sierra"
 
   app "Pixel Picker.app"

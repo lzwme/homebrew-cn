@@ -7,6 +7,8 @@ cask "sparkplate" do
   desc "Features a test page for resolving human readable domains to crypto addresses"
   homepage "https:github.comGreenfireIncSparkplate.Vue"
 
+  no_autobump! because: :requires_manual_review
+
   depends_on macos: ">= :high_sierra"
 
   app "Sparkplate.app"

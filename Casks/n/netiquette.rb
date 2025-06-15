@@ -8,6 +8,8 @@ cask "netiquette" do
   desc "Network monitor"
   homepage "https:objective-see.orgproductsnetiquette.html"
 
+  no_autobump! because: :requires_manual_review
+
   depends_on macos: ">= :catalina"
 
   app "Netiquette.app"

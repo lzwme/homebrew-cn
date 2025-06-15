@@ -7,6 +7,8 @@ cask "trojanx" do
   desc "Mechanism to bypass the Great Firewall"
   homepage "https:github.comJimLee1996TrojanX"
 
+  no_autobump! because: :requires_manual_review
+
   deprecate! date: "2024-08-30", because: :unmaintained
 
   depends_on macos: ">= :el_capitan"

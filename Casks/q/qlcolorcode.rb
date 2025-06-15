@@ -7,6 +7,8 @@ cask "qlcolorcode" do
   desc "Quick Look plug-in that renders source code with syntax highlighting"
   homepage "https:github.comanthonygelibertQLColorCode"
 
+  no_autobump! because: :requires_manual_review
+
   depends_on macos: ">= :mojave"
 
   qlplugin "QLColorCode.qlgenerator"

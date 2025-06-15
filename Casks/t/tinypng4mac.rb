@@ -24,5 +24,7 @@ cask "tinypng4mac" do
   desc "TinyPNG client"
   homepage "https:github.comkyleduoTinyPNG4Mac"
 
+  no_autobump! because: :requires_manual_review
+
   zap trash: "~LibraryPreferencescom.kyleduo.tinypngmac.plist"
 end

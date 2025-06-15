@@ -13,6 +13,8 @@ cask "manuskript" do
     regex(href.*?manuskript[._-]v?(\d+(?:\.\d+)+)[._-]osx\.dmgi)
   end
 
+  no_autobump! because: :requires_manual_review
+
   app "manuskript.app"
 
   zap trash: [

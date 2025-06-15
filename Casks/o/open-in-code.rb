@@ -7,6 +7,8 @@ cask "open-in-code" do
   desc "Finder toolbar app to open current folder in Visual Studio Code"
   homepage "https:github.comsozercanOpenInCode"
 
+  no_autobump! because: :requires_manual_review
+
   deprecate! date: "2024-07-27", because: :unmaintained
 
   app "Open in Code.app"

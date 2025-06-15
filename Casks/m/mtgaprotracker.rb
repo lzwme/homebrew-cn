@@ -8,6 +8,8 @@ cask "mtgaprotracker" do
   desc "Advanced Magic: The Gathering Arena tracking tool"
   homepage "https:mtgarena.promtga-pro-tracker"
 
+  no_autobump! because: :requires_manual_review
+
   deprecate! date: "2024-07-27", because: :discontinued
 
   app "mtgaprotracker.app"

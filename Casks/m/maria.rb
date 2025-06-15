@@ -7,6 +7,8 @@ cask "maria" do
   desc "Appwidget for aria2 download tool"
   homepage "https:github.comshincurryMaria"
 
+  no_autobump! because: :requires_manual_review
+
   disable! date: "2024-12-16", because: :discontinued
 
   app "Maria.app"

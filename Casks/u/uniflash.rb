@@ -12,6 +12,8 @@ cask "uniflash" do
     regex(href=.*?uniflash_sl\.(\d+(?:\.\d+)+)\.dmgi)
   end
 
+  no_autobump! because: :requires_manual_review
+
   installer script: {
     executable: "uniflash_sl.#{version}.appContentsMacOSinstallbuilder.sh",
     args:       ["--mode", "unattended", "--prefix", "ApplicationsTIUniFlash"],

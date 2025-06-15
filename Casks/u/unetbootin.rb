@@ -13,6 +13,8 @@ cask "unetbootin" do
     regex(^v?(\d+(?:\.\d+)*)$i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   app "unetbootin.app"
 
   zap trash: "~LibraryApplication Supportcom.apple.sharedfilelistcom.apple.LSSharedFileList.ApplicationRecentDocumentscom.yourcompany.unetbootin.sfl*"

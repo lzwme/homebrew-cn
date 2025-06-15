@@ -2,9 +2,10 @@ cask "font-wdxl-lubrifont-jp-n" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefontsrawmainoflwdxllubrifontjpnWDXLLubrifontJPN-Regular.ttf"
+  url "https:github.comgooglefontsrawmainoflwdxllubrifontjpnWDXLLubrifontJPN-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "WDXL Lubrifont JP N"
-  homepage "https:github.comNightFurySL2001WD-XL-font"
+  homepage "https:fonts.google.comspecimenWDXL+Lubrifont+JP+N"
 
   font "WDXLLubrifontJPN-Regular.ttf"
 

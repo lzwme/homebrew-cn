@@ -8,6 +8,8 @@ cask "solvespace" do
   desc "Parametric 2d3d CAD"
   homepage "https:solvespace.comindex.pl"
 
+  no_autobump! because: :requires_manual_review
+
   app "SolveSpace.app"
 
   zap trash: [

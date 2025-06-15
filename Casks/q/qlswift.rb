@@ -7,6 +7,8 @@ cask "qlswift" do
   desc "Quick Look plugin for Swift files"
   homepage "https:github.comlexrusQLSwift"
 
+  no_autobump! because: :requires_manual_review
+
   qlplugin "QLSwift.qlgenerator"
 
   # No zap stanza required

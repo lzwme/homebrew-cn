@@ -1,6 +1,6 @@
 cask "serial-studio" do
-  version "3.1.2"
-  sha256 "65603c7662f91d1a0719f6600b2ff8dd9c53b5338928c4c18de2b41e7619300c"
+  version "3.1.3"
+  sha256 "75682a2d39c1dd95c8d37aeb08d61a8c73f5a9b29f1e62f6a8c256a1b484ff8b"
 
   url "https:github.comSerial-StudioSerial-Studioreleasesdownloadv#{version}Serial-Studio-#{version}-macOS-Universal.dmg",
       verified: "github.comSerial-StudioSerial-Studio"
@@ -12,6 +12,8 @@ cask "serial-studio" do
     url :url
     strategy :github_latest
   end
+
+  no_autobump! because: :requires_manual_review
 
   app "Serial Studio.app"
 

@@ -2,9 +2,10 @@ cask "font-wdxl-lubrifont-sc" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefontsrawmainoflwdxllubrifontscWDXLLubrifontSC-Regular.ttf"
+  url "https:github.comgooglefontsrawmainoflwdxllubrifontscWDXLLubrifontSC-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "WDXL Lubrifont SC"
-  homepage "https:github.comNightFurySL2001WD-XL-font"
+  homepage "https:fonts.google.comspecimenWDXL+Lubrifont+SC"
 
   font "WDXLLubrifontSC-Regular.ttf"
 

@@ -6,6 +6,8 @@ cask "octomouse" do
   name "OctoMouse"
   homepage "https:github.comKonsomeJonaOctoMouse"
 
+  no_autobump! because: :requires_manual_review
+
   deprecate! date: "2024-09-08", because: :unmaintained
 
   app "OctoMouse.app"

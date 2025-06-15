@@ -2,9 +2,10 @@ cask "font-lxgw-marker-gothic" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefontsrawmainofllxgwmarkergothicLXGWMarkerGothic-Regular.ttf"
+  url "https:github.comgooglefontsrawmainofllxgwmarkergothicLXGWMarkerGothic-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "LXGW Marker Gothic"
-  homepage "https:github.comaaronbellLxgwMarkerGothic"
+  homepage "https:fonts.google.comspecimenLXGW+Marker+Gothic"
 
   font "LXGWMarkerGothic-Regular.ttf"
 

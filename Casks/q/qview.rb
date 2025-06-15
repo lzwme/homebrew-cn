@@ -7,6 +7,8 @@ cask "qview" do
   desc "Image viewer"
   homepage "https:github.comjurplelqView"
 
+  no_autobump! because: :requires_manual_review
+
   depends_on macos: ">= :mojave"
 
   app "qView.app"

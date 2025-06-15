@@ -8,6 +8,8 @@ cask "miditrail" do
   desc "MIDI player which provides 3D visualization of MIDI data sets"
   homepage "https:www.yknk.orgmiditrailen"
 
+  no_autobump! because: :requires_manual_review
+
   depends_on macos: ">= :sierra"
 
   app "MIDITrailMIDITrail.app"

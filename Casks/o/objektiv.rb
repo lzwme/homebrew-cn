@@ -7,6 +7,8 @@ cask "objektiv" do
   desc "Browser switcher utility"
   homepage "https:github.comnthloopObjektiv"
 
+  no_autobump! because: :requires_manual_review
+
   app "Objektiv.app"
 
   zap trash: "~LibraryPreferencescom.nthloop.Objektiv.plist"

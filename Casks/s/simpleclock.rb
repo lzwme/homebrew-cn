@@ -7,6 +7,8 @@ cask "simpleclock" do
   desc "Simple analogue clock screensaver written entirely in Swift"
   homepage "https:github.comWandmalfarbeSimple-Clock-Screensaver"
 
+  no_autobump! because: :requires_manual_review
+
   screen_saver "SimpleClock.saver"
 
   # No zap stanza required

@@ -7,6 +7,8 @@ cask "modmove" do
   desc "Utility to moveresize windows using modifiers and the mouse"
   homepage "https:github.comkeithmodmove"
 
+  no_autobump! because: :requires_manual_review
+
   app "ModMove.app"
 
   # No zap stanza required

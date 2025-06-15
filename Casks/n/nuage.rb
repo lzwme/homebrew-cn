@@ -7,6 +7,8 @@ cask "nuage" do
   desc "Free and open-source SoundCloud client"
   homepage "https:github.comlbrndnrnuage-macos"
 
+  no_autobump! because: :requires_manual_review
+
   depends_on macos: ">= :ventura"
 
   app "Nuage.app"

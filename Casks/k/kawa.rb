@@ -7,6 +7,8 @@ cask "kawa" do
   desc "Alternative input source switcher"
   homepage "https:github.comutattikawa"
 
+  no_autobump! because: :requires_manual_review
+
   deprecate! date: "2024-07-17", because: :unmaintained
 
   app "Kawa.app"

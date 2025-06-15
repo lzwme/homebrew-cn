@@ -6,6 +6,8 @@ cask "quickboot" do
   name "QuickBoot"
   homepage "https:buttered-cat.comproductquickboot"
 
+  no_autobump! because: :requires_manual_review
+
   # no release in the past 10 years
   # user has reported it stopped working in catalina
   # https:github.comjfroQuickBootissues5

@@ -7,6 +7,8 @@ cask "seaglass" do
   desc "Matrix client"
   homepage "https:github.comneilalexanderseaglass"
 
+  no_autobump! because: :requires_manual_review
+
   disable! date: "2024-12-16", because: :discontinued
 
   auto_updates true

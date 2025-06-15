@@ -7,6 +7,8 @@ cask "james" do
   desc "Web Debugging Proxy Application"
   homepage "https:github.comjames-proxyjames"
 
+  no_autobump! because: :requires_manual_review
+
   deprecate! date: "2024-09-08", because: :unmaintained
 
   app "James.app"

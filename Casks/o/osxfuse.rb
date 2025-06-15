@@ -8,6 +8,8 @@ cask "osxfuse" do
   desc "File system integration"
   homepage "https:osxfuse.github.io"
 
+  no_autobump! because: :requires_manual_review
+
   deprecate! date: "2025-03-28", because: :discontinued, replacement_cask: "macfuse"
 
   pkg "ExtrasFUSE for macOS #{version}.pkg"

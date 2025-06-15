@@ -20,6 +20,8 @@ cask "klogg" do
     end
   end
 
+  no_autobump! because: :requires_manual_review
+
   app "klogg.app"
   # shim script (https:github.comHomebrewhomebrew-caskissues18809)
   shimscript = "#{staged_path}klogg.wrapper.sh"

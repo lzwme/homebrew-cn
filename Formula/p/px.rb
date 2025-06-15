@@ -4,20 +4,20 @@ class Px < Formula
   desc "Ps and top for human beings (px  ptop)"
   homepage "https:github.comwallespx"
   url "https:github.comwallespx.git",
-      tag:      "3.6.11",
-      revision: "a9cc788aa58c5de19506bc9950b7d47adc690919"
+      tag:      "3.6.12",
+      revision: "922a9038272661371bce15b1d13c47bc84926845"
   license "MIT"
 
   no_autobump! because: :bumped_by_upstream
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8f26807f87e7d74cab75efbe877bb0f1709d33711ae0c5d33a6507c7719946ff"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8f26807f87e7d74cab75efbe877bb0f1709d33711ae0c5d33a6507c7719946ff"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "8f26807f87e7d74cab75efbe877bb0f1709d33711ae0c5d33a6507c7719946ff"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7c1df093286c5d56073b2dcce0c06bd75fdfc8efae0f29f875241e032fea30bf"
-    sha256 cellar: :any_skip_relocation, ventura:       "7c1df093286c5d56073b2dcce0c06bd75fdfc8efae0f29f875241e032fea30bf"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8f26807f87e7d74cab75efbe877bb0f1709d33711ae0c5d33a6507c7719946ff"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8f26807f87e7d74cab75efbe877bb0f1709d33711ae0c5d33a6507c7719946ff"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2fee9f20e486a9ecf3f39b5984280ac6f9f21321af5bd70178c1b0b0a560ddb8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2fee9f20e486a9ecf3f39b5984280ac6f9f21321af5bd70178c1b0b0a560ddb8"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "2fee9f20e486a9ecf3f39b5984280ac6f9f21321af5bd70178c1b0b0a560ddb8"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e13cd275ed42a692779378656b6c107929c5481c69d132ae1c372c1701020660"
+    sha256 cellar: :any_skip_relocation, ventura:       "e13cd275ed42a692779378656b6c107929c5481c69d132ae1c372c1701020660"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2fee9f20e486a9ecf3f39b5984280ac6f9f21321af5bd70178c1b0b0a560ddb8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2fee9f20e486a9ecf3f39b5984280ac6f9f21321af5bd70178c1b0b0a560ddb8"
   end
 
   depends_on "python@3.13"

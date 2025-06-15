@@ -6,6 +6,8 @@ cask "material-colors" do
   name "Material Colors for Mac"
   homepage "https:github.comromannurikMaterialColorsApp"
 
+  no_autobump! because: :requires_manual_review
+
   app "Material Colors.app"
 
   zap trash: [

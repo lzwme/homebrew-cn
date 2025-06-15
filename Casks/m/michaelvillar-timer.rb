@@ -7,6 +7,8 @@ cask "michaelvillar-timer" do
   desc "Timer application"
   homepage "https:github.commichaelvillartimer-app"
 
+  no_autobump! because: :requires_manual_review
+
   app "Timer.app"
 
   uninstall quit: "com.michaelvillar.Timer"

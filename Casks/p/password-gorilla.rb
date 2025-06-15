@@ -8,6 +8,8 @@ cask "password-gorilla" do
   desc "Password database manager"
   homepage "https:github.comzdiagorilla"
 
+  no_autobump! because: :requires_manual_review
+
   deprecate! date: "2025-03-01", because: :unmaintained
 
   app "Password Gorilla.app"

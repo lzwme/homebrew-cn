@@ -7,6 +7,8 @@ cask "mks" do
   desc "Mechanical keyboard simulator"
   homepage "https:github.comx0054MKS"
 
+  no_autobump! because: :requires_manual_review
+
   app "MKS.app"
 
   zap trash: "~LibraryPreferencescom.zynath.MKS.plist"

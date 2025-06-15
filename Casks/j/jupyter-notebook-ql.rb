@@ -7,6 +7,8 @@ cask "jupyter-notebook-ql" do
   desc "Quick Look plugin for Jupyter notebooks"
   homepage "https:github.comjendas1jupyter-notebook-quick-look"
 
+  no_autobump! because: :requires_manual_review
+
   qlplugin "jupyter-notebook-quick-look.qlgenerator"
 
   # No zap stanza required

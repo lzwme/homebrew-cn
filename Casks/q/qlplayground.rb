@@ -7,6 +7,8 @@ cask "qlplayground" do
   desc "Quick Look plugin for Swift files"
   homepage "https:github.comnorio-nomuraqlplayground"
 
+  no_autobump! because: :requires_manual_review
+
   qlplugin "qlplayground.qlgenerator"
 
   # No zap stanza required

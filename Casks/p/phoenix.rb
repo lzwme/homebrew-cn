@@ -7,6 +7,8 @@ cask "phoenix" do
   desc "Window and app manager scriptable with JavaScript"
   homepage "https:github.comkasperphoenix"
 
+  no_autobump! because: :requires_manual_review
+
   auto_updates true
   depends_on macos: ">= :mojave"
 

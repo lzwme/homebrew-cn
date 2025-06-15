@@ -7,6 +7,8 @@ cask "firebird-emu" do
   desc "TI Nspire calculator emulator"
   homepage "https:github.comnspire-emusfirebird"
 
+  no_autobump! because: :requires_manual_review
+
   depends_on macos: ">= :high_sierra"
 
   app "firebird-emu.app"

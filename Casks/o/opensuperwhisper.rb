@@ -7,6 +7,8 @@ cask "opensuperwhisper" do
   desc "Whisper dictationtranscription app"
   homepage "https:github.comstarmelOpenSuperWhisper"
 
+  no_autobump! because: :requires_manual_review
+
   depends_on macos: ">= :sonoma"
   depends_on arch: :arm64
 

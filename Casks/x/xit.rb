@@ -32,6 +32,8 @@ cask "xit" do
   desc "GUI for the git version control system"
   homepage "https:github.comUncommonXit"
 
+  no_autobump! because: :requires_manual_review
+
   depends_on macos: ">= :mojave"
 
   zap trash: [

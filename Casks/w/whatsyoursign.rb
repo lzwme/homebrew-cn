@@ -8,6 +8,8 @@ cask "whatsyoursign" do
   desc "Shows a files cryptographic signing information"
   homepage "https:objective-see.orgproductswhatsyoursign.html"
 
+  no_autobump! because: :requires_manual_review
+
   installer manual: "WhatsYourSign Installer.app"
 
   uninstall script: {

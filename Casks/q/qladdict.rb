@@ -7,6 +7,8 @@ cask "qladdict" do
   desc "Quick Look plugin for subtitle (.srt) files"
   homepage "https:github.comtattaliQLAddict"
 
+  no_autobump! because: :requires_manual_review
+
   qlplugin "QLAddict.qlgenerator"
 
   # No zap stanza required

@@ -7,6 +7,8 @@ cask "rwts-pdfwriter" do
   desc "Print driver for printing documents directly to a pdf file"
   homepage "https:github.comrodyagerRWTS-PDFwriter"
 
+  no_autobump! because: :requires_manual_review
+
   pkg "RWTS-PDFwriter.pkg"
 
   uninstall script: {

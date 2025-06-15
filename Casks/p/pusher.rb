@@ -7,6 +7,8 @@ cask "pusher" do
   desc "Send push notifications through Apple Push Notification Service"
   homepage "https:github.comnoodlewerkNWPusher"
 
+  no_autobump! because: :requires_manual_review
+
   app "Pusher.app"
 
   zap trash: [

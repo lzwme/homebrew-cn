@@ -7,6 +7,8 @@ cask "rnnoise" do
   desc "Real-time Noise Suppression Plugin"
   homepage "https:github.comwermannoise-suppression-for-voice"
 
+  no_autobump! because: :requires_manual_review
+
   audio_unit_plugin "macos-rnnoisernnoise.component"
   vst_plugin "macos-rnnoisevstrnnoise_mono.vst"
   vst_plugin "macos-rnnoisevstrnnoise_stereo.vst"

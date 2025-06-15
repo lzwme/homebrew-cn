@@ -8,6 +8,8 @@ cask "nanosaur2" do
   desc "Dinosaur 3rd person shooter game sequel from Pangea Software"
   homepage "https:jorio.itch.ionanosaur2"
 
+  no_autobump! because: :requires_manual_review
+
   app "Nanosaur 2.app"
   artifact "Documentation", target: "~LibraryApplication SupportNanosaur2"
 

@@ -6,6 +6,8 @@ cask "steveschow-gfxcardstatus" do
   name "gfxCardStatus"
   homepage "https:github.comsteveschowgfxCardStatus"
 
+  no_autobump! because: :requires_manual_review
+
   deprecate! date: "2024-08-25", because: :unmaintained
 
   app "gfxCardStatus.app"

@@ -8,6 +8,8 @@ cask "unraid-usb-creator-next" do
   desc "Home of the Next-Gen Unraid USB Creator, a fork of the Raspberry Pi Imager"
   homepage "https:unraid.netdownload"
 
+  no_autobump! because: :requires_manual_review
+
   app "Unraid USB Creator.app"
 
   zap trash: "~LibraryPreferencesnet.unraid.Unraid USB Creator.plist"

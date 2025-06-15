@@ -17,6 +17,8 @@ cask "ilspy" do
     url :url
   end
 
+  no_autobump! because: :requires_manual_review
+
   app "artifactsosx-#{arch}ILSpy.app"
 
   zap trash: [

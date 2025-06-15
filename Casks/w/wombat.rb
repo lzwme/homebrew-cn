@@ -7,6 +7,8 @@ cask "wombat" do
   desc "Cross platform gRPC client"
   homepage "https:github.comrogchapwombat"
 
+  no_autobump! because: :requires_manual_review
+
   app "Wombat.app"
 
   zap trash: "~LibraryApplication SupportWombat"

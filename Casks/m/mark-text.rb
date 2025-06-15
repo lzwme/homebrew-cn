@@ -10,6 +10,8 @@ cask "mark-text" do
   desc "Markdown editor"
   homepage "https:github.commarktextmarktext"
 
+  no_autobump! because: :requires_manual_review
+
   auto_updates true
 
   app "MarkText.app"

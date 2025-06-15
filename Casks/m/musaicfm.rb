@@ -7,6 +7,8 @@ cask "musaicfm" do
   desc "Screensaver displaying artwork based on Spotify or Last.fm profile data"
   homepage "https:github.comdocterdMusaicFM"
 
+  no_autobump! because: :requires_manual_review
+
   screen_saver "MusaicFM.saver"
 
   zap trash: "~LibraryContainerscom.apple.ScreenSaver.Engine.legacyScreenSaverDataLibraryPreferencesByHostcom.obrhoff.musaicfm.*.plist"

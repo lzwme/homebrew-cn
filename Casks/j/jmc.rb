@@ -7,6 +7,8 @@ cask "jmc" do
   desc "Media organiser"
   homepage "https:github.comjcm93jmc"
 
+  no_autobump! because: :requires_manual_review
+
   deprecate! date: "2024-11-10", because: :unmaintained
 
   depends_on macos: ">= :catalina"

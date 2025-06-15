@@ -7,6 +7,8 @@ cask "icanhazshortcut" do
   desc "Shortcut manager"
   homepage "https:github.comdesevenicanhazshortcut"
 
+  no_autobump! because: :requires_manual_review
+
   app "iCanHazShortcut.app"
 
   uninstall quit: "info.deseven.icanhazshortcut"

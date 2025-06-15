@@ -8,6 +8,8 @@ cask "my-budget" do
   desc "Budgeting tool"
   homepage "https:rezach.github.iomy-budget"
 
+  no_autobump! because: :requires_manual_review
+
   deprecate! date: "2024-07-27", because: :unmaintained
 
   app "My Budget.app"

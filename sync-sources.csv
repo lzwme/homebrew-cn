@@ -5646,6 +5646,7 @@ Homebrew-homebrew-core/Formula/q/qpid-proton.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/q/qprint.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/q/qrcp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/q/qrencode.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/q/qrkey.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/q/qrtool.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/q/qrupdate.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/q/qscintilla2.rb, Homebrew/homebrew-core, 0
@@ -6382,6 +6383,7 @@ Homebrew-homebrew-core/Formula/s/spglib.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sphinx-doc.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/spice-gtk.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/spice-protocol.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/s/spice-server.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/spicetify-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/spidermonkey.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/spidermonkey@115.rb, Homebrew/homebrew-core, 1
@@ -10837,6 +10839,7 @@ Homebrew-homebrew-cask/Casks/font/font-n/font-noto-sans-sogdian.rb, Homebrew/hom
 Homebrew-homebrew-cask/Casks/font/font-n/font-noto-sans-sora-sompeng.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-n/font-noto-sans-soyombo.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-n/font-noto-sans-sundanese.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/font/font-n/font-noto-sans-sunuwar.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-n/font-noto-sans-syloti-nagri.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-n/font-noto-sans-symbols-2.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-n/font-noto-sans-symbols.rb, Homebrew/homebrew-cask, 1
@@ -10994,6 +10997,7 @@ Homebrew-homebrew-cask/Casks/font/font-p/font-palemonasmufi-regular.rb, Homebrew
 Homebrew-homebrew-cask/Casks/font/font-p/font-palette-mosaic.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-p/font-pangolin.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-p/font-paprika.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-p/font-parastoo.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-p/font-parisienne.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-p/font-parkinsans.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-p/font-passero-one.rb, Homebrew/homebrew-cask, 1
@@ -11613,6 +11617,7 @@ Homebrew-homebrew-cask/Casks/font/font-u/font-unifrakturmaguntia.rb, Homebrew/ho
 Homebrew-homebrew-cask/Casks/font/font-u/font-unkempt.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-u/font-unlock.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-u/font-unna.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-u/font-uoqmunthenkhung.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-u/font-updock.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-u/font-urbanist.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-u/font-urw-base35.rb, Homebrew/homebrew-cask, 1

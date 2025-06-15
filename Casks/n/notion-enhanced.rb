@@ -8,6 +8,8 @@ cask "notion-enhanced" do
   desc "Enhancercustomiser for the all-in-one productivity workspace notion.so"
   homepage "https:notion-enhancer.github.io"
 
+  no_autobump! because: :requires_manual_review
+
   app "Notion Enhanced.app"
 
   zap trash: [

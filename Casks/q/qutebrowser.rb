@@ -11,6 +11,8 @@ cask "qutebrowser" do
   desc "Keyboard-driven, vim-like browser based on PyQt5"
   homepage "https:www.qutebrowser.org"
 
+  no_autobump! because: :requires_manual_review
+
   app "qutebrowser.app"
   # shim script (https:github.comHomebrewhomebrew-caskissues18809)
   shimscript = "#{staged_path}qutebrowser.wrapper.sh"
