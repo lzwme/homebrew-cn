@@ -6,6 +6,8 @@ cask "font-undefined-medium" do
   name "undefined medium"
   homepage "https:github.comandirueckelundefined-medium"
 
+  no_autobump! because: :requires_manual_review
+
   font "undefined-medium-#{version}fontsotfundefined-medium.otf"
 
   # No zap stanza required

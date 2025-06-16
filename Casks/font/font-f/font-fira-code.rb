@@ -6,6 +6,8 @@ cask "font-fira-code" do
   name "Fira Code"
   homepage "https:github.comtonskyFiraCode"
 
+  no_autobump! because: :requires_manual_review
+
   font "ttfFiraCode-Bold.ttf"
   font "ttfFiraCode-Light.ttf"
   font "ttfFiraCode-Medium.ttf"

@@ -6,6 +6,8 @@ cask "font-sauce-code-pro-nerd-font" do
   name "SauceCodePro Nerd Font (Source Code Pro)"
   homepage "https:github.comryanoasisnerd-fonts"
 
+  no_autobump! because: :bumped_by_upstream
+
   livecheck do
     url :url
     strategy :github_latest

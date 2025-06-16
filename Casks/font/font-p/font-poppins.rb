@@ -6,6 +6,8 @@ cask "font-poppins" do
   name "Poppins"
   homepage "https:github.comitfoundrypoppins"
 
+  no_autobump! because: :requires_manual_review
+
   font "Poppins-Black.otf"
   font "Poppins-BlackItalic.otf"
   font "Poppins-Bold.otf"

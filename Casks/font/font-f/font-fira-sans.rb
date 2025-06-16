@@ -7,6 +7,8 @@ cask "font-fira-sans" do
   name "Fira Sans"
   homepage "https:mozilla.github.ioFira"
 
+  no_autobump! because: :requires_manual_review
+
   font "Fira-#{version}otfFiraSans-Bold.otf"
   font "Fira-#{version}otfFiraSans-BoldItalic.otf"
   font "Fira-#{version}otfFiraSans-Book.otf"

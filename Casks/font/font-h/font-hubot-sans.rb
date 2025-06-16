@@ -6,6 +6,8 @@ cask "font-hubot-sans" do
   name "Hubot-Sans"
   homepage "https:github.comgithubhubot-sans"
 
+  no_autobump! because: :requires_manual_review
+
   font "Hubot SansOTFHubotSans-Black.otf"
   font "Hubot SansOTFHubotSans-BlackItalic.otf"
   font "Hubot SansOTFHubotSans-Bold.otf"

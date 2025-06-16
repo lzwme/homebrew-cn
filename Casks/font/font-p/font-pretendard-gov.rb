@@ -6,6 +6,8 @@ cask "font-pretendard-gov" do
   name "Pretendard GOV"
   homepage "https:github.comorioncactuspretendard"
 
+  no_autobump! because: :requires_manual_review
+
   font "publicstaticPretendardGOV-Black.otf"
   font "publicstaticPretendardGOV-Bold.otf"
   font "publicstaticPretendardGOV-ExtraBold.otf"

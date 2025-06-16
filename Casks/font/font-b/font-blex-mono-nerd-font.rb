@@ -6,6 +6,8 @@ cask "font-blex-mono-nerd-font" do
   name "BlexMono Nerd Font (IBM Plex Mono)"
   homepage "https:github.comryanoasisnerd-fonts"
 
+  no_autobump! because: :bumped_by_upstream
+
   livecheck do
     url :url
     strategy :github_latest

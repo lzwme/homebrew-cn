@@ -6,6 +6,8 @@ cask "font-meslo-for-powerline" do
   name "Meslo for Powerline"
   homepage "https:github.compowerlinefonts"
 
+  no_autobump! because: :requires_manual_review
+
   font "fonts-#{version}MesloMeslo LG L DZ Regular for Powerline.otf"
   font "fonts-#{version}MesloMeslo LG L Regular for Powerline.otf"
   font "fonts-#{version}MesloMeslo LG M DZ Regular for Powerline.otf"

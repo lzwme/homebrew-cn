@@ -7,6 +7,8 @@ cask "font-overpass" do
   name "Overpass"
   homepage "https:overpassfont.org"
 
+  no_autobump! because: :requires_manual_review
+
   font "Overpass-#{version}desktop-fontsoverpassoverpass-bold-italic.otf"
   font "Overpass-#{version}desktop-fontsoverpassoverpass-bold.otf"
   font "Overpass-#{version}desktop-fontsoverpassoverpass-extrabold-italic.otf"

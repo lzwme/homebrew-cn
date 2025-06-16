@@ -6,6 +6,8 @@ cask "font-go-mono-nerd-font" do
   name "GoMono Nerd Font (Go Mono)"
   homepage "https:github.comryanoasisnerd-fonts"
 
+  no_autobump! because: :bumped_by_upstream
+
   livecheck do
     url :url
     strategy :github_latest

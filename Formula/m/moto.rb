@@ -3,19 +3,18 @@ class Moto < Formula
 
   desc "Mock AWS services"
   homepage "http://getmoto.org/"
-  url "https://files.pythonhosted.org/packages/24/9f/5cacf53cbd26b4a77c817fd4fbec2ed38139ba2cfcd842c279aa19ee161f/moto-5.1.5.tar.gz"
-  sha256 "42b362ea9a16181e8e7b615ac212c294b882f020e9ae02f01230f167926df84e"
+  url "https://files.pythonhosted.org/packages/39/c0/eb2c997ffb22af6878a5d369284ad0bf2356d6b22686b5350f749d7a7db7/moto-5.1.6.tar.gz"
+  sha256 "baf7afa9d4a92f07277b29cf466d0738f25db2ed2ee12afcb1dc3f2c540beebd"
   license "Apache-2.0"
-  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "30b6af4b9283df09ec15659d6b3c186910400f2f498d0b2862e289566832f942"
-    sha256 cellar: :any,                 arm64_sonoma:  "c970d47d889242640627357769b98cafbcbffd55719ead610f188ab7ffb9e05d"
-    sha256 cellar: :any,                 arm64_ventura: "80d981a3ae641ce0f4c9c68fe9e99fbfcb5f7b5fdc1a992e38058a05173899eb"
-    sha256 cellar: :any,                 sonoma:        "46a5948bd78d19ea62a0aec0e33e9ed0d12f690ceabc7f4bd04db61b42d4d2a5"
-    sha256 cellar: :any,                 ventura:       "69e2380271e5b8090ad8ab554230674f23d118aa2452d2848f97fdd3abfbd4b8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c3c969b375d94d3ac78250fe60f9e08e2c28f2ca2f866b74ddaa0e975ebc74f7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e3242e57b29868d0de40ae2caf05fe7edc82ab9eff3ccb82e04c3d08f7cad959"
+    sha256 cellar: :any,                 arm64_sequoia: "ec6d1bb819eb3756b96d73d29c7bdbcb93b646207d2451ba9767d06ca3979e80"
+    sha256 cellar: :any,                 arm64_sonoma:  "3a7e22462edbf10103c0110b39904051cd06c3cd2034fbc2e0cac49b84ed4f03"
+    sha256 cellar: :any,                 arm64_ventura: "abb0f9f38e7ce7e5887def7f7a78cc6dc61e17cef74fe6dcd8a22715af40220e"
+    sha256 cellar: :any,                 sonoma:        "063ae460f20bb3ad1d8bb6741553477b649efa40acdecbf8461932e563adacae"
+    sha256 cellar: :any,                 ventura:       "2b9970e751f2f4eb7e29b8ca72d4c3c0d74c3b49ed9b9e002f8b1b43e3f6bb5c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ae93eb5bafc1a3ff26ba63445207de9e02f8b9756f19b7e57501f2a6f5dfc55b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e6ada09c259516550992d1c4e6730ff29bdb75d79cf49d04dbaffee2eaae57ea"
   end
 
   depends_on "rust" => :build # for pydantic_core
@@ -55,18 +54,18 @@ class Moto < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/cb/2f/4547f4b3cc7b63ec1266edaf923a675f3eae2057299aba8ecfe46f013c1a/boto3-1.38.34.tar.gz"
-    sha256 "25e76b9fec8db8e21adaf84df0de5c58fa779be121bc327e07e920c7c0870394"
+    url "https://files.pythonhosted.org/packages/c4/22/df130d30dcc73b726c3d254ed855806853b86b987052517337587085b6db/boto3-1.38.36.tar.gz"
+    sha256 "efe0aaa060f8fedd76e5c942055f051aee0432fc722d79d8830a9fd9db83593e"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/08/27/34dfe90dd51d16473985198e056b82d74afd355dc47daa10af2a4f117072/botocore-1.38.34.tar.gz"
-    sha256 "a105f4d941f329aa72c43ddf42371ec4bee50ab3619fc1ef35d0005520219612"
+    url "https://files.pythonhosted.org/packages/2e/15/d218917f2d568f6fa92ad3831b31ecc4ee514d775a142385aa87c672bc08/botocore-1.38.36.tar.gz"
+    sha256 "4a1ced1a4218bdff0ed5b46abb54570d473154ddefafa5d121a8d96e4b76ebc1"
   end
 
   resource "cfn-lint" do
-    url "https://files.pythonhosted.org/packages/7f/bd/67280945d60ccd89f9f1ef03e8d2a1eb3a617a97ff28fc9c26c801721ccd/cfn_lint-1.35.4.tar.gz"
-    sha256 "da38218367217b909884ec2efe361b3992868f140b1d5f37dc64a9e328d9ddb9"
+    url "https://files.pythonhosted.org/packages/ca/4c/298568c3192763d8c6ebaef8c76d69d7154c362066a84c9cd4b64dc61c89/cfn_lint-1.36.0.tar.gz"
+    sha256 "47721fe23755663e69b7d84fec61b1c15fab4e7d8c75ab624e738913bcb59489"
   end
 
   resource "charset-normalizer" do
@@ -205,8 +204,8 @@ class Moto < Formula
   end
 
   resource "pydantic" do
-    url "https://files.pythonhosted.org/packages/f0/86/8ce9040065e8f924d642c58e4a344e33163a07f6b57f836d0d734e0ad3fb/pydantic-2.11.5.tar.gz"
-    sha256 "7f853db3d0ce78ce8bbb148c401c2cdd6431b3473c0cdff2755c7690952a7b7a"
+    url "https://files.pythonhosted.org/packages/00/dd/4325abf92c39ba8623b5af936ddb36ffcfe0beae70405d456ab1fb2f5b8c/pydantic-2.11.7.tar.gz"
+    sha256 "d989c3c6cb79469287b1569f7447a17848c998458d49ebe294e975b9baf0f0db"
   end
 
   resource "pydantic-core" do

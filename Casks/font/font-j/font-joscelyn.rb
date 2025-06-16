@@ -6,6 +6,8 @@ cask "font-joscelyn" do
   name "Joscelyn"
   homepage "https:github.compsb1558Joscelyn-font"
 
+  no_autobump! because: :requires_manual_review
+
   font "JoscelynJoscelyn.otf"
 
   # No zap stanza required

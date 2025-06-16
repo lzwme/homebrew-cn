@@ -6,6 +6,8 @@ cask "font-pretendard-std" do
   name "Pretendard Std"
   homepage "https:github.comorioncactuspretendard"
 
+  no_autobump! because: :requires_manual_review
+
   font "publicstaticPretendardStd-Black.otf"
   font "publicstaticPretendardStd-Bold.otf"
   font "publicstaticPretendardStd-ExtraBold.otf"

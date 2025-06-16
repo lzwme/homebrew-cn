@@ -7,6 +7,8 @@ cask "font-formudpgothic" do
   name "帳票 UDPゴシック"
   homepage "https:github.comjz5FORM-UDPGothic"
 
+  no_autobump! because: :requires_manual_review
+
   font "FORMUDPGothic-Bold.ttf"
   font "FORMUDPGothic-Regular.ttf"
 

@@ -6,6 +6,8 @@ cask "font-open-dyslexic" do
   name "OpenDyslexic"
   homepage "https:github.comantijingoistopen-dyslexic"
 
+  no_autobump! because: :requires_manual_review
+
   font "open-dyslexic-#{version}otfOpenDyslexic-Bold.otf"
   font "open-dyslexic-#{version}otfOpenDyslexic-BoldItalic.otf"
   font "open-dyslexic-#{version}otfOpenDyslexic-Italic.otf"

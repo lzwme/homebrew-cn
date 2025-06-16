@@ -6,6 +6,8 @@ cask "font-tinos-nerd-font" do
   name "Tinos Nerd Font (Tinos)"
   homepage "https:github.comryanoasisnerd-fonts"
 
+  no_autobump! because: :bumped_by_upstream
+
   livecheck do
     url :url
     strategy :github_latest

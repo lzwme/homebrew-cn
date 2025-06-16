@@ -7,6 +7,8 @@ cask "font-hack" do
   name "Hack"
   homepage "https:sourcefoundry.orghack"
 
+  no_autobump! because: :requires_manual_review
+
   font "ttfHack-Regular.ttf"
   font "ttfHack-Italic.ttf"
   font "ttfHack-Bold.ttf"

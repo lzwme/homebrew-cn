@@ -6,6 +6,8 @@ cask "font-libertinus" do
   name "Libertinus"
   homepage "https:github.comalerquelibertinus"
 
+  no_autobump! because: :requires_manual_review
+
   font "Libertinus-#{version}staticOTFLibertinusKeyboard-Regular.otf"
   font "Libertinus-#{version}staticOTFLibertinusMath-Regular.otf"
   font "Libertinus-#{version}staticOTFLibertinusMono-Regular.otf"

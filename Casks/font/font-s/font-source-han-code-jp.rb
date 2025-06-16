@@ -6,6 +6,8 @@ cask "font-source-han-code-jp" do
   name "Source Han Code JP"
   homepage "https:github.comadobe-fontssource-han-code-jp"
 
+  no_autobump! because: :requires_manual_review
+
   font "source-han-code-jp-#{version}OTFSourceHanCodeJP-Bold.otf"
   font "source-han-code-jp-#{version}OTFSourceHanCodeJP-BoldIt.otf"
   font "source-han-code-jp-#{version}OTFSourceHanCodeJP-ExtraLight.otf"

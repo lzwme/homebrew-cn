@@ -7,6 +7,8 @@ cask "font-firago" do
   name "FiraGO"
   homepage "https:bboxtype.comtypefacesFiraGO"
 
+  no_autobump! because: :requires_manual_review
+
   font "FiraGO-#{version}FontsFiraGO_OTFItalicFiraGO-BoldItalic.otf"
   font "FiraGO-#{version}FontsFiraGO_OTFItalicFiraGO-BookItalic.otf"
   font "FiraGO-#{version}FontsFiraGO_OTFItalicFiraGO-EightItalic.otf"

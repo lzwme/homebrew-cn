@@ -7,6 +7,8 @@ cask "font-league-spartan" do
   name "League Spartan"
   homepage "https:www.theleagueofmoveabletype.comleague-spartan"
 
+  no_autobump! because: :requires_manual_review
+
   font "LeagueSpartan-#{version}staticOTFLeagueSpartan-ExtraLight.otf"
   font "LeagueSpartan-#{version}staticOTFLeagueSpartan-Light.otf"
   font "LeagueSpartan-#{version}staticOTFLeagueSpartan-Medium.otf"

@@ -6,6 +6,8 @@ cask "font-plangothic" do
   name "Plangothic"
   homepage "https:github.comFitzgerald-Porthmouth-KoenigseggPlangothic-Project"
 
+  no_autobump! because: :requires_manual_review
+
   font "Plangothic-OTF-V#{version}PlangothicP1-Regular.otf"
   font "Plangothic-OTF-V#{version}PlangothicP2-Regular.otf"
 

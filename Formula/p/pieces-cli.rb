@@ -3,8 +3,8 @@ class PiecesCli < Formula
 
   desc "Command-line tool for Pieces.app"
   homepage "https://pieces.app/"
-  url "https://storage.googleapis.com/app-releases-production/pieces_cli/release/pieces_cli-1.15.1.tar.gz"
-  sha256 "e14b7b2c812148f334e6039a735bf21670fc79fc4aec3776aa2ea7daad0fe27b"
+  url "https://storage.googleapis.com/app-releases-production/pieces_cli/release/pieces_cli-1.15.2.tar.gz"
+  sha256 "9b3656716c6cdb41aa0c7e2d054f7e59a5e00a5bbf2dc4437bcb769141e2fc60"
 
   license "MIT"
 
@@ -18,13 +18,13 @@ class PiecesCli < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "91f3d70a93809e32437a44aaa8802e153567461e05bc1459842562a3f860768b"
-    sha256 cellar: :any,                 arm64_sonoma:  "fde55127d49fa2c7b9de290e872989ba6b37374f3d77b54ffbb04e2b5c1965e6"
-    sha256 cellar: :any,                 arm64_ventura: "1dbbf4c084b4f9c5b4ecf0fa5c5c85ce610274b8a96bd7542c19022a1d5861c8"
-    sha256 cellar: :any,                 sonoma:        "169296970fb6869cf69467302642f81ce5f3cd476f03db23b1b6ff524305d87d"
-    sha256 cellar: :any,                 ventura:       "e54e8d1c6726c805e05ce3da16d8f40a77eef2041f56b26ee0be531bc8e2a17c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "08d2b5479fda93596b0bc5dd7d2f817aa9ed448b4671d0ef360403f99624de68"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f5837cc8ed0dd324545a035792ceed9a4856dd0e5a73be685054ee01103c1397"
+    sha256 cellar: :any,                 arm64_sequoia: "c2b5def802f84cee4acf135b6633cebd0678313eb5806dba168df1008139d46d"
+    sha256 cellar: :any,                 arm64_sonoma:  "9e9959a4091e57bdf5ed0d2cfc7ef24504a799d8f3929bb6820b5839c53b76c0"
+    sha256 cellar: :any,                 arm64_ventura: "90cffff7e94b79916db43354edc3bb4fb36f2359cca5e9ce38b77c7bde994e7e"
+    sha256 cellar: :any,                 sonoma:        "ac7f70cb824a20dc706ce68571f462b82f16672299e19d1654079d1aa90b3e60"
+    sha256 cellar: :any,                 ventura:       "45a464614bfe5dfa7c8ebee68e4653a8c3e51adfb3b2013f30289f4d6212bdff"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1704727be2bdad177c26778c65558d7bed376a893ce1546dd92a84e4e3f4b2dd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5ee86c58244e330f5f92bd6ad737e205492862398e9df8152892a8d3fa13a0b3"
   end
 
   depends_on "rust" => :build

@@ -7,6 +7,8 @@ cask "font-agave" do
   name "Agave"
   homepage "https:b.agaric.netpageagave"
 
+  no_autobump! because: :requires_manual_review
+
   font "agave-#{version}distAgave-Bold.ttf"
   font "agave-#{version}distAgave-Regular.ttf"
 

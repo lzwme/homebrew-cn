@@ -7,6 +7,8 @@ cask "font-eb-garamond" do
   name "EB Garamond"
   homepage "https:github.comgeorgdEB-Garamond"
 
+  no_autobump! because: :requires_manual_review
+
   font "EBGaramond-#{version}otfEBGaramond-Initials.otf"
   font "EBGaramond-#{version}otfEBGaramond-InitialsF1.otf"
   font "EBGaramond-#{version}otfEBGaramond-InitialsF2.otf"

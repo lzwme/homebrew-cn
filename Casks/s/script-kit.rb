@@ -16,6 +16,8 @@ cask "script-kit" do
     regex(href=.*?Script[._-]Kit[._-]macOS[._-]v?(\d+(?:\.\d+)+)[._-]#{arch}\.dmgi)
   end
 
+  no_autobump! because: :requires_manual_review
+
   depends_on macos: ">= :catalina"
 
   app "Script Kit.app"

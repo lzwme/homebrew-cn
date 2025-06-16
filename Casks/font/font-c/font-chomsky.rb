@@ -6,6 +6,8 @@ cask "font-chomsky" do
   name "Chomsky"
   homepage "https:github.comctrlcctrlvchomsky"
 
+  no_autobump! because: :requires_manual_review
+
   font "Chomsky.otf"
 
   # No zap stanza required

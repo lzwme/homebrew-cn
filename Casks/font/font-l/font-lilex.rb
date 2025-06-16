@@ -6,6 +6,8 @@ cask "font-lilex" do
   name "Lilex"
   homepage "https:github.commishamyrtLilex"
 
+  no_autobump! because: :requires_manual_review
+
   font "ttfLilex-Bold.ttf"
   font "ttfLilex-BoldItalic.ttf"
   font "ttfLilex-ExtraLight.ttf"

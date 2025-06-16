@@ -7,6 +7,8 @@ cask "font-smiley-sans" do
   name "Smiley Sans"
   homepage "https:atelier-anchor.comtypefacessmiley-sans"
 
+  no_autobump! because: :requires_manual_review
+
   font "SmileySans-Oblique.ttf"
 
   # No zap stanza required

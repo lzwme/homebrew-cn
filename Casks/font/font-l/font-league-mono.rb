@@ -7,6 +7,8 @@ cask "font-league-mono" do
   name "League Mono"
   homepage "https:www.theleagueofmoveabletype.comleague-mono"
 
+  no_autobump! because: :requires_manual_review
+
   font "LeagueMono-#{version}staticOTFLeagueMono-Thin.otf"
   font "LeagueMono-#{version}staticOTFLeagueMono-UltraLight.otf"
   font "LeagueMono-#{version}staticOTFLeagueMono-Light.otf"

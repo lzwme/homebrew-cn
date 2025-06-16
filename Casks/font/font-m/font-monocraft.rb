@@ -6,6 +6,8 @@ cask "font-monocraft" do
   name "Monocraft"
   homepage "https:github.comIdreesIncMonocraft"
 
+  no_autobump! because: :requires_manual_review
+
   font "Monocraft.ttc"
 
   # No zap stanza required

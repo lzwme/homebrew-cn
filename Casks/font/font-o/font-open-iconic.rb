@@ -6,6 +6,8 @@ cask "font-open-iconic" do
   name "Open Iconic"
   homepage "https:github.comiconicopen-iconic"
 
+  no_autobump! because: :requires_manual_review
+
   font "open-iconic-#{version}fontfontsopen-iconic.ttf"
 
   # No zap stanza required

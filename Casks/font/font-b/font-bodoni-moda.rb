@@ -7,6 +7,8 @@ cask "font-bodoni-moda" do
   name "Bodoni Moda"
   homepage "https:indestructibletype.comBodoni.html"
 
+  no_autobump! because: :requires_manual_review
+
   font "Bodoni-masterfontsvariableBodoni-Italic-VF.ttf"
   font "Bodoni-masterfontsvariableBodoni-VF.ttf"
 

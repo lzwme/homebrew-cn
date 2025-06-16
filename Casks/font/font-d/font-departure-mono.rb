@@ -6,6 +6,8 @@ cask "font-departure-mono" do
   name "Departure Mono"
   homepage "https:github.comrektdeckarddeparture-mono"
 
+  no_autobump! because: :requires_manual_review
+
   font "DepartureMono-#{version}DepartureMono-Regular.otf"
 
   # No zap stanza required

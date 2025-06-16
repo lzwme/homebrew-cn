@@ -6,6 +6,8 @@ cask "font-fantasque-sans-mono" do
   name "Fantasque Sans Mono"
   homepage "https:github.combelluzjfantasque-sans"
 
+  no_autobump! because: :requires_manual_review
+
   font "OTFFantasqueSansMono-Bold.otf"
   font "OTFFantasqueSansMono-BoldItalic.otf"
   font "OTFFantasqueSansMono-Italic.otf"

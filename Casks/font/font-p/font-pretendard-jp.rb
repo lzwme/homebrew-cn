@@ -6,6 +6,8 @@ cask "font-pretendard-jp" do
   name "Pretendard JP"
   homepage "https:github.comorioncactuspretendard"
 
+  no_autobump! because: :requires_manual_review
+
   font "publicstaticPretendardJP-Black.otf"
   font "publicstaticPretendardJP-Bold.otf"
   font "publicstaticPretendardJP-ExtraBold.otf"

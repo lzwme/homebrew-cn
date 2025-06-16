@@ -6,6 +6,8 @@ cask "font-overused-grotesk" do
   name "Overused Grotesk"
   homepage "https:github.comRandomMaerksOverused-Grotesk"
 
+  no_autobump! because: :requires_manual_review
+
   font "otfOverusedGrotesk-Black.otf"
   font "otfOverusedGrotesk-BlackItalic.otf"
   font "otfOverusedGrotesk-Bold.otf"

@@ -7,6 +7,8 @@ cask "font-wix-madefor-text" do
   name "Wix Madefor Text"
   homepage "https:www.wix.comtypefacemadefor"
 
+  no_autobump! because: :requires_manual_review
+
   font "wixmadefor-fontsfontsvariableWixMadeforText[wght].ttf"
   font "wixmadefor-fontsfontsvariableWixMadeforText-Italic[wght].ttf"
 

@@ -6,6 +6,8 @@ cask "font-droid-sans-mono-nerd-font" do
   name "DroidSansM Nerd Font (Droid Sans Mono)"
   homepage "https:github.comryanoasisnerd-fonts"
 
+  no_autobump! because: :bumped_by_upstream
+
   livecheck do
     url :url
     strategy :github_latest

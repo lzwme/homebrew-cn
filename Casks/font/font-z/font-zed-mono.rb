@@ -6,6 +6,8 @@ cask "font-zed-mono" do
   name "Zed Mono"
   homepage "https:github.comzed-industrieszed-fonts"
 
+  no_autobump! because: :requires_manual_review
+
   livecheck do
     url :url
     strategy :github_latest

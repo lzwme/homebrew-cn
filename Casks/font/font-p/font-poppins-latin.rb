@@ -6,6 +6,8 @@ cask "font-poppins-latin" do
   name "PoppinsLatin"
   homepage "https:github.comitfoundrypoppins"
 
+  no_autobump! because: :requires_manual_review
+
   livecheck do
     url "https:github.comitfoundryPoppinstreemasterproducts"
     regex(PoppinsLatin[._-]v?(\d+(?:\.\d+)+)(?:[._-]Latin)?[._-]OTF\.zipi)

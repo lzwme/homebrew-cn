@@ -7,6 +7,8 @@ cask "font-cubic-11" do
   name "俐方體11號"
   homepage "https:github.comACh-KCubic-11"
 
+  no_autobump! because: :requires_manual_review
+
   font "Cubic-11-#{version}fontsttfCubic_11.ttf"
 
   # No zap stanza required

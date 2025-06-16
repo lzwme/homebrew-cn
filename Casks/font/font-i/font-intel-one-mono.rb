@@ -6,6 +6,8 @@ cask "font-intel-one-mono" do
   name "Intel One Mono"
   homepage "https:github.comintelintel-one-mono"
 
+  no_autobump! because: :requires_manual_review
+
   font "otfIntelOneMono-Bold.otf"
   font "otfIntelOneMono-BoldItalic.otf"
   font "otfIntelOneMono-Italic.otf"

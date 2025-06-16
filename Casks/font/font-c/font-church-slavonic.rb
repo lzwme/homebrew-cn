@@ -6,6 +6,8 @@ cask "font-church-slavonic" do
   name "Church Slavonic Fonts"
   homepage "https:github.comtypiconmanfonts-cu"
 
+  no_autobump! because: :requires_manual_review
+
   font "fonts-churchslavonicAcathist-Regular.otf"
   font "fonts-churchslavonicCathismaUnicode.otf"
   font "fonts-churchslavonicFedorovskUnicode.otf"

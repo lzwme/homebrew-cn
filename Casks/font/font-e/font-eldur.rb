@@ -6,6 +6,8 @@ cask "font-eldur" do
   name "eldur"
   homepage "https:github.commolarmanfuleldur"
 
+  no_autobump! because: :requires_manual_review
+
   font "eldur.ttf"
 
   # No zap stanza required

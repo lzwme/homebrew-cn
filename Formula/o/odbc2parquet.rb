@@ -21,10 +21,6 @@ class Odbc2parquet < Formula
   depends_on "unixodbc"
 
   def install
-    # upstream patch PR to improve dynamic unixODBC library path handling, https:github.compacman82odbc-syspull50
-    ENV["RUSTFLAGS"] = "-L#{Formula["unixodbc"].opt_lib}"
-    ENV["ODBC_SYS_STATIC_PATH"] = Formula["unixodbc"].opt_lib
-
     system "cargo", "install", *std_cargo_args
   end
 

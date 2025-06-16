@@ -6,6 +6,8 @@ cask "font-envy-code-r-nerd-font" do
   name "EnvyCodeR Nerd Font (Envy Code R)"
   homepage "https:github.comryanoasisnerd-fonts"
 
+  no_autobump! because: :bumped_by_upstream
+
   livecheck do
     url :url
     strategy :github_latest

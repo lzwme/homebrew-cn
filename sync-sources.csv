@@ -31,6 +31,7 @@ Homebrew-homebrew-core/Formula/a/acme.sh.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/acpica.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/acronym.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/act.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/a/act_runner.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/action-docs.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/action-validator.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/actionlint.rb, Homebrew/homebrew-core, 1
@@ -1425,6 +1426,7 @@ Homebrew-homebrew-core/Formula/d/dhcpdump.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dhcping.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/dhex.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/di.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/d/diagram.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dialog.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/diamond.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/diary.rb, Homebrew/homebrew-core, 0
@@ -2228,6 +2230,7 @@ Homebrew-homebrew-core/Formula/g/ggh.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/ggshield.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gh-ost.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gh.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/g/ghalint.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/ghc.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/ghc@8.10.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/ghc@9.10.rb, Homebrew/homebrew-core, 0
@@ -4533,6 +4536,7 @@ Homebrew-homebrew-core/Formula/m/mpich.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mplayer.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mplayershell.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mpop.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/m/mpremote.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mprocs.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mpssh.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mpv.rb, Homebrew/homebrew-core, 1

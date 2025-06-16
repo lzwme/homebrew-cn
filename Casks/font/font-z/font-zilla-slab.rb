@@ -6,6 +6,8 @@ cask "font-zilla-slab" do
   name "Zilla Slab"
   homepage "https:github.commozillazilla-slab"
 
+  no_autobump! because: :requires_manual_review
+
   font "zilla-slabotfZillaSlab-Bold.otf"
   font "zilla-slabotfZillaSlab-BoldItalic.otf"
   font "zilla-slabotfZillaSlab-Italic.otf"

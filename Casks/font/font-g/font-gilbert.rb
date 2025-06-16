@@ -6,6 +6,8 @@ cask "font-gilbert" do
   name "Gilbert"
   homepage "https:github.comFontselfTypeWithPride"
 
+  no_autobump! because: :requires_manual_review
+
   # This uses the `GithubReleases` strategy because all releases are marked as
   # pre-release on GitHub. We should be able to switch to the `GithubLatest`
   # strategy ifwhen there's a "latest" release in the future.

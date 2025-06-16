@@ -6,6 +6,8 @@ cask "font-redhat" do
   name "Red Hat"
   homepage "https:github.comRedHatOfficialRedHatFont"
 
+  no_autobump! because: :requires_manual_review
+
   font "RedHatFont-#{version}fontsMonootfRedHatMono-Bold.otf"
   font "RedHatFont-#{version}fontsMonootfRedHatMono-BoldItalic.otf"
   font "RedHatFont-#{version}fontsMonootfRedHatMono-Italic.otf"

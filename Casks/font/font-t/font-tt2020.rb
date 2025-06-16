@@ -6,6 +6,8 @@ cask "font-tt2020" do
   name "TT2020"
   homepage "https:github.comctrlcctrlvTT2020"
 
+  no_autobump! because: :requires_manual_review
+
   font "TT2020-#{version}distTT2020Base-Italic.ttf"
   font "TT2020-#{version}distTT2020Base-Regular.ttf"
   font "TT2020-#{version}distTT2020StyleB-Italic.ttf"

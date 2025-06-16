@@ -6,6 +6,8 @@ cask "font-proza-libre" do
   name "Proza Libre"
   homepage "https:github.comjasperdewaardProza-Libre"
 
+  no_autobump! because: :requires_manual_review
+
   font "Proza-Libre-#{version}FontsProzaLibre-Bold.ttf"
   font "Proza-Libre-#{version}FontsProzaLibre-BoldItalic.ttf"
   font "Proza-Libre-#{version}FontsProzaLibre-ExtraBold.ttf"

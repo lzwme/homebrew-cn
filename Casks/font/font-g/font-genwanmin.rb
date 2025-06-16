@@ -6,6 +6,8 @@ cask "font-genwanmin" do
   name "GenWanMin"
   homepage "https:github.comButTaiwangenwan-font"
 
+  no_autobump! because: :requires_manual_review
+
   font "GenWanMin#{version.major}-EL.ttc"
   font "GenWanMin#{version.major}-L.ttc"
   font "GenWanMin#{version.major}-M.ttc"
