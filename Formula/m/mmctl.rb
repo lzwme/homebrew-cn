@@ -1,8 +1,8 @@
 class Mmctl < Formula
   desc "Remote CLI tool for Mattermost server"
   homepage "https:github.commattermostmattermost"
-  url "https:github.commattermostmattermostarchiverefstagsv10.8.1.tar.gz"
-  sha256 "b7bd6bc791478a931f7a511b6e848c24cbfcd9274edb5d130925a1df1fad136b"
+  url "https:github.commattermostmattermostarchiverefstagsv10.9.0.tar.gz"
+  sha256 "06dac02af4c0ad15574c6c7f58a40b798aa1d9bb22c7ca8ba60f73b8fcdb5e12"
   license all_of: ["AGPL-3.0-only", "Apache-2.0"]
   head "https:github.commattermostmattermost.git", branch: "master"
 
@@ -12,12 +12,12 @@ class Mmctl < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "474413d60682efd2eab55c40d92e51fe840d479e7127746588d207e62b4287c9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "474413d60682efd2eab55c40d92e51fe840d479e7127746588d207e62b4287c9"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "474413d60682efd2eab55c40d92e51fe840d479e7127746588d207e62b4287c9"
-    sha256 cellar: :any_skip_relocation, sonoma:        "22a1480b9945fdb258b651b64abc01904a7c670ddef791fb37b3c814e07fd741"
-    sha256 cellar: :any_skip_relocation, ventura:       "22a1480b9945fdb258b651b64abc01904a7c670ddef791fb37b3c814e07fd741"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "de4ee9e4df76c25b8a0bd5e643be4bca6a36c4dbb0dbfe5ee2db560a049c45e0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cffe13ba45b171ece3947760af59e1a78dea7f4cd4fc6fd70a87ecf4a3ad6e0c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cffe13ba45b171ece3947760af59e1a78dea7f4cd4fc6fd70a87ecf4a3ad6e0c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "cffe13ba45b171ece3947760af59e1a78dea7f4cd4fc6fd70a87ecf4a3ad6e0c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "22b29a8711a2a10cb0e787990dac7f49167d044d9c51c8095c6e593d48d0c0fc"
+    sha256 cellar: :any_skip_relocation, ventura:       "22b29a8711a2a10cb0e787990dac7f49167d044d9c51c8095c6e593d48d0c0fc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dfb3ac6d42d91f2e8d3eea047ee3f7a70fde38685ee5cd136a0fd3f7f7b1bb0d"
   end
 
   depends_on "go" => :build

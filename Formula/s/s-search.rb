@@ -1,18 +1,18 @@
 class SSearch < Formula
   desc "Web search from the terminal"
   homepage "https:github.comzquestzs"
-  url "https:github.comzquestzsarchiverefstagsv0.7.2.tar.gz"
-  sha256 "d36474448d9594743ff8841585e596c24ef0be9110f15e6b39baa96c8d982e6e"
+  url "https:github.comzquestzsarchiverefstagsv0.7.3.tar.gz"
+  sha256 "260df5364b947f19a12af9018cdeffecd5b572d1662ba2bbcbfba906c39330c3"
   license "MIT"
   head "https:github.comzquestzs.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dd28347437ccaac577e520058f36e31995d1fa406e7e4b17f5eee109d38313a6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dd28347437ccaac577e520058f36e31995d1fa406e7e4b17f5eee109d38313a6"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "dd28347437ccaac577e520058f36e31995d1fa406e7e4b17f5eee109d38313a6"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a3952e5a7149cb4d195c85f551fa781a372b54d8890a1a645371a5811bdeeb90"
-    sha256 cellar: :any_skip_relocation, ventura:       "a3952e5a7149cb4d195c85f551fa781a372b54d8890a1a645371a5811bdeeb90"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "962819056e6fd782f24e136064609ab9ab5e4fe20b0e8efda38969f685e4dccf"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ccaf69d22c12a51cba1b0ae664c81e8ff029d96ee2e96af9bf3c15f0b56ec12a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ccaf69d22c12a51cba1b0ae664c81e8ff029d96ee2e96af9bf3c15f0b56ec12a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "ccaf69d22c12a51cba1b0ae664c81e8ff029d96ee2e96af9bf3c15f0b56ec12a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "82373b628e5452657050d45033e34c8c9225c0ca0d3baa34ce5288011a15e159"
+    sha256 cellar: :any_skip_relocation, ventura:       "82373b628e5452657050d45033e34c8c9225c0ca0d3baa34ce5288011a15e159"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "870ac87d10e778afe2c447da431d1828d9c25b05a815096c69a11801dfaf8833"
   end
 
   depends_on "go" => :build

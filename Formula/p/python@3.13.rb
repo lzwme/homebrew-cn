@@ -13,14 +13,15 @@ class PythonAT313 < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 arm64_sequoia: "969e945c1395d108d37bfac36b97362af0f178a2d8bd1d50c78dee513641d790"
-    sha256 arm64_sonoma:  "127b07661e52959bda9f83bfc06842d716ba14d5e9392a9e57c8b45ab02cb88e"
-    sha256 arm64_ventura: "cfa5b86eb3af3de8a9f8d888594782c47f4100aaf89c6fca0ca7b5bba3274e50"
-    sha256 sequoia:       "ec5409ff39fd160ba5e20b0116563a45e97efaeb78b069b086b073147dcc76bc"
-    sha256 sonoma:        "5f3cbf44236f40b2606d1b51697a1096746e40ab932b1e4490857339bf2d0409"
-    sha256 ventura:       "9a8ce602a47de2c8211b6b4d7966ffb0187e6fcadc02efce4c66c88ef1c98c40"
-    sha256 arm64_linux:   "706afae0bbbf9c29474a4f8e408fdf880245021dafa603fdbab9d9529f4d6252"
-    sha256 x86_64_linux:  "2ba66dd4896497954b0bb6e83fabd03680f15a505b4113d6a8f3fdc5d612be58"
+    rebuild 1
+    sha256 arm64_sequoia: "7bd6e87235b8bf2d4cf4835a5ddbd49cc7cee08d14ab2465ef24c34290a63a8e"
+    sha256 arm64_sonoma:  "c879de56d1a234d03739cf526cecbb0673f3771d7f4c40d0d764edcb0a6eeab0"
+    sha256 arm64_ventura: "16a255eedff03379cc2e7d85173cd755ecc6071c3ded2d296d4cbeaa378682a9"
+    sha256 sequoia:       "60d51cebd864b7b7f60c20533e4a86707fc5a9fd7d6235a3f705fedcae372792"
+    sha256 sonoma:        "bb3eeaefaa9df64e055fc88eec7672c044e35569a4ca8e8f9affcb3779a4f4b9"
+    sha256 ventura:       "de1f3fd0c023711c72acbe737f475d10ad9dc65038f35b207c4fb3178df7d456"
+    sha256 arm64_linux:   "ca4d8f6523c6fdfc7cb56571d1d4222bf8902c3938c436b58d71a05662e54b9b"
+    sha256 x86_64_linux:  "23885628da95ae6a51e56e231216927982b35e2a228fae8d1a64be93b7c231b8"
   end
 
   depends_on "pkgconf" => :build
@@ -86,6 +87,18 @@ class PythonAT313 < Formula
   patch do
     url "https:raw.githubusercontent.comHomebrewformula-patches8b5bcbb262d1ea4e572bba55043bf7d2341a6821python3.13-sysconfig.diff"
     sha256 "e1c2699cf3e39731a19207ed69400a67336cda7767aa08f6f46029f26b1d733b"
+  end
+
+  # Fix os.getlogin for users with longer usernames on macOS.
+  # Change accepted upstream and backported, remove on next release.
+  # https:github.comHomebrewhomebrew-coreissues226857
+  # https:github.compythoncpythonissues135497
+  # https:github.compythoncpythonpull135508
+  # https:github.compythoncpythonpull135517
+  # https:github.compythoncpythonpull135516
+  patch do
+    url "https:github.compythoncpythoncommit15340775f8ded517e98604fb416e6f758d21f635.patch?full_index=1"
+    sha256 "921de8bbbf20cebb8b695279bfaf138999460bc39ff8320d1495b61f67ae2e65"
   end
 
   def lib_cellar

@@ -3,8 +3,8 @@ class CoreLightning < Formula
 
   desc "Lightning Network implementation focusing on spec compliance and performance"
   homepage "https:github.comElementsProjectlightning"
-  url "https:github.comElementsProjectlightningreleasesdownloadv25.02.2clightning-v25.02.2.zip"
-  sha256 "db0a7da35a5a58959fc48be6f410e7b0a5f718351729a3e4a41f3d7306fa3a3f"
+  url "https:github.comElementsProjectlightningreleasesdownloadv25.05clightning-v25.05.zip"
+  sha256 "00d633a63570f6419db0dbd75b503bb04ba0f6eb469894da6fced2a8949d8007"
   license "MIT"
   head "https:github.comElementsProjectlightning.git", branch: "master"
 
@@ -15,13 +15,13 @@ class CoreLightning < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "20a9b6d87a4da792e3c43225945ae9e63df5cb63efeedfea312a6a4e4c92faf5"
-    sha256 arm64_sonoma:  "c8fa3cf712430a36213b14801915b59d64d36f81151ba3dbcc0fc5b3526ec0fa"
-    sha256 arm64_ventura: "77eb48e7619b5ebc82519785ec875fab0a8d2ab22fadb61450cc090cfb54426a"
-    sha256 sonoma:        "4eec1e5cfe0aaa34d60da59f852b543efa3aab0c3176c3ee60ad63e2cf203d84"
-    sha256 ventura:       "5ddfcd6302056dbcd26425c726d540851083683bff64ccea2e35c9b2e90f0439"
-    sha256 arm64_linux:   "b5ef6d7c3ef3085b901b858fb9b54519a42c1e8e8bdb97ea497753c4bb7f293f"
-    sha256 x86_64_linux:  "edff9fb5abe60bf968ab4b737bda1b786a362799706c352fba5023114c2a3285"
+    sha256 arm64_sequoia: "c54f40a76481c041795b57ea1475a45604b933c99ea195c65828eabf4a3d05aa"
+    sha256 arm64_sonoma:  "4c311bf0640be8433913743950c41fc7114ecb57be98244588467225b355b782"
+    sha256 arm64_ventura: "deed4f30089eb8d52e8939aee742dd59f750f64d586fa50303edc2e447154a52"
+    sha256 sonoma:        "d4307711486764ec1385a54fd4decc41668d3f1e8cc104939e77a09552b31b26"
+    sha256 ventura:       "fb51a25a6bc146fb5cba2c566cc6e2c7daa53d9f0ac992d4e15af1e745f70ace"
+    sha256 arm64_linux:   "0f433e4a7a10a6ace1abd488d9aa92b5213bee048055767b166b5f1730b4b4e7"
+    sha256 x86_64_linux:  "9724576cede91ef3c14d683da34a23862364fb70fc50a179877e941615e5dde5"
   end
 
   depends_on "autoconf" => :build
@@ -56,8 +56,8 @@ class CoreLightning < Formula
   end
 
   resource "setuptools" do
-    url "https:files.pythonhosted.orgpackages9e8bdc1773e8e5d07fd27c1632c45c1de856ac3dbf09c0147f782ca6d990cf15setuptools-80.7.1.tar.gz"
-    sha256 "f6ffc5f0142b1bd8d0ca94ee91b30c0ca862ffd50826da1ea85258a06fd94552"
+    url "https:files.pythonhosted.orgpackages185d3bf57dcd21979b887f014ea83c24ae194cfcd12b9e0fda66b957c69d1fcasetuptools-80.9.0.tar.gz"
+    sha256 "f36b47402ecde768dbfafc46e8e4207b4360c654f1f3bb84475f0a28628fb19c"
   end
 
   # Configure script overwrites `PKG_CONFIG_PATH` on macOS

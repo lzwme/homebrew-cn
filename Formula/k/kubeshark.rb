@@ -1,8 +1,8 @@
 class Kubeshark < Formula
   desc "API Traffic Analyzer providing real-time visibility into Kubernetes network"
   homepage "https:www.kubeshark.co"
-  url "https:github.comkubesharkkubesharkarchiverefstagsv52.7.7.tar.gz"
-  sha256 "fb5a674ab6aeab88a1240aa822d43303c7d5d24a680cbdf49d4123bb42ad5418"
+  url "https:github.comkubesharkkubesharkarchiverefstagsv52.7.8.tar.gz"
+  sha256 "02d518b9d0033862e64f1d7436fcc287970ba2a072a815b44c8191bfc1329d19"
   license "Apache-2.0"
   head "https:github.comkubesharkkubeshark.git", branch: "master"
 
@@ -15,13 +15,13 @@ class Kubeshark < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "34c4636bcc950f34dbd284bee8fbab84089904c997789f10ef2a1c53cfbc31c2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4edc31bcb4f35fa6ba6157dcb809f288034bfd031f89d55999afef3e1087b0fa"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "5987336952060db66c4f44c188f4ce7285794bb48a7dde9039f5d96f10da51ca"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0d257ad6f05178016c238b905fc05754f05c0b7e04aff3c8002d94dcb8e78541"
-    sha256 cellar: :any_skip_relocation, ventura:       "1fbe41422574a55986c4df0300d01c1e9dd150b7f28b5a498a4ae299ae3495e7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2a15b74330f5c92ac05799648732f2d92982997c250555b5bb2fb7b056897bfa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5b7010d1741c9dc71e8516b9642a233311c5b07a60455b2bcfdfe1669b42c602"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "653d103ab81cc6b27c279206b6995933f558fc788be19c9e758e3ac8bd0e22d6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "75f9a2b3f4352584446310817b41349a1468c1486aef4e757be96fe00ff77752"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "5c17db772424fe86efb5f944bf818a69cb3d1504db0f8c5b11b447d0a4b7675a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "cb0be7ced12c2b8d41ac0492bc67423a723ef785cbb5c674343dea9cddf7c884"
+    sha256 cellar: :any_skip_relocation, ventura:       "990281b1ced837cb3e3ea95a3bd923354b45d23a87c141959951496a03c125c7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6e392abb9fba2ae3c5159cbab05d1cf77537442ef9b637d472e72109908cd554"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "885ef7fb3f9c89985ad456b95c10b1f03863b61bfbf364b776031dbeaccd5778"
   end
 
   depends_on "go" => :build

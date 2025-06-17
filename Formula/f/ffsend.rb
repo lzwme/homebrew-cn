@@ -22,6 +22,12 @@ class Ffsend < Formula
     depends_on "openssl@3"
   end
 
+  # rust 1.87.0 patch, upstream pr ref, https:gitlab.comtimviseeffsend-merge_requests44
+  patch do
+    url "https:gitlab.comtimviseeffsend-commit29eb167d4367929a2546c20b3f2bbf890b63c631.diff"
+    sha256 "e5171b23ffd3cc0f4f1d47b29d110735c211ce96ba601a166a66537df28ed1c4"
+  end
+
   def install
     system "cargo", "install", *std_cargo_args
 

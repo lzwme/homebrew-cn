@@ -27,6 +27,12 @@ class Websocat < Formula
     depends_on "openssl@3"
   end
 
+  # bump traitobject to build against rust 1.87
+  patch do
+    url "https:github.comviwebsocatcommitd4455623e777231d69b029d69d7a17c0de2bafe7.patch?full_index=1"
+    sha256 "505f8fa7311ef11c60f9e665aa1479fbdf4b666e9eae01db56567a3f25866c05"
+  end
+
   def install
     system "cargo", "install", "--features", "ssl", *std_cargo_args
   end

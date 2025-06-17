@@ -21,6 +21,12 @@ class Findomain < Formula
   depends_on "rust" => :build
   depends_on "openssl@3"
 
+  # bump traitobject to build against rust 1.87
+  patch do
+    url "https:github.comFindomainFindomaincommit1c246de8300ef6dee7096bad2d2a1a239549c7f0.patch?full_index=1"
+    sha256 "b200ac84d9542af1f7c8cfd6b462f01e2dc8c1468cadb0ec74a49703f2b42e31"
+  end
+
   def install
     # Ensure that the `openssl` crate picks up the intended library.
     ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix

@@ -3,22 +3,21 @@ class Xml2rfc < Formula
 
   desc "Tool to convert XML RFC7749 to the original ASCII or the new HTML look-and-feel"
   homepage "https:xml2rfc.tools.ietf.org"
-  url "https:files.pythonhosted.orgpackages195a4e4cbd0d669ff6bd368ba185bfbad3fb91ac4d500374398d2e245ddc5394xml2rfc-3.28.1.tar.gz"
-  sha256 "76201b28f5b5d4c466dad74d972b3260013db0f462c76ebc633ea1c7fcd87194"
+  url "https:files.pythonhosted.orgpackages942abbd76ef42f69d07f7d736c113f4bdd050c7a8e7068f0f397d85185912756xml2rfc-3.29.0.tar.gz"
+  sha256 "82a1806095ea9a83caa9ee6923bf50f7b7686325042e3e023e34984a54c822db"
   license "BSD-3-Clause"
-  revision 1
   head "https:github.comietf-toolsxml2rfc.git", branch: "main"
 
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "72d9a1d05a2329cfabb2419c9b474b820f90f7d7e88385af98464524fe7feb50"
-    sha256 cellar: :any,                 arm64_sonoma:  "e0f31f2356080c4d80383fbd277f94346689b5a7829b784798c5a855d275e596"
-    sha256 cellar: :any,                 arm64_ventura: "0abca83a636ce8cd7f8ce4018110709b7cd93239bc7388128c1496c8477db371"
-    sha256 cellar: :any,                 sonoma:        "9e521feba3843e67c9c28fe5ee760801701cbe9374c02c17c0fa8ded3b6c61c8"
-    sha256 cellar: :any,                 ventura:       "66925bf7079f050de6396467c29c64d549bb8e67c6ce0f879cf5282bfb6d1a25"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "463fd069e52db06294ce3ee246e2f2d0e02cc7af986faac0f770f3835ca94860"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "121e579c8b4fb6f65661ef794a3f6fc6f7e1f7eb51bc75aa5289d585d13b2d06"
+    sha256 cellar: :any,                 arm64_sequoia: "4a9c95af44171456ab840bf3c014d453fa128693a55478f9357575d3b0e80fa0"
+    sha256 cellar: :any,                 arm64_sonoma:  "ae444d4095b03d74295a9f6e5a0ad0d088271a958d514cfc0ff93a7c5aefb9fb"
+    sha256 cellar: :any,                 arm64_ventura: "868ddf48de69a6e6db75f4dca88e54f6aca5b7f35be1b02b791bf32fa678c6fe"
+    sha256 cellar: :any,                 sonoma:        "7bf63bdca955ac300632f400c2747792c87772a7e4315e157c5b101a52ef3f72"
+    sha256 cellar: :any,                 ventura:       "c500ca8e1d688138f3c28a389f75962d28bd48e2022a119a232ba49250471ac3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b54ecb019d0a230368c0a7c3863b96ed8d18b42cc20e591efb2c4d7b466de7f9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dc568630c6902abd390bbe27e56edf5430e16ccf7a2ff2caa806dfe871617ef1"
   end
 
   depends_on "libyaml"
@@ -31,8 +30,8 @@ class Xml2rfc < Formula
   end
 
   resource "certifi" do
-    url "https:files.pythonhosted.orgpackagese89ec05b3920a3b7d20d3d3310465f50348e5b3694f4f88c6daf736eef3024c4certifi-2025.4.26.tar.gz"
-    sha256 "0a816057ea3cdefcef70270d2c515e4506bbc954f417fa5ade2021213bb8f0c6"
+    url "https:files.pythonhosted.orgpackages73f7f14b46d4bcd21092d7d3ccef689615220d8a08fb25e564b65d20738e672ecertifi-2025.6.15.tar.gz"
+    sha256 "d747aa5a8b9bbbb1bb8c22bb13e22bd1f18e9796defa16bab421f7f7a317323b"
   end
 
   resource "charset-normalizer" do

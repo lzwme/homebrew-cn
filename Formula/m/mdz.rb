@@ -1,18 +1,18 @@
 class Mdz < Formula
   desc "CLI for the mdz ledger Open Source"
   homepage "https:github.comLerianStudiomidaz"
-  url "https:github.comLerianStudiomidazarchiverefstagsv2.2.1.tar.gz"
-  sha256 "f74b30f2d62e0ab002c104b075ffda8a9574a8597a73abc31bfa7b7e264d3517"
+  url "https:github.comLerianStudiomidazarchiverefstagsv2.2.2.tar.gz"
+  sha256 "c9406dcccd2fc7b306cd251370bcc2b0e42e54e7a336df2762ea667d76633f54"
   license "Apache-2.0"
   head "https:github.comLerianStudiomidaz.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8481a1226d70274630b2fc511f04466de21ef9e0b5fe5e0325e982ee28df9472"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0c2d452a5f38ae66427ca0162583c9e43098ab3952f08882ec6185f5d9b86b72"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "165ad093dcf52844256dd5177031807568c38a731a9f56ca45090e045f05be6f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1e3d12909ba110ebf4c7b5a045942f2cef46d9171f46686a2cda165428ac63a3"
-    sha256 cellar: :any_skip_relocation, ventura:       "9390a7e76047c2e9b36496cc58278c1d26b20a511aca00b2e49cb6acb9652473"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f286d010550d44bdd61d3e858e1e8f9b0f77368a65a94969f30bcfcdb0bf1de4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3939c4923a695fd5e43faa02a7a31ce25c19a1d7b13fcf551e4410ea9e7ea4f7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "043dc8846b3f44a0953ff390b877b438764be28931fde8b34c3abeee737ba320"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "620db76749f92ebd4a3e85382f54aa1cf4e55a73dbad6cec156cf59a7ac73790"
+    sha256 cellar: :any_skip_relocation, sonoma:        "82e14402c501b864aaf6f28c5668a70887aaa1053992d6e61b6006c93e6fa2ea"
+    sha256 cellar: :any_skip_relocation, ventura:       "84732e1c15e5a82e760d932f2ff93e649b60c214ef542918a37a0a05dfee7e1d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bb91aea455c8710fc6791026a2957bd1f095611b2e68477d8151bbd33c7cc372"
   end
 
   depends_on "go" => :build

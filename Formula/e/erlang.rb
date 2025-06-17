@@ -3,8 +3,8 @@ class Erlang < Formula
   homepage "https:www.erlang.org"
   # Download tarball from GitHub; it is served faster than the official tarball.
   # Don't forget to update the documentation resource along with the url!
-  url "https:github.comerlangotpreleasesdownloadOTP-28.0otp_src_28.0.tar.gz"
-  sha256 "71b5bf16e5b7b5d9fae98576c87aceac447964aaa3b4b457a5f60906839af92c"
+  url "https:github.comerlangotpreleasesdownloadOTP-28.0.1otp_src_28.0.1.tar.gz"
+  sha256 "a1d26330e3089d4d70a752210f8794385e8844e3d19684835810f1a59a752158"
   license "Apache-2.0"
 
   livecheck do
@@ -13,13 +13,13 @@ class Erlang < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "6f34b91d8fd9ccb098e2a70566ea1a98a35694a583c3f2e6ab8730b3167e79d8"
-    sha256 cellar: :any,                 arm64_sonoma:  "ec00303a27d53bb1cf29e58d78f67235f4e58652182c7962209f6b6de8f3c675"
-    sha256 cellar: :any,                 arm64_ventura: "bfcaa62512a41f974b2187dec18bb0dbe9949af1bd96a4e0a7455a468e54a2ba"
-    sha256 cellar: :any,                 sonoma:        "1f9058a4c7c459b942137a8e6b4dae2cec23de453c41481b2199bb21b4cefc7a"
-    sha256 cellar: :any,                 ventura:       "9eb2fac132383f0b0c65e3a0cc163fa2e62d2516aa4ab3066e20fd1676242b1d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "bb0da9f8ed1232bfe0b7fb59de6500989209229aa205018812cd4dcd9adab869"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d48e161828a1063028c3a2e55b94086a509e2bb3aa0fa6a1185a25ed0e199a12"
+    sha256 cellar: :any,                 arm64_sequoia: "490db99377182363086a83280c3b7044b2eb55e766bcea79132c18666c2b9a91"
+    sha256 cellar: :any,                 arm64_sonoma:  "c49914e4bf00672ad90b76d5f605801c84efdbfb0472a5bbd1eeb9e0268351af"
+    sha256 cellar: :any,                 arm64_ventura: "fce1294a40760b2e05f287c6106508227b18c57ea028a0497eb9b4be8adf6a1b"
+    sha256 cellar: :any,                 sonoma:        "befd96973b99054c62bfc59d575982e84ecc4c4ae21f9f419db5ca238a41c220"
+    sha256 cellar: :any,                 ventura:       "e3d86be194e7774b7a141fbf4d4e2a2e97e75709be890bdb65aed9580da3c0cc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0f801223f721c5aa92511f2bad33e98a7c33fc3218392c5fcd9e153e152a506c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4e310df03ca1249808809b70dc98224fc4158b67db995e89cf4f9e3e62eb33d1"
   end
 
   head do
@@ -42,9 +42,9 @@ class Erlang < Formula
   end
 
   resource "html" do
-    url "https:github.comerlangotpreleasesdownloadOTP-28.0otp_doc_html_28.0.tar.gz"
-    mirror "https:fossies.orglinuxmiscotp_doc_html_28.0.tar.gz"
-    sha256 "9eebbb8820f0a75d70d88758b32d3d9009828cf7d954f448a586639e74c5c65d"
+    url "https:github.comerlangotpreleasesdownloadOTP-28.0.1otp_doc_html_28.0.1.tar.gz"
+    mirror "https:fossies.orglinuxmiscotp_doc_html_28.0.1.tar.gz"
+    sha256 "2a391d8d9ab46a0bb5ffbd1181a1d471da9aee7066ae94a7133ea4b378df72ee"
 
     livecheck do
       formula :parent

@@ -1,18 +1,18 @@
 class Diagram < Formula
   desc "CLI app to convert ASCII arts into hand drawn diagrams"
   homepage "https:github.comesimovdiagram"
-  url "https:github.comesimovdiagramarchiverefstagsv1.0.6.tar.gz"
-  sha256 "008594494e004c786ea65425abf10ba4ffef2e417102de83ece3ebdee5029c66"
+  url "https:github.comesimovdiagramarchiverefstagsv1.1.0.tar.gz"
+  sha256 "f88bc99975ade753435ecf0e7a6470611f77563eb73b94d56fa6b6bafb4b8561"
   license "MIT"
   head "https:github.comesimovdiagram.git", branch: "master"
 
   bottle do
-    sha256 arm64_sequoia: "049ae370aab2ab7876282b307a01bda38e2e254807f422cece826e4ec556d09e"
-    sha256 arm64_sonoma:  "38ac3fbc992a5611bf30e1848123efda5274a7d994049a24ec55102871886776"
-    sha256 arm64_ventura: "a234cd90fd88eaa7025cd28843b37d9feb6f07a012ee57f5e1a5a7f288677562"
-    sha256 sonoma:        "3eb79fb18800c3f1c9eebc261c15f06db339d0b2df017184757b6e39126df8f8"
-    sha256 ventura:       "6c8079e485d9bb3c95cb22221a6a2fdc4fe4801d6f1d965c0ac7941aecf04c79"
-    sha256 x86_64_linux:  "6ba263cef3accdf1a171e19d5aebf1493c304f601dd490753ae06a0b5932c459"
+    sha256 arm64_sequoia: "7a4c9251da9103d6c7bf749ae76e30500e2298751c6743ff0ddb27fdb2203e08"
+    sha256 arm64_sonoma:  "0d6928b6450255451e2120814add95222db5add55282cc2f9477766b6cd4607f"
+    sha256 arm64_ventura: "aea4fe2d174931f81ca241d51510b1d5dfbf4034e1cc77d9eb86646859450e05"
+    sha256 sonoma:        "9fdea25d43a0954d98c691c9b34bde4a0ab10a18e5b5b6d5fdfc1d1286c29e8c"
+    sha256 ventura:       "bfdfb5a4c9c981dceedc86608888e1e1a6100e0f98f2fe397d411485a3762ce4"
+    sha256 x86_64_linux:  "8ba93efdc8407ebd4f76c6f3a78aaf392e8a177035d48d740d4c9e3412bc8746"
   end
 
   depends_on "go" => :build

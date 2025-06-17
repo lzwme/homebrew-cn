@@ -3,19 +3,19 @@ class RobotFramework < Formula
 
   desc "Open source test framework for acceptance testing"
   homepage "https:robotframework.org"
-  url "https:files.pythonhosted.orgpackagesb48b7c58ab2c93cf2a2eaa4bd1db2cd617032dc6a41592df4ef924fe839a22e7robotframework-7.3.tar.gz"
-  sha256 "676f75a58e34db04cde91922c0bc68d4d73f091b6be753809ce16e9579412323"
+  url "https:files.pythonhosted.orgpackagesafbea5088f9db262f2cf30f87c64be8873ee7f4631190a12a70d361f78b6c62frobotframework-7.3.1.tar.gz"
+  sha256 "10be47f826a5ecff09d08e57bf17fce124d38b6e022b380ce67c526ef747194f"
   license "Apache-2.0"
   head "https:github.comrobotframeworkrobotframework.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "25742be537ae1c071b05dc03a5f885e17152e5e518765c6cad7f95836bcac5d8"
-    sha256 cellar: :any,                 arm64_sonoma:  "e7afc799fd97a10ed651f2d6fd8bb4b05162c481607016126628a7d3945b0d0e"
-    sha256 cellar: :any,                 arm64_ventura: "102aa9874168031b01a2e320eaa772090d586372d5c1f239479c4f4a2c7a2079"
-    sha256 cellar: :any,                 sonoma:        "9c275d514e533e8cda88712ad8794d90ed6aea68d807f118469e7b8d8ee6cc8f"
-    sha256 cellar: :any,                 ventura:       "3a1eafa55153e2588e96a42e4f365386d2488340f96d73f2b379ac3c449b2ad0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b423421d140d855b26773459edae8d34b2a8e849e859f1bc98c714cfa3b83a96"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "527a2a14bdaae954621b7384e23049817681aaeec43e494f02c6874e7cb66635"
+    sha256 cellar: :any,                 arm64_sequoia: "5939ca8cf4593c2d2fc829e110904d7eb93b4031c0cfd5edabb785502c852ac7"
+    sha256 cellar: :any,                 arm64_sonoma:  "7b8ec484b4c06a7652cb69effcfd95464aaacdcf0bb39714657a4e2132a5771c"
+    sha256 cellar: :any,                 arm64_ventura: "09a53a30feaad03397c97ee951eb8155a044768f419f77b2113f731e6944633c"
+    sha256 cellar: :any,                 sonoma:        "7b3053d3dfa2af205ba2c9206e7ffa2d0a16e9ac11359898d5b3be2e70b6202f"
+    sha256 cellar: :any,                 ventura:       "91a71455f10c6828af49c33e39332fc29d0be3dd2b01e9f208a6c2a7ff5676b2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0e1713ce04961ef3b66479bd07e23ff72dc56b8d0b89d11175bfaa31a132f2f6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d5ae406658f7d5a04ceec0e378f5a0ca2682f8bd0a903c215fc39ec9218bc154"
   end
 
   depends_on "rust" => :build # for bcrypt

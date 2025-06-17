@@ -4,16 +4,16 @@ class Symengine < Formula
   url "https:github.comsymenginesymenginearchiverefstagsv0.14.0.tar.gz"
   sha256 "11c5f64e9eec998152437f288b8429ec001168277d55f3f5f1df78e3cf129707"
   license "MIT"
-  revision 2
+  revision 3
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "df79e834fa3f34d24c03f89e336595fca313ac465697889dfaf8ed5d91d16dbf"
-    sha256 cellar: :any,                 arm64_sonoma:  "e0662a8972639a72264fd3cc2d199e0b59a26f1b20675cb11082dd1b12ecf7ef"
-    sha256 cellar: :any,                 arm64_ventura: "d380c1be286bcbfd0fe734a4b010d7235fe222cecaa925f55d08375844eb9e34"
-    sha256 cellar: :any,                 sonoma:        "4e828156687bd21078763f13285a5198c6218ec4e0a8c9191d1ef93a32e5aca6"
-    sha256 cellar: :any,                 ventura:       "ca02e12f3aa8b4a5a5dd312bd5d6270e690266c428f5b437ffbd657cb6b36f76"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1834d391bd9a7c56eeae26907398710c6b86ef8dd319dd3996ee0d66939185c4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e2542390b8ccd99af6c5957c75fd75e26908af774efcf59fe671b3bd7c1aa947"
+    sha256 cellar: :any,                 arm64_sequoia: "b413d0e962039cc33ce647e56b64d1e14e0485e9fb03aa9bb05c2a8815f2c77c"
+    sha256 cellar: :any,                 arm64_sonoma:  "6cdebd7e58b3e36fd42c103b87205f01fa93b742dd6e9897c8395a8e4d4ab437"
+    sha256 cellar: :any,                 arm64_ventura: "d7de7b5eaf7484feb69e980f635ca61f6122d08b7781f1e3a56fa61a25629147"
+    sha256 cellar: :any,                 sonoma:        "c7029b46e1429bbb2a98812b47f4f6eb5f604b3fb6c660528b2d33ae536cd22c"
+    sha256 cellar: :any,                 ventura:       "b4245f31edad7985f00376184b29ce8a724ffa572dc6fbc631474783e6831a8c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "683c421da7e1cd253c511bf8264c315a316ea55416c1b5ea2db0416337bab99c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "08e4246b2c2aaf4cfc1924ffde3e4c4e4f787fdd72306d6eda1b0b922c213d39"
   end
 
   depends_on "cereal" => :build

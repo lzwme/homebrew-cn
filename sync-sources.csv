@@ -4282,6 +4282,7 @@ Homebrew-homebrew-core/Formula/m/mbw.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mcabber.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mcap.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mcfly.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/m/mcp-inspector.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mcpm.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mcpp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/md2pdf.rb, Homebrew/homebrew-core, 1
@@ -7825,6 +7826,7 @@ Homebrew-homebrew-cask/Casks/a/alfaview.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/alfred.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/alfred@4.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/algodoo.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/a/alienator88-sentinel.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/alifix.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/alipay-key-tool.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/alisma.rb, Homebrew/homebrew-cask, 0
@@ -12975,6 +12977,7 @@ Homebrew-homebrew-cask/Casks/m/musescore.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/music-decoy.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/music-manager.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/music-miniplayer.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/m/music-presence.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/music-remote.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/music-widget.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/musicbrainz-picard.rb, Homebrew/homebrew-cask, 0

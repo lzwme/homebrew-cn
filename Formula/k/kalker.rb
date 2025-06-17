@@ -19,6 +19,12 @@ class Kalker < Formula
 
   uses_from_macos "m4" => :build
 
+  # bump wasm-bindgen to build against rust 1.87, upstream pr ref, https:github.comPaddiM8kalkerpull167
+  patch do
+    url "https:github.comPaddiM8kalkercommit81bf66950a9dfeca4ab5fdd12774c93e40021eb1.patch?full_index=1"
+    sha256 "ea3bb71fc4c0b688d0823518a3d193092fab537abe9d78b887c3f89a39001c60"
+  end
+
   def install
     cd "cli" do
       system "cargo", "install", *std_cargo_args

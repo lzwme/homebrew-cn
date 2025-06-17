@@ -1,19 +1,19 @@
 class Buffrs < Formula
   desc "Modern protobuf package management"
   homepage "https:github.comhelsing-aibuffrs"
-  url "https:github.comhelsing-aibuffrsarchiverefstagsv0.10.0.tar.gz"
-  sha256 "984d2097529ca9cdb24c6553cf55e1001275864462dd06a8de4f338c339a0fff"
+  url "https:github.comhelsing-aibuffrsarchiverefstagsv0.11.0.tar.gz"
+  sha256 "c52b04ef9d7919d19d9c3fd6312091f0000a65097e55c45c6f9f3ab5d2d3369c"
   license "Apache-2.0"
   head "https:github.comhelsing-aibuffrs.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d9dcd2934f709d778a9a12fe6501a4841458815d17c2742d2f26a23318b19018"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3f474f9b9da2353a86cdf6f03ef2303a27375c3e087a60bde11731d0636a754d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "eac1b4cc09a3c34d2d01ec190bdb078c5131921b848d32705e9f9732046b51c4"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e0335f7c9a2f6355f7e3e641065364d41d00c8cdc0ca3be607b2d8cb6ab40388"
-    sha256 cellar: :any_skip_relocation, ventura:       "876f21408b2551e6897802245642bd7d2e64f2d6481a059a38a4a37af20e663a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c6ff45ce008244d621f237f1471d76def4c00d9c637e284f46128fc6b008dfe0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7e43054ff1385d4a6fda830232e0d07b448bd2f2b577f6378c9f3cd7e6994558"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b48db1d0f92f5ea602daa0ee3f1144ec731b5b698f796d14e3b6c1e3713d07eb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f4f91126c4f5858b219cfbc77dd0387ef34ac4ceacca9bfa7c2f5ff6f949476b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "01be1c3a392d1f3eccbd5b0f9192bd05eec93970df920cc91eb1e7eae45517e0"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8cfeeaab827d991b4cad11b9dda4bec5a945c6e0739fc66368eca0de765819f5"
+    sha256 cellar: :any_skip_relocation, ventura:       "3a64c41d00df7a7a1a723862395111bd453f0e53db547a0b0eccc96bf8da2de1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "24e12ab2178b05497cb35720450c8c5a3efc42b8566834c0718bbe7ed5ff4e22"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4206df7cccc9918528f8a93193ea5c0ba4e2ab25cc16d579b975c201b13bcba0"
   end
 
   depends_on "rust" => :build

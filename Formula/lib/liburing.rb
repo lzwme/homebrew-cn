@@ -2,13 +2,13 @@ class Liburing < Formula
   desc "Helpers to setup and teardown io_uring instances"
   homepage "https:github.comaxboeliburing"
   # not need to check github releases, as tags are sufficient, see https:github.comaxboeliburingissues1008
-  url "https:github.comaxboeliburingarchiverefstagsliburing-2.10.tar.gz"
-  sha256 "0a687616a6886cd82b746b79c4e33dc40b8d7c0c6e24d0f6f3fd7cf41886bf53"
+  url "https:github.comaxboeliburingarchiverefstagsliburing-2.11.tar.gz"
+  sha256 "462c35ef21d67e50490f8684c76641ee2c7796e83d43de796852ef4e40662e33"
   license any_of: ["MIT", "LGPL-2.1-only"]
   head "https:github.comaxboeliburing.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "e8d2874f20a4896f14e8f95f53b33f86bfad226d810208248d420a09ad39d387"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "7ed93a64bc85e921e60d9e0461e63a8d3f3bddec04ecb273d617150b75022058"
   end
 
   depends_on :linux

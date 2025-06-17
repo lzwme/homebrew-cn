@@ -1,19 +1,19 @@
 class Elvis < Formula
   desc "Erlang Style Reviewer"
   homepage "https:github.cominakaelvis"
-  url "https:github.cominakaelvisarchiverefstags4.1.0.tar.gz"
-  sha256 "a4b0eef813cf78a01c42fc35c2b92823827bdb08f7d25a0501d47851e20feac2"
+  url "https:github.cominakaelvisarchiverefstags4.1.1.tar.gz"
+  sha256 "82a42102734285d0e39a8b55bc2195752f44347b6f2ef0962834e49579d067c8"
   license "Apache-2.0"
   head "https:github.cominakaelvis.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "45f2f24cba2eee14657d5dcd506a17f1c390b2852167b182c499c8d88bf6d1d2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "57fd33fad71ef8df24ac6bb12c3310c4cd696bbc06e505ebc1034d2b3eab2060"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "338e0d17ca455bcbce9b7b0f3321395d8e215bb327b04a61519142a5266b3b3a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8cc48cdbb6cd8a7cfde77485584b33f1bb0ec154429704755a699ae7bb5b3660"
-    sha256 cellar: :any_skip_relocation, ventura:       "b9d563bc12f2c6ec7bf4d0e6ca63598364182234533aea7e6900a72b75f48ad5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "219efa789dbf8ca9907ffffbe13e12a6bdc525f14e03ceee68241909d3a9ba7f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e7cd0a2ec4b75fb6c968986603e39eb21e8eb968dc2833fee4fd9f88f797c94f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9bbbf2d22dc2579b2bf23653ca33921cf3c09c761553b48a20772e05467f00b0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2ce6e257ad7d6a96ab10bbade74ab0874c8051c4458ea5d25aae43ba31f372e2"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "c35cb9a8771747e803826cf85e85d3520c0ab93268ce550b7f7af7e01edc21ff"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7fca57a53ad55377d3cb7f0bed1403ae719bcda8a822415c6b72b37cfb2e9fe9"
+    sha256 cellar: :any_skip_relocation, ventura:       "e2b984f3450afb0226886466f6cbc5ee200b40c1013f40f14dada7e4d9d0d05c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9f6a6b39e87fb2ca468ff0af6689e405b0bef520cc2e2a64d1b078596ef8a9cf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "85e5b379a541035dc3814efdabb279e71ca90a522c2fe0e5bfd79b09e6a82ddd"
   end
 
   depends_on "rebar3" => :build
