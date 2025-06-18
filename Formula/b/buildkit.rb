@@ -2,8 +2,8 @@ class Buildkit < Formula
   desc "Concurrent, cache-efficient, and Dockerfile-agnostic builder toolkit"
   homepage "https:github.commobybuildkit"
   url "https:github.commobybuildkit.git",
-      tag:      "v0.22.0",
-      revision: "13cf07c97baebd3d5603feecc03f5a46ac98d2a5"
+      tag:      "v0.23.0",
+      revision: "cc8ff80e5733eb0a0347176009232d6e40752f7f"
   license "Apache-2.0"
   head "https:github.commobybuildkit.git", branch: "master"
 
@@ -16,12 +16,12 @@ class Buildkit < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0cf5a667d262ed821e3df3a29fa5960b41e6bb47754b466aefcce0daeb1032dd"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0cf5a667d262ed821e3df3a29fa5960b41e6bb47754b466aefcce0daeb1032dd"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "0cf5a667d262ed821e3df3a29fa5960b41e6bb47754b466aefcce0daeb1032dd"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a768fc535322e368f2bbdcb521660c7383624b964fdc774ab5461589a72e3021"
-    sha256 cellar: :any_skip_relocation, ventura:       "a768fc535322e368f2bbdcb521660c7383624b964fdc774ab5461589a72e3021"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "17750ae944b8fcb251b76927408645b2166e073a0446093eca072ad1e3ceff72"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2481573f0d865f13f033c775255eb69e35be093f2557d40b2f593a30a2c34ee4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2481573f0d865f13f033c775255eb69e35be093f2557d40b2f593a30a2c34ee4"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "2481573f0d865f13f033c775255eb69e35be093f2557d40b2f593a30a2c34ee4"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9d5710634c47ed828391a2788357e01fbb3348a30b7419ef8846d36c86391b2c"
+    sha256 cellar: :any_skip_relocation, ventura:       "9d5710634c47ed828391a2788357e01fbb3348a30b7419ef8846d36c86391b2c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5d957ceae55fc9fd8eee585e425332e19211fba81fde633578d25ae3ce529a24"
   end
 
   depends_on "go" => :build

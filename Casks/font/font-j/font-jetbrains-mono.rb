@@ -7,12 +7,12 @@ cask "font-jetbrains-mono" do
   name "JetBrains Mono"
   homepage "https:www.jetbrains.comlpmono"
 
-  no_autobump! because: :requires_manual_review
-
   livecheck do
     url :url
     strategy :gitHub_latest
   end
+
+  no_autobump! because: :requires_manual_review
 
   font "fontsttfJetBrainsMono-Bold.ttf"
   font "fontsttfJetBrainsMono-BoldItalic.ttf"

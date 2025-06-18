@@ -6,12 +6,12 @@ cask "font-overpass-nerd-font" do
   name "Overpass Nerd Font families (Overpass)"
   homepage "https:github.comryanoasisnerd-fonts"
 
-  no_autobump! because: :bumped_by_upstream
-
   livecheck do
     url :url
     strategy :github_latest
   end
+
+  no_autobump! because: :bumped_by_upstream
 
   font "OverpassMNerdFont-Bold.otf"
   font "OverpassMNerdFont-Light.otf"

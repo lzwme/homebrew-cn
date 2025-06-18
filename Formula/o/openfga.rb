@@ -1,18 +1,18 @@
 class Openfga < Formula
   desc "High performance and flexible authorizationpermission engine"
   homepage "https:openfga.dev"
-  url "https:github.comopenfgaopenfgaarchiverefstagsv1.8.15.tar.gz"
-  sha256 "4465fd0430d6423eba0a6a9cdacec0013ea1666888142450ec204e90b63a45c1"
+  url "https:github.comopenfgaopenfgaarchiverefstagsv1.8.16.tar.gz"
+  sha256 "be00254a940c5effac7a6b6fa521be1c40d1df9dd65554d050654c45453f116f"
   license "Apache-2.0"
   head "https:github.comopenfgaopenfga.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9eaff0b0e6923b53c135f00b1f31d2780da1cb9f1204ba058c6800ebd4cb64fa"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b50658b5ff62e40b302afc314d82f99ada127fabab9f1993e982630f075547b2"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "a3243760fdd2ceb9298171dd23b98bc39db031a8957133ca2c3a4efc6211010a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b3cffdbc157fca934cb401bb93cbfc73f9001dc07aaf570512cb856ead8c14cb"
-    sha256 cellar: :any_skip_relocation, ventura:       "2c97709672a99ca798cd06c700ae4c9c8eb8eadca333f883b7df309f2a73bc6c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b67a0e8b0347ecf7ed76a788896e895b6b51cd84366fed558e16ef7a16fabddc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bdc6ece7b3e990f86ca70a2ab18d8a94a1ddec36bb3e6f38d5ed6d1c799341a3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "eda7d744fbf2ca6efd59833ebb0839f64e39a82f42b266f3f7a08e1c47f178fd"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "436f1cef70cb26d6d675e08651c59b5d60455f142ede5a6950cc9715118e9a09"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5fba3db49a7b9c6183fc9943819a5a516778fbd87039b06cbff1daaee057893e"
+    sha256 cellar: :any_skip_relocation, ventura:       "71a4ca872372790eb1fec5c8196e44e075fda8596725d195054aeaccdcc6b373"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e1572c7d05aa03f4647672eba182698b1394f0eab0e9699d653788232a6f5eb6"
   end
 
   depends_on "go" => :build

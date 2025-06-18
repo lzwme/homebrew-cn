@@ -1,8 +1,8 @@
 class Moon < Formula
   desc "Task runner and repo management tool for the web ecosystem, written in Rust"
   homepage "https:moonrepo.devmoon"
-  url "https:github.commoonrepomoonarchiverefstagsv1.37.2.tar.gz"
-  sha256 "1bf934c6777e7285644dd79bb9f554f63c0d34d50506523a9b2d02af5cd7d79c"
+  url "https:github.commoonrepomoonarchiverefstagsv1.37.3.tar.gz"
+  sha256 "d6007ebf5d5bd5d289dda839f185a1d736c0ae8a98de93323db17a1cb878a0f8"
   license "MIT"
   head "https:github.commoonrepomoon.git", branch: "master"
 
@@ -12,13 +12,13 @@ class Moon < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1896b74923156cebef2c60490405ca4bde8869af0f20faffbb1b4da72a87b654"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ca4ddca58808917fd01cf98e45c40206c3910e99698d24cb7864b4dab34a7b9b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "5a82642bef14c5a2bd7dac20af2aae87d362c30abf838e53b36458c6dbdf8c14"
-    sha256 cellar: :any_skip_relocation, sonoma:        "16581c39eac0ad8bb32239ae4aea42520cce582a2d798532766fae5f8d11f78b"
-    sha256 cellar: :any_skip_relocation, ventura:       "e794cfbe98f2861386991e7e945089c37fc622efb8359cb9453c7fbe2a117358"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "39e18a04a3ebde1b4a184f7e4e19ba0489eb452f999cf3fd64e426e90a68e23e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2694cc9cab541db1611914a28b6bafbccced843dd83890795b84762707d710a4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "de334030263b6e4162d0be59b387318650878095c0ca9992c23ae19990df9a9f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9671fba10c5070352d68e75aac8ae9364cbc41709268dd8708ae33b9e0d3f129"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "2142272e1b02927cf6ded3729197e59aefe053e050be5545d02cbf8686209d0f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c8e874862d6a13f48c3bf92fb0db267140b354d9f9bbe4f46cf60428dfd34540"
+    sha256 cellar: :any_skip_relocation, ventura:       "c68df6575d1d2a971b9c52bca356ed7773b43ad44d3d321f02e2bd6efe05f1f3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "81fad2c14bb9bc373537e92316298b20a0259f53df7855a68c67dfdd7780a960"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7fb723ce255d1bfc9279e55e424f3b55beb08a0d37ed4d2f136835f0d5fb51dc"
   end
 
   depends_on "pkgconf" => :build

@@ -47,6 +47,9 @@ class Gwyddion < Formula
     depends_on "harfbuzz"
   end
 
+  # Fix Autoconf ≥2.72 compatibility by explicitly declaring gettext version.
+  patch :DATA
+
   def install
     system "autoreconf", "--force", "--install", "--verbose" if OS.mac?
     system "./configure", "--disable-desktop-file-update",
@@ -74,3 +77,17 @@ class Gwyddion < Formula
     system "./test"
   end
 end
+
+__END__
+diff --git a/configure.ac b/configure.ac
+index b1f75d4..8a0895c 100644
+--- a/configure.ac
++++ b/configure.ac
+@@ -883,6 +883,7 @@ AC_CHECK_FUNCS([sincos log2 exp2 lgamma tgamma j0 j1 y0 y1 log1p expm1 memrchr m
+ #############################################################################
+ # I18n
+ GETTEXT_PACKAGE=$PACKAGE_TARNAME
++AM_GNU_GETTEXT_VERSION([0.19])
+ AM_GNU_GETTEXT([external])
+ AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE,"$GETTEXT_PACKAGE",[Gettext package name])
+ AC_SUBST(GETTEXT_PACKAGE)

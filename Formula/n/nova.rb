@@ -1,18 +1,18 @@
 class Nova < Formula
   desc "Find outdated or deprecated Helm charts running in your cluster"
   homepage "https:github.comFairwindsOpsnova"
-  url "https:github.comFairwindsOpsnovaarchiverefstagsv3.11.3.tar.gz"
-  sha256 "5f70b5a904c773190e104776a42afd9b798f682b7f1bafc12c27818120a94911"
+  url "https:github.comFairwindsOpsnovaarchiverefstagsv3.11.4.tar.gz"
+  sha256 "e4364254b385a84701ff649bb47114b5e7b5a59d3d1e61a12ea9663715164fd8"
   license "Apache-2.0"
   head "https:github.comFairwindsOpsnova.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "19ce1ddbf6213ebb146cd2036bebafdea269c333f6292e36f13a22101c9bd5a1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "19ce1ddbf6213ebb146cd2036bebafdea269c333f6292e36f13a22101c9bd5a1"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "19ce1ddbf6213ebb146cd2036bebafdea269c333f6292e36f13a22101c9bd5a1"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e4fd80c52ad1b119cb9b7e2482217be94e8967c59bc631220d94b96babaf905d"
-    sha256 cellar: :any_skip_relocation, ventura:       "e4fd80c52ad1b119cb9b7e2482217be94e8967c59bc631220d94b96babaf905d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1e1784c91e78d8ec6667bbea4bd7bd46c266cdd3415f8b6703b1d3cdba697e30"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c174a2a5eb9356b05a26436bccfe364e69cb5d72e6595f347431eee8cdb186ca"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c174a2a5eb9356b05a26436bccfe364e69cb5d72e6595f347431eee8cdb186ca"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "c174a2a5eb9356b05a26436bccfe364e69cb5d72e6595f347431eee8cdb186ca"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8a673713f994a9add1153d1a493b723a840267558442009aa947a93c28cc4de6"
+    sha256 cellar: :any_skip_relocation, ventura:       "8a673713f994a9add1153d1a493b723a840267558442009aa947a93c28cc4de6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "331adffe27708f500644c742da1a3b7f6ff119aeaac9e3fe8b298440d098bbd1"
   end
 
   depends_on "go" => :build

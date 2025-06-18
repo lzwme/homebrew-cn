@@ -2,7 +2,7 @@ class M4 < Formula
   desc "Macro processing language"
   homepage "https://www.gnu.org/software/m4/"
   url "https://ftp.gnu.org/gnu/m4/m4-1.4.20.tar.xz"
-  mirror "https://ftpmirror.gnu.org/m4/m4-1.4.19.tar.xz"
+  mirror "https://ftpmirror.gnu.org/m4/m4-1.4.20.tar.xz"
   sha256 "e236ea3a1ccf5f6c270b1c4bb60726f371fa49459a8eaaebc90b216b328daf2b"
   license "GPL-3.0-or-later"
 

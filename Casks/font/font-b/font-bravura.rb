@@ -6,14 +6,14 @@ cask "font-bravura" do
   name "Bravura"
   homepage "https:github.comsteinbergmediabravura"
 
-  no_autobump! because: :requires_manual_review
-
   # Upstream may mark a release that is described as the current release on the first-party
   # page as a "pre-release" on GitHub, so we have to check the first-party page.
   livecheck do
     url "https:www.smufl.orgfonts"
     regex(%r{href=.*?bravurareleasestagbravura[._-]v?(\d+(?:\.\d+)+)"}i)
   end
+
+  no_autobump! because: :requires_manual_review
 
   font "bravura-bravura-#{version}redistotfBravura.otf"
   font "bravura-bravura-#{version}redistotfBravuraText.otf"

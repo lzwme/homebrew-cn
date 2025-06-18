@@ -1,18 +1,18 @@
 class Polaris < Formula
   desc "Validation of best practices in your Kubernetes clusters"
   homepage "https:www.fairwinds.compolaris"
-  url "https:github.comFairwindsOpspolarisarchiverefstags9.6.3.tar.gz"
-  sha256 "137169603f1c68b0da976bd7c2b876c3a7e06e281eccbaea2657c37b80988405"
+  url "https:github.comFairwindsOpspolarisarchiverefstags9.6.4.tar.gz"
+  sha256 "f2ba54978d8ffef3ed19194e20ba41f3cc76ab8f834fc1c159d33e4cb9caedde"
   license "Apache-2.0"
   head "https:github.comFairwindsOpspolaris.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "91ccfe006b778c8f49eb585f5042ec9164039a229fb559753ec078c6c26fe165"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "91ccfe006b778c8f49eb585f5042ec9164039a229fb559753ec078c6c26fe165"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "91ccfe006b778c8f49eb585f5042ec9164039a229fb559753ec078c6c26fe165"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e174637f3fef3c0fd5cc3ca45042f4102f317ea1ee57abca42b41c894e7932db"
-    sha256 cellar: :any_skip_relocation, ventura:       "e174637f3fef3c0fd5cc3ca45042f4102f317ea1ee57abca42b41c894e7932db"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f58b895b961f875ee4f2d8db147dc206f00e39fc6586a36e0abdd114b69d0644"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2ef434ef6cd56dd69897c9e5590bd70733a70857470aead4e5d75ef7d75af424"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "12a13e874ac79ea28466cc460ccdec0d5fa8591979856a727121c29d3bd11292"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "01c6ec3b5a1e06fb4dc08cb37c9716d718ac0c097954b146499c675296164567"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d572ca9715d04611af9a9b350704f10e2ce005c7b7487b0f3d2f5641c568ec07"
+    sha256 cellar: :any_skip_relocation, ventura:       "c46b43399918f99ba929cf8dda7bbb5735ed390d671c3e18939927f53657af4d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "516d84c856928570edde9fe8aabe7d2e4cdc488029e34f41a6b4938da2cf5931"
   end
 
   depends_on "go" => :build

@@ -2826,7 +2826,7 @@ Homebrew-homebrew-core/Formula/h/hstr.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/ht.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/html-xml-utils.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/h/html2markdown.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/h/html2text.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/h/html2text.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/h/htmlcleaner.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/h/htmlcompressor.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/h/htmlcxx.rb, Homebrew/homebrew-core, 1
@@ -4492,6 +4492,7 @@ Homebrew-homebrew-core/Formula/m/mono.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/monocle.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/monolith.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/montage.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/m/moodle-dl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/moon-buggy.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/moon.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/moreutils.rb, Homebrew/homebrew-core, 0
@@ -7203,7 +7204,7 @@ Homebrew-homebrew-core/Formula/v/virtualpg.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/v/virtuoso.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/virustotal-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vis.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/v/visidata.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/v/visidata.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/visionmedia-watch.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/visp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vit.rb, Homebrew/homebrew-core, 1
@@ -12536,6 +12537,7 @@ Homebrew-homebrew-cask/Casks/l/logmein-client.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/logmein-hamachi.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/logos.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/logseq.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/l/longbridge-pro.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/longplay.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/lookaway.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/l/lookin.rb, Homebrew/homebrew-cask, 0

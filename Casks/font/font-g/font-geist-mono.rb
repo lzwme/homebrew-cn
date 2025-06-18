@@ -7,12 +7,12 @@ cask "font-geist-mono" do
   name "Geist Mono"
   homepage "https:vercel.comfont"
 
-  no_autobump! because: :requires_manual_review
-
   livecheck do
     url :url
     strategy :github_latest
   end
+
+  no_autobump! because: :requires_manual_review
 
   font "geist-font-#{version}fontsGeistMonootfGeistMono-Black.otf"
   font "geist-font-#{version}fontsGeistMonootfGeistMono-BlackItalic.otf"

@@ -6,11 +6,11 @@ cask "font-noto-serif-cjk-tc" do
   name "Noto Serif CJK TC"
   homepage "https:github.comnotofontsnoto-cjktreemainSerif"
 
-  no_autobump! because: :requires_manual_review
-
   livecheck do
     cask "font-noto-serif-cjk"
   end
+
+  no_autobump! because: :requires_manual_review
 
   font "OTFTraditionalChineseNotoSerifCJKtc-Black.otf"
   font "OTFTraditionalChineseNotoSerifCJKtc-Bold.otf"

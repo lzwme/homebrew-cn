@@ -9,8 +9,12 @@ class GorillaCli < Formula
   revision 3
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "13c6b4c8f4293e105f99bfcc56e39dbd2134aec665131deaa08ff12a4d9f9b20"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "ba6432daac48104b89bfd8d0ebc549e05f9b010f4e2c9be42349ba7959560af6"
   end
+
+  # service is down: https:github.comgorilla-llmgorilla-cliissues64
+  deprecate! date: "2025-06-17", because: :unmaintained
 
   depends_on "certifi"
   depends_on "python@3.13"

@@ -18,6 +18,12 @@ class ParallelDiskUsage < Formula
 
   depends_on "rust" => :build
 
+  # rust 1.87 build patch, upstream pr ref, https:github.comKSXGitHubparallel-disk-usagepull276
+  patch do
+    url "https:github.comKSXGitHubparallel-disk-usagecommit20fe7513f96cfbc456b835faf36c003d039500e2.patch?full_index=1"
+    sha256 "cd7555caa0e2f976fe2dfab81be0077ac1b95977accf70a3d6975c86123207d3"
+  end
+
   def install
     system "cargo", "install", "--features", "cli,cli-completions", *std_cargo_args
 

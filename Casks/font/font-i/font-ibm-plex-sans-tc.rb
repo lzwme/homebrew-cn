@@ -6,12 +6,12 @@ cask "font-ibm-plex-sans-tc" do
   name "IBM Plex Sans TC"
   homepage "https:github.comIBMplex"
 
-  no_autobump! because: :requires_manual_review
-
   livecheck do
     url :url
     regex(%r{^@ibmplex-sans-tc@?(\d+(?:\.\d+)+)$}i)
   end
+
+  no_autobump! because: :requires_manual_review
 
   font "ibm-plex-sans-tcfontscompleteotfhintedIBMPlexSansTC-Bold.otf"
   font "ibm-plex-sans-tcfontscompleteotfhintedIBMPlexSansTC-ExtraLight.otf"

@@ -33,6 +33,7 @@ cask "tailscale" do
             pkgutil:    "com.tailscale.ipn.macsys"
 
   zap trash: [
+    "LibraryTailscale",
     "~LibraryApplication Scripts*.io.tailscale.ipn.macsys",
     "~LibraryApplication Scriptsio.tailscale.ipn.macsys",
     "~LibraryApplication Scriptsio.tailscale.ipn.macsys.login-item-helper",
@@ -47,7 +48,6 @@ cask "tailscale" do
     "~LibraryHTTPStoragesio.tailscale.ipn.macsys",
     "~LibraryHTTPStoragesio.tailscale.ipn.macsys.binarycookies",
     "~LibraryPreferencesio.tailscale.ipn.macsys.plist",
-    "~LibraryTailscale",
   ]
 
   caveats do

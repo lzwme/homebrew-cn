@@ -1,18 +1,18 @@
 class H3 < Formula
   desc "Hexagonal hierarchical geospatial indexing system"
   homepage "https:uber.github.ioh3"
-  url "https:github.comuberh3archiverefstagsv4.2.1.tar.gz"
-  sha256 "1b51822b43f3887767c5a5aafd958fca72b72fc454f3b3f6eeea31757d74687d"
+  url "https:github.comuberh3archiverefstagsv4.3.0.tar.gz"
+  sha256 "a47cfa36e255e4bf16c63015aaff8e6fe2afc14ffaa3f6b281718158446c0e9b"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "7be49d20c152264ea989f2e96be5b0b4cdabc41769a3577ceb7d6c7e0a6b481b"
-    sha256 cellar: :any,                 arm64_sonoma:  "3ae20dda8f2138be8d79d77a20d82f92caa7a7a0828c9a0aeb4e2f64b29cc8db"
-    sha256 cellar: :any,                 arm64_ventura: "a72d460ce48392a312f9713131c9e526c32421a30f862c9c65ef2c9c009dbf0d"
-    sha256 cellar: :any,                 sonoma:        "d0849d830aca26ddaff870a0d725dfc24ac2e3e8cf827a4f89bdb71587ba2d8b"
-    sha256 cellar: :any,                 ventura:       "32cceafc84e5fa584523be35756aa6cdc437457b2712cd0a2d1a03bdea31b1b1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d309c31edb9ba1b7b046df61e2b819791e0c0ca2fe54be55567621953fc48dbb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3410f81c6368a364ef33073653ec88928912738e9f653b99a3b01694dd510b41"
+    sha256 cellar: :any,                 arm64_sequoia: "1d405725fb107bc5802db04305b5981021d43d85549816bba0e0f05aabd22cca"
+    sha256 cellar: :any,                 arm64_sonoma:  "20a351fb6bf722a782fc54016671dacb183ac4b1b13f2839b50d950d50cce4ad"
+    sha256 cellar: :any,                 arm64_ventura: "47213e30f88fc3293049ae8827285188284173fb7bd56ee5dcfd9e01b523d966"
+    sha256 cellar: :any,                 sonoma:        "efb8ab1396d50289cff7f284834da7949b60e7d8fdda67372579150e155a2a94"
+    sha256 cellar: :any,                 ventura:       "238925854566dc1f663188441e70161e776ecb8ee5e83e302fd02cca982bdea5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "98c17d9170276ef83b6338b519f6438339f46685ed9b89814c64f15d235e5965"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e555c5f66845f353c2592dc83923631952464cb59aac583c577dde1be0dadc03"
   end
 
   depends_on "cmake" => :build

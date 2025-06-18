@@ -7,12 +7,12 @@ cask "font-noto-sans" do
   name "Noto Sans"
   homepage "https:notofonts.github.io"
 
-  no_autobump! because: :requires_manual_review
-
   livecheck do
     url :url
     regex(^NotoSans-v?(\d+(?:\.\d+)+)$i)
   end
+
+  no_autobump! because: :requires_manual_review
 
   font "NotoSansunhintedvariable-ttfNotoSans-Italic[wdth,wght].ttf"
   font "NotoSansunhintedvariable-ttfNotoSans[wdth,wght].ttf"

@@ -1,43 +1,40 @@
 class Html2text < Formula
   desc "Advanced HTML-to-text converter"
-  homepage "https:github.comgrobianhtml2text"
-  url "https:github.comgrobianhtml2textreleasesdownloadv2.2.3html2text-2.2.3.tar.gz"
-  sha256 "859133528b3fd893562e41d84bc1ebc1f9166dd281d0fa8e17e7dd26337f5752"
+  homepage "https://gitlab.com/grobian/html2text"
+  # upstream issue report on the github release tarball
+  url "https://gitlab.com/-/project/48313341/uploads/b7a99615c4419cf9a65dc24f12bae0d4/html2text-2.3.0.tar.gz"
+  sha256 "8cec23ed1ff43313f2d0e4b434cd39871bc002cad947a40d4a3738d1351921f7"
   license "GPL-2.0-or-later"
-  head "https:github.comgrobianhtml2text.git", branch: "master"
+  head "https://gitlab.com/grobian/html2text.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "0586df2ecd8a66280ec53b0ae852f22867471b66a60fbd4cb8054a1a2c98b536"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "03b77ee2ee4c1a68b990f2d386ddf70ff2f072da841441f2d4ae0aecf3e95f26"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "df6b508a10d46399eaf5f9040974e1b91b1a9efb51d8bf1be3bdb04ca114b567"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f9ee670f7db4188a57c3c7dd563ef3bf45cb36dc90688d9d1f67ee28efc09ccb"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "fc46b8e76c5aed13521d92cf83e521142115ad206e6e6b7cba03b153ace328ec"
-    sha256 cellar: :any_skip_relocation, sonoma:         "558e4e7ad1247c5f25210a29fd458b82f5dcda8c36ca9e81db5385d9a21107b1"
-    sha256 cellar: :any_skip_relocation, ventura:        "d5aaf31694d77a7b58638596ed3d0aa9bac50b148b60e416dd9cd41306fb2b86"
-    sha256 cellar: :any_skip_relocation, monterey:       "f8a93138c8595992de8d0e9421147b1995d1f4344cf7f94b47f004c76ffe46e9"
-    sha256 cellar: :any_skip_relocation, big_sur:        "b4d67a9b09786e6f9e1141dd88a614493b94c65d47e87e6cecb9a65bcf8b353b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "ce82baf3b669ad59fb52c489c9aedae804b8463233a3c123a82b2b3ab3bb2ea6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b8fa522f9b7031aff66bb0bdabef05c4def2d153a7c6ff5f4136341b06822c5f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e244711dd9a80f0a0086a6acece7436614c56cc3544b88b1586b1cc1a33476d3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1b1e778ff1bbacfa5f4bb389f16de755aca64924714c8f98fd7716edc95a5437"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "4f0b879932edd63851fa7a2a23df5658da15364817757fdd610fc70e4eed9a28"
+    sha256 cellar: :any_skip_relocation, sonoma:        "334b88e814046a9f15e87c2c986421c12f95d2a54465139f40579b3c92149d2a"
+    sha256 cellar: :any_skip_relocation, ventura:       "f1eaecf6186bf7485709790034c6d882207a081382fd604994a16a4840e680b8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a7887dd659efb132d2bd8848b677e88140c5279d4b575f8597106299b02160c9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6a4d92d0215bb31c12be4308ac756e49819218e05ff73bb0677514be9900c0ef"
   end
 
   def install
     ENV.cxx11
-    system ".configure", "--disable-silent-rules", *std_configure_args
+    system "./configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
   end
 
   test do
-    path = testpath"index.html"
+    path = testpath/"index.html"
     path.write <<~HTML
       <!DOCTYPE html>
       <html>
-        <head><title>Home<title><head>
-        <body><p>Hello World<p><body>
-      <html>
+        <head><title>Home</title></head>
+        <body><p>Hello World</p></body>
+      </html>
     HTML
 
-    assert_equal "Hello World", shell_output("#{bin}html2text #{path}").strip
+    assert_equal "Hello World", shell_output("#{bin}/html2text #{path}").strip
   end
 end

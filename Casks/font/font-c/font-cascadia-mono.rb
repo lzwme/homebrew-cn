@@ -6,12 +6,12 @@ cask "font-cascadia-mono" do
   name "Cascadia Mono"
   homepage "https:github.commicrosoftcascadia-code"
 
-  no_autobump! because: :requires_manual_review
-
   livecheck do
     url :url
     strategy :github_latest
   end
+
+  no_autobump! because: :requires_manual_review
 
   font "ttfCascadiaMono.ttf"
   font "ttfCascadiaMonoItalic.ttf"

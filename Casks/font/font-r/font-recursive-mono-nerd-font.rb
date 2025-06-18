@@ -6,12 +6,12 @@ cask "font-recursive-mono-nerd-font" do
   name "RecMono Nerd Font families (Recursive Mono)"
   homepage "https:github.comryanoasisnerd-fonts"
 
-  no_autobump! because: :bumped_by_upstream
-
   livecheck do
     url :url
     strategy :github_latest
   end
+
+  no_autobump! because: :bumped_by_upstream
 
   font "RecMonoCasualNerdFont-Bold.ttf"
   font "RecMonoCasualNerdFont-BoldItalic.ttf"
