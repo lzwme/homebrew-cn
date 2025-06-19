@@ -4,8 +4,8 @@ class Semgrep < Formula
   desc "Easily detect and prevent bugs and anti-patterns in your codebase"
   homepage "https:semgrep.dev"
   url "https:github.comsemgrepsemgrep.git",
-      tag:      "v1.125.0",
-      revision: "0d36271ada38faec72ca8c2c49f87f5b30d0b3de"
+      tag:      "v1.126.0",
+      revision: "565749d86742061055c541bfb0660333f9e16bc4"
   license "LGPL-2.1-only"
   head "https:github.comsemgrepsemgrep.git", branch: "develop"
 
@@ -15,13 +15,13 @@ class Semgrep < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "72ce510298dc48ff03500e68473a23954f0e01182a380ae23adf2219013771cd"
-    sha256 cellar: :any,                 arm64_sonoma:  "774c6fcbbc65693229b1704b60c3fb924c11571e7c44c553388d1abba5e78e48"
-    sha256 cellar: :any,                 arm64_ventura: "1b0527600cce5efea61c57c47d154177258eafc89a0306dba1fb97e9e00496e1"
-    sha256 cellar: :any,                 sonoma:        "dc739068f71b5fee5bde2e325e087246a8f4b64ca5193b3f81ee4087ef267f09"
-    sha256 cellar: :any,                 ventura:       "b568aa37e70dde29ede257e7844aceaa5fee966c5c211a8fcf5e752322d6b437"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6701434581dd863b6bbd2e77a15e9839e6e31fbbd118fef94909c021712fdac7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d6bb523a77240416ddc34464ad14c1a1b74af745d5a463662e6db8d0421b1e3d"
+    sha256 cellar: :any,                 arm64_sequoia: "89c81bfde1ab612bcc97bd8154546eb23f7b7b87f283b776c44d25b517019bd2"
+    sha256 cellar: :any,                 arm64_sonoma:  "ece5a594647709d036f1171848e11394db148f037729f17e9c053fbf0f488622"
+    sha256 cellar: :any,                 arm64_ventura: "2f80b9144e9eae0d24ae9180a54fb3ee68c049c3a4859bc9245ade3e244f7e50"
+    sha256 cellar: :any,                 sonoma:        "dad269ed41d59c8e2963f293721354bc6c4426d66185794e8e5174e5155b8219"
+    sha256 cellar: :any,                 ventura:       "9b825c1a29516b3116858a9e4b3fdbc661c9a3f24e644c1fef203cedd3a67434"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f72ddf6aba775961be829068afc405b8a0e6ff2577ae29e3b5a9a5e59f816eb2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9dcf99df88b510098aebd9bab60a061f099bf7f8f3b7d3437a9f7766baef2b4c"
   end
 
   depends_on "autoconf" => :build
@@ -252,8 +252,8 @@ class Semgrep < Formula
   end
 
   resource "urllib3" do
-    url "https:files.pythonhosted.orgpackages8a7816493d9c386d8e60e442a35feac5e00f0913c0f4b7c217c11e8ec2ff53e0urllib3-2.4.0.tar.gz"
-    sha256 "414bc6535b787febd7567804cc015fee39daab8ad86268f1310a9250697de466"
+    url "https:files.pythonhosted.orgpackages15229ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bcurllib3-2.5.0.tar.gz"
+    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
   end
 
   resource "wcmatch" do

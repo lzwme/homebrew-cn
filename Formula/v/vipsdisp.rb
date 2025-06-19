@@ -1,8 +1,8 @@
 class Vipsdisp < Formula
   desc "Viewer for large images"
   homepage "https:github.comjcupittvipsdisp"
-  url "https:github.comjcupittvipsdispreleasesdownloadv3.1.0vipsdisp-3.1.0.tar.xz"
-  sha256 "5c40e71c9c60232dcbf2e1c389295a4a102a27603bce994dbb2e35ff4f1844db"
+  url "https:github.comjcupittvipsdispreleasesdownloadv4.0.0vipsdisp-4.0.0.tar.xz"
+  sha256 "7bbb6740b13d0b211af2efab83d3a0d6e4646b15f57a038ac44ad67f446c5b64"
   license "MIT"
 
   livecheck do
@@ -13,13 +13,13 @@ class Vipsdisp < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any, arm64_sequoia: "c730d171fb0ff997048081609c182e91de7c462764255972070153d3f3957fcd"
-    sha256 cellar: :any, arm64_sonoma:  "77e6eabacad3268d0fbbf4642b5a9860b7811d79b76223b4ea4a64b671d04191"
-    sha256 cellar: :any, arm64_ventura: "04dff97da157a1807ef04cf555d74c42fceea4f63fed8f569f1b5f41d7ce2146"
-    sha256 cellar: :any, sonoma:        "ab4c0f5577e3e3d12fee9d18b7d4033b3930a7b861185eaa74891e6bc954e04a"
-    sha256 cellar: :any, ventura:       "b53418e567653dd0da7087a0f48c21205eb9198871e18ccc51eff0f75ffc947a"
-    sha256               arm64_linux:   "0337ec69ca9d8102849c8a000b075c1f6b09cb5841c703225b8678bcaa1b6ad8"
-    sha256               x86_64_linux:  "59bba41fe00cac2d5012a4a3526233f1c3d77f8d926a0160d95b63c7c4c2360d"
+    sha256 cellar: :any, arm64_sequoia: "0f455d9ae47cdd745f618db40f4b80122781d5e2a3ee8ad07e545e268882c04a"
+    sha256 cellar: :any, arm64_sonoma:  "1ad7f204fcc95075e59ca963092d8dce61fab7afbb9fd0797283734a71901a35"
+    sha256 cellar: :any, arm64_ventura: "380381c039fb4cfe865a47f2afe4243daa4e876b43f89b2972bc4655a4029319"
+    sha256 cellar: :any, sonoma:        "eca523b5e38c37067ff551e0b7091c92a2b9f003d8bc01c9862e1291183fec9f"
+    sha256 cellar: :any, ventura:       "5270221243ff26a91a7fcb84d0286dc102cbb112c5c38deb2ecd7ce78dd979a8"
+    sha256               arm64_linux:   "e9e65b2c5e540a88943f22751fc3f340c962c828f2e855ae78043cf10abca538"
+    sha256               x86_64_linux:  "e7b143d69ecd76a6487edc8814d42aca730b0cf1b2800fc833a2718d1c72edc1"
   end
 
   depends_on "meson" => :build

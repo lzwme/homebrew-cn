@@ -3,21 +3,21 @@ class Btcli < Formula
 
   desc "Bittensor command-line tool"
   homepage "https:docs.bittensor.combtcli"
-  url "https:files.pythonhosted.orgpackages55cd66e342138323b5943105185296eca8da3f794cacba5d5b2373a334e22520bittensor_cli-9.6.0.tar.gz"
-  sha256 "f0528142800aeb8841b2c9556d0f6db86c22554c96eaded228c2dabf5b7e7ea4"
+  url "https:files.pythonhosted.orgpackages579c12d9e44f81344776457753d4e386548c902b3b7cbd85bc17c3b75501a65ebittensor_cli-9.7.0.tar.gz"
+  sha256 "dffef1dcc88a99cb3c1a95301b03efec70444dd83b1fa356c81fdfab3923c47f"
   license "MIT"
   head "https:github.comopentensorbtcli.git", branch: "main"
 
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "7a855c3b77bc12b92d18e3bb279885368adbc44d137109d0e7cb7289a926197b"
-    sha256 cellar: :any,                 arm64_sonoma:  "c2a6d8207d25da2ea01199c9b2772bc0c1e130eccf3513c3f464e70280c715dd"
-    sha256 cellar: :any,                 arm64_ventura: "9f5187a2f102d812739f1660610bc0ca4a2e20316c139b2765ee23cf9e8c6fb4"
-    sha256 cellar: :any,                 sonoma:        "50e99fac804d53b59676963cfdb999b15a72fb048e8e95da99a9055f2aaf72a0"
-    sha256 cellar: :any,                 ventura:       "c95abb5c50538b523f1d808f2f10bf712209703a3e25efbcbb2d21cfe7c4ea55"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6fa7eabc4a7d131ff0d2652e92ad796e3faffccd923674e38b143f5ccddcd64b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f6a2a5fe0b58e2d402e67e3d3b75a5cf2e9fef272e5314c27b1f1c609d686304"
+    sha256 cellar: :any,                 arm64_sequoia: "e844c6d1a3c7bb3b9ff5af4fca25f5438b71839c3a84f78ed58c5a617d912db0"
+    sha256 cellar: :any,                 arm64_sonoma:  "c5eed24e4219bcc2adf70ff68e0e1eec0e75acce55136c1fc63b41e7a14ffc49"
+    sha256 cellar: :any,                 arm64_ventura: "113c276a6bbe8d4626f6904f0f771d5edae4a200639fc5e81d4a4ea844aab692"
+    sha256 cellar: :any,                 sonoma:        "d4b6bbd4e954200a6479a630b8e6066d33b11b98d7b7b0382a7711026169d5da"
+    sha256 cellar: :any,                 ventura:       "a7cb57fe1b9871c97fa5c9b7304377a76c6d09765bc0cc51fa41f4778cc85d14"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1a826f142833ea0404d54e01fbc9475f6bd39311d55208cc0f4b7219e55a7155"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d2ce3b582f41045e786208e70027d684b63673d2799a9bfa4a615eb1643a7d39"
   end
 
   depends_on "cmake" => :build # for Levenshtein
@@ -43,8 +43,8 @@ class Btcli < Formula
   end
 
   resource "aiohttp" do
-    url "https:files.pythonhosted.orgpackagesf284ea27e6ad14747d8c51afe201fb88a5c8282b6278256d30a6f71f730add88aiohttp-3.12.12.tar.gz"
-    sha256 "05875595d2483d96cb61fa9f64e75262d7ac6251a7e3c811d8e26f7d721760bd"
+    url "https:files.pythonhosted.orgpackages426eab88e7cb2a4058bed2f7870276454f85a7c56cd6da79349eb314fc7bbcaaaiohttp-3.12.13.tar.gz"
+    sha256 "47e2da578528264a12e4e3dd8dd72a7289e5f812758fe086473fab037a10fcce"
   end
 
   resource "aiosignal" do
@@ -92,9 +92,11 @@ class Btcli < Formula
     sha256 "5baececa9ecba31eff645232d59845c07aa030f0c81ee70184a90d35099a0e63"
   end
 
+  # click > 8.2.0 is unsupported
+  # https:github.comopentensorbtcliblobv9.7.0pyproject.toml#L21
   resource "click" do
-    url "https:files.pythonhosted.orgpackages606c8ca2efa64cf75a977a0d7fac081354553ebe483345c734fb6b6515d96bbcclick-8.2.1.tar.gz"
-    sha256 "27c491cc05d968d271d5a1db13e3b5a184636d9d930f148c50b038f0d0646202"
+    url "https:files.pythonhosted.orgpackagesb92e0090cbf739cee7d23781ad4b89a9894a41538e4fcf4c31dcdd705b78eb8bclick-8.1.8.tar.gz"
+    sha256 "ed53c9d8990d83c2a27deae68e4ee337473f6330c040a31d4225c9574d16096a"
   end
 
   resource "frozenlist" do
@@ -143,13 +145,13 @@ class Btcli < Formula
   end
 
   resource "multidict" do
-    url "https:files.pythonhosted.orgpackages912fa3470242707058fe856fe59241eee5635d79087100b7042a867368863a27multidict-6.4.4.tar.gz"
-    sha256 "69ee9e6ba214b5245031b76233dd95408a0fd57fdb019ddcc1ead4790932a8e8"
+    url "https:files.pythonhosted.orgpackages46b559f27b4ce9951a4bce56b88ba5ff5159486797ab18863f2b4c1c5e8465bdmultidict-6.5.0.tar.gz"
+    sha256 "942bd8002492ba819426a8d7aefde3189c1b87099cdf18aaaefefcf7f3f7b6d2"
   end
 
   resource "narwhals" do
-    url "https:files.pythonhosted.orgpackagesdfd6168a787b7800d6c89846b791e4f5ee6b94998a80c8c2838a019d3d71984dnarwhals-1.42.1.tar.gz"
-    sha256 "50a5635b11aeda98cf9c37e839fd34b0a24159f59a4dfae930290ad698320494"
+    url "https:files.pythonhosted.orgpackages37d9ec1bd9f85d30de741b281ef24dabbf029122b638ea19456ffa1b1d862205narwhals-1.43.0.tar.gz"
+    sha256 "5a28119401fccb4d344704f806438a983bb0a5b3f4a638760d25b1d521a18a79"
   end
 
   resource "netaddr" do
@@ -249,8 +251,8 @@ class Btcli < Formula
   end
 
   resource "urllib3" do
-    url "https:files.pythonhosted.orgpackages8a7816493d9c386d8e60e442a35feac5e00f0913c0f4b7c217c11e8ec2ff53e0urllib3-2.4.0.tar.gz"
-    sha256 "414bc6535b787febd7567804cc015fee39daab8ad86268f1310a9250697de466"
+    url "https:files.pythonhosted.orgpackages15229ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bcurllib3-2.5.0.tar.gz"
+    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
   end
 
   resource "websockets" do

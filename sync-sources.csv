@@ -907,6 +907,7 @@ Homebrew-homebrew-core/Formula/c/chars.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/chart-releaser.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/chart-testing.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/chatblade.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/c/chawan.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/chdig.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cheapglk.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/cheat.rb, Homebrew/homebrew-core, 1
@@ -1661,6 +1662,7 @@ Homebrew-homebrew-core/Formula/e/e2fsprogs.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/e2tools.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/earthly.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/easeprobe.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/e/eask-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/easy-rsa.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/easy-tag.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/e/easyeda2kicad.rb, Homebrew/homebrew-core, 1
@@ -2826,7 +2828,7 @@ Homebrew-homebrew-core/Formula/h/hstr.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/ht.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/html-xml-utils.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/h/html2markdown.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/h/html2text.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/h/html2text.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/htmlcleaner.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/h/htmlcompressor.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/h/htmlcxx.rb, Homebrew/homebrew-core, 1
@@ -5163,7 +5165,7 @@ Homebrew-homebrew-core/Formula/p/payara.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/payload-dumper-go.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pazpar2.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pbc-sig.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/p/pbc.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/p/pbc.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pbzip2.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pbzx.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pc6001vx.rb, Homebrew/homebrew-core, 1
@@ -7836,6 +7838,7 @@ Homebrew-homebrew-cask/Casks/a/aliworkbench.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/all-in-one-messenger.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/alloy.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/almighty.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/a/aloha-browser.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/alpha.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/alt-tab.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/altair-graphql-client.rb, Homebrew/homebrew-cask, 1
@@ -14857,6 +14860,7 @@ Homebrew-homebrew-cask/Casks/v/via.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/v/viable.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/v/viables.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/v/vial.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/v/vibemeter.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/v/viber.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/v/vidcutter.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/v/videoduke.rb, Homebrew/homebrew-cask, 0

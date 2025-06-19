@@ -1,8 +1,8 @@
 class Ninja < Formula
   desc "Small build system for use with gyp or CMake"
   homepage "https:ninja-build.org"
-  url "https:github.comninja-buildninjaarchiverefstagsv1.12.1.tar.gz"
-  sha256 "821bdff48a3f683bc4bb3b6f0b5fe7b2d647cf65d52aeb63328c91a6c6df285a"
+  url "https:github.comninja-buildninjaarchiverefstagsv1.13.0.tar.gz"
+  sha256 "f08641d00099a9e40d44ec0146f841c472ae58b7e6dd517bee3945cfd923cedf"
   license "Apache-2.0"
   head "https:github.comninja-buildninja.git", branch: "master"
 
@@ -12,14 +12,13 @@ class Ninja < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "977f9c2ad831aed827b3cf8ad38606f64b11b4c1c6a170ecc0a2bf8118911b63"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "474df4968035d4949cc7d955302036f3e665d3bc6dc37fd221598bb3e1aef31b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "1c7814f2fc23794608edce7b86d8dfcf20fd810acbd5a66515f8731aeafd0585"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8cf692e5eabf45fee86530ee3313fa68a3942405587606e3ee39cadc781e3ff5"
-    sha256 cellar: :any_skip_relocation, ventura:       "e2fa65aa91a9ec6054bf01c693ca4c8a9c086270020c7c281d729dc3a5cef70e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6e50a8c0ecd4e893f973b313e213fe3a8dd1ee883ac121ee5204f1f5fd818b03"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "99758937cfb53c0e214a4e752b50d38bf9e32e87ec31c7802b84953a802cbe6c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "60f60dca4793f8f81a4ba72809d49ee79cfb36eed2eb0555dfd735a7af7396f3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "357970eb2a15833392163be15cd02e9a76157df1b0bb98a5acd5e0ba8f49d468"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "532af454e1545c1ed766f6548501627ae77bbaf2e1195855837728b78d72bd89"
+    sha256 cellar: :any_skip_relocation, sonoma:        "17bfc6d443b17cb1d7056704139c4fd7a026d194f095115ae9988917981dca18"
+    sha256 cellar: :any_skip_relocation, ventura:       "2c2b200597f74af5963e7a9d383e4a9052c45850e9b5433c0dbce775460774ee"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "14ff87446ae39dea37b93a04dec35c452ef51c7a4d87e9a1b7f5306126c77374"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dda32b8743cdb0d0c2d88acc01adef28f2d7a911c18b80b1705505f798ab2693"
   end
 
   uses_from_macos "python" => [:build, :test], since: :catalina
@@ -31,7 +30,6 @@ class Ninja < Formula
     bash_completion.install "miscbash-completion" => "ninja"
     zsh_completion.install "misczsh-completion" => "_ninja"
     doc.install "docmanual.asciidoc"
-    elisp.install "miscninja-mode.el"
     (share"vimvimfilessyntax").install "miscninja.vim"
   end
 

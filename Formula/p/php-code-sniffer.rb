@@ -1,19 +1,24 @@
 class PhpCodeSniffer < Formula
   desc "Check coding standards in PHP, JavaScript and CSS"
   homepage "https:github.comPHPCSStandardsPHP_CodeSniffer"
-  url "https:github.comPHPCSStandardsPHP_CodeSnifferreleasesdownload3.13.1phpcs.phar"
-  sha256 "13660e14bf4c08460baae8f8be79c1162403704a6f4dec447a7287781389938f"
+  url "https:github.comPHPCSStandardsPHP_CodeSnifferreleasesdownload3.13.2phpcs.phar"
+  sha256 "0c2bc9dbd070289f9a022f479fce6b7619eb081c62f8c92ed9e264c399a5773a"
   license "BSD-3-Clause"
 
+  livecheck do
+    url :stable
+    regex(^v?(\d+(?:\.\d+)+)$i)
+  end
+
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "51853b80992256aebc14e93a4498c7d07a144ba339c575df1d052197ffc19fa8"
+    sha256 cellar: :any_skip_relocation, all: "a4a7a187b3e8ddcd4ca46f667b87def02da17d4bdcb811d3deff87b691c29f19"
   end
 
   depends_on "php"
 
   resource "phpcbf.phar" do
-    url "https:github.comPHPCSStandardsPHP_CodeSnifferreleasesdownload3.13.1phpcbf.phar"
-    sha256 "0d0184c2dd99505f77752d3c337c13ef5c3076dc11bb7303106b9d2263915fb0"
+    url "https:github.comPHPCSStandardsPHP_CodeSnifferreleasesdownload3.13.2phpcbf.phar"
+    sha256 "f98325b0e3ec71c949143ac416311ec63706e7e8220843700ad2bf0e58b5a401"
 
     livecheck do
       formula :parent

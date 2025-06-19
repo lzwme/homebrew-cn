@@ -1,17 +1,13 @@
 cask "psst" do
-  version "0.1.0,20250525.150831"
+  version :latest
   sha256 :no_check
 
-  url "https:nightly.linkjpochylapsstworkflowsbuildmainPsst.dmg.zip",
-      verified: "nightly.linkjpochylapsstworkflowsbuildmain"
+  url "https:github.comjpochylapsstreleaseslatestdownloadPsst.dmg"
   name "Psst"
   desc "Spotify client"
   homepage "https:github.comjpochylapsst"
 
-  livecheck do
-    url :url
-    strategy :extract_plist
-  end
+  depends_on macos: ">= :big_sur"
 
   app "Psst.app"
 
@@ -20,6 +16,7 @@ cask "psst" do
     "~LibraryCachescom.jpochyla.psst",
     "~LibraryCachesPsst",
     "~LibraryHTTPStoragescom.jpochyla.psst",
+    "~LibraryPreferencescom.jpochyla.psst.plist",
     "~LibrarySaved Application Statecom.jpochyla.psst.savedState",
   ]
 end

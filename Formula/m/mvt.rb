@@ -3,22 +3,23 @@ class Mvt < Formula
 
   desc "Mobile device forensic toolkit"
   homepage "https:docs.mvt.reenlatest"
-  url "https:files.pythonhosted.orgpackagescb59ebec439c4f00a2a2f290fe5123e0d697024e43b7d8cf107a057c79cc7298mvt-2.6.0.tar.gz"
-  sha256 "5ef62cac4c84f9b6707bfc83c47f33afdf8e6a2a16bf8156701c5595969b8c29"
+  url "https:files.pythonhosted.orgpackagesde2232aad49d0f07702a0cef255304a21f54d9958cb1628f192cf7332e3e4af1mvt-2.6.1.tar.gz"
+  sha256 "dc13033369048752f4a9d06d579c9748237871d51e91a0d1dc76abb0e47f0a92"
+  # Adaptation of MPL-2.0
   license :cannot_represent
-  revision 1 # Adaptation of MPL-2.0
   head "https:github.commvt-projectmvt.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "4092f861896c006c689b1da9047a3df0d6dd3950d4ad408fc27f24b257c98bae"
-    sha256 cellar: :any,                 arm64_sonoma:  "6e5dbf34333ebae041f760aa8593a18153aac79229b5a36b55b08d3d85d3ff9b"
-    sha256 cellar: :any,                 arm64_ventura: "037a663bf1d80895ed5bc0a2fe196795d48d412eda41faa776a90fba8f834af1"
-    sha256 cellar: :any,                 sonoma:        "2224a1133e6c4d35c8988ac92de4df214a401720b1674e483eeafe73ebe42346"
-    sha256 cellar: :any,                 ventura:       "f2a34bb94db82e6d339a6e3349caac0d5ea28870f9d8ec127100ac71e16e5ab9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ec85cb48daa16ab046be32631074f976600b277173c1b9644607422db497ca0d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f730b1521e0b8fa8ead07212b90539531a9a3bf3b3c53af868d1173f1dd0de5d"
+    sha256 cellar: :any,                 arm64_sequoia: "18e5b0cb9215344ff1bfc3152e1d13b0af57b22d02b96c5c5f4457fa76bd9c44"
+    sha256 cellar: :any,                 arm64_sonoma:  "f560ddecb115f6af60a1ebf8f8539e9e7f5d16ccde4ba6fbbb42624cbbf2544f"
+    sha256 cellar: :any,                 arm64_ventura: "37fbb149c3dc926cb3e73d7f3786389ccb618c95bd0b37d7196bf3be89603673"
+    sha256 cellar: :any,                 sonoma:        "a0c7320f7d483a9cbd68c6845d644fbe2f5e277bfeff2ba0aad9fbbbf972b40c"
+    sha256 cellar: :any,                 ventura:       "2288fcd8f64dc35ff1b11f6e8dd959dbc2608a7370948eec5973b459eb6bf552"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5da706ca0fee18e90b93022d636203a26ea308069d065eca0e37f5b8b24e6ca1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1207a4ee3ef44f8701b40ab3d6c7d55fe10da489f1e1478284240a08867f9b68"
   end
 
+  depends_on "rust" => :build # for pydantic_core
   depends_on "certifi"
   depends_on "cryptography"
   depends_on "libyaml"
@@ -29,9 +30,19 @@ class Mvt < Formula
     sha256 "04c305f30a2ca25d5c54b3cd6ce9bb64c36e5f07967b23b3fb6aaecc851b90b6"
   end
 
+  resource "annotated-types" do
+    url "https:files.pythonhosted.orgpackagesee67531ea369ba64dcff5ec9c3402f9f51bf748cec26dde048a2f973a4eea7f5annotated_types-0.7.0.tar.gz"
+    sha256 "aff07c09a53a08bc8cfccb9c85b05f1aa9a2a6f23728d790723543408344ce89"
+  end
+
   resource "appdirs" do
     url "https:files.pythonhosted.orgpackagesd7d805696357e0311f5b5c316d7b95f46c669dd9c15aaeecbb48c7d0aeb88c40appdirs-1.4.4.tar.gz"
     sha256 "7d5d0167b2b1ba821647616af46a749d1c653740dd0d2415100fe26e27afdf41"
+  end
+
+  resource "betterproto" do
+    url "https:files.pythonhosted.orgpackagesff2eabfed7a721928e14aeb900182ff695be474c4ee5f07ef0874cc5ecd5b0b1betterproto-1.2.5.tar.gz"
+    sha256 "74a3ab34646054f674d236d1229ba8182dc2eae86feb249b8590ef496ce9803d"
   end
 
   resource "charset-normalizer" do
@@ -42,6 +53,26 @@ class Mvt < Formula
   resource "click" do
     url "https:files.pythonhosted.orgpackages606c8ca2efa64cf75a977a0d7fac081354553ebe483345c734fb6b6515d96bbcclick-8.2.1.tar.gz"
     sha256 "27c491cc05d968d271d5a1db13e3b5a184636d9d930f148c50b038f0d0646202"
+  end
+
+  resource "grpclib" do
+    url "https:files.pythonhosted.orgpackages19750f0d3524b38b35e5cd07334b754aa9bd0570140ad982131b04ebfa3b0374grpclib-0.4.8.tar.gz"
+    sha256 "d8823763780ef94fed8b2c562f7485cf0bbee15fc7d065a640673667f7719c9a"
+  end
+
+  resource "h2" do
+    url "https:files.pythonhosted.orgpackages1b38d7f80fd13e6582fb8e0df8c9a653dcc02b03ca34f4d72f34869298c5baf8h2-4.2.0.tar.gz"
+    sha256 "c8a52129695e88b1a0578d8d2cc6842bbd79128ac685463b887ee278126ad01f"
+  end
+
+  resource "hpack" do
+    url "https:files.pythonhosted.orgpackages2c4871de9ed269fdae9c8057e5a4c0aa7402e8bb16f2c6e90b3aa53327b113f8hpack-4.1.0.tar.gz"
+    sha256 "ec5eca154f7056aa06f196a557655c5b009b382873ac8d1e66e79e87535f1dca"
+  end
+
+  resource "hyperframe" do
+    url "https:files.pythonhosted.orgpackages02e794f8232d4a74cc99514c13a9f995811485a6903d48e5d952771ef6322e30hyperframe-6.1.0.tar.gz"
+    sha256 "f630908a00854a7adeabd6382b43923a4c4cd4b821fcb527e6ab9e15382a3b08"
   end
 
   resource "idna" do
@@ -69,9 +100,14 @@ class Mvt < Formula
     sha256 "bb413d29f5eea38f31dd4754dd7377d4465116fb207585f97bf925588687c1ba"
   end
 
+  resource "multidict" do
+    url "https:files.pythonhosted.orgpackages46b559f27b4ce9951a4bce56b88ba5ff5159486797ab18863f2b4c1c5e8465bdmultidict-6.5.0.tar.gz"
+    sha256 "942bd8002492ba819426a8d7aefde3189c1b87099cdf18aaaefefcf7f3f7b6d2"
+  end
+
   resource "nskeyedunarchiver" do
-    url "https:files.pythonhosted.orgpackages50688e48609f2c3554917d3c305e5ec9ba8f3d1ddcadba221d52c1f63b713dednskeyedunarchiver-1.5.2.tar.gz"
-    sha256 "d9a2d5d48ea9e2c78d31bfbfc4a97c02794192f3b4548342d727d54bdd20beba"
+    url "https:files.pythonhosted.orgpackagese8d9227a00737de97609b0b2d161905f03bb8e246df0498ec5735b83166eef8fNSKeyedUnArchiver-1.5.tar.gz"
+    sha256 "eeda0480021817336e0ffeaca80377c1a8f08ecc5fc06be483b48c44bad414f4"
   end
 
   resource "packaging" do
@@ -94,9 +130,29 @@ class Mvt < Formula
     sha256 "447700a657182d60338bab09fdb27518f8856aecd80ae4c6bdddb67ff5da44ef"
   end
 
+  resource "pydantic" do
+    url "https:files.pythonhosted.orgpackagesf0868ce9040065e8f924d642c58e4a344e33163a07f6b57f836d0d734e0ad3fbpydantic-2.11.5.tar.gz"
+    sha256 "7f853db3d0ce78ce8bbb148c401c2cdd6431b3473c0cdff2755c7690952a7b7a"
+  end
+
+  resource "pydantic-core" do
+    url "https:files.pythonhosted.orgpackagesad885f2260bdfae97aabf98f1778d43f69574390ad787afb646292a638c923d4pydantic_core-2.33.2.tar.gz"
+    sha256 "7cb8bc3605c29176e1b105350d2e6474142d7c1bd1d9327c4a9bdb46bf827acc"
+  end
+
+  resource "pydantic-settings" do
+    url "https:files.pythonhosted.orgpackages671d42628a2c33e93f8e9acbde0d5d735fa0850f3e6a2f8cb1eb6c40b9a732acpydantic_settings-2.9.1.tar.gz"
+    sha256 "c509bf79d27563add44e8446233359004ed85066cd096d8b510f715e6ef5d268"
+  end
+
   resource "pygments" do
     url "https:files.pythonhosted.orgpackages7c2dc3338d48ea6cc0feb8446d8e6937e1408088a72a39937982cc6111d17f84pygments-2.19.1.tar.gz"
     sha256 "61c16d2a8576dc0649d9f39e089b5f02bcd27fba10d8fb4dcc28173f7a45151f"
+  end
+
+  resource "python-dotenv" do
+    url "https:files.pythonhosted.orgpackages882c7bb1416c5620485aa793f2de31d3df393d3686aa8a8506d11e10e13c5bafpython_dotenv-1.1.0.tar.gz"
+    sha256 "41f90bc6f5f177fb41f53e87666db362025010eb28f60a01c9143bfa33a2b2d5"
   end
 
   resource "pyyaml" do
@@ -105,8 +161,8 @@ class Mvt < Formula
   end
 
   resource "requests" do
-    url "https:files.pythonhosted.orgpackagese10a929373653770d8a0d7ea76c37de6e41f11eb07559b103b1c02cafb3f7cf8requests-2.32.4.tar.gz"
-    sha256 "27d0316682c8a29834d3264820024b62a36942083d52caf2f14c0591336d3422"
+    url "https:files.pythonhosted.orgpackages86ec535bf6f9bd280de6a4637526602a146a68fde757100ecf8c9333173392dbrequests-2.32.2.tar.gz"
+    sha256 "dd951ff5ecf3e3b3aa26b40703ba77495dab41da839ae72ef3c8e5d8e2433289"
   end
 
   resource "rich" do
@@ -124,14 +180,29 @@ class Mvt < Formula
     sha256 "e64139b4ec4f1f24c142ff7dcafe55a22b811a74d86d66560c8815687143037d"
   end
 
+  resource "stringcase" do
+    url "https:files.pythonhosted.orgpackagesf31f1241aa3d66e8dc1612427b17885f5fcd9c9ee3079fc0d28e9a3aeeb36fa3stringcase-1.2.0.tar.gz"
+    sha256 "48a06980661908efe8d9d34eab2b6c13aefa2163b3ced26972902e3bdfd87008"
+  end
+
   resource "tld" do
     url "https:files.pythonhosted.orgpackagesdfa15723b07a70c1841a80afc9ac572fdf53488306848d844cd70519391b0d26tld-0.13.1.tar.gz"
     sha256 "75ec00936cbcf564f67361c41713363440b6c4ef0f0c1592b5b0fbe72c17a350"
   end
 
+  resource "typing-extensions" do
+    url "https:files.pythonhosted.orgpackagesd1bc51647cd02527e87d05cb083ccc402f93e441606ff1f01739a62c8ad09ba5typing_extensions-4.14.0.tar.gz"
+    sha256 "8676b788e32f02ab42d9e7c61324048ae4c6d844a399eebace3d4979d75ceef4"
+  end
+
+  resource "typing-inspection" do
+    url "https:files.pythonhosted.orgpackagesf8b10c11f5058406b3af7609f121aaa6b609744687f1d158b3c3a5bf4cc94238typing_inspection-0.4.1.tar.gz"
+    sha256 "6ae134cc0203c33377d43188d4064e9b357dba58cff3185f22924610e70a9d28"
+  end
+
   resource "urllib3" do
-    url "https:files.pythonhosted.orgpackages8a7816493d9c386d8e60e442a35feac5e00f0913c0f4b7c217c11e8ec2ff53e0urllib3-2.4.0.tar.gz"
-    sha256 "414bc6535b787febd7567804cc015fee39daab8ad86268f1310a9250697de466"
+    url "https:files.pythonhosted.orgpackages15229ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bcurllib3-2.5.0.tar.gz"
+    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
   end
 
   def install

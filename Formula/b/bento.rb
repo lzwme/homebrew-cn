@@ -1,19 +1,19 @@
 class Bento < Formula
   desc "Fancy stream processing made operationally mundane"
   homepage "https:warpstreamlabs.github.iobento"
-  url "https:github.comwarpstreamlabsbentoarchiverefstagsv1.8.0.tar.gz"
-  sha256 "71ef02ede93738288d97cbacc3629bf054882d27e8edf81eadfe2924b7105f24"
+  url "https:github.comwarpstreamlabsbentoarchiverefstagsv1.8.1.tar.gz"
+  sha256 "819ab411d01e911620d85cdd7aaaa5614e10d5bc0455e8e6478d72800b4183cb"
   license "MIT"
 
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "814d36da40ffcb1c12a05008afd07ef0cb8a7f2f3e4f4fca5c5f7952932f1f92"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9d3898927d841b207d777a10f0af42552262e4fa4842813ce1b2a17730223ad6"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "55496a311b58d5c39480f57d12ea473ef302a4fbc590475edeee768c5896f55e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "017d4a2d908b7061cd3c988c7bfb3e38e922f312bcb29f31a1f46854a2552301"
-    sha256 cellar: :any_skip_relocation, ventura:       "10b357ab9c674d2e33ddc0566d52469da6414535ba8b526ea61903fdfabfff54"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4b9e6a505aface1712ce72091564df402aa7a868c9e6f42ed3102e271af3bc88"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "39333cf8839d3744dd150c931b0bbb3edf699c85c84ead51ce116bc355f07d3d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bb0868adc0786845615bb2e67b3c93d79bbacf96412d025cb4653d74fdd83937"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "c640462164e09153ee415740f7d98c16410c213bac0b74a827f0bdbda8b510f1"
+    sha256 cellar: :any_skip_relocation, sonoma:        "95c93920828f5d723f783a9389c480f9d0613644dc803e9aa868629a0149c2ea"
+    sha256 cellar: :any_skip_relocation, ventura:       "187f832aefeefe5b845df3849fd67221c487caf837518fa056b0ea1f83eed14e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a86c2b4f2eb47c81ca7b410ab6a1dcf8637891c531a7757d03dff66a6fef5564"
   end
 
   depends_on "go" => :build

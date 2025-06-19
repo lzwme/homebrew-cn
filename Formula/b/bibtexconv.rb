@@ -1,19 +1,19 @@
 class Bibtexconv < Formula
   desc "BibTeX file converter"
   homepage "https:github.comdreibhbibtexconv"
-  url "https:github.comdreibhbibtexconvarchiverefstagsbibtexconv-2.0.2.tar.gz"
-  sha256 "c9c01c3cd973a773af0b9854f08df31c34c64e6c118b3400db31b4d7fc2ae235"
+  url "https:github.comdreibhbibtexconvarchiverefstagsbibtexconv-2.0.3.tar.gz"
+  sha256 "aa1b001cc74d7690b7f4a3cf166f0935a0d8215c01aa6dd078aaec53fb87939d"
   license "GPL-3.0-or-later"
   head "https:github.comdreibhbibtexconv.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "fbc4cb16c766ea1a4de4122bfb71200e73c05f52a0be544caaf2744d4a8eee51"
-    sha256 cellar: :any,                 arm64_sonoma:  "6647b330cce25a922b9a5208e760fef00487d8b7d6046450292bbcb2f1d6bd0d"
-    sha256 cellar: :any,                 arm64_ventura: "1834aeedf88c98f331c08e4f2e0f1e83b48e5a7e5525b16456396705b0d4c139"
-    sha256 cellar: :any,                 sonoma:        "b3eb3ed7dc704e829491462fe927a41b61d3d96fd5e56333220410fe428ab014"
-    sha256 cellar: :any,                 ventura:       "3d68a045124eddc823b08c7d256aecda7267963c95b5ace61d1c95e10e4a1dd2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "91d5174a92ecde399224489caf3d9d853a6ab40598c2868331bce68d4fcaa906"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "29113580365e674fa8ab9cda06930f95ce61c103e22c6ea33257b9bd61919079"
+    sha256 cellar: :any,                 arm64_sequoia: "a6ea8db2a031b9a3b011af0163bccbc727f710d26f72cf7e51e34324fac2b585"
+    sha256 cellar: :any,                 arm64_sonoma:  "e6c62a54f939845c2329216c42e7030fcfcac2562885e223e38e10c2eab8fb75"
+    sha256 cellar: :any,                 arm64_ventura: "28d2d4de8511c1493cdbecf96877a717adb6f6ff2821227779fc5d844ef823bb"
+    sha256 cellar: :any,                 sonoma:        "debf16aa133776fab8b368b24ca57e08f463dc2442dec8ab64be1c0d1d71d376"
+    sha256 cellar: :any,                 ventura:       "66230d76b581cde929ef6a9a05c3e42304e3068518930fc7ca561201452b4408"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "77805012a4bab29ae2c7046e4338e260f1dc9fe0e38d378af6c42e630bd751c9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1d8e561bb0cfa39a9542d8e36136aa69db4e05615b0333fa8b972931248c9d24"
   end
 
   depends_on "bison" => :build

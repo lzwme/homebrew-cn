@@ -1,8 +1,8 @@
 class C2patool < Formula
   desc "CLI for working with C2PA manifests and media assets"
   homepage "https:contentauthenticity.org"
-  url "https:github.comcontentauthc2pa-rsarchiverefstagsc2patool-v0.18.0.tar.gz"
-  sha256 "4095081e6c9dd6f01fbcbe50d8ce8deb317b3b170b48cdcbbc8a722537e09a42"
+  url "https:github.comcontentauthc2pa-rsarchiverefstagsc2patool-v0.19.0.tar.gz"
+  sha256 "4a4d4c45cb049069f00ef6cecac341881d80ef6430547050a3739ef7108f1681"
   license any_of: ["Apache-2.0", "MIT"]
   head "https:github.comcontentauthc2pa-rs.git", branch: "main"
 
@@ -12,13 +12,13 @@ class C2patool < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "c68a75d8ed9f537fd95fa9d30041b5c03f2b6436098c258c98c135503b27d996"
-    sha256 cellar: :any,                 arm64_sonoma:  "db2454972b9af1468985c486914a297fbe995dc6ff69e8757a489e0e4e0f755a"
-    sha256 cellar: :any,                 arm64_ventura: "cbc5c7d180202c7fe52be698cecabd23be26578bbd5730b19bb6507e2e3dbbe2"
-    sha256 cellar: :any,                 sonoma:        "61dc8a5f672347161eba3b88c331499616c9a86054fa00e8880184d08a1de767"
-    sha256 cellar: :any,                 ventura:       "ac2a65892cffd043b30519c8e8bb600685dc3adc615720e3abbe9955f3cc054f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0a87b511e9b18a4d27e7a4f00b4a99dd20fda3632162afae32a246ce5b726d61"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d782e46fbeb7b605294c9365656a4646beaebacb28ce9a030cbbaa5bd5b58ec1"
+    sha256 cellar: :any,                 arm64_sequoia: "6138c93a468614800b2099ce8ceba2fd45aaf1ef9e27c62145f5b42b607f983b"
+    sha256 cellar: :any,                 arm64_sonoma:  "4383a1f1da680c9565ce9305ff8a7299f59533d0b0a19e8384249668d3c21650"
+    sha256 cellar: :any,                 arm64_ventura: "1106b8500f6ecb5d26b307e34c1381ad68cc5398c06b02b454af68059761274f"
+    sha256 cellar: :any,                 sonoma:        "b9c16f04d9ab4ecb46b68594092ccb25d2c9662f23b1eafe22067587666b1eaf"
+    sha256 cellar: :any,                 ventura:       "333efc4e9a4c9bb3998cef278403c61bd656c1b51742b6627d788923be4a962b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4670f71767a2e7ad3312fe9e279293ebe189b544b3d91a850af1e7aa14f5b037"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "82d7b29fc14f14878af8d8e8b0fff6a129e5dd752f8f2764b100935f6daf3e9c"
   end
 
   depends_on "pkgconf" => :build

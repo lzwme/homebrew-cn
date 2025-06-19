@@ -3,19 +3,18 @@ class Molecule < Formula
 
   desc "Automated testing for Ansible roles"
   homepage "https://molecule.readthedocs.io"
-  url "https://files.pythonhosted.org/packages/51/d8/3b029e082247fc988fa9869edf39dd3188d929db19f47e91181dff907db5/molecule-25.5.0.tar.gz"
-  sha256 "585d8ce0ad493be3ae94de096f8b4a896ab9010a7ea36a869fdf5e29bd668f4b"
+  url "https://files.pythonhosted.org/packages/84/a5/6a061c6d128a351ae884133162104aa3488ac74506c36221599d95b6d33d/molecule-25.6.0.tar.gz"
+  sha256 "0db208de58bececb0ca87bf2cc48e1017234e1e3ad947c179487737f884e7c7c"
   license "MIT"
-  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "e5b06a38c2bc38fb543e89a9a299ae19cd4bc340830dcd87e984fb7db229abbb"
-    sha256 cellar: :any,                 arm64_sonoma:  "333be3c67c93221f1b70fec38a3f0d55d06f72d659ed97b2e8e2db5fb75dc26a"
-    sha256 cellar: :any,                 arm64_ventura: "85954f4d7ff1683c9a218618cd97b2ca9cc2543bf66634162e4c48a10166df3f"
-    sha256 cellar: :any,                 sonoma:        "f4cc0b08694cad35fae4f77665959f752b1d1fdbe926990f95d1e47207a3e8fa"
-    sha256 cellar: :any,                 ventura:       "010d8d2f778fdc42ef3f3cf941915814484468fb2bf0f74b61ec62c031803213"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "16f7d2e8ca52da9d01aca5ea05281931d907ff937a50b3fa4dd5985535f3fdb3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0fb5e5489b0bc31d77bd8b32f1b2037e05ee90a0ab23c01eaa324d599727cb87"
+    sha256 cellar: :any,                 arm64_sequoia: "dee9cc0b0372366e9b1aa05c3b06d3ac9bd9862f0f20f373cf699c03c23750bc"
+    sha256 cellar: :any,                 arm64_sonoma:  "8ccd642a426fbea119b7d5683a4fc5dcc4c6b09350a0c78b517c1daa73e21868"
+    sha256 cellar: :any,                 arm64_ventura: "5634c22d1157f0646c4fb929aeaf6e3464c7907caab4edb081d95ab7a7b43c50"
+    sha256 cellar: :any,                 sonoma:        "974e386a00ae15a0471e9f77b32216b99bf45c8dab6ac6b77c3491ccb6cca6b8"
+    sha256 cellar: :any,                 ventura:       "159421177661a054eaa4692041f5ab890286649def3c79f15bfb3addcdaf68a6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "da476d38679d1a10cdd1e02dfa26cfca859053a211af193dc91deb396b67be4d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2fdb00206d7ab54bf3bb9d417233964f2ad58413dcbce06bc110d1df5e1cd65f"
   end
 
   depends_on "rust" => :build
@@ -32,8 +31,8 @@ class Molecule < Formula
   end
 
   resource "ansible-compat" do
-    url "https://files.pythonhosted.org/packages/30/66/5ab513ccbc8a5820056ee06eab293591a3ed0908eff47e7d3447a4280e20/ansible_compat-25.5.0.tar.gz"
-    sha256 "0b71052313596e128d2bf60166a1d2ac41c6d140a0ca97d56b878e3c23bfce42"
+    url "https://files.pythonhosted.org/packages/e4/44/2ef17ed44841f6144ab7802d52227d7096b98ab24dcdda90491ab90182c6/ansible_compat-25.6.0.tar.gz"
+    sha256 "c2b4bfeca6383b2047b2e1dea473cec4f1f9f2dd59beef71d6c47f632eaf97c9"
   end
 
   resource "ansible-core" do
@@ -192,8 +191,8 @@ class Molecule < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/8a/78/16493d9c386d8e60e442a35feac5e00f0913c0f4b7c217c11e8ec2ff53e0/urllib3-2.4.0.tar.gz"
-    sha256 "414bc6535b787febd7567804cc015fee39daab8ad86268f1310a9250697de466"
+    url "https://files.pythonhosted.org/packages/15/22/9ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bc/urllib3-2.5.0.tar.gz"
+    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
   end
 
   resource "wcmatch" do

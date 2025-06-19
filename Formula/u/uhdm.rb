@@ -6,19 +6,19 @@ class Uhdm < Formula
   url "https:github.comchipsallianceUHDMarchiverefstagsv1.84.tar.gz"
   sha256 "bb2acbdd294dd05660c78ba34704440032935b8bc77cae352c853533b5a7c583"
   license "Apache-2.0"
-  revision 1
+  revision 2
   head "https:github.comchipsallianceUHDM.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "670acc688d73fba8ac6565fca378f022b5d1f6f37699df288ee5e9dc38b8b656"
-    sha256 cellar: :any,                 arm64_sonoma:  "255be8c70c052277b40458bbb152fd969c46ccf12ab9108e6f1dfad702d1ce37"
-    sha256 cellar: :any,                 arm64_ventura: "4b261cec78b1348d493ea3147509161746b1198fde4c6a5251fa346b0e3d13b5"
-    sha256 cellar: :any,                 sonoma:        "73ea9f87f818f189e140a0871d93a130f038d5c082465209c025ee4eb65517b6"
-    sha256 cellar: :any,                 ventura:       "5cbdabfcb3ea0e53e3b1682f544c1aff82613b71ce89d047fc393638ffd3a5d5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b9f3fc34c3cf05f8674c551793cdf1492f151f93496016eb7a2e6ee8fe76726d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "84b61a7b60b854c05302fcac7cf6a6fecdf54682a879f062ff31fc4bbdbad012"
+    sha256 cellar: :any,                 arm64_sequoia: "19fcc355f0c97b73f365f5f8dc5ce72eefa83d08b780553058da783ddacb917d"
+    sha256 cellar: :any,                 arm64_sonoma:  "812e9c2b03de83b4def63dc9c34412106a3ba5ab01bfb9da42b8a9756458cb2c"
+    sha256 cellar: :any,                 arm64_ventura: "dcfd52eac15acef073c1959bf116f6bfe5974a571a67748377ae8ec61f02c369"
+    sha256 cellar: :any,                 sonoma:        "09774eae01e08f62741390bcc1bbbcbb1d96896c7caccfaeb1ac36cad38695c9"
+    sha256 cellar: :any,                 ventura:       "5100d3f029ce0a76ef2c1c98b0436fa96a448032cc233565f24f1d641c13967b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b2fe27ffa31d6ce11379a222b847493950059f02d02b493618b549a8ef27a81d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5d68f2dc934db9fd61b5048294bff8299b638c36bde5b56b4111e2c84c828fb2"
   end
 
   depends_on "cmake" => :build

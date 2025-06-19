@@ -60,12 +60,6 @@ class Bitcoin < Formula
     end
   end
 
-  # Skip two tests that currently fail in the brew CI
-  patch do
-    url "https:github.comfanquakebitcoincommit9b03fb7603709395faaf0fac409465660bbd7d81.patch?full_index=1"
-    sha256 "1d56308672024260e127fbb77f630b54a0509c145e397ff708956188c96bbfb3"
-  end
-
   def install
     # https:github.combitcoinbitcoinblobmasterdocbuild-unix.md#berkeley-db
     # https:github.combitcoinbitcoinblobmasterdependspackagesbdb.mk
