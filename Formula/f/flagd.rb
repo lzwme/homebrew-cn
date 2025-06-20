@@ -2,8 +2,8 @@ class Flagd < Formula
   desc "Feature flag daemon with a Unix philosophy"
   homepage "https:github.comopen-featureflagd"
   url "https:github.comopen-featureflagd.git",
-      tag:      "flagdv0.12.4",
-      revision: "cb2b8eeb9c5496272b1f22d63f8eaa5d220707f5"
+      tag:      "flagdv0.12.5",
+      revision: "23e15540a737265c1244e4bf7ddcf04a9c5c60af"
   license "Apache-2.0"
   head "https:github.comopen-featureflagd.git", branch: "main"
 
@@ -20,12 +20,12 @@ class Flagd < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6e83b2115cb9670309511f6e1313d54fff6a18b8906ea51157c75b70af7afc3a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "14f1b213c31b4f38b63c45603b0eb697cb370149a5e6f5290d0504869d24ae46"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "1b87cc7d2654b7b28be4dc884bcda1c6458ac59bd1b39dbef5c3b8613443ec72"
-    sha256 cellar: :any_skip_relocation, sonoma:        "170d65621ac42851963ae5abf5bcb233af321351731a6732c2bc09881e1d60bf"
-    sha256 cellar: :any_skip_relocation, ventura:       "319070d717a541b3fded62e8d1f0e3a04756226cc4adf58eedad0833c0edf740"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5a56312659d810062fafd8d81bca327f40cc67cbfcfb327ce647226a82a4a6e0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "89fcdf347ff89ad6523896f13caa2c631e88b5950f23a59422d127ef90e84f09"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "715f588ee2e41625f928b1f1ffe602ebae636f93da2087987665e655cab166e9"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "0dca190752fb6cd11e4a820a219c26e9260f9129fd83b47744aa8f1455925fae"
+    sha256 cellar: :any_skip_relocation, sonoma:        "58c466f59438c7000e6762e6b3c5e911144feac0adc149d14c8259d4e524fa87"
+    sha256 cellar: :any_skip_relocation, ventura:       "b93a8fec44b9e4346c77a71844e8b77fdbe2404827bb77e498b0f2e42987a5fa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9ccfa9a1d4a76f3cbf692f3a868832a7373be78ffd2a019fe4fd7a4a9bb1de88"
   end
 
   depends_on "go" => :build

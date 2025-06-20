@@ -6,16 +6,16 @@ class Gamdl < Formula
   url "https:files.pythonhosted.orgpackagesad4d7a075db421a05866245974161e5e11f524ebaa97b55069beece758410e30gamdl-2.4.2.tar.gz"
   sha256 "871ae15397949f3e7187a50bd03f51d5894f2457ff6eea08064233062a820b66"
   license "MIT"
-  revision 1
+  revision 2
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "7a2e4e4038a0d8d815f2167864e092c2f0199cef5085fe3bf6b179712e556877"
-    sha256 cellar: :any,                 arm64_sonoma:  "7b8ef5ed139c12095cf51e7018625f77c6c2d1ef5fcc12d9748acd5ab7faad12"
-    sha256 cellar: :any,                 arm64_ventura: "5eda3fb1f5f1b22796ede08e4cd43d5049cf845926de31e1f574dd4fd31eafcb"
-    sha256 cellar: :any,                 sonoma:        "75d5332add3018d20d67dcc9ab5d2fb1980d58f67cb987854cb584cd163213be"
-    sha256 cellar: :any,                 ventura:       "cd3afec7731d5567dce316d6ca8a3c46fa9d99e844e123674f4ceb1ff50154e7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f1db27831afb8a32851944762714e17fbc410e177d727f208fd1e3df4dd40f76"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "81cb728467227adacb9c4cf036ec2c8b241c3a8ef1cb0dcb23b268d62a29c63a"
+    sha256 cellar: :any,                 arm64_sequoia: "352d64fb8f8dc066d0fd3720654ffe52f8520e2254ce592dbe5a96f513c9aeec"
+    sha256 cellar: :any,                 arm64_sonoma:  "0b21f64921a117e772e98214a87e9b307f9229741bab964e0e5a4050a9b5a731"
+    sha256 cellar: :any,                 arm64_ventura: "86bb3b0b7ea9455ff52306daf87cae9b897631a746bf9c9f2b747e6c80b1d844"
+    sha256 cellar: :any,                 sonoma:        "21aaac228864a5eef0b4d5b96e38ae3ae87d57aefa30f8e56d64c1b63db13699"
+    sha256 cellar: :any,                 ventura:       "b57ad11ab65e47363264b17703f9517e14d107fa8292473ad3c9eb9ac056a4c7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "099b4e30b35377719d27b75f0c33cc43a1be827eac98833ba52db5e8db178451"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "54b8634294d2e51ab213cac6e65d060e1d274f71f67a8b18d37c5e66d0d68249"
   end
 
   depends_on "certifi"
@@ -109,8 +109,8 @@ class Gamdl < Formula
   end
 
   resource "urllib3" do
-    url "https:files.pythonhosted.orgpackages8a7816493d9c386d8e60e442a35feac5e00f0913c0f4b7c217c11e8ec2ff53e0urllib3-2.4.0.tar.gz"
-    sha256 "414bc6535b787febd7567804cc015fee39daab8ad86268f1310a9250697de466"
+    url "https:files.pythonhosted.orgpackages15229ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bcurllib3-2.5.0.tar.gz"
+    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
   end
 
   resource "wcwidth" do

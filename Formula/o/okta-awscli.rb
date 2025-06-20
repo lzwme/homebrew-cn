@@ -6,10 +6,10 @@ class OktaAwscli < Formula
   url "https:files.pythonhosted.orgpackagesed2c153d8ba330660d756fe6373fb4d1c13b99e63675570042de45aedf300bb7okta-awscli-0.5.5.tar.gz"
   sha256 "a8b1277914b992fc24e934edaf1947291723ce386f2191a8952e7c008f2e77fa"
   license "Apache-2.0"
-  revision 4
+  revision 5
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "5fdbf1d0d36d91b4276cbd3953da14306952ac001ab6894ba7577d7a1241018f"
+    sha256 cellar: :any_skip_relocation, all: "d279e4c3b084f2de087c01d4b05af5da5cc14e52469440f35ae7d74abe676c09"
   end
 
   depends_on "certifi"
@@ -21,13 +21,13 @@ class OktaAwscli < Formula
   end
 
   resource "boto3" do
-    url "https:files.pythonhosted.orgpackagescb2f4547f4b3cc7b63ec1266edaf923a675f3eae2057299aba8ecfe46f013c1aboto3-1.38.34.tar.gz"
-    sha256 "25e76b9fec8db8e21adaf84df0de5c58fa779be121bc327e07e920c7c0870394"
+    url "https:files.pythonhosted.orgpackages5a66a26e7f20039ae3c57524baf26af43216c3959013f23308458f211cce78a5boto3-1.38.40.tar.gz"
+    sha256 "fcef3e08513d276c97d72d5e7ab8f3ce9950170784b9b5cf4fab327cdb577503"
   end
 
   resource "botocore" do
-    url "https:files.pythonhosted.orgpackages082734dfe90dd51d16473985198e056b82d74afd355dc47daa10af2a4f117072botocore-1.38.34.tar.gz"
-    sha256 "a105f4d941f329aa72c43ddf42371ec4bee50ab3619fc1ef35d0005520219612"
+    url "https:files.pythonhosted.orgpackages612342cc861466a34e45bd1783c3b3a547d5f723a8d21f6151cd1e3d84adfba6botocore-1.38.40.tar.gz"
+    sha256 "aefbfe835a7ebe9bbdd88df3999b0f8f484dd025af4ebb3f3387541316ce4349"
   end
 
   resource "charset-normalizer" do
@@ -86,8 +86,8 @@ class OktaAwscli < Formula
   end
 
   resource "urllib3" do
-    url "https:files.pythonhosted.orgpackages8a7816493d9c386d8e60e442a35feac5e00f0913c0f4b7c217c11e8ec2ff53e0urllib3-2.4.0.tar.gz"
-    sha256 "414bc6535b787febd7567804cc015fee39daab8ad86268f1310a9250697de466"
+    url "https:files.pythonhosted.orgpackages15229ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bcurllib3-2.5.0.tar.gz"
+    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
   end
 
   resource "validators" do

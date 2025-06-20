@@ -1,8 +1,8 @@
 class Openblas < Formula
   desc "Optimized BLAS library"
   homepage "https:www.openblas.net"
-  url "https:github.comOpenMathLibOpenBLASarchiverefstagsv0.3.29.tar.gz"
-  sha256 "38240eee1b29e2bde47ebb5d61160207dc68668a54cac62c076bb5032013b1eb"
+  url "https:github.comOpenMathLibOpenBLASarchiverefstagsv0.3.30.tar.gz"
+  sha256 "27342cff518646afb4c2b976d809102e368957974c250a25ccc965e53063c95d"
   # The main license is BSD-3-Clause. Additionally,
   # 1. OpenBLAS is based on GotoBLAS2 so some code is under original BSD-2-Clause-Views
   # 2. lapack-netlib is a bundled LAPACK so it is BSD-3-Clause-Open-MPI
@@ -17,13 +17,13 @@ class Openblas < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "0cef0ab521810fae27b78f5d9f0a2fc42a74d52b568b70b2a5ecc229711c0920"
-    sha256 cellar: :any,                 arm64_sonoma:  "88e8c3f9d4af71ebfcd068cdc95017deda958d2666fb29de1c88f8f77dd8d57d"
-    sha256 cellar: :any,                 arm64_ventura: "3a0e4b4da3526b6e939d51f9ae3d5d3123b3e70a28962384851f04a521475b71"
-    sha256 cellar: :any,                 sonoma:        "56dc157bbb4fae7ac26abe2e481d5fa0cb76062c84d8da88cf3cf1cb17ff4ba0"
-    sha256 cellar: :any,                 ventura:       "15432ddfd653901f19a86b6377458ba442f10112569b2b8cf60e5fe5e7b2c178"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ced93cd8441bd4939aa2835000ba3a8ea0394cb850594b20077798ce9605b940"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "20cfbd105f1fd674475da44c41fda406ac10a9cf8d1ae521b337ad046e957a29"
+    sha256 cellar: :any,                 arm64_sequoia: "19429463a737ea1ca72573210238f7d5000731431a442679d9c00b215722fdbd"
+    sha256 cellar: :any,                 arm64_sonoma:  "81233b55f062b049f559ed43f37674648e0b7dfe06a6dc7f776251fc46144811"
+    sha256 cellar: :any,                 arm64_ventura: "4351d5aa370ac2f7cb661062b9b272fdf7ef7373d0b2dfe10f5a2c2cf9ffc95b"
+    sha256 cellar: :any,                 sonoma:        "0cc19e345f5e4b4f0b32e9dc39247a0f97adbb48c10dd9e4655d00822b1c9539"
+    sha256 cellar: :any,                 ventura:       "f6bb911cce1ea42486696f1dfc50bd22c8ec6ce6d972047a7c8ca58778c8d320"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "644c21828d8f3fdaf5d6cabdd815abf71b2bd7446a4a5d9640411fb64028d9a1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "47a79133b44870b5f5e23c546efb25da93edd4671ba2bd56a1aa43907054df81"
   end
 
   keg_only :shadowed_by_macos, "macOS provides BLAS in Accelerate.framework"

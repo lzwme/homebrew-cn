@@ -6,17 +6,17 @@ class LinodeCli < Formula
   url "https:files.pythonhosted.orgpackages7737d83ddb34bebeb42a2586b281a6bbb3c63e18d82a6521564ff10d5c686c08linode_cli-5.59.0.tar.gz"
   sha256 "82749f54390d215947d0396b147c3f1131cc172cfad81bc86487b7f5bc56607d"
   license "BSD-3-Clause"
-  revision 1
+  revision 2
   head "https:github.comlinodelinode-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "6ff93727f2db4eca2ddcee7c36e5a67110d285007810a4f946f0f9ed8e266819"
-    sha256 cellar: :any,                 arm64_sonoma:  "3a5bf4b9374caf3397e17e0433dcaf06405e01ff3ca10c0ef1ac2c95e2f31405"
-    sha256 cellar: :any,                 arm64_ventura: "02684437858780b0d2001b6f89ec700e68aedaab3a743ab7aaf1a8f487f479c5"
-    sha256 cellar: :any,                 sonoma:        "58a4f1aebc3bde8e903a8f365f4cfbc47e0744a74c6019b40cb553794ee20683"
-    sha256 cellar: :any,                 ventura:       "781e5152910f1331e2961e68f0cb559931f0b70c2565857c7e7d7a3badaedae7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "41b8e1bb9ef4f72fd3c62d5d4638fede67ecbb9699d0609a2a986f7964397645"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0ca9988d3fa298832f9281d0dd3d3fc95375d618429386a96a40057f96a2fb11"
+    sha256 cellar: :any,                 arm64_sequoia: "5a113e56c26bf6de4d4c9feba8f0a719de0e035535fd0c033ffbb13461d8599c"
+    sha256 cellar: :any,                 arm64_sonoma:  "bd1d43d881d95df92b7715d13b381e138a44e43737d2084fb47e281c3d5788d3"
+    sha256 cellar: :any,                 arm64_ventura: "0f31a2e8d2ae1b9469b9ec2f9fe78b9d5d0df353322b273347096d32cf603730"
+    sha256 cellar: :any,                 sonoma:        "ad16c98829174f69c2aa0625ae6e0a3c07e0005b0df70281480d9867a7ea02bf"
+    sha256 cellar: :any,                 ventura:       "0397373a5ba0ded1881263019ad93134874d309866dbcea2ca892a3b89539f6f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3b9d15900165069418f52707f4f2c5232a327522b42733bc09b34889f0dabfba"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a034fbc222d03edb98946db43100a2503bc3d6a66981861d6cadeb2af61eb59a"
   end
 
   depends_on "certifi"
@@ -104,8 +104,8 @@ class LinodeCli < Formula
   end
 
   resource "urllib3" do
-    url "https:files.pythonhosted.orgpackages8a7816493d9c386d8e60e442a35feac5e00f0913c0f4b7c217c11e8ec2ff53e0urllib3-2.4.0.tar.gz"
-    sha256 "414bc6535b787febd7567804cc015fee39daab8ad86268f1310a9250697de466"
+    url "https:files.pythonhosted.orgpackages15229ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bcurllib3-2.5.0.tar.gz"
+    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
   end
 
   def install

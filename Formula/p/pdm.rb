@@ -6,16 +6,17 @@ class Pdm < Formula
   url "https:files.pythonhosted.orgpackagesf9d6ac4290999053e6afd21dc5406474e3b290e0ed1a600e320821a0b02bd659pdm-2.25.2.tar.gz"
   sha256 "bff8e95c2737f68a41a8987e363803e587aea10dc9b95c34a9d3a5a117a8485f"
   license "MIT"
+  revision 1
   head "https:github.compdm-projectpdm.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "afc93f80438217d58358f4e75997d5ddf3a9a3897564bb3ddf61ccb61390461b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "afc93f80438217d58358f4e75997d5ddf3a9a3897564bb3ddf61ccb61390461b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "afc93f80438217d58358f4e75997d5ddf3a9a3897564bb3ddf61ccb61390461b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "430367984bbad875d93757501cbc650f60dd8820c60fff1abbfaada44a1d943d"
-    sha256 cellar: :any_skip_relocation, ventura:       "430367984bbad875d93757501cbc650f60dd8820c60fff1abbfaada44a1d943d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "498f2a49380939064d39da5be12100342f19e3dd1ab5787548f4d3c0cf520867"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "498f2a49380939064d39da5be12100342f19e3dd1ab5787548f4d3c0cf520867"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cf8d301f8eb9bceba4e295fe5555efc190c3427751e2890d6f89bd7e3e70d785"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cf8d301f8eb9bceba4e295fe5555efc190c3427751e2890d6f89bd7e3e70d785"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "cf8d301f8eb9bceba4e295fe5555efc190c3427751e2890d6f89bd7e3e70d785"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2747ef7fc1f657990af50baf3b392e3e857d438d9ca5f7c9dd8948a5c345aace"
+    sha256 cellar: :any_skip_relocation, ventura:       "2747ef7fc1f657990af50baf3b392e3e857d438d9ca5f7c9dd8948a5c345aace"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6967be5139cb9482320f979de0c6bc2d669f595f6ee364b7108858063ca1f68d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6967be5139cb9482320f979de0c6bc2d669f595f6ee364b7108858063ca1f68d"
   end
 
   depends_on "certifi"
@@ -177,8 +178,8 @@ class Pdm < Formula
   end
 
   resource "urllib3" do
-    url "https:files.pythonhosted.orgpackages8a7816493d9c386d8e60e442a35feac5e00f0913c0f4b7c217c11e8ec2ff53e0urllib3-2.4.0.tar.gz"
-    sha256 "414bc6535b787febd7567804cc015fee39daab8ad86268f1310a9250697de466"
+    url "https:files.pythonhosted.orgpackages15229ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bcurllib3-2.5.0.tar.gz"
+    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
   end
 
   resource "virtualenv" do

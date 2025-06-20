@@ -6,15 +6,16 @@ class Esphome < Formula
   url "https:files.pythonhosted.orgpackages037abb283a36282e9ab6daa0a876eac70b9200853b820a7f981c7750b3c9aeddesphome-2025.6.0.tar.gz"
   sha256 "a8aa51e18853f00d03135f93d93238d9c133b5ca2600985a8e3cf5ccde1f92b5"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "fccd00db6bda7443a11cf3069392bc664aa75d728f0ea6fa139db5997288b82f"
-    sha256 cellar: :any,                 arm64_sonoma:  "ff87e85d7943817538ffe8e27fbaac02c593157272c9403af1ff894fb0187827"
-    sha256 cellar: :any,                 arm64_ventura: "f26eac2d46e417469a06b5e55835c41ca8e5840ba090751703b97405118b9b99"
-    sha256 cellar: :any,                 sonoma:        "42f45336fa0a29efadc3ca5c46d025588115595f33be6b8cf91a4af6acb51840"
-    sha256 cellar: :any,                 ventura:       "6b9c1da3a363381160165544f373466f4ca14a6eedeaff20f38cf103da59b547"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f0c6b8296a426d6bc136b4397eb3274875ba2fedcbd45d4150513c16d33e58ab"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "52d61783338578045dbbc969129249f5617394cf8504e35b42f08e169f481f4d"
+    sha256 cellar: :any,                 arm64_sequoia: "ddf46c056564ed51575bd87af7ffa804008ef19977c7f65f42ae17df309e98c0"
+    sha256 cellar: :any,                 arm64_sonoma:  "3244b63c091e8a0e566051c7b9730c91e1575d4975bf95bdb4ed0a2f52fe3e72"
+    sha256 cellar: :any,                 arm64_ventura: "817cb871e4d4f8fd3de8c1098dc79d14bc3be5bdf73d1a7773efb32eb3ce1a58"
+    sha256 cellar: :any,                 sonoma:        "fc392ea4c4eddab7b065694f67482b22163710495991f5092ac1fef29c6da181"
+    sha256 cellar: :any,                 ventura:       "205ad9820bda08c3eb28f0d8103c507b9d9aeefe39d4148a54464a052a7784ff"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "dbfad7e9ed23f72f7cc92ea6a6421ae91159b203d2962220c3194e6daa798c60"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "546d9dbb7d26f3b8cc0fe4ba18fc46591596c89bf8541cbcbeb7dc61bc0f4e79"
   end
 
   depends_on "certifi"
@@ -81,6 +82,11 @@ class Esphome < Formula
   resource "chacha20poly1305-reuseable" do
     url "https:files.pythonhosted.orgpackagesc1ff6ca12ab8f4d804cfe423e67d7e5de168130b106a0cb749a1043943c23b6bchacha20poly1305_reuseable-0.13.2.tar.gz"
     sha256 "dd8be876e25dfc51909eb35602b77a76e0d01a364584756ab3fa848e2407e4ec"
+  end
+
+  resource "chardet" do
+    url "https:files.pythonhosted.orgpackagesf30df7b6ab21ec75897ed80c17d79b15951a719226b9fababf1e40ea74d69079chardet-5.2.0.tar.gz"
+    sha256 "1b3b6ff479a8c414bc3fa2c0852995695c4a026dcd6d0633b2dd092ca39c1cf7"
   end
 
   resource "charset-normalizer" do
@@ -284,8 +290,8 @@ class Esphome < Formula
   end
 
   resource "urllib3" do
-    url "https:files.pythonhosted.orgpackages8a7816493d9c386d8e60e442a35feac5e00f0913c0f4b7c217c11e8ec2ff53e0urllib3-2.4.0.tar.gz"
-    sha256 "414bc6535b787febd7567804cc015fee39daab8ad86268f1310a9250697de466"
+    url "https:files.pythonhosted.orgpackages15229ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bcurllib3-2.5.0.tar.gz"
+    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
   end
 
   resource "uvicorn" do

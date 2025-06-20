@@ -6,10 +6,10 @@ class Internetarchive < Formula
   url "https:files.pythonhosted.orgpackagese969b7e8aebae4be5f633491b90e620af92335723070313ea12ceaedfc0c3759internetarchive-5.4.0.tar.gz"
   sha256 "869d6606210d333c7faca709196fad9bdcb925b614c134920ce8eb24b82ecffd"
   license "AGPL-3.0-or-later"
-  revision 1
+  revision 2
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "bae0d5d6b23d088f521738574c7e597e2578fcb0966e7528cb84218def47d0df"
+    sha256 cellar: :any_skip_relocation, all: "d478496dbce1963f4cb7ca2182750ddafb09251f2ce65471ce704230f990dcee"
   end
 
   depends_on "certifi"
@@ -46,8 +46,8 @@ class Internetarchive < Formula
   end
 
   resource "urllib3" do
-    url "https:files.pythonhosted.orgpackages8a7816493d9c386d8e60e442a35feac5e00f0913c0f4b7c217c11e8ec2ff53e0urllib3-2.4.0.tar.gz"
-    sha256 "414bc6535b787febd7567804cc015fee39daab8ad86268f1310a9250697de466"
+    url "https:files.pythonhosted.orgpackages15229ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bcurllib3-2.5.0.tar.gz"
+    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
   end
 
   def install

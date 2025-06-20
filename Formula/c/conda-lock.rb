@@ -6,15 +6,16 @@ class CondaLock < Formula
   url "https:files.pythonhosted.orgpackagesf4f66fe5e9cfe57e9c12bf2a724f6fcc8775afbc164c88f35224a3714ac79518conda_lock-3.0.3.tar.gz"
   sha256 "00d0771a08414759551b6a3a1e5a2ea47bcec21736047e346da90c29124d3928"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "d3a84dd165c9d072795e2e6c3cf161753dd53bb2e07d46569ea91292ed7fa080"
-    sha256 cellar: :any,                 arm64_sonoma:  "0c19281444dca0cc2971e11ac506c1bac3aa186c47cb6d9e36e86b552a5ffb89"
-    sha256 cellar: :any,                 arm64_ventura: "1ba2481afabecaf64394823f5ff98c3a2d5c5656f9290df6106abe81c3c7d51f"
-    sha256 cellar: :any,                 sonoma:        "e3b85c07c3fe97210058eefb83a9dc4bde7faa1bae6233a352970012cbe3c3ed"
-    sha256 cellar: :any,                 ventura:       "2387decb992d7a3edb4bd7bc2dd9d1037f777e2d9971b045b72a93a4d224f633"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "efd1c894b58b399c6d41dc238ec973038fb7861596733ec2a4fde8f70fb321fa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8436acb87edb58c84296a7a25868e6f882ad02339f5b0853c3eb5e23461b604e"
+    sha256 cellar: :any,                 arm64_sequoia: "a0248f317a28f782e6a22af718d18ef4e19e373c3075e8b90c9e2786a421aa1f"
+    sha256 cellar: :any,                 arm64_sonoma:  "d743d9ec131e5e3be7a3fe0b575eaf9727b2e33ddad11359f980287af61fb284"
+    sha256 cellar: :any,                 arm64_ventura: "6e03697fae43586290a4eb22ee134179ec140538c2214226cc647506e1902d63"
+    sha256 cellar: :any,                 sonoma:        "08465169f2a86e27b211dfd6fa712b5ba1c216214a25f9c8e738bae05d3bcd9a"
+    sha256 cellar: :any,                 ventura:       "15c4670114bd0e9fe6659a1970fb75e3bed0d9cb884e70268b37cc6a693d91d6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "24a97834f35acc9909c7fe00c2bad337eb93744d1b4c4eda88ad986a8e832346"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "882b9246aa1af9daa8f1a66df5888b8e7d84fa914b7f2aaaa645a5c017189862"
   end
 
   depends_on "rust" => :build # for pydantic
@@ -155,8 +156,8 @@ class CondaLock < Formula
   end
 
   resource "msgpack" do
-    url "https:files.pythonhosted.orgpackagescbd07555686ae7ff5731205df1012ede15dd9d927f6227ea151e901c7406af4fmsgpack-1.1.0.tar.gz"
-    sha256 "dd432ccc2c72b914e4cb77afce64aab761c1137cc698be3984eee260bcb2896e"
+    url "https:files.pythonhosted.orgpackages45b1ea4f68038a18c77c9467400d166d74c4ffa536f34761f7983a104357e614msgpack-1.1.1.tar.gz"
+    sha256 "77b79ce34a2bdab2594f490c8e80dd62a02d650b91a75159a63ec413b8d104cd"
   end
 
   resource "packaging" do
@@ -175,8 +176,8 @@ class CondaLock < Formula
   end
 
   resource "pydantic" do
-    url "https:files.pythonhosted.orgpackagesf0868ce9040065e8f924d642c58e4a344e33163a07f6b57f836d0d734e0ad3fbpydantic-2.11.5.tar.gz"
-    sha256 "7f853db3d0ce78ce8bbb148c401c2cdd6431b3473c0cdff2755c7690952a7b7a"
+    url "https:files.pythonhosted.orgpackages00dd4325abf92c39ba8623b5af936ddb36ffcfe0beae70405d456ab1fb2f5b8cpydantic-2.11.7.tar.gz"
+    sha256 "d989c3c6cb79469287b1569f7447a17848c998458d49ebe294e975b9baf0f0db"
   end
 
   resource "pydantic-core" do
@@ -260,13 +261,18 @@ class CondaLock < Formula
   end
 
   resource "urllib3" do
-    url "https:files.pythonhosted.orgpackages8a7816493d9c386d8e60e442a35feac5e00f0913c0f4b7c217c11e8ec2ff53e0urllib3-2.4.0.tar.gz"
-    sha256 "414bc6535b787febd7567804cc015fee39daab8ad86268f1310a9250697de466"
+    url "https:files.pythonhosted.orgpackages15229ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bcurllib3-2.5.0.tar.gz"
+    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
   end
 
   resource "virtualenv" do
     url "https:files.pythonhosted.orgpackages562c444f465fb2c65f40c3a104fd0c495184c4f2336d65baf398e3c75d72ea94virtualenv-20.31.2.tar.gz"
     sha256 "e10c0a9d02835e592521be48b332b6caee6887f332c111aa79a09b9e79efc2af"
+  end
+
+  resource "xattr" do
+    url "https:files.pythonhosted.orgpackages62bf8b98081f9f8fd56d67b9478ff1e0f8c337cde08bcb92f0d592f0a7958983xattr-1.1.4.tar.gz"
+    sha256 "b7b02ecb2270da5b7e7deaeea8f8b528c17368401c2b9d5f63e91f545b45d372"
   end
 
   resource "zstandard" do

@@ -1,8 +1,8 @@
 class Tevent < Formula
   desc "Event system based on the talloc memory management library"
   homepage "https://tevent.samba.org"
-  url "https://www.samba.org/ftp/tevent/tevent-0.16.2.tar.gz"
-  sha256 "f0bbd29dfabbcbbce9f4718fc165410cdd4f7d8ee1f3dfc54618d4c03199cea3"
+  url "https://www.samba.org/ftp/tevent/tevent-0.17.0.tar.gz"
+  sha256 "7702fb373b69da2960b86134b6a9ec6fa0b949a01756fec00a4a6a43575c8361"
   license "LGPL-3.0-or-later"
 
   livecheck do
@@ -11,13 +11,13 @@ class Tevent < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "4b1299df6043fe06db809e5a5a15d531eafa1e5cf342f49fee336a016522d6c0"
-    sha256 cellar: :any,                 arm64_sonoma:  "669b3b3ce670629fca6c41ccd5f47b8dbde8f8dd4d4c7ebff9bf4e79bb3edcd9"
-    sha256 cellar: :any,                 arm64_ventura: "f31c16f2155d9ab99761f758df8c64464ade64525b3e0603261c6b2c68fdb58b"
-    sha256 cellar: :any,                 sonoma:        "685425f7ed027ead68df7354672600841413b18f702484094ec2d3bf40bfdc35"
-    sha256 cellar: :any,                 ventura:       "15bab6c124d0f8afc3d83ca9f8f20b79211fe1ce33ab06e60ce2552ad78c78e2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "91b7e00fe6fab5edf5cd35f2abffd2f842c456d9c3f098edf007d79eabc397be"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "36aa2419325a2300e1afcefaa32ef7982bbb44855a9ea104322c1c6e43f49a3c"
+    sha256 cellar: :any,                 arm64_sequoia: "28e48cf517dc531e4538ad6d49749c6a06b63fda86bfaf5541ed3198abf1ffbe"
+    sha256 cellar: :any,                 arm64_sonoma:  "173ee038f789804174388a00094d632599a4d4c70393245359a13030c98f0433"
+    sha256 cellar: :any,                 arm64_ventura: "b7acddbdfcda8ac6b461bcd343053c0b1be49861851de0c2836a4905019b81c8"
+    sha256 cellar: :any,                 sonoma:        "7c1a7d19ab1039b131f4de509fb70234e531511dfbf48f5a2b1d88d3f920edd8"
+    sha256 cellar: :any,                 ventura:       "548e66b6f5c53d94fd7faa0ca9baae2636ee7ce4b1a488ad9295a8be2deadae9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b72a6634dde042c3f388bc9d545a2154013608b165098f2628cd1a9563555bd5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b4fd7bb86299828dc6d21b17c915e2e94e3b27c8b49e8ed213f0e6c7d7f429f6"
   end
 
   depends_on "cmocka" => :build

@@ -6,19 +6,19 @@ class PassImport < Formula
   url "https:files.pythonhosted.orgpackagesf1691d763287f49eb2d43f14280a1af9f6c2aa54a306071a4723a9723a6fb613pass-import-3.5.tar.gz"
   sha256 "e3e5ec38f58511904a82214f8a80780729dfe84628d7c5d6b1cedee20ff3fb23"
   license "GPL-3.0-or-later"
-  revision 4
+  revision 5
   head "https:github.comroddhjavpass-import.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "db18ad714373d6ea334b5c030d8854f69ae5e2d4cbce1a55366fbf788001386c"
-    sha256 cellar: :any,                 arm64_sonoma:  "2ecbea7df07231767591b191ab87d5e2adb3dbd072213c656ad53ef9c2f22dc3"
-    sha256 cellar: :any,                 arm64_ventura: "f084d9c0dff2280645aa06b71b8c3143dbfa19d1821f9f7710e02aa88048c55b"
-    sha256 cellar: :any,                 sonoma:        "dec4ea452903371dbfe29baee36e7cea3cb881a3c6727ace07ab4cf4c0da36a7"
-    sha256 cellar: :any,                 ventura:       "940425c033875623552ae751a1e1a80af81e49a0ed9cdbb6b8193839f4ecb7bf"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "607eb970dc38629e48c517360413de962f13c0605cb8273f131cf13290a69c9f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c85d9db2b932d531631b838650455d9004fd86d21e71879a88c06e1b0b3567e5"
+    sha256 cellar: :any,                 arm64_sequoia: "59113cfc585169c49622aff41d2e9d816d3e44df9978d5b3c80d469abf6e879d"
+    sha256 cellar: :any,                 arm64_sonoma:  "434d68c3443172d74cba7292657dc1e9e9a03c1ce1c781cb7002cc34d701d8ff"
+    sha256 cellar: :any,                 arm64_ventura: "0063ce827cea806f2223ae3c01c57912e06716770911f630c864271698880d89"
+    sha256 cellar: :any,                 sonoma:        "886c4535d374cd68f9902119b43c9733a23f0c99fdd0879aa682c9e01bda9425"
+    sha256 cellar: :any,                 ventura:       "99635afc19cd18f9c90d538d0e21ca0f71fb4dc7110320b451cc375fc016d3e1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8c26ce676ee18c6e0b30305d8808a9bf22d6baa9dbef19a1d359c96fe7f4710c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e9d80cb51ceebc3365946d91bd31998ad42b6808d136221c06c32f1358bf3179"
   end
 
   depends_on "certifi"
@@ -51,8 +51,8 @@ class PassImport < Formula
   end
 
   resource "urllib3" do
-    url "https:files.pythonhosted.orgpackages8a7816493d9c386d8e60e442a35feac5e00f0913c0f4b7c217c11e8ec2ff53e0urllib3-2.4.0.tar.gz"
-    sha256 "414bc6535b787febd7567804cc015fee39daab8ad86268f1310a9250697de466"
+    url "https:files.pythonhosted.orgpackages15229ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bcurllib3-2.5.0.tar.gz"
+    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
   end
 
   resource "zxcvbn" do

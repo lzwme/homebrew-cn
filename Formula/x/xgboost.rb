@@ -5,6 +5,11 @@ class Xgboost < Formula
   sha256 "8f909899f5dc64d4173662a3efa307100713e3c2e2b831177c2e56af0e816caf"
   license "Apache-2.0"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "0108fade9438c03731df3192e4cb13c1f074748b06c82c6a802be70317ace74d"
     sha256 cellar: :any,                 arm64_sonoma:  "85f022ecd9d4e9451b1a5e1e02d674f1b5eef42c0ee17619d1fbe37a66109d0c"

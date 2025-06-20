@@ -6,17 +6,17 @@ class Httpie < Formula
   url "https:github.comhttpiecliarchiverefstags3.2.4.tar.gz"
   sha256 "b185cd8d81325f97c773582e50f1c5e047c2d8575b53d676469c9daf2a52f341"
   license "BSD-3-Clause"
-  revision 2
+  revision 3
   head "https:github.comhttpiecli.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b99aff655ab8469fa69e0a8cae8efb43d13107c735e0fb79d2780e8e3bf464c4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b31f20a713d14dbe4ee1248310f100c7fc3b717998ef18f5197662d3499b13b0"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "64f8087341c2bd93b6ef4c95ab92e98abfe9dfc47c3511ff9cbf4e33724cdf87"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5eafa16075ebe19f80dc8219c231947bae6fde8bf0e5198571ef9071c9120d51"
-    sha256 cellar: :any_skip_relocation, ventura:       "01cd4da081d31bb602d7601746bd629288584b8295b6508e0d157c6afcc50763"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "10f5278ad4a81e3358ec76b54f4dc691927ddbe372609bd090c0448fc7e9b220"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a0171e4b6c32e2e33d0ce663e75488f19a98567e78d92e4ed0d8000c1603184f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ad6f4550d781c22d796e23ba8e92fb03b34906da05fd527a7f9fb57930157458"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "eda7c60d40adb6aa1c0b29fcc13c874327e2d8856ddd8740e00894da3dc46077"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "7801dbbc9b305f9cc1d1fe31c5fe0bc912a5287f3cc142e0b303b71797f9446b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5a1f7841e53bd6341fdf80acc2c329b4cadef07889b2afcdf90c7466de568b2e"
+    sha256 cellar: :any_skip_relocation, ventura:       "06f5697bb8d7e656083a84b3982dc0d6d6e56dd47b80011c3a142d66b433d70f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "40791df8fe2938242a5c75c65cce7ddfca12b1f95d3e06ed85fd1bfc2bd236e9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2b4746efa50922ae0839f4aceb892ba60dabfa6ff706bb83f9d6592c4ff42593"
   end
 
   depends_on "certifi"
@@ -48,8 +48,8 @@ class Httpie < Formula
   end
 
   resource "multidict" do
-    url "https:files.pythonhosted.orgpackages912fa3470242707058fe856fe59241eee5635d79087100b7042a867368863a27multidict-6.4.4.tar.gz"
-    sha256 "69ee9e6ba214b5245031b76233dd95408a0fd57fdb019ddcc1ead4790932a8e8"
+    url "https:files.pythonhosted.orgpackages46b559f27b4ce9951a4bce56b88ba5ff5159486797ab18863f2b4c1c5e8465bdmultidict-6.5.0.tar.gz"
+    sha256 "942bd8002492ba819426a8d7aefde3189c1b87099cdf18aaaefefcf7f3f7b6d2"
   end
 
   resource "pygments" do
@@ -83,8 +83,8 @@ class Httpie < Formula
   end
 
   resource "urllib3" do
-    url "https:files.pythonhosted.orgpackages8a7816493d9c386d8e60e442a35feac5e00f0913c0f4b7c217c11e8ec2ff53e0urllib3-2.4.0.tar.gz"
-    sha256 "414bc6535b787febd7567804cc015fee39daab8ad86268f1310a9250697de466"
+    url "https:files.pythonhosted.orgpackages15229ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bcurllib3-2.5.0.tar.gz"
+    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
   end
 
   def install

@@ -6,18 +6,18 @@ class Howdoi < Formula
   url "https:files.pythonhosted.orgpackages6d430e8166583575bd500c0f8f1a4ab9429af9466feb6fcdc006e88de8fd23e9howdoi-2.0.20.tar.gz"
   sha256 "51cd40c53e0c0f8f8da88f480eb7423183be2350ab4f0a4d9d4763ca6ac3e2a9"
   license "MIT"
-  revision 10
+  revision 11
 
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "5556eff975c34c0df9feaf9ecd8c2cebc6f68666d5368c14a8c2c99f949d128e"
-    sha256 cellar: :any,                 arm64_sonoma:  "04ac64e8f96b0eb00d9b97ba0be6a68e584c28c0363afb6b748e9b029a941c84"
-    sha256 cellar: :any,                 arm64_ventura: "d2daf2734d312911569a0c7916c3a074d047fec78fefcfd84cd0fd2a6e0c30cb"
-    sha256 cellar: :any,                 sonoma:        "07593689cedf57ce83e4d31c21e2bc76ded669e5fb26b3cf9ad5b511a4fefe8c"
-    sha256 cellar: :any,                 ventura:       "72953deabb173697a99b74b5351e25aba5a32434e69cca3925dd06eef9cf4113"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d5b9dd665be4baeca5dc9f852ad536d5f055cbec092dc401e17abb3f8b8d595d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eef43b32e1bf231d4c9fe1829e847134caaa71b80b4011da3622e961ac56d392"
+    sha256 cellar: :any,                 arm64_sequoia: "a54cdb278b5e996d327c50f5014f1d92382e45950a5e9f9ee4d30a6ac9ee4bfd"
+    sha256 cellar: :any,                 arm64_sonoma:  "0e05063e5a28811e3d295ee5ef59e6d7aa3a4a93f9a87d42beb020a3929e3017"
+    sha256 cellar: :any,                 arm64_ventura: "02bde8e2e75760ef734b43af77b712c762297dd166d739181e2058536afe79b9"
+    sha256 cellar: :any,                 sonoma:        "44dd7e7ca1493f4440892896fc2db11d69d1a08315a3897b3713ddb49e4f9c4f"
+    sha256 cellar: :any,                 ventura:       "f1caca3bed29d1126017419143394f358418f08cf1987ade4162f01806a358c8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c572ed8ff55309757e6ffa02d7c77dc6c01c8745157831d6ebbfcb03c88a41fb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4044b26cd5dc33232f489a21510012e386391d3697b97de414ff1c77aaa2b309"
   end
 
   depends_on "certifi"
@@ -134,8 +134,8 @@ class Howdoi < Formula
   end
 
   resource "urllib3" do
-    url "https:files.pythonhosted.orgpackages8a7816493d9c386d8e60e442a35feac5e00f0913c0f4b7c217c11e8ec2ff53e0urllib3-2.4.0.tar.gz"
-    sha256 "414bc6535b787febd7567804cc015fee39daab8ad86268f1310a9250697de466"
+    url "https:files.pythonhosted.orgpackages15229ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bcurllib3-2.5.0.tar.gz"
+    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
   end
 
   resource "wrapt" do

@@ -1,18 +1,18 @@
 class Gotestsum < Formula
   desc "Human friendly `go test` runner"
   homepage "https:github.comgotestyourselfgotestsum"
-  url "https:github.comgotestyourselfgotestsumarchiverefstagsv1.12.2.tar.gz"
-  sha256 "b54036d05128be9e285f5eede74e1070a0267dead3d4e4065f492b7ea39a2353"
+  url "https:github.comgotestyourselfgotestsumarchiverefstagsv1.12.3.tar.gz"
+  sha256 "a78487894e411d8c96980b99201f165ba82281b5c20f10762638e0e6b5a75938"
   license "Apache-2.0"
   head "https:github.comgotestyourselfgotestsum.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c8b98801b467e6d6a9b1eeeae41eee2abba57d727a4aa2c80ac02067715a5979"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c8b98801b467e6d6a9b1eeeae41eee2abba57d727a4aa2c80ac02067715a5979"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "c8b98801b467e6d6a9b1eeeae41eee2abba57d727a4aa2c80ac02067715a5979"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b0abdce26ad91243473e6be948adfe8b7fdf924a7c39fa79dd63fdca4d36f7dc"
-    sha256 cellar: :any_skip_relocation, ventura:       "b0abdce26ad91243473e6be948adfe8b7fdf924a7c39fa79dd63fdca4d36f7dc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eb0af3a5b3c0a9bdd33d9495851bedcc4faaa185721a41534154244a10fa9986"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d63c403ac8afa10f24baea91aba258d50d64651d4284ab38c60f8911737b5711"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d63c403ac8afa10f24baea91aba258d50d64651d4284ab38c60f8911737b5711"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "d63c403ac8afa10f24baea91aba258d50d64651d4284ab38c60f8911737b5711"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4a11858688db5857259f4b706a90e6687866424c9f8a38a0b21243fc08072378"
+    sha256 cellar: :any_skip_relocation, ventura:       "4a11858688db5857259f4b706a90e6687866424c9f8a38a0b21243fc08072378"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "138609040a3f0f13ee397a556134ef4193c3fe32b843b8c84e4e0b41c3aa98fb"
   end
 
   depends_on "go" => [:build, :test]

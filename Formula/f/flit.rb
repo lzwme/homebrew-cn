@@ -6,11 +6,11 @@ class Flit < Formula
   url "https:files.pythonhosted.orgpackages509c0608c91a5b6c013c63548515ae31cff6399cd9ce891bd9daee8c103da09bflit-3.12.0.tar.gz"
   sha256 "1c80f34dd96992e7758b40423d2809f48f640ca285d0b7821825e50745ec3740"
   license "BSD-3-Clause"
-  revision 1
+  revision 2
   head "https:github.compypaflit.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "ac29da4b69781a3dd6268df613a9c3899553e1a13d14a1b2bf2aeba330ed4e6b"
+    sha256 cellar: :any_skip_relocation, all: "32af7889fc49c461be0a541f70c0c6300b1f12e44e7292fbfbca444c8c66b537"
   end
 
   depends_on "certifi"
@@ -47,8 +47,8 @@ class Flit < Formula
   end
 
   resource "urllib3" do
-    url "https:files.pythonhosted.orgpackages8a7816493d9c386d8e60e442a35feac5e00f0913c0f4b7c217c11e8ec2ff53e0urllib3-2.4.0.tar.gz"
-    sha256 "414bc6535b787febd7567804cc015fee39daab8ad86268f1310a9250697de466"
+    url "https:files.pythonhosted.orgpackages15229ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bcurllib3-2.5.0.tar.gz"
+    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
   end
 
   def install

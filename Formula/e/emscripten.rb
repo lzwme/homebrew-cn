@@ -16,13 +16,14 @@ class Emscripten < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "1480c2ec79819e33c90031e1ec0f7f0e1e48f0dd64d34133ad8a43198d6ae2e2"
-    sha256 cellar: :any,                 arm64_sonoma:  "70c1954dfaea5d449efc76e29a5eb056b2991a207a17ff95196c46ffcf2f2a98"
-    sha256 cellar: :any,                 arm64_ventura: "42d26cc7cd7a9a5f3a58b7e4429dc8bc0e07281929b6dd2023608f277751972f"
-    sha256 cellar: :any,                 sonoma:        "717d4c091c318c1ec5b51c73117eae924e674a94695c0531521ffcc0750dd8c1"
-    sha256 cellar: :any,                 ventura:       "40d90edf001bed2750e8f785e13685255caef296a82a87e67b4b8ff0b84bfc0e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0f5ac3896162da0803a28d8428a4e9571203e5c1c490556722e7a0a4a2a198c7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f3a1b27194857fb8de8a8945477741f9ad7680bb7df7c17a0d4b2411483a000b"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "1f56da0bad00cb262d6fcc86ab6c8a1ed1cb3b6ffb09d9f713d6b9ed03f3aabf"
+    sha256 cellar: :any,                 arm64_sonoma:  "c3309002ed362f7b02546dc505e1ffb2c0f51ef3b30fb812e3719dcca43500b9"
+    sha256 cellar: :any,                 arm64_ventura: "f00fe21f8cea58e28d55af0239c7b6953192e04f72f94e60664c701717da8122"
+    sha256 cellar: :any,                 sonoma:        "8f20761e28026782b229dc7f627c4ad693992132c638b20788fcbbea94ccab5b"
+    sha256 cellar: :any,                 ventura:       "476e8635e2577cf0b2da6e29d1ec52b23a46288a8633fa87e16fa3ec3b6d08d2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "05a323d8bc54ae9da27d55b1828f98adc73248fbedffafe2f7a626ba003eed62"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "39cbd699d816cdafd43134337f4fd7f4a9c0500ea440bd7fb2574e4ae287303b"
   end
 
   depends_on "cmake" => :build
@@ -237,8 +238,18 @@ class Emscripten < Formula
   end
 
   def post_install
-    return if File.exist?("#{Dir.home}.emscripten")
     return if (libexec".emscripten").exist?
+
+    if File.exist?("#{Dir.home}.emscripten")
+      ohai "Skipping configuration generation"
+      puts <<~EOS
+        You have a ~.emscripten configuration file, so the default configuration
+        file was not generated. To generate the default configuration:
+          rm ~.emscripten
+          brew postinstall emscripten
+      EOS
+      return
+    end
 
     system bin"emcc", "--generate-config"
     inreplace libexec".emscripten" do |s|
@@ -246,18 +257,6 @@ class Emscripten < Formula
       s.change_make_var! "BINARYEN_ROOT", "'#{libexec}binaryen'"
       s.change_make_var! "NODE_JS", "'#{Formula["node"].opt_bin}node'"
     end
-  end
-
-  def caveats
-    return unless File.exist?("#{Dir.home}.emscripten")
-    return if (libexec".emscripten").exist?
-
-    <<~EOS
-      You have a ~.emscripten configuration file, so the default configuration
-      file was not generated. To generate the default configuration:
-        rm ~.emscripten
-        brew postinstall emscripten
-    EOS
   end
 
   test do

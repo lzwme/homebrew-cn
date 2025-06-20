@@ -61,23 +61,13 @@ class BashCompletion < Formula
   end
 
   def caveats
-    s = <<~EOS
+    <<~EOS
       Add the following line to your ~.bash_profile:
         [[ -r "#{etc}profile.dbash_completion.sh" ]] && . "#{etc}profile.dbash_completion.sh"
-    EOS
-    version_caveat = <<~EOS
 
       This formula is mainly for use with Bash 3. If you are using Homebrew's Bash or your
       system Bash is at least version 4.2, then you should install `bash-completion@2` instead.
     EOS
-    if Formula["bash"].any_version_installed?
-      s += version_caveat
-    else
-      on_linux do
-        s += version_caveat
-      end
-    end
-    s
   end
 
   test do

@@ -3,19 +3,18 @@ class Tmt < Formula
 
   desc "Test Management Tool"
   homepage "https://tmt.readthedocs.io"
-  url "https://files.pythonhosted.org/packages/98/43/e230f183ef0b5d34deff051b62153b4bb53495c60e46717c3ac940a7bff5/tmt-1.50.0.tar.gz"
-  sha256 "2ebecd1995a39a2e20b333931c6e2952f11a5a3c202a36a0f9084246ce42f5c4"
+  url "https://files.pythonhosted.org/packages/0e/9e/bc3a8b95f3b18897b0492f5b2ba39501788b7b570cf850cf8b268c4e4ec5/tmt-1.51.0.tar.gz"
+  sha256 "b3441f2475d1124ee83d900b60460fd7cfc38de4cc21496aa9e946188bac1295"
   license "MIT"
-  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "6185b54a53143059a4ed1b4d31785ae84fd590285a3e078b26786eb7ff62f48c"
-    sha256 cellar: :any,                 arm64_sonoma:  "1719f6f7b72bd9be1bddf268881028269721fcbc93fd8e9df2ff1982b4179765"
-    sha256 cellar: :any,                 arm64_ventura: "af6c0c3f55f199f98aabff8a13b1200e5ef651776d5182fda5baffb19237cdfc"
-    sha256 cellar: :any,                 sonoma:        "5c2de862f3fe9cd721cbd3912b2e560d93c2ab9cb678580a811dbea148ec01fe"
-    sha256 cellar: :any,                 ventura:       "9908549886d659100d7ec72239c593f669047d523858d87836a75c3312d879ef"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a87fa95e33b65959a061eb42e6abb959c67aa742046eddc776219c6eecb0ae02"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6bad3fb50b096c749d0bf61953a68c16a5bdf7f1db7fe1a0c31b21c9be6fcd7d"
+    sha256 cellar: :any,                 arm64_sequoia: "ce8a23522f3f02d6193a0fd9a8799c22905aa68860a8e42c486c053211af86ed"
+    sha256 cellar: :any,                 arm64_sonoma:  "bdc11f5a6d3d13f204ffc79ccb523b5892028d1eafd96668c65f36c9bd57faf1"
+    sha256 cellar: :any,                 arm64_ventura: "d769d9b6cd6a5c7f4dbf04ef800d7325050a0b36163b05309a619453757aae86"
+    sha256 cellar: :any,                 sonoma:        "97d4f11a40195da30269afcaf7d81cf7ff797607ccd342f6c59eba8f6770041d"
+    sha256 cellar: :any,                 ventura:       "16f36b9a14daa795ff8a86783ac05591f467e3af9da2fc18e7adde6d164c3391"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a6a494891cb57b0a79e86c1487e75ca5e33a87d2c39158eb8128f3636c7c69a9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7426295481b17522946a59daa297f4271ce8d17c746ab81749e85295f3daafbe"
   end
 
   depends_on "rust" => :build # for rpds-py
@@ -109,8 +108,8 @@ class Tmt < Formula
   end
 
   resource "pydantic" do
-    url "https://files.pythonhosted.org/packages/f0/86/8ce9040065e8f924d642c58e4a344e33163a07f6b57f836d0d734e0ad3fb/pydantic-2.11.5.tar.gz"
-    sha256 "7f853db3d0ce78ce8bbb148c401c2cdd6431b3473c0cdff2755c7690952a7b7a"
+    url "https://files.pythonhosted.org/packages/00/dd/4325abf92c39ba8623b5af936ddb36ffcfe0beae70405d456ab1fb2f5b8c/pydantic-2.11.7.tar.gz"
+    sha256 "d989c3c6cb79469287b1569f7447a17848c998458d49ebe294e975b9baf0f0db"
   end
 
   resource "pydantic-core" do
@@ -159,8 +158,8 @@ class Tmt < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/8a/78/16493d9c386d8e60e442a35feac5e00f0913c0f4b7c217c11e8ec2ff53e0/urllib3-2.4.0.tar.gz"
-    sha256 "414bc6535b787febd7567804cc015fee39daab8ad86268f1310a9250697de466"
+    url "https://files.pythonhosted.org/packages/15/22/9ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bc/urllib3-2.5.0.tar.gz"
+    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
   end
 
   def install

@@ -6,17 +6,17 @@ class KeeperCommander < Formula
   url "https:files.pythonhosted.orgpackagesd6565911f0e6eeee11d2e72ee7ab3130513e8ad60e480eb4e108a50922c2fbf8keepercommander-17.1.1.tar.gz"
   sha256 "03abf94fb594ff6eec63a1ac9076c8a7e839723e13b0ade9afabcfc123270969"
   license "MIT"
-  revision 1
+  revision 2
   head "https:github.comKeeper-SecurityCommander.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "3fa374b9dd296a013db067102378b76e2b6a8ebbc5d98345cb83155ecb71eedd"
-    sha256 cellar: :any,                 arm64_sonoma:  "942c51ec4d681eba83598e57acda3c5a0ed3f51f095c9269af42617a1926b1e0"
-    sha256 cellar: :any,                 arm64_ventura: "4fd3d63803b9a48d4a83507cd01d211e35d95f5a57f14b867d809856dab44139"
-    sha256 cellar: :any,                 sonoma:        "8db9b0ea4adc8519a6f09c12f25538ee795856aebded17e9a398ae1db9406f67"
-    sha256 cellar: :any,                 ventura:       "c57bddbd5e5596f47624d3c31d19188402589adf87b31995ee9e3c0da2aa5f91"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c4dccd333f0283664c8965b849ee05a4b31c01108001990288266be5db1383d9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cd5f161afe881805012b007bcd86606f77a416307efb4e366f5045633a3500a4"
+    sha256 cellar: :any,                 arm64_sequoia: "1902cbff976c090c1fcc1679179b71ddf140ecb534c3f9296e8d6a58bd659d5a"
+    sha256 cellar: :any,                 arm64_sonoma:  "394cbfd89b9f2324429b43869f7a2c4ff9fce355e87a8a814d77c38541bbbd57"
+    sha256 cellar: :any,                 arm64_ventura: "05009c9421d7be38b13c8c0ade2075552f382d5399240ecd4f45c9b97cb096c4"
+    sha256 cellar: :any,                 sonoma:        "3507587a0d0c165d114df0babe0c3cee3d0cc179b30d18e88ca1ecaf9e9ea040"
+    sha256 cellar: :any,                 ventura:       "770224956f0b8b489dadcba274c1520ef910b4b5bbf1a90cf971cd451c5e9c00"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "750633726358ee19590c328714ec96b5906e74bd8537e194ec83dd6f1cbf22ee"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1c230cbc9d0bb05303ba4fdfcb74dfe866fbbd551e87f1d551f8380433d5047d"
   end
 
   depends_on "pkgconf" => :build
@@ -128,8 +128,8 @@ class KeeperCommander < Formula
   end
 
   resource "fonttools" do
-    url "https:files.pythonhosted.orgpackagesb6a93319c6ae07fd9dde51064ddc6d82a2b707efad8ed407d700a01091121bbcfonttools-4.58.2.tar.gz"
-    sha256 "4b491ddbfd50b856e84b0648b5f7941af918f6d32f938f18e62b58426a8d50e2"
+    url "https:files.pythonhosted.orgpackages2e5a1124b2c8cb3a8015faf552e92714040bcdbc145dfa29928891b02d147a18fonttools-4.58.4.tar.gz"
+    sha256 "928a8009b9884ed3aae17724b960987575155ca23c6f0b8146e400cc9e0d44ba"
   end
 
   resource "fpdf2" do
@@ -173,8 +173,8 @@ class KeeperCommander < Formula
   end
 
   resource "limits" do
-    url "https:files.pythonhosted.orgpackagesf3931d0d9feedbf58220be4160f5f3fbe51f52449d0699f896b32ce731756e30limits-5.2.0.tar.gz"
-    sha256 "b6b659774f17befef2dd30a76dcd2bdecf3852e73b6627143d44ab4deda94b48"
+    url "https:files.pythonhosted.orgpackages793295d4908a730213a5db40462b0e20c1b93a688b33eade8c4981bbf0ca08delimits-5.4.0.tar.gz"
+    sha256 "27ebf55118e3c9045f0dbc476f4559b26d42f4b043db670afb8963f36cf07fd9"
   end
 
   resource "markdown-it-py" do
@@ -228,8 +228,8 @@ class KeeperCommander < Formula
   end
 
   resource "pydantic" do
-    url "https:files.pythonhosted.orgpackagesf0868ce9040065e8f924d642c58e4a344e33163a07f6b57f836d0d734e0ad3fbpydantic-2.11.5.tar.gz"
-    sha256 "7f853db3d0ce78ce8bbb148c401c2cdd6431b3473c0cdff2755c7690952a7b7a"
+    url "https:files.pythonhosted.orgpackages00dd4325abf92c39ba8623b5af936ddb36ffcfe0beae70405d456ab1fb2f5b8cpydantic-2.11.7.tar.gz"
+    sha256 "d989c3c6cb79469287b1569f7447a17848c998458d49ebe294e975b9baf0f0db"
   end
 
   resource "pydantic-core" do
@@ -308,8 +308,8 @@ class KeeperCommander < Formula
   end
 
   resource "urllib3" do
-    url "https:files.pythonhosted.orgpackages8a7816493d9c386d8e60e442a35feac5e00f0913c0f4b7c217c11e8ec2ff53e0urllib3-2.4.0.tar.gz"
-    sha256 "414bc6535b787febd7567804cc015fee39daab8ad86268f1310a9250697de466"
+    url "https:files.pythonhosted.orgpackages15229ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bcurllib3-2.5.0.tar.gz"
+    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
   end
 
   resource "wcwidth" do

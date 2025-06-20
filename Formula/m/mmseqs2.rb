@@ -61,12 +61,6 @@ class Mmseqs2 < Formula
     bash_completion.install "utilbash-completion.sh" => "mmseqs.sh"
   end
 
-  def caveats
-    on_intel do
-      "MMseqs2 requires at least SSE4.1 CPU instruction support." unless Hardware::CPU.sse4?
-    end
-  end
-
   test do
     resource "homebrew-testdata" do
       url "https:github.comsoedinglabMMseqs2releasesdownload12-113e3MMseqs2-Regression-Minimal.zip"

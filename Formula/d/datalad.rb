@@ -6,17 +6,17 @@ class Datalad < Formula
   url "https:files.pythonhosted.orgpackages06091cafa5d584ca92fe9e9381282103e2d92944aae2997085ca1aee111c5c1cdatalad-1.2.0.tar.gz"
   sha256 "4ea32977ee8dabc277fb08bdee375885427177768330b4e2f51c0c1502400a80"
   license "MIT"
-  revision 1
+  revision 2
   head "https:github.comdataladdatalad.git", branch: "maint"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "96e2dd5da8ee88808da6908d74dc47d71c3f55a630afa3b6d353f56be02e2bbf"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fb4ac067b2e0450d0e597579e08883935616ffe994dfa554877dfc7e59e57311"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "4d7aace15d4d388725c529a19d23fb7da993df6906ed786706068b9259716489"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7a7b12107807d052f492e4109636cc7afd3fffe956ab61fe7d50f3f5e80c9bb0"
-    sha256 cellar: :any_skip_relocation, ventura:       "1730b1b8c6c45a9df579ff8a59768f02a72c7cd196718f585a571db2741584cf"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0be6f07ff3fde52e0eec76c15caa5683f937988fba6a966d0899aa84ddadceb1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3ceb4aa9fffd5ad76fd4c8d2b3989149eba10299b7e10dc4d9b43d8c0ac11483"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "98f0e948be4b658227d2f5c1f67f0df532032f36b344e4acb44726151c62f68d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "885948e377d8b53e8da39fe33c3ce28464cc3bca460c02f26bcb39d5f064abcf"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "76037bde9dea3cab5d4746e97056c274d3eea08267f84ddbc1b5918e96265767"
+    sha256 cellar: :any_skip_relocation, sonoma:        "81caa4171329cbcc775cad42681c13a877d12a5bc3c592723788e5bde19321f8"
+    sha256 cellar: :any_skip_relocation, ventura:       "10e88f4bf1287ca6ae957bf8eaaf6fe78c8c77b569def9a815ce31f6eaabe782"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c65ae2582c4e368f07c3116e76f76550b503b57f7f3aca58ee4ba1fe76246280"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "750b7e3ea021b97b96190b6119f950a12b064cc39070098fe9cf893841fde953"
   end
 
   depends_on "certifi"
@@ -36,13 +36,13 @@ class Datalad < Formula
   end
 
   resource "boto3" do
-    url "https:files.pythonhosted.orgpackagesad9599046c55799732d97b0f9a0bb99b64760f07dd55ac793393a6c4e847d8d6boto3-1.38.33.tar.gz"
-    sha256 "6467909c1ae01ff67981f021bb2568592211765ec8a9a1d2c4529191e46c3541"
+    url "https:files.pythonhosted.orgpackages70b0a35b320e5084821de69a66962513dcc8aa37b7a5bc80e761685533e97be9boto3-1.38.39.tar.gz"
+    sha256 "22cca12cfe1b24670de53e3b8f4c69bdf34a2bd3e3363f72393b6b03bb0d78bc"
   end
 
   resource "botocore" do
-    url "https:files.pythonhosted.orgpackages9daa1521d7e1dcb76af8dca81539eec141ee3581a32e0dc1f31d092b59feb06abotocore-1.38.33.tar.gz"
-    sha256 "dbe8fea9d0426c644c89ef2018ead886ccbcc22901a02b377b4e65ce1cb69a2b"
+    url "https:files.pythonhosted.orgpackages096120eceeccdce79ca238453389e9a8a9147a79417a07e22fa6715f1abd6421botocore-1.38.39.tar.gz"
+    sha256 "2305f688e9328af473a504197584112f228513e06412038d83205ce8d1456f40"
   end
 
   resource "chardet" do
@@ -126,8 +126,8 @@ class Datalad < Formula
   end
 
   resource "msgpack" do
-    url "https:files.pythonhosted.orgpackagescbd07555686ae7ff5731205df1012ede15dd9d927f6227ea151e901c7406af4fmsgpack-1.1.0.tar.gz"
-    sha256 "dd432ccc2c72b914e4cb77afce64aab761c1137cc698be3984eee260bcb2896e"
+    url "https:files.pythonhosted.orgpackages45b1ea4f68038a18c77c9467400d166d74c4ffa536f34761f7983a104357e614msgpack-1.1.1.tar.gz"
+    sha256 "77b79ce34a2bdab2594f490c8e80dd62a02d650b91a75159a63ec413b8d104cd"
   end
 
   resource "packaging" do
@@ -191,8 +191,8 @@ class Datalad < Formula
   end
 
   resource "urllib3" do
-    url "https:files.pythonhosted.orgpackages8a7816493d9c386d8e60e442a35feac5e00f0913c0f4b7c217c11e8ec2ff53e0urllib3-2.4.0.tar.gz"
-    sha256 "414bc6535b787febd7567804cc015fee39daab8ad86268f1310a9250697de466"
+    url "https:files.pythonhosted.orgpackages15229ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bcurllib3-2.5.0.tar.gz"
+    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
   end
 
   def install

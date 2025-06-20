@@ -6,17 +6,17 @@ class Forbidden < Formula
   url "https:files.pythonhosted.orgpackagesed80eb80e899c8ac2357aa9b001600e64177a1a68c32b466becadf1eb0a09e01forbidden-13.2.tar.gz"
   sha256 "e560b121b1419393695505a4bf61ab82230a34bffc9b1779ca75a33ab3f62916"
   license "MIT"
-  revision 1
+  revision 2
   head "https:github.comivan-sincekforbidden.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "982a7c02aff4742964dc98742c4295469391bc74ab77e10f9c7ae2c8fdd3bdf5"
-    sha256 cellar: :any,                 arm64_sonoma:  "7370f2a1aac5012366ed4d05e5346396c853e6abefbfa790e5010ab3e7e6c2f2"
-    sha256 cellar: :any,                 arm64_ventura: "6a285ffdd2ad660f8596130405c00e796f3c98bcb043865e7a00a4e188d37677"
-    sha256 cellar: :any,                 sonoma:        "3d8e33dc5de2d1623c38344e078148c6ffc14a990c58631fc4fa6acc348e895d"
-    sha256 cellar: :any,                 ventura:       "b16fb162c6b5385ea2d300b52b1282a4eac092718c82bcd18d3d305abf93c57d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d295e60830896f3756e79caba62b7cc2a102913c209bd46b6a8d075cbfa12c71"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b21489768fe7143d1fe323c8250746be41f7133d86dae0755260572321a81aa5"
+    sha256 cellar: :any,                 arm64_sequoia: "338fc74fc80d702b0ecd8998de75a0fc5b55aec7e6543ba2bbf832e5d029efda"
+    sha256 cellar: :any,                 arm64_sonoma:  "414cad61bcaf7c10d4879dce53bca4aa8345239b8ed20a521b6779f95e82b841"
+    sha256 cellar: :any,                 arm64_ventura: "7c56a0e989db7403ea6ded63c49eae50f6f9c7a3a5e9e5ba2699871164fb6eb4"
+    sha256 cellar: :any,                 sonoma:        "f00eb8d16fc870eda75f6da3f5c6b8016742ee8cea02731a8acfd6962459bfa2"
+    sha256 cellar: :any,                 ventura:       "483dc0bb41d07e62b72cf6c4b37f4d0d83fc253ee95e25d624314c2e15312bdc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3e09e5f7971346a8927a3f4b09642c0118a21e0decd01ccf6c926dde55a125ac"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "411a66506f536bd7b531ad495249d77f9a5161a5f6b235acd07b2938972afd35"
   end
 
   depends_on "certifi"
@@ -93,8 +93,8 @@ class Forbidden < Formula
   end
 
   resource "urllib3" do
-    url "https:files.pythonhosted.orgpackages8a7816493d9c386d8e60e442a35feac5e00f0913c0f4b7c217c11e8ec2ff53e0urllib3-2.4.0.tar.gz"
-    sha256 "414bc6535b787febd7567804cc015fee39daab8ad86268f1310a9250697de466"
+    url "https:files.pythonhosted.orgpackages15229ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bcurllib3-2.5.0.tar.gz"
+    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
   end
 
   def install

@@ -6,19 +6,19 @@ class Cruft < Formula
   url "https:files.pythonhosted.orgpackagesd17e0e20012f2aa156e5d6a70483a8d90accb7ed4966dddb0c58987d9f6eba12cruft-2.16.0.tar.gz"
   sha256 "184662853fbc1c16c0137fe0e9444e0cbe95e40362f5ebb2d9fae33d9223e73f"
   license "MIT"
-  revision 2
+  revision 3
   head "https:github.comcruftcruft.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "ad39579e5cf67e9d038dcbb90428a2c3e2d570d70c6245138cb1876ba5136ea0"
-    sha256 cellar: :any,                 arm64_sonoma:  "190c707c426a09da51c614293b3ce5045864b492227e7cfcc82d48271e7314ea"
-    sha256 cellar: :any,                 arm64_ventura: "b3b1e6260b9008152344573405a8a5330371c3e164d52735ee3c6d3762e7a584"
-    sha256 cellar: :any,                 sonoma:        "0fcdf19675bf13a33bbed2a19ab926173ddfad61cb070002f34478b58f92767e"
-    sha256 cellar: :any,                 ventura:       "1dd9db1dec2951bb2182ed9d179a17152bba07870d6fcb8bda4f32e6345f77dc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7a4f67fafa0a04fd79a855ceb3cdb127c09f9cc8d28cda246461eaea7e714692"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2703585445ce3628a1a6b51bcbf85ccd381cc24f2ca822384976803e8f6e4816"
+    sha256 cellar: :any,                 arm64_sequoia: "eb02182e87cf02ddb00d5c0b380b36ef052c96af782b544997df341245146bd7"
+    sha256 cellar: :any,                 arm64_sonoma:  "8a4fd594ee5664c3ff287491e935b7707578107fa712726fe412170156d8f3f7"
+    sha256 cellar: :any,                 arm64_ventura: "29beb4547181032a40c6aa014e44a682cbef11ecc2c407310a0e9f67465462d1"
+    sha256 cellar: :any,                 sonoma:        "0d894ab7277c96aaf7085f6f20a109b9b3bd8d21298fbee9ab6f15a018befbc5"
+    sha256 cellar: :any,                 ventura:       "d10c763b850702d2d87ac62c08188ada8d22a4bac008379c676dbd777a0948dd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1eab11308a1ea7c0504e4ea634d8749af36d6d684281e76c513237699f874060"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4469fa25d7a41ce40fd6ad704afcbfa738ed32dd9ac33eecf9906a3fbe123f8e"
   end
 
   depends_on "certifi"
@@ -156,8 +156,8 @@ class Cruft < Formula
   end
 
   resource "urllib3" do
-    url "https:files.pythonhosted.orgpackages8a7816493d9c386d8e60e442a35feac5e00f0913c0f4b7c217c11e8ec2ff53e0urllib3-2.4.0.tar.gz"
-    sha256 "414bc6535b787febd7567804cc015fee39daab8ad86268f1310a9250697de466"
+    url "https:files.pythonhosted.orgpackages15229ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bcurllib3-2.5.0.tar.gz"
+    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
   end
 
   def install

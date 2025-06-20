@@ -6,19 +6,19 @@ class Gptline < Formula
   url "https:files.pythonhosted.orgpackages5b28d15a9a5b349c77a051a633e13141151314f352067ec7d516220bd6b20fcfgptline-1.0.8.tar.gz"
   sha256 "4a0a0b5fa4f23e5f2ad7ac5bf44a9143e5de3757b0b8eefe5d78a7757d1d34bb"
   license "GPL-3.0-only"
-  revision 7
+  revision 8
   head "https:github.comgnachmangptline.git", branch: "main"
 
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "df4b1fd81621704cef1c93da0efc651a7ac3f58d7763baed637394aa368e175d"
-    sha256 cellar: :any,                 arm64_sonoma:  "c0ec2004d53817d97123bfed5842e6d5b470651b936c1549264b4a7a5a1f63bc"
-    sha256 cellar: :any,                 arm64_ventura: "b8389d1dae6bfc6b7b0090f81c6958d266825de79c994f4707d76c4c2931b301"
-    sha256 cellar: :any,                 sonoma:        "8cd8ee615a5520d84c2fe27e733137151198011ca1b388e02cdab6a96fb12ff1"
-    sha256 cellar: :any,                 ventura:       "3bec3cdaf42465e1be7ad3a032ae2d87c2371ae12f99c1f5664c6db50fae1891"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8f778de29854b28ca360c0b46e0feb553e6ecbb76658a90215bc2d21d4b925c2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3262297984ad022d04e236d7b32dc58fab4742a3250656dc609a695e853c3968"
+    sha256 cellar: :any,                 arm64_sequoia: "a98d0665383cfea137900164482c617862307fb3fd03fbdb3066ec94b88dfc38"
+    sha256 cellar: :any,                 arm64_sonoma:  "b863ad462a3d726963ef7a9c40d088aa4f3cb8fc7f687a765c8517f73589b191"
+    sha256 cellar: :any,                 arm64_ventura: "5c042497493a6386e30b2fe47e7b33635a0283d4048b498ee69516484a42ae73"
+    sha256 cellar: :any,                 sonoma:        "3380eb2e4507d1c1b594ea47d561e670da6be4a926fcd26675b9c1841e32e79b"
+    sha256 cellar: :any,                 ventura:       "67c4331fb8113d3ade701d83379356eeae6e24e785a54b572cbd44221495d744"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fb351ae3785fec52a6105856fcf9d737f379022e2e2f04ee515e7daa40755ff3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "19042d72bb1946101d5081d7fcf37dc653aeee193b5bd2c019e777ddaf7fc8ff"
   end
 
   depends_on "pkgconf" => :build
@@ -154,8 +154,8 @@ class Gptline < Formula
   end
 
   resource "openai" do
-    url "https:files.pythonhosted.orgpackagesec7a9ad4a61f1502f0e59d8c27fb629e28a63259a44d8d31cd2314e1534a2d9fopenai-1.86.0.tar.gz"
-    sha256 "c64d5b788359a8fdf69bd605ae804ce41c1ce2e78b8dd93e2542e0ee267f1e4b"
+    url "https:files.pythonhosted.orgpackages5aeabbeef604d1fe0f7e9111745bb8a81362973a95713b28855beb9a9832ab12openai-1.88.0.tar.gz"
+    sha256 "122d35e42998255cf1fc84560f6ee49a844e65c054cd05d3e42fda506b832bb1"
   end
 
   resource "prompt-toolkit" do
@@ -164,8 +164,8 @@ class Gptline < Formula
   end
 
   resource "pydantic" do
-    url "https:files.pythonhosted.orgpackagesf0868ce9040065e8f924d642c58e4a344e33163a07f6b57f836d0d734e0ad3fbpydantic-2.11.5.tar.gz"
-    sha256 "7f853db3d0ce78ce8bbb148c401c2cdd6431b3473c0cdff2755c7690952a7b7a"
+    url "https:files.pythonhosted.orgpackages00dd4325abf92c39ba8623b5af936ddb36ffcfe0beae70405d456ab1fb2f5b8cpydantic-2.11.7.tar.gz"
+    sha256 "d989c3c6cb79469287b1569f7447a17848c998458d49ebe294e975b9baf0f0db"
   end
 
   resource "pydantic-core" do
@@ -259,8 +259,8 @@ class Gptline < Formula
   end
 
   resource "urllib3" do
-    url "https:files.pythonhosted.orgpackages8a7816493d9c386d8e60e442a35feac5e00f0913c0f4b7c217c11e8ec2ff53e0urllib3-2.4.0.tar.gz"
-    sha256 "414bc6535b787febd7567804cc015fee39daab8ad86268f1310a9250697de466"
+    url "https:files.pythonhosted.orgpackages15229ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bcurllib3-2.5.0.tar.gz"
+    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
   end
 
   resource "wcwidth" do

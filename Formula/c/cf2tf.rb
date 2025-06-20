@@ -6,17 +6,17 @@ class Cf2tf < Formula
   url "https:files.pythonhosted.orgpackagesbac4cd7ddd8c942b71a2db200c42e9ed8c336111db94e2399d3903db6e77eef2cf2tf-0.9.1.tar.gz"
   sha256 "cc334b8373412745b3790bed9db71e02d4c41e274e1774b3b23626bdd78bf357"
   license "GPL-3.0-only"
-  revision 1
+  revision 2
   head "https:github.comDontShaveTheYakcf2tf.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "3771a70ab84179447bc88760179f87a56aa25b6e9bb6633a5c7523d3102053ce"
-    sha256 cellar: :any,                 arm64_sonoma:  "4c35dbc83b658c0b9456b4fdd3b2c38548a85bb765aa3c0f80ed41e3df73dcf4"
-    sha256 cellar: :any,                 arm64_ventura: "182672df00a7f14bc864471b3ab475226fd3c42d2aca051c64ef5720b9c7217b"
-    sha256 cellar: :any,                 sonoma:        "fc6bf014869bae740aff6d79377cb819057e5605d3c12d312ca77fa94490c7df"
-    sha256 cellar: :any,                 ventura:       "486ec64d2cc071ba2c7c9deb5b5222c867f6ff9569297a79ac5610dd9b82e35a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2debd7332f03f38108977e62e08892573ff3b79134a2d234eed8f74c11511649"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "13e6cfb22c28e73c36bbb7bd0941623627446d6d1c7a2a25e23cad5d779a3b22"
+    sha256 cellar: :any,                 arm64_sequoia: "dee1cafafadbec76e76e6c1067d69834d4480f1c4d29418dd62d6b8170960448"
+    sha256 cellar: :any,                 arm64_sonoma:  "4c9da4fe4a216d2582bf4697113ae11fdb702de033e9c0c3de21a8fd0b188f85"
+    sha256 cellar: :any,                 arm64_ventura: "89c3cbd0df422c3f664b890e1276a4bceb32f4d5f3f915e5b2c2b5783d629be6"
+    sha256 cellar: :any,                 sonoma:        "64848649aa0251117c930deb6127da1131312ec5c901326171534bdb167bcb5c"
+    sha256 cellar: :any,                 ventura:       "58f4d020aa5449fbe06a5c7e799cb7d8ff9bdd2175e68b8b4f9fa975aeb42818"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c126b8ca45243d4eac7bec1c1c47f3d303ad3d46c5eb91090b38929f80255980"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "292c68f1d889a89319aec7ff6cb21e40f8e5530f1fe48435a0d3e53e739a5602"
   end
 
   depends_on "cmake" => :build
@@ -80,8 +80,8 @@ class Cf2tf < Formula
   end
 
   resource "pytest" do
-    url "https:files.pythonhosted.orgpackagesfbaa405082ce2749be5398045152251ac69c0f3578c7077efc53431303af97cepytest-8.4.0.tar.gz"
-    sha256 "14d920b48472ea0dbf68e45b96cd1ffda4705f33307dcc86c676c1b5104838a6"
+    url "https:files.pythonhosted.orgpackages08ba45911d754e8eba3d5a841a5ce61a65a685ff1798421ac054f85aa8747dfbpytest-8.4.1.tar.gz"
+    sha256 "7c67fd69174877359ed9371ec3af8a3d2b04741818c51e5e99cc1742251fa93c"
   end
 
   resource "pyyaml" do
@@ -115,8 +115,8 @@ class Cf2tf < Formula
   end
 
   resource "urllib3" do
-    url "https:files.pythonhosted.orgpackages8a7816493d9c386d8e60e442a35feac5e00f0913c0f4b7c217c11e8ec2ff53e0urllib3-2.4.0.tar.gz"
-    sha256 "414bc6535b787febd7567804cc015fee39daab8ad86268f1310a9250697de466"
+    url "https:files.pythonhosted.orgpackages15229ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bcurllib3-2.5.0.tar.gz"
+    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
   end
 
   def install

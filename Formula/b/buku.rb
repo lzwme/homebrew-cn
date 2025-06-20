@@ -6,17 +6,17 @@ class Buku < Formula
   url "https:github.comjarunbukuarchiverefstagsv5.0.tar.gz"
   sha256 "87e226b0062a17cb10bf02a6cefea08e859d74985e373b76496150ecda92d73e"
   license "GPL-3.0-or-later"
-  revision 1
+  revision 2
   head "https:github.comjarunbuku.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9596441b80dedb61bc7cd57743e861cf781966c4530e15731def2e8d223f0e65"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "032d6166f20300d2e6e3e9cf28080b76c3ee563ba93eeeabdf95380df4bbd3a6"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "d69cb7fb9ff02fba5712ba14a70a60713ea36a3ca9879754bf424b8bb11f7a4d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6449b6131564ab87bba0e55613b8a8522ddce74558c6d8145365998004a3daf5"
-    sha256 cellar: :any_skip_relocation, ventura:       "725dacb1ff25d9d8035b19907b816d79407354f5d8269e463214fe81411f393f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7c8acec3e9ff92fb5fbc6e5202494ac09b0626880d043a83986c7c170bac9664"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7e803486c3a74df43a88a09df4d631a2b853dc3bfc4a8ac6ce78fa34fb5935f2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "69fc60603b898f2d6d26726efc388051de7e1c65b76f85f1cdc38132b8512c15"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2227b666af396d4d3d2a83622feb4a105781ecbc44a0fc1f061abe396bfb69cc"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "21144834f453b881b0bb0fc83e87b8467ca1bf580ef17ba83fa532709ad65085"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e8ab85a315f80f9caf22f476615559eb820327e3fc1fb913e75683853376c402"
+    sha256 cellar: :any_skip_relocation, ventura:       "5b6d6a07e316007a09ff5841061432e63cf72f160bbf03f416ae8658d40a4b98"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3b7f74fe9f592922d6d705f6e7eab029d21c88473dfad893c7310b84e03cd709"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "53b1e28bf4469b9e5774dfa9d533705c1a914b6d8518dd6e3bf34056bcd33110"
   end
 
   depends_on "certifi"
@@ -41,8 +41,8 @@ class Buku < Formula
   end
 
   resource "click" do
-    url "https:files.pythonhosted.orgpackagescd0f62ca20172d4f87d93cf89665fbaedcd560ac48b465bd1d92bfc7ea6b0a41click-8.2.0.tar.gz"
-    sha256 "f5452aeddd9988eefa20f90f05ab66f17fce1ee2a36907fd30b05bbb5953814d"
+    url "https:files.pythonhosted.orgpackages606c8ca2efa64cf75a977a0d7fac081354553ebe483345c734fb6b6515d96bbcclick-8.2.1.tar.gz"
+    sha256 "27c491cc05d968d271d5a1db13e3b5a184636d9d930f148c50b038f0d0646202"
   end
 
   resource "flask" do
@@ -101,18 +101,18 @@ class Buku < Formula
   end
 
   resource "types-python-dateutil" do
-    url "https:files.pythonhosted.orgpackagesa96047d92293d9bc521cd2301e423a358abfac0ad409b3a1606d8fbae1321961types_python_dateutil-2.9.0.20241206.tar.gz"
-    sha256 "18f493414c26ffba692a72369fea7a154c502646301ebfe3d56a04b3767284cb"
+    url "https:files.pythonhosted.orgpackagesef88d65ed807393285204ab6e2801e5d11fbbea811adcaa979a2ed3b67a5ef41types_python_dateutil-2.9.0.20250516.tar.gz"
+    sha256 "13e80d6c9c47df23ad773d54b2826bd52dbbb41be87c3f339381c1700ad21ee5"
   end
 
   resource "typing-extensions" do
-    url "https:files.pythonhosted.orgpackagesf63723083fcd6e35492953e8d2aaaa68b860eb422b34627b13f2ce3eb6106061typing_extensions-4.13.2.tar.gz"
-    sha256 "e6c81219bd689f51865d9e372991c540bda33a0379d5573cddb9a3a23f7caaef"
+    url "https:files.pythonhosted.orgpackagesd1bc51647cd02527e87d05cb083ccc402f93e441606ff1f01739a62c8ad09ba5typing_extensions-4.14.0.tar.gz"
+    sha256 "8676b788e32f02ab42d9e7c61324048ae4c6d844a399eebace3d4979d75ceef4"
   end
 
   resource "urllib3" do
-    url "https:files.pythonhosted.orgpackages8a7816493d9c386d8e60e442a35feac5e00f0913c0f4b7c217c11e8ec2ff53e0urllib3-2.4.0.tar.gz"
-    sha256 "414bc6535b787febd7567804cc015fee39daab8ad86268f1310a9250697de466"
+    url "https:files.pythonhosted.orgpackages15229ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bcurllib3-2.5.0.tar.gz"
+    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
   end
 
   resource "webencodings" do

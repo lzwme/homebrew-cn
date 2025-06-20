@@ -6,17 +6,17 @@ class Pocsuite3 < Formula
   url "https:files.pythonhosted.orgpackages1233a9f77b222075f034c04c615de19c9ef0f93457d9b627e95cc40d07949e70pocsuite3-2.1.0.tar.gz"
   sha256 "4107396b5fbbeeb65b27b574c6fb5a40831d1983ad4fd2f9a83c87006bed98e6"
   license "GPL-2.0-only"
-  revision 1
+  revision 2
   head "https:github.comknownsecpocsuite3.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "cd0daf3ae9a8f4d47ae60636e53445a4e41e7ce878017327edefe373f351405e"
-    sha256 cellar: :any,                 arm64_sonoma:  "1e07cc06cc17a60cde12e817a6ed6eed272649f19b53482f88b3955d39fa7426"
-    sha256 cellar: :any,                 arm64_ventura: "da194c7ff025ec83b890645afa45c9699d36f8fab95f5e953f272de31550738a"
-    sha256 cellar: :any,                 sonoma:        "7359318dc73592450615c6fce4cad6515515f9ca9f1f3819ed016d798769793d"
-    sha256 cellar: :any,                 ventura:       "a6bb536340334ddcd7e5078fe3fae72f604182cf1344c9e231e1a4c744443b80"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7df29aaf2e850fd4d587b98b73f80cca8ba82186ec0b1ad844ff86a132346d52"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "538d485d1d105bb71f05a725dace8e53f57fa8c85cc0ab10b43fef1639ecdec0"
+    sha256 cellar: :any,                 arm64_sequoia: "d3582267466e59ef3a754416646a4b693b01d563aa2c17fa6ba885fb6b052860"
+    sha256 cellar: :any,                 arm64_sonoma:  "d25c91cc7d370238cd956aa39428c49aff61c82115be36fd6ab7b690d508ca07"
+    sha256 cellar: :any,                 arm64_ventura: "c1051d8c1db2ff714e7b4ecf5efd360c0843e78c9fba1fb9fc7283f5df8b09d2"
+    sha256 cellar: :any,                 sonoma:        "cf4fd217e3d10cad71b88ad3e0fe445452345a6f8ece3f91b61124b1f64ee179"
+    sha256 cellar: :any,                 ventura:       "7f85c3b62deb9683b83437993c7164910997ce7e497082f6a77120b99dc865d8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "311d11fc2582da7cc9d310a7f1fb18ad9b6940b314bffc65f59c244c985920ca"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "af881c92e4e9f46054990953ee62c13b5ac62767bdeb7bc6797af6929c900967"
   end
 
   depends_on "pkgconf" => :build
@@ -70,8 +70,8 @@ class Pocsuite3 < Formula
   end
 
   resource "jq" do
-    url "https:files.pythonhosted.orgpackagesba323eaca3ac81c804d6849da2e9f536ac200f4ad46a696890854c1f73b2f749jq-1.8.0.tar.gz"
-    sha256 "53141eebca4bf8b4f2da5e44271a8a3694220dfd22d2b4b2cfb4816b2b6c9057"
+    url "https:files.pythonhosted.orgpackagesaff7d88a49335beeb2b51945e4c57fa570f412b5f0200064e9130defb3293a16jq-1.9.1.tar.gz"
+    sha256 "fa138b9062a854908cfccd7fbb2375a77c44612c7212172834990b2f9664a7b7"
   end
 
   resource "lxml" do
@@ -140,8 +140,8 @@ class Pocsuite3 < Formula
   end
 
   resource "urllib3" do
-    url "https:files.pythonhosted.orgpackages8a7816493d9c386d8e60e442a35feac5e00f0913c0f4b7c217c11e8ec2ff53e0urllib3-2.4.0.tar.gz"
-    sha256 "414bc6535b787febd7567804cc015fee39daab8ad86268f1310a9250697de466"
+    url "https:files.pythonhosted.orgpackages15229ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bcurllib3-2.5.0.tar.gz"
+    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
   end
 
   resource "wcwidth" do

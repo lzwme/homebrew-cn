@@ -13,16 +13,14 @@ class Openconnect < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    rebuild 2
-    sha256 arm64_sequoia:  "76a21b129bbc6a7dbcd67f88f4b2e2a0ca6cb3d5188b7ba763ef669013b58b7c"
-    sha256 arm64_sonoma:   "a6594e9c2ba4bfa4f235839a9f504f354e82722ae1a2f6e7f3d9a17727ece429"
-    sha256 arm64_ventura:  "c1f6c601ae384e7ccb83c875c762ab73134dac41ce77a8cfc0fd41d166dda58a"
-    sha256 arm64_monterey: "63304d1ce4715c73c59abd0777fc34f1f77e413c4ce4d1933d78b629abb7d95e"
-    sha256 sonoma:         "330f76952b9e047eaab8fbc0e55378e600367504cded0c4c2879630559a0f6eb"
-    sha256 ventura:        "c6b26f039f0ad3f5ce853111ebb62556885c48fba36cd63f48353f8dd8a12287"
-    sha256 monterey:       "236d104feadaa7f99b8c10fef77adf469fa7499ffd55de499db04da7fd47a710"
-    sha256 arm64_linux:    "a02ae24c78dd35967c78c1212f92e47867615fca7275aa37c9f0aad836014bf3"
-    sha256 x86_64_linux:   "35d66b532fb2760b5265d32eca18f98fb8a938edcef09498fe6126e81c9fd085"
+    rebuild 3
+    sha256 arm64_sequoia: "5f8451259fc62b9d9137d92ef27cb8674d429b06e4a3e2d30bd7352131126b24"
+    sha256 arm64_sonoma:  "90a8abdf95806d378499c11c363e93ff20724d02d8366d3a0f3ad9c1484281a3"
+    sha256 arm64_ventura: "2c25aee8a4b6d654d03f3f66d3a2ef14193c1d4bf1c5be5a7ac8de1a39030411"
+    sha256 sonoma:        "30ba2ca9744e4083be325a54aa62bbcb63044ffbfb1d1b22bfa1a6e4f7425e97"
+    sha256 ventura:       "a4b0f68f401974f354e8116066306fb6c39932024911a4a64d524894ac387633"
+    sha256 arm64_linux:   "02d74cdcd601f029c380d447f55b807ea503c88133484edca2a9757fc8d052c0"
+    sha256 x86_64_linux:  "04741ae1bce5f7c984ddb98c787972f7186cb6b9d366e7e6ee743ea65927cafa"
   end
 
   head do
@@ -80,20 +78,19 @@ class Openconnect < Formula
     system "make", "install"
   end
 
-  def caveats
-    s = <<~EOS
-      A `vpnc-script` has been installed at #{etc}/vpnc/vpnc-script.
-    EOS
-
-    s += if (etc/"vpnc/vpnc-script.default").exist?
-      <<~EOS
-
-        To avoid destroying any local changes you have made, a newer version of this script has
+  def post_install
+    if (etc/"vpnc/vpnc-script.default").exist?
+      opoo <<~EOS
+        To avoid destroying any local changes you have made, a newer version of `vpnc-script` has
         been installed as `vpnc-script.default`.
       EOS
-    end.to_s
+    end
+  end
 
-    s
+  def caveats
+    <<~EOS
+      A `vpnc-script` has been installed at #{etc}/vpnc/vpnc-script.
+    EOS
   end
 
   test do

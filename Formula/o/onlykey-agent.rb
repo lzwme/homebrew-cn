@@ -6,18 +6,18 @@ class OnlykeyAgent < Formula
   url "https://files.pythonhosted.org/packages/68/80/e89b6c3680bedb1e14e99f0539ac805bddc7d8dd87c58805c64484966b7c/onlykey-agent-1.1.15.tar.gz"
   sha256 "49b19bec28dc0fb7053ef01266d8a9e7a078bb146214a641bdbb1feac6fc7ddb"
   license "LGPL-3.0-only"
-  revision 6
+  revision 7
 
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "96b32e7cc840fe0bf3bf1436377dac7ff1ade862912b39e9a6d9e181f51aab8a"
-    sha256 cellar: :any,                 arm64_sonoma:  "7974b523c467d1596f4510eee8e28b606c9b0047927f3424690a29e6dd39bafe"
-    sha256 cellar: :any,                 arm64_ventura: "76775fb1b788a3400c2f20f2be653f182ebd7dbf559173bdb49532747f952243"
-    sha256 cellar: :any,                 sonoma:        "afb6da530494e63195026ed3175d0e6d44767385cff7f641126a8bf0ccd3f519"
-    sha256 cellar: :any,                 ventura:       "4bbd217022a81f2c23fa42f33d100013d83a8c869bfd29fc3844198817e55458"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "787ee6247ea864dae1fa303d55457525f17e2b34b3cb73cc422dcf5343cb97d6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0d49aa8266003774df76336a85cf8430f1e6faf66fbf90abbb4ae68b9b6a5935"
+    sha256 cellar: :any,                 arm64_sequoia: "eb5300e3bdc15543277592ff0fb8af3b7b30493a7d48ce88e7fcaa3d7479db78"
+    sha256 cellar: :any,                 arm64_sonoma:  "d2f4dc6df76189333ef590b584ffdc4a7f2ade77a11ab412838167c58940f6d5"
+    sha256 cellar: :any,                 arm64_ventura: "cecb79179fc8e733001bddee588fc6647115f3663331eca8b0fc1a7baa198bf0"
+    sha256 cellar: :any,                 sonoma:        "08c3f58b38f58278a1c8400afe910ad7695b59387517abee1f36a2c2508cc0d0"
+    sha256 cellar: :any,                 ventura:       "a79e3827dee4bab6bee361396f7d542a909e98e75218ae46f1bf0fa39fb42704"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "43fe811673319574345e943f66680a221fe53b3dcea9c18416419947f81a51a4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4aa0329eb4c8c0f3aa2f8630689ed84f564956afc1d28bb258c9c06f82fb5fb3"
   end
 
   depends_on "pkgconf" => :build
@@ -30,8 +30,8 @@ class OnlykeyAgent < Formula
   depends_on "python@3.13"
 
   resource "aenum" do
-    url "https://files.pythonhosted.org/packages/e3/52/6ad8f63ec8da1bf40f96996d25d5b650fdd38f5975f8c813732c47388f18/aenum-3.1.16-py3-none-any.whl"
-    sha256 "9035092855a98e41b66e3d0998bd7b96280e85ceb3a04cc035636138a1943eaf"
+    url "https://files.pythonhosted.org/packages/d0/f8/33e75863394f42e429bb553e05fda7c59763f0fd6848de847a25b3fbccf6/aenum-3.1.15.tar.gz"
+    sha256 "8cbd76cd18c4f870ff39b24284d3ea028fbe8731a58df3aa581e434c575b9559"
   end
 
   resource "backports-shutil-which" do
@@ -180,8 +180,8 @@ class OnlykeyAgent < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/8a/78/16493d9c386d8e60e442a35feac5e00f0913c0f4b7c217c11e8ec2ff53e0/urllib3-2.4.0.tar.gz"
-    sha256 "414bc6535b787febd7567804cc015fee39daab8ad86268f1310a9250697de466"
+    url "https://files.pythonhosted.org/packages/15/22/9ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bc/urllib3-2.5.0.tar.gz"
+    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
   end
 
   resource "wcwidth" do

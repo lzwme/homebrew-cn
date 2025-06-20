@@ -6,16 +6,16 @@ class Codelimit < Formula
   url "https:files.pythonhosted.orgpackagesb23588c6a31a680aaaa08906162e1a64187e8379c2f6fdf68a457d61e8a32ed1codelimit-0.18.1.tar.gz"
   sha256 "208e814cb3320ce5d1f862fc984b4e09760595b9ed6362bdc11214e3ee155549"
   license "GPL-3.0-or-later"
-  revision 1
+  revision 2
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "18071157d23bb1d0bb254b13d3eba3f3bdab625e53180e4c245582febe7e8f05"
-    sha256 cellar: :any,                 arm64_sonoma:  "c5cdecb94c66b87c8b4d5807977afb05e470691b4c84e3ee684018485101113e"
-    sha256 cellar: :any,                 arm64_ventura: "58def15d46a033132a428c1b55ea007fe155071742521fb28866228f26183f13"
-    sha256 cellar: :any,                 sonoma:        "880b989a838e0b115b4adf2bae43e024da5d7c792a0e3a3d68033326baac6404"
-    sha256 cellar: :any,                 ventura:       "707acb498655fd56a9e398eb5e6f7c498a68cdc7215b1879e43fa7a4532fa538"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e3cba55a81fc138c4cfae16dfd5daaa244f735d48bdc157a85a2b4c341a8e5ca"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3c3a9ba5848dfa803f1d7a305a1980d17acc21a0a73b55480c27c4e071c1eae3"
+    sha256 cellar: :any,                 arm64_sequoia: "51d2b36247f381cb3a00a1d32638b13e306b248a6faf2d23d57f73d4f1ac41ca"
+    sha256 cellar: :any,                 arm64_sonoma:  "6f94801c8c0a62be52f69fb7ca4888e3a6544efdda27dc2adcf91c2416ae26da"
+    sha256 cellar: :any,                 arm64_ventura: "429cb5137167ebbc8514f3b72e6f4c5fb31638f060beba15c190f7da709676e4"
+    sha256 cellar: :any,                 sonoma:        "cd3f2af21686de51775d79de85b61d7853e4a32bf1ebecafe0af19b982402247"
+    sha256 cellar: :any,                 ventura:       "8f6d581fe89d46a3128011793c045d2a886a1386e592911f26d3d728f8747786"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a999e3ad0fe82b29d24dd69135d7180c3d53b663df8cd0e9764155d77020820a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2009e7baacaf96f69ada640dc5bc66ea3cc8e150fb6d362c88de35148eef5fca"
   end
 
   depends_on "certifi"
@@ -28,8 +28,8 @@ class Codelimit < Formula
   end
 
   resource "aiohttp" do
-    url "https:files.pythonhosted.orgpackagesf284ea27e6ad14747d8c51afe201fb88a5c8282b6278256d30a6f71f730add88aiohttp-3.12.12.tar.gz"
-    sha256 "05875595d2483d96cb61fa9f64e75262d7ac6251a7e3c811d8e26f7d721760bd"
+    url "https:files.pythonhosted.orgpackages426eab88e7cb2a4058bed2f7870276454f85a7c56cd6da79349eb314fc7bbcaaaiohttp-3.12.13.tar.gz"
+    sha256 "47e2da578528264a12e4e3dd8dd72a7289e5f812758fe086473fab037a10fcce"
   end
 
   resource "aiosignal" do
@@ -73,8 +73,8 @@ class Codelimit < Formula
   end
 
   resource "multidict" do
-    url "https:files.pythonhosted.orgpackages912fa3470242707058fe856fe59241eee5635d79087100b7042a867368863a27multidict-6.4.4.tar.gz"
-    sha256 "69ee9e6ba214b5245031b76233dd95408a0fd57fdb019ddcc1ead4790932a8e8"
+    url "https:files.pythonhosted.orgpackages46b559f27b4ce9951a4bce56b88ba5ff5159486797ab18863f2b4c1c5e8465bdmultidict-6.5.0.tar.gz"
+    sha256 "942bd8002492ba819426a8d7aefde3189c1b87099cdf18aaaefefcf7f3f7b6d2"
   end
 
   resource "pathspec" do
@@ -128,8 +128,8 @@ class Codelimit < Formula
   end
 
   resource "urllib3" do
-    url "https:files.pythonhosted.orgpackages8a7816493d9c386d8e60e442a35feac5e00f0913c0f4b7c217c11e8ec2ff53e0urllib3-2.4.0.tar.gz"
-    sha256 "414bc6535b787febd7567804cc015fee39daab8ad86268f1310a9250697de466"
+    url "https:files.pythonhosted.orgpackages15229ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bcurllib3-2.5.0.tar.gz"
+    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
   end
 
   resource "yarl" do

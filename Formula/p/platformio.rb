@@ -6,11 +6,11 @@ class Platformio < Formula
   url "https:files.pythonhosted.orgpackages2fc5ba3c1ba120b0466bb621615e4075a5c4752400c6adbf2a15edd91b9aefe9platformio-6.1.18.tar.gz"
   sha256 "6ea19c66fba3c5272378afa6ae11abbf883243dd8e503ac5f4ff8ac277ccc7c6"
   license "Apache-2.0"
-  revision 2
+  revision 3
   head "https:github.complatformioplatformio-core.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "62290c84ef5f14e288a403cf6dcb9ec9f0a3db069fc8c91bb1ce40ec24241d02"
+    sha256 cellar: :any_skip_relocation, all: "d3b937c46359883226dbd06ae3c955020120398448381c9ee957473efe3b8100"
   end
 
   depends_on "certifi"
@@ -27,8 +27,8 @@ class Platformio < Formula
   end
 
   resource "bottle" do
-    url "https:files.pythonhosted.orgpackagesf53befa9540213c71be3500e14592c5823bd3f9ddd881d306e01b5dd490ddab5bottle-0.13.3.tar.gz"
-    sha256 "1c23aeb30aa8a13f39c60c0da494530ddd5de3da235bc431b818a50d999de49f"
+    url "https:files.pythonhosted.orgpackages7a71cca6167c06d00c81375fd668719df245864076d284f7cb46a694cbeb5454bottle-0.13.4.tar.gz"
+    sha256 "787e78327e12b227938de02248333d788cfe45987edca735f8f88e03472c3f47"
   end
 
   resource "chardet" do
@@ -107,8 +107,8 @@ class Platformio < Formula
   end
 
   resource "urllib3" do
-    url "https:files.pythonhosted.orgpackages8a7816493d9c386d8e60e442a35feac5e00f0913c0f4b7c217c11e8ec2ff53e0urllib3-2.4.0.tar.gz"
-    sha256 "414bc6535b787febd7567804cc015fee39daab8ad86268f1310a9250697de466"
+    url "https:files.pythonhosted.orgpackages15229ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bcurllib3-2.5.0.tar.gz"
+    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
   end
 
   resource "uvicorn" do

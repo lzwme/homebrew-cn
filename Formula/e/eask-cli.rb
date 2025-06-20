@@ -1,8 +1,8 @@
 class EaskCli < Formula
   desc "CLI for building, running, testing, and managing your Emacs Lisp dependencies"
-  homepage "https:emacs-eask.github.io"
-  url "https:github.comemacs-easkcliarchiverefstags0.11.6.tar.gz"
-  sha256 "66faf98d76e6c6ca9b38f7721ef4aeba251181bc0aef4c692cf6d09a8988c896"
+  homepage "https://emacs-eask.github.io/"
+  url "https://registry.npmjs.org/@emacs-eask/cli/-/cli-0.11.6.tgz"
+  sha256 "79b6d030347f2bebeec9e4d88b0743722e8667edcd126ebb9c93178ab4973a0a"
   license "GPL-3.0-or-later"
 
   bottle do
@@ -13,14 +13,14 @@ class EaskCli < Formula
 
   def install
     system "npm", "install", *std_npm_args
-    bin.install_symlink Dir["#{libexec}bin*"]
+    bin.install_symlink Dir["#{libexec}/bin/*"]
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}eask --version")
+    assert_match version.to_s, shell_output("#{bin}/eask --version")
 
-    system bin"eask", "create", "package", "test-project"
-    assert_path_exists testpath"test-project"
-    assert_match "Emacs is not installed", shell_output("#{bin}eask compile 2>&1")
+    system bin/"eask", "create", "package", "test-project"
+    assert_path_exists testpath/"test-project"
+    assert_match "Emacs is not installed", shell_output("#{bin}/eask compile 2>&1")
   end
 end

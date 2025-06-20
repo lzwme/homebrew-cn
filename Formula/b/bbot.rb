@@ -6,16 +6,16 @@ class Bbot < Formula
   url "https:files.pythonhosted.orgpackages110cc5553229baf664055d1b9204e334d2c93001e08604dc18c0f6ecd272bcf9bbot-2.5.0.tar.gz"
   sha256 "4481b9db248387ffb3cfd0fc9369dc5580bc8f810aa793f2b3bd5bf9fb1e2b16"
   license "GPL-3.0-or-later"
-  revision 1
+  revision 2
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "fbd8caa2d756ced239a26f149b8740866051e9babfeb4bcdbe82f3b1d1da72a4"
-    sha256 cellar: :any,                 arm64_sonoma:  "77bc3b1ebdd3d7ab52b2368af6dfbf992b8cc20d952fa0368543be84da821363"
-    sha256 cellar: :any,                 arm64_ventura: "293e06b94dfdae692e5f711974612afa23d2346bedd3e55049349374deed0ba6"
-    sha256 cellar: :any,                 sonoma:        "53eccc64384385ed18f0147e273d5ddab55b00266eb6bcd7aee4b4af41715fe4"
-    sha256 cellar: :any,                 ventura:       "331adefa6173668f80a65d340b17817e2701fb85946e4e1ce1a15fc281add61a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3499d2a39f8c2a6f7a23b42e137dde890e5450729f4ffb8922ae9ec13686660f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0f9e9162957d5fdd9debd8f6b3ff8e286b9ee3c3068d77b2051acbe98797a2de"
+    sha256 cellar: :any,                 arm64_sequoia: "0c6a85b3c2d3a53733f79ab8f86822a99a7553b6d9f7e37272a5474a26553037"
+    sha256 cellar: :any,                 arm64_sonoma:  "7ec41ca0369428e21fbe3bcd85b5db5937c0c55c56204b8a344b5bb3b89a3697"
+    sha256 cellar: :any,                 arm64_ventura: "e7f5026c6daf94e5e1ec6d030429cb09fff651e9f037e85c40a1fc30b94f8c16"
+    sha256 cellar: :any,                 sonoma:        "f808f5c5d4e7169b1d1f5419b467529b891b2b438df7c1d1e213c8458558db1e"
+    sha256 cellar: :any,                 ventura:       "853a4dd3b17495c5627e6d0c778cde31f959868d9a3611607daec2b898f605b2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bf5cc40ac7e8e89be9abe49a220a6abe8aa882f7fbb44ccb563ca0082eec80b0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "de74eb59a36a7d1795d2bb8564d57d1880d57b378d9f937e747d842a98bc077b"
   end
 
   depends_on "cmake" => :build
@@ -64,8 +64,8 @@ class Bbot < Formula
   end
 
   resource "cachetools" do
-    url "https:files.pythonhosted.orgpackagesc0b0f539a1ddff36644c28a61490056e5bae43bd7386d9f9c69beae2d7e7d6d1cachetools-6.0.0.tar.gz"
-    sha256 "f225782b84438f828328fc2ad74346522f27e5b1440f4e9fd18b20ebfd1aa2cf"
+    url "https:files.pythonhosted.orgpackages8a89817ad5d0411f136c484d535952aef74af9b25e0d99e90cdffbe121e6d628cachetools-6.1.0.tar.gz"
+    sha256 "b4c4f404392848db3ce7aac34950d17be4d864da4b8b66911008e430bc544587"
   end
 
   resource "charset-normalizer" do
@@ -184,8 +184,8 @@ class Bbot < Formula
   end
 
   resource "pydantic" do
-    url "https:files.pythonhosted.orgpackagesf0868ce9040065e8f924d642c58e4a344e33163a07f6b57f836d0d734e0ad3fbpydantic-2.11.5.tar.gz"
-    sha256 "7f853db3d0ce78ce8bbb148c401c2cdd6431b3473c0cdff2755c7690952a7b7a"
+    url "https:files.pythonhosted.orgpackages00dd4325abf92c39ba8623b5af936ddb36ffcfe0beae70405d456ab1fb2f5b8cpydantic-2.11.7.tar.gz"
+    sha256 "d989c3c6cb79469287b1569f7447a17848c998458d49ebe294e975b9baf0f0db"
   end
 
   resource "pydantic-core" do
@@ -284,8 +284,8 @@ class Bbot < Formula
   end
 
   resource "urllib3" do
-    url "https:files.pythonhosted.orgpackages8a7816493d9c386d8e60e442a35feac5e00f0913c0f4b7c217c11e8ec2ff53e0urllib3-2.4.0.tar.gz"
-    sha256 "414bc6535b787febd7567804cc015fee39daab8ad86268f1310a9250697de466"
+    url "https:files.pythonhosted.orgpackages15229ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bcurllib3-2.5.0.tar.gz"
+    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
   end
 
   resource "websockets" do

@@ -6,16 +6,17 @@ class Ansible < Formula
   url "https:files.pythonhosted.orgpackages83311fe54cfce344fff6ef17933705c2a5ecf2af29301e8d1af13dd1b3f14e3fansible-11.7.0.tar.gz"
   sha256 "f9df37c71d407f65bcb9c5c06c9918e297d9ea74b5cdaf5926c4c9aa9e44db5f"
   license "GPL-3.0-or-later"
+  revision 1
   head "https:github.comansibleansible.git", branch: "devel"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "db70b83a325493157792a450d1ef915bfeb914e55316b3fca72f0f11f2038504"
-    sha256 cellar: :any,                 arm64_sonoma:  "7239b58ab84753bd29b96de4771059058ca526f1a6a14002b9e8a1144c18f81b"
-    sha256 cellar: :any,                 arm64_ventura: "ba248bd1a7e5ad7adc1c76c01509d82b8d76eb9bf987c9b74ef694d0058c25f8"
-    sha256 cellar: :any,                 sonoma:        "77fd10d92ccbd8d9b34f246ec4ea703cb9fe0357846c7608f91f18547952fcf3"
-    sha256 cellar: :any,                 ventura:       "7123b7b3ec0d27cfe7a1275ece49ead89e3e38bb65b880b6a9ea3bb4785ae47e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "19d9ebe3a265bf9b2499bbe1fd26220635a9e0396bd6010570fe9f837b0b0636"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e9d0ac5d372cb8ed4ac830f2891d808cbf1748856a703deb45141cf9dfe6f5e4"
+    sha256 cellar: :any,                 arm64_sequoia: "abefebce261090b66f3ece78040353d7d8a722505a826dfec997e63b4f8811f3"
+    sha256 cellar: :any,                 arm64_sonoma:  "50557b11881618da83859ead27f3e97df113d47d8d30cd1f9ac8eec06f36d2f7"
+    sha256 cellar: :any,                 arm64_ventura: "326f27382908fb3eefb786ccaac17182d5cb77d7b0d85945117261ccb0eceb38"
+    sha256 cellar: :any,                 sonoma:        "ddcd68d54a6de328cd151c65f462fde4c7b5a432a2ffa584b1c01c56c106e2cc"
+    sha256 cellar: :any,                 ventura:       "757bea3d641eed86d3c7ef677062c92f8ba0599d582322f85422c970270d60d4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "32dce3bbe9807e0663a19ecbe61c10d87730e28db20afc7f34aab4d0b3ea7583"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "091a32e9ca0de3fe37310e04b5cbf2a0d2eacef7a06ec2ac0950ef5824aa84ca"
   end
 
   # `pkgconf` and `rust` are for bcrypt
@@ -72,13 +73,13 @@ class Ansible < Formula
   end
 
   resource "boto3" do
-    url "https:files.pythonhosted.orgpackages98a1f2b68cba5d1907e004f4d88a028eda35a4f619c1e81d764e5cf58491eb46boto3-1.38.38.tar.gz"
-    sha256 "0fe6b7d1974851588ec1edd39c66d9525d539133e02c7f985f9ebec5e222c0db"
+    url "https:files.pythonhosted.orgpackages70b0a35b320e5084821de69a66962513dcc8aa37b7a5bc80e761685533e97be9boto3-1.38.39.tar.gz"
+    sha256 "22cca12cfe1b24670de53e3b8f4c69bdf34a2bd3e3363f72393b6b03bb0d78bc"
   end
 
   resource "botocore" do
-    url "https:files.pythonhosted.orgpackages22f5d05258ac4ae68769a956779192bfbd322e571ef9fc17a27f02d35c026b4bbotocore-1.38.38.tar.gz"
-    sha256 "acf9ae5b2d99c1f416f94fa5b4f8c044ecb76ffcb7fb1b1daec583f36892a8e2"
+    url "https:files.pythonhosted.orgpackages096120eceeccdce79ca238453389e9a8a9147a79417a07e22fa6715f1abd6421botocore-1.38.39.tar.gz"
+    sha256 "2305f688e9328af473a504197584112f228513e06412038d83205ce8d1456f40"
   end
 
   resource "cachetools" do
@@ -227,8 +228,8 @@ class Ansible < Formula
   end
 
   resource "oauthlib" do
-    url "https:files.pythonhosted.orgpackages6dfafbf4001037904031639e6bfbfc02badfc7e12f137a8afa254df6c4c8a670oauthlib-3.2.2.tar.gz"
-    sha256 "9859c40929662bec5d64f34d01c99e093149682a3f38915dc0655d5a633dd918"
+    url "https:files.pythonhosted.orgpackages988a6ea75ff7acf89f43afb157604429af4661a9840b1f2cece602b6a13c1893oauthlib-3.3.0.tar.gz"
+    sha256 "4e707cf88d7dfc22a8cce22ca736a2eef9967c1dd3845efc0703fc922353eeb2"
   end
 
   resource "openshift" do
@@ -512,8 +513,8 @@ class Ansible < Formula
   end
 
   resource "urllib3" do
-    url "https:files.pythonhosted.orgpackages8a7816493d9c386d8e60e442a35feac5e00f0913c0f4b7c217c11e8ec2ff53e0urllib3-2.4.0.tar.gz"
-    sha256 "414bc6535b787febd7567804cc015fee39daab8ad86268f1310a9250697de466"
+    url "https:files.pythonhosted.orgpackages15229ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bcurllib3-2.5.0.tar.gz"
+    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
   end
 
   resource "wcwidth" do

@@ -6,17 +6,17 @@ class Cloudsplaining < Formula
   url "https:files.pythonhosted.orgpackages6e09acb8e088d1c6cc6fc9d6d42c1e61168f36339f13b1ea8e54f9a7e93949d1cloudsplaining-0.8.0.tar.gz"
   sha256 "02029432316a56551e58296496bc80e4778a58468273dbcd61df4ed2c369ede4"
   license "BSD-3-Clause"
-  revision 2
+  revision 3
   head "https:github.comsalesforcecloudsplaining.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "ee37ddda13b58065f7bef47caf31091e91cbceddc7f5a9142e1e69dd88a1bcbd"
-    sha256 cellar: :any,                 arm64_sonoma:  "f364f470b80e1fff1cff3c3815ddc44d4f6d59862fd8e57ce3d879078ceaced2"
-    sha256 cellar: :any,                 arm64_ventura: "8336328a62cab5384ec8c55e626638ad50c2e6494537fed1bf5094c33a243d31"
-    sha256 cellar: :any,                 sonoma:        "c79e09ac0fdd27e79f449809d89557a84cee5b43d4dbf11a3b3f4a875d4e33d9"
-    sha256 cellar: :any,                 ventura:       "d1196fed9771284659d539ca34d894926445223d5c4af15807f2cc4039dfbf52"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "077b6ccde8c6c40c313a000700049c28a6a7b997d4d3e430c13d928d9769e57e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1bbba75f816193064411549d5770401aa5c180b1c298223920487df432436459"
+    sha256 cellar: :any,                 arm64_sequoia: "144f6f91e93f43e5e9bc34e4b179e33fe3c6cc1088d9031921613e15e7ea60d4"
+    sha256 cellar: :any,                 arm64_sonoma:  "3b446b4905d74a0cb5f8f705e650e499b082b609e56a84f00b1e820c9ca57a86"
+    sha256 cellar: :any,                 arm64_ventura: "f315208139d57b28330489129f70ee12f4793c35ebf24427100bf3d7083c01d2"
+    sha256 cellar: :any,                 sonoma:        "5a844fde80ad27f5296472e0de86aa5fbdd54c1a0ec270bb649ca674833676a9"
+    sha256 cellar: :any,                 ventura:       "28d06d2663397c0a4becfcb430be77ba9658a1ad75f130a9618b4585d9b22eb2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e9900e0fd5ec7a7ae9ddb9a73d6dfc3979b3462d8634a954517c23d65a5c127b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6763af972ac92a37d2aa14fff32edd408e775e804b7e794521cf08b67c9e9a69"
   end
 
   depends_on "rust" => :build # for orjson
@@ -30,13 +30,13 @@ class Cloudsplaining < Formula
   end
 
   resource "boto3" do
-    url "https:files.pythonhosted.orgpackagesad9599046c55799732d97b0f9a0bb99b64760f07dd55ac793393a6c4e847d8d6boto3-1.38.33.tar.gz"
-    sha256 "6467909c1ae01ff67981f021bb2568592211765ec8a9a1d2c4529191e46c3541"
+    url "https:files.pythonhosted.orgpackages70b0a35b320e5084821de69a66962513dcc8aa37b7a5bc80e761685533e97be9boto3-1.38.39.tar.gz"
+    sha256 "22cca12cfe1b24670de53e3b8f4c69bdf34a2bd3e3363f72393b6b03bb0d78bc"
   end
 
   resource "botocore" do
-    url "https:files.pythonhosted.orgpackages9daa1521d7e1dcb76af8dca81539eec141ee3581a32e0dc1f31d092b59feb06abotocore-1.38.33.tar.gz"
-    sha256 "dbe8fea9d0426c644c89ef2018ead886ccbcc22901a02b377b4e65ce1cb69a2b"
+    url "https:files.pythonhosted.orgpackages096120eceeccdce79ca238453389e9a8a9147a79417a07e22fa6715f1abd6421botocore-1.38.39.tar.gz"
+    sha256 "2305f688e9328af473a504197584112f228513e06412038d83205ce8d1456f40"
   end
 
   resource "cached-property" do
@@ -75,8 +75,8 @@ class Cloudsplaining < Formula
   end
 
   resource "markdown" do
-    url "https:files.pythonhosted.orgpackages2f15222b423b0b88689c266d9eac4e61396fe2cc53464459d6a37618ac863b24markdown-3.8.tar.gz"
-    sha256 "7df81e63f0df5c4b24b7d156eb81e4690595239b7d70937d0409f1b0de319c6f"
+    url "https:files.pythonhosted.orgpackagesdb7c0738e5ff0adccd0b4e02c66d0446c03a3c557e02bb49b7c263d7ab56c57dmarkdown-3.8.1.tar.gz"
+    sha256 "a2e2f01cead4828ee74ecca9623045f62216aef2212a7685d6eb9163f590b8c1"
   end
 
   resource "markupsafe" do
@@ -135,8 +135,8 @@ class Cloudsplaining < Formula
   end
 
   resource "urllib3" do
-    url "https:files.pythonhosted.orgpackages8a7816493d9c386d8e60e442a35feac5e00f0913c0f4b7c217c11e8ec2ff53e0urllib3-2.4.0.tar.gz"
-    sha256 "414bc6535b787febd7567804cc015fee39daab8ad86268f1310a9250697de466"
+    url "https:files.pythonhosted.orgpackages15229ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bcurllib3-2.5.0.tar.gz"
+    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
   end
 
   def install

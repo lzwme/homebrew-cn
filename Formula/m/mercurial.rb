@@ -13,13 +13,14 @@ class Mercurial < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "adcdd94f98f4e8214b39b1146dfc80d506147de819550038c96b960ecff9eb0e"
-    sha256 arm64_sonoma:  "3fe5462406773aa19b203c2ca413acfa8f71e1efe7ab1c36ddc547d878fda0d3"
-    sha256 arm64_ventura: "0429c995db285cbaeb2efc82b1d33ad2046cb664de0fc80ea08893ce2553a880"
-    sha256 sonoma:        "e1821949354dd3457e591a72600497769e419a52d2fc64136ba74974e3fc20bf"
-    sha256 ventura:       "9a7a4d71679097671e9fbc6c06c5d148c037676be4b08e163c936bb69a55654a"
-    sha256 arm64_linux:   "7c5d9f264c42b27e1e2082feb8330eea70dc8e949230b3a2dbdf5796274a123a"
-    sha256 x86_64_linux:  "5b9a76306427e100dd319136e80aede8e5b0dba734a1b788a57a9308f49c5932"
+    rebuild 1
+    sha256 arm64_sequoia: "81528d88d49beaed01ccf668725a862c3b7b4f638788f20790eb7a2246bccff7"
+    sha256 arm64_sonoma:  "8ef48fc75f27e4b43574019f6414c636917a94139add88608a209cb73a1904cd"
+    sha256 arm64_ventura: "1cfbc564e124c07a9755aa389f7cff7bd9cfd6c6f9064e5f3b25470abe5ef9e7"
+    sha256 sonoma:        "015105ec965081a6883b1d33041ca4672783eaa9b4fc6a94c1a5c54baafda064"
+    sha256 ventura:       "ce54da3809fdf9dc785ea4aacab36835d485f172251ed3419c5634c6c645ccf1"
+    sha256 arm64_linux:   "61573ae598820e04f2973bd40798671b680e10f4bc408289055730156bc6ec55"
+    sha256 x86_64_linux:  "c8c07fc5e3c6ceadc67489d42ae57b15123a61d02aa98e776ecd9baaf8e24793"
   end
 
   depends_on "python@3.13"
@@ -47,14 +48,14 @@ class Mercurial < Formula
     bash_completion.install share/"bash-completion/completions/hg"
   end
 
-  def caveats
+  def post_install
     return unless (opt_bin/"hg").exist?
     return unless deps.all? { |d| d.build? || d.test? || d.to_formula.any_version_installed? }
 
     cacerts_configured = `#{opt_bin}/hg config web.cacerts`.strip
     return if cacerts_configured.empty?
 
-    <<~EOS
+    opoo <<~EOS
       Homebrew has detected that Mercurial is configured to use a certificate
       bundle file as its trust store for TLS connections instead of using the
       default OpenSSL store. If you have trouble connecting to remote

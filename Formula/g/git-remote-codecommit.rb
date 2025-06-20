@@ -6,21 +6,20 @@ class GitRemoteCodecommit < Formula
   url "https:files.pythonhosted.orgpackages6ca0feb4dfa42e8cb1a0bd91667233254e49696cf6618f51ad5629f6efd89daegit-remote-codecommit-1.17.tar.gz"
   sha256 "fd4a9ba3fbd88cd455a8e2087765e415da0beaae9932d4e84010069a536de24e"
   license "Apache-2.0"
-  revision 3
+  revision 4
   head "https:github.comawsgit-remote-codecommit.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "57289c92fc9b5e8f368be1df7f694b0e14fbe801ead3a9818f8e9cbeba416cad"
+    sha256 cellar: :any_skip_relocation, all: "6403e992fba39a49e3faa313955b9066ec7459930147d24d3ba1e325de4d4855"
   end
 
   depends_on "python@3.13"
 
   resource "botocore" do
-    url "https:files.pythonhosted.orgpackagesc7b6f73335bd06007e09ae027bb1568fca59f0ffc7773eb295db369b182d7759botocore-1.35.38.tar.gz"
-    sha256 "55d9305c44e5ba29476df456120fa4fb919f03f066afa82f2ae400485e7465f4"
+    url "https:files.pythonhosted.orgpackages096120eceeccdce79ca238453389e9a8a9147a79417a07e22fa6715f1abd6421botocore-1.38.39.tar.gz"
+    sha256 "2305f688e9328af473a504197584112f228513e06412038d83205ce8d1456f40"
   end
 
   resource "jmespath" do
@@ -34,13 +33,13 @@ class GitRemoteCodecommit < Formula
   end
 
   resource "six" do
-    url "https:files.pythonhosted.orgpackages7139171f1c67cd00715f190ba0b100d606d440a28c93c7714febeca8b79af85esix-1.16.0.tar.gz"
-    sha256 "1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926"
+    url "https:files.pythonhosted.orgpackages94e7b2c673351809dca68a0e064b6af791aa332cf192da575fd474ed7d6f16a2six-1.17.0.tar.gz"
+    sha256 "ff70335d468e7eb6ec65b95b99d3a2836546063f63acc5171de367e834932a81"
   end
 
   resource "urllib3" do
-    url "https:files.pythonhosted.orgpackagesed6322ba4ebfe7430b76388e7cd448d5478814d3032121827c12a2cc287e2260urllib3-2.2.3.tar.gz"
-    sha256 "e7d814a81dad81e6caf2ec9fdedb284ecc9c73076b62654547cc64ccdcae26e9"
+    url "https:files.pythonhosted.orgpackages15229ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bcurllib3-2.5.0.tar.gz"
+    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
   end
 
   def install

@@ -1,18 +1,18 @@
 class Undercutf1 < Formula
   desc "F1 Live Timing TUI for all F1 sessions with variable delay to sync to your TV"
   homepage "https:github.comJustAman62undercut-f1"
-  url "https:github.comJustAman62undercut-f1archiverefstagsv3.1.90.tar.gz"
-  sha256 "cec4089f0f3185de5d851777f7b4805fa0df6c61edd1dccb4ef4aad0a2b5cfd1"
+  url "https:github.comJustAman62undercut-f1archiverefstagsv3.1.96.tar.gz"
+  sha256 "ff377e4bf8403510dcbe29dfbe6a9b2056234ca762dd96094943eba47618b744"
   license "GPL-3.0-only"
   head "https:github.comJustAman62undercut-f1.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "173621d296459284e8711ada683c8243f0ba1a5bf9ae4f11b1e3c1f2029239b0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "87303fe03f08e9ef9c29b86a8a58548a5d56c2d75c1358de67d6c43a3c8d4acc"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "e11408bcc3ddfaef0f75f42f570eb995537569a53364c863721a8a61273d8d15"
-    sha256 cellar: :any_skip_relocation, ventura:       "a8d3c4b16c2111d04d1ea791baa2ec90c21bee67714bdb0a5da9e542c6ec8247"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c034ce27e4ee20981ee12aa8738ed40b7da0391938cc44f690e2155191bf0635"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "105feeb71fecf1dd3ccc7371f0b35e75dc337e41f0a64b444787716721fa9fcb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "539fbd3440783df46b6619222491729137e8d3488094cd59ef7e0e35334011f7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "487f2d6ee9da701aecb3d23b90875fec7f23e4c775667d210073daf3e056089c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "f73cb7559c624e924bba7384c3bfdc2ec0648f0e9070ea83de2eacdbbc2f4e08"
+    sha256 cellar: :any_skip_relocation, ventura:       "7817cd318fff6fe788129fd6af7c922f5c826d806ce4e99928037861ad476fc8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4e43e3142b9893aa45bd62ed879d907481c4e6a64c320cafa76e329a6f87bf25"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9ba9e0f377439c2d4832e6391783eb42943e1bcab85ec9d96fece3b42f05cd22"
   end
 
   depends_on "dotnet"

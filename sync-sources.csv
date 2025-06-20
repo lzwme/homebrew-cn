@@ -1662,7 +1662,7 @@ Homebrew-homebrew-core/Formula/e/e2fsprogs.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/e2tools.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/earthly.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/easeprobe.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/e/eask-cli.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/e/eask-cli.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/e/easy-rsa.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/easy-tag.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/e/easyeda2kicad.rb, Homebrew/homebrew-core, 1
@@ -2469,6 +2469,7 @@ Homebrew-homebrew-core/Formula/g/go-jira.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/go-jsonnet.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/go-md2man.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/go-parquet-tools.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/g/go-rice.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/go-size-analyzer.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/go-statik.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/go-task.rb, Homebrew/homebrew-core, 1
@@ -3279,6 +3280,7 @@ Homebrew-homebrew-core/Formula/k/kim-api.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/k/kimwitu++.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/k/kin.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kind.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/k/kingfisher.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kiota.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kirimase.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/k/kitchen-completion.rb, Homebrew/homebrew-core, 1
@@ -5084,6 +5086,7 @@ Homebrew-homebrew-core/Formula/o/overarch.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/overdrive.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/overmind.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/overtls.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/o/ovsx.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/o/owamp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/owfs.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/ox.rb, Homebrew/homebrew-core, 1
@@ -6180,6 +6183,7 @@ Homebrew-homebrew-core/Formula/s/shellspec.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/shelltestrunner.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/shellz.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/shepherd.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/s/sherif.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sherlock.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/shfmt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/shibboleth-sp.rb, Homebrew/homebrew-core, 0
@@ -7744,6 +7748,7 @@ Homebrew-homebrew-cask/Casks/a/abyssoft-teleport.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/accessmenubarapps.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/accord.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/accordance.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/a/accordance@13.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/accurics.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/ace-link.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/ace-studio.rb, Homebrew/homebrew-cask, 0
@@ -15184,6 +15189,7 @@ Homebrew-homebrew-cask/Casks/y/youtype.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/y/yt-music.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/y/ytmdesktop-youtube-music.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/y/yu-writer.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/y/yuanbao.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/y/yubico-authenticator.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/y/yubico-yubikey-manager.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/y/yubihsm2-sdk.rb, Homebrew/homebrew-cask, 0

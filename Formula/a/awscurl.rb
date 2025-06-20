@@ -6,11 +6,11 @@ class Awscurl < Formula
   url "https:files.pythonhosted.orgpackagesf05368500d2e61aff7549f878a9227eea5c80eaf6ffcad7c134c576360b1bae7awscurl-0.36.tar.gz"
   sha256 "9eb9d4949616d90dd7bf0d12a67eb3e1d3487bf08d75a7555d979811e5da1cb4"
   license "MIT"
-  revision 1
+  revision 2
   head "https:github.comokiganawscurl.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "30ab3e1f3198bc3b9cb38d37c3ba8dc847d352d03c8a7c9499a256b46f1dd25b"
+    sha256 cellar: :any_skip_relocation, all: "15d54826d841737d0e72d464313313eef472520987081dc7d781a3b628e8f93b"
   end
 
   depends_on "certifi"
@@ -20,8 +20,8 @@ class Awscurl < Formula
   uses_from_macos "libffi"
 
   resource "botocore" do
-    url "https:files.pythonhosted.orgpackages9daa1521d7e1dcb76af8dca81539eec141ee3581a32e0dc1f31d092b59feb06abotocore-1.38.33.tar.gz"
-    sha256 "dbe8fea9d0426c644c89ef2018ead886ccbcc22901a02b377b4e65ce1cb69a2b"
+    url "https:files.pythonhosted.orgpackages096120eceeccdce79ca238453389e9a8a9147a79417a07e22fa6715f1abd6421botocore-1.38.39.tar.gz"
+    sha256 "2305f688e9328af473a504197584112f228513e06412038d83205ce8d1456f40"
   end
 
   resource "charset-normalizer" do
@@ -65,8 +65,8 @@ class Awscurl < Formula
   end
 
   resource "urllib3" do
-    url "https:files.pythonhosted.orgpackages8a7816493d9c386d8e60e442a35feac5e00f0913c0f4b7c217c11e8ec2ff53e0urllib3-2.4.0.tar.gz"
-    sha256 "414bc6535b787febd7567804cc015fee39daab8ad86268f1310a9250697de466"
+    url "https:files.pythonhosted.orgpackages15229ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bcurllib3-2.5.0.tar.gz"
+    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
   end
 
   def install

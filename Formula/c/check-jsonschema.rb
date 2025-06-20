@@ -6,17 +6,17 @@ class CheckJsonschema < Formula
   url "https:files.pythonhosted.orgpackages518e67e40a319334f5beed9943a4f28de527e27599e07600e10063fb5f18f8b0check_jsonschema-0.33.0.tar.gz"
   sha256 "504fe09f268d2d25d58381d1ed1d5ae8f6e80e7f300e8b155317b40f9f6db8f6"
   license "Apache-2.0"
-  revision 1
+  revision 2
   head "https:github.compython-jsonschemacheck-jsonschema.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "a9c709bf0572b6f7a7ce55e0c96025ea0339fc88f14788bb000745f6718eb1c4"
-    sha256 cellar: :any,                 arm64_sonoma:  "d27f5997aae3e3767e37484b9ea00278e13e0a026c0d96e4d6a1ba42ba552ed4"
-    sha256 cellar: :any,                 arm64_ventura: "597529eac0d01dcbaaeadec38b346e26e8a9f0d257ad31902ea039efc63d850d"
-    sha256 cellar: :any,                 sonoma:        "07c014b598d443bcc0e87ccbef9f85edc736061f7df3e51b576117cbc2a9540f"
-    sha256 cellar: :any,                 ventura:       "aa98b36493ee02d6b06beb815e5e3f2d17609f00ceedb6f472156b85911f9622"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ae151ab3c059d1a55673074e0e70cfa1cedcc2317b9579e918e5e74ab72f4ec3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3ccd2882733ced5791bc3743cd1964bbcc8a76fbb79e654f4f613321d4e98d5c"
+    sha256 cellar: :any,                 arm64_sequoia: "450191b98a6035c85a1af2a6f4804eb0676155edd22bc3a23510c734e043d016"
+    sha256 cellar: :any,                 arm64_sonoma:  "3e66d792ece6365d9aad51182d318cc77a6d35bc5c06e8ebf320ef6d53f508c5"
+    sha256 cellar: :any,                 arm64_ventura: "14369712ea6834c984a10f049a740c3b9ae867fe03657e107f970588728b0d83"
+    sha256 cellar: :any,                 sonoma:        "cd1e7d983b03e39f60423ae88108c6272ffb0cd457c6483f9b42ec1cd7fe15dd"
+    sha256 cellar: :any,                 ventura:       "7ae4ece8570f1fe0f581406a074371a2cc6e2bf572b8ebd777fc3b661e406e77"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d54b1e0c5dc200d308a3f7e04ec9dd37d39958d17ac1c97092a9a0a35952b094"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ad168a739bac4327197e4173087d7e48f382f9f17515903e741a7ed806cae69f"
   end
 
   depends_on "rust" => :build
@@ -134,8 +134,8 @@ class CheckJsonschema < Formula
   end
 
   resource "urllib3" do
-    url "https:files.pythonhosted.orgpackages8a7816493d9c386d8e60e442a35feac5e00f0913c0f4b7c217c11e8ec2ff53e0urllib3-2.4.0.tar.gz"
-    sha256 "414bc6535b787febd7567804cc015fee39daab8ad86268f1310a9250697de466"
+    url "https:files.pythonhosted.orgpackages15229ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bcurllib3-2.5.0.tar.gz"
+    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
   end
 
   resource "webcolors" do

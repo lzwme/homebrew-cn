@@ -5,8 +5,8 @@ class Snapcraft < Formula
   homepage "https:snapcraft.io"
   # Use git checkout so setuptools-scm and update-python-resources works
   url "https:github.comcanonicalsnapcraft.git",
-      tag:      "8.9.4",
-      revision: "b701455c788486936c1c59b47f1a72653dc59f9a"
+      tag:      "8.9.5",
+      revision: "aee7fe47c935bf594a2b8f1712d7df3706b8b8a9"
   license "GPL-3.0-only"
   head "https:github.comcanonicalsnapcraft.git", branch: "main"
 
@@ -16,12 +16,12 @@ class Snapcraft < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "8b0d454f27be2c829ddb835720578ef306ffaef6a6fdb8759c71501b17129709"
-    sha256 cellar: :any,                 arm64_sonoma:  "56a8e7aaa8eaf1d0e3d85eaba2640837ffe90f9f4ebc2d6d270aba1ea5d6ec81"
-    sha256 cellar: :any,                 arm64_ventura: "95ebdf9a4038a31d654649bd708e18344302d422189d6a3f170724c8c5ca8e9b"
-    sha256 cellar: :any,                 sonoma:        "ce37821e17043c5b13536858a5f9bacde0544d6bbe7e4c318b7c43c106d91625"
-    sha256 cellar: :any,                 ventura:       "7f3a66a721682609dfcfb21543ec4ee3d3390a162c462c50a1ea37149a38446c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "17e48be6cc3548a2309b3a065328642f58268224a26ea27655d9c3d753dedeea"
+    sha256 cellar: :any,                 arm64_sequoia: "60aa4446c2ce2fd01506d1ddaed242bed87851fe622d61116fcbdc421c54dece"
+    sha256 cellar: :any,                 arm64_sonoma:  "49cbb7ddd8bb721b466ef1f665c9fbb24adb947c2c32f1261037d65c182f143e"
+    sha256 cellar: :any,                 arm64_ventura: "f4bf6bd504a82a602b0086fdc5c0c8c065a479721a78718f713c15d508d668e0"
+    sha256 cellar: :any,                 sonoma:        "5ee23ab4d183f4bc399a285ff9fee04e579e063aa106dae04541c506f8b97ada"
+    sha256 cellar: :any,                 ventura:       "56e4b2175976c4958fa43c811cc7f8e2fb70b7314cc02b33562e6c3eea7a44ec"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4c62e778e4ed1f53690167d92db1ec1b865d3ddd75283036f5dcbd3f7d5a1792"
   end
 
   depends_on "rust" => :build # for pydantic_core
@@ -113,8 +113,8 @@ class Snapcraft < Formula
   end
 
   resource "craft-parts" do
-    url "https:files.pythonhosted.orgpackagesf06fe562ab023757609671fe1c1093a469b982bb86297aa610a6a49a6b3424f0craft_parts-2.12.0.tar.gz"
-    sha256 "cd20fbb1d0b2b8476d162d939d26100c60d912d0a55b876b56464dee635226fb"
+    url "https:files.pythonhosted.orgpackagesa92553871293c3101864478812ffa35f72148c2597ceb116786dcf94c7451ce4craft_parts-2.13.0.tar.gz"
+    sha256 "ed7e56f432f9b55003e196b54a679849d5c42169810e36e52e7a4518a0fe09e1"
   end
 
   resource "craft-platforms" do
@@ -253,8 +253,8 @@ class Snapcraft < Formula
   end
 
   resource "oauthlib" do
-    url "https:files.pythonhosted.orgpackages6dfafbf4001037904031639e6bfbfc02badfc7e12f137a8afa254df6c4c8a670oauthlib-3.2.2.tar.gz"
-    sha256 "9859c40929662bec5d64f34d01c99e093149682a3f38915dc0655d5a633dd918"
+    url "https:files.pythonhosted.orgpackages988a6ea75ff7acf89f43afb157604429af4661a9840b1f2cece602b6a13c1893oauthlib-3.3.0.tar.gz"
+    sha256 "4e707cf88d7dfc22a8cce22ca736a2eef9967c1dd3845efc0703fc922353eeb2"
   end
 
   resource "overrides" do
@@ -288,8 +288,8 @@ class Snapcraft < Formula
   end
 
   resource "pydantic" do
-    url "https:files.pythonhosted.orgpackagesf0868ce9040065e8f924d642c58e4a344e33163a07f6b57f836d0d734e0ad3fbpydantic-2.11.5.tar.gz"
-    sha256 "7f853db3d0ce78ce8bbb148c401c2cdd6431b3473c0cdff2755c7690952a7b7a"
+    url "https:files.pythonhosted.orgpackages00dd4325abf92c39ba8623b5af936ddb36ffcfe0beae70405d456ab1fb2f5b8cpydantic-2.11.7.tar.gz"
+    sha256 "d989c3c6cb79469287b1569f7447a17848c998458d49ebe294e975b9baf0f0db"
   end
 
   resource "pydantic-core" do
@@ -428,8 +428,8 @@ class Snapcraft < Formula
   end
 
   resource "urllib3" do
-    url "https:files.pythonhosted.orgpackages8a7816493d9c386d8e60e442a35feac5e00f0913c0f4b7c217c11e8ec2ff53e0urllib3-2.4.0.tar.gz"
-    sha256 "414bc6535b787febd7567804cc015fee39daab8ad86268f1310a9250697de466"
+    url "https:files.pythonhosted.orgpackages15229ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bcurllib3-2.5.0.tar.gz"
+    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
   end
 
   resource "validators" do

@@ -1,18 +1,18 @@
 class Yamlfmt < Formula
   desc "Extensible command-line tool to format YAML files"
   homepage "https:github.comgoogleyamlfmt"
-  url "https:github.comgoogleyamlfmtarchiverefstagsv0.17.0.tar.gz"
-  sha256 "81a7f696332cc496b8bad40e03ddd98bbd26354b6745a3ef2d186e376891012c"
+  url "https:github.comgoogleyamlfmtarchiverefstagsv0.17.1.tar.gz"
+  sha256 "5ec696bb4451bdee3354bcb01b22e6105937490b7e8ce5b72c28dddb0d3a414d"
   license "Apache-2.0"
   head "https:github.comgoogleyamlfmt.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d1faa679b50521880ed55505aed324e40f708da0eba355f6159d5d31f5112b50"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d1faa679b50521880ed55505aed324e40f708da0eba355f6159d5d31f5112b50"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "d1faa679b50521880ed55505aed324e40f708da0eba355f6159d5d31f5112b50"
-    sha256 cellar: :any_skip_relocation, sonoma:        "60c0b0141ff0c6f5f23d1f997b147e4df2adfc38f9f4954382ef504c226491d6"
-    sha256 cellar: :any_skip_relocation, ventura:       "60c0b0141ff0c6f5f23d1f997b147e4df2adfc38f9f4954382ef504c226491d6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ad00144302b5bdf0194fa932dcbac8a81138f58f483f2e112abd6baa55aeb53e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9967d4470f8013dba71c383bb30e8001408e94027087b1a870291b2cef820ecc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9967d4470f8013dba71c383bb30e8001408e94027087b1a870291b2cef820ecc"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "9967d4470f8013dba71c383bb30e8001408e94027087b1a870291b2cef820ecc"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9ebd685d2bb6f3b4e01ed8be2017f09a2f4be049fb9cbffb30f273e5d7ff3fd6"
+    sha256 cellar: :any_skip_relocation, ventura:       "9ebd685d2bb6f3b4e01ed8be2017f09a2f4be049fb9cbffb30f273e5d7ff3fd6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "621fc16b6e71841c9daeb13d9e56c373f8816dad3c839eff7f1298d363b620ab"
   end
 
   depends_on "go" => :build

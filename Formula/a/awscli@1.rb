@@ -7,6 +7,7 @@ class AwscliAT1 < Formula
   url "https:files.pythonhosted.orgpackages711b5c1faaad402c5f8cdd18641352b1d1a29311de751cd2414378689d0f694eawscli-1.40.30.tar.gz"
   sha256 "ba426b2053d0ddb8749af7d2f99783f8c2674795382c2c9eedb458ad772ae270"
   license "Apache-2.0"
+  revision 1
 
   livecheck do
     url "https:github.comawsaws-cli.git"
@@ -15,13 +16,13 @@ class AwscliAT1 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "2884acb5a893cb0c96234f99f0312760bcfd345fafa554a62daceeeacc4b8f2f"
-    sha256 cellar: :any,                 arm64_sonoma:  "6410eaa3121eef23f46f2a2fbd4ba74fdac95fad3f80beeec1e86ba35ae8d1a6"
-    sha256 cellar: :any,                 arm64_ventura: "9f82252f9295c4506ccc6678cc5604e8b059f814c647d0f11ea5cd0005943988"
-    sha256 cellar: :any,                 sonoma:        "1ae236931d97c1e026e6fc204a90d2e03008e98cfa238e2677e0dc1ad9b4c76d"
-    sha256 cellar: :any,                 ventura:       "eb9080efbf23b3a09918619afb7435f6d7f80b6d99fe0f33f380058f74c6f103"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fb57a46d6a7d6959dcba22988b3dc01e8cbef1a59173e0aea0e369f06745bf5a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e6c1b0d52141b76a1a93c1e2f7dbde24270d62156d3a070674d76ebee3420b68"
+    sha256 cellar: :any,                 arm64_sequoia: "e5a55868c202e8a91a3d11c17b526419dd1448b4133387795acc6fa66b345691"
+    sha256 cellar: :any,                 arm64_sonoma:  "741b2c8edd9f9e8fffdf8f96e176bbd6a2625cfd870c52fa139b258896a3c5e6"
+    sha256 cellar: :any,                 arm64_ventura: "1da4e2ac7876835a8f86ab06ac44f2e697544ecca36f14638c62bd09e573a1e1"
+    sha256 cellar: :any,                 sonoma:        "a21c5448d3ab2517d8bb58df08d0e2a3ed8a3e4f46a63b04021f3d767cb2ee94"
+    sha256 cellar: :any,                 ventura:       "cfa97c35cd15a7fe795ab603322fed05786a14525b8090369c7496503e50a992"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9b6087445e1b12586a71b7854a67823b697d121757e83c1ec443f7a13004c0bd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8dd0592cbe020262b18645a0d7a59723ae844c016d7e947a65c0233fde041a8b"
   end
 
   keg_only :versioned_formula
@@ -82,8 +83,8 @@ class AwscliAT1 < Formula
   end
 
   resource "urllib3" do
-    url "https:files.pythonhosted.orgpackages8a7816493d9c386d8e60e442a35feac5e00f0913c0f4b7c217c11e8ec2ff53e0urllib3-2.4.0.tar.gz"
-    sha256 "414bc6535b787febd7567804cc015fee39daab8ad86268f1310a9250697de466"
+    url "https:files.pythonhosted.orgpackages15229ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bcurllib3-2.5.0.tar.gz"
+    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
   end
 
   def install

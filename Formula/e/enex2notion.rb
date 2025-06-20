@@ -6,18 +6,18 @@ class Enex2notion < Formula
   url "https:files.pythonhosted.orgpackagesde5cc0ce22d810226345411b03177f9b43c35b82c3a671d5d73f56fc43b0858eenex2notion-0.3.1.tar.gz"
   sha256 "f11d8a7b6c135b4d08c63e1256279d56b3798cdd48ad3b6e39c0770dc3bd82e6"
   license "MIT"
-  revision 12
+  revision 13
 
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "eda6f72227a63f019da0f86b2457f6b28dde7bb742cdd935cd92e8558f6a7816"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3db8e5a90b0cafbd60ddcbd49e92db335313aebc4d7ee80e74ed09fa789f4426"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "3c4644b2590b8615fe6cccf2cea791363dc5a8e4fe3aeaf05d6198aa1037583f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "271223bd5e902e6b2fac79c0481e42f19323773d6d74ee3768bba51687c56a6f"
-    sha256 cellar: :any_skip_relocation, ventura:       "96d410591e183f9c4f6004520773d2d6fefbe058fcd783070e3bf82bdf2a8f82"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c3b6076e61c285f35c553d8c1b250a843453e63044be17c4a0200883add608c8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a0dd40b4f50d82fb395982611a2751493f13df5fe17afabf677898d10dcde4a5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "451d06590098d5e5eeaa6062c0fdad9fa7246de643f8ed885235bb453af15d4d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "faf58471255749032a2ef7724ba27b0caa7a2cc95ea6852e05f748171f3b0ce5"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "9948f2b329fb0fefdc15100451dd80edef814ca25ac2ad722ac2482864ae84da"
+    sha256 cellar: :any_skip_relocation, sonoma:        "01e9768795e293f7a416b17f635eee77845646e1768d81aa7887cf4df0bb0325"
+    sha256 cellar: :any_skip_relocation, ventura:       "6666d672723a7f8a5a6429f908c5906e941f98ace6ccc85e72e0f897d7923336"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ed13792f2e06969ff27e56b9262adc896060680751fbb307b365819003fcc563"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "31b4260298e692f8dd1930aa34c58f278834f5ce52312613a47c0b79f0492ae1"
   end
 
   depends_on "certifi"
@@ -143,8 +143,8 @@ class Enex2notion < Formula
   end
 
   resource "urllib3" do
-    url "https:files.pythonhosted.orgpackages8a7816493d9c386d8e60e442a35feac5e00f0913c0f4b7c217c11e8ec2ff53e0urllib3-2.4.0.tar.gz"
-    sha256 "414bc6535b787febd7567804cc015fee39daab8ad86268f1310a9250697de466"
+    url "https:files.pythonhosted.orgpackages15229ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bcurllib3-2.5.0.tar.gz"
+    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
   end
 
   resource "w3lib" do

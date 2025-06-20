@@ -1,42 +1,25 @@
 class Portmidi < Formula
   desc "Cross-platform library for real-time MIDI IO"
   homepage "https:github.comPortMidiportmidi"
-  url "https:github.comPortMidiportmidiarchiverefstagsv2.0.4.tar.gz"
-  sha256 "64893e823ae146cabd3ad7f9a9a9c5332746abe7847c557b99b2577afa8a607c"
+  url "https:github.comPortMidiportmidiarchiverefstagsv2.0.6.tar.gz"
+  sha256 "81d22b34051621cd56c8d5ef12908ef2a59764c9cdfba6dae47aabddb71ac914"
   license "MIT"
-  revision 1
   version_scheme 1
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "a02a8f130081aeda7fd82a826b510f4b2afdcf7af21cffe1d22963fcd3560065"
-    sha256 cellar: :any,                 arm64_sonoma:   "c24a75dda06927ed08b718df274d6eae2f6f8ded0601673ccd4311a210f89681"
-    sha256 cellar: :any,                 arm64_ventura:  "2d722c4357f6263f73456060dc5d131eb0b3b34ea54bef1cfe47d15bdc4ed75f"
-    sha256 cellar: :any,                 arm64_monterey: "94415b613563629ea6425c629dc768e3c9319823870e948c4060742d24401588"
-    sha256 cellar: :any,                 arm64_big_sur:  "f8ea203ccc085feee9e2e5c8f97ebcd59117f41331ac654dc542cfa8a901e2a9"
-    sha256 cellar: :any,                 sonoma:         "ec2f3c4ed9b0fa14de06bf6802a8a111c7de434beaa0c3f082c99613cf12cc0f"
-    sha256 cellar: :any,                 ventura:        "505796ff7499cb66673b8774af23109d1803cd0ca79e45de041d66985cb553e6"
-    sha256 cellar: :any,                 monterey:       "7e348bdf4837001ff61ebad737ee19326a92c11ea2e122874abb39246a15b99e"
-    sha256 cellar: :any,                 big_sur:        "3025725eb9196f45005ee6305883d78fb98fd6412569fdb2c3685e9f6f117009"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "27c42711f68465a36ce8c41694202a58ad5ee05f1589ffcea67173f643c4576d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "af653a873aa1e1a5255269323d28c28b97c6860f52687dc4677020aa5bfbf7de"
+    sha256 cellar: :any,                 arm64_sequoia: "10ddde2d1f79d5af52f2efd790fa4a5bde8aa4d822c4bca874845abe3b7c0264"
+    sha256 cellar: :any,                 arm64_sonoma:  "34068c161cdd3b13603881e7567b929c832dbdb17957f1f49ff5e26b0af4a4df"
+    sha256 cellar: :any,                 arm64_ventura: "0aed6c8f284be50da5a5dcc5960871f503f7b275b02f3a855738dd67a23128e9"
+    sha256 cellar: :any,                 sonoma:        "a7fa48b88a0c8527e4cbe4d79de1204e97a2657660109c69822d94bf52f3156e"
+    sha256 cellar: :any,                 ventura:       "c3ede6d5e5911726971a35681b0852e26cdcd93799d7fbbda92b8ae73e9268d7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d00e36c34fb56e1333ade4cab1801852db7b5416c709354ad26ecc9bb44f2316"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "49b66f426a03a2fd27eca584c079b01e25b2cd23bb73f06cbc5fc3f187ddae90"
   end
 
   depends_on "cmake" => :build
 
   on_linux do
     depends_on "alsa-lib"
-  end
-
-  # Upstream patch, should be included in 2.0.5
-  # Fixes the following CMake error:
-  # The link interface of target "PortMidi::portmidi" contains:
-  #  Threads::Threads
-  # but the target was not found.
-  patch do
-    url "https:github.comPortMidiportmidicommita47be8c58b25e2c122588e0b56306c0cfdce756c.patch?full_index=1"
-    sha256 "aeeb22a3809fb79d370003936a6d5b110d33cfc88b39fc0f83d060e1b79dab4c"
   end
 
   def install
