@@ -6,17 +6,18 @@ class Aider < Formula
   url "https:files.pythonhosted.orgpackages76948cbf0e10a01bd24c68a0b14e256b75abaa4bae662f955669e14fc5902b0eaider_chat-0.84.0.tar.gz"
   sha256 "b5001eaae8741816c28fa7a06adb616f2ba5293553de94ee123b99038c98fae0"
   license "Apache-2.0"
-  head "https:github.compaul-gauthieraider.git", branch: "main"
+  revision 1
+  head "https:github.comAider-AIaider.git", branch: "main"
 
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "a1245af11a730a757f2a2d28c3ddefd671a813ac28553f850c76cbae14816ff6"
-    sha256 cellar: :any,                 arm64_sonoma:  "aeb08bc4240e4b1d8ca8806d76d04a5210f87fd869c4de5b02e27fbd52213035"
-    sha256 cellar: :any,                 arm64_ventura: "2b64f54cbc1af6ce8c6fbbb9ced3a4904fd158998fdff237d702c1689158c745"
-    sha256 cellar: :any,                 sonoma:        "99409ce0e3b254ba3dc159772c016925def739877680cfb575725cb1f3299f35"
-    sha256 cellar: :any,                 ventura:       "dc8d14216fdcaae9126005b3689ba3a97d0727f5002a019d47e7b8e219c11221"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cf816c3bd0f62051a52570a389830a91aaff74b161cfba60fb39037e4a9b8cdc"
+    sha256 cellar: :any,                 arm64_sequoia: "2ebf8800fb5162238196d04b27e099728f2d639cd3517fabb392107fa1c7857e"
+    sha256 cellar: :any,                 arm64_sonoma:  "8e5411c0b630c158398629c0e16ed9a27dfcae7382b3f2d6a7e33a8cfbd5aec2"
+    sha256 cellar: :any,                 arm64_ventura: "1d43691d9dcdb723cea9c6bb711dd8ec2975f8ddaa9d2e02dbdd1b6378153849"
+    sha256 cellar: :any,                 sonoma:        "756bedd14719dec3139f615736ce05867d67352b14e3608e5fd54cc2e2b4f188"
+    sha256 cellar: :any,                 ventura:       "6e5c18bf1cd2fc4fecb86249282573c6333d56df3a3269bdbd3ca83c3a559fe8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7a60a91d01195ed0d5334c1eee9624494ee90bda202b4c5e62764a028a94d260"
   end
 
   depends_on "maturin" => :build # for `hf-xet`
@@ -182,13 +183,13 @@ class Aider < Formula
   end
 
   resource "grpcio" do
-    url "https:files.pythonhosted.orgpackagesfe45ff8c80a5a2e7e520d9c4d3c41484a11d33508253f6f4dd06d2c4b4158999grpcio-1.72.1.tar.gz"
-    sha256 "87f62c94a40947cec1a0f91f95f5ba0aa8f799f23a1d42ae5be667b6b27b959c"
+    url "https:files.pythonhosted.orgpackages8e7bca3f561aeecf0c846d15e1b38921a60dffffd5d4113931198fbf455334eegrpcio-1.73.0.tar.gz"
+    sha256 "3af4c30918a7f0d39de500d11255f8d9da4f30e94a2033e70fe2a720e184bd8e"
   end
 
   resource "grpcio-status" do
-    url "https:files.pythonhosted.orgpackages50b8e563262a30065d3b52b61ca92c427fe2a1b04ba5dfca0415ae0df8ecdac8grpcio_status-1.72.1.tar.gz"
-    sha256 "627111a87afa920eafb42cc6c50db209d263e07fa51fbb084981ef636566be7b"
+    url "https:files.pythonhosted.orgpackages6d071c7b5ec7c72b8e2efc32cf82e2fe72497c579c8fa94edb8c3e430874cd42grpcio_status-1.73.0.tar.gz"
+    sha256 "a2b7f430568217f884fe52a5a0133b6f4c9338beae33fb5370134a8eaf58f974"
   end
 
   resource "h11" do
@@ -197,8 +198,8 @@ class Aider < Formula
   end
 
   resource "hf-xet" do
-    url "https:files.pythonhosted.orgpackages95be58f20728a5b445f8b064e74f0618897b3439f5ef90934da1916b9dfac76fhf_xet-1.1.2.tar.gz"
-    sha256 "3712d6d4819d3976a1c18e36db9f503e296283f9363af818f50703506ed63da3"
+    url "https:files.pythonhosted.orgpackages8d11b480bb7515db97d5b2b703927a59bbdd3f87e68d47dff5591aada467b4a9hf_xet-1.1.4.tar.gz"
+    sha256 "875158df90cb13547752532ed73cad9dfaad3b29e203143838f67178418d08a4"
   end
 
   resource "httpcore" do
@@ -562,8 +563,8 @@ class Aider < Formula
   end
 
   resource "urllib3" do
-    url "https:files.pythonhosted.orgpackages8a7816493d9c386d8e60e442a35feac5e00f0913c0f4b7c217c11e8ec2ff53e0urllib3-2.4.0.tar.gz"
-    sha256 "414bc6535b787febd7567804cc015fee39daab8ad86268f1310a9250697de466"
+    url "https:files.pythonhosted.orgpackages15229ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bcurllib3-2.5.0.tar.gz"
+    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
   end
 
   resource "watchfiles" do

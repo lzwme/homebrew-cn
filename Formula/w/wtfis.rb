@@ -6,17 +6,17 @@ class Wtfis < Formula
   url "https:files.pythonhosted.orgpackages1655748b21d2d2e765e319cff417447006fc5d714b56317918da0d70ed8d7ee5wtfis-0.11.0.tar.gz"
   sha256 "3a687d99d91c9bba15e45707acef68c3ebc9ffd571fb311c2d83423a62ee0e6f"
   license "MIT"
-  revision 1
+  revision 2
   head "https:github.compirxthepilotwtfis.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "ed91333801f22261e34a0300c508dfdf377ee52275b3fdae86e2bc68d143ff51"
-    sha256 cellar: :any,                 arm64_sonoma:  "e57f64a1d235091de9cb51841b68f7cb5c4e7aa01390a1fba9be7ae3070ccae5"
-    sha256 cellar: :any,                 arm64_ventura: "a3cdc76c5e2af7a75834164409f536b8ab45a0f43069a65294b9ca21c87a7dff"
-    sha256 cellar: :any,                 sonoma:        "50831abfe6b688750fd618523c114153de045945ad958988b0138c2ae542cf47"
-    sha256 cellar: :any,                 ventura:       "aa6ca967261fad0cad799fd6c809eac5b4fffa25962ebcfa1a4721e423e28cd7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "45231002e159b824b188530517bd8dc3c64af67f0578d6e549ea2de4ce7753a6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d2af98c949eb50dd4b69cdee353cb6845e17a4ffb10db7d80d54e447d5910ae6"
+    sha256 cellar: :any,                 arm64_sequoia: "c492bce8c680b6d841e386ef5e6de04d6e822f0bba755656662c356c0ecc9499"
+    sha256 cellar: :any,                 arm64_sonoma:  "9acb74eddcc0a670940686b3e9dcee811fb40ef28fbcd053ce8251af8d2f8476"
+    sha256 cellar: :any,                 arm64_ventura: "0d8205bd6f499b500ed072daa836660696f62be1030155982dc878c06b16e7d5"
+    sha256 cellar: :any,                 sonoma:        "546fef05cd03ec221fb1b16fb3f99f3a098f8c5d84315000761664b117ca3c4d"
+    sha256 cellar: :any,                 ventura:       "41cb03c006fc628eae7159ac647f2a6cfd216331b603a30843156565a805c782"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fe946e68e96b8140b5f2f979b8bd0db8ada8dca9bf9cf98fb0f8b5f1fb5a04a5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5f1669e03df81d937db0fe54879a7b70ba050f9907867af043a4e20d07400349"
   end
 
   depends_on "rust" => :build
@@ -69,8 +69,8 @@ class Wtfis < Formula
   end
 
   resource "pydantic" do
-    url "https:files.pythonhosted.orgpackagesf0868ce9040065e8f924d642c58e4a344e33163a07f6b57f836d0d734e0ad3fbpydantic-2.11.5.tar.gz"
-    sha256 "7f853db3d0ce78ce8bbb148c401c2cdd6431b3473c0cdff2755c7690952a7b7a"
+    url "https:files.pythonhosted.orgpackages00dd4325abf92c39ba8623b5af936ddb36ffcfe0beae70405d456ab1fb2f5b8cpydantic-2.11.7.tar.gz"
+    sha256 "d989c3c6cb79469287b1569f7447a17848c998458d49ebe294e975b9baf0f0db"
   end
 
   resource "pydantic-core" do
@@ -124,13 +124,13 @@ class Wtfis < Formula
   end
 
   resource "urllib3" do
-    url "https:files.pythonhosted.orgpackages8a7816493d9c386d8e60e442a35feac5e00f0913c0f4b7c217c11e8ec2ff53e0urllib3-2.4.0.tar.gz"
-    sha256 "414bc6535b787febd7567804cc015fee39daab8ad86268f1310a9250697de466"
+    url "https:files.pythonhosted.orgpackages15229ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bcurllib3-2.5.0.tar.gz"
+    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
   end
 
   resource "xlsxwriter" do
-    url "https:files.pythonhosted.orgpackagesa7d1e026d33dd5d552e5bf3a873dee54dad66b550230df8290d79394f09b2315xlsxwriter-3.2.3.tar.gz"
-    sha256 "ad6fd41bdcf1b885876b1f6b7087560aecc9ae5a9cc2ba97dcac7ab2e210d3d5"
+    url "https:files.pythonhosted.orgpackagesa7477704bac42ac6fe1710ae099b70e6a1e68ed173ef14792b647808c357da43xlsxwriter-3.2.5.tar.gz"
+    sha256 "7e88469d607cdc920151c0ab3ce9cf1a83992d4b7bc730c5ffdd1a12115a7dbe"
   end
 
   def install

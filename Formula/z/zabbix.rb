@@ -1,8 +1,8 @@
 class Zabbix < Formula
   desc "Availability and monitoring solution"
   homepage "https:www.zabbix.com"
-  url "https:cdn.zabbix.comzabbixsourcesstable7.2zabbix-7.2.8.tar.gz"
-  sha256 "2d0cb04f628b8501c99c1ccde70b95cc63fd9ff9c967370dbb27d542a805239c"
+  url "https:cdn.zabbix.comzabbixsourcesstable7.2zabbix-7.2.9.tar.gz"
+  sha256 "aa3ce352da4d2daaa542de3e1dcd06fba82df9a7dcc70e4821a0953f2f1d00e7"
   license "AGPL-3.0-only"
   head "https:github.comzabbixzabbix.git", branch: "master"
 
@@ -12,13 +12,13 @@ class Zabbix < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "873a97f1d21ebe8ac14ef68871e23c281cdd54a5bf5765bc3e1f1bf594628961"
-    sha256 arm64_sonoma:  "f898114777835f3a90a44248d2e5d46bcc6b62ecffae4c30175d2302f0c0686a"
-    sha256 arm64_ventura: "c5e9c8cac1c925c4811886555643883b0b32f6b9808bddfa0a996362dd4c9fd5"
-    sha256 sonoma:        "69d925ce77aa31fb47ecdfcae58f3a160286f7f0ec00be8f52b8890a2b244f1e"
-    sha256 ventura:       "d30a2061b9c99f652774d769464013b308e4367f1f3a44ba6bed2311cd0f2660"
-    sha256 arm64_linux:   "082d2b88f93de6b42fe598cbdcf2d0028d4d983495f5e300912273f01fa231c0"
-    sha256 x86_64_linux:  "539bef184a64ae440a09b531b061fe2cdf5ea158338518ca84227baba6b5e3b3"
+    sha256 arm64_sequoia: "03d1c19f3b6024b61c3ef8ee6a4e9ca75d7901e47d1aeaa26db52b1cdcdf3407"
+    sha256 arm64_sonoma:  "6fada655349f6ca8cc7157bece053feeb1651ee2d4192b2c332faae356ab2952"
+    sha256 arm64_ventura: "266783bf32d313e443582d17db6d38301050faca4883ed660da2387d9a02ee3d"
+    sha256 sonoma:        "412f16c955772ae98849b9b50d1523074a137d038244382b03ce4833f05f49cd"
+    sha256 ventura:       "2f477b20d7153f2bc0236c8cf0ec32225cee760c56cb0e4845ff9745345fa9c1"
+    sha256 arm64_linux:   "fac0296b817c79651a9149a4db98c9ee0ec795eb45a39791c023386c5af7585b"
+    sha256 x86_64_linux:  "2ce092fe3ef431cc2babe136cbe40ad703f2e05452589b69b38eda7f60e273b6"
   end
 
   depends_on "pkgconf" => :build

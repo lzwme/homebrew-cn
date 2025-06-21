@@ -1,10 +1,10 @@
 class Gitoxide < Formula
   desc "Idiomatic, lean, fast & safe pure Rust implementation of Git"
-  homepage "https:github.comByrongitoxide"
-  url "https:github.comByrongitoxidearchiverefstagsv0.44.0.tar.gz"
+  homepage "https:github.comGitoxideLabsgitoxide"
+  url "https:github.comGitoxideLabsgitoxidearchiverefstagsv0.44.0.tar.gz"
   sha256 "1166627cd41daf68eb4e97591cd5daaccf94aa75bb454f657b93766a9bf70da9"
   license "Apache-2.0"
-  head "https:github.comByrongitoxide.git", branch: "main"
+  head "https:github.comGitoxideLabsgitoxide.git", branch: "main"
 
   livecheck do
     url :stable
@@ -29,7 +29,7 @@ class Gitoxide < Formula
   def install
     # Avoid requiring CMake or building a vendored zlib-ng.
     # Feature array corresponds to the default config (max) sans vendored zlib-ng.
-    # See: https:github.comByrongitoxideblobb8db2072bb6a5625f37debe9e58d08461ece67ddCargo.toml#L88-L89
+    # See: https:github.comGitoxideLabsgitoxideblobb8db2072bb6a5625f37debe9e58d08461ece67ddCargo.toml#L88-L89
     features = %w[max-control gix-featureszlib-stock gitoxide-core-blocking-client http-client-curl]
     system "cargo", "install", "--no-default-features", "--features=#{features.join(",")}", *std_cargo_args
     generate_completions_from_executable(bin"gix", "completions", "-s")

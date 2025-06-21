@@ -1,8 +1,8 @@
 class Werf < Formula
   desc "Consistent delivery tool for Kubernetes"
   homepage "https:werf.io"
-  url "https:github.comwerfwerfarchiverefstagsv2.38.0.tar.gz"
-  sha256 "b6d61cc038fd8ab21261289cd3a1d735926693c88417694a4f8721b077bc65e8"
+  url "https:github.comwerfwerfarchiverefstagsv2.38.1.tar.gz"
+  sha256 "bb680080e5da572d8e05b54bedb356531ca35d69a26174a5255c2ce28d6390c1"
   license "Apache-2.0"
   head "https:github.comwerfwerf.git", branch: "main"
 
@@ -15,13 +15,13 @@ class Werf < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "eb22f0c6158b18519b0bb6332086519adcf3bc5b3948e78f0a1f2abef80b6fef"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "459d00e58f366555a4c52103a619aa2e2f95500725236a7e6bcac4923ee95b0e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "2f2877cc0ba8d5041c668b95f6280ceb67be4640836e40c5c58bb5c3c0a6e221"
-    sha256 cellar: :any_skip_relocation, sonoma:        "13b3529ef88a62bb45f61fe13e12c3a20062c2ec868568c679c531dd73e4327c"
-    sha256 cellar: :any_skip_relocation, ventura:       "5ac9abececbf0d53a0c6b5ffab02a775d0579a68b6c446931c241de8f7d0b3f4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0dd7566f233677bc935eb66f8d7b368bfbda8ba713d2ddf6aa4ba232ccfc6099"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c5cd99d6b019b2b3a6a84e7869a643bff691729b2069b5365036331ad8972307"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "84e36233ffe2cd0ae9bc54a89558ad9048908bcadefad7de68f34cf9ebc3be7a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "77990fe756c6fdcdd5a52f72f36c77781586a7b722223448afedb6735aa995d2"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "e82fff34cf9e1d1b8f8a1198f5705bbd7806e4cf14a687e68bac207d0e213759"
+    sha256 cellar: :any_skip_relocation, sonoma:        "476ab3d7c7f9bc795042aa7894e7bbd0cc2ce7c258b02acfe1d33546360982bc"
+    sha256 cellar: :any_skip_relocation, ventura:       "89aa2ca61439919b018cf2249318cefc8f4edafcdcdbe0009e1282d2099b425b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d14224389f7c9a94541d18e0edb7799f2067b3c6f9334ed7e95882467876a100"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a06d8e3f33ac47356b8ab02f9f2b7a312401693133d9549d2b81e89502395ef5"
   end
 
   depends_on "go" => :build

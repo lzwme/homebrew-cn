@@ -1,18 +1,18 @@
 class AwsCEventStream < Formula
   desc "C99 implementation of the vnd.amazon.eventstream content-type"
   homepage "https:github.comawslabsaws-c-event-stream"
-  url "https:github.comawslabsaws-c-event-streamarchiverefstagsv0.5.4.tar.gz"
-  sha256 "cef8b78e362836d15514110fb43a0a0c7a86b0a210d5fe25fd248a82027a7272"
+  url "https:github.comawslabsaws-c-event-streamarchiverefstagsv0.5.5.tar.gz"
+  sha256 "f6e55c8fd6afd7f904e08d36c3210e199ece5dc838f0f8457b43b72ec4d818e9"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "7bb1c234fc76207143274392938efa1c7912b82db36c2d7bd3e1ff31c2b21a97"
-    sha256 cellar: :any,                 arm64_sonoma:  "22adf47866d7f196b5296469044723b94223a3c536590517605930a8c76461ec"
-    sha256 cellar: :any,                 arm64_ventura: "fea45020a2341c46d9671671bc59bc788c4301615d5365e44cde87fca734f0f6"
-    sha256 cellar: :any,                 sonoma:        "50ab76b1c74f6639a8af58478426de6e91201d1f0a32a81d3d20b63c6da44de1"
-    sha256 cellar: :any,                 ventura:       "7cb1403ff68bd39da60c9051539cb3b9f88447baf5e199e6805bcdb8ec2a2ea2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c2903ade590868a253d877b9c85684fa1a128d263141a3360833ea67692bf3d4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d4bd0d80ba4c490b1e0548caad95670e5c6937e5056b8945e11c2f58bde41d36"
+    sha256 cellar: :any,                 arm64_sequoia: "c5283e19a63fb24c3567df23812da28ab0ac34fec7e0b8e39c84db04fc456eee"
+    sha256 cellar: :any,                 arm64_sonoma:  "cbcc542a39652c448a124ce9e1d7288852f5da8f52add2fae23e65c5f3b622e4"
+    sha256 cellar: :any,                 arm64_ventura: "21e53582d5e7631f18f9c4f3fff90a037aeaba375a6f9f1daebc21ba0aa10c18"
+    sha256 cellar: :any,                 sonoma:        "8ee6617040eb1f9f1ac07cb9efeb27cf8331359ea9749220af3e7bdb1246502b"
+    sha256 cellar: :any,                 ventura:       "25fd40fde7fef95990b46097669b0a14aabd3c0be004f09f42d86bc992bb6220"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "eb790dfa0ee008b68bc102355b375a0bb4a8b455f6a31e1265457b3b4d66b48e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f1b4ad68c75a3ba65e2c5bbeb34c921f648d01d5e4ef719a0956ce3a404d9cdb"
   end
 
   depends_on "cmake" => :build

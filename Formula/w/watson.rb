@@ -6,19 +6,19 @@ class Watson < Formula
   url "https:files.pythonhosted.orgpackagesa961868892a19ad9f7e74f9821c259702c3630138ece45bab271e876b24bb381td-watson-2.1.0.tar.gz"
   sha256 "204384dc04653e0dbe8f833243bb833beda3d79b387fe173bfd33faecdd087c8"
   license "MIT"
-  revision 7
+  revision 8
   head "https:github.comjazzbandWatson.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3e33ed3431baa054240b534f21ab3769efc330be8cb2374dcdfa821f0e388ab0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6d63fd445c1f36a5b393f3fdd4d41311d4da25bc08b19ba1352ae5677000b3f5"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "39acaa22fdc5b6f0bcf5a662b07c1bd5aa138b0a71dd0d5406e5e54c6f06485b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7af3baf89a228b574cb153eabea6ac2bbffeefc900c7a40201f32d5161407ee9"
-    sha256 cellar: :any_skip_relocation, ventura:       "9958984b3f44a94d90b5e6eac05b5c84566699ce60e4560b0f5a821d82fd53df"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "63635ebe34f1f48ca8800004e0338ec425c64cdbaa20066813fd9a34ecedba82"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8ef1c2533ef8c6c5d6c47ac05e5b1caa3059ae57bcc44021e115ca3dd0a31380"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "02a6250ae9fa9e9342bfb595db2b274aac190703442e23ca6269711dc96cbce5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "de5094e1fbc8b54ea86d7b4989694d308dff63003e5ce7139698a28d4efa6693"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "a37d26adb860004501d6f0f826b3e0bf32ede90b0f1dc2f3356b053b617d4132"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c03aeeda0ede0287652d4ad14bea85d71b2c8bb4cccac4259ec6c35aed73b317"
+    sha256 cellar: :any_skip_relocation, ventura:       "2bf6708abd82e70f6fa5dcd218edcdff9ada4beffc8c8924041f510ffd18403d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0b1056f24f2d83cccbe118835e32999188078f9fecfc803aa5c3a2748586d23f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fd7b5055e5834e22b6d6ad07b237d8ca60a67569f9b62ec46ca727e6c068f13b"
   end
 
   depends_on "certifi"
@@ -70,8 +70,8 @@ class Watson < Formula
   end
 
   resource "urllib3" do
-    url "https:files.pythonhosted.orgpackages8a7816493d9c386d8e60e442a35feac5e00f0913c0f4b7c217c11e8ec2ff53e0urllib3-2.4.0.tar.gz"
-    sha256 "414bc6535b787febd7567804cc015fee39daab8ad86268f1310a9250697de466"
+    url "https:files.pythonhosted.orgpackages15229ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bcurllib3-2.5.0.tar.gz"
+    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
   end
 
   def install

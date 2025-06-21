@@ -3242,6 +3242,7 @@ Homebrew-homebrew-core/Formula/k/katago.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/katana.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kawa.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/k/kbld.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/k/kbt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kcat.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kcgi.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/k/kconf.rb, Homebrew/homebrew-core, 1
@@ -9216,7 +9217,6 @@ Homebrew-homebrew-cask/Casks/f/freenettray.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/f/freeorion.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/f/freeplane.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/freeshow.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/f/freesmug-chromium.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/freesurfer.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/freetube.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/f/freeyourmusic.rb, Homebrew/homebrew-cask, 0
@@ -9246,7 +9246,6 @@ Homebrew-homebrew-cask/Casks/f/fuse.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/f/futubull.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/futurerestore-gui.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/f/fuwari.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/f/fuzzyclock.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/fvim.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/f/fx-cast-bridge.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/f/fxfactory.rb, Homebrew/homebrew-cask, 0
@@ -12498,6 +12497,7 @@ Homebrew-homebrew-cask/Casks/l/lingon-x.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/linkliar.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/l/linn-konfig.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/linphone.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/l/linqpad.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/listen1.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/l/litecoin.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/liteicon.rb, Homebrew/homebrew-cask, 0
@@ -12629,6 +12629,7 @@ Homebrew-homebrew-cask/Casks/m/macskk.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/macstroke.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/macsvg.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/macsymbolicator.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/m/macsyzones.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/macterm.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mactex-no-gui.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mactex.rb, Homebrew/homebrew-cask, 0
@@ -14577,7 +14578,6 @@ Homebrew-homebrew-cask/Casks/t/thonny-xxl.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/thonny.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/thor.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/thorium.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/t/threads.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/threema-work.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/threema.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/threema@beta.rb, Homebrew/homebrew-cask, 0
@@ -14940,7 +14940,6 @@ Homebrew-homebrew-cask/Casks/v/vorta.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/v/vox-preferences-pane.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/v/vox.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/v/voxql.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/v/vpn-by-google-one.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/v/vpn-enabler.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/v/vpn-tracker-365.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/v/vrew.rb, Homebrew/homebrew-cask, 0

@@ -6,13 +6,13 @@ class Tvnamer < Formula
   url "https:files.pythonhosted.orgpackages7e07688dc96a86cf212ffdb291d2f012bc4a41ee78324a2eda4c98f05f5e3062tvnamer-3.0.4.tar.gz"
   sha256 "dc2ea8188df6ac56439343630466b874c57756dd0b2538dd8e7905048f425f04"
   license "Unlicense"
-  revision 9
+  revision 10
   head "https:github.comdbrtvnamer.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "62bc0479abf31707d8f5f8e01c590e23d07d248f3e5dd8abc9475d871d25da3c"
+    sha256 cellar: :any_skip_relocation, all: "c488ea5258a320f51fb970cfb226dceb2ea35bf5c62df325577c4d25df1b5077"
   end
 
   depends_on "certifi"
@@ -44,8 +44,8 @@ class Tvnamer < Formula
   end
 
   resource "urllib3" do
-    url "https:files.pythonhosted.orgpackages8a7816493d9c386d8e60e442a35feac5e00f0913c0f4b7c217c11e8ec2ff53e0urllib3-2.4.0.tar.gz"
-    sha256 "414bc6535b787febd7567804cc015fee39daab8ad86268f1310a9250697de466"
+    url "https:files.pythonhosted.orgpackages15229ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bcurllib3-2.5.0.tar.gz"
+    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
   end
 
   def install

@@ -6,16 +6,16 @@ class Urlwatch < Formula
   url "https://files.pythonhosted.org/packages/76/a3/e3bc54a669fa3ec440ea9d8db64590e761343b02b6ae9fcfcdc05c28d9ea/urlwatch-2.29.tar.gz"
   sha256 "f317ca8b123b15af510ec9e08bf885d8a8b574f502253e5ded200d757366da98"
   license "BSD-3-Clause"
-  revision 1
+  revision 2
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "c12fede92c94a73a4c005858e1c8db0d12f5d579f4c552d383d8b513954c9122"
-    sha256 cellar: :any,                 arm64_sonoma:  "76365d3da38d6c3beceecc4245890a8b69970ce6cb70e2e3045dcb4cc6ea419f"
-    sha256 cellar: :any,                 arm64_ventura: "ee4dfa6d3c9e4745c149cb3b1b8f7d04f53ba089b408df4006034cf92f1db99a"
-    sha256 cellar: :any,                 sonoma:        "9451dfe8d9b0810ff944e74464cc251716a8249aaf34506e0b03d83dce7e1b9a"
-    sha256 cellar: :any,                 ventura:       "13b3504f10fd6d537260cad2632ff4db449abd0a0ee890f4adfbe9635642897e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "80ef89d3689a7ed41eb0c077f629a9c2bd678d560771ca763614b2c9052a7847"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ac75856a7f6a299a04f668d27ecde44e9d0202fb491c06fb7b5c9950a9449362"
+    sha256 cellar: :any,                 arm64_sequoia: "14785843c477b914734aebaa654deaabcc89483b1694b94e95932d67d6858d12"
+    sha256 cellar: :any,                 arm64_sonoma:  "057415a63be93184efc9667e21210d37f8de43623d2dc061f4733bd1851e3e27"
+    sha256 cellar: :any,                 arm64_ventura: "fdf1d86201da20c68b96a2b2cc1ed8219cef73f62d1f76acc6acb7a4157448f0"
+    sha256 cellar: :any,                 sonoma:        "92a1a1ad70faa9b7bf14b55f56806a0cb77fe5d22448dc7696850bdcca59bc92"
+    sha256 cellar: :any,                 ventura:       "34308d52b967a4dcf66200020d6103906bb7a944011fe91fec7bddc00a7bad36"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d468350ec4e7379aa2260cacbbf01e4660acbe6eeb1eebef6051b96c525c4935"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0cc505d2c507050283454878e43163d737c230742a0b7ce2eccc958b70f0cd6f"
   end
 
   depends_on "certifi"
@@ -91,8 +91,8 @@ class Urlwatch < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/8a/78/16493d9c386d8e60e442a35feac5e00f0913c0f4b7c217c11e8ec2ff53e0/urllib3-2.4.0.tar.gz"
-    sha256 "414bc6535b787febd7567804cc015fee39daab8ad86268f1310a9250697de466"
+    url "https://files.pythonhosted.org/packages/15/22/9ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bc/urllib3-2.5.0.tar.gz"
+    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
   end
 
   def install

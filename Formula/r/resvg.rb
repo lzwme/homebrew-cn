@@ -1,10 +1,10 @@
 class Resvg < Formula
   desc "SVG rendering tool and library"
-  homepage "https:github.comRazrFalconresvg"
+  homepage "https:github.comlinebenderresvg"
   url "https:github.comlinebenderresvgarchiverefstagsv0.45.1.tar.gz"
   sha256 "02915519b7409f43110f3cbdc5f87724efd58da1d8516914bdabf060c8a9a178"
   license "MPL-2.0"
-  head "https:github.comRazrFalconresvg.git", branch: "master"
+  head "https:github.comlinebenderresvg.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "034dd22dbb4bf616d68ca85e3b2bdd929f780fcad78ba5b961daba8644f897da"

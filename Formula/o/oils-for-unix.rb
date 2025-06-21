@@ -1,8 +1,8 @@
 class OilsForUnix < Formula
   desc "Bash-compatible Unix shell with more consistent syntax and semantics"
   homepage "https://oils.pub/"
-  url "https://oils.pub/download/oils-for-unix-0.29.0.tar.gz"
-  sha256 "34fdb53f1dbd2b8742ef74cd3a46d87abfcda18d0d645f29762c4fddb9a2b3ac"
+  url "https://oils.pub/download/oils-for-unix-0.30.0.tar.gz"
+  sha256 "d1d79dd41d0775b376184e6cd4cf8a1ea369aa9d9383abcc7d96725e2ffb82f2"
   license "Apache-2.0"
 
   livecheck do
@@ -11,13 +11,13 @@ class OilsForUnix < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "458894469477f2983786c18e710fb7dcba117fca119fa663790dc7bcd87672ed"
-    sha256 cellar: :any,                 arm64_sonoma:  "aabac2877de0025ec567ca0b7ee4fd5e2c027d7a95f20326f3637118ce2f5acd"
-    sha256 cellar: :any,                 arm64_ventura: "277b088921164cc8a30de0ca14c997f4668b3bc72a869ff18bfabce0887cbc18"
-    sha256 cellar: :any,                 sonoma:        "4d13d4d2d8333adaed0548b3b115197c2e60a63514d06f6e0fc22329a626693b"
-    sha256 cellar: :any,                 ventura:       "c884e5a9dc13ffec8be12cc3aab1ebea5beb5651551a1c58a8310162ee6f7885"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "16f179fc7f86eb971cf518be492415cf53e4786b9e4cf82e56279cb455513b81"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3e594b3ab097a968c7412e1e99d1b174df101bf9fcec02c5d4584d7040727c58"
+    sha256 cellar: :any,                 arm64_sequoia: "3064d0878d1d117ab2db4f54e3444371047d2348915cb8741cfe122259e8ef0d"
+    sha256 cellar: :any,                 arm64_sonoma:  "de2fe5f8196dbe80e70228be83d2a2652b5aa47ec5f9b21bfec4a53ddca3b2c9"
+    sha256 cellar: :any,                 arm64_ventura: "93356216af355139e0fa5178848b73bd878fae8ef0cbb1d7ee7e36971cdd3b77"
+    sha256 cellar: :any,                 sonoma:        "6884c51b1832e143640b94cb22e6320021bee39566d0194e56dd5344f7f30f23"
+    sha256 cellar: :any,                 ventura:       "88d183e6e4117abd05e0834103f1eb20d9c10d39720e40588dc32a3e26c83db5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "14c6f57b7ad130793619bf81a20eeb9cf399b21fbd1be9df7dbc1c3f99943705"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "445cba301a0795546a26be93cbee4b21746b241e6ae86e1971d14f3e02bdf425"
   end
 
   depends_on "readline"

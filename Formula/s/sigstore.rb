@@ -3,19 +3,18 @@ class Sigstore < Formula
 
   desc "Codesigning tool for Python packages"
   homepage "https:github.comsigstoresigstore-python"
-  url "https:files.pythonhosted.orgpackages10dcfb0306a86bd1bc79f99f2f53b2421a11c42d2bbd106f7ccf0acfb460b5dbsigstore-3.6.3.tar.gz"
-  sha256 "9f957ef239b77695992b62823f79fc9554a589572dcc7bc0c1566a31b4bafc10"
+  url "https:files.pythonhosted.orgpackagesc981dca1dc73d250e9b37b7ba9b5083ba309896e4cffb1ab1800876f1287f3bbsigstore-3.6.4.tar.gz"
+  sha256 "76f247a86738c9e076a243e0068ac68625848868890ed38491acc159752a46ac"
   license "Apache-2.0"
-  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "8fbf7156312dca191d8b2a0f79e623e14b85665eab5bd80c4f8a9ebe6f14be46"
-    sha256 cellar: :any,                 arm64_sonoma:  "12605e7df8ca63a3826a87448a48d0e42b49247fea1266d11ef43f2a8f8459b8"
-    sha256 cellar: :any,                 arm64_ventura: "6fe6e523c8b5d6dc138fa9166715bb1c8322ad2a2c74340e596bae0483fb5738"
-    sha256 cellar: :any,                 sonoma:        "f28859ba7d09662acbe0918fc95943408451669a03c89f43b1c2818dcfdbc9c9"
-    sha256 cellar: :any,                 ventura:       "f8e694bd34e1774c332e25a271a1ec8f702645919adbaa09af9fd761e5c6bc09"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ecbac6640357c70c3c2cf93e7ffbd8d80a8d2cc99e989477a7a8d40fcee7ad5d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "69ba2b8d5ebaf308fa5b9602b17de2c1c60982b00482b1c7bbf63cbcd9e0de0a"
+    sha256 cellar: :any,                 arm64_sequoia: "ae549c2519b01d9fde123c5496691a9a24c55f91da96385d928338ebd8c44bbd"
+    sha256 cellar: :any,                 arm64_sonoma:  "bb48d91d762b75481890c72a3138d102a9500a33a8c56f10f712ed25201a80be"
+    sha256 cellar: :any,                 arm64_ventura: "79e8ee237b417fd5d3f5dcb8916c24ba8093e4dafde49135a00a8ebb010d63cf"
+    sha256 cellar: :any,                 sonoma:        "8d99a9e0f67cc27e6fa47fedd3ff8958ebd7d731ab4f0270f778a10c9cc07091"
+    sha256 cellar: :any,                 ventura:       "22e4896dade599e1c54b391d0ec11d1fc2b177567632441a8e4ec1683e74ea4f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "43b3db485bdcab7ddaf1009be7bc334abbc9e0c1f65584b7e25b20a70ea88cbc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "443aa1d2e019b337a0f507cd832f9f8ec56d7a9259442dc99de008ae3dfd1bbd"
   end
 
   depends_on "maturin" => :build # for rfc3161-client
@@ -92,8 +91,8 @@ class Sigstore < Formula
   end
 
   resource "multidict" do
-    url "https:files.pythonhosted.orgpackages912fa3470242707058fe856fe59241eee5635d79087100b7042a867368863a27multidict-6.4.4.tar.gz"
-    sha256 "69ee9e6ba214b5245031b76233dd95408a0fd57fdb019ddcc1ead4790932a8e8"
+    url "https:files.pythonhosted.orgpackages46b559f27b4ce9951a4bce56b88ba5ff5159486797ab18863f2b4c1c5e8465bdmultidict-6.5.0.tar.gz"
+    sha256 "942bd8002492ba819426a8d7aefde3189c1b87099cdf18aaaefefcf7f3f7b6d2"
   end
 
   resource "platformdirs" do
@@ -107,8 +106,8 @@ class Sigstore < Formula
   end
 
   resource "pydantic" do
-    url "https:files.pythonhosted.orgpackagesf0868ce9040065e8f924d642c58e4a344e33163a07f6b57f836d0d734e0ad3fbpydantic-2.11.5.tar.gz"
-    sha256 "7f853db3d0ce78ce8bbb148c401c2cdd6431b3473c0cdff2755c7690952a7b7a"
+    url "https:files.pythonhosted.orgpackages00dd4325abf92c39ba8623b5af936ddb36ffcfe0beae70405d456ab1fb2f5b8cpydantic-2.11.7.tar.gz"
+    sha256 "d989c3c6cb79469287b1569f7447a17848c998458d49ebe294e975b9baf0f0db"
   end
 
   resource "pydantic-core" do
@@ -142,8 +141,8 @@ class Sigstore < Formula
   end
 
   resource "rfc3161-client" do
-    url "https:files.pythonhosted.orgpackages40cd84c91ba1a5f214ecfc2f63ba081436a971e8361a71a069a42f03f275168brfc3161_client-1.0.2.tar.gz"
-    sha256 "37c78277d78aab02baf17393c30f66d1c2ab1a398d3540b0657792c0ceb81858"
+    url "https:files.pythonhosted.orgpackagesedd5a304985ce0117de9984f1af40e458376804710a68036809f40745afdb808rfc3161_client-1.0.3.tar.gz"
+    sha256 "e9b614a5a4596ab9aea44d3fe8a4995bd84ac7f20dcbfaa82b115224202d88d8"
   end
 
   resource "rfc8785" do
@@ -192,8 +191,8 @@ class Sigstore < Formula
   end
 
   resource "urllib3" do
-    url "https:files.pythonhosted.orgpackages8a7816493d9c386d8e60e442a35feac5e00f0913c0f4b7c217c11e8ec2ff53e0urllib3-2.4.0.tar.gz"
-    sha256 "414bc6535b787febd7567804cc015fee39daab8ad86268f1310a9250697de466"
+    url "https:files.pythonhosted.orgpackages15229ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bcurllib3-2.5.0.tar.gz"
+    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
   end
 
   def install

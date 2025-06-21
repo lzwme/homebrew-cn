@@ -6,16 +6,16 @@ class Sysaidmin < Formula
   url "https:files.pythonhosted.orgpackages01d8f2b32cc85a544d1487bbdda7ec48d214c0e551d2d0ae6bbbb49d707fe297sysaidmin-0.2.5.tar.gz"
   sha256 "77c40710cead7bdcc6cb98b38d74dd05e1e1c24dbc450e3b983869a7c06da91f"
   license "AGPL-3.0-or-later"
-  revision 2
+  revision 3
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "7ddcaf4fa5fbc0046f0450a8f2ad74ca75f10446897729733eb7cf494f69f99b"
-    sha256 cellar: :any,                 arm64_sonoma:  "18bfe73bee5cfc8a537ff5348b09aa14c4358811cc4e9ba042cf445237b382bf"
-    sha256 cellar: :any,                 arm64_ventura: "e4317a9ec42c006cd92d9058d8ad5ce05eddcd79e629f6e3c4a9d01aa68c6823"
-    sha256 cellar: :any,                 sonoma:        "b174c09569ac115e4d5cb029c96961519ca5d1f8a725b781b778ff6403d64e32"
-    sha256 cellar: :any,                 ventura:       "29c6e4417d8d1fe998f3cede3f146438a8d4a856353dfecaf1caaca8866b0ec8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "018abea075e1a43b0b8aa370db57bdfa370e19c6e3b5bf06a8f64f98a47a2111"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "acfc9f9ab0ad9f3c190f94a646c337d2b4a85814e24baa28e5d49045f82d9d60"
+    sha256 cellar: :any,                 arm64_sequoia: "f349b0692c820b96eac95d4dd610902eecb3222cc8a219a818ee0ba47de8db21"
+    sha256 cellar: :any,                 arm64_sonoma:  "b9040f0ac5c6a41bb0369aac161485e0a107996324978843316aa6928b74c834"
+    sha256 cellar: :any,                 arm64_ventura: "9139145caa1f5ebd84091cce4fd49b87870cd8635a2d8e055f27291b68ea070a"
+    sha256 cellar: :any,                 sonoma:        "5cff7a13d6f5232eb72af3e6448f1d7fe1dc3decfb12572c7a99a94efede357d"
+    sha256 cellar: :any,                 ventura:       "d60ace9468334c1693af5486aaa94c70074ec1aa741694bae08305405306f3c4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "148c47732b83bb73b4534bee100105af1450c67597dda165228adf8035afac1b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dc64112bb29b0fb3288fc405c4d114ddbf4ca64d9c700a38d170f697cbf61f65"
   end
 
   depends_on "rust" => :build # for pydantic_core
@@ -93,18 +93,18 @@ class Sysaidmin < Formula
   end
 
   resource "openai" do
-    url "https:files.pythonhosted.orgpackagesec7a9ad4a61f1502f0e59d8c27fb629e28a63259a44d8d31cd2314e1534a2d9fopenai-1.86.0.tar.gz"
-    sha256 "c64d5b788359a8fdf69bd605ae804ce41c1ce2e78b8dd93e2542e0ee267f1e4b"
+    url "https:files.pythonhosted.orgpackages5aeabbeef604d1fe0f7e9111745bb8a81362973a95713b28855beb9a9832ab12openai-1.88.0.tar.gz"
+    sha256 "122d35e42998255cf1fc84560f6ee49a844e65c054cd05d3e42fda506b832bb1"
   end
 
   resource "openai-agents" do
-    url "https:files.pythonhosted.orgpackages5d8275e18932102756e3c6e2c8a63f6a3a3058b32580f7aa53d87daab4f2a26bopenai_agents-0.0.17.tar.gz"
-    sha256 "44f9c8e80b461c64cfdcf55d162ca8bb0594f4b2ada48daf1be34a8d4cd0759f"
+    url "https:files.pythonhosted.orgpackages53a3301c6302bd2142c44674b4ccfb90d3da6771e17cef2e9fa2744256fd8dcaopenai_agents-0.0.19.tar.gz"
+    sha256 "4090d683ef7257b3f6299f76e477ad51a970fd76de7c55df65f4bc5029580f2b"
   end
 
   resource "pydantic" do
-    url "https:files.pythonhosted.orgpackagesf0868ce9040065e8f924d642c58e4a344e33163a07f6b57f836d0d734e0ad3fbpydantic-2.11.5.tar.gz"
-    sha256 "7f853db3d0ce78ce8bbb148c401c2cdd6431b3473c0cdff2755c7690952a7b7a"
+    url "https:files.pythonhosted.orgpackages00dd4325abf92c39ba8623b5af936ddb36ffcfe0beae70405d456ab1fb2f5b8cpydantic-2.11.7.tar.gz"
+    sha256 "d989c3c6cb79469287b1569f7447a17848c998458d49ebe294e975b9baf0f0db"
   end
 
   resource "pydantic-core" do
@@ -168,8 +168,8 @@ class Sysaidmin < Formula
   end
 
   resource "urllib3" do
-    url "https:files.pythonhosted.orgpackages8a7816493d9c386d8e60e442a35feac5e00f0913c0f4b7c217c11e8ec2ff53e0urllib3-2.4.0.tar.gz"
-    sha256 "414bc6535b787febd7567804cc015fee39daab8ad86268f1310a9250697de466"
+    url "https:files.pythonhosted.orgpackages15229ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bcurllib3-2.5.0.tar.gz"
+    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
   end
 
   resource "uvicorn" do

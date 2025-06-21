@@ -1,10 +1,10 @@
 class Ratify < Formula
   desc "Artifact Ratification Framework"
   homepage "https:ratify.dev"
-  url "https:github.comratify-projectratifyarchiverefstagsv1.4.0.tar.gz"
+  url "https:github.comnotaryprojectratifyarchiverefstagsv1.4.0.tar.gz"
   sha256 "36b18d2070d76a6e85aa86bf94e4e68350c6c277985d6bc8e87a28c78ebb08b8"
   license "Apache-2.0"
-  head "https:github.comratify-projectratify.git", branch: "dev"
+  head "https:github.comnotaryprojectratify.git", branch: "dev"
 
   bottle do
     rebuild 1

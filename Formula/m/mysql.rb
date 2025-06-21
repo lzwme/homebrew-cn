@@ -148,6 +148,13 @@ class Mysql < Formula
     # Make sure the varmysql directory exists
     (var"mysql").mkpath
 
+    if (my_cnf = ["etcmy.cnf", "etcmysqlmy.cnf"].find { |x| File.exist? x })
+      opoo <<~EOS
+        A "#{my_cnf}" from another install may interfere with a Homebrew-built
+        server starting up correctly.
+      EOS
+    end
+
     # Don't initialize database, it clashes when testing other MySQL-like implementations.
     return if ENV["HOMEBREW_GITHUB_ACTIONS"]
 
@@ -159,7 +166,7 @@ class Mysql < Formula
   end
 
   def caveats
-    s = <<~EOS
+    <<~EOS
       Upgrading from MySQL <8.4 to MySQL >9.0 requires running MySQL 8.4 first:
        - brew services stop mysql
        - brew install mysql@8.4
@@ -175,14 +182,6 @@ class Mysql < Formula
       To connect run:
           mysql -u root
     EOS
-    if (my_cnf = ["etcmy.cnf", "etcmysqlmy.cnf"].find { |x| File.exist? x })
-      s += <<~EOS
-
-        A "#{my_cnf}" from another install may interfere with a Homebrew-built
-        server starting up correctly.
-      EOS
-    end
-    s
   end
 
   service do

@@ -6,16 +6,17 @@ class YleDl < Formula
   url "https:files.pythonhosted.orgpackages47dce544bc64b9e44c68bfbbd36c0d293bae2800ef8d4bb313b6feb4619ca031yle_dl-20250614.tar.gz"
   sha256 "ed3d3f80c26fdb0854a8c6c14179171a2ba4117ebabea3e137f589c2bd8815d4"
   license "GPL-3.0-or-later"
+  revision 1
   head "https:github.comaajankiyle-dl.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "16c452960dab831d367fb8f042551c839ee92332df47344bc65f725069f59dc3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c7eb56b68eceb4fa90324b6594784de64b75515aa35a8241c5d1f742eb59a705"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "651e39c6e62a996b1119b63909724780874869d658305ed7704447c2e35e6ac8"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3adbbcd49bd9b2df74ca125e3c7c6d4b1d1a4fdd69fb75a96bd8cf9b605810bf"
-    sha256 cellar: :any_skip_relocation, ventura:       "203d59be94486a251f951d4d13d93dd531df15ed062524a9605a48d936c6deee"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "13568a4adba9f1a869ef7dc14e02397f14ba6caca41c53f1f17c3d65a0e16f58"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8ec160c0a6630ce544690835019eba89ba6760ad6c6d9675ae4a982130ba003d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b538a4dcb34db9704c829a14ff23eabad8c94be0e97fce384fa28afb9cf0c971"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0671419447f32e2f5d0d8cdcdcec31cd145b6deb26c55059e000ff8609d9bdc4"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "408ef75bdf3c659db26cf9c5bde32bae8cf757acf6a46cffb146b7c685bf133c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e1d612443f0c7431837290ab124faddf2a9009fe6fd6e87723848ad845abb34b"
+    sha256 cellar: :any_skip_relocation, ventura:       "0ea187e48a7ce17a29b5ba97dc56146a805ffaafef7bf01ec61630949be21727"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cb2d794199c4c8d5664633641643c317153e4e8ed0de225feba52f39edbbaa22"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "29d8ecb5f2db3f2cafe2829132d2af5a9948f3a30038d3a16f0ad23ae064b10f"
   end
 
   depends_on "certifi"
@@ -52,8 +53,8 @@ class YleDl < Formula
   end
 
   resource "urllib3" do
-    url "https:files.pythonhosted.orgpackages8a7816493d9c386d8e60e442a35feac5e00f0913c0f4b7c217c11e8ec2ff53e0urllib3-2.4.0.tar.gz"
-    sha256 "414bc6535b787febd7567804cc015fee39daab8ad86268f1310a9250697de466"
+    url "https:files.pythonhosted.orgpackages15229ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bcurllib3-2.5.0.tar.gz"
+    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
   end
 
   def install

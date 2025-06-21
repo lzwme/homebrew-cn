@@ -6,17 +6,17 @@ class Yewtube < Formula
   url "https:github.commps-youtubeyewtubearchiverefstagsv2.12.1.tar.gz"
   sha256 "012c1a8a185dd4ef81074631bca91e327ac4e634b36301a50ffbcd67838b847f"
   license "GPL-3.0-or-later"
-  revision 2
+  revision 3
   head "https:github.commps-youtubeyewtube.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4624482b337ce4db9ccfb08de2d05deba76e5b2bad09ed239fca736c230fc7ee"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4624482b337ce4db9ccfb08de2d05deba76e5b2bad09ed239fca736c230fc7ee"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "4624482b337ce4db9ccfb08de2d05deba76e5b2bad09ed239fca736c230fc7ee"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4624482b337ce4db9ccfb08de2d05deba76e5b2bad09ed239fca736c230fc7ee"
-    sha256 cellar: :any_skip_relocation, ventura:       "4624482b337ce4db9ccfb08de2d05deba76e5b2bad09ed239fca736c230fc7ee"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "87de0867cf79180493c927c54409ca65ddb66bef4198f7f8e470fda4bf188915"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "87de0867cf79180493c927c54409ca65ddb66bef4198f7f8e470fda4bf188915"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7ea82ac26fb9703af32934e6b6ac71f7f5c9a178a0be897d238c507f9afeec5e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7ea82ac26fb9703af32934e6b6ac71f7f5c9a178a0be897d238c507f9afeec5e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "7ea82ac26fb9703af32934e6b6ac71f7f5c9a178a0be897d238c507f9afeec5e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7ea82ac26fb9703af32934e6b6ac71f7f5c9a178a0be897d238c507f9afeec5e"
+    sha256 cellar: :any_skip_relocation, ventura:       "7ea82ac26fb9703af32934e6b6ac71f7f5c9a178a0be897d238c507f9afeec5e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cbf2ad3b093e73d86c4876171f925aafef56c81989ae951e8ca9192315bd22d2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cbf2ad3b093e73d86c4876171f925aafef56c81989ae951e8ca9192315bd22d2"
   end
 
   depends_on "certifi"
@@ -75,8 +75,8 @@ class Yewtube < Formula
   end
 
   resource "urllib3" do
-    url "https:files.pythonhosted.orgpackages8a7816493d9c386d8e60e442a35feac5e00f0913c0f4b7c217c11e8ec2ff53e0urllib3-2.4.0.tar.gz"
-    sha256 "414bc6535b787febd7567804cc015fee39daab8ad86268f1310a9250697de466"
+    url "https:files.pythonhosted.orgpackages15229ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bcurllib3-2.5.0.tar.gz"
+    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
   end
 
   resource "youtube-search-python" do

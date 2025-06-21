@@ -1,18 +1,18 @@
 class Subfinder < Formula
   desc "Subdomain discovery tool"
   homepage "https:github.comprojectdiscoverysubfinder"
-  url "https:github.comprojectdiscoverysubfinderarchiverefstagsv2.7.1.tar.gz"
-  sha256 "11ddc1113ba6bfc6db1aeb8bdd97908ceed230e3e4911e9a6905c35f0795b2e2"
+  url "https:github.comprojectdiscoverysubfinderarchiverefstagsv2.8.0.tar.gz"
+  sha256 "d4273408c6eeeb9e69fe04e5d7400247502575841c79371dc680fc6b2e3aaaa8"
   license "MIT"
   head "https:github.comprojectdiscoverysubfinder.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e4012761b996c13be98b253acf2c97d9a0f56e6f090878c236b50d24334de427"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4f1e29abdec31a55472ee3e056a4b1d2234a50006ebf4078f8699ad8ea6ad781"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "b35928fb4541fd5e914ca969111b451289e8354c66addfd4d84301736baa1b2f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2e0b98643729a615d017bf3bbd687dec08f2ff7d0baa890f5595f096fb888ff3"
-    sha256 cellar: :any_skip_relocation, ventura:       "b05b08f4b8b6a8ba8c5739c5140db0140fc7fa582f70678d91aef4b458fd72b0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "63927484b1657c52e52e9ac6d035d3461832ce40b0b959e9125c7b599c991ef5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e4bb33f0b28d7c5a0582927b1fbb47543dfc495af2f8ca6b8ac36585e6a061b7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0d016d52ab0e1fd1a47cbcd4175d16436f0fc148e0883ce021324ce5f149b4ec"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "7284c7ab3e13f87e17c2ca36d4f52ac2a1fe9fff5a1182d50e88e3de2498ff59"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8cf9736a33684adcb7efeca52e55e01777f05927b4e5b97ae2fe2fbb882b297d"
+    sha256 cellar: :any_skip_relocation, ventura:       "8094944b73a10f682b0b915b8f4978490cc895f237d1c40e3e2794f6ad07d35e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cbf3866c7396c20b2684c1883edf264c2ad8df5eaf9b8e9ba02f7f07ca8df4f0"
   end
 
   depends_on "go" => :build

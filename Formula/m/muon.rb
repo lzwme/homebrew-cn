@@ -4,17 +4,17 @@ class Muon < Formula
   url "https://git.sr.ht/~lattis/muon/archive/0.4.0.tar.gz"
   sha256 "c2ce8302e886b2d3534ec38896a824dc83f43698d085d57bb19a751611d94e86"
   license "GPL-3.0-only"
-  revision 1
+  revision 2
   head "https://git.sr.ht/~lattis/muon", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_sequoia: "c6f0a6432a429272a8dfe0fc8c463ff95cbed4059fcc49c0b2d83e0437e72ba3"
-    sha256 cellar: :any, arm64_sonoma:  "edb4791c7f8790b96b4361e3a4886ad654b977a90f52fb9632b5e4af622e1e34"
-    sha256 cellar: :any, arm64_ventura: "328b33b0c04a614dbc4b5ec87b842530dc75b92ab729d4e0bd79b4922ea4e04f"
-    sha256 cellar: :any, sonoma:        "9f5a94990f9ba7dad39a19b227ab8a43c1e1957a82cd49eff60a33d9015b3d0d"
-    sha256 cellar: :any, ventura:       "1093a8dc08368070464f5c182b80df1196b6e4a04f70978072ae9f66f5297c99"
-    sha256               arm64_linux:   "59e9b0a588a9beb8c1f5f5b953c368f0a5073e5a61884af80325b9b22a566f05"
-    sha256               x86_64_linux:  "e9f55dec1f94791d47db778e7ae1288523f02ec2b3bf676976e678e8915d4aa1"
+    sha256 cellar: :any, arm64_sequoia: "05431b97ae9d2bf393df1d39f1c2d8c97621a279ddb5c3ed2d77d5bc0828fa44"
+    sha256 cellar: :any, arm64_sonoma:  "629d8cb5edf13fad83e4a70630e11cd8469ba537a5c27f6aa424d96293018b27"
+    sha256 cellar: :any, arm64_ventura: "54d1a923f1982fd68822da1028df83fb0d7c7416897db97f487d4fc4908b1975"
+    sha256 cellar: :any, sonoma:        "74d720c90af24ce5e64621d2ca8667fedcd26a93c1a1302b1defdeec0afa01a8"
+    sha256 cellar: :any, ventura:       "95af6152a893fb24cbb4e98637e3f3c22c3de42286007ed4c88d20abf72ef74a"
+    sha256               arm64_linux:   "d1b978c1b67aea55a70b7abea468c1502869b69dcab423a99a0f839ad9fd45b9"
+    sha256               x86_64_linux:  "d1a74d5b71d07ab521b750a889c385849e1fe68fcf2eb00a5fe1e7b4a4526837"
   end
 
   depends_on "meson" => :build

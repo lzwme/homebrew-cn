@@ -1,10 +1,10 @@
 class Restish < Formula
   desc "CLI tool for interacting with REST-ish HTTP APIs"
   homepage "https:rest.sh"
-  url "https:github.comdanielgtaylorrestisharchiverefstagsv0.21.0.tar.gz"
+  url "https:github.comrest-shrestisharchiverefstagsv0.21.0.tar.gz"
   sha256 "9a73e743a78d6a28e2ff0dba53499b23c945c45f78b4a0ab3aa4b6283491de5d"
   license "MIT"
-  head "https:github.comdanielgtaylorrestish.git", branch: "main"
+  head "https:github.comrest-shrestish.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "f8aa4ddbae64dffa735470d8981074ea73c0d12c1f2029fcfc9e734a9f348ea7"

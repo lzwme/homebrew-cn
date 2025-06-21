@@ -6,18 +6,18 @@ class Sickchill < Formula
   url "https://files.pythonhosted.org/packages/31/fc/337b2989dc67bbb505cea34a05c029cbba3056311177586835f704ddc13a/sickchill-2024.3.1.tar.gz"
   sha256 "e7079bb77b415eb6697a63d9018db1ad317d06ad285d0d77893747cbf000aa17"
   license "GPL-3.0-or-later"
-  revision 2
+  revision 3
 
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "923f0b8e0551c75c73f30ef2b3982df74b276f5cd8235ec728dd9d59e8efbd46"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "71bb986c915a95b3dd4b7776a5d4d87b4d7d62e7daed7c64684fb06096d9ed98"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "4cb2d6f581f37ccfa1d912190fedcb982d8164166b24e2d570e344004eb9e1e4"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8eb3ecd9cd5d433057e12aad4132c57b3d1350e225b427c7d34b303c82b6b200"
-    sha256 cellar: :any_skip_relocation, ventura:       "4b44710ffcfcf49708c8e81be56120e0cb86cab069b0d4d8b4b8bf502b3726f8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4a96a798d1257022177afa041deb15c8fe117ad6fdd8c4b9e3b7c7d75787d293"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bd1b44cc1e432e5015d7471a36cc3d39a6acb1b8fdaf7ef99911544c6d713d6e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0de949c3d5312e5235c4f3221e579a44215042d6e9855971454bab017a401af3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4bb1e6c596ddd8c99a708c85cb8c7c721496463d37b981b7d11d3b06f465ae8e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "98a95b2dda71e8f950c30e16e266490462a1dced84a9a5590d73c67c2580722a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "143b56432655a6b6949e48b2d5a9f5a575f86de225dba6ab8b1cce5d998fc4e8"
+    sha256 cellar: :any_skip_relocation, ventura:       "16320aa1c8ba370423ba9b5378799013ceb865cd593b24b71dbcc85e4997a465"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3e19a4b29ed149e969e8903546cc4b5e9a6e1ba00b76accf846aa4cfc4f94308"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "31dd25adaa1c9e0dd51cc4907bd6565cf9af53bb42369eb682a7f5bffd1a4423"
   end
 
   depends_on "certifi"
@@ -173,8 +173,8 @@ class Sickchill < Formula
   end
 
   resource "msgpack" do
-    url "https://files.pythonhosted.org/packages/cb/d0/7555686ae7ff5731205df1012ede15dd9d927f6227ea151e901c7406af4f/msgpack-1.1.0.tar.gz"
-    sha256 "dd432ccc2c72b914e4cb77afce64aab761c1137cc698be3984eee260bcb2896e"
+    url "https://files.pythonhosted.org/packages/45/b1/ea4f68038a18c77c9467400d166d74c4ffa536f34761f7983a104357e614/msgpack-1.1.1.tar.gz"
+    sha256 "77b79ce34a2bdab2594f490c8e80dd62a02d650b91a75159a63ec413b8d104cd"
   end
 
   resource "new-rtorrent-python" do
@@ -183,8 +183,8 @@ class Sickchill < Formula
   end
 
   resource "oauthlib" do
-    url "https://files.pythonhosted.org/packages/6d/fa/fbf4001037904031639e6bfbfc02badfc7e12f137a8afa254df6c4c8a670/oauthlib-3.2.2.tar.gz"
-    sha256 "9859c40929662bec5d64f34d01c99e093149682a3f38915dc0655d5a633dd918"
+    url "https://files.pythonhosted.org/packages/0b/5f/19930f824ffeb0ad4372da4812c50edbd1434f678c90c2733e1188edfc63/oauthlib-3.3.1.tar.gz"
+    sha256 "0f0f8aa759826a193cf66c12ea1af1637f87b9b4622d46e866952bb022e538c9"
   end
 
   resource "packaging" do
@@ -348,8 +348,8 @@ class Sickchill < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/8a/78/16493d9c386d8e60e442a35feac5e00f0913c0f4b7c217c11e8ec2ff53e0/urllib3-2.4.0.tar.gz"
-    sha256 "414bc6535b787febd7567804cc015fee39daab8ad86268f1310a9250697de466"
+    url "https://files.pythonhosted.org/packages/15/22/9ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bc/urllib3-2.5.0.tar.gz"
+    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
   end
 
   resource "validators" do

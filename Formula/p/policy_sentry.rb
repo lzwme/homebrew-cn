@@ -6,17 +6,17 @@ class PolicySentry < Formula
   url "https:files.pythonhosted.orgpackagesbc4be03bbe626379bfee06c944a01ef25ad14ce30bc9dd86988dfda1cf343347policy_sentry-0.14.0.tar.gz"
   sha256 "5c52cebebad26e2360393f34af523c1685541d67b0dfd721b0779dbe9e327f1a"
   license "MIT"
-  revision 1
+  revision 2
   head "https:github.comsalesforcepolicy_sentry.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "46b843bf087131b63755a97e8c63205c4cd5e7beb16715b5c21a878b4c0c23d2"
-    sha256 cellar: :any,                 arm64_sonoma:  "d875fc4b379c60174e3f4ed246d9bc67bc1057ea1a2f9dc0c0cd81fc5f90eb12"
-    sha256 cellar: :any,                 arm64_ventura: "81bcf9bc3681e0dd59addfccfd5a6574e0b75d061e9fa59dfeb8fb180fc91d58"
-    sha256 cellar: :any,                 sonoma:        "c0e378611ba7ec8dc6bd38f849989f6ea05fa74bc481738e30af78f9f469ca50"
-    sha256 cellar: :any,                 ventura:       "b011280dfa732d387a00809aacd2056767c782f6657bf6eede023d3b2814a946"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a6d0a280944eaeef9e022ca9c285848f3ee805b323a0979f665f760075fe5b1e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d57d65a28701c75b73bc65d8e8f02ca9cf311ddef4f88576c22216140697df5b"
+    sha256 cellar: :any,                 arm64_sequoia: "c4bfdf7d1ca10359b721ad58fba1b33e631fd57fba623ba3e3cef243a0d68f26"
+    sha256 cellar: :any,                 arm64_sonoma:  "a7d31909c5732e8dd10570a155c97cc0a03dd18a4a35ed158687019738873601"
+    sha256 cellar: :any,                 arm64_ventura: "a1e515dbe0a2da72a4e40a52199bb653041bb283760b7c1c4027efd790500bcd"
+    sha256 cellar: :any,                 sonoma:        "c7652fbf34b514c7c9f272b3b749fab80ddd57f94bcb6573113a1093f3bc4264"
+    sha256 cellar: :any,                 ventura:       "e1c42231dd7f07dda17e4610c5b114361db50f1bf08a14cf4f8e9f0a20103be4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5c61b11ed32c270e2c5df8b87db0c6ff3036d213bd47e85a107def54fb2a7165"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f26e8bafd4c6bf15034feb1f7a6332a089ddccbd511c0891d9e89fdc241ef82d"
   end
 
   depends_on "rust" => :build # for orjson
@@ -75,8 +75,8 @@ class PolicySentry < Formula
   end
 
   resource "urllib3" do
-    url "https:files.pythonhosted.orgpackages8a7816493d9c386d8e60e442a35feac5e00f0913c0f4b7c217c11e8ec2ff53e0urllib3-2.4.0.tar.gz"
-    sha256 "414bc6535b787febd7567804cc015fee39daab8ad86268f1310a9250697de466"
+    url "https:files.pythonhosted.orgpackages15229ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bcurllib3-2.5.0.tar.gz"
+    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
   end
 
   def install

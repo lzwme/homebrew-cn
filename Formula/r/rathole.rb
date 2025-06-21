@@ -1,7 +1,7 @@
 class Rathole < Formula
   desc "Reverse proxy for NAT traversal"
-  homepage "https:github.comrapiz1rathole"
-  url "https:github.comrapiz1ratholearchiverefstagsv0.5.0.tar.gz"
+  homepage "https:github.comrathole-orgrathole"
+  url "https:github.comrathole-orgratholearchiverefstagsv0.5.0.tar.gz"
   sha256 "c8698dc507c4c2f7e0032be24cac42dd6656ac1c52269875d17957001aa2de41"
   license "Apache-2.0"
 
@@ -27,7 +27,7 @@ class Rathole < Formula
     depends_on "openssl@3"
   end
 
-  # rust 1.80 build patch, upstream bug report, https:github.comrapiz1ratholeissues380
+  # rust 1.80 build patch, upstream bug report, https:github.comrathole-orgratholeissues380
   patch do
     url "https:raw.githubusercontent.comHomebrewformula-patchesbd353c6adb3601f32de0fa87f3acd34a98da6ec1ratholerust-1.80.patch"
     sha256 "deca6178df16517f752c309f6290678cbddb24cd3839057f746d0817405965f9"

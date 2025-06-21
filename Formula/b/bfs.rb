@@ -1,17 +1,17 @@
 class Bfs < Formula
   desc "Breadth-first version of find"
   homepage "https:tavianator.comprojectsbfs.html"
-  url "https:github.comtavianatorbfsarchiverefstags4.0.7.tar.gz"
-  sha256 "37b11768b9b9bb50c7016d261317a4cd1ce047751681cfad528ccd700a65cd9e"
+  url "https:github.comtavianatorbfsarchiverefstags4.0.8.tar.gz"
+  sha256 "0b7bc99fca38baf2ce212b0f6b03f05cd614ea0504bc6360e901d6f718180036"
   license "0BSD"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8dcba1d6ff5edd6c47c68f4689c315e828d834055a87913af37028dd0f251179"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6d1a1876b5e972cc74ba640fda2fed42bd34d107ef72933603c730c26e4b5ae8"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "5dbeac4b74cf47d565166dd94b1fcf895b16e82a06530058c7d759233a40a8b5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b3e4aba61a16bbad6d94248347609f5b6d8d8380980b387c3841b2855be81d8d"
-    sha256 cellar: :any_skip_relocation, ventura:       "1bf45e3a6083e516c0e60207323c4142735d800febe9c7bfc5093c4b27d031b0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3de17f4f074db0cc0357d028f01e68a0b4d2c7341a9f8e4727f7c6cc94c0f1ef"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2220d279772e57a1628bc6b7f06f9b2b59355f41bbe6673ab6a9b749e0c58cf0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d39198406126856fc36850d9eccf7d70d73a36d68c38a27af5372af39e7b8ccd"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "354600bf744a829dd7d76e2647103ba7e1ed3b95a80a530559c1ddceb123b8aa"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f7db79a8f1670bc856933d3a8d968339ce69f240c07d1fcfbabede47fae31582"
+    sha256 cellar: :any_skip_relocation, ventura:       "6a4a94b5363a21a671b924afe74422b4a73a7d93fc7c82280b913b79d7fffb6d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "608853d79a4ddd1b048c43e985c59fac82fa919b6b975b023c09d797c63facaf"
   end
 
   depends_on "oniguruma"

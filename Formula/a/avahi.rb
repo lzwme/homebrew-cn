@@ -1,7 +1,7 @@
 class Avahi < Formula
   desc "Service Discovery for Linux using mDNSDNS-SD"
   homepage "https:avahi.org"
-  url "https:github.comlathiatavahiarchiverefstagsv0.8.tar.gz"
+  url "https:github.comavahiavahiarchiverefstagsv0.8.tar.gz"
   sha256 "c15e750ef7c6df595fb5f2ce10cac0fee2353649600e6919ad08ae8871e4945f"
   license "LGPL-2.1-or-later"
   revision 2

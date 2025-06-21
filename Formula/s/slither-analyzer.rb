@@ -6,19 +6,19 @@ class SlitherAnalyzer < Formula
   url "https:files.pythonhosted.orgpackagesf9d7327729240d0ab0291cf3e9b36f05e135676ffea796e4a74ec6b7ef7ad2ddslither_analyzer-0.11.3.tar.gz"
   sha256 "09953ddb89d9ab182aa5826bda6fa3da482c82b5ffa371e34b35ba766044616e"
   license "AGPL-3.0-only"
-  revision 1
+  revision 2
   head "https:github.comcryticslither.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "ee9382ada729a8d7d2d1786c60147b11ca685d7075dabbd4c5626a2f2e1cfe58"
-    sha256 cellar: :any,                 arm64_sonoma:  "1bf2461cb516386b97e246bf94e0c9299d9251a6e034e2446615c805babba946"
-    sha256 cellar: :any,                 arm64_ventura: "04bd39d51cc46f7e47a66828274afe00c735d049bf37f360d46cb9a8d50b99e3"
-    sha256 cellar: :any,                 sonoma:        "97b945b157dd6a37961820bc278bc36697db48e3d28ac50284095c41c4149ae6"
-    sha256 cellar: :any,                 ventura:       "d83c951f5968f42c06021a77c98b3aa62dc5c24d14ed70cceb46c440cf018b37"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "79a4fb3e9bdfd48357b4d626fddeabff3c4046488a317b0e325cbc7568164bdf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "889efa3d882133a296d3c39a740a32c8a826bb506b7b7ac7b68a2a5d5165054a"
+    sha256 cellar: :any,                 arm64_sequoia: "0c202c7398f1698321960003d9faad20bf3fbc7c7f04d46e2b71a6289328607e"
+    sha256 cellar: :any,                 arm64_sonoma:  "dcb6315b46b06a3345c2ae85b27645645986ad83b41e6f4542402e520b53ed05"
+    sha256 cellar: :any,                 arm64_ventura: "9d6508d4906ecf89df63240535364b86446bc6532d6217eae3d67cd39ad5fb50"
+    sha256 cellar: :any,                 sonoma:        "319e286d59474836deb0cfaf35a36146b12c2e47c115017ef30b7b992227a8f4"
+    sha256 cellar: :any,                 ventura:       "9ac1a7506762a7a9d286aa6b4868bb7746b955468e9dc4f314532499406f3436"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "20e0334bfbb5240132c0daa6ad34eaf7a8d880671e1ddab846c1e9273fa1cde0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9daf8a04a16d26d54298c0d3a57e59e21449b64d4d85da497f70132aca8feaec"
   end
 
   depends_on "rust" => :build # for rpds-py
@@ -31,8 +31,8 @@ class SlitherAnalyzer < Formula
   end
 
   resource "aiohttp" do
-    url "https:files.pythonhosted.orgpackagesf284ea27e6ad14747d8c51afe201fb88a5c8282b6278256d30a6f71f730add88aiohttp-3.12.12.tar.gz"
-    sha256 "05875595d2483d96cb61fa9f64e75262d7ac6251a7e3c811d8e26f7d721760bd"
+    url "https:files.pythonhosted.orgpackages426eab88e7cb2a4058bed2f7870276454f85a7c56cd6da79349eb314fc7bbcaaaiohttp-3.12.13.tar.gz"
+    sha256 "47e2da578528264a12e4e3dd8dd72a7289e5f812758fe086473fab037a10fcce"
   end
 
   resource "aiosignal" do
@@ -136,8 +136,8 @@ class SlitherAnalyzer < Formula
   end
 
   resource "multidict" do
-    url "https:files.pythonhosted.orgpackages912fa3470242707058fe856fe59241eee5635d79087100b7042a867368863a27multidict-6.4.4.tar.gz"
-    sha256 "69ee9e6ba214b5245031b76233dd95408a0fd57fdb019ddcc1ead4790932a8e8"
+    url "https:files.pythonhosted.orgpackages46b559f27b4ce9951a4bce56b88ba5ff5159486797ab18863f2b4c1c5e8465bdmultidict-6.5.0.tar.gz"
+    sha256 "942bd8002492ba819426a8d7aefde3189c1b87099cdf18aaaefefcf7f3f7b6d2"
   end
 
   resource "packaging" do
@@ -166,8 +166,8 @@ class SlitherAnalyzer < Formula
   end
 
   resource "pydantic" do
-    url "https:files.pythonhosted.orgpackagesf0868ce9040065e8f924d642c58e4a344e33163a07f6b57f836d0d734e0ad3fbpydantic-2.11.5.tar.gz"
-    sha256 "7f853db3d0ce78ce8bbb148c401c2cdd6431b3473c0cdff2755c7690952a7b7a"
+    url "https:files.pythonhosted.orgpackages00dd4325abf92c39ba8623b5af936ddb36ffcfe0beae70405d456ab1fb2f5b8cpydantic-2.11.7.tar.gz"
+    sha256 "d989c3c6cb79469287b1569f7447a17848c998458d49ebe294e975b9baf0f0db"
   end
 
   resource "pydantic-core" do
@@ -221,8 +221,8 @@ class SlitherAnalyzer < Formula
   end
 
   resource "urllib3" do
-    url "https:files.pythonhosted.orgpackages8a7816493d9c386d8e60e442a35feac5e00f0913c0f4b7c217c11e8ec2ff53e0urllib3-2.4.0.tar.gz"
-    sha256 "414bc6535b787febd7567804cc015fee39daab8ad86268f1310a9250697de466"
+    url "https:files.pythonhosted.orgpackages15229ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bcurllib3-2.5.0.tar.gz"
+    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
   end
 
   resource "wcwidth" do

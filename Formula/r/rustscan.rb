@@ -1,7 +1,7 @@
 class Rustscan < Formula
   desc "Modern Day Portscanner"
-  homepage "https:github.comrustscanrustscan"
-  url "https:github.comRustScanRustScanarchiverefstags2.4.1.tar.gz"
+  homepage "https:github.combee-sanRustScan"
+  url "https:github.combee-sanRustScanarchiverefstags2.4.1.tar.gz"
   sha256 "fa99c18a12d4c0939ab69ddb84ef7b85a1ea01d8fc86df227449d89473531765"
   license "GPL-3.0-or-later"
 

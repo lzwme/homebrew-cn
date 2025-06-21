@@ -1,7 +1,7 @@
 class Gitui < Formula
   desc "Blazing fast terminal-ui for git written in rust"
-  homepage "https:github.comextrawurstgitui"
-  url "https:github.comextrawurstgituiarchiverefstagsv0.27.0.tar.gz"
+  homepage "https:github.comgitui-orggitui"
+  url "https:github.comgitui-orggituiarchiverefstagsv0.27.0.tar.gz"
   sha256 "55a85f4a3ce97712b618575aa80f3c15ea4004d554e8899669910d7fb4ff6e4b"
   license "MIT"
   head "https:github.comgitui-orggitui.git", branch: "master"
@@ -36,7 +36,7 @@ class Gitui < Formula
   test do
     require "utilslinkage"
 
-    system "git", "clone", "https:github.comextrawurstgitui.git"
+    system "git", "clone", "https:github.comgitui-orggitui.git"
     (testpath"gitui").cd { system "git", "checkout", "v0.7.0" }
 
     input, _, wait_thr = Open3.popen2 "script -q screenlog.ansi"

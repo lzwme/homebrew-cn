@@ -6,11 +6,11 @@ class Toot < Formula
   url "https:files.pythonhosted.orgpackagese15a8c8c1dfb8188e14f94cda467f03924b23e7f7e1194249bdd1240363873actoot-0.48.1.tar.gz"
   sha256 "99629e24bc4ef3fb22162b7742f4053648279f5e7e34b5ad53224b5d3e05a66c"
   license "GPL-3.0-only"
-  revision 1
+  revision 2
   head "https:github.comihabunektoot.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "3ff5d1887141275012fd857f2a97ae0df52711304e6fa40c8af9dc9013143d3f"
+    sha256 cellar: :any_skip_relocation, all: "c922069b58f58debf9079364c21308d700c50a91fe86d5203395a97c5e05b61f"
   end
 
   depends_on "certifi"
@@ -73,8 +73,8 @@ class Toot < Formula
   end
 
   resource "urllib3" do
-    url "https:files.pythonhosted.orgpackages8a7816493d9c386d8e60e442a35feac5e00f0913c0f4b7c217c11e8ec2ff53e0urllib3-2.4.0.tar.gz"
-    sha256 "414bc6535b787febd7567804cc015fee39daab8ad86268f1310a9250697de466"
+    url "https:files.pythonhosted.orgpackages15229ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bcurllib3-2.5.0.tar.gz"
+    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
   end
 
   resource "urwid" do

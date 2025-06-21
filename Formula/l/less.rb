@@ -1,8 +1,8 @@
 class Less < Formula
   desc "Pager program similar to more"
   homepage "https:www.greenwoodsoftware.comlessindex.html"
-  url "https:www.greenwoodsoftware.comlessless-678.tar.gz"
-  sha256 "4c085364f3028290d34647df27f56018c365dc4c0092ab7de74ed8fe89014fe7"
+  url "https:www.greenwoodsoftware.comlessless-679.tar.gz"
+  sha256 "9b68820c34fa8a0af6b0e01b74f0298bcdd40a0489c61649b47058908a153d78"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -11,13 +11,13 @@ class Less < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "502b8720691e823180290da162df33d6a3ee3276d32feb267c7e7dfa3b577668"
-    sha256 cellar: :any,                 arm64_sonoma:  "3bbfb91b9a141230356b458272fe22205d6df4b6bf93029ecc295d3ec3df2adf"
-    sha256 cellar: :any,                 arm64_ventura: "451515a2c9a3004ed57982a65210e534fbf17ee35af14df5832b781386ec171f"
-    sha256 cellar: :any,                 sonoma:        "f912635990a5ae7ea078abc98ca51ade4ea8aa9091713f9e3bcf3739274ea174"
-    sha256 cellar: :any,                 ventura:       "3ebf4828bee4254a689cd89251ac7fcf73cbc6c34eb1ced8ffdd9e4cec96eb2c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8edfc61f568168f8e20c92ef83966f6d64f04d8723e36ec574072f1106fc6614"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "32e65477589dd717159c9fa72dd9911fb5bdc492729639dec1e2c63dd5170be9"
+    sha256 cellar: :any,                 arm64_sequoia: "2c167ef66f66ea608f4d8c2a62daf90c54d209c492ca36373b6c4b21889c2124"
+    sha256 cellar: :any,                 arm64_sonoma:  "c8d271ef876c5591a67460068226247fb597f1b802b2616c85ba43d6b6b842e4"
+    sha256 cellar: :any,                 arm64_ventura: "bd30a0f7e3b09305d58c8b943341d19480292bfc0316a60c731ef95e7d943170"
+    sha256 cellar: :any,                 sonoma:        "6cb7136c30fc4695d509bb6fa174245f54fad777bdfc1cdd2d42e23708408128"
+    sha256 cellar: :any,                 ventura:       "56563af2638138d67278c41a1cdfc42a4ffaa2c85c7d89f3ec350a5a2b4d3f05"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e7c4d002465a313676bc41faf9720028b932b49f83429bbaff52c1d94d62238a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f68b1ad54d048a50a5d738a1c38ad43c7a1789b9f8b5168d77fa8dc8ab21aa17"
   end
 
   head do

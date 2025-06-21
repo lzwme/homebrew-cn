@@ -1,10 +1,10 @@
 class Sqlfmt < Formula
   desc "SQL formatter with width-aware output"
   homepage "https:sqlfum.pt"
-  url "https:github.commjibsonsqlfmtarchiverefstagsv0.5.0.tar.gz"
+  url "https:github.commaddybluesqlfmtarchiverefstagsv0.5.0.tar.gz"
   sha256 "0776e9505048fd88220c0ee9b481ca258b6abe7e7bb27204a4873f11e1d7c95b"
   license "Apache-2.0"
-  head "https:github.commjibsonsqlfmt.git", branch: "master"
+  head "https:github.commaddybluesqlfmt.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 

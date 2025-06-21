@@ -6,19 +6,19 @@ class Scoutsuite < Formula
   url "https:files.pythonhosted.orgpackagesa9414f375fac81c66e1475c3ae18753a86191f253cdf24c29f28c8861d6bb984scoutsuite-5.14.0.tar.gz"
   sha256 "b021ad340196865093fb5d6e247f2596ec856e24cb39eb6e3e886923befd1208"
   license "GPL-2.0-only"
-  revision 3
+  revision 4
   head "https:github.comnccgroupScoutSuite.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "96db74400db7580417bd19dd9171c713dbd1de8a17ac86bb53c13c790cb4126f"
-    sha256 cellar: :any,                 arm64_sonoma:  "b751753b949a7bb1374fa4865e0258c8bf3b0d08cbbeefe55dfc5ce44be27aa4"
-    sha256 cellar: :any,                 arm64_ventura: "dae86dc4b169aa3a2502cd8e0816dc93b4a9a4a224fc512af8860435e6fb6e01"
-    sha256 cellar: :any,                 sonoma:        "8470ae6cafc4fc2f44193fb4bfbbf48d4f24137df80a6ebd9fcd6f318eaf3910"
-    sha256 cellar: :any,                 ventura:       "3f45fc3af5042742176a5538c0b4453a73d88ba4b5a64f6feac91ab332fb89bc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "78c7f5e79b1d2a24f58dfdc0ac626a8a1f4f515462b7601ebd6b01da0bdbb444"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e4070a1c4c7bc420402f89235f0db1163539deb217baf57bb417a44bc90ca743"
+    sha256 cellar: :any,                 arm64_sequoia: "617a6f8b92f076b5eb121d447b2fc5e10451a00e4afe5380b80f56d40f5a09d5"
+    sha256 cellar: :any,                 arm64_sonoma:  "92e3adfb05aa047a2ba078f3c741800c84011d08fb9943cf84fd37065f92fc1c"
+    sha256 cellar: :any,                 arm64_ventura: "527899b1beca122c9fc6404f5d3d9cce2a0e32fab0424b3a33bcd9eca38f81ea"
+    sha256 cellar: :any,                 sonoma:        "0ab89a3891bfa958b2f1bc2cb9af8a6e1c8f9ed5a618f6b660c35fda58903ada"
+    sha256 cellar: :any,                 ventura:       "87e712e1c870051ff1d5bec8079bf35f6e1fc7cef2dce6332ca92ce6ed3be602"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f4c81f66cc8b0aad64d23f40f9775257ab4d5ec09aa6126d0483db6fad9767c5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8f5f6a303930349211252b646046710ccfdd01d5bfe0adbb8215e67a0948a3ef"
   end
 
   depends_on "rust" => :build # for pydantic-core
@@ -53,8 +53,8 @@ class Scoutsuite < Formula
   end
 
   resource "aliyun-python-sdk-ram" do
-    url "https:files.pythonhosted.orgpackages2889382d69161f458879ff6066db61c511de8fa642e1ce1782994a095a51d365aliyun-python-sdk-ram-3.3.0.tar.gz"
-    sha256 "0809c078d1af2ee47736d1f2af161e1ba96b998a5d484e7b3ed71addec55cb43"
+    url "https:files.pythonhosted.orgpackages279c8248e66c6b81ede261ad6b96fbe2752c62d4fb73cf8a4e6b2afe62e82a81aliyun-python-sdk-ram-3.3.1.tar.gz"
+    sha256 "0fd482d57767862cd9dbd6c992ba3c442b8e199d43bdf2b336b5d41a4edc7957"
   end
 
   resource "aliyun-python-sdk-rds" do
@@ -163,13 +163,13 @@ class Scoutsuite < Formula
   end
 
   resource "boto3" do
-    url "https:files.pythonhosted.orgpackagesf1cae7c1b5f7118fa3520f70ca11082472b64e2ffc4d81e7a4373339e4770f3aboto3-1.38.35.tar.gz"
-    sha256 "38a407e467b24914ce24e5816f53305288ea44072778f88d2b4b6a2cffbcb220"
+    url "https:files.pythonhosted.orgpackages5a66a26e7f20039ae3c57524baf26af43216c3959013f23308458f211cce78a5boto3-1.38.40.tar.gz"
+    sha256 "fcef3e08513d276c97d72d5e7ab8f3ce9950170784b9b5cf4fab327cdb577503"
   end
 
   resource "botocore" do
-    url "https:files.pythonhosted.orgpackagescd2e763918cd2b5af0345a38181bc5f16d1f6c32aad2a03b7738274cf068d864botocore-1.38.35.tar.gz"
-    sha256 "3c7032948e066eed5f91d64cd51ee9664d1db9beaf3279ac27da608176bb3d54"
+    url "https:files.pythonhosted.orgpackages612342cc861466a34e45bd1783c3b3a547d5f723a8d21f6151cd1e3d84adfba6botocore-1.38.40.tar.gz"
+    sha256 "aefbfe835a7ebe9bbdd88df3999b0f8f484dd025af4ebb3f3387541316ce4349"
   end
 
   resource "cachetools" do
@@ -223,8 +223,8 @@ class Scoutsuite < Formula
   end
 
   resource "google-api-python-client" do
-    url "https:files.pythonhosted.orgpackages0269c0cec6be5878d4de161f64096edb3d4a2d1a838f036b8425ea8358d0dfb3google_api_python_client-2.172.0.tar.gz"
-    sha256 "dcb3b7e067154b2aa41f1776cf86584a5739c0ac74e6ff46fc665790dca0e6a6"
+    url "https:files.pythonhosted.orgpackages8f7e7c6e43e54f611f0f97f1678ea567fe06fecd545bd574db05e204e5b136fegoogle_api_python_client-2.173.0.tar.gz"
+    sha256 "b537bc689758f4be3e6f40d59a6c0cd305abafdea91af4bc66ec31d40c08c804"
   end
 
   resource "google-auth" do
@@ -418,13 +418,13 @@ class Scoutsuite < Formula
   end
 
   resource "oauthlib" do
-    url "https:files.pythonhosted.orgpackages6dfafbf4001037904031639e6bfbfc02badfc7e12f137a8afa254df6c4c8a670oauthlib-3.2.2.tar.gz"
-    sha256 "9859c40929662bec5d64f34d01c99e093149682a3f38915dc0655d5a633dd918"
+    url "https:files.pythonhosted.orgpackages0b5f19930f824ffeb0ad4372da4812c50edbd1434f678c90c2733e1188edfc63oauthlib-3.3.1.tar.gz"
+    sha256 "0f0f8aa759826a193cf66c12ea1af1637f87b9b4622d46e866952bb022e538c9"
   end
 
   resource "oci" do
-    url "https:files.pythonhosted.orgpackages66a66e9b94efabf8effc2060ee2e8f1b2f106f9c930052f7ab01fdb188177fadoci-2.154.1.tar.gz"
-    sha256 "44b034ca7c08e3809d9a4244b075af9fdd1d45cf8f05cee57722b59a15d3a04f"
+    url "https:files.pythonhosted.orgpackagesbfbed429f4fbd481670deb6613d4702eb135eca903a0001478e4dc6b78c9d904oci-2.154.2.tar.gz"
+    sha256 "4927255e3a573e56ad10a904d498fc8de306eee379157ecf7dcfef1cd53713b1"
   end
 
   resource "opentelemetry-api" do
@@ -563,8 +563,8 @@ class Scoutsuite < Formula
   end
 
   resource "urllib3" do
-    url "https:files.pythonhosted.orgpackages8a7816493d9c386d8e60e442a35feac5e00f0913c0f4b7c217c11e8ec2ff53e0urllib3-2.4.0.tar.gz"
-    sha256 "414bc6535b787febd7567804cc015fee39daab8ad86268f1310a9250697de466"
+    url "https:files.pythonhosted.orgpackages15229ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bcurllib3-2.5.0.tar.gz"
+    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
   end
 
   resource "websocket-client" do

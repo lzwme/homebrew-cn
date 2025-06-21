@@ -1,26 +1,19 @@
 class Infat < Formula
   desc "Tool to set default openers for file formats and url schemes on MacOS"
   homepage "https:github.comphilocalystinfat"
-  url "https:github.comphilocalystinfatarchiverefstagsv2.4.0.tar.gz"
-  sha256 "b0c0cad9dd995aff389fce829d62a61629fe8e07e7dd4a412ae010124c4cdb0d"
+  url "https:github.comphilocalystinfatarchiverefstagsv2.5.1.tar.gz"
+  sha256 "d25397531b436eaf27e9ceb111033a39fa0fe7f74fbb908f6740a0684d5a52f3"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d0c6702d59949d4907d64d028e6f905350a3d5651187b5735efc6f4b1ea03be5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2d50bd17575624e9009127232147d00e83d189a90f3d5c0b5b123b5945e14131"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "9f3e4319f818872bab982e1d4efafe6ee02a907f960a1b2aa2ca082dcd803924"
-    sha256 cellar: :any_skip_relocation, sonoma:        "55e949bf1cd745eb1cc1737538460ad1230236d09039cfbec30d202067d8109c"
-    sha256 cellar: :any_skip_relocation, ventura:       "587fe0d7f058a82c2f0a6d2e2226c097e0dfe22dad062b0c5770ac3e2bfc967c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6466855e24ccda05194b336d748c1d742e1527f7a6fef67b85b59c93f2fa6c67"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "422b1395feed2b3b4fca3b9b044ba4b3ec6d9109718c1e0cc2a20b27be3a2c26"
+    sha256 cellar: :any_skip_relocation, sonoma:        "38ea665b9aa1e64fa4d066a37c51116204ce3eade08cfdd76406346f703c643b"
   end
 
+  depends_on xcode: ["15.2", :build]
   depends_on :macos
-  uses_from_macos "swift" => :build
-
-  # fix swift syntax error, upstream pr ref, https:github.comphilocalystinfatpull25
-  patch do
-    url "https:github.comphilocalystinfatcommitdd050ef6f3891fe683a4f2f430c415cf0460fa2c.patch?full_index=1"
-    sha256 "4efa99053e2455a39e9aa89221172a5c687f34511a4ebadeab2e136d974d3afa"
-  end
+  depends_on macos: :sonoma
 
   def install
     system "swift", "build", "--disable-sandbox", "-c", "release", "--static-swift-stdlib"

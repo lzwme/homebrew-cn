@@ -6,17 +6,17 @@ class Twine < Formula
   url "https:files.pythonhosted.orgpackagesc8a26df94fc5c8e2170d21d7134a565c3a8fb84f9797c1dd65a5976aaf714418twine-6.1.0.tar.gz"
   sha256 "be324f6272eff91d07ee93f251edf232fc647935dd585ac003539b42404a8dbd"
   license "Apache-2.0"
-  revision 1
+  revision 2
   head "https:github.compypatwine.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "f267e6bc99b970880cb5a16ce31af3225a018f03f6ec7c0932477edbc5ab973c"
-    sha256 cellar: :any,                 arm64_sonoma:  "f96b176ea05a893e4b676117773e90fdeefc7a419e582fb45b643241a57cb748"
-    sha256 cellar: :any,                 arm64_ventura: "ee062b8566a05d13a21be21b7730ebfa79c162ab1f1c39d3c4eae9fccf4945e9"
-    sha256 cellar: :any,                 sonoma:        "2ce96b6f672b568ccacb2050d0929f08492a023756cc0165bfe4c73e67796941"
-    sha256 cellar: :any,                 ventura:       "498764326f10538107c289332277ac570b269c2daf4077fce1ae72ad64823d4d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2dc0cc2793ba0f7e5f6ccc4ee1d7f09cc797e2f6a5bfa96f584fdf53c38b0aad"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e780a1a9ab1c20d469849cc977a515a3dd58c02ed719eaa074ba7bd4dcd3d796"
+    sha256 cellar: :any,                 arm64_sequoia: "97e7aea69b7c5bab542b20d5fbdc49bf111440bb98b417ae7a9a35742fa1f413"
+    sha256 cellar: :any,                 arm64_sonoma:  "612fa506b1317a53a06f941fd5083f1843bcb2c64e568be47a8780e7a0bf6d0f"
+    sha256 cellar: :any,                 arm64_ventura: "e2ca42a5c645ff4ea11f616ada7f91619431f44fb4073c519c538f1d1b1c6ab7"
+    sha256 cellar: :any,                 sonoma:        "c5949503ab25c49f2e3d2e6bae22e3256a470e9204d72c23ee4adb5cf72a0418"
+    sha256 cellar: :any,                 ventura:       "8a28848ef5bf33d1bd57e4dc19bd5fa12eb9c038e8d6aec4e19ce69dc9d3f4ba"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8cc23007063de60f67ad594b5862c677d93877caf584e628b803754e702d1811"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "34c3b51b306fb56f6e6c7ae4341129645514fd3f06e36ec385d81a0caf210ddd"
   end
 
   depends_on "rust" => :build
@@ -119,8 +119,8 @@ class Twine < Formula
   end
 
   resource "urllib3" do
-    url "https:files.pythonhosted.orgpackages8a7816493d9c386d8e60e442a35feac5e00f0913c0f4b7c217c11e8ec2ff53e0urllib3-2.4.0.tar.gz"
-    sha256 "414bc6535b787febd7567804cc015fee39daab8ad86268f1310a9250697de466"
+    url "https:files.pythonhosted.orgpackages15229ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bcurllib3-2.5.0.tar.gz"
+    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
   end
 
   def install

@@ -6,18 +6,18 @@ class Sail < Formula
   url "https://files.pythonhosted.org/packages/1c/64/2af3a1a9dfa005dc91a22535a29071e9255efeacf7e61dbefee920d01571/sailed_io-0.10.9.tar.gz"
   sha256 "cae38b97fada34a7681872661342c82b317d877eab882830c59610734eb53bdf"
   license "GPL-3.0-only"
+  revision 1
 
   no_autobump! because: :requires_manual_review
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_sequoia: "64c4f621752f55d5c49fce2d2e7226f2ed76d6a66b7ad2c3b8dbd780a2d0262a"
-    sha256 cellar: :any,                 arm64_sonoma:  "cd7d6008737eb0e6f98147b14a5bd0cecf5d680af2342bf5b635e0c35ddb8d01"
-    sha256 cellar: :any,                 arm64_ventura: "c1bb8bf3cf10182d318d4fc986da4430fef370bee7e857ad1fd4716103f8b2bf"
-    sha256 cellar: :any,                 sonoma:        "88510b600c23437d54ee747f9a92a1492c7f2372c7e3350f95d488c415e43c98"
-    sha256 cellar: :any,                 ventura:       "32acc34eb90ddb5277fa4740588825c9ef0d01925a6398556870229494caf7aa"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "99c9b5dda4a0dd6e921babdb0ddcd35cbb163ee9d2fe9ded023a96bb0c88cc93"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9905f463b19c8c4f7885e8871fbb808785279e0c14e32b881f90723cb09b46f5"
+    sha256 cellar: :any,                 arm64_sequoia: "e9e5943c6f42f1fd2edbb9a09bc78d4b2df7328ed4e3591ec744eada3a9e886a"
+    sha256 cellar: :any,                 arm64_sonoma:  "0dcdee4bf5d8974310488fbd80137f419f032a5814b60a94ce2f94dbcd630f63"
+    sha256 cellar: :any,                 arm64_ventura: "4a87f1c0cd5d878b37c10c5c3e8a37f6a70c59cca9ea1c5dcc8c09140e2bc194"
+    sha256 cellar: :any,                 sonoma:        "292237d8539621d929d2ef8711e1ee9fd44884d346c19363f44a9e25a2646658"
+    sha256 cellar: :any,                 ventura:       "ba31b8c79d877f4e206e00945d02dfcf7887c2984be47c03b53ca5dea0a57cc8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "49e463474d1c03a05727ced97a4d9747d8a9eac2a4a939bf091e5a7da9ffc3ba"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "13efa98f4a9d42352730dac0d4a8fbac39a70f567399a924f703ba38987bfde8"
   end
 
   depends_on "rust" => :build
@@ -28,13 +28,13 @@ class Sail < Formula
   depends_on "python@3.13"
 
   resource "bcrypt" do
-    url "https://files.pythonhosted.org/packages/e4/7e/d95e7d96d4828e965891af92e43b52a4cd3395dc1c1ef4ee62748d0471d0/bcrypt-4.2.0.tar.gz"
-    sha256 "cf69eaf5185fd58f268f805b505ce31f9b9fc2d64b376642164e9244540c1221"
+    url "https://files.pythonhosted.org/packages/bb/5d/6d7433e0f3cd46ce0b43cd65e1db465ea024dbb8216fb2404e919c2ad77b/bcrypt-4.3.0.tar.gz"
+    sha256 "3a3fd2204178b6d2adcf09cb4f6426ffef54762577a7c9b54c159008cb288c18"
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/f2/4f/e1808dc01273379acc506d18f1504eb2d299bd4131743b9fc54d7be4df1e/charset_normalizer-3.4.0.tar.gz"
-    sha256 "223217c3d4f82c3ac5e29032b3f1c2eb0fb591b72161f86d93f5719079dae93e"
+    url "https://files.pythonhosted.org/packages/e4/33/89c2ced2b67d1c2a61c19c6751aa8902d46ce3dacb23600a283619f5a12d/charset_normalizer-3.4.2.tar.gz"
+    sha256 "5baececa9ecba31eff645232d59845c07aa030f0c81ee70184a90d35099a0e63"
   end
 
   resource "click" do
@@ -48,8 +48,8 @@ class Sail < Formula
   end
 
   resource "deprecated" do
-    url "https://files.pythonhosted.org/packages/92/14/1e41f504a246fc224d2ac264c227975427a85caf37c3979979edb9b1b232/Deprecated-1.2.14.tar.gz"
-    sha256 "e5323eb936458dccc2582dc6f9c322c852a775a27065ff2b0c4970b9d53d01b3"
+    url "https://files.pythonhosted.org/packages/98/97/06afe62762c9a8a86af0cfb7bfdab22a43ad17138b07af5b1a58442690a2/deprecated-1.2.18.tar.gz"
+    sha256 "422b6f6d859da6f2ef57857761bfb392480502a64c3028ca9bbe86085d72115d"
   end
 
   resource "fabric" do
@@ -58,8 +58,8 @@ class Sail < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/9d/db/3ef5bb276dae18d6ec2124224403d1d67bccdbefc17af4cc8f553e341ab1/filelock-3.16.1.tar.gz"
-    sha256 "c249fbfcd5db47e5e2d6d62198e565475ee65e4831e2561c8e313fa7eb961435"
+    url "https://files.pythonhosted.org/packages/0a/10/c23352565a6544bdc5353e0b15fc1c563352101f30e24bf500207a54df9a/filelock-3.18.0.tar.gz"
+    sha256 "adbc88eabb99d2fec8c9c1b229b171f18afa655400173ddc653d5d01501fb9f2"
   end
 
   resource "idna" do
@@ -78,13 +78,13 @@ class Sail < Formula
   end
 
   resource "jsonpickle" do
-    url "https://files.pythonhosted.org/packages/7b/c3/7b43eb963bfb3fa95385e677bb9d027c56d65d395d9f4bd52833affd1a4f/jsonpickle-3.3.0.tar.gz"
-    sha256 "ab467e601e5b1a1cd76f1819d014795165da071744ef30bf3786e9bc549de25a"
+    url "https://files.pythonhosted.org/packages/e4/a6/d07afcfdef402900229bcca795f80506b207af13a838d4d99ad45abf530c/jsonpickle-4.1.1.tar.gz"
+    sha256 "f86e18f13e2b96c1c1eede0b7b90095bbb61d99fedc14813c44dc2f361dbbae1"
   end
 
   resource "markupsafe" do
-    url "https://files.pythonhosted.org/packages/b4/d2/38ff920762f2247c3af5cbbbbc40756f575d9692d381d7c520f45deb9b8f/markupsafe-3.0.1.tar.gz"
-    sha256 "3e683ee4f5d0fa2dde4db77ed8dd8a876686e3fc417655c2ece9a90576905344"
+    url "https://files.pythonhosted.org/packages/b2/97/5d42485e71dfc078108a86d6de8fa46db44a1a9295e89c5d6d4a06e23a62/markupsafe-3.0.2.tar.gz"
+    sha256 "ee55d3edf80167e48ea11a923c7386f4669df67d7994554387f84e7d8b0a2bf0"
   end
 
   resource "packaging" do
@@ -128,13 +128,13 @@ class Sail < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/ed/63/22ba4ebfe7430b76388e7cd448d5478814d3032121827c12a2cc287e2260/urllib3-2.2.3.tar.gz"
-    sha256 "e7d814a81dad81e6caf2ec9fdedb284ecc9c73076b62654547cc64ccdcae26e9"
+    url "https://files.pythonhosted.org/packages/15/22/9ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bc/urllib3-2.5.0.tar.gz"
+    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
   end
 
   resource "wrapt" do
-    url "https://files.pythonhosted.org/packages/95/4c/063a912e20bcef7124e0df97282a8af3ff3e4b603ce84c481d6d7346be0a/wrapt-1.16.0.tar.gz"
-    sha256 "5f370f952971e7d17c7d1ead40e49f32345a7f7a5373571ef44d800d06b1899d"
+    url "https://files.pythonhosted.org/packages/c3/fc/e91cc220803d7bc4db93fb02facd8461c37364151b8494762cc88b0fbcef/wrapt-1.17.2.tar.gz"
+    sha256 "41388e9d4d1522446fe79d3213196bd9e3b301a336965b9e27ca2788ebd122f3"
   end
 
   def install

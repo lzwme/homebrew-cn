@@ -6,17 +6,17 @@ class Subliminal < Formula
   url "https:files.pythonhosted.orgpackages50fc24c86cc9bf5ef2543a14cbff1e71a81165e760e2dfc61814ac3d7d9bfa9dsubliminal-2.3.2.tar.gz"
   sha256 "e9adee230b8bf46e27214da71ada18a3a0107d968005a25be3db5bc5855fb433"
   license "MIT"
-  revision 1
+  revision 2
   head "https:github.comDiaoulsubliminal.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "714aa3e649d1b327880692e595b250dd4d727689ccd532053b959d3eb3052601"
-    sha256 cellar: :any,                 arm64_sonoma:  "60751318c6c71962743245dfdf7f807032039eb2eefa861bb647e6dddbd6efd0"
-    sha256 cellar: :any,                 arm64_ventura: "55fe4daf22a84f1fa32c78b0b1ef1897ff6d67d9c7c6714862c0a84bc2e2ef1c"
-    sha256 cellar: :any,                 sonoma:        "981cf832217c4cb2e7a25c7357da43472e73aff72bc54731af840b189020ab85"
-    sha256 cellar: :any,                 ventura:       "b23975960f3407dbc77e6d474a29c3041ba289651462ebb17b353e96f8cb3323"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2c52de75f72894350779953e81f7f5a25592e8d2392cd659c5567e59e496e3ea"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d047122d0a91a4f13454e701a2105115c43ddb65dd526a0690409336c680cfb0"
+    sha256 cellar: :any,                 arm64_sequoia: "7aa070c9a3d2426dffc709da012ae80e6419dc35e1eb372d177eedc70eb35c55"
+    sha256 cellar: :any,                 arm64_sonoma:  "b128e27859ae0d5a7ebd82e2a4d3e5d1568db7f77378b9efbc2b51893c7844aa"
+    sha256 cellar: :any,                 arm64_ventura: "3d9180133e5cd7f212208636d4155bd2f1c32fae3968a859efaa74d3638f0006"
+    sha256 cellar: :any,                 sonoma:        "3b937fd8d1113159d277dedf4a066f0b43e589a2ba07882eb24409186844ec7d"
+    sha256 cellar: :any,                 ventura:       "6fd7a2e29599eb5c79510ea84336de029ec40066953929792c0b94da24820530"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8a92b71f800b6cc8459f38ca72494911ada8e6deaf16f38654fc1dd3f260305a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a9ff97cabcf1083019380583ca4b454183c6c761344fc6ff0c1a95a3b53b767c"
   end
 
   depends_on "certifi"
@@ -184,8 +184,8 @@ class Subliminal < Formula
   end
 
   resource "urllib3" do
-    url "https:files.pythonhosted.orgpackages8a7816493d9c386d8e60e442a35feac5e00f0913c0f4b7c217c11e8ec2ff53e0urllib3-2.4.0.tar.gz"
-    sha256 "414bc6535b787febd7567804cc015fee39daab8ad86268f1310a9250697de466"
+    url "https:files.pythonhosted.orgpackages15229ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bcurllib3-2.5.0.tar.gz"
+    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
   end
 
   def install

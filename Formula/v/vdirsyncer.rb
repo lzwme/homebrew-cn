@@ -6,17 +6,17 @@ class Vdirsyncer < Formula
   url "https:files.pythonhosted.orgpackageseec250eb6b430f447c062ae3cd07d1a354d768bdb1443580bd4ae16ec8c8296dvdirsyncer-0.19.3.tar.gz"
   sha256 "e437851feb985dec3544654f8f9cf6dd109b0b03f7e19956086603092ffeb28f"
   license "BSD-3-Clause"
-  revision 2
+  revision 3
   head "https:github.compimutilsvdirsyncer.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "007361e089ac71118de7526541e993302c8cbb2ee26b37d07c2c67a118001b94"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "242a983df10c717516ee4fca76cd64faaba3586813ea9c41416a80a526517b8e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "66e6b1b53186efb6780bbf90ba9a31072bf1b958be572182561fbf2a598f0acf"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b3310056836acc1d924a739eaece33e7a09f55e79e3826e4f52fdfccf4c8aad4"
-    sha256 cellar: :any_skip_relocation, ventura:       "a3369f20bff63141d19556665530b84fb5bb932f11969e13cc2f1305ee68e0b1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "85f80daac07887385ecf887646e601bb7c9605471720d5493958edb97245565b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bf8ccf908f599e603ec7fb308aa8ff86fe21bd1ea47452cbd261115fa27b111b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "43138c7655b5032094d75ae8757b62f0e4c404b69ba2305d1e9c8698e7d20f82"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c9ef5a3f46004aa33770b661faa36ba9e0abf05273c1b5861839b56e434aa51b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "972e52600fb94bd5898202c434526cd419eaeb4c99b7f6cba072428b226dcdc1"
+    sha256 cellar: :any_skip_relocation, sonoma:        "dafa07a55e5ff77fd0a7387361987c97c2c6a88c8045af12dbee817b5220e93d"
+    sha256 cellar: :any_skip_relocation, ventura:       "91ad8c329283dd29e353c6291360bd72b23cedc91dba297f20f8b43c3b1afdb1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4d353e8c2e836188e2c0da766bf5e8025fac38ef35eebace081db69f713212bd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "148b89340918a3c863b26372f1a38e3e6e28ef248817b820339c66ae212b44ab"
   end
 
   depends_on "certifi"
@@ -28,8 +28,8 @@ class Vdirsyncer < Formula
   end
 
   resource "aiohttp" do
-    url "https:files.pythonhosted.orgpackagesf284ea27e6ad14747d8c51afe201fb88a5c8282b6278256d30a6f71f730add88aiohttp-3.12.12.tar.gz"
-    sha256 "05875595d2483d96cb61fa9f64e75262d7ac6251a7e3c811d8e26f7d721760bd"
+    url "https:files.pythonhosted.orgpackages426eab88e7cb2a4058bed2f7870276454f85a7c56cd6da79349eb314fc7bbcaaaiohttp-3.12.13.tar.gz"
+    sha256 "47e2da578528264a12e4e3dd8dd72a7289e5f812758fe086473fab037a10fcce"
   end
 
   resource "aiohttp-oauthlib" do
@@ -83,13 +83,13 @@ class Vdirsyncer < Formula
   end
 
   resource "multidict" do
-    url "https:files.pythonhosted.orgpackages912fa3470242707058fe856fe59241eee5635d79087100b7042a867368863a27multidict-6.4.4.tar.gz"
-    sha256 "69ee9e6ba214b5245031b76233dd95408a0fd57fdb019ddcc1ead4790932a8e8"
+    url "https:files.pythonhosted.orgpackages46b559f27b4ce9951a4bce56b88ba5ff5159486797ab18863f2b4c1c5e8465bdmultidict-6.5.0.tar.gz"
+    sha256 "942bd8002492ba819426a8d7aefde3189c1b87099cdf18aaaefefcf7f3f7b6d2"
   end
 
   resource "oauthlib" do
-    url "https:files.pythonhosted.orgpackages6dfafbf4001037904031639e6bfbfc02badfc7e12f137a8afa254df6c4c8a670oauthlib-3.2.2.tar.gz"
-    sha256 "9859c40929662bec5d64f34d01c99e093149682a3f38915dc0655d5a633dd918"
+    url "https:files.pythonhosted.orgpackages0b5f19930f824ffeb0ad4372da4812c50edbd1434f678c90c2733e1188edfc63oauthlib-3.3.1.tar.gz"
+    sha256 "0f0f8aa759826a193cf66c12ea1af1637f87b9b4622d46e866952bb022e538c9"
   end
 
   resource "propcache" do
@@ -103,8 +103,8 @@ class Vdirsyncer < Formula
   end
 
   resource "urllib3" do
-    url "https:files.pythonhosted.orgpackages8a7816493d9c386d8e60e442a35feac5e00f0913c0f4b7c217c11e8ec2ff53e0urllib3-2.4.0.tar.gz"
-    sha256 "414bc6535b787febd7567804cc015fee39daab8ad86268f1310a9250697de466"
+    url "https:files.pythonhosted.orgpackages15229ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bcurllib3-2.5.0.tar.gz"
+    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
   end
 
   resource "yarl" do

@@ -9,16 +9,16 @@ class Jupyterlab < Formula
     "BSD-3-Clause",
     "MIT", # semver.py
   ]
-  revision 2
+  revision 3
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "73ef3afa324330b81d0a43164608693b5cd1ca7c810c33fb68520c441e023132"
-    sha256 cellar: :any,                 arm64_sonoma:  "ddd36ec9820f5d0ffa4e08b38c5ea282b335458267bac89e52f4e2ddb8272260"
-    sha256 cellar: :any,                 arm64_ventura: "5b6c6cf6f395db614f1c766e41ddad9a9f4c4316e606b0a3d25909453bb82e88"
-    sha256 cellar: :any,                 sonoma:        "fefa0a6097de47235272478f4bdf9cf5efc2d7f48259f43953740cf7089b9081"
-    sha256 cellar: :any,                 ventura:       "4d1d52c30232265bb7695dd6aa8823fbf1e0957002660c499c5d4ad3de6c23fc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "32bce5311ea8b07b4d67339bbf0dd28475a1268b64c5e94fdd6cda2d6275fa39"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4891d939b214250cb97c174483f1f37e896592d2dbedd78650afd2c7a53b8c4d"
+    sha256 cellar: :any,                 arm64_sequoia: "5fe0ce0818286e20a9ee1826ff8493ac23bf5b4555168b7a25cc6daade364869"
+    sha256 cellar: :any,                 arm64_sonoma:  "b0cf4a2cbdc9959e8714b5930fc23dfb9f9cd8e41acf253194bb5ab8d9c14663"
+    sha256 cellar: :any,                 arm64_ventura: "991fbc47a1a64929b062ea480fb53883072290a63162708dd5044f50e598798f"
+    sha256 cellar: :any,                 sonoma:        "5c3d21abb329c1eef40b5b6a3fcaef4fb82f485ed5fbe50f32c689ac4d72b41d"
+    sha256 cellar: :any,                 ventura:       "f6d497443608e39d203d1f133a1d8af154ec84ebd34ad20e11d470d05e05af38"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cfb5c662ba648f4d631ffc0513694b68b25a04c9918e7eb234024a0b435194a0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bc16f603e84cd687c68b6060735fde964b9e223bbbf36ae6c138417d1e07d5d2"
   end
 
   depends_on "cmake" => :build # for ipykernel
@@ -401,8 +401,8 @@ class Jupyterlab < Formula
   end
 
   resource "pyzmq" do
-    url "https:files.pythonhosted.orgpackagesb111b9213d25230ac18a71b39b3723494e57adebe36e066397b961657b3b41c1pyzmq-26.4.0.tar.gz"
-    sha256 "4bd13f85f80962f91a651a7356fe0472791a5f7a92f227822b5acf44795c626d"
+    url "https:files.pythonhosted.orgpackagesf10650a4e9648b3e8b992bef8eb632e457307553a89d294103213cfd47b3da69pyzmq-27.0.0.tar.gz"
+    sha256 "b1f08eeb9ce1510e6939b6e5dcd46a17765e2333daae78ecf4606808442e52cf"
   end
 
   resource "referencing" do
@@ -501,8 +501,8 @@ class Jupyterlab < Formula
   end
 
   resource "urllib3" do
-    url "https:files.pythonhosted.orgpackages8a7816493d9c386d8e60e442a35feac5e00f0913c0f4b7c217c11e8ec2ff53e0urllib3-2.4.0.tar.gz"
-    sha256 "414bc6535b787febd7567804cc015fee39daab8ad86268f1310a9250697de466"
+    url "https:files.pythonhosted.orgpackages15229ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bcurllib3-2.5.0.tar.gz"
+    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
   end
 
   resource "wcwidth" do

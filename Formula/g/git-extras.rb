@@ -1,13 +1,13 @@
 class GitExtras < Formula
   desc "Small git utilities"
   homepage "https:github.comtjgit-extras"
-  url "https:github.comtjgit-extrasarchiverefstags7.3.0.tar.gz"
-  sha256 "89bae1a05731f4aaafb04066ea0186e181117b74fcfbf89d686cf205459220b7"
+  url "https:github.comtjgit-extrasarchiverefstags7.4.0.tar.gz"
+  sha256 "aaab3bab18709ec6825a875961e18a00e0c7d8214c39d6e3a63aeb99fa11c56e"
   license "MIT"
   head "https:github.comtjgit-extras.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "0c40b2cdc071464b0edf01e763b279111aa8ec557132a25d3385f7ee92783623"
+    sha256 cellar: :any_skip_relocation, all: "ab7f49444bdd81c79d987f8e86668b225d6cc74f01b09ac91f7b35cde0a9bb98"
   end
 
   on_linux do
