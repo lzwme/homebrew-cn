@@ -82,6 +82,6 @@ class Acronym < Formula
   end
 
   test do
-    assert_match "THERMOS", shell_output("#{bin}acronym 'The missing package manager for macOS (or Linux)'")
+    assert_match "TEMPORAL", shell_output("#{bin}acronym 'The missing package manager for macOS (or Linux)'")
   end
 end

@@ -10,19 +10,18 @@ class ReconNg < Formula
   url "https:github.comlanmaster53recon-ngarchiverefstagsv5.1.2.tar.gz"
   sha256 "18d05030b994c9b37f624628251d3376d590f3d1eec155f67aca88fa5f3490cc"
   license "GPL-3.0-only"
-  revision 1
+  revision 2
 
   no_autobump! because: :requires_manual_review
 
   bottle do
-    rebuild 7
-    sha256 cellar: :any,                 arm64_sequoia: "73ef8f988840d76008deb366dcb3540b381b9344ea2dd1633262c2289939771f"
-    sha256 cellar: :any,                 arm64_sonoma:  "9a8cc5fc58f28ddedd395df597f23d970be791a905c91076edeb23d11436f953"
-    sha256 cellar: :any,                 arm64_ventura: "b4f0da3f71e8a0d94b6d493c90c97df2cfb2cfb1b0d49fb33c6339a6fae27078"
-    sha256 cellar: :any,                 sonoma:        "1f46df526536feb03ea35a060473d3c40603a75e144179ae401afec18676e19e"
-    sha256 cellar: :any,                 ventura:       "8bdbc862e712b72ed9c9c57ee97fe633b931978a7fc21aee8a9fc88442d41123"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "77f4480e02a113babc610250e12ba8d5f1a5f773ea1ce0c658ab10c69e368b5b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0f0239b38ecb651e92c002fdaaa8c350e55a035eb2b6f5ec595643aff81759b4"
+    sha256 cellar: :any,                 arm64_sequoia: "b3022b72e969dd9c1a810018fb105d5171d27a0a0e0eb5bd4cee62bdade8f4f6"
+    sha256 cellar: :any,                 arm64_sonoma:  "763a7f192d9242141a0e77fe2e778a032b2f0fa09218463efcbad848f0dcacba"
+    sha256 cellar: :any,                 arm64_ventura: "5ea8640077ef223ae502943f6399e9962c753d8578637471b648c6f2c332df64"
+    sha256 cellar: :any,                 sonoma:        "65f4d04ec50b741832ee4fa0717be5f66fe62136a0f687631cafcb9be168939d"
+    sha256 cellar: :any,                 ventura:       "5d817070eeb81592672f521a2b6f9fd74f4a2851a54b7c751239ca825b8c9a9d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ee1e6d9f356669caff93850da5fddf512b8a6c94b2663628766c23ee297ec4a5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f3cfb871d04bb9a3eccae1f03c452c376d75a05dfe5b22fd1e67eea41f0741ba"
   end
 
   depends_on "rust" => :build # for rpds-py
@@ -34,28 +33,28 @@ class ReconNg < Formula
   uses_from_macos "libxslt"
 
   resource "aniso8601" do
-    url "https:files.pythonhosted.orgpackagescb72be3db445b03944bfbb2b02b82d00cb2a2bcf96275c4543f14bf60fa79e12aniso8601-9.0.1.tar.gz"
-    sha256 "72e3117667eedf66951bb2d93f4296a56b94b078a8a95905a052611fb3f1b973"
+    url "https:files.pythonhosted.orgpackages8b8d52179c4e3f1978d3d9a285f98c706642522750ef343e9738286130423730aniso8601-10.0.1.tar.gz"
+    sha256 "25488f8663dd1528ae1f54f94ac1ea51ae25b4d531539b8bc707fed184d16845"
   end
 
   resource "attrs" do
-    url "https:files.pythonhosted.orgpackagesfc0faafca9af9315aee06a89ffde799a10a582fe8de76c563ee80bbcdc08b3fbattrs-24.2.0.tar.gz"
-    sha256 "5cfb1b9148b5b086569baec03f20d7b6bf3bcacc9a42bebf87ffaaca362f6346"
+    url "https:files.pythonhosted.orgpackages5ab01367933a8532ee6ff8d63537de4f1177af4bff9f3e829baf7331f595bb24attrs-25.3.0.tar.gz"
+    sha256 "75d7cefc7fb576747b2c81b4442d4d4a1ce0900973527c011d1030fd3bf4af1b"
   end
 
   resource "blinker" do
-    url "https:files.pythonhosted.orgpackages1e57a6a1721eff09598fb01f3c7cda070c1b6a0f12d63c83236edf79a440abccblinker-1.8.2.tar.gz"
-    sha256 "8f77b09d3bf7c795e969e9486f39c2c5e9c39d4ee07424be2bc594ece9642d83"
+    url "https:files.pythonhosted.orgpackages21289b3f50ce0e048515135495f198351908d99540d69bfdc8c1d15b73dc55ceblinker-1.9.0.tar.gz"
+    sha256 "b4ce2265a7abece45e7cc896e98dbebe6cead56bcf805a3d23136d145f5445bf"
   end
 
   resource "charset-normalizer" do
-    url "https:files.pythonhosted.orgpackagesf24fe1808dc01273379acc506d18f1504eb2d299bd4131743b9fc54d7be4df1echarset_normalizer-3.4.0.tar.gz"
-    sha256 "223217c3d4f82c3ac5e29032b3f1c2eb0fb591b72161f86d93f5719079dae93e"
+    url "https:files.pythonhosted.orgpackagese43389c2ced2b67d1c2a61c19c6751aa8902d46ce3dacb23600a283619f5a12dcharset_normalizer-3.4.2.tar.gz"
+    sha256 "5baececa9ecba31eff645232d59845c07aa030f0c81ee70184a90d35099a0e63"
   end
 
   resource "click" do
-    url "https:files.pythonhosted.orgpackages96d3f04c7bfcf5c1862a2a5b845c6b2b360488cf47af55dfa79c98f6a6bf98b5click-8.1.7.tar.gz"
-    sha256 "ca9853ad459e787e2192211578cc907e7594e294c7ccc834310722b41b9ca6de"
+    url "https:files.pythonhosted.orgpackages606c8ca2efa64cf75a977a0d7fac081354553ebe483345c734fb6b6515d96bbcclick-8.2.1.tar.gz"
+    sha256 "27c491cc05d968d271d5a1db13e3b5a184636d9d930f148c50b038f0d0646202"
   end
 
   resource "dicttoxml" do
@@ -74,8 +73,8 @@ class ReconNg < Formula
   end
 
   resource "flask" do
-    url "https:files.pythonhosted.orgpackages41e1d104c83026f8d35dfd2c261df7d64738341067526406b40190bc063e829aflask-3.0.3.tar.gz"
-    sha256 "ceb27b0af3823ea2737928a4d99d125a06175b8512c445cbd9a9ce200ef76842"
+    url "https:files.pythonhosted.orgpackagesc0dee47735752347f4128bcf354e0da07ef311a78244eba9e3dc1d4a5ab21a98flask-3.1.1.tar.gz"
+    sha256 "284c7b8f2f58cb737f0cf1c30fd7eaf0ccfcde196099d24ecede3fc2005aa59e"
   end
 
   resource "flask-restful" do
@@ -99,28 +98,28 @@ class ReconNg < Formula
   end
 
   resource "jinja2" do
-    url "https:files.pythonhosted.orgpackagesed5539036716d19cab0747a5020fc7e907f362fbf48c984b14e62127f7e68e5djinja2-3.1.4.tar.gz"
-    sha256 "4a3aee7acbbe7303aede8e9648d13b8bf88a429282aa6122a993f0ac800cb369"
+    url "https:files.pythonhosted.orgpackagesdfbff7da0350254c0ed7c72f3e33cef02e048281fec7ecec5f032d4aac52226bjinja2-3.1.6.tar.gz"
+    sha256 "0137fb05990d35f1275a587e9aee6d56da821fc83491a0fb838183be43f66d6d"
   end
 
   resource "jsonschema" do
-    url "https:files.pythonhosted.orgpackages382e03362ee4034a4c917f697890ccd4aec0800ccf9ded7f511971c75451deecjsonschema-4.23.0.tar.gz"
-    sha256 "d71497fef26351a33265337fa77ffeb82423f3ea21283cd9467bb03999266bc4"
+    url "https:files.pythonhosted.orgpackagesbfd31cf5326b923a53515d8f3a2cd442e6d7e94fcc444716e879ea70a0ce3177jsonschema-4.24.0.tar.gz"
+    sha256 "0b4e8069eb12aedfa881333004bccaec24ecef5a8a6a4b6df142b2cc9599d196"
   end
 
   resource "jsonschema-specifications" do
-    url "https:files.pythonhosted.orgpackages10db58f950c996c793472e336ff3655b13fbcf1e3b359dcf52dcf3ed3b52c352jsonschema_specifications-2024.10.1.tar.gz"
-    sha256 "0f38b83639958ce1152d02a7f062902c41c8fd20d558b0c34344292d417ae272"
+    url "https:files.pythonhosted.orgpackagesbfce46fbd9c8119cfc3581ee5643ea49464d168028cfb5caff5fc0596d0cf914jsonschema_specifications-2025.4.1.tar.gz"
+    sha256 "630159c9f4dbea161a6a2205c3011cc4f18ff381b189fff48bb39b9bf26ae608"
   end
 
   resource "lxml" do
-    url "https:files.pythonhosted.orgpackagese76b20c3a4b24751377aaa6307eb230b66701024012c29dd374999cc92983269lxml-5.3.0.tar.gz"
-    sha256 "4e109ca30d1edec1ac60cdbe341905dc3b8f55b16855e03a54aaf59e51ec8c6f"
+    url "https:files.pythonhosted.orgpackages763d14e82fc7c8fb1b7761f7e748fd47e2ec8276d137b6acfe5a4bb73853e08flxml-5.4.0.tar.gz"
+    sha256 "d12832e1dbea4be280b22fd0ea7c9b87f0d8fc51ba06e92dc62d52f804f78ebd"
   end
 
   resource "markupsafe" do
-    url "https:files.pythonhosted.orgpackagesb4d238ff920762f2247c3af5cbbbbc40756f575d9692d381d7c520f45deb9b8fmarkupsafe-3.0.1.tar.gz"
-    sha256 "3e683ee4f5d0fa2dde4db77ed8dd8a876686e3fc417655c2ece9a90576905344"
+    url "https:files.pythonhosted.orgpackagesb2975d42485e71dfc078108a86d6de8fa46db44a1a9295e89c5d6d4a06e23a62markupsafe-3.0.2.tar.gz"
+    sha256 "ee55d3edf80167e48ea11a923c7386f4669df67d7994554387f84e7d8b0a2bf0"
   end
 
   resource "mechanize" do
@@ -129,18 +128,18 @@ class ReconNg < Formula
   end
 
   resource "mistune" do
-    url "https:files.pythonhosted.orgpackagesefc8f0173fe3bf85fd891aee2e7bcd8207dfe26c2c683d727c5a6cc3aec7b628mistune-3.0.2.tar.gz"
-    sha256 "fc7f93ded930c92394ef2cb6f04a8aabab4117a91449e72dcc8dfa646a508be8"
+    url "https:files.pythonhosted.orgpackagesc479bda47f7dd7c3c55770478d6d02c9960c430b0cf1773b72366ff89126ea31mistune-3.1.3.tar.gz"
+    sha256 "a7035c21782b2becb6be62f8f25d3df81ccb4d6fa477a6525b15af06539f02a0"
   end
 
   resource "packaging" do
-    url "https:files.pythonhosted.orgpackages516550db4dda066951078f0a96cf12f4b9ada6e4b811516bf0262c0f4f7064d4packaging-24.1.tar.gz"
-    sha256 "026ed72c8ed3fcce5bf8950572258698927fd1dbda10a5e981cdf0ac37f4f002"
+    url "https:files.pythonhosted.orgpackagesa1d41fc4078c65507b51b96ca8f8c3ba19e6a61c8253c72794544580a7b6c24dpackaging-25.0.tar.gz"
+    sha256 "d443872c98d677bf60f6a1f2f8c1cb748e8fe762d2bf9d3148b5599295b0fc4f"
   end
 
   resource "pytz" do
-    url "https:files.pythonhosted.orgpackages3a313c70bf7603cc2dca0f19bdc53b4537a797747a58875b552c8c413d963a3fpytz-2024.2.tar.gz"
-    sha256 "2aa355083c50a0f93fa581709deac0c9ad65cca8a9e9beac660adcbd493c798a"
+    url "https:files.pythonhosted.orgpackagesf8bfabbd3cdfb8fbc7fb3d4d38d320f2441b1e7cbe29be4f23797b4a2b5d8aacpytz-2025.2.tar.gz"
+    sha256 "360b9e3dbb49a209c21ad61809c7fb453643e048b38924c765813546746e81c3"
   end
 
   resource "pyyaml" do
@@ -149,33 +148,33 @@ class ReconNg < Formula
   end
 
   resource "redis" do
-    url "https:files.pythonhosted.orgpackagese058dcf97c3c09d429c3bb830d6075322256da3dba42df25359bd1c82b442d20redis-5.1.1.tar.gz"
-    sha256 "f6c997521fedbae53387307c5d0bf784d9acc28d9f1d058abeac566ec4dbed72"
+    url "https:files.pythonhosted.orgpackagesea9a0551e01ba52b944f97480721656578c8a7c46b51b99d66814f85fe3a4f3eredis-6.2.0.tar.gz"
+    sha256 "e821f129b75dde6cb99dd35e5c76e8c49512a5a0d8dfdc560b2fbd44b85ca977"
   end
 
   resource "referencing" do
-    url "https:files.pythonhosted.orgpackages995b73ca1f8e72fff6fa52119dbd185f73a907b1989428917b24cff660129b6dreferencing-0.35.1.tar.gz"
-    sha256 "25b42124a6c8b632a425174f24087783efb348a6f1e0008e63cd4466fedf703c"
+    url "https:files.pythonhosted.orgpackages2fdb98b5c277be99dd18bfd91dd04e1b759cad18d1a338188c936e92f921c7e2referencing-0.36.2.tar.gz"
+    sha256 "df2e89862cd09deabbdba16944cc3f10feb6b3e6f18e902f7cc25609a34775aa"
   end
 
   resource "requests" do
-    url "https:files.pythonhosted.orgpackages63702bf7780ad2d390a8d301ad0b550f1581eadbd9a20f896afe06353c2a2913requests-2.32.3.tar.gz"
-    sha256 "55365417734eb18255590a9ff9eb97e9e1da868d4ccd6402399eaf68af20a760"
+    url "https:files.pythonhosted.orgpackagese10a929373653770d8a0d7ea76c37de6e41f11eb07559b103b1c02cafb3f7cf8requests-2.32.4.tar.gz"
+    sha256 "27d0316682c8a29834d3264820024b62a36942083d52caf2f14c0591336d3422"
   end
 
   resource "rpds-py" do
-    url "https:files.pythonhosted.orgpackages5564b693f262791b818880d17268f3f8181ef799b0d187f6f731b1772e05a29arpds_py-0.20.0.tar.gz"
-    sha256 "d72a210824facfdaf8768cf2d7ca25a042c30320b3020de2fa04640920d4e121"
+    url "https:files.pythonhosted.orgpackages8ca660184b7fc00dd3ca80ac635dd5b8577d444c57e8e8742cecabfacb829921rpds_py-0.25.1.tar.gz"
+    sha256 "8960b6dac09b62dac26e75d7e2c4a22efb835d827a7278c34f72b2b84fa160e3"
   end
 
   resource "rq" do
-    url "https:files.pythonhosted.orgpackagesc51da020e8f3559293635dd6283d037bfc15f866136498da3db1e5416c65773drq-1.16.2.tar.gz"
-    sha256 "5c5b9ad5fbaf792b8fada25cc7627f4d206a9a4455aced371d4f501cc3f13b34"
+    url "https:files.pythonhosted.orgpackages83f2af00f6c89131ccd8dfe408e75ea631fd0c572785d7d69701b0a656171da0rq-2.4.0.tar.gz"
+    sha256 "750bab5dbb7cf1ec8a0aa2ebe8949472fa58fc121afd446c7bf5f7797f5e0655"
   end
 
   resource "six" do
-    url "https:files.pythonhosted.orgpackages7139171f1c67cd00715f190ba0b100d606d440a28c93c7714febeca8b79af85esix-1.16.0.tar.gz"
-    sha256 "1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926"
+    url "https:files.pythonhosted.orgpackages94e7b2c673351809dca68a0e064b6af791aa332cf192da575fd474ed7d6f16a2six-1.17.0.tar.gz"
+    sha256 "ff70335d468e7eb6ec65b95b99d3a2836546063f63acc5171de367e834932a81"
   end
 
   resource "unicodecsv" do
@@ -184,8 +183,8 @@ class ReconNg < Formula
   end
 
   resource "urllib3" do
-    url "https:files.pythonhosted.orgpackagesed6322ba4ebfe7430b76388e7cd448d5478814d3032121827c12a2cc287e2260urllib3-2.2.3.tar.gz"
-    sha256 "e7d814a81dad81e6caf2ec9fdedb284ecc9c73076b62654547cc64ccdcae26e9"
+    url "https:files.pythonhosted.orgpackages15229ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bcurllib3-2.5.0.tar.gz"
+    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
   end
 
   resource "webencodings" do
@@ -194,13 +193,13 @@ class ReconNg < Formula
   end
 
   resource "werkzeug" do
-    url "https:files.pythonhosted.orgpackages0fe26dbcaab07560909ff8f654d3a2e5a60552d937c909455211b1b36d7101dcwerkzeug-3.0.4.tar.gz"
-    sha256 "34f2371506b250df4d4f84bfe7b0921e4762525762bbd936614909fe25cd7306"
+    url "https:files.pythonhosted.orgpackages9f6983029f1f6300c5fb2471d621ab06f6ec6b3324685a2ce0f9777fd4a8b71ewerkzeug-3.1.3.tar.gz"
+    sha256 "60723ce945c19328679790e3282cc758aa4a6040e4bb330f53d30fa546d44746"
   end
 
   resource "xlsxwriter" do
-    url "https:files.pythonhosted.orgpackagesa6c3b36fa44a0610a0f65d2e65ba6a262cbe2554b819f1449731971f7c16ea3cXlsxWriter-3.2.0.tar.gz"
-    sha256 "9977d0c661a72866a61f9f7a809e25ebbb0fb7036baa3b9fe74afcfca6b3cb8c"
+    url "https:files.pythonhosted.orgpackagesa7477704bac42ac6fe1710ae099b70e6a1e68ed173ef14792b647808c357da43xlsxwriter-3.2.5.tar.gz"
+    sha256 "7e88469d607cdc920151c0ab3ce9cf1a83992d4b7bc730c5ffdd1a12115a7dbe"
   end
 
   # Replace `imp` for python 3.12: https:github.comlanmaster53recon-ngpull204

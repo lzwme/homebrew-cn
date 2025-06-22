@@ -14,6 +14,7 @@ class AbiDumper < Formula
   end
 
   deprecate! date: "2024-06-05", because: :unmaintained
+  disable! date: "2025-06-21", because: :unmaintained
 
   depends_on "abi-compliance-checker"
   depends_on "elfutils"

@@ -1,21 +1,21 @@
 class Noir < Formula
   desc "Attack surface detector that identifies endpoints by static analysis"
   homepage "https:owasp.orgwww-project-noir"
-  url "https:github.comowasp-noirnoirarchiverefstagsv0.21.1.tar.gz"
-  sha256 "378074556c31902c8db5d400e5be7cb0cee2bc223ac64ab88d381d5f9772e046"
+  url "https:github.comowasp-noirnoirarchiverefstagsv0.22.0.tar.gz"
+  sha256 "9e4f2e58ff9920df4f690829c3a30707549b9e4c5d719abfb0c092d6fe5e073e"
   license "MIT"
   head "https:github.comowasp-noirnoir.git", branch: "main"
 
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "7b5a6a842c5f4ae0628d686a9966c5415ef9deda5a138b217a5597bab5fdfd5d"
-    sha256 cellar: :any,                 arm64_sonoma:  "66c2f471904e9893c411a1241f38ba348e8342d7cea57586bfb5444fbd7e0e60"
-    sha256 cellar: :any,                 arm64_ventura: "c40d0585aa4035aaff8a090dce87add09dacfd31777aa8add43ec6abea92130f"
-    sha256 cellar: :any,                 sonoma:        "5ac7dad66053613b84a5a241ffd3411c7c7ab7081d63ed6182b2b851c4889bf1"
-    sha256 cellar: :any,                 ventura:       "081ce4e39b7c104804aec07dc5111cc0af483afcab1f00ffd83eb2757cb9d685"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fb4a21ac3352a72449b2158f1b1d530e7420fed8423a5d08a435a5676ef40d46"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dd6aa1ac39ad9e1dd29686452fba106f50b2b268fe717014a57635fe331bdfe4"
+    sha256 cellar: :any,                 arm64_sequoia: "1f07a47ee6cba9882fefd64ec929c2fab0db6236de7df0f156396272854a1270"
+    sha256 cellar: :any,                 arm64_sonoma:  "109cbac29ea58cac8cbfaf0f0d9b57cb567dff7acc3f82cdd4c6658121bceb76"
+    sha256 cellar: :any,                 arm64_ventura: "7e6666c5a26730f5f9980922e0fc3ee58117a5aee7f4d09b75874301d39e7131"
+    sha256 cellar: :any,                 sonoma:        "d4b4c2deb9a9355638451b07a79851de9d0a4728192833a70ba9753928a9d513"
+    sha256 cellar: :any,                 ventura:       "911fa0aa3672a965af96c4f83e46a1b4670225a64a0704eda3cce991c30eb489"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "573e6c05bc6a6e9b6f52ee9139289a003c7a3f012ec869093c94d650959a1956"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7a2ef22e85532b56f587a18d89da0db54cfe2e6af8d008ae7c1ca2d753a33647"
   end
 
   depends_on "crystal" => :build

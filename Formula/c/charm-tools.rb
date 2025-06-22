@@ -6,15 +6,15 @@ class CharmTools < Formula
   url "https:files.pythonhosted.orgpackagesda8c26dcc9b99c6fbacd989f5d54b7a3a976cfa5b8ac26f6992d134091add085charm_tools-3.0.8.tar.gz"
   sha256 "ad1e8aaf8f6aece19f3f7db1d45010b471be998b54a0b2861f24b62912f24b9d"
   license "GPL-3.0-only"
+  revision 1
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_sequoia: "a84b9723f0d44259ab4d50cac76af7786870e9c05e14ea5d63d3b14d914a8522"
-    sha256 cellar: :any,                 arm64_sonoma:  "910a277a7dca782c8e6426ab34cacbfe358c9c72b2b3526b99f078cdbd5efdf4"
-    sha256 cellar: :any,                 arm64_ventura: "942c472efe4211cb003477a9606d239b6f1ac32e0a6eb0de9f7975ed7e3c0308"
-    sha256 cellar: :any,                 sonoma:        "9bb7815b1072b158ec21d26de051bdce3b35e6c43290d980706d330bb9ca2bcf"
-    sha256 cellar: :any,                 ventura:       "e07e53e79d4c44f56c79b86db8e7b7a6152d142dbb2a117096bb6a9a3c49b094"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c559d7728920c5fef26f86d3e24ef02d09159478593969b6ed1da32a778f2fc0"
+    sha256 cellar: :any,                 arm64_sequoia: "daaa2ae91f166f720af38309378156240ea81507e47587b6ab8486ddb3f9637b"
+    sha256 cellar: :any,                 arm64_sonoma:  "db52b99fc42f7de27d78a8e9c4f08d428342239584901273340764b8fd72891e"
+    sha256 cellar: :any,                 arm64_ventura: "eb97682752d3dbce5512dd47e38beee9d0bbb5d009a95a357f52601978557b87"
+    sha256 cellar: :any,                 sonoma:        "ccd09b73bd59a7878f4afeba4f35f86818fe2c9f569e7b00e0c822f2f7b59342"
+    sha256 cellar: :any,                 ventura:       "68d192ff986662c94c2e366b51b4fe2cf637754f87c4d6b7be0b9450905f3427"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e225f5261746a71ca7f3cbe45fac5157887eb4cdda0682e19bbc34bf5c5a477e"
   end
 
   depends_on "certifi"
@@ -42,10 +42,10 @@ class CharmTools < Formula
     sha256 "5baececa9ecba31eff645232d59845c07aa030f0c81ee70184a90d35099a0e63"
   end
 
-  # Using unreleased version for python 3.13 compatibility.
+  # missing pypi sdist issue, https:github.comCheetahTemplate3cheetah3issues69
   resource "cheetah3" do
-    url "https:github.comCheetahTemplate3cheetah3archive8d82736c0e760ca9bcd01ffcdf95fbb424af116d.tar.gz"
-    sha256 "9d4782ec56b110891634370a19691b50d75d220649a51492b2cb96ad965a13b4"
+    url "https:github.comCheetahTemplate3cheetah3archiverefstags3.4.0.tar.gz"
+    sha256 "0f1fb60c0df8acec48561ba561d023b55498bd04e7b3763d4ca14adaf3d62405"
   end
 
   resource "colander" do
@@ -144,8 +144,8 @@ class CharmTools < Formula
   end
 
   resource "requests" do
-    url "https:files.pythonhosted.orgpackages63702bf7780ad2d390a8d301ad0b550f1581eadbd9a20f896afe06353c2a2913requests-2.32.3.tar.gz"
-    sha256 "55365417734eb18255590a9ff9eb97e9e1da868d4ccd6402399eaf68af20a760"
+    url "https:files.pythonhosted.orgpackagese10a929373653770d8a0d7ea76c37de6e41f11eb07559b103b1c02cafb3f7cf8requests-2.32.4.tar.gz"
+    sha256 "27d0316682c8a29834d3264820024b62a36942083d52caf2f14c0591336d3422"
   end
 
   resource "requirements-parser" do
@@ -164,8 +164,8 @@ class CharmTools < Formula
   end
 
   resource "setuptools" do
-    url "https:files.pythonhosted.orgpackages9e8bdc1773e8e5d07fd27c1632c45c1de856ac3dbf09c0147f782ca6d990cf15setuptools-80.7.1.tar.gz"
-    sha256 "f6ffc5f0142b1bd8d0ca94ee91b30c0ca862ffd50826da1ea85258a06fd94552"
+    url "https:files.pythonhosted.orgpackages185d3bf57dcd21979b887f014ea83c24ae194cfcd12b9e0fda66b957c69d1fcasetuptools-80.9.0.tar.gz"
+    sha256 "f36b47402ecde768dbfafc46e8e4207b4360c654f1f3bb84475f0a28628fb19c"
   end
 
   resource "six" do
@@ -184,13 +184,13 @@ class CharmTools < Formula
   end
 
   resource "types-setuptools" do
-    url "https:files.pythonhosted.orgpackages38b1a52ff157d80464beabb2f0e86881eca28fbc2d519f67ad2f274ef2fe9724types_setuptools-80.7.0.20250516.tar.gz"
-    sha256 "57274b58e05434de42088a86074c9e630e5786f759cf9cc1e3015e886297ca21"
+    url "https:files.pythonhosted.orgpackages79661b276526aad4696a9519919e637801f2c103419d2c248a6feb2729e034d1types_setuptools-80.9.0.20250529.tar.gz"
+    sha256 "79e088ba0cba2186c8d6499cbd3e143abb142d28a44b042c28d3148b1e353c91"
   end
 
   resource "urllib3" do
-    url "https:files.pythonhosted.orgpackages8a7816493d9c386d8e60e442a35feac5e00f0913c0f4b7c217c11e8ec2ff53e0urllib3-2.4.0.tar.gz"
-    sha256 "414bc6535b787febd7567804cc015fee39daab8ad86268f1310a9250697de466"
+    url "https:files.pythonhosted.orgpackages15229ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bcurllib3-2.5.0.tar.gz"
+    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
   end
 
   resource "vergit" do

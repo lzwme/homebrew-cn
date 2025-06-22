@@ -1,13 +1,22 @@
 class Yalantinglibs < Formula
   desc "Collection of modern C++ libraries"
   homepage "https:alibaba.github.ioyalantinglibsen"
-  url "https:github.comalibabayalantinglibsarchiverefstagslts1.1.1.tar.gz"
-  sha256 "0aca363801b004f4f679daea0122f76ace147299770d91f44c3a49d753664afa"
   license "Apache-2.0"
   head "https:github.comalibabayalantinglibs.git", branch: "main"
 
+  stable do
+    url "https:github.comalibabayalantinglibsarchiverefstagslts1.2.0.tar.gz"
+    sha256 "1b541ae108bd10962244e2aeea0bbd58952e728d8b32eef7a439a888a1eddcee"
+
+    # fix clang compilation error, upstream pr ref, https:github.comalibabayalantinglibspull947
+    patch do
+      url "https:github.comalibabayalantinglibscommita9c55e6e24e38d2a640a67c0d6ae96095d973b41.patch?full_index=1"
+      sha256 "4435b0d9e68942477d312acca6bba080ac908d05f46eee4292f247ab4217c32d"
+    end
+  end
+
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "6be6e3d108faa90a6b5812b445fd0488c63d3d3f2ab83e18e258d7cfb3f9382b"
+    sha256 cellar: :any_skip_relocation, all: "d6a233acc309381d259aef2011824e13bfef421ca77f0b8c4f6ba8302df454ff"
   end
 
   depends_on "cmake" => :build

@@ -1,8 +1,8 @@
 class Squid < Formula
   desc "Advanced proxy caching server for HTTP, HTTPS, FTP, and Gopher"
   homepage "https:www.squid-cache.org"
-  url "https:github.comsquid-cachesquidreleasesdownloadSQUID_6_13squid-6.13.tar.xz"
-  sha256 "232e0567946ccc0115653c3c18f01e83f2d9cc49c43d9dead8b319af0b35ad52"
+  url "https:github.comsquid-cachesquidreleasesdownloadSQUID_7_0_2squid-7.0.2.tar.bz2"
+  sha256 "e34d0759686e4a2baf411801aaf8a4863dc17f32ed4a1d988776110bad36c5ae"
   license "GPL-2.0-or-later"
 
   # The Git repository contains tags for a higher major version that isn't the
@@ -12,14 +12,16 @@ class Squid < Formula
     strategy :github_latest
   end
 
+  no_autobump! because: :incompatible_version_format
+
   bottle do
-    sha256 arm64_sequoia: "d2cd4e77ccc3da42ec7ded1f1f1a4a2e754734e17bf369b0dd99d542642ac4bd"
-    sha256 arm64_sonoma:  "be53c543fec807a6841cc164cb9edb1433d26b8b4730bb0accacfdcebed45c63"
-    sha256 arm64_ventura: "e7ef982e31124eb3b920cdc13351547b3bce8d574c8dddf18de73474dab7ae09"
-    sha256 sonoma:        "472c374fa36f3e97a90d192d1fa4fcecfdd9cd45d5069e8c93ebd080ba581094"
-    sha256 ventura:       "81747c30da12ba7291b8353836cea7708983d2e0775672462764076e5f1d4cdf"
-    sha256 arm64_linux:   "11c4cde52a0d19d8768095309eeb87d9525d6f25992f51551ea40b87e56c1f02"
-    sha256 x86_64_linux:  "86929f4464c2dd41698c7c68936bab3b9a716635cd57e5ab125086fcb23abca4"
+    sha256 arm64_sequoia: "fc55d5b5f7193e494077acfaf9da79163f44962d8f24d7bdaa739e0201378768"
+    sha256 arm64_sonoma:  "ce666362fc3920145ec84d9531254bc9fb1a92b508e50f2abcd165b6e369b288"
+    sha256 arm64_ventura: "12f9597158777fbb661390e7adc0897fa6e612ea29b6ba2d215b0f02ac970f4b"
+    sha256 sonoma:        "55798358539c094cdc9f98ab32bc98242a91f6b213be524984d5e2a6b1ee34ac"
+    sha256 ventura:       "e25267b441e7cf447735c507cebe1823dbf59d7877cfa59016e0a27bb44300ec"
+    sha256 arm64_linux:   "31831d1691b5620c39eab2792efc21ced6727a03964701853de1ca2513dff5f5"
+    sha256 x86_64_linux:  "706caba4460341801429861d75907f45be7d6bf01240715b7388753ce4ab3ad3"
   end
 
   head do
@@ -41,15 +43,11 @@ class Squid < Formula
     # For --disable-eui, see:
     # https:www.squid-cache.orgmail-archivesquid-users2013040040.html
     args = %W[
-      --disable-debug
-      --disable-dependency-tracking
-      --prefix=#{prefix}
       --localstatedir=#{var}
       --sysconfdir=#{etc}
       --enable-ssl
       --enable-ssl-crtd
       --disable-eui
-      --enable-pf-transparent
       --with-included-ltdl
       --with-gnutls=no
       --with-nettle=no
@@ -60,8 +58,10 @@ class Squid < Formula
       --enable-storeio=yes
     ]
 
+    args << "--enable-pf-transparent" if OS.mac?
+
     system ".bootstrap.sh" if build.head?
-    system ".configure", *args
+    system ".configure", *args, *std_configure_args
     system "make", "install"
   end
 

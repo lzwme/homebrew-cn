@@ -29,6 +29,7 @@ class Fastbit < Formula
   end
 
   deprecate! date: "2024-06-18", because: :unmaintained
+  disable! date: "2025-06-21", because: :unmaintained
 
   depends_on "openjdk"
 

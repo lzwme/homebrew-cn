@@ -28,6 +28,7 @@ class Ecm < Formula
   end
 
   deprecate! date: "2024-06-18", because: :repo_removed
+  disable! date: "2025-06-21", because: :repo_removed
 
   def install
     system ENV.cc, "-o", "ecm", "ecm.c"

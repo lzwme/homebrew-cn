@@ -1,19 +1,19 @@
 class Oha < Formula
   desc "HTTP load generator, inspired by rakyllhey with tui animation"
   homepage "https:github.comhatoooha"
-  url "https:github.comhatooohaarchiverefstagsv1.8.0.tar.gz"
-  sha256 "c09dce5de2020529a03309b96c98e51f6b94c63a73191c281df32024d62c19a7"
+  url "https:github.comhatooohaarchiverefstagsv1.9.0.tar.gz"
+  sha256 "e40a3898df0229ebea413f24527558a83d75df5cba2b970ece5aa9fad8fb12dc"
   license "MIT"
   head "https:github.comhatoooha.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "720dacc70b5da848322d14e2c123629f17d62f8d38795e60a334c3137cad6918"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "847b9e1e0f85d79c3c77405ae08152cb4ddfdfa8e33fcd05c7e3f4619a327de1"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "fd38248ad25b39a3c0230aa6ea6cdf25387461d1f5f12f7f5352dde59790a44e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e1bfbf08156b676f74baae9defdef6986bc2b8c8d3cf3b914140619292688d52"
-    sha256 cellar: :any_skip_relocation, ventura:       "ab9eae1e4a28088cfd64254288d77007c043ab90122401b81a01dd754f9debe7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7319f4969f55f0a581e0d233b5593fd54b32403decea445f58510456e21b588a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bd3866d6dcf4784ce901f91d15abc57a7fb6ab940917137236d4a8fd3750ce50"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0f2a59ce7ff583d75795933ae29d8b91efc42f8f7debbb21db0e581ce99247ce"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ea9528547af37cc252144138176c8e88b5a9e24a7cafa38d2fbfea02a77380cb"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "5f3a82b44db49a69c624bc9449f07645dbace03c6adf28878ec3c0efcaf322ab"
+    sha256 cellar: :any_skip_relocation, sonoma:        "cfef79baad15279bb9702e142de789f7ea2f241ba359524fff585ad335556ce9"
+    sha256 cellar: :any_skip_relocation, ventura:       "568539d5cc451dd9055d244451b82b4e5b6baf7af5117c1c2b5836a9da355282"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d8cb8e85be4d0762850e093f0c3e742e93bb33afc4381621f91ebd635ea6a7b3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2f8ccb80eef4bf079caff2c02669e6efaa64164eb86c60e570531e3ae8651d1c"
   end
 
   depends_on "cmake" => :build # for aws-lc-sys

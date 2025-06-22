@@ -21,6 +21,7 @@ class Typstfmt < Formula
   end
 
   deprecate! date: "2024-06-08", because: :unmaintained
+  disable! date: "2025-06-21", because: :unmaintained
 
   depends_on "rust" => :build
 

@@ -1,8 +1,8 @@
 class Quasi88 < Formula
   desc "PC-8801 emulator"
   homepage "https://www.eonet.ne.jp/~showtime/quasi88/"
-  url "https://www.eonet.ne.jp/~showtime/quasi88/release/quasi88-0.7.1.tgz"
-  sha256 "a9e7097e26cee6605ca3a467f6167b624dca4d11e3d99fd5c9886894b42cc05e"
+  url "https://www.eonet.ne.jp/~showtime/quasi88/release/quasi88-0.7.2.tgz"
+  sha256 "e747c1b391349e1dfcea4eb615322c225e0baa642cf6e068ea9ab137b56b0355"
   license "BSD-3-Clause"
 
   livecheck do
@@ -11,15 +11,13 @@ class Quasi88 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "0eac8fdd1ee628be1f2f760272599513d3251ec2f0781d98da27fff0f5ab9917"
-    sha256 cellar: :any,                 arm64_sonoma:   "5f6e0024ba90b4ea8d6db6615f01245ebb26ad6e914d5cd5720751b5b5d22399"
-    sha256 cellar: :any,                 arm64_ventura:  "c5a10d08e47dfd4e46bb9248aa8ebdb6b85ceaaf26223d2190d01d28167c27d3"
-    sha256 cellar: :any,                 arm64_monterey: "52ae75a5b84dab5523b36ea0b827d783a79f419a605cc059fd453ea3e74562a3"
-    sha256 cellar: :any,                 sonoma:         "42b152e68b2c5b4773be2fa8e54380f3059d3864fa82e6591e6ef7c72e0fa920"
-    sha256 cellar: :any,                 ventura:        "b5ccd2b099ca8067fdf747d4a97380f58a11d069ddd725e7c7174c0dceb2a88a"
-    sha256 cellar: :any,                 monterey:       "58db5d7edd11c2a23a92a679d954bd1e4b0be0db0fd52d0ef2adb0425f1d5668"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "1eb324460bb466483fdd6bcf7d2c9b3f7c3f1b3458f14b14c85c9ae0ebc05468"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5bece28e3cc116e801cbcb9da47c2e3768d0a0e15b24d05bdb2ff0f51e06496b"
+    sha256 cellar: :any,                 arm64_sequoia: "dfde88a3d0109e08a765a3b996704f450c3014034984e9b1fd14fa1cb4f346b6"
+    sha256 cellar: :any,                 arm64_sonoma:  "9ac1397a7e4769584ba3a52ff955a7ca26b19adbc3af1cef5c06a5be99e23d97"
+    sha256 cellar: :any,                 arm64_ventura: "4a8476606e46b13555c3cdb716eda570d8390f639c845512e1b2f68fe0360f7d"
+    sha256 cellar: :any,                 sonoma:        "8ca3a6a2ef6dacb17481ce40c3ec5594ec18de0d933d022d9a6e48dc48f28bff"
+    sha256 cellar: :any,                 ventura:       "cd36cbd67168d50e7c48563abe3a7c8ce4cafff2f115984d7f7e08624f257188"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "49836a418eb5955a99ea459f28c25bb2eb652ab1395e52f1dd1c924bd2030fc8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "415a7b4883e98ea7dccdbb5148988c0b53aba6aff5bc2bee0bc24bb577b114ab"
   end
 
   depends_on "sdl2"

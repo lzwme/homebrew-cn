@@ -23,6 +23,7 @@ class Gokart < Formula
   end
 
   deprecate! date: "2024-06-20", because: :repo_archived
+  disable! date: "2025-06-21", because: :repo_archived
 
   depends_on "go" => [:build, :test]
 

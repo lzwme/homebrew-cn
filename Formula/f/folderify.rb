@@ -1,17 +1,17 @@
 class Folderify < Formula
   desc "Generate pixel-perfect macOS folder icons in the native style"
   homepage "https:github.comlgarronfolderify"
-  url "https:github.comlgarronfolderifyarchiverefstagsv4.1.0.tar.gz"
-  sha256 "730d19480fcd59b7d5f4b799dc4199351c9442dc80447d7d62bc11fffbb1cb65"
+  url "https:github.comlgarronfolderifyarchiverefstagsv4.1.1.tar.gz"
+  sha256 "e3965b9b5afac55aa82fbeebb66a579d96a7ba98a2663f4f088a786043f234d7"
   license "MIT"
   head "https:github.comlgarronfolderify.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fbc34b44c1b557fc8135c950b1bae9896f385b0bc70043b08a20127ff179191e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c20a12ab6b000c4877828fbdfbe66bcf5dd9631899a606b6af1cf244df0d7cde"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "d521b6ef4bb8c86350a48bd197fe10bebc94efce5031896878965ba1375fde1b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "efbd0ecf65b6b32b59941217457e17ce5fe1e5ff836b7ec822cf37612d57410c"
-    sha256 cellar: :any_skip_relocation, ventura:       "36088b0dde07cff745173bf07d843f2368d20015420846d845de8c63d14a8b38"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0b251c30a320ac3584fb8344d7fcbbe80ed645b19591999085c507cfefbc7300"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "37ca764d90341cc160190e2ab433f0f2594ed56f8420fc92911a55ef879c3022"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "b3a912f08cf81f1efa8996903598aab99d52b7dc0a32991a1a1f9838f506a675"
+    sha256 cellar: :any_skip_relocation, sonoma:        "520ae93a6795588771c02561d8b7820b598aa97e601d308690fd3da10955234e"
+    sha256 cellar: :any_skip_relocation, ventura:       "c17c31e13c52554ebbbcabe1c2f7c710f37b5f9e7994173bf1fceb02ab658b25"
   end
 
   depends_on "rust" => :build

@@ -14,6 +14,7 @@ class Negfix8 < Formula
 
   # https:github.comchrishuntnegfix8pull2#issuecomment-1956815369
   deprecate! date: "2024-06-10", because: :unmaintained
+  disable! date: "2025-06-21", because: :unmaintained
 
   depends_on "imagemagick"
 

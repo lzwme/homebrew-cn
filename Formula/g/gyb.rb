@@ -9,45 +9,45 @@ class Gyb < Formula
   url "https:github.comGAM-teamgot-your-backarchiverefstagsv1.82.tar.gz"
   sha256 "9cd29c81c78fceebe1e7ed34627bb27d758a250ccae92aecf6bacf1da6dfed09"
   license "Apache-2.0"
+  revision 1
   head "https:github.comGAM-teamgot-your-back.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "13639e3e4d260b6ccd479c3df182713a84a572760e3ab024547191e2451d8269"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "634e92eab0fe3dcd78f78d4bb41afcdc7e59f9c41b0173a75e775865ad749e78"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "d0576cedbd49932143f46d8c45403a1bab82673d2fe7c31f02c52fc803ee3afc"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f4cb28399d355bd65cd510920d7dce4f8938520978a7fb7a01241554dbf6f901"
-    sha256 cellar: :any_skip_relocation, ventura:       "a57877c31dd762e0c1e6c0ebc58de904b9ecd22dad9c3ea7231b67e96fed1bc0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1412409752e1a5f78caff35979987ab179a00cf5592c43c90bf6e1c7128ec0a7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b8278d5b011c57823852f6df9a866255be2e5b2230a7f33b5820ead35d46573a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "82fe01ba45479d98880d0402fecda87902bfd50376f09371f70fa6c9cc44de87"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b278278f8d6096b6f3264bec75b3bf422639c9d4268331421463dc573e7b2b0c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "5f1fcc3e4368d85f2eab92cab3f3c6710b95f569c58c074486ae90bf5d68600f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e88326d2329a2be1761e10495e1c9eeb0099264eec04f96574451d405e837d35"
+    sha256 cellar: :any_skip_relocation, ventura:       "0dbd278a81ca797e3889453a42c46ff2c4872c42d97eae256807128b8c720685"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3c3b8d13436be13a1fd5bc33f5a12aff1eb6e564307cf302e692c0ae7cf55197"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "03e01c1b3ee8ca1de0af6a91066ffb926e3278e57629a57cdc7c15b9281c464c"
   end
 
   depends_on "certifi"
   depends_on "python@3.13"
 
   resource "cachetools" do
-    url "https:files.pythonhosted.orgpackagesc338a0f315319737ecf45b4319a8cd1f3a908e29d9277b46942263292115eee7cachetools-5.5.0.tar.gz"
-    sha256 "2cc24fb4cbe39633fb7badd9db9ca6295d766d9c2995f245725a46715d050f2a"
+    url "https:files.pythonhosted.orgpackages6c813747dad6b14fa2cf53fcf10548cf5aea6913e96fab41a3c198676f8948a5cachetools-5.5.2.tar.gz"
+    sha256 "1a661caa9175d26759571b2e19580f9d6393969e5dfca11fdb1f947a23e640d4"
   end
 
   resource "charset-normalizer" do
-    url "https:files.pythonhosted.orgpackagesf24fe1808dc01273379acc506d18f1504eb2d299bd4131743b9fc54d7be4df1echarset_normalizer-3.4.0.tar.gz"
-    sha256 "223217c3d4f82c3ac5e29032b3f1c2eb0fb591b72161f86d93f5719079dae93e"
+    url "https:files.pythonhosted.orgpackagese43389c2ced2b67d1c2a61c19c6751aa8902d46ce3dacb23600a283619f5a12dcharset_normalizer-3.4.2.tar.gz"
+    sha256 "5baececa9ecba31eff645232d59845c07aa030f0c81ee70184a90d35099a0e63"
   end
 
   resource "google-api-core" do
-    url "https:files.pythonhosted.orgpackages28c8046abf3ea11ec9cc3ea6d95e235a51161039d4a558484a997df60f9c51e9google_api_core-2.21.0.tar.gz"
-    sha256 "4a152fd11a9f774ea606388d423b68aa7e6d6a0ffe4c8266f74979613ec09f81"
+    url "https:files.pythonhosted.orgpackagesdc21e9d043e88222317afdbdb567165fdbc3b0aad90064c7e0c9eb0ad9955ad8google_api_core-2.25.1.tar.gz"
+    sha256 "d2aaa0b13c78c61cb3f4282c464c046e45fbd75755683c9c525e6e8f7ed0a5e8"
   end
 
   resource "google-api-python-client" do
-    url "https:files.pythonhosted.orgpackagesff36a587319840f32c8a28b6700805ad18a70690f985538ea49e87e210118884google_api_python_client-2.149.0.tar.gz"
-    sha256 "b9d68c6b14ec72580d66001bd33c5816b78e2134b93ccc5cf8f624516b561750"
+    url "https:files.pythonhosted.orgpackages8f7e7c6e43e54f611f0f97f1678ea567fe06fecd545bd574db05e204e5b136fegoogle_api_python_client-2.173.0.tar.gz"
+    sha256 "b537bc689758f4be3e6f40d59a6c0cd305abafdea91af4bc66ec31d40c08c804"
   end
 
   resource "google-auth" do
-    url "https:files.pythonhosted.orgpackagesa137c854a8b1b1020cf042db3d67577c6f84cd1e8ff6515e4f5498ae9e444ea5google_auth-2.35.0.tar.gz"
-    sha256 "f4c64ed4e01e8e8b646ef34c018f8bf3338df0c8e37d8b3bba40e7f574a3278a"
+    url "https:files.pythonhosted.orgpackages9e9be92ef23b84fa10a64ce4831390b7a4c2e53c0132568d99d4ae61d04c8855google_auth-2.40.3.tar.gz"
+    sha256 "500c3a29adedeb36ea9cf24b8d10858e152f2412e3ca37829b3fa18e33d63b77"
   end
 
   resource "google-auth-httplib2" do
@@ -56,13 +56,13 @@ class Gyb < Formula
   end
 
   resource "google-auth-oauthlib" do
-    url "https:files.pythonhosted.orgpackagescc0f1772edb8d75ecf6280f1c7f51cbcebe274e8b17878b382f63738fd96cee5google_auth_oauthlib-1.2.1.tar.gz"
-    sha256 "afd0cad092a2eaa53cd8e8298557d6de1034c6cb4a740500b5357b648af97263"
+    url "https:files.pythonhosted.orgpackagesfb87e10bf24f7bcffc1421b84d6f9c3377c30ec305d082cd737ddaa6d8f77f7cgoogle_auth_oauthlib-1.2.2.tar.gz"
+    sha256 "11046fb8d3348b296302dd939ace8af0a724042e8029c1b872d87fabc9f41684"
   end
 
   resource "googleapis-common-protos" do
-    url "https:files.pythonhosted.orgpackages533b1599ceafa875ffb951480c8c74f4b77646a6b80e80970698f2aa93c216cegoogleapis_common_protos-1.65.0.tar.gz"
-    sha256 "334a29d07cddc3aa01dee4988f9afd9b2916ee2ff49d6b757155dc0d197852c0"
+    url "https:files.pythonhosted.orgpackages392433db22342cf4a2ea27c9955e6713140fedd51e8b141b5ce5260897020f1agoogleapis_common_protos-1.70.0.tar.gz"
+    sha256 "0e1b44e0ea153e6594f9f394fef15193a68aaaea2d843f83e2742717ca753257"
   end
 
   resource "httplib2" do
@@ -76,18 +76,18 @@ class Gyb < Formula
   end
 
   resource "oauthlib" do
-    url "https:files.pythonhosted.orgpackages6dfafbf4001037904031639e6bfbfc02badfc7e12f137a8afa254df6c4c8a670oauthlib-3.2.2.tar.gz"
-    sha256 "9859c40929662bec5d64f34d01c99e093149682a3f38915dc0655d5a633dd918"
+    url "https:files.pythonhosted.orgpackages0b5f19930f824ffeb0ad4372da4812c50edbd1434f678c90c2733e1188edfc63oauthlib-3.3.1.tar.gz"
+    sha256 "0f0f8aa759826a193cf66c12ea1af1637f87b9b4622d46e866952bb022e538c9"
   end
 
   resource "proto-plus" do
-    url "https:files.pythonhosted.orgpackages3efce9a65cd52c1330d8d23af6013651a0bc50b6d76bcbdf91fae7cd19c68f29proto-plus-1.24.0.tar.gz"
-    sha256 "30b72a5ecafe4406b0d339db35b56c4059064e69227b8c3bda7462397f966445"
+    url "https:files.pythonhosted.orgpackagesf4ac87285f15f7cce6d4a008f33f1757fb5a13611ea8914eb58c3d0d26243468proto_plus-1.26.1.tar.gz"
+    sha256 "21a515a4c4c0088a773899e23c7bbade3d18f9c66c73edd4c7ee3816bc96a012"
   end
 
   resource "protobuf" do
-    url "https:files.pythonhosted.orgpackagesb1a44579a61de526e19005ceeb93e478b61d77aa38c8a85ad958ff16a9906549protobuf-5.28.2.tar.gz"
-    sha256 "59379674ff119717404f7454647913787034f03fe7049cbef1d74a97bb4593f0"
+    url "https:files.pythonhosted.orgpackages52f3b9655a711b32c19720253f6f06326faf90580834e2e83f840472d752bc8bprotobuf-6.31.1.tar.gz"
+    sha256 "d8cac4c982f0b957a4dc73a80e2ea24fab08e679c0de9deb835f4a12d69aca9a"
   end
 
   resource "pyasn1" do
@@ -96,18 +96,18 @@ class Gyb < Formula
   end
 
   resource "pyasn1-modules" do
-    url "https:files.pythonhosted.orgpackages1d676afbf0d507f73c32d21084a79946bfcfca5fbc62a72057e9c23797a737c9pyasn1_modules-0.4.1.tar.gz"
-    sha256 "c28e2dbf9c06ad61c71a075c7e0f9fd0f1b0bb2d2ad4377f240d33ac2ab60a7c"
+    url "https:files.pythonhosted.orgpackagese9e678ebbb10a8c8e4b61a59249394a4a594c1a7af95593dc933a349c8d00964pyasn1_modules-0.4.2.tar.gz"
+    sha256 "677091de870a80aae844b1ca6134f54652fa2c8c5a52aa396440ac3106e941e6"
   end
 
   resource "pyparsing" do
-    url "https:files.pythonhosted.orgpackages830813f3bce01b2061f2bbd582c9df82723de943784cf719a35ac886c652043apyparsing-3.1.4.tar.gz"
-    sha256 "f86ec8d1a83f11977c9a6ea7598e8c27fc5cddfa5b07ea2241edbbde1d7bc032"
+    url "https:files.pythonhosted.orgpackagesbb22f1129e69d94ffff626bdb5c835506b3a5b4f3d070f17ea295e12c2c6f60fpyparsing-3.2.3.tar.gz"
+    sha256 "b9c13f1ab8b3b542f72e28f634bad4de758ab3ce4546e4301970ad6fa77c38be"
   end
 
   resource "requests" do
-    url "https:files.pythonhosted.orgpackages63702bf7780ad2d390a8d301ad0b550f1581eadbd9a20f896afe06353c2a2913requests-2.32.3.tar.gz"
-    sha256 "55365417734eb18255590a9ff9eb97e9e1da868d4ccd6402399eaf68af20a760"
+    url "https:files.pythonhosted.orgpackagese10a929373653770d8a0d7ea76c37de6e41f11eb07559b103b1c02cafb3f7cf8requests-2.32.4.tar.gz"
+    sha256 "27d0316682c8a29834d3264820024b62a36942083d52caf2f14c0591336d3422"
   end
 
   resource "requests-oauthlib" do
@@ -116,18 +116,18 @@ class Gyb < Formula
   end
 
   resource "rsa" do
-    url "https:files.pythonhosted.orgpackagesaa657d973b89c4d2351d7fb232c2e452547ddfa243e93131e7cfa766da627b52rsa-4.9.tar.gz"
-    sha256 "e38464a49c6c85d7f1351b0126661487a7e0a14a50f1675ec50eb34d4f20ef21"
+    url "https:files.pythonhosted.orgpackagesda8a22b7beea3ee0d44b1916c0c1cb0ee3af23b700b6da9f04991899d0c555d4rsa-4.9.1.tar.gz"
+    sha256 "e7bdbfdb5497da4c07dfd35530e1a902659db6ff241e39d9953cad06ebd0ae75"
   end
 
   resource "uritemplate" do
-    url "https:files.pythonhosted.orgpackagesd25a4742fdba39cd02a56226815abfa72fe0aa81c33bed16ed045647d6000ebauritemplate-4.1.1.tar.gz"
-    sha256 "4346edfc5c3b79f694bccd6d6099a322bbeb628dbf2cd86eea55a456ce5124f0"
+    url "https:files.pythonhosted.orgpackages9860f174043244c5306c9988380d2cb10009f91563fc4b31293d27e17201af56uritemplate-4.2.0.tar.gz"
+    sha256 "480c2ed180878955863323eea31b0ede668795de182617fef9c6ca09e6ec9d0e"
   end
 
   resource "urllib3" do
-    url "https:files.pythonhosted.orgpackagesed6322ba4ebfe7430b76388e7cd448d5478814d3032121827c12a2cc287e2260urllib3-2.2.3.tar.gz"
-    sha256 "e7d814a81dad81e6caf2ec9fdedb284ecc9c73076b62654547cc64ccdcae26e9"
+    url "https:files.pythonhosted.orgpackages15229ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bcurllib3-2.5.0.tar.gz"
+    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
   end
 
   def python3

@@ -8,6 +8,14 @@ class Ratarmount < Formula
   license "MIT"
   revision 1
 
+  # Upstream creates releases that use a stable tag (e.g., `v1.2.3`) but are
+  # labeled as "pre-release" on GitHub before the version is released, so it's
+  # necessary to use the `GithubLatest` strategy.
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_linux:  "71afbf252f7c7f0c94fe39b89175f2abffc5f7ff84b64eaee8e77d0d846e52e8"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "9834cce582b558270e76d63e92a7a1aed99e55f43401c46c6d2c2910c7a7b284"

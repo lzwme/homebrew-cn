@@ -14,6 +14,7 @@ class Hyperkit < Formula
 
   # does not build for 13 and 14, and no upstream commits in the past two years
   deprecate! date: "2024-06-06", because: :unmaintained
+  disable! date: "2025-06-21", because: :unmaintained
 
   depends_on "ocaml" => :build
   depends_on "opam" => :build

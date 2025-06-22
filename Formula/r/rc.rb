@@ -27,6 +27,7 @@ class Rc < Formula
   end
 
   deprecate! date: "2024-06-10", because: :repo_removed
+  disable! date: "2025-06-21", because: :repo_removed
 
   uses_from_macos "libedit"
 

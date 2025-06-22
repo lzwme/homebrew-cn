@@ -6,16 +6,16 @@ class CoboCli < Formula
   url "https:files.pythonhosted.orgpackages3a07a80c6fb19a005c81b20b344b6d3f4b3631563d732d6aa91acdc569503e49cobo_cli-0.0.5.tar.gz"
   sha256 "ae08b589fbf097c4cdac82e3802be2bf2faa98d7c710102c68c27cf6518dd98c"
   license "MIT"
+  revision 1
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_sequoia: "d5a8f6f864bce60e582cb73e9415a23ddbca53b543f29ea33eb67564110bf6cf"
-    sha256 cellar: :any,                 arm64_sonoma:  "652be51343a462a3678ce3c57678694395c37c509a27a35bf1f32609850e8384"
-    sha256 cellar: :any,                 arm64_ventura: "d80cd0db285dc6e99f55079ad565efca256acf5254e893fea2daa8d6cfe83c2b"
-    sha256 cellar: :any,                 sonoma:        "40d4ab83dfbd6ed44d1906c52c45e2b4dab041f6ad20a3eb5fd923a71fb51908"
-    sha256 cellar: :any,                 ventura:       "3dd94d11b64260f1077fa488eb910fca49277a5e9fafb9b20d8f9a8e036a6bc2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0fdfa10d3b87c9f44eebd3c6a3f67b3397849a2a0c49edd255b8f9132dfef43a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1642e5cb6304cbf47ef746d55d38789f67264103b6b0913e2ccf2027a25e6632"
+    sha256 cellar: :any,                 arm64_sequoia: "5d71e97d045b3ff66d8f3d76d9b3cdf80249c5f73bd38670da1a3dc35f7b2b97"
+    sha256 cellar: :any,                 arm64_sonoma:  "af1cf59147a884f17ff75a4879d9101e048ffb8c5912ef8bc459d703241032e3"
+    sha256 cellar: :any,                 arm64_ventura: "0aad1f706006f77cedf8ca699c046473a01e4c0a3b9f36a4289797871e9909f8"
+    sha256 cellar: :any,                 sonoma:        "d1e93f0c3c935a7f919f134260c97b61cc45b1f7133aa71b11c57aeb7a5ad15d"
+    sha256 cellar: :any,                 ventura:       "980768c4b191eefa89282f595560c8a704daceb795b745b45fa9e0005524d149"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "067da74d73c9eb25ea35c89e92bdef7957116df1eee7374cd63ba99e649e770d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f6c822eb111fb809ff649f1fda461b03a2fe678cb8b38356aa1bf10ba720fbee"
   end
 
   depends_on "certifi"
@@ -37,13 +37,13 @@ class CoboCli < Formula
   end
 
   resource "charset-normalizer" do
-    url "https:files.pythonhosted.orgpackages16b0572805e227f01586461c80e0fd25d65a2115599cc9dad142fee4b747c357charset_normalizer-3.4.1.tar.gz"
-    sha256 "44251f18cd68a75b56585dd00dae26183e102cd5e0f9f1466e6df5da2ed64ea3"
+    url "https:files.pythonhosted.orgpackagese43389c2ced2b67d1c2a61c19c6751aa8902d46ce3dacb23600a283619f5a12dcharset_normalizer-3.4.2.tar.gz"
+    sha256 "5baececa9ecba31eff645232d59845c07aa030f0c81ee70184a90d35099a0e63"
   end
 
   resource "click" do
-    url "https:files.pythonhosted.orgpackagesb92e0090cbf739cee7d23781ad4b89a9894a41538e4fcf4c31dcdd705b78eb8bclick-8.1.8.tar.gz"
-    sha256 "ed53c9d8990d83c2a27deae68e4ee337473f6330c040a31d4225c9574d16096a"
+    url "https:files.pythonhosted.orgpackages606c8ca2efa64cf75a977a0d7fac081354553ebe483345c734fb6b6515d96bbcclick-8.2.1.tar.gz"
+    sha256 "27c491cc05d968d271d5a1db13e3b5a184636d9d930f148c50b038f0d0646202"
   end
 
   resource "dataclasses-json" do
@@ -80,18 +80,18 @@ class CoboCli < Formula
   end
 
   resource "marshmallow" do
-    url "https:files.pythonhosted.orgpackagesbd5ccbfa41491d6c83b36471f2a2f75602349d20a8f88afd94f83c1e68bbc298marshmallow-3.25.0.tar.gz"
-    sha256 "5ba94a4eb68894ad6761a505eb225daf7e5cb7b4c32af62d4a45e9d42665bc31"
+    url "https:files.pythonhosted.orgpackagesab5e5e53d26b42ab75491cda89b871dab9e97c840bf12c63ec58a1919710cd06marshmallow-3.26.1.tar.gz"
+    sha256 "e6d8affb6cb61d39d26402096dc0aee12d5a26d490a121f118d2e81dc0719dc6"
   end
 
   resource "mypy-extensions" do
-    url "https:files.pythonhosted.orgpackages98a41ab47638b92648243faf97a5aeb6ea83059cc3624972ab6b8d2316078d3fmypy_extensions-1.0.0.tar.gz"
-    sha256 "75dbf8955dc00442a438fc4d0666508a9a97b6bd41aa2f0ffe9d2f2725af0782"
+    url "https:files.pythonhosted.orgpackagesa26e371856a3fb9d31ca8dac321cda606860fa4548858c0cc45d9d1d4ca2628bmypy_extensions-1.1.0.tar.gz"
+    sha256 "52e68efc3284861e772bbcd66823fde5ae21fd2fdb51c62a211403730b916558"
   end
 
   resource "packaging" do
-    url "https:files.pythonhosted.orgpackagesd06368dbb6eb2de9cb10ee4c9c14a0148804425e13c4fb20d61cce69f53106dapackaging-24.2.tar.gz"
-    sha256 "c228a6dc5e932d346bc5739379109d49e8853dd8223571c7c5b55260edc0b97f"
+    url "https:files.pythonhosted.orgpackagesa1d41fc4078c65507b51b96ca8f8c3ba19e6a61c8253c72794544580a7b6c24dpackaging-25.0.tar.gz"
+    sha256 "d443872c98d677bf60f6a1f2f8c1cb748e8fe762d2bf9d3148b5599295b0fc4f"
   end
 
   resource "pycparser" do
@@ -100,18 +100,18 @@ class CoboCli < Formula
   end
 
   resource "pydantic" do
-    url "https:files.pythonhosted.orgpackages6ac7ca334c2ef6f2e046b1144fe4bb2a5da8a4c574e7f2ebf7e16b34a6a2fa92pydantic-2.10.5.tar.gz"
-    sha256 "278b38dbbaec562011d659ee05f63346951b3a248a6f3642e1bc68894ea2b4ff"
+    url "https:files.pythonhosted.orgpackages00dd4325abf92c39ba8623b5af936ddb36ffcfe0beae70405d456ab1fb2f5b8cpydantic-2.11.7.tar.gz"
+    sha256 "d989c3c6cb79469287b1569f7447a17848c998458d49ebe294e975b9baf0f0db"
   end
 
   resource "pydantic-core" do
-    url "https:files.pythonhosted.orgpackagesfc01f3e5ac5e7c25833db5eb555f7b7ab24cd6f8c322d3a3ad2d67a952dc0abcpydantic_core-2.27.2.tar.gz"
-    sha256 "eb026e5a4c1fee05726072337ff51d1efb6f59090b7da90d30ea58625b1ffb39"
+    url "https:files.pythonhosted.orgpackagesad885f2260bdfae97aabf98f1778d43f69574390ad787afb646292a638c923d4pydantic_core-2.33.2.tar.gz"
+    sha256 "7cb8bc3605c29176e1b105350d2e6474142d7c1bd1d9327c4a9bdb46bf827acc"
   end
 
   resource "pydantic-settings" do
-    url "https:files.pythonhosted.orgpackages737bc58a586cd7d9ac66d2ee4ba60ca2d241fa837c02bca9bea80a9a8c3d22a9pydantic_settings-2.7.1.tar.gz"
-    sha256 "10c9caad35e64bfb3c2fbf70a078c0e25cc92499782e5200747f942a065dec93"
+    url "https:files.pythonhosted.orgpackagesc2ef3d61472b7801c896f9efd9bb8750977d9577098b05224c5c41820690155epydantic_settings-2.10.0.tar.gz"
+    sha256 "7a12e0767ba283954f3fd3fefdd0df3af21b28aa849c40c35811d52d682fa876"
   end
 
   resource "pynacl" do
@@ -120,8 +120,8 @@ class CoboCli < Formula
   end
 
   resource "python-dotenv" do
-    url "https:files.pythonhosted.orgpackagesbc57e84d88dfe0aec03b7a2d4327012c1627ab5f03652216c63d49846d7a6c58python-dotenv-1.0.1.tar.gz"
-    sha256 "e324ee90a023d808f1959c46bcbc04446a10ced277783dc6ee09987c37ec10ca"
+    url "https:files.pythonhosted.orgpackages882c7bb1416c5620485aa793f2de31d3df393d3686aa8a8506d11e10e13c5bafpython_dotenv-1.1.0.tar.gz"
+    sha256 "41f90bc6f5f177fb41f53e87666db362025010eb28f60a01c9143bfa33a2b2d5"
   end
 
   resource "pyyaml" do
@@ -130,8 +130,8 @@ class CoboCli < Formula
   end
 
   resource "requests" do
-    url "https:files.pythonhosted.orgpackages63702bf7780ad2d390a8d301ad0b550f1581eadbd9a20f896afe06353c2a2913requests-2.32.3.tar.gz"
-    sha256 "55365417734eb18255590a9ff9eb97e9e1da868d4ccd6402399eaf68af20a760"
+    url "https:files.pythonhosted.orgpackagese10a929373653770d8a0d7ea76c37de6e41f11eb07559b103b1c02cafb3f7cf8requests-2.32.4.tar.gz"
+    sha256 "27d0316682c8a29834d3264820024b62a36942083d52caf2f14c0591336d3422"
   end
 
   resource "smmap" do
@@ -145,13 +145,13 @@ class CoboCli < Formula
   end
 
   resource "tomli-w" do
-    url "https:files.pythonhosted.orgpackagesd419b65f1a088ee23e37cdea415b357843eca8b1422a7b11a9eee6e35d4ec273tomli_w-1.1.0.tar.gz"
-    sha256 "49e847a3a304d516a169a601184932ef0f6b61623fe680f836a2aa7128ed0d33"
+    url "https:files.pythonhosted.orgpackages1975241269d1da26b624c0d5e110e8149093c759b7a286138f4efd61a60e75fetomli_w-1.2.0.tar.gz"
+    sha256 "2dd14fac5a47c27be9cd4c976af5a12d87fb1f0b4512f81d69cce3b35ae25021"
   end
 
   resource "typing-extensions" do
-    url "https:files.pythonhosted.orgpackagesdfdbf35a00659bc03fec321ba8bce9420de607a1d37f8342eee1863174c69557typing_extensions-4.12.2.tar.gz"
-    sha256 "1a7ead55c7e559dd4dee8856e3a88b41225abfe1ce8df57b7c13915fe121ffb8"
+    url "https:files.pythonhosted.orgpackagesd1bc51647cd02527e87d05cb083ccc402f93e441606ff1f01739a62c8ad09ba5typing_extensions-4.14.0.tar.gz"
+    sha256 "8676b788e32f02ab42d9e7c61324048ae4c6d844a399eebace3d4979d75ceef4"
   end
 
   resource "typing-inspect" do
@@ -159,9 +159,14 @@ class CoboCli < Formula
     sha256 "b23fc42ff6f6ef6954e4852c1fb512cdd18dbea03134f91f856a95ccc9461f78"
   end
 
+  resource "typing-inspection" do
+    url "https:files.pythonhosted.orgpackagesf8b10c11f5058406b3af7609f121aaa6b609744687f1d158b3c3a5bf4cc94238typing_inspection-0.4.1.tar.gz"
+    sha256 "6ae134cc0203c33377d43188d4064e9b357dba58cff3185f22924610e70a9d28"
+  end
+
   resource "urllib3" do
-    url "https:files.pythonhosted.orgpackagesaa63e53da845320b757bf29ef6a9062f5c669fe997973f966045cb019c3f4b66urllib3-2.3.0.tar.gz"
-    sha256 "f8c5449b3cf0861679ce7e0503c7b44b5ec981bec0d1d3795a07f1ba96f0204d"
+    url "https:files.pythonhosted.orgpackages15229ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bcurllib3-2.5.0.tar.gz"
+    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
   end
 
   resource "websocket-client" do

@@ -1,18 +1,11 @@
 class Rtabmap < Formula
   desc "Visual and LiDAR SLAM library and standalone application"
   homepage "https:introlab.github.iortabmap"
+  url "https:github.comintrolabrtabmaparchiverefstags0.21.4.tar.gz"
+  sha256 "242f8da7c5d20f86a0399d6cfdd1a755e64e9117a9fa250ed591c12f38209157"
   license "BSD-3-Clause"
-  revision 10
+  revision 11
   head "https:github.comintrolabrtabmap.git", branch: "master"
-
-  stable do
-    url "https:github.comintrolabrtabmaparchiverefstags0.21.4.tar.gz"
-    sha256 "242f8da7c5d20f86a0399d6cfdd1a755e64e9117a9fa250ed591c12f38209157"
-
-    # Backport support for newer PCL
-    # Ref: https:github.comintrolabrtabmapcommitcbd3995b600fc2acc4cb57b81f132288a6c91188
-    patch :DATA
-  end
 
   # Upstream doesn't create releases for all tagged versions, so we use the
   # `GithubLatest` strategy.
@@ -24,11 +17,11 @@ class Rtabmap < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256                               arm64_sonoma:  "1d433bee617217b945cc97f14e98ef947b3966d804f884f047607fb51fb13852"
-    sha256                               arm64_ventura: "1e9747b0eb5689899563716f8956590a882545c2f0a9e73df82cd4148f1f198c"
-    sha256                               sonoma:        "99d65d4e03958e697247bf67bbce34cd78356c48e06c119883252ab0eabc9f6f"
-    sha256                               ventura:       "6d1567f28fac55c42410af8f0946efd7f5513a21c66bdce68a609f90918a47df"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "78f9cf656952b8ca809bd8f68b6903727b9957aedb88f592e680de09ddbbbf37"
+    sha256                               arm64_sonoma:  "fbf0965fd170b388c8fdd66a91b179cb9c7c3f3b3f7d2b68146766cb9c7e4710"
+    sha256                               arm64_ventura: "e03225f05160f3d002063c02fdf651a2eb9ee7ee35c6d375b69a43f428c42a9f"
+    sha256                               sonoma:        "8354568d383a42537112a71c0ec7d8f9404138643a645c07c1209a79dbd63756"
+    sha256                               ventura:       "1f1090acdf8d7aa10ae0e7c951b7d9f93c8c5d60973da1f85cc7ec1725f36e4b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0d346715818367390b00615de1cb0b98a9f886ac9f4f61d2c42f07e5e129d2c3"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -57,6 +50,10 @@ class Rtabmap < Formula
   end
 
   def install
+    # Backport support for newer PCL
+    # Ref: https:github.comintrolabrtabmapcommitcbd3995b600fc2acc4cb57b81f132288a6c91188
+    inreplace "corelibsrcCameraThread.cpp", "pclioio.h", "pclcommonio.h" if build.stable?
+
     system "cmake", "-S", ".", "-B", "build", "-DCMAKE_INSTALL_RPATH=#{rpath}", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
@@ -115,18 +112,3 @@ class Rtabmap < Formula
     assert_equal version.to_s, shell_output(".buildtest").strip
   end
 end
-
-__END__
-diff --git acorelibsrcCameraThread.cpp bcorelibsrcCameraThread.cpp
-index a18fc2c1..d1486b20 100644
---- acorelibsrcCameraThread.cpp
-+++ bcorelibsrcCameraThread.cpp
-@@ -44,7 +44,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
- #include <rtabmaputiliteULogger.h>
- #include <rtabmaputiliteUStl.h>
- 
--#include <pclioio.h>
-+#include <pclcommonio.h>
- 
- namespace rtabmap
- {

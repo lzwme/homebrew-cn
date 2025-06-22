@@ -1,27 +1,33 @@
 class Kor < Formula
   desc "CLI tool to discover unused Kubernetes resources"
   homepage "https:github.comyonahdkor"
-  url "https:github.comyonahdkorarchiverefstagsv0.6.1.tar.gz"
-  sha256 "d6c123fbaa0f1ad32e75cb0f33b493672845a4373b3fd116c369a9bcdcdf5940"
+  url "https:github.comyonahdkorarchiverefstagsv0.6.2.tar.gz"
+  sha256 "949b5857f126b4a237daae3670b115b6671fb8c233fd5569d2897635f867c2cd"
   license "MIT"
   head "https:github.comyonahdkor.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e9059c95c7a0fe71096bcd717a097be83d2cef975bf57c2fcd3d66fdfdebf7d3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "356db7a3454ae138d2055130f995eb4518716c8419e79aa0676d49f0ce4b1beb"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "90b853401b7021051d2c9ea707a02bc5bd2954236b5168e62027464dfb93b171"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7c115047ad5faed758af251530e8686ff325ea28fae879dab427497489e0c452"
-    sha256 cellar: :any_skip_relocation, ventura:       "5bcb1866d0bc23e5db1c8173b1c55c0c66566dd72d1000378c4474f8696ac531"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "17832fb24098cd7448a0c72c2c7dce7dc17e20c5028a791cdbb9e3eee53bab5c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "31275612e3e476d5047283d9ca94ed3e6ef837b2e5f8b0ab8b495d9789eae542"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cf6d3c5ebb828e74eb0654983c9725b700e523a9ad65683d8008db9619618113"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "8370d440712f082fe7e6a68e9d4e794f85c04213ee379ada103bffbad32bc513"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e4732b6723d5dc195bb5258085e4e5d5a3dee97429f76e41698ec9416f5ec672"
+    sha256 cellar: :any_skip_relocation, ventura:       "91affdfcff34d36ad82f851b7b7ab90193464c5410b797dacd1174e9e88d54d8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4659212b65a1845b56de8f3688617729e3f443122510e192cbf2ee263dbcf652"
   end
 
   depends_on "go" => :build
+
+  # skip kubeconfig for utility commands, upstream pr ref, https:github.comyonahdkorpull457
+  patch do
+    url "https:github.comyonahdkorcommit6c02951894e587c023e57a7ab2654136024bff70.patch?full_index=1"
+    sha256 "98b3dac34c1164831a25502f8c2723d227cdac8ade8e4f68b17b00057e149be4"
+  end
 
   def install
     ldflags = "-s -w -X github.comyonahdkorpkgutils.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:)
 
-    generate_completions_from_executable(bin"kor", "completion")
+    generate_completions_from_executable(bin"kor", "completion", shells: [:bash, :zsh, :fish, :pwsh])
   end
 
   test do

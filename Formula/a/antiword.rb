@@ -28,6 +28,7 @@ class Antiword < Formula
   end
 
   deprecate! date: "2024-06-19", because: :repo_removed
+  disable! date: "2025-06-21", because: :repo_removed
 
   resource "testdoc.doc" do
     url "https:github.comrsdoielantiwordrawfe4b579067122a2d9d62647efb1ee7cfe3ca92bbDocstestdoc.doc"

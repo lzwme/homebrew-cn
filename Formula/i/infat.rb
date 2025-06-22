@@ -1,14 +1,14 @@
 class Infat < Formula
   desc "Tool to set default openers for file formats and url schemes on MacOS"
   homepage "https:github.comphilocalystinfat"
-  url "https:github.comphilocalystinfatarchiverefstagsv2.5.1.tar.gz"
-  sha256 "d25397531b436eaf27e9ceb111033a39fa0fe7f74fbb908f6740a0684d5a52f3"
+  url "https:github.comphilocalystinfatarchiverefstagsv2.5.2.tar.gz"
+  sha256 "145d37b264113f4826fcf2c7e2be3f58ffd0ebcb25031163daef8ee38589219e"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6466855e24ccda05194b336d748c1d742e1527f7a6fef67b85b59c93f2fa6c67"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "422b1395feed2b3b4fca3b9b044ba4b3ec6d9109718c1e0cc2a20b27be3a2c26"
-    sha256 cellar: :any_skip_relocation, sonoma:        "38ea665b9aa1e64fa4d066a37c51116204ce3eade08cfdd76406346f703c643b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cdaf5db6b238753ccc890899bc4531755c51e71076fe26d7654973972f4f31e3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0031bf440b8167044dd615171095001aad021afb0590e2f179612a0e8bcc9520"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e684dc96c078f68dd52cc15e1145789168bd7c4ee3fb4f245a56f3d664d41c6a"
   end
 
   depends_on xcode: ["15.2", :build]

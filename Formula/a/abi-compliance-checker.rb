@@ -14,6 +14,7 @@ class AbiComplianceChecker < Formula
   end
 
   deprecate! date: "2024-06-05", because: :unmaintained
+  disable! date: "2025-06-21", because: :unmaintained
 
   uses_from_macos "perl"
 
