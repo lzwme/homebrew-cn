@@ -1,13 +1,13 @@
 class SwiftSection < Formula
   desc "CLI tool for parsing mach-o files to obtain Swift information"
   homepage "https:github.comMxIris-Reverse-EngineeringMachOSwiftSection"
-  url "https:github.comMxIris-Reverse-EngineeringMachOSwiftSectionarchiverefstags0.4.1.tar.gz"
-  sha256 "afe48172e28e7ee626edf051d58662b62b63ddb6780e830cafbe886007af8029"
+  url "https:github.comMxIris-Reverse-EngineeringMachOSwiftSectionarchiverefstags0.5.0.tar.gz"
+  sha256 "34de34e7319dbb084236fe48f9e2eee5e4c2698fa261165612721efd10f1cbc0"
   license "MIT"
   head "https:github.comMxIris-Reverse-EngineeringMachOSwiftSection.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "edc22b3b35f2d1930d9499123a58f7a2d5d8db43789f9305bc9f4b9c428abcf5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "719b59f62cf442d4a49a9917edd1318009c38f2718b1ae951d9454f964aacbcd"
   end
 
   # The Package.swift file requires Swift 5.10 or later.

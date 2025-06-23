@@ -3,10 +3,9 @@ class Ratarmount < Formula
 
   desc "Mount and efficiently access archives as filesystems"
   homepage "https:github.commxmlnknratarmount"
-  url "https:github.commxmlnknratarmountarchiverefstagsv1.0.0.tar.gz"
-  sha256 "fc5fadfc4dc268613eb3df832a0b3a3bc7fd40cd119b6aff83beaaa29ed05254"
+  url "https:github.commxmlnknratarmountarchiverefstagsv1.1.0.tar.gz"
+  sha256 "0a3aa8606ed732f4fda11883590112aa51616c467da5a0b372867e13f37d112b"
   license "MIT"
-  revision 1
 
   # Upstream creates releases that use a stable tag (e.g., `v1.2.3`) but are
   # labeled as "pre-release" on GitHub before the version is released, so it's
@@ -17,8 +16,8 @@ class Ratarmount < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_linux:  "71afbf252f7c7f0c94fe39b89175f2abffc5f7ff84b64eaee8e77d0d846e52e8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "9834cce582b558270e76d63e92a7a1aed99e55f43401c46c6d2c2910c7a7b284"
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "75c2fb63ec64abd1254c92cd05e4f3f220ff471f2d2f1b0a43f8359c50978b57"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "c658441bdda3c1dfe3a20c01e8215bd5569793320488b65635219e6bb7144a11"
   end
 
   depends_on "libffi"
@@ -29,9 +28,9 @@ class Ratarmount < Formula
   depends_on "zlib"
   depends_on "zstd"
 
-  resource "cffi" do
-    url "https:files.pythonhosted.orgpackagesfc97c783634659c2920c3fc70419e3af40972dbaf758daa229a7d6ea6135c90dcffi-1.17.1.tar.gz"
-    sha256 "1c39c6016c32bc48dd54561950ebd6836e1670f2ae46128f67cf49e789c52824"
+  resource "brotli" do
+    url "https:files.pythonhosted.orgpackages2fc2f9e977608bdf958650638c3f1e28f85a1b075f075ebbe77db8555463787bBrotli-1.1.0.tar.gz"
+    sha256 "81de08ac11bcb85841e440c13611c00b67d3bf82698314928d0b676362546724"
   end
 
   resource "fast-zip-decryption" do
@@ -40,8 +39,8 @@ class Ratarmount < Formula
   end
 
   resource "indexed-gzip" do
-    url "https:files.pythonhosted.orgpackagesf2750eff2f73f451d8510a9ab90d96fb974b900cd68fcba0be1d21bc0da62dc2indexed_gzip-1.9.4.tar.gz"
-    sha256 "6b415e4a29e799d5a21756ecf309325997992f046ee93526b8fe4ff511502b60"
+    url "https:files.pythonhosted.orgpackagese7c454bb145774c8b1563308899580142dd17ff6da584ee8c8c6ee307733d14eindexed_gzip-1.9.5.tar.gz"
+    sha256 "105366567759db6c7df866d869611ded3bb83d5c0e50fbb01d02c1922b98b457"
   end
 
   resource "indexed-zstd" do
@@ -49,24 +48,59 @@ class Ratarmount < Formula
     sha256 "8b74378f9461fceab175215b65e1c489864ddb34bd816058936a627f0cca3a8b"
   end
 
+  resource "inflate64" do
+    url "https:files.pythonhosted.orgpackagese3a7974e6daa6c353cf080b540c18f11840e81b36d18106963a0a857b1fc2adfinflate64-1.0.3.tar.gz"
+    sha256 "a89edd416c36eda0c3a5d32f31ff1555db2c5a3884aa8df95e8679f8203e12ee"
+  end
+
   resource "libarchive-c" do
-    url "https:files.pythonhosted.orgpackagesa0f93b6cd86e683a06bc28b9c2e1d9fe0bd7215f2750fd5c85dce0df96db8ecalibarchive-c-5.1.tar.gz"
-    sha256 "7bcce24ea6c0fa3bc62468476c6d2f6264156db2f04878a372027c10615a2721"
+    url "https:files.pythonhosted.orgpackages2623e72434d5457c24113e0c22605cbf7dd806a2561294a335047f5aa8ddc1calibarchive_c-5.3.tar.gz"
+    sha256 "5ddb42f1a245c927e7686545da77159859d5d4c6d00163c59daff4df314dae82"
   end
 
-  resource "pycparser" do
-    url "https:files.pythonhosted.orgpackages1db231537cf4b1ca988837256c910a668b553fceb8f069bedc4b1c826024b52cpycparser-2.22.tar.gz"
-    sha256 "491c8be9c040f5390f5bf44a5b07752bd07f56edf992381b05c701439eec10f6"
+  resource "mfusepy" do
+    url "https:files.pythonhosted.orgpackages8b37b29c414d76e8d709b6e28b1ee18e6d4c6a605abca79c86e549aab9a6eea9mfusepy-1.1.0.tar.gz"
+    sha256 "299926c1bb788fef3bea038b4a91109567c4f2a18f4ac05971dfcb00eba73c77"
   end
 
-  resource "pygit2" do
-    url "https:files.pythonhosted.orgpackagesb7ea17aa8ca38750f1ba69511ceeb41d29961f90eb2e0a242b668c70311efd4epygit2-1.17.0.tar.gz"
-    sha256 "fa2bc050b2c2d3e73b54d6d541c792178561a344f07e409f532d5bb97ac7b894"
+  resource "multivolumefile" do
+    url "https:files.pythonhosted.orgpackages50f0a7786212b5a4cb9ba05ae84a2bbd11d1d0279523aea0424b6d981d652a14multivolumefile-0.2.3.tar.gz"
+    sha256 "a0648d0aafbc96e59198d5c17e9acad7eb531abea51035d08ce8060dcad709d6"
+  end
+
+  resource "psutil" do
+    url "https:files.pythonhosted.orgpackages2a80336820c1ad9286a4ded7e845b2eccfcb27851ab8ac6abece774a6ff4d3depsutil-7.0.0.tar.gz"
+    sha256 "7be9c3eba38beccb6495ea33afd982a44074b78f28c434a1f51cc07fd315c456"
+  end
+
+  resource "py7zr" do
+    url "https:files.pythonhosted.orgpackages9762d6f18967875aa60182198a0dd287d3a50d8aea1d844239ea00c016f7be88py7zr-1.0.0.tar.gz"
+    sha256 "f6bfee81637c9032f6a9f0eb045a4bfc7a7ff4138becfc42d7cb89b54ffbfef1"
+  end
+
+  resource "pybcj" do
+    url "https:files.pythonhosted.orgpackagesce75bbcf098abf68081fa27c09d642790daa99d9156132c8b0893e3fecd946abpybcj-1.0.6.tar.gz"
+    sha256 "70bbe2dc185993351955bfe8f61395038f96f5de92bb3a436acb01505781f8f2"
+  end
+
+  resource "pycryptodomex" do
+    url "https:files.pythonhosted.orgpackagesc985e24bf90972a30b0fcd16c73009add1d7d7cd9140c2498a68252028899e41pycryptodomex-3.23.0.tar.gz"
+    sha256 "71909758f010c82bc99b0abf4ea12012c98962fbf0583c2164f8b84533c2e4da"
+  end
+
+  resource "pyppmd" do
+    url "https:files.pythonhosted.orgpackagesf6d7b3084ff1ac6451ef7dd93d4f7627eeb121a3bed4f8a573a81978a43ddb06pyppmd-1.2.0.tar.gz"
+    sha256 "cc04af92f1d26831ec96963439dfb27c96467b5452b94436a6af696649a121fd"
   end
 
   resource "python-xz" do
     url "https:files.pythonhosted.orgpackagesfe2f7ed0c25005eba0efb1cea3cdf4a325852d63167cc77f96b0a0534d19e712python-xz-0.4.0.tar.gz"
     sha256 "398746593b706fa9fac59b8c988eab8603e1fe2ba9195111c0b45227a3a77db3"
+  end
+
+  resource "pyzstd" do
+    url "https:files.pythonhosted.orgpackages8fa254d860ccbd07e3c67e4d0321d1c29fc7963ac82cf801a078debfc4ef7c15pyzstd-0.17.0.tar.gz"
+    sha256 "d84271f8baa66c419204c1dd115a4dec8b266f8a2921da21b81764fa208c1db6"
   end
 
   resource "rapidgzip" do
@@ -80,14 +114,13 @@ class Ratarmount < Formula
   end
 
   resource "ratarmountcore" do
-    url "https:files.pythonhosted.orgpackagesa15a5600a4abe37426e9f3206bed3519b392f01816679226f4058049ea0e4a7dratarmountcore-0.8.0.tar.gz"
-    sha256 "f1991a79b020b94e75c37c92c199677c80186db5f86a7a9717def68f1ae08207"
+    url "https:files.pythonhosted.orgpackagesc671f2fcb98674e9a9ecbd5db2fbb90c5cf95c69dd8c43c6684dd33c4a2d41caratarmountcore-0.9.0.tar.gz"
+    sha256 "14f2e8bb9b61fe626085215c72e8bd2ad6a1ab021302fdfaf69fbc2fe525ba2f"
+  end
 
-    # Fix to use libfuse 3.16+ because of ABI problem
-    # Issue ref: https:github.commxmlnknratarmountissues153
-    # But it is resolved in 3.17.x
-    # Issue ref: https:github.comlibfuselibfuseissues1029
-    patch :DATA
+  resource "texttable" do
+    url "https:files.pythonhosted.orgpackages1cdc0aff23d6036a4d3bf4f1d8c8204c5c79c4437e25e0ae94ffe4bbb55ee3c2texttable-1.7.0.tar.gz"
+    sha256 "2d2068fb55115807d3ac77a4ca68fa48803e84ebb0ee2340f858107a36522638"
   end
 
   def install
@@ -100,18 +133,3 @@ class Ratarmount < Formula
     assert_match "FUSE mountpoint could not be created", shell_output("#{bin}ratarmount #{tarball} 2>&1", 1)
   end
 end
-
-__END__
-diff --git aratarmountcorefusepyfuse.py bratarmountcorefusepyfuse.py
-index 5e8e976..aedfa06 100644
---- aratarmountcorefusepyfuse.py
-+++ bratarmountcorefusepyfuse.py
-@@ -171,7 +171,7 @@ if fuse_version_major != 2 and not (fuse_version_major == 3 and _system == 'Linu
-         f"Found library {_libfuse_path} has wrong major version: {fuse_version_major}. "
-         "Expected FUSE 2!"
-     )
--if fuse_version_major == 3 and fuse_version_minor > 16:
-+if fuse_version_major == 3 and fuse_version_minor > 17:
-     raise AttributeError(
-         f"Found library {_libfuse_path} is too new ({fuse_version_major}.{fuse_version_minor}) "
-         "and will not be used because FUSE 3 has no track record of ABI compatibility."

@@ -1,7 +1,7 @@
 class Lla < Formula
   desc "High-performance, extensible alternative to ls"
-  homepage "https:github.comtriyanoxlla"
-  url "https:github.comtriyanoxllaarchiverefstagsv0.3.11.tar.gz"
+  homepage "https:github.comchaqchasella"
+  url "https:github.comchaqchasellaarchiverefstagsv0.3.11.tar.gz"
   sha256 "dde64fa4acd90f4ae86ed485576cdfe42aab0de2cb674c88712e471968f8ae0a"
   license "MIT"
 

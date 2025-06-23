@@ -15,6 +15,9 @@ class FaunaShell < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "a682cf65cd7e19afb1a0c8af45d3d76325376311433592478c2412e091ba7cfd"
   end
 
+  # Fauna Service Winding Down, https://news.ycombinator.com/item?id=43414742
+  deprecate! date: "2025-06-22", because: :unmaintained
+
   depends_on "node"
 
   def install

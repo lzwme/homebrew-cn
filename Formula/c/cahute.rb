@@ -6,7 +6,7 @@ class Cahute < Formula
   url "https://ftp.cahuteproject.org/releases/cahute-0.6.tar.gz"
   sha256 "2fb0a8f0b14d75fb0d8a6fa07f3feda9b4cfaad11115340285e2c9414565059c"
   license "CECILL-2.1"
-  head "https://gitlab.com/cahuteproject/cahute.git", branch: "develop"
+  head "https://gitlab.com/cahute/cahute.git", branch: "develop"
 
   livecheck do
     url "https://ftp.cahuteproject.org/releases/"

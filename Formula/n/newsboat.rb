@@ -1,19 +1,19 @@
 class Newsboat < Formula
   desc "RSSAtom feed reader for text terminals"
   homepage "https:newsboat.org"
-  url "https:newsboat.orgreleases2.39newsboat-2.39.tar.xz"
-  sha256 "62551a7d574d7fb3af7a87f9dbd0795e4d9420ca7136abc2265b4b06663be503"
+  url "https:newsboat.orgreleases2.40newsboat-2.40.tar.xz"
+  sha256 "1e656636009ffad3aeb87f8d0e4c36d2e913eac155b5f3ec85d00e8287b477c2"
   license "MIT"
   head "https:github.comnewsboatnewsboat.git", branch: "master"
 
   bottle do
-    sha256 arm64_sequoia: "784097ba80326b979eb1911e3069703e74931f098b4b4b09e6860d55625436a9"
-    sha256 arm64_sonoma:  "cb4fb9c1e39faebed2936c9024596c5aae56a04d5383d114b2764fa231314e79"
-    sha256 arm64_ventura: "0f259c3cfdc92b561aba4dab533c737000591552ee2741f2e18dd8b575ca1df4"
-    sha256 sonoma:        "118530c4024a841179a291c9cb8cc510def37e0dadc51204423cc55d1d5ef12d"
-    sha256 ventura:       "64d63a00c216d589829b44c64d8cc1ff6c833d8fb0eff4bd8f699be39aca7998"
-    sha256 arm64_linux:   "c5fc2f3b3031c7959cd6aca3038143adc52f77525e92d9d2b043717f9985ac1a"
-    sha256 x86_64_linux:  "9594e4b2d0db3616517b295e687cc0832b149a68546dcdce2ab9309a622ea32d"
+    sha256 arm64_sequoia: "62beb795654ad0e034cae9415b3d9762037dd5b7a6b084195338d66dfe12e5d4"
+    sha256 arm64_sonoma:  "eaab1099251d9341a040788309e8de0cd3a2210eb45b8feaa15dd96303c3ad94"
+    sha256 arm64_ventura: "00456fdf96b6cf458a1ef3e68343ded5c41f4c41dea5af060c477c782b74e535"
+    sha256 sonoma:        "a1f9d6d589a29fcead823ff5598eac302898403c3faa4936eb946224fa05a16a"
+    sha256 ventura:       "c0f4e28fdd96b4e278f37f97ba42376a3fd896e938904e28e971d232c0663b5a"
+    sha256 arm64_linux:   "a00dbb6fe0ed510fd078d1690c6a64881f674ac2af943e944ca1895d3282246a"
+    sha256 x86_64_linux:  "c9ec61ffc627d29d3a32c984db34f6ae4cc641804b37aeb2b0b5918fb59aceec"
   end
 
   depends_on "asciidoctor" => :build
@@ -102,7 +102,7 @@ class Newsboat < Formula
   end
 
   test do
-    (testpath"urls.txt").write "https:github.comblogsubscribe"
+    (testpath"urls.txt").write "https:github.blogsubscribe"
     assert_match "Newsboat - Exported Feeds", shell_output("LC_ALL=C #{bin}newsboat -e -u urls.txt")
   end
 end

@@ -12,6 +12,7 @@ class Mlc < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "50e2b98f6c763773b63c2a7119d765b7b19ef833f0958fe2d12e5a871f56c725"
     sha256 cellar: :any_skip_relocation, sonoma:        "2c6ae6865883e5d173b404d6709033f2bae396625ba74bdc135a24c2a1471787"
     sha256 cellar: :any_skip_relocation, ventura:       "3e1b6206db3d2dd7dda58a2e11ec048531993d6b7a6da8926e9cc4f590eb41b6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fe1c4efd926fcf95d1960858c7df6d779cdf220534e49159286a1b818b5b381a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "c45544bb747af27fe6cf7dc4083e5c5d5be0beb94a989f825ca0de2e21956d86"
   end
 

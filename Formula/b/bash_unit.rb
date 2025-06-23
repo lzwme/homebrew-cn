@@ -1,7 +1,7 @@
 class BashUnit < Formula
   desc "Bash unit testing enterprise edition framework for professionals"
-  homepage "https:github.compgrangebash_unit"
-  url "https:github.compgrangebash_unitarchiverefstagsv2.3.2.tar.gz"
+  homepage "https:github.combash-unitbash_unit"
+  url "https:github.combash-unitbash_unitarchiverefstagsv2.3.2.tar.gz"
   sha256 "368d1712d4c265909a5039ea91180dba1db5b15b5a02cf24cfb3b7547c0e9150"
   license "GPL-3.0-only"
 

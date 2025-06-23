@@ -1,18 +1,18 @@
 class Jackett < Formula
   desc "API Support for your favorite torrent trackers"
   homepage "https:github.comJackettJackett"
-  url "https:github.comJackettJackettarchiverefstagsv0.22.2035.tar.gz"
-  sha256 "f388e81def14a3314b8e883b89a969a320d3bc274b3a51b88c1c3794a6f4cf49"
+  url "https:github.comJackettJackettarchiverefstagsv0.22.2037.tar.gz"
+  sha256 "3655a5be77cb936c7ea497df5fc80464e9b7d8b58e5dd5adf27679b61359f306"
   license "GPL-2.0-only"
   head "https:github.comJackettJackett.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "4ef6366ae7763c838295ffd8cc039b497cc098e356478c20aa84493a0c4b0383"
-    sha256 cellar: :any,                 arm64_sonoma:  "f9521d34678b3a7836f1eef8e9fdd50d6eeada9727d799e3b5c37d19e4d7e20f"
-    sha256 cellar: :any,                 arm64_ventura: "8f3d243d16b05ca7929aea1303764649cabe086c273c6e945673a84a908e555b"
-    sha256 cellar: :any,                 ventura:       "7449b49513adfda910238f18ee27284cca524d584f5298950c847dcee8fbddcb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "57f94877cb7c88969f640d7c95adf7e666b564d130bb27d2aa274cc8fdd41741"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5173692f7c2a90366431ebdbb74556dec6cb7d7489508916063326f1057a2a62"
+    sha256 cellar: :any,                 arm64_sequoia: "2eb0ec49e39e825c6e18ba9eb2e5ef9870f8febda00e3833d8cce23c462cc620"
+    sha256 cellar: :any,                 arm64_sonoma:  "401d36f5d40c3d4af4b216f193a188c7acab710c6d2c66914c011b7f3d2fa9ce"
+    sha256 cellar: :any,                 arm64_ventura: "f3222b56c913aa4b931f196e671879536ce67a31101d766b243e5294376e9211"
+    sha256 cellar: :any,                 ventura:       "cee221def99858da1c5b8ad338a53b336d96bb75beb13d8a209d4e54f0e29ce1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3b041c386e523cf3ed109242edcadf0e2260e6f2ec56ad9d06eec383208a5361"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ef68a8a207ac13249a0dd1f995cefa07d2386b0ebe0b1b706a670b82e444f17e"
   end
 
   depends_on "dotnet@8"

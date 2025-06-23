@@ -1,8 +1,8 @@
 class Chezmoi < Formula
   desc "Manage your dotfiles across multiple diverse machines, securely"
   homepage "https:chezmoi.io"
-  url "https:github.comtwpaynechezmoireleasesdownloadv2.62.6chezmoi-2.62.6.tar.gz"
-  sha256 "99e7a98b650f617fd373efcfdc8b09921af44d0f59409e1aad5df6c5f19f350a"
+  url "https:github.comtwpaynechezmoireleasesdownloadv2.62.7chezmoi-2.62.7.tar.gz"
+  sha256 "d67af4b2ba35b15247f8a0bbcfd61147e05a2ac33cb67f403b6565837ee3861f"
   license "MIT"
   head "https:github.comtwpaynechezmoi.git", branch: "master"
 
@@ -14,13 +14,13 @@ class Chezmoi < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c1c51436df302126476bb3cc1b750a25f4d27fd7e7388de722f0164c84fd70d3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "53900423356abe2174773a50d724b54b7765b2d9d51a7dfa0c3b03c444d8153f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "855ed4b8da5c698273c5ac8c82f66e6e8c44671f3d930316221fda7c7ec51d15"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ea083d8ca4b36991e5b9cf2b7eb7b4dd3246fb3cb8c4999d8b6700b2e9b40004"
-    sha256 cellar: :any_skip_relocation, ventura:       "83d065f14087171582ae89e2a20d2657c007344c43c837f0aa06359db3b0d96c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c329ff8e8c7832be21e1ae97a16eb1d4592ab266fd8c62d706c74f964a5391e4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3bb10af8d3a82337246730c7e9e52ccdf86626d41dc371f94fba47d1383137b8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "538c908ca5cb6da7592eb2846bda5cf8a1dc5041ecf01e742e5142ffb2901362"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "91cbb68053ae6f938120e4f03b7ccb9d75ada34c57b62d0b3520f5e99b90c5a7"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "9e532387ca1eaa6fb521885bbef0d55e93d9ed61a595f53bf779e185c8f1d0c7"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3e222e0f16e7cec8674d6679d36492c8b8754cdbe48dc87bce32f3f2345c595e"
+    sha256 cellar: :any_skip_relocation, ventura:       "30d5152c66d373de1740cbae4cbf08b3b36cd75694d9c47c883fc56906bf8340"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "04ba79fe75d3131b4753991d1c4d9534ddb250b4bfe9ce22c22cec2cd9b25dd1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8a78e9ae151d453f64a3039007abdee4d3af2ffe747fc8c7e86dee2c4dbcd96b"
   end
 
   depends_on "go" => :build

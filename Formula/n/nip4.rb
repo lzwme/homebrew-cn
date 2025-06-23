@@ -1,21 +1,21 @@
 class Nip4 < Formula
   desc "Image processing spreadsheet"
   homepage "https:github.comjcupittnip4"
-  url "https:github.comjcupittnip4releasesdownloadv9.0.9-2nip4-9.0.9-2.tar.xz"
-  sha256 "ed3cc21ae581b1b0725c68632ca6a97c21c5cd5169c24c71119daa0b8b026e38"
+  url "https:github.comjcupittnip4releasesdownloadv9.0.10nip4-9.0.10.tar.xz"
+  sha256 "0e50978c042ff6a333fb9ca35ef0ebf6afbf0db43cbc5e122f2ab85cd6343c60"
   license "GPL-2.0-or-later"
   head "https:github.comjcupittnip4.git", branch: "main"
 
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any, arm64_sequoia: "94dfc45a48ac1b7a5a59574263a4dc10d227037db8112056b3d2b181422aa24a"
-    sha256 cellar: :any, arm64_sonoma:  "9d19a8ad64f055c68aed6c2344ef40ffab5f8acc3d2d6edb2dcea224430fa34a"
-    sha256 cellar: :any, arm64_ventura: "29ebfcc9e16dc0b66c52e0a6964df8884e7104779825276768530016038bed94"
-    sha256 cellar: :any, sonoma:        "ddf67099c010d19f6cce581d8f351e6c142c9c5f2fa06160b8ad53fb6060b665"
-    sha256 cellar: :any, ventura:       "3e008b64a71c9ac42bc162c651f9a0f7b9bf3a341e145ef02a9e4eb42ca122d0"
-    sha256               arm64_linux:   "f5011712faacc0538556a0dc6c91ef8088bd7bfb0efe1fb4fdd08618a5790cc8"
-    sha256               x86_64_linux:  "c0a0134a2d2b04f8ee1ebe410a0f26b95bc617b28c4a787c556238eaf190fc60"
+    sha256 cellar: :any, arm64_sequoia: "fd238ac604bf55da890fc707bf1bb80ffadd9dc1ad766b144126c87962cc293b"
+    sha256 cellar: :any, arm64_sonoma:  "d6ff750c01f07b31c36467d421a3f01484c7890baa2a377ad50aecb78a832b76"
+    sha256 cellar: :any, arm64_ventura: "35925f660cda79c56df59c1d6d41349963922a7d8dea9f5355a9eb7dda1c29a8"
+    sha256 cellar: :any, sonoma:        "7ec3e005f73cad91afa08dbbfeefe515fc93ec6c09d5633e9c8fa55e3413e257"
+    sha256 cellar: :any, ventura:       "6b4240a85a0e31e7194ae9ed6f46b30020b4a7f4d79841892444b37cd2ebb122"
+    sha256               arm64_linux:   "5dadcb880663fe21aceeeb2c2ae9c12ad0b4ec9384fa18c91bb9b8038d8deadb"
+    sha256               x86_64_linux:  "6d149e6b8c950983aac05133ffcea5ad0681bdab1da4363dfd7319da5aad9154"
   end
 
   depends_on "bison" => :build

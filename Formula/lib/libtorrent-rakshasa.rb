@@ -1,8 +1,8 @@
 class LibtorrentRakshasa < Formula
   desc "BitTorrent library with a focus on high performance"
   homepage "https:github.comrakshasalibtorrent"
-  url "https:github.comrakshasalibtorrentarchiverefstagsv0.15.4.tar.gz"
-  sha256 "065ad92f861e170296e5b75771e999c9f6112a368a9600771c405a56ff6d15ea"
+  url "https:github.comrakshasalibtorrentarchiverefstagsv0.15.5.tar.gz"
+  sha256 "e3c1728c3dba615424db0b7e6ade105a9c041d02b8f5c8443ada06e50d21ed46"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -11,13 +11,13 @@ class LibtorrentRakshasa < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "5ebc5614ba838ec31f4d392de58a7df77a3abe73c221285fdc915945bfcedd09"
-    sha256 cellar: :any,                 arm64_sonoma:  "3e35a23486cb3fe45569ae82c2032a0365d6d1199f223669565b7956b697eac1"
-    sha256 cellar: :any,                 arm64_ventura: "80a6138bca40845b6e135a7982439335c43da8c57086641ccc0d3420fa15ef68"
-    sha256 cellar: :any,                 sonoma:        "c5e97092f4f77bf828d1dd229ee72f83d2012b3f9297156ea82515ecac710d37"
-    sha256 cellar: :any,                 ventura:       "ff53d4ca1bc2d4ca615a098cc13b7be5647460a36703e907d5f2189d09349677"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5bb6d1392271938fa329797d503afd79e0da0b4bdc2f212d8d42d376f7cb3d9b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5cbede6223cedf70fb2b9a527df013e704a35fe673773007d7b0ffd5dd704331"
+    sha256 cellar: :any,                 arm64_sequoia: "7a7ded1ee559d96a35d6a034a82ecb2ac1e002e9b54ce1f5e39c20a6d940d8f3"
+    sha256 cellar: :any,                 arm64_sonoma:  "8aecbef90659d95d360f7e22e7f58738ed5ca781e4717a1df82e76db75672f32"
+    sha256 cellar: :any,                 arm64_ventura: "e63c2537db1a67009a4aeddb38686953265acf417c6a9175a87b20f512ea49ec"
+    sha256 cellar: :any,                 sonoma:        "52006abd3981cf21252cfb006cc7203cfc23e9ab9ec644ef1b013f26a1bc6785"
+    sha256 cellar: :any,                 ventura:       "90ee9ae0a637fbe981b0fde0a23d5edc280c8122e1406aa2546698a752d5196f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c60eff13d22cccb2327dad4cb1c1299f6eea2da927465286c825ee7d0743a407"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cc137bfcedc79f3170dbcaa7fe34f3f47b50ec97a15a825c4ab5a367a97fed08"
   end
 
   depends_on "autoconf" => :build

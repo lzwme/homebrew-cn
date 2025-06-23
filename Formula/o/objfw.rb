@@ -4,10 +4,10 @@ class Objfw < Formula
   url "https://objfw.nil.im/downloads/objfw-1.3.2.tar.gz"
   sha256 "8148df0d55d1a3218fe9965144b5c3ee2a7f4d8e43e430a6107e294043872cab"
   license "LGPL-3.0-only"
-  head "https://objfw.nil.im/", using: :fossil
+  head "https://git.nil.im/ObjFW/ObjFW.git", branch: "main"
 
   livecheck do
-    url "https://objfw.nil.im/wiki?name=Releases"
+    url "https://git.nil.im/ObjFW/ObjFW/releases"
     regex(/href=.*?objfw[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 

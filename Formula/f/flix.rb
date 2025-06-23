@@ -1,8 +1,8 @@
 class Flix < Formula
   desc "Statically typed functional, imperative, and logic programming language"
   homepage "https:flix.dev"
-  url "https:github.comflixflixarchiverefstagsv0.59.0.tar.gz"
-  sha256 "3900fb2f34107f4cc4015bc1f2277577e5b16fae10c39e556570c511cc0fca47"
+  url "https:github.comflixflixarchiverefstagsv0.60.0.tar.gz"
+  sha256 "be8578985461aca9bcd56c78e933821aa1849deb77974c7851a75bc659b9015f"
   license "Apache-2.0"
   head "https:github.comflixflix.git", branch: "master"
 
@@ -12,13 +12,13 @@ class Flix < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c9b567af56ef5feb35c3f978fe948e6ba323d646bf15f517adf9e4239d274754"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c3dd184c24d140fe2da4515589cdeb850d3b1ad8b25ea305f20d363cce8bdf28"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "b24aebd165650371fa9f4dcdc4ed6814ead546dbc85c6c23d3e9c112d18ebdf6"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d5da4095b665078e856132095482abb9cab5e6169874fabdb3028a932361bf33"
-    sha256 cellar: :any_skip_relocation, ventura:       "bec31420cdc3cb266d53aadc81ce26330e2ea66319bf4ccd97aff5a9bae08fdd"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a79989704b19e9dd89204d3d03d94fff5c5c825dc8022efda54c52af5e20b9e6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "110cdc103d242c92cec2fac8f92946e6e1e305ca8ff6027664dc3b1f9d2bcef4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fcfbe9a21adf53cf8111ed28004bb2659567f38e86efd24d84348f5ebbd9a12d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f5e68c21fcec6284b4c0a895d630fc4a4fd6b02b246cec1b6d0184108648c3d6"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "c58c07f1358841dd99e0201052a768dcdb1c3a2726f945d2ea433b055261ad9c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8cbf7eb79137ab6e425381ae4b2031bcf2e849d47e8d2ed2703264fd4abff57f"
+    sha256 cellar: :any_skip_relocation, ventura:       "c9d5dfd2b4652688d946783f342aa1d25fac2755a15dad57770a9497accea3c6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "50b604765d3d75774d1252bea6c0d144c1e6cf3436dff36d414992092f86a2cc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "54504ea2a1355a02d0a06307a5f23667df8748180afa02a961f8a2e7a84529c9"
   end
 
   depends_on "gradle" => :build

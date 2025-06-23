@@ -1,25 +1,19 @@
 class Wtfutil < Formula
   desc "Personal information dashboard for your terminal"
   homepage "https:wtfutil.com"
-  url "https:github.comwtfutilwtfarchiverefstagsv0.43.0.tar.gz"
-  sha256 "bb48e38e479b26e0b956b163e4804e99cd49545214090c2fdf99e54382b3d651"
+  url "https:github.comwtfutilwtfarchiverefstagsv0.44.0.tar.gz"
+  sha256 "cadf8183be4b84256c50ed64a1a401890016885e305d2816b4293f8494463c14"
   license "MPL-2.0"
   head "https:github.comwtfutilwtf.git", branch: "master"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "03d23e7f87fdcd1c568743ca4bf4261f2d90b8f83932325521f14aee6a683c1d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "56f84f075efbdd2db2a81171b4e1574cb0b9aac21f600ab3a41d9662ae12093c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3d811c8da851a06afb1aa0f1396755385a3eace99e2abdbf58719619efecdd3b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "2dde8a7584268f28be28e4ff1e98f8895314c2950d88d002830f7ed79ec51c52"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "efb3e2fd24e639a315cc5e50acd8a20dc4b454a6a8aff0dfb2c169c9eac6afd9"
-    sha256 cellar: :any_skip_relocation, sonoma:         "d2fcc48bf60123933d4c0fe276df7de4a51c2df2b3e2ae4eca15440a741e0487"
-    sha256 cellar: :any_skip_relocation, ventura:        "1c66eb6d6b8c4a9b3167163371c1d774b9df6f1dd36155b380ee83e82ac8e13d"
-    sha256 cellar: :any_skip_relocation, monterey:       "4183402aa957eead2c29e62f9e1d6afb0940568d6b387e360ae4e0fdcc61be35"
-    sha256 cellar: :any_skip_relocation, big_sur:        "717dcf43f6c5d8f55c3f0aefd8e255ef91aab685a02b668ed27ce375e1bc404a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "7a68f406904f9637ea7e5db339604f6365e536504e1d2c33beace9d9f5036551"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c46aabfdfe08b790df12e07d83d93d0b1d10c4c963315979445ec220e2463372"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bde2bd16f98af0634e758e79203812a6016eecc4cf643ccd8ec3342e0402f0b9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0e816d26d87f97710245586be7c13c7211b086de42f36d15b9730fccced69207"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "4b168bdf4b728205ced286a78cb4069b807a762aee32a2e6f1d7caee750241c6"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6b64030eee4547c8620a51bec0b3d4e1f9a444433d7c9a405e046c1830c7d667"
+    sha256 cellar: :any_skip_relocation, ventura:       "4f69bff86d190ccd65681f17fcf0e2ad19122889b025cb8efd6040d59924850e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0717b3b082e5edc5b488ff09c6f63e8c7771b24fc48fcb5a687ca24af834c018"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a3430c5841458efee32a5f14c2166dbb6fa2a3e21e15d04045964cd5ba846de5"
   end
 
   depends_on "go" => :build

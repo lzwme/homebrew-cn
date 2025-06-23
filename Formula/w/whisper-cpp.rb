@@ -1,10 +1,10 @@
 class WhisperCpp < Formula
   desc "Port of OpenAI's Whisper model in CC++"
-  homepage "https:github.comggerganovwhisper.cpp"
-  url "https:github.comggerganovwhisper.cpparchiverefstagsv1.7.5.tar.gz"
+  homepage "https:github.comggml-orgwhisper.cpp"
+  url "https:github.comggml-orgwhisper.cpparchiverefstagsv1.7.5.tar.gz"
   sha256 "2fda42b57b7b8427d724551bd041616d85401fb9382e42b0349132a28920a34f"
   license "MIT"
-  head "https:github.comggerganovwhisper.cpp.git", branch: "master"
+  head "https:github.comggml-orgwhisper.cpp.git", branch: "master"
 
   livecheck do
     url :stable

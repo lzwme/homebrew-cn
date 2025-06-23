@@ -4234,7 +4234,7 @@ Homebrew-homebrew-core/Formula/m/mantra.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mapcidr.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mapcrafter.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mapnik.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/m/mapproxy.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/m/mapproxy.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mapserver.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/marcli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mariadb-connector-c.rb, Homebrew/homebrew-core, 1
@@ -4397,6 +4397,7 @@ Homebrew-homebrew-core/Formula/m/minicom.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/minidjvu.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/minidlna.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/miniflux.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/m/minify.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/minigraph.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/minijinja-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/minikube.rb, Homebrew/homebrew-core, 1
@@ -5964,7 +5965,6 @@ Homebrew-homebrew-core/Formula/r/ruby-completion.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/ruby-install.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/ruby-lsp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/ruby.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/r/ruby@2.7.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/ruby@3.0.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/ruby@3.1.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/ruby@3.2.rb, Homebrew/homebrew-core, 1
@@ -8209,7 +8209,6 @@ Homebrew-homebrew-cask/Casks/b/bluefish.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/bluegriffon.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/blueharvest.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/bluej.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/b/bluejeans.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/bluesense.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/bluesnooze.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/b/bluestacks.rb, Homebrew/homebrew-cask, 0
@@ -10657,6 +10656,7 @@ Homebrew-homebrew-cask/Casks/font/font-m/font-myricam.rb, Homebrew/homebrew-cask
 Homebrew-homebrew-cask/Casks/font/font-m/font-mystery-quest.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-n/font-n-gage.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-n/font-nabla.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-n/font-nacelle.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-n/font-namdhinggo.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-n/font-nanum-brush-script.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-n/font-nanum-gothic-coding.rb, Homebrew/homebrew-cask, 1
@@ -12207,7 +12207,6 @@ Homebrew-homebrew-cask/Casks/i/ithoughtsx.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/itk-snap.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/itraffic.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/i/itsycal.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/i/itubedownloader.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/itunes-producer.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/itunes-volume-control.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/i/ivacy.rb, Homebrew/homebrew-cask, 0
@@ -14646,6 +14645,7 @@ Homebrew-homebrew-cask/Casks/t/tlv.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/tm-error-logger.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/tmpdisk.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/tnefs-enough.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/t/tng-digital-mini-program-studio.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/to-audio-converter.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/todesk.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/todoist.rb, Homebrew/homebrew-cask, 0
