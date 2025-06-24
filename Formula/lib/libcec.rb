@@ -1,18 +1,18 @@
 class Libcec < Formula
   desc "Control devices with TV remote control and HDMI cabling"
   homepage "https:libcec.pulse-eight.com"
-  url "https:github.comPulse-Eightlibcecarchiverefstagslibcec-7.1.0.tar.gz"
-  sha256 "7fd60dfd25b0b116c58439bb70158c1d5fd8fd492ad2a1a3b39b826bb50b54f6"
+  url "https:github.comPulse-Eightlibcecarchiverefstagslibcec-7.1.1.tar.gz"
+  sha256 "7f7da95a4c1e7160d42ca37a3ac80cf6f389b317e14816949e0fa5e2edf4cc64"
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "5d628750a848f9fe50e393d2c188fda70aa698c19a20bbbe7dc457d5c8ddce4e"
-    sha256 cellar: :any,                 arm64_sonoma:  "d43c94ebd2342cf25142ac4a489836d7f48547ea3c4da91f11cde2f9e319d401"
-    sha256 cellar: :any,                 arm64_ventura: "3c2c98844f1c667bf427d61f2c8d0fa56c1dea1f9ae4aa70fa67883358826976"
-    sha256 cellar: :any,                 sonoma:        "eadbe1896553e66368673fafafa958de45215947dc5991e33238e607a2f9ce57"
-    sha256 cellar: :any,                 ventura:       "ef7a56b4a3c551e42823704361cc09c05c5ebd372eb3c70d9f69700a7a1cdf2b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3624133784229fd025d4b4d067ec8efaaac2724b968fe09b0ab8498cb4f1ebda"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "05c12de1b683cf73a0a6a9034566c9be66e62bc51bb84e399fe913e6f6a84dff"
+    sha256 cellar: :any,                 arm64_sequoia: "efd0e7facb572876d72798c1b07df84e55ba4af2597645342784e667c9750f50"
+    sha256 cellar: :any,                 arm64_sonoma:  "d886ddba0e875d545547820c13cf9b22d5c676253512008c8527aaf95454d3df"
+    sha256 cellar: :any,                 arm64_ventura: "be082ac4c53c7d700acb7b5f91e9bb965652c9056e76549d3e067fc734c5794f"
+    sha256 cellar: :any,                 sonoma:        "0b819287c07576627c5029b3c57d295ef60fd8e8d8f25d6876b8362c7a03c2db"
+    sha256 cellar: :any,                 ventura:       "0995d3ba61e560dd6627fc093301c6f99ae1488b75bc49c182c659ef1dd5091c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "680f4262c03b5a10e88bee7ba827762f84e38d943d68a8d0ca61485738f97128"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a1e8795e972cddb728bd93304f2a97ded54988e0a5a253d13a6a2a683d0e2c2f"
   end
 
   depends_on "cmake" => :build
@@ -57,6 +57,6 @@ class Libcec < Formula
   end
 
   test do
-    assert_match "libCEC version: #{version}", shell_output("#{bin}cec-client --info")
+    assert_match "libCEC version: #{version}", shell_output("#{bin}cec-client --list-devices")
   end
 end

@@ -1,26 +1,23 @@
 class AwsVault < Formula
   desc "Securely store and access AWS credentials in development environments"
-  homepage "https:github.com99designsaws-vault"
-  url "https:github.com99designsaws-vaultarchiverefstagsv7.2.0.tar.gz"
-  sha256 "3f2f1d0ec06eb0873f9b96b59dc70f9fcc832dc97b927af3dbab6cdc87477b0e"
+  homepage "https:github.comByteNessaws-vault"
+  url "https:github.comByteNessaws-vaultarchiverefstagsv7.4.0.tar.gz"
+  sha256 "595aa99882f4e577fa68f1d45de76e87362cf5b1582782992734ba82afb706e9"
   license "MIT"
-  head "https:github.com99designsaws-vault.git", branch: "master"
+  head "https:github.comByteNessaws-vault.git", branch: "main"
 
   livecheck do
     url :stable
     regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d977e625b3ac401635b1d95b4b18e4fc0b058f251f425c102b7b965e08b2ecf6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4e85192e42b17524b0a1321b1d69beebfd2c0a10baf961e514bce2914eace59f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "578a68527779690f0f37b655af958895f8b6d854a34767a263dcf5a7e7a14e1d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "02d404644b13dc1667c7ccf0912be79ea2788cb339773f2e350b0cdda9d1f7d5"
-    sha256 cellar: :any_skip_relocation, ventura:       "a1eb3f660e906283eb1d48d6c96b1f81a10060f7d0367735b219f3c103191921"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "61114565f6c9bf24fb99520e20f46494517ff949805299d178861e8e24b59d58"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4e03acfa5e4f2012434737c874c788ba442d23fb30a85489b5843967986eb90a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "700fae47551c32bbb3d3c4ccfe2e9fc8900abe8e3c0b7b7c0a9a08c6028bdec1"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "87415e2b25667b5a3c5b6d066ae3720e7283d2c83a1b15aaa9fbf61fb0638924"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ed3dd34aab4bbd6b83f99d30be16bc5e349b28267f3661cd96cd55614b87c9a5"
+    sha256 cellar: :any_skip_relocation, ventura:       "513ed139f51016a6b6d675f20fe5a249dda8888190539554e73c4799c545bffd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cf3f930927fd54a0750067d138bddf1029b336309be66f17cab4ab171f832d19"
   end
 
   depends_on "go" => :build

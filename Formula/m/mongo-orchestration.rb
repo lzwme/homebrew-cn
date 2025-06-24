@@ -2,12 +2,12 @@ class MongoOrchestration < Formula
   include Language::Python::Virtualenv
 
   desc "REST API to manage MongoDB configurations on a single host"
-  homepage "https:github.com10genmongo-orchestration"
+  homepage "https:github.commongodb-labsmongo-orchestration"
   url "https:files.pythonhosted.orgpackages738ff087958ff2ce6b0f06d5be16717e48d2009d598e4ae26270437b473a211amongo_orchestration-0.11.0.tar.gz"
   sha256 "6f53db5cb6bc1ab4a8f282f2638e1c2d35b7fdcb15f6c8e034acf5d0676e3df5"
   license "Apache-2.0"
   revision 2
-  head "https:github.com10genmongo-orchestration.git", branch: "master"
+  head "https:github.commongodb-labsmongo-orchestration.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "9cf1ca98e8cc1d53a511e305356720f88c7df9fe43ca546c964e68d2f04c0b34"

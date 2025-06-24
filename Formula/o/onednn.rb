@@ -1,10 +1,10 @@
 class Onednn < Formula
   desc "Basic building blocks for deep learning applications"
   homepage "https:www.oneapi.ioopen-source"
-  url "https:github.comoneapi-srconeDNNarchiverefstagsv3.8.1.tar.gz"
+  url "https:github.comuxlfoundationoneDNNarchiverefstagsv3.8.1.tar.gz"
   sha256 "4b0638061a789a1efbefdcd2e85eb257c7b432b3b6a71ba8909e19d75f50b163"
   license "Apache-2.0"
-  head "https:github.comoneapi-srconednn.git", branch: "master"
+  head "https:github.comuxlfoundationoneDNN.git", branch: "master"
 
   livecheck do
     url :stable

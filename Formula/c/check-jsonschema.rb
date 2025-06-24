@@ -3,20 +3,19 @@ class CheckJsonschema < Formula
 
   desc "JSON Schema CLI"
   homepage "https:github.compython-jsonschemacheck-jsonschema"
-  url "https:files.pythonhosted.orgpackages518e67e40a319334f5beed9943a4f28de527e27599e07600e10063fb5f18f8b0check_jsonschema-0.33.0.tar.gz"
-  sha256 "504fe09f268d2d25d58381d1ed1d5ae8f6e80e7f300e8b155317b40f9f6db8f6"
+  url "https:files.pythonhosted.orgpackagesa1890fd8397eb84bdf50ffbbfb1aeea6d21ce8c4eebef435b4ef14d05899f686check_jsonschema-0.33.1.tar.gz"
+  sha256 "69ec6c1fcf3f7b6bd27dbff27959203eeca0b8f2ef0bb5cdb00ceb63312932ce"
   license "Apache-2.0"
-  revision 2
   head "https:github.compython-jsonschemacheck-jsonschema.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "450191b98a6035c85a1af2a6f4804eb0676155edd22bc3a23510c734e043d016"
-    sha256 cellar: :any,                 arm64_sonoma:  "3e66d792ece6365d9aad51182d318cc77a6d35bc5c06e8ebf320ef6d53f508c5"
-    sha256 cellar: :any,                 arm64_ventura: "14369712ea6834c984a10f049a740c3b9ae867fe03657e107f970588728b0d83"
-    sha256 cellar: :any,                 sonoma:        "cd1e7d983b03e39f60423ae88108c6272ffb0cd457c6483f9b42ec1cd7fe15dd"
-    sha256 cellar: :any,                 ventura:       "7ae4ece8570f1fe0f581406a074371a2cc6e2bf572b8ebd777fc3b661e406e77"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d54b1e0c5dc200d308a3f7e04ec9dd37d39958d17ac1c97092a9a0a35952b094"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ad168a739bac4327197e4173087d7e48f382f9f17515903e741a7ed806cae69f"
+    sha256 cellar: :any,                 arm64_sequoia: "14081637fdaca8e7e01df4a938d1876b6a337d3327e069ba57ea2fda6c9ad07c"
+    sha256 cellar: :any,                 arm64_sonoma:  "110beb235c3164c9c235ca9d84fe70cc22e05aa22aa12ff70fe24b282ab6f7ae"
+    sha256 cellar: :any,                 arm64_ventura: "7f03b789adb0c4129cbdbf77125720396ccc6e9d56af8970e52583cb7fbecaf3"
+    sha256 cellar: :any,                 sonoma:        "3688122310b1c122911157014789f6c029b30e20dd2729228355fcf8ae9a40c0"
+    sha256 cellar: :any,                 ventura:       "ff2328301e5ade0a3947e58268a78a166889d552ef2ac43c96682baa310c0924"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ed921996caed24865d93832b4d275f9abb85cd3b5fef7fbe07652f3917632fc5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "78ad6a33bafb1803ae97d588c0b59f4e67566a77e497259f89ad73d99dbd7ebc"
   end
 
   depends_on "rust" => :build

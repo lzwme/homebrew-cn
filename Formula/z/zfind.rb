@@ -1,18 +1,18 @@
 class Zfind < Formula
   desc "Search for files (even inside tarzip7zrar) using a SQL-WHERE filter"
   homepage "https:github.comlaktakzfind"
-  url "https:github.comlaktakzfindarchiverefstagsv0.4.6.tar.gz"
-  sha256 "cdd17b981e20eab9d8daa59883c37e4be22e95af0e72d273ab5f45ce683f106a"
+  url "https:github.comlaktakzfindarchiverefstagsv0.4.7.tar.gz"
+  sha256 "49bc01da8446c8a97182f9794032d851614f0efc75b4f4810a114491a08d3bd4"
   license "MIT"
   head "https:github.comlaktakzfind.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e1cf9f46226b201e7410a6ebc03f5441e71a8f229b684498afff2f7ad50a39b5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e1cf9f46226b201e7410a6ebc03f5441e71a8f229b684498afff2f7ad50a39b5"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "e1cf9f46226b201e7410a6ebc03f5441e71a8f229b684498afff2f7ad50a39b5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "86b76cc1e99b774107a095bb1cdac248eea06407d6c2efc13fcab461678fb076"
-    sha256 cellar: :any_skip_relocation, ventura:       "86b76cc1e99b774107a095bb1cdac248eea06407d6c2efc13fcab461678fb076"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "37ddf89957ee7412d9e7bc9a3b71d0403fc615d4a972b71332faa6e059fddce0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "42a14d6e1ee0eb40c0309c893b877c1e7440796eaf7209db195c576362f096e3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "42a14d6e1ee0eb40c0309c893b877c1e7440796eaf7209db195c576362f096e3"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "42a14d6e1ee0eb40c0309c893b877c1e7440796eaf7209db195c576362f096e3"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f91bac0d8be49b7de9c64e288c9e8ce3430202d7fa6f258255fa97242dc52786"
+    sha256 cellar: :any_skip_relocation, ventura:       "f91bac0d8be49b7de9c64e288c9e8ce3430202d7fa6f258255fa97242dc52786"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2f07a3ba2af17209191e615c27b235be99fc748fba24f932b15d6005b588a6fb"
   end
 
   depends_on "go" => :build

@@ -37,7 +37,7 @@ class Rtmpdump < Formula
   conflicts_with "flvstreamer", because: "both install 'rtmpsrv', 'rtmpsuck' and 'streams' binary"
 
   # Patch for OpenSSL 1.1 compatibility
-  # Taken from https:github.comJudgeZarbiRTMPDump-OpenSSL-1.1
+  # Taken from https:github.comDJ-HuntressRTMPDump-OpenSSL-1.1
   patch :p0 do
     url "https:raw.githubusercontent.comHomebrewformula-patches85fa66a9rtmpdumpopenssl-1.1.diff"
     sha256 "3c9167e642faa9a72c1789e7e0fb1ff66adb11d721da4bd92e648cb206c4a2bd"

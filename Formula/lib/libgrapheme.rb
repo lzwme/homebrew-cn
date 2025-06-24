@@ -7,7 +7,8 @@ class Libgrapheme < Formula
   head "https://git.suckless.org/libgrapheme/", using: :git, branch: "master"
 
   livecheck do
-    url "git://git.suckless.org/libgrapheme"
+    url "https://dl.suckless.org/libgrapheme/"
+    regex(/href=.*?libgrapheme[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   no_autobump! because: :requires_manual_review

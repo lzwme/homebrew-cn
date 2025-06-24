@@ -33,7 +33,7 @@ class Lmod < Formula
   end
 
   resource "luafilesystem" do
-    url "https:github.comkeplerprojectluafilesystemarchiverefstagsv1_8_0.tar.gz"
+    url "https:github.comlunarmodulesluafilesystemarchiverefstagsv1_8_0.tar.gz"
     sha256 "16d17c788b8093f2047325343f5e9b74cccb1ea96001e45914a58bbae8932495"
   end
 

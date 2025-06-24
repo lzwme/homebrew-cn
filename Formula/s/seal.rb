@@ -23,7 +23,7 @@ class Seal < Formula
   uses_from_macos "zlib"
 
   resource "hexl" do
-    url "https:github.comintelhexlarchiverefstagsv1.2.5.tar.gz"
+    url "https:github.comIntelLabshexlarchiverefstagsv1.2.5.tar.gz"
     sha256 "3692e6e6183dbc49253e51e86c3e52e7affcac925f57db0949dbb4d34b558a9a"
   end
 
@@ -40,6 +40,7 @@ class Seal < Formula
           -DHEXL_BENCHMARK=OFF
           -DHEXL_TESTING=OFF
           -DHEXL_EXPORT=ON
+          -DCMAKE_POLICY_VERSION_MINIMUM=3.5
         ]
         system "cmake", "-S", ".", "-B", "build", *hexl_args, *std_cmake_args
         system "cmake", "--build", "build"
@@ -55,6 +56,7 @@ class Seal < Formula
       -DSEAL_USE_INTEL_HEXL=#{Hardware::CPU.intel? ? "ON" : "OFF"}
       -DHEXL_DIR=#{lib}cmake
       -DCMAKE_CXX_FLAGS=-I#{include}
+      -DCMAKE_POLICY_VERSION_MINIMUM=3.5
     ]
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args

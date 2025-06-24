@@ -2,11 +2,11 @@ class Dooit < Formula
   include Language::Python::Virtualenv
 
   desc "TUI todo manager"
-  homepage "https:github.comkraanzudooit"
+  homepage "https:github.comdooit-orgdooit"
   url "https:files.pythonhosted.orgpackagescf922a83069a1b7d2e7455f40c9c70ad63daeba0f68b52ed8e6e248144d7928cdooit-3.2.3.tar.gz"
   sha256 "5ac238f2d781c438eabc5616428697c7e0905130e80d3b814126f64a925d0c70"
   license "MIT"
-  head "https:github.comkraanzudooit.git", branch: "main"
+  head "https:github.comdooit-orgdooit.git", branch: "main"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "8047ea87fead5fee013e42473bfc468ecea6c4e92c5613e20fa351b6b6868102"

@@ -1,6 +1,6 @@
 class Mask < Formula
   desc "CLI task runner defined by a simple markdown file"
-  homepage "https:github.comjakedeichertmask"
+  homepage "https:github.comjacobdeichertmask"
   url "https:github.comjacobdeichertmaskarchiverefstagsmask0.11.6.tar.gz"
   sha256 "e76ae20a120c3ab44f1b14e73ff3f1b39d900bc66f8d2dab7fed4706bacd92fd"
   license "MIT"

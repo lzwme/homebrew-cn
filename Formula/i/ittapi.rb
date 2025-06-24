@@ -1,19 +1,19 @@
 class Ittapi < Formula
   desc "Intel Instrumentation and Tracing Technology (ITT) and Just-In-Time (JIT) API"
   homepage "https:github.comintelittapi"
-  url "https:github.comintelittapiarchiverefstagsv3.26.1.tar.gz"
-  sha256 "e070b01293cd9ebaed8e5dd1dd0a662735637b1d144bbdcb6ba18fd90683accf"
+  url "https:github.comintelittapiarchiverefstagsv3.26.2.tar.gz"
+  sha256 "e4dd9c78c17efa4ab79290d6a1c66c686208382ae1a689554d18d640761d0316"
   license "GPL-2.0-only"
   head "https:github.comintelittapi.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b5424508c20204936d2fad669378ac204bc082015502cf15ed36550ba6f64c76"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ad8d7db2bdfa50d5c4c298b2a570599bda56b71fcc7d08ac36cf7de96c6ff64f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "211f381413eef7fdbf6843fecdf4160dd8748dc1d652fae6dcd0c3d096825eb0"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0cc017753e4c3c83d108cfd2dd9e0d84f8d0c46ecbd53958cca0fb8f9154dab8"
-    sha256 cellar: :any_skip_relocation, ventura:       "fa2e9c2e80eb616452e93de954e8b04afcfdb36cb9129f32e64b18a9a538e4d2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1b35467fb43af71a19ab43bdf8cc72dff27ec833c4bb1155ae5d22f46aeb3d3f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ea5b67f7f9f0d42188564fda3e430f4fd33ccecfb933e404e7f69ed3f12545a5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "83b8937c42a6fd65c510e63fa33ac1d4b45108f5d91f3cf40abe79ae971144e7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "57541a42af07f51f50e9db9cf4c9a75def6f3e0f1e8a6f743d3e8049c5be8954"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "8b7f797b318177f72038f448f61ff1b677c8831fa736a0e848d0e66eb1d3dd77"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a8ad4a9ec70659bd1376d55378a6547e63ce6c0fa315aabea14c92c585a04d30"
+    sha256 cellar: :any_skip_relocation, ventura:       "162a3879313c8f428eeecc7cfe8464ebe78b34dbe51d5bf1a525a9b01f620a65"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ead64ded5eb5e703d68806f5b194d37793a0416409038647f601ac641e4eda25"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a8cdf21327d4dabc5983844bba3c2be6e3d3f02afc90499ec45908d0cb4ab2d4"
   end
 
   depends_on "cmake" => :build

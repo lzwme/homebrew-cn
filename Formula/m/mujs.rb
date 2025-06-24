@@ -1,8 +1,8 @@
 class Mujs < Formula
   desc "Embeddable Javascript interpreter"
   homepage "https:www.mujs.com"
-  url "https:mujs.comdownloadsmujs-1.3.6.tar.gz"
-  sha256 "7cf3a5e622cff41903efff0334518fc94af063256752c38ba4618a5191e44f18"
+  url "https:mujs.comdownloadsmujs-1.3.7.tar.gz"
+  sha256 "fa15735edc4b3d27675d954b5703e36a158f19cfa4f265aa5388cd33aede1c70"
   license "ISC"
   head "https:github.comccxviimujs.git", branch: "master"
 
@@ -12,19 +12,25 @@ class Mujs < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "839b3fa73f32ef2b53a2e52af833fa2257786dd32bf6094f19dba18d4d47f274"
-    sha256 cellar: :any,                 arm64_sonoma:  "84220bdaa3fc8a2e33185fb4e1b0426cf37a31f83bcfdeed90a2fb37e50780c1"
-    sha256 cellar: :any,                 arm64_ventura: "0765c40d6deb118da5f0f8edd014bd4de89d889bee4fed10a7b7c64c23affcee"
-    sha256 cellar: :any,                 sonoma:        "8a354ea3d674b092ead9ed37be5d584c2ef8470ebbbad298c00af7fb7fbc0f8e"
-    sha256 cellar: :any,                 ventura:       "20a7ee4f3d183a7fcae93ecedfd9562485b3462a6cc013e74e0cc66a5ad34ace"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2e7bab595f2280b58d8c3193370ed5d9f12e864b60ec18aec64c70e0122ad6c5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "16f8f85b13a69a0962fab110a0215ebd002220ab84878bd164cd3dd7171cf9db"
+    sha256 cellar: :any,                 arm64_sequoia: "52b7e1468b1d7b7a493f953fe52be4e91c8fc00223b97b9512b9aa8d787514cd"
+    sha256 cellar: :any,                 arm64_sonoma:  "daf4da3709624eed9c6b5de2d6eaf53c0b3638fdb1be06f8bface0332bca81b9"
+    sha256 cellar: :any,                 arm64_ventura: "e5d5e280103b96ae1c4424b778d6bc04b5fd5930ea7e779ca728b0c0913c9953"
+    sha256 cellar: :any,                 sonoma:        "650c453369a790c299d2a18d48e26180c500fc45dff44c096542e3cdd54c735d"
+    sha256 cellar: :any,                 ventura:       "96dc1e1d6885f3668149484766172f053ae14ceff5edcf3ec25dc7c78b33b207"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "10dcbc661f36958c88762bfaaa5ccbc3597d4a26a251a966129a7ed6a781dc4e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "08acc6ab105fbb7517a610c2abdaf8439bda9059fb98673f1a825b67c8385092"
   end
 
   depends_on "pkgconf" => :test
 
   on_linux do
     depends_on "readline"
+  end
+
+  # update build for `utfdata.h`, upstream pr ref, https:github.comccxviimujspull203
+  patch do
+    url "https:github.comccxviimujscommite21c6bfdce374e19800f2455f45828a90fce39da.patch?full_index=1"
+    sha256 "e10de8b9c3a62ffe121b61fe60b67ba8faa68eaace9a3b17a13f46a2cc795a11"
   end
 
   def install

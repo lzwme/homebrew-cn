@@ -1,7 +1,7 @@
 class Tbb < Formula
   desc "Rich and complete approach to parallelism in C++"
   homepage "https:uxlfoundation.github.iooneTBB"
-  url "https:github.comoneapi-srconeTBBarchiverefstagsv2022.1.0.tar.gz"
+  url "https:github.comuxlfoundationoneTBBarchiverefstagsv2022.1.0.tar.gz"
   sha256 "ed067603ece0dc832d2881ba5c516625ac2522c665d95f767ef6304e34f961b5"
   license "Apache-2.0"
 

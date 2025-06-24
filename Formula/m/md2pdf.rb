@@ -1,10 +1,10 @@
 class Md2pdf < Formula
   desc "CLI utility that generates PDF from Markdown"
-  homepage "https:github.comsolworktechmdtopdf"
-  url "https:github.comsolworktechmdtopdfarchiverefstagsv2.2.18.tar.gz"
+  homepage "https:github.comsolworktechmd2pdf"
+  url "https:github.comsolworktechmd2pdfarchiverefstagsv2.2.18.tar.gz"
   sha256 "c231d18742d9b0618bd1feaf1f3ab8864173a838b1847d9dcba6018fe5888f10"
   license "MIT"
-  head "https:github.comsolworktechmdtopdf.git", branch: "master"
+  head "https:github.comsolworktechmd2pdf.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "a3f31a7fd7fc59f484e62023b815331c624d0caac12e8573e3dce5a72a53d9f7"

@@ -1,8 +1,8 @@
 class NodeAT20 < Formula
   desc "Platform built on V8 to build network applications"
   homepage "https://nodejs.org/"
-  url "https://registry.npmmirror.com/-/binary/node/v20.19.2/node-v20.19.2.tar.xz"
-  sha256 "4a7ff611d5180f4e420204fa6f22f9f9deb2ac5e98619dd9a4de87edf5b03b6e"
+  url "https://registry.npmmirror.com/-/binary/node/v20.19.3/node-v20.19.3.tar.xz"
+  sha256 "99be7b9d268d48b93be568a23240398ceacb0782dc7055b9972305c000b0e292"
   license "MIT"
 
   livecheck do
@@ -11,13 +11,13 @@ class NodeAT20 < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "be55f8d8c39ef95fc8679c5134e220170a1018b8260d4e0ef094bc1a2b4a9f75"
-    sha256 arm64_sonoma:  "6da90926c6e9c66a8a7cf036fac648b725885e9df5c4555138db694035fecb8f"
-    sha256 arm64_ventura: "a8868e101395048bb17d35f6c70d61876e79de376b09bd6c3008c89caebe9619"
-    sha256 sonoma:        "4f0d2148422fa01d70d1128f956625b75f2b6fb6e7e5e3fb51e32c982f5410cf"
-    sha256 ventura:       "d850934c12a4c34c7219346a875d8038f55484ad0630a81d59fd1142b4032235"
-    sha256 arm64_linux:   "7c0fddc0126df790140b7851ca49982e843c4fb94b35642b10cd08b1b16bdc17"
-    sha256 x86_64_linux:  "d70ddaccae20469adb9fbbd4f02f96f8d6e1fa8230f0199672c2e3204146c490"
+    sha256 arm64_sequoia: "f60a47d995b7abc5e23d7dbda445754f33995b075fbd69e080f1b2f7f0dceafd"
+    sha256 arm64_sonoma:  "b8bc4097b64077e93b02e2943f8dc34515b937ae477bcf64d97c4ae404a7c05e"
+    sha256 arm64_ventura: "b7c4b51b77b04e168a5b6bf6b1198c10d848a163c44e6410ab9c0849c72ac5ab"
+    sha256 sonoma:        "27dcb333f911a10f78c16524d1802a9178f48c35522fc2b9f85b86446c62af42"
+    sha256 ventura:       "301d6afed678c8edb5b9ff9b46db84dd091fe6fb97efe208e607b785a22750d6"
+    sha256 arm64_linux:   "0286d73d90f4a03adb8a16e2961a55a79f6e9637b24374dc26105dc565995255"
+    sha256 x86_64_linux:  "e33a56ba931b4133ddcf3b6e39b5f33c1a46cb81b5f0543a0092b5e35fb9cf75"
   end
 
   keg_only :versioned_formula
@@ -47,20 +47,6 @@ class NodeAT20 < Formula
     cause <<~EOS
       error: calling a private constructor of class 'v8::internal::(anonymous namespace)::RegExpParserImpl<uint8_t>'
     EOS
-  end
-
-  # Fix build with Xcode 16.3.
-  patch do
-    url "https://github.com/Bo98/node/commit/3b5eb14cad3a493e99f84ca45871bd37570cae3d.patch?full_index=1"
-    sha256 "3a110c30ec63c4e5afbb48f27922a69c40d3939db5a5b6b20d40660f996ae27d"
-  end
-  patch do
-    url "https://github.com/Bo98/node/commit/e2ab76c1aeceaf866b8c5053cf71f199706d621d.patch?full_index=1"
-    sha256 "b306c7cfa910e025b1a23fda1da8f8613310a2d7b5c575d3718529db8d9e7fdd"
-  end
-  patch do
-    url "https://github.com/Bo98/node/commit/a56d782971c30164545e76a97b07ade373a3a565.patch?full_index=1"
-    sha256 "86af038fca81170d41e7c324864cc74fb098dbea6b8d28273b6b50ca53415979"
   end
 
   def install

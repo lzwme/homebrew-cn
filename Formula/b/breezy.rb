@@ -10,6 +10,11 @@ class Breezy < Formula
   license "GPL-2.0-or-later"
   revision 1
 
+  livecheck do
+    url :stable
+    regex(^brz[._-]v?(\d+(?:\.\d+)+)$i)
+  end
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "565798749e5d220bf2543a4daec0b5f7e8cc70a0e7b7cbde425ea185531ee63a"
     sha256 cellar: :any,                 arm64_sonoma:  "5025163b7fa90c358f2d5bbb489e91f396a8f7cc0a0f030600d7b96815daf1f4"

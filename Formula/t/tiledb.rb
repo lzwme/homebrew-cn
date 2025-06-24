@@ -5,6 +5,11 @@ class Tiledb < Formula
   sha256 "de731cd0c8e82fe8cfca084b937dc0df41e451c8eb93071e4cc5aba7bbef854e"
   license "MIT"
 
+  livecheck do
+    url :stable
+    regex(^v?(\d+(?:\.\d+)+)$i)
+  end
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "9468ff50f991980cd4a1f271157acda6c86180ade8ba9bb6d112c77a9376e791"
     sha256 cellar: :any,                 arm64_sonoma:  "40161d0f697370e27e84f0c0a070936a9e1cf0f648d1b3797f85c36dc16d2525"

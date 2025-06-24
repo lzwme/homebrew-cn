@@ -1,7 +1,7 @@
 class Form < Formula
   desc "Symbolic manipulation system"
   homepage "https:www.nikhef.nl~form"
-  url "https:github.comvermaserenformreleasesdownloadv4.3.1form-4.3.1.tar.gz"
+  url "https:github.comform-devformreleasesdownloadv4.3.1form-4.3.1.tar.gz"
   sha256 "f1f512dc34fe9bbd6b19f2dfef05fcb9912dfb43c8368a75b796ec472ee8bbce"
   license "GPL-3.0-or-later"
 

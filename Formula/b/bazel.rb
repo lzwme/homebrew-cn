@@ -1,8 +1,8 @@
 class Bazel < Formula
   desc "Google's own build tool"
   homepage "https:bazel.build"
-  url "https:github.combazelbuildbazelreleasesdownload8.2.1bazel-8.2.1-dist.zip"
-  sha256 "b12b95cc02cc5ee19ff7a6a7f71f9496631f937c8e13a8f53ee0ff7b7700bc16"
+  url "https:github.combazelbuildbazelreleasesdownload8.3.0bazel-8.3.0-dist.zip"
+  sha256 "c81cbf1a4d26cfb283c26c3544d47828679e42476e32e807151b9f647207530c"
   license "Apache-2.0"
 
   livecheck do
@@ -11,13 +11,13 @@ class Bazel < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8224a8feb8a996ee168e3ea0827a3c3b03f7548f073ac999c7492bec90083542"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cafc46ac731d4813486d8f2dcca404bd4c26b1a9dd1a7d5e3c969a91c9ec4cca"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "bf0164c7b1827eddeae7a5836b7cef7c7190bf4effaaa8200b4c112376d8b7e3"
-    sha256 cellar: :any_skip_relocation, sonoma:        "741ea67f934716218cccab3f2ef504afc224a7e9ddc8e71eb2b86dcdbbcd934b"
-    sha256 cellar: :any_skip_relocation, ventura:       "413a2f767535186f8111dcd0f99fe45a50d26b9ced44c448d2c37e67b9d3d007"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7a59f868eeb3da45fa932b604f195ee68280a943355f62a22faf1a3f4c5d76c9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "50aaa13f1ad8ae797ba2eb663c5e1d0a92e3321973cedf1f1e62a56fcb0dd265"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "132326dd57f0f5a0e42ebd8a712863904296eb7f42bc1fe4df38c6eb4a003fc7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a0972cff8ccb60757427904c1e18e4ffc1dd7f8fe6699ca672b62db37c81e440"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "c66f1bb88fb1851976e625b89aef13b3c7e0585d3ad3550b7ce3a131dd586bb2"
+    sha256 cellar: :any_skip_relocation, sonoma:        "29c3085e845ee639486a98fc0adbb5d870598e0279dbb54476976240a79fbb90"
+    sha256 cellar: :any_skip_relocation, ventura:       "27ab02a58fcb0852b44ed15f77480615fd68e98dff6823b26e179999673bf0bc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "28fc3f08ef33761901bf81ac5ce4f0750a9508cad1b9558d86e8c2037e22f235"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b53e7336f1f689b457ecc2b772489aa53c9730e1530fee9048f586b999bd02c1"
   end
 
   depends_on "python@3.13" => :build
@@ -126,7 +126,8 @@ class Bazel < Formula
       )
     STARLARK
 
-    system bin"bazel", "build", ":bazel-test"
+    # Explicitly disable repo contents cache
+    system bin"bazel", "build", ":bazel-test", "--repo_contents_cache="
     assert_equal "Hi!\n", shell_output("bazel-binbazel-test")
 
     # Verify that `bazel` invokes Bazel's wrapper script, which delegates to

@@ -7,12 +7,13 @@ class GrafanaAlloy < Formula
   head "https:github.comgrafanaalloy.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5fa4ab718ee2c2a349ec18cfc32b64efa61b8c893373c4bf2d4e60865f972b3f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e2878ce46352a891e0e1403bc2b6ba622fd04bcc8f7c4a11527afe84f6ceb0ba"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "b7085ef27a3379c15b020ece45c2b3bd27da7d46c210719f2e917b5df2bfc7f3"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e699aa684016788397b9f7ec8ceef2cf51c776eb6eec3a8de76af00d1b76cf3b"
-    sha256 cellar: :any_skip_relocation, ventura:       "804524c5b40a63fa3c02e08450abecb11a325440959984c1c2dad5f271497b70"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "77707c1e4a40bf5710c5751cea903427946072c2a87fdd25d1bb2b9ab360e6e5"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "591ddacbaca141b624d29106d529d0de4d17b2abab1e4304a14059608ce1c92f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8cdac5d397d056e0395f02b8fb282d0d501fcf8e4f5a244d26ae4c4a6bcd243a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "1ec6f86d4d3656bc3235327a73a7ac5397ac14a7afc4daaeedc7ce44be2f3772"
+    sha256 cellar: :any_skip_relocation, sonoma:        "24cfa5132721635ddc04e80ea9acf15f8fa5f71a67bcd2a55aa1621006b1ceee"
+    sha256 cellar: :any_skip_relocation, ventura:       "59e14e87014c799c7f61f709f01e9f33eb913d2e4073a3349070024ff200ab18"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "69ce85c841c0463bd6c7ffaa4201eabf10b84d66d28d89b846bc80af2fb7f0f6"
   end
 
   depends_on "go" => :build
@@ -23,7 +24,7 @@ class GrafanaAlloy < Formula
     depends_on "systemd" # for go-systemd (dlopen-ed)
   end
 
-  conflicts_with "alloy", because: "both install `alloy` binaries"
+  conflicts_with "alloy-analyzer", because: "both install `alloy` binaries"
 
   def install
     ldflags = %W[

@@ -9,13 +9,14 @@ class Rasterio < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "4410576ace32e78400ed9d09167fdb8512765eec039229237a3db59dbdf3a673"
-    sha256 cellar: :any,                 arm64_sonoma:  "f66b60551ec2f3d51a889d8738a4b0bec36b1212d05183fd0d0623dbcb9a6221"
-    sha256 cellar: :any,                 arm64_ventura: "26af3700f3b615d9eac3d871eb2e9efbae7f402294966b12108414ec57296eab"
-    sha256 cellar: :any,                 sonoma:        "50ad9d3ac08ab03e08678ca3d6551016421b7b186fe95c362b9dbd67a8304214"
-    sha256 cellar: :any,                 ventura:       "868807093a9173ae0a22dcc9426e4e7a38fce818789bbc9e51192eea11695887"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a3591bf74726a6e4663aad38970345a67c0bd75cd5eb553c8ca8b218cc6dacce"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "00de49b47c6a04925b1575417950a468713913e3a64279ca8e02b77fb86b9131"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "4ef36558ac6e8d989f632c769937b8ccd9ced748c0b823db3e5cb71bf9eaa936"
+    sha256 cellar: :any,                 arm64_sonoma:  "7694d294efc5a2d14ab956f41acae3cf82b76a730e665ce21183c9a4ba29fe98"
+    sha256 cellar: :any,                 arm64_ventura: "30e512537c68292a9fd0b94e53a8ac322928fdb5135ffbd99e00cad2a46a8bd2"
+    sha256 cellar: :any,                 sonoma:        "b7a80a3acc90424d3ae0639353194ad86832e84f1584a94bcb5d2d442efc3584"
+    sha256 cellar: :any,                 ventura:       "f226f12cd61b1b188fce44cd8880f9a1146c7dea3e54d948b43c6c8876b2207f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "40cce37129c3b70c087b1c08d38a93946f0fa595f1ea5d29e6f33bf8cc201caa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "03de82be905d85d0b06a221e202f511ff99af401d08d9cd60c2741eb2cb6f00b"
   end
 
   depends_on "cmake" => :build
@@ -30,7 +31,7 @@ class Rasterio < Formula
     depends_on "patchelf" => :build
   end
 
-  conflicts_with "rio", because: "both install `rio` binaries"
+  conflicts_with "rio-terminal", because: "both install `rio` binaries"
   conflicts_with cask: "rio", because: "both install `rio` binaries"
 
   resource "affine" do

@@ -1,10 +1,10 @@
 class Testssl < Formula
   desc "Tool which checks for the support of TLSSSL ciphers and flaws"
   homepage "https:testssl.sh"
-  url "https:github.comdrwettertestssl.sharchiverefstagsv3.2.1.tar.gz"
+  url "https:github.comtestssltestssl.sharchiverefstagsv3.2.1.tar.gz"
   sha256 "b10fcd6fc25ba3832858ac529bfe391d701b68f12b631482a19be98a9efb176e"
   license "GPL-2.0-only"
-  head "https:github.comdrwettertestssl.sh.git", branch: "3.2"
+  head "https:github.comtestssltestssl.sh.git", branch: "3.2"
 
   bottle do
     sha256 cellar: :any_skip_relocation, all: "7b4fe21825f9fdac284931109a0f0bc57b7187e6946115357cad507a86067290"

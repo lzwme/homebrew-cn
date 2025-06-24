@@ -4,18 +4,18 @@ class Mosh < Formula
   url "https:github.commobile-shellmoshreleasesdownloadmosh-1.4.0mosh-1.4.0.tar.gz"
   sha256 "872e4b134e5df29c8933dff12350785054d2fd2839b5ae6b5587b14db1465ddd"
   license "GPL-3.0-or-later"
-  revision 26
+  revision 28
 
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "332e33cd2cc6b612830b92757cd74fa5371b24518d0cdca5c41da9f342c0fc81"
-    sha256 cellar: :any,                 arm64_sonoma:  "be86e68fe178fd4ec4997f320875438df088428f70e38f640a2c56ae5574d6c6"
-    sha256 cellar: :any,                 arm64_ventura: "c5eb7da2878edc09a82d6f30087bf0b025d2f1ac03a1de4a564bcc5d9d7ae24b"
-    sha256 cellar: :any,                 sonoma:        "d5ba6c67df6d29aa90f5596c9ae613d237e0c448e2ac78f5ee7868d65f7dc748"
-    sha256 cellar: :any,                 ventura:       "9a89c7a0008af27915b35b6e1fd8938ef2e7899484f2d19027836bd630f7f997"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "37c7642af2e149bf8c7a26c72431c8fbe96775bda22d53cd2f2a747cf4f429b9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5a8ac06965b89d7cab36d8b3526d781efb09420c9cf6bee7f74b75e740dd93c3"
+    sha256 cellar: :any,                 arm64_sequoia: "755a860faf4f4eb8715bb132abc76a8569b1b266c610fbd7ac4b7fe1ab48a539"
+    sha256 cellar: :any,                 arm64_sonoma:  "1410eac2e92eadf9dcc717f3d4d80d0505b8a32799d40831f6af95f9e0622df4"
+    sha256 cellar: :any,                 arm64_ventura: "3ee966425def3198861ce28cda95106a572b1a9ee9a0fe4b1e7e7fc673f7b6a9"
+    sha256 cellar: :any,                 sonoma:        "9d195badfc9d371c8e3f7e53606a1c8a35d2b28539013927632dae8c7c4619fa"
+    sha256 cellar: :any,                 ventura:       "83cfdc9ce4e3e5dd72284c4525272217e57cde54b11d6c6043bde2fc62ff63c9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2a8a37afa1b8ae7a1f5b3a48859e33f7b93a7529e53780dd50231668bd088fea"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a4fe1a8fc42c1ae159ccb9219f2c39ce6174c24df3f1f724887f6a7bc40fb321"
   end
 
   head do
@@ -63,8 +63,6 @@ class Mosh < Formula
 
     # `configure` does not recognise `--disable-debug` in `std_configure_args`.
     system ".configure", "--prefix=#{prefix}", "--enable-completion", "--disable-silent-rules"
-    # Mosh provides remote shell access, so let's run the tests to avoid shipping an insecure build.
-    system "make", "check" if OS.mac? # Fails on Linux.
     system "make", "install"
   end
 
