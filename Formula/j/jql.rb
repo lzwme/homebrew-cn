@@ -1,19 +1,19 @@
 class Jql < Formula
   desc "JSON query language CLI tool"
   homepage "https:github.comyamafaktoryjql"
-  url "https:github.comyamafaktoryjqlarchiverefstagsjql-v8.0.6.tar.gz"
-  sha256 "8af2f6c794cffeba9bc2604cf68cd7ddaa6126ec038786060b463474e8a88b5b"
+  url "https:github.comyamafaktoryjqlarchiverefstagsjql-v8.0.7.tar.gz"
+  sha256 "05448d17d1036373633e0d6a4556481ccc3b309832bdc9363d4c6f5d9d4311a4"
   license any_of: ["Apache-2.0", "MIT"]
   head "https:github.comyamafaktoryjql.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6860a78f88ccd0e124b2bbbfa76708fdebe1914ceaaa250dedfd9f67815d56f4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "225736c377075e9be9729971fc07a841f9d1e4e4da3620483a671901a3bbbb9e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "abc6c4a072ffee1cf7636a9999883b22d95a64958e2c6a12da3e00b7ca07c5ee"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4307e9108391a1645b879d2a1f62fcf037da7479d468b52af69a76b42918cf05"
-    sha256 cellar: :any_skip_relocation, ventura:       "697f882b3ab3a92135f9f7275abdad329ed1d14a2fefebc807a24f837696db4d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "da2bac1654b7d3f89fab1a54e01f756b36de4618db8074ccab83e4e9127d185f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8a247dea0d088ee3a9262d80e9ceb7b204209a6bdddba5bb98ce72aea24abfde"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "910e6bfa669d89502d5813e35f08c35045900781c753e8038edb598ea1b4a111"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c4281cfe8a31d137ae341e2121c662f113787779bb51f188c3203ef0c88ec570"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "4dfe01a97571a5588a076c9bec4f1c97d5931fc8c9955f2a6edcb778ff252f5f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f5183bb93a90a40b6c0a49c27733e08a57bd7fd46ce9899d7141c5f2ab795539"
+    sha256 cellar: :any_skip_relocation, ventura:       "cb9f39ccca3db2e3a96606edf6d26f229fd915dfb5f7d1653da42e922380f2ef"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4cc9c62b4d9990433b28b5e77e8de4985b7c1e23edd54f39f93619072ae65c67"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bc7aa94d5c2f521c2aedefa9eccffc92df462287c74f96aae29388e3822e1530"
   end
 
   depends_on "rust" => :build

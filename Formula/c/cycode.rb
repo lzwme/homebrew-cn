@@ -19,7 +19,7 @@ class Cycode < Formula
 
   depends_on "maturin" => :build # for mcp
   depends_on "pkgconf" => :build
-  depends_on "rust" => :build # for mcp, upstream bug report, https:github.comPyO3maturinissues2642
+  depends_on "rust" => :build # for mcp
   depends_on "certifi"
   depends_on "libyaml"
   depends_on "python@3.13"

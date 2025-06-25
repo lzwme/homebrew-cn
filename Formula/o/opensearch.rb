@@ -1,18 +1,18 @@
 class Opensearch < Formula
   desc "Open source distributed and RESTful search engine"
   homepage "https:github.comopensearch-projectOpenSearch"
-  url "https:github.comopensearch-projectOpenSearcharchiverefstags3.0.0.tar.gz"
-  sha256 "5701c0a0e801a27cb1fb6521c17138c43a0933e364fa2cfb5a62cfcdcb4e1270"
+  url "https:github.comopensearch-projectOpenSearcharchiverefstags3.1.0.tar.gz"
+  sha256 "7f682d85fb82c2caa9fe6dff0a0c1769df0b5ed96b993ac8cdd6485f3d103fda"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "02c7d73c1f51d079efc702aeabc45e840dfbd6f9c3e3a5d5d39845b7e084f9b9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "08a110cc034a792732c5612adfa6879b8d0cd360d0abb538f4987be274bdf829"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "3ff98574221a06111ee8663c5a55f9de0661b3275f85c93fea08cc4b93a21abb"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9ac2af223ccdc1bc9df151bd53e56415c3ea5a3dd664e9ff6efd32734df83974"
-    sha256 cellar: :any_skip_relocation, ventura:       "7316664aaad936f205d760e5e3292b3f567723d05acd4eaf7cf3c7818333a60b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2af72cc2f707be2ca3ea709fbf1e597a923e4daa7a3e5610178bb697bb022eb8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c7f8b518e5898e1af368400a5053ee50e2df258bc05de53dfcc8549ffffab46f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "14c6a7df9cb6a0b2e732881a31b58b2e6a1d4e50de88d52f41cea2f3716d4a91"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9f55ca1cf8350cd32015660b57eeda81d97fba0725f05bf87e37f86365d5bd7c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "54acb7e61c007fdec2d9ce0af1626ad7e863ba8a104fade952e8bac3e906fd28"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9185ecf2cfc924b7676a2a3ce010433e54cc5de5beea7b01f2894da865a361e0"
+    sha256 cellar: :any_skip_relocation, ventura:       "9028211903fe956ff64df4bfe8add34feb5e7eab65fe68dd0ce8ddd159c34d3b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c69e89426b143739bbbc3b02430483f605d7d7a55062a1a69083b39874059505"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dc27344b4c320c2a3395ea5f72e5927154afd53ee31cb8ab4e6e602c5b41a732"
   end
 
   depends_on "gradle" => :build

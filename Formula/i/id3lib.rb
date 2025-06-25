@@ -1,24 +1,10 @@
 class Id3lib < Formula
   desc "ID3 tag manipulation"
   homepage "https:id3lib.sourceforge.net"
+  url "https:downloads.sourceforge.netprojectid3libid3lib3.8.3id3lib-3.8.3.tar.gz"
+  sha256 "2749cc3c0cd7280b299518b1ddf5a5bcfe2d1100614519b68702230e26c7d079"
   license "LGPL-2.0-or-later"
   revision 1
-  head ":pserver:anonymous:@id3lib.cvs.sourceforge.net:cvsrootid3lib", using: :cvs, module: "id3lib-devel"
-
-  stable do
-    url "https:downloads.sourceforge.netprojectid3libid3lib3.8.3id3lib-3.8.3.tar.gz"
-    sha256 "2749cc3c0cd7280b299518b1ddf5a5bcfe2d1100614519b68702230e26c7d079"
-
-    patch do
-      url "https:raw.githubusercontent.comHomebrewformula-patchese223e971id3libid3lib-vbr-overflow.patch"
-      sha256 "0ec91c9d89d80f40983c04147211ced8b4a4d8a5be207fbe631f5eefbbd185c2"
-    end
-
-    patch do
-      url "https:raw.githubusercontent.comHomebrewformula-patchese223e971id3libid3lib-main.patch"
-      sha256 "83c8d2fa54e8f88b682402b2a8730dcbcc8a7578681301a6c034fd53e1275463"
-    end
-  end
 
   no_autobump! because: :requires_manual_review
 
@@ -46,6 +32,16 @@ class Id3lib < Formula
   depends_on "libtool" => :build
 
   uses_from_macos "zlib"
+
+  patch do
+    url "https:raw.githubusercontent.comHomebrewformula-patchese223e971id3libid3lib-main.patch"
+    sha256 "83c8d2fa54e8f88b682402b2a8730dcbcc8a7578681301a6c034fd53e1275463"
+  end
+
+  patch do
+    url "https:raw.githubusercontent.comHomebrewformula-patchese223e971id3libid3lib-vbr-overflow.patch"
+    sha256 "0ec91c9d89d80f40983c04147211ced8b4a4d8a5be207fbe631f5eefbbd185c2"
+  end
 
   patch do
     url "https:raw.githubusercontent.comHomebrewformula-patchese223e971id3libno-iomanip.h.patch"

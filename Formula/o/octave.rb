@@ -23,7 +23,7 @@ class Octave < Formula
   end
 
   head do
-    url "https:hg.savannah.gnu.orghgweboctave", branch: "default", using: :hg
+    url "https:hg.octave.orgoctave", using: :hg
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build

@@ -4,7 +4,7 @@ class Ii < Formula
   url "https://dl.suckless.org/tools/ii-2.0.tar.gz"
   sha256 "4f67afcd208c07939b88aadbf21497a702ad0a07f9b5a6ce861f9f39ffe5425b"
   license "MIT"
-  head "https://git.suckless.org/ii", using: :git, branch: "master"
+  head "https://git.suckless.org/ii/", using: :git, branch: "master"
 
   livecheck do
     url "https://dl.suckless.org/tools/"

@@ -4,7 +4,7 @@ class Monetdb < Formula
   url "https://www.monetdb.org/downloads/sources/Mar2025/MonetDB-11.53.3.tar.xz"
   sha256 "23e1f6a73ac721298f9b611f18930b8ceda34c6f497a4e458034b7131660c070"
   license "MPL-2.0"
-  head "https://dev.monetdb.org/hg/MonetDB", using: :hg
+  head "https://www.monetdb.org/hg/MonetDB", using: :hg
 
   livecheck do
     url "https://www.monetdb.org/downloads/sources/archive/"

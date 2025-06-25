@@ -1,6 +1,6 @@
 class Graphicsmagick < Formula
   desc "Image processing tools collection"
-  homepage "http://www.graphicsmagick.org/"
+  homepage "https://graphicsmagick.sourceforge.io/"
   url "https://downloads.sourceforge.net/project/graphicsmagick/graphicsmagick/1.3.45/GraphicsMagick-1.3.45.tar.xz"
   sha256 "dcea5167414f7c805557de2d7a47a9b3147bcbf617b91f5f0f4afe5e6543026b"
   license "MIT"

@@ -1,18 +1,18 @@
 class Pscale < Formula
   desc "CLI for PlanetScale Database"
   homepage "https:www.planetscale.com"
-  url "https:github.complanetscalecliarchiverefstagsv0.245.0.tar.gz"
-  sha256 "143f8f75bd398f848a646485ec646bfb2aad635f4626c28fa3f80e622cbd0a0c"
+  url "https:github.complanetscalecliarchiverefstagsv0.246.0.tar.gz"
+  sha256 "114da654288e3ca15ed2c1aed176ffd838e281b5f4ad99780a373768e21b3aae"
   license "Apache-2.0"
   head "https:github.complanetscalecli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f041a0600f505aa4284aeb808fc53d7a0e18c1c5faa98c1e2cea3644b1c07c92"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4b98bd8274c4c6789570d821b1758042d09d6e4059d25fca4dcc5da1f1b5ce81"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "1ed445a1a1966ed2b4da582d461a7c46bf3e8d3257588235acb08d8025168063"
-    sha256 cellar: :any_skip_relocation, sonoma:        "740b28940316f410fb804c53e32516f6ccd0b78a436a1f6cdf5560b62c40991a"
-    sha256 cellar: :any_skip_relocation, ventura:       "0ec2ffff6198e83fa5334a5532f1ba48ed5ae3dd86c114560308a6f012b8e18c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "12b8c0b874cc52ef9d5bc92b9bfa88aea054da2166b12084ff00abcff152fa09"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "033c8104543d1a1329889f2863f43a309e3ef6b577ab2db7f511c3607758e246"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a08086c239f86794d1132576522e834f71740a508c29466067d3a9739d6fbb0a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "f51bee0aa3f421d7989ece9df408ef9e72161230ad5112fbe5eefcfbfa7295f7"
+    sha256 cellar: :any_skip_relocation, sonoma:        "031a7f05c81ac08406fb57a79176337a8d9dd1c0e37cb5e6991f6af5870787f5"
+    sha256 cellar: :any_skip_relocation, ventura:       "18d63feff0818bf9fdc02cb4c151680e09f45d4d935f615fb349d036e1b5afdb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a3e9d4bbd85c4eac1f579b04bb71e38c457cc377981777a45169aa11e55991ed"
   end
 
   depends_on "go" => :build

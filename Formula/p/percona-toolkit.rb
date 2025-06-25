@@ -1,16 +1,16 @@
 class PerconaToolkit < Formula
   desc "Command-line tools for MySQL, MariaDB and system tasks"
-  homepage "https://www.percona.com/software/percona-toolkit/"
-  url "https://downloads.percona.com/downloads/percona-toolkit/3.7.0-2/source/tarball/percona-toolkit-3.7.0.tar.gz"
+  homepage "https:www.percona.comsoftwarepercona-toolkit"
+  url "https:downloads.percona.comdownloadspercona-toolkit3.7.0-2sourcetarballpercona-toolkit-3.7.0.tar.gz"
   sha256 "192c899dcfa26eca1b9e8692b7b687d143154902b6089afb03c14ea1b93e432d"
   license any_of: ["GPL-2.0-only", "Artistic-1.0-Perl"]
-  head "lp:percona-toolkit", using: :bzr
+  head "https:github.comperconapercona-toolkit.git", branch: "3.x"
 
   livecheck do
-    url "https://www.percona.com/products-api.php", post_form: {
+    url "https:www.percona.comproducts-api.php", post_form: {
       version: "percona-toolkit",
     }
-    regex(/value=["']?[^"' >]*?v?(\d+(?:[.-]\d+)+)[|"' >]/i)
+    regex(value=["']?[^"' >]*?v?(\d+(?:[.-]\d+)+)[|"' >]i)
   end
 
   bottle do
@@ -30,14 +30,14 @@ class PerconaToolkit < Formula
 
   resource "JSON" do
     on_linux do
-      url "https://cpan.metacpan.org/authors/id/I/IS/ISHIGAKI/JSON-4.10.tar.gz"
+      url "https:cpan.metacpan.orgauthorsidIISISHIGAKIJSON-4.10.tar.gz"
       sha256 "df8b5143d9a7de99c47b55f1a170bd1f69f711935c186a6dc0ab56dd05758e35"
     end
   end
 
   def install
-    ENV.prepend_path "PERL5LIB", Formula["perl-dbd-mysql"].opt_libexec/"lib/perl5"
-    ENV.prepend_create_path "PERL5LIB", libexec/"lib/perl5"
+    ENV.prepend_path "PERL5LIB", Formula["perl-dbd-mysql"].opt_libexec"libperl5"
+    ENV.prepend_create_path "PERL5LIB", libexec"libperl5"
 
     resources.each do |r|
       r.stage do
@@ -50,15 +50,15 @@ class PerconaToolkit < Formula
 
     system "perl", "Makefile.PL", "INSTALL_BASE=#{prefix}", "INSTALLSITEMAN1DIR=#{man1}"
     system "make", "install"
-    bin.env_script_all_files(libexec/"bin", PERL5LIB: ENV["PERL5LIB"])
+    bin.env_script_all_files(libexec"bin", PERL5LIB: ENV["PERL5LIB"])
   end
 
   test do
     input = "SELECT name, password FROM user WHERE id='12823';"
-    output = pipe_output("#{bin}/pt-fingerprint", input, 0)
+    output = pipe_output("#{bin}pt-fingerprint", input, 0)
     assert_equal "select name, password from user where id=?;", output.chomp
 
     # Test a command that uses a native module, like DBI.
-    assert_match version.to_s, shell_output("#{bin}/pt-online-schema-change --version")
+    assert_match version.to_s, shell_output("#{bin}pt-online-schema-change --version")
   end
 end

@@ -3,18 +3,18 @@ class Fdroidserver < Formula
 
   desc "Create and manage Android app repositories for F-Droid"
   homepage "https:f-droid.org"
-  url "https:files.pythonhosted.orgpackagesbfd8ce1b87f1dc8d4533fed73baa99acfc5e3f713ec40d56ea47e808790f43b4fdroidserver-2.4.1.tar.gz"
-  sha256 "38de6905f415b36aebad04f6b2f79486091a13e2edd269c8bdca908d94b017cc"
+  url "https:files.pythonhosted.orgpackages33762b5b90013b559a4cdc8dd627a937523ba58196dab16e48d4badb54bf5da5fdroidserver-2.4.2.tar.gz"
+  sha256 "5dc926f8306473c33082fc4fdd3356207e5874f91c00c0d76125f26ce35bbe1b"
   license "AGPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "b9012fba7e78e5039f93e0bb637637b3b3fb37bbad03b119431496b9f7f736e0"
-    sha256 cellar: :any,                 arm64_sonoma:  "983e98e90e9cbfb9e573387649a9c1cbe52053f0dbad6260752767e6f450cc17"
-    sha256 cellar: :any,                 arm64_ventura: "b8f72a28708945261fdea57773ce84c5a50b6094c017e11ab1ad946536337c69"
-    sha256 cellar: :any,                 sonoma:        "ff6108817f3879795b0e208075d636f05acc6b7922e6aeb8c9aa1de44700cb4d"
-    sha256 cellar: :any,                 ventura:       "2f9774f18a16025bf93acf4682f9cc1758ba52b140ff806cb8bc0fc76f1be8f9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ad88cae96d6f117a9298789c22b799a8b5e58548958400779120cbd98ff5d008"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "64dbf9340eeda9e402af721b8a2ee77b0e140241fcb2b6eee0a128f9fcdd8fd1"
+    sha256 cellar: :any,                 arm64_sequoia: "2a1121ce163db3c67d32b30e10667c000571e12b2d637d1b438e86cf64d361e5"
+    sha256 cellar: :any,                 arm64_sonoma:  "abfee552e53e4571f9142d6c0f9c93278b80b0add68aa11657eb226564c5f559"
+    sha256 cellar: :any,                 arm64_ventura: "8ea2ac8abc1462eb95554655fd6d1ba3b0ce73eabd552b9a4564ac96dbcbae2b"
+    sha256 cellar: :any,                 sonoma:        "7644e0fb34c58585c1267d384cc9bb00958331bf2b266f1a31df3973656154f1"
+    sha256 cellar: :any,                 ventura:       "fa4725b24f2d00d1b2954360b0ad0e906b47bfd3986c311825331b50f4f89d14"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "72d345d6a950b14c30fb1551c7947f63f963d2d7f70ef79a790b13f1f6e08539"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c29de3c7626ef5a3bdb231624a6427fa2087bb1281c77f52b118c085605492ff"
   end
 
   depends_on "ninja" => :build

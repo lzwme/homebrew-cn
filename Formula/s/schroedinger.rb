@@ -28,14 +28,6 @@ class Schroedinger < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "32c7db0617f2a2d01b89d446860529fc3520f377e601a460fadc5e3ce2bc0baa"
   end
 
-  head do
-    url "lp:schroedinger", using: :bzr
-
-    depends_on "autoconf" => :build
-    depends_on "automake" => :build
-    depends_on "libtool" => :build
-  end
-
   depends_on "pkgconf" => :build
   depends_on "orc"
 
@@ -44,7 +36,6 @@ class Schroedinger < Formula
     # Help old config scripts identify arm64 linux
     args << "--build=aarch64-unknown-linux-gnu" if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
 
-    system "autoreconf", "--force", "--install", "--verbose" if build.head?
     system "./configure", *args, *std_configure_args
 
     # The test suite is known not to build against Orc >0.4.16 in Schroedinger 1.0.11.

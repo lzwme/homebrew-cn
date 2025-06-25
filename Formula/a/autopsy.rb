@@ -24,6 +24,7 @@ class Autopsy < Formula
 
   # Installs prebuilt binaries, broken on arm: https:github.comHomebrewhomebrew-coreissues175053
   deprecate! date: "2024-06-22", because: :does_not_build
+  disable! date: "2025-06-23", because: :does_not_build
 
   depends_on "sleuthkit"
 

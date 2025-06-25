@@ -1,8 +1,8 @@
 class AwsVault < Formula
   desc "Securely store and access AWS credentials in development environments"
   homepage "https:github.comByteNessaws-vault"
-  url "https:github.comByteNessaws-vaultarchiverefstagsv7.4.0.tar.gz"
-  sha256 "595aa99882f4e577fa68f1d45de76e87362cf5b1582782992734ba82afb706e9"
+  url "https:github.comByteNessaws-vaultarchiverefstagsv7.4.1.tar.gz"
+  sha256 "7bf3319017ad88da0236b98a4cc2c1489a52d533afb2780569b9555b53672d90"
   license "MIT"
   head "https:github.comByteNessaws-vault.git", branch: "main"
 
@@ -12,12 +12,12 @@ class AwsVault < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4e03acfa5e4f2012434737c874c788ba442d23fb30a85489b5843967986eb90a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "700fae47551c32bbb3d3c4ccfe2e9fc8900abe8e3c0b7b7c0a9a08c6028bdec1"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "87415e2b25667b5a3c5b6d066ae3720e7283d2c83a1b15aaa9fbf61fb0638924"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ed3dd34aab4bbd6b83f99d30be16bc5e349b28267f3661cd96cd55614b87c9a5"
-    sha256 cellar: :any_skip_relocation, ventura:       "513ed139f51016a6b6d675f20fe5a249dda8888190539554e73c4799c545bffd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cf3f930927fd54a0750067d138bddf1029b336309be66f17cab4ab171f832d19"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c6f5f8774ff803d104fc4e32b763069c5d92fe9afa432016a1067d34f8a85322"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bfa49e8b1bb3f99fbcd40b1be5eea54ae72b3cb2410aa50e32aed838effe7988"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "fbf74c96b7e9a5db48afb4a548980a9756b6098e0eb9fd45184d1193331d728f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5b733c48565a013d562d24b32afd427bfcc9b06e52c7e3b064af15e3a116214e"
+    sha256 cellar: :any_skip_relocation, ventura:       "27cb395f8086a07c79f6d476cecd255a1a1f4ff90bb6567207654628f7788b40"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fb7d3643b2f8ec963d89277c9a46742721d9ab8af167e36becd122d217b25ad5"
   end
 
   depends_on "go" => :build

@@ -4,8 +4,8 @@ class Semgrep < Formula
   desc "Easily detect and prevent bugs and anti-patterns in your codebase"
   homepage "https:semgrep.dev"
   url "https:github.comsemgrepsemgrep.git",
-      tag:      "v1.126.0",
-      revision: "565749d86742061055c541bfb0660333f9e16bc4"
+      tag:      "v1.127.0",
+      revision: "f079fe859a11490cb57a8106bbf56334b5b8bb39"
   license "LGPL-2.1-only"
   head "https:github.comsemgrepsemgrep.git", branch: "develop"
 
@@ -15,13 +15,13 @@ class Semgrep < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "89c81bfde1ab612bcc97bd8154546eb23f7b7b87f283b776c44d25b517019bd2"
-    sha256 cellar: :any,                 arm64_sonoma:  "ece5a594647709d036f1171848e11394db148f037729f17e9c053fbf0f488622"
-    sha256 cellar: :any,                 arm64_ventura: "2f80b9144e9eae0d24ae9180a54fb3ee68c049c3a4859bc9245ade3e244f7e50"
-    sha256 cellar: :any,                 sonoma:        "dad269ed41d59c8e2963f293721354bc6c4426d66185794e8e5174e5155b8219"
-    sha256 cellar: :any,                 ventura:       "9b825c1a29516b3116858a9e4b3fdbc661c9a3f24e644c1fef203cedd3a67434"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f72ddf6aba775961be829068afc405b8a0e6ff2577ae29e3b5a9a5e59f816eb2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9dcf99df88b510098aebd9bab60a061f099bf7f8f3b7d3437a9f7766baef2b4c"
+    sha256 cellar: :any,                 arm64_sequoia: "1cbf9e1d165e3bd9dc0bb9b70e45dc59cf6fef9b25a8bea1a6bfbd58df25d8d8"
+    sha256 cellar: :any,                 arm64_sonoma:  "39bc100283e69555ec4603a6f7fc43569118523c701019f6f1e862ee0953ca74"
+    sha256 cellar: :any,                 arm64_ventura: "0f9bfd8874b79a6820f1ea1d62b466b69f498a22e3c6c6d0afa7054ebff26abb"
+    sha256 cellar: :any,                 sonoma:        "63b6f86f8ae535c6b211569e262f04e858d761e55efd84ec0b187b27d5277490"
+    sha256 cellar: :any,                 ventura:       "f9467f5f818ed13dbb278b41ff924e3491574bb442f02939a0b142af44ae5b1f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "061c02fb73f0b8bac8e1bfeee5749fa3f40722c42369ac1d58b75a360b97e33a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c309346381bc5033399edda4a7d03a9f2446d89bb99d500befa1c7a457778117"
   end
 
   depends_on "autoconf" => :build
@@ -57,8 +57,8 @@ class Semgrep < Formula
   end
 
   resource "bracex" do
-    url "https:files.pythonhosted.orgpackagesd66c57418c4404cd22fe6275b8301ca2b46a8cdaa8157938017a9ae0b3edf363bracex-2.5.post1.tar.gz"
-    sha256 "12c50952415bfa773d2d9ccb8e79651b8cdb1f31a42f6091b804f6ba2b4a66b6"
+    url "https:files.pythonhosted.orgpackages639afec38644694abfaaeca2798b58e276a8e61de49e2e37494ace423395febcbracex-2.6.tar.gz"
+    sha256 "98f1347cd77e22ee8d967a30ad4e310b233f7754dbf31ff3fceb76145ba47dc7"
   end
 
   resource "charset-normalizer" do
@@ -202,8 +202,8 @@ class Semgrep < Formula
   end
 
   resource "pygments" do
-    url "https:files.pythonhosted.orgpackages7c2dc3338d48ea6cc0feb8446d8e6937e1408088a72a39937982cc6111d17f84pygments-2.19.1.tar.gz"
-    sha256 "61c16d2a8576dc0649d9f39e089b5f02bcd27fba10d8fb4dcc28173f7a45151f"
+    url "https:files.pythonhosted.orgpackagesb077a5b8c569bf593b0140bde72ea885a803b82086995367bf2037de0159d924pygments-2.19.2.tar.gz"
+    sha256 "636cb2477cec7f8952536970bc533bc43743542f70392ae026374600add5b887"
   end
 
   resource "referencing" do

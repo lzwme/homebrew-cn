@@ -129,7 +129,7 @@ Homebrew-homebrew-core/Formula/a/amp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/ampl-asl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/ampl-mp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/amqp-cpp.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/a/amtterm.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/a/amtterm.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/analog.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/ancient.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/angband.rb, Homebrew/homebrew-core, 1
@@ -5224,7 +5224,7 @@ Homebrew-homebrew-core/Formula/p/perceptualdiff.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/percol.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/percona-server.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/percona-server@8.0.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/p/percona-toolkit.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/p/percona-toolkit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/percona-xtrabackup.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/percona-xtrabackup@8.0.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/periphery.rb, Homebrew/homebrew-core, 1
@@ -7808,6 +7808,7 @@ Homebrew-homebrew-cask/Casks/a/agentkube.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/agi.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/aide-app.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/aifun.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/a/aigcpanel.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/aimersoft-video-converter-ultimate.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/air-video-server-hd.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/airbuddy.rb, Homebrew/homebrew-cask, 0
@@ -12133,6 +12134,7 @@ Homebrew-homebrew-cask/Casks/i/insomnia.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/i/insomnia@alpha.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/i/insomnium.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/i/inssider.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/i/insta360-link-controller.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/insta360-studio.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/install-disk-creator.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/instantview.rb, Homebrew/homebrew-cask, 0
@@ -14414,6 +14416,7 @@ Homebrew-homebrew-cask/Casks/s/suspicious-package.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/suuntodm5.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/svgcleaner.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/svp.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/s/swama.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/sweet-home3d.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/swift-im.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/swift-publisher.rb, Homebrew/homebrew-cask, 0
@@ -15196,7 +15199,6 @@ Homebrew-homebrew-cask/Casks/y/yuanbao.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/y/yubico-authenticator.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/y/yubico-yubikey-manager.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/y/yubihsm2-sdk.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/y/yuna.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/y/yuque.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/z/zalo.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/z/zandronum.rb, Homebrew/homebrew-cask, 0

@@ -1,27 +1,35 @@
 class Direwolf < Formula
   desc "Software \"soundcard\" AX.25 packet modemTNC and APRS encoderdecoder"
   homepage "https:github.comwb2oszdirewolf"
-  url "https:github.comwb2oszdirewolfarchiverefstags1.7.tar.gz"
-  sha256 "6301f6a43e5db9ef754765875592a58933f6b78585e9272afc850acf7c5914be"
   license all_of: [
     "GPL-2.0-or-later",
     "ISC", # externalmisc{strlcpy.c,strlcat.c} (Linux)
     :cannot_represent, # externalgeotranz, see https:github.comexternprogeotranzblobv2.4.2readme.txt
   ]
+  revision 1
   head "https:github.comwb2oszdirewolf.git", branch: "master"
+
+  stable do
+    url "https:github.comwb2oszdirewolfarchiverefstags1.7.tar.gz"
+    sha256 "6301f6a43e5db9ef754765875592a58933f6b78585e9272afc850acf7c5914be"
+
+    # cmake 4 build patch
+    patch do
+      url "https:github.comwb2oszdirewolfcommitc499496bbc237d0efdcacec5786607f5e17c1c7e.patch?full_index=1"
+      sha256 "3b5e2aeecf89284f1684b3e83f4de1bb80dc3bdd5b6ed626856be640718dc8a6"
+    end
+  end
 
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256                               arm64_sequoia:  "fb3b2a272641595f3ea481b05ac39409f75466cdf50fc9592b3cdddeca1b3d20"
-    sha256                               arm64_sonoma:   "f15cf78ea350bac7d0daf8663e54242eed663f577400de7630f8225c4e08e340"
-    sha256                               arm64_ventura:  "494d3a0854c7d919fa8446915bec34806b387c138fd23210c05ab3677c701faf"
-    sha256                               arm64_monterey: "1c437d0c62b29032faf6eb115caef44b62bc7ef7525d5a137c09eec5015a0f49"
-    sha256                               sonoma:         "5ad4a23ede0053b7c587b99514c48982378ad7f5e4ae4871e8b8eea6dccb6249"
-    sha256                               ventura:        "e3064f51ee693453adc1e25a4dc7e7f1617f51d070dc209c847a7459968de0dc"
-    sha256                               monterey:       "16947ff3e289c953ddb75acb44215ab7f74a5128a20464cfb7f6332b4438f25d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "2dc92264176a4397db556c4add6b01609e6a0364a39359f4b9d04adee3b1ec97"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8b20722ff017ed04a511f79061ad26959cdb92e5c7dc1080dbc22cc05c07e374"
+    sha256                               arm64_sequoia: "f99bcf9fef1cc83130d68c43ae4da0bb86cf3020c53898272c9f3dc3fe1a69b6"
+    sha256                               arm64_sonoma:  "d99b828167a2e694d76319a97c1a5806be165f0005849fad1f3c2ed31b8b3486"
+    sha256                               arm64_ventura: "32e606d1d65f94fb27a348abf01abadd78c74601c89c47d4ad84bc957fe0c071"
+    sha256                               sonoma:        "f34cd15417a27425220ab4f6624f6c90844eb7ac5c15785cccb9122a49537f9e"
+    sha256                               ventura:       "185a41a84b513d3bbc9427a55675abdcbdde62b0dca9b736f9016f135f6a5268"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "29394877b827bdec83e7082dd20c31ff3481bccbbdb98f77c243b90788c60ff4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "89c355af2b949f2b14372ef9b9935a0de9aca700660987313d52f30887e51a8d"
   end
 
   depends_on "cmake" => :build

@@ -4,6 +4,7 @@ class Texi2mdoc < Formula
   url "https://mandoc.bsd.lv/texi2mdoc/snapshots/texi2mdoc-0.1.2.tgz"
   sha256 "7a45fd87c27cc8970a18db9ddddb2f09f18b8dd5152bf0ca377c3a5e7d304bfe"
   license "ISC"
+  head "anoncvs@mandoc.bsd.lv:/cvs", using: :cvs
 
   livecheck do
     url "https://mandoc.bsd.lv/texi2mdoc/snapshots/"

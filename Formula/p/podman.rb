@@ -1,8 +1,8 @@
 class Podman < Formula
   desc "Tool for managing OCI containers and pods"
   homepage "https:podman.io"
-  url "https:github.comcontainerspodmanarchiverefstagsv5.5.1.tar.gz"
-  sha256 "00d02f85ad27a46e77456fef1be81865a43147544ed2487e6c4c8decd0e3748f"
+  url "https:github.comcontainerspodmanarchiverefstagsv5.5.2.tar.gz"
+  sha256 "a2dbd8280cd92d4741f32f5a99d385d7fc6f0dd36bc9cc90a7273767e26d43d9"
   license all_of: ["Apache-2.0", "GPL-3.0-or-later"]
   head "https:github.comcontainerspodman.git", branch: "main"
 
@@ -17,12 +17,12 @@ class Podman < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "115239bfbda90cccd67139e8a5791476e5a8ffa5db8f25d4ba56d6973671cc09"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "23523719b10e300baa455be362c8a47424f970715852c1413ea229c44bc374d0"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "ebdde6e2342da97ec8d2c62f2b048bc07a16ff5cbc7d0d99d3ee43d8f2a74217"
-    sha256 cellar: :any_skip_relocation, sonoma:        "15a296188af06c17d3a940407b5ada34ec6fa2e1c68b6c8493817c433b4cb4cb"
-    sha256 cellar: :any_skip_relocation, ventura:       "7e4b1994d16195da4d169dbaa94e7a5b65d35547332c7e4adba6ada06cc762ea"
-    sha256                               x86_64_linux:  "836de35a08f680948e6454cf3463171f2ce00c9cd732806531aecb2561c4db49"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9134657b7ca8816cbc75356d431a0e6b1b5d6d27a628143b363b1bb763b2d811"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cb6921023bc6a7677d0d1a260e58d92cd812d327fba47cec7e33c258a162a963"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "4850203069b09650ea9fd4030a4783fdcda3cb6874327dd25d88bd804e643f96"
+    sha256 cellar: :any_skip_relocation, sonoma:        "cfe5007950bf02bc1725c496938b0a80f8013018ae762a5dba7a4cd399927669"
+    sha256 cellar: :any_skip_relocation, ventura:       "9240a6875577f4ca4fecd0335f49fe94e2f9985e2c27b39cc4d168a3e602d563"
+    sha256                               x86_64_linux:  "2411047a8529287a650eb770b2030049a68ee039dd9ea032811254a13556f2b9"
   end
 
   depends_on "go" => :build

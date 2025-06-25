@@ -3,31 +3,31 @@ class Xonsh < Formula
 
   desc "Python-powered, cross-platform, Unix-gazing shell language and command prompt"
   homepage "https:xon.sh"
-  url "https:files.pythonhosted.orgpackages4a5a7d28dffedef266b3cbde5c0ba63f7f861bd5ff5c35bfa80df269f61000b4xonsh-0.19.3.tar.gz"
-  sha256 "f3a58752b12f02bf2b17b91e88a83615115bb4883032cf8ef36e451964f29e90"
+  url "https:files.pythonhosted.orgpackageseaeb8f544caca583c5f9f0ae7d852769fdb8ed5f63b67646a3c66a2d19357d56xonsh-0.19.9.tar.gz"
+  sha256 "4cab4c4d7a98aab7477a296f12bc008beccf3d090c6944f0b3375d80a574c37d"
   license "BSD-2-Clause-Views"
   head "https:github.comxonshxonsh.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "212e3ac1cbed6411752019fccb36661194d7035104ead4c2d56925221db2ecb9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "58caf5480641341a5a1b8f1ce4a121ee0e87efb86765001c661b306978eb47a5"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "272c475da0888539e6eebb9c3162286c77f34755324fbd352d55a0ae91adc4ad"
-    sha256 cellar: :any_skip_relocation, sonoma:        "687c31bc390db348e5f9641388e026404697ae0e213bddf8ad9fb51e2554c5c1"
-    sha256 cellar: :any_skip_relocation, ventura:       "07e190aa8a62386e4bc929d041efdc75db0b710d4f1db5dedc1c94432f55463c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b94e2ec721c85e7e699262400da8644f4624ae539c008782a3ebd6c122605900"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5600cd2ebd22f95e8257cc56b8081505e195cb58d2d523c507107c8223d62cbd"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "46b7167cd7cc3018619cf91cefdf3c6bcab8182dd32eb211ea172703741f0ed6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ea656e4857c05466be82dffb1ea7a669ff0f667efba6a71a3ed79734995300ec"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "6e1ec515cf59d953ceb0914bcff2daeb9dacb152821ea8688225ec77639a8989"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a7f93373afa78c8413e5cc53c47509791e3cfa0b8565a1fd7ddc1c4ed669674d"
+    sha256 cellar: :any_skip_relocation, ventura:       "f97d813fdf382815065cdae5acf7bcf0f497e93d9423f820af5567e6bc2941b9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a3c62c2d6622995b724753eb0d26eb8aec3801f7a08a82990504db6a8d1df423"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9b9c1394a5fe80d60519c25f0737dacc8cc2008e2167250f588fabebe316aed7"
   end
 
   depends_on "python@3.13"
 
   resource "prompt-toolkit" do
-    url "https:files.pythonhosted.orgpackagesa1e1bd15cb8ffdcfeeb2bdc215de3c3cffca11408d829e4b8416dcfe71ba8854prompt_toolkit-3.0.50.tar.gz"
-    sha256 "544748f3860a2623ca5cd6d2795e7a14f3d0e1c3c9728359013f79877fc89bab"
+    url "https:files.pythonhosted.orgpackagesbb6e9d084c929dfe9e3bfe0c6a47e31f78a25c54627d64a66e884a8bf5474f1cprompt_toolkit-3.0.51.tar.gz"
+    sha256 "931a162e3b27fc90c86f1b48bb1fb2c528c2761475e57c9c06de13311c7b54ed"
   end
 
   resource "pygments" do
-    url "https:files.pythonhosted.orgpackages7c2dc3338d48ea6cc0feb8446d8e6937e1408088a72a39937982cc6111d17f84pygments-2.19.1.tar.gz"
-    sha256 "61c16d2a8576dc0649d9f39e089b5f02bcd27fba10d8fb4dcc28173f7a45151f"
+    url "https:files.pythonhosted.orgpackagesb077a5b8c569bf593b0140bde72ea885a803b82086995367bf2037de0159d924pygments-2.19.2.tar.gz"
+    sha256 "636cb2477cec7f8952536970bc533bc43743542f70392ae026374600add5b887"
   end
 
   resource "pyperclip" do
@@ -36,8 +36,8 @@ class Xonsh < Formula
   end
 
   resource "setproctitle" do
-    url "https:files.pythonhosted.orgpackagesc44d6a840c8d2baa07b57329490e7094f90aac177a1d5226bc919046f1106860setproctitle-1.3.5.tar.gz"
-    sha256 "1e6eaeaf8a734d428a95d8c104643b39af7d247d604f40a7bebcf3960a853c5e"
+    url "https:files.pythonhosted.orgpackages9eaf56efe21c53ac81ac87e000b15e60b3d8104224b4313b6eacac3597bd183dsetproctitle-1.3.6.tar.gz"
+    sha256 "c9f32b96c700bb384f33f7cf07954bb609d35dd82752cef57fb2ee0968409169"
   end
 
   resource "wcwidth" do

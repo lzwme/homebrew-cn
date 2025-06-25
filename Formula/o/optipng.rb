@@ -4,7 +4,7 @@ class Optipng < Formula
   url "https://downloads.sourceforge.net/project/optipng/OptiPNG/optipng-7.9.1/optipng-7.9.1.tar.gz"
   sha256 "c2579be58c2c66dae9d63154edcb3d427fef64cb00ec0aff079c9d156ec46f29"
   license "Zlib"
-  head "http://hg.code.sf.net/p/optipng/mercurial", using: :hg
+  head "https://git.code.sf.net/p/optipng/code.git", branch: "tmp/main"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "c2d204ed132d5c5268baf7b464e862e8201a5f80e0d3aa5891204ccccbdca28a"
