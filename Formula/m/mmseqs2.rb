@@ -39,6 +39,8 @@ class Mmseqs2 < Formula
   end
 
   def install
+    odie "Remove cmake 4 build patch" if build.stable? && version > "17-b804f"
+
     args = %W[
       -DCMAKE_POLICY_VERSION_MINIMUM=3.5
       -DHAVE_TESTS=0

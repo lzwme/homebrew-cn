@@ -2,8 +2,8 @@ class Openbao < Formula
   desc "Provides a software solution to manage, store, and distribute sensitive data"
   homepage "https:openbao.org"
   url "https:github.comopenbaoopenbao.git",
-      tag:      "v2.2.2",
-      revision: "8c0322c0423231836a1432fdad29dc2e99640da9"
+      tag:      "v2.3.1",
+      revision: "e3cdbbde8eb48fb7ae92b1d34afb63012e805233"
   license "MPL-2.0"
   head "https:github.comopenbaoopenbao.git", branch: "main"
 
@@ -13,13 +13,13 @@ class Openbao < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "941565bdfa53e906e8a995e0a43c15e991857027ef1815de406e028ee9002833"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a7f9a7ee02e583f70b3876ffdf869884d93d50f7cfae1cc91980c383e9259fc6"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "02b9f76e6d7a923769370d0f5f5a68b9306fe0caa83af230bb404befb8c5cf08"
-    sha256 cellar: :any_skip_relocation, sonoma:        "15e58ba93d2080919011b2d0605e0a4cda140fb51c304555f5f7fee3bea77a2b"
-    sha256 cellar: :any_skip_relocation, ventura:       "3d02dfe624dcfaccc8974373569afc300a0a7c912795cc57eb84057df2db13c5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e3c621968622f1ce1d153b713c3e7182589381d204ea3a8672d0f523e2505589"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1e2dc436688c930ef4b54165560acb2d7e1acfebcf31f26392270ed2dbd45c4b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f843906679903c21a0c35d638a6dcca92f0b7e3dc316bb0d85f93ea452e619cd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "94e7637c77a92f68298d6d0d749ac595a773c487061573d180c446fa70e987be"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "6ea071b41242875fcae6c5400907b6dccc47764c148a44d41d9f21cae0877f77"
+    sha256 cellar: :any_skip_relocation, sonoma:        "93bd2c3b0322ffa33609323441f33dbdab2f6d7feeb0f43af55c9b72549e8b59"
+    sha256 cellar: :any_skip_relocation, ventura:       "31ad64268a5054f74109ebd7f13f369485b1644db52328a677797e22215e4d4e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9b497cacf9142908e7e336c4fba7cd2a8274dc427a4b43202e1d25b5f72a57a5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fee2e9e46c465fb69d283d79e86b66fe922327d360dcd3a6d1d7dd990d77144d"
   end
 
   depends_on "go" => :build

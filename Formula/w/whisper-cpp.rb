@@ -1,8 +1,8 @@
 class WhisperCpp < Formula
   desc "Port of OpenAI's Whisper model in CC++"
   homepage "https:github.comggml-orgwhisper.cpp"
-  url "https:github.comggml-orgwhisper.cpparchiverefstagsv1.7.5.tar.gz"
-  sha256 "2fda42b57b7b8427d724551bd041616d85401fb9382e42b0349132a28920a34f"
+  url "https:github.comggml-orgwhisper.cpparchiverefstagsv1.7.6.tar.gz"
+  sha256 "166140e9a6d8a36f787a2bd77f8f44dd64874f12dd8359ff7c1f4f9acb86202e"
   license "MIT"
   head "https:github.comggml-orgwhisper.cpp.git", branch: "master"
 
@@ -12,13 +12,13 @@ class WhisperCpp < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "60f2a5715f633cdb5a86adb6ccf8e4dc553c5b5e97839019d4edfb3151993da9"
-    sha256 cellar: :any,                 arm64_sonoma:  "1fa55cf16d944d91ddb145c592bb9327a262124ab9b93e9e32191e728a0d05c8"
-    sha256 cellar: :any,                 arm64_ventura: "6029b6487ab798002960ce9d37488a2dece0fa0706f87b773d30a8dc5fb61357"
-    sha256 cellar: :any,                 sonoma:        "8f43095a43f99de996b6c5d45319022cc27b9ac75774dd3b201e0a7fb3602dbc"
-    sha256 cellar: :any,                 ventura:       "3eedd879a4ae545461f70d1c2b7c4e318e5696fdaf7fde8d2dcfc56281d1fcf5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "806baa21a25b3ca1fe8b1a69e201bdf34fce95e9bfa0ddd6a118037099f31c30"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9e5f09c4f11f4b1507f4d726c208523b4a1f360d11e454ee3c273b427cad2fc7"
+    sha256 cellar: :any,                 arm64_sequoia: "29883368e3c7eed0babb482ed2e01d39a92e563e36cd35f79330680df2e257ee"
+    sha256 cellar: :any,                 arm64_sonoma:  "78f3de18bc9b26525c423341487192458de6f6f7c1e0a3d8c0ad9aafe0b08f6a"
+    sha256 cellar: :any,                 arm64_ventura: "cbff2b56f8b93e037c155d8f5a564c6f8f19c8e3f73e499aadd320b76f14285f"
+    sha256 cellar: :any,                 sonoma:        "4a7b8c7e69d6c67d15141b6088a58c12b0437f710fbe62fa71b3eaa355201151"
+    sha256 cellar: :any,                 ventura:       "767a6156cfa00c09d1f0fa5dd23b4395526e248609fd3235f3d6f1d61d6976d5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "29bbaf44240b251477cd81018e45f0c6abb0bc4df1191e67aceb6ca49028c19f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3f047b76ea1ad79bf18d9cd7c4535a4d8fc0379741db733f898e0564885d988f"
   end
 
   depends_on "cmake" => :build

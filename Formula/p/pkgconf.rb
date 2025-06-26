@@ -1,9 +1,9 @@
 class Pkgconf < Formula
   desc "Package compiler and linker metadata toolkit"
   homepage "https:github.compkgconfpkgconf"
-  url "https:distfiles.ariadne.spacepkgconfpkgconf-2.5.0.tar.xz"
-  mirror "http:distfiles.ariadne.spacepkgconfpkgconf-2.5.0.tar.xz"
-  sha256 "9f5f5f2d067b1c668d6cfd662791d8aae3ef06c670125601e39f1156bd3f409f"
+  url "https:distfiles.ariadne.spacepkgconfpkgconf-2.5.1.tar.xz"
+  mirror "http:distfiles.ariadne.spacepkgconfpkgconf-2.5.1.tar.xz"
+  sha256 "cd05c9589b9f86ecf044c10a2269822bc9eb001eced2582cfffd658b0a50c243"
   license "ISC"
 
   livecheck do
@@ -12,14 +12,14 @@ class Pkgconf < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "fd9e23c224f18006ca873acd92e8e22cbda749cd150ef7516122d394d1655f1f"
-    sha256 arm64_sonoma:  "444c2f67483ed4246e7cdcd019947ed6672e7ac79afcee64e344a18735b521ae"
-    sha256 arm64_ventura: "f0edc798188e60e0fd82815f0f21b186a0d41310ce71d4aac17411219140bd2e"
-    sha256 sequoia:       "ff125cd1355b46cc32f801e9aeac280659b9f67dd4adeebc3c8cbbad6646330d"
-    sha256 sonoma:        "2196e245926fbd2fc400b05c67d93d2053de30d7971cda41ad55e11d0d2320c2"
-    sha256 ventura:       "45d0102051d02a96394b8b28fa53caa0a4b28af871e1093c0435ccf0ef079971"
-    sha256 arm64_linux:   "b23fff3027dc4144931bd826dd148b616574fa15848b60595ee876234d3da495"
-    sha256 x86_64_linux:  "4b8ea4a65be2d9ea9f7c4f6ef9fddc182e097d34abf8249f23f54a77924ebe76"
+    sha256 arm64_sequoia: "6fabdc3d0a656e2d505aec4e39b2f8e354601ee141469554fa71eabc3386e18f"
+    sha256 arm64_sonoma:  "bc7f9963756598248220da128a5f06ea0e6685aa7cd965a5ce357fcfaad2cdec"
+    sha256 arm64_ventura: "8d53ac0deb003f8866315c4c27a1aa4767467c9fa13c912f52cb29e37fbe7916"
+    sha256 sequoia:       "a074f871aa476dec1101c13b4fcfbb9354a8b35bcb6e056f8411463913632071"
+    sha256 sonoma:        "439e8e638986c4423f430719f28cd7c62e8d9a1b87ac658c069fd5da939784f8"
+    sha256 ventura:       "e38acbfd930c9588f4d1eabe061b956948aaff32cccb30c457430779c1e4f7f5"
+    sha256 arm64_linux:   "abdf9fbefab1d7b7219a619fb5bd44b58c00a71146a43cb24b71700c2ead369e"
+    sha256 x86_64_linux:  "9df0ce4d9ebae822b763a9c18565d1596a40b2a2e5849c743e768a99f554f24b"
   end
 
   head do

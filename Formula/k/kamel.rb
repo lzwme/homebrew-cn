@@ -1,8 +1,8 @@
 class Kamel < Formula
   desc "Apache Camel K CLI"
   homepage "https:camel.apache.org"
-  url "https:github.comapachecamel-karchiverefstagsv2.6.0.tar.gz"
-  sha256 "64cbac848a8dc789062718ec8bc55e51fc95d176587c0c11719560d4d6d22304"
+  url "https:github.comapachecamel-karchiverefstagsv2.7.0.tar.gz"
+  sha256 "220e779be71e0e2c9e622346975abc5a70f7dd6b6c60daf3515bbcac46b92383"
   license "Apache-2.0"
   head "https:github.comapachecamel-k.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Kamel < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b0cb6f257d777d5a16c296a1d2f99b072f797930884a08984baf2f6174420329"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b0cb6f257d777d5a16c296a1d2f99b072f797930884a08984baf2f6174420329"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "b0cb6f257d777d5a16c296a1d2f99b072f797930884a08984baf2f6174420329"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6f7272988866ceefaa6f9877bdd6cabdbdcc7b35a163c2deb4235fefd8cd3988"
-    sha256 cellar: :any_skip_relocation, ventura:       "6f7272988866ceefaa6f9877bdd6cabdbdcc7b35a163c2deb4235fefd8cd3988"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "93d45b6b754b21fdd7ad23ed720227b918d5fd74d2897323c800e7e7417c26f6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "94866f102414ebf2847d884ea8413849d8542144015258123963a61e4d7e71d8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ec606d94e76dd467836a1e5dcb9e6f3b8a98459f5c2748181c8553e311dda518"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "0be95ba7c330d904c297f623d855798cb59e7478e22838ee5da025f2d672100c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ad402478408c92bf84410dbef0df8f0bacf4737a236499f08da453e1ddb761f6"
+    sha256 cellar: :any_skip_relocation, ventura:       "395351fabedb60717cc1e452071cf013c9d7cf7b3d86070d7f66b8566f2b21d2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b76d52aec8f5c5d199f96a11cc65a80448064f8904b19537454d3d1d68c8e315"
   end
 
   depends_on "go" => :build

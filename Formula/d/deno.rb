@@ -1,19 +1,19 @@
 class Deno < Formula
   desc "Secure runtime for JavaScript and TypeScript"
   homepage "https:deno.com"
-  url "https:github.comdenolanddenoreleasesdownloadv2.3.3deno_src.tar.gz"
-  sha256 "1a0f6b294a02d3d43c84ee085f1b6d63452fd3899de7dc80e4c03ea8b9d73801"
+  url "https:github.comdenolanddenoreleasesdownloadv2.3.7deno_src.tar.gz"
+  sha256 "6ca9f626931aa88c57d0f124fffac1d5682885e3b8ad34b8b90924757fffb0cf"
   license "MIT"
   head "https:github.comdenolanddeno.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "07432bd06d78ad5d270b85b9f35273d2911c4a0a554c1460d8cc9eacdaf119bf"
-    sha256 cellar: :any,                 arm64_sonoma:  "74d46c737a7be9028b564c54340244352327372662778e38de916f2d8849fc92"
-    sha256 cellar: :any,                 arm64_ventura: "a99890b56dffe5e0d71a1dc79d749e79b0c232d3c3efb5edbcc524ab734ee295"
-    sha256 cellar: :any,                 sonoma:        "316c3b8a630cc3f6ef42411b0bd72704df5a767adb97ebb4d795258176063836"
-    sha256 cellar: :any,                 ventura:       "918029d1791093215b965fbe670b6a7ae40b84ee17b412548f94e77f89f0afaa"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "17250ba597369f378ad533124ff1364e9fb7b47262d23a582d3f7db8dad8477c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "453a4a5031669ca0f831bb022cbee922a9fd1c580349875555ab5ee548c2c646"
+    sha256 cellar: :any,                 arm64_sequoia: "f0b1a491adb767022a564bebd8c504e3b3929424b77f6ad12b42676d79937947"
+    sha256 cellar: :any,                 arm64_sonoma:  "e01880f07ad28183c1d4ec0e620d2cc8777cd12e074f8b2c7056690b3910a6a7"
+    sha256 cellar: :any,                 arm64_ventura: "0527f634cccbc3b64573561fb08ba783a3cba375336c4af612f826de217a07ae"
+    sha256 cellar: :any,                 sonoma:        "ba10a21f6c828c674911801da27268c7d4099aeba626e92472b4a46b1ad9522b"
+    sha256 cellar: :any,                 ventura:       "c2634765edc2bc5c5d1403bb35c068aabaf4af2d00ff2b513545578fc4e4b756"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ac2d4d149ec587a35bea93aad98901983c0dce84f7d85944834e2b442d0237ef"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "163f83fcec00e7db70786808defbbdc48b057e1d30b0fb4655d0f403338b6a6f"
   end
 
   depends_on "cmake" => :build
@@ -40,14 +40,17 @@ class Deno < Formula
   end
 
   def install
-    # Avoid vendored dependencies.
     inreplace "Cargo.toml" do |s|
+      # https:github.comHomebrewhomebrew-corepull227966#issuecomment-3001448018
+      s.gsub!(^lto = true$, 'lto = "thin"')
+
+      # Avoid vendored dependencies.
       s.gsub!(^libffi-sys = "(.+)"$,
               'libffi-sys = { version = "\\1", features = ["system"] }')
       s.gsub!(^rusqlite = { version = "(.+)", features = \["unlock_notify", "bundled", "session",
               'rusqlite = { version = "\\1", features = ["unlock_notify", "session"')
     end
-    inreplace "resolversnpm_cacheCargo.toml",
+    inreplace "libsnpm_cacheCargo.toml",
               'flate2 = { workspace = true, features = ["zlib-ng-compat"] }',
               "flate2 = { workspace = true }"
 

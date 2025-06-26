@@ -1,18 +1,18 @@
 class Ktfmt < Formula
   desc "Kotlin code formatter"
   homepage "https:facebook.github.ioktfmt"
-  url "https:github.comfacebookktfmtarchiverefstagsv0.55.tar.gz"
-  sha256 "edcb30aea63af6b0665bced302b47ac70a9fdae639c626827bc85fddbc69ae39"
+  url "https:github.comfacebookktfmtarchiverefstagsv0.56.tar.gz"
+  sha256 "8bb880439fe8fb721fbcb16eabbd5f663b6998430d41ac45653e3f8a1c7541ea"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8725b050ed14f3f94dc7d27da9459e373f432561acce702bc9150f1d230ea13a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f204926b6dfdc82576df2bc1c3bc07e8cb11efe09273d3f1222209f2e4aa4d08"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "6c0652f3b55cf5f237cca800bcdc3dcfbc12dec4d3deaa68e585b817f935db82"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e7eec80d393cf1ea4ae4c34f6cef8c9acb178ebf00c8edc3e1504a434db7d5f0"
-    sha256 cellar: :any_skip_relocation, ventura:       "7b0c7e9412610d4c0feaa50dcd314e7e4c95831dc0053909a8e3a2caf39f66ed"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f538037d80577c10b67d3ec63bbbae42eb4e3070d397564bd298b49d6fa4bbc9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5ac466bd2e1869e4e78e57826bc919d30378b33129a02fd1b4f7ec2d36d46287"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d1f30f49423c0967f42fbdf26687536b2d03bc719f01a046422e3093ef851c54"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9d26a9893debaa6aad0617dd8441e06255b512f26050435f1f86b5415450a882"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "472ef6776f1e18d7b682e6a20d749de3985b3a6d4b5bcee1a7b5cbf2a05e4b55"
+    sha256 cellar: :any_skip_relocation, sonoma:        "fe62bf59abb2f6d08852b9f0f9526b71b6fa32b195d7f66c419a5aeea2c8e255"
+    sha256 cellar: :any_skip_relocation, ventura:       "c5477affdade026f1831b803a7d943e6347d2fb26cfc48d7d3caca30caca6b80"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "98836c7bf49943d3876f3ec1af3f5dcd86df70ee32a8d1820d7a7141acf36c51"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fe2fe77d5e737b3e787b1f86e095e5021d8e7410661bd1dd41f7c9a78dcb0b04"
   end
 
   depends_on "gradle" => :build

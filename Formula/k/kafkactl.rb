@@ -7,12 +7,13 @@ class Kafkactl < Formula
   head "https:github.comdeviceinsightkafkactl.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "32ca932cf76f1450a60e8a47b521a20c971486773c0c5babadbe124238e95b23"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "32ca932cf76f1450a60e8a47b521a20c971486773c0c5babadbe124238e95b23"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "32ca932cf76f1450a60e8a47b521a20c971486773c0c5babadbe124238e95b23"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f82860fbd94c40183891a0ca035a36e8f3efbe6df4fb016f997df070a187dda2"
-    sha256 cellar: :any_skip_relocation, ventura:       "f82860fbd94c40183891a0ca035a36e8f3efbe6df4fb016f997df070a187dda2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b9e674403b9462d608bc88eb84ede915b338849506af5959ac4a388619ae4fc8"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8e9335fdb4fa576340e429988675911a3aec62a5bd1ed2312e3cc74c1ba83cfb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8e9335fdb4fa576340e429988675911a3aec62a5bd1ed2312e3cc74c1ba83cfb"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "8e9335fdb4fa576340e429988675911a3aec62a5bd1ed2312e3cc74c1ba83cfb"
+    sha256 cellar: :any_skip_relocation, sonoma:        "800c386fd8f3d2c38b6be04e13da506b50604f4632b6ddc3dcbe3592e0310f02"
+    sha256 cellar: :any_skip_relocation, ventura:       "800c386fd8f3d2c38b6be04e13da506b50604f4632b6ddc3dcbe3592e0310f02"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "539c1a9f7373d13d863cdebfdd32e48be1c6da8364b8d818cbeaf9afa99092a7"
   end
 
   depends_on "go" => :build
@@ -20,7 +21,7 @@ class Kafkactl < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.comdeviceinsightkafkactlv5cmd.Version=#{version}
+      -X github.comdeviceinsightkafkactlv5cmd.Version=v#{version}
       -X github.comdeviceinsightkafkactlv5cmd.GitCommit=#{tap.user}
       -X github.comdeviceinsightkafkactlv5cmd.BuildTime=#{time.iso8601}
     ]

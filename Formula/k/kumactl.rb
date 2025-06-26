@@ -1,8 +1,8 @@
 class Kumactl < Formula
   desc "Kuma control plane command-line utility"
   homepage "https:kuma.io"
-  url "https:github.comkumahqkumaarchiverefstags2.11.0.tar.gz"
-  sha256 "1887e12a27b779d41111347bc5181573165cf6063bbcd622b50977d26c4e2a59"
+  url "https:github.comkumahqkumaarchiverefstags2.11.1.tar.gz"
+  sha256 "0a18d919efdbaae3ca725aa9c33fe7441e99d7ba230b84145f90018f1c00b267"
   license "Apache-2.0"
   head "https:github.comkumahqkuma.git", branch: "master"
 
@@ -12,12 +12,12 @@ class Kumactl < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a14f8ecde3f956668c5a413efefaf62901e1af6bae83675be8192036ad93acb4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "aec60ed322e4f7ad6646aefb1ba2393828d4c140a5b59a32d21cab24b3e2d100"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "92444fb885e08878477ef32998a416570f72af94b8ae29286315d447a02be728"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c9f9e0982545ca3da856771202859e5e6ddc6d90ec5e0a31d4dd4638bfb72ff2"
-    sha256 cellar: :any_skip_relocation, ventura:       "d2f8381c0148b4c8691707a4c488ae9f19a0ba1fe69d88355cc892f7fa65da79"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "75e6fd85da20ffcb92ebdb1e883380826e071ba1f0113a892b6f8d214bf7cff2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "12ff3e10dfa59342a442b1715a109ef50eddcb7b5cade3076070e64227d90841"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4c4f1bfb0df2d031e9654f993768f7c9fb31ed2a5229a8d40e5836a3c84c775c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "58087a53877d636c419376fdc64255b452656ea0686c2fbef1c10a505f1eac4a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "af2e194eeb1599bc7399fe82089306aedfd026d8b4df9cb59b53d70655a7beb1"
+    sha256 cellar: :any_skip_relocation, ventura:       "6b185e4e7fc82c73915f142af2d88ecd5798a759b86ae6bdfe3b331319a13019"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a1b55821da8620dfce86232ea8ba12674a76050ea52090239d3b9eb224686755"
   end
 
   depends_on "go" => :build

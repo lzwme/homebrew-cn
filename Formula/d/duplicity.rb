@@ -5,18 +5,18 @@ class Duplicity < Formula
   homepage "https:gitlab.comduplicityduplicity"
   # TODO: Restore `depends_on "cryptography"` once pydrive2 replaces oauth2client
   # Issue ref: https:github.comiterativePyDrive2issues361
-  url "https:files.pythonhosted.orgpackages22ce5f9cb25fc6cb358aa055e003609a241141946599d23ab4e2d550941391a1duplicity-3.0.5.tar.gz"
-  sha256 "34fab6cd4e1052b0b96d7750368dbbb149a504ff34401ac8bee5c594f42f4d3b"
+  url "https:files.pythonhosted.orgpackages0220c81f899d34c51760605919b4bae0512fd6e0e481ef4e2a77753762ec81e4duplicity-3.0.5.1.tar.gz"
+  sha256 "06775fa3004e42ef30d2b0adcb8e7c808eafd8998f81e43be4c72648dae72b3e"
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "791b48b07441ac3e8b2bd10b189d48db40b550c3fe4bd3862aa8a636d2a2c528"
-    sha256 cellar: :any,                 arm64_sonoma:  "44c985dd6751c26db2e76db0c40e22d35000fe5a172a8cc3f5d4d1889c463cab"
-    sha256 cellar: :any,                 arm64_ventura: "4d123387b82d5531c61ce0b7d45600fd1b5ec7e8648caebff3e98f596ae114fb"
-    sha256 cellar: :any,                 sonoma:        "487b5e658c92137f06165d6f419c4b449d573785409e8ca09a24b5bf27738c07"
-    sha256 cellar: :any,                 ventura:       "19d77f566bcc82f0dec0d005d4999639d7be4017c38dcdc9712bccbe41cbb9ca"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "de14cc7d9b5e5f6d2edc17d211ba658776a65ba3bdfcd3d3009fa20d0bc9bd69"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "779292e42fc42bd46834974991b19d8df2f75796fbb7cd51acf65c576881f969"
+    sha256 cellar: :any,                 arm64_sequoia: "345fd9fe5a960b080e851664c112231c29bc3632b37abbefce09a9c7ba194e07"
+    sha256 cellar: :any,                 arm64_sonoma:  "1a49729ade7dfa8f5b57d4f39a21ab5af802d99d21a3b9b93f99e10738e803c7"
+    sha256 cellar: :any,                 arm64_ventura: "e827fc65c2f40b7884ec4ff440980b874579135e503bd58804bf7334671ac116"
+    sha256 cellar: :any,                 sonoma:        "14fb0abe4982dbf0763766f84098e55c322d24ce76075a0df9251fab85cee31c"
+    sha256 cellar: :any,                 ventura:       "ab0557019f425b0599663b6adcd140cb245a28d406d97e5779b1329a37e01f09"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d5de9d477346c4940de88c11be7a89141d71d74b81623eb0e6b81cec7e50e409"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "daa16a1debc3c01e8de455f576f4c6620b10e79ac101a28c8098f9669a543fe3"
   end
 
   depends_on "gettext" => :build # for msgfmt
@@ -70,13 +70,13 @@ class Duplicity < Formula
   end
 
   resource "boto3" do
-    url "https:files.pythonhosted.orgpackages70b0a35b320e5084821de69a66962513dcc8aa37b7a5bc80e761685533e97be9boto3-1.38.39.tar.gz"
-    sha256 "22cca12cfe1b24670de53e3b8f4c69bdf34a2bd3e3363f72393b6b03bb0d78bc"
+    url "https:files.pythonhosted.orgpackages9096c99c9dac902faae3896558809d130b1bf02df8abb6e4553ad87d018910f9boto3-1.38.43.tar.gz"
+    sha256 "9b0ff0b34c9cf7328546c532c20b081f09055ff485f4d57c19146c36877048c5"
   end
 
   resource "botocore" do
-    url "https:files.pythonhosted.orgpackages096120eceeccdce79ca238453389e9a8a9147a79417a07e22fa6715f1abd6421botocore-1.38.39.tar.gz"
-    sha256 "2305f688e9328af473a504197584112f228513e06412038d83205ce8d1456f40"
+    url "https:files.pythonhosted.orgpackages1dff8ace3f46fa1a32c09ee994b5401c7853613a283e134449fdc136bb753b40botocore-1.38.43.tar.gz"
+    sha256 "c453c5c16c157c5427058bb3cc2c5ad35ee2e43336f0ccbfcc6092c5635505c6"
   end
 
   resource "boxsdk" do
@@ -145,8 +145,8 @@ class Duplicity < Formula
   end
 
   resource "google-api-python-client" do
-    url "https:files.pythonhosted.orgpackages0269c0cec6be5878d4de161f64096edb3d4a2d1a838f036b8425ea8358d0dfb3google_api_python_client-2.172.0.tar.gz"
-    sha256 "dcb3b7e067154b2aa41f1776cf86584a5739c0ac74e6ff46fc665790dca0e6a6"
+    url "https:files.pythonhosted.orgpackages8f7e7c6e43e54f611f0f97f1678ea567fe06fecd545bd574db05e204e5b136fegoogle_api_python_client-2.173.0.tar.gz"
+    sha256 "b537bc689758f4be3e6f40d59a6c0cd305abafdea91af4bc66ec31d40c08c804"
   end
 
   resource "google-auth" do
@@ -210,8 +210,8 @@ class Duplicity < Formula
   end
 
   resource "jaraco-functools" do
-    url "https:files.pythonhosted.orgpackagesab239894b3df5d0a6eb44611c36aec777823fc2e07740dabbd0b810e19594013jaraco_functools-4.1.0.tar.gz"
-    sha256 "70f7e0e2ae076498e212562325e805204fc092d7b4c17e0e86c959e249701a9d"
+    url "https:files.pythonhosted.orgpackages491c831faaaa0f090b711c355c6d8b2abf277c72133aab472b6932b03322294cjaraco_functools-4.2.1.tar.gz"
+    sha256 "be634abfccabce56fa3053f8c7ebe37b682683a4ee7793670ced17bab0087353"
   end
 
   resource "jeepney" do
@@ -285,8 +285,8 @@ class Duplicity < Formula
   end
 
   resource "oauthlib" do
-    url "https:files.pythonhosted.orgpackages988a6ea75ff7acf89f43afb157604429af4661a9840b1f2cece602b6a13c1893oauthlib-3.3.0.tar.gz"
-    sha256 "4e707cf88d7dfc22a8cce22ca736a2eef9967c1dd3845efc0703fc922353eeb2"
+    url "https:files.pythonhosted.orgpackages0b5f19930f824ffeb0ad4372da4812c50edbd1434f678c90c2733e1188edfc63oauthlib-3.3.1.tar.gz"
+    sha256 "0f0f8aa759826a193cf66c12ea1af1637f87b9b4622d46e866952bb022e538c9"
   end
 
   resource "os-diskconfig-python-novaclient-ext" do
@@ -422,6 +422,11 @@ class Duplicity < Formula
   resource "python-dateutil" do
     url "https:files.pythonhosted.orgpackages66c00c8b6ad9f17a802ee498c46e004a0eb49bc148f2fd230864601a86dcf6dbpython-dateutil-2.9.0.post0.tar.gz"
     sha256 "37dd54208da7e1cd875388217d5e00ebd4179249f90fb72437e91a35459a0ad3"
+  end
+
+  resource "python-gettext" do
+    url "https:files.pythonhosted.orgpackagesf6c885df0d3956bebdbaff936df47a5705be9e0b42404589a07065a39c8324e5python-gettext-5.0.tar.gz"
+    sha256 "869af1ea45e3dab6180557259824c2a62f1800e1286226af912431fe75c5084c"
   end
 
   resource "python-novaclient" do

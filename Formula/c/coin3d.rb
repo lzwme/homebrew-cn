@@ -2,11 +2,10 @@ class Coin3d < Formula
   desc "Open Inventor 2.1 API implementation (Coin)"
   homepage "https:coin3d.github.io"
   license "BSD-3-Clause"
-  revision 2
 
   stable do
-    url "https:github.comcoin3dcoinreleasesdownloadv4.0.3coin-4.0.3-src.tar.gz"
-    sha256 "66e3f381401f98d789154eb00b2996984da95bc401ee69cc77d2a72ed86dfda8"
+    url "https:github.comcoin3dcoinreleasesdownloadv4.0.4coin-4.0.4-src.tar.gz"
+    sha256 "80efd056a445050939a265db307d106ac7524105774d4be924a71b0cff23a719"
 
     resource "soqt" do
       url "https:github.comcoin3dsoqtreleasesdownloadv1.6.3soqt-1.6.3-src.tar.gz"
@@ -20,11 +19,11 @@ class Coin3d < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:  "7a755e0c179f8d762196729ea039512ffc0814e929cd1f19c1026d151041b30e"
-    sha256 cellar: :any,                 arm64_ventura: "8742ecfd7f6ccea840603cb18083525d2711acee00fd9e0a6bb163f25b4e9029"
-    sha256 cellar: :any,                 sonoma:        "38224963f262dd3b3a0ee96c8deb8c8bb092bfa9e01ea15465ad50fe0c3d36d0"
-    sha256 cellar: :any,                 ventura:       "ac4d1a600375e93f86891c3b45c9fb5a93d6fef296d867a0d4e9dddcfcb774ab"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9e5a6317d138ef6f2b147179e4e1ac4f029543d499d276f47d94958148fa4b28"
+    sha256 cellar: :any,                 arm64_sonoma:  "1d0a00f874475b39591d10cb9547a4b71d02524c668775a3fa3c9f2aeb514fd2"
+    sha256 cellar: :any,                 arm64_ventura: "ba81941b962638fa968defb6b0420cd2067b2080a5ce68ec3b5a68270287961e"
+    sha256 cellar: :any,                 sonoma:        "8632b7925921ce935bd7030420a270f374be62d58ec2b50dab44b1caa1ab2177"
+    sha256 cellar: :any,                 ventura:       "4a4e57dfa965415f26fd8757f2358a8ca660070d647f63409e41caf0dd8832cd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2572d61c237d74bc32c4c645b29720611eca19e8ae4528711a61acc910d32a95"
   end
 
   head do
@@ -54,6 +53,7 @@ class Coin3d < Formula
   end
 
   def install
+    odie "Remove cmake 4 build patch" if build.stable? && resource("soqt").version > "1.6.3"
     system "cmake", "-S", ".", "-B", "_build",
                     "-DCOIN_BUILD_MAC_FRAMEWORK=OFF",
                     "-DCOIN_BUILD_DOCUMENTATION=ON",
@@ -69,6 +69,7 @@ class Coin3d < Formula
                       "-DSOQT_BUILD_MAC_FRAMEWORK=OFF",
                       "-DSOQT_BUILD_DOCUMENTATION=OFF",
                       "-DSOQT_BUILD_TESTS=OFF",
+                      "-DCMAKE_POLICY_VERSION_MINIMUM=3.5",
                       *std_cmake_args(find_framework: "FIRST")
       system "cmake", "--build", "_build"
       system "cmake", "--install", "_build"

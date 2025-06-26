@@ -2,8 +2,8 @@ class Docker < Formula
   desc "Pack, ship and run any application as a lightweight container"
   homepage "https:www.docker.com"
   url "https:github.comdockercli.git",
-      tag:      "v28.2.2",
-      revision: "e6534b4eb700e592f25e7213568a02f3ce37460d"
+      tag:      "v28.3.0",
+      revision: "38b7060a218775811da953650d8df7d492653f8f"
   license "Apache-2.0"
   head "https:github.comdockercli.git", branch: "master"
 
@@ -15,12 +15,12 @@ class Docker < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "960354449a9dd1ca73eae7afcce85e9e542431b4b8e6a4fa6ebcdd47b7adfd5e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "960354449a9dd1ca73eae7afcce85e9e542431b4b8e6a4fa6ebcdd47b7adfd5e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "960354449a9dd1ca73eae7afcce85e9e542431b4b8e6a4fa6ebcdd47b7adfd5e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "da26027d3fc8d77104bddd53bd946ae871716701869e85f839f777c524e4c6db"
-    sha256 cellar: :any_skip_relocation, ventura:       "da26027d3fc8d77104bddd53bd946ae871716701869e85f839f777c524e4c6db"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "21887e7206a795d402ed30807661dbcdeeb1d63776d7c1057580b3f7fc08bde2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c95fb6f394791abf5157830f11dfbb9c2fc11633a908b962eddcba036e78ac8b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "45731be257bedf5a08daa9f8edbfca3bd3a72e2ff38e81ead4ba44455dfc071d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "feb2425d2e3f101982e9864f623f3ccb4720420343c983127fbd0da612edc1cf"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a8c7006859d506952902abb52cd679c33bc86f73c476139ed0b835bef2582325"
+    sha256 cellar: :any_skip_relocation, ventura:       "288c96bbfb5b52cffbc21838505523af632336bee498d85739afbb27e73d87b3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "da9ebebc4b073a0c30eff765eab019cd81de26fa8c70bd9cca4cad09f534a582"
   end
 
   depends_on "go" => :build

@@ -3,8 +3,8 @@ class Systemd < Formula
 
   desc "System and service manager"
   homepage "https:systemd.io"
-  url "https:github.comsystemdsystemdarchiverefstagsv257.5.tar.gz"
-  sha256 "4d65f9482608cf9f7823df42a6d7796f0e0dfcfb94301df75effff86d40da33e"
+  url "https:github.comsystemdsystemdarchiverefstagsv257.7.tar.gz"
+  sha256 "70ecf759260549486045d065555d2f8a0ac0b8523d8f58227559fbd6d7523b08"
   license all_of: [
     # Main license is LGPL-2.1-or-later while systemd-udevd is GPL-2.0-or-later
     "LGPL-2.1-or-later",
@@ -30,8 +30,8 @@ class Systemd < Formula
   head "https:github.comsystemdsystemd.git", branch: "main"
 
   bottle do
-    sha256 arm64_linux:  "6f8f6f3017a35c59abfb80c6fb609d2ba1a2ebad8c851ca0b5526f27945e1203"
-    sha256 x86_64_linux: "c7609af448f6ac3e55428f908769e4cec7382c0ad306674c7346cd46e3608ed3"
+    sha256 arm64_linux:  "7ec33b429e6e076a79a662e9f2446c346f77488a83d8252c98a128aee8f97eae"
+    sha256 x86_64_linux: "55d66046687cab38171ddedb72d5a505208f8d440def4d3f3e15edeace3337eb"
   end
 
   keg_only "it will shadow system systemd if linked"
@@ -63,8 +63,8 @@ class Systemd < Formula
   end
 
   resource "lxml" do
-    url "https:files.pythonhosted.orgpackageseff6c15ca8e5646e937c148e147244817672cf920b56ac0bf2cc1512ae674be8lxml-5.3.1.tar.gz"
-    sha256 "106b7b5d2977b339f1e97efe2778e2ab20e99994cbb0ec5e55771ed0795920c8"
+    url "https:files.pythonhosted.orgpackages763d14e82fc7c8fb1b7761f7e748fd47e2ec8276d137b6acfe5a4bb73853e08flxml-5.4.0.tar.gz"
+    sha256 "d12832e1dbea4be280b22fd0ea7c9b87f0d8fc51ba06e92dc62d52f804f78ebd"
   end
 
   resource "markupsafe" do
@@ -111,6 +111,6 @@ class Systemd < Formula
   end
 
   test do
-    assert_match "temporary: tmp", shell_output(bin"systemd-path")
+    assert_match %r{temporary: (var)?tmp}, shell_output(bin"systemd-path")
   end
 end

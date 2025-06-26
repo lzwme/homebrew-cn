@@ -14,6 +14,7 @@ class Qt < Formula
     { "GPL-3.0-only" => { with: "Qt-GPL-exception-1.0" } },
     "LGPL-3.0-only",
   ]
+  revision 1
   head "https:code.qt.ioqtqt5.git", branch: "dev"
 
   # The first-party website doesn't make version information readily available,
@@ -26,11 +27,11 @@ class Qt < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any, arm64_sonoma:  "861acfe809369d19c8cbc923afa94c62f48784f087a150e09d3522e5eeb15f9e"
-    sha256 cellar: :any, arm64_ventura: "f30408e5e2a56aef97597398e4d552da3286b9fb45ba040e405291584009bea8"
-    sha256 cellar: :any, sonoma:        "1cb92af62ec86c41bd6901428356fc8908ab98706a1f4b1e7791f09fd6cad498"
-    sha256 cellar: :any, ventura:       "3f55e107498966094f5b47f6e729728c7cc97d503f9deed8c59d87ca9f69cfa4"
-    sha256               x86_64_linux:  "0f25abc1c0b90ec910b12b3d5c4db85e77e5f0888a2a8446f2d2dc5c973ede78"
+    sha256 cellar: :any, arm64_sonoma:  "71178e8d39b2d61ecd4077e26997a6ba813d3b0159cdb6e3ca8a1b615d6b1a2f"
+    sha256 cellar: :any, arm64_ventura: "57a2d1d83efa9804b2286df9ff9ff0ea80a058ead20a59f9478951e73876e318"
+    sha256 cellar: :any, sonoma:        "cc1193691023ea31e664b5170685c2fdfec4016de0cefbc18cfe017ed31d7a0a"
+    sha256 cellar: :any, ventura:       "9051e4898c848f50a3919aa026dc082b043ac5e0343d3032e3d25f85d6de3035"
+    sha256               x86_64_linux:  "69b20bb5da2b644a0f96564833a4bdace8701fd40ca2208e7dc5916ecabb0d50"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -43,7 +44,7 @@ class Qt < Formula
   depends_on "vulkan-loader" => [:build, :test]
   depends_on xcode: :build
 
-  depends_on "assimp"
+  depends_on "assimp@5"
   depends_on "brotli"
   depends_on "dbus"
   depends_on "double-conversion"
@@ -139,6 +140,10 @@ class Qt < Formula
     sha256 "b36a1c245f2d304965eb4e0a82848379241dc04b865afcc4aab16748587e1923"
   end
 
+  # Fix for `invalid use of attribute 'fallthrough'` with GCC <= 12 and gperf >= 3.2
+  # https:bugreports.qt.iobrowseQTBUG-137278 (fixed in 6.9.2)
+  patch :DATA
+
   def install
     python3 = "python3.13"
 
@@ -219,6 +224,8 @@ class Qt < Formula
       # Chromium needs Xcode 15.3+ and using LLVM Clang is not supported on macOS
       # See https:bugreports.qt.iobrowseQTBUG-130922
       cmake_args << "-DBUILD_qtwebengine=OFF" if MacOS::Xcode.version < "15.3"
+
+      cmake_args << "-DQT_FORCE_WARN_APPLE_SDK_AND_XCODE_CHECK=ON" if MacOS.version <= :monterey
 
       %W[
         -DCMAKE_OSX_DEPLOYMENT_TARGET=#{MacOS.version}.0
@@ -412,3 +419,22 @@ class Qt < Formula
     assert_equal HOMEBREW_PREFIX.to_s, shell_output("#{bin}qmake -query QT_INSTALL_PREFIX").chomp
   end
 end
+__END__
+--- aqtwebenginesrc3rdpartychromiumthird_partyblinkrendererbuildscriptsgperf.py	2025-05-29 21:23:49.565413007 +0000
++++ bqtwebenginesrc3rdpartychromiumthird_partyblinkrendererbuildscriptsgperf.py	2025-05-29 21:24:07.164764001 +0000
+@@ -35,8 +35,11 @@
+         # https:savannah.gnu.orgbugsindex.php?53028
+         gperf_output = re.sub(r'\bregister ', '', gperf_output)
+         # -Wimplicit-fallthrough needs an explicit fallthrough statement,
+-        # so replace gperf's *FALLTHROUGH* comment with the statement.
+-        # https:savannah.gnu.orgbugsindex.php?53029
+-        gperf_output = gperf_output.replace('*FALLTHROUGH*',
+-                                            '  [[fallthrough]];')
++        # so replace gperf 3.1's *FALLTHROUGH* comment with the statement.
++        # https:savannah.gnu.orgbugsindex.php?53029 (fixed in 3.2)
++        if re.search(
++                r'\* C\+\+ code produced by gperf version 3\.[01](\.\d+)? \*',
++                gperf_output):
++            gperf_output = gperf_output.replace('*FALLTHROUGH*',
++                                                '  [[fallthrough]];')
+         # -Wpointer-to-int-cast warns about casting pointers to smaller ints

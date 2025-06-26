@@ -1,8 +1,8 @@
 class Sf < Formula
   desc "Command-line toolkit for Salesforce development"
   homepage "https://developer.salesforce.com/tools/salesforcecli"
-  url "https://registry.npmjs.org/@salesforce/cli/-/cli-2.93.7.tgz"
-  sha256 "3bdbd821c583c7b4e3ff79dd77f05090f7ebbfe0401847eca112b60306fcddbf"
+  url "https://registry.npmjs.org/@salesforce/cli/-/cli-2.94.6.tgz"
+  sha256 "7151c70799218ad2ce44ca9160f040170f335a4cbc4be06adc6f268cac0d90fe"
   license "BSD-3-Clause"
 
   livecheck do
@@ -13,13 +13,13 @@ class Sf < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3e42b8894ed553445df3002b7a81da83f76f0cda7f3c455bb436614dae91ac3c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3e42b8894ed553445df3002b7a81da83f76f0cda7f3c455bb436614dae91ac3c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "3e42b8894ed553445df3002b7a81da83f76f0cda7f3c455bb436614dae91ac3c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "142bfec6c26fde737b70a971188b1854621db2247f3ac2221f7bdc0ea2df74e0"
-    sha256 cellar: :any_skip_relocation, ventura:       "142bfec6c26fde737b70a971188b1854621db2247f3ac2221f7bdc0ea2df74e0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3e42b8894ed553445df3002b7a81da83f76f0cda7f3c455bb436614dae91ac3c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3e42b8894ed553445df3002b7a81da83f76f0cda7f3c455bb436614dae91ac3c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "44f399ae485dfda50f41536a185331529e58f10883aeccc427b7a22a7174ed8a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "44f399ae485dfda50f41536a185331529e58f10883aeccc427b7a22a7174ed8a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "44f399ae485dfda50f41536a185331529e58f10883aeccc427b7a22a7174ed8a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "34ed9bbe24fd5d3f96020cb1f60a207d7249444279fa94b2a57c1587489dda38"
+    sha256 cellar: :any_skip_relocation, ventura:       "34ed9bbe24fd5d3f96020cb1f60a207d7249444279fa94b2a57c1587489dda38"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "44f399ae485dfda50f41536a185331529e58f10883aeccc427b7a22a7174ed8a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "44f399ae485dfda50f41536a185331529e58f10883aeccc427b7a22a7174ed8a"
   end
 
   depends_on "node"

@@ -1,8 +1,8 @@
 class Youtubeuploader < Formula
   desc "Scripted uploads to Youtube"
   homepage "https:github.comporjoyoutubeuploader"
-  url "https:github.comporjoyoutubeuploaderarchiverefstagsv1.24.4.tar.gz"
-  sha256 "2409b0bb2f622eacba38794d24839318496e910ce33ddf2c8a139e17887b1087"
+  url "https:github.comporjoyoutubeuploaderarchiverefstagsv1.25.1.tar.gz"
+  sha256 "729d3cb5a6ff6a09742d9d9371a9c84fc21961d972c24694abed3b048c3d1b83"
   license "Apache-2.0"
   version_scheme 1
   head "https:github.comporjoyoutubeuploader.git", branch: "master"
@@ -17,12 +17,12 @@ class Youtubeuploader < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "306d23232c8eecb0705f0a5f0ad360a0149480f890059fb2d686b11e72b6f108"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "306d23232c8eecb0705f0a5f0ad360a0149480f890059fb2d686b11e72b6f108"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "306d23232c8eecb0705f0a5f0ad360a0149480f890059fb2d686b11e72b6f108"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f7cb2de9e8a4ba10fc55a271cd5c7de7e62913269c376427e050d5a0b2dc62a7"
-    sha256 cellar: :any_skip_relocation, ventura:       "f7cb2de9e8a4ba10fc55a271cd5c7de7e62913269c376427e050d5a0b2dc62a7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f48418f9540c2469c963192e3c15d914346900aad522cf144fe23f1a9e19b000"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "634979e6eda2d78597ba78ca2cbf1e0ada4fc0a1a81260ae42391180f789c6a4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "634979e6eda2d78597ba78ca2cbf1e0ada4fc0a1a81260ae42391180f789c6a4"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "634979e6eda2d78597ba78ca2cbf1e0ada4fc0a1a81260ae42391180f789c6a4"
+    sha256 cellar: :any_skip_relocation, sonoma:        "520ebb066a5ec08194412e8e39d4f87a71219819fee9430b55a0b1cd827afe4c"
+    sha256 cellar: :any_skip_relocation, ventura:       "520ebb066a5ec08194412e8e39d4f87a71219819fee9430b55a0b1cd827afe4c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "11ba164d7f1330bb97cb6a0d62709577d9cf213bf05dd9adda1ff4c301477790"
   end
 
   depends_on "go" => :build

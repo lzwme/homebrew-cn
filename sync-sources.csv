@@ -278,6 +278,7 @@ Homebrew-homebrew-core/Formula/a/aspell.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/asroute.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/assh.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/assimp.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/a/assimp@5.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/ast-grep.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/astgen.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/astro.rb, Homebrew/homebrew-core, 1
@@ -2192,6 +2193,7 @@ Homebrew-homebrew-core/Formula/g/gegl.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gel.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gem-completion.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gemgen.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/g/gemini-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/genact.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/genders.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/generate-json-schema.rb, Homebrew/homebrew-core, 1
@@ -7562,6 +7564,7 @@ Homebrew-homebrew-core/Formula/y/yamcha.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/y/yamdi.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/y/yaml-cpp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/y/yaml-language-server.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/y/yaml2json.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/y/yamlfix.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/y/yamlfmt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/y/yamllint.rb, Homebrew/homebrew-core, 1
@@ -11547,6 +11550,7 @@ Homebrew-homebrew-cask/Casks/font/font-t/font-teko.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-t/font-tektur.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-t/font-telex.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-t/font-tenali-ramakrishna.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-t/font-tenderness.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-t/font-tengwar-formal-csur.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-t/font-tengwar-telcontar.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-t/font-tenor-sans.rb, Homebrew/homebrew-cask, 1
@@ -14163,7 +14167,6 @@ Homebrew-homebrew-cask/Casks/s/sketchbook.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/sketchup.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/skiff.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/skim.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/s/skitch.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/skychart.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/skyfonts.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/skype-for-business.rb, Homebrew/homebrew-cask, 0
@@ -14264,6 +14267,7 @@ Homebrew-homebrew-cask/Casks/s/spaceid.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/spacelauncher.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/spaceman.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/spaceradar.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/s/spacesaver.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/spamsieve.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/spark-app.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/spark-ar-studio.rb, Homebrew/homebrew-cask, 0

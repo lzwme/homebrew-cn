@@ -1,8 +1,8 @@
 class ErofsUtils < Formula
   desc "Utilities for Enhanced Read-Only File System"
   homepage "https://git.kernel.org/pub/scm/linux/kernel/git/xiang/erofs-utils.git"
-  url "https://git.kernel.org/pub/scm/linux/kernel/git/xiang/erofs-utils.git/snapshot/erofs-utils-1.8.7.tar.gz"
-  sha256 "d84941a83369a9128f2d57b3014aac86e63ca1ab03000a9f5bb21c703f10d272"
+  url "https://git.kernel.org/pub/scm/linux/kernel/git/xiang/erofs-utils.git/snapshot/erofs-utils-1.8.8.tar.gz"
+  sha256 "927dba9186227f5279ab49dd60bd58f3cecef40c36845acaf6f1ffd006a094f4"
   license "GPL-2.0-or-later"
   head "https://git.kernel.org/pub/scm/linux/kernel/git/xiang/erofs-utils.git", branch: "master"
 
@@ -12,13 +12,13 @@ class ErofsUtils < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "0158d7872fffdc11afce4b9936e725a7157090eeb2bba4cd17e91ac6ec303606"
-    sha256 cellar: :any,                 arm64_sonoma:  "29efdcb10aa8fd8749a3211cbb90522d9668339e5c957874235f03a401ee0f64"
-    sha256 cellar: :any,                 arm64_ventura: "307b8119bb0c10d5f5535e69e070b1c3c575c9a7b95f0710e01ab8126506552a"
-    sha256 cellar: :any,                 sonoma:        "81a86dacf10f5e4c5b12bfd5544a4b909d2275b6086262ec7443f8eecca4b0c4"
-    sha256 cellar: :any,                 ventura:       "763aecf4e56152b0fa7a1b9726c28e18c9e57c10184deb2f5f90f3031f9600fe"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "082e2e10e3c07b1fee4ab5af264ba58af10e23cf1c4b2e733f54059a26184ce9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "669254ff1c836bf46a1e8a24edc5aba39db7d57d5e892945725421f03f8e10c7"
+    sha256 cellar: :any,                 arm64_sequoia: "ea5469d61a3b0ce1cc8281154c02c54080b1f9076b0712e23cf6f00115f6cc81"
+    sha256 cellar: :any,                 arm64_sonoma:  "9da10827d7e0c56b72c411dbf3846293dd90aceaaae8be47d6a8339ef97f7cc5"
+    sha256 cellar: :any,                 arm64_ventura: "77eaa517da8a816e94dace158c266172bdcf8962f78e3807c8378459de6646b9"
+    sha256 cellar: :any,                 sonoma:        "af32cd518b222a674c1a30bac7ba8aee6191c2146be6a21ec09e655e4b4ba162"
+    sha256 cellar: :any,                 ventura:       "617e9aa287787cd335f64126772a433ca7285421f6473f718189289bf2e26479"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a3ba85aed797d0f1cdc05039a4f5f1084790ecb4bdb9090f1ba343506db28166"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "59fe3b30de1abce4f65bd3653d5d3cdb1e70996f50e4dc16283bb3f622266968"
   end
 
   depends_on "autoconf" => :build

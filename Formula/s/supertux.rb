@@ -46,6 +46,7 @@ class Supertux < Formula
   end
 
   def install
+    # Support cmake 4 build, upstream pr ref, https:github.comSuperTuxsupertuxpull3290
     ENV["CMAKE_POLICY_VERSION_MINIMUM"] = "3.5"
 
     args = [

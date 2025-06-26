@@ -39,6 +39,8 @@ class TransmissionCli < Formula
   patch :DATA
 
   def install
+    odie "Remove cmake 4 build patch" if build.stable? && version > "4.0.6"
+
     # CMake 4 compatibility for third-parties of miniupnpc
     ENV["CMAKE_POLICY_VERSION_MINIMUM"] = "3.5"
 

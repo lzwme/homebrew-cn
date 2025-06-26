@@ -3,19 +3,19 @@ class OciCli < Formula
 
   desc "Oracle Cloud Infrastructure CLI"
   homepage "https:docs.cloud.oracle.comiaasContentAPIConceptscliconcepts.htm"
-  url "https:files.pythonhosted.orgpackages0fda836717cc3ed2c0a7655fbfff41937d3d57a6d12c2fb9ad11b7842d89b154oci_cli-3.60.0.tar.gz"
-  sha256 "469193f0151a6e0827022eb80405b64677c57402da5319bffb28e8c341e6ef8f"
+  url "https:files.pythonhosted.orgpackages1cca2b9c61070fe093d756a4e3cae64b44ba8c56f182e4addd64d6dc3d836c70oci_cli-3.61.0.tar.gz"
+  sha256 "1a34151f1dd3f506889500c6502dd7e0ad7ee02b9faf878f8af5c3a1ea89445d"
   license any_of: ["UPL-1.0", "Apache-2.0"]
   head "https:github.comoracleoci-cli.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "5687917736f203f33d58708ecdb54c2f333a6598f88c58c3b01514a87273bad7"
-    sha256 cellar: :any,                 arm64_sonoma:  "05b9381b59fcc592723a5a68d7e3a34b83b72575acacab9268454fe820be3ab5"
-    sha256 cellar: :any,                 arm64_ventura: "ee98e81cf6742f7323ff6afc7b209c9ca596939ee73cae59ff5042b6f67592bb"
-    sha256 cellar: :any,                 sonoma:        "6c2d7331401c8d7241827d2ec4e78401b66b439212f189ddb031835b560ce38c"
-    sha256 cellar: :any,                 ventura:       "73c359d35f4c826130378909b43e4320e77092c2fd22bedf8708570f476984fd"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f4583e9d1f4e04fcfe7d2b652d90fb79100163ed5d88c5b47bef6be4c9762ccc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "01c51712a686f4274e365bd89635df2cd5d36831b2c9d391977925f647b9073b"
+    sha256 cellar: :any,                 arm64_sequoia: "910a54d56433983fc53cdb549f3dff5739af810867a42101106296e76b7e3535"
+    sha256 cellar: :any,                 arm64_sonoma:  "a58d9fa7e09c095eb447d837d77b9523191634ecfafe5681af2d7fc72bc93dba"
+    sha256 cellar: :any,                 arm64_ventura: "1c7194a0f445209a1b90bea8b62e8739d87ce827695565165a4bb3bce63eefa6"
+    sha256 cellar: :any,                 sonoma:        "4e15ec87b22a203c7728a0e649d61d5f59db57f04db00ad1166097c3282e5c27"
+    sha256 cellar: :any,                 ventura:       "119dfe72f1511faa9375531c72635618c12be60bbeebf59de9fa062c82648543"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "83710fcc5b843209d59289dbce5e0601c7589706edf4db2eb92c4faa47ec937c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2390db5d1f46b1e9f1022f2acf7d820dca64cfed733b8d3c228848f93a86b3e6"
   end
 
   depends_on "certifi"
