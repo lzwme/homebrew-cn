@@ -1,21 +1,27 @@
 class Sqlboiler < Formula
   desc "Generate a Go ORM tailored to your database schema"
   homepage "https:github.comvolatiletechsqlboiler"
-  url "https:github.comvolatiletechsqlboilerarchiverefstagsv4.19.1.tar.gz"
-  sha256 "ba6fb59dcf9fc6ab14223a001c5d53156165563cb357521eff0e599eb61cef2a"
+  url "https:github.comvolatiletechsqlboilerarchiverefstagsv4.19.2.tar.gz"
+  sha256 "27320df592ae8b143861baf4a93c0a5e142c1fdf61db62feeb98efcaeac8aa40"
   license "BSD-3-Clause"
   head "https:github.comvolatiletechsqlboiler.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "08857ef511f690f8933d95b76105661e7649530a646684d723735191f57435c6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "08857ef511f690f8933d95b76105661e7649530a646684d723735191f57435c6"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "08857ef511f690f8933d95b76105661e7649530a646684d723735191f57435c6"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9c69916334c39d17e4021dcb5d934d83fea64991a77819bb58576296e2d3ebc0"
-    sha256 cellar: :any_skip_relocation, ventura:       "9c69916334c39d17e4021dcb5d934d83fea64991a77819bb58576296e2d3ebc0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "864792653086ae9530164a4e60696fde39cafbdd1111e048a51e6ca5ad119f08"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9b4add434e7c891fa931251afed3a07c682f5fd25e1f87b744f3a2e851e5c2af"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9b4add434e7c891fa931251afed3a07c682f5fd25e1f87b744f3a2e851e5c2af"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "9b4add434e7c891fa931251afed3a07c682f5fd25e1f87b744f3a2e851e5c2af"
+    sha256 cellar: :any_skip_relocation, sonoma:        "76ca857d4f6e7247dded84268526b81f06e95b2d51c8146ea832d2f90bd3efb2"
+    sha256 cellar: :any_skip_relocation, ventura:       "76ca857d4f6e7247dded84268526b81f06e95b2d51c8146ea832d2f90bd3efb2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c776177db9bc32682c923be3f363fcbb99129799e9f518088322ce14458b078d"
   end
 
   depends_on "go" => :build
+
+  # version patch, upstream pr ref, https:github.comaarondlsqlboilerpull1454
+  patch do
+    url "https:github.comaarondlsqlboilercommit6a39f792d9e8ee838697a63284a4bf999d02440d.patch?full_index=1"
+    sha256 "c8f816926066ad16ed9cfd87f20be230b9751686b0519fe088d04011ede246b8"
+  end
 
   def install
     %w[mssql mysql psql sqlite3].each do |driver|

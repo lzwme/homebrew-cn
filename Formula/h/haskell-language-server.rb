@@ -4,6 +4,7 @@ class HaskellLanguageServer < Formula
   url "https:github.comhaskellhaskell-language-serverreleasesdownload2.11.0.0haskell-language-server-2.11.0.0-src.tar.gz"
   sha256 "d6c7ce94786346ee9acb1ef9fff0780b8035c4392523f27d328ad018257d7f5f"
   license "Apache-2.0"
+  revision 1
   head "https:github.comhaskellhaskell-language-server.git", branch: "master"
 
   # we need :github_latest here because otherwise
@@ -14,13 +15,13 @@ class HaskellLanguageServer < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "24aa62e90da83646a9612ac91ae5cbda9e07483a92b32c1ba149099a1cf58c5d"
-    sha256 cellar: :any,                 arm64_sonoma:  "b650a9c4d15038b8684d3b26915a6455468a2ed616a6bdf94caab869a67e19c3"
-    sha256 cellar: :any,                 arm64_ventura: "a666556a48a11502cbfc4328d84ecfe637401e7734dc4bf32b119dff6fb3136b"
-    sha256 cellar: :any,                 sonoma:        "49258ec924ca410511930293a6fb6ffbbbfd025fde2693c32a96a2760e323829"
-    sha256 cellar: :any,                 ventura:       "d869bdcd6429246fc8e0d40a9c9fcfc470665b99cf9bb67cf54fb3efefd85a95"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "15dd391736a772ddc9cb298a26532f1c8cf08fd4f6ff6a967f4d54761057cec3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "20c2848958581b3fa31f2dff0659b411a344a8d1baa2d143ccf33239b0db3659"
+    sha256 cellar: :any,                 arm64_sequoia: "7be400445f57f8ee34805bb545c823c9931bda77403edef1fe3405ca08c92f9b"
+    sha256 cellar: :any,                 arm64_sonoma:  "9fa7706a776f4dfcf82fcbcf383eb0c5c824a6acc06e81f616074353bc7ec6eb"
+    sha256 cellar: :any,                 arm64_ventura: "41e8c785115b01629f316c27fb74cc832d842c1539dc4764d892019c09c621be"
+    sha256 cellar: :any,                 sonoma:        "2caa0b5cac34bfbe307395de3d663718f3114021bbef8787d2d3766846a6cf36"
+    sha256 cellar: :any,                 ventura:       "9d12d6dd4f5724f7d2bd11abdc1b5f8da4188f6487fadc1ab4ee566f9e7dea49"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "de58cd51f2fb307f4fab971c18a75893414ba74df714c9cbc8d1da230441e740"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c4b2199524258a615108132c1bb926f3d15016ad4841a9b7d27382241e226573"
   end
 
   depends_on "cabal-install" => [:build, :test]

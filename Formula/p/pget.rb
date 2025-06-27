@@ -29,7 +29,7 @@ class Pget < Formula
   end
 
   test do
-    file = "https:raw.githubusercontent.comHomebrewhomebrew-coremasterREADME.md"
+    file = "https:raw.githubusercontent.comHomebrewhomebrew-coreHEADREADME.md"
     system bin"pget", "-p", "4", file
     assert_path_exists testpath"README.md"
 

@@ -1,19 +1,19 @@
 class Zizmor < Formula
   desc "Find security issues in GitHub Actions setups"
   homepage "https:docs.zizmor.sh"
-  url "https:github.comzizmorcorezizmorarchiverefstagsv1.9.0.tar.gz"
-  sha256 "27da51a31dfb553a9fe0acfa3a129f0d5e55b8593c502f2c99b332e5f3156e0e"
+  url "https:github.comzizmorcorezizmorarchiverefstagsv1.10.0.tar.gz"
+  sha256 "f87f6298325b980f5b5415ac2d381302e00cd624528d6b858ed54487655ef1ce"
   license "MIT"
   head "https:github.comzizmorcorezizmor.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bcc20d88fdf708a59ba08b4edc3709b33d283718d344bec52ba9880c2af8628a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cae28995cb71957bb16f4842a5991d232cb4a8ffc3538cac32029e13ad6d4dd5"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "5bbf3a0fff47bb899e86d435035fa1ed79701a4971bb59d4d474278ec7ead1fc"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c0bfd810f257c9a1fd6924c2685b64977d7562e8ded9e80281d201690699880d"
-    sha256 cellar: :any_skip_relocation, ventura:       "da945d8fc3c0a7ad382212c8969a2fc170c02727f04eb1aa85c4b97d96b39608"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1326ed59f52f7d59c02c7bada35de97fd3837d7621f3672c5d0d27749b0df08c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d3dda820c1f751c1c9f5e5976b76d41c6e83789cb2b79b29bd75de155d803f8d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f6c44ca9a6ec98cd6fc48e0b1d5034daa97d5cab27ffac9a8fe1da62daa0b3a4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8642968c355e134b33c671afa695268b2c99b167d0f6fbfffdc11cde4c7e9b1b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "0b37f45c6eea8841f5e7af160f64365a5f4cc9c219acd7671ed5c7afd360f579"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6fff49e0bf4b32ef3dae4a7c98f72d2493977440bbeb71c1830038c1dd1993e5"
+    sha256 cellar: :any_skip_relocation, ventura:       "7771b7921995e0ff91e239937d7d36059b0c49e856c24b37244a272db9d52f72"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9c13257e10220c0270d8923bb0268fd1cce851ad92010d8fedf1546877cceee2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d6f617348507beecfd3e0f0da6953b976a044eeede86900843a8f9ba577b2d49"
   end
 
   depends_on "pkgconf" => :build

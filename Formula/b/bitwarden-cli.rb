@@ -1,8 +1,8 @@
 class BitwardenCli < Formula
   desc "Secure and free password manager for all of your devices"
   homepage "https:bitwarden.com"
-  url "https:github.combitwardenclientsarchiverefstagscli-v2025.5.0.tar.gz"
-  sha256 "247ca881c8a9f407c494977f7e8555fe11beff017d0cfda6a6d437ec0c0978d6"
+  url "https:github.combitwardenclientsarchiverefstagscli-v2025.6.0.tar.gz"
+  sha256 "18c91d3ce09f0b722a3bc6b7a470b40823301973cd80e5a8bc54542541075020"
   license "GPL-3.0-only"
 
   livecheck do
@@ -11,13 +11,13 @@ class BitwardenCli < Formula
   end
 
   bottle do
-    sha256                               arm64_sequoia: "97764f18ccb72f733e498c9feae0868cce7013f4b44b3553b9dcf07aa300aed0"
-    sha256                               arm64_sonoma:  "5453236d390febec8928d0eb0509c6670d26cfed1b688d1a0a8836594a4dcffe"
-    sha256                               arm64_ventura: "1b0cda4216b9f50fd0abec50a11c9a5057f40920b41071ddaa45d3326db12bca"
-    sha256                               sonoma:        "7e9ea72690b0f9418549c0cfc80f313f78eaf8e2504bcd0d6cbaba1c1a60edce"
-    sha256                               ventura:       "0722698c9fdfaf418aa785fc052953dd3376e079fa5982dc24542808091f3a88"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9eee38d6342ccc2210db45f39429bee9f26e01f06ab8b23b625743930c601446"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b301cba25a0f398367dd0cf84de63153d465dcbb53c57475764abf3aec790d52"
+    sha256                               arm64_sequoia: "de62380d78e2f00b085374ff4e970c0335192a1c45db378a54105d8fefc3d8c9"
+    sha256                               arm64_sonoma:  "77bc30cf0c3c24ef8a8c1b973fec56d5f919a35ae6b77ca8c924a32c7f5feb72"
+    sha256                               arm64_ventura: "e987def1d068cd11fcaed6bdb7f0c463db999eaa84cd256385af9b18003e055b"
+    sha256                               sonoma:        "b056cfc386753679435a46b2d43ad6fe9d49c9bd2339de8e4f37e806b502ff5b"
+    sha256                               ventura:       "e914b0719c265f584376c91ff741fb0bea4cf0323b413b2dbf3ec17544d701bb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e7fec5040a91ec8de779d8f389cfcc3347094172d8a997d3629fe6f26bb0d550"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1b038880ce2820eceefbe3c20cea8e6b6aad962f63fb3b7d4d9a7265045377f4"
   end
 
   depends_on "node"

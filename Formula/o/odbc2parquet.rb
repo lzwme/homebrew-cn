@@ -1,19 +1,19 @@
 class Odbc2parquet < Formula
   desc "CLI to query an ODBC data source and write the result into a Parquet file"
   homepage "https:github.compacman82odbc2parquet"
-  url "https:github.compacman82odbc2parquetarchiverefstagsv8.0.1.tar.gz"
-  sha256 "04d2d0e18e0a1c34d2551faccd5bb639c25132606d42bab41f47cb5de0a7f2e8"
+  url "https:github.compacman82odbc2parquetarchiverefstagsv8.1.0.tar.gz"
+  sha256 "8cb514b63d114c3a1261370ada09ac4bcd08a717c701dbf631f1a609c19604bb"
   license "MIT"
   head "https:github.compacman82odbc2parquet.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "eb72da6e019650b691048dd17e2d3069025c0d08bdb9715c5a18bf1f0e135c04"
-    sha256 cellar: :any,                 arm64_sonoma:  "13278a9e7cf97eda32214a90f47637f6ec5da6a59da17010e7537ce566393d5a"
-    sha256 cellar: :any,                 arm64_ventura: "76bced75bc4f1d23a2c30b10f5ad304b56ea6ac343fd8f9710eef51baf66bd28"
-    sha256 cellar: :any,                 sonoma:        "8f16d9b3d6e9c562dd85d86e22a425a3dcaf67b935e76a2002906c46d2265218"
-    sha256 cellar: :any,                 ventura:       "18d411f5ab14caa20c734b745bd9bfea79a5f21f9168f40643eaa74c343b1e7e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b49ab661dd8bd673e4591affb4485c71cfa2a0f30bf2b6cbcbb167931410e2e2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1e9269ada8b5375e1a11ced92450fb7151dc1ecba8383b046035b32688cb2c59"
+    sha256 cellar: :any,                 arm64_sequoia: "ed5f553065f5362939befc7ba36b8ea34e84a711f823e372b7b30cc2520717b1"
+    sha256 cellar: :any,                 arm64_sonoma:  "9afda7f375da2878916fabe2047cbf21e18835f6f4703c6dd9aeb4e7ac6543ff"
+    sha256 cellar: :any,                 arm64_ventura: "3d078dee8946498c23f853a6608cd14e51f8d10ee7f7c337b2589876719594dc"
+    sha256 cellar: :any,                 sonoma:        "3c76916449998c19aeaec035d9a04b46ff5e0bb318cf2c952d0773825fabf915"
+    sha256 cellar: :any,                 ventura:       "cc7835f789a89926cbc43e36155973c24f78d095770aade1c38e29a65fb28f80"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a07bdbd58484a84659ac9f40c1eed3e834ae795ec2a3b20129681ca27723986d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "940333815e21d2e34433d9293f389dee8b7708c30ed2ccf68a5cbfcc3a4d8d9c"
   end
 
   depends_on "pkgconf" => :build

@@ -3,18 +3,18 @@ class Fastapi < Formula
 
   desc "CLI for FastAPI framework"
   homepage "https://fastapi.tiangolo.com/"
-  url "https://files.pythonhosted.org/packages/20/64/ec0788201b5554e2a87c49af26b77a4d132f807a0fa9675257ac92c6aa0e/fastapi-0.115.13.tar.gz"
-  sha256 "55d1d25c2e1e0a0a50aceb1c8705cd932def273c102bff0b1c1da88b3c6eb307"
+  url "https://files.pythonhosted.org/packages/ca/53/8c38a874844a8b0fa10dd8adf3836ac154082cf88d3f22b544e9ceea0a15/fastapi-0.115.14.tar.gz"
+  sha256 "b1de15cdc1c499a4da47914db35d0e4ef8f1ce62b624e94e0e5824421df99739"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "190ecdd6622dd4f967e1226512542a582305c933b44805746ce50c53cb33fbd6"
-    sha256 cellar: :any,                 arm64_sonoma:  "02b9573c5df5198bb87130102961d5d2384805832d63406a6b25f624193a41b9"
-    sha256 cellar: :any,                 arm64_ventura: "d2ea4f309558e4692c2e3f17bd82ca216e1e22a2eea80367427847cc6cde72a5"
-    sha256 cellar: :any,                 sonoma:        "571fdb6fc209920bf18c66cda72a06393891261f341cec647c8301bb5ab975c3"
-    sha256 cellar: :any,                 ventura:       "5c5419a70b64aa5a1c68e80e2339965fa36848c8f753fe274301537578b29317"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "263148cee6e392062bf439d3fa7c6b8d2114a27034dbf813e980f8562d6d77b8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "616dbe74118075a368615e2224d67a4567da53a23f1f875e29d68157bd932521"
+    sha256 cellar: :any,                 arm64_sequoia: "efeb13e818cf46ac8a08a4105970bee9ec053bfe1fb1572ba402dda91a8c22cc"
+    sha256 cellar: :any,                 arm64_sonoma:  "459534a1848a0df4cf5afa6824977738f26de12891928e32a594f795919dbe01"
+    sha256 cellar: :any,                 arm64_ventura: "f05a43314af62bbc32c83cac0eef3f65e2866e2bddfd4c34d5eda519dff5c1d1"
+    sha256 cellar: :any,                 sonoma:        "608f1bb8e525f864851ec25f5d38390a11adf0eedd581e14c8f79d4a5d600ae0"
+    sha256 cellar: :any,                 ventura:       "7643c1b67b3911eecb586f3b10a7071f2165bac8a59f053b1af6e6d5806b9531"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3f374dbda7478404b32314fd40a3ea54abfa72065b76b8c650a0e9578c8b780b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "937e814542f1fd06f37e407ebf974754d23f9be9d95af3e0f2bbb0ed72bddfd1"
   end
 
   depends_on "rust" => :build # for pydantic
@@ -112,13 +112,13 @@ class Fastapi < Formula
   end
 
   resource "pygments" do
-    url "https://files.pythonhosted.org/packages/7c/2d/c3338d48ea6cc0feb8446d8e6937e1408088a72a39937982cc6111d17f84/pygments-2.19.1.tar.gz"
-    sha256 "61c16d2a8576dc0649d9f39e089b5f02bcd27fba10d8fb4dcc28173f7a45151f"
+    url "https://files.pythonhosted.org/packages/b0/77/a5b8c569bf593b0140bde72ea885a803b82086995367bf2037de0159d924/pygments-2.19.2.tar.gz"
+    sha256 "636cb2477cec7f8952536970bc533bc43743542f70392ae026374600add5b887"
   end
 
   resource "python-dotenv" do
-    url "https://files.pythonhosted.org/packages/88/2c/7bb1416c5620485aa793f2de31d3df393d3686aa8a8506d11e10e13c5baf/python_dotenv-1.1.0.tar.gz"
-    sha256 "41f90bc6f5f177fb41f53e87666db362025010eb28f60a01c9143bfa33a2b2d5"
+    url "https://files.pythonhosted.org/packages/f6/b0/4bc07ccd3572a2f9df7e6782f52b0c6c90dcbb803ac4a167702d7d0dfe1e/python_dotenv-1.1.1.tar.gz"
+    sha256 "a8a6399716257f45be6a007360200409fce5cda2661e3dec71d23dc15f6189ab"
   end
 
   resource "python-multipart" do

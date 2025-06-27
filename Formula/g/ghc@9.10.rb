@@ -1,8 +1,8 @@
 class GhcAT910 < Formula
   desc "Glorious Glasgow Haskell Compilation System"
   homepage "https://haskell.org/ghc/"
-  url "https://downloads.haskell.org/~ghc/9.10.1/ghc-9.10.1-src.tar.xz"
-  sha256 "bf386a302d4ee054791ffd51748900f15d71760fd199157922d120cc1f89e2f7"
+  url "https://downloads.haskell.org/~ghc/9.10.2/ghc-9.10.2-src.tar.xz"
+  sha256 "55fd40a005575ac6b33ea928beda81e8c56ffea354b6ac474ee9f9911f23a8de"
   # We build bundled copies of libffi and GMP so GHC inherits the licenses
   license all_of: [
     "BSD-3-Clause",
@@ -11,20 +11,21 @@ class GhcAT910 < Formula
   ]
 
   livecheck do
-    url "https://www.haskell.org/ghc/download.html"
-    regex(/href=.*?download[._-]ghc[._-][^"' >]+?\.html[^>]*?>\s*?v?(9\.10(?:\.\d+)+)\s*?</i)
+    url "https://www.haskell.org/ghc/"
+    regex(/href=.*?download[_-]ghc[_-]v?(9[._]10[._]\d+)\.html/i)
+    strategy :page_match do |page, regex|
+      page.scan(regex).map { |match| match[0].tr("_", ".") }
+    end
   end
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "ec9bf60301efe6176480908497e6bbcf760c8933cb6e7e5f37ebb974511503ad"
-    sha256 cellar: :any,                 arm64_sonoma:  "6adabdb9471ae60464844e605ea1b125072093c3545bbb6be58c97e068e4b179"
-    sha256 cellar: :any,                 arm64_ventura: "7873d62ffe85f56f79253dd01207e5d2ff9d517327908d24df0cddf0507a894d"
-    sha256 cellar: :any,                 sonoma:        "468cb6b1d315ee7666776732ff81810ef758fafab73cb9e4625f2eae4eec6b53"
-    sha256 cellar: :any,                 ventura:       "bdb6eb7758ff9cbe21ddd04b686adde591cccf4cc783f61f6dbd748d1d717d51"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "594c60e3a2ad54c4b992c26e122f13b6ebe454583bb9cda468fc3896263feb51"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7094724850adb80577444deb76d26cd865c71f45d6afaae2f92cb9809cf7fd76"
+    sha256 cellar: :any,                 arm64_sequoia: "90bff9369a08cce9a666649dd21add3ec6876886c3da45f3f93127aa0fdbd5b8"
+    sha256 cellar: :any,                 arm64_sonoma:  "bc2fa358b98a3c49e698300acfb43fafad5fbfac0b34a37435664f142d677df8"
+    sha256 cellar: :any,                 arm64_ventura: "37d77b7b2697f54dc1b350a9177f060b539f547c9628048c90df0986f6339656"
+    sha256 cellar: :any,                 sonoma:        "a6db4da32e12152eafdf2ec8be9e9412a605f831c27124f401a35e502a1d0951"
+    sha256 cellar: :any,                 ventura:       "53983bf4a1c87f24cd6e456c73f361a56a5c02345dc3599c79e3f71b24baacfc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "df93ff76aa8f2cbaf4a6c0798af4b561fd11ef4231d2faceba36c5b09d22a227"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6aa615af9a8ec3cd576670c6c1444f8fa8213fe88bb48d7121b37c1055625fcb"
   end
 
   keg_only :versioned_formula
@@ -92,12 +93,6 @@ class GhcAT910 < Formula
         sha256 "3724f2aa22f330c5e6605978f3dd9adee4e052866321a8dd222944cd178c3c24"
       end
     end
-  end
-
-  # Backport fix to avoid unnecessary `alex` dependency
-  patch do
-    url "https://gitlab.haskell.org/ghc/ghc/-/commit/aba2c9d4728262cd9a2d711eded9050ac131c6c1.diff"
-    sha256 "152cd2711a7e103bbf0526dc62e51b437e6c60e26149f2cd50ccafaa057316ce"
   end
 
   def install

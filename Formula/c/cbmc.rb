@@ -2,20 +2,20 @@ class Cbmc < Formula
   desc "C Bounded Model Checker"
   homepage "https:www.cprover.orgcbmc"
   url "https:github.comdiffbluecbmc.git",
-      tag:      "cbmc-6.6.0",
-      revision: "3c915ebe35448a20555c1ef55d51540b52c5c34a"
+      tag:      "cbmc-6.7.0",
+      revision: "5d1438a883201a8983b1449eb2485df0821c819d"
   license "BSD-4-Clause"
 
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "619e622f250caa0d40ca68371a7d7316275b705a823f43e3cabc89863bf8e34b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "81fd93129dad62a45ee0816001956f822358ca8b80af50ef8265c78563e953d8"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "990dbaefff6e71286ed2409705c511aa0dbc2ba51aebbd064ca7720140014d8e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "69fb5b4876132ce6980a2801faf5d5b6e7a32071ea539feedb9840179856053c"
-    sha256 cellar: :any_skip_relocation, ventura:       "b27e1306aa88d98c38077a6457fa5debaaaeaa0de0747b93a3fa24d3173e5a0d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "26d417c3c3b654e02ccbe0a272b45c48f4195befaa37367b64b16c7a743e7907"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ea0a38ee6db636d7f1867eb0b26f2a475b936767c63d425311698d837cda9369"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a7becbc8bbb8bf19e4117619a38bdd327382327e7ae5e9ea8d4a67eeae90b838"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fbb4023fd3a987c09ad476a4b23bf4a4169c2f679ffeb7ff9fe7ff54fce64ab5"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "57bcd93ceecdd9c6a6b502793f4430f5904350f8cfb0b70ba8a934e5c5fee7be"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f32ac34db6255e3beeabbd817411ae696032bddc68442c8a6ddcdf3de0147b0d"
+    sha256 cellar: :any_skip_relocation, ventura:       "3a206657edd5de624267a31015ccda82fa1351d38b1b6289d8a14f7f80c947bb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f1ecddb0d843183648927b936b16ed1307b968f9f7140187907f61f34f2436ea"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f2952e3ae721388b49a2ec58eb1b55c291e904246009af1f699334aace3b70ac"
   end
 
   depends_on "cmake" => :build
