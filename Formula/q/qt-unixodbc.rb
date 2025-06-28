@@ -1,22 +1,20 @@
 class QtUnixodbc < Formula
   desc "Qt SQL Database Driver"
   homepage "https://www.qt.io/"
-  url "https://download.qt.io/official_releases/qt/6.9/6.9.0/submodules/qtbase-everywhere-src-6.9.0.tar.xz"
-  sha256 "c1800c2ea835801af04a05d4a32321d79a93954ee3ae2172bbeacf13d1f0598c"
+  url "https://download.qt.io/official_releases/qt/6.9/6.9.1/submodules/qtbase-everywhere-src-6.9.1.tar.xz"
+  sha256 "40caedbf83cc9a1959610830563565889878bc95f115868bbf545d1914acf28e"
   license any_of: ["GPL-2.0-only", "GPL-3.0-only", "LGPL-3.0-only"]
 
   livecheck do
     formula "qt"
   end
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:  "e2d985fca29dcb857cb55b7089b7fea68d2dececb867008812e16cca2ca03240"
-    sha256 cellar: :any,                 arm64_ventura: "19780170d64a3158c29c59e3caa08bf5bf4c4b4dba329a1342f05ba931d5826a"
-    sha256 cellar: :any,                 sonoma:        "c62e19715388e42f0cc24d5ec574f454ecb2d69f33b72cbd169fd5da2cbd34a8"
-    sha256 cellar: :any,                 ventura:       "d865bddc930004939c525dd460763f134a28445b7216878e1647c2b3451e1b6c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cf17c47c1144c25ba9429f382d3ab33394a011e5213c855e353481907879fbbf"
+    sha256 cellar: :any,                 arm64_sonoma:  "008516acadded77ae23ec47e414b8e24272b7cc801b55b92a6ccafd6c79d16ae"
+    sha256 cellar: :any,                 arm64_ventura: "1d0bebc732a467039ccdaf09460fea2dbd3e9b33ef86f6a1eaafd7a446e6bab0"
+    sha256 cellar: :any,                 sonoma:        "49504baad6787bbf4cc4f0f3a5ca4434031a391188477bcb77e9f7b1644e79a7"
+    sha256 cellar: :any,                 ventura:       "43b22dcf309ae6caefd5d55d32e13ba7c76390d7957019abf6afa1c4a639509e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6faa277119ee47e8ac430a414c56a7d44d7e70e63497fcdce5eb471596688ecd"
   end
 
   depends_on "cmake" => [:build, :test]

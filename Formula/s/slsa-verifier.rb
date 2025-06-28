@@ -1,8 +1,8 @@
 class SlsaVerifier < Formula
   desc "Verify provenance from SLSA compliant builders"
   homepage "https:github.comslsa-frameworkslsa-verifier"
-  url "https:github.comslsa-frameworkslsa-verifierarchiverefstagsv2.7.0.tar.gz"
-  sha256 "156190a6c96ef20747a88d28b69ee7fe60dc4d0fce3f9037da86778dcfdd2af8"
+  url "https:github.comslsa-frameworkslsa-verifierarchiverefstagsv2.7.1.tar.gz"
+  sha256 "19af322eb0ae0cb738f8e2395b3dcff756537277d62688fc9d2b4fc5ad6b16e4"
   license "Apache-2.0"
   head "https:github.comslsa-frameworkslsa-verifier.git", branch: "main"
 
@@ -15,12 +15,12 @@ class SlsaVerifier < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2aa2a807e3b7f681fe3a2202b0dbf80310dd26ec55275698354094db272d970b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2aa2a807e3b7f681fe3a2202b0dbf80310dd26ec55275698354094db272d970b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "2aa2a807e3b7f681fe3a2202b0dbf80310dd26ec55275698354094db272d970b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "106517b350402f5df5b7593cc10b501f878e1f244dd34a3db73f019846592e49"
-    sha256 cellar: :any_skip_relocation, ventura:       "07fb4459305a82d44c6c128b1255f5a0a996d241f9c07432fd76f6e6ee4c74df"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8794fbe8d5196f2e41227ec58833f905557f107199a2735f0ff6b4df7938dcb8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bcf61ec25f8d27700570040901164ae290b194cd0da63fa2e6468d45964d2774"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bcf61ec25f8d27700570040901164ae290b194cd0da63fa2e6468d45964d2774"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "bcf61ec25f8d27700570040901164ae290b194cd0da63fa2e6468d45964d2774"
+    sha256 cellar: :any_skip_relocation, sonoma:        "61d1c99d4454cf0ef9ea24751e1eae302d84f59f4c094f326b0d2a6e2e225c2e"
+    sha256 cellar: :any_skip_relocation, ventura:       "8f635db74b4536deb743eda7c09aa6cf9982efdae9cc4faa48d8ddd5f6c59d99"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c83f420ac94e1c93f8ab68a0f831011f204bbe1b12774304dc01cca516bb1a1c"
   end
 
   depends_on "go" => :build

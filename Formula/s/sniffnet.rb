@@ -1,19 +1,19 @@
 class Sniffnet < Formula
   desc "Cross-platform application to monitor your network traffic"
   homepage "https:sniffnet.net"
-  url "https:github.comGyulyVGCsniffnetarchiverefstagsv1.3.2.tar.gz"
-  sha256 "92ad92196245f36df9380091623beceb7ba4dc1d3b7f0844791c0dff302a3a46"
+  url "https:github.comGyulyVGCsniffnetarchiverefstagsv1.4.0.tar.gz"
+  sha256 "7f0789836b81ca0ce249d1ebb15493aab3941a5c4438ac1a70784470c0401550"
   license any_of: ["Apache-2.0", "MIT"]
   head "https:github.comGyulyVGCsniffnet.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f2609e62911aebd894cd36891beb8e0ac93e3ea6f7cca899bf4b6af97564ad65"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d3404a406a6c48f5f35d97d9a2e3e383bd56214d928643456994b025d91e89d0"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "848d8a0dcb279614da33dd84b0a996622718b943f73747d06041b09e976e74c0"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e9d4a0118cecb9c689a67777d8f9f755610bb9220ccdace535ef76c3c21938cd"
-    sha256 cellar: :any_skip_relocation, ventura:       "5275d58ab13e3f747829436216a8e8906847a6f38152c7e0e07078355b8ace4c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4b5cd32a6492908157ac2f21540cfa986b0462c510ff6c291ea20e4fd65a0fd7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c9c54e12d99526592752f2afab1de70b7fbbbe51712b3228b67d1a7ca6ad2623"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "46fed06d4e0d8dd7262299c6b5b65d0021a5e49bcebb29730c015b483b376dfe"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "27fd97922331f22c22eccb26fc5efe52e0a642773d00a3b7ab16a669d07f431f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "ccb4f3539b8ccdefac958dfd9e3146816c54edf424318c7f4cb727ab3a559812"
+    sha256 cellar: :any_skip_relocation, sonoma:        "89f6c7e918b397d45735839f5c5f54bcfc7aedf2735fd2648459e2025fd7b90e"
+    sha256 cellar: :any_skip_relocation, ventura:       "9203d8da06985da7ad3c0772c125c19c53133d670e36e936a0b0d3b2d54ea7fa"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "be6be965d74bf52ae73509bd308036f547031f0354b81241d64d4981157761a5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "955f8fc814e582661667493534b51907957f6146223e567dacaec90fad7ad856"
   end
 
   depends_on "pkgconf" => :build

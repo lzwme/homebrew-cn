@@ -12,6 +12,7 @@ class UtilLinux < Formula
     "LGPL-2.1-or-later",
     :public_domain,
   ]
+  revision 1
 
   # The directory listing where the `stable` archive is found uses majorminor
   # version directories, where it's necessary to check inside a directory to
@@ -24,13 +25,13 @@ class UtilLinux < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "1ed6091b1cd6135e5edbf3af8ce133a8c635396ccb4a88b0aebab10dae51d7ea"
-    sha256 arm64_sonoma:  "bad2071c7fb5571704d8e511e8e61657592b96b7da6967f2d9a2a6cb892630d8"
-    sha256 arm64_ventura: "722b33367d183c16b10930b98f2f068709b3ec5e20370d4bac576124cf59d24c"
-    sha256 sonoma:        "0aec982c062e9b6d52b30af1b7e8a61101838c57c50f97d672493cbf2c0d7359"
-    sha256 ventura:       "a41a404b85a68add9ce54101d2d3a4c136ad5bb45961c80b1664d57f8918af6d"
-    sha256 arm64_linux:   "89d4ee94cf35ea60708f6b8449f51e91d6a551ae57021ec610abdcc8654bd579"
-    sha256 x86_64_linux:  "5005dc92c395a10dd0585b191a3471dee8e9bd8b5794c5daea01e2a3c2d4f053"
+    sha256 arm64_sequoia: "535204861eba897448b6c28b54d10276c7f9b71b7a327ed4fd4212c6992617ce"
+    sha256 arm64_sonoma:  "9c311e7df48c432995f0b3991512b0175cf13ce4c91ad635f13e5d5818ec5773"
+    sha256 arm64_ventura: "6d31dd7ee88f4517f55cfbe4cf175fc9da7aa2c9740d862428ead9aa48139e6e"
+    sha256 sonoma:        "bd6d38cd960ba14580f5df59e1ce4086045c99029c488743fcf2083d4e5defa7"
+    sha256 ventura:       "cec277c842259f9259d4bc8bb4a982e11d4c1ec88621d4b539d96fcd6886ed67"
+    sha256 arm64_linux:   "fa1b4b02f96da7f50c7fe6b22baa322e7ab0c28f42755a216f34286aa06f7897"
+    sha256 x86_64_linux:  "62c1095923e34635ab90c5029cac6876ea55e3c8ba089893679038179fbda3c4"
   end
 
   keg_only :shadowed_by_macos, "macOS provides the uuid.h header"
@@ -67,6 +68,12 @@ class UtilLinux < Formula
   patch do
     url "https:github.comutil-linuxutil-linuxcommit45f943a4b36f59814cf5a735e4975f2252afac26.patch?full_index=1"
     sha256 "b372a7578ff397787f37e1aa1c03c8299c9b3e3f7ab8620c4af68c93ab2103b5"
+  end
+
+  # fix bash completion, upstream pr ref, https:github.comutil-linuxutil-linuxpull3627
+  patch do
+    url "https:github.comutil-linuxutil-linuxcommit565eb6370c76721bbd0d7fa292d9315a6856f627.patch?full_index=1"
+    sha256 "3945234bcfbf4d9126e92b4f808029971ab26330618da53671941ba1a52d8427"
   end
 
   def install

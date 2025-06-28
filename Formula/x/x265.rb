@@ -3,7 +3,7 @@ class X265 < Formula
   homepage "https:bitbucket.orgmulticorewarex265_git"
   url "https:bitbucket.orgmulticorewarex265_gitdownloadsx265_4.1.tar.gz"
   sha256 "a31699c6a89806b74b0151e5e6a7df65de4b49050482fe5ebf8a4379d7af8f29"
-  license "GPL-2.0-only"
+  license "GPL-2.0-or-later"
   head "https:bitbucket.orgmulticorewarex265_git.git", branch: "master"
 
   bottle do

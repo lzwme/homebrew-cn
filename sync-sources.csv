@@ -3155,6 +3155,7 @@ Homebrew-homebrew-core/Formula/j/jpeginfo.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/jpegoptim.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/jpegrescan.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/jprq.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/j/jq-lsp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/jq.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/jql.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/jr.rb, Homebrew/homebrew-core, 1
@@ -8333,6 +8334,7 @@ Homebrew-homebrew-cask/Casks/c/camunda-modeler.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/candy-crisis.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/candybar.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/canon-eos-utility.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/c/canon-mg2500-driver.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/canon-ufrii-driver.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/cantata.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/canva.rb, Homebrew/homebrew-cask, 0
@@ -13121,7 +13123,6 @@ Homebrew-homebrew-cask/Casks/n/nordlocker.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/nordpass.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/nordvpn.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/northern-softworks-cache-cleaner.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/n/nosleep.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/n/nosql-workbench.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/nosqlbooster-for-mongodb.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/not-pacman.rb, Homebrew/homebrew-cask, 0
@@ -15168,7 +15169,6 @@ Homebrew-homebrew-cask/Casks/x/xtorrent.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/y/yaak.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/y/yaak@beta.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/y/yacreader.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/y/yakyak.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/y/yam-display.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/y/yandex-cloud-cli.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/y/yandex-disk.rb, Homebrew/homebrew-cask, 0

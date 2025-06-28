@@ -5,7 +5,7 @@ class X264 < Formula
   url "https://code.videolan.org/videolan/x264.git",
       revision: "31e19f92f00c7003fa115047ce50978bc98c3a0d"
   version "r3108"
-  license "GPL-2.0-only"
+  license "GPL-2.0-or-later"
   head "https://code.videolan.org/videolan/x264.git", branch: "master"
 
   # Cross-check the abbreviated commit hashes from the release filenames with

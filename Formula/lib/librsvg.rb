@@ -14,13 +14,14 @@ class Librsvg < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_sequoia: "0963c3ac5eab8defa0d871e6f14f376ecb580f87a7369e2d8b6ed1ba5a97b009"
-    sha256 cellar: :any, arm64_sonoma:  "a98fcd2388cb75ba4afe95feb7955b0400c1cacb067101378a33bfe295ebe2da"
-    sha256 cellar: :any, arm64_ventura: "d6603d7add86e0cc825872bf044e7d9dc19693090ee93ef5248825299f7bef01"
-    sha256 cellar: :any, sonoma:        "634f5d94e39ccf7eff754510cd12db72ce3cbc797161227a1f7b8e3a910438df"
-    sha256 cellar: :any, ventura:       "5c3d74c400bf0cfc86010f98dba262c10c39f66f743509a3127b9246cb4e3111"
-    sha256               arm64_linux:   "97199cca04e0499e5084ce8ccf043d3d48a3dde4744b9273d7d9021e393f2b36"
-    sha256               x86_64_linux:  "c3fb7a85f3c84f3c3edd0740dd5c8fd2cc7371cebf1088be130423255eb8514f"
+    rebuild 1
+    sha256 cellar: :any, arm64_sequoia: "a09c23f788a22216dcb43c70ea4ea89efc3b77d38005ba38be37d23aee1167d2"
+    sha256 cellar: :any, arm64_sonoma:  "d780445be5fd936665e61c1a2b5fba52a1ec248961156be0509506929f5865fb"
+    sha256 cellar: :any, arm64_ventura: "7bc52f723b05d5391b2b81f7f4986bf25f2c80e63d01939eb8162686c6a07347"
+    sha256 cellar: :any, sonoma:        "897a812b261269d38a9f1acd8ee7e58fc1014402cef8367c650f3f4b433d1462"
+    sha256 cellar: :any, ventura:       "6d40695e50164ff58b19d46bc781b2a4ea2b34bb5e2942fa7efd9b2a1598c3e5"
+    sha256               arm64_linux:   "a6dca489386267d5dea19f5e68c56ec07c878912173241d146e2366bb4760720"
+    sha256               x86_64_linux:  "c4d4f65afad13f25f9e8e64d21eb7e577fd71da8bda8c4243d1ebadb41f09447"
   end
 
   depends_on "cargo-c" => :build
@@ -46,7 +47,7 @@ class Librsvg < Formula
 
   def install
     # Set `RPATH` since `cargo-c` doesn't seem to.
-    ENV.append "RUSTFLAGS", "--codegen link-args=-Wl,-rpath,#{lib}" if OS.mac?
+    ENV.append "RUSTFLAGS", "--codegen link-args=-Wl,-rpath,#{rpath}" if OS.mac?
 
     # disable updating gdk-pixbuf cache, we will do this manually in post_install
     # https:github.comHomebrewhomebrewissues40833

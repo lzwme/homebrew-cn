@@ -6,8 +6,6 @@ class Levant < Formula
   license "MPL-2.0"
   head "https:github.comhashicorplevant.git", branch: "main"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "cea6e51299dcb25689bb89534f249efced99ea5caf759edca53099bd0507a978"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a8cb3d327f3a6c17677eab41ee6563397989c678c6db90894684c2e0979a46ff"
@@ -18,6 +16,8 @@ class Levant < Formula
     sha256 cellar: :any_skip_relocation, monterey:       "7ee4456e9545bc4e175f848a5e5f91af3964180b4f8ec0137dcbe0ba7c420a22"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "37422a0f475593fbd1213d9ff47edc4dc2258d0bc507733b71443547c5a79815"
   end
+
+  deprecate! date: "2025-06-27", because: :repo_archived
 
   depends_on "go" => :build
 

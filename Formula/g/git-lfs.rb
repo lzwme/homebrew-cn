@@ -1,8 +1,8 @@
 class GitLfs < Formula
   desc "Git extension for versioning large files"
   homepage "https:git-lfs.com"
-  url "https:github.comgit-lfsgit-lfsreleasesdownloadv3.6.1git-lfs-v3.6.1.tar.gz"
-  sha256 "1417b7ee9a8fba8d649a89f070fdcde8b2593ca2caa74e3e808d2bb35d5ca5f7"
+  url "https:github.comgit-lfsgit-lfsreleasesdownloadv3.7.0git-lfs-v3.7.0.tar.gz"
+  sha256 "d078b8393514c65c485d1628e610449ba048af746749912bd082d818b2454348"
   license "MIT"
 
   # Upstream creates releases that are sometimes not the latest stable version,
@@ -13,12 +13,12 @@ class GitLfs < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fea6fd17f274522756b7a4b17960121d9f029c8926e3f27e116552680e3ea215"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fea6fd17f274522756b7a4b17960121d9f029c8926e3f27e116552680e3ea215"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "fea6fd17f274522756b7a4b17960121d9f029c8926e3f27e116552680e3ea215"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7951618702479a261a57b3f0db12f3d3ff697be18dff94f8c4ae7be813a0c916"
-    sha256 cellar: :any_skip_relocation, ventura:       "7951618702479a261a57b3f0db12f3d3ff697be18dff94f8c4ae7be813a0c916"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "649a26347d7b861008caca73dbd1853c36d81d3b51e08fa86fe225249d124064"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1e905231194b4144c52b981a2a52868f6fb2c8ffc27099a0771362dc45890879"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1e905231194b4144c52b981a2a52868f6fb2c8ffc27099a0771362dc45890879"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "1e905231194b4144c52b981a2a52868f6fb2c8ffc27099a0771362dc45890879"
+    sha256 cellar: :any_skip_relocation, sonoma:        "db9022729517fff9457056b559e9d43db5bba5531ae9b636f140ce41bb4e0d95"
+    sha256 cellar: :any_skip_relocation, ventura:       "db9022729517fff9457056b559e9d43db5bba5531ae9b636f140ce41bb4e0d95"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6926c738974ed58fb5dec2bf00cbb4f759db8d7e8554c347d7d039a7135ba4da"
   end
 
   depends_on "asciidoctor" => :build

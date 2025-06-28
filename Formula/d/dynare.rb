@@ -1,8 +1,8 @@
 class Dynare < Formula
   desc "Platform for economic models, particularly DSGE and OLG models"
   homepage "https:www.dynare.org"
-  url "https:www.dynare.orgreleasesourcedynare-6.3.tar.xz"
-  sha256 "232788788a72c7bc4329eaa4e1ed24318c264095d7646622b871d6e711ff322c"
+  url "https:www.dynare.orgreleasesourcedynare-6.4.tar.xz"
+  sha256 "9865e2e7f6b3705155538d5fb1fb0b01bc9decf07250b3b054d3555d651c3843"
   license "GPL-3.0-or-later"
   head "https:git.dynare.orgDynaredynare.git", branch: "master"
 
@@ -12,11 +12,11 @@ class Dynare < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_sonoma:  "ba962affcd850ff14cc11142157a2f00dc83e27c29e6ba1e43b79612b276ca66"
-    sha256 cellar: :any, arm64_ventura: "d2ba3a1e17fa69985f92e7f48040d95c575914fc005b1e12f53be5b112194e37"
-    sha256 cellar: :any, sonoma:        "b4ab59f0eaa2afa2fc2b7b6bf9e7baa264899269d729999eed5f342d39a6a66d"
-    sha256 cellar: :any, ventura:       "107fc225fe27db388fc27a04036070c923e410bad080545afd657d2909c691bc"
-    sha256               x86_64_linux:  "567a9630385a717ce6cfb3f1a2d094931c8ce2049a7b5feb523e9591aa2b9af4"
+    sha256 cellar: :any, arm64_sonoma:  "bd336366a6d2fbf0876dcd623119954bebae19e74f5ae60111ca71ff71e7696d"
+    sha256 cellar: :any, arm64_ventura: "a88c061173833f4eb15b9a1659589115fddb5fd982aacf7c5e75aa2bfa70ed0c"
+    sha256 cellar: :any, sonoma:        "13400a53448afca9149b37214a84b4d38efc436d238d842e493617004c3f1fc9"
+    sha256 cellar: :any, ventura:       "1ec869d738eb08813f4fb125eaae9d2263fff067c4c92abffb79103187c8aa4c"
+    sha256               x86_64_linux:  "c6b2ed4430f6418cb9d5b70848a106617e3ab815f96a4606153f556ecb4bc3f4"
   end
 
   depends_on "bison" => :build

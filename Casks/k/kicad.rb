@@ -16,18 +16,18 @@ cask "kicad" do
   depends_on macos: ">= :big_sur"
 
   suite "KiCad"
-  binary "KiCadKiCad.appContentsMacOSdxf2idf"
-  binary "KiCadKiCad.appContentsMacOSidf2vrml"
-  binary "KiCadKiCad.appContentsMacOSidfcyl"
-  binary "KiCadKiCad.appContentsMacOSidfrect"
-  binary "KiCadKiCad.appContentsMacOSkicad-cli"
+  binary "#{appdir}KiCadKiCad.appContentsMacOSdxf2idf"
+  binary "#{appdir}KiCadKiCad.appContentsMacOSidf2vrml"
+  binary "#{appdir}KiCadKiCad.appContentsMacOSidfcyl"
+  binary "#{appdir}KiCadKiCad.appContentsMacOSidfrect"
+  binary "#{appdir}KiCadKiCad.appContentsMacOSkicad-cli"
   artifact "demos", target: "LibraryApplication Supportkicaddemos"
 
-  zap trash: [
-    "LibraryApplication Supportkicad",
-    "~LibraryApplication Supportkicad",
-    "~LibraryPreferenceskicad",
-    "~LibraryPreferencesorg.kicad-pcb.*",
-    "~LibrarySaved Application Stateorg.kicad-pcb.*",
-  ]
+  zap delete: "LibraryApplication Supportkicad",
+      trash:  [
+        "~LibraryApplication Supportkicad",
+        "~LibraryPreferenceskicad",
+        "~LibraryPreferencesorg.kicad-pcb.*",
+        "~LibrarySaved Application Stateorg.kicad-pcb.*",
+      ]
 end
