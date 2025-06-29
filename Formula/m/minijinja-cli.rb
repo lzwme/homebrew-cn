@@ -1,8 +1,8 @@
 class MinijinjaCli < Formula
   desc "Render Jinja2 templates directly from the command-line to stdout"
   homepage "https:docs.rsminijinjalatestminijinja"
-  url "https:github.commitsuhikominijinjaarchiverefstags2.10.2.tar.gz"
-  sha256 "d3d87f55bc6c36345602023946ddc1c68d345a51f5f1e8891176efc2dc0e7ec2"
+  url "https:github.commitsuhikominijinjaarchiverefstags2.11.0.tar.gz"
+  sha256 "08f9f73be493b0b1ebc6e8e69e38594e6531d99e416b0cbffe4169852443552b"
   license "Apache-2.0"
   head "https:github.commitsuhikominijinja.git", branch: "main"
 
@@ -11,13 +11,13 @@ class MinijinjaCli < Formula
     strategy :github_latest
   end
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fdab575674a5aba3287226ea984f48f5f726ff1a0b9e0b4f9bf7f89859577d15"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ebdba325ebd5763d2582a2f8bf37617f3480a474c593e34d44c2535c4645558c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "f81b9d6b7c267b0f19a82bb18fd2819be637d7732fa6e9a78c16b708d298209d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "41d21db20b1c5814f4fa9f414180a667a53f56eaea3ddbca4cb66bfa96a23ba5"
-    sha256 cellar: :any_skip_relocation, ventura:       "c45256f4dc5780cca1800b1f31236350c7f7bb1511cee70cd644741253452478"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ef6f8c2a3020b5099850488a2faf33845c70738e67d3ff83e5ccfb235ca96bc4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "82d050d407ccece77126f7fcdc76f7df392244757fdd7cba1f6bc5729a5174ab"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3ab78aadfe6252716e98e034fd96adffef69f69adb30516ab9485bd43d5795ae"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "476c7b53e8c9233839bd724e90454d9da8a574e70ceaaa3d2fb29354d4e2965b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "49f92d327b2204aa4233497275700f578580150c327f2796b4e7e08383f40fd7"
+    sha256 cellar: :any_skip_relocation, sonoma:        "12535acf236f149caffa953f8b84a9f2a3a8e1a2659ae81876173100854e5bf0"
+    sha256 cellar: :any_skip_relocation, ventura:       "c1260828d58d4128cee7f23554d8820de097e21bde36b47545857c1d1cb9d134"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ea5aef45dbae8acc87bee303756fe5cb74d7f187c8428b27a781e2a95c9512a2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4991a4bb6df0974a6d699f57b76adcf985d1a0c0823eaf5a1a181031f5da5614"
   end
 
   depends_on "rust" => :build

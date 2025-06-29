@@ -1,19 +1,19 @@
 class Xan < Formula
   desc "CSV CLI magician written in Rust"
   homepage "https:github.commedialabxan"
-  url "https:github.commedialabxanarchiverefstags0.50.0.tar.gz"
-  sha256 "9742e383649076b1348329e2430648267e22505b6ca35ce5006f614040f73d3c"
+  url "https:github.commedialabxanarchiverefstags0.51.0.tar.gz"
+  sha256 "0013f2edbfde15d4217e041b5eb156ae372de9b7df8b16cefbe010ac0c816c96"
   license any_of: ["MIT", "Unlicense"]
   head "https:github.commedialabxan.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dda1e14e5a4191bee289018c33305f52af3e9c679aed92837b342002d3545430"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "efb0523f62429de464726a3fb3312a200c6c8265ec42675f01b70cd0a72c63d5"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "f6114c83139e3c4f93ce42e654dbf2f1ed556c676a5ec595035e1eb1e5a831e1"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ee425dd63a9b7ab72e79ceb8cde3bda0fe4255ec855d57b570c5c15b5ccfe625"
-    sha256 cellar: :any_skip_relocation, ventura:       "8a6d8dd8a04c012d4cb9bbba91b5d4a3db7c38c04a750743426d44251c698c6a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ab2f572d9c30f0dc4b110ca503b492672c941a65598f2fb065314782ebd219a3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ce6fe0210b7f6f1af0df33f06da2224d434544c44f59b778c284767f8b36d7c8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c3a4391f473ce2e471424eb38db57b57dc5aafb42cf603a9263fac1cac0a9da5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6a3f7be9d623236dcc225ef763ee4b07810af375a266adb346847c829c28097d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "6a3dbec97f33e097071e0c16b9ffe1bf6527aaa7d226671ed17dcfbe4d05331b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b46fc197d067ac408758a575e52652a3d9be2d145994948cc5914574ccfd79c5"
+    sha256 cellar: :any_skip_relocation, ventura:       "44a398b4ac0c429655565240d953ea247c921aff243953830f0752a5a620d7d0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7add6a9cdc882f6d6183b94ff997c16bcc1409540fe5a5c811683fd6db81f6c0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "041e439181ea2a4b398983a05828e96bf5aabb931c998356ad4b88c43ecf3c00"
   end
 
   depends_on "rust" => :build

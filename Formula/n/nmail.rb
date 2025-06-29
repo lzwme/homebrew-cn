@@ -1,19 +1,19 @@
 class Nmail < Formula
   desc "Terminal-based email client for Linux and macOS"
   homepage "https:github.comd99krisnmail"
-  url "https:github.comd99krisnmailarchiverefstagsv5.4.7.tar.gz"
-  sha256 "f2f42812795ee73983e82c199694728576409b02fefae478a97f4a0665806685"
+  url "https:github.comd99krisnmailarchiverefstagsv5.5.1.tar.gz"
+  sha256 "204fe05ac8f960529e65d20cf88cef03773f4c40639eb87795e40999f2086be2"
   license "MIT"
   head "https:github.comd99krisnmail.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "e3898855e88a64cf84418efcb37f2c7fff1ca49aef3aef9ce0b3bb7ff53c6ce7"
-    sha256 cellar: :any,                 arm64_sonoma:  "f07d78595eb1dbf6effb7f8db9d7d1ee1b28f5cd63997f9516fdbc6336643c26"
-    sha256 cellar: :any,                 arm64_ventura: "e1128cfbf515da5300f202b85d1cbf617cb7d6a5e79655c322338501cb5b9d3a"
-    sha256 cellar: :any,                 sonoma:        "8ac1fd11747938010445d3d751bc238a752d9d6d00a0173630c628cf4bf82225"
-    sha256 cellar: :any,                 ventura:       "0bc32bd0e5d20c341abd0f058320640eac72e7a8bfe4ea1520e057d418b812c6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b88f4c966cad83dd7afbfc3e6024057f8d9bee964a048efd4875458dd0402133"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "48a47df2c6511c56a2713c084c1351b76b4937cd782b93211d4f9892e8430fec"
+    sha256 cellar: :any,                 arm64_sequoia: "e8f8553d4bd15c2839c7f4c16d35e882711c93d2c736c6bd0f2f402f85bb39d1"
+    sha256 cellar: :any,                 arm64_sonoma:  "90c4ae49c423e3045acf767a01d71ac55772a9cca192f4867eee8c3a87a2923b"
+    sha256 cellar: :any,                 arm64_ventura: "71e1613fe8d13756f6a51cadbe734e62e5f3a8c3f4a29eb606f49e3630d3c9b2"
+    sha256 cellar: :any,                 sonoma:        "3bd6de152112e4e18f0ba7e544654e0fdc646b9f0159b7d509a69bd05ab37ec9"
+    sha256 cellar: :any,                 ventura:       "5404a07c2fc058dbc992ac2a793e6f92bce05e079c830e11fff914244dde986b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ebc502b1564468a7f2caad62fe1cf6517a8dda8d4f3e453b6fa9ea2ddb2d2ae8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a01ff8ab0972c78d811448956ba724fbabf111ff6be7a427bb1cfac787cdf4bd"
   end
 
   depends_on "cmake" => :build

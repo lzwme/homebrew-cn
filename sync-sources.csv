@@ -2865,7 +2865,7 @@ Homebrew-homebrew-core/Formula/h/hub.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/hubble.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/hubflow.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/huexpress.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/h/huggingface-cli.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/h/huggingface-cli.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/h/hugo.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/humanlog.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/hunspell.rb, Homebrew/homebrew-core, 1
@@ -3448,7 +3448,6 @@ Homebrew-homebrew-core/Formula/l/leaf-proxy.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/leaf.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/leakcanary-shark.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lean-cli.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/l/lean.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/leapp-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/leaps.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/ledger.rb, Homebrew/homebrew-core, 1
@@ -10406,6 +10405,8 @@ Homebrew-homebrew-cask/Casks/font/font-l/font-liberation-nerd-font.rb, Homebrew/
 Homebrew-homebrew-cask/Casks/font/font-l/font-liberation.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-l/font-libertinus-math.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-l/font-libertinus-mono.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-l/font-libertinus-sans.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-l/font-libertinus-serif.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-l/font-libertinus.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-l/font-libre-barcode-128-text.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-l/font-libre-barcode-128.rb, Homebrew/homebrew-cask, 1
@@ -10675,6 +10676,7 @@ Homebrew-homebrew-cask/Casks/font/font-n/font-nanum-square-neo.rb, Homebrew/home
 Homebrew-homebrew-cask/Casks/font/font-n/font-nanum-square-round.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-n/font-nanum-square.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-n/font-narnoor.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-n/font-nata-sans.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-n/font-national-park.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-n/font-nats.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-n/font-neonderthaw.rb, Homebrew/homebrew-cask, 1

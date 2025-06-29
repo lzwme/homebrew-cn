@@ -2,9 +2,10 @@ cask "font-uoqmunthenkhung" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefontsrawmainofluoqmunthenkhungUoqMunThenKhung-Regular.ttf"
+  url "https:github.comgooglefontsrawmainofluoqmunthenkhungUoqMunThenKhung-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "UoqMunThenKhung"
-  homepage "https:github.comMoonlitOwenThenKhung"
+  homepage "https:fonts.google.comspecimenUoqMunThenKhung"
 
   font "UoqMunThenKhung-Regular.ttf"
 

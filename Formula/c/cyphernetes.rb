@@ -1,18 +1,18 @@
 class Cyphernetes < Formula
   desc "Kubernetes Query Language"
   homepage "https:cyphernet.es"
-  url "https:github.comAvitalTamircyphernetesarchiverefstagsv0.18.0.tar.gz"
-  sha256 "eaa8c9e207cf216883b173c009cbc82eccdc4f6e81be9c9d0ff970be7e17e287"
+  url "https:github.comAvitalTamircyphernetesarchiverefstagsv0.18.1.tar.gz"
+  sha256 "afad8ccce87b1c6b46cb9921fe43631052306665879597ac7e06ac37868803ca"
   license "Apache-2.0"
   head "https:github.comAvitalTamircyphernetes.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "299db3931e982645927b03e147cbbca6249735b65ce0110037b46f40811cdb40"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "299db3931e982645927b03e147cbbca6249735b65ce0110037b46f40811cdb40"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "299db3931e982645927b03e147cbbca6249735b65ce0110037b46f40811cdb40"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7c5101a64bf646fed5b79e09466e5af46d641ce289269fc797f4a5c667f574bc"
-    sha256 cellar: :any_skip_relocation, ventura:       "7c5101a64bf646fed5b79e09466e5af46d641ce289269fc797f4a5c667f574bc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d30598a6d0ccdca7c157835c802057af8c15614062d4a2a39718ed0858bbedcf"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9f861ca93f8b89ca0c2cf04c9b41fe8e401a9770e2c342eb7d76b6bf167921a5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9f861ca93f8b89ca0c2cf04c9b41fe8e401a9770e2c342eb7d76b6bf167921a5"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "9f861ca93f8b89ca0c2cf04c9b41fe8e401a9770e2c342eb7d76b6bf167921a5"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3b78d8c34c3eb6809c1ecb822c5c253d12fb3ff0e004a51623ac8a787456e2c7"
+    sha256 cellar: :any_skip_relocation, ventura:       "3b78d8c34c3eb6809c1ecb822c5c253d12fb3ff0e004a51623ac8a787456e2c7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ee7c25d99ada66a7fd5806e270b0cacc869619ffea7640d9d4e2137f776db16a"
   end
 
   depends_on "go" => :build

@@ -5,6 +5,14 @@ class Tt < Formula
   sha256 "e115bbc85230f12a69746f54e47a3fd06fd9c2fed4657e519820c9c7653cb03b"
   license "BSD-2-Clause"
 
+  # There can be a notable gap between when a version is tagged and a
+  # corresponding release is created, so we check the "latest" release instead
+  # of the Git tags.
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "1f8a98013c734d61cdcedc8d0d33cdb108c57658618fd0315c67485df37bb995"
     sha256 cellar: :any,                 arm64_sonoma:  "714aa4b30f9dc882186112f8b5f44edd148129400792ff333ac5030ede340462"

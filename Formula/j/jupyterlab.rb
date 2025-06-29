@@ -3,22 +3,21 @@ class Jupyterlab < Formula
 
   desc "Interactive environments for writing and running code"
   homepage "https:jupyter.org"
-  url "https:files.pythonhosted.orgpackagesd32dd1678dcf2db66cb4a38a80d9e5fcf48c349f3ac12f2d38882993353ae768jupyterlab-4.4.3.tar.gz"
-  sha256 "a94c32fd7f8b93e82a49dc70a6ec45a5c18281ca2a7228d12765e4e210e5bca2"
+  url "https:files.pythonhosted.orgpackagese24d7ca5b46ea56742880d71a768a9e6fb8f8482228427eb89492d55c5d0bb7djupyterlab-4.4.4.tar.gz"
+  sha256 "163fee1ef702e0a057f75d2eed3ed1da8a986d59eb002cbeb6f0c2779e6cd153"
   license all_of: [
     "BSD-3-Clause",
     "MIT", # semver.py
   ]
-  revision 3
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "5fe0ce0818286e20a9ee1826ff8493ac23bf5b4555168b7a25cc6daade364869"
-    sha256 cellar: :any,                 arm64_sonoma:  "b0cf4a2cbdc9959e8714b5930fc23dfb9f9cd8e41acf253194bb5ab8d9c14663"
-    sha256 cellar: :any,                 arm64_ventura: "991fbc47a1a64929b062ea480fb53883072290a63162708dd5044f50e598798f"
-    sha256 cellar: :any,                 sonoma:        "5c3d21abb329c1eef40b5b6a3fcaef4fb82f485ed5fbe50f32c689ac4d72b41d"
-    sha256 cellar: :any,                 ventura:       "f6d497443608e39d203d1f133a1d8af154ec84ebd34ad20e11d470d05e05af38"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cfb5c662ba648f4d631ffc0513694b68b25a04c9918e7eb234024a0b435194a0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bc16f603e84cd687c68b6060735fde964b9e223bbbf36ae6c138417d1e07d5d2"
+    sha256 cellar: :any,                 arm64_sequoia: "52608752e0d98984da5609ddf586dc7b51d5ff68a7135aafc2aa0e82d10fd65d"
+    sha256 cellar: :any,                 arm64_sonoma:  "83cdd130bd59c35929302e1a10483981eb2a56009825bc83822b23a35c49d54b"
+    sha256 cellar: :any,                 arm64_ventura: "eb5be7a14d26d66148ecea961ae35bd82298c23fc3d9bc77f9c16c1771e5e13b"
+    sha256 cellar: :any,                 sonoma:        "90509c8402ce0e1873aeff145677233a1e079c490c9eb8d18e73672ae8877ee7"
+    sha256 cellar: :any,                 ventura:       "f6b4b57586b370610c49f46eac7d16d7149720f17b8f383d4148d7943093723d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "eb3723112b1aa231f2e8e6e103d7744a724d172acfa5a5c3bb072b6492e834cb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "29921b7c412e2d5fe452bb014f1da3780714bda065921e51bbbb5b36678950b7"
   end
 
   depends_on "cmake" => :build # for ipykernel
@@ -381,8 +380,8 @@ class Jupyterlab < Formula
   end
 
   resource "pygments" do
-    url "https:files.pythonhosted.orgpackages7c2dc3338d48ea6cc0feb8446d8e6937e1408088a72a39937982cc6111d17f84pygments-2.19.1.tar.gz"
-    sha256 "61c16d2a8576dc0649d9f39e089b5f02bcd27fba10d8fb4dcc28173f7a45151f"
+    url "https:files.pythonhosted.orgpackagesb077a5b8c569bf593b0140bde72ea885a803b82086995367bf2037de0159d924pygments-2.19.2.tar.gz"
+    sha256 "636cb2477cec7f8952536970bc533bc43743542f70392ae026374600add5b887"
   end
 
   resource "python-dateutil" do

@@ -6,6 +6,13 @@ class Oxen < Formula
   license "Apache-2.0"
   head "https:github.comOxen-AIOxen.git", branch: "main"
 
+  # The upstream repository contains tags that are not releases.
+  # Limit the regex to only match version numbers.
+  livecheck do
+    url :stable
+    regex(^v?(\d+(?:\.\d+)+)$i)
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "c8793e7c834bac7cf51526e4bc397f60959aad9ba2582547deb3648d997ef7f7"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c5028a4c4023327ee842b9e609b3ea7c1c0a00e4d335ff853bb79d93bd4b948c"

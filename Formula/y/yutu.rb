@@ -2,18 +2,18 @@ class Yutu < Formula
   desc "Fully functional CLI for YouTube"
   homepage "https:github.comeat-pray-aiyutu"
   url "https:github.comeat-pray-aiyutu.git",
-      tag:      "v0.9.8",
-      revision: "9c6e73e0ab60f427587295b9360ce32e09451a4b"
+      tag:      "v0.9.9",
+      revision: "3bbf6c1312ec30663b6a45d23397ec06022d1c4e"
   license "MIT"
   head "https:github.comeat-pray-aiyutu.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "769982f81b6613ca99435d73d739889dc2a28633240711b3de1470e41674b527"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "769982f81b6613ca99435d73d739889dc2a28633240711b3de1470e41674b527"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "769982f81b6613ca99435d73d739889dc2a28633240711b3de1470e41674b527"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5da87bf441efd6276fd9e6241be7a3855bd1717d337cc6326a59fc6882298625"
-    sha256 cellar: :any_skip_relocation, ventura:       "5da87bf441efd6276fd9e6241be7a3855bd1717d337cc6326a59fc6882298625"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a48c7c00352680173f29011cab792b26524cffe064c57686a37e3a0919751059"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4781bde139db6547ea67f1fc217e47ce4f947873bb8f89ea6b4e80ad3c74dd43"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4781bde139db6547ea67f1fc217e47ce4f947873bb8f89ea6b4e80ad3c74dd43"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "4781bde139db6547ea67f1fc217e47ce4f947873bb8f89ea6b4e80ad3c74dd43"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e735997feac41cf87e25cd38df9005fff6f6215829024de798391b92cae11764"
+    sha256 cellar: :any_skip_relocation, ventura:       "e735997feac41cf87e25cd38df9005fff6f6215829024de798391b92cae11764"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a3f35d1b2e82f4bd842cdcd6e7d5f0687365761d23082c1c1ffddef38b132f8a"
   end
 
   depends_on "go" => :build

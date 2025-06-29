@@ -1,8 +1,8 @@
 class Pango < Formula
   desc "Framework for layout and rendering of i18n text"
   homepage "https://www.gtk.org/docs/architecture/pango"
-  url "https://download.gnome.org/sources/pango/1.56/pango-1.56.3.tar.xz"
-  sha256 "2606252bc25cd8d24e1b7f7e92c3a272b37acd6734347b73b47a482834ba2491"
+  url "https://download.gnome.org/sources/pango/1.56/pango-1.56.4.tar.xz"
+  sha256 "17065e2fcc5f5a5bdbffc884c956bfc7c451a96e8c4fb2f8ad837c6413cb5a01"
   license "LGPL-2.0-or-later"
   head "https://gitlab.gnome.org/GNOME/pango.git", branch: "main"
 
@@ -15,13 +15,13 @@ class Pango < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_sequoia: "39c8338524e71bf6019b72a2bbebebc78c6935dfad75a76db43ff9a8815bfe6b"
-    sha256 cellar: :any, arm64_sonoma:  "10d76601d1eee9482d66a31d570c6704bb318eead6f83ec1404d6e520be581f2"
-    sha256 cellar: :any, arm64_ventura: "4d619b28828586db45c6eee3e82b1aca65596af17195a6b975c3b9fa7ccad963"
-    sha256 cellar: :any, sonoma:        "2e141cb0c33eb33fd2771efbac614b75dad3db4ed332ef84526e81e6a64b7d01"
-    sha256 cellar: :any, ventura:       "cbc5448e13f060afeb0aee80cba9fd228f4a8e199761c4a4114b39700e840c39"
-    sha256               arm64_linux:   "751a44f3853807b2ed64eaa5bfddf90cbd5bd4095a2d3e6c5939196355e219e8"
-    sha256               x86_64_linux:  "cdcdca05be1495b3afd63d5b1951040e359278ee8bfbcbb65e37128c844a3737"
+    sha256 cellar: :any, arm64_sequoia: "9d66411f935f57a8f54642855505f4da5b056bc44526daca9bdbfd32552c4542"
+    sha256 cellar: :any, arm64_sonoma:  "cb37e3ffe4b548c34c47d5c482fb7c02005410232b8c16a56c8b78a385a999ba"
+    sha256 cellar: :any, arm64_ventura: "4558dd7cff43901e22f44496838179b26738b175fc260a550272dbbd3ab70893"
+    sha256 cellar: :any, sonoma:        "03a76dd1f0f289418ac065fdabfbf3a4391962587975f63fd33a109da1f52c0b"
+    sha256 cellar: :any, ventura:       "ea6bdcc8e09a610ba22ec6b260f5b61a4ab539c37fafc9b5ec177c49f581eba8"
+    sha256               arm64_linux:   "440ead39116f7d2295d60b7c9bd4194e7ea46366feeaac6174b60e2cab827650"
+    sha256               x86_64_linux:  "75c1fde372973f6e3af8efce49596fe3c18971cf4f80f072bf389e5282e6e111"
   end
 
   depends_on "gobject-introspection" => :build

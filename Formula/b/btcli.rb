@@ -8,34 +8,24 @@ class Btcli < Formula
   license "MIT"
   head "https:github.comopentensorbtcli.git", branch: "main"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "71376fd5a31e327bb9cd0fb850227f5165ee538c5e0202c586a7d355dfaceed6"
-    sha256 cellar: :any,                 arm64_sonoma:  "50936c7015adcfd89eede72b9263f877c43ecf4a2139abf0f3d233257a1fa915"
-    sha256 cellar: :any,                 arm64_ventura: "10a707b0fe2f86c57b0c1af6749473d864f429e0f232a34d2c0fb4dfc24c35d7"
-    sha256 cellar: :any,                 sonoma:        "e35c943f20beca78ea24159cb1293bd7960dbe553fb5cfcc1d560b06eb035d34"
-    sha256 cellar: :any,                 ventura:       "c2d8fc65228b5f16bfcc6b055358c06f40b18d82bc31a4e0ec6aab3b12446713"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8512e5fa910cd533f293e6997609b0a45e99209511dd4723473b1843f2a9f43e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "006417ed09432cda377671224b090d002c2553ed0588bb0d5f8d2ea7f79b9760"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "422859540aaa8bba5d2df99b9386df6b746ad8d00eecdf97a7f32186147a3e89"
+    sha256 cellar: :any,                 arm64_sonoma:  "0a922e1847a71626fae2d23c3f7b0b245bf3eeb0d32df6cd130c28d75ec8847b"
+    sha256 cellar: :any,                 arm64_ventura: "813f54b20b49503f2a2ad3aec600aed59b7df0017ed7376cf4db9ff627809e38"
+    sha256 cellar: :any,                 sonoma:        "1a71d1ffe8d95d5018a4d74d71d2244a9d1fe4dc910ef7c7901727c0a56eb025"
+    sha256 cellar: :any,                 ventura:       "b9ab2384a099691a78d20ebedda4151166b54bbb7c2fba78e393005320db8d53"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e437e00ca1aef726f9a03abff6c78ffe7329b90f0253bc288aa65c03cd708b07"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8dbbd2b58835d173f7a058572f50720b0f1371384afb38f4d06ef0097f4a8ff1"
   end
 
-  depends_on "cmake" => :build # for Levenshtein
-  depends_on "maturin" => :build
-  depends_on "pkgconf" => :build
-  depends_on "rust" => :build
+  depends_on "rust" => :build # for bittensor-wallet
 
   depends_on "certifi"
-  depends_on "cffi"
-  depends_on "cryptography"
   depends_on "libyaml"
   depends_on "numpy"
   depends_on "openssl@3"
-  depends_on "pycparser"
   depends_on "python@3.13"
-  depends_on "six"
-
-  uses_from_macos "libffi"
 
   resource "aiohappyeyeballs" do
     url "https:files.pythonhosted.orgpackages2630f84a107a9c4331c14b2b586036f40965c128aa4fee4dda5d3d51cb14ad54aiohappyeyeballs-2.6.1.tar.gz"
@@ -143,8 +133,8 @@ class Btcli < Formula
   end
 
   resource "multidict" do
-    url "https:files.pythonhosted.orgpackages5c432d90c414d9efc4587d6e7cebae9f2c2d8001bcb4f89ed514ae837e9dcbe6multidict-6.5.1.tar.gz"
-    sha256 "a835ea8103f4723915d7d621529c80ef48db48ae0c818afcabe0f95aa1febc3a"
+    url "https:files.pythonhosted.orgpackagesaa6d84d6dbf9a855c09504bdffd4a2c82c6b82cc7b4d69101b64491873967d88multidict-6.6.0.tar.gz"
+    sha256 "460b213769cb8691b5ba2f12e53522acd95eb5b2602497d4d7e64069a61e5941"
   end
 
   resource "narwhals" do
@@ -207,11 +197,6 @@ class Btcli < Formula
     sha256 "99a2cdbfccdcaf22bd86b86da55a730a2855514ad2309faef4a4a93ac6cbeb8d"
   end
 
-  resource "setuptools" do
-    url "https:files.pythonhosted.orgpackages185d3bf57dcd21979b887f014ea83c24ae194cfcd12b9e0fda66b957c69d1fcasetuptools-80.9.0.tar.gz"
-    sha256 "f36b47402ecde768dbfafc46e8e4207b4360c654f1f3bb84475f0a28628fb19c"
-  end
-
   resource "shellingham" do
     url "https:files.pythonhosted.orgpackages58158b3609fd3830ef7b27b655beb4b4e9c62313a4e8da8c676e142cc210d58eshellingham-1.5.4.tar.gz"
     sha256 "8dbca0739d487e5bd35ab3ca4b36e11c4078f3a234bfce294b0a0291363404de"
@@ -263,14 +248,17 @@ class Btcli < Formula
   end
 
   def install
+    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
+    ENV["OPENSSL_NO_VENDOR"] = "1"
     # required to declare scalecodec's version, issue opened at https:github.comJAMdotTechpy-scale-codecissues130
     ENV["TRAVIS_TAG"] = resource("scalecodec").version.to_s
+    virtualenv_install_with_resources
+
     # `shellingham` auto-detection doesn't work in Homebrew CI build environment so
-    # defer installation to allow `typer` to use argument as shell for completions
+    # disable it to allow `typer` to use argument as shell for completions
     # Ref: https:typer.tiangolo.comfeatures#user-friendly-cli-apps
-    venv = virtualenv_install_with_resources start_with: ["setuptools", "wheel", "toml"], without: "shellingham"
+    ENV["_TYPER_COMPLETE_TEST_DISABLE_SHELL_DETECTION"] = "1"
     generate_completions_from_executable(bin"btcli", "--show-completion")
-    venv.pip_install resource("shellingham")
   end
 
   test do

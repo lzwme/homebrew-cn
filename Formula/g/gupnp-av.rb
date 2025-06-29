@@ -1,18 +1,18 @@
 class GupnpAv < Formula
   desc "Library to help implement UPnP A/V profiles"
   homepage "https://wiki.gnome.org/GUPnP/"
-  url "https://download.gnome.org/sources/gupnp-av/0.14/gupnp-av-0.14.3.tar.xz"
-  sha256 "abe2046043e66a9529365d89059be12219c21a4ede0c4743703b0fd9aaf17bb4"
+  url "https://download.gnome.org/sources/gupnp-av/0.14/gupnp-av-0.14.4.tar.xz"
+  sha256 "21d974b3275cb5dcf5b8aa1d9a3fc80e7edca706935f6fbd004c79787138f8c7"
   license "LGPL-2.1-or-later"
 
   bottle do
-    sha256 arm64_sequoia: "52e96af2014c55ac944a7a12ce3983a51fb4d67b1476bab9c197511eb26f17d4"
-    sha256 arm64_sonoma:  "f5fa71cfa4de6c5d2eb41b3481035b601b9346002d2e0314d2b475414e293a67"
-    sha256 arm64_ventura: "4ac0ba69dc914ac64f6dfb684499e3da9d4b0ca15745b362cc20dfb7b5832075"
-    sha256 sonoma:        "bed183c138c06172f184183d91dc750a20c53e35ddfdc5edef3e3562f5643cd7"
-    sha256 ventura:       "10dfe0149fcc7e18fb487e427ccb69d8dbc7cd88c96c8ad1045eef7690ea2a77"
-    sha256 arm64_linux:   "09905f96300d4ebc606466615ceca173a6fe4807e916d600df67692f9b3a0cd7"
-    sha256 x86_64_linux:  "e130c48d351f4491f7c9a5ed5ca73510edf4fdfdadb33186e966e0650d73bac6"
+    sha256 arm64_sequoia: "79a8014527ac4dcaa679fd3825136895f58105c679862632ab261a71c292a837"
+    sha256 arm64_sonoma:  "70df7b1b747aa8120479ef27e1b276a04d37dd25c5cd9aadf0d24b64d3106c84"
+    sha256 arm64_ventura: "baf6994783bfe3f86c1c6b3f8295f65fb6ce41c211f14647b685a07ac24c6428"
+    sha256 sonoma:        "db6e942783e24b2f0d759a9025a390a109ba46fce4ba44b517728dd2b27fde1c"
+    sha256 ventura:       "bd82d8dfb864237780f1af06de701b64aa96b45eb1e80efbfc02c9b06e156429"
+    sha256 arm64_linux:   "22f5c8aabe72c050c14018cbe29d7373abc52920468feb62c44d98c9eeb62dfc"
+    sha256 x86_64_linux:  "d44e06884e91c2865c06455ce6300d3713404a70472ecd8505880df133fd5064"
   end
 
   depends_on "gobject-introspection" => :build

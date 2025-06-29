@@ -31,7 +31,6 @@ class ElanInit < Formula
   uses_from_macos "zlib"
 
   conflicts_with "lean-cli", because: "both install `lean` binaries"
-  conflicts_with "lean", because: "`lean` and `elan-init` install the same binaries"
 
   def install
     ENV["RELEASE_TARGET_NAME"] = "homebrew-build"
