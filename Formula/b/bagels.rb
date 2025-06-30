@@ -3,19 +3,18 @@ class Bagels < Formula
 
   desc "Powerful expense tracker that lives in your terminal"
   homepage "https:github.comEnhancedJaxBagels"
-  url "https:files.pythonhosted.orgpackages833a67fef626e22bce29970a5666702a7b2664541753abeaed653a0a694dd295bagels-0.3.9.tar.gz"
-  sha256 "fbb3bb64d7f6909864004866b00e112917738a6fdf470871ea77b4e2f67d2d28"
+  url "https:files.pythonhosted.orgpackages2036dee992cbb17ec0560f6c309f54cec3a1e0add44ded401c2618268212bcf2bagels-0.3.10.tar.gz"
+  sha256 "1e6b99515965e410d9ebb99988e054816501d5b267c762a5a6bb68223ce9d9e3"
   license "GPL-3.0-or-later"
-  revision 2
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "2dc3a6c56b413a408467a7d53802b19bab97103b17942df37d1e68c6ec8d6a88"
-    sha256 cellar: :any,                 arm64_sonoma:  "62fbf7c321f1d42c539aba88f1eb081e7a16dc42fc4861b098efaad9e1e83371"
-    sha256 cellar: :any,                 arm64_ventura: "a1068402d8ff67ef499f5ddd76f3ef3c5708a4c8b915d0f97cca8cbd17071313"
-    sha256 cellar: :any,                 sonoma:        "8dc4b9dbacafcdede200e697bc7db9ab05ab2cee133b886d33cc96334053b055"
-    sha256 cellar: :any,                 ventura:       "c9fb3eaa056d2742589a69b6ec9b8a6e1e82b7d023e010e6147b3ecde390b1c8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4c0e6415c91a75a059762c4e000fe739d94731b05a72ee5d98b38864d7ec8629"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4165088e08bfbcf2d802987b65c5d3e2c5f5eab08086c8c8f94bc1ebf22f1acf"
+    sha256 cellar: :any,                 arm64_sequoia: "f5dfce83466bb56be4115ca1d04d50b000b8e31259428dc3a421b8427c54a5a6"
+    sha256 cellar: :any,                 arm64_sonoma:  "03a06f962589e8a5f7c5450d1668f2890ca8b1f25723e9afd0c760b0a346802a"
+    sha256 cellar: :any,                 arm64_ventura: "1b320f861fd4c34f2a3017db4dcb9875e5a16a29488691e23cfae5441420ad49"
+    sha256 cellar: :any,                 sonoma:        "1547d1f6b00037996a7f1a78cb7ecabdb0adde6c425b0dc0e4c4afe08e93d7bb"
+    sha256 cellar: :any,                 ventura:       "2934ec9e1cdcb8db62f66a32fc6b13cbf3c1c89ef6d15f3466b2d78349eb93d2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "925daaee202213f2655da9ee847f6514959567a9d53aae3f42e46bc4550eb9f8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "df7577e47ce222d02f5ca8248e39eb646958992497cac7f4e3acbfb19f1fac3f"
   end
 
   depends_on "rust" => :build # for pydantic_core
@@ -83,6 +82,11 @@ class Bagels < Formula
     sha256 "2e310d81923c2437ea8670467121cc3e9b0f76d3043cc1d2331d56c7fb7a3a8f"
   end
 
+  resource "greenlet" do
+    url "https:files.pythonhosted.orgpackagesc992bb85bd6e80148a4d2e0c59f7c0c2891029f8fd510183afc7d8d2feeed9b6greenlet-3.2.3.tar.gz"
+    sha256 "8b0dd8ae4c0d6f5e54ee55ba935eeb3d735a9b58a8a1e5b5cbab64e01a39f365"
+  end
+
   resource "idna" do
     url "https:files.pythonhosted.orgpackagesf1707703c29685631f5a7590aa73f1f1d3fa9a380e654b86af429e0934a32f7didna-3.10.tar.gz"
     sha256 "12f65c9b470abda6dc35cf8e63cc574b1c52b11df2c86030af0ac09b01b13ea9"
@@ -129,8 +133,8 @@ class Bagels < Formula
   end
 
   resource "multidict" do
-    url "https:files.pythonhosted.orgpackages46b559f27b4ce9951a4bce56b88ba5ff5159486797ab18863f2b4c1c5e8465bdmultidict-6.5.0.tar.gz"
-    sha256 "942bd8002492ba819426a8d7aefde3189c1b87099cdf18aaaefefcf7f3f7b6d2"
+    url "https:files.pythonhosted.orgpackages035dd72502cd6dd64b0c5a5117b1701f05c38e94ffb4a1b4ab65ff0cd9b974e8multidict-6.6.2.tar.gz"
+    sha256 "c1e8b8b0523c0361a78ce9b99d9850c51cf25e1fa3c5686030ce75df6fdf2918"
   end
 
   resource "packaging" do
@@ -164,8 +168,8 @@ class Bagels < Formula
   end
 
   resource "pygments" do
-    url "https:files.pythonhosted.orgpackages7c2dc3338d48ea6cc0feb8446d8e6937e1408088a72a39937982cc6111d17f84pygments-2.19.1.tar.gz"
-    sha256 "61c16d2a8576dc0649d9f39e089b5f02bcd27fba10d8fb4dcc28173f7a45151f"
+    url "https:files.pythonhosted.orgpackagesb077a5b8c569bf593b0140bde72ea885a803b82086995367bf2037de0159d924pygments-2.19.2.tar.gz"
+    sha256 "636cb2477cec7f8952536970bc533bc43743542f70392ae026374600add5b887"
   end
 
   resource "python-dateutil" do

@@ -1,9 +1,9 @@
 cask "sourcegit" do
   arch arm: "arm64", intel: "x64"
 
-  version "2025.17"
-  sha256 arm:   "d4f2de1ecb459c9b20713da184825732aef666276395a09101037208fe373ece",
-         intel: "bdc9deac152e6fc1a7135ba9df662244c07cf8471824d88cd660094e4bb6d5d9"
+  version "2025.23"
+  sha256 arm:   "6d2134246619eaee81b943ec9de5708b1caa506af407acde8450c61869360fb4",
+         intel: "f26eed856217c49650c6ea6a95627943fe5b15cc63500032c6ccc64cbc69c824"
 
   url "https:github.comsourcegit-scmsourcegitreleasesdownloadv#{version}sourcegit_#{version}.osx-#{arch}.zip"
   name "sourcegit"

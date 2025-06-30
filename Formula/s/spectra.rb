@@ -1,13 +1,13 @@
 class Spectra < Formula
   desc "Header-only C++ library for large scale eigenvalue problems"
   homepage "https:spectralib.org"
-  url "https:github.comyixuanspectraarchiverefstagsv1.1.0.tar.gz"
-  sha256 "d29671e3d1b8036728933cadfddb05668a3cd6133331e91fc4535a9b85bedc79"
+  url "https:github.comyixuanspectraarchiverefstagsv1.2.0.tar.gz"
+  sha256 "fdfccacba1c77d9b4ffefae7258c760c99e3c8a2823ca87ea5b11a50d297a73b"
   license "MPL-2.0"
   head "https:github.comyixuanspectra.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "b26fea1bc180dee4039c2a00f91b87788428bc63cba2652c52855df8b7abc55a"
+    sha256 cellar: :any_skip_relocation, all: "377f0b18a9ecae4ecf76abd9d031c9000f35176e4252331a6930927a2a7ea8ec"
   end
 
   depends_on "cmake" => :build

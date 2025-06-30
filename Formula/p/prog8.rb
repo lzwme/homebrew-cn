@@ -1,18 +1,18 @@
 class Prog8 < Formula
   desc "Compiled programming language targeting the 8-bit 6502 CPU family"
   homepage "https:prog8.readthedocs.io"
-  url "https:github.comirmenprog8archiverefstagsv11.3.2.tar.gz"
-  sha256 "39612423f6afe025fbd24baeaee2f5d61399ae85b186118bfdd609ca7f85b157"
+  url "https:github.comirmenprog8archiverefstagsv11.4.tar.gz"
+  sha256 "66ef870eb20aba9287918c597f5237b7a1d0e448a602f34cbe8c4d90ceb0611f"
   license "GPL-3.0-only"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e344f91aa025a43bb4dfb6ef80427a6b478a9a28f6331dace1ebb4b5d246c132"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5598c73083fb8ff691d02dc8ee4804d3a54c504940cd9dfc8e30352f05bf4814"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "7cbb13a489ddeacfab5fcae06883d3e2a72fe744ef542343ecc80b23085d31c7"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d63a966cbc3cdd8dcc03fefb6d49359479ac958db7db535b6f5113cf9e6ddee0"
-    sha256 cellar: :any_skip_relocation, ventura:       "cfc9589da9661c562130bbc27af11d4ee9f55c8add4df376e0c4ab565e569d84"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4287878ae4f311ce7a610a9be14160d79051e77276318f4e9702a06b0b40bcc0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cf5e61604b9294ec1db85479d8620b3ab5bd042db434ea6e59ab029857468374"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f4fc55c00816c1e84aadd5db1443cb1a618bf56a09c94f0ab2fc6f428b0513b2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "24147cd43413b60f3a5efa95568b26274260e6d865a13ad71acbf932e74a5ff2"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "574bfd7a67e09bfa6b0aec0deadbb76578d03a19318b315879cfc15759877976"
+    sha256 cellar: :any_skip_relocation, sonoma:        "390d0785d7446717e024dcb06e14371d7a5444ab6d66c71c55b77ab4683d0a0a"
+    sha256 cellar: :any_skip_relocation, ventura:       "3c8cb90d3e81f4d26c6c82997645756bb22611f8c987a4c67657253132ceaf1d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3ddb75dad92f60f28280733a0218ea65054c947ec8de45d1efe9ff0fba3d2b14"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0ab79c8587434f9d5285dd84063aa471b7da207cd78fa7976d858b875801224e"
   end
 
   depends_on "gradle" => :build

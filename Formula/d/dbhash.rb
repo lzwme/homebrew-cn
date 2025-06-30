@@ -1,9 +1,9 @@
 class Dbhash < Formula
   desc "Computes the SHA1 hash of schema and content of a SQLite database"
   homepage "https://www.sqlite.org/dbhash.html"
-  url "https://www.sqlite.org/2025/sqlite-src-3500100.zip"
-  version "3.50.1"
-  sha256 "9090597773c60a49caebb3c1ac57db626fac4d97cb51890815a8b529a4d9c3dc"
+  url "https://www.sqlite.org/2025/sqlite-src-3500200.zip"
+  version "3.50.2"
+  sha256 "091eeec3ae2ccb91aac21d0e9a4a58944fb2cb112fa67bffc3e08c2eca2d85c8"
   license "blessing"
 
   livecheck do
@@ -13,14 +13,14 @@ class Dbhash < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "d857f8ef40633f3be727273baf8bca859f5934bd2aaaa0f9bd5eea926f27773a"
-    sha256 cellar: :any,                 arm64_sonoma:  "14669037bda9b553f55688291de1664c70176e2ea2ff2d96e537d848c9cd59c0"
-    sha256 cellar: :any,                 arm64_ventura: "779a31b6a74abfdf461d8947b393da8e44c2b37711d74b34aed229bd88205934"
-    sha256 cellar: :any,                 sequoia:       "5601db068d70dff2e0301bf6a2c42b5a84bada850ead51b8d96cdf09a3c12eea"
-    sha256 cellar: :any,                 sonoma:        "353477d756faabe6980df7505f709349abbc812f26a3b16ce0dd5099b0048cf7"
-    sha256 cellar: :any,                 ventura:       "e13cc185c539db6fd12f48040e0bf9cb6a68841f4357b06cedf6b687ea45e41e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6954c38097ba0bec211df2e1936372179951576fa4789877a0726db797ab3486"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "83570befa44495de8925a414797fc63a365015e6407c9569f3f3b60ee06e968d"
+    sha256 cellar: :any,                 arm64_sequoia: "2b8cbc711f308b77c7fb2016cbe4212c0bdc6256b6de25fb452ffc8b05a483da"
+    sha256 cellar: :any,                 arm64_sonoma:  "c3a8b46d3283c31788789e04587af45221e23695c5cc7e6dec400eab9dd56e8e"
+    sha256 cellar: :any,                 arm64_ventura: "f7b2e93dd041a95abc76eff427c077167ad0d95de497cc1ba69b6c19ffe5efa0"
+    sha256 cellar: :any,                 sequoia:       "fe345da4e12fcd82448c86b8446f83f2be6c2db7121eb9f2384ef2d437683349"
+    sha256 cellar: :any,                 sonoma:        "f66b4cd7f0fec535e8b6bdd1f819428c2e09206d1adad6cb664c156a03cbadc5"
+    sha256 cellar: :any,                 ventura:       "6e56ccd449c5f69f9576e6fab8c5f1e1fa7ed21b24260b746f09e1161c92c74e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a23ba251fb5ce78dd0bba0e7a3385763b56590a43d137c7256d8c3446b4d2e41"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e185a767dad8e2b89c3f23c98fbe6c6ac63c3657dc75dd29e63474d3a9c2bb05"
   end
 
   uses_from_macos "tcl-tk" => :build

@@ -1,20 +1,19 @@
 class ClangUml < Formula
   desc "Customizable automatic UML diagram generator for C++ based on Clang"
   homepage "https:github.combkryzaclang-uml"
-  url "https:github.combkryzaclang-umlarchiverefstags0.6.1.tar.gz"
-  sha256 "a64c3cae87a282be207e4c5faf47534dca21b06cb6f463bb7b04de979dccf17e"
+  url "https:github.combkryzaclang-umlarchiverefstags0.6.2.tar.gz"
+  sha256 "004540c328699f81abebceb33a4661b548ab3a5f74096da2c025b9971b2b17ff"
   license "Apache-2.0"
-  revision 1
   head "https:github.combkryzaclang-uml.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "78792810ae5fa540819d95061fd4c16a3acce6570c191267ea7a31a5c40c4a13"
-    sha256 cellar: :any,                 arm64_sonoma:  "a145222bb207e95e0102386b1911148d7ea1be0db1051d20e4a18a7a1f1bf4dc"
-    sha256 cellar: :any,                 arm64_ventura: "3cf910c698552bcf4b322ea3588dd3b952773616e30d6feff364a6c9d1b7e42e"
-    sha256 cellar: :any,                 sonoma:        "b12708defd94eeb41e5c1af4b8e397483d7444e704b652263949bc41fc00d686"
-    sha256 cellar: :any,                 ventura:       "105421cec43a3418a3f46a83cab33805e671014b8be86c8ca83468dcc6ba1ebe"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4f92f71cc357fabc60d14b08b60cf17807c12339eea355e590c77156e070f205"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "57b66ce132290a5e67e4741d710ea35edee791b9379ae43aacb9c7f403fe3351"
+    sha256 cellar: :any,                 arm64_sequoia: "bffe298a11ff65c80dec6b020142fc8b6bc902339316ab07dc40d0702008cb5b"
+    sha256 cellar: :any,                 arm64_sonoma:  "050b6a471deca02e968f6422754dad6b8948fa41cec134de0641bd999dca7530"
+    sha256 cellar: :any,                 arm64_ventura: "c408164832471352c12b9a8661a4a30b8e2158268daeea3fca6a564d91d9db57"
+    sha256 cellar: :any,                 sonoma:        "9fb6817ec6239539a1356e3289ec30ee797c7a10f7010e3833fe98cbc81d8bde"
+    sha256 cellar: :any,                 ventura:       "b0c736b7be3eeb4adce9e28d83347dbc815a63062fffd5475e7fd3739f81b42c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0a8ea5f5257105ee578172a369d445c8b2d497391bc75128557ec1854ca441c1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5c7cb7625ee43e3c100ab2fb9293f85fb9329f528b36fe96b738482418332efc"
   end
 
   depends_on "cmake" => [:build, :test]

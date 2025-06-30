@@ -19,6 +19,9 @@ class Earthly < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "d3c89999c25f245dcd4e4e2b946ac4902c7cfe4b3c60a31edf19fe6f30453911"
   end
 
+  # https:github.comearthlyearthlycommit9e553bc2905da5fa4f39ad327b80fefed178f70a
+  deprecate! date: "2025-06-29", because: :unmaintained
+
   depends_on "go" => :build
 
   def install

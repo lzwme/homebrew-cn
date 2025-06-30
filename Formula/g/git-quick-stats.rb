@@ -1,12 +1,12 @@
 class GitQuickStats < Formula
   desc "Simple and efficient way to access statistics in git"
   homepage "https:git-quick-stats.sh"
-  url "https:github.comgit-quick-statsgit-quick-statsarchiverefstags2.6.2.tar.gz"
-  sha256 "00d3989241de7efec1f5bcc4459467548e33f5c4a582b0e35c16ec14fb636bda"
+  url "https:github.comgit-quick-statsgit-quick-statsarchiverefstags2.7.0.tar.gz"
+  sha256 "5392afeceea9dadf7f8fccd05244a6e8c6a27940d6abd1a97f65533c27e56379"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "4ce18415e047db2d843e87c0ea3df4080bb3a37c701374684f932172cd03dd5d"
+    sha256 cellar: :any_skip_relocation, all: "98e56ac6f29f242ab0ebf28f36e61f6da00b6119359056f5c71fa8a4689ee9d5"
   end
 
   on_macos do
@@ -23,9 +23,13 @@ class GitQuickStats < Formula
   end
 
   test do
+    ENV["TERM"] = "xterm"
+
     ENV.prepend_path "PATH", Formula["coreutils"].libexec"gnubin" if OS.mac?
 
-    system "git", "init", "--initial-branch=master"
+    system "git", "init", "--initial-branch=main"
+    system "git", "commit", "--allow-empty", "-m", "initial commit", "--quiet"
+
     assert_match "All branches (sorted by most recent commit)",
       shell_output("#{bin}git-quick-stats --branches-by-date")
     assert_match(^Invalid argument, shell_output("#{bin}git-quick-stats command", 1))

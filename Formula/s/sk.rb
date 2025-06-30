@@ -1,19 +1,19 @@
 class Sk < Formula
   desc "Fuzzy Finder in rust!"
   homepage "https:github.comskim-rsskim"
-  url "https:github.comskim-rsskimarchiverefstagsv0.20.1.tar.gz"
-  sha256 "cf3d5e11e972e3ca77869876a0900c1eeade7df594f70f4853ca9a0520caea3b"
+  url "https:github.comskim-rsskimarchiverefstagsv0.20.2.tar.gz"
+  sha256 "e0fee383c015777eb7aea1e5ed932b06dee6da990583c665ecf1389600e2789a"
   license "MIT"
   head "https:github.comskim-rsskim.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5e1b9f6f24d8201025bc7a2971604439884e8d51ba8d208b8d648301d95c1733"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8b1bb681f1657af3d9ea109a2e068fce50a0bfe336e87201d10ea094aaa62942"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "88a1db5e0a5031ebda14443ad1e0d111f2feebd02a77cec521200d9e77e380ee"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d4c0a8f746612ea30a94f53c6d7c34faad7b1c8d98f776929e26871d87e3f4b6"
-    sha256 cellar: :any_skip_relocation, ventura:       "f5ec538e69225154bff53843ddc882bdd5d4908893ddb5d1fcea29960183f806"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "014152e3bc81decb0c176a3fc5e447a3978e4300194429190e7a192695289d61"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "410a954f16724253954e4e69e2eca4464e8600d2f02ee86bfad3b67247509610"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2b3748e0d35065b6e014b48a62bf9ea1e23dae9bccdc0bc27848fb2997236493"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "16733f1cb2a10376c69e214a43f96b80d7497a576b4b1fe37e38e6e6a8202929"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "e113083ee552b5cc4d1b349d1cff6d7d1dbc55aa6cffe37a046139b771eeec46"
+    sha256 cellar: :any_skip_relocation, sonoma:        "eae7170033006190a2d87833a87099822e731628b73f76dc17ccb07303144c5e"
+    sha256 cellar: :any_skip_relocation, ventura:       "dd13f48336301eb1d27846cca56e5ce445026d50a42d89a0234e045b269758e5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ad49da6c88fb4555e882a9afc1c0d3f98490e38653fb17656e7d55869b2c9a75"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "96f759e71d35148a4a16d00e84254ae8452d192b589ea1c09201fa7f41afd542"
   end
 
   depends_on "rust" => :build
@@ -21,13 +21,11 @@ class Sk < Formula
   def install
     system "cargo", "install", *std_cargo_args(path: "skim")
 
-    pkgshare.install "install"
+    generate_completions_from_executable(bin"sk", "--shell")
     bash_completion.install "shellkey-bindings.bash"
-    bash_completion.install "shellcompletion.bash"
     fish_completion.install "shellkey-bindings.fish" => "skim.fish"
     zsh_completion.install "shellkey-bindings.zsh"
-    zsh_completion.install "shellcompletion.zsh"
-    man1.install "manman1sk.1", "manman1sk-tmux.1"
+    man1.install buildpath.glob("manman1*.1")
     bin.install "binsk-tmux"
   end
 

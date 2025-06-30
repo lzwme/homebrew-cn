@@ -6,6 +6,7 @@ class Sigstore < Formula
   url "https:files.pythonhosted.orgpackagesc981dca1dc73d250e9b37b7ba9b5083ba309896e4cffb1ab1800876f1287f3bbsigstore-3.6.4.tar.gz"
   sha256 "76f247a86738c9e076a243e0068ac68625848868890ed38491acc159752a46ac"
   license "Apache-2.0"
+  head "https:github.comsigstoresigstore-python.git", branch: "main"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "ae549c2519b01d9fde123c5496691a9a24c55f91da96385d928338ebd8c44bbd"
@@ -17,7 +18,6 @@ class Sigstore < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "443aa1d2e019b337a0f507cd832f9f8ec56d7a9259442dc99de008ae3dfd1bbd"
   end
 
-  depends_on "maturin" => :build # for rfc3161-client
   depends_on "pkgconf" => :build # for rfc3161-client
   depends_on "rust" => :build
   depends_on "certifi"

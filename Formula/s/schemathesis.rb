@@ -3,19 +3,18 @@ class Schemathesis < Formula
 
   desc "Testing tool for web applications with specs"
   homepage "https://schemathesis.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/50/80/0536e1410009a22bda88a3c32dfa06702fce1a8a5075aa1d76af616a4c95/schemathesis-4.0.2.tar.gz"
-  sha256 "5783ee87422281e9414a26babafd7bf47d7f52f465f5801f2e316781026d5a93"
+  url "https://files.pythonhosted.org/packages/7e/59/0305988291a3105831a87fef9c7edcfb5a572aca57e7ac5aab55177bbf41/schemathesis-4.0.3.tar.gz"
+  sha256 "14f2fd8f291d6dc8b42b4cf87fb34b602c5c0712ffe5f57ab8e7aca5fe36f1f4"
   license "MIT"
-  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "9bce4759cf0e34822844726d86da81f078928e84a7bbc462527ce5634b3c8ea4"
-    sha256 cellar: :any,                 arm64_sonoma:  "4477b8bfc4e63f6cc7bb7dca99c55046e510db954a86235c7b4a35389e1372bf"
-    sha256 cellar: :any,                 arm64_ventura: "ecb945fe318d4cf1d355f0cc844bc09d761aee66a6cec8b1c4a7853ef9e6ab16"
-    sha256 cellar: :any,                 sonoma:        "1a4d2dfbdd255993e54ac81c3e8e35b0fc9686ce4892f37b1ab56896c99015d0"
-    sha256 cellar: :any,                 ventura:       "6b9d8e3e405ae2126573937050707e34679e3ea519692ccbffc8649f43c0e28a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0c7578cfaac55867eb8128afe36e65b030feda3ac46df9e50248e67853eab72a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bf4b4083caa1307ed849cf167efc64ac048088a1a1ff1d8cf8d14947580c773e"
+    sha256 cellar: :any,                 arm64_sequoia: "2f87677b6121e2b2cf46fb29ae4b6e797531476d3b64a8a7e2defd8799b59520"
+    sha256 cellar: :any,                 arm64_sonoma:  "2751c47915d8a3bbc37fe095d7a1771889cb3b8ec31ff4ab3291f5b2dadab086"
+    sha256 cellar: :any,                 arm64_ventura: "197a2c0387b41bfec8eedc7240251e7ab8ef35a73559aba74469ef27320113ec"
+    sha256 cellar: :any,                 sonoma:        "62dd24d2982203f3ba1dad789881bf6869a2130d199e69a59705b624f3b78e14"
+    sha256 cellar: :any,                 ventura:       "ff4b9cb257c0c38386eef716c2346a950831ba5121e9319f12bd2b912750d34c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ef5e41aae564119bbc8042de5094786fefbf1e10dbb699eae5b4db954b487680"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ab9ca992bc652f7fb15337677d7a36e40b1b4e8c40c9eb0d7fe35d8ba0ded168"
   end
 
   depends_on "rust" => :build # for rpds-py
@@ -91,8 +90,8 @@ class Schemathesis < Formula
   end
 
   resource "hypothesis" do
-    url "https://files.pythonhosted.org/packages/63/03/28f2158273fa2119641f793b7a73bbf8b38257800e18c825324cff6c9f8d/hypothesis-6.135.12.tar.gz"
-    sha256 "d2aeed8db7defc368841cbfb021d703cf98102827460bee7ba0d2e2aab6580f6"
+    url "https://files.pythonhosted.org/packages/3f/91/c8d9af23d6a2a0feb7490ab10a3d78e6ac35ae75887c7fe442d14ad6d6f9/hypothesis-6.135.16.tar.gz"
+    sha256 "6131ea0b698e69bad62aae915988b8d00a6ac974351d0830db74c5fffc68c418"
   end
 
   resource "hypothesis-graphql" do
@@ -166,8 +165,8 @@ class Schemathesis < Formula
   end
 
   resource "pygments" do
-    url "https://files.pythonhosted.org/packages/7c/2d/c3338d48ea6cc0feb8446d8e6937e1408088a72a39937982cc6111d17f84/pygments-2.19.1.tar.gz"
-    sha256 "61c16d2a8576dc0649d9f39e089b5f02bcd27fba10d8fb4dcc28173f7a45151f"
+    url "https://files.pythonhosted.org/packages/b0/77/a5b8c569bf593b0140bde72ea885a803b82086995367bf2037de0159d924/pygments-2.19.2.tar.gz"
+    sha256 "636cb2477cec7f8952536970bc533bc43743542f70392ae026374600add5b887"
   end
 
   resource "pyrate-limiter" do
@@ -241,8 +240,8 @@ class Schemathesis < Formula
   end
 
   resource "starlette" do
-    url "https://files.pythonhosted.org/packages/8b/d0/0332bd8a25779a0e2082b0e179805ad39afad642938b371ae0882e7f880d/starlette-0.47.0.tar.gz"
-    sha256 "1f64887e94a447fed5f23309fb6890ef23349b7e478faa7b24a851cd4eb844af"
+    url "https://files.pythonhosted.org/packages/0a/69/662169fdb92fb96ec3eaee218cf540a629d629c86d7993d9651226a6789b/starlette-0.47.1.tar.gz"
+    sha256 "aef012dd2b6be325ffa16698f9dc533614fb1cebd593a906b90dc1025529a79b"
   end
 
   resource "starlette-testclient" do

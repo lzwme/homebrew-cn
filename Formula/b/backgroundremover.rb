@@ -8,12 +8,13 @@ class Backgroundremover < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "3c3344a80840fb89ed313ddf247e865a32922e34137acafc918792807457a740"
-    sha256 cellar: :any,                 arm64_sonoma:  "dff4df0e525717eed85839cbb76d9a7482f1abbfd187bfcb312af25667251da8"
-    sha256 cellar: :any,                 arm64_ventura: "2c5ce32042f136651e413031dc111a61674d7c16b97593ca8e092e9839f6f145"
-    sha256 cellar: :any,                 sonoma:        "9434600455f3ca1f1b7f93186998af183ce022e2f3e1a117806c8cbf9fe14376"
-    sha256 cellar: :any,                 ventura:       "55933bba8006cbd23f0281e01edef94f4041d1482fb01edfd2f1818d580f67c0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e294011c35e322a030140c359ca81289508994bc5b2ab8a99f61e9e86dc99e02"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "286b2ad743b98bedf6d0a5338f013abe9cf99881dbe7ac4127fb2f64a824fe5d"
+    sha256 cellar: :any,                 arm64_sonoma:  "592c6fbd6fbde280e68abda2546add2453b69f4a8f55b7cc3f937975a7105a15"
+    sha256 cellar: :any,                 arm64_ventura: "943c28154f8a0e1eb7c253dffd2c2c2c1e7da4d76805459500055668d579df2f"
+    sha256 cellar: :any,                 sonoma:        "6905e6393ae3bec530bdf1e106c249476728a22e1d7d1186cd33188b3cb15670"
+    sha256 cellar: :any,                 ventura:       "9802b0c0187d92eb2b94803a7f46c7542fd2b1b9f33480307c1d250eefcd3f45"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "82ea9de6cb0117397d34580dd48adda9309b71b213bf4b1886f0f5225e4c0eac"
   end
 
   depends_on "certifi"
@@ -81,10 +82,8 @@ class Backgroundremover < Formula
   end
 
   resource "llvmlite" do
-    # Fetch from Git hash for compatibility with the new version of `numba` below.
-    # Use git checkout to avoid .gitattributes causing checksum changes and unknown version info
-    url "https:github.comnumballvmlite.git",
-        revision: "ca123c3ae2a6f7db865661ae509862277ec5d692"
+    url "https:files.pythonhosted.orgpackages896a95a3d3610d5c75293d5dbbb2a76480d5d4eeba641557b69fe90af6c5b84ellvmlite-0.44.0.tar.gz"
+    sha256 "07667d66a5d150abed9157ab6c0b9393c9356f229784a4385c02f99e94fc94d4"
   end
 
   resource "more-itertools" do
@@ -98,10 +97,11 @@ class Backgroundremover < Formula
   end
 
   resource "numba" do
-    # Fetch from Git hash for numpy 2.1 and python 3.13 compatibility.
-    # Use git checkout to avoid .gitattributes causing checksum changes and unknown version info
-    url "https:github.comnumbanumba.git",
-        revision: "391511bcb0b97af8d311cd276a46030774bc30b7"
+    url "https:files.pythonhosted.orgpackages1ca0e21f57604304aa03ebb8e098429222722ad99176a4f979d34af1d1ee80danumba-0.61.2.tar.gz"
+    sha256 "8750ee147940a6637b80ecf7f95062185ad8726c8c28a2295b8ec1160a196f7d"
+
+    # Support numpy 2.3, upstream issue, https:github.comnumbanumbaissues10105
+    patch :DATA
   end
 
   resource "proglog" do
@@ -169,3 +169,32 @@ class Backgroundremover < Formula
     assert_path_exists testpath"output.png"
   end
 end
+
+__END__
+diff --git anumba__init__.py bnumba__init__.py
+index ab1081d..44fe64a 100644
+--- anumba__init__.py
++++ bnumba__init__.py
+@@ -39,8 +39,8 @@ def _ensure_critical_deps():
+                f"{numpy_version[0]}.{numpy_version[1]}.")
+         raise ImportError(msg)
+
+-    if numpy_version > (2, 2):
+-        msg = (f"Numba needs NumPy 2.2 or less. Got NumPy "
++    if numpy_version > (2, 3):
++        msg = (f"Numba needs NumPy 2.3 or less. Got NumPy "
+                f"{numpy_version[0]}.{numpy_version[1]}.")
+         raise ImportError(msg)
+
+diff --git asetup.py bsetup.py
+index d40c84c..3d407c1 100644
+--- asetup.py
++++ bsetup.py
+@@ -23,7 +23,7 @@ min_python_version = "3.10"
+ max_python_version = "3.14"  # exclusive
+ min_numpy_build_version = "2.0.0rc1"
+ min_numpy_run_version = "1.24"
+-max_numpy_run_version = "2.3"
++max_numpy_run_version = "2.4"
+ min_llvmlite_version = "0.44.0dev0"
+ max_llvmlite_version = "0.45"

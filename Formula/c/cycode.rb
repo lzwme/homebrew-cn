@@ -6,6 +6,7 @@ class Cycode < Formula
   url "https:files.pythonhosted.orgpackagesb2943305cb2411246452a2bcbcb971cafd0e96c8e6f5a350bb56c1a56e5db4f6cycode-3.2.1.tar.gz"
   sha256 "d81780bc504029ee6e2543ce9c1d52b301b8cba5e1a33ef4e7c213ebc9b43440"
   license "MIT"
+  head "https:github.comcycodehqcycode-cli.git", branch: "main"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "c877cd711d285a6e4bcbcbdd11e81ef70bb8c8655d9a6244ab7aab794767a89c"
@@ -17,7 +18,6 @@ class Cycode < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "3592a35f87b3504a876c7e2b58f04ebddf62afd6550b0834005ca22b74f5aeec"
   end
 
-  depends_on "maturin" => :build # for mcp
   depends_on "pkgconf" => :build
   depends_on "rust" => :build # for mcp
   depends_on "certifi"
@@ -260,12 +260,12 @@ class Cycode < Formula
   end
 
   def install
+    virtualenv_install_with_resources
     # `shellingham` auto-detection doesn't work in Homebrew CI build environment so
-    # defer installation to allow `typer` to use argument as shell for completions
+    # disable it to allow `typer` to use argument as shell for completions
     # Ref: https:typer.tiangolo.comfeatures#user-friendly-cli-apps
-    venv = virtualenv_install_with_resources without: "shellingham"
+    ENV["_TYPER_COMPLETE_TEST_DISABLE_SHELL_DETECTION"] = "1"
     generate_completions_from_executable(bin"cycode", "--show-completion")
-    venv.pip_install resource("shellingham")
   end
 
   test do

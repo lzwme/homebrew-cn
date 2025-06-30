@@ -1,20 +1,23 @@
 class Hypopg < Formula
   desc "Hypothetical Indexes for PostgreSQL"
   homepage "https:github.comHypoPGhypopg"
-  url "https:github.comHypoPGhypopgarchiverefstags1.4.1.tar.gz"
-  sha256 "9afe6357fd389d8d33fad81703038ce520b09275ec00153c6c89282bcdedd6bc"
+  url "https:github.comHypoPGhypopgarchiverefstags1.4.2.tar.gz"
+  sha256 "30596ca3d71b33af53326cdf27ed9fc794dc6db33864c531fde1e48c1bf7de7d"
   license "PostgreSQL"
 
-  no_autobump! because: :requires_manual_review
+  livecheck do
+    url :stable
+    regex(^v?(\d+(?:\.\d+)+)$i)
+  end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "10b284849ebe8618fcd22cf24d8c7f738a6c8eebbfc43985a507678933d7cb99"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5af96aaf0761e90723a994ecd9513d41771f9b29322d83d9ed59e5333d75a29d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "336b887e0c2c5cd91097071f09d67bd9d9de7524015e1496e70866c63b1e4d8f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "102e97902b5026c63764d4e82c30aebe724f41d73d8bec88c6d3910a49acfb32"
-    sha256 cellar: :any_skip_relocation, ventura:       "7fa60d1d35db14d12c9c77a9ada287f3b89bf9126047a85fde1a77d4567f794e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b24987307d13aef5c00b76fe88a171c97037c9e7a40abd84873066479e2bdb2d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c86012c904916b59941015fa5f90726c1b968edd014214b52a7c0e3fe13095d8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e319bf2b836a72e560bcb3496f80917f29cb2d9a4243580a0c1487f7e4b7c9da"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e641b2c2df8ca7f8a6b2c882b42f820f24a3e9326a3605dcfeb97770149889e8"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "8cfe4430907140af1fe4e26ab9ab97c0180e570b7d9c55d1c03932ca050e0566"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f1f748e156c8e3fc1ef64c3d0741df3d8f69cc1c7fd8468576db210b6bdb92f8"
+    sha256 cellar: :any_skip_relocation, ventura:       "37dda840487b942c69f32b88347fbb57f279ee780e385a5a8d6ab653d09e70c3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "593f3fcf8179281606f2dd9e22248ad010cea256dac2a17d567660bf0b93ce0a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "21cc0571fc75444925050a5856e02b3100ca1e5698adcaddf21b6dde1f269d42"
   end
 
   depends_on "postgresql@14" => [:build, :test]

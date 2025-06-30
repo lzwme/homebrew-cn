@@ -14,13 +14,14 @@ class Tt < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "1f8a98013c734d61cdcedc8d0d33cdb108c57658618fd0315c67485df37bb995"
-    sha256 cellar: :any,                 arm64_sonoma:  "714aa4b30f9dc882186112f8b5f44edd148129400792ff333ac5030ede340462"
-    sha256 cellar: :any,                 arm64_ventura: "0724e06cff0d38abe96c3aaf608fbd75d02836316f6dcbaa0e60d3675064d910"
-    sha256                               sonoma:        "82c6635b3e7fb55db6be341d8982de18f66e7ae8b5ac67837bba20ac7b2ba439"
-    sha256                               ventura:       "1a3fdaf1b8d3a2469f7372a6ed5afb12faccba2a22aa9303a04c51835249d899"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fcbb83bee9a6a46d294bf744af57bc25289ed794eff8455ae10e4b1ce06087ec"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f6e2f34113d16c75e8803f39ca737210c7d177325ff1c6955c6b34f14543ae2d"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "616e78a32fd2f954c9a8fc67e9ff52bedb18be5ab4e333894a2ce69f42805b9e"
+    sha256 cellar: :any,                 arm64_sonoma:  "86c86c8623739a59a1daf8cacecd933bfa56b05340057bf4aaf5f5613ba0c1f5"
+    sha256 cellar: :any,                 arm64_ventura: "b25bce86318a19428e48ee5de0282d3600d0202e69d97d8eb163177aaa81e745"
+    sha256                               sonoma:        "d5b2e02943102b1ff99584b7838137d6177dd5540f3c5d70826aef88ac0c28a9"
+    sha256                               ventura:       "1b68f39e32f9f32f5f6dd5a967367dfba016470025f331b76d23da17b582bbbc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8329c518322e1cdd41080beb870d5379888d8d3c077f39817a98bf524f30c0b9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2d130ae50757eaa53ebb3f6ac79bd80bcd6165c863b4ddc8089acb8480e0f407"
   end
 
   depends_on "go" => :build
@@ -42,7 +43,7 @@ class Tt < Formula
     bin.install "tt"
     (etc"tarantool").install "packagett.yaml.default" => "tt.yaml"
 
-    generate_completions_from_executable(bin"tt", "completion", shells: [:bash, :zsh])
+    generate_completions_from_executable(bin"tt", "completion")
   end
 
   test do

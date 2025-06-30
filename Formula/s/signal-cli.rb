@@ -6,9 +6,13 @@ class SignalCli < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, sonoma:       "e30310f20902a466190b7f1cce4bdf3e9f06f5477192c3374ba27b3a84bbcd38"
-    sha256 cellar: :any_skip_relocation, ventura:      "cbbd8b4a39256101e9bfb047fd185fbde23898a7bee7ad9b0c04b3df3e789eca"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "fc3a219efaeaac56c04badf3f9b1d2c48e99eb4ba54d820f918152ceacfb2437"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "24ed217f436e13704cfa805b78fa37958887c0c87156042763ed01596f7b8124"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bf8aa497cbec598eb51dc6e12a4a7dc5e12c5fb94b2ba973eb5050b0c4df4250"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "afca07ad7d1887ff91099a793e028196a00b49f070317d0b0285c671f07e89d2"
+    sha256 cellar: :any_skip_relocation, sonoma:        "aed4fc0805520a7c87f9507c155de168fc3337698ea67cf070eeb7c4d292a6a3"
+    sha256 cellar: :any_skip_relocation, ventura:       "68bdbffb886e8e493dc3ec7c68ec1db1fabd26859174390aba4e8022f81034f6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9fdba4c1309088bc12efe20eb9d58b939a942141b2df4956dd5113029f13089d"
   end
 
   depends_on "cmake" => :build # For `boring-sys` crate in `libsignal-client`
@@ -21,9 +25,10 @@ class SignalCli < Formula
   uses_from_macos "llvm" => :build # For `libclang`, used by `boring-sys` crate
   uses_from_macos "zip" => :build
 
-  on_linux do
-    depends_on arch: :x86_64 # `:libsignal-cli:test` failure, https:github.comAsamKsignal-cliissues1787
-  end
+  # FIXME: Uncomment below when https:github.comHomebrewbrewissues19838 is resolved
+  # FIXME: on_linux do
+  # FIXME:  depends_on arch: :x86_64 # `:libsignal-cli:test` failure, https:github.comAsamKsignal-cliissues1787
+  # FIXME: end
 
   # https:github.comAsamKsignal-cliwikiProvide-native-lib-for-libsignal#determine-the-required-libsignal-client-version
   # To check the version of `libsignal-client`, run:
