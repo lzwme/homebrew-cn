@@ -1,18 +1,18 @@
 class Tbb < Formula
   desc "Rich and complete approach to parallelism in C++"
   homepage "https:uxlfoundation.github.iooneTBB"
-  url "https:github.comuxlfoundationoneTBBarchiverefstagsv2022.1.0.tar.gz"
-  sha256 "ed067603ece0dc832d2881ba5c516625ac2522c665d95f767ef6304e34f961b5"
+  url "https:github.comuxlfoundationoneTBBarchiverefstagsv2022.2.0.tar.gz"
+  sha256 "f0f78001c8c8edb4bddc3d4c5ee7428d56ae313254158ad1eec49eced57f6a5b"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "3a7c5bc69ec18b7030205d3d34840503236bf11304416921333f1693afcd2fb5"
-    sha256 cellar: :any,                 arm64_sonoma:  "33633a5f41aa7b2055c93f81bddb2d9990373d6570070a417f4207df6ce8f90d"
-    sha256 cellar: :any,                 arm64_ventura: "d1af11b60a2384f5e639db112720e746328be29edc5352ea88af2a9a656a6375"
-    sha256 cellar: :any,                 sonoma:        "b06470b378757cbd5cbd2dac644fa76530cc3ce8b3d654ebe4e3421af2f11b31"
-    sha256 cellar: :any,                 ventura:       "ac4157a71051363b78bf8c4b2d74c6c2bef8d74bdba746cf65ca2d5d72014a6c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "86f0fca0478acf266d4e872e8398411d19fd188a812e983bdfed98a4e32fbead"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "15328519ddb636dbafd9d83cea34d44a8275847094c4627878c37315962cca15"
+    sha256 cellar: :any,                 arm64_sequoia: "3b3c683a03e8a36fe8a7a1f81b5e6efa99ca1009f2a173e4b79434406fb03f82"
+    sha256 cellar: :any,                 arm64_sonoma:  "886ab9f80b9249e368b0fcb51df91455511ae704e827e93e8a2c754eea1fcbbd"
+    sha256 cellar: :any,                 arm64_ventura: "c4f1908b707ba164fa3b201ddf35f89bb68b47e596b7a46fae7703b5c375385a"
+    sha256 cellar: :any,                 sonoma:        "1e37bd0a4c1f15bd70b6dd3a5f6b5e8a9f0c125e3b3f2c4cac34add223c0012f"
+    sha256 cellar: :any,                 ventura:       "e7d62cedf1b21d60db21e3231618d0bbe3841b8595b9d0bd1080143a5f3ada9e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1a1b53293d7258979168c25c5fb44ad37605186dcc3f4429fd9860520ad73682"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fdf49a4964c676f0d74e632b0c7e1ea4c2005db4e6fee0c0ddfa9441fcf9f107"
   end
 
   depends_on "cmake" => :build

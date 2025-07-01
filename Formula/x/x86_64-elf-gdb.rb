@@ -14,24 +14,27 @@ class X8664ElfGdb < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 arm64_sequoia: "28f100b92ecb7457ced120b8d0522a178c1c7b41602ce928a135573196f0f118"
-    sha256 arm64_sonoma:  "f3bfe8ae0d22a8a29df3487ab9a02183c03ebc40aee4dbb791f951152739d451"
-    sha256 arm64_ventura: "12f8ce79c5b517f25f323720050fb2f348e556f90cd510b4d58e3f5ae20fc3dc"
-    sha256 sonoma:        "e4b1c236f1b4317c08f212b2ee18e12c511edf81adb3a376697da97e286b88c0"
-    sha256 ventura:       "6a08a716548bb8e045f191db3854584be6d48619a64886e69d2f6617bf09c623"
-    sha256 arm64_linux:   "8b54865a39c1be49422e670ffd3992d391159acba028d87a1b73affa796c86cd"
-    sha256 x86_64_linux:  "38caa41e87bae9d85259c0497a9300af7c51f236e299476a8fc38da29f7d76ca"
+    rebuild 1
+    sha256 arm64_sequoia: "1a4c275dd54c82d2fb7565983fb7258ac7ef8d69f21e6d8a0c2c33b24f67e70f"
+    sha256 arm64_sonoma:  "06ec3ddcb48354b451944b928999451d75ce5fbea906257cd3181ccc9f18e090"
+    sha256 arm64_ventura: "921cea748af120a02e9feb5b9a2e13922171f1bf31607f8687c7fe5e761fe3e9"
+    sha256 sonoma:        "947637121994d679bc77abbb2ccaa676358b854ef6df40db771476b4ac0b5052"
+    sha256 ventura:       "38ce87c28c52fb3bc004059ebc8366e1dfdf24b56c44768aeade91b09fe17d21"
+    sha256 arm64_linux:   "f256c8f267620dc8139228e6fab3a955a07146fd378d6e0d6fd8f31363f2831d"
+    sha256 x86_64_linux:  "b498816b6889d583fa35ebb8cc38bcbf5138e47e3487a89c05650d87d578d1f8"
   end
 
+  depends_on "pkgconf" => :build
   depends_on "x86_64-elf-gcc" => :test
-
   depends_on "gmp"
   depends_on "mpfr"
+  depends_on "ncurses" # https:github.comHomebrewhomebrew-coreissues224294
   depends_on "python@3.13"
+  depends_on "readline"
   depends_on "xz" # required for lzma support
+  depends_on "zstd"
 
   uses_from_macos "expat", since: :sequoia # minimum macOS due to python
-  uses_from_macos "ncurses"
   uses_from_macos "zlib"
 
   # Workaround for https:github.comHomebrewbrewissues19315
@@ -53,10 +56,16 @@ class X8664ElfGdb < Formula
       --includedir=#{include}#{target}
       --infodir=#{info}#{target}
       --mandir=#{man}
+      --disable-binutils
+      --disable-nls
+      --enable-tui
+      --with-curses
+      --with-expat
       --with-lzma
       --with-python=#{which("python3.13")}
+      --with-system-readline
       --with-system-zlib
-      --disable-binutils
+      --with-zstd
     ]
 
     mkdir "build" do

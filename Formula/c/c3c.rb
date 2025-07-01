@@ -1,8 +1,8 @@
 class C3c < Formula
   desc "Compiler for the C3 language"
   homepage "https:github.comc3langc3c"
-  url "https:github.comc3langc3carchiverefstagsv0.7.2.tar.gz"
-  sha256 "4c545fdd5756dba1619f4743609d7a0515a54ad6a2db961d1b44c1d0c3d47cf8"
+  url "https:github.comc3langc3carchiverefstagsv0.7.3.tar.gz"
+  sha256 "ffa28a134fb21efd525387f430fbd01b8e3ed6ed08d8614e6561e73d3d63f512"
   license "LGPL-3.0-only"
   head "https:github.comc3langc3c.git", branch: "master"
 
@@ -15,13 +15,13 @@ class C3c < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_sequoia: "c7972b7ec6d53e42670030cb5689c7b0b7f19005980096e19e7ef5185ed9671e"
-    sha256 cellar: :any, arm64_sonoma:  "cfdd72308a1dcb4ab148f25f950e59233f49d0691b2912ab3ee4640270f9aa04"
-    sha256 cellar: :any, arm64_ventura: "5599d652da682939a9626c236a7a7fd02191569e5e345dcafd44be9dccff1ad2"
-    sha256 cellar: :any, sonoma:        "1ddbfc4ea36a4684b84da4e5f6e35a65316cb521f89646d2c18cd74c4f0fd9fb"
-    sha256 cellar: :any, ventura:       "7df6d771e85fcfe15b6e1ce00ba589d74af07a0812d11af0220ff1a684b88333"
-    sha256               arm64_linux:   "5fb70d5ddee589bd109c7fb3ac74d01f9c23ee54880121794142344772da5078"
-    sha256               x86_64_linux:  "644dc17a8f016f323314c20271ed1224281b51dab549fa5584b986c01dff7396"
+    sha256 cellar: :any, arm64_sequoia: "511475782040020ee27088bed44afa2ba585569625d06143ccba6da09dc15045"
+    sha256 cellar: :any, arm64_sonoma:  "d212c0f23fc219c3721118c0ab0711a3e3d1ab937d655f9f37b5c75f79e34714"
+    sha256 cellar: :any, arm64_ventura: "0ae3821b441a73423284d818f329a98a4f7b7275bd6f770c87e02d7be7108c03"
+    sha256 cellar: :any, sonoma:        "67b495b99532212668a5a37c6a321f346afd399cfb1c2f3bd060cc06760183ae"
+    sha256 cellar: :any, ventura:       "f80485ccab05b74f736e570a3840cc2ad514bf4470b7b4c87e1d98002e1377c8"
+    sha256               arm64_linux:   "1080c7c0e6d3c63eed1e6b4483c9d14ced81fcaf0f5683b0fb4784d93f2d1261"
+    sha256               x86_64_linux:  "3509709b8b169122c4ce55626db3cfb8bf08844a7e55c6970100e2637687adc3"
   end
 
   depends_on "cmake" => :build

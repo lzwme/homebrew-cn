@@ -1,8 +1,8 @@
 class SwaggerCodegenAT2 < Formula
   desc "Generate clients, server stubs, and docs from an OpenAPI spec"
   homepage "https:swagger.iotoolsswagger-codegen"
-  url "https:github.comswagger-apiswagger-codegenarchiverefstagsv2.4.45.tar.gz"
-  sha256 "fbad0e8c547ccfe2389ab880cd8f698af2d69f4fed2dee9bca6e802aca579c09"
+  url "https:github.comswagger-apiswagger-codegenarchiverefstagsv2.4.46.tar.gz"
+  sha256 "25eed35baf6ad4c43b979e97c4ca6cd7e62ee1df47ef04e84c5997cfdc0a8d24"
   license "Apache-2.0"
 
   livecheck do
@@ -11,13 +11,13 @@ class SwaggerCodegenAT2 < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9194bd4596240c5995137885ba10d9dbe8ae0f877a9fd0faed456eba3ce7b4fe"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "72c914929b6bdcaa1287fe5bf2bcbabdad0742a9635a66136984773447eedfc4"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "dfdb01219415b545225b331b05ec3318719edc27879cc51335b9655951a1b0e2"
-    sha256 cellar: :any_skip_relocation, sonoma:        "cfc5afbaabeb86f4c1500f8fc6905ae132ab485f11aa5b72d946a51b96432d2c"
-    sha256 cellar: :any_skip_relocation, ventura:       "b9d435a397fb3935c32ad5f7a9fa41446fa2caf13b852c259098d73d47515782"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "da4e1fc325f81e3a045a6f24942824f1bc546bc276368bd32393005d839cee0a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8e06d360af67bb9f61b3706c92630ca4b0f05f9a2acdc413f7fd8061db5becfc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7c8ffdab903a50ec24ef2cb91552320bc2e12f7ea015f29998634ced0f6d6bee"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ca0870feee8d71defd653dfa53dbc9764c4a273022642166edb01c02eff3d22b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "7473f61154921eadd45e286e3c7cd020f2ba628d6d75a735fe00e5f713774bae"
+    sha256 cellar: :any_skip_relocation, sonoma:        "476ab8d9da04e3a1d47b811a6b6f107dde09a886ec4628760a522d13a9fec064"
+    sha256 cellar: :any_skip_relocation, ventura:       "bb720bb8c79de44738daf4d2cb02fdb926f19bc8b38efc32a9fd46c0cdf81e6d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "20b4002a73dca9fb92b7aff88b12b0208bba5fe140b0322d56adad9857de3882"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1436818c609168fe4adb9c2345c4f4f818bef5b4b8bb4aa2f6d686b74be4063d"
   end
 
   keg_only :versioned_formula

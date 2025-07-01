@@ -3,20 +3,20 @@ class Aider < Formula
 
   desc "AI pair programming in your terminal"
   homepage "https:aider.chat"
-  url "https:files.pythonhosted.orgpackages2d9bb8365178bde38d291aa3b03d58614f8d8ea63c05b6dcedb75a25ecdbf651aider_chat-0.85.0.tar.gz"
-  sha256 "009211ed3ffd14c77ee6f18a1c13dbd798319ac0dc5952ab08f719350b452aeb"
+  url "https:files.pythonhosted.orgpackages05e194119f8c7062886a0aff937b61ee35f420ef61d2b3268e6d3e3e37ee140daider_chat-0.85.1.tar.gz"
+  sha256 "026c95fd85cb6d24d262e31c15d4126a5434f91f4bfe9aae74e5008a955155b1"
   license "Apache-2.0"
   head "https:github.comAider-AIaider.git", branch: "main"
 
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "1f3686ac80ee085066c749a186ecb0977c50fdc4788e0d85a871e3454f315bfc"
-    sha256 cellar: :any,                 arm64_sonoma:  "98779f3b2d71cbddd4c22328c55c686b0a5e9a484e071ee3709758dcb0b01f8e"
-    sha256 cellar: :any,                 arm64_ventura: "9a75b7ada016911cec68bc0860942a20b263dda0b1edb72b8ffaf201a8464516"
-    sha256 cellar: :any,                 sonoma:        "ec36580dc2833f7ee54f96ca60a607a912835d7c0bfb245df7e60bedbbd1e2ff"
-    sha256 cellar: :any,                 ventura:       "8fe44677feaab43fea9b123b23cad5eeb9aad36969485be5a56d2fe2f93c2401"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2efac8be2244bd6e2fb7be3f87a5608d380b9f7e727d5c280b37144939383f9a"
+    sha256 cellar: :any,                 arm64_sequoia: "f9d16a753c538afaff3a6f38448c9a39b16d292afd8ed77a4f3e8129a080399d"
+    sha256 cellar: :any,                 arm64_sonoma:  "c88175497cc523fc0ab348db3729879507552eec3da17ebf859c5901b264bd00"
+    sha256 cellar: :any,                 arm64_ventura: "8ed89e7a8551d9f59b8e90ca48c0156b4f44e33e7b348ce2f35bd7acf9df14a1"
+    sha256 cellar: :any,                 sonoma:        "b620412abfd8d201e95b10fff7e7e81d2a159ec6438e27aa19245eab3cdb957f"
+    sha256 cellar: :any,                 ventura:       "d73d9e6f622fd658cbdda4270d4b5e62ffbeb56b2cb92aa983825edd416b9757"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a3619cc4667beea4a9ca5b93fc3139784ba6697e5740bb35dbf3a1a0e67689fb"
   end
 
   depends_on "pkgconf" => :build

@@ -1,8 +1,8 @@
 class Tt < Formula
   desc "Command-line utility to manage Tarantool applications"
   homepage "https:github.comtarantooltt"
-  url "https:github.comtarantoolttreleasesdownloadv2.10.0tt-2.10.0-complete.tar.gz"
-  sha256 "e115bbc85230f12a69746f54e47a3fd06fd9c2fed4657e519820c9c7653cb03b"
+  url "https:github.comtarantoolttreleasesdownloadv2.10.1tt-2.10.1-complete.tar.gz"
+  sha256 "7641a99dd22a46d99c8dacf2360e5e30ef8a7daa2c122880d19469c7488263bc"
   license "BSD-2-Clause"
 
   # There can be a notable gap between when a version is tagged and a
@@ -14,14 +14,13 @@ class Tt < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "616e78a32fd2f954c9a8fc67e9ff52bedb18be5ab4e333894a2ce69f42805b9e"
-    sha256 cellar: :any,                 arm64_sonoma:  "86c86c8623739a59a1daf8cacecd933bfa56b05340057bf4aaf5f5613ba0c1f5"
-    sha256 cellar: :any,                 arm64_ventura: "b25bce86318a19428e48ee5de0282d3600d0202e69d97d8eb163177aaa81e745"
-    sha256                               sonoma:        "d5b2e02943102b1ff99584b7838137d6177dd5540f3c5d70826aef88ac0c28a9"
-    sha256                               ventura:       "1b68f39e32f9f32f5f6dd5a967367dfba016470025f331b76d23da17b582bbbc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8329c518322e1cdd41080beb870d5379888d8d3c077f39817a98bf524f30c0b9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2d130ae50757eaa53ebb3f6ac79bd80bcd6165c863b4ddc8089acb8480e0f407"
+    sha256 cellar: :any,                 arm64_sequoia: "5f772b8c7eee090e48a6a1c39e911e15a4d219cb730f0beab42b6656222b7a6a"
+    sha256 cellar: :any,                 arm64_sonoma:  "8920683e9b2b0f43306dbe0a139e348014eadc321df5c129f874452a8d349407"
+    sha256 cellar: :any,                 arm64_ventura: "9f28c89f222076fbccf82996393333459193aeec4bc14ec1a5b4c0e8b6d06996"
+    sha256                               sonoma:        "b2feee12acd3fbdadd19ded4a2f85241ed57db30f74a3c3473431a44014f8c62"
+    sha256                               ventura:       "32bbbe7b26bbd3087f86f0c4724ba26cafb3360b153104ee9ec831bceacc1658"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "07802db2c90ee5352aa60201375fa9a35555c439753ce29b7a2e397c6dbfaacd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4eff6a9f4c6073b503b8371b0d05ef31883d4b25c6c2110042bf876a8dc3cba0"
   end
 
   depends_on "go" => :build

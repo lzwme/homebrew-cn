@@ -1,8 +1,8 @@
 class Rgbds < Formula
   desc "Rednex GameBoy Development System"
   homepage "https:rgbds.gbdev.io"
-  url "https:github.comgbdevrgbdsarchiverefstagsv0.9.2.tar.gz"
-  sha256 "ccba03909a9fd2067969134ef04c4165c1acffac5cd45899405214f9abd4157d"
+  url "https:github.comgbdevrgbdsarchiverefstagsv0.9.3.tar.gz"
+  sha256 "e4db822494e438f4a3619a0043280fec5a16596ac1dc7756e7c8bf1c57ab0376"
   license "MIT"
   head "https:github.comgbdevrgbds.git", branch: "master"
 
@@ -12,13 +12,13 @@ class Rgbds < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "61f9327d50b1584d5b4b3809292b7724cfb7d82acb7a5c4d9c245f60403c61bc"
-    sha256 cellar: :any,                 arm64_sonoma:  "56c1d55f4e3c04c940954e109746e636711f445fa971ef73e126a2f16713e627"
-    sha256 cellar: :any,                 arm64_ventura: "95a36a5c8b9652693eb768ecce13f5456ac0aa1debe21f363b8bf6f520903fd6"
-    sha256 cellar: :any,                 sonoma:        "765ef83e85524937bb0552c7e303312512fbd1b0a1dda9ce9683cc0d3818f6dd"
-    sha256 cellar: :any,                 ventura:       "b0ac3c426aec5a5610f8c6e7736b36b99d6693d8bc413cd64e443130651feb02"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d5b2817a166380f0cf4b80b579a0eeb761f7dc6c011a3c5f47381158bdffdb44"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6fa0e0ee6496f99733f2ecf3b871716363c3b1ae79a248c9770ac218bd92dd59"
+    sha256 cellar: :any,                 arm64_sequoia: "099374d50fc33525389c1f5c7cef08f89dc33c3ccbe70a226290d870c672f28f"
+    sha256 cellar: :any,                 arm64_sonoma:  "8a29bb9c8bbe6279b6d1f74f029beecaf66c287ff9973f005baea074a3e7d72c"
+    sha256 cellar: :any,                 arm64_ventura: "838be83ec89454dea3faa1ae7bc4e9807a551c62b0013ad2c00c7f1053557dc2"
+    sha256 cellar: :any,                 sonoma:        "5d08e29a31d4f7ca93748363f8f24c8b99e365e6955471d077ab1e66b8f0fca0"
+    sha256 cellar: :any,                 ventura:       "8a133e7f37c4ba78e3d83eb32f695c682a8ae425af262030601cba27889bee83"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "834a5032dbfd7429862309e7f27b223cc8f94066d5e7eeacfb135604d247f1d2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "115f534747a1dac38feaba3699d487d24b082c62a6e579c1641731c2acf1f250"
   end
 
   depends_on "bison" => :build

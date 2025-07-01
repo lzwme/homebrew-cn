@@ -14,26 +14,27 @@ class Aarch64ElfGdb < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 arm64_sequoia: "0a926fe5dc3bc4e539f41c646716b31f5d1286edb897298b01f32134cbb3abef"
-    sha256 arm64_sonoma:  "f521ba77ba54ff94b1bed1e5cd0b42a57d9854922dfff195f71e8eb7e55dcd6b"
-    sha256 arm64_ventura: "4cf29fad518c942bd1310ba0bfd38c0ecbcdf30b7e36312d129719278da7175b"
-    sha256 sonoma:        "bb07e3cc246b3668c6cc918fc3ba3702b155b11674533d75e02dbe4664c4c2b6"
-    sha256 ventura:       "763a0c51b03e2e614429e0a5598e6cf242ebea2be8f5c94fa5a23cc511dfd101"
-    sha256 arm64_linux:   "05c39d0fccad36e0b46a99eeb08c129bf61744522aac5e9fde1cfff57454cbc3"
-    sha256 x86_64_linux:  "09ad9bdbf4e7cce7979fa2fed88e9b31ee1a06cc82e5f625dd6dae9d1ab2e9a9"
+    rebuild 1
+    sha256 arm64_sequoia: "e7db20ed948d7a6bfde4f5c2681d6e9a8a2c28a7583174db3620a43b1c2a9382"
+    sha256 arm64_sonoma:  "deb6bb2ba235a54d37a78bff3c1a7eee52adf0a8c8908294b4652be74acbd7ee"
+    sha256 arm64_ventura: "b93b9aab9faa8beb55a447dbfa2e588708d455723a7d50fde9a8c3c53aec3f08"
+    sha256 sonoma:        "17196d00ed529a99ef0c96369de15e0fb5a94b0ff1e09f364e1cc8e537bd82d9"
+    sha256 ventura:       "30a2662009762f18301b52730338afdb0efbd34ad547fc4d7048fbe68fec36a1"
+    sha256 arm64_linux:   "fb87b609951161a5b9bb9a1bd8ae0c0452ebfa32ed4e4d1f3b1bba7f4c60018d"
+    sha256 x86_64_linux:  "f7973bb38142516974f41cf187d9d7ed5a9cc3f4bea1e98003374cc5f73c2fb3"
   end
 
   depends_on "pkgconf" => :build
   depends_on "aarch64-elf-gcc" => :test
   depends_on "gmp"
   depends_on "mpfr"
+  depends_on "ncurses" # https:github.comHomebrewhomebrew-coreissues224294
   depends_on "python@3.13"
   depends_on "readline"
   depends_on "xz" # required for lzma support
   depends_on "zstd"
 
   uses_from_macos "expat", since: :sequoia # minimum macOS due to python
-  uses_from_macos "ncurses"
   uses_from_macos "zlib"
 
   # Workaround for https:github.comHomebrewbrewissues19315
@@ -55,6 +56,8 @@ class Aarch64ElfGdb < Formula
       --includedir=#{include}#{target}
       --infodir=#{info}#{target}
       --mandir=#{man}
+      --disable-binutils
+      --disable-nls
       --enable-tui
       --with-curses
       --with-expat
@@ -63,8 +66,6 @@ class Aarch64ElfGdb < Formula
       --with-system-readline
       --with-system-zlib
       --with-zstd
-      --disable-binutils
-      --disable-nls
     ]
 
     mkdir "build" do

@@ -1,8 +1,8 @@
 class Clarinet < Formula
   desc "Command-line tool and runtime for the Clarity smart contract language"
   homepage "https:www.hiro.soclarinet"
-  url "https:github.comhirosystemsclarinetarchiverefstagsv3.1.0.tar.gz"
-  sha256 "9f072a28f9d333683fdefb68a23d78ccdcbd05706e06bf103cba815854698a18"
+  url "https:github.comhirosystemsclarinetarchiverefstagsv3.2.0.tar.gz"
+  sha256 "ba32f6028b6eb3d3b728da62dae7495bb75e856177ad80fc81f0988d3281d95f"
   license "GPL-3.0-only"
   head "https:github.comhirosystemsclarinet.git", branch: "main"
 
@@ -12,13 +12,13 @@ class Clarinet < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6f2c12cc40c9737c3bcbfea7250d2adeea96e218bf7e1d88304488f53133601e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bcab3dba8ada1b2080f7550a63612c69971418cdf68e1bbafee54b4bd698d5b0"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "52f608ef13f358c824316eee3e3f19da2e73b791c8d0ffb83a22d0a619cc8b46"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f5af7c635b4791b2f877e635caf6c107f8684e88e5668b211a9aff0390d029b5"
-    sha256 cellar: :any_skip_relocation, ventura:       "1441bda8f91443d2bc8214352c1a307e90ee48305b8ba83ec42caa9bfa9db8a5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f16d6556bb6daec82efba88f0c2cee8664270a0927b90dc131df47afa6762bef"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "79813bfe96bca739311fa7d13dec731bef42e4f17ae74dde2395c65bce90eb9b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "25851609641d7b0dbe95ac7e1b57571a0595678fd046881e9fdf22d826da60d8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5e59203fe15e7a5b95390c100258bbcfc08e2979b97b30f5d6c9e2d203cba613"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "1ade11d84800cb34ac0fe547117958bd31f83d0a0b819fcd605920e61c644bf6"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5bccb8117c356bdd971ccd42c5668fdf2dc729f4c6207bb6097e1d66c4ea74e4"
+    sha256 cellar: :any_skip_relocation, ventura:       "c2a9f00c1187028f2de8e1e57066acc4ee43073bf292bff6e8f8607d65866c72"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9d3e5421565609dfaa4c45c58cb69a271140f3df81db437f5f4c0b5a817119f1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fbe97ee77b11608e8d194d0ee37af27957472a48114c31748a3d175810c53c91"
   end
 
   depends_on "rust" => :build

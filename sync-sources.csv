@@ -2172,7 +2172,7 @@ Homebrew-homebrew-core/Formula/g/gcviewer.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gd.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gdal.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gdb.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/g/gdbgui.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/g/gdbgui.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gdbm.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gdcm.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gdk-pixbuf.rb, Homebrew/homebrew-core, 0
@@ -5549,7 +5549,7 @@ Homebrew-homebrew-core/Formula/p/pugixml.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pulledpork.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pulp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pulsarctl.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/p/pulseaudio.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/p/pulseaudio.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pulumi.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pulumictl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pumba.rb, Homebrew/homebrew-core, 1
@@ -5944,6 +5944,7 @@ Homebrew-homebrew-core/Formula/r/rsgain.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rshijack.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rslint.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rsnapshot.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/r/rsql.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rst-lint.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rswift.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rsync-time-backup.rb, Homebrew/homebrew-core, 1

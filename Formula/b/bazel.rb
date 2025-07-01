@@ -1,8 +1,8 @@
 class Bazel < Formula
   desc "Google's own build tool"
   homepage "https:bazel.build"
-  url "https:github.combazelbuildbazelreleasesdownload8.3.0bazel-8.3.0-dist.zip"
-  sha256 "c81cbf1a4d26cfb283c26c3544d47828679e42476e32e807151b9f647207530c"
+  url "https:github.combazelbuildbazelreleasesdownload8.3.1bazel-8.3.1-dist.zip"
+  sha256 "79da863df05fa4de79a82c4f9d4e710766f040bc519fd8b184a4d4d51345d5ba"
   license "Apache-2.0"
 
   livecheck do
@@ -11,13 +11,13 @@ class Bazel < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "132326dd57f0f5a0e42ebd8a712863904296eb7f42bc1fe4df38c6eb4a003fc7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a0972cff8ccb60757427904c1e18e4ffc1dd7f8fe6699ca672b62db37c81e440"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "c66f1bb88fb1851976e625b89aef13b3c7e0585d3ad3550b7ce3a131dd586bb2"
-    sha256 cellar: :any_skip_relocation, sonoma:        "29c3085e845ee639486a98fc0adbb5d870598e0279dbb54476976240a79fbb90"
-    sha256 cellar: :any_skip_relocation, ventura:       "27ab02a58fcb0852b44ed15f77480615fd68e98dff6823b26e179999673bf0bc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "28fc3f08ef33761901bf81ac5ce4f0750a9508cad1b9558d86e8c2037e22f235"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b53e7336f1f689b457ecc2b772489aa53c9730e1530fee9048f586b999bd02c1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "edc0dc98fc27e75ade12e22860b5dc13dc2ca21d4685df8c87c7d32297749d17"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2c651328a5337020c861d9245538e03a2cafe4eb5476a07ccb9b811617eb9187"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "e764d4d659fee888ea9595c007303cb5e8da957f751555fc4428f1855d47a456"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d2ec47738c18b52134b80e83eb636cea0d363314976346e002a7ed40daf592f2"
+    sha256 cellar: :any_skip_relocation, ventura:       "1917c2f4ac00f9b6999100ba819a69cde286d452b8c102238faa12c7a7eb4ce7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "081d97165645a416d5bee8ce23bba8ea501bcb78cbea22d36aa880af822e7bb8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "82d59f4be8bf9c15fc22e75641295bdc715b9ac2b1be26cd71c79ca7f9a4db56"
   end
 
   depends_on "python@3.13" => :build

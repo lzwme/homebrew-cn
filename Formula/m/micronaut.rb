@@ -1,8 +1,8 @@
 class Micronaut < Formula
   desc "Modern JVM-based framework for building modular microservices"
   homepage "https:micronaut.io"
-  url "https:github.commicronaut-projectsmicronaut-starterarchiverefstagsv4.8.3.tar.gz"
-  sha256 "8b6052a9d4fc228333a3226ed060ea544730fb0af3e2f65475dffede252574a5"
+  url "https:github.commicronaut-projectsmicronaut-starterarchiverefstagsv4.9.0.tar.gz"
+  sha256 "8116048981461d6a702f447f01b33d0a2b3527567b0aab33aece694d56c34e8d"
   license "Apache-2.0"
 
   livecheck do
@@ -11,13 +11,13 @@ class Micronaut < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "56ead464feb56f2a60b1f171f23a3cb795bc79de46b237faef95b53e079ff48d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8793b71825c928e524bec3dd4812d55b4eeff67bcb3c8820765a3cae2bc9772a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "6a8e4f522cc206e9a7fc5264483d38bc3e8ad85aae11f76dccf8f55eda33fc57"
-    sha256 cellar: :any_skip_relocation, sonoma:        "51bdc2a4bab3beb1239a89d3f174725e2619de09031720d86dcbe9668bfac305"
-    sha256 cellar: :any_skip_relocation, ventura:       "4b1ed11027d930add9d7330b16ee5b658241febf30b12f53f0a13530b4170853"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cb025e18565af7d5b30bea3732002c3b87be30b4bd0aefc4fac631ab17e62a18"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "274c461a2edb480c72997e9e2735eeb4c4b075213aceb00bad68bfce9209dc53"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e423e6c0d50599a6285e5c3f15487f3fb6f2e1e35b9e31d369da132d11a7673a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5050a5e1e3115ce8c5fb095323dd5b030a64d6424534c33fb8b20acb5fbb73be"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "4ddd8465cb4e4541ab7c41a6a5262788031a252149b3be4c1fe5f6f068af745a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "38db2e1881497add47589310b8e0fc2c9b12a5cc1913571a867a74fbfeec0df2"
+    sha256 cellar: :any_skip_relocation, ventura:       "630e76084c807bb8dfd7093ad2315c67283f15148a381388bd37c99e1c4096a3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f330e8777270a697ad762c576fd3d37e51e08d7f1f058a12f55a5fcbdad0e2f5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "709dc3d22e87524c14da04a4e4a0f7565e5f6d809a94d18f6ca2c6017c19a39e"
   end
 
   depends_on "gradle" => :build
