@@ -1,18 +1,18 @@
 class Keploy < Formula
   desc "Testing Toolkit creates test-cases and data mocks from API calls, DB queries"
   homepage "https:keploy.io"
-  url "https:github.comkeploykeployarchiverefstagsv2.6.14.tar.gz"
-  sha256 "e54c568ff2e3364ce36f0ce122cd9c236535f604a1cd94344707c23074367538"
+  url "https:github.comkeploykeployarchiverefstagsv2.6.15.tar.gz"
+  sha256 "96b09e0d8a7bc658f5c99ca2c7bd7c3e7a8a5392885c870822b590a88d742235"
   license "Apache-2.0"
   head "https:github.comkeploykeploy.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3eca276b110a4f5cf8a417e558c23044831c59486b99a541e53f74fcaa59e116"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3eca276b110a4f5cf8a417e558c23044831c59486b99a541e53f74fcaa59e116"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "3eca276b110a4f5cf8a417e558c23044831c59486b99a541e53f74fcaa59e116"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8a33edb88645b8fe1123fb8ce2ad795a1e3a52f92330dc7c4a3321565ae2a12e"
-    sha256 cellar: :any_skip_relocation, ventura:       "8a33edb88645b8fe1123fb8ce2ad795a1e3a52f92330dc7c4a3321565ae2a12e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ebe9d80343d3085aecf0596d27fe9038e9be6b64a1b8dfbc9277827f15d69f2a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c85253a55e9093973dd960239fa705abf16a19ca2b175fe3d1d1f35e38562762"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c85253a55e9093973dd960239fa705abf16a19ca2b175fe3d1d1f35e38562762"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "c85253a55e9093973dd960239fa705abf16a19ca2b175fe3d1d1f35e38562762"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8c60e804b11bb8f929464251a5c57a4df2e75538b2ff5f9bede07253c8de92b3"
+    sha256 cellar: :any_skip_relocation, ventura:       "8c60e804b11bb8f929464251a5c57a4df2e75538b2ff5f9bede07253c8de92b3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7371435a8e563852d07e976bdf8e6d3c7edff3368980fecf0b07003502e8112e"
   end
 
   depends_on "go" => :build

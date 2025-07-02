@@ -3,19 +3,18 @@ class Charmcraft < Formula
 
   desc "Tool to build charms and publish them on Charmhub"
   homepage "https://charmhub.io"
-  url "https://files.pythonhosted.org/packages/c3/91/5f40180d4dbb83b83ee67271095ce6879a0c6f9e8205d77769f00f81260c/charmcraft-3.5.1.tar.gz"
-  sha256 "9eab52d66b0bfb00d8b0accca00b1592844396e728bff001e6e29ae7bbd741a0"
+  url "https://files.pythonhosted.org/packages/1a/97/6fc876012cb040f782b0eb3ac8b118f349272e98dd2c5abd09076b08f299/charmcraft-3.5.2.tar.gz"
+  sha256 "1dc8c3a2eee26d1f90ccb4cd2fd200f499d33f04eef74e8caff043ae1ba8aebf"
   license "Apache-2.0"
-  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "2b14848ced9615033ed6632ac3c76427d46990f6c8d83ded6cb69cf25ba7edd1"
-    sha256 cellar: :any,                 arm64_sonoma:  "03e1e359389b2191a9fb06045509a69f5c5ae6339f23d49a35212b162a8da998"
-    sha256 cellar: :any,                 arm64_ventura: "5341fad556f1db956a94166eed747dd030566b72dd6da71e4fce8d4b3fb7cf25"
-    sha256 cellar: :any,                 sonoma:        "7ae607c1cadf8af5700c510a1b68450a800b5f2dfee9a583ad690fa1383b7ce6"
-    sha256 cellar: :any,                 ventura:       "87f7dc7e90506835312a5c15671ae25870f0ce3f0b8a08d66b093a049a1f4494"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "348c625cb4a88da2ea74c692230860776e0ba3b78d9acfb39345b9b90a56add6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "02d8159f7da718fe1f6293de44fc05797a8148b9cf5a7de60d022ad03dfee82b"
+    sha256 cellar: :any,                 arm64_sequoia: "f2b161e8313bbff0122cffcd169c4e11ae05ef7a01798d2f85559c2929b08d7e"
+    sha256 cellar: :any,                 arm64_sonoma:  "3afea45ef0fdd4d7d75d8b030a82945e02b6b80851e03ea6f57e00ebceb304b6"
+    sha256 cellar: :any,                 arm64_ventura: "e55f2fe4aba8ac44d7cfbb22af5754504e72a8e70a6648a9c55272e298bc7151"
+    sha256 cellar: :any,                 sonoma:        "db61f0b0a4e732fe1d58b92eb407f34b9be2f70bc2a1426247ca3ca15b4fccab"
+    sha256 cellar: :any,                 ventura:       "8c6143928a551ee1271965b3c38ae6f75fabcba6829c777b576bada94975c84e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1621c4d9c4e408609dba479edbb0c2445f594cbfbfa195765fdb5af6a2673aeb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bc4ea161045dfe21aa98985ded6aba318b3ad4180366f7a04feb51d8cc057151"
   end
 
   depends_on "rust" => :build
@@ -147,8 +146,8 @@ class Charmcraft < Formula
   end
 
   resource "jaraco-functools" do
-    url "https://files.pythonhosted.org/packages/ab/23/9894b3df5d0a6eb44611c36aec777823fc2e07740dabbd0b810e19594013/jaraco_functools-4.1.0.tar.gz"
-    sha256 "70f7e0e2ae076498e212562325e805204fc092d7b4c17e0e86c959e249701a9d"
+    url "https://files.pythonhosted.org/packages/49/1c/831faaaa0f090b711c355c6d8b2abf277c72133aab472b6932b03322294c/jaraco_functools-4.2.1.tar.gz"
+    sha256 "be634abfccabce56fa3053f8c7ebe37b682683a4ee7793670ced17bab0087353"
   end
 
   resource "jeepney" do
@@ -192,8 +191,8 @@ class Charmcraft < Formula
   end
 
   resource "license-expression" do
-    url "https://files.pythonhosted.org/packages/74/6f/8709031ea6e0573e6075d24ea34507b0eb32f83f10e1420f2e34606bf0da/license_expression-30.4.1.tar.gz"
-    sha256 "9f02105f9e0fcecba6a85dfbbed7d94ea1c3a70cf23ddbfb5adf3438a6f6fce0"
+    url "https://files.pythonhosted.org/packages/bb/79/efb4637d56dcd265cb9329ab502be0e01f4daed80caffdc5065b4b7956df/license_expression-30.4.3.tar.gz"
+    sha256 "49f439fea91c4d1a642f9f2902b58db1d42396c5e331045f41ce50df9b40b1f2"
   end
 
   resource "macaroonbakery" do
@@ -312,8 +311,8 @@ class Charmcraft < Formula
   end
 
   resource "rpds-py" do
-    url "https://files.pythonhosted.org/packages/8c/a6/60184b7fc00dd3ca80ac635dd5b8577d444c57e8e8742cecabfacb829921/rpds_py-0.25.1.tar.gz"
-    sha256 "8960b6dac09b62dac26e75d7e2c4a22efb835d827a7278c34f72b2b84fa160e3"
+    url "https://files.pythonhosted.org/packages/a5/aa/4456d84bbb54adc6a916fb10c9b374f78ac840337644e4a5eda229c81275/rpds_py-0.26.0.tar.gz"
+    sha256 "20dae58a859b0906f0685642e591056f1e787f3a8b39c8e8749a45dc7d26bdb0"
   end
 
   resource "secretstorage" do

@@ -6768,6 +6768,7 @@ Homebrew-homebrew-core/Formula/t/terramaid.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/terramate.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/terrapin-scanner.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/terrascan.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/t/teslamate.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tesseract-lang.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tesseract.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/testdisk.rb, Homebrew/homebrew-core, 0
@@ -13793,6 +13794,7 @@ Homebrew-homebrew-cask/Casks/r/radarr.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/r/radiant-player.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/r/radio-silence.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/r/radiola.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/r/raiderio.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/r/raindropio.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/r/rambox.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/r/ramme.rb, Homebrew/homebrew-cask, 1
@@ -14205,6 +14207,7 @@ Homebrew-homebrew-cask/Casks/s/smartsynchronize.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/smcfancontrol.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/smcfancontrol@beta.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/smlnj.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/s/smoothcsv.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/smoothscroll.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/smooze-pro.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/smooze.rb, Homebrew/homebrew-cask, 0
@@ -14886,6 +14889,7 @@ Homebrew-homebrew-cask/Casks/v/viables.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/v/vial.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/v/vibemeter.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/v/viber.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/v/vibetunnel.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/v/vidcutter.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/v/videoduke.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/v/videofusion.rb, Homebrew/homebrew-cask, 0
@@ -15159,6 +15163,7 @@ Homebrew-homebrew-cask/Casks/x/xnconvert.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/x/xnviewmp.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/x/xonotic.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/x/xournal++.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/x/xppen-pentablet.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/x/xpra.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/x/xprocheck.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/x/xquartz.rb, Homebrew/homebrew-cask, 1

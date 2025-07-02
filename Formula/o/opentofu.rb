@@ -1,18 +1,18 @@
 class Opentofu < Formula
   desc "Drop-in replacement for Terraform. Infrastructure as Code Tool"
   homepage "https:opentofu.org"
-  url "https:github.comopentofuopentofuarchiverefstagsv1.10.1.tar.gz"
-  sha256 "52e3821a7f3fc6a6bf70ba628bf7c9838f05990d47e293558dd494053a66ecde"
+  url "https:github.comopentofuopentofuarchiverefstagsv1.10.2.tar.gz"
+  sha256 "442d51e0595e79a3eceb84d8a2891e691f7277d0da7dd34f87836692d4aeca91"
   license "MPL-2.0"
   head "https:github.comopentofuopentofu.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "63944ff48f4910ccc4b92122d5b1a0480c2d1539aee4cddc514e4167a881d3c0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "63944ff48f4910ccc4b92122d5b1a0480c2d1539aee4cddc514e4167a881d3c0"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "63944ff48f4910ccc4b92122d5b1a0480c2d1539aee4cddc514e4167a881d3c0"
-    sha256 cellar: :any_skip_relocation, sonoma:        "698da1761efdee61452b1480f977d0785eb2ce4ceb816680e514bf9a8b4dfaa1"
-    sha256 cellar: :any_skip_relocation, ventura:       "698da1761efdee61452b1480f977d0785eb2ce4ceb816680e514bf9a8b4dfaa1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fe4fb59e70ec9323ee1264b2b9e7908a020b82fdc966de4c357e67355947b56b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2decc3b3b8a2e791a3586de8084f74d823ccdbc7e5a2b6d2d1a57ea5dff9755d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2decc3b3b8a2e791a3586de8084f74d823ccdbc7e5a2b6d2d1a57ea5dff9755d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "2decc3b3b8a2e791a3586de8084f74d823ccdbc7e5a2b6d2d1a57ea5dff9755d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4e8a6bba352cdbddd4bcc6dc961c3dc8606ac1b6a3c24dae62e877211bafd7ff"
+    sha256 cellar: :any_skip_relocation, ventura:       "4e8a6bba352cdbddd4bcc6dc961c3dc8606ac1b6a3c24dae62e877211bafd7ff"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "95a066272d12aa9483a96440a0072dfa6ff9b226e150564a54d3851f771f2a3b"
   end
 
   depends_on "go" => :build

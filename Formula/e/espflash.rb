@@ -1,18 +1,18 @@
 class Espflash < Formula
   desc "Serial flasher utility for Espressif SoCs and modules based on esptool.py"
   homepage "https:github.comesp-rsespflash"
-  url "https:github.comesp-rsespflasharchiverefstagsv3.3.0.tar.gz"
-  sha256 "5f641653d2112904a02d4c67e1fba6564a7fc23fbb34def2df8ce6ac953a4163"
+  url "https:github.comesp-rsespflasharchiverefstagsv4.0.0.tar.gz"
+  sha256 "6aff44a3b8e8d551066dbf4de6114b4629c273f9684a22757fa37b965195b67c"
   license any_of: ["MIT", "Apache-2.0"]
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6c81a6ed6df9c49a708d7e87ab635a7e786abc835d74b2eb0fa4686122b31e7a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1c99e0a9083f12ce47ef06a45bc895deebf5ebdc3b2e5d993dce45109f997934"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "cae222d3a510e1fd99493fc84bc30a7a883913d214dde264c5597f50e0c75d3a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c6504173907b67fc7247bfda8c0bace89f37a1852d540cfd264cab8c391a08ce"
-    sha256 cellar: :any_skip_relocation, ventura:       "558ac26ed5f9655a64e6eeecd8a207aa14c0a2cccdb31b341be1a6d5e33eee80"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "042f5da2c9430440c0b144341933160ee4e4d322b6a154051edc3619a5337025"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "50eff44ba9819e9af58b258224a56270d72773c2f445b070ec1b1ecd69310092"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b805654083340324b1522f1739f75d0d4c165975fd1c3f54a73c355f9f932df5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "468e4a9bd31a86112c84d0aaf01619e2de0d4f625a5c217d70abdb17190e627d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "d868a5fe94538048ff58506df0021d2db7a9b0ab96fc9159101df5eb23322ea0"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ba2e37b2ce4035b4e2a5c99e252087f5295df67ccf4462dc9681bbe8eeadca61"
+    sha256 cellar: :any_skip_relocation, ventura:       "8f75b5772284b6821ab4bd72c250bb55f92e91cf3fcdb37ca714d080ed6a1f99"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9859d9bdf6e305acfc4600bc7cdff98547820d399a711ece58858374ff6b803a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "27cac858fe0a3ac4eb629f4f4dea38d0f12bd9e8fd82ad6d0f62091cd80ab599"
   end
 
   depends_on "pkgconf" => :build
@@ -31,11 +31,9 @@ class Espflash < Formula
   end
 
   test do
-    stable.stage testpath
-    output = shell_output("#{bin}espflash flash espflashtestsresourcesesp32_hal_blinky --port COMX 2>&1", 1)
-    assert_match "espflash::connection_failed", output
-
     assert_match version.to_s, shell_output("#{bin}espflash --version")
-    assert_match "A command-line tool for flashing Espressif devices", shell_output("#{bin}espflash --help")
+
+    output = shell_output("#{bin}espflash flash espflashtestsresourcesesp32_hal_blinky --port COMX 2>&1", 1)
+    assert_match "Error while connecting to device", output
   end
 end

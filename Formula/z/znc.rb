@@ -1,8 +1,8 @@
 class Znc < Formula
   desc "Advanced IRC bouncer"
   homepage "https://wiki.znc.in/ZNC"
-  url "https://znc.in/releases/znc-1.10.0.tar.gz"
-  sha256 "be65ad9b62ef545a7e9486f2f74134edc53ba513ad43a69d9d8b476605336b19"
+  url "https://znc.in/releases/znc-1.10.1.tar.gz"
+  sha256 "4e6e76851dbf2606185972b53ec5decad68fe53b63a56e4df8b8b3c0a6c46800"
   license "Apache-2.0"
 
   livecheck do
@@ -11,13 +11,13 @@ class Znc < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "faf787077613c0a36560ef87b3d9e295361815f3ab50c2d14b2cbe69aa5ee48d"
-    sha256 arm64_sonoma:  "960b6ccae0fd3bac57b981ec9af1749bb3f4f20c1a2d1188619c582d5cbe0037"
-    sha256 arm64_ventura: "6ca436e507d85d2b09625a0f8ad8ff35c3db021905d86ae7317c1d2ebb6d8fe3"
-    sha256 sonoma:        "8a37ddfbd4ad63c0d2abbb216c38832782b2c4934f92b7508bd5f230684401a3"
-    sha256 ventura:       "f868412a89bebfb4afc6df9ca030f220e282f37ee0e203596b4cdb27503f19ba"
-    sha256 arm64_linux:   "e99d9f71bd7968ac63a074722e266fc2e1bec3693319afd05631c9eee514dcf3"
-    sha256 x86_64_linux:  "40c2f441fd3404f732815e461d87f8e1d630bce7d695fd1e6b91972cc6de6c22"
+    sha256 arm64_sequoia: "3f879e3a53f671bf91948290672d9afc4b2c525be1a8391a8edcc579c23a1367"
+    sha256 arm64_sonoma:  "f352b0898686f3e1971ac5f93838267f3f25cc7c5dbc21339866f27d764da5f5"
+    sha256 arm64_ventura: "0559e03b2e5cd7017a819de05f004344156598ca0df4e1a645123cdd61aa0a3b"
+    sha256 sonoma:        "53321095073216bd88a4065e2ddd853d6251fd20ed747833d99a5592eb1f3606"
+    sha256 ventura:       "eadae1e71666ba8f013eb2080e91cce2f34d6e2b0113710cfbcc4b6425b0a1d7"
+    sha256 arm64_linux:   "b2567236b256be9c054c3c51bbb8ba3ec2072137e5d80ebe44414ea5fe33bd4b"
+    sha256 x86_64_linux:  "22d73b1c7debe47b930d2cf16eec7cb509d450c4f01c5e8ba2d6babe3be95a53"
   end
 
   depends_on "cmake" => :build

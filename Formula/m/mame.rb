@@ -1,9 +1,9 @@
 class Mame < Formula
   desc "Multiple Arcade Machine Emulator"
   homepage "https:mamedev.org"
-  url "https:github.commamedevmamearchiverefstagsmame0277.tar.gz"
-  version "0.277"
-  sha256 "60055b19fc96306927257c5ffc265ecebcbe5c944cf98113d4d78f6304556c67"
+  url "https:github.commamedevmamearchiverefstagsmame0278.tar.gz"
+  version "0.278"
+  sha256 "ca5f44a0ed834875f8420a75587706af210ff8c5922942509bc5bfef7d45c360"
   license "GPL-2.0-or-later"
   head "https:github.commamedevmame.git", branch: "master"
 
@@ -21,12 +21,12 @@ class Mame < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "653d10b5b1ff22f71204f1c651b3798f6ff39a57553cbb56dba162787679aab2"
-    sha256 cellar: :any,                 arm64_sonoma:  "f053646362da97c810b777ceeb429599e7d4c15f75c62148eb41252564883ff3"
-    sha256 cellar: :any,                 arm64_ventura: "cd80fb753be5faab9347d0cb72e4cfe79655a43e5e772b01a534fa7bb35261c1"
-    sha256 cellar: :any,                 sonoma:        "25b3818e85d82775288447ae80fbd9dbf119d2f70429241571f025ef8501e5a1"
-    sha256 cellar: :any,                 ventura:       "4e4fc9be40c34bff8c323be929ed7914c5f1ac9cbf3c3644b5f28f5f8d6f897b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "53e1a81217afa65b26f5fe11f0a24166535b707be78f4f1d3bce77eb2f8ae33c"
+    sha256 cellar: :any,                 arm64_sequoia: "dbad98208eb3d1cd8af7fb685d51cfa84dec21add1416238d30129ca261d2d12"
+    sha256 cellar: :any,                 arm64_sonoma:  "e9e670d5e80c3761710dc4a07d097cc90a8b485ffe9f54c129f2deadd757746a"
+    sha256 cellar: :any,                 arm64_ventura: "6ed3098e26096d4a64ebff25cfeedefe3d4f7e2a44dfc22934acc9274347ab35"
+    sha256 cellar: :any,                 sonoma:        "46a5c64de0a11af90a79f239c377e337438b1bd19cab141fc8754b1955bd27b2"
+    sha256 cellar: :any,                 ventura:       "12381f05f4e83aba9fb305bb1a285c134104f5983d2873c62a67a262d0cd53c0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0b0573b26438af844d404a6db6d2227d39da35c1d693ff194ae336e0f973ac46"
   end
 
   # `asio`` v1.30.1 is bundled and it is not compatible with the `asio` formula

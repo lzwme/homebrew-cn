@@ -12,7 +12,7 @@ cask "weasis" do
   homepage "https:weasis.orgenindex.html"
 
   livecheck do
-    url "https:nroduit.github.ioenapireleaseapi.json"
+    url "https:weasis.orgenapireleaseapi.json"
     strategy :json do |json|
       json["version"]&.tr("v", "")
     end

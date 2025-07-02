@@ -1,18 +1,18 @@
 class Chroma < Formula
   desc "General purpose syntax highlighter in pure Go"
   homepage "https:github.comalecthomaschroma"
-  url "https:github.comalecthomaschromaarchiverefstagsv2.18.0.tar.gz"
-  sha256 "d3ff19a0007222f1674f3d751f8702073fc95b7c293c595a3c36b57275c1bde5"
+  url "https:github.comalecthomaschromaarchiverefstagsv2.19.0.tar.gz"
+  sha256 "05eb3779cb0e42edd08146c76620f3c6c21a35c4c03a558884743b51e99a1a54"
   license "MIT"
   head "https:github.comalecthomaschroma.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9e44eea80b9052a9b2b1b2a92ecf438d3c931535b78c946a667e2e1d6916fa3e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9e44eea80b9052a9b2b1b2a92ecf438d3c931535b78c946a667e2e1d6916fa3e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "9e44eea80b9052a9b2b1b2a92ecf438d3c931535b78c946a667e2e1d6916fa3e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a339f6ed5e866b77c20ed4d97bad1020beaf64776ba81d720e6f7f1cde52c8c2"
-    sha256 cellar: :any_skip_relocation, ventura:       "a339f6ed5e866b77c20ed4d97bad1020beaf64776ba81d720e6f7f1cde52c8c2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5ae6483a4b7e13434144ae969bb1c71f0cf9829b3f328c891cf634a3b68f1d39"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f4bffb63e9cf282af86bc809f0c3943c028e641449591ee11c4534093a3a5312"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f4bffb63e9cf282af86bc809f0c3943c028e641449591ee11c4534093a3a5312"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "f4bffb63e9cf282af86bc809f0c3943c028e641449591ee11c4534093a3a5312"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d4544d04421f40b4bed519abd2d60e72cc5a3a1ba1477a2fdbf88ecb6cddac68"
+    sha256 cellar: :any_skip_relocation, ventura:       "d4544d04421f40b4bed519abd2d60e72cc5a3a1ba1477a2fdbf88ecb6cddac68"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7d76a11eaa466f32ac4f4420136c9050603042d30b141bc14dba2e78ed2cf695"
   end
 
   depends_on "go" => :build

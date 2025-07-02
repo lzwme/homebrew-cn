@@ -2,19 +2,18 @@ class MkdocsMaterial < Formula
   include Language::Python::Virtualenv
   desc "Material Design theme for MkDocs"
   homepage "https://squidfunk.github.io/mkdocs-material/"
-  url "https://files.pythonhosted.org/packages/b3/fa/0101de32af88f87cf5cc23ad5f2e2030d00995f74e616306513431b8ab4b/mkdocs_material-9.6.14.tar.gz"
-  sha256 "39d795e90dce6b531387c255bd07e866e027828b7346d3eba5ac3de265053754"
+  url "https://files.pythonhosted.org/packages/95/c1/f804ba2db2ddc2183e900befe7dad64339a34fa935034e1ab405289d0a97/mkdocs_material-9.6.15.tar.gz"
+  sha256 "64adf8fa8dba1a17905b6aee1894a5aafd966d4aeb44a11088519b0f5ca4f1b5"
   license "MIT"
-  revision 2
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "8bd31294c7adbda8a4f2c391ffc0b3ada7c62a2438acb3094ea541c56fd97fd1"
-    sha256 cellar: :any,                 arm64_sonoma:  "15eb04e9b3415c96e7c637714e631406fb3483768b1b654b6577da8afa6d6ccb"
-    sha256 cellar: :any,                 arm64_ventura: "2974b25cf5365df0040b8acdf3f3ca70321f6214687d06842d1157074a0b12c4"
-    sha256 cellar: :any,                 sonoma:        "b0d021f407e35e8cde03505c9060dc746ffbc13acc15537673cf809d42b5fd24"
-    sha256 cellar: :any,                 ventura:       "503e92f1d9bf5e8068695456504a5487b499a7ea9e558f87a9ccd6fb15ac8c38"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5567a7a54a65da120c39f6c81bf63c1af73bb1d3049e500f91658e8a1ade0d16"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "71100951063b1fe7ae02cb6c8d4bcaae2725a407baa0a2c13dcbae05ddb884ff"
+    sha256 cellar: :any,                 arm64_sequoia: "e6f400f161a930eb675eac5026f71823cc9f55f5ab008771e6769739bac15481"
+    sha256 cellar: :any,                 arm64_sonoma:  "065126c47bb3c1837c8f38e9d5dbc9ea3a813a9dd25993eeff0e8adda297728f"
+    sha256 cellar: :any,                 arm64_ventura: "0b5a17e5ac781f3d70eeb8920fd24fb3af80668c64a23da131699a9c5313b93f"
+    sha256 cellar: :any,                 sonoma:        "59497937a7bc227b5af5bd8966771ddea82390cf7683ac183482675548b242ab"
+    sha256 cellar: :any,                 ventura:       "201a5d055ba9d66173a780a98186091c7c538814b9f46564a23bda1735788395"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fd2613c1e478f092c0db01f7ca1df5d50ed4a57424289e6c78895799ce0b762c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5ba70df0028ca715682c1e76242013d3121bb615b952c8877de219470260101b"
   end
 
   depends_on "libyaml"
@@ -28,8 +27,8 @@ class MkdocsMaterial < Formula
   end
 
   resource "backrefs" do
-    url "https://files.pythonhosted.org/packages/6c/46/caba1eb32fa5784428ab401a5487f73db4104590ecd939ed9daaf18b47e0/backrefs-5.8.tar.gz"
-    sha256 "2cab642a205ce966af3dd4b38ee36009b31fa9502a35fd61d59ccc116e40a6bd"
+    url "https://files.pythonhosted.org/packages/eb/a7/312f673df6a79003279e1f55619abbe7daebbb87c17c976ddc0345c04c7b/backrefs-5.9.tar.gz"
+    sha256 "808548cb708d66b82ee231f962cb36faaf4f2baab032f2fbb783e9c2fdddaa59"
   end
 
   resource "certifi" do
@@ -118,13 +117,13 @@ class MkdocsMaterial < Formula
   end
 
   resource "pygments" do
-    url "https://files.pythonhosted.org/packages/7c/2d/c3338d48ea6cc0feb8446d8e6937e1408088a72a39937982cc6111d17f84/pygments-2.19.1.tar.gz"
-    sha256 "61c16d2a8576dc0649d9f39e089b5f02bcd27fba10d8fb4dcc28173f7a45151f"
+    url "https://files.pythonhosted.org/packages/b0/77/a5b8c569bf593b0140bde72ea885a803b82086995367bf2037de0159d924/pygments-2.19.2.tar.gz"
+    sha256 "636cb2477cec7f8952536970bc533bc43743542f70392ae026374600add5b887"
   end
 
   resource "pymdown-extensions" do
-    url "https://files.pythonhosted.org/packages/08/92/a7296491dbf5585b3a987f3f3fc87af0e632121ff3e490c14b5f2d2b4eb5/pymdown_extensions-10.15.tar.gz"
-    sha256 "0e5994e32155f4b03504f939e501b981d306daf7ec2aa1cd2eb6bd300784f8f7"
+    url "https://files.pythonhosted.org/packages/1a/0a/c06b542ac108bfc73200677309cd9188a3a01b127a63f20cadc18d873d88/pymdown_extensions-10.16.tar.gz"
+    sha256 "71dac4fca63fabeffd3eb9038b756161a33ec6e8d230853d3cecf562155ab3de"
   end
 
   resource "python-dateutil" do

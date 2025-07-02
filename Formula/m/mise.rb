@@ -1,8 +1,8 @@
 class Mise < Formula
   desc "Polyglot runtime manager (asdf rust clone)"
   homepage "https:mise.jdx.dev"
-  url "https:github.comjdxmisearchiverefstagsv2025.6.8.tar.gz"
-  sha256 "e51ef65a03e8da03ee1d2b75bd2a3715318a33ecef1223216761f6eaecad2cf0"
+  url "https:github.comjdxmisearchiverefstagsv2025.7.0.tar.gz"
+  sha256 "ddbb548d2f4e5d27bffa11f61747b377e029939d62f49601cf291409f1d84d8c"
   license "MIT"
   head "https:github.comjdxmise.git", branch: "main"
 
@@ -12,13 +12,13 @@ class Mise < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "76651a7961cbb873a6f9c891bde5184b6e9ef831dd0f2e260f4b0adff770f043"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3a947d6f550c290a4f1db9a6b25683c30aaf46ebab4e17b100238221e0e1dd50"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "4981514810577fc9faeac1d87a0dcf84bed489433a3f9903c8a22357c5de11b4"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8d6b38f8dbcdeebc43d5bbdcde7fc487cbed444849ea97b4d8417b650e82e440"
-    sha256 cellar: :any_skip_relocation, ventura:       "7b28495dcfdc01a58f7e422f7d7deb649dfcb9ac26d5260748c6bf809f30807c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c30383e0400c8747aebd3a66c1d4ad86f38aab2e08dbb3738880d5c57ef4a88a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "28e0a037fd6c58bc24891534cadf4a7f7433bdbb9096bf7bfaa31259387bd312"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7c3ba509c3a732e9553169b556ff60bbb0b958cbb9f1833903c75e58616735c5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6869f7f8f26b2b76febf5097fc0073d32dc48cd1f7f9753d6357f11de9ae80c1"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "0f94b5d27ac6f49f416b08d46b8de1027daa9e8de51a4df4578e505a9d35e9a1"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8f0995f4b9563350b36059b72b6023036fb3fa4539352141d8161f6e525982d6"
+    sha256 cellar: :any_skip_relocation, ventura:       "218c38f7b36d5560a6550f60a101011dfa3c5c7e2409d92dc98674446b9bb4d6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a02abb9114ec72e525d07de565f83ef35e37f1d657a3cbbb15231d31c37c2f5f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "728418d9381ed4743b463c23656e6fdb97459d93952b6c161a26bfea1d1ee043"
   end
 
   depends_on "pkgconf" => :build

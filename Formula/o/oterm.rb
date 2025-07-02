@@ -3,18 +3,18 @@ class Oterm < Formula
 
   desc "Terminal client for Ollama"
   homepage "https:github.comggozadoterm"
-  url "https:files.pythonhosted.orgpackagesd125f242536cc12d4acdcaf0764c7b168fffc221d787ddacd914dca6d29153e7oterm-0.14.0.tar.gz"
-  sha256 "8a08b77012ff95ff47caec6a65d410733041d2046efffe56ba4af58c1ce8b592"
+  url "https:files.pythonhosted.orgpackagesc5c55915b90d50574cebea30f8455e6444c8428344df8e3cb23f7723d837529doterm-0.14.1.tar.gz"
+  sha256 "511b29ae2e61db6439ea8dd72e96caa2b61af16f68ce5fb86958b88f9de0d605"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "d00693e311c375bcfdc7ebaa4c4c3a7785a91ed2430ebd66c5231a6faf85b260"
-    sha256 cellar: :any,                 arm64_sonoma:  "688099b24e24ba4c9070d75588ca5c1e1f0ce8a6b32b7cd55f3eb337e0bf6095"
-    sha256 cellar: :any,                 arm64_ventura: "9b322a2eebe346ce0637681f43628dde2a4991573eb22a878525fe12e78576e3"
-    sha256 cellar: :any,                 sonoma:        "20b894af729db7c114a3ffbafec0124646da0907a877b37fdf183aaa10c951c4"
-    sha256 cellar: :any,                 ventura:       "1068f96b730f967fd442ca306a909be1af40657b97c9d4f82b66bb9c0d693c6d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ba7427ad11333b77d053cec081166a13497cefb8d79a53d093255534c9833946"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "17f82762d825c9180d13f159606fda0c241905af2eaaf6a478fee9a9ca15e0b7"
+    sha256 cellar: :any,                 arm64_sequoia: "c05dff21961f02bf047bc1e07c3f785fc39a897f9cf0819c2a8b2a624802b51f"
+    sha256 cellar: :any,                 arm64_sonoma:  "6e40f3566716833245850d7a8c313218ece15fb39455f3cd986b5a966468aa9a"
+    sha256 cellar: :any,                 arm64_ventura: "66af11c4b18b8316f81a34efcca4b145398932efec826302fd6188a2fb53832e"
+    sha256 cellar: :any,                 sonoma:        "e1523b8e35e39f0e3de0a3f58cbfe1a8987333751a335e9bded640539036f8c8"
+    sha256 cellar: :any,                 ventura:       "161b609cefe71bc6b2d60c1314fd709ff38f690c1603bb3db882d2a8d5e29f80"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "be2fb208a0ab50da6bd3ff65587dfb7054bcc3517a5f2304f3b85aa6cf23a155"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c14ba8d610eb36e2cc82ef9fb985dd454c7a922207eac574fcb3fd440e1bdc4e"
   end
 
   depends_on "pkgconf" => :build
@@ -53,6 +53,11 @@ class Oterm < Formula
     sha256 "673c0c244e15788651a4ff38710fea9675823028a6f08a5eda409e0c9840a028"
   end
 
+  resource "attrs" do
+    url "https:files.pythonhosted.orgpackages5ab01367933a8532ee6ff8d63537de4f1177af4bff9f3e829baf7331f595bb24attrs-25.3.0.tar.gz"
+    sha256 "75d7cefc7fb576747b2c81b4442d4d4a1ce0900973527c011d1030fd3bf4af1b"
+  end
+
   resource "authlib" do
     url "https:files.pythonhosted.orgpackagesa29db1e08d36899c12c8b894a44a5583ee157789f26fc4b176f8e4b6217b56e1authlib-1.6.0.tar.gz"
     sha256 "4367d32031b7af175ad3a323d571dc7257b7099d55978087ceae4a0d88cd3210"
@@ -69,8 +74,8 @@ class Oterm < Formula
   end
 
   resource "fastmcp" do
-    url "https:files.pythonhosted.orgpackages8da3d5b2c47b25d13cca8108e077bf4a72b255b113fb525f4c22ce9ca5af9b08fastmcp-2.8.0.tar.gz"
-    sha256 "8a6427ece23d0a324d4be2043598c8b89a91b2b5688873d8ae1e7aeaa7960513"
+    url "https:files.pythonhosted.orgpackages0476d9b352dd632dbac9eea3255df7bba6d83b2def769b388ec332368d7b4638fastmcp-2.8.1.tar.gz"
+    sha256 "c89d8ce8bf53a166eda444cfdcb2c638170e62445487229fbaf340aed31beeaf"
   end
 
   resource "h11" do
@@ -89,13 +94,23 @@ class Oterm < Formula
   end
 
   resource "httpx-sse" do
-    url "https:files.pythonhosted.orgpackages4c608f4281fa9bbf3c8034fd54c0e7412e66edbab6bc74c4996bd616f8d0406ehttpx-sse-0.4.0.tar.gz"
-    sha256 "1e81a3a3070ce322add1d3529ed42eb5f70817f45ed6ec915ab753f961139721"
+    url "https:files.pythonhosted.orgpackages6efa66bd985dd0b7c109a3bcb89272ee0bfb7e2b4d06309ad7b38ff866734b2ahttpx_sse-0.4.1.tar.gz"
+    sha256 "8f44d34414bc7b21bf3602713005c5df4917884f76072479b21f68befa4ea26e"
   end
 
   resource "idna" do
     url "https:files.pythonhosted.orgpackagesf1707703c29685631f5a7590aa73f1f1d3fa9a380e654b86af429e0934a32f7didna-3.10.tar.gz"
     sha256 "12f65c9b470abda6dc35cf8e63cc574b1c52b11df2c86030af0ac09b01b13ea9"
+  end
+
+  resource "jsonschema" do
+    url "https:files.pythonhosted.orgpackagesbfd31cf5326b923a53515d8f3a2cd442e6d7e94fcc444716e879ea70a0ce3177jsonschema-4.24.0.tar.gz"
+    sha256 "0b4e8069eb12aedfa881333004bccaec24ecef5a8a6a4b6df142b2cc9599d196"
+  end
+
+  resource "jsonschema-specifications" do
+    url "https:files.pythonhosted.orgpackagesbfce46fbd9c8119cfc3581ee5643ea49464d168028cfb5caff5fc0596d0cf914jsonschema_specifications-2025.4.1.tar.gz"
+    sha256 "630159c9f4dbea161a6a2205c3011cc4f18ff381b189fff48bb39b9bf26ae608"
   end
 
   resource "linkify-it-py" do
@@ -109,8 +124,8 @@ class Oterm < Formula
   end
 
   resource "mcp" do
-    url "https:files.pythonhosted.orgpackages06f2dc2450e566eeccf92d89a00c3e813234ad58e2ba1e31d11467a09ac4f3b9mcp-1.9.4.tar.gz"
-    sha256 "cfb0bcd1a9535b42edaef89947b9e18a8feb49362e1cc059d6e7fc636f2cb09f"
+    url "https:files.pythonhosted.orgpackages7c6863045305f29ff680a9cd5be360c755270109e6b76f696ea6824547ddbc30mcp-1.10.1.tar.gz"
+    sha256 "aaa0957d8307feeff180da2d9d359f2b801f35c0c67f1882136239055ef034c2"
   end
 
   resource "mdit-py-plugins" do
@@ -139,8 +154,8 @@ class Oterm < Formula
   end
 
   resource "pillow" do
-    url "https:files.pythonhosted.orgpackagesafcbbb5c01fcd2a69335b86c22142b2bccfc3464087efb7fd382eee5ffc7fdf7pillow-11.2.1.tar.gz"
-    sha256 "a64dd61998416367b7ef979b73d3a85853ba9bec4c2925f74e588879a58716b6"
+    url "https:files.pythonhosted.orgpackagesf30dd0d6dea55cd152ce3d6767bb38a8fc10e33796ba4ba210cbab9354b6d238pillow-11.3.0.tar.gz"
+    sha256 "3828ee7586cd0b2091b6209e5ad53e20d0649bbe87164a459d0676e035e8f523"
   end
 
   resource "platformdirs" do
@@ -149,8 +164,8 @@ class Oterm < Formula
   end
 
   resource "pydantic" do
-    url "https:files.pythonhosted.orgpackagesf0868ce9040065e8f924d642c58e4a344e33163a07f6b57f836d0d734e0ad3fbpydantic-2.11.5.tar.gz"
-    sha256 "7f853db3d0ce78ce8bbb148c401c2cdd6431b3473c0cdff2755c7690952a7b7a"
+    url "https:files.pythonhosted.orgpackages00dd4325abf92c39ba8623b5af936ddb36ffcfe0beae70405d456ab1fb2f5b8cpydantic-2.11.7.tar.gz"
+    sha256 "d989c3c6cb79469287b1569f7447a17848c998458d49ebe294e975b9baf0f0db"
   end
 
   resource "pydantic-core" do
@@ -159,18 +174,18 @@ class Oterm < Formula
   end
 
   resource "pydantic-settings" do
-    url "https:files.pythonhosted.orgpackages671d42628a2c33e93f8e9acbde0d5d735fa0850f3e6a2f8cb1eb6c40b9a732acpydantic_settings-2.9.1.tar.gz"
-    sha256 "c509bf79d27563add44e8446233359004ed85066cd096d8b510f715e6ef5d268"
+    url "https:files.pythonhosted.orgpackages68851ea668bbab3c50071ca613c6ab30047fb36ab0da1b92fa8f17bbc38fd36cpydantic_settings-2.10.1.tar.gz"
+    sha256 "06f0062169818d0f5524420a360d632d5857b83cffd4d42fe29597807a1614ee"
   end
 
   resource "pygments" do
-    url "https:files.pythonhosted.orgpackages7c2dc3338d48ea6cc0feb8446d8e6937e1408088a72a39937982cc6111d17f84pygments-2.19.1.tar.gz"
-    sha256 "61c16d2a8576dc0649d9f39e089b5f02bcd27fba10d8fb4dcc28173f7a45151f"
+    url "https:files.pythonhosted.orgpackagesb077a5b8c569bf593b0140bde72ea885a803b82086995367bf2037de0159d924pygments-2.19.2.tar.gz"
+    sha256 "636cb2477cec7f8952536970bc533bc43743542f70392ae026374600add5b887"
   end
 
   resource "python-dotenv" do
-    url "https:files.pythonhosted.orgpackages882c7bb1416c5620485aa793f2de31d3df393d3686aa8a8506d11e10e13c5bafpython_dotenv-1.1.0.tar.gz"
-    sha256 "41f90bc6f5f177fb41f53e87666db362025010eb28f60a01c9143bfa33a2b2d5"
+    url "https:files.pythonhosted.orgpackagesf6b04bc07ccd3572a2f9df7e6782f52b0c6c90dcbb803ac4a167702d7d0dfe1epython_dotenv-1.1.1.tar.gz"
+    sha256 "a8a6399716257f45be6a007360200409fce5cda2661e3dec71d23dc15f6189ab"
   end
 
   resource "python-multipart" do
@@ -178,9 +193,19 @@ class Oterm < Formula
     sha256 "8dd0cab45b8e23064ae09147625994d090fa46f5b0d1e13af944c331a7fa9d13"
   end
 
+  resource "referencing" do
+    url "https:files.pythonhosted.orgpackages2fdb98b5c277be99dd18bfd91dd04e1b759cad18d1a338188c936e92f921c7e2referencing-0.36.2.tar.gz"
+    sha256 "df2e89862cd09deabbdba16944cc3f10feb6b3e6f18e902f7cc25609a34775aa"
+  end
+
   resource "rich" do
     url "https:files.pythonhosted.orgpackagesa153830aa4c3066a8ab0ae9a9955976fb770fe9c6102117c8ec4ab3ea62d89e8rich-14.0.0.tar.gz"
     sha256 "82f1bc23a6a21ebca4ae0c45af9bdbc492ed20231dcb63f297d6d1021a9d5725"
+  end
+
+  resource "rpds-py" do
+    url "https:files.pythonhosted.orgpackages8ca660184b7fc00dd3ca80ac635dd5b8577d444c57e8e8742cecabfacb829921rpds_py-0.25.1.tar.gz"
+    sha256 "8960b6dac09b62dac26e75d7e2c4a22efb835d827a7278c34f72b2b84fa160e3"
   end
 
   resource "shellingham" do
@@ -199,8 +224,8 @@ class Oterm < Formula
   end
 
   resource "starlette" do
-    url "https:files.pythonhosted.orgpackages8bd00332bd8a25779a0e2082b0e179805ad39afad642938b371ae0882e7f880dstarlette-0.47.0.tar.gz"
-    sha256 "1f64887e94a447fed5f23309fb6890ef23349b7e478faa7b24a851cd4eb844af"
+    url "https:files.pythonhosted.orgpackages0a69662169fdb92fb96ec3eaee218cf540a629d629c86d7993d9651226a6789bstarlette-0.47.1.tar.gz"
+    sha256 "aef012dd2b6be325ffa16698f9dc533614fb1cebd593a906b90dc1025529a79b"
   end
 
   resource "terminaltexteffects" do
@@ -214,8 +239,8 @@ class Oterm < Formula
   end
 
   resource "textual-image" do
-    url "https:files.pythonhosted.orgpackages40e1ad90ae431c615dd1ec5cdbf21ae573f8af68283619cf6c0f404e684d61abtextual_image-0.8.2.tar.gz"
-    sha256 "484fe6ab4a19cf243ea397dd34255092783231f3fbce91f50800faa5852254a0"
+    url "https:files.pythonhosted.orgpackagesfc97aa86f7f1f18b69d0c5cdebd074dbddf8f1a6390b3072af90db2c978a0099textual_image-0.8.3.tar.gz"
+    sha256 "1695797f9959bf87b297d4aa5ef9d9bb8b3400d6f305be3fa1ecd4c5bdf73ba5"
   end
 
   resource "textualeffects" do
@@ -244,8 +269,8 @@ class Oterm < Formula
   end
 
   resource "uvicorn" do
-    url "https:files.pythonhosted.orgpackagesdead713be230bcda622eaa35c28f0d328c3675c371238470abdea52417f17a8euvicorn-0.34.3.tar.gz"
-    sha256 "35919a9a979d7a59334b6b10e05d77c1d0d574c50e0fc98b8b1a0f165708b55a"
+    url "https:files.pythonhosted.orgpackages5e42e0e305207bb88c6b8d3061399c6a961ffe5fbb7e2aa63c9234df7259e9cduvicorn-0.35.0.tar.gz"
+    sha256 "bc662f087f7cf2ce11a1d7fd70b90c9f98ef2e2831556dd078d131b96cc94a01"
   end
 
   def install

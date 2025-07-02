@@ -3,18 +3,18 @@ class YtDlp < Formula
 
   desc "Feature-rich command-line audiovideo downloader"
   homepage "https:github.comyt-dlpyt-dlp"
-  url "https:files.pythonhosted.orgpackages88775e86a5345fe1cf5bad022a1b7323c9934c6a867e886fdc0cae44de8a0589yt_dlp-2025.6.25.tar.gz"
-  sha256 "242b648e1a18ab04bdd4cc175a317fe8ec3ad7d0175eee9f981912624b3d6c8b"
+  url "https:files.pythonhosted.orgpackages239cff64c2fed7909f43a9a0aedb7395c65404e71c2439198764685a6e3b3059yt_dlp-2025.6.30.tar.gz"
+  sha256 "6d0ae855c0a55bfcc28dffba804ec8525b9b955d34a41191a1561a4cec03d8bd"
   license "Unlicense"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e3db1da3736c05ff3838216282355ae0294e4d30ed1786f6b3c2e91e6240355a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dbd1411792da3fdd61c08d18beaae8a88300c63a21611d21523e72d8585b3ed5"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "a042dcfafcccd17f3b141f799d3dd88574b4ed8da44f250f4d6b0f971a6f89b5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6f17c649cce1dc8d23d38b00501ef77b94c747697b37e2dd1325a57ac05b2d0a"
-    sha256 cellar: :any_skip_relocation, ventura:       "55f77a0d89e75cc9f260b6cb3022c1597df49002f782f98eea24eba4c0d09483"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6e2682851169a4172648647c0356b35feeea31c233c457e2dffe222659d457a3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a479fa0ec001e5cab1cbaa6834162e773fb356579b9ac0b214b8285a7a7cc313"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e2c77d81502dd3f2315bbff5d0d0e2151a03799511dee60d595cbc8f9451c106"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fbd4b226e2a1fcd857c909e32304269af0581af8e293788d86b44307c1907d5b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "cc064cf49827d279a9104559bd0563fdc17c97b82f0fb4d94028587df5724da5"
+    sha256 cellar: :any_skip_relocation, sonoma:        "da0e2e6866599c5d885771e4d87029732d29d21448352512ae0bd40429eda94a"
+    sha256 cellar: :any_skip_relocation, ventura:       "9f3e6bd814e1fe9209311b1c4bc67186c70445149e12d93ba2e0707dc1007108"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e1e50eae69a841057be2ef38d567b560a32b00b495b9d1dccf226635d39a2298"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5f98f24fdd3b31a7c3bbd2e589feef3cb0094b5fe0dcdadce426459b591d7919"
   end
 
   head do

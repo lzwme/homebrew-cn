@@ -1,20 +1,20 @@
 class Daq < Formula
   desc "Network intrusion prevention and detection system"
   homepage "https:www.snort.org"
-  url "https:github.comsnort3libdaqarchiverefstagsv3.0.19.tar.gz"
-  mirror "https:fossies.orglinuxmisclibdaq-3.0.19.tar.gz"
-  sha256 "28d026de46f8206b1a74dd6bf7de10ca19d7a7c95a463744b9f79e51958e5889"
+  url "https:github.comsnort3libdaqarchiverefstagsv3.0.20.tar.gz"
+  mirror "https:fossies.orglinuxmisclibdaq-3.0.20.tar.gz"
+  sha256 "42730cb427695d4049deaa667623036b3915eaa651bcb91493ca450f06bb36b3"
   license "GPL-2.0-only"
   head "https:github.comsnort3libdaq.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "de5fecd1ca4361de4a8435280165af94aab2dc93ef0e5596a1bf7ad5e52213ed"
-    sha256 cellar: :any,                 arm64_sonoma:  "95684f5dbb32aee8326a248018e22ccf2457e1d0d8c6513bf5886663588987e4"
-    sha256 cellar: :any,                 arm64_ventura: "c698259bece3eeaca5400f4834b6868f182545137c31ef3b55320ab72b7c3ec6"
-    sha256 cellar: :any,                 sonoma:        "97f451492598266dd1802c7ef01306793f3093e1199c432714240831956c0dc1"
-    sha256 cellar: :any,                 ventura:       "e36b53523a795b1b2d1b6c706760ca98021982e001c29efe44aecc67008f4f83"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6ceaab9f251d411b7bfa21784715a7c2eedd58511128f09b7d90ab15c645b30b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "274a26aa6ea3813c7551a43f8f9176293eb20ce87e813fb86d6ee4de08daf7d5"
+    sha256 cellar: :any,                 arm64_sequoia: "53b81cccef754c485d9b9490d8370e66e635aad54d5cae177f9670b696f3efe5"
+    sha256 cellar: :any,                 arm64_sonoma:  "bfb7ff5160c7a92c2ca0a05bc48e6f8a0d31b2baa0e69e0d01d52b8d5146f41b"
+    sha256 cellar: :any,                 arm64_ventura: "3c438e99a6dbae1f9beb74858e14ccfb8ded36f9f61b495b097a4e4da5b86739"
+    sha256 cellar: :any,                 sonoma:        "0564b9292a07f73e12d3719977d4d881f805cd32be466048a8737783dfd88e3c"
+    sha256 cellar: :any,                 ventura:       "4f4d87d513a0c623d0215e418be924df17765e0c8d3fa53a4d17d79c818ee82c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "195847be1474de3f89ddd034355fca2202416ce9721923a634d0200d296c777a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8abbc1fb066314bc5eee062f86e7c066ad6fce6a52ac9f5fbb7b3c668981187e"
   end
 
   depends_on "autoconf" => :build

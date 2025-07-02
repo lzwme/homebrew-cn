@@ -1,9 +1,9 @@
 class RomTools < Formula
   desc "Tools for Multiple Arcade Machine Emulator"
   homepage "https:www.mamedev.org"
-  url "https:github.commamedevmamearchiverefstagsmame0277.tar.gz"
-  version "0.277"
-  sha256 "60055b19fc96306927257c5ffc265ecebcbe5c944cf98113d4d78f6304556c67"
+  url "https:github.commamedevmamearchiverefstagsmame0278.tar.gz"
+  version "0.278"
+  sha256 "ca5f44a0ed834875f8420a75587706af210ff8c5922942509bc5bfef7d45c360"
   license "GPL-2.0-or-later"
   head "https:github.commamedevmame.git", branch: "master"
 
@@ -14,12 +14,12 @@ class RomTools < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "bd78e16ae965b563b274495eeac4cb0361e68778874d5c5a9616ac4fb1c925d7"
-    sha256 cellar: :any,                 arm64_sonoma:  "42a638be8c1f2e9b67f9866af6d4fc6bd588978a833db96f999a6214fb4c0575"
-    sha256 cellar: :any,                 arm64_ventura: "42c3ff0e18501b365d26a7ae495ad1fbe55ee9413086a734be7255325d2f3fd6"
-    sha256 cellar: :any,                 sonoma:        "20ee2c9b36b8d0305535b160f9e579c0030c4f47a5d44c7ac8a81babd731091c"
-    sha256 cellar: :any,                 ventura:       "05bc9c5b586a1fecd3243ee3e305ff0dd37c1e01985e6962997aad0ae00bb423"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2023d41afb0306cdd7b8457ed3d537ac14fddc97b7525465808aaf248a4916b0"
+    sha256 cellar: :any,                 arm64_sequoia: "c94c86c35e5b73d192e1a564ad7c6808d21426cff3dabddac4fe3f82b583a8c8"
+    sha256 cellar: :any,                 arm64_sonoma:  "1c157aceca6d33628c8cdcfac5b78a0da4f301a94044b76271d374323e9d610d"
+    sha256 cellar: :any,                 arm64_ventura: "1a65216b58800ab40268b24b0cb05862da34f24b39ee9417b91820cba3d68fc2"
+    sha256 cellar: :any,                 sonoma:        "be7838b62562698fd14cc2525611dff16bf94639218c6a5792101ff89241e1f1"
+    sha256 cellar: :any,                 ventura:       "1e55b4b8b3bcbd420eeaf5afc4c7f7930de103b579e82f6e18999e6cd76c98e9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e64b697d9abec5e9706156ebc621969277466eb3ca6c03fa9cb6212ed2022909"
   end
 
   depends_on "asio" => :build
