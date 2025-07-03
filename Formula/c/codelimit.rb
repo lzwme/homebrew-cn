@@ -3,19 +3,18 @@ class Codelimit < Formula
 
   desc "Your Refactoring Alarm"
   homepage "https:github.comgetcodelimitcodelimit"
-  url "https:files.pythonhosted.orgpackagesb23588c6a31a680aaaa08906162e1a64187e8379c2f6fdf68a457d61e8a32ed1codelimit-0.18.1.tar.gz"
-  sha256 "208e814cb3320ce5d1f862fc984b4e09760595b9ed6362bdc11214e3ee155549"
+  url "https:files.pythonhosted.orgpackagese28fa4acc68206ceb38577c816046df11a35c94e658b5ac2cfbefced16b47642codelimit-0.19.8.tar.gz"
+  sha256 "5bce47841a745fdb51779d31e593476af3e8979ea44cbff06cb2a25bd1ee74d8"
   license "GPL-3.0-or-later"
-  revision 2
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "51d2b36247f381cb3a00a1d32638b13e306b248a6faf2d23d57f73d4f1ac41ca"
-    sha256 cellar: :any,                 arm64_sonoma:  "6f94801c8c0a62be52f69fb7ca4888e3a6544efdda27dc2adcf91c2416ae26da"
-    sha256 cellar: :any,                 arm64_ventura: "429cb5137167ebbc8514f3b72e6f4c5fb31638f060beba15c190f7da709676e4"
-    sha256 cellar: :any,                 sonoma:        "cd3f2af21686de51775d79de85b61d7853e4a32bf1ebecafe0af19b982402247"
-    sha256 cellar: :any,                 ventura:       "8f6d581fe89d46a3128011793c045d2a886a1386e592911f26d3d728f8747786"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a999e3ad0fe82b29d24dd69135d7180c3d53b663df8cd0e9764155d77020820a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2009e7baacaf96f69ada640dc5bc66ea3cc8e150fb6d362c88de35148eef5fca"
+    sha256 cellar: :any,                 arm64_sequoia: "860ac695330210f0607528a64d32bcc57bac7baa13ed606d3f35719f0d776790"
+    sha256 cellar: :any,                 arm64_sonoma:  "595182995e54bd1fc7f8fadc87258223e4192b5558883673f6d49673f667e363"
+    sha256 cellar: :any,                 arm64_ventura: "bc9c14f6a8b110b39e2751aa16e4420fe274070b6ec22c85eebabfb0953b9351"
+    sha256 cellar: :any,                 sonoma:        "55175295d512ba6b9dadf948510cd96d24bebd55266b5277a49e85252249c0f6"
+    sha256 cellar: :any,                 ventura:       "a3c6fe5d85d9e40050500d0190d127bbaa2dffd878183c71ac170b477764a2ef"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "afaca3d729e23de8e77de72bacff0e73036c7d4cd61d096c2d9b9c3454cc453c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "992e8724cc58bdcfb10bcbca1571e0790c0498a54ce6e0f0d870f88f329424b6"
   end
 
   depends_on "certifi"
@@ -73,8 +72,8 @@ class Codelimit < Formula
   end
 
   resource "multidict" do
-    url "https:files.pythonhosted.orgpackages46b559f27b4ce9951a4bce56b88ba5ff5159486797ab18863f2b4c1c5e8465bdmultidict-6.5.0.tar.gz"
-    sha256 "942bd8002492ba819426a8d7aefde3189c1b87099cdf18aaaefefcf7f3f7b6d2"
+    url "https:files.pythonhosted.orgpackages3d2c5dad12e82fbdf7470f29bff2171484bf07cb3b16ada60a6589af8f376440multidict-6.6.3.tar.gz"
+    sha256 "798a9eb12dab0a6c2e29c1de6f3468af5cb2da6053a20dfa3344907eed0937cc"
   end
 
   resource "pathspec" do
@@ -88,8 +87,8 @@ class Codelimit < Formula
   end
 
   resource "pygments" do
-    url "https:files.pythonhosted.orgpackages7c2dc3338d48ea6cc0feb8446d8e6937e1408088a72a39937982cc6111d17f84pygments-2.19.1.tar.gz"
-    sha256 "61c16d2a8576dc0649d9f39e089b5f02bcd27fba10d8fb4dcc28173f7a45151f"
+    url "https:files.pythonhosted.orgpackagesb077a5b8c569bf593b0140bde72ea885a803b82086995367bf2037de0159d924pygments-2.19.2.tar.gz"
+    sha256 "636cb2477cec7f8952536970bc533bc43743542f70392ae026374600add5b887"
   end
 
   resource "pyperclip" do
@@ -117,9 +116,14 @@ class Codelimit < Formula
     sha256 "653227a7c41a284ec5302173fbc044ee817c7bad5e6e4d8d55741b9aeb9eb65b"
   end
 
+  resource "shellingham" do
+    url "https:files.pythonhosted.orgpackages58158b3609fd3830ef7b27b655beb4b4e9c62313a4e8da8c676e142cc210d58eshellingham-1.5.4.tar.gz"
+    sha256 "8dbca0739d487e5bd35ab3ca4b36e11c4078f3a234bfce294b0a0291363404de"
+  end
+
   resource "typer" do
-    url "https:files.pythonhosted.orgpackagese97db1e0399aa5e27071f0042784681d28417f3e526c61f62c8e3635ee5ad334typer-0.9.4.tar.gz"
-    sha256 "f714c2d90afae3a7929fcd72a3abb08df305e1ff61719381384211c4070af57f"
+    url "https:files.pythonhosted.orgpackagesc58c7d682431efca5fd290017663ea4588bf6f2c6aad085c7f108c5dbc316e70typer-0.16.0.tar.gz"
+    sha256 "af377ffaee1dbe37ae9440cb4e8f11686ea5ce4e9bae01b84ae7c63b87f1dd3b"
   end
 
   resource "typing-extensions" do

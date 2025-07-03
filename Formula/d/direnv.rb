@@ -1,18 +1,18 @@
 class Direnv < Formula
   desc "Loadunload environment variables based on $PWD"
   homepage "https:direnv.net"
-  url "https:github.comdirenvdirenvarchiverefstagsv2.36.0.tar.gz"
-  sha256 "edb89ca67ef46a792d4e20177dae9dbd229e26dcbcfb17baa9645c1ff7cc47b0"
+  url "https:github.comdirenvdirenvarchiverefstagsv2.37.0.tar.gz"
+  sha256 "6302f3eb824ae5f7d33475c6e9ac0ec46a228e282fca7dba881f3536575a25c8"
   license "MIT"
   head "https:github.comdirenvdirenv.git", branch: "master"
 
   bottle do
-    sha256 arm64_sequoia: "8a1b7af4d31aa491936580dbd610fb42ff7dadfbcf4c17dde7cba96b9455fae7"
-    sha256 arm64_sonoma:  "3ff6d45f5f77b9a52940e919e688b0fbe47a53aa76c6716619dc29f85bc2c149"
-    sha256 arm64_ventura: "960dc9caf8b3724bf2da2f08b44d4b7feedbe486081cc1958cfe1c03f8439198"
-    sha256 sonoma:        "b9ad0b7bd6d72a57b52a78f481d53f6df54c589c913c4c8837b984719048de7a"
-    sha256 ventura:       "70d7017e51a8f523ebba0650a109e269cd8840366548ff321903a9ccea098cb6"
-    sha256 x86_64_linux:  "81c866237f98a187bd7bbeea7b96e1c05f85aa858142bb264b9b9e6ca33ec9c8"
+    sha256 arm64_sequoia: "ab0e6a6e1eb4470bdc3b32ef5624010001242093ec1373e31cfc6694f981807e"
+    sha256 arm64_sonoma:  "1614b03afdfc3b3943c60930e4cbb9652592112ee10ecfc4e38f4d76fc174f30"
+    sha256 arm64_ventura: "353e3c824dc3ad5ce5c18ecaa2d5dbc20edf48793d5fc6c6c007115bcefea824"
+    sha256 sonoma:        "8ba4372e96900ec76857e8209df674234c153ca56af79e5936177309d8852c2b"
+    sha256 ventura:       "04cb391732bdc57f76d69923ccc520c014ca6044bd7214bf8460ff5aecbc5ee4"
+    sha256 x86_64_linux:  "2ce06e59279add063270e73e0e7b56d560a051ae134e088080d13ff11bd2f7f1"
   end
 
   depends_on "go" => :build

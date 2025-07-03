@@ -1,8 +1,8 @@
 class Xbyak < Formula
   desc "C++ JIT assembler for x86 (IA32), x64 (AMD64, x86-64)"
   homepage "https:github.comherumixbyak"
-  url "https:github.comherumixbyakarchiverefstagsv7.26.tar.gz"
-  sha256 "e51f710b9df68f5cb9dcfe7c210ef181e177fd7ecdc32ec8c899ff7b013825c1"
+  url "https:github.comherumixbyakarchiverefstagsv7.27.tar.gz"
+  sha256 "abd179680ec96f7b079df4dcddace3c85158c843af13d6d9707d4e02b4463151"
   license "BSD-3-Clause"
   head "https:github.comherumixbyak.git", branch: "master"
 
@@ -12,7 +12,7 @@ class Xbyak < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "200651bc143a3ec988aa3ee2bde1d4b9732599b2b22a94e41d28c013a80b0506"
+    sha256 cellar: :any_skip_relocation, all: "5d45f31b727bfbd52f118765bfa42cdabd5704b5d4e9a10bda205d4930e9107b"
   end
 
   depends_on "cmake" => :build

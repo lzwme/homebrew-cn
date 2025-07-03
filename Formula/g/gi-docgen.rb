@@ -3,40 +3,31 @@ class GiDocgen < Formula
 
   desc "Documentation tool for GObject-based libraries"
   homepage "https:gnome.pages.gitlab.gnome.orggi-docgen"
-  url "https:files.pythonhosted.orgpackages55e1c32a1ee817fc7d11462b4ed8722b049c70dd61ce0b236f74e7cf4262412egi_docgen-2025.3.tar.gz"
-  sha256 "2fdb4f0f6b61184ab862fcfb41dafe1a795636de9fd8d21a8ca4feea3b6bf858"
+  url "https:files.pythonhosted.orgpackages4903b3202f4ae48f70db6c90402adf3350a8931034099ac6a006c5695d5e4740gi_docgen-2025.4.tar.gz"
+  sha256 "7fe066da082a4edcf924063767404f9d04a998f6c0f0c475b180fd9823a72dc5"
   license any_of: ["Apache-2.0", "GPL-3.0-or-later"]
   head "https:gitlab.gnome.orgGNOMEgi-docgen.git", branch: "main"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0aa97f57971062c123e025311cee713886f9864cc8310fd53befe7bb77412ac0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "395b6e9efcb926d26d6840163dbabcbeb22e37d3d33b48015a78c8d2cb97865e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "ca42b418a8fb2213a20293b9d898f1d35c2353f3a4e2639107497b2fc907aee9"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d5f8321066724c5ec51be489d5712b919c2475086dfae82903b53e251ddec68f"
-    sha256 cellar: :any_skip_relocation, ventura:       "fdf24279284551a55f263c562b7b6be74e444916efae31682925aea82710cfc1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0b20fa69a410bf970bd2c1c50be1b538ff0a091db5e8ac7a9187991484d9223a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "36f3a153cac22ae02776de17e6714abb9215f25116878a3fa12fd5be8391abf6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6834b4217746691bcd3a79f4b04887bb2bc6a071d29f65114a142e0ccc4752b3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5577adb3406ade02ff65139563f24371698ad49da681f689b6632a979c435600"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "9556ce24c21c9d6abe9ea0160d9bd41b61e9ecb346724f5e11797b063fffc4b0"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8ee19778956955c15c697b10cc0d403a1034a5e85136c58e3ed03168195f20ae"
+    sha256 cellar: :any_skip_relocation, ventura:       "3bbbbfdbeb4e1e2d856010da89c1412dd5660aca1d001bc39f00f3bcc762df0f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "39851a2a740213dded83243f8edfdceb70b5770636f8d3dae7ec54be34975e30"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4a91845314b9078473ff60d39f93b7b42a3f0c94a610b09f10095b91dd10f85f"
   end
 
   depends_on "python@3.13"
 
-  # Source for latest version is not available on PyPI, so using GitHub tarball instead.
-  # Issue ref: https:github.comjustinmayersmartypants.pyissues8
-  resource "smartypants" do
-    url "https:github.comjustinmayersmartypants.pyarchiverefstagsv2.0.1.tar.gz"
-    sha256 "b98191911ff3b4144ef8ad53e776a2d0ad24bd508a905c6ce523597c40022773"
-  end
-
   resource "jinja2" do
-    url "https:files.pythonhosted.orgpackagesaf92b3130cbbf5591acf9ade8708c365f3238046ac7cb8ccba6e81abccb0ccffjinja2-3.1.5.tar.gz"
-    sha256 "8fefff8dc3034e27bb80d67c671eb8a9bc424c0ef4c0826edbff304cceff43bb"
+    url "https:files.pythonhosted.orgpackagesdfbff7da0350254c0ed7c72f3e33cef02e048281fec7ecec5f032d4aac52226bjinja2-3.1.6.tar.gz"
+    sha256 "0137fb05990d35f1275a587e9aee6d56da821fc83491a0fb838183be43f66d6d"
   end
 
   resource "markdown" do
-    url "https:files.pythonhosted.orgpackages54283af612670f82f4c056911fbbbb42760255801b3068c48de792d354ff4472markdown-3.7.tar.gz"
-    sha256 "2ae2471477cfd02dbbf038d5d9bc226d40def84b4fe2986e49b59b6b472bbed2"
+    url "https:files.pythonhosted.orgpackagesd7c24ab49206c17f75cb08d6311171f2d65798988db4360c4d1485bd0eedd67cmarkdown-3.8.2.tar.gz"
+    sha256 "247b9a70dd12e27f67431ce62523e675b866d254f900c4fe75ce3dda62237c45"
   end
 
   resource "markupsafe" do
@@ -45,13 +36,18 @@ class GiDocgen < Formula
   end
 
   resource "packaging" do
-    url "https:files.pythonhosted.orgpackagesd06368dbb6eb2de9cb10ee4c9c14a0148804425e13c4fb20d61cce69f53106dapackaging-24.2.tar.gz"
-    sha256 "c228a6dc5e932d346bc5739379109d49e8853dd8223571c7c5b55260edc0b97f"
+    url "https:files.pythonhosted.orgpackagesa1d41fc4078c65507b51b96ca8f8c3ba19e6a61c8253c72794544580a7b6c24dpackaging-25.0.tar.gz"
+    sha256 "d443872c98d677bf60f6a1f2f8c1cb748e8fe762d2bf9d3148b5599295b0fc4f"
   end
 
   resource "pygments" do
-    url "https:files.pythonhosted.orgpackages7c2dc3338d48ea6cc0feb8446d8e6937e1408088a72a39937982cc6111d17f84pygments-2.19.1.tar.gz"
-    sha256 "61c16d2a8576dc0649d9f39e089b5f02bcd27fba10d8fb4dcc28173f7a45151f"
+    url "https:files.pythonhosted.orgpackagesb077a5b8c569bf593b0140bde72ea885a803b82086995367bf2037de0159d924pygments-2.19.2.tar.gz"
+    sha256 "636cb2477cec7f8952536970bc533bc43743542f70392ae026374600add5b887"
+  end
+
+  resource "smartypants" do
+    url "https:files.pythonhosted.orgpackages6c8fa033f78196d9467b402d100ec40b95166d43fa2642693f23f771473d8195smartypants-2.0.2.tar.gz"
+    sha256 "39d64ce1d7cc6964b698297bdf391bc12c3251b7f608e6e55d857cd7c5f800c6"
   end
 
   resource "typogrify" do

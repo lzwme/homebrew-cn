@@ -1,19 +1,19 @@
 class Jj < Formula
   desc "Git-compatible distributed version control system"
   homepage "https:github.comjj-vcsjj"
-  url "https:github.comjj-vcsjjarchiverefstagsv0.30.0.tar.gz"
-  sha256 "86f8df1e4e76c6a4bcdb728fa74876bacf931641157d16f6e93ebeb5bac0151c"
+  url "https:github.comjj-vcsjjarchiverefstagsv0.31.0.tar.gz"
+  sha256 "ff40515de7a5adac267c64c0163b38990a74a71bb7612a898832c812a81070b2"
   license "Apache-2.0"
   head "https:github.comjj-vcsjj.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "833b9681b5f65fd35fa365fd0638d047bbb25e776163499b7f43f65ed238e44c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "67ea879212c9ec6115a610c438a40854baf7d2f3a7a433d0816dd97b9437e739"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "b60adff4aa38dda9c9f05880d9fa13c8e906193eaa283c032be1e3e4081e2489"
-    sha256 cellar: :any_skip_relocation, sonoma:        "20557d44e25fcd36dd5a66399aa0e36b54b77b7fde91548cedeba36dd2263887"
-    sha256 cellar: :any_skip_relocation, ventura:       "b6fed70088fe219ed523d9e877310c7951b554a87e2f528ca8b218eb993ba3ae"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d8b0eaa58ce0ebb2a5f9b59db8e931f36a210f0e4cd8dc48e8c7cc1382941d95"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "35ef27032c768550d2613536adf6d449054844d98402fb1a628fccf530b0580c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "25fe173fe5db2c870b6627c29de2aae7a82fd887e7cb73a69b8e74e068a6c45f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "08fc790f702509a003d69984cc1fb31fd2d169f0bd5c2ace396294cfeeb88885"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "d587c9493101e81955bc96c0301bec22ffea972baecee4d361462cf3c49cb3b2"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c5cadbe35d68dbce19b6efd793a9b36b426ed8cbf66cbbe253ee68034c52ed25"
+    sha256 cellar: :any_skip_relocation, ventura:       "041c55765324cc2a66a544cc19a2f5c268d9f9a614f3671f9d9d1e3d26801be6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2cbdab636cce04dd0c49e95cb439bb74137c7f666514ae1012313695b9693851"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "50191ce7210d1967ff649d1a7477a399acc45d4c8e05a3be0e30cefc253ebc24"
   end
 
   depends_on "rust" => :build
@@ -26,8 +26,6 @@ class Jj < Formula
   end
 
   test do
-    require "utilslinkage"
-
     touch testpath"README.md"
     system bin"jj", "git", "init"
     system bin"jj", "describe", "-m", "initial commit"

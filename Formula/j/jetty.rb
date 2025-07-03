@@ -1,8 +1,8 @@
 class Jetty < Formula
   desc "Java servlet engine and webserver"
   homepage "https://jetty.org/"
-  url "https://search.maven.org/remotecontent?filepath=org/eclipse/jetty/jetty-home/12.0.22/jetty-home-12.0.22.tar.gz"
-  sha256 "132df3f82f9c061f1c956a9c1942c4b1041c6d26ee686c06afe6ab244f860a1b"
+  url "https://search.maven.org/remotecontent?filepath=org/eclipse/jetty/jetty-home/12.0.23/jetty-home-12.0.23.tar.gz"
+  sha256 "a18e88539f62af9d9e338a8ed9aace2c4acde02114093d2244ce08f62a7e9b72"
   license any_of: ["Apache-2.0", "EPL-2.0"]
 
   livecheck do
@@ -11,7 +11,7 @@ class Jetty < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "1012db79c9b4b4164fa7c312d7dbea6fbb64503c0307a883866c4bda41afb737"
+    sha256 cellar: :any_skip_relocation, all: "e7cad36e2ec9c9552a451fae5836ff61bcebdfd61c5ed3ec6288b3ffb9346f41"
   end
 
   depends_on "openjdk"

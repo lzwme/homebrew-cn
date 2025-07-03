@@ -6,6 +6,11 @@ class Codex < Formula
   license "Apache-2.0"
   head "https:github.comopenaicodex.git", branch: "main"
 
+  livecheck do
+    url :stable
+    regex(^rust-v?(\d+(?:\.\d+)+)$i)
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "de52c42521b1eb60600fbdf03acc0ad0d26fd1be3eefbc52025ea480499ce75f"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6f1148326eb88cd542defb40f3a67e516f68b43ba5c125e0051b8b2001286b71"

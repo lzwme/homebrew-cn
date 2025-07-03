@@ -8,12 +8,13 @@ cask "ares-emulator" do
   desc "Cross-platform, multi-system emulator, focusing on accuracy and preservation"
   homepage "https:ares-emu.net"
 
-  depends_on macos: ">= :high_sierra"
+  depends_on macos: ">= :catalina"
 
   app "ares-v#{version}ares.app"
 
   zap trash: [
     "~LibraryApplication Supportares",
+    "~LibraryPreferencesdev.ares.ares.plist",
     "~LibrarySaved Application Statedev.ares.ares.savedState",
   ]
 end

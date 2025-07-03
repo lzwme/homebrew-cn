@@ -14,6 +14,8 @@ cask "alacritty" do
 
   no_autobump! because: :requires_manual_review
 
+  depends_on macos: ">= :sierra"
+
   app "Alacritty.app"
   binary "#{appdir}Alacritty.appContentsMacOSalacritty"
   binary "#{appdir}Alacritty.appContentsResources61alacritty",

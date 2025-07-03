@@ -1,20 +1,19 @@
 class CargoShuttle < Formula
   desc "Build & ship backends without writing any infrastructure files"
   homepage "https:shuttle.dev"
-  url "https:github.comshuttle-hqshuttlearchiverefstagsv0.55.0.tar.gz"
-  sha256 "63b49f09d7bf9264ea72276ac6d785f7a7c1d4722734f24c4fcc9ea77fdda59e"
+  url "https:github.comshuttle-hqshuttlearchiverefstagsv0.56.0.tar.gz"
+  sha256 "3194debf1fd1b559ef1f17a8c116813140078acc00fde5fd04310e9af33c8e67"
   license "Apache-2.0"
   head "https:github.comshuttle-hqshuttle.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "d93f14aed3cdf581a01b4f0f979573e72268ce1cfc9c343bbf7f2ec8f091ebc1"
-    sha256 cellar: :any,                 arm64_sonoma:  "9c940c83b037e820192022a602e9fd69ffc70e2c96883991069a6ccfc2ca2852"
-    sha256 cellar: :any,                 arm64_ventura: "c9718b976b49883d7ce15a15c45cb6a2b6c290d06859e032d7dd9556c128808b"
-    sha256 cellar: :any,                 sonoma:        "f7d74083e990b5236b937feb0ae18c6e60b94ce1f46f67f756849f3830f641e0"
-    sha256 cellar: :any,                 ventura:       "9feb45fde93a91de2cbc56c7bd324bbe90e0015b1dad3c9404630c4d1edb5526"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "024ef07e6f498a0404df8a15b4f7d8bbd161312303adedaa838268f319b8c75b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "95311901cbdc1d7b7012af7d1ea210268e295512c9e57816c59c6607f34af2af"
+    sha256 cellar: :any,                 arm64_sequoia: "763dbfe064d6dd5f8a929bc1cfd914881127fa80bbdc7d9f2d25d124c9d5b727"
+    sha256 cellar: :any,                 arm64_sonoma:  "b0c9f20a7f01d6b69238b268e08f0023eb4e4789059805995e9ef674581b0803"
+    sha256 cellar: :any,                 arm64_ventura: "89ffad51bd43d3f5340b03eb10b4f49285830f31ba9307ddf4b4b3aac6c70932"
+    sha256 cellar: :any,                 sonoma:        "18439b22a2e88f0e2d555fe7ab6570707dc78fdb7c39a99651c9606d6479e473"
+    sha256 cellar: :any,                 ventura:       "449ef562d308058f69725327866e5408785256a360ba8a6c6a064ab059ea1ee8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7b09f7554462109bf7fb7e615198ded23bcf4841d01976c843f6ce3cd7518ebe"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9a1978659707ee651218548cf6ddbcfe8c3fe85419e700cace1a93d84c0c5598"
   end
 
   depends_on "pkgconf" => :build

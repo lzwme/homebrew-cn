@@ -1,8 +1,8 @@
 class Openimageio < Formula
   desc "Library for reading, processing and writing images"
   homepage "https:openimageio.readthedocs.ioenstable"
-  url "https:github.comAcademySoftwareFoundationOpenImageIOarchiverefstagsv3.0.7.0.tar.gz"
-  sha256 "2798e398b6ffd836ba7810e8ea510902a4aabc4a373ca0523a3f0d830c5eb103"
+  url "https:github.comAcademySoftwareFoundationOpenImageIOarchiverefstagsv3.0.8.0.tar.gz"
+  sha256 "2a7ed70a6baea11f5e85ef4d91338a005738e1d51c74fe966ab35c98347ff33d"
   license "Apache-2.0"
   head "https:github.comAcademySoftwareFoundationOpenImageIO.git", branch: "master"
 
@@ -13,13 +13,13 @@ class Openimageio < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "ca852f7656739959a001e22bf0165e54a01c6978784678824ea9436617d3d46e"
-    sha256 cellar: :any,                 arm64_sonoma:  "5138967f0408d1a4269da5e36f114d7d7851a32674cd449875ed76b752af45e9"
-    sha256 cellar: :any,                 arm64_ventura: "8349a7f4de9599f94ad8019e1268d26ca38ecc1eda29f715f71115b7f4765c69"
-    sha256 cellar: :any,                 sonoma:        "80121a3ad9f768615f63a4d255c83af78cd4fa7fbbc8d9cdb288eb42fa1bc257"
-    sha256 cellar: :any,                 ventura:       "1b5f814ce12ba703870b5031f27888dc6637a395660d60e2bd1d157e8ac5a4c7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "42b3da64128b832666582ea3d556896a13b27ad7b130799941aa156bb8691b01"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e40e8ff1d497a60d0c7b9ce42e3b92014624e11ba10f0e717d0c972132adb1fa"
+    sha256 cellar: :any,                 arm64_sequoia: "6540937491421442a78c308aa740e0092740b566cbf3e281a05515ba66f566b4"
+    sha256 cellar: :any,                 arm64_sonoma:  "b213b7b0c01e9e60603802687e1a759a053da2363856c3a5a01d7c2e1d4c5954"
+    sha256 cellar: :any,                 arm64_ventura: "fa0e256256d86b154fbb2c98f867079817ad0ff6b86a5ded469b5c00c0719568"
+    sha256 cellar: :any,                 sonoma:        "6a3a50bc40af258103d458dc04a709f6de1475700decf9bce4770a9f0dca89e1"
+    sha256 cellar: :any,                 ventura:       "93dc0aa11f2f5193638771a35740fd03d4084d4d4ab160d80d42cc9bee64439c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "039219e09b80b9b26dec743ed8ab5c81f30bf340c73d62b5a91224f446ed3b1a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d6c108717065b9324bf94de2de11e5740994c60edbba574c5e2b9eda9a1e1037"
   end
 
   depends_on "cmake" => :build
@@ -53,6 +53,12 @@ class Openimageio < Formula
 
   def python3
     "python3.13"
+  end
+
+  # libheif 1.19+ build patch, upstream pr ref, https:github.comAcademySoftwareFoundationOpenImageIOpull4822
+  patch do
+    url "https:github.comAcademySoftwareFoundationOpenImageIOcommitbeed875f983c2b80a61c32be1d22d08f5be725bd.patch?full_index=1"
+    sha256 "f4f6509c7e1dd7a196eed4545d4c52341d629502c8d88719ff25da35d8eff622"
   end
 
   def install

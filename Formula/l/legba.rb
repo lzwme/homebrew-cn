@@ -1,19 +1,19 @@
 class Legba < Formula
   desc "Multiprotocol credentials bruteforcerpassword sprayer and enumerator"
   homepage "https:github.comevilsocketlegba"
-  url "https:github.comevilsocketlegbaarchiverefstagsv0.10.0.tar.gz"
-  sha256 "9755ec21539ec31dfc6c314dde1416c9b2bc79199f5aceb937e84bafc445b208"
+  url "https:github.comevilsocketlegbaarchiverefstagsv0.11.0.tar.gz"
+  sha256 "c5e0cf14d372792ac99d692894d407911106b97f1307494bfa68e791ef2273c7"
   license "AGPL-3.0-only"
   head "https:github.comevilsocketlegba.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "0bb1be7ca5dfde3d92f8edf755edbd2cea4129c60730055612f4cd863a637252"
-    sha256 cellar: :any,                 arm64_sonoma:  "21bbb2235762909ae76b3ac1222b183c5f2f05a8ae07b779001fd90e683b3d73"
-    sha256 cellar: :any,                 arm64_ventura: "2667efc81b47fa5e6d8c157207f6c6a9f192066766b0aab1f6a4aed02b18e02a"
-    sha256 cellar: :any,                 sonoma:        "6fae915b3b92936d1b9eb6a6ed584f7c0b64a86e032e33f0ffe4aa7ac9dce696"
-    sha256 cellar: :any,                 ventura:       "5039e6dc3df7510c9a1fdbd3fa5d4badfcbf32da1a285e7d0bdf9650e8d03124"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "406ceb16704065ba75035184bb193ed451550edc9fac885d345f652ec3b51184"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ca0f43ae1e6737997497dedf44a3de25a00de76f1a90a159f90acfaa2e890035"
+    sha256 cellar: :any,                 arm64_sequoia: "546c0cfae3b2ccf6ad22072dd561490c38959ca611c7f76996d1001975f3a850"
+    sha256 cellar: :any,                 arm64_sonoma:  "bc2703adb32f63f00a50f93485d62a8ca77139d44da4e01ef8f8601a2a31ac90"
+    sha256 cellar: :any,                 arm64_ventura: "5f4c14f44040dfaeaa78911ce950bb7da785db6c7afee3c4a516c086ac55d01b"
+    sha256 cellar: :any,                 sonoma:        "0e3680c1235811f38c02014ea3a0abb4fa444c31161469d0a3537beb3e944acc"
+    sha256 cellar: :any,                 ventura:       "610f2288608058ded9a6b4386f9f50e5425773092be99faf12be6404e5e66458"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "06fd39a812020a3ab5eba5821365177050595d507a3ca81d49bf7b36b7aabee9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c4b3fef8b4eef609096bf52bb3db2fa6361ddb683bedc357d34398b14b9a0a49"
   end
 
   depends_on "cmake" => :build
@@ -23,8 +23,6 @@ class Legba < Formula
   depends_on "samba"
 
   def install
-    # Support cmake 4, remove after https:github.comevilsocketlegbapull72
-    ENV["CMAKE_POLICY_VERSION_MINIMUM"] = "3.5"
     # Ensure that the `openssl` crate picks up the intended library.
     ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
     ENV["OPENSSL_NO_VENDOR"] = "1"

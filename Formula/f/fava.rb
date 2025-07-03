@@ -3,19 +3,19 @@ class Fava < Formula
 
   desc "Web interface for the double-entry bookkeeping software Beancount"
   homepage "https:beancount.github.iofava"
-  url "https:files.pythonhosted.orgpackages08b5e81c3255851e9425198c5038d71604a3a32fa78e768f45a7506932b740f5fava-1.30.3.tar.gz"
-  sha256 "ab0827ad2ffe628459614d260d5aea1374c4b830bbdd1e398afb3db799e5f88c"
+  url "https:files.pythonhosted.orgpackages863071c189588c09ae627bcd0a9deb64f0b9d2eebad9e99c5679f7b1154321d4fava-1.30.4.tar.gz"
+  sha256 "f8f9ef4abc35b2abb6b9e45ab6ecadd839c04636e39c67c05c90937af6825a61"
   license "MIT"
   head "https:github.combeancountfava.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "6cb62b1ea354ffebbde7eed3fdee4003d81e82559f24e71f29b75cf91f607dba"
-    sha256 cellar: :any,                 arm64_sonoma:  "71feae7976e052220f1812581623420d7ae2eef8bac3dea5d22772bcaaac03f8"
-    sha256 cellar: :any,                 arm64_ventura: "9b7af170f25136353f8363d7c0dca743cab644343dfe79d648bc6a7d28bfb522"
-    sha256 cellar: :any,                 sonoma:        "2e214bd3b911575170683df7f09188613294c3ec128130056cb80801b1b843c5"
-    sha256 cellar: :any,                 ventura:       "45b39ddc1f728e14ca1c5c0822863bdfa3fdb51e650680cb6f412eb977454301"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b7de3c624f3cb70c19d5bcca8e4c0984ef807d0f372ad1c04b3208f4c10dcf18"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ede87930151305e6185eee0306ba5f265ef4e480ca3264fc18bf21e8bf348ab0"
+    sha256 cellar: :any,                 arm64_sequoia: "2f476f54a34cbdc175720635fac1b5bf7cb7b517ab1d82853d6e4d488b499e31"
+    sha256 cellar: :any,                 arm64_sonoma:  "57ed91aaa2bc5e651ebbdf689e2dc8a6a8095063f4dab48b029b60f453310866"
+    sha256 cellar: :any,                 arm64_ventura: "6a3a2dd73765b4d6dd0e072c3805057163f3d06d5ed3ec82c7d458e343df39b0"
+    sha256 cellar: :any,                 sonoma:        "84ebc7b9713431d57ae1b8e0160e05e5d09bf741f8e15d1eb97e18482a04de40"
+    sha256 cellar: :any,                 ventura:       "b75bd504395c71aefd1f38d0d08d06c6077709df14e200f96c73a71f6f88d104"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2d44b177eb8816f02f30fb2b937b229e51865b64cd5e8809299b5c5f1a22270a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "58eb851b48950cb92ef1f7bd9acabbc32f94cb7c4104ccf0536f550455c86967"
   end
 
   depends_on "bison" => :build # for beancount
@@ -104,8 +104,8 @@ class Fava < Formula
   end
 
   resource "jaraco-functools" do
-    url "https:files.pythonhosted.orgpackagesab239894b3df5d0a6eb44611c36aec777823fc2e07740dabbd0b810e19594013jaraco_functools-4.1.0.tar.gz"
-    sha256 "70f7e0e2ae076498e212562325e805204fc092d7b4c17e0e86c959e249701a9d"
+    url "https:files.pythonhosted.orgpackages491c831faaaa0f090b711c355c6d8b2abf277c72133aab472b6932b03322294cjaraco_functools-4.2.1.tar.gz"
+    sha256 "be634abfccabce56fa3053f8c7ebe37b682683a4ee7793670ced17bab0087353"
   end
 
   resource "jinja2" do
@@ -114,8 +114,8 @@ class Fava < Formula
   end
 
   resource "lxml" do
-    url "https:files.pythonhosted.orgpackages763d14e82fc7c8fb1b7761f7e748fd47e2ec8276d137b6acfe5a4bb73853e08flxml-5.4.0.tar.gz"
-    sha256 "d12832e1dbea4be280b22fd0ea7c9b87f0d8fc51ba06e92dc62d52f804f78ebd"
+    url "https:files.pythonhosted.orgpackagesc5ed60eb6fa2923602fba988d9ca7c5cdbd7cf25faa795162ed538b527a35411lxml-6.0.0.tar.gz"
+    sha256 "032e65120339d44cdc3efc326c9f660f5f7205f3a535c1fdbf898b29ea01fb72"
   end
 
   resource "markdown2" do
@@ -184,13 +184,13 @@ class Fava < Formula
   end
 
   resource "typing-extensions" do
-    url "https:files.pythonhosted.orgpackagesf63723083fcd6e35492953e8d2aaaa68b860eb422b34627b13f2ce3eb6106061typing_extensions-4.13.2.tar.gz"
-    sha256 "e6c81219bd689f51865d9e372991c540bda33a0379d5573cddb9a3a23f7caaef"
+    url "https:files.pythonhosted.orgpackagesd1bc51647cd02527e87d05cb083ccc402f93e441606ff1f01739a62c8ad09ba5typing_extensions-4.14.0.tar.gz"
+    sha256 "8676b788e32f02ab42d9e7c61324048ae4c6d844a399eebace3d4979d75ceef4"
   end
 
   resource "watchfiles" do
-    url "https:files.pythonhosted.orgpackages03e28ed598c42057de7aa5d97c472254af4906ff0a59a66699d426fc9ef795d7watchfiles-1.0.5.tar.gz"
-    sha256 "b7529b5dcc114679d43827d8c35a07c493ad6f083633d573d81c660abc5979e9"
+    url "https:files.pythonhosted.orgpackages2a9ad451fcc97d029f5812e898fd30a53fd8c15c7bbd058fd75cfc6beb9bd761watchfiles-1.1.0.tar.gz"
+    sha256 "693ed7ec72cbfcee399e92c895362b6e66d63dac6b91e2c11ae03d10d503e575"
   end
 
   resource "werkzeug" do

@@ -6,8 +6,7 @@ class Yapf < Formula
   url "https:files.pythonhosted.orgpackages2397b6f296d1e9cc1ec25c7604178b48532fa5901f721bcf1b8d8148b13e5588yapf-0.43.0.tar.gz"
   sha256 "00d3aa24bfedff9420b2e0d5d9f5ab6d9d4268e72afbf59bb3fa542781d5218e"
   license "Apache-2.0"
-
-  no_autobump! because: :requires_manual_review
+  head "https:github.comgoogleyapf.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "cf15857b390cc7e51ca27c742c839b71035382d701e298354fcf521318da61b8"

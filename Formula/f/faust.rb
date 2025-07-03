@@ -1,10 +1,9 @@
 class Faust < Formula
   desc "Functional programming language for real time signal processing"
   homepage "https:faust.grame.fr"
-  url "https:github.comgrame-cncmfaustreleasesdownload2.79.3faust-2.79.3.tar.gz"
-  sha256 "ca2171cb136f135960be10fee2c1728304865a5d5190e9a03cace88b4936c558"
+  url "https:github.comgrame-cncmfaustreleasesdownload2.81.2faust-2.81.2.tar.gz"
+  sha256 "c91afe17cc01f1f75e4928dc2d2971dd83b37d10be991dda7e8b94ffab1f1ac9"
   license "GPL-2.0-or-later"
-  revision 1
 
   # Upstream creates releases that use a stable tag (e.g., `v1.2.3`) but are
   # labeled as "pre-release" on GitHub before the version is released, so it's
@@ -15,13 +14,13 @@ class Faust < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "bb7217a3720d56704ad9cfff388619ebcdfa2937545ca84ee73727791ed1e115"
-    sha256 cellar: :any,                 arm64_sonoma:  "b55c0b1f2e601ae24e2bfb9f11991b741a3c9ba15bb55517640b45cb1d5c9a40"
-    sha256 cellar: :any,                 arm64_ventura: "41e1b6bc77c93898b52873cd2e31f6d09dfac0f7a76ee171a3c89b6f5f0f2563"
-    sha256 cellar: :any,                 sonoma:        "4f8440d683e66503cc04cf1b840352e136e7b8bbfba6c6b38509b0d0f7df0e6f"
-    sha256 cellar: :any,                 ventura:       "7d59f966def7215621a4fb02434ba40bd5fde603d9a35249b9487763dd0237c4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "26344ca072bd802c0bd13d2b93c7f99707306422400f179c308ec644e1b6b74e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2fad536442934f2b445d98eef154abc16ddf4ae62888f22b16bde5aab88183e3"
+    sha256 cellar: :any,                 arm64_sequoia: "64e84ba0e70664d8db41f73b9f506b5c2de4c97667fbeb156bc084ce453408e0"
+    sha256 cellar: :any,                 arm64_sonoma:  "4b104ba40e172d8def36fca50d3dcc2825f767001b0916a2c53132d84dcd7b45"
+    sha256 cellar: :any,                 arm64_ventura: "d69d16cf8e4c30f9a13eeb72b5bb4447cdf0dc44c66cde88bacd7e0f7f79e9dd"
+    sha256 cellar: :any,                 sonoma:        "e0306e082497d323ffb34fb303439849a9a9e7df011962123b7c14cd841f3e86"
+    sha256 cellar: :any,                 ventura:       "be421d13201c062e73c1bdf6e0c28a104cec612e8caaa0e9b32a5a598a0734ed"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "165d0b7fb4a6bc37309acdc3d5c1b1235ac4b584c7634d2922ec557e8d5f0bd5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3083dc1223fbf8fe8c3c21da79753e8c6818ba09ccf2ae4473e7d79a44df674c"
   end
 
   depends_on "cmake" => :build

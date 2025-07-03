@@ -7,8 +7,6 @@ class Dcadec < Formula
   license "LGPL-2.1-or-later"
   head "https:github.comfoo86dcadec.git", branch: "master"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "3ae8134706fc28f0b3e951bd4dddbba4c3e13b58b61484e5988180fba679570f"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0a38744f8f827e1d1b9b8cec9c825699c2d2b3f5186a05d9dc72b44ad1c5f390"
@@ -30,6 +28,7 @@ class Dcadec < Formula
 
   # Ref https:github.comfoo86dcadeccommitb93deed1a231dd6dd7e39b9fe7d2abe05aa00158
   deprecate! date: "2024-06-30", because: :deprecated_upstream
+  disable! date: "2025-07-02", because: :deprecated_upstream
 
   conflicts_with "libdca", because: "both install `dcadec` binaries"
 
