@@ -12,8 +12,8 @@
   "yaml.format.singleQuote": true,
   "yaml.validate": true,
   "editor.codeActionsOnSave": {
-    "source.fixAll": false,
-    "source.fixAll.sortJSON": true
+    "source.fixAll": "never",
+    "source.fixAll.sortJSON": "explicit"
   },
   "[json]": {
     "editor.defaultFormatter": "vscode.json-language-features"
