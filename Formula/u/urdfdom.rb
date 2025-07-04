@@ -1,8 +1,8 @@
 class Urdfdom < Formula
   desc "Unified Robot Description Format (URDF) parser"
   homepage "https:wiki.ros.orgurdf"
-  url "https:github.comrosurdfdomarchiverefstags5.0.1.tar.gz"
-  sha256 "1f610c9acd8319b9cf74ec1b1311a90c6021daa0bed23315dc714af618eaec87"
+  url "https:github.comrosurdfdomarchiverefstags5.0.2.tar.gz"
+  sha256 "f929a33ec6171a57d4ff7d4c0eff6fb79d4725c279189d4f4c8806c4aa4e71ac"
   license "BSD-3-Clause"
 
   # Upstream uses Git tags (e.g. `1.0.0`) to indicate a new version. They
@@ -14,13 +14,13 @@ class Urdfdom < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "cd4a8fdda41fc71917d00cffb081ec3446a3bd2019f0650a2320213d4ce291a6"
-    sha256 cellar: :any,                 arm64_sonoma:  "c07c6ceda1aaa046ced881402af6b8464b68d894558e905d1763882ce4c14908"
-    sha256 cellar: :any,                 arm64_ventura: "135da4ada83322c2e8fd0fef17111950e41b4c80408d73343356d0c5d7a357b2"
-    sha256 cellar: :any,                 sonoma:        "c60e9daa0bcfd7b048823ce2c97933291dd58bd576e1f951b2be722a1699f7ee"
-    sha256 cellar: :any,                 ventura:       "33c07de87ca188ad24a22d597b15a00ac1dd7095b2a6283f211b03b3e2951763"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d3a23a236200d3a8a831d6151c4c8528705a925a807f9e4a2eb751477a27b2d2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "263fcbbdbaa7cf4d2b9f0188aeb12659bf9e06910ec9a11479bf8ea5a2d3d12b"
+    sha256 cellar: :any,                 arm64_sequoia: "756fda4ead0dd187f6ed44bdbdf1d03142a4088d334e9d27bfe1ae1b6d0f2cfa"
+    sha256 cellar: :any,                 arm64_sonoma:  "08e6d3e29fb2072ade8ff174827d0c59ee5c28bcf288e8da09a56846ead4998d"
+    sha256 cellar: :any,                 arm64_ventura: "07a35187641e8a0a27266ead0227892a37e8f847ec580877c513382cca1b740c"
+    sha256 cellar: :any,                 sonoma:        "3d2f693b70cc2f54f6f9135577865cad22d5231197058020586bb98137e525e0"
+    sha256 cellar: :any,                 ventura:       "f1e57f3dd834b113e765beaa5f26e187647f5ecb34445e761fa5028614fb3d17"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c970633d691e7638e3d19fb153f405b76ed940371558199f682b71cca5043e5b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "df20fa90b221d69a837117f743067ba079e9d414d441aedf1edf1a3ec68169dc"
   end
 
   depends_on "cmake" => :build
@@ -28,12 +28,6 @@ class Urdfdom < Formula
   depends_on "console_bridge"
   depends_on "tinyxml2"
   depends_on "urdfdom_headers"
-
-  # Support urdfdom_headers 2.0, upstream pr ref, https:github.comrosurdfdompull221
-  patch do
-    url "https:github.comrosurdfdomcommit9c5b7561612a3250f632b500ac97251ba98ece13.patch?full_index=1"
-    sha256 "6c671176ab0938f81027beb6626e970e8239ecc846328661a11452dc9762bc12"
-  end
 
   def install
     ENV.cxx11

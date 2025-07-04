@@ -1,8 +1,8 @@
 class V2ray < Formula
   desc "Platform for building proxies to bypass network restrictions"
   homepage "https:v2fly.org"
-  url "https:github.comv2flyv2ray-corearchiverefstagsv5.34.0.tar.gz"
-  sha256 "6cf41da0cd786efbc33abf4aa979f934802e33dfe48b5bdfde13e792d4926a08"
+  url "https:github.comv2flyv2ray-corearchiverefstagsv5.35.0.tar.gz"
+  sha256 "caf1e4a8bbed61748ae21c88bf6d158a9921513b8fa69fc0d7265ef371e1205e"
   license all_of: ["MIT", "CC-BY-SA-4.0"]
   head "https:github.comv2flyv2ray-core.git", branch: "master"
 
@@ -12,12 +12,12 @@ class V2ray < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e2450581e470a6dc44b83f5c12a7441fbfaa44485e3dfdb99769b0cb0cd26cdd"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e2450581e470a6dc44b83f5c12a7441fbfaa44485e3dfdb99769b0cb0cd26cdd"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "e2450581e470a6dc44b83f5c12a7441fbfaa44485e3dfdb99769b0cb0cd26cdd"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1f02010e2d01505242723bdb82a7a63af296db6223a948f672bf00c6d5b40abd"
-    sha256 cellar: :any_skip_relocation, ventura:       "1f02010e2d01505242723bdb82a7a63af296db6223a948f672bf00c6d5b40abd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "110eba145b23dc23b72f9ff1b254dd54c0d9d0126c54faf6131e8b9b92c2a52e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "84874b530418ba56e2ed9c5c896a9675af1fad0a10f422fd2902faa5862ac978"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "84874b530418ba56e2ed9c5c896a9675af1fad0a10f422fd2902faa5862ac978"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "84874b530418ba56e2ed9c5c896a9675af1fad0a10f422fd2902faa5862ac978"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5d40dec4dec58f16ce08afec4ddfae42a9f7b6402b556283578caf226f4b96b6"
+    sha256 cellar: :any_skip_relocation, ventura:       "5d40dec4dec58f16ce08afec4ddfae42a9f7b6402b556283578caf226f4b96b6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f7a6a43ec65a0cc3f7fca3b6544d88f0bd3d5bef067e846edf7b0296776f09e3"
   end
 
   depends_on "go" => :build

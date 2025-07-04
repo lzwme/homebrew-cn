@@ -2,11 +2,10 @@ class PhpAT82 < Formula
   desc "General-purpose scripting language"
   homepage "https:www.php.net"
   # Should only be updated if the new version is announced on the homepage, https:www.php.net
-  url "https:www.php.netdistributionsphp-8.2.28.tar.xz"
-  mirror "https:fossies.orglinuxwwwphp-8.2.28.tar.xz"
-  sha256 "af8c9153153a7f489153b7a74f2f29a5ee36f5cb2c6c6929c98411a577e89c91"
+  url "https:www.php.netdistributionsphp-8.2.29.tar.xz"
+  mirror "https:fossies.orglinuxwwwphp-8.2.29.tar.xz"
+  sha256 "475f991afd2d5b901fb410be407d929bc00c46285d3f439a02c59e8b6fe3589c"
   license "PHP-3.01"
-  revision 1
 
   livecheck do
     url "https:www.php.netdownloads"
@@ -14,13 +13,13 @@ class PhpAT82 < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "e2246998dd5e7e7afec8fca2021d72ed1649d895893c5547d0bb029497f8c44c"
-    sha256 arm64_sonoma:  "11e6e340314c547ddbb00f158b752da356b8b6818b41f4a365fc582729ee1c5e"
-    sha256 arm64_ventura: "35103bc809c21c425335f36677e68863488a247ed5069b41e050d090911c331e"
-    sha256 sonoma:        "869dae33045c9f7aca8ae21ac65e1fe847e096427a65cf5885a777ebe124855e"
-    sha256 ventura:       "596b75299759024eb833f033284ffa70b454e1b0cf0dbe09aca2c9786f3782d4"
-    sha256 arm64_linux:   "8460ac3ae3ca87db6f41494ab1c0fdb54225eb3524f16f325fb48afe72942ab1"
-    sha256 x86_64_linux:  "31f6e8f11605a676b758e586f6e74219a5fdb31dfb71c3ee0edeb1491679d827"
+    sha256 arm64_sequoia: "157dfd752bb28cd56bd124d5dc7ce4bbf363fd2b1a83c4de88d81cd6f3c2f04a"
+    sha256 arm64_sonoma:  "40237406991bf7003fa3b21c965d30b474d45e091db0a42eb2abe5c5e4951878"
+    sha256 arm64_ventura: "8afe5d9ac53f9798cb00a577e2cfe12610b382b4bcc76e278506eb064d14caee"
+    sha256 sonoma:        "71aa90f88f74b5a65f70fd80cd70707f348cbe907feb9dcfae21bf8026c042c7"
+    sha256 ventura:       "740c9112b677c45c93f740fd37e2f16e0b6408e5760b4827d3001d8fddd00377"
+    sha256 arm64_linux:   "bf5182524ccc9383c1f8a0e765a9db3856bc316778167437b1197da11cbe4933"
+    sha256 x86_64_linux:  "62391884104e9c5808953aac80efcf100cbce79388db571a402d346dedc8830c"
   end
 
   keg_only :versioned_formula

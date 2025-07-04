@@ -1,18 +1,18 @@
 class GitTown < Formula
   desc "High-level command-line interface for Git"
   homepage "https:www.git-town.com"
-  url "https:github.comgit-towngit-townarchiverefstagsv21.1.0.tar.gz"
-  sha256 "95f74818f3c69aac3a1db03309abd3a40f95822cead5942c81137d830b60e288"
+  url "https:github.comgit-towngit-townarchiverefstagsv21.2.0.tar.gz"
+  sha256 "e4193ec5d8a7f9e7ca22e12938ecab81e1d6a61a89eafc698e8b514204db7068"
   license "MIT"
   head "https:github.comgit-towngit-town.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4c44f82b7cfb695260f8b967f43f253d6bb552846dcd9d55ab84c8d9d76822a8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4c44f82b7cfb695260f8b967f43f253d6bb552846dcd9d55ab84c8d9d76822a8"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "4c44f82b7cfb695260f8b967f43f253d6bb552846dcd9d55ab84c8d9d76822a8"
-    sha256 cellar: :any_skip_relocation, sonoma:        "964dd4558e5e98969df97872f92fad24a728556cdcbc259ff808337a5b69d7ec"
-    sha256 cellar: :any_skip_relocation, ventura:       "964dd4558e5e98969df97872f92fad24a728556cdcbc259ff808337a5b69d7ec"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "72912e79915db2048ae9b28b4f0202cff355b291414dc642863afc085a6fe09c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1ac53c2b57809516d79635f4a0f93a8aaf5636cbba510587a121d65dba647ef5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1ac53c2b57809516d79635f4a0f93a8aaf5636cbba510587a121d65dba647ef5"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "1ac53c2b57809516d79635f4a0f93a8aaf5636cbba510587a121d65dba647ef5"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3763b95321afeff90b3991d74f24c0425b8886462833fd27463576d7332f5ec7"
+    sha256 cellar: :any_skip_relocation, ventura:       "3763b95321afeff90b3991d74f24c0425b8886462833fd27463576d7332f5ec7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "71d43eb431367565ca602f41c2162de3052d7d62667dd3f4a842b861884bb860"
   end
 
   depends_on "go" => :build

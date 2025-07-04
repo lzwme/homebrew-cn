@@ -1,18 +1,18 @@
 class Cloudflared < Formula
   desc "Cloudflare Tunnel client (formerly Argo Tunnel)"
   homepage "https:developers.cloudflare.comcloudflare-oneconnectionsconnect-appsinstall-and-setuptunnel-guide"
-  url "https:github.comcloudflarecloudflaredarchiverefstags2025.6.1.tar.gz"
-  sha256 "73b402abb8519b70a889eeb1c47c7c5fa58e0092e9859e4001ebb15e95b8043b"
+  url "https:github.comcloudflarecloudflaredarchiverefstags2025.7.0.tar.gz"
+  sha256 "62210e924ff0c5241a0615e460456c2634499234a1f7f652912ce18320af05d7"
   license "Apache-2.0"
   head "https:github.comcloudflarecloudflared.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6de43a56829effe87bc29e7f22377d06b1588a683f6184854bd01c4a46368a28"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9ca7c0ab8b81862e409576523a30c24770cbfed872408bd8a532b08d750f3cf8"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "97d8a7168080ce8679d411183981b4e952a834ee6120c3c3db9507fb82e290bc"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7bd2458a54510a86db0e326ee533c8ba07b3714f97fb3f1f60c93f85a06bf8d8"
-    sha256 cellar: :any_skip_relocation, ventura:       "b4600d7c96a9a02d0d1bef7a8fa9674f13651d307e128924f8e8627f7b46634d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "811c27cb9806152d410bbb252f65f7bdff9bcd006b8b9abb6594d2ed9b9dc6d1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ba076980f846985ddb8f2d7c55e115f321823e4b4bf9c0c191cfb8808104ebd2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "099f55a98d58fe520ddec1fa339d6c8ade58106b69f2a97f40a982c6cbb8a203"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "31b6f3bae8904e61097168791be5d7cb8c4923237ca6f5122de340a42dda262d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "841d578e94a18d0331ac3730916f01802e8062fbccfb81ff72aef312a956640b"
+    sha256 cellar: :any_skip_relocation, ventura:       "49174bd3d7e19dc5a21eca2cf5ad965435007e8c8f5b991a6eb955419da9d722"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "109d3cdd33dbfce354e5c21e2768f33fd697b4e8d5542c7c9f9b840ade2d6fb1"
   end
 
   depends_on "go" => :build

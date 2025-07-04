@@ -2,9 +2,9 @@ class PhpAT83 < Formula
   desc "General-purpose scripting language"
   homepage "https:www.php.net"
   # Should only be updated if the new version is announced on the homepage, https:www.php.net
-  url "https:www.php.netdistributionsphp-8.3.22.tar.xz"
-  mirror "https:fossies.orglinuxwwwphp-8.3.22.tar.xz"
-  sha256 "66c86889059bd27ccf460590ca48fcaf3261349cc9bdba2023ac6a265beabf36"
+  url "https:www.php.netdistributionsphp-8.3.23.tar.xz"
+  mirror "https:fossies.orglinuxwwwphp-8.3.23.tar.xz"
+  sha256 "08be64700f703bca6ff1284bf1fdaffa37ae1b9734b6559f8350248e8960a6db"
   license "PHP-3.01"
 
   livecheck do
@@ -13,13 +13,13 @@ class PhpAT83 < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "93263f2eceadde85a3e84d82662b9143ed6100920f6f7ed6f39b79539af1211a"
-    sha256 arm64_sonoma:  "1bf6694f7402cac813d0bb457816d88b0e743d53cb3b7f224a861c328fcbc5d5"
-    sha256 arm64_ventura: "df962590552a0e5b1fb5770702fdd4c2f0c7e8e5c5e6c9ed716f0ca6b689514c"
-    sha256 sonoma:        "83cc16bff6e330056492c5dcc0d6f6edc6e8765c9a837a769342ab6e083921e0"
-    sha256 ventura:       "1fa52cbc47bc64e355a3c27f61de1d8bb0d2c8bc8ea42840eb8ec9fdd2f9f3aa"
-    sha256 arm64_linux:   "0b97b5eaa627edf5207f6d182a7d634a5c4deb11fd06c04013b8b143aafcbc82"
-    sha256 x86_64_linux:  "ec89e11ddeaeffaa3a8be838121045c392555a1986490ad375b9cfe89e725ab7"
+    sha256 arm64_sequoia: "e2ff41a7aaf7222090f0fe2e753f0bf065544195406bc7143e57f2c67e6c3896"
+    sha256 arm64_sonoma:  "8f3765b2bc343652fc1dc5e677983d445e807441596708e16a5f5663edbc7fa1"
+    sha256 arm64_ventura: "ba9e3166940e1a860326a4846c7e84a608e0256916aebcc3ce2f06fecef16c55"
+    sha256 sonoma:        "b04653d33c0080a359b3ccddcac2db8604b8b4347ce2626b45505ada6f1c5da7"
+    sha256 ventura:       "e4330e1f6ada3e51f75c04c103c062a83cc0521d8ad3e4d4eeb85cf570b93a14"
+    sha256 arm64_linux:   "48912af4324d93c8810cc077ba3dc54d532a0322211eaaa222bb593a5cbee988"
+    sha256 x86_64_linux:  "4a3cc966cc3f9c87516673e1f2bcea3ae600e63542b4606c9948f19c5f56faa7"
   end
 
   keg_only :versioned_formula

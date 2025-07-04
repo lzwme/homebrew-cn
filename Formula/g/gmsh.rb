@@ -1,20 +1,10 @@
 class Gmsh < Formula
   desc "3D finite element grid generator with CAD engine"
   homepage "https://gmsh.info/"
+  url "https://gmsh.info/src/gmsh-4.14.0-source.tgz"
+  sha256 "db4d7da2062e9a4356a820832138ab99f97af6388bfeb21599a2eadfb0b76a28"
   license "GPL-2.0-or-later"
-  revision 3
   head "https://gitlab.onelab.info/gmsh/gmsh.git", branch: "master"
-
-  stable do
-    url "https://gmsh.info/src/gmsh-4.13.1-source.tgz"
-    sha256 "77972145f431726026d50596a6a44fb3c1c95c21255218d66955806b86edbe8d"
-
-    # Backport fix for newer fltk
-    patch do
-      url "https://gitlab.onelab.info/gmsh/gmsh/-/commit/3b3f0f7e16430939b345889a9e31b50104d5baf3.diff"
-      sha256 "194b2822123c36e18260db5c14b98127c2a6721de2f5272bd0bd9456580465c3"
-    end
-  end
 
   livecheck do
     url :homepage
@@ -22,13 +12,12 @@ class Gmsh < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "cf5c8f43758e346366f53bf60865e5d6f03298eba5e26f251a88e42af4716552"
-    sha256 cellar: :any,                 arm64_sonoma:  "8ba053b9490f1568a75c46dd7b2ec7d806a4dfa82c4a8461c98a6814ca101adb"
-    sha256 cellar: :any,                 arm64_ventura: "e659b97a98f1047d2b83b2265d3a05a1cc2ec8b819869979ca713fe0b12aaf57"
-    sha256 cellar: :any,                 sonoma:        "7c06d9608699dd84a080a9dc8e265260c3a666b834b9d76d7214e8075971bec3"
-    sha256 cellar: :any,                 ventura:       "e527cf0fa674c848605096e23d24c687455e2fa56b427d7d6e90bf6d9c345a87"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "053b6c6984b71f7bb1c5763dd75ee6c3c1adda0db4cfc080efcffe46443615f1"
+    sha256 cellar: :any,                 arm64_sequoia: "8c50799466377882e5045b15f4c23a8a4c1040dfbe955489788a6a2b31a8779e"
+    sha256 cellar: :any,                 arm64_sonoma:  "32e4da3c38f226be85aa36455b2d92e306c32260098c18c2bb7e0d1b87bb67f4"
+    sha256 cellar: :any,                 arm64_ventura: "1fc4a3ef69f860ac4a91bd1051cc36ec129a969d6f1329c4c91c68e9464c453f"
+    sha256 cellar: :any,                 sonoma:        "96ca92471114ec67e694440cc3a8be930de5bdabf52c69c596f29e28e11de7e7"
+    sha256 cellar: :any,                 ventura:       "0f618c7b6204e38f549ced91f1dca50eb1d77dd214e8bea4f59bac29c28c8dce"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f4d2413693690bbe55855c96c8c2e05c7e66424f8c5b7bb3fc77dfda659be007"
   end
 
   depends_on "cmake" => :build

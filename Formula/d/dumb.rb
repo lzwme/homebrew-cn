@@ -7,12 +7,6 @@ class Dumb < Formula
   # https:src.fedoraproject.orgrpmsdumbblobrawhideflicense-clarification.eml
   license :cannot_represent
 
-  livecheck do
-    skip "No longer developed or maintained"
-  end
-
-  no_autobump! because: :requires_manual_review
-
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "7158a40eed75a578dd615fdf83840be91a4fd565b0ce5170c4e91d494e0a0a16"
     sha256 cellar: :any,                 arm64_sonoma:   "f9510e55b969457e77567594f6963a7a6470f86dac7f252ed3c01757314c44dd"
@@ -27,6 +21,8 @@ class Dumb < Formula
     sha256 cellar: :any_skip_relocation, arm64_linux:    "040bc8a1b4387d297c3c83f33fc68f79b885a4fe0530e9ce9c70257f38faadc9"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "de4310947cbbc1807cf9c2bbdb9dcc42cc381de7153b3dc4f206718a1923fe40"
   end
+
+  deprecate! date: "2025-07-03", because: :repo_archived
 
   depends_on "cmake" => :build
   depends_on "argtable"

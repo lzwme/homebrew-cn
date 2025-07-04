@@ -1,18 +1,18 @@
 class SoftServe < Formula
   desc "Mighty, self-hostable Git server for the command-line"
   homepage "https:github.comcharmbraceletsoft-serve"
-  url "https:github.comcharmbraceletsoft-servearchiverefstagsv0.8.5.tar.gz"
-  sha256 "e8a432e8d1a891d7ca6f8b16fa4455db57b3484b7728fdb1ae9a77d4fa0d7045"
+  url "https:github.comcharmbraceletsoft-servearchiverefstagsv0.9.1.tar.gz"
+  sha256 "7ee68a779bda1e0020aa2f44703a4d7e5afdcc685d8af6ecbbb9c826fd03e217"
   license "MIT"
   head "https:github.comcharmbraceletsoft-serve.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "559974917d8f906fd451f58a24b16f5d50bb3806785b7bc9f003e628e2e34d59"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "299e9067d96c78b4cea98c8b29c5429cee8ed376937523057cc348571e536439"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "ae92b211b6025dcba653a8752cf2615ba3d92110f8b9363b3d8cb39246cd07aa"
-    sha256 cellar: :any_skip_relocation, sonoma:        "21e1fca746da038795826c4b64a0ee3d9696a7e941127665a0b90cf2889c1b23"
-    sha256 cellar: :any_skip_relocation, ventura:       "7d7bed45e73c6c2bff333d9b684e75c95460322099314c8319f1916cb22f33fb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "38dfd97a35a041d749cf6adef5060c6f35b4b9bf876e0c7ea4aefa972c92c966"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3712c7ef413b0aa315161d758f10c0e356508f5c9fbf142d2e413e32a5ebfe71"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8e8b22fcf3b39827ee0d831658f7a692dc3725485db9c5ab66918d4828e1f108"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "b2ede9ba15da3fc6c3ccca807c7a28f08d509a3be572f99ef37888b30c734128"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4479c1c3af6fbf2af80c61bdd4bf58e76e2a763e76da853126ef835404254de1"
+    sha256 cellar: :any_skip_relocation, ventura:       "06db38b39fd3a598ee680e07d43705eb4a2a73e342607dc95dae3053443c0f77"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b30779da797af8a4456e7c8bb67bc31cca20d1cb0120ca8e70d3df1b891c81cd"
   end
 
   depends_on "go" => :build

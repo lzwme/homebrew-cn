@@ -1,18 +1,18 @@
 class Dish < Formula
   desc "Lightweight monitoring service that efficiently checks socket connections"
   homepage "https:github.comthevxndish"
-  url "https:github.comthevxndisharchiverefstagsv1.11.4.tar.gz"
-  sha256 "c9e1c8d531c0acc6da4bd15ac28f5ea9a727430a49442c229acbcea86144e197"
+  url "https:github.comthevxndisharchiverefstagsv1.11.5.tar.gz"
+  sha256 "3dc5d0b2eadd71b5290d26f1494be10b4ceab65314ded90508f210403a6b8ac1"
   license "MIT"
   head "https:github.comthevxndish.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0c5d2d8e4d0e983d035df7502050de5ffad850c7556d1bb739e158bc83557968"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0c5d2d8e4d0e983d035df7502050de5ffad850c7556d1bb739e158bc83557968"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "0c5d2d8e4d0e983d035df7502050de5ffad850c7556d1bb739e158bc83557968"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1f8f0cdd6265fac3cc639ae66c8ee83f4d8ed8cb77b27251abeac8b885a1558d"
-    sha256 cellar: :any_skip_relocation, ventura:       "1f8f0cdd6265fac3cc639ae66c8ee83f4d8ed8cb77b27251abeac8b885a1558d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c517c253a00e9aa615a3a6663efe825b431d55f74e2e00cf0da360d91eece52c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b9d261b1c2e9600bd1246717af651561009b99808c81930ab365e758c24e4949"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b9d261b1c2e9600bd1246717af651561009b99808c81930ab365e758c24e4949"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "b9d261b1c2e9600bd1246717af651561009b99808c81930ab365e758c24e4949"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ea82028a78f0a6993840b23cc01adabf0d3b0f3699599f8c9a336abdc7197c7a"
+    sha256 cellar: :any_skip_relocation, ventura:       "ea82028a78f0a6993840b23cc01adabf0d3b0f3699599f8c9a336abdc7197c7a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "723330b43d5bfc58210ebd63ecf13ee5c75a26fae040afb7999efbb9c000b2d0"
   end
 
   depends_on "go" => :build

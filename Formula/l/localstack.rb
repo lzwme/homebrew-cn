@@ -3,18 +3,17 @@ class Localstack < Formula
 
   desc "Fully functional local AWS cloud stack"
   homepage "https://localstack.cloud/"
-  url "https://files.pythonhosted.org/packages/11/7a/6030f1bfebf4cbef70d01fec2b76653a363da10d5ae30ee60487fa81e040/localstack-4.5.0.tar.gz"
-  sha256 "f8ebf3a9af1826c595cfe4196c6d52792152db374e437e1a574ac52aedc53a18"
+  url "https://files.pythonhosted.org/packages/47/72/b1fa6c2928cb8fd38a0681920f32201ee88b0ee93625e03d35bcf07bb765/localstack-4.6.0.tar.gz"
+  sha256 "2b0ba609816241dba507d7d7b20ca44ee598b4c730f6c56bed3e6f5472dc6c7d"
   license "Apache-2.0"
-  revision 2
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "a808952ca136ccb2cd3f489d6bba4dd31710e740c314aac86f26b24ed6d6d0e3"
-    sha256 cellar: :any,                 arm64_sonoma:  "8d5eece533c30d28971e626ed7fcd6681e8a5c56f046a17cd31b59596373c5f4"
-    sha256 cellar: :any,                 arm64_ventura: "24901bb64cd78513b8a35e7c1760c79e4004c6e524631e1e5ef2ce47c712ea87"
-    sha256 cellar: :any,                 sonoma:        "f1cbde3635a53b8faba1c555008d0ce98a41eadc13fa089f078f4cc27a6e022d"
-    sha256 cellar: :any,                 ventura:       "26e93cd278974896661242d1d3f0e7ff915a39f5d49a27df8a3a2fc31a15d599"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e73ec7ce61c3625b1c223be0afe7aad256335befdd792b5e5e41da755e7d9669"
+    sha256 cellar: :any,                 arm64_sequoia: "2ebb6ebffccf50f7c3d4ca5571281b5b9bfe7b60be5c65071876e13510123627"
+    sha256 cellar: :any,                 arm64_sonoma:  "ebf9780ea63d7ca24bd553009cd869a1dfb600ed2b9f41e42c861f94c4a63a76"
+    sha256 cellar: :any,                 arm64_ventura: "3468a4dc723271a6aadac2c27603f0f14d93fb25fe5d9d29b457ba0cadbff729"
+    sha256 cellar: :any,                 sonoma:        "90e44ff9e00ac9db9836bebe758c7d4d4bbdcce8e9b7459cc88f704a540fda7a"
+    sha256 cellar: :any,                 ventura:       "e3502ed67a5334da9dd11ece12d425bdd9d83f3cee4918d5e6444feba007b15f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b6f9583874e0c45e47cb08c3ba7fa4a7cbd63dcfbc579ceedf8b175858943c2a"
   end
 
   depends_on "docker" => :test
@@ -64,13 +63,13 @@ class Localstack < Formula
   end
 
   resource "localstack-core" do
-    url "https://files.pythonhosted.org/packages/cc/24/840843f39d331acdc36f4bcfb094922e2f5a4547473f2db18abaf16c3641/localstack_core-4.5.0.tar.gz"
-    sha256 "2930c0a67dad7f88d2690c0b8720a8b605774c6edf819593ab0328fd14a3e395"
+    url "https://files.pythonhosted.org/packages/87/af/bb6760edcbb1e1c3906c2aa961c6a744e9a9a4f11c2ac7d2ac0e5fabd08d/localstack_core-4.6.0.tar.gz"
+    sha256 "e324a8ece8acb1b15a8961ea1a103a50e24e61bbbd30e608b9f5a03ff3b0b0ad"
   end
 
   resource "localstack-ext" do
-    url "https://files.pythonhosted.org/packages/7e/c7/d63c41166e2d7fd6bd469c12a49f11848f42762be803260f93fd48fd8c52/localstack_ext-4.5.0.tar.gz"
-    sha256 "7d7c30ce3edbe822a5ff3db063d323ae3360c346d6719c83447fbd9188462556"
+    url "https://files.pythonhosted.org/packages/0c/4f/0f6424553530c1b3b88a9815d7f10a3025c14144f267e525c7156d4fa59f/localstack_ext-4.6.0.tar.gz"
+    sha256 "7b9fcd712877bd5678b394bb24e8ebdb1df9fb4c669177049c0d97e005c8615c"
   end
 
   resource "markdown-it-py" do
@@ -99,8 +98,8 @@ class Localstack < Formula
   end
 
   resource "pygments" do
-    url "https://files.pythonhosted.org/packages/7c/2d/c3338d48ea6cc0feb8446d8e6937e1408088a72a39937982cc6111d17f84/pygments-2.19.1.tar.gz"
-    sha256 "61c16d2a8576dc0649d9f39e089b5f02bcd27fba10d8fb4dcc28173f7a45151f"
+    url "https://files.pythonhosted.org/packages/b0/77/a5b8c569bf593b0140bde72ea885a803b82086995367bf2037de0159d924/pygments-2.19.2.tar.gz"
+    sha256 "636cb2477cec7f8952536970bc533bc43743542f70392ae026374600add5b887"
   end
 
   resource "pyjwt" do
@@ -124,8 +123,8 @@ class Localstack < Formula
   end
 
   resource "python-dotenv" do
-    url "https://files.pythonhosted.org/packages/88/2c/7bb1416c5620485aa793f2de31d3df393d3686aa8a8506d11e10e13c5baf/python_dotenv-1.1.0.tar.gz"
-    sha256 "41f90bc6f5f177fb41f53e87666db362025010eb28f60a01c9143bfa33a2b2d5"
+    url "https://files.pythonhosted.org/packages/f6/b0/4bc07ccd3572a2f9df7e6782f52b0c6c90dcbb803ac4a167702d7d0dfe1e/python_dotenv-1.1.1.tar.gz"
+    sha256 "a8a6399716257f45be6a007360200409fce5cda2661e3dec71d23dc15f6189ab"
   end
 
   resource "pyyaml" do

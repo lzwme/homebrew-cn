@@ -1,18 +1,18 @@
 class Kingfisher < Formula
   desc "MongoDB's blazingly fast secret scanning and validation tool"
   homepage "https:github.commongodbkingfisher"
-  url "https:github.commongodbkingfisherarchiverefstagsv1.18.1.tar.gz"
-  sha256 "4e935319a9e6760f683c0310a56d8720700bb7e66e5ccd60291efa93c7bf78ea"
+  url "https:github.commongodbkingfisherarchiverefstagsv1.19.0.tar.gz"
+  sha256 "0271eb3b933fdec85fffd7a376f0d6a876fb5d7b87c0901170cdd7bdc1b7ba25"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "057c527f4fd697a3e5f1e3b053d0bd5abb219c98ae0fb1816b3f6ed8e8b89776"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a42075334de10a8a3eb902dadcd82f96f60088462f7155fef80d4e2735beb831"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "ccc6418ef64d2adf745aaf5b27f3115cd8d99265fa43a1fc13af0fa07b725565"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3d21ca43f4364f919713db0da4525c0c6dc2a102d5ad5a9b9b545a2cf4739a15"
-    sha256 cellar: :any_skip_relocation, ventura:       "6f8cc42e405f923ba093795b431ea5272d45f1c57c8ce21f7beb91aca21de7c6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "989a88e82b34d09330fa9a28674245a6826b2e8057f7f67928d60f070643ff56"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "560719e64b3fa18e58c31caf64ec91f8ca148f7383a8785951feced9db14c3ad"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0cd0d653b32e97b5505e012d760b105470add4835bd71220a7f7a80b4f4c5912"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "673c17c0188c3f58a7345f4ef2107db77b574958f7e75d24d5b9f82b901db2d7"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "124e53791cc7b4b1cf0b64800f6fa0701e1fe5e5c5258a0cfa8452510504f139"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b6a516ec0ac9e986c3c56b14198392261853c7d07ff34b0a47f2619a9131b83c"
+    sha256 cellar: :any_skip_relocation, ventura:       "9fa6122a4d23c1565e4ada89ba4aabd0a1e7b91d80589c6f5ae57a0de19aca60"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "467f7e46b783b337d761130804ec075a26524e8733ecf0ac89f904adcd9ac67f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1e764ca43aed9712fbfd4deac5e030a47ff33d3afbdd5f7570a09008ebc1a200"
   end
 
   depends_on "boost" => :build

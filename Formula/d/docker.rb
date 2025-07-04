@@ -12,8 +12,6 @@ class Docker < Formula
     regex(^v?(\d+(?:\.\d+)+)(?:[._-]ce)?$i)
   end
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "c95fb6f394791abf5157830f11dfbb9c2fc11633a908b962eddcba036e78ac8b"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "45731be257bedf5a08daa9f8edbfca3bd3a72e2ff38e81ead4ba44455dfc071d"
@@ -27,7 +25,7 @@ class Docker < Formula
   depends_on "go-md2man" => :build
   depends_on "docker-completion"
 
-  conflicts_with cask: "docker"
+  conflicts_with cask: "docker-desktop"
 
   def install
     # TODO: Drop GOPATH when mergedreleased: https:github.comdockerclipull4116

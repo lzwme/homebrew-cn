@@ -1,18 +1,18 @@
 class Doctl < Formula
   desc "Command-line tool for DigitalOcean"
   homepage "https:github.comdigitaloceandoctl"
-  url "https:github.comdigitaloceandoctlarchiverefstagsv1.131.0.tar.gz"
-  sha256 "2db73f5f4cfcc2500dec92858e0a5032541e68e6c315603b3b7698029b8bf14e"
+  url "https:github.comdigitaloceandoctlarchiverefstagsv1.132.0.tar.gz"
+  sha256 "6037dd2657b0b4cc27fed86808778cf86f8566ba655a5d04a31450416a975be4"
   license "Apache-2.0"
   head "https:github.comdigitaloceandoctl.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fceed93c15b4a865cb796905508972048f705f76ba1794b91ae6e740dd3c7df7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fceed93c15b4a865cb796905508972048f705f76ba1794b91ae6e740dd3c7df7"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "fceed93c15b4a865cb796905508972048f705f76ba1794b91ae6e740dd3c7df7"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8219dc7a6661033d2b933651727bebaa0735dea7efc33060e8b93aa3e6b3c586"
-    sha256 cellar: :any_skip_relocation, ventura:       "8219dc7a6661033d2b933651727bebaa0735dea7efc33060e8b93aa3e6b3c586"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b2217a2b7738c465e2e1df3bad12d0b7d34d6a2a7a03ca8824e464b80de34c42"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f566a050902b70437e8547a7daddf9dd4838698bc5d244507dbcebb774a67b62"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f566a050902b70437e8547a7daddf9dd4838698bc5d244507dbcebb774a67b62"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "f566a050902b70437e8547a7daddf9dd4838698bc5d244507dbcebb774a67b62"
+    sha256 cellar: :any_skip_relocation, sonoma:        "66c4825dd5d1dd3753e690b1392513d7d28f2ef3d723da2537ead70501b17423"
+    sha256 cellar: :any_skip_relocation, ventura:       "66c4825dd5d1dd3753e690b1392513d7d28f2ef3d723da2537ead70501b17423"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a09057a2823a58e9b815751c9cc52a105889e0d163eab12331f2c8674c0b9695"
   end
 
   depends_on "go" => :build

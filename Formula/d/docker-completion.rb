@@ -10,13 +10,11 @@ class DockerCompletion < Formula
     formula "docker"
   end
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     sha256 cellar: :any_skip_relocation, all: "a19b77d3e86b286ff37b22699eeea211e1d9004a6cc9ea582c76f956af8552cf"
   end
 
-  conflicts_with cask: "docker"
+  conflicts_with cask: "docker-desktop"
 
   # These used to also be provided by the `docker` formula.
   link_overwrite "etcbash_completion.ddocker"
