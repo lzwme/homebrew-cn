@@ -1,7 +1,7 @@
 class Nping < Formula
   desc "Ping Tool in Rust with Real-Time Data and Visualizations"
-  homepage "https:github.comhanshuaikangNping"
-  url "https:github.comhanshuaikangNpingarchiverefstagsv0.4.0.tar.gz"
+  homepage "https://github.com/hanshuaikang/Nping"
+  url "https://ghfast.top/https://github.com/hanshuaikang/Nping/archive/refs/tags/v0.4.0.tar.gz"
   sha256 "9f3cc2cdd8da55e41390ccd3a506f14ceb08169e1c09b9f0362f4a1bfb70bb36"
   license "MIT"
 
@@ -24,11 +24,11 @@ class Nping < Formula
   end
 
   test do
-    assert_match "nping v#{version}", shell_output("#{bin}nping --version")
+    assert_match "nping v#{version}", shell_output("#{bin}/nping --version")
 
     # Fails in Linux CI with "No such device or address (os error 2)"
     return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
 
-    system bin"nping", "--count", "2", "brew.sh"
+    system bin/"nping", "--count", "2", "brew.sh"
   end
 end

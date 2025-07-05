@@ -1,10 +1,10 @@
 class Kubeconform < Formula
   desc "FAST Kubernetes manifests validator, with support for Custom Resources!"
-  homepage "https:github.comyannhkubeconform"
-  url "https:github.comyannhkubeconformarchiverefstagsv0.7.0.tar.gz"
+  homepage "https://github.com/yannh/kubeconform"
+  url "https://ghfast.top/https://github.com/yannh/kubeconform/archive/refs/tags/v0.7.0.tar.gz"
   sha256 "9cb00e6385346c9de21e8fe318a4ec9854a8c7165d08b10b20ed32e28faef9a8"
   license "Apache-2.0"
-  head "https:github.comyannhkubeconform.git", branch: "master"
+  head "https://github.com/yannh/kubeconform.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "daf8891c42d9a174f5b407e5a54ad7a18ec39e1413386738ad44a7f4a0e66257"
@@ -18,20 +18,20 @@ class Kubeconform < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=v#{version}"), ".cmdkubeconform"
+    system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=v#{version}"), "./cmd/kubeconform"
 
-    (pkgshare"examples").install Dir["fixtures*"]
+    (pkgshare/"examples").install Dir["fixtures/*"]
   end
 
   test do
-    cp_r pkgshare"examples.", testpath
+    cp_r pkgshare/"examples/.", testpath
 
-    system bin"kubeconform", testpath"valid.yaml"
+    system bin/"kubeconform", testpath/"valid.yaml"
     assert_equal 0, $CHILD_STATUS.exitstatus
 
     assert_match "ReplicationController bob is invalid",
-      shell_output("#{bin}kubeconform #{testpath}invalid.yaml", 1)
+      shell_output("#{bin}/kubeconform #{testpath}/invalid.yaml", 1)
 
-    assert_match version.to_s, shell_output("#{bin}kubeconform -v")
+    assert_match version.to_s, shell_output("#{bin}/kubeconform -v")
   end
 end

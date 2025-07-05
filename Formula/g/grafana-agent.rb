@@ -1,7 +1,7 @@
 class GrafanaAgent < Formula
   desc "Exporter for Prometheus Metrics, Loki Logs, and Tempo Traces"
-  homepage "https:grafana.comdocsagentlatest"
-  url "https:github.comgrafanaagentarchiverefstagsv0.44.2.tar.gz"
+  homepage "https://grafana.com/docs/agent/latest/"
+  url "https://ghfast.top/https://github.com/grafana/agent/archive/refs/tags/v0.44.2.tar.gz"
   sha256 "ef8b19e0bda6214ad1856d636226c50e9c9690da45791c5da090227f81fba65a"
   license "Apache-2.0"
 
@@ -20,12 +20,12 @@ class GrafanaAgent < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "96a26aad76428d765023b479df15a501ca44fe3220788ec5337ed0263ad27713"
   end
 
-  # Needs EOL Go 1.22 to build (https:github.comgrafanaagentissues6972)
+  # Needs EOL Go 1.22 to build (https://github.com/grafana/agent/issues/6972)
   # and deprecated upstream though will get security fixes until 2025-10-31.
   # Disable date set 3 months after planned EOL date of 2025-11-01.
   disable! date: "2026-02-01", because: :deprecated_upstream, replacement_formula: "grafana-alloy"
 
-  # use "go" again when https:github.comgrafanaagentissues6972 is resolved and released
+  # use "go" again when https://github.com/grafana/agent/issues/6972 is resolved and released
   depends_on "go@1.22" => :build
   depends_on "node" => :build
   depends_on "yarn" => :build
@@ -37,65 +37,65 @@ class GrafanaAgent < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.comgrafanaagentinternalbuild.Branch=HEAD
-      -X github.comgrafanaagentinternalbuild.Version=v#{version}
-      -X github.comgrafanaagentinternalbuild.BuildUser=#{tap.user}
-      -X github.comgrafanaagentinternalbuild.BuildDate=#{time.iso8601}
+      -X github.com/grafana/agent/internal/build.Branch=HEAD
+      -X github.com/grafana/agent/internal/build.Version=v#{version}
+      -X github.com/grafana/agent/internal/build.BuildUser=#{tap.user}
+      -X github.com/grafana/agent/internal/build.BuildDate=#{time.iso8601}
     ]
     args = std_go_args(ldflags:) + %w[-tags=builtinassets,noebpf]
 
     # Build the UI, which is baked into the final binary when the builtinassets
     # tag is set.
-    cd "internalwebui" do
+    cd "internal/web/ui" do
       system "yarn"
       system "yarn", "run", "build"
     end
 
-    system "go", "build", *args, ".cmdgrafana-agent"
-    system "go", "build", *args, "-o", bin"grafana-agentctl", ".cmdgrafana-agentctl"
+    system "go", "build", *args, "./cmd/grafana-agent"
+    system "go", "build", *args, "-o", bin/"grafana-agentctl", "./cmd/grafana-agentctl"
   end
 
   def post_install
-    (etc"grafana-agent").mkpath
+    (etc/"grafana-agent").mkpath
   end
 
   def caveats
     <<~EOS
       The agent uses a configuration file that you must customize before running:
-        #{etc}grafana-agentconfig.yml
+        #{etc}/grafana-agent/config.yml
     EOS
   end
 
   service do
-    run [opt_bin"grafana-agent", "-config.file", etc"grafana-agentconfig.yml"]
+    run [opt_bin/"grafana-agent", "-config.file", etc/"grafana-agent/config.yml"]
     keep_alive true
-    log_path var"loggrafana-agent.log"
-    error_log_path var"loggrafana-agent.err.log"
+    log_path var/"log/grafana-agent.log"
+    error_log_path var/"log/grafana-agent.err.log"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}grafana-agent --version")
-    assert_match version.to_s, shell_output("#{bin}grafana-agentctl --version")
+    assert_match version.to_s, shell_output("#{bin}/grafana-agent --version")
+    assert_match version.to_s, shell_output("#{bin}/grafana-agentctl --version")
 
     port = free_port
 
-    (testpath"wal").mkpath
+    (testpath/"wal").mkpath
 
-    (testpath"grafana-agent.yaml").write <<~YAML
+    (testpath/"grafana-agent.yaml").write <<~YAML
       server:
         log_level: info
     YAML
 
-    system bin"grafana-agentctl", "config-check", "#{testpath}grafana-agent.yaml"
+    system bin/"grafana-agentctl", "config-check", "#{testpath}/grafana-agent.yaml"
 
     fork do
-      exec bin"grafana-agent", "-config.file=#{testpath}grafana-agent.yaml",
-        "-metrics.wal-directory=#{testpath}wal", "-server.http.address=127.0.0.1:#{port}",
+      exec bin/"grafana-agent", "-config.file=#{testpath}/grafana-agent.yaml",
+        "-metrics.wal-directory=#{testpath}/wal", "-server.http.address=127.0.0.1:#{port}",
         "-server.grpc.address=127.0.0.1:#{free_port}"
     end
     sleep 10
 
-    output = shell_output("curl -s 127.0.0.1:#{port}metrics")
+    output = shell_output("curl -s 127.0.0.1:#{port}/metrics")
     assert_match "agent_build_info", output
   end
 end

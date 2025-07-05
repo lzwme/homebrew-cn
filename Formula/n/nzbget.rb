@@ -1,19 +1,19 @@
 class Nzbget < Formula
   desc "Binary newsgrabber for nzb files"
-  homepage "https:nzbget.com"
-  url "https:github.comnzbgetcomnzbgetarchiverefstagsv25.1.tar.gz"
-  sha256 "39f36d611879245f86d09f6a262f3be6c1c6adb6104cd4c174d0220574663307"
+  homepage "https://nzbget.com"
+  url "https://ghfast.top/https://github.com/nzbgetcom/nzbget/archive/refs/tags/v25.2.tar.gz"
+  sha256 "a557d6067e551ee77fd86a9f395a8407438edc3ee16ab6797830db25ba8e1662"
   license "GPL-2.0-or-later"
-  head "https:github.comnzbgetcomnzbget.git", branch: "develop"
+  head "https://github.com/nzbgetcom/nzbget.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "a0577a433ebe5f852bbf35cecf4353345846bfccd00f413d070f64d01b6b4230"
-    sha256 cellar: :any,                 arm64_sonoma:  "f87dbafdef6acf28ef8c3b67a96742c08e9aa65681a31ba9362fa66b8f9a4cb7"
-    sha256 cellar: :any,                 arm64_ventura: "02669b80ef87459826edb93c390aee51878b48ba1b71488450cbebd92439c12f"
-    sha256                               sonoma:        "4f8d0e1a1e6cd326dfea10afa3ae08dd408a4a875a5239bda5cd1f42f581c93f"
-    sha256                               ventura:       "4ed184814f4ce140817c98a2e8b505dd16c5309c644c1c1d31ab8bfd90b31fe6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "743a63516fbe001c39f61d3cebe12401ad3e3fd4aa295168688094866a1a262a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "82a6ee96096c10bd8b10626741876cc4d56edb79ec22cd5fdb00e343d1367958"
+    sha256 cellar: :any,                 arm64_sequoia: "0a550c2ba03578872a7f2983317ccebb4737ca158b12dd940e0a61e3c5832af1"
+    sha256 cellar: :any,                 arm64_sonoma:  "420a3e2d979132839a9d2a4e8dd99f14e6a861951255b3e404d78eb2386cde63"
+    sha256 cellar: :any,                 arm64_ventura: "ae7d6fcc21e52ce4fea1b3e1d0f61e90035f63fe4eb855053c1825807b3b484f"
+    sha256                               sonoma:        "fe1c738c108bd62d7c48ec188b5c1e34c2eecf4c6973373d38b3fe12da211e71"
+    sha256                               ventura:       "18c1d802062396691eb27f27a6ee560bcfa65d146c1126a78a2f6d4a116c3f53"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3d813e615f58fa4efaa208c7ed9818584f4149b88faaf71395c8b022045f8ebd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "78173ec478edec907afa5eae70cfc9419a32c15a564881210dfb7756bbe457c1"
   end
 
   depends_on "cmake" => :build
@@ -32,7 +32,7 @@ class Nzbget < Formula
 
     if OS.mac?
       # Set upstream's recommended values for file systems without
-      # sparse-file support (e.g., HFS+); see Homebrewhomebrew-core#972
+      # sparse-file support (e.g., HFS+); see Homebrew/homebrew-core#972
       inreplace "nzbget.conf", "DirectWrite=yes", "DirectWrite=no"
       inreplace "nzbget.conf", "ArticleCache=0", "ArticleCache=700"
       # Update 7z cmd to match homebrew binary
@@ -43,20 +43,20 @@ class Nzbget < Formula
   end
 
   service do
-    run [opt_bin"nzbget", "-c", HOMEBREW_PREFIX"etcnzbget.conf", "-s", "-o", "OutputMode=Log",
-         "-o", "ConfigTemplate=#{HOMEBREW_PREFIX}sharenzbgetnzbget.conf",
-         "-o", "WebDir=#{HOMEBREW_PREFIX}sharenzbgetwebui"]
+    run [opt_bin/"nzbget", "-c", HOMEBREW_PREFIX/"etc/nzbget.conf", "-s", "-o", "OutputMode=Log",
+         "-o", "ConfigTemplate=#{HOMEBREW_PREFIX}/share/nzbget/nzbget.conf",
+         "-o", "WebDir=#{HOMEBREW_PREFIX}/share/nzbget/webui"]
     keep_alive true
-    environment_variables PATH: "#{HOMEBREW_PREFIX}bin:usrbin:bin:usrsbin:sbin"
+    environment_variables PATH: "#{HOMEBREW_PREFIX}/bin:/usr/bin:/bin:/usr/sbin:/sbin"
   end
 
   test do
-    (testpath"downloadsdst").mkpath
+    (testpath/"downloads/dst").mkpath
     # Start nzbget as a server in daemon-mode
-    system bin"nzbget", "-D", "-c", etc"nzbget.conf"
+    system bin/"nzbget", "-D", "-c", etc/"nzbget.conf"
     # Query server for version information
-    system bin"nzbget", "-V", "-c", etc"nzbget.conf"
+    system bin/"nzbget", "-V", "-c", etc/"nzbget.conf"
     # Shutdown server daemon
-    system bin"nzbget", "-Q", "-c", etc"nzbget.conf"
+    system bin/"nzbget", "-Q", "-c", etc/"nzbget.conf"
   end
 end

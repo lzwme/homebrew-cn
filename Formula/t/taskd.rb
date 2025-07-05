@@ -1,11 +1,11 @@
 class Taskd < Formula
   desc "Client-server synchronization for todo lists"
-  homepage "https:taskwarrior.orgdocstaskserversetup.html"
-  url "https:github.comGothenburgBitFactorytaskserverreleasesdownloadv1.1.0taskd-1.1.0.tar.gz"
+  homepage "https://taskwarrior.org/docs/taskserver/setup.html"
+  url "https://ghfast.top/https://github.com/GothenburgBitFactory/taskserver/releases/download/v1.1.0/taskd-1.1.0.tar.gz"
   sha256 "7b8488e687971ae56729ff4e2e5209ff8806cf8cd57718bfd7e521be130621b4"
   license "MIT"
   revision 1
-  head "https:github.comGothenburgBitFactorytaskserver.git", branch: "1.2.0"
+  head "https://github.com/GothenburgBitFactory/taskserver.git", branch: "1.2.0"
 
   no_autobump! because: :requires_manual_review
 
@@ -38,6 +38,6 @@ class Taskd < Formula
   end
 
   test do
-    system bin"taskd", "init", "--data", testpath
+    system bin/"taskd", "init", "--data", testpath
   end
 end

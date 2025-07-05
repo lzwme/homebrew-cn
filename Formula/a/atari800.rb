@@ -1,13 +1,13 @@
 class Atari800 < Formula
   desc "Atari 8-bit machine emulator"
-  homepage "https:atari800.github.io"
-  url "https:github.comatari800atari800releasesdownloadATARI800_5_2_0atari800-5.2.0-src.tgz"
+  homepage "https://atari800.github.io/"
+  url "https://ghfast.top/https://github.com/atari800/atari800/releases/download/ATARI800_5_2_0/atari800-5.2.0-src.tgz"
   sha256 "3874d02b89d83c8089f75391a4c91ecb4e94001da2020c2617be088eba1f461f"
   license "GPL-2.0-or-later"
 
   livecheck do
     url :stable
-    regex(ATARI800[._-]v?(\d+(?:[._]\d+)+)i)
+    regex(/ATARI800[._-]v?(\d+(?:[._]\d+)+)/i)
     strategy :github_latest
   end
 
@@ -26,7 +26,7 @@ class Atari800 < Formula
   end
 
   head do
-    url "https:github.comatari800atari800.git", branch: "master"
+    url "https://github.com/atari800/atari800.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -43,8 +43,8 @@ class Atari800 < Formula
   end
 
   def install
-    system ".autogen.sh" if build.head?
-    system ".configure", "--disable-sdltest",
+    system "./autogen.sh" if build.head?
+    system "./configure", "--disable-sdltest",
                           "--disable-riodevice",
                           *std_configure_args.reject { |s| s["--disable-debug"] }
     system "make", "install"
@@ -52,6 +52,6 @@ class Atari800 < Formula
 
   test do
     assert_equal "Atari 800 Emulator, Version #{version}",
-                 shell_output("#{bin}atari800 -v", 3).strip
+                 shell_output("#{bin}/atari800 -v", 3).strip
   end
 end

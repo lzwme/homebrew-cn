@@ -1,8 +1,8 @@
 class Orbicfg < Formula
   desc "Tool to decrypt Netgear Orbi configuration files"
-  homepage "https:github.comFysacorbicfgtreego-rewrite"
+  homepage "https://github.com/Fysac/orbicfg/tree/go-rewrite"
   license ""
-  head "https:github.comFysacorbicfg.git", branch: "go-rewrite"
+  head "https://github.com/Fysac/orbicfg.git", branch: "go-rewrite"
 
   livecheck do
     skip "head-only formula"
@@ -15,6 +15,6 @@ class Orbicfg < Formula
   end
 
   test do
-    system bin"orbicfg"
+    system bin/"orbicfg"
   end
 end

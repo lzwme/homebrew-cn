@@ -1,10 +1,10 @@
 class Fq < Formula
   desc "Brokered message queue optimized for performance"
-  homepage "https:github.comcirconus-labsfq"
-  url "https:github.comcirconus-labsfqarchiverefstagsv0.13.12.tar.gz"
+  homepage "https://github.com/circonus-labs/fq"
+  url "https://ghfast.top/https://github.com/circonus-labs/fq/archive/refs/tags/v0.13.12.tar.gz"
   sha256 "4329fa7678437c2d22f021ec8a5bed2b7a7eeb608bbfe4c8749f8520011b12d3"
   license "MIT"
-  head "https:github.comcirconus-labsfq.git", branch: "master"
+  head "https://github.com/circonus-labs/fq.git", branch: "master"
 
   bottle do
     sha256 arm64_sequoia: "33e9232200183fa00074369edd7822c4bdd5b34eca4f0bf1e6f46536b99bdf22"
@@ -30,7 +30,7 @@ class Fq < Formula
   def install
     ENV.append_to_cflags "-DNO_BCD=1"
     inreplace "Makefile", "-lbcd", ""
-    inreplace "Makefile", "usrlibdtrace", "#{lib}dtrace"
+    inreplace "Makefile", "/usr/lib/dtrace", "#{lib}/dtrace"
     system "make", "PREFIX=#{prefix}"
     args = ["PREFIX=#{prefix}"]
     args << "ENABLE_DTRACE=0" unless OS.mac?
@@ -41,7 +41,7 @@ class Fq < Formula
   test do
     ipv4 = shell_output("dig -4 TXT +short o-o.myaddr.l.google.com @ns1.google.com | tr -d '\"'").strip
     port = free_port
-    pid = fork { exec sbin"fqd", "-p", port.to_s, "-n", ipv4, "-D", "-c", testpath"test.sqlite" }
+    pid = fork { exec sbin/"fqd", "-p", port.to_s, "-n", ipv4, "-D", "-c", testpath/"test.sqlite" }
     sleep 10
     begin
       assert_match "Circonus Fq Operational Dashboard", shell_output("curl 127.0.0.1:#{port}")

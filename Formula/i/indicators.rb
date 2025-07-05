@@ -1,10 +1,10 @@
 class Indicators < Formula
   desc "Activity indicators for modern C++"
-  homepage "https:github.comp-ranavindicators"
-  url "https:github.comp-ranavindicatorsarchiverefstagsv2.3.tar.gz"
+  homepage "https://github.com/p-ranav/indicators"
+  url "https://ghfast.top/https://github.com/p-ranav/indicators/archive/refs/tags/v2.3.tar.gz"
   sha256 "70da7a693ff7a6a283850ab6d62acf628eea17d386488af8918576d0760aef7b"
   license "MIT"
-  head "https:github.comp-ranavindicators.git", branch: "master"
+  head "https://github.com/p-ranav/indicators.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -22,9 +22,9 @@ class Indicators < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~CPP
-      #include <indicatorscursor_control.hpp>
-      #include <indicatorsprogress_bar.hpp>
+    (testpath/"test.cpp").write <<~CPP
+      #include <indicators/cursor_control.hpp>
+      #include <indicators/progress_bar.hpp>
       #include <vector>
       int main() {
         using namespace indicators;
@@ -62,9 +62,9 @@ class Indicators < Formula
     CPP
 
     system ENV.cxx, "test.cpp", "-std=c++11", "-I#{include}", "-o", "test"
-    output = shell_output(".test")
+    output = shell_output("./test")
 
-    assert_equal output.scan((?=Brewing...)).count, 100
+    assert_equal output.scan(/(?=Brewing...)/).count, 100
     100.times do |n|
       assert_match "#{n}%", output
     end

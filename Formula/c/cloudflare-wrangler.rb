@@ -1,7 +1,7 @@
 class CloudflareWrangler < Formula
   desc "CLI tool for Cloudflare Workers"
-  homepage "https:github.comcloudflareworkers-sdk"
-  url "https:registry.npmjs.orgwrangler-wrangler-4.23.0.tgz"
+  homepage "https://github.com/cloudflare/workers-sdk"
+  url "https://registry.npmjs.org/wrangler/-/wrangler-4.23.0.tgz"
   sha256 "4a3942330192e432f1b1bfbe3bec748dc563d24341e86decf95d596c8e84d1fa"
   license any_of: ["Apache-2.0", "MIT"]
 
@@ -19,11 +19,11 @@ class CloudflareWrangler < Formula
 
   def install
     system "npm", "install", *std_npm_args
-    bin.install_symlink Dir["#{libexec}binwrangler*"]
+    bin.install_symlink Dir["#{libexec}/bin/wrangler*"]
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}wrangler -v")
-    assert_match "Required Worker name missing", shell_output("#{bin}wrangler secret list 2>&1", 1)
+    assert_match version.to_s, shell_output("#{bin}/wrangler -v")
+    assert_match "Required Worker name missing", shell_output("#{bin}/wrangler secret list 2>&1", 1)
   end
 end

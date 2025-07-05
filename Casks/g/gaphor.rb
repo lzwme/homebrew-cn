@@ -5,11 +5,11 @@ cask "gaphor" do
   sha256 arm:   "9772e9dfa42502d910f258fe9babc26837e952476a871d14c094c7af58dc8e29",
          intel: "a59c7627ed62530ab232e60f30838d90ad83b84a4bf1f9b7e873a381696991b1"
 
-  url "https:github.comgaphorgaphorreleasesdownload#{version}Gaphor-#{version}-#{arch}.dmg",
-      verified: "github.comgaphorgaphor"
+  url "https://ghfast.top/https://github.com/gaphor/gaphor/releases/download/#{version}/Gaphor-#{version}-#{arch}.dmg",
+      verified: "github.com/gaphor/gaphor/"
   name "Gaphor"
-  desc "UMLSysML modelling tool"
-  homepage "https:gaphor.org"
+  desc "UML/SysML modelling tool"
+  homepage "https://gaphor.org/"
 
   no_autobump! because: :requires_manual_review
 
@@ -20,7 +20,7 @@ cask "gaphor" do
   uninstall quit: "Gaphor-#{version}"
 
   zap trash: [
-    "~.cachegaphor",
-    "~.localsharegaphor",
+    "~/.cache/gaphor",
+    "~/.local/share/gaphor",
   ]
 end

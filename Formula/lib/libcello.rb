@@ -1,14 +1,14 @@
 class Libcello < Formula
   desc "Higher-level programming in C"
-  homepage "https:libcello.org"
-  url "https:libcello.orgstaticlibCello-2.1.0.tar.gz"
+  homepage "https://libcello.org/"
+  url "https://libcello.org/static/libCello-2.1.0.tar.gz"
   sha256 "49acf6525ac6808c49f2125ecdc101626801cffe87da16736afb80684b172b28"
   license "BSD-2-Clause"
-  head "https:github.comorangeducklibCello.git", branch: "master"
+  head "https://github.com/orangeduck/libCello.git", branch: "master"
 
   livecheck do
     url :homepage
-    regex(href=.*?libCello[._-]v?(\d+(?:\.\d+)+)\.ti)
+    regex(/href=.*?libCello[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -38,7 +38,7 @@ class Libcello < Formula
   end
 
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include "Cello.h"
 
       int main(int argc, char** argv) {
@@ -52,6 +52,6 @@ class Libcello < Formula
       }
     C
     system ENV.cc, "test.c", "-L#{lib}", "-lCello", "-lpthread", "-o", "test"
-    system ".test"
+    system "./test"
   end
 end

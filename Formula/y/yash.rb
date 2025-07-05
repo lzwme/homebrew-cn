@@ -1,7 +1,7 @@
 class Yash < Formula
   desc "Yet another shell: a POSIX-compliant command-line shell"
-  homepage "https:magicant.github.ioyash"
-  url "https:github.commagicantyashreleasesdownload2.59yash-2.59.tar.xz"
+  homepage "https://magicant.github.io/yash/"
+  url "https://ghfast.top/https://github.com/magicant/yash/releases/download/2.59/yash-2.59.tar.xz"
   sha256 "299a50ea70f23dcbb94cf278f3e99e788b20b613185a0426ed5fdd189b1711ee"
   license "GPL-2.0-or-later"
 
@@ -16,7 +16,7 @@ class Yash < Formula
   end
 
   head do
-    url "https:github.commagicantyash.git", branch: "trunk"
+    url "https://github.com/magicant/yash.git", branch: "trunk"
 
     depends_on "asciidoc" => :build
   end
@@ -28,14 +28,14 @@ class Yash < Formula
   end
 
   def install
-    ENV["XML_CATALOG_FILES"] = etc"xmlcatalog" if build.head?
+    ENV["XML_CATALOG_FILES"] = etc/"xml/catalog" if build.head?
 
-    system ".configure", "--prefix=#{prefix}"
+    system "./configure", "--prefix=#{prefix}"
     system "make", "install"
   end
 
   test do
-    system bin"yash", "-c", "echo hello world"
-    assert_match version.to_s, shell_output("#{bin}yash --version")
+    system bin/"yash", "-c", "echo hello world"
+    assert_match version.to_s, shell_output("#{bin}/yash --version")
   end
 end

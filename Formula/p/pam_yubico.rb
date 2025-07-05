@@ -1,7 +1,7 @@
 class PamYubico < Formula
   desc "Yubico pluggable authentication module"
-  homepage "https:developers.yubico.comyubico-pam"
-  url "https:developers.yubico.comyubico-pamReleasespam_yubico-2.27.tar.gz"
+  homepage "https://developers.yubico.com/yubico-pam/"
+  url "https://developers.yubico.com/yubico-pam/Releases/pam_yubico-2.27.tar.gz"
   sha256 "63d02788852644d871746e1a7a1d16c272c583c226f62576f5ad232a6a44e18c"
   license "BSD-2-Clause"
 
@@ -22,7 +22,7 @@ class PamYubico < Formula
   end
 
   # Deprecation date set to 1 year after upstream issue was created.
-  # Issue opened on 2022-07-29: https:github.comYubicoyubico-pamissues242
+  # Issue opened on 2022-07-29: https://github.com/Yubico/yubico-pam/issues/242
   disable! date: "2024-08-03", because: "uses deprecated `ykclient`"
 
   depends_on "pkgconf" => :build
@@ -35,9 +35,9 @@ class PamYubico < Formula
   end
 
   def install
-    ENV["XML_CATALOG_FILES"] = "#{etc}xmlcatalog"
+    ENV["XML_CATALOG_FILES"] = "#{etc}/xml/catalog"
 
-    system ".configure", "--prefix=#{prefix}",
+    system "./configure", "--prefix=#{prefix}",
                           "--with-libyubikey-prefix=#{Formula["libyubikey"].opt_prefix}",
                           "--with-libykclient-prefix=#{Formula["ykclient"].opt_prefix}"
     system "make", "install"
@@ -45,6 +45,6 @@ class PamYubico < Formula
 
   test do
     # Not much more to test without an actual yubikey device.
-    system bin"ykpamcfg", "-V"
+    system bin/"ykpamcfg", "-V"
   end
 end

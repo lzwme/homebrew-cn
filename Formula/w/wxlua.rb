@@ -1,11 +1,11 @@
 class Wxlua < Formula
   desc "Lua bindings for wxWidgets cross-platform GUI toolkit"
-  homepage "https:github.compkulchenkowxlua"
-  url "https:github.compkulchenkowxluaarchiverefstagsv3.2.0.2.tar.gz"
+  homepage "https://github.com/pkulchenko/wxlua"
+  url "https://ghfast.top/https://github.com/pkulchenko/wxlua/archive/refs/tags/v3.2.0.2.tar.gz"
   sha256 "62abe571803a9748e19e86e39cb0e254fd90a5925dc5f0e35669e693cbdb129e"
   license "LGPL-2.0-or-later" => { with: "WxWindows-exception-3.1" }
   revision 1
-  head "https:github.compkulchenkowxlua.git", branch: "master"
+  head "https://github.com/pkulchenko/wxlua.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -35,9 +35,9 @@ class Wxlua < Formula
     args = %W[
       -DCMAKE_POLICY_VERSION_MINIMUM=3.5
       -DwxLua_LUA_LIBRARY_VERSION=#{lua_version}
-      -DwxLua_LUA_INCLUDE_DIR=#{lua.opt_include}lua
-      -DwxLua_LUA_LIBRARY=#{lua.opt_libshared_library("liblua")}
-      -DwxWidgets_CONFIG_EXECUTABLE=#{wxwidgets.opt_bin}wx-config
+      -DwxLua_LUA_INCLUDE_DIR=#{lua.opt_include}/lua
+      -DwxLua_LUA_LIBRARY=#{lua.opt_lib/shared_library("liblua")}
+      -DwxWidgets_CONFIG_EXECUTABLE=#{wxwidgets.opt_bin}/wx-config
       -DwxLua_LUA_LIBRARY_USE_BUILTIN=FALSE
     ]
     # Some components are not enabled in brew `wxwidgets`:
@@ -49,18 +49,18 @@ class Wxlua < Formula
     system "cmake", "--build", "build-wxlua"
     system "cmake", "--install", "build-wxlua"
 
-    (lib"lua"lua_version).install libshared_library("libwx") => "wx.so"
+    (lib/"lua"/lua_version).install lib/shared_library("libwx") => "wx.so"
     prefix.install bin.glob("*.app")
   end
 
   test do
-    (testpath"example.wx.lua").write <<~LUA
+    (testpath/"example.wx.lua").write <<~LUA
       require('wx')
       print(wxlua.wxLUA_VERSION_STRING)
     LUA
 
     if OS.linux?
-      xvfb_pid = spawn Formula["xorg-server"].bin"Xvfb", ":1"
+      xvfb_pid = spawn Formula["xorg-server"].bin/"Xvfb", ":1"
       ENV["DISPLAY"] = ":1"
       sleep 10
     end

@@ -2,12 +2,12 @@ cask "font-bevan" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefonts.git",
-      verified:  "github.comgooglefonts",
+  url "https://github.com/google/fonts.git",
+      verified:  "github.com/google/fonts",
       branch:    "main",
-      only_path: "oflbevan"
+      only_path: "ofl/bevan"
   name "Bevan"
-  homepage "https:fonts.google.comspecimenBevan"
+  homepage "https://fonts.google.com/specimen/Bevan"
 
   font "Bevan-Italic.ttf"
   font "Bevan-Regular.ttf"

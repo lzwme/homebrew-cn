@@ -1,10 +1,10 @@
 class Pelikan < Formula
   desc "Production-ready cache services"
-  homepage "https:twitter.github.iopelikan"
-  url "https:github.comtwitterpelikanarchiverefstags0.1.2.tar.gz"
+  homepage "https://twitter.github.io/pelikan"
+  url "https://ghfast.top/https://github.com/twitter/pelikan/archive/refs/tags/0.1.2.tar.gz"
   sha256 "c105fdab8306f10c1dfa660b4e958ff6f381a5099eabcb15013ba42e4635f824"
   license "Apache-2.0"
-  head "https:github.comtwitterpelikan.git", branch: "master"
+  head "https://github.com/twitter/pelikan.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -31,7 +31,7 @@ class Pelikan < Formula
 
   def install
     # Work around failure from GCC 10+ using default of `-fno-common`
-    # multiple definition of `signals'; ..buffercc_buf.c.o:(.bss+0x20): first defined here
+    # multiple definition of `signals'; ../buffer/cc_buf.c.o:(.bss+0x20): first defined here
     ENV.append_to_cflags "-fcommon" if OS.linux?
 
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
@@ -40,6 +40,6 @@ class Pelikan < Formula
   end
 
   test do
-    system bin"pelikan_twemcache", "-c"
+    system bin/"pelikan_twemcache", "-c"
   end
 end

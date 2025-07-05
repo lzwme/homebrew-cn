@@ -1,10 +1,10 @@
 class Libdivide < Formula
   desc "Optimized integer division"
-  homepage "https:libdivide.com"
-  url "https:github.comridiculousfishlibdividearchiverefstagsv5.2.0.tar.gz"
+  homepage "https://libdivide.com"
+  url "https://ghfast.top/https://github.com/ridiculousfish/libdivide/archive/refs/tags/v5.2.0.tar.gz"
   sha256 "73ae910c4cdbda823b7df2c1e0e1e7427464ebc43fc770b1a30bb598cb703f49"
   license any_of: ["Zlib", "BSL-1.0"]
-  head "https:github.comridiculousfishlibdivide.git", branch: "master"
+  head "https://github.com/ridiculousfish/libdivide.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, all: "1bcba36eed605054470693093dd47baf69817c8aaa85d9a046e5f665e124fce8"
@@ -12,9 +12,9 @@ class Libdivide < Formula
 
   depends_on "cmake" => :build
 
-  # include sanitisers for release build, upstream pr ref, https:github.comridiculousfishlibdividepull129
+  # include sanitisers for release build, upstream pr ref, https://github.com/ridiculousfish/libdivide/pull/129
   patch do
-    url "https:github.comridiculousfishlibdividecommit41c04ea14b9c661e891ef35b122c5cce74837c8a.patch?full_index=1"
+    url "https://github.com/ridiculousfish/libdivide/commit/41c04ea14b9c661e891ef35b122c5cce74837c8a.patch?full_index=1"
     sha256 "e431c9dd5163d1636dc53e689b33d27f38f9dce674532f8e1df1ff90ae112efc"
   end
 
@@ -25,7 +25,7 @@ class Libdivide < Formula
   end
 
   test do
-    (testpath"libdivide-test.c").write <<~C
+    (testpath/"libdivide-test.c").write <<~C
       #include "libdivide.h"
       #include <assert.h>
 
@@ -39,7 +39,7 @@ class Libdivide < Formula
 
       int main(void) {
         const int numers[] = {2, 4, 6, 8, 10};
-        size_t count = sizeof(numers)  sizeof(int);
+        size_t count = sizeof(numers) / sizeof(int);
         int d = 2;
         int result = sum_of_quotients(numers, count, d);
         assert(result == 15);
@@ -51,6 +51,6 @@ class Libdivide < Formula
     ENV.append_to_cflags "-I#{include} -DLIBDIVIDE_#{macro_suffix}"
 
     system "make", "libdivide-test"
-    system ".libdivide-test"
+    system "./libdivide-test"
   end
 end

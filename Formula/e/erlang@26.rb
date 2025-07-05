@@ -1,15 +1,15 @@
 class ErlangAT26 < Formula
   desc "Programming language for highly scalable real-time systems"
-  homepage "https:www.erlang.org"
+  homepage "https://www.erlang.org/"
   # Download tarball from GitHub; it is served faster than the official tarball.
   # Don't forget to update the documentation resource along with the url!
-  url "https:github.comerlangotpreleasesdownloadOTP-26.2.5.13otp_src_26.2.5.13.tar.gz"
+  url "https://ghfast.top/https://github.com/erlang/otp/releases/download/OTP-26.2.5.13/otp_src_26.2.5.13.tar.gz"
   sha256 "a02efb423a7ecdee661b3c3ad2661521d9c00c2dd866c004d95a87d486a03bab"
   license "Apache-2.0"
 
   livecheck do
     url :stable
-    regex(^OTP[._-]v?(26(?:\.\d+)+)$i)
+    regex(/^OTP[._-]v?(26(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -37,7 +37,7 @@ class ErlangAT26 < Formula
   end
 
   resource "html" do
-    url "https:github.comerlangotpreleasesdownloadOTP-26.2.5.13otp_doc_html_26.2.5.13.tar.gz"
+    url "https://ghfast.top/https://github.com/erlang/otp/releases/download/OTP-26.2.5.13/otp_doc_html_26.2.5.13.tar.gz"
     sha256 "fb7bb87b9edf88a621a97c01b436f5c3daa6a5715d02adf96031f5dd2c07edc0"
 
     livecheck do
@@ -53,7 +53,7 @@ class ErlangAT26 < Formula
     %w[LIBS FLAGS AFLAGS ZFLAGS].each { |k| ENV.delete("ERL_#{k}") }
 
     # Do this if building from a checkout to generate configure
-    system ".otp_build", "autoconf" unless File.exist? "configure"
+    system "./otp_build", "autoconf" unless File.exist? "configure"
 
     args = %W[
       --enable-dynamic-ssl-lib
@@ -73,7 +73,7 @@ class ErlangAT26 < Formula
       args << "--with-dynamic-trace=dtrace" if MacOS::CLT.installed?
     end
 
-    system ".configure", *std_configure_args, *args
+    system "./configure", *std_configure_args, *args
     system "make"
     system "make", "install"
 
@@ -87,17 +87,17 @@ class ErlangAT26 < Formula
   def caveats
     <<~EOS
       Man pages can be found in:
-        #{opt_lib}erlangman
+        #{opt_lib}/erlang/man
 
       Access them with `erl -man`, or add this directory to MANPATH.
     EOS
   end
 
   test do
-    system bin"erl", "-noshell", "-eval", "crypto:start().", "-s", "init", "stop"
+    system bin/"erl", "-noshell", "-eval", "crypto:start().", "-s", "init", "stop"
 
-    (testpath"factorial").write <<~EOS
-      #!#{bin}escript
+    (testpath/"factorial").write <<~EOS
+      #!#{bin}/escript
       %% -*- erlang -*-
       %%! -smp enable -sname factorial -mnesia debug verbose
       main([String]) ->
@@ -120,7 +120,7 @@ class ErlangAT26 < Formula
     EOS
 
     chmod 0755, "factorial"
-    assert_match "usage: factorial integer", shell_output(".factorial")
-    assert_match "factorial 42 = 1405006117752879898543142606244511569936384000000000", shell_output(".factorial 42")
+    assert_match "usage: factorial integer", shell_output("./factorial")
+    assert_match "factorial 42 = 1405006117752879898543142606244511569936384000000000", shell_output("./factorial 42")
   end
 end

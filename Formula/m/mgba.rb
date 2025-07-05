@@ -1,10 +1,10 @@
 class Mgba < Formula
   desc "Game Boy Advance emulator"
-  homepage "https:mgba.io"
-  url "https:github.commgba-emumgbaarchiverefstags0.10.5.tar.gz"
+  homepage "https://mgba.io/"
+  url "https://ghfast.top/https://github.com/mgba-emu/mgba/archive/refs/tags/0.10.5.tar.gz"
   sha256 "91d6fbd32abcbdf030d58d3f562de25ebbc9d56040d513ff8e5c19bee9dacf14"
   license "MPL-2.0"
-  head "https:github.commgba-emumgba.git", branch: "master"
+  head "https://github.com/mgba-emu/mgba.git", branch: "master"
 
   livecheck do
     url :stable
@@ -37,7 +37,7 @@ class Mgba < Formula
   uses_from_macos "zlib"
 
   on_macos do
-    # https:github.commgba-emumgbaissues3129
+    # https://github.com/mgba-emu/mgba/issues/3129
     depends_on "libelf" => :build
   end
 
@@ -47,14 +47,14 @@ class Mgba < Formula
   end
 
   def install
-    # https:github.commgba-emumgbaissues3115
+    # https://github.com/mgba-emu/mgba/issues/3115
     args = []
     args << "-DUSE_DISCORD_RPC=OFF" if OS.linux?
 
-    inreplace "srcplatformqtCMakeLists.txt" do |s|
+    inreplace "src/platform/qt/CMakeLists.txt" do |s|
       # Disable CMake fixup_bundle to prevent copying dylibs into app bundle
       s.gsub! "fixup_bundle(", "# \\0"
-      # Install .app bundle into prefix, not prefixApplications
+      # Install .app bundle into prefix, not prefix/Applications
       s.gsub! "Applications", "."
     end
 
@@ -71,16 +71,16 @@ class Mgba < Formula
 
     # Replace SDL frontend binary with a script for running Qt frontend
     # -DBUILD_SDL=OFF would be easier, but disable joystick support in Qt frontend
-    rm bin"mgba"
+    rm bin/"mgba"
     if OS.mac?
-      bin.write_exec_script "#{prefix}mGBA.appContentsMacOSmGBA"
+      bin.write_exec_script "#{prefix}/mGBA.app/Contents/MacOS/mGBA"
     else
-      mv bin"mgba-qt", bin"mGBA"
+      mv bin/"mgba-qt", bin/"mGBA"
     end
   end
 
   test do
     # mGBA opens a GUI with other commands, so we can only check the version
-    assert_match version.to_s, shell_output("#{bin}mGBA --version")
+    assert_match version.to_s, shell_output("#{bin}/mGBA --version")
   end
 end

@@ -1,10 +1,10 @@
 class Abduco < Formula
   desc "Provides session management: i.e. separate programs from terminals"
-  homepage "https:www.brain-dump.orgprojectsabduco"
-  url "https:github.commartanneabducoreleasesdownloadv0.6abduco-0.6.tar.gz"
+  homepage "https://www.brain-dump.org/projects/abduco/"
+  url "https://ghfast.top/https://github.com/martanne/abduco/releases/download/v0.6/abduco-0.6.tar.gz"
   sha256 "c90909e13fa95770b5afc3b59f311b3d3d2fdfae23f9569fa4f96a3e192a35f4"
   license "ISC"
-  head "https:github.commartanneabduco.git", branch: "master"
+  head "https://github.com/martanne/abduco.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -33,8 +33,8 @@ class Abduco < Formula
   end
 
   test do
-    result = shell_output("#{bin}abduco -v")
+    result = shell_output("#{bin}/abduco -v")
     result.force_encoding("UTF-8") if result.respond_to?(:force_encoding)
-    assert_match(^abduco-#{version}, result)
+    assert_match(/^abduco-#{version}/, result)
   end
 end

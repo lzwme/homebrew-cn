@@ -1,7 +1,7 @@
 class B3sum < Formula
   desc "Command-line implementation of the BLAKE3 cryptographic hash function"
-  homepage "https:github.comBLAKE3-teamBLAKE3"
-  url "https:github.comBLAKE3-teamBLAKE3archiverefstags1.8.2.tar.gz"
+  homepage "https://github.com/BLAKE3-team/BLAKE3"
+  url "https://ghfast.top/https://github.com/BLAKE3-team/BLAKE3/archive/refs/tags/1.8.2.tar.gz"
   sha256 "6b51aefe515969785da02e87befafc7fdc7a065cd3458cf1141f29267749e81f"
   license any_of: ["CC0-1.0", "Apache-2.0"]
 
@@ -24,11 +24,11 @@ class B3sum < Formula
   end
 
   test do
-    (testpath"test.txt").write <<~EOS
+    (testpath/"test.txt").write <<~EOS
       content
     EOS
 
-    output = shell_output("#{bin}b3sum test.txt")
+    output = shell_output("#{bin}/b3sum test.txt")
     assert_equal "df0c40684c6bda3958244ee330300fdcbc5a37fb7ae06fe886b786bc474be87e  test.txt", output.strip
   end
 end

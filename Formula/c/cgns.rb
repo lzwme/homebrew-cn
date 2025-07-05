@@ -1,14 +1,14 @@
 class Cgns < Formula
   desc "CFD General Notation System"
-  homepage "https:cgns.github.io"
-  url "https:github.comCGNSCGNSarchiverefstagsv4.5.0.tar.gz"
+  homepage "https://cgns.github.io/"
+  url "https://ghfast.top/https://github.com/CGNS/CGNS/archive/refs/tags/v4.5.0.tar.gz"
   sha256 "c72355219318755ba0a8646a8e56ee1c138cf909c1d738d258d2774fa4b529e9"
   license "BSD-3-Clause"
-  head "https:github.comCGNSCGNS.git", branch: "develop"
+  head "https://github.com/CGNS/CGNS.git", branch: "develop"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -40,11 +40,11 @@ class Cgns < Formula
     system "cmake", "--install", "build"
 
     # Avoid references to Homebrew shims
-    inreplace include"cgnsBuild.defs", Superenv.shims_pathENV.cc, ENV.cc
+    inreplace include/"cgnsBuild.defs", Superenv.shims_path/ENV.cc, ENV.cc
   end
 
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include <stdio.h>
       #include "cgnslib.h"
       int main(int argc, char *argv[])
@@ -57,7 +57,7 @@ class Cgns < Formula
     C
     flags = %W[-L#{lib} -lcgns]
     flags << "-Wl,-rpath,#{lib},-rpath,#{Formula["libaec"].opt_lib}" if OS.linux?
-    system Formula["hdf5"].opt_prefix"binh5cc", "test.c", *flags
-    system ".a.out"
+    system Formula["hdf5"].opt_prefix/"bin/h5cc", "test.c", *flags
+    system "./a.out"
   end
 end

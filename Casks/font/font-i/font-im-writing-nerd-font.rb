@@ -2,9 +2,9 @@ cask "font-im-writing-nerd-font" do
   version "3.4.0"
   sha256 "70950c1f032959cf8ed978ba8eb17072fd627e6669b68bdbd96cc84d8ab3ee16"
 
-  url "https:github.comryanoasisnerd-fontsreleasesdownloadv#{version}iA-Writer.zip"
+  url "https://ghfast.top/https://github.com/ryanoasis/nerd-fonts/releases/download/v#{version}/iA-Writer.zip"
   name "IMWriting Nerd Font families (iA Writer)"
-  homepage "https:github.comryanoasisnerd-fonts"
+  homepage "https://github.com/ryanoasis/nerd-fonts"
 
   livecheck do
     url :url

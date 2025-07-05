@@ -1,11 +1,11 @@
 class CargoLlvmCov < Formula
   desc "Cargo subcommand to easily use LLVM source-based code coverage"
-  homepage "https:github.comtaiki-ecargo-llvm-cov"
-  # cannot use github tarball due to https:github.comtaiki-ecargo-llvm-covpull152#issuecomment-1107055622
-  url "https:static.crates.iocratescargo-llvm-covcargo-llvm-cov-0.6.16.crate"
+  homepage "https://github.com/taiki-e/cargo-llvm-cov"
+  # cannot use github tarball due to https://github.com/taiki-e/cargo-llvm-cov/pull/152#issuecomment-1107055622
+  url "https://static.crates.io/crates/cargo-llvm-cov/cargo-llvm-cov-0.6.16.crate"
   sha256 "c33091bb8baaf21eb24807559ece8ee6d4a37ef42509958d863b66f53557fc73"
   license any_of: ["Apache-2.0", "MIT"]
-  head "https:github.comtaiki-ecargo-llvm-cov.git", branch: "main"
+  head "https://github.com/taiki-e/cargo-llvm-cov.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "a465bc46685f523216eb07b016a5d2cdc8c8cc357a23a49d0b716b1818187a0e"
@@ -26,7 +26,7 @@ class CargoLlvmCov < Formula
 
   test do
     # Show that we can use a different toolchain than the one provided by the `rust` formula.
-    # https:github.comHomebrewhomebrew-corepull134074#pullrequestreview-1484979359
+    # https://github.com/Homebrew/homebrew-core/pull/134074#pullrequestreview-1484979359
     ENV.prepend_path "PATH", Formula["rustup"].bin
     system "rustup", "set", "profile", "minimal"
     system "rustup", "default", "beta"
@@ -35,6 +35,6 @@ class CargoLlvmCov < Formula
     cd "hello_world" do
       system "cargo", "llvm-cov", "--html"
     end
-    assert_path_exists testpath"hello_worldtargetllvm-covhtmlindex.html"
+    assert_path_exists testpath/"hello_world/target/llvm-cov/html/index.html"
   end
 end

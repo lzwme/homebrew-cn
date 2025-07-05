@@ -1,7 +1,7 @@
 class Librime < Formula
   desc "Rime Input Method Engine"
-  homepage "https:rime.im"
-  url "https:github.comrimelibrime.git",
+  homepage "https://rime.im"
+  url "https://github.com/rime/librime.git",
       tag:      "1.13.1",
       revision: "1c23358157934bd6e6d6981f0c0164f05393b497"
   license "BSD-3-Clause"
@@ -32,28 +32,28 @@ class Librime < Formula
   depends_on "yaml-cpp"
 
   resource "lua" do
-    url "https:github.comhchunhuilibrime-lua.git",
+    url "https://github.com/hchunhui/librime-lua.git",
         revision: "e3912a4b3ac2c202d89face3fef3d41eb1d7fcd6"
   end
 
   resource "octagram" do
-    url "https:github.comlotemlibrime-octagram.git",
+    url "https://github.com/lotem/librime-octagram.git",
         revision: "dfcc15115788c828d9dd7b4bff68067d3ce2ffb8"
   end
 
   resource "predict" do
-    url "https:github.comrimelibrime-predict.git",
+    url "https://github.com/rime/librime-predict.git",
         revision: "920bd41ebf6f9bf6855d14fbe80212e54e749791"
   end
 
   resource "proto" do
-    url "https:github.comlotemlibrime-proto.git",
+    url "https://github.com/lotem/librime-proto.git",
         revision: "657a923cd4c333e681dc943e6894e6f6d42d25b4"
   end
 
   def install
     resources.each do |r|
-      r.stage buildpath"plugins"r.name
+      r.stage buildpath/"plugins"/r.name
     end
 
     args = %W[
@@ -68,7 +68,7 @@ class Librime < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~CPP
+    (testpath/"test.cpp").write <<~CPP
       #include "rime_api.h"
 
       int main(void)
@@ -78,7 +78,7 @@ class Librime < Formula
       }
     CPP
 
-    system ENV.cc, ".test.cpp", "-o", "test"
-    system testpath"test"
+    system ENV.cc, "./test.cpp", "-o", "test"
+    system testpath/"test"
   end
 end

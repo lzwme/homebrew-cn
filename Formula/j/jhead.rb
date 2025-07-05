@@ -1,7 +1,7 @@
 class Jhead < Formula
   desc "Extract Digicam setting info from EXIF JPEG headers"
-  homepage "https:github.comMatthias-Wandeljhead"
-  url "https:github.comMatthias-Wandeljheadarchiverefstags3.08.tar.gz"
+  homepage "https://github.com/Matthias-Wandel/jhead"
+  url "https://ghfast.top/https://github.com/Matthias-Wandel/jhead/archive/refs/tags/3.08.tar.gz"
   sha256 "999a81b489c7b2a7264118f194359ecf4c1b714996a2790ff6d5d2f3940f1e9f"
   license :public_domain
 
@@ -28,6 +28,6 @@ class Jhead < Formula
 
   test do
     cp test_fixtures("test.jpg"), testpath
-    system bin"jhead", "-autorot", "test.jpg"
+    system bin/"jhead", "-autorot", "test.jpg"
   end
 end

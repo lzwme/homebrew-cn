@@ -1,10 +1,10 @@
 class CargoDist < Formula
   desc "Tool for building final distributable artifacts and uploading them to an archive"
-  homepage "https:opensource.axo.devcargo-dist"
-  url "https:github.comaxodotdevcargo-distarchiverefstagsv0.28.0.tar.gz"
+  homepage "https://opensource.axo.dev/cargo-dist/"
+  url "https://ghfast.top/https://github.com/axodotdev/cargo-dist/archive/refs/tags/v0.28.0.tar.gz"
   sha256 "ef9b7cd1eba124fce752d1bd8414bfa123e06074d370066cb2621992c67d0af4"
   license any_of: ["Apache-2.0", "MIT"]
-  head "https:github.comaxodotdevcargo-dist.git", branch: "main"
+  head "https://github.com/axodotdev/cargo-dist.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "dba42eaa1e5a3b845739624a819a46263e85a5bf7f85055380d1066a11f0c138"
@@ -27,19 +27,19 @@ class CargoDist < Formula
 
   test do
     # Show that we can use a different toolchain than the one provided by the `rust` formula.
-    # https:github.comHomebrewhomebrew-corepull134074#pullrequestreview-1484979359
+    # https://github.com/Homebrew/homebrew-core/pull/134074#pullrequestreview-1484979359
     ENV.prepend_path "PATH", Formula["rustup"].bin
     system "rustup", "set", "profile", "minimal"
     system "rustup", "default", "beta"
 
-    assert_match version.to_s, shell_output("#{bin}dist --version")
+    assert_match version.to_s, shell_output("#{bin}/dist --version")
 
     system "cargo", "new", "--bin", "test_project"
     cd "test_project" do
-      output = shell_output("#{bin}dist init 2>&1", 255)
+      output = shell_output("#{bin}/dist init 2>&1", 255)
       assert_match "added [profile.dist] to your workspace Cargo.toml", output
 
-      output = shell_output("#{bin}dist plan 2>&1", 255)
+      output = shell_output("#{bin}/dist plan 2>&1", 255)
       assert_match "You specified --artifacts, disabling host mode, but specified no targets to build", output
     end
   end

@@ -1,7 +1,7 @@
 class EpollShim < Formula
   desc "Small epoll implementation using kqueue"
-  homepage "https:github.comjiixyjepoll-shim"
-  url "https:github.comjiixyjepoll-shimarchiverefstagsv0.0.20240608.tar.gz"
+  homepage "https://github.com/jiixyj/epoll-shim"
+  url "https://ghfast.top/https://github.com/jiixyj/epoll-shim/archive/refs/tags/v0.0.20240608.tar.gz"
   sha256 "8f5125217e4a0eeb96ab01f9dfd56c38f85ac3e8f26ef2578e538e72e87862cb"
   license "MIT"
 
@@ -21,7 +21,7 @@ class EpollShim < Formula
 
   def install
     args = %W[
-      -DCMAKE_INSTALL_PKGCONFIGDIR=#{lib}pkgconfig
+      -DCMAKE_INSTALL_PKGCONFIGDIR=#{lib}/pkgconfig
       -DCMAKE_INSTALL_RPATH=#{rpath}
     ]
 
@@ -31,8 +31,8 @@ class EpollShim < Formula
   end
 
   test do
-    (testpath"test.c").write <<~C
-      #include <sysepoll.h>
+    (testpath/"test.c").write <<~C
+      #include <sys/epoll.h>
 
       #include <fcntl.h>
       #include <unistd.h>
@@ -47,7 +47,7 @@ class EpollShim < Formula
         return 0;
       }
     C
-    system ENV.cc, "test.c", "-L#{lib}", "-I#{include}libepoll-shim", "-lepoll-shim"
-    system ".a.out"
+    system ENV.cc, "test.c", "-L#{lib}", "-I#{include}/libepoll-shim", "-lepoll-shim"
+    system "./a.out"
   end
 end

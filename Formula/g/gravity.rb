@@ -1,7 +1,7 @@
 class Gravity < Formula
   desc "Embeddable programming language"
-  homepage "https:www.gravity-lang.org"
-  url "https:github.commarcobambinigravityarchiverefstags0.8.5.tar.gz"
+  homepage "https://www.gravity-lang.org/"
+  url "https://ghfast.top/https://github.com/marcobambini/gravity/archive/refs/tags/0.8.5.tar.gz"
   sha256 "5ef70c940cd1f3fec5ca908fb10af60731750d62ba39bee08cb4711b72917e1d"
   license "MIT"
 
@@ -26,17 +26,17 @@ class Gravity < Formula
   def install
     system "make"
     bin.install "gravity"
-    doc.install Dir["docs*"]
+    doc.install Dir["docs/*"]
   end
 
   test do
-    (testpath"hello.gravity").write <<~EOS
+    (testpath/"hello.gravity").write <<~EOS
       func main() {
           System.print("Hello World!")
       }
     EOS
-    system bin"gravity", "-c", "hello.gravity", "-o", "out.json"
-    assert_equal "Hello World!\n", shell_output("#{bin}gravity -q -x out.json")
-    assert_equal "Hello World!\n", shell_output("#{bin}gravity -q hello.gravity")
+    system bin/"gravity", "-c", "hello.gravity", "-o", "out.json"
+    assert_equal "Hello World!\n", shell_output("#{bin}/gravity -q -x out.json")
+    assert_equal "Hello World!\n", shell_output("#{bin}/gravity -q hello.gravity")
   end
 end

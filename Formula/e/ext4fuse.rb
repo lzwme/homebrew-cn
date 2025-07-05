@@ -1,10 +1,10 @@
 class Ext4fuse < Formula
   desc "Read-only implementation of ext4 for FUSE"
-  homepage "https:github.comgerardext4fuse"
-  url "https:github.comgerardext4fusearchiverefstagsv0.1.3.tar.gz"
+  homepage "https://github.com/gerard/ext4fuse"
+  url "https://ghfast.top/https://github.com/gerard/ext4fuse/archive/refs/tags/v0.1.3.tar.gz"
   sha256 "550f1e152c4de7d4ea517ee1c708f57bfebb0856281c508511419db45aa3ca9f"
   license "GPL-2.0-only"
-  head "https:github.comgerardext4fuse.git", branch: "master"
+  head "https://github.com/gerard/ext4fuse.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 

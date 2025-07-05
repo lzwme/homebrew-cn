@@ -1,7 +1,7 @@
 class Json5 < Formula
   desc "JSON enhanced with usability features"
-  homepage "https:json5.org"
-  url "https:github.comjson5json5archiverefstagsv2.2.3.tar.gz"
+  homepage "https://json5.org/"
+  url "https://ghfast.top/https://github.com/json5/json5/archive/refs/tags/v2.2.3.tar.gz"
   sha256 "a98d1dd7c6b101fd99ae692102dc05a65f072b3e6f8077d3658819440bf76637"
   license "MIT"
 
@@ -16,14 +16,14 @@ class Json5 < Formula
 
   def install
     system "npm", "install", *std_npm_args
-    bin.install_symlink Dir["#{libexec}bin*"]
+    bin.install_symlink Dir["#{libexec}/bin/*"]
   end
 
   test do
     # Example taken from the official README
-    (testpath"test.json5").write <<~EOF
+    (testpath/"test.json5").write <<~EOF
       {
-         comments
+        // comments
         unquoted: 'and you can quote me on that',
         singleQuotes: 'I can use "double quotes" here',
         lineBreaks: "Look, Mom! \
@@ -35,6 +35,6 @@ class Json5 < Formula
         "backwardsCompatible": "with JSON",
       }
     EOF
-    system bin"json5", "--validate", "test.json5"
+    system bin/"json5", "--validate", "test.json5"
   end
 end

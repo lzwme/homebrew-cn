@@ -1,10 +1,10 @@
 class Nsq < Formula
   desc "Realtime distributed messaging platform"
-  homepage "https:nsq.io"
-  url "https:github.comnsqionsqarchiverefstagsv1.3.0.tar.gz"
+  homepage "https://nsq.io/"
+  url "https://ghfast.top/https://github.com/nsqio/nsq/archive/refs/tags/v1.3.0.tar.gz"
   sha256 "c6289e295aaa40c8d9651de76e66bc9f23e7f5c40b1cc051ea5901965093e1f0"
   license "MIT"
-  head "https:github.comnsqionsq.git", branch: "master"
+  head "https://github.com/nsqio/nsq.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "b7075d5ab5ff5090f350c30db2215f62ae04e8ae77754178546817297f58c91e"
@@ -24,38 +24,38 @@ class Nsq < Formula
   end
 
   def post_install
-    (var"log").mkpath
-    (var"nsq").mkpath
+    (var/"log").mkpath
+    (var/"nsq").mkpath
   end
 
   service do
-    run [opt_bin"nsqd", "-data-path=#{var}nsq"]
+    run [opt_bin/"nsqd", "-data-path=#{var}/nsq"]
     keep_alive true
-    working_dir var"nsq"
-    log_path var"lognsqd.log"
-    error_log_path var"lognsqd.error.log"
+    working_dir var/"nsq"
+    log_path var/"log/nsqd.log"
+    error_log_path var/"log/nsqd.error.log"
   end
 
   test do
     lookupd = fork do
-      exec bin"nsqlookupd"
+      exec bin/"nsqlookupd"
     end
     sleep 2
     d = fork do
-      exec bin"nsqd", "--lookupd-tcp-address=127.0.0.1:4160"
+      exec bin/"nsqd", "--lookupd-tcp-address=127.0.0.1:4160"
     end
     sleep 2
     admin = fork do
-      exec bin"nsqadmin", "--lookupd-http-address=127.0.0.1:4161"
+      exec bin/"nsqadmin", "--lookupd-http-address=127.0.0.1:4161"
     end
     sleep 2
     to_file = fork do
-      exec bin"nsq_to_file", "--lookupd-http-address=127.0.0.1:4161",
+      exec bin/"nsq_to_file", "--lookupd-http-address=127.0.0.1:4161",
                               "--output-dir=#{testpath}",
                               "--topic=test"
     end
     sleep 2
-    system "curl", "-d", "hello", "http:127.0.0.1:4151pub?topic=test"
+    system "curl", "-d", "hello", "http://127.0.0.1:4151/pub?topic=test"
     sleep 2
     dat = File.read(Dir["*.dat"].first)
     assert_match "test", dat

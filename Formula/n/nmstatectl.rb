@@ -1,10 +1,10 @@
 class Nmstatectl < Formula
   desc "Command-line tool that manages host networking settings in a declarative manner"
-  homepage "https:nmstate.io"
-  url "https:github.comnmstatenmstatereleasesdownloadv2.2.46nmstate-2.2.46.tar.gz"
+  homepage "https://nmstate.io/"
+  url "https://ghfast.top/https://github.com/nmstate/nmstate/releases/download/v2.2.46/nmstate-2.2.46.tar.gz"
   sha256 "7734a3065aac97ce523ab6e9dc54c0b2bc1052c2d8b2f36f28275926c8a1d93c"
   license "Apache-2.0"
-  head "https:github.comnmstatenmstate.git", branch: "base"
+  head "https://github.com/nmstate/nmstate.git", branch: "base"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "8fe5f5bb22681db481b61293a8c99441136e5d0d2daebf9c798d675df3f47631"
@@ -25,13 +25,13 @@ class Nmstatectl < Formula
       else
         []
       end
-      system "cargo", "install", *args, *std_cargo_args(path: "srccli")
+      system "cargo", "install", *args, *std_cargo_args(path: "src/cli")
     end
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}nmstatectl --version")
+    assert_match version.to_s, shell_output("#{bin}/nmstatectl --version")
 
-    assert_match "interfaces: []", pipe_output("#{bin}nmstatectl format", "{}", 0)
+    assert_match "interfaces: []", pipe_output("#{bin}/nmstatectl format", "{}", 0)
   end
 end

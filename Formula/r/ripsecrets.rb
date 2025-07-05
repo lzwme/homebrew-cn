@@ -1,10 +1,10 @@
 class Ripsecrets < Formula
   desc "Prevent committing secret keys into your source code"
-  homepage "https:github.comsirwartripsecrets"
-  url "https:github.comsirwartripsecretsarchiverefstagsv0.1.11.tar.gz"
+  homepage "https://github.com/sirwart/ripsecrets"
+  url "https://ghfast.top/https://github.com/sirwart/ripsecrets/archive/refs/tags/v0.1.11.tar.gz"
   sha256 "786c1b7555c1f9562d7eb3994d932445ab869791be65bc77b8bd1fbbae3890b8"
   license "MIT"
-  head "https:github.comsirwartripsecrets.git", branch: "main"
+  head "https://github.com/sirwart/ripsecrets.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "2be229f02f517c7c9f809999ab00daee0b4650f7bf6eab3e31132c4dacc7c1db"
@@ -21,11 +21,11 @@ class Ripsecrets < Formula
   def install
     system "cargo", "install", *std_cargo_args
 
-    out_dir = Dir["targetreleasebuildripsecrets-*out"].first
-    bash_completion.install "#{out_dir}ripsecrets.bash" => "ripsecrets"
-    fish_completion.install "#{out_dir}ripsecrets.fish"
-    zsh_completion.install "#{out_dir}_ripsecrets"
-    man1.install "#{out_dir}ripsecrets.1"
+    out_dir = Dir["target/release/build/ripsecrets-*/out"].first
+    bash_completion.install "#{out_dir}/ripsecrets.bash" => "ripsecrets"
+    fish_completion.install "#{out_dir}/ripsecrets.fish"
+    zsh_completion.install "#{out_dir}/_ripsecrets"
+    man1.install "#{out_dir}/ripsecrets.1"
   end
 
   test do
@@ -33,8 +33,8 @@ class Ripsecrets < Formula
     keyspace = "A".upto("Z").to_a + "a".upto("z").to_a + "0".upto("9").to_a + ["_"]
     fake_key = Array.new(36).map { keyspace.sample }
     # but mark it as allowed to test more of the program
-    (testpath"test.txt").write("ghp_#{fake_key.join} # pragma: allowlist secret")
+    (testpath/"test.txt").write("ghp_#{fake_key.join} # pragma: allowlist secret")
 
-    system bin"ripsecrets", (testpath"test.txt")
+    system bin/"ripsecrets", (testpath/"test.txt")
   end
 end

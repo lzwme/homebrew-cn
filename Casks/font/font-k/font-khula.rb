@@ -2,12 +2,12 @@ cask "font-khula" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefonts.git",
-      verified:  "github.comgooglefonts",
+  url "https://github.com/google/fonts.git",
+      verified:  "github.com/google/fonts",
       branch:    "main",
-      only_path: "oflkhula"
+      only_path: "ofl/khula"
   name "Khula"
-  homepage "https:fonts.google.comspecimenKhula"
+  homepage "https://fonts.google.com/specimen/Khula"
 
   font "Khula-Bold.ttf"
   font "Khula-ExtraBold.ttf"

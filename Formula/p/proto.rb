@@ -1,10 +1,10 @@
 class Proto < Formula
   desc "Pluggable multi-language version manager"
-  homepage "https:moonrepo.devproto"
-  url "https:github.commoonrepoprotoarchiverefstagsv0.50.2.tar.gz"
+  homepage "https://moonrepo.dev/proto"
+  url "https://ghfast.top/https://github.com/moonrepo/proto/archive/refs/tags/v0.50.2.tar.gz"
   sha256 "25e897c8086428feb67a272dcee1b7e7870b0746e3f82dc78adeb7ac6ac5e8c4"
   license "MIT"
-  head "https:github.commoonrepoproto.git", branch: "master"
+  head "https://github.com/moonrepo/proto.git", branch: "master"
 
   livecheck do
     url :stable
@@ -31,8 +31,8 @@ class Proto < Formula
   end
 
   def install
-    system "cargo", "install", *std_cargo_args(path: "cratescli")
-    generate_completions_from_executable(bin"proto", "completions", "--shell")
+    system "cargo", "install", *std_cargo_args(path: "crates/cli")
+    generate_completions_from_executable(bin/"proto", "completions", "--shell")
 
     bin.each_child do |f|
       basename = f.basename
@@ -41,9 +41,9 @@ class Proto < Formula
       # it luckily works fine without PROTO_LOOKUP_DIR
       next if basename.to_s == "proto-shim"
 
-      (libexec"bin").install f
+      (libexec/"bin").install f
       # PROTO_LOOKUP_DIR is necessary for proto to find its proto-shim binary
-      (binbasename).write_env_script libexec"bin"basename, PROTO_LOOKUP_DIR: opt_prefix"bin"
+      (bin/basename).write_env_script libexec/"bin"/basename, PROTO_LOOKUP_DIR: opt_prefix/"bin"
     end
   end
 
@@ -55,13 +55,13 @@ class Proto < Formula
   end
 
   test do
-    system bin"proto", "install", "node", "19.0.1"
-    node = shell_output("#{bin}proto bin node").chomp
+    system bin/"proto", "install", "node", "19.0.1"
+    node = shell_output("#{bin}/proto bin node").chomp
     assert_match "19.0.1", shell_output("#{node} --version")
 
-    path = testpath"test.js"
+    path = testpath/"test.js"
     path.write "console.log('hello');"
-    output = shell_output("#{testpath}.protoshimsnode #{path}").strip
+    output = shell_output("#{testpath}/.proto/shims/node #{path}").strip
     assert_equal "hello", output
   end
 end

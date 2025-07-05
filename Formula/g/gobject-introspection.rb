@@ -3,8 +3,8 @@ class GobjectIntrospection < Formula
   include Language::Python::Virtualenv
 
   desc "Generate introspection data for GObject libraries"
-  homepage "https:gi.readthedocs.ioenlatest"
-  url "https:download.gnome.orgsourcesgobject-introspection1.84gobject-introspection-1.84.0.tar.xz"
+  homepage "https://gi.readthedocs.io/en/latest/"
+  url "https://download.gnome.org/sources/gobject-introspection/1.84/gobject-introspection-1.84.0.tar.xz"
   sha256 "945b57da7ec262e5c266b89e091d14be800cc424277d82a02872b7d794a84779"
   license all_of: ["GPL-2.0-or-later", "LGPL-2.0-or-later", "MIT"]
   revision 1
@@ -32,56 +32,56 @@ class GobjectIntrospection < Formula
   uses_from_macos "libffi", since: :catalina
 
   resource "mako" do
-    url "https:files.pythonhosted.orgpackages9e38bd5b78a920a64d708fe6bc8e0a2c075e1389d53bef8413725c63ba041535mako-1.3.10.tar.gz"
+    url "https://files.pythonhosted.org/packages/9e/38/bd5b78a920a64d708fe6bc8e0a2c075e1389d53bef8413725c63ba041535/mako-1.3.10.tar.gz"
     sha256 "99579a6f39583fa7e5630a28c3c1f440e4e97a414b80372649c0ce338da2ea28"
   end
 
   resource "markdown" do
-    url "https:files.pythonhosted.orgpackages2f15222b423b0b88689c266d9eac4e61396fe2cc53464459d6a37618ac863b24markdown-3.8.tar.gz"
+    url "https://files.pythonhosted.org/packages/2f/15/222b423b0b88689c266d9eac4e61396fe2cc53464459d6a37618ac863b24/markdown-3.8.tar.gz"
     sha256 "7df81e63f0df5c4b24b7d156eb81e4690595239b7d70937d0409f1b0de319c6f"
   end
 
   resource "markupsafe" do
-    url "https:files.pythonhosted.orgpackagesb2975d42485e71dfc078108a86d6de8fa46db44a1a9295e89c5d6d4a06e23a62markupsafe-3.0.2.tar.gz"
+    url "https://files.pythonhosted.org/packages/b2/97/5d42485e71dfc078108a86d6de8fa46db44a1a9295e89c5d6d4a06e23a62/markupsafe-3.0.2.tar.gz"
     sha256 "ee55d3edf80167e48ea11a923c7386f4669df67d7994554387f84e7d8b0a2bf0"
   end
 
   resource "setuptools" do
-    url "https:files.pythonhosted.orgpackages9e8bdc1773e8e5d07fd27c1632c45c1de856ac3dbf09c0147f782ca6d990cf15setuptools-80.7.1.tar.gz"
+    url "https://files.pythonhosted.org/packages/9e/8b/dc1773e8e5d07fd27c1632c45c1de856ac3dbf09c0147f782ca6d990cf15/setuptools-80.7.1.tar.gz"
     sha256 "f6ffc5f0142b1bd8d0ca94ee91b30c0ca862ffd50826da1ea85258a06fd94552"
   end
 
-  # Fix library search path on non-usrlocal installs (e.g. Apple Silicon)
-  # See: https:github.comHomebrewhomebrew-coreissues75020
-  #      https:gitlab.gnome.orgGNOMEgobject-introspection-merge_requests273
+  # Fix library search path on non-/usr/local installs (e.g. Apple Silicon)
+  # See: https://github.com/Homebrew/homebrew-core/issues/75020
+  #      https://gitlab.gnome.org/GNOME/gobject-introspection/-/merge_requests/273
   patch :DATA
 
   def install
     venv = virtualenv_create(libexec, "python3.13")
     venv.pip_install resources
-    ENV.prepend_path "PATH", venv.root"bin"
+    ENV.prepend_path "PATH", venv.root/"bin"
 
     ENV["GI_SCANNER_DISABLE_CACHE"] = "true"
     if OS.mac? && MacOS.version == :ventura && DevelopmentTools.clang_build_version == 1500
       ENV.append "LDFLAGS", "-Wl,-ld_classic"
     end
 
-    inreplace "giscannertransformer.py", "usrshare", "#{HOMEBREW_PREFIX}share"
+    inreplace "giscanner/transformer.py", "/usr/share", "#{HOMEBREW_PREFIX}/share"
     inreplace "meson.build",
       "config.set_quoted('GOBJECT_INTROSPECTION_LIBDIR', join_paths(get_option('prefix'), get_option('libdir')))",
-      "config.set_quoted('GOBJECT_INTROSPECTION_LIBDIR', '#{HOMEBREW_PREFIX}lib')"
+      "config.set_quoted('GOBJECT_INTROSPECTION_LIBDIR', '#{HOMEBREW_PREFIX}/lib')"
 
-    system "meson", "setup", "build", "-Dpython=#{venv.root}binpython",
-                                      "-Dextra_library_paths=#{HOMEBREW_PREFIX}lib",
+    system "meson", "setup", "build", "-Dpython=#{venv.root}/bin/python",
+                                      "-Dextra_library_paths=#{HOMEBREW_PREFIX}/lib",
                                       *std_meson_args
     system "meson", "compile", "-C", "build", "--verbose"
     system "meson", "install", "-C", "build"
 
-    rewrite_shebang python_shebang_rewrite_info(venv.root"binpython"), *bin.children
+    rewrite_shebang python_shebang_rewrite_info(venv.root/"bin/python"), *bin.children
   end
 
   test do
-    (testpath"main.c").write <<~C
+    (testpath/"main.c").write <<~C
       #include <girepository.h>
 
       int main (int argc, char *argv[]) {
@@ -93,15 +93,15 @@ class GobjectIntrospection < Formula
 
     pkgconf_flags = shell_output("pkgconf --cflags --libs gobject-introspection-1.0").strip.split
     system ENV.cc, "main.c", "-o", "test", *pkgconf_flags
-    system ".test"
+    system "./test"
   end
 end
 
 __END__
-diff --git agirepositorygitypelib.c bgirepositorygitypelib.c
+diff --git a/girepository/gitypelib.c b/girepository/gitypelib.c
 index 29349da..5619cfb 100644
---- agirepositorygitypelib.c
-+++ bgirepositorygitypelib.c
+--- a/girepository/gitypelib.c
++++ b/girepository/gitypelib.c
 @@ -2261,6 +2261,22 @@ load_one_shared_library (const char *shlib)
  {
    GSList *p;
@@ -124,11 +124,11 @@ index 29349da..5619cfb 100644
 +#endif
  
  #ifdef __APPLE__
-   * On macOS, @-prefixed shlib paths (@rpath, @executable_path, @loader_path)
-diff --git ameson.build bmeson.build
+   /* On macOS, @-prefixed shlib paths (@rpath, @executable_path, @loader_path)
+diff --git a/meson.build b/meson.build
 index 7b8bf1c..ea29ff5 100644
---- ameson.build
-+++ bmeson.build
+--- a/meson.build
++++ b/meson.build
 @@ -222,6 +222,10 @@ if host_system in ['windows', 'cygwin']
    g_ir_scanner_env.prepend(var, gio_dep.get_variable('giomoduledir'))
  endif
@@ -140,10 +140,10 @@ index 7b8bf1c..ea29ff5 100644
  configure_file(
    configuration: config,
    output: 'config.h'
-diff --git ameson_options.txt bmeson_options.txt
+diff --git a/meson_options.txt b/meson_options.txt
 index cbc63ed..e2e7577 100644
---- ameson_options.txt
-+++ bmeson_options.txt
+--- a/meson_options.txt
++++ b/meson_options.txt
 @@ -49,3 +49,7 @@ option('gi_cross_pkgconfig_sysroot_path', type: 'string',
  option('tests', type: 'boolean', value: true,
    description: 'Build and run tests'

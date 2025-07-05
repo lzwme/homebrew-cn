@@ -1,7 +1,7 @@
 class Sshx < Formula
   desc "Fast, collaborative live terminal sharing over the web"
-  homepage "https:sshx.io"
-  url "https:github.comekzhangsshxarchiverefstagsv0.4.1.tar.gz"
+  homepage "https://sshx.io"
+  url "https://ghfast.top/https://github.com/ekzhang/sshx/archive/refs/tags/v0.4.1.tar.gz"
   sha256 "ab6de41546b849726faa3b964466c1f8bb558bd27ee2452a9758405ff013108f"
   license "MIT"
 
@@ -19,17 +19,17 @@ class Sshx < Formula
   depends_on "rust" => :build
 
   def install
-    system "cargo", "install", *std_cargo_args(path: "cratessshx")
+    system "cargo", "install", *std_cargo_args(path: "crates/sshx")
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}sshx --version")
+    assert_match version.to_s, shell_output("#{bin}/sshx --version")
 
     begin
-      process = IO.popen "#{bin}sshx --quiet"
+      process = IO.popen "#{bin}/sshx --quiet"
       sleep 1
       Process.kill "TERM", process.pid
-      assert_match "https:sshx.ios", process.read
+      assert_match "https://sshx.io/s/", process.read
     ensure
       Process.wait process.pid
     end

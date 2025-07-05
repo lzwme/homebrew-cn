@@ -1,13 +1,13 @@
 class Tinysvm < Formula
   desc "Support vector machine library for pattern recognition"
-  homepage "http:chasen.org~takusoftwareTinySVM"
-  url "http:chasen.org~takusoftwareTinySVMsrcTinySVM-0.09.tar.gz"
+  homepage "http://chasen.org/~taku/software/TinySVM/"
+  url "http://chasen.org/~taku/software/TinySVM/src/TinySVM-0.09.tar.gz"
   sha256 "e377f7ede3e022247da31774a4f75f3595ce768bc1afe3de9fc8e962242c7ab8"
   license "LGPL-2.1-or-later"
 
   livecheck do
     url :homepage
-    regex(href=.*?TinySVM[._-]v?(\d+(?:\.\d+)+)\.ti)
+    regex(/href=.*?TinySVM[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -33,7 +33,7 @@ class Tinysvm < Formula
 
   # Use correct compilation flag, via MacPorts.
   patch :p0 do
-    url "https:raw.githubusercontent.comHomebrewformula-patches838f605tinysvmpatch-configure.diff"
+    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/838f605/tinysvm/patch-configure.diff"
     sha256 "b4cd84063fd56cdcb0212528c6d424788528a9d6b8b0a17aa01294773c62e8a7"
   end
 
@@ -48,12 +48,12 @@ class Tinysvm < Formula
     # Help old config scripts identify arm64 linux
     args << "--host=aarch64-unknown-linux-gnu" if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
 
-    system ".configure", "--mandir=#{man}", "--disable-shared", *args, *std_configure_args
+    system "./configure", "--mandir=#{man}", "--disable-shared", *args, *std_configure_args
     system "make", "install"
   end
 
   test do
-    (testpath"train.svmdata").write <<~EOS
+    (testpath/"train.svmdata").write <<~EOS
       +1 201:1.2 3148:1.8 3983:1 4882:1
       -1 874:0.3 3652:1.1 3963:1 6179:1
       +1 1168:1.2 3318:1.2 3938:1.8 4481:1
@@ -61,16 +61,16 @@ class Tinysvm < Formula
       -1 99:1 3057:1 3957:1 5838:0.3
     EOS
 
-    (testpath"train.svrdata").write <<~EOS
+    (testpath/"train.svrdata").write <<~EOS
       0.23 201:1.2 3148:1.8 3983:1 4882:1
       0.33 874:0.3 3652:1.1 3963:1 6179:1
       -0.12 1168:1.2 3318:1.2 3938:1.8 4481:1
     EOS
 
-    system bin"svm_learn", "-t", "1", "-d", "2", "-c", "train.svmdata", "test"
-    system bin"svm_classify", "-V", "train.svmdata", "test"
-    system bin"svm_model", "test"
+    system bin/"svm_learn", "-t", "1", "-d", "2", "-c", "train.svmdata", "test"
+    system bin/"svm_classify", "-V", "train.svmdata", "test"
+    system bin/"svm_model", "test"
 
-    assert_path_exists testpath"test"
+    assert_path_exists testpath/"test"
   end
 end

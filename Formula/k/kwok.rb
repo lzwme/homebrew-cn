@@ -1,10 +1,10 @@
 class Kwok < Formula
   desc "Kubernetes WithOut Kubelet - Simulates thousands of Nodes and Clusters"
-  homepage "https:kwok.sigs.k8s.io"
-  url "https:github.comkubernetes-sigskwokarchiverefstagsv0.7.0.tar.gz"
+  homepage "https://kwok.sigs.k8s.io"
+  url "https://ghfast.top/https://github.com/kubernetes-sigs/kwok/archive/refs/tags/v0.7.0.tar.gz"
   sha256 "bf7c686c3ada070104f32fd3263686368cc981206770e81d39d8a27ae04368c0"
   license "Apache-2.0"
-  head "https:github.comkubernetes-sigskwok.git", branch: "main"
+  head "https://github.com/kubernetes-sigs/kwok.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "17ca4b4f59d0ef9c01ede4c2ca158428f53f35bae8cf57d2b3c374fe32927230"
@@ -22,19 +22,19 @@ class Kwok < Formula
     system "make", "build", "VERSION=v#{version}"
 
     arch = Hardware::CPU.arm? ? "arm64" : "amd64"
-    bin.install "bin#{OS.kernel_name.downcase}#{arch}kwok"
-    bin.install "bin#{OS.kernel_name.downcase}#{arch}kwokctl"
+    bin.install "bin/#{OS.kernel_name.downcase}/#{arch}/kwok"
+    bin.install "bin/#{OS.kernel_name.downcase}/#{arch}/kwokctl"
 
-    generate_completions_from_executable("#{bin}kwokctl", "completion")
+    generate_completions_from_executable("#{bin}/kwokctl", "completion")
   end
 
   test do
-    ENV["DOCKER_HOST"] = "unix:#{testpath}invalid.sock"
+    ENV["DOCKER_HOST"] = "unix://#{testpath}/invalid.sock"
 
-    assert_match version.to_s, shell_output("#{bin}kwok --version")
-    assert_match version.to_s, shell_output("#{bin}kwokctl --version")
+    assert_match version.to_s, shell_output("#{bin}/kwok --version")
+    assert_match version.to_s, shell_output("#{bin}/kwokctl --version")
 
-    create_cluster_cmd = "#{bin}kwokctl --name=brew-test create cluster 2>&1"
+    create_cluster_cmd = "#{bin}/kwokctl --name=brew-test create cluster 2>&1"
     output = shell_output(create_cluster_cmd)
     assert_match "Cluster is creating", output
   end

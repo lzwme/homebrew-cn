@@ -1,10 +1,10 @@
 class OclIcd < Formula
   desc "OpenCL ICD loader"
-  homepage "https:github.comOCL-devocl-icd"
-  url "https:github.comOCL-devocl-icdarchiverefstagsv2.3.3.tar.gz"
+  homepage "https://github.com/OCL-dev/ocl-icd/"
+  url "https://ghfast.top/https://github.com/OCL-dev/ocl-icd/archive/refs/tags/v2.3.3.tar.gz"
   sha256 "8cd8e8e129db3081a64090fc1252bec39dc88cdb7b3f929315e014b75069bd9d"
   license "BSD-2-Clause"
-  head "https:github.comOCL-devocl-icd.git", branch: "master"
+  head "https://github.com/OCL-dev/ocl-icd.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "d7c8afe9e6b8ffe2a22f19d6e5c83308d667b9900ecbbeea099877edd9158eb6"
@@ -29,26 +29,26 @@ class OclIcd < Formula
   uses_from_macos "libxslt" => :build
   uses_from_macos "ruby" => :build
 
-  conflicts_with "opencl-icd-loader", because: "both install `liblibOpenCL.so` library"
+  conflicts_with "opencl-icd-loader", because: "both install `lib/libOpenCL.so` library"
 
   def install
-    ENV["XML_CATALOG_FILES"] = etc"xmlcatalog"
-    system ".bootstrap"
-    system ".configure", *std_configure_args,
+    ENV["XML_CATALOG_FILES"] = etc/"xml/catalog"
+    system "./bootstrap"
+    system "./configure", *std_configure_args,
                           "--disable-silent-rules",
-                          "--enable-custom-vendordir=#{etc}OpenCLvendors"
+                          "--enable-custom-vendordir=#{etc}/OpenCL/vendors"
     system "make", "install"
     pkgshare.install "ocl_test.c"
   end
 
   def caveats
-    s = "The default vendors directory is #{etc}OpenCLvendors\n"
+    s = "The default vendors directory is #{etc}/OpenCL/vendors\n"
     on_linux do
       s += <<~EOS
         No OpenCL implementation is pre-installed, so all dependents will require either
         installing a compatible formula or creating an ".icd" file mapping to an externally
         installed implementation. Any ".icd" files copied or symlinked into
-        `#{etc}OpenCLvendors` will automatically be detected by `ocl-icd`.
+        `#{etc}/OpenCL/vendors` will automatically be detected by `ocl-icd`.
         A portable OpenCL implementation is available via the `pocl` formula.
       EOS
     end
@@ -56,9 +56,9 @@ class OclIcd < Formula
   end
 
   test do
-    cp pkgshare"ocl_test.c", testpath
+    cp pkgshare/"ocl_test.c", testpath
     system ENV.cc, "ocl_test.c", "-o", "test", "-I#{Formula["opencl-headers"].opt_include}", "-L#{lib}", "-lOpenCL"
-    ENV["OCL_ICD_VENDORS"] = testpath"vendors"
-    assert_equal "No platforms found!", shell_output(".test").chomp
+    ENV["OCL_ICD_VENDORS"] = testpath/"vendors"
+    assert_equal "No platforms found!", shell_output("./test").chomp
   end
 end

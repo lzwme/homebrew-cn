@@ -1,10 +1,10 @@
 class Gotestsum < Formula
   desc "Human friendly `go test` runner"
-  homepage "https:github.comgotestyourselfgotestsum"
-  url "https:github.comgotestyourselfgotestsumarchiverefstagsv1.12.3.tar.gz"
+  homepage "https://github.com/gotestyourself/gotestsum"
+  url "https://ghfast.top/https://github.com/gotestyourself/gotestsum/archive/refs/tags/v1.12.3.tar.gz"
   sha256 "a78487894e411d8c96980b99201f165ba82281b5c20f10762638e0e6b5a75938"
   license "Apache-2.0"
-  head "https:github.comgotestyourselfgotestsum.git", branch: "main"
+  head "https://github.com/gotestyourself/gotestsum.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "d63c403ac8afa10f24baea91aba258d50d64651d4284ab38c60f8911737b5711"
@@ -18,18 +18,18 @@ class Gotestsum < Formula
   depends_on "go" => [:build, :test]
 
   def install
-    ldflags = "-s -w -X gotest.toolsgotestsumcmd.version=#{version}"
+    ldflags = "-s -w -X gotest.tools/gotestsum/cmd.version=#{version}"
     system "go", "build", *std_go_args(ldflags:)
   end
 
   test do
-    (testpath"go.mod").write <<~GOMOD
-      module github.comHomebrewbrew-test
+    (testpath/"go.mod").write <<~GOMOD
+      module github.com/Homebrew/brew-test
 
       go 1.18
     GOMOD
 
-    (testpath"main.go").write <<~GO
+    (testpath/"main.go").write <<~GO
       package main
 
       import "fmt"
@@ -43,7 +43,7 @@ class Gotestsum < Formula
       }
     GO
 
-    (testpath"main_test.go").write <<~GO
+    (testpath/"main_test.go").write <<~GO
       package main
 
       import "testing"
@@ -57,9 +57,9 @@ class Gotestsum < Formula
       }
     GO
 
-    output = shell_output("#{bin}gotestsum --format=testname")
+    output = shell_output("#{bin}/gotestsum --format=testname")
     assert_match "DONE 1 tests", output
 
-    assert_match version.to_s, shell_output("#{bin}gotestsum --version")
+    assert_match version.to_s, shell_output("#{bin}/gotestsum --version")
   end
 end

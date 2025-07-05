@@ -1,7 +1,7 @@
 class JxlOxide < Formula
   desc "JPEG XL decoder"
-  homepage "https:github.comtirr-cjxl-oxide"
-  url "https:github.comtirr-cjxl-oxidearchiverefstags0.12.2.tar.gz"
+  homepage "https://github.com/tirr-c/jxl-oxide"
+  url "https://ghfast.top/https://github.com/tirr-c/jxl-oxide/archive/refs/tags/0.12.2.tar.gz"
   sha256 "0d2b812051b64ab443c444035e7ccf4a53e8d823608c1c6b9997c3e6c43f729c"
   license any_of: ["MIT", "Apache-2.0"]
 
@@ -20,18 +20,18 @@ class JxlOxide < Formula
 
   def install
     ENV["LCMS2_LIB_DIR"] = Formula["little-cms2"].opt_lib.to_s
-    system "cargo", "install", *std_cargo_args(path: "cratesjxl-oxide-cli")
+    system "cargo", "install", *std_cargo_args(path: "crates/jxl-oxide-cli")
   end
 
   test do
     resource "sunset-logo-jxl" do
-      url "https:github.comlibjxlconformanceblob5399ecf01e50ec5230912aa2df82286dc1c379c9testcasessunset_logoinput.jxl?raw=true"
+      url "https://github.com/libjxl/conformance/blob/5399ecf01e50ec5230912aa2df82286dc1c379c9/testcases/sunset_logo/input.jxl?raw=true"
       sha256 "6617480923e1fdef555e165a1e7df9ca648068dd0bdbc41a22c0e4213392d834"
     end
 
     resource("sunset-logo-jxl").stage do
-      system bin"jxl-oxide", "input.jxl", "-o", testpath"out.png"
+      system bin/"jxl-oxide", "input.jxl", "-o", testpath/"out.png"
     end
-    assert_path_exists testpath"out.png"
+    assert_path_exists testpath/"out.png"
   end
 end

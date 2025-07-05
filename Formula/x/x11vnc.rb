@@ -1,10 +1,10 @@
 class X11vnc < Formula
   desc "VNC server for real X displays"
-  homepage "https:github.comLibVNCx11vnc"
-  url "https:github.comLibVNCx11vncarchiverefstags0.9.17.tar.gz"
+  homepage "https://github.com/LibVNC/x11vnc"
+  url "https://ghfast.top/https://github.com/LibVNC/x11vnc/archive/refs/tags/0.9.17.tar.gz"
   sha256 "3ab47c042bc1c33f00c7e9273ab674665b85ab10592a8e0425589fe7f3eb1a69"
   license "GPL-2.0-or-later" => { with: "x11vnc-openssl-exception" }
-  head "https:github.comLibVNCx11vnc.git", branch: "master"
+  head "https://github.com/LibVNC/x11vnc.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -31,7 +31,7 @@ class X11vnc < Formula
     ENV.append_to_cflags "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1403
     ENV.append_to_cflags "-Wno-int-conversion" if DevelopmentTools.clang_build_version >= 1500
 
-    system ".autogen.sh", "--disable-silent-rules",
+    system "./autogen.sh", "--disable-silent-rules",
                            "--mandir=#{man}",
                            "--without-x",
                            *std_configure_args
@@ -39,6 +39,6 @@ class X11vnc < Formula
   end
 
   test do
-    system bin"x11vnc", "--version"
+    system bin/"x11vnc", "--version"
   end
 end

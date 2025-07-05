@@ -2,12 +2,12 @@ cask "font-finlandica" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefonts.git",
-      verified:  "github.comgooglefonts",
+  url "https://github.com/google/fonts.git",
+      verified:  "github.com/google/fonts",
       branch:    "main",
-      only_path: "oflfinlandica"
+      only_path: "ofl/finlandica"
   name "Finlandica"
-  homepage "https:fonts.google.comspecimenFinlandica"
+  homepage "https://fonts.google.com/specimen/Finlandica"
 
   font "Finlandica-Italic[wght].ttf"
   font "Finlandica[wght].ttf"

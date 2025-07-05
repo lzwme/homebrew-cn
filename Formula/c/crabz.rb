@@ -1,10 +1,10 @@
 class Crabz < Formula
   desc "Like pigz, but in Rust"
-  homepage "https:github.comsstadickcrabz"
-  url "https:github.comsstadickcrabzarchiverefstagsv0.10.0.tar.gz"
+  homepage "https://github.com/sstadick/crabz"
+  url "https://ghfast.top/https://github.com/sstadick/crabz/archive/refs/tags/v0.10.0.tar.gz"
   sha256 "2bbd8eb669a6570b104a0eb412d2492d5a9296524964cd676440069d27f52e6c"
   license any_of: ["MIT", "Unlicense"]
-  head "https:github.comsstadickcrabz.git", branch: "main"
+  head "https://github.com/sstadick/crabz.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "a63f077a041350830a61b22d164dc5f00dba1db420d109d28de740fd9ab3b5c2"
@@ -27,12 +27,12 @@ class Crabz < Formula
 
   test do
     test_data = "a" * 1000
-    (testpath"example").write test_data
-    system bin"crabz", "-f", "gzip", testpath"example", "-o", testpath"example.gz"
-    assert_path_exists testpath"example.gz"
-    system bin"crabz", "-d", testpath"example.gz", "-o", testpath"example2"
-    assert_equal test_data, (testpath"example2").read
+    (testpath/"example").write test_data
+    system bin/"crabz", "-f", "gzip", testpath/"example", "-o", testpath/"example.gz"
+    assert_path_exists testpath/"example.gz"
+    system bin/"crabz", "-d", testpath/"example.gz", "-o", testpath/"example2"
+    assert_equal test_data, (testpath/"example2").read
 
-    assert_match "crabz cargo:#{version}", shell_output("#{bin}crabz --version")
+    assert_match "crabz cargo:#{version}", shell_output("#{bin}/crabz --version")
   end
 end

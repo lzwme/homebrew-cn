@@ -1,7 +1,7 @@
 class TomlTest < Formula
   desc "Language agnostic test suite for TOML parsers"
-  homepage "https:github.comtoml-langtoml-test"
-  url "https:github.comtoml-langtoml-testarchiverefstagsv1.6.0.tar.gz"
+  homepage "https://github.com/toml-lang/toml-test"
+  url "https://ghfast.top/https://github.com/toml-lang/toml-test/archive/refs/tags/v1.6.0.tar.gz"
   sha256 "79ee1f9edef786e28cc54504179672071dbc7bad24d73348e8e7d7e766068abc"
   license "MIT"
 
@@ -18,20 +18,20 @@ class TomlTest < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), ".cmdtoml-test"
+    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/toml-test"
     pkgshare.install "tests"
   end
 
   test do
-    system bin"toml-test", "-version"
-    system bin"toml-test", "-help"
-    (testpath"stub-decoder").write <<~SH
-      #!binsh
-      cat #{pkgshare}testsvalidexample.json
+    system bin/"toml-test", "-version"
+    system bin/"toml-test", "-help"
+    (testpath/"stub-decoder").write <<~SH
+      #!/bin/sh
+      cat #{pkgshare}/tests/valid/example.json
     SH
-    chmod 0755, testpath"stub-decoder"
-    system bin"toml-test", "-testdir", pkgshare"tests",
-                            "-run", "validexample*",
-                            "--", testpath"stub-decoder"
+    chmod 0755, testpath/"stub-decoder"
+    system bin/"toml-test", "-testdir", pkgshare/"tests",
+                            "-run", "valid/example*",
+                            "--", testpath/"stub-decoder"
   end
 end

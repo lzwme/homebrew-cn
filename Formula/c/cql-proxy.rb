@@ -1,10 +1,10 @@
 class CqlProxy < Formula
   desc "DataStax cql-proxy enables Cassandra apps to use Astra DB without code changes"
-  homepage "https:github.comdatastaxcql-proxy"
-  url "https:github.comdatastaxcql-proxyarchiverefstagsv0.1.6.tar.gz"
+  homepage "https://github.com/datastax/cql-proxy"
+  url "https://ghfast.top/https://github.com/datastax/cql-proxy/archive/refs/tags/v0.1.6.tar.gz"
   sha256 "f781abd69142551bc90e98bf986e82c191a39a9e1c45370d12a073268bc79c86"
   license "Apache-2.0"
-  head "https:github.comdatastaxcql-proxy.git", branch: "main"
+  head "https://github.com/datastax/cql-proxy.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "4956cf9eb3aac88e7b3706870559e78ad8d7bf2f84470b858813ec6f3f2d674e"
@@ -25,7 +25,7 @@ class CqlProxy < Formula
 
   test do
     touch "secure.txt"
-    output = shell_output("#{bin}cql-proxy -b secure.txt --bind 127.0.0.1 2>&1", 2)
+    output = shell_output("#{bin}/cql-proxy -b secure.txt --bind 127.0.0.1 2>&1", 2)
     assert_match "unable to open", output
   end
 end

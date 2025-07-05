@@ -17,20 +17,20 @@ cask "widelands-app" do
            intel: "de55c686a82c904c4e585cf93802af3b475ed330e5420b3ef9b4a23d649e6b9e"
   end
 
-  url "https:github.comwidelandswidelandsreleasesdownloadv#{version}Widelands-#{version}-MacOS#{arch}.dmg",
-      verified: "github.comwidelandswidelands"
+  url "https://ghfast.top/https://github.com/widelands/widelands/releases/download/v#{version}/Widelands-#{version}-MacOS#{arch}.dmg",
+      verified: "github.com/widelands/widelands/"
   name "Widelands"
   desc "Free real-time strategy game like Settlers II"
-  homepage "https:www.widelands.org"
+  homepage "https://www.widelands.org/"
 
   livecheck do
-    url "https:www.widelands.orgwikiDownload"
-    regex(href=.*?Widelands[._-]v?(\d+(?:\.\d+)+)[._-]MacOS#{arch}\.dmgi)
+    url "https://www.widelands.org/wiki/Download/"
+    regex(/href=.*?Widelands[._-]v?(\d+(?:\.\d+)+)[._-]MacOS#{arch}\.dmg/i)
   end
 
   depends_on macos: ">= :monterey"
 
   app "Widelands.app"
 
-  zap trash: "~.widelands"
+  zap trash: "~/.widelands"
 end

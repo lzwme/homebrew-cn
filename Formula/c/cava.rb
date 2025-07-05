@@ -1,10 +1,10 @@
 class Cava < Formula
   desc "Console-based Audio Visualizer for ALSA"
-  homepage "https:github.comkarlstavcava"
-  url "https:github.comkarlstavcavaarchiverefstags0.10.4.tar.gz"
+  homepage "https://github.com/karlstav/cava"
+  url "https://ghfast.top/https://github.com/karlstav/cava/archive/refs/tags/0.10.4.tar.gz"
   sha256 "5a2efedf2d809d70770f49349f28a5c056f1ba9b3f5476e78744291a468e206a"
   license "MIT"
-  head "https:github.comkarlstavcava.git", branch: "master"
+  head "https://github.com/karlstav/cava.git", branch: "master"
 
   bottle do
     sha256 cellar: :any, arm64_sequoia: "fc71ed1ee831644035fdce90d1a95ec22e6b628cf8272fe021a96c541915a5a3"
@@ -39,17 +39,17 @@ class Cava < Formula
     # force autogen.sh to look for and use our glibtoolize
     inreplace "autogen.sh", "libtoolize", "glibtoolize"
 
-    ENV.append "CPPFLAGS", "-I#{Formula["iniparser"].opt_include}iniparser"
+    ENV.append "CPPFLAGS", "-I#{Formula["iniparser"].opt_include}/iniparser"
     ENV.append "LDFLAGS", "-L#{Formula["iniparser"].opt_lib}"
 
-    system ".autogen.sh"
-    system ".configure", "--disable-silent-rules", *std_configure_args
+    system "./autogen.sh"
+    system "./configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
   end
 
   test do
-    cava_config = (testpath"cava.conf")
-    cava_stdout = (testpath"cava_stdout.log")
+    cava_config = (testpath/"cava.conf")
+    cava_stdout = (testpath/"cava_stdout.log")
 
     cava_config.write <<~EOS
       [general]
@@ -58,14 +58,14 @@ class Cava < Formula
 
       [input]
       method = fifo
-      source = devzero
+      source = /dev/zero
 
       [output]
       method = raw
       data_format = ascii
     EOS
 
-    pid = spawn(bin"cava", "-p", cava_config, [:out, :err] => cava_stdout.to_s)
+    pid = spawn(bin/"cava", "-p", cava_config, [:out, :err] => cava_stdout.to_s)
 
     sleep 5
 

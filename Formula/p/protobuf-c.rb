@@ -1,7 +1,7 @@
 class ProtobufC < Formula
   desc "Protocol buffers library"
-  homepage "https:github.comprotobuf-cprotobuf-c"
-  url "https:github.comprotobuf-cprotobuf-creleasesdownloadv1.5.2protobuf-c-1.5.2.tar.gz"
+  homepage "https://github.com/protobuf-c/protobuf-c"
+  url "https://ghfast.top/https://github.com/protobuf-c/protobuf-c/releases/download/v1.5.2/protobuf-c-1.5.2.tar.gz"
   sha256 "e2c86271873a79c92b58fef7ebf8de1aa0df4738347a8bd5d4e65a80a16d0d24"
   license "BSD-2-Clause"
 
@@ -16,7 +16,7 @@ class ProtobufC < Formula
   end
 
   head do
-    url "https:github.comprotobuf-cprotobuf-c.git", branch: "master"
+    url "https://github.com/protobuf-c/protobuf-c.git", branch: "master"
 
     depends_on "asciidoc" => :build
     depends_on "autoconf" => :build
@@ -30,7 +30,7 @@ class ProtobufC < Formula
 
   def install
     system "autoreconf", "--force", "--install", "--verbose" if build.head?
-    system ".configure", *std_configure_args
+    system "./configure", *std_configure_args
     system "make", "install"
   end
 
@@ -45,10 +45,10 @@ class ProtobufC < Formula
         repeated TestCase case = 1;
       }
     PROTO
-    (testpath"test.proto").write testdata
-    system Formula["protobuf"].opt_bin"protoc", "test.proto", "--c_out=."
+    (testpath/"test.proto").write testdata
+    system Formula["protobuf"].opt_bin/"protoc", "test.proto", "--c_out=."
 
     testpath.glob("test.pb-c.*").map(&:unlink)
-    system bin"protoc-c", "test.proto", "--c_out=."
+    system bin/"protoc-c", "test.proto", "--c_out=."
   end
 end

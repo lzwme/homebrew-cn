@@ -1,10 +1,10 @@
 class Displayplacer < Formula
   desc "Utility to configure multi-display resolutions and arrangements"
-  homepage "https:github.comjakehilborndisplayplacer"
-  url "https:github.comjakehilborndisplayplacerarchiverefstagsv1.4.0.tar.gz"
+  homepage "https://github.com/jakehilborn/displayplacer"
+  url "https://ghfast.top/https://github.com/jakehilborn/displayplacer/archive/refs/tags/v1.4.0.tar.gz"
   sha256 "54b239359dbf9dc9b3a25e41a372eafb1de6c3131fe7fed37da53da77189b600"
   license "MIT"
-  head "https:github.comjakehilborndisplayplacer.git", branch: "master"
+  head "https://github.com/jakehilborn/displayplacer.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "96332bcb8154d5fc6b7fa633fd81beefa075f13f54888285eadbedc7caf55cb6"
@@ -20,11 +20,11 @@ class Displayplacer < Formula
 
   def install
     system "make", "-C", "src"
-    bin.install "srcdisplayplacer"
+    bin.install "src/displayplacer"
   end
 
   test do
-    assert_match "Resolution:", shell_output("#{bin}displayplacer list")
-    assert_match version.to_s, shell_output("#{bin}displayplacer --version")
+    assert_match "Resolution:", shell_output("#{bin}/displayplacer list")
+    assert_match version.to_s, shell_output("#{bin}/displayplacer --version")
   end
 end

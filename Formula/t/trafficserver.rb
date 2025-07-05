@@ -1,8 +1,8 @@
 class Trafficserver < Formula
-  desc "HTTP1.1 and HTTP2 compliant caching proxy server"
-  homepage "https:trafficserver.apache.org"
-  url "https:downloads.apache.orgtrafficservertrafficserver-10.0.6.tar.bz2"
-  mirror "https:archive.apache.orgdisttrafficservertrafficserver-10.0.6.tar.bz2"
+  desc "HTTP/1.1 and HTTP/2 compliant caching proxy server"
+  homepage "https://trafficserver.apache.org/"
+  url "https://downloads.apache.org/trafficserver/trafficserver-10.0.6.tar.bz2"
+  mirror "https://archive.apache.org/dist/trafficserver/trafficserver-10.0.6.tar.bz2"
   sha256 "b2add52a1df9de19b00405abe56c6d78331c6b439cee361d2ada031a602ced46"
   license "Apache-2.0"
 
@@ -27,7 +27,7 @@ class Trafficserver < Formula
   depends_on "luajit"
   depends_on "nuraft"
   depends_on "openssl@3"
-  depends_on "pcre" # PCRE2 issue: https:github.comapachetrafficserverissues8780
+  depends_on "pcre" # PCRE2 issue: https://github.com/apache/trafficserver/issues/8780
   depends_on "pcre2"
   depends_on "xz"
   depends_on "yaml-cpp"
@@ -52,10 +52,10 @@ class Trafficserver < Formula
   end
 
   def post_install
-    (var"logtrafficserver").mkpath
-    (var"trafficserver").mkpath
+    (var/"log/trafficserver").mkpath
+    (var/"trafficserver").mkpath
 
-    config = etc"trafficserverrecords.config"
+    config = etc/"trafficserver/records.config"
     return unless File.exist?(config)
     return if File.read(config).include?("proxy.config.admin.user_id STRING #{ENV["USER"]}")
 
@@ -64,10 +64,10 @@ class Trafficserver < Formula
 
   test do
     if OS.mac?
-      output = shell_output("#{bin}trafficserver status")
+      output = shell_output("#{bin}/trafficserver status")
       assert_match "Apache Traffic Server is not running", output
     else
-      output = shell_output("#{bin}trafficserver status 2>&1", 3)
+      output = shell_output("#{bin}/trafficserver status 2>&1", 3)
       assert_match "traffic_server is not running", output
     end
   end

@@ -1,11 +1,11 @@
 class ElmFormat < Formula
   desc "Elm source code formatter, inspired by gofmt"
-  homepage "https:github.comavh4elm-format"
-  url "https:github.comavh4elm-format.git",
+  homepage "https://github.com/avh4/elm-format"
+  url "https://github.com/avh4/elm-format.git",
       tag:      "0.8.8",
       revision: "d07fddc8c0eef412dba07be4ab8768d6abcca796"
   license "BSD-3-Clause"
-  head "https:github.comavh4elm-format.git", branch: "main"
+  head "https://github.com/avh4/elm-format.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "934f90684cfe8daa0b264f2a4f997b8b98799f2e4f520123bed0ff211faecb1a"
@@ -30,22 +30,22 @@ class ElmFormat < Formula
   def install
     system "cabal", "v2-update"
 
-    # Directly running `cabal v2-install` fails: Invalid file name in tar archive: "avh4-lib-0.0.0.1.."
+    # Directly running `cabal v2-install` fails: Invalid file name in tar archive: "avh4-lib-0.0.0.1/../"
     # Instead, we can use the upstream's build.sh script, which utilizes the Shake build system.
-    system ".devbuild.sh", "--", "_buildbinelm-formatO2elm-format"
-    bin.install "_buildbinelm-formatO2elm-format"
+    system "./dev/build.sh", "--", "_build/bin/elm-format/O2/elm-format"
+    bin.install "_build/bin/elm-format/O2/elm-format"
   end
 
   test do
-    src_path = testpath"Hello.elm"
+    src_path = testpath/"Hello.elm"
     src_path.write <<~ELM
       import Html exposing (text)
       main = text "Hello, world!"
     ELM
 
-    system bin"elm-format", "--elm-version=0.18", testpath"Hello.elm", "--yes"
-    system bin"elm-format", "--elm-version=0.19", testpath"Hello.elm", "--yes"
+    system bin/"elm-format", "--elm-version=0.18", testpath/"Hello.elm", "--yes"
+    system bin/"elm-format", "--elm-version=0.19", testpath/"Hello.elm", "--yes"
 
-    assert_match version.to_s, shell_output("#{bin}elm-format --help")
+    assert_match version.to_s, shell_output("#{bin}/elm-format --help")
   end
 end

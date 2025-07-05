@@ -1,7 +1,7 @@
 class Facad < Formula
   desc "Modern, colorful directory listing tool for the command-line"
-  homepage "https:github.comyellow-footed-honeyguidefacad"
-  url "https:github.comyellow-footed-honeyguidefacadarchiverefstagsv2.20.13.tar.gz"
+  homepage "https://github.com/yellow-footed-honeyguide/facad"
+  url "https://ghfast.top/https://github.com/yellow-footed-honeyguide/facad/archive/refs/tags/v2.20.13.tar.gz"
   sha256 "381231de5429cc47fccdd163a34691b4478a33deea7146c78676d559d284439e"
   license "MIT"
 
@@ -25,9 +25,9 @@ class Facad < Formula
   end
 
   test do
-    assert_match "facad version #{version}", shell_output("#{bin}facad --version")
+    assert_match "facad version #{version}", shell_output("#{bin}/facad --version")
 
     Dir.mkdir("foobar")
-    assert_match "📁 foobar", shell_output(bin"facad")
+    assert_match "📁 foobar", shell_output(bin/"facad")
   end
 end

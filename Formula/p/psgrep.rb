@@ -1,10 +1,10 @@
 class Psgrep < Formula
   desc "Shortcut for the 'ps aux | grep' idiom"
-  homepage "https:github.comjvzpsgrep"
-  url "https:github.comjvzpsgreparchiverefstags1.0.9.tar.gz"
+  homepage "https://github.com/jvz/psgrep"
+  url "https://ghfast.top/https://github.com/jvz/psgrep/archive/refs/tags/1.0.9.tar.gz"
   sha256 "6408e4fc99414367ad08bfbeda6aa86400985efe1ccb1a1f00f294f86dd8b984"
   license "GPL-3.0-or-later"
-  head "https:github.comjvzpsgrep.git", branch: "master"
+  head "https://github.com/jvz/psgrep.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -19,7 +19,7 @@ class Psgrep < Formula
   end
 
   test do
-    system bin"psgrep", Process.pid
-    assert_match version.to_s, shell_output("#{bin}psgrep -v", 2)
+    system bin/"psgrep", Process.pid
+    assert_match version.to_s, shell_output("#{bin}/psgrep -v", 2)
   end
 end

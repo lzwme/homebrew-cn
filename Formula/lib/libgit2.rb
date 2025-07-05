@@ -1,10 +1,10 @@
 class Libgit2 < Formula
   desc "C library of Git core methods that is re-entrant and linkable"
-  homepage "https:libgit2.org"
-  url "https:github.comlibgit2libgit2archiverefstagsv1.9.1.tar.gz"
+  homepage "https://libgit2.org/"
+  url "https://ghfast.top/https://github.com/libgit2/libgit2/archive/refs/tags/v1.9.1.tar.gz"
   sha256 "14cab3014b2b7ad75970ff4548e83615f74d719afe00aa479b4a889c1e13fc00"
   license "GPL-2.0-only" => { with: "GCC-exception-2.0" }
-  head "https:github.comlibgit2libgit2.git", branch: "main"
+  head "https://github.com/libgit2/libgit2.git", branch: "main"
 
   livecheck do
     url :stable
@@ -39,11 +39,11 @@ class Libgit2 < Formula
 
     system "cmake", "-S", ".", "-B", "build-static", "-DBUILD_SHARED_LIBS=OFF", *args, *std_cmake_args
     system "cmake", "--build", "build-static"
-    lib.install "build-staticlibgit2.a"
+    lib.install "build-static/libgit2.a"
   end
 
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include <git2.h>
       #include <assert.h>
 
@@ -61,6 +61,6 @@ class Libgit2 < Formula
       -lgit2
     ]
     system ENV.cc, "test.c", "-o", "test", *flags
-    system ".test"
+    system "./test"
   end
 end

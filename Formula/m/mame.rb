@@ -1,11 +1,11 @@
 class Mame < Formula
   desc "Multiple Arcade Machine Emulator"
-  homepage "https:mamedev.org"
-  url "https:github.commamedevmamearchiverefstagsmame0278.tar.gz"
+  homepage "https://mamedev.org/"
+  url "https://ghfast.top/https://github.com/mamedev/mame/archive/refs/tags/mame0278.tar.gz"
   version "0.278"
   sha256 "ca5f44a0ed834875f8420a75587706af210ff8c5922942509bc5bfef7d45c360"
   license "GPL-2.0-or-later"
-  head "https:github.commamedevmame.git", branch: "master"
+  head "https://github.com/mamedev/mame.git", branch: "master"
 
   # MAME tags (and filenames) are formatted like `mame0226`, so livecheck will
   # report the version like `0226`. We work around this by matching the link
@@ -65,10 +65,10 @@ class Mame < Formula
     ENV["QT_HOME"] = Formula["qt"].opt_prefix if OS.linux?
 
     # Cut sdl2-config's invalid option.
-    inreplace "scriptssrcosdsdl.lua", "--static", ""
+    inreplace "scripts/src/osd/sdl.lua", "--static", ""
 
     # Use bundled lua instead of latest version.
-    # https:github.commamedevmameissues5349
+    # https://github.com/mamedev/mame/issues/5349
     system "make", "PYTHON_EXECUTABLE=#{which("python3")}",
                    "USE_LIBSDL=1",
                    "USE_SYSTEM_LIB_EXPAT=1",
@@ -88,17 +88,17 @@ class Mame < Formula
     bin.install "mame"
     cd "docs" do
       # We don't convert SVG files into PDF files, don't load the related extensions.
-      inreplace "sourceconf.py", "'sphinxcontrib.rsvgconverter',", ""
+      inreplace "source/conf.py", "'sphinxcontrib.rsvgconverter',", ""
       system "make", "text"
-      doc.install Dir["buildtext*"]
+      doc.install Dir["build/text/*"]
       system "make", "man"
-      man1.install "buildmanMAME.1" => "mame.1"
+      man1.install "build/man/MAME.1" => "mame.1"
     end
     pkgshare.install %w[artwork bgfx hash ini keymaps language plugins samples uismall.bdf]
   end
 
   test do
-    assert shell_output("#{bin}mame -help").start_with? "MAME v#{version}"
-    system bin"mame", "-validate"
+    assert shell_output("#{bin}/mame -help").start_with? "MAME v#{version}"
+    system bin/"mame", "-validate"
   end
 end

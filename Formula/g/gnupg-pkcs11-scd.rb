@@ -1,13 +1,13 @@
 class GnupgPkcs11Scd < Formula
   desc "Enable the use of PKCS#11 tokens with GnuPG"
-  homepage "https:gnupg-pkcs11.sourceforge.net"
-  url "https:github.comalonblgnupg-pkcs11-scdreleasesdownloadgnupg-pkcs11-scd-0.11.0gnupg-pkcs11-scd-0.11.0.tar.bz2"
+  homepage "https://gnupg-pkcs11.sourceforge.net/"
+  url "https://ghfast.top/https://github.com/alonbl/gnupg-pkcs11-scd/releases/download/gnupg-pkcs11-scd-0.11.0/gnupg-pkcs11-scd-0.11.0.tar.bz2"
   sha256 "954787e562f2b3d9294212c32dd0d81a2cd37aca250e6685002d2893bb959087"
   license "BSD-3-Clause"
 
   livecheck do
     url :stable
-    regex(gnupg-pkcs11-scd[._-]v?(\d+(?:\.\d+)+)i)
+    regex(/gnupg-pkcs11-scd[._-]v?(\d+(?:\.\d+)+)/i)
     strategy :github_latest
   end
 
@@ -33,13 +33,13 @@ class GnupgPkcs11Scd < Formula
 
   def install
     system "autoreconf", "--force", "--install", "--verbose"
-    system ".configure", "--disable-silent-rules", *std_configure_args
+    system "./configure", "--disable-silent-rules", *std_configure_args
     system "make"
     system "make", "check"
     system "make", "install"
   end
 
   test do
-    system bin"gnupg-pkcs11-scd", "--help"
+    system bin/"gnupg-pkcs11-scd", "--help"
   end
 end

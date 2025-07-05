@@ -1,10 +1,10 @@
 class Comrak < Formula
   desc "CommonMark + GFM compatible Markdown parser and renderer"
-  homepage "https:github.comkivikakkcomrak"
-  url "https:github.comkivikakkcomrakarchiverefstagsv0.39.1.tar.gz"
+  homepage "https://github.com/kivikakk/comrak"
+  url "https://ghfast.top/https://github.com/kivikakk/comrak/archive/refs/tags/v0.39.1.tar.gz"
   sha256 "53514dba5c0df9dc734825d5e8a29f0ff0b4c7d0edc9d521cdd8a5fc66285dae"
   license "BSD-2-Clause"
-  head "https:github.comkivikakkcomrak.git", branch: "main"
+  head "https://github.com/kivikakk/comrak.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "8a9768c11566637f92072a6775f5ee49be07dc63d3aa436eea17980ddcc8b4d6"
@@ -23,16 +23,16 @@ class Comrak < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}comrak --version")
+    assert_match version.to_s, shell_output("#{bin}/comrak --version")
 
-    (testpath"test.md").write <<~MARKDOWN
+    (testpath/"test.md").write <<~MARKDOWN
       # Hello, World!
 
       This is a test of the **comrak** Markdown parser.
     MARKDOWN
 
-    output = shell_output("#{bin}comrak test.md")
-    assert_match "<h1>Hello, World!<h1>", output
-    assert_match "<p>This is a test of the <strong>comrak<strong> Markdown parser.<p>", output
+    output = shell_output("#{bin}/comrak test.md")
+    assert_match "<h1>Hello, World!</h1>", output
+    assert_match "<p>This is a test of the <strong>comrak</strong> Markdown parser.</p>", output
   end
 end

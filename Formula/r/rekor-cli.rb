@@ -1,7 +1,7 @@
 class RekorCli < Formula
   desc "CLI for interacting with Rekor"
-  homepage "https:docs.sigstore.devloggingoverview"
-  url "https:github.comsigstorerekorarchiverefstagsv1.3.10.tar.gz"
+  homepage "https://docs.sigstore.dev/logging/overview/"
+  url "https://ghfast.top/https://github.com/sigstore/rekor/archive/refs/tags/v1.3.10.tar.gz"
   sha256 "28967aa7b3168b745f03547dd48b4be4d99b74df5a034942227a87067de29995"
   license "Apache-2.0"
 
@@ -19,21 +19,21 @@ class RekorCli < Formula
   def install
     ldflags = %W[
       -s -w
-      -X sigs.k8s.iorelease-utilsversion.gitVersion=#{version}
-      -X sigs.k8s.iorelease-utilsversion.gitCommit=#{tap.user}
-      -X sigs.k8s.iorelease-utilsversion.gitTreeState=#{tap.user}
-      -X sigs.k8s.iorelease-utilsversion.buildDate=#{time.iso8601}
+      -X sigs.k8s.io/release-utils/version.gitVersion=#{version}
+      -X sigs.k8s.io/release-utils/version.gitCommit=#{tap.user}
+      -X sigs.k8s.io/release-utils/version.gitTreeState=#{tap.user}
+      -X sigs.k8s.io/release-utils/version.buildDate=#{time.iso8601}
     ]
-    system "go", "build", *std_go_args(ldflags:), ".cmdrekor-cli"
+    system "go", "build", *std_go_args(ldflags:), "./cmd/rekor-cli"
 
-    generate_completions_from_executable(bin"rekor-cli", "completion")
+    generate_completions_from_executable(bin/"rekor-cli", "completion")
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}rekor-cli version")
+    assert_match version.to_s, shell_output("#{bin}/rekor-cli version")
 
-    url = "https:github.comsigstorerekorreleasesdownloadv#{version}rekor-cli-darwin-arm64"
-    output = shell_output("#{bin}rekor-cli search --artifact #{url} 2>&1")
+    url = "https://ghfast.top/https://github.com/sigstore/rekor/releases/download/v#{version}/rekor-cli-darwin-arm64"
+    output = shell_output("#{bin}/rekor-cli search --artifact #{url} 2>&1")
     assert_match "Found matching entries (listed by UUID):", output
   end
 end

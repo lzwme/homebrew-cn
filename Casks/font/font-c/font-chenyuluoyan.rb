@@ -2,13 +2,13 @@ cask "font-chenyuluoyan" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comChenyu-otfchenyuluoyan_thinarchiverefsheadsmain.tar.gz"
+  url "https://ghfast.top/https://github.com/Chenyu-otf/chenyuluoyan_thin/archive/refs/heads/main.tar.gz"
   name "Chenyuluoyan"
   name "辰宇落雁體"
-  homepage "https:github.comChenyu-otfchenyuluoyan_thin"
+  homepage "https://github.com/Chenyu-otf/chenyuluoyan_thin"
 
-  font "chenyuluoyan_thin-mainChenYuluoyan-Thin-Monospaced.ttf"
-  font "chenyuluoyan_thin-mainChenYuluoyan-2.0-Thin.ttf"
+  font "chenyuluoyan_thin-main/ChenYuluoyan-Thin-Monospaced.ttf"
+  font "chenyuluoyan_thin-main/ChenYuluoyan-2.0-Thin.ttf"
 
   # No zap stanza required
 end

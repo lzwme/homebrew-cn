@@ -1,10 +1,10 @@
 class Guetzli < Formula
   desc "Perceptual JPEG encoder"
-  homepage "https:github.comgoogleguetzli"
-  url "https:github.comgoogleguetzliarchiverefstagsv1.0.1.tar.gz"
+  homepage "https://github.com/google/guetzli"
+  url "https://ghfast.top/https://github.com/google/guetzli/archive/refs/tags/v1.0.1.tar.gz"
   sha256 "e52eb417a5c0fb5a3b08a858c8d10fa797627ada5373e203c196162d6a313697"
   license "Apache-2.0"
-  head "https:github.comgoogleguetzli.git", branch: "master"
+  head "https://github.com/google/guetzli.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -31,16 +31,16 @@ class Guetzli < Formula
   depends_on "libpng"
 
   resource "test_image" do
-    url "https:github.comgoogleguetzlireleasesdownloadv1.0bees.png"
+    url "https://ghfast.top/https://github.com/google/guetzli/releases/download/v1.0/bees.png"
     sha256 "2c1784bf4efb90c57f00a3ab4898ac8ec4784c60d7a0f70d2ba2c00af910520b"
   end
 
   def install
     system "make"
-    bin.install "binReleaseguetzli"
+    bin.install "bin/Release/guetzli"
   end
 
   test do
-    resource("test_image").stage { system bin"guetzli", "bees.png", "bees.jpg" }
+    resource("test_image").stage { system bin/"guetzli", "bees.png", "bees.jpg" }
   end
 end

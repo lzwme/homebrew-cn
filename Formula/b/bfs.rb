@@ -1,7 +1,7 @@
 class Bfs < Formula
   desc "Breadth-first version of find"
-  homepage "https:tavianator.comprojectsbfs.html"
-  url "https:github.comtavianatorbfsarchiverefstags4.0.8.tar.gz"
+  homepage "https://tavianator.com/projects/bfs.html"
+  url "https://ghfast.top/https://github.com/tavianator/bfs/archive/refs/tags/4.0.8.tar.gz"
   sha256 "0b7bc99fca38baf2ce212b0f6b03f05cd614ea0504bc6360e901d6f718180036"
   license "0BSD"
 
@@ -29,15 +29,15 @@ class Bfs < Formula
   def install
     ENV.llvm_clang if OS.mac? && DevelopmentTools.clang_build_version <= 1300
 
-    system ".configure", "--enable-release"
+    system "./configure", "--enable-release"
     system "make"
     system "make", "install", "DEST_PREFIX=#{prefix}", "DEST_MANDIR=#{man}"
-    bash_completion.install share"bash-completioncompletionsbfs"
+    bash_completion.install share/"bash-completion/completions/bfs"
   end
 
   test do
     touch "foo_file"
     touch "test_file"
-    assert_equal ".test_file", shell_output("#{bin}bfs -name 'test*' -depth 1").chomp
+    assert_equal "./test_file", shell_output("#{bin}/bfs -name 'test*' -depth 1").chomp
   end
 end

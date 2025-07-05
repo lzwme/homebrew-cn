@@ -1,11 +1,11 @@
 class DnscryptWrapper < Formula
   desc "Server-side proxy that adds dnscrypt support to name resolvers"
-  homepage "https:cofyc.github.iodnscrypt-wrapper"
-  url "https:github.comcofycdnscrypt-wrapperarchiverefstagsv0.4.2.tar.gz"
+  homepage "https://cofyc.github.io/dnscrypt-wrapper/"
+  url "https://ghfast.top/https://github.com/cofyc/dnscrypt-wrapper/archive/refs/tags/v0.4.2.tar.gz"
   sha256 "911856dc4e211f906ca798fcf84f5b62be7fdbf73c53e5715ce18d553814ac86"
   license "ISC"
   revision 2
-  head "https:github.comCofycdnscrypt-wrapper.git", branch: "master"
+  head "https://github.com/Cofyc/dnscrypt-wrapper.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -22,20 +22,20 @@ class DnscryptWrapper < Formula
   depends_on "libsodium"
 
   on_macos do
-    depends_on arch: :x86_64 # https:github.comcofycdnscrypt-wrapperissues177
+    depends_on arch: :x86_64 # https://github.com/cofyc/dnscrypt-wrapper/issues/177
   end
 
   def install
     system "make", "configure"
-    system ".configure", "--prefix=#{prefix}"
+    system "./configure", "--prefix=#{prefix}"
     system "make"
     system "make", "install"
   end
 
   test do
-    system sbin"dnscrypt-wrapper", "--gen-provider-keypair",
+    system sbin/"dnscrypt-wrapper", "--gen-provider-keypair",
                                     "--provider-name=2.dnscrypt-cert.example.com",
                                     "--ext-address=192.168.1.1"
-    system sbin"dnscrypt-wrapper", "--gen-crypt-keypair"
+    system sbin/"dnscrypt-wrapper", "--gen-crypt-keypair"
   end
 end

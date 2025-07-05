@@ -2,8 +2,8 @@ class Mdv < Formula
   include Language::Python::Virtualenv
 
   desc "Styled terminal markdown viewer"
-  homepage "https:github.comaxirosterminal_markdown_viewer"
-  url "https:files.pythonhosted.orgpackagesd032f5e1b8c70dc40b02604fbd0be3ff0bd5e01ee99c9fddf8f423b10d07cd31mdv-1.7.5.tar.gz"
+  homepage "https://github.com/axiros/terminal_markdown_viewer"
+  url "https://files.pythonhosted.org/packages/d0/32/f5e1b8c70dc40b02604fbd0be3ff0bd5e01ee99c9fddf8f423b10d07cd31/mdv-1.7.5.tar.gz"
   sha256 "eb84ed52a2b68d2e083e007cb485d14fac1deb755fd8f35011eff8f2889df6e9"
   license "BSD-3-Clause"
 
@@ -24,17 +24,17 @@ class Mdv < Formula
   depends_on "python@3.13"
 
   resource "markdown" do
-    url "https:files.pythonhosted.orgpackages54283af612670f82f4c056911fbbbb42760255801b3068c48de792d354ff4472markdown-3.7.tar.gz"
+    url "https://files.pythonhosted.org/packages/54/28/3af612670f82f4c056911fbbbb42760255801b3068c48de792d354ff4472/markdown-3.7.tar.gz"
     sha256 "2ae2471477cfd02dbbf038d5d9bc226d40def84b4fe2986e49b59b6b472bbed2"
   end
 
   resource "pygments" do
-    url "https:files.pythonhosted.orgpackages8e628336eff65bcbc8e4cb5d05b55faf041285951b6e80f33e2bff2024788f31pygments-2.18.0.tar.gz"
+    url "https://files.pythonhosted.org/packages/8e/62/8336eff65bcbc8e4cb5d05b55faf041285951b6e80f33e2bff2024788f31/pygments-2.18.0.tar.gz"
     sha256 "786ff802f32e91311bff3889f6e9a86e81505fe99f2735bb6d60ae0c5004f199"
   end
 
   resource "pyyaml" do
-    url "https:files.pythonhosted.orgpackages54ed79a089b6be93607fa5cdaedf301d7dfb23af5f25c398d5ead2525b063e17pyyaml-6.0.2.tar.gz"
+    url "https://files.pythonhosted.org/packages/54/ed/79a089b6be93607fa5cdaedf301d7dfb23af5f25c398d5ead2525b063e17/pyyaml-6.0.2.tar.gz"
     sha256 "d584d9ec91ad65861cc08d42e834324ef890a082e591037abe114850ff7bbc3e"
   end
 
@@ -43,11 +43,11 @@ class Mdv < Formula
   end
 
   test do
-    (testpath"test.md").write <<~MARKDOWN
+    (testpath/"test.md").write <<~MARKDOWN
       # Header 1
       ## Header 2
       ### Header 3
     MARKDOWN
-    system bin"mdv", "#{testpath}test.md"
+    system bin/"mdv", "#{testpath}/test.md"
   end
 end

@@ -5,18 +5,18 @@ cask "freelens" do
   sha256 arm:   "383664a5f11bcc89d96f33ed57ab48978f26bfb1185ebb4786fa1c06630e55ef",
          intel: "61082cc0a922d83a85f822f3510a1bc644167eced184bc063f929fcf84d5e039"
 
-  url "https:github.comfreelensappfreelensreleasesdownloadv#{version}Freelens-#{version}-macos-#{arch}.dmg",
-      verified: "github.comfreelensappfreelens"
+  url "https://ghfast.top/https://github.com/freelensapp/freelens/releases/download/v#{version}/Freelens-#{version}-macos-#{arch}.dmg",
+      verified: "github.com/freelensapp/freelens/"
   name "Freelens"
   desc "Kubernetes IDE"
-  homepage "https:freelens.app"
+  homepage "https://freelens.app/"
 
   depends_on macos: ">= :high_sierra"
 
   app "Freelens.app"
 
   zap trash: [
-    "~LibraryApplication SupportFreelens",
-    "~LibraryLogsFreelens",
+    "~/Library/Application Support/Freelens",
+    "~/Library/Logs/Freelens",
   ]
 end

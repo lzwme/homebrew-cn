@@ -1,13 +1,13 @@
 class Tokei < Formula
   desc "Program that allows you to count code, quickly"
-  homepage "https:github.comXAMPPRockytokei"
-  url "https:github.comXAMPPRockytokeiarchiverefstagsv12.1.2.tar.gz"
+  homepage "https://github.com/XAMPPRocky/tokei"
+  url "https://ghfast.top/https://github.com/XAMPPRocky/tokei/archive/refs/tags/v12.1.2.tar.gz"
   sha256 "81ef14ab8eaa70a68249a299f26f26eba22f342fb8e22fca463b08080f436e50"
   license any_of: ["Apache-2.0", "MIT"]
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -35,7 +35,7 @@ class Tokei < Formula
   end
 
   test do
-    (testpath"lib.rs").write <<~RUST
+    (testpath/"lib.rs").write <<~RUST
       #[cfg(test)]
       mod tests {
           #[test]
@@ -44,6 +44,6 @@ class Tokei < Formula
           }
       }
     RUST
-    system bin"tokei", "lib.rs"
+    system bin/"tokei", "lib.rs"
   end
 end

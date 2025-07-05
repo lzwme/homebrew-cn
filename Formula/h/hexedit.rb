@@ -1,10 +1,10 @@
 class Hexedit < Formula
   desc "View and edit files in hexadecimal or ASCII"
-  homepage "https:rigaux.orghexedit.html"
-  url "https:github.compixelhexeditarchiverefstags1.6.tar.gz"
+  homepage "https://rigaux.org/hexedit.html"
+  url "https://ghfast.top/https://github.com/pixel/hexedit/archive/refs/tags/1.6.tar.gz"
   sha256 "598906131934f88003a6a937fab10542686ce5f661134bc336053e978c4baae3"
   license "GPL-2.0-or-later"
-  head "https:github.compixelhexedit.git", branch: "master"
+  head "https://github.com/pixel/hexedit.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -29,12 +29,12 @@ class Hexedit < Formula
   uses_from_macos "ncurses"
 
   def install
-    system ".autogen.sh"
-    system ".configure", "--prefix=#{prefix}"
+    system "./autogen.sh"
+    system "./configure", "--prefix=#{prefix}"
     system "make", "install"
   end
 
   test do
-    shell_output("#{bin}hexedit -h 2>&1", 1)
+    shell_output("#{bin}/hexedit -h 2>&1", 1)
   end
 end

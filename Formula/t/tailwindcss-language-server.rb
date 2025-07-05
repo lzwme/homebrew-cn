@@ -1,12 +1,12 @@
 class TailwindcssLanguageServer < Formula
   desc "LSP for TailwindCSS"
-  homepage "https:github.comtailwindlabstailwindcss-intellisensetreeHEADpackagestailwindcss-language-server"
-  url "https:github.comtailwindlabstailwindcss-intellisensearchiverefstagsv0.14.24.tar.gz"
+  homepage "https://github.com/tailwindlabs/tailwindcss-intellisense/tree/HEAD/packages/tailwindcss-language-server"
+  url "https://ghfast.top/https://github.com/tailwindlabs/tailwindcss-intellisense/archive/refs/tags/v0.14.24.tar.gz"
   sha256 "050a94e72ee374a301af534d382148ae24a6af8018f831059bf988178e248c32"
   license "MIT"
 
   livecheck do
-    url "https:registry.npmjs.org@tailwindcsslanguage-serverlatest"
+    url "https://registry.npmjs.org/@tailwindcss/language-server/latest"
     strategy :json do |json|
       json["version"]
     end
@@ -26,10 +26,10 @@ class TailwindcssLanguageServer < Formula
   depends_on "node"
 
   def install
-    cd "packagestailwindcss-language-server" do
+    cd "packages/tailwindcss-language-server" do
       system "pnpm", "install", "--frozen-lockfile"
       system "pnpm", "run", "build"
-      bin.install "bintailwindcss-language-server"
+      bin.install "bin/tailwindcss-language-server"
     end
   end
 
@@ -48,10 +48,10 @@ class TailwindcssLanguageServer < Formula
       }
     JSON
 
-    Open3.popen3(bin"tailwindcss-language-server", "--stdio") do |stdin, stdout|
+    Open3.popen3(bin/"tailwindcss-language-server", "--stdio") do |stdin, stdout|
       stdin.write "Content-Length: #{json.size}\r\n\r\n#{json}"
       sleep 3
-      assert_match(^Content-Length: \d+i, stdout.readline)
+      assert_match(/^Content-Length: \d+/i, stdout.readline)
     end
   end
 end

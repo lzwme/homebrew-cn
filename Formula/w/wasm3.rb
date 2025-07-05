@@ -1,7 +1,7 @@
 class Wasm3 < Formula
   desc "High performance WebAssembly interpreter"
-  homepage "https:github.comwasm3wasm3"
-  url "https:github.comwasm3wasm3archiverefstagsv0.5.0.tar.gz"
+  homepage "https://github.com/wasm3/wasm3"
+  url "https://ghfast.top/https://github.com/wasm3/wasm3/archive/refs/tags/v0.5.0.tar.gz"
   sha256 "b778dd72ee2251f4fe9e2666ee3fe1c26f06f517c3ffce572416db067546536c"
   license "MIT"
 
@@ -28,18 +28,18 @@ class Wasm3 < Formula
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"
-    bin.install "buildwasm3"
+    bin.install "build/wasm3"
   end
 
   test do
     resource "homebrew-fib32.wasm" do
-      url "https:github.comwasm3wasm3rawae7b69b6d2f4d8561c907d1714d7e68b48cddd9etestlangfib32.wasm"
+      url "https://github.com/wasm3/wasm3/raw/ae7b69b6d2f4d8561c907d1714d7e68b48cddd9e/test/lang/fib32.wasm"
       sha256 "80073d9035c403b6caf62252600c5bda29cf2fb5e3f814ba723640fe047a6b87"
     end
 
     testpath.install resource("homebrew-fib32.wasm")
 
     # Run function fib(24) and check the result is 46368
-    assert_equal "Result: 46368", shell_output("#{bin}wasm3 --func fib fib32.wasm 24 2>&1").strip
+    assert_equal "Result: 46368", shell_output("#{bin}/wasm3 --func fib fib32.wasm 24 2>&1").strip
   end
 end

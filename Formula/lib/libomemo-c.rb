@@ -1,7 +1,7 @@
 class LibomemoC < Formula
   desc "Implementation of Signal's ratcheting forward secrecy protocol"
-  homepage "https:github.comdinolibomemo-c"
-  url "https:github.comdinolibomemo-carchiverefstagsv0.5.1.tar.gz"
+  homepage "https://github.com/dino/libomemo-c"
+  url "https://ghfast.top/https://github.com/dino/libomemo-c/archive/refs/tags/v0.5.1.tar.gz"
   sha256 "d1b65dbf7bccc67523abfd5e429707f540b2532932d128b2982f0246be2b22a0"
   license "GPL-3.0-only"
 
@@ -23,11 +23,11 @@ class LibomemoC < Formula
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args, "-DBUILD_SHARED_LIBS=TRUE"
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
-    inreplace lib"pkgconfiglibomemo-c.pc", prefix.to_s, opt_prefix.to_s
+    inreplace lib/"pkgconfig/libomemo-c.pc", prefix.to_s, opt_prefix.to_s
   end
 
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include <signal_protocol.h>
       #include <session_builder.h>
       #include <session_cipher.h>
@@ -102,6 +102,6 @@ class LibomemoC < Formula
 
     flags = shell_output("pkgconf --cflags --libs libomemo-c libprotobuf-c").chomp.split
     system ENV.cc, "test.c", "-o", "test", *flags
-    system ".test"
+    system "./test"
   end
 end

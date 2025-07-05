@@ -1,10 +1,10 @@
 class Screenfetch < Formula
   desc "Generate ASCII art with terminal, shell, and OS info"
-  homepage "https:github.comKittyKattscreenFetch"
-  url "https:github.comKittyKattscreenFetcharchiverefstagsv3.9.9.tar.gz"
+  homepage "https://github.com/KittyKatt/screenFetch"
+  url "https://ghfast.top/https://github.com/KittyKatt/screenFetch/archive/refs/tags/v3.9.9.tar.gz"
   sha256 "65ba578442a5b65c963417e18a78023a30c2c13a524e6e548809256798b9fb84"
   license "GPL-3.0-or-later"
-  head "https:github.comKittyKattscreenFetch.git", branch: "master"
+  head "https://github.com/KittyKatt/screenFetch.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "c72a4b90d0fb8ffa29a46c886c26d93470d5a46a447edbe880e736c4223a4e14"
@@ -16,7 +16,7 @@ class Screenfetch < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "a427038281e7efce1130d08f039d557bf1338d3f12a4ab3d316454496bde26b4"
   end
 
-  # `screenfetch` contains references to `usrlocal` that
+  # `screenfetch` contains references to `/usr/local` that
   # are erroneously relocated in non-default prefixes.
   pour_bottle? only_if: :default_prefix
 
@@ -26,6 +26,6 @@ class Screenfetch < Formula
   end
 
   test do
-    system bin"screenfetch"
+    system bin/"screenfetch"
   end
 end

@@ -1,7 +1,7 @@
 class Dtsroll < Formula
   desc "CLI tool for bundling TypeScript declaration files"
-  homepage "https:github.comprivatenumberdtsroll"
-  url "https:registry.npmjs.orgdtsroll-dtsroll-1.4.1.tgz"
+  homepage "https://github.com/privatenumber/dtsroll"
+  url "https://registry.npmjs.org/dtsroll/-/dtsroll-1.4.1.tgz"
   sha256 "26a3030a532a715ee29fcd8ec9b2cc20e92293d925d135c6c69ee114f39d71da"
   license "MIT"
 
@@ -19,14 +19,14 @@ class Dtsroll < Formula
 
   def install
     system "npm", "install", *std_npm_args
-    bin.install_symlink Dir["#{libexec}bin*"]
+    bin.install_symlink Dir["#{libexec}/bin/*"]
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}dtsroll --version")
+    assert_match version.to_s, shell_output("#{bin}/dtsroll --version")
 
-    (testpath"dts.d.ts").write "export type Foo = string;"
+    (testpath/"dts.d.ts").write "export type Foo = string;"
 
-    assert_match "Entry points\n → dts.d.ts", shell_output("#{bin}dtsroll dts.d.ts")
+    assert_match "Entry points\n → dts.d.ts", shell_output("#{bin}/dtsroll dts.d.ts")
   end
 end

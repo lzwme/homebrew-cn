@@ -1,10 +1,10 @@
 class Libconfig < Formula
   desc "Configuration file processing library"
-  homepage "https:hyperrealm.github.iolibconfig"
-  url "https:github.comhyperrealmlibconfigarchiverefstagsv1.8.1.tar.gz"
+  homepage "https://hyperrealm.github.io/libconfig/"
+  url "https://ghfast.top/https://github.com/hyperrealm/libconfig/archive/refs/tags/v1.8.1.tar.gz"
   sha256 "e95798d2992a66ecd547ce3651d7e10642ff2211427c43a7238186ff4c372627"
   license "LGPL-2.1-or-later"
-  head "https:github.comhyperrealmlibconfig.git", branch: "master"
+  head "https://github.com/hyperrealm/libconfig.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -30,12 +30,12 @@ class Libconfig < Formula
 
   def install
     system "autoreconf", "--force", "--install", "--verbose"
-    system ".configure", *std_configure_args
+    system "./configure", *std_configure_args
     system "make", "install"
   end
 
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include <libconfig.h>
       int main() {
         config_t cfg;
@@ -44,8 +44,8 @@ class Libconfig < Formula
         return 0;
       }
     C
-    system ENV.cc, testpath"test.c", "-I#{include}",
-           "-L#{lib}", "-lconfig", "-o", testpath"test"
-    system ".test"
+    system ENV.cc, testpath/"test.c", "-I#{include}",
+           "-L#{lib}", "-lconfig", "-o", testpath/"test"
+    system "./test"
   end
 end

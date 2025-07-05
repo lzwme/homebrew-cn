@@ -1,10 +1,10 @@
 class Sbjson < Formula
   desc "JSON CLI parser & reformatter based on SBJson v5"
-  homepage "https:github.comSBJsonSBJson"
-  url "https:github.comSBJsonSBJsonarchiverefstagsv5.0.3.tar.gz"
+  homepage "https://github.com/SBJson/SBJson"
+  url "https://ghfast.top/https://github.com/SBJson/SBJson/archive/refs/tags/v5.0.3.tar.gz"
   sha256 "9a03f6643b42a82300f4aefcfb6baf46cc2c519f1bb7db3028f338d6d1c56f1b"
   license "BSD-3-Clause"
-  head "https:github.comSBJsonSBJson.git", branch: "trunk"
+  head "https://github.com/SBJson/SBJson.git", branch: "trunk"
 
   no_autobump! because: :requires_manual_review
 
@@ -35,15 +35,15 @@ class Sbjson < Formula
                "build",
                "SYMROOT=build"
 
-    bin.install "buildReleasesbjson"
+    bin.install "build/Release/sbjson"
   end
 
   test do
-    (testpath"in.json").write <<~JSON
+    (testpath/"in.json").write <<~JSON
       [true,false,"string",42.001e3,[],{}]
     JSON
 
-    (testpath"unwrapped.json").write <<~JSON
+    (testpath/"unwrapped.json").write <<~JSON
       true
       false
       "string"
@@ -53,6 +53,6 @@ class Sbjson < Formula
     JSON
 
     assert_equal shell_output("cat unwrapped.json"),
-                 shell_output("#{bin}sbjson --unwrap-root in.json")
+                 shell_output("#{bin}/sbjson --unwrap-root in.json")
   end
 end

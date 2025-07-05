@@ -2,10 +2,10 @@ cask "font-amethysta" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefontsrawmainoflamethystaAmethysta-Regular.ttf",
-      verified: "github.comgooglefonts"
+  url "https://github.com/google/fonts/raw/main/ofl/amethysta/Amethysta-Regular.ttf",
+      verified: "github.com/google/fonts/"
   name "Amethysta"
-  homepage "https:fonts.google.comspecimenAmethysta"
+  homepage "https://fonts.google.com/specimen/Amethysta"
 
   font "Amethysta-Regular.ttf"
 

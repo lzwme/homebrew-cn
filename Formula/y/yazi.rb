@@ -1,10 +1,10 @@
 class Yazi < Formula
-  desc "Blazing fast terminal file manager written in Rust, based on async IO"
-  homepage "https:github.comsxyaziyazi"
-  url "https:github.comsxyaziyaziarchiverefstagsv25.5.31.tar.gz"
+  desc "Blazing fast terminal file manager written in Rust, based on async I/O"
+  homepage "https://github.com/sxyazi/yazi"
+  url "https://ghfast.top/https://github.com/sxyazi/yazi/archive/refs/tags/v25.5.31.tar.gz"
   sha256 "4d005e7c3f32b5574d51ab105597f3da3a4be2f7b5cd1bcb284143ad38253ed4"
   license "MIT"
-  head "https:github.comsxyaziyazi.git", branch: "main"
+  head "https://github.com/sxyazi/yazi.git", branch: "main"
 
   # There can be a notable gap between when a version is tagged and a
   # corresponding release is created, so we check the "latest" release instead
@@ -32,17 +32,17 @@ class Yazi < Formula
     system "cargo", "install", *std_cargo_args(path: "yazi-fm")
     system "cargo", "install", *std_cargo_args(path: "yazi-cli")
 
-    bash_completion.install "yazi-bootcompletionsyazi.bash" => "yazi"
-    zsh_completion.install "yazi-bootcompletions_yazi"
-    fish_completion.install "yazi-bootcompletionsyazi.fish"
+    bash_completion.install "yazi-boot/completions/yazi.bash" => "yazi"
+    zsh_completion.install "yazi-boot/completions/_yazi"
+    fish_completion.install "yazi-boot/completions/yazi.fish"
 
-    bash_completion.install "yazi-clicompletionsya.bash" => "ya"
-    zsh_completion.install "yazi-clicompletions_ya"
-    fish_completion.install "yazi-clicompletionsya.fish"
+    bash_completion.install "yazi-cli/completions/ya.bash" => "ya"
+    zsh_completion.install "yazi-cli/completions/_ya"
+    fish_completion.install "yazi-cli/completions/ya.fish"
   end
 
   test do
     # yazi is a GUI application
-    assert_match "Yazi #{version}", shell_output("#{bin}yazi --version").strip
+    assert_match "Yazi #{version}", shell_output("#{bin}/yazi --version").strip
   end
 end

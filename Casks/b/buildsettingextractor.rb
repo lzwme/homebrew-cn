@@ -2,10 +2,10 @@ cask "buildsettingextractor" do
   version "1.4.8"
   sha256 "ae7d0c66c830a18d3f6483b102dc2c8eec302e05d3454dc2d526a01b95a91cd0"
 
-  url "https:github.comdempseyatgithubBuildSettingExtractorreleasesdownloadv#{version}BuildSettingExtractor_#{version}.dmg"
+  url "https://ghfast.top/https://github.com/dempseyatgithub/BuildSettingExtractor/releases/download/v#{version}/BuildSettingExtractor_#{version}.dmg"
   name "BuildSettingExtractor"
   desc "Xcode build settings extractor"
-  homepage "https:github.comdempseyatgithubBuildSettingExtractor"
+  homepage "https://github.com/dempseyatgithub/BuildSettingExtractor"
 
   no_autobump! because: :requires_manual_review
 
@@ -14,7 +14,7 @@ cask "buildsettingextractor" do
   app "BuildSettingExtractor.app"
 
   zap trash: [
-    "~LibraryApplication Scriptsnet.tapas-software.BuildSettingExtractor",
-    "~LibraryContainersnet.tapas-software.BuildSettingExtractor",
+    "~/Library/Application Scripts/net.tapas-software.BuildSettingExtractor",
+    "~/Library/Containers/net.tapas-software.BuildSettingExtractor",
   ]
 end

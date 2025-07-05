@@ -5,8 +5,8 @@ cask "anki" do
     version "24.11"
     sha256 "4d44b763ea114e2aae61aaaa8171fd54a9095a06cd8e84a863675b1bbc75a24a"
 
-    url "https:github.comankitectsankireleasesdownload#{version}anki-#{version}-mac-#{arch}-qt5.dmg",
-        verified: "github.comankitectsanki"
+    url "https://ghfast.top/https://github.com/ankitects/anki/releases/download/#{version}/anki-#{version}-mac-#{arch}-qt5.dmg",
+        verified: "github.com/ankitects/anki/"
 
     livecheck do
       skip "Legacy version"
@@ -17,8 +17,8 @@ cask "anki" do
     sha256 arm:   "b2df44bf951404e1d5d56150ee50e158ca5dfd77416b442ed02218348bf1a43b",
            intel: "0d7eb9781596e44c0a833df71c6948706b97c4e89e8bdb315707de33c33c6052"
 
-    url "https:github.comankitectsankireleasesdownload#{version}anki-#{version}-mac-#{arch}-qt6.dmg",
-        verified: "github.comankitectsanki"
+    url "https://ghfast.top/https://github.com/ankitects/anki/releases/download/#{version}/anki-#{version}-mac-#{arch}-qt6.dmg",
+        verified: "github.com/ankitects/anki/"
 
     livecheck do
       url :url
@@ -28,15 +28,15 @@ cask "anki" do
 
   name "Anki"
   desc "Memory training application"
-  homepage "https:apps.ankiweb.net"
+  homepage "https://apps.ankiweb.net/"
 
   depends_on macos: ">= :high_sierra"
 
   app "Anki.app"
 
   zap trash: [
-    "~LibraryApplication SupportAnki*",
-    "~LibraryCachesAnki",
-    "~LibrarySaved Application Statenet.ankiweb.dtop.savedState",
+    "~/Library/Application Support/Anki*",
+    "~/Library/Caches/Anki",
+    "~/Library/Saved Application State/net.ankiweb.dtop.savedState",
   ]
 end

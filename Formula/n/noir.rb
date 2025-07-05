@@ -1,10 +1,10 @@
 class Noir < Formula
   desc "Attack surface detector that identifies endpoints by static analysis"
-  homepage "https:owasp.orgwww-project-noir"
-  url "https:github.comowasp-noirnoirarchiverefstagsv0.22.0.tar.gz"
+  homepage "https://owasp.org/www-project-noir/"
+  url "https://ghfast.top/https://github.com/owasp-noir/noir/archive/refs/tags/v0.22.0.tar.gz"
   sha256 "9e4f2e58ff9920df4f690829c3a30707549b9e4c5d719abfb0c092d6fe5e073e"
   license "MIT"
-  head "https:github.comowasp-noirnoir.git", branch: "main"
+  head "https://github.com/owasp-noir/noir.git", branch: "main"
 
   no_autobump! because: :requires_manual_review
 
@@ -30,26 +30,26 @@ class Noir < Formula
 
   def install
     system "shards", "build", "--production", "--release", "--no-debug"
-    bin.install "binnoir"
+    bin.install "bin/noir"
 
-    generate_completions_from_executable(bin"noir", "--generate-completion")
+    generate_completions_from_executable(bin/"noir", "--generate-completion")
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}noir --version")
+    assert_match version.to_s, shell_output("#{bin}/noir --version")
 
-    (testpath"api.py").write <<~PYTHON
+    (testpath/"api.py").write <<~PYTHON
       from fastapi import FastAPI
 
       app = FastAPI()
 
-      @app.get("hello")
+      @app.get("/hello")
       def hello():
           return {"Hello": "World"}
     PYTHON
 
-    output = shell_output("#{bin}noir --no-color --base-path . 2>&1")
+    output = shell_output("#{bin}/noir --no-color --base-path . 2>&1")
     assert_match "Generating Report.", output
-    assert_match "GET hello", output
+    assert_match "GET /hello", output
   end
 end

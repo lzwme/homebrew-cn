@@ -1,12 +1,12 @@
 class CmakeDocs < Formula
   desc "Documentation for CMake"
-  homepage "https:www.cmake.org"
-  url "https:github.comKitwareCMakereleasesdownloadv4.0.3cmake-4.0.3.tar.gz"
-  mirror "http:fresh-center.netlinuxmisccmake-4.0.3.tar.gz"
-  mirror "http:fresh-center.netlinuxmisclegacycmake-4.0.3.tar.gz"
+  homepage "https://www.cmake.org/"
+  url "https://ghfast.top/https://github.com/Kitware/CMake/releases/download/v4.0.3/cmake-4.0.3.tar.gz"
+  mirror "http://fresh-center.net/linux/misc/cmake-4.0.3.tar.gz"
+  mirror "http://fresh-center.net/linux/misc/legacy/cmake-4.0.3.tar.gz"
   sha256 "8d3537b7b7732660ea247398f166be892fe6131d63cc291944b45b91279f3ffb"
   license "BSD-3-Clause"
-  head "https:gitlab.kitware.comcmakecmake.git", branch: "master"
+  head "https://gitlab.kitware.com/cmake/cmake.git", branch: "master"
 
   livecheck do
     formula "cmake"
@@ -26,9 +26,9 @@ class CmakeDocs < Formula
   depends_on "sphinx-doc" => :build
 
   def install
-    system "cmake", "-S", "UtilitiesSphinx", "-B", "build", *std_cmake_args,
-                                                             "-DCMAKE_DOC_DIR=sharedoccmake",
-                                                             "-DCMAKE_MAN_DIR=shareman",
+    system "cmake", "-S", "Utilities/Sphinx", "-B", "build", *std_cmake_args,
+                                                             "-DCMAKE_DOC_DIR=share/doc/cmake",
+                                                             "-DCMAKE_MAN_DIR=share/man",
                                                              "-DSPHINX_MAN=ON",
                                                              "-DSPHINX_HTML=ON"
     system "cmake", "--build", "build"
@@ -36,7 +36,7 @@ class CmakeDocs < Formula
   end
 
   test do
-    assert_path_exists share"doccmakehtml"
+    assert_path_exists share/"doc/cmake/html"
     assert_path_exists man
   end
 end

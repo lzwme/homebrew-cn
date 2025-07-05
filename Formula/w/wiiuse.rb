@@ -1,7 +1,7 @@
 class Wiiuse < Formula
   desc "Connect Nintendo Wii Remotes"
-  homepage "https:github.comwiiusewiiuse"
-  url "https:github.comwiiusewiiusearchiverefstags0.15.6.tar.gz"
+  homepage "https://github.com/wiiuse/wiiuse"
+  url "https://ghfast.top/https://github.com/wiiuse/wiiuse/archive/refs/tags/0.15.6.tar.gz"
   sha256 "a3babe5eb284606090af706b356f1a0476123598f680094b1799670ec1780a44"
   license "GPL-3.0-or-later"
 
@@ -39,7 +39,7 @@ class Wiiuse < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~CPP
+    (testpath/"test.cpp").write <<~CPP
       #include <wiiuse.h>
       int main()
       {
@@ -50,6 +50,6 @@ class Wiiuse < Formula
       }
     CPP
     system ENV.cxx, "test.cpp", "-I#{include}", "-L#{lib}", "-l", "wiiuse", "-o", "test"
-    system ".test"
+    system "./test"
   end
 end

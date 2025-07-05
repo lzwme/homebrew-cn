@@ -17,10 +17,10 @@ cask "fluor" do
     end
   end
 
-  url "https:github.comPyrohFluorreleasesdownload#{version}Fluor.#{version}.dmg"
+  url "https://ghfast.top/https://github.com/Pyroh/Fluor/releases/download/#{version}/Fluor.#{version}.dmg"
   name "Fluor"
   desc "Change the behavior of the fn keys depending on the active application"
-  homepage "https:github.comPyrohFluor"
+  homepage "https://github.com/Pyroh/Fluor"
 
   no_autobump! because: :requires_manual_review
 
@@ -31,5 +31,5 @@ cask "fluor" do
 
   uninstall quit: "com.pyrolyse.Fluor"
 
-  zap trash: "~LibraryPreferencescom.pyrolyse.Fluor.plist"
+  zap trash: "~/Library/Preferences/com.pyrolyse.Fluor.plist"
 end

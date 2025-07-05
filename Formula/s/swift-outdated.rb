@@ -1,11 +1,11 @@
 class SwiftOutdated < Formula
   desc "Check for outdated Swift package manager dependencies"
-  homepage "https:github.comkiliankoeswift-outdated"
-  url "https:github.comkiliankoeswift-outdatedarchiverefstags0.9.0.tar.gz"
+  homepage "https://github.com/kiliankoe/swift-outdated"
+  url "https://ghfast.top/https://github.com/kiliankoe/swift-outdated/archive/refs/tags/0.9.0.tar.gz"
   sha256 "b6ee31edc45711c6425d047fe1b4f177da2498201dab5d94dbe86d8bd483419c"
   license "MIT"
   revision 1
-  head "https:github.comkiliankoeswift-outdated.git", branch: "main"
+  head "https://github.com/kiliankoe/swift-outdated.git", branch: "main"
 
   no_autobump! because: :requires_manual_review
 
@@ -30,11 +30,11 @@ class SwiftOutdated < Formula
       ["--static-swift-stdlib"]
     end
     system "swift", "build", *args, "-c", "release"
-    bin.install ".buildreleaseswift-outdated"
+    bin.install ".build/release/swift-outdated"
   end
 
   test do
-    assert_match "No Package.resolved found", shell_output("#{bin}swift-outdated 2>&1", 1)
-    assert_match version.to_s, shell_output("#{bin}swift-outdated --version")
+    assert_match "No Package.resolved found", shell_output("#{bin}/swift-outdated 2>&1", 1)
+    assert_match version.to_s, shell_output("#{bin}/swift-outdated --version")
   end
 end

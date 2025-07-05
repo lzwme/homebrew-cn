@@ -1,14 +1,14 @@
 class Libwebsockets < Formula
   desc "C websockets server library"
-  homepage "https:github.comwarmcatlibwebsockets"
-  url "https:github.comwarmcatlibwebsocketsarchiverefstagsv4.3.5.tar.gz"
+  homepage "https://github.com/warmcat/libwebsockets"
+  url "https://ghfast.top/https://github.com/warmcat/libwebsockets/archive/refs/tags/v4.3.5.tar.gz"
   sha256 "87f99ad32803ed325fceac5327aae1f5c1b417d54ee61ad36cffc8df5f5ab276"
   license "MIT"
-  head "https:github.comwarmcatlibwebsockets.git", branch: "main"
+  head "https://github.com/warmcat/libwebsockets.git", branch: "main"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -43,8 +43,8 @@ class Libwebsockets < Formula
   end
 
   test do
-    (testpath"test.c").write <<~C
-      #include <opensslssl.h>
+    (testpath/"test.c").write <<~C
+      #include <openssl/ssl.h>
       #include <libwebsockets.h>
 
       int main()
@@ -57,8 +57,8 @@ class Libwebsockets < Formula
         return 0;
       }
     C
-    system ENV.cc, "test.c", "-I#{Formula["openssl@3"].opt_prefix}include",
+    system ENV.cc, "test.c", "-I#{Formula["openssl@3"].opt_prefix}/include",
                    "-L#{lib}", "-lwebsockets", "-o", "test"
-    system ".test"
+    system "./test"
   end
 end

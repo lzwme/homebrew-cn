@@ -1,10 +1,10 @@
 class Golines < Formula
   desc "Golang formatter that fixes long lines"
-  homepage "https:github.comsegmentiogolines"
-  url "https:github.comsegmentiogolinesarchiverefstagsv0.12.2.tar.gz"
+  homepage "https://github.com/segmentio/golines"
+  url "https://ghfast.top/https://github.com/segmentio/golines/archive/refs/tags/v0.12.2.tar.gz"
   sha256 "6f3c462dc707b4441733dbcbef624c61cce829271db64bd994d43e50be95a211"
   license "MIT"
-  head "https:github.comsegmentiogolines.git", branch: "master"
+  head "https://github.com/segmentio/golines.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -26,20 +26,20 @@ class Golines < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}golines --version")
+    assert_match version.to_s, shell_output("#{bin}/golines --version")
 
-    (testpath"given.go").write <<~GO
+    (testpath/"given.go").write <<~GO
       package main
 
       var strings = []string{"foo", "bar", "baz"}
     GO
 
-    (testpath"expected.go").write <<~GO
+    (testpath/"expected.go").write <<~GO
       package main
 
       var strings = []string{\n\t"foo",\n\t"bar",\n\t"baz",\n}
     GO
 
-    assert_equal (testpath"expected.go").read, shell_output("#{bin}golines --max-len=30 given.go")
+    assert_equal (testpath/"expected.go").read, shell_output("#{bin}/golines --max-len=30 given.go")
   end
 end

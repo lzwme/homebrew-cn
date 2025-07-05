@@ -2,13 +2,13 @@ cask "slimhud" do
   version "1.5.2"
   sha256 "c811e08478f33c09dad290fc070a849159f6ddc57f003034f442b524bedca3c2"
 
-  url "https:github.comAlexPerathonerSlimHUDreleasesdownloadv#{version}SlimHUD.zip"
+  url "https://ghfast.top/https://github.com/AlexPerathoner/SlimHUD/releases/download/v#{version}/SlimHUD.zip"
   name "SlimHUD"
   desc "Replacement for the volume, brightness and keyboard backlight HUDs"
-  homepage "https:github.comAlexPerathonerSlimHUD"
+  homepage "https://github.com/AlexPerathoner/SlimHUD/"
 
   livecheck do
-    url "https:alexperathoner.github.ioSlimHUDSupportappcast.xml"
+    url "https://alexperathoner.github.io/SlimHUD/Support/appcast.xml"
     strategy :sparkle
   end
 
@@ -19,5 +19,5 @@ cask "slimhud" do
 
   app "SlimHUD.app"
 
-  zap trash: "~LibraryPreferencescom.alexpera.SlimHUD.plist"
+  zap trash: "~/Library/Preferences/com.alexpera.SlimHUD.plist"
 end

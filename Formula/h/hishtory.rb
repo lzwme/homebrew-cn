@@ -1,14 +1,14 @@
 class Hishtory < Formula
   desc "Your shell history: synced, queryable, and in context"
-  homepage "https:hishtory.dev"
-  url "https:github.comddworkenhishtoryarchiverefstagsv0.335.tar.gz"
+  homepage "https://hishtory.dev"
+  url "https://ghfast.top/https://github.com/ddworken/hishtory/archive/refs/tags/v0.335.tar.gz"
   sha256 "f312acc99195ca035db7b6612408169ce3a14c170f85dba238f9a29ca7825a3d"
   license "MIT"
-  head "https:github.comddworkenhishtory.git", branch: "master"
+  head "https://github.com/ddworken/hishtory.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -25,20 +25,20 @@ class Hishtory < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.comddworkenhishtoryclientlib.Version=#{version}
-      -X github.comddworkenhishtoryclientlib.GitCommit=#{tap.user}
+      -X github.com/ddworken/hishtory/client/lib.Version=#{version}
+      -X github.com/ddworken/hishtory/client/lib.GitCommit=#{tap.user}
     ]
     system "go", "build", *std_go_args(ldflags:)
 
-    generate_completions_from_executable(bin"hishtory", "completion")
+    generate_completions_from_executable(bin/"hishtory", "completion")
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}hishtory --version")
+    assert_match version.to_s, shell_output("#{bin}/hishtory --version")
 
-    output = shell_output("#{bin}hishtory init")
+    output = shell_output("#{bin}/hishtory init")
     assert_match "Setting secret hishtory key", output
 
-    assert_match "Enabled: true", shell_output("#{bin}hishtory status")
+    assert_match "Enabled: true", shell_output("#{bin}/hishtory status")
   end
 end

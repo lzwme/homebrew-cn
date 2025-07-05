@@ -2,10 +2,10 @@ cask "font-noto-sans-nabataean" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefontsrawmainoflnotosansnabataeanNotoSansNabataean-Regular.ttf",
-      verified: "github.comgooglefonts"
+  url "https://github.com/google/fonts/raw/main/ofl/notosansnabataean/NotoSansNabataean-Regular.ttf",
+      verified: "github.com/google/fonts/"
   name "Noto Sans Nabataean"
-  homepage "https:fonts.google.comspecimenNoto+Sans+Nabataean"
+  homepage "https://fonts.google.com/specimen/Noto+Sans+Nabataean"
 
   font "NotoSansNabataean-Regular.ttf"
 

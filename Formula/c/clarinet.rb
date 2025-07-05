@@ -1,14 +1,14 @@
 class Clarinet < Formula
   desc "Command-line tool and runtime for the Clarity smart contract language"
-  homepage "https:www.hiro.soclarinet"
-  url "https:github.comhirosystemsclarinetarchiverefstagsv3.2.0.tar.gz"
+  homepage "https://www.hiro.so/clarinet"
+  url "https://ghfast.top/https://github.com/hirosystems/clarinet/archive/refs/tags/v3.2.0.tar.gz"
   sha256 "ba32f6028b6eb3d3b728da62dae7495bb75e856177ad80fc81f0988d3281d95f"
   license "GPL-3.0-only"
-  head "https:github.comhirosystemsclarinet.git", branch: "main"
+  head "https://github.com/hirosystems/clarinet.git", branch: "main"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -24,12 +24,12 @@ class Clarinet < Formula
   depends_on "rust" => :build
 
   def install
-    system "cargo", "install", *std_cargo_args(path: "componentsclarinet-cli")
+    system "cargo", "install", *std_cargo_args(path: "components/clarinet-cli")
   end
 
   test do
-    pipe_output("#{bin}clarinet new test-project", "n\n")
-    assert_match "name = \"test-project\"", (testpath"test-projectClarinet.toml").read
-    system bin"clarinet", "check", "--manifest-path", "test-projectClarinet.toml"
+    pipe_output("#{bin}/clarinet new test-project", "n\n")
+    assert_match "name = \"test-project\"", (testpath/"test-project/Clarinet.toml").read
+    system bin/"clarinet", "check", "--manifest-path", "test-project/Clarinet.toml"
   end
 end

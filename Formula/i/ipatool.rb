@@ -1,10 +1,10 @@
 class Ipatool < Formula
   desc "CLI tool for searching and downloading app packages from the iOS App Store"
-  homepage "https:github.commajdipatool"
-  url "https:github.commajdipatoolarchiverefstagsv2.2.0.tar.gz"
+  homepage "https://github.com/majd/ipatool"
+  url "https://ghfast.top/https://github.com/majd/ipatool/archive/refs/tags/v2.2.0.tar.gz"
   sha256 "676cd6bd039c25fe649a35ea86977706c0818442624da87c7f4285257cc7aa12"
   license "MIT"
-  head "https:github.commajdipatool.git", branch: "main"
+  head "https://github.com/majd/ipatool.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "d108282c96e19011ef57d18b0515746bc9d8207cbc6dc6e4bed2abfed460be72"
@@ -18,15 +18,15 @@ class Ipatool < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w -X github.commajdipatoolv2cmd.version=#{version}")
+    system "go", "build", *std_go_args(ldflags: "-s -w -X github.com/majd/ipatool/v2/cmd.version=#{version}")
 
-    generate_completions_from_executable(bin"ipatool", "completion")
+    generate_completions_from_executable(bin/"ipatool", "completion")
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}ipatool --version")
+    assert_match version.to_s, shell_output("#{bin}/ipatool --version")
 
-    output = shell_output("#{bin}ipatool auth info 2>&1", 1)
+    output = shell_output("#{bin}/ipatool auth info 2>&1", 1)
     assert_match "failed to get account", output
   end
 end

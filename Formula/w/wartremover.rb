@@ -1,14 +1,14 @@
 class Wartremover < Formula
   desc "Flexible Scala code linting tool"
-  homepage "https:github.comwartremoverwartremover"
-  url "https:github.comwartremoverwartremoverarchiverefstagsv3.3.3.tar.gz"
+  homepage "https://github.com/wartremover/wartremover"
+  url "https://ghfast.top/https://github.com/wartremover/wartremover/archive/refs/tags/v3.3.3.tar.gz"
   sha256 "c067f5b30f49c91a639622dc7f10fb8f5bf8e988a665a185f27ea143beb303d7"
   license "Apache-2.0"
-  head "https:github.comwartremoverwartremover.git", branch: "master"
+  head "https://github.com/wartremover/wartremover.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -19,13 +19,13 @@ class Wartremover < Formula
   depends_on "openjdk"
 
   def install
-    system "sbt", "-sbt-jar", Formula["sbt"].opt_libexec"binsbt-launch.jar", "coreassembly"
+    system "sbt", "-sbt-jar", Formula["sbt"].opt_libexec/"bin/sbt-launch.jar", "core/assembly"
     libexec.install "wartremover-assembly.jar"
-    bin.write_jar_script libexec"wartremover-assembly.jar", "wartremover"
+    bin.write_jar_script libexec/"wartremover-assembly.jar", "wartremover"
   end
 
   test do
-    (testpath"foo").write <<~EOS
+    (testpath/"foo").write <<~EOS
       object Foo {
         def foo() {
           var msg = "Hello World"
@@ -33,7 +33,7 @@ class Wartremover < Formula
         }
       }
     EOS
-    cmd = "#{bin}wartremover -traverser org.wartremover.warts.Unsafe foo 2>&1"
+    cmd = "#{bin}/wartremover -traverser org.wartremover.warts.Unsafe foo 2>&1"
     assert_match "var is disabled", shell_output(cmd, 1)
   end
 end

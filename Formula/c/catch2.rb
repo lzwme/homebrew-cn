@@ -1,10 +1,10 @@
 class Catch2 < Formula
   desc "Modern, C++-native, test framework"
-  homepage "https:github.comcatchorgCatch2"
-  url "https:github.comcatchorgCatch2archiverefstagsv3.8.1.tar.gz"
+  homepage "https://github.com/catchorg/Catch2"
+  url "https://ghfast.top/https://github.com/catchorg/Catch2/archive/refs/tags/v3.8.1.tar.gz"
   sha256 "18b3f70ac80fccc340d8c6ff0f339b2ae64944782f8d2fca2bd705cf47cadb79"
   license "BSL-1.0"
-  head "https:github.comcatchorgCatch2.git", branch: "devel"
+  head "https://github.com/catchorg/Catch2.git", branch: "devel"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "79e132019cd20543b609b41c78bda19576adc6de2f523f5d50528813209daa78"
@@ -25,8 +25,8 @@ class Catch2 < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~CPP
-      #include <catch2catch_all.hpp>
+    (testpath/"test.cpp").write <<~CPP
+      #include <catch2/catch_all.hpp>
       TEST_CASE("Basic", "[catch2]") {
         int x = 1;
         SECTION("Test section 1") {
@@ -39,6 +39,6 @@ class Catch2 < Formula
       }
     CPP
     system ENV.cxx, "test.cpp", "-std=c++14", "-L#{lib}", "-lCatch2Main", "-lCatch2", "-o", "test"
-    system ".test"
+    system "./test"
   end
 end

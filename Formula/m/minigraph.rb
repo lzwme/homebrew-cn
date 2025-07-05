@@ -1,13 +1,13 @@
 class Minigraph < Formula
   desc "Proof-of-concept seq-to-graph mapper and graph generator"
-  homepage "https:lh3.github.iominigraph"
-  url "https:github.comlh3minigrapharchiverefstagsv0.21.tar.gz"
+  homepage "https://lh3.github.io/minigraph"
+  url "https://ghfast.top/https://github.com/lh3/minigraph/archive/refs/tags/v0.21.tar.gz"
   sha256 "4272447393f0ae1e656376abe144de96cbafc777414d4c496f735dd4a6d3c06a"
   license "MIT"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -41,8 +41,8 @@ class Minigraph < Formula
   end
 
   test do
-    cp_r pkgshare"test.", testpath
-    output = shell_output("#{bin}minigraph MT-human.fa MT-orangA.fa 2>&1")
+    cp_r pkgshare/"test/.", testpath
+    output = shell_output("#{bin}/minigraph MT-human.fa MT-orangA.fa 2>&1")
     assert_match "mapped 1 sequences", output
   end
 end

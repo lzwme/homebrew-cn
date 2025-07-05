@@ -1,10 +1,10 @@
 class Gotags < Formula
   desc "Tag generator for Go, compatible with ctags"
-  homepage "https:github.comjstemmergotags"
-  url "https:github.comjstemmergotagsarchiverefstagsv1.4.1.tar.gz"
+  homepage "https://github.com/jstemmer/gotags"
+  url "https://ghfast.top/https://github.com/jstemmer/gotags/archive/refs/tags/v1.4.1.tar.gz"
   sha256 "2df379527eaa7af568734bc4174febe7752eb5af1b6194da84cd098b7c873343"
   license "MIT"
-  head "https:github.comjstemmergotags.git", branch: "master"
+  head "https://github.com/jstemmer/gotags.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -34,7 +34,7 @@ class Gotags < Formula
   end
 
   test do
-    (testpath"test.go").write <<~GO
+    (testpath/"test.go").write <<~GO
       package main
 
       type Foo struct {
@@ -42,6 +42,6 @@ class Gotags < Formula
       }
     GO
 
-    assert_match(^Bar.*test.go.*$, shell_output("#{bin}gotags #{testpath}test.go"))
+    assert_match(/^Bar.*test.go.*$/, shell_output("#{bin}/gotags #{testpath}/test.go"))
   end
 end

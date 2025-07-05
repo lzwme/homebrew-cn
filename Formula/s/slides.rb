@@ -1,10 +1,10 @@
 class Slides < Formula
   desc "Terminal based presentation tool"
-  homepage "https:maaslalani.comslides"
-  url "https:github.commaaslalanislidesarchiverefstagsv0.9.0.tar.gz"
+  homepage "https://maaslalani.com/slides/"
+  url "https://ghfast.top/https://github.com/maaslalani/slides/archive/refs/tags/v0.9.0.tar.gz"
   sha256 "fcce0dbbe767e0b1f0800e4ea934ee9babbfb18ab2ec4b343e3cd6359cd48330"
   license "MIT"
-  head "https:github.commaaslalanislides.git", branch: "main"
+  head "https://github.com/maaslalani/slides.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "755ccfe47079714863054effd6f18d4da28b579895c56d69ba4abd506c2c65d1"
@@ -27,7 +27,7 @@ class Slides < Formula
   end
 
   test do
-    (testpath"test.md").write <<~MARKDOWN
+    (testpath/"test.md").write <<~MARKDOWN
       # Slide 1
       Content
 
@@ -42,10 +42,10 @@ class Slides < Formula
     # "<ESC>[6n" to report the cursor position. For now we just run the command
     # for a second and see that it tried to send some ANSI out of it.
     require "pty"
-    PTY.spawn(bin"slides", "test.md") do |r, _, pid|
+    PTY.spawn(bin/"slides", "test.md") do |r, _, pid|
       sleep 1
       Process.kill("TERM", pid)
-      assert_match(\e\[, r.read_nonblock(1024))
+      assert_match(/\e\[/, r.read_nonblock(1024))
     end
   end
 end

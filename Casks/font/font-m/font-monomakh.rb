@@ -2,10 +2,10 @@ cask "font-monomakh" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefontsrawmainoflmonomakhMonomakh-Regular.ttf",
-      verified: "github.comgooglefonts"
+  url "https://github.com/google/fonts/raw/main/ofl/monomakh/Monomakh-Regular.ttf",
+      verified: "github.com/google/fonts/"
   name "Monomakh"
-  homepage "https:fonts.google.comspecimenMonomakh"
+  homepage "https://fonts.google.com/specimen/Monomakh"
 
   font "Monomakh-Regular.ttf"
 

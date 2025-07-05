@@ -1,10 +1,10 @@
 class Millet < Formula
   desc "Language server for Standard ML (SML)"
-  homepage "https:github.comazdavismillet"
-  url "https:github.comazdavismilletarchiverefstagsv0.14.9.tar.gz"
+  homepage "https://github.com/azdavis/millet"
+  url "https://ghfast.top/https://github.com/azdavis/millet/archive/refs/tags/v0.14.9.tar.gz"
   sha256 "5efff3cafade17b33a8b9b2748a8c064dbd51932934de01f8d2a14c88ac829c5"
   license any_of: ["Apache-2.0", "MIT"]
-  head "https:github.comazdavismillet.git", branch: "main"
+  head "https://github.com/azdavis/millet.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "e4461ab5dae2b2e3216a970e293c5b7287a685cd2227d3a9fe9484d3c4b5a334"
@@ -19,7 +19,7 @@ class Millet < Formula
   depends_on "rust" => :build
 
   def install
-    system "cargo", "install", *std_cargo_args(path: "cratesmillet-ls")
+    system "cargo", "install", *std_cargo_args(path: "crates/millet-ls")
   end
 
   test do
@@ -68,7 +68,7 @@ class Millet < Formula
       pipe.write(json_rpc_message.call(msg))
     }
 
-    IO.popen(bin"millet-ls", "r+") do |pipe|
+    IO.popen(bin/"millet-ls", "r+") do |pipe|
       pipe.sync = true
 
       # send initialization request

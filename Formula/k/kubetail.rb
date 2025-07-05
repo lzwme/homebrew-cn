@@ -1,14 +1,14 @@
 class Kubetail < Formula
   desc "Logging tool for Kubernetes with a real-time web dashboard"
-  homepage "https:www.kubetail.com"
-  url "https:github.comkubetail-orgkubetailarchiverefstagscliv0.7.1.tar.gz"
+  homepage "https://www.kubetail.com/"
+  url "https://ghfast.top/https://github.com/kubetail-org/kubetail/archive/refs/tags/cli/v0.7.1.tar.gz"
   sha256 "30abc5c597ede51d452b759fe1bf9164838ce672a424065cb6734bdff76d3298"
   license "Apache-2.0"
-  head "https:github.comkubetail-orgkubetail.git", branch: "main"
+  head "https://github.com/kubetail-org/kubetail.git", branch: "main"
 
   livecheck do
     url :stable
-    regex(%r{^cliv?(\d+(?:\.\d+)+)$}i)
+    regex(%r{^cli/v?(\d+(?:\.\d+)+)$}i)
   end
 
   bottle do
@@ -28,14 +28,14 @@ class Kubetail < Formula
 
   def install
     system "make", "build", "VERSION=#{version}"
-    bin.install "binkubetail"
-    generate_completions_from_executable(bin"kubetail", "completion")
+    bin.install "bin/kubetail"
+    generate_completions_from_executable(bin/"kubetail", "completion")
   end
 
   test do
-    command_output = shell_output("#{bin}kubetail serve --test")
+    command_output = shell_output("#{bin}/kubetail serve --test")
     assert_match "ok", command_output
 
-    assert_match version.to_s, shell_output("#{bin}kubetail --version")
+    assert_match version.to_s, shell_output("#{bin}/kubetail --version")
   end
 end

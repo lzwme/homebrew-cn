@@ -1,10 +1,10 @@
 class Vedic < Formula
   desc "Simple Sanskrit programming language"
-  homepage "https:vedic-lang.github.io"
-  url "https:github.comvedic-langvedicarchiverefstagsv2.0.6.tar.gz"
+  homepage "https://vedic-lang.github.io/"
+  url "https://ghfast.top/https://github.com/vedic-lang/vedic/archive/refs/tags/v2.0.6.tar.gz"
   sha256 "9bfb68dfa8a79c02d52905eb1403267209dae80ad05287b7f3706f14071c4800"
   license "MIT"
-  head "https:github.comvedic-langvedic.git", branch: "main"
+  head "https://github.com/vedic-lang/vedic.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "4afe71c7c4dae3f9edfd94229be33eab94b9349f1a50c787b2e98ba07a34861f"
@@ -26,11 +26,11 @@ class Vedic < Formula
 
   test do
     # hello world in vedic
-    (testpath"hello.ved").write <<~EOS
+    (testpath/"hello.ved").write <<~EOS
       वद("नमस्ते विश्व!");
     EOS
-    assert_match "नमस्ते विश्व!", shell_output("#{bin}vedic hello.ved")
+    assert_match "नमस्ते विश्व!", shell_output("#{bin}/vedic hello.ved")
 
-    assert_match version.to_s, shell_output("#{bin}vedic --version")
+    assert_match version.to_s, shell_output("#{bin}/vedic --version")
   end
 end

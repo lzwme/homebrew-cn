@@ -1,7 +1,7 @@
 class Opencc < Formula
   desc "Simplified-traditional Chinese conversion tool"
-  homepage "https:github.comBYVoidOpenCC"
-  url "https:github.comBYVoidOpenCCarchiverefstagsver.1.1.9.tar.gz"
+  homepage "https://github.com/BYVoid/OpenCC"
+  url "https://ghfast.top/https://github.com/BYVoid/OpenCC/archive/refs/tags/ver.1.1.9.tar.gz"
   sha256 "ad4bcd8d87219a240a236d4a55c9decd2132a9436697d2882ead85c8939b0a99"
   license "Apache-2.0"
 
@@ -36,7 +36,7 @@ class Opencc < Formula
 
   test do
     input = "中国鼠标软件打印机"
-    output = pipe_output(bin"opencc", input)
+    output = pipe_output(bin/"opencc", input)
     output = output.force_encoding("UTF-8") if output.respond_to?(:force_encoding)
     assert_match "中國鼠標軟件打印機", output
   end

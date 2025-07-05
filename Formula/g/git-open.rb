@@ -1,7 +1,7 @@
 class GitOpen < Formula
   desc "Open GitHub webpages from a terminal"
-  homepage "https:github.comjeffreyiaconogit-open"
-  url "https:github.comjeffreyiaconogit-openarchiverefstagsv1.3.tar.gz"
+  homepage "https://github.com/jeffreyiacono/git-open"
+  url "https://ghfast.top/https://github.com/jeffreyiacono/git-open/archive/refs/tags/v1.3.tar.gz"
   sha256 "a1217e9b0a76382a96afd33ecbacad723528ec1116381c22a17cc7458de23701"
   license "MIT"
 
@@ -17,6 +17,6 @@ class GitOpen < Formula
   end
 
   test do
-    system bin"git-open", "-v"
+    system bin/"git-open", "-v"
   end
 end

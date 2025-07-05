@@ -1,7 +1,7 @@
 class Spglib < Formula
   desc "C library for finding and handling crystal symmetries"
-  homepage "https:spglib.readthedocs.ioenlatest"
-  url "https:github.comspglibspglibarchiverefstagsv2.6.0.tar.gz"
+  homepage "https://spglib.readthedocs.io/en/latest/"
+  url "https://ghfast.top/https://github.com/spglib/spglib/archive/refs/tags/v2.6.0.tar.gz"
   sha256 "c65af71136c915352eb82444b165ec83289877eb8e46593033f199801b43dbf7"
   license "BSD-3-Clause"
 
@@ -20,7 +20,7 @@ class Spglib < Formula
 
   def install
     # TODO: Fortran packaging is disabled for now because packaging does not pick it up properly
-    # https:github.comspglibspglibissues352#issuecomment-1784943807
+    # https://github.com/spglib/spglib/issues/352#issuecomment-1784943807
     common_args = %w[
       -DSPGLIB_WITH_Fortran=OFF
       -DSPGLIB_WITH_TESTS=OFF
@@ -37,7 +37,7 @@ class Spglib < Formula
   end
 
   test do
-    (testpath  "test.c").write <<~C
+    (testpath / "test.c").write <<~C
       #include <stdio.h>
       #include <spglib.h>
       int main()
@@ -46,7 +46,7 @@ class Spglib < Formula
       }
     C
 
-    (testpath  "CMakeLists.txt").write <<~CMAKE
+    (testpath / "CMakeLists.txt").write <<~CMAKE
       cmake_minimum_required(VERSION 3.6)
       project(test_spglib LANGUAGES C)
       find_package(Spglib CONFIG REQUIRED COMPONENTS shared)
@@ -55,10 +55,10 @@ class Spglib < Formula
     CMAKE
     system "cmake", "-B", "build_shared"
     system "cmake", "--build", "build_shared"
-    system ".build_sharedtest_c"
+    system "./build_shared/test_c"
 
-    (testpath  "CMakeLists.txt").delete
-    (testpath  "CMakeLists.txt").write <<~CMAKE
+    (testpath / "CMakeLists.txt").delete
+    (testpath / "CMakeLists.txt").write <<~CMAKE
       cmake_minimum_required(VERSION 3.6)
       project(test_spglib LANGUAGES C Fortran)
       find_package(Spglib CONFIG REQUIRED COMPONENTS static)
@@ -67,6 +67,6 @@ class Spglib < Formula
     CMAKE
     system "cmake", "-B", "build_static"
     system "cmake", "--build", "build_static"
-    system ".build_statictest_c"
+    system "./build_static/test_c"
   end
 end

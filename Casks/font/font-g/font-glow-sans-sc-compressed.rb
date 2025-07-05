@@ -2,9 +2,9 @@ cask "font-glow-sans-sc-compressed" do
   version "0.93"
   sha256 "fe0fa382c8f5be8c1632cbc5837f7da3730b18b4dba12d351812d07d6d6bb56f"
 
-  url "https:github.comwelaiglow-sansreleasesdownloadv#{version}GlowSansSC-Compressed-v#{version}.zip"
+  url "https://ghfast.top/https://github.com/welai/glow-sans/releases/download/v#{version}/GlowSansSC-Compressed-v#{version}.zip"
   name "Glow Sans SC Compressed"
-  homepage "https:github.comwelaiglow-sans"
+  homepage "https://github.com/welai/glow-sans"
 
   deprecate! date: "2024-02-17", because: :discontinued
   disable! date: "2025-02-19", because: :discontinued

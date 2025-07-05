@@ -2,10 +2,10 @@ cask "hackintool" do
   version "4.0.3"
   sha256 :no_check # required as upstream package is updated in-place
 
-  url "https:github.comheadkazeHackintoolreleasesdownload#{version}Hackintool.zip"
+  url "https://ghfast.top/https://github.com/headkaze/Hackintool/releases/download/#{version}/Hackintool.zip"
   name "Hackintool"
   desc "Hackintosh patching tool"
-  homepage "https:github.comheadkazeHackintool"
+  homepage "https://github.com/headkaze/Hackintool"
 
   no_autobump! because: :requires_manual_review
 
@@ -15,10 +15,10 @@ cask "hackintool" do
   app "Hackintool.app"
 
   zap trash: [
-    "~LibraryCachescom.apple.helpdGeneratedcom.Headsoft.Hackintool.help*",
-    "~LibraryCachescom.Headsoft.Hackintool",
-    "~LibraryCookiescom.Headsoft.Hackintool.binarycookies",
-    "~LibraryPreferencescom.Headsoft.Hackintool.plist",
+    "~/Library/Caches/com.apple.helpd/Generated/com.Headsoft.Hackintool.help*",
+    "~/Library/Caches/com.Headsoft.Hackintool",
+    "~/Library/Cookies/com.Headsoft.Hackintool.binarycookies",
+    "~/Library/Preferences/com.Headsoft.Hackintool.plist",
   ]
 
   caveats do

@@ -1,13 +1,13 @@
 class Rasqal < Formula
   desc "RDF query library"
-  homepage "https:librdf.orgrasqal"
-  url "https:download.librdf.orgsourcerasqal-0.9.33.tar.gz"
+  homepage "https://librdf.org/rasqal/"
+  url "https://download.librdf.org/source/rasqal-0.9.33.tar.gz"
   sha256 "6924c9ac6570bd241a9669f83b467c728a322470bf34f4b2da4f69492ccfd97c"
   license any_of: ["LGPL-2.1-or-later", "GPL-2.0-or-later", "Apache-2.0"]
 
   livecheck do
     url :homepage
-    regex(href=.*?rasqal[._-]v?(\d+(?:\.\d+)+)\.ti)
+    regex(/href=.*?rasqal[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -36,12 +36,12 @@ class Rasqal < Formula
 
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
-    url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-pre-0.4.2.418-big_sur.diff"
+    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-pre-0.4.2.418-big_sur.diff"
     sha256 "83af02f2aa2b746bb7225872cab29a253264be49db0ecebb12f841562d9a2923"
   end
 
   def install
-    system ".configure", "--with-html-dir=#{share}doc", *std_configure_args
+    system "./configure", "--with-html-dir=#{share}/doc", *std_configure_args
     system "make", "install"
   end
 end

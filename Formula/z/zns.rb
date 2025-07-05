@@ -1,10 +1,10 @@
 class Zns < Formula
   desc "CLI tool for querying DNS records with readable, colored output"
-  homepage "https:github.comznsclizns"
-  url "https:github.comznscliznsarchiverefstagsv0.3.0.tar.gz"
+  homepage "https://github.com/znscli/zns"
+  url "https://ghfast.top/https://github.com/znscli/zns/archive/refs/tags/v0.3.0.tar.gz"
   sha256 "5e7b4cf641429fa153df24d2088744ed5d09ec9d77151c828611262f85feaa15"
   license "MIT"
-  head "https:github.comznsclizns.git", branch: "main"
+  head "https://github.com/znscli/zns.git", branch: "main"
 
   no_autobump! because: :requires_manual_review
 
@@ -22,13 +22,13 @@ class Zns < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.comznscliznscmd.version=#{version}
+      -X github.com/znscli/zns/cmd.version=#{version}
     ]
     system "go", "build", *std_go_args(ldflags:)
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}zns --version")
-    assert_match "a.iana-servers.net.", shell_output("#{bin}zns example.com -q NS --server 1.1.1.1")
+    assert_match version.to_s, shell_output("#{bin}/zns --version")
+    assert_match "a.iana-servers.net.", shell_output("#{bin}/zns example.com -q NS --server 1.1.1.1")
   end
 end

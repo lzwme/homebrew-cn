@@ -1,10 +1,10 @@
 class Ktmpl < Formula
   desc "Parameterized templates for Kubernetes manifests"
-  homepage "https:github.comjimmycuadraktmpl"
-  url "https:github.comjimmycuadraktmplarchiverefstags0.9.1.tar.gz"
+  homepage "https://github.com/jimmycuadra/ktmpl"
+  url "https://ghfast.top/https://github.com/jimmycuadra/ktmpl/archive/refs/tags/0.9.1.tar.gz"
   sha256 "3377f10477775dd40e78f9b3d65c3db29ecd0553e9ce8a5bdcb8d09414c782e9"
   license "MIT"
-  head "https:github.comjimmycuadraktmpl.git", branch: "master"
+  head "https://github.com/jimmycuadra/ktmpl.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -31,7 +31,7 @@ class Ktmpl < Formula
   end
 
   test do
-    (testpath"test.yml").write <<~YAML
+    (testpath/"test.yml").write <<~YAML
       ---
       kind: "Template"
       apiVersion: "v1"
@@ -55,6 +55,6 @@ class Ktmpl < Formula
           required: true
           parameterType: "int"
     YAML
-    system bin"ktmpl", "test.yml", "-p", "PORT", "8080"
+    system bin/"ktmpl", "test.yml", "-p", "PORT", "8080"
   end
 end

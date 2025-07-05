@@ -1,10 +1,10 @@
 class Mvtools < Formula
   desc "Filters for motion estimation and compensation"
-  homepage "https:github.comdubhatervapoursynth-mvtools"
-  url "https:github.comdubhatervapoursynth-mvtoolsarchiverefstagsv24.tar.gz"
+  homepage "https://github.com/dubhater/vapoursynth-mvtools"
+  url "https://ghfast.top/https://github.com/dubhater/vapoursynth-mvtools/archive/refs/tags/v24.tar.gz"
   sha256 "ccff47f4ea25aa13b13fabd5cf38dd0be1ceda10d9ad6b52bd42ecf9d6eb24ad"
   license "GPL-2.0-or-later"
-  head "https:github.comdubhatervapoursynth-mvtools.git", branch: "master"
+  head "https://github.com/dubhater/vapoursynth-mvtools.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "f3e493940d6f162c23cb1ffbd90f6592c4d8fb163810ea717a7b57d9a4152bfa"
@@ -28,8 +28,8 @@ class Mvtools < Formula
   depends_on "vapoursynth"
 
   def install
-    system ".autogen.sh"
-    system ".configure", *std_configure_args
+    system "./autogen.sh"
+    system "./configure", *std_configure_args
     system "make", "install"
   end
 
@@ -38,19 +38,19 @@ class Mvtools < Formula
       MVTools will not be autoloaded in your VapourSynth scripts. To use it
       use the following code in your scripts:
 
-        vs.core.std.LoadPlugin(path="#{HOMEBREW_PREFIX}lib#{shared_library("libmvtools")}")
+        vs.core.std.LoadPlugin(path="#{HOMEBREW_PREFIX}/lib/#{shared_library("libmvtools")}")
     EOS
   end
 
   test do
     script = <<~PYTHON.split("\n").join(";")
       import vapoursynth as vs
-      vs.core.std.LoadPlugin(path="#{libshared_library("libmvtools")}")
+      vs.core.std.LoadPlugin(path="#{lib/shared_library("libmvtools")}")
     PYTHON
     python = Formula["vapoursynth"].deps
-                                   .find { |d| d.name.match?(^python@\d\.\d+$) }
+                                   .find { |d| d.name.match?(/^python@\d\.\d+$/) }
                                    .to_formula
-                                   .opt_libexec"binpython"
+                                   .opt_libexec/"bin/python"
     system python, "-c", script
   end
 end

@@ -1,10 +1,10 @@
 class Gaze < Formula
   desc "Execute commands for you"
-  homepage "https:github.comwtetsugaze"
-  url "https:github.comwtetsugazearchiverefstagsv1.2.1.tar.gz"
+  homepage "https://github.com/wtetsu/gaze"
+  url "https://ghfast.top/https://github.com/wtetsu/gaze/archive/refs/tags/v1.2.1.tar.gz"
   sha256 "ba2878f5b0ddd385afbe6c8b3fcf92acdcd722113b97e52d2fafc53ee3cef918"
   license "MIT"
-  head "https:github.comwtetsugaze.git", branch: "master"
+  head "https://github.com/wtetsu/gaze.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "86b270f20437476abf6aa88f367b734e8176376cfd491bdcb83c657388b612e4"
@@ -18,12 +18,12 @@ class Gaze < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "cmdgazemain.go"
+    system "go", "build", *std_go_args(ldflags: "-s -w"), "cmd/gaze/main.go"
   end
 
   test do
     pid = fork do
-      exec bin"gaze", "-c", "cp test.txt out.txt", "test.txt"
+      exec bin/"gaze", "-c", "cp test.txt out.txt", "test.txt"
     end
     sleep 5
     File.write("test.txt", "hello, world!")

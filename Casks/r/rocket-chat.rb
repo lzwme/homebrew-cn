@@ -2,11 +2,11 @@ cask "rocket-chat" do
   version "4.7.1"
   sha256 "b8972c97424bd2044a9973e2da0ae7719f523555bca31c99cd2013471c43a11a"
 
-  url "https:github.comRocketChatRocket.Chat.Electronreleasesdownload#{version}rocketchat-#{version}-mac.dmg",
-      verified: "github.comRocketChatRocket.Chat.Electron"
+  url "https://ghfast.top/https://github.com/RocketChat/Rocket.Chat.Electron/releases/download/#{version}/rocketchat-#{version}-mac.dmg",
+      verified: "github.com/RocketChat/Rocket.Chat.Electron/"
   name "Rocket.Chat"
   desc "Official desktop client for Rocket.Chat"
-  homepage "https:rocket.chat"
+  homepage "https://rocket.chat/"
 
   livecheck do
     url :url
@@ -19,12 +19,12 @@ cask "rocket-chat" do
   app "Rocket.Chat.app"
 
   zap trash: [
-    "~LibraryApplication SupportRocket.Chat",
-    "~LibraryCacheschat.rocket",
-    "~LibraryCacheschat.rocket.electron.helper",
-    "~LibraryCacheschat.rocket.ShipIt",
-    "~LibraryPreferenceschat.rocket.electron.helper.plist",
-    "~LibraryPreferenceschat.rocket.plist",
-    "~LibrarySaved Application Statechat.rocket.savedState",
+    "~/Library/Application Support/Rocket.Chat",
+    "~/Library/Caches/chat.rocket",
+    "~/Library/Caches/chat.rocket.electron.helper",
+    "~/Library/Caches/chat.rocket.ShipIt",
+    "~/Library/Preferences/chat.rocket.electron.helper.plist",
+    "~/Library/Preferences/chat.rocket.plist",
+    "~/Library/Saved Application State/chat.rocket.savedState",
   ]
 end

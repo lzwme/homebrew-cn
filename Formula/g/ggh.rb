@@ -1,10 +1,10 @@
 class Ggh < Formula
   desc "Recall your SSH sessions"
-  homepage "https:github.combyawitzggh"
-  url "https:github.combyawitzggharchiverefstagsv0.1.4.tar.gz"
+  homepage "https://github.com/byawitz/ggh"
+  url "https://ghfast.top/https://github.com/byawitz/ggh/archive/refs/tags/v0.1.4.tar.gz"
   sha256 "4692a306792444950f45472a01dcef478a5780203d7aaf1b7b959065a190fe64"
   license "Apache-2.0"
-  head "https:github.combyawitzggh.git", branch: "master"
+  head "https://github.com/byawitz/ggh.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -25,7 +25,7 @@ class Ggh < Formula
   end
 
   test do
-    assert_equal "No history found.", shell_output(bin"ggh").chomp
-    assert_equal "No config found.", shell_output(bin"ggh -").chomp
+    assert_equal "No history found.", shell_output(bin/"ggh").chomp
+    assert_equal "No config found.", shell_output(bin/"ggh -").chomp
   end
 end

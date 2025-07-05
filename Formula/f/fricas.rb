@@ -1,10 +1,10 @@
 class Fricas < Formula
   desc "Advanced computer algebra system"
-  homepage "https:fricas.github.io"
-  url "https:github.comfricasfricasarchiverefstags1.3.12.tar.gz"
+  homepage "https://fricas.github.io"
+  url "https://ghfast.top/https://github.com/fricas/fricas/archive/refs/tags/1.3.12.tar.gz"
   sha256 "f201cf62e3c971e8bafbc64349210fbdc8887fd1af07f09bdcb0190ed5880a90"
   license "BSD-3-Clause"
-  head "https:github.comfricasfricas.git", branch: "master"
+  head "https://github.com/fricas/fricas.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -36,7 +36,7 @@ class Fricas < Formula
     ]
 
     mkdir "build" do
-      system "..configure", *std_configure_args, *args
+      system "../configure", *std_configure_args, *args
       system "make"
       system "make", "install"
     end
@@ -46,7 +46,7 @@ class Fricas < Formula
     # Fails in Linux CI with "Can't find sbcl.core"
     return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
 
-    assert_match %r{ \( \(pi\) 2\)\n},
-      pipe_output(bin"fricas -nosman", "integrate(sqrt(1-x^2),x=-1..1)::InputForm")
+    assert_match %r{ \(/ \(pi\) 2\)\n},
+      pipe_output(bin/"fricas -nosman", "integrate(sqrt(1-x^2),x=-1..1)::InputForm")
   end
 end

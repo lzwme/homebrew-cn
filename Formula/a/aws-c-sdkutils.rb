@@ -1,7 +1,7 @@
 class AwsCSdkutils < Formula
   desc "C99 library implementing AWS SDK specific utilities"
-  homepage "https:github.comawslabsaws-c-sdkutils"
-  url "https:github.comawslabsaws-c-sdkutilsarchiverefstagsv0.2.4.tar.gz"
+  homepage "https://github.com/awslabs/aws-c-sdkutils"
+  url "https://ghfast.top/https://github.com/awslabs/aws-c-sdkutils/archive/refs/tags/v0.2.4.tar.gz"
   sha256 "493cbed4fa57e0d4622fcff044e11305eb4fc12445f32c8861025597939175fc"
   license "Apache-2.0"
 
@@ -25,10 +25,10 @@ class AwsCSdkutils < Formula
   end
 
   test do
-    (testpath"test.c").write <<~'C'
-      #include <awscommonallocator.h>
-      #include <awscommonstring.h>
-      #include <awssdkutilsaws_profile.h>
+    (testpath/"test.c").write <<~'C'
+      #include <aws/common/allocator.h>
+      #include <aws/common/string.h>
+      #include <aws/sdkutils/aws_profile.h>
       #include <assert.h>
 
       AWS_STATIC_STRING_FROM_LITERAL(s_single_simple_property_profile, "[profile foo]\nname = value");
@@ -58,6 +58,6 @@ class AwsCSdkutils < Formula
     C
     system ENV.cc, "test.c", "-o", "test", "-L#{lib}", "-laws-c-sdkutils",
                    "-L#{Formula["aws-c-common"].opt_lib}", "-laws-c-common"
-    system ".test"
+    system "./test"
   end
 end

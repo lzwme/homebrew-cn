@@ -1,10 +1,10 @@
 class Rhai < Formula
   desc "Embedded scripting language for Rust"
-  homepage "https:rhai.rs"
-  url "https:github.comrhaiscriptrhaiarchiverefstagsv1.22.0.tar.gz"
+  homepage "https://rhai.rs/"
+  url "https://ghfast.top/https://github.com/rhaiscript/rhai/archive/refs/tags/v1.22.0.tar.gz"
   sha256 "16c60ab5428e4ef1e4df55edb43914dd7f4fcee5615b3399b1a96aa2e9d9fe79"
   license any_of: ["Apache-2.0", "MIT"]
-  head "https:github.comrhaiscriptrhai.git", branch: "main"
+  head "https://github.com/rhaiscript/rhai.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "09d1c838e78169868e40f03d2b17018cd044b1d780bc018f9136917275901af5"
@@ -23,11 +23,11 @@ class Rhai < Formula
   end
 
   test do
-    (testpath"hello.rhai").write <<~RHAI
+    (testpath/"hello.rhai").write <<~RHAI
       print("Hello world!");
     RHAI
 
-    (testpath"fib.rhai").write <<~RHAI
+    (testpath/"fib.rhai").write <<~RHAI
       const TARGET = 28;
       const REPEAT = 5;
       const ANSWER = 317_811;
@@ -53,7 +53,7 @@ class Rhai < Formula
       }
     RHAI
 
-    assert_match "Hello world!", shell_output("#{bin}rhai-run hello.rhai").chomp
-    assert_match "Fibonacci number #28 = 317811", shell_output("#{bin}rhai-run fib.rhai").chomp
+    assert_match "Hello world!", shell_output("#{bin}/rhai-run hello.rhai").chomp
+    assert_match "Fibonacci number #28 = 317811", shell_output("#{bin}/rhai-run fib.rhai").chomp
   end
 end

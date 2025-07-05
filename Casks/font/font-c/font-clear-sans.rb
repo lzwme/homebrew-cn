@@ -2,11 +2,11 @@ cask "font-clear-sans" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comintelclear-sans.git",
+  url "https://github.com/intel/clear-sans.git",
       branch:    "main",
       only_path: "TTF"
   name "Clear Sans"
-  homepage "https:github.comintelclear-sans"
+  homepage "https://github.com/intel/clear-sans"
 
   disable! date: "2024-12-16", because: :discontinued
 

@@ -1,11 +1,11 @@
 class Libzen < Formula
   desc "Shared library for libmediainfo"
-  homepage "https:github.comMediaAreaZenLib"
-  url "https:mediaarea.netdownloadsourcelibzen0.4.41libzen_0.4.41.tar.bz2"
+  homepage "https://github.com/MediaArea/ZenLib"
+  url "https://mediaarea.net/download/source/libzen/0.4.41/libzen_0.4.41.tar.bz2"
   sha256 "eb237d7d3dca6dc6ba068719420a27de0934a783ccaeb2867562b35af3901e2d"
   license "Zlib"
   revision 1
-  head "https:github.comMediaAreaZenLib.git", branch: "master"
+  head "https://github.com/MediaArea/ZenLib.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -27,19 +27,19 @@ class Libzen < Formula
   depends_on "pkgconf" => :build
 
   # These files used to be distributed as part of the media-info formula
-  link_overwrite "includeZenLib*"
-  link_overwrite "libpkgconfiglibzen.pc"
-  link_overwrite "liblibzen.*"
+  link_overwrite "include/ZenLib/*"
+  link_overwrite "lib/pkgconfig/libzen.pc"
+  link_overwrite "lib/libzen.*"
 
   def install
-    system "cmake", "-S", "ProjectCMake", "-B", "build", "-DBUILD_SHARED_LIBS=ON", *std_cmake_args
+    system "cmake", "-S", "Project/CMake", "-B", "build", "-DBUILD_SHARED_LIBS=ON", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end
 
   test do
-    (testpath"test.cc").write <<~CPP
-      #include <ZenLibZtring.h>
+    (testpath/"test.cc").write <<~CPP
+      #include <ZenLib/Ztring.h>
       #include <iostream>
       int main() {
         ZenLib::Ztring myString = ZenLib::Ztring().From_UTF8("Hello, ZenLib!");
@@ -48,6 +48,6 @@ class Libzen < Formula
       }
     CPP
     system ENV.cxx, "-std=c++17", "test.cc", "-I#{include}", "-L#{lib}", "-lzen", "-o", "test"
-    system ".test"
+    system "./test"
   end
 end

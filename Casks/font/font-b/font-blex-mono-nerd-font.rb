@@ -2,9 +2,9 @@ cask "font-blex-mono-nerd-font" do
   version "3.4.0"
   sha256 "d6e9dc83650d8bd51d99d7c6848f507ac50be3729df8d24d9e5b0530044b1847"
 
-  url "https:github.comryanoasisnerd-fontsreleasesdownloadv#{version}IBMPlexMono.zip"
+  url "https://ghfast.top/https://github.com/ryanoasis/nerd-fonts/releases/download/v#{version}/IBMPlexMono.zip"
   name "BlexMono Nerd Font (IBM Plex Mono)"
-  homepage "https:github.comryanoasisnerd-fonts"
+  homepage "https://github.com/ryanoasis/nerd-fonts"
 
   livecheck do
     url :url

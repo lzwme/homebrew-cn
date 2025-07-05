@@ -1,11 +1,11 @@
 class CadenceWorkflow < Formula
   desc "Distributed, scalable, durable, and highly available orchestration engine"
-  homepage "https:cadenceworkflow.io"
-  url "https:github.comubercadence.git",
+  homepage "https://cadenceworkflow.io/"
+  url "https://github.com/uber/cadence.git",
       tag:      "v1.3.2",
       revision: "ec5588f2f0658f9cb10d1a3fd83935134271e2e3"
   license "Apache-2.0"
-  head "https:github.comubercadence.git", branch: "master"
+  head "https://github.com/uber/cadence.git", branch: "master"
 
   # Upstream creates releases that use a stable tag (e.g., `v1.2.3`) but are
   # labeled as "pre-release" on GitHub before the version is released, so it's
@@ -46,14 +46,14 @@ class CadenceWorkflow < Formula
     bin.install "cadence-sql-tool"
     bin.install "cadence-cassandra-tool"
 
-    (etc"cadence").install "config", "schema"
+    (etc/"cadence").install "config", "schema"
   end
 
   test do
-    output = shell_output("#{bin}cadence-server start 2>&1", 1)
-    assert_match "no config files found within .config", output
+    output = shell_output("#{bin}/cadence-server start 2>&1", 1)
+    assert_match "no config files found within ./config", output
 
-    output = shell_output("#{bin}cadence --domain samples-domain domain desc 2>&1", 1)
+    output = shell_output("#{bin}/cadence --domain samples-domain domain desc 2>&1", 1)
     assert_match "Error: Operation DescribeDomain failed", output
   end
 end

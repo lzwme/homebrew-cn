@@ -1,11 +1,11 @@
 class Allureofthestars < Formula
   desc "Near-future Sci-Fi roguelike and tactical squad combat game"
-  homepage "https:allureofthestars.com"
-  url "https:hackage.haskell.orgpackageAllure-0.11.0.0Allure-0.11.0.0.tar.gz"
+  homepage "https://allureofthestars.com/"
+  url "https://hackage.haskell.org/package/Allure-0.11.0.0/Allure-0.11.0.0.tar.gz"
   sha256 "6125cc585e2a5f28c88855c3c328385c1f21bed093d7606478f1b2af0cb2b6d6"
   license all_of: ["AGPL-3.0-or-later", "GPL-2.0-or-later", "OFL-1.1", "MIT", "Bitstream-Vera"]
   revision 6
-  head "https:github.comAllureOfTheStarsAllure.git", branch: "master"
+  head "https://github.com/AllureOfTheStars/Allure.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -32,18 +32,18 @@ class Allureofthestars < Formula
   uses_from_macos "zlib"
 
   # TODO: Remove resource once new release is available or hackage revision (r2+) with
-  # equivalent changes (https:hackage.haskell.orgpackagesdl2-2.5.5.0revisions).
+  # equivalent changes (https://hackage.haskell.org/package/sdl2-2.5.5.0/revisions/).
   resource "sdl2" do
-    url "https:hackage.haskell.orgpackagesdl2-2.5.5.0sdl2-2.5.5.0.tar.gz"
+    url "https://hackage.haskell.org/package/sdl2-2.5.5.0/sdl2-2.5.5.0.tar.gz"
     sha256 "23fdaa896e528620f31afeb763422d0c27d758e587215ff0c1387d6e6b3551cd"
 
     # Backport increased upper bounds for dependencies
     patch do
-      url "https:github.comhaskell-gamesdl2commit7d77a910b176c395881da3bf507a6e1936a30023.patch?full_index=1"
+      url "https://github.com/haskell-game/sdl2/commit/7d77a910b176c395881da3bf507a6e1936a30023.patch?full_index=1"
       sha256 "eee6b20184b9a86adf3fdfb36b5565bde2e0845f0b0d9edf37872d6abfe3248e"
     end
     patch do
-      url "https:github.comhaskell-gamesdl2commit5c92d46bebf188911d6472ace159995e47580290.patch?full_index=1"
+      url "https://github.com/haskell-game/sdl2/commit/5c92d46bebf188911d6472ace159995e47580290.patch?full_index=1"
       sha256 "570ad5c52892709e19777eb2e9aa6773c0626ce993fbc775c1d1a3ae3674af2f"
     end
   end
@@ -51,10 +51,10 @@ class Allureofthestars < Formula
   def install
     # Workaround to use newer GHC
     odie "Check if workaround can be removed!" if build.stable? && version > "0.11.0.0"
-    (buildpath"cabal.project.local").write "packages: . sdl2"
-    (buildpath"sdl2").install resource("sdl2")
+    (buildpath/"cabal.project.local").write "packages: . sdl2/"
+    (buildpath/"sdl2").install resource("sdl2")
 
-    # Workaround for GHC 9.12 until https:github.comtfausakwitchissues117 is fixed
+    # Workaround for GHC 9.12 until https://github.com/tfausak/witch/issues/117 is fixed
     args = ["--allow-newer=witch:base,witch:template-haskell"]
 
     system "cabal", "v2-update"
@@ -62,10 +62,10 @@ class Allureofthestars < Formula
   end
 
   test do
-    assert_empty shell_output("#{bin}Allure --dbgMsgSer --dbgMsgCli --logPriority 0 --newGame 3 " \
+    assert_empty shell_output("#{bin}/Allure --dbgMsgSer --dbgMsgCli --logPriority 0 --newGame 3 " \
                               "--maxFps 100000 --stopAfterFrames 50 --automateAll --keepAutomated " \
                               "--gameMode battle --setDungeonRng \"SMGen 7 7\" --setMainRng \"SMGen 7 7\"")
-    assert_empty (testpath".Allurestderr.txt").read
-    assert_match "Client FactionId 1 closed frontend.", (testpath".Allurestdout.txt").read
+    assert_empty (testpath/".Allure/stderr.txt").read
+    assert_match "Client FactionId 1 closed frontend.", (testpath/".Allure/stdout.txt").read
   end
 end

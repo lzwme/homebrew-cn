@@ -1,10 +1,10 @@
 class Fd < Formula
   desc "Simple, fast and user-friendly alternative to find"
-  homepage "https:github.comsharkdpfd"
-  url "https:github.comsharkdpfdarchiverefstagsv10.2.0.tar.gz"
+  homepage "https://github.com/sharkdp/fd"
+  url "https://ghfast.top/https://github.com/sharkdp/fd/archive/refs/tags/v10.2.0.tar.gz"
   sha256 "73329fe24c53f0ca47cd0939256ca5c4644742cb7c14cf4114c8c9871336d342"
   license any_of: ["Apache-2.0", "MIT"]
-  head "https:github.comsharkdpfd.git", branch: "master"
+  head "https://github.com/sharkdp/fd.git", branch: "master"
 
   bottle do
     rebuild 2
@@ -24,14 +24,14 @@ class Fd < Formula
   def install
     system "cargo", "install", *std_cargo_args
 
-    generate_completions_from_executable(bin"fd", "--gen-completions", shells: [:bash, :fish, :pwsh])
-    zsh_completion.install "contribcompletion_fd"
-    man1.install "docfd.1"
+    generate_completions_from_executable(bin/"fd", "--gen-completions", shells: [:bash, :fish, :pwsh])
+    zsh_completion.install "contrib/completion/_fd"
+    man1.install "doc/fd.1"
   end
 
   test do
     touch "foo_file"
     touch "test_file"
-    assert_equal "test_file", shell_output("#{bin}fd test").chomp
+    assert_equal "test_file", shell_output("#{bin}/fd test").chomp
   end
 end

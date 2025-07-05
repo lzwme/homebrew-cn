@@ -1,10 +1,10 @@
 class Libdivsufsort < Formula
   desc "Lightweight suffix-sorting library"
-  homepage "https:github.comy-256libdivsufsort"
-  url "https:github.comy-256libdivsufsortarchiverefstags2.0.1.tar.gz"
+  homepage "https://github.com/y-256/libdivsufsort"
+  url "https://ghfast.top/https://github.com/y-256/libdivsufsort/archive/refs/tags/2.0.1.tar.gz"
   sha256 "9164cb6044dcb6e430555721e3318d5a8f38871c2da9fd9256665746a69351e0"
   license "MIT"
-  head "https:github.comy-256libdivsufsort.git", branch: "master"
+  head "https://github.com/y-256/libdivsufsort.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -51,7 +51,7 @@ class Libdivsufsort < Formula
     EOS
 
     ["", "64"].each do |suffix|
-      (testpath"test#{suffix}.c").write <<~C
+      (testpath/"test#{suffix}.c").write <<~C
         #include <stdio.h>
         #include <stdlib.h>
         #include <string.h>
@@ -79,7 +79,7 @@ class Libdivsufsort < Formula
       C
 
       system ENV.cc, "test#{suffix}.c", "-I#{include}", "-L#{lib}", "-ldivsufsort#{suffix}", "-o", "test#{suffix}"
-      assert_equal expected_output, shell_output(testpath"test#{suffix}")
+      assert_equal expected_output, shell_output(testpath/"test#{suffix}")
     end
   end
 end

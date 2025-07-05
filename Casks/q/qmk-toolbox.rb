@@ -2,11 +2,11 @@ cask "qmk-toolbox" do
   version "0.3.3"
   sha256 "58faded9cb06010cdabed92c2db8f72ff32b5944fa776813255abb7809a970b9"
 
-  url "https:github.comqmkqmk_toolboxreleasesdownload#{version}QMK.Toolbox.app.zip",
-      verified: "github.comqmkqmk_toolbox"
+  url "https://ghfast.top/https://github.com/qmk/qmk_toolbox/releases/download/#{version}/QMK.Toolbox.app.zip",
+      verified: "github.com/qmk/qmk_toolbox/"
   name "QMK Toolbox"
   desc "Toolbox companion for QMK Firmware"
-  homepage "https:qmk.fm"
+  homepage "https://qmk.fm/"
 
   no_autobump! because: :requires_manual_review
 
@@ -17,7 +17,7 @@ cask "qmk-toolbox" do
   uninstall quit: "fm.qmk.toolbox"
 
   zap trash: [
-    "~LibraryCachesfm.qmk.toolbox",
-    "~LibrarySaved Application Statefm.qmk.toolbox.savedState",
+    "~/Library/Caches/fm.qmk.toolbox",
+    "~/Library/Saved Application State/fm.qmk.toolbox.savedState",
   ]
 end

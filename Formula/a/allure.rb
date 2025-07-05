@@ -1,13 +1,13 @@
 class Allure < Formula
   desc "Flexible lightweight test report tool"
-  homepage "https:github.comallure-frameworkallure2"
-  url "https:repo.maven.apache.orgmaven2ioqametaallureallure-commandline2.34.1allure-commandline-2.34.1.zip"
+  homepage "https://github.com/allure-framework/allure2"
+  url "https://repo.maven.apache.org/maven2/io/qameta/allure/allure-commandline/2.34.1/allure-commandline-2.34.1.zip"
   sha256 "6eb2e037604744d4ba1f9cad3676cf286974aca48f7839d9b2f7688e1efd79f2"
   license "Apache-2.0"
 
   livecheck do
-    url "https:search.maven.orgremotecontent?filepath=ioqametaallureallure-commandlinemaven-metadata.xml"
-    regex(%r{<version>v?(\d+(?:\.\d+)+)<version>}i)
+    url "https://search.maven.org/remotecontent?filepath=io/qameta/allure/allure-commandline/maven-metadata.xml"
+    regex(%r{<version>v?(\d+(?:\.\d+)+)</version>}i)
   end
 
   bottle do
@@ -18,15 +18,15 @@ class Allure < Formula
 
   def install
     # Remove all windows files
-    rm(Dir["bin*.bat"])
+    rm(Dir["bin/*.bat"])
 
     libexec.install Dir["*"]
-    bin.install Dir["#{libexec}bin*"]
-    bin.env_script_all_files libexec"bin", JAVA_HOME: Formula["openjdk"].opt_prefix
+    bin.install Dir["#{libexec}/bin/*"]
+    bin.env_script_all_files libexec/"bin", JAVA_HOME: Formula["openjdk"].opt_prefix
   end
 
   test do
-    (testpath"allure-resultsallure-result.json").write <<~JSON
+    (testpath/"allure-results/allure-result.json").write <<~JSON
       {
         "uuid": "allure",
         "name": "testReportGeneration",
@@ -51,6 +51,6 @@ class Allure < Formula
         ]
       }
     JSON
-    system bin"allure", "generate", "#{testpath}allure-results", "-o", "#{testpath}allure-report"
+    system bin/"allure", "generate", "#{testpath}/allure-results", "-o", "#{testpath}/allure-report"
   end
 end

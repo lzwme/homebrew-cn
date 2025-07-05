@@ -2,8 +2,8 @@ class Lensfun < Formula
   include Language::Python::Shebang
 
   desc "Remove defects from digital images"
-  homepage "https:lensfun.github.io"
-  url "https:github.comlensfunlensfunarchiverefstagsv0.3.4.tar.gz"
+  homepage "https://lensfun.github.io/"
+  url "https://ghfast.top/https://github.com/lensfun/lensfun/archive/refs/tags/v0.3.4.tar.gz"
   sha256 "dafb39c08ef24a0e2abd00d05d7341b1bf1f0c38bfcd5a4c69cf5f0ecb6db112"
   license all_of: [
     "LGPL-3.0-only",
@@ -12,13 +12,13 @@ class Lensfun < Formula
     :public_domain,
   ]
   version_scheme 1
-  head "https:github.comlensfunlensfun.git", branch: "master"
+  head "https://github.com/lensfun/lensfun.git", branch: "master"
 
   # Versions with a 90+ patch are unstable and this regex should only match the
   # stable versions.
   livecheck do
     url :stable
-    regex(^v?(\d+\.\d+(?:\.(?:\d|[1-8]\d+)(?:\.\d+)*)?)$i)
+    regex(/^v?(\d+\.\d+(?:\.(?:\d|[1-8]\d+)(?:\.\d+)*)?)$/i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -53,11 +53,11 @@ class Lensfun < Formula
     ENV["CMAKE_POLICY_VERSION_MINIMUM"] = "3.5"
 
     # Homebrew's python "prefix scheme" patch tries to install into
-    # HOMEBREW_PREFIXlib, which fails due to sandbox. As a workaround,
+    # HOMEBREW_PREFIX/lib, which fails due to sandbox. As a workaround,
     # we disable the install step and manually run pip install later.
-    inreplace "appsCMakeLists.txt" do |s|
+    inreplace "apps/CMakeLists.txt" do |s|
       s.gsub!("${PYTHON} ${SETUP_PY} build", "mkdir build")
-      s.gsub!(^\s*INSTALL\(CODE "execute_process\(.*SETUP_PY, "#\\0")
+      s.gsub!(/^\s*INSTALL\(CODE "execute_process\(.*SETUP_PY/, "#\\0")
     end
 
     args = %W[
@@ -69,11 +69,11 @@ class Lensfun < Formula
     system "cmake", "--install", "build"
     rewrite_shebang detected_python_shebang, *bin.children
 
-    system python3, "-m", "pip", "install", *std_pip_args(build_isolation: true), ".buildapps"
+    system python3, "-m", "pip", "install", *std_pip_args(build_isolation: true), "./build/apps"
   end
 
   test do
     ENV["LC_ALL"] = "en_US.UTF-8"
-    system bin"lensfun-update-data"
+    system bin/"lensfun-update-data"
   end
 end

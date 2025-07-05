@@ -1,7 +1,7 @@
 class Cjson < Formula
   desc "Ultralightweight JSON parser in ANSI C"
-  homepage "https:github.comDaveGamblecJSON"
-  url "https:github.comDaveGamblecJSONarchiverefstagsv1.7.18.tar.gz"
+  homepage "https://github.com/DaveGamble/cJSON"
+  url "https://ghfast.top/https://github.com/DaveGamble/cJSON/archive/refs/tags/v1.7.18.tar.gz"
   sha256 "3aa806844a03442c00769b83e99970be70fbef03735ff898f4811dd03b9f5ee5"
   license "MIT"
 
@@ -31,8 +31,8 @@ class Cjson < Formula
   end
 
   test do
-    (testpath"test.c").write <<~C
-      #include <cjsoncJSON.h>
+    (testpath/"test.c").write <<~C
+      #include <cjson/cJSON.h>
 
       int main()
       {
@@ -50,6 +50,6 @@ class Cjson < Formula
       }
     C
     system ENV.cc, "test.c", "-L#{lib}", "-lcjson", "-o", "test"
-    system ".test"
+    system "./test"
   end
 end

@@ -1,10 +1,10 @@
 class Bkcrack < Formula
   desc "Crack legacy zip encryption with Biham and Kocher's known plaintext attack"
-  homepage "https:github.comkimci86bkcrack"
-  url "https:github.comkimci86bkcrackarchiverefstagsv1.7.1.tar.gz"
+  homepage "https://github.com/kimci86/bkcrack"
+  url "https://ghfast.top/https://github.com/kimci86/bkcrack/archive/refs/tags/v1.7.1.tar.gz"
   sha256 "1ed073f9640baac4ba0156a00359e5a08e784cacd9f7de0bd07e2f49616c7a6a"
   license "Zlib"
-  head "https:github.comkimci86bkcrack.git", branch: "master"
+  head "https://github.com/kimci86/bkcrack.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "1cf8f38ed5f045a6215830602e84b069661264da4cdb2cebafa03049aece3daa"
@@ -21,15 +21,15 @@ class Bkcrack < Formula
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"
-    bin.install "buildsrcbkcrack"
+    bin.install "build/src/bkcrack"
     pkgshare.install "example"
   end
 
   test do
-    output = shell_output("#{bin}bkcrack -L #{pkgshare}examplesecrets.zip")
+    output = shell_output("#{bin}/bkcrack -L #{pkgshare}/example/secrets.zip")
     assert_match "advice.jpg", output
     assert_match "spiral.svg", output
 
-    assert_match version.to_s, shell_output("#{bin}bkcrack --help")
+    assert_match version.to_s, shell_output("#{bin}/bkcrack --help")
   end
 end

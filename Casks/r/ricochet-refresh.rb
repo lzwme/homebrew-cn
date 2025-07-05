@@ -5,19 +5,19 @@ cask "ricochet-refresh" do
   sha256 arm:   "fee6cee867f16cf3557dd5da82db90b0691f8a9f9518ae69accb0d832e3433ab",
          intel: "0214181045c967d18ce7ba1af1861e3ed107659d375f3a28d9b97a33b15a6222"
 
-  url "https:github.comblueprint-freespeechricochet-refreshreleasesdownloadv#{version}-releasericochet-refresh-#{version}-macos-#{arch}.dmg",
-      verified: "github.comblueprint-freespeechricochet-refresh"
+  url "https://ghfast.top/https://github.com/blueprint-freespeech/ricochet-refresh/releases/download/v#{version}-release/ricochet-refresh-#{version}-macos-#{arch}.dmg",
+      verified: "github.com/blueprint-freespeech/ricochet-refresh/"
   name "Ricochet Refresh"
   desc "Private and anonymous instant messaging over tor"
-  homepage "https:www.ricochetrefresh.net"
+  homepage "https://www.ricochetrefresh.net/"
 
   livecheck do
     url :url
-    regex(^v?(\d+(?:\.\d+)+[a-z]?)(?:[._-]release)?$i)
+    regex(/^v?(\d+(?:\.\d+)+[a-z]?)(?:[._-]release)?$/i)
     strategy :github_latest
   end
 
   app "Ricochet Refresh.app"
 
-  zap trash: "~LibraryApplication SupportRicochet-Refresh"
+  zap trash: "~/Library/Application Support/Ricochet-Refresh"
 end

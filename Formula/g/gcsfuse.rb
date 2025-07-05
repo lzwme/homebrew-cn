@@ -1,10 +1,10 @@
 class Gcsfuse < Formula
   desc "User-space file system for interacting with Google Cloud"
-  homepage "https:github.comgooglecloudplatformgcsfuse"
-  url "https:github.comGoogleCloudPlatformgcsfusearchiverefstagsv3.0.1.tar.gz"
+  homepage "https://github.com/googlecloudplatform/gcsfuse"
+  url "https://ghfast.top/https://github.com/GoogleCloudPlatform/gcsfuse/archive/refs/tags/v3.0.1.tar.gz"
   sha256 "81483130468f0f954a8a6ea8eed01da7bdc4c8eeb32df362ccd2c653b41d9eba"
   license "Apache-2.0"
-  head "https:github.comGoogleCloudPlatformgcsfuse.git", branch: "master"
+  head "https://github.com/GoogleCloudPlatform/gcsfuse.git", branch: "master"
 
   livecheck do
     url :stable
@@ -24,15 +24,15 @@ class Gcsfuse < Formula
     # Build the build_gcsfuse tool. Ensure that it doesn't pick up any
     # libraries from the user's GOPATH; it should have no dependencies.
     ENV.delete("GOPATH")
-    system "go", "build", ".toolsbuild_gcsfuse"
+    system "go", "build", "./tools/build_gcsfuse"
 
     # Use that tool to build gcsfuse itself.
     gcsfuse_version = build.head? ? Utils.git_short_head : version.to_s
-    system ".build_gcsfuse", buildpath, prefix, gcsfuse_version
+    system "./build_gcsfuse", buildpath, prefix, gcsfuse_version
   end
 
   test do
-    system bin"gcsfuse", "--help"
-    system "#{sbin}mount.gcsfuse", "--help"
+    system bin/"gcsfuse", "--help"
+    system "#{sbin}/mount.gcsfuse", "--help"
   end
 end

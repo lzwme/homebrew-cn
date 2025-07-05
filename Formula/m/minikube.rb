@@ -1,11 +1,11 @@
 class Minikube < Formula
   desc "Run a Kubernetes cluster locally"
-  homepage "https:minikube.sigs.k8s.io"
-  url "https:github.comkubernetesminikube.git",
+  homepage "https://minikube.sigs.k8s.io/"
+  url "https://github.com/kubernetes/minikube.git",
       tag:      "v1.36.0",
       revision: "f8f52f5de11fc6ad8244afac475e1d0f96841df1"
   license "Apache-2.0"
-  head "https:github.comkubernetesminikube.git", branch: "master"
+  head "https://github.com/kubernetes/minikube.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "e9a0f9e6e9218387985c3dd006b85fbfd8a83f76578902da2bc15a3753bd2839"
@@ -22,21 +22,21 @@ class Minikube < Formula
 
   def install
     system "make"
-    bin.install "outminikube"
+    bin.install "out/minikube"
 
-    generate_completions_from_executable(bin"minikube", "completion")
+    generate_completions_from_executable(bin/"minikube", "completion")
   end
 
   test do
-    output = shell_output("#{bin}minikube version")
+    output = shell_output("#{bin}/minikube version")
     assert_match "version: v#{version}", output
 
-    (testpath".minikubeconfigconfig.json").write <<~JSON
+    (testpath/".minikube/config/config.json").write <<~JSON
       {
         "vm-driver": "virtualbox"
       }
     JSON
-    output = shell_output("#{bin}minikube config view")
+    output = shell_output("#{bin}/minikube config view")
     assert_match "vm-driver: virtualbox", output
   end
 end

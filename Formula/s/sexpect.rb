@@ -1,7 +1,7 @@
 class Sexpect < Formula
   desc "Expect for shells"
-  homepage "https:github.comclarkwangsexpect"
-  url "https:github.comclarkwangsexpectarchiverefstagsv2.3.15.tar.gz"
+  homepage "https://github.com/clarkwang/sexpect"
+  url "https://ghfast.top/https://github.com/clarkwang/sexpect/archive/refs/tags/v2.3.15.tar.gz"
   sha256 "44f5711aa99f3ccf9c4b0edfcd9a7d25fa64b442574624ce451713d1532c1a7e"
   license "GPL-3.0-only"
 
@@ -26,12 +26,12 @@ class Sexpect < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}sexpect --version")
+    assert_match version.to_s, shell_output("#{bin}/sexpect --version")
 
-    (testpath"test.sh").write <<~SHELL
-      #!binsh
+    (testpath/"test.sh").write <<~SHELL
+      #!/bin/sh
 
-      export SEXPECT_SOCKFILE="#{testpath}s.sock"
+      export SEXPECT_SOCKFILE="#{testpath}/s.sock"
 
       sexpect sp -t 10 sleep 60
       sexpect c
@@ -44,6 +44,6 @@ class Sexpect < Formula
       [ $? -eq 129 ]
     SHELL
 
-    system "sh", "#{testpath}test.sh"
+    system "sh", "#{testpath}/test.sh"
   end
 end

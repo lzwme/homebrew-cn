@@ -1,7 +1,7 @@
 class Libunicode < Formula
   desc "Modern C++20 Unicode library"
-  homepage "https:github.comcontour-terminallibunicode"
-  url "https:github.comcontour-terminallibunicodearchiverefstagsv0.6.0.tar.gz"
+  homepage "https://github.com/contour-terminal/libunicode"
+  url "https://ghfast.top/https://github.com/contour-terminal/libunicode/archive/refs/tags/v0.6.0.tar.gz"
   sha256 "0c217f8264000f1b8c36e78969cb9cf91ac97de937cc141ab78e6b1ad7f404ef"
   license "Apache-2.0"
 
@@ -29,7 +29,7 @@ class Libunicode < Formula
 
   fails_with :gcc do
     version "12"
-    cause "Requires C++20 std::format, https:gcc.gnu.orggcc-13changes.html#libstdcxx"
+    cause "Requires C++20 std::format, https://gcc.gnu.org/gcc-13/changes.html#libstdcxx"
   end
 
   def install
@@ -49,11 +49,11 @@ class Libunicode < Formula
 
   test do
     # ENV.llvm_clang doesn't work in the test block
-    ENV["CXX"] = Formula["llvm"].opt_bin"clang++" if OS.mac? && DevelopmentTools.clang_build_version <= 1500
+    ENV["CXX"] = Formula["llvm"].opt_bin/"clang++" if OS.mac? && DevelopmentTools.clang_build_version <= 1500
 
-    (testpath"test.cpp").write <<~CPP
+    (testpath/"test.cpp").write <<~CPP
       #include <iostream>
-      #include <libunicodecapi.h>
+      #include <libunicode/capi.h>
 
       int main() {
           u32_char_t u32_codepoints[] = { 'h', 'e', 'l', 'l', 'o', ' ', 0x1F30D };
@@ -65,8 +65,8 @@ class Libunicode < Formula
     CPP
 
     system ENV.cxx, "-std=c++17", "-o", "test", "test.cpp", "-I#{include}", "-L#{lib}", "-lunicode"
-    assert_match "Grapheme cluster count: 7", shell_output(".test")
+    assert_match "Grapheme cluster count: 7", shell_output("./test")
 
-    assert_match "HYPHEN", shell_output("#{bin}unicode-query U+2D")
+    assert_match "HYPHEN", shell_output("#{bin}/unicode-query U+2D")
   end
 end

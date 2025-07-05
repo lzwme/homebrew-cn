@@ -1,7 +1,7 @@
 class Hqx < Formula
   desc "Magnification filter designed for pixel art"
-  homepage "https:github.comgrom358hqx"
-  url "https:github.comgrom358hqx.git",
+  homepage "https://github.com/grom358/hqx"
+  url "https://github.com/grom358/hqx.git",
       tag:      "v1.2",
       revision: "124c9399fa136fb0f743417ca27dfa2ca2860c2d"
   license "LGPL-2.1-or-later"
@@ -35,13 +35,13 @@ class Hqx < Formula
   def install
     ENV.deparallelize
     system "autoreconf", "--force", "--install", "--verbose"
-    system ".configure", *std_configure_args
+    system "./configure", *std_configure_args
     system "make", "install"
   end
 
   test do
-    system bin"hqx", test_fixtures("test.jpg"), "out.jpg"
-    output = pipe_output("php -r \"print_r(getimagesize('file:#{testpath}out.jpg'));\"")
+    system bin/"hqx", test_fixtures("test.jpg"), "out.jpg"
+    output = pipe_output("php -r \"print_r(getimagesize('file://#{testpath}/out.jpg'));\"")
     assert_equal <<~EOS, output
       Array
       (
@@ -51,7 +51,7 @@ class Hqx < Formula
           [3] => width="4" height="4"
           [bits] => 8
           [channels] => 3
-          [mime] => imagejpeg
+          [mime] => image/jpeg
       )
     EOS
   end

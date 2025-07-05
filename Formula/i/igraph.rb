@@ -1,7 +1,7 @@
 class Igraph < Formula
   desc "Network analysis package"
-  homepage "https:igraph.org"
-  url "https:github.comigraphigraphreleasesdownload0.10.16igraph-0.10.16.tar.gz"
+  homepage "https://igraph.org/"
+  url "https://ghfast.top/https://github.com/igraph/igraph/releases/download/0.10.16/igraph-0.10.16.tar.gz"
   sha256 "15a1540a8d270232c9aa99adeeffb7787bea96289d6bef6646ec9c91a9a93992"
   license "GPL-2.0-or-later"
 
@@ -52,20 +52,20 @@ class Igraph < Formula
   end
 
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include <igraph.h>
       int main(void) {
         igraph_real_t diameter;
         igraph_t graph;
         igraph_rng_seed(igraph_rng_default(), 42);
-        igraph_erdos_renyi_game(&graph, IGRAPH_ERDOS_RENYI_GNP, 1000, 5.01000, IGRAPH_UNDIRECTED, IGRAPH_NO_LOOPS);
+        igraph_erdos_renyi_game(&graph, IGRAPH_ERDOS_RENYI_GNP, 1000, 5.0/1000, IGRAPH_UNDIRECTED, IGRAPH_NO_LOOPS);
         igraph_diameter(&graph, &diameter, 0, 0, 0, 0, IGRAPH_UNDIRECTED, 1);
         printf("Diameter = %f\\n", (double) diameter);
         igraph_destroy(&graph);
       }
     C
-    system ENV.cc, "test.c", "-I#{include}igraph", "-L#{lib}",
+    system ENV.cc, "test.c", "-I#{include}/igraph", "-L#{lib}",
                    "-ligraph", "-lm", "-o", "test"
-    assert_match "Diameter = 8", shell_output(".test")
+    assert_match "Diameter = 8", shell_output("./test")
   end
 end

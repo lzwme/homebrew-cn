@@ -1,14 +1,14 @@
 class Smap < Formula
   desc "Drop-in replacement for Nmap powered by shodan.io"
-  homepage "https:github.coms0md3vSmap"
-  url "https:github.coms0md3vSmaparchiverefstags0.1.12.tar.gz"
+  homepage "https://github.com/s0md3v/Smap"
+  url "https://ghfast.top/https://github.com/s0md3v/Smap/archive/refs/tags/0.1.12.tar.gz"
   sha256 "870838dc01cbf2a018db8bbdee2ac439e4666e131d1f014843fc5b6994c33049"
   license "AGPL-3.0-or-later"
-  head "https:github.coms0md3vSmap.git", branch: "main"
+  head "https://github.com/s0md3v/Smap.git", branch: "main"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -30,12 +30,12 @@ class Smap < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), ".cmdsmap"
+    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/smap"
   end
 
   test do
-    assert_match "scan report for google.com", shell_output("#{bin}smap google.com p80,443")
-    system bin"smap", "google.com", "-oX", "output.xml"
-    assert_path_exists testpath"output.xml"
+    assert_match "scan report for google.com", shell_output("#{bin}/smap google.com p80,443")
+    system bin/"smap", "google.com", "-oX", "output.xml"
+    assert_path_exists testpath/"output.xml"
   end
 end

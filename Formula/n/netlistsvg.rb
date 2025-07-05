@@ -1,7 +1,7 @@
 class Netlistsvg < Formula
   desc "Draws an SVG schematic from a yosys JSON netlist"
-  homepage "https:github.comnturleynetlistsvg"
-  url "https:github.comnturleynetlistsvgarchiverefstagsv1.0.2.tar.gz"
+  homepage "https://github.com/nturley/netlistsvg"
+  url "https://ghfast.top/https://github.com/nturley/netlistsvg/archive/refs/tags/v1.0.2.tar.gz"
   sha256 "b7f218f9d8f2b826d28bff6ebe1f5b1a4fb5b7c9465a034ae0a8fcd2b9d53a67"
   license "MIT"
 
@@ -17,11 +17,11 @@ class Netlistsvg < Formula
 
   def install
     system "npm", "install", *std_npm_args
-    bin.install_symlink Dir["#{libexec}bin*"]
+    bin.install_symlink Dir["#{libexec}/bin/*"]
   end
 
   test do
-    (testpath"dff.v").write <<~VERILOG
+    (testpath/"dff.v").write <<~VERILOG
       module DFF (output reg Q, input C, D, R);
       always @(posedge C)
         if (~R) begin
@@ -32,7 +32,7 @@ class Netlistsvg < Formula
       endmodule
     VERILOG
     system "yosys -q -p \"prep -top DFF; write_json dff.json\" dff.v"
-    system bin"netlistsvg", "dff.json", "-o", "dff.svg"
-    assert_path_exists testpath"dff.svg"
+    system bin/"netlistsvg", "dff.json", "-o", "dff.svg"
+    assert_path_exists testpath/"dff.svg"
   end
 end

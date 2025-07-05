@@ -1,7 +1,7 @@
 class Czkawka < Formula
   desc "Duplicate file utility"
-  homepage "https:github.comqarminczkawka"
-  url "https:github.comqarminczkawkaarchiverefstags9.0.0.tar.gz"
+  homepage "https://github.com/qarmin/czkawka"
+  url "https://ghfast.top/https://github.com/qarmin/czkawka/archive/refs/tags/9.0.0.tar.gz"
   sha256 "2b2f419e1c733cad763eceb95eff28b1302e0926c247fdfd98e2f29f6f7866ee"
   license all_of: ["MIT", "CC-BY-4.0"]
 
@@ -42,20 +42,20 @@ class Czkawka < Formula
   end
 
   def post_install
-    system "#{Formula["glib"].opt_bin}glib-compile-schemas", "#{HOMEBREW_PREFIX}shareglib-2.0schemas"
-    ENV.prepend_path "XDG_DATA_DIRS", HOMEBREW_PREFIX"share"
+    system "#{Formula["glib"].opt_bin}/glib-compile-schemas", "#{HOMEBREW_PREFIX}/share/glib-2.0/schemas"
+    ENV.prepend_path "XDG_DATA_DIRS", HOMEBREW_PREFIX/"share"
   end
 
   def caveats
     <<~EOS
-      czkawka_gui requires $XDG_DATA_DIRS to contain "#{HOMEBREW_PREFIX}share".
+      czkawka_gui requires $XDG_DATA_DIRS to contain "#{HOMEBREW_PREFIX}/share".
     EOS
   end
 
   test do
-    output = shell_output("#{bin}czkawka_cli dup --directories #{testpath}")
+    output = shell_output("#{bin}/czkawka_cli dup --directories #{testpath}")
     assert_match "Not found any duplicates", output
 
-    assert_match version.to_s, shell_output("#{bin}czkawka_cli --version")
+    assert_match version.to_s, shell_output("#{bin}/czkawka_cli --version")
   end
 end

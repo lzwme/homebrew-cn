@@ -1,10 +1,10 @@
 class Sdb < Formula
-  desc "Ondiskmemory hashtable based on CDB"
-  homepage "https:www.radare.org"
-  url "https:github.comradareorgsdbarchiverefstags2.1.0.tar.gz"
+  desc "Ondisk/memory hashtable based on CDB"
+  homepage "https://www.radare.org/"
+  url "https://ghfast.top/https://github.com/radareorg/sdb/archive/refs/tags/2.1.0.tar.gz"
   sha256 "877f1540f8890ee32ddfe5a03c3455d7d9bf344bc55a6ac42bdcc7ba241e8ab9"
   license "MIT"
-  head "https:github.comradareorgsdb.git", branch: "master"
+  head "https://github.com/radareorg/sdb.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "fe7fce5a05792a0d970268a111172ff4a92abd948f98499b7b48304e7c17fba0"
@@ -31,7 +31,7 @@ class Sdb < Formula
   end
 
   test do
-    system bin"sdb", testpath"d", "hello=world"
-    assert_equal "world", shell_output("#{bin}sdb #{testpath}d hello").strip
+    system bin/"sdb", testpath/"d", "hello=world"
+    assert_equal "world", shell_output("#{bin}/sdb #{testpath}/d hello").strip
   end
 end

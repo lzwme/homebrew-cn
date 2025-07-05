@@ -1,10 +1,10 @@
 class Tfel < Formula
   desc "Code generation tool dedicated to material knowledge for numerical mechanics"
-  homepage "https:thelfer.github.iotfelwebindex.html"
-  url "https:github.comthelfertfelarchiverefstagsTFEL-5.0.1.tar.gz"
+  homepage "https://thelfer.github.io/tfel/web/index.html"
+  url "https://ghfast.top/https://github.com/thelfer/tfel/archive/refs/tags/TFEL-5.0.1.tar.gz"
   sha256 "820b2f9d54e237b2c2d9d6f06aaf7d4a1d3f34fb373e6549bee4fd8b55ecfad1"
   license "GPL-1.0-or-later"
-  head "https:github.comthelfertfel.git", branch: "master"
+  head "https://github.com/thelfer/tfel.git", branch: "master"
 
   bottle do
     sha256 arm64_sequoia: "5a32fde49de7f2ecb7019ceb8893ae34ecca6347c71b1598bc056199594d2014"
@@ -45,7 +45,7 @@ class Tfel < Formula
     ]
 
     # Avoid linkage to boost container and graph modules
-    # Issue ref: https:github.comboostorgboostissues985
+    # Issue ref: https://github.com/boostorg/boost/issues/985
     args << "-DCMAKE_MODULE_LINKER_FLAGS=-Wl,-dead_strip_dylibs" if OS.mac?
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
@@ -54,7 +54,7 @@ class Tfel < Formula
   end
 
   test do
-    (testpath"test.mfront").write <<~MFRONT
+    (testpath/"test.mfront").write <<~MFRONT
       @Parser Implicit;
       @Behaviour Norton;
       @Algorithm NewtonRaphson_NumericalJacobian ;
@@ -69,13 +69,13 @@ class Tfel < Formula
         real seq = sigmaeq(sig) ;
         Stensor n = Stensor(0.) ;
         if(seq > 1.e-12){
-          n = 1.5*deviator(sig)seq ;
+          n = 1.5*deviator(sig)/seq ;
         }
         feel += dp*n-deto ;
         fp -= dt*A*pow(seq,m) ;
       }
     MFRONT
-    system bin"mfront", "--obuild", "--interface=generic", "test.mfront"
-    assert_path_exists testpath"src"shared_library("libBehaviour")
+    system bin/"mfront", "--obuild", "--interface=generic", "test.mfront"
+    assert_path_exists testpath/"src"/shared_library("libBehaviour")
   end
 end

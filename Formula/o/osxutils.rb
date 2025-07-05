@@ -1,10 +1,10 @@
 class Osxutils < Formula
   desc "Collection of macOS command-line utilities"
-  homepage "https:github.comspeciousosxutils"
-  url "https:github.comspeciousosxutilsarchiverefstagsv1.9.0.tar.gz"
+  homepage "https://github.com/specious/osxutils"
+  url "https://ghfast.top/https://github.com/specious/osxutils/archive/refs/tags/v1.9.0.tar.gz"
   sha256 "9c11d989358ed5895d9af7644b9295a17128b37f41619453026f67e99cb7ecab"
   license "GPL-2.0-or-later"
-  head "https:github.comspeciousosxutils.git", branch: "master"
+  head "https://github.com/specious/osxutils.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -29,7 +29,7 @@ class Osxutils < Formula
 
   def install
     # workaround for newer clang
-    # upstream bug report, https:github.comspeciousosxutilsissues11
+    # upstream bug report, https://github.com/specious/osxutils/issues/11
     ENV.append_to_cflags "-Wno-int-conversion" if DevelopmentTools.clang_build_version >= 1403
 
     system "make"
@@ -37,6 +37,6 @@ class Osxutils < Formula
   end
 
   test do
-    assert_match "osxutils", shell_output(bin"osxutils")
+    assert_match "osxutils", shell_output(bin/"osxutils")
   end
 end

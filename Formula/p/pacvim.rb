@@ -1,10 +1,10 @@
 class Pacvim < Formula
   desc "Learn vim commands via a game"
-  homepage "https:github.comjmoon018PacVim"
-  url "https:github.comjmoon018PacVimarchiverefstagsv1.1.1.tar.gz"
+  homepage "https://github.com/jmoon018/PacVim"
+  url "https://ghfast.top/https://github.com/jmoon018/PacVim/archive/refs/tags/v1.1.1.tar.gz"
   sha256 "c869c5450fbafdfe8ba8a8a9bba3718775926f276f0552052dcfa090d21acb28"
   license "LGPL-3.0-or-later"
-  head "https:github.comjmoon018PacVim.git", branch: "master"
+  head "https://github.com/jmoon018/PacVim.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -29,10 +29,10 @@ class Pacvim < Formula
   uses_from_macos "ncurses"
 
   # Use ncurses.h instead of cursesw.h which is not installed by brew
-  # https:github.comjmoon018PacVimpull31
+  # https://github.com/jmoon018/PacVim/pull/31
   patch do
     on_linux do
-      url "https:github.comjmoon018PacVimcommit2f95ef4d312d760b8a3aae463e959646b27e774a.patch?full_index=1"
+      url "https://github.com/jmoon018/PacVim/commit/2f95ef4d312d760b8a3aae463e959646b27e774a.patch?full_index=1"
       sha256 "e5b753de87937c0853a1adbab31eb1ec938add4ceb0df26eafef5b4f613bc3e6"
     end
   end

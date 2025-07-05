@@ -1,10 +1,10 @@
 class Neverest < Formula
   desc "Synchronize, backup, and restore emails"
-  homepage "https:pimalaya.org"
-  url "https:github.compimalayaneverestarchiverefstagsv0.1.0.tar.gz"
+  homepage "https://pimalaya.org"
+  url "https://ghfast.top/https://github.com/pimalaya/neverest/archive/refs/tags/v0.1.0.tar.gz"
   sha256 "7fc3cdfb797026c68a4e1aebd65ad69b604900e9c51970403633d82f54e6a4ce"
   license "MIT"
-  head "https:github.compimalayaneverest.git", branch: "master"
+  head "https://github.com/pimalaya/neverest.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "8724834d76f0b3ae85de2cd78efd915e013ea6e73e6fcc4aace2fe2bca4ee2ac"
@@ -21,14 +21,14 @@ class Neverest < Formula
   def install
     system "cargo", "install", *std_cargo_args
 
-    generate_completions_from_executable(bin"neverest", "completion")
-    system bin"neverest", "manual", man1
+    generate_completions_from_executable(bin/"neverest", "completion")
+    system bin/"neverest", "manual", man1
   end
 
   test do
-    assert_match "neverest", shell_output("#{bin}neverest --help")
+    assert_match "neverest", shell_output("#{bin}/neverest --help")
 
-    output = shell_output("#{bin}neverest check 2>&1", 1)
+    output = shell_output("#{bin}/neverest check 2>&1", 1)
     assert_match "Cannot find existing configuration", output
   end
 end

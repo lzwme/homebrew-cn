@@ -1,10 +1,10 @@
 class BeancountLanguageServer < Formula
   desc "Language server for beancount files"
-  homepage "https:github.compolarmutexbeancount-language-server"
-  url "https:github.compolarmutexbeancount-language-serverarchiverefstagsv1.3.7.tar.gz"
+  homepage "https://github.com/polarmutex/beancount-language-server"
+  url "https://ghfast.top/https://github.com/polarmutex/beancount-language-server/archive/refs/tags/v1.3.7.tar.gz"
   sha256 "d1da21e518815514ebb1d69e863dc414ce6480ab0eb81e113edb91fca4a5d999"
   license "MIT"
-  head "https:github.compolarmutexbeancount-language-server.git", branch: "main"
+  head "https://github.com/polarmutex/beancount-language-server.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "0e0c99b2f1dcb24b04cd4698c3518d3cecd0546aa374dbb6c6cc5887fdcd2896"
@@ -19,7 +19,7 @@ class BeancountLanguageServer < Formula
   depends_on "rust" => :build
 
   def install
-    system "cargo", "install", *std_cargo_args(path: "crateslsp")
+    system "cargo", "install", *std_cargo_args(path: "crates/lsp")
   end
 
   test do
@@ -37,11 +37,11 @@ class BeancountLanguageServer < Formula
       }
     JSON
 
-    Open3.popen3(bin"beancount-language-server", "--stdio") do |stdin, stdout|
+    Open3.popen3(bin/"beancount-language-server", "--stdio") do |stdin, stdout|
       stdin.write "Content-Length: #{json.size}\r\n\r\n#{json}"
-      assert_match(^Content-Length: \d+i, stdout.readline)
+      assert_match(/^Content-Length: \d+/i, stdout.readline)
     end
 
-    assert_match version.to_s, shell_output("#{bin}beancount-language-server --version")
+    assert_match version.to_s, shell_output("#{bin}/beancount-language-server --version")
   end
 end

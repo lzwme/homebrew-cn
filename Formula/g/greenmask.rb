@@ -1,14 +1,14 @@
 class Greenmask < Formula
   desc "PostgreSQL dump and obfuscation tool"
-  homepage "https:www.greenmask.io"
-  url "https:github.comGreenmaskIOgreenmaskarchiverefstagsv0.2.12.tar.gz"
+  homepage "https://www.greenmask.io/"
+  url "https://ghfast.top/https://github.com/GreenmaskIO/greenmask/archive/refs/tags/v0.2.12.tar.gz"
   sha256 "6fb41ac36ab1c8b528eb38b167164d92d785b38f33ca814b9e5fdc91e978a72e"
   license "Apache-2.0"
-  head "https:github.comGreenmaskIOgreenmask.git", branch: "main"
+  head "https://github.com/GreenmaskIO/greenmask.git", branch: "main"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -25,24 +25,24 @@ class Greenmask < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.comgreenmaskiogreenmaskcmdgreenmaskcmd.Version=#{version}
+      -X github.com/greenmaskio/greenmask/cmd/greenmask/cmd.Version=#{version}
     ]
-    system "go", "build", "-tags=viper_bind_struct", *std_go_args(ldflags:), ".cmdgreenmask"
+    system "go", "build", "-tags=viper_bind_struct", *std_go_args(ldflags:), "./cmd/greenmask"
 
-    generate_completions_from_executable(bin"greenmask", "completion")
+    generate_completions_from_executable(bin/"greenmask", "completion")
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}greenmask -v")
+    assert_match version.to_s, shell_output("#{bin}/greenmask -v")
 
-    (testpath"config.yml").write <<~YAML
+    (testpath/"config.yml").write <<~YAML
       common:
-        pg_bin_path: "usrlibpostgresql16bin"
-        tmp_dir: "tmp"
+        pg_bin_path: "/usr/lib/postgresql/16/bin"
+        tmp_dir: "/tmp"
 
       storage:
         s3:
-          endpoint: "http:playground-storage:9000"
+          endpoint: "http://playground-storage:9000"
           bucket: "adventureworks"
           region: "us-east-1"
           access_key_id: "Q3AM3UQ867SPQQA43P2F"
@@ -72,7 +72,7 @@ class Greenmask < Formula
           dbname: "host=playground-db user=postgres password=example dbname=transformed"
     YAML
 
-    output = shell_output("#{bin}greenmask --config config.yml list-transformers")
+    output = shell_output("#{bin}/greenmask --config config.yml list-transformers")
     assert_match "Generate UUID", output
     assert_match "Generates a random word", output
   end

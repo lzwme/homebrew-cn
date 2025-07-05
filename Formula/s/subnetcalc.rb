@@ -1,10 +1,10 @@
 class Subnetcalc < Formula
-  desc "IPv4IPv6 subnet calculator"
-  homepage "https:www.nntb.no~dreibhsubnetcalcindex.html"
-  url "https:github.comdreibhsubnetcalcarchiverefstagssubnetcalc-2.6.4.tar.gz"
+  desc "IPv4/IPv6 subnet calculator"
+  homepage "https://www.nntb.no/~dreibh/subnetcalc/index.html"
+  url "https://ghfast.top/https://github.com/dreibh/subnetcalc/archive/refs/tags/subnetcalc-2.6.4.tar.gz"
   sha256 "0730855c8b619e4a6237882e0bd12c2220285a12b7b869e1193b0f92e189a262"
   license "GPL-3.0-or-later"
-  head "https:github.comdreibhsubnetcalc.git", branch: "master"
+  head "https://github.com/dreibh/subnetcalc.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "fabdbeae955ea728d9eae0de44710cbee5e16cf43ba6cae647d4dad0b0450f08"
@@ -33,7 +33,7 @@ class Subnetcalc < Formula
     expected = <<~EOS
       Address        = 1.1.1.1
                           \e[34m0\e[0m\e[34m0\e[0m\e[34m0\e[0m\e[34m0\e[0m\e[34m0\e[0m\e[34m0\e[0m\e[34m0\e[0m\e[34m1\e[0m . \e[34m0\e[0m\e[34m0\e[0m\e[34m0\e[0m\e[34m0\e[0m\e[34m0\e[0m\e[34m0\e[0m\e[34m0\e[0m\e[34m1\e[0m . \e[34m0\e[0m\e[34m0\e[0m\e[34m0\e[0m\e[34m0\e[0m\e[34m0\e[0m\e[34m0\e[0m\e[34m0\e[0m\e[34m1\e[0m . \e[34m0\e[0m\e[34m0\e[0m\e[34m0\e[0m\e[34m0\e[0m\e[34m0\e[0m\e[34m0\e[0m\e[34m0\e[0m\e[34m1\e[0m
-      Network        = 1.1.1.1  32
+      Network        = 1.1.1.1 / 32
       Netmask        = 255.255.255.255
       Broadcast      = not needed on Point-to-Point links
       Wildcard Mask  = 0.0.0.0
@@ -43,10 +43,10 @@ class Subnetcalc < Formula
       Host Range     = { 1.1.1.1 - 1.1.1.1 }
       Properties     = \
 
-         - 1.1.1.1 is a HOST address in 1.1.1.132
+         - 1.1.1.1 is a HOST address in 1.1.1.1/32
          - Class A
       Performing reverse DNS lookup ...\r\e[KDNS Hostname   = one.one.one.one
     EOS
-    assert_equal expected, shell_output("#{bin}subnetcalc 1.1.1.132")
+    assert_equal expected, shell_output("#{bin}/subnetcalc 1.1.1.1/32")
   end
 end

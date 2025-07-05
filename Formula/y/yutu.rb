@@ -1,11 +1,11 @@
 class Yutu < Formula
   desc "Fully functional CLI for YouTube"
-  homepage "https:github.comeat-pray-aiyutu"
-  url "https:github.comeat-pray-aiyutu.git",
+  homepage "https://github.com/eat-pray-ai/yutu"
+  url "https://github.com/eat-pray-ai/yutu.git",
       tag:      "v0.9.9",
       revision: "3bbf6c1312ec30663b6a45d23397ec06022d1c4e"
   license "MIT"
-  head "https:github.comeat-pray-aiyutu.git", branch: "main"
+  head "https://github.com/eat-pray-ai/yutu.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "4781bde139db6547ea67f1fc217e47ce4f947873bb8f89ea6b4e80ad3c74dd43"
@@ -19,7 +19,7 @@ class Yutu < Formula
   depends_on "go" => :build
 
   def install
-    mod = "github.comeat-pray-aiyutucmd"
+    mod = "github.com/eat-pray-ai/yutu/cmd"
     ldflags = %W[-w -s
                  -X #{mod}.Os=#{OS.mac? ? "darwin" : "linux"}
                  -X #{mod}.Arch=#{Hardware::CPU.arch}
@@ -30,9 +30,9 @@ class Yutu < Formula
   end
 
   test do
-    version_output = shell_output("#{bin}yutu version 2>&1")
+    version_output = shell_output("#{bin}/yutu version 2>&1")
     assert_match "yutu🐰 version v#{version}", version_output
-    auth_output = shell_output("#{bin}yutu auth 2>&1", 1)
+    auth_output = shell_output("#{bin}/yutu auth 2>&1", 1)
     assert_match "Please configure OAuth 2.0", auth_output
   end
 end

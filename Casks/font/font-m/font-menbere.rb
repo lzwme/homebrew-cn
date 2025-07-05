@@ -2,10 +2,10 @@ cask "font-menbere" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefontsrawmainoflmenbereMenbere%5Bwght%5D.ttf",
-      verified: "github.comgooglefonts"
+  url "https://github.com/google/fonts/raw/main/ofl/menbere/Menbere%5Bwght%5D.ttf",
+      verified: "github.com/google/fonts/"
   name "Menbere"
-  homepage "https:fonts.google.comspecimenMenbere"
+  homepage "https://fonts.google.com/specimen/Menbere"
 
   font "Menbere[wght].ttf"
 

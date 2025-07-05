@@ -1,7 +1,7 @@
 class TitanServer < Formula
   desc "Distributed graph database"
-  homepage "https:thinkaurelius.github.iotitan"
-  url "http:s3.thinkaurelius.comdownloadstitantitan-1.0.0-hadoop1.zip"
+  homepage "https://thinkaurelius.github.io/titan/"
+  url "http://s3.thinkaurelius.com/downloads/titan/titan-1.0.0-hadoop1.zip"
   version "1.0.0"
   sha256 "67538e231db5be75821b40dd026bafd0cd7451cdd7e225a2dc31e124471bb8ef"
   license "Apache-2.0"
@@ -25,8 +25,8 @@ class TitanServer < Formula
 
   # upstream is not responsive on the issues and no commits since 2015 dec
   # community has forked the project to janusgraph
-  # https:github.comthinkaureliustitanissues1393
-  # https:github.comthinkaureliustitanissues1392
+  # https://github.com/thinkaurelius/titan/issues/1393
+  # https://github.com/thinkaurelius/titan/issues/1392
   disable! date: "2025-01-01", because: :does_not_build
 
   on_linux do
@@ -35,12 +35,12 @@ class TitanServer < Formula
 
   def install
     libexec.install %w[bin conf data ext javadocs lib log scripts]
-    bin.install_symlink libexec"bintitan.sh" => "titan"
-    bin.install_symlink libexec"bingremlin.sh" => "titan-gremlin"
-    bin.install_symlink libexec"bingremlin-server.sh" => "titan-gremlin-server"
+    bin.install_symlink libexec/"bin/titan.sh" => "titan"
+    bin.install_symlink libexec/"bin/gremlin.sh" => "titan-gremlin"
+    bin.install_symlink libexec/"bin/gremlin-server.sh" => "titan-gremlin-server"
   end
 
   test do
-    assert_match("not found in the java process table", shell_output("#{bin}titan stop"))
+    assert_match("not found in the java process table", shell_output("#{bin}/titan stop"))
   end
 end

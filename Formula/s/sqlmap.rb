@@ -2,11 +2,11 @@ class Sqlmap < Formula
   include Language::Python::Shebang
 
   desc "Penetration testing for SQL injection and database servers"
-  homepage "https:sqlmap.org"
-  url "https:github.comsqlmapprojectsqlmaparchiverefstags1.9.6.tar.gz"
+  homepage "https://sqlmap.org"
+  url "https://ghfast.top/https://github.com/sqlmapproject/sqlmap/archive/refs/tags/1.9.6.tar.gz"
   sha256 "7cf60ca5364062ef7eab05a26fdeaf3b1457ea2200bf8198ed131ef7931c9bbf"
   license "GPL-2.0-or-later"
-  head "https:github.comsqlmapprojectsqlmap.git", branch: "master"
+  head "https://github.com/sqlmapproject/sqlmap.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "cee934d9313ff7f89ab02de21440813191410b82481bb1a475a793886d5eec88"
@@ -26,17 +26,17 @@ class Sqlmap < Formula
     libexec.install Dir["*"]
 
     files = [
-      libexec"libcoredicts.py",
-      libexec"libcoresettings.py",
-      libexec"librequestbasic.py",
-      libexec"thirdpartymagicmagic.py",
+      libexec/"lib/core/dicts.py",
+      libexec/"lib/core/settings.py",
+      libexec/"lib/request/basic.py",
+      libexec/"thirdparty/magic/magic.py",
     ]
-    inreplace files, "usrlocal", HOMEBREW_PREFIX
+    inreplace files, "/usr/local", HOMEBREW_PREFIX
 
     %w[sqlmap sqlmapapi].each do |cmd|
-      rewrite_shebang detected_python_shebang, libexec"#{cmd}.py"
-      bin.install_symlink libexec"#{cmd}.py"
-      bin.install_symlink bin"#{cmd}.py" => cmd
+      rewrite_shebang detected_python_shebang, libexec/"#{cmd}.py"
+      bin.install_symlink libexec/"#{cmd}.py"
+      bin.install_symlink bin/"#{cmd}.py" => cmd
     end
   end
 
@@ -48,8 +48,8 @@ class Sqlmap < Formula
     end
     pipe_output("sqlite3 school.sqlite", create, 0)
     select = "select name, age from students order by age asc;"
-    args = %W[--batch -d sqlite:school.sqlite --sql-query "#{select}"]
-    output = shell_output("#{bin}sqlmap #{args.join(" ")}")
+    args = %W[--batch -d sqlite://school.sqlite --sql-query "#{select}"]
+    output = shell_output("#{bin}/sqlmap #{args.join(" ")}")
     data.each_slice(2) { |n, a| assert_match "#{n},#{a}", output }
   end
 end

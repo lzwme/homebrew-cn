@@ -1,10 +1,10 @@
 class UutilsFindutils < Formula
   desc "Cross-platform Rust rewrite of the GNU findutils"
-  homepage "https:uutils.github.iofindutils"
-  url "https:github.comuutilsfindutilsarchiverefstags0.8.0.tar.gz"
+  homepage "https://uutils.github.io/findutils/"
+  url "https://ghfast.top/https://github.com/uutils/findutils/archive/refs/tags/0.8.0.tar.gz"
   sha256 "932f153d256f7a4cf40255a948689bf59a10f14c8804151817ab50fa1b46429a"
   license "MIT"
-  head "https:github.comuutilsfindutils.git", branch: "main"
+  head "https://github.com/uutils/findutils.git", branch: "main"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "c197c5ae51adde63a7d0a3770d89156032935597db27883e24d912043411bd9f"
@@ -33,9 +33,9 @@ class UutilsFindutils < Formula
     ENV["RUSTONIG_SYSTEM_LIBONIG"] = "1"
 
     system "cargo", "install", *std_cargo_args(root: libexec)
-    mv libexec"bin", libexec"uubin"
-    Dir.children(libexec"uubin").each do |cmd|
-      bin.install_symlink libexec"uubin"cmd => "u#{cmd}" unless unwanted_bin_link? cmd
+    mv libexec/"bin", libexec/"uubin"
+    Dir.children(libexec/"uubin").each do |cmd|
+      bin.install_symlink libexec/"uubin"/cmd => "u#{cmd}" unless unwanted_bin_link? cmd
     end
   end
 
@@ -44,23 +44,23 @@ class UutilsFindutils < Formula
       Commands also provided by macOS have been installed with the prefix "u".
       If you need to use these commands with their normal names, you
       can add a "uubin" directory to your PATH from your bashrc like:
-        PATH="#{opt_libexec}uubin:$PATH"
+        PATH="#{opt_libexec}/uubin:$PATH"
     EOS
   end
 
   test do
-    require "utilslinkage"
+    require "utils/linkage"
 
     touch "HOMEBREW"
-    assert_match "HOMEBREW", shell_output("#{bin}ufind .")
-    assert_match "HOMEBREW", shell_output("#{opt_libexec}uubinfind .")
+    assert_match "HOMEBREW", shell_output("#{bin}/ufind .")
+    assert_match "HOMEBREW", shell_output("#{opt_libexec}/uubin/find .")
 
     expected_linkage = {
-      libexec"uubinfind"  => [
-        Formula["oniguruma"].opt_libshared_library("libonig"),
+      libexec/"uubin/find"  => [
+        Formula["oniguruma"].opt_lib/shared_library("libonig"),
       ],
-      libexec"uubinxargs" => [
-        Formula["oniguruma"].opt_libshared_library("libonig"),
+      libexec/"uubin/xargs" => [
+        Formula["oniguruma"].opt_lib/shared_library("libonig"),
       ],
     }
     missing_linkage = []

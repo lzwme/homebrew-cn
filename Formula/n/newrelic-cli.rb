@@ -1,10 +1,10 @@
 class NewrelicCli < Formula
   desc "Command-line interface for New Relic"
-  homepage "https:github.comnewrelicnewrelic-cli"
-  url "https:github.comnewrelicnewrelic-cliarchiverefstagsv0.99.4.tar.gz"
+  homepage "https://github.com/newrelic/newrelic-cli"
+  url "https://ghfast.top/https://github.com/newrelic/newrelic-cli/archive/refs/tags/v0.99.4.tar.gz"
   sha256 "c9987ae25eebc4f2417ff8f8b34cfc1518528a148605e2bc17050a948a40b39a"
   license "Apache-2.0"
-  head "https:github.comnewrelicnewrelic-cli.git", branch: "main"
+  head "https://github.com/newrelic/newrelic-cli.git", branch: "main"
 
   livecheck do
     url :stable
@@ -26,16 +26,16 @@ class NewrelicCli < Formula
   def install
     ENV["PROJECT_VER"] = version
     system "make", "compile-only"
-    bin.install "bin#{OS.kernel_name.downcase}newrelic"
+    bin.install "bin/#{OS.kernel_name.downcase}/newrelic"
 
-    generate_completions_from_executable(bin"newrelic", "completion", "--shell")
+    generate_completions_from_executable(bin/"newrelic", "completion", "--shell")
   end
 
   test do
-    output = shell_output("#{bin}newrelic config list")
+    output = shell_output("#{bin}/newrelic config list")
 
     assert_match "loglevel", output
     assert_match "plugindir", output
-    assert_match version.to_s, shell_output("#{bin}newrelic version 2>&1")
+    assert_match version.to_s, shell_output("#{bin}/newrelic version 2>&1")
   end
 end

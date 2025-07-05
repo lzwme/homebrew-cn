@@ -1,7 +1,7 @@
 class Libesedb < Formula
   desc "Library and tools for Extensible Storage Engine (ESE) Database files"
-  homepage "https:github.comlibyallibesedb"
-  url "https:github.comlibyallibesedbreleasesdownload20240420libesedb-experimental-20240420.tar.gz"
+  homepage "https://github.com/libyal/libesedb"
+  url "https://ghfast.top/https://github.com/libyal/libesedb/releases/download/20240420/libesedb-experimental-20240420.tar.gz"
   sha256 "07250741dff8a1ea1f5e38c02f1b9a1ae5e9fa52d013401067338842883a5b9f"
   license "LGPL-3.0-or-later"
 
@@ -18,14 +18,14 @@ class Libesedb < Formula
   depends_on "pkgconf" => :test
 
   def install
-    system ".configure", *std_configure_args
+    system "./configure", *std_configure_args
     system "make", "install"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}esedbinfo -V")
+    assert_match version.to_s, shell_output("#{bin}/esedbinfo -V")
 
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include <libesedb.h>
       #include <stdio.h>
 
@@ -37,6 +37,6 @@ class Libesedb < Formula
 
     flags = shell_output("pkgconf --cflags --libs libesedb").chomp.split
     system ENV.cc, "test.c", "-o", "test", *flags
-    assert_match "libesedb version: #{version}", shell_output(".test")
+    assert_match "libesedb version: #{version}", shell_output("./test")
   end
 end

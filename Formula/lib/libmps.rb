@@ -1,10 +1,10 @@
 class Libmps < Formula
   desc "Memory Pool System"
-  homepage "https:www.ravenbrook.comprojectmps"
-  url "https:github.comRavenbrookmpsarchiverefstagsrelease-1.118.0.tar.gz"
+  homepage "https://www.ravenbrook.com/project/mps/"
+  url "https://ghfast.top/https://github.com/Ravenbrook/mps/archive/refs/tags/release-1.118.0.tar.gz"
   sha256 "58c1c8cd82ff8cd77cc7bee612b94cf60cf6a6edd8bd52121910b1a23344e9a9"
   license "BSD-2-Clause"
-  head "https:github.comRavenbrookmps.git", branch: "master"
+  head "https://github.com/Ravenbrook/mps.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -26,28 +26,28 @@ class Libmps < Formula
     if OS.mac?
       # macOS build process
       # for build native but not universal binary
-      # https:github.comRavenbrookmpsblobmastermanualbuild.txt
+      # https://github.com/Ravenbrook/mps/blob/master/manual/build.txt
       xcodebuild "-scheme", "mps",
                  "-configuration", "Release",
-                 "-project", "codemps.xcodeproj",
+                 "-project", "code/mps.xcodeproj",
                  "OTHER_CFLAGS=-Wno-error=unused-but-set-variable -Wno-unused-but-set-variable"
 
       # Install the static library
-      lib.install "codexcReleaselibmps.a"
+      lib.install "code/xc/Release/libmps.a"
 
       # Install header files
-      include.install Dir["codemps*.h"]
+      include.install Dir["code/mps*.h"]
 
     else
       ENV.deparallelize
-      system ".configure", "--prefix=#{prefix}"
+      system "./configure", "--prefix=#{prefix}"
       system "make"
       system "make", "install"
     end
   end
 
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include "mps.h"
       #include "mpscawl.h"
       #include "mpscamc.h"
@@ -60,6 +60,6 @@ class Libmps < Formula
       }
     C
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lmps", "-o", "test"
-    system ".test"
+    system "./test"
   end
 end

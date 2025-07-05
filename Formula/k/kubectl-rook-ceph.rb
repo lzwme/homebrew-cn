@@ -1,10 +1,10 @@
 class KubectlRookCeph < Formula
   desc "Rook plugin for Ceph management"
-  homepage "https:rook.io"
-  url "https:github.comrookkubectl-rook-cepharchiverefstagsv0.9.4.tar.gz"
+  homepage "https://rook.io/"
+  url "https://ghfast.top/https://github.com/rook/kubectl-rook-ceph/archive/refs/tags/v0.9.4.tar.gz"
   sha256 "178b12b7beb225243cdedc7bb43b7ae7b475c9ab365b23f4a785d5a4ff75042f"
   license "Apache-2.0"
-  head "https:github.comrookkubectl-rook-ceph.git", branch: "master"
+  head "https://github.com/rook/kubectl-rook-ceph.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "66846017ec19f2ad1b58b8124eb7a9ebe8a4974ae2e56258b28ab46d159630e7"
@@ -19,16 +19,16 @@ class KubectlRookCeph < Formula
 
   def install
     ldflags = "-s -w"
-    system "go", "build", *std_go_args(ldflags:, output: "#{bin}kubectl-rook_ceph"), ".cmd"
+    system "go", "build", *std_go_args(ldflags:, output: "#{bin}/kubectl-rook_ceph"), "./cmd"
   end
 
   test do
-    assert_match <<~EOS, shell_output("#{bin}kubectl-rook_ceph health 2>&1", 1)
+    assert_match <<~EOS, shell_output("#{bin}/kubectl-rook_ceph health 2>&1", 1)
       Error: invalid configuration: no configuration has been provided, \
       try setting KUBERNETES_MASTER environment variable
     EOS
 
-    output = shell_output("#{bin}kubectl-rook_ceph --help")
+    output = shell_output("#{bin}/kubectl-rook_ceph --help")
     assert_match("kubectl rook-ceph provides common management and troubleshooting tools for Ceph", output)
   end
 end

@@ -2,11 +2,11 @@ cask "opentoonz" do
   version "1.7.1"
   sha256 "b2849f4359499164ee610c17e1a79019f5a3474fb37620243e4bd8c8724fc136"
 
-  url "https:github.comopentoonzopentoonzreleasesdownloadv#{version}OpenToonz.pkg",
-      verified: "github.comopentoonzopentoonz"
+  url "https://ghfast.top/https://github.com/opentoonz/opentoonz/releases/download/v#{version}/OpenToonz.pkg",
+      verified: "github.com/opentoonz/opentoonz/"
   name "OpenToonz"
   desc "Open-source full-featured 2D animation creation software"
-  homepage "https:opentoonz.github.ioeindex.html"
+  homepage "https://opentoonz.github.io/e/index.html"
 
   livecheck do
     url :url
@@ -20,7 +20,7 @@ cask "opentoonz" do
   uninstall pkgutil: "io.github.opentoonz"
 
   zap trash: [
-    "~LibraryCachesOpenToonz",
-    "~LibrarySaved Application Stateio.github.opentoonz.OpenToonz.savedState",
+    "~/Library/Caches/OpenToonz",
+    "~/Library/Saved Application State/io.github.opentoonz.OpenToonz.savedState",
   ]
 end

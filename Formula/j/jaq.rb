@@ -1,14 +1,14 @@
 class Jaq < Formula
   desc "JQ clone focussed on correctness, speed, and simplicity"
-  homepage "https:github.com01mf02jaq"
-  url "https:github.com01mf02jaqarchiverefstagsv2.2.0.tar.gz"
+  homepage "https://github.com/01mf02/jaq"
+  url "https://ghfast.top/https://github.com/01mf02/jaq/archive/refs/tags/v2.2.0.tar.gz"
   sha256 "eee6a4d608c31c12c82644f1cdb69cfed55bb079806ec939e4de486bb252c631"
   license "MIT"
-  head "https:github.com01mf02jaq.git", branch: "main"
+  head "https://github.com/01mf02/jaq.git", branch: "main"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -31,7 +31,7 @@ class Jaq < Formula
   end
 
   test do
-    assert_match "1", shell_output("echo '{\"a\": 1, \"b\": 2}' | #{bin}jaq '.a'")
-    assert_match "2.5", shell_output("echo '1 2 3 4' | #{bin}jaq -s 'add  length'")
+    assert_match "1", shell_output("echo '{\"a\": 1, \"b\": 2}' | #{bin}/jaq '.a'")
+    assert_match "2.5", shell_output("echo '1 2 3 4' | #{bin}/jaq -s 'add / length'")
   end
 end

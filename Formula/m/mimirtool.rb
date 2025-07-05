@@ -1,18 +1,18 @@
 class Mimirtool < Formula
   desc "CLI for interacting with Grafana Mimir"
-  homepage "https:grafana.comdocsmimirlatestoperators-guidetoolsmimirtool"
-  url "https:github.comgrafanamimir.git",
+  homepage "https://grafana.com/docs/mimir/latest/operators-guide/tools/mimirtool/"
+  url "https://github.com/grafana/mimir.git",
         tag:      "mimir-2.16.1",
         revision: "876d470fb15f9504a4016a0b60aa2ad4d1ba9a0a"
   license "AGPL-3.0-only"
-  head "https:github.comgrafanamimir.git", branch: "main"
+  head "https://github.com/grafana/mimir.git", branch: "main"
 
   # Upstream appears to use GitHub releases to indicate that a version is
   # released (and some tagged versions don't end up as a release), so it's
   # necessary to check release versions instead of tags.
   livecheck do
     url :stable
-    regex(^mimir[._-]v?(\d+(?:\.\d+)+)$i)
+    regex(/^mimir[._-]v?(\d+(?:\.\d+)+)$/i)
     strategy :github_latest
   end
 
@@ -29,13 +29,13 @@ class Mimirtool < Formula
   depends_on "go" => :build
 
   def install
-    system "make", "BUILD_IN_CONTAINER=false", "GENERATE_FILES=false", "cmdmimirtoolmimirtool"
-    bin.install "cmdmimirtoolmimirtool"
+    system "make", "BUILD_IN_CONTAINER=false", "GENERATE_FILES=false", "cmd/mimirtool/mimirtool"
+    bin.install "cmd/mimirtool/mimirtool"
   end
 
   test do
     # Check that the version number was correctly embedded in the binary
-    assert_match version.to_s, shell_output("#{bin}mimirtool version")
+    assert_match version.to_s, shell_output("#{bin}/mimirtool version")
 
     # Check that the binary runs as expected by testing the 'rules check' command
     test_rule = <<~YAML
@@ -48,9 +48,9 @@ class Mimirtool < Formula
               expr: sum by (job) (http_inprogress_requests)
     YAML
 
-    (testpath"rule.yaml").write(test_rule)
+    (testpath/"rule.yaml").write(test_rule)
 
-    output = shell_output("#{bin}mimirtool rules check #{testpath  "rule.yaml"} 2>&1", 1)
+    output = shell_output("#{bin}/mimirtool rules check #{testpath / "rule.yaml"} 2>&1", 1)
     expected = "recording rule name does not match level:metric:operation format, must contain at least one colon"
     assert_match expected, output
   end

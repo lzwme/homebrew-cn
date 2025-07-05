@@ -1,7 +1,7 @@
 class Pgdbf < Formula
-  desc "Converter of XBaseFoxPro tables to PostgreSQL"
-  homepage "https:github.comkstrauserpgdbf"
-  url "https:downloads.sourceforge.netprojectpgdbfpgdbf0.6.2pgdbf-0.6.2.tar.xz"
+  desc "Converter of XBase/FoxPro tables to PostgreSQL"
+  homepage "https://github.com/kstrauser/pgdbf"
+  url "https://downloads.sourceforge.net/project/pgdbf/pgdbf/0.6.2/pgdbf-0.6.2.tar.xz"
   sha256 "e46f75e9ac5f500bd12c4542b215ea09f4ebee638d41dcfd642be8e9769aa324"
   license "GPL-3.0-or-later"
 
@@ -31,7 +31,7 @@ class Pgdbf < Formula
     # Help old config scripts identify arm64 linux
     args << "--build=aarch64-unknown-linux-gnu" if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
 
-    system ".configure", *args, *std_configure_args
+    system "./configure", *args, *std_configure_args
     system "make", "install"
   end
 end

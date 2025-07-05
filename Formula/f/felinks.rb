@@ -1,10 +1,10 @@
 class Felinks < Formula
   desc "Text mode browser and Gemini, NNTP, FTP, Gopher, Finger, and BitTorrent client"
-  homepage "https:github.comrkd77elinks"
-  url "https:github.comrkd77elinksreleasesdownloadv0.18.0elinks-0.18.0.tar.xz"
+  homepage "https://github.com/rkd77/elinks"
+  url "https://ghfast.top/https://github.com/rkd77/elinks/releases/download/v0.18.0/elinks-0.18.0.tar.xz"
   sha256 "e56ef15996a1ca130789293ee6d49cbecf175c06266acfa676fa6edb271a1173"
   license "GPL-2.0-only"
-  head "https:github.comrkd77elinks.git", branch: "master"
+  head "https://github.com/rkd77/elinks.git", branch: "master"
 
   bottle do
     sha256 cellar: :any, arm64_sequoia: "529eb6faff1708b4e77d43909e658745d00b7eeacb37fb3db72e8b2bc7d558f9"
@@ -66,11 +66,11 @@ class Felinks < Formula
   end
 
   test do
-    (testpath"test.html").write <<~HTML
+    (testpath/"test.html").write <<~HTML
       <!DOCTYPE html>
-      <title>Hello World!<title>
+      <title>Hello World!</title>
       Abracadabra
     HTML
-    assert_match "Abracadabra", shell_output("#{bin}elinks -dump test.html").chomp
+    assert_match "Abracadabra", shell_output("#{bin}/elinks -dump test.html").chomp
   end
 end

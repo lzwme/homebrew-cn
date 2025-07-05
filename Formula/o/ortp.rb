@@ -1,16 +1,16 @@
 class Ortp < Formula
   desc "Real-time transport protocol (RTP, RFC3550) library"
-  homepage "https:linphone.org"
+  homepage "https://linphone.org/"
   license "GPL-3.0-or-later"
 
   stable do
-    url "https:gitlab.linphone.orgBCpublicortp-archive5.4.24ortp-5.4.24.tar.bz2"
+    url "https://gitlab.linphone.org/BC/public/ortp/-/archive/5.4.24/ortp-5.4.24.tar.bz2"
     sha256 "7976a6dbb63744db0eead97d8c3e99c19cbba137a3df0881e08ab39d91c34e50"
 
     # bctoolbox appears to follow ortp's version. This can be verified at the GitHub mirror:
-    # https:github.comBelledonneCommunicationsbctoolbox
+    # https://github.com/BelledonneCommunications/bctoolbox
     resource "bctoolbox" do
-      url "https:gitlab.linphone.orgBCpublicbctoolbox-archive5.4.24bctoolbox-5.4.24.tar.bz2"
+      url "https://gitlab.linphone.org/BC/public/bctoolbox/-/archive/5.4.24/bctoolbox-5.4.24.tar.bz2"
       sha256 "8595738d22f2f41158cfc154c9951ae8c17affe109b5c4e556cac8fd56744598"
 
       livecheck do
@@ -34,10 +34,10 @@ class Ortp < Formula
   end
 
   head do
-    url "https:gitlab.linphone.orgBCpublicortp.git", branch: "master"
+    url "https://gitlab.linphone.org/BC/public/ortp.git", branch: "master"
 
     resource "bctoolbox" do
-      url "https:gitlab.linphone.orgBCpublicbctoolbox.git", branch: "master"
+      url "https://gitlab.linphone.org/BC/public/bctoolbox.git", branch: "master"
     end
   end
 
@@ -60,9 +60,9 @@ class Ortp < Formula
       system "cmake", "--install", "build"
     end
 
-    ENV.prepend_path "PKG_CONFIG_PATH", libexec"libpkgconfig"
-    ENV.append "LDFLAGS", "-Wl,-rpath,#{libexec}lib" if OS.linux?
-    ENV.append_to_cflags "-I#{libexec}include"
+    ENV.prepend_path "PKG_CONFIG_PATH", libexec/"lib/pkgconfig"
+    ENV.append "LDFLAGS", "-Wl,-rpath,#{libexec}/lib" if OS.linux?
+    ENV.append_to_cflags "-I#{libexec}/include"
 
     args = %W[
       -DCMAKE_PREFIX_PATH=#{libexec}
@@ -70,7 +70,7 @@ class Ortp < Formula
       -DENABLE_DOC=NO
       -DENABLE_UNIT_TESTS=NO
     ]
-    args << "-DCMAKE_INSTALL_RPATH=#{libexec}Frameworks" if OS.mac?
+    args << "-DCMAKE_INSTALL_RPATH=#{libexec}/Frameworks" if OS.mac?
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
@@ -78,10 +78,10 @@ class Ortp < Formula
   end
 
   test do
-    (testpath"test.c").write <<~C
-      #include "ortplogging.h"
-      #include "ortprtpsession.h"
-      #include "ortpsessionset.h"
+    (testpath/"test.c").write <<~C
+      #include "ortp/logging.h"
+      #include "ortp/rtpsession.h"
+      #include "ortp/sessionset.h"
       int main()
       {
         ORTP_PUBLIC void ortp_init(void);
@@ -89,16 +89,16 @@ class Ortp < Formula
       }
     C
     linker_flags = OS.mac? ? %W[-F#{frameworks} -framework ortp] : %W[-L#{lib} -lortp]
-    system ENV.cc, "test.c", "-o", "test", "-I#{include}", "-I#{libexec}include", *linker_flags
-    system ".test"
+    system ENV.cc, "test.c", "-o", "test", "-I#{include}", "-I#{libexec}/include", *linker_flags
+    system "./test"
   end
 end
 
 __END__
-diff --git asrccryptombedtls.cc bsrccryptombedtls.cc
+diff --git a/src/crypto/mbedtls.cc b/src/crypto/mbedtls.cc
 index cf146fd..8886b2d 100644
---- asrccryptombedtls.cc
-+++ bsrccryptombedtls.cc
+--- a/src/crypto/mbedtls.cc
++++ b/src/crypto/mbedtls.cc
 @@ -80,8 +80,6 @@ public:
  
  	std::unique_ptr<RNG> sRNG;
@@ -109,7 +109,7 @@ index cf146fd..8886b2d 100644
  			bctbx_error("MbedTLS PSA init fail");
  		}
 @@ -92,7 +90,6 @@ public:
- 		 before destroying mbedtls internal context, destroy the static RNG
+ 		// before destroying mbedtls internal context, destroy the static RNG
  		sRNG = nullptr;
  		mbedtls_psa_crypto_free();
 -		mbedtls_threading_free_alt();

@@ -1,10 +1,10 @@
 class PolicyEngine < Formula
   desc "Unified Policy Engine"
-  homepage "https:github.comsnykpolicy-engine"
-  url "https:github.comsnykpolicy-enginearchiverefstagsv1.0.0.tar.gz"
+  homepage "https://github.com/snyk/policy-engine"
+  url "https://ghfast.top/https://github.com/snyk/policy-engine/archive/refs/tags/v1.0.0.tar.gz"
   sha256 "e188113c2d3c25727943371153546ca818990b6125751b0f4f78171da847063b"
   license "Apache-2.0"
-  head "https:github.comsnykpolicy-engine.git", branch: "main"
+  head "https://github.com/snyk/policy-engine.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "444f466414228ead13c746e6fc1cd7c0bd853d0d8ae89bbf0828332e05eb0e6c"
@@ -18,16 +18,16 @@ class PolicyEngine < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = "-s -w -X github.comsnykpolicy-enginepkgversion.Version=#{version}"
+    ldflags = "-s -w -X github.com/snyk/policy-engine/pkg/version.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:)
 
-    generate_completions_from_executable(bin"policy-engine", "completion")
+    generate_completions_from_executable(bin/"policy-engine", "completion")
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}policy-engine version")
+    assert_match version.to_s, shell_output("#{bin}/policy-engine version")
 
-    (testpath"infratest.tf").write <<~HCL
+    (testpath/"infra/test.tf").write <<~HCL
       resource "aws_s3_bucket" "foo-bucket" {
         region        = "us-east-1"
         bucket        = "test"
@@ -40,6 +40,6 @@ class PolicyEngine < Formula
       }
     HCL
 
-    assert_match "\"rule_results\": []", shell_output(bin"policy-engine run infra")
+    assert_match "\"rule_results\": []", shell_output(bin/"policy-engine run infra")
   end
 end

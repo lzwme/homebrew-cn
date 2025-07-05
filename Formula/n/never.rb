@@ -1,10 +1,10 @@
 class Never < Formula
   desc "Statically typed, embedded functional programming language"
-  homepage "https:never-lang.readthedocs.ioenlatest"
-  url "https:github.comnever-langneverarchiverefstagsv2.3.9.tar.gz"
+  homepage "https://never-lang.readthedocs.io/en/latest/"
+  url "https://ghfast.top/https://github.com/never-lang/never/archive/refs/tags/v2.3.9.tar.gz"
   sha256 "9ca3ea42738570f128708404e2f7aad35ef2b8b4b178d64508430c675713e41f"
   license "MIT"
-  head "https:github.comnever-langnever.git", branch: "master"
+  head "https://github.com/never-lang/never.git", branch: "master"
 
   livecheck do
     url :stable
@@ -34,26 +34,26 @@ class Never < Formula
   uses_from_macos "libffi"
 
   def install
-    ENV.append_to_cflags "-I#{MacOS.sdk_path_if_needed}usrincludeffi" if OS.mac?
+    ENV.append_to_cflags "-I#{MacOS.sdk_path_if_needed}/usr/include/ffi" if OS.mac?
 
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"
-    bin.install "buildnever"
-    lib.install "buildlibnev.a"
+    bin.install "build/never"
+    lib.install "build/libnev.a"
     prefix.install "include"
   end
 
   test do
-    (testpath"hello.nev").write <<~EOS
+    (testpath/"hello.nev").write <<~EOS
       func main() -> int
       {
         prints("Hello World!\\n");
         0
       }
     EOS
-    assert_match "Hello World!", shell_output("#{bin}never -f hello.nev")
+    assert_match "Hello World!", shell_output("#{bin}/never -f hello.nev")
 
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include "object.h"
       void test_one()
       {
@@ -67,6 +67,6 @@ class Never < Formula
       }
     C
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lnev", "-o", "test"
-    system ".test"
+    system "./test"
   end
 end

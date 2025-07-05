@@ -1,10 +1,10 @@
 class Znapzend < Formula
   desc "ZFS backup with remote capabilities and mbuffer integration"
-  homepage "https:www.znapzend.org"
-  url "https:github.comoetikerznapzendreleasesdownloadv0.23.2znapzend-0.23.2.tar.gz"
+  homepage "https://www.znapzend.org/"
+  url "https://ghfast.top/https://github.com/oetiker/znapzend/releases/download/v0.23.2/znapzend-0.23.2.tar.gz"
   sha256 "69928caacde7468e5154d81197e257cd0c85ee3eedb3192be67fdfe486defefe"
   license "GPL-3.0-or-later"
-  head "https:github.comoetikerznapzend.git", branch: "master"
+  head "https://github.com/oetiker/znapzend.git", branch: "master"
 
   # The `stable` URL uses a download from the GitHub release, so the release
   # needs to exist before the formula can be version bumped. It's more
@@ -29,39 +29,39 @@ class Znapzend < Formula
   uses_from_macos "perl", since: :big_sur
 
   def install
-    system ".configure", "--disable-silent-rules",
+    system "./configure", "--disable-silent-rules",
                           "--prefix=#{prefix}"
     system "make", "install"
   end
 
   def post_install
-    (var"logznapzend").mkpath
-    (var"runznapzend").mkpath
+    (var/"log/znapzend").mkpath
+    (var/"run/znapzend").mkpath
   end
 
   service do
-    run [opt_bin"znapzend", "--connectTimeout=120", "--logto=#{var}logznapzendznapzend.log"]
+    run [opt_bin/"znapzend", "--connectTimeout=120", "--logto=#{var}/log/znapzend/znapzend.log"]
     environment_variables PATH: std_service_path_env
     keep_alive true
     require_root true
-    error_log_path var"logznapzend.err.log"
-    log_path var"logznapzend.out.log"
-    working_dir var"runznapzend"
+    error_log_path var/"log/znapzend.err.log"
+    log_path var/"log/znapzend.out.log"
+    working_dir var/"run/znapzend"
   end
 
   test do
-    fake_zfs = testpath"zfs"
+    fake_zfs = testpath/"zfs"
     fake_zfs.write <<~SH
-      #!binsh
+      #!/bin/sh
       for word in "$@"; do echo $word; done >> znapzendzetup_said.txt
       exit 0
     SH
     chmod 0755, fake_zfs
     ENV.prepend_path "PATH", testpath
 
-    system bin"znapzendzetup", "list"
+    system bin/"znapzendzetup", "list"
 
-    assert_equal <<~EOS, (testpath"znapzendzetup_said.txt").read
+    assert_equal <<~EOS, (testpath/"znapzendzetup_said.txt").read
       list
       -H
       -o

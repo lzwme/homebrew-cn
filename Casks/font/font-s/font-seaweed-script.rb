@@ -2,10 +2,10 @@ cask "font-seaweed-script" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefontsrawmainoflseaweedscriptSeaweedScript-Regular.ttf",
-      verified: "github.comgooglefonts"
+  url "https://github.com/google/fonts/raw/main/ofl/seaweedscript/SeaweedScript-Regular.ttf",
+      verified: "github.com/google/fonts/"
   name "Seaweed Script"
-  homepage "https:fonts.google.comspecimenSeaweed+Script"
+  homepage "https://fonts.google.com/specimen/Seaweed+Script"
 
   font "SeaweedScript-Regular.ttf"
 

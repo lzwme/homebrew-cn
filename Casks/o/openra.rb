@@ -2,15 +2,15 @@ cask "openra" do
   version "20250330"
   sha256 "2a78cd58603fd06ed6006ae5916065455a7ac7c1290dba1d06c0292bad4238ab"
 
-  url "https:github.comOpenRAOpenRAreleasesdownloadrelease-#{version}OpenRA-release-#{version}.dmg",
-      verified: "github.comOpenRAOpenRA"
+  url "https://ghfast.top/https://github.com/OpenRA/OpenRA/releases/download/release-#{version}/OpenRA-release-#{version}.dmg",
+      verified: "github.com/OpenRA/OpenRA/"
   name "OpenRA"
   desc "Real-time strategy game engine for Westwood games"
-  homepage "https:www.openra.net"
+  homepage "https://www.openra.net/"
 
   livecheck do
     url :url
-    regex(^release[._-]v?(\d+(?:[.-]\d+)*)$i)
+    regex(/^release[._-]v?(\d+(?:[.-]\d+)*)$/i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -22,9 +22,9 @@ cask "openra" do
   app "OpenRA - Tiberian Dawn.app"
 
   zap trash: [
-    "~LibraryApplication SupportOpenRA",
-    "~LibrarySaved Application Statenet.openra.mod.cnc.savedState",
-    "~LibrarySaved Application Statenet.openra.mod.d2k.savedState",
-    "~LibrarySaved Application Statenet.openra.mod.ra.savedState",
+    "~/Library/Application Support/OpenRA",
+    "~/Library/Saved Application State/net.openra.mod.cnc.savedState",
+    "~/Library/Saved Application State/net.openra.mod.d2k.savedState",
+    "~/Library/Saved Application State/net.openra.mod.ra.savedState",
   ]
 end

@@ -1,10 +1,10 @@
 class HickoryDns < Formula
   desc "Rust based DNS client, server, and resolver"
-  homepage "https:github.comhickory-dnshickory-dns"
-  url "https:github.comhickory-dnshickory-dnsarchiverefstagsv0.25.2.tar.gz"
+  homepage "https://github.com/hickory-dns/hickory-dns"
+  url "https://ghfast.top/https://github.com/hickory-dns/hickory-dns/archive/refs/tags/v0.25.2.tar.gz"
   sha256 "b4f4b3ff1cbefd1023c6e2b96b3db237e051e4b6c3596cafb310da4901212e58"
   license any_of: ["Apache-2.0", "MIT"]
-  head "https:github.comhickory-dnshickory-dns.git", branch: "main"
+  head "https://github.com/hickory-dns/hickory-dns.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "f8f589615fd4ae0e19b330aebf7c932480fd246e2e890e263cb091c9deb3229c"
@@ -24,24 +24,24 @@ class HickoryDns < Formula
 
   def install
     system "cargo", "install", *std_cargo_args(path: "bin")
-    pkgshare.install "teststest-data"
+    pkgshare.install "tests/test-data"
   end
 
   test do
     test_port = free_port
-    cp_r pkgshare"test-data", testpath
-    test_config_path = testpath"test-datatest_configs"
-    example_config = test_config_path"example.toml"
+    cp_r pkgshare/"test-data", testpath
+    test_config_path = testpath/"test-data/test_configs"
+    example_config = test_config_path/"example.toml"
 
     pid = fork do
-      exec bin"hickory-dns", "-c", example_config, "-z", test_config_path, "-p", test_port.to_s
+      exec bin/"hickory-dns", "-c", example_config, "-z", test_config_path, "-p", test_port.to_s
     end
     sleep 2
     output = shell_output("dig @127.0.0.1 -p #{test_port} www.example.com")
     expected = "www.example.com.	86400	IN	A	127.0.0.1"
     assert_match expected, output
 
-    assert_match "Hickory DNS named server #{version}", shell_output("#{bin}hickory-dns --version")
+    assert_match "Hickory DNS named server #{version}", shell_output("#{bin}/hickory-dns --version")
   ensure
     Process.kill "SIGTERM", pid
     Process.wait pid

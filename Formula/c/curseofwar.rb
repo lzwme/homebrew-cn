@@ -1,10 +1,10 @@
 class Curseofwar < Formula
   desc "Fast-paced action strategy game"
-  homepage "https:a-nikolaev.github.iocurseofwar"
-  url "https:github.coma-nikolaevcurseofwararchiverefstagsv1.3.0.tar.gz"
+  homepage "https://a-nikolaev.github.io/curseofwar/"
+  url "https://ghfast.top/https://github.com/a-nikolaev/curseofwar/archive/refs/tags/v1.3.0.tar.gz"
   sha256 "2a90204d95a9f29a0e5923f43e65188209dc8be9d9eb93576404e3f79b8a652b"
   license "GPL-3.0-or-later"
-  head "https:github.coma-nikolaevcurseofwar.git", branch: "master"
+  head "https://github.com/a-nikolaev/curseofwar.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -34,6 +34,6 @@ class Curseofwar < Formula
   end
 
   test do
-    assert_equal version.to_s, shell_output("#{bin}curseofwar -v", 1).chomp
+    assert_equal version.to_s, shell_output("#{bin}/curseofwar -v", 1).chomp
   end
 end

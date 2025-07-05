@@ -1,14 +1,14 @@
 class IpinfoCli < Formula
   desc "Official CLI for the IPinfo IP Address API"
-  homepage "https:ipinfo.io"
-  url "https:github.comipinfocliarchiverefstagsipinfo-3.3.1.tar.gz"
+  homepage "https://ipinfo.io/"
+  url "https://ghfast.top/https://github.com/ipinfo/cli/archive/refs/tags/ipinfo-3.3.1.tar.gz"
   sha256 "b3acdfdfdebe64b34c7a1aa80de25fd7178a51105e588ad0d205870ca9d15cfb"
   license "Apache-2.0"
-  head "https:github.comipinfocli.git", branch: "master"
+  head "https://github.com/ipinfo/cli.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(^ipinfo[._-]v?(\d+(?:\.\d+)+)$i)
+    regex(/^ipinfo[._-]v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -27,13 +27,13 @@ class IpinfoCli < Formula
   conflicts_with "ipinfo", because: "ipinfo and ipinfo-cli install the same binaries"
 
   def install
-    system ".ipinfobuild.sh"
-    bin.install "buildipinfo"
-    generate_completions_from_executable(bin"ipinfo", "completion")
+    system "./ipinfo/build.sh"
+    bin.install "build/ipinfo"
+    generate_completions_from_executable(bin/"ipinfo", "completion")
   end
 
   test do
-    assert_equal version.to_s, shell_output("#{bin}ipinfo version").chomp
-    assert_equal "1.1.1.0\n1.1.1.1\n1.1.1.2\n1.1.1.3\n", `#{bin}ipinfo prips 1.1.1.130`
+    assert_equal version.to_s, shell_output("#{bin}/ipinfo version").chomp
+    assert_equal "1.1.1.0\n1.1.1.1\n1.1.1.2\n1.1.1.3\n", `#{bin}/ipinfo prips 1.1.1.1/30`
   end
 end

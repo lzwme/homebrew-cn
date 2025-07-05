@@ -1,7 +1,7 @@
 class C4core < Formula
   desc "C++ utilities"
-  homepage "https:github.combiojppmc4core"
-  url "https:github.combiojppmc4corereleasesdownloadv0.2.6c4core-0.2.6-src.tgz"
+  homepage "https://github.com/biojppm/c4core"
+  url "https://ghfast.top/https://github.com/biojppm/c4core/releases/download/v0.2.6/c4core-0.2.6-src.tgz"
   sha256 "203a8dbd156b1b5062959627b7757f8953d03ab05a992ecc471fcefe7274194b"
   license all_of: ["MIT", "BSL-1.0"]
 
@@ -17,7 +17,7 @@ class C4core < Formula
 
   depends_on "cmake" => [:build, :test]
 
-  conflicts_with "rapidyaml", because: "both install `c4core` files `includec4`"
+  conflicts_with "rapidyaml", because: "both install `c4core` files `include/c4`"
 
   def install
     system "cmake", "-S", ".", "-B", "build", "-DBUILD_SHARED_LIBS=ON", *std_cmake_args
@@ -26,7 +26,7 @@ class C4core < Formula
   end
 
   test do
-    (testpath"CMakeLists.txt").write <<~CMAKE
+    (testpath/"CMakeLists.txt").write <<~CMAKE
       cmake_minimum_required(VERSION 3.5)
       project(c4core_test)
 
@@ -36,22 +36,22 @@ class C4core < Formula
       target_link_libraries(c4core_test c4core::c4core)
     CMAKE
 
-    (testpath"test.cpp").write <<~CPP
-      #include "c4charconv.hpp"  header file for character conversion utilities
-      #include "c4format.hpp"    header file for formatting utilities
+    (testpath/"test.cpp").write <<~CPP
+      #include "c4/charconv.hpp" // header file for character conversion utilities
+      #include "c4/format.hpp"   // header file for formatting utilities
       #include <iostream>
       #include <string>
 
       int main() {
-           using c4core to do integer to string conversion
+          // using c4core to do integer to string conversion
           int number = 42;
           char buf[64];
           c4::substr buf_sub(buf, sizeof(buf));
           size_t num_chars = c4::itoa(buf_sub, number);
-          buf[num_chars] = '\0';  Ensuring the buffer is null-terminated
+          buf[num_chars] = '\0'; // Ensuring the buffer is null-terminated
           std::cout << "The number is: " << buf << std::endl;
 
-           For formatted output, first format into a buffer, then create a std::string from it
+          // For formatted output, first format into a buffer, then create a std::string from it
           char format_buf[64];
           snprintf(format_buf, sizeof(format_buf), "Formatted number: %d", number);
           std::string formatted_string = format_buf;
@@ -63,7 +63,7 @@ class C4core < Formula
 
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"
-    assert_equal <<~EOS, shell_output(".buildc4core_test")
+    assert_equal <<~EOS, shell_output("./build/c4core_test")
       The number is: 42
       Formatted number: 42
     EOS

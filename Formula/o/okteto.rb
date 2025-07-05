@@ -1,10 +1,10 @@
 class Okteto < Formula
   desc "Build better apps by developing and testing code directly in Kubernetes"
-  homepage "https:okteto.com"
-  url "https:github.comoktetooktetoarchiverefstags3.9.0.tar.gz"
+  homepage "https://okteto.com"
+  url "https://ghfast.top/https://github.com/okteto/okteto/archive/refs/tags/3.9.0.tar.gz"
   sha256 "b8baa40cb4dea271dd146a31a9b0fdedc40bc74b6f89521fdace48585da3e687"
   license "Apache-2.0"
-  head "https:github.comoktetookteto.git", branch: "master"
+  head "https://github.com/okteto/okteto.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "d3fc421977d94e90bb68fbce70aa98224b2ccf9d90441a7c1a3a871b78d6709d"
@@ -19,16 +19,16 @@ class Okteto < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = "-s -w -X github.comoktetooktetopkgconfig.VersionString=#{version}"
+    ldflags = "-s -w -X github.com/okteto/okteto/pkg/config.VersionString=#{version}"
     tags = "osusergo netgo static_build"
     system "go", "build", *std_go_args(ldflags:, tags:)
 
-    generate_completions_from_executable(bin"okteto", "completion")
+    generate_completions_from_executable(bin/"okteto", "completion")
   end
 
   test do
-    assert_match "okteto version #{version}", shell_output("#{bin}okteto version")
+    assert_match "okteto version #{version}", shell_output("#{bin}/okteto version")
 
-    assert_match "Your context is not set", shell_output("#{bin}okteto context list 2>&1", 1)
+    assert_match "Your context is not set", shell_output("#{bin}/okteto context list 2>&1", 1)
   end
 end

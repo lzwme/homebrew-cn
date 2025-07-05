@@ -1,10 +1,10 @@
 class Neosync < Formula
   desc "CLI for interfacing with Neosync"
-  homepage "https:www.neosync.dev"
-  url "https:github.comnucleuscloudneosyncarchiverefstagsv0.5.40.tar.gz"
+  homepage "https://www.neosync.dev/"
+  url "https://ghfast.top/https://github.com/nucleuscloud/neosync/archive/refs/tags/v0.5.40.tar.gz"
   sha256 "3c6ed6363e7822c22e584f611516f9117d194822cc0bd30352a786dfbd96bc4e"
   license "MIT"
-  head "https:github.comnucleuscloudneosync.git", branch: "main"
+  head "https://github.com/nucleuscloud/neosync.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "eab17fcb4cfb26602f49bbc2eee778c73530074431a51f57c9b8216077466413"
@@ -20,19 +20,19 @@ class Neosync < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.comnucleuscloudneosynccliinternalversion.gitVersion=#{version}
-      -X github.comnucleuscloudneosynccliinternalversion.gitCommit=#{tap.user}
-      -X github.comnucleuscloudneosynccliinternalversion.buildDate=#{time.iso8601}
+      -X github.com/nucleuscloud/neosync/cli/internal/version.gitVersion=#{version}
+      -X github.com/nucleuscloud/neosync/cli/internal/version.gitCommit=#{tap.user}
+      -X github.com/nucleuscloud/neosync/cli/internal/version.buildDate=#{time.iso8601}
     ]
-    system "go", "build", *std_go_args(ldflags:), ".clicmdneosync"
+    system "go", "build", *std_go_args(ldflags:), "./cli/cmd/neosync"
 
-    generate_completions_from_executable(bin"neosync", "completion")
+    generate_completions_from_executable(bin/"neosync", "completion")
   end
 
   test do
-    output = shell_output("#{bin}neosync connections list 2>&1", 1)
+    output = shell_output("#{bin}/neosync connections list 2>&1", 1)
     assert_match "connection refused", output
 
-    assert_match version.to_s, shell_output("#{bin}neosync --version")
+    assert_match version.to_s, shell_output("#{bin}/neosync --version")
   end
 end

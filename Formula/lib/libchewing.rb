@@ -1,7 +1,7 @@
 class Libchewing < Formula
   desc "Intelligent phonetic input method library"
-  homepage "https:chewing.im"
-  url "https:github.comchewinglibchewingreleasesdownloadv0.9.1libchewing-0.9.1.tar.zst"
+  homepage "https://chewing.im/"
+  url "https://ghfast.top/https://github.com/chewing/libchewing/releases/download/v0.9.1/libchewing-0.9.1.tar.zst"
   sha256 "e98b76c306552148b7d85f0e596860751d9eef4bc8f2dfc053177b14f421c31f"
   license "LGPL-2.1-only"
 
@@ -32,9 +32,9 @@ class Libchewing < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~CPP
+    (testpath/"test.cpp").write <<~CPP
       #include <stdlib.h>
-      #include <chewingchewing.h>
+      #include <chewing/chewing.h>
       int main()
       {
           ChewingContext *ctx = chewing_new();
@@ -52,6 +52,6 @@ class Libchewing < Formula
       }
     CPP
     system ENV.cc, "test.cpp", "-L#{lib}", "-lchewing", "-o", "test"
-    system ".test"
+    system "./test"
   end
 end

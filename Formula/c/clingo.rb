@@ -1,7 +1,7 @@
 class Clingo < Formula
   desc "ASP system to ground and solve logic programs"
-  homepage "https:potassco.orgclingo"
-  url "https:github.compotasscoclingoarchiverefstagsv5.8.0.tar.gz"
+  homepage "https://potassco.org/clingo/"
+  url "https://ghfast.top/https://github.com/potassco/clingo/archive/refs/tags/v5.8.0.tar.gz"
   sha256 "4ddd5975e79d7a0f8d126039f1b923a371b1a43e0e0687e1537a37d6d6d5cc7c"
   license "MIT"
 
@@ -21,7 +21,7 @@ class Clingo < Formula
   end
 
   head do
-    url "https:github.compotasscoclingo.git", branch: "master"
+    url "https://github.com/potassco/clingo.git", branch: "master"
     depends_on "bison" => :build
     depends_on "re2c" => :build
   end
@@ -33,12 +33,12 @@ class Clingo < Formula
   depends_on "python@3.13"
 
   # This formula replaced the clasp & gringo formulae.
-  # https:github.comHomebrewhomebrew-corepull20281
-  link_overwrite "binclasp"
-  link_overwrite "binclingo"
-  link_overwrite "bingringo"
-  link_overwrite "binlpconvert"
-  link_overwrite "binreify"
+  # https://github.com/Homebrew/homebrew-core/pull/20281
+  link_overwrite "bin/clasp"
+  link_overwrite "bin/clingo"
+  link_overwrite "bin/gringo"
+  link_overwrite "bin/lpconvert"
+  link_overwrite "bin/reify"
 
   def python3
     which("python3.13")
@@ -62,7 +62,7 @@ class Clingo < Formula
   end
 
   test do
-    assert_match "clingo version", shell_output("#{bin}clingo --version")
+    assert_match "clingo version", shell_output("#{bin}/clingo --version")
     system python3, "-c", "import clingo"
   end
 end

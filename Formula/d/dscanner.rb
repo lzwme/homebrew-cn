@@ -1,11 +1,11 @@
 class Dscanner < Formula
   desc "Analyses e.g. the style and syntax of D code"
-  homepage "https:github.comdlang-communityD-Scanner"
-  url "https:github.comdlang-communityD-Scanner.git",
+  homepage "https://github.com/dlang-community/D-Scanner"
+  url "https://github.com/dlang-community/D-Scanner.git",
       tag:      "v0.15.2",
       revision: "1201a68f662a300eacae4f908a87d4cd57f2032e"
   license "BSL-1.0"
-  head "https:github.comdlang-communityD-Scanner.git", branch: "master"
+  head "https://github.com/dlang-community/D-Scanner.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "0f16a79d7fad72e96d08d3a0aaec16318064de06f115a875fe786f93c2ba872f"
@@ -30,16 +30,16 @@ class Dscanner < Formula
   end
 
   def install
-    # Fix for usrbinld: objdmdcontainerssrccontainersttree.o:
+    # Fix for /usr/bin/ld: obj/dmd/containers/src/containers/ttree.o:
     # relocation R_X86_64_32 against hidden symbol `__stop_minfo'
     # can not be used when making a PIE object
     ENV.append "DFLAGS", "-fPIC" if OS.linux? && Hardware::CPU.intel?
     system "make", "all", "DC=#{Hardware::CPU.arm? ? "ldc2" : "dmd"}"
-    bin.install "bindscanner"
+    bin.install "bin/dscanner"
   end
 
   test do
-    (testpath"test.d").write <<~D
+    (testpath/"test.d").write <<~D
       import std.stdio;
       void main(string[] args)
       {
@@ -47,6 +47,6 @@ class Dscanner < Formula
       }
     D
 
-    assert_match(test.d:\t28\ntotal:\t28\n, shell_output("#{bin}dscanner --tokenCount test.d"))
+    assert_match(/test.d:\t28\ntotal:\t28\n/, shell_output("#{bin}/dscanner --tokenCount test.d"))
   end
 end

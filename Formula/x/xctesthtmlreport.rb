@@ -1,10 +1,10 @@
 class Xctesthtmlreport < Formula
   desc "Xcode-like HTML report for Unit and UI Tests"
-  homepage "https:github.comXCTestHTMLReportXCTestHTMLReport"
-  url "https:github.comXCTestHTMLReportXCTestHTMLReportarchiverefstags2.5.1.tar.gz"
+  homepage "https://github.com/XCTestHTMLReport/XCTestHTMLReport"
+  url "https://ghfast.top/https://github.com/XCTestHTMLReport/XCTestHTMLReport/archive/refs/tags/2.5.1.tar.gz"
   sha256 "8d5a35bb8eccd8eb49f923c8169e46dc3a669aa274bbdb75cc92d97ae1e76b36"
   license "MIT"
-  head "https:github.comXCTestHTMLReportXCTestHTMLReport.git", branch: "main"
+  head "https://github.com/XCTestHTMLReport/XCTestHTMLReport.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "2f891210797be11eff596d4591cfd5a17040edad1f91ab4e82f05810605748ed"
@@ -20,18 +20,18 @@ class Xctesthtmlreport < Formula
 
   def install
     system "swift", "build", "--disable-sandbox", "-c", "release"
-    bin.install ".buildreleasexchtmlreport"
+    bin.install ".build/release/xchtmlreport"
   end
 
   test do
     resource "homebrew-testdata" do
-      url "https:pub-0b56a3a43f5b4adc91c743afc384fe1a.r2.devSanityResults.xcresult.tar.gz"
+      url "https://pub-0b56a3a43f5b4adc91c743afc384fe1a.r2.dev/SanityResults.xcresult.tar.gz"
       sha256 "e04a42a99dc05910aa31e6819016e5a481553d27d0dde121840f36fdb58e57b7"
     end
 
     resource("homebrew-testdata").stage("SanityResult.xcresult")
     # It will generate an index.html file
-    system bin"xchtmlreport", "-r", "SanityResult.xcresult"
-    assert_path_exists testpath"index.html"
+    system bin/"xchtmlreport", "-r", "SanityResult.xcresult"
+    assert_path_exists testpath/"index.html"
   end
 end

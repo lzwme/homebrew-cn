@@ -1,11 +1,11 @@
 class TerraformLsp < Formula
   desc "Language Server Protocol for Terraform"
-  homepage "https:github.comjuliosueirasterraform-lsp"
-  url "https:github.comjuliosueirasterraform-lsp.git",
+  homepage "https://github.com/juliosueiras/terraform-lsp"
+  url "https://github.com/juliosueiras/terraform-lsp.git",
       tag:      "v0.0.12",
       revision: "b0a5e4c435a054577e4c01489c1eef7216de4e45"
   license "MIT"
-  head "https:github.comjuliosueirasterraform-lsp.git", branch: "master"
+  head "https://github.com/juliosueiras/terraform-lsp.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -40,7 +40,7 @@ class TerraformLsp < Formula
     port = free_port
 
     pid = fork do
-      exec "#{bin}terraform-lsp serve -tcp -port #{port}"
+      exec "#{bin}/terraform-lsp serve -tcp -port #{port}"
     end
     sleep 2
 
@@ -57,6 +57,6 @@ class TerraformLsp < Formula
       Process.wait(pid)
     end
 
-    assert_match version.to_s, shell_output("#{bin}terraform-lsp serve -version")
+    assert_match version.to_s, shell_output("#{bin}/terraform-lsp serve -version")
   end
 end

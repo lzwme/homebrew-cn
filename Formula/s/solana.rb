@@ -1,7 +1,7 @@
 class Solana < Formula
   desc "Web-Scale Blockchain for decentralized apps and marketplaces"
-  homepage "https:solanalabs.com"
-  url "https:github.comsolana-labssolanaarchiverefstagsv1.18.20.tar.gz"
+  homepage "https://solanalabs.com/"
+  url "https://ghfast.top/https://github.com/solana-labs/solana/archive/refs/tags/v1.18.20.tar.gz"
   sha256 "909000aab630d73c566f1573436e6a656e80528bd57a067e79e80fbe58afcd07"
   license "Apache-2.0"
   version_scheme 1
@@ -58,7 +58,7 @@ class Solana < Formula
 
   test do
     assert_match "Generating a new keypair",
-      shell_output("#{bin}solana-keygen new --no-bip39-passphrase --no-outfile")
-    assert_match version.to_s, shell_output("#{bin}solana-keygen --version")
+      shell_output("#{bin}/solana-keygen new --no-bip39-passphrase --no-outfile")
+    assert_match version.to_s, shell_output("#{bin}/solana-keygen --version")
   end
 end

@@ -1,7 +1,7 @@
 class Bandwhich < Formula
   desc "Terminal bandwidth utilization tool"
-  homepage "https:github.comimsnifbandwhich"
-  url "https:github.comimsnifbandwhicharchiverefstagsv0.23.1.tar.gz"
+  homepage "https://github.com/imsnif/bandwhich"
+  url "https://ghfast.top/https://github.com/imsnif/bandwhich/archive/refs/tags/v0.23.1.tar.gz"
   sha256 "aafb96d059cf9734da915dca4f5940c319d2e6b54e2ffb884332e9f5e820e6d7"
   license "MIT"
 
@@ -21,16 +21,16 @@ class Bandwhich < Formula
   def install
     system "cargo", "install", *std_cargo_args
 
-    out_dir = Dir["targetreleasebuildbandwhich-*out"].first
-    bash_completion.install "#{out_dir}bandwhich.bash" => "bandwhich"
-    fish_completion.install "#{out_dir}bandwhich.fish"
-    zsh_completion.install "#{out_dir}_bandwhich"
+    out_dir = Dir["target/release/build/bandwhich-*/out"].first
+    bash_completion.install "#{out_dir}/bandwhich.bash" => "bandwhich"
+    fish_completion.install "#{out_dir}/bandwhich.fish"
+    zsh_completion.install "#{out_dir}/_bandwhich"
 
-    man1.install "#{out_dir}bandwhich.1"
+    man1.install "#{out_dir}/bandwhich.1"
   end
 
   test do
-    output = shell_output "#{bin}bandwhich --interface bandwhich", 1
+    output = shell_output "#{bin}/bandwhich --interface bandwhich", 1
     assert_match output, "Error: Cannot find interface bandwhich"
   end
 end

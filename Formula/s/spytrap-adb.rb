@@ -1,7 +1,7 @@
 class SpytrapAdb < Formula
   desc "Test a phone for stalkerware and suspicious configuration using usb debugging"
-  homepage "https:github.comspytrap-orgspytrap-adb"
-  url "https:github.comspytrap-orgspytrap-adbreleasesdownloadv0.3.5spytrap-adb-0.3.5.tar.gz"
+  homepage "https://github.com/spytrap-org/spytrap-adb"
+  url "https://ghfast.top/https://github.com/spytrap-org/spytrap-adb/releases/download/v0.3.5/spytrap-adb-0.3.5.tar.gz"
   sha256 "e33a342aa461b56a8d857c2c29b743658bd87b4ade7bed20399dea2cea01b0f8"
   license "GPL-3.0-or-later"
 
@@ -20,7 +20,7 @@ class SpytrapAdb < Formula
   def install
     system "cargo", "install", *std_cargo_args
 
-    generate_completions_from_executable(bin"spytrap-adb", "completions")
+    generate_completions_from_executable(bin/"spytrap-adb", "completions")
   end
 
   def caveats
@@ -33,6 +33,6 @@ class SpytrapAdb < Formula
   end
 
   test do
-    system bin"spytrap-adb", "download-ioc"
+    system bin/"spytrap-adb", "download-ioc"
   end
 end

@@ -2,10 +2,10 @@ cask "font-ole" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefontsrawmainofloleOle-Regular.ttf",
-      verified: "github.comgooglefonts"
+  url "https://github.com/google/fonts/raw/main/ofl/ole/Ole-Regular.ttf",
+      verified: "github.com/google/fonts/"
   name "Ole"
-  homepage "https:fonts.google.comspecimenOle"
+  homepage "https://fonts.google.com/specimen/Ole"
 
   font "Ole-Regular.ttf"
 

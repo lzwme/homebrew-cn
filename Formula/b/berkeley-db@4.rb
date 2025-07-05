@@ -1,7 +1,7 @@
 class BerkeleyDbAT4 < Formula
-  desc "High performance keyvalue database"
-  homepage "https:www.oracle.comdatabasetechnologiesrelatedberkeleydb.html"
-  url "https:download.oracle.comberkeley-dbdb-4.8.30.tar.gz"
+  desc "High performance key/value database"
+  homepage "https://www.oracle.com/database/technologies/related/berkeleydb.html"
+  url "https://download.oracle.com/berkeley-db/db-4.8.30.tar.gz"
   sha256 "e0491a07cdb21fb9aa82773bbbedaeb7639cbd0e7f96147ab46141e0045db72a"
   license "Sleepycat"
 
@@ -32,13 +32,13 @@ class BerkeleyDbAT4 < Formula
 
   # Fix build with recent clang
   patch do
-    url "https:raw.githubusercontent.comHomebrewformula-patches4c55b1berkeley-db%404clang.diff"
+    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/4c55b1/berkeley-db%404/clang.diff"
     sha256 "86111b0965762f2c2611b302e4a95ac8df46ad24925bbb95a1961542a1542e40"
   end
 
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
-    url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-pre-0.4.2.418-big_sur.diff"
+    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-pre-0.4.2.418-big_sur.diff"
     sha256 "83af02f2aa2b746bb7225872cab29a253264be49db0ecebb12f841562d9a2923"
     directory "dist"
   end
@@ -61,7 +61,7 @@ class BerkeleyDbAT4 < Formula
 
     # BerkeleyDB requires you to build everything from the build_unix subdirectory
     cd "build_unix" do
-      system "..distconfigure", *args
+      system "../dist/configure", *args
       system "make", "install"
 
       # use the standard docs location
@@ -71,7 +71,7 @@ class BerkeleyDbAT4 < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~CPP
+    (testpath/"test.cpp").write <<~CPP
       #include <assert.h>
       #include <string.h>
       #include <db_cxx.h>
@@ -99,7 +99,7 @@ class BerkeleyDbAT4 < Formula
     ]
     flags << "-Wl,-rpath,#{lib}" if OS.linux?
     system ENV.cxx, "test.cpp", "-o", "test", *flags
-    system ".test"
-    assert_path_exists testpath"test.db"
+    system "./test"
+    assert_path_exists testpath/"test.db"
   end
 end

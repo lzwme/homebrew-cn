@@ -2,10 +2,10 @@ cask "bleunlock" do
   version "1.12.2"
   sha256 "9ceddc874cf519efc7411c8340abab9e1ff8a4b5b252eff6ca32a94b8cafef5b"
 
-  url "https:github.comts1BLEUnlockreleasesdownload#{version}BLEUnlock-#{version}.zip"
+  url "https://ghfast.top/https://github.com/ts1/BLEUnlock/releases/download/#{version}/BLEUnlock-#{version}.zip"
   name "BLEUnlock"
-  desc "Lockunlock Apple computers using the proximity of a bluetooth low energy device"
-  homepage "https:github.comts1BLEUnlock"
+  desc "Lock/unlock Apple computers using the proximity of a bluetooth low energy device"
+  homepage "https://github.com/ts1/BLEUnlock"
 
   no_autobump! because: :requires_manual_review
 
@@ -14,8 +14,8 @@ cask "bleunlock" do
   app "BLEUnlock.app"
 
   zap trash: [
-    "~LibraryApplication Scriptsjp.sone.BLEUnlock",
-    "~LibraryCachesjp.sone.BLEUnlock",
-    "~LibraryPreferencesjp.sone.BLEUnlock.plist",
+    "~/Library/Application Scripts/jp.sone.BLEUnlock",
+    "~/Library/Caches/jp.sone.BLEUnlock",
+    "~/Library/Preferences/jp.sone.BLEUnlock.plist",
   ]
 end

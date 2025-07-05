@@ -1,7 +1,7 @@
 class ImessageExporter < Formula
   desc "Command-line tool to export and inspect local iMessage database"
-  homepage "https:github.comReagentXimessage-exporter"
-  url "https:github.comReagentXimessage-exporterarchiverefstags3.0.1.tar.gz"
+  homepage "https://github.com/ReagentX/imessage-exporter"
+  url "https://ghfast.top/https://github.com/ReagentX/imessage-exporter/archive/refs/tags/3.0.1.tar.gz"
   sha256 "fd661f86e46a0940b22d6ca2c42983d97da2ccf5bc0c47962e8287244bdde1db"
   license "GPL-3.0-only"
 
@@ -19,15 +19,15 @@ class ImessageExporter < Formula
 
   def install
     # manifest set to 0.0.0 for some reason, matching upstream build behavior
-    # https:github.comReagentXimessage-exporterblobdevelopbuild.sh
-    inreplace "imessage-exporterCargo.toml", "version = \"0.0.0\"",
+    # https://github.com/ReagentX/imessage-exporter/blob/develop/build.sh
+    inreplace "imessage-exporter/Cargo.toml", "version = \"0.0.0\"",
                                               "version = \"#{version}\""
     system "cargo", "install", *std_cargo_args(path: "imessage-exporter")
   end
 
   test do
-    assert_match version.to_s, shell_output(bin"imessage-exporter --version")
-    output = shell_output(bin"imessage-exporter --diagnostics 2>&1")
+    assert_match version.to_s, shell_output(bin/"imessage-exporter --version")
+    output = shell_output(bin/"imessage-exporter --diagnostics 2>&1")
     assert_match "Invalid configuration", output
   end
 end

@@ -1,10 +1,10 @@
 # NOTE: The version of pstree used on Linux requires
-# the proc file system, which is not available on macOS.
+# the /proc file system, which is not available on macOS.
 
 class Pstree < Formula
   desc "Show ps output as a tree"
-  homepage "https:github.comFredHuchtpstree"
-  url "https:github.comFredHuchtpstreearchiverefstagsv2.40.tar.gz"
+  homepage "https://github.com/FredHucht/pstree"
+  url "https://ghfast.top/https://github.com/FredHucht/pstree/archive/refs/tags/v2.40.tar.gz"
   sha256 "64d613d8f66685b29f13a80e08cddc08616cf3e315a0692cbbf9de0d8aa376b3"
   license "GPL-3.0-only"
 
@@ -32,8 +32,8 @@ class Pstree < Formula
   end
 
   test do
-    lines = shell_output("#{bin}pstree #{Process.pid}").strip.split("\n")
+    lines = shell_output("#{bin}/pstree #{Process.pid}").strip.split("\n")
     assert_match $PROGRAM_NAME, lines[0]
-    assert_match (bin"pstree").to_s, lines[1]
+    assert_match (bin/"pstree").to_s, lines[1]
   end
 end

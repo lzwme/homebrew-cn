@@ -1,13 +1,13 @@
 class Packer < Formula
   desc "Tool for creating identical machine images for multiple platforms"
-  homepage "https:packer.io"
+  homepage "https://packer.io"
   # NOTE: Do not bump to 1.10.0 as license changed to BUSL-1.1
-  # https:github.comhashicorppackerpull12568
-  # https:github.comhashicorppackerpull12575
-  url "https:github.comhashicorppackerarchiverefstagsv1.9.4.tar.gz"
+  # https://github.com/hashicorp/packer/pull/12568
+  # https://github.com/hashicorp/packer/pull/12575
+  url "https://ghfast.top/https://github.com/hashicorp/packer/archive/refs/tags/v1.9.4.tar.gz"
   sha256 "c07db8375190668571077784f4a650514d6ef879ae45cb4c3c1717ad8308c47e"
   license "MPL-2.0"
-  head "https:github.comhashicorppacker.git", branch: "main"
+  head "https://github.com/hashicorp/packer.git", branch: "main"
 
   no_autobump! because: :requires_manual_review
 
@@ -24,7 +24,7 @@ class Packer < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "dd24e327731cd263982ff7b0b47e6c9d4ac253c7b3da82ad79d15f182abed659"
   end
 
-  # https:www.hashicorp.combloghashicorp-adopts-business-source-license
+  # https://www.hashicorp.com/blog/hashicorp-adopts-business-source-license
   disable! date: "2024-09-27", because: "will change its license to BUSL on the next release"
 
   depends_on "go" => :build
@@ -33,23 +33,23 @@ class Packer < Formula
     system "go", "build", *std_go_args(ldflags: "-s -w")
 
     # Allow packer to find plugins in Homebrew prefix
-    bin.env_script_all_files libexec"bin", PACKER_PLUGIN_PATH: "$PACKER_PLUGIN_PATH:#{HOMEBREW_PREFIX"bin"}"
+    bin.env_script_all_files libexec/"bin", PACKER_PLUGIN_PATH: "$PACKER_PLUGIN_PATH:#{HOMEBREW_PREFIX/"bin"}"
 
-    zsh_completion.install "contribzsh-completion_packer"
+    zsh_completion.install "contrib/zsh-completion/_packer"
   end
 
   def caveats
     <<~EOS
-      We will not accept any new packer releases in homebrewcore (with the BUSL license).
+      We will not accept any new packer releases in homebrew/core (with the BUSL license).
       The next release will change to a non-open-source license:
-      https:www.hashicorp.combloghashicorp-adopts-business-source-license
+      https://www.hashicorp.com/blog/hashicorp-adopts-business-source-license
       See our documentation for acceptable licences:
-        https:docs.brew.shLicense-Guidelines
+        https://docs.brew.sh/License-Guidelines
     EOS
   end
 
   test do
-    minimal = testpath"minimal.json"
+    minimal = testpath/"minimal.json"
     minimal.write <<~JSON
       {
         "builders": [{
@@ -69,6 +69,6 @@ class Packer < Formula
         }]
       }
     JSON
-    system bin"packer", "validate", "-syntax-only", minimal
+    system bin/"packer", "validate", "-syntax-only", minimal
   end
 end

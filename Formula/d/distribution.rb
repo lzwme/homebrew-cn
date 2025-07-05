@@ -1,10 +1,10 @@
 class Distribution < Formula
   desc "Create ASCII graphical histograms in the terminal"
-  homepage "https:github.comtime-less-nessdistribution"
-  url "https:github.comtime-less-nessdistributionarchiverefstags1.3.tar.gz"
+  homepage "https://github.com/time-less-ness/distribution"
+  url "https://ghfast.top/https://github.com/time-less-ness/distribution/archive/refs/tags/1.3.tar.gz"
   sha256 "d7f2c9beeee15986d24d8068eb132c0a63c0bd9ace932e724cb38c1e6e54f95d"
   license "GPL-2.0-only"
-  head "https:github.comtime-less-nessdistribution.git", branch: "master"
+  head "https://github.com/time-less-ness/distribution.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -19,7 +19,7 @@ class Distribution < Formula
   end
 
   test do
-    (testpath"test").write "a\nb\na\n"
-    `#{bin}distribution <test 2>devnull`.include? "a|2"
+    (testpath/"test").write "a\nb\na\n"
+    `#{bin}/distribution <test 2>/dev/null`.include? "a|2"
   end
 end

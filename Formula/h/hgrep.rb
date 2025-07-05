@@ -1,10 +1,10 @@
 class Hgrep < Formula
   desc "Grep with human-friendly search results"
-  homepage "https:github.comrhysdhgrep"
-  url "https:github.comrhysdhgreparchiverefstagsv0.3.8.tar.gz"
+  homepage "https://github.com/rhysd/hgrep"
+  url "https://ghfast.top/https://github.com/rhysd/hgrep/archive/refs/tags/v0.3.8.tar.gz"
   sha256 "a8c554bab136be4083429e97a41d70b8cabcdf113ac3a2ce6c801b5c8710d1d2"
   license "MIT"
-  head "https:github.comrhysdhgrep.git", branch: "main"
+  head "https://github.com/rhysd/hgrep.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "bdc73fc805440e15b720a25825a116fe80353b8b7169932f6fdd0b2d15259184"
@@ -21,12 +21,12 @@ class Hgrep < Formula
   def install
     system "cargo", "install", *std_cargo_args
 
-    generate_completions_from_executable(bin"hgrep", "--generate-completion-script")
+    generate_completions_from_executable(bin/"hgrep", "--generate-completion-script")
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}hgrep --version")
-    (testpath"test").write("Hello, world!")
-    system bin"hgrep", "Hello"
+    assert_match version.to_s, shell_output("#{bin}/hgrep --version")
+    (testpath/"test").write("Hello, world!")
+    system bin/"hgrep", "Hello"
   end
 end

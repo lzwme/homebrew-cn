@@ -1,13 +1,13 @@
 class Libuninameslist < Formula
   desc "Library of Unicode names and annotation data"
-  homepage "https:github.comfontforgelibuninameslist"
-  url "https:github.comfontforgelibuninameslistreleasesdownload20240910libuninameslist-dist-20240910.tar.gz"
+  homepage "https://github.com/fontforge/libuninameslist"
+  url "https://ghfast.top/https://github.com/fontforge/libuninameslist/releases/download/20240910/libuninameslist-dist-20240910.tar.gz"
   sha256 "e59aab324ca0a3a713fe85c09a56c40c680a8458438d90624597920b3ef0be26"
   license "BSD-3-Clause"
 
   livecheck do
     url :stable
-    regex(v?(\d+(?:\.\d+)*)i)
+    regex(/v?(\d+(?:\.\d+)*)/i)
     strategy :github_latest
   end
 
@@ -24,7 +24,7 @@ class Libuninameslist < Formula
   end
 
   head do
-    url "https:github.comfontforgelibuninameslist.git", branch: "master"
+    url "https://github.com/fontforge/libuninameslist.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -37,12 +37,12 @@ class Libuninameslist < Formula
       system "automake"
     end
 
-    system ".configure", "--prefix=#{prefix}"
+    system "./configure", "--prefix=#{prefix}"
     system "make", "install"
   end
 
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include <uninameslist.h>
 
       int main() {
@@ -51,6 +51,6 @@ class Libuninameslist < Formula
       }
     C
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-luninameslist", "-o", "test"
-    system ".test"
+    system "./test"
   end
 end

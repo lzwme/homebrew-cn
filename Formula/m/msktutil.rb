@@ -1,7 +1,7 @@
 class Msktutil < Formula
   desc "Active Directory keytab management"
-  homepage "https:github.commsktutilmsktutil"
-  url "https:github.commsktutilmsktutilreleasesdownload1.2.2msktutil-1.2.2.tar.bz2"
+  homepage "https://github.com/msktutil/msktutil"
+  url "https://ghfast.top/https://github.com/msktutil/msktutil/releases/download/1.2.2/msktutil-1.2.2.tar.bz2"
   sha256 "51314bb222c20e963da61724c752e418261a7bfc2408e7b7d619e82a425f6541"
   license "GPL-2.0-or-later"
 
@@ -22,13 +22,13 @@ class Msktutil < Formula
   uses_from_macos "openldap"
 
   def install
-    system ".configure", "--disable-silent-rules",
+    system "./configure", "--disable-silent-rules",
                           "--mandir=#{man}",
                           *std_configure_args
     system "make", "install"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{sbin}msktutil --version")
+    assert_match version.to_s, shell_output("#{sbin}/msktutil --version")
   end
 end

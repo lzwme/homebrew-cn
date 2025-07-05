@@ -1,10 +1,10 @@
 class Mdcat < Formula
   desc "Show markdown documents on text terminals"
-  homepage "https:github.comswsnrmdcat"
-  url "https:github.comswsnrmdcatarchiverefstagsmdcat-2.7.1.tar.gz"
+  homepage "https://github.com/swsnr/mdcat"
+  url "https://ghfast.top/https://github.com/swsnr/mdcat/archive/refs/tags/mdcat-2.7.1.tar.gz"
   sha256 "460024d9795eb578be09ec2284af243627721151aa001aae6ffb5589380b2ba1"
   license "MPL-2.0"
-  head "https:github.comswsnrmdcat.git", branch: "main"
+  head "https://github.com/swsnr/mdcat.git", branch: "main"
 
   no_autobump! because: :requires_manual_review
 
@@ -33,17 +33,17 @@ class Mdcat < Formula
   def install
     system "cargo", "install", *std_cargo_args
 
-    # https:github.comswsnrmdcat?tab=readme-ov-file#packaging
-    generate_completions_from_executable(bin"mdcat", "--completions")
+    # https://github.com/swsnr/mdcat?tab=readme-ov-file#packaging
+    generate_completions_from_executable(bin/"mdcat", "--completions")
     system "asciidoctor", "-b", "manpage", "-a", "reproducible", "-o", "mdcat.1", "mdcat.1.adoc"
     man1.install Utils::Gzip.compress("mdcat.1")
   end
 
   test do
-    (testpath"test.md").write <<~MARKDOWN
+    (testpath/"test.md").write <<~MARKDOWN
       _lorem_ **ipsum** dolor **sit** _amet_
     MARKDOWN
-    output = shell_output("#{bin}mdcat --no-colour test.md")
+    output = shell_output("#{bin}/mdcat --no-colour test.md")
     assert_match "lorem ipsum dolor sit amet", output
   end
 end

@@ -1,7 +1,7 @@
 class Dwarf < Formula
   desc "Object file manipulation tool"
-  homepage "https:github.comelbozadwarf-ng"
-  url "https:github.comelbozadwarf-ngarchiverefstagsdwarf-0.4.0.tar.gz"
+  homepage "https://github.com/elboza/dwarf-ng/"
+  url "https://ghfast.top/https://github.com/elboza/dwarf-ng/archive/refs/tags/dwarf-0.4.0.tar.gz"
   sha256 "a64656f53ded5166041ae25cc4b1ad9ab5046a5c4d4c05b727447e73c0d83da0"
   license "GPL-2.0-or-later"
   revision 1
@@ -34,15 +34,15 @@ class Dwarf < Formula
   def install
     # Workaround for newer Clang
     if DevelopmentTools.clang_build_version >= 1500
-      inreplace "srcMakefile", "-Wall", "-Wall -Wno-incompatible-function-pointer-types"
+      inreplace "src/Makefile", "-Wall", "-Wall -Wno-incompatible-function-pointer-types"
     end
 
     # Work around failure from GCC 10+ using default of `-fno-common`
-    # usrbinld: repl.o:(.bss+0x20): multiple definition of `fc_ptr'
+    # /usr/bin/ld: repl.o:(.bss+0x20): multiple definition of `fc_ptr'
     args = ENV.compiler.to_s.start_with?("gcc") ? ["CC=#{ENV.cc} -fcommon"] : []
 
-    %w[srclibdwarf.c docdwarf.man docxdwarf.man.html].each do |f|
-      inreplace f, "etcdwarfrc", etc"dwarfrc"
+    %w[src/libdwarf.c doc/dwarf.man doc/xdwarf.man.html].each do |f|
+      inreplace f, "/etc/dwarfrc", etc/"dwarfrc"
     end
 
     system "make", *args
@@ -51,7 +51,7 @@ class Dwarf < Formula
 
   test do
     if OS.mac?
-      (testpath"test.c").write <<~C
+      (testpath/"test.c").write <<~C
         #include <stdio.h>
 
         int main(int argc, char *argv[]) {
@@ -59,12 +59,12 @@ class Dwarf < Formula
         }
       C
       system ENV.cc, "test.c", "-o", "test"
-      output = shell_output("#{bin}dwarf -c 'pp $mac' test")
+      output = shell_output("#{bin}/dwarf -c 'pp $mac' test")
       assert_equal "magic: 0xfeedfacf (-17958193)", output.lines[0].chomp
     else
       # Run test on x86-64 ELF as upstream never added EH_AARCH64 so part of
       # output doesn't show correctly if test is run on aarch64 ELF.
-      assert_match "main header: elf", shell_output("#{bin}dwarf -p #{test_fixtures("elfhello")}")
+      assert_match "main header: elf", shell_output("#{bin}/dwarf -p #{test_fixtures("elf/hello")}")
     end
   end
 end

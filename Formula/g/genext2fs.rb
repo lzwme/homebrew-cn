@@ -1,7 +1,7 @@
 class Genext2fs < Formula
   desc "Generates an ext2 filesystem as a normal (non-root) user"
-  homepage "https:genext2fs.sourceforge.net"
-  url "https:github.combestouffgenext2fsarchiverefstagsv1.5.0.tar.gz"
+  homepage "https://genext2fs.sourceforge.net/"
+  url "https://ghfast.top/https://github.com/bestouff/genext2fs/archive/refs/tags/v1.5.0.tar.gz"
   sha256 "d3861e4fe89131bd21fbd25cf0b683b727b5c030c4c336fadcd738ada830aab0"
   license "GPL-2.0-or-later"
 
@@ -27,8 +27,8 @@ class Genext2fs < Formula
   depends_on "automake" => :build
 
   def install
-    system ".autogen.sh"
-    system ".configure", "--disable-debug",
+    system "./autogen.sh"
+    system "./configure", "--disable-debug",
                           "--disable-dependency-tracking",
                           "--disable-silent-rules",
                           "--prefix=#{prefix}"
@@ -36,11 +36,11 @@ class Genext2fs < Formula
   end
 
   test do
-    rootpath = testpath"img"
-    (rootpath"foo.txt").write "hello world"
-    system bin"genext2fs", "--root", rootpath,
+    rootpath = testpath/"img"
+    (rootpath/"foo.txt").write "hello world"
+    system bin/"genext2fs", "--root", rootpath,
                                "--block-size", "4096",
                                "--size-in-blocks", "100",
-                               "#{testpath}test.img"
+                               "#{testpath}/test.img"
   end
 end

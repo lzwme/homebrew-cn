@@ -1,19 +1,19 @@
 class Argocd < Formula
   desc "GitOps Continuous Delivery for Kubernetes"
-  homepage "https:argoproj.github.iocd"
-  url "https:github.comargoprojargo-cd.git",
+  homepage "https://argoproj.github.io/cd/"
+  url "https://github.com/argoproj/argo-cd.git",
       tag:      "v3.0.6",
       revision: "db93798d6643a565c056c6fda453e696719dbe12"
   license "Apache-2.0"
 
   # There can be a notable gap between when a version is tagged and a
   # corresponding release is created, so we check releases instead of the Git
-  # tags. Upstream maintains multiple majorminor versions and the "latest"
+  # tags. Upstream maintains multiple major/minor versions and the "latest"
   # release may be for an older version, so we have to check multiple releases
   # to identify the highest version.
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
     strategy :github_releases
   end
 
@@ -40,19 +40,19 @@ class Argocd < Formula
       system "yarn", "--cwd", "ui", "build"
     end
     system "make", "cli-local"
-    bin.install "distargocd"
+    bin.install "dist/argocd"
 
-    generate_completions_from_executable(bin"argocd", "completion")
+    generate_completions_from_executable(bin/"argocd", "completion")
   end
 
   test do
     assert_match "argocd controls a Argo CD server",
-      shell_output("#{bin}argocd --help")
+      shell_output("#{bin}/argocd --help")
 
     # Providing argocd with an empty config file returns the contexts table header
-    touch testpath"argocd-config"
-    (testpath"argocd-config").chmod 0600
+    touch testpath/"argocd-config"
+    (testpath/"argocd-config").chmod 0600
     assert_match "CURRENT  NAME  SERVER\n",
-      shell_output("#{bin}argocd context --config .argocd-config")
+      shell_output("#{bin}/argocd context --config ./argocd-config")
   end
 end

@@ -1,10 +1,10 @@
 class Rainfrog < Formula
-  desc "Database management TUI for PostgreSQLMySQLSQLite"
-  homepage "https:github.comachristmascarlrainfrog"
-  url "https:github.comachristmascarlrainfrogarchiverefstagsv0.3.2.tar.gz"
+  desc "Database management TUI for PostgreSQL/MySQL/SQLite"
+  homepage "https://github.com/achristmascarl/rainfrog"
+  url "https://ghfast.top/https://github.com/achristmascarl/rainfrog/archive/refs/tags/v0.3.2.tar.gz"
   sha256 "e00cfc738fec12f7380c10416fc332b9701957b46c042062058c406907ce12b5"
   license "MIT"
-  head "https:github.comachristmascarlrainfrog.git", branch: "main"
+  head "https://github.com/achristmascarl/rainfrog.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "e2920ef30f1197c7a50568527d83302ae5db880c64de74eae29f8fb75b83ff6e"
@@ -24,6 +24,6 @@ class Rainfrog < Formula
 
   test do
     # rainfrog is a TUI application
-    assert_match version.to_s, shell_output("#{bin}rainfrog --version")
+    assert_match version.to_s, shell_output("#{bin}/rainfrog --version")
   end
 end

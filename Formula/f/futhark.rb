@@ -1,10 +1,10 @@
 class Futhark < Formula
   desc "Data-parallel functional programming language"
-  homepage "https:futhark-lang.org"
-  url "https:github.comdiku-dkfutharkarchiverefstagsv0.25.31.tar.gz"
+  homepage "https://futhark-lang.org/"
+  url "https://ghfast.top/https://github.com/diku-dk/futhark/archive/refs/tags/v0.25.31.tar.gz"
   sha256 "676a0e720f1e102353a99cca111b3502fd0c594d82e81063b84ad9f8b52de718"
   license "ISC"
-  head "https:github.comdiku-dkfuthark.git", branch: "master"
+  head "https://github.com/diku-dk/futhark.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "3ccfd1e707cb8620757768ebec43f468189054e5ce67a262ec422e9923e58658"
@@ -30,14 +30,14 @@ class Futhark < Formula
     system "cabal", "v2-install", *std_cabal_v2_args
 
     system "make", "-C", "docs", "man"
-    man1.install Dir["docs_buildman*.1"]
+    man1.install Dir["docs/_build/man/*.1"]
   end
 
   test do
-    (testpath"test.fut").write <<~EOS
+    (testpath/"test.fut").write <<~EOS
       def main (n: i32) = reduce (*) 1 (1...n)
     EOS
-    system bin"futhark", "c", "test.fut"
-    assert_equal "3628800i32", pipe_output(".test", "10", 0).chomp
+    system bin/"futhark", "c", "test.fut"
+    assert_equal "3628800i32", pipe_output("./test", "10", 0).chomp
   end
 end

@@ -1,10 +1,10 @@
 class Nom < Formula
   desc "RSS reader for the terminal"
-  homepage "https:github.comguyfedwardsnom"
-  url "https:github.comguyfedwardsnomarchiverefstagsv2.10.0.tar.gz"
+  homepage "https://github.com/guyfedwards/nom"
+  url "https://ghfast.top/https://github.com/guyfedwards/nom/archive/refs/tags/v2.10.0.tar.gz"
   sha256 "c532172aec80dfdf673bff354a50811300853803c48a0729c1092a3b6bc5f060"
   license "GPL-3.0-only"
-  head "https:github.comguyfedwardsnom.git", branch: "master"
+  head "https://github.com/guyfedwards/nom.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "e9ddefe8b2bbcef65d1f9d4505a9aefdeb41cb11eadecb838f6b2b2bc4ba9485"
@@ -19,12 +19,12 @@ class Nom < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}"), ".cmdnom"
+    system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}"), "./cmd/nom"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}nom version")
+    assert_match version.to_s, shell_output("#{bin}/nom version")
 
-    assert_match "configpath", shell_output("#{bin}nom config")
+    assert_match "configpath", shell_output("#{bin}/nom config")
   end
 end

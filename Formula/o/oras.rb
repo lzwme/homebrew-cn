@@ -1,10 +1,10 @@
 class Oras < Formula
   desc "OCI Registry As Storage"
-  homepage "https:github.comoras-projectoras"
-  url "https:github.comoras-projectorasarchiverefstagsv1.2.3.tar.gz"
+  homepage "https://github.com/oras-project/oras"
+  url "https://ghfast.top/https://github.com/oras-project/oras/archive/refs/tags/v1.2.3.tar.gz"
   sha256 "f08ddcccaedbb336e85942b6ccb9625c2a7e4e411d5909bd6f670eb0d7ab3977"
   license "Apache-2.0"
-  head "https:github.comoras-projectoras.git", branch: "main"
+  head "https://github.com/oras-project/oras.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "cc809d29e38e49c915a7df9dcfaa2071638430e5c3c4cd072473a5e98962cc81"
@@ -20,16 +20,16 @@ class Oras < Formula
   def install
     ldflags = %W[
       -s -w
-      -X oras.landorasinternalversion.Version=#{version}
-      -X oras.landorasinternalversion.BuildMetadata=#{tap.user}
+      -X oras.land/oras/internal/version.Version=#{version}
+      -X oras.land/oras/internal/version.BuildMetadata=#{tap.user}
     ]
-    system "go", "build", *std_go_args(ldflags:), ".cmdoras"
+    system "go", "build", *std_go_args(ldflags:), "./cmd/oras"
 
-    generate_completions_from_executable(bin"oras", "completion")
+    generate_completions_from_executable(bin/"oras", "completion")
   end
 
   test do
-    assert_match "#{version}+Homebrew", shell_output("#{bin}oras version")
+    assert_match "#{version}+Homebrew", shell_output("#{bin}/oras version")
 
     port = free_port
     contents = <<~JSON
@@ -38,13 +38,13 @@ class Oras < Formula
         "this is": "a test"
       }
     JSON
-    (testpath"test.json").write(contents)
+    (testpath/"test.json").write(contents)
 
     # Although it might not make much sense passing the JSON as both manifest and payload,
     # it helps make the test consistent as the error can randomly switch between either hash
-    output = shell_output("#{bin}oras push localhost:#{port}test-artifact:v1 " \
-                          "--config test.json:applicationvnd.homebrew.test.config.v1+json " \
-                          ".test.json 2>&1", 1)
+    output = shell_output("#{bin}/oras push localhost:#{port}/test-artifact:v1 " \
+                          "--config test.json:application/vnd.homebrew.test.config.v1+json " \
+                          "./test.json 2>&1", 1)
     assert_match "#{port}: connect: connection refused", output
   end
 end

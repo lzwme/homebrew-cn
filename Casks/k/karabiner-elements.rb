@@ -27,11 +27,11 @@ cask "karabiner-elements" do
                 ["TERM", "org.pqrs.Karabiner-NotificationWindow"],
               ],
               script:    {
-                executable: "LibraryApplication Supportorg.pqrsKarabiner-Elementsuninstall_core.sh",
+                executable: "/Library/Application Support/org.pqrs/Karabiner-Elements/uninstall_core.sh",
                 sudo:       true,
               },
               pkgutil:   "org.pqrs.Karabiner-Elements",
-              delete:    "LibraryApplication Supportorg.pqrs"
+              delete:    "/Library/Application Support/org.pqrs"
   end
   on_catalina :or_newer do
     on_catalina do
@@ -63,7 +63,7 @@ cask "karabiner-elements" do
       sha256 "54e222e533cea7bd68e7dbd2c4dced89982c78003d0ea77c6c2ffc521a45cca1"
 
       livecheck do
-        url "https:appcast.pqrs.orgkarabiner-elements-appcast.xml"
+        url "https://appcast.pqrs.org/karabiner-elements-appcast.xml"
         strategy :sparkle
       end
     end
@@ -71,7 +71,7 @@ cask "karabiner-elements" do
     pkg "Karabiner-Elements.pkg"
 
     uninstall early_script: {
-                executable: "LibraryApplication Supportorg.pqrsKarabiner-DriverKit-VirtualHIDDevicescriptsuninstallremove_files.sh",
+                executable: "/Library/Application Support/org.pqrs/Karabiner-DriverKit-VirtualHIDDevice/scripts/uninstall/remove_files.sh",
                 sudo:       true,
               },
               launchctl:    [
@@ -88,35 +88,35 @@ cask "karabiner-elements" do
                 ["TERM", "org.pqrs.Karabiner-NotificationWindow"],
               ],
               script:       {
-                executable: "LibraryApplication Supportorg.pqrsKarabiner-Elementsuninstall_core.sh",
+                executable: "/Library/Application Support/org.pqrs/Karabiner-Elements/uninstall_core.sh",
                 sudo:       true,
               },
               pkgutil:      [
                 "org.pqrs.Karabiner-DriverKit-VirtualHIDDevice",
                 "org.pqrs.Karabiner-Elements",
               ],
-              delete:       "LibraryApplication Supportorg.pqrs"
+              delete:       "/Library/Application Support/org.pqrs"
     # The system extension 'org.pqrs.Karabiner-DriverKit-VirtualHIDDevice*' should not be uninstalled by Cask
   end
 
-  url "https:github.compqrs-orgKarabiner-Elementsreleasesdownloadv#{version}Karabiner-Elements-#{version}.dmg",
-      verified: "github.compqrs-orgKarabiner-Elements"
+  url "https://ghfast.top/https://github.com/pqrs-org/Karabiner-Elements/releases/download/v#{version}/Karabiner-Elements-#{version}.dmg",
+      verified: "github.com/pqrs-org/Karabiner-Elements/"
   name "Karabiner Elements"
   desc "Keyboard customiser"
-  homepage "https:karabiner-elements.pqrs.org"
+  homepage "https://karabiner-elements.pqrs.org/"
 
   auto_updates true
 
-  binary "LibraryApplication Supportorg.pqrsKarabiner-Elementsbinkarabiner_cli"
+  binary "/Library/Application Support/org.pqrs/Karabiner-Elements/bin/karabiner_cli"
 
   zap trash: [
-    "~.configkarabiner",
-    "~.localsharekarabiner",
-    "~LibraryApplication Scriptsorg.pqrs.Karabiner-VirtualHIDDevice-Manager",
-    "~LibraryApplication SupportKarabiner-Elements",
-    "~LibraryCachesorg.pqrs.Karabiner-Elements.Updater",
-    "~LibraryContainersorg.pqrs.Karabiner-VirtualHIDDevice-Manager",
-    "~LibraryHTTPStoragesorg.pqrs.Karabiner-Elements.Settings",
-    "~LibraryPreferencesorg.pqrs.Karabiner-Elements.Updater.plist",
+    "~/.config/karabiner",
+    "~/.local/share/karabiner",
+    "~/Library/Application Scripts/org.pqrs.Karabiner-VirtualHIDDevice-Manager",
+    "~/Library/Application Support/Karabiner-Elements",
+    "~/Library/Caches/org.pqrs.Karabiner-Elements.Updater",
+    "~/Library/Containers/org.pqrs.Karabiner-VirtualHIDDevice-Manager",
+    "~/Library/HTTPStorages/org.pqrs.Karabiner-Elements.Settings",
+    "~/Library/Preferences/org.pqrs.Karabiner-Elements.Updater.plist",
   ]
 end

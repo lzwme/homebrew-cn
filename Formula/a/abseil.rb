@@ -1,10 +1,10 @@
 class Abseil < Formula
   desc "C++ Common Libraries"
-  homepage "https:abseil.io"
-  url "https:github.comabseilabseil-cpparchiverefstags20240722.1.tar.gz"
+  homepage "https://abseil.io"
+  url "https://ghfast.top/https://github.com/abseil/abseil-cpp/archive/refs/tags/20240722.1.tar.gz"
   sha256 "40cee67604060a7c8794d931538cb55f4d444073e556980c88b6c49bb9b19bb7"
   license "Apache-2.0"
-  head "https:github.comabseilabseil-cpp.git", branch: "master"
+  head "https://github.com/abseil/abseil-cpp.git", branch: "master"
 
   bottle do
     rebuild 1
@@ -24,9 +24,9 @@ class Abseil < Formula
   end
 
   # Fix shell option group handling in pkgconfig files
-  # https:github.comabseilabseil-cpppull1738
+  # https://github.com/abseil/abseil-cpp/pull/1738
   patch do
-    url "https:github.comabseilabseil-cppcommit9dfde0e30a2ce41077758e9c0bb3ff736d7c4e00.patch?full_index=1"
+    url "https://github.com/abseil/abseil-cpp/commit/9dfde0e30a2ce41077758e9c0bb3ff736d7c4e00.patch?full_index=1"
     sha256 "94a9b4dc980794b3fba0a5e4ae88ef52261240da59a787e35b207102ba4ebfcd"
   end
 
@@ -52,11 +52,11 @@ class Abseil < Formula
   end
 
   test do
-    (testpath"hello_world.cc").write <<~CPP
+    (testpath/"hello_world.cc").write <<~CPP
       #include <iostream>
       #include <string>
       #include <vector>
-      #include "abslstringsstr_join.h"
+      #include "absl/strings/str_join.h"
 
       int main() {
         std::vector<std::string> v = {"foo","bar","baz"};
@@ -65,7 +65,7 @@ class Abseil < Formula
         std::cout << "Joined string: " << s << "\\n";
       }
     CPP
-    (testpath"CMakeLists.txt").write <<~CMAKE
+    (testpath/"CMakeLists.txt").write <<~CMAKE
       cmake_minimum_required(VERSION 3.16)
 
       project(my_project)
@@ -82,6 +82,6 @@ class Abseil < Formula
     CMAKE
     system "cmake", testpath
     system "cmake", "--build", testpath, "--target", "hello_world"
-    assert_equal "Joined string: foo-bar-baz\n", shell_output("#{testpath}hello_world")
+    assert_equal "Joined string: foo-bar-baz\n", shell_output("#{testpath}/hello_world")
   end
 end

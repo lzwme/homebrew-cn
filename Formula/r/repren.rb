@@ -2,8 +2,8 @@ class Repren < Formula
   include Language::Python::Virtualenv
 
   desc "Rename anything using powerful regex search and replace"
-  homepage "https:github.comjlevyrepren"
-  url "https:files.pythonhosted.orgpackages7b9e1d5ca018f98d82e2ec958564affca79f9477f03fd11f2f9d0deca834dd6crepren-1.0.2.tar.gz"
+  homepage "https://github.com/jlevy/repren"
+  url "https://files.pythonhosted.org/packages/7b/9e/1d5ca018f98d82e2ec958564affca79f9477f03fd11f2f9d0deca834dd6c/repren-1.0.2.tar.gz"
   sha256 "dad04db4427ca8999f7c228e9a5f3a5c26b919c7d1b26af402e0f9febdf09d93"
   license "MIT"
 
@@ -18,14 +18,14 @@ class Repren < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}repren --version")
+    assert_match version.to_s, shell_output("#{bin}/repren --version")
 
-    (testpath"test.txt").write <<~EOS
+    (testpath/"test.txt").write <<~EOS
       Hello World!
       Replace Me
     EOS
 
-    system bin"repren", "--from", "Replace", "--to", "Modify", testpath"test.txt"
-    assert_match "Modify Me", (testpath"test.txt").read
+    system bin/"repren", "--from", "Replace", "--to", "Modify", testpath/"test.txt"
+    assert_match "Modify Me", (testpath/"test.txt").read
   end
 end

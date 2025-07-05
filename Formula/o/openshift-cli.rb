@@ -1,15 +1,15 @@
 class OpenshiftCli < Formula
   desc "OpenShift command-line interface tools"
-  homepage "https:www.openshift.com"
-  url "https:mirror.openshift.compubopenshift-v4clientsocp4.19.1openshift-client-src.tar.gz"
+  homepage "https://www.openshift.com/"
+  url "https://mirror.openshift.com/pub/openshift-v4/clients/ocp/4.19.1/openshift-client-src.tar.gz"
   # This project employs synchronized versioning so the sha256 may not change on version bumps
   sha256 "a0626502ac41fa0d76e37990253b5b6c515847b272e496ca288ac360bace6581"
   license "Apache-2.0"
-  head "https:github.comopenshiftoc.git", shallow: false, branch: "master"
+  head "https://github.com/openshift/oc.git", shallow: false, branch: "master"
 
   livecheck do
-    url "https:mirror.openshift.compubopenshift-v4clientsocpstable"
-    regex(href=.*?openshift-client-mac-(\d+(?:\.\d+)+)\.ti)
+    url "https://mirror.openshift.com/pub/openshift-v4/clients/ocp/stable/"
+    regex(/href=.*?openshift-client-mac-(\d+(?:\.\d+)+)\.t/i)
   end
 
   bottle do
@@ -30,17 +30,17 @@ class OpenshiftCli < Formula
     os = OS.kernel_name.downcase
     revision = build.head? ? Utils.git_head : Pathname.pwd.basename.to_s.delete_prefix("oc-")
 
-    # See https:github.comHomebrewbrewissues14763
+    # See https://github.com/Homebrew/brew/issues/14763
     ENV.O0 if OS.linux?
 
-    system "make", "cross-build-#{os}-#{arch}", "OS_GIT_VERSION=#{version}", "SOURCE_GIT_COMMIT=#{revision}", "SHELL=binbash"
-    bin.install "_outputbin#{os}_#{arch}oc"
-    generate_completions_from_executable(bin"oc", "completion")
+    system "make", "cross-build-#{os}-#{arch}", "OS_GIT_VERSION=#{version}", "SOURCE_GIT_COMMIT=#{revision}", "SHELL=/bin/bash"
+    bin.install "_output/bin/#{os}_#{arch}/oc"
+    generate_completions_from_executable(bin/"oc", "completion")
   end
 
   test do
     # Grab version details from built client
-    version_raw = shell_output("#{bin}oc version --client --output=json")
+    version_raw = shell_output("#{bin}/oc version --client --output=json")
     version_json = JSON.parse(version_raw)
 
     # Ensure that we had a clean build tree
@@ -50,7 +50,7 @@ class OpenshiftCli < Formula
     assert_match version_json["clientVersion"]["gitVersion"], "v#{version}"
 
     # Get remote release details
-    release_raw = shell_output("#{bin}oc adm release info #{version} --output=json")
+    release_raw = shell_output("#{bin}/oc adm release info #{version} --output=json")
     release_json = JSON.parse(release_raw)
 
     # Verify the formula matches the release data for the version
@@ -60,8 +60,8 @@ class OpenshiftCli < Formula
       } ["annotations"]["io.openshift.build.commit.id"]
 
     # Test that we can generate and write a kubeconfig
-    (testpath"kubeconfig").write ""
-    system "KUBECONFIG=#{testpath}kubeconfig #{bin}oc config set-context foo 2>&1"
-    assert_match "foo", shell_output("KUBECONFIG=#{testpath}kubeconfig #{bin}oc config get-contexts -o name")
+    (testpath/"kubeconfig").write ""
+    system "KUBECONFIG=#{testpath}/kubeconfig #{bin}/oc config set-context foo 2>&1"
+    assert_match "foo", shell_output("KUBECONFIG=#{testpath}/kubeconfig #{bin}/oc config get-contexts -o name")
   end
 end

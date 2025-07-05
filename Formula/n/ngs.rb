@@ -1,10 +1,10 @@
 class Ngs < Formula
   desc "Powerful programming language and shell designed specifically for Ops"
-  homepage "https:ngs-lang.org"
-  url "https:github.comngs-langngsarchiverefstagsv0.2.17.tar.gz"
+  homepage "https://ngs-lang.org/"
+  url "https://ghfast.top/https://github.com/ngs-lang/ngs/archive/refs/tags/v0.2.17.tar.gz"
   sha256 "029c5d1167e884fee54fc99881e3d8c30478314f6e5fc2a7b832c909ed35d5b0"
   license "GPL-3.0-only"
-  head "https:github.comngs-langngs.git", branch: "master"
+  head "https://github.com/ngs-lang/ngs.git", branch: "master"
 
   bottle do
     sha256 arm64_sequoia: "e7f8a694f90c7451ed9abda3ca69e35d1dbab001ede6afcc97b37f8042524c69"
@@ -34,6 +34,6 @@ class Ngs < Formula
   end
 
   test do
-    assert_match "Hello World!", shell_output("#{bin}ngs -e 'echo(\"Hello World!\")'")
+    assert_match "Hello World!", shell_output("#{bin}/ngs -e 'echo(\"Hello World!\")'")
   end
 end

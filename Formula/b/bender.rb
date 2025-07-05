@@ -1,10 +1,10 @@
 class Bender < Formula
   desc "Dependency management tool for hardware projects"
-  homepage "https:github.compulp-platformbender"
-  url "https:github.compulp-platformbenderarchiverefstagsv0.28.2.tar.gz"
+  homepage "https://github.com/pulp-platform/bender"
+  url "https://ghfast.top/https://github.com/pulp-platform/bender/archive/refs/tags/v0.28.2.tar.gz"
   sha256 "1de599efd238f3238e9bed09005547e63b82c4d98affcd63c565ab650bebc9ad"
   license any_of: ["Apache-2.0", "MIT"]
-  head "https:github.compulp-platformbender.git", branch: "master"
+  head "https://github.com/pulp-platform/bender.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "0025f80ceab8991afc8be4e8beb1987fde448db3ff24c614063a73552cb38d36"
@@ -23,9 +23,9 @@ class Bender < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}bender --version")
+    assert_match version.to_s, shell_output("#{bin}/bender --version")
 
-    system bin"bender", "init"
-    assert_match "manifest format `Bender.yml`", (testpath"Bender.yml").read
+    system bin/"bender", "init"
+    assert_match "manifest format `Bender.yml`", (testpath/"Bender.yml").read
   end
 end

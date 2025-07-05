@@ -1,16 +1,16 @@
 class Nsd < Formula
   desc "Name server daemon"
-  homepage "https:www.nlnetlabs.nlprojectsnsd"
-  url "https:www.nlnetlabs.nldownloadsnsdnsd-4.12.0.tar.gz"
+  homepage "https://www.nlnetlabs.nl/projects/nsd/"
+  url "https://www.nlnetlabs.nl/downloads/nsd/nsd-4.12.0.tar.gz"
   sha256 "f9ecc2cf79ba50580f2df62918efc440084c5bf11057db44c19aa9643cd4b5e8"
   license "BSD-3-Clause"
 
   # We check the GitHub repo tags instead of
-  # https:www.nlnetlabs.nldownloadsnsd since the first-party site has a
+  # https://www.nlnetlabs.nl/downloads/nsd/ since the first-party site has a
   # tendency to lead to an `execution expired` error.
   livecheck do
-    url "https:github.comNLnetLabsnsd.git"
-    regex(^NSD[._-]v?(\d+(?:[._]\d+)+)[._-]REL$i)
+    url "https://github.com/NLnetLabs/nsd.git"
+    regex(/^NSD[._-]v?(\d+(?:[._]\d+)+)[._-]REL$/i)
 
     strategy :git do |tags, regex|
       tags.map { |tag| tag[regex, 1]&.tr("_", ".") }
@@ -34,7 +34,7 @@ class Nsd < Formula
   def install
     ENV.runtime_cpu_detection if Hardware::CPU.intel?
 
-    system ".configure", "--sysconfdir=#{etc}",
+    system "./configure", "--sysconfdir=#{etc}",
                           "--localstatedir=#{var}",
                           "--with-libevent=#{Formula["libevent"].opt_prefix}",
                           "--with-ssl=#{Formula["openssl@3"].opt_prefix}",
@@ -43,6 +43,6 @@ class Nsd < Formula
   end
 
   test do
-    system sbin"nsd", "-v"
+    system sbin/"nsd", "-v"
   end
 end

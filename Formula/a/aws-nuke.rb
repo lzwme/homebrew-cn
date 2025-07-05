@@ -1,10 +1,10 @@
 class AwsNuke < Formula
   desc "Nuke a whole AWS account and delete all its resources"
-  homepage "https:github.comekristenaws-nuke"
-  url "https:github.comekristenaws-nukearchiverefstagsv3.56.2.tar.gz"
+  homepage "https://github.com/ekristen/aws-nuke"
+  url "https://ghfast.top/https://github.com/ekristen/aws-nuke/archive/refs/tags/v3.56.2.tar.gz"
   sha256 "d43ab2e77994e5c9ec19651d998624cb9e68408dc0fa31aab2e6e830910f6fde"
   license "MIT"
-  head "https:github.comekristenaws-nuke.git", branch: "main"
+  head "https://github.com/ekristen/aws-nuke.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "105469d3f53925908e03a64036ebec65c1e716e30175ffc13db1159bae69a55a"
@@ -21,23 +21,23 @@ class AwsNuke < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.comekristenaws-nukev#{version.major}pkgcommon.SUMMARY=#{version}
+      -X github.com/ekristen/aws-nuke/v#{version.major}/pkg/common.SUMMARY=#{version}
     ]
     ENV["CGO_ENABLED"] = "0"
     system "go", "build", *std_go_args(ldflags:)
 
-    pkgshare.install "pkgconfig"
+    pkgshare.install "pkg/config"
 
-    generate_completions_from_executable(bin"aws-nuke", "completion")
+    generate_completions_from_executable(bin/"aws-nuke", "completion")
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}aws-nuke --version")
+    assert_match version.to_s, shell_output("#{bin}/aws-nuke --version")
     assert_match "InvalidClientTokenId", shell_output(
-      "#{bin}aws-nuke run --config #{pkgshare}configtestdataexample.yaml \
+      "#{bin}/aws-nuke run --config #{pkgshare}/config/testdata/example.yaml \
       --access-key-id fake --secret-access-key fake 2>&1",
       1,
     )
-    assert_match "IAMUser", shell_output("#{bin}aws-nuke resource-types")
+    assert_match "IAMUser", shell_output("#{bin}/aws-nuke resource-types")
   end
 end

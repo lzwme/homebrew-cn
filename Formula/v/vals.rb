@@ -1,10 +1,10 @@
 class Vals < Formula
   desc "Helm-like configuration values loader with support for various sources"
-  homepage "https:github.comhelmfilevals"
-  url "https:github.comhelmfilevalsarchiverefstagsv0.41.2.tar.gz"
+  homepage "https://github.com/helmfile/vals"
+  url "https://ghfast.top/https://github.com/helmfile/vals/archive/refs/tags/v0.41.2.tar.gz"
   sha256 "548c18a04900cc4c822a0c6e2a7b668d01648a1e59d7df7d4d5177200f0aec88"
   license "Apache-2.0"
-  head "https:github.comhelmfilevals.git", branch: "main"
+  head "https://github.com/helmfile/vals.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "c77be8b0dbf5ad00c84b0f61b68442ab9b68a301ea9e0a4563d2867db7f5f611"
@@ -18,19 +18,19 @@ class Vals < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version} -X main.commit=#{tap.user}"), ".cmdvals"
+    system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version} -X main.commit=#{tap.user}"), "./cmd/vals"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}vals version")
+    assert_match version.to_s, shell_output("#{bin}/vals version")
 
-    (testpath"test.yaml").write <<~YAML
+    (testpath/"test.yaml").write <<~YAML
       foo: "bar"
     YAML
-    output = shell_output("#{bin}vals eval -f test.yaml")
+    output = shell_output("#{bin}/vals eval -f test.yaml")
     assert_match "foo: bar", output
 
-    (testpath"secret.yaml").write <<~YAML
+    (testpath/"secret.yaml").write <<~YAML
       apiVersion: v1
       kind: Secret
       metadata:
@@ -40,7 +40,7 @@ class Vals < Formula
         password: dGVzdC1wYXNz # base64 encoded "test-pass"
     YAML
 
-    output = shell_output("#{bin}vals ksdecode -f secret.yaml")
+    output = shell_output("#{bin}/vals ksdecode -f secret.yaml")
     assert_match "stringData", output
     assert_match "username: test-user", output
     assert_match "password: test-pass", output

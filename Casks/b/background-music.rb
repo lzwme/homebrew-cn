@@ -2,10 +2,10 @@ cask "background-music" do
   version "0.4.3"
   sha256 "c1c48a37c83af44ce50bee68879856c96b2f6c97360ce461b1c7d653515be7fd"
 
-  url "https:github.comkyleneideckBackgroundMusicreleasesdownloadv#{version}BackgroundMusic-#{version}.pkg"
+  url "https://ghfast.top/https://github.com/kyleneideck/BackgroundMusic/releases/download/v#{version}/BackgroundMusic-#{version}.pkg"
   name "Background Music"
   desc "Audio utility"
-  homepage "https:github.comkyleneideckBackgroundMusic"
+  homepage "https://github.com/kyleneideck/BackgroundMusic"
 
   livecheck do
     url :url
@@ -17,7 +17,7 @@ cask "background-music" do
   pkg "BackgroundMusic-#{version}.pkg"
 
   uninstall_postflight do
-    system_command "usrbinkillall",
+    system_command "/usr/bin/killall",
                    args:         ["coreaudiod"],
                    sudo:         true,
                    must_succeed: true
@@ -27,13 +27,13 @@ cask "background-music" do
             quit:      "com.bearisdriving.BGM.App",
             pkgutil:   "com.bearisdriving.BGM",
             delete:    [
-              "LibraryApplication SupportBackground Music",
-              "LibraryAudioPlug-InsHALBackground Music Device.driver",
-              "usrlocallibexecBGMXPCHelper.xpc",
+              "/Library/Application Support/Background Music",
+              "/Library/Audio/Plug-Ins/HAL/Background Music Device.driver",
+              "/usr/local/libexec/BGMXPCHelper.xpc",
             ]
 
   zap trash: [
-    "LibraryLaunchDaemonscom.bearisdriving.BGM.XPCHelper.plist",
-    "~LibraryPreferencescom.bearisdriving.BGM.App.plist",
+    "/Library/LaunchDaemons/com.bearisdriving.BGM.XPCHelper.plist",
+    "~/Library/Preferences/com.bearisdriving.BGM.App.plist",
   ]
 end

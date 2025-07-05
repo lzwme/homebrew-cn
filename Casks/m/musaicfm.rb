@@ -2,14 +2,14 @@ cask "musaicfm" do
   version "1.2.6"
   sha256 "d22162103677565da7c009ff0539a9f51d91c13dcb26ee76ff5710758f93dbe7"
 
-  url "https:github.comdocterdMusaicFMreleasesdownload#{version}MusaicFM.saver.zip"
+  url "https://ghfast.top/https://github.com/docterd/MusaicFM/releases/download/#{version}/MusaicFM.saver.zip"
   name "MusaicFM Screensaver"
   desc "Screensaver displaying artwork based on Spotify or Last.fm profile data"
-  homepage "https:github.comdocterdMusaicFM"
+  homepage "https://github.com/docterd/MusaicFM"
 
   no_autobump! because: :requires_manual_review
 
   screen_saver "MusaicFM.saver"
 
-  zap trash: "~LibraryContainerscom.apple.ScreenSaver.Engine.legacyScreenSaverDataLibraryPreferencesByHostcom.obrhoff.musaicfm.*.plist"
+  zap trash: "~/Library/Containers/com.apple.ScreenSaver.Engine.legacyScreenSaver/Data/Library/Preferences/ByHost/com.obrhoff.musaicfm.*.plist"
 end

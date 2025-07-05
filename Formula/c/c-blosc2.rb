@@ -1,10 +1,10 @@
 class CBlosc2 < Formula
   desc "Fast, compressed, persistent binary data store library for C"
-  homepage "https:www.blosc.org"
-  url "https:github.comBloscc-blosc2archiverefstagsv2.19.0.tar.gz"
+  homepage "https://www.blosc.org"
+  url "https://ghfast.top/https://github.com/Blosc/c-blosc2/archive/refs/tags/v2.19.0.tar.gz"
   sha256 "6aeb448ac490dee2a82fafab97382b62622a32a0e17a2d78d085ae8507f6ddd8"
   license "BSD-3-Clause"
-  head "https:github.comBloscc-blosc2.git", branch: "main"
+  head "https://github.com/Blosc/c-blosc2.git", branch: "main"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "65ebebb1fe4bd5922516d38ac8b704be1859b4985d4daff16b15439883d7f86a"
@@ -39,11 +39,11 @@ class CBlosc2 < Formula
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 
-    pkgshare.install "examplessimple.c"
+    pkgshare.install "examples/simple.c"
   end
 
   test do
-    system ENV.cc, pkgshare"simple.c", "-I#{include}", "-L#{lib}", "-lblosc2", "-o", "test"
-    assert_match "Successful roundtrip!", shell_output(testpath"test")
+    system ENV.cc, pkgshare/"simple.c", "-I#{include}", "-L#{lib}", "-lblosc2", "-o", "test"
+    assert_match "Successful roundtrip!", shell_output(testpath/"test")
   end
 end

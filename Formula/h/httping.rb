@@ -1,7 +1,7 @@
 class Httping < Formula
   desc "Ping-like tool for HTTP requests"
-  homepage "https:github.comfolkertvanheusdenHTTPing"
-  url "https:github.comfolkertvanheusdenHTTPingarchiverefstagsv4.4.0.tar.gz"
+  homepage "https://github.com/folkertvanheusden/HTTPing"
+  url "https://ghfast.top/https://github.com/folkertvanheusden/HTTPing/archive/refs/tags/v4.4.0.tar.gz"
   sha256 "87fa2da5ac83c4a0edf4086161815a632df38e1cc230e1e8a24a8114c09da8fd"
   license "AGPL-3.0-only"
 
@@ -33,9 +33,9 @@ class Httping < Formula
     depends_on "gettext" # for libintl
   end
 
-  # enable TCP Fast Open on macOS, upstream pr ref, https:github.comfolkertvanheusdenHTTPingpull48
+  # enable TCP Fast Open on macOS, upstream pr ref, https://github.com/folkertvanheusden/HTTPing/pull/48
   patch do
-    url "https:github.comfolkertvanheusdenHTTPingcommit79236affb75667cf195f87a58faaebe619e7bfd4.patch?full_index=1"
+    url "https://github.com/folkertvanheusden/HTTPing/commit/79236affb75667cf195f87a58faaebe619e7bfd4.patch?full_index=1"
     sha256 "765fd15dcb35a33141d62b70e4888252a234b9f845c8e35059654852a0d19d1c"
   end
 
@@ -46,6 +46,6 @@ class Httping < Formula
   end
 
   test do
-    system bin"httping", "-c", "2", "-g", "https:brew.sh"
+    system bin/"httping", "-c", "2", "-g", "https://brew.sh/"
   end
 end

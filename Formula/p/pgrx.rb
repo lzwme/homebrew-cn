@@ -1,7 +1,7 @@
 class Pgrx < Formula
   desc "Build Postgres Extensions with Rust"
-  homepage "https:github.compgcentralfoundationpgrx"
-  url "https:github.compgcentralfoundationpgrxarchiverefstagsv0.15.0.tar.gz"
+  homepage "https://github.com/pgcentralfoundation/pgrx"
+  url "https://ghfast.top/https://github.com/pgcentralfoundation/pgrx/archive/refs/tags/v0.15.0.tar.gz"
   sha256 "56df0ac710d405cf5cd0eb5323c3e5aa3fbad21790c89489b6a165156b4bc149"
   license "MIT"
 
@@ -28,12 +28,12 @@ class Pgrx < Formula
 
   test do
     # Show that we can use a different toolchain than the one provided by the `rust` formula.
-    # https:github.comHomebrewhomebrew-corepull134074#pullrequestreview-1484979359
+    # https://github.com/Homebrew/homebrew-core/pull/134074#pullrequestreview-1484979359
     ENV.prepend_path "PATH", Formula["rustup"].bin
     system "rustup", "set", "profile", "minimal"
     system "rustup", "default", "beta"
 
     system "cargo", "pgrx", "new", "my_extension"
-    assert_path_exists testpath"my_extensionmy_extension.control"
+    assert_path_exists testpath/"my_extension/my_extension.control"
   end
 end

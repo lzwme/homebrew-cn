@@ -1,13 +1,13 @@
 class Pnetcdf < Formula
   desc "Parallel netCDF library for scientific data using the OpenMPI library"
-  homepage "https:parallel-netcdf.github.ioindex.html"
-  url "https:parallel-netcdf.github.ioReleasepnetcdf-1.14.0.tar.gz"
+  homepage "https://parallel-netcdf.github.io/index.html"
+  url "https://parallel-netcdf.github.io/Release/pnetcdf-1.14.0.tar.gz"
   sha256 "e5a7e87dcf7d526b97e8ffdce05df0d2845965787a7d21242fafa9656950e402"
   license "NetCDF"
 
   livecheck do
-    url "https:parallel-netcdf.github.iowikiDownload.html"
-    regex(href=.*?pnetcdf[._-]v?(\d+(?:\.\d+)+)\.ti)
+    url "https://parallel-netcdf.github.io/wiki/Download.html"
+    regex(/href=.*?pnetcdf[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   bottle do
@@ -26,16 +26,16 @@ class Pnetcdf < Formula
 
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
-    url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-big_sur.diff"
+    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-big_sur.diff"
     sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
   end
 
   def install
     # Work around asm incompatibility with new linker (FB13194320)
-    # https:github.comParallel-NetCDFPnetCDFissues139
+    # https://github.com/Parallel-NetCDF/PnetCDF/issues/139
     ENV.append "LDFLAGS", "-Wl,-ld_classic" if DevelopmentTools.clang_build_version >= 1500
 
-    system ".configure", *std_configure_args,
+    system "./configure", *std_configure_args,
                           "--disable-silent-rules",
                           "--enable-shared"
 
@@ -44,7 +44,7 @@ class Pnetcdf < Formula
 
   # These tests were converted from the netcdf formula.
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include <stdio.h>
       #include "pnetcdf.h"
       int main()
@@ -55,9 +55,9 @@ class Pnetcdf < Formula
     C
     system ENV.cc, "test.c", "-L#{lib}", "-I#{include}", "-lpnetcdf",
                    "-o", "test"
-    assert_equal `.test`, version.to_s
+    assert_equal `./test`, version.to_s
 
-    (testpath"test.f90").write <<~FORTRAN
+    (testpath/"test.f90").write <<~FORTRAN
       program test
         use mpi
         use pnetcdf
@@ -75,12 +75,12 @@ class Pnetcdf < Formula
       contains
         subroutine check(status)
           integer, intent(in) :: status
-          if (status = nf_noerr) call abort
+          if (status /= nf_noerr) call abort
         end subroutine check
       end program test
     FORTRAN
     system "mpif90", "test.f90", "-L#{lib}", "-I#{include}", "-lpnetcdf",
                        "-o", "testf"
-    system ".testf"
+    system "./testf"
   end
 end

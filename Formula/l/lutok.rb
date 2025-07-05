@@ -1,7 +1,7 @@
 class Lutok < Formula
   desc "Lightweight C++ API for Lua"
-  homepage "https:github.comfreebsdlutok"
-  url "https:github.comfreebsdlutokreleasesdownloadlutok-0.6.1lutok-0.6.1.tar.gz"
+  homepage "https://github.com/freebsd/lutok"
+  url "https://ghfast.top/https://github.com/freebsd/lutok/releases/download/lutok-0.6.1/lutok-0.6.1.tar.gz"
   sha256 "509c43c240ba47b8c452b45f3423a416fa91bdfc0341bfb806e0b78f65ce452d"
   license "BSD-3-Clause"
 
@@ -35,7 +35,7 @@ class Lutok < Formula
     system "glibtoolize", "--force", "--install"
     system "autoreconf", "--force", "--install", "--verbose"
 
-    system ".configure", "--disable-silent-rules", "--enable-atf", *std_configure_args
+    system "./configure", "--disable-silent-rules", "--enable-atf", *std_configure_args
     system "make"
     ENV.deparallelize
     system "make", "check"
@@ -44,8 +44,8 @@ class Lutok < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~CPP
-      #include <lutokstate.hpp>
+    (testpath/"test.cpp").write <<~CPP
+      #include <lutok/state.hpp>
       #include <iostream>
       int main() {
           lutok::state lua;
@@ -58,6 +58,6 @@ class Lutok < Formula
 
     flags = shell_output("pkgconf --cflags --libs lutok").chomp.split
     system ENV.cxx, "test.cpp", "-std=c++11", "-o", "test", *flags
-    system ".test"
+    system "./test"
   end
 end

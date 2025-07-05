@@ -1,10 +1,10 @@
 class Jenv < Formula
   desc "Manage your Java environment"
-  homepage "https:github.comjenvjenv"
-  url "https:github.comjenvjenvarchiverefstags0.5.7.tar.gz"
+  homepage "https://github.com/jenv/jenv"
+  url "https://ghfast.top/https://github.com/jenv/jenv/archive/refs/tags/0.5.7.tar.gz"
   sha256 "5865f7839eda303467fb1ad3dfb606b31566001beeb05360f653905346c2624f"
   license "MIT"
-  head "https:github.comjenvjenv.git", branch: "master"
+  head "https://github.com/jenv/jenv.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -14,20 +14,20 @@ class Jenv < Formula
 
   def install
     libexec.install Dir["*"]
-    bin.write_exec_script libexec"binjenv"
-    fish_function.install_symlink Dir[libexec"fish*.fish"]
+    bin.write_exec_script libexec/"bin/jenv"
+    fish_function.install_symlink Dir[libexec/"fish/*.fish"]
   end
 
   def caveats
     <<~EOS
-      To activate jenv, add the following to your shell profile e.g. ~.profile
-      or ~.zshrc:
-        export PATH="$HOME.jenvbin:$PATH"
+      To activate jenv, add the following to your shell profile e.g. ~/.profile
+      or ~/.zshrc:
+        export PATH="$HOME/.jenv/bin:$PATH"
         eval "$(jenv init -)"
     EOS
   end
 
   test do
-    shell_output("eval \"$(#{bin}jenv init -)\" && jenv versions")
+    shell_output("eval \"$(#{bin}/jenv init -)\" && jenv versions")
   end
 end

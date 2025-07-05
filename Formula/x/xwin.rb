@@ -1,7 +1,7 @@
 class Xwin < Formula
   desc "Microsoft CRT and Windows SDK headers and libraries loader"
-  homepage "https:github.comJake-Shadlexwin"
-  url "https:github.comJake-Shadlexwinarchiverefstags0.6.6.tar.gz"
+  homepage "https://github.com/Jake-Shadle/xwin"
+  url "https://ghfast.top/https://github.com/Jake-Shadle/xwin/archive/refs/tags/0.6.6.tar.gz"
   sha256 "3b2f5260813131670840f142676a01a8eba22064bd8f552561fd31c9ba16bb68"
   license "Apache-2.0"
 
@@ -22,7 +22,7 @@ class Xwin < Formula
   end
 
   test do
-    system bin"xwin", "--accept-license", "splat", "--disable-symlinks"
-    assert_path_exists testpath".xwin-cachesplat"
+    system bin/"xwin", "--accept-license", "splat", "--disable-symlinks"
+    assert_path_exists testpath/".xwin-cache/splat"
   end
 end

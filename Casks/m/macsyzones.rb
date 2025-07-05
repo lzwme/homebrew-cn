@@ -2,11 +2,11 @@ cask "macsyzones" do
   version "1.7"
   sha256 "db99b31f46748a71c5c23c072ae7155e4814e391f31beb18373be7f5150fe322"
 
-  url "https:github.comrohanrhuMacsyZonesreleasesdownloadv#{version}MacsyZones.zip",
-      verified: "github.comrohanrhuMacsyZones"
+  url "https://ghfast.top/https://github.com/rohanrhu/MacsyZones/releases/download/v#{version}/MacsyZones.zip",
+      verified: "github.com/rohanrhu/MacsyZones/"
   name "MacsyZones"
   desc "Window management utility"
-  homepage "https:macsyzones.com"
+  homepage "https://macsyzones.com/"
 
   livecheck do
     url :url
@@ -19,8 +19,8 @@ cask "macsyzones" do
   app "MacsyZones.app"
 
   zap trash: [
-    "~LibraryApplication SupportMacsyZones",
-    "~LibraryLogsMacsyZones",
-    "~LibraryPreferencescom.macsyzones.MacsyZones.plist",
+    "~/Library/Application Support/MacsyZones",
+    "~/Library/Logs/MacsyZones",
+    "~/Library/Preferences/com.macsyzones.MacsyZones.plist",
   ]
 end

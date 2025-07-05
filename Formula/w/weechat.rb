@@ -1,10 +1,10 @@
 class Weechat < Formula
   desc "Extensible IRC client"
-  homepage "https:weechat.org"
-  url "https:weechat.orgfilessrcweechat-4.6.3.tar.xz"
+  homepage "https://weechat.org/"
+  url "https://weechat.org/files/src/weechat-4.6.3.tar.xz"
   sha256 "5c0b5efa969b873c4be582019b18523ee403e7430b8223825bcdb44a89f5815d"
   license "GPL-3.0-or-later"
-  head "https:github.comweechatweechat.git", branch: "master"
+  head "https://github.com/weechat/weechat.git", branch: "master"
 
   bottle do
     sha256 arm64_sequoia: "b333b588588d4d5d7f7c14be493a09f0c541639add4e69f180fb74e9cb029fad"
@@ -47,19 +47,19 @@ class Weechat < Formula
   def install
     pyver = Language::Python.major_minor_version python3
     # Help pkgconf find python as we only provide `python3-embed` for aliased python formula
-    inreplace "cmakeFindPython.cmake", " python3-embed ", " python-#{pyver}-embed "
+    inreplace "cmake/FindPython.cmake", " python3-embed ", " python-#{pyver}-embed "
 
     args = %W[
       -DENABLE_MAN=ON
       -DENABLE_GUILE=OFF
-      -DCA_FILE=#{Formula["gnutls"].pkgetc}cert.pem
+      -DCA_FILE=#{Formula["gnutls"].pkgetc}/cert.pem
       -DENABLE_JAVASCRIPT=OFF
       -DENABLE_PHP=OFF
     ]
 
     if OS.linux?
-      args << "-DTCL_INCLUDE_PATH=#{Formula["tcl-tk"].opt_include}tcl-tk"
-      args << "-DTK_INCLUDE_PATH=#{Formula["tcl-tk"].opt_include}tcl-tk"
+      args << "-DTCL_INCLUDE_PATH=#{Formula["tcl-tk"].opt_include}/tcl-tk"
+      args << "-DTK_INCLUDE_PATH=#{Formula["tcl-tk"].opt_include}/tcl-tk"
     end
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
@@ -68,6 +68,6 @@ class Weechat < Formula
   end
 
   test do
-    system bin"weechat", "-r", "quit"
+    system bin/"weechat", "-r", "/quit"
   end
 end

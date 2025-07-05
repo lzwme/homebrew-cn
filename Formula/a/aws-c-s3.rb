@@ -1,7 +1,7 @@
 class AwsCS3 < Formula
   desc "C99 library implementation for communicating with the S3 service"
-  homepage "https:github.comawslabsaws-c-s3"
-  url "https:github.comawslabsaws-c-s3archiverefstagsv0.8.3.tar.gz"
+  homepage "https://github.com/awslabs/aws-c-s3"
+  url "https://ghfast.top/https://github.com/awslabs/aws-c-s3/archive/refs/tags/v0.8.3.tar.gz"
   sha256 "c1c233317927091ee966bb297db2e6adbb596d6e5f981dbc724b0831b7e8f07d"
   license "Apache-2.0"
 
@@ -34,11 +34,11 @@ class AwsCS3 < Formula
   end
 
   test do
-    (testpath"test.c").write <<~C
-      #include <awscommonallocator.h>
-      #include <awscommonerror.h>
-      #include <awss3s3.h>
-      #include <awss3s3_client.h>
+    (testpath/"test.c").write <<~C
+      #include <aws/common/allocator.h>
+      #include <aws/common/error.h>
+      #include <aws/s3/s3.h>
+      #include <aws/s3/s3_client.h>
       #include <assert.h>
       #include <string.h>
 
@@ -65,6 +65,6 @@ class AwsCS3 < Formula
     C
     system ENV.cc, "test.c", "-o", "test", "-L#{lib}", "-laws-c-s3",
                    "-L#{Formula["aws-c-common"].opt_lib}", "-laws-c-common"
-    system ".test"
+    system "./test"
   end
 end

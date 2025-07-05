@@ -1,7 +1,7 @@
 class Julius < Formula
   desc "Two-pass large vocabulary continuous speech recognition engine"
-  homepage "https:github.comjulius-speechjulius"
-  url "https:github.comjulius-speechjuliusarchiverefstagsv4.6.tar.gz"
+  homepage "https://github.com/julius-speech/julius"
+  url "https://ghfast.top/https://github.com/julius-speech/julius/archive/refs/tags/v4.6.tar.gz"
   sha256 "74447d7adb3bd119adae7915ba9422b7da553556f979ac4ee53a262d94d47b47"
   license "BSD-3-Clause"
 
@@ -31,42 +31,42 @@ class Julius < Formula
   conflicts_with "cmuclmtk", because: "both install `binlm2arpa` binaries"
 
   # A pull request to fix this has been submitted upstream:
-  # https:github.comjulius-speechjuliuspull184
+  # https://github.com/julius-speech/julius/pull/184
   patch :DATA
 
   def install
     # Workaround for Xcode 15
     ENV.append_to_cflags "-Wno-incompatible-function-pointer-types" if DevelopmentTools.clang_build_version >= 1500
 
-    # https:github.comjulius-speechjuliusissues153 fixes implicit declaration error
-    inreplace "libsentsrcadinadin_mic_darwin_coreaudio.c",
-      "#include <stdio.h>", "#include <stdio.h>\n#include <sentstddefs.h>"
+    # https://github.com/julius-speech/julius/issues/153 fixes implicit declaration error
+    inreplace "libsent/src/adin/adin_mic_darwin_coreaudio.c",
+      "#include <stdio.h>", "#include <stdio.h>\n#include <sent/stddefs.h>"
 
     args = ["--disable-silent-rules", "--mandir=#{man}"]
     # Help old config scripts identify arm64 linux
     args << "--build=aarch64-unknown-linux-gnu" if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
 
-    system ".configure", *args, *std_configure_args
+    system "./configure", *args, *std_configure_args
     system "make"
     system "make", "install"
   end
 
   test do
-    shell_output("#{bin}julius --help", 1)
+    shell_output("#{bin}/julius --help", 1)
   end
 end
 
 __END__
-diff --git alibsentsrcphmmcalc_dnn.c blibsentsrcphmmcalc_dnn.c
+diff --git a/libsent/src/phmm/calc_dnn.c b/libsent/src/phmm/calc_dnn.c
 index aed91ef..a8a9f35 100644
---- alibsentsrcphmmcalc_dnn.c
-+++ blibsentsrcphmmcalc_dnn.c
+--- a/libsent/src/phmm/calc_dnn.c
++++ b/libsent/src/phmm/calc_dnn.c
 @@ -45,7 +45,7 @@ static void cpu_id_check()
  
    use_simd = USE_SIMD_NONE;
  
 -#if defined(__arm__) || TARGET_OS_IPHONE
 +#if defined(__arm__) || TARGET_OS_IPHONE || defined(__aarch64__)
-   * on ARM NEON *
+   /* on ARM NEON */
  
  #if defined(HAS_SIMD_NEONV2)

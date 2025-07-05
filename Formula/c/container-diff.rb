@@ -1,10 +1,10 @@
 class ContainerDiff < Formula
   desc "Diff your Docker containers"
-  homepage "https:github.comGoogleContainerToolscontainer-diff"
-  url "https:github.comGoogleContainerToolscontainer-diffarchiverefstagsv0.19.0.tar.gz"
+  homepage "https://github.com/GoogleContainerTools/container-diff"
+  url "https://ghfast.top/https://github.com/GoogleContainerTools/container-diff/archive/refs/tags/v0.19.0.tar.gz"
   sha256 "ba369effbe0d9f556cbcdadd5882eeb6346a105c11e5f07ffccb7e834cadefe6"
   license "Apache-2.0"
-  head "https:github.comGoogleContainerToolscontainer-diff.git", branch: "master"
+  head "https://github.com/GoogleContainerTools/container-diff.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -25,13 +25,13 @@ class ContainerDiff < Formula
   depends_on "go" => :build
 
   def install
-    pkg = "github.comGoogleContainerToolscontainer-diffversion"
+    pkg = "github.com/GoogleContainerTools/container-diff/version"
     system "go", "build", *std_go_args(ldflags: "-s -w -X #{pkg}.version=#{version}")
   end
 
   test do
-    image = "daemon:gcr.iogoogle-appenginegolang:2018-01-04_15_24"
-    output = shell_output("#{bin}container-diff analyze #{image} 2>&1", 1)
-    assert_match "error retrieving image daemon:gcr.iogoogle-appenginegolang:2018-01-04_15_24", output
+    image = "daemon://gcr.io/google-appengine/golang:2018-01-04_15_24"
+    output = shell_output("#{bin}/container-diff analyze #{image} 2>&1", 1)
+    assert_match "error retrieving image daemon://gcr.io/google-appengine/golang:2018-01-04_15_24", output
   end
 end

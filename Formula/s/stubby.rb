@@ -1,11 +1,11 @@
 class Stubby < Formula
   desc "DNS privacy enabled stub resolver service based on getdns"
-  homepage "https:dnsprivacy.orgwikidisplayDPDNS+Privacy+Daemon+-+Stubby"
-  url "https:github.comgetdnsapistubbyarchiverefstagsv0.4.3.tar.gz"
+  homepage "https://dnsprivacy.org/wiki/display/DP/DNS+Privacy+Daemon+-+Stubby"
+  url "https://ghfast.top/https://github.com/getdnsapi/stubby/archive/refs/tags/v0.4.3.tar.gz"
   sha256 "99291ab4f09bce3743000ed3ecbf58961648a35ca955889f1c41d36810cc4463"
   license "BSD-3-Clause"
   revision 1
-  head "https:github.comgetdnsapistubby.git", branch: "develop"
+  head "https://github.com/getdnsapi/stubby.git", branch: "develop"
 
   no_autobump! because: :requires_manual_review
 
@@ -40,7 +40,7 @@ class Stubby < Formula
 
   def install
     args = %W[
-      -DCMAKE_INSTALL_RUNSTATEDIR=#{var}run
+      -DCMAKE_INSTALL_RUNSTATEDIR=#{var}/run/
       -DCMAKE_INSTALL_SYSCONFDIR=#{etc}
     ]
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
@@ -49,14 +49,14 @@ class Stubby < Formula
   end
 
   service do
-    run [opt_bin"stubby", "-C", etc"stubbystubby.yml"]
+    run [opt_bin/"stubby", "-C", etc/"stubby/stubby.yml"]
     keep_alive true
     run_type :immediate
   end
 
   test do
-    assert_path_exists etc"stubbystubby.yml"
-    (testpath"stubby_test.yml").write <<~YAML
+    assert_path_exists etc/"stubby/stubby.yml"
+    (testpath/"stubby_test.yml").write <<~YAML
       resolution_type: GETDNS_RESOLUTION_STUB
       dns_transport_list:
         - GETDNS_TRANSPORT_TLS
@@ -70,11 +70,11 @@ class Stubby < Formula
         - address_data: 8.8.4.4
         - address_data: 1.1.1.1
     YAML
-    output = shell_output("#{bin}stubby -i -C stubby_test.yml")
+    output = shell_output("#{bin}/stubby -i -C stubby_test.yml")
     assert_match "bindata for 8.8.8.8", output
 
     fork do
-      exec bin"stubby", "-C", testpath"stubby_test.yml"
+      exec bin/"stubby", "-C", testpath/"stubby_test.yml"
     end
     sleep 2
 

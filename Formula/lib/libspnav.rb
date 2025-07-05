@@ -1,7 +1,7 @@
 class Libspnav < Formula
   desc "Client library for connecting to 3Dconnexion's 3D input devices"
-  homepage "https:spacenav.sourceforge.net"
-  url "https:github.comFreeSpacenavlibspnavreleasesdownloadv1.2libspnav-1.2.tar.gz"
+  homepage "https://spacenav.sourceforge.net/"
+  url "https://ghfast.top/https://github.com/FreeSpacenav/libspnav/releases/download/v1.2/libspnav-1.2.tar.gz"
   sha256 "093747e7e03b232e08ff77f1ad7f48552c06ac5236316a5012db4269951c39db"
   license "BSD-3-Clause"
 
@@ -24,12 +24,12 @@ class Libspnav < Formula
       --disable-x11
     ]
 
-    system ".configure", *args
+    system "./configure", *args
     system "make", "install"
   end
 
   test do
-    (testpath"test.cpp").write <<~CPP
+    (testpath/"test.cpp").write <<~CPP
       #include <spnav.h>
 
       int main() {
@@ -39,6 +39,6 @@ class Libspnav < Formula
       }
     CPP
     system ENV.cc, "test.cpp", "-I#{include}", "-L#{lib}", "-lspnav", "-lm", "-o", "test"
-    system ".test"
+    system "./test"
   end
 end

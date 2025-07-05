@@ -1,8 +1,8 @@
 class Cpptest < Formula
   desc "Unit testing framework handling automated tests in C++"
-  homepage "https:cpptest.sourceforge.io"
-  url "https:downloads.sourceforge.netprojectcpptestcpptestcpptest-2.0.0cpptest-2.0.0.tar.bz2"
-  mirror "https:github.comcpptestcpptestreleasesdownload2.0.0cpptest-2.0.0.tar.bz2"
+  homepage "https://cpptest.sourceforge.io/"
+  url "https://downloads.sourceforge.net/project/cpptest/cpptest/cpptest-2.0.0/cpptest-2.0.0.tar.bz2"
+  mirror "https://ghfast.top/https://github.com/cpptest/cpptest/releases/download/2.0.0/cpptest-2.0.0.tar.bz2"
   sha256 "7c258936a407bcd1635a9b7719fbdcd6c6e044b5d32f53bbf6fbf6f205e5e429"
   license "LGPL-2.1-or-later"
 
@@ -27,18 +27,18 @@ class Cpptest < Formula
 
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
-    url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-big_sur.diff"
+    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-big_sur.diff"
     sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
   end
 
   def install
-    system ".configure", "--disable-dependency-tracking",
+    system "./configure", "--disable-dependency-tracking",
                           "--prefix=#{prefix}"
     system "make", "install"
   end
 
   test do
-    (testpath"test.cpp").write <<~CPP
+    (testpath/"test.cpp").write <<~CPP
       #include <assert.h>
       #include <cpptest.h>
 
@@ -58,6 +58,6 @@ class Cpptest < Formula
       }
     CPP
     system ENV.cxx, "test.cpp", "-std=c++11", "-L#{lib}", "-lcpptest", "-o", "test"
-    system ".test"
+    system "./test"
   end
 end

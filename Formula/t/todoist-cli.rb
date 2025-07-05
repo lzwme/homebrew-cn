@@ -1,10 +1,10 @@
 class TodoistCli < Formula
   desc "CLI for Todoist"
-  homepage "https:github.comsachaostodoist"
-  url "https:github.comsachaostodoistarchiverefstagsv0.22.0.tar.gz"
+  homepage "https://github.com/sachaos/todoist"
+  url "https://ghfast.top/https://github.com/sachaos/todoist/archive/refs/tags/v0.22.0.tar.gz"
   sha256 "b8220ec1ec14f298afed0e32e4028067b8833553a6976f99d7ee35b7a75d5a71"
   license "MIT"
-  head "https:github.comsachaostodoist.git", branch: "master"
+  head "https://github.com/sachaos/todoist.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "6b565b7bccb371408be79df4a27dd9cdf2d4338543986746de44b3db83f36046"
@@ -19,13 +19,13 @@ class TodoistCli < Formula
 
   def install
     ldflags = "-s -w -X main.version=#{version}"
-    system "go", "build", *std_go_args(output: bin"todoist", ldflags:)
+    system "go", "build", *std_go_args(output: bin/"todoist", ldflags:)
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}todoist --version")
+    assert_match version.to_s, shell_output("#{bin}/todoist --version")
 
-    test_config = testpath".configtodoistconfig.json"
+    test_config = testpath/".config/todoist/config.json"
     test_config.write <<~JSON
       {
         "token": "test_token"
@@ -33,7 +33,7 @@ class TodoistCli < Formula
     JSON
     chmod 0600, test_config
 
-    output = shell_output("#{bin}todoist list 2>&1")
+    output = shell_output("#{bin}/todoist list 2>&1")
     assert_match "There is no task.", output
   end
 end

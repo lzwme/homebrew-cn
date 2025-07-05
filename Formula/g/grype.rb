@@ -1,10 +1,10 @@
 class Grype < Formula
   desc "Vulnerability scanner for container images and filesystems"
-  homepage "https:github.comanchoregrype"
-  url "https:github.comanchoregrypearchiverefstagsv0.95.0.tar.gz"
+  homepage "https://github.com/anchore/grype"
+  url "https://ghfast.top/https://github.com/anchore/grype/archive/refs/tags/v0.95.0.tar.gz"
   sha256 "25869b1df827141d7c1e7eaac2ea8e817bf4a6397eabb620d59855d81a3e90a2"
   license "Apache-2.0"
-  head "https:github.comanchoregrype.git", branch: "main"
+  head "https://github.com/anchore/grype.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "e2eecd2ed291d9ac1bb969bc99ebd048dc552006431840b843ab7ab88b0c3c29"
@@ -20,14 +20,14 @@ class Grype < Formula
 
   def install
     ldflags = "-s -w -X main.version=#{version} -X main.gitCommit=#{tap.user} -X main.buildDate=#{time.iso8601}"
-    system "go", "build", *std_go_args(ldflags:), ".cmdgrype"
+    system "go", "build", *std_go_args(ldflags:), "./cmd/grype"
 
-    generate_completions_from_executable(bin"grype", "completion")
+    generate_completions_from_executable(bin/"grype", "completion")
   end
 
   test do
-    assert_match "database does not exist", shell_output("#{bin}grype db status 2>&1", 1)
-    assert_match "update to the latest db", shell_output("#{bin}grype db check", 100)
-    assert_match version.to_s, shell_output("#{bin}grype version 2>&1")
+    assert_match "database does not exist", shell_output("#{bin}/grype db status 2>&1", 1)
+    assert_match "update to the latest db", shell_output("#{bin}/grype db check", 100)
+    assert_match version.to_s, shell_output("#{bin}/grype version 2>&1")
   end
 end

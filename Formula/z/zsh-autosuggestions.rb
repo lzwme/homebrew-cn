@@ -1,7 +1,7 @@
 class ZshAutosuggestions < Formula
-  desc "Fish-like fastunobtrusive autosuggestions for zsh"
-  homepage "https:github.comzsh-userszsh-autosuggestions"
-  url "https:github.comzsh-userszsh-autosuggestionsarchiverefstagsv0.7.1.tar.gz"
+  desc "Fish-like fast/unobtrusive autosuggestions for zsh"
+  homepage "https://github.com/zsh-users/zsh-autosuggestions"
+  url "https://ghfast.top/https://github.com/zsh-users/zsh-autosuggestions/archive/refs/tags/v0.7.1.tar.gz"
   sha256 "0df7affff21cd87ed298e6a3970ed08a1dd66a6efa676454ee5b091ad503badf"
   license "MIT"
 
@@ -19,7 +19,7 @@ class ZshAutosuggestions < Formula
     <<~EOS
       To activate the autosuggestions, add the following at the end of your .zshrc:
 
-        source #{HOMEBREW_PREFIX}sharezsh-autosuggestionszsh-autosuggestions.zsh
+        source #{HOMEBREW_PREFIX}/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
       You will also need to restart your terminal for this change to take effect.
     EOS
@@ -27,6 +27,6 @@ class ZshAutosuggestions < Formula
 
   test do
     assert_match "history",
-      shell_output("zsh -c '. #{pkgshare}zsh-autosuggestions.zsh && echo $ZSH_AUTOSUGGEST_STRATEGY'")
+      shell_output("zsh -c '. #{pkgshare}/zsh-autosuggestions.zsh && echo $ZSH_AUTOSUGGEST_STRATEGY'")
   end
 end

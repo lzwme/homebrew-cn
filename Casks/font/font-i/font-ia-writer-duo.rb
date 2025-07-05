@@ -2,16 +2,16 @@ cask "font-ia-writer-duo" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comiaoloiA-Fontsarchiverefsheadsmaster.tar.gz"
+  url "https://ghfast.top/https://github.com/iaolo/iA-Fonts/archive/refs/heads/master.tar.gz"
   name "iA Writer Duo"
-  homepage "https:github.comiaoloiA-Fonts"
+  homepage "https://github.com/iaolo/iA-Fonts"
 
-  font "iA-Fonts-masteriA Writer DuoStaticiAWriterDuoS-Bold.ttf"
-  font "iA-Fonts-masteriA Writer DuoStaticiAWriterDuoS-BoldItalic.ttf"
-  font "iA-Fonts-masteriA Writer DuoStaticiAWriterDuoS-Italic.ttf"
-  font "iA-Fonts-masteriA Writer DuoStaticiAWriterDuoS-Regular.ttf"
-  font "iA-Fonts-masteriA Writer DuoVariableiAWriterDuoV-Italic.ttf"
-  font "iA-Fonts-masteriA Writer DuoVariableiAWriterDuoV.ttf"
+  font "iA-Fonts-master/iA Writer Duo/Static/iAWriterDuoS-Bold.ttf"
+  font "iA-Fonts-master/iA Writer Duo/Static/iAWriterDuoS-BoldItalic.ttf"
+  font "iA-Fonts-master/iA Writer Duo/Static/iAWriterDuoS-Italic.ttf"
+  font "iA-Fonts-master/iA Writer Duo/Static/iAWriterDuoS-Regular.ttf"
+  font "iA-Fonts-master/iA Writer Duo/Variable/iAWriterDuoV-Italic.ttf"
+  font "iA-Fonts-master/iA Writer Duo/Variable/iAWriterDuoV.ttf"
 
   # No zap stanza required
 end

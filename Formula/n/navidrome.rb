@@ -1,10 +1,10 @@
 class Navidrome < Formula
-  desc "Modern Music Server and Streamer compatible with SubsonicAirsonic"
-  homepage "https:www.navidrome.org"
-  url "https:github.comnavidromenavidromearchiverefstagsv0.57.0.tar.gz"
+  desc "Modern Music Server and Streamer compatible with Subsonic/Airsonic"
+  homepage "https://www.navidrome.org"
+  url "https://ghfast.top/https://github.com/navidrome/navidrome/archive/refs/tags/v0.57.0.tar.gz"
   sha256 "4eeeadb7cdf527cb8ccccc1522c1bf3f0f391f9fcf04dee5eeaf7896c4871207"
   license "GPL-3.0-only"
-  head "https:github.comnavidromenavidrome.git", branch: "master"
+  head "https://github.com/navidrome/navidrome.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "eef9a7160c39470200421a8a0591b0f119f22ab79dd83d3dc79a5eebe651be8b"
@@ -24,8 +24,8 @@ class Navidrome < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.comnavidromenavidromeconsts.gitTag=v#{version}
-      -X github.comnavidromenavidromeconsts.gitSha=source_archive
+      -X github.com/navidrome/navidrome/consts.gitTag=v#{version}
+      -X github.com/navidrome/navidrome/consts.gitSha=source_archive
     ]
 
     system "make", "setup"
@@ -34,12 +34,12 @@ class Navidrome < Formula
   end
 
   test do
-    assert_equal "#{version} (source_archive)", shell_output("#{bin}navidrome --version").chomp
+    assert_equal "#{version} (source_archive)", shell_output("#{bin}/navidrome --version").chomp
     port = free_port
-    pid = spawn bin"navidrome", "--port", port.to_s
+    pid = spawn bin/"navidrome", "--port", port.to_s
     sleep 20
     sleep 100 if OS.mac? && Hardware::CPU.intel?
-    assert_equal ".", shell_output("curl http:localhost:#{port}ping")
+    assert_equal ".", shell_output("curl http://localhost:#{port}/ping")
   ensure
     Process.kill "KILL", pid
     Process.wait pid

@@ -1,7 +1,7 @@
 class Sonic < Formula
   desc "Fast, lightweight & schema-less search backend"
-  homepage "https:github.comvaleriansaliousonic"
-  url "https:github.comvaleriansaliousonicarchiverefstagsv1.4.9.tar.gz"
+  homepage "https://github.com/valeriansaliou/sonic"
+  url "https://ghfast.top/https://github.com/valeriansaliou/sonic/archive/refs/tags/v1.4.9.tar.gz"
   sha256 "68f9336cd63e8f4171073be89e37ed6688812281207c3f70567b28fbe37be63b"
   license "MPL-2.0"
 
@@ -23,26 +23,26 @@ class Sonic < Formula
 
   def install
     system "cargo", "install", *std_cargo_args
-    inreplace "config.cfg", ".", var"sonic"
+    inreplace "config.cfg", "./", var/"sonic/"
     etc.install "config.cfg" => "sonic.cfg"
   end
 
   service do
-    run [opt_bin"sonic", "-c", etc"sonic.cfg"]
+    run [opt_bin/"sonic", "-c", etc/"sonic.cfg"]
     keep_alive true
     working_dir var
-    log_path var"logsonic.log"
-    error_log_path var"logsonic.log"
+    log_path var/"log/sonic.log"
+    error_log_path var/"log/sonic.log"
   end
 
   test do
     port = free_port
 
-    cp etc"sonic.cfg", testpath"config.cfg"
+    cp etc/"sonic.cfg", testpath/"config.cfg"
     inreplace "config.cfg", "[::1]:1491", "0.0.0.0:#{port}"
-    inreplace "config.cfg", "#{var}sonic", "."
+    inreplace "config.cfg", "#{var}/sonic", "."
 
-    pid = spawn bin"sonic"
+    pid = spawn bin/"sonic"
     sleep 10
     TCPSocket.open("localhost", port) do |sock|
       assert_match "CONNECTED", sock.gets

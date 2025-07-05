@@ -1,10 +1,10 @@
 class Davix < Formula
-  desc "Library and tools for advanced file IO with HTTP-based protocols"
-  homepage "https:github.comcern-ftsdavix"
-  url "https:github.comcern-ftsdavixreleasesdownloadR_0_8_10davix-0.8.10.tar.gz"
+  desc "Library and tools for advanced file I/O with HTTP-based protocols"
+  homepage "https://github.com/cern-fts/davix"
+  url "https://ghfast.top/https://github.com/cern-fts/davix/releases/download/R_0_8_10/davix-0.8.10.tar.gz"
   sha256 "66aa9adadee6ff2bae14caba731597ba7a7cd158763d9d80a9cfe395afc17403"
   license "LGPL-2.1-or-later"
-  head "https:github.comcern-ftsdavix.git", branch: "devel"
+  head "https://github.com/cern-fts/davix.git", branch: "devel"
 
   no_autobump! because: :requires_manual_review
 
@@ -45,6 +45,6 @@ class Davix < Formula
   end
 
   test do
-    system bin"davix-get", "https:brew.sh"
+    system bin/"davix-get", "https://brew.sh"
   end
 end

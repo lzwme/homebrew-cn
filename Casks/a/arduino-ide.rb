@@ -5,11 +5,11 @@ cask "arduino-ide" do
   sha256 arm:   "18dbf23f7f87133a8c139b14df8a647f12fd97b5f612344688f7150255a9391f",
          intel: "ddbab78ebad1f617c0d8a05efed83b4da2ff208534031e125824ff924df1e189"
 
-  url "https:github.comarduinoarduino-idereleasesdownload#{version}arduino-ide_#{version}_macOS_#{arch}.dmg",
-      verified: "github.comarduinoarduino-ide"
+  url "https://ghfast.top/https://github.com/arduino/arduino-ide/releases/download/#{version}/arduino-ide_#{version}_macOS_#{arch}.dmg",
+      verified: "github.com/arduino/arduino-ide/"
   name "Arduino IDE"
   desc "Electronics prototyping platform"
-  homepage "https:www.arduino.ccensoftware"
+  homepage "https://www.arduino.cc/en/software"
 
   livecheck do
     url :url
@@ -22,10 +22,10 @@ cask "arduino-ide" do
   app "Arduino IDE.app"
 
   zap trash: [
-    "~.arduinoIDE",
-    "~LibraryApplication Supportarduino-ide",
-    "~LibraryApplication Supportcom.apple.sharedfilelistcom.apple.LSSharedFileList.ApplicationRecentDocumentscc.arduino.ide*.sfl*",
-    "~LibraryPreferencescc.arduino.IDE*.plist",
-    "~LibrarySaved Application Statecc.arduino.IDE#{version.major}.savedState",
+    "~/.arduinoIDE",
+    "~/Library/Application Support/arduino-ide",
+    "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/cc.arduino.ide*.sfl*",
+    "~/Library/Preferences/cc.arduino.IDE*.plist",
+    "~/Library/Saved Application State/cc.arduino.IDE#{version.major}.savedState",
   ]
 end

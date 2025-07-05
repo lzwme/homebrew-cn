@@ -1,13 +1,13 @@
 class GambitScheme < Formula
   desc "Implementation of the Scheme Language"
-  homepage "https:gambitscheme.org"
-  url "https:github.comgambitgambitarchiverefstagsv4.9.5.tar.gz"
+  homepage "https://gambitscheme.org/"
+  url "https://ghfast.top/https://github.com/gambit/gambit/archive/refs/tags/v4.9.5.tar.gz"
   sha256 "758da7b4afe6411e9c4fed14b0cc5ada39b5f1393c1edd4d3dd9c9a06127c310"
   license "Apache-2.0"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -48,23 +48,23 @@ class GambitScheme < Formula
       --enable-openssl
     ]
 
-    system ".configure", *args
+    system "./configure", *args
 
     # Fixed in gambit HEAD, but they haven't cut a release
     inreplace "config.status" do |s|
-      s.gsub! %r{usrlocaloptopenssl(@\d(\.\d)?)?}, Formula["openssl@3"].opt_prefix
+      s.gsub! %r{/usr/local/opt/openssl(@\d(\.\d)?)?}, Formula["openssl@3"].opt_prefix
     end
-    system ".config.status"
+    system "./config.status"
 
     system "make"
     ENV.deparallelize
     system "make", "install"
 
     # fix lisp file install location
-    elisp.install share"emacssite-lispgambit.el"
+    elisp.install share/"emacs/site-lisp/gambit.el"
   end
 
   test do
-    assert_equal "0123456789", shell_output("#{bin}gsi -e \"(for-each write '(0 1 2 3 4 5 6 7 8 9))\"")
+    assert_equal "0123456789", shell_output("#{bin}/gsi -e \"(for-each write '(0 1 2 3 4 5 6 7 8 9))\"")
   end
 end

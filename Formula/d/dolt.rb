@@ -1,11 +1,11 @@
 class Dolt < Formula
   desc "Git for Data"
-  homepage "https:github.comdolthubdolt"
-  url "https:github.comdolthubdoltarchiverefstagsv1.55.4.tar.gz"
+  homepage "https://github.com/dolthub/dolt"
+  url "https://ghfast.top/https://github.com/dolthub/dolt/archive/refs/tags/v1.55.4.tar.gz"
   sha256 "13d8ef5f65e17247957a4acb9195d1b84491a7b845e3480721147f7536783174"
   license "Apache-2.0"
   version_scheme 1
-  head "https:github.comdolthubdolt.git", branch: "main"
+  head "https://github.com/dolthub/dolt.git", branch: "main"
 
   livecheck do
     url :stable
@@ -26,30 +26,30 @@ class Dolt < Formula
 
   def install
     chdir "go" do
-      system "go", "build", *std_go_args(ldflags: "-s -w"), ".cmddolt"
+      system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/dolt"
     end
   end
 
   def post_install
-    (var"log").mkpath unless (var"log").exist?
-    (var"dolt").mkpath
+    (var/"log").mkpath unless (var/"log").exist?
+    (var/"dolt").mkpath
   end
 
   service do
-    run [opt_bin"dolt", "sql-server"]
+    run [opt_bin/"dolt", "sql-server"]
     keep_alive true
-    log_path var"logdolt.log"
-    error_log_path var"logdolt.error.log"
-    working_dir var"dolt"
+    log_path var/"log/dolt.log"
+    error_log_path var/"log/dolt.error.log"
+    working_dir var/"dolt"
   end
 
   test do
     ENV["DOLT_ROOT_PATH"] = testpath
 
     mkdir "state-populations" do
-      system bin"dolt", "init", "--name", "test", "--email", "test"
-      system bin"dolt", "sql", "-q", "create table state_populations ( state varchar(14), primary key (state) )"
-      assert_match "state_populations", shell_output("#{bin}dolt sql -q 'show tables'")
+      system bin/"dolt", "init", "--name", "test", "--email", "test"
+      system bin/"dolt", "sql", "-q", "create table state_populations ( state varchar(14), primary key (state) )"
+      assert_match "state_populations", shell_output("#{bin}/dolt sql -q 'show tables'")
     end
   end
 end

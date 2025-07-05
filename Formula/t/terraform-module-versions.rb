@@ -1,10 +1,10 @@
 class TerraformModuleVersions < Formula
   desc "CLI that checks Terraform code for module updates"
-  homepage "https:github.comkeilerkonzeptterraform-module-versions"
-  url "https:github.comkeilerkonzeptterraform-module-versionsarchiverefstagsv3.3.12.tar.gz"
+  homepage "https://github.com/keilerkonzept/terraform-module-versions"
+  url "https://ghfast.top/https://github.com/keilerkonzept/terraform-module-versions/archive/refs/tags/v3.3.12.tar.gz"
   sha256 "5cb38a014559e17bc125728381e29f4ed92264df0f651d5ef783cdad833966e4"
   license "MIT"
-  head "https:github.comkeilerkonzeptterraform-module-versions.git", branch: "master"
+  head "https://github.com/keilerkonzept/terraform-module-versions.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "c4617f15006d80c603e3b3b57e6f5dcce8b19b8cda78a10b6709cfa5290a2f1b"
@@ -22,9 +22,9 @@ class TerraformModuleVersions < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}terraform-module-versions version")
+    assert_match version.to_s, shell_output("#{bin}/terraform-module-versions version")
 
-    assert_match "TYPE", shell_output("#{bin}terraform-module-versions list")
-    assert_match "UPDATE?", shell_output("#{bin}terraform-module-versions check")
+    assert_match "TYPE", shell_output("#{bin}/terraform-module-versions list")
+    assert_match "UPDATE?", shell_output("#{bin}/terraform-module-versions check")
   end
 end

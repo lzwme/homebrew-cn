@@ -1,7 +1,7 @@
 class Vale < Formula
   desc "Syntax-aware linter for prose"
-  homepage "https:vale.sh"
-  url "https:github.comerrata-aivalearchiverefstagsv3.12.0.tar.gz"
+  homepage "https://vale.sh/"
+  url "https://ghfast.top/https://github.com/errata-ai/vale/archive/refs/tags/v3.12.0.tar.gz"
   sha256 "26b4c02024c441929e7fd2d79a9b1f94489f85d2e87cd25f9efa2057d10a65f3"
   license "MIT"
 
@@ -19,12 +19,12 @@ class Vale < Formula
 
   def install
     ldflags = "-X main.version=#{version} -s -w"
-    system "go", "build", *std_go_args, "-ldflags=#{ldflags}", ".cmdvale"
+    system "go", "build", *std_go_args, "-ldflags=#{ldflags}", "./cmd/vale"
   end
 
   test do
-    mkdir_p "stylesdemo"
-    (testpath"stylesdemoHeadingStartsWithCapital.yml").write <<~YAML
+    mkdir_p "styles/demo"
+    (testpath/"styles/demo/HeadingStartsWithCapital.yml").write <<~YAML
       extends: capitalization
       message: "'%s' should be in title case"
       level: warning
@@ -32,15 +32,15 @@ class Vale < Formula
       match: $title
     YAML
 
-    (testpath"vale.ini").write <<~INI
+    (testpath/"vale.ini").write <<~INI
       StylesPath = styles
       [*.md]
       BasedOnStyles = demo
     INI
 
-    (testpath"document.md").write("# heading is not capitalized")
+    (testpath/"document.md").write("# heading is not capitalized")
 
-    output = shell_output("#{bin}vale --config=#{testpath}vale.ini #{testpath}document.md 2>&1")
-    assert_match(✖ .*0 errors.*, .*1 warning.* and .*0 suggestions.* in 1 file\., output)
+    output = shell_output("#{bin}/vale --config=#{testpath}/vale.ini #{testpath}/document.md 2>&1")
+    assert_match(/✖ .*0 errors.*, .*1 warning.* and .*0 suggestions.* in 1 file\./, output)
   end
 end

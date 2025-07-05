@@ -1,10 +1,10 @@
 class ZlibNgCompat < Formula
   desc "Zlib replacement with optimizations for next generation systems"
-  homepage "https:github.comzlib-ngzlib-ng"
-  url "https:github.comzlib-ngzlib-ngarchiverefstags2.2.4.tar.gz"
+  homepage "https://github.com/zlib-ng/zlib-ng"
+  url "https://ghfast.top/https://github.com/zlib-ng/zlib-ng/archive/refs/tags/2.2.4.tar.gz"
   sha256 "a73343c3093e5cdc50d9377997c3815b878fd110bf6511c2c7759f2afb90f5a3"
   license "Zlib"
-  head "https:github.comzlib-ngzlib-ng.git", branch: "develop"
+  head "https://github.com/zlib-ng/zlib-ng.git", branch: "develop"
 
   livecheck do
     formula "zlib-ng"
@@ -29,24 +29,24 @@ class ZlibNgCompat < Formula
   def install
     ENV.runtime_cpu_detection
     # Disabling new strategies based on Fedora comment on keeping compatibility with zlib
-    # Ref: https:src.fedoraproject.orgrpmszlib-ngblobrawhidefzlib-ng.spec#_120
-    system ".configure", "--prefix=#{prefix}", "--without-new-strategies", "--zlib-compat"
+    # Ref: https://src.fedoraproject.org/rpms/zlib-ng/blob/rawhide/f/zlib-ng.spec#_120
+    system "./configure", "--prefix=#{prefix}", "--without-new-strategies", "--zlib-compat"
     system "make", "install"
   end
 
   test do
-    # https:zlib.netzlib_how.html
+    # https://zlib.net/zlib_how.html
     resource "homebrew-test_artifact" do
-      url "https:zlib.netzpipe.c"
+      url "https://zlib.net/zpipe.c"
       version "20051211"
       sha256 "68140a82582ede938159630bca0fb13a93b4bf1cb2e85b08943c26242cf8f3a6"
     end
 
     testpath.install resource("homebrew-test_artifact")
-    system ENV.cc, "zpipe.c", "-I#{include}", libshared_library("libz"), "-o", "zpipe"
+    system ENV.cc, "zpipe.c", "-I#{include}", lib/shared_library("libz"), "-o", "zpipe"
 
     text = "Hello, Homebrew!"
-    compressed = pipe_output(".zpipe", text)
-    assert_equal text, pipe_output(".zpipe -d", compressed)
+    compressed = pipe_output("./zpipe", text)
+    assert_equal text, pipe_output("./zpipe -d", compressed)
   end
 end

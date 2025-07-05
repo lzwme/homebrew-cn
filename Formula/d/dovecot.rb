@@ -1,13 +1,13 @@
 class Dovecot < Formula
-  desc "IMAPPOP3 server"
-  homepage "https:dovecot.org"
-  url "https:dovecot.orgreleases2.4dovecot-2.4.0.tar.gz"
+  desc "IMAP/POP3 server"
+  homepage "https://dovecot.org/"
+  url "https://dovecot.org/releases/2.4/dovecot-2.4.0.tar.gz"
   sha256 "e90e49f8c31b09a508249a4fee8605faa65fe320819bfcadaf2524126253d5ae"
   license all_of: ["BSD-3-Clause", "LGPL-2.1-or-later", "MIT", "Unicode-DFS-2016", :public_domain]
 
   livecheck do
-    url "https:www.dovecot.orgdownload"
-    regex(href=.*?dovecot[._-]v?(\d+(?:\.\d+)+)\.ti)
+    url "https://www.dovecot.org/download/"
+    regex(/href=.*?dovecot[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -41,20 +41,20 @@ class Dovecot < Formula
   end
 
   resource "pigeonhole" do
-    url "https:pigeonhole.dovecot.orgreleases2.4dovecot-pigeonhole-2.4.0.tar.gz"
+    url "https://pigeonhole.dovecot.org/releases/2.4/dovecot-pigeonhole-2.4.0.tar.gz"
     sha256 "0ed08ae163ac39a9447200fbb42d7b3b05d35e91d99818dd0f4afd7ad1dbc753"
   end
 
-  # `uoff_t` and `pluginsvar-expand-crypt` patches, upstream pr ref, https:github.comdovecotcorepull232
+  # `uoff_t` and `plugins/var-expand-crypt` patches, upstream pr ref, https://github.com/dovecot/core/pull/232
   patch do
-    url "https:github.comdovecotcorecommitbbfab4976afdf38a7fa966752de33481f9d2c2e5.patch?full_index=1"
+    url "https://github.com/dovecot/core/commit/bbfab4976afdf38a7fa966752de33481f9d2c2e5.patch?full_index=1"
     sha256 "f5a77eeaf5978b75a6c7d1d9d4b7623679aec047c3dae63516105774ae6c04de"
   end
   patch :DATA
 
   def install
     # Re-generate file as only Linux has inotify support for imap-hibernate
-    rm "srcconfigall-settings.c" unless OS.linux?
+    rm "src/config/all-settings.c" unless OS.linux?
 
     args = %W[
       --libexecdir=#{libexec}
@@ -67,16 +67,16 @@ class Dovecot < Formula
       --without-icu
     ]
 
-    system ".configure", *args, *std_configure_args
+    system "./configure", *args, *std_configure_args
     system "make", "install"
 
     resource("pigeonhole").stage do
       args = %W[
-        --with-dovecot=#{lib}dovecot
+        --with-dovecot=#{lib}/dovecot
         --with-ldap
       ]
 
-      system ".configure", *args, *std_configure_args
+      system "./configure", *args, *std_configure_args
       system "make"
       system "make", "install"
     end
@@ -90,18 +90,18 @@ class Dovecot < Formula
   end
 
   service do
-    run [opt_sbin"dovecot", "-F"]
+    run [opt_sbin/"dovecot", "-F"]
     require_root true
     environment_variables PATH: std_service_path_env
-    error_log_path var"logdovecotdovecot.log"
-    log_path var"logdovecotdovecot.log"
+    error_log_path var/"log/dovecot/dovecot.log"
+    log_path var/"log/dovecot/dovecot.log"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{sbin}dovecot --version")
+    assert_match version.to_s, shell_output("#{sbin}/dovecot --version")
 
-    cp_r share"docdovecotexample-config", testpath"example"
-    (testpath"exampledovecot.conf").write <<~EOS
+    cp_r share/"doc/dovecot/example-config", testpath/"example"
+    (testpath/"example/dovecot.conf").write <<~EOS
       # required in 2.4
       dovecot_config_version = 2.4.0
       dovecot_storage_version = 2.4.0
@@ -114,32 +114,32 @@ class Dovecot < Formula
       default_internal_user = #{ENV["USER"]}
 
       # reference other conf files
-      # !include conf.d*.conf
+      # !include conf.d/*.conf
 
       # same as 2.3
       log_path = syslog
       auth_mechanisms = plain
     EOS
 
-    system bin"doveconf", "-c", testpath"exampledovecot.conf"
+    system bin/"doveconf", "-c", testpath/"example/dovecot.conf"
   end
 end
 
 __END__
-diff --git asrclib-var-expand-cryptMakefile.in bsrclib-var-expand-cryptMakefile.in
+diff --git a/src/lib-var-expand-crypt/Makefile.in b/src/lib-var-expand-crypt/Makefile.in
 index 6c8b1ad..b721ad5 100644
---- asrclib-var-expand-cryptMakefile.in
-+++ bsrclib-var-expand-cryptMakefile.in
+--- a/src/lib-var-expand-crypt/Makefile.in
++++ b/src/lib-var-expand-crypt/Makefile.in
 @@ -177,7 +177,11 @@ am__uninstall_files_from_dir = { \
  am__installdirs = "$(DESTDIR)$(moduledir)" \
  	"$(DESTDIR)$(pkginc_libdir)"
  LTLIBRARIES = $(module_LTLIBRARIES)
 -var_expand_crypt_la_LIBADD =
 +var_expand_crypt_la_LIBADD = \
-+  ..libliblib.la \
-+  ..lib-jsonlibjson.la \
-+  ..lib-dcryptlibdcrypt.la \
-+  ..lib-var-expandlibvar_expand.la
++  ../lib/liblib.la \
++  ../lib-json/libjson.la \
++  ../lib-dcrypt/libdcrypt.la \
++  ../lib-var-expand/libvar_expand.la
  am_var_expand_crypt_la_OBJECTS = var-expand-crypt.lo
  var_expand_crypt_la_OBJECTS = $(am_var_expand_crypt_la_OBJECTS)
  AM_V_lt = $(am__v_lt_@AM_V@)

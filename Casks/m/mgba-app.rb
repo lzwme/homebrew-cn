@@ -2,11 +2,11 @@ cask "mgba-app" do
   version "0.10.5"
   sha256 "443b490ec728293dfcde1cb9db160f73d94c457cb1864f3ce0407e60e174b09c"
 
-  url "https:github.commgba-emumgbareleasesdownload#{version}mGBA-#{version}-macos.dmg",
-      verified: "github.commgba-emumgba"
+  url "https://ghfast.top/https://github.com/mgba-emu/mgba/releases/download/#{version}/mGBA-#{version}-macos.dmg",
+      verified: "github.com/mgba-emu/mgba/"
   name "mGBA"
   desc "Game Boy Advance emulator"
-  homepage "https:mgba.io"
+  homepage "https://mgba.io/"
 
   livecheck do
     url :url
@@ -16,7 +16,7 @@ cask "mgba-app" do
   app "mGBA.app"
 
   zap trash: [
-    "~LibraryPreferencescom.endrift.mgba-qt.plist",
-    "~LibrarySaved Application Statecom.endrift.mgba-qt.savedState",
+    "~/Library/Preferences/com.endrift.mgba-qt.plist",
+    "~/Library/Saved Application State/com.endrift.mgba-qt.savedState",
   ]
 end

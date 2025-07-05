@@ -1,7 +1,7 @@
 class PandocPlot < Formula
   desc "Render and include figures in Pandoc documents using many plotting toolkits"
-  homepage "https:github.comLaurentRDCpandoc-plot"
-  url "https:hackage.haskell.orgpackagepandoc-plot-1.9.1pandoc-plot-1.9.1.tar.gz"
+  homepage "https://github.com/LaurentRDC/pandoc-plot"
+  url "https://hackage.haskell.org/package/pandoc-plot-1.9.1/pandoc-plot-1.9.1.tar.gz"
   sha256 "a34a08faf483ed7c9c5e7c439ac275077b9262bb3384d1f551e47d6aa59dd434"
   license "GPL-2.0-or-later"
 
@@ -49,15 +49,15 @@ class PandocPlot < Formula
       ```
     MARKDOWN
 
-    output_html_1 = pipe_output("pandoc --filter #{bin}pandoc-plot -f markdown -t html5", input_markdown_1)
-    output_html_2 = pipe_output("pandoc --filter #{bin}pandoc-plot -f markdown -t html5", input_markdown_2)
-    filename = output_html_1.match(%r{(plots[\da-z]+\.png)}i)
+    output_html_1 = pipe_output("pandoc --filter #{bin}/pandoc-plot -f markdown -t html5", input_markdown_1)
+    output_html_2 = pipe_output("pandoc --filter #{bin}/pandoc-plot -f markdown -t html5", input_markdown_2)
+    filename = output_html_1.match(%r{(plots/[\da-z]+\.png)}i)
 
     expected_html_2 = <<~HTML
-      <h1 id="repeat-the-same-thing">repeat the same thing<h1>
+      <h1 id="repeat-the-same-thing">repeat the same thing</h1>
       <figure>
-      <img src="#{filename}" >
-      <figure>
+      <img src="#{filename}" />
+      </figure>
     HTML
 
     assert_equal expected_html_2, output_html_2

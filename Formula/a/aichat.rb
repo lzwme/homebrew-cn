@@ -1,10 +1,10 @@
 class Aichat < Formula
   desc "All-in-one AI-Powered CLI Chat & Copilot"
-  homepage "https:github.comsigodenaichat"
-  url "https:github.comsigodenaichatarchiverefstagsv0.29.0.tar.gz"
+  homepage "https://github.com/sigoden/aichat"
+  url "https://ghfast.top/https://github.com/sigoden/aichat/archive/refs/tags/v0.29.0.tar.gz"
   sha256 "0b586419ce4e29e02eb165e0ab668e0661fac305840348467ab5f45e42551a5a"
   license any_of: ["Apache-2.0", "MIT"]
-  head "https:github.comsigodenaichat.git", branch: "main"
+  head "https://github.com/sigoden/aichat.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "75ff892e2de7a3d752e65b088e483ebd3371fdf5e82c1302d1016206459bc0c0"
@@ -20,15 +20,15 @@ class Aichat < Formula
 
   def install
     system "cargo", "install", *std_cargo_args
-    bash_completion.install "scriptscompletionsaichat.bash" => "aichat"
-    fish_completion.install "scriptscompletionsaichat.fish"
-    zsh_completion.install "scriptscompletionsaichat.zsh" => "_aichat"
+    bash_completion.install "scripts/completions/aichat.bash" => "aichat"
+    fish_completion.install "scripts/completions/aichat.fish"
+    zsh_completion.install "scripts/completions/aichat.zsh" => "_aichat"
   end
 
   test do
     ENV["AICHAT_PLATFORM"] = "openai"
     ENV["OPENAI_API_KEY"] = "sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
-    output = shell_output("#{bin}aichat --dry-run math 3.2x4.8")
+    output = shell_output("#{bin}/aichat --dry-run math 3.2x4.8")
     assert_match "math 3.2x4.8", output
   end
 end

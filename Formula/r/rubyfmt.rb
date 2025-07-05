@@ -1,11 +1,11 @@
 class Rubyfmt < Formula
   desc "Ruby autoformatter"
-  homepage "https:github.comfables-talesrubyfmt"
-  url "https:github.comfables-talesrubyfmt.git",
+  homepage "https://github.com/fables-tales/rubyfmt"
+  url "https://github.com/fables-tales/rubyfmt.git",
       tag:      "v0.11.0",
       revision: "55f41919cf5779fb9e2c410c04e2f613f7d79f2b"
   license "MIT"
-  head "https:github.comfables-talesrubyfmt.git", branch: "trunk"
+  head "https://github.com/fables-tales/rubyfmt.git", branch: "trunk"
 
   # Upstream creates releases that use a stable tag (e.g., `v1.2.3`) but are
   # labeled as "pre-release" on GitHub before the version is released, so it's
@@ -31,7 +31,7 @@ class Rubyfmt < Formula
   depends_on "automake" => :build
   depends_on "bison" => :build
   depends_on "rust" => :build
-  # https:bugs.ruby-lang.orgissues18616
+  # https://bugs.ruby-lang.org/issues/18616
   # error: '__declspec' attributes are not enabled;
   # use '-fdeclspec' or '-fms-extensions' to enable support for __declspec attributes
   depends_on macos: :monterey
@@ -39,15 +39,15 @@ class Rubyfmt < Formula
 
   def install
     # Work around build failure with recent Rust
-    # Issue ref: https:github.comfables-talesrubyfmtissues467
+    # Issue ref: https://github.com/fables-tales/rubyfmt/issues/467
     ENV["RUSTFLAGS"] = "--allow dead_code"
 
     system "cargo", "install", *std_cargo_args
-    bin.install "targetreleaserubyfmt-main" => "rubyfmt"
+    bin.install "target/release/rubyfmt-main" => "rubyfmt"
   end
 
   test do
-    (testpath"test.rb").write <<~RUBY
+    (testpath/"test.rb").write <<~RUBY
       def foo; 42; end
     RUBY
     expected = <<~RUBY
@@ -55,6 +55,6 @@ class Rubyfmt < Formula
         42
       end
     RUBY
-    assert_equal expected, shell_output("#{bin}rubyfmt -- #{testpath}test.rb")
+    assert_equal expected, shell_output("#{bin}/rubyfmt -- #{testpath}/test.rb")
   end
 end

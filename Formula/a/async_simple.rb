@@ -1,10 +1,10 @@
 class AsyncSimple < Formula
   desc "Simple, light-weight and easy-to-use asynchronous components"
-  homepage "https:github.comalibabaasync_simple"
-  url "https:github.comalibabaasync_simplearchiverefstagsv1.3.tar.gz"
+  homepage "https://github.com/alibaba/async_simple"
+  url "https://ghfast.top/https://github.com/alibaba/async_simple/archive/refs/tags/v1.3.tar.gz"
   sha256 "0ba0dc3397882611b538d04b8ee6668b1a04ce046128599205184c598b718743"
   license "Apache-2.0"
-  head "https:github.comalibabaasync_simple.git", branch: "main"
+  head "https://github.com/alibaba/async_simple.git", branch: "main"
 
   no_autobump! because: :requires_manual_review
 
@@ -36,10 +36,10 @@ class AsyncSimple < Formula
   end
 
   test do
-    (testpath  "test.cpp").write <<~CPP
+    (testpath / "test.cpp").write <<~CPP
       #include <algorithm>
-      #include <async_simplecoroLazy.h>
-      #include <async_simplecoroSyncAwait.h>
+      #include <async_simple/coro/Lazy.h>
+      #include <async_simple/coro/SyncAwait.h>
       #include <iostream>
       #include <string>
       #include <vector>
@@ -59,6 +59,6 @@ class AsyncSimple < Formula
       }
     CPP
     system ENV.cxx, "test.cpp", "-std=c++20", "-L#{lib}", "-lasync_simple", "-o", "test"
-    assert_equal "4", shell_output(".test").chomp
+    assert_equal "4", shell_output("./test").chomp
   end
 end

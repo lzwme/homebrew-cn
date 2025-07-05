@@ -1,10 +1,10 @@
 class Kumactl < Formula
   desc "Kuma control plane command-line utility"
-  homepage "https:kuma.io"
-  url "https:github.comkumahqkumaarchiverefstags2.11.1.tar.gz"
+  homepage "https://kuma.io/"
+  url "https://ghfast.top/https://github.com/kumahq/kuma/archive/refs/tags/2.11.1.tar.gz"
   sha256 "0a18d919efdbaae3ca725aa9c33fe7441e99d7ba230b84145f90018f1c00b267"
   license "Apache-2.0"
-  head "https:github.comkumahqkuma.git", branch: "master"
+  head "https://github.com/kumahq/kuma.git", branch: "master"
 
   livecheck do
     url :stable
@@ -25,22 +25,22 @@ class Kumactl < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.comkumahqkumapkgversion.version=#{version}
-      -X github.comkumahqkumapkgversion.gitTag=#{version}
-      -X github.comkumahqkumapkgversion.buildDate=#{time.strftime("%F")}
+      -X github.com/kumahq/kuma/pkg/version.version=#{version}
+      -X github.com/kumahq/kuma/pkg/version.gitTag=#{version}
+      -X github.com/kumahq/kuma/pkg/version.buildDate=#{time.strftime("%F")}
     ]
 
-    system "go", "build", *std_go_args(ldflags:), ".appkumactl"
+    system "go", "build", *std_go_args(ldflags:), "./app/kumactl"
 
-    generate_completions_from_executable(bin"kumactl", "completion")
+    generate_completions_from_executable(bin/"kumactl", "completion")
   end
 
   test do
-    assert_match "Management tool for Kuma.", shell_output(bin"kumactl")
-    assert_match version.to_s, shell_output("#{bin}kumactl version 2>&1")
+    assert_match "Management tool for Kuma.", shell_output(bin/"kumactl")
+    assert_match version.to_s, shell_output("#{bin}/kumactl version 2>&1")
 
-    touch testpath"config.yml"
+    touch testpath/"config.yml"
     assert_match "Error: no resource(s) passed to apply",
-    shell_output("#{bin}kumactl apply -f config.yml 2>&1", 1)
+    shell_output("#{bin}/kumactl apply -f config.yml 2>&1", 1)
   end
 end

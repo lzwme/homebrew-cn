@@ -2,10 +2,10 @@ cask "quickjson" do
   version "1.0.0"
   sha256 "874fc0afd431f68527929a0592c23a81b70d53e6032419e540551fccd662cfd2"
 
-  url "https:github.comjohanQuickJSONreleasesdownloadv#{version}QuickJSON.qlgenerator.zip"
+  url "https://ghfast.top/https://github.com/johan/QuickJSON/releases/download/v#{version}/QuickJSON.qlgenerator.zip"
   name "QuickJSON"
   desc "Quick Look plugin to pretty-print JSON"
-  homepage "https:github.comjohanQuickJSON"
+  homepage "https://github.com/johan/QuickJSON"
 
   no_autobump! because: :requires_manual_review
 

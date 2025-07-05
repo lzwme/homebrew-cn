@@ -1,7 +1,7 @@
 class Rgxg < Formula
   desc "C library and command-line tool to generate (extended) regular expressions"
-  homepage "https:rgxg.github.io"
-  url "https:github.comrgxgrgxgreleasesdownloadv0.1.2rgxg-0.1.2.tar.gz"
+  homepage "https://rgxg.github.io"
+  url "https://ghfast.top/https://github.com/rgxg/rgxg/releases/download/v0.1.2/rgxg-0.1.2.tar.gz"
   sha256 "554741f95dcc320459875c248e2cc347b99f809d9555c957d763d3d844e917c6"
   license "Zlib"
 
@@ -25,11 +25,11 @@ class Rgxg < Formula
   end
 
   def install
-    system ".configure", "--prefix=#{prefix}"
+    system "./configure", "--prefix=#{prefix}"
     system "make", "install"
   end
 
   test do
-    system bin"rgxg", "range", "1", "10"
+    system bin/"rgxg", "range", "1", "10"
   end
 end

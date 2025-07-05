@@ -1,10 +1,10 @@
 class Yor < Formula
   desc "Extensible auto-tagger for your IaC files"
-  homepage "https:yor.io"
-  url "https:github.combridgecrewioyorarchiverefstags0.1.200.tar.gz"
+  homepage "https://yor.io/"
+  url "https://ghfast.top/https://github.com/bridgecrewio/yor/archive/refs/tags/0.1.200.tar.gz"
   sha256 "157f2fc97aafa815dc5efaf1b398950181678953beff5e7736943b73b618b96a"
   license "Apache-2.0"
-  head "https:github.combridgecrewioyor.git", branch: "main"
+  head "https://github.com/bridgecrewio/yor.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "bec81b4e0759d619616eecc9f20be5c595c59a4a3d54d2931048317a6ce32a7b"
@@ -19,14 +19,14 @@ class Yor < Formula
   depends_on "go" => :build
 
   def install
-    inreplace "srccommonversion.go", "Version = \"9.9.9\"", "Version = \"#{version}\""
+    inreplace "src/common/version.go", "Version = \"9.9.9\"", "Version = \"#{version}\""
     system "go", "build", *std_go_args(ldflags: "-s -w")
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}yor --version")
+    assert_match version.to_s, shell_output("#{bin}/yor --version")
 
-    assert_match "yor_trace", shell_output("#{bin}yor list-tags")
-    assert_match "code2cloud", shell_output("#{bin}yor list-tag-groups")
+    assert_match "yor_trace", shell_output("#{bin}/yor list-tags")
+    assert_match "code2cloud", shell_output("#{bin}/yor list-tag-groups")
   end
 end

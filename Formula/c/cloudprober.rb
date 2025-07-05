@@ -1,10 +1,10 @@
 class Cloudprober < Formula
   desc "Active monitoring software to detect failures before your customers do"
-  homepage "https:cloudprober.org"
-  url "https:github.comcloudprobercloudproberarchiverefstagsv0.14.0.tar.gz"
+  homepage "https://cloudprober.org"
+  url "https://ghfast.top/https://github.com/cloudprober/cloudprober/archive/refs/tags/v0.14.0.tar.gz"
   sha256 "332e6c68cf007e2d8b7d36f20f81480cf3846f8b398c97afdcbc033c8794a2a2"
   license "Apache-2.0"
-  head "https:github.comcloudprobercloudprober.git", branch: "main"
+  head "https://github.com/cloudprober/cloudprober.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "46096a2c51f49716dc8c1a1daec8974a5c99b75c641e7fa777d696ddd10c019a"
@@ -24,7 +24,7 @@ class Cloudprober < Formula
   end
 
   test do
-    io = IO.popen("#{bin}cloudprober --logtostderr", err: [:child, :out])
+    io = IO.popen("#{bin}/cloudprober --logtostderr", err: [:child, :out])
     io.any? do |line|
       line.include?("Initialized status surfacer")
     end

@@ -1,7 +1,7 @@
 class Pdf2svg < Formula
   desc "PDF converter to SVG"
-  homepage "https:cityinthesky.co.ukopensourcepdf2svg"
-  url "https:github.comdawbartonpdf2svgarchiverefstagsv0.2.4.tar.gz"
+  homepage "https://cityinthesky.co.uk/opensource/pdf2svg"
+  url "https://ghfast.top/https://github.com/dawbarton/pdf2svg/archive/refs/tags/v0.2.4.tar.gz"
   sha256 "fd765256f18b5890639e93cabdf631b640966ed1ea9ebd561aede9d3be2155e4"
   license "GPL-2.0-or-later"
 
@@ -27,11 +27,11 @@ class Pdf2svg < Formula
   end
 
   def install
-    system ".configure", *std_configure_args.reject { |s| s["--disable-debug"] }
+    system "./configure", *std_configure_args.reject { |s| s["--disable-debug"] }
     system "make", "install"
   end
 
   test do
-    system bin"pdf2svg", test_fixtures("test.pdf"), "test.svg"
+    system bin/"pdf2svg", test_fixtures("test.pdf"), "test.svg"
   end
 end

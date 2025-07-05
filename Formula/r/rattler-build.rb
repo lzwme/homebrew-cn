@@ -1,10 +1,10 @@
 class RattlerBuild < Formula
   desc "Universal conda package builder"
-  homepage "https:rattler.build"
-  url "https:github.comprefix-devrattler-buildarchiverefstagsv0.44.0.tar.gz"
+  homepage "https://rattler.build"
+  url "https://ghfast.top/https://github.com/prefix-dev/rattler-build/archive/refs/tags/v0.44.0.tar.gz"
   sha256 "4d8289439cd531c2e86d1ac3a603073784123386bd6409faf1461ea9e4f27a50"
   license "BSD-3-Clause"
-  head "https:github.comprefix-devrattler-build.git", branch: "main"
+  head "https://github.com/prefix-dev/rattler-build.git", branch: "main"
 
   # Upstream creates releases that use a stable tag (e.g., `v1.2.3`) but are
   # labeled as "pre-release" on GitHub before the version is released, so it's
@@ -35,11 +35,11 @@ class RattlerBuild < Formula
   def install
     system "cargo", "install", "--features", "tui", *std_cargo_args
 
-    generate_completions_from_executable(bin"rattler-build", "completion", "--shell")
+    generate_completions_from_executable(bin/"rattler-build", "completion", "--shell")
   end
 
   test do
-    (testpath"recipe""recipe.yaml").write <<~YAML
+    (testpath/"recipe"/"recipe.yaml").write <<~YAML
       package:
         name: test-package
         version: '0.1.0'
@@ -48,9 +48,9 @@ class RattlerBuild < Formula
         noarch: generic
         string: buildstring
         script:
-          - mkdir -p "$PREFIXbin"
-          - echo "echo Hello World!" >> "$PREFIXbinhello"
-          - chmod +x "$PREFIXbinhello"
+          - mkdir -p "$PREFIX/bin"
+          - echo "echo Hello World!" >> "$PREFIX/bin/hello"
+          - chmod +x "$PREFIX/bin/hello"
 
       requirements:
         run:
@@ -58,12 +58,12 @@ class RattlerBuild < Formula
 
       tests:
         - script:
-          - test -f "$PREFIXbinhello"
+          - test -f "$PREFIX/bin/hello"
           - hello | grep "Hello World!"
     YAML
-    system bin"rattler-build", "build", "--recipe", "reciperecipe.yaml"
-    assert_path_exists testpath"outputnoarchtest-package-0.1.0-buildstring.conda"
+    system bin/"rattler-build", "build", "--recipe", "recipe/recipe.yaml"
+    assert_path_exists testpath/"output/noarch/test-package-0.1.0-buildstring.conda"
 
-    assert_match version.to_s, shell_output(bin"rattler-build --version")
+    assert_match version.to_s, shell_output(bin/"rattler-build --version")
   end
 end

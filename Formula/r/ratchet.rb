@@ -1,10 +1,10 @@
 class Ratchet < Formula
-  desc "Tool for securing CICD workflows with version pinning"
-  homepage "https:github.comsethvargoratchet"
-  url "https:github.comsethvargoratchetarchiverefstagsv0.11.4.tar.gz"
+  desc "Tool for securing CI/CD workflows with version pinning"
+  homepage "https://github.com/sethvargo/ratchet"
+  url "https://ghfast.top/https://github.com/sethvargo/ratchet/archive/refs/tags/v0.11.4.tar.gz"
   sha256 "0f1a540f388d2b8633b8203670d6ec8722d47af40055ce79cd1743a731823b2e"
   license "Apache-2.0"
-  head "https:github.comsethvargoratchet.git", branch: "main"
+  head "https://github.com/sethvargo/ratchet.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "87e9d4f5ece669b81b693c4e13c8d0e66a879fcbc40f99337a0f0e5c3065716d"
@@ -21,8 +21,8 @@ class Ratchet < Formula
     ldflags = %W[
       -s
       -w
-      -X=github.comsethvargoratchetinternalversion.version=#{version}
-      -X=github.comsethvargoratchetinternalversion.commit=#{tap.user}
+      -X=github.com/sethvargo/ratchet/internal/version.version=#{version}
+      -X=github.com/sethvargo/ratchet/internal/version.commit=#{tap.user}
     ]
     system "go", "build", *std_go_args(ldflags:)
 
@@ -30,11 +30,11 @@ class Ratchet < Formula
   end
 
   test do
-    cp_r pkgshare"testdata", testpath
-    output = shell_output(bin"ratchet check testdatagithub.yml 2>&1", 1)
+    cp_r pkgshare/"testdata", testpath
+    output = shell_output(bin/"ratchet check testdata/github.yml 2>&1", 1)
     assert_match "found 5 unpinned refs", output
 
-    output = shell_output(bin"ratchet -v 2>&1")
+    output = shell_output(bin/"ratchet -v 2>&1")
     assert_match "ratchet #{version}", output
   end
 end

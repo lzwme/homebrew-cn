@@ -1,13 +1,13 @@
 class Gwenhywfar < Formula
   desc "Utility library required by aqbanking and related software"
-  homepage "https:www.aquamaniac.derdmprojectsgwenhywfar"
-  url "https:www.aquamaniac.derdmattachmentsdownload529gwenhywfar-5.12.0.tar.gz"
+  homepage "https://www.aquamaniac.de/rdm/projects/gwenhywfar"
+  url "https://www.aquamaniac.de/rdm/attachments/download/529/gwenhywfar-5.12.0.tar.gz"
   sha256 "0ad5f1447703211f1610053a94bce1e82abceda2222a2ecc9cf45b148395d626"
   license "LGPL-2.1-or-later"
 
   livecheck do
-    url "https:www.aquamaniac.derdmprojectsgwenhywfarfiles"
-    regex(href=.*?gwenhywfar[._-]v?(\d+(?:\.\d+)+)\.ti)
+    url "https://www.aquamaniac.de/rdm/projects/gwenhywfar/files"
+    regex(/href=.*?gwenhywfar[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -38,7 +38,7 @@ class Gwenhywfar < Formula
 
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
-    url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-big_sur.diff"
+    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-big_sur.diff"
     sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
   end
 
@@ -55,15 +55,15 @@ class Gwenhywfar < Formula
     inreplace "gwenhywfar-config.in.in", "@PKG_CONFIG@", "pkg-config"
     guis = ["cpp", "qt5"]
     guis << "cocoa" if OS.mac?
-    system ".configure", "--disable-silent-rules",
+    system "./configure", "--disable-silent-rules",
                           "--with-guis=#{guis.join(" ")}",
                           *std_configure_args
     system "make", "install"
   end
 
   test do
-    (testpath"test.c").write <<~C
-      #include <gwenhywfargwenhywfar.h>
+    (testpath/"test.c").write <<~C
+      #include <gwenhywfar/gwenhywfar.h>
 
       int main()
       {
@@ -71,13 +71,13 @@ class Gwenhywfar < Formula
         return 0;
       }
     C
-    system ENV.cc, "test.c", "-I#{include}gwenhywfar5", "-L#{lib}", "-lgwenhywfar", "-o", "test_c"
-    system ".test_c"
+    system ENV.cc, "test.c", "-I#{include}/gwenhywfar5", "-L#{lib}", "-lgwenhywfar", "-o", "test_c"
+    system "./test_c"
 
-    system ENV.cxx, "test.c", "-I#{include}gwenhywfar5", "-L#{lib}", "-lgwenhywfar", "-o", "test_cpp"
-    system ".test_cpp"
+    system ENV.cxx, "test.c", "-I#{include}/gwenhywfar5", "-L#{lib}", "-lgwenhywfar", "-o", "test_cpp"
+    system "./test_cpp"
 
-    (testpath"CMakeLists.txt").write <<~CMAKE
+    (testpath/"CMakeLists.txt").write <<~CMAKE
       cmake_minimum_required(VERSION 3.29)
       project(test_gwen)
 
@@ -96,7 +96,7 @@ class Gwenhywfar < Formula
     CMAKE
 
     args = std_cmake_args
-    args << "-DQt5_DIR=#{Formula["qt@5"].opt_prefix"libcmakeQt5"}"
+    args << "-DQt5_DIR=#{Formula["qt@5"].opt_prefix/"lib/cmake/Qt5"}"
 
     system "cmake", testpath.to_s, *args
     system "make"
@@ -104,25 +104,25 @@ class Gwenhywfar < Formula
 end
 
 __END__
-diff --git asrcbaseendianfns.h bsrcbaseendianfns.h
+diff --git a/src/base/endianfns.h b/src/base/endianfns.h
 index 2db9731..1d73968 100644
---- asrcbaseendianfns.h
-+++ bsrcbaseendianfns.h
+--- a/src/base/endianfns.h
++++ b/src/base/endianfns.h
 @@ -28,6 +28,7 @@
- #include <gwenhywfargwenhywfarapi.h>
+ #include <gwenhywfar/gwenhywfarapi.h>
 
 
 +
  #if GWENHYWFAR_SYS_IS_WINDOWS
- * assume little endian for now (is there any big endian Windows system??) *
+ /* assume little endian for now (is there any big endian Windows system??) */
  #  define GWEN_ENDIAN_LE16TOH(x) (x)
 @@ -39,8 +40,14 @@
  #  define GWEN_ENDIAN_LE64TOH(x) (x)
  #  define GWEN_ENDIAN_HTOLE64(x) (x)
  #else
--* for Linux and others use definitions from endian.h *
+-/* for Linux and others use definitions from endian.h */
 -#  include <endian.h>
-+* Include portable_endian.h for cross-platform support *
++/* Include portable_endian.h for cross-platform support */
 +#  if __has_include("portable_endian.h")
 +#    include "portable_endian.h"
 +#  elif __has_include(<endian.h>)

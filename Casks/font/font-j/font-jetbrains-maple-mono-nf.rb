@@ -2,9 +2,9 @@ cask "font-jetbrains-maple-mono-nf" do
   version "1.2304.74"
   sha256 "f0c9ce299c299811ca2509e3cad8de38b6f07ed331e0db964b586538480e339f"
 
-  url "https:github.comSpaceTimeeFusion-JetBrainsMapleMonoreleasesdownload#{version}JetBrainsMapleMono-NF-XX-XX.zip"
+  url "https://ghfast.top/https://github.com/SpaceTimee/Fusion-JetBrainsMapleMono/releases/download/#{version}/JetBrainsMapleMono-NF-XX-XX.zip"
   name "JetBrains Maple Mono NF"
-  homepage "https:github.comSpaceTimeeFusion-JetBrainsMapleMono"
+  homepage "https://github.com/SpaceTimee/Fusion-JetBrainsMapleMono"
 
   livecheck do
     url :url

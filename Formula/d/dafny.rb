@@ -1,7 +1,7 @@
 class Dafny < Formula
   desc "Verification-aware programming language"
-  homepage "https:github.comdafny-langdafnyblobmasterREADME.md"
-  url "https:github.comdafny-langdafnyarchiverefstagsv4.10.0.tar.gz"
+  homepage "https://github.com/dafny-lang/dafny/blob/master/README.md"
+  url "https://ghfast.top/https://github.com/dafny-lang/dafny/archive/refs/tags/v4.10.0.tar.gz"
   sha256 "bd643ae9cd5b697505ca3682fa4d15238c6746701eaa1eeba4c541006674da40"
   license "MIT"
 
@@ -24,20 +24,20 @@ class Dafny < Formula
 
   def install
     # Use our `gradle` to build rather than wrapper which uses its own copy
-    rm("SourceDafnyRuntimeDafnyRuntimeJavagradlew")
-    inreplace "SourceDafnyRuntimeDafnyRuntime.csproj", 'Command=".gradlew ', 'Command="gradle '
+    rm("Source/DafnyRuntime/DafnyRuntimeJava/gradlew")
+    inreplace "Source/DafnyRuntime/DafnyRuntime.csproj", 'Command="./gradlew ', 'Command="gradle '
 
     system "make", "exe"
-    libexec.install Dir["Binaries*", "Scriptsquicktest.sh"]
+    libexec.install Dir["Binaries/*", "Scripts/quicktest.sh"]
 
-    (bin"dafny").write <<~EOS
-      #!binbash
-      exec "#{Formula["dotnet@8"].opt_bin}dotnet" "#{libexec}Dafny.dll" "$@"
+    (bin/"dafny").write <<~EOS
+      #!/bin/bash
+      exec "#{Formula["dotnet@8"].opt_bin}/dotnet" "#{libexec}/Dafny.dll" "$@"
     EOS
   end
 
   test do
-    (testpath"test.dfy").write <<~EOS
+    (testpath/"test.dfy").write <<~EOS
       method Main() {
         var i: nat :| true;
         assert i as int >= -1;
@@ -45,12 +45,12 @@ class Dafny < Formula
       }
     EOS
     assert_equal "\nDafny program verifier finished with 1 verified, 0 errors\n",
-                  shell_output("#{bin}dafny verify #{testpath}test.dfy")
+                  shell_output("#{bin}/dafny verify #{testpath}/test.dfy")
     assert_equal "\nDafny program verifier finished with 1 verified, 0 errors\nhello, Dafny\n",
-                  shell_output("#{bin}dafny run #{testpath}test.dfy")
+                  shell_output("#{bin}/dafny run #{testpath}/test.dfy")
 
     ENV["JAVA_HOME"] = Language::Java.java_home
-    assert_match(^\nDafny program verifier finished with 1 verified, 0 errors\n(.*\n)*hello, Dafny\n$,
-                 shell_output("#{bin}dafny run --target:java #{testpath}test.dfy"))
+    assert_match(/^\nDafny program verifier finished with 1 verified, 0 errors\n(.*\n)*hello, Dafny\n$/,
+                 shell_output("#{bin}/dafny run --target:java #{testpath}/test.dfy"))
   end
 end

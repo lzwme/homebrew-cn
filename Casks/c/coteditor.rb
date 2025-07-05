@@ -42,34 +42,34 @@ cask "coteditor" do
     sha256 "36510ad5ebce825625f139b8a6682dc0d014295036a0fc03fed927b58e4ec8f8"
 
     livecheck do
-      url "https:coteditor.comappcast.xml"
+      url "https://coteditor.com/appcast.xml"
       strategy :sparkle do |items|
         items.find { |item| item.channel.nil? }&.short_version
       end
     end
   end
 
-  url "https:github.comcoteditorCotEditorreleasesdownload#{version}CotEditor_#{version}.dmg",
-      verified: "github.comcoteditorCotEditor"
+  url "https://ghfast.top/https://github.com/coteditor/CotEditor/releases/download/#{version}/CotEditor_#{version}.dmg",
+      verified: "github.com/coteditor/CotEditor/"
   name "CotEditor"
   desc "Plain-text editor for web pages, program source codes and more"
-  homepage "https:coteditor.com"
+  homepage "https://coteditor.com/"
 
   auto_updates true
 
   app "CotEditor.app"
-  binary "#{appdir}CotEditor.appContentsSharedSupportbincot"
+  binary "#{appdir}/CotEditor.app/Contents/SharedSupport/bin/cot"
 
   uninstall quit: "com.coteditor.CotEditor"
 
   zap trash: [
-    "~LibraryApplication Scriptscom.coteditor.CotEditor",
-    "~LibraryApplication Supportcom.apple.sharedfilelistcom.apple.LSSharedFileList.ApplicationRecentDocumentscom.coteditor.coteditor.sfl*",
-    "~LibraryCachescom.apple.helpdGeneratedcom.coteditor.CotEditor.help*",
-    "~LibraryCachescom.apple.helpdSDMHelpDataOtherEnglishHelpSDMIndexFilecom.coteditor.CotEditor.help*",
-    "~LibraryCachescom.apple.helpdSDMHelpDataOtherJapaneseHelpSDMIndexFilecom.coteditor.CotEditor.help*",
-    "~LibraryCachescom.coteditor.CotEditor",
-    "~LibraryContainerscom.coteditor.CotEditor",
-    "~LibraryPreferencescom.coteditor.CotEditor.plist",
+    "~/Library/Application Scripts/com.coteditor.CotEditor",
+    "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.coteditor.coteditor.sfl*",
+    "~/Library/Caches/com.apple.helpd/Generated/com.coteditor.CotEditor.help*",
+    "~/Library/Caches/com.apple.helpd/SDMHelpData/Other/English/HelpSDMIndexFile/com.coteditor.CotEditor.help*",
+    "~/Library/Caches/com.apple.helpd/SDMHelpData/Other/Japanese/HelpSDMIndexFile/com.coteditor.CotEditor.help*",
+    "~/Library/Caches/com.coteditor.CotEditor",
+    "~/Library/Containers/com.coteditor.CotEditor",
+    "~/Library/Preferences/com.coteditor.CotEditor.plist",
   ]
 end

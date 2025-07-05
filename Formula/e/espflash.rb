@@ -1,7 +1,7 @@
 class Espflash < Formula
   desc "Serial flasher utility for Espressif SoCs and modules based on esptool.py"
-  homepage "https:github.comesp-rsespflash"
-  url "https:github.comesp-rsespflasharchiverefstagsv4.0.0.tar.gz"
+  homepage "https://github.com/esp-rs/espflash"
+  url "https://ghfast.top/https://github.com/esp-rs/espflash/archive/refs/tags/v4.0.0.tar.gz"
   sha256 "6aff44a3b8e8d551066dbf4de6114b4629c273f9684a22757fa37b965195b67c"
   license any_of: ["MIT", "Apache-2.0"]
 
@@ -31,9 +31,9 @@ class Espflash < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}espflash --version")
+    assert_match version.to_s, shell_output("#{bin}/espflash --version")
 
-    output = shell_output("#{bin}espflash flash espflashtestsresourcesesp32_hal_blinky --port COMX 2>&1", 1)
+    output = shell_output("#{bin}/espflash flash espflash/tests/resources/esp32_hal_blinky --port COMX 2>&1", 1)
     assert_match "Error while connecting to device", output
   end
 end

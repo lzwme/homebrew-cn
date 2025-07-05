@@ -1,7 +1,7 @@
 class Nef < Formula
   desc "Steroids for Xcode Playgrounds"
-  homepage "https:nef.bow-swift.io"
-  url "https:github.combow-swiftnefarchiverefstags0.7.1.tar.gz"
+  homepage "https://nef.bow-swift.io"
+  url "https://ghfast.top/https://github.com/bow-swift/nef/archive/refs/tags/0.7.1.tar.gz"
   sha256 "147b8723d65ababedd04abf2ea4445c2b16dd7c18814a92182ae61978eb1152e"
   license "Apache-2.0"
 
@@ -27,9 +27,9 @@ class Nef < Formula
   end
 
   test do
-    system bin"nef", "markdown",
-           "--project", "#{share}testsDocumentation.app",
-           "--output", "#{testpath}nef"
-    assert_path_exists "#{testpath}neflibraryapis.md"
+    system bin/"nef", "markdown",
+           "--project", "#{share}/tests/Documentation.app",
+           "--output", "#{testpath}/nef"
+    assert_path_exists "#{testpath}/nef/library/apis.md"
   end
 end

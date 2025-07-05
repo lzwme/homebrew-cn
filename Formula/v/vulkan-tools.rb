@@ -1,14 +1,14 @@
 class VulkanTools < Formula
   desc "Vulkan utilities and tools"
-  homepage "https:github.comKhronosGroupVulkan-Tools"
-  url "https:github.comKhronosGroupVulkan-Toolsarchiverefstagsv1.4.320.tar.gz"
+  homepage "https://github.com/KhronosGroup/Vulkan-Tools"
+  url "https://ghfast.top/https://github.com/KhronosGroup/Vulkan-Tools/archive/refs/tags/v1.4.320.tar.gz"
   sha256 "6de7b073ee45dc6e8421d4f3fd8fb3c9bf4cd07cf83ddfa905f4e4d93eba6c36"
   license "Apache-2.0"
-  head "https:github.comKhronosGroupVulkan-Tools.git", branch: "main"
+  head "https://github.com/KhronosGroup/Vulkan-Tools.git", branch: "main"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -45,12 +45,12 @@ class VulkanTools < Formula
   def install
     if OS.mac?
       # account for using already-built MoltenVK instead of the source repo
-      inreplace "cubeCMakeLists.txt",
-                "${MOLTENVK_DIR}MoltenVKicdMoltenVK_icd.json",
-                "${MOLTENVK_DIR}etcvulkanicd.dMoltenVK_icd.json"
-      inreplace buildpath.glob("*macOS*CMakeLists.txt"),
-                "${MOLTENVK_DIR}PackageReleaseMoltenVKdynamicdylibmacOSlibMoltenVK.dylib",
-                "${MOLTENVK_DIR}liblibMoltenVK.dylib"
+      inreplace "cube/CMakeLists.txt",
+                "${MOLTENVK_DIR}/MoltenVK/icd/MoltenVK_icd.json",
+                "${MOLTENVK_DIR}/etc/vulkan/icd.d/MoltenVK_icd.json"
+      inreplace buildpath.glob("*/macOS/*/CMakeLists.txt"),
+                "${MOLTENVK_DIR}/Package/Release/MoltenVK/dynamic/dylib/macOS/libMoltenVK.dylib",
+                "${MOLTENVK_DIR}/lib/libMoltenVK.dylib"
     end
 
     args = [
@@ -78,41 +78,41 @@ class VulkanTools < Formula
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 
-    (lib"mock_icd").install (buildpath"buildicdVkICD_mock_icd.json").realpath,
-                             shared_library("buildicdlibVkICD_mock_icd")
+    (lib/"mock_icd").install (buildpath/"build/icd/VkICD_mock_icd.json").realpath,
+                             shared_library("build/icd/libVkICD_mock_icd")
 
     return unless OS.mac?
 
     targets = [
-      Formula["molten-vk"].opt_libshared_library("libMoltenVK"),
-      Formula["vulkan-loader"].opt_libshared_library("libvulkan", Formula["vulkan-loader"].version.to_s),
+      Formula["molten-vk"].opt_lib/shared_library("libMoltenVK"),
+      Formula["vulkan-loader"].opt_lib/shared_library("libvulkan", Formula["vulkan-loader"].version.to_s),
     ]
-    prefix.glob("cube*.appContentsFrameworks").each do |framework_dir|
+    prefix.glob("cube/*.app/Contents/Frameworks").each do |framework_dir|
       ln_sf targets, framework_dir, verbose: true
     end
 
-    (bin"vkcube").write_env_script "usrbinopen", "-a #{prefix}cubevkcube.app", {}
-    (bin"vkcubepp").write_env_script "usrbinopen", "-a #{prefix}cubevkcubepp.app", {}
+    (bin/"vkcube").write_env_script "/usr/bin/open", "-a #{prefix}/cube/vkcube.app", {}
+    (bin/"vkcubepp").write_env_script "/usr/bin/open", "-a #{prefix}/cube/vkcubepp.app", {}
   end
 
   def caveats
     <<~EOS
       The mock ICD files have been installed in
-        #{opt_lib}mock_icd
+        #{opt_lib}/mock_icd
       You can use them with the Vulkan Loader by setting
-        export VK_ICD_FILENAMES=#{opt_lib}mock_icdVkICD_mock_icd.json
+        export VK_ICD_FILENAMES=#{opt_lib}/mock_icd/VkICD_mock_icd.json
     EOS
   end
 
   test do
-    with_env(VK_ICD_FILENAMES: lib"mock_icdVkICD_mock_icd.json") do
-      assert_match "Vulkan Mock Device", shell_output("#{bin}vulkaninfo --summary")
+    with_env(VK_ICD_FILENAMES: lib/"mock_icd/VkICD_mock_icd.json") do
+      assert_match "Vulkan Mock Device", shell_output("#{bin}/vulkaninfo --summary")
     end
 
     return if !OS.mac? || (Hardware::CPU.intel? && ENV["HOMEBREW_GITHUB_ACTIONS"])
 
     with_env(XDG_DATA_DIRS: testpath) do
-      assert_match "DRIVER_ID_MOLTENVK", shell_output("#{bin}vulkaninfo --summary")
+      assert_match "DRIVER_ID_MOLTENVK", shell_output("#{bin}/vulkaninfo --summary")
     end
   end
 end

@@ -1,10 +1,10 @@
 class Wzprof < Formula
   desc "Profiling for Wazero"
-  homepage "https:github.comdispatchrunwzprof"
-  url "https:github.comdispatchrunwzprofarchiverefstagsv0.2.0.tar.gz"
+  homepage "https://github.com/dispatchrun/wzprof"
+  url "https://ghfast.top/https://github.com/dispatchrun/wzprof/archive/refs/tags/v0.2.0.tar.gz"
   sha256 "20223095b6b0bcb7ee655e755d2979f743a1bd03bf4fb09928856356caa9d463"
   license "Apache-2.0"
-  head "https:github.comdispatchrunwzprof.git", branch: "main"
+  head "https://github.com/dispatchrun/wzprof.git", branch: "main"
 
   no_autobump! because: :requires_manual_review
 
@@ -24,12 +24,12 @@ class Wzprof < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}"), ".cmdwzprof"
+    system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}"), "./cmd/wzprof"
   end
 
   test do
     resource "simple.wasm" do
-      url "https:github.comdispatchrunwzprofrawc2e9f22testdatacsimple.wasm"
+      url "https://github.com/dispatchrun/wzprof/raw/c2e9f22/testdata/c/simple.wasm"
       sha256 "f838a6edabfc830177f10f8cba0a07f36bb1d81209d4300f6d41ad2305756b3a"
     end
 
@@ -41,8 +41,8 @@ class Wzprof < Formula
       func31 malloc(30): 0x11530
       end
     EOS
-    assert_equal expected, shell_output(bin"wzprof -sample 1 #{testpath}simple.wasm 2>&1")
+    assert_equal expected, shell_output(bin/"wzprof -sample 1 #{testpath}/simple.wasm 2>&1")
 
-    assert_match "wzprof version #{version}", shell_output(bin"wzprof -version")
+    assert_match "wzprof version #{version}", shell_output(bin/"wzprof -version")
   end
 end

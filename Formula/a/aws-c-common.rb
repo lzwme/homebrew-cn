@@ -1,7 +1,7 @@
 class AwsCCommon < Formula
   desc "Core c99 package for AWS SDK for C"
-  homepage "https:github.comawslabsaws-c-common"
-  url "https:github.comawslabsaws-c-commonarchiverefstagsv0.12.3.tar.gz"
+  homepage "https://github.com/awslabs/aws-c-common"
+  url "https://ghfast.top/https://github.com/awslabs/aws-c-common/archive/refs/tags/v0.12.3.tar.gz"
   sha256 "a4e7ac6c6f840cb6ab56b8ee0bcd94a61c59d68ca42570bca518432da4c94273"
   license "Apache-2.0"
 
@@ -24,10 +24,10 @@ class AwsCCommon < Formula
   end
 
   test do
-    (testpath"test.c").write <<~C
-      #include <awscommonuuid.h>
-      #include <awscommonbyte_buf.h>
-      #include <awscommonerror.h>
+    (testpath/"test.c").write <<~C
+      #include <aws/common/uuid.h>
+      #include <aws/common/byte_buf.h>
+      #include <aws/common/error.h>
       #include <assert.h>
 
       int main(void) {
@@ -47,6 +47,6 @@ class AwsCCommon < Formula
       }
     C
     system ENV.cc, "test.c", "-o", "test", "-L#{lib}", "-laws-c-common"
-    system ".test"
+    system "./test"
   end
 end

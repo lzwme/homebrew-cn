@@ -1,14 +1,14 @@
 class Ronn < Formula
   desc "Builds manuals - the opposite of roff"
-  homepage "https:rtomayko.github.ioronn"
-  url "https:github.comrtomaykoronnarchiverefstags0.7.3.tar.gz"
+  homepage "https://rtomayko.github.io/ronn/"
+  url "https://ghfast.top/https://github.com/rtomayko/ronn/archive/refs/tags/0.7.3.tar.gz"
   sha256 "808aa6668f636ce03abba99c53c2005cef559a5099f6b40bf2c7aad8e273acb4"
   license "MIT"
   revision 4
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -37,20 +37,20 @@ class Ronn < Formula
     ENV["GEM_HOME"] = libexec
     system "gem", "build", "ronn.gemspec"
     system "gem", "install", "ronn-#{version}.gem"
-    bin.install libexec"binronn"
-    bin.env_script_all_files(libexec"bin", GEM_HOME: ENV["GEM_HOME"])
-    man1.install "manronn.1"
-    man7.install "manronn-format.7"
+    bin.install libexec/"bin/ronn"
+    bin.env_script_all_files(libexec/"bin", GEM_HOME: ENV["GEM_HOME"])
+    man1.install "man/ronn.1"
+    man7.install "man/ronn-format.7"
   end
 
   test do
-    (testpath"test.ronn").write <<~MARKDOWN
+    (testpath/"test.ronn").write <<~MARKDOWN
       simple(7) -- a simple ronn example
       ==================================
 
       This document is created by ronn.
     MARKDOWN
-    system bin"ronn", "--date", "1970-01-01", "test.ronn"
+    system bin/"ronn", "--date", "1970-01-01", "test.ronn"
     assert_equal <<~EOS, pipe_output("col -bx", shell_output("groff -t -man -Tascii -P -c test.7"))
       SIMPLE(7)                                                            SIMPLE(7)
 

@@ -1,10 +1,10 @@
 class Fx < Formula
   desc "Terminal JSON viewer"
-  homepage "https:fx.wtf"
-  url "https:github.comantonmedvfxarchiverefstags37.0.0.tar.gz"
+  homepage "https://fx.wtf"
+  url "https://ghfast.top/https://github.com/antonmedv/fx/archive/refs/tags/37.0.0.tar.gz"
   sha256 "75c8c360bac4bccbab85b4873b7030a4ed88d8d4a6e718a935851be6454fe56b"
   license "MIT"
-  head "https:github.comantonmedvfx.git", branch: "master"
+  head "https://github.com/antonmedv/fx.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "46d824809e86a85bbb1276c09c162ed9ea3dec022dea146dce112563c897408b"
@@ -19,10 +19,10 @@ class Fx < Formula
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
-    generate_completions_from_executable(bin"fx", "--comp")
+    generate_completions_from_executable(bin/"fx", "--comp")
   end
 
   test do
-    assert_equal "42", pipe_output("#{bin}fx .", "42").strip
+    assert_equal "42", pipe_output("#{bin}/fx .", "42").strip
   end
 end

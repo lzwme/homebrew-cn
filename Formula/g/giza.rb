@@ -1,10 +1,10 @@
 class Giza < Formula
-  desc "Scientific plotting library for CFortran built on cairo"
-  homepage "https:danieljprice.github.iogiza"
-  url "https:github.comdanieljpricegizaarchiverefstagsv1.5.0.tar.gz"
+  desc "Scientific plotting library for C/Fortran built on cairo"
+  homepage "https://danieljprice.github.io/giza/"
+  url "https://ghfast.top/https://github.com/danieljprice/giza/archive/refs/tags/v1.5.0.tar.gz"
   sha256 "d45f1f930b4e4a3c77e0b110b97b732c290d169bf9ae0c3fc7dcd2895c1b3afe"
   license "LGPL-3.0-only"
-  head "https:github.comdanieljpricegiza.git", branch: "master"
+  head "https://github.com/danieljprice/giza.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "d5cc5b8ea3baf6cb3405ec37acb4ef91623456492cd0222787bf9461272d4e80"
@@ -25,7 +25,7 @@ class Giza < Formula
   depends_on "libx11"
 
   def install
-    system ".configure", "--disable-silent-rules", *std_configure_args
+    system "./configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
 
     # Clean up stray Makefiles in test folder
@@ -40,17 +40,17 @@ class Giza < Formula
   def caveats
     <<~EOS
       Test suite has been installed at:
-        #{opt_prefix}test
+        #{opt_prefix}/test
     EOS
   end
 
   test do
-    test_dir = "#{prefix}testC"
+    test_dir = "#{prefix}/test/C"
     cp_r test_dir, testpath
 
     flags = %W[
       -I#{include}
-      -I#{Formula["cairo"].opt_include}cairo
+      -I#{Formula["cairo"].opt_include}/cairo
       -L#{lib}
       -L#{Formula["libx11"].opt_lib}
       -L#{Formula["cairo"].opt_lib}
@@ -66,7 +66,7 @@ class Giza < Formula
       test-rectangle.c
       test-window.c
     ].each do |file|
-      system ENV.cc, testpath"C"file, *flags
+      system ENV.cc, testpath/"C"/file, *flags
     end
   end
 end

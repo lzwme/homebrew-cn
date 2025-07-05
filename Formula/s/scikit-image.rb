@@ -2,11 +2,11 @@ class ScikitImage < Formula
   include Language::Python::Virtualenv
 
   desc "Image processing in Python"
-  homepage "https:scikit-image.org"
-  url "https:files.pythonhosted.orgpackagesc7a83c0f256012b93dd2cb6fda9245e9f4bff7dc0486880b248005f15ea2255escikit_image-0.25.2.tar.gz"
+  homepage "https://scikit-image.org"
+  url "https://files.pythonhosted.org/packages/c7/a8/3c0f256012b93dd2cb6fda9245e9f4bff7dc0486880b248005f15ea2255e/scikit_image-0.25.2.tar.gz"
   sha256 "e5a37e6cd4d0c018a7a55b9d601357e3382826d3888c10d0213fc63bff977dde"
   license "BSD-3-Clause"
-  head "https:github.comscikit-imagescikit-image.git", branch: "main"
+  head "https://github.com/scikit-image/scikit-image.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "7f92c634789c248e5faa16af8c885c76a797561f9caa90ad3ba6771ee8adc65a"
@@ -31,27 +31,27 @@ class ScikitImage < Formula
   end
 
   resource "imageio" do
-    url "https:files.pythonhosted.orgpackages0c4757e897fb7094afb2d26e8b2e4af9a45c7cf1a405acdeeca001fdf2c98501imageio-2.37.0.tar.gz"
+    url "https://files.pythonhosted.org/packages/0c/47/57e897fb7094afb2d26e8b2e4af9a45c7cf1a405acdeeca001fdf2c98501/imageio-2.37.0.tar.gz"
     sha256 "71b57b3669666272c818497aebba2b4c5f20d5b37c81720e5e1a56d59c492996"
   end
 
   resource "lazy-loader" do
-    url "https:files.pythonhosted.orgpackages6f6bc875b30a1ba490860c93da4cabf479e03f584eba06fe5963f6f6644653d8lazy_loader-0.4.tar.gz"
+    url "https://files.pythonhosted.org/packages/6f/6b/c875b30a1ba490860c93da4cabf479e03f584eba06fe5963f6f6644653d8/lazy_loader-0.4.tar.gz"
     sha256 "47c75182589b91a4e1a85a136c074285a5ad4d9f39c63e0d7fb76391c4574cd1"
   end
 
   resource "networkx" do
-    url "https:files.pythonhosted.orgpackagesfd1d06475e1cd5264c0b870ea2cc6fdb3e37177c1e565c43f56ff17a10e3937fnetworkx-3.4.2.tar.gz"
+    url "https://files.pythonhosted.org/packages/fd/1d/06475e1cd5264c0b870ea2cc6fdb3e37177c1e565c43f56ff17a10e3937f/networkx-3.4.2.tar.gz"
     sha256 "307c3669428c5362aab27c8a1260aa8f47c4e91d3891f48be0141738d8d053e1"
   end
 
   resource "packaging" do
-    url "https:files.pythonhosted.orgpackagesd06368dbb6eb2de9cb10ee4c9c14a0148804425e13c4fb20d61cce69f53106dapackaging-24.2.tar.gz"
+    url "https://files.pythonhosted.org/packages/d0/63/68dbb6eb2de9cb10ee4c9c14a0148804425e13c4fb20d61cce69f53106da/packaging-24.2.tar.gz"
     sha256 "c228a6dc5e932d346bc5739379109d49e8853dd8223571c7c5b55260edc0b97f"
   end
 
   resource "tifffile" do
-    url "https:files.pythonhosted.orgpackagesd5fc697d8dac6936a81eda88e7d4653d567fcb0d504efad3fd28f5272f96fcf9tifffile-2025.1.10.tar.gz"
+    url "https://files.pythonhosted.org/packages/d5/fc/697d8dac6936a81eda88e7d4653d567fcb0d504efad3fd28f5272f96fcf9/tifffile-2025.1.10.tar.gz"
     sha256 "baaf0a3b87bf7ec375fa1537503353f70497eabe1bdde590f2e41cc0346e612f"
   end
 
@@ -60,11 +60,11 @@ class ScikitImage < Formula
   end
 
   def post_install
-    HOMEBREW_PREFIX.glob("libpython*.*site-packagesskimage***.pyc").map(&:unlink)
+    HOMEBREW_PREFIX.glob("lib/python*.*/site-packages/skimage/**/*.pyc").map(&:unlink)
   end
 
   test do
-    (testpath"test.py").write <<~PYTHON
+    (testpath/"test.py").write <<~PYTHON
       import skimage as ski
       import numpy
 
@@ -72,6 +72,6 @@ class ScikitImage < Formula
       assert isinstance(cat, numpy.ndarray)
       assert cat.shape == (300, 451, 3)
     PYTHON
-    shell_output("#{libexec}binpython test.py")
+    shell_output("#{libexec}/bin/python test.py")
   end
 end

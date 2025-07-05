@@ -10,15 +10,15 @@ cask "thorium" do
     sha256 "b718cd726188f7ec7b215e4c12297a992e5471b87211bce66a7c5493641aedac"
   end
 
-  url "https:github.comedrlabthorium-readerreleasesdownloadv#{version.csv.first}Thorium-#{version.csv.second || version.csv.first}#{arch}.dmg",
-      verified: "github.comedrlabthorium-reader"
+  url "https://ghfast.top/https://github.com/edrlab/thorium-reader/releases/download/v#{version.csv.first}/Thorium-#{version.csv.second || version.csv.first}#{arch}.dmg",
+      verified: "github.com/edrlab/thorium-reader/"
   name "Thorium Reader"
   desc "Epub reader"
-  homepage "https:www.edrlab.orgsoftwarethorium-reader"
+  homepage "https://www.edrlab.org/software/thorium-reader/"
 
   livecheck do
     url :url
-    regex(%r{v?(\d+(?:\.\d+)+)Thorium[._-]v?(\d+(?:[.-]\d+)+)#{arch}\.dmg}i)
+    regex(%r{/v?(\d+(?:\.\d+)+)/Thorium[._-]v?(\d+(?:[.-]\d+)+)#{arch}\.dmg}i)
     strategy :github_releases do |json, regex|
       json.map do |release|
         next if release["draft"] || release["prerelease"]
@@ -39,7 +39,7 @@ cask "thorium" do
   app "Thorium.app"
 
   zap trash: [
-    "~LibraryApplication SupportEDRLab.ThoriumReader",
-    "~LibraryPreferencesio.github.edrlab.thorium.plist",
+    "~/Library/Application Support/EDRLab.ThoriumReader",
+    "~/Library/Preferences/io.github.edrlab.thorium.plist",
   ]
 end

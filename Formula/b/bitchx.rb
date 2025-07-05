@@ -1,25 +1,25 @@
 class Bitchx < Formula
   desc "Text-based, scriptable IRC client"
-  homepage "https:bitchx.sourceforge.net"
+  homepage "https://bitchx.sourceforge.net/"
   license "BSD-3-Clause"
   revision 1
-  head "https:git.code.sf.netpbitchxgit.git", branch: "master"
+  head "https://git.code.sf.net/p/bitchx/git.git", branch: "master"
 
   stable do
-    url "https:downloads.sourceforge.netprojectbitchxircii-panabitchx-1.2.1bitchx-1.2.1.tar.gz"
+    url "https://downloads.sourceforge.net/project/bitchx/ircii-pana/bitchx-1.2.1/bitchx-1.2.1.tar.gz"
     sha256 "2d270500dd42b5e2b191980d584f6587ca8a0dbda26b35ce7fadb519f53c83e2"
 
     # Apply these upstream commits to fix Linux build:
-    # https:sourceforge.netpbitchxgitci1c6ff3088ad01a15bea50f78f1b2b468db7afae9
-    # https:sourceforge.netpbitchxgitci4f63d4892995eec6707f194b462c9fc3184ee85d
+    # https://sourceforge.net/p/bitchx/git/ci/1c6ff3088ad01a15bea50f78f1b2b468db7afae9/
+    # https://sourceforge.net/p/bitchx/git/ci/4f63d4892995eec6707f194b462c9fc3184ee85d/
     # Remove with next release.
     patch do
-      url "https:raw.githubusercontent.comHomebrewformula-patches7a83dbb5d8e3a3070ff80a28d396868cdd6b23acbitchxlinux.patch"
+      url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/7a83dbb5d8e3a3070ff80a28d396868cdd6b23ac/bitchx/linux.patch"
       sha256 "99caa10f32bfe4727a836b8cc99ec81e3c059729e4bb90641be392f4e98255d9"
     end
 
     # Backport part of upstream commit to add static specifiers needed to fix Sonoma build
-    # Ref: https:sourceforge.netpbitchxgitci7e3c39a464635eb22484161513410ecbb666f840
+    # Ref: https://sourceforge.net/p/bitchx/git/ci/7e3c39a464635eb22484161513410ecbb666f840/
     patch :DATA
   end
 
@@ -55,12 +55,12 @@ class Bitchx < Formula
     # Remove following in next release
     if build.stable?
       # AIM plugin was removed upstream:
-      # https:sourceforge.netpbitchxgitci35b1a65f03a2ca2dde31c9dbd77968587b6027d3
+      # https://sourceforge.net/p/bitchx/git/ci/35b1a65f03a2ca2dde31c9dbd77968587b6027d3/
       plugins << "aim"
 
       # Patch to fix OpenSSL detection with OpenSSL 1.1
       # A similar fix is already committed upstream:
-      # https:sourceforge.netpbitchxgitci184af728c73c379d1eee57a387b6012572794fa8
+      # https://sourceforge.net/p/bitchx/git/ci/184af728c73c379d1eee57a387b6012572794fa8/
       inreplace "configure", "SSLeay", "OpenSSL_version_num"
 
       # Work around for new Clang. HEAD build does not hit issues.
@@ -71,7 +71,7 @@ class Bitchx < Formula
       end
     end
 
-    system ".configure", "--prefix=#{prefix}",
+    system "./configure", "--prefix=#{prefix}",
                           "--mandir=#{man}",
                           "--enable-ipv6",
                           "--with-plugins=#{plugins.join(",")}",
@@ -81,19 +81,19 @@ class Bitchx < Formula
   end
 
   test do
-    system bin"BitchX", "-v"
+    system bin/"BitchX", "-v"
   end
 end
 
 __END__
-diff --git asourceexpr2.c bsourceexpr2.c
+diff --git a/source/expr2.c b/source/expr2.c
 index f607707..657a2bc 100644
---- asourceexpr2.c
-+++ bsourceexpr2.c
+--- a/source/expr2.c
++++ b/source/expr2.c
 @@ -1192,7 +1204,7 @@ int	lexerr (expr_info *c, char *format, ...)
   * case 'operand' is set to 1.  When an operand is lexed, then the next token
   * is expected to be a binary operator, so 'operand' is set to 0. 
-  *
+  */
 -__inline int	check_implied_arg (expr_info *c)
 +static __inline int	check_implied_arg (expr_info *c)
  {

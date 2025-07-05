@@ -1,7 +1,7 @@
 class Xlearn < Formula
   desc "High performance, easy-to-use, and scalable machine learning package"
-  homepage "https:xlearn-doc.readthedocs.ioenlatestindex.html"
-  url "https:github.comaksnzhyxlearnarchiverefstagsv0.4.4.tar.gz"
+  homepage "https://xlearn-doc.readthedocs.io/en/latest/index.html"
+  url "https://ghfast.top/https://github.com/aksnzhy/xlearn/archive/refs/tags/v0.4.4.tar.gz"
   sha256 "7b0e9db901c0e6feda4dfb793748ec959b2b56188fc2a80de5983c37e2b9f7d2"
   license "Apache-2.0"
 
@@ -20,7 +20,7 @@ class Xlearn < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on arch: :x86_64 # https:github.comaksnzhyxlearnissues354
+  depends_on arch: :x86_64 # https://github.com/aksnzhy/xlearn/issues/354
 
   def install
     inreplace "CMakeLists.txt", "set(CMAKE_INSTALL_PREFIX \"xLearn\")", ""
@@ -29,15 +29,15 @@ class Xlearn < Formula
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 
-    bin.install "buildxlearn_train"
-    bin.install "buildxlearn_predict"
-    lib.install "buildlib#{shared_library("libxlearn_api")}"
+    bin.install "build/xlearn_train"
+    bin.install "build/xlearn_predict"
+    lib.install "build/lib/#{shared_library("libxlearn_api")}"
 
     pkgshare.install "demo"
   end
 
   test do
-    cp_r (pkgshare"democlassificationcriteo_ctrsmall_train.txt"), testpath
-    system bin"xlearn_train", "small_train.txt"
+    cp_r (pkgshare/"demo/classification/criteo_ctr/small_train.txt"), testpath
+    system bin/"xlearn_train", "small_train.txt"
   end
 end

@@ -1,7 +1,7 @@
 class Rem < Formula
   desc "Command-line tool to access OSX Reminders.app database"
-  homepage "https:github.comkykimrem"
-  url "https:github.comkykimremarchiverefstags20150618.tar.gz"
+  homepage "https://github.com/kykim/rem"
+  url "https://ghfast.top/https://github.com/kykim/rem/archive/refs/tags/20150618.tar.gz"
   sha256 "e57173a26d2071692d72f3374e36444ad0b294c1284e3b28706ff3dbe38ce8af"
   license "Apache-2.0"
 
@@ -33,10 +33,10 @@ class Rem < Formula
     xcodebuild "-arch", Hardware::CPU.arch,
                "MACOSX_DEPLOYMENT_TARGET=#{MacOS.version}",
                "SYMROOT=build"
-    bin.install "buildReleaserem"
+    bin.install "build/Release/rem"
   end
 
   test do
-    system bin"rem", "version"
+    system bin/"rem", "version"
   end
 end

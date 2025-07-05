@@ -1,10 +1,10 @@
 class Hcl2json < Formula
   desc "Convert HCL2 to JSON"
-  homepage "https:github.comtmccombshcl2json"
-  url "https:github.comtmccombshcl2jsonarchiverefstagsv0.6.7.tar.gz"
+  homepage "https://github.com/tmccombs/hcl2json"
+  url "https://ghfast.top/https://github.com/tmccombs/hcl2json/archive/refs/tags/v0.6.7.tar.gz"
   sha256 "868a6986ae983b703c9845f315b27ab19207b816a8f16f6d44041e4d78764f70"
   license "Apache-2.0"
-  head "https:github.comtmccombshcl2json.git", branch: "main"
+  head "https://github.com/tmccombs/hcl2json.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "11269bcec892b16d8f8402eff9ee2859278e1299e93e922d8cec1528131d97f0"
@@ -23,7 +23,7 @@ class Hcl2json < Formula
   end
 
   test do
-    test_hcl = testpath"test.hcl"
+    test_hcl = testpath/"test.hcl"
     test_hcl.write <<~HCL
       resource "my_resource_type" "test_resource" {
         input = "magic_test_value"
@@ -42,7 +42,7 @@ class Hcl2json < Formula
       },
     }.to_json
 
-    assert_equal test_json, shell_output("#{bin}hcl2json #{test_hcl}").gsub(\s+, "")
-    assert_match "Failed to open brewtest", shell_output("#{bin}hcl2json brewtest 2>&1", 1)
+    assert_equal test_json, shell_output("#{bin}/hcl2json #{test_hcl}").gsub(/\s+/, "")
+    assert_match "Failed to open brewtest", shell_output("#{bin}/hcl2json brewtest 2>&1", 1)
   end
 end

@@ -1,14 +1,14 @@
 class Dwarfutils < Formula
   desc "Dump and produce DWARF debug information in ELF objects"
-  homepage "https:www.prevanders.netdwarf.html"
-  url "https:www.prevanders.netlibdwarf-2.0.0.tar.xz"
+  homepage "https://www.prevanders.net/dwarf.html"
+  url "https://www.prevanders.net/libdwarf-2.0.0.tar.xz"
   sha256 "c3d1db72a979e14ee60b93010f0698d30fc1bca4eb1341006783d4e9c9ec7e72"
   license all_of: ["BSD-2-Clause", "LGPL-2.1-or-later", "GPL-2.0-or-later"]
   version_scheme 1
 
   livecheck do
     url :homepage
-    regex(%r{href=(?:["']?|.*?)libdwarf[._-]v?(\d+(?:\.\d+)+)\.t}i)
+    regex(%r{href=(?:["']?|.*?/)libdwarf[._-]v?(\d+(?:\.\d+)+)\.t}i)
   end
 
   bottle do
@@ -22,7 +22,7 @@ class Dwarfutils < Formula
   end
 
   head do
-    url "https:github.comdavea42libdwarf-code.git", branch: "main"
+    url "https://github.com/davea42/libdwarf-code.git", branch: "main"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -35,14 +35,14 @@ class Dwarfutils < Formula
 
   def install
     system "sh", "autogen.sh" if build.head?
-    system ".configure", "--enable-shared", *std_configure_args
+    system "./configure", "--enable-shared", *std_configure_args
     system "make", "install"
   end
 
   test do
-    system bin"dwarfdump", "-V"
+    system bin/"dwarfdump", "-V"
 
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include <dwarf.h>
       #include <libdwarf.h>
       #include <stdio.h>
@@ -65,7 +65,7 @@ class Dwarfutils < Formula
         return 0;
       }
     C
-    system ENV.cc, "-I#{include}libdwarf-#{version.major}", "test.c", "-L#{lib}", "-ldwarf", "-o", "test"
-    system ".test"
+    system ENV.cc, "-I#{include}/libdwarf-#{version.major}", "test.c", "-L#{lib}", "-ldwarf", "-o", "test"
+    system "./test"
   end
 end

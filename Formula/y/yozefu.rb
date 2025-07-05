@@ -1,10 +1,10 @@
 class Yozefu < Formula
   desc "TUI for exploring data in a Kafka cluster"
-  homepage "https:github.comMAIFyozefu"
-  url "https:github.comMAIFyozefuarchiverefstagsv0.0.10.tar.gz"
+  homepage "https://github.com/MAIF/yozefu"
+  url "https://ghfast.top/https://github.com/MAIF/yozefu/archive/refs/tags/v0.0.10.tar.gz"
   sha256 "c3053428ad866de6afc930f77260f96023906d496ef6acb9f70bd1fe2a25b2ce"
   license "Apache-2.0"
-  head "https:github.comMAIFyozefu.git", branch: "main"
+  head "https://github.com/MAIF/yozefu.git", branch: "main"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "fc717462ccce575ec562056e16cca27fb817d6969615686f4fdaad40b719c3a4"
@@ -24,30 +24,30 @@ class Yozefu < Formula
   uses_from_macos "llvm" => :build # for libclang
 
   def install
-    # cmake 4 support, remove when https:github.comfede1024rust-rdkafkapull766 is released
-    # upstream issue, https:github.comMAIFyozefuissues83
+    # cmake 4 support, remove when https://github.com/fede1024/rust-rdkafka/pull/766 is released
+    # upstream issue, https://github.com/MAIF/yozefu/issues/83
     ENV["CMAKE_POLICY_VERSION_MINIMUM"] = "3.5"
 
     # Ensure that the `openssl` crate picks up the intended library.
     ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
     ENV["OPENSSL_NO_VENDOR"] = "1"
 
-    system "cargo", "install", *std_cargo_args(path: "cratesbin")
+    system "cargo", "install", *std_cargo_args(path: "crates/bin")
   end
 
   test do
-    require "utilslinkage"
+    require "utils/linkage"
 
-    assert_match version.to_s, shell_output("#{bin}yozf --version")
+    assert_match version.to_s, shell_output("#{bin}/yozf --version")
 
-    output = shell_output("#{bin}yozf config get a 2>&1", 1)
+    output = shell_output("#{bin}/yozf config get a 2>&1", 1)
     assert_match "Error: There is no 'a' property in the config file", output
 
     [
-      Formula["openssl@3"].opt_libshared_library("libssl"),
-      Formula["openssl@3"].opt_libshared_library("libcrypto"),
+      Formula["openssl@3"].opt_lib/shared_library("libssl"),
+      Formula["openssl@3"].opt_lib/shared_library("libcrypto"),
     ].each do |library|
-      assert Utils.binary_linked_to_library?(bin"yozf", library),
+      assert Utils.binary_linked_to_library?(bin/"yozf", library),
              "No linkage with #{library.basename}! Cargo is likely using a vendored version."
     end
   end

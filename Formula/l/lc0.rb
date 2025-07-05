@@ -1,7 +1,7 @@
 class Lc0 < Formula
   desc "Open source neural network based chess engine"
-  homepage "https:lczero.org"
-  url "https:github.comLeelaChessZerolc0.git",
+  homepage "https://lczero.org/"
+  url "https://github.com/LeelaChessZero/lc0.git",
       tag:      "v0.31.2",
       revision: "8ba8aa426460bbeda452754ff7d6a9bb60bb0e54"
   license "GPL-3.0-or-later"
@@ -30,9 +30,9 @@ class Lc0 < Formula
   end
 
   # We use "753723" network with 15 blocks x 192 filters (from release notes)
-  # Downloaded from https:training.lczero.orgnetworks?show_all=0
+  # Downloaded from https://training.lczero.org/networks/?show_all=0
   resource "network" do
-    url "https:training.lczero.orgget_network?sha=3e3444370b9fe413244fdc79671a490e19b93d3cca1669710ffeac890493d198", using: :nounzip
+    url "https://training.lczero.org/get_network?sha=3e3444370b9fe413244fdc79671a490e19b93d3cca1669710ffeac890493d198", using: :nounzip
     sha256 "ca9a751e614cc753cb38aee247972558cf4dc9d82c5d9e13f2f1f464e350ec23"
   end
 
@@ -41,7 +41,7 @@ class Lc0 < Formula
 
     if OS.mac?
       # Disable metal backend for older macOS
-      # Ref https:github.comLeelaChessZerolc0issues1814
+      # Ref https://github.com/LeelaChessZero/lc0/issues/1814
       args << "-Dmetal=disabled" if MacOS.version <= :big_sur
     else
       args << "-Dopenblas_include=#{Formula["openblas"].opt_include}"
@@ -52,14 +52,14 @@ class Lc0 < Formula
     system "meson", "compile", "-C", "build", "--verbose"
     system "meson", "install", "-C", "build"
 
-    bin.write_exec_script libexec"lc0"
+    bin.write_exec_script libexec/"lc0"
     resource("network").stage { libexec.install Dir["*"].first => "42850.pb.gz" }
   end
 
   test do
     assert_match "Creating backend [blas]",
-      shell_output("#{bin}lc0 benchmark --backend=blas --nodes=1 --num-positions=1 2>&1")
+      shell_output("#{bin}/lc0 benchmark --backend=blas --nodes=1 --num-positions=1 2>&1")
     assert_match "Creating backend [eigen]",
-      shell_output("#{bin}lc0 benchmark --backend=eigen --nodes=1 --num-positions=1 2>&1")
+      shell_output("#{bin}/lc0 benchmark --backend=eigen --nodes=1 --num-positions=1 2>&1")
   end
 end

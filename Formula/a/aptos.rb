@@ -1,14 +1,14 @@
 class Aptos < Formula
   desc "Layer 1 blockchain built to support fair access to decentralized assets for all"
-  homepage "https:aptosfoundation.org"
-  url "https:github.comaptos-labsaptos-corearchiverefstagsaptos-cli-v7.6.0.tar.gz"
+  homepage "https://aptosfoundation.org/"
+  url "https://ghfast.top/https://github.com/aptos-labs/aptos-core/archive/refs/tags/aptos-cli-v7.6.0.tar.gz"
   sha256 "3c1650f253b5c9b213c51d1de130f671af118a5611897214150ddcb4bcd3855b"
   license "Apache-2.0"
-  head "https:github.comaptos-labsaptos-core.git", branch: "main"
+  head "https://github.com/aptos-labs/aptos-core.git", branch: "main"
 
   livecheck do
     url :stable
-    regex(^aptos-cli[._-]v?(\d+(?:\.\d+)+)$i)
+    regex(/^aptos-cli[._-]v?(\d+(?:\.\d+)+)$/i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -37,18 +37,18 @@ class Aptos < Formula
   end
 
   def install
-    # FIXME: Look into a different way to specify extra RUSTFLAGS in superenv as they override .cargoconfig.toml
-    # Ref: https:github.comHomebrewbrewblobmasterLibraryHomebrewextendENVsuper.rb#L65
+    # FIXME: Look into a different way to specify extra RUSTFLAGS in superenv as they override .cargo/config.toml
+    # Ref: https://github.com/Homebrew/brew/blob/master/Library/Homebrew/extend/ENV/super.rb#L65
     ENV.append "RUSTFLAGS", "--cfg tokio_unstable -C force-frame-pointers=yes -C force-unwind-tables=yes"
 
     # Use correct compiler to prevent blst from enabling AVX support on macOS
-    # upstream issue report, https:github.comsupranationalblstissues253
-    ENV["CC"] = Formula["llvm"].opt_bin"clang" if OS.mac?
+    # upstream issue report, https://github.com/supranational/blst/issues/253
+    ENV["CC"] = Formula["llvm"].opt_bin/"clang" if OS.mac?
 
-    system "cargo", "install", *std_cargo_args(path: "cratesaptos"), "--profile=cli"
+    system "cargo", "install", *std_cargo_args(path: "crates/aptos"), "--profile=cli"
   end
 
   test do
-    assert_match(output.pubi, shell_output("#{bin}aptos key generate --output-file output"))
+    assert_match(/output.pub/i, shell_output("#{bin}/aptos key generate --output-file output"))
   end
 end

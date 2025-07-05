@@ -1,18 +1,18 @@
 class Fceux < Formula
-  desc "All-in-one NESFamicom Emulator"
-  homepage "https:fceux.com"
+  desc "All-in-one NES/Famicom Emulator"
+  homepage "https://fceux.com/"
   license "GPL-2.0-only"
   revision 5
-  head "https:github.comTASEmulatorsfceux.git", branch: "master"
+  head "https://github.com/TASEmulators/fceux.git", branch: "master"
 
   stable do
-    url "https:github.comTASEmulatorsfceux.git",
+    url "https://github.com/TASEmulators/fceux.git",
         tag:      "v2.6.6",
         revision: "34eb7601c415b81901fd02afbd5cfdc84b5047ac"
 
     # patch for `New timeStamp.cpp file renders fceux x86-only` issue
     patch do
-      url "https:raw.githubusercontent.comHomebrewformula-patchescd40795fceux2.6.6-arm.patch"
+      url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/cd40795/fceux/2.6.6-arm.patch"
       sha256 "0890494f4b5db5fa11b94e418d505cea87dc9b9f55cdc6c97e9b5699aeada4ac"
     end
   end
@@ -48,13 +48,13 @@ class Fceux < Formula
     ENV["CXXFLAGS"] = "-DPUBLIC_RELEASE=1" if build.stable?
     system "cmake", ".", *std_cmake_args, "-DQT6=ON"
     system "make"
-    cp "srcauxlib.lua", "outputluaScripts"
-    fceux_path = OS.mac? ? "srcfceux.appContentsMacOS" : "src"
-    libexec.install Pathname.new(fceux_path)"fceux"
-    pkgshare.install ["outputluaScripts", "outputpalettes", "outputtools"]
-    (bin"fceux").write <<~BASH
-      #!binbash
-      LUA_PATH=#{pkgshare}luaScripts?.lua #{libexec}fceux "$@"
+    cp "src/auxlib.lua", "output/luaScripts"
+    fceux_path = OS.mac? ? "src/fceux.app/Contents/MacOS" : "src"
+    libexec.install Pathname.new(fceux_path)/"fceux"
+    pkgshare.install ["output/luaScripts", "output/palettes", "output/tools"]
+    (bin/"fceux").write <<~BASH
+      #!/bin/bash
+      LUA_PATH=#{pkgshare}/luaScripts/?.lua #{libexec}/fceux "$@"
     BASH
   end
 
@@ -63,6 +63,6 @@ class Fceux < Formula
     # "This application failed to start because no Qt platform plugin could be initialized."
     ENV["QT_QPA_PLATFORM"] = "minimal" if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
 
-    system bin"fceux", "--help"
+    system bin/"fceux", "--help"
   end
 end

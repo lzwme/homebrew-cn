@@ -1,10 +1,10 @@
 class Citus < Formula
   desc "PostgreSQL-based distributed RDBMS"
-  homepage "https:www.citusdata.com"
-  url "https:github.comcitusdatacitusarchiverefstagsv13.1.0.tar.gz"
+  homepage "https://www.citusdata.com"
+  url "https://ghfast.top/https://github.com/citusdata/citus/archive/refs/tags/v13.1.0.tar.gz"
   sha256 "2383287bea45dfce54cde9ffc98f3e27bb7cde4deb3f096f9c7a12d1819f5113"
   license "AGPL-3.0-only"
-  head "https:github.comcitusdatacitus.git", branch: "main"
+  head "https://github.com/citusdata/citus.git", branch: "main"
 
   # There can be a notable gap between when a version is tagged and a
   # corresponding release is created, so we check the "latest" release instead
@@ -37,34 +37,34 @@ class Citus < Formula
   end
 
   def install
-    ENV["PG_CONFIG"] = postgresql.opt_bin"pg_config"
+    ENV["PG_CONFIG"] = postgresql.opt_bin/"pg_config"
 
-    system ".configure", *std_configure_args
+    system "./configure", *std_configure_args
     system "make"
     # Override the hardcoded install paths set by the PGXS makefiles.
     system "make", "install", "bindir=#{bin}",
-                              "datadir=#{sharepostgresql.name}",
-                              "pkglibdir=#{libpostgresql.name}",
-                              "pkgincludedir=#{includepostgresql.name}"
+                              "datadir=#{share/postgresql.name}",
+                              "pkglibdir=#{lib/postgresql.name}",
+                              "pkgincludedir=#{include/postgresql.name}"
   end
 
   test do
     ENV["LC_ALL"] = "C"
-    pg_ctl = postgresql.opt_bin"pg_ctl"
-    psql = postgresql.opt_bin"psql"
+    pg_ctl = postgresql.opt_bin/"pg_ctl"
+    psql = postgresql.opt_bin/"psql"
     port = free_port
 
-    system pg_ctl, "initdb", "-D", testpath"test"
-    (testpath"testpostgresql.conf").write <<~EOS, mode: "a+"
+    system pg_ctl, "initdb", "-D", testpath/"test"
+    (testpath/"test/postgresql.conf").write <<~EOS, mode: "a+"
 
       shared_preload_libraries = 'citus'
       port = #{port}
     EOS
-    system pg_ctl, "start", "-D", testpath"test", "-l", testpath"log"
+    system pg_ctl, "start", "-D", testpath/"test", "-l", testpath/"log"
     begin
       system psql, "-p", port.to_s, "-c", "CREATE EXTENSION \"citus\";", "postgres"
     ensure
-      system pg_ctl, "stop", "-D", testpath"test"
+      system pg_ctl, "stop", "-D", testpath/"test"
     end
   end
 end

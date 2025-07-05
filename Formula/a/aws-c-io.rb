@@ -1,7 +1,7 @@
 class AwsCIo < Formula
   desc "Event driven framework for implementing application protocols"
-  homepage "https:github.comawslabsaws-c-io"
-  url "https:github.comawslabsaws-c-ioarchiverefstagsv0.20.1.tar.gz"
+  homepage "https://github.com/awslabs/aws-c-io"
+  url "https://ghfast.top/https://github.com/awslabs/aws-c-io/archive/refs/tags/v0.20.1.tar.gz"
   sha256 "8e2abf56e20f87383c44af6818235a12f54051b40c98870f44b2d5d05be08641"
   license "Apache-2.0"
 
@@ -30,11 +30,11 @@ class AwsCIo < Formula
   end
 
   test do
-    (testpath"test.c").write <<~C
-      #include <awsioio.h>
-      #include <awsioretry_strategy.h>
-      #include <awscommonallocator.h>
-      #include <awscommonerror.h>
+    (testpath/"test.c").write <<~C
+      #include <aws/io/io.h>
+      #include <aws/io/retry_strategy.h>
+      #include <aws/common/allocator.h>
+      #include <aws/common/error.h>
       #include <assert.h>
 
       int main(void) {
@@ -55,6 +55,6 @@ class AwsCIo < Formula
     C
     system ENV.cc, "test.c", "-o", "test", "-L#{lib}", "-laws-c-io",
                    "-L#{Formula["aws-c-common"].opt_lib}", "-laws-c-common"
-    system ".test"
+    system "./test"
   end
 end

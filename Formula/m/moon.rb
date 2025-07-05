@@ -1,24 +1,24 @@
 class Moon < Formula
   desc "Task runner and repo management tool for the web ecosystem, written in Rust"
-  homepage "https:moonrepo.devmoon"
-  url "https:github.commoonrepomoonarchiverefstagsv1.38.2.tar.gz"
-  sha256 "71cc5c3346a51b02611e3049223e7750605c75149b9f473b3dcdfd82fd854023"
+  homepage "https://moonrepo.dev/moon"
+  url "https://ghfast.top/https://github.com/moonrepo/moon/archive/refs/tags/v1.38.3.tar.gz"
+  sha256 "e457b1741c5c075aef84f0b357ad0828f6bdfbbdf586174d1889f366a44b74ca"
   license "MIT"
-  head "https:github.commoonrepomoon.git", branch: "master"
+  head "https://github.com/moonrepo/moon.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d4a1d100c0cac7b37635aeaaf18688ea1f5bb671f7478c122f6d21e838195b7c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d2a67fa5efabe5dce1437f21ceb96436c3f225e619c0b4db3a00b42c290849b5"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "1b3d4685963fc220502d0e63275ab6b85e757ec097fdd4274763b3b7f0e9dcfd"
-    sha256 cellar: :any_skip_relocation, sonoma:        "fc66fdddddcb8e145d071542d5af9c1adbe65b0e27087c2b9d0d33574c32136d"
-    sha256 cellar: :any_skip_relocation, ventura:       "15d8c3f080198326d0cb7640eb48f328605901657de6a4420659372d60f8b9ac"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1125f1947bcc43aa58a85fadb1890f757483a280d97f44b9cd9f62eb69d6c54c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e0c79bed6e8b6cbc9435165806eaa3bf3a57061fee92d6bedd46cb247ee8f1e7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fe4f033a6cb4526e01899e56d822a06d11d8999674c4ba480faa87fc9d5bc9b2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2adb2fe31e65e67a6993d1bc4f447090557fd483cce3fdf9eb1a57440e12bac8"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "8e8f0f011b7964cfa8ea548a53bc2687f6820cea38198a61b1c6b6ff3f023ac7"
+    sha256 cellar: :any_skip_relocation, sonoma:        "dfaa715227ae10c2847d97f201060b244b446e56c6670fd66b88a0dde255707f"
+    sha256 cellar: :any_skip_relocation, ventura:       "1e420781f7f0891019cf73839f55ef429bf10be32ce5d034c2b837822fc39b16"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "667a3a3987500fc6347a5b65a91998002ba8e60c5d88e81c41e0692aaa062c0e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0a73ad844605437195afc98fab1c3fd7f9900463cb3deac86f2e67a005af8986"
   end
 
   depends_on "pkgconf" => :build
@@ -32,19 +32,19 @@ class Moon < Formula
   end
 
   def install
-    system "cargo", "install", *std_cargo_args(path: "cratescli")
-    generate_completions_from_executable(bin"moon", "completions", "--shell")
+    system "cargo", "install", *std_cargo_args(path: "crates/cli")
+    generate_completions_from_executable(bin/"moon", "completions", "--shell")
 
     bin.each_child do |f|
       basename = f.basename
 
-      (libexec"bin").install f
-      (binbasename).write_env_script libexec"bin"basename, MOON_INSTALL_DIR: opt_prefix"bin"
+      (libexec/"bin").install f
+      (bin/basename).write_env_script libexec/"bin"/basename, MOON_INSTALL_DIR: opt_prefix/"bin"
     end
   end
 
   test do
-    system bin"moon", "init", "--minimal", "--yes"
-    assert_path_exists testpath".moonworkspace.yml"
+    system bin/"moon", "init", "--minimal", "--yes"
+    assert_path_exists testpath/".moon/workspace.yml"
   end
 end

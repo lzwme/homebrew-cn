@@ -2,14 +2,14 @@ cask "swift-shift" do
   version "0.27.1"
   sha256 "67678a07ea39783850e858bc0bc2c2c0a9a05b1ac665ba23b7e8ce46cdb0cfed"
 
-  url "https:github.compablopunkSwiftShiftreleasesdownload#{version}SwiftShift.zip",
-      verified: "github.compablopunkSwiftShift"
+  url "https://ghfast.top/https://github.com/pablopunk/SwiftShift/releases/download/#{version}/SwiftShift.zip",
+      verified: "github.com/pablopunk/SwiftShift/"
   name "Swift Shift"
   desc "Window manager"
-  homepage "https:www.swiftshift.app"
+  homepage "https://www.swiftshift.app/"
 
   livecheck do
-    url "https:pablopunk.github.ioSwiftShiftappcast.xml"
+    url "https://pablopunk.github.io/SwiftShift/appcast.xml"
     strategy :sparkle
   end
 
@@ -22,7 +22,7 @@ cask "swift-shift" do
             login_item: "Swift Shift"
 
   zap trash: [
-    "~LibraryHTTPStoragescom.pablopunk.Swift-Shift",
-    "~LibraryPreferencescom.pablopunk.Swift-Shift.plist",
+    "~/Library/HTTPStorages/com.pablopunk.Swift-Shift",
+    "~/Library/Preferences/com.pablopunk.Swift-Shift.plist",
   ]
 end

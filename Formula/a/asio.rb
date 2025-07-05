@@ -1,13 +1,13 @@
 class Asio < Formula
   desc "Cross-platform C++ Library for asynchronous programming"
-  homepage "https:think-async.comAsio"
-  url "https:downloads.sourceforge.netprojectasioasio1.34.2%20%28Stable%29asio-1.34.2.tar.bz2"
+  homepage "https://think-async.com/Asio/"
+  url "https://downloads.sourceforge.net/project/asio/asio/1.34.2%20%28Stable%29/asio-1.34.2.tar.bz2"
   sha256 "9cbe5e8abefcde3cb2705672210548a3e9e82b13682a3d2828bc34d3fe1b5583"
   license "BSL-1.0"
 
   livecheck do
     url :stable
-    regex(%r{url=.*?Stable.*?asio[._-]v?(\d+(?:\.\d+)+)\.t}i)
+    regex(%r{url=.*?Stable.*?/asio[._-]v?(\d+(?:\.\d+)+)\.t}i)
   end
 
   bottle do
@@ -21,7 +21,7 @@ class Asio < Formula
   end
 
   head do
-    url "https:github.comchriskohlhoffasio.git", branch: "master"
+    url "https://github.com/chriskohlhoff/asio.git", branch: "master"
     depends_on "autoconf" => :build
     depends_on "automake" => :build
   end
@@ -33,19 +33,19 @@ class Asio < Formula
 
     if build.head?
       cd "asio"
-      system ".autogen.sh"
+      system "./autogen.sh"
     end
 
-    system ".configure", *std_configure_args,
+    system "./configure", *std_configure_args,
                           "--disable-silent-rules",
                           "--with-boost=no",
                           "--with-openssl=#{Formula["openssl@3"].opt_prefix}"
     system "make", "install"
-    pkgshare.install "srcexamples"
+    pkgshare.install "src/examples"
   end
 
   test do
-    found = Dir[pkgshare"examplescpp{11,03}httpserverhttp_server"]
+    found = Dir[pkgshare/"examples/cpp{11,03}/http/server/http_server"]
     raise "no http_server example file found" if found.empty?
 
     port = free_port
@@ -54,7 +54,7 @@ class Asio < Formula
     end
     sleep 5
     begin
-      assert_match "404 Not Found", shell_output("curl http:127.0.0.1:#{port}")
+      assert_match "404 Not Found", shell_output("curl http://127.0.0.1:#{port}")
     ensure
       Process.kill 9, pid
     end

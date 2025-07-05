@@ -1,7 +1,7 @@
 class Onnx < Formula
   desc "Open standard for machine learning interoperability"
-  homepage "https:onnx.ai"
-  url "https:github.comonnxonnxarchiverefstagsv1.17.0.tar.gz"
+  homepage "https://onnx.ai/"
+  url "https://ghfast.top/https://github.com/onnx/onnx/archive/refs/tags/v1.17.0.tar.gz"
   sha256 "8d5e983c36037003615e5a02d36b18fc286541bf52de1a78f6cf9f32005a820e"
   license "Apache-2.0"
   revision 2
@@ -39,14 +39,14 @@ class Onnx < Formula
   end
 
   test do
-    # https:github.comonnxonnxblobmainonnxtestcppir_test.cc
-    (testpath"test.cpp").write <<~CPP
+    # https://github.com/onnx/onnx/blob/main/onnx/test/cpp/ir_test.cc
+    (testpath/"test.cpp").write <<~CPP
       #include <cassert>
       #include <cctype>
       #include <memory>
       #include <string>
-      #include <onnxcommonir.h>
-      #include <onnxcommonir_pb_converter.h>
+      #include <onnx/common/ir.h>
+      #include <onnx/common/ir_pb_converter.h>
       using namespace onnx;
 
       bool IsValidIdentifier(const std::string& name) {
@@ -93,7 +93,7 @@ class Onnx < Formula
       }
     CPP
 
-    (testpath"CMakeLists.txt").write <<~CMAKE
+    (testpath/"CMakeLists.txt").write <<~CMAKE
       cmake_minimum_required(VERSION 3.10)
       project(test LANGUAGES CXX)
       find_package(ONNX CONFIG REQUIRED)
@@ -103,9 +103,9 @@ class Onnx < Formula
 
     ENV.delete "CPATH"
     args = ["-DCMAKE_FIND_PACKAGE_PREFER_CONFIG=ON"]
-    args << "-DCMAKE_BUILD_RPATH=#{lib};#{HOMEBREW_PREFIX}lib" if OS.linux?
+    args << "-DCMAKE_BUILD_RPATH=#{lib};#{HOMEBREW_PREFIX}/lib" if OS.linux?
     system "cmake", "-S", ".", "-B", "build", *args
     system "cmake", "--build", "build"
-    system ".buildtest"
+    system "./build/test"
   end
 end

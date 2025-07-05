@@ -1,14 +1,14 @@
 class TreeSitter < Formula
   desc "Parser generator tool and incremental parsing library"
-  homepage "https:tree-sitter.github.io"
-  url "https:github.comtree-sittertree-sitterarchiverefstagsv0.25.6.tar.gz"
+  homepage "https://tree-sitter.github.io/"
+  url "https://ghfast.top/https://github.com/tree-sitter/tree-sitter/archive/refs/tags/v0.25.6.tar.gz"
   sha256 "ac6ed919c6d849e8553e246d5cd3fa22661f6c7b6497299264af433f3629957c"
   license "MIT"
-  head "https:github.comtree-sittertree-sitter.git", branch: "master"
+  head "https://github.com/tree-sitter/tree-sitter.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -27,15 +27,15 @@ class TreeSitter < Formula
   def install
     system "make", "install", "AMALGAMATED=1", "PREFIX=#{prefix}"
     system "cargo", "install", *std_cargo_args(path: "cli")
-    generate_completions_from_executable(bin"tree-sitter", "complete", shell_parameter_format: :arg)
+    generate_completions_from_executable(bin/"tree-sitter", "complete", shell_parameter_format: :arg)
   end
 
   test do
     # a trivial tree-sitter test
-    assert_equal "tree-sitter #{version}", shell_output("#{bin}tree-sitter --version").strip
+    assert_equal "tree-sitter #{version}", shell_output("#{bin}/tree-sitter --version").strip
 
     # test `tree-sitter generate`
-    (testpath"grammar.js").write <<~JS
+    (testpath/"grammar.js").write <<~JS
       module.exports = grammar({
         name: 'YOUR_LANGUAGE_NAME',
         rules: {
@@ -43,17 +43,17 @@ class TreeSitter < Formula
         }
       });
     JS
-    system bin"tree-sitter", "generate", "--abi=latest"
+    system bin/"tree-sitter", "generate", "--abi=latest"
 
     # test `tree-sitter parse`
-    (testpath"testcorpushello.txt").write <<~EOS
+    (testpath/"test/corpus/hello.txt").write <<~EOS
       hello
     EOS
-    parse_result = shell_output("#{bin}tree-sitter parse #{testpath}testcorpushello.txt").strip
+    parse_result = shell_output("#{bin}/tree-sitter parse #{testpath}/test/corpus/hello.txt").strip
     assert_equal("(source_file [0, 0] - [1, 0])", parse_result)
 
     # test `tree-sitter test`
-    (testpath"test""corpus""test_case.txt").write <<~EOS
+    (testpath/"test"/"corpus"/"test_case.txt").write <<~EOS
       =========
         hello
       =========
@@ -61,20 +61,20 @@ class TreeSitter < Formula
       ---
       (source_file)
     EOS
-    system bin"tree-sitter", "test"
+    system bin/"tree-sitter", "test"
 
-    (testpath"test_program.c").write <<~C
+    (testpath/"test_program.c").write <<~C
       #include <stdio.h>
       #include <string.h>
-      #include <tree_sitterapi.h>
+      #include <tree_sitter/api.h>
       int main(int argc, char* argv[]) {
         TSParser *parser = ts_parser_new();
         if (parser == NULL) {
           return 1;
         }
-         Because we have no language libraries installed, we cannot
-         actually parse a string successfully. But, we can verify
-         that it can at least be attempted.
+        // Because we have no language libraries installed, we cannot
+        // actually parse a string successfully. But, we can verify
+        // that it can at least be attempted.
         const char *source_code = "empty";
         TSTree *tree = ts_parser_parse_string(
           parser,
@@ -91,6 +91,6 @@ class TreeSitter < Formula
       }
     C
     system ENV.cc, "test_program.c", "-L#{lib}", "-ltree-sitter", "-o", "test_program"
-    assert_equal "tree creation failed", shell_output(".test_program")
+    assert_equal "tree creation failed", shell_output("./test_program")
   end
 end

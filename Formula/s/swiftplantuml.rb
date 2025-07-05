@@ -1,7 +1,7 @@
 class Swiftplantuml < Formula
   desc "Generate UML class diagrams from Swift sources"
-  homepage "https:marcoeidinger.github.ioSwiftPlantUML"
-  url "https:github.comMarcoEidingerSwiftPlantUMLarchiverefstags0.8.1.tar.gz"
+  homepage "https://marcoeidinger.github.io/SwiftPlantUML/"
+  url "https://ghfast.top/https://github.com/MarcoEidinger/SwiftPlantUML/archive/refs/tags/0.8.1.tar.gz"
   sha256 "1529dafcfd3e7c20902bee53100a0acee55a80e373d52a208829649dc961e2b0"
   license "MIT"
 
@@ -21,8 +21,8 @@ class Swiftplantuml < Formula
   # Fetch a copy of SourceKitten in order to fix build with newer Swift
   resource "SourceKitten" do
     if DevelopmentTools.clang_build_version >= 1600
-      # https:github.comMarcoEidingerSwiftPlantUMLblob0.8.1Package.resolved#L5-L11
-      url "https:github.comjpsimSourceKitten.git",
+      # https://github.com/MarcoEidinger/SwiftPlantUML/blob/0.8.1/Package.resolved#L5-L11
+      url "https://github.com/jpsim/SourceKitten.git",
           tag:      "0.32.0",
           revision: "817dfa6f2e09b0476f3a6c9dbc035991f02f0241"
 
@@ -34,7 +34,7 @@ class Swiftplantuml < Formula
   def install
     if DevelopmentTools.clang_build_version >= 1600
       res = resource("SourceKitten")
-      (buildpath"SourceKitten").install res
+      (buildpath/"SourceKitten").install res
 
       pin_version = JSON.parse(File.read("Package.resolved"))
                         .dig("object", "pins")
@@ -42,22 +42,22 @@ class Swiftplantuml < Formula
                         .dig("state", "version")
       odie "Check if SourceKitten patch is still needed!" if pin_version != res.version
 
-      system "swift", "package", "--disable-sandbox", "edit", "SourceKitten", "--path", buildpath"SourceKitten"
+      system "swift", "package", "--disable-sandbox", "edit", "SourceKitten", "--path", buildpath/"SourceKitten"
     end
 
     system "make", "install", "prefix=#{prefix}"
   end
 
   test do
-    system bin"swiftplantuml", "--help"
+    system bin/"swiftplantuml", "--help"
   end
 end
 
 __END__
-diff --git aSourceSourceKittenFrameworkSwiftDocs.swift bSourceSourceKittenFrameworkSwiftDocs.swift
+diff --git a/Source/SourceKittenFramework/SwiftDocs.swift b/Source/SourceKittenFramework/SwiftDocs.swift
 index 1d2473c..70de287 100644
---- aSourceSourceKittenFrameworkSwiftDocs.swift
-+++ bSourceSourceKittenFrameworkSwiftDocs.swift
+--- a/Source/SourceKittenFramework/SwiftDocs.swift
++++ b/Source/SourceKittenFramework/SwiftDocs.swift
 @@ -10,6 +10,14 @@
  import SourceKit
  #endif
@@ -70,6 +70,6 @@ index 1d2473c..70de287 100644
 +import Darwin
 +#endif
 +
-  Represents docs for a Swift file.
+ /// Represents docs for a Swift file.
  public struct SwiftDocs {
-      Documented File.
+     /// Documented File.

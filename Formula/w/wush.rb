@@ -1,7 +1,7 @@
 class Wush < Formula
   desc "Transfer files between computers via WireGuard"
-  homepage "https:github.comcoderwush"
-  url "https:github.comcoderwusharchiverefstagsv0.4.1.tar.gz"
+  homepage "https://github.com/coder/wush"
+  url "https://ghfast.top/https://github.com/coder/wush/archive/refs/tags/v0.4.1.tar.gz"
   sha256 "77d5a912465d1e8ec478252a9a69a04d39af75a126ac9ed94823f33a60b3d8f9"
   license "CC0-1.0"
 
@@ -17,14 +17,14 @@ class Wush < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}"), ".cmdwush"
+    system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}"), "./cmd/wush"
   end
 
   test do
     read, write = IO.pipe
 
     pid = fork do
-      exec bin"wush", "serve", out: write, err: write
+      exec bin/"wush", "serve", out: write, err: write
     end
 
     output = read.gets

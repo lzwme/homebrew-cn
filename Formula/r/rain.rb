@@ -1,7 +1,7 @@
 class Rain < Formula
   desc "Command-line tool for working with AWS CloudFormation"
-  homepage "https:github.comaws-cloudformationrain"
-  url "https:github.comaws-cloudformationrainarchiverefstagsv1.23.0.tar.gz"
+  homepage "https://github.com/aws-cloudformation/rain"
+  url "https://ghfast.top/https://github.com/aws-cloudformation/rain/archive/refs/tags/v1.23.0.tar.gz"
   sha256 "820724a0cde1066345982b81b42921af86906966d0e51151ed24a6e3c1f08740"
   license "Apache-2.0"
 
@@ -18,10 +18,10 @@ class Rain < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), ".cmdrain"
+    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/rain"
 
-    bash_completion.install "docsbash_completion.sh" => "rain"
-    zsh_completion.install "docszsh_completion.sh" => "_rain"
+    bash_completion.install "docs/bash_completion.sh" => "rain"
+    zsh_completion.install "docs/zsh_completion.sh" => "_rain"
   end
 
   def caveats
@@ -32,11 +32,11 @@ class Rain < Formula
   end
 
   test do
-    (testpath"test.yaml").write <<~YAML
+    (testpath/"test.yaml").write <<~YAML
       Resources:
         Bucket:
           Type: AWS::S3::Bucket
     YAML
-    assert_equal "test.yaml: formatted OK", shell_output("#{bin}rain fmt -v test.yaml").strip
+    assert_equal "test.yaml: formatted OK", shell_output("#{bin}/rain fmt -v test.yaml").strip
   end
 end

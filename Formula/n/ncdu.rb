@@ -1,14 +1,14 @@
 class Ncdu < Formula
   desc "NCurses Disk Usage"
-  homepage "https:dev.yorhel.nlncdu"
-  url "https:dev.yorhel.nldownloadncdu-2.8.2.tar.gz"
+  homepage "https://dev.yorhel.nl/ncdu"
+  url "https://dev.yorhel.nl/download/ncdu-2.8.2.tar.gz"
   sha256 "022fa765d35a79797acdc80c831707df43c9a3ba60d1ae3e6ea4cc1b7a2c013d"
   license "MIT"
-  head "https:g.blicky.netncdu.git", branch: "zig"
+  head "https://g.blicky.net/ncdu.git", branch: "zig"
 
   livecheck do
     url :homepage
-    regex(href=.*?ncdu[._-]v?(\d+(?:\.\d+)+)\.ti)
+    regex(/href=.*?ncdu[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   bottle do
@@ -29,7 +29,7 @@ class Ncdu < Formula
 
   def install
     # Fix illegal instruction errors when using bottles on older CPUs.
-    # https:github.comHomebrewhomebrew-coreissues92282
+    # https://github.com/Homebrew/homebrew-core/issues/92282
     cpu = case ENV.effective_arch
     when :arm_vortex_tempest then "apple_m1" # See `zig targets`.
     when :armv8 then "xgene1" # Closest to `-march=armv8-a`
@@ -40,7 +40,7 @@ class Ncdu < Formula
     args << "-Dpie=true" if OS.mac?
     args << "-Dcpu=#{cpu}" if build.bottle?
 
-    # Workaround for https:github.comHomebrewhomebrew-corepull141453#discussion_r1320821081
+    # Workaround for https://github.com/Homebrew/homebrew-core/pull/141453#discussion_r1320821081
     # Remove this workaround when the same is removed in `zig.rb`.
     if OS.linux?
       ENV["NIX_LDFLAGS"] = ENV["HOMEBREW_RPATH_PATHS"].split(":")
@@ -49,15 +49,15 @@ class Ncdu < Formula
     end
 
     # Avoid the Makefile for now so that we can pass `-Dcpu` to `zig build`.
-    # https:code.blicky.netyorhelncduissues185
+    # https://code.blicky.net/yorhel/ncdu/issues/185
     system "zig", "build", *args, *std_zig_args
     man1.install "ncdu.1"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}ncdu -v")
-    system bin"ncdu", "-o", "test"
-    output = JSON.parse((testpath"test").read)
+    assert_match version.to_s, shell_output("#{bin}/ncdu -v")
+    system bin/"ncdu", "-o", "test"
+    output = JSON.parse((testpath/"test").read)
     assert_equal "ncdu", output[2]["progname"]
     assert_equal version.to_s, output[2]["progver"]
     assert_equal Pathname.pwd.size, output[3][0]["asize"]

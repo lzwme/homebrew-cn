@@ -1,10 +1,10 @@
 class Jbig2enc < Formula
   desc "JBIG2 encoder (for monochrome documents)"
-  homepage "https:github.comagljbig2enc"
-  url "https:github.comagljbig2encarchiverefstags0.30.tar.gz"
+  homepage "https://github.com/agl/jbig2enc"
+  url "https://ghfast.top/https://github.com/agl/jbig2enc/archive/refs/tags/0.30.tar.gz"
   sha256 "4468442f666edc2cc4d38b11cde2123071a94edc3b403ebe60eb20ea3b2cc67b"
   license "Apache-2.0"
-  head "https:github.comagljbig2enc.git", branch: "master"
+  head "https://github.com/agl/jbig2enc.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "c3277ead02053270075af72039bcd3f2e2d712fddda586284f9b5b00a6ea672f"
@@ -31,14 +31,14 @@ class Jbig2enc < Formula
   end
 
   def install
-    system ".autogen.sh"
-    system ".configure", *std_configure_args
+    system "./autogen.sh"
+    system "./configure", *std_configure_args
     system "make", "install"
   end
 
   test do
-    output = shell_output("#{bin}jbig2 -s -S -p -v -O out.png #{test_fixtures("test.jpg")} 2>&1")
+    output = shell_output("#{bin}/jbig2 -s -S -p -v -O out.png #{test_fixtures("test.jpg")} 2>&1")
     assert_match "no graphics found in input image", output
-    assert_path_exists testpath"out.png"
+    assert_path_exists testpath/"out.png"
   end
 end

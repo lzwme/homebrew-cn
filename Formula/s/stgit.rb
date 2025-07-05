@@ -1,10 +1,10 @@
 class Stgit < Formula
   desc "Manage Git commits as a stack of patches"
-  homepage "https:stacked-git.github.io"
-  url "https:github.comstacked-gitstgitreleasesdownloadv2.5.3stgit-2.5.3.tar.gz"
+  homepage "https://stacked-git.github.io"
+  url "https://ghfast.top/https://github.com/stacked-git/stgit/releases/download/v2.5.3/stgit-2.5.3.tar.gz"
   sha256 "637d9a5d435115a69f2dc5a0273b0c6564fdda7b9483268968fae531343c087f"
   license "GPL-2.0-only"
-  head "https:github.comstacked-gitstgit.git", branch: "master"
+  head "https://github.com/stacked-git/stgit.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "d4e745cfee06e0fc05f4fe6e3d74e932d309adffc9113d1fb66d7fe308982529"
@@ -26,25 +26,25 @@ class Stgit < Formula
   uses_from_macos "zlib"
 
   def install
-    ENV["XML_CATALOG_FILES"] = etc"xmlcatalog"
+    ENV["XML_CATALOG_FILES"] = etc/"xml/catalog"
     system "make", "prefix=#{prefix}", "install-bin", "install-man"
-    system "make", "prefix=#{prefix}", "-C", "contribvim", "install"
-    generate_completions_from_executable(bin"stg", "completion")
+    system "make", "prefix=#{prefix}", "-C", "contrib/vim", "install"
+    generate_completions_from_executable(bin/"stg", "completion")
   end
 
   test do
     system "git", "init"
     system "git", "config", "user.name", "BrewTestBot"
     system "git", "config", "user.email", "brew@test.bot"
-    (testpath"test").write "test"
+    (testpath/"test").write "test"
     system "git", "add", "test"
     system "git", "commit", "--message", "Initial commit", "test"
-    system bin"stg", "--version"
-    system bin"stg", "init"
-    system bin"stg", "new", "-m", "patch0"
-    (testpath"test").append_lines "a change"
-    system bin"stg", "refresh"
-    system bin"stg", "log"
-    system "man", man"man1stg.1"
+    system bin/"stg", "--version"
+    system bin/"stg", "init"
+    system bin/"stg", "new", "-m", "patch0"
+    (testpath/"test").append_lines "a change"
+    system bin/"stg", "refresh"
+    system bin/"stg", "log"
+    system "man", man/"man1/stg.1"
   end
 end

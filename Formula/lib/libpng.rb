@@ -1,28 +1,28 @@
 class Libpng < Formula
   desc "Library for manipulating PNG images"
-  homepage "http:www.libpng.orgpubpnglibpng.html"
-  url "https:downloads.sourceforge.netprojectlibpnglibpng161.6.49libpng-1.6.49.tar.xz"
-  mirror "https:sourceforge.mirrorservice.orgllilibpnglibpng161.6.49libpng-1.6.49.tar.xz"
-  sha256 "43182aa48e39d64b1ab4ec6b71ab3e910b67eed3a0fff3777cf8cf40d6ef7024"
+  homepage "http://www.libpng.org/pub/png/libpng.html"
+  url "https://downloads.sourceforge.net/project/libpng/libpng16/1.6.50/libpng-1.6.50.tar.xz"
+  mirror "https://sourceforge.mirrorservice.org/l/li/libpng/libpng16/1.6.50/libpng-1.6.50.tar.xz"
+  sha256 "4df396518620a7aa3651443e87d1b2862e4e88cad135a8b93423e01706232307"
   license "libpng-2.0"
 
   livecheck do
     url :stable
-    regex(%r{url=.*?libpng[._-]v?(\d+(?:\.\d+)+)\.t}i)
+    regex(%r{url=.*?/libpng[._-]v?(\d+(?:\.\d+)+)\.t}i)
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "9cbe6dd4dedf8f7860b48ba1f42dbd5130af838aa15444d02781b1335861d7a6"
-    sha256 cellar: :any,                 arm64_sonoma:  "ebc3041009f8109957420f98481d514407ae78213ab6d710e736221d31e9ce91"
-    sha256 cellar: :any,                 arm64_ventura: "92a708784c36c6c63ff514690516a1071a4e27b57e6da680e422c91108ccbd34"
-    sha256 cellar: :any,                 sonoma:        "bc858e121e0cd6049ec041b36d241542e90a23fc1749423193b20f573b57afed"
-    sha256 cellar: :any,                 ventura:       "cc1241c31c873bc8451845e1a73588e0ee74828c5128eb93e799b50e7f2e0517"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0324945acef84abba7a44c41149e86db7bc6af962ff6b86bbe79a9feec194c4e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1a8c105cea25bdaf70e123d60dd7322e061045ee33f63a1f330aa3d1ce5880fa"
+    sha256 cellar: :any,                 arm64_sequoia: "0e84944536d6bf2c7cfd393a4576acf5c0ced03992d156685a7f83c7d2a60215"
+    sha256 cellar: :any,                 arm64_sonoma:  "caa7ba5098ae80b04910efc2770473a566245c2f1cf8c3d6b1d2b1bd5624eadb"
+    sha256 cellar: :any,                 arm64_ventura: "cdfd6a7ecad2bab898b901fbdc1afd85403544bd6ceecb0dbeef363ba21c09ec"
+    sha256 cellar: :any,                 sonoma:        "e75d186e750e25eaec263712695e32f90f1db116a7b1b6800e4f1d8b8fcd26f5"
+    sha256 cellar: :any,                 ventura:       "4ec5a2b7501d6a1a262a6cb085ce39bf59d1486df6dad67d0a8c232ca987e14b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bdb4a903c664637380ada15baacdfb2c056caaa7c8a52993cd706d4d230f318b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2627ebf8ea1ead44fff53f5dbf7e6ce737626286ac6dac60d815c6cc8e83e3a0"
   end
 
   head do
-    url "https:github.comglennrplibpng.git", branch: "libpng16"
+    url "https://github.com/glennrp/libpng.git", branch: "libpng16"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -32,7 +32,7 @@ class Libpng < Formula
   uses_from_macos "zlib"
 
   def install
-    system ".configure", "--disable-dependency-tracking",
+    system "./configure", "--disable-dependency-tracking",
                           "--disable-silent-rules",
                           "--prefix=#{prefix}"
     system "make"
@@ -40,11 +40,11 @@ class Libpng < Formula
     system "make", "install"
 
     # Avoid rebuilds of dependants that hardcode this path.
-    inreplace lib"pkgconfiglibpng.pc", prefix, opt_prefix
+    inreplace lib/"pkgconfig/libpng.pc", prefix, opt_prefix
   end
 
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include <png.h>
 
       int main()
@@ -56,6 +56,6 @@ class Libpng < Formula
       }
     C
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lpng", "-o", "test"
-    system ".test"
+    system "./test"
   end
 end

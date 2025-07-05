@@ -2,11 +2,11 @@ cask "jitouch" do
   version "2.82.1"
   sha256 "3f5194a4da6fe19d17c843fa8a876131f7878905dcbb2e1d740d34d286d740c4"
 
-  url "https:github.comJitouchAppJitouchreleasesdownloadv#{version}Install-Jitouch.pkg",
-      verified: "github.comJitouchAppJitouch"
+  url "https://ghfast.top/https://github.com/JitouchApp/Jitouch/releases/download/v#{version}/Install-Jitouch.pkg",
+      verified: "github.com/JitouchApp/Jitouch/"
   name "Jitouch"
   desc "Multi-touch gestures editor"
-  homepage "https:www.jitouch.com"
+  homepage "https://www.jitouch.com/"
 
   no_autobump! because: :requires_manual_review
 
@@ -19,9 +19,9 @@ cask "jitouch" do
             pkgutil:   "com.jitouch.Jitouch"
 
   zap trash: [
-    "~LibraryLaunchAgentscom.jitouch.Jitouch.plist",
-    "~LibraryLogscom.jitouch.Jitouch.log",
-    "~LibraryLogscom.jitouch.Jitouch.prefpane.log",
-    "~LibraryPreferencescom.jitouch.Jitouch.plist",
+    "~/Library/LaunchAgents/com.jitouch.Jitouch.plist",
+    "~/Library/Logs/com.jitouch.Jitouch.log",
+    "~/Library/Logs/com.jitouch.Jitouch.prefpane.log",
+    "~/Library/Preferences/com.jitouch.Jitouch.plist",
   ]
 end

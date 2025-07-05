@@ -2,13 +2,13 @@ cask "font-3270" do
   version "3.0.1,d916271"
   sha256 "623fb815b16d6c4940b5014a21c5474ef6cddb02c325d03f153341b676b4cffa"
 
-  url "https:github.comrbanffy3270fontreleasesdownloadv#{version.csv.first}3270_fonts_#{version.csv.second}.zip"
+  url "https://ghfast.top/https://github.com/rbanffy/3270font/releases/download/v#{version.csv.first}/3270_fonts_#{version.csv.second}.zip"
   name "IBM 3270"
-  homepage "https:github.comrbanffy3270font"
+  homepage "https://github.com/rbanffy/3270font"
 
   livecheck do
     url :url
-    regex(%r{v?(\d+(?:\.\d+)+)3270[._-]fonts[._-](\h+)\.zip}i)
+    regex(%r{v?(\d+(?:\.\d+)+)/3270[._-]fonts[._-](\h+)\.zip}i)
     strategy :github_releases do |json, regex|
       json.map do |release|
         next if release["draft"] || release["prerelease"]

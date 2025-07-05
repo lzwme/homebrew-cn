@@ -1,7 +1,7 @@
 class UtilLinux < Formula
   desc "Collection of Linux utilities"
-  homepage "https:github.comutil-linuxutil-linux"
-  url "https:mirrors.edge.kernel.orgpublinuxutilsutil-linuxv2.41util-linux-2.41.1.tar.xz"
+  homepage "https://github.com/util-linux/util-linux"
+  url "https://mirrors.edge.kernel.org/pub/linux/utils/util-linux/v2.41/util-linux-2.41.1.tar.xz"
   sha256 "be9ad9a276f4305ab7dd2f5225c8be1ff54352f565ff4dede9628c1aaa7dec57"
   license all_of: [
     "BSD-3-Clause",
@@ -14,14 +14,14 @@ class UtilLinux < Formula
   ]
   revision 1
 
-  # The directory listing where the `stable` archive is found uses majorminor
+  # The directory listing where the `stable` archive is found uses major/minor
   # version directories, where it's necessary to check inside a directory to
   # find the full version. The newest directory can contain unstable versions,
   # so it could require more than two requests to identify the newest stable
   # version. With this in mind, we simply check the Git tags as a best effort.
   livecheck do
     url :homepage
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -66,13 +66,13 @@ class UtilLinux < Formula
   # `autoconf`, `automake`, `gettext`, `gtk-doc`, and `libtool` build deps and
   # the `autoreconf` call in the `install` method.
   patch do
-    url "https:github.comutil-linuxutil-linuxcommit45f943a4b36f59814cf5a735e4975f2252afac26.patch?full_index=1"
+    url "https://github.com/util-linux/util-linux/commit/45f943a4b36f59814cf5a735e4975f2252afac26.patch?full_index=1"
     sha256 "b372a7578ff397787f37e1aa1c03c8299c9b3e3f7ab8620c4af68c93ab2103b5"
   end
 
-  # fix bash completion, upstream pr ref, https:github.comutil-linuxutil-linuxpull3627
+  # fix bash completion, upstream pr ref, https://github.com/util-linux/util-linux/pull/3627
   patch do
-    url "https:github.comutil-linuxutil-linuxcommit565eb6370c76721bbd0d7fa292d9315a6856f627.patch?full_index=1"
+    url "https://github.com/util-linux/util-linux/commit/565eb6370c76721bbd0d7fa292d9315a6856f627.patch?full_index=1"
     sha256 "3945234bcfbf4d9126e92b4f808029971ab26330618da53671941ba1a52d8427"
   end
 
@@ -83,7 +83,7 @@ class UtilLinux < Formula
 
     if OS.mac?
       # Support very old ncurses used on macOS 13 and earlier
-      # https:github.comutil-linuxutil-linuxissues2389
+      # https://github.com/util-linux/util-linux/issues/2389
       ENV.append_to_cflags "-D_XOPEN_SOURCE_EXTENDED" if MacOS.version <= :ventura
 
       args << "--disable-bits" # does not build on macOS
@@ -106,7 +106,7 @@ class UtilLinux < Formula
       args << "--without-python"
     end
 
-    system ".configure", *args, *std_configure_args
+    system "./configure", *args, *std_configure_args
     system "make", "install"
   end
 
@@ -141,7 +141,7 @@ class UtilLinux < Formula
   end
 
   test do
-    stat  = File.stat "usr"
+    stat  = File.stat "/usr"
     owner = Etc.getpwuid(stat.uid).name
     group = Etc.getgrgid(stat.gid).name
 
@@ -150,7 +150,7 @@ class UtilLinux < Formula
       sum.insert 0, (stat.mode.nobits?(2 ** index) ? "-" : flag)
     end
 
-    out = shell_output("#{bin}namei -lx usr").split("\n").last.split
+    out = shell_output("#{bin}/namei -lx /usr").split("\n").last.split
     assert_equal ["d#{perms}", owner, group, "usr"], out
   end
 end

@@ -1,7 +1,7 @@
 class SteamguardCli < Formula
   desc "CLI for steamguard"
-  homepage "https:github.comdyc3steamguard-cli"
-  url "https:github.comdyc3steamguard-cliarchiverefstagsv0.17.1.tar.gz"
+  homepage "https://github.com/dyc3/steamguard-cli"
+  url "https://ghfast.top/https://github.com/dyc3/steamguard-cli/archive/refs/tags/v0.17.1.tar.gz"
   sha256 "dc02e2a40c5bfc8f28195c99a9575ef10c1fe67f3075d402091e81f53440626d"
   license "GPL-3.0-or-later"
 
@@ -20,16 +20,16 @@ class SteamguardCli < Formula
   def install
     system "cargo", "install", *std_cargo_args
 
-    generate_completions_from_executable(bin"steamguard", "completion", shell_parameter_format: :arg)
+    generate_completions_from_executable(bin/"steamguard", "completion", shell_parameter_format: :arg)
   end
 
   test do
     require "pty"
-    PTY.spawn(bin"steamguard") do |stdout, stdin, _pid|
+    PTY.spawn(bin/"steamguard") do |stdout, stdin, _pid|
       stdin.puts "n\n"
       assert_match "Would you like to create a manifest in", stdout.read
     rescue Errno::EIO
-      # GNULinux raises EIO when read is done on closed pty
+      # GNU/Linux raises EIO when read is done on closed pty
     end
   end
 end

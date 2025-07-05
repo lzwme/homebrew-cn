@@ -1,10 +1,10 @@
 class BashPreexec < Formula
   desc "Preexec and precmd functions for Bash (like Zsh)"
-  homepage "https:github.comrcalorasbash-preexec"
-  url "https:github.comrcalorasbash-preexecarchiverefstags0.5.0.tar.gz"
+  homepage "https://github.com/rcaloras/bash-preexec"
+  url "https://ghfast.top/https://github.com/rcaloras/bash-preexec/archive/refs/tags/0.5.0.tar.gz"
   sha256 "23c589cd1da209c0598f92fac8d81bb11632ba1b2e68ccaf4ad2c4f3204b877c"
   license "MIT"
-  head "https:github.comrcalorasbash-preexec.git", branch: "master"
+  head "https://github.com/rcaloras/bash-preexec.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -14,18 +14,18 @@ class BashPreexec < Formula
   end
 
   def install
-    (prefix"etcprofile.d").install "bash-preexec.sh"
+    (prefix/"etc/profile.d").install "bash-preexec.sh"
   end
 
   def caveats
     <<~EOS
-      Add the following line to your bash profile (e.g. ~.bashrc, ~.profile, or ~.bash_profile)
-        [ -f #{etc}profile.dbash-preexec.sh ] && . #{etc}profile.dbash-preexec.sh
+      Add the following line to your bash profile (e.g. ~/.bashrc, ~/.profile, or ~/.bash_profile)
+        [ -f #{etc}/profile.d/bash-preexec.sh ] && . #{etc}/profile.d/bash-preexec.sh
     EOS
   end
 
   test do
     # Just testing that the file is installed
-    assert_path_exists testpath"#{prefix}etcprofile.dbash-preexec.sh"
+    assert_path_exists testpath/"#{prefix}/etc/profile.d/bash-preexec.sh"
   end
 end

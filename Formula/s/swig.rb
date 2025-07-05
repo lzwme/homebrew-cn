@@ -1,13 +1,13 @@
 class Swig < Formula
-  desc "Generate scripting interfaces to CC++ code"
-  homepage "https:www.swig.org"
-  url "https:downloads.sourceforge.netprojectswigswigswig-4.3.1swig-4.3.1.tar.gz"
+  desc "Generate scripting interfaces to C/C++ code"
+  homepage "https://www.swig.org/"
+  url "https://downloads.sourceforge.net/project/swig/swig/swig-4.3.1/swig-4.3.1.tar.gz"
   sha256 "44fc829f70f1e17d635a2b4d69acab38896699ecc24aa023e516e0eabbec61b8"
   license "GPL-3.0-or-later"
 
   livecheck do
-    url "https:sourceforge.netprojectsswigrss?path=swig"
-    regex(%r{url=.*?swig[._-]v?(\d+(?:\.\d+)+)\.t}i)
+    url "https://sourceforge.net/projects/swig/rss?path=/swig"
+    regex(%r{url=.*?/swig[._-]v?(\d+(?:\.\d+)+)\.t}i)
   end
 
   bottle do
@@ -21,7 +21,7 @@ class Swig < Formula
   end
 
   head do
-    url "https:github.comswigswig.git", branch: "master"
+    url "https://github.com/swig/swig.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -34,25 +34,25 @@ class Swig < Formula
 
   def install
     ENV.append "CXXFLAGS", "-std=c++11" # Fix `nullptr` support detection.
-    system ".autogen.sh" if build.head?
-    system ".configure", *std_configure_args
+    system "./autogen.sh" if build.head?
+    system "./configure", *std_configure_args
     system "make"
     system "make", "install"
   end
 
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       int add(int x, int y) {
         return x + y;
       }
     C
-    (testpath"test.i").write <<~EOS
+    (testpath/"test.i").write <<~EOS
       %module test
       %inline %{
       extern int add(int x, int y);
       %}
     EOS
-    (testpath"pyproject.toml").write <<~TOML
+    (testpath/"pyproject.toml").write <<~TOML
       [project]
       name = "test"
       version = "0.1"
@@ -62,15 +62,15 @@ class Swig < Formula
         {name = "_test", sources = ["test_wrap.c", "test.c"]}
       ]
     TOML
-    (testpath"run.py").write <<~PYTHON
+    (testpath/"run.py").write <<~PYTHON
       import test
       print(test.add(1, 1))
     PYTHON
 
-    ENV.remove_from_cflags(-march=\S*)
-    system bin"swig", "-python", "test.i"
+    ENV.remove_from_cflags(/-march=\S*/)
+    system bin/"swig", "-python", "test.i"
     system "python3", "-m", "venv", ".venv"
-    system testpath".venvbinpip", "install", *std_pip_args(prefix: false, build_isolation: true), "."
-    assert_equal "2", shell_output("#{testpath}.venvbinpython3 .run.py").strip
+    system testpath/".venv/bin/pip", "install", *std_pip_args(prefix: false, build_isolation: true), "."
+    assert_equal "2", shell_output("#{testpath}/.venv/bin/python3 ./run.py").strip
   end
 end

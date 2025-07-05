@@ -1,10 +1,10 @@
 class FonFlashCli < Formula
   desc "Flash La Fonera and Atheros chipset compatible devices"
-  homepage "https:www.gargoyle-router.comwikidoku.php?id=fon_flash"
-  url "https:github.comericpaulbishopgargoylearchiverefstags1.14.0.tar.gz"
+  homepage "https://www.gargoyle-router.com/wiki/doku.php?id=fon_flash"
+  url "https://ghfast.top/https://github.com/ericpaulbishop/gargoyle/archive/refs/tags/1.14.0.tar.gz"
   sha256 "bd3ba67ab9cd8c7474ce8f02a3a320b91aec72c6710e43c18dbe719b13f3820a"
   license "GPL-2.0-or-later"
-  head "https:github.comericpaulbishopgargoyle.git", branch: "master"
+  head "https://github.com/ericpaulbishop/gargoyle.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -24,9 +24,9 @@ class FonFlashCli < Formula
 
   uses_from_macos "libpcap"
 
-  # Apply open PR commit to fix aarch64 linux, https:github.comericpaulbishopgargoylepull1017
+  # Apply open PR commit to fix aarch64 linux, https://github.com/ericpaulbishop/gargoyle/pull/1017
   patch do
-    url "https:github.comericpaulbishopgargoylecommite69325f56366074d771379528d3c8cbf75cbb9e7.patch?full_index=1"
+    url "https://github.com/ericpaulbishop/gargoyle/commit/e69325f56366074d771379528d3c8cbf75cbb9e7.patch?full_index=1"
     sha256 "79a053f5796be94bbb6fe2d3d1a1f113236033cc5b8d579edcc4d9f0c63aef26"
   end
 
@@ -38,6 +38,6 @@ class FonFlashCli < Formula
   end
 
   test do
-    system bin"fon-flash"
+    system bin/"fon-flash"
   end
 end

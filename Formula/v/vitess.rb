@@ -1,7 +1,7 @@
 class Vitess < Formula
   desc "Database clustering system for horizontal scaling of MySQL"
-  homepage "https:vitess.io"
-  url "https:github.comvitessiovitessarchiverefstagsv22.0.1.tar.gz"
+  homepage "https://vitess.io"
+  url "https://ghfast.top/https://github.com/vitessio/vitess/archive/refs/tags/v22.0.1.tar.gz"
   sha256 "0e6a985b8c5298265f5acc171af3436c9286ea2474d133e76fcf280179a18c38"
   license "Apache-2.0"
 
@@ -32,36 +32,36 @@ class Vitess < Formula
     cell = "testcell"
 
     fork do
-      exec Formula["etcd"].opt_bin"etcd",
+      exec Formula["etcd"].opt_bin/"etcd",
            "--name=vitess_test",
-           "--data-dir=#{testpath}etcd",
-           "--listen-client-urls=http:#{etcd_server}",
-           "--advertise-client-urls=http:#{etcd_server}",
-           "--listen-peer-urls=http:localhost:#{peer_port}",
-           "--initial-advertise-peer-urls=http:localhost:#{peer_port}",
-           "--initial-cluster=vitess_test=http:localhost:#{peer_port}",
+           "--data-dir=#{testpath}/etcd",
+           "--listen-client-urls=http://#{etcd_server}",
+           "--advertise-client-urls=http://#{etcd_server}",
+           "--listen-peer-urls=http://localhost:#{peer_port}",
+           "--initial-advertise-peer-urls=http://localhost:#{peer_port}",
+           "--initial-cluster=vitess_test=http://localhost:#{peer_port}",
            "--auto-compaction-retention=1"
     end
 
     sleep 3
 
     # Test etcd is responding before continuing
-    system Formula["etcd"].opt_bin"etcdctl", "--endpoints", "http:#{etcd_server}", "endpoint", "health"
+    system Formula["etcd"].opt_bin/"etcdctl", "--endpoints", "http://#{etcd_server}", "endpoint", "health"
 
     # Create necessary directory structure using etcd v3 API
-    system Formula["etcd"].opt_bin"etcdctl", "--endpoints", "http:#{etcd_server}",
-           "put", "vitessglobal", ""
+    system Formula["etcd"].opt_bin/"etcdctl", "--endpoints", "http://#{etcd_server}",
+           "put", "/vitess/global", ""
 
-    system Formula["etcd"].opt_bin"etcdctl", "--endpoints", "http:#{etcd_server}",
-           "put", "vitess#{cell}", ""
+    system Formula["etcd"].opt_bin/"etcdctl", "--endpoints", "http://#{etcd_server}",
+           "put", "/vitess/#{cell}", ""
 
     # Run vtctl with etcd2 implementation but using etcd v3 API
     fork do
-      exec bin"vtctl", "--topo_implementation", "etcd2",
+      exec bin/"vtctl", "--topo_implementation", "etcd2",
                         "--topo_global_server_address", etcd_server,
-                        "--topo_global_root", testpath"global",
+                        "--topo_global_root", testpath/"global",
                         "VtctldCommand", "AddCellInfo",
-                        "--root", testpathcell,
+                        "--root", testpath/cell,
                         "--server-address", etcd_server,
                         cell
     end
@@ -69,9 +69,9 @@ class Vitess < Formula
 
     port = free_port
     fork do
-      exec bin"vtgate", "--topo_implementation", "etcd2",
+      exec bin/"vtgate", "--topo_implementation", "etcd2",
                          "--topo_global_server_address", etcd_server,
-                         "--topo_global_root", testpath"global",
+                         "--topo_global_root", testpath/"global",
                          "--tablet_types_to_wait", "PRIMARY,REPLICA",
                          "--cell", cell,
                          "--cells_to_watch", cell,
@@ -79,7 +79,7 @@ class Vitess < Formula
     end
     sleep 8
 
-    output = shell_output("curl -s localhost:#{port}debughealth")
+    output = shell_output("curl -s localhost:#{port}/debug/health")
     assert_equal "ok", output
   end
 end

@@ -1,7 +1,7 @@
 class Mlogger < Formula
   desc "Log to syslog from the command-line"
-  homepage "https:github.comnbrownusmlogger"
-  url "https:github.comnbrownusmloggerarchiverefstagsv1.2.0.tar.gz"
+  homepage "https://github.com/nbrownus/mlogger"
+  url "https://ghfast.top/https://github.com/nbrownus/mlogger/archive/refs/tags/v1.2.0.tar.gz"
   sha256 "141bb9af13a8f0e865c8509ac810c10be4e21f14db5256ef5c7a6731b490bf32"
   license "BSD-4-Clause-UC"
 
@@ -32,6 +32,6 @@ class Mlogger < Formula
   end
 
   test do
-    system bin"mlogger", "-i", "-d", "test"
+    system bin/"mlogger", "-i", "-d", "test"
   end
 end

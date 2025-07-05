@@ -1,10 +1,10 @@
 class SwaggerCodegen < Formula
   desc "Generate clients, server stubs, and docs from an OpenAPI spec"
-  homepage "https:swagger.iotoolsswagger-codegen"
-  url "https:github.comswagger-apiswagger-codegenarchiverefstagsv3.0.71.tar.gz"
+  homepage "https://swagger.io/tools/swagger-codegen/"
+  url "https://ghfast.top/https://github.com/swagger-api/swagger-codegen/archive/refs/tags/v3.0.71.tar.gz"
   sha256 "679818d2ddbca25b6c3de895d5124260e4eb0d187d2694cf6a5c7c411e14a797"
   license "Apache-2.0"
-  head "https:github.comswagger-apiswagger-codegen.git", branch: "master"
+  head "https://github.com/swagger-api/swagger-codegen.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "6a5e210d774caa543eaf2bb3682ac7814d72cc0bdadd907a3e1dbdb04f76b9ea"
@@ -24,25 +24,25 @@ class SwaggerCodegen < Formula
     ENV["JAVA_HOME"] = Language::Java.java_home
 
     system "mvn", "clean", "package"
-    libexec.install "modulesswagger-codegen-clitargetswagger-codegen-cli.jar"
-    bin.write_jar_script libexec"swagger-codegen-cli.jar", "swagger-codegen"
+    libexec.install "modules/swagger-codegen-cli/target/swagger-codegen-cli.jar"
+    bin.write_jar_script libexec/"swagger-codegen-cli.jar", "swagger-codegen"
   end
 
   test do
-    (testpath"minimal.yaml").write <<~YAML
+    (testpath/"minimal.yaml").write <<~YAML
       ---
       openapi: 3.0.0
       info:
         version: 0.0.0
         title: Simple API
       paths:
-        :
+        /:
           get:
             responses:
               200:
                 description: OK
     YAML
-    system bin"swagger-codegen", "generate", "-i", "minimal.yaml", "-l", "html"
-    assert_includes File.read(testpath"index.html"), "<h1>Simple API<h1>"
+    system bin/"swagger-codegen", "generate", "-i", "minimal.yaml", "-l", "html"
+    assert_includes File.read(testpath/"index.html"), "<h1>Simple API</h1>"
   end
 end

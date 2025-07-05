@@ -1,10 +1,10 @@
 class Glider < Formula
   desc "Forward proxy with multiple protocols support"
-  homepage "https:github.comnadooglider"
-  url "https:github.comnadoogliderarchiverefstagsv0.16.4.tar.gz"
+  homepage "https://github.com/nadoo/glider"
+  url "https://ghfast.top/https://github.com/nadoo/glider/archive/refs/tags/v0.16.4.tar.gz"
   sha256 "91aa9ad6d56b164b30abedc88a0d371b3af6ff96cfe92f18525fa8e110aaee1d"
   license "GPL-3.0-or-later"
-  head "https:github.comnadooglider.git", branch: "master"
+  head "https://github.com/nadoo/glider.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "69178a2d743839266c81d46c2da244ecd9079e0e45c2d6b7d4bda44be9f758bd"
@@ -26,21 +26,21 @@ class Glider < Formula
     ]
     system "go", "build", *std_go_args(ldflags:)
 
-    etc.install buildpath"configglider.conf.example" => "glider.conf"
+    etc.install buildpath/"config/glider.conf.example" => "glider.conf"
   end
 
   service do
-    run [opt_bin"glider", "-config", etc"glider.conf"]
+    run [opt_bin/"glider", "-config", etc/"glider.conf"]
     keep_alive true
   end
 
   test do
     proxy_port = free_port
-    glider = spawn bin"glider", "-listen", "socks5::#{proxy_port}"
+    glider = spawn bin/"glider", "-listen", "socks5://:#{proxy_port}"
 
     begin
       sleep 3
-      output = shell_output("curl --socks5 127.0.0.1:#{proxy_port} -L https:brew.sh")
+      output = shell_output("curl --socks5 127.0.0.1:#{proxy_port} -L https://brew.sh")
       assert_match "The Missing Package Manager for macOS (or Linux)", output
     ensure
       Process.kill 9, glider

@@ -1,10 +1,10 @@
 class Dnsx < Formula
   desc "DNS query and resolution tool"
-  homepage "https:github.comprojectdiscoverydnsx"
-  url "https:github.comprojectdiscoverydnsxarchiverefstagsv1.2.2.tar.gz"
+  homepage "https://github.com/projectdiscovery/dnsx"
+  url "https://ghfast.top/https://github.com/projectdiscovery/dnsx/archive/refs/tags/v1.2.2.tar.gz"
   sha256 "fa9ee47996315b0d5b293fcf9263ac46ee69fc691ee024a400ebcd2e48f015e5"
   license "MIT"
-  head "https:github.comprojectdiscoverydnsx.git", branch: "master"
+  head "https://github.com/projectdiscovery/dnsx.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "d813ed83eff13bfb735313c3f83d9623c20725eb1595c07b0e2f1dbefc929f8c"
@@ -18,13 +18,13 @@ class Dnsx < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), ".cmddnsx"
+    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/dnsx"
   end
 
   test do
-    (testpath"domains.txt").write "docs.brew.sh"
+    (testpath/"domains.txt").write "docs.brew.sh"
     expected_output = "docs.brew.sh [CNAME] [homebrew.github.io]"
     assert_equal expected_output,
-      shell_output("#{bin}dnsx -no-color -silent -l #{testpath}domains.txt -cname -resp").strip
+      shell_output("#{bin}/dnsx -no-color -silent -l #{testpath}/domains.txt -cname -resp").strip
   end
 end

@@ -1,14 +1,14 @@
 class Msdl < Formula
   desc "Downloader for various streaming protocols"
-  homepage "https:msdl.sourceforge.net"
-  url "https:downloads.sourceforge.netprojectmsdlmsdlmsdl-1.2.7-r2msdl-1.2.7-r2.tar.gz"
+  homepage "https://msdl.sourceforge.net/"
+  url "https://downloads.sourceforge.net/project/msdl/msdl/msdl-1.2.7-r2/msdl-1.2.7-r2.tar.gz"
   version "1.2.7-r2"
   sha256 "0297e87bafcab885491b44f71476f5d5bfc648557e7d4ef36961d44dd430a3a1"
   license "GPL-2.0-or-later"
 
   livecheck do
     url :stable
-    regex(%r{url=.*?msdl[._-]v?(\d+(?:\.\d+)+(?:-r\d+)?)\.t}i)
+    regex(%r{url=.*?/msdl[._-]v?(\d+(?:\.\d+)+(?:-r\d+)?)\.t}i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -33,7 +33,7 @@ class Msdl < Formula
   end
 
   # Fixes linker error under clang; apparently reported upstream:
-  # https:github.comHomebrewhomebrewpull13907
+  # https://github.com/Homebrew/homebrew/pull/13907
   patch :DATA
 
   def install
@@ -42,26 +42,26 @@ class Msdl < Formula
     # multiple definition of `colors_available'; asf.o:(.bss+0x4): first defined here
     ENV.append_to_cflags "-fcommon" if OS.linux?
 
-    system ".configure", "--disable-dependency-tracking",
+    system "./configure", "--disable-dependency-tracking",
                           "--prefix=#{prefix}"
     system "make", "install"
   end
 
   test do
-    system bin"msdl", "http:example.orgindex.html"
+    system bin/"msdl", "http://example.org/index.html"
     assert_path_exists "index.html"
   end
 end
 
 __END__
-diff --git asrcurl.c bsrcurl.c
+diff --git a/src/url.c b/src/url.c
 index 81783c7..356883a 100644
---- asrcurl.c
-+++ bsrcurl.c
+--- a/src/url.c
++++ b/src/url.c
 @@ -266,7 +266,7 @@ void url_unescape_string(char *dst,char *src)
- *
+ /*
   * return true if 'c' is valid url character
-  *
+  */
 -inline int is_url_valid_char(int c)
 +int is_url_valid_char(int c)
  {

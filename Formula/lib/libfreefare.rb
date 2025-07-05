@@ -1,7 +1,7 @@
 class Libfreefare < Formula
   desc "API for MIFARE card manipulations"
-  homepage "https:github.comnfc-toolslibfreefare"
-  url "https:github.comnfc-toolslibfreefarereleasesdownloadlibfreefare-0.4.0libfreefare-0.4.0.tar.bz2"
+  homepage "https://github.com/nfc-tools/libfreefare"
+  url "https://ghfast.top/https://github.com/nfc-tools/libfreefare/releases/download/libfreefare-0.4.0/libfreefare-0.4.0.tar.bz2"
   sha256 "bfa31d14a99a1247f5ed49195d6373de512e3eb75bf1627658b40cf7f876bc64"
   license "LGPL-3.0-or-later"
   revision 4
@@ -31,25 +31,25 @@ class Libfreefare < Formula
   end
 
   # Upstream commit for endianness-related functions, fixes
-  # https:github.comnfc-toolslibfreefareissues55
+  # https://github.com/nfc-tools/libfreefare/issues/55
   patch do
-    url "https:github.comnfc-toolslibfreefarecommit358df775.patch?full_index=1"
+    url "https://github.com/nfc-tools/libfreefare/commit/358df775.patch?full_index=1"
     sha256 "20d592c11e559d0a5f02f7ed56da370e39439feebd971be11b064d58ea85777f"
   end
 
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
-    url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-pre-0.4.2.418-big_sur.diff"
+    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-pre-0.4.2.418-big_sur.diff"
     sha256 "83af02f2aa2b746bb7225872cab29a253264be49db0ecebb12f841562d9a2923"
   end
 
   def install
-    system ".configure", "--disable-silent-rules", *std_configure_args
+    system "./configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
   end
 
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include <freefare.h>
       int main() {
         mifare_desfire_aid_new(0);
@@ -58,6 +58,6 @@ class Libfreefare < Formula
     C
 
     system ENV.cc, "test.c", "-L#{lib}", "-lfreefare", "-o", "test"
-    system ".test"
+    system "./test"
   end
 end

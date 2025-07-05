@@ -1,7 +1,7 @@
 class Kubesess < Formula
   desc "Manage multiple kubernetes cluster at the same time"
-  homepage "https:blog.rentarami.seposts2022-08-05-kube-context-2"
-  url "https:github.comRamilitokubesessarchiverefstags2.0.3-1.tar.gz"
+  homepage "https://blog.rentarami.se/posts/2022-08-05-kube-context-2/"
+  url "https://ghfast.top/https://github.com/Ramilito/kubesess/archive/refs/tags/2.0.3-1.tar.gz"
   sha256 "a5cfbf0637968124d9655109a44222de49b97a882831b56ccf3f11360872dfcd"
   license "MIT"
 
@@ -22,24 +22,24 @@ class Kubesess < Formula
 
   def install
     system "cargo", "install", *std_cargo_args
-    bash_completion.install "scriptsshcompletion.sh"
-    zsh_function.install "scriptsshkubesess.sh"
+    bash_completion.install "scripts/sh/completion.sh"
+    zsh_function.install "scripts/sh/kubesess.sh"
 
     %w[kc kn knd kcd].each do |basename|
-      fish_completion.install "scriptsfishcompletions#{basename}.fish"
-      fish_function.install "scriptsfishfunctions#{basename}.fish"
+      fish_completion.install "scripts/fish/completions/#{basename}.fish"
+      fish_function.install "scripts/fish/functions/#{basename}.fish"
     end
   end
 
   test do
-    (testpath".kubeconfig").write <<~YAML
+    (testpath/".kube/config").write <<~YAML
       kind: Config
       apiVersion: v1
       current-context: docker-desktop
       preferences: {}
       clusters:
       - cluster:
-          server: https:kubernetes.docker.internal:6443
+          server: https://kubernetes.docker.internal:6443
         name: docker-desktop
       contexts:
       - context:
@@ -52,7 +52,7 @@ class Kubesess < Formula
         name: docker-desktop
     YAML
 
-    output = shell_output("#{bin}kubesess -v docker-desktop context 2>&1")
+    output = shell_output("#{bin}/kubesess -v docker-desktop context 2>&1")
     assert_match "docker-desktop", output
   end
 end

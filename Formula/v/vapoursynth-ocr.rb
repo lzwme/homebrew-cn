@@ -1,11 +1,11 @@
 class VapoursynthOcr < Formula
   desc "VapourSynth filters - Tesseract OCR filter"
-  homepage "https:www.vapoursynth.com"
-  url "https:github.comvapoursynthvs-ocrarchiverefstagsR3.tar.gz"
+  homepage "https://www.vapoursynth.com"
+  url "https://ghfast.top/https://github.com/vapoursynth/vs-ocr/archive/refs/tags/R3.tar.gz"
   sha256 "e9da11b7f5f3e4acfee5890729769217aa5b385bb573cb303c2661d8d8a83712"
   license "MIT"
   version_scheme 1
-  head "https:github.comvapoursynthvs-ocr.git", branch: "master"
+  head "https://github.com/vapoursynth/vs-ocr.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -31,7 +31,7 @@ class VapoursynthOcr < Formula
     # prefix, but we want it in a Cellar location instead.
     inreplace "meson.build",
               "install_dir : join_paths(vapoursynth_dep.get_pkgconfig_variable('libdir'), 'vapoursynth')",
-              "install_dir : '#{lib}vapoursynth'"
+              "install_dir : '#{lib}/vapoursynth'"
 
     system "meson", "setup", "build", *std_meson_args
     system "meson", "compile", "-C", "build", "--verbose"
@@ -40,9 +40,9 @@ class VapoursynthOcr < Formula
 
   test do
     python = Formula["vapoursynth"].deps
-                                   .find { |d| d.name.match?(^python@\d\.\d+$) }
+                                   .find { |d| d.name.match?(/^python@\d\.\d+$/) }
                                    .to_formula
-                                   .opt_libexec"binpython"
+                                   .opt_libexec/"bin/python"
     system python, "-c", "from vapoursynth import core; core.ocr"
   end
 end

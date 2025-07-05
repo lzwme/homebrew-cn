@@ -1,7 +1,7 @@
 class Netatalk < Formula
   desc "File server for Macs, compliant with Apple Filing Protocol (AFP)"
-  homepage "https:netatalk.io"
-  url "https:github.comNetatalknetatalkreleasesdownloadnetatalk-4-2-4netatalk-4.2.4.tar.xz"
+  homepage "https://netatalk.io"
+  url "https://ghfast.top/https://github.com/Netatalk/netatalk/releases/download/netatalk-4-2-4/netatalk-4.2.4.tar.xz"
   sha256 "4f07bbe118a951dd740d3f51a87b5cafba2496bd0b22e704438f421aa6670f99"
   license all_of: [
     "GPL-2.0-only",
@@ -12,7 +12,7 @@ class Netatalk < Formula
     "BSD-3-Clause",
     "MIT",
   ]
-  head "https:github.comNetatalknetatalk.git", branch: "main"
+  head "https://github.com/Netatalk/netatalk.git", branch: "main"
 
   no_autobump! because: :incompatible_version_format
 
@@ -53,10 +53,10 @@ class Netatalk < Formula
   conflicts_with "ad", because: "both install `ad` binaries"
 
   def install
-    inreplace "distribinitscriptsmacos.netatalk.in", "@sbindir@", opt_sbin
-    inreplace "distribinitscriptsmacos.netatalk.plist.in", "@bindir@", opt_bin
-    inreplace "distribinitscriptsmacos.netatalk.plist.in", "@sbindir@", opt_sbin
-    inreplace "distribinitscriptssystemd.netatalk.service.in", "@sbindir@", opt_sbin
+    inreplace "distrib/initscripts/macos.netatalk.in", "@sbindir@", opt_sbin
+    inreplace "distrib/initscripts/macos.netatalk.plist.in", "@bindir@", opt_bin
+    inreplace "distrib/initscripts/macos.netatalk.plist.in", "@sbindir@", opt_sbin
+    inreplace "distrib/initscripts/systemd.netatalk.service.in", "@sbindir@", opt_sbin
     bdb5_rpath = rpath(target: Formula["berkeley-db@5"].opt_lib)
     ENV.append "LDFLAGS", "-Wl,-rpath,#{bdb5_rpath}" if OS.linux?
     args = [
@@ -70,8 +70,8 @@ class Netatalk < Formula
       "-Dwith-init-dir=#{prefix}",
       "-Dwith-init-hooks=false",
       "-Dwith-install-hooks=false",
-      "-Dwith-lockfile-path=#{var}run",
-      "-Dwith-pam-config-path=#{etc}pam.d",
+      "-Dwith-lockfile-path=#{var}/run",
+      "-Dwith-pam-config-path=#{etc}/pam.d",
       "-Dwith-rpath=false",
       "-Dwith-spotlight=false",
       "-Dwith-statedir-path=#{var}",
@@ -94,9 +94,9 @@ class Netatalk < Formula
           Authenticating as a system user requires manually installing the
           PAM configuration file to a predetermined location by running:
 
-            sudo install -d -o $USER -g admin usrlocaletc
-            mkdir -p usrlocaletcpam.d
-            cp $(brew --prefix)etcpam.dnetatalk usrlocaletcpam.d
+            sudo install -d -o $USER -g admin /usr/local/etc
+            mkdir -p /usr/local/etc/pam.d
+            cp $(brew --prefix)/etc/pam.d/netatalk /usr/local/etc/pam.d
 
           See `man pam.conf` for more information.
         EOS
@@ -105,8 +105,8 @@ class Netatalk < Formula
   end
 
   test do
-    system sbin"netatalk", "-V"
-    system sbin"afpd", "-V"
-    assert_empty shell_output(sbin"netatalk")
+    system sbin/"netatalk", "-V"
+    system sbin/"afpd", "-V"
+    assert_empty shell_output(sbin/"netatalk")
   end
 end

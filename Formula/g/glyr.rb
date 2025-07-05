@@ -1,7 +1,7 @@
 class Glyr < Formula
   desc "Music related metadata search engine with command-line interface and C API"
-  homepage "https:github.comsahibglyr"
-  url "https:github.comsahibglyrarchiverefstags1.0.10.tar.gz"
+  homepage "https://github.com/sahib/glyr"
+  url "https://ghfast.top/https://github.com/sahib/glyr/archive/refs/tags/1.0.10.tar.gz"
   sha256 "77e8da60221c8d27612e4a36482069f26f8ed74a1b2768ebc373c8144ca806e8"
   license "LGPL-3.0-or-later"
   revision 3
@@ -34,7 +34,7 @@ class Glyr < Formula
 
   test do
     search = "--artist Beatles --title 'Eight Days A Week'"
-    cmd = "#{bin}glyrc lyrics --no-download #{search} -w stdout"
+    cmd = "#{bin}/glyrc lyrics --no-download #{search} -w stdout"
     assert_match "Love you all the time", pipe_output(cmd, nil, 0)
   end
 end

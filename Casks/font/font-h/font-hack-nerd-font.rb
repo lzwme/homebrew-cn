@@ -2,9 +2,9 @@ cask "font-hack-nerd-font" do
   version "3.4.0"
   sha256 "8ca33a60c791392d872b80d26c42f2bfa914a480f9eb2d7516d9f84373c36897"
 
-  url "https:github.comryanoasisnerd-fontsreleasesdownloadv#{version}Hack.zip"
+  url "https://ghfast.top/https://github.com/ryanoasis/nerd-fonts/releases/download/v#{version}/Hack.zip"
   name "Hack Nerd Font (Hack)"
-  homepage "https:github.comryanoasisnerd-fonts"
+  homepage "https://github.com/ryanoasis/nerd-fonts"
 
   livecheck do
     url :url

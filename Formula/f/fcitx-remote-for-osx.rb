@@ -1,7 +1,7 @@
 class FcitxRemoteForOsx < Formula
   desc "Handle input method in command-line"
-  homepage "https:github.comxcodebuildfcitx-remote-for-osx"
-  url "https:github.comxcodebuildfcitx-remote-for-osxarchiverefstags0.4.0.tar.gz"
+  homepage "https://github.com/xcodebuild/fcitx-remote-for-osx"
+  url "https://ghfast.top/https://github.com/xcodebuild/fcitx-remote-for-osx/archive/refs/tags/0.4.0.tar.gz"
   sha256 "453c99a0c2e227c29e2db640c592b657342a9294a3386d1810fd4c9237deeaae"
   license "GPL-3.0-or-later"
 
@@ -32,6 +32,6 @@ class FcitxRemoteForOsx < Formula
   end
 
   test do
-    system bin"fcitx-remote", "-n"
+    system bin/"fcitx-remote", "-n"
   end
 end

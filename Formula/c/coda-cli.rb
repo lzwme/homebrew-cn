@@ -2,8 +2,8 @@ class CodaCli < Formula
   include Language::Python::Shebang
 
   desc "Shell integration for Panic's Coda"
-  homepage "http:justinhileman.infocoda-cli"
-  url "https:github.combobthecowcoda-cliarchiverefstagsv1.0.5.tar.gz"
+  homepage "http://justinhileman.info/coda-cli/"
+  url "https://ghfast.top/https://github.com/bobthecow/coda-cli/archive/refs/tags/v1.0.5.tar.gz"
   sha256 "5ed407313a8d1fc6cc4d5b1acc14a80f7e6fad6146f2334de510e475955008b9"
   license "MIT"
 
@@ -28,17 +28,17 @@ class CodaCli < Formula
   end
 
   test do
-    system bin"coda", "-h"
+    system bin/"coda", "-h"
   end
 end
 
 __END__
-diff --git acoda bcoda
+diff --git a/coda b/coda
 index 2f36414..704adae 100755
---- acoda
-+++ bcoda
+--- a/coda
++++ b/coda
 @@ -49,13 +49,13 @@ License:
-     Distributed under the MIT License - http:creativecommons.orglicensesMIT
+     Distributed under the MIT License - http://creativecommons.org/licenses/MIT/
 
  """
 -import sys, os, time, commands, optparse, signal
@@ -57,8 +57,8 @@ index 2f36414..704adae 100755
  signal.signal(signal.SIGINT, lambda *x: sys.exit(1))
 
  def osascript(scpt):
--    return commands.getoutput("osascript 2>devnull <<ENDSCRIPT\n%s\nENDSCRIPT\n:" % scpt)
-+    return subprocess.getoutput("osascript 2>devnull <<ENDSCRIPT\n%s\nENDSCRIPT\n:" % scpt)
+-    return commands.getoutput("osascript 2>/dev/null <<ENDSCRIPT\n%s\nENDSCRIPT\n:" % scpt)
++    return subprocess.getoutput("osascript 2>/dev/null <<ENDSCRIPT\n%s\nENDSCRIPT\n:" % scpt)
 
  def coda_is_running():
      return osascript("tell application \"System Events\" to (count (every process whose creator type is \"TStu\")) as boolean") == "true"

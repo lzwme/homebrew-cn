@@ -1,10 +1,10 @@
 class Cmctl < Formula
   desc "Command-line tool to manage cert-manager"
-  homepage "https:cert-manager.io"
-  url "https:github.comcert-managercmctlarchiverefstagsv2.2.0.tar.gz"
+  homepage "https://cert-manager.io"
+  url "https://ghfast.top/https://github.com/cert-manager/cmctl/archive/refs/tags/v2.2.0.tar.gz"
   sha256 "b4c6c88c798f9e8b8b06c6fbeb64fc11eb946b08828a994a44b7e630ffbdaa7b"
   license "Apache-2.0"
-  head "https:github.comcert-managercmctl.git", branch: "main"
+  head "https://github.com/cert-manager/cmctl.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "d55363e9112d7eb0669d0afd9bebaed6aaa4531e332201f8fff5bf007bd21e71"
@@ -19,30 +19,30 @@ class Cmctl < Formula
   depends_on "go" => :build
 
   def install
-    project = "github.comcert-managercmctlv2"
+    project = "github.com/cert-manager/cmctl/v2"
     ldflags = %W[
       -s -w
-      -X #{project}pkgbuild.name=cmctl
-      -X #{project}pkgbuildcommands.registerCompletion=true
-      -X github.comcert-managercert-managerpkgutil.AppVersion=v#{version}
-      -X github.comcert-managercert-managerpkgutil.AppGitCommit=#{tap.user}
+      -X #{project}/pkg/build.name=cmctl
+      -X #{project}/pkg/build/commands.registerCompletion=true
+      -X github.com/cert-manager/cert-manager/pkg/util.AppVersion=v#{version}
+      -X github.com/cert-manager/cert-manager/pkg/util.AppGitCommit=#{tap.user}
     ]
 
     system "go", "build", *std_go_args(ldflags:)
 
-    generate_completions_from_executable(bin"cmctl", "completion")
+    generate_completions_from_executable(bin/"cmctl", "completion")
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}cmctl version --client")
+    assert_match version.to_s, shell_output("#{bin}/cmctl version --client")
     # The binary name ("cmctl") is templated into the help text at build time, so we verify that it is
-    assert_match "cmctl", shell_output("#{bin}cmctl help")
+    assert_match "cmctl", shell_output("#{bin}/cmctl help")
     # We can't make a Kubernetes cluster in test, so we check that when we use a remote command
     # we find the error about connecting
-    assert_match "error: error finding the scope of the object", shell_output("#{bin}cmctl check api 2>&1", 1)
+    assert_match "error: error finding the scope of the object", shell_output("#{bin}/cmctl check api 2>&1", 1)
     # The convert command *can* be tested locally.
-    (testpath"cert.yaml").write <<~YAML
-      apiVersion: cert-manager.iov1beta1
+    (testpath/"cert.yaml").write <<~YAML
+      apiVersion: cert-manager.io/v1beta1
       kind: Certificate
       metadata:
         name: test-certificate
@@ -55,7 +55,7 @@ class Cmctl < Formula
     YAML
 
     expected_output = <<~YAML
-      apiVersion: cert-manager.iov1
+      apiVersion: cert-manager.io/v1
       kind: Certificate
       metadata:
         creationTimestamp: null
@@ -69,6 +69,6 @@ class Cmctl < Formula
       status: {}
     YAML
 
-    assert_equal expected_output, shell_output("#{bin}cmctl convert -f cert.yaml")
+    assert_equal expected_output, shell_output("#{bin}/cmctl convert -f cert.yaml")
   end
 end

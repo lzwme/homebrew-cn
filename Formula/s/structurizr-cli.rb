@@ -1,7 +1,7 @@
 class StructurizrCli < Formula
   desc "Command-line utility for Structurizr"
-  homepage "https:docs.structurizr.comcli"
-  url "https:github.comstructurizrclireleasesdownloadv2025.05.28structurizr-cli.zip"
+  homepage "https://docs.structurizr.com/cli"
+  url "https://ghfast.top/https://github.com/structurizr/cli/releases/download/v2025.05.28/structurizr-cli.zip"
   sha256 "bbe87f7bdcc272755e0bc056fe1641dc4e95d263f109e6733daea96d8acdadc5"
   license "Apache-2.0"
 
@@ -14,13 +14,13 @@ class StructurizrCli < Formula
   def install
     rm(Dir["*.bat"])
     libexec.install Dir["*"]
-    (bin"structurizr-cli").write_env_script libexec"structurizr.sh", Language::Java.overridable_java_home_env
+    (bin/"structurizr-cli").write_env_script libexec/"structurizr.sh", Language::Java.overridable_java_home_env
   end
 
   test do
-    result = shell_output("#{bin}structurizr-cli validate -w devnull", 1)
-    assert_match "devnull is not a JSON or DSL file", result
+    result = shell_output("#{bin}/structurizr-cli validate -w /dev/null", 1)
+    assert_match "/dev/null is not a JSON or DSL file", result
 
-    assert_match "structurizr-cli: #{version}", shell_output("#{bin}structurizr-cli version")
+    assert_match "structurizr-cli: #{version}", shell_output("#{bin}/structurizr-cli version")
   end
 end

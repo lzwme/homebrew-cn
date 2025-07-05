@@ -1,10 +1,10 @@
 class StellarCli < Formula
   desc "Stellar command-line tool for interacting with the Stellar network"
-  homepage "https:developers.stellar.org"
-  url "https:github.comstellarstellar-cliarchiverefstagsv22.8.1.tar.gz"
+  homepage "https://developers.stellar.org"
+  url "https://ghfast.top/https://github.com/stellar/stellar-cli/archive/refs/tags/v22.8.1.tar.gz"
   sha256 "0c92d8afcf3f888b09610b744cf1b28c4578aecdc1c32d2a397286d9a72bc2d5"
   license "Apache-2.0"
-  head "https:github.comstellarstellar-cli.git", branch: "main"
+  head "https://github.com/stellar/stellar-cli.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "501610d1a9b3eecde77e439ff1d5445182b5a7167b688ab2d35ec98c1f79081e"
@@ -26,11 +26,11 @@ class StellarCli < Formula
   end
 
   def install
-    system "cargo", "install", "--bin=stellar", "--features=opt", *std_cargo_args(path: "cmdstellar-cli")
+    system "cargo", "install", "--bin=stellar", "--features=opt", *std_cargo_args(path: "cmd/stellar-cli")
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}stellar version")
-    assert_match "TransactionEnvelope", shell_output("#{bin}stellar xdr types list")
+    assert_match version.to_s, shell_output("#{bin}/stellar version")
+    assert_match "TransactionEnvelope", shell_output("#{bin}/stellar xdr types list")
   end
 end

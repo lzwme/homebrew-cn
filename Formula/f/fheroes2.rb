@@ -1,14 +1,14 @@
 class Fheroes2 < Formula
   desc "Recreation of the Heroes of Might and Magic II game engine"
-  homepage "https:ihhub.github.iofheroes2"
-  url "https:github.comihhubfheroes2archiverefstags1.1.9.tar.gz"
+  homepage "https://ihhub.github.io/fheroes2/"
+  url "https://ghfast.top/https://github.com/ihhub/fheroes2/archive/refs/tags/1.1.9.tar.gz"
   sha256 "b343f9737b9cf75846192db8defeda254b2184ff7dd83f674581fa10ce8f38ed"
   license "GPL-2.0-or-later"
-  head "https:github.comihhubfheroes2.git", branch: "master"
+  head "https://github.com/ihhub/fheroes2.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -42,21 +42,21 @@ class Fheroes2 < Formula
     system "cmake", "--install", "build"
 
     if OS.mac?
-      prefix.install "buildfheroes2.app"
-      bin.write_exec_script "#{prefix}fheroes2.appContentsMacOSfheroes2"
+      prefix.install "build/fheroes2.app"
+      bin.write_exec_script "#{prefix}/fheroes2.app/Contents/MacOS/fheroes2"
 
-      libexec.install "scriptdemodownload_demo_version.sh"
-      libexec.install "scriptdemodownload_demo_version_for_app_bundle.sh"
-      libexec.install "scripthomm2extract_homm2_resources.sh"
-      libexec.install "scripthomm2extract_homm2_resources_for_app_bundle.sh"
-      chmod "+x", Dir["#{libexec}*"]
-      bin.write_exec_script libexec"download_demo_version_for_app_bundle.sh"
-      bin.write_exec_script libexec"extract_homm2_resources_for_app_bundle.sh"
-      mv bin"download_demo_version_for_app_bundle.sh", bin"fheroes2-install-demo"
-      mv bin"extract_homm2_resources_for_app_bundle.sh", bin"fheroes2-extract-resources"
+      libexec.install "script/demo/download_demo_version.sh"
+      libexec.install "script/demo/download_demo_version_for_app_bundle.sh"
+      libexec.install "script/homm2/extract_homm2_resources.sh"
+      libexec.install "script/homm2/extract_homm2_resources_for_app_bundle.sh"
+      chmod "+x", Dir["#{libexec}/*"]
+      bin.write_exec_script libexec/"download_demo_version_for_app_bundle.sh"
+      bin.write_exec_script libexec/"extract_homm2_resources_for_app_bundle.sh"
+      mv bin/"download_demo_version_for_app_bundle.sh", bin/"fheroes2-install-demo"
+      mv bin/"extract_homm2_resources_for_app_bundle.sh", bin/"fheroes2-extract-resources"
     else
-      bin.install "scriptdemodownload_demo_version.sh" => "fheroes2-install-demo"
-      bin.install "scripthomm2extract_homm2_resources.sh" => "fheroes2-extract-resources"
+      bin.install "script/demo/download_demo_version.sh" => "fheroes2-install-demo"
+      bin.install "script/homm2/extract_homm2_resources.sh" => "fheroes2-extract-resources"
     end
   end
 
@@ -69,23 +69,23 @@ class Fheroes2 < Formula
       files from a legally purchased copy of the original game.
 
       Documentation is available at:
-      #{share}docfheroes2README.txt
+      #{share}/doc/fheroes2/README.txt
     EOS
   end
 
   test do
-    assert_path_exists bin"fheroes2"
-    assert_predicate bin"fheroes2", :executable?
+    assert_path_exists bin/"fheroes2"
+    assert_predicate bin/"fheroes2", :executable?
     if OS.mac?
       begin
-        pid = spawn(bin"fheroes2")
+        pid = spawn(bin/"fheroes2")
         sleep 2
       ensure
         Process.kill("SIGINT", pid)
         Process.wait(pid)
       end
     else
-      io = IO.popen("#{bin}fheroes2 2>&1")
+      io = IO.popen("#{bin}/fheroes2 2>&1")
       io.any? do |line|
         line.include?("fheroes2 engine, version:")
       end

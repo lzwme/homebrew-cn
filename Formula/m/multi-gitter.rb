@@ -1,10 +1,10 @@
 class MultiGitter < Formula
   desc "Update multiple repositories in with one command"
-  homepage "https:github.comlindellmulti-gitter"
-  url "https:github.comlindellmulti-gitterarchiverefstagsv0.57.1.tar.gz"
+  homepage "https://github.com/lindell/multi-gitter"
+  url "https://ghfast.top/https://github.com/lindell/multi-gitter/archive/refs/tags/v0.57.1.tar.gz"
   sha256 "a5fb523d5bc53f1526439d79d45770c32596f7a0a5de4dbbe53ea2ab47494e7e"
   license "Apache-2.0"
-  head "https:github.comlindellmulti-gitter.git", branch: "master"
+  head "https://github.com/lindell/multi-gitter.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "7a6b08b1ce3221f66eeae7ac47825bd859c6643bc867779515a3edec5e4218db"
@@ -21,13 +21,13 @@ class MultiGitter < Formula
     ldflags = "-s -w -X main.version=#{version} -X main.commit=#{tap.user} -X main.date=#{time.iso8601}"
     system "go", "build", *std_go_args(ldflags:)
 
-    generate_completions_from_executable(bin"multi-gitter", "completion")
+    generate_completions_from_executable(bin/"multi-gitter", "completion")
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}multi-gitter version")
+    assert_match version.to_s, shell_output("#{bin}/multi-gitter version")
 
-    output = shell_output("#{bin}multi-gitter status 2>&1", 1)
+    output = shell_output("#{bin}/multi-gitter status 2>&1", 1)
     assert_match "Error: no organization, user, repo, repo-search or code-search set", output
   end
 end

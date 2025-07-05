@@ -1,13 +1,13 @@
 class Pcre2 < Formula
   desc "Perl compatible regular expressions library with a new API"
-  homepage "https:www.pcre.org"
-  url "https:github.comPCRE2Projectpcre2releasesdownloadpcre2-10.45pcre2-10.45.tar.bz2"
+  homepage "https://www.pcre.org/"
+  url "https://ghfast.top/https://github.com/PCRE2Project/pcre2/releases/download/pcre2-10.45/pcre2-10.45.tar.bz2"
   sha256 "21547f3516120c75597e5b30a992e27a592a31950b5140e7b8bfde3f192033c4"
   license "BSD-3-Clause"
 
   livecheck do
     url :stable
-    regex(^pcre2[._-]v?(\d+(?:\.\d+)+)$i)
+    regex(/^pcre2[._-]v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -21,7 +21,7 @@ class Pcre2 < Formula
   end
 
   head do
-    url "https:github.comPCRE2Projectpcre2.git", branch: "master"
+    url "https://github.com/PCRE2Project/pcre2.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -44,14 +44,14 @@ class Pcre2 < Formula
 
     args << "--enable-pcre2test-libedit" if OS.mac?
 
-    system ".autogen.sh" if build.head?
+    system "./autogen.sh" if build.head?
 
-    system ".configure", *args
+    system "./configure", *args
     system "make"
     system "make", "install"
   end
 
   test do
-    system bin"pcre2grep", "regular expression", prefix"README"
+    system bin/"pcre2grep", "regular expression", prefix/"README"
   end
 end

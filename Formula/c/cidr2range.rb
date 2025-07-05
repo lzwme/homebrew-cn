@@ -1,14 +1,14 @@
 class Cidr2range < Formula
   desc "Converts CIDRs to IP ranges"
-  homepage "https:ipinfo.io"
-  url "https:github.comipinfocliarchiverefstagscidr2range-1.2.0.tar.gz"
+  homepage "https://ipinfo.io"
+  url "https://ghfast.top/https://github.com/ipinfo/cli/archive/refs/tags/cidr2range-1.2.0.tar.gz"
   sha256 "54af7600dc8c775f28d8fdc9debd86154e9293f07eb73f7372931d9c94744c81"
   license "Apache-2.0"
-  head "https:github.comipinfocli.git", branch: "master"
+  head "https://github.com/ipinfo/cli.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(^cidr2range[._-]v?(\d+(?:\.\d+)+)$i)
+    regex(/^cidr2range[._-]v?(\d+(?:\.\d+)+)$/i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -31,12 +31,12 @@ class Cidr2range < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args, ".cidr2range"
+    system "go", "build", *std_go_args, "./cidr2range"
   end
 
   test do
-    assert_equal version.to_s, shell_output("#{bin}cidr2range --version").chomp
-    assert_equal "1.1.1.0-1.1.1.3", shell_output("#{bin}cidr2range 1.1.1.030").chomp
-    assert_equal "0.0.0.0-255.255.255.255", shell_output("#{bin}cidr2range 1.1.1.00").chomp
+    assert_equal version.to_s, shell_output("#{bin}/cidr2range --version").chomp
+    assert_equal "1.1.1.0-1.1.1.3", shell_output("#{bin}/cidr2range 1.1.1.0/30").chomp
+    assert_equal "0.0.0.0-255.255.255.255", shell_output("#{bin}/cidr2range 1.1.1.0/0").chomp
   end
 end

@@ -1,11 +1,11 @@
 class Xcdiff < Formula
   desc "Tool to diff xcodeproj files"
-  homepage "https:github.combloombergxcdiff"
-  url "https:github.combloombergxcdiff.git",
+  homepage "https://github.com/bloomberg/xcdiff"
+  url "https://github.com/bloomberg/xcdiff.git",
       tag:      "0.13.0",
       revision: "99301ee4578224f0660a1312abc465c5a37176c5"
   license "Apache-2.0"
-  head "https:github.combloombergxcdiff.git", branch: "main"
+  head "https://github.com/bloomberg/xcdiff.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "bd62e3b0b02971f946bea613e95a4ceeb8ab41ede5383518148c542b5908ef04"
@@ -23,22 +23,22 @@ class Xcdiff < Formula
     system "make", "update_version"
     system "make", "update_hash"
     system "swift", "build", "--disable-sandbox", "--configuration", "release"
-    bin.install ".buildreleasexcdiff"
+    bin.install ".build/release/xcdiff"
   end
 
   test do
     resource "homebrew-testdata" do
-      url "https:github.combloombergxcdiffarchiverefstags0.10.0.tar.gz"
+      url "https://ghfast.top/https://github.com/bloomberg/xcdiff/archive/refs/tags/0.10.0.tar.gz"
       sha256 "c093e128873f1bb2605b14bf9100c5ad7855be17b14f2cad36668153110b1265"
     end
 
-    assert_match version.to_s, shell_output("#{bin}xcdiff --version").chomp
-    project = "Fixturesios_project_1Project.xcodeproj"
+    assert_match version.to_s, shell_output("#{bin}/xcdiff --version").chomp
+    project = "Fixtures/ios_project_1/Project.xcodeproj"
     diff_args = "-p1 #{project} -p2 #{project}"
     resource("homebrew-testdata").stage do
       # assert no difference between projects
-      assert_equal "\n", shell_output("#{bin}xcdiff #{diff_args} -d")
-      out = shell_output("#{bin}xcdiff #{diff_args} -g BUILD_PHASES -t Project -v")
+      assert_equal "\n", shell_output("#{bin}/xcdiff #{diff_args} -d")
+      out = shell_output("#{bin}/xcdiff #{diff_args} -g BUILD_PHASES -t Project -v")
       assert_match "✅ BUILD_PHASES > \"Project\" target\n", out
     end
   end

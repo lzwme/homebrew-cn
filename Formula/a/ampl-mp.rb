@@ -1,13 +1,13 @@
 class AmplMp < Formula
   desc "Open-source library for mathematical programming"
-  homepage "https:ampl.com"
-  url "https:github.comamplmparchiverefstagsv4.0.3.tar.gz"
+  homepage "https://ampl.com/"
+  url "https://ghfast.top/https://github.com/ampl/mp/archive/refs/tags/v4.0.3.tar.gz"
   sha256 "229c2e82110a8a1c1a845b14e5faa960785c07e2df673bd366f755aca431c1a9"
   license "MIT"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -24,10 +24,10 @@ class AmplMp < Formula
 
   def install
     args = %W[
-      -DAMPL_LIBRARY_DIR=#{libexec}bin
+      -DAMPL_LIBRARY_DIR=#{libexec}/bin
       -DBUILD_SHARED_LIBS=ON
       -DBUILD_TESTS=OFF
-      -DCMAKE_INSTALL_RPATH=#{rpath};#{rpath(source: libexec"bin")}
+      -DCMAKE_INSTALL_RPATH=#{rpath};#{rpath(source: libexec/"bin")}
     ]
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
@@ -36,10 +36,10 @@ class AmplMp < Formula
   end
 
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include <stdio.h>
       #include <stdlib.h>
-      #include "mpampls-c-api.h"
+      #include "mp/ampls-c-api.h"
 
       int main() {
           AMPLS_MP_Solver* solver = (AMPLS_MP_Solver*)malloc(sizeof(AMPLS_MP_Solver));
@@ -48,7 +48,7 @@ class AmplMp < Formula
       }
     C
 
-    system ENV.cc, "test.c", "-I#{include}mp", "-L#{lib}", "-lmp", "-o", "test"
-    system ".test"
+    system ENV.cc, "test.c", "-I#{include}/mp", "-L#{lib}", "-lmp", "-o", "test"
+    system "./test"
   end
 end

@@ -1,10 +1,10 @@
 class Trivy < Formula
   desc "Vulnerability scanner for container images, file systems, and Git repos"
-  homepage "https:trivy.dev"
-  url "https:github.comaquasecuritytrivyarchiverefstagsv0.64.1.tar.gz"
+  homepage "https://trivy.dev/"
+  url "https://ghfast.top/https://github.com/aquasecurity/trivy/archive/refs/tags/v0.64.1.tar.gz"
   sha256 "9e23c90bd1afd9c369f1582712907e8e0652c8f5825e599850183af174c65666"
   license "Apache-2.0"
-  head "https:github.comaquasecuritytrivy.git", branch: "main"
+  head "https://github.com/aquasecurity/trivy.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "60701ca9f0abf3941dc8cb0451da35bc82456898ab9d10ee93542ce833395dda"
@@ -21,18 +21,18 @@ class Trivy < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.comaquasecuritytrivypkgversionapp.ver=#{version}
+      -X github.com/aquasecurity/trivy/pkg/version/app.ver=#{version}
     ]
-    system "go", "build", *std_go_args(ldflags:), ".cmdtrivy"
-    (pkgshare"templates").install Dir["contrib*.tpl"]
+    system "go", "build", *std_go_args(ldflags:), "./cmd/trivy"
+    (pkgshare/"templates").install Dir["contrib/*.tpl"]
 
-    generate_completions_from_executable(bin"trivy", "completion")
+    generate_completions_from_executable(bin/"trivy", "completion")
   end
 
   test do
-    output = shell_output("#{bin}trivy image alpine:3.10")
-    assert_match(\(UNKNOWN: \d+, LOW: \d+, MEDIUM: \d+, HIGH: \d+, CRITICAL: \d+\), output)
+    output = shell_output("#{bin}/trivy image alpine:3.10")
+    assert_match(/\(UNKNOWN: \d+, LOW: \d+, MEDIUM: \d+, HIGH: \d+, CRITICAL: \d+\)/, output)
 
-    assert_match version.to_s, shell_output("#{bin}trivy --version")
+    assert_match version.to_s, shell_output("#{bin}/trivy --version")
   end
 end

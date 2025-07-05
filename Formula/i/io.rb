@@ -1,21 +1,21 @@
 class Io < Formula
   desc "Small prototype-based programming language"
-  homepage "http:iolanguage.com"
+  homepage "http://iolanguage.com/"
   license "BSD-3-Clause"
   revision 1
-  head "https:github.comIoLanguageio.git", branch: "master"
+  head "https://github.com/IoLanguage/io.git", branch: "master"
 
   stable do
-    url "https:github.comIoLanguageioarchiverefstags2017.09.06.tar.gz"
+    url "https://ghfast.top/https://github.com/IoLanguage/io/archive/refs/tags/2017.09.06.tar.gz"
     sha256 "9ac5cd94bbca65c989cd254be58a3a716f4e4f16480f0dc81070457aa353c217"
 
     # Backport fix for Linux build
     patch do
-      url "https:github.comIoLanguageiocommit92fe8304c55b84a17b0624613a7006e85a0128a2.patch?full_index=1"
+      url "https://github.com/IoLanguage/io/commit/92fe8304c55b84a17b0624613a7006e85a0128a2.patch?full_index=1"
       sha256 "183367979123123671fcd076aba3820ed20066add66725211a396eb5c621a6c6"
     end
 
-    # build patch for sysctl.h as glibc 2.32 removed <syssysctl.h>
+    # build patch for sysctl.h as glibc 2.32 removed <sys/sysctl.h>
     patch :DATA
   end
 
@@ -36,7 +36,7 @@ class Io < Formula
   uses_from_macos "libxml2"
 
   on_macos do
-    depends_on arch: :x86_64 # https:github.comIoLanguageioissues465
+    depends_on arch: :x86_64 # https://github.com/IoLanguage/io/issues/465
   end
 
   def install
@@ -49,7 +49,7 @@ class Io < Formula
       # Turn off all add-ons in main cmake file
       s.gsub! "add_subdirectory(addons)", "#add_subdirectory(addons)" unless build.head?
       # Allow building on non-x86_64 platforms
-      # Ref: https:github.comIoLanguageioissues450  https:github.comIoLanguageioissues474
+      # Ref: https://github.com/IoLanguage/io/issues/450 / https://github.com/IoLanguage/io/issues/474
       s.gsub! 'SET(CMAKE_C_FLAGS "-msse2")', "" unless Hardware::CPU.intel?
     end
 
@@ -66,25 +66,25 @@ class Io < Formula
   end
 
   test do
-    (testpath"test.io").write <<~EOS
+    (testpath/"test.io").write <<~EOS
       "it works!" println
     EOS
 
-    assert_equal "it works!\n", shell_output("#{bin}io test.io")
+    assert_equal "it works!\n", shell_output("#{bin}/io test.io")
   end
 end
 
 __END__
-diff --git alibsiovmsourceIoSystem.c blibsiovmsourceIoSystem.c
+diff --git a/libs/iovm/source/IoSystem.c b/libs/iovm/source/IoSystem.c
 index a6234f7..af3a975 100755
---- alibsiovmsourceIoSystem.c
-+++ blibsiovmsourceIoSystem.c
+--- a/libs/iovm/source/IoSystem.c
++++ b/libs/iovm/source/IoSystem.c
 @@ -22,7 +22,7 @@ Contains methods related to the IoVM.
  #if defined(__NetBSD__) || defined(__OpenBSD__)
- # include <sysparam.h>
+ # include <sys/param.h>
  #endif
 -#ifndef __CYGWIN__
 +#if defined(HAVE_SYS_SYSCTL_H) && !defined(__GLIBC__)
- # include <syssysctl.h>
+ # include <sys/sysctl.h>
  #endif
  #endif

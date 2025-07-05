@@ -5,11 +5,11 @@ cask "zui" do
   sha256 arm:   "d28bd3144781cf1d8b6d2ba654e4c65b826c945004d480f2c0497235dfda4390",
          intel: "463e57018e87d201dd240e7199dc68d252eda2ab61ccae575efd7957dd7fc364"
 
-  url "https:github.combrimdatazuireleasesdownloadv#{version}Zui-#{version}-#{arch}.dmg",
-      verified: "github.combrimdatazui"
+  url "https://ghfast.top/https://github.com/brimdata/zui/releases/download/v#{version}/Zui-#{version}-#{arch}.dmg",
+      verified: "github.com/brimdata/zui/"
   name "Zui"
   desc "Graphical user interface for exploring data in Zed lakes"
-  homepage "https:zui.brimdata.iodocs"
+  homepage "https://zui.brimdata.io/docs"
 
   no_autobump! because: :requires_manual_review
 
@@ -18,8 +18,8 @@ cask "zui" do
   app "Zui.app"
 
   zap trash: [
-    "~LibraryApplication SupportZui",
-    "~LibraryPreferencesio.brimdata.zui.plist",
-    "~LibrarySaved Application Stateio.brimdata.zui.savedState",
+    "~/Library/Application Support/Zui",
+    "~/Library/Preferences/io.brimdata.zui.plist",
+    "~/Library/Saved Application State/io.brimdata.zui.savedState",
   ]
 end

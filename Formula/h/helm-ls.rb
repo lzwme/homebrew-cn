@@ -1,10 +1,10 @@
 class HelmLs < Formula
   desc "Language server for Helm"
-  homepage "https:github.commrjoshhelm-ls"
-  url "https:github.commrjoshhelm-lsarchiverefstagsv0.4.1.tar.gz"
+  homepage "https://github.com/mrjosh/helm-ls"
+  url "https://ghfast.top/https://github.com/mrjosh/helm-ls/archive/refs/tags/v0.4.1.tar.gz"
   sha256 "ec657884a80b1a11ebccf9ec887462ccedbb9c7a4352a26da5dcf9ba2fc5bd58"
   license "MIT"
-  head "https:github.commrjoshhelm-ls.git", branch: "master"
+  head "https://github.com/mrjosh/helm-ls.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "9ab50232100dee21f99e4e317068fb86bad9d53ec2c0c13a05efb1da9b53cc1a"
@@ -26,15 +26,15 @@ class HelmLs < Formula
       -X main.GitCommit=#{tap.user}
       -X main.BuildTime=#{time.iso8601}
     ]
-    system "go", "build", *std_go_args(ldflags:, output: bin"helm_ls")
+    system "go", "build", *std_go_args(ldflags:, output: bin/"helm_ls")
 
-    generate_completions_from_executable(bin"helm_ls", "completion")
+    generate_completions_from_executable(bin/"helm_ls", "completion")
   end
 
   test do
     require "open3"
 
-    assert_match version.to_s, shell_output(bin"helm_ls version")
+    assert_match version.to_s, shell_output(bin/"helm_ls version")
 
     json = <<~JSON
       {
@@ -44,7 +44,7 @@ class HelmLs < Formula
         "params": {
           "workspaceFolders": [
             {
-              "uri": "file:#{testpath}"
+              "uri": "file://#{testpath}"
             }
           ],
           "capabilities": {}
@@ -54,10 +54,10 @@ class HelmLs < Formula
 
     File.write("Chart.yaml", "")
 
-    Open3.popen3("#{bin}helm_ls", "serve") do |stdin, stdout|
+    Open3.popen3("#{bin}/helm_ls", "serve") do |stdin, stdout|
       stdin.write "Content-Length: #{json.size}\r\n\r\n#{json}"
 
-      assert_match(^Content-Length: \d+i, stdout.readline)
+      assert_match(/^Content-Length: \d+/i, stdout.readline)
     end
   end
 end

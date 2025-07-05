@@ -1,10 +1,10 @@
 class River < Formula
   desc "Reverse proxy application, based on the pingora library from Cloudflare"
-  homepage "https:github.commemorysafetyriver"
-  url "https:github.commemorysafetyriverarchiverefstagsv0.5.0.tar.gz"
+  homepage "https://github.com/memorysafety/river"
+  url "https://ghfast.top/https://github.com/memorysafety/river/archive/refs/tags/v0.5.0.tar.gz"
   sha256 "fe96d3693d60be06d0d1810954835f79139495b890b597f42c2b0bfa2bd8c7a6"
   license "Apache-2.0"
-  head "https:github.commemorysafetyriver.git", branch: "main"
+  head "https://github.com/memorysafety/river.git", branch: "main"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "07ebac88781c5ead2935d4fcdcf750f10791ac135986c7917e5fcfcf8cad0a97"
@@ -28,26 +28,26 @@ class River < Formula
     ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
     ENV["OPENSSL_NO_VENDOR"] = "1"
 
-    system "cargo", "install", *std_cargo_args(path: "sourceriver")
+    system "cargo", "install", *std_cargo_args(path: "source/river")
   end
 
   test do
-    require "utilslinkage"
+    require "utils/linkage"
 
-    (testpath"example-config.toml").write <<~TOML
+    (testpath/"example-config.toml").write <<~TOML
       [system]
         [[basic-proxy]]
         name = "Example Config"
         [basic-proxy.connector]
         proxy_addr = "127.0.0.1:80"
     TOML
-    system bin"river", "--validate-configs", "--config-toml", testpath"example-config.toml"
+    system bin/"river", "--validate-configs", "--config-toml", testpath/"example-config.toml"
 
     [
-      Formula["openssl@3"].opt_libshared_library("libssl"),
-      Formula["openssl@3"].opt_libshared_library("libcrypto"),
+      Formula["openssl@3"].opt_lib/shared_library("libssl"),
+      Formula["openssl@3"].opt_lib/shared_library("libcrypto"),
     ].each do |library|
-      assert Utils.binary_linked_to_library?(bin"river", library),
+      assert Utils.binary_linked_to_library?(bin/"river", library),
              "No linkage with #{library.basename}! Cargo is likely using a vendored version."
     end
   end

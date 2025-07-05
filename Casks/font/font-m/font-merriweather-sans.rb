@@ -2,12 +2,12 @@ cask "font-merriweather-sans" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefonts.git",
-      verified:  "github.comgooglefonts",
+  url "https://github.com/google/fonts.git",
+      verified:  "github.com/google/fonts",
       branch:    "main",
-      only_path: "oflmerriweathersans"
+      only_path: "ofl/merriweathersans"
   name "Merriweather Sans"
-  homepage "https:fonts.google.comspecimenMerriweather+Sans"
+  homepage "https://fonts.google.com/specimen/Merriweather+Sans"
 
   font "MerriweatherSans-Italic[wght].ttf"
   font "MerriweatherSans[wght].ttf"

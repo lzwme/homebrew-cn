@@ -2,16 +2,16 @@ cask "revisionist" do
   version "1.10,2025.06"
   sha256 "e01335c4fb1fa61b03f8d4714e758d206aa439ff260ae2cd1c0c84e307b63c0f"
 
-  url "https:eclecticlight.cowp-contentuploads#{version.csv.second.major}#{version.csv.second.minor}#{token}#{version.csv.first.no_dots}.zip"
+  url "https://eclecticlight.co/wp-content/uploads/#{version.csv.second.major}/#{version.csv.second.minor}/#{token}#{version.csv.first.no_dots}.zip"
   name "Revisionist"
   desc "Opens up the full power of the versioning system"
-  homepage "https:eclecticlight.corevisionist-deeptools"
+  homepage "https://eclecticlight.co/revisionist-deeptools/"
 
   livecheck do
-    url "https:raw.githubusercontent.comhoakleyelcupdatesmastereclecticapps.plist"
-    regex(%r{(\d+)(\d+)[^]+?$}i)
+    url "https://ghfast.top/https://raw.githubusercontent.com/hoakleyelc/updates/master/eclecticapps.plist"
+    regex(%r{/(\d+)/(\d+)/[^/]+?$}i)
     strategy :xml do |xml, regex|
-      item = xml.elements["dict[key[text()='AppName']following-sibling::*[1][text()='Revisionist']]"]
+      item = xml.elements["//dict[key[text()='AppName']/following-sibling::*[1][text()='Revisionist']]"]
       next unless item
 
       version = item.elements["key[text()='Version']"]&.next_element&.text
@@ -25,14 +25,14 @@ cask "revisionist" do
 
   depends_on macos: ">= :high_sierra"
 
-  app "revisionist#{version.csv.first.no_dots}Revisionist.app"
+  app "revisionist#{version.csv.first.no_dots}/Revisionist.app"
 
   zap trash: [
-    "~LibraryApplication Supportcom.apple.sharedfilelistcom.apple.LSSharedFileList.ApplicationRecentDocumentsco.eclecticlight.revisionist.sfl*",
-    "~LibraryCachesco.eclecticlight.Revisionist",
-    "~LibraryCachescom.apple.helpdGeneratedco.eclecticlight.Revisionist.help*",
-    "~LibraryHTTPStoragesco.eclecticlight.Revisionist",
-    "~LibraryPreferencesco.eclecticlight.Revisionist.plist",
-    "~LibrarySaved Application Stateco.eclecticlight.Revisionist.savedState",
+    "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/co.eclecticlight.revisionist.sfl*",
+    "~/Library/Caches/co.eclecticlight.Revisionist",
+    "~/Library/Caches/com.apple.helpd/Generated/co.eclecticlight.Revisionist.help*",
+    "~/Library/HTTPStorages/co.eclecticlight.Revisionist",
+    "~/Library/Preferences/co.eclecticlight.Revisionist.plist",
+    "~/Library/Saved Application State/co.eclecticlight.Revisionist.savedState",
   ]
 end

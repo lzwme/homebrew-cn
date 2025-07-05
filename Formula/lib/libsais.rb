@@ -1,10 +1,10 @@
 class Libsais < Formula
   desc "Fast linear time suffix array, lcp array and bwt construction"
-  homepage "https:github.comIlyaGrebnovlibsais"
-  url "https:github.comIlyaGrebnovlibsaisarchiverefstagsv2.10.2.tar.gz"
+  homepage "https://github.com/IlyaGrebnov/libsais"
+  url "https://ghfast.top/https://github.com/IlyaGrebnov/libsais/archive/refs/tags/v2.10.2.tar.gz"
   sha256 "e2fe778b69dcd9e4a1df57b8eefb577f803788336855b6a5f9fbf22683f3980e"
   license "Apache-2.0"
-  head "https:github.comIlyaGrebnovlibsais.git", branch: "master"
+  head "https://github.com/IlyaGrebnov/libsais.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "24e0138a72b0551c4a633bf1b34bed2a773e603b95defd3be3fd225e7572deb1"
@@ -23,12 +23,12 @@ class Libsais < Formula
                     "-DLIBSAIS_BUILD_SHARED_LIB=ON",
                     *std_cmake_args
     system "cmake", "--build", "build"
-    lib.install shared_library("buildlibsais")
-    include.install "includelibsais.h"
+    lib.install shared_library("build/libsais")
+    include.install "include/libsais.h"
   end
 
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include <libsais.h>
       #include <stdlib.h>
       int main() {
@@ -50,6 +50,6 @@ class Libsais < Formula
       }
     C
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lsais", "-o", "test"
-    system ".test"
+    system "./test"
   end
 end

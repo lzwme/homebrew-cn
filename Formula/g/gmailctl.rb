@@ -1,10 +1,10 @@
 class Gmailctl < Formula
   desc "Declarative configuration for Gmail filters"
-  homepage "https:github.commbrtgmailctl"
-  url "https:github.commbrtgmailctlarchiverefstagsv0.11.0.tar.gz"
+  homepage "https://github.com/mbrt/gmailctl"
+  url "https://ghfast.top/https://github.com/mbrt/gmailctl/archive/refs/tags/v0.11.0.tar.gz"
   sha256 "6a299e60cfd5e58a327d2768cb9ce791b87d2e8be5293d29a4f4919d00cca2cf"
   license "MIT"
-  head "https:github.commbrtgmailctl.git", branch: "master"
+  head "https://github.com/mbrt/gmailctl.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "ee77aed19516c088c2d625ce4a0c235834e22b74092fec144dc1b48494f742ce"
@@ -18,15 +18,15 @@ class Gmailctl < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}"), "cmdgmailctlmain.go"
+    system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}"), "cmd/gmailctl/main.go"
 
-    generate_completions_from_executable(bin"gmailctl", "completion")
+    generate_completions_from_executable(bin/"gmailctl", "completion")
   end
 
   test do
-    assert_includes shell_output("#{bin}gmailctl init --config #{testpath} 2>&1", 1),
+    assert_includes shell_output("#{bin}/gmailctl init --config #{testpath} 2>&1", 1),
       "The credentials are not initialized"
 
-    assert_match version.to_s, shell_output("#{bin}gmailctl version")
+    assert_match version.to_s, shell_output("#{bin}/gmailctl version")
   end
 end

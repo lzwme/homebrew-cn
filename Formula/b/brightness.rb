@@ -1,10 +1,10 @@
 class Brightness < Formula
   desc "Change macOS display brightness from the command-line"
-  homepage "https:github.comnrileybrightness"
-  url "https:github.comnrileybrightnessarchiverefstags1.2.tar.gz"
+  homepage "https://github.com/nriley/brightness"
+  url "https://ghfast.top/https://github.com/nriley/brightness/archive/refs/tags/1.2.tar.gz"
   sha256 "6094c9f0d136f4afaa823d299f5ea6100061c1cec7730bf45c155fd98761f86b"
   license "BSD-2-Clause"
-  head "https:github.comnrileybrightness.git", branch: "master"
+  head "https://github.com/nriley/brightness.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -33,6 +33,6 @@ class Brightness < Formula
   end
 
   test do
-    system bin"brightness", "-l"
+    system bin/"brightness", "-l"
   end
 end

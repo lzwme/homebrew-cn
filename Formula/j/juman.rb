@@ -1,15 +1,15 @@
 class Juman < Formula
   desc "Japanese morphological analysis system"
-  homepage "https:nlp.ist.i.kyoto-u.ac.jpindex.php?JUMAN"
+  homepage "https://nlp.ist.i.kyoto-u.ac.jp/index.php?JUMAN"
   license "BSD-3-Clause"
 
   stable do
-    url "https:nlp.ist.i.kyoto-u.ac.jpnl-resourcejumanjuman-7.01.tar.bz2"
+    url "https://nlp.ist.i.kyoto-u.ac.jp/nl-resource/juman/juman-7.01.tar.bz2"
     sha256 "64bee311de19e6d9577d007bb55281e44299972637bd8a2a8bc2efbad2f917c6"
 
     # Fix -flat_namespace being used on Big Sur and later.
     patch do
-      url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-pre-0.4.2.418-big_sur.diff"
+      url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-pre-0.4.2.418-big_sur.diff"
       sha256 "83af02f2aa2b746bb7225872cab29a253264be49db0ecebb12f841562d9a2923"
     end
   end
@@ -36,7 +36,7 @@ class Juman < Formula
   end
 
   head do
-    url "https:github.comku-nlpjuman.git", branch: "master"
+    url "https://github.com/ku-nlp/juman.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -50,7 +50,7 @@ class Juman < Formula
   end
 
   fails_with :gcc do
-    cause "makemat.libsmakemat: U00005f62U00005bb9U00008a5e  is undefined in  JUMAN.grammar ."
+    cause "makemat/.libs/makemat: U00005f62U00005bb9U00008a5e  is undefined in  JUMAN.grammar ."
   end
 
   def install
@@ -61,28 +61,28 @@ class Juman < Formula
 
     args = []
     if build.head?
-      inreplace "configure.ac", ^AC_PROG_CC$, "\\0\nAC_PROG_CPP"
+      inreplace "configure.ac", /^AC_PROG_CC$/, "\\0\nAC_PROG_CPP"
       system "autoreconf", "--force", "--install", "--verbose"
       # Work around macOS case-insensitive filesystem causing errors for HEAD build
       if OS.mac?
         mv "VERSION", "VERSION.txt"
-        inreplace ["Makefile.in", "jumanMakefile.in"], \bVERSION\b, "VERSION.txt"
+        inreplace ["Makefile.in", "juman/Makefile.in"], /\bVERSION\b/, "VERSION.txt"
       end
     elsif OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       # Help old config scripts identify arm64 linux
       args << "--build=aarch64-unknown-linux-gnu"
     end
 
-    system ".configure", *args, *std_configure_args
+    system "./configure", *args, *std_configure_args
     system "make"
     system "make", "install"
   end
 
   test do
-    assert_equal <<~EXPECT, pipe_output(bin"juman", "\xe4\xba\xac\xe9\x83\xbd\xe5\xa4\xa7\xe5\xad\xa6")
-      京都 きょうと 京都 名詞 6 地名 4 * 0 * 0 "代表表記:京都きょうと 地名:日本:府"
-      @ 京都 きょうと 京都 名詞 6 地名 4 * 0 * 0 "代表表記:京都きょうと 地名:日本:京都府:市"
-      大学 だいがく 大学 名詞 6 普通名詞 1 * 0 * 0 "代表表記:大学だいがく 組織名末尾 カテゴリ:場所-施設 ドメイン:教育・学習"
+    assert_equal <<~EXPECT, pipe_output(bin/"juman", "\xe4\xba\xac\xe9\x83\xbd\xe5\xa4\xa7\xe5\xad\xa6")
+      京都 きょうと 京都 名詞 6 地名 4 * 0 * 0 "代表表記:京都/きょうと 地名:日本:府"
+      @ 京都 きょうと 京都 名詞 6 地名 4 * 0 * 0 "代表表記:京都/きょうと 地名:日本:京都府:市"
+      大学 だいがく 大学 名詞 6 普通名詞 1 * 0 * 0 "代表表記:大学/だいがく 組織名末尾 カテゴリ:場所-施設 ドメイン:教育・学習"
       EOS
     EXPECT
   end

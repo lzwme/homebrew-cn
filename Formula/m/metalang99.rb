@@ -1,10 +1,10 @@
 class Metalang99 < Formula
   desc "C99 preprocessor-based metaprogramming language"
-  homepage "https:github.comHirrolotmetalang99"
-  url "https:github.comHirrolotmetalang99archiverefstagsv1.13.5.tar.gz"
+  homepage "https://github.com/Hirrolot/metalang99"
+  url "https://ghfast.top/https://github.com/Hirrolot/metalang99/archive/refs/tags/v1.13.5.tar.gz"
   sha256 "f3d1607d76b4b081d3295661c4c2b8d5fde4d5018b1aa409c84fb3a6660ffb90"
   license "MIT"
-  head "https:github.comHirrolotmetalang99.git", branch: "master"
+  head "https://github.com/Hirrolot/metalang99.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -17,7 +17,7 @@ class Metalang99 < Formula
   end
 
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include <stdio.h>
       #include <metalang99.h>
 
@@ -32,6 +32,6 @@ class Metalang99 < Formula
     C
 
     system ENV.cc, "test.c", "-I#{include}", "-o", "test"
-    assert_equal "120", shell_output(".test")
+    assert_equal "120", shell_output("./test")
   end
 end

@@ -1,13 +1,13 @@
 class BaculaFd < Formula
   desc "Network backup solution"
-  homepage "https:www.bacula.org"
-  url "https:downloads.sourceforge.netprojectbaculabacula15.0.3bacula-15.0.3.tar.gz"
+  homepage "https://www.bacula.org/"
+  url "https://downloads.sourceforge.net/project/bacula/bacula/15.0.3/bacula-15.0.3.tar.gz"
   sha256 "294afd3d2eb9d5b71c3d0e88fdf19eb513bfdb843b28d35c0552e4ae062827a1"
   license "AGPL-3.0-only" => { with: "openvpn-openssl-exception" }
 
   livecheck do
-    url "https:sourceforge.netprojectsbacularss?path=bacula"
-    regex(%r{url=.*?bacula(?:(?![^]*beta[^]*)[^]+)*bacula[._-]v?(\d+(?:\.\d+)+)\.t}i)
+    url "https://sourceforge.net/projects/bacula/rss?path=/bacula"
+    regex(%r{url=.*?/bacula(?:(?!/[^/]*beta[^/]*)/[^/]+)*/bacula[._-]v?(\d+(?:\.\d+)+)\.t}i)
   end
 
   bottle do
@@ -29,7 +29,7 @@ class BaculaFd < Formula
 
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
-    url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-pre-0.4.2.418-big_sur.diff"
+    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-pre-0.4.2.418-big_sur.diff"
     sha256 "83af02f2aa2b746bb7225872cab29a253264be49db0ecebb12f841562d9a2923"
   end
 
@@ -40,13 +40,13 @@ class BaculaFd < Formula
 
     # * sets --disable-conio in order to force the use of readline
     #   (conio support not tested)
-    # * working directory in varlibbacula, reasonable place that
+    # * working directory in /var/lib/bacula, reasonable place that
     #   matches Debian's location.
-    system ".configure", "--prefix=#{prefix}",
+    system "./configure", "--prefix=#{prefix}",
                           "--sbindir=#{bin}",
-                          "--with-working-dir=#{var}libbacula",
-                          "--with-pid-dir=#{var}run",
-                          "--with-logdir=#{var}logbacula",
+                          "--with-working-dir=#{var}/lib/bacula",
+                          "--with-pid-dir=#{var}/run",
+                          "--with-logdir=#{var}/log/bacula",
                           "--enable-client-only",
                           "--disable-conio",
                           "--with-readline=#{Formula["readline"].opt_prefix}"
@@ -55,21 +55,21 @@ class BaculaFd < Formula
     system "make", "install"
 
     # Avoid references to the Homebrew shims directory
-    inreplace prefix"etcbacula_config", "#{Superenv.shims_path}", ""
+    inreplace prefix/"etc/bacula_config", "#{Superenv.shims_path}/", ""
 
-    (var"libbacula").mkpath
+    (var/"lib/bacula").mkpath
   end
 
   def post_install
-    (var"run").mkpath
+    (var/"run").mkpath
   end
 
   service do
-    run [opt_bin"bacula-fd", "-f"]
+    run [opt_bin/"bacula-fd", "-f"]
     require_root true
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}bacula-fd -? 2>&1", 1)
+    assert_match version.to_s, shell_output("#{bin}/bacula-fd -? 2>&1", 1)
   end
 end

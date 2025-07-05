@@ -1,14 +1,14 @@
 class Wxmaxima < Formula
   desc "Cross platform GUI for Maxima"
-  homepage "https:wxmaxima-developers.github.iowxmaxima"
-  url "https:github.comwxMaxima-developerswxmaximaarchiverefstagsVersion-25.04.0.tar.gz"
+  homepage "https://wxmaxima-developers.github.io/wxmaxima/"
+  url "https://ghfast.top/https://github.com/wxMaxima-developers/wxmaxima/archive/refs/tags/Version-25.04.0.tar.gz"
   sha256 "ec0b3005c3663f1bb86b0cc5028c2ba121e1563e3d5b671afcb9774895f4191b"
   license "GPL-2.0-or-later"
-  head "https:github.comwxMaxima-developerswxmaxima.git", branch: "main"
+  head "https://github.com/wxMaxima-developers/wxmaxima.git", branch: "main"
 
   livecheck do
     url :stable
-    regex(^Version[._-]v?(\d+(?:\.\d+)+)$i)
+    regex(/^Version[._-]v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -33,7 +33,7 @@ class Wxmaxima < Formula
   fails_with :clang do
     build 1300
     cause <<~EOS
-      ...srcMathParser.cpp:1239:10: error: no viable conversion from returned value
+      .../src/MathParser.cpp:1239:10: error: no viable conversion from returned value
       of type 'CellListBuilder<>' to function return type 'std::unique_ptr<Cell>'
         return tree;
                ^~~~
@@ -44,30 +44,30 @@ class Wxmaxima < Formula
     ENV.llvm_clang if OS.mac? && (DevelopmentTools.clang_build_version <= 1300)
 
     # Disable CMake fixup_bundle to prevent copying dylibs
-    inreplace "srcCMakeLists.txt", "fixup_bundle(", "# \\0"
+    inreplace "src/CMakeLists.txt", "fixup_bundle(", "# \\0"
 
-    # https:github.comwxMaxima-developerswxmaximablobmainCompiling.md#wxwidgets-isnt-found
+    # https://github.com/wxMaxima-developers/wxmaxima/blob/main/Compiling.md#wxwidgets-isnt-found
     args = OS.mac? ? [] : ["-DWXM_DISABLE_WEBVIEW=ON"]
 
     system "cmake", "-S", ".", "-B", "build-wxm", "-G", "Ninja", *args, *std_cmake_args
     system "cmake", "--build", "build-wxm"
     system "cmake", "--install", "build-wxm"
-    bash_completion.install "datawxmaxima"
+    bash_completion.install "data/wxmaxima"
 
     return unless OS.mac?
 
-    bin.write_exec_script prefix"wxmaxima.appContentsMacOSwxmaxima"
+    bin.write_exec_script prefix/"wxmaxima.app/Contents/MacOS/wxmaxima"
   end
 
   def caveats
     <<~EOS
       When you start wxMaxima the first time, set the path to Maxima
-      (e.g. #{HOMEBREW_PREFIX}binmaxima) in the Preferences.
+      (e.g. #{HOMEBREW_PREFIX}/bin/maxima) in the Preferences.
 
       Enable gnuplot functionality by setting the following variables
-      in ~.maximamaxima-init.mac:
-        gnuplot_command:"#{HOMEBREW_PREFIX}bingnuplot"$
-        draw_command:"#{HOMEBREW_PREFIX}bingnuplot"$
+      in ~/.maxima/maxima-init.mac:
+        gnuplot_command:"#{HOMEBREW_PREFIX}/bin/gnuplot"$
+        draw_command:"#{HOMEBREW_PREFIX}/bin/gnuplot"$
     EOS
   end
 
@@ -75,7 +75,7 @@ class Wxmaxima < Formula
     # Error: Unable to initialize GTK+, is DISPLAY set properly
     return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
 
-    assert_equal "wxMaxima #{version}", shell_output(bin"wxmaxima --version 2>&1").chomp
-    assert_match "extra Maxima arguments", shell_output("#{bin}wxmaxima --help 2>&1", 1)
+    assert_equal "wxMaxima #{version}", shell_output(bin/"wxmaxima --version 2>&1").chomp
+    assert_match "extra Maxima arguments", shell_output("#{bin}/wxmaxima --help 2>&1", 1)
   end
 end

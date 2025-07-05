@@ -2,12 +2,12 @@ cask "font-alegreya-sc" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefonts.git",
-      verified:  "github.comgooglefonts",
+  url "https://github.com/google/fonts.git",
+      verified:  "github.com/google/fonts",
       branch:    "main",
-      only_path: "oflalegreyasc"
+      only_path: "ofl/alegreyasc"
   name "Alegreya SC"
-  homepage "https:fonts.google.comspecimenAlegreya+SC"
+  homepage "https://fonts.google.com/specimen/Alegreya+SC"
 
   font "AlegreyaSC-Black.ttf"
   font "AlegreyaSC-BlackItalic.ttf"

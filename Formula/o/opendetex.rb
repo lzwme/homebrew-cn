@@ -1,7 +1,7 @@
 class Opendetex < Formula
   desc "Tool to strip TeX or LaTeX commands from documents"
-  homepage "https:github.compkubowiczopendetex"
-  url "https:github.compkubowiczopendetexreleasesdownloadv2.8.11opendetex-2.8.11.tar.bz2"
+  homepage "https://github.com/pkubowicz/opendetex"
+  url "https://ghfast.top/https://github.com/pkubowicz/opendetex/releases/download/v2.8.11/opendetex-2.8.11.tar.bz2"
   sha256 "f5771afc607134f65d502d733552cbc79ef06eee44601ae8077b79d852daa05f"
   license "BSD-3-Clause"
 
@@ -29,14 +29,14 @@ class Opendetex < Formula
   end
 
   test do
-    (testpath"test.tex").write <<~'TEX'
+    (testpath/"test.tex").write <<~'TEX'
       \documentclass{article}
       \begin{document}
       Simple \emph{text}.
       \end{document}
     TEX
 
-    output = shell_output("#{bin}detex test.tex")
+    output = shell_output("#{bin}/detex test.tex")
     assert_equal "Simple text.\n", output
   end
 end

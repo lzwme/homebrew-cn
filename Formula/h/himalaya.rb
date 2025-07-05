@@ -1,7 +1,7 @@
 class Himalaya < Formula
   desc "CLI email client written in Rust"
-  homepage "https:github.compimalayahimalaya"
-  url "https:github.compimalayahimalayaarchiverefstagsv1.1.0.tar.gz"
+  homepage "https://github.com/pimalaya/himalaya"
+  url "https://ghfast.top/https://github.com/pimalaya/himalaya/archive/refs/tags/v1.1.0.tar.gz"
   sha256 "bc5ee10ebdb23ea205215650070373dc591f083a96b1d6d038aa23a105256f94"
   license "MIT"
 
@@ -22,31 +22,31 @@ class Himalaya < Formula
     depends_on "openssl@3"
   end
 
-  # revert `cc` crate to 1.2.7, upstream pr ref, https:github.compimalayahimalayapull542
+  # revert `cc` crate to 1.2.7, upstream pr ref, https://github.com/pimalaya/himalaya/pull/542
   patch do
-    url "https:github.compimalayahimalayacommitea70e7c123fd8b30e5b36ab62bfcfafa63779797.patch?full_index=1"
+    url "https://github.com/pimalaya/himalaya/commit/ea70e7c123fd8b30e5b36ab62bfcfafa63779797.patch?full_index=1"
     sha256 "44e8c415819272971787761f285be397ddc384a4230890bf1c8494c786b45373"
   end
 
   def install
     system "cargo", "install", *std_cargo_args
 
-    system bin"himalaya", "man", buildpath
+    system bin/"himalaya", "man", buildpath
     man1.install Dir["*.1"]
-    generate_completions_from_executable(bin"himalaya", "completion")
+    generate_completions_from_executable(bin/"himalaya", "completion")
   end
 
   test do
-    # See https:github.compimalayahimalaya#configuration
-    (testpath".confighimalayaconfig.toml").write <<~TOML
+    # See https://github.com/pimalaya/himalaya#configuration
+    (testpath/".config/himalaya/config.toml").write <<~TOML
       [accounts.gmail]
       default = true
       email = "example@gmail.com"
 
       folder.alias.inbox = "INBOX"
-      folder.alias.sent = "[Gmail]Sent Mail"
-      folder.alias.drafts = "[Gmail]Drafts"
-      folder.alias.trash = "[Gmail]Trash"
+      folder.alias.sent = "[Gmail]/Sent Mail"
+      folder.alias.drafts = "[Gmail]/Drafts"
+      folder.alias.trash = "[Gmail]/Trash"
 
       backend.type = "imap"
       backend.host = "imap.gmail.com"
@@ -63,6 +63,6 @@ class Himalaya < Formula
       message.send.backend.auth.cmd = "*****"
     TOML
 
-    assert_match "cannot authenticate to IMAP server", shell_output(bin"himalaya 2>&1", 1)
+    assert_match "cannot authenticate to IMAP server", shell_output(bin/"himalaya 2>&1", 1)
   end
 end

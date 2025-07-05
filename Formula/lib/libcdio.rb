@@ -1,7 +1,7 @@
 class Libcdio < Formula
   desc "Compact Disc Input and Control Library"
-  homepage "https:savannah.gnu.orgprojectslibcdio"
-  url "https:github.comlibcdiolibcdioreleasesdownload2.2.0libcdio-2.2.0.tar.gz"
+  homepage "https://savannah.gnu.org/projects/libcdio/"
+  url "https://ghfast.top/https://github.com/libcdio/libcdio/releases/download/2.2.0/libcdio-2.2.0.tar.gz"
   sha256 "1b6c58137f71721ddb78773432d26252ee6500d92d227d4c4892631c30ea7abb"
   license "GPL-3.0-or-later"
 
@@ -20,11 +20,11 @@ class Libcdio < Formula
   depends_on "pkgconf" => :build
 
   def install
-    system ".configure", "--disable-silent-rules", *std_configure_args
+    system "./configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}cd-info -v", 1)
+    assert_match version.to_s, shell_output("#{bin}/cd-info -v", 1)
   end
 end

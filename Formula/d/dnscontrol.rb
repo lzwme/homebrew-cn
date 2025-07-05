@@ -1,11 +1,11 @@
 class Dnscontrol < Formula
   desc "Synchronize your DNS to multiple providers from a simple DSL"
-  homepage "https:dnscontrol.org"
-  url "https:github.comStackExchangednscontrolarchiverefstagsv4.21.0.tar.gz"
+  homepage "https://dnscontrol.org/"
+  url "https://ghfast.top/https://github.com/StackExchange/dnscontrol/archive/refs/tags/v4.21.0.tar.gz"
   sha256 "fb28227d0b94e0fa645989ea811dde9ec1ba272fb8ed5b1011788a710ffde3a8"
   license "MIT"
   version_scheme 1
-  head "https:github.comStackExchangednscontrol.git", branch: "main"
+  head "https://github.com/StackExchange/dnscontrol.git", branch: "main"
 
   # Upstream appears to use GitHub releases to indicate that a version is
   # released and they sometimes re-tag versions before that point, so it's
@@ -29,7 +29,7 @@ class Dnscontrol < Formula
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}")
 
-    generate_completions_from_executable(bin"dnscontrol", "shell-completion", shells: [:bash, :zsh])
+    generate_completions_from_executable(bin/"dnscontrol", "shell-completion", shells: [:bash, :zsh])
   end
 
   def caveats
@@ -37,10 +37,10 @@ class Dnscontrol < Formula
   end
 
   test do
-    version_output = shell_output("#{bin}dnscontrol version")
+    version_output = shell_output("#{bin}/dnscontrol version")
     assert_match version.to_s, version_output
 
-    (testpath"dnsconfig.js").write <<~JS
+    (testpath/"dnsconfig.js").write <<~JS
       var namecom = NewRegistrar("name.com", "NAMEDOTCOM");
       var r53 = NewDnsProvider("r53", "ROUTE53")
 
@@ -52,7 +52,7 @@ class Dnscontrol < Formula
       )
     JS
 
-    output = shell_output("#{bin}dnscontrol check #{testpath}dnsconfig.js 2>&1").strip
+    output = shell_output("#{bin}/dnscontrol check #{testpath}/dnsconfig.js 2>&1").strip
     assert_equal "No errors.", output
   end
 end

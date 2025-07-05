@@ -1,10 +1,10 @@
 class PlzCli < Formula
   desc "Copilot for your terminal"
-  homepage "https:github.comm1guelpfplz-cli"
-  url "https:github.comm1guelpfplz-cliarchiverefstagsv0.1.9.tar.gz"
+  homepage "https://github.com/m1guelpf/plz-cli"
+  url "https://ghfast.top/https://github.com/m1guelpf/plz-cli/archive/refs/tags/v0.1.9.tar.gz"
   sha256 "ea6b65deb69f86e53210d2457f49a53bb73ab52282fccc5b6cae8e8c059ecb00"
   license "MIT"
-  head "https:github.comm1guelpfplz-cli.git", branch: "main"
+  head "https://github.com/m1guelpf/plz-cli.git", branch: "main"
 
   no_autobump! because: :requires_manual_review
 
@@ -28,6 +28,6 @@ class PlzCli < Formula
 
   test do
     ENV["OPENAI_API_KEY"] = "sk-XXXXXXXX"
-    assert_match "API error", shell_output("#{bin}plz brewtest", 1)
+    assert_match "API error", shell_output("#{bin}/plz brewtest", 1)
   end
 end

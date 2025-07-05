@@ -2,28 +2,28 @@ cask "font-bungee" do
   version "2.001"
   sha256 "df293931cb01e8a8737defbcee3eb853db2af67271005d65e4508d541b6f592c"
 
-  url "https:github.comdjrrbbungeereleasesdownloadv#{version}Bungee-fonts.zip",
-      verified: "github.comdjrrbbungee"
+  url "https://ghfast.top/https://github.com/djrrb/bungee/releases/download/v#{version}/Bungee-fonts.zip",
+      verified: "github.com/djrrb/bungee/"
   name "Bungee"
-  homepage "https:djr.combungee"
+  homepage "https://djr.com/bungee/"
 
   no_autobump! because: :requires_manual_review
 
-  font "Bungee-fontsBungee_BasicBungee-Regular.ttf"
-  font "Bungee-fontsBungee_BasicBungeeHairline-Regular.ttf"
-  font "Bungee-fontsBungee_BasicBungeeInline-Regular.ttf"
-  font "Bungee-fontsBungee_BasicBungeeOutline-Regular.ttf"
-  font "Bungee-fontsBungee_BasicBungeeShade-Regular.ttf"
-  font "Bungee-fontsBungee_ColorBungeeSpice-Regular.ttf"
-  font "Bungee-fontsBungee_ColorBungeeTint-Regular.ttf"
-  font "Bungee-fontsBungee_LayersBungeeLayers-Regular.ttf"
-  font "Bungee-fontsBungee_LayersBungeeLayersInline-Regular.ttf"
-  font "Bungee-fontsBungee_LayersBungeeLayersOutline-Regular.ttf"
-  font "Bungee-fontsBungee_LayersBungeeLayersShade-Regular.ttf"
-  font "Bungee-fontsBungee_RotatedBungeeRotated-Regular.ttf"
-  font "Bungee-fontsBungee_RotatedBungeeRotatedInline-Regular.ttf"
-  font "Bungee-fontsBungee_RotatedBungeeRotatedOutline-Regular.ttf"
-  font "Bungee-fontsBungee_RotatedBungeeRotatedShade-Regular.ttf"
+  font "Bungee-fonts/Bungee_Basic/Bungee-Regular.ttf"
+  font "Bungee-fonts/Bungee_Basic/BungeeHairline-Regular.ttf"
+  font "Bungee-fonts/Bungee_Basic/BungeeInline-Regular.ttf"
+  font "Bungee-fonts/Bungee_Basic/BungeeOutline-Regular.ttf"
+  font "Bungee-fonts/Bungee_Basic/BungeeShade-Regular.ttf"
+  font "Bungee-fonts/Bungee_Color/BungeeSpice-Regular.ttf"
+  font "Bungee-fonts/Bungee_Color/BungeeTint-Regular.ttf"
+  font "Bungee-fonts/Bungee_Layers/BungeeLayers-Regular.ttf"
+  font "Bungee-fonts/Bungee_Layers/BungeeLayersInline-Regular.ttf"
+  font "Bungee-fonts/Bungee_Layers/BungeeLayersOutline-Regular.ttf"
+  font "Bungee-fonts/Bungee_Layers/BungeeLayersShade-Regular.ttf"
+  font "Bungee-fonts/Bungee_Rotated/BungeeRotated-Regular.ttf"
+  font "Bungee-fonts/Bungee_Rotated/BungeeRotatedInline-Regular.ttf"
+  font "Bungee-fonts/Bungee_Rotated/BungeeRotatedOutline-Regular.ttf"
+  font "Bungee-fonts/Bungee_Rotated/BungeeRotatedShade-Regular.ttf"
 
   # No zap stanza required
 end

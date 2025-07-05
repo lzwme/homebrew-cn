@@ -1,7 +1,7 @@
 class Bee < Formula
   desc "Tool for managing database changes"
-  homepage "https:github.combluesoftbee"
-  url "https:github.combluesoftbeereleasesdownload1.108bee-1.108.zip"
+  homepage "https://github.com/bluesoft/bee"
+  url "https://ghfast.top/https://github.com/bluesoft/bee/releases/download/1.108/bee-1.108.zip"
   sha256 "ce6206ef8a23046f79bd96cd894886f31bb199f4070a08183d0e423bb76d811d"
   license "MPL-1.1"
 
@@ -12,19 +12,19 @@ class Bee < Formula
   depends_on "openjdk"
 
   def install
-    rm_r(Dir["bin*.bat"])
+    rm_r(Dir["bin/*.bat"])
     libexec.install Dir["*"]
-    (bin"bee").write_env_script libexec"binbee", Language::Java.java_home_env
+    (bin/"bee").write_env_script libexec/"bin/bee", Language::Java.java_home_env
   end
 
   test do
-    (testpath"bee.properties").write <<~EOS
+    (testpath/"bee.properties").write <<~EOS
       test-database.driver=com.mysql.jdbc.Driver
-      test-database.url=jdbc:mysql:127.0.0.1test-database
+      test-database.url=jdbc:mysql://127.0.0.1/test-database
       test-database.user=root
       test-database.password=
     EOS
-    (testpath"bee").mkpath
-    system bin"bee", "-d", testpath"bee", "dbchange:create", "new-file"
+    (testpath/"bee").mkpath
+    system bin/"bee", "-d", testpath/"bee", "dbchange:create", "new-file"
   end
 end

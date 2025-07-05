@@ -1,7 +1,7 @@
 class Librsvg < Formula
   desc "Library to render SVG files using Cairo"
-  homepage "https:wiki.gnome.orgProjectsLibRsvg"
-  url "https:download.gnome.orgsourceslibrsvg2.60librsvg-2.60.0.tar.xz"
+  homepage "https://wiki.gnome.org/Projects/LibRsvg"
+  url "https://download.gnome.org/sources/librsvg/2.60/librsvg-2.60.0.tar.xz"
   sha256 "0b6ffccdf6e70afc9876882f5d2ce9ffcf2c713cbaaf1ad90170daa752e1eec3"
   license "LGPL-2.1-or-later"
 
@@ -10,7 +10,7 @@ class Librsvg < Formula
   # those are development releases.
   livecheck do
     url :stable
-    regex(librsvg[._-]v?(\d+\.\d+\.(?:\d|[1-8]\d+)(?:\.\d+)*)\.ti)
+    regex(/librsvg[._-]v?(\d+\.\d+\.(?:\d|[1-8]\d+)(?:\.\d+)*)\.t/i)
   end
 
   bottle do
@@ -50,8 +50,8 @@ class Librsvg < Formula
     ENV.append "RUSTFLAGS", "--codegen link-args=-Wl,-rpath,#{rpath}" if OS.mac?
 
     # disable updating gdk-pixbuf cache, we will do this manually in post_install
-    # https:github.comHomebrewhomebrewissues40833
-    ENV["DESTDIR"] = ""
+    # https://github.com/Homebrew/homebrew/issues/40833
+    ENV["DESTDIR"] = "/"
 
     system "meson", "setup", "build", "-Dintrospection=enabled",
                                       "-Dpixbuf=enabled",
@@ -60,9 +60,9 @@ class Librsvg < Formula
     system "meson", "compile", "-C", "build", "--verbose"
     system "meson", "install", "-C", "build"
 
-    # Workaround until https:gitlab.gnome.orgGNOMElibrsvg-merge_requests1049
+    # Workaround until https://gitlab.gnome.org/GNOME/librsvg/-/merge_requests/1049
     if OS.mac?
-      gdk_pixbuf_moduledir = lib.glob("gdk-pixbuf-**loaders").first
+      gdk_pixbuf_moduledir = lib.glob("gdk-pixbuf-*/*/loaders").first
       gdk_pixbuf_modules = gdk_pixbuf_moduledir.glob("*.dylib")
       odie "Try removing .so symlink workaround!" if gdk_pixbuf_modules.empty?
       gdk_pixbuf_moduledir.install_symlink gdk_pixbuf_modules.to_h { |m| [m, m.sub_ext(".so").basename] }
@@ -72,13 +72,13 @@ class Librsvg < Formula
   def post_install
     # librsvg is not aware GDK_PIXBUF_MODULEDIR must be set
     # set GDK_PIXBUF_MODULEDIR and update loader cache
-    ENV["GDK_PIXBUF_MODULEDIR"] = "#{HOMEBREW_PREFIX}libgdk-pixbuf-2.02.10.0loaders"
-    system "#{Formula["gdk-pixbuf"].opt_bin}gdk-pixbuf-query-loaders", "--update-cache"
+    ENV["GDK_PIXBUF_MODULEDIR"] = "#{HOMEBREW_PREFIX}/lib/gdk-pixbuf-2.0/2.10.0/loaders"
+    system "#{Formula["gdk-pixbuf"].opt_bin}/gdk-pixbuf-query-loaders", "--update-cache"
   end
 
   test do
-    (testpath"test.c").write <<~C
-      #include <librsvgrsvg.h>
+    (testpath/"test.c").write <<~C
+      #include <librsvg/rsvg.h>
 
       int main(int argc, char *argv[]) {
         RsvgHandle *handle = rsvg_handle_new();
@@ -87,6 +87,6 @@ class Librsvg < Formula
     C
     flags = shell_output("pkgconf --cflags --libs librsvg-2.0").chomp.split
     system ENV.cc, "test.c", "-o", "test", *flags
-    system ".test"
+    system "./test"
   end
 end

@@ -1,14 +1,14 @@
 class MongoCDriver < Formula
   desc "C driver for MongoDB"
-  homepage "https:github.commongodbmongo-c-driver"
-  url "https:github.commongodbmongo-c-driverarchiverefstags2.0.2.tar.gz"
+  homepage "https://github.com/mongodb/mongo-c-driver"
+  url "https://ghfast.top/https://github.com/mongodb/mongo-c-driver/archive/refs/tags/2.0.2.tar.gz"
   sha256 "869395225b184ea9a527b33623b2c222d49230b5741071e7227fa7d7bbefdacf"
   license "Apache-2.0"
-  head "https:github.commongodbmongo-c-driver.git", branch: "master"
+  head "https://github.com/mongodb/mongo-c-driver.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -30,25 +30,25 @@ class MongoCDriver < Formula
 
   def install
     File.write "VERSION_CURRENT", version.to_s unless build.head?
-    inreplace "srclibmongocsrcmongocmongoc-config.h.in", "@MONGOC_CC@", ENV.cc
+    inreplace "src/libmongoc/src/mongoc/mongoc-config.h.in", "@MONGOC_CC@", ENV.cc
 
     system "cmake", "-S", ".", "-B", "build", "-DCMAKE_INSTALL_RPATH=#{rpath}", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 
-    (pkgshare"libbson").install "srclibbsonexamples"
-    (pkgshare"libmongoc").install "srclibmongocexamples"
+    (pkgshare/"libbson").install "src/libbson/examples"
+    (pkgshare/"libmongoc").install "src/libmongoc/examples"
   end
 
   test do
-    system ENV.cc, "-o", "test", pkgshare"libbsonexamplesjson-to-bson.c",
-      "-I#{include}bson-#{version.major_minor_patch}", "-L#{lib}", "-lbson2"
-    (testpath"test.json").write('{"name": "test"}')
-    assert_match "\u0000test\u0000", shell_output(".test test.json")
+    system ENV.cc, "-o", "test", pkgshare/"libbson/examples/json-to-bson.c",
+      "-I#{include}/bson-#{version.major_minor_patch}", "-L#{lib}", "-lbson2"
+    (testpath/"test.json").write('{"name": "test"}')
+    assert_match "\u0000test\u0000", shell_output("./test test.json")
 
-    system ENV.cc, "-o", "test", pkgshare"libmongocexamplesmongoc-ping.c",
-      "-I#{include}mongoc-#{version.major_minor_patch}", "-I#{include}bson-#{version.major_minor_patch}",
+    system ENV.cc, "-o", "test", pkgshare/"libmongoc/examples/mongoc-ping.c",
+      "-I#{include}/mongoc-#{version.major_minor_patch}", "-I#{include}/bson-#{version.major_minor_patch}",
       "-L#{lib}", "-lmongoc2", "-lbson2"
-    assert_match "No suitable servers", shell_output(".test mongodb:0.0.0.0 2>&1", 3)
+    assert_match "No suitable servers", shell_output("./test mongodb://0.0.0.0 2>&1", 3)
   end
 end

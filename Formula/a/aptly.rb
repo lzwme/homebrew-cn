@@ -1,14 +1,14 @@
 class Aptly < Formula
   desc "Swiss army knife for Debian repository management"
-  homepage "https:www.aptly.info"
-  url "https:github.comaptly-devaptlyarchiverefstagsv1.6.2.tar.gz"
+  homepage "https://www.aptly.info/"
+  url "https://ghfast.top/https://github.com/aptly-dev/aptly/archive/refs/tags/v1.6.2.tar.gz"
   sha256 "cadfabda2a59f397adfe6f9ce3c9ddc6fe4c6052f0e03a300ba1f22d7cf0e09a"
   license "MIT"
-  head "https:github.comaptly-devaptly.git", branch: "master"
+  head "https://github.com/aptly-dev/aptly.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -26,17 +26,17 @@ class Aptly < Formula
     system "go", "generate"
     system "go", "build", *std_go_args(ldflags: "-s -w -X main.Version=#{version}")
 
-    bash_completion.install "completion.daptly"
-    zsh_completion.install "completion.d_aptly"
+    bash_completion.install "completion.d/aptly"
+    zsh_completion.install "completion.d/_aptly"
 
-    man1.install "manaptly.1"
+    man1.install "man/aptly.1"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}aptly version")
+    assert_match version.to_s, shell_output("#{bin}/aptly version")
 
-    (testpath".aptly.conf").write("{}")
-    result = shell_output("#{bin}aptly -config='#{testpath}.aptly.conf' mirror list")
+    (testpath/".aptly.conf").write("{}")
+    result = shell_output("#{bin}/aptly -config='#{testpath}/.aptly.conf' mirror list")
     assert_match "No mirrors found, create one with", result
   end
 end

@@ -1,10 +1,10 @@
 class Ubi < Formula
   desc "Universal Binary Installer"
-  homepage "https:github.comhouseabsoluteubi"
-  url "https:github.comhouseabsoluteubiarchiverefstagsv0.7.2.tar.gz"
+  homepage "https://github.com/houseabsolute/ubi"
+  url "https://ghfast.top/https://github.com/houseabsolute/ubi/archive/refs/tags/v0.7.2.tar.gz"
   sha256 "e9f6a2d688476c0ebb89164c0e54fdbd97f4c31fced855ef9d3bb37bfdc4852c"
   license any_of: ["Apache-2.0", "MIT"]
-  head "https:github.comhouseabsoluteubi.git", branch: "master"
+  head "https://github.com/houseabsolute/ubi.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "143dd359448347b21815b5d25d6cdae257a5d864787da673fe0ab41c52a1dce3"
@@ -28,9 +28,9 @@ class Ubi < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}ubi --version")
+    assert_match version.to_s, shell_output("#{bin}/ubi --version")
 
-    system bin"ubi", "--project", "houseabsoluteprecious"
-    system testpath"binprecious", "--version"
+    system bin/"ubi", "--project", "houseabsolute/precious"
+    system testpath/"bin/precious", "--version"
   end
 end

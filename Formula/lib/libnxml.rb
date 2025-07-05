@@ -1,10 +1,10 @@
 class Libnxml < Formula
   desc "C library for parsing, writing, and creating XML files"
-  homepage "https:github.combakulflibnxml"
-  url "https:github.combakulflibnxmlarchiverefstags0.18.5.tar.gz"
+  homepage "https://github.com/bakulf/libnxml"
+  url "https://ghfast.top/https://github.com/bakulf/libnxml/archive/refs/tags/0.18.5.tar.gz"
   sha256 "263d6424db3cd5f17a9f6300594548e82449ed22af59e9e5534646fa0dabd6a7"
   license "LGPL-2.1-or-later"
-  head "https:github.combakulflibnxml.git", branch: "master"
+  head "https://github.com/bakulf/libnxml.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -29,17 +29,17 @@ class Libnxml < Formula
 
   def install
     system "autoreconf", "--force", "--install", "--verbose"
-    system ".configure", *std_configure_args
+    system "./configure", *std_configure_args
     system "make", "install"
   end
 
   test do
-    (testpath"test.xml").write <<~XML
+    (testpath/"test.xml").write <<~XML
       <?xml version="1.0" encoding="UTF-8"?>
-      <root>Hello world!<child>This is a child element.<child><root>
+      <root>Hello world!<child>This is a child element.</child></root>
     XML
 
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include <nxml.h>
 
       int main(int argc, char **argv) {
@@ -76,6 +76,6 @@ class Libnxml < Formula
 
     flags = shell_output("pkgconf --cflags --libs nxml").chomp.split
     system ENV.cc, "test.c", "-o", "test", *flags
-    assert_equal "root: Hello world!\n", shell_output(".test")
+    assert_equal "root: Hello world!\n", shell_output("./test")
   end
 end

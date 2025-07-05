@@ -1,7 +1,7 @@
 class Apophenia < Formula
   desc "C library for statistical and scientific computing"
-  homepage "https:github.comb-kapophenia"
-  url "https:github.comb-kapopheniaarchiverefstagsv1.0.tar.gz"
+  homepage "https://github.com/b-k/apophenia"
+  url "https://ghfast.top/https://github.com/b-k/apophenia/archive/refs/tags/v1.0.tar.gz"
   sha256 "c753047a9230f9d9e105541f671c4961dc7998f4402972424e591404f33b82ca"
   license "GPL-2.0-only"
   revision 1
@@ -33,7 +33,7 @@ class Apophenia < Formula
   # Fix compilation with POSIX basename(3)
   # Patches already accepted upstream, remove on next release
   patch do
-    url "https:raw.githubusercontent.comHomebrewformula-patches9aaa7da2cc8dab92f16744724797739088742a29apopheniaposix-basename.diff"
+    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/9aaa7da2cc8dab92f16744724797739088742a29/apophenia/posix-basename.diff"
     sha256 "9d8d92c850cdb671032679e3ef46dafda96ffa6daf39769573392605cea41af3"
   end
 
@@ -42,12 +42,12 @@ class Apophenia < Formula
     system "autoreconf", "--force", "--install", "--verbose" if OS.mac?
 
     args = std_configure_args - ["--disable-debug"]
-    system ".configure", *args, "--disable-silent-rules"
+    system "./configure", *args, "--disable-silent-rules"
     system "make", "install"
   end
 
   test do
-    (testpath"foo.csv").write <<~CSV
+    (testpath/"foo.csv").write <<~CSV
       thud,bump
       1,2
       3,4
@@ -63,11 +63,11 @@ class Apophenia < Formula
           7\t    8
     EOS
 
-    system bin"apop_text_to_db", testpath"foo.csv", "bar", testpath"baz.db"
+    system bin/"apop_text_to_db", testpath/"foo.csv", "bar", testpath/"baz.db"
     sqlite_output = shell_output("sqlite3 baz.db '.mode csv' '.headers on' 'select * from bar'")
-    assert_equal (testpath"foo.csv").read, sqlite_output.gsub(\r\n?, "\n")
+    assert_equal (testpath/"foo.csv").read, sqlite_output.gsub(/\r\n?/, "\n")
 
-    query_output = shell_output("#{bin}apop_plot_query -d #{testpath"baz.db"} -q 'select thud,bump from bar' -f-")
+    query_output = shell_output("#{bin}/apop_plot_query -d #{testpath/"baz.db"} -q 'select thud,bump from bar' -f-")
     assert_equal query_output, expected_gnuplot_output
   end
 end

@@ -1,20 +1,20 @@
 class Pocl < Formula
   desc "Portable Computing Language"
-  homepage "https:portablecl.org"
+  homepage "https://portablecl.org/"
   license "MIT"
   revision 1
 
   stable do
     # TODO: Update to newer LLVM on next release
-    url "https:github.compoclpoclarchiverefstagsv6.0.tar.gz"
+    url "https://ghfast.top/https://github.com/pocl/pocl/archive/refs/tags/v6.0.tar.gz"
     sha256 "de9710223fc1855f833dbbf42ea2681e06aa8ec0464f0201104dc80a74dfd1f2"
 
-    depends_on "llvm@18" # LLVM 19: https:github.compoclpoclcommit802d347bd09921d5e6333ad9dd2c99c35004f398
+    depends_on "llvm@18" # LLVM 19: https://github.com/pocl/pocl/commit/802d347bd09921d5e6333ad9dd2c99c35004f398
   end
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -28,7 +28,7 @@ class Pocl < Formula
   end
 
   head do
-    url "https:github.compoclpocl.git", branch: "main"
+    url "https://github.com/pocl/pocl.git", branch: "main"
 
     depends_on "llvm"
   end
@@ -41,43 +41,43 @@ class Pocl < Formula
   uses_from_macos "python" => :build
 
   def llvm
-    deps.map(&:to_formula).find { |f| f.name.match?(^llvm(@\d+)?$) }
+    deps.map(&:to_formula).find { |f| f.name.match?(/^llvm(@\d+)?$/) }
   end
 
   def install
-    # Install the ICD into #{prefix}etc rather than #{etc} as it contains the realpath
+    # Install the ICD into #{prefix}/etc rather than #{etc} as it contains the realpath
     # to the shared library and needs to be kept up-to-date to work with an ICD loader.
     # This relies on `brew link` automatically creating and updating #{etc} symlinks.
-    rpaths = [loader_path, rpath(source: lib"pocl")]
+    rpaths = [loader_path, rpath(source: lib/"pocl")]
     rpaths << llvm.opt_lib.to_s if OS.linux?
     args = %W[
-      -DPOCL_INSTALL_ICD_VENDORDIR=#{prefix}etcOpenCLvendors
+      -DPOCL_INSTALL_ICD_VENDORDIR=#{prefix}/etc/OpenCL/vendors
       -DCMAKE_INSTALL_RPATH=#{rpaths.join(";")}
       -DENABLE_EXAMPLES=OFF
       -DENABLE_TESTS=OFF
-      -DWITH_LLVM_CONFIG=#{llvm.opt_bin}llvm-config
+      -DWITH_LLVM_CONFIG=#{llvm.opt_bin}/llvm-config
       -DLLVM_PREFIX=#{llvm.opt_prefix}
       -DLLVM_BINDIR=#{llvm.opt_bin}
       -DLLVM_LIBDIR=#{llvm.opt_lib}
       -DLLVM_INCLUDEDIR=#{llvm.opt_include}
     ]
     # Avoid installing another copy of OpenCL headers on macOS
-    args << "-DOPENCL_H=#{Formula["opencl-headers"].opt_include}CLopencl.h" if OS.mac?
-    # Only x86_64 supports "distro" which allows runtime detection of SSEAVX
+    args << "-DOPENCL_H=#{Formula["opencl-headers"].opt_include}/CL/opencl.h" if OS.mac?
+    # Only x86_64 supports "distro" which allows runtime detection of SSE/AVX
     args << "-DKERNELLIB_HOST_CPU_VARIANTS=distro" if Hardware::CPU.intel?
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
-    (pkgshare"examples").install "examplespoclcc"
+    (pkgshare/"examples").install "examples/poclcc"
   end
 
   test do
-    ENV["OCL_ICD_VENDORS"] = "#{opt_prefix}etcOpenCLvendors" # Ignore any other ICD that may be installed
-    cp pkgshare"examplespoclccpoclcc.cl", testpath
-    system bin"poclcc", "-o", "poclcc.cl.pocl", "poclcc.cl"
-    assert_path_exists testpath"poclcc.cl.pocl"
+    ENV["OCL_ICD_VENDORS"] = "#{opt_prefix}/etc/OpenCL/vendors" # Ignore any other ICD that may be installed
+    cp pkgshare/"examples/poclcc/poclcc.cl", testpath
+    system bin/"poclcc", "-o", "poclcc.cl.pocl", "poclcc.cl"
+    assert_path_exists testpath/"poclcc.cl.pocl"
     # Make sure that CMake found our OpenCL headers and didn't install a copy
-    refute_path_exists include"OpenCL"
+    refute_path_exists include/"OpenCL"
   end
 end

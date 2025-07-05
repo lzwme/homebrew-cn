@@ -1,7 +1,7 @@
 class Wren < Formula
   desc "Small, fast, class-based concurrent scripting language"
-  homepage "https:wren.io"
-  url "https:github.comwren-langwrenarchiverefstags0.4.0.tar.gz"
+  homepage "https://wren.io"
+  url "https://ghfast.top/https://github.com/wren-lang/wren/archive/refs/tags/0.4.0.tar.gz"
   sha256 "23c0ddeb6c67a4ed9285bded49f7c91714922c2e7bb88f42428386bf1cf7b339"
   license "MIT"
 
@@ -30,17 +30,17 @@ class Wren < Formula
 
   def install
     if OS.mac?
-      system "make", "-C", "projectsmake.mac"
+      system "make", "-C", "projects/make.mac"
     else
-      system "make", "-C", "projectsmake"
+      system "make", "-C", "projects/make"
     end
-    lib.install Dir["lib*"]
-    include.install Dir["srcinclude*"]
+    lib.install Dir["lib/*"]
+    include.install Dir["src/include/*"]
     pkgshare.install "example"
   end
 
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include <assert.h>
       #include <stdio.h>
       #include "wren.h"
@@ -59,6 +59,6 @@ class Wren < Formula
       }
     C
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lwren", "-o", "test"
-    assert_equal "1 + 2 = 3", shell_output(".test").strip
+    assert_equal "1 + 2 = 3", shell_output("./test").strip
   end
 end

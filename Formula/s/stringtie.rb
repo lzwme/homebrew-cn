@@ -1,10 +1,10 @@
 class Stringtie < Formula
   desc "Transcript assembly and quantification for RNA-Seq"
-  homepage "https:github.comgperteastringtie"
-  url "https:github.comgperteastringtiearchiverefstagsv3.0.1.tar.gz"
+  homepage "https://github.com/gpertea/stringtie"
+  url "https://ghfast.top/https://github.com/gpertea/stringtie/archive/refs/tags/v3.0.1.tar.gz"
   sha256 "aa831451ae08f1ea524db2709d135208695bf66fc2dbcdfb3d1d8461430e2ba9"
   license "MIT"
-  head "https:github.comgperteastringtie.git", branch: "master"
+  head "https://github.com/gpertea/stringtie.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -31,13 +31,13 @@ class Stringtie < Formula
 
   test do
     resource "homebrew-test" do
-      url "https:github.comgperteastringtierawtest_datatests.tar.gz"
+      url "https://github.com/gpertea/stringtie/raw/test_data/tests.tar.gz"
       sha256 "815a31b2664166faa59cdd25f0dc2da3d3dcb13e69ee644abb972a93d374ac10"
     end
 
     resource("homebrew-test").stage testpath
-    assert_match version.to_s, shell_output("#{bin}stringtie --version")
-    system bin"stringtie", "-o", "short_reads.out.gtf", "short_reads.bam"
+    assert_match version.to_s, shell_output("#{bin}/stringtie --version")
+    system bin/"stringtie", "-o", "short_reads.out.gtf", "short_reads.bam"
     assert_path_exists "short_reads.out.gtf"
   end
 end

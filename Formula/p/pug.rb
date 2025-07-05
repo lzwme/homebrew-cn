@@ -1,10 +1,10 @@
 class Pug < Formula
   desc "Drive terraform at terminal velocity"
-  homepage "https:github.comleg100pug"
-  url "https:github.comleg100pugarchiverefstagsv0.6.2.tar.gz"
+  homepage "https://github.com/leg100/pug"
+  url "https://ghfast.top/https://github.com/leg100/pug/archive/refs/tags/v0.6.2.tar.gz"
   sha256 "e4a298523b450883be7bb3a9ab3f40c5d821ac88bd91d682093595c537a7f45d"
   license "MPL-2.0"
-  head "https:github.comleg100pug.git", branch: "master"
+  head "https://github.com/leg100/pug.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "42846ed3a6a39b4a03222a858abe4d8c2e7997f897f7dcce63f1c14ac4dcc5f6"
@@ -18,24 +18,24 @@ class Pug < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = "-s -w -X github.comleg100puginternalversion.Version=#{version}"
+    ldflags = "-s -w -X github.com/leg100/pug/internal/version.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:)
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}pug --version")
+    assert_match version.to_s, shell_output("#{bin}/pug --version")
 
-    # Fails in Linux CI with `open devtty: no such device or address`
+    # Fails in Linux CI with `open /dev/tty: no such device or address`
     return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
 
     begin
-      output_log = testpath"output.log"
-      pid = spawn bin"pug", "--debug", [:out, :err] => output_log.to_s
+      output_log = testpath/"output.log"
+      pid = spawn bin/"pug", "--debug", [:out, :err] => output_log.to_s
 
       sleep 1
 
       assert_match "loaded 0 modules", output_log.read
-      assert_path_exists testpath"messages.log"
+      assert_path_exists testpath/"messages.log"
     ensure
       Process.kill("TERM", pid)
       Process.wait(pid)

@@ -1,10 +1,10 @@
 class Ferium < Formula
   desc "Fast and multi-source CLI program for managing Minecraft mods and modpacks"
-  homepage "https:github.comgorilla-devsferium"
-  url "https:github.comgorilla-devsferiumarchiverefstagsv4.7.1.tar.gz"
+  homepage "https://github.com/gorilla-devs/ferium"
+  url "https://ghfast.top/https://github.com/gorilla-devs/ferium/archive/refs/tags/v4.7.1.tar.gz"
   sha256 "a9b9fd966f47d5f8c32e483a21ea476f6883f194e7813f1f81b0001e14b046a5"
   license "MPL-2.0"
-  head "https:github.comgorilla-devsferium.git", branch: "main"
+  head "https://github.com/gorilla-devs/ferium.git", branch: "main"
 
   no_autobump! because: :requires_manual_review
 
@@ -25,20 +25,20 @@ class Ferium < Formula
 
   def install
     system "cargo", "install", *std_cargo_args
-    generate_completions_from_executable(bin"ferium", "complete")
+    generate_completions_from_executable(bin/"ferium", "complete")
   end
 
   test do
-    system bin"ferium", "--help"
-    ENV["FERIUM_CONFIG_FILE"] = testpath"config.json"
-    system bin"ferium", "profile", "create",
+    system bin/"ferium", "--help"
+    ENV["FERIUM_CONFIG_FILE"] = testpath/"config.json"
+    system bin/"ferium", "profile", "create",
                          "--game-version", "1.19",
                          "--mod-loader", "quilt",
-                         "--output-dir", testpath"mods",
+                         "--output-dir", testpath/"mods",
                          "--name", "test"
-    system bin"ferium", "add", "sodium"
-    system bin"ferium", "list", "--verbose"
-    system bin"ferium", "upgrade"
-    refute_empty testpath.glob("mods*.jar")
+    system bin/"ferium", "add", "sodium"
+    system bin/"ferium", "list", "--verbose"
+    system bin/"ferium", "upgrade"
+    refute_empty testpath.glob("mods/*.jar")
   end
 end

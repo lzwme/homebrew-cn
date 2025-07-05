@@ -1,13 +1,13 @@
 class Libtcod < Formula
   desc "API for roguelike developers"
-  homepage "https:github.comlibtcodlibtcod"
-  url "https:github.comlibtcodlibtcodarchiverefstags2.1.1.tar.gz"
+  homepage "https://github.com/libtcod/libtcod"
+  url "https://ghfast.top/https://github.com/libtcod/libtcod/archive/refs/tags/2.1.1.tar.gz"
   sha256 "ee9cc60140f480f72cb2321d5aa50beeaa829b0a4a651e8a37e2ba938ea23caa"
   license all_of: [
     "BSD-3-Clause",
-    "Zlib", # srcvendorlodepng.c
-    { all_of: ["MIT", "Unicode-DFS-2015"] }, # srcvendorutf8procutf8proc.c
-    { any_of: ["MIT", "Unlicense"] }, # srcvendorstb_truetype.h
+    "Zlib", # src/vendor/lodepng.c
+    { all_of: ["MIT", "Unicode-DFS-2015"] }, # src/vendor/utf8proc/utf8proc.c
+    { any_of: ["MIT", "Unlicense"] }, # src/vendor/stb_truetype.h
   ]
 
   no_autobump! because: :requires_manual_review
@@ -33,7 +33,7 @@ class Libtcod < Formula
   conflicts_with "libzip", because: "libtcod and libzip install a `zip.h` header"
 
   def install
-    rm_r("srcvendorzlib")
+    rm_r("src/vendor/zlib")
 
     system "cmake", "-S", ".", "-B", "build",
                     "-DBUILD_SHARED_LIBS=ON",
@@ -41,15 +41,15 @@ class Libtcod < Formula
                     "-DCMAKE_TOOLCHAIN_FILE=",
                     "-DLIBTCOD_LODEPNG=vendored",
                     "-DLIBTCOD_STB=vendored",
-                    "-DLIBTCOD_UTF8PROC=vendored", # https:github.comJuliaStringsutf8procpull260
+                    "-DLIBTCOD_UTF8PROC=vendored", # https://github.com/JuliaStrings/utf8proc/pull/260
                     *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end
 
   test do
-    (testpath"version-c.c").write <<~C
-      #include <libtcodlibtcod.h>
+    (testpath/"version-c.c").write <<~C
+      #include <libtcod/libtcod.h>
       #include <stdio.h>
       int main()
       {
@@ -58,9 +58,9 @@ class Libtcod < Formula
       }
     C
     system ENV.cc, "-I#{include}", "-L#{lib}", "-ltcod", "version-c.c", "-o", "version-c"
-    assert_equal version.to_s, shell_output(".version-c").strip
-    (testpath"version-cc.cc").write <<~CPP
-      #include <libtcodlibtcod.hpp>
+    assert_equal version.to_s, shell_output("./version-c").strip
+    (testpath/"version-cc.cc").write <<~CPP
+      #include <libtcod/libtcod.hpp>
       #include <iostream>
       int main()
       {
@@ -69,6 +69,6 @@ class Libtcod < Formula
       }
     CPP
     system ENV.cxx, "-std=c++17", "-I#{include}", "-L#{lib}", "-ltcod", "version-cc.cc", "-o", "version-cc"
-    assert_equal version.to_s, shell_output(".version-cc").strip
+    assert_equal version.to_s, shell_output("./version-cc").strip
   end
 end

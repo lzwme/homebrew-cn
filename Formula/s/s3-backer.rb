@@ -1,8 +1,8 @@
 class S3Backer < Formula
   desc "FUSE-based single file backing store via Amazon S3"
-  homepage "https:github.comarchiecobbss3backer"
-  # Release distributions listed at https:github.comarchiecobbss3backerwikiDownloads
-  url "https:s3.amazonaws.comarchie-publics3backers3backer-2.1.5.tar.gz"
+  homepage "https://github.com/archiecobbs/s3backer"
+  # Release distributions listed at https://github.com/archiecobbs/s3backer/wiki/Downloads
+  url "https://s3.amazonaws.com/archie-public/s3backer/s3backer-2.1.5.tar.gz"
   sha256 "d834eef512fa99cedd7920586cae03729693613f67d380c1ac980564eed76c8e"
   license "GPL-2.0-or-later"
 
@@ -21,14 +21,14 @@ class S3Backer < Formula
   depends_on "zstd"
 
   def install
-    system ".configure", "--disable-silent-rules",
+    system "./configure", "--disable-silent-rules",
             *std_configure_args.reject { |s| s["--disable-debug"] }
     system "make", "install"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}s3backer --version 2>&1")
+    assert_match version.to_s, shell_output("#{bin}/s3backer --version 2>&1")
 
-    assert_match "no S3 bucket specified", shell_output("#{bin}s3backer 2>&1", 1)
+    assert_match "no S3 bucket specified", shell_output("#{bin}/s3backer 2>&1", 1)
   end
 end

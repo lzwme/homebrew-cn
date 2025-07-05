@@ -20,31 +20,31 @@ cask "commandpost" do
     sha256 "5168abc1c458220822dc17ec4f835c425c82b13066cbfde861fa5ddeb958ca84"
   end
 
-  url "https:github.comCommandPostCommandPostreleasesdownload#{version}CommandPost_#{version}.dmg",
-      verified: "github.comCommandPostCommandPost"
+  url "https://ghfast.top/https://github.com/CommandPost/CommandPost/releases/download/#{version}/CommandPost_#{version}.dmg",
+      verified: "github.com/CommandPost/CommandPost/"
   name "CommandPost"
   desc "Workflow enhancements for Final Cut Pro"
-  homepage "https:commandpost.io"
+  homepage "https://commandpost.io/"
 
   auto_updates true
   depends_on macos: ">= :sierra"
 
   app "CommandPost.app"
-  binary "#{appdir}CommandPost.appContentsFrameworkshscmdpost"
+  binary "#{appdir}/CommandPost.app/Contents/Frameworks/hs/cmdpost"
 
   uninstall quit:       "org.latenitefilms.CommandPost",
             login_item: "CommandPost"
 
   zap trash: [
-    "~LibraryApplication SupportCommandPost",
-    "~LibraryApplication Supportorg.latenitefilms.CommandPost",
-    "~LibraryCachescom.apple.nsurlsessiondDownloadsorg.latenitefilms.CommandPost",
-    "~LibraryCachescom.crashlytics.dataorg.latenitefilms.CommandPost",
-    "~LibraryCachesio.fabric.sdk.mac.dataorg.latenitefilms.CommandPost",
-    "~LibraryCachesorg.latenitefilms.CommandPost",
-    "~LibraryHTTPStoragesorg.latenitefilms.CommandPost",
-    "~LibraryPreferencesorg.latenitefilms.CommandPost.plist",
-    "~LibrarySaved Application Stateorg.latenitefilms.CommandPost.savedState",
-    "~LibraryWebKitorg.latenitefilms.CommandPost",
+    "~/Library/Application Support/CommandPost",
+    "~/Library/Application Support/org.latenitefilms.CommandPost",
+    "~/Library/Caches/com.apple.nsurlsessiond/Downloads/org.latenitefilms.CommandPost",
+    "~/Library/Caches/com.crashlytics.data/org.latenitefilms.CommandPost",
+    "~/Library/Caches/io.fabric.sdk.mac.data/org.latenitefilms.CommandPost",
+    "~/Library/Caches/org.latenitefilms.CommandPost",
+    "~/Library/HTTPStorages/org.latenitefilms.CommandPost",
+    "~/Library/Preferences/org.latenitefilms.CommandPost.plist",
+    "~/Library/Saved Application State/org.latenitefilms.CommandPost.savedState",
+    "~/Library/WebKit/org.latenitefilms.CommandPost",
   ]
 end

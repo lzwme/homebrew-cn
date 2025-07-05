@@ -1,14 +1,14 @@
 class Opencbm < Formula
   desc "Provides access to various floppy drive formats"
-  homepage "https:spiro.trikaliotis.netopencbm"
-  url "https:github.comOpenCBMOpenCBMarchiverefstagsv0.4.99.104.tar.gz"
+  homepage "https://spiro.trikaliotis.net/opencbm"
+  url "https://ghfast.top/https://github.com/OpenCBM/OpenCBM/archive/refs/tags/v0.4.99.104.tar.gz"
   sha256 "5499cd1143b4a246d6d7e93b94efbdf31fda0269d939d227ee5bcc0406b5056a"
   license "GPL-2.0-only"
-  head "https:github.comOpenCBMOpenCBM.git", branch: "master"
+  head "https://github.com/OpenCBM/OpenCBM.git", branch: "master"
 
   livecheck do
     url :homepage
-    regex(<h1[^>]*?>VERSION v?(\d+(?:\.\d+)+)i)
+    regex(/<h1[^>]*?>VERSION v?(\d+(?:\.\d+)+)/i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -37,11 +37,11 @@ class Opencbm < Formula
     ENV.deparallelize
 
     args = %W[
-      -fLINUXMakefile
+      -fLINUX/Makefile
       PREFIX=#{prefix}
       MANDIR=#{man1}
       ETCDIR=#{etc}
-      UDEVRULESDIR=#{lib}udevrules.d
+      UDEVRULESDIR=#{lib}/udev/rules.d
       LDCONFIG=
     ]
 
@@ -50,6 +50,6 @@ class Opencbm < Formula
   end
 
   test do
-    system bin"cbmctrl", "--help"
+    system bin/"cbmctrl", "--help"
   end
 end

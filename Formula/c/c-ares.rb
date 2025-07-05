@@ -1,14 +1,14 @@
 class CAres < Formula
   desc "Asynchronous DNS library"
-  homepage "https:c-ares.org"
-  url "https:github.comc-aresc-aresreleasesdownloadv1.34.5c-ares-1.34.5.tar.gz"
+  homepage "https://c-ares.org/"
+  url "https://ghfast.top/https://github.com/c-ares/c-ares/releases/download/v1.34.5/c-ares-1.34.5.tar.gz"
   sha256 "7d935790e9af081c25c495fd13c2cfcda4792983418e96358ef6e7320ee06346"
   license "MIT"
-  head "https:github.comc-aresc-ares.git", branch: "main"
+  head "https://github.com/c-ares/c-ares.git", branch: "main"
 
   livecheck do
     url :homepage
-    regex(href=.*?c-ares[._-](\d+(?:\.\d+)+)\.ti)
+    regex(/href=.*?c-ares[._-](\d+(?:\.\d+)+)\.t/i)
   end
 
   bottle do
@@ -37,7 +37,7 @@ class CAres < Formula
   end
 
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include <stdio.h>
       #include <ares.h>
 
@@ -49,8 +49,8 @@ class CAres < Formula
       }
     C
     system ENV.cc, "test.c", "-L#{lib}", "-lcares", "-o", "test"
-    system ".test"
+    system "./test"
 
-    system bin"ahost", "127.0.0.1"
+    system bin/"ahost", "127.0.0.1"
   end
 end

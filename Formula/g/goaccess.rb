@@ -1,14 +1,14 @@
 class Goaccess < Formula
   desc "Log analyzer and interactive viewer for the Apache Webserver"
-  homepage "https:goaccess.io"
-  url "https:tar.goaccess.iogoaccess-1.9.4.tar.gz"
+  homepage "https://goaccess.io/"
+  url "https://tar.goaccess.io/goaccess-1.9.4.tar.gz"
   sha256 "107d5a3cb186e6e7a8ac684a88d21a17884f128cb0bc4a4a53696145bb39373d"
   license "MIT"
-  head "https:github.comallinurlgoaccess.git", branch: "master"
+  head "https://github.com/allinurl/goaccess.git", branch: "master"
 
   livecheck do
-    url "https:goaccess.iodownload"
-    regex(href=.*?goaccess[._-]v?(\d+(?:\.\d+)+)\.ti)
+    url "https://goaccess.io/download"
+    regex(/href=.*?goaccess[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   bottle do
@@ -40,21 +40,21 @@ class Goaccess < Formula
       --with-libintl-prefix=#{Formula["gettext"].opt_prefix}
     ]
 
-    system ".configure", *args, *std_configure_args
+    system "./configure", *args, *std_configure_args
     system "make", "install"
   end
 
   test do
-    (testpath"access.log").write(
-      '127.0.0.1 - - [04May2015:15:48:17 +0200] "GET  HTTP1.1" 200 612 "-" ' \
-      '"Mozilla5.0 (Macintosh; Intel Mac OS X 10_10_3) ' \
-      'AppleWebKit537.36 (KHTML, like Gecko) Chrome42.0.2311.135 Safari537.36"',
+    (testpath/"access.log").write(
+      '127.0.0.1 - - [04/May/2015:15:48:17 +0200] "GET / HTTP/1.1" 200 612 "-" ' \
+      '"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_3) ' \
+      'AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.135 Safari/537.36"',
     )
 
     output = shell_output(
-      "#{bin}goaccess --time-format=%T --date-format=%d%b%Y " \
+      "#{bin}/goaccess --time-format=%T --date-format=%d/%b/%Y " \
       "--log-format='%h %^[%d:%t %^] \"%r\" %s %b \"%R\" \"%u\"' " \
-      "-f access.log -o json 2>devnull",
+      "-f access.log -o json 2>/dev/null",
     )
 
     assert_equal "Chrome", JSON.parse(output)["browsers"]["data"].first["data"]

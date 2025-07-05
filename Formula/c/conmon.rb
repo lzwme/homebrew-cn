@@ -1,10 +1,10 @@
 class Conmon < Formula
   desc "OCI container runtime monitor"
-  homepage "https:github.comcontainersconmon"
-  url "https:github.comcontainersconmonarchiverefstagsv2.1.13.tar.gz"
+  homepage "https://github.com/containers/conmon"
+  url "https://ghfast.top/https://github.com/containers/conmon/archive/refs/tags/v2.1.13.tar.gz"
   sha256 "350992cb2fe4a69c0caddcade67be20462b21b4078dae00750e8da1774926d60"
   license "Apache-2.0"
-  head "https:github.comcontainersconmon.git", branch: "main"
+  head "https://github.com/containers/conmon.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_linux:  "9090fd08bb3338252d8e29fa36aa5d06bdc6a3f5dd75a00bdaa83c565fe8860f"
@@ -24,6 +24,6 @@ class Conmon < Formula
   end
 
   test do
-    assert_match "conmon: Container ID not provided. Use --cid", shell_output("#{bin}conmon 2>&1", 1)
+    assert_match "conmon: Container ID not provided. Use --cid", shell_output("#{bin}/conmon 2>&1", 1)
   end
 end

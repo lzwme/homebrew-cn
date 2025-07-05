@@ -1,7 +1,7 @@
 class Inih < Formula
   desc "Simple .INI file parser in C"
-  homepage "https:github.combenhoytinih"
-  url "https:github.combenhoytiniharchiverefstagsr60.tar.gz"
+  homepage "https://github.com/benhoyt/inih"
+  url "https://ghfast.top/https://github.com/benhoyt/inih/archive/refs/tags/r60.tar.gz"
   sha256 "706aa05c888b53bd170e5d8aa8f8a9d9ccf5449dfed262d5103d1f292af26774"
   license "BSD-3-Clause"
 
@@ -25,7 +25,7 @@ class Inih < Formula
   end
 
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include <stdio.h>
       #include <string.h>
       #include <ini.h>
@@ -58,7 +58,7 @@ class Inih < Formula
       }
     C
 
-    (testpath"test.ini").write <<~EOS
+    (testpath/"test.ini").write <<~EOS
       [protocol]             ; Protocol configuration
       version=6              ; IPv6
 
@@ -81,6 +81,6 @@ class Inih < Formula
     EOS
 
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-linih", "-o", "test"
-    assert_equal expected, shell_output(".test test.ini")
+    assert_equal expected, shell_output("./test test.ini")
   end
 end

@@ -1,7 +1,7 @@
 class Sift < Formula
   desc "Fast and powerful open source alternative to grep"
-  homepage "https:sift-tool.org"
-  url "https:github.comsventsiftarchiverefstagsv0.9.0.tar.gz"
+  homepage "https://sift-tool.org/"
+  url "https://ghfast.top/https://github.com/svent/sift/archive/refs/tags/v0.9.0.tar.gz"
   sha256 "bbbd5c472c36b78896cd7ae673749d3943621a6d5523d47973ed2fc6800ae4c8"
   license "GPL-3.0-only"
 
@@ -19,24 +19,24 @@ class Sift < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "2a5dc83483b444b3850237050f761c8967ce36008114dad661a1424aa6068da3"
   end
 
-  # https:github.comsventsiftissues120
+  # https://github.com/svent/sift/issues/120
   deprecate! date: "2024-03-26", because: :unmaintained
   disable! date: "2025-03-26", because: :unmaintained
 
   depends_on "go" => :build
 
-  resource "github.comsventgo-flags" do
-    url "https:github.comsventgo-flags.git",
+  resource "github.com/svent/go-flags" do
+    url "https://github.com/svent/go-flags.git",
         revision: "4bcbad344f0318adaf7aabc16929701459009aa3"
   end
 
-  resource "github.comsventgo-nbreader" do
-    url "https:github.comsventgo-nbreader.git",
+  resource "github.com/svent/go-nbreader" do
+    url "https://github.com/svent/go-nbreader.git",
         revision: "7cef48da76dca6a496faa7fe63e39ed665cbd219"
   end
 
-  resource "golang.orgxcrypto" do
-    url "https:go.googlesource.comcrypto.git",
+  resource "golang.org/x/crypto" do
+    url "https://go.googlesource.com/crypto.git",
         revision: "3c0d69f1777220f1a1d2ec373cb94a282f03eb42"
   end
 
@@ -44,17 +44,17 @@ class Sift < Formula
     ENV["GOPATH"] = buildpath
     ENV["GO111MODULE"] = "auto"
 
-    (buildpath"srcgithub.comsventsift").install buildpath.children
-    resources.each { |r| (buildpath"src"r.name).install r }
-    cd "srcgithub.comsventsift" do
-      system "go", "build", "-o", bin"sift"
+    (buildpath/"src/github.com/svent/sift").install buildpath.children
+    resources.each { |r| (buildpath/"src"/r.name).install r }
+    cd "src/github.com/svent/sift" do
+      system "go", "build", "-o", bin/"sift"
 
       bash_completion.install "sift-completion.bash" => "sift"
     end
   end
 
   test do
-    (testpath"test.txt").write("where is foo\n")
-    assert_match "where is foo", shell_output("#{bin}sift foo #{testpath}")
+    (testpath/"test.txt").write("where is foo\n")
+    assert_match "where is foo", shell_output("#{bin}/sift foo #{testpath}")
   end
 end

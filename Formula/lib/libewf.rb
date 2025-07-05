@@ -1,15 +1,15 @@
 class Libewf < Formula
   desc "Library for support of the Expert Witness Compression Format"
-  homepage "https:github.comlibyallibewf"
+  homepage "https://github.com/libyal/libewf"
   # The main libewf repository is currently "experimental".
-  # See discussions in this issue: https:github.comlibyallibewfissues127
-  url "https:github.comlibyallibewf-legacyreleasesdownload20140816libewf-20140816.tar.gz"
+  # See discussions in this issue: https://github.com/libyal/libewf/issues/127
+  url "https://ghfast.top/https://github.com/libyal/libewf-legacy/releases/download/20140816/libewf-20140816.tar.gz"
   sha256 "6b2d078fb3861679ba83942fea51e9e6029c37ec2ea0c37f5744256d6f7025a9"
   license "LGPL-3.0-or-later"
 
   livecheck do
     url :stable
-    regex(^(?:libewf[._-])?v?(\d+(?:\.\d+)*)$i)
+    regex(/^(?:libewf[._-])?v?(\d+(?:\.\d+)*)$/i)
     strategy :github_latest
   end
 
@@ -26,7 +26,7 @@ class Libewf < Formula
   end
 
   head do
-    url "https:github.comlibyallibewf.git", branch: "main"
+    url "https://github.com/libyal/libewf.git", branch: "main"
     depends_on "autoconf" => :build
     depends_on "automake" => :build
     depends_on "gettext" => :build
@@ -41,8 +41,8 @@ class Libewf < Formula
 
   def install
     if build.head?
-      system ".synclibs.sh"
-      system ".autogen.sh"
+      system "./synclibs.sh"
+      system "./autogen.sh"
     end
 
     args = %w[
@@ -50,11 +50,11 @@ class Libewf < Formula
       --with-libfuse=no
     ]
 
-    system ".configure", *args, *std_configure_args
+    system "./configure", *args, *std_configure_args
     system "make", "install"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}ewfinfo -V")
+    assert_match version.to_s, shell_output("#{bin}/ewfinfo -V")
   end
 end

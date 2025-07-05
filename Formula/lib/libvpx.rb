@@ -1,10 +1,10 @@
 class Libvpx < Formula
-  desc "VP8VP9 video codec"
-  homepage "https:www.webmproject.orgcode"
-  url "https:github.comwebmprojectlibvpxarchiverefstagsv1.15.2.tar.gz"
+  desc "VP8/VP9 video codec"
+  homepage "https://www.webmproject.org/code/"
+  url "https://ghfast.top/https://github.com/webmproject/libvpx/archive/refs/tags/v1.15.2.tar.gz"
   sha256 "26fcd3db88045dee380e581862a6ef106f49b74b6396ee95c2993a260b4636aa"
   license "BSD-3-Clause"
-  head "https:chromium.googlesource.comwebmlibvpx.git", branch: "main"
+  head "https://chromium.googlesource.com/webm/libvpx.git", branch: "main"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "2f2d553f2f66735705b3962dca32a4a16bbfbe443c17898c0cea110d13bb012d"
@@ -23,7 +23,7 @@ class Libvpx < Formula
   def install
     ENV.runtime_cpu_detection
     # NOTE: `libvpx` will fail to build on new macOS versions before the
-    # `configure` and `buildmakeconfigure.sh` files are updated to support
+    # `configure` and `build/make/configure.sh` files are updated to support
     # the new target (e.g., `arm64-darwin24-gcc` for macOS 15). We [temporarily]
     # patch these files to add the new target (until there is a new version).
     # If we don't want to create a patch each year, we can consider using
@@ -42,12 +42,12 @@ class Libvpx < Formula
     args << "--target=#{Hardware::CPU.arch}-darwin#{OS.kernel_version.major}-gcc" if OS.mac?
 
     mkdir "macbuild" do
-      system "..configure", *args
+      system "../configure", *args
       system "make", "install"
     end
   end
 
   test do
-    system "ar", "-x", "#{lib}libvpx.a"
+    system "ar", "-x", "#{lib}/libvpx.a"
   end
 end

@@ -1,7 +1,7 @@
 class Beakerlib < Formula
   desc "Shell-level integration testing library"
-  homepage "https:github.combeakerlibbeakerlib"
-  url "https:github.combeakerlibbeakerlibarchiverefstags1.31.4.tar.gz"
+  homepage "https://github.com/beakerlib/beakerlib"
+  url "https://ghfast.top/https://github.com/beakerlib/beakerlib/archive/refs/tags/1.31.4.tar.gz"
   sha256 "1c1a5a376e71332e350c56f3ac0433d6b7570b4583400ee1e7a4c7d9cdc5f4cd"
   license "GPL-2.0-only"
 
@@ -25,26 +25,26 @@ class Beakerlib < Formula
     make_args = [
       "DD=#{prefix}",
     ]
-    make_args << "GETOPT_CMD=#{Formula["gnu-getopt"].opt_bin}getopt" if OS.mac?
-    make_args << "READLINK_CMD=#{Formula["coreutils"].opt_bin}greadlink" if OS.mac?
+    make_args << "GETOPT_CMD=#{Formula["gnu-getopt"].opt_bin}/getopt" if OS.mac?
+    make_args << "READLINK_CMD=#{Formula["coreutils"].opt_bin}/greadlink" if OS.mac?
     system "make", *make_args, "install"
   end
 
   test do
-    (testpath"test.sh").write <<~SHELL
-      #!usrbinenv bash
-      source #{share}beakerlibbeakerlib.sh || exit 1
+    (testpath/"test.sh").write <<~SHELL
+      #!/usr/bin/env bash
+      source #{share}/beakerlib/beakerlib.sh || exit 1
       rlJournalStart
         rlPhaseStartTest
           rlPass "All works"
         rlPhaseEnd
       rlJournalEnd
     SHELL
-    expected_journal = \[\s*PASS\s*\]\s*::\s*All works
+    expected_journal = /\[\s*PASS\s*\]\s*::\s*All works/
     ENV["BEAKERLIB_DIR"] = testpath
-    system "bash", "#{testpath}test.sh"
-    assert_match expected_journal, File.read(testpath"journal.txt")
-    assert_match "TESTRESULT_STATE=complete", File.read(testpath"TestResults")
-    assert_match "TESTRESULT_RESULT_STRING=PASS", File.read(testpath"TestResults")
+    system "bash", "#{testpath}/test.sh"
+    assert_match expected_journal, File.read(testpath/"journal.txt")
+    assert_match "TESTRESULT_STATE=complete", File.read(testpath/"TestResults")
+    assert_match "TESTRESULT_RESULT_STRING=PASS", File.read(testpath/"TestResults")
   end
 end

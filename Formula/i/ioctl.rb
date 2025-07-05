@@ -1,10 +1,10 @@
 class Ioctl < Formula
   desc "Command-line interface for interacting with the IoTeX blockchain"
-  homepage "https:docs.iotex.io"
-  url "https:github.comiotexprojectiotex-corearchiverefstagsv2.2.1.tar.gz"
+  homepage "https://docs.iotex.io/"
+  url "https://ghfast.top/https://github.com/iotexproject/iotex-core/archive/refs/tags/v2.2.1.tar.gz"
   sha256 "4eba51523829d49c236c64140f7d8ec051f174dd5797bc35e4d3a413953b4526"
   license "Apache-2.0"
-  head "https:github.comiotexprojectiotex-core.git", branch: "master"
+  head "https://github.com/iotexproject/iotex-core.git", branch: "master"
 
   livecheck do
     url :stable
@@ -25,11 +25,11 @@ class Ioctl < Formula
 
   def install
     system "make", "ioctl"
-    bin.install "binioctl"
+    bin.install "bin/ioctl"
   end
 
   test do
-    output = shell_output "#{bin}ioctl config set endpoint api.iotex.one:443"
+    output = shell_output "#{bin}/ioctl config set endpoint api.iotex.one:443"
     assert_match "Endpoint is set to api.iotex.one:443", output
   end
 end

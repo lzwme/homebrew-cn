@@ -1,10 +1,10 @@
 class CargoRelease < Formula
   desc "Cargo subcommand `release`: everything about releasing a rust crate"
-  homepage "https:github.comcrate-cicargo-release"
-  url "https:github.comcrate-cicargo-releasearchiverefstagsv0.25.18.tar.gz"
+  homepage "https://github.com/crate-ci/cargo-release"
+  url "https://ghfast.top/https://github.com/crate-ci/cargo-release/archive/refs/tags/v0.25.18.tar.gz"
   sha256 "a212d974db4cf46e580cf41e1f0bcf81ff30aac1dfe9e31cd0dc89c0b5eb3586"
   license any_of: ["Apache-2.0", "MIT"]
-  head "https:github.comcrate-cicargo-release.git", branch: "master"
+  head "https://github.com/crate-ci/cargo-release.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "1b9ef97a22b96c2855ff78669f71a2262e3d021e490f63a0846ef1822f5ab1e8"
@@ -28,10 +28,10 @@ class CargoRelease < Formula
   end
 
   test do
-    require "utilslinkage"
+    require "utils/linkage"
 
     # Show that we can use a different toolchain than the one provided by the `rust` formula.
-    # https:github.comHomebrewhomebrew-corepull134074#pullrequestreview-1484979359
+    # https://github.com/Homebrew/homebrew-core/pull/134074#pullrequestreview-1484979359
     ENV.prepend_path "PATH", Formula["rustup"].bin
     system "rustup", "set", "profile", "minimal"
     system "rustup", "default", "beta"
@@ -42,9 +42,9 @@ class CargoRelease < Formula
     end
 
     [
-      Formula["libgit2"].opt_libshared_library("libgit2"),
+      Formula["libgit2"].opt_lib/shared_library("libgit2"),
     ].each do |library|
-      assert Utils.binary_linked_to_library?(bin"cargo-release", library),
+      assert Utils.binary_linked_to_library?(bin/"cargo-release", library),
              "No linkage with #{library.basename}! Cargo is likely using a vendored version."
     end
   end

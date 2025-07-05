@@ -1,10 +1,10 @@
 class Circumflex < Formula
   desc "Hacker News in your terminal"
-  homepage "https:github.combensadehcircumflex"
-  url "https:github.combensadehcircumflexarchiverefstags3.8.tar.gz"
+  homepage "https://github.com/bensadeh/circumflex"
+  url "https://ghfast.top/https://github.com/bensadeh/circumflex/archive/refs/tags/3.8.tar.gz"
   sha256 "1041d27ef87a6fb123740d6423cd3fd66ced0ccf43d834c8d421aad3c8e8c96b"
   license "AGPL-3.0-only"
-  head "https:github.combensadehcircumflex.git", branch: "main"
+  head "https://github.com/bensadeh/circumflex.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "7703a8fe49c3a13299c37b9bd75f42674a245a866148a0d71d0b050be0e5b441"
@@ -19,14 +19,14 @@ class Circumflex < Formula
   depends_on "less"
 
   def install
-    system "go", "build", *std_go_args(output: bin"clx", ldflags: "-s -w")
-    man1.install "sharemanclx.1"
+    system "go", "build", *std_go_args(output: bin/"clx", ldflags: "-s -w")
+    man1.install "share/man/clx.1"
   end
 
   test do
-    assert_match "List of visited IDs cleared", shell_output("#{bin}clx clear 2>&1")
+    assert_match "List of visited IDs cleared", shell_output("#{bin}/clx clear 2>&1")
     return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"].present?
 
-    assert_match "Y Combinator", shell_output("#{bin}clx article 1")
+    assert_match "Y Combinator", shell_output("#{bin}/clx article 1")
   end
 end

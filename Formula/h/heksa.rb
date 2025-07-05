@@ -1,11 +1,11 @@
 class Heksa < Formula
   desc "CLI hex dumper with colors"
-  homepage "https:github.comraspiheksa"
-  url "https:github.comraspiheksa.git",
+  homepage "https://github.com/raspi/heksa"
+  url "https://github.com/raspi/heksa.git",
       tag:      "v1.14.0",
       revision: "045ea335825556c856b2f4dee606ae91c61afe7d"
   license "Apache-2.0"
-  head "https:github.comraspiheksa.git", branch: "master"
+  head "https://github.com/raspi/heksa.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -29,15 +29,15 @@ class Heksa < Formula
 
   def install
     system "make", "build"
-    bin.install "binheksa"
+    bin.install "bin/heksa"
   end
 
   test do
     require "pty"
 
-    PTY.spawn("#{bin}heksa -l 16 -f asc -o no #{test_fixtures("test.png")}") do |r, _w, pid|
-      output = r.readline.gsub(\e\[([;\d]+)?m, "")
-      assert_match(^.PNG, output)
+    PTY.spawn("#{bin}/heksa -l 16 -f asc -o no #{test_fixtures("test.png")}") do |r, _w, pid|
+      output = r.readline.gsub(/\e\[([;\d]+)?m/, "")
+      assert_match(/^.PNG/, output)
     ensure
       Process.wait pid
     end

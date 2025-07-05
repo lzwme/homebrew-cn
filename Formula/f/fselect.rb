@@ -1,7 +1,7 @@
 class Fselect < Formula
   desc "Find files with SQL-like queries"
-  homepage "https:github.comjhspeterssonfselect"
-  url "https:github.comjhspeterssonfselectarchiverefstags0.8.12.tar.gz"
+  homepage "https://github.com/jhspetersson/fselect"
+  url "https://ghfast.top/https://github.com/jhspetersson/fselect/archive/refs/tags/0.8.12.tar.gz"
   sha256 "d5ef50dfc911c4e0a8e85d9473f9b69e812b2c0c3499f83bd1a36258a87889e8"
   license any_of: ["Apache-2.0", "MIT"]
 
@@ -30,17 +30,17 @@ class Fselect < Formula
   end
 
   test do
-    require "utilslinkage"
+    require "utils/linkage"
 
-    touch testpath"test.txt"
-    cmd = "#{bin}fselect name from . where name = '*.txt'"
+    touch testpath/"test.txt"
+    cmd = "#{bin}/fselect name from . where name = '*.txt'"
     assert_match "test.txt", shell_output(cmd).chomp
 
     linked_libraries = [
-      Formula["libgit2"].opt_libshared_library("libgit2"),
+      Formula["libgit2"].opt_lib/shared_library("libgit2"),
     ]
     linked_libraries.each do |library|
-      assert Utils.binary_linked_to_library?(bin"fselect", library),
+      assert Utils.binary_linked_to_library?(bin/"fselect", library),
              "No linkage with #{library.basename}! Cargo is likely using a vendored version."
     end
   end

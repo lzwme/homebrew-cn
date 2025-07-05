@@ -8,15 +8,15 @@
 
 class Gpac < Formula
   desc "Multimedia framework for research and academic purposes"
-  homepage "https:gpac.io"
-  url "https:github.comgpacgpacarchiverefstagsv2.4.0.tar.gz"
+  homepage "https://gpac.io/"
+  url "https://ghfast.top/https://github.com/gpac/gpac/archive/refs/tags/v2.4.0.tar.gz"
   sha256 "99c8c994d5364b963d18eff24af2576b38d38b3460df27d451248982ea16157a"
   license "LGPL-2.1-or-later"
-  head "https:github.comgpacgpac.git", branch: "master"
+  head "https://github.com/gpac/gpac.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -45,13 +45,13 @@ class Gpac < Formula
       --disable-x11
     ]
 
-    system ".configure", *args
+    system "./configure", *args
     system "make"
     system "make", "install"
   end
 
   test do
-    system bin"MP4Box", "-add", test_fixtures("test.mp3"), testpath"out.mp4"
-    assert_path_exists testpath"out.mp4"
+    system bin/"MP4Box", "-add", test_fixtures("test.mp3"), testpath/"out.mp4"
+    assert_path_exists testpath/"out.mp4"
   end
 end

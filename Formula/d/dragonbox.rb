@@ -1,13 +1,13 @@
 class Dragonbox < Formula
   desc "Reference implementation of Dragonbox in C++"
-  homepage "https:github.comjk-jeondragonbox"
-  url "https:github.comjk-jeondragonboxarchiverefstags1.1.3.tar.gz"
+  homepage "https://github.com/jk-jeon/dragonbox"
+  url "https://ghfast.top/https://github.com/jk-jeon/dragonbox/archive/refs/tags/1.1.3.tar.gz"
   sha256 "09d63b05e9c594ec423778ab59b7a5aa1d76fdd71d25c7048b0258c4ec9c3384"
   license any_of: [
     "BSL-1.0",
     "Apache-2.0" => { with: "LLVM-exception" },
   ]
-  head "https:github.comjk-jeondragonbox.git", branch: "master"
+  head "https://github.com/jk-jeon/dragonbox.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "88e4534f61830511e3688998ce11edb471262826c3d201f38bf6e11115c3c44f"
@@ -28,7 +28,7 @@ class Dragonbox < Formula
   end
 
   test do
-    (testpath"CMakeLists.txt").write <<~CMAKE
+    (testpath/"CMakeLists.txt").write <<~CMAKE
       cmake_minimum_required(VERSION 4.0)
       project(TestDragonbox)
 
@@ -38,8 +38,8 @@ class Dragonbox < Formula
       target_link_libraries(test_dragonbox PRIVATE dragonbox::dragonbox_to_chars)
     CMAKE
 
-    (testpath"test.cpp").write <<~CPP
-      #include <dragonboxdragonbox_to_chars.h>
+    (testpath/"test.cpp").write <<~CPP
+      #include <dragonbox/dragonbox_to_chars.h>
       #include <iostream>
 
       int main() {
@@ -54,6 +54,6 @@ class Dragonbox < Formula
     system "cmake", "-S", ".", "-B", "build"
     system "cmake", "--build", "build"
 
-    assert_match "1.23456E2", shell_output(".buildtest_dragonbox")
+    assert_match "1.23456E2", shell_output("./build/test_dragonbox")
   end
 end

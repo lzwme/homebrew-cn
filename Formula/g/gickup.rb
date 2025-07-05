@@ -1,10 +1,10 @@
 class Gickup < Formula
   desc "Backup all your repositories with Ease"
-  homepage "https:cooperspencer.github.iogickup-documentation"
-  url "https:github.comcooperspencergickuparchiverefstagsv0.10.38.tar.gz"
+  homepage "https://cooperspencer.github.io/gickup-documentation/"
+  url "https://ghfast.top/https://github.com/cooperspencer/gickup/archive/refs/tags/v0.10.38.tar.gz"
   sha256 "71df829338c8b6e7b2adb57f0734e67b9c97fb20d32c8193394aad17e64d55bf"
   license "Apache-2.0"
-  head "https:github.comcooperspencergickup.git", branch: "main"
+  head "https://github.com/cooperspencer/gickup.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "d7cb9aa03551d4e440e8baa0418a5f7842b98c6b5ec17454cf5a266f5dca3739"
@@ -23,7 +23,7 @@ class Gickup < Formula
   end
 
   test do
-    (testpath"conf.yml").write <<~YAML
+    (testpath/"conf.yml").write <<~YAML
       source:
         github:
           - token: brewtest-token
@@ -33,9 +33,9 @@ class Gickup < Formula
             ssh: true
     YAML
 
-    output = shell_output("#{bin}gickup --dryrun 2>&1", 1)
+    output = shell_output("#{bin}/gickup --dryrun 2>&1", 1)
     assert_match "grabbing the repositories from Brew Test", output
 
-    assert_match version.to_s, shell_output("#{bin}gickup --version")
+    assert_match version.to_s, shell_output("#{bin}/gickup --version")
   end
 end

@@ -1,16 +1,16 @@
 require "etc"
 
 class Slashem < Formula
-  desc "Forkvariant of Nethack"
-  homepage "https:slashem.sourceforge.net"
-  url "https:downloads.sourceforge.netprojectslashemslashem-source0.0.8E0F1se008e0f1.tar.gz"
+  desc "Fork/variant of Nethack"
+  homepage "https://slashem.sourceforge.net/"
+  url "https://downloads.sourceforge.net/project/slashem/slashem-source/0.0.8E0F1/se008e0f1.tar.gz"
   version "0.0.8E0F1"
   sha256 "e9bd3672c866acc5a0d75e245c190c689956319f192cb5d23ea924dd77e426c3"
   license "NGPL"
 
   livecheck do
     url :stable
-    regex(%r{url=.*?slashem-source([^]+)[^.]+\.t}i)
+    regex(%r{url=.*?/slashem-source/([^/]+)/[^.]+\.t}i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -40,28 +40,28 @@ class Slashem < Formula
   uses_from_macos "flex" => :build
   uses_from_macos "ncurses"
 
-  skip_clean "slashemdirsave"
+  skip_clean "slashemdir/save"
 
-  # Fixes compilation error in OS X: https:sourceforge.netpslashembugs896
+  # Fixes compilation error in OS X: https://sourceforge.net/p/slashem/bugs/896/
   patch :DATA
 
-  # https:sourceforge.netpslashembugs964 for C99 compatibility
+  # https://sourceforge.net/p/slashem/bugs/964/ for C99 compatibility
   patch do
-    url "https:sourceforge.netpslashembugs964attachmentslashem-c99.patch"
+    url "https://sourceforge.net/p/slashem/bugs/964/attachment/slashem-c99.patch"
     sha256 "ef21a6e3c64a5cf5cfe83305df7611aa024384ae52ef6be4242b86d3d38da200"
   end
 
-  # Fixes user check on older versions of OS X: https:sourceforge.netpslashembugs895
-  # Fixed upstream: https:slashem.cvs.sourceforge.netviewvcslashemslashemconfigure?r1=1.13&r2=1.14&view=patch
+  # Fixes user check on older versions of OS X: https://sourceforge.net/p/slashem/bugs/895/
+  # Fixed upstream: https://slashem.cvs.sourceforge.net/viewvc/slashem/slashem/configure?r1=1.13&r2=1.14&view=patch
   patch :p0 do
-    url "https:gist.githubusercontent.commistydemeo76dd291c77a509216418raw65a41804b7d7e1ae6ab6030bde88f7d969c955c3slashem-configure.patch"
+    url "https://ghfast.top/https://gist.githubusercontent.com/mistydemeo/76dd291c77a509216418/raw/65a41804b7d7e1ae6ab6030bde88f7d969c955c3/slashem-configure.patch"
     sha256 "c91ac045f942d2ee1ac6af381f91327e03ee0650a547bbe913a3bf35fbd18665"
   end
 
   def install
     ENV.deparallelize
     # Fix issue where ioctl is not declared and fails on Sonoma
-    inreplace "sysshareioctl.c", "#include \"hack.h\"", "#include \"hack.h\"\n#include <sysioctl.h>"
+    inreplace "sys/share/ioctl.c", "#include \"hack.h\"", "#include \"hack.h\"\n#include <sys/ioctl.h>"
 
     args = %W[
       --with-mandir=#{man}
@@ -72,19 +72,19 @@ class Slashem < Formula
     # Help old config scripts identify arm64 linux
     args << "--build=aarch64-unknown-linux-gnu" if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
 
-    system ".configure", *args, *std_configure_args
+    system "./configure", *args, *std_configure_args
     system "make", "install"
 
-    man6.install "docslashem.6", "docrecover.6"
+    man6.install "doc/slashem.6", "doc/recover.6"
   end
 
   test do
-    cp_r "#{prefix}slashemdir", testpath"slashemdir"
+    cp_r "#{prefix}/slashemdir", testpath/"slashemdir"
 
     require "expect"
     require "pty"
     ENV["TERM"] = "xterm"
-    PTY.spawn(prefix"slashemdirslashem", "-d", testpath"slashemdir") do |r, w, pid|
+    PTY.spawn(prefix/"slashemdir/slashem", "-d", testpath/"slashemdir") do |r, w, pid|
       r.expect "Shall"
       w.write "q"
       Process.wait pid
@@ -93,11 +93,11 @@ class Slashem < Formula
 end
 
 __END__
-diff --git awinttytermcap.c bwinttytermcap.c
+diff --git a/win/tty/termcap.c b/win/tty/termcap.c
 index c3bdf26..8d00b11 100644
---- awinttytermcap.c
-+++ bwinttytermcap.c
-@@ -960,7 +960,7 @@ cl_eos()			* free after Robert Viduya *
+--- a/win/tty/termcap.c
++++ b/win/tty/termcap.c
+@@ -960,7 +960,7 @@ cl_eos()			/* free after Robert Viduya */
 
  #include <curses.h>
 

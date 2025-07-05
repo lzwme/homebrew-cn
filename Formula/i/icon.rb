@@ -1,14 +1,14 @@
 class Icon < Formula
   desc "General-purpose programming language"
-  homepage "https:www2.cs.arizona.eduicon"
-  url "https:github.comgtownsendiconarchiverefstagsv9.5.24b.tar.gz"
+  homepage "https://www2.cs.arizona.edu/icon/"
+  url "https://ghfast.top/https://github.com/gtownsend/icon/archive/refs/tags/v9.5.24b.tar.gz"
   version "9.5.24b"
   sha256 "85d695ab34d62f86d5b08f5bde91200026c1fc5a67f33f47c498f96e72543c62"
   license :public_domain
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+[a-z]?)$i)
+    regex(/^v?(\d+(?:\.\d+)+[a-z]?)$/i)
   end
 
   bottle do
@@ -30,14 +30,14 @@ class Icon < Formula
     end
     system "make", "Configure", "name=#{target}"
     system "make"
-    bin.install "binicon", "binicont", "biniconx"
-    doc.install Dir["doc*"]
-    man1.install Dir["manman1*.1"]
+    bin.install "bin/icon", "bin/icont", "bin/iconx"
+    doc.install Dir["doc/*"]
+    man1.install Dir["man/man1/*.1"]
   end
 
   test do
     args = "'procedure main(); writes(\"Hello, World!\"); end'"
-    output = shell_output("#{bin}icon -P #{args}")
+    output = shell_output("#{bin}/icon -P #{args}")
     assert_equal "Hello, World!", output
   end
 end

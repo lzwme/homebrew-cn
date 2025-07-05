@@ -1,8 +1,8 @@
 class Scrub < Formula
   desc "Writes patterns on magnetic media to thwart data recovery"
-  homepage "https:github.comchaosscrub"
-  url "https:github.comchaosscrubreleasesdownload2.6.1scrub-2.6.1.tar.gz"
-  mirror "https:deb.debian.orgdebianpoolmainsscrubscrub_2.6.1.orig.tar.gz"
+  homepage "https://github.com/chaos/scrub"
+  url "https://ghfast.top/https://github.com/chaos/scrub/releases/download/2.6.1/scrub-2.6.1.tar.gz"
+  mirror "https://deb.debian.org/debian/pool/main/s/scrub/scrub_2.6.1.orig.tar.gz"
   sha256 "43d98d3795bc2de7920efe81ef2c5de4e9ed1f903c35c939a7d65adc416d6cb8"
   license "GPL-2.0-or-later"
 
@@ -29,7 +29,7 @@ class Scrub < Formula
   end
 
   head do
-    url "https:github.comchaosscrub.git", branch: "master"
+    url "https://github.com/chaos/scrub.git", branch: "master"
     depends_on "autoconf" => :build
     depends_on "automake" => :build
     depends_on "libtool" => :build
@@ -38,21 +38,21 @@ class Scrub < Formula
   def install
     args = []
     if build.head?
-      system ".autogen.sh"
+      system "./autogen.sh"
     elsif OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       # Help old config scripts identify arm64 linux
       args << "--build=aarch64-unknown-linux-gnu"
     end
 
-    system ".configure", *args, *std_configure_args
+    system "./configure", *args, *std_configure_args
     system "make", "install"
   end
 
   test do
-    path = testpath"foo.txt"
+    path = testpath/"foo.txt"
     path.write "foo"
 
-    output = shell_output("#{bin}scrub -r -p dod #{path}")
+    output = shell_output("#{bin}/scrub -r -p dod #{path}")
     assert_match "scrubbing #{path}", output
     refute_path_exists path
   end

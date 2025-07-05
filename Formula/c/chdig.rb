@@ -1,10 +1,10 @@
 class Chdig < Formula
   desc "Dig into ClickHouse with TUI interface"
-  homepage "https:github.comazatchdig"
-  url "https:github.comazatchdigarchiverefstagsv25.6.1.tar.gz"
+  homepage "https://github.com/azat/chdig"
+  url "https://ghfast.top/https://github.com/azat/chdig/archive/refs/tags/v25.6.1.tar.gz"
   sha256 "e815466c2e16c50cd886f68a6e054c63b45389242f8e4967b5e76c44478beade"
   license "MIT"
-  head "https:github.comazatchdig.git", branch: "main"
+  head "https://github.com/azat/chdig.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "eb716fc06789ea84fcf2483c7536c206bf3c59c837dd7c4f2149f568b12c8b18"
@@ -21,16 +21,16 @@ class Chdig < Formula
   def install
     system "cargo", "install", *std_cargo_args
 
-    generate_completions_from_executable(bin"chdig", "--completion")
+    generate_completions_from_executable(bin/"chdig", "--completion")
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}chdig --version")
+    assert_match version.to_s, shell_output("#{bin}/chdig --version")
 
     # failed with Linux CI, `No such device or address (os error 6)`
     return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
 
-    output = shell_output("#{bin}chdig --url 255.255.255.255 dictionaries 2>&1", 1)
+    output = shell_output("#{bin}/chdig --url 255.255.255.255 dictionaries 2>&1", 1)
     assert_match "Error: Cannot connect to ClickHouse", output
   end
 end

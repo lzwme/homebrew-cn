@@ -1,11 +1,11 @@
 class Buildkit < Formula
   desc "Concurrent, cache-efficient, and Dockerfile-agnostic builder toolkit"
-  homepage "https:github.commobybuildkit"
-  url "https:github.commobybuildkit.git",
+  homepage "https://github.com/moby/buildkit"
+  url "https://github.com/moby/buildkit.git",
       tag:      "v0.23.2",
       revision: "40b2ede0ac0a37030f9959b4a28e9c6c8ea036e7"
   license "Apache-2.0"
-  head "https:github.commobybuildkit.git", branch: "master"
+  head "https://github.com/moby/buildkit.git", branch: "master"
 
   # There can be a notable gap between when a version is tagged and a
   # corresponding release is created, so we check the "latest" release instead
@@ -30,20 +30,20 @@ class Buildkit < Formula
     revision = Utils.git_head
     ldflags = %W[
       -s -w
-      -X github.commobybuildkitversion.Version=#{version}
-      -X github.commobybuildkitversion.Revision=#{revision}
-      -X github.commobybuildkitversion.Package=github.commobybuildkit
+      -X github.com/moby/buildkit/version.Version=#{version}
+      -X github.com/moby/buildkit/version.Revision=#{revision}
+      -X github.com/moby/buildkit/version.Package=github.com/moby/buildkit
     ]
 
-    system "go", "build", "-mod=vendor", *std_go_args(ldflags:, output: bin"buildctl"), ".cmdbuildctl"
+    system "go", "build", "-mod=vendor", *std_go_args(ldflags:, output: bin/"buildctl"), "./cmd/buildctl"
 
-    doc.install Dir["docs*.md"]
+    doc.install Dir["docs/*.md"]
   end
 
   test do
     assert_match "make sure buildkitd is running",
-      shell_output("#{bin}buildctl --addr unix:devnull --timeout 0 du 2>&1", 1)
+      shell_output("#{bin}/buildctl --addr unix://dev/null --timeout 0 du 2>&1", 1)
 
-    assert_match version.to_s, shell_output("#{bin}buildctl --version")
+    assert_match version.to_s, shell_output("#{bin}/buildctl --version")
   end
 end

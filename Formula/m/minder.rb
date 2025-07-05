@@ -1,10 +1,10 @@
 class Minder < Formula
   desc "CLI for interacting with Stacklok's Minder platform"
-  homepage "https:mindersec.github.io"
-  url "https:github.commindersecminderarchiverefstagsv0.0.89.tar.gz"
+  homepage "https://mindersec.github.io/"
+  url "https://ghfast.top/https://github.com/mindersec/minder/archive/refs/tags/v0.0.89.tar.gz"
   sha256 "8cc2ecfd5730d6718d8ffd54b4557aed84f2aa36d524783767345018341c1b84"
   license "Apache-2.0"
-  head "https:github.commindersecminder.git", branch: "main"
+  head "https://github.com/mindersec/minder.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "1aaf51fbcb5e872ab87fcb71067b8e1499c2a4ea836504be50ff393b42ee8fe8"
@@ -20,17 +20,17 @@ class Minder < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.commindersecminderinternalconstants.CLIVersion=#{version}
+      -X github.com/mindersec/minder/internal/constants.CLIVersion=#{version}
     ]
-    system "go", "build", *std_go_args(ldflags:), ".cmdcli"
+    system "go", "build", *std_go_args(ldflags:), "./cmd/cli"
 
-    generate_completions_from_executable(bin"minder", "completion")
+    generate_completions_from_executable(bin/"minder", "completion")
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}minder version")
+    assert_match version.to_s, shell_output("#{bin}/minder version")
 
-    output = shell_output("#{bin}minder artifact list -p github 2>&1", 16)
+    output = shell_output("#{bin}/minder artifact list -p github 2>&1", 16)
     assert_match "No config file present, using default values", output
   end
 end

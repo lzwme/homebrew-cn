@@ -1,10 +1,10 @@
 class Anyquery < Formula
   desc "Query anything with SQL"
-  homepage "https:anyquery.dev"
-  url "https:github.comjulien040anyqueryarchiverefstags0.4.2.tar.gz"
+  homepage "https://anyquery.dev"
+  url "https://ghfast.top/https://github.com/julien040/anyquery/archive/refs/tags/0.4.2.tar.gz"
   sha256 "fd7a249965fa4cb014629772fa4d9c79acb823c89f73fb68c9c1361a08cd11c6"
   license "AGPL-3.0-only"
-  head "https:github.comjulien040anyquery.git", branch: "main"
+  head "https://github.com/julien040/anyquery.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "633ae2407073601f460b229f3beb084266437459fe714f69bd59e131d64e7f13"
@@ -26,15 +26,15 @@ class Anyquery < Formula
       sqlite_math_functions
     ]
     system "go", "build", *std_go_args(ldflags: "-s -w", tags:)
-    generate_completions_from_executable(bin"anyquery", "completion")
+    generate_completions_from_executable(bin/"anyquery", "completion")
   end
 
   test do
     assert_match "no such table: non_existing_table",
-                 shell_output("#{bin}anyquery -q \"SELECT * FROM non_existing_table\"")
+                 shell_output("#{bin}/anyquery -q \"SELECT * FROM non_existing_table\"")
     # test server
     pid = fork do
-      system bin"anyquery", "server"
+      system bin/"anyquery", "server"
     end
     sleep 20
   ensure

@@ -2,11 +2,11 @@ class GitWhenMerged < Formula
   include Language::Python::Shebang
 
   desc "Find where a commit was merged in git"
-  homepage "https:github.commhaggergit-when-merged"
-  url "https:github.commhaggergit-when-mergedarchiverefstagsv1.2.1.tar.gz"
+  homepage "https://github.com/mhagger/git-when-merged"
+  url "https://ghfast.top/https://github.com/mhagger/git-when-merged/archive/refs/tags/v1.2.1.tar.gz"
   sha256 "46ba5076981862ac2ad0fa0a94b9a5401ef6b5c5b0506c6e306b76e5798e1f58"
   license "GPL-2.0-only"
-  head "https:github.commhaggergit-when-merged.git", branch: "master"
+  head "https://github.com/mhagger/git-when-merged.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -18,8 +18,8 @@ class GitWhenMerged < Formula
   uses_from_macos "python"
 
   def install
-    rewrite_shebang detected_python_shebang(use_python_from_path: true), "srcgit_when_merged.py"
-    bin.install "srcgit_when_merged.py" => "git-when-merged"
+    rewrite_shebang detected_python_shebang(use_python_from_path: true), "src/git_when_merged.py"
+    bin.install "src/git_when_merged.py" => "git-when-merged"
   end
 
   test do
@@ -39,6 +39,6 @@ class GitWhenMerged < Formula
     touch "baz"
     system "git", "add", "baz"
     system "git", "commit", "-m", "baz"
-    system bin"git-when-merged", "bar"
+    system bin/"git-when-merged", "bar"
   end
 end

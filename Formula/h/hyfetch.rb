@@ -2,11 +2,11 @@ class Hyfetch < Formula
   include Language::Python::Virtualenv
 
   desc "Fast, highly customisable system info script with LGBTQ+ pride flags"
-  homepage "https:github.comhykilpikonnahyfetch"
-  url "https:files.pythonhosted.orgpackages1f7d7acc8fd22a1a4861f6a3833fbba8d1ffc6d118d143a4cbaab7f998867b4eHyFetch-1.99.0.tar.gz"
+  homepage "https://github.com/hykilpikonna/hyfetch"
+  url "https://files.pythonhosted.org/packages/1f/7d/7acc8fd22a1a4861f6a3833fbba8d1ffc6d118d143a4cbaab7f998867b4e/HyFetch-1.99.0.tar.gz"
   sha256 "ddeb422fd797c710f0ad37d584fac466df89e39feddeef765492b2c0b529616e"
   license "MIT"
-  head "https:github.comhykilpikonnahyfetch.git", branch: "master"
+  head "https://github.com/hykilpikonna/hyfetch.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -27,7 +27,7 @@ class Hyfetch < Formula
   end
 
   test do
-    (testpath".confighyfetch.json").write <<~JSON
+    (testpath/".config/hyfetch.json").write <<~JSON
       {
         "preset": "genderfluid",
         "mode": "rgb",
@@ -45,9 +45,9 @@ class Hyfetch < Formula
       }
     JSON
 
-    system bin"neowofetch", "--config", "none", "--color_blocks", "off",
+    system bin/"neowofetch", "--config", "none", "--color_blocks", "off",
                              "--disable", "wm", "de", "term", "gpu"
-    system bin"hyfetch", "-C", testpath"hyfetch.json",
+    system bin/"hyfetch", "-C", testpath/"hyfetch.json",
                           "--args=\"--config none --color_blocks off --disable wm de term gpu\""
   end
 end

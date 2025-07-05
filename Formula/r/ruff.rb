@@ -1,10 +1,10 @@
 class Ruff < Formula
   desc "Extremely fast Python linter, written in Rust"
-  homepage "https:docs.astral.shruff"
-  url "https:github.comastral-shruffarchiverefstags0.12.2.tar.gz"
+  homepage "https://docs.astral.sh/ruff/"
+  url "https://ghfast.top/https://github.com/astral-sh/ruff/archive/refs/tags/0.12.2.tar.gz"
   sha256 "e202f6c12e13d95599a146c81d5f58a17544df08d93ba2c730150785dfad45c4"
   license "MIT"
-  head "https:github.comastral-shruff.git", branch: "main"
+  head "https://github.com/astral-sh/ruff.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "f79a1240be8c5121420ad3d149ef01f1150f23589e2fed5e54dd922bf9f8dbe9"
@@ -19,15 +19,15 @@ class Ruff < Formula
   depends_on "rust" => :build
 
   def install
-    system "cargo", "install", "--no-default-features", *std_cargo_args(path: "cratesruff")
-    generate_completions_from_executable(bin"ruff", "generate-shell-completion")
+    system "cargo", "install", "--no-default-features", *std_cargo_args(path: "crates/ruff")
+    generate_completions_from_executable(bin/"ruff", "generate-shell-completion")
   end
 
   test do
-    (testpath"test.py").write <<~PYTHON
+    (testpath/"test.py").write <<~PYTHON
       import os
     PYTHON
 
-    assert_match "`os` imported but unused", shell_output("#{bin}ruff check #{testpath}test.py", 1)
+    assert_match "`os` imported but unused", shell_output("#{bin}/ruff check #{testpath}/test.py", 1)
   end
 end

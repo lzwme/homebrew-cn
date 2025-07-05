@@ -1,10 +1,10 @@
 class CargoUpdate < Formula
   desc "Cargo subcommand for checking and applying updates to installed executables"
-  homepage "https:github.comnabijaczlewelicargo-update"
-  url "https:github.comnabijaczlewelicargo-updatearchiverefstagsv16.3.2.tar.gz"
+  homepage "https://github.com/nabijaczleweli/cargo-update"
+  url "https://ghfast.top/https://github.com/nabijaczleweli/cargo-update/archive/refs/tags/v16.3.2.tar.gz"
   sha256 "49e016c8189b779af4663c62c2b304f770e5a4358ed5348ae61e68bf3034a689"
   license "MIT"
-  head "https:github.comnabijaczlewelicargo-update.git", branch: "master"
+  head "https://github.com/nabijaczleweli/cargo-update.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "279ba819692bbfb26927cb66eaea9ee94c3a1c2dbecce9b31d8886023a59202e"
@@ -39,7 +39,7 @@ class CargoUpdate < Formula
 
   test do
     # Show that we can use a different toolchain than the one provided by the `rust` formula.
-    # https:github.comHomebrewhomebrew-corepull134074#pullrequestreview-1484979359
+    # https://github.com/Homebrew/homebrew-core/pull/134074#pullrequestreview-1484979359
     ENV.prepend_path "PATH", Formula["rustup"].bin
     system "rustup", "set", "profile", "minimal"
     system "rustup", "default", "beta"

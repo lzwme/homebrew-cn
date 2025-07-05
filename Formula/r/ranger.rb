@@ -2,11 +2,11 @@ class Ranger < Formula
   include Language::Python::Virtualenv
 
   desc "File browser"
-  homepage "https:ranger.github.io"
-  url "https:github.comrangerrangerarchiverefstagsv1.9.4.tar.gz"
+  homepage "https://ranger.github.io"
+  url "https://ghfast.top/https://github.com/ranger/ranger/archive/refs/tags/v1.9.4.tar.gz"
   sha256 "7ad75e0d1b29087335fbb1691b05a800f777f4ec9cba84faa19355075d7f0f89"
   license "GPL-3.0-or-later"
-  head "https:github.comrangerranger.git", branch: "master"
+  head "https://github.com/ranger/ranger.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "97ec1aa9eb07127348df0acbbe74ee70530e3c42b2b34b318d275a5b939b108c"
@@ -25,13 +25,13 @@ class Ranger < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}ranger --version")
+    assert_match version.to_s, shell_output("#{bin}/ranger --version")
 
     code = "print('Hello World!')\n"
-    (testpath"test.py").write code
-    assert_equal code, shell_output("#{bin}rifle -w cat test.py")
+    (testpath/"test.py").write code
+    assert_equal code, shell_output("#{bin}/rifle -w cat test.py")
 
-    ENV.prepend_path "PATH", Formula["python@3.13"].opt_libexec"bin"
-    assert_equal "Hello World!\n", shell_output("#{bin}rifle -p 2 test.py")
+    ENV.prepend_path "PATH", Formula["python@3.13"].opt_libexec/"bin"
+    assert_equal "Hello World!\n", shell_output("#{bin}/rifle -p 2 test.py")
   end
 end

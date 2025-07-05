@@ -1,13 +1,13 @@
 class Zigup < Formula
   desc "Download and manage zig compilers"
-  homepage "https:github.commarler8997zigup"
-  url "https:github.commarler8997ziguparchiverefstagsv2025_05_24.tar.gz"
+  homepage "https://github.com/marler8997/zigup"
+  url "https://ghfast.top/https://github.com/marler8997/zigup/archive/refs/tags/v2025_05_24.tar.gz"
   sha256 "d88e6d9c9629c88aba78c3bae2fb89ae4bea11f2818911f6d5559e7e79bcae69"
   license "MIT-0"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:[._]\d+)+)$i)
+    regex(/^v?(\d+(?:[._]\d+)+)$/i)
     strategy :git do |tags, regex|
       tags.filter_map { |tag| tag[regex, 1]&.tr("_", ".") }
     end
@@ -28,7 +28,7 @@ class Zigup < Formula
 
   def install
     # Fix illegal instruction errors when using bottles on older CPUs.
-    # https:github.comHomebrewhomebrew-coreissues92282
+    # https://github.com/Homebrew/homebrew-core/issues/92282
     cpu = case Hardware.oldest_cpu
     when :arm_vortex_tempest then "apple_m1" # See `zig targets`.
     else Hardware.oldest_cpu
@@ -44,7 +44,7 @@ class Zigup < Formula
   end
 
   test do
-    system bin"zigup", "fetch-index"
-    assert_match "install directory", shell_output("#{bin}zigup list 2>&1")
+    system bin/"zigup", "fetch-index"
+    assert_match "install directory", shell_output("#{bin}/zigup list 2>&1")
   end
 end

@@ -1,10 +1,10 @@
 class Vrpn < Formula
   desc "Virtual reality peripheral network"
-  homepage "https:github.comvrpnvrpnwiki"
-  url "https:github.comvrpnvrpnreleasesdownloadversion_07.35vrpn_07.35.zip"
+  homepage "https://github.com/vrpn/vrpn/wiki"
+  url "https://ghfast.top/https://github.com/vrpn/vrpn/releases/download/version_07.35/vrpn_07.35.zip"
   sha256 "06b74a40b0fb215d4238148517705d0075235823c0941154d14dd660ba25af19"
   license "BSL-1.0"
-  head "https:github.comvrpnvrpn.git", branch: "master"
+  head "https://github.com/vrpn/vrpn.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -39,7 +39,7 @@ class Vrpn < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~CPP
+    (testpath/"test.cpp").write <<~CPP
       #include <iostream>
       #include <vrpn_Analog.h>
       int main() {
@@ -54,8 +54,8 @@ class Vrpn < Formula
     CPP
 
     system ENV.cxx, "test.cpp", "-o", "test", "-I#{include}", "-L#{lib}", "-lvrpn"
-    system ".test"
+    system "./test"
 
-    system bin"vrpn_server", "-h"
+    system bin/"vrpn_server", "-h"
   end
 end

@@ -1,7 +1,7 @@
 class F3d < Formula
   desc "Fast and minimalist 3D viewer"
-  homepage "https:f3d-app.github.iof3d"
-  url "https:github.comf3d-appf3darchiverefstagsv3.1.0.tar.gz"
+  homepage "https://f3d-app.github.io/f3d/"
+  url "https://ghfast.top/https://github.com/f3d-app/f3d/archive/refs/tags/v3.1.0.tar.gz"
   sha256 "93ba23078133122e929d9c1e2946c86da1f08fe56b9ffae40ebfd8185e91380a"
   license "BSD-3-Clause"
   revision 1
@@ -66,18 +66,18 @@ class F3d < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}f3d --version")
+    assert_match version.to_s, shell_output("#{bin}/f3d --version")
 
     # create a simple OBJ file with 3 points and 1 triangle
-    (testpath"test.obj").write <<~EOS
+    (testpath/"test.obj").write <<~EOS
       v 0 0 0
       v 1 0 0
       v 0 1 0
       f 1 2 3
     EOS
 
-    f3d_out = shell_output("#{bin}f3d --verbose --no-render #{testpath}test.obj 2>&1").strip
-    assert_match(Loading files:.+\n.+obj, f3d_out)
+    f3d_out = shell_output("#{bin}/f3d --verbose --no-render #{testpath}/test.obj 2>&1").strip
+    assert_match(/Loading files:.+\n.+obj/, f3d_out)
     assert_match "Camera focal point: 0.5,0.5,0", f3d_out
   end
 end

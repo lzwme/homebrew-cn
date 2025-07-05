@@ -1,7 +1,7 @@
 class Superfile < Formula
   desc "Modern and pretty fancy file manager for the terminal"
-  homepage "https:superfile.netlify.app"
-  url "https:github.comyorukotsuperfilearchiverefstagsv1.3.1.tar.gz"
+  homepage "https://superfile.netlify.app/"
+  url "https://ghfast.top/https://github.com/yorukot/superfile/archive/refs/tags/v1.3.1.tar.gz"
   sha256 "9903ba151abee629e6da4126cb4f6c73b693112632be366b8fab5ff17d15f14d"
   license "MIT"
 
@@ -25,11 +25,11 @@ class Superfile < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w", output: bin"spf")
+    system "go", "build", *std_go_args(ldflags: "-s -w", output: bin/"spf")
   end
 
   test do
     # superfile is a GUI application
-    assert_match version.to_s, shell_output("#{bin}spf -v")
+    assert_match version.to_s, shell_output("#{bin}/spf -v")
   end
 end

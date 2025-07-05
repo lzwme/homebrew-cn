@@ -1,10 +1,10 @@
 class Pdal < Formula
   desc "Point data abstraction library"
-  homepage "https:www.pdal.io"
-  url "https:github.comPDALPDALreleasesdownload2.9.0PDAL-2.9.0-src.tar.bz2"
+  homepage "https://www.pdal.io/"
+  url "https://ghfast.top/https://github.com/PDAL/PDAL/releases/download/2.9.0/PDAL-2.9.0-src.tar.bz2"
   sha256 "f0be2f6575021d0c4751d5babd4c1096d4e5934f86f8461914e9f9c6dc63567d"
   license "BSD-3-Clause"
-  head "https:github.comPDALPDAL.git", branch: "master"
+  head "https://github.com/PDAL/PDAL.git", branch: "master"
 
   livecheck do
     url :stable
@@ -67,19 +67,19 @@ class Pdal < Formula
       ENV.append_to_cflags "-I#{libunwind.opt_include}"
       args += %W[
         -DLIBUNWIND_INCLUDE_DIR=#{libunwind.opt_include}
-        -DLIBUNWIND_LIBRARY=#{libunwind.opt_libshared_library("libunwind")}
+        -DLIBUNWIND_LIBRARY=#{libunwind.opt_lib/shared_library("libunwind")}
       ]
     end
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 
-    rm_r("testunit")
+    rm_r("test/unit")
     doc.install "examples", "test"
   end
 
   test do
-    system bin"pdal", "info", doc"testdatalasinteresting.las"
-    assert_match "pdal #{version}", shell_output("#{bin}pdal --version")
+    system bin/"pdal", "info", doc/"test/data/las/interesting.las"
+    assert_match "pdal #{version}", shell_output("#{bin}/pdal --version")
   end
 end

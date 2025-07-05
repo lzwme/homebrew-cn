@@ -1,13 +1,13 @@
 class Metabase < Formula
   desc "Business intelligence report server"
-  homepage "https:www.metabase.com"
-  url "https:downloads.metabase.comv0.55.2metabase.jar"
+  homepage "https://www.metabase.com/"
+  url "https://downloads.metabase.com/v0.55.2/metabase.jar"
   sha256 "a2170a4599bf65774a03b058ae6594ffddd8f0293f3749f4b494ebc0f4045521"
   license "AGPL-3.0-only"
 
   livecheck do
-    url "https:www.metabase.comstartossjar.html"
-    regex(%r{href=.*?v?(\d+(?:\.\d+)+)metabase\.jar}i)
+    url "https://www.metabase.com/start/oss/jar.html"
+    regex(%r{href=.*?/v?(\d+(?:\.\d+)+)/metabase\.jar}i)
   end
 
   bottle do
@@ -15,7 +15,7 @@ class Metabase < Formula
   end
 
   head do
-    url "https:github.commetabasemetabase.git", branch: "master"
+    url "https://github.com/metabase/metabase.git", branch: "master"
 
     depends_on "leiningen" => :build
     depends_on "node" => :build
@@ -26,25 +26,25 @@ class Metabase < Formula
 
   def install
     if build.head?
-      system ".binbuild"
-      libexec.install "targetuberjarmetabase.jar"
+      system "./bin/build"
+      libexec.install "target/uberjar/metabase.jar"
     else
       libexec.install "metabase.jar"
     end
 
-    bin.write_jar_script libexec"metabase.jar", "metabase"
+    bin.write_jar_script libexec/"metabase.jar", "metabase"
   end
 
   service do
-    run opt_bin"metabase"
+    run opt_bin/"metabase"
     keep_alive true
     require_root true
-    working_dir var"metabase"
-    log_path var"metabaseserver.log"
+    working_dir var/"metabase"
+    log_path var/"metabase/server.log"
     error_log_path File::NULL
   end
 
   test do
-    system bin"metabase", "migrate", "up"
+    system bin/"metabase", "migrate", "up"
   end
 end

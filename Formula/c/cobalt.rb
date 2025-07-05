@@ -1,7 +1,7 @@
 class Cobalt < Formula
   desc "Static site generator written in Rust"
-  homepage "https:cobalt-org.github.io"
-  url "https:github.comcobalt-orgcobalt.rsarchiverefstagsv0.20.0.tar.gz"
+  homepage "https://cobalt-org.github.io/"
+  url "https://ghfast.top/https://github.com/cobalt-org/cobalt.rs/archive/refs/tags/v0.20.0.tar.gz"
   sha256 "a425be77478230b25f5c64431e82633a35d03dd6719bf740e4ae6624a69ffca1"
   license any_of: ["Apache-2.0", "MIT"]
 
@@ -22,8 +22,8 @@ class Cobalt < Formula
   end
 
   test do
-    system bin"cobalt", "init"
-    system bin"cobalt", "build"
-    assert_path_exists testpath"_siteindex.html"
+    system bin/"cobalt", "init"
+    system bin/"cobalt", "build"
+    assert_path_exists testpath/"_site/index.html"
   end
 end

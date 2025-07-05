@@ -1,10 +1,10 @@
 class Oranda < Formula
   desc "Generate beautiful landing pages for your developer tools"
-  homepage "https:github.comaxodotdevoranda"
-  url "https:github.comaxodotdevorandaarchiverefstagsv0.6.5.tar.gz"
+  homepage "https://github.com/axodotdev/oranda"
+  url "https://ghfast.top/https://github.com/axodotdev/oranda/archive/refs/tags/v0.6.5.tar.gz"
   sha256 "456baf2b8e36ad6492d5d7a6d2b47b48be87c957db9068500dfd82897462d5bd"
   license any_of: ["Apache-2.0", "MIT"]
-  head "https:github.comaxodotdevoranda.git", branch: "main"
+  head "https://github.com/axodotdev/oranda.git", branch: "main"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "6355b74d463dc310169e38b54bd9faa4a957426aefcbb4457310208c4db98c81"
@@ -25,7 +25,7 @@ class Oranda < Formula
     ENV["RUSTONIG_SYSTEM_LIBONIG"] = "1"
 
     # TODO: Switch back to `ENV["ORANDA_USE_TAILWIND_BINARY"] = "1"`
-    # Issue ref: https:github.comaxodotdevorandaissues719
+    # Issue ref: https://github.com/axodotdev/oranda/issues/719
     cd "oranda-css" do
       system "npm", "install", *std_npm_args(prefix: false)
       system "npm", "run", "build"
@@ -35,14 +35,14 @@ class Oranda < Formula
   end
 
   test do
-    assert_match "oranda #{version}", shell_output("#{bin}oranda --version")
+    assert_match "oranda #{version}", shell_output("#{bin}/oranda --version")
 
-    system bin"oranda", "build"
-    assert_path_exists testpath"publicindex.html"
+    system bin/"oranda", "build"
+    assert_path_exists testpath/"public/index.html"
 
     begin
-      output_log = testpath"output.log"
-      pid = spawn bin"oranda", "serve", [:out, :err] => output_log.to_s
+      output_log = testpath/"output.log"
+      pid = spawn bin/"oranda", "serve", [:out, :err] => output_log.to_s
       sleep 2
       assert_match "SUCCESS: Your project is available", output_log.read
     ensure

@@ -1,14 +1,14 @@
 class CloudNuke < Formula
   desc "CLI tool to nuke (delete) cloud resources"
-  homepage "https:gruntwork.io"
-  url "https:github.comgruntwork-iocloud-nukearchiverefstagsv0.41.0.tar.gz"
+  homepage "https://gruntwork.io/"
+  url "https://ghfast.top/https://github.com/gruntwork-io/cloud-nuke/archive/refs/tags/v0.41.0.tar.gz"
   sha256 "0937ef8f5c4ecde6ae1fb4b213b71ffbdadd53177c03a19ccc3824c5f97f27ad"
   license "MIT"
-  head "https:github.comgruntwork-iocloud-nuke.git", branch: "master"
+  head "https://github.com/gruntwork-io/cloud-nuke.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -27,7 +27,7 @@ class CloudNuke < Formula
   end
 
   test do
-    assert_match "A CLI tool to nuke (delete) cloud resources", shell_output("#{bin}cloud-nuke --help 2>1&")
-    assert_match "ec2", shell_output("#{bin}cloud-nuke aws --list-resource-types")
+    assert_match "A CLI tool to nuke (delete) cloud resources", shell_output("#{bin}/cloud-nuke --help 2>1&")
+    assert_match "ec2", shell_output("#{bin}/cloud-nuke aws --list-resource-types")
   end
 end

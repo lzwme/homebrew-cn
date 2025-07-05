@@ -1,10 +1,10 @@
 class Libfixposix < Formula
   desc "Thin wrapper over POSIX syscalls"
-  homepage "https:github.comsionesculibfixposix"
-  url "https:github.comsionesculibfixposixarchiverefstagsv0.5.1.tar.gz"
+  homepage "https://github.com/sionescu/libfixposix"
+  url "https://ghfast.top/https://github.com/sionescu/libfixposix/archive/refs/tags/v0.5.1.tar.gz"
   sha256 "5d9d3d321d4c7302040389c43f966a70d180abb58d1d7df370f39e0d402d50d4"
   license "BSL-1.0"
-  head "https:github.comsionesculibfixposix.git", branch: "master"
+  head "https://github.com/sionescu/libfixposix.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -30,12 +30,12 @@ class Libfixposix < Formula
 
   def install
     system "autoreconf", "--force", "--install", "--verbose"
-    system ".configure", "--disable-silent-rules", *std_configure_args
+    system "./configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
   end
 
   test do
-    (testpath"mxstemp.c").write <<~C
+    (testpath/"mxstemp.c").write <<~C
       #include <stdio.h>
 
       #include <lfp.h>
@@ -57,7 +57,7 @@ class Libfixposix < Formula
           return 0;
       }
     C
-    system ENV.cc, "mxstemp.c", libshared_library("libfixposix"), "-o", "mxstemp"
-    system ".mxstemp"
+    system ENV.cc, "mxstemp.c", lib/shared_library("libfixposix"), "-o", "mxstemp"
+    system "./mxstemp"
   end
 end

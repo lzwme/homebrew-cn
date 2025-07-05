@@ -1,10 +1,10 @@
 class Slumber < Formula
-  desc "Terminal-based HTTPREST client"
-  homepage "https:slumber.lucaspickering.me"
-  url "https:github.comLucasPickeringslumberarchiverefstagsv3.2.0.tar.gz"
+  desc "Terminal-based HTTP/REST client"
+  homepage "https://slumber.lucaspickering.me/"
+  url "https://ghfast.top/https://github.com/LucasPickering/slumber/archive/refs/tags/v3.2.0.tar.gz"
   sha256 "dcd3f5d74abc6fa764164ead0cd52368d92122f395353ed43091ad1f02498d95"
   license "MIT"
-  head "https:github.comLucasPickeringslumber.git", branch: "master"
+  head "https://github.com/LucasPickering/slumber.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "0dcece418e59817739e3a2fd7c6d2882bf55b9a2c5432d84aac8eaad8860b45b"
@@ -23,14 +23,14 @@ class Slumber < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}slumber --version")
+    assert_match version.to_s, shell_output("#{bin}/slumber --version")
 
-    system bin"slumber", "new"
-    assert_match <<~YAML, (testpath"slumber.yml").read
+    system bin/"slumber", "new"
+    assert_match <<~YAML, (testpath/"slumber.yml").read
       # For basic usage info, see:
-      # https:slumber.lucaspickering.mebookgetting_started.html
+      # https://slumber.lucaspickering.me/book/getting_started.html
       # For all collection options, see:
-      # https:slumber.lucaspickering.mebookapirequest_collectionindex.html
+      # https://slumber.lucaspickering.me/book/api/request_collection/index.html
 
       # Profiles are groups of data you can easily switch between. A common usage is
       # to define profiles for various environments of a REST service
@@ -38,7 +38,7 @@ class Slumber < Formula
         example:
           name: Example Profile
           data:
-            host: https:httpbin.org
+            host: https://httpbin.org
     YAML
   end
 end

@@ -1,11 +1,11 @@
 class Gpredict < Formula
-  desc "Real-time satellite trackingprediction application"
-  homepage "https:oz9aec.dkgpredict"
+  desc "Real-time satellite tracking/prediction application"
+  homepage "https://oz9aec.dk/gpredict/"
   license "GPL-2.0-or-later"
   revision 4
 
   stable do
-    url "https:github.comcsetegpredictreleasesdownloadv2.2.1gpredict-2.2.1.tar.bz2"
+    url "https://ghfast.top/https://github.com/csete/gpredict/releases/download/v2.2.1/gpredict-2.2.1.tar.bz2"
     sha256 "e759c4bae0b17b202a7c0f8281ff016f819b502780d3e77b46fe8767e7498e43"
 
     # Dependencies to regenerate configure for patch. Remove in the next release
@@ -14,14 +14,14 @@ class Gpredict < Formula
     depends_on "libtool" => :build
 
     # Fix compilation with GCC 10+. Remove in the next release.
-    # Issue ref: https:github.comcsetegpredictissues195
+    # Issue ref: https://github.com/csete/gpredict/issues/195
     patch do
-      url "https:github.comcsetegpredictcommitc565bb3d48777bfe17114b5d01cd81150521f056.patch?full_index=1"
+      url "https://github.com/csete/gpredict/commit/c565bb3d48777bfe17114b5d01cd81150521f056.patch?full_index=1"
       sha256 "fbefbb898a565cb830006996803646d755729bd4d5307a3713274729d1778462"
     end
 
     # Backport support for GooCanvas 3. Remove in the next release along with `autoreconf`
-    # Ref: https:github.comcsetegpredictcommit86fb71aad0bba311268352539b61225bf1f1e279
+    # Ref: https://github.com/csete/gpredict/commit/86fb71aad0bba311268352539b61225bf1f1e279
     patch :DATA
   end
 
@@ -45,7 +45,7 @@ class Gpredict < Formula
   end
 
   head do
-    url "https:github.comcsetegpredict.git", branch: "master"
+    url "https://github.com/csete/gpredict.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -80,10 +80,10 @@ class Gpredict < Formula
   def install
     if build.head?
       inreplace "autogen.sh", "libtoolize", "glibtoolize"
-      system ".autogen.sh", *std_configure_args
+      system "./autogen.sh", *std_configure_args
     else
       system "autoreconf", "--force", "--install", "--verbose" # TODO: remove in the next release
-      system ".configure", *std_configure_args
+      system "./configure", *std_configure_args
     end
     system "make", "install"
   end
@@ -91,15 +91,15 @@ class Gpredict < Formula
   test do
     return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
 
-    assert_match "real-time", shell_output("#{bin}gpredict -h")
+    assert_match "real-time", shell_output("#{bin}/gpredict -h")
   end
 end
 
 __END__
-diff --git aconfigure.ac bconfigure.ac
+diff --git a/configure.ac b/configure.ac
 index e3fe564..d50615f 100644
---- aconfigure.ac
-+++ bconfigure.ac
+--- a/configure.ac
++++ b/configure.ac
 @@ -44,12 +44,19 @@ else
      AC_MSG_ERROR(Gpredict requires libglib-dev 2.32 or later)
  fi

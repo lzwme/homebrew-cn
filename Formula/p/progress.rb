@@ -1,10 +1,10 @@
 class Progress < Formula
   desc "Coreutils progress viewer"
-  homepage "https:github.comXfennecprogress"
-  url "https:github.comXfennecprogressarchiverefstagsv0.17.tar.gz"
+  homepage "https://github.com/Xfennec/progress"
+  url "https://ghfast.top/https://github.com/Xfennec/progress/archive/refs/tags/v0.17.tar.gz"
   sha256 "ee9538fce98895dcf0d108087d3ee2e13f5c08ed94c983f0218a7a3d153b725d"
   license "GPL-3.0-or-later"
-  head "https:github.comXfennecprogress.git", branch: "master"
+  head "https://github.com/Xfennec/progress.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -28,10 +28,10 @@ class Progress < Formula
   end
 
   test do
-    pid = spawn "bindd", "if=devurandom", "of=foo", "bs=512", "count=1048576"
+    pid = spawn "/bin/dd", "if=/dev/urandom", "of=foo", "bs=512", "count=1048576"
     sleep 1
     begin
-      assert_match "dd", shell_output(bin"progress")
+      assert_match "dd", shell_output(bin/"progress")
     ensure
       Process.kill 9, pid
       Process.wait pid

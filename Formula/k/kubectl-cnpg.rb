@@ -1,11 +1,11 @@
 class KubectlCnpg < Formula
   desc "CloudNativePG plugin for kubectl"
-  homepage "https:cloudnative-pg.io"
-  url "https:github.comcloudnative-pgcloudnative-pg.git",
+  homepage "https://cloudnative-pg.io/"
+  url "https://github.com/cloudnative-pg/cloudnative-pg.git",
       tag:      "v1.26.0",
       revision: "1535f3c1742525b93f4f8bbb7dd37e42e122f41f"
   license "Apache-2.0"
-  head "https:github.comcloudnative-pgcloudnative-pg.git", branch: "main"
+  head "https://github.com/cloudnative-pg/cloudnative-pg.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "a339ca5822e7b417cd46461374919dbd798a48d701d46bc2d40d89e3a7772daa"
@@ -22,25 +22,25 @@ class KubectlCnpg < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.comcloudnative-pgcloudnative-pgpkgversions.buildVersion=#{version}
-      -X github.comcloudnative-pgcloudnative-pgpkgversions.buildCommit=#{Utils.git_head}
-      -X github.comcloudnative-pgcloudnative-pgpkgversions.buildDate=#{time.iso8601}
+      -X github.com/cloudnative-pg/cloudnative-pg/pkg/versions.buildVersion=#{version}
+      -X github.com/cloudnative-pg/cloudnative-pg/pkg/versions.buildCommit=#{Utils.git_head}
+      -X github.com/cloudnative-pg/cloudnative-pg/pkg/versions.buildDate=#{time.iso8601}
     ]
-    system "go", "build", *std_go_args(ldflags:), ".cmdkubectl-cnpg"
-    generate_completions_from_executable(bin"kubectl-cnpg", "completion")
+    system "go", "build", *std_go_args(ldflags:), "./cmd/kubectl-cnpg"
+    generate_completions_from_executable(bin/"kubectl-cnpg", "completion")
 
     kubectl_plugin_completion = <<~EOS
-      #!usrbinenv sh
+      #!/usr/bin/env sh
       # Call the __complete command passing it all arguments
       kubectl cnpg __complete "$@"
     EOS
 
-    (bin"kubectl_complete-cnpg").write(kubectl_plugin_completion)
-    chmod 0755, bin"kubectl_complete-cnpg"
+    (bin/"kubectl_complete-cnpg").write(kubectl_plugin_completion)
+    chmod 0755, bin/"kubectl_complete-cnpg"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}kubectl-cnpg version")
-    assert_match "connect: connection refused", shell_output("#{bin}kubectl-cnpg status dummy-cluster 2>&1", 1)
+    assert_match version.to_s, shell_output("#{bin}/kubectl-cnpg version")
+    assert_match "connect: connection refused", shell_output("#{bin}/kubectl-cnpg status dummy-cluster 2>&1", 1)
   end
 end

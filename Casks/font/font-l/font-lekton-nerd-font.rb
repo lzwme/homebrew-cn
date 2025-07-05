@@ -2,9 +2,9 @@ cask "font-lekton-nerd-font" do
   version "3.4.0"
   sha256 "b76368a4d080b2b4021d241467898bc2fe0afd447159d65c01b74d9c1bc59ec0"
 
-  url "https:github.comryanoasisnerd-fontsreleasesdownloadv#{version}Lekton.zip"
+  url "https://ghfast.top/https://github.com/ryanoasis/nerd-fonts/releases/download/v#{version}/Lekton.zip"
   name "Lekton Nerd Font (Lekton)"
-  homepage "https:github.comryanoasisnerd-fonts"
+  homepage "https://github.com/ryanoasis/nerd-fonts"
 
   livecheck do
     url :url

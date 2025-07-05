@@ -1,7 +1,7 @@
 class Tintin < Formula
   desc "MUD client"
-  homepage "https:tintin.mudhalla.net"
-  url "https:github.comscandumtintinreleasesdownload2.02.51tintin-2.02.51.tar.gz"
+  homepage "https://tintin.mudhalla.net/"
+  url "https://ghfast.top/https://github.com/scandum/tintin/releases/download/2.02.51/tintin-2.02.51.tar.gz"
   sha256 "9279f25d18defddf449863f4bad6ec971feacd297a9d9ddaac28c9b5d5eced02"
   license "GPL-3.0-or-later"
 
@@ -21,16 +21,16 @@ class Tintin < Formula
   end
 
   depends_on "gnutls"
-  depends_on "pcre" # PCRE2 issue: https:github.comscandumtintinissues163
+  depends_on "pcre" # PCRE2 issue: https://github.com/scandum/tintin/issues/163
 
   uses_from_macos "zlib"
 
   def install
     # find Homebrew's libpcre
-    ENV.append "LDFLAGS", "-L#{HOMEBREW_PREFIX}lib"
+    ENV.append "LDFLAGS", "-L#{HOMEBREW_PREFIX}/lib"
 
     cd "src" do
-      system ".configure", "--prefix=#{prefix}"
+      system "./configure", "--prefix=#{prefix}"
       system "make", "CFLAGS=#{ENV.cflags}",
                      "INCS=#{ENV.cppflags}",
                      "LDFLAGS=#{ENV.ldflags}",
@@ -39,6 +39,6 @@ class Tintin < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}tt++ -V", 1)
+    assert_match version.to_s, shell_output("#{bin}/tt++ -V", 1)
   end
 end

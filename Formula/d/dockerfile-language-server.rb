@@ -1,7 +1,7 @@
 class DockerfileLanguageServer < Formula
   desc "Language server for Dockerfiles powered by Node, TypeScript, and VSCode"
-  homepage "https:github.comrcjsuendockerfile-language-server"
-  url "https:registry.npmjs.orgdockerfile-language-server-nodejs-dockerfile-language-server-nodejs-0.14.0.tgz"
+  homepage "https://github.com/rcjsuen/dockerfile-language-server"
+  url "https://registry.npmjs.org/dockerfile-language-server-nodejs/-/dockerfile-language-server-nodejs-0.14.0.tgz"
   sha256 "2c2aa3fb4b1bea75701537a5e981f6001331308b930376e41305113edc4fe81a"
   license "MIT"
 
@@ -19,7 +19,7 @@ class DockerfileLanguageServer < Formula
 
   def install
     system "npm", "install", *std_npm_args
-    bin.install_symlink Dir["#{libexec}bin*"]
+    bin.install_symlink Dir["#{libexec}/bin/*"]
   end
 
   test do
@@ -37,10 +37,10 @@ class DockerfileLanguageServer < Formula
       }
     JSON
 
-    Open3.popen3("#{bin}docker-langserver", "--stdio") do |stdin, stdout|
+    Open3.popen3("#{bin}/docker-langserver", "--stdio") do |stdin, stdout|
       stdin.write "Content-Length: #{json.size}\r\n\r\n#{json}"
       sleep 3
-      assert_match(^Content-Length: \d+i, stdout.readline)
+      assert_match(/^Content-Length: \d+/i, stdout.readline)
     end
   end
 end

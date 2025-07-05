@@ -2,19 +2,19 @@ cask "bugdom" do
   version "1.3.4"
   sha256 "9797091290e29336e74f8d3692589acd5accc53bccf085e6aeb8636552349644"
 
-  url "https:github.comjorioBugdomreleasesdownload#{version}Bugdom-#{version}-mac.dmg",
-      verified: "github.comjorioBugdom"
+  url "https://ghfast.top/https://github.com/jorio/Bugdom/releases/download/#{version}/Bugdom-#{version}-mac.dmg",
+      verified: "github.com/jorio/Bugdom/"
   name "Bugdom"
-  desc "Bug-themed 3D actionadventure game from Pangea Software"
-  homepage "https:jorio.itch.iobugdom"
+  desc "Bug-themed 3D action/adventure game from Pangea Software"
+  homepage "https://jorio.itch.io/bugdom"
 
   no_autobump! because: :requires_manual_review
 
   app "Bugdom.app"
-  artifact "Documentation", target: "~LibraryApplication SupportBugdom"
+  artifact "Documentation", target: "~/Library/Application Support/Bugdom"
 
   zap trash: [
-    "~LibraryPreferencesBugdom",
-    "~LibrarySaved Application Stateio.jor.bugdom.savedState",
+    "~/Library/Preferences/Bugdom",
+    "~/Library/Saved Application State/io.jor.bugdom.savedState",
   ]
 end

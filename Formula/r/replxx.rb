@@ -1,7 +1,7 @@
 class Replxx < Formula
   desc "Readline and libedit replacement"
-  homepage "https:github.comAmokHuginnssonreplxx"
-  url "https:github.comAmokHuginnssonreplxxarchiverefstagsrelease-0.0.4.tar.gz"
+  homepage "https://github.com/AmokHuginnsson/replxx"
+  url "https://ghfast.top/https://github.com/AmokHuginnsson/replxx/archive/refs/tags/release-0.0.4.tar.gz"
   sha256 "a22988b2184e1d256e2d111b5749e16ffb1accbf757c7b248226d73c426844c4"
   license all_of: ["BSD-3-Clause", "Unicode-TOU"]
 
@@ -26,13 +26,13 @@ class Replxx < Formula
   end
 
   test do
-    cp_r pkgshare"examples", testpath
+    cp_r pkgshare/"examples", testpath
     cd "examples" do
       system ENV.cc, "-c", "util.c", "-o", "util.o"
       system ENV.cc, "c-api.c", "util.o", "-L#{lib}", "-I#{include}", "-lreplxx", "-lm", "-o", "test"
 
       # `test` executable is an interactive program so we use Open3 to interact with it
-      Open3.popen3(".test") do |stdin, stdout, stderr, _|
+      Open3.popen3("./test") do |stdin, stdout, stderr, _|
         sleep 2
         assert_match "starting...", stdout.gets
 

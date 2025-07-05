@@ -1,10 +1,10 @@
 class Terrahelp < Formula
   desc "Tool providing extra functionality for Terraform"
-  homepage "https:github.comopencredoterrahelp"
-  url "https:github.comopencredoterrahelparchiverefstagsv0.7.5.tar.gz"
+  homepage "https://github.com/opencredo/terrahelp"
+  url "https://ghfast.top/https://github.com/opencredo/terrahelp/archive/refs/tags/v0.7.5.tar.gz"
   sha256 "bfcffdf06e1db075872a6283d1f1cc6858b8139bf10dd480969b419aa6fc01f7"
   license "Apache-2.0"
-  head "https:github.comopencredoterrahelp.git", branch: "main"
+  head "https://github.com/opencredo/terrahelp.git", branch: "main"
 
   no_autobump! because: :requires_manual_review
 
@@ -30,12 +30,12 @@ class Terrahelp < Formula
   end
 
   test do
-    tf_vars = testpath"terraform.tfvars"
+    tf_vars = testpath/"terraform.tfvars"
     tf_vars.write <<~EOS
       tf_sensitive_key_1         = "sensitive-value-1-AK#%DJGHS*G"
     EOS
 
-    tf_output = testpath"tf.out"
+    tf_output = testpath/"tf.out"
     tf_output.write <<~EOS
       Refreshing Terraform state in-memory prior to plan...
       The refreshed state will be used to calculate this plan, but
@@ -52,9 +52,9 @@ class Terrahelp < Formula
       Plan: 0 to add, 0 to change, 0 to destroy.
     EOS
 
-    output = pipe_output("#{bin}terrahelp mask --tfvars #{tf_vars}", tf_output.read).strip
+    output = pipe_output("#{bin}/terrahelp mask --tfvars #{tf_vars}", tf_output.read).strip
 
     assert_match("vars.msg1: \"******\"", output, "expecting sensitive value to be masked")
-    refute_match(sensitive-value-1-AK#%DJGHS\*G, output, "not expecting sensitive value to be presentt")
+    refute_match(/sensitive-value-1-AK#%DJGHS\*G/, output, "not expecting sensitive value to be presentt")
   end
 end

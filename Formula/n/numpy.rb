@@ -1,10 +1,10 @@
 class Numpy < Formula
   desc "Package for scientific computing with Python"
-  homepage "https:www.numpy.org"
-  url "https:files.pythonhosted.orgpackages2e19d7c972dfe90a353dbd3efbbe1d14a5951de80c99c9dc1b93cd998d51dc0fnumpy-2.3.1.tar.gz"
+  homepage "https://www.numpy.org/"
+  url "https://files.pythonhosted.org/packages/2e/19/d7c972dfe90a353dbd3efbbe1d14a5951de80c99c9dc1b93cd998d51dc0f/numpy-2.3.1.tar.gz"
   sha256 "1ec9ae20a4226da374362cca3c62cd753faf2f951440b0e3b98e93c235441d2b"
   license "BSD-3-Clause"
-  head "https:github.comnumpynumpy.git", branch: "main"
+  head "https://github.com/numpy/numpy.git", branch: "main"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "b1f3ac9d59ade153b11e5d275615324f7395c552649a6285b81e40f681d05481"
@@ -30,12 +30,12 @@ class Numpy < Formula
   def pythons
     deps.map(&:to_formula)
         .select { |f| f.name.start_with?("python@") }
-        .sort_by(&:version) # so scripts like `binf2py` use newest python
+        .sort_by(&:version) # so scripts like `bin/f2py` use newest python
   end
 
   def install
     pythons.each do |python|
-      python3 = python.opt_libexec"binpython"
+      python3 = python.opt_libexec/"bin/python"
       system python3, "-m", "pip", "install", "-Csetup-args=-Dblas=openblas",
                                               "-Csetup-args=-Dlapack=openblas",
                                               *std_pip_args(build_isolation: true), "."
@@ -50,7 +50,7 @@ class Numpy < Formula
 
   test do
     pythons.each do |python|
-      python3 = python.opt_libexec"binpython"
+      python3 = python.opt_libexec/"bin/python"
       system python3, "-c", <<~PYTHON
         import numpy as np
         t = np.ones((3,3), int)

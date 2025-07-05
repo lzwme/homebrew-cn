@@ -2,10 +2,10 @@ cask "font-jeju-myeongjo" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefontsrawmainofljejumyeongjoJejuMyeongjo-Regular.ttf",
-      verified: "github.comgooglefonts"
+  url "https://github.com/google/fonts/raw/main/ofl/jejumyeongjo/JejuMyeongjo-Regular.ttf",
+      verified: "github.com/google/fonts/"
   name "Jeju Myeongjo"
-  homepage "https:fonts.google.comearlyaccess"
+  homepage "https://fonts.google.com/earlyaccess"
 
   font "JejuMyeongjo-Regular.ttf"
 

@@ -1,10 +1,10 @@
 class Kafkactl < Formula
   desc "CLI for managing Apache Kafka"
-  homepage "https:deviceinsight.github.iokafkactl"
-  url "https:github.comdeviceinsightkafkactlarchiverefstagsv5.10.1.tar.gz"
+  homepage "https://deviceinsight.github.io/kafkactl/"
+  url "https://ghfast.top/https://github.com/deviceinsight/kafkactl/archive/refs/tags/v5.10.1.tar.gz"
   sha256 "22b0d60aa8265a3520d961b07d58886b9266798c57fa41a05b74b19814819c4d"
   license "Apache-2.0"
-  head "https:github.comdeviceinsightkafkactl.git", branch: "main"
+  head "https://github.com/deviceinsight/kafkactl.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "955ab818ee8f3426363d478180b2faa12314134c3716802ea0a90196b85f8704"
@@ -20,19 +20,19 @@ class Kafkactl < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.comdeviceinsightkafkactlv5cmd.Version=v#{version}
-      -X github.comdeviceinsightkafkactlv5cmd.GitCommit=#{tap.user}
-      -X github.comdeviceinsightkafkactlv5cmd.BuildTime=#{time.iso8601}
+      -X github.com/deviceinsight/kafkactl/v5/cmd.Version=v#{version}
+      -X github.com/deviceinsight/kafkactl/v5/cmd.GitCommit=#{tap.user}
+      -X github.com/deviceinsight/kafkactl/v5/cmd.BuildTime=#{time.iso8601}
     ]
     system "go", "build", *std_go_args(ldflags:)
 
-    generate_completions_from_executable(bin"kafkactl", "completion")
+    generate_completions_from_executable(bin/"kafkactl", "completion")
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}kafkactl version")
+    assert_match version.to_s, shell_output("#{bin}/kafkactl version")
 
-    output = shell_output("#{bin}kafkactl produce greetings 2>&1", 1)
+    output = shell_output("#{bin}/kafkactl produce greetings 2>&1", 1)
     assert_match "Failed to open Kafka producer", output
   end
 end

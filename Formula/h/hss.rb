@@ -1,7 +1,7 @@
 class Hss < Formula
   desc "Interactive parallel SSH client"
-  homepage "https:github.comsix-ddchss"
-  url "https:github.comsix-ddchssarchiverefstags1.9.tar.gz"
+  homepage "https://github.com/six-ddc/hss"
+  url "https://ghfast.top/https://github.com/six-ddc/hss/archive/refs/tags/1.9.tar.gz"
   sha256 "d7846ee657fe6a600c7d6f8e91f17ffa238efcaeb6f79856caa9fdedd96e3bca"
   license "MIT"
 
@@ -39,7 +39,7 @@ class Hss < Formula
       end
       hss_read, hss_write = IO.pipe
       hss_pid = fork do
-        exec bin"hss", "-H", "-p #{port} 127.0.0.1", "-u", "root", "true",
+        exec bin/"hss", "-H", "-p #{port} 127.0.0.1", "-u", "root", "true",
           out: hss_write
       end
       server.close

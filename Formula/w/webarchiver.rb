@@ -1,10 +1,10 @@
 class Webarchiver < Formula
   desc "Allows you to create Safari .webarchive files"
-  homepage "https:github.comnewzealandpaulwebarchiver"
-  url "https:github.comnewzealandpaulwebarchiverarchiverefstags0.13.tar.gz"
+  homepage "https://github.com/newzealandpaul/webarchiver"
+  url "https://ghfast.top/https://github.com/newzealandpaul/webarchiver/archive/refs/tags/0.13.tar.gz"
   sha256 "bbb81adb809a2817e6febdcf801af805b9f4d3080127411e544ac00ee4575242"
   license "GPL-3.0-only"
-  head "https:github.comnewzealandpaulwebarchiver.git", branch: "master"
+  head "https://github.com/newzealandpaul/webarchiver.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "050531ce286b76faa0a3c831e5f9a070c0723b0bfe839e68f0f35f2829c34884"
@@ -21,11 +21,11 @@ class Webarchiver < Formula
     # Force 64 bit-only build, otherwise it fails on Mojave
     xcodebuild "SYMROOT=build", "-arch", Hardware::CPU.arch
 
-    bin.install ".buildReleasewebarchiver"
+    bin.install "./build/Release/webarchiver"
   end
 
   test do
-    system bin"webarchiver", "-url", "https:www.google.com", "-output", "foo.webarchive"
+    system bin/"webarchiver", "-url", "https://www.google.com", "-output", "foo.webarchive"
     assert_match "Apple binary property list", shell_output("file foo.webarchive")
   end
 end

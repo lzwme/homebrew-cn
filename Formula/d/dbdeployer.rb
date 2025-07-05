@@ -1,10 +1,10 @@
 class Dbdeployer < Formula
   desc "Tool to deploy sandboxed MySQL database servers"
-  homepage "https:github.comdatacharmerdbdeployer"
-  url "https:github.comdatacharmerdbdeployerarchiverefstagsv1.73.0.tar.gz"
+  homepage "https://github.com/datacharmer/dbdeployer"
+  url "https://ghfast.top/https://github.com/datacharmer/dbdeployer/archive/refs/tags/v1.73.0.tar.gz"
   sha256 "c360b5118c3cfac724aebe107ed03b9af09b201dc189ae735589a7a3d75fcf7e"
   license "Apache-2.0"
-  head "https:github.comdatacharmerdbdeployer.git", branch: "master"
+  head "https://github.com/datacharmer/dbdeployer.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -26,12 +26,12 @@ class Dbdeployer < Formula
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
-    bash_completion.install "docsdbdeployer_completion.sh"
+    bash_completion.install "docs/dbdeployer_completion.sh"
   end
 
   test do
-    shell_output("#{bin}dbdeployer init --skip-shell-completion --skip-tarball-download")
-    assert_path_exists testpath"optmysql"
-    assert_path_exists testpath"sandboxes"
+    shell_output("#{bin}/dbdeployer init --skip-shell-completion --skip-tarball-download")
+    assert_path_exists testpath/"opt/mysql"
+    assert_path_exists testpath/"sandboxes"
   end
 end

@@ -1,10 +1,10 @@
 class Helmsman < Formula
   desc "Helm Charts as Code tool"
-  homepage "https:github.commkubaczykhelmsman"
-  url "https:github.commkubaczykhelmsmanarchiverefstagsv4.0.1.tar.gz"
+  homepage "https://github.com/mkubaczyk/helmsman"
+  url "https://ghfast.top/https://github.com/mkubaczyk/helmsman/archive/refs/tags/v4.0.1.tar.gz"
   sha256 "1fd57af9978681f0c148157e5ef7929b5154e6e79bc13c41711892340320254e"
   license "MIT"
-  head "https:github.commkubaczykhelmsman.git", branch: "master"
+  head "https://github.com/mkubaczyk/helmsman.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "b083ce72a651f9040fcd994a3c2472ea05689e460a1837d793ddd2fae40800ed"
@@ -20,17 +20,17 @@ class Helmsman < Formula
   depends_on "kubernetes-cli"
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}"), ".cmdhelmsman"
-    pkgshare.install "examplesexample.yaml", "examplesjob.yaml"
+    system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}"), "./cmd/helmsman"
+    pkgshare.install "examples/example.yaml", "examples/job.yaml"
   end
 
   test do
     ENV["ORG_PATH"] = "brewtest"
     ENV["VALUE"] = "brewtest"
 
-    output = shell_output("#{bin}helmsman --apply -f #{pkgshare}example.yaml 2>&1", 1)
+    output = shell_output("#{bin}/helmsman --apply -f #{pkgshare}/example.yaml 2>&1", 1)
     assert_match "helm diff not found", output
 
-    assert_match version.to_s, shell_output("#{bin}helmsman version")
+    assert_match version.to_s, shell_output("#{bin}/helmsman version")
   end
 end

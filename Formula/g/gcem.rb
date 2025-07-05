@@ -1,7 +1,7 @@
 class Gcem < Formula
   desc "C++ compile-time math library"
-  homepage "https:gcem.readthedocs.ioenlatest"
-  url "https:github.comkthohrgcemarchiverefstagsv1.18.0.tar.gz"
+  homepage "https://gcem.readthedocs.io/en/latest/"
+  url "https://ghfast.top/https://github.com/kthohr/gcem/archive/refs/tags/v1.18.0.tar.gz"
   sha256 "8e71a9f5b62956da6c409dda44b483f98c4a98ae72184f3aa4659ae5b3462e61"
   license "Apache-2.0"
 
@@ -18,7 +18,7 @@ class Gcem < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~CPP
+    (testpath/"test.cpp").write <<~CPP
       #include <iostream>
       #include <gcem.hpp>
 
@@ -30,6 +30,6 @@ class Gcem < Formula
     CPP
 
     system ENV.cxx, "test.cpp", "-std=c++11", "-I#{include}", "-o", "test"
-    assert_equal "3628800\n", shell_output(".test")
+    assert_equal "3628800\n", shell_output("./test")
   end
 end

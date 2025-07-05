@@ -1,7 +1,7 @@
 class Fnt < Formula
-  desc "Apt for fonts, the missing font manager for macOSlinux"
-  homepage "https:github.comalexmyczkofnt"
-  url "https:github.comalexmyczkofntarchiverefstags1.9.tar.gz"
+  desc "Apt for fonts, the missing font manager for macOS/linux"
+  homepage "https://github.com/alexmyczko/fnt"
+  url "https://ghfast.top/https://github.com/alexmyczko/fnt/archive/refs/tags/1.9.tar.gz"
   sha256 "4801b58e007aa5d84b112afbea3a5e449fb8d73124fb34182efe228fc37ac3e0"
   license "MIT"
 
@@ -26,10 +26,10 @@ class Fnt < Formula
   def install
     bin.install "fnt"
     man1.install "fnt.1"
-    zsh_completion.install "completions_fnt"
+    zsh_completion.install "completions/_fnt"
   end
 
   test do
-    assert_match "Available Fonts", shell_output("#{bin}fnt info")
+    assert_match "Available Fonts", shell_output("#{bin}/fnt info")
   end
 end

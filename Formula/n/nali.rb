@@ -1,10 +1,10 @@
 class Nali < Formula
   desc "Tool for querying IP geographic information and CDN provider"
-  homepage "https:github.comzu1knali"
-  url "https:github.comzu1knaliarchiverefstagsv0.8.1.tar.gz"
+  homepage "https://github.com/zu1k/nali"
+  url "https://ghfast.top/https://github.com/zu1k/nali/archive/refs/tags/v0.8.1.tar.gz"
   sha256 "8918e4c1c720dad1590a42fa04c5fea1ec862148127206e716daa16c1ce3561c"
   license "MIT"
-  head "https:github.comzu1knali.git", branch: "master"
+  head "https://github.com/zu1k/nali.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -23,14 +23,14 @@ class Nali < Formula
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
-    generate_completions_from_executable(bin"nali", "completion")
+    generate_completions_from_executable(bin/"nali", "completion")
   end
 
   test do
     ip = "1.1.1.1"
     # Default database used by program is in Chinese, while downloading an English one
     # requires an third-party account.
-    # This example reads "Australia APNICCloudFlare Public DNS Server".
-    assert_match "#{ip} [澳大利亚 APNICCloudFlare公共DNS服务器]", shell_output("#{bin}nali #{ip}")
+    # This example reads "Australia APNIC/CloudFlare Public DNS Server".
+    assert_match "#{ip} [澳大利亚 APNIC/CloudFlare公共DNS服务器]", shell_output("#{bin}/nali #{ip}")
   end
 end

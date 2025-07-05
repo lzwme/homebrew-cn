@@ -1,7 +1,7 @@
 class Uni < Formula
   desc "Unicode database query tool for the command-line"
-  homepage "https:github.comarp242uni"
-  url "https:github.comarp242uniarchiverefstagsv2.8.0.tar.gz"
+  homepage "https://github.com/arp242/uni"
+  url "https://ghfast.top/https://github.com/arp242/uni/archive/refs/tags/v2.8.0.tar.gz"
   sha256 "627a8aebe8d72bad5a462b8efc8b96dc96794b926b094de3f1e5b9965e44a678"
   license "MIT"
 
@@ -24,6 +24,6 @@ class Uni < Formula
   end
 
   test do
-    assert_match "CLINKING BEER MUGS", shell_output("#{bin}uni identify 🍻")
+    assert_match "CLINKING BEER MUGS", shell_output("#{bin}/uni identify 🍻")
   end
 end

@@ -1,7 +1,7 @@
 class Libgsf < Formula
-  desc "IO abstraction library for dealing with structured file formats"
-  homepage "https:gitlab.gnome.orgGNOMElibgsf"
-  url "https:download.gnome.orgsourceslibgsf1.14libgsf-1.14.53.tar.xz"
+  desc "I/O abstraction library for dealing with structured file formats"
+  homepage "https://gitlab.gnome.org/GNOME/libgsf"
+  url "https://download.gnome.org/sources/libgsf/1.14/libgsf-1.14.53.tar.xz"
   sha256 "0eb59a86e0c50f97ac9cfe4d8cc1969f623f2ae8c5296f2414571ff0a9e8bcba"
   license "LGPL-2.1-only"
 
@@ -16,7 +16,7 @@ class Libgsf < Formula
   end
 
   head do
-    url "https:github.comGNOMElibgsf.git", branch: "master"
+    url "https://github.com/GNOME/libgsf.git", branch: "master"
     depends_on "autoconf" => :build
     depends_on "automake" => :build
     depends_on "gettext" => :build
@@ -36,15 +36,15 @@ class Libgsf < Formula
   end
 
   def install
-    configure = build.head? ? ".autogen.sh" : ".configure"
+    configure = build.head? ? "./autogen.sh" : "./configure"
     system configure, "--disable-silent-rules", *std_configure_args
     system "make", "install"
   end
 
   test do
-    system bin"gsf", "--help"
-    (testpath"test.c").write <<~C
-      #include <gsfgsf-utils.h>
+    system bin/"gsf", "--help"
+    (testpath/"test.c").write <<~C
+      #include <gsf/gsf-utils.h>
       int main()
       {
           void
@@ -53,9 +53,9 @@ class Libgsf < Formula
       }
     C
     system ENV.cc, "test.c", "-o", "test",
-           "-I#{include}libgsf-1",
-           "-I#{Formula["glib"].opt_include}glib-2.0",
-           "-I#{Formula["glib"].opt_lib}glib-2.0include"
-    system ".test"
+           "-I#{include}/libgsf-1",
+           "-I#{Formula["glib"].opt_include}/glib-2.0",
+           "-I#{Formula["glib"].opt_lib}/glib-2.0/include"
+    system "./test"
   end
 end

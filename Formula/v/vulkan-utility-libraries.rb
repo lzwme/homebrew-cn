@@ -1,14 +1,14 @@
 class VulkanUtilityLibraries < Formula
   desc "Utility Libraries for Vulkan"
-  homepage "https:github.comKhronosGroupVulkan-Utility-Libraries"
-  url "https:github.comKhronosGroupVulkan-Utility-Librariesarchiverefstagsv1.4.320.tar.gz"
+  homepage "https://github.com/KhronosGroup/Vulkan-Utility-Libraries"
+  url "https://ghfast.top/https://github.com/KhronosGroup/Vulkan-Utility-Libraries/archive/refs/tags/v1.4.320.tar.gz"
   sha256 "fb210bde874a4688b0fae98089c4d7cd4496c99bfae5d9aaa37b008f6b3a00d6"
   license "Apache-2.0"
-  head "https:github.comKhronosGroupVulkan-Utility-Libraries.git", branch: "main"
+  head "https://github.com/KhronosGroup/Vulkan-Utility-Libraries.git", branch: "main"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -34,9 +34,9 @@ class VulkanUtilityLibraries < Formula
   end
 
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include <stdio.h>
-      #include <vulkanlayervk_layer_settings.h>
+      #include <vulkan/layer/vk_layer_settings.h>
       int main() {
         VkLayerSettingEXT s;
         s.pLayerName = "VK_LAYER_LUNARG_test";
@@ -52,6 +52,6 @@ class VulkanUtilityLibraries < Formula
       }
     C
     system ENV.cc, "test.c", "-L#{lib}", "-o", "test"
-    system ".test"
+    system "./test"
   end
 end

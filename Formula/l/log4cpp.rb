@@ -1,13 +1,13 @@
 class Log4cpp < Formula
   desc "Configurable logging for C++"
-  homepage "https:log4cpp.sourceforge.net"
-  url "https:downloads.sourceforge.netprojectlog4cpplog4cpp-1.1.x%20%28new%29log4cpp-1.1log4cpp-1.1.4.tar.gz"
+  homepage "https://log4cpp.sourceforge.net/"
+  url "https://downloads.sourceforge.net/project/log4cpp/log4cpp-1.1.x%20%28new%29/log4cpp-1.1/log4cpp-1.1.4.tar.gz"
   sha256 "696113659e426540625274a8b251052cc04306d8ee5c42a0c7639f39ca90c9d6"
   license "LGPL-2.1-or-later"
 
   livecheck do
     url :stable
-    regex(%r{url=.*?log4cpp[._-]v?(\d+(?:\.\d+)+)\.t}i)
+    regex(%r{url=.*?/log4cpp[._-]v?(\d+(?:\.\d+)+)\.t}i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -28,7 +28,7 @@ class Log4cpp < Formula
 
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
-    url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-big_sur.diff"
+    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-big_sur.diff"
     sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
   end
 
@@ -37,17 +37,17 @@ class Log4cpp < Formula
     args = []
     args << "--build=aarch64-unknown-linux-gnu" if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
 
-    system ".configure", *args, *std_configure_args
+    system "./configure", *args, *std_configure_args
     system "make", "install"
   end
 
   test do
-    (testpath"log4cpp.cpp").write <<~CPP
-      #include <log4cppCategory.hh>
-      #include <log4cppPropertyConfigurator.hh>
-      #include <log4cppOstreamAppender.hh>
-      #include <log4cppPriority.hh>
-      #include <log4cppBasicLayout.hh>
+    (testpath/"log4cpp.cpp").write <<~CPP
+      #include <log4cpp/Category.hh>
+      #include <log4cpp/PropertyConfigurator.hh>
+      #include <log4cpp/OstreamAppender.hh>
+      #include <log4cpp/Priority.hh>
+      #include <log4cpp/BasicLayout.hh>
       #include <iostream>
       #include <memory>
 
@@ -61,7 +61,7 @@ class Log4cpp < Formula
 
         root.info("This is an informational log message");
 
-         Clean up
+        // Clean up
         root.removeAllAppenders();
         log4cpp::Category::shutdown();
 
@@ -69,6 +69,6 @@ class Log4cpp < Formula
       }
     CPP
     system ENV.cxx, "log4cpp.cpp", "-L#{lib}", "-llog4cpp", "-o", "log4cpp"
-    system ".log4cpp"
+    system "./log4cpp"
   end
 end

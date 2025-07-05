@@ -1,10 +1,10 @@
 class Volta < Formula
   desc "JavaScript toolchain manager for reproducible environments"
-  homepage "https:volta.sh"
-  url "https:github.comvolta-clivoltaarchiverefstagsv2.0.2.tar.gz"
+  homepage "https://volta.sh"
+  url "https://ghfast.top/https://github.com/volta-cli/volta/archive/refs/tags/v2.0.2.tar.gz"
   sha256 "0e93d17c36fb79222b10881d6c67d667483f85b19a0498eacfc535ef31894dbe"
   license "BSD-2-Clause"
-  head "https:github.comvolta-clivolta.git", branch: "main"
+  head "https://github.com/volta-cli/volta.git", branch: "main"
 
   livecheck do
     url :stable
@@ -28,24 +28,24 @@ class Volta < Formula
 
   def install
     system "cargo", "install", *std_cargo_args
-    generate_completions_from_executable(bin"volta", "completions")
+    generate_completions_from_executable(bin/"volta", "completions")
 
     bin.each_child do |f|
       basename = f.basename
       next if basename.to_s == "volta-shim"
 
-      (libexec"bin").install f
-      (binbasename).write_env_script libexec"bin"basename, VOLTA_INSTALL_DIR: opt_prefix"bin"
+      (libexec/"bin").install f
+      (bin/basename).write_env_script libexec/"bin"/basename, VOLTA_INSTALL_DIR: opt_prefix/"bin"
     end
   end
 
   test do
-    system bin"volta", "install", "node@19.0.1"
-    node = shell_output("#{bin}volta which node").chomp
+    system bin/"volta", "install", "node@19.0.1"
+    node = shell_output("#{bin}/volta which node").chomp
     assert_match "19.0.1", shell_output("#{node} --version")
-    path = testpath"test.js"
+    path = testpath/"test.js"
     path.write "console.log('hello');"
-    output = shell_output("#{testpath}.voltabinnode #{path}").strip
+    output = shell_output("#{testpath}/.volta/bin/node #{path}").strip
     assert_equal "hello", output
   end
 end

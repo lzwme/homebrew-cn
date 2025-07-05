@@ -1,10 +1,10 @@
 class Tenyr < Formula
   desc "32-bit computing environment (including simulated CPU)"
-  homepage "https:kulp.github.iotenyr"
-  url "https:github.comkulptenyrarchiverefstagsv0.9.9.tar.gz"
+  homepage "https://kulp.github.io/tenyr/"
+  url "https://ghfast.top/https://github.com/kulp/tenyr/archive/refs/tags/v0.9.9.tar.gz"
   sha256 "29010e3df8449e9210faf96ca5518d573af4ada4939fe1e7cfbc169fe9179224"
   license "MIT"
-  head "https:github.comkulptenyr.git", branch: "develop"
+  head "https://github.com/kulp/tenyr.git", branch: "develop"
 
   no_autobump! because: :requires_manual_review
 
@@ -31,18 +31,18 @@ class Tenyr < Formula
   uses_from_macos "flex" => :build
 
   def install
-    inreplace "srcdevicessdlvga.c", "SDL_image.h", "SDL2SDL_image.h"
-    inreplace "srcdevicessdlled.c", "SDL_image.h", "SDL2SDL_image.h"
+    inreplace "src/devices/sdlvga.c", "SDL_image.h", "SDL2/SDL_image.h"
+    inreplace "src/devices/sdlled.c", "SDL_image.h", "SDL2/SDL_image.h"
 
     # Work around failure from GCC 10+ using default of `-fno-common`
     # multiple definition of `...'; ....o:(.bss+0x0): first defined here
     ENV.append_to_cflags "-fcommon" if OS.linux?
 
-    system "make", "BISON=#{Formula["bison"].opt_bin}bison",
-                   "JIT=0", "BUILDDIR=buildhomebrew"
+    system "make", "BISON=#{Formula["bison"].opt_bin}/bison",
+                   "JIT=0", "BUILDDIR=build/homebrew"
 
     pkgshare.install "rsrc", "plugins"
-    cd "buildhomebrew" do
+    cd "build/homebrew" do
       bin.install "tsim", "tas", "tld"
       lib.install Dir[shared_library("*")]
     end
@@ -50,13 +50,13 @@ class Tenyr < Formula
 
   test do
     # sanity test assembler, linker and simulator
-    (testpath"part1").write "B <- 9\n"
-    (testpath"part2").write "C <- B * 3\n"
+    (testpath/"part1").write "B <- 9\n"
+    (testpath/"part2").write "C <- B * 3\n"
 
-    system bin"tas", "--output=a.to", "part1"
-    system bin"tas", "--output=b.to", "part2"
-    system bin"tld", "--output=test.texe", "a.to", "b.to"
+    system bin/"tas", "--output=a.to", "part1"
+    system bin/"tas", "--output=b.to", "part2"
+    system bin/"tld", "--output=test.texe", "a.to", "b.to"
 
-    assert_match "C 0000001b", shell_output("#{bin}tsim -vvvv test.texe 2>&1")
+    assert_match "C 0000001b", shell_output("#{bin}/tsim -vvvv test.texe 2>&1")
   end
 end

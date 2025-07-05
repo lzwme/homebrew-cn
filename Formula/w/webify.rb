@@ -1,10 +1,10 @@
 class Webify < Formula
   desc "Wrapper for shell commands as web services"
-  homepage "https:github.combeefsackwebify"
-  url "https:github.combeefsackwebifyarchiverefstagsv1.5.0.tar.gz"
+  homepage "https://github.com/beefsack/webify"
+  url "https://ghfast.top/https://github.com/beefsack/webify/archive/refs/tags/v1.5.0.tar.gz"
   sha256 "66805a4aef4ed0e9c49e711efc038e2cd4e74aa2dc179ea93b31dc3aa76e6d7b"
   license "MIT"
-  head "https:github.combeefsackwebify.git", branch: "master"
+  head "https://github.com/beefsack/webify.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -33,9 +33,9 @@ class Webify < Formula
   test do
     port = free_port
     fork do
-      exec bin"webify", "-addr=:#{port}", "cat"
+      exec bin/"webify", "-addr=:#{port}", "cat"
     end
     sleep 1
-    assert_equal "Homebrew", shell_output("curl -s -d Homebrew http:localhost:#{port}")
+    assert_equal "Homebrew", shell_output("curl -s -d Homebrew http://localhost:#{port}")
   end
 end

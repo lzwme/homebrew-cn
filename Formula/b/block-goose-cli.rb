@@ -1,14 +1,14 @@
 class BlockGooseCli < Formula
   desc "Open source, extensible AI agent that goes beyond code suggestions"
-  homepage "https:block.github.iogoose"
-  url "https:github.comblockgoosearchiverefstagsv1.0.32.tar.gz"
+  homepage "https://block.github.io/goose/"
+  url "https://ghfast.top/https://github.com/block/goose/archive/refs/tags/v1.0.32.tar.gz"
   sha256 "acb1509d3c1acff74fd1692a6ae59ee65e3af1b402dc1a50a2ccc71f79162320"
   license "Apache-2.0"
-  head "https:github.comblockgoose.git", branch: "main"
+  head "https://github.com/block/goose.git", branch: "main"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -35,11 +35,11 @@ class BlockGooseCli < Formula
   conflicts_with "goose", because: "both install `goose` binaries"
 
   def install
-    system "cargo", "install", *std_cargo_args(path: "cratesgoose-cli")
+    system "cargo", "install", *std_cargo_args(path: "crates/goose-cli")
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}goose --version")
-    assert_match "Goose Locations", shell_output("#{bin}goose info")
+    assert_match version.to_s, shell_output("#{bin}/goose --version")
+    assert_match "Goose Locations", shell_output("#{bin}/goose info")
   end
 end

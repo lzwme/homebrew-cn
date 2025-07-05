@@ -1,7 +1,7 @@
 class Dpp < Formula
   desc "Directly include C headers in D source code"
-  homepage "https:github.comatilanevesdpp"
-  url "https:github.comatilanevesdpp.git",
+  homepage "https://github.com/atilaneves/dpp"
+  url "https://github.com/atilaneves/dpp.git",
       tag:      "v0.6.0",
       revision: "9c2b175b32cc46581a94a7ee1c0026f0cda045fc"
   license "BSL-1.0"
@@ -24,29 +24,29 @@ class Dpp < Formula
   uses_from_macos "llvm" # for libclang
 
   # Match versions from dub.selections.json
-  # VERSION=#{version} && curl https:raw.githubusercontent.comatilanevesdppv$VERSIONdub.selections.json
+  # VERSION=#{version} && curl https://ghfast.top/https://raw.githubusercontent.com/atilaneves/dpp/v$VERSION/dub.selections.json
   resource "libclang" do
-    url "https:code.dlang.orgpackageslibclang0.3.3.zip"
+    url "https://code.dlang.org/packages/libclang/0.3.3.zip"
     sha256 "281b1b02f96c06ef812c7069e6b7de951f10c9e1962fdcfead367f9244e77529"
   end
 
   resource "sumtype" do
-    url "https:code.dlang.orgpackagessumtype1.2.8.zip"
+    url "https://code.dlang.org/packages/sumtype/1.2.8.zip"
     sha256 "fd273e5b4f97ef6b6f08f9873f7d1dd11da3b9f0596293ba901be7caac05747f"
   end
 
   resource "unit-threaded" do
-    url "https:code.dlang.orgpackagesunit-threaded2.1.9.zip"
+    url "https://code.dlang.org/packages/unit-threaded/2.1.9.zip"
     sha256 "1e06684e7f542e2c3d20f3b0f6179c16af2d80806a3a322d819aec62b6446d74"
   end
 
   def install
     resources.each do |r|
-      r.stage buildpath"dub-packages"r.name
-      system "dub", "add-local", buildpath"dub-packages"r.name, r.version.to_s
+      r.stage buildpath/"dub-packages"/r.name
+      system "dub", "add-local", buildpath/"dub-packages"/r.name, r.version.to_s
     end
     # Avoid linking brew LLVM on Intel macOS
-    inreplace "dub-packageslibclangdub.sdl", %r{^lflags "-Lusrlocaloptllvmlib"}, "\\0"
+    inreplace "dub-packages/libclang/dub.sdl", %r{^lflags "-L/usr/local/opt/llvm/lib"}, "//\\0"
 
     if OS.mac?
       toolchain_paths = []
@@ -54,29 +54,29 @@ class Dpp < Formula
       toolchain_paths << MacOS::Xcode.toolchain_path if MacOS::Xcode.installed?
       dflags = toolchain_paths.flat_map do |path|
         %W[
-          -L-L#{path}usrlib
+          -L-L#{path}/usr/lib
           -L-rpath
-          -L#{path}usrlib
+          -L#{path}/usr/lib
         ]
       end
       ENV["DFLAGS"] = dflags.join(" ")
     end
     system "dub", "add-local", buildpath
     system "dub", "build", "--skip-registry=all", "dpp"
-    bin.install "bind++"
+    bin.install "bin/d++"
   end
 
   test do
-    (testpath"c.h").write <<~C
+    (testpath/"c.h").write <<~C
       #define FOO_ID(x) (x*3)
       int twice(int i);
     C
 
-    (testpath"c.c").write <<~C
+    (testpath/"c.c").write <<~C
       int twice(int i) { return i * 2; }
     C
 
-    (testpath"foo.dpp").write <<~EOS
+    (testpath/"foo.dpp").write <<~EOS
       #include "c.h"
       void main() {
           import std.stdio;
@@ -85,7 +85,7 @@ class Dpp < Formula
     EOS
 
     system ENV.cc, "-c", "c.c"
-    system bin"d++", "--compiler=ldc2", "foo.dpp", "c.o"
-    assert_match "30", shell_output(".foo")
+    system bin/"d++", "--compiler=ldc2", "foo.dpp", "c.o"
+    assert_match "30", shell_output("./foo")
   end
 end

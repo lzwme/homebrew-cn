@@ -1,10 +1,10 @@
 class Base16384 < Formula
   desc "Encode binary files to printable utf16be"
-  homepage "https:github.comfumiamabase16384"
-  url "https:github.comfumiamabase16384archiverefstagsv2.3.1.tar.gz"
+  homepage "https://github.com/fumiama/base16384"
+  url "https://ghfast.top/https://github.com/fumiama/base16384/archive/refs/tags/v2.3.1.tar.gz"
   sha256 "71ee39510c8c687254315ccc1aa5de601a5e2a2554b6db843f3874c12415a77a"
   license "GPL-3.0-or-later"
-  head "https:github.comfumiamabase16384.git", branch: "master"
+  head "https://github.com/fumiama/base16384.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "9c046b845fe6857efb4263bc958ae54f86716c14999710d91451727eab219719"
@@ -27,7 +27,7 @@ class Base16384 < Formula
   end
 
   test do
-    hash = pipe_output("#{bin}base16384 -e - -", "1234567890abcdefg", 0)
-    assert_match "1234567890abcdefg", pipe_output("#{bin}base16384 -d - -", hash, 0)
+    hash = pipe_output("#{bin}/base16384 -e - -", "1234567890abcdefg", 0)
+    assert_match "1234567890abcdefg", pipe_output("#{bin}/base16384 -d - -", hash, 0)
   end
 end

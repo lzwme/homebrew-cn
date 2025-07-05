@@ -1,10 +1,10 @@
 class Oslo < Formula
   desc "CLI tool for the OpenSLO spec"
-  homepage "https:openslo.com"
-  url "https:github.comOpenSLOosloarchiverefstagsv0.13.0.tar.gz"
+  homepage "https://openslo.com/"
+  url "https://ghfast.top/https://github.com/OpenSLO/oslo/archive/refs/tags/v0.13.0.tar.gz"
   sha256 "8e3c501103cbfb0d9980a6ea023def0bdef2fe111a8aec3b106302669d452ec2"
   license "Apache-2.0"
-  head "https:github.comopenslooslo.git", branch: "main"
+  head "https://github.com/openslo/oslo.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "1dc252e4e8d683047409636266e7c11e62725cc9ac3a21c394c1a0f04b644654"
@@ -19,18 +19,18 @@ class Oslo < Formula
 
   def install
     ldflags = "-s -w -X main.Version=#{version}"
-    system "go", "build", *std_go_args(ldflags:), ".cmdoslo"
+    system "go", "build", *std_go_args(ldflags:), "./cmd/oslo"
 
-    generate_completions_from_executable(bin"oslo", "completion")
+    generate_completions_from_executable(bin/"oslo", "completion")
 
     pkgshare.install "test"
   end
 
   test do
-    test_file = pkgshare"testinputsvalidateunknown-field.yaml"
-    assert_match "json: unknown field", shell_output("#{bin}oslo validate -f #{test_file} 2>&1", 1)
+    test_file = pkgshare/"test/inputs/validate/unknown-field.yaml"
+    assert_match "json: unknown field", shell_output("#{bin}/oslo validate -f #{test_file} 2>&1", 1)
 
-    output = shell_output("#{bin}oslo fmt -f #{pkgshare}testinputsfmtservice.yaml")
-    assert_equal File.read(pkgshare"testoutputsfmtservice.yaml"), output
+    output = shell_output("#{bin}/oslo fmt -f #{pkgshare}/test/inputs/fmt/service.yaml")
+    assert_equal File.read(pkgshare/"test/outputs/fmt/service.yaml"), output
   end
 end

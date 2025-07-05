@@ -1,13 +1,13 @@
 class Rinetd < Formula
   desc "Internet TCP redirection server"
-  homepage "https:github.comsamhocevarrinetd"
-  url "https:github.comsamhocevarrinetdreleasesdownloadv0.73rinetd-0.73.tar.bz2"
+  homepage "https://github.com/samhocevar/rinetd"
+  url "https://ghfast.top/https://github.com/samhocevar/rinetd/releases/download/v0.73/rinetd-0.73.tar.bz2"
   sha256 "39180d31b15f059b2e876496286356e40183d1567c2e2aec41aacad8721ecc44"
   license "GPL-2.0-or-later"
   revision 1
-  # NOTE: Original (unversioned) tool is at https:github.comboutellrinetd
+  # NOTE: Original (unversioned) tool is at https://github.com/boutell/rinetd
   #       Debian tracks the "samhocevar" fork so we follow suit
-  head "https:github.comsamhocevarrinetd.git", branch: "main"
+  head "https://github.com/samhocevar/rinetd.git", branch: "main"
 
   livecheck do
     url :stable
@@ -33,14 +33,14 @@ class Rinetd < Formula
   def install
     # The daemon() function does exist but its deprecated so keep configure
     # away:
-    system ".configure", "--prefix=#{prefix}", "--sysconfdir=#{share}", "ac_cv_func_daemon=no"
+    system "./configure", "--prefix=#{prefix}", "--sysconfdir=#{share}", "ac_cv_func_daemon=no"
 
     # Point hardcoded runtime paths inside of our prefix
-    inreplace "srcrinetd.h" do |s|
-      s.gsub! "etcrinetd.conf", "#{etc}rinetd.conf"
-      s.gsub! "varrunrinetd.pid", "#{var}runrinetd.pid"
+    inreplace "src/rinetd.h" do |s|
+      s.gsub! "/etc/rinetd.conf", "#{etc}/rinetd.conf"
+      s.gsub! "/var/run/rinetd.pid", "#{var}/run/rinetd.pid"
     end
-    inreplace "rinetd.conf", "varlog", "#{var}log"
+    inreplace "rinetd.conf", "/var/log", "#{var}/log"
 
     # Install conf file only as example and have post_install put it into place
     mv "rinetd.conf", "rinetd.conf.example"
@@ -50,11 +50,11 @@ class Rinetd < Formula
   end
 
   def post_install
-    conf = etc"rinetd.conf"
-    cp "#{share}rinetd.conf.example", conf unless conf.exist?
+    conf = etc/"rinetd.conf"
+    cp "#{share}/rinetd.conf.example", conf unless conf.exist?
   end
 
   test do
-    system "#{sbin}rinetd", "-h"
+    system "#{sbin}/rinetd", "-h"
   end
 end

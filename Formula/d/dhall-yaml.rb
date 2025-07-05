@@ -1,10 +1,10 @@
 class DhallYaml < Formula
   desc "Convert between Dhall and YAML"
-  homepage "https:github.comdhall-langdhall-haskelltreemaindhall-yaml"
-  url "https:hackage.haskell.orgpackagedhall-yaml-1.2.12dhall-yaml-1.2.12.tar.gz"
+  homepage "https://github.com/dhall-lang/dhall-haskell/tree/main/dhall-yaml"
+  url "https://hackage.haskell.org/package/dhall-yaml-1.2.12/dhall-yaml-1.2.12.tar.gz"
   sha256 "e288091b568cfba756eb458716fb84745eb2599a848326b3eb3b45a5aa0008ea"
   license "BSD-3-Clause"
-  head "https:github.comdhall-langdhall-haskell.git", branch: "main"
+  head "https://github.com/dhall-lang/dhall-haskell.git", branch: "main"
 
   bottle do
     rebuild 1
@@ -31,10 +31,10 @@ class DhallYaml < Formula
       # Backport support for GHC 9.10
       args += ["--allow-newer=dhall-json:aeson", "--allow-newer=dhall-json:text"]
       inreplace "#{name}.cabal" do |s|
-        # https:github.comdhall-langdhall-haskellcommit587c0875f9539a526037712870c45cc8fe853689
+        # https://github.com/dhall-lang/dhall-haskell/commit/587c0875f9539a526037712870c45cc8fe853689
         s.gsub! "aeson                     >= 1.0.0.0   && < 2.2 ,",
                 "aeson                     >= 1.0.0.0   && < 2.3 ,"
-        # https:github.comdhall-langdhall-haskellcommit277d8b1b3637ba2ce125783cc1936dc9591e67a7
+        # https://github.com/dhall-lang/dhall-haskell/commit/277d8b1b3637ba2ce125783cc1936dc9591e67a7
         s.gsub! "text                      >= 0.11.1.0  && < 2.1 ,",
                 "text                      >= 0.11.1.0  && < 2.2 ,"
       end
@@ -45,8 +45,8 @@ class DhallYaml < Formula
   end
 
   test do
-    assert_match "1", pipe_output("#{bin}dhall-to-yaml-ng", "1", 0)
-    assert_match "- 1\n- 2", pipe_output("#{bin}dhall-to-yaml-ng", "[ 1, 2 ]", 0)
-    assert_match "null", pipe_output("#{bin}dhall-to-yaml-ng", "None Natural", 0)
+    assert_match "1", pipe_output("#{bin}/dhall-to-yaml-ng", "1", 0)
+    assert_match "- 1\n- 2", pipe_output("#{bin}/dhall-to-yaml-ng", "[ 1, 2 ]", 0)
+    assert_match "null", pipe_output("#{bin}/dhall-to-yaml-ng", "None Natural", 0)
   end
 end

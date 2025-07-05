@@ -1,10 +1,10 @@
 class Nak < Formula
   desc "CLI for doing all things nostr"
-  homepage "https:github.comfiatjafnak"
-  url "https:github.comfiatjafnakarchiverefstagsv0.15.1.tar.gz"
+  homepage "https://github.com/fiatjaf/nak"
+  url "https://ghfast.top/https://github.com/fiatjaf/nak/archive/refs/tags/v0.15.1.tar.gz"
   sha256 "67670a0a4107ed65371a8b310bfbf832996a57f832edebef7fac28d637a82ee9"
   license "Unlicense"
-  head "https:github.comfiatjafnak.git", branch: "master"
+  head "https://github.com/fiatjaf/nak.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "d4b38de21c0bca69d84547c94511148cddbafbfe90f5d88cf4cea8708c977dbc"
@@ -22,8 +22,8 @@ class Nak < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}nak --version")
-    assert_match "hello from the nostr army knife", shell_output("#{bin}nak event")
-    assert_match "\"method\":\"listblockedips\"", shell_output("#{bin}nak relay listblockedips")
+    assert_match version.to_s, shell_output("#{bin}/nak --version")
+    assert_match "hello from the nostr army knife", shell_output("#{bin}/nak event")
+    assert_match "\"method\":\"listblockedips\"", shell_output("#{bin}/nak relay listblockedips")
   end
 end

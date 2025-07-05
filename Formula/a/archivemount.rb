@@ -1,13 +1,13 @@
 class Archivemount < Formula
   desc "File system for accessing archives using libarchive"
-  homepage "https:github.comcybernoidarchivemount"
-  url "https:slackware.uk~urchlaysrcarchivemount-0.9.1.tar.gz"
+  homepage "https://github.com/cybernoid/archivemount"
+  url "https://slackware.uk/~urchlay/src/archivemount-0.9.1.tar.gz"
   sha256 "c529b981cacb19541b48ddafdafb2ede47a40fcaf16c677c1e2cd198b159c5b3"
   license "LGPL-2.0-or-later"
 
   livecheck do
-    url "https:raw.githubusercontent.comcybernoidarchivemountrefsheadsmasterCHANGELOG"
-    regex(\*\s+v?(\d+(?:\.\d+)+)\s+i)
+    url "https://ghfast.top/https://raw.githubusercontent.com/cybernoid/archivemount/refs/heads/master/CHANGELOG"
+    regex(/\*\s+v?(\d+(?:\.\d+)+)\s+/i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -24,11 +24,11 @@ class Archivemount < Formula
   depends_on :linux # on macOS, requires closed-source macFUSE
 
   def install
-    system ".configure", "--disable-silent-rules", *std_configure_args
+    system "./configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
   end
 
   test do
-    system bin"archivemount", "--version"
+    system bin/"archivemount", "--version"
   end
 end

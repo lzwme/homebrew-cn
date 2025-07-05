@@ -1,7 +1,7 @@
 class Squid < Formula
   desc "Advanced proxy caching server for HTTP, HTTPS, FTP, and Gopher"
-  homepage "https:www.squid-cache.org"
-  url "https:github.comsquid-cachesquidreleasesdownloadSQUID_7_0_2squid-7.0.2.tar.bz2"
+  homepage "https://www.squid-cache.org/"
+  url "https://ghfast.top/https://github.com/squid-cache/squid/releases/download/SQUID_7_0_2/squid-7.0.2.tar.bz2"
   sha256 "e34d0759686e4a2baf411801aaf8a4863dc17f32ed4a1d988776110bad36c5ae"
   license "GPL-2.0-or-later"
 
@@ -25,7 +25,7 @@ class Squid < Formula
   end
 
   head do
-    url "https:github.comsquid-cachesquid.git", branch: "v6"
+    url "https://github.com/squid-cache/squid.git", branch: "v6"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -37,11 +37,11 @@ class Squid < Formula
   uses_from_macos "libxcrypt"
 
   def install
-    # https:stackoverflow.comquestions20910109building-squid-cache-on-os-x-mavericks
+    # https://stackoverflow.com/questions/20910109/building-squid-cache-on-os-x-mavericks
     ENV.append "LDFLAGS", "-lresolv"
 
     # For --disable-eui, see:
-    # https:www.squid-cache.orgmail-archivesquid-users2013040040.html
+    # https://www.squid-cache.org/mail-archive/squid-users/201304/0040.html
     args = %W[
       --localstatedir=#{var}
       --sysconfdir=#{etc}
@@ -60,31 +60,31 @@ class Squid < Formula
 
     args << "--enable-pf-transparent" if OS.mac?
 
-    system ".bootstrap.sh" if build.head?
-    system ".configure", *args, *std_configure_args
+    system "./bootstrap.sh" if build.head?
+    system "./configure", *args, *std_configure_args
     system "make", "install"
   end
 
   service do
-    run [opt_sbin"squid", "-N", "-d 1"]
+    run [opt_sbin/"squid", "-N", "-d 1"]
     keep_alive true
     working_dir var
-    log_path var"logsquid.log"
-    error_log_path var"logsquid.log"
+    log_path var/"log/squid.log"
+    error_log_path var/"log/squid.log"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{sbin}squid -v")
+    assert_match version.to_s, shell_output("#{sbin}/squid -v")
 
     pid = fork do
-      exec "#{sbin}squid"
+      exec "#{sbin}/squid"
     end
     sleep 2
 
     begin
-      system "#{sbin}squid", "-k", "check"
+      system "#{sbin}/squid", "-k", "check"
     ensure
-      exec "#{sbin}squid -k interrupt"
+      exec "#{sbin}/squid -k interrupt"
       Process.wait(pid)
     end
   end

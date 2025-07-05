@@ -1,11 +1,11 @@
 class ShairportSync < Formula
   desc "AirTunes emulator that adds multi-room capability"
-  homepage "https:github.commikebradyshairport-sync"
-  url "https:github.commikebradyshairport-syncarchiverefstags4.3.7.tar.gz"
+  homepage "https://github.com/mikebrady/shairport-sync"
+  url "https://ghfast.top/https://github.com/mikebrady/shairport-sync/archive/refs/tags/4.3.7.tar.gz"
   sha256 "a1242d100b61fe1fffbbf706e919ed51d6a341c9fb8293fb42046e32ae2b3338"
   license "MIT"
   revision 1
-  head "https:github.commikebradyshairport-sync.git", branch: "master"
+  head "https://github.com/mikebrady/shairport-sync.git", branch: "master"
 
   livecheck do
     url :stable
@@ -44,30 +44,30 @@ class ShairportSync < Formula
       --with-pipe
       --with-soxr
       --with-metadata
-      --with-piddir=#{var}run
-      --sysconfdir=#{etc}shairport-sync
+      --with-piddir=#{var}/run
+      --sysconfdir=#{etc}/shairport-sync
     ]
     if OS.mac?
       args << "--with-dns_sd" # Enable bonjour
       args << "--with-os=darwin"
     end
-    system ".configure", *args, *std_configure_args
+    system "./configure", *args, *std_configure_args
     system "make", "install"
   end
 
   def post_install
-    (var"run").mkpath
+    (var/"run").mkpath
   end
 
   service do
-    run [opt_bin"shairport-sync", "--use-stderr", "--verbose"]
+    run [opt_bin/"shairport-sync", "--use-stderr", "--verbose"]
     keep_alive true
-    log_path var"logshairport-sync.log"
-    error_log_path var"logshairport-sync.log"
+    log_path var/"log/shairport-sync.log"
+    error_log_path var/"log/shairport-sync.log"
   end
 
   test do
-    output = shell_output("#{bin}shairport-sync -V")
+    output = shell_output("#{bin}/shairport-sync -V")
     if OS.mac?
       assert_match "libdaemon-OpenSSL-dns_sd-ao-pa-stdout-pipe-soxr-metadata", output
     else

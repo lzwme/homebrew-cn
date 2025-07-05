@@ -1,11 +1,11 @@
 class Sassc < Formula
   desc "Wrapper around libsass that helps to create command-line apps"
-  homepage "https:github.comsasssassc"
-  url "https:github.comsasssassc.git",
+  homepage "https://github.com/sass/sassc"
+  url "https://github.com/sass/sassc.git",
       tag:      "3.6.2",
       revision: "66f0ef37e7f0ad3a65d2f481eff09d09408f42d0"
   license "MIT"
-  head "https:github.comsasssassc.git", branch: "master"
+  head "https://github.com/sass/sassc.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -33,12 +33,12 @@ class Sassc < Formula
 
   def install
     system "autoreconf", "--force", "--install", "--verbose"
-    system ".configure", "--disable-silent-rules", *std_configure_args
+    system "./configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
   end
 
   test do
-    (testpath"input.scss").write <<~EOS
+    (testpath/"input.scss").write <<~EOS
       div {
         img {
           border: 0px;
@@ -47,6 +47,6 @@ class Sassc < Formula
     EOS
 
     assert_equal "div img{border:0px}",
-    shell_output("#{bin}sassc --style compressed input.scss").strip
+    shell_output("#{bin}/sassc --style compressed input.scss").strip
   end
 end

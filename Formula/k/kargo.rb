@@ -1,10 +1,10 @@
 class Kargo < Formula
   desc "Multi-Stage GitOps Continuous Promotion"
-  homepage "https:kargo.io"
-  url "https:github.comakuitykargoarchiverefstagsv1.6.0.tar.gz"
+  homepage "https://kargo.io/"
+  url "https://ghfast.top/https://github.com/akuity/kargo/archive/refs/tags/v1.6.0.tar.gz"
   sha256 "7b65bf32c0873a8a4c8620d2ed314673900be5c886644ddf3638695851d3f512"
   license "Apache-2.0"
-  head "https:github.comakuitykargo.git", branch: "main"
+  head "https://github.com/akuity/kargo.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "613fbc74fd5d6d8168ccabafbd45256b4441dd5cb8cadf6a23e79b9f241f4aa1"
@@ -21,19 +21,19 @@ class Kargo < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.comakuitykargopkgxversion.version=#{version}
-      -X github.comakuitykargopkgxversion.buildDate=#{time.iso8601}
-      -X github.comakuitykargopkgxversion.gitCommit=#{tap.user}
-      -X github.comakuitykargopkgxversion.gitTreeState=clean
+      -X github.com/akuity/kargo/pkg/x/version.version=#{version}
+      -X github.com/akuity/kargo/pkg/x/version.buildDate=#{time.iso8601}
+      -X github.com/akuity/kargo/pkg/x/version.gitCommit=#{tap.user}
+      -X github.com/akuity/kargo/pkg/x/version.gitTreeState=clean
     ]
-    system "go", "build", *std_go_args(ldflags:), ".cmdcli"
+    system "go", "build", *std_go_args(ldflags:), "./cmd/cli"
 
-    generate_completions_from_executable(bin"kargo", "completion")
+    generate_completions_from_executable(bin/"kargo", "completion")
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}kargo version")
+    assert_match version.to_s, shell_output("#{bin}/kargo version")
 
-    assert_match "kind: CLIConfig", shell_output("#{bin}kargo config view")
+    assert_match "kind: CLIConfig", shell_output("#{bin}/kargo config view")
   end
 end

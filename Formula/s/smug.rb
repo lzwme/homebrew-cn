@@ -1,7 +1,7 @@
 class Smug < Formula
   desc "Automate your tmux workflow"
-  homepage "https:github.comivaaaansmug"
-  url "https:github.comivaaaansmugarchiverefstagsv0.3.7.tar.gz"
+  homepage "https://github.com/ivaaaan/smug"
+  url "https://ghfast.top/https://github.com/ivaaaan/smug/archive/refs/tags/v0.3.7.tar.gz"
   sha256 "334c4f885674325dada3dc09c0a0608dc778af9e08377cb9afd3fc2dbf146be7"
   license "MIT"
 
@@ -19,23 +19,23 @@ class Smug < Formula
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}")
 
-    bash_completion.install "completionsmug.bash" => "smug"
-    fish_completion.install "completionsmug.fish"
+    bash_completion.install "completion/smug.bash" => "smug"
+    fish_completion.install "completion/smug.fish"
   end
 
   test do
-    (testpath".configsmugtest.yml").write <<~YAML
+    (testpath/".config/smug/test.yml").write <<~YAML
       session: homebrew-test-session
       root: .
       windows:
         - name: test
     YAML
 
-    assert_equal(version, shell_output(bin"smug").lines.first.split("Version").last.chomp)
+    assert_equal(version, shell_output(bin/"smug").lines.first.split("Version").last.chomp)
 
     begin
-      output_log = testpath"output.log"
-      pid = spawn bin"smug", "start", "--file", testpath".configsmugtest.yml", [:out, :err] => output_log.to_s
+      output_log = testpath/"output.log"
+      pid = spawn bin/"smug", "start", "--file", testpath/".config/smug/test.yml", [:out, :err] => output_log.to_s
       sleep 2
       assert_match "Starting a new session", output_log.read
     ensure

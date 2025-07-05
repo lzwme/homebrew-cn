@@ -2,10 +2,10 @@ class Iconsur < Formula
   include Language::Python::Virtualenv
 
   desc "macOS Big Sur Adaptive Icon Generator"
-  homepage "https:github.comrikumiiconsur"
+  homepage "https://github.com/rikumi/iconsur"
   # Keep extra_packages in pypi_formula_mappings.json aligned with
-  # https:github.comrikumiiconsurblob#{version}srcfileicon.sh#L230
-  url "https:registry.npmjs.orgiconsur-iconsur-1.7.0.tgz"
+  # https://github.com/rikumi/iconsur/blob/#{version}/src/fileicon.sh#L230
+  url "https://registry.npmjs.org/iconsur/-/iconsur-1.7.0.tgz"
   sha256 "d732df6bbcaf1418c6f46f9148002cbc1243814692c1c0e5c0cebfcff001c4a1"
   license "MIT"
 
@@ -23,7 +23,7 @@ class Iconsur < Formula
   depends_on :macos
   depends_on "node"
 
-  # Uses usrbinpython on older macOS. Otherwise, it will use python3 from PATH.
+  # Uses /usr/bin/python on older macOS. Otherwise, it will use python3 from PATH.
   # Since fileicon.sh runs `pip3 install --user` to install any missing packages,
   # this causes issues if a user has Homebrew Python installed (EXTERNALLY-MANAGED).
   # We instead prepare a virtualenv with all missing packages.
@@ -32,16 +32,16 @@ class Iconsur < Formula
   end
 
   resource "pyobjc-core" do
-    url "https:files.pythonhosted.orgpackagesb740a38d78627bd882d86c447db5a195ff307001ae02c1892962c656f2fd6b83pyobjc_core-10.3.1.tar.gz"
+    url "https://files.pythonhosted.org/packages/b7/40/a38d78627bd882d86c447db5a195ff307001ae02c1892962c656f2fd6b83/pyobjc_core-10.3.1.tar.gz"
     sha256 "b204a80ccc070f9ab3f8af423a3a25a6fd787e228508d00c4c30f8ac538ba720"
   end
 
   resource "pyobjc-framework-cocoa" do
-    url "https:files.pythonhosted.orgpackagesa76cb62e31e6e00f24e70b62f680e35a0d663ba14ff7601ae591b5d20e251161pyobjc_framework_cocoa-10.3.1.tar.gz"
+    url "https://files.pythonhosted.org/packages/a7/6c/b62e31e6e00f24e70b62f680e35a0d663ba14ff7601ae591b5d20e251161/pyobjc_framework_cocoa-10.3.1.tar.gz"
     sha256 "1cf20714daaa986b488fb62d69713049f635c9d41a60c8da97d835710445281a"
 
     # Backport commit to avoid Xcode.app dependency. Remove in the next release
-    # https:github.comronaldoussorenpyobjccommit864a21829c578f6479ac6401d191fb759215175e
+    # https://github.com/ronaldoussoren/pyobjc/commit/864a21829c578f6479ac6401d191fb759215175e
     patch :DATA
   end
 
@@ -52,26 +52,26 @@ class Iconsur < Formula
       # Help `pyobjc-framework-cocoa` pick correct SDK after removing -isysroot from Python formula
       ENV.append_to_cflags "-isysroot #{MacOS.sdk_path}"
 
-      venv = virtualenv_create(libexec"venv", "python3.13")
+      venv = virtualenv_create(libexec/"venv", "python3.13")
       venv.pip_install resources
-      bin.install libexec.glob("bin*")
-      bin.env_script_all_files libexec"bin", PATH: "#{venv.root}bin:${PATH}"
+      bin.install libexec.glob("bin/*")
+      bin.env_script_all_files libexec/"bin", PATH: "#{venv.root}/bin:${PATH}"
     else
-      bin.install_symlink libexec.glob("bin*")
+      bin.install_symlink libexec.glob("bin/*")
     end
   end
 
   test do
-    mkdir testpath"Test.app"
-    system bin"iconsur", "set", testpath"Test.app", "-k", "AppleDeveloper"
-    system bin"iconsur", "cache"
-    system bin"iconsur", "unset", testpath"Test.app"
+    mkdir testpath/"Test.app"
+    system bin/"iconsur", "set", testpath/"Test.app", "-k", "AppleDeveloper"
+    system bin/"iconsur", "cache"
+    system bin/"iconsur", "unset", testpath/"Test.app"
   end
 end
 
 __END__
---- apyobjc_setup.py
-+++ bpyobjc_setup.py
+--- a/pyobjc_setup.py
++++ b/pyobjc_setup.py
 @@ -510,15 +510,6 @@ def Extension(*args, **kwds):
              % (tuple(map(int, os_level.split(".")[:2])))
          )

@@ -2,12 +2,12 @@ cask "font-marvel" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefonts.git",
-      verified:  "github.comgooglefonts",
+  url "https://github.com/google/fonts.git",
+      verified:  "github.com/google/fonts",
       branch:    "main",
-      only_path: "oflmarvel"
+      only_path: "ofl/marvel"
   name "Marvel"
-  homepage "https:fonts.google.comspecimenMarvel"
+  homepage "https://fonts.google.com/specimen/Marvel"
 
   font "Marvel-Bold.ttf"
   font "Marvel-BoldItalic.ttf"

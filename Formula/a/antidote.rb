@@ -1,7 +1,7 @@
 class Antidote < Formula
   desc "Plugin manager for zsh, inspired by antigen and antibody"
-  homepage "https:antidote.sh"
-  url "https:github.commattmc3antidotearchiverefstagsv1.9.10.tar.gz"
+  homepage "https://antidote.sh/"
+  url "https://ghfast.top/https://github.com/mattmc3/antidote/archive/refs/tags/v1.9.10.tar.gz"
   sha256 "4beb9074da75bfe44a502db61542c557af1a6206a3cdd6e36c3f0743d71417ec"
   license "MIT"
 
@@ -14,25 +14,25 @@ class Antidote < Formula
   def install
     pkgshare.install "antidote.zsh"
     pkgshare.install "functions"
-    man.install "manman1"
+    man.install "man/man1"
   end
 
   def caveats
     <<~EOS
-      To activate antidote, add the following to your ~.zshrc:
-        source #{opt_pkgshare}antidote.zsh
+      To activate antidote, add the following to your ~/.zshrc:
+        source #{opt_pkgshare}/antidote.zsh
     EOS
   end
 
   test do
-    (testpath".zshrc").write <<~SHELL
+    (testpath/".zshrc").write <<~SHELL
       export GIT_TERMINAL_PROMPT=0
-      export ANTIDOTE_HOME=~.zplugins
-      source #{pkgshare}antidote.zsh
+      export ANTIDOTE_HOME=~/.zplugins
+      source #{pkgshare}/antidote.zsh
     SHELL
 
-    system "zsh", "--login", "-i", "-c", "antidote install rupaz"
-    assert_equal (testpath".zsh_plugins.txt").read, "rupaz\n"
-    assert_path_exists testpath".zpluginshttps-COLON--SLASH--SLASH-github.com-SLASH-rupa-SLASH-zz.sh"
+    system "zsh", "--login", "-i", "-c", "antidote install rupa/z"
+    assert_equal (testpath/".zsh_plugins.txt").read, "rupa/z\n"
+    assert_path_exists testpath/".zplugins/https-COLON--SLASH--SLASH-github.com-SLASH-rupa-SLASH-z/z.sh"
   end
 end

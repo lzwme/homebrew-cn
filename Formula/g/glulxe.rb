@@ -1,15 +1,15 @@
 class Glulxe < Formula
   desc "Portable VM like the Z-machine"
-  homepage "https:www.eblong.comzarfglulx"
-  url "https:eblong.comzarfglulxglulxe-061.tar.gz"
+  homepage "https://www.eblong.com/zarf/glulx/"
+  url "https://eblong.com/zarf/glulx/glulxe-061.tar.gz"
   version "0.6.1"
   sha256 "f81dc474d60d7d914fcde45844a4e1acafee50e13aebfcb563249cc56740769f"
   license "MIT"
-  head "https:github.comerkyrathglulxe.git", branch: "master"
+  head "https://github.com/erkyrath/glulxe.git", branch: "master"
 
   livecheck do
     url :homepage
-    regex(href=.*?glulxe[._-]v?\d+(?:\.\d+)*\.t[^>]+?>\s*Glulxe\s+v?(\d+(?:\.\d+)+)\s*<im)
+    regex(/href=.*?glulxe[._-]v?\d+(?:\.\d+)*\.t[^>]+?>\s*Glulxe\s+v?(\d+(?:\.\d+)+)\s*</im)
   end
 
   no_autobump! because: :requires_manual_review
@@ -32,8 +32,8 @@ class Glulxe < Formula
 
   def install
     glk = Formula["glktermw"]
-    inreplace "Makefile", "GLKINCLUDEDIR = ..cheapglk", "GLKINCLUDEDIR = #{glk.include}"
-    inreplace "Makefile", "GLKLIBDIR = ..cheapglk", "GLKLIBDIR = #{glk.lib}"
+    inreplace "Makefile", "GLKINCLUDEDIR = ../cheapglk", "GLKINCLUDEDIR = #{glk.include}"
+    inreplace "Makefile", "GLKLIBDIR = ../cheapglk", "GLKLIBDIR = #{glk.lib}"
     inreplace "Makefile", "Make.cheapglk", "Make.#{glk.name}"
     inreplace "Makefile", "-DOS_MAC", "-DOS_UNIX -DUNIX_RAND_GETRANDOM" if OS.linux?
 
@@ -42,6 +42,6 @@ class Glulxe < Formula
   end
 
   test do
-    assert pipe_output("#{bin}glulxe -v").start_with? "GlkTerm, library version"
+    assert pipe_output("#{bin}/glulxe -v").start_with? "GlkTerm, library version"
   end
 end

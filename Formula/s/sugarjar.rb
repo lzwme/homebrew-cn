@@ -1,7 +1,7 @@
 class Sugarjar < Formula
-  desc "Helper utility for a better GitGitHub experience"
-  homepage "https:github.comjaymzhsugarjar"
-  url "https:github.comjaymzhsugarjararchiverefstagsv2.0.1.tar.gz"
+  desc "Helper utility for a better Git/GitHub experience"
+  homepage "https://github.com/jaymzh/sugarjar/"
+  url "https://ghfast.top/https://github.com/jaymzh/sugarjar/archive/refs/tags/v2.0.1.tar.gz"
   sha256 "7ae427d8dff1a293f063617365e76615ea7d238aaa7def260fd2b6f2cfa5e768"
   license "Apache-2.0"
 
@@ -30,18 +30,18 @@ class Sugarjar < Formula
     system "gem", "build", "#{name}.gemspec"
     system "gem", "install", "#{name}-#{version}.gem"
 
-    bin.install libexec"binsj"
-    bin.env_script_all_files(libexec"bin", GEM_HOME: ENV["GEM_HOME"])
-    bash_completion.install "extrassugarjar_completion.bash" => "sj"
+    bin.install libexec/"bin/sj"
+    bin.env_script_all_files(libexec/"bin", GEM_HOME: ENV["GEM_HOME"])
+    bash_completion.install "extras/sugarjar_completion.bash" => "sj"
 
     # Remove mkmf.log files to avoid shims references
-    rm Dir["#{libexec}extensions***mkmf.log"]
+    rm Dir["#{libexec}/extensions/*/*/*/mkmf.log"]
   end
 
   test do
-    output = shell_output("#{bin}sj lint", 1)
+    output = shell_output("#{bin}/sj lint", 1)
     assert_match "sugarjar must be run from inside a git repo", output
-    output = shell_output("#{bin}sj bclean", 1)
+    output = shell_output("#{bin}/sj bclean", 1)
     assert_match "sugarjar must be run from inside a git repo", output
   end
 end

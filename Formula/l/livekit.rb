@@ -1,10 +1,10 @@
 class Livekit < Formula
   desc "Scalable, high-performance WebRTC server"
-  homepage "https:livekit.io"
-  url "https:github.comlivekitlivekitarchiverefstagsv1.9.0.tar.gz"
+  homepage "https://livekit.io"
+  url "https://ghfast.top/https://github.com/livekit/livekit/archive/refs/tags/v1.9.0.tar.gz"
   sha256 "d7ccdc718be14ae97e07c368511cc4029a08761983727121fb5a888754ee1de0"
   license "Apache-2.0"
-  head "https:github.comlivekitlivekit.git", branch: "master"
+  head "https://github.com/livekit/livekit.git", branch: "master"
 
   # Upstream creates releases that use a stable tag (e.g., `v1.2.3`) but are
   # labeled as "pre-release" on GitHub before the version is released, so it's
@@ -27,19 +27,19 @@ class Livekit < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w", output: bin"livekit-server"), ".cmdserver"
+    system "go", "build", *std_go_args(ldflags: "-s -w", output: bin/"livekit-server"), "./cmd/server"
   end
 
   test do
     http_port = free_port
     random_key = "R4AA2dwX3FrMbyY@My3X&Hsmz7W)LuQy"
     fork do
-      exec bin"livekit-server", "--keys", "test: #{random_key}", "--config-body", "port: #{http_port}"
+      exec bin/"livekit-server", "--keys", "test: #{random_key}", "--config-body", "port: #{http_port}"
     end
     sleep 3
-    assert_match "OK", shell_output("curl -s http:localhost:#{http_port}")
+    assert_match "OK", shell_output("curl -s http://localhost:#{http_port}")
 
-    output = shell_output("#{bin}livekit-server --version")
+    output = shell_output("#{bin}/livekit-server --version")
     assert_match "livekit-server version #{version}", output
   end
 end

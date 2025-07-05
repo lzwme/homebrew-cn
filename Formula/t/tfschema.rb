@@ -1,10 +1,10 @@
 class Tfschema < Formula
-  desc "Schema inspector for TerraformOpenTofu providers"
-  homepage "https:github.comminamijoyotfschema"
-  url "https:github.comminamijoyotfschemaarchiverefstagsv0.7.9.tar.gz"
+  desc "Schema inspector for Terraform/OpenTofu providers"
+  homepage "https://github.com/minamijoyo/tfschema"
+  url "https://ghfast.top/https://github.com/minamijoyo/tfschema/archive/refs/tags/v0.7.9.tar.gz"
   sha256 "094f8a3c80bac1afc8f03a979625b1334eb5318261f8b8fec9f20ebef3d3d14c"
   license "MIT"
-  head "https:github.comminamijoyotfschema.git", branch: "master"
+  head "https://github.com/minamijoyo/tfschema.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "a26bacd3c1d2c3181c66869f2073433ffd6e22e5886a005d1c5f7c4cf975421d"
@@ -25,10 +25,10 @@ class Tfschema < Formula
   end
 
   test do
-    (testpath"provider.tf").write "provider \"aws\" {}"
-    system Formula["opentofu"].bin"tofu", "init"
-    assert_match "permissions_boundary", shell_output("#{bin}tfschema resource show aws_iam_user")
+    (testpath/"provider.tf").write "provider \"aws\" {}"
+    system Formula["opentofu"].bin/"tofu", "init"
+    assert_match "permissions_boundary", shell_output("#{bin}/tfschema resource show aws_iam_user")
 
-    assert_match version.to_s, shell_output("#{bin}tfschema --version")
+    assert_match version.to_s, shell_output("#{bin}/tfschema --version")
   end
 end

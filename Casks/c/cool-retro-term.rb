@@ -2,10 +2,10 @@ cask "cool-retro-term" do
   version "1.2.0"
   sha256 "605610df37b6ed92fac14d5e34a83350148e989b10ad9550d3403187fb974e48"
 
-  url "https:github.comSwordfish90cool-retro-termreleasesdownload#{version}Cool-Retro-Term-#{version}.dmg"
+  url "https://ghfast.top/https://github.com/Swordfish90/cool-retro-term/releases/download/#{version}/Cool-Retro-Term-#{version}.dmg"
   name "Cool Retro Term"
   desc "Terminal emulator mimicking the old cathode display"
-  homepage "https:github.comSwordfish90cool-retro-term"
+  homepage "https://github.com/Swordfish90/cool-retro-term"
 
   no_autobump! because: :requires_manual_review
 
@@ -14,11 +14,11 @@ cask "cool-retro-term" do
   app "cool-retro-term.app"
 
   zap trash: [
-    "~LibraryApplication Supportcool-retro-term",
-    "~LibraryCachescool-retro-term",
-    "~LibraryPreferencescom.yourcompany.cool-retro-term.cool-retro-term.plist",
-    "~LibraryPreferencescom.yourcompany.cool-retro-term.plist",
-    "~LibrarySaved Application Statecom.yourcompany.cool-retro-term.savedState",
+    "~/Library/Application Support/cool-retro-term",
+    "~/Library/Caches/cool-retro-term",
+    "~/Library/Preferences/com.yourcompany.cool-retro-term.cool-retro-term.plist",
+    "~/Library/Preferences/com.yourcompany.cool-retro-term.plist",
+    "~/Library/Saved Application State/com.yourcompany.cool-retro-term.savedState",
   ]
 
   caveats do

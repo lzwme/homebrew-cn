@@ -1,10 +1,10 @@
 class SonarCompletion < Formula
   desc "Bash completion for Sonar"
-  homepage "https:github.coma1dutchsonarqube-bash-completion"
-  url "https:github.coma1dutchsonarqube-bash-completionarchiverefstags1.1.tar.gz"
+  homepage "https://github.com/a1dutch/sonarqube-bash-completion"
+  url "https://ghfast.top/https://github.com/a1dutch/sonarqube-bash-completion/archive/refs/tags/1.1.tar.gz"
   sha256 "506a592b166cff88786ae9e6215f922b8ed3617c65a4a88169211a80ef1c6b66"
   license "Apache-2.0"
-  head "https:github.coma1dutchsonarqube-bash-completion.git", branch: "master"
+  head "https://github.com/a1dutch/sonarqube-bash-completion.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -14,11 +14,11 @@ class SonarCompletion < Formula
   end
 
   def install
-    bash_completion.install "etcbash_completion.dsonar"
+    bash_completion.install "etc/bash_completion.d/sonar"
   end
 
   test do
     assert_match "-F _sonar",
-      shell_output("bash -c 'source #{bash_completion}sonar && complete -p sonar'")
+      shell_output("bash -c 'source #{bash_completion}/sonar && complete -p sonar'")
   end
 end

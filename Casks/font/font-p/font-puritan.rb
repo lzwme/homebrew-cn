@@ -2,12 +2,12 @@ cask "font-puritan" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefonts.git",
-      verified:  "github.comgooglefonts",
+  url "https://github.com/google/fonts.git",
+      verified:  "github.com/google/fonts",
       branch:    "main",
-      only_path: "oflpuritan"
+      only_path: "ofl/puritan"
   name "Puritan"
-  homepage "https:fonts.google.comspecimenPuritan"
+  homepage "https://fonts.google.com/specimen/Puritan"
 
   font "Puritan-Bold.ttf"
   font "Puritan-BoldItalic.ttf"

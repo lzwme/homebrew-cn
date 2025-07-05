@@ -1,10 +1,10 @@
 class Cdargs < Formula
   desc "Directory bookmarking system - Enhanced cd utilities"
-  homepage "https:github.comcbxbiker61cdargs"
-  url "https:github.comcbxbiker61cdargsarchiverefstags2.1.tar.gz"
+  homepage "https://github.com/cbxbiker61/cdargs"
+  url "https://ghfast.top/https://github.com/cbxbiker61/cdargs/archive/refs/tags/2.1.tar.gz"
   sha256 "062515c3fbd28c68f9fa54ff6a44b81cf647469592444af0872b5ecd7444df7d"
   license "GPL-2.0-or-later"
-  head "https:github.comcbxbiker61cdargs.git", branch: "master"
+  head "https://github.com/cbxbiker61/cdargs.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -32,9 +32,9 @@ class Cdargs < Formula
   uses_from_macos "ncurses"
 
   # fixes zsh usage using the patch provided at the cdargs homepage
-  # (See https:www.skamphausen.decgi-binskaCDargs)
+  # (See https://www.skamphausen.de/cgi-bin/ska/CDargs)
   patch do
-    url "https:raw.githubusercontent.comHomebrewformula-patches85fa66a9cdargs1.35.patch"
+    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/85fa66a9/cdargs/1.35.patch"
     sha256 "adb4e73f6c5104432928cd7474a83901fe0f545f1910b51e4e81d67ecef80a96"
   end
 
@@ -43,19 +43,19 @@ class Cdargs < Formula
     system "meson", "compile", "-C", "build", "--verbose"
     system "meson", "install", "-C", "build"
 
-    rm Dir["contribMakefile*"]
+    rm Dir["contrib/Makefile*"]
     prefix.install "contrib"
-    bash_completion.install_symlink "#{prefix}contribcdargs-bash.sh"
+    bash_completion.install_symlink "#{prefix}/contrib/cdargs-bash.sh"
   end
 
   def caveats
     <<~EOS
       Support files for bash, tcsh, and emacs have been installed to:
-        #{prefix}contrib
+        #{prefix}/contrib
     EOS
   end
 
   test do
-    system bin"cdargs", "--version"
+    system bin/"cdargs", "--version"
   end
 end

@@ -1,10 +1,10 @@
 class EasyRsa < Formula
   desc "CLI utility to build and manage a PKI CA"
-  homepage "https:github.comOpenVPNeasy-rsa"
-  url "https:github.comOpenVPNeasy-rsareleasesdownloadv3.2.3EasyRSA-3.2.3.tgz"
+  homepage "https://github.com/OpenVPN/easy-rsa"
+  url "https://ghfast.top/https://github.com/OpenVPN/easy-rsa/releases/download/v3.2.3/EasyRSA-3.2.3.tgz"
   sha256 "577d9a0f5205ee74d818af163c2f3447fff8d3dd11b91523db2fe8d99cd851e3"
   license "GPL-2.0-only"
-  head "https:github.comOpenVPNeasy-rsa.git", branch: "master"
+  head "https://github.com/OpenVPN/easy-rsa.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, all: "5f0c5d95af6704aeee26bcc6f8f039b23a5842f0ac21a6a919a1c80d10ab4da5"
@@ -14,15 +14,15 @@ class EasyRsa < Formula
 
   def install
     inreplace "easyrsa" do |s|
-      s.gsub! "'etceasy-rsa'", "'#{pkgetc}'"
-      s.gsub! "'usrlocalshareeasy-rsa'", "'#{opt_pkgshare}'"
+      s.gsub! "'/etc/easy-rsa'", "'#{pkgetc}'"
+      s.gsub! "'/usr/local/share/easy-rsa'", "'#{opt_pkgshare}'"
     end
 
     libexec.install "easyrsa"
-    (bin"easyrsa").write_env_script libexec"easyrsa",
+    (bin/"easyrsa").write_env_script libexec/"easyrsa",
       EASYRSA:         pkgetc,
-      EASYRSA_OPENSSL: Formula["openssl@3"].opt_bin"openssl",
-      EASYRSA_PKI:     "${EASYRSA_PKI:-#{etc}pki}"
+      EASYRSA_OPENSSL: Formula["openssl@3"].opt_bin/"openssl",
+      EASYRSA_PKI:     "${EASYRSA_PKI:-#{etc}/pki}"
 
     pkgetc.install %w[
       openssl-easyrsa.cnf
@@ -37,22 +37,22 @@ class EasyRsa < Formula
       README.quickstart.md
     ]
 
-    doc.install Dir["doc*"]
+    doc.install Dir["doc/*"]
   end
 
   def caveats
     <<~EOS
       By default, keys will be created in:
-        #{etc}pki
+        #{etc}/pki
 
       The configuration may be modified by editing and renaming:
-        #{pkgetc}vars.example
+        #{pkgetc}/vars.example
     EOS
   end
 
   test do
-    ENV["EASYRSA_PKI"] = testpath"pki"
+    ENV["EASYRSA_PKI"] = testpath/"pki"
     assert_match "'init-pki' complete; you may now create a CA or requests.",
-      shell_output("#{bin}easyrsa init-pki")
+      shell_output("#{bin}/easyrsa init-pki")
   end
 end

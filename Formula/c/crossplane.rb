@@ -1,10 +1,10 @@
 class Crossplane < Formula
   desc "Build control planes without needing to write code"
-  homepage "https:github.comcrossplanecrossplane"
-  url "https:github.comcrossplanecrossplanearchiverefstagsv1.20.0.tar.gz"
+  homepage "https://github.com/crossplane/crossplane"
+  url "https://ghfast.top/https://github.com/crossplane/crossplane/archive/refs/tags/v1.20.0.tar.gz"
   sha256 "19bc2126a636ba9e67b70de951f69854c85e13333ce01329bd8356a2696792c5"
   license "Apache-2.0"
-  head "https:github.comcrossplanecrossplane.git", branch: "main"
+  head "https://github.com/crossplane/crossplane.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "b3c0fa4e896acbca0d698a7c6cf9831de2c64fac3412d38ccf9c1501ad896df5"
@@ -18,14 +18,14 @@ class Crossplane < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w -X github.comcrossplanecrossplaneinternalversion.version=v#{version}"), ".cmdcrank"
+    system "go", "build", *std_go_args(ldflags: "-s -w -X github.com/crossplane/crossplane/internal/version.version=v#{version}"), "./cmd/crank"
   end
 
   test do
-    assert_match "Client Version: v#{version}", shell_output("#{bin}crossplane version --client")
+    assert_match "Client Version: v#{version}", shell_output("#{bin}/crossplane version --client")
 
-    (testpath"controllerconfig.yaml").write <<~YAML
-      apiVersion: pkg.crossplane.iov1alpha1
+    (testpath/"controllerconfig.yaml").write <<~YAML
+      apiVersion: pkg.crossplane.io/v1alpha1
       kind: ControllerConfig
       metadata:
        name: irsa
@@ -34,7 +34,7 @@ class Crossplane < Formula
          - --enable-external-secret-stores
     YAML
     expected_output = <<~YAML
-      apiVersion: pkg.crossplane.iov1beta1
+      apiVersion: pkg.crossplane.io/v1beta1
       kind: DeploymentRuntimeConfig
       metadata:
         name: irsa
@@ -52,9 +52,9 @@ class Crossplane < Formula
                   name: package-runtime
                   resources: {}
     YAML
-    system bin"crossplane", "beta", "convert", "deployment-runtime", "controllerconfig.yaml", "-o",
+    system bin/"crossplane", "beta", "convert", "deployment-runtime", "controllerconfig.yaml", "-o",
 "deploymentruntimeconfig.yaml"
-    inreplace "deploymentruntimeconfig.yaml", ^\s+creationTimestamp.+$\n, ""
+    inreplace "deploymentruntimeconfig.yaml", /^\s+creationTimestamp.+$\n/, ""
     assert_equal expected_output, File.read("deploymentruntimeconfig.yaml")
   end
 end

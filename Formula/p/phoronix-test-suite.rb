@@ -1,11 +1,11 @@
 class PhoronixTestSuite < Formula
-  desc "Open-source automated testingbenchmarking software"
-  homepage "https:www.phoronix-test-suite.com"
-  url "https:github.comphoronix-test-suitephoronix-test-suitearchiverefstagsv10.8.4.tar.gz"
+  desc "Open-source automated testing/benchmarking software"
+  homepage "https://www.phoronix-test-suite.com/"
+  url "https://ghfast.top/https://github.com/phoronix-test-suite/phoronix-test-suite/archive/refs/tags/v10.8.4.tar.gz"
   sha256 "7b5da7193c0190c648fc0c7ad6cdfbde5d935e88c7bfa5e99cd3a720cd5e2c5a"
   license "GPL-3.0-or-later"
   revision 1
-  head "https:github.comphoronix-test-suitephoronix-test-suite.git", branch: "master"
+  head "https://github.com/phoronix-test-suite/phoronix-test-suite.git", branch: "master"
 
   livecheck do
     url :stable
@@ -26,12 +26,12 @@ class PhoronixTestSuite < Formula
 
   def install
     # Use homebrew's share directory
-    inreplace "phoronix-test-suite", "usrsharephoronix-test-suite", "#{pkgshare}"
+    inreplace "phoronix-test-suite", "/usr/share/phoronix-test-suite/", "#{pkgshare}/"
 
-    ENV["DESTDIR"] = buildpath"dest"
-    system ".install-sh", prefix
-    prefix.install (buildpath"dest#{prefix}").children
-    bash_completion.install "dest#{prefix}..etcbash_completion.dphoronix-test-suite"
+    ENV["DESTDIR"] = buildpath/"dest"
+    system "./install-sh", prefix
+    prefix.install (buildpath/"dest/#{prefix}").children
+    bash_completion.install "dest/#{prefix}/../etc/bash_completion.d/phoronix-test-suite"
   end
 
   test do
@@ -41,13 +41,13 @@ class PhoronixTestSuite < Formula
     # Error is "Forked child process failed: pid ##### SIGKILL"
     require "pty"
     output = ""
-    PTY.spawn(bin"phoronix-test-suite", "version") do |r, _w, pid|
+    PTY.spawn(bin/"phoronix-test-suite", "version") do |r, _w, pid|
       sleep 10
       Process.kill "TERM", pid
       begin
         r.each_line { |line| output += line }
       rescue Errno::EIO
-        # GNULinux raises EIO when read is done on closed pty
+        # GNU/Linux raises EIO when read is done on closed pty
       end
     end
 

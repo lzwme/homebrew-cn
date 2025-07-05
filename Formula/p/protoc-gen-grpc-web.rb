@@ -1,14 +1,14 @@
 class ProtocGenGrpcWeb < Formula
   desc "Protoc plugin that generates code for gRPC-Web clients"
-  homepage "https:github.comgrpcgrpc-web"
-  url "https:github.comgrpcgrpc-webarchiverefstags1.5.0.tar.gz"
+  homepage "https://github.com/grpc/grpc-web"
+  url "https://ghfast.top/https://github.com/grpc/grpc-web/archive/refs/tags/1.5.0.tar.gz"
   sha256 "d3043633f1c284288e98e44c802860ca7203c7376b89572b5f5a9e376c2392d5"
   license "Apache-2.0"
   revision 10
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -29,13 +29,13 @@ class ProtocGenGrpcWeb < Formula
   depends_on "protobuf@29"
   depends_on "protoc-gen-js"
 
-  # Backport of https:github.comgrpcgrpc-webcommit2c39859be8e5bcf55eef129e5a5330149ce460ab
+  # Backport of https://github.com/grpc/grpc-web/commit/2c39859be8e5bcf55eef129e5a5330149ce460ab
   patch :DATA
 
   def install
     # Workarounds to build with latest `protobuf` which needs Abseil link flags and C++17
     ENV.append "LDFLAGS", Utils.safe_popen_read("pkgconf", "--libs", "protobuf").chomp
-    inreplace "javascriptnetgrpcwebgeneratorMakefile", "-std=c++11", "-std=c++17"
+    inreplace "javascript/net/grpc/web/generator/Makefile", "-std=c++11", "-std=c++17"
 
     args = ["PREFIX=#{prefix}", "STATIC=no"]
     args << "MIN_MACOS_VERSION=#{MacOS.version}" if OS.mac?
@@ -45,7 +45,7 @@ class ProtocGenGrpcWeb < Formula
 
   test do
     # First use the plugin to generate the files.
-    (testpath"test.proto").write <<~PROTO
+    (testpath/"test.proto").write <<~PROTO
       syntax = "proto3";
       package test;
       message TestCase {
@@ -61,28 +61,28 @@ class ProtocGenGrpcWeb < Formula
         rpc RunTest(Test) returns (TestResult);
       }
     PROTO
-    protoc = Formula["protobuf@29"].bin"protoc"
-    system protoc, "test.proto", "--plugin=#{bin}protoc-gen-grpc-web",
+    protoc = Formula["protobuf@29"].bin/"protoc"
+    system protoc, "test.proto", "--plugin=#{bin}/protoc-gen-grpc-web",
                    "--js_out=import_style=commonjs:.",
                    "--grpc-web_out=import_style=typescript,mode=grpcwebtext:."
 
     # Now see if we can import them.
-    (testpath"test.ts").write <<~TYPESCRIPT
+    (testpath/"test.ts").write <<~TYPESCRIPT
       import * as grpcWeb from 'grpc-web';
-      import {TestServiceClient} from '.TestServiceClientPb';
-      import {Test, TestResult} from '.test_pb';
+      import {TestServiceClient} from './TestServiceClientPb';
+      import {Test, TestResult} from './test_pb';
     TYPESCRIPT
-    system "npm", "install", *std_npm_args(prefix: false), "grpc-web", "@typesgoogle-protobuf"
-    # Specify including lib for `tsc` since `es6` is required for `@typesgoogle-protobuf`.
+    system "npm", "install", *std_npm_args(prefix: false), "grpc-web", "@types/google-protobuf"
+    # Specify including lib for `tsc` since `es6` is required for `@types/google-protobuf`.
     system "tsc", "--lib", "es6", "test.ts"
   end
 end
 
 __END__
-diff --git ajavascriptnetgrpcwebgeneratorgrpc_generator.cc bjavascriptnetgrpcwebgeneratorgrpc_generator.cc
+diff --git a/javascript/net/grpc/web/generator/grpc_generator.cc b/javascript/net/grpc/web/generator/grpc_generator.cc
 index 158a335bb..1eb97b35d 100644
---- ajavascriptnetgrpcwebgeneratorgrpc_generator.cc
-+++ bjavascriptnetgrpcwebgeneratorgrpc_generator.cc
+--- a/javascript/net/grpc/web/generator/grpc_generator.cc
++++ b/javascript/net/grpc/web/generator/grpc_generator.cc
 @@ -841,13 +841,11 @@ void PrintProtoDtsMessage(Printer* printer, const Descriptor* desc,
                       "set$js_field_name$(value?: $js_field_type$): "
                       "$class_name$;\n");

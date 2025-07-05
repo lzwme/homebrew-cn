@@ -1,7 +1,7 @@
 class Rapidyaml < Formula
   desc "Library to parse and emit YAML, and do it fast"
-  homepage "https:github.combiojppmrapidyaml"
-  url "https:github.combiojppmrapidyamlreleasesdownloadv0.9.0rapidyaml-0.9.0-src.tgz"
+  homepage "https://github.com/biojppm/rapidyaml"
+  url "https://ghfast.top/https://github.com/biojppm/rapidyaml/releases/download/v0.9.0/rapidyaml-0.9.0-src.tgz"
   sha256 "e01c66b21dfbe3d7382ecab3dfe7efcdc47a068cd25fcc8279e8f462f69c995d"
   license "MIT"
 
@@ -17,7 +17,7 @@ class Rapidyaml < Formula
 
   depends_on "cmake" => :build
 
-  conflicts_with "c4core", because: "both install `c4core` files `includec4`"
+  conflicts_with "c4core", because: "both install `c4core` files `include/c4`"
 
   def install
     system "cmake", "-S", ".", "-B", "build", "-DBUILD_SHARED_LIBS=ON", *std_cmake_args
@@ -26,7 +26,7 @@ class Rapidyaml < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~CPP
+    (testpath/"test.cpp").write <<~CPP
       #include <ryml.hpp>
       int main() {
         char yml_buf[] = "{foo: 1, bar: [2, 3], john: doe}";
@@ -34,6 +34,6 @@ class Rapidyaml < Formula
       }
     CPP
     system ENV.cxx, "test.cpp", "-std=c++17", "-L#{lib}", "-lryml", "-o", "test"
-    system ".test"
+    system "./test"
   end
 end

@@ -1,10 +1,10 @@
 class AgePluginSe < Formula
   desc "Age plugin for Apple Secure Enclave"
-  homepage "https:github.comremkoage-plugin-se"
-  url "https:github.comremkoage-plugin-searchiverefstagsv0.1.4.tar.gz"
+  homepage "https://github.com/remko/age-plugin-se"
+  url "https://ghfast.top/https://github.com/remko/age-plugin-se/archive/refs/tags/v0.1.4.tar.gz"
   sha256 "52d9b9583783988fbe5e94bbe72089a870d128a2eba197fc09a95c13926fb27a"
   license "MIT"
-  head "https:github.comremkoage-plugin-se.git", branch: "main"
+  head "https://github.com/remko/age-plugin-se.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "b1a850c11897c463a544f04473ce8ed580cba03618ff480e6acf5c7ed4d856bd"
@@ -26,12 +26,12 @@ class AgePluginSe < Formula
   end
 
   test do
-    (testpath"secret.txt").write "My secret"
+    (testpath/"secret.txt").write "My secret"
     system "age", "--encrypt",
            "-r", "age1se1qgg72x2qfk9wg3wh0qg9u0v7l5dkq4jx69fv80p6wdus3ftg6flwg5dz2dp",
            "-o", "secret.txt.age", "secret.txt"
-    assert_path_exists testpath"secret.txt.age"
+    assert_path_exists testpath/"secret.txt.age"
 
-    assert_match version.to_s, shell_output("#{bin}age-plugin-se --version")
+    assert_match version.to_s, shell_output("#{bin}/age-plugin-se --version")
   end
 end

@@ -1,10 +1,10 @@
 class Nnn < Formula
   desc "Tiny, lightning fast, feature-packed file manager"
-  homepage "https:github.comjarunnnn"
-  url "https:github.comjarunnnnarchiverefstagsv5.1.tar.gz"
+  homepage "https://github.com/jarun/nnn"
+  url "https://ghfast.top/https://github.com/jarun/nnn/archive/refs/tags/v5.1.tar.gz"
   sha256 "9faaff1e3f5a2fd3ed570a83f6fb3baf0bfc6ebd6a9abac16203d057ac3fffe3"
   license "BSD-2-Clause"
-  head "https:github.comjarunnnn.git", branch: "master"
+  head "https://github.com/jarun/nnn.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "b510e2a0689e2c484874e97b1cf4d3b60cd8a340c40a73b5af35f55a6423c236"
@@ -23,25 +23,25 @@ class Nnn < Formula
   def install
     system "make", "install", "PREFIX=#{prefix}"
 
-    bash_completion.install "miscauto-completionbashnnn-completion.bash" => "nnn"
-    zsh_completion.install "miscauto-completionzsh_nnn"
-    fish_completion.install "miscauto-completionfishnnn.fish"
+    bash_completion.install "misc/auto-completion/bash/nnn-completion.bash" => "nnn"
+    zsh_completion.install "misc/auto-completion/zsh/_nnn"
+    fish_completion.install "misc/auto-completion/fish/nnn.fish"
 
-    pkgshare.install "miscquitcd"
+    pkgshare.install "misc/quitcd"
   end
 
   test do
-    # Test fails on CI: Inputoutput error @ io_fread - devpts0
-    # Fixing it involves ptyruby voodoo, which is not worth spending time on
+    # Test fails on CI: Input/output error @ io_fread - /dev/pts/0
+    # Fixing it involves pty/ruby voodoo, which is not worth spending time on
     return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
 
     # Testing this curses app requires a pty
     require "pty"
 
-    (testpath"testdir").mkdir
-    PTY.spawn(bin"nnn", testpath"testdir") do |r, w, _pid|
+    (testpath/"testdir").mkdir
+    PTY.spawn(bin/"nnn", testpath/"testdir") do |r, w, _pid|
       w.write "q"
-      assert_match "~testdir", r.read
+      assert_match "~/testdir", r.read
     end
   end
 end

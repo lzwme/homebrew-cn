@@ -1,15 +1,15 @@
 class Pgloader < Formula
   desc "Data loading tool for PostgreSQL"
-  homepage "https:github.comdimitripgloader"
-  url "https:github.comdimitripgloaderreleasesdownloadv3.6.9pgloader-bundle-3.6.9.tgz"
+  homepage "https://github.com/dimitri/pgloader"
+  url "https://ghfast.top/https://github.com/dimitri/pgloader/releases/download/v3.6.9/pgloader-bundle-3.6.9.tgz"
   sha256 "a5d09c466a099eb7d59e485b4f45aa2eb45b0ad38499180646c5cafb7b81c9e0"
   license "PostgreSQL"
   revision 1
-  head "https:github.comdimitripgloader.git", branch: "master"
+  head "https://github.com/dimitri/pgloader.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -37,16 +37,16 @@ class Pgloader < Formula
 
   def install
     system "make"
-    bin.install "binpgloader"
+    bin.install "bin/pgloader"
   end
 
   test do
     # Fails in Linux CI with "Can't find sbcl.core"
     return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
 
-    output = shell_output("#{bin}pgloader --summary 2>&1", 2)
+    output = shell_output("#{bin}/pgloader --summary 2>&1", 2)
     assert_match "pgloader [ option ... ] SOURCE TARGET", output
 
-    assert_match version.to_s, shell_output("#{bin}pgloader --version")
+    assert_match version.to_s, shell_output("#{bin}/pgloader --version")
   end
 end

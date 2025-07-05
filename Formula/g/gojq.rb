@@ -1,11 +1,11 @@
 class Gojq < Formula
   desc "Pure Go implementation of jq"
-  homepage "https:github.comitchynygojq"
-  url "https:github.comitchynygojq.git",
+  homepage "https://github.com/itchyny/gojq"
+  url "https://github.com/itchyny/gojq.git",
       tag:      "v0.12.17",
       revision: "f4c2cfe4c7ef54436cc791250bc66cf33dc44c7b"
   license "MIT"
-  head "https:github.comitchynygojq.git", branch: "main"
+  head "https://github.com/itchyny/gojq.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "523520da9c06c9603c8d049432177e302140c217308b421dd9da85cb2a6eea74"
@@ -23,13 +23,13 @@ class Gojq < Formula
     revision = Utils.git_short_head
     ldflags = %W[
       -s -w
-      -X github.comitchynygojqcli.revision=#{revision}
+      -X github.com/itchyny/gojq/cli.revision=#{revision}
     ]
-    system "go", "build", *std_go_args(ldflags:), ".cmdgojq"
+    system "go", "build", *std_go_args(ldflags:), "./cmd/gojq"
     zsh_completion.install "_gojq"
   end
 
   test do
-    assert_equal "2\n", pipe_output("#{bin}gojq .bar", '{"foo":1, "bar":2}')
+    assert_equal "2\n", pipe_output("#{bin}/gojq .bar", '{"foo":1, "bar":2}')
   end
 end

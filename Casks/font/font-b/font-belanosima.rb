@@ -2,12 +2,12 @@ cask "font-belanosima" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefonts.git",
-      verified:  "github.comgooglefonts",
+  url "https://github.com/google/fonts.git",
+      verified:  "github.com/google/fonts",
       branch:    "main",
-      only_path: "oflbelanosima"
+      only_path: "ofl/belanosima"
   name "Belanosima"
-  homepage "https:fonts.google.comspecimenBelanosima"
+  homepage "https://fonts.google.com/specimen/Belanosima"
 
   font "Belanosima-Bold.ttf"
   font "Belanosima-Regular.ttf"

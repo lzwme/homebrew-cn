@@ -1,18 +1,18 @@
 class Assimp < Formula
   desc "Portable library for importing many well-known 3D model formats"
-  homepage "https:www.assimp.org"
-  url "https:github.comassimpassimparchiverefstagsv6.0.2.tar.gz"
+  homepage "https://www.assimp.org/"
+  url "https://ghfast.top/https://github.com/assimp/assimp/archive/refs/tags/v6.0.2.tar.gz"
   sha256 "d1822d9a19c9205d6e8bc533bf897174ddb360ce504680f294170cc1d6319751"
-  # NOTE: BSD-2-Clause is omitted as contribOpen3DGCo3dgcArithmeticCodec.c is not used
+  # NOTE: BSD-2-Clause is omitted as contrib/Open3DGC/o3dgcArithmeticCodec.c is not used
   license all_of: [
     "BSD-3-Clause",
-    "CC-PDDC",   # codeAssetLibAssjsoncencode.* (code from libb64)
-    "MIT",       # codeAssetLibM3Dm3d.h, contrib{openddlparser,pugixml,rapidjson}
-    "BSL-1.0",   # contrib{clipper,utf8cpp}
-    "Unlicense", # contribzip
-    "Zlib",      # contribunzip
+    "CC-PDDC",   # code/AssetLib/Assjson/cencode.* (code from libb64)
+    "MIT",       # code/AssetLib/M3D/m3d.h, contrib/{openddlparser,pugixml,rapidjson}
+    "BSL-1.0",   # contrib/{clipper,utf8cpp}
+    "Unlicense", # contrib/zip
+    "Zlib",      # contrib/unzip
   ]
-  head "https:github.comassimpassimp.git", branch: "master"
+  head "https://github.com/assimp/assimp.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "6ab85fd16cd1f86fc8ee199e49d4f57d9b23eb0e2b598e32d1450913862506a8"
@@ -43,18 +43,18 @@ class Assimp < Formula
 
   test do
     # Library test.
-    (testpath"test.cpp").write <<~CPP
-      #include <assimpImporter.hpp>
+    (testpath/"test.cpp").write <<~CPP
+      #include <assimp/Importer.hpp>
       int main() {
         Assimp::Importer importer;
         return 0;
       }
     CPP
     system ENV.cc, "-std=c++11", "test.cpp", "-L#{lib}", "-lassimp", "-o", "test"
-    system ".test"
+    system "./test"
 
     # Application test.
-    (testpath"test.obj").write <<~EOS
+    (testpath/"test.obj").write <<~EOS
       # WaveFront .obj file - a single square based pyramid
 
       # Start a new group:
@@ -84,6 +84,6 @@ class Assimp < Formula
       # Triangle on right side
       f 2 3 5
     EOS
-    system bin"assimp", "export", "test.obj", "test.ply"
+    system bin/"assimp", "export", "test.obj", "test.ply"
   end
 end

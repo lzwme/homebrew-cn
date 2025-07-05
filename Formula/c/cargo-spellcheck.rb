@@ -1,10 +1,10 @@
 class CargoSpellcheck < Formula
   desc "Checks rust documentation for spelling and grammar mistakes"
-  homepage "https:github.comdrahnrcargo-spellcheck"
-  url "https:github.comdrahnrcargo-spellcheckarchiverefstagsv0.15.5.tar.gz"
+  homepage "https://github.com/drahnr/cargo-spellcheck"
+  url "https://ghfast.top/https://github.com/drahnr/cargo-spellcheck/archive/refs/tags/v0.15.5.tar.gz"
   sha256 "ab4027dea18ac252b1a3ad733f47899daa50dde3c90aa34f5f22534745f853d7"
   license any_of: ["Apache-2.0", "MIT"]
-  head "https:github.comdrahnrcargo-spellcheck.git", branch: "master"
+  head "https://github.com/drahnr/cargo-spellcheck.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "8e4c34eabd5c01a01e81429472363789f826a4107fb087feb88f6350cc459e7c"
@@ -29,26 +29,26 @@ class CargoSpellcheck < Formula
 
   test do
     # Show that we can use a different toolchain than the one provided by the `rust` formula.
-    # https:github.comHomebrewhomebrew-corepull134074#pullrequestreview-1484979359
+    # https://github.com/Homebrew/homebrew-core/pull/134074#pullrequestreview-1484979359
     ENV.prepend_path "PATH", Formula["rustup"].bin
     system "rustup", "set", "profile", "minimal"
     system "rustup", "default", "beta"
 
-    assert_match version.to_s, shell_output("#{bin}cargo-spellcheck --version")
+    assert_match version.to_s, shell_output("#{bin}/cargo-spellcheck --version")
 
-    (testpath"Cargo.toml").write <<~TOML
+    (testpath/"Cargo.toml").write <<~TOML
       [package]
       name = "test_project"
       version = "0.1.0"
       edition = "2021"
     TOML
 
-    (testpath"srclib.rs").write <<~RUST
-      ! This is a simple libary with a deliberate misspelling.
+    (testpath/"src/lib.rs").write <<~RUST
+      //! This is a simple libary with a deliberate misspelling.
       pub fn foo() {}
     RUST
 
-    output = shell_output("#{bin}cargo-spellcheck check #{testpath}")
+    output = shell_output("#{bin}/cargo-spellcheck check #{testpath}")
     assert_match "libary", output
   end
 end

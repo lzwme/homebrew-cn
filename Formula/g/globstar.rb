@@ -1,10 +1,10 @@
 class Globstar < Formula
   desc "Static analysis toolkit for writing and running code checkers"
-  homepage "https:globstar.dev"
-  url "https:github.comDeepSourceCorpglobstararchiverefstagsv0.7.0.tar.gz"
+  homepage "https://globstar.dev"
+  url "https://ghfast.top/https://github.com/DeepSourceCorp/globstar/archive/refs/tags/v0.7.0.tar.gz"
   sha256 "a98edec5423394924288382650177549e4997647d145fafa8ade03c687cb39a0"
   license "MIT"
-  head "https:github.comDeepSourceCorpglobstar.git", branch: "master"
+  head "https://github.com/DeepSourceCorp/globstar.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "04bf11ea096ebbeb71a68dc7e566e7349de08e8ecc6b52371f143d2ffd770d1b"
@@ -20,13 +20,13 @@ class Globstar < Formula
 
   def install
     system "make", "generate-registry"
-    system "go", "build", *std_go_args(ldflags: "-s -w -X globstar.devpkgcli.version=#{version}"), ".cmdglobstar"
+    system "go", "build", *std_go_args(ldflags: "-s -w -X globstar.dev/pkg/cli.version=#{version}"), "./cmd/globstar"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}globstar --version")
+    assert_match version.to_s, shell_output("#{bin}/globstar --version")
 
-    output = shell_output("#{bin}globstar check 2>&1")
+    output = shell_output("#{bin}/globstar check 2>&1")
     assert_match "Checker directory .globstar does not exist", output
   end
 end

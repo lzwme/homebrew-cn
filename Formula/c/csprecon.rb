@@ -1,10 +1,10 @@
 class Csprecon < Formula
   desc "Discover new target domains using Content Security Policy"
-  homepage "https:github.comedoardotttcsprecon"
-  url "https:github.comedoardotttcspreconarchiverefstagsv0.4.1.tar.gz"
+  homepage "https://github.com/edoardottt/csprecon"
+  url "https://ghfast.top/https://github.com/edoardottt/csprecon/archive/refs/tags/v0.4.1.tar.gz"
   sha256 "69200ae4bc99ba41c5a884af6491373cf9cfc5cd66590804c6254460951da968"
   license "MIT"
-  head "https:github.comedoardotttcsprecon.git", branch: "main"
+  head "https://github.com/edoardottt/csprecon.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "6d107562498b42b0e1b90be7b20e5cce58e36e722aabaeed906478642b8f344b"
@@ -18,11 +18,11 @@ class Csprecon < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), ".cmdcsprecon"
+    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/csprecon"
   end
 
   test do
-    output = shell_output("#{bin}csprecon -u https:brew.sh")
+    output = shell_output("#{bin}/csprecon -u https://brew.sh")
     assert_match "avatars.githubusercontent.com", output
   end
 end

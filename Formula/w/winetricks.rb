@@ -1,14 +1,14 @@
 class Winetricks < Formula
   desc "Automatic workarounds for problems in Wine"
-  homepage "https:github.comWinetrickswinetricks"
-  url "https:github.comWinetrickswinetricksarchiverefstags20250102.tar.gz"
+  homepage "https://github.com/Winetricks/winetricks"
+  url "https://ghfast.top/https://github.com/Winetricks/winetricks/archive/refs/tags/20250102.tar.gz"
   sha256 "24d339806e3309274ee70743d76ff7b965fef5a534c001916d387c924eebe42e"
   license "LGPL-2.1-or-later"
-  head "https:github.comWinetrickswinetricks.git", branch: "master"
+  head "https://github.com/Winetricks/winetricks.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(^v?(\d{6,8})$i)
+    regex(/^v?(\d{6,8})$/i)
   end
 
   bottle do
@@ -20,11 +20,11 @@ class Winetricks < Formula
   depends_on "unzip"
 
   def install
-    bin.install "srcwinetricks"
-    man1.install "srcwinetricks.1"
+    bin.install "src/winetricks"
+    man1.install "src/winetricks.1"
   end
 
   test do
-    system bin"winetricks", "--version"
+    system bin/"winetricks", "--version"
   end
 end

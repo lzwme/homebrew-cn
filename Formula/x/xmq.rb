@@ -1,7 +1,7 @@
 class Xmq < Formula
-  desc "Tool and language to work with xmlhtmljson"
-  homepage "https:libxmq.org"
-  url "https:github.comlibxmqxmqarchiverefstags3.3.2.tar.gz"
+  desc "Tool and language to work with xml/html/json"
+  homepage "https://libxmq.org"
+  url "https://ghfast.top/https://github.com/libxmq/xmq/archive/refs/tags/3.3.2.tar.gz"
   sha256 "076211d8595360eda4b29cb8423927fb4a7296a7bb39b14de087befa3a39e86a"
   license "MIT"
 
@@ -16,7 +16,7 @@ class Xmq < Formula
   end
 
   head do
-    url "https:github.comlibxmqxmq.git", branch: "master"
+    url "https://github.com/libxmq/xmq.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -31,18 +31,18 @@ class Xmq < Formula
 
   def install
     system "autoreconf", "--force", "--install", "--verbose" if build.head?
-    system ".configure", "--disable-silent-rules", *std_configure_args
+    system "./configure", "--disable-silent-rules", *std_configure_args
     system "make"
     system "make", "install"
   end
 
   test do
-    (testpath"test.xml").write <<~XML
+    (testpath/"test.xml").write <<~XML
       <root>
-      <child>Hello Homebrew!<child>
-      <root>
+      <child>Hello Homebrew!</child>
+      </root>
     XML
-    output = shell_output("#{bin}xmq test.xml select child")
+    output = shell_output("#{bin}/xmq test.xml select //child")
     assert_match "Hello Homebrew!", output
   end
 end

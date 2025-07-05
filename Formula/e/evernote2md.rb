@@ -1,10 +1,10 @@
 class Evernote2md < Formula
   desc "Convert Evernote .enex file to Markdown"
-  homepage "https:github.comwormi4okevernote2md"
-  url "https:github.comwormi4okevernote2mdarchiverefstagsv0.22.0.tar.gz"
+  homepage "https://github.com/wormi4ok/evernote2md"
+  url "https://ghfast.top/https://github.com/wormi4ok/evernote2md/archive/refs/tags/v0.22.0.tar.gz"
   sha256 "8de1e94bec536a65f1fa07ef34e0c4f7a0f88e31c87923a4d12558934a69aeab"
   license "MIT"
-  head "https:github.comwormi4okevernote2md.git", branch: "master"
+  head "https://github.com/wormi4ok/evernote2md.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -24,20 +24,20 @@ class Evernote2md < Formula
   end
 
   test do
-    (testpath"export.enex").write <<~EOF
+    (testpath/"export.enex").write <<~EOF
       <?xml version="1.0" encoding="UTF-8"?>
-      <!DOCTYPE en-export SYSTEM "http:xml.evernote.compubevernote-export3.dtd">
+      <!DOCTYPE en-export SYSTEM "http://xml.evernote.com/pub/evernote-export3.dtd">
       <en-export>
         <note>
-          <title>Test<title>
+          <title>Test</title>
           <content>
             <![CDATA[<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-      <!DOCTYPE en-note SYSTEM "http:xml.evernote.compubenml2.dtd"><en-note><div><br ><div><en-note>]]>
-          <content>
-        <note>
-      <en-export>
+      <!DOCTYPE en-note SYSTEM "http://xml.evernote.com/pub/enml2.dtd"><en-note><div><br /></div></en-note>]]>
+          </content>
+        </note>
+      </en-export>
     EOF
-    system bin"evernote2md", "export.enex"
-    assert_path_exists testpath"notesTest.md"
+    system bin/"evernote2md", "export.enex"
+    assert_path_exists testpath/"notes/Test.md"
   end
 end

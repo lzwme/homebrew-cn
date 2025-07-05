@@ -1,10 +1,10 @@
 class Librtlsdr < Formula
   desc "Use Realtek DVB-T dongles as a cheap SDR"
-  homepage "https:osmocom.orgprojectsrtl-sdrwiki"
-  url "https:github.comsteve-mlibrtlsdrarchiverefstagsv2.0.2.tar.gz"
+  homepage "https://osmocom.org/projects/rtl-sdr/wiki"
+  url "https://ghfast.top/https://github.com/steve-m/librtlsdr/archive/refs/tags/v2.0.2.tar.gz"
   sha256 "f407de0b6dce19e81694814e363e8890b6ab2c287c8d64c27a03023e5702fb42"
   license "GPL-2.0-or-later"
-  head "https:git.osmocom.orgrtl-sdr", using: :git, branch: "master"
+  head "https://git.osmocom.org/rtl-sdr", using: :git, branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "3dc37dee4e2862871cf66c0ba71eedfbbe5bab103b766d3d948faeeee5e97f1c"
@@ -29,7 +29,7 @@ class Librtlsdr < Formula
   end
 
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include "rtl-sdr.h"
 
       int main()
@@ -39,6 +39,6 @@ class Librtlsdr < Formula
       }
     C
     system ENV.cc, "test.c", "-L#{lib}", "-lrtlsdr", "-o", "test"
-    system ".test"
+    system "./test"
   end
 end

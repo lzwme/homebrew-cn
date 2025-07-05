@@ -1,12 +1,12 @@
 class LlamaCpp < Formula
-  desc "LLM inference in CC++"
-  homepage "https:github.comggml-orgllama.cpp"
+  desc "LLM inference in C/C++"
+  homepage "https://github.com/ggml-org/llama.cpp"
   # CMake uses Git to generate version information.
-  url "https:github.comggml-orgllama.cpp.git",
+  url "https://github.com/ggml-org/llama.cpp.git",
       tag:      "b5820",
       revision: "c8c4495b8d3a8799e2d46778f993965b0ac1ae43"
   license "MIT"
-  head "https:github.comggml-orgllama.cpp.git", branch: "master"
+  head "https://github.com/ggml-org/llama.cpp.git", branch: "master"
 
   # llama.cpp publishes new tags too often
   # Having multiple updates in one day is not very convenient
@@ -15,7 +15,7 @@ class LlamaCpp < Formula
   # `trottle 10` doesn't work
   livecheck do
     url :stable
-    regex(^v?b(\d+(?:\.\d+)*0)$i)
+    regex(/^v?b(\d+(?:\.\d+)*0)$/i)
   end
 
   bottle do
@@ -65,11 +65,11 @@ class LlamaCpp < Formula
   end
 
   test do
-    system libexec"test-sampling"
+    system libexec/"test-sampling"
     # The test below is flaky on slower hardware.
     return if OS.mac? && Hardware::CPU.intel? && MacOS.version <= :monterey
 
-    system bin"llama-cli", "--hf-repo", "ggml-orgtiny-llamas",
+    system bin/"llama-cli", "--hf-repo", "ggml-org/tiny-llamas",
                             "-m", "stories260K.gguf",
                             "-n", "400", "-p", "I", "-ngl", "0"
   end

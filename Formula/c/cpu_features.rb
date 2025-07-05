@@ -1,10 +1,10 @@
 class CpuFeatures < Formula
   desc "Cross platform C99 library to get cpu features at runtime"
-  homepage "https:github.comgooglecpu_features"
-  url "https:github.comgooglecpu_featuresarchiverefstagsv0.10.1.tar.gz"
+  homepage "https://github.com/google/cpu_features"
+  url "https://ghfast.top/https://github.com/google/cpu_features/archive/refs/tags/v0.10.1.tar.gz"
   sha256 "52639b380fced11d738f8b151dbfee63fb94957731d07f1966c812e5b90cbad4"
   license "Apache-2.0"
-  head "https:github.comgooglecpu_features.git", branch: "main"
+  head "https://github.com/google/cpu_features.git", branch: "main"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "945475dbda6e53ed6b0099e872921e81866dc0417ff7374afd0d6338d382eb0a"
@@ -27,26 +27,26 @@ class CpuFeatures < Formula
     system "cmake", "--install", "build"
 
     # Install static lib too
-    system "cmake", "-S", ".", "-B", "buildstatic", *std_cmake_args
-    system "cmake", "--build", "buildstatic"
-    lib.install "buildstaticlibcpu_features.a"
+    system "cmake", "-S", ".", "-B", "build/static", *std_cmake_args
+    system "cmake", "--build", "build/static"
+    lib.install "build/static/libcpu_features.a"
   end
 
   test do
-    output = shell_output(bin"list_cpu_features")
-    assert_match(^arch\s*:, output)
+    output = shell_output(bin/"list_cpu_features")
+    assert_match(/^arch\s*:/, output)
     if Hardware::CPU.arm?
-      assert_match(^implementer\s*:, output)
-      assert_match(^variant\s*:, output)
-      assert_match(^part\s*:, output)
-      assert_match(^revision\s*:, output)
+      assert_match(/^implementer\s*:/, output)
+      assert_match(/^variant\s*:/, output)
+      assert_match(/^part\s*:/, output)
+      assert_match(/^revision\s*:/, output)
     else
-      assert_match(^brand\s*:, output)
-      assert_match(^family\s*:, output)
-      assert_match(^model\s*:, output)
-      assert_match(^stepping\s*:, output)
-      assert_match(^uarch\s*:, output)
+      assert_match(/^brand\s*:/, output)
+      assert_match(/^family\s*:/, output)
+      assert_match(/^model\s*:/, output)
+      assert_match(/^stepping\s*:/, output)
+      assert_match(/^uarch\s*:/, output)
     end
-    assert_match(^flags\s*:, output)
+    assert_match(/^flags\s*:/, output)
   end
 end

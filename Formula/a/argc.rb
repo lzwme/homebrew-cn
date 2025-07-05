@@ -1,7 +1,7 @@
 class Argc < Formula
   desc "Easily create and use cli based on bash script"
-  homepage "https:github.comsigodenargc"
-  url "https:github.comsigodenargcarchiverefstagsv1.22.0.tar.gz"
+  homepage "https://github.com/sigoden/argc"
+  url "https://ghfast.top/https://github.com/sigoden/argc/archive/refs/tags/v1.22.0.tar.gz"
   sha256 "b073e531baad204abf432b53c4f94633c80a791337f141d2daba96fe58d81af8"
   license any_of: ["Apache-2.0", "MIT"]
 
@@ -20,12 +20,12 @@ class Argc < Formula
   def install
     system "cargo", "install", *std_cargo_args
 
-    generate_completions_from_executable(bin"argc", "--argc-completions")
+    generate_completions_from_executable(bin/"argc", "--argc-completions")
   end
 
   test do
-    system bin"argc", "--argc-create", "build"
-    assert_path_exists testpath"Argcfile.sh"
-    assert_match "build", shell_output("#{bin}argc build")
+    system bin/"argc", "--argc-create", "build"
+    assert_path_exists testpath/"Argcfile.sh"
+    assert_match "build", shell_output("#{bin}/argc build")
   end
 end

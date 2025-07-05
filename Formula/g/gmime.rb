@@ -1,7 +1,7 @@
 class Gmime < Formula
   desc "MIME mail utilities"
-  homepage "https:github.comjstedfastgmime"
-  url "https:github.comjstedfastgmimereleasesdownload3.2.15gmime-3.2.15.tar.xz"
+  homepage "https://github.com/jstedfast/gmime"
+  url "https://ghfast.top/https://github.com/jstedfast/gmime/releases/download/3.2.15/gmime-3.2.15.tar.xz"
   sha256 "84cd2a481a27970ec39b5c95f72db026722904a2ccf3fdbd57b280cf2d02b5c4"
   license "LGPL-2.1-or-later"
 
@@ -18,7 +18,7 @@ class Gmime < Formula
   end
 
   head do
-    url "https:github.comjstedfastgmime.git", branch: "master"
+    url "https://github.com/jstedfast/gmime.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -48,12 +48,12 @@ class Gmime < Formula
       --enable-introspection
     ]
 
-    system ".autogen.sh" if build.head?
-    system ".configure", *args, *std_configure_args
+    system "./autogen.sh" if build.head?
+    system "./configure", *args, *std_configure_args
     system "make", "install"
 
     # Avoid hardcoding Cellar paths of dependencies
-    inreplace lib"pkgconfiggmime-#{version.major}.0.pc" do |s|
+    inreplace lib/"pkgconfig/gmime-#{version.major}.0.pc" do |s|
       %w[gpgme libassuan libidn2].each do |f|
         s.gsub! Formula[f].prefix.realpath, Formula[f].opt_prefix
       end
@@ -62,13 +62,13 @@ class Gmime < Formula
     return if OS.linux?
 
     # Avoid dependents remembering gmime's Cellar path
-    inreplace share"gir-1.0GMime-#{version.major}.0.gir", prefix, opt_prefix
+    inreplace share/"gir-1.0/GMime-#{version.major}.0.gir", prefix, opt_prefix
   end
 
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include <stdio.h>
-      #include <gmimegmime.h>
+      #include <gmime/gmime.h>
       int main (int argc, char **argv)
       {
         g_mime_init();
@@ -82,7 +82,7 @@ class Gmime < Formula
 
     flags = shell_output("pkgconf --cflags --libs gmime-#{version.major}.0").strip.split
     system ENV.cc, "-o", "test", "test.c", *flags
-    system ".test"
+    system "./test"
 
     # Check that `pkg-config` paths are valid
     cflags = shell_output("pkgconf --cflags gmime-#{version.major}.0").strip

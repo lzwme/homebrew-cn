@@ -1,10 +1,10 @@
 class Gx < Formula
   desc "Language-agnostic, universal package manager"
-  homepage "https:github.comwhyrusleepinggx"
-  url "https:github.comwhyrusleepinggxarchiverefstagsv0.14.3.tar.gz"
+  homepage "https://github.com/whyrusleeping/gx"
+  url "https://ghfast.top/https://github.com/whyrusleeping/gx/archive/refs/tags/v0.14.3.tar.gz"
   sha256 "2c0b90ddfd3152863f815c35b37e94d027216c6ba1c6653a94b722bf6e2b015d"
   license "MIT"
-  head "https:github.comwhyrusleepinggx.git", branch: "master"
+  head "https://github.com/whyrusleeping/gx.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -26,7 +26,7 @@ class Gx < Formula
 
   # project is no longer maintained as people should be
   # expected to use go modules to manage dependencies
-  # also see upstream discussion on this, https:github.comwhyrusleepinggxissues247
+  # also see upstream discussion on this, https://github.com/whyrusleeping/gx/issues/247
   deprecate! date: "2024-12-07", because: :unmaintained
 
   depends_on "go" => :build
@@ -36,6 +36,6 @@ class Gx < Formula
   end
 
   test do
-    assert_match "ERROR: no package found in this directory or any above", shell_output("#{bin}gx deps", 1)
+    assert_match "ERROR: no package found in this directory or any above", shell_output("#{bin}/gx deps", 1)
   end
 end

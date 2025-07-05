@@ -1,7 +1,7 @@
 class Wdc < Formula
   desc "WebDAV Client provides easy and convenient to work with WebDAV-servers"
-  homepage "https:cloudpolis.github.iowebdav-client-cpp"
-  url "https:github.comCloudPoliswebdav-client-cpparchiverefstagsv1.1.5.tar.gz"
+  homepage "https://cloudpolis.github.io/webdav-client-cpp"
+  url "https://ghfast.top/https://github.com/CloudPolis/webdav-client-cpp/archive/refs/tags/v1.1.5.tar.gz"
   sha256 "3c45341521da9c68328c5fa8909d838915e8a768e7652ff1bcc2fbbd46ab9f64"
   license "curl"
   revision 1
@@ -38,8 +38,8 @@ class Wdc < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~CPP
-      #include <webdavclient.hpp>
+    (testpath/"test.cpp").write <<~CPP
+      #include <webdav/client.hpp>
       #include <cassert>
       #include <string>
       #include <memory>
@@ -47,7 +47,7 @@ class Wdc < Formula
       int main(int argc, char *argv[]) {
         std::map<std::string, std::string> options =
         {
-          {"webdav_hostname", "https:webdav.example.com"},
+          {"webdav_hostname", "https://webdav.example.com"},
           {"webdav_login",    "webdav_login"},
           {"webdav_password", "webdav_password"}
         };
@@ -68,6 +68,6 @@ class Wdc < Formula
                    "-L#{pugixml.opt_lib}", "-lpugixml",
                    "-I#{pugixml.opt_include}",
                    *curl_args
-    system ".test"
+    system "./test"
   end
 end

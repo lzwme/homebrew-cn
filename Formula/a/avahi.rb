@@ -1,7 +1,7 @@
 class Avahi < Formula
-  desc "Service Discovery for Linux using mDNSDNS-SD"
-  homepage "https:avahi.org"
-  url "https:github.comavahiavahiarchiverefstagsv0.8.tar.gz"
+  desc "Service Discovery for Linux using mDNS/DNS-SD"
+  homepage "https://avahi.org"
+  url "https://ghfast.top/https://github.com/avahi/avahi/archive/refs/tags/v0.8.tar.gz"
   sha256 "c15e750ef7c6df595fb5f2ce10cac0fee2353649600e6919ad08ae8871e4945f"
   license "LGPL-2.1-or-later"
   revision 2
@@ -32,9 +32,9 @@ class Avahi < Formula
   depends_on :linux
 
   def install
-    system ".bootstrap.sh", "--disable-silent-rules",
-                             "--sysconfdir=#{prefix}etc",
-                             "--localstatedir=#{prefix}var",
+    system "./bootstrap.sh", "--disable-silent-rules",
+                             "--sysconfdir=#{prefix}/etc",
+                             "--localstatedir=#{prefix}/var",
                              "--disable-mono",
                              "--disable-monodoc",
                              "--disable-python",
@@ -50,17 +50,17 @@ class Avahi < Formula
     system "make", "install"
 
     # mDNSResponder compatibility
-    ln_s include"avahi-compat-libdns_sddns_sd.h", include"dns_sd.h"
+    ln_s include/"avahi-compat-libdns_sd/dns_sd.h", include/"dns_sd.h"
   end
 
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include <glib.h>
 
-      #include <avahi-clientclient.h>
-      #include <avahi-commonerror.h>
-      #include <avahi-glibglib-watch.h>
-      #include <avahi-glibglib-malloc.h>
+      #include <avahi-client/client.h>
+      #include <avahi-common/error.h>
+      #include <avahi-glib/glib-watch.h>
+      #include <avahi-glib/glib-malloc.h>
 
       static void avahi_client_callback (AVAHI_GCC_UNUSED AvahiClient *client, AvahiClientState state, void *userdata)
       {
@@ -104,6 +104,6 @@ class Avahi < Formula
 
     pkg_config_flags = shell_output("pkg-config --cflags --libs avahi-client avahi-core avahi-glib").chomp.split
     system ENV.cc, "test.c", *pkg_config_flags, "-o", "test"
-    assert_match "Avahi", shell_output("#{testpath}test 2>&1", 134)
+    assert_match "Avahi", shell_output("#{testpath}/test 2>&1", 134)
   end
 end

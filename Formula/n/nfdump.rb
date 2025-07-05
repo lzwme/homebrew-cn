@@ -1,10 +1,10 @@
 class Nfdump < Formula
   desc "Tools to collect and process netflow data on the command-line"
-  homepage "https:github.comphaagnfdump"
-  url "https:github.comphaagnfdumparchiverefstagsv1.7.6.tar.gz"
+  homepage "https://github.com/phaag/nfdump"
+  url "https://ghfast.top/https://github.com/phaag/nfdump/archive/refs/tags/v1.7.6.tar.gz"
   sha256 "2d25220d7a48f57ba65f228fb5d2eb4d2a0ab2b352a037ed6249b39cf68c1b9a"
   license "BSD-3-Clause"
-  head "https:github.comphaagnfdump.git", branch: "master"
+  head "https://github.com/phaag/nfdump.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "70ed181f2802d7cef5d7f2b1bd84f77230d583e2c9e3e10d3258ee467f38000d"
@@ -27,12 +27,12 @@ class Nfdump < Formula
   uses_from_macos "libpcap"
 
   def install
-    system ".autogen.sh"
-    system ".configure", "--enable-readpcap", "LEXLIB=", *std_configure_args
+    system "./autogen.sh"
+    system "./configure", "--enable-readpcap", "LEXLIB=", *std_configure_args
     system "make", "install"
   end
 
   test do
-    system bin"nfdump", "-Z", "host 8.8.8.8"
+    system bin/"nfdump", "-Z", "host 8.8.8.8"
   end
 end

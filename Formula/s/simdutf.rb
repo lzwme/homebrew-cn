@@ -1,14 +1,14 @@
 class Simdutf < Formula
   desc "Unicode conversion routines, fast"
-  homepage "https:simdutf.github.iosimdutf"
-  url "https:github.comsimdutfsimdutfarchiverefstagsv7.3.2.tar.gz"
+  homepage "https://simdutf.github.io/simdutf/"
+  url "https://ghfast.top/https://github.com/simdutf/simdutf/archive/refs/tags/v7.3.2.tar.gz"
   sha256 "ff5ee7fa9a02372819ca9fbb78983dd6e9a2140a13507c98fd9b91d2766bf9b5"
   license any_of: ["Apache-2.0", "MIT"]
-  head "https:github.comsimdutfsimdutf.git", branch: "master"
+  head "https://github.com/simdutf/simdutf.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -26,30 +26,30 @@ class Simdutf < Formula
 
   uses_from_macos "python" => :build
 
-  # VERSION=#{version} && curl -s https:raw.githubusercontent.comsimdutfsimdutfv$VERSIONbenchmarksbase64CMakeLists.txt | grep -C 1 'VERSION'
+  # VERSION=#{version} && curl -s https://ghfast.top/https://raw.githubusercontent.com/simdutf/simdutf/v$VERSION/benchmarks/base64/CMakeLists.txt | grep -C 1 'VERSION'
   resource "base64" do
-    url "https:github.comaklompbase64archiverefstagsv0.5.2.tar.gz"
+    url "https://ghfast.top/https://github.com/aklomp/base64/archive/refs/tags/v0.5.2.tar.gz"
     sha256 "723a0f9f4cf44cf79e97bcc315ec8f85e52eb104c8882942c3f2fba95acc080d"
   end
 
   def install
-    (buildpath"base64").install resource("base64")
+    (buildpath/"base64").install resource("base64")
 
     args = %W[
       -DBUILD_SHARED_LIBS=ON
       -DCMAKE_INSTALL_RPATH=#{rpath}
       -DCMAKE_BUILD_WITH_INSTALL_RPATH=ON
-      -DFETCHCONTENT_SOURCE_DIR_BASE64=#{buildpath}base64
+      -DFETCHCONTENT_SOURCE_DIR_BASE64=#{buildpath}/base64
       -DPython3_EXECUTABLE=#{which("python3")}
       -DSIMDUTF_BENCHMARKS=ON
     ]
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
-    bin.install "buildbenchmarksbenchmark" => "sutf-benchmark"
+    bin.install "build/benchmarks/benchmark" => "sutf-benchmark"
   end
 
   test do
-    system bin"sutf-benchmark", "--random-utf8", "10240", "-I", "100"
+    system bin/"sutf-benchmark", "--random-utf8", "10240", "-I", "100"
   end
 end

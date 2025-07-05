@@ -1,10 +1,10 @@
 class WasmMicroRuntime < Formula
   desc "WebAssembly Micro Runtime (WAMR)"
-  homepage "https:github.combytecodealliancewasm-micro-runtime"
-  url "https:github.combytecodealliancewasm-micro-runtimearchiverefstagsWAMR-2.3.1.tar.gz"
+  homepage "https://github.com/bytecodealliance/wasm-micro-runtime"
+  url "https://ghfast.top/https://github.com/bytecodealliance/wasm-micro-runtime/archive/refs/tags/WAMR-2.3.1.tar.gz"
   sha256 "542d93386f032101635e7f7cf67bdd172adfe2d49dd9eb92c0bbea5cfafd1f8e"
   license "Apache-2.0" => { with: "LLVM-exception" }
-  head "https:github.combytecodealliancewasm-micro-runtime.git", branch: "main"
+  head "https://github.com/bytecodealliance/wasm-micro-runtime.git", branch: "main"
 
   # Upstream creates releases that use a stable tag (e.g., `v1.2.3`) but are
   # labeled as "pre-release" on GitHub before the version is released, so it's
@@ -28,8 +28,8 @@ class WasmMicroRuntime < Formula
 
   def install
     # Prevent CMake from downloading and building things on its own.
-    buildpath.glob("**build_llvm*").map(&:unlink)
-    buildpath.glob("**libc_uvwasi.cmake").map(&:unlink)
+    buildpath.glob("**/build_llvm*").map(&:unlink)
+    buildpath.glob("**/libc_uvwasi.cmake").map(&:unlink)
     cmake_args = %w[
       -DWAMR_BUILD_MULTI_MODULE=1
       -DWAMR_BUILD_DUMP_CALL_STACK=1
@@ -38,7 +38,7 @@ class WasmMicroRuntime < Formula
       -DCMAKE_STRIP=0
       -DWAMR_BUILD_SIMD=0
     ]
-    cmake_source = buildpath"product-miniplatforms"OS.kernel_name.downcase
+    cmake_source = buildpath/"product-mini/platforms"/OS.kernel_name.downcase
 
     # First build the CLI which has its own CMake build configuration
     system "cmake", "-S", cmake_source, "-B", "platform_build", *cmake_args, *std_cmake_args
@@ -53,15 +53,15 @@ class WasmMicroRuntime < Formula
 
   test do
     resource "homebrew-fib_wasm" do
-      url "https:github.comwasm3wasm3rawmaintestlangfib.c.wasm"
+      url "https://github.com/wasm3/wasm3/raw/main/test/lang/fib.c.wasm"
       sha256 "e6fafc5913921693101307569fc1159d4355998249ca8d42d540015433d25664"
     end
 
     resource("homebrew-fib_wasm").stage testpath
 
-    output = shell_output("#{bin}iwasm -f fib #{testpath}fib.c.wasm 2>&1", 1)
+    output = shell_output("#{bin}/iwasm -f fib #{testpath}/fib.c.wasm 2>&1", 1)
     assert_match "Exception: invalid input argument count", output
 
-    assert_match version.to_s, shell_output("#{bin}iwasm --version")
+    assert_match version.to_s, shell_output("#{bin}/iwasm --version")
   end
 end

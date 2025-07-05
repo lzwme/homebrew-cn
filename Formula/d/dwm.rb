@@ -1,14 +1,14 @@
 class Dwm < Formula
   desc "Dynamic window manager"
-  homepage "https:dwm.suckless.org"
-  url "https:dl.suckless.orgdwmdwm-6.5.tar.gz"
+  homepage "https://dwm.suckless.org/"
+  url "https://dl.suckless.org/dwm/dwm-6.5.tar.gz"
   sha256 "21d79ebfa9f2fb93141836c2666cb81f4784c69d64e7f1b2352f9b970ba09729"
   license "MIT"
-  head "https:git.suckless.orgdwm", using: :git, branch: "master"
+  head "https://git.suckless.org/dwm/", using: :git, branch: "master"
 
   livecheck do
-    url "https:dl.suckless.orgdwm"
-    regex(href=.*?dwm[._-]v?(\d+(?:\.\d+)+)\.ti)
+    url "https://dl.suckless.org/dwm/"
+    regex(/href=.*?dwm[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   bottle do
@@ -37,7 +37,7 @@ class Dwm < Formula
       "{ MODKEY|ControlMask,           XK_q,      quit,           {0} },"
       inreplace "dwm.1", '.B Mod1\-Shift\-q', '.B Mod1\-Control\-q'
     end
-    system "make", "FREETYPEINC=#{Formula["freetype2"].opt_include}freetype2", "PREFIX=#{prefix}", "install"
+    system "make", "FREETYPEINC=#{Formula["freetype2"].opt_include}/freetype2", "PREFIX=#{prefix}", "install"
   end
 
   def caveats
@@ -46,17 +46,17 @@ class Dwm < Formula
         In order to use the Mac OS X command key for dwm commands,
         change the X11 keyboard modifier map using xmodmap (1).
 
-        e.g. by running the following command from $HOME.xinitrc
+        e.g. by running the following command from $HOME/.xinitrc
         xmodmap -e 'remove Mod2 = Meta_L' -e 'add Mod1 = Meta_L'&
 
-        See also https:gist.github.com311377 for a handful of tips and tricks
+        See also https://gist.github.com/311377 for a handful of tips and tricks
         for running dwm on Mac OS X.
       EOS
     end
   end
 
   test do
-    assert_match "dwm: cannot open display", shell_output("DISPLAY= #{bin}dwm 2>&1", 1)
-    assert_match "dwm-#{version}", shell_output("DISPLAY= #{bin}dwm -v 2>&1", 1)
+    assert_match "dwm: cannot open display", shell_output("DISPLAY= #{bin}/dwm 2>&1", 1)
+    assert_match "dwm-#{version}", shell_output("DISPLAY= #{bin}/dwm -v 2>&1", 1)
   end
 end

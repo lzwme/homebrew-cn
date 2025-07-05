@@ -5,10 +5,10 @@ cask "wasabi-wallet" do
   sha256 arm:   "ae34b778ec85dc60bcba6d9f1d302a01b62892d0d77710eb9a024afa12f8fdde",
          intel: "9360b7ba3fa88485bb0829b1053c136c8201e2104c88f6961e805d9d57a24700"
 
-  url "https:github.comzkSNACKsWalletWasabireleasesdownloadv#{version}Wasabi-#{version}#{arch}.dmg"
+  url "https://ghfast.top/https://github.com/zkSNACKs/WalletWasabi/releases/download/v#{version}/Wasabi-#{version}#{arch}.dmg"
   name "Wasabi Wallet"
   desc "Open-source, non-custodial, privacy focused Bitcoin wallet"
-  homepage "https:github.comzkSNACKsWalletWasabi"
+  homepage "https://github.com/zkSNACKs/WalletWasabi/"
 
   livecheck do
     url :url
@@ -19,5 +19,5 @@ cask "wasabi-wallet" do
 
   app "Wasabi Wallet.app"
 
-  zap trash:  "~.walletwasabi"
+  zap trash:  "~/.walletwasabi"
 end

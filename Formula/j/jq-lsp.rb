@@ -1,10 +1,10 @@
 class JqLsp < Formula
   desc "Jq language server"
-  homepage "https:github.comwaderjq-lsp"
-  url "https:github.comwaderjq-lsparchiverefstagsv0.1.13.tar.gz"
+  homepage "https://github.com/wader/jq-lsp"
+  url "https://ghfast.top/https://github.com/wader/jq-lsp/archive/refs/tags/v0.1.13.tar.gz"
   sha256 "badf5c72063ae3232bd18f938980308f77fe2b4c5f3b8db6fccb8ca6db523834"
   license "MIT"
-  head "https:github.comwaderjq-lsp.git", branch: "master"
+  head "https://github.com/wader/jq-lsp.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "a9cec3d399e0d6c5d50e89d4dcf8f953b77fd362b592f6e63b0b0be286e9ed42"
@@ -23,7 +23,7 @@ class JqLsp < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}jq-lsp --version")
+    assert_match version.to_s, shell_output("#{bin}/jq-lsp --version")
 
     expected = JSON.parse(<<~JSON)
       {
@@ -33,6 +33,6 @@ class JqLsp < Formula
     JSON
     query = ".[0] | {message: .test.message, name: .test.name}"
 
-    assert_equal expected, JSON.parse(shell_output("#{bin}jq-lsp --query '#{query}'"))
+    assert_equal expected, JSON.parse(shell_output("#{bin}/jq-lsp --query '#{query}'"))
   end
 end

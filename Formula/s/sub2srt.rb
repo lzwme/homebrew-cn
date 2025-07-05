@@ -1,10 +1,10 @@
 class Sub2srt < Formula
   desc "Convert subtitles from .sub to subviewer .srt format"
-  homepage "https:github.comrobelixsub2srt"
-  url "https:github.comrobelixsub2srtarchiverefstags0.5.5.tar.gz"
+  homepage "https://github.com/robelix/sub2srt"
+  url "https://ghfast.top/https://github.com/robelix/sub2srt/archive/refs/tags/0.5.5.tar.gz"
   sha256 "169d94d1d0e946a5d57573b7b7b5883875996f802362341fe1a1a0220229b905"
   license "GPL-2.0-or-later"
-  head "https:github.comrobelixsub2srt.git", branch: "master"
+  head "https://github.com/robelix/sub2srt.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -16,12 +16,12 @@ class Sub2srt < Formula
   uses_from_macos "perl"
 
   def install
-    inreplace "README", "usrlocal", HOMEBREW_PREFIX
+    inreplace "README", "/usr/local", HOMEBREW_PREFIX
     bin.install "sub2srt"
   end
 
   test do
-    (testpath"test.sub").write <<~SUB
+    (testpath/"test.sub").write <<~SUB
       {1100}{1300}time to...|one
       {1350}{1400}homebrew|two
     SUB
@@ -36,7 +36,7 @@ class Sub2srt < Formula
       homebrew
       two
     SRT
-    system bin"sub2srt", "#{testpath}test.sub"
-    assert_equal expected, (testpath"test.srt").read.chomp
+    system bin/"sub2srt", "#{testpath}/test.sub"
+    assert_equal expected, (testpath/"test.srt").read.chomp
   end
 end

@@ -2,10 +2,10 @@ cask "bbackupp" do
   version "2.14.74"
   sha256 "2870ff5a6c5c7b0a6c3af37d52eb6c2c6546dae8cb503aa579363d1d8bd260c5"
 
-  url "https:github.comLakr233BBackuppreleasesdownload#{version}BBackupp.zip"
+  url "https://ghfast.top/https://github.com/Lakr233/BBackupp/releases/download/#{version}/BBackupp.zip"
   name "BBackupp"
   desc "iOS device backup software"
-  homepage "https:github.comLakr233BBackupp"
+  homepage "https://github.com/Lakr233/BBackupp"
 
   livecheck do
     url :url
@@ -19,10 +19,10 @@ cask "bbackupp" do
   app "BBackupp.app"
 
   zap trash: [
-    "~DocumentsBBackupp",
-    "~LibraryHTTPStorageswiki.qaq.BBackupp",
-    "~LibraryHTTPStorageswiki.qaq.BBackupp.binarycookies",
-    "~LibraryPreferenceswiki.qaq.BBackupp.plist",
-    "~LibrarySaved Application Statewiki.qaq.BBackupp.savedState",
+    "~/Documents/BBackupp",
+    "~/Library/HTTPStorages/wiki.qaq.BBackupp",
+    "~/Library/HTTPStorages/wiki.qaq.BBackupp.binarycookies",
+    "~/Library/Preferences/wiki.qaq.BBackupp.plist",
+    "~/Library/Saved Application State/wiki.qaq.BBackupp.savedState",
   ]
 end

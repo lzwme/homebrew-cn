@@ -1,7 +1,7 @@
 class Afflib < Formula
   desc "Advanced Forensic Format"
-  homepage "https:github.comsshockAFFLIBv3"
-  url "https:github.comsshockAFFLIBv3archiverefstagsv3.7.21.tar.gz"
+  homepage "https://github.com/sshock/AFFLIBv3"
+  url "https://ghfast.top/https://github.com/sshock/AFFLIBv3/archive/refs/tags/v3.7.21.tar.gz"
   sha256 "047fce790d69c234dde1d23ad9e1f0cf868ac51b2ad9a76560d01e80f2f1c452"
   license all_of: [
     "BSD-4-Clause", # AFFLIB 2.0a14 and before
@@ -36,24 +36,24 @@ class Afflib < Formula
 
   def install
     system "autoreconf", "--force", "--install", "--verbose"
-    system ".configure", "--disable-fuse",
+    system "./configure", "--disable-fuse",
                           "--disable-python",
                           "--disable-silent-rules",
                           "--enable-s3",
                           *std_configure_args
     system "make", "install"
 
-    # We install Python bindings with pip rather than `.configure --enable-python` to avoid
+    # We install Python bindings with pip rather than `./configure --enable-python` to avoid
     # managing Setuptools dependency and modifying Makefile to work around our sysconfig patch.
-    # As a side effect, we need to imitate the Makefile and provide paths to headerslibraries.
+    # As a side effect, we need to imitate the Makefile and provide paths to headers/libraries.
     ENV.append_to_cflags "-I#{include}"
     ENV.append "LDFLAGS", "-L#{lib}"
 
-    system python3, "-m", "pip", "install", *std_pip_args(build_isolation: true), ".pyaff"
+    system python3, "-m", "pip", "install", *std_pip_args(build_isolation: true), "./pyaff"
   end
 
   test do
-    system bin"affcat", "-v"
+    system bin/"affcat", "-v"
 
     system python3, "-c", "import pyaff"
   end

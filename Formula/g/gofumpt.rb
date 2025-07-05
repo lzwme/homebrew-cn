@@ -1,10 +1,10 @@
 class Gofumpt < Formula
   desc "Stricter gofmt"
-  homepage "https:github.commvdangofumpt"
-  url "https:github.commvdangofumptarchiverefstagsv0.8.0.tar.gz"
+  homepage "https://github.com/mvdan/gofumpt"
+  url "https://ghfast.top/https://github.com/mvdan/gofumpt/archive/refs/tags/v0.8.0.tar.gz"
   sha256 "4e0e23832e74779ca0fa6af8ca7c15dbf20599dec34c8c96607b9b2e59157cb7"
   license "BSD-3-Clause"
-  head "https:github.commvdangofumpt.git", branch: "master"
+  head "https://github.com/mvdan/gofumpt.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "488018b3c1f2b6a38a36fed5953b00821d7aa574f86fd7dfafc1335ef4178720"
@@ -19,12 +19,12 @@ class Gofumpt < Formula
   depends_on "go"
 
   def install
-    ldflags = "-s -w -X mvdan.ccgofumptinternalversion.version=#{version}"
+    ldflags = "-s -w -X mvdan.cc/gofumpt/internal/version.version=#{version}"
     system "go", "build", *std_go_args(ldflags:)
   end
 
   test do
-    (testpath"test.go").write <<~GO
+    (testpath/"test.go").write <<~GO
       package foo
 
       func foo() {
@@ -33,7 +33,7 @@ class Gofumpt < Formula
       }
     GO
 
-    (testpath"expected.go").write <<~GO
+    (testpath/"expected.go").write <<~GO
       package foo
 
       func foo() {
@@ -41,6 +41,6 @@ class Gofumpt < Formula
       }
     GO
 
-    assert_match shell_output("#{bin}gofumpt test.go"), (testpath"expected.go").read
+    assert_match shell_output("#{bin}/gofumpt test.go"), (testpath/"expected.go").read
   end
 end

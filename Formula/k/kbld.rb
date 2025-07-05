@@ -1,10 +1,10 @@
 class Kbld < Formula
   desc "Tool for building and pushing container images in development workflows"
-  homepage "https:carvel.devkbld"
-  url "https:github.comcarvel-devkbldarchiverefstagsv0.46.0.tar.gz"
+  homepage "https://carvel.dev/kbld/"
+  url "https://ghfast.top/https://github.com/carvel-dev/kbld/archive/refs/tags/v0.46.0.tar.gz"
   sha256 "e3cdfe735e1711c321b86bf93176125fa262765f1e2df91368615e0fcb9cd41c"
   license "Apache-2.0"
-  head "https:github.comcarvel-devkbld.git", branch: "develop"
+  head "https://github.com/carvel-dev/kbld.git", branch: "develop"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "e5914c94a7d11a87cb50da141d7913119bc5fbddce61e675f7cfe1f089f6b763"
@@ -20,15 +20,15 @@ class Kbld < Formula
   def install
     ldflags = %W[
       -s -w
-      -X carvel.devkbldpkgkbldversion.Version=#{version}
+      -X carvel.dev/kbld/pkg/kbld/version.Version=#{version}
     ]
-    system "go", "build", *std_go_args(ldflags:), ".cmdkbld"
+    system "go", "build", *std_go_args(ldflags:), "./cmd/kbld"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}kbld --version")
+    assert_match version.to_s, shell_output("#{bin}/kbld --version")
 
-    test_yaml = testpath"test.yml"
+    test_yaml = testpath/"test.yml"
     test_yaml.write <<~YAML
       ---
       apiVersion: v1
@@ -41,7 +41,7 @@ class Kbld < Formula
           image: nginx:1.14.2
     YAML
 
-    output = shell_output("#{bin}kbld -f #{test_yaml}")
-    assert_match "image: index.docker.iolibrarynginx@sha256", output
+    output = shell_output("#{bin}/kbld -f #{test_yaml}")
+    assert_match "image: index.docker.io/library/nginx@sha256", output
   end
 end

@@ -1,7 +1,7 @@
 class Epinio < Formula
   desc "CLI for Epinio, the Application Development Engine for Kubernetes"
-  homepage "https:epinio.io"
-  url "https:github.comepinioepinioarchiverefstagsv1.11.0.tar.gz"
+  homepage "https://epinio.io/"
+  url "https://ghfast.top/https://github.com/epinio/epinio/archive/refs/tags/v1.11.0.tar.gz"
   sha256 "c90d551f4c7e142d0edf33ce39d3760ffb852ab22a88ad04165e159d44455076"
   license "Apache-2.0"
 
@@ -29,16 +29,16 @@ class Epinio < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w -X github.comepinioepiniointernalversion.Version=v#{version}")
+    system "go", "build", *std_go_args(ldflags: "-s -w -X github.com/epinio/epinio/internal/version.Version=v#{version}")
 
-    generate_completions_from_executable(bin"epinio", "completion")
+    generate_completions_from_executable(bin/"epinio", "completion")
   end
 
   test do
-    output = shell_output("#{bin}epinio version 2>&1")
+    output = shell_output("#{bin}/epinio version 2>&1")
     assert_match "Epinio Version: v#{version}", output
 
-    output = shell_output("#{bin}epinio settings show 2>&1")
+    output = shell_output("#{bin}/epinio settings show 2>&1")
     assert_match "Show Settings", output
   end
 end

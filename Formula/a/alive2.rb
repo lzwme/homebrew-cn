@@ -1,12 +1,12 @@
 class Alive2 < Formula
   desc "Automatic verification of LLVM optimizations"
-  homepage "https:github.comAliveToolkitalive2"
-  url "https:github.comAliveToolkitalive2.git",
+  homepage "https://github.com/AliveToolkit/alive2"
+  url "https://github.com/AliveToolkit/alive2.git",
       tag:      "v20.0",
       revision: "c0f5434f402ad91714ee0952f686cd0f524920ad"
   license "MIT"
   revision 2
-  head "https:github.comAliveToolkitalive2.git", branch: "master"
+  head "https://github.com/AliveToolkit/alive2.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -29,7 +29,7 @@ class Alive2 < Formula
   uses_from_macos "zlib"
 
   def install
-    # Work around irstate.cpp:730:40: error: reference to local binding
+    # Work around ir/state.cpp:730:40: error: reference to local binding
     # 'src_data' declared in enclosing function 'IR::State::copyUBFromBB'
     ENV.llvm_clang if OS.mac? && MacOS.version <= :ventura
 
@@ -39,14 +39,14 @@ class Alive2 < Formula
   end
 
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       int main(void) { return 0; }
     C
 
-    clang = Formula["llvm"].opt_bin"clang"
+    clang = Formula["llvm"].opt_bin/"clang"
     system clang, "-O3", "test.c", "-S", "-emit-llvm",
-                  "-fpass-plugin=#{libshared_library("tv")}",
+                  "-fpass-plugin=#{lib/shared_library("tv")}",
                   "-Xclang", "-load",
-                  "-Xclang", libshared_library("tv")
+                  "-Xclang", lib/shared_library("tv")
   end
 end

@@ -1,10 +1,10 @@
 class GitStandup < Formula
   desc "Git extension to generate reports for standup meetings"
-  homepage "https:github.comkamranahmedsegit-standup"
-  url "https:github.comkamranahmedsegit-standuparchiverefstags2.3.2.tar.gz"
+  homepage "https://github.com/kamranahmedse/git-standup"
+  url "https://ghfast.top/https://github.com/kamranahmedse/git-standup/archive/refs/tags/2.3.2.tar.gz"
   sha256 "48d5aaa3c585037c950fa99dd5be8a7e9af959aacacde9fe94143e4e0bfcd6ba"
   license "MIT"
-  head "https:github.comkamranahmedsegit-standup.git", branch: "master"
+  head "https://github.com/kamranahmedse/git-standup.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -21,8 +21,8 @@ class GitStandup < Formula
 
   test do
     system "git", "init"
-    (testpath"test").write "test"
-    system "git", "add", "#{testpath}test"
+    (testpath/"test").write "test"
+    system "git", "add", "#{testpath}/test"
     system "git", "commit", "--message", "test"
     system "git", "standup"
   end

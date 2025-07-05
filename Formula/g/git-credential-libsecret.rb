@@ -1,10 +1,10 @@
 class GitCredentialLibsecret < Formula
   desc "Git helper for accessing credentials via libsecret"
-  homepage "https:git-scm.com"
-  url "https:mirrors.edge.kernel.orgpubsoftwarescmgitgit-2.50.0.tar.xz"
+  homepage "https://git-scm.com"
+  url "https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.50.0.tar.xz"
   sha256 "dff3c000e400ace3a63b8a6f8b3b76b88ecfdffd4504a04aba4248372cdec045"
   license "GPL-2.0-or-later"
-  head "https:github.comgitgit.git", branch: "master"
+  head "https://github.com/git/git.git", branch: "master"
 
   livecheck do
     formula "git"
@@ -32,7 +32,7 @@ class GitCredentialLibsecret < Formula
   end
 
   def install
-    cd "contribcredentiallibsecret" do
+    cd "contrib/credential/libsecret" do
       system "make"
       bin.install "git-credential-libsecret"
     end
@@ -50,6 +50,6 @@ class GitCredentialLibsecret < Formula
       password=123
     EOS
 
-    assert_equal output, pipe_output("#{bin}git-credential-libsecret get", input, 1)
+    assert_equal output, pipe_output("#{bin}/git-credential-libsecret get", input, 1)
   end
 end

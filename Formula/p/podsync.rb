@@ -1,10 +1,10 @@
 class Podsync < Formula
   desc "Turn YouTube or Vimeo channels, users, or playlists into podcast feeds"
-  homepage "https:github.commxpvpodsync"
-  url "https:github.commxpvpodsyncarchiverefstagsv2.7.0.tar.gz"
+  homepage "https://github.com/mxpv/podsync"
+  url "https://ghfast.top/https://github.com/mxpv/podsync/archive/refs/tags/v2.7.0.tar.gz"
   sha256 "9852b5ef187f31f281c7968c644202770fb8f6f1b8bf5c91d811d486cac54a34"
   license "MIT"
-  head "https:github.commxpvpodsync.git", branch: "main"
+  head "https://github.com/mxpv/podsync.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "20be398a640998d4759372f56a4fd365e79eea1ca785366bd863700915177ca8"
@@ -23,13 +23,13 @@ class Podsync < Formula
 
   def install
     system "make", "build"
-    bin.install "binpodsync"
+    bin.install "bin/podsync"
   end
 
   test do
     port = free_port
 
-    (testpath"config.toml").write <<~TOML
+    (testpath/"config.toml").write <<~TOML
       [server]
       port = #{port}
 
@@ -38,21 +38,21 @@ class Podsync < Formula
 
       [storage]
         [storage.local]
-        data_dir = "datapodsync"
+        data_dir = "data/podsync/"
 
       [feeds]
         [feeds.ID1]
-        url = "https:www.youtube.comchannelUCxC5Ls6DwqV0e-CYcAKkExQ"
+        url = "https://www.youtube.com/channel/UCxC5Ls6DwqV0e-CYcAKkExQ"
     TOML
 
     pid = fork do
-      exec bin"podsync"
+      exec bin/"podsync"
     end
     sleep 1
 
     Process.kill("SIGINT", pid)
     Process.wait(pid)
 
-    assert_path_exists testpath"podsync.log"
+    assert_path_exists testpath/"podsync.log"
   end
 end

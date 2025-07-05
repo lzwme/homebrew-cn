@@ -1,10 +1,10 @@
 class Bic < Formula
   desc "C interpreter and API explorer"
-  homepage "https:github.comhexagonal-sunbic"
+  homepage "https://github.com/hexagonal-sun/bic"
   license "GPL-2.0-only"
 
   stable do
-    url "https:github.comhexagonal-sunbicreleasesdownloadv1.0.0bic-v1.0.0.tar.gz"
+    url "https://ghfast.top/https://github.com/hexagonal-sun/bic/releases/download/v1.0.0/bic-v1.0.0.tar.gz"
     sha256 "553324e39d87df59930d093a264c14176d5e3aaa24cd8bff276531fb94775100"
 
     on_macos do
@@ -13,7 +13,7 @@ class Bic < Formula
 
     # Backport fix for error: call to undeclared function '__gmp_fprintf'
     patch do
-      url "https:github.comhexagonal-sunbiccommit77f2993cd5b41bfa21fb21636588e459c6aaf45c.patch?full_index=1"
+      url "https://github.com/hexagonal-sun/bic/commit/77f2993cd5b41bfa21fb21636588e459c6aaf45c.patch?full_index=1"
       sha256 "c7037e4f3b05be997744ccdea0f51786e5eafaddebc131763d5f45745e90cf00"
     end
   end
@@ -33,7 +33,7 @@ class Bic < Formula
   end
 
   head do
-    url "https:github.comhexagonal-sunbic.git", branch: "master"
+    url "https://github.com/hexagonal-sun/bic.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "autoconf-archive" => :build
@@ -53,17 +53,17 @@ class Bic < Formula
 
   def install
     system "autoreconf", "--force", "--install", "--verbose" if build.head?
-    system ".configure", "--disable-silent-rules", *std_configure_args
+    system "./configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
   end
 
   test do
-    (testpath"hello.c").write <<~C
+    (testpath/"hello.c").write <<~C
       #include <stdio.h>
       int main () {
         puts("Hello Homebrew!");
       }
     C
-    assert_equal "Hello Homebrew!", shell_output("#{bin}bic -s hello.c").strip
+    assert_equal "Hello Homebrew!", shell_output("#{bin}/bic -s hello.c").strip
   end
 end

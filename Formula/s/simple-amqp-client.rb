@@ -1,11 +1,11 @@
 class SimpleAmqpClient < Formula
   desc "C++ interface to rabbitmq-c"
-  homepage "https:github.comalanxzSimpleAmqpClient"
-  url "https:github.comalanxzSimpleAmqpClientarchiverefstagsv2.5.1.tar.gz"
+  homepage "https://github.com/alanxz/SimpleAmqpClient"
+  url "https://ghfast.top/https://github.com/alanxz/SimpleAmqpClient/archive/refs/tags/v2.5.1.tar.gz"
   sha256 "057c56b29390ec7659de1527f9ccbadb602e3e73048de79594521b3141ab586d"
   license "MIT"
   revision 11
-  head "https:github.comalanxzSimpleAmqpClient.git", branch: "master"
+  head "https://github.com/alanxz/SimpleAmqpClient.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -38,8 +38,8 @@ class SimpleAmqpClient < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~CPP
-      #include <SimpleAmqpClientSimpleAmqpClient.h>
+    (testpath/"test.cpp").write <<~CPP
+      #include <SimpleAmqpClient/SimpleAmqpClient.h>
       #include <string>
       int main() {
         const std::string expected = "test body";
@@ -51,6 +51,6 @@ class SimpleAmqpClient < Formula
       }
     CPP
     system ENV.cxx, "test.cpp", "-std=c++14", "-L#{lib}", "-lSimpleAmqpClient", "-o", "test"
-    system ".test"
+    system "./test"
   end
 end

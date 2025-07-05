@@ -1,10 +1,10 @@
 class Bamtools < Formula
   desc "C++ API and command-line toolkit for BAM data"
-  homepage "https:github.compezmaster31bamtools"
-  url "https:github.compezmaster31bamtoolsarchiverefstagsv2.5.3.tar.gz"
+  homepage "https://github.com/pezmaster31/bamtools"
+  url "https://ghfast.top/https://github.com/pezmaster31/bamtools/archive/refs/tags/v2.5.3.tar.gz"
   sha256 "7d4e59bac7c03bde488fe43e533692f78b5325a097328785ec31373ffac08344"
   license "MIT"
-  head "https:github.compezmaster31bamtools.git", branch: "master"
+  head "https://github.com/pezmaster31/bamtools.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "3373086bf64dc373555ebe29e0d83b7717e9753c2568f6e28aa1bda00f03c8cc"
@@ -24,7 +24,7 @@ class Bamtools < Formula
 
   def install
     # Delete bundled jsoncpp to avoid fallback
-    rm_r(buildpath"srcthird_partyjsoncpp")
+    rm_r(buildpath/"src/third_party/jsoncpp")
 
     # Build shared library
     system "cmake", "-S", ".", "-B", "build_shared",
@@ -37,20 +37,20 @@ class Bamtools < Formula
     # Build static library
     system "cmake", "-S", ".", "-B", "build_static", *std_cmake_args
     system "cmake", "--build", "build_static"
-    lib.install "build_staticsrclibbamtools.a"
+    lib.install "build_static/src/libbamtools.a"
   end
 
   test do
-    (testpath"test.cpp").write <<~CPP
-      #include "apiBamWriter.h"
+    (testpath/"test.cpp").write <<~CPP
+      #include "api/BamWriter.h"
       using namespace BamTools;
       int main() {
         BamWriter writer;
         writer.Close();
       }
     CPP
-    system ENV.cxx, "test.cpp", "-I#{include}bamtools", "-L#{lib}",
+    system ENV.cxx, "test.cpp", "-I#{include}/bamtools", "-L#{lib}",
                     "-lbamtools", "-lz", "-o", "test"
-    system ".test"
+    system "./test"
   end
 end

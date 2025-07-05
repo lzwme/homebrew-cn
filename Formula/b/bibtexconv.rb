@@ -1,10 +1,10 @@
 class Bibtexconv < Formula
   desc "BibTeX file converter"
-  homepage "https:github.comdreibhbibtexconv"
-  url "https:github.comdreibhbibtexconvarchiverefstagsbibtexconv-2.0.3.tar.gz"
+  homepage "https://github.com/dreibh/bibtexconv"
+  url "https://ghfast.top/https://github.com/dreibh/bibtexconv/archive/refs/tags/bibtexconv-2.0.3.tar.gz"
   sha256 "aa1b001cc74d7690b7f4a3cf166f0935a0d8215c01aa6dd078aaec53fb87939d"
   license "GPL-3.0-or-later"
-  head "https:github.comdreibhbibtexconv.git", branch: "master"
+  head "https://github.com/dreibh/bibtexconv.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "a6ea8db2a031b9a3b011af0163bccbc727f710d26f72cf7e51e34324fac2b585"
@@ -31,15 +31,15 @@ class Bibtexconv < Formula
     ENV.llvm_clang if OS.mac? && DevelopmentTools.clang_build_version <= 1500
 
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args,
-                    "-DCRYPTO_LIBRARY=#{Formula["openssl@3"].opt_lib}#{shared_library("libcrypto")}"
+                    "-DCRYPTO_LIBRARY=#{Formula["openssl@3"].opt_lib}/#{shared_library("libcrypto")}"
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end
 
   test do
-    cp "#{opt_share}docbibtexconvexamplesExampleReferences.bib", testpath
+    cp "#{opt_share}/doc/bibtexconv/examples/ExampleReferences.bib", testpath
 
-    system bin"bibtexconv", "#{testpath}ExampleReferences.bib",
+    system bin/"bibtexconv", "#{testpath}/ExampleReferences.bib",
                              "-export-to-bibtex=UpdatedReferences.bib",
                              "-check-urls", "-only-check-new-urls",
                              "-non-interactive"

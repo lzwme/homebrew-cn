@@ -1,7 +1,7 @@
 class TmuxSessionizer < Formula
   desc "Tool for opening git repositories as tmux sessions"
-  homepage "https:github.comjrmoultontmux-sessionizer"
-  url "https:github.comjrmoultontmux-sessionizerarchiverefstagsv0.4.5.tar.gz"
+  homepage "https://github.com/jrmoulton/tmux-sessionizer/"
+  url "https://ghfast.top/https://github.com/jrmoulton/tmux-sessionizer/archive/refs/tags/v0.4.5.tar.gz"
   sha256 "37cceae77bad373452d08b990065e7d1e8ed7b038a0af126aa4403332364530e"
   license "MIT"
 
@@ -33,22 +33,22 @@ class TmuxSessionizer < Formula
 
     system "cargo", "install", *std_cargo_args
 
-    generate_completions_from_executable(bin"tms", shell_parameter_format: :clap)
+    generate_completions_from_executable(bin/"tms", shell_parameter_format: :clap)
   end
 
   test do
-    require "utilslinkage"
+    require "utils/linkage"
 
-    assert_match "Configuration has been stored", shell_output("#{bin}tms config -p devnull")
-    assert_match version.to_s, shell_output("#{bin}tms --version")
+    assert_match "Configuration has been stored", shell_output("#{bin}/tms config -p /dev/null")
+    assert_match version.to_s, shell_output("#{bin}/tms --version")
 
     [
-      Formula["libgit2"].opt_libshared_library("libgit2"),
-      Formula["libssh2"].opt_libshared_library("libssh2"),
-      Formula["openssl@3"].opt_libshared_library("libssl"),
-      Formula["openssl@3"].opt_libshared_library("libcrypto"),
+      Formula["libgit2"].opt_lib/shared_library("libgit2"),
+      Formula["libssh2"].opt_lib/shared_library("libssh2"),
+      Formula["openssl@3"].opt_lib/shared_library("libssl"),
+      Formula["openssl@3"].opt_lib/shared_library("libcrypto"),
     ].each do |library|
-      assert Utils.binary_linked_to_library?(bin"tms", library),
+      assert Utils.binary_linked_to_library?(bin/"tms", library),
              "No linkage with #{library.basename}! Cargo is likely using a vendored version."
     end
   end

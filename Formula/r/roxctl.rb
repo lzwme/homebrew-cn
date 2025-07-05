@@ -1,10 +1,10 @@
 class Roxctl < Formula
   desc "CLI for Stackrox"
-  homepage "https:www.stackrox.io"
-  url "https:github.comstackroxstackroxarchiverefstags4.7.3.tar.gz"
+  homepage "https://www.stackrox.io/"
+  url "https://ghfast.top/https://github.com/stackrox/stackrox/archive/refs/tags/4.7.3.tar.gz"
   sha256 "5e6d08b85446d36dbf804cfdd9468b339d78b5e7fee72415be3b233faf775d98"
   license "Apache-2.0"
-  head "https:github.comstackroxstackrox.git", branch: "master"
+  head "https://github.com/stackrox/stackrox.git", branch: "master"
 
   livecheck do
     url :stable
@@ -24,13 +24,13 @@ class Roxctl < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), ".roxctl"
+    system "go", "build", *std_go_args(ldflags: "-s -w"), "./roxctl"
 
-    generate_completions_from_executable(bin"roxctl", "completion")
+    generate_completions_from_executable(bin/"roxctl", "completion")
   end
 
   test do
-    output = shell_output("#{bin}roxctl central whoami 2<&1", 1)
+    output = shell_output("#{bin}/roxctl central whoami 2<&1", 1)
     assert_match <<~EOS, output
       ERROR:	obtaining auth information for localhost:8443: \
       retrieving token: no credentials found for localhost:8443, please run \

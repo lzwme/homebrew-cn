@@ -1,7 +1,7 @@
 class Cot < Formula
   desc "Rust web framework for lazy developers"
-  homepage "https:cot.rs"
-  url "https:github.comcot-rscotarchiverefstagscot-v0.3.1.tar.gz"
+  homepage "https://cot.rs"
+  url "https://ghfast.top/https://github.com/cot-rs/cot/archive/refs/tags/cot-v0.3.1.tar.gz"
   sha256 "864f222df38563aaac0cb87d1866ba929c76b62b33b6a50497bf010f3053eeff"
   license "Apache-2.0"
 
@@ -22,9 +22,9 @@ class Cot < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}cot --version")
+    assert_match version.to_s, shell_output("#{bin}/cot --version")
 
-    system bin"cot", "new", "test-project"
-    assert_path_exists testpath"test-projectCargo.toml"
+    system bin/"cot", "new", "test-project"
+    assert_path_exists testpath/"test-project/Cargo.toml"
   end
 end

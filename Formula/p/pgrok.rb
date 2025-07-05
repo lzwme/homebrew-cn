@@ -1,7 +1,7 @@
 class Pgrok < Formula
-  desc "Poor man's ngrok, multi-tenant HTTPTCP reverse tunnel solution"
-  homepage "https:github.compgrokpgrok"
-  url "https:github.compgrokpgrokarchiverefstagsv1.4.5.tar.gz"
+  desc "Poor man's ngrok, multi-tenant HTTP/TCP reverse tunnel solution"
+  homepage "https://github.com/pgrok/pgrok"
+  url "https://ghfast.top/https://github.com/pgrok/pgrok/archive/refs/tags/v1.4.5.tar.gz"
   sha256 "b43c145970d8a3f02aa7f1e96d5607ea57daabd675e0d760bbc837f7113bdc43"
   license "MIT"
 
@@ -24,7 +24,7 @@ class Pgrok < Formula
       -X main.date=#{time.iso8601}
     ]
 
-    system "go", "build", *std_go_args(ldflags:), ".pgrokcli"
+    system "go", "build", *std_go_args(ldflags:), "./pgrok/cli"
 
     etc.install "pgrok.example.yml"
   end
@@ -32,11 +32,11 @@ class Pgrok < Formula
   test do
     ENV["XDG_CONFIG_HOME"] = testpath
 
-    system bin"pgrok", "init", "--remote-addr", "example.com:222",
-                                "--forward-addr", "http:localhost:3000",
+    system bin/"pgrok", "init", "--remote-addr", "example.com:222",
+                                "--forward-addr", "http://localhost:3000",
                                 "--token", "brewtest"
-    assert_match "brewtest", (testpath"pgrokpgrok.yml").read
+    assert_match "brewtest", (testpath/"pgrok/pgrok.yml").read
 
-    assert_match version.to_s, shell_output("#{bin}pgrok --version")
+    assert_match version.to_s, shell_output("#{bin}/pgrok --version")
   end
 end

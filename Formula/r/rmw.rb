@@ -1,14 +1,14 @@
 class Rmw < Formula
-  desc "Trashcanrecycle bin utility for the command-line"
-  homepage "https:theimpossibleastronaut.github.iormw-website"
-  url "https:github.comtheimpossibleastronautrmwreleasesdownloadv0.9.3rmw-0.9.3.tar.xz"
+  desc "Trashcan/recycle bin utility for the command-line"
+  homepage "https://theimpossibleastronaut.github.io/rmw-website/"
+  url "https://ghfast.top/https://github.com/theimpossibleastronaut/rmw/releases/download/v0.9.3/rmw-0.9.3.tar.xz"
   sha256 "a7215af12694d50282e4cfb9b9062fb7806bde8770d61a2a0cd8260e28db2749"
   license "GPL-3.0-or-later"
-  head "https:github.comtheimpossibleastronautrmw.git", branch: "master"
+  head "https://github.com/theimpossibleastronaut/rmw.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:[.-]\d+)+)$i)
+    regex(/^v?(\d+(?:[.-]\d+)+)$/i)
   end
 
   bottle do
@@ -27,7 +27,7 @@ class Rmw < Formula
   depends_on "canfigger"
   depends_on "gettext"
   # Slightly buggy with system ncurses
-  # https:github.comtheimpossibleastronautrmwissues205
+  # https://github.com/theimpossibleastronaut/rmw/issues/205
   depends_on "ncurses"
 
   def install
@@ -37,13 +37,13 @@ class Rmw < Formula
   end
 
   test do
-    file = testpath"foo"
+    file = testpath/"foo"
     touch file
-    assert_match "removed", shell_output("#{bin}rmw #{file}")
+    assert_match "removed", shell_output("#{bin}/rmw #{file}")
     refute_path_exists file
-    system bin"rmw", "-u"
+    system bin/"rmw", "-u"
     assert_path_exists file
-    assert_match ".localshareWaste", shell_output("#{bin}rmw -l")
-    assert_match "purging is disabled", shell_output("#{bin}rmw -vvg")
+    assert_match "/.local/share/Waste", shell_output("#{bin}/rmw -l")
+    assert_match "purging is disabled", shell_output("#{bin}/rmw -vvg")
   end
 end

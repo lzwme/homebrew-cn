@@ -1,10 +1,10 @@
 class Chiko < Formula
   desc "Ultimate Beauty gRPC Client for your Terminal"
-  homepage "https:github.comfelanggachiko"
-  url "https:github.comfelanggachikoarchiverefstagsv0.1.1.tar.gz"
+  homepage "https://github.com/felangga/chiko"
+  url "https://ghfast.top/https://github.com/felangga/chiko/archive/refs/tags/v0.1.1.tar.gz"
   sha256 "054151d8c8c05ff2ccf0283328221b8143ea17146ef4dde4d63d7f1d31b11748"
   license "MIT"
-  head "https:github.comfelanggachiko.git", branch: "main"
+  head "https://github.com/felangga/chiko.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "2229abf255f4cf1d7edceeb7cbb7716cec4b20481961a1763d89396400df9fa9"
@@ -19,18 +19,18 @@ class Chiko < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), ".cmdchiko"
+    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/chiko"
   end
 
   test do
     ENV["TERM"] = "xterm"
     require "pty"
 
-    PTY.spawn(bin"chiko") do |r, w, _pid|
+    PTY.spawn(bin/"chiko") do |r, w, _pid|
       w.write "q"
       assert_match "The Ultimate Beauty GRPC Client", r.read
     rescue Errno::EIO
-      # GNULinux raises EIO when read is done on closed pty
+      # GNU/Linux raises EIO when read is done on closed pty
     end
   end
 end

@@ -1,7 +1,7 @@
 class Libnids < Formula
   desc "Implements E-component of network intrusion detection system"
-  homepage "https:libnids.sourceforge.net"
-  url "https:downloads.sourceforge.netprojectlibnidslibnids1.24libnids-1.24.tar.gz"
+  homepage "https://libnids.sourceforge.net/"
+  url "https://downloads.sourceforge.net/project/libnids/libnids/1.24/libnids-1.24.tar.gz"
   sha256 "314b4793e0902fbf1fdb7fb659af37a3c1306ed1aad5d1c84de6c931b351d359"
   license "GPL-2.0-only"
   revision 2
@@ -41,7 +41,7 @@ class Libnids < Formula
   # Patch fixes -soname and .so shared library issues. Unreported.
   patch do
     on_macos do
-      url "https:raw.githubusercontent.comHomebrewformula-patches85fa66a9dc80757ba32bf5d818d70fc26bb24b6flibnids1.24.patch"
+      url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/85fa66a9dc80757ba32bf5d818d70fc26bb24b6f/libnids/1.24.patch"
       sha256 "d9339c16f89915a02025f10f26aab5bb77c2af85926d2d9ff52e9c7bf2092215"
     end
   end
@@ -49,7 +49,7 @@ class Libnids < Formula
   def install
     # autoreconf the old 2005 era code for sanity.
     system "autoreconf", "--force", "--install", "--verbose"
-    system ".configure", "--prefix=#{prefix}", "--mandir=#{man}",
+    system "./configure", "--prefix=#{prefix}", "--mandir=#{man}",
                           "--enable-shared"
     system "make", "install"
   end

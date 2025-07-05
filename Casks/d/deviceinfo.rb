@@ -2,10 +2,10 @@ cask "deviceinfo" do
   version "1.0"
   sha256 "0387e3d5a12027d807bc8e84d11c8ae062fef56ca1bbcbba65e0ecc83989ed5e"
 
-  url "https:github.comCoreNionDeviceInforeleasesdownloadv#{version}DeviceInfo.dmg"
+  url "https://ghfast.top/https://github.com/CoreNion/DeviceInfo/releases/download/v#{version}/DeviceInfo.dmg"
   name "DeviceInfo"
   desc "Display device information"
-  homepage "https:github.comCoreNionDeviceInfo"
+  homepage "https://github.com/CoreNion/DeviceInfo/"
 
   no_autobump! because: :requires_manual_review
 

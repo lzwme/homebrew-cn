@@ -2,9 +2,9 @@ cask "font-greybeard" do
   version "1.0.0"
   sha256 "ddb9075cc4156e90f156bb17c2e91a59a731d3c9fc0350631adafa99d6affbf9"
 
-  url "https:github.comflowchartsmangreybeardreleasesdownloadv#{version}Greybeard-v#{version}-ttf.zip"
+  url "https://ghfast.top/https://github.com/flowchartsman/greybeard/releases/download/v#{version}/Greybeard-v#{version}-ttf.zip"
   name "Greybeard"
-  homepage "https:github.comflowchartsmangreybeard"
+  homepage "https://github.com/flowchartsman/greybeard"
 
   no_autobump! because: :requires_manual_review
 

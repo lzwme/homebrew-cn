@@ -1,10 +1,10 @@
 class Kubecm < Formula
   desc "KubeConfig Manager"
-  homepage "https:kubecm.cloud"
-  url "https:github.comsunny0826kubecmarchiverefstagsv0.33.0.tar.gz"
+  homepage "https://kubecm.cloud"
+  url "https://ghfast.top/https://github.com/sunny0826/kubecm/archive/refs/tags/v0.33.0.tar.gz"
   sha256 "23d347a00285f3a59a3866d02507fe0945c1a46cbef059be249fa436e6cde2c2"
   license "Apache-2.0"
-  head "https:github.comsunny0826kubecm.git", branch: "master"
+  head "https://github.com/sunny0826/kubecm.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "13643edd76ccfd2122c2c60fb9fc4aee73a45f7cedfd3ee0b95d4108c3edb848"
@@ -18,15 +18,15 @@ class Kubecm < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = "-s -w -X github.comsunny0826kubecmversion.Version=#{version}"
+    ldflags = "-s -w -X github.com/sunny0826/kubecm/version.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:)
 
-    generate_completions_from_executable(bin"kubecm", "completion")
+    generate_completions_from_executable(bin/"kubecm", "completion")
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}kubecm version")
+    assert_match version.to_s, shell_output("#{bin}/kubecm version")
     # Should error out as switch context need kubeconfig
-    assert_match "Error: open", shell_output("#{bin}kubecm switch 2>&1", 1)
+    assert_match "Error: open", shell_output("#{bin}/kubecm switch 2>&1", 1)
   end
 end

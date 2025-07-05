@@ -2,12 +2,12 @@ cask "font-montserrat-alternates" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefonts.git",
-      verified:  "github.comgooglefonts",
+  url "https://github.com/google/fonts.git",
+      verified:  "github.com/google/fonts",
       branch:    "main",
-      only_path: "oflmontserratalternates"
+      only_path: "ofl/montserratalternates"
   name "Montserrat Alternates"
-  homepage "https:fonts.google.comspecimenMontserrat+Alternates"
+  homepage "https://fonts.google.com/specimen/Montserrat+Alternates"
 
   font "MontserratAlternates-Black.ttf"
   font "MontserratAlternates-BlackItalic.ttf"

@@ -2,10 +2,10 @@ cask "openinterminal" do
   version "2.3.8"
   sha256 "da9eeb6cdd5db3de963e6f6a49d9d3cbff11f72cd3d56eeb6a657c88fae0aa6f"
 
-  url "https:github.comJi4n1ngOpenInTerminalreleasesdownloadv#{version}OpenInTerminal.zip"
+  url "https://ghfast.top/https://github.com/Ji4n1ng/OpenInTerminal/releases/download/v#{version}/OpenInTerminal.zip"
   name "OpenInTerminal"
   desc "Finder Toolbar app to open the current directory in Terminal or Editor"
-  homepage "https:github.comJi4n1ngOpenInTerminal"
+  homepage "https://github.com/Ji4n1ng/OpenInTerminal"
 
   no_autobump! because: :requires_manual_review
 
@@ -14,15 +14,15 @@ cask "openinterminal" do
   app "OpenInTerminal.app"
 
   zap trash: [
-    "~LibraryApplication Scriptsgroup.wang.jianing.app.OpenInTerminal",
-    "~LibraryApplication Scriptswang.jianing.app.OpenInTerminal",
-    "~LibraryApplication Scriptswang.jianing.app.OpenInTerminal.OpenInTerminalFinderExtension",
-    "~LibraryApplication Scriptswang.jianing.app.OpenInTerminalHelper",
-    "~LibraryApplication Supportcom.apple.sharedfilelistcom.apple.LSSharedFileList.ApplicationRecentDocumentswang.jianing.app.openinterminalhelper.sfl*",
-    "~LibraryContainerswang.jianing.app.OpenInTerminal.OpenInTerminalFinderExtension",
-    "~LibraryContainerswang.jianing.app.OpenInTerminalHelper",
-    "~LibraryGroup Containersgroup.wang.jianing.app.OpenInTerminal",
-    "~LibraryLogsOpenInTerminal",
-    "~LibraryPreferenceswang.jianing.app.OpenInTerminal.plist",
+    "~/Library/Application Scripts/group.wang.jianing.app.OpenInTerminal",
+    "~/Library/Application Scripts/wang.jianing.app.OpenInTerminal",
+    "~/Library/Application Scripts/wang.jianing.app.OpenInTerminal.OpenInTerminalFinderExtension",
+    "~/Library/Application Scripts/wang.jianing.app.OpenInTerminalHelper",
+    "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/wang.jianing.app.openinterminalhelper.sfl*",
+    "~/Library/Containers/wang.jianing.app.OpenInTerminal.OpenInTerminalFinderExtension",
+    "~/Library/Containers/wang.jianing.app.OpenInTerminalHelper",
+    "~/Library/Group Containers/group.wang.jianing.app.OpenInTerminal",
+    "~/Library/Logs/OpenInTerminal",
+    "~/Library/Preferences/wang.jianing.app.OpenInTerminal.plist",
   ]
 end

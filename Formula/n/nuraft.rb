@@ -1,7 +1,7 @@
 class Nuraft < Formula
   desc "C++ implementation of Raft core logic as a replication library"
-  homepage "https:github.comeBayNuRaft"
-  url "https:github.comeBayNuRaftarchiverefstagsv3.0.0.tar.gz"
+  homepage "https://github.com/eBay/NuRaft"
+  url "https://ghfast.top/https://github.com/eBay/NuRaft/archive/refs/tags/v3.0.0.tar.gz"
   sha256 "073c3b321efec9ce6b2bc487c283e493a1b2dd41082c5e9ac0b8f00f9b73832d"
   license "Apache-2.0"
 
@@ -31,13 +31,13 @@ class Nuraft < Formula
   end
 
   test do
-    cp_r pkgshare"examples.", testpath
+    cp_r pkgshare/"examples/.", testpath
     system ENV.cxx, "-std=c++11", "-o", "test",
                     "quick_start.cxx", "logger.cc", "in_memory_log_store.cxx",
-                    "-I#{include}libnuraft", "-I#{testpath}echo",
+                    "-I#{include}/libnuraft", "-I#{testpath}/echo",
                     "-I#{Formula["openssl@3"].opt_include}",
                     "-L#{lib}", "-lnuraft",
                     "-L#{Formula["openssl@3"].opt_lib}", "-lcrypto", "-lssl"
-    assert_match "hello world", shell_output(".test")
+    assert_match "hello world", shell_output("./test")
   end
 end

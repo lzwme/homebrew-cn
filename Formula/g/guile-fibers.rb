@@ -1,7 +1,7 @@
 class GuileFibers < Formula
   desc "Concurrent ML-like concurrency for Guile"
-  homepage "https:github.comwingofibers"
-  url "https:github.comwingofibersreleasesdownloadv1.3.1fibers-1.3.1.tar.gz"
+  homepage "https://github.com/wingo/fibers"
+  url "https://ghfast.top/https://github.com/wingo/fibers/releases/download/v1.3.1/fibers-1.3.1.tar.gz"
   sha256 "a5e1a9c49c0efe7ac6f355662041430d4b64e59baa538d2b8fb5ef7528d81dbf"
   license "LGPL-3.0-or-later"
 
@@ -27,16 +27,16 @@ class GuileFibers < Formula
   end
 
   def install
-    system ".configure", *std_configure_args
+    system "./configure", *std_configure_args
     system "make", "install"
   end
 
   test do
     ENV["GUILE_AUTO_COMPILE"] = "0"
-    ENV["GUILE_LOAD_PATH"] = share"guilesite3.0"
-    ENV["GUILE_LOAD_COMPILED_PATH"] = lib"guile3.0site-ccache"
+    ENV["GUILE_LOAD_PATH"] = share/"guile/site/3.0"
+    ENV["GUILE_LOAD_COMPILED_PATH"] = lib/"guile/3.0/site-ccache"
 
-    (testpath"test-fibers.scm").write <<~SCHEME
+    (testpath/"test-fibers.scm").write <<~SCHEME
       (use-modules (fibers))
       (display "fibers loaded\\n")
     SCHEME

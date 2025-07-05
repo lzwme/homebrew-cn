@@ -1,13 +1,13 @@
 class ArxLibertatis < Formula
   desc "Cross-platform, open source port of Arx Fatalis"
-  homepage "https:arx-libertatis.org"
-  url "https:arx-libertatis.orgfilesarx-libertatis-1.2.1arx-libertatis-1.2.1.tar.xz"
+  homepage "https://arx-libertatis.org/"
+  url "https://arx-libertatis.org/files/arx-libertatis-1.2.1/arx-libertatis-1.2.1.tar.xz"
   sha256 "aafd8831ee2d187d7647ad671a03aabd2df3b7248b0bac0b3ac36ffeb441aedf"
   license "GPL-3.0-or-later"
 
   livecheck do
-    url "https:arx-libertatis.orgfiles"
-    regex(%r{href=["']?arx-libertatis[._-]v?(\d+(?:\.\d+)+)?["' >]}i)
+    url "https://arx-libertatis.org/files/"
+    regex(%r{href=["']?arx-libertatis[._-]v?(\d+(?:\.\d+)+)/?["' >]}i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -28,10 +28,10 @@ class ArxLibertatis < Formula
   end
 
   head do
-    url "https:github.comarxArxLibertatis.git", branch: "master"
+    url "https://github.com/arx/ArxLibertatis.git", branch: "master"
 
     resource "arx-libertatis-data" do
-      url "https:github.comarxArxLibertatisData.git", branch: "master"
+      url "https://github.com/arx/ArxLibertatisData.git", branch: "master"
     end
   end
 
@@ -62,8 +62,8 @@ class ArxLibertatis < Formula
 
     # Install prebuilt icons to avoid inkscape and imagemagick deps
     if build.head?
-      (buildpath"arx-libertatis-data").install resource("arx-libertatis-data")
-      args << "-DDATA_FILES=#{buildpath}arx-libertatis-data"
+      (buildpath/"arx-libertatis-data").install resource("arx-libertatis-data")
+      args << "-DDATA_FILES=#{buildpath}/arx-libertatis-data"
     end
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
@@ -77,12 +77,12 @@ class ArxLibertatis < Formula
       To play Arx Fatalis you will need to obtain the game from GOG.com and
       install the game data with:
 
-        arx-install-data pathtosetup_arx_fatalis.exe
+        arx-install-data /path/to/setup_arx_fatalis.exe
     EOS
   end
 
   test do
-    output = shell_output("#{bin}arx --list-dirs")
+    output = shell_output("#{bin}/arx --list-dirs")
     assert_match "User directories (select first existing)", output
   end
 end

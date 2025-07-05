@@ -1,24 +1,24 @@
 class Musikcube < Formula
   desc "Terminal-based audio engine, library, player and server"
-  homepage "https:musikcube.com"
-  url "https:github.comclangenmusikcubearchiverefstags3.0.4.tar.gz"
+  homepage "https://musikcube.com"
+  url "https://ghfast.top/https://github.com/clangen/musikcube/archive/refs/tags/3.0.4.tar.gz"
   sha256 "25bb95b8705d8c79bde447e7c7019372eea7eaed9d0268510278e7fcdb1378a5"
   license all_of: [
     "BSD-3-Clause",
-    "GPL-2.0-or-later", # srcpluginssupereqdspsupereq
-    "LGPL-2.1-or-later", # srcpluginspulseoutpulse_blocking_stream.c (Linux)
-    "BSL-1.0", # src3rdpartyincludeutf8
-    "MIT", # src3rdpartyinclude{nlohmann,sqlean}, src3rdpartyincludewebsocketpputf8_validator.hpp
-    "Zlib", # src3rdpartyincludewebsocketppbase64base64.hpp
-    "bcrypt-Solar-Designer", # src3rdparty{include,src}md5.*
-    "blessing", # src3rdparty{include,src}sqlitesqlite3*
+    "GPL-2.0-or-later", # src/plugins/supereqdsp/supereq/
+    "LGPL-2.1-or-later", # src/plugins/pulseout/pulse_blocking_stream.c (Linux)
+    "BSL-1.0", # src/3rdparty/include/utf8/
+    "MIT", # src/3rdparty/include/{nlohmann,sqlean}/, src/3rdparty/include/websocketpp/utf8_validator.hpp
+    "Zlib", # src/3rdparty/include/websocketpp/base64/base64.hpp
+    "bcrypt-Solar-Designer", # src/3rdparty/{include,src}/md5.*
+    "blessing", # src/3rdparty/{include,src}/sqlite/sqlite3*
   ]
   revision 1
-  head "https:github.comclangenmusikcube.git", branch: "master"
+  head "https://github.com/clangen/musikcube.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -70,13 +70,13 @@ class Musikcube < Formula
   end
 
   test do
-    ENV["MUSIKCUBED_LOCKFILE_OVERRIDE"] = lockfile = testpath"musikcubed.lock"
-    system bin"musikcubed", "--start"
+    ENV["MUSIKCUBED_LOCKFILE_OVERRIDE"] = lockfile = testpath/"musikcubed.lock"
+    system bin/"musikcubed", "--start"
     sleep 10
     assert_path_exists lockfile
     tries = 0
     begin
-      system bin"musikcubed", "--stop"
+      system bin/"musikcubed", "--stop"
     rescue BuildError
       # Linux CI seems to take some more time to stop
       retry if OS.linux? && (tries += 1) < 3

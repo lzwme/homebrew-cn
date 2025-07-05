@@ -1,10 +1,10 @@
 class Ouch < Formula
   desc "Painless compression and decompression for your terminal"
-  homepage "https:github.comouch-orgouch"
-  url "https:github.comouch-orgoucharchiverefstags0.6.1.tar.gz"
+  homepage "https://github.com/ouch-org/ouch"
+  url "https://ghfast.top/https://github.com/ouch-org/ouch/archive/refs/tags/0.6.1.tar.gz"
   sha256 "e6265071affab228ba7d3ca85f2206029445038b3a3d96036e9bf02b795ad651"
   license "MIT"
-  head "https:github.comouch-orgouch.git", branch: "main"
+  head "https://github.com/ouch-org/ouch.git", branch: "main"
 
   # There can be a notable gap between when a version is tagged and a
   # corresponding release is created, so we check the "latest" release instead
@@ -48,18 +48,18 @@ class Ouch < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}ouch --version")
+    assert_match version.to_s, shell_output("#{bin}/ouch --version")
 
-    (testpath"file1").write "Hello"
-    (testpath"file2").write "World!"
+    (testpath/"file1").write "Hello"
+    (testpath/"file2").write "World!"
 
     %w[tar zip 7z tar.bz2 tar.bz3 tar.lz4 tar.gz tar.xz tar.zst tar.sz tar.br].each do |format|
-      system bin"ouch", "compress", "file1", "file2", "archive.#{format}"
-      assert_path_exists testpath"archive.#{format}"
+      system bin/"ouch", "compress", "file1", "file2", "archive.#{format}"
+      assert_path_exists testpath/"archive.#{format}"
 
-      system bin"ouch", "decompress", "-y", "archive.#{format}", "--dir", testpathformat
-      assert_equal "Hello", (testpathformat"file1").read
-      assert_equal "World!", (testpathformat"file2").read
+      system bin/"ouch", "decompress", "-y", "archive.#{format}", "--dir", testpath/format
+      assert_equal "Hello", (testpath/format/"file1").read
+      assert_equal "World!", (testpath/format/"file2").read
     end
   end
 end

@@ -1,10 +1,10 @@
 class RustlsFfi < Formula
   desc "FFI bindings for the rustls TLS library"
-  homepage "https:github.comrustlsrustls-ffi"
-  url "https:github.comrustlsrustls-ffiarchiverefstagsv0.15.0.tar.gz"
+  homepage "https://github.com/rustls/rustls-ffi"
+  url "https://ghfast.top/https://github.com/rustls/rustls-ffi/archive/refs/tags/v0.15.0.tar.gz"
   sha256 "db3939a58677e52f03603b332e00347b29aa57aa4012b5f8a7e779ba2934b18b"
   license any_of: ["Apache-2.0", "MIT", "ISC"]
-  head "https:github.comrustlsrustls-ffi.git", branch: "main"
+  head "https://github.com/rustls/rustls-ffi.git", branch: "main"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "9dc82894121ecb234a72a281ad45a1f6c5f1640c38371f282f039ce9354cc08b"
@@ -25,7 +25,7 @@ class RustlsFfi < Formula
   end
 
   test do
-    (testpath"test-rustls.c").write <<~C
+    (testpath/"test-rustls.c").write <<~C
       #include "rustls.h"
       #include <stdio.h>
       int main(void) {
@@ -40,6 +40,6 @@ class RustlsFfi < Formula
     ENV.append "LDLIBS", "-lrustls"
 
     system "make", "test-rustls"
-    assert_match version.to_s, shell_output(".test-rustls")
+    assert_match version.to_s, shell_output("./test-rustls")
   end
 end

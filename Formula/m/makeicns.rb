@@ -1,7 +1,7 @@
 class Makeicns < Formula
   desc "Create icns files from the command-line"
-  homepage "http:www.amnoid.deicnsmakeicns.html"
-  url "https:distfiles.macports.orgmakeicnsmakeicns-1.4.10a.tar.bz2"
+  homepage "http://www.amnoid.de/icns/makeicns.html"
+  url "https://distfiles.macports.org/makeicns/makeicns-1.4.10a.tar.bz2"
   sha256 "10e44b8d84cb33ed8d92b9c2cfa42f46514586d2ec11ae9832683b69996ddeb8"
   license "MIT"
 
@@ -27,7 +27,7 @@ class Makeicns < Formula
   depends_on :macos
 
   patch :p0 do
-    url "https:raw.githubusercontent.comHomebrewformula-patchese59da9dmakeicnspatch-IconFamily.m.diff"
+    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/e59da9d/makeicns/patch-IconFamily.m.diff"
     sha256 "f5ddbf6a688d6f153cf6fc2e15e75309adaf61677ab423cb67351e4fbb26066e"
   end
 
@@ -37,8 +37,8 @@ class Makeicns < Formula
   end
 
   test do
-    system bin"makeicns", "-in", test_fixtures("test.png"),
-           "-out", testpath"test.icns"
-    assert_path_exists testpath"test.icns"
+    system bin/"makeicns", "-in", test_fixtures("test.png"),
+           "-out", testpath/"test.icns"
+    assert_path_exists testpath/"test.icns"
   end
 end

@@ -1,7 +1,7 @@
 class Docuum < Formula
   desc "Perform least recently used (LRU) eviction of Docker images"
-  homepage "https:github.comstepchowfundocuum"
-  url "https:github.comstepchowfundocuumarchiverefstagsv0.25.0.tar.gz"
+  homepage "https://github.com/stepchowfun/docuum"
+  url "https://ghfast.top/https://github.com/stepchowfun/docuum/archive/refs/tags/v0.25.0.tar.gz"
   sha256 "26bf153c72185516db77ffabc00d75f0ae9d642792ccf204f843ceee94236756"
   license "MIT"
 
@@ -23,19 +23,19 @@ class Docuum < Formula
     system "cargo", "install", *std_cargo_args
   end
 
-  # https:github.comstepchowfundocuum#configuring-your-operating-system-to-run-the-binary-as-a-daemon
+  # https://github.com/stepchowfun/docuum#configuring-your-operating-system-to-run-the-binary-as-a-daemon
   service do
-    run opt_bin"docuum"
+    run opt_bin/"docuum"
     keep_alive true
-    log_path var"logdocuum.log"
-    error_log_path var"logdocuum.log"
-    environment_variables PATH: "#{std_service_path_env}:usrlocalbin"
+    log_path var/"log/docuum.log"
+    error_log_path var/"log/docuum.log"
+    environment_variables PATH: "#{std_service_path_env}:/usr/local/bin"
   end
 
   test do
     started_successfully = false
 
-    Open3.popen3({ "NO_COLOR" => "true" }, bin"docuum") do |_, _, stderr, wait_thread|
+    Open3.popen3({ "NO_COLOR" => "true" }, bin/"docuum") do |_, _, stderr, wait_thread|
       stderr.each_line do |line|
         if line.include?("Performing an initial vacuum on startup…")
           Process.kill("TERM", wait_thread.pid)

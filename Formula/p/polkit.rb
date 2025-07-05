@@ -1,7 +1,7 @@
 class Polkit < Formula
   desc "Toolkit for defining and handling authorizations"
-  homepage "https:github.compolkit-orgpolkit"
-  url "https:github.compolkit-orgpolkitarchiverefstags126.tar.gz"
+  homepage "https://github.com/polkit-org/polkit"
+  url "https://ghfast.top/https://github.com/polkit-org/polkit/archive/refs/tags/126.tar.gz"
   sha256 "2814a7281989f6baa9e57bd33bbc5e148827e2721ccef22aaf28ab2b376068e8"
   license "LGPL-2.0-or-later"
 
@@ -35,14 +35,14 @@ class Polkit < Formula
 
   def install
     inreplace "meson.build" do |s|
-      s.gsub!("sysusers_dir = 'usrlibsysusers.d'", "sysusers_dir = '#{etc}sysusers.d'")
-      s.gsub!("tmpfiles_dir = 'usrlibtmpfiles.d'", "tmpfiles_dir = '#{etc}tmpfiles.d'")
+      s.gsub!("sysusers_dir = '/usr/lib/sysusers.d'", "sysusers_dir = '#{etc}/sysusers.d'")
+      s.gsub!("tmpfiles_dir = '/usr/lib/tmpfiles.d'", "tmpfiles_dir = '#{etc}/tmpfiles.d'")
     end
 
     args = [
-      "-Dsystemdsystemunitdir=#{lib}systemdsystem",
-      "-Dpam_prefix=#{etc}pam.d",
-      "-Dpam_module_dir=#{lib}pam",
+      "-Dsystemdsystemunitdir=#{lib}/systemd/system",
+      "-Dpam_prefix=#{etc}/pam.d",
+      "-Dpam_module_dir=#{lib}/pam",
     ]
     args << "-Dsession_tracking=ConsoleKit" if OS.mac?
 
@@ -53,9 +53,9 @@ class Polkit < Formula
   end
 
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include <glib.h>
-      #include <polkitpolkit.h>
+      #include <polkit/polkit.h>
 
       int main() {
         PolkitUnixGroup *group = POLKIT_UNIX_GROUP(polkit_unix_group_new(0));
@@ -71,6 +71,6 @@ class Polkit < Formula
 
     flags = shell_output("pkgconf --cflags --libs polkit-gobject-1").strip.split
     system ENV.cc, "test.c", "-o", "test", *flags
-    system ".test"
+    system "./test"
   end
 end

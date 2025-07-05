@@ -1,14 +1,14 @@
 class LcdfTypetools < Formula
   desc "Manipulate OpenType and multiple-master fonts"
-  homepage "https:www.lcdf.orgtype"
-  url "https:www.lcdf.orgtypelcdf-typetools-2.110.tar.gz"
+  homepage "https://www.lcdf.org/type/"
+  url "https://www.lcdf.org/type/lcdf-typetools-2.110.tar.gz"
   sha256 "517f9ee879208679d3224a14d5e6eb20598fc648d5c3562708083d003088a934"
   license "GPL-2.0-or-later"
-  head "https:github.comkohlerlcdf-typetools.git", branch: "master"
+  head "https://github.com/kohler/lcdf-typetools.git", branch: "master"
 
   livecheck do
     url :homepage
-    regex(href=.*?lcdf-typetools[._-]v?(\d+(?:\.\d+)+)\.ti)
+    regex(/href=.*?lcdf-typetools[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -30,7 +30,7 @@ class LcdfTypetools < Formula
   conflicts_with "texlive", because: "both install a `cfftot1` executable"
 
   def install
-    system ".configure", "--disable-dependency-tracking",
+    system "./configure", "--disable-dependency-tracking",
                           "--prefix=#{prefix}",
                           "--without-kpathsea"
     system "make", "install"
@@ -39,11 +39,11 @@ class LcdfTypetools < Formula
   test do
     if OS.mac?
       font_name = (MacOS.version >= :catalina) ? "Arial Unicode" : "Arial"
-      font_dir = "LibraryFonts"
+      font_dir = "/Library/Fonts"
     else
       font_name = "DejaVuSans"
-      font_dir = "usrsharefontstruetypedejavu"
+      font_dir = "/usr/share/fonts/truetype/dejavu"
     end
-    assert_includes shell_output("#{bin}otfinfo -p '#{font_dir}#{font_name}.ttf'"), font_name.delete(" ")
+    assert_includes shell_output("#{bin}/otfinfo -p '#{font_dir}/#{font_name}.ttf'"), font_name.delete(" ")
   end
 end

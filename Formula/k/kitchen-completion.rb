@@ -1,10 +1,10 @@
 class KitchenCompletion < Formula
   desc "Bash completion for Kitchen"
-  homepage "https:github.comMarkBorcherdingtest-kitchen-bash-completion"
-  url "https:github.comMarkBorcherdingtest-kitchen-bash-completionarchiverefstagsv1.0.0.tar.gz"
+  homepage "https://github.com/MarkBorcherding/test-kitchen-bash-completion"
+  url "https://ghfast.top/https://github.com/MarkBorcherding/test-kitchen-bash-completion/archive/refs/tags/v1.0.0.tar.gz"
   sha256 "6a9789359dab220df0afad25385dd3959012cfa6433c8c96e4970010b8cfc483"
   license "MIT"
-  head "https:github.comMarkBorcherdingtest-kitchen-bash-completion.git", branch: "master"
+  head "https://github.com/MarkBorcherding/test-kitchen-bash-completion.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -19,6 +19,6 @@ class KitchenCompletion < Formula
 
   test do
     assert_match "-F __kitchen_options",
-      shell_output("bash -c 'source #{bash_completion}kitchen && complete -p kitchen'")
+      shell_output("bash -c 'source #{bash_completion}/kitchen && complete -p kitchen'")
   end
 end

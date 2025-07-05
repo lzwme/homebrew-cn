@@ -1,10 +1,10 @@
 class LibpostalRest < Formula
   desc "REST API for libpostal"
-  homepage "https:github.comjohnlonganeckerlibpostal-rest"
-  url "https:github.comjohnlonganeckerlibpostal-restarchiverefstagsv1.1.0.tar.gz"
+  homepage "https://github.com/johnlonganecker/libpostal-rest"
+  url "https://ghfast.top/https://github.com/johnlonganecker/libpostal-rest/archive/refs/tags/v1.1.0.tar.gz"
   sha256 "d02d738fe1d8aee034c47ff9e8123e55885fe481f1a6307fbfe286b7b755468d"
   license "MIT"
-  head "https:github.comjohnlonganeckerlibpostal-rest.git", branch: "master"
+  head "https://github.com/johnlonganecker/libpostal-rest.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -31,12 +31,12 @@ class LibpostalRest < Formula
 
     port = free_port
     ENV["LISTEN_PORT"] = port.to_s
-    pid = spawn bin"libpostal-rest"
+    pid = spawn bin/"libpostal-rest"
     sleep 5
     sleep 10 if OS.mac? && Hardware::CPU.intel?
 
     command = <<~EOS
-      curl --silent --retry 5 --retry-connrefused -X POST -d '{"query": "100 main st buffalo ny"}' http:0.0.0.0:#{port}parser
+      curl --silent --retry 5 --retry-connrefused -X POST -d '{"query": "100 main st buffalo ny"}' http://0.0.0.0:#{port}/parser
     EOS
     expected = [
       {

@@ -1,10 +1,10 @@
 class CargoBundle < Formula
   desc "Wrap rust executables in OS-specific app bundles"
-  homepage "https:github.comburtonageocargo-bundle"
-  url "https:github.comburtonageocargo-bundlearchiverefstagsv0.7.0.tar.gz"
+  homepage "https://github.com/burtonageo/cargo-bundle"
+  url "https://ghfast.top/https://github.com/burtonageo/cargo-bundle/archive/refs/tags/v0.7.0.tar.gz"
   sha256 "0655b249c7c31047d2d0cb2e9b4923a2fb394e7a09a2300fc533de4e38d68d03"
   license any_of: ["Apache-2.0", "MIT"]
-  head "https:github.comburtonageocargo-bundle.git", branch: "master"
+  head "https://github.com/burtonageo/cargo-bundle.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "49f92188a9b553281bde3587f9da999927eae7fafc9da9ec18c3f398107315f2"
@@ -31,13 +31,13 @@ class CargoBundle < Formula
 
   test do
     # Show that we can use a different toolchain than the one provided by the `rust` formula.
-    # https:github.comHomebrewhomebrew-corepull134074#pullrequestreview-1484979359
+    # https://github.com/Homebrew/homebrew-core/pull/134074#pullrequestreview-1484979359
     ENV.prepend_path "PATH", Formula["rustup"].bin
     system "rustup", "set", "profile", "minimal"
     system "rustup", "default", "beta"
 
     # `cargo-bundle` does not like `TERM=dumb`.
-    # https:github.comburtonageocargo-bundleissues118
+    # https://github.com/burtonageo/cargo-bundle/issues/118
     ENV["TERM"] = "xterm"
 
     testproject = "homebrew_test"
@@ -60,17 +60,17 @@ class CargoBundle < Formula
     end
 
     bundle_subdir = if OS.mac?
-      "osx#{testproject}.app"
+      "osx/#{testproject}.app"
     else
       arch = Hardware::CPU.intel? ? "amd64" : Hardware::CPU.arch
-      "deb#{testproject}_#{version}_#{arch}.deb"
+      "deb/#{testproject}_#{version}_#{arch}.deb"
     end
-    bundle_path = testpathtestproject"targetreleasebundle"bundle_subdir
+    bundle_path = testpath/testproject/"target/release/bundle"/bundle_subdir
     assert_path_exists bundle_path
     return if OS.linux? # The test below has no equivalent on Linux.
 
-    cargo_built_bin = testpathtestproject"targetrelease"testproject
-    cargo_bundled_bin = bundle_path"ContentsMacOS"testproject
+    cargo_built_bin = testpath/testproject/"target/release"/testproject
+    cargo_bundled_bin = bundle_path/"Contents/MacOS"/testproject
     assert_equal shell_output(cargo_built_bin), shell_output(cargo_bundled_bin)
   end
 end

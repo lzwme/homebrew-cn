@@ -1,10 +1,10 @@
 class Libfabric < Formula
   desc "OpenFabrics libfabric"
-  homepage "https:ofiwg.github.iolibfabric"
-  url "https:github.comofiwglibfabricreleasesdownloadv2.2.0libfabric-2.2.0.tar.bz2"
+  homepage "https://ofiwg.github.io/libfabric/"
+  url "https://ghfast.top/https://github.com/ofiwg/libfabric/releases/download/v2.2.0/libfabric-2.2.0.tar.bz2"
   sha256 "ff6d05240b4a9753bb3d1eaf962f5a06205038df5142374a6ef40f931bb55ecc"
   license any_of: ["BSD-2-Clause", "GPL-2.0-only"]
-  head "https:github.comofiwglibfabric.git", branch: "main"
+  head "https://github.com/ofiwg/libfabric.git", branch: "main"
 
   livecheck do
     url :stable
@@ -31,11 +31,11 @@ class Libfabric < Formula
 
   def install
     system "autoreconf", "--force", "--install", "--verbose"
-    system ".configure", "--disable-silent-rules", *std_configure_args
+    system "./configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
   end
 
   test do
-    assert_match "provider: sockets", shell_output("#{bin}fi_info")
+    assert_match "provider: sockets", shell_output("#{bin}/fi_info")
   end
 end

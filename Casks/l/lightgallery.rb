@@ -2,10 +2,10 @@ cask "lightgallery" do
   version "0.1.1"
   sha256 "5650328b475391c5c16cbc616096fe70a8ec7c8e5f19329fd2bd660d7ac104cd"
 
-  url "https:github.comsachinchoolurlightgallery-desktopreleasesdownload#{version}lightgallery_#{version}.dmg-mac.zip",
-      verified: "github.comsachinchoolurlightgallery-desktop"
+  url "https://ghfast.top/https://github.com/sachinchoolur/lightgallery-desktop/releases/download/#{version}/lightgallery_#{version}.dmg-mac.zip",
+      verified: "github.com/sachinchoolur/lightgallery-desktop/"
   name "lightgallery"
-  homepage "https:sachinchoolur.github.iolightgallery-desktop"
+  homepage "https://sachinchoolur.github.io/lightgallery-desktop/"
 
   no_autobump! because: :requires_manual_review
 
@@ -14,9 +14,9 @@ cask "lightgallery" do
   app "lightgallery.app"
 
   zap trash: [
-    "~LibraryApplication SupportLightgallery",
-    "~LibraryCachesLightgallery",
-    "~LibraryPreferenceslightgallery-desktop.plist",
+    "~/Library/Application Support/Lightgallery",
+    "~/Library/Caches/Lightgallery",
+    "~/Library/Preferences/lightgallery-desktop.plist",
   ]
 
   caveats do

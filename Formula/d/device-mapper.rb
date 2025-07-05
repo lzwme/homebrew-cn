@@ -1,14 +1,14 @@
 class DeviceMapper < Formula
   desc "Userspace library and tools for logical volume management"
-  homepage "https:sourceware.orgdm"
-  url "https:sourceware.orggitlvm2.git",
+  homepage "https://sourceware.org/dm"
+  url "https://sourceware.org/git/lvm2.git",
       tag:      "v2_03_33",
       revision: "0e01a5d3ae1100a6641772ab295e0185d8d6a6b0"
   license "LGPL-2.1-only"
 
   livecheck do
     url :stable
-    regex(href=.*?;a=tag;.*?>Release (\d+(?:\.\d+)+)<i)
+    regex(/href=.*?;a=tag;.*?>Release (\d+(?:\.\d+)+)</i)
     strategy :page_match
   end
 
@@ -24,15 +24,15 @@ class DeviceMapper < Formula
   depends_on :linux
 
   def install
-    # https:github.comNixOSnixpkgspull52597
+    # https://github.com/NixOS/nixpkgs/pull/52597
     ENV.deparallelize
-    system ".configure", "--disable-silent-rules", "--enable-pkgconfig", *std_configure_args
+    system "./configure", "--disable-silent-rules", "--enable-pkgconfig", *std_configure_args
     system "make", "device-mapper"
     system "make", "install_device-mapper"
   end
 
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include <libdevmapper.h>
 
       int main() {
@@ -41,6 +41,6 @@ class DeviceMapper < Formula
       }
     C
     system ENV.cc, "-I#{include}", "-L#{lib}", "-ldevmapper", "test.c", "-o", "test"
-    system testpath"test"
+    system testpath/"test"
   end
 end

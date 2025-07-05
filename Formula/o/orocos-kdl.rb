@@ -1,7 +1,7 @@
 class OrocosKdl < Formula
   desc "Orocos Kinematics and Dynamics C++ library"
-  homepage "https:orocos.org"
-  url "https:github.comorocosorocos_kinematics_dynamicsarchiverefstagsv1.5.1.tar.gz"
+  homepage "https://orocos.org/"
+  url "https://ghfast.top/https://github.com/orocos/orocos_kinematics_dynamics/archive/refs/tags/v1.5.1.tar.gz"
   sha256 "5acb90acd82b10971717aca6c17874390762ecdaa3a8e4db04984ea1d4a2af9b"
   license "LGPL-2.1-or-later"
 
@@ -23,27 +23,27 @@ class OrocosKdl < Formula
   depends_on "cmake" => :build
   depends_on "eigen"
 
-  # $(brew --prefix orocos-kdl)shareorocos_kdlcmakeOrocosKDLTargets.cmake does not export the includes
-  # orocos-kdl v1.5.1 was released in September 2021: https:github.comorocosorocos_kinematics_dynamicscommitdb25b7e480e068df068232064f2443b8d52a83c7
-  # Issue was solved in October 2021: https:github.comorocosorocos_kinematics_dynamicscommitef39a4fd5cfb1400b2e6e034b1a99b8ad91192cf
+  # $(brew --prefix orocos-kdl)/share/orocos_kdl/cmake/OrocosKDLTargets.cmake does not export the includes
+  # orocos-kdl v1.5.1 was released in September 2021: https://github.com/orocos/orocos_kinematics_dynamics/commit/db25b7e480e068df068232064f2443b8d52a83c7
+  # Issue was solved in October 2021: https://github.com/orocos/orocos_kinematics_dynamics/commit/ef39a4fd5cfb1400b2e6e034b1a99b8ad91192cf
   # No new release since then, so we should provide a hotfix.
   # Can be removed with next release.
   patch do
-    url "https:github.comorocosorocos_kinematics_dynamicscommitef39a4fd5cfb1400b2e6e034b1a99b8ad91192cf.patch?full_index=1"
+    url "https://github.com/orocos/orocos_kinematics_dynamics/commit/ef39a4fd5cfb1400b2e6e034b1a99b8ad91192cf.patch?full_index=1"
     sha256 "b2ac2ff5d5d3285e7dfb4fbfc81364b1abc808cdd7d22415e446bfbdca189edd"
   end
 
   def install
     system "cmake", "-S", "orocos_kdl", "-B", "build",
-                    "-DEIGEN3_INCLUDE_DIR=#{Formula["eigen"].opt_include}eigen3",
+                    "-DEIGEN3_INCLUDE_DIR=#{Formula["eigen"].opt_include}/eigen3",
                     *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end
 
   test do
-    (testpath"test.cpp").write <<~CPP
-      #include <kdlframes.hpp>
+    (testpath/"test.cpp").write <<~CPP
+      #include <kdl/frames.hpp>
       int main()
       {
         using namespace KDL;
@@ -56,6 +56,6 @@ class OrocosKdl < Formula
 
     system ENV.cxx, "test.cpp", "-I#{include}", "-L#{lib}", "-lorocos-kdl",
                     "-o", "test"
-    system ".test"
+    system "./test"
   end
 end

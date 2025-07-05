@@ -1,10 +1,10 @@
 class Maturin < Formula
   desc "Build and publish Rust crates as Python packages"
-  homepage "https:github.comPyO3maturin"
-  url "https:github.comPyO3maturinarchiverefstagsv1.9.0.tar.gz"
+  homepage "https://github.com/PyO3/maturin"
+  url "https://ghfast.top/https://github.com/PyO3/maturin/archive/refs/tags/v1.9.0.tar.gz"
   sha256 "84a74988960a19f4e6ffa6f3a349803403496ced10dd3ff83baf4feed88c3fd8"
   license any_of: ["Apache-2.0", "MIT"]
-  head "https:github.comPyO3maturin.git", branch: "main"
+  head "https://github.com/PyO3/maturin.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "762d234ff9e69a35cd8c66531e1e43d556f5b373ff31964e6140ac4642b776e7"
@@ -27,32 +27,32 @@ class Maturin < Formula
     # libunwind due to it being present in a library search path.
     if DevelopmentTools.clang_build_version >= 1500
       ENV.remove "HOMEBREW_LIBRARY_PATHS",
-                 recursive_dependencies.find { |d| d.name.match?(^llvm(@\d+)?$) }
+                 recursive_dependencies.find { |d| d.name.match?(/^llvm(@\d+)?$/) }
                                        .to_formula
                                        .opt_lib
     end
 
     system "cargo", "install", *std_cargo_args
-    generate_completions_from_executable(bin"maturin", "completions")
+    generate_completions_from_executable(bin/"maturin", "completions")
 
     python_versions = Formula.names.filter_map do |name|
       Version.new(name.delete_prefix("python@")) if name.start_with?("python@")
     end.sort
 
     newest_python = python_versions.pop
-    newest_python_site_packages = lib"python#{newest_python}site-packages"
+    newest_python_site_packages = lib/"python#{newest_python}/site-packages"
     newest_python_site_packages.install "maturin"
 
     python_versions.each do |pyver|
-      (lib"python#{pyver}site-packagesmaturin").install_symlink (newest_python_site_packages"maturin").children
+      (lib/"python#{pyver}/site-packages/maturin").install_symlink (newest_python_site_packages/"maturin").children
     end
   end
 
   test do
     python = "python3.13"
     system "cargo", "init", "--name=brew", "--bin"
-    system bin"maturin", "build", "-o", "dist", "--compatibility", "off"
-    system python, "-m", "pip", "install", "brew", "--prefix=.dist", "--no-index", "--find-links=.dist"
+    system bin/"maturin", "build", "-o", "dist", "--compatibility", "off"
+    system python, "-m", "pip", "install", "brew", "--prefix=./dist", "--no-index", "--find-links=./dist"
     system python, "-c", "import maturin"
   end
 end

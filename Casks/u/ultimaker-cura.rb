@@ -5,18 +5,18 @@ cask "ultimaker-cura" do
   sha256 arm:   "6fdcbec9a6803a419abd89171a3740debb90dc0133a60e36f41850e6891d0060",
          intel: "6ce363910529160f4cb68a58b529d62b5f66bed164fba5f91a4111095e48ba56"
 
-  url "https:github.comUltimakerCurareleasesdownload#{version.csv.second || version.csv.first}UltiMaker-Cura-#{version.csv.first}-macos-#{arch}.dmg",
-      verified: "github.comUltimakerCura"
+  url "https://ghfast.top/https://github.com/Ultimaker/Cura/releases/download/#{version.csv.second || version.csv.first}/UltiMaker-Cura-#{version.csv.first}-macos-#{arch}.dmg",
+      verified: "github.com/Ultimaker/Cura/"
   name "UltiMaker Cura"
   name "Cura"
   desc "3D printer and slicing GUI"
-  homepage "https:ultimaker.comsoftwareultimaker-cura"
+  homepage "https://ultimaker.com/software/ultimaker-cura"
 
   livecheck do
     url :url
-    regex(^(\d+(?:\.\d+)+)i)
+    regex(/^(\d+(?:\.\d+)+)/i)
     strategy :github_latest do |json, regex|
-      tag = json["tag_name"]&.sub(^\D+, "")
+      tag = json["tag_name"]&.sub(/^\D+/, "")
       match = tag&.match(regex)
       next if match.blank?
 
@@ -31,12 +31,12 @@ cask "ultimaker-cura" do
   uninstall quit: "nl.ultimaker.cura.dmg"
 
   zap trash: [
-    "~.cura",
-    "~LibraryApplication Supportcura",
-    "~LibraryCachesUltimaker B.V.Ultimaker-Cura",
-    "~LibraryLogscura",
-    "~LibraryPreferencesnl.ultimaker.cura.dmg.plist",
-    "~LibraryPreferencesnl.ultimaker.cura.plist",
-    "~LibrarySaved Application Statenl.ultimaker.cura.dmg.savedState",
+    "~/.cura",
+    "~/Library/Application Support/cura",
+    "~/Library/Caches/Ultimaker B.V./Ultimaker-Cura",
+    "~/Library/Logs/cura",
+    "~/Library/Preferences/nl.ultimaker.cura.dmg.plist",
+    "~/Library/Preferences/nl.ultimaker.cura.plist",
+    "~/Library/Saved Application State/nl.ultimaker.cura.dmg.savedState",
   ]
 end

@@ -1,10 +1,10 @@
 class Pixz < Formula
   desc "Parallel, indexed, xz compressor"
-  homepage "https:github.comvasipixz"
-  url "https:github.comvasipixzreleasesdownloadv1.0.7pixz-1.0.7.tar.gz"
+  homepage "https://github.com/vasi/pixz"
+  url "https://ghfast.top/https://github.com/vasi/pixz/releases/download/v1.0.7/pixz-1.0.7.tar.gz"
   sha256 "d1b6de1c0399e54cbd18321b8091bbffef6d209ec136d4466f398689f62c3b5f"
   license "BSD-2-Clause"
-  head "https:github.comvasipixz.git", branch: "master"
+  head "https://github.com/vasi/pixz.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -32,20 +32,20 @@ class Pixz < Formula
   uses_from_macos "libxslt"
 
   def install
-    ENV.prepend_path "PKG_CONFIG_PATH", Formula["libarchive"].opt_lib"pkgconfig"
-    system ".configure", "--prefix=#{prefix}"
+    ENV.prepend_path "PKG_CONFIG_PATH", Formula["libarchive"].opt_lib/"pkgconfig"
+    system "./configure", "--prefix=#{prefix}"
     system "make"
     system "make", "install"
 
-    ENV["XML_CATALOG_FILES"] = "#{etc}xmlcatalog"
-    system "a2x", "--doctype", "manpage", "--format", "manpage", "srcpixz.1.asciidoc"
-    man1.install "srcpixz.1"
+    ENV["XML_CATALOG_FILES"] = "#{etc}/xml/catalog"
+    system "a2x", "--doctype", "manpage", "--format", "manpage", "src/pixz.1.asciidoc"
+    man1.install "src/pixz.1"
   end
 
   test do
     ENV["LC_ALL"] = "en_US.UTF-8"
-    testfile = testpath"file.txt"
+    testfile = testpath/"file.txt"
     testfile.write "foo"
-    system bin"pixz", testfile, "#{testpath}file.xz"
+    system bin/"pixz", testfile, "#{testpath}/file.xz"
   end
 end

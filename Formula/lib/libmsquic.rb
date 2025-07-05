@@ -1,7 +1,7 @@
 class Libmsquic < Formula
   desc "Cross-platform, C implementation of the IETF QUIC protocol"
-  homepage "https:github.commicrosoftmsquic"
-  url "https:github.commicrosoftmsquic.git",
+  homepage "https://github.com/microsoft/msquic"
+  url "https://github.com/microsoft/msquic.git",
       tag:      "v2.4.11",
       revision: "18b58030a1aee72d94d705d5738cfb87650b063a"
   license "MIT"
@@ -37,7 +37,7 @@ class Libmsquic < Formula
   end
 
   test do
-    example = testpath"example.cpp"
+    example = testpath/"example.cpp"
     example.write <<~CPP
       #include <iostream>
       #include <msquic.h>
@@ -57,6 +57,6 @@ class Libmsquic < Formula
       }
     CPP
     system ENV.cxx, example, "-I#{include}", "-L#{lib}", "-lmsquic", "-o", "test"
-    assert_equal "MsQuicOpen2 succeeded", shell_output(".test").strip
+    assert_equal "MsQuicOpen2 succeeded", shell_output("./test").strip
   end
 end

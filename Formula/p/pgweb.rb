@@ -1,7 +1,7 @@
 class Pgweb < Formula
   desc "Web-based PostgreSQL database browser"
-  homepage "https:sosedoff.github.iopgweb"
-  url "https:github.comsosedoffpgwebarchiverefstagsv0.16.2.tar.gz"
+  homepage "https://sosedoff.github.io/pgweb/"
+  url "https://ghfast.top/https://github.com/sosedoff/pgweb/archive/refs/tags/v0.16.2.tar.gz"
   sha256 "4120b03ee5047d8ea5bc9fd05629fb60bbdf5eca6a0e8b157fa4322ed54844ec"
   license "MIT"
 
@@ -19,8 +19,8 @@ class Pgweb < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.comsosedoffpgwebpkgcommand.BuildTime=#{time.iso8601}
-      -X github.comsosedoffpgwebpkgcommand.GoVersion=#{Formula["go"].version}
+      -X github.com/sosedoff/pgweb/pkg/command.BuildTime=#{time.iso8601}
+      -X github.com/sosedoff/pgweb/pkg/command.GoVersion=#{Formula["go"].version}
     ].join(" ")
 
     system "go", "build", *std_go_args(ldflags:)
@@ -31,12 +31,12 @@ class Pgweb < Formula
 
     begin
       pid = fork do
-        exec bin"pgweb", "--listen=#{port}",
+        exec bin/"pgweb", "--listen=#{port}",
                           "--skip-open",
                           "--sessions"
       end
       sleep 2
-      assert_match "\"version\":\"#{version}\"", shell_output("curl http:localhost:#{port}apiinfo")
+      assert_match "\"version\":\"#{version}\"", shell_output("curl http://localhost:#{port}/api/info")
     ensure
       Process.kill("TERM", pid)
     end

@@ -1,14 +1,14 @@
 class Libebml < Formula
   desc "Sort of a sbinary version of XML"
-  homepage "https:www.matroska.org"
-  url "https:dl.matroska.orgdownloadslibebmllibebml-1.4.5.tar.xz"
+  homepage "https://www.matroska.org/"
+  url "https://dl.matroska.org/downloads/libebml/libebml-1.4.5.tar.xz"
   sha256 "4971640b0592da29c2d426f303e137a9b0b3d07e1b81d069c1e56a2f49ab221b"
   license "LGPL-2.1-or-later"
-  head "https:github.comMatroska-Orglibebml.git", branch: "master"
+  head "https://github.com/Matroska-Org/libebml.git", branch: "master"
 
   livecheck do
-    url "https:dl.matroska.orgdownloadslibebml"
-    regex(href=.*?libebml[._-]v?(\d+(?:\.\d+)+)\.ti)
+    url "https://dl.matroska.org/downloads/libebml/"
+    regex(/href=.*?libebml[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -34,8 +34,8 @@ class Libebml < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~CPP
-      #include <ebmlEbmlVoid.h>
+    (testpath/"test.cpp").write <<~CPP
+      #include <ebml/EbmlVoid.h>
       #include <iostream>
 
       int main() {
@@ -48,6 +48,6 @@ class Libebml < Formula
     CPP
 
     system ENV.cxx, "-std=c++11", "test.cpp", "-o", "test", "-I#{include}", "-L#{lib}", "-lebml"
-    system ".test"
+    system "./test"
   end
 end

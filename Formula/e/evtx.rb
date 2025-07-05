@@ -1,10 +1,10 @@
 class Evtx < Formula
   desc "Windows XML Event Log parser"
-  homepage "https:github.comomerbenamramevtx"
-  url "https:github.comomerbenamramevtxarchiverefstagsv0.9.0.tar.gz"
+  homepage "https://github.com/omerbenamram/evtx"
+  url "https://ghfast.top/https://github.com/omerbenamram/evtx/archive/refs/tags/v0.9.0.tar.gz"
   sha256 "e5f5221879a68b455a086653ab457f815544d1580e591f52d3b0ed5b4b24f328"
   license any_of: ["Apache-2.0", "MIT"]
-  head "https:github.comomerbenamramevtx.git", branch: "master"
+  head "https://github.com/omerbenamram/evtx.git", branch: "master"
 
   bottle do
     rebuild 1
@@ -26,10 +26,10 @@ class Evtx < Formula
   end
 
   test do
-    cp pkgshare"samplesissue_201.evtx", testpath
+    cp pkgshare/"samples/issue_201.evtx", testpath
     assert_match "Remote-ManagementShell-Unknown",
-      shell_output("#{bin}evtx_dump #{pkgshare}samplesissue_201.evtx")
+      shell_output("#{bin}/evtx_dump #{pkgshare}/samples/issue_201.evtx")
 
-    assert_match "EVTX Parser #{version}", shell_output("#{bin}evtx_dump --version")
+    assert_match "EVTX Parser #{version}", shell_output("#{bin}/evtx_dump --version")
   end
 end

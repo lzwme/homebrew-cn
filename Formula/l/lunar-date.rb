@@ -1,7 +1,7 @@
 class LunarDate < Formula
   desc "Chinese lunar date library"
-  homepage "https:github.comyetistlunar-date"
-  url "https:github.comyetistlunar-datereleasesdownloadv3.0.2lunar-date-3.0.2.tar.xz"
+  homepage "https://github.com/yetist/lunar-date"
+  url "https://ghfast.top/https://github.com/yetist/lunar-date/releases/download/v3.0.2/lunar-date-3.0.2.tar.xz"
   sha256 "608d6e984d4eadae836706c0099f3721b878506b04e053058f694e9fd93933bc"
   license "LGPL-2.1-or-later"
 
@@ -32,15 +32,15 @@ class LunarDate < Formula
     pkgshare.install "tests"
 
     # Fix missing #include <locale.h> in testing.c
-    inreplace pkgshare"teststesting.c", "#include <stdlib.h>",
+    inreplace pkgshare/"tests/testing.c", "#include <stdlib.h>",
       "#include <stdlib.h>\n#include <locale.h>"
   end
 
   test do
     pkgconf_flags = Utils.safe_popen_read("pkgconf", "--cflags", "--libs", "lunar-date-3.0", "glib-2.0").chomp.split
-    system ENV.cc, pkgshare"teststesting.c", *pkgconf_flags,
-                   "-I#{include}lunar-date-3.0lunar-date",
+    system ENV.cc, pkgshare/"tests/testing.c", *pkgconf_flags,
+                   "-I#{include}/lunar-date-3.0/lunar-date",
                    "-L#{lib}", "-o", "testing"
-    assert_match "End of date tests", shell_output("#{testpath}testing")
+    assert_match "End of date tests", shell_output("#{testpath}/testing")
   end
 end

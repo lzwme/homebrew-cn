@@ -1,15 +1,15 @@
 class Premake < Formula
   desc "Write once, build anywhere Lua-based build system"
-  homepage "https:premake.github.io"
-  url "https:github.compremakepremake-corereleasesdownloadv5.0.0-beta6premake-5.0.0-beta6-src.zip"
+  homepage "https://premake.github.io/"
+  url "https://ghfast.top/https://github.com/premake/premake-core/releases/download/v5.0.0-beta6/premake-5.0.0-beta6-src.zip"
   sha256 "8832890451889c7ca9ab62c507d86fc9bfde45094274e5e4f46f82a258b5789b"
   license "BSD-3-Clause"
   version_scheme 1
-  head "https:github.compremakepremake-core.git", branch: "master"
+  head "https://github.com/premake/premake-core.git", branch: "master"
 
   livecheck do
-    url "https:premake.github.iodownload"
-    regex(href=.*?premake[._-]v?(\d+(?:\.\d+)+(?:[._-][a-z]+\d*)?)[._-]src\.zipi)
+    url "https://premake.github.io/download/"
+    regex(/href=.*?premake[._-]v?(\d+(?:\.\d+)+(?:[._-][a-z]+\d*)?)[._-]src\.zip/i)
   end
 
   bottle do
@@ -28,18 +28,18 @@ class Premake < Formula
 
   def install
     # Fix compile with newer Clang
-    # upstream issue, https:github.compremakepremake-coreissues2092
+    # upstream issue, https://github.com/premake/premake-core/issues/2092
     ENV.append_to_cflags "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1403
 
     platform = OS.mac? ? "osx" : "linux"
     system "make", "-f", "Bootstrap.mak", platform
-    system ".binreleasepremake5", "gmake2"
-    system ".binreleasepremake5", "embed"
+    system "./bin/release/premake5", "gmake2"
+    system "./bin/release/premake5", "embed"
     system "make"
-    bin.install "binreleasepremake5"
+    bin.install "bin/release/premake5"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}premake5 --version")
+    assert_match version.to_s, shell_output("#{bin}/premake5 --version")
   end
 end

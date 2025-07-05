@@ -2,8 +2,8 @@ class Litani < Formula
   include Language::Python::Virtualenv
 
   desc "Metabuild system"
-  homepage "https:awslabs.github.ioaws-build-accumulator"
-  url "https:github.comawslabsaws-build-accumulator.git",
+  homepage "https://awslabs.github.io/aws-build-accumulator/"
+  url "https://github.com/awslabs/aws-build-accumulator.git",
       tag:      "1.29.0",
       revision: "8002c240ef4f424039ed3cc32e076c0234d01768"
   license "Apache-2.0"
@@ -29,45 +29,45 @@ class Litani < Formula
   depends_on "python@3.13"
 
   resource "jinja2" do
-    url "https:files.pythonhosted.orgpackagesed5539036716d19cab0747a5020fc7e907f362fbf48c984b14e62127f7e68e5djinja2-3.1.4.tar.gz"
+    url "https://files.pythonhosted.org/packages/ed/55/39036716d19cab0747a5020fc7e907f362fbf48c984b14e62127f7e68e5d/jinja2-3.1.4.tar.gz"
     sha256 "4a3aee7acbbe7303aede8e9648d13b8bf88a429282aa6122a993f0ac800cb369"
   end
 
   resource "markupsafe" do
-    url "https:files.pythonhosted.orgpackages875baae44c6655f3801e81aa3eef09dbbf012431987ba564d7231722f68df02dMarkupSafe-2.1.5.tar.gz"
+    url "https://files.pythonhosted.org/packages/87/5b/aae44c6655f3801e81aa3eef09dbbf012431987ba564d7231722f68df02d/MarkupSafe-2.1.5.tar.gz"
     sha256 "d283d37a890ba4c1ae73ffadf8046435c76e7bc2247bbb63c00bd1a709c6544b"
   end
 
   resource "pyyaml" do
-    url "https:files.pythonhosted.orgpackages54ed79a089b6be93607fa5cdaedf301d7dfb23af5f25c398d5ead2525b063e17pyyaml-6.0.2.tar.gz"
+    url "https://files.pythonhosted.org/packages/54/ed/79a089b6be93607fa5cdaedf301d7dfb23af5f25c398d5ead2525b063e17/pyyaml-6.0.2.tar.gz"
     sha256 "d584d9ec91ad65861cc08d42e834324ef890a082e591037abe114850ff7bbc3e"
   end
 
   def install
-    ENV.prepend_path "PATH", libexec"vendorbin"
-    venv = virtualenv_create(libexec"vendor", "python3.13")
+    ENV.prepend_path "PATH", libexec/"vendor/bin"
+    venv = virtualenv_create(libexec/"vendor", "python3.13")
     venv.pip_install resources
 
     libexec.install Dir["*"] - ["test", "examples"]
-    (bin"litani").write_env_script libexec"litani", PATH: "\"#{libexec}vendorbin:${PATH}\""
+    (bin/"litani").write_env_script libexec/"litani", PATH: "\"#{libexec}/vendor/bin:${PATH}\""
 
-    cd libexec"doc" do
-      system libexec"vendorbinpython3", "configure"
+    cd libexec/"doc" do
+      system libexec/"vendor/bin/python3", "configure"
       system "ninja", "--verbose"
     end
-    man1.install libexec.glob("docoutman*.1")
-    man5.install libexec.glob("docoutman*.5")
-    man7.install libexec.glob("docoutman*.7")
-    doc.install libexec"docouthtmlindex.html"
-    rm_r(libexec"doc")
+    man1.install libexec.glob("doc/out/man/*.1")
+    man5.install libexec.glob("doc/out/man/*.5")
+    man7.install libexec.glob("doc/out/man/*.7")
+    doc.install libexec/"doc/out/html/index.html"
+    rm_r(libexec/"doc")
   end
 
   test do
-    system bin"litani", "init", "--project-name", "test-installation"
-    system bin"litani", "add-job",
-           "--command", "usrbintrue",
+    system bin/"litani", "init", "--project-name", "test-installation"
+    system bin/"litani", "add-job",
+           "--command", "/usr/bin/true",
            "--pipeline-name", "test-installation",
            "--ci-stage", "test"
-    system bin"litani", "run-build"
+    system bin/"litani", "run-build"
   end
 end

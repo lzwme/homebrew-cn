@@ -1,10 +1,10 @@
 class GLs < Formula
   desc "Powerful and cross-platform ls"
-  homepage "https:g.equationzhao.space"
-  url "https:github.comEquationzhaogarchiverefstagsv0.30.0.tar.gz"
+  homepage "https://g.equationzhao.space"
+  url "https://ghfast.top/https://github.com/Equationzhao/g/archive/refs/tags/v0.30.0.tar.gz"
   sha256 "73e4e10c5dcf43bd81d42a83383381d97dcf670c0bea43b9416d01d38d882f56"
   license "MIT"
-  head "https:github.comEquationzhaog.git", branch: "master"
+  head "https://github.com/Equationzhao/g.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "83fa173d73d17b242bc399e7086d4f2ebff552260aa848ea0a4be9fff646db7d"
@@ -18,17 +18,17 @@ class GLs < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(output: bin"g", ldflags: "-s -w")
+    system "go", "build", *std_go_args(output: bin/"g", ldflags: "-s -w")
 
-    bash_completion.install "completionsbashg-completion.bash" => "g"
-    fish_completion.install "completionsfishg.fish"
-    zsh_completion.install "completionszsh_g"
-    man1.install buildpath.glob("man*.1.gz")
+    bash_completion.install "completions/bash/g-completion.bash" => "g"
+    fish_completion.install "completions/fish/g.fish"
+    zsh_completion.install "completions/zsh/_g"
+    man1.install buildpath.glob("man/*.1.gz")
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}g -v")
+    assert_match version.to_s, shell_output("#{bin}/g -v")
     touch "test.txt"
-    assert_match "test.txt", shell_output("#{bin}g --no-config --hyperlink=never --color=never --no-icon .")
+    assert_match "test.txt", shell_output("#{bin}/g --no-config --hyperlink=never --color=never --no-icon .")
   end
 end

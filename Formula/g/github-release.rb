@@ -1,10 +1,10 @@
 class GithubRelease < Formula
   desc "Create and edit releases on Github (and upload artifacts)"
-  homepage "https:github.comgithub-releasegithub-release"
-  url "https:github.comgithub-releasegithub-releasearchiverefstagsv0.10.0.tar.gz"
+  homepage "https://github.com/github-release/github-release"
+  url "https://ghfast.top/https://github.com/github-release/github-release/archive/refs/tags/v0.10.0.tar.gz"
   sha256 "79bfaa465f549a08c781f134b1533f05b02f433e7672fbaad4e1764e4a33f18a"
   license "MIT"
-  head "https:github.comgithub-releasegithub-release.git", branch: "master"
+  head "https://github.com/github-release/github-release.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -26,9 +26,9 @@ class GithubRelease < Formula
 
   depends_on "go" => :build
 
-  # upstream PR ref, https:github.comgithub-releasegithub-releasepull129
+  # upstream PR ref, https://github.com/github-release/github-release/pull/129
   patch do
-    url "https:github.comgithub-releasegithub-releasecommit074f4e8e1688642f50a7a3cc92b5777c7b484139.patch?full_index=1"
+    url "https://github.com/github-release/github-release/commit/074f4e8e1688642f50a7a3cc92b5777c7b484139.patch?full_index=1"
     sha256 "4d7d4ae04642ab48b16ab6e31b0e0f989cc7750dc29123dc8164c629b9523c2e"
   end
 
@@ -37,7 +37,7 @@ class GithubRelease < Formula
   end
 
   test do
-    system bin"github-release", "info", "--user", "github-release",
+    system bin/"github-release", "info", "--user", "github-release",
                                             "--repo", "github-release",
                                             "--tag", "v#{version}"
   end

@@ -1,10 +1,10 @@
 class Logdy < Formula
   desc "Web based real-time log viewer"
-  homepage "https:logdy.dev"
-  url "https:github.comlogdyhqlogdy-corearchiverefstagsv0.17.1.tar.gz"
+  homepage "https://logdy.dev"
+  url "https://ghfast.top/https://github.com/logdyhq/logdy-core/archive/refs/tags/v0.17.1.tar.gz"
   sha256 "bd5db124e736e42d3671697787a26b354e0be6e787a95e69c054ad873058fcec"
   license "Apache-2.0"
-  head "https:github.comlogdyhqlogdy-core.git", branch: "main"
+  head "https://github.com/logdyhq/logdy-core.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "9d3eeee30fcc05e4c7265ee505fd23095dff74d6154866ddeeaeaa76ef5d240b"
@@ -21,12 +21,12 @@ class Logdy < Formula
     ldflags = "-s -w -X main.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:)
 
-    generate_completions_from_executable(bin"logdy", "completion")
+    generate_completions_from_executable(bin/"logdy", "completion")
   end
 
   test do
     port = free_port
-    r, _, pid = PTY.spawn("#{bin}logdy stdin --port=#{port}")
+    r, _, pid = PTY.spawn("#{bin}/logdy stdin --port=#{port}")
     assert_match "Listen to stdin (from pipe)", r.readline
   ensure
     Process.kill("TERM", pid)

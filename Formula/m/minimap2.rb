@@ -1,13 +1,13 @@
 class Minimap2 < Formula
   desc "Versatile pairwise aligner for genomic and spliced nucleotide sequences"
-  homepage "https:lh3.github.iominimap2"
-  url "https:github.comlh3minimap2archiverefstagsv2.30.tar.gz"
+  homepage "https://lh3.github.io/minimap2"
+  url "https://ghfast.top/https://github.com/lh3/minimap2/archive/refs/tags/v2.30.tar.gz"
   sha256 "4e5cd621be2b2685c5c88d9b9b169c7e036ab9fff2f3afe1a1d4091ae3176380"
   license "MIT"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -33,8 +33,8 @@ class Minimap2 < Formula
   end
 
   test do
-    cp_r pkgshare"test.", testpath
-    output = shell_output("#{bin}minimap2 -a MT-human.fa MT-orang.fa 2>&1")
+    cp_r pkgshare/"test/.", testpath
+    output = shell_output("#{bin}/minimap2 -a MT-human.fa MT-orang.fa 2>&1")
     assert_match "mapped 1 sequences", output
   end
 end

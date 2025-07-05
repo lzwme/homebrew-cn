@@ -2,22 +2,22 @@ cask "font-league-spartan" do
   version "2.220"
   sha256 "141a96e215554871504dca16be159901bbb0d56f3a84224f39fe472c7ab4ef47"
 
-  url "https:github.comtheleagueofleague-spartanreleasesdownload#{version}LeagueSpartan-#{version}.tar.xz",
-      verified: "github.comtheleagueofleague-spartan"
+  url "https://ghfast.top/https://github.com/theleagueof/league-spartan/releases/download/#{version}/LeagueSpartan-#{version}.tar.xz",
+      verified: "github.com/theleagueof/league-spartan/"
   name "League Spartan"
-  homepage "https:www.theleagueofmoveabletype.comleague-spartan"
+  homepage "https://www.theleagueofmoveabletype.com/league-spartan"
 
   no_autobump! because: :requires_manual_review
 
-  font "LeagueSpartan-#{version}staticOTFLeagueSpartan-ExtraLight.otf"
-  font "LeagueSpartan-#{version}staticOTFLeagueSpartan-Light.otf"
-  font "LeagueSpartan-#{version}staticOTFLeagueSpartan-Medium.otf"
-  font "LeagueSpartan-#{version}staticOTFLeagueSpartan-Regular.otf"
-  font "LeagueSpartan-#{version}staticOTFLeagueSpartan-SemiBold.otf"
-  font "LeagueSpartan-#{version}staticOTFLeagueSpartan-Bold.otf"
-  font "LeagueSpartan-#{version}staticOTFLeagueSpartan-ExtraBold.otf"
-  font "LeagueSpartan-#{version}staticOTFLeagueSpartan-Black.otf"
-  font "LeagueSpartan-#{version}variableTTFLeagueSpartan-VF.ttf"
+  font "LeagueSpartan-#{version}/static/OTF/LeagueSpartan-ExtraLight.otf"
+  font "LeagueSpartan-#{version}/static/OTF/LeagueSpartan-Light.otf"
+  font "LeagueSpartan-#{version}/static/OTF/LeagueSpartan-Medium.otf"
+  font "LeagueSpartan-#{version}/static/OTF/LeagueSpartan-Regular.otf"
+  font "LeagueSpartan-#{version}/static/OTF/LeagueSpartan-SemiBold.otf"
+  font "LeagueSpartan-#{version}/static/OTF/LeagueSpartan-Bold.otf"
+  font "LeagueSpartan-#{version}/static/OTF/LeagueSpartan-ExtraBold.otf"
+  font "LeagueSpartan-#{version}/static/OTF/LeagueSpartan-Black.otf"
+  font "LeagueSpartan-#{version}/variable/TTF/LeagueSpartan-VF.ttf"
 
   # No zap stanza required
 end

@@ -1,10 +1,10 @@
 class ChrubyFish < Formula
   desc "Thin wrapper around chruby to make it work with the Fish shell"
-  homepage "https:github.comJeanMertzchruby-fish"
-  url "https:github.comJeanMertzchruby-fisharchiverefstagsv1.0.0.tar.gz"
+  homepage "https://github.com/JeanMertz/chruby-fish"
+  url "https://ghfast.top/https://github.com/JeanMertz/chruby-fish/archive/refs/tags/v1.0.0.tar.gz"
   sha256 "db1023255fa55c9a01b06404cd394cccf790d42985cf85706211e5a0dda4fd9f"
   license "MIT"
-  head "https:github.comJeanMertzchruby-fish.git", branch: "master"
+  head "https://github.com/JeanMertz/chruby-fish.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -21,6 +21,6 @@ class ChrubyFish < Formula
   end
 
   test do
-    assert_match "chruby: #{version}", shell_output("fish -c '. #{share}fishvendor_functions.dchruby.fish; chruby --version'")
+    assert_match "chruby: #{version}", shell_output("fish -c '. #{share}/fish/vendor_functions.d/chruby.fish; chruby --version'")
   end
 end

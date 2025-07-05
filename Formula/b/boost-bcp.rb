@@ -1,10 +1,10 @@
 class BoostBcp < Formula
   desc "Utility for extracting subsets of the Boost library"
-  homepage "https:www.boost.orgdoctoolsbcp"
-  url "https:github.comboostorgboostreleasesdownloadboost-1.88.0boost-1.88.0-b2-nodocs.tar.xz"
+  homepage "https://www.boost.org/doc/tools/bcp/"
+  url "https://ghfast.top/https://github.com/boostorg/boost/releases/download/boost-1.88.0/boost-1.88.0-b2-nodocs.tar.xz"
   sha256 "ad9ce2c91bc0977a7adc92d51558f3b9c53596bb88246a280175ebb475da1762"
   license "BSL-1.0"
-  head "https:github.comboostorgboost.git", branch: "master"
+  head "https://github.com/boostorg/boost.git", branch: "master"
 
   livecheck do
     formula "boost"
@@ -26,13 +26,13 @@ class BoostBcp < Formula
   depends_on "boost" => :test
 
   def install
-    cd "toolsbcp" do
+    cd "tools/bcp" do
       system "b2"
-      prefix.install "....distbin"
+      prefix.install "../../dist/bin"
     end
   end
 
   test do
-    system bin"bcp", "--boost=#{Formula["boost"].opt_include}", "--scan", "."
+    system bin/"bcp", "--boost=#{Formula["boost"].opt_include}", "--scan", "./"
   end
 end

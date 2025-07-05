@@ -1,10 +1,10 @@
 class ConsulBackinator < Formula
   desc "Consul backup and restoration application"
-  homepage "https:github.commyENAconsul-backinator"
-  url "https:github.commyENAconsul-backinatorarchiverefstagsv1.6.6.tar.gz"
+  homepage "https://github.com/myENA/consul-backinator"
+  url "https://ghfast.top/https://github.com/myENA/consul-backinator/archive/refs/tags/v1.6.6.tar.gz"
   sha256 "b668801ca648ecf888687d7aa69d84c3f2c862f31b92076c443fdea77c984c58"
   license "MPL-2.0"
-  head "https:github.commyENAconsul-backinator.git", branch: "master"
+  head "https://github.com/myENA/consul-backinator.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -30,9 +30,9 @@ class ConsulBackinator < Formula
   end
 
   test do
-    assert_equal version.to_s, shell_output("#{bin}consul-backinator --version 2>&1").strip
+    assert_equal version.to_s, shell_output("#{bin}/consul-backinator --version 2>&1").strip
 
     assert_match "[Error] Failed to backup key data:",
-      shell_output("#{bin}consul-backinator backup 2>&1", 1)
+      shell_output("#{bin}/consul-backinator backup 2>&1", 1)
   end
 end

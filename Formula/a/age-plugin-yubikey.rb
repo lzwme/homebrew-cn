@@ -1,10 +1,10 @@
 class AgePluginYubikey < Formula
   desc "Plugin for encrypting files with age and PIV tokens such as YubiKeys"
-  homepage "https:github.comstr4dage-plugin-yubikey"
-  url "https:github.comstr4dage-plugin-yubikeyarchiverefstagsv0.5.0.tar.gz"
+  homepage "https://github.com/str4d/age-plugin-yubikey"
+  url "https://ghfast.top/https://github.com/str4d/age-plugin-yubikey/archive/refs/tags/v0.5.0.tar.gz"
   sha256 "65807403f0098569a473ffa76302b205da148a7f46b61fd331b8e323959978ba"
   license any_of: ["Apache-2.0", "MIT"]
-  head "https:github.comstr4dage-plugin-yubikey.git", branch: "main"
+  head "https://github.com/str4d/age-plugin-yubikey.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "2c1abec9dc0158b55ab98a0e85e1e25ae5f9fded57604288b4f7991b38526dbd"
@@ -30,6 +30,6 @@ class AgePluginYubikey < Formula
   test do
     ENV["LANG"] = "en_US.UTF-8"
     assert_match "Let's get your YubiKey set up for age!",
-      shell_output("#{bin}age-plugin-yubikey 2>&1", 1)
+      shell_output("#{bin}/age-plugin-yubikey 2>&1", 1)
   end
 end

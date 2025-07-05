@@ -1,10 +1,10 @@
 class Urlfinder < Formula
   desc "Extracting URLs and subdomains from JS files on a website"
-  homepage "https:github.compingc0yURLFinder"
-  url "https:github.compingc0yURLFinderarchiverefstags2023.9.9.tar.gz"
+  homepage "https://github.com/pingc0y/URLFinder"
+  url "https://ghfast.top/https://github.com/pingc0y/URLFinder/archive/refs/tags/2023.9.9.tar.gz"
   sha256 "033944c58814547d240182daf8506bdf6cd0cd54b25a57212a87e2e70ec92bc7"
   license "MIT"
-  head "https:github.compingc0yURLFinder.git", branch: "master"
+  head "https://github.com/pingc0y/URLFinder.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -23,9 +23,9 @@ class Urlfinder < Formula
 
   depends_on "go" => :build
 
-  # upstream PR ref, https:github.compingc0yURLFinderpull96
+  # upstream PR ref, https://github.com/pingc0y/URLFinder/pull/96
   patch do
-    url "https:github.compingc0yURLFindercommitcd4b141bd92448ed4b27a1db65b05075e40e8200.patch?full_index=1"
+    url "https://github.com/pingc0y/URLFinder/commit/cd4b141bd92448ed4b27a1db65b05075e40e8200.patch?full_index=1"
     sha256 "e08f45c1a103125dfbaec04305f26140fe6766aa137b7a5fbe899d18efdb1064"
   end
 
@@ -34,7 +34,7 @@ class Urlfinder < Formula
   end
 
   test do
-    assert_match "Start 1 Spider...", shell_output("#{bin}urlfinder -u https:example.com")
-    assert_match version.to_s, shell_output("#{bin}urlfinder version")
+    assert_match "Start 1 Spider...", shell_output("#{bin}/urlfinder -u https://example.com")
+    assert_match version.to_s, shell_output("#{bin}/urlfinder version")
   end
 end

@@ -1,13 +1,13 @@
 class Dwarfs < Formula
   desc "Fast high compression read-only file system for Linux, Windows, and macOS"
-  homepage "https:github.commhxdwarfs"
-  url "https:github.commhxdwarfsreleasesdownloadv0.12.4dwarfs-0.12.4.tar.xz"
+  homepage "https://github.com/mhx/dwarfs"
+  url "https://ghfast.top/https://github.com/mhx/dwarfs/releases/download/v0.12.4/dwarfs-0.12.4.tar.xz"
   sha256 "352d13a3c7d9416e0a7d0d959306a25908b58d1ff47fb97e30a7c8490fcff259"
   license "GPL-3.0-or-later"
 
   livecheck do
     url :stable
-    regex(^(?:release[._-])?v?(\d+(?:\.\d+)+)$i)
+    regex(/^(?:release[._-])?v?(\d+(?:\.\d+)+)$/i)
     strategy :github_latest
   end
 
@@ -58,9 +58,9 @@ class Dwarfs < Formula
     cause "Not all required C++20 features are supported"
   end
 
-  # Apply folly fix for LLVM 20 from https:github.comfacebookfollypull2404
+  # Apply folly fix for LLVM 20 from https://github.com/facebook/folly/pull/2404
   patch do
-    url "https:github.comfacebookfollycommit1215a574e29ea94653dd8c48f72e25b5503ced18.patch?full_index=1"
+    url "https://github.com/facebook/folly/commit/1215a574e29ea94653dd8c48f72e25b5503ced18.patch?full_index=1"
     sha256 "14a584c4f0a166d065d45eb691c23306289a5287960806261b605946166de590"
     directory "folly"
   end
@@ -87,9 +87,9 @@ class Dwarfs < Formula
       ENV.llvm_clang
 
       # Needed in order to find the C++ standard library
-      # See: https:github.comHomebrewhomebrew-coreissues178435
-      ENV.prepend "LDFLAGS", "-L#{Formula["llvm"].opt_lib}unwind -lunwind"
-      ENV.prepend_path "HOMEBREW_LIBRARY_PATHS", Formula["llvm"].opt_lib"c++"
+      # See: https://github.com/Homebrew/homebrew-core/issues/178435
+      ENV.prepend "LDFLAGS", "-L#{Formula["llvm"].opt_lib}/unwind -lunwind"
+      ENV.prepend_path "HOMEBREW_LIBRARY_PATHS", Formula["llvm"].opt_lib/"c++"
     end
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
@@ -99,30 +99,30 @@ class Dwarfs < Formula
 
   test do
     # produce a dwarfs image
-    system bin"mkdwarfs", "-i", prefix, "-o", "test.dwarfs", "-l4"
+    system bin/"mkdwarfs", "-i", prefix, "-o", "test.dwarfs", "-l4"
 
     # check the image
-    system bin"dwarfsck", "test.dwarfs"
+    system bin/"dwarfsck", "test.dwarfs"
 
     # get JSON info about the image
-    info = JSON.parse(shell_output("#{bin}dwarfsck test.dwarfs -j"))
+    info = JSON.parse(shell_output("#{bin}/dwarfsck test.dwarfs -j"))
     assert_equal info["created_by"], "libdwarfs v#{version}"
     assert info["inode_count"] >= 10
 
     # extract the image
-    system bin"dwarfsextract", "-i", "test.dwarfs"
-    assert_path_exists "binmkdwarfs"
-    assert_path_exists "sharemanman1mkdwarfs.1"
-    assert compare_file bin"mkdwarfs", "binmkdwarfs"
+    system bin/"dwarfsextract", "-i", "test.dwarfs"
+    assert_path_exists "bin/mkdwarfs"
+    assert_path_exists "share/man/man1/mkdwarfs.1"
+    assert compare_file bin/"mkdwarfs", "bin/mkdwarfs"
 
-    (testpath"test.cpp").write <<~CPP
+    (testpath/"test.cpp").write <<~CPP
       #include <iostream>
-      #include <dwarfsversion.h>
+      #include <dwarfs/version.h>
 
       int main(int argc, char **argv) {
         int v = dwarfs::get_dwarfs_library_version();
-        int major = v  10000;
-        int minor = (v % 10000)  100;
+        int major = v / 10000;
+        int minor = (v % 10000) / 100;
         int patch = v % 100;
         std::cout << major << "." << minor << "." << patch << std::endl;
         return 0;
@@ -130,10 +130,10 @@ class Dwarfs < Formula
     CPP
 
     # ENV.llvm_clang doesn't work in the test block
-    ENV["CXX"] = Formula["llvm"].opt_bin"clang++" if OS.mac? && DevelopmentTools.clang_build_version <= 1500
+    ENV["CXX"] = Formula["llvm"].opt_bin/"clang++" if OS.mac? && DevelopmentTools.clang_build_version <= 1500
 
     system ENV.cxx, "-std=c++20", "test.cpp", "-I#{include}", "-L#{lib}", "-o", "test", "-ldwarfs_common"
 
-    assert_equal version.to_s, shell_output(".test").chomp
+    assert_equal version.to_s, shell_output("./test").chomp
   end
 end

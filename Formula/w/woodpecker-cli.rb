@@ -1,10 +1,10 @@
 class WoodpeckerCli < Formula
   desc "CLI client for the Woodpecker Continuous Integration server"
-  homepage "https:woodpecker-ci.org"
-  url "https:github.comwoodpecker-ciwoodpeckerarchiverefstagsv3.7.0.tar.gz"
+  homepage "https://woodpecker-ci.org/"
+  url "https://ghfast.top/https://github.com/woodpecker-ci/woodpecker/archive/refs/tags/v3.7.0.tar.gz"
   sha256 "ed1720da0e8cc8532870da8e0882a9ad95cc309b026627a6fc1c3cdaa57a0af7"
   license "Apache-2.0"
-  head "https:github.comwoodpecker-ciwoodpecker.git", branch: "main"
+  head "https://github.com/woodpecker-ci/woodpecker.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "09b956e9382bd9fb615916d8435d75041ac66685daab8e3c4644634fcd57eead"
@@ -18,17 +18,17 @@ class WoodpeckerCli < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = "-s -w -X go.woodpecker-ci.orgwoodpeckerv#{version.major}version.Version=#{version}"
-    system "go", "build", *std_go_args(ldflags:), ".cmdcli"
+    ldflags = "-s -w -X go.woodpecker-ci.org/woodpecker/v#{version.major}/version.Version=#{version}"
+    system "go", "build", *std_go_args(ldflags:), "./cmd/cli"
   end
 
   test do
-    output = shell_output("#{bin}woodpecker-cli info 2>&1", 1)
+    output = shell_output("#{bin}/woodpecker-cli info 2>&1", 1)
     assert_match "woodpecker-cli is not set up", output
 
-    output = shell_output("#{bin}woodpecker-cli lint 2>&1", 1)
+    output = shell_output("#{bin}/woodpecker-cli lint 2>&1", 1)
     assert_match "could not detect pipeline config", output
 
-    assert_match version.to_s, shell_output("#{bin}woodpecker-cli --version")
+    assert_match version.to_s, shell_output("#{bin}/woodpecker-cli --version")
   end
 end

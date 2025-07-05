@@ -2,8 +2,8 @@ class Glib < Formula
   include Language::Python::Shebang
 
   desc "Core application library for C"
-  homepage "https:docs.gtk.orgglib"
-  url "https:download.gnome.orgsourcesglib2.84glib-2.84.3.tar.xz"
+  homepage "https://docs.gtk.org/glib/"
+  url "https://download.gnome.org/sources/glib/2.84/glib-2.84.3.tar.xz"
   sha256 "aa4f87c3225bf57ca85f320888f7484901a17934ca37023c3bd8435a72db863e"
   license "LGPL-2.1-or-later"
 
@@ -41,16 +41,16 @@ class Glib < Formula
   end
 
   # These used to live in the now defunct `glib-utils`.
-  link_overwrite "bingdbus-codegen", "binglib-genmarshal", "binglib-mkenums", "bingtester-report"
-  link_overwrite "shareglib-2.0codegen", "shareglib-2.0gdb"
+  link_overwrite "bin/gdbus-codegen", "bin/glib-genmarshal", "bin/glib-mkenums", "bin/gtester-report"
+  link_overwrite "share/glib-2.0/codegen", "share/glib-2.0/gdb"
   # These used to live in `gobject-introspection`
-  link_overwrite "libgirepository-1.0GLib-2.0.typelib", "libgirepository-1.0GModule-2.0.typelib",
-                 "libgirepository-1.0GObject-2.0.typelib", "libgirepository-1.0Gio-2.0.typelib"
-  link_overwrite "sharegir-1.0GLib-2.0.gir", "sharegir-1.0GModule-2.0.gir",
-                 "sharegir-1.0GObject-2.0.gir", "sharegir-1.0Gio-2.0.gir"
+  link_overwrite "lib/girepository-1.0/GLib-2.0.typelib", "lib/girepository-1.0/GModule-2.0.typelib",
+                 "lib/girepository-1.0/GObject-2.0.typelib", "lib/girepository-1.0/Gio-2.0.typelib"
+  link_overwrite "share/gir-1.0/GLib-2.0.gir", "share/gir-1.0/GModule-2.0.gir",
+                 "share/gir-1.0/GObject-2.0.gir", "share/gir-1.0/Gio-2.0.gir"
 
   resource "gobject-introspection" do
-    url "https:download.gnome.orgsourcesgobject-introspection1.84gobject-introspection-1.84.0.tar.xz"
+    url "https://download.gnome.org/sources/gobject-introspection/1.84/gobject-introspection-1.84.0.tar.xz"
     sha256 "945b57da7ec262e5c266b89e091d14be800cc424277d82a02872b7d794a84779"
 
     livecheck do
@@ -60,39 +60,39 @@ class Glib < Formula
 
   # replace several hardcoded paths with homebrew counterparts
   patch do
-    url "https:raw.githubusercontent.comHomebrewformula-patchesb46d8deae6983110b4e39bb2971bcbd10bb59716glibhardcoded-paths.diff"
+    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/b46d8deae6983110b4e39bb2971bcbd10bb59716/glib/hardcoded-paths.diff"
     sha256 "d846efd0bf62918350da94f850db33b0f8727fece9bfaf8164566e3094e80c97"
   end
 
   def install
     # Avoid the sandbox violation when an empty directory is created outside of the formula prefix.
-    inreplace "giomeson.build", "install_emptydir(glib_giomodulesdir)", ""
+    inreplace "gio/meson.build", "install_emptydir(glib_giomodulesdir)", ""
 
     # build patch for `ld: missing LC_LOAD_DYLIB (must link with at least libSystem.dylib) \
-    # in ..gobject-introspection-1.80.1buildtestsoffsetsliboffsets-1.0.1.dylib`
+    # in ../gobject-introspection-1.80.1/build/tests/offsets/liboffsets-1.0.1.dylib`
     ENV.append "LDFLAGS", "-Wl,-ld_classic" if OS.mac? && MacOS.version == :ventura
 
-    # Disable dtrace; see https:trac.macports.orgticket30413
-    # and https:gitlab.gnome.orgGNOMEglib-issues653
+    # Disable dtrace; see https://trac.macports.org/ticket/30413
+    # and https://gitlab.gnome.org/GNOME/glib/-/issues/653
     args = %W[
       --localstatedir=#{var}
-      -Dgio_module_dir=#{HOMEBREW_PREFIX}libgiomodules
+      -Dgio_module_dir=#{HOMEBREW_PREFIX}/lib/gio/modules
       -Dbsymbolic_functions=false
       -Ddtrace=false
-      -Druntime_dir=#{var}run
+      -Druntime_dir=#{var}/run
       -Dtests=false
     ]
 
     # Stage build in order to deal with circular dependency as `gobject-introspection`
     # is needed to generate `glib` introspection data used by dependents; however,
     # `glib` is a dependency of `gobject-introspection`.
-    # Ref: https:discourse.gnome.orgtdealing-with-glib-and-gobject-introspection-circular-dependency18701
-    staging_dir = buildpath"staging"
+    # Ref: https://discourse.gnome.org/t/dealing-with-glib-and-gobject-introspection-circular-dependency/18701
+    staging_dir = buildpath/"staging"
     staging_meson_args = std_meson_args.map { |s| s.sub prefix, staging_dir }
     system "meson", "setup", "build_staging", "-Dintrospection=disabled", *args, *std_meson_args
     system "meson", "compile", "-C", "build_staging", "--verbose"
     system "meson", "install", "-C", "build_staging"
-    ENV.append_path "PKG_CONFIG_PATH", lib"pkgconfig"
+    ENV.append_path "PKG_CONFIG_PATH", lib/"pkgconfig"
     ENV.append_path "LD_LIBRARY_PATH", lib if OS.linux?
 
     resource("gobject-introspection").stage do
@@ -100,9 +100,9 @@ class Glib < Formula
       system "meson", "compile", "-C", "build", "--verbose"
       system "meson", "install", "-C", "build"
     end
-    ENV.append_path "PKG_CONFIG_PATH", staging_dir"libpkgconfig"
-    ENV.append_path "LD_LIBRARY_PATH", staging_dir"lib" if OS.linux?
-    ENV.append_path "PATH", staging_dir"bin"
+    ENV.append_path "PKG_CONFIG_PATH", staging_dir/"lib/pkgconfig"
+    ENV.append_path "LD_LIBRARY_PATH", staging_dir/"lib" if OS.linux?
+    ENV.append_path "PATH", staging_dir/"bin"
 
     system "meson", "setup", "build", "--default-library=both", "-Dintrospection=enabled", *args, *std_meson_args
     system "meson", "compile", "-C", "build", "--verbose"
@@ -111,39 +111,39 @@ class Glib < Formula
     # ensure giomoduledir contains prefix, as this pkgconfig variable will be
     # used by glib-networking and glib-openssl to determine where to install
     # their modules
-    inreplace lib"pkgconfiggio-2.0.pc",
-              "giomoduledir=#{HOMEBREW_PREFIX}libgiomodules",
-              "giomoduledir=${libdir}giomodules"
+    inreplace lib/"pkgconfig/gio-2.0.pc",
+              "giomoduledir=#{HOMEBREW_PREFIX}/lib/gio/modules",
+              "giomoduledir=${libdir}/gio/modules"
 
-    (buildpath"giocompletion.gitignore").unlink
-    bash_completion.install (buildpath"giocompletion").children
+    (buildpath/"gio/completion/.gitignore").unlink
+    bash_completion.install (buildpath/"gio/completion").children
     return unless OS.mac?
 
     # `pkg-config --libs glib-2.0` includes -lintl, and gettext itself does not
     # have a pkgconfig file, so we add gettext lib and include paths here.
     gettext = Formula["gettext"]
-    inreplace lib"pkgconfigglib-2.0.pc" do |s|
+    inreplace lib/"pkgconfig/glib-2.0.pc" do |s|
       s.gsub! "Libs: -L${libdir} -lglib-2.0 -lintl",
               "Libs: -L${libdir} -lglib-2.0 -L#{gettext.opt_lib} -lintl"
-      s.gsub! "Cflags: -I${includedir}glib-2.0 -I${libdir}glib-2.0include",
-              "Cflags: -I${includedir}glib-2.0 -I${libdir}glib-2.0include -I#{gettext.opt_include}"
+      s.gsub! "Cflags: -I${includedir}/glib-2.0 -I${libdir}/glib-2.0/include",
+              "Cflags: -I${includedir}/glib-2.0 -I${libdir}/glib-2.0/include -I#{gettext.opt_include}"
     end
     return if MacOS.version >= :catalina
 
     # `pkg-config --print-requires-private gobject-2.0` includes libffi,
     # but that package is keg-only so it needs to look for the pkgconfig file
     # in libffi's opt path.
-    inreplace lib"pkgconfiggobject-2.0.pc",
+    inreplace lib/"pkgconfig/gobject-2.0.pc",
               "Requires.private: libffi",
-              "Requires.private: #{Formula["libffi"].opt_lib}pkgconfiglibffi.pc"
+              "Requires.private: #{Formula["libffi"].opt_lib}/pkgconfig/libffi.pc"
   end
 
   def post_install
-    (HOMEBREW_PREFIX"libgiomodules").mkpath
+    (HOMEBREW_PREFIX/"lib/gio/modules").mkpath
   end
 
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include <string.h>
       #include <glib.h>
 
@@ -158,40 +158,40 @@ class Glib < Formula
           return (strcmp(str, result_2) == 0) ? 0 : 1;
       }
     C
-    system ENV.cc, "-o", "test", "test.c", "-I#{include}glib-2.0",
-                   "-I#{lib}glib-2.0include", "-L#{lib}", "-lglib-2.0"
-    system ".test"
+    system ENV.cc, "-o", "test", "test.c", "-I#{include}/glib-2.0",
+                   "-I#{lib}/glib-2.0/include", "-L#{lib}", "-lglib-2.0"
+    system "./test"
 
-    assert_match "This file is generated by glib-mkenum", shell_output(bin"glib-mkenums")
+    assert_match "This file is generated by glib-mkenum", shell_output(bin/"glib-mkenums")
 
-    (testpath"net.Corp.MyApp.Frobber.xml").write <<~XML
+    (testpath/"net.Corp.MyApp.Frobber.xml").write <<~XML
       <node>
         <interface name="net.Corp.MyApp.Frobber">
           <method name="HelloWorld">
-            <arg name="greeting" direction="in" type="s">
-            <arg name="response" direction="out" type="s">
-          <method>
+            <arg name="greeting" direction="in" type="s"/>
+            <arg name="response" direction="out" type="s"/>
+          </method>
 
           <signal name="Notification">
-            <arg name="icon_blob" type="ay">
-            <arg name="height" type="i">
-            <arg name="messages" type="as">
-          <signal>
+            <arg name="icon_blob" type="ay"/>
+            <arg name="height" type="i"/>
+            <arg name="messages" type="as"/>
+          </signal>
 
-          <property name="Verbose" type="b" access="readwrite">
-        <interface>
-      <node>
+          <property name="Verbose" type="b" access="readwrite"/>
+        </interface>
+      </node>
     XML
 
-    system bin"gdbus-codegen", "--generate-c-code", "myapp-generated",
+    system bin/"gdbus-codegen", "--generate-c-code", "myapp-generated",
                                 "--c-namespace", "MyApp",
                                 "--interface-prefix", "net.corp.MyApp.",
                                 "net.Corp.MyApp.Frobber.xml"
-    assert_path_exists testpath"myapp-generated.c"
-    assert_match "my_app_net_corp_my_app_frobber_call_hello_world", (testpath"myapp-generated.h").read
+    assert_path_exists testpath/"myapp-generated.c"
+    assert_match "my_app_net_corp_my_app_frobber_call_hello_world", (testpath/"myapp-generated.h").read
 
     # Keep (u)int64_t and g(u)int64 aligned. See install comment for details
-    (testpath"typecheck.cpp").write <<~CPP
+    (testpath/"typecheck.cpp").write <<~CPP
       #include <cstdint>
       #include <type_traits>
       #include <glib.h>
@@ -203,6 +203,6 @@ class Glib < Formula
         return 0;
       }
     CPP
-    system ENV.cxx, "-o", "typecheck", "typecheck.cpp", "-I#{include}glib-2.0", "-I#{lib}glib-2.0include"
+    system ENV.cxx, "-o", "typecheck", "typecheck.cpp", "-I#{include}/glib-2.0", "-I#{lib}/glib-2.0/include"
   end
 end

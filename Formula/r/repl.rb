@@ -1,7 +1,7 @@
 class Repl < Formula
   desc "Wrap non-interactive programs with a REPL"
-  homepage "http:defunkt.iorepl"
-  url "https:github.comdefunktreplarchiverefstagsv1.0.0.tar.gz"
+  homepage "http://defunkt.io/repl/"
+  url "https://ghfast.top/https://github.com/defunkt/repl/archive/refs/tags/v1.0.0.tar.gz"
   sha256 "d0542404f03159b0d6eb22a1aa4a509714c87c8594fca5121c578d50d950307d"
   license "MIT"
 
@@ -14,11 +14,11 @@ class Repl < Formula
   conflicts_with "nmh", because: "both install `repl` binaries"
 
   def install
-    bin.install "binrepl"
-    man1.install "manrepl.1"
+    bin.install "bin/repl"
+    man1.install "man/repl.1"
   end
 
   test do
-    pipe_output("#{bin}repl git", "init", 0)
+    pipe_output("#{bin}/repl git", "init", 0)
   end
 end

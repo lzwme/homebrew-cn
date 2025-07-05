@@ -1,7 +1,7 @@
 class Yank < Formula
   desc "Copy terminal output to clipboard"
-  homepage "https:github.commptreyank"
-  url "https:github.commptreyankarchiverefstagsv1.3.0.tar.gz"
+  homepage "https://github.com/mptre/yank"
+  url "https://ghfast.top/https://github.com/mptre/yank/archive/refs/tags/v1.3.0.tar.gz"
   sha256 "40f5472df5f6356a4d6f48862a19091bd4de3f802b3444891b3bc4b710fb35ca"
   license "MIT"
 
@@ -29,13 +29,13 @@ class Yank < Formula
 
   test do
     require "pty"
-    PTY.spawn("echo key=value | #{bin}yank -d = >#{testpath}result") do |r, w, _pid|
+    PTY.spawn("echo key=value | #{bin}/yank -d = >#{testpath}/result") do |r, w, _pid|
       r.winsize = [80, 43]
       w.write "\016"
       sleep 1
       w.write "\r"
       sleep 1
     end
-    assert_equal "value", (testpath"result").read
+    assert_equal "value", (testpath/"result").read
   end
 end

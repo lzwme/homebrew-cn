@@ -1,10 +1,10 @@
 class C < Formula
   desc 'Compile and execute C "scripts" in one go'
-  homepage "https:github.comryanmjacobsc"
-  url "https:github.comryanmjacobscarchiverefstagsv0.14.tar.gz"
+  homepage "https://github.com/ryanmjacobs/c"
+  url "https://ghfast.top/https://github.com/ryanmjacobs/c/archive/refs/tags/v0.14.tar.gz"
   sha256 "2b66d79d0d5c60b8e6760dac734b8ec9a7d6a5e57f033b97086821b1985a870b"
   license "MIT"
-  head "https:github.comryanmjacobsc.git", branch: "master"
+  head "https://github.com/ryanmjacobs/c.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -18,7 +18,7 @@ class C < Formula
   end
 
   test do
-    (testpath"test.c").write("int main(void){return 0;}")
-    system bin"c", testpath"test.c"
+    (testpath/"test.c").write("int main(void){return 0;}")
+    system bin/"c", testpath/"test.c"
   end
 end

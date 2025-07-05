@@ -1,13 +1,13 @@
 class Open62541 < Formula
   desc "Open source implementation of OPC UA"
-  homepage "https:open62541.org"
-  url "https:github.comopen62541open62541archiverefstagsv1.4.12.tar.gz"
+  homepage "https://open62541.org/"
+  url "https://ghfast.top/https://github.com/open62541/open62541/archive/refs/tags/v1.4.12.tar.gz"
   sha256 "4a551ca504d49fd4c87ebe64c82bcd51307d53c982ab5a9f23dbd902b18e9521"
   license "MPL-2.0"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -36,8 +36,8 @@ class Open62541 < Formula
   end
 
   test do
-    (testpath"test.c").write <<~C
-      #include <open62541client_config_default.h>
+    (testpath/"test.c").write <<~C
+      #include <open62541/client_config_default.h>
       #include <assert.h>
 
       int main(void) {
@@ -46,7 +46,7 @@ class Open62541 < Formula
         return 0;
       }
     C
-    system ENV.cc, ".test.c", "-o", "test", "-I#{include}", "-L#{lib}", "-lopen62541"
-    system ".test"
+    system ENV.cc, "./test.c", "-o", "test", "-I#{include}", "-L#{lib}", "-lopen62541"
+    system "./test"
   end
 end

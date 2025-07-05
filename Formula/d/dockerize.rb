@@ -1,10 +1,10 @@
 class Dockerize < Formula
   desc "Utility to simplify running applications in docker containers"
-  homepage "https:github.comjwilderdockerize"
-  url "https:github.comjwilderdockerizearchiverefstagsv0.9.3.tar.gz"
+  homepage "https://github.com/jwilder/dockerize"
+  url "https://ghfast.top/https://github.com/jwilder/dockerize/archive/refs/tags/v0.9.3.tar.gz"
   sha256 "73e1d74e4548affc8491c678b35560468998462c677c8be555c2a24657b4222a"
   license "MIT"
-  head "https:github.comjwilderdockerize.git", branch: "master"
+  head "https://github.com/jwilder/dockerize.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "2d9678f32f8aa1cbb9ab471d09d55191d4c0d2a04af7888fed7512d37ae042e6"
@@ -23,7 +23,7 @@ class Dockerize < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}dockerize --version")
-    system bin"dockerize", "-wait", "https:www.google.com", "-wait-retry-interval=1s", "-timeout", "5s"
+    assert_match version.to_s, shell_output("#{bin}/dockerize --version")
+    system bin/"dockerize", "-wait", "https://www.google.com/", "-wait-retry-interval=1s", "-timeout", "5s"
   end
 end

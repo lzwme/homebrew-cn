@@ -1,7 +1,7 @@
 class Zmqpp < Formula
   desc "High-level C++ binding for zeromq"
-  homepage "https:zeromq.github.iozmqpp"
-  url "https:github.comzeromqzmqpparchiverefstags4.2.0.tar.gz"
+  homepage "https://zeromq.github.io/zmqpp/"
+  url "https://ghfast.top/https://github.com/zeromq/zmqpp/archive/refs/tags/4.2.0.tar.gz"
   sha256 "c1d4587df3562f73849d9e5f8c932ca7dcfc7d8bec31f62d7f35073ef81f4d29"
   license "MPL-2.0"
 
@@ -36,18 +36,18 @@ class Zmqpp < Formula
     system "make", "install", "PREFIX=#{prefix}"
 
     system "doxygen"
-    (doc"html").install Dir["docshtml*.html"]
+    (doc/"html").install Dir["docs/html/*.html"]
   end
 
   test do
-    (testpath"test.cpp").write <<~CPP
-      #include <zmqppzmqpp.hpp>
+    (testpath/"test.cpp").write <<~CPP
+      #include <zmqpp/zmqpp.hpp>
       int main() {
         zmqpp::frame frame;
         return 0;
       }
     CPP
     system ENV.cxx, "test.cpp", "-L#{lib}", "-lzmqpp", "-o", "test", "-std=c++11"
-    system ".test"
+    system "./test"
   end
 end

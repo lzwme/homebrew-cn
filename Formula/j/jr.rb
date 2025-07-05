@@ -1,10 +1,10 @@
 class Jr < Formula
   desc "CLI program that helps you to create quality random data for your applications"
-  homepage "https:jrnd.io"
-  url "https:github.comjrnd-iojrarchiverefstagsv0.4.0.tar.gz"
+  homepage "https://jrnd.io/"
+  url "https://ghfast.top/https://github.com/jrnd-io/jr/archive/refs/tags/v0.4.0.tar.gz"
   sha256 "ae8f8e8fecef16f2e95b69d25460ff4f4d28b112c9877eeaf37993addf18a46d"
   license "MIT"
-  head "https:github.comjrnd-iojr.git", branch: "main"
+  head "https://github.com/jrnd-io/jr.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "57e21753c12cd216a40b151e9809df074adeb66b0b2a72c488a86406d1ae4be2"
@@ -20,13 +20,13 @@ class Jr < Formula
 
   def install
     ENV.deparallelize { system "make", "all" }
-    libexec.install Dir["build*"]
-    pkgetc.install "configjrconfig.json"
+    libexec.install Dir["build/*"]
+    pkgetc.install "config/jrconfig.json"
     pkgetc.install "templates"
-    (bin"jr").write_env_script libexec"jr", JR_SYSTEM_DIR: pkgetc
+    (bin/"jr").write_env_script libexec/"jr", JR_SYSTEM_DIR: pkgetc
   end
 
   test do
-    assert_match "net_device", shell_output("#{bin}jr template list").strip
+    assert_match "net_device", shell_output("#{bin}/jr template list").strip
   end
 end

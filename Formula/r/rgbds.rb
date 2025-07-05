@@ -1,10 +1,10 @@
 class Rgbds < Formula
   desc "Rednex GameBoy Development System"
-  homepage "https:rgbds.gbdev.io"
-  url "https:github.comgbdevrgbdsarchiverefstagsv0.9.3.tar.gz"
+  homepage "https://rgbds.gbdev.io"
+  url "https://ghfast.top/https://github.com/gbdev/rgbds/archive/refs/tags/v0.9.3.tar.gz"
   sha256 "e4db822494e438f4a3619a0043280fec5a16596ac1dc7756e7c8bf1c57ab0376"
   license "MIT"
-  head "https:github.comgbdevrgbds.git", branch: "master"
+  head "https://github.com/gbdev/rgbds.git", branch: "master"
 
   livecheck do
     url :stable
@@ -28,7 +28,7 @@ class Rgbds < Formula
   depends_on "libpng"
 
   resource "rgbobj" do
-    url "https:github.comgbdevrgbobjarchiverefstagsv0.5.0.tar.gz"
+    url "https://ghfast.top/https://github.com/gbdev/rgbobj/archive/refs/tags/v0.5.0.tar.gz"
     sha256 "c05cf86445a4bcf8718389fbe6feeaa6091b9f500ddc746a589cdeb60c7c5519"
   end
 
@@ -40,21 +40,21 @@ class Rgbds < Formula
       system "cargo", "install", *std_cargo_args
       man1.install "rgbobj.1"
     end
-    zsh_completion.install Dir["contribzsh_compl_*"]
-    bash_completion.install Dir["contribbash_compl_*"]
+    zsh_completion.install Dir["contrib/zsh_compl/_*"]
+    bash_completion.install Dir["contrib/bash_compl/_*"]
   end
 
   test do
-    # Based on https:github.comgbdevrgbdsblobHEADtestasmassert-const.asm
-    (testpath"source.asm").write <<~ASM
+    # Based on https://github.com/gbdev/rgbds/blob/HEAD/test/asm/assert-const.asm
+    (testpath/"source.asm").write <<~ASM
       SECTION "rgbasm passing asserts", ROM0[0]
       Label:
         db 0
         assert @
     ASM
-    system bin"rgbasm", "-o", "output.o", "source.asm"
-    system bin"rgbobj", "-A", "-s", "data", "-p", "data", "output.o"
-    system bin"rgbgfx", test_fixtures("test.png"), "-o", testpath"test.2bpp"
-    assert_path_exists testpath"test.2bpp"
+    system bin/"rgbasm", "-o", "output.o", "source.asm"
+    system bin/"rgbobj", "-A", "-s", "data", "-p", "data", "output.o"
+    system bin/"rgbgfx", test_fixtures("test.png"), "-o", testpath/"test.2bpp"
+    assert_path_exists testpath/"test.2bpp"
   end
 end

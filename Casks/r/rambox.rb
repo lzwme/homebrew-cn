@@ -2,11 +2,11 @@ cask "rambox" do
   version "2.4.1"
   sha256 "b54c7a650e94eb80961bf1b1f476a12e0519f037a3181f73a6a7c4227751ff90"
 
-  url "https:github.comramboxappdownloadreleasesdownloadv#{version}Rambox-#{version}-mac.zip",
-      verified: "github.comramboxappdownload"
+  url "https://ghfast.top/https://github.com/ramboxapp/download/releases/download/v#{version}/Rambox-#{version}-mac.zip",
+      verified: "github.com/ramboxapp/download/"
   name "Rambox"
   desc "Workspace simplifier - to organize your workspace and boost your productivity"
-  homepage "https:rambox.app"
+  homepage "https://rambox.app/"
 
   no_autobump! because: :requires_manual_review
 
@@ -16,20 +16,20 @@ cask "rambox" do
   app "Rambox.app"
 
   zap trash: [
-    "~LibraryApplication SupportCrashReporterRambox Helper_*.plist",
-    "~LibraryApplication SupportCrashReporterRambox_*.plist",
-    "~LibraryApplication SupportRambox",
-    "~LibraryCachescom.grupovrs.ramboxce",
-    "~LibraryCachescom.grupovrs.ramboxce.ShipIt",
-    "~LibraryCachescom.saenzramiro.rambox",
-    "~LibraryLogsRambox",
-    "~LibraryPreferencesByHostcom.grupovrs.ramboxce.ShipIt.*.plist",
-    "~LibraryPreferencescom.grupovrs.ramboxce.helper.plist",
-    "~LibraryPreferencescom.grupovrs.ramboxce.plist",
-    "~LibraryPreferencescom.saenzramiro.rambox.helper.plist",
-    "~LibraryPreferencescom.saenzramiro.rambox.plist",
-    "~LibrarySaved Application Statecom.grupovrs.ramboxce.savedState",
-    "~LibrarySaved Application Statecom.saenzramiro.rambox.savedState",
-    "~LibraryWebKitcom.saenzramiro.rambox",
+    "~/Library/Application Support/CrashReporter/Rambox Helper_*.plist",
+    "~/Library/Application Support/CrashReporter/Rambox_*.plist",
+    "~/Library/Application Support/Rambox",
+    "~/Library/Caches/com.grupovrs.ramboxce",
+    "~/Library/Caches/com.grupovrs.ramboxce.ShipIt",
+    "~/Library/Caches/com.saenzramiro.rambox",
+    "~/Library/Logs/Rambox",
+    "~/Library/Preferences/ByHost/com.grupovrs.ramboxce.ShipIt.*.plist",
+    "~/Library/Preferences/com.grupovrs.ramboxce.helper.plist",
+    "~/Library/Preferences/com.grupovrs.ramboxce.plist",
+    "~/Library/Preferences/com.saenzramiro.rambox.helper.plist",
+    "~/Library/Preferences/com.saenzramiro.rambox.plist",
+    "~/Library/Saved Application State/com.grupovrs.ramboxce.savedState",
+    "~/Library/Saved Application State/com.saenzramiro.rambox.savedState",
+    "~/Library/WebKit/com.saenzramiro.rambox",
   ]
 end

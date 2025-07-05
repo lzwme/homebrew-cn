@@ -1,19 +1,19 @@
 class CargoShear < Formula
   desc "Detect and remove unused dependencies from `Cargo.toml` in Rust projects"
-  homepage "https:github.comBoshencargo-shear"
-  url "https:github.comBoshencargo-sheararchiverefstagsv1.3.2.tar.gz"
-  sha256 "9e046a6dbc6eeda3ba58e9c733d5cbdc0a7dafab212786beb0b47534d8673f3c"
+  homepage "https://github.com/Boshen/cargo-shear"
+  url "https://ghfast.top/https://github.com/Boshen/cargo-shear/archive/refs/tags/v1.3.3.tar.gz"
+  sha256 "272d9cd73467186066c70f17132ab3cb15d7dace00404d849dde4ae3bf3ced2b"
   license "MIT"
-  head "https:github.comBoshencargo-shear.git", branch: "main"
+  head "https://github.com/Boshen/cargo-shear.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "acb39e07b16d14f86542190d354f755d23343aafa13574c55aace0ba6ff31a23"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "05640ec57528a7c4b1815fdeb3c54cdcb0f98359a7985734f77cd72249af83d1"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "c25e653a2bc5d6777eee13a25d1221ce5b449e801a9f817505015c2a93715d98"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d25ec180b3628087b334e2a6895de38b7342386be66390a0633a51dcd0cb4b8d"
-    sha256 cellar: :any_skip_relocation, ventura:       "235dcfc515c7c5e59f4740bb7a0d56a1894f91071d5859389906aa0f19306cc9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "904ee4dc83bb00c1099e68d1e519fa73091e072591ba83de47d9eeca0e9716ff"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dab866d24948b6d2a4e91480208e963b7a43a7f225f51acbcdb714139dc6113b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cf7680321c816ac8f154300c1a34be9d27b86e5a1a1911369b632ad93762b228"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "de1e1594d1406c226ca884801c0898eac60f9a61dd679cdb9c00db5249a9c7c8"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "f4fdb371f918d671604321e68a6cc9ae7d8cfbe5d28d4659f04429954a3b82d1"
+    sha256 cellar: :any_skip_relocation, sonoma:        "37b85f9882030d2afba770993ccb72b4489267fe7a7638ad5078211525b3f960"
+    sha256 cellar: :any_skip_relocation, ventura:       "c310094793d4cea2bb95c2239cce639a15db79bed4c8ebc18cdc399ef774fa0b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8905d9fe9db87351f9621ff525100c4f2be9c5e74389500ca620b848d7ea0e14"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "359988d549ecd834872ed78232e966e29e303069191e684f1069a16953d23f1f"
   end
 
   depends_on "rust" => :build
@@ -25,14 +25,14 @@ class CargoShear < Formula
 
   test do
     # Show that we can use a different toolchain than the one provided by the `rust` formula.
-    # https:github.comHomebrewhomebrew-corepull134074#pullrequestreview-1484979359
+    # https://github.com/Homebrew/homebrew-core/pull/134074#pullrequestreview-1484979359
     ENV.prepend_path "PATH", Formula["rustup"].bin
     system "rustup", "set", "profile", "minimal"
     system "rustup", "default", "beta"
 
-    crate = testpath"demo-crate"
+    crate = testpath/"demo-crate"
     mkdir crate do
-      (crate"Cargo.toml").write <<~TOML
+      (crate/"Cargo.toml").write <<~TOML
         [package]
         name = "demo-crate"
         version = "0.1.0"
@@ -45,7 +45,7 @@ class CargoShear < Formula
         bear = "0.2"
       TOML
 
-      (crate"lib.rs").write "use libc;"
+      (crate/"lib.rs").write "use libc;"
 
       output = shell_output("cargo shear", 1)
       # bear is unused

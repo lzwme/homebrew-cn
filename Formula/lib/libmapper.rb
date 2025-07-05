@@ -1,7 +1,7 @@
 class Libmapper < Formula
   desc "Distributed system for media control mapping"
-  homepage "http:www.libmapper.org"
-  url "https:github.comlibmapperlibmapperreleasesdownload2.4.13libmapper-2.4.13.tar.gz"
+  homepage "http://www.libmapper.org"
+  url "https://ghfast.top/https://github.com/libmapper/libmapper/releases/download/2.4.13/libmapper-2.4.13.tar.gz"
   sha256 "63ac6dd0ab5d17a9ec16f700665a6593a13667dd9fbc0f06df7f2f26d427defa"
   license "LGPL-2.1-or-later"
 
@@ -24,20 +24,20 @@ class Libmapper < Formula
   uses_from_macos "zlib"
 
   def install
-    system ".configure", *std_configure_args
+    system "./configure", *std_configure_args
     system "make", "install"
   end
 
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include <stdio.h>
-      #include "mappermapper.h"
+      #include "mapper/mapper.h"
       int main() {
         printf("%s", mpr_get_version());
         return 0;
       }
     C
     system ENV.cc, "test.c", "-L#{lib}", "-lmapper", "-o", "test"
-    assert_match version.to_s, shell_output(".test")
+    assert_match version.to_s, shell_output("./test")
   end
 end

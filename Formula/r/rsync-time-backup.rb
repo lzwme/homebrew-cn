@@ -1,10 +1,10 @@
 class RsyncTimeBackup < Formula
   desc "Time Machine-style backup for the terminal using rsync"
-  homepage "https:github.comlaurent22rsync-time-backup"
-  url "https:github.comlaurent22rsync-time-backuparchiverefstagsv1.1.5.tar.gz"
+  homepage "https://github.com/laurent22/rsync-time-backup"
+  url "https://ghfast.top/https://github.com/laurent22/rsync-time-backup/archive/refs/tags/v1.1.5.tar.gz"
   sha256 "567f42ddf2c365273252f15580bb64aa3b3a8abb4a375269aea9cf0278510657"
   license "MIT"
-  head "https:github.comlaurent22rsync-time-backup.git", branch: "master"
+  head "https://github.com/laurent22/rsync-time-backup.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -18,7 +18,7 @@ class RsyncTimeBackup < Formula
   end
 
   test do
-    output = shell_output("#{bin}rsync_tmbackup.sh --rsync-get-flags")
+    output = shell_output("#{bin}/rsync_tmbackup.sh --rsync-get-flags")
     assert_match "--times --recursive", output
   end
 end

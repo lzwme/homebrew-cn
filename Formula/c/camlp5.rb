@@ -1,14 +1,14 @@
 class Camlp5 < Formula
   desc "Preprocessor and pretty-printer for OCaml"
-  homepage "https:camlp5.github.io"
-  url "https:github.comcamlp5camlp5archiverefstags8.03.01.tar.gz"
+  homepage "https://camlp5.github.io/"
+  url "https://ghfast.top/https://github.com/camlp5/camlp5/archive/refs/tags/8.03.01.tar.gz"
   sha256 "057b8e06590cf29a1bd22b6c83aa5daa816d5cbb2ba2548409d474d7dc10c5b8"
   license "BSD-3-Clause"
-  head "https:github.comcamlp5camlp5.git", branch: "master"
+  head "https://github.com/camlp5/camlp5.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(^(?:rel[._-]?)?v?(\d+(?:\.\d+)+)$i)
+    regex(/^(?:rel[._-]?)?v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -29,30 +29,30 @@ class Camlp5 < Formula
   uses_from_macos "m4" => :build
 
   def install
-    opamroot = buildpath".opam"
+    opamroot = buildpath/".opam"
     ENV["OPAMROOT"] = opamroot
     ENV["OPAMYES"] = "1"
 
     system "opam", "init", "--no-setup", "--disable-sandboxing"
     system "opam", "exec", "--", "opam", "install", ".", "--deps-only", "-y", "--no-depexts"
 
-    system ".configure", "--prefix", prefix, "--mandir", man
+    system "./configure", "--prefix", prefix, "--mandir", man
     system "opam", "exec", "--", "make", "world.opt"
     system "opam", "exec", "--", "make", "install"
-    (lib"ocamlcamlp5").install "etcMETA"
+    (lib/"ocaml/camlp5").install "etc/META"
   end
 
   test do
     ocaml = Formula["ocaml"]
-    (testpath"hi.ml").write "print_endline \"Hi!\";;"
+    (testpath/"hi.ml").write "print_endline \"Hi!\";;"
     assert_equal "let _ = print_endline \"Hi!\"",
       # The purpose of linking with the file "str.cma" is to ensure that the
       # ocaml files are in sync with the camlp5 files.  If camlp5 has been
       # compiled with an older version of the ocaml compiler, then an error
       # "interface mismatch" will occur.
-      shell_output("#{bin}camlp5 #{lib}ocamlcamlp5pa_o.cmo " \
-                   "#{lib}ocamlcamlp5o_keywords.cmo " \
-                   "#{lib}ocamlcamlp5pr_o.cmo " \
-                   "#{ocaml.opt_lib}ocamlstrstr.cma hi.ml")
+      shell_output("#{bin}/camlp5 #{lib}/ocaml/camlp5/pa_o.cmo " \
+                   "#{lib}/ocaml/camlp5/o_keywords.cmo " \
+                   "#{lib}/ocaml/camlp5/pr_o.cmo " \
+                   "#{ocaml.opt_lib}/ocaml/str/str.cma hi.ml")
   end
 end

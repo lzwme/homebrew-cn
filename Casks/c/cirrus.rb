@@ -2,16 +2,16 @@ cask "cirrus" do
   version "1.16,2025.06"
   sha256 "bcdeeaaf734fa9359336f65033d81a51bf405a91b431fe7f33d7626d1ad46ccf"
 
-  url "https:eclecticlight.cowp-contentuploads#{version.csv.second.major}#{version.csv.second.minor}cirrus#{version.csv.first.no_dots}.zip"
+  url "https://eclecticlight.co/wp-content/uploads/#{version.csv.second.major}/#{version.csv.second.minor}/cirrus#{version.csv.first.no_dots}.zip"
   name "Cirrus"
   desc "Inspector for iCloud Drive folders"
-  homepage "https:eclecticlight.cocirrus-bailiff"
+  homepage "https://eclecticlight.co/cirrus-bailiff/"
 
   livecheck do
-    url "https:raw.githubusercontent.comhoakleyelcupdatesmastereclecticapps.plist"
-    regex(%r{(\d+)(\d+)[^]+?$}i)
+    url "https://ghfast.top/https://raw.githubusercontent.com/hoakleyelc/updates/master/eclecticapps.plist"
+    regex(%r{/(\d+)/(\d+)/[^/]+?$}i)
     strategy :xml do |xml, regex|
-      item = xml.elements["dict[key[text()='AppName']following-sibling::*[1][text()='Cirrus']]"]
+      item = xml.elements["//dict[key[text()='AppName']/following-sibling::*[1][text()='Cirrus']]"]
       next unless item
 
       version = item.elements["key[text()='Version']"]&.next_element&.text
@@ -27,13 +27,13 @@ cask "cirrus" do
 
   depends_on macos: ">= :big_sur"
 
-  app "cirrus#{version.csv.first.major}#{version.csv.first.minor}Cirrus.app"
+  app "cirrus#{version.csv.first.major}#{version.csv.first.minor}/Cirrus.app"
 
   zap trash: [
-    "~LibraryApplication Supportcom.apple.sharedfilelistcom.apple.LSSharedFileList.ApplicationRecentDocumentsco.eclecticlight.cirrusmac.sfl*",
-    "~LibraryCachesco.eclecticlight.CirrusMac",
-    "~LibraryHTTPStoragesco.eclecticlight.CirrusMac",
-    "~LibraryPreferencesco.eclecticlight.CirrusMac.plist",
-    "~LibrarySaved Application Stateco.eclecticlight.CirrusMac.savedState",
+    "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/co.eclecticlight.cirrusmac.sfl*",
+    "~/Library/Caches/co.eclecticlight.CirrusMac",
+    "~/Library/HTTPStorages/co.eclecticlight.CirrusMac",
+    "~/Library/Preferences/co.eclecticlight.CirrusMac.plist",
+    "~/Library/Saved Application State/co.eclecticlight.CirrusMac.savedState",
   ]
 end

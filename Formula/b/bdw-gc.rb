@@ -1,10 +1,10 @@
 class BdwGc < Formula
   desc "Garbage collector for C and C++"
-  homepage "https:www.hboehm.infogc"
-  url "https:github.comivmaibdwgcreleasesdownloadv8.2.8gc-8.2.8.tar.gz"
+  homepage "https://www.hboehm.info/gc/"
+  url "https://ghfast.top/https://github.com/ivmai/bdwgc/releases/download/v8.2.8/gc-8.2.8.tar.gz"
   sha256 "7649020621cb26325e1fb5c8742590d92fb48ce5c259b502faf7d9fb5dabb160"
   license "MIT"
-  head "https:github.comivmaibdwgc.git", branch: "master"
+  head "https://github.com/ivmai/bdwgc.git", branch: "master"
 
   livecheck do
     url :stable
@@ -51,11 +51,11 @@ class BdwGc < Formula
 
     system "cmake", "-S", ".", "-B", "build-static", "-DBUILD_SHARED_LIBS=OFF", *args, *std_cmake_args
     system "cmake", "--build", "build-static"
-    lib.install buildpath.glob("build-static*.a")
+    lib.install buildpath.glob("build-static/*.a")
   end
 
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include <assert.h>
       #include <stdio.h>
       #include "gc.h"
@@ -77,6 +77,6 @@ class BdwGc < Formula
     C
 
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lgc", "-o", "test"
-    system ".test"
+    system "./test"
   end
 end

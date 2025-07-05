@@ -1,10 +1,10 @@
 class Lemmeknow < Formula
   desc "Fastest way to identify anything!"
-  homepage "https:github.comswanandxlemmeknow"
-  url "https:github.comswanandxlemmeknowarchiverefstagsv0.8.0.tar.gz"
+  homepage "https://github.com/swanandx/lemmeknow"
+  url "https://ghfast.top/https://github.com/swanandx/lemmeknow/archive/refs/tags/v0.8.0.tar.gz"
   sha256 "46f42e80cf2c142641fc52826bcf73e00e26dbb93f20397a282e04b786a7cfe8"
   license "MIT"
-  head "https:github.comswanandxlemmeknow.git", branch: "main"
+  head "https://github.com/swanandx/lemmeknow.git", branch: "main"
 
   no_autobump! because: :requires_manual_review
 
@@ -29,6 +29,6 @@ class Lemmeknow < Formula
   end
 
   test do
-    assert_match "Internet Protocol (IP)", shell_output("#{bin}lemmeknow 127.0.0.1").strip
+    assert_match "Internet Protocol (IP)", shell_output("#{bin}/lemmeknow 127.0.0.1").strip
   end
 end

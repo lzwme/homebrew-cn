@@ -1,7 +1,7 @@
 class Rolldice < Formula
   desc "Rolls an amount of virtual dice"
-  homepage "https:github.comsstricklrolldice"
-  url "https:github.comsstricklrolldicearchiverefstagsv1.16.tar.gz"
+  homepage "https://github.com/sstrickl/rolldice"
+  url "https://ghfast.top/https://github.com/sstrickl/rolldice/archive/refs/tags/v1.16.tar.gz"
   sha256 "8bc82b26c418453ef0fe79b43a094641e7a76dae406032423a2f0fb270930775"
   license "GPL-2.0-only"
 
@@ -30,10 +30,10 @@ class Rolldice < Formula
     depends_on "readline"
   end
 
-  # Submitted upstream at https:github.comsstricklrolldicepull25
+  # Submitted upstream at https://github.com/sstrickl/rolldice/pull/25
   # Remove if merged and included in a tagged release
   patch do
-    url "https:github.comsstricklrolldicecommit5e53bade81d0fc972857889c1b690dcd830b439b.patch?full_index=1"
+    url "https://github.com/sstrickl/rolldice/commit/5e53bade81d0fc972857889c1b690dcd830b439b.patch?full_index=1"
     sha256 "133214dcc8c8d8e4620205273c6c932cc0674e11717bf4b2fa432a205e825cc5"
   end
 
@@ -44,6 +44,6 @@ class Rolldice < Formula
   end
 
   test do
-    assert_match "Roll #1", shell_output("#{bin}rolldice -s 1x2d6")
+    assert_match "Roll #1", shell_output("#{bin}/rolldice -s 1x2d6")
   end
 end

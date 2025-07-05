@@ -1,13 +1,13 @@
 class AzureCoreCpp < Formula
   desc "Primitives, abstractions and helpers for Azure SDK client libraries"
-  homepage "https:github.comAzureazure-sdk-for-cpptreemainsdkcoreazure-core"
-  url "https:github.comAzureazure-sdk-for-cpparchiverefstagsazure-core_1.15.0.tar.gz"
+  homepage "https://github.com/Azure/azure-sdk-for-cpp/tree/main/sdk/core/azure-core"
+  url "https://ghfast.top/https://github.com/Azure/azure-sdk-for-cpp/archive/refs/tags/azure-core_1.15.0.tar.gz"
   sha256 "f13b41b1cf5ae8618909b2d30387cc83d9bbbf8fb7746e9d35196a524efcd3d9"
   license "MIT"
 
   livecheck do
     url :stable
-    regex(^azure-core[._-]v?(\d+(?:\.\d+)+)$i)
+    regex(/^azure-core[._-]v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -27,16 +27,16 @@ class AzureCoreCpp < Formula
 
   def install
     ENV["AZURE_SDK_DISABLE_AUTO_VCPKG"] = "1"
-    system "cmake", "-S", "sdkcoreazure-core", "-B", "build", "-DBUILD_SHARED_LIBS=ON", *std_cmake_args
+    system "cmake", "-S", "sdk/core/azure-core", "-B", "build", "-DBUILD_SHARED_LIBS=ON", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end
 
   test do
-    # From https:github.comAzureazure-sdk-for-cppblobmainsdkcoreazure-coretestutdatetime_test.cpp
-    (testpath"test.cpp").write <<~CPP
+    # From https://github.com/Azure/azure-sdk-for-cpp/blob/main/sdk/core/azure-core/test/ut/datetime_test.cpp
+    (testpath/"test.cpp").write <<~CPP
       #include <cassert>
-      #include <azurecoredatetime.hpp>
+      #include <azure/core/datetime.hpp>
 
       int main() {
         auto dt1 = Azure::DateTime::Parse("20130517T00:00:00Z", Azure::DateTime::DateFormat::Rfc3339);
@@ -47,6 +47,6 @@ class AzureCoreCpp < Formula
       }
     CPP
     system ENV.cxx, "-std=c++14", "test.cpp", "-o", "test", "-L#{lib}", "-lazure-core"
-    system ".test"
+    system "./test"
   end
 end

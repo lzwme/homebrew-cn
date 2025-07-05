@@ -1,9 +1,9 @@
 class Px < Formula
   include Language::Python::Virtualenv
 
-  desc "Ps and top for human beings (px  ptop)"
-  homepage "https:github.comwallespx"
-  url "https:github.comwallespx.git",
+  desc "Ps and top for human beings (px / ptop)"
+  homepage "https://github.com/walles/px"
+  url "https://github.com/walles/px.git",
       tag:      "3.6.12",
       revision: "922a9038272661371bce15b1d13c47bc84926845"
   license "MIT"
@@ -30,13 +30,13 @@ class Px < Formula
   def install
     virtualenv_install_with_resources
 
-    man1.install Dir["doc*.1"]
+    man1.install Dir["doc/*.1"]
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}px --version")
+    assert_match version.to_s, shell_output("#{bin}/px --version")
 
-    split_first_line = pipe_output("#{bin}px --no-pager").lines.first.split
+    split_first_line = pipe_output("#{bin}/px --no-pager").lines.first.split
     assert_equal %w[PID COMMAND USERNAME CPU CPUTIME RAM COMMANDLINE], split_first_line
   end
 end

@@ -1,7 +1,7 @@
 class Nikto < Formula
   desc "Web server scanner"
-  homepage "https:cirt.netnikto2"
-  url "https:github.comsulloniktoarchiverefstags2.5.0.tar.gz"
+  homepage "https://cirt.net/nikto2"
+  url "https://ghfast.top/https://github.com/sullo/nikto/archive/refs/tags/2.5.0.tar.gz"
   sha256 "fb0dc4b2bc92cb31f8069f64ea4d47295bcd11067a7184da955743de7d97709d"
   license "GPL-2.0-only"
 
@@ -21,32 +21,32 @@ class Nikto < Formula
 
   def install
     cd "program" do
-      inreplace "nikto.pl", "etcnikto.conf", "#{etc}nikto.conf"
+      inreplace "nikto.pl", "/etc/nikto.conf", "#{etc}/nikto.conf"
 
       inreplace "nikto.conf.default" do |s|
-        s.gsub! "# EXECDIR=optnikto", "EXECDIR=#{prefix}"
-        s.gsub! "# PLUGINDIR=optniktoplugins",
-                "PLUGINDIR=#{pkgshare}plugins"
-        s.gsub! "# DBDIR=optniktodatabases",
-                "DBDIR=#{var}libniktodatabases"
-        s.gsub! "# TEMPLATEDIR=optniktotemplates",
-                "TEMPLATEDIR=#{pkgshare}templates"
-        s.gsub! "# DOCDIR=optniktodocs", "DOCDIR=#{pkgshare}docs"
+        s.gsub! "# EXECDIR=/opt/nikto", "EXECDIR=#{prefix}"
+        s.gsub! "# PLUGINDIR=/opt/nikto/plugins",
+                "PLUGINDIR=#{pkgshare}/plugins"
+        s.gsub! "# DBDIR=/opt/nikto/databases",
+                "DBDIR=#{var}/lib/nikto/databases"
+        s.gsub! "# TEMPLATEDIR=/opt/nikto/templates",
+                "TEMPLATEDIR=#{pkgshare}/templates"
+        s.gsub! "# DOCDIR=/opt/nikto/docs", "DOCDIR=#{pkgshare}/docs"
       end
 
       bin.install "nikto.pl" => "nikto"
       bin.install "replay.pl"
       etc.install "nikto.conf.default" => "nikto.conf"
-      man1.install "docsnikto.1"
+      man1.install "docs/nikto.1"
       pkgshare.install "docs", "plugins", "templates"
     end
 
-    doc.install Dir["documentation*"]
-    (var"libniktodatabases").mkpath
-    cp_r Dir["programdatabases*"], var"libniktodatabases"
+    doc.install Dir["documentation/*"]
+    (var/"lib/nikto/databases").mkpath
+    cp_r Dir["program/databases/*"], var/"lib/nikto/databases"
   end
 
   test do
-    system bin"nikto", "-H"
+    system bin/"nikto", "-H"
   end
 end

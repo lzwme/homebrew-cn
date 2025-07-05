@@ -2,9 +2,9 @@ cask "transmission-remote-gui" do
   version "5.18.0"
   sha256 "fe32f0cdd5c8f9777bace0eceb92d6b269a2b20210f4cc0552112861ddead759"
 
-  url "https:github.comtransmission-remote-guitransguireleasesdownloadv#{version}transgui-#{version}.dmg"
+  url "https://ghfast.top/https://github.com/transmission-remote-gui/transgui/releases/download/v#{version}/transgui-#{version}.dmg"
   name "Transmission Remote GUI"
-  homepage "https:github.comtransmission-remote-guitransgui"
+  homepage "https://github.com/transmission-remote-gui/transgui"
 
   no_autobump! because: :requires_manual_review
 
@@ -13,9 +13,9 @@ cask "transmission-remote-gui" do
   uninstall quit: "com.transgui"
 
   zap trash: [
-    "~.configTransmission Remote GUI",
-    "~LibraryPreferencescom.transgui.plist",
-    "~LibrarySaved Application Statecom.transgui.savedState",
+    "~/.config/Transmission Remote GUI/",
+    "~/Library/Preferences/com.transgui.plist",
+    "~/Library/Saved Application State/com.transgui.savedState",
   ]
 
   caveats do

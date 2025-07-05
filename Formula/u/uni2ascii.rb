@@ -1,13 +1,13 @@
 class Uni2ascii < Formula
   desc "Bi-directional conversion between UTF-8 and various ASCII flavors"
-  homepage "https:billposer.orgSoftwareuni2ascii.html"
-  url "http:billposer.orgSoftwareDownloadsuni2ascii-4.20.tar.bz2"
+  homepage "https://billposer.org/Software/uni2ascii.html"
+  url "http://billposer.org/Software/Downloads/uni2ascii-4.20.tar.bz2"
   sha256 "0c5002f54b262d937ba3a8249dd3148791a3f6ec383d80ec479ae60ee0de681a"
   license "GPL-3.0-only"
 
   livecheck do
     url :homepage
-    regex(href=.*?uni2ascii[._-]v?(\d+(?:\.\d+)+)\.ti)
+    regex(/href=.*?uni2ascii[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   bottle do
@@ -28,7 +28,7 @@ class Uni2ascii < Formula
 
   # notified upstream about this patch
   patch do
-    url "https:raw.githubusercontent.comHomebrewformula-patchesbb92449ad6b3878b4d6f472237152df28080df86uni2asciiuni2ascii-4.20.patch"
+    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/bb92449ad6b3878b4d6f472237152df28080df86/uni2ascii/uni2ascii-4.20.patch"
     sha256 "250a529eda136d0edf9e63b92a6fe95f4ef5dfad3f94e6fd8d877138ada857f8"
   end
 
@@ -42,15 +42,15 @@ class Uni2ascii < Formula
 
     ENV["MKDIRPROG"]="mkdir -p"
 
-    system ".configure", *std_configure_args.reject { |s| s["--disable-debug"] }
+    system "./configure", *std_configure_args.reject { |s| s["--disable-debug"] }
     system "make", "install"
   end
 
   test do
     # uni2ascii
-    assert_equal "0x00E9", pipe_output("#{bin}uni2ascii -q", "é")
+    assert_equal "0x00E9", pipe_output("#{bin}/uni2ascii -q", "é")
 
     # ascii2uni
-    assert_equal "e\n", pipe_output("#{bin}ascii2uni -q", "0x65")
+    assert_equal "e\n", pipe_output("#{bin}/ascii2uni -q", "0x65")
   end
 end

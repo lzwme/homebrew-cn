@@ -1,13 +1,13 @@
 class Clp < Formula
   desc "Linear programming solver"
-  homepage "https:github.comcoin-orClp"
-  url "https:github.comcoin-orClparchiverefstagsreleases1.17.10.tar.gz"
+  homepage "https://github.com/coin-or/Clp"
+  url "https://ghfast.top/https://github.com/coin-or/Clp/archive/refs/tags/releases/1.17.10.tar.gz"
   sha256 "0d79ece896cdaa4a3855c37f1c28e6c26285f74d45f635046ca0b6d68a509885"
   license "EPL-2.0"
 
   livecheck do
     url :stable
-    regex(%r{^(?:releases)?v?(\d+(?:\.\d+)+)$}i)
+    regex(%r{^(?:releases/)?v?(\d+(?:\.\d+)+)$}i)
   end
 
   bottle do
@@ -28,36 +28,36 @@ class Clp < Formula
   depends_on "osi"
 
   resource "coin-or-tools-data-sample-p0033-mps" do
-    url "https:raw.githubusercontent.comcoin-or-toolsData-Samplereleases1.2.12p0033.mps"
+    url "https://ghfast.top/https://raw.githubusercontent.com/coin-or-tools/Data-Sample/releases/1.2.12/p0033.mps"
     sha256 "8ccff819023237c79ef32e238a5da9348725ce9a4425d48888baf3a0b3b42628"
   end
 
   def install
-    # Work around https:github.comcoin-orClpissues109:
-    # Error 1: "mkdir: #{include}clpcoin: File exists."
-    mkdir include"clpcoin"
+    # Work around https://github.com/coin-or/Clp/issues/109:
+    # Error 1: "mkdir: #{include}/clp/coin: File exists."
+    mkdir include/"clp/coin"
 
     args = [
       "--datadir=#{pkgshare}",
       "--disable-silent-rules",
-      "--includedir=#{include}clp",
+      "--includedir=#{include}/clp",
       "--with-blas-incdir=#{Formula["openblas"].opt_include}",
       "--with-blas-lib=-L#{Formula["openblas"].opt_lib} -lopenblas",
       "--with-lapack-incdir=#{Formula["openblas"].opt_include}",
       "--with-lapack-lib=-L#{Formula["openblas"].opt_lib} -lopenblas",
     ]
-    system ".configure", *args, *std_configure_args
+    system "./configure", *args, *std_configure_args
     system "make", "install"
   end
 
   test do
     resource("coin-or-tools-data-sample-p0033-mps").stage testpath
-    system bin"clp", "-import", testpath"p0033.mps", "-primals"
-    (testpath"test.cpp").write <<~CPP
+    system bin/"clp", "-import", testpath/"p0033.mps", "-primals"
+    (testpath/"test.cpp").write <<~CPP
       #include <ClpSimplex.hpp>
       int main() {
         ClpSimplex model;
-        int status = model.readMps("#{testpath}p0033.mps", true);
+        int status = model.readMps("#{testpath}/p0033.mps", true);
         if (status != 0) { return status; }
         status = model.primal();
         return status;
@@ -65,6 +65,6 @@ class Clp < Formula
     CPP
     pkg_config_flags = shell_output("pkg-config --cflags --libs clp").chomp.split
     system ENV.cxx, "test.cpp", *pkg_config_flags
-    system ".a.out"
+    system "./a.out"
   end
 end

@@ -1,7 +1,7 @@
 class Sonobuoy < Formula
   desc "Kubernetes component that generates reports on cluster conformance"
-  homepage "https:sonobuoy.io"
-  url "https:github.comvmware-tanzusonobuoyarchiverefstagsv0.57.3.tar.gz"
+  homepage "https://sonobuoy.io/"
+  url "https://ghfast.top/https://github.com/vmware-tanzu/sonobuoy/archive/refs/tags/v0.57.3.tar.gz"
   sha256 "d581032898c17f1df6db90e85aae8dae6429e8cd2a1b54e1728ddeaa7d9a989c"
   license "Apache-2.0"
 
@@ -17,18 +17,18 @@ class Sonobuoy < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = "-s -w -X github.comvmware-tanzusonobuoypkgbuildinfo.Version=v#{version}"
+    ldflags = "-s -w -X github.com/vmware-tanzu/sonobuoy/pkg/buildinfo.Version=v#{version}"
     system "go", "build", *std_go_args(ldflags:)
 
-    generate_completions_from_executable(bin"sonobuoy", "completion")
+    generate_completions_from_executable(bin/"sonobuoy", "completion")
   end
 
   test do
     assert_match "Sonobuoy is a Kubernetes component that generates reports on cluster conformance",
-      shell_output("#{bin}sonobuoy 2>&1")
+      shell_output("#{bin}/sonobuoy 2>&1")
     assert_match version.to_s,
-      shell_output("#{bin}sonobuoy version 2>&1")
+      shell_output("#{bin}/sonobuoy version 2>&1")
     assert_match "name: sonobuoy",
-      shell_output("#{bin}sonobuoy gen --kubernetes-version=v1.21 2>&1")
+      shell_output("#{bin}/sonobuoy gen --kubernetes-version=v1.21 2>&1")
   end
 end

@@ -1,10 +1,10 @@
 class Bfgminer < Formula
-  desc "Modular CPUGPUASICFPGA miner written in C"
-  homepage "https:web.archive.orgweb20221230131107http:bfgminer.org"
-  url "https:web.archive.orgweb20190824104403http:bfgminer.orgfileslatestbfgminer-5.5.0.txz"
+  desc "Modular CPU/GPU/ASIC/FPGA miner written in C"
+  homepage "https://web.archive.org/web/20221230131107/http://bfgminer.org/"
+  url "https://web.archive.org/web/20190824104403/http://bfgminer.org/files/latest/bfgminer-5.5.0.txz"
   sha256 "ac254da9a40db375cb25cacdd2f84f95ffd7f442e31d2b9a7f357a48d32cc681"
   license "GPL-3.0-or-later"
-  head "https:github.comluke-jrbfgminer.git", branch: "bfgminer"
+  head "https://github.com/luke-jr/bfgminer.git", branch: "bfgminer"
 
   no_autobump! because: :requires_manual_review
 
@@ -45,13 +45,13 @@ class Bfgminer < Formula
       --enable-bitmain
       --enable-alchemist
     ]
-    args << "--with-udevrulesdir=#{lib}udev" if OS.linux?
+    args << "--with-udevrulesdir=#{lib}/udev" if OS.linux?
 
-    system ".configure", *args, *std_configure_args
+    system "./configure", *args, *std_configure_args
     system "make", "install"
   end
 
   test do
-    assert_match "Work items generated", shell_output("bash -c \"#{bin}bfgminer --benchmark 2>devnull <<< q\"")
+    assert_match "Work items generated", shell_output("bash -c \"#{bin}/bfgminer --benchmark 2>/dev/null <<< q\"")
   end
 end

@@ -1,7 +1,7 @@
 class Miniprot < Formula
   desc "Align proteins to genomes with splicing and frameshift"
-  homepage "https:lh3.github.iominiprot"
-  url "https:github.comlh3miniprotarchiverefstagsv0.17.tar.gz"
+  homepage "https://lh3.github.io/miniprot/"
+  url "https://ghfast.top/https://github.com/lh3/miniprot/archive/refs/tags/v0.17.tar.gz"
   sha256 "afdad05d18290756a7056ca7f67a91bd55d56006100653fd3dd956652206a415"
   license "MIT"
 
@@ -26,8 +26,8 @@ class Miniprot < Formula
   end
 
   test do
-    cp_r pkgshare"test.", testpath
-    output = shell_output("#{bin}miniprot DPP3-hs.gen.fa.gz DPP3-mm.pep.fa.gz 2>&1")
+    cp_r pkgshare/"test/.", testpath
+    output = shell_output("#{bin}/miniprot DPP3-hs.gen.fa.gz DPP3-mm.pep.fa.gz 2>&1")
     assert_match "mapped 1 sequences", output
   end
 end

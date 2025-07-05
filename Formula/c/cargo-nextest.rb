@@ -1,13 +1,13 @@
 class CargoNextest < Formula
   desc "Next-generation test runner for Rust"
-  homepage "https:nexte.st"
-  url "https:github.comnextest-rsnextestarchiverefstagscargo-nextest-0.9.99.tar.gz"
+  homepage "https://nexte.st"
+  url "https://ghfast.top/https://github.com/nextest-rs/nextest/archive/refs/tags/cargo-nextest-0.9.99.tar.gz"
   sha256 "3a75e2c0bbf4da7a3218c772e8a178939fbf7fea830f6edbd9d37fe023a3cbe9"
   license "Apache-2.0"
 
   livecheck do
     url :stable
-    regex(^cargo-nextest[._-]v?(\d+(?:\.\d+)+)$i)
+    regex(/^cargo-nextest[._-]v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -30,14 +30,14 @@ class CargoNextest < Formula
 
   test do
     # Show that we can use a different toolchain than the one provided by the `rust` formula.
-    # https:github.comHomebrewhomebrew-corepull134074#pullrequestreview-1484979359
+    # https://github.com/Homebrew/homebrew-core/pull/134074#pullrequestreview-1484979359
     ENV.prepend_path "PATH", Formula["rustup"].bin
     system "rustup", "set", "profile", "minimal"
     system "rustup", "default", "beta"
 
-    crate = testpath"demo-crate"
+    crate = testpath/"demo-crate"
     mkdir crate do
-      (crate"srcmain.rs").write <<~RUST
+      (crate/"src/main.rs").write <<~RUST
         #[cfg(test)]
         mod tests {
           #[test]
@@ -46,7 +46,7 @@ class CargoNextest < Formula
           }
         }
       RUST
-      (crate"Cargo.toml").write <<~TOML
+      (crate/"Cargo.toml").write <<~TOML
         [package]
         name = "demo-crate"
         version = "0.1.0"

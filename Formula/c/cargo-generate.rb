@@ -1,10 +1,10 @@
 class CargoGenerate < Formula
   desc "Use pre-existing git repositories as templates"
-  homepage "https:github.comcargo-generatecargo-generate"
-  url "https:github.comcargo-generatecargo-generatearchiverefstagsv0.23.3.tar.gz"
+  homepage "https://github.com/cargo-generate/cargo-generate"
+  url "https://ghfast.top/https://github.com/cargo-generate/cargo-generate/archive/refs/tags/v0.23.3.tar.gz"
   sha256 "c12af31c60b7ea53e138e4028a23934873e1385b311f35b46413697bdfdc4e8a"
   license any_of: ["Apache-2.0", "MIT"]
-  head "https:github.comcargo-generatecargo-generate.git", branch: "main"
+  head "https://github.com/cargo-generate/cargo-generate.git", branch: "main"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "9588d9f3bd24dda034e41947200ee436c009c6b49154fe1a6a57f0926eb539ef"
@@ -33,23 +33,23 @@ class CargoGenerate < Formula
   end
 
   test do
-    require "utilslinkage"
+    require "utils/linkage"
 
-    assert_match "No favorites defined", shell_output("#{bin}cargo-generate gen --list-favorites")
+    assert_match "No favorites defined", shell_output("#{bin}/cargo-generate gen --list-favorites")
 
-    system bin"cargo-generate", "gen", "--git", "https:github.comashleygwilliamswasm-pack-template",
+    system bin/"cargo-generate", "gen", "--git", "https://github.com/ashleygwilliams/wasm-pack-template",
                                  "--name", "brewtest"
-    assert_path_exists testpath"brewtest"
-    assert_match "brewtest", (testpath"brewtestCargo.toml").read
+    assert_path_exists testpath/"brewtest"
+    assert_match "brewtest", (testpath/"brewtest/Cargo.toml").read
 
     linked_libraries = [
-      Formula["libgit2"].opt_libshared_library("libgit2"),
-      Formula["libssh2"].opt_libshared_library("libssh2"),
-      Formula["openssl@3"].opt_libshared_library("libssl"),
+      Formula["libgit2"].opt_lib/shared_library("libgit2"),
+      Formula["libssh2"].opt_lib/shared_library("libssh2"),
+      Formula["openssl@3"].opt_lib/shared_library("libssl"),
     ]
-    linked_libraries << (Formula["openssl@3"].opt_libshared_library("libcrypto")) if OS.mac?
+    linked_libraries << (Formula["openssl@3"].opt_lib/shared_library("libcrypto")) if OS.mac?
     linked_libraries.each do |library|
-      assert Utils.binary_linked_to_library?(bin"cargo-generate", library),
+      assert Utils.binary_linked_to_library?(bin/"cargo-generate", library),
              "No linkage with #{library.basename}! Cargo is likely using a vendored version."
     end
   end

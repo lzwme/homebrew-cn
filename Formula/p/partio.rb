@@ -1,7 +1,7 @@
 class Partio < Formula
   desc "Particle library for 3D graphics"
-  homepage "https:github.comwdaspartio"
-  url "https:github.comwdaspartioarchiverefstagsv1.19.0.tar.gz"
+  homepage "https://github.com/wdas/partio"
+  url "https://ghfast.top/https://github.com/wdas/partio/archive/refs/tags/v1.19.0.tar.gz"
   sha256 "128913266a88a0939aaa4bc951ae4d4da1c380408bcc0ea9e7f526556afeaad0"
   license "BSD-3-Clause"
 
@@ -36,10 +36,10 @@ class Partio < Formula
     system "cmake", "--build", ".", "--target", "doc"
     system "cmake", "--install", "."
 
-    pkgshare.install "srcdata"
+    pkgshare.install "src/data"
   end
 
   test do
-    assert_match "Number of particles:  25", shell_output("#{bin}partinfo #{pkgshare}datascatter.bgeo")
+    assert_match "Number of particles:  25", shell_output("#{bin}/partinfo #{pkgshare}/data/scatter.bgeo")
   end
 end

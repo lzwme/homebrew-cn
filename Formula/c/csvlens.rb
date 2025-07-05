@@ -1,10 +1,10 @@
 class Csvlens < Formula
   desc "Command-line csv viewer"
-  homepage "https:github.comYS-Lcsvlens"
-  url "https:github.comYS-Lcsvlensarchiverefstagsv0.13.0.tar.gz"
+  homepage "https://github.com/YS-L/csvlens"
+  url "https://ghfast.top/https://github.com/YS-L/csvlens/archive/refs/tags/v0.13.0.tar.gz"
   sha256 "99d172e85b108242da13d51ac379e45cddd2cd79da2ec2e92edb680f78fba562"
   license "MIT"
-  head "https:github.comYS-Lcsvlens.git", branch: "main"
+  head "https://github.com/YS-L/csvlens.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "b948961570b0f7b21a22155c306bbd315b268646f07b9f890aed2e192618f173"
@@ -24,16 +24,16 @@ class Csvlens < Formula
 
   test do
     require "pty"
-    require "ioconsole"
-    (testpath"test.csv").write("A,B,C\n100,42,300")
-    PTY.spawn(bin"csvlens", "#{testpath}test.csv", "--echo-column", "B") do |r, w, _pid|
+    require "io/console"
+    (testpath/"test.csv").write("A,B,C\n100,42,300")
+    PTY.spawn(bin/"csvlens", "#{testpath}/test.csv", "--echo-column", "B") do |r, w, _pid|
       r.winsize = [10, 10]
       sleep 5
       # Select the column B by pressing enter. The answer 42 should be printed out.
       w.write "\r"
       assert r.read.end_with?("42\r\n")
     rescue Errno::EIO
-      # GNULinux raises EIO when read is done on closed pty
+      # GNU/Linux raises EIO when read is done on closed pty
     end
   end
 end

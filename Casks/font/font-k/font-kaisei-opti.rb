@@ -2,12 +2,12 @@ cask "font-kaisei-opti" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefonts.git",
-      verified:  "github.comgooglefonts",
+  url "https://github.com/google/fonts.git",
+      verified:  "github.com/google/fonts",
       branch:    "main",
-      only_path: "oflkaiseiopti"
+      only_path: "ofl/kaiseiopti"
   name "Kaisei Opti"
-  homepage "https:fonts.google.comspecimenKaisei+Opti"
+  homepage "https://fonts.google.com/specimen/Kaisei+Opti"
 
   font "KaiseiOpti-Bold.ttf"
   font "KaiseiOpti-Medium.ttf"

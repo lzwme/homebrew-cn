@@ -1,7 +1,7 @@
 class Asyncapi < Formula
   desc "All in one CLI for all AsyncAPI tools"
-  homepage "https:github.comasyncapicli"
-  url "https:registry.npmjs.org@asyncapicli-cli-3.2.0.tgz"
+  homepage "https://github.com/asyncapi/cli"
+  url "https://registry.npmjs.org/@asyncapi/cli/-/cli-3.2.0.tgz"
   sha256 "e8a9f2f2939362db86b8117ae8665ae7b4808490385d614580285900486cbd9f"
   license "Apache-2.0"
 
@@ -21,18 +21,18 @@ class Asyncapi < Formula
 
   def install
     system "npm", "install", "--ignore-scripts", *std_npm_args
-    bin.install_symlink Dir["#{libexec}bin*"]
+    bin.install_symlink Dir["#{libexec}/bin/*"]
 
     # Cleanup .pnpm folder
-    node_modules = libexec"libnode_modules@asyncapiclinode_modules"
-    rm_r (node_modules"@asyncapistudiobuildstandalonenode_modules.pnpm") if OS.linux?
+    node_modules = libexec/"lib/node_modules/@asyncapi/cli/node_modules"
+    rm_r (node_modules/"@asyncapi/studio/build/standalone/node_modules/.pnpm") if OS.linux?
 
     # Replace universal binaries with their native slices
-    deuniversalize_machos node_modules"fseventsfsevents.node"
+    deuniversalize_machos node_modules/"fsevents/fsevents.node"
   end
 
   test do
-    system bin"asyncapi", "new", "file", "--file-name=asyncapi.yml", "--example=default-example.yaml", "--no-tty"
-    assert_path_exists testpath"asyncapi.yml", "AsyncAPI file was not created"
+    system bin/"asyncapi", "new", "file", "--file-name=asyncapi.yml", "--example=default-example.yaml", "--no-tty"
+    assert_path_exists testpath/"asyncapi.yml", "AsyncAPI file was not created"
   end
 end

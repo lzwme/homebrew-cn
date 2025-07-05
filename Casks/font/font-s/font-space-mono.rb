@@ -2,14 +2,14 @@ cask "font-space-mono" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefontsspacemonoarchiverefsheadsmaster.tar.gz"
+  url "https://ghfast.top/https://github.com/googlefonts/spacemono/archive/refs/heads/master.tar.gz"
   name "Space Mono"
-  homepage "https:github.comgooglefontsspacemono"
+  homepage "https://github.com/googlefonts/spacemono"
 
-  font "spacemono-mainfontsttfSpaceMono-Bold.ttf"
-  font "spacemono-mainfontsttfSpaceMono-BoldItalic.ttf"
-  font "spacemono-mainfontsttfSpaceMono-Italic.ttf"
-  font "spacemono-mainfontsttfSpaceMono-Regular.ttf"
+  font "spacemono-main/fonts/ttf/SpaceMono-Bold.ttf"
+  font "spacemono-main/fonts/ttf/SpaceMono-BoldItalic.ttf"
+  font "spacemono-main/fonts/ttf/SpaceMono-Italic.ttf"
+  font "spacemono-main/fonts/ttf/SpaceMono-Regular.ttf"
 
   # No zap stanza required
 end

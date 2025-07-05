@@ -1,10 +1,10 @@
 class PySpy < Formula
   desc "Sampling profiler for Python programs"
-  homepage "https:github.combenfredpy-spy"
-  url "https:github.combenfredpy-spyarchiverefstagsv0.4.0.tar.gz"
+  homepage "https://github.com/benfred/py-spy"
+  url "https://ghfast.top/https://github.com/benfred/py-spy/archive/refs/tags/v0.4.0.tar.gz"
   sha256 "13a5c4b949947425670eedac05b6dd27edbc736b75f1587899efca1a7ef79ac3"
   license "MIT"
-  head "https:github.combenfredpy-spy.git", branch: "master"
+  head "https://github.com/benfred/py-spy.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "fbcd2bcf46a3f65af4dbde6a6a92eb8d59a301922b23b680225d16daffb8c0be"
@@ -25,17 +25,17 @@ class PySpy < Formula
 
   def install
     system "cargo", "install", *std_cargo_args
-    generate_completions_from_executable(bin"py-spy", "completions")
+    generate_completions_from_executable(bin/"py-spy", "completions")
   end
 
   test do
     python = "python3"
     if OS.mac?
-      output = shell_output("#{bin}py-spy record #{python} 2>&1", 1)
+      output = shell_output("#{bin}/py-spy record #{python} 2>&1", 1)
       assert_match "Try running again with elevated permissions by going", output
     else
-      output = shell_output("#{bin}py-spy record -- #{python} -c 'import time; time.sleep(1)' 2>&1")
-      assert_match(Samples: \d+ Errors: 0, output)
+      output = shell_output("#{bin}/py-spy record -- #{python} -c 'import time; time.sleep(1)' 2>&1")
+      assert_match(/Samples: \d+ Errors: 0/, output)
     end
   end
 end

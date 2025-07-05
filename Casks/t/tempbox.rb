@@ -2,11 +2,11 @@ cask "tempbox" do
   version "1.1"
   sha256 "edcd68709cd69363de8535fc3f14ed9819004aba3edea9def10b540e44383e8b"
 
-  url "https:github.comdevwaseemTempBoxreleasesdownloadv#{version}TempBox.dmg",
-      verified: "github.comdevwaseemTempBox"
+  url "https://ghfast.top/https://github.com/devwaseem/TempBox/releases/download/v#{version}/TempBox.dmg",
+      verified: "github.com/devwaseem/TempBox/"
   name "Tempbox"
   desc "Disposable email client"
-  homepage "https:tempbox.waseem.works"
+  homepage "https://tempbox.waseem.works/"
 
   no_autobump! because: :requires_manual_review
 
@@ -15,7 +15,7 @@ cask "tempbox" do
   app "TempBox.app"
 
   zap trash: [
-    "~LibraryApplication Scriptscom.waseem.TempBox",
-    "~LibraryContainerscom.waseem.TempBox",
+    "~/Library/Application Scripts/com.waseem.TempBox",
+    "~/Library/Containers/com.waseem.TempBox",
   ]
 end

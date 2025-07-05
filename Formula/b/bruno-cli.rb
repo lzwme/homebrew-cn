@@ -1,7 +1,7 @@
 class BrunoCli < Formula
   desc "CLI of the open-source IDE For exploring and testing APIs"
-  homepage "https:www.usebruno.com"
-  url "https:registry.npmjs.org@usebrunocli-cli-2.7.0.tgz"
+  homepage "https://www.usebruno.com/"
+  url "https://registry.npmjs.org/@usebruno/cli/-/cli-2.7.0.tgz"
   sha256 "9d2922c230cbd7b65481fa3ea76105c0c4ef3e477a45742237aede853b63be09"
   license "MIT"
 
@@ -19,12 +19,12 @@ class BrunoCli < Formula
 
   def install
     system "npm", "install", *std_npm_args
-    # supress `punycode` module deprecation warning, upstream issue: https:github.comusebrunobrunoissues2229
-    (bin"bru").write_env_script libexec"binbru", NODE_OPTIONS: "--no-deprecation"
+    # supress `punycode` module deprecation warning, upstream issue: https://github.com/usebruno/bruno/issues/2229
+    (bin/"bru").write_env_script libexec/"bin/bru", NODE_OPTIONS: "--no-deprecation"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}bru --version")
-    assert_match "You can run only at the root of a collection", shell_output("#{bin}bru run 2>&1", 4)
+    assert_match version.to_s, shell_output("#{bin}/bru --version")
+    assert_match "You can run only at the root of a collection", shell_output("#{bin}/bru run 2>&1", 4)
   end
 end

@@ -1,10 +1,10 @@
 class Rizin < Formula
   desc "UNIX-like reverse engineering framework and command-line toolset"
-  homepage "https:rizin.re"
-  url "https:github.comrizinorgrizinreleasesdownloadv0.8.1rizin-src-v0.8.1.tar.xz"
+  homepage "https://rizin.re"
+  url "https://ghfast.top/https://github.com/rizinorg/rizin/releases/download/v0.8.1/rizin-src-v0.8.1.tar.xz"
   sha256 "ef2b1e6525d7dc36ac43525b956749c1cca07bf17c1fed8b66402d82010a4ec2"
   license "LGPL-3.0-only"
-  head "https:github.comrizinorgrizin.git", branch: "dev"
+  head "https://github.com/rizinorg/rizin.git", branch: "dev"
 
   bottle do
     sha256 arm64_sequoia: "7c1365dc16e0421bca82d1b045973bbada8191297992744fa8311b9b271645fa"
@@ -65,19 +65,19 @@ class Rizin < Formula
   end
 
   def post_install
-    (HOMEBREW_PREFIX"librizinplugins").mkpath
+    (HOMEBREW_PREFIX/"lib/rizin/plugins").mkpath
   end
 
   def caveats
     <<~EOS
       Plugins, extras and bindings will installed at:
-        #{HOMEBREW_PREFIX}librizin
+        #{HOMEBREW_PREFIX}/lib/rizin
     EOS
   end
 
   test do
-    assert_match "rizin #{version}", shell_output("#{bin}rizin -v")
-    assert_match "2a00a0e3", shell_output("#{bin}rz-asm -a arm -b 32 'mov r0, 42'")
-    assert_match "push rax", shell_output("#{bin}rz-asm -a x86 -b 64 -d 0x50")
+    assert_match "rizin #{version}", shell_output("#{bin}/rizin -v")
+    assert_match "2a00a0e3", shell_output("#{bin}/rz-asm -a arm -b 32 'mov r0, 42'")
+    assert_match "push rax", shell_output("#{bin}/rz-asm -a x86 -b 64 -d 0x50")
   end
 end

@@ -1,7 +1,7 @@
 class AwsCCompression < Formula
-  desc "C99 implementation of huffman encodingdecoding"
-  homepage "https:github.comawslabsaws-c-compression"
-  url "https:github.comawslabsaws-c-compressionarchiverefstagsv0.3.1.tar.gz"
+  desc "C99 implementation of huffman encoding/decoding"
+  homepage "https://github.com/awslabs/aws-c-compression"
+  url "https://ghfast.top/https://github.com/awslabs/aws-c-compression/archive/refs/tags/v0.3.1.tar.gz"
   sha256 "d89fca17a37de762dc34f332d2da402343078da8dbd2224c46a11a88adddf754"
   license "Apache-2.0"
 
@@ -25,9 +25,9 @@ class AwsCCompression < Formula
   end
 
   test do
-    (testpath"test.c").write <<~C
-      #include <awscompressioncompression.h>
-      #include <awscommonallocator.h>
+    (testpath/"test.c").write <<~C
+      #include <aws/compression/compression.h>
+      #include <aws/common/allocator.h>
       #include <assert.h>
       #include <string.h>
 
@@ -48,6 +48,6 @@ class AwsCCompression < Formula
     C
     system ENV.cc, "test.c", "-o", "test", "-L#{lib}", "-laws-c-compression",
                    "-L#{Formula["aws-c-common"].opt_lib}", "-laws-c-common"
-    system ".test"
+    system "./test"
   end
 end

@@ -1,10 +1,10 @@
 class Tfocus < Formula
-  desc "Tool for selecting and executing terraform planapply on specific resources"
-  homepage "https:github.comnwiizotfocus"
-  url "https:github.comnwiizotfocusarchiverefstagsv0.1.5.tar.gz"
+  desc "Tool for selecting and executing terraform plan/apply on specific resources"
+  homepage "https://github.com/nwiizo/tfocus"
+  url "https://ghfast.top/https://github.com/nwiizo/tfocus/archive/refs/tags/v0.1.5.tar.gz"
   sha256 "cf8d841d170c551e8f669e8fe71b5c85f0f2b36623ca6e2b8189aa041e76b75d"
   license "MIT"
-  head "https:github.comnwiizotfocus.git", branch: "main"
+  head "https://github.com/nwiizo/tfocus.git", branch: "main"
 
   no_autobump! because: :requires_manual_review
 
@@ -25,9 +25,9 @@ class Tfocus < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}tfocus --version")
+    assert_match version.to_s, shell_output("#{bin}/tfocus --version")
 
-    output = shell_output("#{bin}tfocus 2>&1", 1)
+    output = shell_output("#{bin}/tfocus 2>&1", 1)
     assert_match "No Terraform files found in the current directory", output
   end
 end

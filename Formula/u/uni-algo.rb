@@ -1,7 +1,7 @@
 class UniAlgo < Formula
-  desc "Unicode Algorithms Implementation for CC++"
-  homepage "https:github.comuni-algouni-algo"
-  url "https:github.comuni-algouni-algoarchiverefstagsv1.2.0.tar.gz"
+  desc "Unicode Algorithms Implementation for C/C++"
+  homepage "https://github.com/uni-algo/uni-algo"
+  url "https://ghfast.top/https://github.com/uni-algo/uni-algo/archive/refs/tags/v1.2.0.tar.gz"
   sha256 "f2a1539cd8635bc6088d05144a73ecfe7b4d74ee0361fabed6f87f9f19e74ca9"
   license "MIT"
 
@@ -26,7 +26,7 @@ class UniAlgo < Formula
   end
 
   test do
-    (testpath"CMakeLists.txt").write <<~CMAKE
+    (testpath/"CMakeLists.txt").write <<~CMAKE
       cmake_minimum_required(VERSION 4.0)
       project(utf8_norm LANGUAGES CXX)
       find_package(uni-algo CONFIG REQUIRED)
@@ -34,8 +34,8 @@ class UniAlgo < Formula
       target_link_libraries(utf8_norm PRIVATE uni-algo::uni-algo)
     CMAKE
 
-    (testpath"utf8_norm.cpp").write <<~CPP
-      #include <uni_algonorm.h>
+    (testpath/"utf8_norm.cpp").write <<~CPP
+      #include <uni_algo/norm.h>
       int main() {
         return (una::norm::to_nfc_utf8("W\\u0302") == "Ŵ") ? 0 : 1;
       }
@@ -43,6 +43,6 @@ class UniAlgo < Formula
 
     system "cmake", "-S", ".", "-B", "build", "-DCMAKE_PREFIX_PATH:STRING=#{opt_lib}"
     system "cmake", "--build", "build"
-    system "buildutf8_norm"
+    system "build/utf8_norm"
   end
 end

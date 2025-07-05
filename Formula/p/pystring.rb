@@ -1,10 +1,10 @@
 class Pystring < Formula
   desc "Collection of C++ functions for the interface of Python's string class methods"
-  homepage "https:github.comimageworkspystring"
-  url "https:github.comimageworkspystringarchiverefstagsv1.1.4.tar.gz"
+  homepage "https://github.com/imageworks/pystring"
+  url "https://ghfast.top/https://github.com/imageworks/pystring/archive/refs/tags/v1.1.4.tar.gz"
   sha256 "49da0fe2a049340d3c45cce530df63a2278af936003642330287b68cefd788fb"
   license "BSD-3-Clause"
-  head "https:github.comimageworkspystring.git", branch: "master"
+  head "https://github.com/imageworks/pystring.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -33,8 +33,8 @@ class Pystring < Formula
   end
 
   test do
-    system ENV.cxx, pkgshare"test.cpp", "-I#{include}", "-I#{pkgshare}", "-L#{lib}",
+    system ENV.cxx, pkgshare/"test.cpp", "-I#{include}", "-I#{pkgshare}", "-L#{lib}",
                     "-lpystring", "-o", "test"
-    system ".test"
+    system "./test"
   end
 end

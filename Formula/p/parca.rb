@@ -1,10 +1,10 @@
 class Parca < Formula
   desc "Continuous profiling for analysis of CPU and memory usage"
-  homepage "https:www.parca.dev"
-  url "https:github.comparca-devparcaarchiverefstagsv0.24.0.tar.gz"
+  homepage "https://www.parca.dev/"
+  url "https://ghfast.top/https://github.com/parca-dev/parca/archive/refs/tags/v0.24.0.tar.gz"
   sha256 "a6e70f0687a583e6dfe5adfac9a05722bdc264c3c6017c54b713d8d57603f170"
   license "Apache-2.0"
-  head "https:github.comparca-devparca.git", branch: "main"
+  head "https://github.com/parca-dev/parca.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "6fa27fe43d36fbc20c435166dba3a6c9469185c36c9e20662ed2242261cf99fd"
@@ -24,23 +24,23 @@ class Parca < Formula
     system "pnpm", "--dir", "ui", "run", "build"
 
     ldflags = "-s -w -X main.version=#{version} -X main.commit=#{tap.user} -X main.date=#{time.iso8601}"
-    system "go", "build", *std_go_args(ldflags:), ".cmdparca"
+    system "go", "build", *std_go_args(ldflags:), "./cmd/parca"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}parca --version")
+    assert_match version.to_s, shell_output("#{bin}/parca --version")
 
-    # server config, https:raw.githubusercontent.comparca-devparcacbfa19e032ee51fccd6ca9a5842129faeb27c106parca.yaml
-    (testpath"parca.yaml").write <<~YAML
+    # server config, https://ghfast.top/https://raw.githubusercontent.com/parca-dev/parca/cbfa19e032ee51fccd6ca9a5842129faeb27c106/parca.yaml
+    (testpath/"parca.yaml").write <<~YAML
       object_storage:
         bucket:
           type: "FILESYSTEM"
           config:
-            directory: ".data"
+            directory: "./data"
     YAML
 
-    output_log = testpath"output.log"
-    pid = spawn bin"parca", "--config-path=parca.yaml", [:out, :err] => output_log.to_s
+    output_log = testpath/"output.log"
+    pid = spawn bin/"parca", "--config-path=parca.yaml", [:out, :err] => output_log.to_s
     sleep 1
     assert_match "starting server", output_log.read
   ensure

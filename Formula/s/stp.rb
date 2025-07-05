@@ -1,24 +1,24 @@
 class Stp < Formula
   desc "Simple Theorem Prover, an efficient SMT solver for bitvectors"
-  homepage "https:stp.github.io"
+  homepage "https://stp.github.io/"
   license "MIT"
   revision 4
-  head "https:github.comstpstp.git", branch: "master"
+  head "https://github.com/stp/stp.git", branch: "master"
 
   stable do
-    url "https:github.comstpstparchiverefstags2.3.4.tar.gz"
+    url "https://ghfast.top/https://github.com/stp/stp/archive/refs/tags/2.3.4.tar.gz"
     sha256 "dc197e337c058dc048451b712169a610f7040b31d0078b6602b831fbdcbec990"
 
     # Replace distutils for python 3.12+
     patch do
-      url "https:github.comstpstpcommitfb185479e760b6ff163512cb6c30ac9561aadc0e.patch?full_index=1"
+      url "https://github.com/stp/stp/commit/fb185479e760b6ff163512cb6c30ac9561aadc0e.patch?full_index=1"
       sha256 "7e50f26901e31de4f84ceddc1a1d389ab86066a8dcbc5d88e9ec1f0809fa0909"
     end
   end
 
   livecheck do
     url :stable
-    regex(^(?:stp[._-])?v?(\d+(?:\.\d+)+)$i)
+    regex(/^(?:stp[._-])?v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -45,15 +45,15 @@ class Stp < Formula
 
   # Use relative import for library_path
   patch do
-    url "https:github.comstpstpcommitf81d16c4f15863dd742d220d31db646b5d1c824d.patch?full_index=1"
+    url "https://github.com/stp/stp/commit/f81d16c4f15863dd742d220d31db646b5d1c824d.patch?full_index=1"
     sha256 "c0c38f39371cfc9959df522957f45677f423a6b2d861f4ad87097c9201e00ff4"
   end
 
   def install
     python = "python3.13"
-    site_packages = prefixLanguage::Python.site_packages(python)
+    site_packages = prefix/Language::Python.site_packages(python)
     site_packages.mkpath
-    inreplace "libUtilGitSHA1.cpp.in", "@CMAKE_CXX_COMPILER@", ENV.cxx
+    inreplace "lib/Util/GitSHA1.cpp.in", "@CMAKE_CXX_COMPILER@", ENV.cxx
 
     system "cmake", "-S", ".", "-B", "build",
                     "-DPYTHON_EXECUTABLE=#{which(python)}",
@@ -64,16 +64,16 @@ class Stp < Formula
   end
 
   test do
-    (testpath"prob.smt").write <<~EOS
+    (testpath/"prob.smt").write <<~EOS
       (set-logic QF_BV)
       (assert (= (bvsdiv (_ bv3 2) (_ bv2 2)) (_ bv0 2)))
       (check-sat)
       (exit)
     EOS
-    assert_equal "sat", shell_output("#{bin}stp --SMTLIB2 prob.smt").chomp
+    assert_equal "sat", shell_output("#{bin}/stp --SMTLIB2 prob.smt").chomp
 
-    (testpath"test.c").write <<~C
-      #include "stpc_interface.h"
+    (testpath/"test.c").write <<~C
+      #include "stp/c_interface.h"
       #include <assert.h>
       int main() {
         VC vc = vc_createValidityChecker();
@@ -98,9 +98,9 @@ class Stp < Formula
     EOS
 
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lstp", "-o", "test"
-    assert_equal expected_output.chomp, shell_output(".test").chomp
+    assert_equal expected_output.chomp, shell_output("./test").chomp
 
-    (testpath"test.py").write <<~PYTHON
+    (testpath/"test.py").write <<~PYTHON
       import stp
       s = stp.Solver()
       a = s.bitvec('a', 32)

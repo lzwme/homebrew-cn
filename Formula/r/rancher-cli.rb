@@ -1,10 +1,10 @@
 class RancherCli < Formula
   desc "Unified tool to manage your Rancher server"
-  homepage "https:github.comranchercli"
-  url "https:github.comranchercliarchiverefstagsv2.11.2.tar.gz"
+  homepage "https://github.com/rancher/cli"
+  url "https://ghfast.top/https://github.com/rancher/cli/archive/refs/tags/v2.11.2.tar.gz"
   sha256 "6e8fea75ba3f6584e10edeab4db53e15453677ee80489b2d550c96eda5c2ef85"
   license "Apache-2.0"
-  head "https:github.comranchercli.git", branch: "master"
+  head "https://github.com/rancher/cli.git", branch: "master"
 
   # Upstream creates releases that use a stable tag (e.g., `v1.2.3`) but are
   # labeled as "pre-release" on GitHub before the version is released, so it's
@@ -26,11 +26,11 @@ class RancherCli < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w -X main.VERSION=#{version}", output: bin"rancher")
+    system "go", "build", *std_go_args(ldflags: "-s -w -X main.VERSION=#{version}", output: bin/"rancher")
   end
 
   test do
-    assert_match "Failed to parse SERVERURL", shell_output("#{bin}rancher login localhost -t foo 2>&1", 1)
-    assert_match "invalid token", shell_output("#{bin}rancher login https:127.0.0.1 -t foo 2>&1", 1)
+    assert_match "Failed to parse SERVERURL", shell_output("#{bin}/rancher login localhost -t foo 2>&1", 1)
+    assert_match "invalid token", shell_output("#{bin}/rancher login https://127.0.0.1 -t foo 2>&1", 1)
   end
 end

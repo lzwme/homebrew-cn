@@ -1,10 +1,10 @@
 class Glog < Formula
   desc "Application-level logging library"
-  homepage "https:google.github.ioglogstable"
-  url "https:github.comgoogleglogarchiverefstagsv0.6.0.tar.gz"
+  homepage "https://google.github.io/glog/stable/"
+  url "https://ghfast.top/https://github.com/google/glog/archive/refs/tags/v0.6.0.tar.gz"
   sha256 "8a83bf982f37bb70825df71a9709fa90ea9f4447fb3c099e1d720a439d88bad6"
   license "BSD-3-Clause"
-  head "https:github.comgoogleglog.git", branch: "master"
+  head "https://github.com/google/glog.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -33,8 +33,8 @@ class Glog < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~CPP
-      #include <gloglogging.h>
+    (testpath/"test.cpp").write <<~CPP
+      #include <glog/logging.h>
       #include <iostream>
       #include <memory>
       int main(int argc, char* argv[])
@@ -47,6 +47,6 @@ class Glog < Formula
                     "-lglog", "-I#{Formula["gflags"].opt_lib}",
                     "-L#{Formula["gflags"].opt_lib}", "-lgflags",
                     "-o", "test"
-    system ".test"
+    system "./test"
   end
 end

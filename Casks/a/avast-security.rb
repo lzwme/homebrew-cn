@@ -2,15 +2,15 @@ cask "avast-security" do
   version "15.8.0"
   sha256 :no_check
 
-  url "https:bits.avcdn.netproductfamily_ANTIVIRUSinsttype_FREEplatform_MACinstallertype_ONLINEbuild_RELEASE",
-      verified: "bits.avcdn.netproductfamily_ANTIVIRUSinsttype_FREEplatform_MACinstallertype_ONLINE"
+  url "https://bits.avcdn.net/productfamily_ANTIVIRUS/insttype_FREE/platform_MAC/installertype_ONLINE/build_RELEASE/",
+      verified: "bits.avcdn.net/productfamily_ANTIVIRUS/insttype_FREE/platform_MAC/installertype_ONLINE/"
   name "Avast Security"
   desc "Antivirus software"
-  homepage "https:www.avast.com"
+  homepage "https://www.avast.com/"
 
   livecheck do
-    url "http:mac-av.u.avcdn.netmac-av10_11AAFMchangelog.html"
-    regex(%r{<h2>(\d+(?:\.\d+)+).*<h2>}i)
+    url "http://mac-av.u.avcdn.net/mac-av/10_11/AAFM/changelog.html"
+    regex(%r{<h2>(\d+(?:\.\d+)+).*</h2>}i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -24,8 +24,8 @@ cask "avast-security" do
               "com.avast.hub.xpc",
             ],
             script:    {
-              executable:   "ApplicationsAvast.appContentsBackendhubuninstall.sh",
-              must_succeed: false, # A non-0 exit code may be given even if the uninstall succeeds (https:github.comHomebrewhomebrew-caskissues21740#issuecomment-224094946).
+              executable:   "/Applications/Avast.app/Contents/Backend/hub/uninstall.sh",
+              must_succeed: false, # A non-0 exit code may be given even if the uninstall succeeds (https://github.com/Homebrew/homebrew-cask/issues/21740#issuecomment-224094946).
               sudo:         true,
             },
             pkgutil:   [
@@ -34,7 +34,7 @@ cask "avast-security" do
             ]
 
   zap trash: [
-    "~LibraryCookiescom.avast.AAFM.binarycookies",
-    "~LibraryPreferencescom.avast.avast!.plist",
+    "~/Library/Cookies/com.avast.AAFM.binarycookies",
+    "~/Library/Preferences/com.avast.avast!.plist",
   ]
 end

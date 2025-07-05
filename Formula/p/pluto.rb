@@ -1,10 +1,10 @@
 class Pluto < Formula
   desc "CLI tool to help discover deprecated apiVersions in Kubernetes"
-  homepage "https:fairwinds.com"
-  url "https:github.comFairwindsOpsplutoarchiverefstagsv5.21.8.tar.gz"
+  homepage "https://fairwinds.com"
+  url "https://ghfast.top/https://github.com/FairwindsOps/pluto/archive/refs/tags/v5.21.8.tar.gz"
   sha256 "c40063cdd8711df13470ba50e2720d3ee8d4b2b7401ad1174356af3952f4b5f4"
   license "Apache-2.0"
-  head "https:github.comFairwindsOpspluto.git", branch: "master"
+  head "https://github.com/FairwindsOps/pluto.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "0219da1717c3008f009aeed24ab7e189598a8a401576d9448b1c0a98b456c96d"
@@ -19,21 +19,21 @@ class Pluto < Formula
 
   def install
     ldflags = "-s -w -X main.version=#{version} -X main.commit=#{tap.user}"
-    system "go", "build", *std_go_args(ldflags:), "cmdplutomain.go"
-    generate_completions_from_executable(bin"pluto", "completion")
+    system "go", "build", *std_go_args(ldflags:), "cmd/pluto/main.go"
+    generate_completions_from_executable(bin/"pluto", "completion")
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}pluto version")
-    assert_match "Deployment", shell_output("#{bin}pluto list-versions")
+    assert_match version.to_s, shell_output("#{bin}/pluto version")
+    assert_match "Deployment", shell_output("#{bin}/pluto list-versions")
 
-    (testpath"deployment.yaml").write <<~YAML
-      apiVersion: extensionsv1beta1
+    (testpath/"deployment.yaml").write <<~YAML
+      apiVersion: extensions/v1beta1
       kind: Deployment
       metadata:
         name: homebrew-test
       spec: {}
     YAML
-    assert_match "homebrew-test", shell_output("#{bin}pluto detect deployment.yaml", 3)
+    assert_match "homebrew-test", shell_output("#{bin}/pluto detect deployment.yaml", 3)
   end
 end

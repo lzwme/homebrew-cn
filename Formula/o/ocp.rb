@@ -1,15 +1,15 @@
 class Ocp < Formula
   desc "UNIX port of the Open Cubic Player"
-  homepage "https:stian.cubic.orgproject-ocp.php"
-  url "https:stian.cubic.orgocpocp-3.0.1.tar.xz"
+  homepage "https://stian.cubic.org/project-ocp.php"
+  url "https://stian.cubic.org/ocp/ocp-3.0.1.tar.xz"
   sha256 "60a03d73883ea9c5dd94253907fc2002aa229e0fc41febb17d7baa341b228db1"
   license "GPL-2.0-or-later"
   revision 1
-  head "https:github.commywave82opencubicplayer.git", branch: "master"
+  head "https://github.com/mywave82/opencubicplayer.git", branch: "master"
 
   livecheck do
     url :homepage
-    regex(href=.*?ocp[._-]v?(\d+(?:\.\d+)+)\.ti)
+    regex(/href=.*?ocp[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   bottle do
@@ -52,14 +52,14 @@ class Ocp < Formula
 
   # pin to 15.0.6 to use precompiled fonts
   resource "unifont" do
-    url "https:ftp.gnu.orggnuunifontunifont-15.0.06unifont-15.0.06.tar.gz"
+    url "https://ftp.gnu.org/gnu/unifont/unifont-15.0.06/unifont-15.0.06.tar.gz"
     sha256 "36668eb1326d22e1466b94b3929beeafd10b9838bf3d41f4e5e3b52406ae69f1"
   end
 
   def install
     # Required for SDL2
     resource("unifont").stage do |r|
-      cd "fontprecompiled" do
+      cd "font/precompiled" do
         share.install "unifont-#{r.version}.ttf" => "unifont.ttf"
         share.install "unifont_csur-#{r.version}.ttf" => "unifont_csur.ttf"
         share.install "unifont_upper-#{r.version}.ttf" => "unifont_upper.ttf"
@@ -78,14 +78,14 @@ class Ocp < Formula
 
     # We do not use *std_configure_args here since
     # `--prefix` is the only recognized option we pass
-    system ".configure", *args
+    system "./configure", *args
     system "make"
     system "make", "install"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}ocp --help 2>&1")
+    assert_match version.to_s, shell_output("#{bin}/ocp --help 2>&1")
 
-    assert_path_exists testpath".configocpocp.ini"
+    assert_path_exists testpath/".config/ocp/ocp.ini"
   end
 end

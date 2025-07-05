@@ -1,15 +1,15 @@
 class Halide < Formula
   desc "Language for fast, portable data-parallel computation"
-  homepage "https:halide-lang.org"
+  homepage "https://halide-lang.org"
   license "MIT"
   revision 1
 
   stable do
-    url "https:github.comhalideHalidearchiverefstagsv19.0.0.tar.gz"
+    url "https://ghfast.top/https://github.com/halide/Halide/archive/refs/tags/v19.0.0.tar.gz"
     sha256 "83bae1f0e24dc44d9d85014d5cd0474df2dd03975680894ce3fafd6e97dffee2"
 
     depends_on "lld@19"
-    depends_on "llvm@19" # TODO: Use `lld``llvm` in both stable and head in Halide 20
+    depends_on "llvm@19" # TODO: Use `lld`/`llvm` in both stable and head in Halide 20
   end
 
   livecheck do
@@ -28,7 +28,7 @@ class Halide < Formula
   end
 
   head do
-    url "https:github.comhalideHalide.git", branch: "main"
+    url "https://github.com/halide/Halide.git", branch: "main"
 
     depends_on "lld"
     depends_on "llvm"
@@ -51,13 +51,13 @@ class Halide < Formula
   end
 
   def install
-    llvm = deps.map(&:to_formula).find { |f| f.name.match?(^llvm(@\d+(\.\d+)*)?$) }
-    site_packages = prefixLanguage::Python.site_packages(python3)
-    rpaths = [rpath, rpath(source: site_packages"halide")]
+    llvm = deps.map(&:to_formula).find { |f| f.name.match?(/^llvm(@\d+(\.\d+)*)?$/) }
+    site_packages = prefix/Language::Python.site_packages(python3)
+    rpaths = [rpath, rpath(source: site_packages/"halide")]
     rpaths << llvm.opt_lib.to_s if OS.linux?
     args = [
       "-DCMAKE_INSTALL_RPATH=#{rpaths.join(";")}",
-      "-DHalide_INSTALL_PYTHONDIR=#{site_packages}halide",
+      "-DHalide_INSTALL_PYTHONDIR=#{site_packages}/halide",
       "-DHalide_LLVM_SHARED_LIBS=ON",
       "-DHalide_USE_FETCHCONTENT=OFF",
       "-DWITH_TESTS=NO",
@@ -68,11 +68,11 @@ class Halide < Formula
   end
 
   test do
-    cp share"docHalidetutoriallesson_01_basics.cpp", testpath
+    cp share/"doc/Halide/tutorial/lesson_01_basics.cpp", testpath
     system ENV.cxx, "-std=c++17", "lesson_01_basics.cpp", "-L#{lib}", "-lHalide", "-o", "test"
-    assert_match "Success!", shell_output(".test")
+    assert_match "Success!", shell_output("./test")
 
-    cp share"docHalide_Pythontutorial-pythonlesson_01_basics.py", testpath
+    cp share/"doc/Halide_Python/tutorial-python/lesson_01_basics.py", testpath
     assert_match "Success!", shell_output("#{python3} lesson_01_basics.py")
   end
 end

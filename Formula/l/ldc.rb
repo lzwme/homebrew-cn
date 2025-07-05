@@ -1,10 +1,10 @@
 class Ldc < Formula
   desc "Portable D programming language compiler"
-  homepage "https:wiki.dlang.orgLDC"
-  url "https:github.comldc-developersldcreleasesdownloadv1.41.0ldc-1.41.0-src.tar.gz"
+  homepage "https://wiki.dlang.org/LDC"
+  url "https://ghfast.top/https://github.com/ldc-developers/ldc/releases/download/v1.41.0/ldc-1.41.0-src.tar.gz"
   sha256 "af52818b60706106fb8bca2024685c54eddce929edccae718ad9fbcf689f222f"
   license "BSD-3-Clause"
-  head "https:github.comldc-developersldc.git", branch: "master"
+  head "https://github.com/ldc-developers/ldc.git", branch: "master"
 
   livecheck do
     url :stable
@@ -33,23 +33,23 @@ class Ldc < Formula
   resource "ldc-bootstrap" do
     on_macos do
       # Do not use 1.29 - 1.40 to bootstrap as it segfaults on macOS 15.4.
-      # Ref: https:github.comdlangdmdissues21126#issuecomment-2775948553
+      # Ref: https://github.com/dlang/dmd/issues/21126#issuecomment-2775948553
       on_arm do
-        url "https:github.comldc-developersldcreleasesdownloadv1.28.1ldc2-1.28.1-osx-arm64.tar.xz"
+        url "https://ghfast.top/https://github.com/ldc-developers/ldc/releases/download/v1.28.1/ldc2-1.28.1-osx-arm64.tar.xz"
         sha256 "9bddeb1b2c277019cf116b2572b5ee1819d9f99fe63602c869ebe42ffb813aed"
       end
       on_intel do
-        url "https:github.comldc-developersldcreleasesdownloadv1.28.1ldc2-1.28.1-osx-x86_64.tar.xz"
+        url "https://ghfast.top/https://github.com/ldc-developers/ldc/releases/download/v1.28.1/ldc2-1.28.1-osx-x86_64.tar.xz"
         sha256 "9aa43e84d94378f3865f69b08041331c688e031dd2c5f340eb1f3e30bdea626c"
       end
     end
     on_linux do
       on_arm do
-        url "https:github.comldc-developersldcreleasesdownloadv1.40.0ldc2-1.40.0-linux-aarch64.tar.xz"
+        url "https://ghfast.top/https://github.com/ldc-developers/ldc/releases/download/v1.40.0/ldc2-1.40.0-linux-aarch64.tar.xz"
         sha256 "28d183a99ab9f0790f5597c5c125f41338390f8bed5ed3164138958c18479c82"
       end
       on_intel do
-        url "https:github.comldc-developersldcreleasesdownloadv1.40.0ldc2-1.40.0-linux-x86_64.tar.xz"
+        url "https://ghfast.top/https://github.com/ldc-developers/ldc/releases/download/v1.40.0/ldc2-1.40.0-linux-x86_64.tar.xz"
         sha256 "0da61ed2ea96583aa0ccbeb00f8d78983b23d1e87b84a6f2098eb12059475b27"
       end
     end
@@ -58,23 +58,23 @@ class Ldc < Formula
   def llvm
     deps.reject { |d| d.build? || d.test? }
         .map(&:to_formula)
-        .find { |f| f.name.match?(^llvm(@\d+)?$) }
+        .find { |f| f.name.match?(/^llvm(@\d+)?$/) }
   end
 
   def install
     ENV.cxx11
-    # Fix ldc-bootstrapbinldmd2: error while loading shared libraries: libxml2.so.2
+    # Fix ldc-bootstrap/bin/ldmd2: error while loading shared libraries: libxml2.so.2
     ENV.prepend_path "LD_LIBRARY_PATH", Formula["libxml2"].opt_lib if OS.linux?
     # Work around LLVM 16+ build failure due to missing -lzstd when linking lldELF
-    # Issue ref: https:github.comldc-developersldcissues4478
+    # Issue ref: https://github.com/ldc-developers/ldc/issues/4478
     inreplace "CMakeLists.txt", " -llldELF ", " -llldELF -lzstd "
 
-    (buildpath"ldc-bootstrap").install resource("ldc-bootstrap")
+    (buildpath/"ldc-bootstrap").install resource("ldc-bootstrap")
 
     args = %W[
       -DLLVM_ROOT_DIR=#{llvm.opt_prefix}
-      -DINCLUDE_INSTALL_DIR=#{include}dlangldc
-      -DD_COMPILER=#{buildpath}ldc-bootstrapbinldmd2
+      -DINCLUDE_INSTALL_DIR=#{include}/dlang/ldc
+      -DD_COMPILER=#{buildpath}/ldc-bootstrap/bin/ldmd2
       -DCMAKE_INSTALL_RPATH=#{rpath}
     ]
 
@@ -88,22 +88,22 @@ class Ldc < Formula
     # nor should it be used for the test.
     ENV.method(DevelopmentTools.default_compiler).call
 
-    (testpath"test.d").write <<~D
+    (testpath/"test.d").write <<~D
       import std.stdio;
       void main() {
         writeln("Hello, world!");
       }
     D
-    system bin"ldc2", "test.d"
-    assert_match "Hello, world!", shell_output(".test")
-    lld = deps.map(&:to_formula).find { |f| f.name.match?(^lld(@\d+(\.\d+)*)?$) }
+    system bin/"ldc2", "test.d"
+    assert_match "Hello, world!", shell_output("./test")
+    lld = deps.map(&:to_formula).find { |f| f.name.match?(/^lld(@\d+(\.\d+)*)?$/) }
     with_env(PATH: "#{lld.opt_bin}:#{ENV["PATH"]}") do
-      system bin"ldc2", "-flto=thin", "--linker=lld", "test.d"
-      assert_match "Hello, world!", shell_output(".test")
-      system bin"ldc2", "-flto=full", "--linker=lld", "test.d"
-      assert_match "Hello, world!", shell_output(".test")
+      system bin/"ldc2", "-flto=thin", "--linker=lld", "test.d"
+      assert_match "Hello, world!", shell_output("./test")
+      system bin/"ldc2", "-flto=full", "--linker=lld", "test.d"
+      assert_match "Hello, world!", shell_output("./test")
     end
-    system bin"ldmd2", "test.d"
-    assert_match "Hello, world!", shell_output(".test")
+    system bin/"ldmd2", "test.d"
+    assert_match "Hello, world!", shell_output("./test")
   end
 end

@@ -1,10 +1,10 @@
 class CargoWatch < Formula
   desc "Watches over your Cargo project's source"
-  homepage "https:watchexec.github.io#cargo-watch"
-  url "https:github.comwatchexeccargo-watcharchiverefstagsv8.5.3.tar.gz"
+  homepage "https://watchexec.github.io/#cargo-watch"
+  url "https://ghfast.top/https://github.com/watchexec/cargo-watch/archive/refs/tags/v8.5.3.tar.gz"
   sha256 "1884674d19492727d762da91b9aebc05d29bdb34cdb1903cde36d81edbcc6514"
   license "CC0-1.0"
-  head "https:github.comwatchexeccargo-watch.git", branch: "main"
+  head "https://github.com/watchexec/cargo-watch.git", branch: "main"
 
   no_autobump! because: :requires_manual_review
 
@@ -29,14 +29,14 @@ class CargoWatch < Formula
 
   test do
     # Show that we can use a different toolchain than the one provided by the `rust` formula.
-    # https:github.comHomebrewhomebrew-corepull134074#pullrequestreview-1484979359
+    # https://github.com/Homebrew/homebrew-core/pull/134074#pullrequestreview-1484979359
     ENV.prepend_path "PATH", Formula["rustup"].bin
     system "rustup", "set", "profile", "minimal"
     system "rustup", "default", "beta"
 
-    output = shell_output("#{bin}cargo-watch -x build 2>&1", 1)
+    output = shell_output("#{bin}/cargo-watch -x build 2>&1", 1)
     assert_match "error: project root does not exist", output
 
-    assert_equal "cargo-watch #{version}", shell_output("#{bin}cargo-watch --version").strip
+    assert_equal "cargo-watch #{version}", shell_output("#{bin}/cargo-watch --version").strip
   end
 end

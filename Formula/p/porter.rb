@@ -1,10 +1,10 @@
 class Porter < Formula
   desc "App artifacts, tools, configs, and logic packaged as distributable installer"
-  homepage "https:porter.sh"
-  url "https:github.comgetporterporterarchiverefstagsv1.2.1.tar.gz"
+  homepage "https://porter.sh"
+  url "https://ghfast.top/https://github.com/getporter/porter/archive/refs/tags/v1.2.1.tar.gz"
   sha256 "927c88d7342439594b4f416f6d18d116afd2418bc48876efedeb1cc8e4716fda"
   license "Apache-2.0"
-  head "https:github.comgetporterporter.git", branch: "main"
+  head "https://github.com/getporter/porter.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "1bbb8d0fec75d619cb3157967dc5673647c69e2e2abddb4f6ce311ef12bbabfc"
@@ -20,18 +20,18 @@ class Porter < Formula
   def install
     ldflags = %W[
       -s -w
-      -X get.porter.shporterpkg.Version=#{version}
-      -X get.porter.shporterpkg.Commit=#{tap.user}
+      -X get.porter.sh/porter/pkg.Version=#{version}
+      -X get.porter.sh/porter/pkg.Commit=#{tap.user}
     ]
 
-    system "go", "build", *std_go_args(ldflags:), ".cmdporter"
-    generate_completions_from_executable(bin"porter", "completion")
+    system "go", "build", *std_go_args(ldflags:), "./cmd/porter"
+    generate_completions_from_executable(bin/"porter", "completion")
   end
 
   test do
-    assert_match "porter #{version}", shell_output("#{bin}porter --version")
+    assert_match "porter #{version}", shell_output("#{bin}/porter --version")
 
-    system bin"porter", "create"
-    assert_path_exists testpath"porter.yaml"
+    system bin/"porter", "create"
+    assert_path_exists testpath/"porter.yaml"
   end
 end

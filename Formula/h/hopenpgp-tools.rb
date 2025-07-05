@@ -1,11 +1,11 @@
 class HopenpgpTools < Formula
   desc "Command-line tools for OpenPGP-related operations"
-  homepage "https:hackage.haskell.orgpackagehopenpgp-tools"
+  homepage "https://hackage.haskell.org/package/hopenpgp-tools"
   # TODO: Check if `ixset-typed` resource can be dropped
-  url "https:hackage.haskell.orgpackagehopenpgp-tools-0.23.11hopenpgp-tools-0.23.11.tar.gz"
+  url "https://hackage.haskell.org/package/hopenpgp-tools-0.23.11/hopenpgp-tools-0.23.11.tar.gz"
   sha256 "2a056bd320caafe0f7ac3c95d56819f9fef02ddafe11b59802ea5a678d88a54f"
   license "AGPL-3.0-or-later"
-  head "https:salsa.debian.orgclinthOpenPGP.git", branch: "master"
+  head "https://salsa.debian.org/clint/hOpenPGP.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "41b5917c6be661736f37f098bff90219a3c4f5cd87b396abf57389d219c1ccb4"
@@ -27,24 +27,24 @@ class HopenpgpTools < Formula
 
   # TODO: Remove resource once new release ixset-typed release is available
   resource "ixset-typed" do
-    url "https:hackage.haskell.orgpackageixset-typed-0.5.1.0ixset-typed-0.5.1.0.tar.gz"
+    url "https://hackage.haskell.org/package/ixset-typed-0.5.1.0/ixset-typed-0.5.1.0.tar.gz"
     sha256 "08b7b4870d737b524a8575529ee1901b0d8e39ff72298a6b231f8719b5a8790c"
 
-    # Backport https:github.comwell-typedixset-typedpull23
+    # Backport https://github.com/well-typed/ixset-typed/pull/23
     patch do
-      url "https:github.comwell-typedixset-typedcommit460901368dcb452d352a17bcd4b8f60200a6fa71.patch?full_index=1"
+      url "https://github.com/well-typed/ixset-typed/commit/460901368dcb452d352a17bcd4b8f60200a6fa71.patch?full_index=1"
       sha256 "e284534df9ff14f49dad95a6745137c36c7a6335e896201c577d709794882e4c"
     end
   end
 
   def install
     # Workaround to use newer GHC
-    (buildpath"cabal.project.local").write "packages: . ixset-typed"
-    (buildpath"ixset-typed").install resource("ixset-typed")
+    (buildpath/"cabal.project.local").write "packages: . ixset-typed/"
+    (buildpath/"ixset-typed").install resource("ixset-typed")
 
     # Workaround to build with GHC 9.10. `data-functor-logistic` is a
     # dependency of `rank2classes` which uses the same workaround.
-    # Ref: https:github.comblamariogrampablobmastercabal.project#L6
+    # Ref: https://github.com/blamario/grampa/blob/master/cabal.project#L6
     args = ["--allow-newer=data-functor-logistic:base"]
 
     system "cabal", "v2-update"
@@ -52,7 +52,7 @@ class HopenpgpTools < Formula
   end
 
   test do
-    (testpath"batch.gpg").write <<~GPG
+    (testpath/"batch.gpg").write <<~GPG
       Key-Type: RSA
       Key-Length: 2048
       Subkey-Type: RSA
@@ -64,10 +64,10 @@ class HopenpgpTools < Formula
       %commit
     GPG
 
-    gpg = Formula["gnupg"].opt_bin"gpg"
+    gpg = Formula["gnupg"].opt_bin/"gpg"
     begin
       system gpg, "--batch", "--gen-key", "batch.gpg"
-      output = pipe_output("#{bin}hokey lint", shell_output("#{gpg} --export Testing"), 0)
+      output = pipe_output("#{bin}/hokey lint", shell_output("#{gpg} --export Testing"), 0)
       assert_match "Testing <testing@foo.bar>", output
     ensure
       system "#{gpg}conf", "--kill", "gpg-agent"

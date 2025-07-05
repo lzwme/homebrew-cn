@@ -1,10 +1,10 @@
 class Gotz < Formula
   desc "Displays timezones in your terminal"
-  homepage "https:github.commerschformanngotz"
-  url "https:github.commerschformanngotzarchiverefstagsv0.1.15.tar.gz"
+  homepage "https://github.com/merschformann/gotz"
+  url "https://ghfast.top/https://github.com/merschformann/gotz/archive/refs/tags/v0.1.15.tar.gz"
   sha256 "8ab6167d9a98717a8548ff60b0f454c42f116e94216e3a5d83deb711c035b270"
   license "MIT"
-  head "https:github.commerschformanngotz.git", branch: "main"
+  head "https://github.com/merschformann/gotz.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "b75ae4c58731840fe9ba17b09378742700f717d193aeeb9e532b705b78d993be"
@@ -24,7 +24,7 @@ class Gotz < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}gotz -version")
-    assert_match "Local", shell_output("#{bin}gotz -timezones AmericaNew_York")
+    assert_match version.to_s, shell_output("#{bin}/gotz -version")
+    assert_match "Local", shell_output("#{bin}/gotz -timezones America/New_York")
   end
 end

@@ -1,10 +1,10 @@
 class Odbc2parquet < Formula
   desc "CLI to query an ODBC data source and write the result into a Parquet file"
-  homepage "https:github.compacman82odbc2parquet"
-  url "https:github.compacman82odbc2parquetarchiverefstagsv8.1.0.tar.gz"
+  homepage "https://github.com/pacman82/odbc2parquet"
+  url "https://ghfast.top/https://github.com/pacman82/odbc2parquet/archive/refs/tags/v8.1.0.tar.gz"
   sha256 "8cb514b63d114c3a1261370ada09ac4bcd08a717c701dbf631f1a609c19604bb"
   license "MIT"
-  head "https:github.compacman82odbc2parquet.git", branch: "main"
+  head "https://github.com/pacman82/odbc2parquet.git", branch: "main"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "ed5f553065f5362939befc7ba36b8ea34e84a711f823e372b7b30cc2520717b1"
@@ -25,9 +25,9 @@ class Odbc2parquet < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}odbc2parquet --version")
+    assert_match version.to_s, shell_output("#{bin}/odbc2parquet --version")
 
-    system bin"odbc2parquet", "list-data-sources"
-    system bin"odbc2parquet", "list-drivers"
+    system bin/"odbc2parquet", "list-data-sources"
+    system bin/"odbc2parquet", "list-drivers"
   end
 end

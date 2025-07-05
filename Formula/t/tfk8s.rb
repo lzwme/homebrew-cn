@@ -1,10 +1,10 @@
 class Tfk8s < Formula
   desc "Kubernetes YAML manifests to Terraform HCL converter"
-  homepage "https:github.comjrhoustontfk8s"
-  url "https:github.comjrhoustontfk8sarchiverefstagsv0.1.10.tar.gz"
+  homepage "https://github.com/jrhouston/tfk8s"
+  url "https://ghfast.top/https://github.com/jrhouston/tfk8s/archive/refs/tags/v0.1.10.tar.gz"
   sha256 "be2680e76311ac7dd814a1bb0dceb486e3511d8d68845421338f9fcf5a92d5f9"
   license "MIT"
-  head "https:github.comjrhoustontfk8s.git", branch: "main"
+  head "https://github.com/jrhouston/tfk8s.git", branch: "main"
 
   no_autobump! because: :requires_manual_review
 
@@ -28,7 +28,7 @@ class Tfk8s < Formula
   end
 
   test do
-    (testpath"input.yml").write <<~YAML
+    (testpath/"input.yml").write <<~YAML
       apiVersion: v1
       kind: ConfigMap
       metadata:
@@ -52,9 +52,9 @@ class Tfk8s < Formula
       }
     HCL
 
-    system bin"tfk8s", "-f", "input.yml", "-o", "output.tf"
+    system bin/"tfk8s", "-f", "input.yml", "-o", "output.tf"
     assert_equal expected, File.read("output.tf")
 
-    assert_match version.to_s, shell_output(bin"tfk8s --version")
+    assert_match version.to_s, shell_output(bin/"tfk8s --version")
   end
 end

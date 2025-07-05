@@ -1,13 +1,13 @@
 class Bgpdump < Formula
-  desc "C library for analyzing MRTZebraQuagga dump files"
-  homepage "https:github.comRIPE-NCCbgpdumpwiki"
-  url "https:github.comRIPE-NCCbgpdumparchiverefstagsv1.6.2.tar.gz"
+  desc "C library for analyzing MRT/Zebra/Quagga dump files"
+  homepage "https://github.com/RIPE-NCC/bgpdump/wiki"
+  url "https://ghfast.top/https://github.com/RIPE-NCC/bgpdump/archive/refs/tags/v1.6.2.tar.gz"
   sha256 "415692c173a84c48b1e927a6423a4f8fd3e6359bc3008c06b7702fe143a76223"
   license "GPL-2.0-only"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -35,8 +35,8 @@ class Bgpdump < Formula
   uses_from_macos "zlib"
 
   def install
-    system ".bootstrap.sh"
-    system ".configure", "--disable-debug",
+    system "./bootstrap.sh"
+    system "./configure", "--disable-debug",
                           "--disable-dependency-tracking",
                           "--disable-silent-rules",
                           "--prefix=#{prefix}"
@@ -45,6 +45,6 @@ class Bgpdump < Formula
   end
 
   test do
-    system bin"bgpdump", "-T"
+    system bin/"bgpdump", "-T"
   end
 end

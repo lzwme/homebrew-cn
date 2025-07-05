@@ -1,7 +1,7 @@
 class CargoMake < Formula
   desc "Rust task runner and build tool"
-  homepage "https:github.comsagieguraricargo-make"
-  url "https:github.comsagieguraricargo-makearchiverefstags0.37.24.tar.gz"
+  homepage "https://github.com/sagiegurari/cargo-make"
+  url "https://ghfast.top/https://github.com/sagiegurari/cargo-make/archive/refs/tags/0.37.24.tar.gz"
   sha256 "a7f6f7332862442e6020e8d8b2568a6fa8eed28156be0dddd61982e1e644cf02"
   license "Apache-2.0"
 
@@ -24,20 +24,20 @@ class CargoMake < Formula
 
   test do
     # Show that we can use a different toolchain than the one provided by the `rust` formula.
-    # https:github.comHomebrewhomebrew-corepull134074#pullrequestreview-1484979359
+    # https://github.com/Homebrew/homebrew-core/pull/134074#pullrequestreview-1484979359
     ENV.prepend_path "PATH", Formula["rustup"].bin
     system "rustup", "set", "profile", "minimal"
     system "rustup", "default", "beta"
 
     text = "it's working!"
-    (testpath"Makefile.toml").write <<~TOML
+    (testpath/"Makefile.toml").write <<~TOML
       [tasks.is_working]
       command = "echo"
       args = ["#{text}"]
     TOML
 
     assert_match text, shell_output("cargo make is_working")
-    assert_match text, shell_output("#{bin}cargo-make make is_working")
-    assert_match text, shell_output("#{bin}makers is_working")
+    assert_match text, shell_output("#{bin}/cargo-make make is_working")
+    assert_match text, shell_output("#{bin}/makers is_working")
   end
 end

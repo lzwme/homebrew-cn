@@ -1,10 +1,10 @@
 class Smlfmt < Formula
   desc "Custom parser and code formatter for Standard ML"
-  homepage "https:github.comshwestricksmlfmt"
-  url "https:github.comshwestricksmlfmtarchiverefstagsv1.2.0.tar.gz"
+  homepage "https://github.com/shwestrick/smlfmt"
+  url "https://ghfast.top/https://github.com/shwestrick/smlfmt/archive/refs/tags/v1.2.0.tar.gz"
   sha256 "6517b0186518308d26f388d882af3b6106103a3ca3f00a4974e54fb526225df5"
   license "MIT"
-  head "https:github.comshwestricksmlfmt.git", branch: "main"
+  head "https://github.com/shwestrick/smlfmt.git", branch: "main"
 
   no_autobump! because: :requires_manual_review
 
@@ -27,7 +27,7 @@ class Smlfmt < Formula
   end
 
   test do
-    (testpath"source.sml").write <<~EOS
+    (testpath/"source.sml").write <<~EOS
       fun foo x =     10
       val x = 5 val y = 6
     EOS
@@ -36,7 +36,7 @@ class Smlfmt < Formula
       val x = 5
       val y = 6
     EOS
-    system bin"smlfmt", "--force", "source.sml"
-    assert_equal expected_output, (testpath"source.sml").read
+    system bin/"smlfmt", "--force", "source.sml"
+    assert_equal expected_output, (testpath/"source.sml").read
   end
 end

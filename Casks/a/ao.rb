@@ -2,10 +2,10 @@ cask "ao" do
   version "6.9.0"
   sha256 "c69522f78e82476540637fd3a2ab0c9de1e911530a1eb88c9cf757e933debe0e"
 
-  url "https:github.comklaussinaniaoreleasesdownloadv#{version}Ao-#{version}.dmg"
+  url "https://ghfast.top/https://github.com/klaussinani/ao/releases/download/v#{version}/Ao-#{version}.dmg"
   name "Ao"
   desc "Elegant Microsoft To-Do desktop app"
-  homepage "https:github.comklaussinaniao"
+  homepage "https://github.com/klaussinani/ao"
 
   no_autobump! because: :requires_manual_review
 

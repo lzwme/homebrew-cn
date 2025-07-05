@@ -6,14 +6,14 @@
 # - coccinelle
 class OcamlAT4 < Formula
   desc "General purpose programming language in the ML family"
-  homepage "https:ocaml.org"
-  url "https:caml.inria.frpubdistribocaml-4.14ocaml-4.14.2.tar.xz"
+  homepage "https://ocaml.org/"
+  url "https://caml.inria.fr/pub/distrib/ocaml-4.14/ocaml-4.14.2.tar.xz"
   sha256 "7819f68693e32946f93358df46a8ea6f517222681fcc6f7cb96214216cfec764"
   license "LGPL-2.1-only" => { with: "OCaml-LGPL-linking-exception" }
 
   livecheck do
-    url "https:ocaml.orgreleases"
-    regex(%r{href=.*?releasesv?(4(?:\.\d+)+)?["']}i)
+    url "https://ocaml.org/releases"
+    regex(%r{href=.*?/releases/v?(4(?:\.\d+)+)/?["']}i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -38,26 +38,26 @@ class OcamlAT4 < Formula
 
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
-    url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-big_sur.diff"
+    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-big_sur.diff"
     sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
   end
 
   def install
     ENV.deparallelize # Builds are not parallel-safe, esp. with many cores
 
-    # the .configure in this package is NOT a GNU autoconf script!
+    # the ./configure in this package is NOT a GNU autoconf script!
     args = %W[
       --prefix=#{prefix}
       --enable-debug-runtime
       --mandir=#{man}
     ]
-    system ".configure", *args
+    system "./configure", *args
     system "make", "world.opt"
     system "make", "prefix=#{prefix}", "install"
   end
 
   test do
-    output = pipe_output("#{bin}ocaml 2>&1", "let x = 1 ;;")
+    output = pipe_output("#{bin}/ocaml 2>&1", "let x = 1 ;;")
     assert_match "val x : int = 1", output
   end
 end

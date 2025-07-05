@@ -1,7 +1,7 @@
 class Libecpint < Formula
   desc "Library for the efficient evaluation of integrals over effective core potentials"
-  homepage "https:github.comrobashawlibecpint"
-  url "https:github.comrobashawlibecpintarchiverefstagsv1.0.7.tar.gz"
+  homepage "https://github.com/robashaw/libecpint"
+  url "https://ghfast.top/https://github.com/robashaw/libecpint/archive/refs/tags/v1.0.7.tar.gz"
   sha256 "e9c60fddb2614f113ab59ec620799d961db73979845e6e637c4a6fb72aee51cc"
   license "MIT"
   revision 1
@@ -26,8 +26,8 @@ class Libecpint < Formula
 
   def install
     # Fix the error: found '_dawson' in libcerf.3.0.dylib, declaration possibly missing 'extern "C"'
-    # Issue ref: https:github.comrobashawlibecpintissues65
-    inreplace "srcCMakeLists.txt", "cerf::cerf", "cerf::cerfcpp"
+    # Issue ref: https://github.com/robashaw/libecpint/issues/65
+    inreplace "src/CMakeLists.txt", "cerf::cerf", "cerf::cerfcpp"
 
     args = [
       "-DBUILD_SHARED_LIBS=ON",
@@ -40,16 +40,16 @@ class Libecpint < Formula
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 
-    pkgshare.install "testslibapi_test1test1.cpp",
-                     "testslibapi_test1api_test1.output",
-                     "includetestutil.hpp"
+    pkgshare.install "tests/lib/api_test1/test1.cpp",
+                     "tests/lib/api_test1/api_test1.output",
+                     "include/testutil.hpp"
   end
 
   test do
-    cp [pkgshare"api_test1.output", pkgshare"testutil.hpp"], testpath
-    system ENV.cxx, "-std=c++11", pkgshare"test1.cpp",
-                    "-DHAS_PUGIXML", "-I#{include}libecpint",
+    cp [pkgshare/"api_test1.output", pkgshare/"testutil.hpp"], testpath
+    system ENV.cxx, "-std=c++11", pkgshare/"test1.cpp",
+                    "-DHAS_PUGIXML", "-I#{include}/libecpint",
                     "-L#{lib}", "-lecpint", "-o", "test1"
-    system ".test1"
+    system "./test1"
   end
 end

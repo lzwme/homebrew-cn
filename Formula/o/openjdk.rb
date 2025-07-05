@@ -1,13 +1,13 @@
 class Openjdk < Formula
   desc "Development kit for the Java programming language"
-  homepage "https:openjdk.java.net"
-  url "https:github.comopenjdkjdk24uarchiverefstagsjdk-24.0.1-ga.tar.gz"
+  homepage "https://openjdk.java.net/"
+  url "https://ghfast.top/https://github.com/openjdk/jdk24u/archive/refs/tags/jdk-24.0.1-ga.tar.gz"
   sha256 "2ccaaf7c5f03b6f689347df99e6e34cd6d3b30bc56af815c8c152a6eeb6a6c25"
   license "GPL-2.0-only" => { with: "Classpath-exception-2.0" }
 
   livecheck do
     url :stable
-    regex(^jdk[._-]v?(\d+(?:\.\d+)*)-ga$i)
+    regex(/^jdk[._-]v?(\d+(?:\.\d+)*)-ga$/i)
   end
 
   bottle do
@@ -50,34 +50,34 @@ class Openjdk < Formula
     depends_on "libxtst"
   end
 
-  # From https:jdk.java.netarchive
+  # From https://jdk.java.net/archive/
   resource "boot-jdk" do
     on_macos do
       on_arm do
-        url "https:download.java.netjavaGAjdk23.0.26da2a6609d6e406f85c491fcb119101b7GPLopenjdk-23.0.2_macos-aarch64_bin.tar.gz"
+        url "https://download.java.net/java/GA/jdk23.0.2/6da2a6609d6e406f85c491fcb119101b/7/GPL/openjdk-23.0.2_macos-aarch64_bin.tar.gz"
         sha256 "bff699bb27455c2bb51d6e8f2467b77a4833388412aa2d95ec1970ddfb0e7b6c"
       end
       on_intel do
-        url "https:download.java.netjavaGAjdk23.0.26da2a6609d6e406f85c491fcb119101b7GPLopenjdk-23.0.2_macos-x64_bin.tar.gz"
+        url "https://download.java.net/java/GA/jdk23.0.2/6da2a6609d6e406f85c491fcb119101b/7/GPL/openjdk-23.0.2_macos-x64_bin.tar.gz"
         sha256 "b4cc7d7b51520e99308e1b4d3f8467790072c42319b9d3838ec8cfd4f69f0bc1"
       end
     end
     on_linux do
       on_arm do
-        url "https:download.java.netjavaGAjdk23.0.26da2a6609d6e406f85c491fcb119101b7GPLopenjdk-23.0.2_linux-aarch64_bin.tar.gz"
+        url "https://download.java.net/java/GA/jdk23.0.2/6da2a6609d6e406f85c491fcb119101b/7/GPL/openjdk-23.0.2_linux-aarch64_bin.tar.gz"
         sha256 "8e9b2c7e0f138de785dc754ad1dfa067671de66672b5e84bb7f6f6c219a6b02b"
       end
       on_intel do
-        url "https:download.java.netjavaGAjdk23.0.26da2a6609d6e406f85c491fcb119101b7GPLopenjdk-23.0.2_linux-x64_bin.tar.gz"
+        url "https://download.java.net/java/GA/jdk23.0.2/6da2a6609d6e406f85c491fcb119101b/7/GPL/openjdk-23.0.2_linux-x64_bin.tar.gz"
         sha256 "017f4ed8e8234d85e5bc1e490bb86f23599eadb6cfc9937ee87007b977a7d762"
       end
     end
   end
 
   def install
-    boot_jdk = buildpath"boot-jdk"
+    boot_jdk = buildpath/"boot-jdk"
     resource("boot-jdk").stage boot_jdk
-    boot_jdk = "ContentsHome" if OS.mac?
+    boot_jdk /= "Contents/Home" if OS.mac?
     java_options = ENV.delete("_JAVA_OPTIONS")
 
     args = %W[
@@ -106,13 +106,13 @@ class Openjdk < Formula
 
     ldflags = %W[
       -Wl,-rpath,#{loader_path.gsub("$", "\\$$")}
-      -Wl,-rpath,#{loader_path.gsub("$", "\\$$")}server
+      -Wl,-rpath,#{loader_path.gsub("$", "\\$$")}/server
     ]
     args += if OS.mac?
       ldflags << "-headerpad_max_install_names"
 
       # Allow unbundling `freetype` on macOS
-      inreplace "makeautoconflib-freetype.m4", '= "xmacosx"', '= ""'
+      inreplace "make/autoconf/lib-freetype.m4", '= "xmacosx"', '= ""'
 
       %W[
         --enable-dtrace
@@ -130,20 +130,20 @@ class Openjdk < Formula
     end
     args << "--with-extra-ldflags=#{ldflags.join(" ")}"
 
-    # Workaround for Xcode 16 bug: https:bugs.openjdk.orgbrowseJDK-8340341.
+    # Workaround for Xcode 16 bug: https://bugs.openjdk.org/browse/JDK-8340341.
     if DevelopmentTools.clang_build_version == 1600
       args << "--with-extra-cflags=-mllvm -enable-constraint-elimination=0"
     end
 
     # Temporary workaround for the "sed: RE error: illegal byte sequence" issue on macOS 15 and later (on_arm).
-    # See https:bugs.openjdk.orgbrowseJDK-8353948 for more details.
+    # See https://bugs.openjdk.org/browse/JDK-8353948 for more details.
     # Could be removed in openjdk@25, though it might be resolved earlier if plans change.
     # References:
-    # - Related bug: https:bugs.openjdk.orgbrowseJDK-8354449
-    # - Upstream PR: https:github.comopenjdkjdkpull24601
+    # - Related bug: https://bugs.openjdk.org/browse/JDK-8354449
+    # - Upstream PR: https://github.com/openjdk/jdk/pull/24601
     if OS.mac? && MacOS.version >= :sequoia && Hardware::CPU.arm?
-      (buildpath"srcjava.xml.cryptoshareclasses" 
-        "comsunorgapachexmlinternalsecurityresource" 
+      (buildpath/"src/java.xml.crypto/share/classes" /
+        "com/sun/org/apache/xml/internal/security/resource" /
         "xmlsecurity_de.properties").unlink
     end
 
@@ -154,29 +154,29 @@ class Openjdk < Formula
 
     jdk = libexec
     if OS.mac?
-      libexec.install Dir["build*imagesjdk-bundle*"].first => "openjdk.jdk"
-      jdk = "openjdk.jdkContentsHome"
+      libexec.install Dir["build/*/images/jdk-bundle/*"].first => "openjdk.jdk"
+      jdk /= "openjdk.jdk/Contents/Home"
     else
-      libexec.install Dir["buildlinux-*-server-releaseimagesjdk*"]
+      libexec.install Dir["build/linux-*-server-release/images/jdk/*"]
     end
 
-    bin.install_symlink Dir[jdk"bin*"]
-    include.install_symlink Dir[jdk"include*.h"]
-    include.install_symlink Dir[jdk"include"OS.kernel_name.downcase"*.h"]
-    man1.install_symlink Dir[jdk"manman1*"]
+    bin.install_symlink Dir[jdk/"bin/*"]
+    include.install_symlink Dir[jdk/"include/*.h"]
+    include.install_symlink Dir[jdk/"include"/OS.kernel_name.downcase/"*.h"]
+    man1.install_symlink Dir[jdk/"man/man1/*"]
   end
 
   def caveats
     on_macos do
       <<~EOS
         For the system Java wrappers to find this JDK, symlink it with
-          sudo ln -sfn #{opt_libexec}openjdk.jdk LibraryJavaJavaVirtualMachinesopenjdk.jdk
+          sudo ln -sfn #{opt_libexec}/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk
       EOS
     end
   end
 
   test do
-    (testpath"HelloWorld.java").write <<~JAVA
+    (testpath/"HelloWorld.java").write <<~JAVA
       class HelloWorld {
         public static void main(String args[]) {
           System.out.println("Hello, world!");
@@ -184,8 +184,8 @@ class Openjdk < Formula
       }
     JAVA
 
-    system bin"javac", "HelloWorld.java"
+    system bin/"javac", "HelloWorld.java"
 
-    assert_match "Hello, world!", shell_output("#{bin}java HelloWorld")
+    assert_match "Hello, world!", shell_output("#{bin}/java HelloWorld")
   end
 end

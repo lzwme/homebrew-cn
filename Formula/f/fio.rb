@@ -1,13 +1,13 @@
 class Fio < Formula
-  desc "IO benchmark and stress test"
-  homepage "https:github.comaxboefio"
-  url "https:github.comaxboefioarchiverefstagsfio-3.40.tar.gz"
+  desc "I/O benchmark and stress test"
+  homepage "https://github.com/axboe/fio"
+  url "https://ghfast.top/https://github.com/axboe/fio/archive/refs/tags/fio-3.40.tar.gz"
   sha256 "9fc81e3a490a53fe821d76dd759d64f229d0ac6b4d2c711837bcad158242e3b2"
   license "GPL-2.0-only"
 
   livecheck do
     url :stable
-    regex(^fio[._-]v?(\d+(?:\.\d+)+)$i)
+    regex(/^fio[._-]v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -26,7 +26,7 @@ class Fio < Formula
 
   def install
     ENV.runtime_cpu_detection
-    system ".configure"
+    system "./configure"
     # fio's CFLAGS passes vital stuff around, and crushing it will break the build
     system "make", "prefix=#{prefix}",
                    "mandir=#{man}",
@@ -37,6 +37,6 @@ class Fio < Formula
   end
 
   test do
-    system bin"fio", "--parse-only"
+    system bin/"fio", "--parse-only"
   end
 end

@@ -1,11 +1,11 @@
 class Sdcv < Formula
   desc "StarDict Console Version"
-  homepage "https:dushistov.github.iosdcv"
-  url "https:github.comDushistovsdcvarchiverefstagsv0.5.5.tar.gz"
+  homepage "https://dushistov.github.io/sdcv/"
+  url "https://ghfast.top/https://github.com/Dushistov/sdcv/archive/refs/tags/v0.5.5.tar.gz"
   sha256 "4d2519e8f8479b9301dc91e9cda3e1eefef19970ece0e8c05f0c7b7ade5dc94b"
   license "GPL-2.0-or-later"
   version_scheme 1
-  head "https:github.comDushistovsdcv.git", branch: "master"
+  head "https://github.com/Dushistov/sdcv.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -37,9 +37,9 @@ class Sdcv < Formula
   end
 
   # fix type mismatch and memory deallocation build errors
-  # upstream PR ref, https:github.comDushistovsdcvpull103
+  # upstream PR ref, https://github.com/Dushistov/sdcv/pull/103
   patch do
-    url "https:github.comDushistovsdcvcommitc2bb4e3fe51f9b9940440ea81d5d97b56d5582e7.patch?full_index=1"
+    url "https://github.com/Dushistov/sdcv/commit/c2bb4e3fe51f9b9940440ea81d5d97b56d5582e7.patch?full_index=1"
     sha256 "70c4c826c2dcd4c0aad5fa8f27b7e079f4461cfbbb380b4726aa4dfd8fb75a1c"
   end
 
@@ -51,6 +51,6 @@ class Sdcv < Formula
   end
 
   test do
-    system bin"sdcv", "-h"
+    system bin/"sdcv", "-h"
   end
 end

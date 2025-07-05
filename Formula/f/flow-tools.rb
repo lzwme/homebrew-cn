@@ -1,7 +1,7 @@
 class FlowTools < Formula
   desc "Collect, send, process, and generate NetFlow data reports"
-  homepage "https:code.google.comarchivepflow-tools"
-  url "https:storage.googleapis.comgoogle-code-archive-downloadsv2code.google.comflow-toolsflow-tools-0.68.5.1.tar.bz2"
+  homepage "https://code.google.com/archive/p/flow-tools/"
+  url "https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/flow-tools/flow-tools-0.68.5.1.tar.bz2"
   sha256 "80bbd3791b59198f0d20184761d96ba500386b0a71ea613c214a50aa017a1f67"
   license "BSD-2-Clause"
 
@@ -28,17 +28,17 @@ class FlowTools < Formula
 
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
-    url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-pre-0.4.2.418-big_sur.diff"
+    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-pre-0.4.2.418-big_sur.diff"
     sha256 "83af02f2aa2b746bb7225872cab29a253264be49db0ecebb12f841562d9a2923"
   end
 
   # Apply Fedora patch to fix implicit function declarations and multiple definitions
   patch do
-    url "https:src.fedoraproject.orgrpmsflow-toolsraw5590477b99c33b61a4d18436453a29e398be01aafflow-tools-c99.patch"
+    url "https://src.fedoraproject.org/rpms/flow-tools/raw/5590477b99c33b61a4d18436453a29e398be01aa/f/flow-tools-c99.patch"
     sha256 "ce1693d53c1dab3a91486a8005ea35ce35a794d6b42dad2a4e05513c40ee9495"
   end
   patch do
-    url "https:src.fedoraproject.orgrpmsflow-toolsraw61ed33ab67251599c26a2e2636f1926b0448ab8afflow-tools-extern.patch"
+    url "https://src.fedoraproject.org/rpms/flow-tools/raw/61ed33ab67251599c26a2e2636f1926b0448ab8a/f/flow-tools-extern.patch"
     sha256 "3b0937004edfabc53d966e035ad2a2c3239bcfccdc1bacef2f54612fccd84290"
   end
 
@@ -47,16 +47,16 @@ class FlowTools < Formula
     # Help old config scripts identify arm64 linux
     args << "--build=aarch64-unknown-linux-gnu" if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
 
-    system ".configure", *args, *std_configure_args
+    system "./configure", *args, *std_configure_args
     system "make", "install"
   end
 
   test do
     # Generate test flow data with 1000 flows
-    data = shell_output("#{bin}flow-gen")
+    data = shell_output("#{bin}/flow-gen")
     # Test that the test flows work with some flow- programs
-    pipe_output("#{bin}flow-cat", data, 0)
-    pipe_output("#{bin}flow-print", data, 0)
-    pipe_output("#{bin}flow-stat", data, 0)
+    pipe_output("#{bin}/flow-cat", data, 0)
+    pipe_output("#{bin}/flow-print", data, 0)
+    pipe_output("#{bin}/flow-stat", data, 0)
   end
 end

@@ -1,7 +1,7 @@
 class Pint < Formula
-  desc "Prometheus rule lintervalidator"
-  homepage "https:cloudflare.github.iopint"
-  url "https:github.comcloudflarepintarchiverefstagsv0.74.3.tar.gz"
+  desc "Prometheus rule linter/validator"
+  homepage "https://cloudflare.github.io/pint/"
+  url "https://ghfast.top/https://github.com/cloudflare/pint/archive/refs/tags/v0.74.3.tar.gz"
   sha256 "b463ecf811bc6e67a3f8cc6793963eb4d917a8dfa6f3e79e9c8a8c8fadff84cd"
   license "Apache-2.0"
 
@@ -22,13 +22,13 @@ class Pint < Formula
       -X main.version=#{version}
       -X main.commit=#{tap.user}
     ]
-    system "go", "build", *std_go_args(ldflags:), ".cmdpint"
+    system "go", "build", *std_go_args(ldflags:), "./cmd/pint"
 
-    pkgshare.install "docsexamples"
+    pkgshare.install "docs/examples"
   end
 
   test do
-    (testpath"test.yaml").write <<~YAML
+    (testpath/"test.yaml").write <<~YAML
       groups:
       - name: example
         rules:
@@ -41,12 +41,12 @@ class Pint < Formula
             summary: High request latency
     YAML
 
-    cp pkgshare"examplessimple.hcl", testpath".pint.hcl"
+    cp pkgshare/"examples/simple.hcl", testpath/".pint.hcl"
 
-    output = shell_output("#{bin}pint -n lint #{testpath}test.yaml 2>&1")
+    output = shell_output("#{bin}/pint -n lint #{testpath}/test.yaml 2>&1")
     assert_match "level=INFO msg=\"Loading configuration file\" path=.pint.hcl", output
     assert_match "level=INFO msg=\"Problems found\" Warning=6", output
 
-    assert_match version.to_s, shell_output("#{bin}pint version")
+    assert_match version.to_s, shell_output("#{bin}/pint version")
   end
 end

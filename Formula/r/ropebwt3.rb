@@ -1,10 +1,10 @@
 class Ropebwt3 < Formula
   desc "BWT construction and search"
-  homepage "https:github.comlh3ropebwt3"
-  url "https:github.comlh3ropebwt3archiverefstagsv3.9.tar.gz"
+  homepage "https://github.com/lh3/ropebwt3"
+  url "https://ghfast.top/https://github.com/lh3/ropebwt3/archive/refs/tags/v3.9.tar.gz"
   sha256 "0c04879f97c92607017c00e0afc5a4e0428a8467573336300ebf3c1a6bcc4d75"
   license all_of: ["MIT", "Apache-2.0"]
-  head "https:github.comlh3ropebwt3.git", branch: "master"
+  head "https://github.com/lh3/ropebwt3.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -32,10 +32,10 @@ class Ropebwt3 < Formula
   end
 
   test do
-    (testpath"test.txt").write <<~EOS
+    (testpath/"test.txt").write <<~EOS
       TGAACTCTACACAACATATTTTGTCACCAAG
     EOS
-    system bin"ropebwt3", "build", "test.txt", "-Ldo", "idx.fmd"
+    system bin/"ropebwt3", "build", "test.txt", "-Ldo", "idx.fmd"
     assert_path_exists "idx.fmd"
   end
 end

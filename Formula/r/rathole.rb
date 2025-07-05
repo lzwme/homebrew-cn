@@ -1,7 +1,7 @@
 class Rathole < Formula
   desc "Reverse proxy for NAT traversal"
-  homepage "https:github.comrathole-orgrathole"
-  url "https:github.comrathole-orgratholearchiverefstagsv0.5.0.tar.gz"
+  homepage "https://github.com/rathole-org/rathole"
+  url "https://ghfast.top/https://github.com/rathole-org/rathole/archive/refs/tags/v0.5.0.tar.gz"
   sha256 "c8698dc507c4c2f7e0032be24cac42dd6656ac1c52269875d17957001aa2de41"
   license "Apache-2.0"
 
@@ -27,9 +27,9 @@ class Rathole < Formula
     depends_on "openssl@3"
   end
 
-  # rust 1.80 build patch, upstream bug report, https:github.comrathole-orgratholeissues380
+  # rust 1.80 build patch, upstream bug report, https://github.com/rathole-org/rathole/issues/380
   patch do
-    url "https:raw.githubusercontent.comHomebrewformula-patchesbd353c6adb3601f32de0fa87f3acd34a98da6ec1ratholerust-1.80.patch"
+    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/bd353c6adb3601f32de0fa87f3acd34a98da6ec1/rathole/rust-1.80.patch"
     sha256 "deca6178df16517f752c309f6290678cbddb24cd3839057f746d0817405965f9"
   end
 
@@ -38,17 +38,17 @@ class Rathole < Formula
   end
 
   service do
-    run [opt_bin"rathole", "#{etc}ratholerathole.toml"]
+    run [opt_bin/"rathole", "#{etc}/rathole/rathole.toml"]
     keep_alive true
-    log_path var"lograthole.log"
-    error_log_path var"lograthole.log"
+    log_path var/"log/rathole.log"
+    error_log_path var/"log/rathole.log"
   end
 
   test do
     bind_port = free_port
     service_port = free_port
 
-    (testpath"rathole.toml").write <<~TOML
+    (testpath/"rathole.toml").write <<~TOML
       [server]
       bind_addr = "127.0.0.1:#{bind_port}"#{" "}
       default_token = "1234"#{" "}
@@ -59,13 +59,13 @@ class Rathole < Formula
 
     read, write = IO.pipe
     fork do
-      exec bin"rathole", "-s", "#{testpath}rathole.toml", out: write
+      exec bin/"rathole", "-s", "#{testpath}/rathole.toml", out: write
     end
     sleep 5
 
     output = read.gets
-    assert_match(Listening at 127.0.0.1:#{bind_port}i, output)
+    assert_match(/Listening at 127.0.0.1:#{bind_port}/i, output)
 
-    assert_match(Build Version:\s*#{version}, shell_output("#{bin}rathole --version"))
+    assert_match(/Build Version:\s*#{version}/, shell_output("#{bin}/rathole --version"))
   end
 end

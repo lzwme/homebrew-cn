@@ -1,10 +1,10 @@
 class Akamai < Formula
   desc "CLI toolkit for working with Akamai's APIs"
-  homepage "https:github.comakamaicli"
-  url "https:github.comakamaicliarchiverefstagsv2.0.1.tar.gz"
+  homepage "https://github.com/akamai/cli"
+  url "https://ghfast.top/https://github.com/akamai/cli/archive/refs/tags/v2.0.1.tar.gz"
   sha256 "c9fad288ac1c45946f9ebe8de28c0bd47646d0033ae15d4cafc5f9bb472d6b94"
   license "Apache-2.0"
-  head "https:github.comakamaicli.git", branch: "master"
+  head "https://github.com/akamai/cli.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "3b915d193b1283f0ad602de2d6b8b1803841801b8ef437f2946e44f3b68208f0"
@@ -22,11 +22,11 @@ class Akamai < Formula
       noautoupgrade
       nofirstrun
     ]
-    system "go", "build", *std_go_args(ldflags: "-s -w", tags:), ".cli"
+    system "go", "build", *std_go_args(ldflags: "-s -w", tags:), "./cli"
   end
 
   test do
-    assert_match "diagnostics", shell_output("#{bin}akamai install diagnostics")
-    system bin"akamai", "uninstall", "diagnostics"
+    assert_match "diagnostics", shell_output("#{bin}/akamai install diagnostics")
+    system bin/"akamai", "uninstall", "diagnostics"
   end
 end

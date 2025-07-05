@@ -1,7 +1,7 @@
 class CargoRunBin < Formula
   desc "Build, cache, and run binaries from Cargo.toml to avoid global installs"
-  homepage "https:github.comdustinblackmancargo-run-bin"
-  url "https:github.comdustinblackmancargo-run-binarchiverefstagsv1.7.4.tar.gz"
+  homepage "https://github.com/dustinblackman/cargo-run-bin"
+  url "https://ghfast.top/https://github.com/dustinblackman/cargo-run-bin/archive/refs/tags/v1.7.4.tar.gz"
   sha256 "fd492430a60ca488ad8c356f9c6389426f3fbcd59658e5b721855e171cb62841"
   license "MIT"
 
@@ -23,15 +23,15 @@ class CargoRunBin < Formula
   end
 
   test do
-    assert_equal "cargo-run-bin #{version}", shell_output("#{bin}cargo-bin -V").strip
+    assert_equal "cargo-run-bin #{version}", shell_output("#{bin}/cargo-bin -V").strip
 
     # Show that we can use a different toolchain than the one provided by the `rust` formula.
-    # https:github.comHomebrewhomebrew-corepull134074#pullrequestreview-1484979359
+    # https://github.com/Homebrew/homebrew-core/pull/134074#pullrequestreview-1484979359
     ENV.prepend_path "PATH", Formula["rustup"].bin
     system "rustup", "set", "profile", "minimal"
     system "rustup", "default", "beta"
 
-    (testpath"Cargo.toml").write <<~TOML
+    (testpath/"Cargo.toml").write <<~TOML
       [package]
       name = "homebrew_test"
       version = "0.1.0"
@@ -39,23 +39,23 @@ class CargoRunBin < Formula
 
       [[bin]]
       name = "homebrew_test"
-      path = "srcmain.rs"
+      path = "src/main.rs"
 
       [package.metadata.bin]
       cargo-nextest = { version = "0.9.57", locked = true }
     TOML
 
-    (testpath"srcmain.rs").write <<~RUST
+    (testpath/"src/main.rs").write <<~RUST
       fn main() {
           println!("Hello, world!");
       }
     RUST
 
     system "cargo", "build"
-    system bin"cargo-bin", "--install"
-    system bin"cargo-bin", "--sync-aliases"
+    system bin/"cargo-bin", "--install"
+    system bin/"cargo-bin", "--sync-aliases"
 
-    assert_match <<~TOML, File.read(testpath".cargoconfig.toml")
+    assert_match <<~TOML, File.read(testpath/".cargo/config.toml")
       [alias]
       nextest = ["bin", "cargo-nextest"]
     TOML

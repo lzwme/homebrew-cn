@@ -1,10 +1,10 @@
 class Ipget < Formula
   desc "Retrieve files over IPFS and save them locally"
-  homepage "https:github.comipfsipget"
-  url "https:github.comipfsipgetarchiverefstagsv0.11.2.tar.gz"
+  homepage "https://github.com/ipfs/ipget/"
+  url "https://ghfast.top/https://github.com/ipfs/ipget/archive/refs/tags/v0.11.2.tar.gz"
   sha256 "6c929d5ba324d9e0eeccf3e22ff0caa359e9937e3abdfda283caffe3fda5e2dc"
   license "MIT"
-  head "https:github.comipfsipget.git", branch: "master"
+  head "https://github.com/ipfs/ipget.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "cb0f59e6ee28702711cbf7c289a391781ec47aa8388dda4f0dcfbec9ee023f60"
@@ -24,12 +24,12 @@ class Ipget < Formula
 
   test do
     # Make sure correct version is reported
-    assert_match version.to_s, shell_output("#{bin}ipget --version")
+    assert_match version.to_s, shell_output("#{bin}/ipget --version")
 
     # An example content identifier (CID) used in IPFS docs:
-    # https:docs.ipfs.techconceptscontent-addressing
+    # https://docs.ipfs.tech/concepts/content-addressing/
     cid = "bafybeihkoviema7g3gxyt6la7vd5ho32ictqbilu3wnlo3rs7ewhnp7lly"
-    system bin"ipget", "ipfs:#{cid}"
+    system bin/"ipget", "ipfs://#{cid}/"
     assert_match "JPEG image data", shell_output("file #{cid}")
   end
 end

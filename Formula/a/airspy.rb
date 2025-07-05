@@ -1,10 +1,10 @@
 class Airspy < Formula
   desc "Driver and tools for a software-defined radio"
-  homepage "https:airspy.com"
-  url "https:github.comairspyairspyone_hostarchiverefstagsv1.0.10.tar.gz"
+  homepage "https://airspy.com/"
+  url "https://ghfast.top/https://github.com/airspy/airspyone_host/archive/refs/tags/v1.0.10.tar.gz"
   sha256 "fcca23911c9a9da71cebeffeba708c59d1d6401eec6eb2dd73cae35b8ea3c613"
   license "GPL-2.0-or-later"
-  head "https:github.comairspyairspyone_host.git", branch: "master"
+  head "https://github.com/airspy/airspyone_host.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -35,9 +35,9 @@ class Airspy < Formula
   end
 
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include <stdio.h>
-      #include <libairspyairspy.h>
+      #include <libairspy/airspy.h>
 
       int main() {
         airspy_lib_version_t lib_version;
@@ -53,8 +53,8 @@ class Airspy < Formula
     C
 
     system ENV.cc, "test.c", "-L#{lib}", "-lairspy", "-o", "test"
-    assert_match version.to_s, shell_output(".test")
+    assert_match version.to_s, shell_output("./test")
 
-    assert_match version.to_s, shell_output("#{bin}airspy_lib_version --version")
+    assert_match version.to_s, shell_output("#{bin}/airspy_lib_version --version")
   end
 end

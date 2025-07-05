@@ -1,15 +1,15 @@
 class Logtalk < Formula
   desc "Declarative object-oriented logic programming language"
-  homepage "https:logtalk.org"
-  url "https:github.comLogtalkDotOrglogtalk3archiverefstagslgt3920stable.tar.gz"
+  homepage "https://logtalk.org/"
+  url "https://ghfast.top/https://github.com/LogtalkDotOrg/logtalk3/archive/refs/tags/lgt3920stable.tar.gz"
   version "3.92.0"
   sha256 "029eca6bc6296677a9c2882937a8648f7cf858fd432f1ddbfc1f4d219555cb77"
   license "Apache-2.0"
-  head "https:github.comLogtalkDotOrglogtalk3.git", branch: "master"
+  head "https://github.com/LogtalkDotOrg/logtalk3.git", branch: "master"
 
   livecheck do
-    url "https:logtalk.orgdownload.html"
-    regex(Latest stable version:.*?v?(\d+(?:\.\d+)+)i)
+    url "https://logtalk.org/download.html"
+    regex(/Latest stable version:.*?v?(\d+(?:\.\d+)+)/i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -27,7 +27,7 @@ class Logtalk < Formula
   depends_on "gnu-prolog"
 
   def install
-    system ".scriptsinstall.sh", "-p", prefix
+    system "./scripts/install.sh", "-p", prefix
 
     # Resolve relative symlinks for env script
     bin.each_child do |f|
@@ -37,20 +37,20 @@ class Logtalk < Formula
       f.unlink
       ln_s realpath, f
     end
-    bin.env_script_all_files libexec"bin", LOGTALKHOME: HOMEBREW_PREFIX"sharelogtalk",
-                                            LOGTALKUSER: "${LOGTALKUSER:-$HOMElogtalk}"
+    bin.env_script_all_files libexec/"bin", LOGTALKHOME: HOMEBREW_PREFIX/"share/logtalk",
+                                            LOGTALKUSER: "${LOGTALKUSER:-$HOME/logtalk}"
   end
 
   def caveats
     <<~EOS
       Logtalk has been configured with the following environment variables:
-        LOGTALKHOME=#{HOMEBREW_PREFIX}sharelogtalk
-        LOGTALKUSER=$HOMElogtalk
+        LOGTALKHOME=#{HOMEBREW_PREFIX}/share/logtalk
+        LOGTALKUSER=$HOME/logtalk
     EOS
   end
 
   test do
-    output = pipe_output("#{bin}gplgt 2>&1", "logtalk_load(hello_world(loader)).")
+    output = pipe_output("#{bin}/gplgt 2>&1", "logtalk_load(hello_world(loader)).")
     assert_match "Hello World!", output
     refute_match "LOGTALKUSER should be defined first", output
   end

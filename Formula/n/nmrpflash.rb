@@ -1,7 +1,7 @@
 class Nmrpflash < Formula
   desc "Netgear Unbrick Utility"
-  homepage "https:github.comjclehnernmrpflash"
-  url "https:github.comjclehnernmrpflasharchiverefstagsv0.9.25.tar.gz"
+  homepage "https://github.com/jclehner/nmrpflash"
+  url "https://ghfast.top/https://github.com/jclehner/nmrpflash/archive/refs/tags/v0.9.25.tar.gz"
   sha256 "729b2890620febda4748b502f652f17b9343c9bdd80c1608656c2767e86f6b04"
   license "GPL-3.0-or-later"
 
@@ -27,6 +27,6 @@ class Nmrpflash < Formula
   end
 
   test do
-    system bin"nmrpflash", "-L"
+    system bin/"nmrpflash", "-L"
   end
 end

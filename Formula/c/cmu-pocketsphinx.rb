@@ -1,14 +1,14 @@
 class CmuPocketsphinx < Formula
   desc "Lightweight speech recognition engine for mobile devices"
-  homepage "https:cmusphinx.github.io"
-  url "https:github.comcmusphinxpocketsphinxarchiverefstagsv5.0.4.tar.gz"
+  homepage "https://cmusphinx.github.io/"
+  url "https://ghfast.top/https://github.com/cmusphinx/pocketsphinx/archive/refs/tags/v5.0.4.tar.gz"
   sha256 "9acd63cfdc76bbc85b7b6c6610b7a9cf30c79d5b36a31de7dc2f969e962653d7"
   license "BSD-2-Clause"
-  head "https:github.comcmusphinxpocketsphinx.git", branch: "master"
+  head "https://github.com/cmusphinx/pocketsphinx.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do

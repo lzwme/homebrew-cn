@@ -5,10 +5,10 @@ cask "elk" do
   sha256 arm:   "bfa8cf1854302eeb4f8f4ac28240b32ca674e2066bb29f518226b4fe93ecc4f0",
          intel: "e358c071ba8b310bdc29441f18fe56d6e31d96a5975c6f82be1088b10f1fbad9"
 
-  url "https:github.comelk-zoneelk-nativereleasesdownloadelk-native-v#{version}Elk_#{version}_macos_#{arch}.dmg"
+  url "https://ghfast.top/https://github.com/elk-zone/elk-native/releases/download/elk-native-v#{version}/Elk_#{version}_macos_#{arch}.dmg"
   name "Elk Native"
   desc "Mastodon web client"
-  homepage "https:github.comelk-zoneelk-native"
+  homepage "https://github.com/elk-zone/elk-native"
 
   no_autobump! because: :requires_manual_review
 
@@ -18,11 +18,11 @@ cask "elk" do
   app "Elk.app"
 
   zap trash: [
-    "~LibraryApplication Supportzone.elk.native",
-    "~LibraryCacheszone.elk.native",
-    "~LibraryHTTPStorageszone.elk.native.binarycookies",
-    "~LibraryLogszone.elk.native",
-    "~LibrarySaved Application Statezone.elk.native.savedState",
-    "~LibraryWebKitzone.elk.native",
+    "~/Library/Application Support/zone.elk.native",
+    "~/Library/Caches/zone.elk.native",
+    "~/Library/HTTPStorages/zone.elk.native.binarycookies",
+    "~/Library/Logs/zone.elk.native",
+    "~/Library/Saved Application State/zone.elk.native.savedState",
+    "~/Library/WebKit/zone.elk.native",
   ]
 end

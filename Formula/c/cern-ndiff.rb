@@ -1,15 +1,15 @@
 class CernNdiff < Formula
   desc "Numerical diff tool"
   # NOTE: ndiff is a sub-project of Mad-X at the moment.
-  homepage "https:mad.web.cern.chmad"
-  url "https:github.comMethodicalAcceleratorDesignMAD-Xarchiverefstags5.09.03.tar.gz"
+  homepage "https://mad.web.cern.ch/mad/"
+  url "https://ghfast.top/https://github.com/MethodicalAcceleratorDesign/MAD-X/archive/refs/tags/5.09.03.tar.gz"
   sha256 "cd57f9451e3541a820814ad9ef72b6e01d09c6f3be56802fa2e95b1742db7797"
   license "GPL-3.0-only"
-  head "https:github.comMethodicalAcceleratorDesignMAD-X.git", branch: "master"
+  head "https://github.com/MethodicalAcceleratorDesign/MAD-X.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -30,20 +30,20 @@ class CernNdiff < Formula
   conflicts_with "ndiff", "nmap", because: "both install `ndiff` binaries"
 
   def install
-    system "cmake", "-S", "toolsnumdiff", "-B", "build", *std_cmake_args
+    system "cmake", "-S", "tools/numdiff", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 
     # Avoid installing MAD-X license as numdiff is under a different license
     rm "License.txt"
-    prefix.install "toolsnumdiffLICENSE"
+    prefix.install "tools/numdiff/LICENSE"
   end
 
   test do
-    (testpath"lhs.txt").write("0.0 2e-3 0.003")
-    (testpath"rhs.txt").write("1e-7 0.002 0.003")
-    (testpath"test.cfg").write("*   * abs=1e-6")
+    (testpath/"lhs.txt").write("0.0 2e-3 0.003")
+    (testpath/"rhs.txt").write("1e-7 0.002 0.003")
+    (testpath/"test.cfg").write("*   * abs=1e-6")
 
-    system bin"ndiff", "lhs.txt", "rhs.txt", "test.cfg"
+    system bin/"ndiff", "lhs.txt", "rhs.txt", "test.cfg"
   end
 end

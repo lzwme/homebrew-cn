@@ -1,7 +1,7 @@
 class Mtoc < Formula
-  desc "Mach-O to PECOFF binary converter"
-  homepage "https:opensource.apple.com"
-  url "https:github.comapple-oss-distributionscctoolsarchiverefstagscctools-1024.3.tar.gz"
+  desc "Mach-O to PE/COFF binary converter"
+  homepage "https://opensource.apple.com/"
+  url "https://ghfast.top/https://github.com/apple-oss-distributions/cctools/archive/refs/tags/cctools-1024.3.tar.gz"
   sha256 "ffe47144929605307826d9cc5697369e18c83f681860e3c397b6c11279e03318"
   license "APSL-2.0"
 
@@ -20,7 +20,7 @@ class Mtoc < Formula
   conflicts_with "ocmtoc", because: "both install `mtoc` binaries"
 
   patch do
-    url "https:raw.githubusercontent.comacidantheraocbuildd3e57820ce85bc2ed4ce20cc25819e763c17c114patchesmtoc-permissions.patch"
+    url "https://ghfast.top/https://raw.githubusercontent.com/acidanthera/ocbuild/d3e57820ce85bc2ed4ce20cc25819e763c17c114/patches/mtoc-permissions.patch"
     sha256 "0d20ee119368e30913936dfee51055a1055b96dde835f277099cb7bcd4a34daf"
   end
 
@@ -35,14 +35,14 @@ class Mtoc < Formula
                "-configuration", "Release",
                "-IDEBuildLocationStyle=Custom",
                "-IDECustomDerivedDataLocation=#{buildpath}",
-               "CONFIGURATION_BUILD_DIR=buildRelease",
+               "CONFIGURATION_BUILD_DIR=build/Release",
                "HEADER_SEARCH_PATHS=#{Formula["llvm"].opt_include} $(HEADER_SEARCH_PATHS)"
-    bin.install "buildReleasemtoc"
-    man1.install "manmtoc.1"
+    bin.install "build/Release/mtoc"
+    man1.install "man/mtoc.1"
   end
 
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       __attribute__((naked)) int start() {}
     C
 
@@ -51,33 +51,33 @@ class Mtoc < Formula
       -Wl,-preload
       -Wl,-e,_start
       -seg1addr 0x1000
-      -o #{testpath}test
-      #{testpath}test.c
+      -o #{testpath}/test
+      #{testpath}/test.c
     ]
     system ENV.cc, *args
-    system bin"mtoc", "#{testpath}test", "#{testpath}test.pe"
+    system bin/"mtoc", "#{testpath}/test", "#{testpath}/test.pe"
   end
 end
 
 __END__
-diff --git alibstufflto.c blibstufflto.c
+diff --git a/libstuff/lto.c b/libstuff/lto.c
 index ee9fc32..29b986c 100644
---- alibstufflto.c
-+++ blibstufflto.c
+--- a/libstuff/lto.c
++++ b/libstuff/lto.c
 @@ -6,8 +6,8 @@
- #include <sysfile.h>
+ #include <sys/file.h>
  #include <dlfcn.h>
- #include <llvm-clto.h>
--#include "stuffofile.h"
- #include "stuffllvm.h"
-+#include "stuffofile.h"
- #include "stufflto.h"
- #include "stuffallocate.h"
- #include "stufferrors.h"
-diff --git alibstuffreloc.c blibstuffreloc.c
+ #include <llvm-c/lto.h>
+-#include "stuff/ofile.h"
+ #include "stuff/llvm.h"
++#include "stuff/ofile.h"
+ #include "stuff/lto.h"
+ #include "stuff/allocate.h"
+ #include "stuff/errors.h"
+diff --git a/libstuff/reloc.c b/libstuff/reloc.c
 index 296ffa2..33ad2b3 100644
---- alibstuffreloc.c
-+++ blibstuffreloc.c
+--- a/libstuff/reloc.c
++++ b/libstuff/reloc.c
 @@ -163,8 +163,6 @@ uint32_t r_type)
  	case CPU_TYPE_ARM64:
  	case CPU_TYPE_ARM64_32:

@@ -1,14 +1,14 @@
 class Yorkie < Formula
   desc "Document store for collaborative applications"
-  homepage "https:yorkie.dev"
-  url "https:github.comyorkie-teamyorkiearchiverefstagsv0.6.18.tar.gz"
+  homepage "https://yorkie.dev/"
+  url "https://ghfast.top/https://github.com/yorkie-team/yorkie/archive/refs/tags/v0.6.18.tar.gz"
   sha256 "e0e0bf628978c49b3da0e6d48870c0115cf1b23dc37382bd61aed88002f7a117"
   license "Apache-2.0"
-  head "https:github.comyorkie-teamyorkie.git", branch: "main"
+  head "https://github.com/yorkie-team/yorkie.git", branch: "main"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -25,30 +25,30 @@ class Yorkie < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.comyorkie-teamyorkieinternalversion.Version=#{version}
-      -X github.comyorkie-teamyorkieinternalversion.BuildDate=#{time.iso8601}
+      -X github.com/yorkie-team/yorkie/internal/version.Version=#{version}
+      -X github.com/yorkie-team/yorkie/internal/version.BuildDate=#{time.iso8601}
     ]
 
-    system "go", "build", *std_go_args(ldflags:), ".cmdyorkie"
+    system "go", "build", *std_go_args(ldflags:), "./cmd/yorkie"
 
-    generate_completions_from_executable(bin"yorkie", "completion")
+    generate_completions_from_executable(bin/"yorkie", "completion")
   end
 
   service do
-    run opt_bin"yorkie"
+    run opt_bin/"yorkie"
     run_type :immediate
     keep_alive true
     working_dir var
   end
 
   test do
-    yorkie_pid = spawn bin"yorkie", "server"
+    yorkie_pid = spawn bin/"yorkie", "server"
     # sleep to let yorkie get ready
     sleep 3
-    system bin"yorkie", "login", "-u", "admin", "-p", "admin", "--insecure"
+    system bin/"yorkie", "login", "-u", "admin", "-p", "admin", "--insecure"
 
     test_project = "test"
-    output = shell_output("#{bin}yorkie project create #{test_project} 2>&1")
+    output = shell_output("#{bin}/yorkie project create #{test_project} 2>&1")
     project_info = JSON.parse(output)
     assert_equal test_project, project_info.fetch("name")
   ensure

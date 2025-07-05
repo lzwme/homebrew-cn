@@ -1,10 +1,10 @@
 class Blis < Formula
   desc "BLAS-like Library Instantiation Software Framework"
-  homepage "https:github.comflameblis"
-  url "https:github.comflameblisarchiverefstags2.0.tar.gz"
+  homepage "https://github.com/flame/blis"
+  url "https://ghfast.top/https://github.com/flame/blis/archive/refs/tags/2.0.tar.gz"
   sha256 "08bbebd77914a6d1a43874ae5ec2f54fe6a77cba745f2532df28361b0f1ad1b3"
   license "BSD-3-Clause"
-  head "https:github.comflameblis.git", branch: "master"
+  head "https://github.com/flame/blis.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "eaa5b7da801e3b1915288ce0938b19d5add45ba87ce3dab1277e2beb78d77654"
@@ -19,7 +19,7 @@ class Blis < Formula
   uses_from_macos "python" => :build
 
   def install
-    # https:github.comflameblisblobmasterdocsConfigurationHowTo.md
+    # https://github.com/flame/blis/blob/master/docs/ConfigurationHowTo.md
     ENV.runtime_cpu_detection
     config = if !build.bottle?
       "auto"
@@ -32,17 +32,17 @@ class Blis < Formula
       Hardware::CPU.arch
     end
 
-    system ".configure", "--prefix=#{prefix}", "--enable-cblas", config
+    system "./configure", "--prefix=#{prefix}", "--enable-cblas", config
     system "make"
     system "make", "install"
   end
 
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include <stdio.h>
       #include <stdlib.h>
       #include <math.h>
-      #include "blisblis.h"
+      #include "blis/blis.h"
 
       int main(void) {
         int i;
@@ -60,6 +60,6 @@ class Blis < Formula
       }
     C
     system ENV.cc, "-o", "test", "test.c", "-I#{include}", "-L#{lib}", "-lblis", "-lm"
-    system ".test"
+    system "./test"
   end
 end

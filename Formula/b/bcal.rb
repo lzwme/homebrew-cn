@@ -1,7 +1,7 @@
 class Bcal < Formula
   desc "Storage conversion and expression calculator"
-  homepage "https:github.comjarunbcal"
-  url "https:github.comjarunbcalarchiverefstagsv2.4.tar.gz"
+  homepage "https://github.com/jarun/bcal"
+  url "https://ghfast.top/https://github.com/jarun/bcal/archive/refs/tags/v2.4.tar.gz"
   sha256 "141f39d866f62274b2262164baaac6202f60749862c84c2e6ed231f6d03ee8df"
   license "GPL-3.0-or-later"
 
@@ -36,6 +36,6 @@ class Bcal < Formula
   end
 
   test do
-    assert_match "9333353817", shell_output("#{bin}bcal '56 gb  6 + 4kib * 5 + 4 B'")
+    assert_match "9333353817", shell_output("#{bin}/bcal '56 gb / 6 + 4kib * 5 + 4 B'")
   end
 end

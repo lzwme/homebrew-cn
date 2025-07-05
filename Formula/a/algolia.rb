@@ -1,10 +1,10 @@
 class Algolia < Formula
   desc "CLI for Algolia"
-  homepage "https:www.algolia.comdoctoolscli"
-  url "https:github.comalgoliacliarchiverefstagsv1.7.0.tar.gz"
+  homepage "https://www.algolia.com/doc/tools/cli"
+  url "https://ghfast.top/https://github.com/algolia/cli/archive/refs/tags/v1.7.0.tar.gz"
   sha256 "34083ff0480baef9cc4fe3339fa605cec9b66f7da89aecadca1256477799f396"
   license "MIT"
-  head "https:github.comalgoliacli.git", branch: "main"
+  head "https://github.com/algolia/cli.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "21e39a4812dbb07883c67bbdde1bb29ffcd233b51f8809c013bc85b443575328"
@@ -18,16 +18,16 @@ class Algolia < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = "-s -w -X github.comalgoliaclipkgversion.Version=#{version}"
-    system "go", "build", *std_go_args(ldflags:), ".cmdalgolia"
+    ldflags = "-s -w -X github.com/algolia/cli/pkg/version.Version=#{version}"
+    system "go", "build", *std_go_args(ldflags:), "./cmd/algolia"
 
-    generate_completions_from_executable(bin"algolia", "completion")
+    generate_completions_from_executable(bin/"algolia", "completion")
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}algolia --version")
+    assert_match version.to_s, shell_output("#{bin}/algolia --version")
 
-    output = shell_output("#{bin}algolia apikeys list 2>&1", 4)
+    output = shell_output("#{bin}/algolia apikeys list 2>&1", 4)
     assert_match "you have not configured your Application ID yet", output
   end
 end

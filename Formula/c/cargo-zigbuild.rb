@@ -1,10 +1,10 @@
 class CargoZigbuild < Formula
   desc "Compile Cargo project with zig as linker"
-  homepage "https:github.comrust-crosscargo-zigbuild"
-  url "https:github.comrust-crosscargo-zigbuildarchiverefstagsv0.20.0.tar.gz"
+  homepage "https://github.com/rust-cross/cargo-zigbuild"
+  url "https://ghfast.top/https://github.com/rust-cross/cargo-zigbuild/archive/refs/tags/v0.20.0.tar.gz"
   sha256 "515fc1e815b21132fa82abfd5d9c8a0ee24fa18a1b63b454976a2cec2768836f"
   license "MIT"
-  head "https:github.comrust-crosscargo-zigbuild.git", branch: "main"
+  head "https://github.com/rust-cross/cargo-zigbuild.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "11124f1b7bc4089f1918c1f68a8fb0c6b224ac7ccbd2938aab80c4455cb4ef46"
@@ -26,7 +26,7 @@ class CargoZigbuild < Formula
 
   test do
     # Remove errant CPATH environment variable for `cargo zigbuild` test
-    # https:github.comziglangzigissues10377
+    # https://github.com/ziglang/zig/issues/10377
     ENV.delete "CPATH"
     ENV.delete "RUSTFLAGS"
 

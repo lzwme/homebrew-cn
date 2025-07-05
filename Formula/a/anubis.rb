@@ -1,14 +1,14 @@
 class Anubis < Formula
   desc "Protect resources from scraper bots"
-  homepage "https:anubis.techaro.lol"
-  url "https:github.comTecharoHQanubisarchiverefstagsv1.20.0.tar.gz"
+  homepage "https://anubis.techaro.lol"
+  url "https://ghfast.top/https://github.com/TecharoHQ/anubis/archive/refs/tags/v1.20.0.tar.gz"
   sha256 "1c3dc09c88712519e1c59e40f1d38b121ff3afcbcc0b6c4983b4a4940c91ad8e"
   license "MIT"
-  head "https:github.comTecharoHQanubis.git", branch: "main"
+  head "https://github.com/TecharoHQ/anubis.git", branch: "main"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -24,26 +24,26 @@ class Anubis < Formula
   depends_on "webify" => :test
 
   def install
-    ldflags = "-s -w -X github.comTecharoHQanubis.Version=#{version}"
-    system "go", "build", *std_go_args(ldflags:), ".cmdanubis"
+    ldflags = "-s -w -X github.com/TecharoHQ/anubis.Version=#{version}"
+    system "go", "build", *std_go_args(ldflags:), "./cmd/anubis"
   end
 
   test do
     webify_port = free_port
     anubis_port = free_port
 
-    webify_pid = spawn Formula["webify"].opt_bin"webify", "-addr", ":#{webify_port}", "echo", "Homebrew"
-    anubis_pid = spawn bin"anubis", "-bind", ":#{anubis_port}", "-target", "http:localhost:#{webify_port}",
+    webify_pid = spawn Formula["webify"].opt_bin/"webify", "-addr", ":#{webify_port}", "echo", "Homebrew"
+    anubis_pid = spawn bin/"anubis", "-bind", ":#{anubis_port}", "-target", "http://localhost:#{webify_port}",
       "-serve-robots-txt", "-use-remote-address", "127.0.0.1"
 
-    assert_includes shell_output("curl --silent --retry 5 --retry-connrefused http:localhost:#{anubis_port}"),
+    assert_includes shell_output("curl --silent --retry 5 --retry-connrefused http://localhost:#{anubis_port}"),
       "Homebrew"
 
     expected_robots_txt = <<~EOS
       User-agent: *
-      Disallow: 
+      Disallow: /
     EOS
-    assert_includes shell_output("curl --silent http:localhost:#{anubis_port}robots.txt"),
+    assert_includes shell_output("curl --silent http://localhost:#{anubis_port}/robots.txt"),
       expected_robots_txt.strip
   ensure
     Process.kill "TERM", anubis_pid

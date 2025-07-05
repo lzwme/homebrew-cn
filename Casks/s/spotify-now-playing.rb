@@ -2,9 +2,9 @@ cask "spotify-now-playing" do
   version "0.7.0"
   sha256 "3771b0a35b87264f387fbd591c50fd20554508692d3060d0ddce536aac23d17c"
 
-  url "https:github.comdavicorreiajrspotify-now-playingreleasesdownloadv#{version}spotify-now-playing-#{version}.dmg"
+  url "https://ghfast.top/https://github.com/davicorreiajr/spotify-now-playing/releases/download/v#{version}/spotify-now-playing-#{version}.dmg"
   name "Spotify - now playing"
-  homepage "https:github.comdavicorreiajrspotify-now-playing"
+  homepage "https://github.com/davicorreiajr/spotify-now-playing"
 
   no_autobump! because: :requires_manual_review
 
@@ -13,8 +13,8 @@ cask "spotify-now-playing" do
   app "Spotify - now playing.app"
 
   zap trash: [
-    "~LibraryLogsSpotify - now playing",
-    "~LibraryPreferencescom.electron.spotify-now-playing.plist",
+    "~/Library/Logs/Spotify - now playing",
+    "~/Library/Preferences/com.electron.spotify-now-playing.plist",
   ]
 
   caveats do

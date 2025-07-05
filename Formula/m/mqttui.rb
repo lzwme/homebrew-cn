@@ -1,7 +1,7 @@
 class Mqttui < Formula
   desc "Subscribe to a MQTT Topic or publish something quickly from the terminal"
-  homepage "https:github.comEdJoPaTomqttui"
-  url "https:github.comEdJoPaTomqttuiarchiverefstagsv0.22.1.tar.gz"
+  homepage "https://github.com/EdJoPaTo/mqttui"
+  url "https://ghfast.top/https://github.com/EdJoPaTo/mqttui/archive/refs/tags/v0.22.1.tar.gz"
   sha256 "c8a65a1aef2e96484e09972de50fb6150a868cd30ce16d26df1466fdac1a6c75"
   license "GPL-3.0-or-later"
 
@@ -20,15 +20,15 @@ class Mqttui < Formula
   def install
     system "cargo", "install", *std_cargo_args
 
-    bash_completion.install "targetcompletionsmqttui.bash" => "mqttui"
-    fish_completion.install "targetcompletionsmqttui.fish"
-    zsh_completion.install "targetcompletions_mqttui"
+    bash_completion.install "target/completions/mqttui.bash" => "mqttui"
+    fish_completion.install "target/completions/mqttui.fish"
+    zsh_completion.install "target/completions/_mqttui"
 
-    man1.install "targetmanpagesmqttui.1"
+    man1.install "target/manpages/mqttui.1"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}mqttui --version")
-    assert_match "Connection refused", shell_output("#{bin}mqttui --broker mqtt:127.0.0.1 2>&1", 1)
+    assert_match version.to_s, shell_output("#{bin}/mqttui --version")
+    assert_match "Connection refused", shell_output("#{bin}/mqttui --broker mqtt://127.0.0.1 2>&1", 1)
   end
 end

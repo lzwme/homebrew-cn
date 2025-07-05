@@ -10,17 +10,17 @@ cask "status" do
     sha256 "719c8c499ad4a552eab25b10808250b89774a8e66dbf866278cf94329b5b22d0"
   end
 
-  url "https:github.comstatus-imstatus-desktopreleasesdownload#{version.csv.first}StatusIm-Desktop-#{version.csv.first}-#{version.csv.second}-#{arch}.dmg",
-      verified: "github.comstatus-imstatus-desktopreleasesdownload"
+  url "https://ghfast.top/https://github.com/status-im/status-desktop/releases/download/#{version.csv.first}/StatusIm-Desktop-#{version.csv.first}-#{version.csv.second}-#{arch}.dmg",
+      verified: "github.com/status-im/status-desktop/releases/download/"
   name "Status"
   desc "Decentralised wallet and messenger"
-  homepage "https:status.app"
+  homepage "https://status.app/"
 
   # Not every GitHub release provides a file for both architectures, so we check
   # multiple recent releases instead of only the "latest" release.
   livecheck do
     url :url
-    regex(^StatusIm[._-]Desktop[._-]v?(\d+(?:\.\d+)+)[._-](\h+)[._-]#{arch}\.dmg$i)
+    regex(/^StatusIm[._-]Desktop[._-]v?(\d+(?:\.\d+)+)[._-](\h+)[._-]#{arch}\.dmg$/i)
     strategy :github_releases do |json, regex|
       json.map do |release|
         next if release["draft"]
@@ -40,8 +40,8 @@ cask "status" do
   app "Status.app"
 
   zap trash: [
-    "~LibraryApplication SupportStatus",
-    "~LibraryCachesStatus",
-    "~LibraryPreferencesim.status.Status Desktop.plist",
+    "~/Library/Application Support/Status",
+    "~/Library/Caches/Status",
+    "~/Library/Preferences/im.status.Status Desktop.plist",
   ]
 end

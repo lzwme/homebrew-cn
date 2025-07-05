@@ -1,10 +1,10 @@
 class GithubMcpServer < Formula
   desc "GitHub Model Context Protocol server for AI tools"
-  homepage "https:github.comgithubgithub-mcp-server"
-  url "https:github.comgithubgithub-mcp-serverarchiverefstagsv0.6.0.tar.gz"
+  homepage "https://github.com/github/github-mcp-server"
+  url "https://ghfast.top/https://github.com/github/github-mcp-server/archive/refs/tags/v0.6.0.tar.gz"
   sha256 "c1a59707b47e0daa25d6ad5c26c78824be0e0558c519671f68290e54b8840ddc"
   license "MIT"
-  head "https:github.comgithubgithub-mcp-server.git", branch: "main"
+  head "https://github.com/github/github-mcp-server.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "084f261bbeebefe2fa9d7e10354e2382bec0dc459f7912d2c5572cab91885468"
@@ -19,13 +19,13 @@ class GithubMcpServer < Formula
 
   def install
     ldflags = "-s -w -X main.version=#{version} -X main.commit=#{tap.user} -X main.date=#{time.iso8601}"
-    system "go", "build", *std_go_args(ldflags:), ".cmdgithub-mcp-server"
+    system "go", "build", *std_go_args(ldflags:), "./cmd/github-mcp-server"
 
-    generate_completions_from_executable(bin"github-mcp-server", "completion")
+    generate_completions_from_executable(bin/"github-mcp-server", "completion")
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}github-mcp-server --version")
+    assert_match version.to_s, shell_output("#{bin}/github-mcp-server --version")
 
     ENV["GITHUB_PERSONAL_ACCESS_TOKEN"] = "test"
 
@@ -36,10 +36,10 @@ class GithubMcpServer < Formula
         "params": {
           "name": "get_me"
         },
-        "method": "toolscall"
+        "method": "tools/call"
       }
     JSON
 
-    assert_match "GitHub MCP Server running on stdio", pipe_output(bin"github-mcp-server stdio 2>&1", json, 0)
+    assert_match "GitHub MCP Server running on stdio", pipe_output(bin/"github-mcp-server stdio 2>&1", json, 0)
   end
 end

@@ -1,10 +1,10 @@
 class Kubetui < Formula
   desc "TUI tool for monitoring and exploration of Kubernetes resources"
-  homepage "https:github.comsarub0b0kubetui"
-  url "https:github.comsarub0b0kubetuiarchiverefstagsv1.8.1.tar.gz"
+  homepage "https://github.com/sarub0b0/kubetui"
+  url "https://ghfast.top/https://github.com/sarub0b0/kubetui/archive/refs/tags/v1.8.1.tar.gz"
   sha256 "a0ef5951c9d3cebe3712bc6b24af81f74513efbb1f3026895a027b2c71de839a"
   license "MIT"
-  head "https:github.comsarub0b0kubetui.git", branch: "main"
+  head "https://github.com/sarub0b0/kubetui.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "af5c65e8633605afb2c5dd2a9c194afa8d2ca9b2d3006966bf3b80e00fd88018"
@@ -23,17 +23,17 @@ class Kubetui < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}kubetui --version")
+    assert_match version.to_s, shell_output("#{bin}/kubetui --version")
 
     # Use pty because it fails with this error in Linux CI:
     #   failed to enable raw mode: Os { code: 6, kind: Uncategorized, message: "No such device or address" }
-    r, _w, pid = PTY.spawn("#{bin}kubetui --kubeconfig not_exist")
+    r, _w, pid = PTY.spawn("#{bin}/kubetui --kubeconfig not_exist")
 
     output = ""
     begin
       r.each_line { |line| output += line }
     rescue Errno::EIO
-      # GNULinux raises EIO when read is done on closed pty
+      # GNU/Linux raises EIO when read is done on closed pty
     ensure
       Process.wait(pid)
     end

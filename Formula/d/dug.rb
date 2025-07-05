@@ -1,14 +1,14 @@
 class Dug < Formula
   desc "Global DNS propagation checker that gives pretty output"
-  homepage "https:dug.unfrl.com"
-  url "https:github.comunfrldugarchiverefstags0.0.94.tar.gz"
+  homepage "https://dug.unfrl.com"
+  url "https://ghfast.top/https://github.com/unfrl/dug/archive/refs/tags/0.0.94.tar.gz"
   sha256 "f97952be49d93ed66f1cc7e40bf7004928e6573077839a18f5be371c80e2c16b"
   license "MIT"
   revision 1
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -42,12 +42,12 @@ class Dug < Formula
       -p:DebugType=None
     ]
 
-    system "dotnet", "publish", "clidug.csproj", *args
+    system "dotnet", "publish", "cli/dug.csproj", *args
   end
 
   test do
-    system bin"dug", "google.com"
+    system bin/"dug", "google.com"
 
-    assert_match version.to_s, shell_output("#{bin}dug --version")
+    assert_match version.to_s, shell_output("#{bin}/dug --version")
   end
 end

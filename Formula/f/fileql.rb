@@ -1,10 +1,10 @@
 class Fileql < Formula
   desc "Run SQL-like query on local files instead of database files using the GitQL SDK"
-  homepage "https:github.comAmrDeveloperFileQL"
-  url "https:github.comAmrDeveloperFileQLarchiverefstags0.10.0.tar.gz"
+  homepage "https://github.com/AmrDeveloper/FileQL"
+  url "https://ghfast.top/https://github.com/AmrDeveloper/FileQL/archive/refs/tags/0.10.0.tar.gz"
   sha256 "c85976ffd14454be0f3f973d6d97621f10d8dc0d4814448bd66d2a376f6dfdc2"
   license "MIT"
-  head "https:github.comAmrDeveloperFileQL.git", branch: "master"
+  head "https://github.com/AmrDeveloper/FileQL.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "396ae437cffbace021b760b42ed66c39e78a15edcc82be54a444517922cb7dfb"
@@ -23,7 +23,7 @@ class Fileql < Formula
   end
 
   test do
-    output = JSON.parse(shell_output("#{bin}fileql -o json -q 'SELECT (1 * 2) AS result'"))
+    output = JSON.parse(shell_output("#{bin}/fileql -o json -q 'SELECT (1 * 2) AS result'"))
     assert_equal "2", output.first["result"]
   end
 end

@@ -1,15 +1,15 @@
 class Unisonlang < Formula
   desc "Friendly programming language from the future"
-  homepage "https:unison-lang.org"
+  homepage "https://unison-lang.org/"
   license "MIT"
 
   stable do
-    url "https:github.comunisonwebunison.git",
-        tag:      "release0.5.41",
+    url "https://github.com/unisonweb/unison.git",
+        tag:      "release/0.5.41",
         revision: "b3a897b08561b767e16b1752a852b84ddf461c70"
 
     resource "local-ui" do
-      url "https:github.comunisonwebunison-local-uiarchiverefstagsrelease0.5.41.tar.gz"
+      url "https://ghfast.top/https://github.com/unisonweb/unison-local-ui/archive/refs/tags/release/0.5.41.tar.gz"
       sha256 "f7643f1c060bbe8c6f132144be810596212506b292d2777d5ee7f403195c12d0"
 
       livecheck do
@@ -20,7 +20,7 @@ class Unisonlang < Formula
 
   livecheck do
     url :stable
-    regex(%r{^releasev?(\d+(?:\.\d+)+)$}i)
+    regex(%r{^release/v?(\d+(?:\.\d+)+)$}i)
   end
 
   bottle do
@@ -33,10 +33,10 @@ class Unisonlang < Formula
   end
 
   head do
-    url "https:github.comunisonwebunison.git", branch: "trunk"
+    url "https://github.com/unisonweb/unison.git", branch: "trunk"
 
     resource "local-ui" do
-      url "https:github.comunisonwebunison-local-ui.git", branch: "main"
+      url "https://github.com/unisonweb/unison-local-ui.git", branch: "main"
     end
   end
 
@@ -63,18 +63,18 @@ class Unisonlang < Formula
     resource("local-ui").stage do
       system "npm", "install", *std_npm_args(prefix: false)
       # Replace pre-built x86_64 elm binary
-      elm = Pathname("node_moduleselmbinelm")
+      elm = Pathname("node_modules/elm/bin/elm")
       elm.unlink
-      elm.parent.install_symlink Formula["elm"].opt_bin"elm"
+      elm.parent.install_symlink Formula["elm"].opt_bin/"elm"
       # HACK: Flaky command occasionally stalls build indefinitely so we force fail
       # if that occurs. Problem seems to happening while running `elm-json install`.
-      # Issue ref: https:github.comzwiliaselm-jsonissues50
+      # Issue ref: https://github.com/zwilias/elm-json/issues/50
       Timeout.timeout(300) do
         system "npm", "run", "ui-core-install"
       end
       system "npm", "run", "build"
 
-      prefix.install "distunisonLocal" => "ui"
+      prefix.install "dist/unisonLocal" => "ui"
     end
 
     stack_args = %W[
@@ -89,11 +89,11 @@ class Unisonlang < Formula
     system "stack", "-j#{jobs}", "build", *stack_args
 
     prefix.install "unison" => "ucm"
-    bin.install_symlink prefix"ucm"
+    bin.install_symlink prefix/"ucm"
   end
 
   test do
-    (testpath"hello.u").write <<~UNISON
+    (testpath/"hello.u").write <<~UNISON
       helloTo : Text ->{IO, Exception} ()
       helloTo name =
         printLine ("Hello " ++ name)
@@ -103,15 +103,15 @@ class Unisonlang < Formula
         helloTo "Homebrew"
     UNISON
 
-    (testpath"hello.md").write <<~MARKDOWN
+    (testpath/"hello.md").write <<~MARKDOWN
       ```ucm
-      scratchmain> project.create test
-      testmain> load hello.u
-      testmain> add
-      testmain> run hello
+      scratch/main> project.create test
+      test/main> load hello.u
+      test/main> add
+      test/main> run hello
       ```
     MARKDOWN
 
-    assert_match "Hello Homebrew", shell_output("#{bin}ucm --codebase-create . transcript.fork hello.md")
+    assert_match "Hello Homebrew", shell_output("#{bin}/ucm --codebase-create ./ transcript.fork hello.md")
   end
 end

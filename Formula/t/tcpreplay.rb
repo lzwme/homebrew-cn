@@ -1,7 +1,7 @@
 class Tcpreplay < Formula
   desc "Replay saved tcpdump files at arbitrary speeds"
-  homepage "https:tcpreplay.appneta.com"
-  url "https:github.comappnetatcpreplayreleasesdownloadv4.5.1tcpreplay-4.5.1.tar.gz"
+  homepage "https://tcpreplay.appneta.com/"
+  url "https://ghfast.top/https://github.com/appneta/tcpreplay/releases/download/v4.5.1/tcpreplay-4.5.1.tar.gz"
   sha256 "2de79bfd67ec92ca9ae2ffb50456dd1d53ff40f3fa71b422c65e8062013c9e85"
   license all_of: ["BSD-2-Clause", "BSD-3-Clause", "BSD-4-Clause", "GPL-3.0-or-later", "ISC"]
 
@@ -42,12 +42,12 @@ class Tcpreplay < Formula
       "--with-libpcap=#{Formula["libpcap"].opt_prefix}"
     end
 
-    system ".configure", *args
+    system "./configure", *args
 
     system "make", "install"
   end
 
   test do
-    system bin"tcpreplay", "--version"
+    system bin/"tcpreplay", "--version"
   end
 end

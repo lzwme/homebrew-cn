@@ -1,10 +1,10 @@
 class Brev < Formula
   desc "CLI tool for managing workspaces provided by brev.dev"
-  homepage "https:developer.nvidia.combrev"
-  url "https:github.combrevdevbrev-cliarchiverefstagsv0.6.310.tar.gz"
+  homepage "https://developer.nvidia.com/brev"
+  url "https://ghfast.top/https://github.com/brevdev/brev-cli/archive/refs/tags/v0.6.310.tar.gz"
   sha256 "d7d8a58878c037372022f0c1d8fa58e15eb3d198498b521332d05def84cff351"
   license "MIT"
-  head "https:github.combrevdevbrev-cli.git", branch: "main"
+  head "https://github.com/brevdev/brev-cli.git", branch: "main"
 
   # Upstream appears to use GitHub releases to indicate that a version is
   # released (and some tagged versions don't end up as a release), so it's
@@ -26,13 +26,13 @@ class Brev < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = "-s -w -X github.combrevdevbrev-clipkgcmdversion.Version=v#{version}"
+    ldflags = "-s -w -X github.com/brevdev/brev-cli/pkg/cmd/version.Version=v#{version}"
     system "go", "build", *std_go_args(ldflags:)
 
-    generate_completions_from_executable(bin"brev", "completion")
+    generate_completions_from_executable(bin/"brev", "completion")
   end
 
   test do
-    system bin"brev", "healthcheck"
+    system bin/"brev", "healthcheck"
   end
 end

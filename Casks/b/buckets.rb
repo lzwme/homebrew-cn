@@ -5,11 +5,11 @@ cask "buckets" do
   sha256 arm:   "2d7ec7a7d5cf1845c9f2c7adfb37426c7886ae10abec4cca7545cc022277b9c9",
          intel: "54528d1c01c90cc514bd7d534f541f453d3796676991846a04a3a971bfb76a5d"
 
-  url "https:github.combucketsapplicationreleasesdownloadv#{version}Buckets-#{arch}-#{version}.dmg",
-      verified: "github.combucketsapplication"
+  url "https://ghfast.top/https://github.com/buckets/application/releases/download/v#{version}/Buckets-#{arch}-#{version}.dmg",
+      verified: "github.com/buckets/application/"
   name "Buckets"
   desc "Budgeting tool"
-  homepage "https:www.budgetwithbuckets.com"
+  homepage "https://www.budgetwithbuckets.com/"
 
   livecheck do
     url :url
@@ -24,16 +24,16 @@ cask "buckets" do
   app "Buckets.app"
 
   zap trash: [
-    "~LibraryApplication SupportBuckets",
-    "~LibraryApplication SupportCachesbuckets-updater",
-    "~LibraryApplication Supportcom.apple.sharedfilelistcom.apple.LSSharedFileList.ApplicationRecentDocumentscom.github.buckets.application.sfl*",
-    "~LibraryCachescom.github.buckets.application",
-    "~LibraryCachescom.github.buckets.application.ShipIt",
-    "~LibraryHTTPStoragescom.github.buckets.application",
-    "~LibraryLogsBuckets",
-    "~LibraryLogsDiagnosticReportsBuckets-*.ips",
-    "~LibraryPreferencesByHostcom.github.buckets.application.ShipIt.*.plist",
-    "~LibraryPreferencescom.github.buckets.application.plist",
-    "~LibrarySaved Application Statecom.github.buckets.application.savedState,",
+    "~/Library/Application Support/Buckets",
+    "~/Library/Application Support/Caches/buckets-updater",
+    "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.github.buckets.application.sfl*",
+    "~/Library/Caches/com.github.buckets.application",
+    "~/Library/Caches/com.github.buckets.application.ShipIt",
+    "~/Library/HTTPStorages/com.github.buckets.application",
+    "~/Library/Logs/Buckets",
+    "~/Library/Logs/DiagnosticReports/Buckets-*.ips",
+    "~/Library/Preferences/ByHost/com.github.buckets.application.ShipIt.*.plist",
+    "~/Library/Preferences/com.github.buckets.application.plist",
+    "~/Library/Saved Application State/com.github.buckets.application.savedState,",
   ]
 end

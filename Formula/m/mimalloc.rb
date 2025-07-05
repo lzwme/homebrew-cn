@@ -1,13 +1,13 @@
 class Mimalloc < Formula
   desc "Compact general purpose allocator"
-  homepage "https:github.commicrosoftmimalloc"
-  url "https:github.commicrosoftmimallocarchiverefstagsv3.1.5.tar.gz"
+  homepage "https://github.com/microsoft/mimalloc"
+  url "https://ghfast.top/https://github.com/microsoft/mimalloc/archive/refs/tags/v3.1.5.tar.gz"
   sha256 "1c6949032069d5ebea438ec5cedd602d06f40a92ddf0f0d9dcff0993e5f6635c"
   license "MIT"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -30,8 +30,8 @@ class Mimalloc < Formula
   end
 
   test do
-    cp pkgshare"testmain.c", testpath
+    cp pkgshare/"test/main.c", testpath
     system ENV.cc, "main.c", "-L#{lib}", "-lmimalloc", "-o", "test"
-    assert_match "heap stats", shell_output(".test 2>&1")
+    assert_match "heap stats", shell_output("./test 2>&1")
   end
 end

@@ -1,7 +1,7 @@
 class Meilisearch < Formula
   desc "Ultra relevant, instant and typo-tolerant full-text search API"
-  homepage "https:docs.meilisearch.com"
-  url "https:github.commeilisearchmeilisearcharchiverefstagsv1.15.2.tar.gz"
+  homepage "https://docs.meilisearch.com/"
+  url "https://ghfast.top/https://github.com/meilisearch/meilisearch/archive/refs/tags/v1.15.2.tar.gz"
   sha256 "7d74d8d79ec34bc03a818133358b5ca5b8ad455cc359d18bbab08c65e6b00dbc"
   license "MIT"
 
@@ -26,23 +26,23 @@ class Meilisearch < Formula
   depends_on "rust" => :build
 
   def install
-    system "cargo", "install", *std_cargo_args(path: "cratesmeilisearch")
+    system "cargo", "install", *std_cargo_args(path: "crates/meilisearch")
   end
 
   service do
-    run [opt_bin"meilisearch", "--db-path", "#{var}meilisearchdata.ms"]
+    run [opt_bin/"meilisearch", "--db-path", "#{var}/meilisearch/data.ms"]
     keep_alive false
     working_dir var
-    log_path var"logmeilisearch.log"
-    error_log_path var"logmeilisearch.log"
+    log_path var/"log/meilisearch.log"
+    error_log_path var/"log/meilisearch.log"
   end
 
   test do
     port = free_port
-    fork { exec bin"meilisearch", "--http-addr", "127.0.0.1:#{port}" }
+    fork { exec bin/"meilisearch", "--http-addr", "127.0.0.1:#{port}" }
     sleep_count = Hardware::CPU.arm? ? 3 : 10
     sleep sleep_count
-    output = shell_output("curl -s 127.0.0.1:#{port}version")
+    output = shell_output("curl -s 127.0.0.1:#{port}/version")
     assert_match version.to_s, output
   end
 end

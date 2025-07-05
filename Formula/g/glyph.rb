@@ -1,7 +1,7 @@
 class Glyph < Formula
-  desc "Converts imagesvideo to ASCII art"
-  homepage "https:github.comseatedroglyph"
-  url "https:github.comseatedroglypharchiverefstagsv1.0.11.tar.gz"
+  desc "Converts images/video to ASCII art"
+  homepage "https://github.com/seatedro/glyph"
+  url "https://ghfast.top/https://github.com/seatedro/glyph/archive/refs/tags/v1.0.11.tar.gz"
   sha256 "7de7936a13b92b18240134bef64c006ab73988850a8776a1b276e22b73377f15"
   license "MIT"
 
@@ -21,7 +21,7 @@ class Glyph < Formula
 
   def install
     # Fix illegal instruction errors when using bottles on older CPUs.
-    # https:github.comHomebrewhomebrew-coreissues92282
+    # https://github.com/Homebrew/homebrew-core/issues/92282
     cpu = case ENV.effective_arch
     when :arm_vortex_tempest then "apple_m1" # See `zig targets`.
     when :armv8 then "xgene1" # Closest to `-march=armv8-a`
@@ -34,10 +34,10 @@ class Glyph < Formula
   end
 
   test do
-    system bin"glyph", "-i", test_fixtures("test.png"), "-o", "png.txt"
+    system bin/"glyph", "-i", test_fixtures("test.png"), "-o", "png.txt"
     assert_path_exists "png.txt"
 
-    system bin"glyph", "-i", test_fixtures("test.jpg"), "-o", "jpg.txt"
+    system bin/"glyph", "-i", test_fixtures("test.jpg"), "-o", "jpg.txt"
     assert_path_exists "jpg.txt"
   end
 end

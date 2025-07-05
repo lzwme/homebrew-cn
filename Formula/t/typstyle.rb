@@ -1,10 +1,10 @@
 class Typstyle < Formula
   desc "Beautiful and reliable typst code formatter"
-  homepage "https:typstyle-rs.github.iotypstyle"
-  url "https:github.comtypstyle-rstypstylearchiverefstagsv0.13.13.tar.gz"
+  homepage "https://typstyle-rs.github.io/typstyle/"
+  url "https://ghfast.top/https://github.com/typstyle-rs/typstyle/archive/refs/tags/v0.13.13.tar.gz"
   sha256 "19d0d95cbb71cc532530957849aeb85234afeb5e1a8e7fbb7a07bdb23ac260ce"
   license "Apache-2.0"
-  head "https:github.comtypstyle-rstypstyle.git", branch: "master"
+  head "https://github.com/typstyle-rs/typstyle.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "83f211177d2b4a1cead40b513d1c955d76b3c079724f989ccda2a8d570793932"
@@ -19,15 +19,15 @@ class Typstyle < Formula
   depends_on "rust" => :build
 
   def install
-    system "cargo", "install", *std_cargo_args(path: "cratestypstyle")
+    system "cargo", "install", *std_cargo_args(path: "crates/typstyle")
 
-    generate_completions_from_executable(bin"typstyle", "completions")
+    generate_completions_from_executable(bin/"typstyle", "completions")
   end
 
   test do
-    (testpath"Hello.typ").write("Hello World!")
-    system bin"typstyle", "Hello.typ"
+    (testpath/"Hello.typ").write("Hello World!")
+    system bin/"typstyle", "Hello.typ"
 
-    assert_match version.to_s, shell_output("#{bin}typstyle --version")
+    assert_match version.to_s, shell_output("#{bin}/typstyle --version")
   end
 end

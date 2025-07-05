@@ -1,11 +1,11 @@
 class Daq < Formula
   desc "Network intrusion prevention and detection system"
-  homepage "https:www.snort.org"
-  url "https:github.comsnort3libdaqarchiverefstagsv3.0.20.tar.gz"
-  mirror "https:fossies.orglinuxmisclibdaq-3.0.20.tar.gz"
+  homepage "https://www.snort.org/"
+  url "https://ghfast.top/https://github.com/snort3/libdaq/archive/refs/tags/v3.0.20.tar.gz"
+  mirror "https://fossies.org/linux/misc/libdaq-3.0.20.tar.gz"
   sha256 "42730cb427695d4049deaa667623036b3915eaa651bcb91493ca450f06bb36b3"
   license "GPL-2.0-only"
-  head "https:github.comsnort3libdaq.git", branch: "master"
+  head "https://github.com/snort3/libdaq.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "53b81cccef754c485d9b9490d8370e66e635aad54d5cae177f9670b696f3efe5"
@@ -25,13 +25,13 @@ class Daq < Formula
   uses_from_macos "libpcap"
 
   def install
-    system ".bootstrap"
-    system ".configure", "--disable-silent-rules", *std_configure_args
+    system "./bootstrap"
+    system "./configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
   end
 
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include <assert.h>
       #include <stdio.h>
       #include <daq.h>
@@ -53,6 +53,6 @@ class Daq < Formula
       }
     C
     system ENV.cc, "test.c", "-L#{lib}", "-ldaq", "-ldaq_static_pcap", "-lpcap", "-lpthread", "-o", "test"
-    assert_match "[pcap] - Type: 0xb", shell_output(".test")
+    assert_match "[pcap] - Type: 0xb", shell_output("./test")
   end
 end

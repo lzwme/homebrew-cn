@@ -2,12 +2,12 @@ cask "font-gaegu" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefonts.git",
-      verified:  "github.comgooglefonts",
+  url "https://github.com/google/fonts.git",
+      verified:  "github.com/google/fonts",
       branch:    "main",
-      only_path: "oflgaegu"
+      only_path: "ofl/gaegu"
   name "Gaegu"
-  homepage "https:fonts.google.comspecimenGaegu"
+  homepage "https://fonts.google.com/specimen/Gaegu"
 
   font "Gaegu-Bold.ttf"
   font "Gaegu-Light.ttf"

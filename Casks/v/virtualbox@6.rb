@@ -2,10 +2,10 @@ cask "virtualbox@6" do
   version "6.1.50,161033"
   sha256 "b70d28695730b33f0a9abbce6b3c675d9031f2983a0429eb5ea7e979df95ea80"
 
-  url "https:download.virtualbox.orgvirtualbox#{version.csv.first}VirtualBox-#{version.csv.first}-#{version.csv.second}-OSX.dmg"
+  url "https://download.virtualbox.org/virtualbox/#{version.csv.first}/VirtualBox-#{version.csv.first}-#{version.csv.second}-OSX.dmg"
   name "Oracle VirtualBox"
   desc "Virtualizer for x86 hardware"
-  homepage "https:www.virtualbox.org"
+  homepage "https://www.virtualbox.org/"
 
   no_autobump! because: :requires_manual_review
 
@@ -43,10 +43,10 @@ cask "virtualbox@6" do
       ]
 
   postflight do
-    # If VirtualBox is installed before `usrlocallibpkgconfig` is created by Homebrew, it creates it itself
+    # If VirtualBox is installed before `/usr/local/lib/pkgconfig` is created by Homebrew, it creates it itself
     # with incorrect permissions that break other packages
-    # See https:github.comHomebrewhomebrew-caskissues68730#issuecomment-534363026
-    set_ownership "usrlocallibpkgconfig"
+    # See https://github.com/Homebrew/homebrew-cask/issues/68730#issuecomment-534363026
+    set_ownership "/usr/local/lib/pkgconfig"
   end
 
   uninstall script:  {
@@ -55,16 +55,16 @@ cask "virtualbox@6" do
               sudo:       true,
             },
             pkgutil: "org.virtualbox.pkg.*",
-            delete:  "usrlocalbinvboximg-mount"
+            delete:  "/usr/local/bin/vboximg-mount"
 
   zap trash: [
-        "LibraryApplication SupportVirtualBox",
-        "~LibraryApplication Supportcom.apple.sharedfilelistcom.apple.LSSharedFileList.ApplicationRecentDocumentsorg.virtualbox.app.virtualbox*",
-        "~LibraryPreferencesorg.virtualbox.app.VirtualBox*",
-        "~LibrarySaved Application Stateorg.virtualbox.app.VirtualBox*",
-        "~LibraryVirtualBox",
+        "/Library/Application Support/VirtualBox",
+        "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/org.virtualbox.app.virtualbox*",
+        "~/Library/Preferences/org.virtualbox.app.VirtualBox*",
+        "~/Library/Saved Application State/org.virtualbox.app.VirtualBox*",
+        "~/Library/VirtualBox",
       ],
-      rmdir: "~VirtualBox VMs"
+      rmdir: "~/VirtualBox VMs"
 
   caveats do
     kext

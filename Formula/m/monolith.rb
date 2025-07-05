@@ -1,7 +1,7 @@
 class Monolith < Formula
   desc "CLI tool for saving complete web pages as a single HTML file"
-  homepage "https:github.comY2Zmonolith"
-  url "https:github.comY2Zmonolitharchiverefstagsv2.10.1.tar.gz"
+  homepage "https://github.com/Y2Z/monolith"
+  url "https://ghfast.top/https://github.com/Y2Z/monolith/archive/refs/tags/v2.10.1.tar.gz"
   sha256 "1afafc94ba693597f591206938e998fcf2c78fd6695e7dfd8c19e91061f7b44a"
   license "CC0-1.0"
 
@@ -27,6 +27,6 @@ class Monolith < Formula
   end
 
   test do
-    system bin"monolith", "https:lyrics.github.iodbPPortisheadDummyRoads"
+    system bin/"monolith", "https://lyrics.github.io/db/P/Portishead/Dummy/Roads/"
   end
 end

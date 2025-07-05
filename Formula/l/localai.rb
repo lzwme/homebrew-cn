@@ -2,11 +2,11 @@ class Localai < Formula
   include Language::Python::Virtualenv
 
   desc "OpenAI alternative"
-  homepage "https:localai.io"
-  url "https:github.commudlerLocalAIarchiverefstagsv3.1.1.tar.gz"
+  homepage "https://localai.io"
+  url "https://ghfast.top/https://github.com/mudler/LocalAI/archive/refs/tags/v3.1.1.tar.gz"
   sha256 "00e88b6fbbac638c9b1b3d1f46a70ac774d17e0e04e17880cbc463e98d403600"
   license "MIT"
-  head "https:github.commudlerLocalAI.git", branch: "master"
+  head "https://github.com/mudler/LocalAI.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "34a1186447df29fd6c7bae12eabada46360a290dbeaf250b5dae5ef44739beca"
@@ -28,7 +28,7 @@ class Localai < Formula
   depends_on "python@3.13" => :build
 
   resource "grpcio-tools" do
-    url "https:files.pythonhosted.orgpackages0b625f7d3a6d394a7d0cf94abaa93e8224b7cdbc0677bdf2caabd20a62d4f5cbgrpcio_tools-1.73.0.tar.gz"
+    url "https://files.pythonhosted.org/packages/0b/62/5f7d3a6d394a7d0cf94abaa93e8224b7cdbc0677bdf2caabd20a62d4f5cb/grpcio_tools-1.73.0.tar.gz"
     sha256 "69e2da77e7d52c7ea3e60047ba7d704d242b55c6c0ffb1a6147ace1b37ce881b"
   end
 
@@ -37,14 +37,14 @@ class Localai < Formula
   end
 
   def install
-    # Fix to CMake Error at encodec.cppggmlCMakeLists.txt:1 (cmake_minimum_required):
+    # Fix to CMake Error at encodec.cpp/ggml/CMakeLists.txt:1 (cmake_minimum_required):
     ENV["CMAKE_POLICY_VERSION_MINIMUM"] = "3.5"
 
     ENV["SDKROOT"] = MacOS.sdk_path if OS.mac?
 
-    venv = virtualenv_create(buildpath"venv", python3)
+    venv = virtualenv_create(buildpath/"venv", python3)
     venv.pip_install resources
-    ENV.prepend_path "PATH", venv.root"bin"
+    ENV.prepend_path "PATH", venv.root/"bin"
 
     system "make", "build", "VERSION=#{version}"
     bin.install "local-ai"
@@ -53,11 +53,11 @@ class Localai < Formula
   test do
     addr = "127.0.0.1:#{free_port}"
 
-    spawn bin"local-ai", "run", "--address", addr
+    spawn bin/"local-ai", "run", "--address", addr
     sleep 5
     sleep 20 if OS.mac? && Hardware::CPU.intel?
 
     response = shell_output("curl -s -i #{addr}")
-    assert_match "HTTP1.1 200 OK", response
+    assert_match "HTTP/1.1 200 OK", response
   end
 end

@@ -1,7 +1,7 @@
 class NetcdfFortran < Formula
   desc "Fortran libraries and utilities for NetCDF"
-  homepage "https:www.unidata.ucar.edusoftwarenetcdf"
-  url "https:github.comUnidatanetcdf-fortranarchiverefstagsv4.6.2.tar.gz"
+  homepage "https://www.unidata.ucar.edu/software/netcdf/"
+  url "https://ghfast.top/https://github.com/Unidata/netcdf-fortran/archive/refs/tags/v4.6.2.tar.gz"
   sha256 "44cc7b5626b0b054a8503b8fe7c1b0ac4e0a79a69dad792c212454906a9224ca"
   license "NetCDF"
 
@@ -24,8 +24,8 @@ class NetcdfFortran < Formula
     args = std_cmake_args + %w[-DENABLE_TESTS=OFF -DENABLE_DOXYGEN=OFF]
 
     # Help netcdf-fortran find netcf
-    # https:github.comUnidatanetcdf-fortranissues301#issuecomment-1183204019
-    args << "-DnetCDF_LIBRARIES=#{Formula["netcdf"].opt_lib}#{shared_library("libnetcdf")}"
+    # https://github.com/Unidata/netcdf-fortran/issues/301#issuecomment-1183204019
+    args << "-DnetCDF_LIBRARIES=#{Formula["netcdf"].opt_lib}/#{shared_library("libnetcdf")}"
     args << "-DnetCDF_INCLUDE_DIR=#{Formula["netcdf"].opt_include}"
 
     system "cmake", "-S", ".", "-B", "build_shared", *args, "-DBUILD_SHARED_LIBS=ON"
@@ -34,14 +34,14 @@ class NetcdfFortran < Formula
 
     system "cmake", "-S", ".", "-B", "build_static", *args, "-DBUILD_SHARED_LIBS=OFF"
     system "cmake", "--build", "build_static"
-    lib.install "build_staticfortranlibnetcdff.a"
+    lib.install "build_static/fortran/libnetcdff.a"
 
     # Remove shim paths
-    inreplace [bin"nf-config", lib"pkgconfignetcdf-fortran.pc"], Superenv.shims_pathENV.cc, ENV.cc
+    inreplace [bin/"nf-config", lib/"pkgconfig/netcdf-fortran.pc"], Superenv.shims_path/ENV.cc, ENV.cc
   end
 
   test do
-    (testpath"test.f90").write <<~FORTRAN
+    (testpath/"test.f90").write <<~FORTRAN
       program test
         use netcdf
         integer :: ncid, varid, dimids(2)
@@ -56,12 +56,12 @@ class NetcdfFortran < Formula
       contains
         subroutine check(status)
           integer, intent(in) :: status
-          if (status = nf90_noerr) call abort
+          if (status /= nf90_noerr) call abort
         end subroutine check
       end program test
     FORTRAN
     system "gfortran", "test.f90", "-L#{lib}", "-I#{include}", "-lnetcdff",
                        "-o", "testf"
-    system ".testf"
+    system "./testf"
   end
 end

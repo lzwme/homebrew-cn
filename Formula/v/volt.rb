@@ -1,10 +1,10 @@
 class Volt < Formula
   desc "Meta-level vim package manager"
-  homepage "https:github.comvim-voltvolt"
-  url "https:github.comvim-voltvoltarchiverefstagsv0.3.7.tar.gz"
+  homepage "https://github.com/vim-volt/volt"
+  url "https://ghfast.top/https://github.com/vim-volt/volt/archive/refs/tags/v0.3.7.tar.gz"
   sha256 "db64e9a04426d2b1c0873e1ffd7a4c2d0f1ffe61688bee670bb16089b9c98639"
   license "MIT"
-  head "https:github.comvim-voltvolt.git", branch: "master"
+  head "https://github.com/vim-volt/volt.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -31,21 +31,21 @@ class Volt < Formula
 
   # Go 1.14+ compatibility.
   patch do
-    url "https:github.comvim-voltvoltcommitaa9586901d249aa40e67bc0b3e0e7d4f13d5a88b.patch?full_index=1"
+    url "https://github.com/vim-volt/volt/commit/aa9586901d249aa40e67bc0b3e0e7d4f13d5a88b.patch?full_index=1"
     sha256 "62bed17b5c58198f44a669e41112335928e2fa93d71554aa6bddc782cf124872"
   end
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
 
-    bash_completion.install "_contribcompletionbash" => "volt"
-    zsh_completion.install "_contribcompletionzsh" => "_volt"
-    cp bash_completion"volt", zsh_completion"volt-completion.bash"
+    bash_completion.install "_contrib/completion/bash" => "volt"
+    zsh_completion.install "_contrib/completion/zsh" => "_volt"
+    cp bash_completion/"volt", zsh_completion/"volt-completion.bash"
   end
 
   test do
-    (testpath"voltreposlocalhostfoobarpluginbaz.vim").write "qux"
-    system bin"volt", "get", "localhostfoobar"
-    assert_equal "qux", (testpath".vimpackvoltoptlocalhost_foo_barpluginbaz.vim").read
+    (testpath/"volt/repos/localhost/foo/bar/plugin/baz.vim").write "qux"
+    system bin/"volt", "get", "localhost/foo/bar"
+    assert_equal "qux", (testpath/".vim/pack/volt/opt/localhost_foo_bar/plugin/baz.vim").read
   end
 end

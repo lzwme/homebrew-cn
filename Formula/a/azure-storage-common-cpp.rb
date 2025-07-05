@@ -1,13 +1,13 @@
 class AzureStorageCommonCpp < Formula
   desc "Provides common Azure Storage-related abstractions for Azure SDK"
-  homepage "https:github.comAzureazure-sdk-for-cpptreemainsdkstorageazure-storage-common"
-  url "https:github.comAzureazure-sdk-for-cpparchiverefstagsazure-storage-common_12.10.0.tar.gz"
+  homepage "https://github.com/Azure/azure-sdk-for-cpp/tree/main/sdk/storage/azure-storage-common"
+  url "https://ghfast.top/https://github.com/Azure/azure-sdk-for-cpp/archive/refs/tags/azure-storage-common_12.10.0.tar.gz"
   sha256 "84e165267995b8d10060abe1c2b65b3238eccea3f11222b5ae36042a1d1ae07f"
   license "MIT"
 
   livecheck do
     url :stable
-    regex(^azure-storage-common[._-]v?(\d+(?:\.\d+)+)$i)
+    regex(/^azure-storage-common[._-]v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -28,18 +28,18 @@ class AzureStorageCommonCpp < Formula
 
   def install
     ENV["AZURE_SDK_DISABLE_AUTO_VCPKG"] = "1"
-    system "cmake", "-S", "sdkstorageazure-storage-common", "-B", "build", "-DBUILD_SHARED_LIBS=ON", *std_cmake_args
+    system "cmake", "-S", "sdk/storage/azure-storage-common", "-B", "build", "-DBUILD_SHARED_LIBS=ON", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end
 
   test do
-    # From https:github.comAzureazure-sdk-for-cppblobmainsdkstorageazure-storage-commontestutcrypt_functions_test.cpp
-    (testpath"test.cpp").write <<~CPP
+    # From https://github.com/Azure/azure-sdk-for-cpp/blob/main/sdk/storage/azure-storage-common/test/ut/crypt_functions_test.cpp
+    (testpath/"test.cpp").write <<~CPP
       #include <cassert>
       #include <string>
       #include <vector>
-      #include <azurestoragecommoncrypt.hpp>
+      #include <azure/storage/common/crypt.hpp>
 
       static std::vector<uint8_t> ComputeHash(const std::string& data) {
         const uint8_t* ptr = reinterpret_cast<const uint8_t*>(data.data());
@@ -48,13 +48,13 @@ class AzureStorageCommonCpp < Formula
       }
 
       int main() {
-        assert(Azure::Core::Convert::Base64Encode(ComputeHash("Hello Azure!")) == "DtjZpL9o8c=");
+        assert(Azure::Core::Convert::Base64Encode(ComputeHash("Hello Azure!")) == "DtjZpL9/o8c=");
         return 0;
       }
     CPP
     system ENV.cxx, "-std=c++14", "test.cpp", "-o", "test",
                     "-L#{lib}", "-lazure-storage-common",
                     "-L#{Formula["azure-core-cpp"].opt_lib}", "-lazure-core"
-    system ".test"
+    system "./test"
   end
 end

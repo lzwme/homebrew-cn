@@ -1,7 +1,7 @@
 class Latexdiff < Formula
   desc "Compare and mark up LaTeX file differences"
-  homepage "https:www.ctan.orgpkglatexdiff"
-  url "https:github.comftilmannlatexdiffreleasesdownload1.3.4latexdiff-1.3.4.tar.gz"
+  homepage "https://www.ctan.org/pkg/latexdiff"
+  url "https://ghfast.top/https://github.com/ftilmann/latexdiff/releases/download/1.3.4/latexdiff-1.3.4.tar.gz"
   sha256 "aed1c39d51e5c7a8894a5e4b7190106e93968dd90edcc0dde803fcbffe01b2b4"
   license "GPL-3.0-or-later"
 
@@ -23,7 +23,7 @@ class Latexdiff < Formula
   def install
     bin.install %w[latexdiff-fast latexdiff-so latexdiff-vc latexrevise]
     man1.install %w[latexdiff-vc.1 latexdiff.1 latexrevise.1]
-    doc.install Dir["doc*"]
+    doc.install Dir["doc/*"]
     pkgshare.install %w[contrib example]
 
     # Install latexdiff-so (with inlined Algorithm::Diff) as the
@@ -32,27 +32,27 @@ class Latexdiff < Formula
   end
 
   test do
-    (testpath"test1.tex").write <<~'TEX'
+    (testpath/"test1.tex").write <<~'TEX'
       \documentclass{article}
       \begin{document}
       Hello, world.
       \end{document}
     TEX
 
-    (testpath"test2.tex").write <<~'TEX'
+    (testpath/"test2.tex").write <<~'TEX'
       \documentclass{article}
       \begin{document}
       Goodnight, moon.
       \end{document}
     TEX
 
-    expect = ^\\DIFdelbegin \s+
+    expect = /^\\DIFdelbegin \s+
              \\DIFdel      \{ Hello,[ ]world \}
              \\DIFdelend   \s+
              \\DIFaddbegin \s+
              \\DIFadd      \{ Goodnight,[ ]moon \}
              \\DIFaddend   \s+
-             \.$x
-    assert_match expect, shell_output("#{bin}latexdiff test[12].tex")
+             \.$/x
+    assert_match expect, shell_output("#{bin}/latexdiff test[12].tex")
   end
 end

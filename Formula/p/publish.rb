@@ -1,11 +1,11 @@
 class Publish < Formula
   desc "Static site generator for Swift developers"
-  homepage "https:github.comJohnSundellPublish"
-  url "https:github.comJohnSundellPublisharchiverefstags0.9.0.tar.gz"
+  homepage "https://github.com/JohnSundell/Publish"
+  url "https://ghfast.top/https://github.com/JohnSundell/Publish/archive/refs/tags/0.9.0.tar.gz"
   sha256 "e098a48e8763d3aef9abd1a673b8b28b4b35f8dbad15218125e18461104874ca"
   license "MIT"
   revision 2
-  head "https:github.comJohnSundellPublish.git", branch: "master"
+  head "https://github.com/JohnSundell/Publish.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -19,7 +19,7 @@ class Publish < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "dbf8d184068be460c2c8fb09aa1faad7180b1341bd50f670d7ca97a6d93e8672"
   end
 
-  # https:github.comJohnSundellPublish#system-requirements
+  # https://github.com/JohnSundell/Publish#system-requirements
   depends_on xcode: ["13.0", :build]
   # missing `libswift_Concurrency.dylib` on big_sur`
   depends_on macos: :monterey
@@ -33,13 +33,13 @@ class Publish < Formula
       ["--static-swift-stdlib"]
     end
     system "swift", "build", *args, "-c", "release"
-    bin.install ".buildreleasepublish-cli" => "publish"
+    bin.install ".build/release/publish-cli" => "publish"
   end
 
   test do
-    mkdir testpath"test" do
-      system bin"publish", "new"
-      assert_path_exists testpath"test""Package.swift"
+    mkdir testpath/"test" do
+      system bin/"publish", "new"
+      assert_path_exists testpath/"test"/"Package.swift"
     end
   end
 end

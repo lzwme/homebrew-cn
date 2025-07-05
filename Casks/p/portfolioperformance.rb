@@ -5,11 +5,11 @@ cask "portfolioperformance" do
   sha256 arm:   "eddc2cf973130ee5c495ab374861d5a5c32fb83b76cfb6ec3c756954e0c2f0c8",
          intel: "18f51a2937f1021c784a43be9e1a5d66c1bd57a8fd5fddb3023543c25b86d2f7"
 
-  url "https:github.combuchenportfolioreleasesdownload#{version}PortfolioPerformance-#{version}-#{arch}.dmg",
-      verified: "github.combuchenportfolio"
+  url "https://ghfast.top/https://github.com/buchen/portfolio/releases/download/#{version}/PortfolioPerformance-#{version}-#{arch}.dmg",
+      verified: "github.com/buchen/portfolio/"
   name "Portfolio Performance"
   desc "Calculate the overall performance of an investment portfolio"
-  homepage "https:www.portfolio-performance.infoen"
+  homepage "https://www.portfolio-performance.info/en/"
 
   livecheck do
     url :url
@@ -21,8 +21,8 @@ cask "portfolioperformance" do
   app "PortfolioPerformance.app"
 
   zap trash: [
-    "~LibraryApplication Supportname.abuchen.portfolio.product",
-    "~LibraryCachesname.abuchen.portfolio.distro.product",
-    "~LibraryPreferencesname.abuchen.portfolio.distro.product.plist",
+    "~/Library/Application Support/name.abuchen.portfolio.product",
+    "~/Library/Caches/name.abuchen.portfolio.distro.product",
+    "~/Library/Preferences/name.abuchen.portfolio.distro.product.plist",
   ]
 end

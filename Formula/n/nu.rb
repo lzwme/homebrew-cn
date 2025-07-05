@@ -1,11 +1,11 @@
 class Nu < Formula
   desc "Object-oriented, Lisp-like programming language"
-  homepage "https:programming.nu"
-  url "https:github.comprogramming-nunuarchiverefstagsv2.3.0.tar.gz"
+  homepage "https://programming.nu/"
+  url "https://ghfast.top/https://github.com/programming-nu/nu/archive/refs/tags/v2.3.0.tar.gz"
   sha256 "1a6839c1f45aff10797dd4ce5498edaf2f04c415b3c28cd06a7e0697d6133342"
   license "Apache-2.0"
   revision 4
-  head "https:github.comprogramming-nunu.git", branch: "master"
+  head "https://github.com/programming-nu/nu.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -32,9 +32,9 @@ class Nu < Formula
   end
 
   on_arm do
-    # objcNuBridge.m:1242:6: error: implicit declaration of function 'ffi_prep_closure' is invalid in C99
+    # objc/NuBridge.m:1242:6: error: implicit declaration of function 'ffi_prep_closure' is invalid in C99
     # Since libffi.tbd only exports '_ffi_prep_closure' on x86_64, we need to use formula until fixed.
-    # Issue ref: https:github.comprogramming-nunuissues97
+    # Issue ref: https://github.com/programming-nu/nu/issues/97
     depends_on "libffi"
   end
 
@@ -42,19 +42,19 @@ class Nu < Formula
   fails_with :gcc
 
   # Fix Snow Leopard or Lion check to avoid `-arch x86_64` being added to ARM build
-  # PR ref: https:github.comprogramming-nunupull101
+  # PR ref: https://github.com/programming-nu/nu/pull/101
   # TODO: Remove if upstream PR is merged and in a release.
   patch do
-    url "https:github.comprogramming-nunucommit0a837a407f9e9b8f7861b0dd2736f54c04729642.patch?full_index=1"
+    url "https://github.com/programming-nu/nu/commit/0a837a407f9e9b8f7861b0dd2736f54c04729642.patch?full_index=1"
     sha256 "6c8567f0c2681f652dc087f6ef4b713bcc598e99729099a910984f9134f6a72c"
   end
 
-  # Fix missing <readlinehistory.h> include in objcNuParser.m
-  # Build failure details: https:github.comHomebrewhomebrew-corepull126905#issuecomment-1487877021
-  # PR ref: https:github.comprogramming-nunupull103
+  # Fix missing <readline/history.h> include in objc/NuParser.m
+  # Build failure details: https://github.com/Homebrew/homebrew-core/pull/126905#issuecomment-1487877021
+  # PR ref: https://github.com/programming-nu/nu/pull/103
   # TODO: Remove if upstream PR is merged and in a release.
   patch do
-    url "https:github.comprogramming-nunucommitfdd7cfb3eaf4c456a2d8c1406526f02861c3f877.patch?full_index=1"
+    url "https://github.com/programming-nu/nu/commit/fdd7cfb3eaf4c456a2d8c1406526f02861c3f877.patch?full_index=1"
     sha256 "d00afd41b68b9f67fd698f0651f38dd9da56517724753f8b4dc6c85d048ff88b"
   end
 
@@ -62,11 +62,11 @@ class Nu < Formula
     ENV.delete("SDKROOT") if OS.mac? && MacOS.version < :sierra
     ENV["PREFIX"] = prefix
     # Don't hard code path to clang.
-    inreplace "toolsnuke", "usrbinclang", ENV.cc
+    inreplace "tools/nuke", "/usr/bin/clang", ENV.cc
     # Work around ARM build error where directives removed necessary code and broke mininush.
     # Nu uncaught exception: NuIvarAddedTooLate: explicit instance variables ...
-    # Issue ref: https:github.comprogramming-nunuissues102
-    inreplace "objcNuOperators.m", "#if defined(__x86_64__) || TARGET_OS_IPHONE",
+    # Issue ref: https://github.com/programming-nu/nu/issues/102
+    inreplace "objc/NuOperators.m", "#if defined(__x86_64__) || TARGET_OS_IPHONE",
                                     "#if defined(__x86_64__) || defined(__arm64__)"
 
     unless OS.mac?
@@ -75,56 +75,56 @@ class Nu < Formula
       # Help linker find libdispatch from swift on Linux.
       # This is only used for the mininush temporary compiler and is not needed for nush.
       ldflags = %W[
-        "-L#{Formula["swift"].libexec}libswiftlinux"
-        "-Wl,-rpath,#{Formula["swift"].libexec}libswiftlinux"
+        "-L#{Formula["swift"].libexec}/lib/swift/linux"
+        "-Wl,-rpath,#{Formula["swift"].libexec}/lib/swift/linux"
       ]
       ENV["LIBDIRS"] = ldflags.join(" ")
 
       # Remove CFLAGS that force using GNU runtime on Linux.
       # Remove this workaround when upstream drops these flags or provides a way to disable them.
-      # Reported upstream here: https:github.comprogramming-nunuissues99.
+      # Reported upstream here: https://github.com/programming-nu/nu/issues/99.
       inreplace "Nukefile", "-DGNU_RUNTIME=1", ""
       inreplace "Nukefile", "-fgnu-runtime", ""
     end
 
     inreplace "Nukefile" do |s|
       s.gsub!('(SH "sudo ', '(SH "') # don't use sudo to install
-      s.gsub!("\#{@destdir}LibraryFrameworks", "\#{@prefix}Frameworks")
-      s.sub!(^;; source files$, <<~EOS)
+      s.gsub!("\#{@destdir}/Library/Frameworks", "\#{@prefix}/Frameworks")
+      s.sub!(/^;; source files$/, <<~EOS)
         ;; source files
         (set @framework_install_path "#{frameworks}")
       EOS
     end
 
     # Remove bundled libffi
-    rm_r(buildpath"libffi")
+    rm_r(buildpath/"libffi")
 
     # Remove unused prefix from ffi.h to match directory structure of libffi formula
     include_path = (OS.mac? && Hardware::CPU.arm?) ? "ffi" : "x86_64-linux-gnu"
-    inreplace ["objcNuBridge.h", "objcNuBridge.m", "objcNu.m"], "<#{include_path}", "<"
+    inreplace ["objc/NuBridge.h", "objc/NuBridge.m", "objc/Nu.m"], "<#{include_path}/", "<"
 
     system "make", "CC=#{ENV.cc}"
-    system ".mininush", "toolsnuke"
+    system "./mininush", "tools/nuke"
     bin.mkdir
     lib.mkdir
     include.mkdir
-    system ".mininush", "toolsnuke", "install"
+    system "./mininush", "tools/nuke", "install"
   end
 
   def caveats
     on_macos do
       <<~EOS
         Nu.framework was installed to:
-          #{frameworks}Nu.framework
+          #{frameworks}/Nu.framework
 
         You may want to symlink this Framework to a standard macOS location,
         such as:
-          ln -s "#{frameworks}Nu.framework" LibraryFrameworks
+          ln -s "#{frameworks}/Nu.framework" /Library/Frameworks
       EOS
     end
   end
 
   test do
-    system bin"nush", "-e", '(puts "Everything old is Nu again.")'
+    system bin/"nush", "-e", '(puts "Everything old is Nu again.")'
   end
 end

@@ -1,7 +1,7 @@
 class KotlinLanguageServer < Formula
-  desc "Intelligent Kotlin support for any editorIDE using the Language Server Protocol"
-  homepage "https:github.comfwcdkotlin-language-server"
-  url "https:github.comfwcdkotlin-language-serverarchiverefstags1.3.13.tar.gz"
+  desc "Intelligent Kotlin support for any editor/IDE using the Language Server Protocol"
+  homepage "https://github.com/fwcd/kotlin-language-server"
+  url "https://ghfast.top/https://github.com/fwcd/kotlin-language-server/archive/refs/tags/1.3.13.tar.gz"
   sha256 "4cb346f989ef114f6073cb9401968a7dd27eb5cd96993fa6856203610a13f96e"
   license "MIT"
 
@@ -18,9 +18,9 @@ class KotlinLanguageServer < Formula
   depends_on "gradle" => :build
   depends_on "openjdk@21"
 
-  # file permission literal patch, upstream pr ref, https:github.comfwcdkotlin-language-serverpull611
+  # file permission literal patch, upstream pr ref, https://github.com/fwcd/kotlin-language-server/pull/611
   patch do
-    url "https:github.comfwcdkotlin-language-servercommita788e5f7b449dd701adc642c7cfb129f1895bd3e.patch?full_index=1"
+    url "https://github.com/fwcd/kotlin-language-server/commit/a788e5f7b449dd701adc642c7cfb129f1895bd3e.patch?full_index=1"
     sha256 "cc9f6c68a09c76017099ffdd9bfe242a81b51221131bc33f3a7e2baa5bea6d01"
   end
 
@@ -31,9 +31,9 @@ class KotlinLanguageServer < Formula
 
     system "gradle", ":server:installDist", "-PjavaVersion=#{Formula["openjdk@21"].version.major}"
 
-    libexec.install Dir["serverbuildinstallserver*"]
+    libexec.install Dir["server/build/install/server/*"]
 
-    (bin"kotlin-language-server").write_env_script libexec"binkotlin-language-server",
+    (bin/"kotlin-language-server").write_env_script libexec/"bin/kotlin-language-server",
       Language::Java.overridable_java_home_env("21")
   end
 
@@ -45,8 +45,8 @@ class KotlinLanguageServer < Formula
       "processId\":88075,\"rootUri\":null,\"capabilities\":{},\"trace\":\"ver" \
       "bose\",\"workspaceFolders\":null}}\r\n"
 
-    output = pipe_output(bin"kotlin-language-server", input, 0)
+    output = pipe_output(bin/"kotlin-language-server", input, 0)
 
-    assert_match(^Content-Length: \d+i, output)
+    assert_match(/^Content-Length: \d+/i, output)
   end
 end

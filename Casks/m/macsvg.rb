@@ -2,20 +2,20 @@ cask "macsvg" do
   version "1.2.0"
   sha256 "c25105533150f5f9d28e6b08ac20f346f49999f70af55fa0a3aa4d6093aa37ec"
 
-  url "https:github.comdsward2macSVGreleasesdownloadv#{version}macSVG-v#{version.chomp(".0")}.zip",
-      verified: "github.comdsward2macSVG"
+  url "https://ghfast.top/https://github.com/dsward2/macSVG/releases/download/v#{version}/macSVG-v#{version.chomp(".0")}.zip",
+      verified: "github.com/dsward2/macSVG/"
   name "macSVG"
   desc "App for designing HTML5 Scalable Vector Graphics"
-  homepage "https:macsvg.org"
+  homepage "https://macsvg.org/"
 
   no_autobump! because: :requires_manual_review
 
   depends_on macos: ">= :mojave"
 
-  app "macSVG_v#{version.chomp(".0").dots_to_underscores}macSVG.app"
+  app "macSVG_v#{version.chomp(".0").dots_to_underscores}/macSVG.app"
 
   zap trash: [
-    "~LibraryApplication Scriptscom.arkphone.macsvg",
-    "~LibraryContainerscom.arkphone.macsvg",
+    "~/Library/Application Scripts/com.arkphone.macsvg",
+    "~/Library/Containers/com.arkphone.macsvg",
   ]
 end

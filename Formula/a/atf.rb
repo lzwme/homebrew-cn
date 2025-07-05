@@ -1,14 +1,14 @@
 class Atf < Formula
   desc "Automated testing framework"
-  homepage "https:github.comfreebsdatf"
-  url "https:github.comfreebsdatfreleasesdownloadatf-0.23atf-0.23.tar.gz"
+  homepage "https://github.com/freebsd/atf"
+  url "https://ghfast.top/https://github.com/freebsd/atf/releases/download/atf-0.23/atf-0.23.tar.gz"
   sha256 "a64e2427d021297f25b3f2e1798f8ec4dc3061ffb01a1cd3f66cc4cee486b10f"
   license "BSD-2-Clause"
-  head "https:github.comfreebsdatf.git", branch: "master"
+  head "https://github.com/freebsd/atf.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(^atf[._-]?v?(\d+(?:\.\d+)+)$i)
+    regex(/^atf[._-]?v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -29,7 +29,7 @@ class Atf < Formula
     system "glibtoolize", "--force", "--install"
     system "autoreconf", "--force", "--install", "--verbose"
 
-    system ".configure", "--disable-dependency-tracking",
+    system "./configure", "--disable-dependency-tracking",
                           "--prefix=#{prefix}",
                           "--sysconfdir=#{etc}"
     system "make"
@@ -38,8 +38,8 @@ class Atf < Formula
   end
 
   test do
-    (testpath"test.sh").write <<~SHELL
-      #!usrbinenv atf-sh
+    (testpath/"test.sh").write <<~SHELL
+      #!/usr/bin/env atf-sh
       echo test
       exit 0
     SHELL

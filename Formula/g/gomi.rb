@@ -1,10 +1,10 @@
 class Gomi < Formula
   desc "Functions like rm but with the ability to restore files"
-  homepage "https:gomi.dev"
-  url "https:github.combabarotgomiarchiverefstagsv1.6.1.tar.gz"
+  homepage "https://gomi.dev"
+  url "https://ghfast.top/https://github.com/babarot/gomi/archive/refs/tags/v1.6.1.tar.gz"
   sha256 "fd42c42f148a82ac9dc5b16c53dd8e2431397630d6a0ae788c2541e297326784"
   license "MIT"
-  head "https:github.combabarotgomi.git", branch: "main"
+  head "https://github.com/babarot/gomi.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "6ebe115f655c00e6755d3e0eae1208fe80ba957b51a291574b109268dd8d6bcb"
@@ -31,15 +31,15 @@ class Gomi < Formula
     # Create a trash directory
     mkdir ".gomi"
 
-    assert_match version.to_s, shell_output("#{bin}gomi --version")
+    assert_match version.to_s, shell_output("#{bin}/gomi --version")
 
-    (testpath"trash").write <<~TEXT
+    (testpath/"trash").write <<~TEXT
       Homebrew
     TEXT
 
     # Restoring is done in an interactive prompt, so we only test deletion.
-    assert_path_exists testpath"trash"
-    system bin"gomi", "trash"
-    refute_path_exists testpath"trash"
+    assert_path_exists testpath/"trash"
+    system bin/"gomi", "trash"
+    refute_path_exists testpath/"trash"
   end
 end

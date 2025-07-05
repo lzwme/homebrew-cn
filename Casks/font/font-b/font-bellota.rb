@@ -2,12 +2,12 @@ cask "font-bellota" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefonts.git",
-      verified:  "github.comgooglefonts",
+  url "https://github.com/google/fonts.git",
+      verified:  "github.com/google/fonts",
       branch:    "main",
-      only_path: "oflbellota"
+      only_path: "ofl/bellota"
   name "Bellota"
-  homepage "https:fonts.google.comspecimenBellota"
+  homepage "https://fonts.google.com/specimen/Bellota"
 
   font "Bellota-Bold.ttf"
   font "Bellota-BoldItalic.ttf"

@@ -1,7 +1,7 @@
 class Gdcm < Formula
   desc "Grassroots DICOM library and utilities for medical files"
-  homepage "https:sourceforge.netprojectsgdcm"
-  url "https:github.commalaterreGDCMarchiverefstagsv3.0.24.tar.gz"
+  homepage "https://sourceforge.net/projects/gdcm/"
+  url "https://ghfast.top/https://github.com/malaterre/GDCM/archive/refs/tags/v3.0.24.tar.gz"
   sha256 "d88519a094797c645ca34797a24a14efc10965829c4c3352c8ef33782a556336"
   license "BSD-3-Clause"
 
@@ -47,12 +47,12 @@ class Gdcm < Formula
   def install
     xy = Language::Python.major_minor_version python3
     python_include = if OS.mac?
-      Formula["python@#{xy}"].opt_frameworks"Python.frameworkVersions#{xy}includepython#{xy}"
+      Formula["python@#{xy}"].opt_frameworks/"Python.framework/Versions/#{xy}/include/python#{xy}"
     else
-      Formula["python@#{xy}"].opt_include"python#{xy}"
+      Formula["python@#{xy}"].opt_include/"python#{xy}"
     end
 
-    prefix_site_packages = prefixLanguage::Python.site_packages(python3)
+    prefix_site_packages = prefix/Language::Python.site_packages(python3)
     args = [
       "-DCMAKE_CXX_STANDARD=11",
       "-DGDCM_BUILD_APPLICATIONS=ON",
@@ -60,7 +60,7 @@ class Gdcm < Formula
       "-DGDCM_BUILD_TESTING=OFF",
       "-DGDCM_BUILD_EXAMPLES=OFF",
       "-DGDCM_BUILD_DOCBOOK_MANPAGES=OFF",
-      "-DGDCM_USE_VTK=OFF", # No VTK 9 support: https:sourceforge.netpgdcmbugs509
+      "-DGDCM_USE_VTK=OFF", # No VTK 9 support: https://sourceforge.net/p/gdcm/bugs/509/
       "-DGDCM_USE_SYSTEM_CHARLS=ON",
       "-DGDCM_USE_SYSTEM_EXPAT=ON",
       "-DGDCM_USE_SYSTEM_JSON=ON",
@@ -88,7 +88,7 @@ class Gdcm < Formula
   end
 
   test do
-    (testpath"test.cxx").write <<~CPP
+    (testpath/"test.cxx").write <<~CPP
       #include "gdcmReader.h"
       int main(int, char *[])
       {
@@ -97,8 +97,8 @@ class Gdcm < Formula
       }
     CPP
 
-    system ENV.cxx, "-std=c++11", "test.cxx", "-o", "test", "-I#{include}gdcm-3.0", "-L#{lib}", "-lgdcmDSED"
-    system ".test"
+    system ENV.cxx, "-std=c++11", "test.cxx", "-o", "test", "-I#{include}/gdcm-3.0", "-L#{lib}", "-lgdcmDSED"
+    system "./test"
 
     system python3, "-c", "import gdcm"
   end

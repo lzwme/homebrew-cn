@@ -1,10 +1,10 @@
 class Libmodbus < Formula
   desc "Portable modbus library"
-  homepage "https:libmodbus.org"
-  url "https:github.comstephanelibmodbusarchiverefstagsv3.1.11.tar.gz"
+  homepage "https://libmodbus.org/"
+  url "https://ghfast.top/https://github.com/stephane/libmodbus/archive/refs/tags/v3.1.11.tar.gz"
   sha256 "8a750452ef86a53de6cec6fbca67bd5be08d0a1e87278a422fbce3003fd42d99"
   license "LGPL-2.1-or-later"
-  head "https:github.comstephanelibmodbus.git", branch: "master"
+  head "https://github.com/stephane/libmodbus.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "2bb927ed4609da5405a486b49ef592e66c34d3a4af2c676149a77a0c2a0e05fe"
@@ -21,13 +21,13 @@ class Libmodbus < Formula
   depends_on "libtool" => :build
 
   def install
-    system ".autogen.sh"
-    system ".configure", "--prefix=#{prefix}"
+    system "./autogen.sh"
+    system "./configure", "--prefix=#{prefix}"
     system "make", "install"
   end
 
   test do
-    (testpath"hellomodbus.c").write <<~C
+    (testpath/"hellomodbus.c").write <<~C
       #include <modbus.h>
       #include <stdio.h>
       int main() {
@@ -38,7 +38,7 @@ class Libmodbus < Formula
         mb = modbus_new_tcp("127.0.0.1", 1502);
         modbus_connect(mb);
 
-        * Read 5 registers from the address 0 *
+        /* Read 5 registers from the address 0 */
         modbus_read_registers(mb, 0, 5, tab_reg);
 
         void *p = mb;
@@ -49,7 +49,7 @@ class Libmodbus < Formula
       }
     C
     system ENV.cc, "hellomodbus.c", "-o", "foo", "-L#{lib}", "-lmodbus",
-      "-I#{include}libmodbus", "-I#{include}modbus"
-    system ".foo"
+      "-I#{include}/libmodbus", "-I#{include}/modbus"
+    system "./foo"
   end
 end

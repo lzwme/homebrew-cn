@@ -1,7 +1,7 @@
 class Curlie < Formula
   desc "Power of curl, ease of use of httpie"
-  homepage "https:github.comrscurlie"
-  url "https:github.comrscurliearchiverefstagsv1.8.2.tar.gz"
+  homepage "https://github.com/rs/curlie"
+  url "https://ghfast.top/https://github.com/rs/curlie/archive/refs/tags/v1.8.2.tar.gz"
   sha256 "846ca3c5f2cca60c15eaef24949cf49607f09bdd68cbe9d81a2a026e434fa715"
   license "MIT"
 
@@ -25,6 +25,6 @@ class Curlie < Formula
 
   test do
     assert_match "httpbin.org",
-      shell_output("#{bin}curlie -X GET httpbin.orgheaders 2>&1")
+      shell_output("#{bin}/curlie -X GET httpbin.org/headers 2>&1")
   end
 end

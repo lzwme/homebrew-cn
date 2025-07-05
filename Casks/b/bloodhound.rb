@@ -5,23 +5,23 @@ cask "bloodhound" do
   sha256 arm:   "86e37a3b78826bd1c9ebd6b6c65eab9e81261af8f18abe8fda8311ce500e4316",
          intel: "1b191ef3f920d48b1f4b8e9db4df2cb518d3c067eeb29b7bbe4ea48c4392de65"
 
-  url "https:github.comBloodHoundADBloodHoundreleasesdownloadv#{version}BloodHound-darwin-#{arch}.zip"
+  url "https://ghfast.top/https://github.com/BloodHoundAD/BloodHound/releases/download/v#{version}/BloodHound-darwin-#{arch}.zip"
   name "BloodHound"
   desc "Six Degrees of Domain Admin"
-  homepage "https:github.comBloodHoundADBloodHound"
+  homepage "https://github.com/BloodHoundAD/BloodHound"
 
   no_autobump! because: :requires_manual_review
 
-  app "BloodHound-darwin-#{arch}BloodHound.app"
+  app "BloodHound-darwin-#{arch}/BloodHound.app"
 
   zap trash: [
-    "~LibraryApplication Supportbloodhound",
-    "~LibraryPreferencescom.electron.bloodhound.plist",
-    "~LibrarySaved Application Statecom.electron.bloodhound.savedState",
+    "~/Library/Application Support/bloodhound",
+    "~/Library/Preferences/com.electron.bloodhound.plist",
+    "~/Library/Saved Application State/com.electron.bloodhound.savedState",
   ]
 
   caveats <<~EOS
-    According to https:github.comBloodHoundADBloodHoundissues504
+    According to https://github.com/BloodHoundAD/BloodHound/issues/504
     this app will not work with quarantine attributes.
   EOS
 end

@@ -1,13 +1,13 @@
 class Cfitsio < Formula
   desc "C access to FITS data files with optional Fortran wrappers"
-  homepage "https:heasarc.gsfc.nasa.govdocssoftwarefitsiofitsio.html"
-  url "https:heasarc.gsfc.nasa.govFTPsoftwarefitsioccfitsio-4.6.2.tar.gz"
+  homepage "https://heasarc.gsfc.nasa.gov/docs/software/fitsio/fitsio.html"
+  url "https://heasarc.gsfc.nasa.gov/FTP/software/fitsio/c/cfitsio-4.6.2.tar.gz"
   sha256 "66fd078cc0bea896b0d44b120d46d6805421a5361d3a5ad84d9f397b1b5de2cb"
   license "CFITSIO"
 
   livecheck do
     url :homepage
-    regex(href=.*?cfitsio[._-]v?(\d+(?:\.\d+)+)\.ti)
+    regex(/href=.*?cfitsio[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   bottle do
@@ -26,13 +26,13 @@ class Cfitsio < Formula
 
   def install
     # Incorporates upstream commits:
-    #   https:github.comHEASARCcfitsiocommit8ea4846049ba89e5ace4cc03d7118e8b86490a7e
-    #   https:github.comHEASARCcfitsiocommit6aee9403917f8564d733938a6baa21b9695da442
+    #   https://github.com/HEASARC/cfitsio/commit/8ea4846049ba89e5ace4cc03d7118e8b86490a7e
+    #   https://github.com/HEASARC/cfitsio/commit/6aee9403917f8564d733938a6baa21b9695da442
     # Review for removal in next release
     inreplace "cfitsio.pc.cmake" do |f|
-      f.sub!(exec_prefix=.*, "exec_prefix=${prefix}")
-      f.sub!(libdir=.*, "libdir=${exec_prefix}@CMAKE_INSTALL_LIBDIR@")
-      f.sub!(includedir=.*, "includedir=${prefix}@CMAKE_INSTALL_INCLUDEDIR@")
+      f.sub!(/exec_prefix=.*/, "exec_prefix=${prefix}")
+      f.sub!(/libdir=.*/, "libdir=${exec_prefix}/@CMAKE_INSTALL_LIBDIR@")
+      f.sub!(/includedir=.*/, "includedir=${prefix}/@CMAKE_INSTALL_INCLUDEDIR@")
     end
 
     args = %W[
@@ -45,14 +45,14 @@ class Cfitsio < Formula
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 
-    (pkgshare"testprog").install Dir["testprog*", "utilitiestestprog.c"]
+    (pkgshare/"testprog").install Dir["testprog*", "utilities/testprog.c"]
   end
 
   test do
-    cp Dir["#{pkgshare}testprogtestprog*"], testpath
+    cp Dir["#{pkgshare}/testprog/testprog*"], testpath
     flags = shell_output("pkg-config --cflags --libs #{name}").split
     system ENV.cc, "testprog.c", "-o", "testprog", *flags
-    system ".testprog > testprog.lis"
+    system "./testprog > testprog.lis"
     cmp "testprog.lis", "testprog.out"
     cmp "testprog.fit", "testprog.std"
   end

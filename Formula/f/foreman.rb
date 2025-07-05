@@ -1,7 +1,7 @@
 class Foreman < Formula
   desc "Manage Procfile-based applications"
-  homepage "https:ddollar.github.ioforeman"
-  url "https:github.comddollarforemanarchiverefstagsv0.88.1.tar.gz"
+  homepage "https://ddollar.github.io/foreman/"
+  url "https://ghfast.top/https://github.com/ddollar/foreman/archive/refs/tags/v0.88.1.tar.gz"
   sha256 "78826feb7c7a580f4d4e6cb15f0d4373d8ec71eedaf67ae3263c36398c926c70"
   license "MIT"
 
@@ -23,14 +23,14 @@ class Foreman < Formula
     ENV["GEM_HOME"] = libexec
     system "gem", "build", "#{name}.gemspec"
     system "gem", "install", "#{name}-#{version}.gem"
-    bin.install libexec"bin#{name}"
-    bin.env_script_all_files(libexec"bin", GEM_HOME: ENV["GEM_HOME"])
-    man1.install "manforeman.1"
+    bin.install libexec/"bin/#{name}"
+    bin.env_script_all_files(libexec/"bin", GEM_HOME: ENV["GEM_HOME"])
+    man1.install "man/foreman.1"
   end
 
   test do
-    (testpath"Procfile").write("test: echo 'test message'")
+    (testpath/"Procfile").write("test: echo 'test message'")
     expected_message = "test message"
-    assert_match expected_message, shell_output("#{bin}foreman start")
+    assert_match expected_message, shell_output("#{bin}/foreman start")
   end
 end

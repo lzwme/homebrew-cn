@@ -1,10 +1,10 @@
 class Hysteria < Formula
   desc "Feature-packed proxy & relay tool optimized for lossy, unstable connections"
-  homepage "https:hysteria.network"
-  url "https:github.comapernethysteriaarchiverefstagsappv2.6.2.tar.gz"
+  homepage "https://hysteria.network/"
+  url "https://ghfast.top/https://github.com/apernet/hysteria/archive/refs/tags/app/v2.6.2.tar.gz"
   sha256 "4699431f0bc826da2bbd3939c0a78c4e7bfc02773fc3a62b24615c37ee89b266"
   license "MIT"
-  head "https:github.comapernethysteria.git", branch: "master"
+  head "https://github.com/apernet/hysteria.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "13e48d57336bc8c4410a5620b8a1056ac0f448545a8c39c5ebe01b2149c3de48"
@@ -18,7 +18,7 @@ class Hysteria < Formula
   depends_on "go" => :build
 
   def install
-    pkg = "github.comapernethysteriaappv2cmd"
+    pkg = "github.com/apernet/hysteria/app/v2/cmd"
     ldflags = %W[
       -s -w
       -X #{pkg}.appVersion=v#{version}
@@ -28,20 +28,20 @@ class Hysteria < Formula
       -X #{pkg}.appPlatform=#{OS.kernel_name.downcase}
       -X #{pkg}.appArch=#{Hardware::CPU.arch}
     ]
-    system "go", "build", *std_go_args(ldflags:), ".app"
+    system "go", "build", *std_go_args(ldflags:), "./app"
 
-    generate_completions_from_executable(bin"hysteria", "completion")
+    generate_completions_from_executable(bin/"hysteria", "completion")
   end
 
   service do
-    run [opt_bin"hysteria", "--config", etc"hysteriaconfig.yaml"]
+    run [opt_bin/"hysteria", "--config", etc/"hysteria/config.yaml"]
     run_type :immediate
     keep_alive true
   end
 
   test do
     port = free_port
-    (testpath"config.yaml").write <<~YAML
+    (testpath/"config.yaml").write <<~YAML
       listen: :#{port}
       acme:
         domains:
@@ -53,9 +53,9 @@ class Hysteria < Formula
         salamander:
           password: cry_me_a_r1ver
     YAML
-    output = shell_output("#{bin}hysteria server --disable-update-check -c #{testpath}config.yaml 2>&1", 1)
+    output = shell_output("#{bin}/hysteria server --disable-update-check -c #{testpath}/config.yaml 2>&1", 1)
     assert_match "maintenance	started background certificate maintenance", output
 
-    assert_match version.to_s, shell_output("#{bin}hysteria version")
+    assert_match version.to_s, shell_output("#{bin}/hysteria version")
   end
 end

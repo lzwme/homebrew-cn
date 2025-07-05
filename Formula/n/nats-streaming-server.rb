@@ -1,10 +1,10 @@
 class NatsStreamingServer < Formula
   desc "Lightweight cloud messaging system"
-  homepage "https:nats.io"
-  url "https:github.comnats-ionats-streaming-serverarchiverefstagsv0.25.6.tar.gz"
+  homepage "https://nats.io"
+  url "https://ghfast.top/https://github.com/nats-io/nats-streaming-server/archive/refs/tags/v0.25.6.tar.gz"
   sha256 "6f53792784e909870c04441127ca855b6d4cf007ccb93d8884d3278fd23b74cf"
   license "Apache-2.0"
-  head "https:github.comnats-ionats-streaming-server.git", branch: "main"
+  head "https://github.com/nats-io/nats-streaming-server.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "6a7642a9e36f5b99989264273fae72a760bf12a8c97e1dd8d76d9a4fa76de246"
@@ -24,25 +24,25 @@ class NatsStreamingServer < Formula
   end
 
   service do
-    run opt_bin"nats-streaming-server"
+    run opt_bin/"nats-streaming-server"
   end
 
   test do
     port = free_port
     http_port = free_port
     pid = fork do
-      exec bin"nats-streaming-server",
+      exec bin/"nats-streaming-server",
            "--port=#{port}",
            "--http_port=#{http_port}",
-           "--pid=#{testpath}pid",
-           "--log=#{testpath}log"
+           "--pid=#{testpath}/pid",
+           "--log=#{testpath}/log"
     end
     sleep 3
 
     begin
-      assert_match "uptime", shell_output("curl localhost:#{http_port}varz")
-      assert_path_exists testpath"log"
-      assert_match version.to_s, File.read(testpath"log")
+      assert_match "uptime", shell_output("curl localhost:#{http_port}/varz")
+      assert_path_exists testpath/"log"
+      assert_match version.to_s, File.read(testpath/"log")
     ensure
       Process.kill "SIGINT", pid
       Process.wait pid

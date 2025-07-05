@@ -2,25 +2,25 @@ cask "font-ibm-plex-sans-hebrew" do
   version "1.1.0"
   sha256 "d7d490b8a767b972a7f361055fdcf60ad7cb7c270b38ff1bf859562a021369fd"
 
-  url "https:github.comIBMplexreleasesdownload%40ibm%2Fplex-sans-hebrew%40#{version}ibm-plex-sans-hebrew.zip"
+  url "https://ghfast.top/https://github.com/IBM/plex/releases/download/%40ibm%2Fplex-sans-hebrew%40#{version}/ibm-plex-sans-hebrew.zip"
   name "IBM Plex Sans Hebrew"
-  homepage "https:github.comIBMplex"
+  homepage "https://github.com/IBM/plex"
 
   livecheck do
     url :url
-    regex(%r{^@ibmplex-sans-hebrew@?(\d+(?:\.\d+)+)$}i)
+    regex(%r{^@ibm/plex-sans-hebrew@?(\d+(?:\.\d+)+)$}i)
   end
 
   no_autobump! because: :requires_manual_review
 
-  font "ibm-plex-sans-hebrewfontscompleteotfIBMPlexSansHebrew-Bold.otf"
-  font "ibm-plex-sans-hebrewfontscompleteotfIBMPlexSansHebrew-ExtraLight.otf"
-  font "ibm-plex-sans-hebrewfontscompleteotfIBMPlexSansHebrew-Light.otf"
-  font "ibm-plex-sans-hebrewfontscompleteotfIBMPlexSansHebrew-Medium.otf"
-  font "ibm-plex-sans-hebrewfontscompleteotfIBMPlexSansHebrew-Regular.otf"
-  font "ibm-plex-sans-hebrewfontscompleteotfIBMPlexSansHebrew-SemiBold.otf"
-  font "ibm-plex-sans-hebrewfontscompleteotfIBMPlexSansHebrew-Text.otf"
-  font "ibm-plex-sans-hebrewfontscompleteotfIBMPlexSansHebrew-Thin.otf"
+  font "ibm-plex-sans-hebrew/fonts/complete/otf/IBMPlexSansHebrew-Bold.otf"
+  font "ibm-plex-sans-hebrew/fonts/complete/otf/IBMPlexSansHebrew-ExtraLight.otf"
+  font "ibm-plex-sans-hebrew/fonts/complete/otf/IBMPlexSansHebrew-Light.otf"
+  font "ibm-plex-sans-hebrew/fonts/complete/otf/IBMPlexSansHebrew-Medium.otf"
+  font "ibm-plex-sans-hebrew/fonts/complete/otf/IBMPlexSansHebrew-Regular.otf"
+  font "ibm-plex-sans-hebrew/fonts/complete/otf/IBMPlexSansHebrew-SemiBold.otf"
+  font "ibm-plex-sans-hebrew/fonts/complete/otf/IBMPlexSansHebrew-Text.otf"
+  font "ibm-plex-sans-hebrew/fonts/complete/otf/IBMPlexSansHebrew-Thin.otf"
 
   # No zap stanza required
 end

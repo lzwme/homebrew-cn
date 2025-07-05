@@ -1,7 +1,7 @@
 class Tundra < Formula
   desc "Code build system that tries to be fast for incremental builds"
-  homepage "https:github.comdeplinenoisetundra"
-  url "https:github.comdeplinenoisetundraarchiverefstagsv2.17.1.tar.gz"
+  homepage "https://github.com/deplinenoise/tundra"
+  url "https://ghfast.top/https://github.com/deplinenoise/tundra/archive/refs/tags/v2.17.1.tar.gz"
   sha256 "8cc16bf466b1006b089c132e46373fa651ed9fc5ef60d147a5af689f40686396"
   license "MIT"
 
@@ -31,7 +31,7 @@ class Tundra < Formula
   depends_on "googletest" => :build
 
   def install
-    ENV.append "CFLAGS", "-I#{Formula["googletest"].opt_include}googletestgoogletest"
+    ENV.append "CFLAGS", "-I#{Formula["googletest"].opt_include}/googletest/googletest"
     inreplace "Makefile", "c++11", "c++17"
 
     system "make"
@@ -39,7 +39,7 @@ class Tundra < Formula
   end
 
   test do
-    (testpath"test.c").write <<~'C'
+    (testpath/"test.c").write <<~'C'
       #include <stdio.h>
       int main() {
         printf("Hello World\n");
@@ -53,7 +53,7 @@ class Tundra < Formula
       ["linux", "gcc"]
     end
 
-    (testpath"tundra.lua").write <<~LUA
+    (testpath/"tundra.lua").write <<~LUA
       Build {
         Units = function()
           local test = Program {
@@ -71,7 +71,7 @@ class Tundra < Formula
         },
       }
     LUA
-    system bin"tundra2"
-    system ".t2-output#{os}-#{cc}-debug-defaulttest"
+    system bin/"tundra2"
+    system "./t2-output/#{os}-#{cc}-debug-default/test"
   end
 end

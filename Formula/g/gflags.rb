@@ -1,7 +1,7 @@
 class Gflags < Formula
   desc "Library for processing command-line flags"
-  homepage "https:gflags.github.iogflags"
-  url "https:github.comgflagsgflagsarchiverefstagsv2.2.2.tar.gz"
+  homepage "https://gflags.github.io/gflags/"
+  url "https://ghfast.top/https://github.com/gflags/gflags/archive/refs/tags/v2.2.2.tar.gz"
   sha256 "34af2f15cf7367513b352bdcd2493ab14ce43692d2dcd9dfc499492966c64dcf"
   license "BSD-3-Clause"
 
@@ -24,9 +24,9 @@ class Gflags < Formula
 
   depends_on "cmake" => [:build, :test]
 
-  # cmake 4.0 build patch, upstream pr ref, https:github.comgflagsgflagspull367
+  # cmake 4.0 build patch, upstream pr ref, https://github.com/gflags/gflags/pull/367
   patch do
-    url "https:github.comgflagsgflagscommitb14ff3f106149a0a0076aa232ce545580d6e5269.patch?full_index=1"
+    url "https://github.com/gflags/gflags/commit/b14ff3f106149a0a0076aa232ce545580d6e5269.patch?full_index=1"
     sha256 "84556b5cdfdbaaa154066d2fdd6b0d1d90991ac255600971c364a2c0f9549f84"
   end
 
@@ -43,9 +43,9 @@ class Gflags < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~CPP
+    (testpath/"test.cpp").write <<~CPP
       #include <iostream>
-      #include "gflagsgflags.h"
+      #include "gflags/gflags.h"
 
       DEFINE_bool(verbose, false, "Display program name before message");
       DEFINE_string(message, "Hello world!", "Message to print");
@@ -68,10 +68,10 @@ class Gflags < Formula
       }
     CPP
     system ENV.cxx, "test.cpp", "-L#{lib}", "-lgflags", "-o", "test"
-    assert_match "Hello world!", shell_output(".test")
-    assert_match "Foo bar!", shell_output(".test --message='Foo bar!'")
+    assert_match "Hello world!", shell_output("./test")
+    assert_match "Foo bar!", shell_output("./test --message='Foo bar!'")
 
-    (testpath"CMakeLists.txt").write <<~CMAKE
+    (testpath/"CMakeLists.txt").write <<~CMAKE
       cmake_minimum_required(VERSION 4.0)
       project(cmake_test)
       add_executable(${PROJECT_NAME} test.cpp)
@@ -80,6 +80,6 @@ class Gflags < Formula
     CMAKE
     system "cmake", testpath.to_s
     system "cmake", "--build", testpath.to_s
-    assert_match "Hello world!", shell_output(".cmake_test")
+    assert_match "Hello world!", shell_output("./cmake_test")
   end
 end

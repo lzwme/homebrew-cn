@@ -1,10 +1,10 @@
 class Timg < Formula
   desc "Terminal image and video viewer"
-  homepage "https:timg.sh"
-  url "https:github.comhzellertimgarchiverefstagsv1.6.2.tar.gz"
+  homepage "https://timg.sh/"
+  url "https://ghfast.top/https://github.com/hzeller/timg/archive/refs/tags/v1.6.2.tar.gz"
   sha256 "a5fb4443f55552d15a8b22b9ca4cb5874eb1a988d3b98fe31d61d19b2c7b9e56"
   license "GPL-2.0-only"
-  head "https:github.comhzellertimg.git", branch: "main"
+  head "https://github.com/hzeller/timg.git", branch: "main"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "5c8350f7fe1ed4dc4442b36edf9bed57cc7f91d8ed216a23e5b70fd5e094ca6b"
@@ -44,10 +44,10 @@ class Timg < Formula
   end
 
   test do
-    system bin"timg", "--version"
-    system bin"timg", "-g10x10", test_fixtures("test.gif")
-    system bin"timg", "-g10x10", test_fixtures("test.png")
-    system bin"timg", "-pq", "-g10x10", "-o", testpath"test-output.txt", test_fixtures("test.jpg")
-    assert_match "38;2;255;38;0;49m", (testpath"test-output.txt").read
+    system bin/"timg", "--version"
+    system bin/"timg", "-g10x10", test_fixtures("test.gif")
+    system bin/"timg", "-g10x10", test_fixtures("test.png")
+    system bin/"timg", "-pq", "-g10x10", "-o", testpath/"test-output.txt", test_fixtures("test.jpg")
+    assert_match "38;2;255;38;0;49m", (testpath/"test-output.txt").read
   end
 end

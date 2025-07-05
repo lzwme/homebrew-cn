@@ -1,10 +1,10 @@
 class Astro < Formula
   desc "To build and run Airflow DAGs locally and interact with the Astronomer API"
-  homepage "https:www.astronomer.io"
-  url "https:github.comastronomerastro-cliarchiverefstagsv1.34.1.tar.gz"
+  homepage "https://www.astronomer.io/"
+  url "https://ghfast.top/https://github.com/astronomer/astro-cli/archive/refs/tags/v1.34.1.tar.gz"
   sha256 "33682819fe78164d34a52ee586a0ae9a0c0f41a387380c37e6fe8436dbf14d95"
   license "Apache-2.0"
-  head "https:github.comastronomerastro-cli.git", branch: "main"
+  head "https://github.com/astronomer/astro-cli.git", branch: "main"
 
   livecheck do
     url :stable
@@ -27,25 +27,25 @@ class Astro < Formula
   end
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w -X github.comastronomerastro-cliversion.CurrVersion=#{version}")
+    system "go", "build", *std_go_args(ldflags: "-s -w -X github.com/astronomer/astro-cli/version.CurrVersion=#{version}")
 
-    generate_completions_from_executable(bin"astro", "completion")
+    generate_completions_from_executable(bin/"astro", "completion")
   end
 
   test do
-    version_output = shell_output("#{bin}astro version")
+    version_output = shell_output("#{bin}/astro version")
     assert_match("Astro CLI Version: #{version}", version_output)
 
-    mkdir testpath"astro-project"
-    cd testpath"astro-project" do
-      run_output = shell_output("#{bin}astro config set -g container.binary podman")
+    mkdir testpath/"astro-project"
+    cd testpath/"astro-project" do
+      run_output = shell_output("#{bin}/astro config set -g container.binary podman")
       assert_match "Setting container.binary to podman successfully", run_output
-      run_output = shell_output("#{bin}astro dev init")
+      run_output = shell_output("#{bin}/astro dev init")
       assert_match "Initialized empty Astro project", run_output
-      assert_path_exists testpath".astroconfig.yaml"
+      assert_path_exists testpath/".astro/config.yaml"
     end
 
-    run_output = shell_output("echo 'test@invalid.io' | #{bin}astro login astronomer.io --token-login=test", 1)
-    assert_match(^Welcome to the Astro CLI*, run_output)
+    run_output = shell_output("echo 'test@invalid.io' | #{bin}/astro login astronomer.io --token-login=test", 1)
+    assert_match(/^Welcome to the Astro CLI*/, run_output)
   end
 end

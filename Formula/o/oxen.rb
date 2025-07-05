@@ -1,16 +1,16 @@
 class Oxen < Formula
   desc "Data VCS for structured and unstructured machine learning datasets"
-  homepage "https:www.oxen.ai"
-  url "https:github.comOxen-AIOxenarchiverefstagsv0.35.0.tar.gz"
+  homepage "https://www.oxen.ai/"
+  url "https://ghfast.top/https://github.com/Oxen-AI/Oxen/archive/refs/tags/v0.35.0.tar.gz"
   sha256 "f8301be0615b5e489ea7ec6811a04e6730424c05710b22453b3b1c66e946dcf9"
   license "Apache-2.0"
-  head "https:github.comOxen-AIOxen.git", branch: "main"
+  head "https://github.com/Oxen-AI/Oxen.git", branch: "main"
 
   # The upstream repository contains tags that are not releases.
   # Limit the regex to only match version numbers.
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -39,9 +39,9 @@ class Oxen < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}oxen --version")
+    assert_match version.to_s, shell_output("#{bin}/oxen --version")
 
-    system bin"oxen", "init"
-    assert_match "default_host = \"hub.oxen.ai\"", (testpath".configoxenauth_config.toml").read
+    system bin/"oxen", "init"
+    assert_match "default_host = \"hub.oxen.ai\"", (testpath/".config/oxen/auth_config.toml").read
   end
 end

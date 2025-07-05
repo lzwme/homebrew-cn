@@ -1,7 +1,7 @@
 class Jp2a < Formula
   desc "Convert JPG images to ASCII"
-  homepage "https:github.comTalinxjp2a"
-  url "https:github.comTalinxjp2areleasesdownloadv1.3.2jp2a-1.3.2.tar.bz2"
+  homepage "https://github.com/Talinx/jp2a"
+  url "https://ghfast.top/https://github.com/Talinx/jp2a/releases/download/v1.3.2/jp2a-1.3.2.tar.bz2"
   sha256 "e2aabc4df8f003035059996f0768b4543fd483ab8cffa5f62286a1d00ddb0439"
   license "GPL-2.0-or-later"
   version_scheme 1
@@ -26,11 +26,11 @@ class Jp2a < Formula
   uses_from_macos "ncurses"
 
   def install
-    system ".configure", "--disable-silent-rules", *std_configure_args
+    system "./configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
   end
 
   test do
-    system bin"jp2a", test_fixtures("test.jpg")
+    system bin/"jp2a", test_fixtures("test.jpg")
   end
 end

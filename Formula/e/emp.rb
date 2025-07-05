@@ -1,10 +1,10 @@
 class Emp < Formula
   desc "CLI for Empire"
-  homepage "https:github.comremind101empire"
-  url "https:github.comremind101empirearchiverefstagsv0.13.0.tar.gz"
+  homepage "https://github.com/remind101/empire"
+  url "https://ghfast.top/https://github.com/remind101/empire/archive/refs/tags/v0.13.0.tar.gz"
   sha256 "1294de5b02eaec211549199c5595ab0dbbcfdeb99f670b66e7890c8ba11db22b"
   license "BSD-2-Clause"
-  head "https:github.comremind101empire.git", branch: "master"
+  head "https://github.com/remind101/empire.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -32,10 +32,10 @@ class Emp < Formula
     ENV["GOPATH"] = buildpath
     ENV["GO111MODULE"] = "auto"
 
-    (buildpath"srcgithub.comremind101").mkpath
-    ln_s buildpath, buildpath"srcgithub.comremind101empire"
+    (buildpath/"src/github.com/remind101/").mkpath
+    ln_s buildpath, buildpath/"src/github.com/remind101/empire"
 
-    system "go", "build", *std_go_args, ".srcgithub.comremind101empirecmdemp"
+    system "go", "build", *std_go_args, "./src/github.com/remind101/empire/cmd/emp"
   end
 
   test do
@@ -58,8 +58,8 @@ class Emp < Formula
 
       loop do
         socket = server.accept
-        socket.write "HTTP1.1 200 OK\r\n" \
-                     "Content-Type: applicationjson; charset=utf-8\r\n" \
+        socket.write "HTTP/1.1 200 OK\r\n" \
+                     "Content-Type: application/json; charset=utf-8\r\n" \
                      "Content-Length: #{body.bytesize}\r\n" \
                      "\r\n"
         socket.write body
@@ -69,8 +69,8 @@ class Emp < Formula
 
     sleep 1
 
-    ENV["EMPIRE_API_URL"] = "http:127.0.0.1:#{port}"
-    assert_match(v1  zab  Oct 1(1|2|3)  2015  my awesome release,
-      shell_output("#{bin}emp releases -a foo").strip)
+    ENV["EMPIRE_API_URL"] = "http://127.0.0.1:#{port}"
+    assert_match(/v1  zab  Oct 1(1|2|3)  2015  my awesome release/,
+      shell_output("#{bin}/emp releases -a foo").strip)
   end
 end

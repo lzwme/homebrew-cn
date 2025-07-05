@@ -5,11 +5,11 @@ cask "bruno" do
   sha256 arm:   "a537da9e2356b2fd0d8a22ecd14f313b7bef381e7e662b6256e7a51678d8173d",
          intel: "19f5dce51c7c77a8adc7bda9a4f970e849c7dd2daaf7c78c05b419dcad64073a"
 
-  url "https:github.comusebrunobrunoreleasesdownloadv#{version}bruno_#{version}_#{arch}_mac.dmg",
-      verified: "github.comusebrunobruno"
+  url "https://ghfast.top/https://github.com/usebruno/bruno/releases/download/v#{version}/bruno_#{version}_#{arch}_mac.dmg",
+      verified: "github.com/usebruno/bruno/"
   name "Bruno"
   desc "Open source IDE for exploring and testing APIs"
-  homepage "https:www.usebruno.com"
+  homepage "https://www.usebruno.com/"
 
   livecheck do
     url :url
@@ -21,8 +21,8 @@ cask "bruno" do
   app "Bruno.app"
 
   zap trash: [
-    "~LibraryApplication Supportbruno",
-    "~LibraryPreferencescom.usebruno.app.plist",
-    "~LibrarySaved Application Statecom.usebruno.app.savedState",
+    "~/Library/Application Support/bruno",
+    "~/Library/Preferences/com.usebruno.app.plist",
+    "~/Library/Saved Application State/com.usebruno.app.savedState",
   ]
 end

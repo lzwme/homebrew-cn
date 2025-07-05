@@ -1,10 +1,10 @@
 class Packcc < Formula
   desc "Parser generator for C"
-  homepage "https:github.comarithypackcc"
-  url "https:github.comarithypackccarchiverefstagsv2.2.0.tar.gz"
+  homepage "https://github.com/arithy/packcc"
+  url "https://ghfast.top/https://github.com/arithy/packcc/archive/refs/tags/v2.2.0.tar.gz"
   sha256 "eeb123e2d328de60e0a4171649c7e4c78b25a08b60de35beffd14f3d8fdbdcc8"
   license "MIT"
-  head "https:github.comarithypackcc.git", branch: "master"
+  head "https://github.com/arithy/packcc.git", branch: "master"
 
   bottle do
     rebuild 1
@@ -17,18 +17,18 @@ class Packcc < Formula
   end
 
   def install
-    inreplace "srcpackcc.c", "usrsharepackcc", "#{pkgshare}"
-    build_dir = buildpath"build"ENV.compiler.to_s.sub(-\d+$, "")
+    inreplace "src/packcc.c", "/usr/share/packcc/", "#{pkgshare}/"
+    build_dir = buildpath/"build"/ENV.compiler.to_s.sub(/-\d+$/, "")
     system "make", "-C", build_dir
-    bin.install build_dir"releasebinpackcc"
+    bin.install build_dir/"release/bin/packcc"
     pkgshare.install "examples", "import"
   end
 
   test do
-    cp pkgshare"examplesast-calc.peg", testpath
-    system bin"packcc", "ast-calc.peg"
+    cp pkgshare/"examples/ast-calc.peg", testpath
+    system bin/"packcc", "ast-calc.peg"
     system ENV.cc, "ast-calc.c", "-o", "ast-calc"
-    output = pipe_output(testpath"ast-calc", "1+2*3\n")
+    output = pipe_output(testpath/"ast-calc", "1+2*3\n")
     assert_equal <<~EOS, output
       binary: "+"
         nullary: "1"

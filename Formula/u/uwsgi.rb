@@ -1,10 +1,10 @@
 class Uwsgi < Formula
   desc "Full stack for building hosting services"
-  homepage "https:uwsgi-docs.readthedocs.ioenlatest"
-  url "https:files.pythonhosted.orgpackages6ff0d794e9c7359f488b158e88c9e718c5600efdb74a0daf77331e5ffb6c87c4uwsgi-2.0.30.tar.gz"
+  homepage "https://uwsgi-docs.readthedocs.io/en/latest/"
+  url "https://files.pythonhosted.org/packages/6f/f0/d794e9c7359f488b158e88c9e718c5600efdb74a0daf77331e5ffb6c87c4/uwsgi-2.0.30.tar.gz"
   sha256 "c12aa652124f062ac216077da59f6d247bd7ef938234445881552e58afb1eb5f"
   license "GPL-2.0-or-later"
-  head "https:github.comunbituwsgi.git", branch: "master"
+  head "https://github.com/unbit/uwsgi.git", branch: "master"
 
   bottle do
     sha256 arm64_sequoia: "b2386757296c38cd05ba889d19d2bc6d29c07ba6124657f1d905965fc3da1e1a"
@@ -42,14 +42,14 @@ class Uwsgi < Formula
     ENV.prepend "CFLAGS", "-I#{openssl.opt_include}"
     ENV.prepend "LDFLAGS", "-L#{openssl.opt_lib}"
 
-    (buildpath"buildconfbrew.ini").write <<~INI
+    (buildpath/"buildconf/brew.ini").write <<~INI
       [uwsgi]
       ssl = true
       json = yajl
       xml = libxml2
       yaml = embedded
       inherit = base
-      plugin_dir = #{libexec}uwsgi
+      plugin_dir = #{libexec}/uwsgi
       embedded_plugins = null
     INI
 
@@ -74,27 +74,27 @@ class Uwsgi < Formula
     plugins << "alarm_speech" if OS.mac?
     plugins << "cplusplus" if OS.linux?
 
-    (libexec"uwsgi").mkpath
+    (libexec/"uwsgi").mkpath
     plugins.each do |plugin|
-      system python3, "uwsgiconfig.py", "--verbose", "--plugin", "plugins#{plugin}", "brew"
+      system python3, "uwsgiconfig.py", "--verbose", "--plugin", "plugins/#{plugin}", "brew"
     end
 
-    system python3, "uwsgiconfig.py", "--verbose", "--plugin", "pluginspython", "brew", "python3"
+    system python3, "uwsgiconfig.py", "--verbose", "--plugin", "plugins/python", "brew", "python3"
 
     bin.install "uwsgi"
   end
 
   service do
-    run [opt_bin"uwsgi", "--uid", "_www", "--gid", "_www", "--master", "--die-on-term", "--autoload", "--logto",
-         HOMEBREW_PREFIX"varloguwsgi.log", "--emperor", HOMEBREW_PREFIX"etcuwsgiapps-enabled"]
+    run [opt_bin/"uwsgi", "--uid", "_www", "--gid", "_www", "--master", "--die-on-term", "--autoload", "--logto",
+         HOMEBREW_PREFIX/"var/log/uwsgi.log", "--emperor", HOMEBREW_PREFIX/"etc/uwsgi/apps-enabled"]
     keep_alive true
     working_dir HOMEBREW_PREFIX
   end
 
   test do
-    (testpath"helloworld.py").write <<~PYTHON
+    (testpath/"helloworld.py").write <<~PYTHON
       def application(env, start_response):
-        start_response('200 OK', [('Content-Type','texthtml')])
+        start_response('200 OK', [('Content-Type','text/html')])
         return [b"Hello World"]
     PYTHON
 
@@ -105,7 +105,7 @@ class Uwsgi < Formula
       --plugin python3
       -w helloworld
     ]
-    pid = spawn("#{bin}uwsgi", *args)
+    pid = spawn("#{bin}/uwsgi", *args)
     sleep 4
     sleep 6 if Hardware::CPU.intel?
 

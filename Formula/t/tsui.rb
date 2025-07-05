@@ -1,10 +1,10 @@
 class Tsui < Formula
   desc "TUI for configuring and monitoring Tailscale"
-  homepage "https:neuralink.comtsui"
-  url "https:github.comneuralinkcorptsuiarchiverefstagsv0.2.0.tar.gz"
+  homepage "https://neuralink.com/tsui"
+  url "https://ghfast.top/https://github.com/neuralinkcorp/tsui/archive/refs/tags/v0.2.0.tar.gz"
   sha256 "1ae87ad281587efbf80ef0bf9cc0b519dd4f08465cb378e34e97230f2f3526f0"
   license "MIT"
-  head "https:github.comneuralinkcorptsui.git", branch: "main"
+  head "https://github.com/neuralinkcorp/tsui.git", branch: "main"
 
   no_autobump! because: :requires_manual_review
 
@@ -29,9 +29,9 @@ class Tsui < Formula
   end
 
   test do
-    input, = Open3.popen2 "SHELL=binsh script -q output.txt"
+    input, = Open3.popen2 "SHELL=/bin/sh script -q output.txt"
     input.puts "stty rows 80 cols 130"
-    input.puts bin"tsui"
+    input.puts bin/"tsui"
     sleep 10
     input.putc "q"
     input.puts "exit"
@@ -39,7 +39,7 @@ class Tsui < Formula
     input.close
     sleep 10
 
-    screenlog = (testpath"output.txt").read
+    screenlog = (testpath/"output.txt").read
     # remove ANSI colors
     screenlog.encode!("UTF-8", "binary",
       invalid: :replace,
@@ -47,8 +47,8 @@ class Tsui < Formula
       replace: "")
 
     assert_match(Regexp.union(
-                   Status:\s+(Not )?Connected, # If Tailscale running
-                   Failed to connect to local Tailscale daemon, # If Tailscale not running
+                   /Status:\s+(Not )?Connected/, # If Tailscale running
+                   /Failed to connect to local Tailscale daemon/, # If Tailscale not running
                  ), screenlog)
   end
 end

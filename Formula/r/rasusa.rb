@@ -1,10 +1,10 @@
 class Rasusa < Formula
   desc "Randomly subsample sequencing reads or alignments"
-  homepage "https:doi.org10.21105joss.03941"
-  url "https:github.commbhall88rasusaarchiverefstags2.1.0.tar.gz"
+  homepage "https://doi.org/10.21105/joss.03941"
+  url "https://ghfast.top/https://github.com/mbhall88/rasusa/archive/refs/tags/2.1.0.tar.gz"
   sha256 "6d6d97f381bea5a4d070ef7bc132224f3c5c97bc366109261182aa9bc5736d69"
   license "MIT"
-  head "https:github.commbhall88rasusa.git", branch: "main"
+  head "https://github.com/mbhall88/rasusa.git", branch: "main"
 
   no_autobump! because: :requires_manual_review
 
@@ -22,12 +22,12 @@ class Rasusa < Formula
 
   def install
     system "cargo", "install", *std_cargo_args
-    pkgshare.install "testscases"
+    pkgshare.install "tests/cases"
   end
 
   test do
-    cp_r pkgshare"cases.", testpath
-    system bin"rasusa", "reads", "-n", "5m", "-o", "out.fq", "file1.fq.gz"
+    cp_r pkgshare/"cases/.", testpath
+    system bin/"rasusa", "reads", "-n", "5m", "-o", "out.fq", "file1.fq.gz"
     assert_path_exists "out.fq"
   end
 end

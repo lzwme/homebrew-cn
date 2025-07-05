@@ -1,10 +1,10 @@
 class PdfDiff < Formula
   desc "Tool for visualizing differences between two pdf files"
-  homepage "https:github.comserhackpdf-diff"
-  url "https:github.comserhackpdf-diffarchiverefstagsv0.0.1.tar.gz"
+  homepage "https://github.com/serhack/pdf-diff"
+  url "https://ghfast.top/https://github.com/serhack/pdf-diff/archive/refs/tags/v0.0.1.tar.gz"
   sha256 "13053afc3bbe14b84639d5a6a6416863e8c6d93e4f3c2c8ba7c38d4c427ae707"
   license "MIT"
-  head "https:github.comserhackpdf-diff.git", branch: "main"
+  head "https://github.com/serhack/pdf-diff.git", branch: "main"
 
   no_autobump! because: :requires_manual_review
 
@@ -41,6 +41,6 @@ class PdfDiff < Formula
       The pages number 1 are the same.
     EOS
     assert_equal expected,
-      shell_output("#{bin}pdf-diff #{pdf} #{pdf}")
+      shell_output("#{bin}/pdf-diff #{pdf} #{pdf}")
   end
 end

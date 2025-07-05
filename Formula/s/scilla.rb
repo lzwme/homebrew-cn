@@ -1,10 +1,10 @@
 class Scilla < Formula
   desc "DNS, subdomain, port, directory enumeration tool"
-  homepage "https:github.comedoardotttscilla"
-  url "https:github.comedoardotttscillaarchiverefstagsv1.3.1.tar.gz"
+  homepage "https://github.com/edoardottt/scilla"
+  url "https://ghfast.top/https://github.com/edoardottt/scilla/archive/refs/tags/v1.3.1.tar.gz"
   sha256 "244a15a966a9be849ac7f514d0b69137220d920a92a37126fbcf320e642e7e4f"
   license "GPL-3.0-or-later"
-  head "https:github.comedoardotttscilla.git", branch: "main"
+  head "https://github.com/edoardottt/scilla.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "5e579131e2c41b493e3df24190c43ba8ca77214825c5dc3dca653b6c9a795ec3"
@@ -18,17 +18,17 @@ class Scilla < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), ".cmdscilla"
+    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/scilla"
   end
 
   test do
-    output = shell_output("#{bin}scilla dns -target brew.sh")
+    output = shell_output("#{bin}/scilla dns -target brew.sh")
     assert_match <<~EOS, output
       =====================================================
       target: brew.sh
       ================ SCANNING DNS =======================
     EOS
 
-    assert_match version.to_s, shell_output("#{bin}scilla --help 2>&1", 1)
+    assert_match version.to_s, shell_output("#{bin}/scilla --help 2>&1", 1)
   end
 end

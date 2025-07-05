@@ -1,10 +1,10 @@
 class Gron < Formula
   desc "Make JSON greppable"
-  homepage "https:github.comtomnomnomgron"
-  url "https:github.comtomnomnomgronarchiverefstagsv0.7.1.tar.gz"
+  homepage "https://github.com/tomnomnom/gron"
+  url "https://ghfast.top/https://github.com/tomnomnom/gron/archive/refs/tags/v0.7.1.tar.gz"
   sha256 "1c98f2ef2ba03558864b1ab5e9c4b47a2e89d3ffaf24cfa0ac75cd38d775feb4"
   license "MIT"
-  head "https:github.comtomnomnomgron.git", branch: "master"
+  head "https://github.com/tomnomnom/gron.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -29,7 +29,7 @@ class Gron < Formula
   end
 
   test do
-    assert_equal <<~EOS, pipe_output(bin"gron", "{\"foo\":1, \"bar\":2}")
+    assert_equal <<~EOS, pipe_output(bin/"gron", "{\"foo\":1, \"bar\":2}")
       json = {};
       json.bar = 2;
       json.foo = 1;

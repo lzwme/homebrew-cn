@@ -1,7 +1,7 @@
 class ErlangLs < Formula
   desc "Erlang Language Server"
-  homepage "https:erlang-ls.github.io"
-  url "https:github.comerlang-lserlang_lsarchiverefstags1.1.0.tar.gz"
+  homepage "https://erlang-ls.github.io/"
+  url "https://ghfast.top/https://github.com/erlang-ls/erlang_ls/archive/refs/tags/1.1.0.tar.gz"
   sha256 "b826edae46219a90ab6a162be1626e2f4b0fd60cb2f3372d7a171ee3921aebf0"
   license "Apache-2.0"
 
@@ -23,7 +23,7 @@ class ErlangLs < Formula
   end
 
   test do
-    output = pipe_output(bin"erlang_ls", nil, 1)
+    output = pipe_output(bin/"erlang_ls", nil, 1)
     assert_match "Content-Length", output
   end
 end

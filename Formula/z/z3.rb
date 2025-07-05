@@ -1,14 +1,14 @@
 class Z3 < Formula
   desc "High-performance theorem prover"
-  homepage "https:github.comZ3Proverz3"
-  url "https:github.comZ3Proverz3archiverefstagsz3-4.15.2.tar.gz"
+  homepage "https://github.com/Z3Prover/z3"
+  url "https://ghfast.top/https://github.com/Z3Prover/z3/archive/refs/tags/z3-4.15.2.tar.gz"
   sha256 "3486bf5b35b185981cab0b0a81f870547648a1ca433085aa79afd17c44959751"
   license "MIT"
-  head "https:github.comZ3Proverz3.git", branch: "master"
+  head "https://github.com/Z3Prover/z3.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(z3[._-]v?(\d+(?:\.\d+)+)i)
+    regex(/z3[._-]v?(\d+(?:\.\d+)+)/i)
     strategy :github_latest
   end
 
@@ -59,16 +59,16 @@ class Z3 < Formula
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 
-    system "make", "-C", "contribqprofdiff"
-    bin.install "contribqprofdiffqprofdiff"
+    system "make", "-C", "contrib/qprofdiff"
+    bin.install "contrib/qprofdiff/qprofdiff"
 
     pkgshare.install "examples"
   end
 
   test do
-    system ENV.cc, pkgshare"examplesctest_capi.c", "-I#{include}",
-                   "-L#{lib}", "-lz3", "-o", testpath"test"
-    system ".test"
+    system ENV.cc, pkgshare/"examples/c/test_capi.c", "-I#{include}",
+                   "-L#{lib}", "-lz3", "-o", testpath/"test"
+    system "./test"
     assert_equal version.to_s, shell_output("#{python3} -c 'import z3; print(z3.get_version_string())'").strip
   end
 end

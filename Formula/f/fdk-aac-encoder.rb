@@ -1,7 +1,7 @@
 class FdkAacEncoder < Formula
   desc "Command-line encoder frontend for libfdk-aac"
-  homepage "https:github.comnu774fdkaac"
-  url "https:github.comnu774fdkaacarchiverefstagsv1.0.6.tar.gz"
+  homepage "https://github.com/nu774/fdkaac"
+  url "https://ghfast.top/https://github.com/nu774/fdkaac/archive/refs/tags/v1.0.6.tar.gz"
   sha256 "ed34c8dcae3d49d385e1ceaa380c5871cda744402358c61bcb49950a25bfae58"
   license "Zlib"
 
@@ -25,7 +25,7 @@ class FdkAacEncoder < Formula
 
   def install
     system "autoreconf", "--force", "--install", "--verbose"
-    system ".configure", "--disable-silent-rules",
+    system "./configure", "--disable-silent-rules",
                           "--mandir=#{man}",
                           *std_configure_args
     system "make", "install"
@@ -41,7 +41,7 @@ class FdkAacEncoder < Formula
     max_amplitude = 0.2
 
     position_in_period = 0.0
-    position_in_period_delta = frequency  sample_rate
+    position_in_period_delta = frequency / sample_rate
 
     samples = [].fill(0.0, 0, num_samples)
 
@@ -57,11 +57,11 @@ class FdkAacEncoder < Formula
       (sample * 32767.0).round
     end
 
-    (testpath"tone.pcm").open("wb") do |f|
+    (testpath/"tone.pcm").open("wb") do |f|
       f.syswrite(samples.flatten.pack("s*"))
     end
 
-    system bin"fdkaac", "-R", "--raw-channels", "1", "-m",
-           "1", "#{testpath}tone.pcm", "--title", "Test Tone"
+    system bin/"fdkaac", "-R", "--raw-channels", "1", "-m",
+           "1", "#{testpath}/tone.pcm", "--title", "Test Tone"
   end
 end

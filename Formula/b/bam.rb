@@ -1,10 +1,10 @@
 class Bam < Formula
   desc "Build system that uses Lua to describe the build process"
-  homepage "https:matricks.github.iobam"
-  url "https:github.commatricksbamarchiverefstagsv0.5.1.tar.gz"
+  homepage "https://matricks.github.io/bam/"
+  url "https://ghfast.top/https://github.com/matricks/bam/archive/refs/tags/v0.5.1.tar.gz"
   sha256 "cc8596af3325ecb18ebd6ec2baee550e82cb7b2da19588f3f843b02e943a15a9"
   license "Zlib"
-  head "https:github.commatricksbam.git", branch: "master"
+  head "https://github.com/matricks/bam.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -28,12 +28,12 @@ class Bam < Formula
   end
 
   def install
-    system ".make_unix.sh"
+    system "./make_unix.sh"
     bin.install "bam"
   end
 
   test do
-    (testpath"hello.c").write <<~C
+    (testpath/"hello.c").write <<~C
       #include <stdio.h>
       int main() {
         printf("hello\\n");
@@ -41,13 +41,13 @@ class Bam < Formula
       }
     C
 
-    (testpath"bam.lua").write <<~LUA
+    (testpath/"bam.lua").write <<~LUA
       settings = NewSettings()
       objs = Compile(settings, Collect("*.c"))
       exe = Link(settings, "hello", objs)
     LUA
 
-    system bin"bam", "-v"
-    assert_equal "hello", shell_output(".hello").chomp
+    system bin/"bam", "-v"
+    assert_equal "hello", shell_output("./hello").chomp
   end
 end

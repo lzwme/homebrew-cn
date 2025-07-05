@@ -1,10 +1,10 @@
 class Innotop < Formula
   desc "Top clone for MySQL"
-  homepage "https:github.cominnotopinnotop"
-  url "https:github.cominnotopinnotoparchiverefstagsv1.15.2.tar.gz"
+  homepage "https://github.com/innotop/innotop/"
+  url "https://ghfast.top/https://github.com/innotop/innotop/archive/refs/tags/v1.15.2.tar.gz"
   sha256 "cfedf31ba5617a5d53ff0fedc86a8578f805093705a5e96a5571d86f2d8457c0"
   license any_of: ["GPL-2.0-only", "Artistic-1.0-Perl"]
-  head "https:github.cominnotopinnotop.git", branch: "master"
+  head "https://github.com/innotop/innotop.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -25,14 +25,14 @@ class Innotop < Formula
 
   resource "Term::ReadKey" do
     on_linux do
-      url "https:cpan.metacpan.orgauthorsidJJSJSTOWETermReadKey-2.38.tar.gz"
+      url "https://cpan.metacpan.org/authors/id/J/JS/JSTOWE/TermReadKey-2.38.tar.gz"
       sha256 "5a645878dc570ac33661581fbb090ff24ebce17d43ea53fd22e105a856a47290"
     end
   end
 
   def install
-    ENV.prepend_path "PERL5LIB", Formula["perl-dbd-mysql"].opt_libexec"libperl5"
-    ENV.prepend_create_path "PERL5LIB", libexec"libperl5"
+    ENV.prepend_path "PERL5LIB", Formula["perl-dbd-mysql"].opt_libexec/"lib/perl5"
+    ENV.prepend_create_path "PERL5LIB", libexec/"lib/perl5"
 
     resources.each do |r|
       r.stage do
@@ -43,11 +43,11 @@ class Innotop < Formula
 
     system "perl", "Makefile.PL", "INSTALL_BASE=#{prefix}", "INSTALLSITEMAN1DIR=#{man1}"
     system "make", "install"
-    bin.env_script_all_files(libexec"bin", PERL5LIB: ENV["PERL5LIB"])
+    bin.env_script_all_files(libexec/"bin", PERL5LIB: ENV["PERL5LIB"])
   end
 
   test do
     # Calling commands throws up interactive GUI, which is a pain.
-    assert_match version.to_s, shell_output("#{bin}innotop --version")
+    assert_match version.to_s, shell_output("#{bin}/innotop --version")
   end
 end

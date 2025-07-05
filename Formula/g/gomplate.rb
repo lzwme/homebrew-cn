@@ -1,14 +1,14 @@
 class Gomplate < Formula
   desc "Command-line Golang template processor"
-  homepage "https:gomplate.ca"
-  url "https:github.comhairyhendersongomplatearchiverefstagsv4.3.2.tar.gz"
+  homepage "https://gomplate.ca/"
+  url "https://ghfast.top/https://github.com/hairyhenderson/gomplate/archive/refs/tags/v4.3.2.tar.gz"
   sha256 "647d8775f170fb8b8954a76a59c4a23db50b5c1fdd9faf6b51e17737d8b402a5"
   license "MIT"
-  head "https:github.comhairyhendersongomplate.git", branch: "main"
+  head "https://github.com/hairyhenderson/gomplate.git", branch: "main"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -25,11 +25,11 @@ class Gomplate < Formula
 
   def install
     system "make", "build", "VERSION=#{version}"
-    bin.install "bingomplate" => "gomplate"
+    bin.install "bin/gomplate" => "gomplate"
   end
 
   test do
-    output = shell_output("#{bin}gomplate --version")
+    output = shell_output("#{bin}/gomplate --version")
     assert_equal "gomplate version #{version}", output.chomp
 
     test_template = <<~EOS
@@ -42,6 +42,6 @@ class Gomplate < Formula
       bar:baz
     EOS
 
-    assert_match expected, pipe_output(bin"gomplate", test_template, 0)
+    assert_match expected, pipe_output(bin/"gomplate", test_template, 0)
   end
 end

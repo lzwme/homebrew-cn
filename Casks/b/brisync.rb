@@ -2,10 +2,10 @@ cask "brisync" do
   version "1.3.1"
   sha256 "e7378405d50ff27ca8ee21150a6af1cbec7bd4c452518de0ebd6f8b981da5ad1"
 
-  url "https:github.comczarnyBrisyncreleasesdownloadv#{version}Brisync.zip"
+  url "https://ghfast.top/https://github.com/czarny/Brisync/releases/download/v#{version}/Brisync.zip"
   name "Brisync"
   desc "Utility to automatically control the brightness of external displays"
-  homepage "https:github.comczarnyBrisync"
+  homepage "https://github.com/czarny/Brisync/"
 
   no_autobump! because: :requires_manual_review
 
@@ -13,5 +13,5 @@ cask "brisync" do
 
   app "Brisync.app"
 
-  zap trash: "~.brisync.json"
+  zap trash: "~/.brisync.json"
 end

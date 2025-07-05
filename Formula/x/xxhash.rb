@@ -1,7 +1,7 @@
 class Xxhash < Formula
   desc "Extremely fast non-cryptographic hash algorithm"
-  homepage "https:xxhash.com"
-  url "https:github.comCyan4973xxHasharchiverefstagsv0.8.3.tar.gz"
+  homepage "https://xxhash.com"
+  url "https://ghfast.top/https://github.com/Cyan4973/xxHash/archive/refs/tags/v0.8.3.tar.gz"
   sha256 "aae608dfe8213dfd05d909a57718ef82f30722c392344583d3f39050c7f29a80"
   license all_of: [
     "BSD-2-Clause", # library
@@ -35,7 +35,7 @@ class Xxhash < Formula
     end
 
     system "make", "install", *args
-    prefix.install "cliCOPYING"
+    prefix.install "cli/COPYING"
 
     # We use CMake for package configuration files which are needed by `manticoresearch`.
     # The Makefile is used for everything else as it is the only officially supported way.
@@ -47,11 +47,11 @@ class Xxhash < Formula
   end
 
   test do
-    (testpath"leaflet.txt").write "No computer should be without one!"
-    assert_match(^67bc7cc242ebc50a, shell_output("#{bin}xxhsum leaflet.txt"))
+    (testpath/"leaflet.txt").write "No computer should be without one!"
+    assert_match(/^67bc7cc242ebc50a/, shell_output("#{bin}/xxhsum leaflet.txt"))
 
-    # Simplified snippet of https:github.comCyan4973xxHashblobdevclixsum_sanity_check.c
-    (testpath"test.c").write <<~C
+    # Simplified snippet of https://github.com/Cyan4973/xxHash/blob/dev/cli/xsum_sanity_check.c
+    (testpath/"test.c").write <<~C
       #include <assert.h>
       #include <stdint.h>
       #include <xxhash.h>
@@ -69,7 +69,7 @@ class Xxhash < Formula
       }
     C
 
-    (testpath"CMakeLists.txt").write <<~CMAKE
+    (testpath/"CMakeLists.txt").write <<~CMAKE
       cmake_minimum_required(VERSION 3.5)
       project(test LANGUAGES C)
       find_package(xxHash CONFIG REQUIRED)
@@ -79,6 +79,6 @@ class Xxhash < Formula
 
     system "cmake", "-S", ".", "-B", "build"
     system "cmake", "--build", "build"
-    system ".buildtest"
+    system "./build/test"
   end
 end

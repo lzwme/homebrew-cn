@@ -2,12 +2,12 @@ cask "font-cambay" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefonts.git",
-      verified:  "github.comgooglefonts",
+  url "https://github.com/google/fonts.git",
+      verified:  "github.com/google/fonts",
       branch:    "main",
-      only_path: "oflcambay"
+      only_path: "ofl/cambay"
   name "Cambay"
-  homepage "https:fonts.google.comspecimenCambay"
+  homepage "https://fonts.google.com/specimen/Cambay"
 
   font "Cambay-Bold.ttf"
   font "Cambay-BoldItalic.ttf"

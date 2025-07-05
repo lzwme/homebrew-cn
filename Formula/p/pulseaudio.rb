@@ -1,15 +1,15 @@
 class Pulseaudio < Formula
   desc "Sound system for POSIX OSes"
-  homepage "https:wiki.freedesktop.orgwwwSoftwarePulseAudio"
-  url "https:www.freedesktop.orgsoftwarepulseaudioreleasespulseaudio-17.0.tar.xz"
+  homepage "https://wiki.freedesktop.org/www/Software/PulseAudio/"
+  url "https://www.freedesktop.org/software/pulseaudio/releases/pulseaudio-17.0.tar.xz"
   sha256 "053794d6671a3e397d849e478a80b82a63cb9d8ca296bd35b73317bb5ceb87b5"
   license all_of: ["GPL-2.0-or-later", "LGPL-2.1-or-later", "BSD-3-Clause"]
-  head "https:gitlab.freedesktop.orgpulseaudiopulseaudio.git", branch: "master"
+  head "https://gitlab.freedesktop.org/pulseaudio/pulseaudio.git", branch: "master"
 
   # The regex here avoids x.99 releases, as they're pre-release versions.
   livecheck do
     url :stable
-    regex(href=["']?pulseaudio[._-]v?((?!\d+\.9\d+)\d+(?:\.\d+)+)\.ti)
+    regex(/href=["']?pulseaudio[._-]v?((?!\d+\.9\d+)\d+(?:\.\d+)+)\.t/i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -52,7 +52,7 @@ class Pulseaudio < Formula
 
   def install
     enabled_on_linux = if OS.linux?
-      ENV.prepend_path "PERL5LIB", Formula["perl-xml-parser"].libexec"libperl5"
+      ENV.prepend_path "PERL5LIB", Formula["perl-xml-parser"].libexec/"lib/perl5"
       "enabled"
     else
       # Restore coreaudio module as default on macOS
@@ -72,7 +72,7 @@ class Pulseaudio < Formula
       -Dlocalstatedir=#{var}
       -Dbashcompletiondir=#{bash_completion}
       -Dzshcompletiondir=#{zsh_completion}
-      -Dudevrulesdir=#{lib}udevrules.d
+      -Dudevrulesdir=#{lib}/udev/rules.d
 
       -Dalsa=#{enabled_on_linux}
       -Ddbus=#{enabled_on_linux}
@@ -91,22 +91,22 @@ class Pulseaudio < Formula
     system "meson", "install", "-C", "build"
 
     # Don't hardcode Cellar references in configuration files
-    inreplace etc.glob("pulse*"), prefix, opt_prefix, audit_result: false
+    inreplace etc.glob("pulse/*"), prefix, opt_prefix, audit_result: false
 
     # Create the `default.pa.d` directory to avoid error messages like
-    # https:github.comHomebrewhomebrew-coreissues224722
-    (etc"pulsedefault.pa.d").mkpath
-    touch etc"pulsedefault.pa.d.keepme"
+    # https://github.com/Homebrew/homebrew-core/issues/224722
+    (etc/"pulse/default.pa.d").mkpath
+    touch etc/"pulse/default.pa.d/.keepme"
   end
 
   service do
-    run [opt_bin"pulseaudio", "--exit-idle-time=-1", "--verbose"]
+    run [opt_bin/"pulseaudio", "--exit-idle-time=-1", "--verbose"]
     keep_alive true
-    log_path var"logpulseaudio.log"
-    error_log_path var"logpulseaudio.log"
+    log_path var/"log/pulseaudio.log"
+    error_log_path var/"log/pulseaudio.log"
   end
 
   test do
-    assert_match "module-sine", shell_output("#{bin}pulseaudio --dump-modules")
+    assert_match "module-sine", shell_output("#{bin}/pulseaudio --dump-modules")
   end
 end

@@ -1,12 +1,12 @@
 class VapoursynthSub < Formula
   desc "VapourSynth filters - Subtitling filter"
-  homepage "https:www.vapoursynth.com"
-  url "https:github.comvapoursynthsubtextarchiverefstagsR5.tar.gz"
+  homepage "https://www.vapoursynth.com"
+  url "https://ghfast.top/https://github.com/vapoursynth/subtext/archive/refs/tags/R5.tar.gz"
   sha256 "d1e4649c5417e671679753840ae0931cdbd353a862333129d7bd600770fd3db8"
   license "MIT"
   revision 1
   version_scheme 1
-  head "https:github.comvapoursynthsubtext.git", branch: "master"
+  head "https://github.com/vapoursynth/subtext.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -34,7 +34,7 @@ class VapoursynthSub < Formula
     # prefix, but we want it in a Cellar location instead.
     inreplace "meson.build",
               "install_dir : join_paths(vapoursynth_dep.get_pkgconfig_variable('libdir'), 'vapoursynth')",
-              "install_dir : '#{lib}vapoursynth'"
+              "install_dir : '#{lib}/vapoursynth'"
 
     system "meson", "setup", "build", *std_meson_args
     system "meson", "compile", "-C", "build", "--verbose"
@@ -43,9 +43,9 @@ class VapoursynthSub < Formula
 
   test do
     python = Formula["vapoursynth"].deps
-                                   .find { |d| d.name.match?(^python@\d\.\d+$) }
+                                   .find { |d| d.name.match?(/^python@\d\.\d+$/) }
                                    .to_formula
-                                   .opt_libexec"binpython"
+                                   .opt_libexec/"bin/python"
     system python, "-c", "from vapoursynth import core; core.sub"
   end
 end

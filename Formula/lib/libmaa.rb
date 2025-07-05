@@ -1,14 +1,14 @@
 class Libmaa < Formula
   desc "Low-level data structures including hash tables, sets, lists"
-  homepage "https:dict.orgbinDict"
-  url "https:downloads.sourceforge.netprojectdictlibmaalibmaa-1.5.1libmaa-1.5.1.tar.gz"
+  homepage "https://dict.org/bin/Dict"
+  url "https://downloads.sourceforge.net/project/dict/libmaa/libmaa-1.5.1/libmaa-1.5.1.tar.gz"
   sha256 "3a30e25f038e99c4715125545516490d991fe3a505825cc832b1a956e31bf669"
   license "MIT"
-  head "https:github.comcheusovlibmaa.git", branch: "master"
+  head "https://github.com/cheusov/libmaa.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(%r{url=.*?libmaa[._-]v?(\d+(?:\.\d+)+)\.t}i)
+    regex(%r{url=.*?/libmaa[._-]v?(\d+(?:\.\d+)+)\.t}i)
   end
 
   bottle do
@@ -31,8 +31,8 @@ class Libmaa < Formula
   end
 
   test do
-    (testpath"test.c").write <<~C
-      * basetest.c -- Test base64 and base26 numbers
+    (testpath/"test.c").write <<~C
+      /* basetest.c -- Test base64 and base26 numbers
        * Created: Sun Nov 10 11:51:11 1996 by faith@dict.org
        * Copyright 1996, 2002 Rickard E. Faith (faith@dict.org)
        * Copyright 2002-2008 Aleksey Cheusov (vle@gmx.net)
@@ -41,7 +41,7 @@ class Libmaa < Formula
        * a copy of this software and associated documentation files (the
        * "Software"), to deal in the Software without restriction, including
        * without limitation the rights to use, copy, modify, merge, publish,
-       * distribute, sublicense, andor sell copies of the Software, and to
+       * distribute, sublicense, and/or sell copies of the Software, and to
        * permit persons to whom the Software is furnished to do so, subject to
        * the following conditions:
        *
@@ -56,7 +56,7 @@ class Libmaa < Formula
        * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
        * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
        *
-       *
+       */
 
       #include <maa.h>
       #include <stdlib.h>
@@ -86,7 +86,7 @@ class Libmaa < Formula
               result, b64_decode( result ), i );
          }
             }
-            if (i < 10 || !(i % (limit10)))
+            if (i < 10 || !(i % (limit/10)))
          printf( "%ld = %s (base26)\\n", i, result );
          }
 
@@ -107,7 +107,7 @@ class Libmaa < Formula
               result, b64_decode( result ), i );
          }
             }
-            if (i < 10 || !(i % (limit10)))
+            if (i < 10 || !(i % (limit/10)))
          printf( "%ld = %s (base64)\\n", i, result );
          }
 
@@ -115,6 +115,6 @@ class Libmaa < Formula
       }
     C
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lmaa", "-o", "test"
-    system ".test"
+    system "./test"
   end
 end

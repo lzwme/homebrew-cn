@@ -1,7 +1,7 @@
 class FfmpegAT4 < Formula
   desc "Play, record, convert, and stream audio and video"
-  homepage "https:ffmpeg.org"
-  url "https:ffmpeg.orgreleasesffmpeg-4.4.6.tar.xz"
+  homepage "https://ffmpeg.org/"
+  url "https://ffmpeg.org/releases/ffmpeg-4.4.6.tar.xz"
   sha256 "2290461f467c08ab801731ed412d8e724a5511d6c33173654bd9c1d2e25d0617"
   # None of these parts are used by default, you have to explicitly pass `--enable-gpl`
   # to configure to activate them. In this case, FFmpeg's license changes to GPL v2+.
@@ -9,8 +9,8 @@ class FfmpegAT4 < Formula
   revision 1
 
   livecheck do
-    url "https:ffmpeg.orgdownload.html"
-    regex(href=.*?ffmpeg[._-]v?(4(?:\.\d+)+)\.ti)
+    url "https://ffmpeg.org/download.html"
+    regex(/href=.*?ffmpeg[._-]v?(4(?:\.\d+)+)\.t/i)
   end
 
   bottle do
@@ -133,23 +133,23 @@ class FfmpegAT4 < Formula
     args << "--enable-videotoolbox" if OS.mac?
 
     # The new linker leads to duplicate symbol issue
-    # https:github.comhomebrew-ffmpeghomebrew-ffmpegissues140
+    # https://github.com/homebrew-ffmpeg/homebrew-ffmpeg/issues/140
     ENV.append "LDFLAGS", "-Wl,-ld_classic" if DevelopmentTools.clang_build_version >= 1500
 
-    system ".configure", *args
+    system "./configure", *args
     system "make", "install"
 
     # Build and install additional FFmpeg tools
     system "make", "alltools"
-    bin.install Dir["tools*"].select { |f| File.executable?(f) && !File.directory?(f) }
+    bin.install Dir["tools/*"].select { |f| File.executable?(f) && !File.directory?(f) }
 
-    pkgshare.install "toolspython"
+    pkgshare.install "tools/python"
   end
 
   test do
     # Create an example mp4 file
-    mp4out = testpath"video.mp4"
-    system bin"ffmpeg", "-filter_complex", "testsrc=rate=1:duration=1", mp4out
+    mp4out = testpath/"video.mp4"
+    system bin/"ffmpeg", "-filter_complex", "testsrc=rate=1:duration=1", mp4out
     assert_path_exists mp4out
   end
 end

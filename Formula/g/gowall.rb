@@ -1,10 +1,10 @@
 class Gowall < Formula
-  desc "Tool to convert a Wallpaper's color scheme  palette"
-  homepage "https:achno.github.iogowall-docs"
-  url "https:github.comAchnogowallarchiverefstagsv0.2.0.tar.gz"
+  desc "Tool to convert a Wallpaper's color scheme / palette"
+  homepage "https://achno.github.io/gowall-docs/"
+  url "https://ghfast.top/https://github.com/Achno/gowall/archive/refs/tags/v0.2.0.tar.gz"
   sha256 "31992b7895211310301ca169bcc98305a1971221aa5d718033be3a45512ca9a4"
   license "MIT"
-  head "https:github.comAchnogowall.git", branch: "main"
+  head "https://github.com/Achno/gowall.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "34dc908f5f3d79cbec77054867e82ef3df922edd34d5911f4682962b8554ac28"
@@ -21,14 +21,14 @@ class Gowall < Formula
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
 
-    generate_completions_from_executable(bin"gowall", "completion")
+    generate_completions_from_executable(bin/"gowall", "completion")
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}gowall --version")
+    assert_match version.to_s, shell_output("#{bin}/gowall --version")
 
-    assert_match "arcdark", shell_output("#{bin}gowall list")
+    assert_match "arcdark", shell_output("#{bin}/gowall list")
 
-    system bin"gowall", "extract", test_fixtures("test.jpg")
+    system bin/"gowall", "extract", test_fixtures("test.jpg")
   end
 end

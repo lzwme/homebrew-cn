@@ -1,10 +1,10 @@
 class Bwa < Formula
   desc "Burrow-Wheeler Aligner for pairwise alignment of DNA"
-  homepage "https:github.comlh3bwa"
-  url "https:github.comlh3bwaarchiverefstagsv0.7.19.tar.gz"
+  homepage "https://github.com/lh3/bwa"
+  url "https://ghfast.top/https://github.com/lh3/bwa/archive/refs/tags/v0.7.19.tar.gz"
   sha256 "cdff5db67652c5b805a3df08c4e813a822c65791913eccfb3cf7d528588f37bc"
   license all_of: ["GPL-3.0-or-later", "MIT"]
-  head "https:github.comlh3bwa.git", branch: "master"
+  head "https://github.com/lh3/bwa.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "30ba4019988805cae03027361d588c146e9d66d1892e77d198f61debf7bdca55"
@@ -25,15 +25,15 @@ class Bwa < Formula
   def install
     system "make"
 
-    # "make install" requested 26 Dec 2017 https:github.comlh3bwaissues172
+    # "make install" requested 26 Dec 2017 https://github.com/lh3/bwa/issues/172
     bin.install "bwa"
     man1.install "bwa.1"
   end
 
   test do
-    (testpath"test.fasta").write ">0\nAGATGTGCTG\n"
-    system bin"bwa", "index", "test.fasta"
-    assert_path_exists testpath"test.fasta.bwt"
-    assert_match "AGATGTGCTG", shell_output("#{bin}bwa mem test.fasta test.fasta")
+    (testpath/"test.fasta").write ">0\nAGATGTGCTG\n"
+    system bin/"bwa", "index", "test.fasta"
+    assert_path_exists testpath/"test.fasta.bwt"
+    assert_match "AGATGTGCTG", shell_output("#{bin}/bwa mem test.fasta test.fasta")
   end
 end

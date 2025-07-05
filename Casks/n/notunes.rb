@@ -2,10 +2,10 @@ cask "notunes" do
   version "3.5"
   sha256 "07835cf9f3bf314d11f2ebe528072a200ffa2d55f38de59085979c2d476ea3d5"
 
-  url "https:github.comtomboneznoTunesreleasesdownloadv#{version}noTunes-#{version}.zip"
+  url "https://ghfast.top/https://github.com/tombonez/noTunes/releases/download/v#{version}/noTunes-#{version}.zip"
   name "noTunes"
   desc "Simple application that will prevent iTunes or Apple Music from launching"
-  homepage "https:github.comtomboneznoTunes"
+  homepage "https://github.com/tombonez/noTunes"
 
   no_autobump! because: :requires_manual_review
 
@@ -13,5 +13,5 @@ cask "notunes" do
 
   app "noTunes.app"
 
-  zap trash: "~LibraryPreferencesdigital.twisted.noTunes.plist"
+  zap trash: "~/Library/Preferences/digital.twisted.noTunes.plist"
 end

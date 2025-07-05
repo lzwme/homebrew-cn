@@ -1,15 +1,15 @@
 class Clojure < Formula
   desc "Dynamic, general-purpose programming language"
-  homepage "https:clojure.org"
-  url "https:github.comclojurebrew-installreleasesdownload1.12.1.1550clojure-tools-1.12.1.1550.tar.gz"
-  mirror "https:download.clojure.orginstallclojure-tools-1.12.1.1550.tar.gz"
+  homepage "https://clojure.org"
+  url "https://ghfast.top/https://github.com/clojure/brew-install/releases/download/1.12.1.1550/clojure-tools-1.12.1.1550.tar.gz"
+  mirror "https://download.clojure.org/install/clojure-tools-1.12.1.1550.tar.gz"
   sha256 "906c625679c72e7035875988a46392a1d83d16ee1df599a561a2fd33424b0d3f"
   license "EPL-1.0"
   version_scheme 1
 
   livecheck do
-    url "https:raw.githubusercontent.comclojurehomebrew-toolsmasterFormulaclojure.rb"
-    regex(url ".*?clojure-tools-v?(\d+(?:\.\d+)+)\.ti)
+    url "https://ghfast.top/https://raw.githubusercontent.com/clojure/homebrew-tools/master/Formula/clojure.rb"
+    regex(/url ".*?clojure-tools-v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   bottle do
@@ -22,15 +22,15 @@ class Clojure < Formula
   uses_from_macos "ruby" => :build
 
   def install
-    system ".install.sh", prefix
-    bin.env_script_all_files libexec"bin", Language::Java.overridable_java_home_env
+    system "./install.sh", prefix
+    bin.env_script_all_files libexec/"bin", Language::Java.overridable_java_home_env
   end
 
   test do
     ENV["TERM"] = "xterm"
-    system("#{bin}clj", "-e", "nil")
+    system("#{bin}/clj", "-e", "nil")
     %w[clojure clj].each do |clj|
-      assert_equal "2", shell_output("#{bin}#{clj} -e \"(+ 1 1)\"").strip
+      assert_equal "2", shell_output("#{bin}/#{clj} -e \"(+ 1 1)\"").strip
     end
   end
 end

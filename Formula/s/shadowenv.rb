@@ -1,7 +1,7 @@
 class Shadowenv < Formula
   desc "Reversible directory-local environment variable manipulations"
-  homepage "https:shopify.github.ioshadowenv"
-  url "https:github.comShopifyshadowenvarchiverefstags3.3.1.tar.gz"
+  homepage "https://shopify.github.io/shadowenv/"
+  url "https://ghfast.top/https://github.com/Shopify/shadowenv/archive/refs/tags/3.3.1.tar.gz"
   sha256 "726c2a655749213cd7f0efe9dca199f65c11b58774c5550ea4834d5b2334b27c"
   license "MIT"
 
@@ -27,8 +27,8 @@ class Shadowenv < Formula
 
   def install
     system "cargo", "install", *std_cargo_args
-    man1.install "#{buildpath}manman1shadowenv.1"
-    man5.install "#{buildpath}manman5shadowlisp.5"
+    man1.install "#{buildpath}/man/man1/shadowenv.1"
+    man5.install "#{buildpath}/man/man5/shadowlisp.5"
   end
 
   test do
@@ -56,7 +56,7 @@ class Shadowenv < Formula
       ],
     }
     # Read ...'\"'\"'... on the next line as a ruby `...' + "'" + '...` but for bash
-    shadowenv_cmd = "export __shadowenv_data='\"'\"'#{hash}:#{data.to_json}'\"'\"'; #{bin}shadowenv hook"
+    shadowenv_cmd = "export __shadowenv_data='\"'\"'#{hash}:#{data.to_json}'\"'\"'; #{bin}/shadowenv hook"
     print_vars =
       "echo EXAMPLE:$EXAMPLE; echo EXAMPLE2:$EXAMPLE2; echo EXAMPLE3:$EXAMPLE3; echo EXAMPLE_PATH:$EXAMPLE_PATH;"
 

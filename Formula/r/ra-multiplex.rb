@@ -1,10 +1,10 @@
 class RaMultiplex < Formula
   desc "Share one rust-analyzer instance between multiple LSP clients to save resources"
-  homepage "https:github.compr2502ra-multiplex"
-  url "https:github.compr2502ra-multiplexarchiverefstagsv0.2.5.tar.gz"
+  homepage "https://github.com/pr2502/ra-multiplex"
+  url "https://ghfast.top/https://github.com/pr2502/ra-multiplex/archive/refs/tags/v0.2.5.tar.gz"
   sha256 "c24a7e277adce9bbfb86641905d75f166e46459cf4e5b5f3aaa7456b052392dc"
   license "MIT"
-  head "https:github.compr2502ra-multiplex.git", branch: "main"
+  head "https://github.com/pr2502/ra-multiplex.git", branch: "main"
 
   no_autobump! because: :requires_manual_review
 
@@ -26,10 +26,10 @@ class RaMultiplex < Formula
   end
 
   service do
-    run [opt_bin"ra-multiplex", "server"]
+    run [opt_bin/"ra-multiplex", "server"]
     keep_alive true
-    error_log_path var"logra-multiplex.log"
-    log_path var"logra-multiplex.log"
+    error_log_path var/"log/ra-multiplex.log"
+    log_path var/"log/ra-multiplex.log"
 
     # Need cargo and rust-analyzer in PATH
     environment_variables PATH: std_service_path_env
@@ -80,11 +80,11 @@ class RaMultiplex < Formula
       }
     JSON
 
-    output = Content-Length: \d+\r\n\r\n
+    output = /Content-Length: \d+\r\n\r\n/
 
     begin
-      pid = spawn bin"ra-multiplex", "server"
-      assert_match output, pipe_output(bin"ra-multiplex", input, 0)
+      pid = spawn bin/"ra-multiplex", "server"
+      assert_match output, pipe_output(bin/"ra-multiplex", input, 0)
     ensure
       Process.kill("TERM", pid)
       Process.wait(pid)

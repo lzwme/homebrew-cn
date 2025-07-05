@@ -1,8 +1,8 @@
 class Freeipmi < Formula
-  desc "In-band and out-of-band IPMI (v1.52.0) software"
-  homepage "https:www.gnu.orgsoftwarefreeipmi"
-  url "https:ftp.gnu.orggnufreeipmifreeipmi-1.6.15.tar.gz"
-  mirror "https:ftpmirror.gnu.orgfreeipmifreeipmi-1.6.15.tar.gz"
+  desc "In-band and out-of-band IPMI (v1.5/2.0) software"
+  homepage "https://www.gnu.org/software/freeipmi/"
+  url "https://ftp.gnu.org/gnu/freeipmi/freeipmi-1.6.15.tar.gz"
+  mirror "https://ftpmirror.gnu.org/freeipmi/freeipmi-1.6.15.tar.gz"
   sha256 "d6929c354639f5ce75b5b1897e8b366eb63625c23e5c4590a7aea034fe2b8caf"
   license "GPL-3.0-or-later"
 
@@ -25,7 +25,7 @@ class Freeipmi < Formula
 
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
-    url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-big_sur.diff"
+    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-big_sur.diff"
     sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
   end
 
@@ -34,16 +34,16 @@ class Freeipmi < Formula
     ENV.append_to_cflags "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1403
 
     # Hardcode CPP_FOR_BUILD to work around cpp shim issue:
-    # https:github.comHomebrewbrewissues5153
-    inreplace "manMakefile.in",
-      "$(CPP_FOR_BUILD) -nostdinc -w -C -P -I. -I$(top_srcdir)man $@.pre $@",
-      "#{ENV.cxx} -E -nostdinc -w -C -P -I. -I$(top_srcdir)man $@.pre > $@"
+    # https://github.com/Homebrew/brew/issues/5153
+    inreplace "man/Makefile.in",
+      "$(CPP_FOR_BUILD) -nostdinc -w -C -P -I. -I$(top_srcdir)/man $@.pre $@",
+      "#{ENV.cxx} -E -nostdinc -w -C -P -I. -I$(top_srcdir)/man $@.pre > $@"
 
-    system ".configure", *std_configure_args
+    system "./configure", *std_configure_args
     system "make", "install"
   end
 
   test do
-    system sbin"ipmi-fru", "--version"
+    system sbin/"ipmi-fru", "--version"
   end
 end

@@ -1,7 +1,7 @@
 class Erdtree < Formula
   desc "Multi-threaded file-tree visualizer and disk usage analyzer"
-  homepage "https:github.comsolidiquiserdtree"
-  url "https:github.comsolidiquiserdtreearchiverefstagsv3.1.2.tar.gz"
+  homepage "https://github.com/solidiquis/erdtree"
+  url "https://ghfast.top/https://github.com/solidiquis/erdtree/archive/refs/tags/v3.1.2.tar.gz"
   sha256 "1758e7ad8f7be59bc3c6bda8b058097509f9db6f40ad57c4b0b361e3be439297"
   license "MIT"
 
@@ -23,11 +23,11 @@ class Erdtree < Formula
 
   def install
     system "cargo", "install", *std_cargo_args
-    generate_completions_from_executable(bin"erd", "--completions")
+    generate_completions_from_executable(bin/"erd", "--completions")
   end
 
   test do
     touch "test.txt"
-    assert_match "test.txt", shell_output("#{bin}erd")
+    assert_match "test.txt", shell_output("#{bin}/erd")
   end
 end

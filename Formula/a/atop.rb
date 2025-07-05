@@ -1,10 +1,10 @@
 class Atop < Formula
   desc "Advanced system and process monitor for Linux using process events"
-  homepage "https:www.atoptool.nl"
-  url "https:github.comAtoptoolatoparchiverefstagsv2.12.0.tar.gz"
+  homepage "https://www.atoptool.nl"
+  url "https://ghfast.top/https://github.com/Atoptool/atop/archive/refs/tags/v2.12.0.tar.gz"
   sha256 "a96e11c8765041b13f1cf90f22e59e2cea30f75a5e2f0da001162a018e893054"
   license "GPL-2.0-or-later"
-  head "https:github.comAtoptoolatop.git", branch: "master"
+  head "https://github.com/Atoptool/atop.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_linux:  "8f1dac96762e9896b0808862b84c2bc606de4b05c44e280d79f629bf9db7ca1f"
@@ -19,7 +19,7 @@ class Atop < Formula
   depends_on "zlib"
 
   def install
-    inreplace "version.h", "$, "-#{Utils.git_short_head}\"", global: false if build.head?
+    inreplace "version.h", /"$/, "-#{Utils.git_short_head}\"", global: false if build.head?
     # As this project does not use configure, we have to configure manually:
     ENV["BINPATH"] = bin.to_s
     ENV["SBINPATH"] = bin.to_s
@@ -35,9 +35,9 @@ class Atop < Formula
   end
 
   test do
-    assert_match "Version:", shell_output("#{bin}atop -V")
-    system bin"atop", "1", "1"
-    system bin"atop", "-w", "atop.raw", "1", "1"
-    system bin"atop", "-r", "atop.raw", "-PCPU,DSK"
+    assert_match "Version:", shell_output("#{bin}/atop -V")
+    system bin/"atop", "1", "1"
+    system bin/"atop", "-w", "atop.raw", "1", "1"
+    system bin/"atop", "-r", "atop.raw", "-PCPU,DSK"
   end
 end

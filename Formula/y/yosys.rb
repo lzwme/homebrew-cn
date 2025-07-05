@@ -1,10 +1,10 @@
 class Yosys < Formula
   desc "Framework for Verilog RTL synthesis"
-  homepage "https:yosyshq.netyosys"
-  url "https:github.comYosysHQyosysreleasesdownloadv0.54yosys.tar.gz"
+  homepage "https://yosyshq.net/yosys/"
+  url "https://ghfast.top/https://github.com/YosysHQ/yosys/releases/download/v0.54/yosys.tar.gz"
   sha256 "99e2a5661e998a23c7c100af4bb63aebb96f13d5d68086ae6a5f1ce920e9783c"
   license "ISC"
-  head "https:github.comYosysHQyosys.git", branch: "main"
+  head "https://github.com/YosysHQ/yosys.git", branch: "main"
 
   bottle do
     sha256 arm64_sequoia: "627cd3b46c93fcb2525e44250c9a23c20e3183f7ba25b7e17c8bedef3d982baf"
@@ -36,6 +36,6 @@ class Yosys < Formula
   end
 
   test do
-    system bin"yosys", "-p", "hierarchy; proc; opt; techmap; opt;", "-o", "synth.v", pkgshare"adff2dff.v"
+    system bin/"yosys", "-p", "hierarchy; proc; opt; techmap; opt;", "-o", "synth.v", pkgshare/"adff2dff.v"
   end
 end

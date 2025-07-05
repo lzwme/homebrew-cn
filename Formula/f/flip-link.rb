@@ -1,7 +1,7 @@
 class FlipLink < Formula
   desc "Adds zero-cost stack overflow protection to your embedded programs"
-  homepage "https:github.comknurling-rsflip-link"
-  url "https:github.comknurling-rsflip-linkarchiverefstagsv0.1.10.tar.gz"
+  homepage "https://github.com/knurling-rs/flip-link"
+  url "https://ghfast.top/https://github.com/knurling-rs/flip-link/archive/refs/tags/v0.1.10.tar.gz"
   sha256 "9389806ffda4ed5aa47f39fc71ac2a19be59cc28aab93bfb32bb514ed7165f75"
   license any_of: ["Apache-2.0", "MIT"]
 
@@ -22,7 +22,7 @@ class FlipLink < Formula
 
   def install
     system "cargo", "install", *std_cargo_args
-    (pkgshare"examples").install "test-flip-link-app"
+    (pkgshare/"examples").install "test-flip-link-app"
   end
 
   test do
@@ -34,7 +34,7 @@ class FlipLink < Formula
     system "rustup", "default", "stable"
     system "rustup", "target", "add", "thumbv7em-none-eabi"
 
-    cp_r pkgshare"examples""test-flip-link-app", testpath
+    cp_r pkgshare/"examples"/"test-flip-link-app", testpath
 
     cd "test-flip-link-app" do
       system "cargo", "build"

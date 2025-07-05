@@ -1,10 +1,10 @@
 class PipeRename < Formula
   desc "Rename your files using your favorite text editor"
-  homepage "https:github.commarcusbuffettpipe-rename"
-  url "https:github.commarcusbuffettpipe-renamearchiverefstags1.6.5.tar.gz"
+  homepage "https://github.com/marcusbuffett/pipe-rename"
+  url "https://ghfast.top/https://github.com/marcusbuffett/pipe-rename/archive/refs/tags/1.6.5.tar.gz"
   sha256 "41edf419ab3d7b3c16d2efe209b3ca3d3f7104a3365f61fe821a59caac31810b"
   license "MIT"
-  head "https:github.commarcusbuffettpipe-rename.git", branch: "master"
+  head "https://github.com/marcusbuffett/pipe-rename.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -31,14 +31,14 @@ class PipeRename < Formula
 
   test do
     touch "test.log"
-    (testpath"rename.sh").write <<~SHELL
-      #!binsh
+    (testpath/"rename.sh").write <<~SHELL
+      #!/bin/sh
       echo "$(cat "$1").txt" > "$1"
     SHELL
 
-    chmod "+x", testpath"rename.sh"
-    ENV["EDITOR"] = testpath"rename.sh"
-    system bin"renamer", "-y", "test.log"
-    assert_path_exists testpath"test.log.txt"
+    chmod "+x", testpath/"rename.sh"
+    ENV["EDITOR"] = testpath/"rename.sh"
+    system bin/"renamer", "-y", "test.log"
+    assert_path_exists testpath/"test.log.txt"
   end
 end

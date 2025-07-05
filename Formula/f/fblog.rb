@@ -1,10 +1,10 @@
 class Fblog < Formula
   desc "Small command-line JSON log viewer"
-  homepage "https:github.combrocodefblog"
-  url "https:github.combrocodefblogarchiverefstagsv4.14.0.tar.gz"
+  homepage "https://github.com/brocode/fblog"
+  url "https://ghfast.top/https://github.com/brocode/fblog/archive/refs/tags/v4.14.0.tar.gz"
   sha256 "1474b5fc511e52635d0e95ebd3e139f702794c1570286fd01f6b93ce82282c85"
   license "WTFPL"
-  head "https:github.combrocodefblog.git", branch: "master"
+  head "https://github.com/brocode/fblog.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "77af4a66983d5cc61175df28e30945db3f70bbaa44cd9afe1c8227e7fa566773"
@@ -21,14 +21,14 @@ class Fblog < Formula
   def install
     system "cargo", "install", *std_cargo_args
 
-    generate_completions_from_executable(bin"fblog", "--generate-completions")
+    generate_completions_from_executable(bin/"fblog", "--generate-completions")
 
     # Install a sample log for testing purposes
     pkgshare.install "sample.json.log"
   end
 
   test do
-    output = shell_output("#{bin}fblog #{pkgshare"sample.json.log"}")
+    output = shell_output("#{bin}/fblog #{pkgshare/"sample.json.log"}")
 
     assert_match "Trust key rsa-43fe6c3d-6242-11e7-8b0c-02420a000007 found in cache", output
     assert_match "Content-Type set both in header", output

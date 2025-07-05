@@ -2,8 +2,8 @@ class Polynote < Formula
   include Language::Python::Shebang
 
   desc "Polyglot notebook with first-class Scala support"
-  homepage "https:polynote.org"
-  url "https:github.compolynotepolynotereleasesdownload0.6.1polynote-dist.tar.gz"
+  homepage "https://polynote.org/"
+  url "https://ghfast.top/https://github.com/polynote/polynote/releases/download/0.6.1/polynote-dist.tar.gz"
   sha256 "3d460e6929945591b6781ce11b11df8eebbfb9b6f0b3203861e70687c3eca3a1"
   license "Apache-2.0"
 
@@ -12,7 +12,7 @@ class Polynote < Formula
   # "latest" release for us to be able to use the `GithubLatest` strategy.
   livecheck do
     url :stable
-    regex(^v?(\d+(?:[.-]\d+)+)$i)
+    regex(/^v?(\d+(?:[.-]\d+)+)$/i)
     strategy :github_releases do |json, regex|
       json.map do |release|
         next if release["draft"] # || release["prerelease"]
@@ -40,7 +40,7 @@ class Polynote < Formula
   depends_on "python@3.13"
 
   resource "jep" do
-    url "https:files.pythonhosted.orgpackages0e92994ae1013446f26103e9ff71676f4c96a7a6c0a9d6baa8f12805884f7b5ejep-4.2.2.tar.gz"
+    url "https://files.pythonhosted.org/packages/0e/92/994ae1013446f26103e9ff71676f4c96a7a6c0a9d6baa8f12805884f7b5e/jep-4.2.2.tar.gz"
     sha256 "4eb79d903133e468c239ba39c8bb5ade021ef202025bf1c9b34a210003e0eab9"
   end
 
@@ -51,48 +51,48 @@ class Polynote < Formula
       resource("jep").stage do
         # Help native shared library in jep resource find libjvm.so on Linux.
         unless OS.mac?
-          ENV.append "LDFLAGS", "-L#{Formula["openjdk"].libexec}libserver"
-          ENV.append "LDFLAGS", "-Wl,-rpath,#{Formula["openjdk"].libexec}libserver"
+          ENV.append "LDFLAGS", "-L#{Formula["openjdk"].libexec}/lib/server"
+          ENV.append "LDFLAGS", "-Wl,-rpath,#{Formula["openjdk"].libexec}/lib/server"
         end
 
-        system python3, "-m", "pip", "install", *std_pip_args(prefix: libexec"vendor", build_isolation: true), "."
+        system python3, "-m", "pip", "install", *std_pip_args(prefix: libexec/"vendor", build_isolation: true), "."
       end
     end
 
     libexec.install Dir["*"]
-    rewrite_shebang detected_python_shebang, libexec"polynote.py"
+    rewrite_shebang detected_python_shebang, libexec/"polynote.py"
 
     env = Language::Java.overridable_java_home_env
-    env["PYTHONPATH"] = libexec"vendor"Language::Python.site_packages(python3)
+    env["PYTHONPATH"] = libexec/"vendor"/Language::Python.site_packages(python3)
     env["LD_LIBRARY_PATH"] = lib
-    (bin"polynote").write_env_script libexec"polynote.py", env
+    (bin/"polynote").write_env_script libexec/"polynote.py", env
   end
 
   test do
-    mkdir testpath"notebooks"
+    mkdir testpath/"notebooks"
 
-    assert_path_exists bin"polynote"
-    assert_predicate bin"polynote", :executable?
+    assert_path_exists bin/"polynote"
+    assert_predicate bin/"polynote", :executable?
 
-    output = shell_output("#{bin}polynote version 2>&1", 1)
+    output = shell_output("#{bin}/polynote version 2>&1", 1)
     assert_match "Unknown command version", output
 
     port = free_port
-    (testpath"config.yml").write <<~YAML
+    (testpath/"config.yml").write <<~YAML
       listen:
         host: 127.0.0.1
         port: #{port}
       storage:
-        dir: #{testpath}notebooks
+        dir: #{testpath}/notebooks
     YAML
 
     begin
       pid = fork do
-        exec bin"polynote", "--config", "#{testpath}config.yml"
+        exec bin/"polynote", "--config", "#{testpath}/config.yml"
       end
       sleep 5
 
-      assert_match "<title>Polynote<title>", shell_output("curl -s 127.0.0.1:#{port}")
+      assert_match "<title>Polynote</title>", shell_output("curl -s 127.0.0.1:#{port}")
     ensure
       Process.kill("TERM", pid)
       Process.wait(pid)

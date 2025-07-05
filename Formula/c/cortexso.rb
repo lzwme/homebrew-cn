@@ -1,10 +1,10 @@
 class Cortexso < Formula
   desc "Drop-in, local AI alternative to the OpenAI stack"
-  homepage "https:jan.aicortex"
-  url "https:registry.npmjs.orgcortexso-cortexso-0.1.1.tgz"
+  homepage "https://jan.ai/cortex"
+  url "https://registry.npmjs.org/cortexso/-/cortexso-0.1.1.tgz"
   sha256 "48efc16761eebfdd60e50211049554e7b781b30e56461042c6bf100e84d8d244"
   license "Apache-2.0"
-  head "https:github.comjanhqcortex.git", branch: "dev"
+  head "https://github.com/janhq/cortex.git", branch: "dev"
 
   no_autobump! because: :requires_manual_review
 
@@ -32,23 +32,23 @@ class Cortexso < Formula
 
   def install
     system "npm", "install", "--sqlite=#{Formula["sqlite"].opt_prefix}", *std_npm_args
-    bin.install_symlink Dir["#{libexec}bin*"]
+    bin.install_symlink Dir["#{libexec}/bin/*"]
 
     # Replace pre-built binaries
-    rm_r(libexec"libnode_modulescortexsonode_modulescpu-instructionsprebuilds")
-    cd libexec"libnode_modulescortexsonode_modulescpu-instructions" do
+    rm_r(libexec/"lib/node_modules/cortexso/node_modules/cpu-instructions/prebuilds")
+    cd libexec/"lib/node_modules/cortexso/node_modules/cpu-instructions" do
       system "npm", "run", "build"
-      Pathname.glob("prebuilds*cpu-instructions.node").map { |f| f.rename(f.dirname"cpuinfo.node") }
+      Pathname.glob("prebuilds/*/cpu-instructions.node").map { |f| f.rename(f.dirname/"cpuinfo.node") }
     end
   end
 
   test do
     port = free_port
-    pid = fork { exec bin"cortex", "serve", "--port", port.to_s }
+    pid = fork { exec bin/"cortex", "serve", "--port", port.to_s }
     sleep 10
     sleep 10 if OS.mac? && Hardware::CPU.intel?
     begin
-      assert_match "OK", shell_output("curl -s localhost:#{port}v1health")
+      assert_match "OK", shell_output("curl -s localhost:#{port}/v1/health")
     ensure
       Process.kill "SIGTERM", pid
     end

@@ -1,10 +1,10 @@
 class Httpflow < Formula
   desc "Packet capture and analysis utility similar to tcpdump for HTTP"
-  homepage "https:github.comsix-ddchttpflow"
-  url "https:github.comsix-ddchttpflowarchiverefstags0.0.9.tar.gz"
+  homepage "https://github.com/six-ddc/httpflow"
+  url "https://ghfast.top/https://github.com/six-ddc/httpflow/archive/refs/tags/0.0.9.tar.gz"
   sha256 "2347bd416641e165669bf1362107499d0bc4524ed9bfbb273ccd3b3dd411e89c"
   license "MIT"
-  head "https:github.comsix-ddchttpflow.git", branch: "master"
+  head "https://github.com/six-ddc/httpflow.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -36,6 +36,6 @@ class Httpflow < Formula
   end
 
   test do
-    system bin"httpflow", "-h"
+    system bin/"httpflow", "-h"
   end
 end

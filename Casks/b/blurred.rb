@@ -2,10 +2,10 @@ cask "blurred" do
   version "1.2.0"
   sha256 "15903ce2484f783c53cbad905ea93a5045c87767e7b89e37300d2200902dff37"
 
-  url "https:github.comdwarvesfblurredreleasesdownloadv#{version}Blurred.#{version}.dmg"
+  url "https://ghfast.top/https://github.com/dwarvesf/blurred/releases/download/v#{version}/Blurred.#{version}.dmg"
   name "Blurred"
-  desc "Utility to dim backgroundinactive content in the screen"
-  homepage "https:github.comdwarvesfblurred"
+  desc "Utility to dim background/inactive content in the screen"
+  homepage "https://github.com/dwarvesf/blurred/"
 
   no_autobump! because: :requires_manual_review
 
@@ -17,10 +17,10 @@ cask "blurred" do
             quit:      "foundation.dwarves.blurred"
 
   zap trash: [
-    "~LibraryApplication Scriptsfoundation.dwarves.blurred",
-    "~LibraryApplication Scriptsfoundation.dwarves.blurredlauncher",
-    "~LibraryContainersfoundation.dwarves.blurred",
-    "~LibraryContainersfoundation.dwarves.blurredlauncher",
+    "~/Library/Application Scripts/foundation.dwarves.blurred",
+    "~/Library/Application Scripts/foundation.dwarves.blurredlauncher",
+    "~/Library/Containers/foundation.dwarves.blurred",
+    "~/Library/Containers/foundation.dwarves.blurredlauncher",
   ]
 
   caveats do

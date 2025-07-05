@@ -1,10 +1,10 @@
 class Wagyu < Formula
   desc "Rust library for generating cryptocurrency wallets"
-  homepage "https:github.comhowardwuwagyu"
-  url "https:github.comhowardwuwagyuarchiverefstagsv0.6.1.tar.gz"
+  homepage "https://github.com/howardwu/wagyu"
+  url "https://ghfast.top/https://github.com/howardwu/wagyu/archive/refs/tags/v0.6.1.tar.gz"
   sha256 "2458b3d49653acd5df5f3161205301646527eca9f6ee3d84c7871afa275bad9f"
   license any_of: ["Apache-2.0", "MIT"]
-  head "https:github.comhowardwuwagyu.git", branch: "master"
+  head "https://github.com/howardwu/wagyu.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -23,9 +23,9 @@ class Wagyu < Formula
   end
 
   # cannot build with latest rust and upstream is not active
-  # https:github.comhowardwuwagyuissues280
-  # https:github.comhowardwuwagyuissues282
-  # https:github.comhowardwuwagyuissues285
+  # https://github.com/howardwu/wagyu/issues/280
+  # https://github.com/howardwu/wagyu/issues/282
+  # https://github.com/howardwu/wagyu/issues/285
   deprecate! date: "2024-09-11", because: :does_not_build
 
   depends_on "rust" => :build
@@ -35,6 +35,6 @@ class Wagyu < Formula
   end
 
   test do
-    system bin"wagyu", "bitcoin"
+    system bin/"wagyu", "bitcoin"
   end
 end

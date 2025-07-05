@@ -1,11 +1,11 @@
 class Opal < Formula
   desc "Ruby to JavaScript transpiler"
-  homepage "https:opalrb.com"
-  url "https:github.comopalopal.git",
+  homepage "https://opalrb.com/"
+  url "https://github.com/opal/opal.git",
       tag:      "v1.8.2",
       revision: "090897655fb1c0b9006a068012990375ead28049"
   license "MIT"
-  head "https:github.comopalopal.git", branch: "master"
+  head "https://github.com/opal/opal.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -30,16 +30,16 @@ class Opal < Formula
     system "gem", "build", "#{name}.gemspec"
     system "gem", "install", "#{name}-#{version}.gem"
     %w[opal opal-build opal-repl].each do |program|
-      bin.install libexec"bin#{program}"
+      bin.install libexec/"bin/#{program}"
     end
-    bin.env_script_all_files(libexec"bin", GEM_HOME: ENV["GEM_HOME"])
+    bin.env_script_all_files(libexec/"bin", GEM_HOME: ENV["GEM_HOME"])
   end
 
   test do
-    (testpath"test.rb").write "puts 'Hello world!'"
-    assert_equal "Hello world!", shell_output("#{bin}opal --runner quickjs test.rb").strip
+    (testpath/"test.rb").write "puts 'Hello world!'"
+    assert_equal "Hello world!", shell_output("#{bin}/opal --runner quickjs test.rb").strip
 
-    system bin"opal", "--compile", "test.rb", "--output", "test.js"
-    assert_equal "Hello world!", shell_output("#{Formula["quickjs"].opt_bin}qjs test.js").strip
+    system bin/"opal", "--compile", "test.rb", "--output", "test.js"
+    assert_equal "Hello world!", shell_output("#{Formula["quickjs"].opt_bin}/qjs test.js").strip
   end
 end

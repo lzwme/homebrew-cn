@@ -1,10 +1,10 @@
 class Diagram < Formula
   desc "CLI app to convert ASCII arts into hand drawn diagrams"
-  homepage "https:github.comesimovdiagram"
-  url "https:github.comesimovdiagramarchiverefstagsv1.1.0.tar.gz"
+  homepage "https://github.com/esimov/diagram"
+  url "https://ghfast.top/https://github.com/esimov/diagram/archive/refs/tags/v1.1.0.tar.gz"
   sha256 "f88bc99975ade753435ecf0e7a6470611f77563eb73b94d56fa6b6bafb4b8561"
   license "MIT"
-  head "https:github.comesimovdiagram.git", branch: "master"
+  head "https://github.com/esimov/diagram.git", branch: "master"
 
   bottle do
     sha256 arm64_sequoia: "7a4c9251da9103d6c7bf749ae76e30500e2298751c6743ff0ddb27fdb2203e08"
@@ -29,16 +29,16 @@ class Diagram < Formula
   end
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w -X main.defaultFontFile=#{pkgshare}gloriahallelujah.ttf")
+    system "go", "build", *std_go_args(ldflags: "-s -w -X main.defaultFontFile=#{pkgshare}/gloriahallelujah.ttf")
 
-    pkgshare.install ["sample.txt", "fontgloriahallelujah.ttf"]
+    pkgshare.install ["sample.txt", "font/gloriahallelujah.ttf"]
   end
 
   test do
-    cp pkgshare"sample.txt", testpath
-    pid = spawn bin"diagram", "-in", "sample.txt", "-out", testpath"output.png"
+    cp pkgshare/"sample.txt", testpath
+    pid = spawn bin/"diagram", "-in", "sample.txt", "-out", testpath/"output.png"
     sleep 1
-    assert_path_exists testpath"output.png"
+    assert_path_exists testpath/"output.png"
   ensure
     Process.kill("TERM", pid)
     Process.wait(pid)

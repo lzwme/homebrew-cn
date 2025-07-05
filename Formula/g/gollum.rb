@@ -1,10 +1,10 @@
 class Gollum < Formula
   desc "Go n:m message multiplexer"
-  homepage "https:gollum.readthedocs.ioenlatest"
-  url "https:github.comtrivagogollumarchiverefstags0.6.0.tar.gz"
+  homepage "https://gollum.readthedocs.io/en/latest/"
+  url "https://ghfast.top/https://github.com/trivago/gollum/archive/refs/tags/0.6.0.tar.gz"
   sha256 "2d9e7539342ccf5dabb272bbba8223d279a256c0901e4a27d858488dd4343c49"
   license "Apache-2.0"
-  head "https:github.comtrivagogollum.git", branch: "master"
+  head "https://github.com/trivago/gollum.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -23,27 +23,27 @@ class Gollum < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "9069887fd837e33a18020e839a78fa28a76f3d4088e59596e0e75941031f7760"
   end
 
-  # no commits since july 1 2021, and cannot rebuild, https:github.comtrivagogollumissues265
+  # no commits since july 1 2021, and cannot rebuild, https://github.com/trivago/gollum/issues/265
   deprecate! date: "2024-07-27", because: :unmaintained
 
   depends_on "go" => :build
 
   def install
-    # Work around https:github.comtrivagogollumissues265
-    mod = "github.comCrowdStrikego-metrics-prometheus"
-    (buildpath"vendor#{mod}go.mod").write <<~GOMOD
+    # Work around https://github.com/trivago/gollum/issues/265
+    mod = "github.com/CrowdStrike/go-metrics-prometheus"
+    (buildpath/"vendor/#{mod}/go.mod").write <<~GOMOD
       module #{mod}
     GOMOD
-    (buildpath"go.work").write <<~EOS
+    (buildpath/"go.work").write <<~EOS
       use .
-      replace #{mod} => .vendor#{mod}
+      replace #{mod} => ./vendor/#{mod}
     EOS
 
-    system "go", "build", "-mod=readonly", *std_go_args(ldflags: "-s -w -X gollumcore.versionString=#{version}")
+    system "go", "build", "-mod=readonly", *std_go_args(ldflags: "-s -w -X gollum/core.versionString=#{version}")
   end
 
   test do
-    (testpath"test.conf").write <<~EOS
+    (testpath/"test.conf").write <<~EOS
       "Profiler":
           Type: "consumer.Profiler"
           Runs: 100000
@@ -58,6 +58,6 @@ class Gollum < Formula
           Type: "producer.Benchmark"
           Streams: "profile"
     EOS
-    assert_match "Config OK.", shell_output("#{bin}gollum -tc #{testpath}test.conf")
+    assert_match "Config OK.", shell_output("#{bin}/gollum -tc #{testpath}/test.conf")
   end
 end

@@ -1,10 +1,10 @@
 class Shfmt < Formula
   desc "Autoformat shell script source code"
-  homepage "https:github.commvdansh"
-  url "https:github.commvdansharchiverefstagsv3.11.0.tar.gz"
+  homepage "https://github.com/mvdan/sh"
+  url "https://ghfast.top/https://github.com/mvdan/sh/archive/refs/tags/v3.11.0.tar.gz"
   sha256 "69aebb0dd4bf5e62842c186ad38b76f6ec2e781188cd71cea33cb4e729086e94"
   license "BSD-3-Clause"
-  head "https:github.commvdansh.git", branch: "master"
+  head "https://github.com/mvdan/sh.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "86443c9bdac7eb362c1f37111b65c5571ac9c1ff3af9cc400fa21339638df3d7"
@@ -26,15 +26,15 @@ class Shfmt < Formula
       -extldflags=-static
       -X main.version=#{version}
     ]
-    system "go", "build", *std_go_args(ldflags:), ".cmdshfmt"
+    system "go", "build", *std_go_args(ldflags:), "./cmd/shfmt"
     man1.mkpath
-    system "scdoc < .cmdshfmtshfmt.1.scd > #{man1}shfmt.1"
+    system "scdoc < ./cmd/shfmt/shfmt.1.scd > #{man1}/shfmt.1"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}shfmt --version")
+    assert_match version.to_s, shell_output("#{bin}/shfmt --version")
 
-    (testpath"test").write "\t\techo foo"
-    system bin"shfmt", testpath"test"
+    (testpath/"test").write "\t\techo foo"
+    system bin/"shfmt", testpath/"test"
   end
 end

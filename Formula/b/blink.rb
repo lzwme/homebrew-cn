@@ -1,10 +1,10 @@
 class Blink < Formula
   desc "Tiniest x86-64-linux emulator"
-  homepage "https:github.comjartblink"
-  url "https:github.comjartblinkarchiverefstags1.1.0.tar.gz"
+  homepage "https://github.com/jart/blink"
+  url "https://ghfast.top/https://github.com/jart/blink/archive/refs/tags/1.1.0.tar.gz"
   sha256 "2649793e1ebf12027f5e240a773f452434cefd9494744a858cd8bff8792dba68"
   license "ISC"
-  head "https:github.comjartblink.git", branch: "master"
+  head "https://github.com/jart/blink.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -25,10 +25,10 @@ class Blink < Formula
 
   def install
     # newer linker cause issue as `pointer not aligned at _kWhence+0x4`
-    # upstream bug report, https:github.comjartblinkissues166
+    # upstream bug report, https://github.com/jart/blink/issues/166
     ENV.append "LDFLAGS", "-Wl,-ld_classic" if DevelopmentTools.clang_build_version >= 1500
 
-    system ".configure", "--prefix=#{prefix}", "--enable-vfs"
+    system "./configure", "--prefix=#{prefix}", "--enable-vfs"
     # Call `make` as `gmake` to use Homebrew `make`.
     system "gmake" # must be separate steps.
     system "gmake", "install"
@@ -37,8 +37,8 @@ class Blink < Formula
   test do
     stable.stage testpath
     ENV["BLINK_PREFIX"] = testpath
-    goodhello = "third_partycosmogoodhello.elf"
+    goodhello = "third_party/cosmo/goodhello.elf"
     chmod "+x", goodhello
-    system bin"blink", "-m", goodhello
+    system bin/"blink", "-m", goodhello
   end
 end

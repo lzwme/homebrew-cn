@@ -1,7 +1,7 @@
 class Tctl < Formula
   desc "Temporal CLI (tctl)"
-  homepage "https:docs.temporal.iocli"
-  url "https:github.comtemporaliotctlarchiverefstagsv1.18.1.tar.gz"
+  homepage "https://docs.temporal.io/cli"
+  url "https://ghfast.top/https://github.com/temporalio/tctl/archive/refs/tags/v1.18.1.tar.gz"
   sha256 "945272db4860e3a015e43b4ffc8fc24ecd585e604f4b94b3a964d2f4e51b9c32"
   license "MIT"
 
@@ -25,17 +25,17 @@ class Tctl < Formula
   conflicts_with "teleport", because: "both install `tctl` binaries"
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), ".cmdtctlmain.go"
-    system "go", "build", *std_go_args(ldflags: "-s -w", output: bin"tctl-authorization-plugin"),
-      ".cmdpluginstctl-authorization-plugin"
+    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/tctl/main.go"
+    system "go", "build", *std_go_args(ldflags: "-s -w", output: bin/"tctl-authorization-plugin"),
+      "./cmd/plugins/tctl-authorization-plugin"
   end
 
   test do
     # Given tctl is pointless without a server, not much interesting to test here.
-    run_output = shell_output("#{bin}tctl --version 2>&1")
+    run_output = shell_output("#{bin}/tctl --version 2>&1")
     assert_match "tctl version", run_output
 
-    run_output = shell_output("#{bin}tctl --ad 192.0.2.0:1234 n l 2>&1", 1)
+    run_output = shell_output("#{bin}/tctl --ad 192.0.2.0:1234 n l 2>&1", 1)
     assert_match "rpc error", run_output
   end
 end

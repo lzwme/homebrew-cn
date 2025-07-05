@@ -1,7 +1,7 @@
 class AngleGrinder < Formula
   desc "Slice and dice log files on the command-line"
-  homepage "https:github.comrcohangle-grinder"
-  url "https:github.comrcohangle-grinderarchiverefstagsv0.19.6.tar.gz"
+  homepage "https://github.com/rcoh/angle-grinder"
+  url "https://ghfast.top/https://github.com/rcoh/angle-grinder/archive/refs/tags/v0.19.6.tar.gz"
   sha256 "f76e236f0825ca3f0b165e37d6448fa36e39c41690e7469d02c37eeb0c972222"
   license "MIT"
 
@@ -22,8 +22,8 @@ class AngleGrinder < Formula
   end
 
   test do
-    (testpath"logs.txt").write("{\"key\": 5}")
-    output = shell_output("#{bin}agrind --file logs.txt '* | json'")
+    (testpath/"logs.txt").write("{\"key\": 5}")
+    output = shell_output("#{bin}/agrind --file logs.txt '* | json'")
     assert_match "[key=5]", output
   end
 end

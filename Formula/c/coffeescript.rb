@@ -1,10 +1,10 @@
 class Coffeescript < Formula
   desc "Unfancy JavaScript"
-  homepage "https:coffeescript.org"
-  url "https:registry.npmjs.orgcoffeescript-coffeescript-2.7.0.tgz"
+  homepage "https://coffeescript.org/"
+  url "https://registry.npmjs.org/coffeescript/-/coffeescript-2.7.0.tgz"
   sha256 "590e2036bd24d3b54e598b56df2e0737a82c2aa966c1020338508035f3b4721f"
   license "MIT"
-  head "https:github.comjashkenascoffeescript.git", branch: "main"
+  head "https://github.com/jashkenas/coffeescript.git", branch: "main"
 
   no_autobump! because: :requires_manual_review
 
@@ -19,11 +19,11 @@ class Coffeescript < Formula
 
   def install
     system "npm", "install", *std_npm_args
-    bin.install_symlink Dir["#{libexec}bin*"]
+    bin.install_symlink Dir["#{libexec}/bin/*"]
   end
 
   test do
-    (testpath"test.coffee").write <<~EOS
+    (testpath/"test.coffee").write <<~EOS
       square = (x) -> x * x
       list = [1, 2, 3, 4, 5]
 
@@ -35,7 +35,7 @@ class Coffeescript < Formula
       cubes = (math.cube num for num in list)
     EOS
 
-    system bin"coffee", "--compile", "test.coffee"
-    assert_path_exists testpath"test.js", "test.js was not generated"
+    system bin/"coffee", "--compile", "test.coffee"
+    assert_path_exists testpath/"test.js", "test.js was not generated"
   end
 end

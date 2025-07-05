@@ -1,10 +1,10 @@
 class Datafusion < Formula
   desc "Apache Arrow DataFusion and Ballista query engines"
-  homepage "https:arrow.apache.orgdatafusion"
-  url "https:github.comapachedatafusionarchiverefstags48.0.0.tar.gz"
+  homepage "https://arrow.apache.org/datafusion"
+  url "https://ghfast.top/https://github.com/apache/datafusion/archive/refs/tags/48.0.0.tar.gz"
   sha256 "63f65035ccc7287a09f1ed0c7662f785986c5944fcce004d3bd728172273d4ca"
   license "Apache-2.0"
-  head "https:github.comapachedatafusion.git", branch: "master"
+  head "https://github.com/apache/datafusion.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "8399694f51eadeaa2a4874954584e4c89ef08c4680217b044eca277cf7f114fb"
@@ -23,9 +23,9 @@ class Datafusion < Formula
   end
 
   test do
-    (testpath"datafusion_test.sql").write <<~SQL
+    (testpath/"datafusion_test.sql").write <<~SQL
       select 1+2 as n;
     SQL
-    assert_equal "[{\"n\":3}]", shell_output("#{bin}datafusion-cli -q --format json -f datafusion_test.sql").strip
+    assert_equal "[{\"n\":3}]", shell_output("#{bin}/datafusion-cli -q --format json -f datafusion_test.sql").strip
   end
 end

@@ -1,10 +1,10 @@
 class Nvimpager < Formula
   desc "Use NeoVim as a pager to view manpages, diffs, etc."
-  homepage "https:github.comluccnvimpager"
-  url "https:github.comluccnvimpagerarchiverefstagsv0.13.0.tar.gz"
+  homepage "https://github.com/lucc/nvimpager"
+  url "https://ghfast.top/https://github.com/lucc/nvimpager/archive/refs/tags/v0.13.0.tar.gz"
   sha256 "8255c39697b213cb34dfd573d90c27db7f61180d4a12f640ef6e7f313e525241"
   license "BSD-2-Clause"
-  head "https:github.comluccnvimpager.git", branch: "main"
+  head "https://github.com/lucc/nvimpager.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "9e64c6a58d03492445e9ea60bcd47d617310e062ed4a2039824a25050dcda0c9"
@@ -35,10 +35,10 @@ class Nvimpager < Formula
   end
 
   test do
-    (testpath"test.txt").write <<~EOS
+    (testpath/"test.txt").write <<~EOS
       This is test
     EOS
 
-    assert_match(This is test, shell_output("#{bin}nvimpager test.txt"))
+    assert_match(/This is test/, shell_output("#{bin}/nvimpager test.txt"))
   end
 end

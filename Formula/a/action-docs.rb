@@ -1,7 +1,7 @@
 class ActionDocs < Formula
   desc "Generate docs for GitHub actions"
-  homepage "https:github.comnpalmaction-docs"
-  url "https:registry.npmjs.orgaction-docs-action-docs-2.5.1.tgz"
+  homepage "https://github.com/npalm/action-docs"
+  url "https://registry.npmjs.org/action-docs/-/action-docs-2.5.1.tgz"
   sha256 "f7d93433a6d3e532b30b3fc068fa263d16f7c38da91422450507b469bd36a64a"
   license "MIT"
 
@@ -15,11 +15,11 @@ class ActionDocs < Formula
 
   def install
     system "npm", "install", *std_npm_args
-    bin.install_symlink Dir["#{libexec}bin*"]
+    bin.install_symlink Dir["#{libexec}/bin/*"]
   end
 
   test do
-    test_file = testpath"action.yml"
+    test_file = testpath/"action.yml"
     test_file.write <<~YAML
       ---
       name: "Example name"
@@ -37,9 +37,9 @@ class ActionDocs < Formula
             shell: bash
     YAML
 
-    output = shell_output("#{bin}action-docs --source #{test_file}")
+    output = shell_output("#{bin}/action-docs --source #{test_file}")
     assert_match "Example input description", output
 
-    assert_match version.to_s, shell_output("#{bin}action-docs --version")
+    assert_match version.to_s, shell_output("#{bin}/action-docs --version")
   end
 end

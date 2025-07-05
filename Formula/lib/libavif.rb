@@ -1,7 +1,7 @@
 class Libavif < Formula
   desc "Library for encoding and decoding .avif files"
-  homepage "https:github.comAOMediaCodeclibavif"
-  url "https:github.comAOMediaCodeclibavifarchiverefstagsv1.3.0.tar.gz"
+  homepage "https://github.com/AOMediaCodec/libavif"
+  url "https://ghfast.top/https://github.com/AOMediaCodec/libavif/archive/refs/tags/v1.3.0.tar.gz"
   sha256 "0a545e953cc049bf5bcf4ee467306a2f113a75110edf59e61248873101cd26c1"
   license "BSD-2-Clause"
 
@@ -40,15 +40,15 @@ class Libavif < Formula
   end
 
   test do
-    system bin"avifenc", test_fixtures("test.png"), testpath"test.avif"
-    assert_path_exists testpath"test.avif"
+    system bin/"avifenc", test_fixtures("test.png"), testpath/"test.avif"
+    assert_path_exists testpath/"test.avif"
 
-    system bin"avifdec", testpath"test.avif", testpath"test.jpg"
-    assert_path_exists testpath"test.jpg"
+    system bin/"avifdec", testpath/"test.avif", testpath/"test.jpg"
+    assert_path_exists testpath/"test.jpg"
 
-    example = pkgshare"examplesavif_example_decode_file.c"
+    example = pkgshare/"examples/avif_example_decode_file.c"
     system ENV.cc, example, "-I#{include}", "-L#{lib}", "-lavif", "-o", "avif_example_decode_file"
-    output = shell_output("#{testpath}avif_example_decode_file #{testpath}test.avif")
+    output = shell_output("#{testpath}/avif_example_decode_file #{testpath}/test.avif")
     assert_match "Parsed AVIF: 8x8", output
   end
 end

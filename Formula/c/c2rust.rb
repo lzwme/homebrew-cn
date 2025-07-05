@@ -1,7 +1,7 @@
 class C2rust < Formula
   desc "Migrate C code to Rust"
-  homepage "https:c2rust.com"
-  url "https:github.comimmunantc2rustarchiverefstagsv0.20.0.tar.gz"
+  homepage "https://c2rust.com/"
+  url "https://ghfast.top/https://github.com/immunant/c2rust/archive/refs/tags/v0.20.0.tar.gz"
   sha256 "482330d3f27cfe85deea207e490bebbbe9c709b4bc054e3135498b3bbb585bec"
   license "BSD-3-Clause"
   revision 1
@@ -20,9 +20,9 @@ class C2rust < Formula
   depends_on "rust" => :build
   depends_on "llvm@19"
 
-  # cmake 4.0 build patch, upstream pr ref, https:github.comimmunantc2rustpull1214
+  # cmake 4.0 build patch, upstream pr ref, https://github.com/immunant/c2rust/pull/1214
   patch do
-    url "https:github.comimmunantc2rustcommitc96c1c0e49d8be452d97b3e13c741324befd7b77.patch?full_index=1"
+    url "https://github.com/immunant/c2rust/commit/c96c1c0e49d8be452d97b3e13c741324befd7b77.patch?full_index=1"
     sha256 "9670a043ffade24eb014e6fee69707ab69df81ea76f9973fd7d4a68499362013"
   end
 
@@ -33,10 +33,10 @@ class C2rust < Formula
   end
 
   test do
-    cp_r pkgshare"examplesqsort.", testpath
+    cp_r pkgshare/"examples/qsort/.", testpath
     system "cmake", "-S", ".", "-B", "build", "-DCMAKE_EXPORT_COMPILE_COMMANDS=1"
     system "cmake", "--build", "build"
-    system bin"c2rust", "transpile", "buildcompile_commands.json"
-    assert_path_exists testpath"qsort.c"
+    system bin/"c2rust", "transpile", "build/compile_commands.json"
+    assert_path_exists testpath/"qsort.c"
   end
 end

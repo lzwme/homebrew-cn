@@ -1,10 +1,10 @@
 class Libmrss < Formula
   desc "C library for RSS files or streams"
-  homepage "https:github.combakulflibmrss"
-  url "https:github.combakulflibmrssarchiverefstags0.19.4.tar.gz"
+  homepage "https://github.com/bakulf/libmrss"
+  url "https://ghfast.top/https://github.com/bakulf/libmrss/archive/refs/tags/0.19.4.tar.gz"
   sha256 "28022247056b04ca3f12a9e21134d42304526b2a67b7d6baf139e556af1151c6"
   license "LGPL-2.1-or-later"
-  head "https:github.combakulflibmrss.git", branch: "master"
+  head "https://github.com/bakulf/libmrss.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -33,12 +33,12 @@ class Libmrss < Formula
     touch "NEWS"
 
     system "autoreconf", "--force", "--install", "--verbose"
-    system ".configure", *std_configure_args
+    system "./configure", *std_configure_args
     system "make", "install"
   end
 
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include <stdio.h>
       #include <mrss.h>
 
@@ -46,7 +46,7 @@ class Libmrss < Formula
         mrss_t *rss;
         mrss_error_t error;
         mrss_item_t *item;
-        const char *url = "https:raw.githubusercontent.comgitgit.github.iomasterfeed.xml";
+        const char *url = "https://ghfast.top/https://raw.githubusercontent.com/git/git.github.io/master/feed.xml";
 
         error = mrss_parse_url(url, &rss);
         if (error) {
@@ -66,6 +66,6 @@ class Libmrss < Formula
 
     flags = shell_output("pkgconf --cflags --libs mrss").chomp.split
     system ENV.cc, "test.c", "-o", "test", *flags
-    assert_match "Title: {{ post.title | xml_escape}}", shell_output(".test")
+    assert_match "Title: {{ post.title | xml_escape}}", shell_output("./test")
   end
 end

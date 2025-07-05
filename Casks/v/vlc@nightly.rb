@@ -3,24 +3,24 @@ cask "vlc@nightly" do
   livecheck_arch = on_arch_conditional arm: "arm64", intel: "intel64"
 
   on_arm do
-    version "4.0.0,20250702-0413,23860640"
-    sha256 "898b94711969feb289501e89fcf815a409e8dc24fc832adee7ba48161f14f54e"
+    version "4.0.0,20250704-0413,0659b095"
+    sha256 "2582911f3242fec6535dcda0697338ba844c061ea9862e293c99afc0ce20d59a"
   end
   on_intel do
-    version "4.0.0,20250702-0416,23860640"
-    sha256 "6c166ff0ce733bfc97ce0e1ea3bf0d1c4b33154708d366b9015d75781aa9c201"
+    version "4.0.0,20250704-0417,0659b095"
+    sha256 "608da76239b6772e67f6f643a3200a289156b470e5df483289a813a33ceb4312"
   end
 
-  url "https:artifacts.videolan.orgvlcnightly-macos-#{arch}#{version.csv.second}vlc-#{version.csv.first}-dev-#{livecheck_arch}-#{version.csv.third}.dmg"
+  url "https://artifacts.videolan.org/vlc/nightly-macos-#{arch}/#{version.csv.second}/vlc-#{version.csv.first}-dev-#{livecheck_arch}-#{version.csv.third}.dmg"
   name "VLC media player"
   desc "Open-source cross-platform multimedia player"
-  homepage "https:www.videolan.orgvlc"
+  homepage "https://www.videolan.org/vlc/"
 
   livecheck do
-    url "https:artifacts.videolan.orgvlcnightly-macos-#{arch}"
-    regex(href=.*?vlc[._-]v?(\d+(?:\.\d+)+)[._-]dev[._-]#{livecheck_arch}[._-](\h+)\.dmgi)
+    url "https://artifacts.videolan.org/vlc/nightly-macos-#{arch}/"
+    regex(/href=.*?vlc[._-]v?(\d+(?:\.\d+)+)[._-]dev[._-]#{livecheck_arch}[._-](\h+)\.dmg/i)
     strategy :page_match do |page, regex|
-      directory = page.scan(%r{href=["']?v?(\d+(?:[.-]\d+)+)?["' >]}i)
+      directory = page.scan(%r{href=["']?v?(\d+(?:[.-]\d+)+)/?["' >]}i)
                       .flatten
                       .uniq
                       .max
@@ -28,7 +28,7 @@ cask "vlc@nightly" do
 
       # Fetch the directory listing page for newest build
       build_response = Homebrew::Livecheck::Strategy.page_content(
-        "https:artifacts.videolan.orgvlcnightly-macos-#{arch}#{directory}",
+        "https://artifacts.videolan.org/vlc/nightly-macos-#{arch}/#{directory}/",
       )
       next if (build_page = build_response[:content]).blank?
 
@@ -42,24 +42,24 @@ cask "vlc@nightly" do
   conflicts_with cask: "vlc"
 
   app "VLC.app"
-  # shim script (https:github.comHomebrewhomebrew-caskissues18809)
-  shimscript = "#{staged_path}vlc.wrapper.sh"
+  # shim script (https://github.com/Homebrew/homebrew-cask/issues/18809)
+  shimscript = "#{staged_path}/vlc.wrapper.sh"
   binary shimscript, target: "vlc"
 
   preflight do
     File.write shimscript, <<~EOS
-      #!binsh
-      exec '#{appdir}VLC.appContentsMacOSVLC' "$@"
+      #!/bin/sh
+      exec '#{appdir}/VLC.app/Contents/MacOS/VLC' "$@"
     EOS
   end
 
   zap trash: [
-    "~LibraryApplication Supportcom.apple.sharedfilelistcom.apple.LSSharedFileList.ApplicationRecentDocumentsorg.videolan.vlc.sfl*",
-    "~LibraryApplication Supportorg.videolan.vlc",
-    "~LibraryApplication SupportVLC",
-    "~LibraryCachesorg.videolan.vlc",
-    "~LibraryPreferencesorg.videolan.vlc",
-    "~LibraryPreferencesorg.videolan.vlc.plist",
-    "~LibrarySaved Application Stateorg.videolan.vlc.savedState",
+    "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/org.videolan.vlc.sfl*",
+    "~/Library/Application Support/org.videolan.vlc",
+    "~/Library/Application Support/VLC",
+    "~/Library/Caches/org.videolan.vlc",
+    "~/Library/Preferences/org.videolan.vlc",
+    "~/Library/Preferences/org.videolan.vlc.plist",
+    "~/Library/Saved Application State/org.videolan.vlc.savedState",
   ]
 end

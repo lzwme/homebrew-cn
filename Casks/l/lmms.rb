@@ -3,20 +3,20 @@ cask "lmms" do
     version "1.2.2"
     sha256 "e5aa82086dc67817a763f3e54aa0786cdca590f26981584c07f9ff2ff1fb0503"
 
-    url "https:github.comLMMSlmmsreleasesdownloadv#{version}lmms-#{version}-mac10.13.dmg",
-        verified: "github.comLMMSlmms"
+    url "https://ghfast.top/https://github.com/LMMS/lmms/releases/download/v#{version}/lmms-#{version}-mac10.13.dmg",
+        verified: "github.com/LMMS/lmms/"
   end
   on_mojave :or_newer do
     version "1.2.2"
     sha256 "bcf9d6693cf4000df4a4c705afb8bbaa30a3caf4e146939c983cc31eecb66eb0"
 
-    url "https:github.comLMMSlmmsreleasesdownloadv#{version}lmms-#{version}-mac10.14.dmg",
-        verified: "github.comLMMSlmms"
+    url "https://ghfast.top/https://github.com/LMMS/lmms/releases/download/v#{version}/lmms-#{version}-mac10.14.dmg",
+        verified: "github.com/LMMS/lmms/"
   end
 
   name "LMMS"
   desc "Music production software"
-  homepage "https:lmms.io"
+  homepage "https://lmms.io/"
 
   no_autobump! because: :requires_manual_review
 
@@ -25,10 +25,10 @@ cask "lmms" do
   app "LMMS.app"
 
   zap trash: [
-        "~.lmmsrc.xml",
-        "~LibrarySaved Application Stateio.lmms.savedState",
+        "~/.lmmsrc.xml",
+        "~/Library/Saved Application State/io.lmms.savedState",
       ],
-      rmdir: "~Documentslmms"
+      rmdir: "~/Documents/lmms"
 
   caveats do
     requires_rosetta

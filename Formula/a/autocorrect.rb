@@ -1,10 +1,10 @@
 class Autocorrect < Formula
   desc "Linter and formatter to improve copywriting, correct spaces, words between CJK"
-  homepage "https:huacnlee.github.ioautocorrect"
-  url "https:github.comhuacnleeautocorrectarchiverefstagsv2.14.1.tar.gz"
+  homepage "https://huacnlee.github.io/autocorrect/"
+  url "https://ghfast.top/https://github.com/huacnlee/autocorrect/archive/refs/tags/v2.14.1.tar.gz"
   sha256 "054295d2289c61992ecd2c062d7da548ea11c620359a48a611a704825f0e482f"
   license "MIT"
-  head "https:github.comhuacnleeautocorrect.git", branch: "main"
+  head "https://github.com/huacnlee/autocorrect.git", branch: "main"
 
   no_autobump! because: :bumped_by_upstream
 
@@ -25,10 +25,10 @@ class Autocorrect < Formula
   end
 
   test do
-    (testpath"autocorrect.md").write "Hello世界"
-    out = shell_output("#{bin}autocorrect autocorrect.md").chomp
+    (testpath/"autocorrect.md").write "Hello世界"
+    out = shell_output("#{bin}/autocorrect autocorrect.md").chomp
     assert_match "Hello 世界", out
 
-    assert_match version.to_s, shell_output("#{bin}autocorrect --version")
+    assert_match version.to_s, shell_output("#{bin}/autocorrect --version")
   end
 end

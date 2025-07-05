@@ -1,14 +1,14 @@
 class Coq < Formula
   desc "Proof assistant for higher-order logic"
-  homepage "https:coq.inria.fr"
-  url "https:github.comrocq-proverrocqreleasesdownloadV8.20.1coq-8.20.1.tar.gz"
+  homepage "https://coq.inria.fr/"
+  url "https://ghfast.top/https://github.com/rocq-prover/rocq/releases/download/V8.20.1/coq-8.20.1.tar.gz"
   sha256 "09ad238cc7930d59564b032be2a8a1fd10d6ef845364d739072d04090a6d3cc2"
   license "LGPL-2.1-only"
-  head "https:github.comrocq-proverrocq.git", branch: "master"
+  head "https://github.com/rocq-prover/rocq.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -31,21 +31,21 @@ class Coq < Formula
   uses_from_macos "unzip" => :build
 
   def install
-    # Work around for https:github.comHomebrewhomebrew-test-botissues805
-    if ENV["HOMEBREW_GITHUB_ACTIONS"] && !(Formula["ocaml-findlib"].etc"findlib.conf").exist?
-      ENV["OCAMLFIND_CONF"] = Formula["ocaml-findlib"].opt_libexec"findlib.conf"
+    # Work around for https://github.com/Homebrew/homebrew-test-bot/issues/805
+    if ENV["HOMEBREW_GITHUB_ACTIONS"] && !(Formula["ocaml-findlib"].etc/"findlib.conf").exist?
+      ENV["OCAMLFIND_CONF"] = Formula["ocaml-findlib"].opt_libexec/"findlib.conf"
     end
-    ENV.prepend_path "OCAMLPATH", Formula["ocaml-zarith"].opt_lib"ocaml"
-    ENV.prepend_path "OCAMLPATH", Formula["ocaml-findlib"].opt_lib"ocaml"
-    system ".configure", "-prefix", prefix,
+    ENV.prepend_path "OCAMLPATH", Formula["ocaml-zarith"].opt_lib/"ocaml"
+    ENV.prepend_path "OCAMLPATH", Formula["ocaml-findlib"].opt_lib/"ocaml"
+    system "./configure", "-prefix", prefix,
                           "-mandir", man,
-                          "-libdir", HOMEBREW_PREFIX"libocamlcoq",
-                          "-docdir", pkgshare"latex"
+                          "-libdir", HOMEBREW_PREFIX/"lib/ocaml/coq",
+                          "-docdir", pkgshare/"latex"
     system "make", "dunestrap"
     system "dune", "build", "-p", "coq-core,coq-stdlib,coqide-server,coq"
     system "dune", "install", "--prefix=#{prefix}",
                               "--mandir=#{man}",
-                              "--libdir=#{lib}ocaml",
+                              "--libdir=#{lib}/ocaml",
                               "coq-core",
                               "coq-stdlib",
                               "coqide-server",
@@ -53,11 +53,11 @@ class Coq < Formula
   end
 
   test do
-    # Work around for https:github.comHomebrewhomebrew-test-botissues805
-    if ENV["HOMEBREW_GITHUB_ACTIONS"] && !(Formula["ocaml-findlib"].etc"findlib.conf").exist?
-      ENV["OCAMLFIND_CONF"] = Formula["ocaml-findlib"].opt_libexec"findlib.conf"
+    # Work around for https://github.com/Homebrew/homebrew-test-bot/issues/805
+    if ENV["HOMEBREW_GITHUB_ACTIONS"] && !(Formula["ocaml-findlib"].etc/"findlib.conf").exist?
+      ENV["OCAMLFIND_CONF"] = Formula["ocaml-findlib"].opt_libexec/"findlib.conf"
     end
-    (testpath"testing.v").write <<~EOS
+    (testpath/"testing.v").write <<~EOS
       Require Coq.micromega.Lia.
       Require Coq.ZArith.ZArith.
 
@@ -82,9 +82,9 @@ class Coq < Formula
       intros; lia.
       Qed.
     EOS
-    system bin"coqc", testpath"testing.v"
+    system bin/"coqc", testpath/"testing.v"
     # test ability to find plugin files
-    output = shell_output("#{Formula["ocaml-findlib"].bin}ocamlfind query coq-core.plugins.ltac")
-    assert_equal "#{HOMEBREW_PREFIX}libocamlcoq-corepluginsltac", output.chomp
+    output = shell_output("#{Formula["ocaml-findlib"].bin}/ocamlfind query coq-core.plugins.ltac")
+    assert_equal "#{HOMEBREW_PREFIX}/lib/ocaml/coq-core/plugins/ltac", output.chomp
   end
 end

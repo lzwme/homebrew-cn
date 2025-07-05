@@ -1,7 +1,7 @@
 class DiffPdf < Formula
   desc "Visually compare two PDF files"
-  homepage "https:vslavik.github.iodiff-pdf"
-  url "https:github.comvslavikdiff-pdfreleasesdownloadv0.5.2diff-pdf-0.5.2.tar.gz"
+  homepage "https://vslavik.github.io/diff-pdf/"
+  url "https://ghfast.top/https://github.com/vslavik/diff-pdf/releases/download/v0.5.2/diff-pdf-0.5.2.tar.gz"
   sha256 "7d018f05e30050a2b49dee137f084584b43aec87c7f5ee9c3bbd14c333cbfd54"
   license "GPL-2.0-only"
   revision 1
@@ -33,13 +33,13 @@ class DiffPdf < Formula
   end
 
   def install
-    system ".configure", "--disable-silent-rules", *std_configure_args
+    system "./configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
   end
 
   test do
     testpdf = test_fixtures("test.pdf")
-    system bin"diff-pdf", "--output-diff=no_diff.pdf", testpdf, testpdf
-    assert_path_exists testpath"no_diff.pdf"
+    system bin/"diff-pdf", "--output-diff=no_diff.pdf", testpdf, testpdf
+    assert_path_exists testpath/"no_diff.pdf"
   end
 end

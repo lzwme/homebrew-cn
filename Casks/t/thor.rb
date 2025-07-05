@@ -2,13 +2,13 @@ cask "thor" do
   version "1.5.16"
   sha256 "07bd68a6378ac66d00fe39e0f0f0589694b19a46d89120b5934173a8c3b41a5a"
 
-  url "https:github.comgbammcThorreleasesdownload#{version}Thor_#{version}.zip"
+  url "https://ghfast.top/https://github.com/gbammc/Thor/releases/download/#{version}/Thor_#{version}.zip"
   name "Thor"
   desc "Utility to switch between applications"
-  homepage "https:github.comgbammcThor"
+  homepage "https://github.com/gbammc/Thor/"
 
   livecheck do
-    url "https:github.comgbammcThorrawmasterReleasesappcast.xml"
+    url "https://github.com/gbammc/Thor/raw/master/Releases/appcast.xml"
     strategy :sparkle do |items|
       items.map(&:short_version)
     end
@@ -24,7 +24,7 @@ cask "thor" do
   uninstall quit: "me.alvinzhu.Thor"
 
   zap trash: [
-    "~LibraryApplication Scriptsme.alvinzhu.Thor",
-    "~LibraryContainersme.alvinzhu.Thor",
+    "~/Library/Application Scripts/me.alvinzhu.Thor",
+    "~/Library/Containers/me.alvinzhu.Thor",
   ]
 end

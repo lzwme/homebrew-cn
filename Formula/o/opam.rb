@@ -1,16 +1,16 @@
 class Opam < Formula
   desc "OCaml package manager"
-  homepage "https:opam.ocaml.org"
-  url "https:github.comocamlopamreleasesdownload2.3.0opam-full-2.3.0.tar.gz"
+  homepage "https://opam.ocaml.org"
+  url "https://ghfast.top/https://github.com/ocaml/opam/releases/download/2.3.0/opam-full-2.3.0.tar.gz"
   sha256 "506ba76865dc315b67df9aa89e7abd5c1a897a7f0a92d7b2694974fdc532b346"
   license "LGPL-2.1-only"
-  head "https:github.comocamlopam.git", branch: "master"
+  head "https://github.com/ocaml/opam.git", branch: "master"
 
   # Upstream sometimes publishes tarballs with a version suffix (e.g. 2.2.0-2)
   # to an existing tag (e.g. 2.2.0), so we match versions from release assets.
   livecheck do
     url :stable
-    regex(^opam-full[._-]v?(\d+(?:[.-]\d+)+)\.ti)
+    regex(/^opam-full[._-]v?(\d+(?:[.-]\d+)+)\.t/i)
     strategy :github_latest do |json, regex|
       json["assets"]&.map do |asset|
         match = asset["name"]&.match(regex)
@@ -39,17 +39,17 @@ class Opam < Formula
   def install
     ENV.deparallelize
 
-    system ".configure", "--prefix=#{prefix}", "--mandir=#{man}", "--with-vendored-deps", "--with-mccs"
+    system "./configure", "--prefix=#{prefix}", "--mandir=#{man}", "--with-vendored-deps", "--with-mccs"
     system "make"
     system "make", "install"
 
-    bash_completion.install "srcstateshellscriptscomplete.sh" => "opam"
-    zsh_completion.install "srcstateshellscriptscomplete.zsh" => "_opam"
+    bash_completion.install "src/state/shellscripts/complete.sh" => "opam"
+    zsh_completion.install "src/state/shellscripts/complete.zsh" => "_opam"
   end
 
   def caveats
     <<~EOS
-      OPAM uses ~.opam by default for its package database, so you need to
+      OPAM uses ~/.opam by default for its package database, so you need to
       initialize it first by running:
 
       $ opam init
@@ -57,7 +57,7 @@ class Opam < Formula
   end
 
   test do
-    system bin"opam", "init", "--auto-setup", "--disable-sandboxing"
-    system bin"opam", "list"
+    system bin/"opam", "init", "--auto-setup", "--disable-sandboxing"
+    system bin/"opam", "list"
   end
 end

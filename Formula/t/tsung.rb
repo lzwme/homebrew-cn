@@ -1,12 +1,12 @@
 class Tsung < Formula
   desc "Load testing for HTTP, PostgreSQL, Jabber, and others"
-  # `http:tsung.erlang-projects.org` is no longer accessible,
-  # upstream bug report, https:github.comprocessonetsungissues417
-  homepage "https:github.comprocessonetsung"
-  url "https:github.comprocessonetsungarchiverefstagsv1.8.0.tar.gz"
+  # `http://tsung.erlang-projects.org/` is no longer accessible,
+  # upstream bug report, https://github.com/processone/tsung/issues/417
+  homepage "https://github.com/processone/tsung"
+  url "https://ghfast.top/https://github.com/processone/tsung/archive/refs/tags/v1.8.0.tar.gz"
   sha256 "6c55df48b82f185dfd60ae7271e09bbc25c6c8bc568bb8bfc0cdb056d77c3899"
   license "GPL-2.0-or-later"
-  head "https:github.comprocessonetsung.git", branch: "develop"
+  head "https://github.com/processone/tsung.git", branch: "develop"
 
   no_autobump! because: :requires_manual_review
 
@@ -23,13 +23,13 @@ class Tsung < Formula
   depends_on "gnuplot"
 
   def install
-    system ".configure", *std_configure_args
+    system "./configure", *std_configure_args
     system "make"
     ENV.deparallelize
     system "make", "install"
   end
 
   test do
-    system bin"tsung", "status"
+    system bin/"tsung", "status"
   end
 end

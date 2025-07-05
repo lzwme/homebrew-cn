@@ -1,14 +1,14 @@
 class Netcdf < Formula
   desc "Libraries and data formats for array-oriented scientific data"
-  homepage "https:www.unidata.ucar.edusoftwarenetcdf"
-  url "https:github.comUnidatanetcdf-carchiverefstagsv4.9.3.tar.gz"
+  homepage "https://www.unidata.ucar.edu/software/netcdf/"
+  url "https://ghfast.top/https://github.com/Unidata/netcdf-c/archive/refs/tags/v4.9.3.tar.gz"
   sha256 "990f46d49525d6ab5dc4249f8684c6deeaf54de6fec63a187e9fb382cc0ffdff"
   license "BSD-3-Clause"
-  head "https:github.comUnidatanetcdf-c.git", branch: "main"
+  head "https://github.com/Unidata/netcdf-c.git", branch: "main"
 
   livecheck do
     url :stable
-    regex(^(?:netcdf[._-])?v?(\d+(?:\.\d+)+)$i)
+    regex(/^(?:netcdf[._-])?v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -44,15 +44,15 @@ class Netcdf < Formula
     system "cmake", "--install", "build_shared"
     system "cmake", "-S", ".", "-B", "build_static", *args, "-DBUILD_SHARED_LIBS=OFF", *std_cmake_args
     system "cmake", "--build", "build_static"
-    lib.install "build_staticlibnetcdf.a"
+    lib.install "build_static/libnetcdf.a"
 
     # Remove shim paths
-    inreplace [bin"nc-config", lib"pkgconfignetcdf.pc", lib"cmakenetCDFnetCDFConfig.cmake",
-               lib"libnetcdf.settings"], Superenv.shims_pathENV.cc, ENV.cc
+    inreplace [bin/"nc-config", lib/"pkgconfig/netcdf.pc", lib/"cmake/netCDF/netCDFConfig.cmake",
+               lib/"libnetcdf.settings"], Superenv.shims_path/ENV.cc, ENV.cc
   end
 
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include <stdio.h>
       #include "netcdf_meta.h"
       int main()
@@ -63,6 +63,6 @@ class Netcdf < Formula
     C
     system ENV.cc, "test.c", "-L#{lib}", "-I#{include}", "-lnetcdf",
                    "-o", "test"
-    assert_equal version.to_s, `.test`
+    assert_equal version.to_s, `./test`
   end
 end

@@ -1,17 +1,17 @@
 class Inko < Formula
   desc "Safe and concurrent object-oriented programming language"
-  homepage "https:inko-lang.org"
-  url "https:releases.inko-lang.org0.18.1.tar.gz"
+  homepage "https://inko-lang.org/"
+  url "https://releases.inko-lang.org/0.18.1.tar.gz"
   sha256 "498d7062ab2689850f56f5a85f5331115a8d1bee147e87c0fdfe97894bc94d80"
   license "MPL-2.0"
-  head "https:github.cominko-langinko.git", branch: "main"
+  head "https://github.com/inko-lang/inko.git", branch: "main"
 
   # The upstream website doesn't provide easily accessible version information
   # or link to release tarballs, so we check the release manifest file that
   # the Inko version manager (`ivm`) uses.
   livecheck do
-    url "https:releases.inko-lang.orgmanifest.txt"
-    regex(^v?(\d+(?:\.\d+)+)$im)
+    url "https://releases.inko-lang.org/manifest.txt"
+    regex(/^v?(\d+(?:\.\d+)+)$/im)
   end
 
   bottle do
@@ -26,20 +26,20 @@ class Inko < Formula
   end
 
   depends_on "rust" => :build
-  depends_on "llvm@17" # see https:github.cominko-langinkoblob4738b81dbec1f50dadeec3608dde855583f80ddacimac.sh#L5
+  depends_on "llvm@17" # see https://github.com/inko-lang/inko/blob/4738b81dbec1f50dadeec3608dde855583f80dda/ci/mac.sh#L5
 
   uses_from_macos "libffi", since: :catalina
 
   def install
     # Avoid statically linking to LLVM
-    inreplace "compilerCargo.toml", 'features = ["prefer-static"]', 'features = ["force-dynamic"]'
+    inreplace "compiler/Cargo.toml", 'features = ["prefer-static"]', 'features = ["force-dynamic"]'
 
     system "make", "build", "PREFIX=#{prefix}"
     system "make", "install", "PREFIX=#{prefix}"
   end
 
   test do
-    (testpath"hello.inko").write <<~INKO
+    (testpath/"hello.inko").write <<~INKO
       import std.stdio (Stdout)
 
       class async Main {
@@ -48,6 +48,6 @@ class Inko < Formula
         }
       }
     INKO
-    assert_equal "Hello, world!\n", shell_output("#{bin}inko run hello.inko")
+    assert_equal "Hello, world!\n", shell_output("#{bin}/inko run hello.inko")
   end
 end

@@ -1,10 +1,10 @@
 class Rsyncy < Formula
-  desc "Statusprogress bar for rsync"
-  homepage "https:github.comlaktakrsyncy"
-  url "https:github.comlaktakrsyncyarchiverefstagsv2.1.0.tar.gz"
+  desc "Status/progress bar for rsync"
+  homepage "https://github.com/laktak/rsyncy"
+  url "https://ghfast.top/https://github.com/laktak/rsyncy/archive/refs/tags/v2.1.0.tar.gz"
   sha256 "d2b88602cd911d66a21750bec32a40fdfb3769a63b529bc0805d22c7a3b87ba2"
   license "MIT"
-  head "https:github.comlaktakrsyncy.git", branch: "master"
+  head "https://github.com/laktak/rsyncy.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "d497726367711d8d1a895ead4a6fa888e797a523c027cbc4f4934173803c8c7e"
@@ -24,18 +24,18 @@ class Rsyncy < Formula
 
   test do
     # rsyncy is a wrapper, rsyncy --version will invoke it and show rsync output
-    assert_match(.*rsync.+version.*, shell_output("#{bin}rsyncy --version"))
+    assert_match(/.*rsync.+version.*/, shell_output("#{bin}/rsyncy --version"))
 
     # test copy operation
-    mkdir testpath"a" do
+    mkdir testpath/"a" do
       mkdir "foo"
-      (testpath"afooone.txt").write <<~EOS
+      (testpath/"a/foo/one.txt").write <<~EOS
         testing
         testing
         testing
       EOS
-      system bin"rsyncy", "-r", testpath"afoo", testpath"abar"
-      assert_path_exists testpath"abarone.txt"
+      system bin/"rsyncy", "-r", testpath/"a/foo/", testpath/"a/bar/"
+      assert_path_exists testpath/"a/bar/one.txt"
     end
   end
 end

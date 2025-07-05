@@ -1,10 +1,10 @@
 class Counts < Formula
   desc "Tool for ad hoc profiling"
-  homepage "https:github.comnnethercotecounts"
-  url "https:github.comnnethercotecountsarchiverefstags1.0.4.tar.gz"
+  homepage "https://github.com/nnethercote/counts"
+  url "https://ghfast.top/https://github.com/nnethercote/counts/archive/refs/tags/1.0.4.tar.gz"
   sha256 "fe4f869f9cf49a8aae57858e0ed4c76ea5f849db1445a2013d45a8e020b764c0"
   license "Unlicense"
-  head "https:github.comnnethercotecounts.git", branch: "master"
+  head "https://github.com/nnethercote/counts.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -27,7 +27,7 @@ class Counts < Formula
   end
 
   test do
-    (testpath"test.txt").write <<~EOS
+    (testpath/"test.txt").write <<~EOS
       a 1
       b 2
       c 3
@@ -40,7 +40,7 @@ class Counts < Formula
       d 4
     EOS
 
-    output = shell_output("#{bin}counts test.txt")
+    output = shell_output("#{bin}/counts test.txt")
     expected = <<~EOS
       10 counts
       (  1)        4 (40.0%, 40.0%): d 4
@@ -51,6 +51,6 @@ class Counts < Formula
 
     assert_equal expected, output
 
-    assert_match "counts-#{version}", shell_output("#{bin}counts --version", 1)
+    assert_match "counts-#{version}", shell_output("#{bin}/counts --version", 1)
   end
 end

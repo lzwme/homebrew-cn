@@ -2,9 +2,9 @@ cask "mob-app" do
   version "0.2.2"
   sha256 "a70d66d92310737d9599215d558670a45265795be0be980934a91e9880eb4a73"
 
-  url "https:github.comzenghongtuMobreleasesdownloadv#{version}Mob-#{version}-mac.dmg"
+  url "https://ghfast.top/https://github.com/zenghongtu/Mob/releases/download/v#{version}/Mob-#{version}-mac.dmg"
   name "Mob"
-  homepage "https:github.comzenghongtuMob"
+  homepage "https://github.com/zenghongtu/Mob"
 
   no_autobump! because: :requires_manual_review
 
@@ -12,5 +12,5 @@ cask "mob-app" do
 
   app "Mob.app"
 
-  zap trash: "~LibraryApplication Supportmob"
+  zap trash: "~/Library/Application Support/mob"
 end

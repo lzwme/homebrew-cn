@@ -1,10 +1,10 @@
 class Nanomsg < Formula
   desc "Socket library in C"
-  homepage "https:nanomsg.org"
-  url "https:github.comnanomsgnanomsgarchiverefstags1.2.tar.gz"
+  homepage "https://nanomsg.org/"
+  url "https://ghfast.top/https://github.com/nanomsg/nanomsg/archive/refs/tags/1.2.tar.gz"
   sha256 "6ef7282e833df6a364f3617692ef21e59d5c4878acea4f2d7d36e21c8858de67"
   license "MIT"
-  head "https:github.comnanomsgnanomsg.git", branch: "master"
+  head "https://github.com/nanomsg/nanomsg.git", branch: "master"
 
   livecheck do
     url :stable
@@ -37,14 +37,14 @@ class Nanomsg < Formula
   end
 
   test do
-    bind = "tcp:127.0.0.1:#{free_port}"
+    bind = "tcp://127.0.0.1:#{free_port}"
 
     fork do
-      exec "#{bin}nanocat --rep --bind #{bind} --format ascii --data home"
+      exec "#{bin}/nanocat --rep --bind #{bind} --format ascii --data home"
     end
     sleep 2
 
-    output = shell_output("#{bin}nanocat --req --connect #{bind} --format ascii --data brew")
+    output = shell_output("#{bin}/nanocat --req --connect #{bind} --format ascii --data brew")
     assert_match "home", output
   end
 end

@@ -1,13 +1,13 @@
 class SpatialiteTools < Formula
   desc "CLI tools supporting SpatiaLite"
-  homepage "https:www.gaia-gis.itfossilspatialite-toolsindex"
-  url "https:www.gaia-gis.itgaia-sinsspatialite-tools-sourcesspatialite-tools-5.1.0a.tar.gz"
+  homepage "https://www.gaia-gis.it/fossil/spatialite-tools/index"
+  url "https://www.gaia-gis.it/gaia-sins/spatialite-tools-sources/spatialite-tools-5.1.0a.tar.gz"
   sha256 "119e34758e8088cdbb43ed81b4a6eaea88c764b0b7da19001a5514b2545501ce"
   license "GPL-3.0-or-later"
 
   livecheck do
-    url "https:www.gaia-gis.itgaia-sinsspatialite-tools-sources"
-    regex(href=.*?spatialite-tools[._-]v?(\d+(?:\.\d+)+[a-z]?)\.(?:t|zip)i)
+    url "https://www.gaia-gis.it/gaia-sins/spatialite-tools-sources/"
+    regex(/href=.*?spatialite-tools[._-]v?(\d+(?:\.\d+)+[a-z]?)\.(?:t|zip)/i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -41,7 +41,7 @@ class SpatialiteTools < Formula
   end
 
   def install
-    # See: https:github.comHomebrewhomebrewissues3328
+    # See: https://github.com/Homebrew/homebrew/issues/3328
     ENV.append "LDFLAGS", "-liconv" if OS.mac?
     # Ensure Homebrew SQLite is found before system SQLite.
     sqlite = Formula["sqlite"]
@@ -52,11 +52,11 @@ class SpatialiteTools < Formula
     # Help old config scripts identify arm64 linux
     args << "--build=aarch64-unknown-linux-gnu" if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
 
-    system ".configure", *args, *std_configure_args
+    system "./configure", *args, *std_configure_args
     system "make", "install"
   end
 
   test do
-    system bin"spatialite", "--version"
+    system bin/"spatialite", "--version"
   end
 end

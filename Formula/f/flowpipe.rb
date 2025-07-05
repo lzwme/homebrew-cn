@@ -1,10 +1,10 @@
 class Flowpipe < Formula
   desc "Cloud scripting engine"
-  homepage "https:flowpipe.io"
-  url "https:github.comturbotflowpipearchiverefstagsv1.1.1.tar.gz"
+  homepage "https://flowpipe.io"
+  url "https://ghfast.top/https://github.com/turbot/flowpipe/archive/refs/tags/v1.1.1.tar.gz"
   sha256 "fe981ce95de045618264f01728bf59cd4a6f3463e58f408eaeda2f24900a187e"
   license "AGPL-3.0-only"
-  head "https:github.comturbotflowpipe.git", branch: "develop"
+  head "https://github.com/turbot/flowpipe.git", branch: "develop"
 
   # Upstream creates releases that use a stable tag (e.g., `v1.2.3`) but are
   # labeled as "pre-release" on GitHub before the version is released, so it's
@@ -31,9 +31,9 @@ class Flowpipe < Formula
 
     system "corepack", "enable", "--install-directory", buildpath
 
-    cd "uiform" do
-      system buildpath"yarn", "install"
-      system buildpath"yarn", "build"
+    cd "ui/form" do
+      system buildpath/"yarn", "install"
+      system buildpath/"yarn", "build"
     end
 
     ldflags = %W[
@@ -47,18 +47,18 @@ class Flowpipe < Formula
   end
 
   test do
-    ENV["FLOWPIPE_INSTALL_DIR"] = testpath".flowpipe"
+    ENV["FLOWPIPE_INSTALL_DIR"] = testpath/".flowpipe"
     ENV["FLOWPIPE_CONFIG_PATH"] = testpath
 
-    (testpath"flowpipe_config.yml").write <<~YAML
+    (testpath/"flowpipe_config.yml").write <<~YAML
       workspace:
-        path: "#{testpath}workspace"
+        path: "#{testpath}/workspace"
       mods: []
     YAML
 
-    output = shell_output("#{bin}flowpipe mod list")
+    output = shell_output("#{bin}/flowpipe mod list")
     assert_match "No mods installed.", output
 
-    assert_match version.to_s, shell_output("#{bin}flowpipe -v")
+    assert_match version.to_s, shell_output("#{bin}/flowpipe -v")
   end
 end

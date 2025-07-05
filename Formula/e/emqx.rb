@@ -1,16 +1,16 @@
 class Emqx < Formula
   desc "MQTT broker for IoT"
-  homepage "https:www.emqx.io"
-  url "https:github.comemqxemqxarchiverefstagsv5.8.6.tar.gz"
+  homepage "https://www.emqx.io/"
+  url "https://ghfast.top/https://github.com/emqx/emqx/archive/refs/tags/v5.8.6.tar.gz"
   sha256 "7652c6365cac87143ef8fc99bd4d3ece932dfde15c19d315b7a37bd1026cd98f"
   license "Apache-2.0"
-  head "https:github.comemqxemqx.git", branch: "master"
+  head "https://github.com/emqx/emqx.git", branch: "master"
 
   # Exclude beta and release canditate tags (`-rc` and `-beta` suffixes)
   # and enterprise versions with BUSL license (their tag starts with `e`)
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -50,20 +50,20 @@ class Emqx < Formula
     ENV["BUILD_WITHOUT_QUIC"] = "1"
     touch(".prepare")
     system "make", "emqx-rel"
-    prefix.install Dir["_buildemqxrelemqx*"]
+    prefix.install Dir["_build/emqx/rel/emqx/*"]
     %w[emqx.cmd emqx_ctl.cmd no_dot_erlang.boot].each do |f|
-      rm binf
+      rm bin/f
     end
-    chmod "+x", prefix"releases#{version}no_dot_erlang.boot"
-    bin.install_symlink prefix"releases#{version}no_dot_erlang.boot"
+    chmod "+x", prefix/"releases/#{version}/no_dot_erlang.boot"
+    bin.install_symlink prefix/"releases/#{version}/no_dot_erlang.boot"
     return unless OS.mac?
 
     # ensure load path for libcrypto is correct
     crypto_vsn = Utils.safe_popen_read("erl", "-noshell", "-eval",
                                        'io:format("~s", [crypto:version()]), halt().').strip
-    libcrypto = Formula["openssl@3"].opt_libshared_library("libcrypto", "3")
+    libcrypto = Formula["openssl@3"].opt_lib/shared_library("libcrypto", "3")
     %w[crypto.so otp_test_engine.so].each do |f|
-      dynlib = lib"crypto-#{crypto_vsn}privlib"f
+      dynlib = lib/"crypto-#{crypto_vsn}/priv/lib"/f
       old_libcrypto = dynlib.dynamically_linked_libraries(resolve_variable_references: false)
                             .find { |d| d.end_with?(libcrypto.basename) }
       next if old_libcrypto.nil?
@@ -76,13 +76,13 @@ class Emqx < Formula
   end
 
   service do
-    run [opt_bin"emqx", "foreground"]
+    run [opt_bin/"emqx", "foreground"]
   end
 
   test do
     exec "ln", "-s", testpath, "data"
-    exec bin"emqx", "start"
-    system bin"emqx", "ctl", "status"
-    system bin"emqx", "stop"
+    exec bin/"emqx", "start"
+    system bin/"emqx", "ctl", "status"
+    system bin/"emqx", "stop"
   end
 end

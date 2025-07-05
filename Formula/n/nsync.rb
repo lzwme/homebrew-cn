@@ -1,7 +1,7 @@
 class Nsync < Formula
   desc "C library that exports various synchronization primitives"
-  homepage "https:github.comgooglensync"
-  url "https:github.comgooglensyncarchiverefstags1.29.2.tar.gz"
+  homepage "https://github.com/google/nsync"
+  url "https://ghfast.top/https://github.com/google/nsync/archive/refs/tags/1.29.2.tar.gz"
   sha256 "1d63e967973733d2c97e841e3c05fac4d3fa299f01d14c86f2695594c7a4a2ec"
   license "Apache-2.0"
   revision 1
@@ -18,7 +18,7 @@ class Nsync < Formula
 
   depends_on "cmake" => :build
 
-  # PR ref: https:github.comgooglensyncpull24
+  # PR ref: https://github.com/google/nsync/pull/24
   patch :DATA
 
   def install
@@ -28,7 +28,7 @@ class Nsync < Formula
   end
 
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include <nsync.h>
       #include <stdio.h>
 
@@ -42,20 +42,20 @@ class Nsync < Formula
     C
 
     system ENV.cc, "test.c", "-L#{lib}", "-lnsync", "-o", "test"
-    system ".test"
+    system "./test"
   end
 end
 
 __END__
-diff --git aCMakeLists.txt bCMakeLists.txt
+diff --git a/CMakeLists.txt b/CMakeLists.txt
 index fcc3f41..9dbe677 100644
---- aCMakeLists.txt
-+++ bCMakeLists.txt
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
 @@ -125,7 +125,6 @@ elseif ("${CMAKE_SYSTEM_NAME}X" STREQUAL "DarwinX")
  		${NSYNC_OS_CPP_SRC}
- 		"platformc++11srcnsync_semaphore_mutex.cc"
- 		"platformposixsrcclock_gettime.c"
--		"platformposixsrcnsync_semaphore_mutex.c"
+ 		"platform/c++11/src/nsync_semaphore_mutex.cc"
+ 		"platform/posix/src/clock_gettime.c"
+-		"platform/posix/src/nsync_semaphore_mutex.c"
  	)
  elseif ("${CMAKE_SYSTEM_NAME}X" STREQUAL "LinuxX")
  	set (NSYNC_POSIX ON)

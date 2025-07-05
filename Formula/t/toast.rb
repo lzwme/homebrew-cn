@@ -1,10 +1,10 @@
 class Toast < Formula
   desc "Tool for running tasks in containers"
-  homepage "https:github.comstepchowfuntoast"
-  url "https:github.comstepchowfuntoastarchiverefstagsv0.47.7.tar.gz"
+  homepage "https://github.com/stepchowfun/toast"
+  url "https://ghfast.top/https://github.com/stepchowfun/toast/archive/refs/tags/v0.47.7.tar.gz"
   sha256 "532a883c0e96ab274c25e3256ad532e525fd2d5e393ebd4712e591de64a2f7c9"
   license "MIT"
-  head "https:github.comstepchowfuntoast.git", branch: "main"
+  head "https://github.com/stepchowfun/toast.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "a3f558594467882fba23da8e01983eac6efd36eb830be012f702967b3caf4fb3"
@@ -25,7 +25,7 @@ class Toast < Formula
   end
 
   test do
-    (testpath"toast.yml").write <<~YAML
+    (testpath/"toast.yml").write <<~YAML
       image: alpine
       tasks:
         homebrew_test:
@@ -33,6 +33,6 @@ class Toast < Formula
           command: echo hello
     YAML
 
-    assert_match "homebrew_test", shell_output("#{bin}toast --list")
+    assert_match "homebrew_test", shell_output("#{bin}/toast --list")
   end
 end

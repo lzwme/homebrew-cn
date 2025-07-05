@@ -1,7 +1,7 @@
 class Libultrahdr < Formula
   desc "Reference codec for the Ultra HDR format"
-  homepage "https:developer.android.commediaplatformhdr-image-format"
-  url "https:github.comgooglelibultrahdrarchiverefstagsv1.4.0.tar.gz"
+  homepage "https://developer.android.com/media/platform/hdr-image-format"
+  url "https://ghfast.top/https://github.com/google/libultrahdr/archive/refs/tags/v1.4.0.tar.gz"
   sha256 "e7e1252e2c44d8ed6b99ee0f67a3caf2d8a61c43834b13b1c3cd485574c03ab9"
   license "Apache-2.0"
 
@@ -26,7 +26,7 @@ class Libultrahdr < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~CPP
+    (testpath/"test.cpp").write <<~CPP
       #include <ultrahdr_api.h>
       #include <iostream>
 
@@ -42,6 +42,6 @@ class Libultrahdr < Formula
 
     pkg_config_cflags = shell_output("pkg-config --cflags --libs libuhdr").chomp.split
     system ENV.cxx, "test.cpp", "-o", "test", "-o", "test", *pkg_config_cflags
-    assert_match "UltraHDR Library Version: #{version}", shell_output(".test")
+    assert_match "UltraHDR Library Version: #{version}", shell_output("./test")
   end
 end

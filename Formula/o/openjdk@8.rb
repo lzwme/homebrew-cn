@@ -1,15 +1,15 @@
 class OpenjdkAT8 < Formula
   desc "Development kit for the Java programming language"
-  homepage "https:openjdk.java.net"
-  url "https:github.comopenjdkjdk8uarchiverefstagsjdk8u452-ga.tar.gz"
+  homepage "https://openjdk.java.net/"
+  url "https://ghfast.top/https://github.com/openjdk/jdk8u/archive/refs/tags/jdk8u452-ga.tar.gz"
   version "1.8.0-452"
-  BUILD_NUMBER = "b09".freeze # Please update when a new GA release is available: https:wiki.openjdk.orgdisplayjdk8u.
+  BUILD_NUMBER = "b09".freeze # Please update when a new GA release is available: https://wiki.openjdk.org/display/jdk8u.
   sha256 "cf1009e18b6332ef2b4a54257a6087611970bcdab5368907ac67ada1e9709676"
   license "GPL-2.0-only"
 
   livecheck do
     url :stable
-    regex(^jdk(8u\d+)-ga$i)
+    regex(/^jdk(8u\d+)-ga$/i)
     strategy :git do |tags, regex|
       tags.filter_map { |tag| tag[regex, 1]&.gsub("8u", "1.8.0+") }
     end
@@ -54,69 +54,69 @@ class OpenjdkAT8 < Formula
   end
 
   # NOTE: Oracle doesn't serve JDK 7 downloads anymore, so we use Zulu JDK 7 for bootstrapping.
-  # https:www.azul.comdownloads?version=java-7-lts&package=jdk&show-old-builds=true#zulu
+  # https://www.azul.com/downloads/?version=java-7-lts&package=jdk&show-old-builds=true#zulu
   resource "boot-jdk" do
     on_macos do
-      url "https:cdn.azul.comzulubinzulu7.56.0.11-ca-jdk7.0.352-macosx_x64.tar.gz"
+      url "https://cdn.azul.com/zulu/bin/zulu7.56.0.11-ca-jdk7.0.352-macosx_x64.tar.gz"
       sha256 "31909aa6233289f8f1d015586825587e95658ef59b632665e1e49fc33a2cdf06"
     end
     on_linux do
       on_arm do
-        url "https:cdn.azul.comzulubinzulu8.82.0.21-ca-jdk8.0.432-linux_aarch64.tar.gz"
+        url "https://cdn.azul.com/zulu/bin/zulu8.82.0.21-ca-jdk8.0.432-linux_aarch64.tar.gz"
         sha256 "b400f65b63243e41851f20b64374def6ae687de8d15bfb37ef876c2d77548bf5"
       end
       on_intel do
-        url "https:cdn.azul.comzulubinzulu7.56.0.11-ca-jdk7.0.352-linux_x64.tar.gz"
+        url "https://cdn.azul.com/zulu/bin/zulu7.56.0.11-ca-jdk7.0.352-linux_x64.tar.gz"
         sha256 "8a7387c1ed151474301b6553c6046f865dc6c1e1890bcf106acc2780c55727c8"
       end
     end
   end
 
   # NOTE: Since macOS Sonoma or newer don’t include the required headers for JNF (JavaNativeFoundation.framework),
-  # we will use the headers provided at https:github.comappleopenjdk.
+  # we will use the headers provided at https://github.com/apple/openjdk.
   resource "JavaNativeFoundation" do
     on_sonoma :or_newer do
-      url "https:github.comappleopenjdkarchiverefstagsiTunesOpenJDK-1014.0.2.12.1.tar.gz"
+      url "https://ghfast.top/https://github.com/apple/openjdk/archive/refs/tags/iTunesOpenJDK-1014.0.2.12.1.tar.gz"
       sha256 "e8556a73ea36c75953078dfc1bafc9960e64593bc01e733bc772d2e6b519fd4a"
     end
   end
 
   # Fix `clang++ -std=gnu++11` compile failure issue on macOS.
   patch :p0 do
-    url "https:raw.githubusercontent.commacportsmacports-ports04ad4a17332e391cd359271965d4c6dac87a7eb2javaopenjdk8files0001-8181503-Can-t-compile-hotspot-with-c-11.patch"
+    url "https://ghfast.top/https://raw.githubusercontent.com/macports/macports-ports/04ad4a17332e391cd359271965d4c6dac87a7eb2/java/openjdk8/files/0001-8181503-Can-t-compile-hotspot-with-c-11.patch"
     sha256 "a02e0ea7c70390796e46b8b6565f986fedc17a08aa039ee3306438a39a60538a"
   end
   patch :p0 do
-    url "https:raw.githubusercontent.commacportsmacports-ports04ad4a17332e391cd359271965d4c6dac87a7eb2javaopenjdk8files0006-Disable-C-11-warnings.patch"
+    url "https://ghfast.top/https://raw.githubusercontent.com/macports/macports-ports/04ad4a17332e391cd359271965d4c6dac87a7eb2/java/openjdk8/files/0006-Disable-C-11-warnings.patch"
     sha256 "127d9508b72005e849a6ada6adf04bd49a236731d769810e67793bdf2aa722fe"
   end
   patch :p0, :DATA
 
   def install
     _, _, update = version.to_s.rpartition("-")
-    boot_jdk = buildpath"boot-jdk"
+    boot_jdk = buildpath/"boot-jdk"
     resource("boot-jdk").stage boot_jdk
     java_options = ENV.delete("_JAVA_OPTIONS")
 
-    # Work around clashing -Iusrinclude and -isystem headers, as superenv already handles this detail for us.
-    inreplace "commonautoconfflags.m4",
+    # Work around clashing -I/usr/include and -isystem headers, as superenv already handles this detail for us.
+    inreplace "common/autoconf/flags.m4",
               '-isysroot \"$SYSROOT\"', ""
-    inreplace "commonautoconftoolchain.m4",
-              '-isysroot \"$SDKPATH\" -iframework\"$SDKPATHSystemLibraryFrameworks\"', ""
-    inreplace "hotspotmakebsdmakefilessaproc.make",
-              '-isysroot "$(SDKPATH)" -iframework"$(SDKPATH)SystemLibraryFrameworks"', ""
+    inreplace "common/autoconf/toolchain.m4",
+              '-isysroot \"$SDKPATH\" -iframework\"$SDKPATH/System/Library/Frameworks\"', ""
+    inreplace "hotspot/make/bsd/makefiles/saproc.make",
+              '-isysroot "$(SDKPATH)" -iframework"$(SDKPATH)/System/Library/Frameworks"', ""
 
     if OS.mac?
       # Fix macOS version detection. After 10.10 this was changed to a 6 digit number,
       # but this Makefile was written in the era of 4 digit numbers.
-      inreplace "hotspotmakebsdmakefilesgcc.make" do |s|
+      inreplace "hotspot/make/bsd/makefiles/gcc.make" do |s|
         s.gsub! "$(subst .,,$(MACOSX_VERSION_MIN))", ENV["HOMEBREW_MACOS_VERSION_NUMERIC"]
         s.gsub! "MACOSX_VERSION_MIN=10.7.0", "MACOSX_VERSION_MIN=#{MacOS.version}"
       end
     else
       # Fix linker errors on brewed GCC.
-      inreplace "commonautoconfflags.m4", "-Xlinker -O1", ""
-      inreplace "hotspotmakelinuxmakefilesgcc.make", "-Xlinker -O1", ""
+      inreplace "common/autoconf/flags.m4", "-Xlinker -O1", ""
+      inreplace "hotspot/make/linux/makefiles/gcc.make", "-Xlinker -O1", ""
     end
 
     args = %W[
@@ -136,7 +136,7 @@ class OpenjdkAT8 < Formula
       --with-giflib=system
     ]
 
-    ldflags = ["-Wl,-rpath,#{loader_path.gsub("$", "\\$$$$")}server"]
+    ldflags = ["-Wl,-rpath,#{loader_path.gsub("$", "\\$$$$")}/server"]
     if OS.mac?
       args += %w[
         --with-toolchain-type=clang
@@ -149,17 +149,17 @@ class OpenjdkAT8 < Formula
       # On macOS Sonoma or newer, we provide the missing JNF headers from an external resource.
       if MacOS.version >= :sonoma
         resource("JavaNativeFoundation").stage do
-          jnf_headers = buildpath"jnf-headers"
-          jnf_headers.install Pathname.pwd"appleJavaNativeFoundationJavaNativeFoundation"
-          # Work around for missing 'JavaNativeFoundationJavaNativeFoundation.h' in MacosxDebuggerLocal.m.
-          (buildpath"hotspotagentsrcosbsd").install_symlink jnf_headers
+          jnf_headers = buildpath/"jnf-headers"
+          jnf_headers.install Pathname.pwd/"apple/JavaNativeFoundation/JavaNativeFoundation"
+          # Work around for missing 'JavaNativeFoundation/JavaNativeFoundation.h' in MacosxDebuggerLocal.m.
+          (buildpath/"hotspot/agent/src/os/bsd").install_symlink jnf_headers
           # Add JNF headers to extra flags.
           extra_cflags << "-I#{jnf_headers}"
           extra_cxxflags << "-I#{jnf_headers}"
         end
       end
 
-      # Work around Xcode 16 bug: https:bugs.openjdk.orgbrowseJDK-8340341.
+      # Work around Xcode 16 bug: https://bugs.openjdk.org/browse/JDK-8340341.
       extra_cflags << "-mllvm -enable-constraint-elimination=0" if DevelopmentTools.clang_build_version == 1600
 
       args << "--with-extra-cflags=#{extra_cflags.join(" ")}" unless extra_cflags.empty?
@@ -167,38 +167,38 @@ class OpenjdkAT8 < Formula
     else
       args += %W[
         --with-toolchain-type=gcc
-        --x-includes=#{HOMEBREW_PREFIX}include
-        --x-libraries=#{HOMEBREW_PREFIX}lib
+        --x-includes=#{HOMEBREW_PREFIX}/include
+        --x-libraries=#{HOMEBREW_PREFIX}/lib
         --with-cups=#{HOMEBREW_PREFIX}
         --with-fontconfig=#{HOMEBREW_PREFIX}
         --with-stdc++lib=dynamic
       ]
       arch = Hardware::CPU.arm? ? "aarch64" : "amd64"
-      extra_rpath = rpath(source: libexec"lib"arch, target: libexec"jrelib"arch)
+      extra_rpath = rpath(source: libexec/"lib"/arch, target: libexec/"jre/lib"/arch)
       ldflags << "-Wl,-rpath,#{extra_rpath.gsub("$", "\\$$$$")}"
     end
     args << "--with-extra-ldflags=#{ldflags.join(" ")}"
 
-    system "bash", "commonautoconfautogen.sh"
+    system "bash", "common/autoconf/autogen.sh"
     system "bash", "configure", *args
 
     ENV["MAKEFLAGS"] = "JOBS=#{ENV.make_jobs}"
     system "make", "bootcycle-images", "CONF=release"
 
-    cd "buildreleaseimages" do
+    cd "build/release/images" do
       jdk = libexec
 
       if OS.mac?
-        libexec.install Dir["j2sdk-bundle*"].first => "openjdk.jdk"
-        jdk = "openjdk.jdkContentsHome"
+        libexec.install Dir["j2sdk-bundle/*"].first => "openjdk.jdk"
+        jdk /= "openjdk.jdk/Contents/Home"
       else
-        libexec.install Dir["j2sdk-image*"]
+        libexec.install Dir["j2sdk-image/*"]
       end
 
-      bin.install_symlink Dir[jdk"bin*"]
-      include.install_symlink Dir[jdk"include*.h"]
-      include.install_symlink Dir[jdk"include**.h"]
-      man1.install_symlink Dir[jdk"manman1*"]
+      bin.install_symlink Dir[jdk/"bin/*"]
+      include.install_symlink Dir[jdk/"include/*.h"]
+      include.install_symlink Dir[jdk/"include/*/*.h"]
+      man1.install_symlink Dir[jdk/"man/man1/*"]
     end
   end
 
@@ -206,13 +206,13 @@ class OpenjdkAT8 < Formula
     on_macos do
       <<~EOS
         For the system Java wrappers to find this JDK, symlink it with
-          sudo ln -sfn #{opt_libexec}openjdk.jdk LibraryJavaJavaVirtualMachinesopenjdk-8.jdk
+          sudo ln -sfn #{opt_libexec}/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk-8.jdk
       EOS
     end
   end
 
   test do
-    (testpath"HelloWorld.java").write <<~JAVA
+    (testpath/"HelloWorld.java").write <<~JAVA
       class HelloWorld {
         public static void main(String args[]) {
           System.out.println("Hello, world!");
@@ -220,15 +220,15 @@ class OpenjdkAT8 < Formula
       }
     JAVA
 
-    system bin"javac", "HelloWorld.java"
+    system bin/"javac", "HelloWorld.java"
 
-    assert_match "Hello, world!", shell_output("#{bin}java HelloWorld")
+    assert_match "Hello, world!", shell_output("#{bin}/java HelloWorld")
   end
 end
 
 __END__
---- jdksrcsharebinsplashscreen_stubs.c
-+++ jdksrcsharebinsplashscreen_stubs.c
+--- jdk/src/share/bin/splashscreen_stubs.c
++++ jdk/src/share/bin/splashscreen_stubs.c
 @@ -61,11 +61,11 @@
  #define INVOKEV(name) _INVOKE(name, ,;)
 
@@ -244,8 +244,8 @@ __END__
 
  void    DoSplashInit(void) {
 
---- jdksrcsharenativecomsunjavautiljarpackjni.cpp
-+++ jdksrcsharenativecomsunjavautiljarpackjni.cpp
+--- jdk/src/share/native/com/sun/java/util/jar/pack/jni.cpp
++++ jdk/src/share/native/com/sun/java/util/jar/pack/jni.cpp
 @@ -292,7 +292,7 @@
 
    if (uPtr->aborting()) {
@@ -254,11 +254,11 @@ __END__
 +    return 0;
    }
 
-    We have fetched all the files.
---- jdksrcmacosxnativecomsunmediasoundPLATFORM_API_MacOSX_Ports.cpp
-+++ jdksrcmacosxnativecomsunmediasoundPLATFORM_API_MacOSX_Ports.cpp
+   // We have fetched all the files.
+--- jdk/src/macosx/native/com/sun/media/sound/PLATFORM_API_MacOSX_Ports.cpp
++++ jdk/src/macosx/native/com/sun/media/sound/PLATFORM_API_MacOSX_Ports.cpp
 @@ -609,7 +609,7 @@
-                  get the channel name
+                 // get the channel name
                  char *channelName;
                  CFStringRef cfname = NULL;
 -                const AudioObjectPropertyAddress address = {kAudioObjectPropertyElementName, port->scope, ch};

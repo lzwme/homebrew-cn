@@ -1,10 +1,10 @@
 class Mysqltuner < Formula
   desc "Increase performance and stability of a MySQL installation"
-  homepage "https:raw.github.commajorMySQLTuner-perlmastermysqltuner.pl"
-  url "https:github.commajorMySQLTuner-perlarchiverefstagsv2.6.0.tar.gz"
+  homepage "https://raw.github.com/major/MySQLTuner-perl/master/mysqltuner.pl"
+  url "https://ghfast.top/https://github.com/major/MySQLTuner-perl/archive/refs/tags/v2.6.0.tar.gz"
   sha256 "9ba57ecc616c1791907c1e7befe593fee23315bcff0121adc13dbd62b2553a3c"
   license "GPL-3.0-or-later"
-  head "https:github.commajorMySQLTuner-perl.git", branch: "master"
+  head "https://github.com/major/MySQLTuner-perl.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "4318628650fdf57da48a1c5ed8c9f6f15f7fe6ae5d59dbacfe4121ccc5e25d4c"
@@ -26,6 +26,6 @@ class Mysqltuner < Formula
   # mysql server. It is not really feasible to spawn a mysql server
   # just for a test case so we'll stick with a rudimentary test.
   test do
-    system bin"mysqltuner", "--help"
+    system bin/"mysqltuner", "--help"
   end
 end

@@ -1,10 +1,10 @@
 class IsFast < Formula
   desc "Check the internet as fast as possible"
-  homepage "https:github.comMagic-JDis-fast"
-  url "https:github.comMagic-JDis-fastarchiverefstagsv0.17.0.tar.gz"
+  homepage "https://github.com/Magic-JD/is-fast"
+  url "https://ghfast.top/https://github.com/Magic-JD/is-fast/archive/refs/tags/v0.17.0.tar.gz"
   sha256 "5abda366510e19852e22f4e233e38979a4ae4838515c300d73ae88e68756d002"
   license "MIT"
-  head "https:github.comMagic-JDis-fast.git", branch: "main"
+  head "https://github.com/Magic-JD/is-fast.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "28744f5f43c2d26ea40448b49d634775e5d049c7a0a9d9edf5b175e91c565dc6"
@@ -23,18 +23,18 @@ class IsFast < Formula
   end
 
   test do
-    assert_match "is-fast #{version}", shell_output("#{bin}is-fast --version")
+    assert_match "is-fast #{version}", shell_output("#{bin}/is-fast --version")
 
-    (testpath"test.html").write <<~HTML
+    (testpath/"test.html").write <<~HTML
       <!DOCTYPE html>
       <html>
-        <head><title>Test HTML page<title><head>
+        <head><title>Test HTML page</title></head>
         <body>
-          <p>Hello Homebrew!<p>
-        <body>
-      <html>
+          <p>Hello Homebrew!</p>
+        </body>
+      </html>
     HTML
 
-    assert_match "Hello Homebrew!", shell_output("#{bin}is-fast --piped --file #{testpath}test.html")
+    assert_match "Hello Homebrew!", shell_output("#{bin}/is-fast --piped --file #{testpath}/test.html")
   end
 end

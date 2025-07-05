@@ -2,10 +2,10 @@ cask "graphql-playground" do
   version "1.8.10"
   sha256 "43d54be598ec83dddcaee789e8434c547d0ff1a49ffc2d95fb798996293b7f13"
 
-  url "https:github.comprismagraphql-playgroundreleasesdownloadv#{version}graphql-playground-electron-#{version}.dmg"
+  url "https://ghfast.top/https://github.com/prisma/graphql-playground/releases/download/v#{version}/graphql-playground-electron-#{version}.dmg"
   name "GraphQL Playground"
   desc "GraphQL IDE for better development workflows"
-  homepage "https:github.comprismagraphql-playground"
+  homepage "https://github.com/prisma/graphql-playground"
 
   no_autobump! because: :requires_manual_review
 
@@ -14,12 +14,12 @@ cask "graphql-playground" do
   app "GraphQL Playground.app"
 
   zap trash: [
-    "~LibraryCachescool.graph.playground",
-    "~LibraryCachescool.graph.playground.ShipIt",
-    "~LibraryHTTPStoragescool.graph.playground",
-    "~LibraryPreferencescool.graph.playground.helper.plist",
-    "~LibraryPreferencescool.graph.playground.plist",
-    "~LibrarySaved Application Statecool.graph.playground.savedState",
+    "~/Library/Caches/cool.graph.playground",
+    "~/Library/Caches/cool.graph.playground.ShipIt",
+    "~/Library/HTTPStorages/cool.graph.playground",
+    "~/Library/Preferences/cool.graph.playground.helper.plist",
+    "~/Library/Preferences/cool.graph.playground.plist",
+    "~/Library/Saved Application State/cool.graph.playground.savedState",
   ]
 
   caveats do

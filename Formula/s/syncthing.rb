@@ -1,10 +1,10 @@
 class Syncthing < Formula
   desc "Open source continuous file synchronization application"
-  homepage "https:syncthing.net"
-  url "https:github.comsyncthingsyncthingarchiverefstagsv1.30.0.tar.gz"
+  homepage "https://syncthing.net/"
+  url "https://ghfast.top/https://github.com/syncthing/syncthing/archive/refs/tags/v1.30.0.tar.gz"
   sha256 "1e9eb93be73960f748fe85d2738793b5a11c88e63839254057d4fd86cd4321a3"
   license "MPL-2.0"
-  head "https:github.comsyncthingsyncthing.git", branch: "main"
+  head "https://github.com/syncthing/syncthing.git", branch: "main"
 
   livecheck do
     url :stable
@@ -28,20 +28,20 @@ class Syncthing < Formula
     system "go", "run", "build.go", "--version", build_version, "--no-upgrade", "tar"
     bin.install "syncthing"
 
-    man1.install Dir["man*.1"]
-    man5.install Dir["man*.5"]
-    man7.install Dir["man*.7"]
+    man1.install Dir["man/*.1"]
+    man5.install Dir["man/*.5"]
+    man7.install Dir["man/*.7"]
   end
 
   service do
-    run [opt_bin"syncthing", "-no-browser", "-no-restart"]
+    run [opt_bin/"syncthing", "-no-browser", "-no-restart"]
     keep_alive true
-    log_path var"logsyncthing.log"
-    error_log_path var"logsyncthing.log"
+    log_path var/"log/syncthing.log"
+    error_log_path var/"log/syncthing.log"
   end
 
   test do
-    assert_match "syncthing v#{version} ", shell_output("#{bin}syncthing --version")
-    system bin"syncthing", "-generate", "."
+    assert_match "syncthing v#{version} ", shell_output("#{bin}/syncthing --version")
+    system bin/"syncthing", "-generate", "./"
   end
 end

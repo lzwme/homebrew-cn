@@ -1,14 +1,14 @@
 class GuileGnutls < Formula
   desc "Guile bindings for the GnuTLS library"
-  homepage "https:gitlab.comgnutlsguile"
-  url "https:gitlab.com-project40217954uploadsf80b3a30cfc66c988775edc4ce3fb546guile-gnutls-4.0.1.tar.gz"
+  homepage "https://gitlab.com/gnutls/guile"
+  url "https://gitlab.com/-/project/40217954/uploads/f80b3a30cfc66c988775edc4ce3fb546/guile-gnutls-4.0.1.tar.gz"
   sha256 "01f0ba3bea837bb44dcb1b3ffcce3c2ebe88699d0a3bddac1d879e475a9787e4"
   license "LGPL-2.1-or-later"
-  head "https:gitlab.comgnutlsguile.git", branch: "master"
+  head "https://gitlab.com/gnutls/guile.git", branch: "master"
 
   livecheck do
-    url "https:gitlab.comapiv4projects40217954releases"
-    regex(^(?:gnutls[._-])?v?(\d+(?:[._]\d+)+)$i)
+    url "https://gitlab.com/api/v4/projects/40217954/releases"
+    regex(/^(?:gnutls[._-])?v?(\d+(?:[._]\d+)+)$/i)
     strategy :json do |json, regex|
       json.map { |item| item["tag_name"]&.[](regex, 1)&.tr("_", ".") }
     end
@@ -34,9 +34,9 @@ class GuileGnutls < Formula
   end
 
   def install
-    system ".configure", "--with-guile-site-dir=#{share}guilesite3.0",
-                          "--with-guile-site-ccache-dir=#{lib}guile3.0site-ccache",
-                          "--with-guile-extension-dir=#{lib}guile3.0extensions",
+    system "./configure", "--with-guile-site-dir=#{share}/guile/site/3.0",
+                          "--with-guile-site-ccache-dir=#{lib}/guile/3.0/site-ccache",
+                          "--with-guile-extension-dir=#{lib}/guile/3.0/extensions",
                           "--disable-silent-rules",
                           *std_configure_args.reject { |s| s["--disable-debug"] }
     system "make", "install"
@@ -44,8 +44,8 @@ class GuileGnutls < Formula
 
   def post_install
     # Touch gnutls.go to avoid Guile recompilation.
-    # See https:github.comHomebrewhomebrew-corepull60307#discussion_r478917491
-    touch lib"guile3.0site-ccachegnutls.go"
+    # See https://github.com/Homebrew/homebrew-core/pull/60307#discussion_r478917491
+    touch lib/"guile/3.0/site-ccache/gnutls.go"
   end
 
   def caveats
@@ -53,21 +53,21 @@ class GuileGnutls < Formula
       If you are going to use the Guile bindings you will need to add the following
       to your .bashrc or equivalent in order for Guile to find the TLS certificates
       database:
-        export GUILE_TLS_CERTIFICATE_DIRECTORY=#{Formula["gnutls"].pkgetc}
+        export GUILE_TLS_CERTIFICATE_DIRECTORY=#{Formula["gnutls"].pkgetc}/
     EOS
   end
 
   test do
-    gnutls = testpath"gnutls.scm"
+    gnutls = testpath/"gnutls.scm"
     gnutls.write <<~SCHEME
       (use-modules (gnutls))
       (gnutls-version)
     SCHEME
 
     ENV["GUILE_AUTO_COMPILE"] = "0"
-    ENV["GUILE_LOAD_PATH"] = HOMEBREW_PREFIX"shareguilesite3.0"
-    ENV["GUILE_LOAD_COMPILED_PATH"] = HOMEBREW_PREFIX"libguile3.0site-ccache"
-    ENV["GUILE_SYSTEM_EXTENSIONS_PATH"] = HOMEBREW_PREFIX"libguile3.0extensions"
+    ENV["GUILE_LOAD_PATH"] = HOMEBREW_PREFIX/"share/guile/site/3.0"
+    ENV["GUILE_LOAD_COMPILED_PATH"] = HOMEBREW_PREFIX/"lib/guile/3.0/site-ccache"
+    ENV["GUILE_SYSTEM_EXTENSIONS_PATH"] = HOMEBREW_PREFIX/"lib/guile/3.0/extensions"
 
     system "guile", gnutls
   end

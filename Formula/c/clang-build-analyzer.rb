@@ -1,11 +1,11 @@
 class ClangBuildAnalyzer < Formula
   desc "Tool to analyze compilation time"
-  homepage "https:github.comaras-pClangBuildAnalyzer"
-  url "https:github.comaras-pClangBuildAnalyzerarchiverefstagsv1.6.0.tar.gz"
+  homepage "https://github.com/aras-p/ClangBuildAnalyzer"
+  url "https://ghfast.top/https://github.com/aras-p/ClangBuildAnalyzer/archive/refs/tags/v1.6.0.tar.gz"
   sha256 "868a8d34ecb9b65da4e5874342062a12c081ce4385c7ddd6ce7d557a0c5c292d"
   license all_of: ["Unlicense", "Zlib", "MIT", "BSL-1.0", "BSD-3-Clause", "Apache-2.0",
                    "BSD-2-Clause", "Apache-2.0" => { with: "LLVM-exception" }]
-  head "https:github.comaras-pClangBuildAnalyzer.git", branch: "main"
+  head "https://github.com/aras-p/ClangBuildAnalyzer.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "2e93f14923fdb699565dced9177cb214af4e3da61fca3d4de41461eefa32c0b6"
@@ -27,12 +27,12 @@ class ClangBuildAnalyzer < Formula
   end
 
   test do
-    (testpath"test.cxx").write <<~CPP
+    (testpath/"test.cxx").write <<~CPP
       int main() {}
     CPP
     ENV.clang
-    system ENV.cxx, "-c", "-ftime-trace", testpath"test.cxx"
-    system bin"ClangBuildAnalyzer", "--all", testpath, "test.db"
-    system bin"ClangBuildAnalyzer", "--analyze", "test.db"
+    system ENV.cxx, "-c", "-ftime-trace", testpath/"test.cxx"
+    system bin/"ClangBuildAnalyzer", "--all", testpath, "test.db"
+    system bin/"ClangBuildAnalyzer", "--analyze", "test.db"
   end
 end

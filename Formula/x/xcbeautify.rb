@@ -1,10 +1,10 @@
 class Xcbeautify < Formula
   desc "Little beautifier tool for xcodebuild"
-  homepage "https:github.comcpisciottaxcbeautify"
-  url "https:github.comcpisciottaxcbeautifyarchiverefstags2.28.0.tar.gz"
+  homepage "https://github.com/cpisciotta/xcbeautify"
+  url "https://ghfast.top/https://github.com/cpisciotta/xcbeautify/archive/refs/tags/2.28.0.tar.gz"
   sha256 "bf59b8c5fc41f4bb98d603b4915e1ac92e5c1c3ff6eab0369ab18c8819800cc6"
   license "MIT"
-  head "https:github.comcpisciottaxcbeautify.git", branch: "main"
+  head "https://github.com/cpisciotta/xcbeautify.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "f45c28a6ed416061a9863f6fb07dd5ad419213f5f53b5dc05e0235ba673e715d"
@@ -29,14 +29,14 @@ class Xcbeautify < Formula
       ["--static-swift-stdlib"]
     end
     system "swift", "build", *args, "--configuration", "release"
-    bin.install ".buildreleasexcbeautify"
+    bin.install ".build/release/xcbeautify"
   end
 
   test do
-    log = "CompileStoryboard UsersadminMyAppMyAppMain.storyboard (in target: MyApp)"
+    log = "CompileStoryboard /Users/admin/MyApp/MyApp/Main.storyboard (in target: MyApp)"
     assert_match "[MyApp] Compiling Main.storyboard",
-      pipe_output("#{bin}xcbeautify --disable-colored-output", log).chomp
+      pipe_output("#{bin}/xcbeautify --disable-colored-output", log).chomp
     assert_match version.to_s,
-      shell_output("#{bin}xcbeautify --version").chomp
+      shell_output("#{bin}/xcbeautify --version").chomp
   end
 end

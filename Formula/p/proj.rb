@@ -1,10 +1,10 @@
 class Proj < Formula
   desc "Cartographic Projections Library"
-  homepage "https:proj.org"
-  url "https:github.comOSGeoPROJreleasesdownload9.6.2proj-9.6.2.tar.gz"
+  homepage "https://proj.org/"
+  url "https://ghfast.top/https://github.com/OSGeo/PROJ/releases/download/9.6.2/proj-9.6.2.tar.gz"
   sha256 "53d0cafaee3bb2390264a38668ed31d90787de05e71378ad7a8f35bb34c575d1"
   license "MIT"
-  head "https:github.comOSGeoproj.git", branch: "master"
+  head "https://github.com/OSGeo/proj.git", branch: "master"
 
   bottle do
     sha256 arm64_sequoia: "37fc9f7eabdc4118117d07a91fca5fbc883600f545e3ce46e74f7c14af00b9c0"
@@ -30,12 +30,12 @@ class Proj < Formula
 
   # The datum grid files are required to support datum shifting
   resource "proj-data" do
-    url "https:download.osgeo.orgprojproj-data-1.22.zip"
+    url "https://download.osgeo.org/proj/proj-data-1.22.zip"
     sha256 "ebca54b7f9118beafd30a5abeaeacfee6be9f59a0bb52419c9282cf34ee2510a"
 
     livecheck do
-      url "https:download.osgeo.orgproj"
-      regex(href=.*?proj-data[._-]v?(\d+(?:\.\d+)+)\.zipi)
+      url "https://download.osgeo.org/proj/"
+      regex(/href=.*?proj-data[._-]v?(\d+(?:\.\d+)+)\.zip/i)
     end
   end
 
@@ -45,14 +45,14 @@ class Proj < Formula
     system "cmake", "--install", "build"
     system "cmake", "-S", ".", "-B", "static", *std_cmake_args, "-DBUILD_SHARED_LIBS=OFF"
     system "cmake", "--build", "static"
-    lib.install Dir["staticlib*.a"]
+    lib.install Dir["static/lib/*.a"]
     resource("proj-data").stage do
       cp_r Dir["*"], pkgshare
     end
   end
 
   test do
-    (testpath"test").write <<~EOS
+    (testpath/"test").write <<~EOS
       45d15n 71d07w Boston, United States
       40d40n 73d58w New York, United States
       48d51n 2d20e Paris, France
@@ -65,7 +65,7 @@ class Proj < Formula
       -8101.66\t5707500.23 London, England
     EOS
 
-    output = shell_output("#{bin}proj +proj=poly +ellps=clrk66 -r #{testpath}test")
+    output = shell_output("#{bin}/proj +proj=poly +ellps=clrk66 -r #{testpath}/test")
     assert_equal match, output
   end
 end

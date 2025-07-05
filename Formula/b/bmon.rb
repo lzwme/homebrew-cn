@@ -1,7 +1,7 @@
 class Bmon < Formula
   desc "Interface bandwidth monitor"
-  homepage "https:github.comtgrafbmon"
-  url "https:github.comtgrafbmonreleasesdownloadv4.0bmon-4.0.tar.gz"
+  homepage "https://github.com/tgraf/bmon"
+  url "https://ghfast.top/https://github.com/tgraf/bmon/releases/download/v4.0/bmon-4.0.tar.gz"
   sha256 "02fdc312b8ceeb5786b28bf905f54328f414040ff42f45c83007f24b76cc9f7a"
   license "BSD-2-Clause"
   revision 2
@@ -26,7 +26,7 @@ class Bmon < Formula
   end
 
   head do
-    url "https:github.comtgrafbmon.git", branch: "master"
+    url "https://github.com/tgraf/bmon.git", branch: "master"
     depends_on "autoconf" => :build
     depends_on "automake" => :build
   end
@@ -41,16 +41,16 @@ class Bmon < Formula
   end
 
   def install
-    # Workaround for https:github.comtgrafbmonissues89 build issue:
-    inreplace "includebmonbmon.h", "#define __unused__", "#define __unused__"
-    inreplace %w[srcin_proc.c srcout_curses.c], "__unused__", ""
+    # Workaround for https://github.com/tgraf/bmon/issues/89 build issue:
+    inreplace "include/bmon/bmon.h", "#define __unused__", "//#define __unused__"
+    inreplace %w[src/in_proc.c src/out_curses.c], "__unused__", ""
 
-    system ".autogen.sh" if build.head?
-    system ".configure", "--mandir=#{man}", *std_configure_args
+    system "./autogen.sh" if build.head?
+    system "./configure", "--mandir=#{man}", *std_configure_args
     system "make", "install"
   end
 
   test do
-    system bin"bmon", "-o", "ascii:quitafter=1"
+    system bin/"bmon", "-o", "ascii:quitafter=1"
   end
 end

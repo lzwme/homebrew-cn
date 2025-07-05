@@ -1,15 +1,15 @@
 class Pmix < Formula
   desc "Process Management Interface for HPC environments"
-  homepage "https:openpmix.github.io"
+  homepage "https://openpmix.github.io/"
   license "BSD-3-Clause"
 
   stable do
-    url "https:github.comopenpmixopenpmixreleasesdownloadv5.0.8pmix-5.0.8.tar.bz2"
+    url "https://ghfast.top/https://github.com/openpmix/openpmix/releases/download/v5.0.8/pmix-5.0.8.tar.bz2"
     sha256 "bf5f0a341d0ec7f465627a7570f4dcda3b931bc859256428a35f6c72f13462d0"
 
     # Fix -flat_namespace being used on Big Sur and later.
     patch do
-      url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-big_sur.diff"
+      url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-big_sur.diff"
       sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
     end
   end
@@ -30,7 +30,7 @@ class Pmix < Formula
   end
 
   head do
-    url "https:github.comopenpmixopenpmix.git", branch: "master"
+    url "https://github.com/openpmix/openpmix.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -46,7 +46,7 @@ class Pmix < Formula
   def install
     # Avoid references to the Homebrew shims directory
     cc = OS.linux? ? "gcc" : ENV.cc
-    inreplace "srctoolspmix_infosupport.c", "PMIX_CC_ABSOLUTE", "\"#{cc}\""
+    inreplace "src/tools/pmix_info/support.c", "PMIX_CC_ABSOLUTE", "\"#{cc}\""
 
     args = %W[
       --disable-silent-rules
@@ -57,13 +57,13 @@ class Pmix < Formula
       --with-sge
     ]
 
-    system ".autogen.pl", "--force" if build.head?
-    system ".configure", *args, *std_configure_args
+    system "./autogen.pl", "--force" if build.head?
+    system "./configure", *args, *std_configure_args
     system "make", "install"
   end
 
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include <stdio.h>
       #include <pmix.h>
 
@@ -77,8 +77,8 @@ class Pmix < Formula
     C
 
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lpmix", "-o", "test"
-    system ".test"
+    system "./test"
 
-    assert_match "PMIX: #{version}", shell_output("#{bin}pmix_info --pretty-print")
+    assert_match "PMIX: #{version}", shell_output("#{bin}/pmix_info --pretty-print")
   end
 end

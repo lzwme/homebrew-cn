@@ -1,10 +1,10 @@
 class AwsSdkCpp < Formula
   desc "AWS SDK for C++"
-  homepage "https:github.comawsaws-sdk-cpp"
-  url "https:github.comawsaws-sdk-cpparchiverefstags1.11.600.tar.gz"
+  homepage "https://github.com/aws/aws-sdk-cpp"
+  url "https://ghfast.top/https://github.com/aws/aws-sdk-cpp/archive/refs/tags/1.11.600.tar.gz"
   sha256 "bae5745e8d65551001fb9703cf8a8fe8b7bdffd6c552492f6f088b2eead21bad"
   license "Apache-2.0"
-  head "https:github.comawsaws-sdk-cpp.git", branch: "main"
+  head "https://github.com/aws/aws-sdk-cpp.git", branch: "main"
 
   livecheck do
     throttle 15
@@ -42,7 +42,7 @@ class AwsSdkCpp < Formula
 
     args = %W[
       -DBUILD_DEPS=OFF
-      -DCMAKE_MODULE_PATH=#{Formula["aws-c-common"].opt_lib}cmakeaws-c-commonmodules
+      -DCMAKE_MODULE_PATH=#{Formula["aws-c-common"].opt_lib}/cmake/aws-c-common/modules
       -DCMAKE_SHARED_LINKER_FLAGS=#{linker_flags.join(" ")}
       -DENABLE_TESTING=OFF
     ]
@@ -53,8 +53,8 @@ class AwsSdkCpp < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~CPP
-      #include <awscoreVersion.h>
+    (testpath/"test.cpp").write <<~CPP
+      #include <aws/core/Version.h>
       #include <iostream>
 
       int main() {
@@ -63,6 +63,6 @@ class AwsSdkCpp < Formula
       }
     CPP
     system ENV.cxx, "-std=c++11", "test.cpp", "-L#{lib}", "-laws-cpp-sdk-core", "-o", "test"
-    system ".test"
+    system "./test"
   end
 end

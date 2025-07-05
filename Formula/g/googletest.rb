@@ -1,10 +1,10 @@
 class Googletest < Formula
   desc "Google Testing and Mocking Framework"
-  homepage "https:google.github.iogoogletest"
-  url "https:github.comgooglegoogletestarchiverefstagsv1.17.0.tar.gz"
+  homepage "https://google.github.io/googletest/"
+  url "https://ghfast.top/https://github.com/google/googletest/archive/refs/tags/v1.17.0.tar.gz"
   sha256 "65fab701d9829d38cb77c14acdc431d2108bfdbf8979e40eb8ae567edf10b27c"
   license "BSD-3-Clause"
-  head "https:github.comgooglegoogletest.git", branch: "main"
+  head "https://github.com/google/googletest.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "ec7368aaeb0d09dcab75a230f7b5a7db6f85dd1270fa7425c3cbb92fea187375"
@@ -24,19 +24,19 @@ class Googletest < Formula
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 
-    # for use case like `#include "googletestgoogletestsrcgtest-all.cc"`
-    (include"googlemockgooglemocksrc").install Dir["googlemocksrc*"]
-    (include"googletestgoogletestsrc").install Dir["googletestsrc*"]
+    # for use case like `#include "googletest/googletest/src/gtest-all.cc"`
+    (include/"googlemock/googlemock/src").install Dir["googlemock/src/*"]
+    (include/"googletest/googletest/src").install Dir["googletest/src/*"]
   end
 
   test do
-    (testpath"test.cpp").write <<~CPP
+    (testpath/"test.cpp").write <<~CPP
       #include <string>
       #include <string_view>
       #include <vector>
-      #include <gtestgtest.h>
-      #include <gtestgtest-death-test.h>
-      #include "gmockgmock.h"
+      #include <gtest/gtest.h>
+      #include <gtest/gtest-death-test.h>
+      #include "gmock/gmock.h"
 
       TEST(Simple, Boolean)
       {
@@ -55,6 +55,6 @@ class Googletest < Formula
       }
     CPP
     system ENV.cxx, "test.cpp", "-std=c++17", "-L#{lib}", "-lgtest", "-lgtest_main", "-pthread", "-o", "test"
-    system ".test"
+    system "./test"
   end
 end

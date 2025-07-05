@@ -1,7 +1,7 @@
 class Movgrab < Formula
   desc "Downloader for youtube, dailymotion, and other video websites"
-  homepage "https:github.comColumPagetMovgrab"
-  url "https:github.comColumPagetMovgrabarchiverefstags3.1.2.tar.gz"
+  homepage "https://github.com/ColumPaget/Movgrab"
+  url "https://ghfast.top/https://github.com/ColumPaget/Movgrab/archive/refs/tags/3.1.2.tar.gz"
   sha256 "30be6057ddbd9ac32f6e3d5456145b09526cc6bd5e3f3fb3999cc05283457529"
   license "GPL-3.0-or-later"
   revision 9
@@ -25,24 +25,24 @@ class Movgrab < Formula
   # Fixes an incompatibility between Linux's getxattr and macOS's.
   # Reported upstream; half of this is already committed, and there's
   # a PR for the other half.
-  # https:github.comColumPagetlibUsefulissues1
-  # https:github.comColumPagetlibUsefulpull2
+  # https://github.com/ColumPaget/libUseful/issues/1
+  # https://github.com/ColumPaget/libUseful/pull/2
   patch do
-    url "https:github.comHomebrewformula-patchesraw936597e74d22ab8cf421bcc9c3a936cdae0f0d96movgrablibUseful_xattr_backport.diff"
+    url "https://github.com/Homebrew/formula-patches/raw/936597e74d22ab8cf421bcc9c3a936cdae0f0d96/movgrab/libUseful_xattr_backport.diff"
     sha256 "d77c6661386f1a6d361c32f375b05bfdb4ac42804076922a4c0748da891367c2"
   end
 
   # Backport fix for GCC linker library search order
-  # Upstream ref: https:github.comColumPagetMovgrabcommitfab3c87bc44d6ce47f91ded430c3512ebcf7501b
+  # Upstream ref: https://github.com/ColumPaget/Movgrab/commit/fab3c87bc44d6ce47f91ded430c3512ebcf7501b
   patch do
-    url "https:raw.githubusercontent.comHomebrewformula-patches6e5fdfd05ce62383c7f3ac4b23ba31f5ffbac5b2movgrablinker.patch"
+    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/6e5fdfd05ce62383c7f3ac4b23ba31f5ffbac5b2/movgrab/linker.patch"
     sha256 "e23330f110cb8ea2ed29ebc99180250fa5498d53706303b4d1878dc44aa483d3"
   end
 
   # build patch to fix pointer conversion issues
-  # upstream bug report, https:github.comColumPagetMovgrabissues6
+  # upstream bug report, https://github.com/ColumPaget/Movgrab/issues/6
   patch do
-    url "https:raw.githubusercontent.comHomebrewformula-patchesba252015727b6f0fb362fec3edfb7c53a3f888c2movgrabpointer-conv.patch"
+    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/ba252015727b6f0fb362fec3edfb7c53a3f888c2/movgrab/pointer-conv.patch"
     sha256 "9b5c0bb666d92c87966e610e3c2db9736371507b646359b5421f2a4fa7d68222"
   end
 
@@ -52,14 +52,14 @@ class Movgrab < Formula
 
     # Can you believe this? A forgotten semicolon! Probably got missed because it's
     # behind a conditional #ifdef.
-    # Fixed upstream: https:github.comColumPagetlibUsefulcommit6c71f8b123fd45caf747828a9685929ab63794d7
-    inreplace "libUseful-2.8FileSystem.c", "result=-1", "result=-1;"
+    # Fixed upstream: https://github.com/ColumPaget/libUseful/commit/6c71f8b123fd45caf747828a9685929ab63794d7
+    inreplace "libUseful-2.8/FileSystem.c", "result=-1", "result=-1;"
 
     # Later versions of libUseful handle the fact that setresuid is Linux-only, but
-    # this one does not. https:github.comColumPagetMovgrabblobHEADlibUsefulProcess.c#L95-L99
-    inreplace "libUseful-2.8Process.c", "setresuid(uid,uid,uid)", "setreuid(uid,uid)"
+    # this one does not. https://github.com/ColumPaget/Movgrab/blob/HEAD/libUseful/Process.c#L95-L99
+    inreplace "libUseful-2.8/Process.c", "setresuid(uid,uid,uid)", "setreuid(uid,uid)"
 
-    system ".configure", "--enable-ssl", *std_configure_args
+    system "./configure", "--enable-ssl", *std_configure_args
     system "make"
 
     # because case-insensitivity is sadly a thing and while the movgrab
@@ -71,6 +71,6 @@ class Movgrab < Formula
   end
 
   test do
-    system bin"movgrab", "--version"
+    system bin/"movgrab", "--version"
   end
 end

@@ -1,7 +1,7 @@
 class Libsail < Formula
   desc "Missing small and fast image decoding library for humans (not for machines)"
-  homepage "https:github.comHappySeaFoxsail"
-  url "https:github.comHappySeaFoxsailarchiverefstagsv0.9.8.tar.gz"
+  homepage "https://github.com/HappySeaFox/sail"
+  url "https://ghfast.top/https://github.com/HappySeaFox/sail/archive/refs/tags/v0.9.8.tar.gz"
   sha256 "ba2160f0825171ab3c41cbc5bb0834bf56439d2986e5aae5f586d5e2009dd9cd"
   license "MIT"
 
@@ -39,29 +39,29 @@ class Libsail < Formula
     system "cmake", "--install", "build"
 
     # To prevent conflicts with 'sail' formula
-    mv "#{bin}sail", "#{bin}sail-imaging"
+    mv "#{bin}/sail", "#{bin}/sail-imaging"
   end
 
   test do
-    system bin"sail-imaging", "decode", test_fixtures("test.png")
+    system bin/"sail-imaging", "decode", test_fixtures("test.png")
 
-    (testpath"test.c").write <<~C
-      #include <sailsail.h>
+    (testpath/"test.c").write <<~C
+      #include <sail/sail.h>
 
       int main(int argc, char **argv)
       {
           struct sail_image *image;
           SAIL_TRY_OR_EXECUTE(sail_load_from_file(argv[1], &image),
-                                * on error * return 1);
+                                /* on error */ return 1);
           sail_destroy_image(image);
 
           return 0;
       }
     C
 
-    flags = shell_output("#{Formula["pkgconf"].opt_bin}pkgconf --cflags --libs sail").strip.split
+    flags = shell_output("#{Formula["pkgconf"].opt_bin}/pkgconf --cflags --libs sail").strip.split
 
     system ENV.cc, "test.c", "-o", "test", *flags
-    system ".test", test_fixtures("test.jpg")
+    system "./test", test_fixtures("test.jpg")
   end
 end

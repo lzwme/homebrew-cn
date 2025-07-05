@@ -1,11 +1,11 @@
 class Ideviceinstaller < Formula
   desc "Tool for managing apps on iOS devices"
-  homepage "https:libimobiledevice.org"
-  url "https:github.comlibimobiledeviceideviceinstallerreleasesdownload1.1.1ideviceinstaller-1.1.1.tar.bz2"
+  homepage "https://libimobiledevice.org/"
+  url "https://ghfast.top/https://github.com/libimobiledevice/ideviceinstaller/releases/download/1.1.1/ideviceinstaller-1.1.1.tar.bz2"
   sha256 "deb883ec97f2f88115aab39f701b83c843e9f2b67fe02f5e00a9a7d6196c3063"
   license "GPL-2.0-or-later"
   revision 1
-  head "https:github.comlibimobiledeviceideviceinstaller.git", branch: "master"
+  head "https://github.com/libimobiledevice/ideviceinstaller.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -32,12 +32,12 @@ class Ideviceinstaller < Formula
   depends_on "libzip"
 
   def install
-    configure = build.head? ? ".autogen.sh" : ".configure"
+    configure = build.head? ? "./autogen.sh" : "./configure"
     system configure, *std_configure_args
     system "make", "install"
   end
 
   test do
-    assert_match "Manage apps on iOS devices", shell_output("#{bin}ideviceinstaller --help")
+    assert_match "Manage apps on iOS devices", shell_output("#{bin}/ideviceinstaller --help")
   end
 end

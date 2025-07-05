@@ -2,9 +2,9 @@ cask "font-glow-sans-j-normal" do
   version "0.93"
   sha256 "b4a84f6d277d3c0ec6e833ac0fe25b40545ededc19df5fb4643731eef0f730a2"
 
-  url "https:github.comwelaiglow-sansreleasesdownloadv#{version}GlowSansJ-Normal-v#{version}.zip"
+  url "https://ghfast.top/https://github.com/welai/glow-sans/releases/download/v#{version}/GlowSansJ-Normal-v#{version}.zip"
   name "Glow Sans J Normal"
-  homepage "https:github.comwelaiglow-sans"
+  homepage "https://github.com/welai/glow-sans"
 
   deprecate! date: "2024-02-17", because: :discontinued
   disable! date: "2025-02-19", because: :discontinued

@@ -1,9 +1,9 @@
 class MysqlClient < Formula
   desc "Open source relational database management system"
   # FIXME: Actual homepage fails audit due to Homebrew's user-agent
-  # homepage "https:dev.mysql.comdocrefman9.3en"
-  homepage "https:github.commysqlmysql-server"
-  url "https:cdn.mysql.comDownloadsMySQL-9.3mysql-9.3.0.tar.gz"
+  # homepage "https://dev.mysql.com/doc/refman/9.3/en/"
+  homepage "https://github.com/mysql/mysql-server"
+  url "https://cdn.mysql.com/Downloads/MySQL-9.3/mysql-9.3.0.tar.gz"
   sha256 "1a3ee236f1daac5ef897c6325c9b0e0aae486389be1b8001deb3ff77ce682d60"
   license "GPL-2.0-only" => { with: "Universal-FOSS-exception-1.0" }
 
@@ -61,7 +61,7 @@ class MysqlClient < Formula
   def install
     if OS.linux?
       # Disable ABI checking
-      inreplace "cmakeabi_check.cmake", "RUN_ABI_CHECK 1", "RUN_ABI_CHECK 0"
+      inreplace "cmake/abi_check.cmake", "RUN_ABI_CHECK 1", "RUN_ABI_CHECK 0"
     elsif MacOS.version <= :ventura
       ENV.llvm_clang
     end
@@ -69,11 +69,11 @@ class MysqlClient < Formula
     # -DINSTALL_* are relative to `CMAKE_INSTALL_PREFIX` (`prefix`)
     args = %W[
       -DCOMPILATION_COMMENT=Homebrew
-      -DINSTALL_DOCDIR=sharedoc#{name}
-      -DINSTALL_INCLUDEDIR=includemysql
-      -DINSTALL_INFODIR=shareinfo
-      -DINSTALL_MANDIR=shareman
-      -DINSTALL_MYSQLSHAREDIR=sharemysql
+      -DINSTALL_DOCDIR=share/doc/#{name}
+      -DINSTALL_INCLUDEDIR=include/mysql
+      -DINSTALL_INFODIR=share/info
+      -DINSTALL_MANDIR=share/man
+      -DINSTALL_MYSQLSHAREDIR=share/mysql
       -DWITH_AUTHENTICATION_CLIENT_PLUGINS=yes
       -DWITH_EDITLINE=system
       -DWITH_FIDO=system
@@ -90,6 +90,6 @@ class MysqlClient < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}mysql --version")
+    assert_match version.to_s, shell_output("#{bin}/mysql --version")
   end
 end

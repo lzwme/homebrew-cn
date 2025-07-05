@@ -2,12 +2,12 @@ cask "font-david-libre" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefonts.git",
-      verified:  "github.comgooglefonts",
+  url "https://github.com/google/fonts.git",
+      verified:  "github.com/google/fonts",
       branch:    "main",
-      only_path: "ofldavidlibre"
+      only_path: "ofl/davidlibre"
   name "David Libre"
-  homepage "https:fonts.google.comspecimenDavid+Libre"
+  homepage "https://fonts.google.com/specimen/David+Libre"
 
   font "DavidLibre-Bold.ttf"
   font "DavidLibre-Medium.ttf"

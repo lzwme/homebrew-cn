@@ -2,11 +2,11 @@ cask "moderndeck" do
   version "10.0.0"
   sha256 "f4f09af5ae7a71bbcb3e660ba6ab664fe33c016bc14f94e129a2013f16e208b6"
 
-  url "https:github.comdangeredwolfModernDeckreleasesdownloadv#{version}ModernDeck-universal.dmg",
-      verified: "github.comdangeredwolfModernDeck"
+  url "https://ghfast.top/https://github.com/dangeredwolf/ModernDeck/releases/download/v#{version}/ModernDeck-universal.dmg",
+      verified: "github.com/dangeredwolf/ModernDeck/"
   name "ModernDeck"
   desc "Modified version of TweetDeck with a material inspired theme"
-  homepage "https:moderndeck.app"
+  homepage "https://moderndeck.app/"
 
   no_autobump! because: :requires_manual_review
 
@@ -19,7 +19,7 @@ cask "moderndeck" do
   app "ModernDeck.app"
 
   zap trash: [
-    "~LibraryApplication SupportModernDeck",
-    "~LibraryLogsModernDeck",
+    "~/Library/Application Support/ModernDeck",
+    "~/Library/Logs/ModernDeck",
   ]
 end

@@ -5,12 +5,12 @@ cask "gitkraken-cli" do
   sha256 arm:   "37aae31f8bacbb7c3a8ac69db12f593725089f9a742194ca57aa6db8142d2122",
          intel: "998f52ba07799306036a19da6f6f051aa9827cb173889f5b862e4ed82ea08fa6"
 
-  url "https:github.comgitkrakengk-clireleasesdownloadv#{version}gk_#{version}_#{arch}.zip"
+  url "https://ghfast.top/https://github.com/gitkraken/gk-cli/releases/download/v#{version}/gk_#{version}_#{arch}.zip"
   name "GitKraken CLI"
   desc "CLI for GitKraken"
-  homepage "https:github.comgitkrakengk-cli"
+  homepage "https://github.com/gitkraken/gk-cli"
 
-  binary "gk_#{version}_#{arch}gk"
+  binary "gk_#{version}_#{arch}/gk"
 
-  zap trash: "~.gitkraken"
+  zap trash: "~/.gitkraken"
 end

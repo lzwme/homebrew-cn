@@ -1,7 +1,7 @@
 class Haiti < Formula
   desc "Hash type identifier"
-  homepage "https:noraj.github.iohaiti#"
-  url "https:github.comnorajhaitiarchiverefstagsv3.0.0.tar.gz"
+  homepage "https://noraj.github.io/haiti/#/"
+  url "https://ghfast.top/https://github.com/noraj/haiti/archive/refs/tags/v3.0.0.tar.gz"
   sha256 "f6b8bf21104cedda21d1cdfa9931b5f7a6049231aedba984a0e92e49123a3791"
   license "MIT"
 
@@ -27,17 +27,17 @@ class Haiti < Formula
     system "gem", "build", "#{name}.gemspec"
     system "gem", "install", "#{name}-hash-#{version}.gem"
 
-    bin.install Dir[libexec"bin#{name}"]
-    bin.env_script_all_files(libexec"bin", GEM_HOME: ENV["GEM_HOME"])
+    bin.install Dir[libexec/"bin/#{name}"]
+    bin.env_script_all_files(libexec/"bin", GEM_HOME: ENV["GEM_HOME"])
   end
 
   test do
     ENV["LANG"] = "en_US.UTF-8"
     ENV["LC_ALL"] = "en_US.UTF-8"
 
-    assert_match version.to_s, shell_output("#{bin}haiti --version")
+    assert_match version.to_s, shell_output("#{bin}/haiti --version")
 
-    output = shell_output("#{bin}haiti 12c87370d1b5472793e67682596b60efe2c6038d63d04134a1a88544509737b4")
+    output = shell_output("#{bin}/haiti 12c87370d1b5472793e67682596b60efe2c6038d63d04134a1a88544509737b4")
     assert_match "[JtR: raw-sha256]", output
   end
 end

@@ -2,15 +2,15 @@ cask "iris" do
   version "1.2.2"
   sha256 "ce7dd246b849b1c7af0436e8bc4d3fb0cc51e4563db361b480769ed6788c65ae"
 
-  url "https:raw.githubusercontent.comdanielng01product-buildsmasterirismacosIris-#{version}-OSX.zip",
-      verified: "raw.githubusercontent.comdanielng01product-builds"
+  url "https://ghfast.top/https://raw.githubusercontent.com/danielng01/product-builds/master/iris/macos/Iris-#{version}-OSX.zip",
+      verified: "raw.githubusercontent.com/danielng01/product-builds/"
   name "Iris"
   desc "Blue light filter and eye protection software"
-  homepage "https:iristech.coiris"
+  homepage "https://iristech.co/iris/"
 
   livecheck do
     url :homepage
-    regex(Iris[._-]?v?(\d+(?:\.\d+)+)[._-]?OSX\.zipi)
+    regex(/Iris[._-]?v?(\d+(?:\.\d+)+)[._-]?OSX\.zip/i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -21,8 +21,8 @@ cask "iris" do
             quit:      "co.iristech.Iris"
 
   zap trash: [
-    "~LibraryPreferencescom.iristech.Iris.plist",
-    "~LibrarySaved Application Stateco.iristech.Iris.savedState",
+    "~/Library/Preferences/com.iristech.Iris.plist",
+    "~/Library/Saved Application State/co.iristech.Iris.savedState",
   ]
 
   caveats do

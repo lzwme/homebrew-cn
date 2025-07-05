@@ -1,10 +1,10 @@
 class Awsweeper < Formula
   desc "CLI tool for cleaning your AWS account"
-  homepage "https:github.comjckuesterawsweeper"
-  url "https:github.comjckuesterawsweeperarchiverefstagsv0.12.0.tar.gz"
+  homepage "https://github.com/jckuester/awsweeper/"
+  url "https://ghfast.top/https://github.com/jckuester/awsweeper/archive/refs/tags/v0.12.0.tar.gz"
   sha256 "43468e1af20dab757da449b07330f7b16cbb9f77e130782f88f30a7744385c5e"
   license "MPL-2.0"
-  head "https:github.comjckuesterawsweeper.git", branch: "master"
+  head "https://github.com/jckuester/awsweeper.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -27,15 +27,15 @@ class Awsweeper < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.comjckuesterawsweeperinternal.version=#{version}
-      -X github.comjckuesterawsweeperinternal.date=#{time.strftime("%F")}
+      -X github.com/jckuester/awsweeper/internal.version=#{version}
+      -X github.com/jckuester/awsweeper/internal.date=#{time.strftime("%F")}
     ]
 
     system "go", "build", *std_go_args(ldflags:)
   end
 
   test do
-    (testpath"filter.yml").write <<~YAML
+    (testpath/"filter.yml").write <<~YAML
       aws_autoscaling_group:
       aws_instance:
         - tags:
@@ -43,6 +43,6 @@ class Awsweeper < Formula
     YAML
 
     assert_match "Error: failed to configure provider (name=aws",
-      shell_output("#{bin}awsweeper --dry-run #{testpath}filter.yml 2>&1", 1)
+      shell_output("#{bin}/awsweeper --dry-run #{testpath}/filter.yml 2>&1", 1)
   end
 end

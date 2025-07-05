@@ -1,14 +1,14 @@
 class Dust < Formula
   desc "More intuitive version of du in rust"
-  homepage "https:github.combootandydust"
-  url "https:github.combootandydustarchiverefstagsv1.2.1.tar.gz"
+  homepage "https://github.com/bootandy/dust"
+  url "https://ghfast.top/https://github.com/bootandy/dust/archive/refs/tags/v1.2.1.tar.gz"
   sha256 "d8ac1a78287a9ea9e6a0e350886dbef8902f5f1dcba9bbc25afafe2ed2ca0a95"
   license "Apache-2.0"
-  head "https:github.combootandydust.git", branch: "master"
+  head "https://github.com/bootandy/dust.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -26,20 +26,20 @@ class Dust < Formula
   def install
     system "cargo", "install", *std_cargo_args
 
-    bash_completion.install "completionsdust.bash" => "dust"
-    fish_completion.install "completionsdust.fish"
-    zsh_completion.install "completions_dust"
+    bash_completion.install "completions/dust.bash" => "dust"
+    fish_completion.install "completions/dust.fish"
+    zsh_completion.install "completions/_dust"
 
-    man1.install "man-pagedust.1"
+    man1.install "man-page/dust.1"
   end
 
   test do
     # failed with Linux CI run, but works with local run
-    # https:github.comHomebrewhomebrew-corepull121789#issuecomment-1407749790
+    # https://github.com/Homebrew/homebrew-core/pull/121789#issuecomment-1407749790
     if OS.linux?
-      system bin"dust", "-n", "1"
+      system bin/"dust", "-n", "1"
     else
-      assert_match(\d+.+?\., shell_output("#{bin}dust -n 1"))
+      assert_match(/\d+.+?\./, shell_output("#{bin}/dust -n 1"))
     end
   end
 end

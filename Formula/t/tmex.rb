@@ -1,7 +1,7 @@
 class Tmex < Formula
   desc "Minimalist tmux layout manager"
-  homepage "https:github.comevnptmex"
-  url "https:github.comevnptmexarchiverefstagsv2.0.4.tar.gz"
+  homepage "https://github.com/evnp/tmex"
+  url "https://ghfast.top/https://github.com/evnp/tmex/archive/refs/tags/v2.0.4.tar.gz"
   sha256 "d1907435f607993b0dc2da90166ea6d2804b73f94cffdb52a7ca40e6bee63632"
   license "MIT"
 
@@ -21,12 +21,12 @@ class Tmex < Formula
 
   def install
     bin.install "tmex"
-    man1.install "mantmex.1"
+    man1.install "man/tmex.1"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}tmex -v 2>&1")
+    assert_match version.to_s, shell_output("#{bin}/tmex -v 2>&1")
 
-    assert_match "new-session -s test", shell_output("#{bin}tmex test -tp 1224")
+    assert_match "new-session -s test", shell_output("#{bin}/tmex test -tp 1224")
   end
 end

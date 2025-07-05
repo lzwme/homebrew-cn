@@ -1,10 +1,10 @@
 class Teller < Formula
   desc "Secrets management tool for developers"
-  homepage "https:github.comtelleropsteller"
-  url "https:github.comtelleropstellerarchiverefstagsv2.0.7.tar.gz"
+  homepage "https://github.com/tellerops/teller"
+  url "https://ghfast.top/https://github.com/tellerops/teller/archive/refs/tags/v2.0.7.tar.gz"
   sha256 "1d4275ede4366a31efc94039c58da4cec87466d09cc01444c3c18e9432716d23"
   license "Apache-2.0"
-  head "https:github.comtelleropsteller.git", branch: "master"
+  head "https://github.com/tellerops/teller.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "a9e07be61dd9142e5650014b5f8ef4df9bf689dc59d1b2a4e8825554db831ea2"
@@ -31,11 +31,11 @@ class Teller < Formula
   end
 
   test do
-    (testpath"test.env").write <<~EOS
+    (testpath/"test.env").write <<~EOS
       foo=bar
     EOS
 
-    (testpath".teller.yml").write <<~YAML
+    (testpath/".teller.yml").write <<~YAML
       project: brewtest
       providers:
         # this will fuse vars with the below .env file
@@ -44,12 +44,12 @@ class Teller < Formula
           kind: dotenv
           maps:
           - id: one
-            path: #{testpath}test.env
+            path: #{testpath}/test.env
     YAML
 
-    output = shell_output("#{bin}teller -c #{testpath}.teller.yml show 2>&1")
+    output = shell_output("#{bin}/teller -c #{testpath}/.teller.yml show 2>&1")
     assert_match "[dotenv (dotenv)]: foo = ba", output
 
-    assert_match version.to_s, shell_output("#{bin}teller --version")
+    assert_match version.to_s, shell_output("#{bin}/teller --version")
   end
 end

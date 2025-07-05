@@ -2,8 +2,8 @@ class Dotbot < Formula
   include Language::Python::Virtualenv
 
   desc "Tool that bootstraps your dotfiles"
-  homepage "https:github.comanishathalyedotbot"
-  url "https:files.pythonhosted.orgpackages9bcab3ed58bef83a0e25a913b7f77794aa848ad2d7b976c452488b5fe268086bdotbot-1.23.0.tar.gz"
+  homepage "https://github.com/anishathalye/dotbot"
+  url "https://files.pythonhosted.org/packages/9b/ca/b3ed58bef83a0e25a913b7f77794aa848ad2d7b976c452488b5fe268086b/dotbot-1.23.0.tar.gz"
   sha256 "909c1b7875c00f5d11d61797e4f1885c4d7a1b4db2290b262a71a0457913a5c6"
   license "MIT"
 
@@ -21,7 +21,7 @@ class Dotbot < Formula
   depends_on "python@3.13"
 
   resource "pyyaml" do
-    url "https:files.pythonhosted.orgpackages54ed79a089b6be93607fa5cdaedf301d7dfb23af5f25c398d5ead2525b063e17pyyaml-6.0.2.tar.gz"
+    url "https://files.pythonhosted.org/packages/54/ed/79a089b6be93607fa5cdaedf301d7dfb23af5f25c398d5ead2525b063e17/pyyaml-6.0.2.tar.gz"
     sha256 "d584d9ec91ad65861cc08d42e834324ef890a082e591037abe114850ff7bbc3e"
   end
 
@@ -30,15 +30,15 @@ class Dotbot < Formula
   end
 
   test do
-    (testpath"install.conf.yaml").write <<~YAML
+    (testpath/"install.conf.yaml").write <<~YAML
       - create:
         - brew
-        - .brewtest
+        - .brew/test
     YAML
 
-    output = shell_output("#{bin}dotbot --verbose -c #{testpath}install.conf.yaml")
+    output = shell_output("#{bin}/dotbot --verbose -c #{testpath}/install.conf.yaml")
     assert_match "All tasks executed successfully", output
-    assert_path_exists testpath"brew"
-    assert_path_exists testpath".brewtest"
+    assert_path_exists testpath/"brew"
+    assert_path_exists testpath/".brew/test"
   end
 end

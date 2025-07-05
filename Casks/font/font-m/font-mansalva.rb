@@ -2,10 +2,10 @@ cask "font-mansalva" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefontsrawmainoflmansalvaMansalva-Regular.ttf",
-      verified: "github.comgooglefonts"
+  url "https://github.com/google/fonts/raw/main/ofl/mansalva/Mansalva-Regular.ttf",
+      verified: "github.com/google/fonts/"
   name "Mansalva"
-  homepage "https:fonts.google.comspecimenMansalva"
+  homepage "https://fonts.google.com/specimen/Mansalva"
 
   font "Mansalva-Regular.ttf"
 

@@ -2,12 +2,12 @@ cask "font-harmattan" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefonts.git",
-      verified:  "github.comgooglefonts",
+  url "https://github.com/google/fonts.git",
+      verified:  "github.com/google/fonts",
       branch:    "main",
-      only_path: "oflharmattan"
+      only_path: "ofl/harmattan"
   name "Harmattan"
-  homepage "https:fonts.google.comspecimenHarmattan"
+  homepage "https://fonts.google.com/specimen/Harmattan"
 
   font "Harmattan-Bold.ttf"
   font "Harmattan-Medium.ttf"

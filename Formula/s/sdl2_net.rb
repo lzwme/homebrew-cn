@@ -1,13 +1,13 @@
 class Sdl2Net < Formula
   desc "Small sample cross-platform networking library"
-  homepage "https:github.comlibsdl-orgSDL_net"
-  url "https:github.comlibsdl-orgSDL_netreleasesdownloadrelease-2.2.0SDL2_net-2.2.0.tar.gz"
+  homepage "https://github.com/libsdl-org/SDL_net"
+  url "https://ghfast.top/https://github.com/libsdl-org/SDL_net/releases/download/release-2.2.0/SDL2_net-2.2.0.tar.gz"
   sha256 "4e4a891988316271974ff4e9585ed1ef729a123d22c08bd473129179dc857feb"
   license "Zlib"
 
   livecheck do
     url :stable
-    regex(^(?:release[._-])?v?(2(?:\.\d+)+)$i)
+    regex(/^(?:release[._-])?v?(2(?:\.\d+)+)$/i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -28,7 +28,7 @@ class Sdl2Net < Formula
   end
 
   head do
-    url "https:github.comlibsdl-orgSDL_net.git", branch: "main"
+    url "https://github.com/libsdl-org/SDL_net.git", branch: "main"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -41,15 +41,15 @@ class Sdl2Net < Formula
   def install
     inreplace "SDL2_net.pc.in", "@prefix@", HOMEBREW_PREFIX
 
-    system ".autogen.sh" if build.head?
+    system "./autogen.sh" if build.head?
 
-    system ".configure", "--disable-sdltest", *std_configure_args
+    system "./configure", "--disable-sdltest", *std_configure_args
     system "make", "install"
   end
 
   test do
-    (testpath"test.c").write <<~C
-      #include <SDL2SDL_net.h>
+    (testpath/"test.c").write <<~C
+      #include <SDL2/SDL_net.h>
 
       int main()
       {
@@ -59,7 +59,7 @@ class Sdl2Net < Formula
       }
     C
 
-    system ENV.cc, "test.c", "-I#{Formula["sdl2"].opt_include}SDL2", "-L#{lib}", "-lSDL2_net", "-o", "test"
-    system ".test"
+    system ENV.cc, "test.c", "-I#{Formula["sdl2"].opt_include}/SDL2", "-L#{lib}", "-lSDL2_net", "-o", "test"
+    system "./test"
   end
 end

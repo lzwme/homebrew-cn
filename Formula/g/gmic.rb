@@ -1,14 +1,14 @@
 class Gmic < Formula
   desc "Full-Featured Open-Source Framework for Image Processing"
-  homepage "https:gmic.eu"
-  url "https:gmic.eufilessourcegmic_3.5.5.tar.gz"
+  homepage "https://gmic.eu/"
+  url "https://gmic.eu/files/source/gmic_3.5.5.tar.gz"
   sha256 "f77999dbb6cd95e2766a0fa1c6ea3ec61007a981ff4644cba2cfba895ec1dff3"
   license "CECILL-2.1"
-  head "https:github.comGreycLabgmic.git", branch: "master"
+  head "https://github.com/GreycLab/gmic.git", branch: "master"
 
   livecheck do
-    url "https:gmic.eudownload.html"
-    regex(Latest\s+stable:.*?href=.*?gmic[._-]v?(\d+(?:\.\d+)+)\.tim)
+    url "https://gmic.eu/download.html"
+    regex(/Latest\s+stable:.*?href=.*?gmic[._-]v?(\d+(?:\.\d+)+)\.t/im)
   end
 
   bottle do
@@ -58,10 +58,10 @@ class Gmic < Formula
 
   test do
     %w[test.jpg test.png].each do |file|
-      system bin"gmic", test_fixtures(file)
+      system bin/"gmic", test_fixtures(file)
     end
-    system bin"gmic", "-input", test_fixtures("test.jpg"), "rodilius", "10,4,400,16",
-           "smooth", "60,0,1,1,4", "normalize_local", "10,16", "-output", testpath"test_rodilius.jpg"
-    assert_path_exists testpath"test_rodilius.jpg"
+    system bin/"gmic", "-input", test_fixtures("test.jpg"), "rodilius", "10,4,400,16",
+           "smooth", "60,0,1,1,4", "normalize_local", "10,16", "-output", testpath/"test_rodilius.jpg"
+    assert_path_exists testpath/"test_rodilius.jpg"
   end
 end

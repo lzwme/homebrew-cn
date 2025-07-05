@@ -1,12 +1,12 @@
 class Csfml < Formula
   # Don't update CSFML until there's a corresponding SFML release
   desc "SMFL bindings for C"
-  homepage "https:www.sfml-dev.org"
-  url "https:github.comSFMLCSFMLarchiverefstags2.6.1.tar.gz"
+  homepage "https://www.sfml-dev.org/"
+  url "https://ghfast.top/https://github.com/SFML/CSFML/archive/refs/tags/2.6.1.tar.gz"
   sha256 "f3f3980f6b5cad85b40e3130c10a2ffaaa9e36de5f756afd4aacaed98a7a9b7b"
   license "Zlib"
   revision 1
-  head "https:github.comSFMLCSFML.git", branch: "master"
+  head "https://github.com/SFML/CSFML.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "e1e1172b80909989105f3813e7d1dba2ce0caca2a7efdd2717724e624b7e9cb0"
@@ -19,11 +19,11 @@ class Csfml < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "sfml@2" # milestone to support sfml 3.0, https:github.comSFMLCSFMLmilestone1
+  depends_on "sfml@2" # milestone to support sfml 3.0, https://github.com/SFML/CSFML/milestone/1
 
   def install
     args = %W[
-      -DCMAKE_MODULE_PATH=#{Formula["sfml@2"].share}SFMLcmakeModules
+      -DCMAKE_MODULE_PATH=#{Formula["sfml@2"].share}/SFML/cmake/Modules/
     ]
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
@@ -32,8 +32,8 @@ class Csfml < Formula
   end
 
   test do
-    (testpath"test.c").write <<~C
-      #include <SFMLWindow.h>
+    (testpath/"test.c").write <<~C
+      #include <SFML/Window.h>
 
       int main (void)
       {
@@ -43,6 +43,6 @@ class Csfml < Formula
     C
     system ENV.cc, "test.c", "-L#{lib}", "-lcsfml-window", "-o", "test"
     # Disable this part of the test on Linux because display is not available.
-    system ".test" if OS.mac?
+    system "./test" if OS.mac?
   end
 end

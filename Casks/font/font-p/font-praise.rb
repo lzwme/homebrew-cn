@@ -2,10 +2,10 @@ cask "font-praise" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefontsrawmainoflpraisePraise-Regular.ttf",
-      verified: "github.comgooglefonts"
+  url "https://github.com/google/fonts/raw/main/ofl/praise/Praise-Regular.ttf",
+      verified: "github.com/google/fonts/"
   name "Praise"
-  homepage "https:fonts.google.comspecimenPraise"
+  homepage "https://fonts.google.com/specimen/Praise"
 
   font "Praise-Regular.ttf"
 

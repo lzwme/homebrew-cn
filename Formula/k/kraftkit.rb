@@ -1,14 +1,14 @@
 class Kraftkit < Formula
   desc "Build and use highly customized and ultra-lightweight unikernel VMs"
-  homepage "https:unikraft.orgdocscli"
-  url "https:github.comunikraftkraftkitarchiverefstagsv0.11.6.tar.gz"
+  homepage "https://unikraft.org/docs/cli"
+  url "https://ghfast.top/https://github.com/unikraft/kraftkit/archive/refs/tags/v0.11.6.tar.gz"
   sha256 "7a0cd9b656c34ec801c8bef6716787292f7ab8eada15f6919002e2db267b0801"
   license "BSD-3-Clause"
-  head "https:github.comunikraftkraftkit.git", branch: "staging"
+  head "https://github.com/unikraft/kraftkit.git", branch: "staging"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -32,23 +32,23 @@ class Kraftkit < Formula
   def install
     ldflags = %W[
       -s -w
-      -X kraftkit.shinternalversion.version=#{version}
-      -X kraftkit.shinternalversion.commit=#{tap.user}
-      -X kraftkit.shinternalversion.buildTime=#{time.iso8601}
+      -X kraftkit.sh/internal/version.version=#{version}
+      -X kraftkit.sh/internal/version.commit=#{tap.user}
+      -X kraftkit.sh/internal/version.buildTime=#{time.iso8601}
     ]
-    system "go", "build", *std_go_args(ldflags:, output: bin"kraft"), ".cmdkraft"
+    system "go", "build", *std_go_args(ldflags:, output: bin/"kraft"), "./cmd/kraft"
 
-    generate_completions_from_executable(bin"kraft", "completion")
+    generate_completions_from_executable(bin/"kraft", "completion")
   end
 
   test do
     expected = if OS.mac?
       "could not determine hypervisor and system mode"
     else
-      "finding unikraft.orghelloworld:latest"
+      "finding unikraft.org/helloworld:latest"
     end
-    assert_match expected, shell_output("#{bin}kraft run unikraft.orghelloworld:latest 2>&1", 1)
+    assert_match expected, shell_output("#{bin}/kraft run unikraft.org/helloworld:latest 2>&1", 1)
 
-    assert_match version.to_s, shell_output("#{bin}kraft version")
+    assert_match version.to_s, shell_output("#{bin}/kraft version")
   end
 end

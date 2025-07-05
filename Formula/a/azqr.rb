@@ -1,12 +1,12 @@
 class Azqr < Formula
   desc "Azure Quick Review"
-  homepage "https:azure.github.ioazqr"
+  homepage "https://azure.github.io/azqr/"
   # pull from git tag to get submodules
-  url "https:github.comAzureazqr.git",
+  url "https://github.com/Azure/azqr.git",
       tag:      "v.2.7.0",
       revision: "3ac4fdc75cc6faa5a76fc909351a6c7c8215fcde"
   license "MIT"
-  head "https:github.comAzureazqr.git", branch: "main"
+  head "https://github.com/Azure/azqr.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "03d3a5b1e7db4a916dad777e6137715741d4d5228f66059edb0312d7f49d8594"
@@ -22,18 +22,18 @@ class Azqr < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.comAzureazqrcmdazqrcommands.version=#{version}
+      -X github.com/Azure/azqr/cmd/azqr/commands.version=#{version}
     ]
-    system "go", "build", *std_go_args(ldflags:), ".cmdazqr"
+    system "go", "build", *std_go_args(ldflags:), "./cmd/azqr"
 
-    generate_completions_from_executable(bin"azqr", "completion")
+    generate_completions_from_executable(bin/"azqr", "completion")
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}azqr -v")
-    output = shell_output("#{bin}azqr scan --filters notexists.yaml 2>&1", 1)
+    assert_match version.to_s, shell_output("#{bin}/azqr -v")
+    output = shell_output("#{bin}/azqr scan --filters notexists.yaml 2>&1", 1)
     assert_includes output, "failed reading data from file"
-    output = shell_output("#{bin}azqr scan 2>&1", 1)
+    output = shell_output("#{bin}/azqr scan 2>&1", 1)
     assert_includes output, "Failed to list subscriptions"
   end
 end

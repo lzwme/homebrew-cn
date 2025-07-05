@@ -1,7 +1,7 @@
 class RushParallel < Formula
   desc "Cross-platform command-line tool for executing jobs in parallel"
-  homepage "https:github.comshenwei356rush"
-  url "https:github.comshenwei356rusharchiverefstagsv0.7.0.tar.gz"
+  homepage "https://github.com/shenwei356/rush"
+  url "https://ghfast.top/https://github.com/shenwei356/rush/archive/refs/tags/v0.7.0.tar.gz"
   sha256 "82d8496874631b1b27618e3a5c1d95d3f5610ab5a415341a2115688b12bca4dc"
   license "MIT"
 
@@ -19,11 +19,11 @@ class RushParallel < Formula
   conflicts_with "rush", because: "both install `rush` binaries"
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w", output: bin"rush")
+    system "go", "build", *std_go_args(ldflags: "-s -w", output: bin/"rush")
   end
 
   test do
-    assert_equal <<~EOS, pipe_output("#{bin}rush -k 'echo 0{}'", (1..4).to_a.join("\n"))
+    assert_equal <<~EOS, pipe_output("#{bin}/rush -k 'echo 0{}'", (1..4).to_a.join("\n"))
       01
       02
       03

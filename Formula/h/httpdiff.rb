@@ -1,10 +1,10 @@
 class Httpdiff < Formula
   desc "Compare two HTTP(S) responses"
-  homepage "https:github.comjgrahamchttpdiff"
-  url "https:github.comjgrahamchttpdiffarchiverefstagsv1.0.0.tar.gz"
+  homepage "https://github.com/jgrahamc/httpdiff"
+  url "https://ghfast.top/https://github.com/jgrahamc/httpdiff/archive/refs/tags/v1.0.0.tar.gz"
   sha256 "b2d3ed4c8a31c0b060c61bd504cff3b67cd23f0da8bde00acd1bfba018830f7f"
   license "GPL-2.0-only"
-  head "https:github.comjgrahamchttpdiff.git", branch: "master"
+  head "https://github.com/jgrahamc/httpdiff.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -26,7 +26,7 @@ class Httpdiff < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "5b75213c432ca3754d283de01029ae208a75955949c8b5b9e04613c9da943f8c"
   end
 
-  # https:github.comjgrahamchttpdiffissues21
+  # https://github.com/jgrahamc/httpdiff/issues/21
   deprecate! date: "2024-02-20", because: :unmaintained
   disable! date: "2025-02-24", because: :unmaintained
 
@@ -38,6 +38,6 @@ class Httpdiff < Formula
   end
 
   test do
-    system bin"httpdiff", "https:brew.sh", "https:brew.sh"
+    system bin/"httpdiff", "https://brew.sh/", "https://brew.sh/"
   end
 end

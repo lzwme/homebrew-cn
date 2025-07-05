@@ -2,9 +2,9 @@ cask "font-laila" do
   version "2.000"
   sha256 "caa87cae373702288a7510c74881077aa15e3b5c94a4746b61f3f977d8499f73"
 
-  url "https:github.comitfoundrylailareleasesdownloadv#{version}laila-#{version.dots_to_underscores}.zip"
+  url "https://ghfast.top/https://github.com/itfoundry/laila/releases/download/v#{version}/laila-#{version.dots_to_underscores}.zip"
   name "Laila"
-  homepage "https:github.comitfoundrylaila"
+  homepage "https://github.com/itfoundry/laila"
 
   no_autobump! because: :requires_manual_review
 

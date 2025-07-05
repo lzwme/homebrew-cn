@@ -1,13 +1,13 @@
 class Fifechan < Formula
   desc "C++ GUI library designed for games"
-  homepage "https:fifengine.github.iofifechan"
-  url "https:github.comfifenginefifechanarchiverefstags0.1.5.tar.gz"
+  homepage "https://fifengine.github.io/fifechan/"
+  url "https://ghfast.top/https://github.com/fifengine/fifechan/archive/refs/tags/0.1.5.tar.gz"
   sha256 "29be5ff4b379e2fc4f88ef7d8bc172342130dd3e77a3061f64c8a75efe4eba73"
   license "LGPL-2.1-or-later"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -51,7 +51,7 @@ class Fifechan < Formula
   end
 
   test do
-    (testpath"fifechan_test.cpp").write <<~CPP
+    (testpath/"fifechan_test.cpp").write <<~CPP
       #include <fifechan.hpp>
       int main(int n, char** c) {
         fcn::Container* mContainer = new fcn::Container();
@@ -63,6 +63,6 @@ class Fifechan < Formula
     CPP
 
     system ENV.cxx, "fifechan_test.cpp", "-std=c++11", "-I#{include}", "-L#{lib}", "-lfifechan", "-o", "fifechan_test"
-    system ".fifechan_test"
+    system "./fifechan_test"
   end
 end

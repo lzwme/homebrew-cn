@@ -1,13 +1,13 @@
 class LibtorrentRakshasa < Formula
   desc "BitTorrent library with a focus on high performance"
-  homepage "https:github.comrakshasalibtorrent"
-  url "https:github.comrakshasalibtorrentarchiverefstagsv0.15.5.tar.gz"
+  homepage "https://github.com/rakshasa/libtorrent"
+  url "https://ghfast.top/https://github.com/rakshasa/libtorrent/archive/refs/tags/v0.15.5.tar.gz"
   sha256 "e3c1728c3dba615424db0b7e6ade105a9c041d02b8f5c8443ada06e50d21ed46"
   license "GPL-2.0-or-later"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -32,15 +32,15 @@ class LibtorrentRakshasa < Formula
 
   def install
     system "autoreconf", "--force", "--install", "--verbose"
-    system ".configure", "--disable-silent-rules", *std_configure_args
+    system "./configure", "--disable-silent-rules", *std_configure_args
     system "make"
     system "make", "install"
   end
 
   test do
-    (testpath"test.cpp").write <<~CPP
+    (testpath/"test.cpp").write <<~CPP
       #include <iostream>#{"  "}
-      #include <torrenttorrent.h>
+      #include <torrent/torrent.h>
       int main(void)
       {
         std::cout << torrent::version() << std::endl;
@@ -48,6 +48,6 @@ class LibtorrentRakshasa < Formula
       }
     CPP
     system ENV.cxx, "-std=c++17", "test.cpp", "-o", "test", "-L#{lib}", "-ltorrent"
-    assert_match version.to_s, shell_output(".test").strip
+    assert_match version.to_s, shell_output("./test").strip
   end
 end

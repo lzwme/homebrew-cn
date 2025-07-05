@@ -1,7 +1,7 @@
 class Gensio < Formula
-  desc "Stream IO Library"
-  homepage "https:github.comcminyardgensio"
-  url "https:github.comcminyardgensioreleasesdownloadv2.8.15gensio-2.8.15.tar.gz"
+  desc "Stream I/O Library"
+  homepage "https://github.com/cminyard/gensio"
+  url "https://ghfast.top/https://github.com/cminyard/gensio/releases/download/v2.8.15/gensio-2.8.15.tar.gz"
   sha256 "1cfa7d6ef19b8d98808b1f4bce225454781299f885815c22ab59d85585f54ee3"
   license all_of: ["LGPL-2.1-only", "GPL-2.0-only", "Apache-2.0"]
 
@@ -45,26 +45,26 @@ class Gensio < Formula
     args = %W[
       --disable-silent-rules
       --with-python=#{which(python3)}
-      --with-pythoninstall=#{lib}gensio-python
+      --with-pythoninstall=#{lib}/gensio-python
       --sysconfdir=#{etc}
     ]
-    args << "--with-tclcflags=-I#{HOMEBREW_PREFIX}includetcl-tk" if OS.linux?
+    args << "--with-tclcflags=-I#{HOMEBREW_PREFIX}/include/tcl-tk" if OS.linux?
 
-    system ".configure", *args, *std_configure_args
+    system "./configure", *args, *std_configure_args
     system "make", "install"
-    (prefixLanguage::Python.site_packages(python3)).install_symlink lib.glob("gensio-python*")
+    (prefix/Language::Python.site_packages(python3)).install_symlink lib.glob("gensio-python/*")
   end
 
   service do
-    run [opt_sbin"gtlsshd", "--nodaemon", "--pam-service", "sshd"]
+    run [opt_sbin/"gtlsshd", "--nodaemon", "--pam-service", "sshd"]
     keep_alive true
     require_root true
     working_dir HOMEBREW_PREFIX
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}gensiot --version")
+    assert_match version.to_s, shell_output("#{bin}/gensiot --version")
 
-    assert_equal "Hello World!", pipe_output("#{bin}gensiot echo", "Hello World!")
+    assert_equal "Hello World!", pipe_output("#{bin}/gensiot echo", "Hello World!")
   end
 end

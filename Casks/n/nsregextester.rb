@@ -2,10 +2,10 @@ cask "nsregextester" do
   version "1.0"
   sha256 :no_check
 
-  url "https:raw.githubusercontent.comaaronveghnsregextestermasterNSRegexTester.zip",
-      verified: "raw.githubusercontent.comaaronveghnsregextestermaster"
+  url "https://ghfast.top/https://raw.githubusercontent.com/aaronvegh/nsregextester/master/NSRegexTester.zip",
+      verified: "raw.githubusercontent.com/aaronvegh/nsregextester/master/"
   name "NSRegexTester"
-  homepage "https:github.comaaronveghnsregextester"
+  homepage "https://github.com/aaronvegh/nsregextester"
 
   no_autobump! because: :requires_manual_review
 

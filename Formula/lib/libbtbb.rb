@@ -2,13 +2,13 @@ class Libbtbb < Formula
   include Language::Python::Shebang
 
   desc "Bluetooth baseband decoding library"
-  homepage "https:github.comgreatscottgadgetslibbtbb"
-  url "https:github.comgreatscottgadgetslibbtbbarchiverefstags2020-12-R1.tar.gz"
+  homepage "https://github.com/greatscottgadgets/libbtbb"
+  url "https://ghfast.top/https://github.com/greatscottgadgets/libbtbb/archive/refs/tags/2020-12-R1.tar.gz"
   version "2020-12-R1"
   sha256 "9478bb51a38222921b5b1d7accce86acd98ed37dbccb068b38d60efa64c5231f"
   license "GPL-2.0-or-later"
   revision 1
-  head "https:github.comgreatscottgadgetslibbtbb.git", branch: "master"
+  head "https://github.com/greatscottgadgets/libbtbb.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -31,12 +31,12 @@ class Libbtbb < Formula
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 
-    system "python3.13", "-m", "pip", "install", *std_pip_args(build_isolation: true), ".pythonpcaptools"
-    bin.install "pythonpcaptoolsbtaptap"
-    rewrite_shebang detected_python_shebang, bin"btaptap"
+    system "python3.13", "-m", "pip", "install", *std_pip_args(build_isolation: true), "./python/pcaptools"
+    bin.install "python/pcaptools/btaptap"
+    rewrite_shebang detected_python_shebang, bin/"btaptap"
   end
 
   test do
-    system bin"btaptap", "-r", test_fixtures("test.pcap")
+    system bin/"btaptap", "-r", test_fixtures("test.pcap")
   end
 end

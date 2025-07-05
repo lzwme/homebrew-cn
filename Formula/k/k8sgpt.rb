@@ -1,10 +1,10 @@
 class K8sgpt < Formula
   desc "Scanning your k8s clusters, diagnosing, and triaging issues in simple English"
-  homepage "https:k8sgpt.ai"
-  url "https:github.comk8sgpt-aik8sgptarchiverefstagsv0.4.21.tar.gz"
+  homepage "https://k8sgpt.ai/"
+  url "https://ghfast.top/https://github.com/k8sgpt-ai/k8sgpt/archive/refs/tags/v0.4.21.tar.gz"
   sha256 "b4254c0069fe098ad9d7601157c530535c74961b1a8ca3d2f3ef0fd2ed9d7663"
   license "Apache-2.0"
-  head "https:github.comk8sgpt-aik8sgpt.git", branch: "main"
+  head "https://github.com/k8sgpt-ai/k8sgpt.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "9920c135e1b99d013e185dae6087d0aa4c9f1036899ab40c742169bfac174e44"
@@ -22,13 +22,13 @@ class K8sgpt < Formula
     ldflags = "-s -w -X main.version=#{version} -X main.commit=#{tap.user} -X main.date=#{time.iso8601}"
     system "go", "build", *std_go_args(ldflags:)
 
-    generate_completions_from_executable(bin"k8sgpt", "completion")
+    generate_completions_from_executable(bin/"k8sgpt", "completion")
   end
 
   test do
-    output = shell_output("#{bin}k8sgpt analyze --explain --filter=Service", 1)
+    output = shell_output("#{bin}/k8sgpt analyze --explain --filter=Service", 1)
     assert_match "try setting KUBERNETES_MASTER environment variable", output
 
-    assert_match version.to_s, shell_output("#{bin}k8sgpt version")
+    assert_match version.to_s, shell_output("#{bin}/k8sgpt version")
   end
 end

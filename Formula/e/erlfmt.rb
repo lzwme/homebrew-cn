@@ -1,7 +1,7 @@
 class Erlfmt < Formula
   desc "Automated code formatter for Erlang"
-  homepage "https:github.comWhatsApperlfmt"
-  url "https:github.comWhatsApperlfmtarchiverefstagsv1.7.0.tar.gz"
+  homepage "https://github.com/WhatsApp/erlfmt"
+  url "https://ghfast.top/https://github.com/WhatsApp/erlfmt/archive/refs/tags/v1.7.0.tar.gz"
   sha256 "7d566b5f012ce4e2db74e18edb7da4cf69fd49a2f80effdddf989f5f0051db5f"
   license "Apache-2.0"
 
@@ -20,12 +20,12 @@ class Erlfmt < Formula
 
   def install
     system "rebar3", "as", "release", "escriptize"
-    bin.install "_buildreleasebinerlfmt"
+    bin.install "_build/release/bin/erlfmt"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}erlfmt --version")
+    assert_match version.to_s, shell_output("#{bin}/erlfmt --version")
     assert_equal "f(X) -> X * 10.\n",
-                 pipe_output("#{bin}erlfmt -", "f (X)->X*10 .")
+                 pipe_output("#{bin}/erlfmt -", "f (X)->X*10 .")
   end
 end

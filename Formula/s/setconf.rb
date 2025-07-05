@@ -2,11 +2,11 @@ class Setconf < Formula
   include Language::Python::Shebang
 
   desc "Utility for easily changing settings in configuration files"
-  homepage "https:setconf.roboticoverlords.org"
-  url "https:setconf.roboticoverlords.orgsetconf-0.7.7.tar.xz"
+  homepage "https://setconf.roboticoverlords.org/"
+  url "https://setconf.roboticoverlords.org/setconf-0.7.7.tar.xz"
   sha256 "19315574540b3181fec31a4059b9e058381e0192317f153d181e7e7e2aa84d86"
   license "GPL-2.0-or-later"
-  head "https:github.comxyprotosetconf.git", branch: "main"
+  head "https://github.com/xyproto/setconf.git", branch: "main"
 
   no_autobump! because: :requires_manual_review
 
@@ -23,7 +23,7 @@ class Setconf < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}setconf --version")
-    system bin"setconf", "--test"
+    assert_match version.to_s, shell_output("#{bin}/setconf --version")
+    system bin/"setconf", "--test"
   end
 end

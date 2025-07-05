@@ -1,7 +1,7 @@
 class Sidekick < Formula
   desc "Deploy applications to your VPS"
-  homepage "https:github.comMightyMoudsidekick"
-  url "https:github.comMightyMoudsidekickarchiverefstagsv0.6.6.tar.gz"
+  homepage "https://github.com/MightyMoud/sidekick"
+  url "https://ghfast.top/https://github.com/MightyMoud/sidekick/archive/refs/tags/v0.6.6.tar.gz"
   sha256 "174224422622158ee78d423ac3c25bb9265914983a1f9b5b2e14543dcb0fe939"
   license "GPL-3.0-only"
 
@@ -19,15 +19,15 @@ class Sidekick < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = "-s -w -X 'github.commightymoudsidekickcmd.version=v#{version}'"
+    ldflags = "-s -w -X 'github.com/mightymoud/sidekick/cmd.version=v#{version}'"
     system "go", "build", *std_go_args(ldflags:)
 
-    generate_completions_from_executable(bin"sidekick", "completion")
+    generate_completions_from_executable(bin/"sidekick", "completion")
   end
 
   test do
     assert_match "With sidekick you can deploy any number of applications to a single VPS",
-                  shell_output(bin"sidekick")
-    assert_match("Sidekick config not found - Run sidekick init", shell_output("#{bin}sidekick deploy", 1))
+                  shell_output(bin/"sidekick")
+    assert_match("Sidekick config not found - Run sidekick init", shell_output("#{bin}/sidekick deploy", 1))
   end
 end

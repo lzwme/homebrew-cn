@@ -1,10 +1,10 @@
 class SignifyOsx < Formula
   desc "Cryptographically sign and verify files"
-  homepage "https:man.openbsd.orgsignify.1"
-  url "https:github.comjpouelletsignify-osxarchiverefstags1.4.tar.gz"
+  homepage "https://man.openbsd.org/signify.1"
+  url "https://ghfast.top/https://github.com/jpouellet/signify-osx/archive/refs/tags/1.4.tar.gz"
   sha256 "5aa954fe6c54f2fc939771779e5bb64298e46d0a4ae3d08637df44c7ed8d2897"
   license "ISC"
-  head "https:github.comjpouelletsignify-osx.git", branch: "master"
+  head "https://github.com/jpouellet/signify-osx.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -33,6 +33,6 @@ class SignifyOsx < Formula
   end
 
   test do
-    system bin"signify", "-G", "-n", "-p", "test.pub", "-s", "test.sec"
+    system bin/"signify", "-G", "-n", "-p", "test.pub", "-s", "test.sec"
   end
 end

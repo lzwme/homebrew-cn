@@ -1,10 +1,10 @@
 class Dra < Formula
   desc "Command-line tool to download release assets from GitHub"
-  homepage "https:github.comdevmatteinidra"
-  url "https:github.comdevmatteinidraarchiverefstags0.8.2.tar.gz"
+  homepage "https://github.com/devmatteini/dra"
+  url "https://ghfast.top/https://github.com/devmatteini/dra/archive/refs/tags/0.8.2.tar.gz"
   sha256 "5766c57a0e105d9f86aece2b561d59c81fe22d22eb0c9d7cf1c9992b87b2338b"
   license "MIT"
-  head "https:github.comdevmatteinidra.git", branch: "main"
+  head "https://github.com/devmatteini/dra.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "db4e0a18693fb1805da7d9568dbfd43f446b5568a9af969d38480349a883de24"
@@ -23,15 +23,15 @@ class Dra < Formula
   def install
     system "cargo", "install", *std_cargo_args
 
-    generate_completions_from_executable(bin"dra", "completion")
+    generate_completions_from_executable(bin/"dra", "completion")
   end
 
   test do
-    assert_match version.to_s, shell_output(bin"dra --version")
+    assert_match version.to_s, shell_output(bin/"dra --version")
 
-    system bin"dra", "download", "--select",
-           "helloworld.tar.gz", "devmatteinidra-tests"
+    system bin/"dra", "download", "--select",
+           "helloworld.tar.gz", "devmatteini/dra-tests"
 
-    assert_path_exists testpath"helloworld.tar.gz"
+    assert_path_exists testpath/"helloworld.tar.gz"
   end
 end

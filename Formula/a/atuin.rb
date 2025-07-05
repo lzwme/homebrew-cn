@@ -1,7 +1,7 @@
 class Atuin < Formula
   desc "Improved shell history for zsh, bash, fish and nushell"
-  homepage "https:atuin.sh"
-  url "https:github.comatuinshatuinarchiverefstagsv18.6.1.tar.gz"
+  homepage "https://atuin.sh/"
+  url "https://ghfast.top/https://github.com/atuinsh/atuin/archive/refs/tags/v18.6.1.tar.gz"
   sha256 "aba26698471ef7ad2757416d01fcc327d3bd800c58cc3fcae638e625524e1b40"
   license "MIT"
 
@@ -19,22 +19,22 @@ class Atuin < Formula
   depends_on "rust" => :build
 
   def install
-    system "cargo", "install", *std_cargo_args(path: "cratesatuin")
+    system "cargo", "install", *std_cargo_args(path: "crates/atuin")
 
-    generate_completions_from_executable(bin"atuin", "gen-completion", "--shell")
+    generate_completions_from_executable(bin/"atuin", "gen-completion", "--shell")
   end
 
   service do
-    run [opt_bin"atuin", "daemon"]
+    run [opt_bin/"atuin", "daemon"]
     keep_alive true
-    log_path var"logatuin.log"
-    error_log_path var"logatuin.log"
+    log_path var/"log/atuin.log"
+    error_log_path var/"log/atuin.log"
   end
 
   test do
     # or `atuin init zsh` to setup the `ATUIN_SESSION`
     ENV["ATUIN_SESSION"] = "random"
-    assert_match "autoload -U add-zsh-hook", shell_output("#{bin}atuin init zsh")
-    assert shell_output("#{bin}atuin history list").blank?
+    assert_match "autoload -U add-zsh-hook", shell_output("#{bin}/atuin init zsh")
+    assert shell_output("#{bin}/atuin history list").blank?
   end
 end

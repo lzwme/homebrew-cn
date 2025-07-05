@@ -1,7 +1,7 @@
 class Homeworlds < Formula
   desc "C++ framework for the game of Binary Homeworlds"
-  homepage "https:github.comQuuxplusoneHomeworlds"
-  url "https:github.comQuuxplusoneHomeworldsarchiverefstagsv1.1.0.tar.gz"
+  homepage "https://github.com/Quuxplusone/Homeworlds/"
+  url "https://ghfast.top/https://github.com/Quuxplusone/Homeworlds/archive/refs/tags/v1.1.0.tar.gz"
   sha256 "3ffbad58943127850047ef144a572f6cc84fd1ec2d29dad1f118db75419bf600"
   license "BSD-2-Clause"
   revision 1
@@ -27,7 +27,7 @@ class Homeworlds < Formula
   end
 
   test do
-    output = shell_output(bin"homeworlds-cli", 1)
+    output = shell_output(bin/"homeworlds-cli", 1)
     assert_match "Error: Incorrect command-line arguments", output
   end
 end

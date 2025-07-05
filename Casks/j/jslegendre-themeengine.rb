@@ -2,14 +2,14 @@ cask "jslegendre-themeengine" do
   version "1.0.0,119"
   sha256 "d4330aeeaa354ecd9eb13c02661836262f97a28dedc3d8820f99714995eaaf77"
 
-  url "https:github.comjslegendreThemeEnginereleasesdownloadv#{version.csv.first}(#{version.csv.second})ThemeEngine.zip"
+  url "https://ghfast.top/https://github.com/jslegendre/ThemeEngine/releases/download/v#{version.csv.first}(#{version.csv.second})/ThemeEngine.zip"
   name "ThemeEngine"
   desc "App to edit compiled .car files"
-  homepage "https:github.comjslegendreThemeEngine"
+  homepage "https://github.com/jslegendre/ThemeEngine/"
 
   livecheck do
     url :url
-    regex(^v?(\d+(?:\.\d+)+)(?:\((\d+)\))?$i)
+    regex(/^v?(\d+(?:\.\d+)+)(?:\((\d+)\))?$/i)
     strategy :github_latest do |json, regex|
       match = json["tag_name"]&.match(regex)
       next if match.blank?
@@ -24,5 +24,5 @@ cask "jslegendre-themeengine" do
 
   app "ThemeEngine.app"
 
-  zap trash: "~LibraryPreferencescom.alexzielenski.ThemeEngine.plist"
+  zap trash: "~/Library/Preferences/com.alexzielenski.ThemeEngine.plist"
 end

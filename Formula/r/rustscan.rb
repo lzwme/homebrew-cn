@@ -1,13 +1,13 @@
 class Rustscan < Formula
   desc "Modern Day Portscanner"
-  homepage "https:github.combee-sanRustScan"
-  url "https:github.combee-sanRustScanarchiverefstags2.4.1.tar.gz"
+  homepage "https://github.com/bee-san/RustScan"
+  url "https://ghfast.top/https://github.com/bee-san/RustScan/archive/refs/tags/2.4.1.tar.gz"
   sha256 "fa99c18a12d4c0939ab69ddb84ef7b85a1ea01d8fc86df227449d89473531765"
   license "GPL-3.0-or-later"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -28,7 +28,7 @@ class Rustscan < Formula
   end
 
   test do
-    refute_match("panic", shell_output("#{bin}rustscan --greppable -a 127.0.0.1"))
-    refute_match("panic", shell_output("#{bin}rustscan --greppable -a 0.0.0.0"))
+    refute_match("panic", shell_output("#{bin}/rustscan --greppable -a 127.0.0.1"))
+    refute_match("panic", shell_output("#{bin}/rustscan --greppable -a 0.0.0.0"))
   end
 end

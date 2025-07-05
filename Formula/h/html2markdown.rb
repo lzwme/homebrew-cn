@@ -1,10 +1,10 @@
 class Html2markdown < Formula
   desc "Convert HTML to Markdown"
-  homepage "https:html-to-markdown.com"
-  url "https:github.comJohannesKaufmannhtml-to-markdownarchiverefstagsv2.3.3.tar.gz"
+  homepage "https://html-to-markdown.com"
+  url "https://ghfast.top/https://github.com/JohannesKaufmann/html-to-markdown/archive/refs/tags/v2.3.3.tar.gz"
   sha256 "4087f3626b5b2870fa491e58d19438cfe68ef8cfd61ce2468b759ec785c0ca02"
   license "MIT"
-  head "https:github.comJohannesKaufmannhtml-to-markdown.git", branch: "main"
+  head "https://github.com/JohannesKaufmann/html-to-markdown.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "0af127ee9d2c7d801f6b3f8be67310af5020dd56ba36e5ed773d723293a49371"
@@ -25,12 +25,12 @@ class Html2markdown < Formula
       -X main.commit=#{tap.user}
       -X main.date=#{time.iso8601}
     ]
-    system "go", "build", *std_go_args(ldflags:), ".clihtml2markdown"
+    system "go", "build", *std_go_args(ldflags:), "./cli/html2markdown"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}html2markdown --version")
+    assert_match version.to_s, shell_output("#{bin}/html2markdown --version")
 
-    assert_match "**important**", shell_output("echo '<strong>important<strong>' | #{bin}html2markdown")
+    assert_match "**important**", shell_output("echo '<strong>important</strong>' | #{bin}/html2markdown")
   end
 end

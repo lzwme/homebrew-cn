@@ -5,10 +5,10 @@ cask "yggdrasil" do
   sha256 arm:   "631b1d841c7bcf2fdc870f0ef9294500ff04322498f0d9f1bef3354083d506ca",
          intel: "d574e03247be3b00633b1300c326b3d1e856c06dd82df52886965ee3cc166fce"
 
-  url "https:github.comyggdrasil-networkyggdrasil-goreleasesdownloadv#{version}yggdrasil-#{version}-macos-#{arch}.pkg"
+  url "https://ghfast.top/https://github.com/yggdrasil-network/yggdrasil-go/releases/download/v#{version}/yggdrasil-#{version}-macos-#{arch}.pkg"
   name "Yggdrasil"
   desc "End-to-end encrypted IPv6 networking to connect worlds"
-  homepage "https:github.comyggdrasil-networkyggdrasil-go"
+  homepage "https://github.com/yggdrasil-network/yggdrasil-go"
 
   no_autobump! because: :requires_manual_review
 
@@ -18,7 +18,7 @@ cask "yggdrasil" do
             pkgutil:   "io.github.yggdrasil-network.pkg"
 
   zap delete: [
-    "etcyggdrasil.conf",
-    "LibraryPreferencesYggdrasil",
+    "/etc/yggdrasil.conf",
+    "/Library/Preferences/Yggdrasil",
   ]
 end

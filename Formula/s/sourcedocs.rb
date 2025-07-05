@@ -1,7 +1,7 @@
 class Sourcedocs < Formula
   desc "Generate Markdown files from inline source code documentation"
-  homepage "https:github.comSourceDocsSourceDocs"
-  url "https:github.comSourceDocsSourceDocsarchiverefstags2.0.1.tar.gz"
+  homepage "https://github.com/SourceDocs/SourceDocs"
+  url "https://ghfast.top/https://github.com/SourceDocs/SourceDocs/archive/refs/tags/2.0.1.tar.gz"
   sha256 "07547c929071124264ec9cc601331f21dc67a104ffc76fbc1801c1ecb4c35bbf"
   license "MIT"
 
@@ -26,11 +26,11 @@ class Sourcedocs < Formula
   uses_from_macos "swift"
 
   # Workaround until SourceKitten dependency is updated
-  # Ref: https:github.comSourceDocsSourceDocspull83
+  # Ref: https://github.com/SourceDocs/SourceDocs/pull/83
   resource "SourceKitten" do
     if DevelopmentTools.clang_build_version >= 1600
-      # https:github.comSourceDocsSourceDocsblob2.0.1Package.resolved#L32-L38
-      url "https:github.comjpsimSourceKitten.git",
+      # https://github.com/SourceDocs/SourceDocs/blob/2.0.1/Package.resolved#L32-L38
+      url "https://github.com/jpsim/SourceKitten.git",
           tag:      "0.32.0",
           revision: "817dfa6f2e09b0476f3a6c9dbc035991f02f0241"
 
@@ -43,7 +43,7 @@ class Sourcedocs < Formula
     args = ["--disable-sandbox", "--configuration", "release"]
     if DevelopmentTools.clang_build_version >= 1600
       res = resource("SourceKitten")
-      (buildpath"SourceKitten").install res
+      (buildpath/"SourceKitten").install res
 
       pin_version = JSON.parse(File.read("Package.resolved"))
                         .dig("object", "pins")
@@ -51,38 +51,38 @@ class Sourcedocs < Formula
                         .dig("state", "version")
       odie "Check if SourceKitten patch is still needed!" if pin_version != res.version
 
-      system "swift", "package", *args, "edit", "SourceKitten", "--path", buildpath"SourceKitten"
+      system "swift", "package", *args, "edit", "SourceKitten", "--path", buildpath/"SourceKitten"
     end
 
     system "swift", "build", *args
-    bin.install ".buildreleasesourcedocs"
+    bin.install ".build/release/sourcedocs"
   end
 
   test do
-    assert_match "SourceDocs v#{version}", shell_output("#{bin}sourcedocs version")
+    assert_match "SourceDocs v#{version}", shell_output("#{bin}/sourcedocs version")
 
     # There are some issues with SourceKitten running in sandbox mode in Mojave
     # The following test has been disabled on Mojave until that issue is resolved
-    # - https:github.comHomebrewhomebrewpull50211
-    # - https:github.comHomebrewhomebrew-corepull32548
+    # - https://github.com/Homebrew/homebrew/pull/50211
+    # - https://github.com/Homebrew/homebrew-core/pull/32548
     if OS.mac? && MacOS.version < "10.14"
       mkdir "foo" do
         system "swift", "package", "init"
         system "swift", "build", "--disable-sandbox"
-        system bin"sourcedocs", "generate",
+        system bin/"sourcedocs", "generate",
                "--spm-module", "foo",
-               "--output-folder", testpath"DocumentationReference"
-        assert_path_exists testpath"DocumentationReferenceREADME.md"
+               "--output-folder", testpath/"Documentation/Reference"
+        assert_path_exists testpath/"Documentation/Reference/README.md"
       end
     end
   end
 end
 
 __END__
-diff --git aSourceSourceKittenFrameworkSwiftDocs.swift bSourceSourceKittenFrameworkSwiftDocs.swift
+diff --git a/Source/SourceKittenFramework/SwiftDocs.swift b/Source/SourceKittenFramework/SwiftDocs.swift
 index 1d2473c..70de287 100644
---- aSourceSourceKittenFrameworkSwiftDocs.swift
-+++ bSourceSourceKittenFrameworkSwiftDocs.swift
+--- a/Source/SourceKittenFramework/SwiftDocs.swift
++++ b/Source/SourceKittenFramework/SwiftDocs.swift
 @@ -10,6 +10,14 @@
  import SourceKit
  #endif
@@ -95,6 +95,6 @@ index 1d2473c..70de287 100644
 +import Darwin
 +#endif
 +
-  Represents docs for a Swift file.
+ /// Represents docs for a Swift file.
  public struct SwiftDocs {
-      Documented File.
+     /// Documented File.

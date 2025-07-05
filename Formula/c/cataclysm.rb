@@ -1,14 +1,14 @@
 class Cataclysm < Formula
-  desc "Forkvariant of Cataclysm Roguelike"
-  homepage "https:github.comCleverRavenCataclysm-DDA"
-  url "https:github.comCleverRavenCataclysm-DDAarchiverefstags0.H-RELEASE.tar.gz"
+  desc "Fork/variant of Cataclysm Roguelike"
+  homepage "https://github.com/CleverRaven/Cataclysm-DDA"
+  url "https://ghfast.top/https://github.com/CleverRaven/Cataclysm-DDA/archive/refs/tags/0.H-RELEASE.tar.gz"
   version "0.H"
   sha256 "9fbd80d13321321d6ed1f5a736ab874e06d335429f2a51a39eefd2fa51feae68"
   license "CC-BY-SA-3.0"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.(?:\d+|\w))+(?:[_-]\d+)?)i)
+    regex(/^v?(\d+(?:\.(?:\d+|\w))+(?:[_-]\d+)?)/i)
     strategy :github_latest
   end
 
@@ -23,7 +23,7 @@ class Cataclysm < Formula
   end
 
   head do
-    url "https:github.comCleverRavenCataclysm-DDA.git", branch: "master"
+    url "https://github.com/CleverRaven/Cataclysm-DDA.git", branch: "master"
     on_macos do
       depends_on "freetype"
     end
@@ -77,14 +77,14 @@ class Cataclysm < Formula
     return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
 
     # make user config directory
-    user_config_dir = testpath"LibraryApplication SupportCataclysm"
+    user_config_dir = testpath/"Library/Application Support/Cataclysm/"
     user_config_dir.mkpath
 
     # run cataclysm for 30 seconds
-    pid = spawn bin"cataclysm"
+    pid = spawn bin/"cataclysm"
     begin
       sleep 50
-      assert_path_exists user_config_dir"config", "User config directory should exist"
+      assert_path_exists user_config_dir/"config", "User config directory should exist"
     ensure
       Process.kill("TERM", pid)
     end

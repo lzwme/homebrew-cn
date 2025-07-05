@@ -1,17 +1,17 @@
 class Juju < Formula
   desc "DevOps management tool"
-  homepage "https:juju.is"
-  url "https:launchpad.netjuju3.63.6.7+downloadjuju-core_3.6.7.tar.gz"
+  homepage "https://juju.is/"
+  url "https://launchpad.net/juju/3.6/3.6.7/+download/juju-core_3.6.7.tar.gz"
   sha256 "456395d2974c88a69731f3f1af20a8a989b9b512e664bd0064dea1b9c02d879b"
   license "AGPL-3.0-only"
   version_scheme 1
-  head "https:github.comjujujuju.git", branch: "develop"
+  head "https://github.com/juju/juju.git", branch: "develop"
 
   # We check the Launchpad download page for Juju because the latest version
   # listed on the main project page isn't always a stable version.
   livecheck do
-    url "https:launchpad.netjuju+download"
-    regex(href=.*?juju-core[._-]v?(\d+(?:\.\d+)+)\.ti)
+    url "https://launchpad.net/juju/+download"
+    regex(/href=.*?juju-core[._-]v?(\d+(?:\.\d+)+)\.t/i)
     strategy :page_match
   end
 
@@ -28,16 +28,16 @@ class Juju < Formula
   depends_on "go" => :build
 
   def install
-    cd "srcgithub.comjujujuju" do
-      system "go", "build", *std_go_args(ldflags: "-s -w"), ".cmdjuju"
-      system "go", "build", *std_go_args(output: bin"juju-metadata", ldflags: "-s -w"), ".cmdpluginsjuju-metadata"
-      bash_completion.install "etcbash_completion.djuju"
+    cd "src/github.com/juju/juju" do
+      system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/juju"
+      system "go", "build", *std_go_args(output: bin/"juju-metadata", ldflags: "-s -w"), "./cmd/plugins/juju-metadata"
+      bash_completion.install "etc/bash_completion.d/juju"
     end
   end
 
   test do
-    system bin"juju", "version"
-    assert_match "No controllers registered", shell_output("#{bin}juju list-users 2>&1", 1)
-    assert_match "No controllers registered", shell_output("#{bin}juju-metadata list-images 2>&1", 2)
+    system bin/"juju", "version"
+    assert_match "No controllers registered", shell_output("#{bin}/juju list-users 2>&1", 1)
+    assert_match "No controllers registered", shell_output("#{bin}/juju-metadata list-images 2>&1", 2)
   end
 end

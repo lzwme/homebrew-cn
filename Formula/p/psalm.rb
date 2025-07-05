@@ -1,29 +1,29 @@
 class Psalm < Formula
   desc "PHP Static Analysis Tool"
-  homepage "https:psalm.dev"
-  url "https:github.comvimeopsalmreleasesdownload6.12.0psalm.phar"
-  sha256 "8e8846f3a5ed8c39ae17da6dea2e178bfbee642cc5e7bf674399afcd68c6fddb"
+  homepage "https://psalm.dev"
+  url "https://ghfast.top/https://github.com/vimeo/psalm/releases/download/6.12.1/psalm.phar"
+  sha256 "f781a308cd6ac56cb20b2edf61f57e4edc86255b9d539c5ee7bf17f4029edff8"
   license "MIT"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0a392046edf7cf7eeb814bd52c73070494458548d1b21895c3bfd08759e02125"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0a392046edf7cf7eeb814bd52c73070494458548d1b21895c3bfd08759e02125"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "0a392046edf7cf7eeb814bd52c73070494458548d1b21895c3bfd08759e02125"
-    sha256 cellar: :any_skip_relocation, sonoma:        "345919daa60e237e859f577b92fb1846236463c118861b382565da6e6fc5c368"
-    sha256 cellar: :any_skip_relocation, ventura:       "345919daa60e237e859f577b92fb1846236463c118861b382565da6e6fc5c368"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0a392046edf7cf7eeb814bd52c73070494458548d1b21895c3bfd08759e02125"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0a392046edf7cf7eeb814bd52c73070494458548d1b21895c3bfd08759e02125"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9c714bb2081d54732d61f3724e29b246458839e653729fe7770ff753452a5b7f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9c714bb2081d54732d61f3724e29b246458839e653729fe7770ff753452a5b7f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "9c714bb2081d54732d61f3724e29b246458839e653729fe7770ff753452a5b7f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f66f78f31d85f2da1a919eeb12cc6fa5f407b2beca27d8e112a4b9be22b92590"
+    sha256 cellar: :any_skip_relocation, ventura:       "f66f78f31d85f2da1a919eeb12cc6fa5f407b2beca27d8e112a4b9be22b92590"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9c714bb2081d54732d61f3724e29b246458839e653729fe7770ff753452a5b7f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9c714bb2081d54732d61f3724e29b246458839e653729fe7770ff753452a5b7f"
   end
 
   depends_on "composer" => :test
   depends_on "php"
 
-  # Keg-relocation breaks the formula when it replaces `usrlocal` with a non-default prefix
+  # Keg-relocation breaks the formula when it replaces `/usr/local` with a non-default prefix
   on_macos do
     on_intel do
       pour_bottle? only_if: :default_prefix
@@ -33,16 +33,16 @@ class Psalm < Formula
   def install
     libexec.install "psalm.phar" => "psalm"
 
-    (bin"psalm").write <<~EOS
-      #!#{Formula["php"].opt_bin}php
-      <?php require '#{libexec}psalm';
+    (bin/"psalm").write <<~EOS
+      #!#{Formula["php"].opt_bin}/php
+      <?php require '#{libexec}/psalm';
     EOS
   end
 
   test do
-    (testpath"composer.json").write <<~JSON
+    (testpath/"composer.json").write <<~JSON
       {
-        "name": "homebrewpsalm-test",
+        "name": "homebrew/psalm-test",
         "description": "Testing if Psalm has been installed properly.",
         "type": "project",
         "require": {
@@ -51,14 +51,14 @@ class Psalm < Formula
         "license": "MIT",
         "autoload": {
           "psr-4": {
-            "Homebrew\\\\PsalmTest\\\\": "src"
+            "Homebrew\\\\PsalmTest\\\\": "src/"
           }
         },
         "minimum-stability": "stable"
       }
     JSON
 
-    (testpath"srcEmail.php").write <<~PHP
+    (testpath/"src/Email.php").write <<~PHP
       <?php
       declare(strict_types=1);
 
@@ -75,9 +75,9 @@ class Psalm < Formula
           $this->email = $email;
         }
 
-        **
+        /**
         * @psalm-suppress PossiblyUnusedMethod
-        *
+        */
         public static function fromString(string $email): self
         {
           return new self($email);
@@ -105,7 +105,7 @@ class Psalm < Formula
     system "composer", "install"
 
     assert_match "Config file created successfully. Please re-run psalm.",
-                 shell_output("#{bin}psalm --init")
-    system bin"psalm", "--no-progress"
+                 shell_output("#{bin}/psalm --init")
+    system bin/"psalm", "--no-progress"
   end
 end

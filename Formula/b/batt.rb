@@ -1,11 +1,11 @@
 class Batt < Formula
   desc "Control and limit battery charging on Apple Silicon MacBooks"
-  homepage "https:github.comcharlie0129batt"
-  url "https:github.comcharlie0129batt.git",
+  homepage "https://github.com/charlie0129/batt"
+  url "https://github.com/charlie0129/batt.git",
       tag:      "v0.3.7",
       revision: "0292e5913c404f5d752f72bd340e161e3030c28c"
   license "GPL-2.0-only"
-  head "https:github.comcharlie0129batt.git", branch: "master"
+  head "https://github.com/charlie0129/batt.git", branch: "master"
 
   livecheck do
     url :stable
@@ -24,20 +24,20 @@ class Batt < Formula
 
   def install
     # Point to the correct path for the binary
-    inreplace "hackcc.chlc.batt.plist", "pathtobatt", opt_bin"batt"
+    inreplace "hack/cc.chlc.batt.plist", "/path/to/batt", opt_bin/"batt"
     # Limit config path to Homebrew prefix.
     system "plutil", "-insert", "ProgramArguments",
-           "-string", "--config=#{etc}batt.json", "-append",
-           "--", "hackcc.chlc.batt.plist"
+           "-string", "--config=#{etc}/batt.json", "-append",
+           "--", "hack/cc.chlc.batt.plist"
     # Allow non-root access to the battery controller.
     system "plutil", "-insert", "ProgramArguments",
            "-string", "--always-allow-non-root-access", "-append",
-           "--", "hackcc.chlc.batt.plist"
+           "--", "hack/cc.chlc.batt.plist"
     # Due to local changes version tag would show vx.x.x-dirty, override VERSION.
-    # GOTAGS is set to disable built-in installuninstall commands when building for Homebrew.
+    # GOTAGS is set to disable built-in install/uninstall commands when building for Homebrew.
     system "make", "GOTAGS=brew", "VERSION=v#{version}"
-    bin.install "binbatt"
-    prefix.install "hackcc.chlc.batt.plist"
+    bin.install "bin/batt"
+    prefix.install "hack/cc.chlc.batt.plist"
   end
 
   def caveats
@@ -53,9 +53,9 @@ class Batt < Formula
 
   test do
     # NB: assumes first run of batt, with no previous config.
-    assert_match "config file #{etc}batt.json does not exist, using default config",
-      shell_output("#{bin}batt daemon --config=#{etc}batt.json 2>&1", 1) # Non-root daemon exits with 1
+    assert_match "config file #{etc}/batt.json does not exist, using default config",
+      shell_output("#{bin}/batt daemon --config=#{etc}/batt.json 2>&1", 1) # Non-root daemon exits with 1
     assert_match "failed to connect to unix socket.",
-      shell_output("#{bin}batt status 2>&1", 1) # Cannot connect to daemon
+      shell_output("#{bin}/batt status 2>&1", 1) # Cannot connect to daemon
   end
 end

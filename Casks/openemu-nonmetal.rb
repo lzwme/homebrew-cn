@@ -2,11 +2,11 @@ cask "openemu-nonmetal" do
   version "2.0.9.1"
   sha256 "c6036374104e8cefee1be12fe941418e893a7f60a1b2ddaae37e477b94873790"
 
-  url "https:github.comOpenEmuOpenEmureleasesdownloadv#{version}OpenEmu_#{version}.zip",
-      verified: "github.comOpenEmuOpenEmu"
+  url "https://ghfast.top/https://github.com/OpenEmu/OpenEmu/releases/download/v#{version}/OpenEmu_#{version}.zip",
+      verified: "github.com/OpenEmu/OpenEmu/"
   name "OpenEmu"
   desc "Retro video game emulation"
-  homepage "https:openemu.org"
+  homepage "https://openemu.org/"
 
   deprecate! date: "2019-10-26", because: :discontinued
 
@@ -16,36 +16,36 @@ cask "openemu-nonmetal" do
   app "OpenEmu.app"
 
   zap trash: [
-    "~LibraryApplication Supportcom.apple.sharedfilelistcom.apple.LSSharedFileList.ApplicationRecentDocumentsorg.openemu.openemu.sfl*",
-    "~LibraryApplication SupportOpenEmu",
-    "~LibraryApplication Supportorg.openemu.OEXPCCAgent.Agents",
-    "~LibraryCachesOpenEmu",
-    "~LibraryCachesorg.openemu.OpenEmu",
-    "~LibraryCookiesorg.openemu.OpenEmu.binarycookies",
-    "~LibraryHTTPStoragesorg.openemu.OpenEmu.binarycookies",
-    "~LibraryPreferencesorg.openemu.Atari800.plist",
-    "~LibraryPreferencesorg.openemu.Bliss.plist",
-    "~LibraryPreferencesorg.openemu.CrabEmu.plist",
-    "~LibraryPreferencesorg.openemu.desmume.plist",
-    "~LibraryPreferencesorg.openemu.FCEU.plist",
-    "~LibraryPreferencesorg.openemu.Gambatte.plist",
-    "~LibraryPreferencesorg.openemu.GenesisPlus.plist",
-    "~LibraryPreferencesorg.openemu.Higan.plist",
-    "~LibraryPreferencesorg.openemu.Mednafen.plist",
-    "~LibraryPreferencesorg.openemu.mGBA.plist",
-    "~LibraryPreferencesorg.openemu.Mupen64Plus.plist",
-    "~LibraryPreferencesorg.openemu.NeoPop.plist",
-    "~LibraryPreferencesorg.openemu.Nestopia.plist",
-    "~LibraryPreferencesorg.openemu.O2EM.plist",
-    "~LibraryPreferencesorg.openemu.OpenEmu.plist",
-    "~LibraryPreferencesorg.openemu.Picodrive.plist",
-    "~LibraryPreferencesorg.openemu.PPSSPP.plist",
-    "~LibraryPreferencesorg.openemu.ProSystem.plist",
-    "~LibraryPreferencesorg.openemu.SNES9x.plist",
-    "~LibraryPreferencesorg.openemu.Stella.plist",
-    "~LibraryPreferencesorg.openemu.TwoMbit.plist",
-    "~LibraryPreferencesorg.openemu.VecXGL.plist",
-    "~LibraryPreferencesorg.openemu.VisualBoyAdvance.plist",
-    "~LibrarySaved Application Stateorg.openemu.OpenEmu.savedState",
+    "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/org.openemu.openemu.sfl*",
+    "~/Library/Application Support/OpenEmu",
+    "~/Library/Application Support/org.openemu.OEXPCCAgent.Agents",
+    "~/Library/Caches/OpenEmu",
+    "~/Library/Caches/org.openemu.OpenEmu",
+    "~/Library/Cookies/org.openemu.OpenEmu.binarycookies",
+    "~/Library/HTTPStorages/org.openemu.OpenEmu.binarycookies",
+    "~/Library/Preferences/org.openemu.Atari800.plist",
+    "~/Library/Preferences/org.openemu.Bliss.plist",
+    "~/Library/Preferences/org.openemu.CrabEmu.plist",
+    "~/Library/Preferences/org.openemu.desmume.plist",
+    "~/Library/Preferences/org.openemu.FCEU.plist",
+    "~/Library/Preferences/org.openemu.Gambatte.plist",
+    "~/Library/Preferences/org.openemu.GenesisPlus.plist",
+    "~/Library/Preferences/org.openemu.Higan.plist",
+    "~/Library/Preferences/org.openemu.Mednafen.plist",
+    "~/Library/Preferences/org.openemu.mGBA.plist",
+    "~/Library/Preferences/org.openemu.Mupen64Plus.plist",
+    "~/Library/Preferences/org.openemu.NeoPop.plist",
+    "~/Library/Preferences/org.openemu.Nestopia.plist",
+    "~/Library/Preferences/org.openemu.O2EM.plist",
+    "~/Library/Preferences/org.openemu.OpenEmu.plist",
+    "~/Library/Preferences/org.openemu.Picodrive.plist",
+    "~/Library/Preferences/org.openemu.PPSSPP.plist",
+    "~/Library/Preferences/org.openemu.ProSystem.plist",
+    "~/Library/Preferences/org.openemu.SNES9x.plist",
+    "~/Library/Preferences/org.openemu.Stella.plist",
+    "~/Library/Preferences/org.openemu.TwoMbit.plist",
+    "~/Library/Preferences/org.openemu.VecXGL.plist",
+    "~/Library/Preferences/org.openemu.VisualBoyAdvance.plist",
+    "~/Library/Saved Application State/org.openemu.OpenEmu.savedState",
   ]
 end

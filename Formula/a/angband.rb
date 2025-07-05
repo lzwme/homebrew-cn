@@ -1,13 +1,13 @@
 class Angband < Formula
   desc "Dungeon exploration game"
-  homepage "https:rephial.org"
-  url "https:github.comangbandangbandreleasesdownload4.2.5Angband-4.2.5.tar.gz"
+  homepage "https://rephial.org/"
+  url "https://ghfast.top/https://github.com/angband/angband/releases/download/4.2.5/Angband-4.2.5.tar.gz"
   sha256 "c4cacbdf28f726fcb1a0b30b8763100fb06f88dbb570e955232e41d83e0718a6"
   license "GPL-2.0-only"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -24,7 +24,7 @@ class Angband < Formula
   end
 
   head do
-    url "https:github.comangbandangband.git", branch: "master"
+    url "https://github.com/angband/angband.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -44,11 +44,11 @@ class Angband < Formula
       --disable-x11
     ]
     if OS.mac? && MacOS.version < :sonoma
-      ENV["NCURSES_CONFIG"] = "#{MacOS.sdk_path}usrbinncurses5.4-config"
-      args << "--with-ncurses-prefix=#{MacOS.sdk_path}usr"
+      ENV["NCURSES_CONFIG"] = "#{MacOS.sdk_path}/usr/bin/ncurses5.4-config"
+      args << "--with-ncurses-prefix=#{MacOS.sdk_path}/usr"
     end
-    system ".autogen.sh" if build.head?
-    system ".configure", *args, *std_configure_args
+    system "./autogen.sh" if build.head?
+    system "./configure", *args, *std_configure_args
     system "make"
     system "make", "install"
   end
@@ -60,20 +60,20 @@ class Angband < Formula
     timeout = 10
     args = %W[
       -duser=#{testpath}
-      -darchive=#{testpath}archive
-      -dpanic=#{testpath}panic
-      -dsave=#{testpath}save
-      -dscores=#{testpath}scores
+      -darchive=#{testpath}/archive
+      -dpanic=#{testpath}/panic
+      -dsave=#{testpath}/save
+      -dscores=#{testpath}/scores
     ]
 
-    PTY.spawn({ "LC_ALL" => "en_US.UTF-8", "TERM" => "xterm" }, bin"angband", *args) do |r, w, pid|
+    PTY.spawn({ "LC_ALL" => "en_US.UTF-8", "TERM" => "xterm" }, bin/"angband", *args) do |r, w, pid|
       refute_nil r.expect("[Initialization complete]", timeout), "Expected initialization message"
       w.write "\x18"
       refute_nil r.expect("Please select your character", timeout), "Expected character selection"
       w.write "\x18"
       r.read
     rescue Errno::EIO
-      # GNULinux raises EIO when read is done on closed pty
+      # GNU/Linux raises EIO when read is done on closed pty
     ensure
       r.close
       w.close

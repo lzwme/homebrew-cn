@@ -2,10 +2,10 @@ cask "themeengine" do
   version "1.0.0,111"
   sha256 "2f7039bf8a30a20da20b292252759a501d15962f909d3b2274db9c2ec7a3bf39"
 
-  url "https:github.comalexzielenskiThemeEnginereleasesdownload#{version.csv.first}(#{version.csv.second})ThemeEngine_111.zip"
+  url "https://ghfast.top/https://github.com/alexzielenski/ThemeEngine/releases/download/#{version.csv.first}(#{version.csv.second})/ThemeEngine_111.zip"
   name "ThemeEngine"
   desc "App to edit compiled .car files"
-  homepage "https:github.comalexzielenskiThemeEngine"
+  homepage "https://github.com/alexzielenski/ThemeEngine/"
 
   no_autobump! because: :requires_manual_review
 
@@ -13,7 +13,7 @@ cask "themeengine" do
 
   app "ThemeEngine.app"
 
-  zap trash: "~LibraryPreferencescom.alexzielenski.ThemeEngine.LSSharedFileList.plist"
+  zap trash: "~/Library/Preferences/com.alexzielenski.ThemeEngine.LSSharedFileList.plist"
 
   caveats do
     requires_rosetta

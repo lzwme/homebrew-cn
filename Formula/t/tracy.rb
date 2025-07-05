@@ -1,7 +1,7 @@
 class Tracy < Formula
   desc "Real-time, nanosecond resolution frame profiler"
-  homepage "https:github.comwolfpldtracy"
-  url "https:github.comwolfpldtracyarchiverefstagsv0.11.1.tar.gz"
+  homepage "https://github.com/wolfpld/tracy"
+  url "https://ghfast.top/https://github.com/wolfpld/tracy/archive/refs/tags/v0.11.1.tar.gz"
   sha256 "2c11ca816f2b756be2730f86b0092920419f3dabc7a7173829ffd897d91888a1"
   license "BSD-3-Clause"
 
@@ -40,12 +40,12 @@ class Tracy < Formula
 
     buildpath.each_child do |child|
       next unless child.directory?
-      next unless (child"CMakeLists.txt").exist?
+      next unless (child/"CMakeLists.txt").exist?
       next if %w[python test].include?(child.basename.to_s)
 
-      system "cmake", "-S", child, "-B", child"build", *args, *std_cmake_args
-      system "cmake", "--build", child"build"
-      bin.install child.glob("buildtracy-*").select(&:executable?)
+      system "cmake", "-S", child, "-B", child/"build", *args, *std_cmake_args
+      system "cmake", "--build", child/"build"
+      bin.install child.glob("build/tracy-*").select(&:executable?)
     end
 
     system "cmake", "-S", ".", "-B", "build", "-DBUILD_SHARED_LIBS=ON", *std_cmake_args
@@ -55,10 +55,10 @@ class Tracy < Formula
   end
 
   test do
-    assert_match "Tracy Profiler #{version}", shell_output("#{bin}tracy --help")
+    assert_match "Tracy Profiler #{version}", shell_output("#{bin}/tracy --help")
 
     port = free_port
-    pid = spawn bin"tracy", "-p", port.to_s
+    pid = spawn bin/"tracy", "-p", port.to_s
     sleep 1
   ensure
     Process.kill("TERM", pid)

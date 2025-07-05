@@ -1,10 +1,10 @@
 class Rustup < Formula
   desc "Rust toolchain installer"
-  homepage "https:rust-lang.github.iorustup"
-  url "https:github.comrust-langrustuparchiverefstags1.28.2.tar.gz"
+  homepage "https://rust-lang.github.io/rustup/"
+  url "https://ghfast.top/https://github.com/rust-lang/rustup/archive/refs/tags/1.28.2.tar.gz"
   sha256 "5987dcb828068a4a5e29ba99ab26f2983ac0c6e2e4dc3e5b3a3c0fafb69abbc0"
   license any_of: ["Apache-2.0", "MIT"]
-  head "https:github.comrust-langrustup.git", branch: "master"
+  head "https://github.com/rust-lang/rustup.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "a0dc5a8b36e61ac52cd3c1f2cd8d47fbd31a53ff398b7c1db7b74aa964328e10"
@@ -33,13 +33,13 @@ class Rustup < Formula
 
     %w[cargo cargo-clippy cargo-fmt cargo-miri clippy-driver rls rust-analyzer
        rust-gdb rust-gdbgui rust-lldb rustc rustdoc rustfmt rustup].each do |name|
-      bin.install_symlink bin"rustup-init" => name
+      bin.install_symlink bin/"rustup-init" => name
     end
-    generate_completions_from_executable(bin"rustup", "completions")
+    generate_completions_from_executable(bin/"rustup", "completions")
   end
 
   def post_install
-    (HOMEBREW_PREFIX"bin").install_symlink bin"rustup", bin"rustup-init"
+    (HOMEBREW_PREFIX/"bin").install_symlink bin/"rustup", bin/"rustup-init"
   end
 
   def caveats
@@ -47,30 +47,30 @@ class Rustup < Formula
       To initialize `rustup`, set a default toolchain:
         rustup default stable
 
-      If you have `rust` installed, ensure you have "$(brew --prefix rustup)bin"
-      before "$(brew --prefix)bin" in your $PATH:
-        #{Formatter.url("https:rust-lang.github.iorustupinstallationalready-installed-rust.html")}
+      If you have `rust` installed, ensure you have "$(brew --prefix rustup)/bin"
+      before "$(brew --prefix)/bin" in your $PATH:
+        #{Formatter.url("https://rust-lang.github.io/rustup/installation/already-installed-rust.html")}
     EOS
   end
 
   test do
-    ENV["CARGO_HOME"] = testpath".cargo"
-    ENV["RUSTUP_HOME"] = testpath".rustup"
+    ENV["CARGO_HOME"] = testpath/".cargo"
+    ENV["RUSTUP_HOME"] = testpath/".rustup"
     ENV.prepend_path "PATH", bin
 
-    assert_match "no default is configured", shell_output("#{bin}rustc --version 2>&1", 1)
-    system bin"rustup", "default", "stable"
+    assert_match "no default is configured", shell_output("#{bin}/rustc --version 2>&1", 1)
+    system bin/"rustup", "default", "stable"
 
-    system bin"cargo", "init", "--bin"
-    system bin"cargo", "fmt"
-    system bin"rustc", "srcmain.rs"
-    assert_equal "Hello, world!", shell_output(".main").chomp
-    assert_empty shell_output("#{bin}cargo clippy")
+    system bin/"cargo", "init", "--bin"
+    system bin/"cargo", "fmt"
+    system bin/"rustc", "src/main.rs"
+    assert_equal "Hello, world!", shell_output("./main").chomp
+    assert_empty shell_output("#{bin}/cargo clippy")
 
     # Check for stale symlinks
-    system bin"rustup-init", "-y"
+    system bin/"rustup-init", "-y"
     bins = bin.glob("*").to_set(&:basename).delete(Pathname("rustup-init"))
-    expected = testpath.glob(".cargobin*").to_set(&:basename)
+    expected = testpath.glob(".cargo/bin/*").to_set(&:basename)
     assert (extra = bins - expected).empty?, "Symlinks need to be removed: #{extra.join(",")}"
     assert (missing = expected - bins).empty?, "Symlinks need to be added: #{missing.join(",")}"
   end

@@ -2,13 +2,13 @@ cask "hostsx" do
   version "2.9.0"
   sha256 "5a8fc616b6e28465ba9edfbbd647285f33add8b1790c517ece55df3aec5b73a0"
 
-  url "https:github.comZzzMHostsXreleasesdownload#{version}HostsX.dmg"
+  url "https://ghfast.top/https://github.com/ZzzM/HostsX/releases/download/#{version}/HostsX.dmg"
   name "HostsX"
   desc "Local hosts update tool"
-  homepage "https:github.comZzzMHostsX"
+  homepage "https://github.com/ZzzM/HostsX"
 
   livecheck do
-    url "https:zzzm.github.ioHostsXappcast.xml"
+    url "https://zzzm.github.io/HostsX/appcast.xml"
     strategy :sparkle
   end
 
@@ -20,7 +20,7 @@ cask "hostsx" do
   app "HostsX.app"
 
   zap trash: [
-    "~LibraryHTTPStoragescom.alpha.hostsx",
-    "~LibraryPreferencescom.alpha.hostsx.plist",
+    "~/Library/HTTPStorages/com.alpha.hostsx",
+    "~/Library/Preferences/com.alpha.hostsx.plist",
   ]
 end

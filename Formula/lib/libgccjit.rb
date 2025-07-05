@@ -1,19 +1,19 @@
 class Libgccjit < Formula
   desc "JIT library for the GNU compiler collection"
-  homepage "https:gcc.gnu.org"
+  homepage "https://gcc.gnu.org/"
   license "GPL-3.0-or-later" => { with: "GCC-exception-3.1" }
-  head "https:gcc.gnu.orggitgcc.git", branch: "master"
+  head "https://gcc.gnu.org/git/gcc.git", branch: "master"
 
   stable do
-    url "https:ftp.gnu.orggnugccgcc-15.1.0gcc-15.1.0.tar.xz"
-    mirror "https:ftpmirror.gnu.orggccgcc-15.1.0gcc-15.1.0.tar.xz"
+    url "https://ftp.gnu.org/gnu/gcc/gcc-15.1.0/gcc-15.1.0.tar.xz"
+    mirror "https://ftpmirror.gnu.org/gcc/gcc-15.1.0/gcc-15.1.0.tar.xz"
     sha256 "e2b09ec21660f01fecffb715e0120265216943f038d0e48a9868713e54f06cea"
 
     # Branch from the Darwin maintainer of GCC, with a few generic fixes and
-    # Apple Silicon support, located at https:github.comiainsgcc-14-branch
+    # Apple Silicon support, located at https://github.com/iains/gcc-14-branch
     patch do
       on_macos do
-        url "https:raw.githubusercontent.comHomebrewformula-patches575ffcaed6d3112916fed77d271dd3799a7255c4gccgcc-15.1.0.diff"
+        url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/575ffcaed6d3112916fed77d271dd3799a7255c4/gcc/gcc-15.1.0.diff"
         sha256 "360fba75cd3ab840c2cd3b04207f745c418df44502298ab156db81d41edf3594"
       end
     end
@@ -64,10 +64,10 @@ class Libgccjit < Formula
 
     pkgversion = "Homebrew GCC #{pkg_version} #{build.used_options*" "}".strip
 
-    # Use `libgcccurrent` to align with the GCC formula.
+    # Use `lib/gcc/current` to align with the GCC formula.
     args = %W[
       --prefix=#{prefix}
-      --libdir=#{lib}gcccurrent
+      --libdir=#{lib}/gcc/current
       --disable-nls
       --enable-checking=release
       --with-gcc-major-version-only
@@ -85,7 +85,7 @@ class Libgccjit < Formula
       cpu = Hardware::CPU.arm? ? "aarch64" : "x86_64"
       args << "--build=#{cpu}-apple-darwin#{OS.kernel_version.major}"
 
-      # System headers may not be in usrinclude
+      # System headers may not be in /usr/include
       sdk = MacOS.sdk_path_if_needed
       args << "--with-sysroot=#{sdk}" if sdk
 
@@ -97,12 +97,12 @@ class Libgccjit < Formula
       # Fix cc1: error while loading shared libraries: libisl.so.15
       args << "--with-boot-ldflags=-static-libstdc++ -static-libgcc #{ENV.ldflags}"
 
-      # Fix Linux error: gnustubs-32.h: No such file or directory.
+      # Fix Linux error: gnu/stubs-32.h: No such file or directory.
       args << "--disable-multilib"
 
       # Change the default directory name for 64-bit libraries to `lib`
-      # https:stackoverflow.coma54038769
-      inreplace "gccconfigi386t-linux64", "m64=..lib64", "m64="
+      # https://stackoverflow.com/a/54038769
+      inreplace "gcc/config/i386/t-linux64", "m64=../lib64", "m64="
 
       %W[
         BOOT_CFLAGS=-I#{Formula["zlib"].opt_include}
@@ -112,7 +112,7 @@ class Libgccjit < Formula
 
     # Building jit needs --enable-host-shared, which slows down the compiler.
     mkdir "build-jit" do
-      system "..configure", *args, "--enable-languages=jit", "--enable-host-shared"
+      system "../configure", *args, "--enable-languages=jit", "--enable-host-shared"
       system "make", *make_args
       system "make", "install"
     end
@@ -122,22 +122,22 @@ class Libgccjit < Formula
       rm_r(f) if !f.directory? && !f.basename.to_s.start_with?("libgccjit")
     end
 
-    # Provide a `libgccxy` directory to align with the versioned GCC formulae.
-    (lib"gcc"version.major).install_symlink (lib"gcccurrent").children
+    # Provide a `lib/gcc/xy` directory to align with the versioned GCC formulae.
+    (lib/"gcc"/version.major).install_symlink (lib/"gcc/current").children
 
     return if OS.linux? || Hardware::CPU.arm?
 
-    lib.glob("gcccurrent#{shared_library("libgccjit", "*")}").each do |dylib|
+    lib.glob("gcc/current/#{shared_library("libgccjit", "*")}").each do |dylib|
       next if dylib.symlink?
 
-      # Fix linkage with `libgcc_s.1.1`. See: Homebrewdiscussions#5364
-      gcc_libdir = Formula["gcc"].opt_lib"gcccurrent"
-      MachO::Tools.add_rpath(dylib, rpath(source: lib"gcccurrent", target: gcc_libdir))
+      # Fix linkage with `libgcc_s.1.1`. See: Homebrew/discussions#5364
+      gcc_libdir = Formula["gcc"].opt_lib/"gcc/current"
+      MachO::Tools.add_rpath(dylib, rpath(source: lib/"gcc/current", target: gcc_libdir))
     end
   end
 
   test do
-    (testpath"test-libgccjit.c").write <<~C
+    (testpath/"test-libgccjit.c").write <<~C
       #include <libgccjit.h>
       #include <stdlib.h>
       #include <stdio.h>
@@ -189,19 +189,19 @@ class Libgccjit < Formula
     C
 
     gcc_major_ver = Formula["gcc"].any_installed_version.major
-    gcc = Formula["gcc"].opt_bin"gcc-#{gcc_major_ver}"
-    libs = HOMEBREW_PREFIX"libgcccurrent"
+    gcc = Formula["gcc"].opt_bin/"gcc-#{gcc_major_ver}"
+    libs = HOMEBREW_PREFIX/"lib/gcc/current"
     test_flags = %W[-I#{include} test-libgccjit.c -o test -L#{libs} -lgccjit]
 
     system gcc.to_s, *test_flags
-    assert_equal "hello world", shell_output(".test")
+    assert_equal "hello world", shell_output("./test")
 
     # The test below fails with the host compiler on Linux.
     return if OS.linux?
 
     # Also test with the host compiler, which many users use with libgccjit
-    (testpath"test").unlink
+    (testpath/"test").unlink
     system ENV.cc, *test_flags
-    assert_equal "hello world", shell_output(".test")
+    assert_equal "hello world", shell_output("./test")
   end
 end

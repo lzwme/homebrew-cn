@@ -1,10 +1,10 @@
 class Dtm < Formula
   desc "Cross-language distributed transaction manager"
-  homepage "https:en.dtm.pub"
-  url "https:github.comdtm-labsdtmarchiverefstagsv1.19.0.tar.gz"
+  homepage "https://en.dtm.pub/"
+  url "https://ghfast.top/https://github.com/dtm-labs/dtm/archive/refs/tags/v1.19.0.tar.gz"
   sha256 "11340c32e810dfd463953bca0a5f5a2c41a88c35782efc2ab70cfa78733fa823"
   license "BSD-3-Clause"
-  head "https:github.comdtm-labsdtm.git", branch: "main"
+  head "https://github.com/dtm-labs/dtm.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "818718052e97df9ffcfed8c29a8f7bbce0e5302c6639c208c3c080d188ce75c6"
@@ -19,11 +19,11 @@ class Dtm < Formula
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w -X main.Version=v#{version}")
-    system "go", "build", *std_go_args(ldflags: "-s -w", output: bin"dtm-qs"), "qsmain.go"
+    system "go", "build", *std_go_args(ldflags: "-s -w", output: bin/"dtm-qs"), "qs/main.go"
   end
 
   test do
-    assert_match "dtm version: v#{version}", shell_output("#{bin}dtm -v")
+    assert_match "dtm version: v#{version}", shell_output("#{bin}/dtm -v")
 
     http_port = free_port
     grpc_port = free_port
@@ -31,14 +31,14 @@ class Dtm < Formula
     dtm_pid = fork do
       ENV["HTTP_PORT"] = http_port.to_s
       ENV["GRPC_PORT"] = grpc_port.to_s
-      exec bin"dtm"
+      exec bin/"dtm"
     end
     # sleep to let dtm get its wits about it
     sleep 5
-    metrics_output = shell_output("curl -s localhost:#{http_port}apimetrics")
+    metrics_output = shell_output("curl -s localhost:#{http_port}/api/metrics")
     assert_match "# HELP dtm_server_info The information of this dtm server.", metrics_output
 
-    all_json = JSON.parse(shell_output("curl -s localhost:#{http_port}apidtmsvrall"))
+    all_json = JSON.parse(shell_output("curl -s localhost:#{http_port}/api/dtmsvr/all"))
     assert_equal 0, all_json["next_position"].length
     assert all_json["next_position"].instance_of? String
     assert_equal 0, all_json["transactions"].length

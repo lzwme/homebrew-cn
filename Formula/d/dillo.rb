@@ -1,7 +1,7 @@
 class Dillo < Formula
   desc "Fast and small graphical web browser"
-  homepage "https:dillo-browser.github.io"
-  url "https:github.comdillo-browserdilloreleasesdownloadv3.2.0dillo-3.2.0.tar.bz2"
+  homepage "https://dillo-browser.github.io/"
+  url "https://ghfast.top/https://github.com/dillo-browser/dillo/releases/download/v3.2.0/dillo-3.2.0.tar.bz2"
   sha256 "1066ed42ea7fe0ce19e79becd029c651c15689922de8408e13e70bb5701931bf"
   license "GPL-3.0-or-later"
 
@@ -16,14 +16,14 @@ class Dillo < Formula
   end
 
   head do
-    url "https:github.comdillo-browserdillo.git", branch: "master"
+    url "https://github.com/dillo-browser/dillo.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
   end
 
   # TODO: Switch to unversioned `fltk` when possible.
-  # https:github.comdillo-browserdilloissues246
+  # https://github.com/dillo-browser/dillo/issues/246
   depends_on "fltk@1.3"
   depends_on "jpeg-turbo"
   depends_on "libpng"
@@ -38,45 +38,45 @@ class Dillo < Formula
   def install
     if build.head?
       ENV["NOCONFIGURE"] = "1"
-      system ".autogen.sh"
+      system "./autogen.sh"
     end
 
-    system ".configure", "--disable-silent-rules", *std_configure_args
+    system "./configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
   end
 
   test do
-    test_file = testpath"test.html"
-    (testpath"test.html").write <<~HTML
+    test_file = testpath/"test.html"
+    (testpath/"test.html").write <<~HTML
       <!DOCTYPE html>
       <html>
         <head>
-            <title>BrewTest<title>
-        <head>
+            <title>BrewTest</title>
+        </head>
         <body>
-            <h1>test<h1>
-        <body>
-      <html>
+            <h1>test</h1>
+        </body>
+      </html>
     HTML
 
     # create bunch of dillo resource files
-    (testpath".dillo").mkpath
-    (testpath".dillodillorc").write ""
-    (testpath".dillokeysrc").write ""
-    (testpath".dillodomainrc").write ""
-    (testpath".dillohsts_preload").write ""
+    (testpath/".dillo").mkpath
+    (testpath/".dillo/dillorc").write ""
+    (testpath/".dillo/keysrc").write ""
+    (testpath/".dillo/domainrc").write ""
+    (testpath/".dillo/hsts_preload").write ""
 
     begin
-      PTY.spawn(bin"dillo", test_file) do |_r, _w, pid|
+      PTY.spawn(bin/"dillo", test_file) do |_r, _w, pid|
         sleep 15
         Process.kill("TERM", pid)
       end
     rescue Errno::EIO
-      # GNULinux raises EIO when read is done on closed pty
+      # GNU/Linux raises EIO when read is done on closed pty
     end
 
-    assert_match "DEFAULT DENY", (testpath".dillocookiesrc").read
+    assert_match "DEFAULT DENY", (testpath/".dillo/cookiesrc").read
 
-    assert_match version.to_s, shell_output("#{bin}dillo --version")
+    assert_match version.to_s, shell_output("#{bin}/dillo --version")
   end
 end

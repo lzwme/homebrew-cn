@@ -1,7 +1,7 @@
 class BashSnippets < Formula
   desc "Collection of small bash scripts for heavy terminal users"
-  homepage "https:github.comalexanderepsteinBash-Snippets"
-  url "https:github.comalexanderepsteinBash-Snippetsarchiverefstagsv1.23.0.tar.gz"
+  homepage "https://github.com/alexanderepstein/Bash-Snippets"
+  url "https://ghfast.top/https://github.com/alexanderepstein/Bash-Snippets/archive/refs/tags/v1.23.0.tar.gz"
   sha256 "59b784e714ba34a847b6a6844ae1703f46db6f0a804c3e5f2de994bbe8ebe146"
   license "MIT"
 
@@ -24,13 +24,13 @@ class BashSnippets < Formula
   conflicts_with "todoman", because: "both install `todo` binaries"
 
   def install
-    system ".install.sh", "--prefix=#{prefix}", "all"
+    system "./install.sh", "--prefix=#{prefix}", "all"
   end
 
   test do
-    output = shell_output("#{bin}weather Paramus").lines.first.chomp
+    output = shell_output("#{bin}/weather Paramus").lines.first.chomp
     assert_equal "Weather report: Paramus", output
-    output = shell_output("#{bin}qrify This is a test")
+    output = shell_output("#{bin}/qrify This is a test")
     assert_match "████ ▄▄▄▄▄ █▀ █▀▄█ ▄▄▄▄▄ ████", output
   end
 end

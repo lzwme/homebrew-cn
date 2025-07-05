@@ -1,10 +1,10 @@
 class Signmykey < Formula
   desc "Automated SSH Certificate Authority"
-  homepage "https:signmykey.io"
-  url "https:github.comsignmykeyiosignmykeyarchiverefstagsv0.8.8.tar.gz"
+  homepage "https://signmykey.io/"
+  url "https://ghfast.top/https://github.com/signmykeyio/signmykey/archive/refs/tags/v0.8.8.tar.gz"
   sha256 "3d08c9b0fbe6c6bcd8240ff0a65121ace0413f30abdd40068930509abc84e4ba"
   license "MIT"
-  head "https:github.comsignmykeyiosignmykey.git", branch: "master"
+  head "https://github.com/signmykeyio/signmykey.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "13f42dcc050c7a1c8f4284603c2b9cf51fc0fdfeec5a59a9c6cc7973fe4a4b4c"
@@ -20,18 +20,18 @@ class Signmykey < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.comsignmykeyiosignmykeycmd.versionString=#{version}
+      -X github.com/signmykeyio/signmykey/cmd.versionString=#{version}
     ]
     system "go", "build", *std_go_args(ldflags:)
 
-    generate_completions_from_executable(bin"signmykey", "completion")
+    generate_completions_from_executable(bin/"signmykey", "completion")
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}signmykey version")
+    assert_match version.to_s, shell_output("#{bin}/signmykey version")
 
     require "pty"
-    stdout, _stdin, _pid = PTY.spawn("#{bin}signmykey server dev -u myremoteuser")
+    stdout, _stdin, _pid = PTY.spawn("#{bin}/signmykey server dev -u myremoteuser")
     sleep 2
     assert_match "Starting signmykey server in DEV mode", stdout.readline
   end

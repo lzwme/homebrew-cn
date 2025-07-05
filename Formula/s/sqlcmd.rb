@@ -1,7 +1,7 @@
 class Sqlcmd < Formula
   desc "Microsoft SQL Server command-line interface"
-  homepage "https:github.commicrosoftgo-sqlcmd"
-  url "https:github.commicrosoftgo-sqlcmdarchiverefstagsv1.8.2.tar.gz"
+  homepage "https://github.com/microsoft/go-sqlcmd"
+  url "https://ghfast.top/https://github.com/microsoft/go-sqlcmd/archive/refs/tags/v1.8.2.tar.gz"
   sha256 "ee600e4a147fd1e3c5e6cea834f14465fbccbd96f6b32bd3b4c9e104e094b9b2"
   license "MIT"
 
@@ -23,15 +23,15 @@ class Sqlcmd < Formula
 
   def install
     ldflags = "-s -w -X main.version=#{version}"
-    system "go", "build", *std_go_args(ldflags:), ".cmdmodern"
+    system "go", "build", *std_go_args(ldflags:), "./cmd/modern"
 
-    generate_completions_from_executable(bin"sqlcmd", "completion")
+    generate_completions_from_executable(bin/"sqlcmd", "completion")
   end
 
   test do
-    out = shell_output("#{bin}sqlcmd -S 127.0.0.1 -E -Q 'SELECT @@version'", 1)
+    out = shell_output("#{bin}/sqlcmd -S 127.0.0.1 -E -Q 'SELECT @@version'", 1)
     assert_match "connection refused", out
 
-    assert_match version.to_s, shell_output("#{bin}sqlcmd --version")
+    assert_match version.to_s, shell_output("#{bin}/sqlcmd --version")
   end
 end

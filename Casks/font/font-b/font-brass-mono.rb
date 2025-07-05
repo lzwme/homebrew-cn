@@ -2,9 +2,9 @@ cask "font-brass-mono" do
   version "1.101"
   sha256 "674285de45647fd35f9378f358cc85ca405026be67df991b26c35292ffd71459"
 
-  url "https:github.comfonsecapeterbrass_monoreleasesdownloadv#{version}BrassMono.zip"
+  url "https://ghfast.top/https://github.com/fonsecapeter/brass_mono/releases/download/v#{version}/BrassMono.zip"
   name "Brass Mono"
-  homepage "https:github.comfonsecapeterbrass_mono"
+  homepage "https://github.com/fonsecapeter/brass_mono"
 
   livecheck do
     url :url

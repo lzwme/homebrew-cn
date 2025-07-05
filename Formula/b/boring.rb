@@ -1,10 +1,10 @@
 class Boring < Formula
   desc "Simple command-line SSH tunnel manager that just works"
-  homepage "https:github.comalebeckboring"
-  url "https:github.comalebeckboringarchiverefstags0.11.5.tar.gz"
+  homepage "https://github.com/alebeck/boring"
+  url "https://ghfast.top/https://github.com/alebeck/boring/archive/refs/tags/0.11.5.tar.gz"
   sha256 "132c98e67165fa78e01ec89ea349ed767433fbdf3994b88f87761e4d41c4a3c8"
   license "MIT"
-  head "https:github.comalebeckboring.git", branch: "main"
+  head "https://github.com/alebeck/boring.git", branch: "main"
 
   no_autobump! because: :requires_manual_review
 
@@ -22,9 +22,9 @@ class Boring < Formula
 
   def install
     ldflags = "-s -w -X main.version=#{version}"
-    system "go", "build", *std_go_args(ldflags:), ".cmdboring"
+    system "go", "build", *std_go_args(ldflags:), "./cmd/boring"
 
-    generate_completions_from_executable(bin"boring", "--shell")
+    generate_completions_from_executable(bin/"boring", "--shell")
   end
 
   def post_install
@@ -34,9 +34,9 @@ class Boring < Formula
   test do
     return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
 
-    assert_match version.to_s, shell_output("#{bin}boring version")
+    assert_match version.to_s, shell_output("#{bin}/boring version")
 
-    (testpath".boring.toml").write <<~TOML
+    (testpath/".boring.toml").write <<~TOML
       [[tunnels]]
       name = "dev"
       local = "9000"
@@ -45,8 +45,8 @@ class Boring < Formula
     TOML
 
     begin
-      output_log = testpath"output.log"
-      pid = spawn bin"boring", "list", [:out, :err] => output_log.to_s
+      output_log = testpath/"output.log"
+      pid = spawn bin/"boring", "list", [:out, :err] => output_log.to_s
       sleep 2
       assert_match "dev   9000   ->  localhost:9000  dev-server", output_log.read
     ensure

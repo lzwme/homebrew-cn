@@ -1,11 +1,11 @@
 class VowpalWabbit < Formula
   desc "Online learning algorithm"
-  homepage "https:github.comVowpalWabbitvowpal_wabbit"
-  url "https:github.comVowpalWabbitvowpal_wabbitarchiverefstags9.10.0.tar.gz"
+  homepage "https://github.com/VowpalWabbit/vowpal_wabbit"
+  url "https://ghfast.top/https://github.com/VowpalWabbit/vowpal_wabbit/archive/refs/tags/9.10.0.tar.gz"
   sha256 "9f4ec5cddf67af2c7aa9b380b23fe22c4b11e2109f2cbaa1314bdf3570749a4d"
   license "BSD-3-Clause"
   revision 1
-  head "https:github.comVowpalWabbitvowpal_wabbit.git", branch: "master"
+  head "https://github.com/VowpalWabbit/vowpal_wabbit.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -34,7 +34,7 @@ class VowpalWabbit < Formula
     depends_on "sse2neon" => :build
   end
 
-  # Reported at https:github.comVowpalWabbitvowpal_wabbitissues4700
+  # Reported at https://github.com/VowpalWabbit/vowpal_wabbit/issues/4700
   patch :DATA
 
   def install
@@ -56,26 +56,26 @@ class VowpalWabbit < Formula
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 
-    bin.install Dir["utl*"]
-    rm bin"active_interactor.py"
-    rm bin"vw-validate.html"
-    rm bin"clang-format.sh"
-    rm bin"release_blog_post_template.md"
-    rm_r bin"flatbuffer"
-    rm_r bin"dump_options"
+    bin.install Dir["utl/*"]
+    rm bin/"active_interactor.py"
+    rm bin/"vw-validate.html"
+    rm bin/"clang-format.sh"
+    rm bin/"release_blog_post_template.md"
+    rm_r bin/"flatbuffer"
+    rm_r bin/"dump_options"
   end
 
   test do
-    (testpath"house_dataset").write <<~EOS
+    (testpath/"house_dataset").write <<~EOS
       0 | price:.23 sqft:.25 age:.05 2006
       1 2 'second_house | price:.18 sqft:.15 age:.35 1976
       0 1 0.5 'third_house | price:.53 sqft:.32 age:.87 1924
     EOS
-    system bin"vw", "house_dataset", "-l", "10", "-c", "--passes", "25", "--holdout_off",
+    system bin/"vw", "house_dataset", "-l", "10", "-c", "--passes", "25", "--holdout_off",
                      "--audit", "-f", "house.model", "--nn", "5"
-    system bin"vw", "-t", "-i", "house.model", "-d", "house_dataset", "-p", "house.predict"
+    system bin/"vw", "-t", "-i", "house.model", "-d", "house_dataset", "-p", "house.predict"
 
-    (testpath"csoaa.dat").write <<~EOS
+    (testpath/"csoaa.dat").write <<~EOS
       1:1.0 a1_expect_1| a
       2:1.0 b1_expect_2| b
       3:1.0 c1_expect_3| c
@@ -84,45 +84,45 @@ class VowpalWabbit < Formula
       1:3.0 3:1.0 ac1_expect_3| a c
       2:3.0 d1_expect_2| d
     EOS
-    system bin"vw", "--csoaa", "3", "csoaa.dat", "-f", "csoaa.model"
-    system bin"vw", "-t", "-i", "csoaa.model", "-d", "csoaa.dat", "-p", "csoaa.predict"
+    system bin/"vw", "--csoaa", "3", "csoaa.dat", "-f", "csoaa.model"
+    system bin/"vw", "-t", "-i", "csoaa.model", "-d", "csoaa.dat", "-p", "csoaa.predict"
 
-    (testpath"ect.dat").write <<~EOS
+    (testpath/"ect.dat").write <<~EOS
       1 ex1| a
       2 ex2| a b
       3 ex3| c d e
       2 ex4| b a
       1 ex5| f g
     EOS
-    system bin"vw", "--ect", "3", "-d", "ect.dat", "-f", "ect.model"
-    system bin"vw", "-t", "-i", "ect.model", "-d", "ect.dat", "-p", "ect.predict"
+    system bin/"vw", "--ect", "3", "-d", "ect.dat", "-f", "ect.model"
+    system bin/"vw", "-t", "-i", "ect.model", "-d", "ect.dat", "-p", "ect.predict"
 
-    (testpath"train.dat").write <<~EOS
+    (testpath/"train.dat").write <<~EOS
       1:2:0.4 | a c
         3:0.5:0.2 | b d
         4:1.2:0.5 | a b c
         2:1:0.3 | b c
         3:1.5:0.7 | a d
     EOS
-    (testpath"test.dat").write <<~EOS
+    (testpath/"test.dat").write <<~EOS
       1:2 3:5 4:1:0.6 | a c d
       1:0.5 2:1:0.4 3:2 4:1.5 | c d
     EOS
-    system bin"vw", "-d", "train.dat", "--cb", "4", "-f", "cb.model"
-    system bin"vw", "-t", "-i", "cb.model", "-d", "test.dat", "-p", "cb.predict"
+    system bin/"vw", "-d", "train.dat", "--cb", "4", "-f", "cb.model"
+    system bin/"vw", "-t", "-i", "cb.model", "-d", "test.dat", "-p", "cb.predict"
   end
 end
 
 __END__
-diff --git avowpalwabbitconfigsrccli_help_formatter.cc bvowpalwabbitconfigsrccli_help_formatter.cc
+diff --git a/vowpalwabbit/config/src/cli_help_formatter.cc b/vowpalwabbit/config/src/cli_help_formatter.cc
 index 8cc6dfe..530d200 100644
---- avowpalwabbitconfigsrccli_help_formatter.cc
-+++ bvowpalwabbitconfigsrccli_help_formatter.cc
+--- a/vowpalwabbit/config/src/cli_help_formatter.cc
++++ b/vowpalwabbit/config/src/cli_help_formatter.cc
 @@ -8,6 +8,7 @@
- #include "vwconfigoptions.h"
+ #include "vw/config/options.h"
  
- #include <fmtformat.h>
-+#include <fmtranges.h>
+ #include <fmt/format.h>
++#include <fmt/ranges.h>
  
  #include <sstream>
  #include <string>
@@ -133,85 +133,85 @@ index 8cc6dfe..530d200 100644
 -}
 \ No newline at end of file
 +}
-diff --git avowpalwabbitconfigsrcoptions_cli.cc bvowpalwabbitconfigsrcoptions_cli.cc
+diff --git a/vowpalwabbit/config/src/options_cli.cc b/vowpalwabbit/config/src/options_cli.cc
 index e9b09a5..55e2aee 100644
---- avowpalwabbitconfigsrcoptions_cli.cc
-+++ bvowpalwabbitconfigsrcoptions_cli.cc
+--- a/vowpalwabbit/config/src/options_cli.cc
++++ b/vowpalwabbit/config/src/options_cli.cc
 @@ -10,6 +10,7 @@
- #include "vwconfigoption.h"
+ #include "vw/config/option.h"
  
- #include <fmtformat.h>
-+#include <fmtranges.h>
+ #include <fmt/format.h>
++#include <fmt/ranges.h>
  
  #include <algorithm>
  #include <cassert>
-diff --git avowpalwabbitcoreincludevwcorevw_string_view_fmt.h bvowpalwabbitcoreincludevwcorevw_string_view_fmt.h
+diff --git a/vowpalwabbit/core/include/vw/core/vw_string_view_fmt.h b/vowpalwabbit/core/include/vw/core/vw_string_view_fmt.h
 index 0d42ac7..6f3cdff 100644
---- avowpalwabbitcoreincludevwcorevw_string_view_fmt.h
-+++ bvowpalwabbitcoreincludevwcorevw_string_view_fmt.h
+--- a/vowpalwabbit/core/include/vw/core/vw_string_view_fmt.h
++++ b/vowpalwabbit/core/include/vw/core/vw_string_view_fmt.h
 @@ -13,6 +13,7 @@
  
- #include <fmtcore.h>
- #include <fmtformat.h>
-+#include <fmtranges.h>
+ #include <fmt/core.h>
+ #include <fmt/format.h>
++#include <fmt/ranges.h>
  
  namespace fmt
  {
-diff --git avowpalwabbitcoresrcmerge.cc bvowpalwabbitcoresrcmerge.cc
+diff --git a/vowpalwabbit/core/src/merge.cc b/vowpalwabbit/core/src/merge.cc
 index 7425dee..46e2b16 100644
---- avowpalwabbitcoresrcmerge.cc
-+++ bvowpalwabbitcoresrcmerge.cc
+--- a/vowpalwabbit/core/src/merge.cc
++++ b/vowpalwabbit/core/src/merge.cc
 @@ -16,6 +16,8 @@
- #include "vwcorevw_math.h"
- #include "vwioio_adapter.h"
+ #include "vw/core/vw_math.h"
+ #include "vw/io/io_adapter.h"
  
-+#include <fmtranges.h>
++#include <fmt/ranges.h>
 +
  #include <algorithm>
  #include <limits>
  
-diff --git avowpalwabbitcoresrcno_label.cc bvowpalwabbitcoresrcno_label.cc
+diff --git a/vowpalwabbit/core/src/no_label.cc b/vowpalwabbit/core/src/no_label.cc
 index c09f65f..b973442 100644
---- avowpalwabbitcoresrcno_label.cc
-+++ bvowpalwabbitcoresrcno_label.cc
+--- a/vowpalwabbit/core/src/no_label.cc
++++ b/vowpalwabbit/core/src/no_label.cc
 @@ -11,6 +11,8 @@
- #include "vwcorevw.h"
- #include "vwiologger.h"
+ #include "vw/core/vw.h"
+ #include "vw/io/logger.h"
  
-+#include <fmtranges.h>
++#include <fmt/ranges.h>
 +
  namespace
  {
  void parse_no_label(const std::vector<VW::string_view>& words, VW::io::logger& logger)
-diff --git avowpalwabbitcoresrcparse_args.cc bvowpalwabbitcoresrcparse_args.cc
+diff --git a/vowpalwabbit/core/src/parse_args.cc b/vowpalwabbit/core/src/parse_args.cc
 index 3d33bde..7feaccc 100644
---- avowpalwabbitcoresrcparse_args.cc
-+++ bvowpalwabbitcoresrcparse_args.cc
+--- a/vowpalwabbit/core/src/parse_args.cc
++++ b/vowpalwabbit/core/src/parse_args.cc
 @@ -44,6 +44,8 @@
- #include "vwioowning_stream.h"
- #include "vwtext_parserparse_example_text.h"
+ #include "vw/io/owning_stream.h"
+ #include "vw/text_parser/parse_example_text.h"
  
-+#include <fmtranges.h>
++#include <fmt/ranges.h>
 +
- #include <sysstat.h>
- #include <systypes.h>
+ #include <sys/stat.h>
+ #include <sys/types.h>
  
-diff --git avowpalwabbitcoresrcvw.cc bvowpalwabbitcoresrcvw.cc
+diff --git a/vowpalwabbit/core/src/vw.cc b/vowpalwabbit/core/src/vw.cc
 index c8af91a..1b739a1 100644
---- avowpalwabbitcoresrcvw.cc
-+++ bvowpalwabbitcoresrcvw.cc
+--- a/vowpalwabbit/core/src/vw.cc
++++ b/vowpalwabbit/core/src/vw.cc
 @@ -23,6 +23,7 @@
- #include "vwcoreunique_sort.h"
- #include "vwtext_parserparse_example_text.h"
+ #include "vw/core/unique_sort.h"
+ #include "vw/text_parser/parse_example_text.h"
  
-+#include <fmtranges.h>
++#include <fmt/ranges.h>
  #include <iostream>
  
  namespace
-diff --git avowpalwabbitcoreincludevwcoreautoml_impl.h bvowpalwabbitcoreincludevwcoreautoml_impl.h
+diff --git a/vowpalwabbit/core/include/vw/core/automl_impl.h b/vowpalwabbit/core/include/vw/core/automl_impl.h
 index 4a44666..0d1b35d 100644
---- avowpalwabbitcoreincludevwcoreautoml_impl.h
-+++ bvowpalwabbitcoreincludevwcoreautoml_impl.h
+--- a/vowpalwabbit/core/include/vw/core/automl_impl.h
++++ b/vowpalwabbit/core/include/vw/core/automl_impl.h
 @@ -334,7 +334,7 @@ template <>
  class formatter<VW::reductions::automl::automl_state> : public formatter<std::string>
  {
@@ -239,10 +239,10 @@ index 4a44666..0d1b35d 100644
    {
      return formatter<std::string>::format(std::string{VW::to_string(c)}, ctx);
    }
-diff --git avowpalwabbitcoreincludevwcoreccb_label.h bvowpalwabbitcoreincludevwcoreccb_label.h
+diff --git a/vowpalwabbit/core/include/vw/core/ccb_label.h b/vowpalwabbit/core/include/vw/core/ccb_label.h
 index 2e7e985..9dd9158 100644
---- avowpalwabbitcoreincludevwcoreccb_label.h
-+++ bvowpalwabbitcoreincludevwcoreccb_label.h
+--- a/vowpalwabbit/core/include/vw/core/ccb_label.h
++++ b/vowpalwabbit/core/include/vw/core/ccb_label.h
 @@ -81,7 +81,7 @@ template <>
  class formatter<VW::ccb_example_type> : public formatter<std::string>
  {
@@ -252,10 +252,10 @@ index 2e7e985..9dd9158 100644
    {
      return formatter<std::string>::format(std::string{VW::to_string(c)}, ctx);
    }
-diff --git avowpalwabbitcoreincludevwcoreslates_label.h bvowpalwabbitcoreincludevwcoreslates_label.h
+diff --git a/vowpalwabbit/core/include/vw/core/slates_label.h b/vowpalwabbit/core/include/vw/core/slates_label.h
 index 0cd089c..d226893 100644
---- avowpalwabbitcoreincludevwcoreslates_label.h
-+++ bvowpalwabbitcoreincludevwcoreslates_label.h
+--- a/vowpalwabbit/core/include/vw/core/slates_label.h
++++ b/vowpalwabbit/core/include/vw/core/slates_label.h
 @@ -81,7 +81,7 @@ template <>
  class formatter<VW::slates::example_type> : public formatter<std::string>
  {

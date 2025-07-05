@@ -1,7 +1,7 @@
 class Unibilium < Formula
   desc "Very basic terminfo library"
-  homepage "https:github.comneovimunibilium"
-  url "https:github.comneovimunibiliumarchiverefstagsv2.1.2.tar.gz"
+  homepage "https://github.com/neovim/unibilium"
+  url "https://ghfast.top/https://github.com/neovim/unibilium/archive/refs/tags/v2.1.2.tar.gz"
   sha256 "370ecb07fbbc20d91d1b350c55f1c806b06bf86797e164081ccc977fc9b3af7a"
   license "LGPL-3.0-or-later"
 
@@ -21,22 +21,22 @@ class Unibilium < Formula
 
   def install
     system "autoreconf", "--force", "--install", "--verbose"
-    system ".configure", *std_configure_args
+    system "./configure", *std_configure_args
 
     # Check Homebrew ncurses terminfo if available.
-    terminfo_dirs = [Formula["ncurses"].opt_share"terminfo"]
+    terminfo_dirs = [Formula["ncurses"].opt_share/"terminfo"]
 
     terminfo_dirs += if OS.mac?
       [Utils.safe_popen_read("ncurses5.4-config", "--terminfo-dirs").strip]
     else
       # Unibilium's default terminfo path
       %w[
-        etcterminfo
-        libterminfo
-        usrshareterminfo
-        usrlibterminfo
-        usrlocalshareterminfo
-        usrlocallibterminfo
+        /etc/terminfo
+        /lib/terminfo
+        /usr/share/terminfo
+        /usr/lib/terminfo
+        /usr/local/share/terminfo
+        /usr/local/lib/terminfo
       ]
     end
 
@@ -45,7 +45,7 @@ class Unibilium < Formula
   end
 
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include <unibilium.h>
       #include <stdio.h>
 
@@ -59,6 +59,6 @@ class Unibilium < Formula
       }
     C
     system ENV.cc, "-I#{include}", "test.c", "-L#{lib}", "-lunibilium", "-o", "test"
-    assert_match %r{\A#{Formula["ncurses"].opt_share}terminfo:}o, shell_output(".test")
+    assert_match %r{\A#{Formula["ncurses"].opt_share}/terminfo:}o, shell_output("./test")
   end
 end

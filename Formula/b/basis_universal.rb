@@ -1,13 +1,13 @@
 class BasisUniversal < Formula
   desc "Basis Universal GPU texture codec command-line compression tool"
-  homepage "https:github.comBinomialLLCbasis_universal"
-  url "https:github.comBinomialLLCbasis_universalarchiverefstagsv1_60.tar.gz"
+  homepage "https://github.com/BinomialLLC/basis_universal"
+  url "https://ghfast.top/https://github.com/BinomialLLC/basis_universal/archive/refs/tags/v1_60.tar.gz"
   sha256 "64ac9363656dc3eb41c59ee52af7e939abe574a92c85fd0ba27008c4a7ec9f40"
   license "Apache-2.0"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:[._]\d+)+)$i)
+    regex(/^v?(\d+(?:[._]\d+)+)$/i)
     strategy :git do |tags, regex|
       tags.filter_map { |tag| tag[regex, 1]&.tr("_", ".") }
     end
@@ -30,12 +30,12 @@ class BasisUniversal < Formula
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"
-    bin.install "binbasisu"
-    bin.install "binexamples" => "basisu_examples"
+    bin.install "bin/basisu"
+    bin.install "bin/examples" => "basisu_examples"
   end
 
   test do
-    system bin"basisu", test_fixtures("test.png")
-    assert_path_exists testpath"test.ktx2"
+    system bin/"basisu", test_fixtures("test.png")
+    assert_path_exists testpath/"test.ktx2"
   end
 end

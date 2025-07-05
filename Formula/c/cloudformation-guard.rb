@@ -1,7 +1,7 @@
 class CloudformationGuard < Formula
   desc "Checks CloudFormation templates for compliance using a declarative syntax"
-  homepage "https:github.comaws-cloudformationcloudformation-guard"
-  url "https:github.comaws-cloudformationcloudformation-guardarchiverefstags3.1.12.tar.gz"
+  homepage "https://github.com/aws-cloudformation/cloudformation-guard"
+  url "https://ghfast.top/https://github.com/aws-cloudformation/cloudformation-guard/archive/refs/tags/3.1.12.tar.gz"
   sha256 "089a6268bb97c49edef45d99e5730d4c3cb0febb2a2f5ba38e2558568f685461"
   license "Apache-2.0"
 
@@ -21,14 +21,14 @@ class CloudformationGuard < Formula
   def install
     system "cargo", "install", *std_cargo_args(path: "guard")
 
-    generate_completions_from_executable(bin"cfn-guard", "completions", "--shell")
+    generate_completions_from_executable(bin/"cfn-guard", "completions", "--shell")
 
     doc.install "docs"
     doc.install "guard-examples"
   end
 
   test do
-    (testpath"test-template.yml").write <<~YAML
+    (testpath/"test-template.yml").write <<~YAML
       ---
       AWSTemplateFormatVersion: '2010-09-09'
       Resources:
@@ -41,12 +41,12 @@ class CloudformationGuard < Formula
             AvailabilityZone : us-east-1b
     YAML
 
-    (testpath"test-ruleset").write <<~EOS
+    (testpath/"test-ruleset").write <<~EOS
       rule migrated_rules {
         let aws_ec2_volume = Resources.*[ Type == "AWS::EC2::Volume" ]
         %aws_ec2_volume.Properties.Size == 99
       }
     EOS
-    system bin"cfn-guard", "validate", "-r", "test-ruleset", "-d", "test-template.yml"
+    system bin/"cfn-guard", "validate", "-r", "test-ruleset", "-d", "test-template.yml"
   end
 end

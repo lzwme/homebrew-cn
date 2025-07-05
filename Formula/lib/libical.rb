@@ -1,14 +1,14 @@
 class Libical < Formula
   desc "Implementation of iCalendar protocols and data formats"
-  homepage "https:libical.github.iolibical"
-  url "https:github.comlibicallibicalreleasesdownloadv3.0.20libical-3.0.20.tar.gz"
+  homepage "https://libical.github.io/libical/"
+  url "https://ghfast.top/https://github.com/libical/libical/releases/download/v3.0.20/libical-3.0.20.tar.gz"
   sha256 "e73de92f5a6ce84c1b00306446b290a2b08cdf0a80988eca0a2c9d5c3510b4c2"
   license any_of: ["LGPL-2.1-or-later", "MPL-2.0"]
   revision 1
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -50,9 +50,9 @@ class Libical < Formula
   end
 
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #define LIBICAL_GLIB_UNSTABLE_API 1
-      #include <libical-gliblibical-glib.h>
+      #include <libical-glib/libical-glib.h>
       int main(int argc, char *argv[]) {
         ICalParser *parser = i_cal_parser_new();
         return 0;
@@ -60,8 +60,8 @@ class Libical < Formula
     C
 
     system ENV.cc, "test.c", "-o", "test", "-L#{lib}", "-lical-glib",
-                   "-I#{Formula["glib"].opt_include}glib-2.0",
-                   "-I#{Formula["glib"].opt_lib}glib-2.0include"
-    system ".test"
+                   "-I#{Formula["glib"].opt_include}/glib-2.0",
+                   "-I#{Formula["glib"].opt_lib}/glib-2.0/include"
+    system "./test"
   end
 end

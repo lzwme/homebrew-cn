@@ -2,10 +2,10 @@ cask "repoz" do
   version "5.5"
   sha256 "16bb83cad7f6a889cce9b6a4fa733e055469c7c918f7809cf87dbaebf862384f"
 
-  url "https:github.comawaescherRepoZreleasesdownloadv#{version}RepoZ.#{version}.pkg"
+  url "https://ghfast.top/https://github.com/awaescher/RepoZ/releases/download/v#{version}/RepoZ.#{version}.pkg"
   name "RepoZ"
   desc "Zero-conf git repository hub"
-  homepage "https:github.comawaescherRepoZ"
+  homepage "https://github.com/awaescher/RepoZ"
 
   livecheck do
     url :url
@@ -19,8 +19,8 @@ cask "repoz" do
   uninstall pkgutil: "net.sodacore.RepoZ"
 
   zap trash: [
-    "~.configRepoZ",
-    "~.configsodacore studios",
-    "~LibraryPreferencesnet.sodacore.repoz.plist",
+    "~/.config/RepoZ",
+    "~/.config/sodacore studios",
+    "~/Library/Preferences/net.sodacore.repoz.plist",
   ]
 end

@@ -1,10 +1,10 @@
 class AwsSsoCli < Formula
   desc "Securely manage AWS API credentials using AWS SSO"
-  homepage "https:synfinatic.github.ioaws-sso-cli"
-  url "https:github.comsynfinaticaws-sso-cliarchiverefstagsv2.0.3.tar.gz"
+  homepage "https://synfinatic.github.io/aws-sso-cli/"
+  url "https://ghfast.top/https://github.com/synfinatic/aws-sso-cli/archive/refs/tags/v2.0.3.tar.gz"
   sha256 "7ebb5d64260ac43d9f70c5f9ef2d04567006df4458dd94a27cb53178956c2eb3"
   license "GPL-3.0-only"
-  head "https:github.comsynfinaticaws-sso-cli.git", branch: "main"
+  head "https://github.com/synfinatic/aws-sso-cli.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "8eea421dbbe3524c366b98590ed2984f0adbed717ff2078042786e04cfe78b7d"
@@ -25,12 +25,12 @@ class AwsSsoCli < Formula
       -X main.Tag=#{version}
       -X main.CommitID=#{tap.user}
     ]
-    system "go", "build", *std_go_args(ldflags:, output: bin"aws-sso"), ".cmdaws-sso"
+    system "go", "build", *std_go_args(ldflags:, output: bin/"aws-sso"), "./cmd/aws-sso"
   end
 
   test do
-    assert_match "AWS SSO CLI Version #{version}", shell_output("#{bin}aws-sso version")
+    assert_match "AWS SSO CLI Version #{version}", shell_output("#{bin}/aws-sso version")
     assert_match "no AWS SSO providers have been configured",
-        shell_output("#{bin}aws-sso --config devnull 2>&1", 1)
+        shell_output("#{bin}/aws-sso --config /dev/null 2>&1", 1)
   end
 end

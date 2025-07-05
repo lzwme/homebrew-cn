@@ -2,10 +2,10 @@ cask "macskk" do
   version "2.1.1"
   sha256 "f9681067a27134439001d33c155c87293158a18ac4903aa64e515bfd8840d827"
 
-  url "https:github.commtgtomacSKKreleasesdownload#{version}macSKK-#{version}.dmg"
+  url "https://ghfast.top/https://github.com/mtgto/macSKK/releases/download/#{version}/macSKK-#{version}.dmg"
   name "macSKK"
   desc "SKK Input Method"
-  homepage "https:github.commtgtomacSKK"
+  homepage "https://github.com/mtgto/macSKK"
 
   depends_on macos: ">= :ventura"
 
@@ -22,7 +22,7 @@ cask "macskk" do
             ]
 
   zap trash: [
-    "~LibraryApplication Scriptsnet.mtgto.inputmethod.macSKK",
-    "~LibraryContainersnet.mtgto.inputmethod.macSKK",
+    "~/Library/Application Scripts/net.mtgto.inputmethod.macSKK",
+    "~/Library/Containers/net.mtgto.inputmethod.macSKK",
   ]
 end

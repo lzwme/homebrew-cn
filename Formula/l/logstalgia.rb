@@ -1,7 +1,7 @@
 class Logstalgia < Formula
   desc "Web server access log visualizer with retro style"
-  homepage "https:logstalgia.io"
-  url "https:github.comacaudwellLogstalgiareleasesdownloadlogstalgia-1.1.4logstalgia-1.1.4.tar.gz"
+  homepage "https://logstalgia.io/"
+  url "https://ghfast.top/https://github.com/acaudwell/Logstalgia/releases/download/logstalgia-1.1.4/logstalgia-1.1.4.tar.gz"
   sha256 "c049eff405e924035222edb26bcc6c7b5f00a08926abdb7b467e2449242790a9"
   license "GPL-3.0-or-later"
   revision 7
@@ -19,7 +19,7 @@ class Logstalgia < Formula
   end
 
   head do
-    url "https:github.comacaudwellLogstalgia.git", branch: "master"
+    url "https://github.com/acaudwell/Logstalgia.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -46,7 +46,7 @@ class Logstalgia < Formula
     ENV.cxx11 # to build with boost>=1.85
 
     system "autoreconf", "--force", "--install", "--verbose" if build.head?
-    system ".configure", "--disable-silent-rules",
+    system "./configure", "--disable-silent-rules",
                           "--with-boost-libdir=#{Formula["boost"].opt_lib}",
                           "--without-x",
                           *std_configure_args
@@ -55,6 +55,6 @@ class Logstalgia < Formula
   end
 
   test do
-    assert_match "Logstalgia v1.", shell_output("#{bin}logstalgia --help")
+    assert_match "Logstalgia v1.", shell_output("#{bin}/logstalgia --help")
   end
 end

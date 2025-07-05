@@ -1,12 +1,12 @@
 class Xcinfo < Formula
   desc "Tool to get information about and install available Xcode versions"
-  homepage "https:github.comxcodereleasesxcinfo"
+  homepage "https://github.com/xcodereleases/xcinfo"
   license "MIT"
-  head "https:github.comxcodereleasesxcinfo.git", branch: "master"
+  head "https://github.com/xcodereleases/xcinfo.git", branch: "master"
 
   stable do
     # TODO: Remove maximum_macos on the next release and update license
-    url "https:github.comxcodereleasesxcinfoarchiverefstags1.0.3.tar.gz"
+    url "https://ghfast.top/https://github.com/xcodereleases/xcinfo/archive/refs/tags/1.0.3.tar.gz"
     sha256 "b22f56193e4de8b71bbdaf99c17cec03f291d333d095311ad7aab74b5fb50c5a"
     depends_on maximum_macos: [:sonoma, :build]
   end
@@ -28,10 +28,10 @@ class Xcinfo < Formula
     system "swift", "build",
            "--configuration", "release",
            "--disable-sandbox"
-    bin.install ".buildreleasexcinfo"
+    bin.install ".build/release/xcinfo"
   end
 
   test do
-    assert_match "12.3 RC 1 (12C33)", shell_output("#{bin}xcinfo list --all --no-ansi")
+    assert_match "12.3 RC 1 (12C33)", shell_output("#{bin}/xcinfo list --all --no-ansi")
   end
 end

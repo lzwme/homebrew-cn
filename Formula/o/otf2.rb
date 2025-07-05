@@ -1,13 +1,13 @@
 class Otf2 < Formula
   desc "Open Trace Format 2 file handling library"
-  homepage "https:www.vi-hps.orgprojectsscore-p"
-  url "https:perftools.pages.jsc.fz-juelich.decicdotf2tagsotf2-3.1.1otf2-3.1.1.tar.gz"
+  homepage "https://www.vi-hps.org/projects/score-p/"
+  url "https://perftools.pages.jsc.fz-juelich.de/cicd/otf2/tags/otf2-3.1.1/otf2-3.1.1.tar.gz"
   sha256 "5a4e013a51ac4ed794fe35c55b700cd720346fda7f33ec84c76b86a5fb880a6e"
   license "BSD-3-Clause"
 
   livecheck do
     url :homepage
-    regex(href=.*?otf2[._-]v?(\d+(?:\.\d+)+)\.ti)
+    regex(/href=.*?otf2[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   bottle do
@@ -27,18 +27,18 @@ class Otf2 < Formula
   depends_on "python@3.13"
 
   resource "six" do
-    url "https:files.pythonhosted.orgpackages94e7b2c673351809dca68a0e064b6af791aa332cf192da575fd474ed7d6f16a2six-1.17.0.tar.gz"
+    url "https://files.pythonhosted.org/packages/94/e7/b2c673351809dca68a0e064b6af791aa332cf192da575fd474ed7d6f16a2/six-1.17.0.tar.gz"
     sha256 "ff70335d468e7eb6ec65b95b99d3a2836546063f63acc5171de367e834932a81"
   end
 
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
-    url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-big_sur.diff"
+    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-big_sur.diff"
     sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
     directory "build-frontend"
   end
   patch do
-    url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-big_sur.diff"
+    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-big_sur.diff"
     sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
     directory "build-backend"
   end
@@ -52,29 +52,29 @@ class Otf2 < Formula
       system python3, "-m", "pip", "install", *std_pip_args(prefix: libexec), "."
     end
 
-    ENV.prepend_path "PYTHONPATH", libexecLanguage::Python.site_packages(python3)
+    ENV.prepend_path "PYTHONPATH", libexec/Language::Python.site_packages(python3)
     ENV["PYTHON"] = which(python3)
-    ENV["SPHINX"] = Formula["sphinx-doc"].opt_bin"sphinx-build"
+    ENV["SPHINX"] = Formula["sphinx-doc"].opt_bin/"sphinx-build"
 
-    system ".configure", "--disable-silent-rules", *std_configure_args
+    system "./configure", "--disable-silent-rules", *std_configure_args
     system "make"
     system "make", "install"
 
-    inreplace pkgshare"otf2.summary", "#{Superenv.shims_path}", ""
+    inreplace pkgshare/"otf2.summary", "#{Superenv.shims_path}/", ""
   end
 
   def caveats
     <<~EOS
       To use the Python bindings, you will need to have the six library.
       One option is to use the bundled copy through your PYTHONPATH, e.g.
-        export PYTHONPATH=#{opt_libexecLanguage::Python.site_packages(python3)}
+        export PYTHONPATH=#{opt_libexec/Language::Python.site_packages(python3)}
     EOS
   end
 
   test do
-    cp_r share"docotf2examples", testpath
-    workdir = testpath"examples"
-    chdir "#{testpath}examples" do
+    cp_r share/"doc/otf2/examples", testpath
+    workdir = testpath/"examples"
+    chdir "#{testpath}/examples" do
       # build serial tests
       system "make", "serial", "mpi", "pthread"
       %w[
@@ -84,25 +84,25 @@ class Otf2 < Formula
         otf2_pthread_writer_example
         otf2_reader_example
         otf2_writer_example
-      ].each { |p| assert_path_exists workdirp }
-      system ".otf2_writer_example"
-      assert_path_exists workdir"ArchivePathArchiveName.otf2"
-      system ".otf2_reader_example"
-      rm_r(".ArchivePath")
-      system Formula["open-mpi"].opt_bin"mpirun", "-n", "2", ".otf2_mpi_writer_example"
-      assert_path_exists workdir"ArchivePathArchiveName.otf2"
+      ].each { |p| assert_path_exists workdir/p }
+      system "./otf2_writer_example"
+      assert_path_exists workdir/"ArchivePath/ArchiveName.otf2"
+      system "./otf2_reader_example"
+      rm_r("./ArchivePath")
+      system Formula["open-mpi"].opt_bin/"mpirun", "-n", "2", "./otf2_mpi_writer_example"
+      assert_path_exists workdir/"ArchivePath/ArchiveName.otf2"
       2.times do |n|
-        assert_path_exists workdir"ArchivePathArchiveName#{n}.evt"
+        assert_path_exists workdir/"ArchivePath/ArchiveName/#{n}.evt"
       end
-      system Formula["open-mpi"].opt_bin"mpirun", "-n", "2", ".otf2_mpi_reader_example"
-      system ".otf2_reader_example"
-      rm_r(".ArchivePath")
-      system ".otf2_pthread_writer_example"
-      assert_path_exists workdir"ArchivePathArchiveName.otf2"
-      system ".otf2_reader_example"
+      system Formula["open-mpi"].opt_bin/"mpirun", "-n", "2", "./otf2_mpi_reader_example"
+      system "./otf2_reader_example"
+      rm_r("./ArchivePath")
+      system "./otf2_pthread_writer_example"
+      assert_path_exists workdir/"ArchivePath/ArchiveName.otf2"
+      system "./otf2_reader_example"
     end
 
-    ENV.prepend_path "PYTHONPATH", libexecLanguage::Python.site_packages(python3)
+    ENV.prepend_path "PYTHONPATH", libexec/Language::Python.site_packages(python3)
     system python3, "-c", "import otf2"
   end
 end

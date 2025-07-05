@@ -1,7 +1,7 @@
 class Cppinsights < Formula
   desc "See your source code with the eyes of a compiler"
-  homepage "https:cppinsights.io"
-  url "https:github.comandreasfertigcppinsightsarchiverefstagsv_20.1.tar.gz"
+  homepage "https://cppinsights.io/"
+  url "https://ghfast.top/https://github.com/andreasfertig/cppinsights/archive/refs/tags/v_20.1.tar.gz"
   sha256 "672ecc237bc0231510025c9662c0f4880feebb076af46d16840adfb16e8fc4e8"
   license "MIT"
 
@@ -27,7 +27,7 @@ class Cppinsights < Formula
     ENV.llvm_clang if OS.mac? && DevelopmentTools.clang_build_version <= 1500
 
     args = %W[
-      -DINSIGHTS_LLVM_CONFIG=#{Formula["llvm"].opt_bin}llvm-config
+      -DINSIGHTS_LLVM_CONFIG=#{Formula["llvm"].opt_bin}/llvm-config
       -DINSIGHTS_USE_SYSTEM_INCLUDES=OFF
     ]
 
@@ -37,11 +37,11 @@ class Cppinsights < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~CPP
+    (testpath/"test.cpp").write <<~CPP
       int main() {
         int arr[5]{2,3,4};
       }
     CPP
-    assert_match "{2, 3, 4, 0, 0}", shell_output("#{bin}insights .test.cpp")
+    assert_match "{2, 3, 4, 0, 0}", shell_output("#{bin}/insights ./test.cpp")
   end
 end

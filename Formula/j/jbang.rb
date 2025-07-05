@@ -1,7 +1,7 @@
 class Jbang < Formula
   desc "Tool to create, edit and run self-contained source-only Java programs"
-  homepage "https:jbang.dev"
-  url "https:github.comjbangdevjbangreleasesdownloadv0.126.3jbang-0.126.3.zip"
+  homepage "https://jbang.dev/"
+  url "https://ghfast.top/https://github.com/jbangdev/jbang/releases/download/v0.126.3/jbang-0.126.3.zip"
   sha256 "c45ac143bc92f4b9d3d35742a4852db95cf8a25765a0aa4d705b236ae346c066"
   license "MIT"
 
@@ -18,13 +18,13 @@ class Jbang < Formula
 
   def install
     libexec.install Dir["*"]
-    inreplace "#{libexec}binjbang", ^abs_jbang_dir=.*, "abs_jbang_dir=#{libexec}bin"
-    bin.install_symlink libexec"binjbang"
+    inreplace "#{libexec}/bin/jbang", /^abs_jbang_dir=.*/, "abs_jbang_dir=#{libexec}/bin"
+    bin.install_symlink libexec/"bin/jbang"
   end
 
   test do
-    system bin"jbang", "init", "--template=cli", testpath"hello.java"
-    assert_match "hello made with jbang", (testpath"hello.java").read
-    assert_match version.to_s, shell_output("#{bin}jbang --version 2>&1")
+    system bin/"jbang", "init", "--template=cli", testpath/"hello.java"
+    assert_match "hello made with jbang", (testpath/"hello.java").read
+    assert_match version.to_s, shell_output("#{bin}/jbang --version 2>&1")
   end
 end

@@ -5,11 +5,11 @@ cask "wowup" do
   sha256 arm:   "3da6069b9dec9478ccaf6bf3ecb0363c4dbb8106c02f96c295d1f263a5dc18ae",
          intel: "6fae75ce3ecfccfe2ea4ed74ced97da06b10abbca6e79c0a4f61a12592953ed7"
 
-  url "https:github.comWowUpWowUpreleasesdownloadv#{version}WowUp-#{version}#{arch}.dmg",
-      verified: "github.comWowUpWowUp"
+  url "https://ghfast.top/https://github.com/WowUp/WowUp/releases/download/v#{version}/WowUp-#{version}#{arch}.dmg",
+      verified: "github.com/WowUp/WowUp/"
   name "WowUp"
   desc "World of Warcraft addon manager"
-  homepage "https:wowup.io"
+  homepage "https://wowup.io/"
 
   no_autobump! because: :requires_manual_review
 
@@ -21,9 +21,9 @@ cask "wowup" do
   uninstall quit: "io.wowup.jliddev"
 
   zap trash: [
-    "~LibraryApplication SupportWowUp",
-    "~LibraryLogsWowUp",
-    "~LibraryPreferencesio.wowup.jliddev.plist",
-    "~LibrarySaved Application Stateio.wowup.jliddev.savedState",
+    "~/Library/Application Support/WowUp",
+    "~/Library/Logs/WowUp",
+    "~/Library/Preferences/io.wowup.jliddev.plist",
+    "~/Library/Saved Application State/io.wowup.jliddev.savedState",
   ]
 end

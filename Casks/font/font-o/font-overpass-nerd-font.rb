@@ -2,9 +2,9 @@ cask "font-overpass-nerd-font" do
   version "3.4.0"
   sha256 "39e5a4c1ce400486ab6c11724a0997de6257231283923079134272ed4beeb843"
 
-  url "https:github.comryanoasisnerd-fontsreleasesdownloadv#{version}Overpass.zip"
+  url "https://ghfast.top/https://github.com/ryanoasis/nerd-fonts/releases/download/v#{version}/Overpass.zip"
   name "Overpass Nerd Font families (Overpass)"
-  homepage "https:github.comryanoasisnerd-fonts"
+  homepage "https://github.com/ryanoasis/nerd-fonts"
 
   livecheck do
     url :url

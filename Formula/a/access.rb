@@ -1,11 +1,11 @@
 class Access < Formula
   desc "Easiest way to request and grant access without leaving your terminal"
-  homepage "https:indent.com"
-  url "https:github.comindentapisaccess.git",
+  homepage "https://indent.com"
+  url "https://github.com/indentapis/access.git",
       tag:      "v0.10.13",
       revision: "b315c75e461e0a0cc0978960a80ba352ea8ff85a"
   license "Apache-2.0"
-  head "https:github.comindentapisaccess.git", branch: "main"
+  head "https://github.com/indentapis/access.git", branch: "main"
 
   no_autobump! because: :requires_manual_review
 
@@ -22,7 +22,7 @@ class Access < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "0a79bf2d2657b530ea0d6a6d2e56f209419ade6d3250ae506db41d000a72d9ca"
   end
 
-  # service sunset notice, https:web.archive.orgweb20240707220001https:indent.com
+  # service sunset notice, https://web.archive.org/web/20240707220001/https://indent.com/
   deprecate! date: "2024-07-07", because: :unmaintained
 
   depends_on "go" => :build
@@ -34,16 +34,16 @@ class Access < Formula
       -X main.GitVersion=#{Utils.git_head}
     ]
 
-    system "go", "build", *std_go_args(ldflags:), ".cmdaccess"
+    system "go", "build", *std_go_args(ldflags:), "./cmd/access"
 
     # Install shell completions
-    generate_completions_from_executable(bin"access", "completion")
+    generate_completions_from_executable(bin/"access", "completion")
   end
 
   test do
-    test_file = testpath"access.yaml"
+    test_file = testpath/"access.yaml"
     touch test_file
-    system bin"access", "config", "set", "space", "some-space"
+    system bin/"access", "config", "set", "space", "some-space"
     assert_equal "space: some-space", test_file.read.strip
   end
 end

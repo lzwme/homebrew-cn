@@ -1,10 +1,10 @@
 class Thriftgo < Formula
   desc "Implementation of thrift compiler in go language with plugin mechanism"
-  homepage "https:github.comcloudwegothriftgo"
-  url "https:github.comcloudwegothriftgoarchiverefstagsv0.4.2.tar.gz"
+  homepage "https://github.com/cloudwego/thriftgo"
+  url "https://ghfast.top/https://github.com/cloudwego/thriftgo/archive/refs/tags/v0.4.2.tar.gz"
   sha256 "da9045011f581e7298b7ceadc87799da16f129dece7831134ef99686cabee997"
   license "Apache-2.0"
-  head "https:github.comcloudwegothriftgo.git", branch: "main"
+  head "https://github.com/cloudwego/thriftgo.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "c720ab9c1f830deec42fba0c376e3953a8ff3e5860a41c9d0268d2fdb4567eaa"
@@ -23,10 +23,10 @@ class Thriftgo < Formula
   end
 
   test do
-    output = shell_output("#{bin}thriftgo --version 2>&1")
+    output = shell_output("#{bin}/thriftgo --version 2>&1")
     assert_match "thriftgo #{version}", output
 
-    thriftfile = testpath"test.thrift"
+    thriftfile = testpath/"test.thrift"
     thriftfile.write <<~THRIFT
       namespace go api
       struct Request {
@@ -39,8 +39,8 @@ class Thriftgo < Formula
           Response echo(1: Request req)
       }
     THRIFT
-    system bin"thriftgo", "-o=.", "-g=go", "test.thrift"
-    assert_path_exists testpath"api""test.go"
-    refute_predicate (testpath"api""test.go").size, :zero?
+    system bin/"thriftgo", "-o=.", "-g=go", "test.thrift"
+    assert_path_exists testpath/"api"/"test.go"
+    refute_predicate (testpath/"api"/"test.go").size, :zero?
   end
 end

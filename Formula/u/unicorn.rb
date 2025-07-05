@@ -1,13 +1,13 @@
 class Unicorn < Formula
   desc "Lightweight multi-architecture CPU emulation framework"
-  homepage "https:www.unicorn-engine.org"
-  url "https:github.comunicorn-engineunicornarchiverefstags2.1.3.tar.gz"
+  homepage "https://www.unicorn-engine.org/"
+  url "https://ghfast.top/https://github.com/unicorn-engine/unicorn/archive/refs/tags/2.1.3.tar.gz"
   sha256 "5572eecd903fff0e66694310ca438531243b18782ce331a4262eeb6f6ad675bc"
   license all_of: [
     "GPL-2.0-only",
     "GPL-2.0-or-later", # glib, qemu
   ]
-  head "https:github.comunicorn-engineunicorn.git", branch: "master"
+  head "https://github.com/unicorn-engine/unicorn.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "be54fd832159f1d3fda1b1c23e01f2f4a981df0b2832bf6dc3421fde20f8d2ba"
@@ -29,16 +29,16 @@ class Unicorn < Formula
   end
 
   test do
-    (testpath"test1.c").write <<~C
-      * Adapted from https:www.unicorn-engine.orgdocstutorial.html
+    (testpath/"test1.c").write <<~C
+      /* Adapted from https://www.unicorn-engine.org/docs/tutorial.html
        * shamelessly and without permission. This almost certainly needs
        * replacement, but for now it should be an OK placeholder
        * assertion that the libraries are intact and available.
-       *
+       */
 
       #include <stdio.h>
 
-      #include <unicornunicorn.h>
+      #include <unicorn/unicorn.h>
 
       #define X86_CODE32 "\x41\x4a"
       #define ADDRESS 0x1000000
@@ -73,6 +73,6 @@ class Unicorn < Formula
       }
     C
     system ENV.cc, "-o", "test1", "test1.c", "-pthread", "-lpthread", "-lm", "-L#{lib}", "-lunicorn"
-    system testpath"test1"
+    system testpath/"test1"
   end
 end

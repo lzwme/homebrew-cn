@@ -2,14 +2,14 @@ cask "github-copilot-for-xcode" do
   version "0.38.0"
   sha256 "78a326f9d1419397bdc839d4b53b3d65b05f85ee1501907bf567ea25f88b6ee9"
 
-  url "https:githubcopilotide.z13.web.core.windows.net#{version}GitHubCopilotForXcode.dmg",
-      verified: "githubcopilotide.z13.web.core.windows.net"
+  url "https://githubcopilotide.z13.web.core.windows.net/#{version}/GitHubCopilotForXcode.dmg",
+      verified: "githubcopilotide.z13.web.core.windows.net/"
   name "GitHub Copilot for Xcode"
   desc "Xcode extension for GitHub Copilot"
-  homepage "https:github.comgithubCopilotForXcode"
+  homepage "https://github.com/github/CopilotForXcode"
 
   livecheck do
-    url "https:githubcopilotide.z13.web.core.windows.netappcast.xml"
+    url "https://githubcopilotide.z13.web.core.windows.net/appcast.xml"
     strategy :sparkle do |items|
       items.find { |item| item.channel.nil? }&.short_version
     end
@@ -21,15 +21,15 @@ cask "github-copilot-for-xcode" do
   app "GitHub Copilot for Xcode.app"
 
   zap trash: [
-    "~LibraryApplication Scriptscom.github.CopilotForXcode.EditorExtension",
-    "~LibraryApplication ScriptsVEKTX9H2N7.group.com.github.CopilotForXcode",
-    "~LibraryApplication Supportcom.apple.sharedfilelistcom.apple.LSSharedFileList.ApplicationRecentDocumentscom.github.copilotforxcode.extensionservice.sfl*",
-    "~LibraryApplication Supportcom.github.CopilotForXcode",
-    "~LibraryContainerscom.github.CopilotForXcode.EditorExtension",
-    "~LibraryGroup ContainersVEKTX9H2N7.group.com.github.CopilotForXcode",
-    "~LibraryHTTPStoragescom.github.CopilotForXcode",
-    "~LibraryLogsGitHubCopilot",
-    "~LibraryPreferencescom.github.CopilotForXcode.plist",
-    "~LibraryPreferencesVEKTX9H2N7.group.com.github.CopilotForXcode.prefs.plist",
+    "~/Library/Application Scripts/com.github.CopilotForXcode.EditorExtension",
+    "~/Library/Application Scripts/VEKTX9H2N7.group.com.github.CopilotForXcode",
+    "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.github.copilotforxcode.extensionservice.sfl*",
+    "~/Library/Application Support/com.github.CopilotForXcode",
+    "~/Library/Containers/com.github.CopilotForXcode.EditorExtension",
+    "~/Library/Group Containers/VEKTX9H2N7.group.com.github.CopilotForXcode",
+    "~/Library/HTTPStorages/com.github.CopilotForXcode",
+    "~/Library/Logs/GitHubCopilot",
+    "~/Library/Preferences/com.github.CopilotForXcode.plist",
+    "~/Library/Preferences/VEKTX9H2N7.group.com.github.CopilotForXcode.prefs.plist",
   ]
 end

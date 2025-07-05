@@ -1,10 +1,10 @@
 class Koji < Formula
   desc "Interactive CLI for creating conventional commits"
-  homepage "https:github.comcococonsciouskoji"
-  url "https:github.comcococonsciouskojiarchiverefstagsv3.2.0.tar.gz"
+  homepage "https://github.com/cococonscious/koji"
+  url "https://ghfast.top/https://github.com/cococonscious/koji/archive/refs/tags/v3.2.0.tar.gz"
   sha256 "648b9d47de121895a79e3d963f5fc6e781d82a1531eeec6b3aa91db5951e058a"
   license "MIT"
-  head "https:github.comcococonsciouskoji.git", branch: "main"
+  head "https://github.com/cococonscious/koji.git", branch: "main"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "6ad589d2ccaf89bbc8e56b42cc1ea81757a914c29447f77f6862ef84f3a5a064"
@@ -28,13 +28,13 @@ class Koji < Formula
 
     system "cargo", "install", *std_cargo_args
 
-    generate_completions_from_executable(bin"koji", "completions")
+    generate_completions_from_executable(bin/"koji", "completions")
   end
 
   test do
-    require "utilslinkage"
+    require "utils/linkage"
 
-    assert_match version.to_s, shell_output("#{bin}koji --version")
+    assert_match version.to_s, shell_output("#{bin}/koji --version")
 
     require "pty"
     ENV["TERM"] = "xterm"
@@ -46,7 +46,7 @@ class Koji < Formula
     touch "foo"
     system "git", "add", "foo"
 
-    PTY.spawn(bin"koji") do |r, w, _pid|
+    PTY.spawn(bin/"koji") do |r, w, _pid|
       w.puts "feat"
       w.puts "test"
       w.puts "test"
@@ -57,15 +57,15 @@ class Koji < Formula
         output = r.read
         assert_match "Does this change affect any open issues", output
       rescue Errno::EIO
-        # GNULinux raises EIO when read is done on closed pty
+        # GNU/Linux raises EIO when read is done on closed pty
       end
     end
 
     [
-      Formula["openssl@3"].opt_libshared_library("libssl"),
-      Formula["openssl@3"].opt_libshared_library("libcrypto"),
+      Formula["openssl@3"].opt_lib/shared_library("libssl"),
+      Formula["openssl@3"].opt_lib/shared_library("libcrypto"),
     ].each do |library|
-      assert Utils.binary_linked_to_library?(bin"koji", library),
+      assert Utils.binary_linked_to_library?(bin/"koji", library),
              "No linkage with #{library.basename}! Cargo is likely using a vendored version."
     end
   end

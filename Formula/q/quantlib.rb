@@ -1,7 +1,7 @@
 class Quantlib < Formula
   desc "Library for quantitative finance"
-  homepage "https:www.quantlib.org"
-  url "https:github.comlballabioQuantLibreleasesdownloadv1.38QuantLib-1.38.tar.gz"
+  homepage "https://www.quantlib.org/"
+  url "https://ghfast.top/https://github.com/lballabio/QuantLib/releases/download/v1.38/QuantLib-1.38.tar.gz"
   sha256 "7280ffd0b81901f8a9eb43bb4229e4de78384fc8bb2d9dcfb5aa8cf8b257b439"
   license "BSD-3-Clause"
 
@@ -16,7 +16,7 @@ class Quantlib < Formula
   end
 
   head do
-    url "https:github.comlballabioquantlib.git", branch: "master"
+    url "https://github.com/lballabio/quantlib.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -27,10 +27,10 @@ class Quantlib < Formula
 
   def install
     ENV.cxx11
-    (buildpath"QuantLib").install buildpath.children if build.stable?
+    (buildpath/"QuantLib").install buildpath.children if build.stable?
     cd "QuantLib" do
-      system ".autogen.sh" if build.head?
-      system ".configure", "--disable-dependency-tracking",
+      system "./autogen.sh" if build.head?
+      system "./configure", "--disable-dependency-tracking",
                             "--prefix=#{prefix}",
                             "--with-lispdir=#{elisp}",
                             "--enable-intraday"
@@ -40,6 +40,6 @@ class Quantlib < Formula
   end
 
   test do
-    system bin"quantlib-config", "--prefix=#{prefix}", "--libs", "--cflags"
+    system bin/"quantlib-config", "--prefix=#{prefix}", "--libs", "--cflags"
   end
 end

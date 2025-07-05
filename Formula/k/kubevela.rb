@@ -1,11 +1,11 @@
 class Kubevela < Formula
   desc "Application Platform based on Kubernetes and Open Application Model"
-  homepage "https:kubevela.io"
-  url "https:github.comkubevelakubevela.git",
+  homepage "https://kubevela.io"
+  url "https://github.com/kubevela/kubevela.git",
       tag:      "v1.10.3",
       revision: "ef9b6f3cc10a4b6871b5698ca41fea3f6b3bcaec"
   license "Apache-2.0"
-  head "https:github.comkubevelakubevela.git", branch: "master"
+  head "https://github.com/kubevela/kubevela.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "0cabadfd79656b59d2eb525d54b4653664062a35f75b0cb4f862d2105d514b26"
@@ -23,26 +23,26 @@ class Kubevela < Formula
     ENV["CGO_ENABLED"] = "0"
     ldflags = %W[
       -s -w
-      -X github.comoam-devkubevelaversion.VelaVersion=#{version}
-      -X github.comoam-devkubevelaversion.GitRevision=#{Utils.git_head}
+      -X github.com/oam-dev/kubevela/version.VelaVersion=#{version}
+      -X github.com/oam-dev/kubevela/version.GitRevision=#{Utils.git_head}
     ]
 
-    system "go", "build", *std_go_args(output: bin"vela", ldflags:), ".referencescmdcli"
+    system "go", "build", *std_go_args(output: bin/"vela", ldflags:), "./references/cmd/cli"
 
-    generate_completions_from_executable(bin"vela", "completion", shells: [:bash, :zsh])
+    generate_completions_from_executable(bin/"vela", "completion", shells: [:bash, :zsh])
   end
 
   test do
     # Should error out as vela up need kubeconfig
-    status_output = shell_output("#{bin}vela up 2>&1", 1)
+    status_output = shell_output("#{bin}/vela up 2>&1", 1)
     assert_match "error: either app name or file should be set", status_output
 
-    (testpath"kube-config").write <<~YAML
+    (testpath/"kube-config").write <<~YAML
       apiVersion: v1
       clusters:
       - cluster:
           certificate-authority-data: test
-          server: http:127.0.0.1:8080
+          server: http://127.0.0.1:8080
         name: test
       contexts:
       - context:
@@ -58,8 +58,8 @@ class Kubevela < Formula
           token: test
     YAML
 
-    ENV["KUBECONFIG"] = testpath"kube-config"
-    version_output = shell_output("#{bin}vela version 2>&1")
+    ENV["KUBECONFIG"] = testpath/"kube-config"
+    version_output = shell_output("#{bin}/vela version 2>&1")
     assert_match "Version: #{version}", version_output
   end
 end

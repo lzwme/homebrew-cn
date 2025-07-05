@@ -2,12 +2,12 @@ cask "font-sarpanch" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefonts.git",
-      verified:  "github.comgooglefonts",
+  url "https://github.com/google/fonts.git",
+      verified:  "github.com/google/fonts",
       branch:    "main",
-      only_path: "oflsarpanch"
+      only_path: "ofl/sarpanch"
   name "Sarpanch"
-  homepage "https:fonts.google.comspecimenSarpanch"
+  homepage "https://fonts.google.com/specimen/Sarpanch"
 
   font "Sarpanch-Black.ttf"
   font "Sarpanch-Bold.ttf"

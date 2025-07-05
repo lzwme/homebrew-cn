@@ -1,11 +1,11 @@
 class IcalBuddy < Formula
   desc "Get events and tasks from the macOS calendar database"
-  homepage "https:hasseg.orgicalBuddy"
-  url "https:github.comdkalutaicalBuddy64archiverefstagsv1.10.1.tar.gz"
+  homepage "https://hasseg.org/icalBuddy/"
+  url "https://ghfast.top/https://github.com/dkaluta/icalBuddy64/archive/refs/tags/v1.10.1.tar.gz"
   sha256 "aff42b809044efbf9a1f7df7598e9e110c1c4de0a4c27ddccde5ea325ddc4b77"
   license "MIT"
   revision 1
-  head "https:github.comdkalutaicalBuddy64.git", branch: "master"
+  head "https://github.com/dkaluta/icalBuddy64.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -29,7 +29,7 @@ class IcalBuddy < Formula
       # Allow native builds rather than only x86_64
       s.gsub! "-arch x86_64", ""
 
-      # https:github.comdkalutaicalBuddy64pull5
+      # https://github.com/dkaluta/icalBuddy64/pull/5
       s.gsub! "-force_cpusubtype_ALL", ""
 
       # Keep the build date (used in manpages) reproducible
@@ -52,6 +52,6 @@ class IcalBuddy < Formula
   test do
     # Testing of other calendar functionality requires granting calendar access
     # to the program (or the terminal emulator).
-    assert_match "Non-lossy ASCII", shell_output("#{bin}icalBuddy strEncodings")
+    assert_match "Non-lossy ASCII", shell_output("#{bin}/icalBuddy strEncodings")
   end
 end

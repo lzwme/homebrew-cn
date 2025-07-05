@@ -1,14 +1,14 @@
 class Adios2 < Formula
   desc "Next generation of ADIOS developed in the Exascale Computing Program"
-  homepage "https:adios2.readthedocs.io"
-  url "https:github.comornladiosADIOS2archiverefstagsv2.10.2.tar.gz"
+  homepage "https://adios2.readthedocs.io"
+  url "https://ghfast.top/https://github.com/ornladios/ADIOS2/archive/refs/tags/v2.10.2.tar.gz"
   sha256 "14cf0bcd94772194bce0f2c0e74dba187965d1cffd12d45f801c32929158579e"
   license "Apache-2.0"
-  head "https:github.comornladiosADIOS2.git", branch: "master"
+  head "https://github.com/ornladios/ADIOS2.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -57,8 +57,8 @@ class Adios2 < Formula
   def install
     ENV.llvm_clang if DevelopmentTools.clang_build_version == 1400
 
-    # fix `includeadios2commonADIOSConfig.h` file audit failure
-    inreplace "sourceadios2commonADIOSConfig.h.in" do |s|
+    # fix `include/adios2/common/ADIOSConfig.h` file audit failure
+    inreplace "source/adios2/common/ADIOSConfig.h.in" do |s|
       s.gsub! ": @CMAKE_C_COMPILER@", ": #{ENV.cc}"
       s.gsub! ": @CMAKE_CXX_COMPILER@", ": #{ENV.cxx}"
     end
@@ -83,7 +83,7 @@ class Adios2 < Formula
       -DCMAKE_DISABLE_FIND_PACKAGE_LibFFI=TRUE
       -DCMAKE_DISABLE_FIND_PACKAGE_NVSTREAM=TRUE
       -DPython_EXECUTABLE=#{which(python3)}
-      -DCMAKE_INSTALL_PYTHONDIR=#{prefixLanguage::Python.site_packages(python3)}
+      -DCMAKE_INSTALL_PYTHONDIR=#{prefix/Language::Python.site_packages(python3)}
       -DADIOS2_BUILD_TESTING=OFF
       -DADIOS2_BUILD_EXAMPLES=OFF
       -DADIOS2_USE_EXTERNAL_DEPENDENCIES=ON
@@ -93,18 +93,18 @@ class Adios2 < Formula
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 
-    (pkgshare"test").install "exampleshellobpWriterbpWriter.cpp"
-    (pkgshare"test").install "exampleshellobpWriterbpWriter.py"
+    (pkgshare/"test").install "examples/hello/bpWriter/bpWriter.cpp"
+    (pkgshare/"test").install "examples/hello/bpWriter/bpWriter.py"
   end
 
   test do
-    adios2_config_flags = Utils.safe_popen_read(bin"adios2-config", "--cxx").chomp.split
-    system "mpic++", pkgshare"testbpWriter.cpp", *adios2_config_flags
-    system ".a.out"
-    assert_path_exists testpath"myVector_cpp.bp"
+    adios2_config_flags = Utils.safe_popen_read(bin/"adios2-config", "--cxx").chomp.split
+    system "mpic++", pkgshare/"test/bpWriter.cpp", *adios2_config_flags
+    system "./a.out"
+    assert_path_exists testpath/"myVector_cpp.bp"
 
     system python3, "-c", "import adios2"
-    system python3, pkgshare"testbpWriter.py"
-    assert_path_exists testpath"bpWriter-py.bp"
+    system python3, pkgshare/"test/bpWriter.py"
+    assert_path_exists testpath/"bpWriter-py.bp"
   end
 end

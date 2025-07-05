@@ -2,11 +2,11 @@ cask "db-browser-for-sqlite" do
   version "3.13.1"
   sha256 "a641cfbfcc2ce609f07de44a35134dab53485ecc18e6d9afa297b514d74bd75e"
 
-  url "https:github.comsqlitebrowsersqlitebrowserreleasesdownloadv#{version}DB.Browser.for.SQLite-v#{version}.dmg",
-      verified: "github.comsqlitebrowsersqlitebrowser"
+  url "https://ghfast.top/https://github.com/sqlitebrowser/sqlitebrowser/releases/download/v#{version}/DB.Browser.for.SQLite-v#{version}.dmg",
+      verified: "github.com/sqlitebrowser/sqlitebrowser/"
   name "DB Browser for SQLite"
   desc "Browser for SQLite databases"
-  homepage "https:sqlitebrowser.org"
+  homepage "https://sqlitebrowser.org/"
 
   livecheck do
     url :url
@@ -15,11 +15,13 @@ cask "db-browser-for-sqlite" do
 
   no_autobump! because: :requires_manual_review
 
+  depends_on macos: ">= :high_sierra"
+
   app "DB Browser for SQLite.app"
 
   zap trash: [
-    "~LibraryPreferencescom.sqlitebrowser.sqlitebrowser.plist",
-    "~LibraryPreferencesnet.sourceforge.sqlitebrowser.plist",
-    "~LibrarySaved Application Statenet.sourceforge.sqlitebrowser.savedState",
+    "~/Library/Preferences/com.sqlitebrowser.sqlitebrowser.plist",
+    "~/Library/Preferences/net.sourceforge.sqlitebrowser.plist",
+    "~/Library/Saved Application State/net.sourceforge.sqlitebrowser.savedState",
   ]
 end

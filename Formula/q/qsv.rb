@@ -1,10 +1,10 @@
 class Qsv < Formula
   desc "Ultra-fast CSV data-wrangling toolkit"
-  homepage "https:qsv.dathere.com"
-  url "https:github.comdathereqsvarchiverefstags5.1.0.tar.gz"
+  homepage "https://qsv.dathere.com/"
+  url "https://ghfast.top/https://github.com/dathere/qsv/archive/refs/tags/5.1.0.tar.gz"
   sha256 "9bed0898cce8de237a0a04f8d28947720dbb6d0b2919cf297007a1a57569dfd2"
   license any_of: ["MIT", "Unlicense"]
-  head "https:github.comdathereqsv.git", branch: "master"
+  head "https://github.com/dathere/qsv.git", branch: "master"
 
   # There can be a notable gap between when a version is tagged and a
   # corresponding release is created, so we check the "latest" release instead
@@ -34,18 +34,18 @@ class Qsv < Formula
 
   def install
     # Use explicit CPU target instead of "native" to avoid brittle behavior
-    # see discussion at https:github.combriansmithringdiscussions2528#discussioncomment-13196576
+    # see discussion at https://github.com/briansmith/ring/discussions/2528#discussioncomment-13196576
     ENV["RUSTFLAGS"] = "-C target-cpu=apple-m1" if OS.mac? && Hardware::CPU.arm?
 
     system "cargo", "install", *std_cargo_args, "--features", "apply,luau,feature_capable"
-    bash_completion.install "contribcompletionsexamplesqsv.bash" => "qsv"
-    fish_completion.install "contribcompletionsexamplesqsv.fish"
-    zsh_completion.install "contribcompletionsexamplesqsv.zsh" => "_qsv"
+    bash_completion.install "contrib/completions/examples/qsv.bash" => "qsv"
+    fish_completion.install "contrib/completions/examples/qsv.fish"
+    zsh_completion.install "contrib/completions/examples/qsv.zsh" => "_qsv"
   end
 
   test do
-    (testpath"test.csv").write("first header,second header")
-    assert_equal <<~EOS, shell_output("#{bin}qsv stats --dataset-stats test.csv")
+    (testpath/"test.csv").write("first header,second header")
+    assert_equal <<~EOS, shell_output("#{bin}/qsv stats --dataset-stats test.csv")
       field,type,is_ascii,sum,min,max,range,sort_order,sortiness,min_length,max_length,sum_length,avg_length,stddev_length,variance_length,cv_length,mean,sem,geometric_mean,harmonic_mean,stddev,variance,cv,nullcount,max_precision,sparsity,qsv__value
       first header,NULL,,,,,,,,,,,,,,,,,,,,,,0,,,
       second header,NULL,,,,,,,,,,,,,,,,,,,,,,0,,,

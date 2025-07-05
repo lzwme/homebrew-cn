@@ -1,10 +1,10 @@
 class Opkssh < Formula
   desc "Enables SSH to be used with OpenID Connect"
-  homepage "https:eprint.iacr.org2023296"
-  url "https:github.comopenpubkeyopkssharchiverefstagsv0.7.0.tar.gz"
+  homepage "https://eprint.iacr.org/2023/296"
+  url "https://ghfast.top/https://github.com/openpubkey/opkssh/archive/refs/tags/v0.7.0.tar.gz"
   sha256 "27f46aeab36e7cb67bba4f945eb95e6f0f137b6276dcb5a8d46dc1ee8c68b0cb"
   license "Apache-2.0"
-  head "https:github.comopenpubkeyopkssh.git", branch: "main"
+  head "https://github.com/openpubkey/opkssh.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "19ec70ead93ad2656e47a728fd668013b96dd03572096a4c3e109453acb78524"
@@ -26,9 +26,9 @@ class Opkssh < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}opkssh --version")
+    assert_match version.to_s, shell_output("#{bin}/opkssh --version")
 
-    output = shell_output("#{bin}opkssh add brew brew brew 2>&1", 1)
+    output = shell_output("#{bin}/opkssh add brew brew brew 2>&1", 1)
     assert_match "Failed to add to policy", output
   end
 end

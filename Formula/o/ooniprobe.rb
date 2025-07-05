@@ -1,10 +1,10 @@
 class Ooniprobe < Formula
   desc "Network interference detection tool"
-  homepage "https:ooni.org"
-  url "https:github.comooniprobe-cliarchiverefstagsv3.26.0.tar.gz"
+  homepage "https://ooni.org/"
+  url "https://ghfast.top/https://github.com/ooni/probe-cli/archive/refs/tags/v3.26.0.tar.gz"
   sha256 "5250e159c599912b9a5fde5a385a6e1a32a9a657afd7282586778bf65cfbd4b7"
   license "GPL-3.0-or-later"
-  head "https:github.comooniprobe-cli.git", branch: "master"
+  head "https://github.com/ooni/probe-cli.git", branch: "master"
 
   livecheck do
     url :stable
@@ -25,17 +25,17 @@ class Ooniprobe < Formula
   depends_on "tor"
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), ".cmdooniprobe"
-    (var"ooniprobe").mkpath
+    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/ooniprobe"
+    (var/"ooniprobe").mkpath
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}ooniprobe version")
+    assert_match version.to_s, shell_output("#{bin}/ooniprobe version")
 
     # failed to sufficiently increase receive buffer size (was: 208 kiB, wanted: 2048 kiB, got: 416 kiB).
     return if OS.linux?
 
-    (testpath"config.json").write <<~JSON
+    (testpath/"config.json").write <<~JSON
       {
         "_version": 3,
         "_informed_consent": false,
@@ -57,9 +57,9 @@ class Ooniprobe < Formula
       }
     JSON
 
-    mkdir_p "#{testpath}ooni_home"
-    ENV["OONI_HOME"] = "#{testpath}ooni_home"
-    Open3.popen3(bin"ooniprobe", "--config", testpath"config.json", "run", "websites", "--batch") do |_, _, stderr|
+    mkdir_p "#{testpath}/ooni_home"
+    ENV["OONI_HOME"] = "#{testpath}/ooni_home"
+    Open3.popen3(bin/"ooniprobe", "--config", testpath/"config.json", "run", "websites", "--batch") do |_, _, stderr|
       stderr.to_a.each do |line|
         j_line = JSON.parse(line)
         assert_equal j_line["level"], "info"

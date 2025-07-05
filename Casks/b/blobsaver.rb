@@ -5,15 +5,15 @@ cask "blobsaver" do
   sha256 arm:   "bd80e6cf9d1d68a91ebdc4a8023c87203da2db63863b2a16845150f7e990f02f",
          intel: "2820b333dbf7df9ddc92132a099496b533cabf11c151b4c875f7cd4f385ba70c"
 
-  url "https:github.comairsquaredblobsaverreleasesdownloadv#{version}blobsaver-#{arch}-#{version}.dmg"
+  url "https://ghfast.top/https://github.com/airsquared/blobsaver/releases/download/v#{version}/blobsaver-#{arch}-#{version}.dmg"
   name "blobsaver"
   desc "GUI for automatically saving SHSH blobs"
-  homepage "https:github.comairsquaredblobsaver"
+  homepage "https://github.com/airsquared/blobsaver"
 
   no_autobump! because: :requires_manual_review
 
   app "blobsaver.app"
-  binary "#{appdir}blobsaver.appContentsMacOSblobsaver"
+  binary "#{appdir}/blobsaver.app/Contents/MacOS/blobsaver"
 
-  zap trash: "~LibraryPreferencesairsquared.blobsaver.app.plist"
+  zap trash: "~/Library/Preferences/airsquared.blobsaver.app.plist"
 end

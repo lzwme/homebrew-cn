@@ -1,7 +1,7 @@
 class GitlabCiLocal < Formula
   desc "Run gitlab pipelines locally as shell executor or docker executor"
-  homepage "https:github.comfirecowgitlab-ci-local"
-  url "https:registry.npmjs.orggitlab-ci-local-gitlab-ci-local-4.61.0.tgz"
+  homepage "https://github.com/firecow/gitlab-ci-local"
+  url "https://registry.npmjs.org/gitlab-ci-local/-/gitlab-ci-local-4.61.0.tgz"
   sha256 "66367d6e77c88a538d78c7cf862bd3099c9da85e0255f7eb5a30bc69dc8a58a5"
   license "MIT"
 
@@ -19,11 +19,11 @@ class GitlabCiLocal < Formula
 
   def install
     system "npm", "install", *std_npm_args
-    bin.install_symlink libexec.glob("bin*")
+    bin.install_symlink libexec.glob("bin/*")
   end
 
   test do
-    (testpath".gitlab-ci.yml").write <<~YAML
+    (testpath/".gitlab-ci.yml").write <<~YAML
       ---
       stages:
         - build
@@ -51,9 +51,9 @@ class GitlabCiLocal < Formula
     system "git", "commit", "-m", "'some message'"
     system "git", "config", "user.name", "BrewTestBot"
     system "git", "config", "user.email", "BrewTestBot@test.com"
-    rm ".gitconfig"
+    rm ".git/config"
 
-    (testpath".gitconfig").write <<~EOS
+    (testpath/".git/config").write <<~EOS
       [core]
         repositoryformatversion = 0
         filemode = true
@@ -62,14 +62,14 @@ class GitlabCiLocal < Formula
         ignorecase = true
         precomposeunicode = true
       [remote "origin"]
-        url = git@github.com:firecowgitlab-ci-local.git
-        fetch = +refsheads*:refsremotesorigin*
+        url = git@github.com:firecow/gitlab-ci-local.git
+        fetch = +refs/heads/*:refs/remotes/origin/*
       [branch "master"]
         remote = origin
-        merge = refsheadsmaster
+        merge = refs/heads/master
     EOS
 
-    assert_match(name\s*?description\s*?stage\s*?when\s*?allow_failure\s*?needs\n,
-        shell_output("#{bin}gitlab-ci-local --list"))
+    assert_match(/name\s*?description\s*?stage\s*?when\s*?allow_failure\s*?needs\n/,
+        shell_output("#{bin}/gitlab-ci-local --list"))
   end
 end

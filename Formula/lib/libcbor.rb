@@ -1,7 +1,7 @@
 class Libcbor < Formula
   desc "CBOR protocol implementation for C and others"
-  homepage "https:github.comPJKlibcbor"
-  url "https:github.comPJKlibcborarchiverefstagsv0.12.0.tar.gz"
+  homepage "https://github.com/PJK/libcbor"
+  url "https://ghfast.top/https://github.com/PJK/libcbor/archive/refs/tags/v0.12.0.tar.gz"
   sha256 "5368add109db559f546d7ed10f440f39a273b073daa8da4abffc83815069fa7f"
   license "MIT"
 
@@ -18,9 +18,9 @@ class Libcbor < Formula
   depends_on "cmake" => :build
 
   # Fix to cmake 4 compatibility
-  # PR ref: https:github.comPJKlibcborpull355
+  # PR ref: https://github.com/PJK/libcbor/pull/355
   patch do
-    url "https:github.comPJKlibcborcommit1183292d4695300785b272532c1e02d68840e4b8.patch?full_index=1"
+    url "https://github.com/PJK/libcbor/commit/1183292d4695300785b272532c1e02d68840e4b8.patch?full_index=1"
     sha256 "54c1984fa401a4bf85e9d9cfd1500bfd1f3106cf39e1f72cfdf762dd30643098"
   end
 
@@ -36,7 +36,7 @@ class Libcbor < Formula
   end
 
   test do
-    (testpath"example.c").write <<~C
+    (testpath/"example.c").write <<~C
       #include "cbor.h"
       #include <stdio.h>
 
@@ -48,6 +48,6 @@ class Libcbor < Formula
     C
 
     system ENV.cc, "-std=c99", "example.c", "-o", "test", "-L#{lib}", "-lcbor"
-    system ".test"
+    system "./test"
   end
 end

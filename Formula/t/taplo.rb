@@ -1,10 +1,10 @@
 class Taplo < Formula
   desc "TOML toolkit written in Rust"
-  homepage "https:taplo.tamasfe.dev"
-  url "https:github.comtamasfetaploarchiverefstags0.10.0.tar.gz"
+  homepage "https://taplo.tamasfe.dev"
+  url "https://ghfast.top/https://github.com/tamasfe/taplo/archive/refs/tags/0.10.0.tar.gz"
   sha256 "c2f7b3234fc62000689a476b462784db4d1bb2be6edcc186654b211f691efaf8"
   license "MIT"
-  head "https:github.comtamasfetaplo.git", branch: "master"
+  head "https://github.com/tamasfe/taplo.git", branch: "master"
 
   # There can be a notable gap between when a version is tagged and a
   # corresponding release is created, so we check releases instead of the Git
@@ -13,7 +13,7 @@ class Taplo < Formula
   # to identify the correct version.
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
     strategy :github_releases
   end
 
@@ -30,21 +30,21 @@ class Taplo < Formula
   depends_on "rust" => :build
 
   def install
-    system "cargo", "install", "--features", "lsp", *std_cargo_args(path: "cratestaplo-cli")
+    system "cargo", "install", "--features", "lsp", *std_cargo_args(path: "crates/taplo-cli")
   end
 
   test do
-    test_file = testpath"invalid.toml"
-    (testpath"invalid.toml").write <<~TOML
+    test_file = testpath/"invalid.toml"
+    (testpath/"invalid.toml").write <<~TOML
       # INVALID TOML DOC
       fruit = []
 
       [[fruit]] # Not allowed
     TOML
 
-    output = shell_output("#{bin}taplo lint #{test_file} 2>&1", 1)
+    output = shell_output("#{bin}/taplo lint #{test_file} 2>&1", 1)
     assert_match "expected array of tables", output
 
-    assert_match version.to_s, shell_output("#{bin}taplo --version")
+    assert_match version.to_s, shell_output("#{bin}/taplo --version")
   end
 end

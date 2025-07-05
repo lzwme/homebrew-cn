@@ -1,10 +1,10 @@
 class DerAscii < Formula
   desc "Reversible DER and BER pretty-printer"
-  homepage "https:github.comgoogleder-ascii"
-  url "https:github.comgoogleder-asciiarchiverefstagsv0.6.0.tar.gz"
+  homepage "https://github.com/google/der-ascii"
+  url "https://ghfast.top/https://github.com/google/der-ascii/archive/refs/tags/v0.6.0.tar.gz"
   sha256 "4e5e25b2d3ade22f0dc87264945ece6138858d3c6803143cf39c66183a74c9c5"
   license "Apache-2.0"
-  head "https:github.comgoogleder-ascii.git", branch: "main"
+  head "https://github.com/google/der-ascii.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "c6b91afa38381784b23ba412b76988d4ee4c88be080ff8cc83e34925a9a5b8f3"
@@ -18,16 +18,16 @@ class DerAscii < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(output: bin"ascii2der", ldflags: "-s -w"), ".cmdascii2der"
-    system "go", "build", *std_go_args(output: bin"der2ascii", ldflags: "-s -w"), ".cmdder2ascii"
+    system "go", "build", *std_go_args(output: bin/"ascii2der", ldflags: "-s -w"), "./cmd/ascii2der"
+    system "go", "build", *std_go_args(output: bin/"der2ascii", ldflags: "-s -w"), "./cmd/der2ascii"
 
     pkgshare.install "samples"
   end
 
   test do
-    cp pkgshare"samplescert.txt", testpath
-    system bin"ascii2der", "-i", "cert.txt", "-o", "cert.der"
-    output = shell_output("#{bin}der2ascii -i cert.der")
+    cp pkgshare/"samples/cert.txt", testpath
+    system bin/"ascii2der", "-i", "cert.txt", "-o", "cert.der"
+    output = shell_output("#{bin}/der2ascii -i cert.der")
     assert_match "Internet Widgits Pty Ltd", output
   end
 end

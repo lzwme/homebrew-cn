@@ -1,10 +1,10 @@
 class Goku < Formula
   desc "HTTP load testing tool"
-  homepage "https:github.comjcaromiqgoku"
-  url "https:github.comjcaromiqgokuarchiverefstagsv2.0.0.tar.gz"
+  homepage "https://github.com/jcaromiq/goku"
+  url "https://ghfast.top/https://github.com/jcaromiq/goku/archive/refs/tags/v2.0.0.tar.gz"
   sha256 "52a95fa94b808d2c93bc875d78278abc2d9bb9da373d6782f0d4e08394eb6c99"
   license "MIT"
-  head "https:github.comjcaromiqgoku.git", branch: "main"
+  head "https://github.com/jcaromiq/goku.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "6b0433fb67b204f465869f46247110db4ce45d825e8113a7eb19e10ef6c41c58"
@@ -23,9 +23,9 @@ class Goku < Formula
   end
 
   test do
-    output = shell_output("#{bin}goku --target https:httpbin.orgget")
-    assert_match "kamehameha to https:httpbin.orgget with 1 concurrent clients and 1 total iterations", output
+    output = shell_output("#{bin}/goku --target https://httpbin.org/get")
+    assert_match "kamehameha to https://httpbin.org/get with 1 concurrent clients and 1 total iterations", output
 
-    assert_match version.to_s, shell_output("#{bin}goku --version")
+    assert_match version.to_s, shell_output("#{bin}/goku --version")
   end
 end

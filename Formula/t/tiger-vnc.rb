@@ -1,7 +1,7 @@
 class TigerVnc < Formula
   desc "High-performance, platform-neutral implementation of VNC"
-  homepage "https:tigervnc.org"
-  url "https:github.comTigerVNCtigervncarchiverefstagsv1.15.0.tar.gz"
+  homepage "https://tigervnc.org/"
+  url "https://ghfast.top/https://github.com/TigerVNC/tigervnc/archive/refs/tags/v1.15.0.tar.gz"
   sha256 "7f231906801e89f09a212e86701f3df1722e36767d6055a4e619390570548537"
   license "GPL-2.0-or-later"
 
@@ -50,7 +50,7 @@ class TigerVnc < Formula
     turbo = Formula["jpeg-turbo"]
     args = %W[
       -DJPEG_INCLUDE_DIR=#{turbo.include}
-      -DJPEG_LIBRARY=#{turbo.lib}#{shared_library("libjpeg")}
+      -DJPEG_LIBRARY=#{turbo.lib}/#{shared_library("libjpeg")}
     ]
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
@@ -58,7 +58,7 @@ class TigerVnc < Formula
   end
 
   test do
-    output = shell_output("#{bin}vncviewer -h 2>&1", 1)
-    assert_match(TigerVNC [Vv]iewer v#{version}, output)
+    output = shell_output("#{bin}/vncviewer -h 2>&1", 1)
+    assert_match(/TigerVNC [Vv]iewer v#{version}/, output)
   end
 end

@@ -1,14 +1,14 @@
 class OpenalSoft < Formula
   desc "Implementation of the OpenAL 3D audio API"
-  homepage "https:openal-soft.org"
-  url "https:openal-soft.orgopenal-releasesopenal-soft-1.24.3.tar.bz2"
+  homepage "https://openal-soft.org/"
+  url "https://openal-soft.org/openal-releases/openal-soft-1.24.3.tar.bz2"
   sha256 "cb5e6197a1c0da0edcf2a81024953cc8fa8545c3b9474e48c852af709d587892"
   license "LGPL-2.0-or-later"
-  head "https:github.comkcatopenal-soft.git", branch: "master"
+  head "https://github.com/kcat/openal-soft.git", branch: "master"
 
   livecheck do
     url :homepage
-    regex(href=.*?openal-soft[._-]v?(\d+(?:\.\d+)+)\.ti)
+    regex(/href=.*?openal-soft[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   bottle do
@@ -28,7 +28,7 @@ class OpenalSoft < Formula
 
   def install
     # Please don't re-enable example building. See:
-    # https:github.comHomebrewhomebrewissues38274
+    # https://github.com/Homebrew/homebrew/issues/38274
     args = %W[
       -DALSOFT_BACKEND_PORTAUDIO=OFF
       -DALSOFT_BACKEND_PULSEAUDIO=OFF
@@ -43,9 +43,9 @@ class OpenalSoft < Formula
   end
 
   test do
-    (testpath"test.c").write <<~C
-      #include "ALal.h"
-      #include "ALalc.h"
+    (testpath/"test.c").write <<~C
+      #include "AL/al.h"
+      #include "AL/alc.h"
       int main() {
         ALCdevice *device;
         device = alcOpenDevice(0);

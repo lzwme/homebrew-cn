@@ -2,13 +2,13 @@ cask "toolreleases" do
   version "1.5.0,59"
   sha256 "2097bafa9cfe648c259e5c81f98137e3e38217838deccfe262460773807dd8df"
 
-  url "https:github.comDeveloperMarisToolReleasesreleasesdownloadv#{version.csv.first}ToolReleases_v#{version.csv.first}.b#{version.csv.second}.zip"
+  url "https://ghfast.top/https://github.com/DeveloperMaris/ToolReleases/releases/download/v#{version.csv.first}/ToolReleases_v#{version.csv.first}.b#{version.csv.second}.zip"
   name "ToolReleases"
   desc "Utility to notify about the latest Apple tool releases (including Beta releases)"
-  homepage "https:github.comDeveloperMarisToolReleases"
+  homepage "https://github.com/DeveloperMaris/ToolReleases"
 
   livecheck do
-    url "https:developermaris.github.ioToolReleasesappcast_v2.xml"
+    url "https://developermaris.github.io/ToolReleases/appcast_v2.xml"
     strategy :sparkle
   end
 
@@ -26,7 +26,7 @@ cask "toolreleases" do
             login_item: "ToolReleases"
 
   zap trash: [
-    "~LibraryCachescom.developermaris.ToolReleases",
-    "~LibraryPreferencescom.developermaris.ToolReleases.plist",
+    "~/Library/Caches/com.developermaris.ToolReleases",
+    "~/Library/Preferences/com.developermaris.ToolReleases.plist",
   ]
 end

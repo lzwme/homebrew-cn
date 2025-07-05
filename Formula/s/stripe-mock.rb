@@ -1,7 +1,7 @@
 class StripeMock < Formula
   desc "Mock HTTP server that responds like the real Stripe API"
-  homepage "https:github.comstripestripe-mock"
-  url "https:github.comstripestripe-mockarchiverefstagsv0.195.0.tar.gz"
+  homepage "https://github.com/stripe/stripe-mock"
+  url "https://ghfast.top/https://github.com/stripe/stripe-mock/archive/refs/tags/v0.195.0.tar.gz"
   sha256 "830a70cdbefc14b77f1c397ed29b401ea79a8f2bfdc2bbf9708a901e17208559"
   license "MIT"
 
@@ -21,18 +21,18 @@ class StripeMock < Formula
   end
 
   service do
-    run [opt_bin"stripe-mock", "-http-port", "12111", "-https-port", "12112"]
+    run [opt_bin/"stripe-mock", "-http-port", "12111", "-https-port", "12112"]
     keep_alive successful_exit: false
     working_dir var
-    log_path var"logstripe-mock.log"
-    error_log_path var"logstripe-mock.log"
+    log_path var/"log/stripe-mock.log"
+    error_log_path var/"log/stripe-mock.log"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}stripe-mock version")
+    assert_match version.to_s, shell_output("#{bin}/stripe-mock version")
 
-    sock = testpath"stripe-mock.sock"
-    pid = spawn(bin"stripe-mock", "-http-unix", sock)
+    sock = testpath/"stripe-mock.sock"
+    pid = spawn(bin/"stripe-mock", "-http-unix", sock)
 
     sleep 5
     assert_path_exists sock

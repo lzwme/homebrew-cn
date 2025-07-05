@@ -1,10 +1,10 @@
 class Xcenv < Formula
   desc "Xcode version manager"
-  homepage "https:github.comxcenvxcenv"
-  url "https:github.comxcenvxcenvarchiverefstagsv1.2.0.tar.gz"
+  homepage "https://github.com/xcenv/xcenv"
+  url "https://ghfast.top/https://github.com/xcenv/xcenv/archive/refs/tags/v1.2.0.tar.gz"
   sha256 "bbb47394f9edbdabba886e5ca0155f0ef6aeae07b8a7564c652c8e260fac6d9f"
   license "MIT"
-  head "https:github.comxcenvxcenv.git", branch: "master"
+  head "https://github.com/xcenv/xcenv.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -20,6 +20,6 @@ class Xcenv < Formula
   end
 
   test do
-    shell_output("eval \"$(#{bin}xcenv init -)\" && xcenv versions")
+    shell_output("eval \"$(#{bin}/xcenv init -)\" && xcenv versions")
   end
 end

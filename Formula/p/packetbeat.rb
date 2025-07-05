@@ -1,11 +1,11 @@
 class Packetbeat < Formula
   desc "Lightweight Shipper for Network Data"
-  homepage "https:www.elastic.coproductsbeatspacketbeat"
-  url "https:github.comelasticbeats.git",
+  homepage "https://www.elastic.co/products/beats/packetbeat"
+  url "https://github.com/elastic/beats.git",
       tag:      "v9.0.3",
       revision: "c394cb8e6470384d0c93b85f96c281dd6ec6592a"
   license "Apache-2.0"
-  head "https:github.comelasticbeats.git", branch: "master"
+  head "https://github.com/elastic/beats.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "95fca8cd8c4b06afcd42068e1f959b34b48d94c842445611f28c23b39ae750e5"
@@ -27,8 +27,8 @@ class Packetbeat < Formula
     rm_r("x-pack")
 
     # remove requirements.txt files so that build fails if venv is used.
-    # currently only needed by docstests
-    rm buildpath.glob("**requirements.txt")
+    # currently only needed by docs/tests
+    rm buildpath.glob("**/requirements.txt")
 
     cd "packetbeat" do
       # don't build docs because we aren't installing them and allows avoiding venv
@@ -40,26 +40,26 @@ class Packetbeat < Formula
       inreplace "packetbeat.yml", "packetbeat.interfaces.device: any", "packetbeat.interfaces.device: en0"
 
       pkgetc.install Dir["packetbeat.*"], "fields.yml"
-      (libexec"bin").install "packetbeat"
-      prefix.install "_metakibana"
+      (libexec/"bin").install "packetbeat"
+      prefix.install "_meta/kibana"
     end
 
-    (bin"packetbeat").write <<~SH
-      #!binsh
-      exec #{libexec}binpacketbeat \
-        --path.config #{etc}packetbeat \
-        --path.data #{var}libpacketbeat \
+    (bin/"packetbeat").write <<~SH
+      #!/bin/sh
+      exec #{libexec}/bin/packetbeat \
+        --path.config #{etc}/packetbeat \
+        --path.data #{var}/lib/packetbeat \
         --path.home #{prefix} \
-        --path.logs #{var}logpacketbeat \
+        --path.logs #{var}/log/packetbeat \
         "$@"
     SH
 
-    chmod 0555, bin"packetbeat" # generate_completions_from_executable fails otherwise
-    generate_completions_from_executable(bin"packetbeat", "completion", shells: [:bash, :zsh])
+    chmod 0555, bin/"packetbeat" # generate_completions_from_executable fails otherwise
+    generate_completions_from_executable(bin/"packetbeat", "completion", shells: [:bash, :zsh])
   end
 
   service do
-    run opt_bin"packetbeat"
+    run opt_bin/"packetbeat"
   end
 
   test do
@@ -68,7 +68,7 @@ class Packetbeat < Formula
     else
       "eth"
     end
-    assert_match "0: #{eth}0", shell_output("#{bin}packetbeat devices")
-    assert_match version.to_s, shell_output("#{bin}packetbeat version")
+    assert_match "0: #{eth}0", shell_output("#{bin}/packetbeat devices")
+    assert_match version.to_s, shell_output("#{bin}/packetbeat version")
   end
 end

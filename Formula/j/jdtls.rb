@@ -2,16 +2,16 @@ class Jdtls < Formula
   include Language::Python::Shebang
 
   desc "Java language specific implementation of the Language Server Protocol"
-  homepage "https:github.comeclipse-jdtlseclipse.jdt.ls"
-  url "https:www.eclipse.orgdownloadsdownload.php?file=jdtlsmilestones1.48.0jdt-language-server-1.48.0-202506271502.tar.gz"
+  homepage "https://github.com/eclipse-jdtls/eclipse.jdt.ls"
+  url "https://www.eclipse.org/downloads/download.php?file=/jdtls/milestones/1.48.0/jdt-language-server-1.48.0-202506271502.tar.gz"
   version "1.48.0"
   sha256 "b0a7fa1240e2caf1296d59ea709c525d4a631fbefda49e7182e07e00c1de62c9"
   license "EPL-2.0"
   version_scheme 1
 
   livecheck do
-    url "https:download.eclipse.orgjdtlsmilestones"
-    regex(%r{href=.*?v?(\d+(?:\.\d+)+)?["' >]}i)
+    url "https://download.eclipse.org/jdtls/milestones/"
+    regex(%r{href=.*?/v?(\d+(?:\.\d+)+)/?["' >]}i)
   end
 
   no_autobump! because: :incompatible_version_format
@@ -25,8 +25,8 @@ class Jdtls < Formula
 
   def install
     libexec.install buildpath.glob("*") - buildpath.glob("config*win*")
-    rewrite_shebang detected_python_shebang, libexec"binjdtls"
-    (bin"jdtls").write_env_script libexec"binjdtls", Language::Java.overridable_java_home_env
+    rewrite_shebang detected_python_shebang, libexec/"bin/jdtls"
+    (bin/"jdtls").write_env_script libexec/"bin/jdtls", Language::Java.overridable_java_home_env
   end
 
   test do
@@ -44,10 +44,10 @@ class Jdtls < Formula
       }
     JSON
 
-    Open3.popen3(bin"jdtls", "-configuration", testpath"config", "-data", testpath"data") do |stdin, stdout, _e, w|
+    Open3.popen3(bin/"jdtls", "-configuration", testpath/"config", "-data", testpath/"data") do |stdin, stdout, _e, w|
       stdin.write "Content-Length: #{json.size}\r\n\r\n#{json}"
       sleep 3
-      assert_match(^Content-Length: \d+i, stdout.readline)
+      assert_match(/^Content-Length: \d+/i, stdout.readline)
       Process.kill("KILL", w.pid)
     end
   end

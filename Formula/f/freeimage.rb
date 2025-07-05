@@ -1,11 +1,11 @@
 class Freeimage < Formula
   desc "Library for FreeImage, a dependency-free graphics library"
-  homepage "https:sourceforge.netprojectsfreeimage"
-  url "https:downloads.sourceforge.netprojectfreeimageSource%20Distribution3.18.0FreeImage3180.zip"
+  homepage "https://sourceforge.net/projects/freeimage/"
+  url "https://downloads.sourceforge.net/project/freeimage/Source%20Distribution/3.18.0/FreeImage3180.zip"
   version "3.18.0"
   sha256 "f41379682f9ada94ea7b34fe86bf9ee00935a3147be41b6569c9605a53e438fd"
   license "FreeImage"
-  head "https:svn.code.sf.netpfreeimagesvnFreeImagetrunk"
+  head "https://svn.code.sf.net/p/freeimage/svn/FreeImage/trunk/"
 
   no_autobump! because: :requires_manual_review
 
@@ -27,19 +27,19 @@ class Freeimage < Formula
 
   patch do
     on_macos do
-      url "https:raw.githubusercontent.comHomebrewformula-patches4dcf528freeimage3.17.0.patch"
+      url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/4dcf528/freeimage/3.17.0.patch"
       sha256 "8ef390fece4d2166d58e739df76b5e7996c879efbff777a8a94bcd1dd9a313e2"
     end
     on_linux do
-      url "https:raw.githubusercontent.comHomebrewformula-patches696e313c1f89925a8d04f00282d3b6c204a64f48freeimage3.17.0-linux.patch"
+      url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/696e313c1f89925a8d04f00282d3b6c204a64f48/freeimage/3.17.0-linux.patch"
       sha256 "537a4045d31a3ce1c3bab2736d17b979543758cf2081e97fff4d72786f1830dc"
     end
   end
 
   def install
     # Temporary workaround for ARM. Upstream tracking issue:
-    # https:sourceforge.netpfreeimagebugs325
-    # https:sourceforge.netpfreeimagediscussion36111threadcc4cd71c6e
+    # https://sourceforge.net/p/freeimage/bugs/325/
+    # https://sourceforge.net/p/freeimage/discussion/36111/thread/cc4cd71c6e/
     ENV["CFLAGS"] = "-O3 -fPIC -fexceptions -fvisibility=hidden -DPNG_ARM_NEON_OPT=0" if Hardware::CPU.arm?
 
     # Fix compile with newer Clang
@@ -54,7 +54,7 @@ class Freeimage < Formula
   end
 
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include <stdlib.h>
       #include <FreeImage.h>
       int main() {
@@ -64,6 +64,6 @@ class Freeimage < Formula
       }
     C
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lfreeimage", "-o", "test"
-    system ".test"
+    system "./test"
   end
 end

@@ -1,14 +1,14 @@
 class Mpich < Formula
   desc "Implementation of the MPI Message Passing Interface standard"
-  homepage "https:www.mpich.org"
-  url "https:www.mpich.orgstaticdownloads4.3.1mpich-4.3.1.tar.gz"
-  mirror "https:fossies.orglinuxmiscmpich-4.3.1.tar.gz"
+  homepage "https://www.mpich.org/"
+  url "https://www.mpich.org/static/downloads/4.3.1/mpich-4.3.1.tar.gz"
+  mirror "https://fossies.org/linux/misc/mpich-4.3.1.tar.gz"
   sha256 "acc11cb2bdc69678dc8bba747c24a28233c58596f81f03785bf2b7bb7a0ef7dc"
   license "mpich2"
 
   livecheck do
-    url "https:www.mpich.orgstaticdownloads"
-    regex(%r{href=.*?v?(\d+(?:\.\d+)+)?["' >]}i)
+    url "https://www.mpich.org/static/downloads/"
+    regex(%r{href=.*?v?(\d+(?:\.\d+)+)/?["' >]}i)
   end
 
   bottle do
@@ -22,7 +22,7 @@ class Mpich < Formula
   end
 
   head do
-    url "https:github.compmodelsmpich.git", branch: "main"
+    url "https://github.com/pmodels/mpich.git", branch: "main"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -39,7 +39,7 @@ class Mpich < Formula
 
   on_linux do
     # Can't be enabled on mac:
-    # https:lists.mpich.orgpipermaildiscuss2021-May006192.html
+    # https://lists.mpich.org/pipermail/discuss/2021-May/006192.html
     depends_on "libfabric"
   end
 
@@ -50,7 +50,7 @@ class Mpich < Formula
       # ensure that the consistent set of autotools built by homebrew is used to
       # build MPICH, otherwise very bizarre build errors can occur
       ENV["MPICH_AUTOTOOLS_DIR"] = HOMEBREW_PREFIX + "bin"
-      system ".autogen.sh"
+      system "./autogen.sh"
     end
 
     args = %W[
@@ -69,19 +69,19 @@ class Mpich < Formula
     ]
 
     if OS.linux?
-      # Use libfabric https:lists.mpich.orgpipermaildiscuss2021-January006092.html
+      # Use libfabric https://lists.mpich.org/pipermail/discuss/2021-January/006092.html
       args << "--with-device=ch4:ofi"
       args << "--with-libfabric=#{Formula["libfabric"].opt_prefix}"
     end
 
-    system ".configure", *args
+    system "./configure", *args
 
     system "make"
     system "make", "install"
   end
 
   test do
-    (testpath"hello.c").write <<~C
+    (testpath/"hello.c").write <<~C
       #include <mpi.h>
       #include <stdio.h>
 
@@ -93,16 +93,16 @@ class Mpich < Formula
         MPI_Comm_size(MPI_COMM_WORLD, &size);
         MPI_Comm_rank(MPI_COMM_WORLD, &rank);
         MPI_Get_processor_name(name, &nameLen);
-        printf("[%d%d] Hello, world! My name is %s.\\n", rank, size, name);
+        printf("[%d/%d] Hello, world! My name is %s.\\n", rank, size, name);
         MPI_Finalize();
         return 0;
       }
     C
-    system bin"mpicc", "hello.c", "-o", "hello"
-    system ".hello"
-    system bin"mpirun", "-np", "4", ".hello"
+    system bin/"mpicc", "hello.c", "-o", "hello"
+    system "./hello"
+    system bin/"mpirun", "-np", "4", "./hello"
 
-    (testpath"hellof.f90").write <<~FORTRAN
+    (testpath/"hellof.f90").write <<~FORTRAN
       program hello
       include 'mpif.h'
       integer rank, size, ierror, tag, status(MPI_STATUS_SIZE)
@@ -113,8 +113,8 @@ class Mpich < Formula
       call MPI_FINALIZE(ierror)
       end
     FORTRAN
-    system bin"mpif90", "hellof.f90", "-o", "hellof"
-    system ".hellof"
-    system bin"mpirun", "-np", "4", ".hellof"
+    system bin/"mpif90", "hellof.f90", "-o", "hellof"
+    system "./hellof"
+    system bin/"mpirun", "-np", "4", "./hellof"
   end
 end

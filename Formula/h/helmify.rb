@@ -1,10 +1,10 @@
 class Helmify < Formula
   desc "Create Helm chart from Kubernetes yaml"
-  homepage "https:github.comarttorhelmify"
-  url "https:github.comarttorhelmifyarchiverefstagsv0.4.18.tar.gz"
+  homepage "https://github.com/arttor/helmify"
+  url "https://ghfast.top/https://github.com/arttor/helmify/archive/refs/tags/v0.4.18.tar.gz"
   sha256 "d5d30c59f29355d8e6f0722ea863c0e72d8958d75206d948500defa36b57d430"
   license "MIT"
-  head "https:github.comarttorhelmify.git", branch: "main"
+  head "https://github.com/arttor/helmify.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "e9292bcbd63dec204dfdfb1ee1445c40af97365351b1013b612f7b8c2d288118"
@@ -24,11 +24,11 @@ class Helmify < Formula
       -X main.date=#{time.iso8601}
       -X main.commit=#{tap.user}
     ]
-    system "go", "build", *std_go_args(ldflags:), ".cmdhelmify"
+    system "go", "build", *std_go_args(ldflags:), "./cmd/helmify"
   end
 
   test do
-    test_service = testpath"service.yml"
+    test_service = testpath/"service.yml"
     test_service.write <<~YAML
       apiVersion: v1
       kind: Service
@@ -45,10 +45,10 @@ class Helmify < Formula
       kubernetesClusterDomain: cluster.local
     YAML
 
-    system "cat #{test_service} | #{bin}helmify brewtest"
-    assert_path_exists testpath"brewtestChart.yaml"
-    assert_equal expected_values_yaml, (testpath"brewtestvalues.yaml").read
+    system "cat #{test_service} | #{bin}/helmify brewtest"
+    assert_path_exists testpath/"brewtest/Chart.yaml"
+    assert_equal expected_values_yaml, (testpath/"brewtest/values.yaml").read
 
-    assert_match version.to_s, shell_output("#{bin}helmify --version")
+    assert_match version.to_s, shell_output("#{bin}/helmify --version")
   end
 end

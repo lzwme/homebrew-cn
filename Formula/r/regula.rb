@@ -1,11 +1,11 @@
 class Regula < Formula
-  desc "Checks infrastructure as code templates using Open Policy AgentRego"
-  homepage "https:regula.dev"
-  url "https:github.comfugueregula.git",
+  desc "Checks infrastructure as code templates using Open Policy Agent/Rego"
+  homepage "https://regula.dev/"
+  url "https://github.com/fugue/regula.git",
       tag:      "v3.2.1",
       revision: "fed1e441b187504a5928e2999a6210b88279139c"
   license "Apache-2.0"
-  head "https:github.comfugueregula.git", branch: "master"
+  head "https://github.com/fugue/regula.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -29,17 +29,17 @@ class Regula < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.comfugueregulav3pkgversion.Version=#{version}
-      -X github.comfugueregulav3pkgversion.GitCommit=#{Utils.git_short_head}
+      -X github.com/fugue/regula/v3/pkg/version.Version=#{version}
+      -X github.com/fugue/regula/v3/pkg/version.GitCommit=#{Utils.git_short_head}
     ]
 
     system "go", "build", *std_go_args(ldflags:)
 
-    generate_completions_from_executable(bin"regula", "completion")
+    generate_completions_from_executable(bin/"regula", "completion")
   end
 
   test do
-    (testpath"infratest.tf").write <<~HCL
+    (testpath/"infra/test.tf").write <<~HCL
       resource "aws_s3_bucket" "foo-bucket" {
         region        = "us-east-1"
         bucket        = "test"
@@ -52,8 +52,8 @@ class Regula < Formula
       }
     HCL
 
-    assert_match "Found 10 problems", shell_output(bin"regula run infra", 1)
+    assert_match "Found 10 problems", shell_output(bin/"regula run infra", 1)
 
-    assert_match version.to_s, shell_output(bin"regula version")
+    assert_match version.to_s, shell_output(bin/"regula version")
   end
 end

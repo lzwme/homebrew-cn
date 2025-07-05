@@ -1,10 +1,10 @@
 class Cidr < Formula
   desc "CLI to perform various actions on CIDR ranges"
-  homepage "https:github.combschaatsbergencidr"
-  url "https:github.combschaatsbergencidrarchiverefstagsv2.2.0.tar.gz"
+  homepage "https://github.com/bschaatsbergen/cidr"
+  url "https://ghfast.top/https://github.com/bschaatsbergen/cidr/archive/refs/tags/v2.2.0.tar.gz"
   sha256 "caee614f119ec7383bc9a9dc04a688b4b058d15106f70f523d04c8773d2fa086"
   license "MIT"
-  head "https:github.combschaatsbergencidr.git", branch: "main"
+  head "https://github.com/bschaatsbergen/cidr.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "f92c6bdc12d20451f4b3d33a119c6d446945034759e752fa265594b92b8a3c0e"
@@ -22,15 +22,15 @@ class Cidr < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.combschaatsbergencidrcmd.version=#{version}
+      -X github.com/bschaatsbergen/cidr/cmd.version=#{version}
     ]
     system "go", "build", *std_go_args(ldflags:)
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}cidr --version")
-    assert_equal "65536\n", shell_output("#{bin}cidr count 10.0.0.016")
-    assert_equal "1\n", shell_output("#{bin}cidr count 10.0.0.032")
-    assert_equal "false\n", shell_output("#{bin}cidr overlaps 10.106.147.024 10.106.149.023")
+    assert_match version.to_s, shell_output("#{bin}/cidr --version")
+    assert_equal "65536\n", shell_output("#{bin}/cidr count 10.0.0.0/16")
+    assert_equal "1\n", shell_output("#{bin}/cidr count 10.0.0.0/32")
+    assert_equal "false\n", shell_output("#{bin}/cidr overlaps 10.106.147.0/24 10.106.149.0/23")
   end
 end

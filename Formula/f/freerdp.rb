@@ -1,7 +1,7 @@
 class Freerdp < Formula
   desc "X11 implementation of the Remote Desktop Protocol (RDP)"
-  homepage "https:www.freerdp.com"
-  url "https:github.comFreeRDPFreeRDPreleasesdownload3.16.0freerdp-3.16.0.tar.gz"
+  homepage "https://www.freerdp.com/"
+  url "https://ghfast.top/https://github.com/FreeRDP/FreeRDP/releases/download/3.16.0/freerdp-3.16.0.tar.gz"
   sha256 "385af54245560493698730b688b5e6e5d56d5c7ecf2fa7c1d7cedfde8a4ba456"
   license "Apache-2.0"
 
@@ -16,7 +16,7 @@ class Freerdp < Formula
   end
 
   head do
-    url "https:github.comFreeRDPFreeRDP.git", branch: "master"
+    url "https://github.com/FreeRDP/FreeRDP.git", branch: "master"
     depends_on xcode: :build
   end
 
@@ -67,10 +67,10 @@ class Freerdp < Formula
     ]
 
     # Native macOS client and server implementations are unmaintained and use APIs that are obsolete on Sequoia.
-    # Ref: https:github.comFreeRDPFreeRDPissues10558
+    # Ref: https://github.com/FreeRDP/FreeRDP/issues/10558
     if OS.mac? && MacOS.version >= :sequoia
       # As a workaround, force X11 shadow server implementation. Can use -DWITH_SHADOW=OFF if it doesn't work
-      inreplace "servershadowCMakeLists.txt", "add_subdirectory(Mac)", "add_subdirectory(X11)"
+      inreplace "server/shadow/CMakeLists.txt", "add_subdirectory(Mac)", "add_subdirectory(X11)"
 
       args += ["-DWITH_CLIENT_MAC=OFF", "-DWITH_PLATFORM_SERVER=OFF"]
     end
@@ -101,7 +101,7 @@ class Freerdp < Formula
   test do
     return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
 
-    success = `#{bin}xfreerdp --version` # not using system as expected non-zero exit code
+    success = `#{bin}/xfreerdp --version` # not using system as expected non-zero exit code
     details = $CHILD_STATUS
     raise "Unexpected exit code #{$CHILD_STATUS} while running xfreerdp" if !success && details.exitstatus != 128
   end

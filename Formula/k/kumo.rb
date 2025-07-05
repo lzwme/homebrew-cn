@@ -1,13 +1,13 @@
 class Kumo < Formula
   desc "Word Clouds in Java"
-  homepage "https:github.comkennycasonkumo"
-  url "https:search.maven.orgremotecontent?filepath=comkennycasonkumo-cli1.28kumo-cli-1.28.jar"
+  homepage "https://github.com/kennycason/kumo"
+  url "https://search.maven.org/remotecontent?filepath=com/kennycason/kumo-cli/1.28/kumo-cli-1.28.jar"
   sha256 "43e4e2ea9da62a2230deed9151d8484f80bd6ae5fef304eaadf3301378f45fb6"
   license "MIT"
 
   livecheck do
-    url "https:search.maven.orgremotecontent?filepath=comkennycasonkumo-climaven-metadata.xml"
-    regex(%r{<version>v?(\d+(?:\.\d+)+)<version>}i)
+    url "https://search.maven.org/remotecontent?filepath=com/kennycason/kumo-cli/maven-metadata.xml"
+    regex(%r{<version>v?(\d+(?:\.\d+)+)</version>}i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -21,11 +21,11 @@ class Kumo < Formula
 
   def install
     libexec.install "kumo-cli-#{version}.jar"
-    bin.write_jar_script libexec"kumo-cli-#{version}.jar", "kumo"
+    bin.write_jar_script libexec/"kumo-cli-#{version}.jar", "kumo"
   end
 
   test do
-    system bin"kumo", "-i", "https:wikipedia.org", "-o", testpath"wikipedia.png"
-    assert_path_exists testpath"wikipedia.png", "Wordcloud was not generated!"
+    system bin/"kumo", "-i", "https://wikipedia.org", "-o", testpath/"wikipedia.png"
+    assert_path_exists testpath/"wikipedia.png", "Wordcloud was not generated!"
   end
 end

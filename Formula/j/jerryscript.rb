@@ -1,10 +1,10 @@
 class Jerryscript < Formula
   desc "Ultra-lightweight JavaScript engine for the Internet of Things"
-  homepage "https:jerryscript.net"
-  url "https:github.comjerryscript-projectjerryscriptarchiverefstagsv3.0.0.tar.gz"
+  homepage "https://jerryscript.net"
+  url "https://ghfast.top/https://github.com/jerryscript-project/jerryscript/archive/refs/tags/v3.0.0.tar.gz"
   sha256 "4d586d922ba575d95482693a45169ebe6cb539c4b5a0d256a6651a39e47bf0fc"
   license "Apache-2.0"
-  head "https:github.comjerryscript-projectjerryscript.git", branch: "master"
+  head "https://github.com/jerryscript-project/jerryscript.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "2c9278894af0e7dd27da2735af8ed66408de529fe2b896c9308ff2ffe10b695e"
@@ -19,9 +19,9 @@ class Jerryscript < Formula
   depends_on "cmake" => :build
   depends_on "pkgconf" => :test
 
-  # rpath patch, upstream pr ref, https:github.comjerryscript-projectjerryscriptpull5204
+  # rpath patch, upstream pr ref, https://github.com/jerryscript-project/jerryscript/pull/5204
   patch do
-    url "https:github.comjerryscript-projectjerryscriptcommite8948ac3f34079ac6f3d6f47f8998b82f16b1621.patch?full_index=1"
+    url "https://github.com/jerryscript-project/jerryscript/commit/e8948ac3f34079ac6f3d6f47f8998b82f16b1621.patch?full_index=1"
     sha256 "ebce75941e1f34118fed14e317500b0ab69f48182ba9cce8635e9f62fe9aa4d1"
   end
 
@@ -38,10 +38,10 @@ class Jerryscript < Formula
   end
 
   test do
-    (testpath"test.js").write "print('Hello, Homebrew!');"
-    assert_equal "Hello, Homebrew!", shell_output("#{bin}jerry test.js").strip
+    (testpath/"test.js").write "print('Hello, Homebrew!');"
+    assert_equal "Hello, Homebrew!", shell_output("#{bin}/jerry test.js").strip
 
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include <stdio.h>
       #include "jerryscript.h"
 
@@ -65,6 +65,6 @@ class Jerryscript < Formula
 
     pkg_config_flags = shell_output("pkgconf --cflags --libs libjerry-core libjerry-port libjerry-ext").chomp.split
     system ENV.cc, "test.c", "-o", "test", *pkg_config_flags
-    assert_equal "1 + 2 = 3", shell_output(".test").strip, "JerryScript can add number"
+    assert_equal "1 + 2 = 3", shell_output("./test").strip, "JerryScript can add number"
   end
 end

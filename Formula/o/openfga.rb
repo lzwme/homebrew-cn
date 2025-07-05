@@ -1,10 +1,10 @@
 class Openfga < Formula
-  desc "High performance and flexible authorizationpermission engine"
-  homepage "https:openfga.dev"
-  url "https:github.comopenfgaopenfgaarchiverefstagsv1.9.0.tar.gz"
+  desc "High performance and flexible authorization/permission engine"
+  homepage "https://openfga.dev/"
+  url "https://ghfast.top/https://github.com/openfga/openfga/archive/refs/tags/v1.9.0.tar.gz"
   sha256 "b7c37da1f8b59f40e833b29179b2bf1ccd34cc04f5ab499f00e62cdff0c4042f"
   license "Apache-2.0"
-  head "https:github.comopenfgaopenfga.git", branch: "main"
+  head "https://github.com/openfga/openfga.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "6d0f67ca939921c11305acc54260acf1c7551333d0a9cd6ad3c7143cede0f7c4"
@@ -20,25 +20,25 @@ class Openfga < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.comopenfgaopenfgainternalbuild.Version=#{version}
-      -X github.comopenfgaopenfgainternalbuild.Commit=brew
-      -X github.comopenfgaopenfgainternalbuild.Date=#{time.iso8601}
+      -X github.com/openfga/openfga/internal/build.Version=#{version}
+      -X github.com/openfga/openfga/internal/build.Commit=brew
+      -X github.com/openfga/openfga/internal/build.Date=#{time.iso8601}
     ]
-    system "go", "build", *std_go_args(ldflags:), ".cmdopenfga"
+    system "go", "build", *std_go_args(ldflags:), "./cmd/openfga"
 
-    generate_completions_from_executable(bin"openfga", "completion")
+    generate_completions_from_executable(bin/"openfga", "completion")
   end
 
   test do
     port = free_port
     pid = fork do
-      exec bin"openfga", "run", "--playground-port", port.to_s
+      exec bin/"openfga", "run", "--playground-port", port.to_s
     end
     sleep 3
-    output = shell_output("curl -s http:localhost:#{port}playground")
+    output = shell_output("curl -s http://localhost:#{port}/playground")
     assert_match "title=\"Embedded Playground\"", output
 
-    assert_match version.to_s, shell_output(bin"openfga version 2>&1")
+    assert_match version.to_s, shell_output(bin/"openfga version 2>&1")
   ensure
     Process.kill("SIGTERM", pid)
     Process.wait(pid)

@@ -1,10 +1,10 @@
 class Duckscript < Formula
   desc "Simple, extendable and embeddable scripting language"
-  homepage "https:sagiegurari.github.ioduckscript"
-  url "https:github.comsagiegurariduckscriptarchiverefstags0.11.1.tar.gz"
+  homepage "https://sagiegurari.github.io/duckscript"
+  url "https://ghfast.top/https://github.com/sagiegurari/duckscript/archive/refs/tags/0.11.1.tar.gz"
   sha256 "2e23b16359fb9b2c521f0bd250f6eb754bcb8ef40a7f8bf8076f87387276032a"
   license "Apache-2.0"
-  head "https:github.comsagiegurariduckscript.git", branch: "master"
+  head "https://github.com/sagiegurari/duckscript.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "5582ec1f3830f0ba37bd1562663c64df16dec7249edea7abf44b8d4a4283e912"
@@ -32,11 +32,11 @@ class Duckscript < Formula
   end
 
   test do
-    (testpath"hello.ds").write <<~EOS
+    (testpath/"hello.ds").write <<~EOS
       out = set "Hello World"
       echo The out variable holds the value: ${out}
     EOS
-    output = shell_output("#{bin}duck hello.ds")
+    output = shell_output("#{bin}/duck hello.ds")
     assert_match "The out variable holds the value: Hello World", output
   end
 end

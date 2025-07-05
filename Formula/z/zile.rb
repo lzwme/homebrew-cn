@@ -1,11 +1,11 @@
 class Zile < Formula
   desc "Text editor development kit"
-  homepage "https:www.gnu.orgsoftwarezile"
+  homepage "https://www.gnu.org/software/zile/"
   # Before bumping to a new version, check the NEWS file to make sure it is a
-  # stable release: https:git.savannah.gnu.orgcgitzile.gitplainNEWS
-  # For context, see: https:github.comHomebrewhomebrew-coreissues67379
-  url "https:ftp.gnu.orggnuzilezile-2.6.4.tar.gz"
-  mirror "https:ftpmirror.gnu.orgzilezile-2.6.4.tar.gz"
+  # stable release: https://git.savannah.gnu.org/cgit/zile.git/plain/NEWS
+  # For context, see: https://github.com/Homebrew/homebrew-core/issues/67379
+  url "https://ftp.gnu.org/gnu/zile/zile-2.6.4.tar.gz"
+  mirror "https://ftpmirror.gnu.org/zile/zile-2.6.4.tar.gz"
   sha256 "d5d44b85cb490643d0707e1a2186f3a32998c2f6eabaa9481479b65caeee57c0"
   license "GPL-3.0-or-later"
   version_scheme 1
@@ -33,15 +33,15 @@ class Zile < Formula
   end
 
   def install
-    # Work around Vala issue https:gitlab.gnome.orgGNOMEvala-issues1408
-    # which causes srceval.vala:87:32: error: incompatible function pointer types passing
+    # Work around Vala issue https://gitlab.gnome.org/GNOME/vala/-/issues/1408
+    # which causes src/eval.vala:87:32: error: incompatible function pointer types passing
     ENV.append_to_cflags "-Wno-incompatible-function-pointer-types" if DevelopmentTools.clang_build_version >= 1500
 
-    system ".configure", *std_configure_args
+    system "./configure", *std_configure_args
     system "make", "install"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}zile --version")
+    assert_match version.to_s, shell_output("#{bin}/zile --version")
   end
 end

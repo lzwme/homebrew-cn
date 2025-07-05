@@ -1,7 +1,7 @@
 class Rye < Formula
   desc "Package Management Solution for Python (consider the successor \"uv\" instead)"
-  homepage "https:rye.astral.sh"
-  url "https:github.comastral-shryearchiverefstags0.44.0.tar.gz"
+  homepage "https://rye.astral.sh/"
+  url "https://ghfast.top/https://github.com/astral-sh/rye/archive/refs/tags/0.44.0.tar.gz"
   sha256 "6ef86ccba82b59edfc4f6deba39be6394e7866fe2250596b96124c20327f0581"
   license "MIT"
 
@@ -37,11 +37,11 @@ class Rye < Formula
 
   def install
     system "cargo", "install", *std_cargo_args(path: "rye")
-    generate_completions_from_executable(bin"rye", "self", "completion", "-s")
+    generate_completions_from_executable(bin/"rye", "self", "completion", "-s")
   end
 
   test do
-    (testpath"pyproject.toml").write <<~TOML
+    (testpath/"pyproject.toml").write <<~TOML
       [project]
       name = "testproj"
       requires-python = ">=3.9"
@@ -49,10 +49,10 @@ class Rye < Formula
       license = {text = "MIT"}
 
     TOML
-    system bin"rye", "add", "requests==2.24.0"
-    system bin"rye", "sync"
-    assert_match "requests==2.24.0", (testpath"pyproject.toml").read
-    output = shell_output("#{bin}rye run python -c 'import requests;print(requests.__version__)'")
+    system bin/"rye", "add", "requests==2.24.0"
+    system bin/"rye", "sync"
+    assert_match "requests==2.24.0", (testpath/"pyproject.toml").read
+    output = shell_output("#{bin}/rye run python -c 'import requests;print(requests.__version__)'")
     assert_equal "2.24.0", output.strip
   end
 end

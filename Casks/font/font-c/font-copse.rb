@@ -2,10 +2,10 @@ cask "font-copse" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefontsrawmainoflcopseCopse-Regular.ttf",
-      verified: "github.comgooglefonts"
+  url "https://github.com/google/fonts/raw/main/ofl/copse/Copse-Regular.ttf",
+      verified: "github.com/google/fonts/"
   name "Copse"
-  homepage "https:fonts.google.comspecimenCopse"
+  homepage "https://fonts.google.com/specimen/Copse"
 
   font "Copse-Regular.ttf"
 

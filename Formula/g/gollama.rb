@@ -1,10 +1,10 @@
 class Gollama < Formula
   desc "Go manage your Ollama models"
-  homepage "https:smcleod.net"
-  url "https:github.comsammcjgollamaarchiverefstagsv1.34.0.tar.gz"
+  homepage "https://smcleod.net"
+  url "https://ghfast.top/https://github.com/sammcj/gollama/archive/refs/tags/v1.34.0.tar.gz"
   sha256 "4aa1020b265b9d0323a2026bfe57d48085f69c23e82a9d8f75e314b3fc1ca9c7"
   license "MIT"
-  head "https:github.comsammcjgollama.git", branch: "main"
+  head "https://github.com/sammcj/gollama.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "8c6ad2430354fb30043f56a62fb50189dfb0bd73009f10449348f3f1613dc3ea"
@@ -23,16 +23,16 @@ class Gollama < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output(bin"gollama -v")
+    assert_match version.to_s, shell_output(bin/"gollama -v")
 
     port = free_port
     ENV["OLLAMA_HOST"] = "localhost:#{port}"
 
-    pid = fork { exec "#{Formula["ollama"].opt_bin}ollama", "serve" }
+    pid = fork { exec "#{Formula["ollama"].opt_bin}/ollama", "serve" }
     sleep 3
     begin
       assert_match "No matching models found.",
-        shell_output(bin"gollama -h http:localhost:#{port} -s chatgpt")
+        shell_output(bin/"gollama -h http://localhost:#{port} -s chatgpt")
     ensure
       Process.kill "SIGTERM", pid
     end

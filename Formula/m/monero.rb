@@ -1,13 +1,13 @@
 class Monero < Formula
   desc "Official Monero wallet and CPU miner"
-  homepage "https:www.getmonero.orgdownloads#cli"
-  url "https:downloads.getmonero.orgclimonero-source-v0.18.4.0.tar.bz2"
+  homepage "https://www.getmonero.org/downloads/#cli"
+  url "https://downloads.getmonero.org/cli/monero-source-v0.18.4.0.tar.bz2"
   sha256 "fe982ced4603aa7e54989326e3d1830ac1a1387e99722c419e2b103b8e8aa1a0"
   license "BSD-3-Clause"
   revision 1
 
   livecheck do
-    url "https:downloads.getmonero.orgclisource"
+    url "https://downloads.getmonero.org/cli/source"
     strategy :header_match
   end
 
@@ -22,7 +22,7 @@ class Monero < Formula
   end
 
   head do
-    url "https:github.commonero-projectmonero.git", branch: "master"
+    url "https://github.com/monero-project/monero.git", branch: "master"
 
     depends_on "libusb" # TODO: use on stable in 0.19 (?)
     depends_on "protobuf" # TODO: use on stable in 0.19 (?)
@@ -42,7 +42,7 @@ class Monero < Formula
 
   def install
     # Partial backport for CMake 4 compatibility
-    # https:github.commonero-projectmonerocommiteb083ca423c6dc7431d3f1e2992307cfccec4a9f
+    # https://github.com/monero-project/monero/commit/eb083ca423c6dc7431d3f1e2992307cfccec4a9f
     inreplace "CMakeLists.txt", "cmake_minimum_required(VERSION 3.1)",
                                 "cmake_minimum_required(VERSION 3.5)"
 
@@ -52,11 +52,11 @@ class Monero < Formula
   end
 
   service do
-    run [opt_bin"monerod", "--non-interactive"]
+    run [opt_bin/"monerod", "--non-interactive"]
   end
 
   test do
-    cmd = "yes '' | #{bin}monero-wallet-cli --restore-deterministic-wallet " \
+    cmd = "yes '' | #{bin}/monero-wallet-cli --restore-deterministic-wallet " \
           "--password brew-test --restore-height 1 --generate-new-wallet wallet " \
           "--electrum-seed 'baptism cousin whole exquisite bobsled fuselage left " \
           "scoop emerge puzzled diet reinvest basin feast nautical upon mullet " \

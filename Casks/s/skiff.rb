@@ -2,11 +2,11 @@ cask "skiff" do
   version "0.4.0"
   sha256 "283b7b8f594095f0049201ff9433d77b5e504dfa84e7b9736a4447a692e1b514"
 
-  url "https:raw.githubusercontent.comskiff-orgskiff-org.github.iomainmacosSkiff%20Desktop%20#{version}.dmg",
-      verified: "raw.githubusercontent.comskiff-orgskiff-org.github.iomainmacos"
+  url "https://ghfast.top/https://raw.githubusercontent.com/skiff-org/skiff-org.github.io/main/macos/Skiff%20Desktop%20#{version}.dmg",
+      verified: "raw.githubusercontent.com/skiff-org/skiff-org.github.io/main/macos/"
   name "Skiff"
   desc "End-to-end encrypted email, calendar, documents, and files support"
-  homepage "https:skiff.com"
+  homepage "https://skiff.com/"
 
   no_autobump! because: :requires_manual_review
 
@@ -18,7 +18,7 @@ cask "skiff" do
   app "Skiff Desktop.app"
 
   zap trash: [
-    "~LibraryApplication Scriptsorg.reactjs.native.Skiff-Desktop",
-    "~LibraryContainersorg.reactjs.native.Skiff-Desktop",
+    "~/Library/Application Scripts/org.reactjs.native.Skiff-Desktop",
+    "~/Library/Containers/org.reactjs.native.Skiff-Desktop",
   ]
 end

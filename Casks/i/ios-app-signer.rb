@@ -2,11 +2,11 @@ cask "ios-app-signer" do
   version "1.14"
   sha256 "7738a2b75b72ca9493a6f9c8ee4a7a6118fbfc77c61ddf6f02d41bfac8c739d2"
 
-  url "https:github.comDanTheMan827ios-app-signerreleasesdownload#{version}iOS.App.Signer.app.zip",
-      verified: "github.comDanTheMan827ios-app-signer"
+  url "https://ghfast.top/https://github.com/DanTheMan827/ios-app-signer/releases/download/#{version}/iOS.App.Signer.app.zip",
+      verified: "github.com/DanTheMan827/ios-app-signer/"
   name "iOS App Signer"
   desc "App for (re)signing iOS apps and bundling them"
-  homepage "https:dantheman827.github.ioios-app-signer"
+  homepage "https://dantheman827.github.io/ios-app-signer/"
 
   livecheck do
     url :url
@@ -18,7 +18,7 @@ cask "ios-app-signer" do
   app "iOS App Signer.app"
 
   zap trash: [
-    "~LibraryCachescom.DanTheMan827.AppSigner",
-    "~LibraryPreferencescom.DanTheMan827.AppSigner.plist",
+    "~/Library/Caches/com.DanTheMan827.AppSigner",
+    "~/Library/Preferences/com.DanTheMan827.AppSigner.plist",
   ]
 end

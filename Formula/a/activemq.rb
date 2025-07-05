@@ -1,8 +1,8 @@
 class Activemq < Formula
   desc "Apache ActiveMQ: powerful open source messaging server"
-  homepage "https:activemq.apache.org"
-  url "https:www.apache.orgdyncloser.lua?path=activemq6.1.7apache-activemq-6.1.7-bin.tar.gz"
-  mirror "https:archive.apache.orgdistactivemq6.1.7apache-activemq-6.1.7-bin.tar.gz"
+  homepage "https://activemq.apache.org/"
+  url "https://www.apache.org/dyn/closer.lua?path=activemq/6.1.7/apache-activemq-6.1.7-bin.tar.gz"
+  mirror "https://archive.apache.org/dist/activemq/6.1.7/apache-activemq-6.1.7-bin.tar.gz"
   sha256 "75cc41109a897745d44aca27358568f3cbe0cd58fc6bbff035a83c4ddf48d316"
   license "Apache-2.0"
 
@@ -23,34 +23,34 @@ class Activemq < Formula
     if OS.mac?
       wrapper_dir = "macosx"
     else
-      # https:github.comapacheactivemqblobmainassemblysrcreleasebinlinux-x86-64activemq#L176-L183
+      # https://github.com/apache/activemq/blob/main/assembly/src/release/bin/linux-x86-64/activemq#L176-L183
       arch = Hardware::CPU.intel? ? "x86" : Utils.safe_popen_read("uname", "-p").downcase.strip
       wrapper_dir = "#{OS.kernel_name.downcase}-#{arch}-#{Hardware::CPU.bits}"
-      odie "Remove workaround for arm64 linux!" unless buildpath.glob("binlinux-{arm,aarch}*").empty?
-      mv "binlinux-x86-64", "bin#{wrapper_dir}" unless Hardware::CPU.intel?
+      odie "Remove workaround for arm64 linux!" unless buildpath.glob("bin/linux-{arm,aarch}*").empty?
+      mv "bin/linux-x86-64", "bin/#{wrapper_dir}" unless Hardware::CPU.intel?
     end
 
     useless = OS.mac? ? "linux" : "macosx"
-    rm_r buildpath.glob("bin#{useless}*")
-    rm buildpath.glob("bin#{wrapper_dir}{wrapper,libwrapper.{so,jnilib}}")
+    rm_r buildpath.glob("bin/#{useless}*")
+    rm buildpath.glob("bin/#{wrapper_dir}/{wrapper,libwrapper.{so,jnilib}}")
 
     libexec.install buildpath.children
-    (bin"activemq").write_env_script libexec"binactivemq", Language::Java.overridable_java_home_env
+    (bin/"activemq").write_env_script libexec/"bin/activemq", Language::Java.overridable_java_home_env
 
     wrapper = Formula["java-service-wrapper"].opt_libexec
-    wrapper_dir = libexec"bin"wrapper_dir
-    ln_sf wrapper"binwrapper", wrapper_dir"wrapper"
+    wrapper_dir = libexec/"bin"/wrapper_dir
+    ln_sf wrapper/"bin/wrapper", wrapper_dir/"wrapper"
     libext = OS.mac? ? "jnilib" : "so"
-    ln_sf wrapper"liblibwrapper.#{libext}", wrapper_dir"libwrapper.#{libext}"
-    ln_sf wrapper"libwrapper.jar", wrapper_dir"wrapper.jar"
+    ln_sf wrapper/"lib/libwrapper.#{libext}", wrapper_dir/"libwrapper.#{libext}"
+    ln_sf wrapper/"lib/wrapper.jar", wrapper_dir/"wrapper.jar"
   end
 
   service do
-    run [opt_bin"activemq", "console"]
+    run [opt_bin/"activemq", "console"]
     working_dir opt_libexec
   end
 
   test do
-    system bin"activemq", "browse", "-h"
+    system bin/"activemq", "browse", "-h"
   end
 end

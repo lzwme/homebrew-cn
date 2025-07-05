@@ -1,7 +1,7 @@
 class Pyflow < Formula
   desc "Installation and dependency system for Python"
-  homepage "https:github.comDavid-OConnorpyflow"
-  url "https:github.comDavid-OConnorpyflowarchiverefstags0.3.1.tar.gz"
+  homepage "https://github.com/David-OConnor/pyflow"
+  url "https://ghfast.top/https://github.com/David-OConnor/pyflow/archive/refs/tags/0.3.1.tar.gz"
   sha256 "36be46aaebf7bc77d2f250b3646024fb1f2f04d92113d3ce46ea5846f7e4c4f4"
   license "MIT"
 
@@ -23,7 +23,7 @@ class Pyflow < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "f63dcd026d508c2db194de790d0f3c9e5d7f6ca40ef6e4c294f00d2a42778201"
   end
 
-  # https:github.comDavid-OConnorpyflowissues193
+  # https://github.com/David-OConnor/pyflow/issues/193
   deprecate! date: "2024-10-06", because: :unmaintained
 
   depends_on "rust" => :build
@@ -36,8 +36,8 @@ class Pyflow < Formula
   test do
     python3 = "python3"
     pyver = Language::Python.major_minor_version python3
-    pipe_output("#{bin}pyflow init", "#{pyver}\n1")
-    assert_path_exists testpath"pyproject.toml"
-    assert_path_exists testpath"pyflow.lock"
+    pipe_output("#{bin}/pyflow init", "#{pyver}\n1")
+    assert_path_exists testpath/"pyproject.toml"
+    assert_path_exists testpath/"pyflow.lock"
   end
 end

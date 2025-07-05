@@ -1,10 +1,10 @@
 class Jsoncpp < Formula
   desc "Library for interacting with JSON"
-  homepage "https:github.comopen-source-parsersjsoncpp"
-  url "https:github.comopen-source-parsersjsoncpparchiverefstags1.9.6.tar.gz"
+  homepage "https://github.com/open-source-parsers/jsoncpp"
+  url "https://ghfast.top/https://github.com/open-source-parsers/jsoncpp/archive/refs/tags/1.9.6.tar.gz"
   sha256 "f93b6dd7ce796b13d02c108bc9f79812245a82e577581c4c9aabe57075c90ea2"
   license "MIT"
-  head "https:github.comopen-source-parsersjsoncpp.git", branch: "master"
+  head "https://github.com/open-source-parsers/jsoncpp.git", branch: "master"
 
   livecheck do
     url :stable
@@ -22,16 +22,16 @@ class Jsoncpp < Formula
   end
 
   # NOTE: Do not change this to use CMake, because the CMake build is deprecated.
-  # See: https:github.comopen-source-parsersjsoncppwikiBuilding#building-and-testing-with-cmake
-  #      https:github.comHomebrewhomebrew-corepull103386
+  # See: https://github.com/open-source-parsers/jsoncpp/wiki/Building#building-and-testing-with-cmake
+  #      https://github.com/Homebrew/homebrew-core/pull/103386
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "cmake" => :test
 
   # remove check_required_components for meson build
-  # upstream pr ref, https:github.comopen-source-parsersjsoncpppull1570
+  # upstream pr ref, https://github.com/open-source-parsers/jsoncpp/pull/1570
   patch do
-    url "https:github.comopen-source-parsersjsoncppcommit3d47db0edcfa5cb5a6237c43efbe443221a32702.patch?full_index=1"
+    url "https://github.com/open-source-parsers/jsoncpp/commit/3d47db0edcfa5cb5a6237c43efbe443221a32702.patch?full_index=1"
     sha256 "1d042632c3272e6946ac9ac1a7cb3b1f0b2a61f901bd20001bed53fc6892d0e0"
   end
 
@@ -42,7 +42,7 @@ class Jsoncpp < Formula
   end
 
   test do
-    (testpath"CMakeLists.txt").write <<~CMAKE
+    (testpath/"CMakeLists.txt").write <<~CMAKE
       cmake_minimum_required(VERSION 3.10)
       project(TestJsonCpp)
 
@@ -53,8 +53,8 @@ class Jsoncpp < Formula
       target_link_libraries(test jsoncpp_lib)
     CMAKE
 
-    (testpath"test.cpp").write <<~CPP
-      #include <jsonjson.h>
+    (testpath/"test.cpp").write <<~CPP
+      #include <json/json.h>
       int main() {
           Json::Value root;
           Json::CharReaderBuilder builder;
@@ -67,6 +67,6 @@ class Jsoncpp < Formula
 
     system "cmake", "-S", ".", "-B", "build"
     system "cmake", "--build", "build"
-    system ".buildtest"
+    system "./build/test"
   end
 end

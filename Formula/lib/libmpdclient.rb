@@ -1,14 +1,14 @@
 class Libmpdclient < Formula
   desc "Library for MPD in the C, C++, and Objective-C languages"
-  homepage "https:www.musicpd.orglibslibmpdclient"
-  url "https:www.musicpd.orgdownloadlibmpdclient2libmpdclient-2.23.tar.xz"
+  homepage "https://www.musicpd.org/libs/libmpdclient/"
+  url "https://www.musicpd.org/download/libmpdclient/2/libmpdclient-2.23.tar.xz"
   sha256 "4a1b6c7f783d8cac3d3b8e4cbe9ad021c45491e383de3b893ea4eedefbc71607"
   license "BSD-3-Clause"
-  head "https:github.comMusicPlayerDaemonlibmpdclient.git", branch: "master"
+  head "https://github.com/MusicPlayerDaemon/libmpdclient.git", branch: "master"
 
   livecheck do
     url :homepage
-    regex(href=.*?libmpdclient[._-]v?(\d+(?:\.\d+)+)\.ti)
+    regex(/href=.*?libmpdclient[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   bottle do
@@ -31,14 +31,14 @@ class Libmpdclient < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~CPP
-      #include <mpdclient.h>
+    (testpath/"test.cpp").write <<~CPP
+      #include <mpd/client.h>
       int main() {
         mpd_connection_new(NULL, 0, 30000);
         return 0;
       }
     CPP
     system ENV.cc, "test.cpp", "-L#{lib}", "-lmpdclient", "-o", "test"
-    system ".test"
+    system "./test"
   end
 end

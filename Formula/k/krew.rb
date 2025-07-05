@@ -1,11 +1,11 @@
 class Krew < Formula
   desc "Package manager for kubectl plugins"
-  homepage "https:sigs.k8s.iokrew"
-  url "https:github.comkubernetes-sigskrew.git",
+  homepage "https://sigs.k8s.io/krew/"
+  url "https://github.com/kubernetes-sigs/krew.git",
       tag:      "v0.4.5",
       revision: "e7e5b619d0defd3fe53f66ce7e7330b21386e944"
   license "Apache-2.0"
-  head "https:github.comkubernetes-sigskrew.git", branch: "master"
+  head "https://github.com/kubernetes-sigs/krew.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "2612180540b05504e2f9c3aae82cb6335ffa55e88ac9e27f2bdad18390c22dc0"
@@ -25,22 +25,22 @@ class Krew < Formula
 
     ldflags = %W[
       -w
-      -X sigs.k8s.iokrewinternalversion.gitCommit=#{Utils.git_short_head(length: 8)}
-      -X sigs.k8s.iokrewinternalversion.gitTag=v#{version}
+      -X sigs.k8s.io/krew/internal/version.gitCommit=#{Utils.git_short_head(length: 8)}
+      -X sigs.k8s.io/krew/internal/version.gitTag=v#{version}
     ]
 
-    system "go", "build", *std_go_args(output: bin"kubectl-krew", ldflags:, tags: "netgo"), ".cmdkrew"
+    system "go", "build", *std_go_args(output: bin/"kubectl-krew", ldflags:, tags: "netgo"), "./cmd/krew"
   end
 
   test do
     ENV["KREW_ROOT"] = testpath
-    kubectl = Formula["kubernetes-cli"].opt_bin"kubectl"
+    kubectl = Formula["kubernetes-cli"].opt_bin/"kubectl"
 
-    system bin"kubectl-krew", "update"
-    system bin"kubectl-krew", "install", "ctx"
-    assert_path_exists testpath"binkubectl-ctx"
+    system bin/"kubectl-krew", "update"
+    system bin/"kubectl-krew", "install", "ctx"
+    assert_path_exists testpath/"bin/kubectl-ctx"
 
-    assert_match "v#{version}", shell_output("#{bin}kubectl-krew version")
-    assert_match (HOMEBREW_PREFIX"binkubectl-krew").to_s, shell_output("#{kubectl} plugin list")
+    assert_match "v#{version}", shell_output("#{bin}/kubectl-krew version")
+    assert_match (HOMEBREW_PREFIX/"bin/kubectl-krew").to_s, shell_output("#{kubectl} plugin list")
   end
 end

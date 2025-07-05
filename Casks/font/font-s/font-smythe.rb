@@ -2,10 +2,10 @@ cask "font-smythe" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefontsrawmainoflsmytheSmythe-Regular.ttf",
-      verified: "github.comgooglefonts"
+  url "https://github.com/google/fonts/raw/main/ofl/smythe/Smythe-Regular.ttf",
+      verified: "github.com/google/fonts/"
   name "Smythe"
-  homepage "https:fonts.google.comspecimenSmythe"
+  homepage "https://fonts.google.com/specimen/Smythe"
 
   font "Smythe-Regular.ttf"
 

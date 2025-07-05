@@ -1,15 +1,15 @@
 class Pulsarctl < Formula
   desc "CLI for Apache Pulsar written in Go"
-  homepage "https:streamnative.io"
-  url "https:github.comstreamnativepulsarctlarchiverefstagsv4.0.5.2.tar.gz"
+  homepage "https://streamnative.io/"
+  url "https://ghfast.top/https://github.com/streamnative/pulsarctl/archive/refs/tags/v4.0.5.2.tar.gz"
   sha256 "23d1a759de7d150cf3b133a6958cf31035a584ad7b7b297a95eedb4e76cf35de"
   license "Apache-2.0"
-  head "https:github.comstreamnativepulsarctl.git", branch: "master"
+  head "https://github.com/streamnative/pulsarctl.git", branch: "master"
 
   # Upstream creates releases that use a stable tag (e.g., `v1.2.3`) but are
   # labeled as "pre-release" on GitHub before the version is released, so it's
   # necessary to check releases instead of Git tags. Upstream also publishes
-  # releases for multiple majorminor versions and the "latest" release
+  # releases for multiple major/minor versions and the "latest" release
   # may not be the highest stable version, so we have to use the
   # `GithubReleases` strategy while this is the case.
   livecheck do
@@ -31,20 +31,20 @@ class Pulsarctl < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.comstreamnativepulsarctlpkgcmdutils.ReleaseVersion=v#{version}
-      -X github.comstreamnativepulsarctlpkgcmdutils.BuildTS=#{time.iso8601}
-      -X github.comstreamnativepulsarctlpkgcmdutils.GitHash=#{tap.user}
-      -X github.comstreamnativepulsarctlpkgcmdutils.GitBranch=master
-      -X github.comstreamnativepulsarctlpkgcmdutils.GoVersion=go#{Formula["go"].version}
+      -X github.com/streamnative/pulsarctl/pkg/cmdutils.ReleaseVersion=v#{version}
+      -X github.com/streamnative/pulsarctl/pkg/cmdutils.BuildTS=#{time.iso8601}
+      -X github.com/streamnative/pulsarctl/pkg/cmdutils.GitHash=#{tap.user}
+      -X github.com/streamnative/pulsarctl/pkg/cmdutils.GitBranch=master
+      -X github.com/streamnative/pulsarctl/pkg/cmdutils.GoVersion=go#{Formula["go"].version}
     ]
     system "go", "build", *std_go_args(ldflags:)
 
     # Install shell completions
-    generate_completions_from_executable(bin"pulsarctl", "completion")
+    generate_completions_from_executable(bin/"pulsarctl", "completion")
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}pulsarctl --version")
-    assert_match "connection refused", shell_output("#{bin}pulsarctl clusters list 2>&1", 1)
+    assert_match version.to_s, shell_output("#{bin}/pulsarctl --version")
+    assert_match "connection refused", shell_output("#{bin}/pulsarctl clusters list 2>&1", 1)
   end
 end

@@ -1,10 +1,10 @@
 class Nap < Formula
   desc "Code snippets in your terminal"
-  homepage "https:github.commaaslalaninap"
-  url "https:github.commaaslalaninaparchiverefstagsv0.1.1.tar.gz"
+  homepage "https://github.com/maaslalani/nap"
+  url "https://ghfast.top/https://github.com/maaslalani/nap/archive/refs/tags/v0.1.1.tar.gz"
   sha256 "2954577d2bd99c1114989d31e994d7bef0f1c934795fc559b7c90f6370d9f98b"
   license "MIT"
-  head "https:github.commaaslalaninap.git", branch: "main"
+  head "https://github.com/maaslalani/nap.git", branch: "main"
 
   no_autobump! because: :requires_manual_review
 
@@ -30,6 +30,6 @@ class Nap < Formula
   end
 
   test do
-    assert_match "miscUntitled Snippet.go", shell_output("#{bin}nap list")
+    assert_match "misc/Untitled Snippet.go", shell_output("#{bin}/nap list")
   end
 end

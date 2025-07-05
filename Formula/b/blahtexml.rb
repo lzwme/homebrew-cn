@@ -1,7 +1,7 @@
 class Blahtexml < Formula
   desc "Converts equations into Math ML"
-  homepage "https:github.comgvanasblahtexml"
-  url "https:github.comgvanasblahtexmlarchiverefstagsv1.0.tar.gz"
+  homepage "https://github.com/gvanas/blahtexml"
+  url "https://ghfast.top/https://github.com/gvanas/blahtexml/archive/refs/tags/v1.0.tar.gz"
   sha256 "ef746642b1371f591b222ce3461c08656734c32ad3637fd0574d91e83995849e"
   license "BSD-3-Clause"
   revision 1
@@ -35,7 +35,7 @@ class Blahtexml < Formula
 
   test do
     input = '\sqrt{x^2+\alpha}'
-    output = pipe_output("#{bin}blahtex --mathml", input, 0)
-    assert_match "<msqrt><msup><mi>x<mi><mn>2<mn><msup><mo ", output
+    output = pipe_output("#{bin}/blahtex --mathml", input, 0)
+    assert_match "<msqrt><msup><mi>x</mi><mn>2</mn></msup><mo ", output
   end
 end

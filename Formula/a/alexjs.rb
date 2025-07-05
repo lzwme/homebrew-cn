@@ -1,7 +1,7 @@
 class Alexjs < Formula
   desc "Catch insensitive, inconsiderate writing"
-  homepage "https:alexjs.com"
-  url "https:github.comget-alexalexarchiverefstags11.0.1.tar.gz"
+  homepage "https://alexjs.com"
+  url "https://ghfast.top/https://github.com/get-alex/alex/archive/refs/tags/11.0.1.tar.gz"
   sha256 "0c41d5d72c0101996aecb88ae2f423d6ac7a2fc57f93384d1a193d2ce67c4ffb"
   license "MIT"
 
@@ -22,11 +22,11 @@ class Alexjs < Formula
 
   def install
     system "npm", "install", *std_npm_args
-    bin.install_symlink Dir["#{libexec}bin*"]
+    bin.install_symlink Dir["#{libexec}/bin/*"]
   end
 
   test do
-    (testpath"test.txt").write "garbageman"
-    assert_match "garbage collector", shell_output("#{bin}alex test.txt 2>&1", 1)
+    (testpath/"test.txt").write "garbageman"
+    assert_match "garbage collector", shell_output("#{bin}/alex test.txt 2>&1", 1)
   end
 end

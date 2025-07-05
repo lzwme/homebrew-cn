@@ -1,16 +1,16 @@
 class Smpeg2 < Formula
   desc "SDL MPEG Player Library"
-  homepage "https:icculus.orgsmpeg"
+  homepage "https://icculus.org/smpeg/"
   # license change was done in 2021 Aug, which is 8 years after 2.0.0 release
-  # commit ref, https:github.comicculussmpegcommitffa0d54
-  url "https:github.comicculussmpegarchiverefstagsrelease_2_0_0.tar.gz"
+  # commit ref, https://github.com/icculus/smpeg/commit/ffa0d54
+  url "https://ghfast.top/https://github.com/icculus/smpeg/archive/refs/tags/release_2_0_0.tar.gz"
   sha256 "fdd431bd607efcf0f35789fb3105d7535d4f0e8b46e673e9c0051726e8d1e701"
   license "LGPL-2.0-or-later"
-  head "https:github.comicculussmpeg.git", branch: "main"
+  head "https://github.com/icculus/smpeg.git", branch: "main"
 
   livecheck do
     url :stable
-    regex(^release[._-]v?(2(?:[._]\d+)+)$i)
+    regex(/^release[._-]v?(2(?:[._]\d+)+)$/i)
     strategy :git do |tags, regex|
       tags.map { |tag| tag[regex, 1]&.tr("_", ".") }
     end
@@ -48,26 +48,26 @@ class Smpeg2 < Formula
     # Help old config scripts identify arm64 linux
     args << "--build=aarch64-unknown-linux-gnu" if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
 
-    system ".autogen.sh"
-    system ".configure", *args, *std_configure_args
+    system "./autogen.sh"
+    system "./configure", *args, *std_configure_args
     system "make"
     system "make", "install"
 
     # To avoid a possible conflict with smpeg 0.x
-    mv bin"plaympeg", bin"plaympeg2"
-    mv man1"plaympeg.1", man1"plaympeg2.1"
+    mv bin/"plaympeg", bin/"plaympeg2"
+    mv man1/"plaympeg.1", man1/"plaympeg2.1"
   end
 
   test do
-    system bin"plaympeg2", "--version"
+    system bin/"plaympeg2", "--version"
   end
 end
 
 __END__
-diff --git aacincludelibtool.m4 bacincludelibtool.m4
+diff --git a/acinclude/libtool.m4 b/acinclude/libtool.m4
 index 7dfd109..f8b1ac0 100644
---- aacincludelibtool.m4
-+++ bacincludelibtool.m4
+--- a/acinclude/libtool.m4
++++ b/acinclude/libtool.m4
 @@ -947,18 +947,13 @@ m4_defun_once([_LT_REQUIRED_DARWIN_CHECKS],[
        _lt_dar_allow_undefined='${wl}-undefined ${wl}suppress' ;;
      darwin1.*)
@@ -94,10 +94,10 @@ index 7dfd109..f8b1ac0 100644
      ;;
    esac
      if test "$lt_cv_apple_cc_single_mod" = "yes"; then
-diff --git aaudiohufftable.cpp baudiohufftable.cpp
+diff --git a/audio/hufftable.cpp b/audio/hufftable.cpp
 index 6bc8e86..1ef2d7e 100644
---- aaudiohufftable.cpp
-+++ baudiohufftable.cpp
+--- a/audio/hufftable.cpp
++++ b/audio/hufftable.cpp
 @@ -550,11 +550,11 @@ htd33[ 31][2]={{ 16,  1},{  8,  1},{  4,  1},{  2,  1},{  0,  0},{  0,  1},
 
  const HUFFMANCODETABLE MPEGaudio::ht[HTN]=

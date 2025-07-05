@@ -1,7 +1,7 @@
 class Libqalculate < Formula
   desc "Library for Qalculate! program"
-  homepage "https:qalculate.github.io"
-  url "https:github.comQalculatelibqalculatereleasesdownloadv5.6.0libqalculate-5.6.0.tar.gz"
+  homepage "https://qalculate.github.io/"
+  url "https://ghfast.top/https://github.com/Qalculate/libqalculate/releases/download/v5.6.0/libqalculate-5.6.0.tar.gz"
   sha256 "2d44130954f327e595af74d0d035f450b560e7997eceb9af16503456d5196f39"
   license "GPL-2.0-or-later"
 
@@ -35,13 +35,13 @@ class Libqalculate < Formula
 
   def install
     ENV.cxx11
-    system ".configure", "--disable-silent-rules",
+    system "./configure", "--disable-silent-rules",
                           "--without-icu",
                           *std_configure_args
     system "make", "install"
   end
 
   test do
-    system bin"qalc", "-nocurrencies", "(2+2)4 hours to minutes"
+    system bin/"qalc", "-nocurrencies", "(2+2)/4 hours to minutes"
   end
 end

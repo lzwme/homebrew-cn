@@ -1,11 +1,11 @@
 class RbenvAliases < Formula
   desc "Make aliases for Ruby versions"
-  homepage "https:github.comtpoperbenv-aliases"
-  url "https:github.comtpoperbenv-aliasesarchiverefstagsv1.1.0.tar.gz"
+  homepage "https://github.com/tpope/rbenv-aliases"
+  url "https://ghfast.top/https://github.com/tpope/rbenv-aliases/archive/refs/tags/v1.1.0.tar.gz"
   sha256 "12e89bc4499e85d8babac2b02bc8b66ceb0aa3f8047b26728a3eca8a6030273d"
   license "MIT"
   revision 1
-  head "https:github.comtpoperbenv-aliases.git", branch: "master"
+  head "https://github.com/tpope/rbenv-aliases.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 

@@ -1,7 +1,7 @@
 class Grex < Formula
   desc "Command-line tool for generating regular expressions"
-  homepage "https:github.compemistahlgrex"
-  url "https:github.compemistahlgrexarchiverefstagsv1.4.5.tar.gz"
+  homepage "https://github.com/pemistahl/grex"
+  url "https://ghfast.top/https://github.com/pemistahl/grex/archive/refs/tags/v1.4.5.tar.gz"
   sha256 "4e849b29b387afc583856f24923b76052ad90e320c2caacfc6452e6d9deb6b14"
   license "Apache-2.0"
 
@@ -24,7 +24,7 @@ class Grex < Formula
   end
 
   test do
-    output = shell_output("#{bin}grex a b c")
+    output = shell_output("#{bin}/grex a b c")
     assert_match "^[a-c]$\n", output
   end
 end

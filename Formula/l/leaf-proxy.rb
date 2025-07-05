@@ -1,10 +1,10 @@
 class LeafProxy < Formula
   desc "Lightweight and fast proxy utility"
-  homepage "https:github.comeycorsicanleaf"
-  url "https:github.comeycorsicanleafarchiverefstagsv0.11.0.tar.gz"
+  homepage "https://github.com/eycorsican/leaf"
+  url "https://ghfast.top/https://github.com/eycorsican/leaf/archive/refs/tags/v0.11.0.tar.gz"
   sha256 "f80d110ac56a0ffcdbcdcd1cc3631b6bf079ea18191d9a1c9f819cfff5b0c2fa"
   license "Apache-2.0"
-  head "https:github.comeycorsicanleaf.git", branch: "master"
+  head "https://github.com/eycorsican/leaf.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "b0cc5c4e172c32e79c24a0b7659d73e9bf8e7b64f67620da095a3c32abe345e5"
@@ -27,14 +27,14 @@ class LeafProxy < Formula
   end
 
   test do
-    (testpath"config.conf").write <<~EOS
+    (testpath/"config.conf").write <<~EOS
       [General]
       dns-server = 8.8.8.8
 
       [Proxy]
       SS = ss, 127.0.0.1, #{free_port}, encrypt-method=chacha20-ietf-poly1305, password=123456
     EOS
-    output = shell_output "#{bin}leaf -c #{testpath}config.conf -t SS"
+    output = shell_output "#{bin}/leaf -c #{testpath}/config.conf -t SS"
 
     assert_match "TCP failed: all attempts failed", output
   end

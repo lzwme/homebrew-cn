@@ -1,10 +1,10 @@
 class Htmldoc < Formula
   desc "Convert HTML to PDF or PostScript"
-  homepage "https:www.msweet.orghtmldoc"
-  url "https:github.commichaelrsweethtmldocarchiverefstagsv1.9.20.tar.gz"
+  homepage "https://www.msweet.org/htmldoc/"
+  url "https://ghfast.top/https://github.com/michaelrsweet/htmldoc/archive/refs/tags/v1.9.20.tar.gz"
   sha256 "a155c86c69f90a426ff7244bd046bad026cc5ba9ac2be89dcb1d7973c52d5d82"
   license "GPL-2.0-only"
-  head "https:github.commichaelrsweethtmldoc.git", branch: "master"
+  head "https://github.com/michaelrsweet/htmldoc.git", branch: "master"
 
   bottle do
     sha256 arm64_sequoia: "5183e094ab3128b038025333172df99251d2a4f1db6c409d892eba9ff9967270"
@@ -28,7 +28,7 @@ class Htmldoc < Formula
   end
 
   def install
-    system ".configure", "--mandir=#{man}",
+    system "./configure", "--mandir=#{man}",
                           "--without-gui",
                           *std_configure_args
     system "make"
@@ -36,6 +36,6 @@ class Htmldoc < Formula
   end
 
   test do
-    system bin"htmldoc", "--version"
+    system bin/"htmldoc", "--version"
   end
 end

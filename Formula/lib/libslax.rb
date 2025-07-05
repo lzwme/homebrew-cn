@@ -1,7 +1,7 @@
 class Libslax < Formula
   desc "Implementation of the SLAX language (an XSLT alternative)"
-  homepage "https:github.comJuniperlibslaxwiki"
-  url "https:github.comJuniperlibslaxreleasesdownload3.1.3libslax-3.1.3.tar.gz"
+  homepage "https://github.com/Juniper/libslax/wiki"
+  url "https://ghfast.top/https://github.com/Juniper/libslax/releases/download/3.1.3/libslax-3.1.3.tar.gz"
   sha256 "d3ea2e117d4f2a79c8145ceb43a5ca47f5018a81f69c4e80f44685b2be88f11b"
   license "BSD-3-Clause"
 
@@ -19,7 +19,7 @@ class Libslax < Formula
   end
 
   head do
-    url "https:github.comJuniperlibslax.git", branch: "main"
+    url "https://github.com/Juniper/libslax.git", branch: "main"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -36,26 +36,26 @@ class Libslax < Formula
   uses_from_macos "libxslt"
   uses_from_macos "sqlite"
 
-  conflicts_with "genometools", because: "both install `bingt`"
+  conflicts_with "genometools", because: "both install `bin/gt`"
   conflicts_with "libxi", because: "both install `libxi.a`"
 
   def install
     system "autoreconf", "--force", "--install", "--verbose" if build.head?
-    system ".configure", "--disable-silent-rules", "--enable-libedit", *std_configure_args
+    system "./configure", "--disable-silent-rules", "--enable-libedit", *std_configure_args
     system "make", "install"
   end
 
   test do
-    (testpath"hello.slax").write <<~EOS
+    (testpath/"hello.slax").write <<~EOS
       version 1.0;
 
-      match  {
+      match / {
           expr "Hello World!";
       }
     EOS
 
-    system bin"slaxproc", "--slax-to-xslt", "hello.slax", "hello.xslt"
-    assert_path_exists testpath"hello.xslt"
-    assert_match "<xsl:text>Hello World!<xsl:text>", File.read("hello.xslt")
+    system bin/"slaxproc", "--slax-to-xslt", "hello.slax", "hello.xslt"
+    assert_path_exists testpath/"hello.xslt"
+    assert_match "<xsl:text>Hello World!</xsl:text>", File.read("hello.xslt")
   end
 end

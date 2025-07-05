@@ -1,14 +1,14 @@
 class Firefly < Formula
   desc "Create and manage the Hyperledger FireFly stack for blockchain interaction"
-  homepage "https:hyperledger.github.iofireflylatest"
-  url "https:github.comhyperledgerfirefly-cliarchiverefstagsv1.3.3.tar.gz"
+  homepage "https://hyperledger.github.io/firefly/latest/"
+  url "https://ghfast.top/https://github.com/hyperledger/firefly-cli/archive/refs/tags/v1.3.3.tar.gz"
   sha256 "9cde332c2afea87b4f363ce2a556ef863ba31e95b1ee946fc517da2fe0ba7583"
   license "Apache-2.0"
-  head "https:github.comhyperledgerfirefly-cli.git", branch: "main"
+  head "https://github.com/hyperledger/firefly-cli.git", branch: "main"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -25,17 +25,17 @@ class Firefly < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.comhyperledgerfirefly-clicmd.BuildDate=#{Time.now.utc.iso8601}
-      -X github.comhyperledgerfirefly-clicmd.BuildCommit=#{tap.user}
-      -X github.comhyperledgerfirefly-clicmd.BuildVersionOverride=v#{version}
+      -X github.com/hyperledger/firefly-cli/cmd.BuildDate=#{Time.now.utc.iso8601}
+      -X github.com/hyperledger/firefly-cli/cmd.BuildCommit=#{tap.user}
+      -X github.com/hyperledger/firefly-cli/cmd.BuildVersionOverride=v#{version}
     ]
-    system "go", "build", *std_go_args(ldflags:), ".ff"
+    system "go", "build", *std_go_args(ldflags:), "./ff"
 
-    generate_completions_from_executable(bin"firefly", "completion")
+    generate_completions_from_executable(bin/"firefly", "completion")
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}firefly version --short")
-    assert_match "Error: an error occurred while running docker", shell_output("#{bin}firefly start mock 2>&1", 1)
+    assert_match version.to_s, shell_output("#{bin}/firefly version --short")
+    assert_match "Error: an error occurred while running docker", shell_output("#{bin}/firefly start mock 2>&1", 1)
   end
 end

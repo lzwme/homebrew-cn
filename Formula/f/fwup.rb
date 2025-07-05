@@ -1,7 +1,7 @@
 class Fwup < Formula
   desc "Configurable embedded Linux firmware update creator and runner"
-  homepage "https:github.comfwup-homefwup"
-  url "https:github.comfwup-homefwupreleasesdownloadv1.13.0fwup-1.13.0.tar.gz"
+  homepage "https://github.com/fwup-home/fwup"
+  url "https://ghfast.top/https://github.com/fwup-home/fwup/releases/download/v1.13.0/fwup-1.13.0.tar.gz"
   sha256 "70979d36b39857b37cc378291d3bca5a9e1feec0a1b66f67a79fae46d8831529"
   license "Apache-2.0"
 
@@ -20,13 +20,13 @@ class Fwup < Formula
   depends_on "libarchive"
 
   def install
-    system ".configure", *std_configure_args
+    system "./configure", *std_configure_args
     system "make", "install"
   end
 
   test do
-    system bin"fwup", "-g"
-    assert_path_exists testpath"fwup-key.priv", "Failed to create fwup-key.priv!"
-    assert_path_exists testpath"fwup-key.pub", "Failed to create fwup-key.pub!"
+    system bin/"fwup", "-g"
+    assert_path_exists testpath/"fwup-key.priv", "Failed to create fwup-key.priv!"
+    assert_path_exists testpath/"fwup-key.pub", "Failed to create fwup-key.pub!"
   end
 end

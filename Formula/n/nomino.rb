@@ -1,10 +1,10 @@
 class Nomino < Formula
   desc "Batch rename utility"
-  homepage "https:github.comyaa110nomino"
-  url "https:github.comyaa110nominoarchiverefstags1.6.1.tar.gz"
+  homepage "https://github.com/yaa110/nomino"
+  url "https://ghfast.top/https://github.com/yaa110/nomino/archive/refs/tags/1.6.1.tar.gz"
   sha256 "8d6a664b7b557d7d3e7f057eada63e153a26af68bedbbce45523164641d497c0"
   license any_of: ["Apache-2.0", "MIT"]
-  head "https:github.comyaa110nomino.git", branch: "master"
+  head "https://github.com/yaa110/nomino.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "b95d0c88287d5238b0a97ab6798ead5edba94048077558a4725efee43b32fb51"
@@ -24,14 +24,14 @@ class Nomino < Formula
 
   test do
     (1..9).each do |n|
-      (testpath"Homebrew-#{n}.txt").write n.to_s
+      (testpath/"Homebrew-#{n}.txt").write n.to_s
     end
 
-    system bin"nomino", ".*-(\\d+).*", "{}"
+    system bin/"nomino", ".*-(\\d+).*", "{}"
 
     (1..9).each do |n|
-      assert_equal n.to_s, (testpath"#{n}.txt").read
-      refute_path_exists testpath"Homebrew-#{n}.txt"
+      assert_equal n.to_s, (testpath/"#{n}.txt").read
+      refute_path_exists testpath/"Homebrew-#{n}.txt"
     end
   end
 end

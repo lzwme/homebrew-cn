@@ -1,7 +1,7 @@
 class Icu4cAT74 < Formula
-  desc "CC++ and Java libraries for Unicode and globalization"
-  homepage "https:icu.unicode.orghome"
-  url "https:github.comunicode-orgicureleasesdownloadrelease-74-2icu4c-74_2-src.tgz"
+  desc "C/C++ and Java libraries for Unicode and globalization"
+  homepage "https://icu.unicode.org/home"
+  url "https://ghfast.top/https://github.com/unicode-org/icu/releases/download/release-74-2/icu4c-74_2-src.tgz"
   version "74.2"
   sha256 "68db082212a96d6f53e35d60f47d38b962e9f9d207a74cfac78029ae8ff5e08c"
   license "ICU"
@@ -31,18 +31,18 @@ class Icu4cAT74 < Formula
     ]
 
     cd "source" do
-      system ".configure", *args, *std_configure_args
+      system "./configure", *args, *std_configure_args
       system "make"
       system "make", "install"
     end
   end
 
   test do
-    if File.exist? "usrsharedictwords"
-      system bin"gendict", "--uchars", "usrsharedictwords", "dict"
+    if File.exist? "/usr/share/dict/words"
+      system bin/"gendict", "--uchars", "/usr/share/dict/words", "dict"
     else
-      (testpath"hello").write "hello\nworld\n"
-      system bin"gendict", "--uchars", "hello", "dict"
+      (testpath/"hello").write "hello\nworld\n"
+      system bin/"gendict", "--uchars", "hello", "dict"
     end
   end
 end

@@ -5,11 +5,11 @@ cask "affine" do
   sha256 arm:   "8169060aa90f8e9cd0218d736bc121e7deb60fd523b7b1d26c0865c4a74e8931",
          intel: "c63c27a0f1cd71bba9481b194d52f559922f25b834a32858aa5720d68a887eb4"
 
-  url "https:github.comtoeverythingAFFiNEreleasesdownloadv#{version}affine-#{version}-stable-macos-#{arch}.zip",
-      verified: "github.comtoeverythingAFFiNE"
+  url "https://ghfast.top/https://github.com/toeverything/AFFiNE/releases/download/v#{version}/affine-#{version}-stable-macos-#{arch}.zip",
+      verified: "github.com/toeverything/AFFiNE/"
   name "AFFiNE"
   desc "Note editor and whiteboard"
-  homepage "https:affine.pro"
+  homepage "https://affine.pro/"
 
   livecheck do
     url :url
@@ -22,9 +22,9 @@ cask "affine" do
   app "AFFiNE.app"
 
   zap trash: [
-    "~LibraryApplication SupportAFFiNE",
-    "~LibraryLogsAFFiNE",
-    "~LibraryPreferencespro.affine.app.plist",
-    "~LibrarySaved Application Statepro.affine.app.savedState",
+    "~/Library/Application Support/AFFiNE",
+    "~/Library/Logs/AFFiNE",
+    "~/Library/Preferences/pro.affine.app.plist",
+    "~/Library/Saved Application State/pro.affine.app.savedState",
   ]
 end

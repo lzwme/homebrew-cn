@@ -1,14 +1,14 @@
 class Geographiclib < Formula
   desc "C++ geography library"
-  homepage "https:geographiclib.sourceforge.io"
-  url "https:github.comgeographiclibgeographiclibarchiverefstagsr2.5.tar.gz"
+  homepage "https://geographiclib.sourceforge.io/"
+  url "https://ghfast.top/https://github.com/geographiclib/geographiclib/archive/refs/tags/r2.5.tar.gz"
   sha256 "4b646358189799491e669f0de5072e94e3988d4a7486823344d182d57665ed35"
   license "MIT"
-  head "https:github.comgeographiclibgeographiclib.git", branch: "main"
+  head "https://github.com/geographiclib/geographiclib.git", branch: "main"
 
   livecheck do
     url :stable
-    regex(^r(\d+(?:\.\d+)+)$i)
+    regex(/^r(\d+(?:\.\d+)+)$/i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -34,6 +34,6 @@ class Geographiclib < Formula
   end
 
   test do
-    system bin"GeoConvert", "-p", "-3", "-m", "--input-string", "33.3 44.4"
+    system bin/"GeoConvert", "-p", "-3", "-m", "--input-string", "33.3 44.4"
   end
 end

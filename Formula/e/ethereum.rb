@@ -1,10 +1,10 @@
 class Ethereum < Formula
   desc "Official Go implementation of the Ethereum protocol"
-  homepage "https:geth.ethereum.org"
-  url "https:github.comethereumgo-ethereumarchiverefstagsv1.15.11.tar.gz"
+  homepage "https://geth.ethereum.org/"
+  url "https://ghfast.top/https://github.com/ethereum/go-ethereum/archive/refs/tags/v1.15.11.tar.gz"
   sha256 "d9f584c7d77e170320c1b374cc4528dc5987f5a88d2ea79f700a254597788e1b"
   license "LGPL-3.0-or-later"
-  head "https:github.comethereumgo-ethereum.git", branch: "master"
+  head "https://github.com/ethereum/go-ethereum.git", branch: "master"
 
   livecheck do
     url :stable
@@ -28,15 +28,15 @@ class Ethereum < Formula
   def install
     # Force superenv to use -O0 to fix "cgo-dwarf-inference:2:8: error:
     # enumerator value for '__cgo_enum__0' is not an integer constant".
-    # See discussion in https:github.comHomebrewbrewissues14763.
+    # See discussion in https://github.com/Homebrew/brew/issues/14763.
     ENV.O0 if OS.linux?
 
     system "make", "all"
-    bin.install buildpath.glob("buildbin*")
+    bin.install buildpath.glob("build/bin/*")
   end
 
   test do
-    (testpath"genesis.json").write <<~JSON
+    (testpath/"genesis.json").write <<~JSON
       {
         "config": {
           "homesteadBlock": 10
@@ -53,9 +53,9 @@ class Ethereum < Formula
       }
     JSON
 
-    system bin"geth", "--datadir", "testchain", "init", "genesis.json"
-    assert_path_exists testpath"testchaingethchaindata000002.log"
-    assert_path_exists testpath"testchaingethnodekey"
-    assert_path_exists testpath"testchaingethLOCK"
+    system bin/"geth", "--datadir", "testchain", "init", "genesis.json"
+    assert_path_exists testpath/"testchain/geth/chaindata/000002.log"
+    assert_path_exists testpath/"testchain/geth/nodekey"
+    assert_path_exists testpath/"testchain/geth/LOCK"
   end
 end

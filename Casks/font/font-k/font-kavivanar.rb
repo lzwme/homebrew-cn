@@ -2,10 +2,10 @@ cask "font-kavivanar" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefontsrawmainoflkavivanarKavivanar-Regular.ttf",
-      verified: "github.comgooglefonts"
+  url "https://github.com/google/fonts/raw/main/ofl/kavivanar/Kavivanar-Regular.ttf",
+      verified: "github.com/google/fonts/"
   name "Kavivanar"
-  homepage "https:fonts.google.comspecimenKavivanar"
+  homepage "https://fonts.google.com/specimen/Kavivanar"
 
   font "Kavivanar-Regular.ttf"
 

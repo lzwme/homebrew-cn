@@ -1,10 +1,10 @@
 class Mhonarc < Formula
   desc "Mail-to-HTML converter"
-  homepage "https:www.mhonarc.org"
-  url "https:cpan.metacpan.orgauthorsidLLDLDIDRYMHonArc-2.6.24.tar.gz"
+  homepage "https://www.mhonarc.org/"
+  url "https://cpan.metacpan.org/authors/id/L/LD/LDIDRY/MHonArc-2.6.24.tar.gz"
   sha256 "457dc7374ee59cb75a0729e51cef2f2c52b48180f739d8fd956ea19882815f33"
   license "GPL-2.0-or-later"
-  head "https:github.comsympa-communitymhonarc.git", branch: "master"
+  head "https://github.com/sympa-community/mhonarc.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -21,13 +21,13 @@ class Mhonarc < Formula
 
     system "perl", "install.me",
            "-batch",
-           "-perl", Formula["perl"].opt_bin"perl",
+           "-perl", Formula["perl"].opt_bin/"perl",
            "-prefix", prefix
 
     bin.install "mhonarc"
   end
 
   test do
-    system bin"mhonarc", "-v"
+    system bin/"mhonarc", "-v"
   end
 end

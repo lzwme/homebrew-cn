@@ -1,10 +1,10 @@
 class Scnlib < Formula
   desc "Scanf for modern C++"
-  homepage "https:www.scnlib.dev"
-  url "https:github.comeliaskosunenscnlibarchiverefstagsv4.0.1.tar.gz"
+  homepage "https://www.scnlib.dev/"
+  url "https://ghfast.top/https://github.com/eliaskosunen/scnlib/archive/refs/tags/v4.0.1.tar.gz"
   sha256 "ece17b26840894cc57a7127138fe4540929adcb297524dec02c490c233ff46a7"
   license "Apache-2.0"
-  head "https:github.comeliaskosunenscnlib.git", branch: "master"
+  head "https://github.com/eliaskosunen/scnlib.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "c3531b7c92229eddcac3eff07698a8206621fda6af597998a6baea043373879f"
@@ -37,8 +37,8 @@ class Scnlib < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~CPP
-      #include <scnscan.h>
+    (testpath/"test.cpp").write <<~CPP
+      #include <scn/scan.h>
       #include <cstdlib>
       #include <string>
 
@@ -51,6 +51,6 @@ class Scnlib < Formula
     CPP
 
     system ENV.cxx, "-std=c++17", "test.cpp", "-o", "test", "-I#{include}", "-L#{lib}", "-lscn"
-    system ".test"
+    system "./test"
   end
 end

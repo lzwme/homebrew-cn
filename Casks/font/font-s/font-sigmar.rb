@@ -2,10 +2,10 @@ cask "font-sigmar" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefontsrawmainoflsigmarSigmar-Regular.ttf",
-      verified: "github.comgooglefonts"
+  url "https://github.com/google/fonts/raw/main/ofl/sigmar/Sigmar-Regular.ttf",
+      verified: "github.com/google/fonts/"
   name "Sigmar"
-  homepage "https:fonts.google.comspecimenSigmar"
+  homepage "https://fonts.google.com/specimen/Sigmar"
 
   font "Sigmar-Regular.ttf"
 

@@ -1,10 +1,10 @@
 class Ndenv < Formula
   desc "Node version manager"
-  homepage "https:github.comriywondenv"
-  url "https:github.comriywondenvarchiverefstagsv0.4.0.tar.gz"
+  homepage "https://github.com/riywo/ndenv"
+  url "https://ghfast.top/https://github.com/riywo/ndenv/archive/refs/tags/v0.4.0.tar.gz"
   sha256 "1a85e4c0c0eee24d709cbc7b5c9d50709bf51cf7fe996a1548797a4079e0b6e4"
   license "MIT"
-  head "https:github.comriywondenv.git", branch: "master"
+  head "https://github.com/riywo/ndenv.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -27,23 +27,23 @@ class Ndenv < Formula
   depends_on "node-build"
 
   def install
-    inreplace "libexecndenv" do |s|
-      if HOMEBREW_PREFIX.to_s != "usrlocal"
-        s.gsub! ":usrlocaletcndenv.d",
-            ":#{HOMEBREW_PREFIX}etcndenv.d\\0"
+    inreplace "libexec/ndenv" do |s|
+      if HOMEBREW_PREFIX.to_s != "/usr/local"
+        s.gsub! ":/usr/local/etc/ndenv.d",
+            ":#{HOMEBREW_PREFIX}/etc/ndenv.d\\0"
       end
     end
 
     if build.head?
-      inreplace "libexecrbenv---version", ^(version=)"([^"]+)", \
+      inreplace "libexec/rbenv---version", /^(version=)"([^"]+)"/, \
           %Q(\\1"\\2-g#{Utils.git_short_head}")
     end
 
     prefix.install "bin", "completions", "libexec"
-    system bin"ndenv", "rehash"
+    system bin/"ndenv", "rehash"
   end
 
   test do
-    shell_output "eval \"$(#{bin}ndenv init -)\" && ndenv versions"
+    shell_output "eval \"$(#{bin}/ndenv init -)\" && ndenv versions"
   end
 end

@@ -1,10 +1,10 @@
 class CargoLlvmLines < Formula
   desc "Count lines of LLVM IR per generic function"
-  homepage "https:github.comdtolnaycargo-llvm-lines"
-  url "https:github.comdtolnaycargo-llvm-linesarchiverefstags0.4.42.tar.gz"
+  homepage "https://github.com/dtolnay/cargo-llvm-lines"
+  url "https://ghfast.top/https://github.com/dtolnay/cargo-llvm-lines/archive/refs/tags/0.4.42.tar.gz"
   sha256 "758cfc5e2b30578912e5d0e3faabf4ffe0e4ed316bb6bd464a4c81c45f5e25c9"
   license any_of: ["Apache-2.0", "MIT"]
-  head "https:github.comdtolnaycargo-llvm-lines.git", branch: "master"
+  head "https://github.com/dtolnay/cargo-llvm-lines.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "8d0066a18e73fb045e80ef304423215bfd0a029e0180ecab07289a1478f22c39"
@@ -25,7 +25,7 @@ class CargoLlvmLines < Formula
 
   test do
     # Show that we can use a different toolchain than the one provided by the `rust` formula.
-    # https:github.comHomebrewhomebrew-corepull134074#pullrequestreview-1484979359
+    # https://github.com/Homebrew/homebrew-core/pull/134074#pullrequestreview-1484979359
     ENV.prepend_path "PATH", Formula["rustup"].bin
     system "rustup", "set", "profile", "minimal"
     system "rustup", "default", "beta"

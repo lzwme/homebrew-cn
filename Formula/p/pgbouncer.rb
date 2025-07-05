@@ -1,13 +1,13 @@
 class Pgbouncer < Formula
   desc "Lightweight connection pooler for PostgreSQL"
-  homepage "https:www.pgbouncer.org"
-  url "https:www.pgbouncer.orgdownloadsfiles1.24.1pgbouncer-1.24.1.tar.gz"
+  homepage "https://www.pgbouncer.org/"
+  url "https://www.pgbouncer.org/downloads/files/1.24.1/pgbouncer-1.24.1.tar.gz"
   sha256 "da72a3aba13072876d055a3e58dd4aba4a5de4ed6148e73033185245598fd3e0"
   license "ISC"
 
   livecheck do
-    url "https:www.pgbouncer.orgdownloads"
-    regex(href=.*?pgbouncer[._-]v?(\d+(?:\.\d+)+)\.ti)
+    url "https://www.pgbouncer.org/downloads/"
+    regex(/href=.*?pgbouncer[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   bottle do
@@ -21,7 +21,7 @@ class Pgbouncer < Formula
   end
 
   head do
-    url "https:github.compgbouncerpgbouncer.git", branch: "master"
+    url "https://github.com/pgbouncer/pgbouncer.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -34,41 +34,41 @@ class Pgbouncer < Formula
   depends_on "openssl@3"
 
   def install
-    system ".autogen.sh" if build.head?
-    system ".configure", *std_configure_args
+    system "./autogen.sh" if build.head?
+    system "./configure", *std_configure_args
     system "make", "install"
-    bin.install "etcmkauth.py"
-    inreplace "etcpgbouncer.ini" do |s|
-      s.gsub!(logfile = .*, "logfile = #{var}logpgbouncer.log")
-      s.gsub!(pidfile = .*, "pidfile = #{var}runpgbouncer.pid")
-      s.gsub!(auth_file = .*, "auth_file = #{etc}userlist.txt")
+    bin.install "etc/mkauth.py"
+    inreplace "etc/pgbouncer.ini" do |s|
+      s.gsub!(/logfile = .*/, "logfile = #{var}/log/pgbouncer.log")
+      s.gsub!(/pidfile = .*/, "pidfile = #{var}/run/pgbouncer.pid")
+      s.gsub!(/auth_file = .*/, "auth_file = #{etc}/userlist.txt")
     end
-    etc.install %w[etcpgbouncer.ini etcuserlist.txt]
+    etc.install %w[etc/pgbouncer.ini etc/userlist.txt]
   end
 
   def post_install
-    (var"log").mkpath
-    (var"run").mkpath
+    (var/"log").mkpath
+    (var/"run").mkpath
   end
 
   def caveats
     <<~EOS
-      The config file: #{etc}pgbouncer.ini is in the "ini" format and you
+      The config file: #{etc}/pgbouncer.ini is in the "ini" format and you
       will need to edit it for your particular setup. See:
-      https:pgbouncer.github.ioconfig.html
+      https://pgbouncer.github.io/config.html
 
-      The auth_file option should point to the #{etc}userlist.txt file which
-      can be populated by the #{bin}mkauth.py script.
+      The auth_file option should point to the #{etc}/userlist.txt file which
+      can be populated by the #{bin}/mkauth.py script.
     EOS
   end
 
   service do
-    run [opt_bin"pgbouncer", "-q", etc"pgbouncer.ini"]
+    run [opt_bin/"pgbouncer", "-q", etc/"pgbouncer.ini"]
     keep_alive true
     working_dir HOMEBREW_PREFIX
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}pgbouncer -V")
+    assert_match version.to_s, shell_output("#{bin}/pgbouncer -V")
   end
 end

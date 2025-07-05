@@ -1,10 +1,10 @@
 class Tbox < Formula
   desc "Glib-like multi-platform C library"
-  homepage "https:docs.tboox.org"
-  url "https:github.comtbooxtboxarchiverefstagsv1.7.6.tar.gz"
+  homepage "https://docs.tboox.org/"
+  url "https://ghfast.top/https://github.com/tboox/tbox/archive/refs/tags/v1.7.6.tar.gz"
   sha256 "2622de5473b8f2e94b800b86ff6ef4a535bc138c61c940c3ab84737bb94a126a"
   license "Apache-2.0"
-  head "https:github.comtbooxtbox.git", branch: "master"
+  head "https://github.com/tboox/tbox.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "c7947e45eec0391b3732ef28f7ef9fb0649eccee820613ed780cce5c80101a27"
@@ -25,8 +25,8 @@ class Tbox < Formula
   end
 
   test do
-    (testpath"test.c").write <<~C
-      #include <tboxtbox.h>
+    (testpath/"test.c").write <<~C
+      #include <tbox/tbox.h>
       int main()
       {
         if (tb_init(tb_null, tb_null))
@@ -38,6 +38,6 @@ class Tbox < Formula
       }
     C
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-ltbox", "-lm", "-pthread", "-o", "test"
-    assert_equal "hello tbox!\n", shell_output(".test")
+    assert_equal "hello tbox!\n", shell_output("./test")
   end
 end

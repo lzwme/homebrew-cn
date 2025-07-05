@@ -1,13 +1,13 @@
 class Byobu < Formula
   desc "Text-based window manager and terminal multiplexer"
-  homepage "https:github.comdustinkirklandbyobu"
-  url "https:github.comdustinkirklandbyobuarchiverefstags6.13.tar.gz"
+  homepage "https://github.com/dustinkirkland/byobu"
+  url "https://ghfast.top/https://github.com/dustinkirkland/byobu/archive/refs/tags/6.13.tar.gz"
   sha256 "9690c629588e8f95d16b2461950d39934faaf8005dd2a283886d4e3bd6c86df6"
   license "GPL-3.0-only"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -28,26 +28,26 @@ class Byobu < Formula
   conflicts_with "ctail", because: "both install `ctail` binaries"
 
   def install
-    cp ".debianchangelog", ".ChangeLog"
+    cp "./debian/changelog", "./ChangeLog"
     system "autoreconf", "--force", "--install", "--verbose"
-    system ".configure", *std_configure_args
+    system "./configure", *std_configure_args
     system "make", "install"
 
     byobu_python = Formula["newt"].deps
-                                  .find { |d| d.name.match?(^python@\d\.\d+$) }
+                                  .find { |d| d.name.match?(/^python@\d\.\d+$/) }
                                   .to_formula
-                                  .libexec"binpython"
+                                  .libexec/"bin/python"
 
-    lib.glob("byobuinclude*.py").each do |script|
+    lib.glob("byobu/include/*.py").each do |script|
       byobu_script = "byobu-#{script.basename(".py")}"
 
-      libexec.install(binbyobu_script)
-      (binbyobu_script).write_env_script(libexecbyobu_script, BYOBU_PYTHON: byobu_python)
+      libexec.install(bin/byobu_script)
+      (bin/byobu_script).write_env_script(libexec/byobu_script, BYOBU_PYTHON: byobu_python)
     end
   end
 
   test do
-    system bin"byobu-status"
-    assert_match "open terminal failed", shell_output("#{bin}byobu-select-session 2>&1", 1)
+    system bin/"byobu-status"
+    assert_match "open terminal failed", shell_output("#{bin}/byobu-select-session 2>&1", 1)
   end
 end

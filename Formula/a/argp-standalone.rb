@@ -1,7 +1,7 @@
 class ArgpStandalone < Formula
   desc "Standalone version of arguments parsing functions from GLIBC"
-  homepage "https:github.comargp-standaloneargp-standalone"
-  url "https:github.comargp-standaloneargp-standalonearchiverefstags1.5.0.tar.gz"
+  homepage "https://github.com/argp-standalone/argp-standalone"
+  url "https://ghfast.top/https://github.com/argp-standalone/argp-standalone/archive/refs/tags/1.5.0.tar.gz"
   sha256 "c29eae929dfebd575c38174f2c8c315766092cec99a8f987569d0cad3c6d64f6"
   license all_of: [
     "LGPL-2.1-or-later",
@@ -32,7 +32,7 @@ class ArgpStandalone < Formula
   end
 
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include <stdio.h>
       #include <argp.h>
 
@@ -42,6 +42,6 @@ class ArgpStandalone < Formula
       }
     C
     system ENV.cc, "test.c", "-L#{lib}", "-largp", "-o", "test"
-    system ".test"
+    system "./test"
   end
 end

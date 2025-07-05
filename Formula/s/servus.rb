@@ -1,7 +1,7 @@
 class Servus < Formula
   desc "Library and Utilities for zeroconf networking"
-  homepage "https:github.comHBPVISServus"
-  url "https:github.comHBPVISServus.git",
+  homepage "https://github.com/HBPVIS/Servus"
+  url "https://github.com/HBPVIS/Servus.git",
       tag:      "1.5.2",
       revision: "170bd93dbdd6c0dd80cf4dfc5926590cc5cef5ab"
   license "LGPL-3.0-only"
@@ -31,7 +31,7 @@ class Servus < Formula
 
   # Backport missing header
   patch do
-    url "https:github.comHBPVISServuscommit53bf825cd995a7d2f569157f20431daf0cc860f8.patch?full_index=1"
+    url "https://github.com/HBPVIS/Servus/commit/53bf825cd995a7d2f569157f20431daf0cc860f8.patch?full_index=1"
     sha256 "bb5d44dd39b63a091c9cc89fcdfc25e914f184eac5af9256b54975cf300575a5"
   end
 
@@ -43,12 +43,12 @@ class Servus < Formula
 
   test do
     # Embed "serializeable" test from the servus 1.5.0 source
-    (testpath"test.cpp").write <<~CPP
+    (testpath/"test.cpp").write <<~CPP
       #define BOOST_TEST_MODULE servus_serializable
-      #include <boosttestunit_test.hpp>
+      #include <boost/test/unit_test.hpp>
 
-      #include <servusuint128_t.h>
-      #include <servusserializable.h>
+      #include <servus/uint128_t.h>
+      #include <servus/serializable.h>
 
       void dummyFunction(){}
 
@@ -84,14 +84,14 @@ class Servus < Formula
 
           obj.registerSerializeCallback( callback );
           BOOST_CHECK_THROW( obj.registerSerializeCallback( callback ),
-                             std::runtime_error );  callback already registered
+                             std::runtime_error ); // callback already registered
 
           BOOST_CHECK_NO_THROW( obj.registerSerializeCallback(
               servus::Serializable::SerializeCallback( )));
           BOOST_CHECK_NO_THROW( obj.registerSerializeCallback( callback ));
 
           BOOST_CHECK_THROW( obj.registerSerializeCallback( callback ),
-                             std::runtime_error );  callback already registered
+                             std::runtime_error ); // callback already registered
       }
 
       BOOST_AUTO_TEST_CASE(serializable_registerDeserialized)
@@ -101,24 +101,24 @@ class Servus < Formula
 
           obj.registerDeserializedCallback( callback );
           BOOST_CHECK_THROW( obj.registerDeserializedCallback( callback ),
-                             std::runtime_error );  callback already registered
+                             std::runtime_error ); // callback already registered
 
           BOOST_CHECK_NO_THROW( obj.registerDeserializedCallback(
               servus::Serializable::DeserializedCallback( )));
           BOOST_CHECK_NO_THROW( obj.registerDeserializedCallback( callback ));
 
           BOOST_CHECK_THROW( obj.registerDeserializedCallback( callback ),
-                             std::runtime_error );  callback already registered
+                             std::runtime_error ); // callback already registered
       }
 
       BOOST_AUTO_TEST_CASE(serializable_binary)
       {
           SerializableObject obj;
 
-           fromBinary implemented
+          // fromBinary implemented
           BOOST_CHECK_NO_THROW( obj.fromBinary( new float[3], 3 ));
 
-           default toBinary (unimplemented)
+          // default toBinary (unimplemented)
           BOOST_CHECK_THROW( obj.toBinary(), std::runtime_error );
       }
 
@@ -126,16 +126,16 @@ class Servus < Formula
       {
           SerializableObject obj;
 
-           fromJson implemented
+          // fromJson implemented
           BOOST_CHECK_NO_THROW( obj.fromJSON( std::string( "testing..." )));
 
-           default toJson (unimplemented)
+          // default toJson (unimplemented)
           BOOST_CHECK_THROW( obj.toJSON(), std::runtime_error );
       }
     CPP
     system ENV.cxx, "test.cpp", "-L#{lib}", "-lServus", "-DBOOST_TEST_DYN_LINK",
                     "-L#{Formula["boost"].opt_lib}", "-lboost_unit_test_framework",
                     "-std=gnu++11", "-o", "test"
-    system ".test"
+    system "./test"
   end
 end

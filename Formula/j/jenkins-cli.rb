@@ -1,10 +1,10 @@
 class JenkinsCli < Formula
   desc "CLI for jenkins"
-  homepage "https:github.comjenkins-zhjenkins-cli"
-  url "https:github.comjenkins-zhjenkins-cliarchiverefstagsv0.0.47.tar.gz"
+  homepage "https://github.com/jenkins-zh/jenkins-cli"
+  url "https://ghfast.top/https://github.com/jenkins-zh/jenkins-cli/archive/refs/tags/v0.0.47.tar.gz"
   sha256 "4e78600e214c357c08a0a83fe9cc59214b0d050de07dbb469d9f226c8c37eabc"
   license "MIT"
-  head "https:github.comjenkins-zhjenkins-cli.git", branch: "master"
+  head "https://github.com/jenkins-zh/jenkins-cli.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "85ed47aaf4a16751608eef650d8b7cab3e8af8c8133ed82bf6a7305004adb110"
@@ -20,28 +20,28 @@ class JenkinsCli < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.comlinuxsurencobra-extensionversion.version=#{version}
-      -X github.comlinuxsurencobra-extensionversion.commit=#{tap.user}
-      -X github.comlinuxsurencobra-extensionversion.date=#{time.iso8601}
+      -X github.com/linuxsuren/cobra-extension/version.version=#{version}
+      -X github.com/linuxsuren/cobra-extension/version.commit=#{tap.user}
+      -X github.com/linuxsuren/cobra-extension/version.date=#{time.iso8601}
     ]
-    system "go", "build", *std_go_args(ldflags:, output: bin"jcli")
+    system "go", "build", *std_go_args(ldflags:, output: bin/"jcli")
 
-    generate_completions_from_executable(bin"jcli", "completion")
+    generate_completions_from_executable(bin/"jcli", "completion")
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}jcli version")
+    assert_match version.to_s, shell_output("#{bin}/jcli version")
 
-    (testpath".jenkins-cli.yaml").write <<~EOS
+    (testpath/".jenkins-cli.yaml").write <<~EOS
       current: default
       configurations:
         default:
-          url: http:localhost:8080
+          url: http://localhost:8080
           username: admin
           token: admin
     EOS
 
-    assert_equal "Name URL Description", shell_output("#{bin}jcli config list").chomp
-    assert_match "Cannot found Jenkins", shell_output("#{bin}jcli plugin list 2>&1", 1)
+    assert_equal "Name URL Description", shell_output("#{bin}/jcli config list").chomp
+    assert_match "Cannot found Jenkins", shell_output("#{bin}/jcli plugin list 2>&1", 1)
   end
 end

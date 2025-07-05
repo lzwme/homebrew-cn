@@ -1,13 +1,13 @@
 class PostgresqlAT14 < Formula
   desc "Object-relational database system"
-  homepage "https:www.postgresql.org"
-  url "https:ftp.postgresql.orgpubsourcev14.18postgresql-14.18.tar.bz2"
+  homepage "https://www.postgresql.org/"
+  url "https://ftp.postgresql.org/pub/source/v14.18/postgresql-14.18.tar.bz2"
   sha256 "83ab29d6bfc3dc58b2ed3c664114fdfbeb6a0450c4b8d7fa69aee91e3ca14f8e"
   license "PostgreSQL"
 
   livecheck do
-    url "https:ftp.postgresql.orgpubsource"
-    regex(%r{href=["']?v?(14(?:\.\d+)+)?["' >]}i)
+    url "https://ftp.postgresql.org/pub/source/"
+    regex(%r{href=["']?v?(14(?:\.\d+)+)/?["' >]}i)
   end
 
   bottle do
@@ -20,14 +20,14 @@ class PostgresqlAT14 < Formula
     sha256 x86_64_linux:  "9e83804e685fafcacecb289b580985ead1996e08db17bb7c6838cf9176bb8cdb"
   end
 
-  # https:www.postgresql.orgsupportversioning
+  # https://www.postgresql.org/support/versioning/
   deprecate! date: "2026-11-12", because: :unsupported
 
   depends_on "pkgconf" => :build
   depends_on "icu4c@77"
 
   # GSSAPI provided by Kerberos.framework crashes when forked.
-  # See https:github.comHomebrewhomebrew-coreissues47494.
+  # See https://github.com/Homebrew/homebrew-core/issues/47494.
   depends_on "krb5"
 
   depends_on "lz4"
@@ -53,9 +53,9 @@ class PostgresqlAT14 < Formula
     args = %W[
       --disable-debug
       --prefix=#{prefix}
-      --datadir=#{HOMEBREW_PREFIX}share#{name}
-      --libdir=#{HOMEBREW_PREFIX}lib#{name}
-      --includedir=#{HOMEBREW_PREFIX}include#{name}
+      --datadir=#{HOMEBREW_PREFIX}/share/#{name}
+      --libdir=#{HOMEBREW_PREFIX}/lib/#{name}
+      --includedir=#{HOMEBREW_PREFIX}/include/#{name}
       --enable-thread-safety
       --with-gssapi
       --with-icu
@@ -75,27 +75,27 @@ class PostgresqlAT14 < Formula
     # which does not work on CLT-only installs.
     args << "PG_SYSROOT=#{MacOS.sdk_path}" if OS.mac? && MacOS.sdk_root_needed?
 
-    system ".configure", *args
+    system "./configure", *args
     system "make"
     system "make", "install-world", "datadir=#{pkgshare}",
-                                    "libdir=#{lib}#{name}",
-                                    "pkglibdir=#{lib}#{name}",
-                                    "includedir=#{include}#{name}",
-                                    "pkgincludedir=#{include}#{name}",
-                                    "includedir_server=#{include}#{name}server",
-                                    "includedir_internal=#{include}#{name}internal"
+                                    "libdir=#{lib}/#{name}",
+                                    "pkglibdir=#{lib}/#{name}",
+                                    "includedir=#{include}/#{name}",
+                                    "pkgincludedir=#{include}/#{name}",
+                                    "includedir_server=#{include}/#{name}/server",
+                                    "includedir_internal=#{include}/#{name}/internal"
     return unless OS.linux?
 
-    inreplace libname"pgxssrcMakefile.global",
-              "LD = #{Superenv.shims_path}ld",
-              "LD = #{HOMEBREW_PREFIX}binld"
+    inreplace lib/name/"pgxs/src/Makefile.global",
+              "LD = #{Superenv.shims_path}/ld",
+              "LD = #{HOMEBREW_PREFIX}/bin/ld"
   end
 
   def post_install
-    (var"log").mkpath
+    (var/"log").mkpath
     postgresql_datadir.mkpath
 
-    old_postgres_data_dir = var"postgres"
+    old_postgres_data_dir = var/"postgres"
     if old_postgres_data_dir.exist?
       opoo "The old PostgreSQL data directory (#{old_postgres_data_dir}) still exists!"
       puts <<~EOS
@@ -111,19 +111,19 @@ class PostgresqlAT14 < Formula
     # Don't initialize database, it clashes when testing other PostgreSQL versions.
     return if ENV["HOMEBREW_GITHUB_ACTIONS"]
 
-    system bin"initdb", "--locale=C", "-E", "UTF-8", postgresql_datadir unless pg_version_exists?
+    system bin/"initdb", "--locale=C", "-E", "UTF-8", postgresql_datadir unless pg_version_exists?
   end
 
   def postgresql_datadir
-    varname
+    var/name
   end
 
   def postgresql_log_path
-    var"log#{name}.log"
+    var/"log/#{name}.log"
   end
 
   def pg_version_exists?
-    (postgresql_datadir"PG_VERSION").exist?
+    (postgresql_datadir/"PG_VERSION").exist?
   end
 
   def caveats
@@ -134,7 +134,7 @@ class PostgresqlAT14 < Formula
   end
 
   service do
-    run [opt_bin"postgres", "-D", f.postgresql_datadir]
+    run [opt_bin/"postgres", "-D", f.postgresql_datadir]
     keep_alive true
     log_path f.postgresql_log_path
     error_log_path f.postgresql_log_path
@@ -142,10 +142,10 @@ class PostgresqlAT14 < Formula
   end
 
   test do
-    system bin"initdb", testpath"test" unless ENV["HOMEBREW_GITHUB_ACTIONS"]
-    assert_equal "#{HOMEBREW_PREFIX}share#{name}", shell_output("#{bin}pg_config --sharedir").chomp
-    assert_equal "#{HOMEBREW_PREFIX}lib#{name}", shell_output("#{bin}pg_config --libdir").chomp
-    assert_equal "#{HOMEBREW_PREFIX}lib#{name}", shell_output("#{bin}pg_config --pkglibdir").chomp
-    assert_equal "#{HOMEBREW_PREFIX}include#{name}", shell_output("#{bin}pg_config --includedir").chomp
+    system bin/"initdb", testpath/"test" unless ENV["HOMEBREW_GITHUB_ACTIONS"]
+    assert_equal "#{HOMEBREW_PREFIX}/share/#{name}", shell_output("#{bin}/pg_config --sharedir").chomp
+    assert_equal "#{HOMEBREW_PREFIX}/lib/#{name}", shell_output("#{bin}/pg_config --libdir").chomp
+    assert_equal "#{HOMEBREW_PREFIX}/lib/#{name}", shell_output("#{bin}/pg_config --pkglibdir").chomp
+    assert_equal "#{HOMEBREW_PREFIX}/include/#{name}", shell_output("#{bin}/pg_config --includedir").chomp
   end
 end

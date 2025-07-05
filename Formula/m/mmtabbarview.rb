@@ -1,7 +1,7 @@
 class Mmtabbarview < Formula
   desc "Modernized and view-based rewrite of PSMTabBarControl"
-  homepage "https:mimo42.github.ioMMTabBarView"
-  url "https:github.comMiMo42MMTabBarViewarchiverefstagsv1.4.2.tar.gz"
+  homepage "https://mimo42.github.io/MMTabBarView/"
+  url "https://ghfast.top/https://github.com/MiMo42/MMTabBarView/archive/refs/tags/v1.4.2.tar.gz"
   sha256 "a5b79f1b50f6cabe97558f4c24a6317c448c534f15655309b6b29a532590e976"
   license "BSD-3-Clause"
 
@@ -27,9 +27,9 @@ class Mmtabbarview < Formula
   def install
     # Apply workaround for Sequoia based on ViennaRSS fork's fix.
     # This is done via inreplace as pathname has spaces.
-    # Ref: https:github.comViennaRSSMMTabBarViewcommit149fd82953a8078c4d60ce3fa855a853619eb3f9
+    # Ref: https://github.com/ViennaRSS/MMTabBarView/commit/149fd82953a8078c4d60ce3fa855a853619eb3f9
     if MacOS.version >= :sequoia
-      inreplace "MMTabBarViewMMTabBarViewStylesMojave Tab StyleMMMojaveTabStyle+Assets.m",
+      inreplace "MMTabBarView/MMTabBarView/Styles/Mojave Tab Style/MMMojaveTabStyle+Assets.m",
                 "@import Darwin.Availability;", ""
     end
 
@@ -38,12 +38,12 @@ class Mmtabbarview < Formula
                "-configuration", "Release",
                "SYMROOT=build", "ONLY_ACTIVE_ARCH=YES",
                "MACOSX_DEPLOYMENT_TARGET=#{MacOS.version}"
-    frameworks.install "MMTabBarViewbuildReleaseMMTabBarView.framework"
+    frameworks.install "MMTabBarView/build/Release/MMTabBarView.framework"
   end
 
   test do
-    (testpath"test.m").write <<~OBJC
-      #import <MMTabBarViewMMTabBarView.h>
+    (testpath/"test.m").write <<~OBJC
+      #import <MMTabBarView/MMTabBarView.h>
       int main() {
         MMTabBarView *view = [MMTabBarView alloc];
         [view release];
@@ -51,6 +51,6 @@ class Mmtabbarview < Formula
       }
     OBJC
     system ENV.cc, "test.m", "-F#{frameworks}", "-framework", "MMTabBarView", "-framework", "Foundation", "-o", "test"
-    system ".test"
+    system "./test"
   end
 end

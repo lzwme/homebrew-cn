@@ -1,10 +1,10 @@
 class Sprocket < Formula
   desc "Bioinformatics workflow engine built on the Workflow Description Language (WDL)"
-  homepage "https:sprocket.bio"
-  url "https:github.comstjude-rust-labssprocketarchiverefstagsv0.13.0.tar.gz"
+  homepage "https://sprocket.bio"
+  url "https://ghfast.top/https://github.com/stjude-rust-labs/sprocket/archive/refs/tags/v0.13.0.tar.gz"
   sha256 "bb8364ae4d323d2ab1c3de60aa479fce2e6c922f7500e1462ca85671fc856433"
   license any_of: ["Apache-2.0", "MIT"]
-  head "https:github.comstjude-rust-labssprocket.git", branch: "main"
+  head "https://github.com/stjude-rust-labs/sprocket.git", branch: "main"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "4a8019db8b73c7e9c54438cfaa0ca7f33d6c2b982ad68f602fc6e4c951bbfb84"
@@ -27,8 +27,8 @@ class Sprocket < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}sprocket --version")
-    (testpath"hello.wdl").write <<~WDL
+    assert_match version.to_s, shell_output("#{bin}/sprocket --version")
+    (testpath/"hello.wdl").write <<~WDL
       version 1.2
 
       task say_hello {
@@ -58,6 +58,6 @@ class Sprocket < Formula
       }
     JSON
 
-    assert_match expected, shell_output("#{bin}sprocket inputs --name say_hello #{testpath}hello.wdl")
+    assert_match expected, shell_output("#{bin}/sprocket inputs --name say_hello #{testpath}/hello.wdl")
   end
 end

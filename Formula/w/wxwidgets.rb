@@ -1,10 +1,10 @@
 class Wxwidgets < Formula
   desc "Cross-platform C++ GUI toolkit"
-  homepage "https:www.wxwidgets.org"
-  url "https:github.comwxWidgetswxWidgetsreleasesdownloadv3.2.8wxWidgets-3.2.8.tar.bz2"
+  homepage "https://www.wxwidgets.org"
+  url "https://ghfast.top/https://github.com/wxWidgets/wxWidgets/releases/download/v3.2.8/wxWidgets-3.2.8.tar.bz2"
   sha256 "c74784904109d7229e6894c85cfa068f1106a4a07c144afd78af41f373ee0fe6"
   license "LGPL-2.0-or-later" => { with: "WxWindows-exception-3.1" }
-  head "https:github.comwxWidgetswxWidgets.git", branch: "master"
+  head "https://github.com/wxWidgets/wxWidgets.git", branch: "master"
 
   livecheck do
     url :stable
@@ -49,8 +49,8 @@ class Wxwidgets < Formula
 
   def install
     # Remove all bundled libraries excluding `nanosvg` which isn't available as formula
-    %w[catch pcre].each { |l| rm_r(buildpath"3rdparty"l) }
-    %w[expat jpeg png tiff zlib].each { |l| rm_r(buildpath"src"l) }
+    %w[catch pcre].each { |l| rm_r(buildpath/"3rdparty"/l) }
+    %w[expat jpeg png tiff zlib].each { |l| rm_r(buildpath/"src"/l) }
 
     args = [
       "--enable-clipboard",
@@ -82,25 +82,25 @@ class Wxwidgets < Formula
       args << "--with-libiconv"
 
       # Work around deprecated Carbon API, see
-      # https:github.comwxWidgetswxWidgetsissues24724
-      inreplace "srcosxcarbondcscreen.cpp", "#if !wxOSX_USE_IPHONE", "#if 0" if MacOS.version >= :sequoia
+      # https://github.com/wxWidgets/wxWidgets/issues/24724
+      inreplace "src/osx/carbon/dcscreen.cpp", "#if !wxOSX_USE_IPHONE", "#if 0" if MacOS.version >= :sequoia
     end
 
-    system ".configure", *args, *std_configure_args
+    system "./configure", *args, *std_configure_args
     system "make", "install"
 
     # wx-config should reference the public prefix, not wxwidgets's keg
     # this ensures that Python software trying to locate wxpython headers
     # using wx-config can find both wxwidgets and wxpython headers,
     # which are linked to the same place
-    inreplace bin"wx-config", prefix, HOMEBREW_PREFIX
+    inreplace bin/"wx-config", prefix, HOMEBREW_PREFIX
 
     # For consistency with the versioned wxwidgets formulae
-    bin.install_symlink bin"wx-config" => "wx-config-#{version.major_minor}"
-    (share"wx"version.major_minor).install share"aclocal", share"bakefile"
+    bin.install_symlink bin/"wx-config" => "wx-config-#{version.major_minor}"
+    (share/"wx"/version.major_minor).install share/"aclocal", share/"bakefile"
   end
 
   test do
-    system bin"wx-config", "--libs"
+    system bin/"wx-config", "--libs"
   end
 end

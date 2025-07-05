@@ -414,14 +414,14 @@ cask "firefox" do
     "zh-CN"
   end
 
-  url "https:download-installer.cdn.mozilla.netpubfirefoxreleases#{version}mac#{language}Firefox%20#{version}.dmg",
-      verified: "download-installer.cdn.mozilla.netpubfirefoxreleases"
+  url "https://download-installer.cdn.mozilla.net/pub/firefox/releases/#{version}/mac/#{language}/Firefox%20#{version}.dmg",
+      verified: "download-installer.cdn.mozilla.net/pub/firefox/releases/"
   name "Mozilla Firefox"
   desc "Web browser"
-  homepage "https:www.mozilla.orgfirefox"
+  homepage "https://www.mozilla.org/firefox/"
 
   livecheck do
-    url "https:product-details.mozilla.org1.0firefox_versions.json"
+    url "https://product-details.mozilla.org/1.0/firefox_versions.json"
     strategy :json do |json|
       json["LATEST_FIREFOX_VERSION"]
     end
@@ -436,37 +436,37 @@ cask "firefox" do
   depends_on macos: ">= :catalina"
 
   app "Firefox.app"
-  # shim script (https:github.comHomebrewhomebrew-caskissues18809)
-  shimscript = "#{staged_path}firefox.wrapper.sh"
+  # shim script (https://github.com/Homebrew/homebrew-cask/issues/18809)
+  shimscript = "#{staged_path}/firefox.wrapper.sh"
   binary shimscript, target: "firefox"
 
   preflight do
     File.write shimscript, <<~EOS
-      #!binbash
-      exec '#{appdir}Firefox.appContentsMacOSfirefox' "$@"
+      #!/bin/bash
+      exec '#{appdir}/Firefox.app/Contents/MacOS/firefox' "$@"
     EOS
   end
 
   uninstall quit: "org.mozilla.firefox"
 
   zap trash: [
-        "LibraryLogsDiagnosticReportsfirefox_*",
-        "~LibraryApplication Supportcom.apple.sharedfilelistcom.apple.LSSharedFileList.ApplicationRecentDocumentsorg.mozilla.firefox.sfl*",
-        "~LibraryApplication SupportCrashReporterfirefox_*",
-        "~LibraryApplication SupportFirefox",
-        "~LibraryCachesFirefox",
-        "~LibraryCachesMozillaupdatesApplicationsFirefox",
-        "~LibraryCachesorg.mozilla.crashreporter",
-        "~LibraryCachesorg.mozilla.firefox",
-        "~LibraryPreferencesorg.mozilla.crashreporter.plist",
-        "~LibraryPreferencesorg.mozilla.firefox.plist",
-        "~LibrarySaved Application Stateorg.mozilla.firefox.savedState",
-        "~LibraryWebKitorg.mozilla.firefox",
+        "/Library/Logs/DiagnosticReports/firefox_*",
+        "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/org.mozilla.firefox.sfl*",
+        "~/Library/Application Support/CrashReporter/firefox_*",
+        "~/Library/Application Support/Firefox",
+        "~/Library/Caches/Firefox",
+        "~/Library/Caches/Mozilla/updates/Applications/Firefox",
+        "~/Library/Caches/org.mozilla.crashreporter",
+        "~/Library/Caches/org.mozilla.firefox",
+        "~/Library/Preferences/org.mozilla.crashreporter.plist",
+        "~/Library/Preferences/org.mozilla.firefox.plist",
+        "~/Library/Saved Application State/org.mozilla.firefox.savedState",
+        "~/Library/WebKit/org.mozilla.firefox",
       ],
       rmdir: [
-        "~LibraryApplication SupportMozilla", #  May also contain non-Firefox data
-        "~LibraryCachesMozilla",
-        "~LibraryCachesMozillaupdates",
-        "~LibraryCachesMozillaupdatesApplications",
+        "~/Library/Application Support/Mozilla", #  May also contain non-Firefox data
+        "~/Library/Caches/Mozilla",
+        "~/Library/Caches/Mozilla/updates",
+        "~/Library/Caches/Mozilla/updates/Applications",
       ]
 end

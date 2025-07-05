@@ -2,12 +2,12 @@ cask "font-barlow-condensed" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefonts.git",
-      verified:  "github.comgooglefonts",
+  url "https://github.com/google/fonts.git",
+      verified:  "github.com/google/fonts",
       branch:    "main",
-      only_path: "oflbarlowcondensed"
+      only_path: "ofl/barlowcondensed"
   name "Barlow Condensed"
-  homepage "https:fonts.google.comspecimenBarlow+Condensed"
+  homepage "https://fonts.google.com/specimen/Barlow+Condensed"
 
   font "BarlowCondensed-Black.ttf"
   font "BarlowCondensed-BlackItalic.ttf"

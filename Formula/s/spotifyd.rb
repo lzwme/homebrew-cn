@@ -1,14 +1,14 @@
 class Spotifyd < Formula
   desc "Spotify daemon"
-  homepage "https:spotifyd.rs"
-  url "https:github.comSpotifydspotifydarchiverefstagsv0.4.1.tar.gz"
+  homepage "https://spotifyd.rs/"
+  url "https://ghfast.top/https://github.com/Spotifyd/spotifyd/archive/refs/tags/v0.4.1.tar.gz"
   sha256 "fdbf93c51232d85a0ef29813a02f3c23aacf733444eacf898729593e8837bcfc"
   license "GPL-3.0-only"
-  head "https:github.comSpotifydspotifyd.git", branch: "master"
+  head "https://github.com/Spotifyd/spotifyd.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -35,13 +35,13 @@ class Spotifyd < Formula
   end
 
   service do
-    run [opt_bin"spotifyd", "--no-daemon", "--backend", "portaudio"]
+    run [opt_bin/"spotifyd", "--no-daemon", "--backend", "portaudio"]
     keep_alive true
   end
 
   test do
     args = ["--no-daemon", "--verbose"]
-    Open3.popen2e(bin"spotifyd", *args) do |_, stdout_and_stderr, wait_thread|
+    Open3.popen2e(bin/"spotifyd", *args) do |_, stdout_and_stderr, wait_thread|
       sleep 5
       Process.kill "TERM", wait_thread.pid
       output = stdout_and_stderr.read

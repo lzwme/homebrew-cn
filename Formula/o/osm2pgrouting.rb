@@ -1,11 +1,11 @@
 class Osm2pgrouting < Formula
   desc "Import OSM data into pgRouting database"
-  homepage "https:pgrouting.orgdocstoolsosm2pgrouting.html"
-  url "https:github.compgRoutingosm2pgroutingarchiverefstagsv2.3.8.tar.gz"
+  homepage "https://pgrouting.org/docs/tools/osm2pgrouting.html"
+  url "https://ghfast.top/https://github.com/pgRouting/osm2pgrouting/archive/refs/tags/v2.3.8.tar.gz"
   sha256 "e3a58bcacf0c8811e0dcf3cf3791a4a7cc5ea2a901276133eacf227b30fd8355"
   license "GPL-2.0-or-later"
   revision 16
-  head "https:github.compgRoutingosm2pgrouting.git", branch: "main"
+  head "https://github.com/pgRouting/osm2pgrouting.git", branch: "main"
 
   no_autobump! because: :requires_manual_review
 
@@ -27,7 +27,7 @@ class Osm2pgrouting < Formula
   depends_on "postgis"
 
   # Fix build failure due to missing include
-  # srcosm_elementsosm_tag.cpp:34:18: error: 'transform' is not a member of 'std'
+  # src/osm_elements/osm_tag.cpp:34:18: error: 'transform' is not a member of 'std'
   patch :DATA
 
   def install
@@ -37,19 +37,19 @@ class Osm2pgrouting < Formula
   end
 
   test do
-    system bin"osm2pgrouting", "--help"
+    system bin/"osm2pgrouting", "--help"
   end
 end
 
 __END__
-diff --git asrcosm_elementsosm_tag.cpp bsrcosm_elementsosm_tag.cpp
+diff --git a/src/osm_elements/osm_tag.cpp b/src/osm_elements/osm_tag.cpp
 index 6f122ec..b41d6ff 100644
---- asrcosm_elementsosm_tag.cpp
-+++ bsrcosm_elementsosm_tag.cpp
+--- a/src/osm_elements/osm_tag.cpp
++++ b/src/osm_elements/osm_tag.cpp
 @@ -20,6 +20,7 @@
 
 
- #include "osm_elementsosm_tag.h"
+ #include "osm_elements/osm_tag.h"
 +#include <algorithm>
  #include <string>
 

@@ -1,7 +1,7 @@
 class ZshAsync < Formula
   desc "Perform tasks asynchronously without external tools"
-  homepage "https:github.commafredrizsh-async"
-  url "https:github.commafredrizsh-asyncarchiverefstagsv1.8.6.tar.gz"
+  homepage "https://github.com/mafredri/zsh-async"
+  url "https://ghfast.top/https://github.com/mafredri/zsh-async/archive/refs/tags/v1.8.6.tar.gz"
   sha256 "0f2778cb882b73471569b016bbfa6d9d75572bff40dc7f25ac50b3a8dc94ef47"
   license "MIT"
 
@@ -20,7 +20,7 @@ class ZshAsync < Formula
 
   test do
     example = <<~ZSH
-      source #{zsh_function}async
+      source #{zsh_function}/async
       async_init
 
       # Initialize a new worker (with notify option)

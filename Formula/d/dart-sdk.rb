@@ -1,7 +1,7 @@
 class DartSdk < Formula
   desc "Dart Language SDK, including the VM, dart2js, core libraries, and more"
-  homepage "https:dart.dev"
-  url "https:github.comdart-langsdkarchiverefstags3.8.1.tar.gz"
+  homepage "https://dart.dev"
+  url "https://ghfast.top/https://github.com/dart-lang/sdk/archive/refs/tags/3.8.1.tar.gz"
   sha256 "61e2bbaaca96938af68f18ef6eb4c238cb258d2dc531cb0d3737f5a4eda87e03"
   license "BSD-3-Clause"
 
@@ -22,34 +22,34 @@ class DartSdk < Formula
   uses_from_macos "python" => :build
   uses_from_macos "xz" => :build
 
-  # always pull the latest commit from https:chromium.googlesource.comchromiumtoolsdepot_tools.git+refsheadsmain
+  # always pull the latest commit from https://chromium.googlesource.com/chromium/tools/depot_tools.git/+/refs/heads/main
   resource "depot-tools" do
-    url "https:chromium.googlesource.comchromiumtoolsdepot_tools.git",
+    url "https://chromium.googlesource.com/chromium/tools/depot_tools.git",
         revision: "0b1d80ab9e9f1413234641d193639e5daa92dd5b"
   end
 
   def install
-    resource("depot-tools").stage(buildpath"depot-tools")
+    resource("depot-tools").stage(buildpath/"depot-tools")
 
     ENV["DEPOT_TOOLS_UPDATE"] = "0"
-    ENV.append_path "PATH", "#{buildpath}depot-tools"
+    ENV.append_path "PATH", "#{buildpath}/depot-tools"
 
-    system "gclient", "config", "--name", "sdk", "https:dart.googlesource.comsdk.git@#{version}"
+    system "gclient", "config", "--name", "sdk", "https://dart.googlesource.com/sdk.git@#{version}"
     system "gclient", "sync", "--no-history"
 
     chdir "sdk" do
       arch = Hardware::CPU.arm? ? "arm64" : "x64"
-      system ".toolsbuild.py", "--mode=release", "--arch=#{arch}", "create_sdk"
+      system "./tools/build.py", "--mode=release", "--arch=#{arch}", "create_sdk"
       out = OS.linux? ? "out" : "xcodebuild"
-      libexec.install Dir["#{out}Release#{arch.upcase}dart-sdk*"]
+      libexec.install Dir["#{out}/Release#{arch.upcase}/dart-sdk/*"]
     end
-    bin.install_symlink libexec"bindart"
+    bin.install_symlink libexec/"bin/dart"
   end
 
   test do
-    system bin"dart", "create", "dart-test"
+    system bin/"dart", "create", "dart-test"
     chdir "dart-test" do
-      assert_match "Hello world: 42!", shell_output(bin"dart run")
+      assert_match "Hello world: 42!", shell_output(bin/"dart run")
     end
   end
 end

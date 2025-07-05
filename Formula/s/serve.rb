@@ -1,10 +1,10 @@
 class Serve < Formula
   desc "Static http server anywhere you need one"
-  homepage "https:github.comsyntaqxserve"
-  url "https:github.comsyntaqxservearchiverefstagsv0.6.0.tar.gz"
+  homepage "https://github.com/syntaqx/serve"
+  url "https://ghfast.top/https://github.com/syntaqx/serve/archive/refs/tags/v0.6.0.tar.gz"
   sha256 "7797a24564d95038d9e0a44f0dafd1dacb7853ee94d21bc0587bdfba6faaa6cb"
   license "MIT"
-  head "https:github.comsyntaqxserve.git", branch: "main"
+  head "https://github.com/syntaqx/serve.git", branch: "main"
 
   no_autobump! because: :requires_manual_review
 
@@ -25,17 +25,17 @@ class Serve < Formula
 
   def install
     ldflags = "-s -w -X main.version=#{version}"
-    system "go", "build", *std_go_args(ldflags:), ".cmdserve"
+    system "go", "build", *std_go_args(ldflags:), "./cmd/serve"
   end
 
   test do
     port = free_port
     pid = fork do
-      exec "#{bin}serve -port #{port}"
+      exec "#{bin}/serve -port #{port}"
     end
     sleep 1
-    output = shell_output("curl -sI http:localhost:#{port}")
-    assert_match(200 OKm, output)
+    output = shell_output("curl -sI http://localhost:#{port}")
+    assert_match(/200 OK/m, output)
   ensure
     Process.kill("HUP", pid)
   end

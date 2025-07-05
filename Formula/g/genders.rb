@@ -1,14 +1,14 @@
 class Genders < Formula
   desc "Static cluster configuration database for cluster management"
-  homepage "https:github.comchaosgenders"
-  url "https:github.comchaosgendersarchiverefstagsgenders-1-32-1.tar.gz"
+  homepage "https://github.com/chaos/genders"
+  url "https://ghfast.top/https://github.com/chaos/genders/archive/refs/tags/genders-1-32-1.tar.gz"
   version "1.32.1"
   sha256 "0dc186ec8fd01ec10b5e171d8b8ef632a56d17c135baee2570c0a3c0ffd9d64d"
   license "GPL-2.0-or-later"
 
   livecheck do
     url :stable
-    regex(^genders[._-]v?(\d+(?:[.-]\d+)+)$i)
+    regex(/^genders[._-]v?(\d+(?:[.-]\d+)+)$/i)
     strategy :git do |tags, regex|
       tags.map { |tag| tag[regex, 1]&.tr("-", ".") }
     end
@@ -37,7 +37,7 @@ class Genders < Formula
 
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
-    url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-big_sur.diff"
+    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-big_sur.diff"
     sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
   end
 
@@ -50,21 +50,21 @@ class Genders < Formula
     # Help old config scripts identify arm64 linux
     args << "--build=aarch64-unknown-linux-gnu" if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
 
-    system ".configure", "--with-java-extensions=no", *args, *std_configure_args
+    system "./configure", "--with-java-extensions=no", *args, *std_configure_args
     system "make", "install"
 
     # Move man page out of top level mandir on Linux
-    man3.install (prefix"manman3").children unless OS.mac?
+    man3.install (prefix/"man/man3").children unless OS.mac?
   end
 
   test do
-    (testpath"cluster").write <<~EOS
+    (testpath/"cluster").write <<~EOS
       # slc cluster genders file
       slci,slcj,slc[0-15]  eth2=e%n,cluster=slc,all
       slci                 passwdhost
       slci,slcj            management
       slc[1-15]            compute
     EOS
-    assert_match "0 parse errors discovered", shell_output("#{bin}nodeattr -f cluster -k 2>&1")
+    assert_match "0 parse errors discovered", shell_output("#{bin}/nodeattr -f cluster -k 2>&1")
   end
 end

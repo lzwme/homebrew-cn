@@ -1,7 +1,7 @@
 class Libwebm < Formula
   desc "WebM container"
-  homepage "https:www.webmproject.orgcode"
-  url "https:github.comwebmprojectlibwebmarchiverefstagslibwebm-1.0.0.32.tar.gz"
+  homepage "https://www.webmproject.org/code/"
+  url "https://ghfast.top/https://github.com/webmproject/libwebm/archive/refs/tags/libwebm-1.0.0.32.tar.gz"
   sha256 "7fd5e085bda9f8031cf2ad2a1e52d9b7b29cba9c0b96ad2ce794ce89e4249eb8"
   license "BSD-3-Clause"
 
@@ -20,25 +20,25 @@ class Libwebm < Formula
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"
-    lib.install "buildlibwebm.a"
-    bin.install Dir["build{mkvparser_sample,mkvmuxer_sample,vttdemux,webm2pes}"]
+    lib.install "build/libwebm.a"
+    bin.install Dir["build/{mkvparser_sample,mkvmuxer_sample,vttdemux,webm2pes}"]
 
     include.install Dir.glob("mkv*.hpp")
-    (include"mkvmuxer").install Dir.glob("mkvmuxermkv*.h")
-    (include"common").install Dir.glob("common*.h")
-    (include"mkvparser").install Dir.glob("mkvparsermkv*.h")
+    (include/"mkvmuxer").install Dir.glob("mkvmuxer/mkv*.h")
+    (include/"common").install Dir.glob("common/*.h")
+    (include/"mkvparser").install Dir.glob("mkvparser/mkv*.h")
     include.install Dir.glob("vtt*.h")
   end
 
   test do
-    (testpath"test.cpp").write <<~CPP
+    (testpath/"test.cpp").write <<~CPP
       #include <mkvwriter.hpp>
       #include <iostream>
 
       int main() {
         mkvmuxer::MkvWriter writer;
 
-        std::string test_mkv = "#{testpath}test.mkv";
+        std::string test_mkv = "#{testpath}/test.mkv";
 
         if (!writer.Open(test_mkv.c_str())) {
           std::cerr << "Failed to open the MKV file." << std::endl;
@@ -52,7 +52,7 @@ class Libwebm < Formula
     CPP
 
     system ENV.cxx, "-std=c++11", "test.cpp", "-o", "test", "-I#{include}", "-L#{lib}", "-lwebm"
-    system ".test"
-    assert_path_exists testpath"test.mkv"
+    system "./test"
+    assert_path_exists testpath/"test.mkv"
   end
 end

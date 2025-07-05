@@ -1,7 +1,7 @@
 class TyposLsp < Formula
   desc "Language Server for typos-cli"
-  homepage "https:github.comtekumaratypos-lsp"
-  url "https:github.comtekumaratypos-lsparchiverefstagsv0.1.40.tar.gz"
+  homepage "https://github.com/tekumara/typos-lsp"
+  url "https://ghfast.top/https://github.com/tekumara/typos-lsp/archive/refs/tags/v0.1.40.tar.gz"
   sha256 "1ed488e8bb8b3494367894c55efd83a2f8d7a9c986cf5715792b20a257362a6c"
   license "MIT"
 
@@ -23,7 +23,7 @@ class TyposLsp < Formula
   depends_on "rust" => :build
 
   def install
-    system "cargo", "install", *std_cargo_args(path: "cratestypos-lsp")
+    system "cargo", "install", *std_cargo_args(path: "crates/typos-lsp")
   end
 
   test do
@@ -39,7 +39,7 @@ class TyposLsp < Formula
       }
     JSON
     input = "Content-Length: #{json.size}\r\n\r\n#{json}"
-    output = pipe_output(bin"typos-lsp", input)
-    assert_match(^Content-Length: \d+i, output)
+    output = pipe_output(bin/"typos-lsp", input)
+    assert_match(/^Content-Length: \d+/i, output)
   end
 end

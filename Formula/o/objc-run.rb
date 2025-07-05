@@ -1,10 +1,10 @@
 class ObjcRun < Formula
   desc "Use Objective-C files for shell script-like tasks"
-  homepage "https:github.comiljaiwasobjc-run"
-  url "https:github.comiljaiwasobjc-runarchiverefstags1.4.tar.gz"
+  homepage "https://github.com/iljaiwas/objc-run"
+  url "https://ghfast.top/https://github.com/iljaiwas/objc-run/archive/refs/tags/1.4.tar.gz"
   sha256 "6d02a31764c457c4a6a9f5df0963d733d611ba873fc32672151ee02a05acd6f2"
   license "MIT"
-  head "https:github.comiljaiwasobjc-run.git", branch: "master"
+  head "https://github.com/iljaiwas/objc-run.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -23,6 +23,6 @@ class ObjcRun < Formula
 
   test do
     cp_r pkgshare, testpath
-    system ".objc-runtest.bash"
+    system "./objc-run/test.bash"
   end
 end

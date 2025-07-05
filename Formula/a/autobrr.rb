@@ -1,10 +1,10 @@
 class Autobrr < Formula
   desc "Modern, easy to use download automation for torrents and usenet"
-  homepage "https:autobrr.com"
-  url "https:github.comautobrrautobrrarchiverefstagsv1.63.1.tar.gz"
+  homepage "https://autobrr.com/"
+  url "https://ghfast.top/https://github.com/autobrr/autobrr/archive/refs/tags/v1.63.1.tar.gz"
   sha256 "fda27153e95e43045bc562f8ab18a2348e42a8bdc874b05b3d5a13e8924b9e46"
   license "GPL-2.0-or-later"
-  head "https:github.comautobrrautobrr.git", branch: "develop"
+  head "https://github.com/autobrr/autobrr.git", branch: "develop"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "54872d6519dc868f2aa9c71eb31c59377ddeb3743399d03fa032b1af06b5c683"
@@ -25,26 +25,26 @@ class Autobrr < Formula
 
     ldflags = "-s -w -X main.version=#{version} -X main.commit=#{tap.user}"
 
-    system "go", "build", *std_go_args(output: bin"autobrr", ldflags:), ".cmdautobrr"
-    system "go", "build", *std_go_args(output: bin"autobrrctl", ldflags:), ".cmdautobrrctl"
+    system "go", "build", *std_go_args(output: bin/"autobrr", ldflags:), "./cmd/autobrr"
+    system "go", "build", *std_go_args(output: bin/"autobrrctl", ldflags:), "./cmd/autobrrctl"
   end
 
   def post_install
-    (var"autobrr").mkpath
+    (var/"autobrr").mkpath
   end
 
   service do
-    run [opt_bin"autobrr", "--config", var"autobrr"]
+    run [opt_bin/"autobrr", "--config", var/"autobrr/"]
     keep_alive true
-    log_path var"logautobrr.log"
+    log_path var/"log/autobrr.log"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}autobrrctl version")
+    assert_match version.to_s, shell_output("#{bin}/autobrrctl version")
 
     port = free_port
 
-    (testpath"config.toml").write <<~TOML
+    (testpath/"config.toml").write <<~TOML
       host = "127.0.0.1"
       port = #{port}
       logLevel = "INFO"
@@ -53,12 +53,12 @@ class Autobrr < Formula
     TOML
 
     pid = fork do
-      exec bin"autobrr", "--config", "#{testpath}"
+      exec bin/"autobrr", "--config", "#{testpath}/"
     end
     sleep 4
 
     begin
-      system "curl", "-s", "--fail", "http:127.0.0.1:#{port}apihealthzliveness"
+      system "curl", "-s", "--fail", "http://127.0.0.1:#{port}/api/healthz/liveness"
     ensure
       Process.kill("TERM", pid)
       Process.wait(pid)

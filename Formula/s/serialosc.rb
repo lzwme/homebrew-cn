@@ -1,12 +1,12 @@
 class Serialosc < Formula
   desc "Opensound control server for monome devices"
-  homepage "https:github.commonomedocsblobgh-pagesserialoscosc.md"
+  homepage "https://github.com/monome/docs/blob/gh-pages/serialosc/osc.md"
   # pull from git tag to get submodules
-  url "https:github.commonomeserialosc.git",
+  url "https://github.com/monome/serialosc.git",
       tag:      "v1.4.6",
       revision: "82982437ba197b93793e89eee1cbb12c1f73e928"
   license "ISC"
-  head "https:github.commonomeserialosc.git", branch: "main"
+  head "https://github.com/monome/serialosc.git", branch: "main"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "6bf7e4ce2c236c488e3d5f5779f97d888f19c471aaf0d08e9fdefea7afea20c2"
@@ -31,19 +31,19 @@ class Serialosc < Formula
   end
 
   def install
-    system "python3", ".waf", "configure", "--prefix=#{prefix}"
-    system "python3", ".waf", "build"
-    system "python3", ".waf", "install"
+    system "python3", "./waf", "configure", "--prefix=#{prefix}"
+    system "python3", "./waf", "build"
+    system "python3", "./waf", "install"
   end
 
   service do
-    run [opt_bin"serialoscd"]
+    run [opt_bin/"serialoscd"]
     keep_alive true
-    log_path var"logserialoscd.log"
-    error_log_path var"logserialoscd.log"
+    log_path var/"log/serialoscd.log"
+    error_log_path var/"log/serialoscd.log"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}serialoscd -v")
+    assert_match version.to_s, shell_output("#{bin}/serialoscd -v")
   end
 end

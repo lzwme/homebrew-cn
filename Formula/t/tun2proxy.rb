@@ -1,14 +1,14 @@
 class Tun2proxy < Formula
   desc "Tunnel (TUN) interface for SOCKS and HTTP proxies"
-  homepage "https:github.comtun2proxytun2proxy"
-  url "https:github.comtun2proxytun2proxyarchiverefstagsv0.7.11.tar.gz"
+  homepage "https://github.com/tun2proxy/tun2proxy"
+  url "https://ghfast.top/https://github.com/tun2proxy/tun2proxy/archive/refs/tags/v0.7.11.tar.gz"
   sha256 "0452e8995447f458544b005f80c34961da11fe926f1d17c5833d09ab77ff4019"
   license "MIT"
-  head "https:github.comtun2proxytun2proxy.git", branch: "master"
+  head "https://github.com/tun2proxy/tun2proxy.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -28,7 +28,7 @@ class Tun2proxy < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}tun2proxy-bin --version")
+    assert_match version.to_s, shell_output("#{bin}/tun2proxy-bin --version")
 
     expected = if OS.mac?
       "Operation not permitted (os error 1)"
@@ -36,6 +36,6 @@ class Tun2proxy < Formula
       "No such file or directory (os error 2)"
     end
 
-    assert_match expected, shell_output("#{bin}tun2proxy-bin --proxy socks5:127.0.0.1:1080 --tun utun4 2>&1", 1)
+    assert_match expected, shell_output("#{bin}/tun2proxy-bin --proxy socks5://127.0.0.1:1080 --tun utun4 2>&1", 1)
   end
 end

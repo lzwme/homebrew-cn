@@ -1,10 +1,10 @@
 class NlohmannJson < Formula
   desc "JSON for modern C++"
-  homepage "https:json.nlohmann.me"
-  url "https:github.comnlohmannjsonarchiverefstagsv3.12.0.tar.gz"
+  homepage "https://json.nlohmann.me/"
+  url "https://ghfast.top/https://github.com/nlohmann/json/archive/refs/tags/v3.12.0.tar.gz"
   sha256 "4b92eb0c06d10683f7447ce9406cb97cd4b453be18d7279320f7b2f025c10187"
   license "MIT"
-  head "https:github.comnlohmannjson.git", branch: "develop"
+  head "https://github.com/nlohmann/json.git", branch: "develop"
 
   no_autobump! because: :requires_manual_review
 
@@ -16,9 +16,9 @@ class NlohmannJson < Formula
   depends_on "cmake" => :build
 
   # Fix to error: unknown type name 'char8_t' for clang, remove in next release
-  # PR ref: https:github.comnlohmannjsonpull4736
+  # PR ref: https://github.com/nlohmann/json/pull/4736
   patch do
-    url "https:github.comnlohmannjsoncommit34868f90149de02432ea758a29227a6ad74f098c.patch?full_index=1"
+    url "https://github.com/nlohmann/json/commit/34868f90149de02432ea758a29227a6ad74f098c.patch?full_index=1"
     sha256 "fb4db3640ce333b145b53acc64c78eb3011f57012dc4b9c6689d5d485d2434cd"
   end
 
@@ -30,9 +30,9 @@ class NlohmannJson < Formula
   end
 
   test do
-    (testpath"test.cc").write <<~CPP
+    (testpath/"test.cc").write <<~CPP
       #include <iostream>
-      #include <nlohmannjson.hpp>
+      #include <nlohmann/json.hpp>
 
       using nlohmann::json;
 
@@ -54,6 +54,6 @@ class NlohmannJson < Formula
     std_output = <<~JSON
       {"list":[1,0,2],"name":"Niels","object":{"happy":true,"nothing":null},"pi":3.141}
     JSON
-    assert_match std_output, shell_output(".test")
+    assert_match std_output, shell_output("./test")
   end
 end

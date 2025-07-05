@@ -1,7 +1,7 @@
 class AwsChecksums < Formula
   desc "Cross-Platform HW accelerated CRC32c and CRC32 with fallback"
-  homepage "https:github.comawslabsaws-checksums"
-  url "https:github.comawslabsaws-checksumsarchiverefstagsv0.2.7.tar.gz"
+  homepage "https://github.com/awslabs/aws-checksums"
+  url "https://ghfast.top/https://github.com/awslabs/aws-checksums/archive/refs/tags/v0.2.7.tar.gz"
   sha256 "178e8398d98111f29150f7813a70c20ad97ab30be0de02525440355fe84ccb1d"
   license "Apache-2.0"
 
@@ -19,8 +19,8 @@ class AwsChecksums < Formula
   depends_on "aws-c-common"
 
   def install
-    # Intel: https:github.comawslabsaws-checksumscommite03e976974d27491740c98f9132a38ee25fb27d0
-    # ARM:   https:github.comawslabsaws-checksumscommitd7005974347050a97b13285eb0108dd1e59cf2c4
+    # Intel: https://github.com/awslabs/aws-checksums/commit/e03e976974d27491740c98f9132a38ee25fb27d0
+    # ARM:   https://github.com/awslabs/aws-checksums/commit/d7005974347050a97b13285eb0108dd1e59cf2c4
     ENV.runtime_cpu_detection
 
     system "cmake", "-S", ".", "-B", "build", "-DBUILD_SHARED_LIBS=ON", *std_cmake_args
@@ -29,9 +29,9 @@ class AwsChecksums < Formula
   end
 
   test do
-    (testpath"test.c").write <<~C
-      #include <awschecksumscrc.h>
-      #include <awscommonallocator.h>
+    (testpath/"test.c").write <<~C
+      #include <aws/checksums/crc.h>
+      #include <aws/common/allocator.h>
       #include <assert.h>
 
       int main(void) {
@@ -46,6 +46,6 @@ class AwsChecksums < Formula
     C
     system ENV.cc, "test.c", "-o", "test", "-L#{lib}", "-laws-checksums",
                    "-L#{Formula["aws-c-common"].opt_lib}", "-laws-c-common"
-    system ".test"
+    system "./test"
   end
 end

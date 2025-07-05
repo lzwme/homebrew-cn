@@ -1,10 +1,10 @@
 class Luv < Formula
   desc "Bare libuv bindings for lua"
-  homepage "https:github.comluvitluv"
-  url "https:github.comluvitluvarchiverefstags1.51.0-1.tar.gz"
+  homepage "https://github.com/luvit/luv"
+  url "https://ghfast.top/https://github.com/luvit/luv/archive/refs/tags/1.51.0-1.tar.gz"
   sha256 "d4a11178ae8e16ba5886799ea91905dd9b0b479c75aebd67866d37373e41526f"
   license "Apache-2.0"
-  head "https:github.comluvitluv.git", branch: "master"
+  head "https://github.com/luvit/luv.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "16a81eb3ddde559c8ff70e156d3074147397781669a9c17c5fa26b90daa659d9"
@@ -22,17 +22,17 @@ class Luv < Formula
   depends_on "libuv"
 
   resource "lua-compat-5.3" do
-    url "https:github.comlunarmoduleslua-compat-5.3archiverefstagsv0.14.4.tar.gz"
+    url "https://ghfast.top/https://github.com/lunarmodules/lua-compat-5.3/archive/refs/tags/v0.14.4.tar.gz"
     sha256 "a9afa2eb812996039a05c5101067e6a31af9a75eded998937a1ce814afe1b150"
   end
 
   def install
-    resource("lua-compat-5.3").stage buildpath"depslua-compat-5.3" unless build.head?
+    resource("lua-compat-5.3").stage buildpath/"deps/lua-compat-5.3" unless build.head?
 
     args = %W[
       -DWITH_SHARED_LIBUV=ON
       -DLUA_BUILD_TYPE=System
-      -DLUA_COMPAT53_DIR=#{buildpath}depslua-compat-5.3
+      -DLUA_COMPAT53_DIR=#{buildpath}/deps/lua-compat-5.3
       -DBUILD_MODULE=ON
     ]
 
@@ -54,7 +54,7 @@ class Luv < Formula
   end
 
   test do
-    (testpath"test.lua").write <<~LUA
+    (testpath/"test.lua").write <<~LUA
       local uv = require('luv')
       local timer = uv.new_timer()
       timer:start(1000, 0, function()

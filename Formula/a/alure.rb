@@ -1,7 +1,7 @@
 class Alure < Formula
   desc "Manage common tasks with OpenAL applications"
-  homepage "https:kcat.tomasu.netalure.html"
-  url "https:kcat.tomasu.netalure-releasesalure-1.2.tar.bz2"
+  homepage "https://kcat.tomasu.net/alure.html"
+  url "https://kcat.tomasu.net/alure-releases/alure-1.2.tar.bz2"
   sha256 "465e6adae68927be3a023903764662d64404e40c4c152d160e3a8838b1d70f71"
   license "MIT"
   revision 1
@@ -39,7 +39,7 @@ class Alure < Formula
   # Reported by email to author on 2017-08-25
   patch do
     on_high_sierra :or_newer do
-      url "https:raw.githubusercontent.comHomebrewformula-patcheseed63e836ealureunistd.patch"
+      url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/eed63e836e/alure/unistd.patch"
       sha256 "7852a7a365f518b12a1afd763a6a80ece88ac7aeea3c9023aa6c1fe46ac5a1ae"
     end
   end
@@ -51,7 +51,7 @@ class Alure < Formula
   end
 
   test do
-    output = shell_output("#{bin}alureplay 2>&1", 1)
-    assert_match "Usage #{bin}alureplay <soundfile>", output
+    output = shell_output("#{bin}/alureplay 2>&1", 1)
+    assert_match "Usage #{bin}/alureplay <soundfile>", output
   end
 end

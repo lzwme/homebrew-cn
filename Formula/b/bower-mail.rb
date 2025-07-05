@@ -1,10 +1,10 @@
 class BowerMail < Formula
   desc "Curses terminal client for the Notmuch email system"
-  homepage "https:github.comwangpbower"
-  url "https:github.comwangpbowerarchiverefstags1.1.1.tar.gz"
+  homepage "https://github.com/wangp/bower"
+  url "https://ghfast.top/https://github.com/wangp/bower/archive/refs/tags/1.1.1.tar.gz"
   sha256 "4c041681332d355710aa2f2a935ea56fbb2ba8d614be81dee594c431a1d493d9"
   license "GPL-3.0-or-later"
-  head "https:github.comwangpbower.git", branch: "master"
+  head "https://github.com/wangp/bower.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -34,8 +34,8 @@ class BowerMail < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}bower --version")
+    assert_match version.to_s, shell_output("#{bin}/bower --version")
 
-    assert_match "Error: could not locate database", shell_output(bin"bower 2>&1", 1)
+    assert_match "Error: could not locate database", shell_output(bin/"bower 2>&1", 1)
   end
 end

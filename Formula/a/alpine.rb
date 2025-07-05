@@ -1,16 +1,16 @@
 class Alpine < Formula
   desc "News and email agent"
-  homepage "https:alpineapp.email"
-  url "https:alpineapp.emailalpinereleasesrcalpine-2.26.tar.xz"
+  homepage "https://alpineapp.email"
+  url "https://alpineapp.email/alpine/release/src/alpine-2.26.tar.xz"
   # keep mirror even though `brew audit --strict --online` complains
-  mirror "https:alpineapp.emailalpinereleasesrcOldalpine-2.26.tar.xz"
+  mirror "https://alpineapp.email/alpine/release/src/Old/alpine-2.26.tar.xz"
   sha256 "c0779c2be6c47d30554854a3e14ef5e36539502b331068851329275898a9baba"
   license "Apache-2.0"
-  head "https:repo.or.czalpine.git", branch: "master"
+  head "https://repo.or.cz/alpine.git", branch: "master"
 
   livecheck do
     url :homepage
-    regex(href=.*?alpine[._-]v?(\d+(?:\.\d+)+)\.ti)
+    regex(/href=.*?alpine[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -45,11 +45,11 @@ class Alpine < Formula
   conflicts_with "macpine", because: "both install `alpine` binaries"
 
   # patch for macOS obtained from developer; see git commit
-  # https:repo.or.czalpine.gitcommitdiff701aebc00aff0585ce6c96653714e4ba94834c9c
+  # https://repo.or.cz/alpine.git/commitdiff/701aebc00aff0585ce6c96653714e4ba94834c9c
   patch :DATA
   # fix `error: incompatible function pointer types`
   patch do
-    url "https:raw.githubusercontent.comgentoogentoo37cdeedd76ed2f1f9d169431ac98c9e40afe9372mail-clientalpinefilesalpine-2.26-fix-clang16-build-no-chappa.patch"
+    url "https://ghfast.top/https://raw.githubusercontent.com/gentoo/gentoo/37cdeedd76ed2f1f9d169431ac98c9e40afe9372/mail-client/alpine/files/alpine-2.26-fix-clang16-build-no-chappa.patch"
     sha256 "0e51e8253f9e5ff7fc9599845ec2bd3a0007a1bffb097a603dfd8d6fa6362797"
   end
 
@@ -59,23 +59,23 @@ class Alpine < Formula
     args = %W[
       --disable-debug
       --with-ssl-dir=#{Formula["openssl@3"].opt_prefix}
-      --with-ssl-certs-dir=#{etc}openssl@3
+      --with-ssl-certs-dir=#{etc}/openssl@3
       --prefix=#{prefix}
       --with-bundled-tools
     ]
 
-    system ".configure", *args
+    system "./configure", *args
     system "make", "install"
   end
 
   test do
-    system bin"alpine", "-conf"
+    system bin/"alpine", "-conf"
   end
 end
 
 __END__
---- aconfigure
-+++ bconfigure
+--- a/configure
++++ b/configure
 @@ -18752,6 +18752,26 @@
  fi
  

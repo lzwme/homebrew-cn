@@ -2,9 +2,9 @@ cask "font-hurmit-nerd-font" do
   version "3.4.0"
   sha256 "123b73cbe9c775ff60b2c878e49a82fd7d4aa95b200bd2b5063fc38e888765a8"
 
-  url "https:github.comryanoasisnerd-fontsreleasesdownloadv#{version}Hermit.zip"
+  url "https://ghfast.top/https://github.com/ryanoasis/nerd-fonts/releases/download/v#{version}/Hermit.zip"
   name "Hurmit Nerd Font (Hermit)"
-  homepage "https:github.comryanoasisnerd-fonts"
+  homepage "https://github.com/ryanoasis/nerd-fonts"
 
   livecheck do
     url :url

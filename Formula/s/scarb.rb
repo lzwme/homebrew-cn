@@ -1,10 +1,10 @@
 class Scarb < Formula
   desc "Cairo package manager"
-  homepage "https:docs.swmansion.comscarb"
-  url "https:github.comsoftware-mansionscarbarchiverefstagsv2.11.4.tar.gz"
+  homepage "https://docs.swmansion.com/scarb/"
+  url "https://ghfast.top/https://github.com/software-mansion/scarb/archive/refs/tags/v2.11.4.tar.gz"
   sha256 "c41fc5dbbd3fcceeecb3db87df061f11a8ba589f13076d6d37c462f8432f79a2"
   license "MIT"
-  head "https:github.comsoftware-mansionscarb.git", branch: "main"
+  head "https://github.com/software-mansion/scarb.git", branch: "main"
 
   livecheck do
     url :stable
@@ -27,10 +27,10 @@ class Scarb < Formula
   def install
     %w[
       scarb
-      extensionsscarb-cairo-language-server
-      extensionsscarb-cairo-run
-      extensionsscarb-cairo-test
-      extensionsscarb-doc
+      extensions/scarb-cairo-language-server
+      extensions/scarb-cairo-run
+      extensions/scarb-cairo-test
+      extensions/scarb-doc
     ].each do |f|
       system "cargo", "install", *std_cargo_args(path: f)
     end
@@ -39,15 +39,15 @@ class Scarb < Formula
   test do
     ENV["SCARB_INIT_TEST_RUNNER"] = "cairo-test"
 
-    assert_match "#{testpath}Scarb.toml", shell_output("#{bin}scarb manifest-path")
+    assert_match "#{testpath}/Scarb.toml", shell_output("#{bin}/scarb manifest-path")
 
-    system bin"scarb", "init", "--name", "brewtest", "--no-vcs"
-    assert_path_exists testpath"srclib.cairo"
-    assert_match "brewtest", (testpath"Scarb.toml").read
+    system bin/"scarb", "init", "--name", "brewtest", "--no-vcs"
+    assert_path_exists testpath/"src/lib.cairo"
+    assert_match "brewtest", (testpath/"Scarb.toml").read
 
-    assert_match version.to_s, shell_output("#{bin}scarb --version")
-    assert_match version.to_s, shell_output("#{bin}scarb cairo-run --version")
-    assert_match version.to_s, shell_output("#{bin}scarb cairo-test --version")
-    assert_match version.to_s, shell_output("#{bin}scarb doc --version")
+    assert_match version.to_s, shell_output("#{bin}/scarb --version")
+    assert_match version.to_s, shell_output("#{bin}/scarb cairo-run --version")
+    assert_match version.to_s, shell_output("#{bin}/scarb cairo-test --version")
+    assert_match version.to_s, shell_output("#{bin}/scarb doc --version")
   end
 end

@@ -1,14 +1,14 @@
 class TemporalTables < Formula
   desc "Temporal Tables PostgreSQL Extension"
-  homepage "https:pgxn.orgdisttemporal_tables"
-  url "https:github.comarkhipovtemporal_tablesarchiverefstagsv1.2.2.tar.gz"
+  homepage "https://pgxn.org/dist/temporal_tables/"
+  url "https://ghfast.top/https://github.com/arkhipov/temporal_tables/archive/refs/tags/v1.2.2.tar.gz"
   sha256 "85517266748a438ab140147cb70d238ca19ad14c5d7acd6007c520d378db662e"
   license "BSD-2-Clause"
   revision 1
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -33,9 +33,9 @@ class TemporalTables < Formula
 
   def install
     postgresqls.each do |postgresql|
-      system "make", "install", "PG_CONFIG=#{postgresql.opt_bin}pg_config",
-                                "pkglibdir=#{libpostgresql.name}",
-                                "datadir=#{sharepostgresql.name}",
+      system "make", "install", "PG_CONFIG=#{postgresql.opt_bin}/pg_config",
+                                "pkglibdir=#{lib/postgresql.name}",
+                                "datadir=#{share/postgresql.name}",
                                 "docdir=#{doc}"
       system "make", "clean"
     end
@@ -44,18 +44,18 @@ class TemporalTables < Formula
   test do
     ENV["LC_ALL"] = "C"
     postgresqls.each do |postgresql|
-      pg_ctl = postgresql.opt_bin"pg_ctl"
-      psql = postgresql.opt_bin"psql"
+      pg_ctl = postgresql.opt_bin/"pg_ctl"
+      psql = postgresql.opt_bin/"psql"
       port = free_port
 
-      datadir = testpathpostgresql.name
+      datadir = testpath/postgresql.name
       system pg_ctl, "initdb", "-D", datadir
-      (datadir"postgresql.conf").write <<~EOS, mode: "a+"
+      (datadir/"postgresql.conf").write <<~EOS, mode: "a+"
 
         shared_preload_libraries = 'temporal_tables'
         port = #{port}
       EOS
-      system pg_ctl, "start", "-D", datadir, "-l", testpath"log-#{postgresql.name}"
+      system pg_ctl, "start", "-D", datadir, "-l", testpath/"log-#{postgresql.name}"
       begin
         system psql, "-p", port.to_s, "-c", "CREATE EXTENSION \"temporal_tables\";", "postgres"
       ensure

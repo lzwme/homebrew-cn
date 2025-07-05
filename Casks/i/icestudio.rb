@@ -10,16 +10,16 @@ cask "icestudio" do
     sha256 "959f55093888b91fa8b6715ecc9d6a4d2494dc814ee2ab717ee825284ba13889"
   end
 
-  url "https:github.comFPGAwarsicestudioreleasesdownloadv#{version}icestudio-#{version}-osx#{arch}.dmg",
-      verified: "github.comFPGAwarsicestudio"
+  url "https://ghfast.top/https://github.com/FPGAwars/icestudio/releases/download/v#{version}/icestudio-#{version}-osx#{arch}.dmg",
+      verified: "github.com/FPGAwars/icestudio/"
   name "icestudio"
   desc "Visual editor for open FPGA board"
-  homepage "https:icestudio.io"
+  homepage "https://icestudio.io/"
 
   # Upstream has not included intel binaries in the latest version(s)
   livecheck do
     url :url
-    regex(^icestudio[._-]v?(\d+(?:\.\d+)+)[._-]osx#{arch}\.dmgi)
+    regex(/^icestudio[._-]v?(\d+(?:\.\d+)+)[._-]osx#{arch}\.dmg/i)
     strategy :github_releases do |json, regex|
       json.map do |release|
         next if release["draft"] || release["prerelease"]
@@ -41,11 +41,11 @@ cask "icestudio" do
   app "icestudio.app"
 
   zap trash: [
-    "~.icestudio",
-    "~icestudio.log",
-    "~LibraryApplication Supporticestudio",
-    "~LibraryCachesicestudio",
-    "~LibraryPreferencescom.nw-builder.icestudio.plist",
-    "~LibrarySaved Application Statecom.nw-builder.icestudio.savedState",
+    "~/.icestudio",
+    "~/icestudio.log",
+    "~/Library/Application Support/icestudio",
+    "~/Library/Caches/icestudio",
+    "~/Library/Preferences/com.nw-builder.icestudio.plist",
+    "~/Library/Saved Application State/com.nw-builder.icestudio.savedState",
   ]
 end

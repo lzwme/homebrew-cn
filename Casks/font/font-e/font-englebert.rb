@@ -2,10 +2,10 @@ cask "font-englebert" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefontsrawmainoflenglebertEnglebert-Regular.ttf",
-      verified: "github.comgooglefonts"
+  url "https://github.com/google/fonts/raw/main/ofl/englebert/Englebert-Regular.ttf",
+      verified: "github.com/google/fonts/"
   name "Englebert"
-  homepage "https:fonts.google.comspecimenEnglebert"
+  homepage "https://fonts.google.com/specimen/Englebert"
 
   font "Englebert-Regular.ttf"
 

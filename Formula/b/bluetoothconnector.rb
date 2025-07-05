@@ -1,10 +1,10 @@
 class Bluetoothconnector < Formula
   desc "Connect and disconnect Bluetooth devices"
-  homepage "https:github.comlapfelixBluetoothConnector"
-  url "https:github.comlapfelixBluetoothConnectorarchiverefstags2.1.0.tar.gz"
+  homepage "https://github.com/lapfelix/BluetoothConnector"
+  url "https://ghfast.top/https://github.com/lapfelix/BluetoothConnector/archive/refs/tags/2.1.0.tar.gz"
   sha256 "cbb192e5f94da27408bd8306a25e11bbffd643d916f6a03d532f83a229281f77"
   license "MIT"
-  head "https:github.comlapfelixBluetoothConnector.git", branch: "master"
+  head "https://github.com/lapfelix/BluetoothConnector.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -21,7 +21,7 @@ class Bluetoothconnector < Formula
 
   def install
     system "swift", "build", "--disable-sandbox", "-c", "release", "--static-swift-stdlib"
-    bin.install ".buildreleaseBluetoothConnector"
+    bin.install ".build/release/BluetoothConnector"
   end
 
   test do
@@ -29,7 +29,7 @@ class Bluetoothconnector < Formula
       # We cannot test any useful command since Sonoma as OS privacy restrictions
       # will wait until Bluetooth permission is either accepted or rejected.
       # Since even `--help` needs permissions, we just check process is still running.
-      pid = fork { exec bin"BluetoothConnector" }
+      pid = fork { exec bin/"BluetoothConnector" }
       begin
         sleep 5
         Process.getpgid(pid)
@@ -37,8 +37,8 @@ class Bluetoothconnector < Formula
         Process.kill("TERM", pid)
       end
     else
-      shell_output("#{bin}BluetoothConnector", 64)
-      output_fail = shell_output("#{bin}BluetoothConnector --connect 00-00-00-00-00-00", 252)
+      shell_output("#{bin}/BluetoothConnector", 64)
+      output_fail = shell_output("#{bin}/BluetoothConnector --connect 00-00-00-00-00-00", 252)
       assert_equal "Not paired to device\n", output_fail
     end
   end

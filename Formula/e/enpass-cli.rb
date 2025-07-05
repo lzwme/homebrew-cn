@@ -1,10 +1,10 @@
 class EnpassCli < Formula
   desc "Enpass command-line client"
-  homepage "https:github.comhazcodenpass-cli"
-  url "https:github.comhazcodenpass-cliarchiverefstagsv1.6.5.tar.gz"
+  homepage "https://github.com/hazcod/enpass-cli"
+  url "https://ghfast.top/https://github.com/hazcod/enpass-cli/archive/refs/tags/v1.6.5.tar.gz"
   sha256 "0665056659ac31444920f0fed522aa72effb3a090365f8a854e44c35ae97f4db"
   license "MIT"
-  head "https:github.comhazcodenpass-cli.git", branch: "master"
+  head "https://github.com/hazcod/enpass-cli.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "42fb434b400316d1b30d8afd177f508b946c37d63bdae47e6723ba1e8a38118e"
@@ -19,19 +19,19 @@ class EnpassCli < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w -X 'main.version=#{version}'"), ".cmdenpasscli"
-    pkgshare.install "testvault.json", "testvault.enpassdb"
+    system "go", "build", *std_go_args(ldflags: "-s -w -X 'main.version=#{version}'"), "./cmd/enpasscli"
+    pkgshare.install "test/vault.json", "test/vault.enpassdb"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}enpass-cli version 2>&1")
+    assert_match version.to_s, shell_output("#{bin}/enpass-cli version 2>&1")
 
     # Get test vault files
     mkdir "testvault"
-    cp [pkgshare"vault.json", pkgshare"vault.enpassdb"], "testvault"
+    cp [pkgshare/"vault.json", pkgshare/"vault.enpassdb"], "testvault"
     # Master password for test vault
     ENV["MASTERPW"]="mymasterpassword"
     # Retrieve password for "myusername" from test vault
-    assert_match "mypassword", shell_output("#{bin}enpass-cli -vault testvault pass myusername")
+    assert_match "mypassword", shell_output("#{bin}/enpass-cli -vault testvault/ pass myusername")
   end
 end

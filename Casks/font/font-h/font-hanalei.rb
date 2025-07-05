@@ -2,10 +2,10 @@ cask "font-hanalei" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefontsrawmainoflhanaleiHanalei-Regular.ttf",
-      verified: "github.comgooglefonts"
+  url "https://github.com/google/fonts/raw/main/ofl/hanalei/Hanalei-Regular.ttf",
+      verified: "github.com/google/fonts/"
   name "Hanalei"
-  homepage "https:fonts.google.comspecimenHanalei"
+  homepage "https://fonts.google.com/specimen/Hanalei"
 
   font "Hanalei-Regular.ttf"
 

@@ -1,10 +1,10 @@
 class Yyjson < Formula
   desc "High performance JSON library written in ANSI C"
-  homepage "https:github.comibiremeyyjson"
-  url "https:github.comibiremeyyjsonarchiverefstags0.11.1.tar.gz"
+  homepage "https://github.com/ibireme/yyjson"
+  url "https://ghfast.top/https://github.com/ibireme/yyjson/archive/refs/tags/0.11.1.tar.gz"
   sha256 "610a38a5e59192063f5f581ce0c3c1869971c458ea11b58dfe00d1c8269e255d"
   license "MIT"
-  head "https:github.comibiremeyyjson.git", branch: "master"
+  head "https://github.com/ibireme/yyjson.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "be33f4c52f3a3ca9e3bec1672536ba743a3b1635d42179ab9173b945b9d4a6c4"
@@ -25,7 +25,7 @@ class Yyjson < Formula
   end
 
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include <yyjson.h>
 
       int main() {
@@ -62,6 +62,6 @@ class Yyjson < Formula
     EOS
 
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lyyjson", "-o", "test"
-    assert_equal expected_output, shell_output(testpath"test")
+    assert_equal expected_output, shell_output(testpath/"test")
   end
 end

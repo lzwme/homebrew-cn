@@ -1,10 +1,10 @@
 class Funzzy < Formula
   desc "Lightweight file watcher"
-  homepage "https:github.comcristianoliveirafunzzy"
-  url "https:github.comcristianoliveirafunzzyarchiverefstagsv1.5.0.tar.gz"
+  homepage "https://github.com/cristianoliveira/funzzy"
+  url "https://ghfast.top/https://github.com/cristianoliveira/funzzy/archive/refs/tags/v1.5.0.tar.gz"
   sha256 "9c98ff08a611a8c3fc9eedd5bc56ecdc9fbd7ec5630d020cd1aa7426524df3d3"
   license "MIT"
-  head "https:github.comcristianoliveirafunzzy.git", branch: "master"
+  head "https://github.com/cristianoliveira/funzzy.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "5ceea0be6258bfe342bef5003d2ba506115caa6d195ca77f2eb27cb34fd51732"
@@ -23,9 +23,9 @@ class Funzzy < Formula
   end
 
   test do
-    system bin"funzzy", "init"
-    assert_match "## Funzzy events file", File.read(testpath".watch.yaml")
+    system bin/"funzzy", "init"
+    assert_match "## Funzzy events file", File.read(testpath/".watch.yaml")
 
-    assert_match version.to_s, shell_output("#{bin}funzzy --version")
+    assert_match version.to_s, shell_output("#{bin}/funzzy --version")
   end
 end

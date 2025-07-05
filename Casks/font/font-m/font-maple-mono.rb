@@ -2,14 +2,14 @@ cask "font-maple-mono" do
   version "7.4"
   sha256 "820009abd4a0f22d655e913a69d36a8555c91f903537b75eaec90dfd94e7f8a1"
 
-  url "https:github.comsubframe7536Maple-fontreleasesdownloadv#{version}MapleMono-TTF.zip",
-      verified: "github.comsubframe7536Maple-font"
+  url "https://ghfast.top/https://github.com/subframe7536/Maple-font/releases/download/v#{version}/MapleMono-TTF.zip",
+      verified: "github.com/subframe7536/Maple-font/"
   name "Maple Mono"
-  homepage "https:font.subf.deven"
+  homepage "https://font.subf.dev/en/"
 
   livecheck do
     url :url
-    regex(^v?(\d+(?:\.\d+)+(?:-beta\d+)?)$i)
+    regex(/^v?(\d+(?:\.\d+)+(?:-beta\d+)?)$/i)
     strategy :github_latest
   end
 

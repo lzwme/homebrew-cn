@@ -1,10 +1,10 @@
 class ClickhouseCpp < Formula
   desc "C++ client library for ClickHouse"
-  homepage "https:github.comClickHouseclickhouse-cpp"
-  url "https:github.comClickHouseclickhouse-cpparchiverefstagsv2.5.1.tar.gz"
+  homepage "https://github.com/ClickHouse/clickhouse-cpp"
+  url "https://ghfast.top/https://github.com/ClickHouse/clickhouse-cpp/archive/refs/tags/v2.5.1.tar.gz"
   sha256 "8942fc702eca1f656e59c680c7e464205bffea038b62c1a0ad1f794ee01e7266"
   license "Apache-2.0"
-  head "https:github.comClickHouseclickhouse-cpp.git", branch: "master"
+  head "https://github.com/ClickHouse/clickhouse-cpp.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "3cda0223506dcc56518dbd70b371ef6757853d01e67ca55c68d2551e9a32b7f8"
@@ -26,7 +26,7 @@ class ClickhouseCpp < Formula
   def install
     # We use the vendored version (1.0.2) of `cityhash` because newer versions
     # break hash compatibility. See:
-    #   https:github.comClickHouseclickhouse-cpppull301#issuecomment-1520592157
+    #   https://github.com/ClickHouse/clickhouse-cpp/pull/301#issuecomment-1520592157
     args = %W[
       -DWITH_OPENSSL=ON
       -DOPENSSL_ROOT_DIR=#{Formula["openssl@3"].opt_prefix}
@@ -39,12 +39,12 @@ class ClickhouseCpp < Formula
     system "cmake", "--install", "build"
 
     # Install vendored `cityhash`.
-    (libexec"lib").install "buildcontribcityhashcityhashlibcityhash.a"
+    (libexec/"lib").install "build/contrib/cityhash/cityhash/libcityhash.a"
   end
 
   test do
-    (testpath"main.cpp").write <<~CPP
-      #include <clickhouseclient.h>
+    (testpath/"main.cpp").write <<~CPP
+      #include <clickhouse/client.h>
 
       #include <exception>
 
@@ -57,7 +57,7 @@ class ClickhouseCpp < Formula
 
           try
           {
-               Expecting a typical "failed to connect" error.
+              // Expecting a typical "failed to connect" error.
               clickhouse::Client client(
                 clickhouse::ClientOptions()
                 .SetHost("example.com")
@@ -87,7 +87,7 @@ class ClickhouseCpp < Formula
       -I#{include}
       -L#{lib}
       -lclickhouse-cpp-lib
-      -L#{libexec}lib
+      -L#{libexec}/lib
       -lcityhash
       -L#{Formula["openssl@3"].opt_lib}
       -lcrypto -lssl
@@ -95,6 +95,6 @@ class ClickhouseCpp < Formula
       -llz4
     ]
     system ENV.cxx, "main.cpp", *args, "-o", "test-client"
-    assert_match "Exception: fail to connect: ", shell_output(".test-client", 1)
+    assert_match "Exception: fail to connect: ", shell_output("./test-client", 1)
   end
 end

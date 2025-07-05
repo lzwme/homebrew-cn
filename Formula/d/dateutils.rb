@@ -1,7 +1,7 @@
 class Dateutils < Formula
   desc "Tools to manipulate dates with a focus on financial data"
-  homepage "https:www.fresse.orgdateutils"
-  url "https:github.comhroptatyrdateutilsreleasesdownloadv0.4.11dateutils-0.4.11.tar.xz"
+  homepage "https://www.fresse.org/dateutils/"
+  url "https://ghfast.top/https://github.com/hroptatyr/dateutils/releases/download/v0.4.11/dateutils-0.4.11.tar.xz"
   sha256 "b8fea0b09714bbadf202b9b3434cce6b59c282e7869268d0c08b85880fdbb446"
   license "BSD-3-Clause"
 
@@ -20,7 +20,7 @@ class Dateutils < Formula
   end
 
   head do
-    url "https:github.comhroptatyrdateutils.git", branch: "master"
+    url "https://github.com/hroptatyr/dateutils.git", branch: "master"
     depends_on "autoconf" => :build
     depends_on "automake" => :build
     depends_on "libtool" => :build
@@ -28,12 +28,12 @@ class Dateutils < Formula
 
   def install
     system "autoreconf", "--force", "--install", "--verbose" if build.head?
-    system ".configure", "--disable-silent-rules", *std_configure_args
+    system "./configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
   end
 
   test do
-    output = shell_output("#{bin}dconv 2012-03-04 -f \"%Y-%m-%c-%w\"").strip
+    output = shell_output("#{bin}/dconv 2012-03-04 -f \"%Y-%m-%c-%w\"").strip
     assert_equal "2012-03-01-07", output
   end
 end

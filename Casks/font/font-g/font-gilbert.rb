@@ -2,16 +2,16 @@ cask "font-gilbert" do
   version "1.005,alpha"
   sha256 "d3ac3075efe00bf4302264b2e626f548e3549740d359a43991605b2a180d8cbe"
 
-  url "https:github.comFontselfTypeWithPridereleasesdownload#{version.csv.first}Gilbert_#{version.csv.first}_#{version.csv.second}.zip"
+  url "https://ghfast.top/https://github.com/Fontself/TypeWithPride/releases/download/#{version.csv.first}/Gilbert_#{version.csv.first}_#{version.csv.second}.zip"
   name "Gilbert"
-  homepage "https:github.comFontselfTypeWithPride"
+  homepage "https://github.com/Fontself/TypeWithPride"
 
   # This uses the `GithubReleases` strategy because all releases are marked as
   # pre-release on GitHub. We should be able to switch to the `GithubLatest`
-  # strategy ifwhen there's a "latest" release in the future.
+  # strategy if/when there's a "latest" release in the future.
   livecheck do
     url :url
-    regex(Gilbert[._-]v?(\d+(?:\.\d+)+)[._-](.*)\.zipi)
+    regex(/Gilbert[._-]v?(\d+(?:\.\d+)+)[._-](.*)\.zip/i)
     strategy :github_releases do |json, regex|
       json.map do |release|
         next if release["draft"]

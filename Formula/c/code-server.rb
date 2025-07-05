@@ -1,7 +1,7 @@
 class CodeServer < Formula
   desc "Access VS Code through the browser"
-  homepage "https:github.comcodercode-server"
-  url "https:registry.npmjs.orgcode-server-code-server-4.101.2.tgz"
+  homepage "https://github.com/coder/code-server"
+  url "https://registry.npmjs.org/code-server/-/code-server-4.101.2.tgz"
   sha256 "6f53a281ac4c2db0ea61f7f48d82e80312e5627342838b26a6127f81267b8aca"
   license "MIT"
 
@@ -27,21 +27,21 @@ class CodeServer < Formula
   end
 
   def install
-    # Fix broken node-addon-api: https:github.comnodejsnodeissues52229
+    # Fix broken node-addon-api: https://github.com/nodejs/node/issues/52229
     ENV.append "CXXFLAGS", "-DNODE_API_EXPERIMENTAL_NOGC_ENV_OPT_OUT"
 
     system "npm", "install", *std_npm_args(prefix: false), "--unsafe-perm", "--omit", "dev"
 
     libexec.install Dir["*"]
-    bin.install_symlink libexec"outnodeentry.js" => "code-server"
+    bin.install_symlink libexec/"out/node/entry.js" => "code-server"
 
     # Remove incompatible pre-built binaries
     os = OS.kernel_name.downcase
     arch = Hardware::CPU.intel? ? "x64" : Hardware::CPU.arch.to_s
-    vscode = libexec"libvscodenode_modules@parcel"
+    vscode = libexec/"lib/vscode/node_modules/@parcel"
     permitted_dir = OS.linux? ? "watcher-#{os}-#{arch}-glibc" : "watcher-#{os}-#{arch}"
     vscode.glob("watcher-*").each do |dir|
-      next unless (Pathname.new(dir)"watcher.node").exist?
+      next unless (Pathname.new(dir)/"watcher.node").exist?
 
       rm_r(dir) if permitted_dir != dir.basename.to_s
     end
@@ -49,31 +49,31 @@ class CodeServer < Formula
 
   def caveats
     <<~EOS
-      The launchd service runs on http:127.0.0.1:8080. Logs are located at #{var}logcode-server.log.
+      The launchd service runs on http://127.0.0.1:8080. Logs are located at #{var}/log/code-server.log.
     EOS
   end
 
   service do
-    run opt_bin"code-server"
+    run opt_bin/"code-server"
     keep_alive true
-    error_log_path var"logcode-server.log"
-    log_path var"logcode-server.log"
+    error_log_path var/"log/code-server.log"
+    log_path var/"log/code-server.log"
     working_dir Dir.home
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}code-server --version")
+    assert_match version.to_s, shell_output("#{bin}/code-server --version")
 
     port = free_port
     output = ""
 
-    PTY.spawn "#{bin}code-server --auth none --port #{port}" do |r, _w, pid|
+    PTY.spawn "#{bin}/code-server --auth none --port #{port}" do |r, _w, pid|
       sleep 3
       Process.kill("TERM", pid)
       begin
         r.each_line { |line| output += line }
       rescue Errno::EIO
-        # GNULinux raises EIO when read is done on closed pty
+        # GNU/Linux raises EIO when read is done on closed pty
       end
     ensure
       Process.wait(pid)

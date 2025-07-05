@@ -1,10 +1,10 @@
 class Kor < Formula
   desc "CLI tool to discover unused Kubernetes resources"
-  homepage "https:github.comyonahdkor"
-  url "https:github.comyonahdkorarchiverefstagsv0.6.2.tar.gz"
+  homepage "https://github.com/yonahd/kor"
+  url "https://ghfast.top/https://github.com/yonahd/kor/archive/refs/tags/v0.6.2.tar.gz"
   sha256 "949b5857f126b4a237daae3670b115b6671fb8c233fd5569d2897635f867c2cd"
   license "MIT"
-  head "https:github.comyonahdkor.git", branch: "main"
+  head "https://github.com/yonahd/kor.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "31275612e3e476d5047283d9ca94ed3e6ef837b2e5f8b0ab8b495d9789eae542"
@@ -17,44 +17,44 @@ class Kor < Formula
 
   depends_on "go" => :build
 
-  # skip kubeconfig for utility commands, upstream pr ref, https:github.comyonahdkorpull457
+  # skip kubeconfig for utility commands, upstream pr ref, https://github.com/yonahd/kor/pull/457
   patch do
-    url "https:github.comyonahdkorcommit6c02951894e587c023e57a7ab2654136024bff70.patch?full_index=1"
+    url "https://github.com/yonahd/kor/commit/6c02951894e587c023e57a7ab2654136024bff70.patch?full_index=1"
     sha256 "98b3dac34c1164831a25502f8c2723d227cdac8ade8e4f68b17b00057e149be4"
   end
 
   def install
-    ldflags = "-s -w -X github.comyonahdkorpkgutils.Version=#{version}"
+    ldflags = "-s -w -X github.com/yonahd/kor/pkg/utils.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:)
 
-    generate_completions_from_executable(bin"kor", "completion", shells: [:bash, :zsh, :fish, :pwsh])
+    generate_completions_from_executable(bin/"kor", "completion", shells: [:bash, :zsh, :fish, :pwsh])
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}kor version")
+    assert_match version.to_s, shell_output("#{bin}/kor version")
 
-    (testpath"mock-kubeconfig").write <<~YAML
+    (testpath/"mock-kubeconfig").write <<~YAML
       apiVersion: v1
       clusters:
         - cluster:
-            server: https:mock-server:6443
+            server: https://mock-server:6443
           name: mock-server:6443
       contexts:
         - context:
             cluster: mock-server:6443
             namespace: default
-            user: mockUsermock-server:6443
-          name: defaultmock-server:6443mockUser
-      current-context: defaultmock-server:6443mockUser
+            user: mockUser/mock-server:6443
+          name: default/mock-server:6443/mockUser
+      current-context: default/mock-server:6443/mockUser
       kind: Config
       preferences: {}
       users:
-        - name: kube:adminmock-server:6443
+        - name: kube:admin/mock-server:6443
           user:
             token: sha256~QTYGVumELfyzLS9H9gOiDhVA2B1VnlsNaRsiztOnae0
     YAML
 
-    out = shell_output("#{bin}kor all -k #{testpath}mock-kubeconfig 2>&1", 1)
-    assert_match "Failed to retrieve namespaces: Get \"https:mock-server:6443apiv1namespaces\"", out
+    out = shell_output("#{bin}/kor all -k #{testpath}/mock-kubeconfig 2>&1", 1)
+    assert_match "Failed to retrieve namespaces: Get \"https://mock-server:6443/api/v1/namespaces\"", out
   end
 end

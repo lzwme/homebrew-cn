@@ -1,10 +1,10 @@
 class Gnmic < Formula
   desc "GNMI CLI client and collector"
-  homepage "https:gnmic.openconfig.net"
-  url "https:github.comopenconfiggnmicarchiverefstagsv0.41.0.tar.gz"
+  homepage "https://gnmic.openconfig.net"
+  url "https://ghfast.top/https://github.com/openconfig/gnmic/archive/refs/tags/v0.41.0.tar.gz"
   sha256 "79db2cdd7dfe55edefdb7dcdd1c4403fdc5cb9378385f23456d16a740cc6ec24"
   license "Apache-2.0"
-  head "https:github.comopenconfiggnmic.git", branch: "main"
+  head "https://github.com/openconfig/gnmic.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "f1d0cbcd8a25bb3cddc1880de6cb9851c5f5ed23e08670f39ea478f49e5077d0"
@@ -20,21 +20,21 @@ class Gnmic < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.comopenconfiggnmicpkgapp.version=#{version}
-      -X github.comopenconfiggnmicpkgapp.commit=#{tap.user}
-      -X github.comopenconfiggnmicpkgapp.date=#{time.iso8601}
-      -X github.comopenconfiggnmicpkgapp.gitURL=https:github.comopenconfiggnmic
+      -X github.com/openconfig/gnmic/pkg/app.version=#{version}
+      -X github.com/openconfig/gnmic/pkg/app.commit=#{tap.user}
+      -X github.com/openconfig/gnmic/pkg/app.date=#{time.iso8601}
+      -X github.com/openconfig/gnmic/pkg/app.gitURL=https://github.com/openconfig/gnmic
     ]
     system "go", "build", *std_go_args(ldflags:)
 
-    generate_completions_from_executable(bin"gnmic", "completion")
+    generate_completions_from_executable(bin/"gnmic", "completion")
   end
 
   test do
-    connection_output = shell_output(bin"gnmic -u gnmi -p dummy --skip-verify --timeout 1s -a 127.0.0.1:0 " \
+    connection_output = shell_output(bin/"gnmic -u gnmi -p dummy --skip-verify --timeout 1s -a 127.0.0.1:0 " \
                                          "capabilities 2>&1", 1)
     assert_match "target \"127.0.0.1:0\", capabilities request failed", connection_output
 
-    assert_match version.to_s, shell_output("#{bin}gnmic version")
+    assert_match version.to_s, shell_output("#{bin}/gnmic version")
   end
 end

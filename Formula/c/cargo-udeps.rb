@@ -1,7 +1,7 @@
 class CargoUdeps < Formula
   desc "Find unused dependencies in Cargo.toml"
-  homepage "https:github.comest31cargo-udeps"
-  url "https:github.comest31cargo-udepsarchiverefstagsv0.1.56.tar.gz"
+  homepage "https://github.com/est31/cargo-udeps"
+  url "https://ghfast.top/https://github.com/est31/cargo-udeps/archive/refs/tags/v0.1.56.tar.gz"
   sha256 "a93b87ca3b7819d4918436b37f216f50adef43c2247d1793e0ebd0ecd6e9dbdf"
   license any_of: ["Apache-2.0", "MIT"]
 
@@ -34,18 +34,18 @@ class CargoUdeps < Formula
   end
 
   test do
-    require "utilslinkage"
+    require "utils/linkage"
 
     # Show that we can use a different toolchain than the one provided by the `rust` formula.
-    # https:github.comHomebrewhomebrew-corepull134074#pullrequestreview-1484979359
+    # https://github.com/Homebrew/homebrew-core/pull/134074#pullrequestreview-1484979359
     ENV.prepend_path "PATH", Formula["rustup"].bin
     system "rustup", "set", "profile", "minimal"
     system "rustup", "default", "beta"
 
-    crate = testpath"demo-crate"
+    crate = testpath/"demo-crate"
     mkdir crate do
-      (crate"srcmain.rs").write " Dummy file"
-      (crate"Cargo.toml").write <<~TOML
+      (crate/"src/main.rs").write "// Dummy file"
+      (crate/"Cargo.toml").write <<~TOML
         [package]
         name = "demo-crate"
         version = "0.1.0"
@@ -60,12 +60,12 @@ class CargoUdeps < Formula
     end
 
     [
-      Formula["libgit2"].opt_libshared_library("libgit2"),
-      Formula["libssh2"].opt_libshared_library("libssh2"),
-      Formula["openssl@3"].opt_libshared_library("libssl"),
-      Formula["openssl@3"].opt_libshared_library("libcrypto"),
+      Formula["libgit2"].opt_lib/shared_library("libgit2"),
+      Formula["libssh2"].opt_lib/shared_library("libssh2"),
+      Formula["openssl@3"].opt_lib/shared_library("libssl"),
+      Formula["openssl@3"].opt_lib/shared_library("libcrypto"),
     ].each do |library|
-      assert Utils.binary_linked_to_library?(bin"cargo-udeps", library),
+      assert Utils.binary_linked_to_library?(bin/"cargo-udeps", library),
              "No linkage with #{library.basename}! Cargo is likely using a vendored version."
     end
   end

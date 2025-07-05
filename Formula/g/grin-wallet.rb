@@ -1,7 +1,7 @@
 class GrinWallet < Formula
   desc "Official wallet for the cryptocurrency Grin"
-  homepage "https:grin.mw"
-  url "https:github.commimblewimblegrin-walletarchiverefstagsv5.3.3.tar.gz"
+  homepage "https://grin.mw"
+  url "https://ghfast.top/https://github.com/mimblewimble/grin-wallet/archive/refs/tags/v5.3.3.tar.gz"
   sha256 "defe25b5e8e8c6f94a57792cd197e9d753710cb91a6e82dfc25177cea16bde24"
   license "Apache-2.0"
 
@@ -28,7 +28,7 @@ class GrinWallet < Formula
   end
 
   test do
-    system "yes | #{bin}grin-wallet init"
-    assert_path_exists testpath".grinmainwallet_datawallet.seed"
+    system "yes | #{bin}/grin-wallet init"
+    assert_path_exists testpath/".grin/main/wallet_data/wallet.seed"
   end
 end

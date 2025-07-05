@@ -1,10 +1,10 @@
 class SoftServe < Formula
   desc "Mighty, self-hostable Git server for the command-line"
-  homepage "https:github.comcharmbraceletsoft-serve"
-  url "https:github.comcharmbraceletsoft-servearchiverefstagsv0.9.1.tar.gz"
+  homepage "https://github.com/charmbracelet/soft-serve"
+  url "https://ghfast.top/https://github.com/charmbracelet/soft-serve/archive/refs/tags/v0.9.1.tar.gz"
   sha256 "7ee68a779bda1e0020aa2f44703a4d7e5afdcc685d8af6ecbbb9c826fd03e217"
   license "MIT"
-  head "https:github.comcharmbraceletsoft-serve.git", branch: "main"
+  head "https://github.com/charmbracelet/soft-serve.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "3712c7ef413b0aa315161d758f10c0e356508f5c9fbf142d2e413e32a5ebfe71"
@@ -19,16 +19,16 @@ class SoftServe < Formula
 
   def install
     ldflags = "-s -w -X main.Version=#{version} -X main.CommitSHA=#{tap.user} -X main.CommitDate=#{time.iso8601}"
-    system "go", "build", *std_go_args(ldflags:, output: bin"soft"), ".cmdsoft"
+    system "go", "build", *std_go_args(ldflags:, output: bin/"soft"), "./cmd/soft"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}soft --version")
+    assert_match version.to_s, shell_output("#{bin}/soft --version")
 
-    pid = spawn bin"soft", "serve"
+    pid = spawn bin/"soft", "serve"
     sleep 1
     Process.kill("TERM", pid)
-    assert_path_exists testpath"datasoft-serve.db"
-    assert_path_exists testpath"datahooksupdate.sample"
+    assert_path_exists testpath/"data/soft-serve.db"
+    assert_path_exists testpath/"data/hooks/update.sample"
   end
 end

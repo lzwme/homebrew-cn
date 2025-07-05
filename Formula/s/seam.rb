@@ -1,7 +1,7 @@
 class Seam < Formula
   desc "This utility lets you control Seam resources"
-  homepage "https:github.comseamapiseam-cli"
-  url "https:registry.npmjs.orgseam-cli-seam-cli-0.0.60.tgz"
+  homepage "https://github.com/seamapi/seam-cli"
+  url "https://registry.npmjs.org/seam-cli/-/seam-cli-0.0.60.tgz"
   sha256 "e25f9c24234222813d3cbaa152180b61949ef0800f617daba469d297fee5eee8"
   license "MIT"
 
@@ -19,12 +19,12 @@ class Seam < Formula
 
   def install
     system "npm", "install", *std_npm_args
-    bin.install_symlink Dir["#{libexec}bin*"]
+    bin.install_symlink Dir["#{libexec}/bin/*"]
   end
 
   test do
-    system bin"seam", "config", "set", "fake-server"
-    output = shell_output("#{bin}seam health get_health")
+    system bin/"seam", "config", "set", "fake-server"
+    output = shell_output("#{bin}/seam health get_health")
     assert_match "I’m one with the Force. The Force is with me.", output
   end
 end

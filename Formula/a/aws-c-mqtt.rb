@@ -1,7 +1,7 @@
 class AwsCMqtt < Formula
   desc "C99 implementation of the MQTT 3.1.1 specification"
-  homepage "https:github.comawslabsaws-c-mqtt"
-  url "https:github.comawslabsaws-c-mqttarchiverefstagsv0.13.2.tar.gz"
+  homepage "https://github.com/awslabs/aws-c-mqtt"
+  url "https://ghfast.top/https://github.com/awslabs/aws-c-mqtt/archive/refs/tags/v0.13.2.tar.gz"
   sha256 "8d22b181e4c90f5c683e786aadb9fb59a30a699c332e96e16595216ef9058c2f"
   license "Apache-2.0"
 
@@ -31,9 +31,9 @@ class AwsCMqtt < Formula
   end
 
   test do
-    (testpath"test.c").write <<~C
-      #include <awscommonallocator.h>
-      #include <awsmqttmqtt.h>
+    (testpath/"test.c").write <<~C
+      #include <aws/common/allocator.h>
+      #include <aws/mqtt/mqtt.h>
 
       int main(void) {
         struct aws_allocator *allocator = aws_default_allocator();
@@ -44,6 +44,6 @@ class AwsCMqtt < Formula
     C
     system ENV.cc, "test.c", "-o", "test", "-L#{lib}", "-laws-c-mqtt",
                    "-L#{Formula["aws-c-common"].opt_lib}", "-laws-c-common"
-    system ".test"
+    system "./test"
   end
 end

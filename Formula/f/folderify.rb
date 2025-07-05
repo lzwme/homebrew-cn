@@ -1,10 +1,10 @@
 class Folderify < Formula
   desc "Generate pixel-perfect macOS folder icons in the native style"
-  homepage "https:github.comlgarronfolderify"
-  url "https:github.comlgarronfolderifyarchiverefstagsv4.1.1.tar.gz"
+  homepage "https://github.com/lgarron/folderify"
+  url "https://ghfast.top/https://github.com/lgarron/folderify/archive/refs/tags/v4.1.1.tar.gz"
   sha256 "e3965b9b5afac55aa82fbeebb66a579d96a7ba98a2663f4f088a786043f234d7"
   license "MIT"
-  head "https:github.comlgarronfolderify.git", branch: "main"
+  head "https://github.com/lgarron/folderify.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "0b251c30a320ac3584fb8344d7fcbbe80ed645b19591999085c507cfefbc7300"
@@ -21,20 +21,20 @@ class Folderify < Formula
   def install
     system "cargo", "install", *std_cargo_args
 
-    generate_completions_from_executable(bin"folderify", "--completions")
+    generate_completions_from_executable(bin/"folderify", "--completions")
   end
 
   test do
     # Write an example icon to a file.
-    (testpath"test.svg").write <<~EOS
-      <svg xmlns="http:www.w3.org2000svg" viewBox="0 0 100 100">
-        <circle cx="50" cy="50" r="40" fill="transparent" stroke="black" stroke-width="20" >
-      <svg>
+    (testpath/"test.svg").write <<~EOS
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+        <circle cx="50" cy="50" r="40" fill="transparent" stroke="black" stroke-width="20" />
+      </svg>
     EOS
 
     # folderify applies the test icon to a folder
-    system bin"folderify", "test.svg", testpath.to_s
+    system bin/"folderify", "test.svg", testpath.to_s
     # Tests for the presence of the file icon
-    assert_path_exists testpath"Icon\r"
+    assert_path_exists testpath/"Icon\r"
   end
 end

@@ -2,10 +2,10 @@ cask "pyfa" do
   version "2.63.1"
   sha256 "de0215d07d0f6201d0fbc5c897eaabb3616283d947f8d738883330d4e8f79160"
 
-  url "https:github.compyfa-orgPyfareleasesdownloadv#{version}pyfa-v#{version}-mac.zip"
+  url "https://ghfast.top/https://github.com/pyfa-org/Pyfa/releases/download/v#{version}/pyfa-v#{version}-mac.zip"
   name "pyfa"
   desc "Fitting tool for EVE Online"
-  homepage "https:github.compyfa-orgPyfa"
+  homepage "https://github.com/pyfa-org/Pyfa"
 
   livecheck do
     url :url
@@ -15,9 +15,9 @@ cask "pyfa" do
   app "pyfa.app"
 
   zap trash: [
-    "~LibraryCachesorg.pyfaorg.pyfa",
-    "~LibraryPreferencesorg.pyfaorg.pyfa.plist",
-    "~LibrarySaved Application Stateorg.pyfaorg.pyfa.savedState",
+    "~/Library/Caches/org.pyfaorg.pyfa",
+    "~/Library/Preferences/org.pyfaorg.pyfa.plist",
+    "~/Library/Saved Application State/org.pyfaorg.pyfa.savedState",
   ]
 
   caveats do

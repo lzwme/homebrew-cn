@@ -1,10 +1,10 @@
 class Oauth2l < Formula
   desc "Simple CLI for interacting with Google oauth tokens"
-  homepage "https:github.comgoogleoauth2l"
-  url "https:github.comgoogleoauth2larchiverefstagsv1.3.3.tar.gz"
+  homepage "https://github.com/google/oauth2l"
+  url "https://ghfast.top/https://github.com/google/oauth2l/archive/refs/tags/v1.3.3.tar.gz"
   sha256 "a27f643949baa9f057bceb490c170d589728d3bda0a3066f57e17bb02b383cd9"
   license "Apache-2.0"
-  head "https:github.comgoogleoauth2l.git", branch: "master"
+  head "https://github.com/google/oauth2l.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "4410571958fb9512c71c88460b8c5ce402fd02885e6f157422ca133598dc4fbb"
@@ -22,6 +22,6 @@ class Oauth2l < Formula
   end
 
   test do
-    assert_match "Invalid Value", shell_output("#{bin}oauth2l info abcd1234")
+    assert_match "Invalid Value", shell_output("#{bin}/oauth2l info abcd1234")
   end
 end

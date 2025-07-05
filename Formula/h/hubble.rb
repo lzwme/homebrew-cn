@@ -1,10 +1,10 @@
 class Hubble < Formula
   desc "Network, Service & Security Observability for Kubernetes using eBPF"
-  homepage "https:github.comciliumhubble"
-  url "https:github.comciliumhubblearchiverefstagsv1.17.5.tar.gz"
+  homepage "https://github.com/cilium/hubble"
+  url "https://ghfast.top/https://github.com/cilium/hubble/archive/refs/tags/v1.17.5.tar.gz"
   sha256 "ac0a7e58f611cb203e14f24c3b65b050931c4994794d884cbfecf5c4bf5aaf7f"
   license "Apache-2.0"
-  head "https:github.comciliumhubble.git", branch: "main"
+  head "https://github.com/cilium/hubble.git", branch: "main"
 
   # There can be a notable gap between when a version is tagged and a
   # corresponding release is created, so we check the "latest" release instead
@@ -27,13 +27,13 @@ class Hubble < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = "-s -w -X github.comciliumhubblepkg.Version=#{version}"
+    ldflags = "-s -w -X github.com/cilium/hubble/pkg.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:)
 
-    generate_completions_from_executable(bin"hubble", "completion")
+    generate_completions_from_executable(bin/"hubble", "completion")
   end
 
   test do
-    assert_match(tls-allow-insecure:, shell_output("#{bin}hubble config get"))
+    assert_match(/tls-allow-insecure:/, shell_output("#{bin}/hubble config get"))
   end
 end

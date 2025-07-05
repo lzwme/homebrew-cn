@@ -1,16 +1,16 @@
 class Youtubeuploader < Formula
   desc "Scripted uploads to Youtube"
-  homepage "https:github.comporjoyoutubeuploader"
-  url "https:github.comporjoyoutubeuploaderarchiverefstagsv1.25.1.tar.gz"
+  homepage "https://github.com/porjo/youtubeuploader"
+  url "https://ghfast.top/https://github.com/porjo/youtubeuploader/archive/refs/tags/v1.25.1.tar.gz"
   sha256 "729d3cb5a6ff6a09742d9d9371a9c84fc21961d972c24694abed3b048c3d1b83"
   license "Apache-2.0"
   version_scheme 1
-  head "https:github.comporjoyoutubeuploader.git", branch: "master"
+  head "https://github.com/porjo/youtubeuploader.git", branch: "master"
 
   # Upstream creates stable version tags (e.g., `23.03`) before a release but
   # the version isn't considered to be released until a corresponding release
   # is created on GitHub, so it's necessary to use the `GithubLatest` strategy.
-  # https:github.comporjoyoutubeuploaderissues169
+  # https://github.com/porjo/youtubeuploader/issues/169
   livecheck do
     url :stable
     strategy :github_latest
@@ -29,30 +29,30 @@ class Youtubeuploader < Formula
 
   def install
     ldflags = "-s -X main.appVersion=#{version}"
-    system "go", "build", *std_go_args(ldflags:), ".cmdyoutubeuploader"
+    system "go", "build", *std_go_args(ldflags:), "./cmd/youtubeuploader"
   end
 
   test do
     # Version
-    assert_match version.to_s, shell_output("#{bin}youtubeuploader -version")
+    assert_match version.to_s, shell_output("#{bin}/youtubeuploader -version")
 
     # OAuth
-    (testpath"client_secrets.json").write <<~JSON
+    (testpath/"client_secrets.json").write <<~JSON
       {
         "installed": {
           "client_id": "foo_client_id",
           "client_secret": "foo_client_secret",
           "redirect_uris": [
-            "http:localhost:8080oauth2callback",
-            "https:localhost:8080oauth2callback"
+            "http://localhost:8080/oauth2callback",
+            "https://localhost:8080/oauth2callback"
            ],
-          "auth_uri": "https:accounts.google.comooauth2auth",
-          "token_uri": "https:accounts.google.comooauth2token"
+          "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+          "token_uri": "https://accounts.google.com/o/oauth2/token"
         }
       }
     JSON
 
-    (testpath"request.token").write <<~JSON
+    (testpath/"request.token").write <<~JSON
       {
         "access_token": "test",
         "token_type": "Bearer",
@@ -61,7 +61,7 @@ class Youtubeuploader < Formula
       }
     JSON
 
-    output = shell_output("#{bin}youtubeuploader -filename #{test_fixtures("test.m4a")} 2>&1", 1)
+    output = shell_output("#{bin}/youtubeuploader -filename #{test_fixtures("test.m4a")} 2>&1", 1)
     assert_match 'oauth2: "invalid_client" "The OAuth client was not found."', output
   end
 end

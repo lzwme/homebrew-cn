@@ -1,7 +1,7 @@
 class DarkskyWeather < Formula
   desc "Command-line weather from the darksky.net API"
-  homepage "https:github.comgenuinetoolsweather"
-  url "https:github.comgenuinetoolsweatherarchiverefstagsv0.15.7.tar.gz"
+  homepage "https://github.com/genuinetools/weather"
+  url "https://ghfast.top/https://github.com/genuinetools/weather/archive/refs/tags/v0.15.7.tar.gz"
   sha256 "e5efd17d40d4246998293de6191e39954aee59c5a0f917f319b493a8dc335edb"
   license "MIT"
 
@@ -28,15 +28,15 @@ class DarkskyWeather < Formula
   depends_on "go" => :build
 
   def install
-    project = "github.comgenuinetoolsweather"
+    project = "github.com/genuinetools/weather"
     ldflags = ["-s -w",
-               "-X #{project}version.GITCOMMIT=#{tap.user.downcase}",
-               "-X #{project}version.VERSION=v#{version}"]
-    system "go", "build", *std_go_args(output: bin"weather", ldflags:)
+               "-X #{project}/version.GITCOMMIT=#{tap.user.downcase}",
+               "-X #{project}/version.VERSION=v#{version}"]
+    system "go", "build", *std_go_args(output: bin/"weather", ldflags:)
   end
 
   test do
     # A functional test often errors out, so we stick to checking the version.
-    assert_match "v#{version}", shell_output("#{bin}weather version")
+    assert_match "v#{version}", shell_output("#{bin}/weather version")
   end
 end

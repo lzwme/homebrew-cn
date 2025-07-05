@@ -1,10 +1,10 @@
 class ChiselTunnel < Formula
-  desc "Fast TCPUDP tunnel over HTTP"
-  homepage "https:github.comjpillorachisel"
-  url "https:github.comjpillorachiselarchiverefstagsv1.10.1.tar.gz"
+  desc "Fast TCP/UDP tunnel over HTTP"
+  homepage "https://github.com/jpillora/chisel"
+  url "https://ghfast.top/https://github.com/jpillora/chisel/archive/refs/tags/v1.10.1.tar.gz"
   sha256 "85d121087ea3e1139f63eaa389642bd6d8c2584728ec80d16315b17410844269"
   license "MIT"
-  head "https:github.comjpillorachisel.git", branch: "master"
+  head "https://github.com/jpillora/chisel.git", branch: "master"
 
   bottle do
     rebuild 1
@@ -22,8 +22,8 @@ class ChiselTunnel < Formula
   conflicts_with "foundry", because: "both install `chisel` binaries"
 
   def install
-    ldflags = "-s -w -X github.comjpillorachiselshare.BuildVersion=v#{version}"
-    system "go", "build", *std_go_args(ldflags:, output: bin"chisel")
+    ldflags = "-s -w -X github.com/jpillora/chisel/share.BuildVersion=v#{version}"
+    system "go", "build", *std_go_args(ldflags:, output: bin/"chisel")
   end
 
   test do
@@ -31,7 +31,7 @@ class ChiselTunnel < Formula
     server_port = free_port
 
     server_pid = fork do
-      exec "#{bin}chisel server -p #{server_port}", out: write, err: write
+      exec "#{bin}/chisel server -p #{server_port}", out: write, err: write
     end
 
     sleep 2

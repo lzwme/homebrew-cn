@@ -1,7 +1,7 @@
 class MarkdownOxide < Formula
   desc "Personal Knowledge Management System for the LSP"
-  homepage "https:oxide.md"
-  url "https:github.comFeel-ix-343markdown-oxidearchiverefstagsv0.25.3.tar.gz"
+  homepage "https://oxide.md"
+  url "https://ghfast.top/https://github.com/Feel-ix-343/markdown-oxide/archive/refs/tags/v0.25.3.tar.gz"
   sha256 "2599ca7bda83526b2d1551e1579877fceecb43336f9c9cc1ec25d05f9020a650"
   license "Apache-2.0"
 
@@ -33,7 +33,7 @@ class MarkdownOxide < Formula
         }
       }
     JSON
-    assert_match(^Content-Length: \d+i,
-      pipe_output(bin"markdown-oxide", "Content-Length: #{json.size}\r\n\r\n#{json}"))
+    assert_match(/^Content-Length: \d+/i,
+      pipe_output(bin/"markdown-oxide", "Content-Length: #{json.size}\r\n\r\n#{json}"))
   end
 end

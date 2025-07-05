@@ -1,14 +1,14 @@
 class Chamber < Formula
   desc "CLI for managing secrets through AWS SSM Parameter Store"
-  homepage "https:github.comsegmentiochamber"
-  url "https:github.comsegmentiochamberarchiverefstagsv3.1.2.tar.gz"
+  homepage "https://github.com/segmentio/chamber"
+  url "https://ghfast.top/https://github.com/segmentio/chamber/archive/refs/tags/v3.1.2.tar.gz"
   sha256 "cda68ed5f795d717d2debb4704739daad5f68fd3c2d1300b4c37160d05e1f5bb"
   license "MIT"
-  head "https:github.comsegmentiochamber.git", branch: "master"
+  head "https://github.com/segmentio/chamber.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(v?(\d+(?:\.\d+)+(?:-ci\d)?)i)
+    regex(/v?(\d+(?:\.\d+)+(?:-ci\d)?)/i)
     strategy :github_latest
   end
 
@@ -25,14 +25,14 @@ class Chamber < Formula
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w -X main.Version=v#{version}")
-    generate_completions_from_executable(bin"chamber", "completion")
+    generate_completions_from_executable(bin/"chamber", "completion")
   end
 
   test do
     ENV["AWS_REGION"] = "us-east-1"
-    output = shell_output("#{bin}chamber list service 2>&1", 1)
+    output = shell_output("#{bin}/chamber list service 2>&1", 1)
     assert_match "Error: Failed to list store contents: operation error SSM", output
 
-    assert_match version.to_s, shell_output("#{bin}chamber version")
+    assert_match version.to_s, shell_output("#{bin}/chamber version")
   end
 end

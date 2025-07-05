@@ -1,7 +1,7 @@
 class Sleek < Formula
   desc "CLI tool for formatting SQL"
-  homepage "https:github.comnrempelsleek"
-  url "https:github.comnrempelsleekarchiverefstagsv0.5.0.tar.gz"
+  homepage "https://github.com/nrempel/sleek"
+  url "https://ghfast.top/https://github.com/nrempel/sleek/archive/refs/tags/v0.5.0.tar.gz"
   sha256 "fcb589fdc5ece8c050883ff0b56aec6bd25e2e4d6e77a1d52e870535d66fdf67"
   license "MIT"
 
@@ -22,11 +22,11 @@ class Sleek < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}sleek --version")
+    assert_match version.to_s, shell_output("#{bin}/sleek --version")
 
-    (testpath"test.sql").write <<~SQL
+    (testpath/"test.sql").write <<~SQL
       SELECT * from foo WHERE bar = 'quux';
     SQL
-    system bin"sleek", testpath"test.sql"
+    system bin/"sleek", testpath/"test.sql"
   end
 end

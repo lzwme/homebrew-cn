@@ -5,10 +5,10 @@ cask "powershell@preview" do
   sha256 arm:   "78065c18a070bfb0d16aa97c47e1a72060457e48d72afa031389fc12a465e0d5",
          intel: "8c93097b6a9b1b27db2f2a999fabf12df9daf9b226bc786e67b5819a213da633"
 
-  url "https:github.comPowerShellPowerShellreleasesdownloadv#{version}powershell-#{version}-osx-#{arch}.pkg"
+  url "https://ghfast.top/https://github.com/PowerShell/PowerShell/releases/download/v#{version}/powershell-#{version}-osx-#{arch}.pkg"
   name "PowerShell"
   desc "Command-line shell and scripting language"
-  homepage "https:github.comPowerShellPowerShell"
+  homepage "https://github.com/PowerShell/PowerShell"
 
   # There can be a notable gap between when a version is tagged and a
   # corresponding release is created, so we check releases instead of the Git
@@ -16,7 +16,7 @@ cask "powershell@preview" do
   # we have to use the `GithubReleases` strategy to identify unstable releases.
   livecheck do
     url :url
-    regex(^v?(\d+(?:\.\d+)+[_-](?:preview|rc)(?:\.\d+)?)$i)
+    regex(/^v?(\d+(?:\.\d+)+[_-](?:preview|rc)(?:\.\d+)?)$/i)
     strategy :github_releases do |json, regex|
       json.map do |release|
         next if release["draft"]
@@ -36,19 +36,19 @@ cask "powershell@preview" do
   uninstall pkgutil: "com.microsoft.powershell-preview"
 
   zap trash: [
-        "~.cachepowershell",
-        "~.configPowerShell",
-        "~.localsharepowershell",
+        "~/.cache/powershell",
+        "~/.config/PowerShell",
+        "~/.local/share/powershell",
       ],
       rmdir: [
-        "~.cache",
-        "~.config",
-        "~.local",
-        "~.localshare",
+        "~/.cache",
+        "~/.config",
+        "~/.local",
+        "~/.local/share",
       ]
 
   caveats <<~EOS
     To use Homebrew in PowerShell, set:
-      Add-Content -Path $PROFILE.CurrentUserAllHosts -Value '$(#{HOMEBREW_PREFIX}binbrew shellenv) | Invoke-Expression'
+      Add-Content -Path $PROFILE.CurrentUserAllHosts -Value '$(#{HOMEBREW_PREFIX}/bin/brew shellenv) | Invoke-Expression'
   EOS
 end

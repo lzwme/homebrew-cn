@@ -1,7 +1,7 @@
 class Tgui < Formula
   desc "GUI library for use with sfml"
-  homepage "https:tgui.eu"
-  url "https:github.comtexusTGUIarchiverefstagsv1.10.0.tar.gz"
+  homepage "https://tgui.eu"
+  url "https://ghfast.top/https://github.com/texus/TGUI/archive/refs/tags/v1.10.0.tar.gz"
   sha256 "b25a5f8aca7823314e268118015aa14a8eb65956e09f447010230df10dc560b0"
   license "Zlib"
 
@@ -40,9 +40,9 @@ class Tgui < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~CPP
-      #include <TGUITGUI.hpp>
-      #include <TGUIBackendSFML-Graphics.hpp>
+    (testpath/"test.cpp").write <<~CPP
+      #include <TGUI/TGUI.hpp>
+      #include <TGUI/Backend/SFML-Graphics.hpp>
       int main()
       {
         sf::RenderWindow window{sf::VideoMode{{800, 600}}, "TGUI example (SFML-Graphics)"};
@@ -61,9 +61,9 @@ class Tgui < Formula
       "-o", "test"
 
     if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
-      assert_match "Failed to open X11 display", shell_output(".test 2>&1", 134)
+      assert_match "Failed to open X11 display", shell_output("./test 2>&1", 134)
     else
-      system ".test"
+      system "./test"
     end
   end
 end

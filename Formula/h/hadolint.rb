@@ -1,7 +1,7 @@
 class Hadolint < Formula
   desc "Smarter Dockerfile linter to validate best practices"
-  homepage "https:github.comhadolinthadolint"
-  url "https:github.comhadolinthadolintarchiverefstagsv2.12.0.tar.gz"
+  homepage "https://github.com/hadolint/hadolint"
+  url "https://ghfast.top/https://github.com/hadolint/hadolint/archive/refs/tags/v2.12.0.tar.gz"
   sha256 "1f972f070fa068a8a18b62016c9cbd00df994006e069647038694fc6cde45545"
   license "GPL-3.0-only"
 
@@ -29,10 +29,10 @@ class Hadolint < Formula
 
   # Backport support for GHC 9.8
   patch do
-    url "https:github.comhadolinthadolintcommit593ccde5af13c9b960b3ea815c47ce028a2e8adc.patch?full_index=1"
+    url "https://github.com/hadolint/hadolint/commit/593ccde5af13c9b960b3ea815c47ce028a2e8adc.patch?full_index=1"
     sha256 "dfa4e7a6c2c06f792d299ac17f13fbfd13654c35dea1dc202eda0601650e3b7e"
   end
-  patch :DATA # https:github.comhadolinthadolintcommit6a6dd09917d4b6c7c8fb5a5d8c31bb24e2a3b1e0
+  patch :DATA # https://github.com/hadolint/hadolint/commit/6a6dd09917d4b6c7c8fb5a5d8c31bb24e2a3b1e0
 
   def install
     system "cabal", "v2-update"
@@ -40,31 +40,31 @@ class Hadolint < Formula
   end
 
   test do
-    df = testpath"Dockerfile"
+    df = testpath/"Dockerfile"
     df.write <<~DOCKERFILE
       FROM debian
     DOCKERFILE
-    assert_match "DL3006", shell_output("#{bin}hadolint #{df}", 1)
+    assert_match "DL3006", shell_output("#{bin}/hadolint #{df}", 1)
   end
 end
 
 __END__
-diff --git acabal.project bcabal.project
+diff --git a/cabal.project b/cabal.project
 index 8b2b6d6e..40a32226 100644
---- acabal.project
-+++ bcabal.project
+--- a/cabal.project
++++ b/cabal.project
 @@ -7,5 +7,5 @@ optional-packages:
  source-repository-package
      type: git
-     location: https:github.comlorenzoshellcheck
+     location: https://github.com/lorenzo/shellcheck
 -    tag: 07095b233a60b819df6710b7741a59bac62179e1
 -    --sha256: 114yfgp40klrm32al93j7fh7lzzg7scqqnf8cc953h2m22k0c48q
 +    tag: 248273935cd95afeaf835c688980ac5bccca8d14
 +    --sha256: 1xm38l1fcq2agiwhh2jqikzinv5ldgnfazgir83xyv8r2v6x1ray
-diff --git ahadolint.cabal bhadolint.cabal
+diff --git a/hadolint.cabal b/hadolint.cabal
 index a0469934..7e6d01ab 100644
---- ahadolint.cabal
-+++ bhadolint.cabal
+--- a/hadolint.cabal
++++ b/hadolint.cabal
 @@ -147,14 +143,14 @@ library
      , containers
      , cryptonite

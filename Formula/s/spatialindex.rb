@@ -1,13 +1,13 @@
 class Spatialindex < Formula
   desc "General framework for developing spatial indices"
-  homepage "https:libspatialindex.orgenlatest"
-  url "https:github.comlibspatialindexlibspatialindexreleasesdownload2.1.0spatialindex-src-2.1.0.tar.bz2"
+  homepage "https://libspatialindex.org/en/latest/"
+  url "https://ghfast.top/https://github.com/libspatialindex/libspatialindex/releases/download/2.1.0/spatialindex-src-2.1.0.tar.bz2"
   sha256 "c59932395e98896038d59199f2e2453595df6d730ffbe09d69df2a661bcb619b"
   license "MIT"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -33,8 +33,8 @@ class Spatialindex < Formula
   test do
     # write out a small program which inserts a fixed box into an rtree
     # and verifies that it can query it
-    (testpath"test.cpp").write <<~CPP
-      #include <spatialindexSpatialIndex.h>
+    (testpath/"test.cpp").write <<~CPP
+      #include <spatialindex/SpatialIndex.h>
 
       using namespace std;
       using namespace SpatialIndex;
@@ -58,7 +58,7 @@ class Spatialindex < Formula
               *memory, 0.5, 100, 10, 2,
               variant, indexIdentifier
           );
-          * insert a box from (0, 5) to (0, 10) *
+          /* insert a box from (0, 5) to (0, 10) */
           double plow[2] = { 0.0, 0.0 };
           double phigh[2] = { 5.0, 10.0 };
           Region r = Region(plow, phigh, 2);
@@ -69,7 +69,7 @@ class Spatialindex < Formula
 
           tree->insertData(data.size() + 1, reinterpret_cast<const unsigned char*>(data.c_str()), r, id);
 
-          * ensure that (2, 2) is in that box *
+          /* ensure that (2, 2) is in that box */
           double qplow[2] = { 2.0, 2.0 };
           double qphigh[2] = { 2.0, 2.0 };
           Region qr = Region(qplow, qphigh, 2);
@@ -81,6 +81,6 @@ class Spatialindex < Formula
       }
     CPP
     system ENV.cxx, "-std=c++11", "test.cpp", "-L#{lib}", "-lspatialindex", "-o", "test"
-    system ".test"
+    system "./test"
   end
 end

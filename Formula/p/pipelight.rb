@@ -1,10 +1,10 @@
 class Pipelight < Formula
-  desc "Self-hosted, lightweight CICD pipelines for small projects via CLI"
-  homepage "https:pipelight.dev"
-  url "https:github.compipelightpipelightarchiverefstagsv0.10.0.tar.gz"
+  desc "Self-hosted, lightweight CI/CD pipelines for small projects via CLI"
+  homepage "https://pipelight.dev"
+  url "https://ghfast.top/https://github.com/pipelight/pipelight/archive/refs/tags/v0.10.0.tar.gz"
   sha256 "8d3862757e5e91c19c9a8528a6e98a2f86c824a4529d52c320ebc7eee0135d43"
   license "GPL-2.0-only"
-  head "https:github.compipelightpipelight.git", branch: "master"
+  head "https://github.com/pipelight/pipelight.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "96adf14db27651fe99ec9078aa498d9ab44bbee167181e28ef3f2e618936983f"
@@ -19,24 +19,24 @@ class Pipelight < Formula
   depends_on "rust" => :build
 
   def install
-    # upstream pr ref, https:github.compipelightpipelightpull33
+    # upstream pr ref, https://github.com/pipelight/pipelight/pull/33
     system "cargo", "update", "-p", "libc"
 
-    inreplace "cliCargo.toml", "version = \"0.0.0\"", "version = \"#{version}\"" if build.stable?
+    inreplace "cli/Cargo.toml", "version = \"0.0.0\"", "version = \"#{version}\"" if build.stable?
 
     system "cargo", "install", *std_cargo_args(path: "pipelight")
 
-    bash_completion.install "autocompletionpipelight.bash" => "pipelight"
-    fish_completion.install "autocompletionpipelight.fish"
-    zsh_completion.install "autocompletion_pipelight"
+    bash_completion.install "autocompletion/pipelight.bash" => "pipelight"
+    fish_completion.install "autocompletion/pipelight.fish"
+    zsh_completion.install "autocompletion/_pipelight"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}pipelight --version")
+    assert_match version.to_s, shell_output("#{bin}/pipelight --version")
 
-    # opthomebrewCellarpipelight0.10.0binpipelight init --template yaml
-    system bin"pipelight", "init", "--template", "yaml"
-    assert_equal <<~YAML, (testpath"pipelight.yaml").read
+    # /opt/homebrew/Cellar/pipelight/0.10.0/bin/pipelight init --template yaml
+    system bin/"pipelight", "init", "--template", "yaml"
+    assert_equal <<~YAML, (testpath/"pipelight.yaml").read
       pipelines:
         - name: example
           steps:
@@ -50,8 +50,8 @@ class Pipelight < Formula
                 - pwd
     YAML
 
-    assert_match "example", shell_output("#{bin}pipelight ls")
+    assert_match "example", shell_output("#{bin}/pipelight ls")
 
-    system bin"pipelight", "run", "example"
+    system bin/"pipelight", "run", "example"
   end
 end

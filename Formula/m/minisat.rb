@@ -1,10 +1,10 @@
 class Minisat < Formula
   desc "Minimalistic and high-performance SAT solver"
-  homepage "https:github.comstpminisat"
-  url "https:github.comstpminisatarchiverefstagsreleases2.2.1.tar.gz"
+  homepage "https://github.com/stp/minisat"
+  url "https://ghfast.top/https://github.com/stp/minisat/archive/refs/tags/releases/2.2.1.tar.gz"
   sha256 "432985833596653fcd698ab439588471cc0f2437617d0df2bb191a0252ba423d"
   license "MIT"
-  head "https:github.comstpminisat.git", branch: "master"
+  head "https://github.com/stp/minisat.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -35,13 +35,13 @@ class Minisat < Formula
   end
 
   test do
-    (testpath"test.cnf").write <<~EOS
+    (testpath/"test.cnf").write <<~EOS
       p cnf 5 3
       1 -5 4 0
       -1 5 3 4 0
       -3 -4 0
     EOS
 
-    assert_match "SATISFIABLE", shell_output("#{bin}minisat test.cnf 2>&1", 10)
+    assert_match "SATISFIABLE", shell_output("#{bin}/minisat test.cnf 2>&1", 10)
   end
 end

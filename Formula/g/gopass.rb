@@ -1,10 +1,10 @@
 class Gopass < Formula
   desc "Slightly more awesome Standard Unix Password Manager for Teams"
-  homepage "https:www.gopass.pw"
-  url "https:github.comgopasspwgopassreleasesdownloadv1.15.16gopass-1.15.16.tar.gz"
+  homepage "https://www.gopass.pw/"
+  url "https://ghfast.top/https://github.com/gopasspw/gopass/releases/download/v1.15.16/gopass-1.15.16.tar.gz"
   sha256 "058db6b24221864b1b9879d10a91a3ccaeef8a3da269898c7936ae257d7da5c3"
   license "MIT"
-  head "https:github.comgopasspwgopass.git", branch: "master"
+  head "https://github.com/gopasspw/gopass.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "f5d6b11f91dceed0a451dafa4797bbcfacb8bf628115d4357e613db6ae570e30"
@@ -24,7 +24,7 @@ class Gopass < Formula
   end
 
   def install
-    args = ["PREFIX=#{prefix}"]
+    args = ["PREFIX=#{prefix}/"]
     # Build without -buildmode=pie to avoid patchelf.rb corrupting binary
     args << "BUILDFLAGS=$(BUILDFLAGS_NOPIE)" if OS.linux?
 
@@ -37,9 +37,9 @@ class Gopass < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}gopass version")
+    assert_match version.to_s, shell_output("#{bin}/gopass version")
 
-    (testpath"batch.gpg").write <<~EOS
+    (testpath/"batch.gpg").write <<~EOS
       Key-Type: RSA
       Key-Length: 2048
       Subkey-Type: RSA
@@ -51,14 +51,14 @@ class Gopass < Formula
       %commit
     EOS
     begin
-      system Formula["gnupg"].opt_bin"gpg", "--batch", "--gen-key", "batch.gpg"
+      system Formula["gnupg"].opt_bin/"gpg", "--batch", "--gen-key", "batch.gpg"
 
-      system bin"gopass", "init", "--path", testpath, "noop", "testing@foo.bar"
-      system bin"gopass", "generate", "Emailother@foo.bar", "15"
-      assert_path_exists testpath"Emailother@foo.bar.gpg"
+      system bin/"gopass", "init", "--path", testpath, "noop", "testing@foo.bar"
+      system bin/"gopass", "generate", "Email/other@foo.bar", "15"
+      assert_path_exists testpath/"Email/other@foo.bar.gpg"
     ensure
-      system Formula["gnupg"].opt_bin"gpgconf", "--kill", "gpg-agent"
-      system Formula["gnupg"].opt_bin"gpgconf", "--homedir", "keyringslive",
+      system Formula["gnupg"].opt_bin/"gpgconf", "--kill", "gpg-agent"
+      system Formula["gnupg"].opt_bin/"gpgconf", "--homedir", "keyrings/live",
                                                  "--kill", "gpg-agent"
     end
   end

@@ -1,10 +1,10 @@
 class TaskwarriorTui < Formula
   desc "Terminal user interface for taskwarrior"
-  homepage "https:kdheepak.comtaskwarrior-tui"
-  url "https:github.comkdheepaktaskwarrior-tuiarchiverefstagsv0.26.3.tar.gz"
+  homepage "https://kdheepak.com/taskwarrior-tui/"
+  url "https://ghfast.top/https://github.com/kdheepak/taskwarrior-tui/archive/refs/tags/v0.26.3.tar.gz"
   sha256 "76f053e2e3c9e71b8106e3fc3c18fd4400a98c09a8cde5972305e0eeaecc08d3"
   license "MIT"
-  head "https:github.comkdheepaktaskwarrior-tui.git", branch: "main"
+  head "https://github.com/kdheepak/taskwarrior-tui.git", branch: "main"
 
   livecheck do
     url :stable
@@ -29,15 +29,15 @@ class TaskwarriorTui < Formula
 
   def install
     system "cargo", "install", *std_cargo_args
-    man1.install "docstaskwarrior-tui.1"
-    bash_completion.install "completionstaskwarrior-tui.bash" => "taskwarrior-tui"
-    fish_completion.install "completionstaskwarrior-tui.fish"
-    zsh_completion.install "completions_taskwarrior-tui"
+    man1.install "docs/taskwarrior-tui.1"
+    bash_completion.install "completions/taskwarrior-tui.bash" => "taskwarrior-tui"
+    fish_completion.install "completions/taskwarrior-tui.fish"
+    zsh_completion.install "completions/_taskwarrior-tui"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}taskwarrior-tui --version")
+    assert_match version.to_s, shell_output("#{bin}/taskwarrior-tui --version")
     assert_match "a value is required for '--report <STRING>' but none was supplied",
-      shell_output("#{bin}taskwarrior-tui --report 2>&1", 2)
+      shell_output("#{bin}/taskwarrior-tui --report 2>&1", 2)
   end
 end

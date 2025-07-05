@@ -1,12 +1,12 @@
 class Odin < Formula
   desc "Programming language with focus on simplicity, performance and modern systems"
-  homepage "https:odin-lang.org"
-  url "https:github.comodin-langOdin.git",
+  homepage "https://odin-lang.org/"
+  url "https://github.com/odin-lang/Odin.git",
       tag:      "dev-2025-06",
       revision: "cd1f66e85c22b019adf53835f5d24231cb071e6d"
   version "2025-06"
   license "BSD-3-Clause"
-  head "https:github.comodin-langOdin.git", branch: "master"
+  head "https://github.com/odin-lang/Odin.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -26,71 +26,71 @@ class Odin < Formula
   depends_on "raylib"
 
   resource "raygui" do
-    url "https:github.comraysan5rayguiarchiverefstags4.0.tar.gz"
+    url "https://ghfast.top/https://github.com/raysan5/raygui/archive/refs/tags/4.0.tar.gz"
     sha256 "299c8fcabda68309a60dc858741b76c32d7d0fc533cdc2539a55988cee236812"
   end
 
   def install
-    llvm = deps.map(&:to_formula).find { |f| f.name.match?(^llvm(@\d+(\.\d+)*)?$) }
+    llvm = deps.map(&:to_formula).find { |f| f.name.match?(/^llvm(@\d+(\.\d+)*)?$/) }
     ENV.llvm_clang if OS.linux?
-    ENV["LLVM_CONFIG"] = (llvm.opt_bin"llvm-config").to_s
+    ENV["LLVM_CONFIG"] = (llvm.opt_bin/"llvm-config").to_s
     ENV.append "LDFLAGS", "-Wl,-rpath,#{llvm.opt_lib}" if OS.linux?
 
     # Delete pre-compiled binaries which brew does not allow.
-    buildpath.glob("vendor***.{lib,dll,a,dylib,so,so.*}").map(&:unlink)
+    buildpath.glob("vendor/**/*.{lib,dll,a,dylib,so,so.*}").map(&:unlink)
 
-    cd buildpath"vendorminiaudiosrc" do
+    cd buildpath/"vendor/miniaudio/src" do
       system "make"
     end
 
-    cd buildpath"vendorstbsrc" do
+    cd buildpath/"vendor/stb/src" do
       system "make", "unix"
     end
 
-    cd buildpath"vendorcgltfsrc" do
+    cd buildpath/"vendor/cgltf/src" do
       system "make", "unix"
     end
 
     raylib_installpath = if OS.linux?
-      "vendorrayliblinux"
+      "vendor/raylib/linux"
     else
-      "vendorraylibmacos"
+      "vendor/raylib/macos"
     end
 
     raygui_installpath = if OS.linux?
-      "vendorrayliblinux"
+      "vendor/raylib/linux"
     elsif Hardware::CPU.intel?
-      "vendorraylibmacos"
+      "vendor/raylib/macos"
     else
-      "vendorraylibmacos-arm64"
+      "vendor/raylib/macos-arm64"
     end
 
     glfw_installpath = if OS.linux?
-      "vendorglfwlib"
+      "vendor/glfw/lib"
     else
-      "vendorglfwlibdarwin"
+      "vendor/glfw/lib/darwin"
     end
 
-    ln_s Formula["glfw"].lib"libglfw3.a", buildpathglfw_installpath"libglfw3.a"
+    ln_s Formula["glfw"].lib/"libglfw3.a", buildpath/glfw_installpath/"libglfw3.a"
 
-    ln_s Formula["raylib"].lib"libraylib.a", buildpathraylib_installpath"libraylib.a"
+    ln_s Formula["raylib"].lib/"libraylib.a", buildpath/raylib_installpath/"libraylib.a"
     # In order to match the version 500 used in odin
-    ln_s Formula["raylib"].libshared_library("libraylib", "5.5.0"),
-      buildpathraylib_installpathshared_library("libraylib", "550")
+    ln_s Formula["raylib"].lib/shared_library("libraylib", "5.5.0"),
+      buildpath/raylib_installpath/shared_library("libraylib", "550")
 
     resource("raygui").stage do
-      cp "srcraygui.h", "srcraygui.c"
+      cp "src/raygui.h", "src/raygui.c"
 
       # build static library
-      system ENV.cc, "-c", "-o", "raygui.o", "srcraygui.c",
+      system ENV.cc, "-c", "-o", "raygui.o", "src/raygui.c",
         "-fpic", "-DRAYGUI_IMPLEMENTATION", "-I#{Formula["raylib"].include}"
       system "ar", "-rcs", "libraygui.a", "raygui.o"
-      cp "libraygui.a", buildpathraygui_installpath
+      cp "libraygui.a", buildpath/raygui_installpath
 
       # build shared library
       args = [
         "-o", shared_library("libraygui"),
-        "srcraygui.c",
+        "src/raygui.c",
         "-shared",
         "-fpic",
         "-DRAYGUI_IMPLEMENTATION",
@@ -102,29 +102,29 @@ class Odin < Formula
 
       args += ["-framework", "OpenGL"] if OS.mac?
       system ENV.cc, *args
-      cp shared_library("libraygui"), buildpathraygui_installpath
+      cp shared_library("libraygui"), buildpath/raygui_installpath
     end
 
     # By default the build runs an example program, we don't want to run it during install.
     # This would fail when gcc is used because Odin can be build with gcc,
     # but programs linked by Odin need clang specifically.
-    inreplace "build_odin.sh", ^\s*run_demo\s*$, ""
+    inreplace "build_odin.sh", /^\s*run_demo\s*$/, ""
 
     # Keep version number consistent and reproducible for tagged releases.
     args = []
     args << "ODIN_VERSION=dev-#{version}" unless build.head?
     system "make", "release", *args
     libexec.install "odin", "core", "shared", "base", "vendor"
-    (bin"odin").write <<~BASH
-      #!binbash
+    (bin/"odin").write <<~BASH
+      #!/bin/bash
       export PATH="#{llvm.opt_bin}:$PATH"
-      exec -a odin "#{libexec}odin" "$@"
+      exec -a odin "#{libexec}/odin" "$@"
     BASH
     pkgshare.install "examples"
   end
 
   test do
-    (testpath"hellope.odin").write <<~ODIN
+    (testpath/"hellope.odin").write <<~ODIN
       package main
 
       import "core:fmt"
@@ -133,10 +133,10 @@ class Odin < Formula
         fmt.println("Hellope!");
       }
     ODIN
-    system bin"odin", "build", "hellope.odin", "-file"
-    assert_equal "Hellope!\n", shell_output(".hellope")
+    system bin/"odin", "build", "hellope.odin", "-file"
+    assert_equal "Hellope!\n", shell_output("./hellope")
 
-    (testpath"miniaudio.odin").write <<~ODIN
+    (testpath/"miniaudio.odin").write <<~ODIN
       package main
 
       import "core:fmt"
@@ -148,30 +148,30 @@ class Odin < Formula
         fmt.println(ver)
       }
     ODIN
-    system bin"odin", "run", "miniaudio.odin", "-file"
+    system bin/"odin", "run", "miniaudio.odin", "-file"
 
-    (testpath"raylib.odin").write <<~ODIN
+    (testpath/"raylib.odin").write <<~ODIN
       package main
 
       import rl "vendor:raylib"
 
       main :: proc() {
-         raygui.
+        // raygui.
         assert(!rl.GuiIsLocked())
 
-         raylib.
+        // raylib.
         num := rl.GetRandomValue(42, 1337)
         assert(42 <= num && num <= 1337)
       }
     ODIN
-    system bin"odin", "run", "raylib.odin", "-file"
+    system bin/"odin", "run", "raylib.odin", "-file"
 
     if OS.mac?
-      system bin"odin", "run", "raylib.odin", "-file",
+      system bin/"odin", "run", "raylib.odin", "-file",
         "-define:RAYLIB_SHARED=true", "-define:RAYGUI_SHARED=true"
     end
 
-    (testpath"glfw.odin").write <<~ODIN
+    (testpath/"glfw.odin").write <<~ODIN
       package main
 
       import "core:fmt"
@@ -182,8 +182,8 @@ class Odin < Formula
       }
     ODIN
     ENV.prepend_path "LD_LIBRARY_PATH", Formula["glfw"].lib if OS.linux?
-    system bin"odin", "run", "glfw.odin", "-file", "-define:GLFW_SHARED=true",
+    system bin/"odin", "run", "glfw.odin", "-file", "-define:GLFW_SHARED=true",
       "-extra-linker-flags:\"-L#{Formula["glfw"].lib}\""
-    system bin"odin", "run", "glfw.odin", "-file", "-define:GLFW_SHARED=false"
+    system bin/"odin", "run", "glfw.odin", "-file", "-define:GLFW_SHARED=false"
   end
 end

@@ -1,11 +1,11 @@
 class Ejdb < Formula
   desc "Embeddable JSON Database engine C11 library"
-  homepage "https:ejdb.org"
-  url "https:github.comSoftmotionsejdb.git",
+  homepage "https://ejdb.org"
+  url "https://github.com/Softmotions/ejdb.git",
       tag:      "v2.73",
       revision: "bc370d1aab86d5e2b8b15cbd7f804d3bbc6db185"
   license "MIT"
-  head "https:github.comSoftmotionsejdb.git", branch: "master"
+  head "https://github.com/Softmotions/ejdb.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "5edce24e64d4033d0cacaa8cfac387a347bb895d7ffb7d93e205581eaa4b32bd"
@@ -29,8 +29,8 @@ class Ejdb < Formula
   fails_with :gcc do
     version "7"
     cause <<~EOS
-      buildsrcextern_iwnetsrciwnet.c: error: initializer element is not constant
-      Fixed in GCC 8.1, see https:gcc.gnu.orgbugzillashow_bug.cgi?id=69960
+      build/src/extern_iwnet/src/iwnet.c: error: initializer element is not constant
+      Fixed in GCC 8.1, see https://gcc.gnu.org/bugzilla/show_bug.cgi?id=69960
     EOS
   end
 
@@ -43,8 +43,8 @@ class Ejdb < Formula
   end
 
   test do
-    (testpath"test.c").write <<~C
-      #include <ejdb2ejdb2.h>
+    (testpath/"test.c").write <<~C
+      #include <ejdb2/ejdb2.h>
 
       #define RCHECK(rc_)          \\
         if (rc_) {                 \\
@@ -53,7 +53,7 @@ class Ejdb < Formula
         }
 
       static iwrc documents_visitor(EJDB_EXEC *ctx, const EJDB_DOC doc, int64_t *step) {
-         Print document to stderr
+        // Print document to stderr
         return jbl_as_json(doc->raw, jbl_fstream_json_printer, stderr, JBL_PRINT_PRETTY);
       }
 
@@ -65,10 +65,10 @@ class Ejdb < Formula
             .oflags = IWKV_TRUNC
           }
         };
-        EJDB db;      EJDB2 storage handle
-        int64_t id;   Document id placeholder
-        JQL q = 0;    Query instance
-        JBL jbl = 0;  Json document
+        EJDB db;     // EJDB2 storage handle
+        int64_t id;  // Document id placeholder
+        JQL q = 0;   // Query instance
+        JBL jbl = 0; // Json document
 
         iwrc rc = ejdb_init();
         RCHECK(rc);
@@ -76,22 +76,22 @@ class Ejdb < Formula
         rc = ejdb_open(&opts, &db);
         RCHECK(rc);
 
-         First record
+        // First record
         rc = jbl_from_json(&jbl, "{\\"name\\":\\"Bianca\\", \\"age\\":4}");
         RCGO(rc, finish);
         rc = ejdb_put_new(db, "parrots", jbl, &id);
         RCGO(rc, finish);
         jbl_destroy(&jbl);
 
-         Second record
+        // Second record
         rc = jbl_from_json(&jbl, "{\\"name\\":\\"Darko\\", \\"age\\":8}");
         RCGO(rc, finish);
         rc = ejdb_put_new(db, "parrots", jbl, &id);
         RCGO(rc, finish);
         jbl_destroy(&jbl);
 
-         Now execute a query
-        rc =  jql_create(&q, "parrots", "[age > :age]");
+        // Now execute a query
+        rc =  jql_create(&q, "parrots", "/[age > :age]");
         RCGO(rc, finish);
 
         EJDB_EXEC ux = {
@@ -100,12 +100,12 @@ class Ejdb < Formula
           .visitor = documents_visitor
         };
 
-         Set query placeholder value.
-         Actual query will be [age > 3]
+        // Set query placeholder value.
+        // Actual query will be /[age > 3]
         rc = jql_set_i64(q, "age", 0, 3);
         RCGO(rc, finish);
 
-         Now execute the query
+        // Now execute the query
         rc = ejdb_exec(&ux);
 
       finish:
@@ -117,7 +117,7 @@ class Ejdb < Formula
       }
     C
 
-    system ENV.cc, "-I#{include}ejdb2", "test.c", "-L#{lib}", "-lejdb2", "-o", testpath"test"
-    system ".test"
+    system ENV.cc, "-I#{include}/ejdb2", "test.c", "-L#{lib}", "-lejdb2", "-o", testpath/"test"
+    system "./test"
   end
 end

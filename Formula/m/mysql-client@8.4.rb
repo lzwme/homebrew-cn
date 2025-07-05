@@ -1,9 +1,9 @@
 class MysqlClientAT84 < Formula
   desc "Open source relational database management system"
   # FIXME: Actual homepage fails audit due to Homebrew's user-agent
-  # homepage "https:dev.mysql.comdocrefman8.4en"
-  homepage "https:github.commysqlmysql-server"
-  url "https:cdn.mysql.comDownloadsMySQL-8.4mysql-8.4.5.tar.gz"
+  # homepage "https://dev.mysql.com/doc/refman/8.4/en/"
+  homepage "https://github.com/mysql/mysql-server"
+  url "https://cdn.mysql.com/Downloads/MySQL-8.4/mysql-8.4.5.tar.gz"
   sha256 "53639592a720a719fdfadf2c921b947eac86c06e333202e47667852a5781bd1a"
   license "GPL-2.0-only" => { with: "Universal-FOSS-exception-1.0" }
 
@@ -48,11 +48,11 @@ class MysqlClientAT84 < Formula
     args = %W[
       -DFORCE_INSOURCE_BUILD=1
       -DCOMPILATION_COMMENT=Homebrew
-      -DINSTALL_DOCDIR=sharedoc#{name}
-      -DINSTALL_INCLUDEDIR=includemysql
-      -DINSTALL_INFODIR=shareinfo
-      -DINSTALL_MANDIR=shareman
-      -DINSTALL_MYSQLSHAREDIR=sharemysql
+      -DINSTALL_DOCDIR=share/doc/#{name}
+      -DINSTALL_INCLUDEDIR=include/mysql
+      -DINSTALL_INFODIR=share/info
+      -DINSTALL_MANDIR=share/man
+      -DINSTALL_MYSQLSHAREDIR=share/mysql
       -DWITH_BOOST=boost
       -DWITH_EDITLINE=system
       -DWITH_FIDO=system
@@ -70,6 +70,6 @@ class MysqlClientAT84 < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}mysql --version")
+    assert_match version.to_s, shell_output("#{bin}/mysql --version")
   end
 end

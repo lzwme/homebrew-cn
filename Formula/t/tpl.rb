@@ -1,10 +1,10 @@
 class Tpl < Formula
   desc "Store and retrieve binary data in C"
-  homepage "https:troydhanson.github.iotpl"
-  url "https:github.comtroydhansontplarchiverefstagsv1.6.1.tar.gz"
+  homepage "https://troydhanson.github.io/tpl/"
+  url "https://ghfast.top/https://github.com/troydhanson/tpl/archive/refs/tags/v1.6.1.tar.gz"
   sha256 "0b3750bf62f56be4c42f83c89d8449b24f1c5f1605a104801d70f2f3c06fb2ff"
   license "BSD-1-Clause"
-  head "https:github.comtroydhansontpl.git", branch: "master"
+  head "https://github.com/troydhanson/tpl.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -33,13 +33,13 @@ class Tpl < Formula
 
   def install
     system "autoreconf", "--force", "--install", "--verbose"
-    system ".configure", "--disable-silent-rules",
+    system "./configure", "--disable-silent-rules",
                           *std_configure_args.reject { |s| s["--disable-debug"] }
     system "make", "install"
   end
 
   test do
-    (testpath"store.c").write <<~C
+    (testpath/"store.c").write <<~C
       #include <tpl.h>
 
       int main(int argc, char *argv[]) {
@@ -58,7 +58,7 @@ class Tpl < Formula
       }
     C
 
-    (testpath"load.c").write <<~C
+    (testpath/"load.c").write <<~C
       #include <stdio.h>
       #include <stdlib.h>
       #include <tpl.h>
@@ -88,7 +88,7 @@ class Tpl < Formula
       2: Charlie
     EOS
 
-    system ".store"
-    assert_equal expected, shell_output(".load")
+    system "./store"
+    assert_equal expected, shell_output("./load")
   end
 end

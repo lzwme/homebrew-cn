@@ -1,10 +1,10 @@
 class Nanobind < Formula
-  desc "Tiny and efficient C++Python bindings"
-  homepage "https:github.comwjakobnanobind"
-  url "https:github.comwjakobnanobindarchiverefstagsv2.7.0.tar.gz"
+  desc "Tiny and efficient C++/Python bindings"
+  homepage "https://github.com/wjakob/nanobind"
+  url "https://ghfast.top/https://github.com/wjakob/nanobind/archive/refs/tags/v2.7.0.tar.gz"
   sha256 "6c8c6bf0435b9d8da9312801686affcf34b6dbba142db60feec8d8e220830499"
   license "BSD-3-Clause"
-  head "https:github.comwjakobnanobind.git", branch: "master"
+  head "https://github.com/wjakob/nanobind.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, all: "27262487a8a0bb8435e7652f543f2058057b1c7f5d3d71f36fd3c2cf1f34bcba"
@@ -27,7 +27,7 @@ class Nanobind < Formula
                              .select { |name| name.start_with? "python@" }
                              .map { |py| Version.new(py.delete_prefix("python@")) }
     python_versions.each do |pyver|
-      site_packages = lib"python#{pyver}site-packages"
+      site_packages = lib/"python#{pyver}/site-packages"
       site_packages.install_symlink pkgshare
     end
   end
@@ -35,8 +35,8 @@ class Nanobind < Formula
   test do
     python = "python3.13"
 
-    (testpath"my_ext.cpp").write <<~CPP
-      #include <nanobindnanobind.h>
+    (testpath/"my_ext.cpp").write <<~CPP
+      #include <nanobind/nanobind.h>
 
       int add(int a, int b) { return a + b; }
 
@@ -47,7 +47,7 @@ class Nanobind < Formula
 
     python_version = Language::Python.major_minor_version(python)
 
-    cmakelists = testpath"CMakeLists.txt"
+    cmakelists = testpath/"CMakeLists.txt"
     cmakelists.write <<~CMAKE
       cmake_minimum_required(VERSION 3.27)
       project(test_nanobind)

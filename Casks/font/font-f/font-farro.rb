@@ -2,12 +2,12 @@ cask "font-farro" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefonts.git",
-      verified:  "github.comgooglefonts",
+  url "https://github.com/google/fonts.git",
+      verified:  "github.com/google/fonts",
       branch:    "main",
-      only_path: "oflfarro"
+      only_path: "ofl/farro"
   name "Farro"
-  homepage "https:fonts.google.comspecimenFarro"
+  homepage "https://fonts.google.com/specimen/Farro"
 
   font "Farro-Bold.ttf"
   font "Farro-Light.ttf"

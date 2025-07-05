@@ -2,10 +2,10 @@ cask "font-metrophobic" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefontsrawmainoflmetrophobicMetrophobic-Regular.ttf",
-      verified: "github.comgooglefonts"
+  url "https://github.com/google/fonts/raw/main/ofl/metrophobic/Metrophobic-Regular.ttf",
+      verified: "github.com/google/fonts/"
   name "Metrophobic"
-  homepage "https:fonts.google.comspecimenMetrophobic"
+  homepage "https://fonts.google.com/specimen/Metrophobic"
 
   font "Metrophobic-Regular.ttf"
 

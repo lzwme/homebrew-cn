@@ -1,10 +1,10 @@
 class Projectable < Formula
   desc "TUI file manager built for projects"
-  homepage "https:dzfrias.devblogprojectable"
-  url "https:github.comdzfriasprojectablearchiverefstags1.3.2.tar.gz"
+  homepage "https://dzfrias.dev/blog/projectable"
+  url "https://ghfast.top/https://github.com/dzfrias/projectable/archive/refs/tags/1.3.2.tar.gz"
   sha256 "8677aa186b50e28ae1addaa9178b65de9e07b3fcd54056fd92464b49c9f71312"
   license "MIT"
-  head "https:github.comdzfriasprojectable.git", branch: "main"
+  head "https://github.com/dzfrias/projectable.git", branch: "main"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "f355d14b2034c1fb76bf40a0ac128cb5676f234169393a61de59ae51e77da776"
@@ -36,16 +36,16 @@ class Projectable < Formula
   end
 
   test do
-    require "utilslinkage"
+    require "utils/linkage"
 
-    system bin"prj", "--version"
+    system bin/"prj", "--version"
 
     # Fails in Linux CI with "No such device or address (os error 6)"
     return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
 
     begin
-      output_log = testpath"output.log"
-      pid = spawn bin"prj", testpath, [:out, :err] => output_log.to_s
+      output_log = testpath/"output.log"
+      pid = spawn bin/"prj", testpath, [:out, :err] => output_log.to_s
       sleep 1
       assert_match "output.log", output_log.read
     ensure
@@ -54,12 +54,12 @@ class Projectable < Formula
     end
 
     [
-      Formula["libgit2"].opt_libshared_library("libgit2"),
-      Formula["libssh2"].opt_libshared_library("libssh2"),
-      Formula["openssl@3"].opt_libshared_library("libcrypto"),
-      Formula["openssl@3"].opt_libshared_library("libssl"),
+      Formula["libgit2"].opt_lib/shared_library("libgit2"),
+      Formula["libssh2"].opt_lib/shared_library("libssh2"),
+      Formula["openssl@3"].opt_lib/shared_library("libcrypto"),
+      Formula["openssl@3"].opt_lib/shared_library("libssl"),
     ].each do |library|
-      assert Utils.binary_linked_to_library?(bin"prj", library),
+      assert Utils.binary_linked_to_library?(bin/"prj", library),
              "No linkage with #{library.basename}! Cargo is likely using a vendored version."
     end
   end

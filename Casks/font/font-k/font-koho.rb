@@ -2,12 +2,12 @@ cask "font-koho" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefonts.git",
-      verified:  "github.comgooglefonts",
+  url "https://github.com/google/fonts.git",
+      verified:  "github.com/google/fonts",
       branch:    "main",
-      only_path: "oflkoho"
+      only_path: "ofl/koho"
   name "KoHo"
-  homepage "https:fonts.google.comspecimenKoHo"
+  homepage "https://fonts.google.com/specimen/KoHo"
 
   font "KoHo-Bold.ttf"
   font "KoHo-BoldItalic.ttf"

@@ -1,10 +1,10 @@
 class Delve < Formula
   desc "Debugger for the Go programming language"
-  homepage "https:github.comgo-delvedelve"
-  url "https:github.comgo-delvedelvearchiverefstagsv1.25.0.tar.gz"
+  homepage "https://github.com/go-delve/delve"
+  url "https://ghfast.top/https://github.com/go-delve/delve/archive/refs/tags/v1.25.0.tar.gz"
   sha256 "f9d95d98103a2c72ff4d3eacbb419407ad2624e8205b7f45de375b17ad7f8d27"
   license "MIT"
-  head "https:github.comgo-delvedelve.git", branch: "master"
+  head "https://github.com/go-delve/delve.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "bb52067991189975a07e77ae32264452c9569304860c454f2a3718f91e2cea58"
@@ -18,12 +18,12 @@ class Delve < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w", output: bin"dlv"), ".cmddlv"
+    system "go", "build", *std_go_args(ldflags: "-s -w", output: bin/"dlv"), "./cmd/dlv"
 
-    generate_completions_from_executable(bin"dlv", "completion")
+    generate_completions_from_executable(bin/"dlv", "completion")
   end
 
   test do
-    assert_match(^Version: #{version}$, shell_output("#{bin}dlv version"))
+    assert_match(/^Version: #{version}$/, shell_output("#{bin}/dlv version"))
   end
 end

@@ -2,18 +2,18 @@ cask "openinterminal-lite" do
   version "1.2.7"
   sha256 "07c558faf0975fd0dca604be2eb793272be91a8f6422f74c8c075ed76775df84"
 
-  url "https:github.comJi4n1ngOpenInTerminalreleasesdownloadv#{version}OpenInTerminal-Lite.zip"
+  url "https://ghfast.top/https://github.com/Ji4n1ng/OpenInTerminal/releases/download/v#{version}/OpenInTerminal-Lite.zip"
   name "OpenInTerminal-Lite"
   desc "Finder Toolbar app to open the current directory in Terminal"
-  homepage "https:github.comJi4n1ngOpenInTerminal"
+  homepage "https://github.com/Ji4n1ng/OpenInTerminal"
 
   # Not every GitHub release provides a `openinterminal-lite` file, so we check multiple
   # recent releases instead of only the "latest" release.
   livecheck do
     url :url
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
     strategy :github_releases do |json, regex|
-      file_regex = ^OpenInTerminal[._-]Lite\.zip$i
+      file_regex = /^OpenInTerminal[._-]Lite\.zip$/i
 
       json.map do |release|
         next if release["draft"] || release["prerelease"]
@@ -33,5 +33,5 @@ cask "openinterminal-lite" do
 
   app "OpenInTerminal-Lite.app"
 
-  zap trash: "~LibraryPreferenceswang.jianing.app.OpenInTerminal-Lite.plist"
+  zap trash: "~/Library/Preferences/wang.jianing.app.OpenInTerminal-Lite.plist"
 end

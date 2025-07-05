@@ -5,14 +5,14 @@ cask "powershell" do
   sha256 arm:   "84f095de7ddd62c0b2f1d6dc68efe0b35a0fb90c2fe5127de2b0dd15eab4d95c",
          intel: "f1795c1cbd441944c05e4136b01b0274d0f080556cc72669a55e127eb429e2a2"
 
-  url "https:github.comPowerShellPowerShellreleasesdownloadv#{version}powershell-#{version}-osx-#{arch}.pkg"
+  url "https://ghfast.top/https://github.com/PowerShell/PowerShell/releases/download/v#{version}/powershell-#{version}-osx-#{arch}.pkg"
   name "PowerShell"
   desc "Command-line shell and scripting language"
-  homepage "https:github.comPowerShellPowerShell"
+  homepage "https://github.com/PowerShell/PowerShell"
 
   livecheck do
     url :url
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   depends_on macos: ">= :mojave"
@@ -22,14 +22,14 @@ cask "powershell" do
   uninstall pkgutil: "com.microsoft.powershell"
 
   zap trash: [
-    "~.cachepowershell",
-    "~.configpowershell",
-    "~.localsharepowershell",
+    "~/.cache/powershell",
+    "~/.config/powershell",
+    "~/.local/share/powershell",
   ]
 
   caveats <<~EOS
     To use Homebrew in PowerShell, run the following in a PowerShell session:
       New-Item -Path (Split-Path -Parent -Path $PROFILE.CurrentUserAllHosts) -ItemType Directory -Force
-      Add-Content -Path $PROFILE.CurrentUserAllHosts -Value '$(#{HOMEBREW_PREFIX}binbrew shellenv) | Invoke-Expression'
+      Add-Content -Path $PROFILE.CurrentUserAllHosts -Value '$(#{HOMEBREW_PREFIX}/bin/brew shellenv) | Invoke-Expression'
   EOS
 end

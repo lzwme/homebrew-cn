@@ -1,11 +1,11 @@
 class Libnghttp3 < Formula
-  desc "HTTP3 library written in C"
-  homepage "https:nghttp2.orgnghttp3"
-  url "https:github.comngtcp2nghttp3.git",
+  desc "HTTP/3 library written in C"
+  homepage "https://nghttp2.org/nghttp3/"
+  url "https://github.com/ngtcp2/nghttp3.git",
       tag:      "v1.10.1",
       revision: "df0d504b60a2600f57ab300ca2b61f64905e7d15"
   license "MIT"
-  head "https:github.comngtcp2nghttp3.git", branch: "main"
+  head "https://github.com/ngtcp2/nghttp3.git", branch: "main"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "2ebf1020cf541ed3cdc0a98275e64c2818fe74663738f19a0ebcd062723d7fbb"
@@ -27,8 +27,8 @@ class Libnghttp3 < Formula
   end
 
   test do
-    (testpath"test.c").write <<~C
-      #include <nghttp3nghttp3.h>
+    (testpath/"test.c").write <<~C
+      #include <nghttp3/nghttp3.h>
 
       int main(void) {
         nghttp3_qpack_decoder *decoder;
@@ -42,6 +42,6 @@ class Libnghttp3 < Formula
 
     flags = shell_output("pkgconf --cflags --libs libnghttp3").chomp.split
     system ENV.cc, "test.c", "-o", "test", *flags
-    system ".test"
+    system "./test"
   end
 end

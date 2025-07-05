@@ -1,10 +1,10 @@
 class Cmockery2 < Formula
   desc "Reviving cmockery unit test framework from Google"
-  homepage "https:github.comlpaboncmockery2"
-  url "https:github.comlpaboncmockery2archiverefstagsv1.3.9.tar.gz"
+  homepage "https://github.com/lpabon/cmockery2"
+  url "https://ghfast.top/https://github.com/lpabon/cmockery2/archive/refs/tags/v1.3.9.tar.gz"
   sha256 "c38054768712351102024afdff037143b4392e1e313bdabb9380cab554f9dbf2"
   license "Apache-2.0"
-  head "https:github.comlpaboncmockery2.git", branch: "master"
+  head "https://github.com/lpabon/cmockery2.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -36,15 +36,15 @@ class Cmockery2 < Formula
   depends_on "pkgconf" => :build
 
   def install
-    system ".autogen.sh"
-    system ".configure", "--prefix=#{prefix}"
+    system "./autogen.sh"
+    system "./configure", "--prefix=#{prefix}"
     system "make"
     system "make", "install"
-    (share+"example").install "srcexamplecalculator.c"
+    (share+"example").install "src/example/calculator.c"
   end
 
   test do
-    system ENV.cc, share+"examplecalculator.c", "-L#{lib}", "-lcmockery", "-o", "calculator"
-    system ".calculator"
+    system ENV.cc, share+"example/calculator.c", "-L#{lib}", "-lcmockery", "-o", "calculator"
+    system "./calculator"
   end
 end

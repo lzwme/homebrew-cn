@@ -1,7 +1,7 @@
 class PgPartman < Formula
   desc "Partition management extension for PostgreSQL"
-  homepage "https:github.compgpartmanpg_partman"
-  url "https:github.compgpartmanpg_partmanarchiverefstagsv5.2.4.tar.gz"
+  homepage "https://github.com/pgpartman/pg_partman"
+  url "https://ghfast.top/https://github.com/pgpartman/pg_partman/archive/refs/tags/v5.2.4.tar.gz"
   sha256 "462464d83389ef20256b982960646a1572341c0beb09eeff32b4a69f04e31b76"
   license "PostgreSQL"
 
@@ -24,13 +24,13 @@ class PgPartman < Formula
 
   def install
     postgresqls.each do |postgresql|
-      ENV["PG_CONFIG"] = postgresql.opt_bin"pg_config"
+      ENV["PG_CONFIG"] = postgresql.opt_bin/"pg_config"
 
       system "make"
       system "make", "install", "bindir=#{bin}",
                                 "docdir=#{doc}",
-                                "datadir=#{sharepostgresql.name}",
-                                "pkglibdir=#{libpostgresql.name}"
+                                "datadir=#{share/postgresql.name}",
+                                "pkglibdir=#{lib/postgresql.name}"
       system "make", "clean"
     end
   end
@@ -38,18 +38,18 @@ class PgPartman < Formula
   test do
     ENV["LC_ALL"] = "C"
     postgresqls.each do |postgresql|
-      pg_ctl = postgresql.opt_bin"pg_ctl"
-      psql = postgresql.opt_bin"psql"
+      pg_ctl = postgresql.opt_bin/"pg_ctl"
+      psql = postgresql.opt_bin/"psql"
       port = free_port
 
-      datadir = testpathpostgresql.name
+      datadir = testpath/postgresql.name
       system pg_ctl, "initdb", "-D", datadir
-      (datadir"postgresql.conf").write <<~EOS, mode: "a+"
+      (datadir/"postgresql.conf").write <<~EOS, mode: "a+"
 
         shared_preload_libraries = 'pg_partman_bgw'
         port = #{port}
       EOS
-      system pg_ctl, "start", "-D", datadir, "-l", testpath"log-#{postgresql.name}"
+      system pg_ctl, "start", "-D", datadir, "-l", testpath/"log-#{postgresql.name}"
       begin
         system psql, "-p", port.to_s, "-c", "CREATE EXTENSION \"pg_partman\";", "postgres"
       ensure

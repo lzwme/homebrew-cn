@@ -1,20 +1,20 @@
 class Dub < Formula
   desc "Build tool for D projects"
-  homepage "https:code.dlang.orggetting_started"
-  url "https:github.comdlangdubarchiverefstagsv1.40.0.tar.gz"
+  homepage "https://code.dlang.org/getting_started"
+  url "https://ghfast.top/https://github.com/dlang/dub/archive/refs/tags/v1.40.0.tar.gz"
   sha256 "52b963137e8a671e48ce3b64eb1e424f6a3c137b8001cf74fb98932def61c171"
   license "MIT"
   version_scheme 1
-  head "https:github.comdlangdub.git", branch: "master"
+  head "https://github.com/dlang/dub.git", branch: "master"
 
   # Upstream may not create a GitHub release for tagged versions, so we check
   # the dlang.org package as an indicator that a version is released. The API
-  # provides the latest version (https:code.dlang.orgapipackagesdublatest)
+  # provides the latest version (https://code.dlang.org/api/packages/dub/latest)
   # but this is sometimes an unstable version, so we identify the latest stable
   # version from the package's version page.
   livecheck do
-    url "https:code.dlang.orgpackagesdubversions"
-    regex(%r{href=.*packagesdubv?(\d+(?:\.\d+)+)["' >]}i)
+    url "https://code.dlang.org/packages/dub/versions"
+    regex(%r{href=.*/packages/dub/v?(\d+(?:\.\d+)+)["' >]}i)
   end
 
   bottle do
@@ -34,30 +34,30 @@ class Dub < Formula
 
   def install
     ENV["GITVER"] = version.to_s
-    system "ldc2", "-run", ".build.d"
-    system "bindub", "scriptsmangen_man.d"
-    bin.install "bindub"
-    man1.install Dir["scriptsman*.1"]
+    system "ldc2", "-run", "./build.d"
+    system "bin/dub", "scripts/man/gen_man.d"
+    bin.install "bin/dub"
+    man1.install Dir["scripts/man/*.1"]
 
-    bash_completion.install "scriptsbash-completiondub.bash" => "dub"
-    zsh_completion.install "scriptszsh-completion_dub"
-    fish_completion.install "scriptsfish-completiondub.fish"
+    bash_completion.install "scripts/bash-completion/dub.bash" => "dub"
+    zsh_completion.install "scripts/zsh-completion/_dub"
+    fish_completion.install "scripts/fish-completion/dub.fish"
   end
 
   test do
-    assert_match "DUB version #{version}", shell_output("#{bin}dub --version")
+    assert_match "DUB version #{version}", shell_output("#{bin}/dub --version")
 
-    (testpath"dub.json").write <<~JSON
+    (testpath/"dub.json").write <<~JSON
       {
         "name": "brewtest",
         "description": "A simple D application"
       }
     JSON
-    (testpath"sourceapp.d").write <<~D
+    (testpath/"source/app.d").write <<~D
       import std.stdio;
       void main() { writeln("Hello, world!"); }
     D
-    system bin"dub", "build", "--compiler=#{Formula["ldc"].opt_bin}ldc2"
-    assert_equal "Hello, world!", shell_output("#{testpath}brewtest").chomp
+    system bin/"dub", "build", "--compiler=#{Formula["ldc"].opt_bin}/ldc2"
+    assert_equal "Hello, world!", shell_output("#{testpath}/brewtest").chomp
   end
 end

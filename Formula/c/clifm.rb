@@ -1,7 +1,7 @@
 class Clifm < Formula
   desc "Command-line Interface File Manager"
-  homepage "https:github.comleo-archclifm"
-  url "https:github.comleo-archclifmarchiverefstagsv1.25.tar.gz"
+  homepage "https://github.com/leo-arch/clifm"
+  url "https://ghfast.top/https://github.com/leo-arch/clifm/archive/refs/tags/v1.25.tar.gz"
   sha256 "ac9156753338f6027d05551b1d02bcb6f3044348108b00b9cefd97f125fc95ee"
   license "GPL-2.0-or-later"
 
@@ -48,8 +48,8 @@ class Clifm < Formula
     # fix `clifm: dumb: Unsupported terminal.` error
     ENV["TERM"] = "xterm"
 
-    output = shell_output("#{bin}clifm nonexist 2>&1", 2)
+    output = shell_output("#{bin}/clifm nonexist 2>&1", 2)
     assert_match "clifm: 'nonexist': No such file or directory", output
-    assert_match version.to_s, shell_output("#{bin}clifm --version")
+    assert_match version.to_s, shell_output("#{bin}/clifm --version")
   end
 end

@@ -1,11 +1,11 @@
 class Clusterawsadm < Formula
   desc "Home for bootstrapping, AMI, EKS, and other helpers in Cluster API Provider AWS"
-  homepage "https:cluster-api-aws.sigs.k8s.ioclusterawsadmclusterawsadm.html"
-  url "https:github.comkubernetes-sigscluster-api-provider-aws.git",
+  homepage "https://cluster-api-aws.sigs.k8s.io/clusterawsadm/clusterawsadm.html"
+  url "https://github.com/kubernetes-sigs/cluster-api-provider-aws.git",
       tag:      "v2.8.4",
       revision: "49658babd14cb9590f9fef8330243d530f7d6602"
   license "Apache-2.0"
-  head "https:github.comkubernetes-sigscluster-api-provider-aws.git", branch: "main"
+  head "https://github.com/kubernetes-sigs/cluster-api-provider-aws.git", branch: "main"
 
   livecheck do
     url :stable
@@ -25,15 +25,15 @@ class Clusterawsadm < Formula
 
   def install
     system "make", "clusterawsadm"
-    bin.install Dir["bin*"]
+    bin.install Dir["bin/*"]
 
-    generate_completions_from_executable(bin"clusterawsadm", "completion")
+    generate_completions_from_executable(bin/"clusterawsadm", "completion")
   end
 
   test do
-    output = shell_output("KUBECONFIG=homebrew.config #{bin}clusterawsadm resource list --region=us-east-1 2>&1", 1)
+    output = shell_output("KUBECONFIG=/homebrew.config #{bin}/clusterawsadm resource list --region=us-east-1 2>&1", 1)
     assert_match "Error: required flag(s) \"cluster-name\" not set", output
 
-    assert_match version.to_s, shell_output("#{bin}clusterawsadm version")
+    assert_match version.to_s, shell_output("#{bin}/clusterawsadm version")
   end
 end

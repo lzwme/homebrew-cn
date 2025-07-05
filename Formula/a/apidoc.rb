@@ -1,7 +1,7 @@
 class Apidoc < Formula
   desc "RESTful web API Documentation Generator"
-  homepage "https:apidocjs.com"
-  url "https:github.comapidocapidocarchiverefstags1.2.0.tar.gz"
+  homepage "https://apidocjs.com"
+  url "https://ghfast.top/https://github.com/apidoc/apidoc/archive/refs/tags/1.2.0.tar.gz"
   sha256 "45812a66432ec3d7dc97e557bab0a9f9a877f0616a95c2c49979b67ba8cfb0cf"
   license "MIT"
 
@@ -27,13 +27,13 @@ class Apidoc < Formula
 
   def install
     system "npm", "install", *std_npm_args
-    bin.install_symlink Dir["#{libexec}bin*"]
+    bin.install_symlink Dir["#{libexec}/bin/*"]
   end
 
   test do
-    (testpath"api.go").write <<~GO
-      **
-       * @api {get} user:id Request User information
+    (testpath/"api.go").write <<~GO
+      /**
+       * @api {get} /user/:id Request User information
        * @apiVersion #{version}
        * @apiName GetUser
        * @apiGroup User
@@ -42,16 +42,16 @@ class Apidoc < Formula
        *
        * @apiSuccess {String} firstname Firstname of the User.
        * @apiSuccess {String} lastname  Lastname of the User.
-       *
+       */
     GO
-    (testpath"apidoc.json").write <<~JSON
+    (testpath/"apidoc.json").write <<~JSON
       {
         "name": "brew test example",
         "version": "#{version}",
         "description": "A basic apiDoc example"
       }
     JSON
-    system bin"apidoc", "-i", ".", "-o", "out"
-    assert_path_exists testpath"outassetsmain.bundle.js"
+    system bin/"apidoc", "-i", ".", "-o", "out"
+    assert_path_exists testpath/"out/assets/main.bundle.js"
   end
 end

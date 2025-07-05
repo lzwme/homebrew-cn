@@ -1,7 +1,7 @@
 class LibbitcoinBlockchain < Formula
   desc "Bitcoin Blockchain Library"
-  homepage "https:github.comlibbitcoinlibbitcoin-blockchain"
-  url "https:github.comlibbitcoinlibbitcoin-blockchainarchiverefstagsv3.8.0.tar.gz"
+  homepage "https://github.com/libbitcoin/libbitcoin-blockchain"
+  url "https://ghfast.top/https://github.com/libbitcoin/libbitcoin-blockchain/archive/refs/tags/v3.8.0.tar.gz"
   sha256 "e7a3f2d2ea8275946218d734cd3d5d805c61e69eb29d1fb16e3064554bd2b584"
   license "AGPL-3.0-or-later"
   revision 1
@@ -22,23 +22,23 @@ class LibbitcoinBlockchain < Formula
   end
 
   # About 2 years since request for release with support for recent `boost`.
-  # Ref: https:github.comlibbitcoinlibbitcoin-systemissues1234
+  # Ref: https://github.com/libbitcoin/libbitcoin-system/issues/1234
   disable! date: "2024-12-14", because: "uses deprecated `boost@1.76`"
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
   depends_on "pkgconf" => :build
-  # https:github.comlibbitcoinlibbitcoin-systemissues1234
+  # https://github.com/libbitcoin/libbitcoin-system/issues/1234
   depends_on "boost@1.76"
   depends_on "libbitcoin-consensus"
   depends_on "libbitcoin-database"
 
   def install
-    ENV.prepend_path "PKG_CONFIG_PATH", Formula["libbitcoin"].opt_libexec"libpkgconfig"
+    ENV.prepend_path "PKG_CONFIG_PATH", Formula["libbitcoin"].opt_libexec/"lib/pkgconfig"
 
-    system ".autogen.sh"
-    system ".configure", "--disable-dependency-tracking",
+    system "./autogen.sh"
+    system "./configure", "--disable-dependency-tracking",
                           "--disable-silent-rules",
                           "--prefix=#{prefix}",
                           "--with-boost-libdir=#{Formula["boost@1.76"].opt_lib}"
@@ -47,8 +47,8 @@ class LibbitcoinBlockchain < Formula
 
   test do
     boost = Formula["boost@1.76"]
-    (testpath"test.cpp").write <<~CPP
-      #include <bitcoinblockchain.hpp>
+    (testpath/"test.cpp").write <<~CPP
+      #include <bitcoin/blockchain.hpp>
       int main() {
         static const auto default_block_hash = libbitcoin::hash_literal("14508459b221041eab257d2baaa7459775ba748246c8403609eb708f0e57e74b");
         const auto block = std::make_shared<const libbitcoin::message::block>();
@@ -60,10 +60,10 @@ class LibbitcoinBlockchain < Formula
     CPP
     system ENV.cxx, "-std=c++11", "test.cpp", "-o", "test",
                     "-I#{boost.include}",
-                    "-I#{libexec}include",
+                    "-I#{libexec}/include",
                     "-L#{Formula["libbitcoin"].opt_lib}", "-lbitcoin-system",
-                    "-L#{lib}", "-L#{libexec}lib", "-lbitcoin-blockchain",
+                    "-L#{lib}", "-L#{libexec}/lib", "-lbitcoin-blockchain",
                     "-L#{boost.lib}", "-lboost_system"
-    system ".test"
+    system "./test"
   end
 end

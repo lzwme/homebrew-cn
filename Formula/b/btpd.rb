@@ -1,7 +1,7 @@
 class Btpd < Formula
   desc "BitTorrent Protocol Daemon"
-  homepage "https:github.combtpdbtpd"
-  url "https:github.combtpdbtpdarchiverefstagsv0.16.tar.gz"
+  homepage "https://github.com/btpd/btpd"
+  url "https://ghfast.top/https://github.com/btpd/btpd/archive/refs/tags/v0.16.tar.gz"
   sha256 "9cda656f67edb2cdc3b51d43b7f0510c4e65a0f55cd1317a7113051429d6c9e5"
   license "BSD-2-Clause"
   revision 2
@@ -31,11 +31,11 @@ class Btpd < Formula
 
   def install
     system "autoreconf", "--force", "--install", "--verbose"
-    system ".configure", *std_configure_args
+    system "./configure", *std_configure_args
     system "make", "install"
   end
 
   test do
-    assert_match "Torrents can be specified", shell_output("#{bin}btcli --help 2>&1", 1)
+    assert_match "Torrents can be specified", shell_output("#{bin}/btcli --help 2>&1", 1)
   end
 end

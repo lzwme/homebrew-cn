@@ -1,11 +1,11 @@
 class Coal < Formula
   desc "Extension of the Flexible Collision Library"
-  homepage "https:github.comcoal-librarycoal"
-  url "https:github.comcoal-librarycoalreleasesdownloadv3.0.1coal-3.0.1.tar.gz"
+  homepage "https://github.com/coal-library/coal"
+  url "https://ghfast.top/https://github.com/coal-library/coal/releases/download/v3.0.1/coal-3.0.1.tar.gz"
   sha256 "b9609301baefbbf45b4e0f80865abc2b2dcbb69c323a55b0cd95f141959c478c"
   license "BSD-2-Clause"
   revision 2
-  head "https:github.comcoal-librarycoal.git", branch: "devel"
+  head "https://github.com/coal-library/coal.git", branch: "devel"
 
   livecheck do
     url :stable
@@ -38,8 +38,8 @@ class Coal < Formula
   end
 
   def install
-    ENV.prepend_path "PYTHONPATH", Formula["eigenpy"].opt_prefixLanguage::Python.site_packages(python3)
-    ENV.prepend_path "Eigen3_DIR", Formula["eigen"].opt_share"eigen3cmake"
+    ENV.prepend_path "PYTHONPATH", Formula["eigenpy"].opt_prefix/Language::Python.site_packages(python3)
+    ENV.prepend_path "Eigen3_DIR", Formula["eigen"].opt_share/"eigen3/cmake"
 
     # enable backward compatibility with hpp-fcl
     args = %W[

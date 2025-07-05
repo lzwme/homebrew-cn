@@ -1,10 +1,10 @@
 class Lcm < Formula
   desc "Libraries and tools for message passing and data marshalling"
-  homepage "https:lcm-proj.github.io"
-  url "https:github.comlcm-projlcmarchiverefstagsv1.5.1.tar.gz"
+  homepage "https://lcm-proj.github.io/"
+  url "https://ghfast.top/https://github.com/lcm-proj/lcm/archive/refs/tags/v1.5.1.tar.gz"
   sha256 "40ba0b7fb7c9ad06d05e06b4787d743cf11be30eb4f1a03abf4a92641c5b1203"
   license "LGPL-2.1-or-later"
-  head "https:github.comlcm-projlcm.git", branch: "master"
+  head "https://github.com/lcm-proj/lcm.git", branch: "master"
 
   livecheck do
     url :stable
@@ -33,7 +33,7 @@ class Lcm < Formula
   end
 
   def install
-    # Adding RPATH in #{lib}luaX.Ylcm.so and some #{bin}*.
+    # Adding RPATH in #{lib}/lua/X.Y/lcm.so and some #{bin}/*.
     args = %W[
       -DCMAKE_INSTALL_RPATH=#{lib}
       -DLCM_ENABLE_EXAMPLES=OFF
@@ -42,8 +42,8 @@ class Lcm < Formula
       -DPYTHON_EXECUTABLE=#{python3}
     ]
 
-    # `lcm-lualualcm_lcm.c:577:9: error: ‘subscription’ may be used uninitialized`
-    # See discussions in https:github.comlcm-projlcmissues457
+    # `lcm-lua/lualcm_lcm.c:577:9: error: ‘subscription’ may be used uninitialized`
+    # See discussions in https://github.com/lcm-proj/lcm/issues/457
     ENV.append_to_cflags "-Wno-maybe-uninitialized" if OS.linux?
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
@@ -52,7 +52,7 @@ class Lcm < Formula
   end
 
   test do
-    (testpath"example_t.lcm").write <<~EOS
+    (testpath/"example_t.lcm").write <<~EOS
       package exlcm;
       struct example_t {
           int64_t timestamp;
@@ -60,14 +60,14 @@ class Lcm < Formula
           string name;
       }
     EOS
-    system bin"lcm-gen", "-c", "example_t.lcm"
-    assert_path_exists testpath"exlcm_example_t.h", "lcm-gen did not generate C header file"
-    assert_path_exists testpath"exlcm_example_t.c", "lcm-gen did not generate C source file"
-    system bin"lcm-gen", "-x", "example_t.lcm"
-    assert_path_exists testpath"exlcmexample_t.hpp", "lcm-gen did not generate C++ header file"
-    system bin"lcm-gen", "-j", "example_t.lcm"
-    assert_path_exists testpath"exlcmexample_t.java", "lcm-gen did not generate Java source file"
-    system bin"lcm-gen", "-p", "example_t.lcm"
-    assert_path_exists testpath"exlcmexample_t.py", "lcm-gen did not generate Python source file"
+    system bin/"lcm-gen", "-c", "example_t.lcm"
+    assert_path_exists testpath/"exlcm_example_t.h", "lcm-gen did not generate C header file"
+    assert_path_exists testpath/"exlcm_example_t.c", "lcm-gen did not generate C source file"
+    system bin/"lcm-gen", "-x", "example_t.lcm"
+    assert_path_exists testpath/"exlcm/example_t.hpp", "lcm-gen did not generate C++ header file"
+    system bin/"lcm-gen", "-j", "example_t.lcm"
+    assert_path_exists testpath/"exlcm/example_t.java", "lcm-gen did not generate Java source file"
+    system bin/"lcm-gen", "-p", "example_t.lcm"
+    assert_path_exists testpath/"exlcm/example_t.py", "lcm-gen did not generate Python source file"
   end
 end

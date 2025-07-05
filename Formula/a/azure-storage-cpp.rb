@@ -1,7 +1,7 @@
 class AzureStorageCpp < Formula
   desc "Microsoft Azure Storage Client Library for C++"
-  homepage "https:azure.github.ioazure-storage-cpp"
-  url "https:github.comAzureazure-storage-cpparchiverefstagsv7.5.0.tar.gz"
+  homepage "https://azure.github.io/azure-storage-cpp/"
+  url "https://ghfast.top/https://github.com/Azure/azure-storage-cpp/archive/refs/tags/v7.5.0.tar.gz"
   sha256 "446a821d115949f6511b7eb01e6a0e4f014b17bfeba0f3dc33a51750a9d5eca5"
   license "Apache-2.0"
   revision 11
@@ -18,8 +18,8 @@ class AzureStorageCpp < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "43fc31791da3f757934d1f122292cce81008d2af85f98284a7cfb89f9aab9104"
   end
 
-  # https:github.comAzureazure-storage-cppcommitb319b189067ac5f54137ddcfc18ef506816cbea4
-  # https:aka.msAzStorageCPPSDKRetirement
+  # https://github.com/Azure/azure-storage-cpp/commit/b319b189067ac5f54137ddcfc18ef506816cbea4
+  # https://aka.ms/AzStorageCPPSDKRetirement
   disable! date: "2025-05-20", because: :deprecated_upstream, replacement_formula: "azure-storage-blobs-cpp"
 
   depends_on "cmake" => :build
@@ -44,9 +44,9 @@ class AzureStorageCpp < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~CPP
-      #include <wascommon.h>
-      #include <wasstorage_account.h>
+    (testpath/"test.cpp").write <<~CPP
+      #include <was/common.h>
+      #include <was/storage_account.h>
       using namespace azure;
       int main() {
         utility::string_t storage_connection_string(_XPLATSTR("DefaultEndpointsProtocol=https;AccountName=myaccountname;AccountKey=myaccountkey"));
@@ -69,6 +69,6 @@ class AzureStorageCpp < Formula
              "-lcpprest", "-lboost_system-mt", "-lssl", "-lcrypto", "-lazurestorage"]
     flags << "-stdlib=libc++" if OS.mac?
     system ENV.cxx, "-o", "test_azurestoragecpp", "test.cpp", *flags
-    system ".test_azurestoragecpp"
+    system "./test_azurestoragecpp"
   end
 end

@@ -1,7 +1,7 @@
 class Enchant < Formula
   desc "Spellchecker wrapping library"
-  homepage "https:rrthomas.github.ioenchant"
-  url "https:github.comrrthomasenchantreleasesdownloadv2.8.10enchant-2.8.10.tar.gz"
+  homepage "https://rrthomas.github.io/enchant/"
+  url "https://ghfast.top/https://github.com/rrthomas/enchant/releases/download/v2.8.10/enchant-2.8.10.tar.gz"
   sha256 "6db791265ace652c63a6d24f376f4c562b742284d70d3ccb9e1ce8be45b288c9"
   license "LGPL-2.1-or-later"
 
@@ -31,26 +31,26 @@ class Enchant < Formula
 
   def install
     # mandoc is only available since Ventura, but groff is available for older macOS
-    inreplace "srcMakefile.in", "groff ", "mandoc " if !OS.mac? || MacOS.version >= :ventura
+    inreplace "src/Makefile.in", "groff ", "mandoc " if !OS.mac? || MacOS.version >= :ventura
 
-    system ".configure", "--disable-dependency-tracking",
+    system "./configure", "--disable-dependency-tracking",
                           "--prefix=#{prefix}",
                           "--enable-relocatable"
 
     system "make", "install"
-    ln_s "enchant-2.pc", lib"pkgconfigenchant.pc"
+    ln_s "enchant-2.pc", lib/"pkgconfig/enchant.pc"
   end
 
   test do
     text = "Teh quikc brwon fox iumpz ovr teh lAzy d0g"
     enchant_result = text.sub("fox ", "").split.join("\n")
     file = "test.txt"
-    (testpathfile).write text
+    (testpath/file).write text
 
     # Explicitly set locale so that the correct dictionary can be found
     ENV["LANG"] = "en_US.UTF-8"
     ENV["LC_ALL"] = "en_US.UTF-8"
 
-    assert_equal enchant_result, shell_output("#{bin}enchant-2 -l #{file}").chomp
+    assert_equal enchant_result, shell_output("#{bin}/enchant-2 -l #{file}").chomp
   end
 end

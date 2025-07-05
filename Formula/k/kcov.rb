@@ -1,17 +1,17 @@
 class Kcov < Formula
   desc "Code coverage tester for compiled programs, Python, and shell scripts"
-  homepage "https:simonkagstrom.github.iokcov"
-  url "https:github.comSimonKagstromkcovarchiverefstagsv43.tar.gz"
+  homepage "https://simonkagstrom.github.io/kcov/"
+  url "https://ghfast.top/https://github.com/SimonKagstrom/kcov/archive/refs/tags/v43.tar.gz"
   sha256 "4cbba86af11f72de0c7514e09d59c7927ed25df7cebdad087f6d3623213b95bf"
   license "GPL-2.0-or-later"
   revision 1
-  head "https:github.comSimonKagstromkcov.git", branch: "master"
+  head "https://github.com/SimonKagstrom/kcov.git", branch: "master"
 
   # We check the Git tags because, as of writing, the "latest" release on GitHub
   # is a prerelease version (`pre-v40`), so we can't rely on it being correct.
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)*)$i)
+    regex(/^v?(\d+(?:\.\d+)*)$/i)
   end
 
   bottle do
@@ -40,8 +40,8 @@ class Kcov < Formula
 
   def install
     # Fix to find libdwarf header files
-    # Issue ref: https:github.comSimonKagstromkcovissues475
-    inreplace "cmakeFindDwarfutils.cmake", "libdwarf-0", "libdwarf-#{Formula["dwarfutils"].version.major}"
+    # Issue ref: https://github.com/SimonKagstrom/kcov/issues/475
+    inreplace "cmake/FindDwarfutils.cmake", "libdwarf-0", "libdwarf-#{Formula["dwarfutils"].version.major}"
 
     system "cmake", "-S", ".", "-B", "build", "-DSPECIFY_RPATH=ON", *std_cmake_args
     system "cmake", "--build", "build"
@@ -49,12 +49,12 @@ class Kcov < Formula
   end
 
   test do
-    (testpath"hello.bash").write <<~EOS
-      #!binbash
+    (testpath/"hello.bash").write <<~EOS
+      #!/bin/bash
       echo "Hello, world!"
     EOS
 
-    system bin"kcov", testpath"out", testpath"hello.bash"
-    assert_path_exists testpath"outhello.bashcoverage.json"
+    system bin/"kcov", testpath/"out", testpath/"hello.bash"
+    assert_path_exists testpath/"out/hello.bash/coverage.json"
   end
 end

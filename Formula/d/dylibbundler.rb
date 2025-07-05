@@ -1,10 +1,10 @@
 class Dylibbundler < Formula
   desc "Utility to bundle libraries into executables for macOS"
-  homepage "https:github.comauriamgmacdylibbundler"
-  url "https:github.comauriamgmacdylibbundlerarchiverefstags1.0.5.tar.gz"
+  homepage "https://github.com/auriamg/macdylibbundler"
+  url "https://ghfast.top/https://github.com/auriamg/macdylibbundler/archive/refs/tags/1.0.5.tar.gz"
   sha256 "13384ebe7ca841ec392ac49dc5e50b1470190466623fa0e5cd30f1c634858530"
   license "MIT"
-  head "https:github.comauriamgmacdylibbundler.git", branch: "master"
+  head "https://github.com/auriamg/macdylibbundler.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -28,6 +28,6 @@ class Dylibbundler < Formula
   end
 
   test do
-    system bin"dylibbundler", "-h"
+    system bin/"dylibbundler", "-h"
   end
 end

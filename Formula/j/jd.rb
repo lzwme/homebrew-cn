@@ -1,10 +1,10 @@
 class Jd < Formula
   desc "JSON diff and patch"
-  homepage "https:github.comjosephburnettjd"
-  url "https:github.comjosephburnettjdarchiverefstagsv2.2.3.tar.gz"
+  homepage "https://github.com/josephburnett/jd"
+  url "https://ghfast.top/https://github.com/josephburnett/jd/archive/refs/tags/v2.2.3.tar.gz"
   sha256 "eb15f4eef5d418ef002c388f1c30b5802cea3f30609185ce4d12ef05e5148711"
   license "MIT"
-  head "https:github.comjosephburnettjd.git", branch: "master"
+  head "https://github.com/josephburnett/jd.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "b454b956683fdb424faf9d899e9f27a319949ca30cc8629ec297bb86fd231db3"
@@ -22,15 +22,15 @@ class Jd < Formula
   end
 
   test do
-    (testpath"a.json").write('{"foo":"bar"}')
-    (testpath"b.json").write('{"foo":"baz"}')
-    (testpath"c.json").write('{"foo":"baz"}')
+    (testpath/"a.json").write('{"foo":"bar"}')
+    (testpath/"b.json").write('{"foo":"baz"}')
+    (testpath/"c.json").write('{"foo":"baz"}')
     expected = <<~EOF
       @ ["foo"]
       - "bar"
       + "baz"
     EOF
-    assert_equal expected, shell_output("#{bin}jd a.json b.json", 1)
-    assert_empty shell_output("#{bin}jd b.json c.json")
+    assert_equal expected, shell_output("#{bin}/jd a.json b.json", 1)
+    assert_empty shell_output("#{bin}/jd b.json c.json")
   end
 end

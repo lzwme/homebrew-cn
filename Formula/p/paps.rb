@@ -1,7 +1,7 @@
 class Paps < Formula
   desc "Pango to PostScript converter"
-  homepage "https:github.comdovpaps"
-  url "https:github.comdovpapsarchiverefstagsv0.8.0.tar.gz"
+  homepage "https://github.com/dov/paps"
+  url "https://ghfast.top/https://github.com/dov/paps/archive/refs/tags/v0.8.0.tar.gz"
   sha256 "8fd8db04e6f8c5c164806d2c1b5fea6096daf583f83f06d1e4813ea61edc291f"
   license "LGPL-2.0-or-later"
   revision 2
@@ -33,10 +33,10 @@ class Paps < Formula
   end
 
   # Apply open PR to fix build with recent `glib`. This restores behavior before
-  # https:gitlab.gnome.orgGNOMEglib-commitc583162cc6d7078ff549c72615617092b0bc150a
-  # PR ref: https:github.comdovpapspull71
+  # https://gitlab.gnome.org/GNOME/glib/-/commit/c583162cc6d7078ff549c72615617092b0bc150a
+  # PR ref: https://github.com/dov/paps/pull/71
   patch do
-    url "https:github.comdovpapscommite6ec698be127822661e31f7fca7d2e0107944b24.patch?full_index=1"
+    url "https://github.com/dov/paps/commit/e6ec698be127822661e31f7fca7d2e0107944b24.patch?full_index=1"
     sha256 "52848f9618dab9bc98c1554cc8a7a0b3ce419cfca53781b909d543ec4e4b27ea"
   end
 
@@ -48,8 +48,8 @@ class Paps < Formula
   end
 
   test do
-    system bin"paps", pkgshare"examplessmall-hello.utf8", "--encoding=UTF-8", "-o", "paps.ps"
-    assert_path_exists testpath"paps.ps"
-    assert_match "%!PS-Adobe-3.0", (testpath"paps.ps").read
+    system bin/"paps", pkgshare/"examples/small-hello.utf8", "--encoding=UTF-8", "-o", "paps.ps"
+    assert_path_exists testpath/"paps.ps"
+    assert_match "%!PS-Adobe-3.0", (testpath/"paps.ps").read
   end
 end

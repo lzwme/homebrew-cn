@@ -1,7 +1,7 @@
 class Vet < Formula
   desc "Policy driven vetting of open source dependencies"
-  homepage "https:github.comsafedepvet"
-  url "https:github.comsafedepvetarchiverefstagsv1.11.3.tar.gz"
+  homepage "https://github.com/safedep/vet"
+  url "https://ghfast.top/https://github.com/safedep/vet/archive/refs/tags/v1.11.3.tar.gz"
   sha256 "ef406e7261fadf607fb729d415a0326055f9a07a5f9e5204b4645be4cc056920"
   license "Apache-2.0"
 
@@ -21,13 +21,13 @@ class Vet < Formula
     ldflags = "-s -w -X main.version=#{version} -X main.commit=#{tap.user}"
     system "go", "build", *std_go_args(ldflags:)
 
-    generate_completions_from_executable(bin"vet", "completion")
+    generate_completions_from_executable(bin/"vet", "completion")
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}vet version 2>&1")
+    assert_match version.to_s, shell_output("#{bin}/vet version 2>&1")
 
-    output = shell_output("#{bin}vet scan parsers 2>&1")
+    output = shell_output("#{bin}/vet scan parsers 2>&1")
     assert_match "Available Lockfile Parsers", output
   end
 end

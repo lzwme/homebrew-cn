@@ -1,14 +1,14 @@
 class Opus < Formula
   desc "Audio codec"
-  homepage "https:www.opus-codec.org"
-  url "https:ftp.osuosl.orgpubxiphreleasesopusopus-1.5.2.tar.gz"
-  mirror "https:github.comxiphopusreleasesdownloadv1.5.2opus-1.5.2.tar.gz"
+  homepage "https://www.opus-codec.org/"
+  url "https://ftp.osuosl.org/pub/xiph/releases/opus/opus-1.5.2.tar.gz"
+  mirror "https://ghfast.top/https://github.com/xiph/opus/releases/download/v1.5.2/opus-1.5.2.tar.gz"
   sha256 "65c1d2f78b9f2fb20082c38cbe47c951ad5839345876e46941612ee87f9a7ce1"
   license "BSD-3-Clause"
 
   livecheck do
-    url "https:ftp.osuosl.orgpubxiphreleasesopus"
-    regex(%r{href=(?:["']?|.*?)opus[._-]v?(\d+(?:\.\d+)+)\.t}i)
+    url "https://ftp.osuosl.org/pub/xiph/releases/opus/"
+    regex(%r{href=(?:["']?|.*?/)opus[._-]v?(\d+(?:\.\d+)+)\.t}i)
   end
 
   bottle do
@@ -24,7 +24,7 @@ class Opus < Formula
   end
 
   head do
-    url "https:gitlab.xiph.orgxiphopus.git", branch: "main"
+    url "https://gitlab.xiph.org/xiph/opus.git", branch: "main"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -32,13 +32,13 @@ class Opus < Formula
   end
 
   def install
-    system ".autogen.sh" if build.head?
-    system ".configure", "--disable-doc", *std_configure_args
+    system "./autogen.sh" if build.head?
+    system "./configure", "--disable-doc", *std_configure_args
     system "make", "install"
   end
 
   test do
-    (testpath"test.cpp").write <<~CPP
+    (testpath/"test.cpp").write <<~CPP
       #include <opus.h>
 
       int main(int argc, char **argv)
@@ -63,8 +63,8 @@ class Opus < Formula
         return err;
       }
     CPP
-    system ENV.cxx, "-I#{include}opus", testpath"test.cpp",
+    system ENV.cxx, "-I#{include}/opus", testpath/"test.cpp",
            "-L#{lib}", "-lopus", "-o", "test"
-    system ".test"
+    system "./test"
   end
 end

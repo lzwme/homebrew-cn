@@ -1,7 +1,7 @@
 class Amber < Formula
   desc "Crystal web framework. Bare metal performance, productivity and happiness"
-  homepage "https:amberframework.org"
-  url "https:github.comamberframeworkamberarchiverefstagsv1.4.1.tar.gz"
+  homepage "https://amberframework.org/"
+  url "https://ghfast.top/https://github.com/amberframework/amber/archive/refs/tags/v1.4.1.tar.gz"
   sha256 "92664a859fb27699855dfa5d87dc9bf2e4a614d3e54844a8344196d2807e775c"
   license "MIT"
   revision 2
@@ -27,9 +27,9 @@ class Amber < Formula
   uses_from_macos "zlib"
 
   # patch granite to fix db dependency resolution issue
-  # upstream patch https:github.comamberframeworkamberpull1339
+  # upstream patch https://github.com/amberframework/amber/pull/1339
   patch do
-    url "https:github.comamberframeworkambercommit54b1de90cd3e395cd09326b1d43074e267c79695.patch?full_index=1"
+    url "https://github.com/amberframework/amber/commit/54b1de90cd3e395cd09326b1d43074e267c79695.patch?full_index=1"
     sha256 "be0e30f08b8f7fcb71604eb01136d82d48b7e34afac9a1c846c74a7a7d2f8bd6"
   end
 
@@ -39,22 +39,22 @@ class Amber < Formula
   end
 
   test do
-    output = shell_output("#{bin}amber new test_app")
+    output = shell_output("#{bin}/amber new test_app")
     %w[
-      configenvironments
+      config/environments
       amber.yml
       shard.yml
       public
-      srccontrollers
-      srcviews
-      srctest_app.cr
+      src/controllers
+      src/views
+      src/test_app.cr
     ].each do |path|
       assert_match path, output
     end
 
     cd "test_app" do
-      assert_match "Building", shell_output("#{Formula["crystal"].bin}shards build test_app")
+      assert_match "Building", shell_output("#{Formula["crystal"].bin}/shards build test_app")
     end
-    assert_path_exists testpath"test_appbintest_app"
+    assert_path_exists testpath/"test_app/bin/test_app"
   end
 end

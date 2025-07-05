@@ -1,8 +1,8 @@
 class Fcgi < Formula
   desc "Protocol for interfacing interactive programs with a web server"
-  # Last known good original homepage: https:web.archive.orgweb20080906064558www.fastcgi.com
-  homepage "https:fastcgi-archives.github.io"
-  url "https:github.comFastCGI-Archivesfcgi2archiverefstags2.4.6.tar.gz"
+  # Last known good original homepage: https://web.archive.org/web/20080906064558/www.fastcgi.com/
+  homepage "https://fastcgi-archives.github.io/"
+  url "https://ghfast.top/https://github.com/FastCGI-Archives/fcgi2/archive/refs/tags/2.4.6.tar.gz"
   sha256 "39af4fb21a6d695a5f0b1c4fa95776d2725f6bc6c77680943a2ab314acd505c1"
   license "OML"
 
@@ -21,14 +21,14 @@ class Fcgi < Formula
   depends_on "libtool" => :build
 
   def install
-    system ".autogen.sh"
-    system ".configure", "--disable-debug", "--disable-dependency-tracking",
+    system "./autogen.sh"
+    system "./configure", "--disable-debug", "--disable-dependency-tracking",
                           "--prefix=#{prefix}"
     system "make", "install"
   end
 
   test do
-    (testpath"testfile.c").write <<~C
+    (testpath/"testfile.c").write <<~C
       #include "fcgi_stdio.h"
       #include <stdlib.h>
       int count = 0;
@@ -37,6 +37,6 @@ class Fcgi < Formula
         printf("Request number %d running on host %s", ++count, getenv("SERVER_HOSTNAME"));}}
     C
     system ENV.cc, "testfile.c", "-L#{lib}", "-lfcgi", "-o", "testfile"
-    assert_match "Request number 1 running on host", shell_output(".testfile")
+    assert_match "Request number 1 running on host", shell_output("./testfile")
   end
 end

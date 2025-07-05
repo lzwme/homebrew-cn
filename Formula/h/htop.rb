@@ -1,14 +1,14 @@
 class Htop < Formula
   desc "Improved top (interactive process viewer)"
-  homepage "https:htop.dev"
-  url "https:github.comhtop-devhtoparchiverefstags3.4.1.tar.gz"
+  homepage "https://htop.dev/"
+  url "https://ghfast.top/https://github.com/htop-dev/htop/archive/refs/tags/3.4.1.tar.gz"
   sha256 "af9ec878f831b7c27d33e775c668ec79d569aa781861c995a0fbadc1bdb666cf"
   license "GPL-2.0-or-later"
-  head "https:github.comhtop-devhtop.git", branch: "main"
+  head "https://github.com/htop-dev/htop.git", branch: "main"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -32,10 +32,10 @@ class Htop < Formula
   end
 
   def install
-    system ".autogen.sh"
+    system "./autogen.sh"
     args = ["--prefix=#{prefix}"]
     args << "--enable-sensors" if OS.linux?
-    system ".configure", *args
+    system "./configure", *args
     system "make", "install"
   end
 
@@ -48,6 +48,6 @@ class Htop < Formula
   end
 
   test do
-    pipe_output(bin"htop", "q", 0)
+    pipe_output(bin/"htop", "q", 0)
   end
 end

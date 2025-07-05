@@ -1,10 +1,10 @@
 class Enzyme < Formula
   desc "High-performance automatic differentiation of LLVM"
-  homepage "https:enzyme.mit.edu"
-  url "https:github.comEnzymeADEnzymearchiverefstagsv0.0.184.tar.gz"
+  homepage "https://enzyme.mit.edu"
+  url "https://ghfast.top/https://github.com/EnzymeAD/Enzyme/archive/refs/tags/v0.0.184.tar.gz"
   sha256 "07fa75f869e778ae29c017d3e2303d9da3b238588978e17d5612e50a365b9e9c"
   license "Apache-2.0" => { with: "LLVM-exception" }
-  head "https:github.comEnzymeADEnzyme.git", branch: "main"
+  head "https://github.com/EnzymeAD/Enzyme.git", branch: "main"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "f60f1534e84cba9029f2a23bc35669c1e0b0d609ec4dbf0b80388d54d275574c"
@@ -20,17 +20,17 @@ class Enzyme < Formula
   depends_on "llvm@19"
 
   def llvm
-    deps.map(&:to_formula).find { |f| f.name.match?(^llvm(@\d+)?$) }
+    deps.map(&:to_formula).find { |f| f.name.match?(/^llvm(@\d+)?$/) }
   end
 
   def install
-    system "cmake", "-S", "enzyme", "-B", "build", "-DLLVM_DIR=#{llvm.opt_lib}cmakellvm", *std_cmake_args
+    system "cmake", "-S", "enzyme", "-B", "build", "-DLLVM_DIR=#{llvm.opt_lib}/cmake/llvm", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end
 
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include <stdio.h>
       extern double __enzyme_autodiff(void*, double);
       double square(double x) {
@@ -45,12 +45,12 @@ class Enzyme < Formula
       }
     C
 
-    ENV["CC"] = llvm.opt_bin"clang"
+    ENV["CC"] = llvm.opt_bin/"clang"
 
-    system ENV.cc, testpath"test.c",
-                        "-fplugin=#{libshared_library("ClangEnzyme-#{llvm.version.major}")}",
+    system ENV.cc, testpath/"test.c",
+                        "-fplugin=#{lib/shared_library("ClangEnzyme-#{llvm.version.major}")}",
                         "-O1", "-o", "test"
 
-    assert_equal "square(21)=441, dsquare(21)=42\n", shell_output(".test")
+    assert_equal "square(21)=441, dsquare(21)=42\n", shell_output("./test")
   end
 end

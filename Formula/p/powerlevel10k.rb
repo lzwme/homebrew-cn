@@ -1,10 +1,10 @@
 class Powerlevel10k < Formula
   desc "Theme for zsh"
-  homepage "https:github.comromkatvpowerlevel10k"
-  url "https:github.comromkatvpowerlevel10karchiverefstagsv1.20.0.tar.gz"
+  homepage "https://github.com/romkatv/powerlevel10k"
+  url "https://ghfast.top/https://github.com/romkatv/powerlevel10k/archive/refs/tags/v1.20.0.tar.gz"
   sha256 "d8187d44b697b3a37a8c4896678b4380e717cbf2850179529358348780a2d3d7"
   license "MIT"
-  head "https:github.comromkatvpowerlevel10k.git", branch: "master"
+  head "https://github.com/romkatv/powerlevel10k.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -31,14 +31,14 @@ class Powerlevel10k < Formula
     <<~EOS
       To activate this theme, add the following at the end of your .zshrc:
 
-        source #{HOMEBREW_PREFIX}sharepowerlevel10kpowerlevel10k.zsh-theme
+        source #{HOMEBREW_PREFIX}/share/powerlevel10k/powerlevel10k.zsh-theme
 
       You will also need to restart your terminal for this change to take effect.
     EOS
   end
 
   test do
-    output = shell_output("zsh -fic '. #{pkgshare}powerlevel10k.zsh-theme && (( ${+P9K_SSH} )) && echo SUCCESS'")
+    output = shell_output("zsh -fic '. #{pkgshare}/powerlevel10k.zsh-theme && (( ${+P9K_SSH} )) && echo SUCCESS'")
     assert_match "SUCCESS", output
   end
 end

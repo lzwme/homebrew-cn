@@ -1,10 +1,10 @@
 class Pillow < Formula
   desc "Friendly PIL fork (Python Imaging Library)"
-  homepage "https:python-pillow.github.io"
-  url "https:files.pythonhosted.orgpackagesf30dd0d6dea55cd152ce3d6767bb38a8fc10e33796ba4ba210cbab9354b6d238pillow-11.3.0.tar.gz"
+  homepage "https://python-pillow.github.io/"
+  url "https://files.pythonhosted.org/packages/f3/0d/d0d6dea55cd152ce3d6767bb38a8fc10e33796ba4ba210cbab9354b6d238/pillow-11.3.0.tar.gz"
   sha256 "3828ee7586cd0b2091b6209e5ad53e20d0649bbe87164a459d0676e035e8f523"
   license "HPND"
-  head "https:github.compython-pillowPillow.git", branch: "master"
+  head "https://github.com/python-pillow/Pillow.git", branch: "master"
 
   bottle do
     sha256 cellar: :any, arm64_sequoia: "576d1075766bacbf6f77cdbe3d03d7f2628e5f3d491b7f852fa9b6db68e2eec6"
@@ -33,8 +33,8 @@ class Pillow < Formula
 
   def pythons
     deps.map(&:to_formula)
-        .select { |f| f.name.match?(^python@\d\.\d+$) }
-        .map { |f| f.opt_libexec"binpython" }
+        .select { |f| f.name.match?(/^python@\d\.\d+$/) }
+        .map { |f| f.opt_libexec/"bin/python" }
   end
 
   def install
@@ -59,7 +59,7 @@ class Pillow < Formula
   end
 
   test do
-    (testpath"test.py").write <<~PYTHON
+    (testpath/"test.py").write <<~PYTHON
       from PIL import Image
       im = Image.open("#{test_fixtures("test.jpg")}")
       print(im.format, im.size, im.mode)

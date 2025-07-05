@@ -1,10 +1,10 @@
 class Grpcurl < Formula
   desc "Like cURL, but for gRPC"
-  homepage "https:github.comfullstorydevgrpcurl"
-  url "https:github.comfullstorydevgrpcurlarchiverefstagsv1.9.3.tar.gz"
+  homepage "https://github.com/fullstorydev/grpcurl"
+  url "https://ghfast.top/https://github.com/fullstorydev/grpcurl/archive/refs/tags/v1.9.3.tar.gz"
   sha256 "bb555087f279af156159c86d4d3d5dd3f2991129e4cd6b09114e6851a679340d"
   license "MIT"
-  head "https:github.comfullstorydevgrpcurl.git", branch: "master"
+  head "https://github.com/fullstorydev/grpcurl.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -20,17 +20,17 @@ class Grpcurl < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}"), ".cmdgrpcurl"
+    system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}"), "./cmd/grpcurl"
   end
 
   test do
-    (testpath"test.proto").write <<~PROTO
+    (testpath/"test.proto").write <<~PROTO
       syntax = "proto3";
       package test;
       message HelloWorld {
         string hello_world = 1;
       }
     PROTO
-    system bin"grpcurl", "-msg-template", "-proto", "test.proto", "describe", "test.HelloWorld"
+    system bin/"grpcurl", "-msg-template", "-proto", "test.proto", "describe", "test.HelloWorld"
   end
 end

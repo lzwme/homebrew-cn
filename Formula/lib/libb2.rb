@@ -1,7 +1,7 @@
 class Libb2 < Formula
   desc "Secure hashing function"
-  homepage "https:blake2.net"
-  url "https:github.comBLAKE2libb2releasesdownloadv0.98.1libb2-0.98.1.tar.gz"
+  homepage "https://blake2.net/"
+  url "https://ghfast.top/https://github.com/BLAKE2/libb2/releases/download/v0.98.1/libb2-0.98.1.tar.gz"
   sha256 "53626fddce753c454a3fea581cbbc7fe9bbcf0bc70416d48fdbbf5d87ef6c72e"
   license "CC0-1.0"
 
@@ -27,17 +27,17 @@ class Libb2 < Formula
 
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
-    url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-big_sur.diff"
+    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-big_sur.diff"
     sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
   end
 
   def install
     # SSE detection is broken on arm64 macos
-    # https:github.comBLAKE2libb2issues36
+    # https://github.com/BLAKE2/libb2/issues/36
     extra_args = []
     extra_args << "--enable-fat" unless Hardware::CPU.arm?
 
-    system ".configure", "--disable-dependency-tracking",
+    system "./configure", "--disable-dependency-tracking",
                           "--disable-silent-rules",
                           "--prefix=#{prefix}",
                           *extra_args
@@ -45,7 +45,7 @@ class Libb2 < Formula
   end
 
   test do
-    (testpath"blake2test.c").write <<~C
+    (testpath/"blake2test.c").write <<~C
       #include <blake2.h>
       #include <stdio.h>
       #include <string.h>
@@ -74,6 +74,6 @@ class Libb2 < Formula
       }
     C
     system ENV.cc, "blake2test.c", "-L#{lib}", "-lb2", "-o", "b2test"
-    system ".b2test"
+    system "./b2test"
   end
 end

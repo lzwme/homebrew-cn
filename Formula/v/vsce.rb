@@ -1,13 +1,13 @@
 class Vsce < Formula
   desc "Tool for packaging, publishing and managing VS Code extensions"
-  homepage "https:code.visualstudio.comapiworking-with-extensionspublishing-extension#vsce"
-  url "https:registry.npmjs.org@vscodevsce-vsce-3.6.0.tgz"
+  homepage "https://code.visualstudio.com/api/working-with-extensions/publishing-extension#vsce"
+  url "https://registry.npmjs.org/@vscode/vsce/-/vsce-3.6.0.tgz"
   sha256 "29d6d51254210bc9330120897ca27a084db3e8e7fec2f2cad96d418de53f6ee4"
   license "MIT"
-  head "https:github.commicrosoftvscode-vsce.git", branch: "main"
+  head "https://github.com/microsoft/vscode-vsce.git", branch: "main"
 
   livecheck do
-    url "https:registry.npmjs.org@vscodevscelatest"
+    url "https://registry.npmjs.org/@vscode/vsce/latest"
     strategy :json do |json|
       json["version"]
     end
@@ -35,11 +35,11 @@ class Vsce < Formula
 
   def install
     system "npm", "install", *std_npm_args
-    bin.install_symlink Dir[libexec"bin*"]
+    bin.install_symlink Dir[libexec/"bin/*"]
   end
 
   test do
-    error = shell_output(bin"vsce verify-pat 2>&1", 1)
+    error = shell_output(bin/"vsce verify-pat 2>&1", 1)
     assert_match "Extension manifest not found:", error
   end
 end

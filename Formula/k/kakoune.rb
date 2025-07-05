@@ -1,10 +1,10 @@
 class Kakoune < Formula
   desc "Selection-based modal text editor"
-  homepage "https:github.commawwwkakoune"
-  url "https:github.commawwwkakounereleasesdownloadv2025.06.03kakoune-2025.06.03.tar.bz2"
+  homepage "https://github.com/mawww/kakoune"
+  url "https://ghfast.top/https://github.com/mawww/kakoune/releases/download/v2025.06.03/kakoune-2025.06.03.tar.bz2"
   sha256 "ced5941f1bdfb8ef6b0265b00bfd7389e392fb41b2bf11990cee9d6e95316499"
   license "Unlicense"
-  head "https:github.commawwwkakoune.git", branch: "master"
+  head "https://github.com/mawww/kakoune.git", branch: "master"
 
   livecheck do
     url :stable
@@ -32,7 +32,7 @@ class Kakoune < Formula
     cause "Requires C++20"
   end
 
-  # See <https:github.commawwwkakouneblobv2022.10.31README.asciidoc#building>
+  # See <https://github.com/mawww/kakoune/blob/v2022.10.31/README.asciidoc#building>
   fails_with :gcc do
     version "10.2"
     cause "Requires GCC >= 10.3"
@@ -43,8 +43,8 @@ class Kakoune < Formula
   end
 
   test do
-    system bin"kak", "-ui", "dummy", "-e", "q"
+    system bin/"kak", "-ui", "dummy", "-e", "q"
 
-    assert_match version.to_s, shell_output("#{bin}kak -version")
+    assert_match version.to_s, shell_output("#{bin}/kak -version")
   end
 end

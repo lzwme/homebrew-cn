@@ -1,10 +1,10 @@
 class Doubledown < Formula
   desc "Sync local changes to a remote directory"
-  homepage "https:github.comdevstructuredoubledown"
-  url "https:github.comdevstructuredoubledownarchiverefstagsv0.0.2.tar.gz"
+  homepage "https://github.com/devstructure/doubledown"
+  url "https://ghfast.top/https://github.com/devstructure/doubledown/archive/refs/tags/v0.0.2.tar.gz"
   sha256 "47ff56b6197c5302a29ae4a373663229d3b396fd54d132adbf9f499172caeb71"
   license "BSD-2-Clause"
-  head "https:github.comdevstructuredoubledown.git", branch: "master"
+  head "https://github.com/devstructure/doubledown.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -14,11 +14,11 @@ class Doubledown < Formula
   end
 
   def install
-    bin.install Dir["bin*"]
-    man1.install Dir["manman1*.1"]
+    bin.install Dir["bin/*"]
+    man1.install Dir["man/man1/*.1"]
   end
 
   test do
-    system bin"doubledown", "--help"
+    system bin/"doubledown", "--help"
   end
 end

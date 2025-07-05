@@ -1,10 +1,10 @@
 class Archiver < Formula
   desc "Cross-platform, multi-format archive utility"
-  homepage "https:github.commholtarchiver"
-  url "https:github.commholtarchiverarchiverefstagsv3.5.1.tar.gz"
+  homepage "https://github.com/mholt/archiver"
+  url "https://ghfast.top/https://github.com/mholt/archiver/archive/refs/tags/v3.5.1.tar.gz"
   sha256 "b69a76f837b6cc1c34c72ace16670360577b123ccc17872a95af07178e69fbe7"
   license "MIT"
-  head "https:github.commholtarchiver.git", branch: "master"
+  head "https://github.com/mholt/archiver.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -27,27 +27,27 @@ class Archiver < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w", output: bin"arc"), ".cmdarc"
+    system "go", "build", *std_go_args(ldflags: "-s -w", output: bin/"arc"), "./cmd/arc"
   end
 
   test do
-    output = shell_output("#{bin}arc --help 2>&1")
+    output = shell_output("#{bin}/arc --help 2>&1")
     assert_match "Usage: arc {archive|unarchive", output
 
-    (testpath"test1").write "Hello!"
-    (testpath"test2").write "Bonjour!"
-    (testpath"test3").write "Moien!"
+    (testpath/"test1").write "Hello!"
+    (testpath/"test2").write "Bonjour!"
+    (testpath/"test3").write "Moien!"
 
-    system bin"arc", "archive", "test.zip",
+    system bin/"arc", "archive", "test.zip",
            "test1", "test2", "test3"
 
-    assert_path_exists testpath"test.zip"
+    assert_path_exists testpath/"test.zip"
     assert_match "Zip archive data",
-                 shell_output("file -b #{testpath}test.zip")
+                 shell_output("file -b #{testpath}/test.zip")
 
-    output = shell_output("#{bin}arc ls test.zip")
+    output = shell_output("#{bin}/arc ls test.zip")
     names = output.lines.map do |line|
-      columns = line.split(\s+)
+      columns = line.split(/\s+/)
       File.basename(columns.last)
     end
     assert_match "test1 test2 test3", names.join(" ")

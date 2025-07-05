@@ -1,10 +1,10 @@
 class Patat < Formula
   desc "Terminal-based presentations using Pandoc"
-  homepage "https:github.comjaspervdjpatat"
-  url "https:hackage.haskell.orgpackagepatat-0.15.1.0patat-0.15.1.0.tar.gz"
+  homepage "https://github.com/jaspervdj/patat"
+  url "https://hackage.haskell.org/package/patat-0.15.1.0/patat-0.15.1.0.tar.gz"
   sha256 "390b15031d20f8bd9d03e51e11bd9248af00aa437930300be34668b458be1ed9"
   license "GPL-2.0-or-later"
-  head "https:github.comjaspervdjpatat.git", branch: "main"
+  head "https://github.com/jaspervdj/patat.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "12f6a51fd4fc98ba4481653c769909f311bceaf5856a59bff1bb21c17ce331c9"
@@ -29,16 +29,16 @@ class Patat < Formula
   end
 
   test do
-    test_file = testpath"test.md"
+    test_file = testpath/"test.md"
     test_file.write <<~MARKDOWN
       # Hello from Patat
       Slide 1
       ---
       Slide 2
     MARKDOWN
-    output = shell_output("#{bin}patat --dump --force #{test_file}")
+    output = shell_output("#{bin}/patat --dump --force #{test_file}")
     assert_match "Hello from Patat", output
 
-    assert_match version.to_s, shell_output("#{bin}patat --version")
+    assert_match version.to_s, shell_output("#{bin}/patat --version")
   end
 end

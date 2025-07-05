@@ -1,10 +1,10 @@
 class IosWebkitDebugProxy < Formula
   desc "DevTools proxy for iOS devices"
-  homepage "https:github.comgoogleios-webkit-debug-proxy"
-  url "https:github.comgoogleios-webkit-debug-proxyarchiverefstagsv1.9.2.tar.gz"
+  homepage "https://github.com/google/ios-webkit-debug-proxy"
+  url "https://ghfast.top/https://github.com/google/ios-webkit-debug-proxy/archive/refs/tags/v1.9.2.tar.gz"
   sha256 "768f101612bf5d2507957f10a8e34e98675ea8fe3c63b8ed78772f8abd103fbf"
   license "BSD-3-Clause"
-  head "https:github.comgoogleios-webkit-debug-proxy.git", branch: "master"
+  head "https://github.com/google/ios-webkit-debug-proxy.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "878606bc7a7c42583c379a8f9713820531dc4e5eeeacc477289f9d7590cca6b7"
@@ -26,22 +26,22 @@ class IosWebkitDebugProxy < Formula
   depends_on "openssl@3"
 
   def install
-    system ".autogen.sh", *std_configure_args
+    system "./autogen.sh", *std_configure_args
     system "make", "install"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}ios_webkit_debug_proxy --version")
+    assert_match version.to_s, shell_output("#{bin}/ios_webkit_debug_proxy --version")
 
     # Fails in Linux CI with "`No device found, is it plugged in?`"
     return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
 
     base_port = free_port
-    (testpath"config.csv").write <<~CSV
+    (testpath/"config.csv").write <<~CSV
       null:#{base_port},:#{base_port + 1}-#{base_port + 101}
     CSV
 
-    spawn "#{bin}ios_webkit_debug_proxy", "-c", testpath"config.csv"
+    spawn "#{bin}/ios_webkit_debug_proxy", "-c", testpath/"config.csv"
     sleep 2
     assert_match "iOS Devices:", shell_output("curl localhost:#{base_port}")
   end

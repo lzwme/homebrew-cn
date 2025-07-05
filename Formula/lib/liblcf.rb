@@ -1,10 +1,10 @@
 class Liblcf < Formula
-  desc "Library for RPG Maker 20002003 games data"
-  homepage "https:easyrpg.org"
-  url "https:easyrpg.orgdownloadsplayer0.8.1liblcf-0.8.1.tar.xz"
+  desc "Library for RPG Maker 2000/2003 games data"
+  homepage "https://easyrpg.org/"
+  url "https://easyrpg.org/downloads/player/0.8.1/liblcf-0.8.1.tar.xz"
   sha256 "e827b265702cf7d9f4af24b8c10df2c608ac70754ef7468e34836201ff172273"
   license "MIT"
-  head "https:github.comEasyRPGliblcf.git", branch: "master"
+  head "https://github.com/EasyRPG/liblcf.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "3b50d8d26ad9ae4223f2b32c6e6339286076967625db097d6f59e51e301839ef"
@@ -32,8 +32,8 @@ class Liblcf < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~CPP
-      #include "lcflsdreader.h"
+    (testpath/"test.cpp").write <<~CPP
+      #include "lcf/lsd/reader.h"
       #include <cassert>
 
       int main() {
@@ -44,6 +44,6 @@ class Liblcf < Formula
     CPP
     system ENV.cxx, "test.cpp", "-std=c++17", "-I#{include}", "-L#{lib}", "-llcf", \
       "-o", "test"
-    system ".test"
+    system "./test"
   end
 end

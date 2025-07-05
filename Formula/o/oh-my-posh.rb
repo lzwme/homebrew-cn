@@ -1,10 +1,10 @@
 class OhMyPosh < Formula
   desc "Prompt theme engine for any shell"
-  homepage "https:ohmyposh.dev"
-  url "https:github.comJanDeDobbeleeroh-my-posharchiverefstagsv26.13.0.tar.gz"
+  homepage "https://ohmyposh.dev"
+  url "https://ghfast.top/https://github.com/JanDeDobbeleer/oh-my-posh/archive/refs/tags/v26.13.0.tar.gz"
   sha256 "e4a02b99a5650e987398ca6cd09a7cc10e50c422142563bf74d33c4deb3ac898"
   license "MIT"
-  head "https:github.comJanDeDobbeleeroh-my-posh.git", branch: "main"
+  head "https://github.com/JanDeDobbeleer/oh-my-posh.git", branch: "main"
 
   # There can be a notable gap between when a version is tagged and a
   # corresponding release is created, so we check the "latest" release instead
@@ -28,8 +28,8 @@ class OhMyPosh < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.comjandedobbeleeroh-my-poshsrcbuild.Version=#{version}
-      -X github.comjandedobbeleeroh-my-poshsrcbuild.Date=#{time.iso8601}
+      -X github.com/jandedobbeleer/oh-my-posh/src/build.Version=#{version}
+      -X github.com/jandedobbeleer/oh-my-posh/src/build.Date=#{time.iso8601}
     ]
 
     cd "src" do
@@ -37,12 +37,12 @@ class OhMyPosh < Formula
     end
 
     prefix.install "themes"
-    pkgshare.install_symlink prefix"themes"
+    pkgshare.install_symlink prefix/"themes"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}oh-my-posh version")
-    output = shell_output("#{bin}oh-my-posh init bash")
-    assert_match(%r{.cacheoh-my-poshinit\.#{version}\.default\.\d+\.sh}, output)
+    assert_match version.to_s, shell_output("#{bin}/oh-my-posh version")
+    output = shell_output("#{bin}/oh-my-posh init bash")
+    assert_match(%r{.cache/oh-my-posh/init\.#{version}\.default\.\d+\.sh}, output)
   end
 end

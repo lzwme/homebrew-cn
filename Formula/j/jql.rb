@@ -1,10 +1,10 @@
 class Jql < Formula
   desc "JSON query language CLI tool"
-  homepage "https:github.comyamafaktoryjql"
-  url "https:github.comyamafaktoryjqlarchiverefstagsjql-v8.0.7.tar.gz"
+  homepage "https://github.com/yamafaktory/jql"
+  url "https://ghfast.top/https://github.com/yamafaktory/jql/archive/refs/tags/jql-v8.0.7.tar.gz"
   sha256 "05448d17d1036373633e0d6a4556481ccc3b309832bdc9363d4c6f5d9d4311a4"
   license any_of: ["Apache-2.0", "MIT"]
-  head "https:github.comyamafaktoryjql.git", branch: "main"
+  head "https://github.com/yamafaktory/jql.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "910e6bfa669d89502d5813e35f08c35045900781c753e8038edb598ea1b4a111"
@@ -19,16 +19,16 @@ class Jql < Formula
   depends_on "rust" => :build
 
   def install
-    system "cargo", "install", *std_cargo_args(path: "cratesjql")
+    system "cargo", "install", *std_cargo_args(path: "crates/jql")
   end
 
   test do
-    (testpath"example.json").write <<~JSON
+    (testpath/"example.json").write <<~JSON
       {
         "cats": [{ "first": "Pixie" }, { "second": "Kitkat" }, { "third": "Misty" }]
       }
     JSON
-    output = shell_output("#{bin}jql --inline --raw-string '\"cats\" [2:1] [0]' example.json")
+    output = shell_output("#{bin}/jql --inline --raw-string '\"cats\" [2:1] [0]' example.json")
     assert_equal '{"third":"Misty"}', output.chomp
   end
 end

@@ -1,10 +1,10 @@
 class Libfaketime < Formula
   desc "Report faked system time to programs"
-  homepage "https:github.comwolfcwlibfaketime"
-  url "https:github.comwolfcwlibfaketimearchiverefstagsv0.9.12.tar.gz"
+  homepage "https://github.com/wolfcw/libfaketime"
+  url "https://ghfast.top/https://github.com/wolfcw/libfaketime/archive/refs/tags/v0.9.12.tar.gz"
   sha256 "4fc32218697c052adcdc5ee395581f2554ca56d086ac817ced2be0d6f1f8a9fa"
   license "GPL-2.0-only"
-  head "https:github.comwolfcwlibfaketime.git", branch: "master"
+  head "https://github.com/wolfcw/libfaketime.git", branch: "master"
 
   bottle do
     sha256 arm64_sequoia: "c030c10a9d07fc14da42e60bcc11d8a376439b7bffd59e419bbb76abd82727f9"
@@ -18,13 +18,13 @@ class Libfaketime < Formula
 
   on_macos do
     # The `faketime` command needs GNU `gdate` not BSD `date`.
-    # See https:github.comwolfcwlibfaketimeissues158 and
-    # https:github.comHomebrewhomebrew-coreissues26568
+    # See https://github.com/wolfcw/libfaketime/issues/158 and
+    # https://github.com/Homebrew/homebrew-core/issues/26568
     depends_on "coreutils"
     depends_on macos: :sierra
   end
 
-  # upstream bug report, https:github.comwolfcwlibfaketimeissues506
+  # upstream bug report, https://github.com/wolfcw/libfaketime/issues/506
   patch :DATA
 
   def install
@@ -32,7 +32,7 @@ class Libfaketime < Formula
   end
 
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include <stdio.h>
       #include <time.h>
 
@@ -42,15 +42,15 @@ class Libfaketime < Formula
       }
     C
     system ENV.cc, "test.c", "-o", "test"
-    assert_match "1230106542", shell_output("TZ=UTC #{bin}faketime -f '2008-12-24 08:15:42' .test").strip
+    assert_match "1230106542", shell_output("TZ=UTC #{bin}/faketime -f '2008-12-24 08:15:42' ./test").strip
   end
 end
 
 __END__
-diff --git asrcMakefile.OSX bsrcMakefile.OSX
+diff --git a/src/Makefile.OSX b/src/Makefile.OSX
 index 405c021..dae9880 100644
---- asrcMakefile.OSX
-+++ bsrcMakefile.OSX
+--- a/src/Makefile.OSX
++++ b/src/Makefile.OSX
 @@ -72,8 +72,7 @@ LIB_LDFLAGS += -dynamiclib -current_version 0.9.12 -compatibility_version 0.7
  ARCH := $(shell uname -m)
 

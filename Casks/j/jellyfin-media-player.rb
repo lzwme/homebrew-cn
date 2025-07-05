@@ -18,11 +18,11 @@ cask "jellyfin-media-player" do
            intel: "f6a75747c1234c929c968599cc927cfb27a0c00dfa9db9198d5b22b3090c4d34"
   end
 
-  url "https:github.comjellyfinjellyfin-media-playerreleasesdownloadv#{version}JellyfinMediaPlayer-#{version}-#{arch}.dmg",
-      verified: "github.comjellyfinjellyfin-media-player"
+  url "https://ghfast.top/https://github.com/jellyfin/jellyfin-media-player/releases/download/v#{version}/JellyfinMediaPlayer-#{version}-#{arch}.dmg",
+      verified: "github.com/jellyfin/jellyfin-media-player/"
   name "Jellyfin Media Player"
   desc "Jellyfin desktop client"
-  homepage "https:jellyfin.org"
+  homepage "https://jellyfin.org/"
 
   livecheck do
     url :url
@@ -36,10 +36,10 @@ cask "jellyfin-media-player" do
   app "Jellyfin Media Player.app"
 
   zap trash: [
-    "~LibraryApplication SupportJellyfin Media Player",
-    "~LibraryCachesJellyfin Media Player",
-    "~LibraryLogsJellyfin Media Player",
-    "~LibraryPreferencesorg.jellyfin.Jellyfin Media Player.plist",
-    "~LibrarySaved Application Statetv.jellyfin.player.savedState",
+    "~/Library/Application Support/Jellyfin Media Player",
+    "~/Library/Caches/Jellyfin Media Player",
+    "~/Library/Logs/Jellyfin Media Player",
+    "~/Library/Preferences/org.jellyfin.Jellyfin Media Player.plist",
+    "~/Library/Saved Application State/tv.jellyfin.player.savedState",
   ]
 end

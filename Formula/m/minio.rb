@@ -1,17 +1,17 @@
 class Minio < Formula
   desc "High Performance, Kubernetes Native Object Storage"
-  homepage "https:min.io"
-  url "https:github.comminiominio.git",
+  homepage "https://min.io"
+  url "https://github.com/minio/minio.git",
       tag:      "RELEASE.2025-06-13T11-33-47Z",
       revision: "a6c538c5a113a588d49b4f3af36ae3046cfa5ac6"
   version "2025-06-13T11-33-47Z"
   license "AGPL-3.0-or-later"
   version_scheme 1
-  head "https:github.comminiominio.git", branch: "master"
+  head "https://github.com/minio/minio.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(^(?:RELEASE[._-]?)?([\dTZ-]+)$i)
+    regex(/^(?:RELEASE[._-]?)?([\dTZ-]+)$/i)
     strategy :github_latest
   end
 
@@ -31,14 +31,14 @@ class Minio < Formula
       system "go", "build", *std_go_args
     else
       minio_release = stable.specs[:tag]
-      minio_version = version.to_s.gsub(T(\d+)-(\d+)-(\d+)Z, 'T\1:\2:\3Z')
+      minio_version = version.to_s.gsub(/T(\d+)-(\d+)-(\d+)Z/, 'T\1:\2:\3Z')
 
       ldflags = %W[
         -s -w
-        -X github.comminiominiocmd.Version=#{minio_version}
-        -X github.comminiominiocmd.ReleaseTag=#{minio_release}
-        -X github.comminiominiocmd.CommitID=#{Utils.git_head}
-        -X github.comminiominiocmd.CopyrightYear=#{version.major}
+        -X github.com/minio/minio/cmd.Version=#{minio_version}
+        -X github.com/minio/minio/cmd.ReleaseTag=#{minio_release}
+        -X github.com/minio/minio/cmd.CommitID=#{Utils.git_head}
+        -X github.com/minio/minio/cmd.CopyrightYear=#{version.major}
       ]
 
       system "go", "build", *std_go_args(ldflags:)
@@ -46,23 +46,23 @@ class Minio < Formula
   end
 
   def post_install
-    (var"minio").mkpath
-    (etc"minio").mkpath
+    (var/"minio").mkpath
+    (etc/"minio").mkpath
   end
 
   service do
-    run [opt_bin"minio", "server", "--certs-dir=#{etc}miniocerts", "--address=:9000", var"minio"]
+    run [opt_bin/"minio", "server", "--certs-dir=#{etc}/minio/certs", "--address=:9000", var/"minio"]
     keep_alive true
     working_dir HOMEBREW_PREFIX
-    log_path var"logminio.log"
-    error_log_path var"logminio.log"
+    log_path var/"log/minio.log"
+    error_log_path var/"log/minio.log"
   end
 
   test do
-    output = shell_output("#{bin}minio --version 2>&1")
-    assert_equal version.to_s, output[(?:RELEASE[._-]?)?([\dTZ-]+), 1], "`version` is incorrect"
+    output = shell_output("#{bin}/minio --version 2>&1")
+    assert_equal version.to_s, output[/(?:RELEASE[._-]?)?([\dTZ-]+)/, 1], "`version` is incorrect"
 
-    output = shell_output("#{bin}minio server --help 2>&1")
+    output = shell_output("#{bin}/minio server --help 2>&1")
     assert_match "minio server - start object storage server", output
   end
 end

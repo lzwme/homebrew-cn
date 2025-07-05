@@ -2,12 +2,12 @@ cask "font-akatab" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefonts.git",
-      verified:  "github.comgooglefonts",
+  url "https://github.com/google/fonts.git",
+      verified:  "github.com/google/fonts",
       branch:    "main",
-      only_path: "oflakatab"
+      only_path: "ofl/akatab"
   name "Akatab"
-  homepage "https:fonts.google.comspecimenAkatab"
+  homepage "https://fonts.google.com/specimen/Akatab"
 
   font "Akatab-Black.ttf"
   font "Akatab-Bold.ttf"

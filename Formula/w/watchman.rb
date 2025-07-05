@@ -2,11 +2,11 @@ class Watchman < Formula
   include Language::Python::Shebang
 
   desc "Watch files and take action when they change"
-  homepage "https:github.comfacebookwatchman"
-  url "https:github.comfacebookwatchmanarchiverefstagsv2025.06.30.00.tar.gz"
+  homepage "https://github.com/facebook/watchman"
+  url "https://ghfast.top/https://github.com/facebook/watchman/archive/refs/tags/v2025.06.30.00.tar.gz"
   sha256 "0da2e2a2bacce34ee1b918a3f86f530c670fcb398a86fe5fdabe195cb1187c41"
   license "MIT"
-  head "https:github.comfacebookwatchman.git", branch: "main"
+  head "https://github.com/facebook/watchman.git", branch: "main"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "634e7177c78f1afebb93f249724b3d1a129982d36377868f15ad1f4a44d4a7c6"
@@ -65,14 +65,14 @@ class Watchman < Formula
     system "cmake", "--install", "build"
 
     path = Pathname.new(File.join(prefix, HOMEBREW_PREFIX))
-    bin.install (path"bin").children
-    lib.install (path"lib").children
+    bin.install (path/"bin").children
+    lib.install (path/"lib").children
     rm_r(path)
 
     rewrite_shebang detected_python_shebang, *bin.children
   end
 
   test do
-    assert_equal(version.to_s, shell_output("#{bin}watchman -v").chomp)
+    assert_equal(version.to_s, shell_output("#{bin}/watchman -v").chomp)
   end
 end

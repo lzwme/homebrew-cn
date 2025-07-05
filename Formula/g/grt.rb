@@ -1,7 +1,7 @@
 class Grt < Formula
   desc "Gesture Recognition Toolkit for real-time machine learning"
-  homepage "https:nickgillian.comgrt"
-  url "https:github.comnickgilliangrtarchiverefstagsv0.2.4.tar.gz"
+  homepage "https://nickgillian.com/grt/"
+  url "https://ghfast.top/https://github.com/nickgillian/grt/archive/refs/tags/v0.2.4.tar.gz"
   sha256 "55bcabe7a58916461dc4341758eff2a45bd5b236c263dfe6e58c176c1a7e1ac4"
   license "MIT"
 
@@ -33,14 +33,14 @@ class Grt < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~CPP
-      #include <GRTGRT.h>
+    (testpath/"test.cpp").write <<~CPP
+      #include <GRT/GRT.h>
       int main() {
         GRT::GestureRecognitionPipeline pipeline;
         return 0;
       }
     CPP
     system ENV.cxx, "test.cpp", "-std=c++11", "-I#{include}", "-L#{lib}", "-lgrt", "-o", "test"
-    system ".test"
+    system "./test"
   end
 end

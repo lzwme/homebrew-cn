@@ -6,17 +6,17 @@ cask "katrain" do
     depends_on formula: "katago"
   end
 
-  url "https:github.comsanderlandkatrainreleasesdownloadv#{version}KaTrainOSX.dmg"
+  url "https://ghfast.top/https://github.com/sanderland/katrain/releases/download/v#{version}/KaTrainOSX.dmg"
   name "KaTrain"
   desc "Tool for analyzing games and playing go with AI feedback from KataGo"
-  homepage "https:github.comsanderlandkatrain"
+  homepage "https://github.com/sanderland/katrain"
 
   # Most recent release doesn't provide a file for macOS, so we check multiple
   # recent releases instead of only the "latest" release. NOTE: We should be
   # able to remove this next release when upstream provides a file for macOS again.
   livecheck do
     url :url
-    regex(%r{v?(\d+(?:\.\d+)+)KaTrainOSX\.(?:dmg|pkg)$}i)
+    regex(%r{/v?(\d+(?:\.\d+)+)/KaTrainOSX\.(?:dmg|pkg)$}i)
     strategy :github_releases do |json, regex|
       json.map do |release|
         next if release["draft"] || release["prerelease"]
@@ -35,7 +35,7 @@ cask "katrain" do
 
   app "KaTrain.app"
 
-  zap trash: "~.katrain"
+  zap trash: "~/.katrain"
 
   caveats do
     requires_rosetta

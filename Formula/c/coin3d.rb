@@ -1,14 +1,14 @@
 class Coin3d < Formula
   desc "Open Inventor 2.1 API implementation (Coin)"
-  homepage "https:coin3d.github.io"
+  homepage "https://coin3d.github.io/"
   license "BSD-3-Clause"
 
   stable do
-    url "https:github.comcoin3dcoinreleasesdownloadv4.0.4coin-4.0.4-src.tar.gz"
+    url "https://ghfast.top/https://github.com/coin3d/coin/releases/download/v4.0.4/coin-4.0.4-src.tar.gz"
     sha256 "80efd056a445050939a265db307d106ac7524105774d4be924a71b0cff23a719"
 
     resource "soqt" do
-      url "https:github.comcoin3dsoqtreleasesdownloadv1.6.3soqt-1.6.3-src.tar.gz"
+      url "https://ghfast.top/https://github.com/coin3d/soqt/releases/download/v1.6.3/soqt-1.6.3-src.tar.gz"
       sha256 "79342e89290783457c075fb6a60088aad4a48ea072ede06fdf01985075ef46bd"
     end
   end
@@ -27,10 +27,10 @@ class Coin3d < Formula
   end
 
   head do
-    url "https:github.comcoin3dcoin.git", branch: "master"
+    url "https://github.com/coin3d/coin.git", branch: "master"
 
     resource "soqt" do
-      url "https:github.comcoin3dsoqt.git", branch: "master"
+      url "https://github.com/coin3d/soqt.git", branch: "master"
     end
   end
 
@@ -81,8 +81,8 @@ class Coin3d < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~CPP
-      #include <InventorSoDB.h>
+    (testpath/"test.cpp").write <<~CPP
+      #include <Inventor/SoDB.h>
       int main() {
         SoDB::init();
         SoDB::cleanup();
@@ -97,6 +97,6 @@ class Coin3d < Formula
     end
 
     system ENV.cc, "test.cpp", "-L#{lib}", "-lCoin", *opengl_flags, "-o", "test"
-    system ".test"
+    system "./test"
   end
 end

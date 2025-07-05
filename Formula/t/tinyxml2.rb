@@ -1,10 +1,10 @@
 class Tinyxml2 < Formula
   desc "Improved tinyxml (in memory efficiency and size)"
-  homepage "https:leethomason.github.iotinyxml2"
-  url "https:github.comleethomasontinyxml2archiverefstags11.0.0.tar.gz"
+  homepage "https://leethomason.github.io/tinyxml2/"
+  url "https://ghfast.top/https://github.com/leethomason/tinyxml2/archive/refs/tags/11.0.0.tar.gz"
   sha256 "5556deb5081fb246ee92afae73efd943c889cef0cafea92b0b82422d6a18f289"
   license "Zlib"
-  head "https:github.comleethomasontinyxml2.git", branch: "master"
+  head "https://github.com/leethomason/tinyxml2.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "547cd64f4a05b78839ba3b1aa14f062a0bfe39c54fe22d34229c729f5258fbd4"
@@ -25,7 +25,7 @@ class Tinyxml2 < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~CPP
+    (testpath/"test.cpp").write <<~CPP
       #include <tinyxml2.h>
       int main() {
         tinyxml2::XMLDocument doc (false);
@@ -33,6 +33,6 @@ class Tinyxml2 < Formula
       }
     CPP
     system ENV.cc, "test.cpp", "-L#{lib}", "-ltinyxml2", "-o", "test"
-    system ".test"
+    system "./test"
   end
 end

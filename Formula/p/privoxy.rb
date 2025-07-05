@@ -1,13 +1,13 @@
 class Privoxy < Formula
   desc "Advanced filtering web proxy"
-  homepage "https:www.privoxy.org"
-  url "https:downloads.sourceforge.netprojectijbswaSources4.0.0%20%28stable%29privoxy-4.0.0-stable-src.tar.gz"
+  homepage "https://www.privoxy.org/"
+  url "https://downloads.sourceforge.net/project/ijbswa/Sources/4.0.0%20%28stable%29/privoxy-4.0.0-stable-src.tar.gz"
   sha256 "c08e2ba0049307017bf9d8a63dd2a0dfb96aa0cdeb34ae007776e63eba62a26f"
   license "GPL-2.0-or-later"
 
   livecheck do
     url :stable
-    regex(%r{url=.*?privoxy[._-]v?(\d+(?:\.\d+)+)[._-]stable[._-]src\.t}i)
+    regex(%r{url=.*?/privoxy[._-]v?(\d+(?:\.\d+)+)[._-]stable[._-]src\.t}i)
   end
 
   bottle do
@@ -29,7 +29,7 @@ class Privoxy < Formula
 
   def install
     system "autoreconf", "--force", "--install", "--verbose"
-    system ".configure", "--sysconfdir=#{pkgetc}",
+    system "./configure", "--sysconfdir=#{pkgetc}",
                           "--localstatedir=#{var}",
                           *std_configure_args
     system "make"
@@ -37,20 +37,20 @@ class Privoxy < Formula
   end
 
   service do
-    run [opt_sbin"privoxy", "--no-daemon", etc"privoxyconfig"]
+    run [opt_sbin/"privoxy", "--no-daemon", etc/"privoxy/config"]
     keep_alive true
     working_dir var
-    error_log_path var"logprivoxylogfile"
+    error_log_path var/"log/privoxy/logfile"
   end
 
   test do
     bind_address = "127.0.0.1:#{free_port}"
-    (testpath"config").write("listen-address #{bind_address}\n")
-    pid = spawn sbin"privoxy", "--no-daemon", testpath"config"
+    (testpath/"config").write("listen-address #{bind_address}\n")
+    pid = spawn sbin/"privoxy", "--no-daemon", testpath/"config"
     begin
       sleep 5
-      output = shell_output("curl --head --proxy #{bind_address} https:github.com")
-      assert_match "HTTP1.1 200 Connection established", output
+      output = shell_output("curl --head --proxy #{bind_address} https://github.com")
+      assert_match "HTTP/1.1 200 Connection established", output
     ensure
       Process.kill("SIGINT", pid)
       Process.wait(pid)

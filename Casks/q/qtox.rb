@@ -2,11 +2,11 @@ cask "qtox" do
   version "1.17.6"
   sha256 "f321fad4b5cb5f77ed14f1c4e08790c9acff6113ccf9e18327d463411c24d32e"
 
-  url "https:github.comqToxqToxreleasesdownloadv#{version}qTox.dmg",
-      verified: "github.comqToxqTox"
+  url "https://ghfast.top/https://github.com/qTox/qTox/releases/download/v#{version}/qTox.dmg",
+      verified: "github.com/qTox/qTox/"
   name "qTox"
   desc "Instant messaging and video conferencing app"
-  homepage "https:qtox.github.io"
+  homepage "https://qtox.github.io/"
 
   no_autobump! because: :requires_manual_review
 
@@ -16,8 +16,8 @@ cask "qtox" do
   app "qTox.app"
 
   zap trash: [
-    "~LibraryPreferenceschat.tox.qtox.plist",
-    "~LibrarySaved Application Statechat.tox.qtox.savedState",
+    "~/Library/Preferences/chat.tox.qtox.plist",
+    "~/Library/Saved Application State/chat.tox.qtox.savedState",
   ]
 
   caveats do

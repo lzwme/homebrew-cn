@@ -2,12 +2,12 @@ cask "font-news-cycle" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefonts.git",
-      verified:  "github.comgooglefonts",
+  url "https://github.com/google/fonts.git",
+      verified:  "github.com/google/fonts",
       branch:    "main",
-      only_path: "oflnewscycle"
+      only_path: "ofl/newscycle"
   name "News Cycle"
-  homepage "https:fonts.google.comspecimenNews+Cycle"
+  homepage "https://fonts.google.com/specimen/News+Cycle"
 
   font "NewsCycle-Bold.ttf"
   font "NewsCycle-Regular.ttf"

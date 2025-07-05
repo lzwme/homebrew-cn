@@ -1,13 +1,13 @@
 class TaskAT2 < Formula
   desc "Feature-rich console based todo list manager"
-  homepage "https:taskwarrior.org"
-  url "https:github.comGothenburgBitFactorytaskwarriorreleasesdownloadv2.6.2task-2.6.2.tar.gz"
+  homepage "https://taskwarrior.org/"
+  url "https://ghfast.top/https://github.com/GothenburgBitFactory/taskwarrior/releases/download/v2.6.2/task-2.6.2.tar.gz"
   sha256 "b1d3a7f000cd0fd60640670064e0e001613c9e1cb2242b9b3a9066c78862cfec"
   license "MIT"
 
   livecheck do
     url :stable
-    regex(^v?(2\.\d+\.\d+)$i)
+    regex(/^v?(2\.\d+\.\d+)$/i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -42,14 +42,14 @@ class TaskAT2 < Formula
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 
-    bash_completion.install "scriptsbashtask.sh" => "task"
-    zsh_completion.install "scriptszsh_task"
-    fish_completion.install "scriptsfishtask.fish"
+    bash_completion.install "scripts/bash/task.sh" => "task"
+    zsh_completion.install "scripts/zsh/_task"
+    fish_completion.install "scripts/fish/task.fish"
   end
 
   test do
-    touch testpath".taskrc"
-    system bin"task", "add", "Write", "a", "test"
-    assert_match "Write a test", shell_output("#{bin}task list")
+    touch testpath/".taskrc"
+    system bin/"task", "add", "Write", "a", "test"
+    assert_match "Write a test", shell_output("#{bin}/task list")
   end
 end

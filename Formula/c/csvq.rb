@@ -1,14 +1,14 @@
 class Csvq < Formula
   desc "SQL-like query language for csv"
-  homepage "https:mithrandie.github.iocsvq"
-  url "https:github.commithrandiecsvqarchiverefstagsv1.18.1.tar.gz"
+  homepage "https://mithrandie.github.io/csvq"
+  url "https://ghfast.top/https://github.com/mithrandie/csvq/archive/refs/tags/v1.18.1.tar.gz"
   sha256 "69f98d0d26c055cbe4ebfe2cedf79c744bebafac604ea55fb0081826b1ac7b74"
   license "MIT"
-  head "https:github.commithrandiecsvq.git", branch: "master"
+  head "https://github.com/mithrandie/csvq.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -31,9 +31,9 @@ class Csvq < Formula
   end
 
   test do
-    system bin"csvq", "--version"
+    system bin/"csvq", "--version"
 
-    (testpath"test.csv").write <<~CSV
+    (testpath/"test.csv").write <<~CSV
       a,b,c
       1,2,3
     CSV
@@ -41,7 +41,7 @@ class Csvq < Formula
       a,b
       1,2
     CSV
-    result = shell_output("#{bin}csvq --format csv 'SELECT a, b FROM `test.csv`'")
+    result = shell_output("#{bin}/csvq --format csv 'SELECT a, b FROM `test.csv`'")
     assert_equal expected, result
   end
 end

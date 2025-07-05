@@ -5,15 +5,15 @@ cask "switchhosts" do
   sha256 arm:   "28491e01af40f1f9e4b7032177cdb39b6af1cc92813958c6820c1a1758fda611",
          intel: "71e1ac2fd425a80fc6ad290b2849c3f1bda8fe385d4f3f9cd205ddf0be7ddc32"
 
-  url "https:github.comoldjSwitchHostsreleasesdownloadv#{version.major_minor_patch}SwitchHosts_mac_#{arch}_#{version}.dmg",
-      verified: "github.comoldjSwitchHosts"
+  url "https://ghfast.top/https://github.com/oldj/SwitchHosts/releases/download/v#{version.major_minor_patch}/SwitchHosts_mac_#{arch}_#{version}.dmg",
+      verified: "github.com/oldj/SwitchHosts/"
   name "SwitchHosts"
   desc "App to switch hosts"
-  homepage "https:switchhosts.vercel.app"
+  homepage "https://switchhosts.vercel.app/"
 
   livecheck do
     url :url
-    regex(^SwitchHosts_mac_#{arch}[._-]v?(\d+(?:\.\d+)+)\.dmg$i)
+    regex(/^SwitchHosts_mac_#{arch}[._-]v?(\d+(?:\.\d+)+)\.dmg$/i)
     strategy :github_latest do |json, regex|
       json["assets"]&.map do |asset|
         match = asset["name"]&.match(regex)
@@ -31,9 +31,9 @@ cask "switchhosts" do
   app "SwitchHosts.app"
 
   zap trash: [
-    "~.SwitchHosts",
-    "~LibraryApplication SupportSwitchHosts",
-    "~LibraryPreferencesSwitchHosts.plist",
-    "~LibrarySaved Application StateSwitchHosts.savedState",
+    "~/.SwitchHosts",
+    "~/Library/Application Support/SwitchHosts",
+    "~/Library/Preferences/SwitchHosts.plist",
+    "~/Library/Saved Application State/SwitchHosts.savedState",
   ]
 end

@@ -1,10 +1,10 @@
 class Janet < Formula
   desc "Dynamic language and bytecode vm"
-  homepage "https:janet-lang.org"
-  url "https:github.comjanet-langjanetarchiverefstagsv1.38.0.tar.gz"
+  homepage "https://janet-lang.org"
+  url "https://ghfast.top/https://github.com/janet-lang/janet/archive/refs/tags/v1.38.0.tar.gz"
   sha256 "84dbf7db9c09677618549fb4be23631fd64f527af21051db02753241a2f6f752"
   license "MIT"
-  head "https:github.comjanet-langjanet.git", branch: "master"
+  head "https://github.com/janet-lang/janet.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "3d5aceab74176cbe27ffae5a7fa4f9485c2694989188fcd5f7c4a83ff2a4495d"
@@ -17,18 +17,18 @@ class Janet < Formula
   end
 
   resource "jpm" do
-    url "https:github.comjanet-langjpmarchiverefstagsv1.1.0.tar.gz"
+    url "https://ghfast.top/https://github.com/janet-lang/jpm/archive/refs/tags/v1.1.0.tar.gz"
     sha256 "337c40d9b8c087b920202287b375c2962447218e8e127ce3a5a12e6e47ac6f16"
   end
 
   def syspath
-    HOMEBREW_PREFIX"libjanet"
+    HOMEBREW_PREFIX/"lib/janet"
   end
 
   def install
     # Replace lines in the Makefile that attempt to create the `syspath`
     # directory (which is a directory outside the sandbox).
-    inreplace "Makefile", ^.*?\bmkdir\b.*?\$\(JANET_PATH\).*?$, "#"
+    inreplace "Makefile", /^.*?\bmkdir\b.*?\$\(JANET_PATH\).*?$/, "#"
 
     ENV["PREFIX"] = prefix
     ENV["JANET_BUILD"] = "\\\"homebrew\\\""
@@ -43,27 +43,27 @@ class Janet < Formula
 
     resource("jpm").stage do
       ENV["PREFIX"] = prefix
-      ENV["JANET_BINPATH"] = HOMEBREW_PREFIX"bin"
-      ENV["JANET_HEADERPATH"] = HOMEBREW_PREFIX"includejanet"
-      ENV["JANET_LIBPATH"] = HOMEBREW_PREFIX"lib"
-      ENV["JANET_MANPATH"] = HOMEBREW_PREFIX"sharemanman1"
+      ENV["JANET_BINPATH"] = HOMEBREW_PREFIX/"bin"
+      ENV["JANET_HEADERPATH"] = HOMEBREW_PREFIX/"include/janet"
+      ENV["JANET_LIBPATH"] = HOMEBREW_PREFIX/"lib"
+      ENV["JANET_MANPATH"] = HOMEBREW_PREFIX/"share/man/man1"
       ENV["JANET_MODPATH"] = syspath
-      system bin"janet", "bootstrap.janet"
+      system bin/"janet", "bootstrap.janet"
     end
   end
 
   def caveats
     <<~EOS
       When uninstalling Janet, please delete the following manually:
-      - #{HOMEBREW_PREFIX}libjanet
-      - #{HOMEBREW_PREFIX}binjpm
-      - #{HOMEBREW_PREFIX}sharemanman1jpm.1
+      - #{HOMEBREW_PREFIX}/lib/janet
+      - #{HOMEBREW_PREFIX}/bin/jpm
+      - #{HOMEBREW_PREFIX}/share/man/man1/jpm.1
     EOS
   end
 
   test do
-    janet = bin"janet"
-    jpm = HOMEBREW_PREFIX"binjpm"
+    janet = bin/"janet"
+    jpm = HOMEBREW_PREFIX/"bin/jpm"
     assert_equal "12", shell_output("#{janet} -e '(print (+ 5 7))'").strip
     assert_path_exists jpm, "jpm must exist"
     assert_predicate jpm, :executable?, "jpm must be executable"

@@ -1,7 +1,7 @@
 class Xsimd < Formula
   desc "Modern, portable C++ wrappers for SIMD intrinsics"
-  homepage "https:xsimd.readthedocs.ioenlatest"
-  url "https:github.comxtensor-stackxsimdarchiverefstags13.2.0.tar.gz"
+  homepage "https://xsimd.readthedocs.io/en/latest/"
+  url "https://ghfast.top/https://github.com/xtensor-stack/xsimd/archive/refs/tags/13.2.0.tar.gz"
   sha256 "edd8cd3d548c185adc70321c53c36df41abe64c1fe2c67bc6d93c3ecda82447a"
   license "BSD-3-Clause"
 
@@ -18,12 +18,12 @@ class Xsimd < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~CPP
+    (testpath/"test.cpp").write <<~CPP
       #include <vector>
       #include <type_traits>
 
-      #include "xsimdconfigxsimd_inline.hpp"
-      #include "xsimdmemoryxsimd_alignment.hpp"
+      #include "xsimd/config/xsimd_inline.hpp"
+      #include "xsimd/memory/xsimd_alignment.hpp"
 
       using namespace xsimd;
 
@@ -45,6 +45,6 @@ class Xsimd < Formula
     CPP
 
     system ENV.cxx, "test.cpp", "-std=c++14", "-I#{include}", "-o", "test"
-    system ".test"
+    system "./test"
   end
 end

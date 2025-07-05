@@ -1,10 +1,10 @@
 class Oauth2c < Formula
   desc "User-friendly CLI for OAuth2"
-  homepage "https:github.comcloudentityoauth2c"
-  url "https:github.comcloudentityoauth2carchiverefstagsv1.17.2.tar.gz"
+  homepage "https://github.com/cloudentity/oauth2c"
+  url "https://ghfast.top/https://github.com/cloudentity/oauth2c/archive/refs/tags/v1.17.2.tar.gz"
   sha256 "22c3044011b0d7adff925b4c6266e78f5ebcd7eb1065b5c9239b5c995a9c89b9"
   license "Apache-2.0"
-  head "https:github.comcloudentityoauth2c.git", branch: "master"
+  head "https://github.com/cloudentity/oauth2c.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "fdb852aae32c487c08fb06513333b27f4539d2d67ab250d01c22c17adb8be630"
@@ -22,12 +22,12 @@ class Oauth2c < Formula
 
     system "go", "build", *std_go_args(ldflags:)
 
-    generate_completions_from_executable(bin"oauth2c", "completion")
+    generate_completions_from_executable(bin/"oauth2c", "completion")
   end
 
   test do
     assert_match "\"access_token\":",
-      shell_output("#{bin}oauth2c https:oauth2c.us.authz.cloudentity.iooauth2cdemo " \
+      shell_output("#{bin}/oauth2c https://oauth2c.us.authz.cloudentity.io/oauth2c/demo " \
                    "--client-id cauktionbud6q8ftlqq0 " \
                    "--client-secret HCwQ5uuUWBRHd04ivjX5Kl0Rz8zxMOekeLtqzki0GPc " \
                    "--grant-type client_credentials " \

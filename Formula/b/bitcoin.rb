@@ -1,19 +1,19 @@
 class Bitcoin < Formula
   desc "Decentralized, peer to peer payment network"
-  homepage "https:bitcoincore.org"
-  url "https:bitcoincore.orgbinbitcoin-core-29.0bitcoin-29.0.tar.gz"
+  homepage "https://bitcoincore.org/"
+  url "https://bitcoincore.org/bin/bitcoin-core-29.0/bitcoin-29.0.tar.gz"
   sha256 "882c782c34a3bf2eacd1fae5cdc58b35b869883512f197f7d6dc8f195decfdaa"
   license all_of: [
     "MIT",
-    "BSD-3-Clause", # srccrc32c, srcleveldb
-    "BSL-1.0", # srctinyformat.h
+    "BSD-3-Clause", # src/crc32c, src/leveldb
+    "BSL-1.0", # src/tinyformat.h
     "Sleepycat", # resource("bdb")
   ]
-  head "https:github.combitcoinbitcoin.git", branch: "master"
+  head "https://github.com/bitcoin/bitcoin.git", branch: "master"
 
   livecheck do
-    url "https:bitcoincore.orgendownload"
-    regex(latest version.*?v?(\d+(?:\.\d+)+)i)
+    url "https://bitcoincore.org/en/download/"
+    regex(/latest version.*?v?(\d+(?:\.\d+)+)/i)
   end
 
   bottle do
@@ -41,28 +41,28 @@ class Bitcoin < Formula
   end
 
   # berkeley db should be kept at version 4
-  # https:github.combitcoinbitcoinblobmasterdocbuild-osx.md
-  # https:github.combitcoinbitcoinblobmasterdocbuild-unix.md
+  # https://github.com/bitcoin/bitcoin/blob/master/doc/build-osx.md
+  # https://github.com/bitcoin/bitcoin/blob/master/doc/build-unix.md
   resource "bdb" do
-    url "https:download.oracle.comberkeley-dbdb-4.8.30.NC.tar.gz"
+    url "https://download.oracle.com/berkeley-db/db-4.8.30.NC.tar.gz"
     sha256 "12edc0df75bf9abd7f82f821795bcee50f42cb2e5f76a6a281b85732798364ef"
 
     # Fix build with recent clang
     patch do
-      url "https:raw.githubusercontent.comHomebrewformula-patches4c55b1berkeley-db%404clang.diff"
+      url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/4c55b1/berkeley-db%404/clang.diff"
       sha256 "86111b0965762f2c2611b302e4a95ac8df46ad24925bbb95a1961542a1542e40"
     end
     # Fix -flat_namespace being used on Big Sur and later.
     patch do
-      url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-pre-0.4.2.418-big_sur.diff"
+      url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-pre-0.4.2.418-big_sur.diff"
       sha256 "83af02f2aa2b746bb7225872cab29a253264be49db0ecebb12f841562d9a2923"
       directory "dist"
     end
   end
 
   def install
-    # https:github.combitcoinbitcoinblobmasterdocbuild-unix.md#berkeley-db
-    # https:github.combitcoinbitcoinblobmasterdependspackagesbdb.mk
+    # https://github.com/bitcoin/bitcoin/blob/master/doc/build-unix.md#berkeley-db
+    # https://github.com/bitcoin/bitcoin/blob/master/depends/packages/bdb.mk
     resource("bdb").stage do
       with_env(CFLAGS: ENV.cflags) do
         # Fix compile with newer Clang
@@ -75,7 +75,7 @@ class Bitcoin < Formula
 
         # BerkeleyDB requires you to build everything from the build_unix subdirectory
         cd "build_unix" do
-          system "..distconfigure", *args, *std_configure_args(prefix: buildpath"bdb")
+          system "../dist/configure", *args, *std_configure_args(prefix: buildpath/"bdb")
           system "make", "libdb_cxx-4.8.a", "libdb-4.8.a"
           system "make", "install_lib", "install_include"
         end
@@ -85,29 +85,29 @@ class Bitcoin < Formula
     ENV.runtime_cpu_detection
     args = %W[
       -DWITH_BDB=ON
-      -DBerkeleyDB_INCLUDE_DIR:PATH=#{buildpath}bdbinclude
+      -DBerkeleyDB_INCLUDE_DIR:PATH=#{buildpath}/bdb/include
       -DWITH_ZMQ=ON
     ]
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
-    pkgshare.install "sharerpcauth"
+    pkgshare.install "share/rpcauth"
   end
 
   service do
-    run opt_bin"bitcoind"
+    run opt_bin/"bitcoind"
   end
 
   test do
-    system bin"test_bitcoin"
+    system bin/"test_bitcoin"
 
     # Test that we're using the right version of `berkeley-db`.
     port = free_port
-    bitcoind = spawn bin"bitcoind", "-regtest", "-rpcport=#{port}", "-listen=0", "-datadir=#{testpath}",
+    bitcoind = spawn bin/"bitcoind", "-regtest", "-rpcport=#{port}", "-listen=0", "-datadir=#{testpath}",
                                      "-deprecatedrpc=create_bdb"
     sleep 15
     # This command will fail if we have too new a version.
-    system bin"bitcoin-cli", "-regtest", "-datadir=#{testpath}", "-rpcport=#{port}",
+    system bin/"bitcoin-cli", "-regtest", "-datadir=#{testpath}", "-rpcport=#{port}",
                               "createwallet", "test-wallet", "false", "false", "", "false", "false"
   ensure
     Process.kill "TERM", bitcoind

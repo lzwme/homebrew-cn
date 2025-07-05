@@ -2,10 +2,10 @@ cask "font-matangi" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefontsrawmainoflmatangiMatangi%5Bwght%5D.ttf",
-      verified: "github.comgooglefonts"
+  url "https://github.com/google/fonts/raw/main/ofl/matangi/Matangi%5Bwght%5D.ttf",
+      verified: "github.com/google/fonts/"
   name "Matangi"
-  homepage "https:fonts.google.comspecimenMatangi"
+  homepage "https://fonts.google.com/specimen/Matangi"
 
   font "Matangi[wght].ttf"
 

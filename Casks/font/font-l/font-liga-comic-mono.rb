@@ -2,12 +2,12 @@ cask "font-liga-comic-mono" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comwayoucomic-mono-fontarchiverefsheadsmaster.tar.gz"
+  url "https://ghfast.top/https://github.com/wayou/comic-mono-font/archive/refs/heads/master.tar.gz"
   name "Liga Comic Mono"
-  homepage "https:github.comwayoucomic-mono-font"
+  homepage "https://github.com/wayou/comic-mono-font"
 
-  font "comic-mono-font-masterLigaComicMono.ttf"
-  font "comic-mono-font-masterLigaComicMono-Bold.ttf"
+  font "comic-mono-font-master/LigaComicMono.ttf"
+  font "comic-mono-font-master/LigaComicMono-Bold.ttf"
 
   # No zap stanza required
 end

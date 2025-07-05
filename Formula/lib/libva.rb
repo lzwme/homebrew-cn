@@ -1,7 +1,7 @@
 class Libva < Formula
   desc "Hardware accelerated video processing library"
-  homepage "https:github.comintellibva"
-  url "https:github.comintellibvareleasesdownload2.22.0libva-2.22.0.tar.bz2"
+  homepage "https://github.com/intel/libva"
+  url "https://ghfast.top/https://github.com/intel/libva/releases/download/2.22.0/libva-2.22.0.tar.bz2"
   sha256 "e3da2250654c8d52b3f59f8cb3f3d8e7fb1a2ee64378dbc400fbc5663de7edb8"
   license "MIT"
 
@@ -26,14 +26,14 @@ class Libva < Formula
   depends_on "wayland"
 
   def install
-    system ".configure", "--sysconfdir=#{etc}",
+    system "./configure", "--sysconfdir=#{etc}",
                           "--localstatedir=#{var}",
                           "--disable-silent-rules",
                           "--enable-drm",
                           "--enable-x11",
                           "--disable-glx",
                           "--enable-wayland",
-                          "--with-drivers-path=#{HOMEBREW_PREFIX}libdri",
+                          "--with-drivers-path=#{HOMEBREW_PREFIX}/lib/dri",
                           *std_configure_args
     system "make"
     system "make", "install"
@@ -46,9 +46,9 @@ class Libva < Formula
 
     # We cannot run a functional test without a VA-API driver; however, the
     # drivers have a dependency on `libva` which results in a dependency loop
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include <stddef.h>
-      #include <vava.h>
+      #include <va/va.h>
       int main(int argc, char *argv[]) {
         VADisplay display = NULL;
         vaDisplayIsValid(display);
@@ -56,6 +56,6 @@ class Libva < Formula
       }
     C
     system ENV.cc, "test.c", "-o", "test", "-I#{include}", "-L#{lib}", "-lva"
-    system ".test"
+    system "./test"
   end
 end

@@ -1,10 +1,10 @@
 class Sigi < Formula
   desc "Organizing tool for terminal lovers that hate organizing"
-  homepage "https:sigi-cli.org"
-  url "https:github.comsigi-clisigiarchiverefstagsv3.7.1.tar.gz"
+  homepage "https://sigi-cli.org"
+  url "https://ghfast.top/https://github.com/sigi-cli/sigi/archive/refs/tags/v3.7.1.tar.gz"
   sha256 "fff199ed3b717377af733324fd77568c5e3df8320c53bd26e8bf495d60818e38"
   license "GPL-2.0-only"
-  head "https:github.comsigi-clisigi.git", branch: "core"
+  head "https://github.com/sigi-cli/sigi.git", branch: "core"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "86da61c2b5d794b74bff13924cecb7f610034d1f4f9a25e7eace70b90cc57539"
@@ -26,7 +26,7 @@ class Sigi < Formula
   end
 
   test do
-    system bin"sigi", "-st", "_brew_test", "push", "Hello World"
-    assert_equal "Hello World", shell_output("#{bin}sigi -qt _brew_test pop").strip
+    system bin/"sigi", "-st", "_brew_test", "push", "Hello World"
+    assert_equal "Hello World", shell_output("#{bin}/sigi -qt _brew_test pop").strip
   end
 end

@@ -1,15 +1,15 @@
 class Openldap < Formula
   desc "Open source suite of directory software"
-  homepage "https:www.openldap.orgsoftware"
-  url "https:www.openldap.orgsoftwaredownloadOpenLDAPopenldap-releaseopenldap-2.6.10.tgz"
-  mirror "http:fresh-center.netlinuxmiscopenldap-2.6.10.tgz"
-  mirror "http:fresh-center.netlinuxmisclegacyopenldap-2.6.10.tgz"
+  homepage "https://www.openldap.org/software/"
+  url "https://www.openldap.org/software/download/OpenLDAP/openldap-release/openldap-2.6.10.tgz"
+  mirror "http://fresh-center.net/linux/misc/openldap-2.6.10.tgz"
+  mirror "http://fresh-center.net/linux/misc/legacy/openldap-2.6.10.tgz"
   sha256 "c065f04aad42737aebd60b2fe4939704ac844266bc0aeaa1609f0cad987be516"
   license "OLDAP-2.8"
 
   livecheck do
-    url "https:www.openldap.orgsoftwaredownloadOpenLDAPopenldap-release"
-    regex(href=.*?openldap[._-]v?(\d+(?:\.\d+)+)\.ti)
+    url "https://www.openldap.org/software/download/OpenLDAP/openldap-release/"
+    regex(/href=.*?openldap[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   bottle do
@@ -35,7 +35,7 @@ class Openldap < Formula
 
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
-    url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-big_sur.diff"
+    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-big_sur.diff"
     sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
   end
 
@@ -77,22 +77,22 @@ class Openldap < Formula
       "bsdsoelim"
     end
 
-    system ".configure", *args
+    system "./configure", *args
     system "make", "install", "SOELIM=#{soelim}"
-    (var"run").mkpath
+    (var/"run").mkpath
 
-    # https:github.comHomebrewhomebrew-dupespull452
-    chmod 0755, etc.glob("openldap*")
-    chmod 0755, etc.glob("openldapschema*")
+    # https://github.com/Homebrew/homebrew-dupes/pull/452
+    chmod 0755, etc.glob("openldap/*")
+    chmod 0755, etc.glob("openldap/schema/*")
 
     # Don't embed Cellar references in files installed in `etc`.
     # Passing `build.bottle?` ensures that inreplace failures result in build failures
     # only when building a bottle. This helps avoid problems for users who build from source
     # and may have an old version of these files in `etc`.
-    inreplace etc.glob("openldapslapd.{conf,ldif}"), prefix, opt_prefix, audit_result: build.bottle?
+    inreplace etc.glob("openldap/slapd.{conf,ldif}"), prefix, opt_prefix, audit_result: build.bottle?
   end
 
   test do
-    system sbin"slappasswd", "-s", "test"
+    system sbin/"slappasswd", "-s", "test"
   end
 end

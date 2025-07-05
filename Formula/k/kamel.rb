@@ -1,10 +1,10 @@
 class Kamel < Formula
   desc "Apache Camel K CLI"
-  homepage "https:camel.apache.org"
-  url "https:github.comapachecamel-karchiverefstagsv2.7.0.tar.gz"
+  homepage "https://camel.apache.org/"
+  url "https://ghfast.top/https://github.com/apache/camel-k/archive/refs/tags/v2.7.0.tar.gz"
   sha256 "220e779be71e0e2c9e622346975abc5a70f7dd6b6c60daf3515bbcac46b92383"
   license "Apache-2.0"
-  head "https:github.comapachecamel-k.git", branch: "main"
+  head "https://github.com/apache/camel-k.git", branch: "main"
 
   livecheck do
     url :stable
@@ -23,32 +23,32 @@ class Kamel < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = "-s -w -X github.comapachecamel-kv2pkgutildefaults.GitCommit=#{tap.user}-#{version}"
-    system "go", "build", *std_go_args(ldflags:), ".cmdkamel"
+    ldflags = "-s -w -X github.com/apache/camel-k/v2/pkg/util/defaults.GitCommit=#{tap.user}-#{version}"
+    system "go", "build", *std_go_args(ldflags:), "./cmd/kamel"
 
-    generate_completions_from_executable(bin"kamel", "completion", shells: [:bash, :zsh])
+    generate_completions_from_executable(bin/"kamel", "completion", shells: [:bash, :zsh])
   end
 
   test do
-    run_output = shell_output("#{bin}kamel 2>&1")
+    run_output = shell_output("#{bin}/kamel 2>&1")
     assert_match "Apache Camel K is a lightweight", run_output
 
-    help_output = shell_output("echo $(#{bin}kamel help 2>&1)")
+    help_output = shell_output("echo $(#{bin}/kamel help 2>&1)")
     assert_match "kamel [command] --help", help_output.chomp
 
-    get_output = shell_output("echo $(#{bin}kamel get 2>&1)")
+    get_output = shell_output("echo $(#{bin}/kamel get 2>&1)")
     assert_match "Error: cannot get command client: invalid configuration", get_output
 
-    version_output = shell_output("echo $(#{bin}kamel version 2>&1)")
+    version_output = shell_output("echo $(#{bin}/kamel version 2>&1)")
     assert_match version.to_s, version_output
 
-    reset_output = shell_output("echo $(#{bin}kamel reset 2>&1)")
+    reset_output = shell_output("echo $(#{bin}/kamel reset 2>&1)")
     assert_match "Error: cannot get command client: invalid configuration", reset_output
 
-    rebuild_output = shell_output("echo $(#{bin}kamel rebuild 2>&1)")
+    rebuild_output = shell_output("echo $(#{bin}/kamel rebuild 2>&1)")
     assert_match "Error: cannot get command client: invalid configuration", rebuild_output
 
-    reset_output = shell_output("echo $(#{bin}kamel reset 2>&1)")
+    reset_output = shell_output("echo $(#{bin}/kamel reset 2>&1)")
     assert_match "Error: cannot get command client: invalid configuration", reset_output
   end
 end

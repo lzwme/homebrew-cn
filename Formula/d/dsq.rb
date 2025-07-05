@@ -1,10 +1,10 @@
 class Dsq < Formula
   desc "CLI tool for running SQL queries against JSON, CSV, Excel, Parquet, and more"
-  homepage "https:github.commultiprocessiodsq"
-  url "https:github.commultiprocessiodsqarchiverefstagsv0.23.0.tar.gz"
+  homepage "https://github.com/multiprocessio/dsq"
+  url "https://ghfast.top/https://github.com/multiprocessio/dsq/archive/refs/tags/v0.23.0.tar.gz"
   sha256 "02c923f9089399bf66809bedcb3fec27022f11829e0ed2ac9c7ff87f72e85d8d"
   license "Apache-2.0"
-  head "https:github.commultiprocessiodsq.git", branch: "main"
+  head "https://github.com/multiprocessio/dsq.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "b0d6ada6a0a2844f2d0a007d2772b07f7409ca98db78299f4b27de2f6a19a44d"
@@ -26,12 +26,12 @@ class Dsq < Formula
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w -X main.Version=#{version}")
 
-    pkgshare.install "testdatauserdata.json"
+    pkgshare.install "testdata/userdata.json"
   end
 
   test do
     query = "\"SELECT count(*) as c FROM {} WHERE State = 'Maryland'\""
-    output = shell_output("#{bin}dsq #{pkgshare}userdata.json #{query}")
+    output = shell_output("#{bin}/dsq #{pkgshare}/userdata.json #{query}")
     assert_match "[{\"c\":19}]", output
   end
 end

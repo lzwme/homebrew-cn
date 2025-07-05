@@ -1,17 +1,17 @@
 class OpenSceneGraph < Formula
   desc "3D graphics toolkit"
-  homepage "https:github.comopenscenegraphOpenSceneGraph"
+  homepage "https://github.com/openscenegraph/OpenSceneGraph"
   license "LGPL-2.1-or-later" => { with: "WxWindows-exception-3.1" }
   revision 2
-  head "https:github.comopenscenegraphOpenSceneGraph.git", branch: "master"
+  head "https://github.com/openscenegraph/OpenSceneGraph.git", branch: "master"
 
   stable do
-    url "https:github.comopenscenegraphOpenSceneGrapharchiverefstagsOpenSceneGraph-3.6.5.tar.gz"
+    url "https://ghfast.top/https://github.com/openscenegraph/OpenSceneGraph/archive/refs/tags/OpenSceneGraph-3.6.5.tar.gz"
     sha256 "aea196550f02974d6d09291c5d83b51ca6a03b3767e234a8c0e21322927d1e12"
 
     # patch to fix build from source when asio library is present
     patch do
-      url "https:github.comopenscenegraphOpenSceneGraphcommit21f5a0adfb57dc4c28b696e93beface45de28194.patch?full_index=1"
+      url "https://github.com/openscenegraph/OpenSceneGraph/commit/21f5a0adfb57dc4c28b696e93beface45de28194.patch?full_index=1"
       sha256 "d1e4e33b50ab006420417c7998d7e0d43d0349e6f407b5eb92a3fc6636523fbf"
     end
   end
@@ -59,7 +59,7 @@ class OpenSceneGraph < Formula
   end
 
   def install
-    # Fix "fatal error: 'osavailability.h' file not found" on 10.11 and
+    # Fix "fatal error: 'os/availability.h' file not found" on 10.11 and
     # "error: expected function body after function declarator" on 10.12
     # Requires the CLT to be the active developer directory if Xcode is installed
     ENV["SDKROOT"] = MacOS.sdk_path if OS.mac? && MacOS.version <= :sierra
@@ -92,13 +92,13 @@ class OpenSceneGraph < Formula
     system "cmake", "--build", "build", "--target", "doc_openscenegraph"
     system "cmake", "--install", "build"
 
-    doc.install Dir["#{prefix}docOpenSceneGraphReferenceDocs*"]
+    doc.install Dir["#{prefix}/doc/OpenSceneGraphReferenceDocs/*"]
   end
 
   test do
-    (testpath"test.cpp").write <<~CPP
+    (testpath/"test.cpp").write <<~CPP
       #include <iostream>
-      #include <osgVersion>
+      #include <osg/Version>
       using namespace std;
       int main() {
           cout << osgGetVersion() << endl;
@@ -106,6 +106,6 @@ class OpenSceneGraph < Formula
       }
     CPP
     system ENV.cxx, "test.cpp", "-I#{include}", "-L#{lib}", "-losg", "-o", "test"
-    assert_match version.to_s, shell_output(".test")
+    assert_match version.to_s, shell_output("./test")
   end
 end

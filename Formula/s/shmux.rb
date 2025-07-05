@@ -1,7 +1,7 @@
 class Shmux < Formula
   desc "Execute the same command on many hosts in parallel"
-  homepage "https:github.comshmuxshmux"
-  url "https:github.comshmuxshmuxarchiverefstagsv1.0.3.tar.gz"
+  homepage "https://github.com/shmux/shmux"
+  url "https://ghfast.top/https://github.com/shmux/shmux/archive/refs/tags/v1.0.3.tar.gz"
   sha256 "c9f8863e2550e23e633cf5fc7a9c4c52d287059f424ef78aba6ecd98390fb9ab"
   license "BSD-3-Clause"
 
@@ -28,11 +28,11 @@ class Shmux < Formula
   uses_from_macos "ncurses"
 
   def install
-    system ".configure", "--prefix=#{prefix}"
+    system "./configure", "--prefix=#{prefix}"
     system "make", "install"
   end
 
   test do
-    system bin"shmux", "-h"
+    system bin/"shmux", "-h"
   end
 end

@@ -1,16 +1,16 @@
 class Flex < Formula
   desc "Fast Lexical Analyzer, generates Scanners (tokenizers)"
-  homepage "https:github.comwestesflex"
+  homepage "https://github.com/westes/flex"
   license "BSD-2-Clause"
   revision 2
 
   stable do
-    url "https:github.comwestesflexreleasesdownloadv2.6.4flex-2.6.4.tar.gz"
+    url "https://ghfast.top/https://github.com/westes/flex/releases/download/v2.6.4/flex-2.6.4.tar.gz"
     sha256 "e87aae032bf07c26f85ac0ed3250998c37621d95f8bd748b31f15b33c45ee995"
 
     # Fix -flat_namespace being used on Big Sur and later.
     patch do
-      url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-big_sur.diff"
+      url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-big_sur.diff"
       sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
     end
   end
@@ -34,12 +34,12 @@ class Flex < Formula
   end
 
   head do
-    url "https:github.comwestesflex.git", branch: "master"
+    url "https://github.com/westes/flex.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
 
-    # https:github.comwestesflexissues294
+    # https://github.com/westes/flex/issues/294
     depends_on "gnu-sed" => :build
 
     depends_on "libtool" => :build
@@ -59,16 +59,16 @@ class Flex < Formula
 
   def install
     if build.head?
-      ENV.prepend_path "PATH", Formula["gnu-sed"].opt_libexec"gnubin"
+      ENV.prepend_path "PATH", Formula["gnu-sed"].opt_libexec/"gnubin"
 
-      system ".autogen.sh"
+      system "./autogen.sh"
     end
 
     # Fix segmentation fault during install on Ubuntu 18.04 (caused by glibc 2.26+),
     # remove with the next release
     ENV.append "CPPFLAGS", "-D_GNU_SOURCE" if OS.linux?
 
-    system ".configure", *std_configure_args,
+    system "./configure", *std_configure_args,
                           "--disable-silent-rules",
                           "--enable-shared"
     system "make", "install"
@@ -76,7 +76,7 @@ class Flex < Formula
   end
 
   test do
-    (testpath"test.flex").write <<~FLEX
+    (testpath/"test.flex").write <<~FLEX
       CHAR   [a-z][A-Z]
       %%
       {CHAR}+      printf("%s", yytext);
@@ -88,9 +88,9 @@ class Flex < Formula
         yylex();
       }
     FLEX
-    system bin"flex", "test.flex"
+    system bin/"flex", "test.flex"
     system ENV.cc, "lex.yy.c", "-L#{lib}", "-lfl", "-o", "test"
-    assert_equal <<~EOS, pipe_output(".test", "Hello World\n")
+    assert_equal <<~EOS, pipe_output("./test", "Hello World\n")
       Hello
       World
     EOS

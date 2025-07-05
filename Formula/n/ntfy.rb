@@ -1,10 +1,10 @@
 class Ntfy < Formula
-  desc "Send push notifications to your phone or desktop via PUTPOST"
-  homepage "https:ntfy.sh"
-  url "https:github.combinwiederhierntfyarchiverefstagsv2.12.0.tar.gz"
+  desc "Send push notifications to your phone or desktop via PUT/POST"
+  homepage "https://ntfy.sh/"
+  url "https://ghfast.top/https://github.com/binwiederhier/ntfy/archive/refs/tags/v2.12.0.tar.gz"
   sha256 "210b7409894aa51719077da6a771c82d460bd710a52a527cf52694166f6103d0"
   license any_of: ["Apache-2.0", "GPL-2.0-only"]
-  head "https:github.combinwiederhierntfy.git", branch: "main"
+  head "https://github.com/binwiederhier/ntfy.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "803f169dae72c461a065cf679125a5bf016f38dbe60e7ec836a3e9228696492a"
@@ -27,10 +27,10 @@ class Ntfy < Formula
     require "securerandom"
     random_topic = SecureRandom.hex(6)
 
-    ntfy_in = shell_output("#{bin}ntfy publish #{random_topic} 'Test message from HomeBrew during build'")
+    ntfy_in = shell_output("#{bin}/ntfy publish #{random_topic} 'Test message from HomeBrew during build'")
     ohai ntfy_in
     sleep 5
-    ntfy_out = shell_output("#{bin}ntfy subscribe --poll #{random_topic}")
+    ntfy_out = shell_output("#{bin}/ntfy subscribe --poll #{random_topic}")
     ohai ntfy_out
     assert_match ntfy_in, ntfy_out
   end

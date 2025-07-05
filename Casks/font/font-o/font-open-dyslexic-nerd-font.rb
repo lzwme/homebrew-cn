@@ -2,9 +2,9 @@ cask "font-open-dyslexic-nerd-font" do
   version "3.4.0"
   sha256 "d864d31b449a005ef187296b3caed675ab6e7077ea756fba105eda543ed1c895"
 
-  url "https:github.comryanoasisnerd-fontsreleasesdownloadv#{version}OpenDyslexic.zip"
+  url "https://ghfast.top/https://github.com/ryanoasis/nerd-fonts/releases/download/v#{version}/OpenDyslexic.zip"
   name "OpenDyslexic Nerd Font families (OpenDyslexic)"
-  homepage "https:github.comryanoasisnerd-fonts"
+  homepage "https://github.com/ryanoasis/nerd-fonts"
 
   livecheck do
     url :url

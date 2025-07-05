@@ -2,9 +2,9 @@ cask "font-inconsolata-lgc-nerd-font" do
   version "3.4.0"
   sha256 "49d865259e5a85620c1805810ab40bd366d199519117649651a010b3b2f0660f"
 
-  url "https:github.comryanoasisnerd-fontsreleasesdownloadv#{version}InconsolataLGC.zip"
+  url "https://ghfast.top/https://github.com/ryanoasis/nerd-fonts/releases/download/v#{version}/InconsolataLGC.zip"
   name "Inconsolata LGC Nerd Font (Inconsolata LGC)"
-  homepage "https:github.comryanoasisnerd-fonts"
+  homepage "https://github.com/ryanoasis/nerd-fonts"
 
   livecheck do
     url :url

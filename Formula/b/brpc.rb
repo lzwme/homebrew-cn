@@ -1,10 +1,10 @@
 class Brpc < Formula
   desc "Better RPC framework"
-  homepage "https:brpc.apache.org"
-  url "https:dlcdn.apache.orgbrpc1.13.0apache-brpc-1.13.0-src.tar.gz"
+  homepage "https://brpc.apache.org/"
+  url "https://dlcdn.apache.org/brpc/1.13.0/apache-brpc-1.13.0-src.tar.gz"
   sha256 "106f6be8bbc6038b975f611c0e7a862a1c3ea3f8c82ec83d3915790a1ca7f5d8"
   license "Apache-2.0"
-  head "https:github.comapachebrpc.git", branch: "master"
+  head "https://github.com/apache/brpc.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "5ee83db56a2bd4aa55b27f88d8df6754acad87376e96b599c8c12fb1fd346acc"
@@ -29,15 +29,15 @@ class Brpc < Formula
   end
 
   def install
-    inreplace "CMakeLists.txt", "usrlocaloptopenssl",
+    inreplace "CMakeLists.txt", "/usr/local/opt/openssl",
                                 Formula["openssl@3"].opt_prefix
 
     # `leveldb` links with `tcmalloc`, so should `brpc` and its dependents.
-    # Fixes: srctcmalloc.cc:300] Attempt to free invalid pointer 0x143e0d610
+    # Fixes: src/tcmalloc.cc:300] Attempt to free invalid pointer 0x143e0d610
     inreplace "CMakeLists.txt", "-DNO_TCMALLOC", ""
     tcmalloc_ldflags = "-L#{Formula["gperftools"].opt_lib} -ltcmalloc"
     ENV.append "LDFLAGS", tcmalloc_ldflags
-    inreplace "cmakebrpc.pc.in", ^Libs:(.*)$, "Libs:\\1 #{tcmalloc_ldflags}"
+    inreplace "cmake/brpc.pc.in", /^Libs:(.*)$/, "Libs:\\1 #{tcmalloc_ldflags}"
 
     args = %w[
       -DBUILD_SHARED_LIBS=ON
@@ -52,24 +52,24 @@ class Brpc < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~CPP
+    (testpath/"test.cpp").write <<~CPP
       #include <iostream>
 
-      #include <brpcchannel.h>
-      #include <brpccontroller.h>
-      #include <butillogging.h>
+      #include <brpc/channel.h>
+      #include <brpc/controller.h>
+      #include <butil/logging.h>
 
       int main() {
         brpc::Channel channel;
         brpc::ChannelOptions options;
         options.protocol = "http";
         options.timeout_ms = 1000;
-        if (channel.Init("https:brew.sh", &options) != 0) {
+        if (channel.Init("https://brew.sh/", &options) != 0) {
           LOG(ERROR) << "Failed to initialize channel";
           return 1;
         }
         brpc::Controller cntl;
-        cntl.http_request().uri() = "https:brew.sh";
+        cntl.http_request().uri() = "https://brew.sh/";
         channel.CallMethod(nullptr, &cntl, nullptr, nullptr, nullptr);
         if (cntl.Failed()) {
           LOG(ERROR) << cntl.ErrorText();
@@ -97,6 +97,6 @@ class Brpc < Formula
     flags += shell_output("pkgconf --libs absl_log_internal_check_op").chomp.split if OS.linux?
 
     system ENV.cxx, "-std=c++17", "test.cpp", "-o", "test", *flags
-    assert_equal "200", shell_output(".test")
+    assert_equal "200", shell_output("./test")
   end
 end

@@ -1,10 +1,10 @@
 class G2 < Formula
   desc "Friendly git client"
-  homepage "https:orefalo.github.iog2"
-  url "https:github.comorefalog2archiverefstagsv1.1.tar.gz"
+  homepage "https://orefalo.github.io/g2/"
+  url "https://ghfast.top/https://github.com/orefalo/g2/archive/refs/tags/v1.1.tar.gz"
   sha256 "bc534a4cb97be200ba4e3cc27510d8739382bb4c574e3cf121f157c6415bdfba"
   license "MIT"
-  head "https:github.comorefalog2.git", branch: "master"
+  head "https://github.com/orefalo/g2.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -20,11 +20,11 @@ class G2 < Formula
   def caveats
     <<~EOS
       To complete the installation:
-        . #{prefix}g2-install.sh
+        . #{prefix}/g2-install.sh
 
-      NOTE: This will install a new ~.gitconfig, backing up any existing
+      NOTE: This will install a new ~/.gitconfig, backing up any existing
       file first. For more information view:
-        #{prefix}README.md
+        #{prefix}/README.md
     EOS
   end
 end

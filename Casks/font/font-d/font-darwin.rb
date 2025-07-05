@@ -2,9 +2,9 @@ cask "font-darwin" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comtopological-modular-formsDarwin-TypefacerawmainoutputDarwinSerif-Regular.otf"
+  url "https://github.com/topological-modular-forms/Darwin-Typeface/raw/main/output/DarwinSerif-Regular.otf"
   name "Darwin"
-  homepage "https:github.comtopological-modular-formsDarwin-Typeface"
+  homepage "https://github.com/topological-modular-forms/Darwin-Typeface"
 
   font "DarwinSerif-Regular.otf"
 

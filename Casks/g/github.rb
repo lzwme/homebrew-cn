@@ -16,40 +16,40 @@ cask "github" do
            intel: "f20967d663181314dd8be150f56a9071e56e4431eb7d54b43c7fc3d31d825310"
 
     livecheck do
-      url "https:central.github.comdeploymentsdesktopdesktoplatest#{platform}"
-      regex(%r{(\d+(?:\.\d+)[^]*)GitHubDesktop[._-]#{arch}\.zip}i)
+      url "https://central.github.com/deployments/desktop/desktop/latest/#{platform}"
+      regex(%r{(\d+(?:\.\d+)[^/]*)/GitHubDesktop[._-]#{arch}\.zip}i)
       strategy :header_match
     end
   end
 
-  url "https:desktop.githubusercontent.comreleases#{version}GitHubDesktop-#{arch}.zip",
-      verified: "desktop.githubusercontent.com"
+  url "https://desktop.githubusercontent.com/releases/#{version}/GitHubDesktop-#{arch}.zip",
+      verified: "desktop.githubusercontent.com/"
   name "GitHub Desktop"
   desc "Desktop client for GitHub repositories"
-  homepage "https:desktop.github.com"
+  homepage "https://desktop.github.com/"
 
   auto_updates true
   conflicts_with cask: "github@beta"
   depends_on macos: ">= :high_sierra"
 
   app "GitHub Desktop.app"
-  binary "#{appdir}GitHub Desktop.appContentsResourcesappstaticgithub.sh", target: "github"
+  binary "#{appdir}/GitHub Desktop.app/Contents/Resources/app/static/github.sh", target: "github"
 
   zap trash: [
-        "~LibraryApplication Supportcom.apple.sharedfilelistcom.apple.LSSharedFileList.ApplicationRecentDocumentscom.github.GitHubClient.sfl*",
-        "~LibraryApplication Supportcom.github.GitHubClient",
-        "~LibraryApplication Supportcom.github.GitHubClient.ShipIt",
-        "~LibraryApplication SupportGitHub Desktop",
-        "~LibraryApplication SupportShipIt_stderr.log",
-        "~LibraryApplication SupportShipIt_stdout.log",
-        "~LibraryCachescom.github.GitHubClient",
-        "~LibraryCachescom.github.GitHubClient.ShipIt",
-        "~LibraryHTTPStoragescom.github.GitHubClient",
-        "~LibraryLogsGitHub Desktop",
-        "~LibraryPreferencesByHostcom.github.GitHubClient.ShipIt.*.plist",
-        "~LibraryPreferencescom.github.GitHubClient.helper.plist",
-        "~LibraryPreferencescom.github.GitHubClient.plist",
-        "~LibrarySaved Application Statecom.github.GitHubClient.savedState",
+        "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.github.GitHubClient.sfl*",
+        "~/Library/Application Support/com.github.GitHubClient",
+        "~/Library/Application Support/com.github.GitHubClient.ShipIt",
+        "~/Library/Application Support/GitHub Desktop",
+        "~/Library/Application Support/ShipIt_stderr.log",
+        "~/Library/Application Support/ShipIt_stdout.log",
+        "~/Library/Caches/com.github.GitHubClient",
+        "~/Library/Caches/com.github.GitHubClient.ShipIt",
+        "~/Library/HTTPStorages/com.github.GitHubClient",
+        "~/Library/Logs/GitHub Desktop",
+        "~/Library/Preferences/ByHost/com.github.GitHubClient.ShipIt.*.plist",
+        "~/Library/Preferences/com.github.GitHubClient.helper.plist",
+        "~/Library/Preferences/com.github.GitHubClient.plist",
+        "~/Library/Saved Application State/com.github.GitHubClient.savedState",
       ],
-      rmdir: "~.configgit"
+      rmdir: "~/.config/git"
 end

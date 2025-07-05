@@ -1,13 +1,13 @@
 class Joern < Formula
   desc "Open-source code analysis platform based on code property graphs"
-  homepage "https:joern.io"
-  url "https:github.comjoerniojoernarchiverefstagsv4.0.380.tar.gz"
+  homepage "https://joern.io/"
+  url "https://ghfast.top/https://github.com/joernio/joern/archive/refs/tags/v4.0.380.tar.gz"
   sha256 "8c4f29b04f3eca831b288fc386da376dc69b14c0760de79ccbcfe9a25b62767b"
   license "Apache-2.0"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
     throttle 10
   end
 
@@ -32,25 +32,25 @@ class Joern < Formula
   def install
     system "sbt", "stage"
 
-    cd "joern-clitargetuniversalstage" do
-      rm(Dir["***.bat"])
+    cd "joern-cli/target/universal/stage" do
+      rm(Dir["**/*.bat"])
       libexec.install Pathname.pwd.children
     end
 
     # Remove incompatible pre-built binaries
     os = OS.mac? ? "macos" : OS.kernel_name.downcase
     astgen_suffix = Hardware::CPU.intel? ? [os] : ["#{os}-#{Hardware::CPU.arch}", "#{os}-arm"]
-    libexec.glob("frontends{csharp,go,js}src2cpgbinastgen{dotnet,go,}astgen-*").each do |f|
+    libexec.glob("frontends/{csharp,go,js}src2cpg/bin/astgen/{dotnet,go,}astgen-*").each do |f|
       f.unlink unless f.basename.to_s.end_with?(*astgen_suffix)
     end
 
     libexec.children.select { |f| f.file? && f.executable? }.each do |f|
-      (binf.basename).write_env_script f, Language::Java.overridable_java_home_env
+      (bin/f.basename).write_env_script f, Language::Java.overridable_java_home_env
     end
   end
 
   test do
-    (testpath"test.cpp").write <<~CPP
+    (testpath/"test.cpp").write <<~CPP
       #include <iostream>
       void print_number(int x) {
         std::cout << x << std::endl;
@@ -62,7 +62,7 @@ class Joern < Formula
       }
     CPP
 
-    assert_match "Parsing code", shell_output("#{bin}joern-parse test.cpp")
-    assert_path_exists testpath"cpg.bin"
+    assert_match "Parsing code", shell_output("#{bin}/joern-parse test.cpp")
+    assert_path_exists testpath/"cpg.bin"
   end
 end

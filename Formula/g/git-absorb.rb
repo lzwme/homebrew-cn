@@ -1,10 +1,10 @@
 class GitAbsorb < Formula
   desc "Automatic git commit --fixup"
-  homepage "https:github.comtummychowgit-absorb"
-  url "https:github.comtummychowgit-absorbarchiverefstags0.8.0.tar.gz"
+  homepage "https://github.com/tummychow/git-absorb"
+  url "https://ghfast.top/https://github.com/tummychow/git-absorb/archive/refs/tags/0.8.0.tar.gz"
   sha256 "9ed6fef801fbfeb7110744cac38ae5b3387d8832749ae20077b9139d032211f1"
   license "BSD-3-Clause"
-  head "https:github.comtummychowgit-absorb.git", branch: "master"
+  head "https://github.com/tummychow/git-absorb.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "bbfc1e3dfbfcda686df0aea15468eec4549ea36fd82454397e5b549e8f867b42"
@@ -26,7 +26,7 @@ class GitAbsorb < Formula
 
     system "cargo", "install", *std_cargo_args
 
-    generate_completions_from_executable(bin"git-absorb", "--gen-completions")
+    generate_completions_from_executable(bin/"git-absorb", "--gen-completions")
     cd "Documentation" do
       system "asciidoctor", "-b", "manpage", "git-absorb.adoc"
       man1.install "git-absorb.1"
@@ -34,25 +34,25 @@ class GitAbsorb < Formula
   end
 
   test do
-    (testpath".gitconfig").write <<~EOS
+    (testpath/".gitconfig").write <<~EOS
       [user]
         name = Real Person
         email = notacat@hotmail.cat
     EOS
     system "git", "init"
-    (testpath"test").write "foo"
+    (testpath/"test").write "foo"
     system "git", "add", "test"
     system "git", "commit", "--message", "Initial commit"
 
-    (testpath"test").delete
-    (testpath"test").write "bar"
+    (testpath/"test").delete
+    (testpath/"test").write "bar"
     system "git", "add", "test"
     system "git", "absorb"
 
-    linkage_with_libgit2 = (bin"git-absorb").dynamically_linked_libraries.any? do |dll|
+    linkage_with_libgit2 = (bin/"git-absorb").dynamically_linked_libraries.any? do |dll|
       next false unless dll.start_with?(HOMEBREW_PREFIX.to_s)
 
-      File.realpath(dll) == (Formula["libgit2"].opt_libshared_library("libgit2")).realpath.to_s
+      File.realpath(dll) == (Formula["libgit2"].opt_lib/shared_library("libgit2")).realpath.to_s
     end
 
     assert linkage_with_libgit2, "No linkage with libgit2! Cargo is likely using a vendored version."

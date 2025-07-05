@@ -2,12 +2,12 @@ cask "font-sahitya" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefonts.git",
-      verified:  "github.comgooglefonts",
+  url "https://github.com/google/fonts.git",
+      verified:  "github.com/google/fonts",
       branch:    "main",
-      only_path: "oflsahitya"
+      only_path: "ofl/sahitya"
   name "Sahitya"
-  homepage "https:fonts.google.comspecimenSahitya"
+  homepage "https://fonts.google.com/specimen/Sahitya"
 
   font "Sahitya-Bold.ttf"
   font "Sahitya-Regular.ttf"

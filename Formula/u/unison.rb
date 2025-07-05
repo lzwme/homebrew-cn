@@ -1,16 +1,16 @@
 class Unison < Formula
   desc "File synchronization tool"
-  homepage "https:www.cis.upenn.edu~bcpierceunison"
-  url "https:github.combcpierce00unisonarchiverefstagsv2.53.7.tar.gz"
+  homepage "https://www.cis.upenn.edu/~bcpierce/unison/"
+  url "https://ghfast.top/https://github.com/bcpierce00/unison/archive/refs/tags/v2.53.7.tar.gz"
   sha256 "a259537cef465c4806d6c1638c382620db2dd395ae42a0dd2efa3ba92712bed5"
   license "GPL-3.0-or-later"
-  head "https:github.combcpierce00unison.git", branch: "master"
+  head "https://github.com/bcpierce00/unison.git", branch: "master"
 
   # The "latest" release on GitHub sometimes points to unstable versions (e.g.,
   # release candidates), so we check the Git tags instead.
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -28,16 +28,16 @@ class Unison < Formula
   conflicts_with cask: "unison"
 
   def install
-    system "make", "srcunison"
-    bin.install "srcunison"
+    system "make", "src/unison"
+    bin.install "src/unison"
     # unison-fsmonitor is built just for Linux targets
     if OS.linux?
-      system "make", "srcunison-fsmonitor"
-      bin.install "srcunison-fsmonitor"
+      system "make", "src/unison-fsmonitor"
+      bin.install "src/unison-fsmonitor"
     end
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}unison -version")
+    assert_match version.to_s, shell_output("#{bin}/unison -version")
   end
 end

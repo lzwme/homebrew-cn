@@ -1,7 +1,7 @@
 class TechnitiumDns < Formula
   desc "Self host a DNS server for privacy & security"
-  homepage "https:technitium.comdns"
-  url "https:github.comTechnitiumSoftwareDnsServerarchiverefstagsv13.6.0.tar.gz"
+  homepage "https://technitium.com/dns/"
+  url "https://ghfast.top/https://github.com/TechnitiumSoftware/DnsServer/archive/refs/tags/v13.6.0.tar.gz"
   sha256 "37ade6327dc63700b4a63db6347d3174112d8ffcb817645073f7e5e114e76400"
   license "GPL-3.0-or-later"
 
@@ -17,7 +17,7 @@ class TechnitiumDns < Formula
   end
 
   # TODO: update dotnet version
-  # Issue ref: https:github.comTechnitiumSoftwareDnsServerissues1303
+  # Issue ref: https://github.com/TechnitiumSoftware/DnsServer/issues/1303
   depends_on "dotnet@8"
   depends_on "libmsquic"
   depends_on "technitium-library"
@@ -38,25 +38,25 @@ class TechnitiumDns < Formula
       --use-current-runtime
     ]
 
-    inreplace Dir.glob("***.csproj"),
+    inreplace Dir.glob("**/*.csproj"),
               "..\\..\\TechnitiumLibrary\\bin",
-              Formula["technitium-library"].libexec.to_s.tr("", "\\"),
+              Formula["technitium-library"].libexec.to_s.tr("/", "\\"),
               audit_result: false
-    system "dotnet", "publish", "DnsServerAppDnsServerApp.csproj", *args
+    system "dotnet", "publish", "DnsServerApp/DnsServerApp.csproj", *args
 
-    (bin"technitium-dns").write <<~SHELL
-      #!binbash
+    (bin/"technitium-dns").write <<~SHELL
+      #!/bin/bash
       export DYLD_FALLBACK_LIBRARY_PATH=#{Formula["libmsquic"].opt_lib}
       export DOTNET_ROOT=#{dotnet.opt_libexec}
-      exec #{dotnet.opt_libexec}dotnet #{libexec}DnsServerApp.dll #{etc}technitium-dns
+      exec #{dotnet.opt_libexec}/dotnet #{libexec}/DnsServerApp.dll #{etc}/technitium-dns
     SHELL
   end
 
   service do
-    run opt_bin"technitium-dns"
+    run opt_bin/"technitium-dns"
     keep_alive true
-    error_log_path var"logtechnitium-dns.log"
-    log_path var"logtechnitium-dns.log"
+    error_log_path var/"log/technitium-dns.log"
+    log_path var/"log/technitium-dns.log"
     working_dir var
   end
 
@@ -65,7 +65,7 @@ class TechnitiumDns < Formula
     tmpdir = Pathname.new(Dir.mktmpdir)
     # Start the DNS server
     require "pty"
-    PTY.spawn("#{dotnet.opt_libexec}dotnet #{libexec}DnsServerApp.dll #{tmpdir}") do |r, _w, pid|
+    PTY.spawn("#{dotnet.opt_libexec}/dotnet #{libexec}/DnsServerApp.dll #{tmpdir}") do |r, _w, pid|
       # Give the server time to start
       sleep 2
       # Use `dig` to resolve "localhost"

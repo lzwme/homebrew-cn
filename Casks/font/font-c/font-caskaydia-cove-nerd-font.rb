@@ -2,9 +2,9 @@ cask "font-caskaydia-cove-nerd-font" do
   version "3.4.0"
   sha256 "8d80993351a0a6b69a998e5c72060b7200c4f1af1f32b3ad4d8cad27c245940e"
 
-  url "https:github.comryanoasisnerd-fontsreleasesdownloadv#{version}CascadiaCode.zip"
+  url "https://ghfast.top/https://github.com/ryanoasis/nerd-fonts/releases/download/v#{version}/CascadiaCode.zip"
   name "CaskaydiaCove Nerd Font (Cascadia Code)"
-  homepage "https:github.comryanoasisnerd-fonts"
+  homepage "https://github.com/ryanoasis/nerd-fonts"
 
   livecheck do
     url :url

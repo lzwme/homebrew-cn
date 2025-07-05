@@ -2,10 +2,10 @@ cask "multi" do
   version "3.0.1"
   sha256 "6df8a9f8db0b69733d91428eba815928bb3b65ec526a7c714de9d8e95a03e2f8"
 
-  url "https:github.comhkgumbsmultireleasesdownloadv#{version}Multi.#{version}.dmg"
+  url "https://ghfast.top/https://github.com/hkgumbs/multi/releases/download/v#{version}/Multi.#{version}.dmg"
   name "Multi"
   desc "Create apps from groups of websites"
-  homepage "https:github.comhkgumbsmulti"
+  homepage "https://github.com/hkgumbs/multi"
 
   no_autobump! because: :requires_manual_review
 
@@ -14,9 +14,9 @@ cask "multi" do
   app "Multi.app"
 
   zap trash: [
-    "~LibraryCachesllc.gumbs.multi",
-    "~LibraryCachesllc.gumbs.multi.*",
-    "~LibraryPreferencesllc.gumbs.multi.*.plist",
-    "~LibrarySaved Application Statellc.gumbs.multi.savedState",
+    "~/Library/Caches/llc.gumbs.multi",
+    "~/Library/Caches/llc.gumbs.multi.*",
+    "~/Library/Preferences/llc.gumbs.multi.*.plist",
+    "~/Library/Saved Application State/llc.gumbs.multi.savedState",
   ]
 end

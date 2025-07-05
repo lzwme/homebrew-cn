@@ -2,12 +2,12 @@ cask "font-fragment-mono" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefonts.git",
-      verified:  "github.comgooglefonts",
+  url "https://github.com/google/fonts.git",
+      verified:  "github.com/google/fonts",
       branch:    "main",
-      only_path: "oflfragmentmono"
+      only_path: "ofl/fragmentmono"
   name "Fragment Mono"
-  homepage "https:fonts.google.comspecimenFragment+Mono"
+  homepage "https://fonts.google.com/specimen/Fragment+Mono"
 
   font "FragmentMono-Italic.ttf"
   font "FragmentMono-Regular.ttf"

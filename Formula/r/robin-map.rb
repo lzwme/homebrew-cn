@@ -1,7 +1,7 @@
 class RobinMap < Formula
   desc "C++ implementation of a fast hash map and hash set"
-  homepage "https:github.comTessilrobin-map"
-  url "https:github.comTessilrobin-maparchiverefstagsv1.4.0.tar.gz"
+  homepage "https://github.com/Tessil/robin-map"
+  url "https://ghfast.top/https://github.com/Tessil/robin-map/archive/refs/tags/v1.4.0.tar.gz"
   sha256 "7930dbf9634acfc02686d87f615c0f4f33135948130b8922331c16d90a03250c"
   license "MIT"
 
@@ -18,7 +18,7 @@ class RobinMap < Formula
   end
 
   test do
-    (testpath"CMakeLists.txt").write <<~CMAKE
+    (testpath/"CMakeLists.txt").write <<~CMAKE
       cmake_minimum_required(VERSION 3.12)
       project(robinmap_test)
 
@@ -31,9 +31,9 @@ class RobinMap < Formula
 
       target_link_libraries(robinmap_test PRIVATE tsl::robin_map)
     CMAKE
-    (testpath"main.cpp").write <<~CPP
+    (testpath/"main.cpp").write <<~CPP
       #include <iostream>
-      #include <tslrobin_map.h>
+      #include <tsl/robin_map.h>
 
       int main() {
           tsl::robin_map<int, std::string> map;
@@ -50,7 +50,7 @@ class RobinMap < Formula
 
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build", "--target", "robinmap_test"
-    assert_match <<~EOS, shell_output("buildrobinmap_test")
+    assert_match <<~EOS, shell_output("build/robinmap_test")
       1: one
       2: two
     EOS

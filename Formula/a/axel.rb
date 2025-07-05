@@ -1,7 +1,7 @@
 class Axel < Formula
   desc "Light UNIX download accelerator"
-  homepage "https:github.comaxel-download-acceleratoraxel"
-  url "https:github.comaxel-download-acceleratoraxelreleasesdownloadv2.17.14axel-2.17.14.tar.xz"
+  homepage "https://github.com/axel-download-accelerator/axel"
+  url "https://ghfast.top/https://github.com/axel-download-accelerator/axel/releases/download/v2.17.14/axel-2.17.14.tar.xz"
   sha256 "938ee7c8c478bf6fcc82359bbf9576f298033e8b13908e53e3ea9c45c1443693"
   license "GPL-2.0-or-later" => { with: "openvpn-openssl-exception" }
 
@@ -18,7 +18,7 @@ class Axel < Formula
   end
 
   head do
-    url "https:github.comaxel-download-acceleratoraxel.git", branch: "master"
+    url "https://github.com/axel-download-accelerator/axel.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "autoconf-archive" => :build
@@ -37,16 +37,16 @@ class Axel < Formula
 
   def install
     system "autoreconf", "--force", "--install", "--verbose" if build.head?
-    system ".configure", "--disable-silent-rules",
+    system "./configure", "--disable-silent-rules",
                           "--sysconfdir=#{etc}",
                           *std_configure_args
     system "make", "install"
   end
 
   test do
-    filename = (testpath"axel.tar.gz")
-    system bin"axel", "-o", "axel.tar.gz", stable.url
+    filename = (testpath/"axel.tar.gz")
+    system bin/"axel", "-o", "axel.tar.gz", stable.url
     filename.verify_checksum stable.checksum
-    assert_path_exists testpath"axel.tar.gz"
+    assert_path_exists testpath/"axel.tar.gz"
   end
 end

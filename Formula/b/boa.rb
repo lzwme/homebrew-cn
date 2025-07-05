@@ -1,10 +1,10 @@
 class Boa < Formula
   desc "Embeddable and experimental Javascript engine written in Rust"
-  homepage "https:github.comboa-devboa"
-  url "https:github.comboa-devboaarchiverefstagsv0.20.tar.gz"
+  homepage "https://github.com/boa-dev/boa"
+  url "https://ghfast.top/https://github.com/boa-dev/boa/archive/refs/tags/v0.20.tar.gz"
   sha256 "10cc1e8c8f62b6fb0b22ec2ddc7031715f99bd8bed6168b14c93a89cb8dab597"
   license any_of: ["MIT", "Unlicense"]
-  head "https:github.comboa-devboa.git", branch: "main"
+  head "https://github.com/boa-dev/boa.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "9c6511d59e732eb4093f55266cb82177c9561d461cdf6db8a300f6993c8f87e1"
@@ -23,16 +23,16 @@ class Boa < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}boa --version")
+    assert_match version.to_s, shell_output("#{bin}/boa --version")
 
-    (testpath"test.js").write <<~JS
+    (testpath/"test.js").write <<~JS
       function factorial(n) {
         return n <= 1 ? 1 : n * factorial(n - 1);
       }
       console.log(`Factorial of 5 is: ${factorial(5)}`);
     JS
 
-    output = shell_output("#{bin}boa #{testpath}test.js")
+    output = shell_output("#{bin}/boa #{testpath}/test.js")
     assert_match "Factorial of 5 is: 120", output
   end
 end

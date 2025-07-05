@@ -1,10 +1,10 @@
 class Sysdig < Formula
   desc "System-level exploration and troubleshooting tool"
-  homepage "https:sysdig.com"
-  url "https:github.comdraiossysdigarchiverefstags0.40.1.tar.gz"
+  homepage "https://sysdig.com/"
+  url "https://ghfast.top/https://github.com/draios/sysdig/archive/refs/tags/0.40.1.tar.gz"
   sha256 "f4d465847ba8e814958b5f5818f637595f3d78ce93dbc3b8ff3ee65a80a9b90f"
   license "Apache-2.0"
-  head "https:github.comdraiossysdig.git", branch: "dev"
+  head "https://github.com/draios/sysdig.git", branch: "dev"
 
   livecheck do
     url :stable
@@ -36,13 +36,13 @@ class Sysdig < Formula
     depends_on "tbb"
   end
 
-  link_overwrite "etcbash_completion.dsysdig"
+  link_overwrite "etc/bash_completion.d/sysdig"
 
   def install
     # Workaround to find some headers
-    # TODO: Fix upstream to use standard paths, e.g. sinsp.h -> libsinspsinsp.h
-    ENV.append_to_cflags "-I#{Formula["falcosecurity-libs"].opt_include}falcosecuritylibsinsp"
-    ENV.append_to_cflags "-I#{Formula["falcosecurity-libs"].opt_include}falcosecuritydriver" if OS.linux?
+    # TODO: Fix upstream to use standard paths, e.g. sinsp.h -> libsinsp/sinsp.h
+    ENV.append_to_cflags "-I#{Formula["falcosecurity-libs"].opt_include}/falcosecurity/libsinsp"
+    ENV.append_to_cflags "-I#{Formula["falcosecurity-libs"].opt_include}/falcosecurity/driver" if OS.linux?
 
     # Keep C++ standard in sync with `abseil.rb`.
     args = %W[
@@ -56,14 +56,14 @@ class Sysdig < Formula
   end
 
   test do
-    # More info on https:gist.github.comjuniorz9986999
+    # More info on https://gist.github.com/juniorz/9986999
     resource "homebrew-sample_file" do
-      url "https:gist.githubusercontent.comjuniorz9986999rawa3556d7e93fa890a157a33f4233efaf8f5e01a6fsample.scap"
+      url "https://ghfast.top/https://gist.githubusercontent.com/juniorz/9986999/raw/a3556d7e93fa890a157a33f4233efaf8f5e01a6f/sample.scap"
       sha256 "efe287e651a3deea5e87418d39e0fe1e9dc55c6886af4e952468cd64182ee7ef"
     end
 
     testpath.install resource("homebrew-sample_file").files("sample.scap")
-    output = shell_output("#{bin}sysdig --read=#{testpath}sample.scap")
-    assert_match "tmpsysdigsample", output
+    output = shell_output("#{bin}/sysdig --read=#{testpath}/sample.scap")
+    assert_match "/tmp/sysdig/sample", output
   end
 end

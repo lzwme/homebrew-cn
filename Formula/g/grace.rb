@@ -1,14 +1,14 @@
 class Grace < Formula
   desc "WYSIWYG 2D plotting tool for X11"
-  homepage "https:plasma-gate.weizmann.ac.ilGrace"
-  url "https:deb.debian.orgdebianpoolmainggracegrace_5.1.25.orig.tar.gz"
+  homepage "https://plasma-gate.weizmann.ac.il/Grace/"
+  url "https://deb.debian.org/debian/pool/main/g/grace/grace_5.1.25.orig.tar.gz"
   sha256 "751ab9917ed0f6232073c193aba74046037e185d73b77bab0f5af3e3ff1da2ac"
   license "GPL-2.0-only"
   revision 5
 
   livecheck do
-    url "https:deb.debian.orgdebianpoolmainggrace"
-    regex(href=.*?grace[._-]v?(\d+(?:\.\d+)+)\.orig\.ti)
+    url "https://deb.debian.org/debian/pool/main/g/grace/"
+    regex(/href=.*?grace[._-]v?(\d+(?:\.\d+)+)\.orig\.t/i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -42,25 +42,25 @@ class Grace < Formula
   depends_on "openmotif"
 
   def install
-    ENV.O1 # https:github.comHomebrewhomebrewissues27840#issuecomment-38536704
+    ENV.O1 # https://github.com/Homebrew/homebrew/issues/27840#issuecomment-38536704
 
     # Fix compile with newer Clang
     if DevelopmentTools.clang_build_version >= 1200
       ENV.append_to_cflags "-Wno-implicit-function-declaration -Wno-implicit-int"
     end
 
-    system ".configure", "--enable-grace-home=#{prefix}",
+    system "./configure", "--enable-grace-home=#{prefix}",
                           "--disable-pdfdrv",
                           *std_configure_args
     system "make", "install"
     share.install "fonts", "examples"
-    man1.install Dir["doc*.1"]
-    doc.install Dir["doc*"]
+    man1.install Dir["doc/*.1"]
+    doc.install Dir["doc/*"]
   end
 
   test do
-    system bin"gracebat", share"examplestest.dat"
-    assert_equal "12311999 23:59:59.999",
-                 shell_output("#{bin}convcal -i iso -o us 1999-12-31T23:59:59.999").chomp
+    system bin/"gracebat", share/"examples/test.dat"
+    assert_equal "12/31/1999 23:59:59.999",
+                 shell_output("#{bin}/convcal -i iso -o us 1999-12-31T23:59:59.999").chomp
   end
 end

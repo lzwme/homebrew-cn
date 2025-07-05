@@ -1,13 +1,13 @@
 # This fork contains macOS patches.
-# Original project: https:github.comroysjoshxbee-comm
+# Original project: https://github.com/roysjosh/xbee-comm
 
 class XbeeComm < Formula
   desc "XBee communication libraries and utilities"
-  homepage "https:github.comguyzmoxbee-comm"
-  url "https:github.comguyzmoxbee-commarchiverefstagsv1.5.tar.gz"
+  homepage "https://github.com/guyzmo/xbee-comm"
+  url "https://ghfast.top/https://github.com/guyzmo/xbee-comm/archive/refs/tags/v1.5.tar.gz"
   sha256 "c474d22feae5d9c05b3ec167b839c8fded512587da0f020ca682d60db174f24a"
   license "GPL-3.0-or-later"
-  head "https:github.comguyzmoxbee-comm.git", branch: "master"
+  head "https://github.com/guyzmo/xbee-comm.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -39,7 +39,7 @@ class XbeeComm < Formula
     system "autoheader"
     system "automake", "-a", "-c"
 
-    system ".configure", "--disable-dependency-tracking",
+    system "./configure", "--disable-dependency-tracking",
                           "--prefix=#{prefix}"
     system "make", "install"
   end

@@ -1,7 +1,7 @@
 class Mdbtools < Formula
   desc "Tools to facilitate the use of Microsoft Access databases"
-  homepage "https:github.commdbtoolsmdbtools"
-  url "https:github.commdbtoolsmdbtoolsreleasesdownloadv1.0.1mdbtools-1.0.1.tar.gz"
+  homepage "https://github.com/mdbtools/mdbtools/"
+  url "https://ghfast.top/https://github.com/mdbtools/mdbtools/releases/download/v1.0.1/mdbtools-1.0.1.tar.gz"
   sha256 "ff9c425a88bc20bf9318a332eec50b17e77896eef65a0e69415ccb4e396d1812"
   license "GPL-2.0-or-later"
 
@@ -32,12 +32,12 @@ class Mdbtools < Formula
 
   def install
     system "autoreconf", "--force", "--install", "--verbose"
-    system ".configure", "--enable-man", *std_configure_args
+    system "./configure", "--enable-man", *std_configure_args
     system "make", "install"
   end
 
   test do
-    output = shell_output("#{bin}mdb-schema --drop-table test 2>&1", 1)
+    output = shell_output("#{bin}/mdb-schema --drop-table test 2>&1", 1)
 
     expected_output = <<~EOS
       File not found

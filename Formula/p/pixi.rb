@@ -1,10 +1,10 @@
 class Pixi < Formula
   desc "Package management made easy"
-  homepage "https:pixi.sh"
-  url "https:github.comprefix-devpixiarchiverefstagsv0.49.0.tar.gz"
+  homepage "https://pixi.sh"
+  url "https://ghfast.top/https://github.com/prefix-dev/pixi/archive/refs/tags/v0.49.0.tar.gz"
   sha256 "0625af192f09f7b1d905b207249979fa9f95d46d6582e7b83d46b49db652b978"
   license "BSD-3-Clause"
-  head "https:github.comprefix-devpixi.git", branch: "main"
+  head "https://github.com/prefix-dev/pixi.git", branch: "main"
 
   # There can be a notable gap between when a version is tagged and a
   # corresponding release is created, so we check the "latest" release instead
@@ -44,13 +44,13 @@ class Pixi < Formula
     EOS
     system "cargo", "install", *std_cargo_args
 
-    generate_completions_from_executable(bin"pixi", "completion", "-s")
+    generate_completions_from_executable(bin/"pixi", "completion", "-s")
   end
 
   test do
-    assert_equal "pixi #{version}", shell_output("#{bin}pixi --version").strip
+    assert_equal "pixi #{version}", shell_output("#{bin}/pixi --version").strip
 
-    system bin"pixi", "init"
-    assert_path_exists testpath"pixi.toml"
+    system bin/"pixi", "init"
+    assert_path_exists testpath/"pixi.toml"
   end
 end

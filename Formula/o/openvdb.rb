@@ -1,11 +1,11 @@
 class Openvdb < Formula
   desc "Sparse volumetric data processing toolkit"
-  homepage "https:www.openvdb.org"
-  url "https:github.comAcademySoftwareFoundationopenvdbarchiverefstagsv12.0.1.tar.gz"
+  homepage "https://www.openvdb.org/"
+  url "https://ghfast.top/https://github.com/AcademySoftwareFoundation/openvdb/archive/refs/tags/v12.0.1.tar.gz"
   sha256 "a3c8724ecadabaf558b6e1bd6f1d695e93b82a7cfdf144b8551e5253340ddce0"
   license "MPL-2.0"
   revision 1
-  head "https:github.comAcademySoftwareFoundationopenvdb.git", branch: "master"
+  head "https://github.com/AcademySoftwareFoundation/openvdb.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "e5e2388088cb975d19b0664d6ef76daa9c6e5fb580a51edd5b2eb7e25baeb934"
@@ -43,11 +43,11 @@ class Openvdb < Formula
 
   test do
     resource "homebrew-test_file" do
-      url "https:artifacts.aswf.ioioaswfopenvdbmodelscube.vdb1.0.0cube.vdb-1.0.0.zip"
+      url "https://artifacts.aswf.io/io/aswf/openvdb/models/cube.vdb/1.0.0/cube.vdb-1.0.0.zip"
       sha256 "05476e84e91c0214ad7593850e6e7c28f777aa4ff0a1d88d91168a7dd050f922"
     end
 
     testpath.install resource("homebrew-test_file")
-    system bin"vdb_print", "-m", "cube.vdb"
+    system bin/"vdb_print", "-m", "cube.vdb"
   end
 end

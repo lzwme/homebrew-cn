@@ -1,10 +1,10 @@
 class Gci < Formula
   desc "Control Golang package import order and make it always deterministic"
-  homepage "https:github.comdaixiang0gci"
-  url "https:github.comdaixiang0gciarchiverefstagsv0.13.6.tar.gz"
+  homepage "https://github.com/daixiang0/gci"
+  url "https://ghfast.top/https://github.com/daixiang0/gci/archive/refs/tags/v0.13.6.tar.gz"
   sha256 "89946f56773269dce0776b5c6c978790ccf006c116c9692f545500dec54affdd"
   license "BSD-3-Clause"
-  head "https:github.comdaixiang0gci.git", branch: "master"
+  head "https://github.com/daixiang0/gci.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "3831ca85a8c9143b1eaa2cb0925078f2c7b0a6efc12f6e00a30419c9d88ae964"
@@ -20,34 +20,34 @@ class Gci < Formula
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
 
-    generate_completions_from_executable(bin"gci", "completion")
+    generate_completions_from_executable(bin/"gci", "completion")
   end
 
   test do
-    (testpath"main.go").write <<~GO
+    (testpath/"main.go").write <<~GO
       package main
       import (
-        "golang.orgxtools"
+        "golang.org/x/tools"
 
         "fmt"
 
-        "github.comdaixiang0gci"
+        "github.com/daixiang0/gci"
       )
     GO
-    system bin"gci", "write", testpath"main.go"
+    system bin/"gci", "write", testpath/"main.go"
 
-    assert_equal <<~GO, (testpath"main.go").read
+    assert_equal <<~GO, (testpath/"main.go").read
       package main
 
       import (
       \t"fmt"
 
-      \t"github.comdaixiang0gci"
-      \t"golang.orgxtools"
+      \t"github.com/daixiang0/gci"
+      \t"golang.org/x/tools"
       )
     GO
 
-    # currently the version is off, see upstream pr, https:github.comdaixiang0gcipull218
-    # assert_match version.to_s, shell_output("#{bin}gci --version")
+    # currently the version is off, see upstream pr, https://github.com/daixiang0/gci/pull/218
+    # assert_match version.to_s, shell_output("#{bin}/gci --version")
   end
 end

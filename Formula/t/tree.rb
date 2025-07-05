@@ -1,7 +1,7 @@
 class Tree < Formula
-  desc "Display directories as trees (with optional colorHTML output)"
-  homepage "https:oldmanprogrammer.netsource.php?dir=projectstree"
-  url "https:github.comOld-Man-Programmertreearchiverefstags2.2.1.tar.gz"
+  desc "Display directories as trees (with optional color/HTML output)"
+  homepage "https://oldmanprogrammer.net/source.php?dir=projects/tree"
+  url "https://ghfast.top/https://github.com/Old-Man-Programmer/tree/archive/refs/tags/2.2.1.tar.gz"
   sha256 "5caddcbca805131ff590b126d3218019882e4ca10bc9eb490bba51c05b9b3b75"
   license "GPL-2.0-or-later"
 
@@ -29,6 +29,6 @@ class Tree < Formula
   end
 
   test do
-    system bin"tree", prefix
+    system bin/"tree", prefix
   end
 end

@@ -2,14 +2,14 @@ cask "xcodepilot" do
   version "1.5.0,27"
   sha256 "3de58f7b2ef6f19d6a4202421dfdfe8ec9a1456e7e0c170871725969c064c15b"
 
-  url "https:raw.githubusercontent.comTMTBOXcodePilotPagesrefsheadsmaindocspackagesappcastXcodePilot.v#{version.csv.first}_#{version.csv.second}.zip",
-      verified: "raw.githubusercontent.comTMTBOXcodePilotPages"
+  url "https://ghfast.top/https://raw.githubusercontent.com/TMTBO/XcodePilotPages/refs/heads/main/docs/packages/appcast/XcodePilot.v#{version.csv.first}_#{version.csv.second}.zip",
+      verified: "raw.githubusercontent.com/TMTBO/XcodePilotPages/"
   name "XcodePilot"
   desc "Toolset for Apple developers to increase productivity and efficiency"
-  homepage "https:xcodepilot.thriller.fundocs"
+  homepage "https://xcodepilot.thriller.fun/docs/"
 
   livecheck do
-    url "https:raw.githubusercontent.comTMTBOXcodePilotPagesrefsheadsmaindocspackagesappcastappcast.xml"
+    url "https://ghfast.top/https://raw.githubusercontent.com/TMTBO/XcodePilotPages/refs/heads/main/docs/packages/appcast/appcast.xml"
     strategy :sparkle
   end
 
@@ -21,11 +21,11 @@ cask "xcodepilot" do
   uninstall quit: "fun.thriller.XcodePilot"
 
   zap trash: [
-    "~LibraryApplication Supportfun.thriller.XcodePilot",
-    "~LibraryCachesfun.thriller.XcodePilot",
-    "~LibraryContainersorg.sparkle-project.DownloaderDataLibraryCachesfun.thriller.XcodePilot",
-    "~LibraryGroup ContainersV63R5GQ252.group.fun.thriller.xcode.pilot",
-    "~LibraryPreferencesfun.thriller.XcodePilot.plist",
-    "~LibraryWebKitfun.thriller.XcodePilot",
+    "~/Library/Application Support/fun.thriller.XcodePilot",
+    "~/Library/Caches/fun.thriller.XcodePilot",
+    "~/Library/Containers/org.sparkle-project.Downloader/Data/Library/Caches/fun.thriller.XcodePilot",
+    "~/Library/Group Containers/V63R5GQ252.group.fun.thriller.xcode.pilot",
+    "~/Library/Preferences/fun.thriller.XcodePilot.plist",
+    "~/Library/WebKit/fun.thriller.XcodePilot",
   ]
 end

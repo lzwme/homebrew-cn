@@ -1,7 +1,7 @@
 class MoonBuggy < Formula
   desc "Drive some car across the moon"
-  homepage "https:www.seehuhn.depagesmoon-buggy.html"
-  url "https:m.seehuhn.deprogramsmoon-buggy-1.0.tar.gz"
+  homepage "https://www.seehuhn.de/pages/moon-buggy.html"
+  url "https://m.seehuhn.de/programs/moon-buggy-1.0.tar.gz"
   sha256 "f8296f3fabd93aa0f83c247fbad7759effc49eba6ab5fdd7992f603d2d78e51a"
   license any_of: ["GPL-2.0-or-later", "GPL-3.0-or-later"]
 
@@ -10,7 +10,7 @@ class MoonBuggy < Formula
   # versions by looking for the trailing `(stable version)` annotation.
   livecheck do
     url :homepage
-    regex(moon-buggy\s+(?:version\s+|v)?(\d+(?:\.\d+)+)[^<]+?\(stable\s+version\)im)
+    regex(/moon-buggy\s+(?:version\s+|v)?(\d+(?:\.\d+)+)[^<]+?\(stable\s+version\)/im)
   end
 
   no_autobump! because: :requires_manual_review
@@ -35,7 +35,7 @@ class MoonBuggy < Formula
   end
 
   head do
-    url "https:github.comseehuhnmoon-buggy.git", branch: "master"
+    url "https://github.com/seehuhn/moon-buggy.git", branch: "master"
     depends_on "autoconf" => :build
     depends_on "automake" => :build
   end
@@ -45,15 +45,15 @@ class MoonBuggy < Formula
   def install
     args = ["--mandir=#{man}", "--infodir=#{info}"]
     if build.head?
-      system ".autogen.sh"
+      system "./autogen.sh"
     elsif OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       args << "--build=aarch64-unknown-linux-gnu"
     end
-    system ".configure", *args, *std_configure_args
+    system "./configure", *args, *std_configure_args
     system "make", "install"
   end
 
   test do
-    assert_match(Moon-Buggy #{version}$, shell_output("#{bin}moon-buggy -V"))
+    assert_match(/Moon-Buggy #{version}$/, shell_output("#{bin}/moon-buggy -V"))
   end
 end

@@ -1,11 +1,11 @@
 class Gdb < Formula
   desc "GNU debugger"
-  homepage "https:www.gnu.orgsoftwaregdb"
-  url "https:ftp.gnu.orggnugdbgdb-16.3.tar.xz"
-  mirror "https:ftpmirror.gnu.orggdbgdb-16.3.tar.xz"
+  homepage "https://www.gnu.org/software/gdb/"
+  url "https://ftp.gnu.org/gnu/gdb/gdb-16.3.tar.xz"
+  mirror "https://ftpmirror.gnu.org/gdb/gdb-16.3.tar.xz"
   sha256 "bcfcd095528a987917acf9fff3f1672181694926cc18d609c99d0042c00224c5"
   license "GPL-3.0-or-later"
-  head "https:sourceware.orggitbinutils-gdb.git", branch: "master"
+  head "https://sourceware.org/git/binutils-gdb.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -23,7 +23,7 @@ class Gdb < Formula
   depends_on "pkgconf" => :build
   depends_on "gmp"
   depends_on "mpfr"
-  depends_on "ncurses" # https:github.comHomebrewhomebrew-coreissues224294
+  depends_on "ncurses" # https://github.com/Homebrew/homebrew-core/issues/224294
   depends_on "python@3.13"
   depends_on "readline"
   depends_on "xz" # required for lzma support
@@ -32,7 +32,7 @@ class Gdb < Formula
   uses_from_macos "expat", since: :sequoia # minimum macOS due to python
   uses_from_macos "zlib"
 
-  # Workaround for https:github.comHomebrewbrewissues19315
+  # Workaround for https://github.com/Homebrew/brew/issues/19315
   on_sequoia :or_newer do
     on_intel do
       depends_on "expat"
@@ -57,8 +57,8 @@ class Gdb < Formula
 
   def install
     # Fix `error: use of undeclared identifier 'command_style'`
-    inreplace "gdbdarwin-nat.c", "#include \"clicli-cmds.h\"",
-                                  "#include \"clicli-cmds.h\"\n#include \"clicli-style.h\""
+    inreplace "gdb/darwin-nat.c", "#include \"cli/cli-cmds.h\"",
+                                  "#include \"cli/cli-cmds.h\"\n#include \"cli/cli-style.h\""
 
     args = %W[
       --enable-targets=all
@@ -82,7 +82,7 @@ class Gdb < Formula
     end
 
     mkdir "build" do
-      system "..configure", *args, *std_configure_args
+      system "../configure", *args, *std_configure_args
       system "make"
 
       # Don't install bfd or opcodes, as they are provided by binutils
@@ -96,12 +96,12 @@ class Gdb < Formula
         gdb requires special privileges to access Mach ports.
         You will need to codesign the binary. For instructions, see:
 
-          https:sourceware.orggdbwikiPermissionsDarwin
+          https://sourceware.org/gdb/wiki/PermissionsDarwin
       EOS
     end
   end
 
   test do
-    system bin"gdb", bin"gdb", "-configuration"
+    system bin/"gdb", bin/"gdb", "-configuration"
   end
 end

@@ -1,7 +1,7 @@
 class Pcaudiolib < Formula
   desc "Portable C Audio Library"
-  homepage "https:github.comespeak-ngpcaudiolib"
-  url "https:github.comespeak-ngpcaudiolibreleasesdownload1.3pcaudiolib-1.3.tar.gz"
+  homepage "https://github.com/espeak-ng/pcaudiolib"
+  url "https://ghfast.top/https://github.com/espeak-ng/pcaudiolib/releases/download/1.3/pcaudiolib-1.3.tar.gz"
   sha256 "e8bd15f460ea171ccd0769ea432e188532a7fb27fa73ec2d526088a082abaaad"
   license "GPL-3.0-or-later"
 
@@ -16,7 +16,7 @@ class Pcaudiolib < Formula
   end
 
   head do
-    url "https:github.comespeak-ngpcaudiolib.git", branch: "master"
+    url "https://github.com/espeak-ng/pcaudiolib.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -31,15 +31,15 @@ class Pcaudiolib < Formula
   end
 
   def install
-    system ".autogen.sh" if build.head?
-    system ".configure", "--disable-silent-rules", *std_configure_args
+    system "./autogen.sh" if build.head?
+    system "./configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
   end
 
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include <stdio.h>
-      #include <pcaudiolibaudio.h>
+      #include <pcaudiolib/audio.h>
 
       int main() {
         struct audio_object *my_audio = create_audio_device_object(NULL, "test", "test");
@@ -53,6 +53,6 @@ class Pcaudiolib < Formula
     C
 
     system ENV.cc, "test.c", "-o", "test", "-L#{lib}", "-lpcaudio"
-    system ".test"
+    system "./test"
   end
 end

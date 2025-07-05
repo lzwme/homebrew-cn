@@ -1,7 +1,7 @@
 class Libmaxminddb < Formula
   desc "C library for the MaxMind DB file format"
-  homepage "https:github.commaxmindlibmaxminddb"
-  url "https:github.commaxmindlibmaxminddbreleasesdownload1.12.2libmaxminddb-1.12.2.tar.gz"
+  homepage "https://github.com/maxmind/libmaxminddb"
+  url "https://ghfast.top/https://github.com/maxmind/libmaxminddb/releases/download/1.12.2/libmaxminddb-1.12.2.tar.gz"
   sha256 "1bfbf8efba3ed6462e04e225906ad5ce5fe958aa3d626a1235b2a2253d600743"
   license "Apache-2.0"
 
@@ -16,7 +16,7 @@ class Libmaxminddb < Formula
   end
 
   head do
-    url "https:github.commaxmindlibmaxminddb.git", branch: "main"
+    url "https://github.com/maxmind/libmaxminddb.git", branch: "main"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -24,19 +24,19 @@ class Libmaxminddb < Formula
   end
 
   def install
-    system ".bootstrap" if build.head?
+    system "./bootstrap" if build.head?
 
-    system ".configure", "--disable-debug",
+    system "./configure", "--disable-debug",
                           "--disable-dependency-tracking",
                           "--disable-silent-rules",
                           "--prefix=#{prefix}"
     system "make", "check"
     system "make", "install"
-    (share"examples").install buildpath"tmaxmind-dbtest-dataGeoIP2-City-Test.mmdb"
+    (share/"examples").install buildpath/"t/maxmind-db/test-data/GeoIP2-City-Test.mmdb"
   end
 
   test do
-    system bin"mmdblookup", "-f", "#{share}examplesGeoIP2-City-Test.mmdb",
+    system bin/"mmdblookup", "-f", "#{share}/examples/GeoIP2-City-Test.mmdb",
                                 "-i", "175.16.199.0"
   end
 end

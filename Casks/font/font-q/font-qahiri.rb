@@ -2,10 +2,10 @@ cask "font-qahiri" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefontsrawmainoflqahiriQahiri-Regular.ttf",
-      verified: "github.comgooglefonts"
+  url "https://github.com/google/fonts/raw/main/ofl/qahiri/Qahiri-Regular.ttf",
+      verified: "github.com/google/fonts/"
   name "Qahiri"
-  homepage "https:fonts.google.comspecimenQahiri"
+  homepage "https://fonts.google.com/specimen/Qahiri"
 
   font "Qahiri-Regular.ttf"
 

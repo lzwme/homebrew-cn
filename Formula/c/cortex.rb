@@ -1,10 +1,10 @@
 class Cortex < Formula
   desc "Long term storage for Prometheus"
-  homepage "https:cortexmetrics.io"
-  url "https:github.comcortexprojectcortexarchiverefstagsv1.19.0.tar.gz"
+  homepage "https://cortexmetrics.io/"
+  url "https://ghfast.top/https://github.com/cortexproject/cortex/archive/refs/tags/v1.19.0.tar.gz"
   sha256 "7cb6b312f67263e40fef3a99afb7d12bce69fe035e7b787b9c1efb4bf7a693bc"
   license "Apache-2.0"
-  head "https:github.comcortexprojectcortex.git", branch: "master"
+  head "https://github.com/cortexproject/cortex.git", branch: "master"
 
   livecheck do
     url :stable
@@ -25,16 +25,16 @@ class Cortex < Formula
   conflicts_with "cortexso", because: "both install `cortex` binaries"
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), ".cmdcortex"
-    inreplace "docsconfigurationsingle-process-config-blocks.yaml", "tmp", var
-    etc.install "docsconfigurationsingle-process-config-blocks.yaml" => "cortex.yaml"
+    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/cortex"
+    inreplace "docs/configuration/single-process-config-blocks.yaml", "/tmp", var
+    etc.install "docs/configuration/single-process-config-blocks.yaml" => "cortex.yaml"
   end
 
   service do
-    run [opt_bin"cortex", "-config.file=#{etc}cortex.yaml"]
+    run [opt_bin/"cortex", "-config.file=#{etc}/cortex.yaml"]
     keep_alive true
-    error_log_path var"logcortex.log"
-    log_path var"logcortex.log"
+    error_log_path var/"log/cortex.log"
+    log_path var/"log/cortex.log"
     working_dir var
   end
 
@@ -45,9 +45,9 @@ class Cortex < Formula
     port = free_port
 
     # A minimal working config modified from
-    # https:github.comcortexprojectcortexblobmasterdocsconfigurationsingle-process-config-blocks.yaml
-    (testpath"dataalerts").mkpath
-    (testpath"cortex.yaml").write <<~YAML
+    # https://github.com/cortexproject/cortex/blob/master/docs/configuration/single-process-config-blocks.yaml
+    (testpath/"data/alerts").mkpath
+    (testpath/"cortex.yaml").write <<~YAML
       server:
         http_listen_port: #{port}
       ingester:
@@ -59,20 +59,20 @@ class Cortex < Formula
       blocks_storage:
         backend: filesystem
         filesystem:
-          dir: #{testpath}datatsdb
+          dir: #{testpath}/data/tsdb
 
       alertmanager:
-        external_url: http:localhostalertmanager
+        external_url: http://localhost/alertmanager
 
       alertmanager_storage:
         backend: local
         local:
           # Make sure file exist
-          path:  #{testpath}dataalerts
+          path:  #{testpath}/data/alerts
     YAML
 
     Open3.popen3(
-      bin"cortex", "-config.file=cortex.yaml",
+      bin/"cortex", "-config.file=cortex.yaml",
                     "-server.grpc-listen-port=#{free_port}"
     ) do |_, _, stderr, wait_thr|
       Timeout.timeout(5) do
@@ -82,7 +82,7 @@ class Cortex < Formula
           # may shadow errors that only occur when modules are fully loaded.
           break if line.include? "Cortex started"
         end
-        output = shell_output("curl -s http:localhost:#{port}services")
+        output = shell_output("curl -s http://localhost:#{port}/services")
         assert_match "Running", output
       end
     ensure

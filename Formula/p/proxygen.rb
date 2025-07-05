@@ -1,10 +1,10 @@
 class Proxygen < Formula
   desc "Collection of C++ HTTP libraries"
-  homepage "https:github.comfacebookproxygen"
-  url "https:github.comfacebookproxygenreleasesdownloadv2025.06.30.00proxygen-v2025.06.30.00.tar.gz"
+  homepage "https://github.com/facebook/proxygen"
+  url "https://ghfast.top/https://github.com/facebook/proxygen/releases/download/v2025.06.30.00/proxygen-v2025.06.30.00.tar.gz"
   sha256 "dcd4787f4eb7393964c7445cfbf80a2b70422946d1351fbdf6d94fd6215aef9a"
   license "BSD-3-Clause"
-  head "https:github.comfacebookproxygen.git", branch: "main"
+  head "https://github.com/facebook/proxygen.git", branch: "main"
 
   bottle do
     sha256                               arm64_sequoia: "e1db5d585542ef8748750aab71cae59d65568543b97952de8def872f7df5a2c3"
@@ -38,8 +38,8 @@ class Proxygen < Formula
   # FIXME: Build script is not compatible with gperf 3.2
   resource "gperf" do
     on_linux do
-      url "https:ftp.gnu.orggnugperfgperf-3.1.tar.gz"
-      mirror "https:ftpmirror.gnu.orggperfgperf-3.1.tar.gz"
+      url "https://ftp.gnu.org/gnu/gperf/gperf-3.1.tar.gz"
+      mirror "https://ftpmirror.gnu.org/gperf/gperf-3.1.tar.gz"
       sha256 "588546b945bba4b70b6a3a616e80b4ab466e3f33024a352fc2198112cdbb3ae2"
     end
   end
@@ -47,9 +47,9 @@ class Proxygen < Formula
   def install
     if OS.linux?
       resource("gperf").stage do
-        system ".configure", *std_configure_args(prefix: buildpath"gperf")
+        system "./configure", *std_configure_args(prefix: buildpath/"gperf")
         system "make", "install"
-        ENV.prepend_path "PATH", buildpath"gperfbin"
+        ENV.prepend_path "PATH", buildpath/"gperf/bin"
       end
     end
 
@@ -68,10 +68,10 @@ class Proxygen < Formula
 
   test do
     port = free_port
-    pid = spawn(bin"proxygen_echo", "--http_port", port.to_s)
+    pid = spawn(bin/"proxygen_echo", "--http_port", port.to_s)
     sleep 30
     sleep 30 if OS.mac? && Hardware::CPU.intel?
-    system "curl", "-v", "http:localhost:#{port}"
+    system "curl", "-v", "http://localhost:#{port}"
   ensure
     Process.kill "TERM", pid
   end

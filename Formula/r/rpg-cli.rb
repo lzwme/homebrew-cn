@@ -1,7 +1,7 @@
 class RpgCli < Formula
   desc "Your filesystem as a dungeon!"
-  homepage "https:github.comfacundoolanorpg-cli"
-  url "https:github.comfacundoolanorpg-cliarchiverefstags1.2.0.tar.gz"
+  homepage "https://github.com/facundoolano/rpg-cli"
+  url "https://ghfast.top/https://github.com/facundoolano/rpg-cli/archive/refs/tags/1.2.0.tar.gz"
   sha256 "f3993abe7b73666bc3707760dcc650aa9190cd3e7f06be846a0b6adcbbc46663"
   license "MIT"
 
@@ -22,7 +22,7 @@ class RpgCli < Formula
   end
 
   test do
-    output = shell_output(bin"rpg-cli").strip
+    output = shell_output(bin/"rpg-cli").strip
     assert_match "hp", output
     assert_match "equip", output
     assert_match "item", output

@@ -1,10 +1,10 @@
 class Selene < Formula
   desc "Blazing-fast modern Lua linter"
-  homepage "https:kampfkarren.github.ioselene"
-  url "https:github.comKampfkarrenselenearchiverefstags0.28.0.tar.gz"
+  homepage "https://kampfkarren.github.io/selene"
+  url "https://ghfast.top/https://github.com/Kampfkarren/selene/archive/refs/tags/0.28.0.tar.gz"
   sha256 "c51acf52e7c3136cd0b67b9a39a4a447c8f0257371b2b2acc7e77587260a377b"
   license "MPL-2.0"
-  head "https:github.comKampfkarrenselene.git", branch: "main"
+  head "https://github.com/Kampfkarren/selene.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "e8160e3e3b1589956eb8c952c94dbdb6e9417972007bd3740026dc5caf0eb195"
@@ -26,8 +26,8 @@ class Selene < Formula
   end
 
   test do
-    (testpath"selene.toml").write("std = \"lua52\"")
-    (testpath"test.lua").write("print(1  0)")
-    assert_match "warning[divide_by_zero]", shell_output("#{bin}selene #{testpath}test.lua", 1)
+    (testpath/"selene.toml").write("std = \"lua52\"")
+    (testpath/"test.lua").write("print(1 / 0)")
+    assert_match "warning[divide_by_zero]", shell_output("#{bin}/selene #{testpath}/test.lua", 1)
   end
 end

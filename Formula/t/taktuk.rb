@@ -1,13 +1,13 @@
 class Taktuk < Formula
   desc "Deploy commands to (a potentially large set of) remote nodes"
-  homepage "https:taktuk.gitlabpages.inria.fr"
-  url "https:deb.debian.orgdebianpoolmainttaktuktaktuk_3.7.7.orig.tar.gz"
+  homepage "https://taktuk.gitlabpages.inria.fr/"
+  url "https://deb.debian.org/debian/pool/main/t/taktuk/taktuk_3.7.7.orig.tar.gz"
   sha256 "56a62cca92670674c194e4b59903e379ad0b1367cec78244641aa194e9fe893e"
   license "GPL-2.0-or-later"
 
   livecheck do
-    url "https:deb.debian.orgdebianpoolmainttaktuk"
-    regex(href=.*?taktuk[._-]v?(\d+(?:\.\d+)+)\.orig\.ti)
+    url "https://deb.debian.org/debian/pool/main/t/taktuk/"
+    regex(/href=.*?taktuk[._-]v?(\d+(?:\.\d+)+)\.orig\.t/i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -35,18 +35,18 @@ class Taktuk < Formula
 
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
-    url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-big_sur.diff"
+    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-big_sur.diff"
     sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
   end
 
   def install
-    system ".configure", "--prefix=#{prefix}"
+    system "./configure", "--prefix=#{prefix}"
     system "make"
     ENV.deparallelize
     system "make", "install", "INSTALLSITEMAN3DIR=#{man3}"
   end
 
   test do
-    system bin"taktuk", "quit"
+    system bin/"taktuk", "quit"
   end
 end

@@ -2,9 +2,9 @@ cask "font-go-mono-nerd-font" do
   version "3.4.0"
   sha256 "4946b79dab0d34d88e219f1378e9227c862974cc04c381128b6b24279125771d"
 
-  url "https:github.comryanoasisnerd-fontsreleasesdownloadv#{version}Go-Mono.zip"
+  url "https://ghfast.top/https://github.com/ryanoasis/nerd-fonts/releases/download/v#{version}/Go-Mono.zip"
   name "GoMono Nerd Font (Go Mono)"
-  homepage "https:github.comryanoasisnerd-fonts"
+  homepage "https://github.com/ryanoasis/nerd-fonts"
 
   livecheck do
     url :url

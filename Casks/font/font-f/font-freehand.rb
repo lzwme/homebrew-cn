@@ -2,10 +2,10 @@ cask "font-freehand" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefontsrawmainoflfreehandFreehand-Regular.ttf",
-      verified: "github.comgooglefonts"
+  url "https://github.com/google/fonts/raw/main/ofl/freehand/Freehand-Regular.ttf",
+      verified: "github.com/google/fonts/"
   name "Freehand"
-  homepage "https:fonts.google.comspecimenFreehand"
+  homepage "https://fonts.google.com/specimen/Freehand"
 
   font "Freehand-Regular.ttf"
 

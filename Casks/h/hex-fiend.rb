@@ -2,14 +2,14 @@ cask "hex-fiend" do
   version "2.18.1"
   sha256 "837041623a21eaae59b9b6c0bb7f75533938ab96580861ee7e276bb926e0e076"
 
-  url "https:github.comridiculousfishHexFiendreleasesdownloadv#{version}Hex_Fiend_#{version.major_minor_patch.chomp(".0")}.dmg",
-      verified: "github.comridiculousfishHexFiend"
+  url "https://ghfast.top/https://github.com/ridiculousfish/HexFiend/releases/download/v#{version}/Hex_Fiend_#{version.major_minor_patch.chomp(".0")}.dmg",
+      verified: "github.com/ridiculousfish/HexFiend/"
   name "Hex Fiend"
   desc "Hex editor focussing on speed"
-  homepage "https:ridiculousfish.comhexfiend"
+  homepage "https://ridiculousfish.com/hexfiend/"
 
   livecheck do
-    url "https:raw.githubusercontent.comridiculousfishHexFiendmasterappappcast.xml"
+    url "https://ghfast.top/https://raw.githubusercontent.com/ridiculousfish/HexFiend/master/app/appcast.xml"
     strategy :sparkle, &:short_version
   end
 
@@ -19,14 +19,14 @@ cask "hex-fiend" do
   depends_on macos: ">= :mojave"
 
   app "Hex Fiend.app"
-  binary "#{appdir}Hex Fiend.appContentsResourceshexf"
+  binary "#{appdir}/Hex Fiend.app/Contents/Resources/hexf"
 
   zap trash: [
-    "~LibraryApplication Supportcom.apple.sharedfilelistcom.apple.LSSharedFileList.ApplicationRecentDocumentscom.ridiculousfish.hexfiend.sfl*",
-    "~LibraryApplication Supportcom.ridiculousfish.HexFiend",
-    "~LibraryCachescom.ridiculousfish.HexFiend",
-    "~LibraryCookiescom.ridiculousfish.HexFiend.binarycookies",
-    "~LibraryPreferencescom.ridiculousfish.HexFiend.plist",
-    "~LibrarySaved Application Statecom.ridiculousfish.HexFiend.savedState",
+    "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.ridiculousfish.hexfiend.sfl*",
+    "~/Library/Application Support/com.ridiculousfish.HexFiend",
+    "~/Library/Caches/com.ridiculousfish.HexFiend",
+    "~/Library/Cookies/com.ridiculousfish.HexFiend.binarycookies",
+    "~/Library/Preferences/com.ridiculousfish.HexFiend.plist",
+    "~/Library/Saved Application State/com.ridiculousfish.HexFiend.savedState",
   ]
 end

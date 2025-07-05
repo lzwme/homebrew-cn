@@ -2,11 +2,11 @@ class Pympress < Formula
   include Language::Python::Virtualenv
 
   desc "Simple and powerful dual-screen PDF reader designed for presentations"
-  homepage "https:github.comCimbalipympress"
-  url "https:files.pythonhosted.orgpackages8766fb9f8f2975740ea8880de293eb16b543965387881c71ca323a00a5d77d8apympress-1.8.6.tar.gz"
+  homepage "https://github.com/Cimbali/pympress/"
+  url "https://files.pythonhosted.org/packages/87/66/fb9f8f2975740ea8880de293eb16b543965387881c71ca323a00a5d77d8a/pympress-1.8.6.tar.gz"
   sha256 "243dc5dd225acd13fb6bae680e2de1816d521203b98a9cff588b66f141fffd9a"
   license "GPL-2.0-or-later"
-  head "https:github.comCimbalipympress.git", branch: "main"
+  head "https://github.com/Cimbali/pympress.git", branch: "main"
 
   no_autobump! because: :requires_manual_review
 
@@ -29,7 +29,7 @@ class Pympress < Formula
   depends_on "python@3.13"
 
   resource "watchdog" do
-    url "https:files.pythonhosted.orgpackagesdb7d7f3d619e951c88ed75c6037b246ddcf2d322812ee8ea189be89511721d54watchdog-6.0.0.tar.gz"
+    url "https://files.pythonhosted.org/packages/db/7d/7f3d619e951c88ed75c6037b246ddcf2d322812ee8ea189be89511721d54/watchdog-6.0.0.tar.gz"
     sha256 "9ddf7c82fda3ae8e24decda1338ede66e1c99883db93711d8fb941eaa2d8c282"
   end
 
@@ -41,16 +41,16 @@ class Pympress < Formula
     # (pympress:48790): Gtk-WARNING **: 13:03:37.080: cannot open display
     ENV["PYMPRESS_HEADLESS_TEST"] = "1" if ENV["HOMEBREW_GITHUB_ACTIONS"]
 
-    (testpath"LibraryPreferences").mkpath
+    (testpath/"Library/Preferences").mkpath
 
-    system bin"pympress", "--quit"
+    system bin/"pympress", "--quit"
 
     # Check everything ran fine at least until reporting the version string in the log file
     # which means all dependencies got loaded OK. Do not check actual version numbers as it breaks --HEAD tests.
     log = if OS.linux?
-      Pathname.new(ENV["XDG_CACHE_HOME"] || (testpath".cache"))"pympress.log"
+      Pathname.new(ENV["XDG_CACHE_HOME"] || (testpath/".cache"))/"pympress.log"
     else
-      testpath"LibraryLogspympress.log"
+      testpath/"Library/Logs/pympress.log"
     end
     assert_path_exists log
     assert_match "INFO:pympress.app:Pympress:", log.read

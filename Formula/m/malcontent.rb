@@ -1,10 +1,10 @@
 class Malcontent < Formula
   desc "Supply Chain Attack Detection, via context differential analysis and YARA"
-  homepage "https:github.comchainguard-devmalcontent"
-  url "https:github.comchainguard-devmalcontentarchiverefstagsv1.14.0.tar.gz"
+  homepage "https://github.com/chainguard-dev/malcontent"
+  url "https://ghfast.top/https://github.com/chainguard-dev/malcontent/archive/refs/tags/v1.14.0.tar.gz"
   sha256 "c92e0e02ee76b5a74ae779b2cf1605c1ca39c1322c71df8ffed667c3108a42f4"
   license "Apache-2.0"
-  head "https:github.comchainguard-devmalcontent.git", branch: "main"
+  head "https://github.com/chainguard-dev/malcontent.git", branch: "main"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "9b46759965b0273d98567378a334d7391c3b6166e1917fb9c7acd740a8f3c86f"
@@ -21,17 +21,17 @@ class Malcontent < Formula
   depends_on "yara-x"
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w -X main.BuildVersion=#{version}", output: bin"mal"), ".cmdmal"
+    system "go", "build", *std_go_args(ldflags: "-s -w -X main.BuildVersion=#{version}", output: bin/"mal"), "./cmd/mal"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}mal --version")
+    assert_match version.to_s, shell_output("#{bin}/mal --version")
 
-    (testpath"test.py").write <<~PYTHON
+    (testpath/"test.py").write <<~PYTHON
       import subprocess
       subprocess.run(["echo", "execute external program"])
     PYTHON
 
-    assert_match "program — execute external program", shell_output("#{bin}mal analyze #{testpath}")
+    assert_match "program — execute external program", shell_output("#{bin}/mal analyze #{testpath}")
   end
 end

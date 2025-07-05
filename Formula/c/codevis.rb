@@ -1,10 +1,10 @@
 class Codevis < Formula
   desc "Turns your code into one large image"
-  homepage "https:github.comslogankingcodevis"
-  url "https:github.comslogankingcodevisarchiverefstagsv0.8.4.tar.gz"
+  homepage "https://github.com/sloganking/codevis"
+  url "https://ghfast.top/https://github.com/sloganking/codevis/archive/refs/tags/v0.8.4.tar.gz"
   sha256 "a4578a1218fc82be8866defe49db4ce6a23088446c18ca3494d3ebc16f931d3f"
   license "MIT"
-  head "https:github.comslogankingcodevis.git", branch: "master"
+  head "https://github.com/sloganking/codevis.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "809aab83526ed594b872942f4edb8cdae2530d7f9abb37fcf148690bf37adbe0"
@@ -28,15 +28,15 @@ class Codevis < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}codevis --version")
+    assert_match version.to_s, shell_output("#{bin}/codevis --version")
 
-    (testpath"main.c").write <<~C
+    (testpath/"main.c").write <<~C
       #include <stdio.h>
       int main() { printf("Hello, World!\\n"); return 0; }
     C
 
-    output = shell_output("#{bin}codevis --input-dir #{testpath} 2>&1")
+    output = shell_output("#{bin}/codevis --input-dir #{testpath} 2>&1")
     assert_match "search unicode files done 2 files", output
-    assert_path_exists testpath"output.png"
+    assert_path_exists testpath/"output.png"
   end
 end

@@ -1,10 +1,10 @@
 class Risor < Formula
   desc "Fast and flexible scripting for Go developers and DevOps"
-  homepage "https:risor.io"
-  url "https:github.comrisor-iorisorarchiverefstagsv1.8.1.tar.gz"
+  homepage "https://risor.io/"
+  url "https://ghfast.top/https://github.com/risor-io/risor/archive/refs/tags/v1.8.1.tar.gz"
   sha256 "3253a3e6e6f2916f0fe5f415e170c84e7bfede59e66d45d036d1018c259cba91"
   license "Apache-2.0"
-  head "https:github.comrisor-iorisor.git", branch: "main"
+  head "https://github.com/risor-io/risor.git", branch: "main"
 
   livecheck do
     url :stable
@@ -24,20 +24,20 @@ class Risor < Formula
   depends_on "go" => :build
 
   def install
-    chdir "cmdrisor" do
+    chdir "cmd/risor" do
       ldflags = "-s -w -X 'main.version=#{version}' -X 'main.date=#{time.iso8601}'"
       tags = "aws,k8s,vault"
       system "go", "build", *std_go_args(ldflags:, tags:)
-      generate_completions_from_executable(bin"risor", "completion")
+      generate_completions_from_executable(bin/"risor", "completion")
     end
   end
 
   test do
-    output = shell_output("#{bin}risor -c \"time.now()\"")
-    assert_match(\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}, output)
-    assert_match version.to_s, shell_output("#{bin}risor version")
-    assert_match "module(aws)", shell_output("#{bin}risor -c aws")
-    assert_match "module(k8s)", shell_output("#{bin}risor -c k8s")
-    assert_match "module(vault)", shell_output("#{bin}risor -c vault")
+    output = shell_output("#{bin}/risor -c \"time.now()\"")
+    assert_match(/\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}/, output)
+    assert_match version.to_s, shell_output("#{bin}/risor version")
+    assert_match "module(aws)", shell_output("#{bin}/risor -c aws")
+    assert_match "module(k8s)", shell_output("#{bin}/risor -c k8s")
+    assert_match "module(vault)", shell_output("#{bin}/risor -c vault")
   end
 end

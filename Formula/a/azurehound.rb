@@ -1,14 +1,14 @@
 class Azurehound < Formula
   desc "Azure Data Exporter for BloodHound"
-  homepage "https:github.comSpecterOpsAzureHound"
-  url "https:github.comSpecterOpsAzureHoundarchiverefstagsv2.6.0.tar.gz"
+  homepage "https://github.com/SpecterOps/AzureHound"
+  url "https://ghfast.top/https://github.com/SpecterOps/AzureHound/archive/refs/tags/v2.6.0.tar.gz"
   sha256 "57528df45381d5e009f2e50a602f2ef80bb54904a03b91c5ba72d73c820c83bb"
   license "GPL-3.0-or-later"
-  head "https:github.comSpecterOpsAzureHound.git", branch: "main"
+  head "https://github.com/SpecterOps/AzureHound.git", branch: "main"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -23,14 +23,14 @@ class Azurehound < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w -X github.combloodhoundadazurehoundv2constants.Version=#{version}")
+    system "go", "build", *std_go_args(ldflags: "-s -w -X github.com/bloodhoundad/azurehound/v2/constants.Version=#{version}")
 
-    generate_completions_from_executable(bin"azurehound", "completion")
+    generate_completions_from_executable(bin/"azurehound", "completion")
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}azurehound --version")
+    assert_match version.to_s, shell_output("#{bin}/azurehound --version")
 
-    assert_match "No configuration file", shell_output("#{bin}azurehound list 2>&1", 1)
+    assert_match "No configuration file", shell_output("#{bin}/azurehound list 2>&1", 1)
   end
 end

@@ -1,7 +1,7 @@
 class Libvmaf < Formula
   desc "Perceptual video quality assessment based on multi-method fusion"
-  homepage "https:github.comNetflixvmaf"
-  url "https:github.comNetflixvmafarchiverefstagsv3.0.0.tar.gz"
+  homepage "https://github.com/Netflix/vmaf"
+  url "https://ghfast.top/https://github.com/Netflix/vmaf/archive/refs/tags/v3.0.0.tar.gz"
   sha256 "7178c4833639e6b989ecae73131d02f70735fdb3fc2c7d84bc36c9c3461d93b1"
   license "BSD-2-Clause-Patent"
 
@@ -36,19 +36,19 @@ class Libvmaf < Formula
   end
 
   test do
-    (testpath"test.c").write <<~C
-      #include <libvmaflibvmaf.h>
+    (testpath/"test.c").write <<~C
+      #include <libvmaf/libvmaf.h>
       int main() {
         return 0;
       }
     C
 
     flags = [
-      "-I#{HOMEBREW_PREFIX}includelibvmaf",
+      "-I#{HOMEBREW_PREFIX}/include/libvmaf",
       "-L#{lib}",
     ]
 
     system ENV.cc, "test.c", "-o", "test", *flags
-    system ".test"
+    system "./test"
   end
 end

@@ -1,11 +1,11 @@
 class Jsonpp < Formula
   desc "Command-line JSON pretty-printer"
-  homepage "https:jmhodges.github.iojsonpp"
-  url "https:github.comjmhodgesjsonpparchiverefstags1.3.0.tar.gz"
+  homepage "https://jmhodges.github.io/jsonpp/"
+  url "https://ghfast.top/https://github.com/jmhodges/jsonpp/archive/refs/tags/1.3.0.tar.gz"
   sha256 "dde8ea9b270a79cd2b2f40824f89abc5270bd360122d87ab04b4361c0015d941"
   license "MIT"
   revision 1
-  head "https:github.comjmhodgesjsonpp.git", branch: "main"
+  head "https://github.com/jmhodges/jsonpp.git", branch: "main"
 
   no_autobump! because: :requires_manual_review
 
@@ -42,6 +42,6 @@ class Jsonpp < Formula
         "baz": "qux"
       }
     EOS
-    assert_equal expected, pipe_output(bin"jsonpp", '{"foo":"bar","baz":"qux"}')
+    assert_equal expected, pipe_output(bin/"jsonpp", '{"foo":"bar","baz":"qux"}')
   end
 end

@@ -1,7 +1,7 @@
 class Graphqurl < Formula
   desc "Curl for GraphQL with autocomplete, subscriptions and GraphiQL"
-  homepage "https:github.comhasuragraphqurl"
-  url "https:registry.npmjs.orggraphqurl-graphqurl-2.0.0.tgz"
+  homepage "https://github.com/hasura/graphqurl"
+  url "https://registry.npmjs.org/graphqurl/-/graphqurl-2.0.0.tgz"
   sha256 "589fd91ec8b40554ff2d32a35846bc9e31466ce9824530ccd3176aafe8e8ce75"
   license "Apache-2.0"
 
@@ -19,12 +19,12 @@ class Graphqurl < Formula
 
   def install
     system "npm", "install", *std_npm_args
-    bin.install_symlink Dir["#{libexec}bin*"]
+    bin.install_symlink Dir["#{libexec}/bin/*"]
   end
 
   test do
-    output = Utils.safe_popen_read(bin"gq", "https:graphqlzero.almansi.meapi",
-                                              "--header", "Content-Type: applicationjson",
+    output = Utils.safe_popen_read(bin/"gq", "https://graphqlzero.almansi.me/api",
+                                              "--header", "Content-Type: application/json",
                                               "--introspect")
     assert_match "type Query {", output
   end

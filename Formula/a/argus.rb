@@ -1,7 +1,7 @@
 class Argus < Formula
   desc "Audit Record Generation and Utilization System server"
-  homepage "https:openargus.org"
-  url "https:github.comopenargusargusarchiverefstagsv5.0.2.tar.gz"
+  homepage "https://openargus.org"
+  url "https://ghfast.top/https://github.com/openargus/argus/archive/refs/tags/v5.0.2.tar.gz"
   sha256 "1718454ac717fe5f500d00ff608097e3c5483f4e138aa789e67e306feb52bafb"
   license "GPL-3.0-or-later"
 
@@ -27,18 +27,18 @@ class Argus < Formula
 
   def install
     if OS.linux?
-      ENV.append_to_cflags "-I#{Formula["libtirpc"].opt_include}tirpc"
+      ENV.append_to_cflags "-I#{Formula["libtirpc"].opt_include}/tirpc"
       ENV.append "LIBS", "-ltirpc"
     end
-    system ".configure", "--with-sasl", *std_configure_args
+    system "./configure", "--with-sasl", *std_configure_args
     system "make"
     system "make", "install"
   end
 
   test do
-    assert_match "Pages", shell_output(bin"argus-vmstat") if OS.mac?
-    assert_match "Argus Version #{version}", shell_output("#{sbin}argus -h", 255)
-    system sbin"argus", "-r", test_fixtures("test.pcap"), "-w", testpath"test.argus"
-    assert_path_exists testpath"test.argus"
+    assert_match "Pages", shell_output(bin/"argus-vmstat") if OS.mac?
+    assert_match "Argus Version #{version}", shell_output("#{sbin}/argus -h", 255)
+    system sbin/"argus", "-r", test_fixtures("test.pcap"), "-w", testpath/"test.argus"
+    assert_path_exists testpath/"test.argus"
   end
 end

@@ -1,13 +1,13 @@
 class Libpcl < Formula
   desc "C library and API for coroutines"
-  homepage "http:www.xmailserver.orglibpcl.html"
-  url "http:www.xmailserver.orgpcl-1.12.tar.gz"
+  homepage "http://www.xmailserver.org/libpcl.html"
+  url "http://www.xmailserver.org/pcl-1.12.tar.gz"
   sha256 "e7b30546765011575d54ae6b44f9d52f138f5809221270c815d2478273319e1a"
   license "GPL-2.0-or-later"
 
   livecheck do
     url :homepage
-    regex(href=.*?pcl[._-]v?(\d+(?:\.\d+)+)\.ti)
+    regex(/href=.*?pcl[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -26,7 +26,7 @@ class Libpcl < Formula
 
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
-    url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-pre-0.4.2.418-big_sur.diff"
+    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-pre-0.4.2.418-big_sur.diff"
     sha256 "83af02f2aa2b746bb7225872cab29a253264be49db0ecebb12f841562d9a2923"
   end
 
@@ -34,7 +34,7 @@ class Libpcl < Formula
     args = []
     args << "--build=aarch64-unknown-linux-gnu" if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
 
-    system ".configure", *args, *std_configure_args
+    system "./configure", *args, *std_configure_args
     system "make", "install"
   end
 end

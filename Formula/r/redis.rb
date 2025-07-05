@@ -1,20 +1,20 @@
 class Redis < Formula
   desc "Persistent key-value database, with built-in net interface"
-  homepage "https:redis.io"
-  url "https:download.redis.ioreleasesredis-8.0.2.tar.gz"
+  homepage "https://redis.io/"
+  url "https://download.redis.io/releases/redis-8.0.2.tar.gz"
   sha256 "e9296b67b54c91befbcca046d67071c780a1f7c9f9e1ae5ed94773c3bb9b542f"
   license all_of: [
     "AGPL-3.0-only",
-    "BSD-2-Clause", # depsjemalloc, depslinenoise, srclzf*
-    "BSL-1.0", # depsfpconv
-    "MIT", # depslua
-    any_of: ["CC0-1.0", "BSD-2-Clause"], # depshdr_histogram
+    "BSD-2-Clause", # deps/jemalloc, deps/linenoise, src/lzf*
+    "BSL-1.0", # deps/fpconv
+    "MIT", # deps/lua
+    any_of: ["CC0-1.0", "BSD-2-Clause"], # deps/hdr_histogram
   ]
-  head "https:github.comredisredis.git", branch: "unstable"
+  head "https://github.com/redis/redis.git", branch: "unstable"
 
   livecheck do
-    url "https:download.redis.ioreleases"
-    regex(href=.*?redis[._-]v?(\d+(?:\.\d+)+)\.ti)
+    url "https://download.redis.io/releases/"
+    regex(/href=.*?redis[._-]v?(\d+(?:\.\d+)+)\.t/i)
     strategy :page_match
   end
 
@@ -35,13 +35,13 @@ class Redis < Formula
   def install
     system "make", "install", "PREFIX=#{prefix}", "CC=#{ENV.cc}", "BUILD_TLS=yes"
 
-    %w[run dbredis log].each { |p| (varp).mkpath }
+    %w[run db/redis log].each { |p| (var/p).mkpath }
 
     # Fix up default conf file to match our paths
     inreplace "redis.conf" do |s|
-      s.gsub! "varrunredis_6379.pid", var"runredis.pid"
-      s.gsub! "dir .", "dir #{var}dbredis"
-      s.sub!(^bind .*$, "bind 127.0.0.1 ::1")
+      s.gsub! "/var/run/redis_6379.pid", var/"run/redis.pid"
+      s.gsub! "dir ./", "dir #{var}/db/redis/"
+      s.sub!(/^bind .*$/, "bind 127.0.0.1 ::1")
     end
 
     etc.install "redis.conf"
@@ -49,15 +49,15 @@ class Redis < Formula
   end
 
   service do
-    run [opt_bin"redis-server", etc"redis.conf"]
+    run [opt_bin/"redis-server", etc/"redis.conf"]
     keep_alive true
-    error_log_path var"logredis.log"
-    log_path var"logredis.log"
+    error_log_path var/"log/redis.log"
+    log_path var/"log/redis.log"
     working_dir var
   end
 
   test do
-    system bin"redis-server", "--test-memory", "2"
-    %w[run dbredis log].each { |p| assert_path_exists varp, "#{varp} doesn't exist!" }
+    system bin/"redis-server", "--test-memory", "2"
+    %w[run db/redis log].each { |p| assert_path_exists var/p, "#{var/p} doesn't exist!" }
   end
 end

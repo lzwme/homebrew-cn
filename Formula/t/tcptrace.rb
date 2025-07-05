@@ -2,9 +2,9 @@ class Tcptrace < Formula
   # The tcptrace.org site has a history of going down sometimes, which is why
   # we're using mirrors even though the first-party site may be available.
   desc "Analyze tcpdump output"
-  homepage "https:web.archive.orgweb20210826120800http:www.tcptrace.org"
-  url "https:www.mirrorservice.orgsitesdistfiles.macports.orgtcptracetcptrace-6.6.7.tar.gz"
-  mirror "https:distfiles.macports.orgtcptracetcptrace-6.6.7.tar.gz"
+  homepage "https://web.archive.org/web/20210826120800/http://www.tcptrace.org/"
+  url "https://www.mirrorservice.org/sites/distfiles.macports.org/tcptrace/tcptrace-6.6.7.tar.gz"
+  mirror "https://distfiles.macports.org/tcptrace/tcptrace-6.6.7.tar.gz"
   sha256 "63380a4051933ca08979476a9dfc6f959308bc9f60d45255202e388eb56910bd"
   license "GPL-2.0-or-later"
 
@@ -41,7 +41,7 @@ class Tcptrace < Formula
   end
 
   patch do
-    url "https:github.commsagarpateltcptracecommitf36b1567a5691d4c32489ab8493d8d4faaad3935.patch?full_index=1"
+    url "https://github.com/msagarpatel/tcptrace/commit/f36b1567a5691d4c32489ab8493d8d4faaad3935.patch?full_index=1"
     sha256 "ee86790cc2c3cea38ab9d764b3bfbc6adf5f62ca6c33c590329c00429d0a9ef8"
   end
 
@@ -49,21 +49,21 @@ class Tcptrace < Formula
     # Workaround for ancient config files not recognizing aarch64 linux.
     if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       %w[config.guess config.sub].each do |fn|
-        cp Formula["automake"].share"automake-#{Formula["automake"].version.major_minor}"fn, fn
+        cp Formula["automake"].share/"automake-#{Formula["automake"].version.major_minor}"/fn, fn
       end
     end
 
-    system ".configure", *std_configure_args
+    system "./configure", *std_configure_args
     system "make", "tcptrace"
 
-    # don't install with ownergroup
+    # don't install with owner/group
     inreplace "Makefile", "-o bin -g bin", ""
     system "make", "install", "BINDIR=#{bin}", "MANDIR=#{man}"
   end
 
   test do
     touch "dump"
-    assert_match(0 packets seen, 0 TCP packets,
-      shell_output("#{bin}tcptrace dump"))
+    assert_match(/0 packets seen, 0 TCP packets/,
+      shell_output("#{bin}/tcptrace dump"))
   end
 end

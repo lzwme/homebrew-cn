@@ -2,10 +2,10 @@ cask "font-amarante" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefontsrawmainoflamaranteAmarante-Regular.ttf",
-      verified: "github.comgooglefonts"
+  url "https://github.com/google/fonts/raw/main/ofl/amarante/Amarante-Regular.ttf",
+      verified: "github.com/google/fonts/"
   name "Amarante"
-  homepage "https:fonts.google.comspecimenAmarante"
+  homepage "https://fonts.google.com/specimen/Amarante"
 
   font "Amarante-Regular.ttf"
 

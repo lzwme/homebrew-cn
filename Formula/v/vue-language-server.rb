@@ -1,7 +1,7 @@
 class VueLanguageServer < Formula
   desc "Vue.js language server"
-  homepage "https:github.comvuejslanguage-tools"
-  url "https:registry.npmjs.org@vuelanguage-server-language-server-3.0.1.tgz"
+  homepage "https://github.com/vuejs/language-tools"
+  url "https://registry.npmjs.org/@vue/language-server/-/language-server-3.0.1.tgz"
   sha256 "91226013de0ed6a61d77f62845ec7c0894a9ad2d793e96e84f30a12a7623da71"
   license "MIT"
 
@@ -18,7 +18,7 @@ class VueLanguageServer < Formula
 
   def install
     system "npm", "install", *std_npm_args
-    bin.install_symlink libexec.glob("bin*")
+    bin.install_symlink libexec.glob("bin/*")
   end
 
   test do
@@ -36,10 +36,10 @@ class VueLanguageServer < Formula
       }
     JSON
 
-    Open3.popen3(bin"vue-language-server", "--stdio") do |stdin, stdout|
+    Open3.popen3(bin/"vue-language-server", "--stdio") do |stdin, stdout|
       stdin.write "Content-Length: #{json.size}\r\n\r\n#{json}"
       sleep 3
-      assert_match(^Content-Length: \d+i, stdout.readline)
+      assert_match(/^Content-Length: \d+/i, stdout.readline)
     end
   end
 end

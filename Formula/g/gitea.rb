@@ -1,13 +1,13 @@
 class Gitea < Formula
   desc "Painless self-hosted all-in-one software development service"
-  homepage "https:about.gitea.com"
-  url "https:dl.gitea.comgitea1.24.2gitea-src-1.24.2.tar.gz"
+  homepage "https://about.gitea.com/"
+  url "https://dl.gitea.com/gitea/1.24.2/gitea-src-1.24.2.tar.gz"
   sha256 "1015496a01a95821faaefce1d422ecdd98f62bc609efbeb43608772612ceeeff"
   license "MIT"
-  head "https:github.comgo-giteagitea.git", branch: "main"
+  head "https://github.com/go-gitea/gitea.git", branch: "main"
 
   livecheck do
-    url "https:dl.gitea.comgiteaversion.json"
+    url "https://dl.gitea.com/gitea/version.json"
     strategy :json do |json|
       json.dig("latest", "version")
     end
@@ -35,10 +35,10 @@ class Gitea < Formula
   end
 
   service do
-    run [opt_bin"gitea", "web", "--work-path", var"gitea"]
+    run [opt_bin/"gitea", "web", "--work-path", var/"gitea"]
     keep_alive true
-    log_path var"loggitea.log"
-    error_log_path var"loggitea.log"
+    log_path var/"log/gitea.log"
+    error_log_path var/"log/gitea.log"
   end
 
   test do
@@ -46,18 +46,18 @@ class Gitea < Formula
     port = free_port
 
     pid = fork do
-      exec bin"gitea", "web", "--port", port.to_s, "--install-port", port.to_s
+      exec bin/"gitea", "web", "--port", port.to_s, "--install-port", port.to_s
     end
     sleep 5
     sleep 10 if OS.mac? && Hardware::CPU.intel?
 
-    output = shell_output("curl -s http:localhost:#{port}apisettingsapi")
+    output = shell_output("curl -s http://localhost:#{port}/api/settings/api")
     assert_match "Go to default page", output
 
-    output = shell_output("curl -s http:localhost:#{port}")
+    output = shell_output("curl -s http://localhost:#{port}/")
     assert_match "Installation - Gitea: Git with a cup of tea", output
 
-    assert_match version.to_s, shell_output("#{bin}gitea -v")
+    assert_match version.to_s, shell_output("#{bin}/gitea -v")
   ensure
     Process.kill("TERM", pid)
     Process.wait(pid)

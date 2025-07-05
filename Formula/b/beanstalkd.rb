@@ -1,7 +1,7 @@
 class Beanstalkd < Formula
   desc "Generic work queue originally designed to reduce web latency"
-  homepage "https:beanstalkd.github.io"
-  url "https:github.combeanstalkdbeanstalkdarchiverefstagsv1.13.tar.gz"
+  homepage "https://beanstalkd.github.io/"
+  url "https://ghfast.top/https://github.com/beanstalkd/beanstalkd/archive/refs/tags/v1.13.tar.gz"
   sha256 "26292dcdc0a7011d2f8ad968612f2cd8b2ef07687224876015399ae85e9e5263"
   license "MIT"
 
@@ -26,14 +26,14 @@ class Beanstalkd < Formula
   end
 
   service do
-    run opt_bin"beanstalkd"
+    run opt_bin/"beanstalkd"
     keep_alive true
     working_dir var
-    log_path var"logbeanstalkd.log"
-    error_log_path var"logbeanstalkd.log"
+    log_path var/"log/beanstalkd.log"
+    error_log_path var/"log/beanstalkd.log"
   end
 
   test do
-    system bin"beanstalkd", "-v"
+    system bin/"beanstalkd", "-v"
   end
 end

@@ -1,10 +1,10 @@
 class Ov < Formula
   desc "Feature-rich terminal-based text viewer"
-  homepage "https:noborus.github.ioov"
-  url "https:github.comnoborusovarchiverefstagsv0.42.1.tar.gz"
+  homepage "https://noborus.github.io/ov/"
+  url "https://ghfast.top/https://github.com/noborus/ov/archive/refs/tags/v0.42.1.tar.gz"
   sha256 "94a712214125fd6de24f0235e7aa8aa83d9220213036c73065321f2cc9ff2483"
   license "MIT"
-  head "https:github.comnoborusov.git", branch: "master"
+  head "https://github.com/noborus/ov.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "88277d3ce18f3128f41ad3ec0ebf1870cc519f093f159192547c668d58a42912"
@@ -23,9 +23,9 @@ class Ov < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}ov --version")
+    assert_match version.to_s, shell_output("#{bin}/ov --version")
 
-    (testpath"test.txt").write("Hello, world!")
-    assert_match "Hello, world!", shell_output("#{bin}ov test.txt")
+    (testpath/"test.txt").write("Hello, world!")
+    assert_match "Hello, world!", shell_output("#{bin}/ov test.txt")
   end
 end

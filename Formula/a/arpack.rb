@@ -1,11 +1,11 @@
 class Arpack < Formula
   desc "Routines to solve large scale eigenvalue problems"
-  homepage "https:github.comopencollabarpack-ng"
-  url "https:github.comopencollabarpack-ngarchiverefstags3.9.1.tar.gz"
+  homepage "https://github.com/opencollab/arpack-ng"
+  url "https://ghfast.top/https://github.com/opencollab/arpack-ng/archive/refs/tags/3.9.1.tar.gz"
   sha256 "f6641deb07fa69165b7815de9008af3ea47eb39b2bb97521fbf74c97aba6e844"
   license "BSD-3-Clause"
   revision 1
-  head "https:github.comopencollabarpack-ng.git", branch: "master"
+  head "https://github.com/opencollab/arpack-ng.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -38,20 +38,20 @@ class Arpack < Formula
       --enable-eigen
     ]
 
-    system ".bootstrap"
-    system ".configure", *args, *std_configure_args
+    system "./bootstrap"
+    system "./configure", *args, *std_configure_args
     system "make"
     system "make", "install"
-    pkgshare.install "TESTStestA.mtx", "TESTSdnsimp.f", "TESTSmmio.f", "TESTSdebug.h"
+    pkgshare.install "TESTS/testA.mtx", "TESTS/dnsimp.f", "TESTS/mmio.f", "TESTS/debug.h"
   end
 
   test do
     ENV.fortran
     args = (OS.mac? && MacOS.version >= :sequoia) ? ["-O2"] : []
-    system ENV.fc, *args, "-o", "test", pkgshare"dnsimp.f", pkgshare"mmio.f",
+    system ENV.fc, *args, "-o", "test", pkgshare/"dnsimp.f", pkgshare/"mmio.f",
                    "-L#{lib}", "-larpack",
                    "-L#{Formula["openblas"].opt_lib}", "-lopenblas"
-    cp_r pkgshare"testA.mtx", testpath
-    assert_match "reached", shell_output(".test")
+    cp_r pkgshare/"testA.mtx", testpath
+    assert_match "reached", shell_output("./test")
   end
 end

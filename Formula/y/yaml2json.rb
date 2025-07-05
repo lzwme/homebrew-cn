@@ -1,10 +1,10 @@
 class Yaml2json < Formula
   desc "Command-line tool convert from YAML to JSON"
-  homepage "https:github.combronze1manyaml2json"
-  url "https:github.combronze1manyaml2jsonarchiverefstagsv1.3.5.tar.gz"
+  homepage "https://github.com/bronze1man/yaml2json"
+  url "https://ghfast.top/https://github.com/bronze1man/yaml2json/archive/refs/tags/v1.3.5.tar.gz"
   sha256 "efde12ca8b3ab7df3d3eaef35ecfb6e0d54baed33c8d553e7fd611a79c4cee04"
   license "MIT"
-  head "https:github.combronze1manyaml2json.git", branch: "master"
+  head "https://github.com/bronze1man/yaml2json.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "81fdf8b90dfbef0a48912f42db8742d4ee5542d87a3f709504821ba7c4aae7f4"
@@ -23,9 +23,9 @@ class Yaml2json < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}yaml2json --version 2>&1", 1)
+    assert_match version.to_s, shell_output("#{bin}/yaml2json --version 2>&1", 1)
 
-    (testpath"test.yaml").write <<~YAML
+    (testpath/"test.yaml").write <<~YAML
       firstname: John
       lastname: Doe
       age: 25
@@ -38,7 +38,7 @@ class Yaml2json < Formula
           color: brown
     YAML
 
-    (testpath"expected.json").write <<~JSON
+    (testpath/"expected.json").write <<~JSON
       {
         "age": 25,
         "firstname": "John",
@@ -56,7 +56,7 @@ class Yaml2json < Formula
       }
     JSON
 
-    assert_equal JSON.parse((testpath"expected.json").read),
-      JSON.parse(shell_output("#{bin}yaml2json < #{testpath}test.yaml"))
+    assert_equal JSON.parse((testpath/"expected.json").read),
+      JSON.parse(shell_output("#{bin}/yaml2json < #{testpath}/test.yaml"))
   end
 end

@@ -1,14 +1,14 @@
 class Zmap < Formula
   desc "Network scanner for Internet-wide network studies"
-  homepage "https:zmap.io"
-  url "https:github.comzmapzmaparchiverefstagsv4.3.4.tar.gz"
+  homepage "https://zmap.io"
+  url "https://ghfast.top/https://github.com/zmap/zmap/archive/refs/tags/v4.3.4.tar.gz"
   sha256 "b5936bf5b5390fb50203140e81beac28866374371b1c68329cbbe932cc5ee1d3"
   license "Apache-2.0"
-  head "https:github.comzmapzmap.git", branch: "main"
+  head "https://github.com/zmap/zmap.git", branch: "main"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -35,7 +35,7 @@ class Zmap < Formula
   uses_from_macos "libpcap"
 
   def install
-    inreplace ["confzmap.conf", "srcconstants.h", "srczopt.ggo.in"], "etc", etc
+    inreplace ["conf/zmap.conf", "src/constants.h", "src/zopt.ggo.in"], "/etc", etc
     args = %w[-DENABLE_DEVELOPMENT=OFF -DRESPECT_INSTALL_PREFIX_CONFIG=ON]
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
@@ -44,12 +44,12 @@ class Zmap < Formula
   end
 
   test do
-    output = shell_output("#{sbin}zmap -p 80 -N 1 8.8.8.8 2>&1", 1)
+    output = shell_output("#{sbin}/zmap -p 80 -N 1 8.8.8.8 2>&1", 1)
     assert_match "[INFO] zmap: By default, ZMap will output the unique IP addresses " \
                  "of hosts that respond successfully (e.g., SYN-ACK packet)", output
     # need sudo permission
     assert_match "[FATAL] recv: could not open device", output
 
-    system sbin"zmap", "--version"
+    system sbin/"zmap", "--version"
   end
 end

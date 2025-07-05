@@ -2,9 +2,9 @@ cask "font-caskaydia-mono-nerd-font" do
   version "3.4.0"
   sha256 "95dc4ace16f5a45734fc584925b9ef24c23f46d54a3b66082bac1e3841a41593"
 
-  url "https:github.comryanoasisnerd-fontsreleasesdownloadv#{version}CascadiaMono.zip"
+  url "https://ghfast.top/https://github.com/ryanoasis/nerd-fonts/releases/download/v#{version}/CascadiaMono.zip"
   name "CaskaydiaMono Nerd Font (Cascadia Mono)"
-  homepage "https:github.comryanoasisnerd-fonts"
+  homepage "https://github.com/ryanoasis/nerd-fonts"
 
   livecheck do
     url :url

@@ -1,10 +1,10 @@
 class Uthash < Formula
   desc "C macros for hash tables and more"
-  homepage "https:troydhanson.github.iouthash"
-  url "https:github.comtroydhansonuthasharchiverefstagsv2.3.0.tar.gz"
+  homepage "https://troydhanson.github.io/uthash/"
+  url "https://ghfast.top/https://github.com/troydhanson/uthash/archive/refs/tags/v2.3.0.tar.gz"
   sha256 "e10382ab75518bad8319eb922ad04f907cb20cccb451a3aa980c9d005e661acc"
   license "BSD-1-Clause"
-  head "https:github.comtroydhansonuthash.git", branch: "master"
+  head "https://github.com/troydhanson/uthash.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -14,11 +14,11 @@ class Uthash < Formula
   end
 
   def install
-    include.install buildpath.glob("src*.h")
+    include.install buildpath.glob("src/*.h")
   end
 
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include <assert.h>
       #include <stdio.h>
       #include <stdlib.h>
@@ -56,6 +56,6 @@ class Uthash < Formula
       }
     C
     system ENV.cc, "test.c", "-I#{include}", "-o", "test"
-    assert_equal "ok", shell_output(".test")
+    assert_equal "ok", shell_output("./test")
   end
 end

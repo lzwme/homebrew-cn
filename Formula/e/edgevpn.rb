@@ -1,10 +1,10 @@
 class Edgevpn < Formula
   desc "Immutable, decentralized, statically built p2p VPN"
-  homepage "https:mudler.github.ioedgevpn"
-  url "https:github.commudleredgevpnarchiverefstagsv0.30.2.tar.gz"
+  homepage "https://mudler.github.io/edgevpn"
+  url "https://ghfast.top/https://github.com/mudler/edgevpn/archive/refs/tags/v0.30.2.tar.gz"
   sha256 "21e311c9690eada2a7e1e30b9dbc200fe9df8dc738c125c7f5c47d16c453a896"
   license "Apache-2.0"
-  head "https:github.commudleredgevpn.git", branch: "master"
+  head "https://github.com/mudler/edgevpn.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "e2cf151662af07dd9e4c6a65dffdf63cdaab07ffac018084cea10f001e52e4d4"
@@ -21,7 +21,7 @@ class Edgevpn < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.commudleredgevpninternal.Version=#{version}
+      -X github.com/mudler/edgevpn/internal.Version=#{version}
     ]
 
     ENV["CGO_ENABLED"] = "0"
@@ -29,7 +29,7 @@ class Edgevpn < Formula
   end
 
   test do
-    generate_token_output = pipe_output("#{bin}edgevpn -g")
+    generate_token_output = pipe_output("#{bin}/edgevpn -g")
     assert_match "otp:", generate_token_output
     assert_match "max_message_size: 20971520", generate_token_output
   end

@@ -1,17 +1,17 @@
 class Wolfssl < Formula
   desc "Embedded SSL Library written in C"
-  homepage "https:www.wolfssl.com"
+  homepage "https://www.wolfssl.com"
   # Git checkout automatically enables extra hardening flags
-  # Ref: https:github.comwolfSSLwolfsslblobmasterm4ax_harden_compiler_flags.m4#L71
-  url "https:github.comwolfSSLwolfssl.git",
+  # Ref: https://github.com/wolfSSL/wolfssl/blob/master/m4/ax_harden_compiler_flags.m4#L71
+  url "https://github.com/wolfSSL/wolfssl.git",
       tag:      "v5.8.0-stable",
       revision: "b077c81eb635392e694ccedbab8b644297ec0285"
   license "GPL-2.0-or-later"
-  head "https:github.comwolfSSLwolfssl.git", branch: "master"
+  head "https://github.com/wolfSSL/wolfssl.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(v?(\d+(?:\.\d+)+)[._-]stablei)
+    regex(/v?(\d+(?:\.\d+)+)[._-]stable/i)
     strategy :github_latest
   end
 
@@ -46,22 +46,22 @@ class Wolfssl < Formula
       --enable-reproducible-build
     ]
 
-    # https:github.comwolfSSLwolfsslissues8148
+    # https://github.com/wolfSSL/wolfssl/issues/8148
     args << "--disable-armasm" if OS.linux? && Hardware::CPU.arm?
 
     # Extra flag is stated as a needed for the Mac platform.
-    # https:www.wolfssl.comdocswolfssl-manualch2
+    # https://www.wolfssl.com/docs/wolfssl-manual/ch2/
     # Also, only applies if fastmath is enabled.
     ENV.append_to_cflags "-mdynamic-no-pic" if OS.mac?
 
-    system ".autogen.sh"
-    system ".configure", *args, *std_configure_args
+    system "./autogen.sh"
+    system "./configure", *args, *std_configure_args
     system "make"
     system "make", "check"
     system "make", "install"
   end
 
   test do
-    system bin"wolfssl-config", "--cflags", "--libs", "--prefix"
+    system bin/"wolfssl-config", "--cflags", "--libs", "--prefix"
   end
 end

@@ -1,7 +1,7 @@
 class Prs < Formula
   desc "Secure, fast & convenient password manager CLI with GPG & git sync"
-  homepage "https:timvisee.comprojectsprs"
-  url "https:github.comtimviseeprsarchiverefstagsv0.5.2.tar.gz"
+  homepage "https://timvisee.com/projects/prs"
+  url "https://ghfast.top/https://github.com/timvisee/prs/archive/refs/tags/v0.5.2.tar.gz"
   sha256 "9d1635ca4c9e916d9c59e05e792f0bdcf249488d63b615d30660a5c8371ab3b0"
   license "GPL-3.0-only"
 
@@ -27,19 +27,19 @@ class Prs < Formula
   def install
     system "cargo", "install", *std_cargo_args(path: "cli")
 
-    generate_completions_from_executable(bin"prs", "internal", "completions")
+    generate_completions_from_executable(bin/"prs", "internal", "completions")
   end
 
   test do
-    ENV["PASSWORD_STORE_DIR"] = testpath".store"
+    ENV["PASSWORD_STORE_DIR"] = testpath/".store"
     expected = <<~EOS
       Now generate and add a new recipient key for yourself:
           prs recipients generate
 
     EOS
 
-    assert_equal expected, shell_output("#{bin}prs init --no-interactive 2>&1")
-    assert_equal "prs #{version}\n", shell_output("#{bin}prs --version")
-    assert_empty shell_output("#{bin}prs list --no-interactive --quiet")
+    assert_equal expected, shell_output("#{bin}/prs init --no-interactive 2>&1")
+    assert_equal "prs #{version}\n", shell_output("#{bin}/prs --version")
+    assert_empty shell_output("#{bin}/prs list --no-interactive --quiet")
   end
 end

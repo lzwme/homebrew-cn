@@ -1,7 +1,7 @@
 class Xq < Formula
   desc "Command-line XML and HTML beautifier and content extractor"
-  homepage "https:github.comsibprogrammerxq"
-  url "https:github.comsibprogrammerxq.git",
+  homepage "https://github.com/sibprogrammer/xq"
+  url "https://github.com/sibprogrammer/xq.git",
       tag:      "v1.3.0",
       revision: "86a755578f7bfb82fddc1f712c96db2f0bf36076"
   license "MIT"
@@ -30,14 +30,14 @@ class Xq < Formula
     ]
 
     system "go", "build", *std_go_args(ldflags:)
-    man1.install "docsxq.man" => "xq.1"
+    man1.install "docs/xq.man" => "xq.1"
   end
 
   test do
-    version_output = shell_output(bin"xq --version 2>&1")
+    version_output = shell_output(bin/"xq --version 2>&1")
     assert_match "xq version #{version}", version_output
 
-    run_output = pipe_output(bin"xq", "<root><root>")
-    assert_match("<root>", run_output)
+    run_output = pipe_output(bin/"xq", "<root></root>")
+    assert_match("<root/>", run_output)
   end
 end

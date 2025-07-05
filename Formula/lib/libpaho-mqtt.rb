@@ -1,7 +1,7 @@
 class LibpahoMqtt < Formula
   desc "Eclipse Paho C client library for MQTT"
-  homepage "https:eclipse-paho.github.iopaho.mqtt.cMQTTClienthtml"
-  url "https:github.comeclipse-pahopaho.mqtt.carchiverefstagsv1.3.14.tar.gz"
+  homepage "https://eclipse-paho.github.io/paho.mqtt.c/MQTTClient/html/"
+  url "https://ghfast.top/https://github.com/eclipse-paho/paho.mqtt.c/archive/refs/tags/v1.3.14.tar.gz"
   sha256 "7af7d906e60a696a80f1b7c2bd7d6eb164aaad908ff4c40c3332ac2006d07346"
   license "EPL-2.0"
 
@@ -25,7 +25,7 @@ class LibpahoMqtt < Formula
   end
 
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include <stdio.h>
       #include <stdlib.h>
       #include <MQTTClient.h>
@@ -38,6 +38,6 @@ class LibpahoMqtt < Formula
       }
     C
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lpaho-mqtt3a", "-o", "test"
-    system ".test"
+    system "./test"
   end
 end

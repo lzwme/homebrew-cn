@@ -2,9 +2,9 @@ cask "font-genyomin" do
   version "2.100"
   sha256 "292b3af4232d070483e2fa6f09b56a328a4d47da04b4e9d354a6d6d15f2c1f73"
 
-  url "https:github.comButTaiwangenyo-fontreleasesdownloadv#{version}GenYoMin#{version.major}-ttc.zip"
+  url "https://ghfast.top/https://github.com/ButTaiwan/genyo-font/releases/download/v#{version}/GenYoMin#{version.major}-ttc.zip"
   name "GenYoMin"
-  homepage "https:github.comButTaiwangenyo-font"
+  homepage "https://github.com/ButTaiwan/genyo-font"
 
   no_autobump! because: :requires_manual_review
 

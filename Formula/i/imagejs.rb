@@ -1,14 +1,14 @@
 class Imagejs < Formula
   desc "Tool to hide JavaScript inside valid image files"
-  homepage "https:github.comjklmnnimagejs"
-  url "https:github.comjklmnnimagejsarchiverefstags0.7.2.tar.gz"
+  homepage "https://github.com/jklmnn/imagejs"
+  url "https://ghfast.top/https://github.com/jklmnn/imagejs/archive/refs/tags/0.7.2.tar.gz"
   sha256 "ba75c7ea549c4afbcb2a516565ba0b762b5fc38a03a48e5b94bec78bac7dab07"
   license "GPL-3.0-only"
-  head "https:github.comjklmnnimagejs.git", branch: "master"
+  head "https://github.com/jklmnn/imagejs.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -36,7 +36,7 @@ class Imagejs < Formula
   end
 
   test do
-    (testpath"test.js").write "alert('Hello World!')"
-    system bin"imagejs", "bmp", "test.js", "-l"
+    (testpath/"test.js").write "alert('Hello World!')"
+    system bin/"imagejs", "bmp", "test.js", "-l"
   end
 end

@@ -1,8 +1,8 @@
 class Hbase < Formula
   desc "Hadoop database: a distributed, scalable, big data store"
-  homepage "https:hbase.apache.org"
-  url "https:www.apache.orgdyncloser.lua?path=hbase2.6.2hbase-2.6.2-bin.tar.gz"
-  mirror "https:archive.apache.orgdisthbase2.6.2hbase-2.6.2-bin.tar.gz"
+  homepage "https://hbase.apache.org"
+  url "https://www.apache.org/dyn/closer.lua?path=hbase/2.6.2/hbase-2.6.2-bin.tar.gz"
+  mirror "https://archive.apache.org/dist/hbase/2.6.2/hbase-2.6.2-bin.tar.gz"
   sha256 "5ff9a3993031f5a9e1d94fd795fb9ff8ee003b90570e476c63af6d3dd744a583"
   # We bundle hadoop-lzo which is GPL-3.0-or-later
   license all_of: ["Apache-2.0", "GPL-3.0-or-later"]
@@ -29,130 +29,130 @@ class Hbase < Formula
   end
 
   resource "hadoop-lzo" do
-    url "https:github.comclouderahadoop-lzoarchiverefstags0.4.14.tar.gz"
+    url "https://ghfast.top/https://github.com/cloudera/hadoop-lzo/archive/refs/tags/0.4.14.tar.gz"
     sha256 "aa8ddbb8b3f9e1c4b8cc3523486acdb7841cd97c002a9f2959c5b320c7bb0e6c"
 
     patch do
-      url "https:raw.githubusercontent.comHomebrewformula-patchesb89da3afad84bbf69deed0611e5dddaaa5d39325hbasebuild.xml.patch"
+      url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/b89da3afad84bbf69deed0611e5dddaaa5d39325/hbase/build.xml.patch"
       sha256 "d1d65330a4367db3e17ee4f4045641b335ed42449d9e6e42cc687e2a2e3fa5bc"
     end
 
     # Fix -flat_namespace being used on Big Sur and later.
     patch do
-      url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-pre-0.4.2.418-big_sur.diff"
+      url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-pre-0.4.2.418-big_sur.diff"
       sha256 "83af02f2aa2b746bb7225872cab29a253264be49db0ecebb12f841562d9a2923"
-      directory "srcnative"
+      directory "src/native"
     end
   end
 
   def install
     java_home = Language::Java.java_home("11")
-    rm(Dir["bin*.cmd", "conf*.cmd"])
+    rm(Dir["bin/*.cmd", "conf/*.cmd"])
     libexec.install %w[bin conf lib hbase-webapps]
 
     # Some binaries have really generic names (like `test`) and most seem to be
     # too special-purpose to be permanently available via PATH.
     %w[hbase start-hbase.sh stop-hbase.sh].each do |script|
-      (binscript).write_env_script libexec"bin"script, Language::Java.overridable_java_home_env("11")
+      (bin/script).write_env_script libexec/"bin"/script, Language::Java.overridable_java_home_env("11")
     end
 
     resource("hadoop-lzo").stage do
       if OS.linux? && Hardware::CPU.arm?
         # Workaround for ancient config files not recognizing aarch64 macos.
-        automake_dir = Formula["automake"].share"automake-#{Formula["automake"].version.major_minor}"
-        %w[config.guess config.sub].each { |fn| cp automake_dirfn, "srcnativeconfig#{fn}" }
+        automake_dir = Formula["automake"].share/"automake-#{Formula["automake"].version.major_minor}"
+        %w[config.guess config.sub].each { |fn| cp automake_dir/fn, "src/native/config/#{fn}" }
       end
 
       # Help configure to find liblzo on Linux.
       unless OS.mac?
-        inreplace "srcnativeconfigure",
+        inreplace "src/native/configure",
         "#define HADOOP_LZO_LIBRARY ${ac_cv_libname_lzo2}",
-        "#define HADOOP_LZO_LIBRARY \"#{Formula["lzo"].opt_libshared_library("liblzo2")}\""
+        "#define HADOOP_LZO_LIBRARY \"#{Formula["lzo"].opt_lib/shared_library("liblzo2")}\""
       end
 
-      # Fixed upstream: https:github.comclouderahadoop-lzoblobHEADbuild.xml#L235
-      ENV["CLASSPATH"] = Dir["#{libexec}libhadoop-common-*.jar"].first
+      # Fixed upstream: https://github.com/cloudera/hadoop-lzo/blob/HEAD/build.xml#L235
+      ENV["CLASSPATH"] = Dir["#{libexec}/lib/hadoop-common-*.jar"].first
       # Workaround for Xcode 14.3.
       ENV.append_to_cflags "-m64" if Hardware::CPU.intel?
       ENV.append_to_cflags "-Wno-implicit-function-declaration"
       ENV["CPPFLAGS"] = "-I#{Formula["openjdk@11"].include}"
 
       system "ant", "compile-native", "tar"
-      (libexec"lib").install Dir["buildhadoop-lzo-*hadoop-lzo-*.jar"]
-      (libexec"libnative").install Dir["buildhadoop-lzo-*libnative*"]
+      (libexec/"lib").install Dir["build/hadoop-lzo-*/hadoop-lzo-*.jar"]
+      (libexec/"lib/native").install Dir["build/hadoop-lzo-*/lib/native/*"]
     end
 
-    inreplace libexec"confhbase-env.sh" do |s|
+    inreplace libexec/"conf/hbase-env.sh" do |s|
       # upstream bugs for ipv6 incompatibility:
-      # https:issues.apache.orgjirabrowseHADOOP-8568
-      # https:issues.apache.orgjirabrowseHADOOP-3619
-      s.gsub!(^# export HBASE_OPTS$,
+      # https://issues.apache.org/jira/browse/HADOOP-8568
+      # https://issues.apache.org/jira/browse/HADOOP-3619
+      s.gsub!(/^# export HBASE_OPTS$/,
               "export HBASE_OPTS=\"-Djava.net.preferIPv4Stack=true -XX:+UseConcMarkSweepGC\"")
-      s.gsub!(^# export JAVA_HOME=.*,
+      s.gsub!(/^# export JAVA_HOME=.*/,
               "export JAVA_HOME=\"${JAVA_HOME:-#{java_home}}\"")
 
-      # Default `$HBASE_HOMElogs` is unsuitable as it would cause writes to the
+      # Default `$HBASE_HOME/logs` is unsuitable as it would cause writes to the
       # formula's prefix. Provide a better default but still allow override.
-      s.gsub!(^# export HBASE_LOG_DIR=.*$,
-              "export HBASE_LOG_DIR=\"${HBASE_LOG_DIR:-#{var}loghbase}\"")
+      s.gsub!(/^# export HBASE_LOG_DIR=.*$/,
+              "export HBASE_LOG_DIR=\"${HBASE_LOG_DIR:-#{var}/log/hbase}\"")
     end
 
     # Interface name is lo on Linux, not lo0.
     loopback = OS.mac? ? "lo0" : "lo"
     # makes hbase usable out of the box
     # upstream has been provided this patch
-    # https:issues.apache.orgjirabrowseHBASE-15426
-    inreplace "#{libexec}confhbase-site.xml",
-      <configuration>,
+    # https://issues.apache.org/jira/browse/HBASE-15426
+    inreplace "#{libexec}/conf/hbase-site.xml",
+      /<configuration>/,
       <<~XML
         <configuration>
           <property>
-            <name>hbase.rootdir<name>
-            <value>file:#{var}hbase<value>
+            <name>hbase.rootdir</name>
+            <value>file://#{var}/hbase</value>
+          </property>
           <property>
+            <name>hbase.zookeeper.property.clientPort</name>
+            <value>2181</value>
+          </property>
           <property>
-            <name>hbase.zookeeper.property.clientPort<name>
-            <value>2181<value>
+            <name>hbase.zookeeper.property.dataDir</name>
+            <value>#{var}/zookeeper</value>
+          </property>
           <property>
+            <name>hbase.zookeeper.dns.interface</name>
+            <value>#{loopback}</value>
+          </property>
           <property>
-            <name>hbase.zookeeper.property.dataDir<name>
-            <value>#{var}zookeeper<value>
+            <name>hbase.regionserver.dns.interface</name>
+            <value>#{loopback}</value>
+          </property>
           <property>
-          <property>
-            <name>hbase.zookeeper.dns.interface<name>
-            <value>#{loopback}<value>
-          <property>
-          <property>
-            <name>hbase.regionserver.dns.interface<name>
-            <value>#{loopback}<value>
-          <property>
-          <property>
-            <name>hbase.master.dns.interface<name>
-            <value>#{loopback}<value>
-          <property>
+            <name>hbase.master.dns.interface</name>
+            <value>#{loopback}</value>
+          </property>
       XML
   end
 
   def post_install
-    (var"loghbase").mkpath
-    (var"runhbase").mkpath
+    (var/"log/hbase").mkpath
+    (var/"run/hbase").mkpath
   end
 
   service do
-    run [opt_bin"hbase", "--config", opt_libexec"conf", "master", "start"]
+    run [opt_bin/"hbase", "--config", opt_libexec/"conf", "master", "start"]
     keep_alive true
     working_dir HOMEBREW_PREFIX
-    log_path var"hbasehbase.log"
-    error_log_path var"hbasehbase.err"
+    log_path var/"hbase/hbase.log"
+    error_log_path var/"hbase/hbase.err"
     environment_variables HBASE_HOME:              opt_libexec,
                           HBASE_IDENT_STRING:      "root",
-                          HBASE_LOG_DIR:           var"hbase",
+                          HBASE_LOG_DIR:           var/"hbase",
                           HBASE_LOG_PREFIX:        "hbase-root-master",
                           HBASE_LOGFILE:           "hbase-root-master.log",
                           HBASE_MASTER_OPTS:       " -XX:PermSize=128m -XX:MaxPermSize=128m",
                           HBASE_NICENESS:          "0",
                           HBASE_OPTS:              "-XX:+UseConcMarkSweepGC",
-                          HBASE_PID_DIR:           var"runhbase",
+                          HBASE_PID_DIR:           var/"run/hbase",
                           HBASE_REGIONSERVER_OPTS: " -XX:PermSize=128m -XX:MaxPermSize=128m",
                           HBASE_ROOT_LOGGER:       "INFO,RFA",
                           HBASE_SECURITY_LOGGER:   "INFO,RFAS"
@@ -160,20 +160,20 @@ class Hbase < Formula
 
   test do
     port = free_port
-    assert_match "HBase #{version}", shell_output("#{bin}hbase version 2>&1")
+    assert_match "HBase #{version}", shell_output("#{bin}/hbase version 2>&1")
 
-    cp_r (libexec"conf"), testpath
-    inreplace (testpath"confhbase-site.xml") do |s|
-      s.gsub!((hbase.rootdir.*)\n.*, "\\1\n<value>file:#{testpath}hbase<value>")
-      s.gsub!((hbase.zookeeper.property.dataDir.*)\n.*, "\\1\n<value>#{testpath}zookeeper<value>")
-      s.gsub!((hbase.zookeeper.property.clientPort.*)\n.*, "\\1\n<value>#{port}<value>")
+    cp_r (libexec/"conf"), testpath
+    inreplace (testpath/"conf/hbase-site.xml") do |s|
+      s.gsub!(/(hbase.rootdir.*)\n.*/, "\\1\n<value>file://#{testpath}/hbase</value>")
+      s.gsub!(/(hbase.zookeeper.property.dataDir.*)\n.*/, "\\1\n<value>#{testpath}/zookeeper</value>")
+      s.gsub!(/(hbase.zookeeper.property.clientPort.*)\n.*/, "\\1\n<value>#{port}</value>")
     end
 
-    ENV["HBASE_LOG_DIR"]  = testpath"logs"
-    ENV["HBASE_CONF_DIR"] = testpath"conf"
-    ENV["HBASE_PID_DIR"]  = testpath"pid"
+    ENV["HBASE_LOG_DIR"]  = testpath/"logs"
+    ENV["HBASE_CONF_DIR"] = testpath/"conf"
+    ENV["HBASE_PID_DIR"]  = testpath/"pid"
 
-    system bin"start-hbase.sh"
+    system bin/"start-hbase.sh"
     begin
       sleep 15
       TCPSocket.open("127.0.0.1", port) do |sock|
@@ -183,7 +183,7 @@ class Hbase < Formula
         sock.close
       end
     ensure
-      system bin"stop-hbase.sh"
+      system bin/"stop-hbase.sh"
     end
   end
 end

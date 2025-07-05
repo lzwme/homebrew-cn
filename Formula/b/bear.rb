@@ -1,11 +1,11 @@
 class Bear < Formula
   desc "Generate compilation database for clang tooling"
-  homepage "https:github.comrizsottoBear"
-  url "https:github.comrizsottoBeararchiverefstags3.1.6.tar.gz"
+  homepage "https://github.com/rizsotto/Bear"
+  url "https://ghfast.top/https://github.com/rizsotto/Bear/archive/refs/tags/3.1.6.tar.gz"
   sha256 "99cd891eec6e89b734d7cafe0e623dd8c2f27d8cbf3ee9bc4807e69e5c8fb55c"
   license "GPL-3.0-or-later"
   revision 2
-  head "https:github.comrizsottoBear.git", branch: "master"
+  head "https://github.com/rizsotto/Bear.git", branch: "master"
 
   bottle do
     sha256 arm64_sequoia: "de84f1f8b481d82cbf1a37ddac490ee05e511b4e18fdaa197aeecb3b02af2cf8"
@@ -54,14 +54,14 @@ class Bear < Formula
   end
 
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include <stdio.h>
       int main() {
         printf("hello, world!\\n");
         return 0;
       }
     C
-    system bin"bear", "--", "clang", "test.c"
-    assert_path_exists testpath"compile_commands.json"
+    system bin/"bear", "--", "clang", "test.c"
+    assert_path_exists testpath/"compile_commands.json"
   end
 end

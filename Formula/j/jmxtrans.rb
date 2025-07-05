@@ -1,7 +1,7 @@
 class Jmxtrans < Formula
   desc "Tool to connect to JVMs and query their attributes"
-  homepage "https:github.comjmxtransjmxtrans"
-  url "https:github.comjmxtransjmxtransarchiverefstagsjmxtrans-parent-272.tar.gz"
+  homepage "https://github.com/jmxtrans/jmxtrans"
+  url "https://ghfast.top/https://github.com/jmxtrans/jmxtrans/archive/refs/tags/jmxtrans-parent-272.tar.gz"
   sha256 "73691dc634be8ff504ed33867807266545d9ff9402e365c09fcf0272720cc160"
   license "MIT"
   version_scheme 1
@@ -18,7 +18,7 @@ class Jmxtrans < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux: "33004f7a6ece9cc9b0c6a0fa1640bf3176237a860012a2df0b2c71ce0a722396"
   end
 
-  # no new commits since March 31 2021, lots of bug reports in https:github.comjmxtransjmxtransissues
+  # no new commits since March 31 2021, lots of bug reports in https://github.com/jmxtrans/jmxtrans/issues
   deprecate! date: "2024-07-26", because: :unmaintained
 
   depends_on "maven" => :build
@@ -37,9 +37,9 @@ class Jmxtrans < Formula
 
     cd "jmxtrans" do
       # Point JAR_FILE into Cellar where we've installed the jar file
-      inreplace "jmxtrans.sh", "$( cd \"$( dirname \"${BASH_SOURCE[0]}\" )..lib\" " \
-                               ">devnull && pwd )jmxtrans-all.jar",
-                libexec"targetjmxtrans-#{version}-all.jar"
+      inreplace "jmxtrans.sh", "$( cd \"$( dirname \"${BASH_SOURCE[0]}\" )/../lib\" " \
+                               ">/dev/null && pwd )/jmxtrans-all.jar",
+                libexec/"target/jmxtrans-#{version}-all.jar"
 
       # Exec java to avoid forking the server into a new process
       inreplace "jmxtrans.sh", "${JAVA} -server", "exec ${JAVA} -server"
@@ -47,20 +47,20 @@ class Jmxtrans < Formula
       chmod 0755, "jmxtrans.sh"
       libexec.install %w[jmxtrans.sh target]
       pkgshare.install %w[bin example.json src tools vagrant]
-      doc.install Dir["doc*"]
+      doc.install Dir["doc/*"]
     end
 
-    (bin"jmxtrans").write_env_script libexec"jmxtrans.sh", JAVA_HOME: Formula["openjdk@8"].opt_prefix
+    (bin/"jmxtrans").write_env_script libexec/"jmxtrans.sh", JAVA_HOME: Formula["openjdk@8"].opt_prefix
 
     # Delete 32-bit Linux binaries
-    rm Dir[libexec"targetgenerated-resourcesappassemblerjswjmxtrans{bin,lib}*wrapper-linux-x86-32*"]
+    rm Dir[libexec/"target/generated-resources/appassembler/jsw/jmxtrans/{bin,lib}/*wrapper-linux-x86-32*"]
   end
 
   test do
     jmx_port = free_port
     fork do
       ENV["JMX_PORT"] = jmx_port.to_s
-      exec bin"jmxtrans", pkgshare"example.json"
+      exec bin/"jmxtrans", pkgshare/"example.json"
     end
     sleep 2
 

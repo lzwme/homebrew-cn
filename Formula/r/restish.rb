@@ -1,10 +1,10 @@
 class Restish < Formula
   desc "CLI tool for interacting with REST-ish HTTP APIs"
-  homepage "https:rest.sh"
-  url "https:github.comrest-shrestisharchiverefstagsv0.21.0.tar.gz"
+  homepage "https://rest.sh/"
+  url "https://ghfast.top/https://github.com/rest-sh/restish/archive/refs/tags/v0.21.0.tar.gz"
   sha256 "9a73e743a78d6a28e2ff0dba53499b23c945c45f78b4a0ab3aa4b6283491de5d"
   license "MIT"
-  head "https:github.comrest-shrestish.git", branch: "main"
+  head "https://github.com/rest-sh/restish.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "f8aa4ddbae64dffa735470d8981074ea73c0d12c1f2029fcfc9e734a9f348ea7"
@@ -20,16 +20,16 @@ class Restish < Formula
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}")
 
-    generate_completions_from_executable(bin"restish", "completion")
+    generate_completions_from_executable(bin/"restish", "completion")
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}restish --version")
+    assert_match version.to_s, shell_output("#{bin}/restish --version")
 
-    output = shell_output("#{bin}restish https:httpbin.orgjson")
+    output = shell_output("#{bin}/restish https://httpbin.org/json")
     assert_match "slideshow", output
 
-    output = shell_output("#{bin}restish https:httpbin.orgget?foo=bar")
+    output = shell_output("#{bin}/restish https://httpbin.org/get?foo=bar")
     assert_match "\"foo\": \"bar\"", output
   end
 end

@@ -1,10 +1,10 @@
 class RabbitmqC < Formula
   desc "C AMQP client library for RabbitMQ"
-  homepage "https:github.comalanxzrabbitmq-c"
-  url "https:github.comalanxzrabbitmq-carchiverefstagsv0.15.0.tar.gz"
+  homepage "https://github.com/alanxz/rabbitmq-c"
+  url "https://ghfast.top/https://github.com/alanxz/rabbitmq-c/archive/refs/tags/v0.15.0.tar.gz"
   sha256 "7b652df52c0de4d19ca36c798ed81378cba7a03a0f0c5d498881ae2d79b241c2"
   license "MIT"
-  head "https:github.comalanxzrabbitmq-c.git", branch: "master"
+  head "https://github.com/alanxz/rabbitmq-c.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "e101c4dc4a3661e074f43e351d755b4bf004bf0dc0c3cb89779b071a97be3324"
@@ -23,7 +23,7 @@ class RabbitmqC < Formula
   depends_on "popt"
 
   def install
-    ENV["XML_CATALOG_FILES"] = etc"xmlcatalog"
+    ENV["XML_CATALOG_FILES"] = etc/"xml/catalog"
     system "cmake", "-S", ".", "-B", "build",
                     "-DBUILD_API_DOCS=OFF",
                     "-DBUILD_EXAMPLES=OFF",
@@ -37,6 +37,6 @@ class RabbitmqC < Formula
   end
 
   test do
-    system bin"amqp-get", "--help"
+    system bin/"amqp-get", "--help"
   end
 end

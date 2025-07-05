@@ -1,13 +1,13 @@
 class OpensslAT30 < Formula
-  desc "Cryptography and SSLTLS Toolkit"
-  homepage "https:openssl-library.org"
-  url "https:github.comopensslopensslreleasesdownloadopenssl-3.0.17openssl-3.0.17.tar.gz"
+  desc "Cryptography and SSL/TLS Toolkit"
+  homepage "https://openssl-library.org"
+  url "https://ghfast.top/https://github.com/openssl/openssl/releases/download/openssl-3.0.17/openssl-3.0.17.tar.gz"
   sha256 "dfdd77e4ea1b57ff3a6dbde6b0bdc3f31db5ac99e7fdd4eaf9e1fbb6ec2db8ce"
   license "Apache-2.0"
 
   livecheck do
-    url "https:openssl-library.orgsource"
-    regex(href=.*?openssl[._-]v?(3\.0(?:\.\d+)+)\.ti)
+    url "https://openssl-library.org/source/"
+    regex(/href=.*?openssl[._-]v?(3\.0(?:\.\d+)+)\.t/i)
   end
 
   bottle do
@@ -26,20 +26,20 @@ class OpensslAT30 < Formula
 
   on_linux do
     resource "Test::Harness" do
-      url "https:cpan.metacpan.orgauthorsidLLELEONTTest-Harness-3.52.tar.gz"
-      mirror "http:cpan.metacpan.orgauthorsidLLELEONTTest-Harness-3.52.tar.gz"
+      url "https://cpan.metacpan.org/authors/id/L/LE/LEONT/Test-Harness-3.52.tar.gz"
+      mirror "http://cpan.metacpan.org/authors/id/L/LE/LEONT/Test-Harness-3.52.tar.gz"
       sha256 "8fe65cfc0261ed3c8a4395f0524286f5719669fe305f9b03b16cf3684d62cd70"
     end
 
     resource "Test::More" do
-      url "https:cpan.metacpan.orgauthorsidEEXEXODISTTest-Simple-1.302214.tar.gz"
-      mirror "http:cpan.metacpan.orgauthorsidEEXEXODISTTest-Simple-1.302214.tar.gz"
+      url "https://cpan.metacpan.org/authors/id/E/EX/EXODIST/Test-Simple-1.302214.tar.gz"
+      mirror "http://cpan.metacpan.org/authors/id/E/EX/EXODIST/Test-Simple-1.302214.tar.gz"
       sha256 "6077ecc35f37b11b3b75df2d0ba1b9ca541f1dc24b2be8e15b6e91f78e2e03fc"
     end
 
     resource "ExtUtils::MakeMaker" do
-      url "https:cpan.metacpan.orgauthorsidBBIBINGOSExtUtils-MakeMaker-7.76.tar.gz"
-      mirror "http:cpan.metacpan.orgauthorsidBBIBINGOSExtUtils-MakeMaker-7.76.tar.gz"
+      url "https://cpan.metacpan.org/authors/id/B/BI/BINGOS/ExtUtils-MakeMaker-7.76.tar.gz"
+      mirror "http://cpan.metacpan.org/authors/id/B/BI/BINGOS/ExtUtils-MakeMaker-7.76.tar.gz"
       sha256 "30bcfd75fec4d512e9081c792f7cb590009d9de2fe285ffa8eec1be35a5ae7ca"
     end
   end
@@ -67,8 +67,8 @@ class OpensslAT30 < Formula
 
   def install
     if OS.linux?
-      ENV.prepend_create_path "PERL5LIB", buildpath"libperl5"
-      ENV.prepend_path "PATH", buildpath"bin"
+      ENV.prepend_create_path "PERL5LIB", buildpath/"lib/perl5"
+      ENV.prepend_path "PATH", buildpath/"bin"
 
       %w[ExtUtils::MakeMaker Test::Harness Test::More].each do |r|
         resource(r).stage do
@@ -85,7 +85,7 @@ class OpensslAT30 < Formula
     # This ensures where Homebrew's Perl is needed the Cellar path isn't
     # hardcoded into OpenSSL's scripts, causing them to break every Perl update.
     # Whilst our env points to opt_bin, by default OpenSSL resolves the symlink.
-    ENV["PERL"] = Formula["perl"].opt_bin"perl" if which("perl") == Formula["perl"].opt_bin"perl"
+    ENV["PERL"] = Formula["perl"].opt_bin/"perl" if which("perl") == Formula["perl"].opt_bin/"perl"
 
     arch_args = []
     if OS.mac?
@@ -97,43 +97,43 @@ class OpensslAT30 < Formula
     end
 
     openssldir.mkpath
-    system "perl", ".Configure", *(configure_args + arch_args)
+    system "perl", "./Configure", *(configure_args + arch_args)
     system "make"
     system "make", "install", "MANDIR=#{man}", "MANSUFFIX=ssl"
     system "make", "HARNESS_JOBS=#{ENV.make_jobs}", "test"
 
     # Prevent `brew` from pruning the `certs` and `private` directories.
-    touch %w[certs private].map { |subdir| openssldirsubdir".keepme" }
+    touch %w[certs private].map { |subdir| openssldir/subdir/".keepme" }
   end
 
   def openssldir
-    etc"openssl@3.0"
+    etc/"openssl@3.0"
   end
 
   def post_install
-    rm(openssldir"cert.pem") if (openssldir"cert.pem").exist?
-    openssldir.install_symlink Formula["ca-certificates"].pkgetc"cert.pem"
+    rm(openssldir/"cert.pem") if (openssldir/"cert.pem").exist?
+    openssldir.install_symlink Formula["ca-certificates"].pkgetc/"cert.pem"
   end
 
   def caveats
     <<~EOS
       A CA file has been bootstrapped using certificates from the system
       keychain. To add additional certificates, place .pem files in
-        #{openssldir}certs
+        #{openssldir}/certs
 
       and run
-        #{opt_bin}c_rehash
+        #{opt_bin}/c_rehash
     EOS
   end
 
   test do
     # Make sure the necessary .cnf file exists, otherwise OpenSSL gets moody.
-    assert_path_exists pkgetc"openssl.cnf", "OpenSSL requires the .cnf file for some functionality"
+    assert_path_exists pkgetc/"openssl.cnf", "OpenSSL requires the .cnf file for some functionality"
 
     # Check OpenSSL itself functions as expected.
-    (testpath"testfile.txt").write("This is a test file")
+    (testpath/"testfile.txt").write("This is a test file")
     expected_checksum = "e2d0fe1585a63ec6009c8016ff8dda8b17719a637405a4e23c0ff81339148249"
-    system bin"openssl", "dgst", "-sha256", "-out", "checksum.txt", "testfile.txt"
+    system bin/"openssl", "dgst", "-sha256", "-out", "checksum.txt", "testfile.txt"
     open("checksum.txt") do |f|
       checksum = f.read(100).split("=").last.strip
       assert_equal checksum, expected_checksum

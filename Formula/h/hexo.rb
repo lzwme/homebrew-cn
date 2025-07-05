@@ -1,10 +1,10 @@
 class Hexo < Formula
   desc "Fast, simple & powerful blog framework"
-  homepage "https:hexo.io"
-  url "https:registry.npmjs.orghexo-hexo-7.3.0.tgz"
+  homepage "https://hexo.io/"
+  url "https://registry.npmjs.org/hexo/-/hexo-7.3.0.tgz"
   sha256 "807b356fef2aa9623788b0e2b997fc6955c4c0a2a70fc1a8776c281194e4277e"
   license "MIT"
-  head "https:github.comhexojshexo.git", branch: "master"
+  head "https://github.com/hexojs/hexo.git", branch: "master"
 
   bottle do
     rebuild 1
@@ -22,17 +22,17 @@ class Hexo < Formula
   depends_on "node"
 
   def install
-    mkdir_p libexec"lib"
+    mkdir_p libexec/"lib"
     system "npm", "install", *std_npm_args
-    bin.install_symlink Dir["#{libexec}bin*"]
+    bin.install_symlink Dir["#{libexec}/bin/*"]
   end
 
   test do
-    output = shell_output("#{bin}hexo --help")
+    output = shell_output("#{bin}/hexo --help")
     assert_match "Usage: hexo <command>", output.strip
 
-    output = shell_output("#{bin}hexo init blog --no-install")
+    output = shell_output("#{bin}/hexo init blog --no-install")
     assert_match "Cloning hexo-starter", output.strip
-    assert_path_exists testpath"blog_config.yml"
+    assert_path_exists testpath/"blog/_config.yml"
   end
 end

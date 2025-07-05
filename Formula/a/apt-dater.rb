@@ -1,7 +1,7 @@
 class AptDater < Formula
   desc "Manage package updates on remote hosts using SSH"
-  homepage "https:github.comDE-IBHapt-dater"
-  url "https:github.comDE-IBHapt-daterarchiverefstagsv1.0.4.tar.gz"
+  homepage "https://github.com/DE-IBH/apt-dater"
+  url "https://ghfast.top/https://github.com/DE-IBH/apt-dater/archive/refs/tags/v1.0.4.tar.gz"
   sha256 "a4bd5f70a199b844a34a3b4c4677ea56780c055db7c557ff5bd8f2772378a4d6"
   license "GPL-2.0-or-later"
   revision 1
@@ -38,23 +38,23 @@ class AptDater < Formula
   end
 
   # Fix incorrect args to g_strlcpy
-  # Part of open PR: https:github.comDE-IBHapt-daterpull182
+  # Part of open PR: https://github.com/DE-IBH/apt-dater/pull/182
   patch do
-    url "https:github.comDE-IBHapt-datercommit70a6e4a007d2bbd891442794080ab4fe713a6f94.patch?full_index=1"
+    url "https://github.com/DE-IBH/apt-dater/commit/70a6e4a007d2bbd891442794080ab4fe713a6f94.patch?full_index=1"
     sha256 "de100e8ddd576957e7e2ac6cb5ac43e55235c4031efd7ee6fd0e0e81b7b0b2f4"
   end
 
   def install
-    ENV.prepend_path "PATH", Formula["coreutils"].libexec"gnubin" if OS.mac?
+    ENV.prepend_path "PATH", Formula["coreutils"].libexec/"gnubin" if OS.mac?
     system "autoreconf", "--force", "--install", "--verbose"
-    system ".configure", "--disable-silent-rules", *std_configure_args
+    system "./configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
     # Global config overrides local config, so delete global config to prioritize the
-    # config in $HOME.configapt-dater
-    rm_r(prefix"etc")
+    # config in $HOME/.config/apt-dater
+    rm_r(prefix/"etc")
   end
 
   test do
-    system bin"apt-dater", "-v"
+    system bin/"apt-dater", "-v"
   end
 end

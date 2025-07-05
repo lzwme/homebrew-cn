@@ -1,10 +1,10 @@
 class Bpftop < Formula
   desc "Dynamic real-time view of running eBPF programs"
-  homepage "https:github.comNetflixbpftop"
-  url "https:github.comNetflixbpftoparchiverefstagsv0.6.0.tar.gz"
+  homepage "https://github.com/Netflix/bpftop"
+  url "https://ghfast.top/https://github.com/Netflix/bpftop/archive/refs/tags/v0.6.0.tar.gz"
   sha256 "a73718d8cfa5f6698e36c4b87ad7e93210a0aafd2a170e741eb8c84bb226b23b"
   license "Apache-2.0"
-  head "https:github.comNetflixbpftop.git", branch: "main"
+  head "https://github.com/Netflix/bpftop.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_linux:  "2978c26c98733eded956b048fd099f2e9d72c07a04dc910022165d3459d6a4e9"
@@ -25,14 +25,14 @@ class Bpftop < Formula
   def install
     # Bypass Homebrew's compiler clang shim which adds incompatible option:
     # clang: error: unsupported option '-mbranch-protection=' for target 'bpf'
-    clang = Formula["llvm"].opt_bin"clang"
-    inreplace "build.rs", ^(\s*\.clang)_args, "\\1(\"#{clang}\")\n\\0", global: false if Hardware::CPU.arm?
+    clang = Formula["llvm"].opt_bin/"clang"
+    inreplace "build.rs", /^(\s*\.clang)_args/, "\\1(\"#{clang}\")\n\\0", global: false if Hardware::CPU.arm?
 
     system "cargo", "install", *std_cargo_args
   end
 
   test do
-    output = shell_output("#{bin}bpftop 2>&1", 1)
+    output = shell_output("#{bin}/bpftop 2>&1", 1)
     assert_match "Error: This program must be run as root", output
   end
 end

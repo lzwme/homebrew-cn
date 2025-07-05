@@ -1,7 +1,7 @@
 class SymfonyCli < Formula
   desc "Build, run, and manage Symfony applications"
-  homepage "https:github.comsymfony-clisymfony-cli"
-  url "https:github.comsymfony-clisymfony-cliarchiverefstagsv5.12.0.tar.gz"
+  homepage "https://github.com/symfony-cli/symfony-cli"
+  url "https://ghfast.top/https://github.com/symfony-cli/symfony-cli/archive/refs/tags/v5.12.0.tar.gz"
   sha256 "327f8cc77e3ddec57a560520521a2da5aeee1dc8b9a45d53ac2e60487b0fba48"
   license "AGPL-3.0-or-later"
 
@@ -18,13 +18,13 @@ class SymfonyCli < Formula
   depends_on "composer" => :test
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version} -X main.channel=stable", output: bin"symfony")
+    system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version} -X main.channel=stable", output: bin/"symfony")
   end
 
   test do
-    system bin"symfony", "new", "--no-git", testpath"my_project"
-    assert_path_exists testpath"my_projectsymfony.lock"
-    output = shell_output("#{bin}symfony -V")
+    system bin/"symfony", "new", "--no-git", testpath/"my_project"
+    assert_path_exists testpath/"my_project/symfony.lock"
+    output = shell_output("#{bin}/symfony -V")
     assert_match version.to_s, output
     assert_match "stable", output
   end

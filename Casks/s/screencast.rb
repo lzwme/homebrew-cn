@@ -2,10 +2,10 @@ cask "screencast" do
   version "0.0.6"
   sha256 "0fb23d34ee3c94eb47233b42d2ac93de84d14dcdafe1e7205ce0a4341ee812f0"
 
-  url "https:github.comsoh335Screencastreleasesdownload#{version}Screencast.dmg"
+  url "https://ghfast.top/https://github.com/soh335/Screencast/releases/download/#{version}/Screencast.dmg"
   name "Screencast"
   desc "Simple screen video capture application"
-  homepage "https:github.comsoh335Screencast"
+  homepage "https://github.com/soh335/Screencast"
 
   no_autobump! because: :requires_manual_review
 
@@ -13,7 +13,7 @@ cask "screencast" do
 
   app "Screencast.app"
 
-  zap trash: "~LibraryPreferencesjp.makeitreal.Screencast.plist"
+  zap trash: "~/Library/Preferences/jp.makeitreal.Screencast.plist"
 
   caveats do
     requires_rosetta

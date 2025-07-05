@@ -1,7 +1,7 @@
 class AcesContainer < Formula
   desc "Reference implementation of SMPTE ST2065-4"
-  homepage "https:github.comampasaces_container"
-  url "https:github.comampasaces_containerarchiverefstagsv1.0.2.tar.gz"
+  homepage "https://github.com/ampas/aces_container"
+  url "https://ghfast.top/https://github.com/ampas/aces_container/archive/refs/tags/v1.0.2.tar.gz"
   sha256 "cbbba395d2425251263e4ae05c4829319a3e399a0aee70df2eb9efb6a8afdbae"
   license "AMPAS"
 
@@ -36,8 +36,8 @@ class AcesContainer < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~CPP
-      #include "acesaces_Writer.h"
+    (testpath/"test.cpp").write <<~CPP
+      #include "aces/aces_Writer.h"
 
       int main()
       {
@@ -46,6 +46,6 @@ class AcesContainer < Formula
       }
     CPP
     system ENV.cxx, "test.cpp", "-L#{lib}", "-lAcesContainer", "-o", "test"
-    system ".test"
+    system "./test"
   end
 end

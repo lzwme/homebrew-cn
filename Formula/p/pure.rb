@@ -1,7 +1,7 @@
 class Pure < Formula
   desc "Pretty, minimal and fast ZSH prompt"
-  homepage "https:github.comsindresorhuspure"
-  url "https:github.comsindresorhuspurearchiverefstagsv1.23.0.tar.gz"
+  homepage "https://github.com/sindresorhus/pure"
+  url "https://ghfast.top/https://github.com/sindresorhus/pure/archive/refs/tags/v1.23.0.tar.gz"
   sha256 "b316fe5aa25be2c2ef895dcad150248a43e12c4ac1476500e1539e2d67877921"
   license "MIT"
 

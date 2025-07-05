@@ -1,10 +1,10 @@
 class Syft < Formula
   desc "CLI for generating a Software Bill of Materials from container images"
-  homepage "https:github.comanchoresyft"
-  url "https:github.comanchoresyftarchiverefstagsv1.28.0.tar.gz"
+  homepage "https://github.com/anchore/syft"
+  url "https://ghfast.top/https://github.com/anchore/syft/archive/refs/tags/v1.28.0.tar.gz"
   sha256 "a196337ec9d9c10d64f6c919975a9dd66a476457787b91fb0788d1a027381747"
   license "Apache-2.0"
-  head "https:github.comanchoresyft.git", branch: "main"
+  head "https://github.com/anchore/syft.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "043fba90db8ad0a655e86eac82da16718524f7104ea03cea1122ad9fe7b39a8f"
@@ -26,21 +26,21 @@ class Syft < Formula
       -X main.buildDate=#{time.iso8601}
     ]
 
-    system "go", "build", *std_go_args(ldflags:), ".cmdsyft"
+    system "go", "build", *std_go_args(ldflags:), "./cmd/syft"
 
-    generate_completions_from_executable(bin"syft", "completion")
+    generate_completions_from_executable(bin/"syft", "completion")
   end
 
   test do
     resource "homebrew-micronaut.cdx.json" do
-      url "https:raw.githubusercontent.comanchoresyft934644232ab115b2518acdb5d240ae31aaf55989syftpkgcatalogerjavatest-fixturesgraalvm-sbommicronaut.json"
+      url "https://ghfast.top/https://raw.githubusercontent.com/anchore/syft/934644232ab115b2518acdb5d240ae31aaf55989/syft/pkg/cataloger/java/test-fixtures/graalvm-sbom/micronaut.json"
       sha256 "c09171c53d83db5de5f2b9bdfada33d242ebf7ff9808ad2bd1343754406ad44e"
     end
 
     testpath.install resource("homebrew-micronaut.cdx.json")
-    output = shell_output("#{bin}syft convert #{testpath}micronaut.json")
+    output = shell_output("#{bin}/syft convert #{testpath}/micronaut.json")
     assert_match "netty-codec-http2  4.1.73.Final  UnknownPackage", output
 
-    assert_match version.to_s, shell_output("#{bin}syft --version")
+    assert_match version.to_s, shell_output("#{bin}/syft --version")
   end
 end

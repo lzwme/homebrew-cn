@@ -1,7 +1,7 @@
 class Libcroco < Formula
   desc "CSS parsing and manipulation toolkit for GNOME"
-  homepage "https:gitlab.gnome.orgArchivelibcroco"
-  url "https:download.gnome.orgsourceslibcroco0.6libcroco-0.6.13.tar.xz"
+  homepage "https://gitlab.gnome.org/Archive/libcroco"
+  url "https://download.gnome.org/sources/libcroco/0.6/libcroco-0.6.13.tar.xz"
   sha256 "767ec234ae7aa684695b3a735548224888132e063f92db585759b422570621d4"
   license "LGPL-2.1-or-later"
   revision 1
@@ -26,7 +26,7 @@ class Libcroco < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "e0b5c4b0de56d524a572a2bd8c93f65ed827c80093776bfd7681fd6351df6e13"
   end
 
-  # Ref: https:gitlab.gnome.orgArchivelibcroco-issues8
+  # Ref: https://gitlab.gnome.org/Archive/libcroco/-/issues/8
   deprecate! date: "2024-08-04", because: :repo_archived
 
   depends_on "intltool" => :build
@@ -42,18 +42,18 @@ class Libcroco < Formula
 
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
-    url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-big_sur.diff"
+    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-big_sur.diff"
     sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
   end
 
   def install
-    system ".configure", "--disable-Bsymbolic", *std_configure_args
+    system "./configure", "--disable-Bsymbolic", *std_configure_args
     system "make", "install"
   end
 
   test do
-    (testpath"test.css").write ".brew-pr { color: green }"
+    (testpath/"test.css").write ".brew-pr { color: green }"
     assert_equal ".brew-pr {\n  color : green\n}",
-      shell_output("#{bin}csslint-0.6 test.css").chomp
+      shell_output("#{bin}/csslint-0.6 test.css").chomp
   end
 end

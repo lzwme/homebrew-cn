@@ -1,10 +1,10 @@
 class Usage < Formula
   desc "Tool for working with usage-spec CLIs"
-  homepage "https:usage.jdx.dev"
-  url "https:github.comjdxusagearchiverefstagsv2.1.1.tar.gz"
+  homepage "https://usage.jdx.dev/"
+  url "https://ghfast.top/https://github.com/jdx/usage/archive/refs/tags/v2.1.1.tar.gz"
   sha256 "8a28fe01b2c3b1273e80b113d137197fc62c97a542f577dc2dd2414a236c78d0"
   license "MIT"
-  head "https:github.comjdxusage.git", branch: "main"
+  head "https://github.com/jdx/usage.git", branch: "main"
 
   no_autobump! because: :requires_manual_review
 
@@ -25,7 +25,7 @@ class Usage < Formula
   end
 
   test do
-    assert_match "usage-cli", shell_output(bin"usage --version").chomp
-    assert_equal "--foo", shell_output(bin"usage complete-word --spec 'flag \"--foo\"' -").chomp
+    assert_match "usage-cli", shell_output(bin/"usage --version").chomp
+    assert_equal "--foo", shell_output(bin/"usage complete-word --spec 'flag \"--foo\"' -").chomp
   end
 end

@@ -1,10 +1,10 @@
 class Bacon < Formula
   desc "Background rust code check"
-  homepage "https:dystroy.orgbacon"
-  url "https:github.comCanopbaconarchiverefstagsv3.16.0.tar.gz"
+  homepage "https://dystroy.org/bacon/"
+  url "https://ghfast.top/https://github.com/Canop/bacon/archive/refs/tags/v3.16.0.tar.gz"
   sha256 "cf7f3471883260f7cd56d1b2bcce713463082e64a830bb46489d7e94303b3ba0"
   license "AGPL-3.0-or-later"
-  head "https:github.comCanopbacon.git", branch: "main"
+  head "https://github.com/Canop/bacon.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "515a9749166058a8f05e3647422ec5c5110dc00b2d9581c600be120b7234073d"
@@ -30,14 +30,14 @@ class Bacon < Formula
 
   test do
     # Show that we can use a different toolchain than the one provided by the `rust` formula.
-    # https:github.comHomebrewhomebrew-corepull134074#pullrequestreview-1484979359
+    # https://github.com/Homebrew/homebrew-core/pull/134074#pullrequestreview-1484979359
     ENV.prepend_path "PATH", Formula["rustup"].bin
     system "rustup", "set", "profile", "minimal"
     system "rustup", "default", "beta"
 
-    crate = testpath"demo-crate"
+    crate = testpath/"demo-crate"
     mkdir crate do
-      (crate"srcmain.rs").write <<~RUST
+      (crate/"src/main.rs").write <<~RUST
         #[cfg(test)]
         mod tests {
           #[test]
@@ -46,18 +46,18 @@ class Bacon < Formula
           }
         }
       RUST
-      (crate"Cargo.toml").write <<~TOML
+      (crate/"Cargo.toml").write <<~TOML
         [package]
         name = "demo-crate"
         version = "0.1.0"
         license = "MIT"
       TOML
 
-      system bin"bacon", "--init"
-      assert_match "[jobs.check]", (crate"bacon.toml").read
+      system bin/"bacon", "--init"
+      assert_match "[jobs.check]", (crate/"bacon.toml").read
     end
 
-    output = shell_output("#{bin}bacon --version")
+    output = shell_output("#{bin}/bacon --version")
     assert_match version.to_s, output
   end
 end

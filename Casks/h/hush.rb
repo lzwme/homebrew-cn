@@ -2,11 +2,11 @@ cask "hush" do
   version "1.0"
   sha256 "ed5050e0806d633a717807f90e28acf4b6c2ebcd789b68d3b1c4d461aba0dfc7"
 
-  url "https:github.comobladorhushreleasesdownloadv#{version}Hush.dmg",
-      verified: "github.comobladorhush"
+  url "https://ghfast.top/https://github.com/oblador/hush/releases/download/v#{version}/Hush.dmg",
+      verified: "github.com/oblador/hush/"
   name "Hush"
   desc "Block nags to accept cookies and privacy invasive tracking in Safari"
-  homepage "https:oblador.github.iohush"
+  homepage "https://oblador.github.io/hush/"
 
   no_autobump! because: :requires_manual_review
 
@@ -15,9 +15,9 @@ cask "hush" do
   app "Hush.app"
 
   zap trash: [
-    "~LibraryApplication Scriptsse.oblador.Hush",
-    "~LibraryApplication Scriptsse.oblador.Hush.ContentBlocker",
-    "~LibraryContainersse.oblador.Hush",
-    "~LibraryContainersse.oblador.Hush.ContentBlocker",
+    "~/Library/Application Scripts/se.oblador.Hush",
+    "~/Library/Application Scripts/se.oblador.Hush.ContentBlocker",
+    "~/Library/Containers/se.oblador.Hush",
+    "~/Library/Containers/se.oblador.Hush.ContentBlocker",
   ]
 end

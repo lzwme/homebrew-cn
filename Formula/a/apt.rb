@@ -1,14 +1,14 @@
 class Apt < Formula
   desc "Advanced Package Tool"
-  homepage "https:wiki.debian.orgApt"
+  homepage "https://wiki.debian.org/Apt"
   # Using git tarball as Debian does not retain old versions at deb.debian.org
-  url "https:salsa.debian.orgapt-teamapt-archive3.1.3apt-3.1.3.tar.bz2"
+  url "https://salsa.debian.org/apt-team/apt/-/archive/3.1.3/apt-3.1.3.tar.bz2"
   sha256 "309410ede37684bdd3807314bd98062e67e278faa6051743c73af08a3939b248"
   license "GPL-2.0-or-later"
 
   livecheck do
-    url "https:deb.debian.orgdebianpoolmainaapt"
-    regex(href=.*?apt[._-]v?(\d+(?:\.\d+)+)\.ti)
+    url "https://deb.debian.org/debian/pool/main/a/apt/"
+    regex(/href=.*?apt[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   bottle do
@@ -24,7 +24,7 @@ class Apt < Formula
   depends_on "doxygen" => :build
   depends_on "gettext" => :build
   depends_on "libxslt" => :build
-  depends_on "llvm" => :build if DevelopmentTools.gcc_version("usrbingcc") < 13
+  depends_on "llvm" => :build if DevelopmentTools.gcc_version("/usr/bin/gcc") < 13
   depends_on "po4a" => :build
   depends_on "w3m" => :build
 
@@ -48,35 +48,35 @@ class Apt < Formula
   end
 
   resource "triehash" do
-    url "https:github.comjulian-klodetriehasharchiverefstagsv0.3.tar.gz"
+    url "https://ghfast.top/https://github.com/julian-klode/triehash/archive/refs/tags/v0.3.tar.gz"
     sha256 "289a0966c02c2008cd263d3913a8e3c84c97b8ded3e08373d63a382c71d2199c"
   end
 
   def install
     # Find our docbook catalog
-    ENV["XML_CATALOG_FILES"] = "#{etc}xmlcatalog"
+    ENV["XML_CATALOG_FILES"] = "#{etc}/xml/catalog"
 
-    ENV.llvm_clang if DevelopmentTools.gcc_version("usrbingcc") < 13
-    ENV.prepend_path "PATH", buildpath"bin"
+    ENV.llvm_clang if DevelopmentTools.gcc_version("/usr/bin/gcc") < 13
+    ENV.prepend_path "PATH", buildpath/"bin"
 
     resource("triehash").stage do
-      (buildpath"bin").install "triehash.pl" => "triehash"
+      (buildpath/"bin").install "triehash.pl" => "triehash"
     end
 
     system "cmake", "-S", ".", "-B", "build",
-                    "-DDPKG_DATADIR=#{Formula["dpkg"].opt_libexec}sharedpkg",
-                    "-DDOCBOOK_XSL=#{Formula["docbook-xsl"].opt_prefix}docbook-xsl",
+                    "-DDPKG_DATADIR=#{Formula["dpkg"].opt_libexec}/share/dpkg",
+                    "-DDOCBOOK_XSL=#{Formula["docbook-xsl"].opt_prefix}/docbook-xsl",
                     "-DBERKELEY_INCLUDE_DIRS=#{Formula["berkeley-db@5"].opt_include}",
                     "-DWITH_TESTS=OFF",
                     *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 
-    (pkgetc"apt.conf.d").mkpath
+    (pkgetc/"apt.conf.d").mkpath
   end
 
   test do
     assert_match "apt does not have a stable CLI interface. Use with caution in scripts",
-                 shell_output("#{bin}apt list 2>&1")
+                 shell_output("#{bin}/apt list 2>&1")
   end
 end

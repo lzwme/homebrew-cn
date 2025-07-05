@@ -1,7 +1,7 @@
 class Xgboost < Formula
   desc "Scalable, Portable and Distributed Gradient Boosting Library"
-  homepage "https:xgboost.ai"
-  url "https:github.comdmlcxgboostreleasesdownloadv3.0.2xgboost-src-3.0.2.tar.gz"
+  homepage "https://xgboost.ai/"
+  url "https://ghfast.top/https://github.com/dmlc/xgboost/releases/download/v3.0.2/xgboost-src-3.0.2.tar.gz"
   sha256 "8f909899f5dc64d4173662a3efa307100713e3c2e2b831177c2e56af0e816caf"
   license "Apache-2.0"
 
@@ -32,7 +32,7 @@ class Xgboost < Formula
     cause <<~EOS
       clang: error: unable to execute command: Segmentation fault: 11
       clang: error: clang frontend command failed due to signal (use -v to see invocation)
-      make[2]: *** [srcCMakeFilesobjxgboost.dirtreeupdater_quantile_hist.cc.o] Error 254
+      make[2]: *** [src/CMakeFiles/objxgboost.dir/tree/updater_quantile_hist.cc.o] Error 254
     EOS
   end
 
@@ -46,14 +46,14 @@ class Xgboost < Formula
   end
 
   test do
-    cp_r (pkgshare"demo"), testpath
+    cp_r (pkgshare/"demo"), testpath
 
-    (testpath"test.cpp").write <<~CPP
-      #include <xgboostc_api.h>
+    (testpath/"test.cpp").write <<~CPP
+      #include <xgboost/c_api.h>
       #include <iostream>
 
       int main() {
-        std::string train_data = "#{testpath}demodataagaricus.txt.train?format=libsvm";
+        std::string train_data = "#{testpath}/demo/data/agaricus.txt.train?format=libsvm";
 
         DMatrixHandle dtrain;
         if (XGDMatrixCreateFromFile(train_data.c_str(), 0, &dtrain) != 0) {
@@ -62,7 +62,7 @@ class Xgboost < Formula
           return 1;
         }
 
-         Create booster and set parameters
+        // Create booster and set parameters
         BoosterHandle booster;
         if (XGBoosterCreate(&dtrain, 1, &booster) != 0) {
           std::cerr << "Failed to create booster" << std::endl;
@@ -81,7 +81,7 @@ class Xgboost < Formula
           return 1;
         }
 
-         Train the model
+        // Train the model
         for (int iter = 0; iter < 10; ++iter) {
           if (XGBoosterUpdateOneIter(booster, iter, dtrain) != 0) {
             std::cerr << "Failed to update booster" << std::endl;
@@ -89,7 +89,7 @@ class Xgboost < Formula
           }
         }
 
-         Free resources
+        // Free resources
         XGBoosterFree(booster);
         XGDMatrixFree(dtrain);
 
@@ -99,6 +99,6 @@ class Xgboost < Formula
     CPP
 
     system ENV.cxx, "test.cpp", "-I#{include}", "-L#{lib}", "-lxgboost", "-o", "test"
-    system ".test"
+    system "./test"
   end
 end

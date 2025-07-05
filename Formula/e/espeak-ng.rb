@@ -1,11 +1,11 @@
 class EspeakNg < Formula
   desc "Speech synthesizer that supports more than hundred languages and accents"
-  homepage "https:github.comespeak-ngespeak-ng"
-  url "https:github.comespeak-ngespeak-ngarchiverefstags1.52.0.tar.gz"
+  homepage "https://github.com/espeak-ng/espeak-ng"
+  url "https://ghfast.top/https://github.com/espeak-ng/espeak-ng/archive/refs/tags/1.52.0.tar.gz"
   sha256 "bb4338102ff3b49a81423da8a1a158b420124b055b60fa76cfb4b18677130a23"
   # NOTE: We omit BSD-2-Clause as getopt.c is only used on Windows
   license "GPL-3.0-or-later"
-  head "https:github.comespeak-ngespeak-ng.git", branch: "master"
+  head "https://github.com/espeak-ng/espeak-ng.git", branch: "master"
 
   bottle do
     sha256                               arm64_sequoia: "330873deca13228ec98927f86fb4e18e990e8707f888aaf665b6e12a55efaf47"
@@ -30,7 +30,7 @@ class EspeakNg < Formula
     touch "ChangeLog"
 
     system "autoreconf", "--force", "--install", "--verbose"
-    system ".configure", "--disable-silent-rules", *std_configure_args
+    system "./configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
   end
 
@@ -42,8 +42,8 @@ class EspeakNg < Formula
       "AUDIO_OUTPUT_PLAYBACK"
     end
 
-    (testpath"test.cpp").write <<~CPP
-      #include <espeakspeak_lib.h>
+    (testpath/"test.cpp").write <<~CPP
+      #include <espeak/speak_lib.h>
       #include <iostream>
       #include <cstring>
 
@@ -73,6 +73,6 @@ class EspeakNg < Formula
     CPP
 
     system ENV.cxx, "test.cpp", "-L#{lib}", "-lespeak-ng", "-o", "test"
-    system ".test"
+    system "./test"
   end
 end

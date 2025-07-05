@@ -1,7 +1,7 @@
 class Forgit < Formula
   desc "Interactive git commands in the terminal"
-  homepage "https:github.comwfxrforgit"
-  url "https:github.comwfxrforgitreleasesdownload25.07.0forgit-25.07.0.tar.gz"
+  homepage "https://github.com/wfxr/forgit"
+  url "https://ghfast.top/https://github.com/wfxr/forgit/releases/download/25.07.0/forgit-25.07.0.tar.gz"
   sha256 "60cc0aabcd0816653a9618af7cfe86488fdadf0750583434e0fcac391d8ae1b2"
   license "MIT"
 
@@ -17,15 +17,15 @@ class Forgit < Formula
   depends_on "fzf"
 
   def install
-    bin.install "bingit-forgit"
-    bash_completion.install "completionsgit-forgit.bash" => "git-forgit"
-    zsh_completion.install "completions_git-forgit" => "_git-forgit"
-    fish_completion.install "completionsgit-forgit.fish"
+    bin.install "bin/git-forgit"
+    bash_completion.install "completions/git-forgit.bash" => "git-forgit"
+    zsh_completion.install "completions/_git-forgit" => "_git-forgit"
+    fish_completion.install "completions/git-forgit.fish"
     inreplace "forgit.plugin.zsh", 'FORGIT="$FORGIT_INSTALL_DIR', "FORGIT=\"#{opt_prefix}"
-    inreplace "conf.dforgit.plugin.fish",
-              'set -x FORGIT "$FORGIT_INSTALL_DIRbingit-forgit"',
-              "set -x FORGIT \"#{opt_prefix}bingit-forgit\""
-    pkgshare.install "conf.dforgit.plugin.fish"
+    inreplace "conf.d/forgit.plugin.fish",
+              'set -x FORGIT "$FORGIT_INSTALL_DIR/bin/git-forgit"',
+              "set -x FORGIT \"#{opt_prefix}/bin/git-forgit\""
+    pkgshare.install "conf.d/forgit.plugin.fish"
     pkgshare.install "forgit.plugin.zsh"
     pkgshare.install_symlink "forgit.plugin.zsh" => "forgit.plugin.sh"
   end
@@ -33,15 +33,15 @@ class Forgit < Formula
   def caveats
     <<~EOS
       A shell plugin has been installed to:
-        #{opt_pkgshare}forgit.plugin.zsh
-        #{opt_pkgshare}forgit.plugin.sh
-        #{opt_pkgshare}forgit.plugin.fish
+        #{opt_pkgshare}/forgit.plugin.zsh
+        #{opt_pkgshare}/forgit.plugin.sh
+        #{opt_pkgshare}/forgit.plugin.fish
     EOS
   end
 
   test do
     system "git", "init"
-    (testpath"foo").write "bar"
+    (testpath/"foo").write "bar"
     system "git", "forgit", "add", "foo"
   end
 end

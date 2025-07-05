@@ -1,10 +1,10 @@
 class StarlarkRust < Formula
   desc "Rust implementation of the Starlark language"
-  homepage "https:github.comfacebookstarlark-rust"
-  url "https:github.comfacebookstarlark-rustarchiverefstagsv0.13.0.tar.gz"
+  homepage "https://github.com/facebook/starlark-rust"
+  url "https://ghfast.top/https://github.com/facebook/starlark-rust/archive/refs/tags/v0.13.0.tar.gz"
   sha256 "c27d974dd242f133184a5fc53a145374f193464e163fa6fbd4cade566e3cfab6"
   license "Apache-2.0"
-  head "https:github.comfacebookstarlark-rust.git", branch: "main"
+  head "https://github.com/facebook/starlark-rust.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "b9c7d216f76e62d7afb443c1149081a879e2e640809951608bb306f6b7e3c75b"
@@ -23,15 +23,15 @@ class StarlarkRust < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}starlark --version")
+    assert_match version.to_s, shell_output("#{bin}/starlark --version")
 
-    (testpath"test.bzl").write <<~BAZEL
+    (testpath/"test.bzl").write <<~BAZEL
       def hello_world():
           print("Hello, world!")
       hello_world()
     BAZEL
 
-    output = shell_output("#{bin}starlark --check test.bzl")
+    output = shell_output("#{bin}/starlark --check test.bzl")
     assert_equal "1 files, 0 errors, 0 warnings, 0 advices, 0 disabled", output.chomp
   end
 end

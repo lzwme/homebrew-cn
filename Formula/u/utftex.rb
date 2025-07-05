@@ -1,7 +1,7 @@
 class Utftex < Formula
   desc "Pretty print math in monospace fonts, using a TeX-like syntax"
-  homepage "https:github.combartp5libtexprintf"
-  url "https:github.combartp5libtexprintfarchiverefstagsv1.25.tar.gz"
+  homepage "https://github.com/bartp5/libtexprintf"
+  url "https://ghfast.top/https://github.com/bartp5/libtexprintf/archive/refs/tags/v1.25.tar.gz"
   sha256 "c50a44e33eba551526ff553c0af0bdd3f3a219d8ed60f11fcd9d7b30cd028af1"
   license "GPL-3.0-only"
 
@@ -26,12 +26,12 @@ class Utftex < Formula
   depends_on "libtool" => :build
 
   def install
-    system ".autogen.sh"
-    system ".configure", *std_configure_args, "--disable-silent-rules"
+    system "./autogen.sh"
+    system "./configure", *std_configure_args, "--disable-silent-rules"
     system "make", "install"
   end
 
   test do
-    system bin"utftex", "\\left(\\frac{hello}{world}\\right)"
+    system bin/"utftex", "\\left(\\frac{hello}{world}\\right)"
   end
 end

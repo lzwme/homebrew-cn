@@ -1,7 +1,7 @@
 class Pivit < Formula
   desc "Sign and verify data using hardware (Yubikey) backed x509 certificates (PIV)"
-  homepage "https:github.comcashapppivit"
-  url "https:github.comcashapppivitarchiverefstagsv0.9.2.tar.gz"
+  homepage "https://github.com/cashapp/pivit"
+  url "https://ghfast.top/https://github.com/cashapp/pivit/archive/refs/tags/v0.9.2.tar.gz"
   sha256 "dadaee7a84634c55087fbf6bf0d2de1838aa89ce31125eafbb0b5779757583f9"
   license "MIT"
 
@@ -25,11 +25,11 @@ class Pivit < Formula
 
   def install
     ENV["CGO_ENABLED"] = "1"
-    system "go", "build", *std_go_args(ldflags: "-s -w"), ".cmdpivit"
+    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/pivit"
   end
 
   test do
-    output = shell_output("#{bin}pivit -p 2>&1", 1).strip
+    output = shell_output("#{bin}/pivit -p 2>&1", 1).strip
     assert_match "the Smart card resource manager is not running", output
   end
 end

@@ -1,10 +1,10 @@
 class Lavat < Formula
   desc "Lava lamp simulation using metaballs in the terminal"
-  homepage "https:github.comAngelJumbolavat"
-  url "https:github.comAngelJumbolavatarchiverefstagsv2.2.0.tar.gz"
+  homepage "https://github.com/AngelJumbo/lavat"
+  url "https://ghfast.top/https://github.com/AngelJumbo/lavat/archive/refs/tags/v2.2.0.tar.gz"
   sha256 "e8ccda9798270838244bf60497062507cae75b6ab9fb198c54b5a005bea8b87f"
   license "MIT"
-  head "https:github.comAngelJumbolavat.git", branch: "main"
+  head "https://github.com/AngelJumbo/lavat.git", branch: "main"
 
   no_autobump! because: :requires_manual_review
 
@@ -24,11 +24,11 @@ class Lavat < Formula
 
   test do
     # GUI app
-    assert_match "Usage: lavat [OPTIONS]", shell_output("#{bin}lavat -h")
+    assert_match "Usage: lavat [OPTIONS]", shell_output("#{bin}/lavat -h")
 
     require "pty"
 
-    PTY.spawn(bin"lavat") do |_r, _w, pid|
+    PTY.spawn(bin/"lavat") do |_r, _w, pid|
       sleep 5
     ensure
       Process.kill("TERM", pid)

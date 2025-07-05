@@ -1,14 +1,14 @@
 class SpirvHeaders < Formula
   desc "Headers for SPIR-V"
-  homepage "https:github.comKhronosGroupSPIRV-Headers"
-  url "https:github.comKhronosGroupSPIRV-Headersarchiverefstagsvulkan-sdk-1.4.313.0.tar.gz"
+  homepage "https://github.com/KhronosGroup/SPIRV-Headers"
+  url "https://ghfast.top/https://github.com/KhronosGroup/SPIRV-Headers/archive/refs/tags/vulkan-sdk-1.4.313.0.tar.gz"
   sha256 "f68be549d74afb61600a1e3a7d1da1e6b7437758c8e77d664909f88f302c5ac1"
   license "MIT"
-  head "https:github.comKhronosGroupSPIRV-Headers.git", branch: "main"
+  head "https://github.com/KhronosGroup/SPIRV-Headers.git", branch: "main"
 
   livecheck do
     url :stable
-    regex(^(?:vulkan[._-])?sdk[._-]v?(\d+(?:\.\d+)+)$i)
+    regex(/^(?:vulkan[._-])?sdk[._-]v?(\d+(?:\.\d+)+)$/i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -28,15 +28,15 @@ class SpirvHeaders < Formula
   end
 
   test do
-    cp pkgshare"testsexample.cpp", testpath
+    cp pkgshare/"tests/example.cpp", testpath
 
-    (testpath"CMakeLists.txt").write <<~CMAKE
+    (testpath/"CMakeLists.txt").write <<~CMAKE
       cmake_minimum_required(VERSION 3.14)
 
       add_library(SPIRV-Headers-example
-                  ${CMAKE_CURRENT_SOURCE_DIR}example.cpp)
+                  ${CMAKE_CURRENT_SOURCE_DIR}/example.cpp)
       target_include_directories(SPIRV-Headers-example
-                  PRIVATE ${SPIRV-Headers_SOURCE_DIR}include)
+                  PRIVATE ${SPIRV-Headers_SOURCE_DIR}/include)
     CMAKE
 
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args

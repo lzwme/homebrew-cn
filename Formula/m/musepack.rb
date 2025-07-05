@@ -1,19 +1,19 @@
 class Musepack < Formula
   desc "Audio compression format and tools"
-  homepage "https:www.musepack.net"
-  url "https:files.musepack.netsourcemusepack_src_r475.tar.gz"
+  homepage "https://www.musepack.net/"
+  url "https://files.musepack.net/source/musepack_src_r475.tar.gz"
   version "r475"
   sha256 "a4b1742f997f83e1056142d556a8c20845ba764b70365ff9ccf2e3f81c427b2b"
   license all_of: [
     "BSD-3-Clause", # mpc2sv8, mpccut, mpcdec, mpcgain, wavcmp
     "LGPL-2.1-or-later", # mpcenc
     "GPL-2.0-or-later", # mpcchap
-    "Zlib", # commonhuffman-bcl.c
+    "Zlib", # common/huffman-bcl.c
   ]
 
   livecheck do
-    url "https:www.musepack.netindex.php?pg=src"
-    regex(href=.*?musepack(?:[._-]src)?[._-](r\d+)\.ti)
+    url "https://www.musepack.net/index.php?pg=src"
+    regex(/href=.*?musepack(?:[._-]src)?[._-](r\d+)\.t/i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -42,25 +42,25 @@ class Musepack < Formula
 
   # Backport upstream fixes from SVN for `-fno-common` and installing shared library
   patch :p0 do
-    url "https:raw.githubusercontent.comHomebrewformula-patches743dc747e291fd5b1c6ebedfef2778f1f7cde77dmusepackr479.patch"
+    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/743dc747e291fd5b1c6ebedfef2778f1f7cde77d/musepack/r479.patch"
     sha256 "efef0421e3bb25c065c5e77d6c2e4bcdcc89fbcb03c7a7cfd7565ee5478fc8ba"
   end
   patch :p0 do
-    url "https:raw.githubusercontent.comHomebrewformula-patches743dc747e291fd5b1c6ebedfef2778f1f7cde77dmusepackr482.patch"
+    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/743dc747e291fd5b1c6ebedfef2778f1f7cde77d/musepack/r482.patch"
     sha256 "b147cc7effe9230401a0a865fdea1805be8eb26a24059bb36e39da1012e8da4b"
   end
   patch :p0 do
-    url "https:raw.githubusercontent.comHomebrewformula-patches743dc747e291fd5b1c6ebedfef2778f1f7cde77dmusepackr491.patch"
+    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/743dc747e291fd5b1c6ebedfef2778f1f7cde77d/musepack/r491.patch"
     sha256 "9003ff9c3e939dc880cc1ab1a46626eb9cf67a27b2610e7bac0945256bbb5cab"
   end
 
   # Apply Gentoo patches for fixing parallel build and another `-fno-common` issue
   patch do
-    url "https:raw.githubusercontent.comgentoogentoof5d4d4995d45baf77c176224b62e424dca037aefmedia-soundmusepack-toolsfilesmusepack-tools-495-fixup-link-depends.patch"
+    url "https://ghfast.top/https://raw.githubusercontent.com/gentoo/gentoo/f5d4d4995d45baf77c176224b62e424dca037aef/media-sound/musepack-tools/files/musepack-tools-495-fixup-link-depends.patch"
     sha256 "6dbada5a1e90c8fd1fe60084c04e2193cd027c6959ecaf6a37151a674ddb6a77"
   end
   patch do
-    url "https:raw.githubusercontent.comgentoogentoof5d4d4995d45baf77c176224b62e424dca037aefmedia-soundmusepack-toolsfilesmusepack-tools-495-incompatible-pointers.patch"
+    url "https://ghfast.top/https://raw.githubusercontent.com/gentoo/gentoo/f5d4d4995d45baf77c176224b62e424dca037aef/media-sound/musepack-tools/files/musepack-tools-495-incompatible-pointers.patch"
     sha256 "25b43fa3ad4ae6eef1e483e3b675b521049901809a024e22aa0aee2237501654"
   end
 
@@ -75,13 +75,13 @@ class Musepack < Formula
 
   test do
     resource "test-mpc" do
-      url "https:trac.ffmpeg.orgraw-attachmentticket1160decodererror.mpc"
+      url "https://trac.ffmpeg.org/raw-attachment/ticket/1160/decodererror.mpc"
       sha256 "b16d876b58810cdb7fc06e5f2f8839775efeffb9b753948a5a0f12691436a15c"
     end
 
     resource("test-mpc").stage do
-      assert_match(441001 samples decoded in,
-                   shell_output("#{bin}mpcdec decodererror.mpc 2>&1"))
+      assert_match(/441001 samples decoded in/,
+                   shell_output("#{bin}/mpcdec decodererror.mpc 2>&1"))
     end
   end
 end

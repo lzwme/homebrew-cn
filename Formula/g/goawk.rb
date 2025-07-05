@@ -1,10 +1,10 @@
 class Goawk < Formula
   desc "POSIX-compliant AWK interpreter written in Go"
-  homepage "https:benhoyt.comwritingsgoawk"
-  url "https:github.combenhoytgoawkarchiverefstagsv1.29.1.tar.gz"
+  homepage "https://benhoyt.com/writings/goawk/"
+  url "https://ghfast.top/https://github.com/benhoyt/goawk/archive/refs/tags/v1.29.1.tar.gz"
   sha256 "9c355857faf7168f99e78d090ebe993ff10732a5ff34735cdc3e86256ce8c989"
   license "MIT"
-  head "https:github.combenhoytgoawk.git", branch: "master"
+  head "https://github.com/benhoyt/goawk.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "ffd5339a8bba3c9ee983d6891b6183f7a6fa98e5d73072182e7448706ea0de4e"
@@ -23,7 +23,7 @@ class Goawk < Formula
   end
 
   test do
-    output = pipe_output("#{bin}goawk '{ gsub(Macro, \"Home\"); print }' -", "Macrobrew")
+    output = pipe_output("#{bin}/goawk '{ gsub(/Macro/, \"Home\"); print }' -", "Macrobrew")
     assert_equal "Homebrew", output.strip
   end
 end

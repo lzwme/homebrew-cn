@@ -1,7 +1,7 @@
 class Dotter < Formula
   desc "Dotfile manager and templater written in rust"
-  homepage "https:github.comSuperCuberdotter"
-  url "https:github.comSuperCuberdotterarchiverefstagsv0.13.3.tar.gz"
+  homepage "https://github.com/SuperCuber/dotter"
+  url "https://ghfast.top/https://github.com/SuperCuber/dotter/archive/refs/tags/v0.13.3.tar.gz"
   sha256 "4ca78450414f405c892c26b1663cac6e56a86e1d04529a7b1a69b23881c38414"
   license "Unlicense"
 
@@ -21,20 +21,20 @@ class Dotter < Formula
 
   def install
     system "cargo", "install", *std_cargo_args
-    generate_completions_from_executable(bin"dotter", "gen-completions", "-s")
+    generate_completions_from_executable(bin/"dotter", "gen-completions", "-s")
   end
 
   test do
-    (testpath"xxx.conf").write("12345678")
-    (testpath".dotterlocal.toml").write <<~TOML
+    (testpath/"xxx.conf").write("12345678")
+    (testpath/".dotter/local.toml").write <<~TOML
       packages = ["xxx"]
     TOML
-    (testpath".dotterglobal.toml").write <<~TOML
+    (testpath/".dotter/global.toml").write <<~TOML
       [xxx.files]
       "xxx.conf" = "yyy.conf"
     TOML
 
-    system bin"dotter", "deploy"
+    system bin/"dotter", "deploy"
     assert_match "12345678", File.read("yyy.conf")
   end
 end

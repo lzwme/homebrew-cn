@@ -1,10 +1,10 @@
 class Airspyhf < Formula
   desc "Driver and tools for a software-defined radio"
-  homepage "https:airspy.com"
-  url "https:github.comairspyairspyhfarchiverefstags1.6.8.tar.gz"
+  homepage "https://airspy.com/"
+  url "https://ghfast.top/https://github.com/airspy/airspyhf/archive/refs/tags/1.6.8.tar.gz"
   sha256 "cd1e5ae89e09b813b096ae4a328e352c9432a582e03fd7da86760ba60efa77ab"
   license "BSD-3-Clause"
-  head "https:github.comairspyairspyhf.git", branch: "master"
+  head "https://github.com/airspy/airspyhf.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -35,8 +35,8 @@ class Airspyhf < Formula
   end
 
   test do
-    (testpath"test.c").write <<~C
-      #include <libairspyhfairspyhf.h>
+    (testpath/"test.c").write <<~C
+      #include <libairspyhf/airspyhf.h>
 
       int main() {
         uint64_t serials[256];
@@ -51,7 +51,7 @@ class Airspyhf < Formula
     C
 
     system ENV.cc, "test.c", "-o", "test", "-I#{include}", "-L#{lib}", "-lairspyhf", "-lm"
-    system ".test"
-    assert_match version.to_s, shell_output("#{bin}airspyhf_lib_version").chomp
+    system "./test"
+    assert_match version.to_s, shell_output("#{bin}/airspyhf_lib_version").chomp
   end
 end

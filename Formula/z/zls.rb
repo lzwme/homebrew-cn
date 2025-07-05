@@ -1,10 +1,10 @@
 class Zls < Formula
   desc "Language Server for Zig"
-  homepage "https:zigtools.orgzls"
-  url "https:github.comzigtoolszlsarchiverefstags0.14.0.tar.gz"
+  homepage "https://zigtools.org/zls/"
+  url "https://ghfast.top/https://github.com/zigtools/zls/archive/refs/tags/0.14.0.tar.gz"
   sha256 "44cae74073b2f75cf627755398afadafaa382cccf7555b5b66b147dcaa6cef0d"
   license "MIT"
-  head "https:github.comzigtoolszls.git", branch: "master"
+  head "https://github.com/zigtools/zls.git", branch: "master"
 
   bottle do
     sha256 arm64_sequoia: "7c368a129e8f7f77847510de90e109b6c01e35901f065327551bdda25c9bacc4"
@@ -20,7 +20,7 @@ class Zls < Formula
 
   def install
     # Fix illegal instruction errors when using bottles on older CPUs.
-    # https:github.comHomebrewhomebrew-coreissues92282
+    # https://github.com/Homebrew/homebrew-core/issues/92282
     cpu = case ENV.effective_arch
     when :arm_vortex_tempest then "apple_m1" # See `zig targets`.
     when :armv8 then "xgene1" # Closest to `-march=armv8-a`
@@ -34,7 +34,7 @@ class Zls < Formula
   end
 
   test do
-    test_config = testpath"zls.json"
+    test_config = testpath/"zls.json"
     test_config.write <<~JSON
       {
         "enable_semantic_tokens": true
@@ -54,9 +54,9 @@ class Zls < Formula
     JSON
 
     input = "Content-Length: #{json.size}\r\n\r\n#{json}"
-    output = pipe_output("#{bin}zls --config-path #{test_config}", input, 1)
-    assert_match(^Content-Length: \d+i, output)
+    output = pipe_output("#{bin}/zls --config-path #{test_config}", input, 1)
+    assert_match(/^Content-Length: \d+/i, output)
 
-    assert_match version.to_s, shell_output("#{bin}zls --version")
+    assert_match version.to_s, shell_output("#{bin}/zls --version")
   end
 end

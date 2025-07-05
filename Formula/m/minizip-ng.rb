@@ -1,10 +1,10 @@
 class MinizipNg < Formula
   desc "Zip file manipulation library with minizip 1.x compatibility layer"
-  homepage "https:github.comzlib-ngminizip-ng"
-  url "https:github.comzlib-ngminizip-ngarchiverefstags4.0.10.tar.gz"
+  homepage "https://github.com/zlib-ng/minizip-ng"
+  url "https://ghfast.top/https://github.com/zlib-ng/minizip-ng/archive/refs/tags/4.0.10.tar.gz"
   sha256 "c362e35ee973fa7be58cc5e38a4a6c23cc8f7e652555daf4f115a9eb2d3a6be7"
   license "Zlib"
-  head "https:github.comzlib-ngminizip-ng.git", branch: "dev"
+  head "https://github.com/zlib-ng/minizip-ng.git", branch: "dev"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "f0172b547c9dfaf812dea4d560e8fb9aa879aed5ff8bf497c2a2625929853d06"
@@ -36,17 +36,17 @@ class MinizipNg < Formula
       -DMZ_ZLIB=ON
     ]
 
-    system "cmake", "-S", ".", "-B", "buildshared", "-DBUILD_SHARED_LIBS=ON", *args, *std_cmake_args
-    system "cmake", "--build", "buildshared"
-    system "cmake", "--install", "buildshared"
+    system "cmake", "-S", ".", "-B", "build/shared", "-DBUILD_SHARED_LIBS=ON", *args, *std_cmake_args
+    system "cmake", "--build", "build/shared"
+    system "cmake", "--install", "build/shared"
 
-    system "cmake", "-S", ".", "-B", "buildstatic", *args, *std_cmake_args
-    system "cmake", "--build", "buildstatic"
-    lib.install "buildstaticlibminizip-ng.a"
+    system "cmake", "-S", ".", "-B", "build/static", *args, *std_cmake_args
+    system "cmake", "--build", "build/static"
+    lib.install "build/static/libminizip-ng.a"
   end
 
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include <stdlib.h>
       #include <stdint.h>
       #include <time.h>
@@ -60,7 +60,7 @@ class MinizipNg < Formula
       }
     C
 
-    system ENV.cc, "test.c", "-I#{include}minizip-ng", "-L#{lib}", "-lminizip-ng", "-o", "test"
-    system ".test"
+    system ENV.cc, "test.c", "-I#{include}/minizip-ng", "-L#{lib}", "-lminizip-ng", "-o", "test"
+    system "./test"
   end
 end

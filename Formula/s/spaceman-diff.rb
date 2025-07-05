@@ -1,10 +1,10 @@
 class SpacemanDiff < Formula
   desc "Diff images from the command-line"
-  homepage "https:github.comholmanspaceman-diff"
-  url "https:github.comholmanspaceman-diffarchiverefstagsv1.0.3.tar.gz"
+  homepage "https://github.com/holman/spaceman-diff"
+  url "https://ghfast.top/https://github.com/holman/spaceman-diff/archive/refs/tags/v1.0.3.tar.gz"
   sha256 "347bf7d32d6c2905f865b90c5e6f4ee2cd043159b61020381f49639ed5750fdf"
   license "MIT"
-  head "https:github.comholmanspaceman-diff.git", branch: "master"
+  head "https://github.com/holman/spaceman-diff.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -22,7 +22,7 @@ class SpacemanDiff < Formula
 
   test do
     # need to configure to use with git-diff
-    output = shell_output(bin"spaceman-diff")
+    output = shell_output(bin/"spaceman-diff")
     assert_match "spaceman-diff fileA shaA modeA fileB shaB modeB", output
   end
 end

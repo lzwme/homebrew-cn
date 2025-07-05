@@ -2,14 +2,14 @@ cask "almighty" do
   version "2.8.3"
   sha256 :no_check
 
-  url "https:almighty-app.s3.amazonaws.comAlmighty.zip",
-      verified: "almighty-app.s3.amazonaws.com"
+  url "https://almighty-app.s3.amazonaws.com/Almighty.zip",
+      verified: "almighty-app.s3.amazonaws.com/"
   name "Almighty"
   desc "Settings and tweaks configurator"
-  homepage "https:indiegoodies.comalmighty"
+  homepage "https://indiegoodies.com/almighty"
 
   livecheck do
-    url "https:raw.githubusercontent.comonmyway133archivesmasterAlmightyCast.xml"
+    url "https://ghfast.top/https://raw.githubusercontent.com/onmyway133/archives/master/AlmightyCast.xml"
     strategy :sparkle, &:short_version
   end
 
@@ -19,10 +19,10 @@ cask "almighty" do
   app "Almighty.app"
 
   zap trash: [
-    "~LibraryApplication SupportAlmighty",
-    "~LibraryApplication Supportcom.onmyway133.Almighty",
-    "~LibraryCachescom.onmyway133.Almighty",
-    "~LibraryPreferencescom.onmyway133.Almighty.plist",
-    "~LibrarySaved Application Statecom.onmyway133.Almighty.savedState",
+    "~/Library/Application Support/Almighty",
+    "~/Library/Application Support/com.onmyway133.Almighty",
+    "~/Library/Caches/com.onmyway133.Almighty",
+    "~/Library/Preferences/com.onmyway133.Almighty.plist",
+    "~/Library/Saved Application State/com.onmyway133.Almighty.savedState",
   ]
 end

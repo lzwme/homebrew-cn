@@ -1,10 +1,10 @@
 class Autorestic < Formula
   desc "High level CLI utility for restic"
-  homepage "https:autorestic.vercel.app"
-  url "https:github.comcupcakearmyautoresticarchiverefstagsv1.8.3.tar.gz"
+  homepage "https://autorestic.vercel.app/"
+  url "https://ghfast.top/https://github.com/cupcakearmy/autorestic/archive/refs/tags/v1.8.3.tar.gz"
   sha256 "2f9ccdb83621530ebda4d22373554af45eeb550d32924a82249dbc66cb867726"
   license "Apache-2.0"
-  head "https:github.comcupcakearmyautorestic.git", branch: "master"
+  head "https://github.com/cupcakearmy/autorestic.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "e2cade21fc658ba2dc41a9340b62816575ccc5107dd3785d0ff3a718efca1115"
@@ -22,11 +22,11 @@ class Autorestic < Formula
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
-    generate_completions_from_executable(bin"autorestic", "completion")
+    generate_completions_from_executable(bin/"autorestic", "completion")
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}autorestic --version")
+    assert_match version.to_s, shell_output("#{bin}/autorestic --version")
 
     require "yaml"
     config = {
@@ -35,12 +35,12 @@ class Autorestic < Formula
     }
     config["version"] = 2
 
-    (testpath".autorestic.yml").write config.to_yaml
-    (testpath"repo""test.txt").write("This is a testfile")
+    (testpath/".autorestic.yml").write config.to_yaml
+    (testpath/"repo"/"test.txt").write("This is a testfile")
 
-    system bin"autorestic", "check"
-    system bin"autorestic", "backup", "-a"
-    system bin"autorestic", "restore", "-l", "foo", "--to", "restore"
-    assert compare_file testpath"repo""test.txt", testpath"restore"testpath"repo""test.txt"
+    system bin/"autorestic", "check"
+    system bin/"autorestic", "backup", "-a"
+    system bin/"autorestic", "restore", "-l", "foo", "--to", "restore"
+    assert compare_file testpath/"repo"/"test.txt", testpath/"restore"/testpath/"repo"/"test.txt"
   end
 end

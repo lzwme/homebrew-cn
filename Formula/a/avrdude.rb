@@ -1,10 +1,10 @@
 class Avrdude < Formula
   desc "Atmel AVR MCU programmer"
-  homepage "https:www.nongnu.orgavrdude"
-  url "https:github.comavrdudesavrdudearchiverefstagsv8.1.tar.gz"
+  homepage "https://www.nongnu.org/avrdude/"
+  url "https://ghfast.top/https://github.com/avrdudes/avrdude/archive/refs/tags/v8.1.tar.gz"
   sha256 "2d3016edd5281ea09627c20b865e605d4f5354fe98f269ce20522a5b910ab399"
   license "GPL-2.0-or-later"
-  head "https:github.comavrdudesavrdude.git", branch: "main"
+  head "https://github.com/avrdudes/avrdude.git", branch: "main"
 
   bottle do
     sha256 arm64_sequoia: "99d020ca9145a289d74a52ff001e499e76d26a8afed895d8f39d7d92f7327a8e"
@@ -26,7 +26,7 @@ class Avrdude < Formula
   uses_from_macos "flex" => :build
 
   on_macos do
-    # https:github.comavrdudesavrdudeissues1653
+    # https://github.com/avrdudes/avrdude/issues/1653
     depends_on "libelf" => :build
   end
 
@@ -40,17 +40,17 @@ class Avrdude < Formula
     shared_args = ["-DBUILD_SHARED_LIBS=ON", "-DCMAKE_INSTALL_RPATH=#{rpath}"]
     shared_args << "-DCMAKE_SHARED_LINKER_FLAGS=-Wl,-undefined,dynamic_lookup" if OS.mac?
 
-    system "cmake", "-S", ".", "-B", "buildshared", *args, *shared_args
-    system "cmake", "--build", "buildshared"
-    system "cmake", "--install", "buildshared"
+    system "cmake", "-S", ".", "-B", "build/shared", *args, *shared_args
+    system "cmake", "--build", "build/shared"
+    system "cmake", "--install", "build/shared"
 
-    system "cmake", "-S", ".", "-B", "buildstatic", *args
-    system "cmake", "--build", "buildstatic"
-    lib.install "buildstaticsrclibavrdude.a"
+    system "cmake", "-S", ".", "-B", "build/static", *args
+    system "cmake", "--build", "build/static"
+    lib.install "build/static/src/libavrdude.a"
   end
 
   test do
-    output = shell_output("#{bin}avrdude -c jtag2 -p x16a4 2>&1", 1).strip
+    output = shell_output("#{bin}/avrdude -c jtag2 -p x16a4 2>&1", 1).strip
     refute_match "avrdude was compiled without usb support", output
     assert_match "Avrdude done.  Thank you.", output
   end

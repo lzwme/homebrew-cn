@@ -1,7 +1,7 @@
 class E2tools < Formula
-  desc "Utilities to read, write, and manipulate files in ext234 filesystems"
-  homepage "https:e2tools.github.io"
-  url "https:github.come2toolse2toolsreleasesdownloadv0.1.2e2tools-0.1.2.tar.gz"
+  desc "Utilities to read, write, and manipulate files in ext2/3/4 filesystems"
+  homepage "https://e2tools.github.io/"
+  url "https://ghfast.top/https://github.com/e2tools/e2tools/releases/download/v0.1.2/e2tools-0.1.2.tar.gz"
   sha256 "b19593bbfc85e9c14c0d2bc8525887901c8fe02588c76df60ab843bf0573c4a2"
   license "GPL-2.0-only"
 
@@ -22,12 +22,12 @@ class E2tools < Formula
 
   def install
     system "autoreconf", "--force", "--install", "--verbose"
-    system ".configure", "--disable-silent-rules", *std_configure_args
+    system "./configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
   end
 
   test do
-    system Formula["e2fsprogs"].opt_sbin"mkfs.ext2", "test.raw", "1024"
-    assert_match "lost+found", shell_output("#{bin}e2ls test.raw")
+    system Formula["e2fsprogs"].opt_sbin/"mkfs.ext2", "test.raw", "1024"
+    assert_match "lost+found", shell_output("#{bin}/e2ls test.raw")
   end
 end

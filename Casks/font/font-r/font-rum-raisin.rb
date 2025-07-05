@@ -2,10 +2,10 @@ cask "font-rum-raisin" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefontsrawmainoflrumraisinRumRaisin-Regular.ttf",
-      verified: "github.comgooglefonts"
+  url "https://github.com/google/fonts/raw/main/ofl/rumraisin/RumRaisin-Regular.ttf",
+      verified: "github.com/google/fonts/"
   name "Rum Raisin"
-  homepage "https:fonts.google.comspecimenRum+Raisin"
+  homepage "https://fonts.google.com/specimen/Rum+Raisin"
 
   font "RumRaisin-Regular.ttf"
 

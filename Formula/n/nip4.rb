@@ -1,10 +1,10 @@
 class Nip4 < Formula
   desc "Image processing spreadsheet"
-  homepage "https:github.comjcupittnip4"
-  url "https:github.comjcupittnip4releasesdownloadv9.0.10-1nip4-9.0.10-1.tar.xz"
+  homepage "https://github.com/jcupitt/nip4"
+  url "https://ghfast.top/https://github.com/jcupitt/nip4/releases/download/v9.0.10-1/nip4-9.0.10-1.tar.xz"
   sha256 "1439698adb1e4bff149d77c40d180b2b9b03d30283df2f842fbaefc973f8c36c"
   license "GPL-2.0-or-later"
-  head "https:github.comjcupittnip4.git", branch: "main"
+  head "https://github.com/jcupitt/nip4.git", branch: "main"
 
   bottle do
     sha256 cellar: :any, arm64_sequoia: "d515083872b8e16bfb40ae41c2cb3590a1be1ab13af3a66fde1c36e6af502d77"
@@ -36,7 +36,7 @@ class Nip4 < Formula
 
   def install
     # Avoid running `meson` post-install script
-    ENV["DESTDIR"] = ""
+    ENV["DESTDIR"] = "/"
 
     system "meson", "setup", "build", *std_meson_args
     system "meson", "compile", "-C", "build", "--verbose"
@@ -44,15 +44,15 @@ class Nip4 < Formula
   end
 
   def post_install
-    system "#{Formula["glib"].opt_bin}glib-compile-schemas", "#{HOMEBREW_PREFIX}shareglib-2.0schemas"
-    system "#{Formula["gtk4"].opt_bin}gtk4-update-icon-cache", "-f", "-t", "#{HOMEBREW_PREFIX}shareiconshicolor"
+    system "#{Formula["glib"].opt_bin}/glib-compile-schemas", "#{HOMEBREW_PREFIX}/share/glib-2.0/schemas"
+    system "#{Formula["gtk4"].opt_bin}/gtk4-update-icon-cache", "-f", "-t", "#{HOMEBREW_PREFIX}/share/icons/hicolor"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}nip4 --version")
+    assert_match version.to_s, shell_output("#{bin}/nip4 --version")
 
     # nip4 is a GUI application
-    spawn bin"nip4" do |_r, _w, pid|
+    spawn bin/"nip4" do |_r, _w, pid|
       sleep 5
     ensure
       Process.kill("TERM", pid)

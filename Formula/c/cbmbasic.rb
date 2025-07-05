@@ -1,10 +1,10 @@
 class Cbmbasic < Formula
   desc "Commodore BASIC V2 as a scripting language"
-  homepage "https:github.commist64cbmbasic"
-  url "https:downloads.sourceforge.netprojectcbmbasiccbmbasic1.0cbmbasic-1.0.tgz"
+  homepage "https://github.com/mist64/cbmbasic"
+  url "https://downloads.sourceforge.net/project/cbmbasic/cbmbasic/1.0/cbmbasic-1.0.tgz"
   sha256 "2735dedf3f9ad93fa947ad0fb7f54acd8e84ea61794d786776029c66faf64b04"
   license "BSD-2-Clause"
-  head "https:github.commist64cbmbasic.git", branch: "master"
+  head "https://github.com/mist64/cbmbasic.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -37,6 +37,6 @@ class Cbmbasic < Formula
   end
 
   test do
-    assert_match(READY.\r\n 1, pipe_output(bin"cbmbasic", "PRINT 1\n", 0))
+    assert_match(/READY.\r\n 1/, pipe_output(bin/"cbmbasic", "PRINT 1\n", 0))
   end
 end

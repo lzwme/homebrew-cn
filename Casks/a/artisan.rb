@@ -2,11 +2,11 @@ cask "artisan" do
   version "3.2.0"
   sha256 "760b0cce52f72d2f39e2974bff746085b3acbde3c85dd3de3b9422153623884e"
 
-  url "https:github.comartisan-roaster-scopeartisanreleasesdownloadv#{version}artisan-mac-#{version}.dmg",
-      verified: "github.comartisan-roaster-scopeartisan"
+  url "https://ghfast.top/https://github.com/artisan-roaster-scope/artisan/releases/download/v#{version}/artisan-mac-#{version}.dmg",
+      verified: "github.com/artisan-roaster-scope/artisan/"
   name "Artisan"
   desc "Visual scope for coffee roasters"
-  homepage "https:artisan-scope.org"
+  homepage "https://artisan-scope.org/"
 
   livecheck do
     url :url
@@ -18,8 +18,8 @@ cask "artisan" do
   app "Artisan.app"
 
   zap trash: [
-    "~LibraryApplication Supportartisan-scope",
-    "~LibraryPreferencesorg.artisan-scope.Artisan.plist",
-    "~LibrarySaved Application Stateorg.artisan-scope.artisan.savedState",
+    "~/Library/Application Support/artisan-scope",
+    "~/Library/Preferences/org.artisan-scope.Artisan.plist",
+    "~/Library/Saved Application State/org.artisan-scope.artisan.savedState",
   ]
 end

@@ -1,13 +1,13 @@
 class Sdl2 < Formula
   desc "Low-level access to audio, keyboard, mouse, joystick, and graphics"
-  homepage "https:www.libsdl.org"
-  url "https:github.comlibsdl-orgSDLreleasesdownloadrelease-2.32.8SDL2-2.32.8.tar.gz"
+  homepage "https://www.libsdl.org/"
+  url "https://ghfast.top/https://github.com/libsdl-org/SDL/releases/download/release-2.32.8/SDL2-2.32.8.tar.gz"
   sha256 "0ca83e9c9b31e18288c7ec811108e58bac1f1bb5ec6577ad386830eac51c787e"
   license "Zlib"
 
   livecheck do
     url :stable
-    regex(^(?:release[._-])?v?(2(?:\.\d+)+)$i)
+    regex(/^(?:release[._-])?v?(2(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -21,7 +21,7 @@ class Sdl2 < Formula
   end
 
   head do
-    url "https:github.comlibsdl-orgSDL.git", branch: "SDL2"
+    url "https://github.com/libsdl-org/SDL.git", branch: "SDL2"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -48,7 +48,7 @@ class Sdl2 < Formula
     # keg-only but I doubt that will be needed.
     inreplace "sdl2.pc.in", "@prefix@", HOMEBREW_PREFIX
 
-    system ".autogen.sh" if build.head?
+    system "./autogen.sh" if build.head?
 
     args = %W[--prefix=#{prefix} --enable-hidapi]
     args += if OS.mac?
@@ -71,11 +71,11 @@ class Sdl2 < Formula
         --with-x
       ]
     end
-    system ".configure", *args
+    system "./configure", *args
     system "make", "install"
   end
 
   test do
-    system bin"sdl2-config", "--version"
+    system bin/"sdl2-config", "--version"
   end
 end

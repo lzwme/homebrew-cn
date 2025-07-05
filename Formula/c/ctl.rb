@@ -1,19 +1,19 @@
 class Ctl < Formula
   desc "Programming language for digital color management"
-  homepage "https:github.comampasCTL"
+  homepage "https://github.com/ampas/CTL"
   license "AMPAS"
   revision 1
-  head "https:github.comampasCTL.git", branch: "master"
+  head "https://github.com/ampas/CTL.git", branch: "master"
 
   # TODO: Remove `stable` block when patch is no longer needed.
   stable do
-    url "https:github.comampasCTLarchiverefstagsctl-1.5.3.tar.gz"
+    url "https://ghfast.top/https://github.com/ampas/CTL/archive/refs/tags/ctl-1.5.3.tar.gz"
     sha256 "0a9f5f3de8964ac5cca31597aca74bf915a3d8214e3276fdcb52c80ad25b0096"
 
     # Fix build failure due to ambiguous call to `clamp` with C++17
-    # https:github.comampasCTLpull164
+    # https://github.com/ampas/CTL/pull/164
     patch do
-      url "https:github.comampasCTLcommit8108715a8cbbb0a0a81a00fb7239f228270047c1.patch?full_index=1"
+      url "https://github.com/ampas/CTL/commit/8108715a8cbbb0a0a81a00fb7239f228270047c1.patch?full_index=1"
       sha256 "4a48615dd434b80db01f23da56a2243d72d32f60a4a5c23655e5860a845eda6f"
     end
   end
@@ -47,6 +47,6 @@ class Ctl < Formula
   end
 
   test do
-    assert_match "transforms an image", shell_output("#{bin}ctlrender -help", 1)
+    assert_match "transforms an image", shell_output("#{bin}/ctlrender -help", 1)
   end
 end

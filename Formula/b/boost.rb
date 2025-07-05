@@ -1,14 +1,14 @@
 class Boost < Formula
   desc "Collection of portable C++ source libraries"
-  homepage "https:www.boost.org"
-  url "https:github.comboostorgboostreleasesdownloadboost-1.88.0boost-1.88.0-b2-nodocs.tar.xz"
+  homepage "https://www.boost.org/"
+  url "https://ghfast.top/https://github.com/boostorg/boost/releases/download/boost-1.88.0/boost-1.88.0-b2-nodocs.tar.xz"
   sha256 "ad9ce2c91bc0977a7adc92d51558f3b9c53596bb88246a280175ebb475da1762"
   license "BSL-1.0"
-  head "https:github.comboostorgboost.git", branch: "master"
+  head "https://github.com/boostorg/boost.git", branch: "master"
 
   livecheck do
-    url "https:www.boost.orgusersdownload"
-    regex(href=.*?boost[._-]v?(\d+(?:[._]\d+)+)\.ti)
+    url "https://www.boost.org/users/download/"
+    regex(/href=.*?boost[._-]v?(\d+(?:[._]\d+)+)\.t/i)
     strategy :page_match do |page, regex|
       page.scan(regex).map { |match| match.first.tr("_", ".") }
     end
@@ -33,9 +33,9 @@ class Boost < Formula
   uses_from_macos "bzip2"
   uses_from_macos "zlib"
 
-  # Fix for `ncmpcpp`, pr ref: https:github.comboostorgrangepull157
+  # Fix for `ncmpcpp`, pr ref: https://github.com/boostorg/range/pull/157
   patch :p3 do
-    url "https:github.comboostorgrangecommit9ac89e9936b826c13e90611cb9a81a7aa0508d20.patch?full_index=1"
+    url "https://github.com/boostorg/range/commit/9ac89e9936b826c13e90611cb9a81a7aa0508d20.patch?full_index=1"
     sha256 "914464ffa1d53b3bf56ee0ff1a78c25799170c99c9a1cda075e6298f730236ad"
     directory "boost"
   end
@@ -51,7 +51,7 @@ class Boost < Formula
     end
 
     # libdir should be set by --prefix but isn't
-    icu4c = deps.map(&:to_formula).find { |f| f.name.match?(^icu4c@\d+$) }
+    icu4c = deps.map(&:to_formula).find { |f| f.name.match?(/^icu4c@\d+$/) }
     bootstrap_args = %W[
       --prefix=#{prefix}
       --libdir=#{lib}
@@ -86,19 +86,19 @@ class Boost < Formula
     args << "cxxflags=-std=c++17"
     args << "cxxflags=-stdlib=libc++" << "linkflags=-stdlib=libc++" if ENV.compiler == :clang
 
-    system ".bootstrap.sh", *bootstrap_args
-    system ".b2", "headers"
-    system ".b2", *args
+    system "./bootstrap.sh", *bootstrap_args
+    system "./b2", "headers"
+    system "./b2", *args
   end
 
   test do
-    (testpath"test.cpp").write <<~CPP
-      #include <boostalgorithmstring.hpp>
-      #include <boostiostreamsdevicearray.hpp>
-      #include <boostiostreamsdeviceback_inserter.hpp>
-      #include <boostiostreamsfilterzstd.hpp>
-      #include <boostiostreamsfiltering_stream.hpp>
-      #include <boostiostreamsstream.hpp>
+    (testpath/"test.cpp").write <<~CPP
+      #include <boost/algorithm/string.hpp>
+      #include <boost/iostreams/device/array.hpp>
+      #include <boost/iostreams/device/back_inserter.hpp>
+      #include <boost/iostreams/filter/zstd.hpp>
+      #include <boost/iostreams/filtering_stream.hpp>
+      #include <boost/iostreams/stream.hpp>
 
       #include <string>
       #include <iostream>
@@ -118,7 +118,7 @@ class Boost < Formula
         assert(strVec[0]=="a");
         assert(strVec[1]=="b");
 
-         Test boost::iostreams::zstd_compressor() linking
+        // Test boost::iostreams::zstd_compressor() linking
         std::vector<char> v;
         back_insert_device<std::vector<char>> snk{v};
         filtering_ostream os;
@@ -141,6 +141,6 @@ class Boost < Formula
     CPP
     system ENV.cxx, "test.cpp", "-std=c++14", "-o", "test", "-L#{lib}", "-lboost_iostreams",
                     "-L#{Formula["zstd"].opt_lib}", "-lzstd"
-    system ".test"
+    system "./test"
   end
 end

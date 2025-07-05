@@ -1,13 +1,13 @@
 class Micronaut < Formula
   desc "Modern JVM-based framework for building modular microservices"
-  homepage "https:micronaut.io"
-  url "https:github.commicronaut-projectsmicronaut-starterarchiverefstagsv4.9.0.tar.gz"
+  homepage "https://micronaut.io/"
+  url "https://ghfast.top/https://github.com/micronaut-projects/micronaut-starter/archive/refs/tags/v4.9.0.tar.gz"
   sha256 "8116048981461d6a702f447f01b33d0a2b3527567b0aab33aece694d56c34e8d"
   license "Apache-2.0"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -27,15 +27,15 @@ class Micronaut < Formula
     ENV["JAVA_HOME"] = Language::Java.java_home("21")
     system "gradle", "micronaut-cli:assemble", "--exclude-task", "test", "--no-daemon"
 
-    libexec.install "starter-clibuildexplodedlib"
-    (libexec"bin").install "starter-clibuildexplodedbinmn"
+    libexec.install "starter-cli/build/exploded/lib"
+    (libexec/"bin").install "starter-cli/build/exploded/bin/mn"
 
-    bash_completion.install "starter-clibuildexplodedbinmn_completion" => "mn"
-    (bin"mn").write_env_script libexec"binmn", Language::Java.overridable_java_home_env("21")
+    bash_completion.install "starter-cli/build/exploded/bin/mn_completion" => "mn"
+    (bin/"mn").write_env_script libexec/"bin/mn", Language::Java.overridable_java_home_env("21")
   end
 
   test do
-    system bin"mn", "create-app", "hello-world"
-    assert_predicate testpath"hello-world", :directory?
+    system bin/"mn", "create-app", "hello-world"
+    assert_predicate testpath/"hello-world", :directory?
   end
 end

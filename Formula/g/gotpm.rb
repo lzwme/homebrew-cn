@@ -1,10 +1,10 @@
 class Gotpm < Formula
   desc "CLI for using TPM 2.0"
-  homepage "https:github.comgooglego-tpm-tools"
-  url "https:github.comgooglego-tpm-toolsarchiverefstagsv0.4.5.tar.gz"
+  homepage "https://github.com/google/go-tpm-tools"
+  url "https://ghfast.top/https://github.com/google/go-tpm-tools/archive/refs/tags/v0.4.5.tar.gz"
   sha256 "f5cf18c21b985d81a6c96c027723e755c70004f4b6d14b9223b38183ad6f68f5"
   license "Apache-2.0"
-  head "https:github.comgooglego-tpm-tools.git", branch: "main"
+  head "https://github.com/google/go-tpm-tools.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "f377258aa46e54eebae48c3ff7d7cac5a9105b1009a55b95702fbb616788bfe9"
@@ -18,11 +18,11 @@ class Gotpm < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), ".cmdgotpm"
+    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/gotpm"
   end
 
   test do
-    output = shell_output("#{bin}gotpm attest 2>&1", 1)
-    assert_match "Error: connecting to TPM: stat devtpm0: no such file or directory", output
+    output = shell_output("#{bin}/gotpm attest 2>&1", 1)
+    assert_match "Error: connecting to TPM: stat /dev/tpm0: no such file or directory", output
   end
 end

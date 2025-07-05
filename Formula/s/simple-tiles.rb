@@ -1,11 +1,11 @@
 class SimpleTiles < Formula
   desc "Image generation library for spatial data"
-  homepage "https:github.compropublicasimple-tiles"
-  url "https:github.compropublicasimple-tilesarchiverefstagsv0.6.2.tar.gz"
+  homepage "https://github.com/propublica/simple-tiles"
+  url "https://ghfast.top/https://github.com/propublica/simple-tiles/archive/refs/tags/v0.6.2.tar.gz"
   sha256 "343ae52a0b20ee091b14bc145b7c78fed13b7272acd827626283b70f178dfa34"
   license "MIT"
   revision 6
-  head "https:github.compropublicasimple-tiles.git", branch: "master"
+  head "https://github.com/propublica/simple-tiles.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -35,26 +35,26 @@ class SimpleTiles < Formula
 
   # Update waf for py3.13
   resource "waf" do
-    url "https:raw.githubusercontent.compropublicasimple-tilesd4bae6b932ef84cd115cc327651b4fad49557409waf"
+    url "https://ghfast.top/https://raw.githubusercontent.com/propublica/simple-tiles/d4bae6b932ef84cd115cc327651b4fad49557409/waf"
     sha256 "dd9dd1895f939d288823a7e23d7914c4f9fb018828da64842953e2a857a08713"
   end
 
-  # update toolsclang_compilation_database.py for py3.13
+  # update tools/clang_compilation_database.py for py3.13
   patch do
-    url "https:github.compropublicasimple-tilescommita6e8b5738bb7b935d0579a5b514c49720e9eeeff.patch?full_index=1"
+    url "https://github.com/propublica/simple-tiles/commit/a6e8b5738bb7b935d0579a5b514c49720e9eeeff.patch?full_index=1"
     sha256 "b0d9226069b8c5cedd95d3150b46d123a14259a60f79d2827a5a99b9ce6e8944"
   end
 
   def install
     python3 = "python3"
     buildpath.install resource("waf")
-    system python3, ".waf", "configure", "--prefix=#{prefix}"
-    system python3, ".waf", "install"
+    system python3, "./waf", "configure", "--prefix=#{prefix}"
+    system python3, "./waf", "install"
   end
 
   test do
-    (testpath"test.c").write <<~C
-      #include <simple-tilessimple_tiles.h>
+    (testpath/"test.c").write <<~C
+      #include <simple-tiles/simple_tiles.h>
 
       int main(){
         simplet_map_t *map = simplet_map_new();
@@ -64,6 +64,6 @@ class SimpleTiles < Formula
     C
     cflags = shell_output("pkgconf --cflags simple-tiles").chomp.split
     system ENV.cc, "test.c", *cflags, "-L#{lib}", "-lsimple-tiles", "-o", "test"
-    system ".test"
+    system "./test"
   end
 end

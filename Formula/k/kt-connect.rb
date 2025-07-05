@@ -1,10 +1,10 @@
 class KtConnect < Formula
   desc "Toolkit for integrating with kubernetes dev environment more efficiently"
-  homepage "https:alibaba.github.iokt-connect"
-  url "https:github.comalibabakt-connectarchiverefstagsv0.3.7.tar.gz"
+  homepage "https://alibaba.github.io/kt-connect"
+  url "https://ghfast.top/https://github.com/alibaba/kt-connect/archive/refs/tags/v0.3.7.tar.gz"
   sha256 "f32a9eebb65bd6c43caaf7219a0424dcf9e70389c9a471dad7dc6c64260f3194"
   license "GPL-3.0-or-later"
-  head "https:github.comalibabakt-connect.git", branch: "master"
+  head "https://github.com/alibaba/kt-connect.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -21,22 +21,22 @@ class KtConnect < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "6ac819a53007214f4d5e59877c0e5caacb17bd4e777993a89cbdd6383884ed45"
   end
 
-  # upstream go1.20 support report, https:github.comalibabakt-connectissues398
+  # upstream go1.20 support report, https://github.com/alibaba/kt-connect/issues/398
   disable! date: "2024-08-24", because: :unmaintained
 
-  # https:github.comalibabakt-connectissues398
+  # https://github.com/alibaba/kt-connect/issues/398
   depends_on "go@1.19" => :build
 
   def install
     ldflags = "-s -w -X main.version=#{version}"
-    system "go", "build", *std_go_args(ldflags:, output: bin"ktctl"), ".cmdktctl"
+    system "go", "build", *std_go_args(ldflags:, output: bin/"ktctl"), "./cmd/ktctl"
 
-    generate_completions_from_executable(bin"ktctl", "completion", base_name: "ktctl")
+    generate_completions_from_executable(bin/"ktctl", "completion", base_name: "ktctl")
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}ktctl --version")
+    assert_match version.to_s, shell_output("#{bin}/ktctl --version")
     # Should error out as exchange require a service name
-    assert_match "name of service to exchange is required", shell_output("#{bin}ktctl exchange 2>&1")
+    assert_match "name of service to exchange is required", shell_output("#{bin}/ktctl exchange 2>&1")
   end
 end

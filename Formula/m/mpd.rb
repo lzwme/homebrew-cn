@@ -1,10 +1,10 @@
 class Mpd < Formula
   desc "Music Player Daemon"
-  homepage "https:www.musicpd.org"
-  url "https:github.comMusicPlayerDaemonMPDarchiverefstagsv0.24.4.tar.gz"
+  homepage "https://www.musicpd.org/"
+  url "https://ghfast.top/https://github.com/MusicPlayerDaemon/MPD/archive/refs/tags/v0.24.4.tar.gz"
   sha256 "36e7a6ed3e70c4e516d194b49600bb0036b37b52bb6488ebf9eda2696a40c6fa"
   license "GPL-2.0-or-later"
-  head "https:github.comMusicPlayerDaemonMPD.git", branch: "master"
+  head "https://github.com/MusicPlayerDaemon/MPD.git", branch: "master"
 
   bottle do
     sha256 cellar: :any, arm64_sequoia: "954d40a6489290137351aed28f63d54e286543002af9b6189f5be1ec60b5eb21"
@@ -77,10 +77,10 @@ class Mpd < Formula
   def install
     if OS.mac? && MacOS.version <= :ventura
       ENV.llvm_clang
-      ENV.append "LDFLAGS", "-L#{Formula["llvm"].opt_lib}unwind -lunwind"
+      ENV.append "LDFLAGS", "-L#{Formula["llvm"].opt_lib}/unwind -lunwind"
       # When using Homebrew's superenv shims, we need to use HOMEBREW_LIBRARY_PATHS
       # rather than LDFLAGS for libc++ in order to correctly link to LLVM's libc++.
-      ENV.prepend_path "HOMEBREW_LIBRARY_PATHS", Formula["llvm"].opt_lib"c++"
+      ENV.prepend_path "HOMEBREW_LIBRARY_PATHS", Formula["llvm"].opt_lib/"c++"
     end
 
     args = %W[
@@ -101,52 +101,52 @@ class Mpd < Formula
       -Dgme=enabled
       -Dmikmod=enabled
       -Dnlohmann_json=enabled
-      -Dsystemd_system_unit_dir=#{lib}systemdsystem
-      -Dsystemd_user_unit_dir=#{lib}systemduser
+      -Dsystemd_system_unit_dir=#{lib}/systemd/system
+      -Dsystemd_user_unit_dir=#{lib}/systemd/user
     ]
 
-    system "meson", "setup", "outputrelease", *args, *std_meson_args
-    system "meson", "compile", "-C", "outputrelease", "--verbose"
+    system "meson", "setup", "output/release", *args, *std_meson_args
+    system "meson", "compile", "-C", "output/release", "--verbose"
     ENV.deparallelize # Directories are created in parallel, so let's not do that
-    system "meson", "install", "-C", "outputrelease"
+    system "meson", "install", "-C", "output/release"
 
-    pkgetc.install "docmpdconf.example" => "mpd.conf"
+    pkgetc.install "doc/mpdconf.example" => "mpd.conf"
   end
 
   def caveats
     <<~EOS
       MPD requires a config file to start.
-      Please copy it from #{etc}mpdmpd.conf into one of these paths:
-        - ~.mpdmpd.conf
-        - ~.mpdconf
+      Please copy it from #{etc}/mpd/mpd.conf into one of these paths:
+        - ~/.mpd/mpd.conf
+        - ~/.mpdconf
       and tailor it to your needs.
     EOS
   end
 
   service do
-    run [opt_bin"mpd", "--no-daemon"]
+    run [opt_bin/"mpd", "--no-daemon"]
     keep_alive true
     process_type :interactive
     working_dir HOMEBREW_PREFIX
   end
 
   test do
-    # oss_output: Error opening OSS device "devdsp": No such file or directory
-    # oss_output: Error opening OSS device "devsounddsp": No such file or directory
+    # oss_output: Error opening OSS device "/dev/dsp": No such file or directory
+    # oss_output: Error opening OSS device "/dev/sound/dsp": No such file or directory
     return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
 
-    assert_match "[wavpack] wv", shell_output("#{bin}mpd --version")
+    assert_match "[wavpack] wv", shell_output("#{bin}/mpd --version")
 
     require "expect"
 
     port = free_port
 
-    (testpath"mpd.conf").write <<~EOS
+    (testpath/"mpd.conf").write <<~EOS
       bind_to_address "127.0.0.1"
       port "#{port}"
     EOS
 
-    io = IO.popen("#{bin}mpd --stdout --no-daemon #{testpath}mpd.conf 2>&1", "r")
+    io = IO.popen("#{bin}/mpd --stdout --no-daemon #{testpath}/mpd.conf 2>&1", "r")
     io.expect("output: Successfully detected a osx audio device", 30)
 
     ohai "Connect to MPD command (localhost:#{port})"

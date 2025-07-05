@@ -1,10 +1,10 @@
 class Gomodifytags < Formula
   desc "Go tool to modify struct field tags"
-  homepage "https:github.comfatihgomodifytags"
-  url "https:github.comfatihgomodifytagsarchiverefstagsv1.17.0.tar.gz"
+  homepage "https://github.com/fatih/gomodifytags"
+  url "https://ghfast.top/https://github.com/fatih/gomodifytags/archive/refs/tags/v1.17.0.tar.gz"
   sha256 "a490786d80c962dc946b8f9804ffec596c1087dbf91b122b9b5903c03b6da6b9"
   license "BSD-3-Clause"
-  head "https:github.comfatihgomodifytags.git", branch: "main"
+  head "https://github.com/fatih/gomodifytags.git", branch: "main"
 
   no_autobump! because: :requires_manual_review
 
@@ -27,7 +27,7 @@ class Gomodifytags < Formula
   end
 
   test do
-    (testpath"test.go").write <<~GO
+    (testpath/"test.go").write <<~GO
       package main
 
       type Server struct {
@@ -56,6 +56,6 @@ class Gomodifytags < Formula
       }
 
     EOS
-    assert_equal expected, shell_output("#{bin}gomodifytags -file test.go -struct Server -add-tags json")
+    assert_equal expected, shell_output("#{bin}/gomodifytags -file test.go -struct Server -add-tags json")
   end
 end

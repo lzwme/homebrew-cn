@@ -1,10 +1,10 @@
 class Geesefs < Formula
   desc "FUSE FS implementation over S3"
-  homepage "https:github.comyandex-cloudgeesefs"
-  url "https:github.comyandex-cloudgeesefsarchiverefstagsv0.43.0.tar.gz"
+  homepage "https://github.com/yandex-cloud/geesefs"
+  url "https://ghfast.top/https://github.com/yandex-cloud/geesefs/archive/refs/tags/v0.43.0.tar.gz"
   sha256 "ec4331ab6756f255cfb1d2042696b35bd51600659e43982fef9929f9a96fa503"
   license "Apache-2.0"
-  head "https:github.comyandex-cloudgeesefs.git", branch: "master"
+  head "https://github.com/yandex-cloud/geesefs.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "ba05a818105f466ada749d50ec3b67e96c5f264da583b0c3037be7c3e5164398"
@@ -22,7 +22,7 @@ class Geesefs < Formula
   end
 
   test do
-    assert_match "geesefs version #{version}", shell_output("#{bin}geesefs --version 2>&1")
-    assert_match "Mount: stat test: no such file or directory", shell_output("#{bin}geesefs test test 2>&1", 1)
+    assert_match "geesefs version #{version}", shell_output("#{bin}/geesefs --version 2>&1")
+    assert_match "Mount: stat test: no such file or directory", shell_output("#{bin}/geesefs test test 2>&1", 1)
   end
 end

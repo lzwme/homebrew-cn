@@ -1,14 +1,14 @@
 class Capstone < Formula
   desc "Multi-platform, multi-architecture disassembly framework"
-  homepage "https:www.capstone-engine.org"
-  url "https:github.comcapstone-enginecapstonearchiverefstags5.0.6.tar.gz"
+  homepage "https://www.capstone-engine.org/"
+  url "https://ghfast.top/https://github.com/capstone-engine/capstone/archive/refs/tags/5.0.6.tar.gz"
   sha256 "240ebc834c51aae41ca9215d3190cc372fd132b9c5c8aa2d5f19ca0c325e28f9"
   license "BSD-3-Clause"
-  head "https:github.comcapstone-enginecapstone.git", branch: "next"
+  head "https://github.com/capstone-engine/capstone.git", branch: "next"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -28,16 +28,16 @@ class Capstone < Formula
   def install
     ENV["HOMEBREW_CAPSTONE"] = "1"
     ENV["PREFIX"] = prefix
-    system ".make.sh"
+    system "./make.sh"
     system "make", "install", "PREFIX=#{prefix}"
   end
 
   test do
-    # code comes from https:www.capstone-engine.orglang_c.html
-    (testpath"test.c").write <<~C
+    # code comes from https://www.capstone-engine.org/lang_c.html
+    (testpath/"test.c").write <<~C
       #include <stdio.h>
       #include <inttypes.h>
-      #include <capstonecapstone.h>
+      #include <capstone/capstone.h>
       #define CODE "\\x55\\x48\\x8b\\x05\\xb8\\x13\\x00\\x00"
 
       int main()
@@ -61,6 +61,6 @@ class Capstone < Formula
       }
     C
     system ENV.cc, "test.c", "-L#{lib}", "-lcapstone", "-o", "test"
-    system ".test"
+    system "./test"
   end
 end

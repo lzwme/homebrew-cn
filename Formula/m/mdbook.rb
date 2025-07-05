@@ -1,10 +1,10 @@
 class Mdbook < Formula
   desc "Create modern online books from Markdown files"
-  homepage "https:rust-lang.github.iomdBook"
-  url "https:github.comrust-langmdBookarchiverefstagsv0.4.51.tar.gz"
+  homepage "https://rust-lang.github.io/mdBook/"
+  url "https://ghfast.top/https://github.com/rust-lang/mdBook/archive/refs/tags/v0.4.51.tar.gz"
   sha256 "de5ee916157784e32451b81de01cc4c669b73e651e2db00c7b1809254dbb6259"
   license "MPL-2.0"
-  head "https:github.comrust-langmdBook.git", branch: "master"
+  head "https://github.com/rust-lang/mdBook.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "0563b8a5f71ccf3c93acaf03c9fbfefb6c3e226a61dea703eb2f881b27d13c53"
@@ -21,12 +21,12 @@ class Mdbook < Formula
   def install
     system "cargo", "install", *std_cargo_args
 
-    generate_completions_from_executable(bin"mdbook", "completions")
+    generate_completions_from_executable(bin/"mdbook", "completions")
   end
 
   test do
     # simulate user input to mdbook init
-    system "sh", "-c", "printf \\n\\n | #{bin}mdbook init"
-    system bin"mdbook", "build"
+    system "sh", "-c", "printf \\n\\n | #{bin}/mdbook init"
+    system bin/"mdbook", "build"
   end
 end

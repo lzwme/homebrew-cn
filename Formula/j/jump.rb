@@ -1,10 +1,10 @@
 class Jump < Formula
   desc "Helps you navigate your file system faster by learning your habits"
-  homepage "https:github.comgsamokovarovjump"
-  url "https:github.comgsamokovarovjumparchiverefstagsv0.51.0.tar.gz"
+  homepage "https://github.com/gsamokovarov/jump"
+  url "https://ghfast.top/https://github.com/gsamokovarov/jump/archive/refs/tags/v0.51.0.tar.gz"
   sha256 "ce297cada71e1dca33cd7759e55b28518d2bf317cdced1f3b3f79f40fa1958b5"
   license "MIT"
-  head "https:github.comgsamokovarovjump.git", branch: "main"
+  head "https://github.com/gsamokovarov/jump.git", branch: "main"
 
   no_autobump! because: :requires_manual_review
 
@@ -24,16 +24,16 @@ class Jump < Formula
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
 
-    generate_completions_from_executable(bin"jump", "shell")
-    man1.install "manjump.1"
-    man1.install "manj.1"
+    generate_completions_from_executable(bin/"jump", "shell")
+    man1.install "man/jump.1"
+    man1.install "man/j.1"
   end
 
   test do
-    (testpath"test_dir").mkpath
+    (testpath/"test_dir").mkpath
     ENV["JUMP_HOME"] = testpath.to_s
-    system bin"jump", "chdir", "#{testpath}test_dir"
+    system bin/"jump", "chdir", "#{testpath}/test_dir"
 
-    assert_equal (testpath"test_dir").to_s, shell_output("#{bin}jump cd tdir").chomp
+    assert_equal (testpath/"test_dir").to_s, shell_output("#{bin}/jump cd tdir").chomp
   end
 end

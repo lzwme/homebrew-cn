@@ -1,17 +1,17 @@
 # Please don't update this formula until the release is official via
 # mailing list or blog post. There's a history of GitHub tags moving around.
-# https:github.comhashicorpvaultissues1051
+# https://github.com/hashicorp/vault/issues/1051
 class Vault < Formula
   desc "Secures, stores, and tightly controls access to secrets"
-  homepage "https:vaultproject.io"
+  homepage "https://vaultproject.io/"
   # NOTE: Do not bump to v1.15.0+ as license changed to BUSL-1.1
-  # https:github.comhashicorpvaultpull22290
-  # https:github.comhashicorpvaultpull22357
-  url "https:github.comhashicorpvault.git",
+  # https://github.com/hashicorp/vault/pull/22290
+  # https://github.com/hashicorp/vault/pull/22357
+  url "https://github.com/hashicorp/vault.git",
       tag:      "v1.14.4",
       revision: "ccdd48d1f7b95fc99fd11d67fc1c687576b338de"
   license "MPL-2.0"
-  head "https:github.comhashicorpvault.git", branch: "main"
+  head "https://github.com/hashicorp/vault.git", branch: "main"
 
   no_autobump! because: :requires_manual_review
 
@@ -25,7 +25,7 @@ class Vault < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "f4518c13f4613bb7adf425c5eabcd4a4cff94fdfe7def03201ac193f10fa7cb8"
   end
 
-  # https:www.hashicorp.combloghashicorp-adopts-business-source-license
+  # https://www.hashicorp.com/blog/hashicorp-adopts-business-source-license
   disable! date: "2024-09-27", because: "will change its license to BUSL on the next release"
 
   depends_on "go" => :build
@@ -35,39 +35,39 @@ class Vault < Formula
   uses_from_macos "curl" => :test
 
   def install
-    ENV.prepend_path "PATH", Formula["node"].opt_libexec"bin" # for npm
+    ENV.prepend_path "PATH", Formula["node"].opt_libexec/"bin" # for npm
     system "make", "bootstrap", "static-dist", "dev-ui"
-    bin.install "binvault"
+    bin.install "bin/vault"
   end
 
   service do
-    run [opt_bin"vault", "server", "-dev"]
+    run [opt_bin/"vault", "server", "-dev"]
     keep_alive true
     working_dir var
-    log_path var"logvault.log"
-    error_log_path var"logvault.log"
+    log_path var/"log/vault.log"
+    error_log_path var/"log/vault.log"
   end
 
   def caveats
     <<~EOS
-      We will not accept any new Vault releases in homebrewcore (with the BUSL license).
+      We will not accept any new Vault releases in homebrew/core (with the BUSL license).
       The next release will change to a non-open-source license:
-      https:www.hashicorp.combloghashicorp-adopts-business-source-license
+      https://www.hashicorp.com/blog/hashicorp-adopts-business-source-license
       See our documentation for acceptable licences:
-        https:docs.brew.shLicense-Guidelines
+        https://docs.brew.sh/License-Guidelines
     EOS
   end
 
   test do
     addr = "127.0.0.1:#{free_port}"
     ENV["VAULT_DEV_LISTEN_ADDRESS"] = addr
-    ENV["VAULT_ADDR"] = "http:#{addr}"
+    ENV["VAULT_ADDR"] = "http://#{addr}"
 
-    pid = fork { exec bin"vault", "server", "-dev" }
+    pid = fork { exec bin/"vault", "server", "-dev" }
     sleep 5
-    system bin"vault", "status"
+    system bin/"vault", "status"
     # Check the ui was properly embedded
-    assert_match "User-agent", shell_output("curl #{addr}robots.txt")
+    assert_match "User-agent", shell_output("curl #{addr}/robots.txt")
     Process.kill("TERM", pid)
   end
 end

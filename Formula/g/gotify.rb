@@ -1,10 +1,10 @@
 class Gotify < Formula
-  desc "Command-line interface for pushing messages to gotifyserver"
-  homepage "https:github.comgotifycli"
-  url "https:github.comgotifycliarchiverefstagsv2.3.2.tar.gz"
+  desc "Command-line interface for pushing messages to gotify/server"
+  homepage "https://github.com/gotify/cli"
+  url "https://ghfast.top/https://github.com/gotify/cli/archive/refs/tags/v2.3.2.tar.gz"
   sha256 "e3b798d89138fdbc355a66d0fc2ca96676591366460f72c8f38b81365bebe5ba"
   license "MIT"
-  head "https:github.comgotifycli.git", branch: "master"
+  head "https://github.com/gotify/cli.git", branch: "master"
 
   bottle do
     rebuild 1
@@ -24,9 +24,9 @@ class Gotify < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}gotify version")
+    assert_match version.to_s, shell_output("#{bin}/gotify version")
 
     assert_match "token is not configured, run 'gotify init'",
-      shell_output("#{bin}gotify p test", 1)
+      shell_output("#{bin}/gotify p test", 1)
   end
 end

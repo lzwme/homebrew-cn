@@ -1,11 +1,11 @@
 class FuzzyFind < Formula
   desc "Fuzzy filename finder matching across directories as well as files"
-  homepage "https:github.comsilentbicycleff"
-  url "https:github.comsilentbicycleffarchiverefstagsv0.6-flag-features.tar.gz"
+  homepage "https://github.com/silentbicycle/ff"
+  url "https://ghfast.top/https://github.com/silentbicycle/ff/archive/refs/tags/v0.6-flag-features.tar.gz"
   version "0.6.0"
   sha256 "104300ba16af18d60ef3c11d70d2ec2a95ddf38632d08e4f99644050db6035cb"
   license "MIT"
-  head "https:github.comsilentbicycleff.git", branch: "master"
+  head "https://github.com/silentbicycle/ff.git", branch: "master"
 
   # This regex intentionally allows anything to come after the numeric version
   # (instead of using $ at the end like we normally do). These tags have a
@@ -14,7 +14,7 @@ class FuzzyFind < Formula
   # future if we encounter releases like `1.2-alpha1` `1.2-rc1`, etc.
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)i)
+    regex(/^v?(\d+(?:\.\d+)+)/i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -46,6 +46,6 @@ class FuzzyFind < Formula
   end
 
   test do
-    system bin"ff", "-t"
+    system bin/"ff", "-t"
   end
 end

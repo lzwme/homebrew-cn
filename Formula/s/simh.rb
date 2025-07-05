@@ -1,7 +1,7 @@
 class Simh < Formula
   desc "Portable, multi-system simulator"
-  homepage "http:simh.trailing-edge.com"
-  url "https:github.comsimhsimharchiverefstagsv3.12-2.tar.gz"
+  homepage "http://simh.trailing-edge.com/"
+  url "https://ghfast.top/https://github.com/simh/simh/archive/refs/tags/v3.12-2.tar.gz"
   version "3.12.2"
   sha256 "bd8b01c24e62d9ba930f41a7ae7c87bf0c1e5794e27ff689c1b058ed75ebc3e8"
   license "MIT"
@@ -22,7 +22,7 @@ class Simh < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "9ff6b20047316c5efd516276d7029475379b026f43b446e1707e488cff52be10"
   end
 
-  # https:github.comsimhsimhissues1163
+  # https://github.com/simh/simh/issues/1163
   # Use open-simh instead
   disable! date: "2024-10-11", because: "changed to a non-free license in master branch",
            replacement_formula: "open-simh"
@@ -34,20 +34,20 @@ class Simh < Formula
     ENV.deparallelize unless build.head?
     ENV.append_to_cflags "-Os -fcommon"
     inreplace "makefile" do |s|
-      s.gsub! "+= usrlib", "+= usrlib #{HOMEBREW_PREFIX}lib" if OS.linux?
+      s.gsub! "+= /usr/lib/", "+= /usr/lib/ #{HOMEBREW_PREFIX}/lib/" if OS.linux?
       s.gsub! "GCC = gcc", "GCC = #{ENV.cc}"
       s.gsub! "= -O2", "= #{ENV.cflags}"
     end
     system "make", "all"
 
-    bin.install Dir["BIN*"]
-    Dir["***.txt"].each do |f|
-      (docFile.dirname(f)).install f
+    bin.install Dir["BIN/*"]
+    Dir["**/*.txt"].each do |f|
+      (doc/File.dirname(f)).install f
     end
-    (pkgshare"vax").install Dir["VAX*.{bin,exe}"]
+    (pkgshare/"vax").install Dir["VAX/*.{bin,exe}"]
   end
 
   test do
-    assert_match(Goodbye, pipe_output("#{bin}altair", "exit\n", 0))
+    assert_match(/Goodbye/, pipe_output("#{bin}/altair", "exit\n", 0))
   end
 end

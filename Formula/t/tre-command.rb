@@ -1,10 +1,10 @@
 class TreCommand < Formula
   desc "Tree command, improved"
-  homepage "https:github.comdduantre"
-  url "https:github.comdduantrearchiverefstagsv0.4.0.tar.gz"
+  homepage "https://github.com/dduan/tre"
+  url "https://ghfast.top/https://github.com/dduan/tre/archive/refs/tags/v0.4.0.tar.gz"
   sha256 "280243cfa837661f0c3fff41e4a63c6768631073c9f6ce9982d9ed08e038788a"
   license "MIT"
-  head "https:github.comdduantre.git", branch: "main"
+  head "https://github.com/dduan/tre.git", branch: "main"
 
   no_autobump! because: :requires_manual_review
 
@@ -22,18 +22,18 @@ class TreCommand < Formula
   depends_on "rust" => :build
 
   def install
-    ENV["SHELL_COMPLETIONS_DIR"] = buildpath"completions"
+    ENV["SHELL_COMPLETIONS_DIR"] = buildpath/"completions"
 
     system "cargo", "install", *std_cargo_args
-    man1.install "manualtre.1"
+    man1.install "manual/tre.1"
 
-    bash_completion.install "completionstre.bash" => "tre"
-    fish_completion.install "completionstre.fish"
-    zsh_completion.install "completions_tre"
+    bash_completion.install "completions/tre.bash" => "tre"
+    fish_completion.install "completions/tre.fish"
+    zsh_completion.install "completions/_tre"
   end
 
   test do
-    (testpath"foo.txt").write("")
-    assert_match("── foo.txt", shell_output("#{bin}tre"))
+    (testpath/"foo.txt").write("")
+    assert_match("── foo.txt", shell_output("#{bin}/tre"))
   end
 end

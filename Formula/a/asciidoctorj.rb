@@ -1,13 +1,13 @@
 class Asciidoctorj < Formula
   desc "Java wrapper and bindings for Asciidoctor"
-  homepage "https:github.comasciidoctorasciidoctorj"
-  url "https:search.maven.orgremotecontent?filepath=orgasciidoctorasciidoctorj3.0.0asciidoctorj-3.0.0-bin.zip"
+  homepage "https://github.com/asciidoctor/asciidoctorj"
+  url "https://search.maven.org/remotecontent?filepath=org/asciidoctor/asciidoctorj/3.0.0/asciidoctorj-3.0.0-bin.zip"
   sha256 "6d6fed763aa441746f57e98aeaa302678b62c8420ffced00e2cfd979a9377c17"
   license "Apache-2.0"
 
   livecheck do
-    url "https:search.maven.orgremotecontent?filepath=orgasciidoctorasciidoctorjmaven-metadata.xml"
-    regex(%r{<version>v?(\d+(?:\.\d+)+)<version>}i)
+    url "https://search.maven.org/remotecontent?filepath=org/asciidoctor/asciidoctorj/maven-metadata.xml"
+    regex(%r{<version>v?(\d+(?:\.\d+)+)</version>}i)
   end
 
   bottle do
@@ -17,13 +17,13 @@ class Asciidoctorj < Formula
   depends_on "openjdk"
 
   def install
-    rm_r(Dir["bin*.bat"]) # Remove Windows files.
+    rm_r(Dir["bin/*.bat"]) # Remove Windows files.
     libexec.install Dir["*"]
-    (bin"asciidoctorj").write_env_script libexec"binasciidoctorj", JAVA_HOME: Formula["openjdk"].opt_prefix
+    (bin/"asciidoctorj").write_env_script libexec/"bin/asciidoctorj", JAVA_HOME: Formula["openjdk"].opt_prefix
   end
 
   test do
-    (testpath"test.adoc").write <<~EOS
+    (testpath/"test.adoc").write <<~EOS
       = AsciiDoc is Writing Zen
       Random J. Author <rjauthor@example.com>
       :icons: font
@@ -45,9 +45,9 @@ class Asciidoctorj < Formula
       - two
       - three
     EOS
-    system bin"asciidoctorj", "-b", "html5", "-o", "test.html", "test.adoc"
-    assert_match "<h1>AsciiDoc is Writing Zen<h1>", File.read("test.html")
-    system bin"asciidoctorj", "-r", "asciidoctor-pdf", "-b", "pdf", "-o", "test.pdf", "test.adoc"
-    assert_match "Title (AsciiDoc is Writing Zen)", File.read("test.pdf", mode: "rb")
+    system bin/"asciidoctorj", "-b", "html5", "-o", "test.html", "test.adoc"
+    assert_match "<h1>AsciiDoc is Writing Zen</h1>", File.read("test.html")
+    system bin/"asciidoctorj", "-r", "asciidoctor-pdf", "-b", "pdf", "-o", "test.pdf", "test.adoc"
+    assert_match "/Title (AsciiDoc is Writing Zen)", File.read("test.pdf", mode: "rb")
   end
 end

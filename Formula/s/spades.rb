@@ -2,11 +2,11 @@ class Spades < Formula
   include Language::Python::Shebang
 
   desc "De novo genome sequence assembly"
-  homepage "https:ablab.github.iospades"
-  url "https:github.comablabspadesreleasesdownloadv4.2.0SPAdes-4.2.0.tar.gz"
+  homepage "https://ablab.github.io/spades/"
+  url "https://ghfast.top/https://github.com/ablab/spades/releases/download/v4.2.0/SPAdes-4.2.0.tar.gz"
   sha256 "043322129f8536411f1172b7d1c9adfcb6d49d152c10066ccc03e86b6f615a6b"
   license "GPL-2.0-only"
-  head "https:github.comablabspades.git", branch: "next"
+  head "https://github.com/ablab/spades.git", branch: "next"
 
   livecheck do
     url :stable
@@ -52,6 +52,6 @@ class Spades < Formula
   end
 
   test do
-    assert_match "TEST PASSED CORRECTLY", shell_output("#{bin}spades.py --test")
+    assert_match "TEST PASSED CORRECTLY", shell_output("#{bin}/spades.py --test")
   end
 end

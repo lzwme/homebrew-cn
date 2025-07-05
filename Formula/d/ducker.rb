@@ -1,7 +1,7 @@
 class Ducker < Formula
   desc "Slightly quackers Docker TUI based on k9s"
-  homepage "https:github.comrobertpsoaneducker"
-  url "https:github.comrobertpsoaneduckerarchiverefstagsv0.4.1.tar.gz"
+  homepage "https://github.com/robertpsoane/ducker"
+  url "https://ghfast.top/https://github.com/robertpsoane/ducker/archive/refs/tags/v0.4.1.tar.gz"
   sha256 "8a194a077ad6c278f3b5a3157fdf70285d517c5a9b76d09740cbd56ae685b1c0"
   license "MIT"
 
@@ -22,9 +22,9 @@ class Ducker < Formula
   end
 
   test do
-    system bin"ducker", "--export-default-config"
-    assert_match "prompt", (testpath".configduckerconfig.yaml").read
+    system bin/"ducker", "--export-default-config"
+    assert_match "prompt", (testpath/".config/ducker/config.yaml").read
 
-    assert_match "ducker #{version}", shell_output("#{bin}ducker --version")
+    assert_match "ducker #{version}", shell_output("#{bin}/ducker --version")
   end
 end

@@ -1,10 +1,10 @@
 class Libjwt < Formula
   desc "JSON Web Token C library"
-  homepage "https:libjwt.io"
-  url "https:github.combenmcollinslibjwtreleasesdownloadv3.2.1libjwt-3.2.1.tar.xz"
+  homepage "https://libjwt.io/"
+  url "https://ghfast.top/https://github.com/benmcollins/libjwt/releases/download/v3.2.1/libjwt-3.2.1.tar.xz"
   sha256 "b7800a6b085855690b401b41dbdf0bcb49207d5fe43c13abbdc8106c16a9250c"
   license "MPL-2.0"
-  head "https:github.combenmcollinslibjwt.git", branch: "master"
+  head "https://github.com/benmcollins/libjwt.git", branch: "master"
 
   livecheck do
     url :stable
@@ -34,7 +34,7 @@ class Libjwt < Formula
   end
 
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include <stdlib.h>
       #include <jwt.h>
 
@@ -47,6 +47,6 @@ class Libjwt < Formula
       }
     C
     system ENV.cc, "test.c", "-L#{lib}", "-I#{include}", "-ljwt", "-o", "test"
-    system ".test"
+    system "./test"
   end
 end

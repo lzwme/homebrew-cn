@@ -1,7 +1,7 @@
 class Kickstart < Formula
   desc "Scaffolding tool to get new projects up and running quickly"
-  homepage "https:github.comKeatskickstart"
-  url "https:github.comKeatskickstartarchiverefstagsv0.5.0.tar.gz"
+  homepage "https://github.com/Keats/kickstart"
+  url "https://ghfast.top/https://github.com/Keats/kickstart/archive/refs/tags/v0.5.0.tar.gz"
   sha256 "2a1a335c70b81757abf4240a52ebce231501f731f3d73decbed4133d18ad1386"
   license "MIT"
 
@@ -24,12 +24,12 @@ class Kickstart < Formula
   test do
     # Create a basic template file and project, and check that kickstart
     # actually interpolates both the filename and its content.
-    template_dir = testpath"template"
-    output_dir = testpath"output"
+    template_dir = testpath/"template"
+    output_dir = testpath/"output"
 
-    (template_dir"{{file_name}}.txt").write("{{software_project}} is awesome!")
+    (template_dir/"{{file_name}}.txt").write("{{software_project}} is awesome!")
 
-    (template_dir"template.toml").write <<~TOML
+    (template_dir/"template.toml").write <<~TOML
       name = "Super basic"
       description = "A very simple template"
       kickstart_version = 1
@@ -46,9 +46,9 @@ class Kickstart < Formula
     TOML
 
     # Run template interpolation
-    system bin"kickstart", "--no-input", "--output-dir", output_dir, template_dir
+    system bin/"kickstart", "--no-input", "--output-dir", output_dir, template_dir
 
-    assert_path_exists output_dir"myfilename.txt"
-    assert_equal "kickstart is awesome!", (output_dir"myfilename.txt").read
+    assert_path_exists output_dir/"myfilename.txt"
+    assert_equal "kickstart is awesome!", (output_dir/"myfilename.txt").read
   end
 end

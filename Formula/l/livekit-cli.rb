@@ -1,10 +1,10 @@
 class LivekitCli < Formula
   desc "Command-line interface to LiveKit"
-  homepage "https:livekit.io"
-  url "https:github.comlivekitlivekit-cliarchiverefstagsv2.4.12.tar.gz"
+  homepage "https://livekit.io"
+  url "https://ghfast.top/https://github.com/livekit/livekit-cli/archive/refs/tags/v2.4.12.tar.gz"
   sha256 "9f0c6c6cff2e9293ff346b73ec20c2043c74d0c4c01664b77a94fb783b52ed28"
   license "Apache-2.0"
-  head "https:github.comlivekitlivekit-cli.git", branch: "main"
+  head "https://github.com/livekit/livekit-cli.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "cd0340370403dabd0b046e0b3403fe62a23469faf9e7998b96eb419bd64f7cad"
@@ -19,18 +19,18 @@ class LivekitCli < Formula
 
   def install
     ldflags = "-s -w"
-    system "go", "build", *std_go_args(ldflags:, output: bin"lk"), ".cmdlk"
+    system "go", "build", *std_go_args(ldflags:, output: bin/"lk"), "./cmd/lk"
 
     bin.install_symlink "lk" => "livekit-cli"
 
-    bash_completion.install "autocompletebash_autocomplete" => "lk"
-    fish_completion.install "autocompletefish_autocomplete" => "lk.fish"
-    zsh_completion.install "autocompletezsh_autocomplete" => "_lk"
+    bash_completion.install "autocomplete/bash_autocomplete" => "lk"
+    fish_completion.install "autocomplete/fish_autocomplete" => "lk.fish"
+    zsh_completion.install "autocomplete/zsh_autocomplete" => "_lk"
   end
 
   test do
-    output = shell_output("#{bin}lk token create --list --api-key key --api-secret secret")
+    output = shell_output("#{bin}/lk token create --list --api-key key --api-secret secret")
     assert output.start_with?("valid for (mins):  5")
-    assert_match "lk version #{version}", shell_output("#{bin}lk --version")
+    assert_match "lk version #{version}", shell_output("#{bin}/lk --version")
   end
 end

@@ -1,10 +1,10 @@
 class Actionlint < Formula
   desc "Static checker for GitHub Actions workflow files"
-  homepage "https:rhysd.github.ioactionlint"
-  url "https:github.comrhysdactionlintarchiverefstagsv1.7.7.tar.gz"
+  homepage "https://rhysd.github.io/actionlint/"
+  url "https://ghfast.top/https://github.com/rhysd/actionlint/archive/refs/tags/v1.7.7.tar.gz"
   sha256 "237aec651a903bf4e9f9c8eb638da6aa4d89d07c484f45f11cfb89c2dbf277a5"
   license "MIT"
-  head "https:github.comrhysdactionlint.git", branch: "main"
+  head "https://github.com/rhysd/actionlint.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "8d94522b3eefa067708c2ffe00f95a3b7ea39180a5399ec2f570f021228fabe2"
@@ -20,16 +20,16 @@ class Actionlint < Formula
   depends_on "shellcheck"
 
   def install
-    ldflags = "-s -w -X github.comrhysdactionlint.version=#{version}"
-    system "go", "build", *std_go_args(ldflags:), ".cmdactionlint"
-    system "ronn", "manactionlint.1.ronn"
-    man1.install "manactionlint.1"
+    ldflags = "-s -w -X github.com/rhysd/actionlint.version=#{version}"
+    system "go", "build", *std_go_args(ldflags:), "./cmd/actionlint"
+    system "ronn", "man/actionlint.1.ronn"
+    man1.install "man/actionlint.1"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}actionlint --version 2>&1")
+    assert_match version.to_s, shell_output("#{bin}/actionlint --version 2>&1")
 
-    (testpath"action.yaml").write <<~YAML
+    (testpath/"action.yaml").write <<~YAML
       name: Test
       on: push
       jobs:
@@ -37,10 +37,10 @@ class Actionlint < Formula
           permissions:
             attestations: write
           steps:
-            - run: actionscheckout@v4
+            - run: actions/checkout@v4
     YAML
 
-    output = shell_output("#{bin}actionlint #{testpath}action.yaml", 1)
+    output = shell_output("#{bin}/actionlint #{testpath}/action.yaml", 1)
     assert_match "\"runs-on\" section is missing in job", output
     refute_match "unknown permission scope", output
   end

@@ -1,7 +1,7 @@
 class Sloc < Formula
   desc "Simple tool to count source lines of code"
-  homepage "https:github.comflossesloc"
-  url "https:registry.npmjs.orgsloc-sloc-0.3.2.tgz"
+  homepage "https://github.com/flosse/sloc"
+  url "https://registry.npmjs.org/sloc/-/sloc-0.3.2.tgz"
   sha256 "25ac2a41e015a8ee0d0a890221d064ad0288be8ef742c4ec903c84a07e62b347"
   license "MIT"
 
@@ -14,11 +14,11 @@ class Sloc < Formula
 
   def install
     system "npm", "install", *std_npm_args
-    bin.install_symlink Dir["#{libexec}bin*"]
+    bin.install_symlink Dir["#{libexec}/bin/*"]
   end
 
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include <stdio.h>
       int main(void) {
         return 0;
@@ -30,6 +30,6 @@ class Sloc < Formula
       Total,4,4,0,0,0,0,0,0,0
     EOS
 
-    assert_match std_output, shell_output("#{bin}sloc --format=csv .")
+    assert_match std_output, shell_output("#{bin}/sloc --format=csv .")
   end
 end

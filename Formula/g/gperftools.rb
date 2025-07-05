@@ -1,13 +1,13 @@
 class Gperftools < Formula
   desc "Multi-threaded malloc() and performance analysis tools"
-  homepage "https:github.comgperftoolsgperftools"
-  url "https:github.comgperftoolsgperftoolsreleasesdownloadgperftools-2.16gperftools-2.16.tar.gz"
+  homepage "https://github.com/gperftools/gperftools"
+  url "https://ghfast.top/https://github.com/gperftools/gperftools/releases/download/gperftools-2.16/gperftools-2.16.tar.gz"
   sha256 "f12624af5c5987f2cc830ee534f754c3c5961eec08004c26a8b80de015cf056f"
   license "BSD-3-Clause"
 
   livecheck do
     url :stable
-    regex(gperftools[._-]v?(\d+(?:\.\d+)+)i)
+    regex(/gperftools[._-]v?(\d+(?:\.\d+)+)/i)
     strategy :github_latest
   end
 
@@ -22,7 +22,7 @@ class Gperftools < Formula
   end
 
   head do
-    url "https:github.comgperftoolsgperftools.git", branch: "master"
+    url "https://github.com/gperftools/gperftools.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -33,7 +33,7 @@ class Gperftools < Formula
 
   on_linux do
     # libunwind is strongly recommended for Linux x86_64
-    # https:github.comgperftoolsgperftoolsblobmasterINSTALL
+    # https://github.com/gperftools/gperftools/blob/master/INSTALL
     depends_on "libunwind"
   end
 
@@ -46,15 +46,15 @@ class Gperftools < Formula
     ]
     args << "--enable-libunwind" if OS.linux?
 
-    system ".configure", *args
+    system "./configure", *args
     system "make"
     system "make", "install"
   end
 
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include <assert.h>
-      #include <gperftoolstcmalloc.h>
+      #include <gperftools/tcmalloc.h>
 
       int main()
       {
@@ -67,9 +67,9 @@ class Gperftools < Formula
       }
     C
     system ENV.cc, "test.c", "-L#{lib}", "-ltcmalloc", "-o", "test"
-    system ".test"
+    system "./test"
 
-    (testpath"segfault.c").write <<~C
+    (testpath/"segfault.c").write <<~C
       #include <stdio.h>
       #include <stdlib.h>
 
@@ -82,6 +82,6 @@ class Gperftools < Formula
       }
     C
     system ENV.cc, "segfault.c", "-L#{lib}", "-ltcmalloc", "-o", "segfault"
-    system ".segfault"
+    system "./segfault"
   end
 end

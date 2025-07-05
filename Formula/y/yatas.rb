@@ -1,10 +1,10 @@
 class Yatas < Formula
-  desc "Tool to audit AWSGCP infrastructure for misconfiguration or security issues"
-  homepage "https:github.compadok-teamyatas"
-  url "https:github.compadok-teamyatasarchiverefstagsv1.5.1.tar.gz"
+  desc "Tool to audit AWS/GCP infrastructure for misconfiguration or security issues"
+  homepage "https://github.com/padok-team/yatas"
+  url "https://ghfast.top/https://github.com/padok-team/yatas/archive/refs/tags/v1.5.1.tar.gz"
   sha256 "53abe26a7025aabf73918e3153c66d91cc5567e2fcd6df388e7c82e36704bd0e"
   license "Apache-2.0"
-  head "https:github.compadok-teamyatas.git", branch: "main"
+  head "https://github.com/padok-team/yatas.git", branch: "main"
 
   no_autobump! because: :requires_manual_review
 
@@ -26,8 +26,8 @@ class Yatas < Formula
   end
 
   test do
-    system bin"yatas", "--init"
-    output = shell_output("#{bin}yatas --install 2>&1")
+    system bin/"yatas", "--init"
+    output = shell_output("#{bin}/yatas --install 2>&1")
     assert_match "failed to refresh cached credentials, no EC2 IMDS role found", output
   end
 end

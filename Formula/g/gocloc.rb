@@ -1,10 +1,10 @@
 class Gocloc < Formula
   desc "Little fast LoC counter"
-  homepage "https:github.comhhattogocloc"
-  url "https:github.comhhattogoclocarchiverefstagsv0.7.0.tar.gz"
+  homepage "https://github.com/hhatto/gocloc"
+  url "https://ghfast.top/https://github.com/hhatto/gocloc/archive/refs/tags/v0.7.0.tar.gz"
   sha256 "9375f6699a7bffad42da661b4ba7988af23dd01191da4a4b21eca8f9bb676d9a"
   license "MIT"
-  head "https:github.comhhattogocloc.git", branch: "master"
+  head "https://github.com/hhatto/gocloc.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "e452e9000a544b1086039bd90fe518fdc8926255f7a274b0170d5c7b6d761e57"
@@ -19,11 +19,11 @@ class Gocloc < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), ".cmdgocloc"
+    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/gocloc"
   end
 
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include <stdio.h>
       int main(void) {
         return 0;
@@ -32,6 +32,6 @@ class Gocloc < Formula
 
     assert_equal "{\"languages\":[{\"name\":\"C\",\"files\":1,\"code\":4,\"comment\":0," \
                  "\"blank\":0}],\"total\":{\"files\":1,\"code\":4,\"comment\":0,\"blank\":0}}",
-                 shell_output("#{bin}gocloc --output-type=json .")
+                 shell_output("#{bin}/gocloc --output-type=json .")
   end
 end

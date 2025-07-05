@@ -1,10 +1,10 @@
 class WhisperCpp < Formula
-  desc "Port of OpenAI's Whisper model in CC++"
-  homepage "https:github.comggml-orgwhisper.cpp"
-  url "https:github.comggml-orgwhisper.cpparchiverefstagsv1.7.6.tar.gz"
+  desc "Port of OpenAI's Whisper model in C/C++"
+  homepage "https://github.com/ggml-org/whisper.cpp"
+  url "https://ghfast.top/https://github.com/ggml-org/whisper.cpp/archive/refs/tags/v1.7.6.tar.gz"
   sha256 "166140e9a6d8a36f787a2bd77f8f44dd64874f12dd8359ff7c1f4f9acb86202e"
   license "MIT"
-  head "https:github.comggml-orgwhisper.cpp.git", branch: "master"
+  head "https://github.com/ggml-org/whisper.cpp.git", branch: "master"
 
   livecheck do
     url :stable
@@ -26,7 +26,7 @@ class WhisperCpp < Formula
   def install
     args = %W[
       -DBUILD_SHARED_LIBS=ON
-      -DCMAKE_INSTALL_RPATH=#{rpath(target: prefix"libinternal")}
+      -DCMAKE_INSTALL_RPATH=#{rpath(target: prefix/"libinternal")}
       -DGGML_METAL=#{(OS.mac? && !Hardware::CPU.intel?) ? "ON" : "OFF"}
       -DGGML_METAL_EMBED_LIBRARY=#{OS.mac? ? "ON" : "OFF"}
       -DGGML_NATIVE=#{build.bottle? ? "OFF" : "ON"}
@@ -43,14 +43,14 @@ class WhisperCpp < Formula
     rm_r include
 
     # for backward compatibility with existing installs
-    (bin"whisper-cpp").write <<~SHELL
-      #!binbash
+    (bin/"whisper-cpp").write <<~SHELL
+      #!/bin/bash
       here="${BASH_SOURCE[0]}"
       echo "${BASH_SOURCE[0]}: warning: whisper-cpp is deprecated. Use whisper-cli instead." >&2
-      exec "$(dirname "$here")whisper-cli" "$@"
+      exec "$(dirname "$here")/whisper-cli" "$@"
     SHELL
 
-    pkgshare.install "modelsfor-tests-ggml-tiny.bin", "samplesjfk.wav"
+    pkgshare.install "models/for-tests-ggml-tiny.bin", "samples/jfk.wav"
   end
 
   def caveats
@@ -58,14 +58,14 @@ class WhisperCpp < Formula
       whisper-cpp requires GGML model files to work. These are not downloaded by default.
       To obtain model files (.bin), visit one of these locations:
 
-        https:huggingface.coggerganovwhisper.cpptreemain
-        https:ggml.ggerganov.com
+        https://huggingface.co/ggerganov/whisper.cpp/tree/main
+        https://ggml.ggerganov.com/
     EOS
   end
 
   test do
-    model = pkgshare"for-tests-ggml-tiny.bin"
-    output = shell_output("#{bin}whisper-cli --model #{model} #{pkgshare}jfk.wav 2>&1")
-    assert_match "processing '#{pkgshare}jfk.wav' (176000 samples, 11.0 sec)", output
+    model = pkgshare/"for-tests-ggml-tiny.bin"
+    output = shell_output("#{bin}/whisper-cli --model #{model} #{pkgshare}/jfk.wav 2>&1")
+    assert_match "processing '#{pkgshare}/jfk.wav' (176000 samples, 11.0 sec)", output
   end
 end

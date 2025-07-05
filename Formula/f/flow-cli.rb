@@ -1,10 +1,10 @@
 class FlowCli < Formula
   desc "Command-line interface that provides utilities for building Flow applications"
-  homepage "https:onflow.org"
-  url "https:github.comonflowflow-cliarchiverefstagsv2.2.19.tar.gz"
+  homepage "https://onflow.org"
+  url "https://ghfast.top/https://github.com/onflow/flow-cli/archive/refs/tags/v2.2.19.tar.gz"
   sha256 "3823fadaf15b74bbbb586f8898da6526a4b9abbbe911eaa032f268d8a84b0b82"
   license "Apache-2.0"
-  head "https:github.comonflowflow-cli.git", branch: "master"
+  head "https://github.com/onflow/flow-cli.git", branch: "master"
 
   livecheck do
     url :stable
@@ -28,19 +28,19 @@ class FlowCli < Formula
   conflicts_with "flow", because: "both install `flow` binaries"
 
   def install
-    system "make", "cmdflowflow", "VERSION=v#{version}"
-    bin.install "cmdflowflow"
+    system "make", "cmd/flow/flow", "VERSION=v#{version}"
+    bin.install "cmd/flow/flow"
 
-    generate_completions_from_executable(bin"flow", "completion")
+    generate_completions_from_executable(bin/"flow", "completion")
   end
 
   test do
-    (testpath"hello.cdc").write <<~EOS
+    (testpath/"hello.cdc").write <<~EOS
       access(all) fun main() {
         log("Hello, world!")
       }
     EOS
 
-    system bin"flow", "cadence", "hello.cdc"
+    system bin/"flow", "cadence", "hello.cdc"
   end
 end

@@ -1,11 +1,11 @@
 class RbenvChefdk < Formula
   desc "Treat ChefDK as another version in rbenv"
-  homepage "https:github.comdocwhatrbenv-chefdk"
-  url "https:github.comdocwhatrbenv-chefdkarchiverefstagsv1.0.0.tar.gz"
+  homepage "https://github.com/docwhat/rbenv-chefdk"
+  url "https://ghfast.top/https://github.com/docwhat/rbenv-chefdk/archive/refs/tags/v1.0.0.tar.gz"
   sha256 "79b48257f1a24085a680da18803ba6a94a1dd0cb25bd390629006a5fb67f3b69"
   license "MIT"
   revision 1
-  head "https:github.comdocwhatrbenv-chefdk.git", branch: "main"
+  head "https://github.com/docwhat/rbenv-chefdk.git", branch: "main"
 
   no_autobump! because: :requires_manual_review
 

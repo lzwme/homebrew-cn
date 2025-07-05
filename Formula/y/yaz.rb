@@ -1,15 +1,15 @@
 class Yaz < Formula
-  desc "Toolkit for Z39.50SRWSRU clientsservers"
-  homepage "https:www.indexdata.comresourcessoftwareyaz"
-  url "https:ftp.indexdata.compubyazyaz-5.35.1.tar.gz"
+  desc "Toolkit for Z39.50/SRW/SRU clients/servers"
+  homepage "https://www.indexdata.com/resources/software/yaz/"
+  url "https://ftp.indexdata.com/pub/yaz/yaz-5.35.1.tar.gz"
   sha256 "db030d6d66880398a44215e26132630ee94f5e462d838809e43f97e6399c1353"
   license "BSD-3-Clause"
 
   # The latest version text is currently omitted from the homepage for this
   # software, so we have to check the related directory listing page.
   livecheck do
-    url "https:ftp.indexdata.compubyaz"
-    regex(href=.*?yaz[._-]v?(\d+(?:\.\d+)+)\.ti)
+    url "https://ftp.indexdata.com/pub/yaz/"
+    regex(/href=.*?yaz[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   bottle do
@@ -23,7 +23,7 @@ class Yaz < Formula
   end
 
   head do
-    url "https:github.comindexdatayaz.git", branch: "master"
+    url "https://github.com/indexdata/yaz.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -44,12 +44,12 @@ class Yaz < Formula
 
   def install
     if build.head?
-      ENV["XML_CATALOG_FILES"] = etc"xmlcatalog"
-      system ".buildconf.sh"
+      ENV["XML_CATALOG_FILES"] = etc/"xml/catalog"
+      system "./buildconf.sh"
     end
-    icu4c = deps.find { |dep| dep.name.match?(^icu4c(@\d+)?$) }
+    icu4c = deps.find { |dep| dep.name.match?(/^icu4c(@\d+)?$/) }
                 .to_formula
-    system ".configure", "--with-gnutls",
+    system "./configure", "--with-gnutls",
                           "--with-icu=#{icu4c.opt_prefix}",
                           "--with-xml2",
                           "--with-xslt",
@@ -57,13 +57,13 @@ class Yaz < Formula
     system "make", "install"
 
     # Replace dependencies' cellar paths, which can break build for dependents
-    # (like `metaproxy` and `zebra`) after a dependency is versionrevision bumped
-    inreplace bin"yaz-config" do |s|
+    # (like `metaproxy` and `zebra`) after a dependency is version/revision bumped
+    inreplace bin/"yaz-config" do |s|
       s.gsub! Formula["gnutls"].prefix.realpath, Formula["gnutls"].opt_prefix
       s.gsub! icu4c.prefix.realpath, icu4c.opt_prefix
     end
     unless OS.mac?
-      inreplace [bin"yaz-config", lib"pkgconfigyaz.pc"] do |s|
+      inreplace [bin/"yaz-config", lib/"pkgconfig/yaz.pc"] do |s|
         s.gsub! Formula["libxslt"].prefix.realpath, Formula["libxslt"].opt_prefix
       end
     end
@@ -72,28 +72,28 @@ class Yaz < Formula
   test do
     # This test converts between MARC8, an obscure mostly-obsolete library
     # text encoding supported by yaz-iconv, and UTF8.
-    marc8file = testpath"marc8.txt"
+    marc8file = testpath/"marc8.txt"
     marc8file.write "$1!0-!L,i$3i$si$Ki$Ai$O!+=(B"
-    result = shell_output("#{bin}yaz-iconv -f marc8 -t utf8 #{marc8file}")
+    result = shell_output("#{bin}/yaz-iconv -f marc8 -t utf8 #{marc8file}")
     result.force_encoding(Encoding::UTF_8) if result.respond_to?(:force_encoding)
     assert_equal "世界こんにちは！", result
 
     # Test ICU support by running yaz-icu with the example icu_chain
     # from its man page.
-    configfile = testpath"icu-chain.xml"
+    configfile = testpath/"icu-chain.xml"
     configfile.write <<~XML
       <?xml version="1.0" encoding="UTF-8"?>
       <icu_chain locale="en">
-        <transform rule="[:Control:] Any-Remove">
-        <tokenize rule="w">
-        <transform rule="[[:WhiteSpace:][:Punctuation:]] Remove">
-        <transliterate rule="xy > z;">
-        <display>
-        <casemap rule="l">
-      <icu_chain>
+        <transform rule="[:Control:] Any-Remove"/>
+        <tokenize rule="w"/>
+        <transform rule="[[:WhiteSpace:][:Punctuation:]] Remove"/>
+        <transliterate rule="xy > z;"/>
+        <display/>
+        <casemap rule="l"/>
+      </icu_chain>
     XML
 
-    inputfile = testpath"icu-test.txt"
+    inputfile = testpath/"icu-test.txt"
     inputfile.write "yaz-ICU	xy!"
 
     expectedresult = <<~EOS
@@ -103,7 +103,7 @@ class Yaz < Formula
       4 1 '' ''
     EOS
 
-    result = shell_output("#{bin}yaz-icu -c #{configfile} #{inputfile}")
+    result = shell_output("#{bin}/yaz-icu -c #{configfile} #{inputfile}")
     assert_equal expectedresult, result
   end
 end

@@ -1,10 +1,10 @@
 class Progressline < Formula
   desc "Track commands progress in a compact one-line format"
-  homepage "https:github.comkattoufProgressLine"
-  url "https:github.comkattoufProgressLinearchiverefstags0.2.4.tar.gz"
+  homepage "https://github.com/kattouf/ProgressLine"
+  url "https://ghfast.top/https://github.com/kattouf/ProgressLine/archive/refs/tags/0.2.4.tar.gz"
   sha256 "6649fa7d9b840bf8af2ddef3819c6c99b883dd1e0ca349e6d8bdb93985cb00fa"
   license "MIT"
-  head "https:github.comkattoufProgressLine.git", branch: "main"
+  head "https://github.com/kattouf/ProgressLine.git", branch: "main"
 
   no_autobump! because: :requires_manual_review
 
@@ -27,11 +27,11 @@ class Progressline < Formula
       ["--static-swift-stdlib"]
     end
     system "swift", "build", *args, "--configuration", "release"
-    bin.install ".buildreleaseprogressline"
+    bin.install ".build/release/progressline"
   end
 
   test do
     some_command_multiline_output = "First line\nSecond line\nLast line"
-    assert_match "✓ 0s ❯ Last line", pipe_output(bin"progressline", some_command_multiline_output).chomp
+    assert_match "✓ 0s ❯ Last line", pipe_output(bin/"progressline", some_command_multiline_output).chomp
   end
 end

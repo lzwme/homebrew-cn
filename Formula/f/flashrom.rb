@@ -1,14 +1,14 @@
 class Flashrom < Formula
   desc "Identify, read, write, verify, and erase flash chips"
-  homepage "https:flashrom.org"
-  url "https:download.flashrom.orgreleasesflashrom-v1.5.1.tar.xz"
+  homepage "https://flashrom.org/"
+  url "https://download.flashrom.org/releases/flashrom-v1.5.1.tar.xz"
   sha256 "1f934b076ed49eace203655ec249fc7861a6b8e87fe4aef732e47b6e485b6293"
   license "GPL-2.0-or-later"
-  head "https:review.coreboot.orgflashrom.git", branch: "master"
+  head "https://review.coreboot.org/flashrom.git", branch: "master"
 
   livecheck do
-    url "https:download.flashrom.orgreleases"
-    regex(href=.*?flashrom[._-]v?(\d+(?:\.\d+)+)\.ti)
+    url "https://download.flashrom.org/releases/"
+    regex(/href=.*?flashrom[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   bottle do
@@ -30,7 +30,7 @@ class Flashrom < Formula
   depends_on "openssl@3"
 
   resource "DirectHW" do
-    url "https:github.comPureDarwinDirectHWarchiverefstagsDirectHW-1.tar.gz"
+    url "https://ghfast.top/https://github.com/PureDarwin/DirectHW/archive/refs/tags/DirectHW-1.tar.gz"
     sha256 "14cc45a1a2c1a543717b1de0892c196534137db177413b9b85bedbe15cbe4563"
   end
 
@@ -40,7 +40,7 @@ class Flashrom < Formula
 
     # install DirectHW for osx x86 builds
     if OS.mac? && Hardware::CPU.intel?
-      (buildpath"DirectHW").install resource("DirectHW")
+      (buildpath/"DirectHW").install resource("DirectHW")
       ENV.append "CFLAGS", "-I#{buildpath}"
     end
 
@@ -50,9 +50,9 @@ class Flashrom < Formula
   end
 
   test do
-    system sbin"flashrom", "--version"
+    system sbin/"flashrom", "--version"
 
-    output = shell_output("#{sbin}flashrom --erase --programmer dummy 2>&1", 1)
-    assert_match "No EEPROMflash device found", output
+    output = shell_output("#{sbin}/flashrom --erase --programmer dummy 2>&1", 1)
+    assert_match "No EEPROM/flash device found", output
   end
 end

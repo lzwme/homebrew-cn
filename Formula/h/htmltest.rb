@@ -1,10 +1,10 @@
 class Htmltest < Formula
   desc "HTML validator written in Go"
-  homepage "https:github.comwjdphtmltest"
-  url "https:github.comwjdphtmltestarchiverefstagsv0.17.0.tar.gz"
+  homepage "https://github.com/wjdp/htmltest"
+  url "https://ghfast.top/https://github.com/wjdp/htmltest/archive/refs/tags/v0.17.0.tar.gz"
   sha256 "2c89e56c837f4d715db9816942e007c973ba58de53d249abc80430c4b7e72f88"
   license "MIT"
-  head "https:github.comwjdphtmltest.git", branch: "master"
+  head "https://github.com/wjdp/htmltest.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "ada8e26674de531245f8110ab62f73f5f89600f133b22765077d14a0ff06f3e7"
@@ -31,18 +31,18 @@ class Htmltest < Formula
   end
 
   test do
-    (testpath"test.html").write <<~HTML
+    (testpath/"test.html").write <<~HTML
       <!DOCTYPE html>
       <html>
         <body>
           <nav>
-          <nav>
+          </nav>
           <article>
-            <p>Some text<p>
-          <article>
-        <body>
-      <html>
+            <p>Some text</p>
+          </article>
+        </body>
+      </html>
     HTML
-    assert_match "htmltest started at", shell_output("#{bin}htmltest test.html")
+    assert_match "htmltest started at", shell_output("#{bin}/htmltest test.html")
   end
 end

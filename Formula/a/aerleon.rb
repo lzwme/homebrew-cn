@@ -2,11 +2,11 @@ class Aerleon < Formula
   include Language::Python::Virtualenv
 
   desc "Generate firewall configs for multiple firewall platforms"
-  homepage "https:aerleon.readthedocs.ioenlatest"
-  url "https:files.pythonhosted.orgpackagesffb15d996fe14f8f36597c1bec2d400166f63d5bf09e4af7876f9707c0f7830caerleon-1.10.0.tar.gz"
+  homepage "https://aerleon.readthedocs.io/en/latest/"
+  url "https://files.pythonhosted.org/packages/ff/b1/5d996fe14f8f36597c1bec2d400166f63d5bf09e4af7876f9707c0f7830c/aerleon-1.10.0.tar.gz"
   sha256 "e36f2969bdf6c3d2785f68044cdb4007ff171241b7a2dbef0b07b9be212cdcd1"
   license "Apache-2.0"
-  head "https:github.comaerleonaerleon.git", branch: "main"
+  head "https://github.com/aerleon/aerleon.git", branch: "main"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "9a0ce912cd094bb361a61ad6e74ed7c19588c07a2bbf30e976bc1924dc013a41"
@@ -24,22 +24,22 @@ class Aerleon < Formula
   conflicts_with "cgrep", because: "both install `cgrep` binaries"
 
   resource "absl-py" do
-    url "https:files.pythonhosted.orgpackages79c945ecff8055b0ce2ad2bfbf1f438b5b8605873704d50610eda05771b865a0absl-py-1.4.0.tar.gz"
+    url "https://files.pythonhosted.org/packages/79/c9/45ecff8055b0ce2ad2bfbf1f438b5b8605873704d50610eda05771b865a0/absl-py-1.4.0.tar.gz"
     sha256 "d2c244d01048ba476e7c080bd2c6df5e141d211de80223460d5b3b8a2a58433d"
   end
 
   resource "ply" do
-    url "https:files.pythonhosted.orgpackagese569882ee5c9d017149285cab114ebeab373308ef0f874fcdac9beb90e0ac4daply-3.11.tar.gz"
+    url "https://files.pythonhosted.org/packages/e5/69/882ee5c9d017149285cab114ebeab373308ef0f874fcdac9beb90e0ac4da/ply-3.11.tar.gz"
     sha256 "00c7c1aaa88358b9c765b6d3000c6eec0ba42abca5351b095321aef446081da3"
   end
 
   resource "pyyaml" do
-    url "https:files.pythonhosted.orgpackages54ed79a089b6be93607fa5cdaedf301d7dfb23af5f25c398d5ead2525b063e17pyyaml-6.0.2.tar.gz"
+    url "https://files.pythonhosted.org/packages/54/ed/79a089b6be93607fa5cdaedf301d7dfb23af5f25c398d5ead2525b063e17/pyyaml-6.0.2.tar.gz"
     sha256 "d584d9ec91ad65861cc08d42e834324ef890a082e591037abe114850ff7bbc3e"
   end
 
   resource "typing-extensions" do
-    url "https:files.pythonhosted.orgpackagesd1bc51647cd02527e87d05cb083ccc402f93e441606ff1f01739a62c8ad09ba5typing_extensions-4.14.0.tar.gz"
+    url "https://files.pythonhosted.org/packages/d1/bc/51647cd02527e87d05cb083ccc402f93e441606ff1f01739a62c8ad09ba5/typing_extensions-4.14.0.tar.gz"
     sha256 "8676b788e32f02ab42d9e7c61324048ae4c6d844a399eebace3d4979d75ceef4"
   end
 
@@ -48,24 +48,24 @@ class Aerleon < Formula
   end
 
   test do
-    (testpath"defdefinitions.yaml").write <<~YAML
+    (testpath/"def/definitions.yaml").write <<~YAML
       networks:
         RFC1918:
           values:
-            - address: 10.0.0.08
-            - address: 172.16.0.012
-            - address: 192.168.0.016
+            - address: 10.0.0.0/8
+            - address: 172.16.0.0/12
+            - address: 192.168.0.0/16
         WEB_SERVERS:
           values:
-            - address: 10.0.0.132
+            - address: 10.0.0.1/32
               comment: Web Server 1
-            - address: 10.0.0.232
+            - address: 10.0.0.2/32
               comment: Web Server 2
         MAIL_SERVERS:
           values:
-            - address: 10.0.0.332
+            - address: 10.0.0.3/32
               comment: Mail Server 1
-            - address: 10.0.0.432
+            - address: 10.0.0.4/32
               comment: Mail Server 2
         ALL_SERVERS:
           values:
@@ -88,7 +88,7 @@ class Aerleon < Formula
             protocol: udp
     YAML
 
-    (testpath"policiespolexample.pol.yaml").write <<~YAML
+    (testpath/"policies/pol/example.pol.yaml").write <<~YAML
       filters:
       - header:
           comment: Example inbound
@@ -106,7 +106,7 @@ class Aerleon < Formula
             action: deny#{"  "}
     YAML
 
-    assert_match "writing file: example.pol.acl", shell_output("#{bin}aclgen 2>&1")
+    assert_match "writing file: example.pol.acl", shell_output("#{bin}/aclgen 2>&1")
     assert_path_exists "example.pol.acl"
   end
 end

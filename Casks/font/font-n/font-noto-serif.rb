@@ -2,20 +2,20 @@ cask "font-noto-serif" do
   version "2.015"
   sha256 "0e9a43c8a4b94ac76f55069ed1d7385bbcaf6b99527a94deb5619e032b7e76c1"
 
-  url "https:github.comnotofontslatin-greek-cyrillicreleasesdownloadNotoSerif-v#{version}NotoSerif-v#{version}.zip",
-      verified: "github.comnotofonts"
+  url "https://ghfast.top/https://github.com/notofonts/latin-greek-cyrillic/releases/download/NotoSerif-v#{version}/NotoSerif-v#{version}.zip",
+      verified: "github.com/notofonts/"
   name "Noto Serif"
-  homepage "https:notofonts.github.io"
+  homepage "https://notofonts.github.io/"
 
   livecheck do
     url :url
-    regex(^NotoSerif-v?(\d+(?:\.\d+)+)$i)
+    regex(/^NotoSerif-v?(\d+(?:\.\d+)+)$/i)
   end
 
   no_autobump! because: :requires_manual_review
 
-  font "NotoSerifunhintedvariable-ttfNotoSerif-Italic[wdth,wght].ttf"
-  font "NotoSerifunhintedvariable-ttfNotoSerif[wdth,wght].ttf"
+  font "NotoSerif/unhinted/variable-ttf/NotoSerif-Italic[wdth,wght].ttf"
+  font "NotoSerif/unhinted/variable-ttf/NotoSerif[wdth,wght].ttf"
 
   # No zap stanza required
 end

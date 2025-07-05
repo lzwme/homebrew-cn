@@ -1,10 +1,10 @@
 class Ndpi < Formula
   desc "Deep Packet Inspection (DPI) library"
-  homepage "https:www.ntop.orgproductsdeep-packet-inspectionndpi"
-  url "https:github.comntopnDPIarchiverefstags4.14.tar.gz"
+  homepage "https://www.ntop.org/products/deep-packet-inspection/ndpi/"
+  url "https://ghfast.top/https://github.com/ntop/nDPI/archive/refs/tags/4.14.tar.gz"
   sha256 "954135ee14ad6bd74a78a10db560b534b8f2083ad0615f5c1a2c376fff0301e0"
   license "LGPL-3.0-or-later"
-  head "https:github.comntopnDPI.git", branch: "dev"
+  head "https://github.com/ntop/nDPI.git", branch: "dev"
 
   no_autobump! because: :requires_manual_review
 
@@ -27,13 +27,13 @@ class Ndpi < Formula
   uses_from_macos "libpcap"
 
   def install
-    system ".autogen.sh"
-    system ".configure", "--prefix=#{prefix}"
+    system "./autogen.sh"
+    system "./configure", "--prefix=#{prefix}"
     system "make"
     system "make", "install"
   end
 
   test do
-    system bin"ndpiReader", "-i", test_fixtures("test.pcap")
+    system bin/"ndpiReader", "-i", test_fixtures("test.pcap")
   end
 end

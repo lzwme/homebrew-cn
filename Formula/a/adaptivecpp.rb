@@ -1,11 +1,11 @@
 class Adaptivecpp < Formula
   desc "SYCL and C++ standard parallelism for CPUs and GPUs"
-  homepage "https:adaptivecpp.github.io"
-  url "https:github.comAdaptiveCppAdaptiveCpparchiverefstagsv24.10.0.tar.gz"
+  homepage "https://adaptivecpp.github.io/"
+  url "https://ghfast.top/https://github.com/AdaptiveCpp/AdaptiveCpp/archive/refs/tags/v24.10.0.tar.gz"
   sha256 "3bcd94eee41adea3ccc58390498ec9fd30e1548af5330a319be8ce3e034a6a0b"
   license "BSD-2-Clause"
   revision 1
-  head "https:github.comAdaptiveCppAdaptiveCpp.git", branch: "develop"
+  head "https://github.com/AdaptiveCpp/AdaptiveCpp.git", branch: "develop"
 
   bottle do
     sha256 arm64_sequoia: "8cb6f094a3fbf0f910601703c6d7e65831b8e568967e5a66ebfa950a98b0a968"
@@ -38,25 +38,25 @@ class Adaptivecpp < Formula
     system "cmake", "--install", "build"
 
     # Avoid references to Homebrew shims directory
-    inreplace prefix"etcAdaptiveCppacpp-core.json", Superenv.shims_pathENV.cxx, ENV.cxx
+    inreplace prefix/"etc/AdaptiveCpp/acpp-core.json", Superenv.shims_path/ENV.cxx, ENV.cxx
     return unless OS.mac?
 
-    # we add -I#{libomp_root}include to default-omp-cxx-flags
-    inreplace prefix"etcAdaptiveCppacpp-core.json",
+    # we add -I#{libomp_root}/include to default-omp-cxx-flags
+    inreplace prefix/"etc/AdaptiveCpp/acpp-core.json",
               "\"default-omp-cxx-flags\" : \"",
-              "\"default-omp-cxx-flags\" : \"-I#{libomp_root}include "
+              "\"default-omp-cxx-flags\" : \"-I#{libomp_root}/include "
   end
 
   test do
-    system bin"acpp", "--version"
+    system bin/"acpp", "--version"
 
-    (testpath"hellosycl.cpp").write <<~C
-      #include <syclsycl.hpp>
+    (testpath/"hellosycl.cpp").write <<~C
+      #include <sycl/sycl.hpp>
       int main(){
           sycl::queue q{};
       }
     C
-    system bin"acpp", "hellosycl.cpp", "-o", "hello"
-    system ".hello"
+    system bin/"acpp", "hellosycl.cpp", "-o", "hello"
+    system "./hello"
   end
 end

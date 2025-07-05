@@ -1,11 +1,11 @@
 class Pioneer < Formula
   desc "Game of lonely space adventure"
-  homepage "https:pioneerspacesim.net"
-  url "https:github.compioneerspacesimpioneerarchiverefstags20250501.tar.gz"
+  homepage "https://pioneerspacesim.net/"
+  url "https://ghfast.top/https://github.com/pioneerspacesim/pioneer/archive/refs/tags/20250501.tar.gz"
   sha256 "959902d98a79536bd44f25bd7b29e48da94aeac597228776b0f91635877f362e"
   license "GPL-3.0-only"
   revision 1
-  head "https:github.compioneerspacesimpioneer.git", branch: "master"
+  head "https://github.com/pioneerspacesim/pioneer.git", branch: "master"
 
   bottle do
     sha256                               arm64_sequoia: "574d8bbe6db0b59bc597150357e398b585d43a73fc0d42caa35065431940bdf3"
@@ -33,9 +33,9 @@ class Pioneer < Formula
     depends_on "mesa"
   end
 
-  # patch to fix `pi_lua_generic_push` call, upstream pr ref, https:github.compioneerspacesimpioneerpull6000
+  # patch to fix `pi_lua_generic_push` call, upstream pr ref, https://github.com/pioneerspacesim/pioneer/pull/6000
   patch do
-    url "https:github.compioneerspacesimpioneercommit9293a5f84584d7dd10699c64f28647a576ca059b.patch?full_index=1"
+    url "https://github.com/pioneerspacesim/pioneer/commit/9293a5f84584d7dd10699c64f28647a576ca059b.patch?full_index=1"
     sha256 "c93e0f8745d9e1dc7989a0051489be7825df452e0d1fa0cf654038f1486e2f9f"
   end
 
@@ -46,7 +46,7 @@ class Pioneer < Formula
   end
 
   test do
-    assert_match "pioneer #{version}", shell_output("#{bin}pioneer -v 2>&1").chomp
-    assert_match "modelcompiler #{version}", shell_output("#{bin}modelcompiler -v 2>&1").chomp
+    assert_match "pioneer #{version}", shell_output("#{bin}/pioneer -v 2>&1").chomp
+    assert_match "modelcompiler #{version}", shell_output("#{bin}/modelcompiler -v 2>&1").chomp
   end
 end

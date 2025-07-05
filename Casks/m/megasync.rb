@@ -4,14 +4,14 @@ cask "megasync" do
   version "5.13.0.1"
   sha256 :no_check
 
-  url "https:mega.nzMEGAsyncSetup#{arch}.dmg"
+  url "https://mega.nz/MEGAsyncSetup#{arch}.dmg"
   name "MEGAsync"
   desc "Syncs files between computers and MEGA Cloud drives"
-  homepage "https:mega.nzsync"
+  homepage "https://mega.nz/sync"
 
   livecheck do
-    url "https:github.commeganzMEGAsync"
-    regex(^v?(\d+(?:\.\d+)+)[._-]OSX$i)
+    url "https://github.com/meganz/MEGAsync"
+    regex(/^v?(\d+(?:\.\d+)+)[._-]OSX$/i)
   end
 
   auto_updates true
@@ -24,10 +24,10 @@ cask "megasync" do
             login_item: "MEGAsync"
 
   zap trash: [
-    "~LibraryApplication Scriptsmega.mac.MEGAShellExtFinder",
-    "~LibraryCachesmega.mac",
-    "~LibraryContainersmega.mac.MEGAShellExtFinder",
-    "~LibraryLaunchAgentsmega.mac.megaupdater.plist",
-    "~LibraryPreferencesmega.mac.plist",
+    "~/Library/Application Scripts/mega.mac.MEGAShellExtFinder",
+    "~/Library/Caches/mega.mac",
+    "~/Library/Containers/mega.mac.MEGAShellExtFinder",
+    "~/Library/LaunchAgents/mega.mac.megaupdater.plist",
+    "~/Library/Preferences/mega.mac.plist",
   ]
 end

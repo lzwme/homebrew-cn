@@ -2,10 +2,10 @@ cask "doll" do
   version "0.0.9.2"
   sha256 "f9cb50b91fc123d03d64cc9ebdaf9407fe976796cdb9a5ffcd89a4f9d49c4dc5"
 
-  url "https:github.comxiaogdgenuineDollreleasesdownloadv#{version}Doll.#{version}.dmg"
+  url "https://ghfast.top/https://github.com/xiaogdgenuine/Doll/releases/download/v#{version}/Doll.#{version}.dmg"
   name "Doll"
   desc "Utility to show apps badges from the dock in the menu bar"
-  homepage "https:github.comxiaogdgenuineDoll"
+  homepage "https://github.com/xiaogdgenuine/Doll/"
 
   no_autobump! because: :requires_manual_review
 
@@ -13,5 +13,5 @@ cask "doll" do
 
   app "Doll.app"
 
-  zap trash: "~LibraryPreferencescom.xiaogd.Doll.plist"
+  zap trash: "~/Library/Preferences/com.xiaogd.Doll.plist"
 end

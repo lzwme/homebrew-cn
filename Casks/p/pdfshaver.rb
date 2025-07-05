@@ -2,10 +2,10 @@ cask "pdfshaver" do
   version "1.0"
   sha256 "ebfacb5e30b0939c4549f36fe88be10c0d4bae1ffaa4616e70daf849d19df9d0"
 
-  url "https:github.comtparryPDFShaver.appreleasesdownloadv#{version}PDFShaver.zip"
+  url "https://ghfast.top/https://github.com/tparry/PDFShaver.app/releases/download/v#{version}/PDFShaver.zip"
   name "PDFShaver"
   desc "Shrink PDF files to make them smaller"
-  homepage "https:github.comtparryPDFShaver.app"
+  homepage "https://github.com/tparry/PDFShaver.app"
 
   no_autobump! because: :requires_manual_review
 
@@ -14,8 +14,8 @@ cask "pdfshaver" do
   app "PDFShaver.app"
 
   zap trash: [
-    "~LibraryPreferencescom.tparry.PDFShaver.plist",
-    "~LibrarySaved Application Statecom.tparry.PDFShaver.savedState",
+    "~/Library/Preferences/com.tparry.PDFShaver.plist",
+    "~/Library/Saved Application State/com.tparry.PDFShaver.savedState",
   ]
 
   caveats do

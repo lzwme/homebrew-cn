@@ -2,14 +2,14 @@ cask "xbar" do
   version "2.1.7-beta"
   sha256 "0a7ea7c40e4d4e2ecce0dae3c9c3773d459ddf5af86744f70c44b9f9901bc73f"
 
-  url "https:github.commatryerxbarreleasesdownloadv#{version}xbar.v#{version}.dmg",
-      verified: "github.commatryerxbar"
+  url "https://ghfast.top/https://github.com/matryer/xbar/releases/download/v#{version}/xbar.v#{version}.dmg",
+      verified: "github.com/matryer/xbar/"
   name "xbar"
   desc "View output from scripts in the menu bar"
-  homepage "https:xbarapp.com"
+  homepage "https://xbarapp.com/"
 
   livecheck do
-    url "https:xbarapp.comdl"
+    url "https://xbarapp.com/dl"
     strategy :header_match
   end
 
@@ -23,9 +23,9 @@ cask "xbar" do
             login_item: "xbar"
 
   zap trash: [
-    "~LibraryApplication Supportxbar",
-    "~LibraryCachescom.xbarapp.app",
-    "~LibraryPreferencescom.xbarapp.app.plist",
-    "~LibraryWebKitcom.xbarapp.app",
+    "~/Library/Application Support/xbar",
+    "~/Library/Caches/com.xbarapp.app",
+    "~/Library/Preferences/com.xbarapp.app.plist",
+    "~/Library/WebKit/com.xbarapp.app",
   ]
 end

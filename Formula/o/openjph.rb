@@ -1,10 +1,10 @@
 class Openjph < Formula
   desc "Open-source implementation of JPEG2000 Part-15 (or JPH or HTJ2K)"
-  homepage "https:github.comaous72OpenJPH"
-  url "https:github.comaous72OpenJPHarchiverefstags0.21.3.tar.gz"
+  homepage "https://github.com/aous72/OpenJPH"
+  url "https://ghfast.top/https://github.com/aous72/OpenJPH/archive/refs/tags/0.21.3.tar.gz"
   sha256 "4dfa87ec8e28c8a30c038969cdd3084d2e8688b364efd83599c3fa90f29457e2"
   license "BSD-2-Clause"
-  head "https:github.comaous72OpenJPH.git", branch: "master"
+  head "https://github.com/aous72/OpenJPH.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "6b5a932d433a1f8c2b662cd47bef684b55dc099cf4b2e3413345b3d9d11fda98"
@@ -33,13 +33,13 @@ class Openjph < Formula
 
   test do
     resource "homebrew-test.ppm" do
-      url "https:raw.githubusercontent.comaous72jp2k_test_codestreamsca2d370openjphreferencesMalamute.ppm"
+      url "https://ghfast.top/https://raw.githubusercontent.com/aous72/jp2k_test_codestreams/ca2d370/openjph/references/Malamute.ppm"
       sha256 "e4e36966d68a473a7f5f5719d9e41c8061f2d817f70a7de1c78d7e510a6391ff"
     end
     resource("homebrew-test.ppm").stage testpath
 
-    system bin"ojph_compress", "-i", "Malamute.ppm", "-o", "homebrew.j2c"
-    system bin"ojph_expand", "-i", "homebrew.j2c", "-o", "homebrew.ppm"
-    assert_path_exists testpath"homebrew.ppm"
+    system bin/"ojph_compress", "-i", "Malamute.ppm", "-o", "homebrew.j2c"
+    system bin/"ojph_expand", "-i", "homebrew.j2c", "-o", "homebrew.ppm"
+    assert_path_exists testpath/"homebrew.ppm"
   end
 end

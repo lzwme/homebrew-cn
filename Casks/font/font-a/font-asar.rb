@@ -2,10 +2,10 @@ cask "font-asar" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefontsrawmainoflasarAsar-Regular.ttf",
-      verified: "github.comgooglefonts"
+  url "https://github.com/google/fonts/raw/main/ofl/asar/Asar-Regular.ttf",
+      verified: "github.com/google/fonts/"
   name "Asar"
-  homepage "https:fonts.google.comspecimenAsar"
+  homepage "https://fonts.google.com/specimen/Asar"
 
   font "Asar-Regular.ttf"
 

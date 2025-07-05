@@ -1,7 +1,7 @@
 class Zimfw < Formula
   desc "Zsh plugin manager"
-  homepage "https:zimfw.sh"
-  url "https:github.comzimfwzimfwreleasesdownloadv1.18.0zimfw.zsh.gz"
+  homepage "https://zimfw.sh"
+  url "https://ghfast.top/https://github.com/zimfw/zimfw/releases/download/v1.18.0/zimfw.zsh.gz"
   sha256 "ec1a6a5b89fa1ab9262c6614f8fb14432483817e9a572608791a861995f15c46"
   license "MIT"
 
@@ -19,17 +19,17 @@ class Zimfw < Formula
 
   def caveats
     <<~EOS
-      zimfw.zsh lives in #{opt_share}zimfw.zsh to source in your .zshrc.
+      zimfw.zsh lives in #{opt_share}/zimfw.zsh to source in your .zshrc.
     EOS
   end
 
   test do
     assert_match version.to_s,
-      shell_output("zsh -c 'ZIM_HOME=#{testpath}.zim source #{share}zimfw.zsh version'")
+      shell_output("zsh -c 'ZIM_HOME=#{testpath}/.zim source #{share}/zimfw.zsh version'")
 
-    (testpath".zimrc").write("zmodule test --use mkdir --on-pull '>init.zsh <<<\"print test\"'")
-    system "zsh -c 'ZIM_HOME=#{testpath}.zim source #{share}zimfw.zsh init -q'"
-    assert_path_exists testpath".zimmodulestestinit.zsh"
-    assert_path_exists testpath".ziminit.zsh"
+    (testpath/".zimrc").write("zmodule test --use mkdir --on-pull '>init.zsh <<<\"print test\"'")
+    system "zsh -c 'ZIM_HOME=#{testpath}/.zim source #{share}/zimfw.zsh init -q'"
+    assert_path_exists testpath/".zim/modules/test/init.zsh"
+    assert_path_exists testpath/".zim/init.zsh"
   end
 end

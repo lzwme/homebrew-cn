@@ -1,11 +1,11 @@
 class CreateApi < Formula
   desc "Delightful code generator for OpenAPI specs"
-  homepage "https:github.comCreateAPICreateAPI"
-  url "https:github.comCreateAPICreateAPIarchiverefstags0.2.0.tar.gz"
+  homepage "https://github.com/CreateAPI/CreateAPI"
+  url "https://ghfast.top/https://github.com/CreateAPI/CreateAPI/archive/refs/tags/0.2.0.tar.gz"
   sha256 "9f61943314797fe4f09b40be72e1f72b0a616c66cb1b66cd042f97a596ffd869"
   license "MIT"
   revision 1
-  head "https:github.comCreateAPICreateAPI.git", branch: "main"
+  head "https://github.com/CreateAPI/CreateAPI.git", branch: "main"
 
   no_autobump! because: :requires_manual_review
 
@@ -30,12 +30,12 @@ class CreateApi < Formula
       ["--static-swift-stdlib"]
     end
     system "swift", "build", *args, "--configuration", "release"
-    bin.install ".buildreleasecreate-api"
-    pkgshare.install "TestsSupportSpecscookpad.json" => "test-spec.json"
+    bin.install ".build/release/create-api"
+    pkgshare.install "Tests/Support/Specs/cookpad.json" => "test-spec.json"
   end
 
   test do
-    system bin"create-api", "generate", pkgshare"test-spec.json", "--config-option", "module=TestPackage"
+    system bin/"create-api", "generate", pkgshare/"test-spec.json", "--config-option", "module=TestPackage"
     cd "CreateAPI" do
       system "swift", "build", "--disable-sandbox"
     end

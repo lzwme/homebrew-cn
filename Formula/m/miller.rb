@@ -1,35 +1,35 @@
 class Miller < Formula
   desc "Like sed, awk, cut, join & sort for name-indexed data such as CSV"
-  homepage "https:github.comjohnkerlmiller"
-  url "https:github.comjohnkerlmillerarchiverefstagsv6.13.0.tar.gz"
-  sha256 "6beca48af3066fc8d87c3ce17c5dd3debac61ff8f296c0e95c0634fd3ab05599"
+  homepage "https://github.com/johnkerl/miller"
+  url "https://ghfast.top/https://github.com/johnkerl/miller/archive/refs/tags/v6.14.0.tar.gz"
+  sha256 "2009b845cf0e397fb82e510ba0a191d8c355e2abf221fb61134aac7ce3bd6c71"
   license "BSD-2-Clause"
-  head "https:github.comjohnkerlmiller.git", branch: "main"
+  head "https://github.com/johnkerl/miller.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "09b57aa36476019c512c15cd66d8cc080e5f219ff1acc83eeb52bcb166b776c7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "11dee02cb195a2b70c76d71f718007093b3c115b48bde88a910578fd17f964d6"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "7f604a40e7a20e6150d5abbc6d5a6c654dab3dbcef141027208b2e4c7da457e8"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c37ec76071260833d18befdfeeeaaf4162386c0c25477346c8b6a64f4bedc296"
-    sha256 cellar: :any_skip_relocation, ventura:       "1781bcd50d09557818dd14aab3f1b51d0aa328c08a9495236e676205ebabc158"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5fbf792b92ccb4015c4fe4ad2581f81a0cc4d8e110d76ccbd149d02e57f96255"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9f54d8db973db256344b08ae68f5497be7ee0fad34311bfceb45fabd0d11f22c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6c01fae53b921f8fe7c77226a4ecd08e27e7b4679d92f98517dfab3b41b7426e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "355c0b2f7f617f457efef03a1bec6bf1a2710b5b0ea3e98af00729a6eee8e2c5"
+    sha256 cellar: :any_skip_relocation, sonoma:        "15fb079f364863446b5ab283b5d7f6eec16aafb7ee95ae934704ede5261a8647"
+    sha256 cellar: :any_skip_relocation, ventura:       "0b1bcf75feed4355185d86363a7e73f9416304d21f228e6ffd875383610a11f8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d27c305e6e23dd5692d961ff832f41f7e6b12a477e3b41ea16ae9127b3715751"
   end
 
   depends_on "go" => :build
 
   def install
-    system ".configure", "--prefix=#{prefix}"
+    system "./configure", "--prefix=#{prefix}"
     system "make"
     system "make", "install"
   end
 
   test do
-    (testpath"test.csv").write <<~CSV
+    (testpath/"test.csv").write <<~CSV
       a,b,c
       1,2,3
       4,5,6
     CSV
-    output = pipe_output("#{bin}mlr --csvlite cut -f a test.csv")
+    output = pipe_output("#{bin}/mlr --csvlite cut -f a test.csv")
     assert_match "a\n1\n4\n", output
   end
 end

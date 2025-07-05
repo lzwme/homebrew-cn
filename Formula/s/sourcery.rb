@@ -1,11 +1,11 @@
 class Sourcery < Formula
   desc "Meta-programming for Swift, stop writing boilerplate code"
-  homepage "https:github.comkrzysztofzablockiSourcery"
-  url "https:github.comkrzysztofzablockiSourceryarchiverefstags2.2.7.tar.gz"
+  homepage "https://github.com/krzysztofzablocki/Sourcery"
+  url "https://ghfast.top/https://github.com/krzysztofzablocki/Sourcery/archive/refs/tags/2.2.7.tar.gz"
   sha256 "e543ba8c3f05d9c8ce6b9dc0460d2084893f345d4f5984aabe31a40849a5c0e0"
   license "MIT"
   version_scheme 1
-  head "https:github.comkrzysztofzablockiSourcery.git", branch: "master"
+  head "https://github.com/krzysztofzablocki/Sourcery.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "492ed39e90b1fa57dfd06fe1232473e57d9b5b7f110453d04387db5a76f19192"
@@ -33,12 +33,12 @@ class Sourcery < Formula
     inreplace "Rakefile", "--disable-sandbox", "--static-swift-stdlib" if OS.linux?
 
     system "rake", "build"
-    bin.install "clibinsourcery"
-    lib.install Dir["clilib*.dylib"]
+    bin.install "cli/bin/sourcery"
+    lib.install Dir["cli/lib/*.dylib"]
   end
 
   test do
-    # Regular functionality requires a non-sandboxed environment, so we can only test versionhelp here.
-    assert_match version.to_s, shell_output("#{bin}sourcery --version").chomp
+    # Regular functionality requires a non-sandboxed environment, so we can only test version/help here.
+    assert_match version.to_s, shell_output("#{bin}/sourcery --version").chomp
   end
 end

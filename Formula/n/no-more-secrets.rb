@@ -1,7 +1,7 @@
 class NoMoreSecrets < Formula
   desc "Recreates the SETEC ASTRONOMY effect from 'Sneakers'"
-  homepage "https:github.combartobrino-more-secrets"
-  url "https:github.combartobrino-more-secretsarchiverefstagsv1.0.1.tar.gz"
+  homepage "https://github.com/bartobri/no-more-secrets"
+  url "https://ghfast.top/https://github.com/bartobri/no-more-secrets/archive/refs/tags/v1.0.1.tar.gz"
   sha256 "4422e59bb3cf62bca3c73d1fdae771b83aab686cd044f73fe14b1b9c2af1cb1b"
   license "GPL-3.0-or-later"
 
@@ -29,6 +29,6 @@ class NoMoreSecrets < Formula
   end
 
   test do
-    assert_equal "nms version #{version}", shell_output("#{bin}nms -v").chomp
+    assert_equal "nms version #{version}", shell_output("#{bin}/nms -v").chomp
   end
 end

@@ -2,10 +2,10 @@ cask "morkro-papyrus" do
   version "1.0.3"
   sha256 "6130e0d93486db9e969686270e8edddc9be16b52b342fdb4d31eb4546d161118"
 
-  url "https:github.commorkropapyrusreleasesdownload#{version}Papyrus-osx-#{version}.zip"
+  url "https://ghfast.top/https://github.com/morkro/papyrus/releases/download/#{version}/Papyrus-osx-#{version}.zip"
   name "Papyrus"
   desc "Unofficial Dropbox Paper desktop app"
-  homepage "https:github.commorkropapyrus"
+  homepage "https://github.com/morkro/papyrus"
 
   no_autobump! because: :requires_manual_review
 
@@ -14,9 +14,9 @@ cask "morkro-papyrus" do
   app "Papyrus.app"
 
   zap trash: [
-    "~LibraryApplication SupportPapyrus",
-    "~LibraryPreferencescom.electron.papyrus.plist",
-    "~LibrarySaved Application Statecom.electron.papyrus.savedState",
+    "~/Library/Application Support/Papyrus",
+    "~/Library/Preferences/com.electron.papyrus.plist",
+    "~/Library/Saved Application State/com.electron.papyrus.savedState",
   ]
 
   caveats do

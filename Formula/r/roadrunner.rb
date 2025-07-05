@@ -1,10 +1,10 @@
 class Roadrunner < Formula
   desc "High-performance PHP application server, load-balancer and process manager"
-  homepage "https:docs.roadrunner.devdocs"
-  url "https:github.comroadrunner-serverroadrunnerarchiverefstagsv2025.1.2.tar.gz"
+  homepage "https://docs.roadrunner.dev/docs"
+  url "https://ghfast.top/https://github.com/roadrunner-server/roadrunner/archive/refs/tags/v2025.1.2.tar.gz"
   sha256 "abac9a924e96ebce7f9f39e9497ff14096dd1bb90af2719bfb03997cfd524f4e"
   license "MIT"
-  head "https:github.comroadrunner-serverroadrunner.git", branch: "master"
+  head "https://github.com/roadrunner-server/roadrunner.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "476af85d6ead4459ffef2d738a69af423142bf0c108bafef185b2ced67bd7b0c"
@@ -20,26 +20,26 @@ class Roadrunner < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.comroadrunner-serverroadrunnerv#{version.major}internalmeta.version=#{version}
-      -X github.comroadrunner-serverroadrunnerv#{version.major}internalmeta.buildTime=#{time.iso8601}
+      -X github.com/roadrunner-server/roadrunner/v#{version.major}/internal/meta.version=#{version}
+      -X github.com/roadrunner-server/roadrunner/v#{version.major}/internal/meta.buildTime=#{time.iso8601}
     ]
-    system "go", "build", *std_go_args(ldflags:, tags: "aws", output: bin"rr"), ".cmdrr"
+    system "go", "build", *std_go_args(ldflags:, tags: "aws", output: bin/"rr"), "./cmd/rr"
 
-    generate_completions_from_executable(bin"rr", "completion")
+    generate_completions_from_executable(bin/"rr", "completion")
   end
 
   test do
     port = free_port
-    (testpath".rr.yaml").write <<~YAML
+    (testpath/".rr.yaml").write <<~YAML
       # RR configuration version
       version: '3'
       rpc:
-        listen: tcp:127.0.0.1:#{port}
+        listen: tcp://127.0.0.1:#{port}
     YAML
 
-    output = shell_output("#{bin}rr jobs list 2>&1", 1)
+    output = shell_output("#{bin}/rr jobs list 2>&1", 1)
     assert_match "connect: connection refused", output
 
-    assert_match version.to_s, shell_output("#{bin}rr --version")
+    assert_match version.to_s, shell_output("#{bin}/rr --version")
   end
 end

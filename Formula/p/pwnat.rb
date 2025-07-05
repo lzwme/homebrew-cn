@@ -1,10 +1,10 @@
 class Pwnat < Formula
   desc "Proxy server that works behind a NAT"
-  homepage "https:samy.plpwnat"
-  url "https:github.comsamykpwnatarchiverefstagsv0.3.0.tar.gz"
+  homepage "https://samy.pl/pwnat/"
+  url "https://ghfast.top/https://github.com/samyk/pwnat/archive/refs/tags/v0.3.0.tar.gz"
   sha256 "c784ac0ef2249ae5b314a95ff5049f16c253c1f9b3720f3f88c50fc811140b44"
   license "GPL-3.0-or-later"
-  head "https:github.comsamykpwnat.git", branch: "master"
+  head "https://github.com/samyk/pwnat.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -31,6 +31,6 @@ class Pwnat < Formula
   end
 
   test do
-    assert_match "pwnat <-s | -c> <args>", shell_output("#{bin}pwnat -h", 1)
+    assert_match "pwnat <-s | -c> <args>", shell_output("#{bin}/pwnat -h", 1)
   end
 end

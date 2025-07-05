@@ -1,10 +1,10 @@
 class Pdfrip < Formula
   desc "Multi-threaded PDF password cracking utility"
-  homepage "https:github.commufeedvhpdfrip"
-  url "https:github.commufeedvhpdfriparchiverefstagsv2.0.1.tar.gz"
+  homepage "https://github.com/mufeedvh/pdfrip"
+  url "https://ghfast.top/https://github.com/mufeedvh/pdfrip/archive/refs/tags/v2.0.1.tar.gz"
   sha256 "60f284d79bac98c97e6eaa1a2f29d66055de5b3c8a129eb14b24057a7cb31cd3"
   license "MIT"
-  head "https:github.commufeedvhpdfrip.git", branch: "main"
+  head "https://github.com/mufeedvh/pdfrip.git", branch: "main"
 
   no_autobump! because: :requires_manual_review
 
@@ -30,10 +30,10 @@ class Pdfrip < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}pdfrip --version")
+    assert_match version.to_s, shell_output("#{bin}/pdfrip --version")
 
-    touch testpath"test.pdf"
-    output = shell_output("#{bin}pdfrip -f test.pdf range 1 5 2>&1")
+    touch testpath/"test.pdf"
+    output = shell_output("#{bin}/pdfrip -f test.pdf range 1 5 2>&1")
     assert_match "Failed to crack file", output
   end
 end

@@ -1,10 +1,10 @@
 class FluentBit < Formula
   desc "Fast and Lightweight Logs and Metrics processor"
-  homepage "https:github.comfluentfluent-bit"
-  url "https:github.comfluentfluent-bitarchiverefstagsv4.0.3.tar.gz"
+  homepage "https://github.com/fluent/fluent-bit"
+  url "https://ghfast.top/https://github.com/fluent/fluent-bit/archive/refs/tags/v4.0.3.tar.gz"
   sha256 "c7d276238d25242467218941842d8cd4df6cfa52cc9379ae5755220cdefd1dc1"
   license "Apache-2.0"
-  head "https:github.comfluentfluent-bit.git", branch: "master"
+  head "https://github.com/fluent/fluent-bit.git", branch: "master"
 
   livecheck do
     url :stable
@@ -33,9 +33,9 @@ class FluentBit < Formula
 
   def install
     # Prevent fluent-bit to install files into global init system
-    # For more information see https:github.comfluentfluent-bitissues3393
-    inreplace "srcCMakeLists.txt", "if(NOT SYSTEMD_UNITDIR AND IS_DIRECTORY libsystemdsystem)", "if(False)"
-    inreplace "srcCMakeLists.txt", "elseif(IS_DIRECTORY usrshareupstart)", "elif(False)"
+    # For more information see https://github.com/fluent/fluent-bit/issues/3393
+    inreplace "src/CMakeLists.txt", "if(NOT SYSTEMD_UNITDIR AND IS_DIRECTORY /lib/systemd/system)", "if(False)"
+    inreplace "src/CMakeLists.txt", "elseif(IS_DIRECTORY /usr/share/upstart)", "elif(False)"
 
     args = %w[
       -DFLB_PREFER_SYSTEM_LIB_LUAJIT=ON
@@ -48,7 +48,7 @@ class FluentBit < Formula
   end
 
   test do
-    output = shell_output("#{bin}fluent-bit -V").chomp
+    output = shell_output("#{bin}/fluent-bit -V").chomp
     assert_match "Fluent Bit v#{version}", output
   end
 end

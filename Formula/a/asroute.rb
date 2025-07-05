@@ -1,10 +1,10 @@
 class Asroute < Formula
   desc "CLI to interpret traceroute -a output to show AS names traversed"
-  homepage "https:github.comstevenpackasroute"
-  url "https:github.comstevenpackasroutearchiverefstagsv0.1.0.tar.gz"
+  homepage "https://github.com/stevenpack/asroute"
+  url "https://ghfast.top/https://github.com/stevenpack/asroute/archive/refs/tags/v0.1.0.tar.gz"
   sha256 "dfbf910966cdfacf18ba200b83791628ebd1b5fa89fdfa69b989e0cb05b3ca37"
   license "MIT"
-  head "https:github.comstevenpackasroute.git", branch: "master"
+  head "https://github.com/stevenpack/asroute.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -28,7 +28,7 @@ class Asroute < Formula
 
   def install
     system "cargo", "install", *std_cargo_args
-    bin.install "targetreleaseasroute"
+    bin.install "target/release/asroute"
   end
 
   test do

@@ -2,11 +2,11 @@ cask "smoothcsv" do
   version "3.0.0"
   sha256 "8c9470cd4adf50d66b14ba037304ff17cd10a3a2bb13b6e11a396e4efc246fbb"
 
-  url "https:github.comkohiismoothcsv3releasesdownloadv#{version}SmoothCSV_#{version}_universal.dmg",
-      verified: "github.comkohiismoothcsv3"
+  url "https://ghfast.top/https://github.com/kohii/smoothcsv3/releases/download/v#{version}/SmoothCSV_#{version}_universal.dmg",
+      verified: "github.com/kohii/smoothcsv3/"
   name "SmoothCSV"
   desc "CSV editor"
-  homepage "https:smoothcsv.com"
+  homepage "https://smoothcsv.com/"
 
   depends_on macos: ">= :high_sierra"
 
@@ -15,9 +15,9 @@ cask "smoothcsv" do
   uninstall quit: "com.smoothcsv.desktop"
 
   zap trash: [
-    "~LibraryApplication Supportcom.smoothcsv.desktop",
-    "~LibraryCachescom.smoothcsv.desktop",
-    "~LibraryLogscom.smoothcsv.desktop",
-    "~LibraryWebKitcom.smoothcsv.desktop",
+    "~/Library/Application Support/com.smoothcsv.desktop",
+    "~/Library/Caches/com.smoothcsv.desktop",
+    "~/Library/Logs/com.smoothcsv.desktop",
+    "~/Library/WebKit/com.smoothcsv.desktop",
   ]
 end

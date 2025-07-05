@@ -1,15 +1,15 @@
 class Kubent < Formula
   desc "Easily check your clusters for use of deprecated APIs"
-  homepage "https:github.comdoitintlkube-no-trouble"
-  url "https:github.comdoitintlkube-no-trouble.git",
+  homepage "https://github.com/doitintl/kube-no-trouble"
+  url "https://github.com/doitintl/kube-no-trouble.git",
       tag:      "0.7.3",
       revision: "57480c07b3f91238f12a35d0ec88d9368aae99aa"
   license "MIT"
-  head "https:github.comdoitintlkube-no-trouble.git", branch: "master"
+  head "https://github.com/doitintl/kube-no-trouble.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -31,11 +31,11 @@ class Kubent < Formula
       -X main.version=#{version}
       -X main.gitSha=#{Utils.git_head}
     ]
-    system "go", "build", *std_go_args(ldflags:), ".cmdkubent"
+    system "go", "build", *std_go_args(ldflags:), "./cmd/kubent"
   end
 
   test do
-    assert_match "no configuration has been provided", shell_output("#{bin}kubent 2>&1")
-    assert_match version.to_s, shell_output("#{bin}kubent --version 2>&1")
+    assert_match "no configuration has been provided", shell_output("#{bin}/kubent 2>&1")
+    assert_match version.to_s, shell_output("#{bin}/kubent --version 2>&1")
   end
 end

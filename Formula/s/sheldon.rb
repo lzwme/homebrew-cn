@@ -1,10 +1,10 @@
 class Sheldon < Formula
   desc "Fast, configurable, shell plugin manager"
-  homepage "https:sheldon.cli.rs"
-  url "https:github.comrossmacarthursheldonarchiverefstags0.8.3.tar.gz"
+  homepage "https://sheldon.cli.rs"
+  url "https://ghfast.top/https://github.com/rossmacarthur/sheldon/archive/refs/tags/0.8.3.tar.gz"
   sha256 "fea159b473a9ae48779ae2094eb909262361f45d2bf3a2e3968eddacb8e3b992"
   license any_of: ["Apache-2.0", "MIT"]
-  head "https:github.comrossmacarthursheldon.git", branch: "trunk"
+  head "https://github.com/rossmacarthur/sheldon.git", branch: "trunk"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "a434012f0248b23221448830af4681b7d514b3f91cb69d7885655947c3799c66"
@@ -23,7 +23,7 @@ class Sheldon < Formula
   depends_on "openssl@3"
 
   # curl-config on ventura builds do not report http2 feature,
-  # see discussions in https:github.comHomebrewhomebrew-corepull197727
+  # see discussions in https://github.com/Homebrew/homebrew-core/pull/197727
   # FIXME: We should be able to use macOS curl on Ventura, but `curl-config` is broken.
   uses_from_macos "curl", since: :sonoma
 
@@ -36,27 +36,27 @@ class Sheldon < Formula
 
     system "cargo", "install", "--no-default-features", *std_cargo_args
 
-    bash_completion.install "completionssheldon.bash" => "sheldon"
-    zsh_completion.install "completionssheldon.zsh" => "_sheldon"
+    bash_completion.install "completions/sheldon.bash" => "sheldon"
+    zsh_completion.install "completions/sheldon.zsh" => "_sheldon"
   end
 
   test do
-    require "utilslinkage"
+    require "utils/linkage"
 
-    touch testpath"plugins.toml"
-    system bin"sheldon", "--config-dir", testpath, "--data-dir", testpath, "lock"
-    assert_path_exists testpath"plugins.lock"
+    touch testpath/"plugins.toml"
+    system bin/"sheldon", "--config-dir", testpath, "--data-dir", testpath, "lock"
+    assert_path_exists testpath/"plugins.lock"
 
     libraries = [
-      Formula["libgit2"].opt_libshared_library("libgit2"),
-      Formula["libssh2"].opt_libshared_library("libssh2"),
-      Formula["openssl@3"].opt_libshared_library("libssl"),
-      Formula["openssl@3"].opt_libshared_library("libcrypto"),
+      Formula["libgit2"].opt_lib/shared_library("libgit2"),
+      Formula["libssh2"].opt_lib/shared_library("libssh2"),
+      Formula["openssl@3"].opt_lib/shared_library("libssl"),
+      Formula["openssl@3"].opt_lib/shared_library("libcrypto"),
     ]
-    libraries << (Formula["curl"].opt_libshared_library("libcurl")) if OS.linux?
+    libraries << (Formula["curl"].opt_lib/shared_library("libcurl")) if OS.linux?
 
     libraries.each do |library|
-      assert Utils.binary_linked_to_library?(bin"sheldon", library),
+      assert Utils.binary_linked_to_library?(bin/"sheldon", library),
              "No linkage with #{library.basename}! Cargo is likely using a vendored version."
     end
   end

@@ -1,10 +1,10 @@
 class Gtree < Formula
   desc "Generate directory trees and directories using Markdown or programmatically"
-  homepage "https:ddddddo.github.iogtree"
-  url "https:github.comddddddOgtreearchiverefstagsv1.11.7.tar.gz"
+  homepage "https://ddddddo.github.io/gtree/"
+  url "https://ghfast.top/https://github.com/ddddddO/gtree/archive/refs/tags/v1.11.7.tar.gz"
   sha256 "1bbcfad89f50c02664f6a62094f52a98b08f983d320313b9c3f0db71b4740692"
   license "BSD-2-Clause"
-  head "https:github.comddddddOgtree.git", branch: "master"
+  head "https://github.com/ddddddO/gtree.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "094c89bcbb16b2f1c0d1841755c0f930b52e488df4cb62d8ab20b7f5967baddc"
@@ -20,12 +20,12 @@ class Gtree < Formula
 
   def install
     ldflags = "-s -w -X main.Version=#{version} -X main.Revision=#{tap.user}"
-    system "go", "build", *std_go_args(ldflags:), ".cmdgtree"
+    system "go", "build", *std_go_args(ldflags:), "./cmd/gtree"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}gtree version")
+    assert_match version.to_s, shell_output("#{bin}/gtree version")
 
-    assert_match "testdata", shell_output("#{bin}gtree template")
+    assert_match "testdata", shell_output("#{bin}/gtree template")
   end
 end

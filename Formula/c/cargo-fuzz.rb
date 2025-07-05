@@ -1,7 +1,7 @@
 class CargoFuzz < Formula
   desc "Command-line helpers for fuzzing"
-  homepage "https:rust-fuzz.github.iobookcargo-fuzz.html"
-  url "https:github.comrust-fuzzcargo-fuzzarchiverefstags0.13.1.tar.gz"
+  homepage "https://rust-fuzz.github.io/book/cargo-fuzz.html"
+  url "https://ghfast.top/https://github.com/rust-fuzz/cargo-fuzz/archive/refs/tags/0.13.1.tar.gz"
   sha256 "3dae1ab57e738c1059635eb824062e4de79474080612f60a0ec0decf455d9e65"
   license all_of: ["Apache-2.0", "MIT"]
 
@@ -29,13 +29,13 @@ class CargoFuzz < Formula
 
   test do
     # Show that we can use a different toolchain than the one provided by the `rust` formula.
-    # https:github.comHomebrewhomebrew-corepull134074#pullrequestreview-1484979359
+    # https://github.com/Homebrew/homebrew-core/pull/134074#pullrequestreview-1484979359
     ENV.prepend_path "PATH", Formula["rustup"].bin
     system "rustup", "set", "profile", "minimal"
     system "rustup", "default", "beta"
 
     system "cargo", "init"
-    system bin"cargo-fuzz", "init"
-    assert_path_exists testpath"fuzzCargo.toml"
+    system bin/"cargo-fuzz", "init"
+    assert_path_exists testpath/"fuzz/Cargo.toml"
   end
 end

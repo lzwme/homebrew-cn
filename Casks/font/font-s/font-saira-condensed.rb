@@ -2,12 +2,12 @@ cask "font-saira-condensed" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefonts.git",
-      verified:  "github.comgooglefonts",
+  url "https://github.com/google/fonts.git",
+      verified:  "github.com/google/fonts",
       branch:    "main",
-      only_path: "oflsairacondensed"
+      only_path: "ofl/sairacondensed"
   name "Saira Condensed"
-  homepage "https:fonts.google.comspecimenSaira+Condensed"
+  homepage "https://fonts.google.com/specimen/Saira+Condensed"
 
   font "SairaCondensed-Black.ttf"
   font "SairaCondensed-Bold.ttf"

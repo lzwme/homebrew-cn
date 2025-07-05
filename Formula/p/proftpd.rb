@@ -1,8 +1,8 @@
 class Proftpd < Formula
   desc "Highly configurable GPL-licensed FTP server software"
-  homepage "http:www.proftpd.org"
-  url "https:github.comproftpdproftpdarchiverefstagsv1.3.9.tar.gz"
-  mirror "https:fossies.orglinuxmiscproftpd-1.3.9.tar.gz"
+  homepage "http://www.proftpd.org/"
+  url "https://ghfast.top/https://github.com/proftpd/proftpd/archive/refs/tags/v1.3.9.tar.gz"
+  mirror "https://fossies.org/linux/misc/proftpd-1.3.9.tar.gz/"
   sha256 "4a5f13b666226813b4da0ade34535d325e204ab16cf8008c7353b1b5a972f74b"
   license "GPL-2.0-or-later"
 
@@ -11,7 +11,7 @@ class Proftpd < Formula
   # beta respectively. Prerelease versions use a format like `1.2.3rc1`.
   livecheck do
     url :stable
-    regex(v?(\d+(?:\.\d+)+[a-z]?)i)
+    regex(/v?(\d+(?:\.\d+)+[a-z]?)/i)
     strategy :github_latest
   end
 
@@ -29,10 +29,10 @@ class Proftpd < Formula
 
   def install
     # fixes unknown group 'nogroup'
-    # http:www.proftpd.orgdocsfaqlinkedfaq-ch4.html#AEN434
-    inreplace "sample-configurationsbasic.conf", "nogroup", "nobody"
+    # http://www.proftpd.org/docs/faq/linked/faq-ch4.html#AEN434
+    inreplace "sample-configurations/basic.conf", "nogroup", "nobody"
 
-    system ".configure", "--prefix=#{prefix}",
+    system "./configure", "--prefix=#{prefix}",
                           "--sbindir=#{sbin}",
                           "--sysconfdir=#{etc}",
                           "--localstatedir=#{var}"
@@ -44,7 +44,7 @@ class Proftpd < Formula
   end
 
   service do
-    run [opt_sbin"proftpd"]
+    run [opt_sbin/"proftpd"]
     keep_alive false
     working_dir HOMEBREW_PREFIX
     log_path File::NULL
@@ -52,6 +52,6 @@ class Proftpd < Formula
   end
 
   test do
-    assert_match "ProFTPD Version #{version}", shell_output("#{opt_sbin}proftpd -v")
+    assert_match "ProFTPD Version #{version}", shell_output("#{opt_sbin}/proftpd -v")
   end
 end

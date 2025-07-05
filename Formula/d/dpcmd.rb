@@ -1,7 +1,7 @@
 class Dpcmd < Formula
-  desc "Linux software for DediProg SF100SF600"
-  homepage "https:github.comDediProgSWSF100Linux"
-  url "https:github.comDediProgSWSF100LinuxarchiverefstagsV1.14.21,x.tar.gz"
+  desc "Linux software for DediProg SF100/SF600"
+  homepage "https://github.com/DediProgSW/SF100Linux"
+  url "https://ghfast.top/https://github.com/DediProgSW/SF100Linux/archive/refs/tags/V1.14.21,x.tar.gz"
   sha256 "2bab3df0b971e66f574db33daa1687d1a064eed6b3e99d97c265bfce35470ddf"
   license "GPL-2.0-only"
 
@@ -28,11 +28,11 @@ class Dpcmd < Formula
   def install
     system "make"
     bin.install "dpcmd"
-    (share"DediProg").install "ChipInfoDb.dedicfg"
+    (share/"DediProg").install "ChipInfoDb.dedicfg"
   end
 
   test do
     # Try and read from a device that isn't connected
-    assert_match version.to_s, shell_output("#{bin}dpcmd -rSTDOUT -a0x100 -l0x23", 1)
+    assert_match version.to_s, shell_output("#{bin}/dpcmd -rSTDOUT -a0x100 -l0x23", 1)
   end
 end

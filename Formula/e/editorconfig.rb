@@ -1,10 +1,10 @@
 class Editorconfig < Formula
   desc "Maintain consistent coding style between multiple editors"
-  homepage "https:editorconfig.org"
-  url "https:github.comeditorconfigeditorconfig-core-carchiverefstagsv0.12.9.tar.gz"
+  homepage "https://editorconfig.org/"
+  url "https://ghfast.top/https://github.com/editorconfig/editorconfig-core-c/archive/refs/tags/v0.12.9.tar.gz"
   sha256 "4aaa4e3883332aac7ec19c169dcf128f5f0f963f61d09beb299eb2bce5944e2c"
   license "BSD-2-Clause"
-  head "https:github.comeditorconfigeditorconfig-core-c.git", branch: "master"
+  head "https://github.com/editorconfig/editorconfig-core-c.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "6ce5b3c6be160eb7ef11cc41b3dd60231e8100c970a5d7888984c8003e426977"
@@ -28,6 +28,6 @@ class Editorconfig < Formula
   end
 
   test do
-    system bin"editorconfig", "--version"
+    system bin/"editorconfig", "--version"
   end
 end

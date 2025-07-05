@@ -2,11 +2,11 @@ cask "surge-xt" do
   version "1.3.4"
   sha256 "b56e8d51a8dc2382ae668c9ff4e96bae38dbd452af4e584d5a5ef50ab2d09b07"
 
-  url "https:github.comsurge-synthesizerreleases-xtreleasesdownload#{version}surge-xt-macOS-#{version}.dmg",
-      verified: "github.comsurge-synthesizerreleases-xt"
+  url "https://ghfast.top/https://github.com/surge-synthesizer/releases-xt/releases/download/#{version}/surge-xt-macOS-#{version}.dmg",
+      verified: "github.com/surge-synthesizer/releases-xt/"
   name "Surge XT"
   desc "Hybrid synthesiser"
-  homepage "https:surge-synthesizer.github.io"
+  homepage "https://surge-synthesizer.github.io/"
 
   no_autobump! because: :requires_manual_review
 
@@ -31,8 +31,8 @@ cask "surge-xt" do
               "org.surge-synth-team.surge-xt.vst3.pkg",
             ],
             delete:  [
-              "ApplicationsSurge XT Effects.app",
-              "ApplicationsSurge XT.app",
+              "/Applications/Surge XT Effects.app",
+              "/Applications/Surge XT.app",
             ]
 
   # No zap stanza required

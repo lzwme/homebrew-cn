@@ -2,10 +2,10 @@ cask "font-lohit-bengali" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefontsrawmainofllohitbengaliLohit-Bengali.ttf",
-      verified: "github.comgooglefonts"
+  url "https://github.com/google/fonts/raw/main/ofl/lohitbengali/Lohit-Bengali.ttf",
+      verified: "github.com/google/fonts/"
   name "Lohit Bengali"
-  homepage "https:fonts.google.comspecimenLohit+Bengali"
+  homepage "https://fonts.google.com/specimen/Lohit+Bengali"
 
   font "Lohit-Bengali.ttf"
 

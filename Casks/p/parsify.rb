@@ -5,11 +5,11 @@ cask "parsify" do
   sha256 arm:   "d4f9027b297089ec755880e95b0d0f4998c4f6988b3f0a845720cbc514b36c38",
          intel: "a2d44bd3c947d73562e73162be276ec62fe6f8f55d1410f211ec487f5f3fb6f0"
 
-  url "https:github.comparsify-devdesktopreleasesdownloadv#{version}Parsify-#{version}-mac-#{arch}.zip",
-      verified: "github.comparsify-devdesktop"
+  url "https://ghfast.top/https://github.com/parsify-dev/desktop/releases/download/v#{version}/Parsify-#{version}-mac-#{arch}.zip",
+      verified: "github.com/parsify-dev/desktop/"
   name "Parsify"
   desc "Extensible calculator with unit and currency conversions"
-  homepage "https:parsify.app"
+  homepage "https://parsify.app/"
 
   no_autobump! because: :requires_manual_review
 
@@ -18,8 +18,8 @@ cask "parsify" do
   app "Parsify.app"
 
   zap trash: [
-    "~LibraryApplication SupportParsify Desktop",
-    "~LibraryPreferencesapp.parsifydesktop.plist",
-    "~LibrarySaved Application Stateapp.parsify.parsifydesktop.savedState",
+    "~/Library/Application Support/Parsify Desktop",
+    "~/Library/Preferences/app.parsifydesktop.plist",
+    "~/Library/Saved Application State/app.parsify.parsifydesktop.savedState",
   ]
 end

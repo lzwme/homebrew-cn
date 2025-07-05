@@ -1,7 +1,7 @@
 class PodmanTui < Formula
   desc "Podman Terminal User Interface"
-  homepage "https:github.comcontainerspodman-tui"
-  url "https:github.comcontainerspodman-tuiarchiverefstagsv1.6.1.tar.gz"
+  homepage "https://github.com/containers/podman-tui"
+  url "https://ghfast.top/https://github.com/containers/podman-tui/archive/refs/tags/v1.6.1.tar.gz"
   sha256 "a241119e1099711f889bae6fa7061130869317b711a96e3e9df2fed45e6fc979"
   license "Apache-2.0"
 
@@ -22,10 +22,10 @@ class PodmanTui < Formula
   def install
     if OS.mac?
       system "make", "binary-darwin"
-      bin.install "bindarwinpodman-tui" => "podman-tui"
+      bin.install "bin/darwin/podman-tui" => "podman-tui"
     else
       system "make", "binary"
-      bin.install "binpodman-tui" => "podman-tui"
+      bin.install "bin/podman-tui" => "podman-tui"
     end
   end
 
@@ -33,7 +33,7 @@ class PodmanTui < Formula
     require "pty"
     ENV["TERM"] = "xterm"
 
-    PTY.spawn(bin"podman-tui") do |r, w, _pid|
+    PTY.spawn(bin/"podman-tui") do |r, w, _pid|
       sleep 4
       w.write "\cC"
       begin
@@ -41,10 +41,10 @@ class PodmanTui < Formula
         assert_match "Connection:", output
         assert_match "SYSTEM CONNECTIONS[1]", output
       rescue Errno::EIO
-        # GNULinux raises EIO when read is done on closed pty
+        # GNU/Linux raises EIO when read is done on closed pty
       end
     end
 
-    assert_match "podman-tui v#{version}", shell_output("#{bin}podman-tui version")
+    assert_match "podman-tui v#{version}", shell_output("#{bin}/podman-tui version")
   end
 end

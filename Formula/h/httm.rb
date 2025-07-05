@@ -1,10 +1,10 @@
 class Httm < Formula
-  desc "Interactive, file-level Time Machine-like tool for ZFSbtrfs"
-  homepage "https:github.comkimono-koanshttm"
-  url "https:github.comkimono-koanshttmarchiverefstags0.48.4.tar.gz"
+  desc "Interactive, file-level Time Machine-like tool for ZFS/btrfs"
+  homepage "https://github.com/kimono-koans/httm"
+  url "https://ghfast.top/https://github.com/kimono-koans/httm/archive/refs/tags/0.48.4.tar.gz"
   sha256 "4573d9057550bc257e4828ace92b18382177b7cd379dac68aef529deea927e8a"
   license "MPL-2.0"
-  head "https:github.comkimono-koanshttm.git", branch: "master"
+  head "https://github.com/kimono-koans/httm.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "e2654463c9920d9f9e7a90934975e718537249b28ded64e90839a0a2525052b7"
@@ -28,16 +28,16 @@ class Httm < Formula
     system "cargo", "install", "--features", "xattrs,acls", *std_cargo_args
     man1.install "httm.1"
 
-    bin.install "scriptsounce.bash" => "ounce"
-    bin.install "scriptsbowie.bash" => "bowie"
-    bin.install "scriptsnicotine.bash" => "nicotine"
-    bin.install "scriptsequine.bash" => "equine"
+    bin.install "scripts/ounce.bash" => "ounce"
+    bin.install "scripts/bowie.bash" => "bowie"
+    bin.install "scripts/nicotine.bash" => "nicotine"
+    bin.install "scripts/equine.bash" => "equine"
   end
 
   test do
-    touch testpath"foo"
+    touch testpath/"foo"
     assert_equal "ERROR: httm could not find any valid datasets on the system.",
-      shell_output("#{bin}httm #{testpath}foo 2>&1", 1).strip
-    assert_equal "httm #{version}", shell_output("#{bin}httm --version").strip
+      shell_output("#{bin}/httm #{testpath}/foo 2>&1", 1).strip
+    assert_equal "httm #{version}", shell_output("#{bin}/httm --version").strip
   end
 end

@@ -1,14 +1,14 @@
 class Oclgrind < Formula
   desc "OpenCL device simulator and debugger"
-  homepage "https:github.comjrpriceOclgrind"
-  url "https:github.comjrpriceOclgrindarchiverefstagsv21.10.tar.gz"
+  homepage "https://github.com/jrprice/Oclgrind"
+  url "https://ghfast.top/https://github.com/jrprice/Oclgrind/archive/refs/tags/v21.10.tar.gz"
   sha256 "b40ea81fcf64e9012d63c3128640fde9785ef4f304f9f876f53496595b8e62cc"
   license "BSD-3-Clause"
   revision 2
 
   livecheck do
     url :homepage
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -26,7 +26,7 @@ class Oclgrind < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "llvm@14" # Issue for newer LLVM: https:github.comjrpriceOclgrindissues209
+  depends_on "llvm@14" # Issue for newer LLVM: https://github.com/jrprice/Oclgrind/issues/209
   depends_on "readline"
 
   on_linux do
@@ -35,29 +35,29 @@ class Oclgrind < Formula
 
   # Backport support for `llvm@14`. Remove in the next release.
   patch do
-    url "https:github.comjrpriceOclgrindcommit6c76e7bec0aa7fa451515a5cfcb35ab2384ba6e0.patch?full_index=1"
+    url "https://github.com/jrprice/Oclgrind/commit/6c76e7bec0aa7fa451515a5cfcb35ab2384ba6e0.patch?full_index=1"
     sha256 "8c1b8ec75d8d8c8d02246124b40452ec9ef1243d3e3c497fe4ffa8571cd98ade"
   end
 
   def install
-    llvm = deps.find { |dep| dep.name.match?(^llvm(@\d+)?$) }
+    llvm = deps.find { |dep| dep.name.match?(/^llvm(@\d+)?$/) }
                .to_formula
     rpaths = [rpath, rpath(target: llvm.opt_lib)]
     system "cmake", "-S", ".", "-B", "build", "-DCMAKE_INSTALL_RPATH=#{rpaths.join(";")}", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
-    # Install the optional ICD into #{prefix}etc rather than #{etc} as it contains realpath
+    # Install the optional ICD into #{prefix}/etc rather than #{etc} as it contains realpath
     # to the shared library and needs to be kept up-to-date to work with an ICD loader.
     # This relies on `brew link` automatically creating and updating #{etc} symlinks.
-    (prefix"etcOpenCLvendors").install "buildoclgrind.icd"
+    (prefix/"etc/OpenCL/vendors").install "build/oclgrind.icd"
   end
 
   test do
-    (testpath"rot13.c").write <<~C
+    (testpath/"rot13.c").write <<~C
       #include <stdio.h>
       #include <stdlib.h>
       #include <string.h>
-      #include <#{OS.mac? ? "OpenCL" : "CL"}cl.h>
+      #include <#{OS.mac? ? "OpenCL" : "CL"}/cl.h>
 
       const char rot13_cl[] = "                         \\
       __kernel void rot13                               \\
@@ -160,7 +160,7 @@ class Oclgrind < Formula
     C
 
     system ENV.cc, "rot13.c", "-o", "rot13", "-L#{lib}", "-loclgrind-rt"
-    output = shell_output("#{bin}oclgrind .rot13 2>&1").chomp
+    output = shell_output("#{bin}/oclgrind ./rot13 2>&1").chomp
     assert_equal "Hello, World!", output
   end
 end

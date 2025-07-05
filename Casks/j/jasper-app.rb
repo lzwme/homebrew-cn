@@ -10,16 +10,16 @@ cask "jasper-app" do
     sha256 "dbbe65c2323d11bb94ec5bf0168b39e1c4cc61f040bd62c50200b07c77942437"
   end
 
-  url "https:github.comjasperappjasperreleasesdownloadv#{version}jasper_v#{version}_mac_#{arch}.zip",
-      verified: "github.comjasperappjasper"
+  url "https://ghfast.top/https://github.com/jasperapp/jasper/releases/download/v#{version}/jasper_v#{version}_mac_#{arch}.zip",
+      verified: "github.com/jasperapp/jasper/"
   name "Jasper"
   desc "Issue reader for GitHub"
-  homepage "https:jasperapp.io"
+  homepage "https://jasperapp.io/"
 
   # Not every release contains binaries for all architectures
   livecheck do
     url :url
-    regex(^jasper[._-]v?(\d+(?:\.\d+)+)[._-]mac[._-]#{arch}\.zip$i)
+    regex(/^jasper[._-]v?(\d+(?:\.\d+)+)[._-]mac[._-]#{arch}\.zip$/i)
     strategy :github_releases do |json, regex|
       json.map do |release|
         next if release["draft"] || release["prerelease"]
@@ -39,7 +39,7 @@ cask "jasper-app" do
   app "Jasper.app"
 
   zap trash: [
-    "~LibraryApplication Supportjasper",
-    "~LibraryContainersio.jasperapp",
+    "~/Library/Application Support/jasper",
+    "~/Library/Containers/io.jasperapp",
   ]
 end

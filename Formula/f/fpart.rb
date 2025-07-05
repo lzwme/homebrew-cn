@@ -1,7 +1,7 @@
 class Fpart < Formula
   desc "Sorts file trees and packs them into bags"
-  homepage "https:github.commartymacfpart"
-  url "https:github.commartymacfpartarchiverefstagsfpart-1.7.0.tar.gz"
+  homepage "https://github.com/martymac/fpart/"
+  url "https://ghfast.top/https://github.com/martymac/fpart/archive/refs/tags/fpart-1.7.0.tar.gz"
   sha256 "e5f82dd90001ed53200b2383bcfd520b1d8ee06d6a2a75b39d37d68daef20c88"
   license "BSD-2-Clause"
 
@@ -20,17 +20,17 @@ class Fpart < Formula
 
   def install
     system "autoreconf", "--force", "--install", "--verbose"
-    system ".configure", "--disable-silent-rules", *std_configure_args
+    system "./configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
   end
 
   test do
-    (testpath"myfile1").write("")
-    (testpath"myfile2").write("")
-    system bin"fpart", "-n", "2", "-o", (testpath"mypart"), (testpath"myfile1"), (testpath"myfile2")
-    assert_path_exists testpath"mypart.1"
-    assert_path_exists testpath"mypart.2"
-    refute_path_exists testpath"mypart.0"
-    refute_path_exists testpath"mypart.3"
+    (testpath/"myfile1").write("")
+    (testpath/"myfile2").write("")
+    system bin/"fpart", "-n", "2", "-o", (testpath/"mypart"), (testpath/"myfile1"), (testpath/"myfile2")
+    assert_path_exists testpath/"mypart.1"
+    assert_path_exists testpath/"mypart.2"
+    refute_path_exists testpath/"mypart.0"
+    refute_path_exists testpath/"mypart.3"
   end
 end

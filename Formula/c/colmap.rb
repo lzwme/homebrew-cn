@@ -1,7 +1,7 @@
 class Colmap < Formula
   desc "Structure-from-Motion and Multi-View Stereo"
-  homepage "https:colmap.github.io"
-  url "https:github.comcolmapcolmaparchiverefstags3.12.0.tar.gz"
+  homepage "https://colmap.github.io/"
+  url "https://ghfast.top/https://github.com/colmap/colmap/archive/refs/tags/3.12.0.tar.gz"
   sha256 "98aae3fbed984940a9d6f7ea93ca063c3f4eee3b4f6fff3bf6bdbf003efecfcb"
   license "BSD-3-Clause"
 
@@ -59,7 +59,7 @@ class Colmap < Formula
   end
 
   test do
-    system bin"colmap", "database_creator", "--database_path", (testpath  "db")
-    assert_path_exists (testpath  "db")
+    system bin/"colmap", "database_creator", "--database_path", (testpath / "db")
+    assert_path_exists (testpath / "db")
   end
 end

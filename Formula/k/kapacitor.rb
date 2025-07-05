@@ -1,15 +1,15 @@
 class Kapacitor < Formula
   desc "Open source time series data processor"
-  homepage "https:github.cominfluxdatakapacitor"
-  url "https:github.cominfluxdatakapacitor.git",
+  homepage "https://github.com/influxdata/kapacitor"
+  url "https://github.com/influxdata/kapacitor.git",
       tag:      "v1.8.0",
       revision: "c5848b64d04a1dc4039611491891dd06872ef348"
   license "MIT"
-  head "https:github.cominfluxdatakapacitor.git", branch: "master"
+  head "https://github.com/influxdata/kapacitor.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -28,21 +28,21 @@ class Kapacitor < Formula
   # NOTE: The version here is specified in the go.mod of kapacitor.
   # If you're upgrading to a newer kapacitor version, check to see if this needs upgraded too.
   resource "pkg-config-wrapper" do
-    url "https:github.cominfluxdatapkg-configarchiverefstagsv0.3.0.tar.gz"
+    url "https://ghfast.top/https://github.com/influxdata/pkg-config/archive/refs/tags/v0.3.0.tar.gz"
     sha256 "769deabe12733224eaebbfff3b5a9d69491b0158bdf58bbbbc7089326d33a9c8"
   end
 
   # build patch for 1.8.0 release
   patch do
-    url "https:raw.githubusercontent.comHomebrewformula-patches2ce7d3fffb94533cc1940dfc0391806007b1644fkapacitor1.8.0.patch"
+    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/2ce7d3fffb94533cc1940dfc0391806007b1644f/kapacitor/1.8.0.patch"
     sha256 "1be60924e908504afb52bdefbddbcba65fb2812b63f430918406f68ad0d5e941"
   end
 
   def install
     resource("pkg-config-wrapper").stage do
-      system "go", "build", *std_go_args, "-o", buildpath"bootstrappkg-config"
+      system "go", "build", *std_go_args, "-o", buildpath/"bootstrap/pkg-config"
     end
-    ENV.prepend_path "PATH", buildpath"bootstrap"
+    ENV.prepend_path "PATH", buildpath/"bootstrap"
 
     ldflags = %W[
       -s -w
@@ -50,51 +50,51 @@ class Kapacitor < Formula
       -X main.commit=#{Utils.git_head}
     ]
 
-    system "go", "build", *std_go_args(ldflags:), ".cmdkapacitor"
-    system "go", "build", *std_go_args(ldflags:, output: bin"kapacitord"), ".cmdkapacitord"
+    system "go", "build", *std_go_args(ldflags:), "./cmd/kapacitor"
+    system "go", "build", *std_go_args(ldflags:, output: bin/"kapacitord"), "./cmd/kapacitord"
 
-    inreplace "etckapacitorkapacitor.conf" do |s|
-      s.gsub! "varlibkapacitor", "#{var}kapacitor"
-      s.gsub! "varlogkapacitor", "#{var}log"
+    inreplace "etc/kapacitor/kapacitor.conf" do |s|
+      s.gsub! "/var/lib/kapacitor", "#{var}/kapacitor"
+      s.gsub! "/var/log/kapacitor", "#{var}/log"
     end
 
-    etc.install "etckapacitorkapacitor.conf"
+    etc.install "etc/kapacitor/kapacitor.conf"
   end
 
   def post_install
-    (var"kapacitorreplay").mkpath
-    (var"kapacitortasks").mkpath
+    (var/"kapacitor/replay").mkpath
+    (var/"kapacitor/tasks").mkpath
   end
 
   service do
-    run [opt_bin"kapacitord", "-config", etc"kapacitor.conf"]
+    run [opt_bin/"kapacitord", "-config", etc/"kapacitor.conf"]
     keep_alive successful_exit: false
-    error_log_path var"logkapacitor.log"
-    log_path var"logkapacitor.log"
+    error_log_path var/"log/kapacitor.log"
+    log_path var/"log/kapacitor.log"
     working_dir var
   end
 
   test do
-    (testpath"config.toml").write shell_output("#{bin}kapacitord config")
+    (testpath/"config.toml").write shell_output("#{bin}/kapacitord config")
 
-    inreplace testpath"config.toml" do |s|
+    inreplace testpath/"config.toml" do |s|
       s.gsub! "disable-subscriptions = false", "disable-subscriptions = true"
-      s.gsub! %r{data_dir = ".*.kapacitor"}, "data_dir = \"#{testpath}kapacitor\""
-      s.gsub! %r{.*.kapacitorreplay}, "#{testpath}kapacitorreplay"
-      s.gsub! %r{.*.kapacitortasks}, "#{testpath}kapacitortasks"
-      s.gsub! %r{.*.kapacitorkapacitor.db}, "#{testpath}kapacitorkapacitor.db"
+      s.gsub! %r{data_dir = "/.*/.kapacitor"}, "data_dir = \"#{testpath}/kapacitor\""
+      s.gsub! %r{/.*/.kapacitor/replay}, "#{testpath}/kapacitor/replay"
+      s.gsub! %r{/.*/.kapacitor/tasks}, "#{testpath}/kapacitor/tasks"
+      s.gsub! %r{/.*/.kapacitor/kapacitor.db}, "#{testpath}/kapacitor/kapacitor.db"
     end
 
     http_port = free_port
-    ENV["KAPACITOR_URL"] = "http:localhost:#{http_port}"
+    ENV["KAPACITOR_URL"] = "http://localhost:#{http_port}"
     ENV["KAPACITOR_HTTP_BIND_ADDRESS"] = ":#{http_port}"
     ENV["KAPACITOR_INFLUXDB_0_ENABLED"] = "false"
     ENV["KAPACITOR_REPORTING_ENABLED"] = "false"
 
     begin
-      pid = spawn "#{bin}kapacitord -config #{testpath}config.toml"
+      pid = spawn "#{bin}/kapacitord -config #{testpath}/config.toml"
       sleep 20
-      shell_output("#{bin}kapacitor list tasks")
+      shell_output("#{bin}/kapacitor list tasks")
     ensure
       Process.kill("SIGINT", pid)
       Process.wait(pid)

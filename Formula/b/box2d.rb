@@ -1,10 +1,10 @@
 class Box2d < Formula
   desc "2D physics engine for games"
-  homepage "https:box2d.org"
-  url "https:github.comerincattobox2darchiverefstagsv3.1.1.tar.gz"
+  homepage "https://box2d.org"
+  url "https://ghfast.top/https://github.com/erincatto/box2d/archive/refs/tags/v3.1.1.tar.gz"
   sha256 "fb6ef914b50f4312d7d921a600eabc12318bb3c55a0b8c0b90608fa4488ef2e4"
   license "MIT"
-  head "https:github.comerincattoBox2D.git", branch: "main"
+  head "https://github.com/erincatto/Box2D.git", branch: "main"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "1caaf1c980effd48d3eed26366c13660960a289ac51526b68816679f6284631a"
@@ -30,13 +30,13 @@ class Box2d < Formula
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 
-    include.install Dir["include*"]
+    include.install Dir["include/*"]
   end
 
   test do
-    (testpath"test.cpp").write <<~CPP
+    (testpath/"test.cpp").write <<~CPP
       #include <iostream>
-      #include <box2dbase.h>
+      #include <box2d/base.h>
 
       int main() {
         b2Version version = b2GetVersion();
@@ -46,6 +46,6 @@ class Box2d < Formula
     CPP
 
     system ENV.cxx, "test.cpp", "-I#{include}", "-L#{lib}", "-lbox2d", "-o", "test"
-    assert_match version.to_s, shell_output(".test")
+    assert_match version.to_s, shell_output("./test")
   end
 end

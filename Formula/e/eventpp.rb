@@ -1,7 +1,7 @@
 class Eventpp < Formula
   desc "Event Dispatcher and callback list for C++"
-  homepage "https:github.comwqkingeventpp"
-  url "https:github.comwqkingeventpparchiverefstagsv0.1.3.tar.gz"
+  homepage "https://github.com/wqking/eventpp"
+  url "https://ghfast.top/https://github.com/wqking/eventpp/archive/refs/tags/v0.1.3.tar.gz"
   sha256 "d87aba67223fd9aced2ba55eb82bd534007e43e1b919106a53fcd3070fa125ea"
   license "Apache-2.0"
 
@@ -20,8 +20,8 @@ class Eventpp < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~CPP
-      #include <eventppeventdispatcher.h>
+    (testpath/"test.cpp").write <<~CPP
+      #include <eventpp/eventdispatcher.h>
       #include <iostream>
 
       int main() {
@@ -41,7 +41,7 @@ class Eventpp < Formula
     CPP
 
     system ENV.cxx, "-std=c++11", "test.cpp", "-o", "test"
-    assert_equal <<~EOS, shell_output(".test")
+    assert_equal <<~EOS, shell_output("./test")
       Got event 3, s is Hello b is true
       Got event 5, s is World b is 0
       Got another event 5, s is World b is false

@@ -2,10 +2,10 @@ cask "font-waiting-for-the-sunrise" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefontsrawmainoflwaitingforthesunriseWaitingfortheSunrise.ttf",
-      verified: "github.comgooglefonts"
+  url "https://github.com/google/fonts/raw/main/ofl/waitingforthesunrise/WaitingfortheSunrise.ttf",
+      verified: "github.com/google/fonts/"
   name "Waiting for the Sunrise"
-  homepage "https:fonts.google.comspecimenWaiting+for+the+Sunrise"
+  homepage "https://fonts.google.com/specimen/Waiting+for+the+Sunrise"
 
   font "WaitingfortheSunrise.ttf"
 

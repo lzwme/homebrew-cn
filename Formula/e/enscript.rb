@@ -1,12 +1,12 @@
 class Enscript < Formula
   desc "Convert text to Postscript, HTML, or RTF, with syntax highlighting"
-  homepage "https:www.gnu.orgsoftwareenscript"
-  url "https:ftp.gnu.orggnuenscriptenscript-1.6.6.tar.gz"
-  mirror "https:ftpmirror.gnu.orgenscriptenscript-1.6.6.tar.gz"
+  homepage "https://www.gnu.org/software/enscript/"
+  url "https://ftp.gnu.org/gnu/enscript/enscript-1.6.6.tar.gz"
+  mirror "https://ftpmirror.gnu.org/enscript/enscript-1.6.6.tar.gz"
   sha256 "6d56bada6934d055b34b6c90399aa85975e66457ac5bf513427ae7fc77f5c0bb"
   license "GPL-3.0-or-later"
   revision 1
-  head "https:git.savannah.gnu.orggitenscript.git", branch: "master"
+  head "https://git.savannah.gnu.org/git/enscript.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -34,23 +34,23 @@ class Enscript < Formula
 
   conflicts_with "cspice", because: "both install `states` binaries"
 
-  # Fix implicit declarations of strcmp, strncmp, strlen when compiling compatgetopt.c
-  # See https:savannah.gnu.orgbugs?64307
+  # Fix implicit declarations of strcmp, strncmp, strlen when compiling compat/getopt.c
+  # See https://savannah.gnu.org/bugs/?64307
   patch :p0 do
-    url "https:raw.githubusercontent.commacportsmacports-portsa24179380383ebda2ad9209f958ef8dd4ce7354dprintenscriptfilespatch-string_h.diff"
+    url "https://ghfast.top/https://raw.githubusercontent.com/macports/macports-ports/a24179380383ebda2ad9209f958ef8dd4ce7354d/print/enscript/files/patch-string_h.diff"
     sha256 "0238849f8b78777b30cf2043d19d866ff722992225926440e925a4e49d3ae5a8"
   end
 
   def install
-    system ".configure", *std_configure_args
+    system "./configure", *std_configure_args
     system "make", "install"
   end
 
   test do
-    assert_match "GNU Enscript #{version}", shell_output("#{bin}enscript -V")
+    assert_match "GNU Enscript #{version}", shell_output("#{bin}/enscript -V")
 
-    (testpath"test.txt").write "Hello world!"
-    output = shell_output("#{bin}enscript test.txt --language=html --output=-")
-    assert_match(%r{<[Pp][Rr][Ee]>\s*Hello world!\s*<[Pp][Rr][Ee]>}, output)
+    (testpath/"test.txt").write "Hello world!"
+    output = shell_output("#{bin}/enscript test.txt --language=html --output=-")
+    assert_match(%r{<[Pp][Rr][Ee]>\s*Hello world!\s*</[Pp][Rr][Ee]>}, output)
   end
 end

@@ -1,10 +1,10 @@
 class MacosTrash < Formula
   desc "Move files and folders to the trash"
-  homepage "https:github.comsindresorhusmacos-trash"
-  url "https:github.comsindresorhusmacos-trasharchiverefstagsv2.0.0.tar.gz"
+  homepage "https://github.com/sindresorhus/macos-trash"
+  url "https://ghfast.top/https://github.com/sindresorhus/macos-trash/archive/refs/tags/v2.0.0.tar.gz"
   sha256 "95eeea2a96e5d989145da4697206062798b9f708101dc426ae5a489969619114"
   license "MIT"
-  head "https:github.comsindresorhusmacos-trash.git", branch: "main"
+  head "https://github.com/sindresorhus/macos-trash.git", branch: "main"
 
   no_autobump! because: :requires_manual_review
 
@@ -26,11 +26,11 @@ class MacosTrash < Formula
 
   def install
     system "swift", "build", "--disable-sandbox", "-c", "release"
-    bin.install ".buildreleasetrash"
+    bin.install ".build/release/trash"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}trash --version")
-    system bin"trash", "--help"
+    assert_match version.to_s, shell_output("#{bin}/trash --version")
+    system bin/"trash", "--help"
   end
 end

@@ -1,10 +1,10 @@
 class TomlBombadil < Formula
   desc "Dotfile manager with templating"
-  homepage "https:github.comoknozortoml-bombadil"
-  url "https:github.comoknozortoml-bombadilarchiverefstags4.2.0.tar.gz"
+  homepage "https://github.com/oknozor/toml-bombadil"
+  url "https://ghfast.top/https://github.com/oknozor/toml-bombadil/archive/refs/tags/4.2.0.tar.gz"
   sha256 "b911678642a1229908dfeabbdd7f799354346c0e37f3ac999277655e01b6f229"
   license "MIT"
-  head "https:github.comoknozortoml-bombadil.git", branch: "main"
+  head "https://github.com/oknozor/toml-bombadil.git", branch: "main"
 
   no_autobump! because: :requires_manual_review
 
@@ -27,28 +27,28 @@ class TomlBombadil < Formula
   def install
     system "cargo", "install", *std_cargo_args
 
-    generate_completions_from_executable(bin"bombadil", "generate-completions")
+    generate_completions_from_executable(bin/"bombadil", "generate-completions")
   end
 
   test do
     config_dir = if OS.mac?
-      testpath"LibraryApplication Support"
+      testpath/"Library/Application Support"
     else
-      testpath".config"
+      testpath/".config"
     end
 
     config_dir.mkpath
-    (config_dir"bombadil.toml").write <<~TOML
+    (config_dir/"bombadil.toml").write <<~TOML
       dotfiles_dir = "dotfiles"
     TOML
 
-    (testpath"dotfiles").mkpath
+    (testpath/"dotfiles").mkpath
 
     ENV["HOME"] = testpath
 
-    output = shell_output("#{bin}bombadil get vars")
+    output = shell_output("#{bin}/bombadil get vars")
 
-    assert_match("arch":\s*".+", output)
-    assert_match("os":\s*".+", output)
+    assert_match(/"arch":\s*".+"/, output)
+    assert_match(/"os":\s*".+"/, output)
   end
 end

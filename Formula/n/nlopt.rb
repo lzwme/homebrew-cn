@@ -1,10 +1,10 @@
 class Nlopt < Formula
-  desc "Freeopen-source library for nonlinear optimization"
-  homepage "https:nlopt.readthedocs.io"
-  url "https:github.comstevengjnloptarchiverefstagsv2.10.0.tar.gz"
+  desc "Free/open-source library for nonlinear optimization"
+  homepage "https://nlopt.readthedocs.io/"
+  url "https://ghfast.top/https://github.com/stevengj/nlopt/archive/refs/tags/v2.10.0.tar.gz"
   sha256 "506f83a9e778ad4f204446e99509cb2bdf5539de8beccc260a014bd560237be1"
   license "MIT"
-  head "https:github.comstevengjnlopt.git", branch: "master"
+  head "https://github.com/stevengj/nlopt.git", branch: "master"
 
   bottle do
     rebuild 1
@@ -33,23 +33,23 @@ class Nlopt < Formula
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 
-    pkgshare.install "testbox.c"
+    pkgshare.install "test/box.c"
 
     # Avoid rebuilding dependents that hard-code the prefix.
-    inreplace lib"pkgconfignlopt.pc", prefix, opt_prefix
+    inreplace lib/"pkgconfig/nlopt.pc", prefix, opt_prefix
   end
 
   test do
-    (testpath"CMakeLists.txt").write <<~CMAKE
+    (testpath/"CMakeLists.txt").write <<~CMAKE
       cmake_minimum_required(VERSION 4.0)
       project(box C)
       find_package(NLopt REQUIRED)
-      add_executable(box "#{pkgshare}box.c")
+      add_executable(box "#{pkgshare}/box.c")
       target_link_libraries(box NLopt::nlopt)
     CMAKE
 
     system "cmake", "-S", ".", "-B", "build"
     system "cmake", "--build", "build"
-    assert_match "found", shell_output(".buildbox")
+    assert_match "found", shell_output("./build/box")
   end
 end

@@ -1,14 +1,14 @@
 class Kona < Formula
   desc "Open-source implementation of the K programming language"
-  homepage "https:github.comkevinlawlerkona"
-  url "https:github.comkevinlawlerkonaarchiverefstagsWin64-20211225.tar.gz"
+  homepage "https://github.com/kevinlawler/kona"
+  url "https://ghfast.top/https://github.com/kevinlawler/kona/archive/refs/tags/Win64-20211225.tar.gz"
   sha256 "cd5dcc03394af275f0416b3cb2914574bf51ec60d1c857020fbd34b5427c5faf"
   license "ISC"
-  head "https:github.comkevinlawlerkona.git", branch: "master"
+  head "https://github.com/kevinlawler/kona.git", branch: "master"
 
   livecheck do
     url :stable
-    regex((?:Win(?:64)?[._-])?v?(\d+(?:\.\d+)*)i)
+    regex(/(?:Win(?:64)?[._-])?v?(\d+(?:\.\d+)*)/i)
     strategy :github_latest
   end
 
@@ -35,6 +35,6 @@ class Kona < Formula
   end
 
   test do
-    assert_match "Hello, world!", pipe_output("#{bin}k", '`0: "Hello, world!"')
+    assert_match "Hello, world!", pipe_output("#{bin}/k", '`0: "Hello, world!"')
   end
 end

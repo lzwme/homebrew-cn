@@ -1,7 +1,7 @@
 class Cctz < Formula
   desc "C++ library for translating between absolute and civil times"
-  homepage "https:github.comgooglecctz"
-  url "https:github.comgooglecctzarchiverefstagsv2.5.tar.gz"
+  homepage "https://github.com/google/cctz"
+  url "https://ghfast.top/https://github.com/google/cctz/archive/refs/tags/v2.5.tar.gz"
   sha256 "47d2d68e7cb5af3296dc7e69b0f4a765589f1b2f4af4b9c42e772414c428b421"
   license "Apache-2.0"
 
@@ -26,11 +26,11 @@ class Cctz < Formula
 
     system "cmake", "-S", ".", "-B", "build_static", "-DBUILD_SHARED_LIBS=OFF", *args, *std_cmake_args
     system "cmake", "--build", "build_static"
-    lib.install "build_staticlibcctz.a"
+    lib.install "build_static/libcctz.a"
   end
 
   test do
-    (testpath"test.cc").write <<~CPP
+    (testpath/"test.cc").write <<~CPP
       #include <ctime>
       #include <iostream>
       #include <string>
@@ -56,6 +56,6 @@ class Cctz < Formula
       }
     CPP
     system ENV.cxx, "test.cc", "-I#{include}", "-L#{lib}", "-std=c++11", "-lcctz", "-o", "test"
-    system testpath"test"
+    system testpath/"test"
   end
 end

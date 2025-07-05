@@ -1,10 +1,10 @@
 class Starship < Formula
   desc "Cross-shell prompt for astronauts"
-  homepage "https:starship.rs"
-  url "https:github.comstarshipstarshiparchiverefstagsv1.23.0.tar.gz"
+  homepage "https://starship.rs/"
+  url "https://ghfast.top/https://github.com/starship/starship/archive/refs/tags/v1.23.0.tar.gz"
   sha256 "be3ba025a64bd808899dce256e1511145b55cc5eefc5fca82bf5537cd8e09c72"
   license "ISC"
-  head "https:github.comstarshipstarship.git", branch: "master"
+  head "https://github.com/starship/starship.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -31,11 +31,11 @@ class Starship < Formula
   def install
     system "cargo", "install", *std_cargo_args
 
-    generate_completions_from_executable(bin"starship", "completions")
+    generate_completions_from_executable(bin/"starship", "completions")
   end
 
   test do
     ENV["STARSHIP_CONFIG"] = ""
-    assert_equal "[1;32m❯[0m ", shell_output("#{bin}starship module character")
+    assert_equal "[1;32m❯[0m ", shell_output("#{bin}/starship module character")
   end
 end

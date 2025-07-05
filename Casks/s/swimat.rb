@@ -2,18 +2,18 @@ cask "swimat" do
   version "1.7.0"
   sha256 "adcf450d98c247fe4c45c68353f19afca3e2039c8431ec080f14000fe9cc36bf"
 
-  url "https:github.comJintinSwimatreleasesdownload#{version}Swimat.zip"
+  url "https://ghfast.top/https://github.com/Jintin/Swimat/releases/download/#{version}/Swimat.zip"
   name "Swimat"
   desc "Xcode formatter plug-in for Swift code"
-  homepage "https:github.comJintinSwimat"
+  homepage "https://github.com/Jintin/Swimat"
 
   no_autobump! because: :requires_manual_review
 
   app "Swimat.app"
 
   zap trash: [
-    "usrlocalbinswimat",
-    "~LibraryContainerscom.jintin.Swimat.Extension",
-    "~LibraryGroup Containerscom.jintin.swimat.configuration",
+    "/usr/local/bin/swimat",
+    "~/Library/Containers/com.jintin.Swimat.Extension",
+    "~/Library/Group Containers/com.jintin.swimat.configuration",
   ]
 end

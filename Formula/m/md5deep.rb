@@ -1,11 +1,11 @@
 class Md5deep < Formula
-  desc "Recursively compute digests on filesdirectories"
-  homepage "https:github.comjessekhashdeep"
-  url "https:github.comjessekhashdeeparchiverefstagsrelease-4.4.tar.gz"
+  desc "Recursively compute digests on files/directories"
+  homepage "https://github.com/jessek/hashdeep"
+  url "https://ghfast.top/https://github.com/jessek/hashdeep/archive/refs/tags/release-4.4.tar.gz"
   sha256 "dbda8ab42a9c788d4566adcae980d022d8c3d52ee732f1cbfa126c551c8fcc46"
   license "GPL-2.0-or-later"
   revision 1
-  head "https:github.comjessekhashdeep.git", branch: "master"
+  head "https://github.com/jessek/hashdeep.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -29,39 +29,39 @@ class Md5deep < Formula
   depends_on "automake" => :build
 
   # Fix compilation error due to very old GNU config scripts in source repo
-  # reported upstream at https:github.comjessekhashdeepissues400
+  # reported upstream at https://github.com/jessek/hashdeep/issues/400
   patch :DATA
 
   # Fix compilation error due to pointer comparison
   patch do
-    url "https:github.comjessekhashdeepcommit8776134.patch?full_index=1"
+    url "https://github.com/jessek/hashdeep/commit/8776134.patch?full_index=1"
     sha256 "3d4e3114aee5505d1336158b76652587fd6f76e1d3af784912277a1f93518c64"
   end
 
   # Fix literal and identifier spacing as dictated by C++11
-  # upstream pr ref, https:github.comjessekhashdeeppull385
+  # upstream pr ref, https://github.com/jessek/hashdeep/pull/385
   patch do
-    url "https:github.comjessekhashdeepcommit18a6b5d57f7a648d2b7dcc6e50ff00a1e4b05fcc.patch?full_index=1"
+    url "https://github.com/jessek/hashdeep/commit/18a6b5d57f7a648d2b7dcc6e50ff00a1e4b05fcc.patch?full_index=1"
     sha256 "a48a214b06372042e4e9fc06caae9d0e31da378892d28c4a30b4800cedf85e86"
   end
 
   def install
     system "sh", "bootstrap.sh"
-    system ".configure", *std_configure_args
+    system "./configure", *std_configure_args
     system "make", "install"
   end
 
   test do
-    (testpath"testfile.txt").write("This is a test file")
+    (testpath/"testfile.txt").write("This is a test file")
     # Do not reduce the spacing of the below text.
     assert_equal "91b7b0b1e27bfbf7bc646946f35fa972c47c2d32  testfile.txt",
-                 shell_output("#{bin}sha1deep -b testfile.txt").strip
+                 shell_output("#{bin}/sha1deep -b testfile.txt").strip
   end
 end
 
 __END__
---- aconfig.guess
-+++ bconfig.guess
+--- a/config.guess
++++ b/config.guess
 @@ -797,6 +797,9 @@
      arm*:Linux:*:*)
 	echo ${UNAME_MACHINE}-unknown-linux-gnu

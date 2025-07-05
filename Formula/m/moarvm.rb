@@ -1,13 +1,13 @@
 class Moarvm < Formula
   desc "VM with adaptive optimization and JIT compilation, built for Rakudo"
-  homepage "https:moarvm.org"
-  url "https:github.comMoarVMMoarVMreleasesdownload2025.06MoarVM-2025.06.tar.gz"
+  homepage "https://moarvm.org"
+  url "https://ghfast.top/https://github.com/MoarVM/MoarVM/releases/download/2025.06/MoarVM-2025.06.tar.gz"
   sha256 "e8d6b00cdb3f99022ade2a843a7a8ec87f66a38bb5655f85d50351c6b3b8d257"
   license "Artistic-2.0"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -36,13 +36,13 @@ class Moarvm < Formula
   conflicts_with "rakudo-star", because: "rakudo-star currently ships with moarvm included"
 
   resource "nqp" do
-    url "https:github.comRakunqpreleasesdownload2025.06nqp-2025.06.tar.gz"
+    url "https://ghfast.top/https://github.com/Raku/nqp/releases/download/2025.06/nqp-2025.06.tar.gz"
     sha256 "cfb396d6d0114d00f0dc2de4cf5f424fa72968e53c9c7cb75690bcdfd45bfcc5"
   end
 
   def install
     # Remove bundled libraries
-    %w[dyncall libatomicops libtommath mimalloc].each { |dir| rm_r("3rdparty#{dir}") }
+    %w[dyncall libatomicops libtommath mimalloc].each { |dir| rm_r("3rdparty/#{dir}") }
 
     configure_args = %W[
       --c11-atomics
@@ -50,14 +50,14 @@ class Moarvm < Formula
       --has-libtommath
       --has-mimalloc
       --optimize
-      --pkgconfig=#{Formula["pkgconf"].opt_bin}pkgconf
+      --pkgconfig=#{Formula["pkgconf"].opt_bin}/pkgconf
       --prefix=#{prefix}
     ]
     # FIXME: brew `libuv` causes runtime failures on Linux, e.g.
     # "Cannot find method 'made' on object of type NQPMu"
     if OS.mac?
       configure_args << "--has-libuv"
-      rm_r("3rdpartylibuv")
+      rm_r("3rdparty/libuv")
     end
 
     system "perl", "Configure.pl", *configure_args
@@ -68,8 +68,8 @@ class Moarvm < Formula
 
   test do
     testpath.install resource("nqp")
-    out = Dir.chdir("srcvmmoarstage0") do
-      shell_output("#{bin}moar nqp.moarvm -e 'for (0,1,2,3,4,5,6,7,8,9) { print($_) }'")
+    out = Dir.chdir("src/vm/moar/stage0") do
+      shell_output("#{bin}/moar nqp.moarvm -e 'for (0,1,2,3,4,5,6,7,8,9) { print($_) }'")
     end
     assert_equal "0123456789", out
   end

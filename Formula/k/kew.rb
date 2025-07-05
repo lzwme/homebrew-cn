@@ -1,10 +1,10 @@
 class Kew < Formula
   desc "Command-line music player"
-  homepage "https:github.comravacholkew"
-  url "https:github.comravacholkewarchiverefstagsv3.3.3.tar.gz"
+  homepage "https://github.com/ravachol/kew"
+  url "https://ghfast.top/https://github.com/ravachol/kew/archive/refs/tags/v3.3.3.tar.gz"
   sha256 "114edb5eead345a5311cdfecda15bf935c1c30ae1f78f97f1a5c3518e829b690"
   license "GPL-2.0-only"
-  head "https:github.comravacholkew.git", branch: "main"
+  head "https://github.com/ravachol/kew.git", branch: "main"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "1eb528a5d86c0d323893475db6e338fec41d0a2a96524c07723ef57a083e3917"
@@ -39,20 +39,20 @@ class Kew < Formula
 
   def install
     system "make", "install", "PREFIX=#{prefix}"
-    man1.install "docskew.1"
+    man1.install "docs/kew.1"
   end
 
   test do
-    ENV["XDG_CONFIG_HOME"] = testpath".config"
+    ENV["XDG_CONFIG_HOME"] = testpath/".config"
 
-    (testpath".configkew").mkpath
-    (testpath".configkewkewrc").write ""
+    (testpath/".config/kew").mkpath
+    (testpath/".config/kew/kewrc").write ""
 
-    system bin"kew", "path", testpath
+    system bin/"kew", "path", testpath
 
-    output = shell_output("#{bin}kew song")
+    output = shell_output("#{bin}/kew song")
     assert_match "No Music found.\nPlease make sure the path is set correctly", output
 
-    assert_match version.to_s, shell_output("#{bin}kew --version")
+    assert_match version.to_s, shell_output("#{bin}/kew --version")
   end
 end

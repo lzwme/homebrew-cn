@@ -2,10 +2,10 @@ cask "quicklook-pat" do
   version "1.0.0"
   sha256 "41d6d9ffb042490c93d661b95c392a341ecde42f40de6988ae944c64808aac28"
 
-  url "https:github.compixelrowdiesquicklook-patreleasesdownload#{version}PatternQuickLook.pkg"
+  url "https://ghfast.top/https://github.com/pixelrowdies/quicklook-pat/releases/download/#{version}/PatternQuickLook.pkg"
   name "Adobe Photoshop Patterns Quicklook Plugin"
   desc "Quick Look plugin for Adobe Photoshop pattern files"
-  homepage "https:github.compixelrowdiesquicklook-pat"
+  homepage "https://github.com/pixelrowdies/quicklook-pat"
 
   no_autobump! because: :requires_manual_review
 

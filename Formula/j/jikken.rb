@@ -1,10 +1,10 @@
 class Jikken < Formula
   desc "Powerful, source control friendly REST API testing toolkit"
-  homepage "https:jikken.io"
-  url "https:github.comjikkeniojikkenarchiverefstagsv0.8.2.tar.gz"
+  homepage "https://jikken.io/"
+  url "https://ghfast.top/https://github.com/jikkenio/jikken/archive/refs/tags/v0.8.2.tar.gz"
   sha256 "c1e8080c238d4aed349bf30a54ee8181661cb4cc846ad9bf16118ede5bd7939c"
   license "MIT"
-  head "https:github.comjikkeniojikken.git", branch: "main"
+  head "https://github.com/jikkenio/jikken.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "8c2a6084031ab54a84caaa798e46fe8d1cf8ea7a50b8b8c141ceafed2944196d"
@@ -28,10 +28,10 @@ class Jikken < Formula
   end
 
   test do
-    output = shell_output("#{bin}jk new test")
+    output = shell_output("#{bin}/jk new test")
     assert_match "Successfully created test (`test.jkt`).", output
-    assert_match "status: 200", (testpath"test.jkt").read
+    assert_match "status: 200", (testpath/"test.jkt").read
 
-    assert_match version.to_s, shell_output("#{bin}jk --version")
+    assert_match version.to_s, shell_output("#{bin}/jk --version")
   end
 end

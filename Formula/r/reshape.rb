@@ -1,10 +1,10 @@
 class Reshape < Formula
   desc "Easy-to-use, zero-downtime schema migration tool for Postgres"
-  homepage "https:github.comfabianlindforsreshape"
-  url "https:github.comfabianlindforsreshapearchiverefstagsv0.7.0.tar.gz"
+  homepage "https://github.com/fabianlindfors/reshape"
+  url "https://ghfast.top/https://github.com/fabianlindfors/reshape/archive/refs/tags/v0.7.0.tar.gz"
   sha256 "f348a21547cb2bfdc294ecc8a846eacec1708c29458db9afb6f8a1239f68d6cb"
   license "MIT"
-  head "https:github.comfabianlindforsreshape.git", branch: "main"
+  head "https://github.com/fabianlindfors/reshape.git", branch: "main"
 
   no_autobump! because: :requires_manual_review
 
@@ -27,7 +27,7 @@ class Reshape < Formula
   end
 
   test do
-    (testpath"migrationstest.toml").write <<~TOML
+    (testpath/"migrations/test.toml").write <<~TOML
       [[actions]]
       type = "create_table"
       name = "users"
@@ -44,9 +44,9 @@ class Reshape < Formula
     TOML
 
     assert_match "SET search_path TO migration_test",
-      shell_output("#{bin}reshape generate-schema-query")
+      shell_output("#{bin}/reshape generate-schema-query")
 
     assert_match "Error: error connecting to server:",
-      shell_output("#{bin}reshape migrate 2>&1", 1)
+      shell_output("#{bin}/reshape migrate 2>&1", 1)
   end
 end

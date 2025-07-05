@@ -1,10 +1,10 @@
 class Tfcmt < Formula
   desc "Notify the execution result of terraform command"
-  homepage "https:suzuki-shunsuke.github.iotfcmt"
-  url "https:github.comsuzuki-shunsuketfcmtarchiverefstagsv4.14.7.tar.gz"
+  homepage "https://suzuki-shunsuke.github.io/tfcmt/"
+  url "https://ghfast.top/https://github.com/suzuki-shunsuke/tfcmt/archive/refs/tags/v4.14.7.tar.gz"
   sha256 "a4c7407bded6d9d745872fa0813c6dee832bd28d6697a13416d5cf8cc6db4254"
   license "MIT"
-  head "https:github.comsuzuki-shunsuketfcmt.git", branch: "main"
+  head "https://github.com/suzuki-shunsuke/tfcmt.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "fd38759529061faca9c17bd9bd4f698709ebc102fb494648490730e240f3be27"
@@ -19,13 +19,13 @@ class Tfcmt < Formula
 
   def install
     ldflags = "-s -w -X main.version=#{version} -X main.commit=#{tap.user} -X main.date=#{time.iso8601}"
-    system "go", "build", *std_go_args(ldflags:), ".cmdtfcmt"
+    system "go", "build", *std_go_args(ldflags:), "./cmd/tfcmt"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}tfcmt version")
+    assert_match version.to_s, shell_output("#{bin}/tfcmt version")
 
-    (testpath"main.tf").write <<~HCL
+    (testpath/"main.tf").write <<~HCL
       resource "aws_instance" "example" {
         ami           = "ami-0c55b159cbfafe1f0"
         instance_type = "t2.micro"
@@ -39,7 +39,7 @@ class Tfcmt < Formula
     ENV["TFCMT_PR_NUMBER"] = "1"
     ENV["TFCMT_CONFIG"] = "test_config"
 
-    output = shell_output("#{bin}tfcmt plan 2>&1", 1)
+    output = shell_output("#{bin}/tfcmt plan 2>&1", 1)
     assert_match "config for tfcmt is not found at all", output
   end
 end

@@ -1,10 +1,10 @@
 class Kubeshark < Formula
   desc "API Traffic Analyzer providing real-time visibility into Kubernetes network"
-  homepage "https:www.kubeshark.co"
-  url "https:github.comkubesharkkubesharkarchiverefstagsv52.7.8.tar.gz"
+  homepage "https://www.kubeshark.co/"
+  url "https://ghfast.top/https://github.com/kubeshark/kubeshark/archive/refs/tags/v52.7.8.tar.gz"
   sha256 "02d518b9d0033862e64f1d7436fcc287970ba2a072a815b44c8191bfc1329d19"
   license "Apache-2.0"
-  head "https:github.comkubesharkkubeshark.git", branch: "master"
+  head "https://github.com/kubeshark/kubeshark.git", branch: "master"
 
   # Upstream creates releases that use a stable tag (e.g., `v1.2.3`) but are
   # labeled as "pre-release" on GitHub before the version is released, so it's
@@ -29,20 +29,20 @@ class Kubeshark < Formula
   def install
     ldflags = %W[
       -s -w
-      -X "github.comkubesharkkubesharkmisc.Platform=#{OS.kernel_name}_#{Hardware::CPU.arch}"
-      -X "github.comkubesharkkubesharkmisc.BuildTimestamp=#{time}"
-      -X "github.comkubesharkkubesharkmisc.Ver=v#{version}"
+      -X "github.com/kubeshark/kubeshark/misc.Platform=#{OS.kernel_name}_#{Hardware::CPU.arch}"
+      -X "github.com/kubeshark/kubeshark/misc.BuildTimestamp=#{time}"
+      -X "github.com/kubeshark/kubeshark/misc.Ver=v#{version}"
     ]
     system "go", "build", *std_go_args(ldflags:)
 
-    generate_completions_from_executable(bin"kubeshark", "completion")
+    generate_completions_from_executable(bin/"kubeshark", "completion")
   end
 
   test do
-    version_output = shell_output("#{bin}kubeshark version")
+    version_output = shell_output("#{bin}/kubeshark version")
     assert_equal "v#{version}", version_output.strip
 
-    tap_output = shell_output("#{bin}kubeshark tap 2>&1")
-    assert_match ".kubeconfig: no such file or directory", tap_output
+    tap_output = shell_output("#{bin}/kubeshark tap 2>&1")
+    assert_match ".kube/config: no such file or directory", tap_output
   end
 end

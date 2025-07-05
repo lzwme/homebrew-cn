@@ -1,10 +1,10 @@
 class Dprint < Formula
   desc "Pluggable and configurable code formatting platform written in Rust"
-  homepage "https:dprint.dev"
-  url "https:github.comdprintdprintarchiverefstags0.50.1.tar.gz"
+  homepage "https://dprint.dev/"
+  url "https://ghfast.top/https://github.com/dprint/dprint/archive/refs/tags/0.50.1.tar.gz"
   sha256 "85197a9469fe479fc278e77e87ede6eeb55b7d42d0a530e8b828f3ab9b213358"
   license "MIT"
-  head "https:github.comdprintdprint.git", branch: "main"
+  head "https://github.com/dprint/dprint.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "94f0c63c279e6557b34abaa5a3daf13ea74a4cc8ad12589eab0b3093f27b7fb9"
@@ -20,23 +20,23 @@ class Dprint < Formula
   depends_on "rust" => :build
   depends_on "xz" # required for lzma support
 
-  # update deps, upstream pr ref, https:github.comdprintdprintpull1003
+  # update deps, upstream pr ref, https://github.com/dprint/dprint/pull/1003
   patch do
-    url "https:github.comdprintdprintcommitbb6ddc6034f73adb188fb2c40aa34d0c6a7ec6de.patch?full_index=1"
+    url "https://github.com/dprint/dprint/commit/bb6ddc6034f73adb188fb2c40aa34d0c6a7ec6de.patch?full_index=1"
     sha256 "ea54bc0c12dbd3057a0c95d4c922fd35459f338112c14eb8dc4fe96eb742a733"
   end
 
   def install
     ENV.append "RUSTFLAGS", "-C link-arg=-Wl,-undefined,dynamic_lookup" if OS.mac?
 
-    system "cargo", "install", *std_cargo_args(path: "cratesdprint")
-    generate_completions_from_executable(bin"dprint", "completions")
+    system "cargo", "install", *std_cargo_args(path: "crates/dprint")
+    generate_completions_from_executable(bin/"dprint", "completions")
   end
 
   test do
-    (testpath"dprint.json").write <<~JSON
+    (testpath/"dprint.json").write <<~JSON
       {
-        "$schema": "https:dprint.devschemasv0.json",
+        "$schema": "https://dprint.dev/schemas/v0.json",
         "projectType": "openSource",
         "incremental": true,
         "typescript": {
@@ -47,25 +47,25 @@ class Dprint < Formula
         },
         "rustfmt": {
         },
-        "includes": ["***.{ts,tsx,js,jsx,json,md,rs}"],
+        "includes": ["**/*.{ts,tsx,js,jsx,json,md,rs}"],
         "excludes": [
-          "**node_modules",
-          "***-lock.json",
-          "**target"
+          "**/node_modules",
+          "**/*-lock.json",
+          "**/target"
         ],
         "plugins": [
-          "https:plugins.dprint.devtypescript-0.44.1.wasm",
-          "https:plugins.dprint.devjson-0.7.2.wasm",
-          "https:plugins.dprint.devmarkdown-0.4.3.wasm",
-          "https:plugins.dprint.devrustfmt-0.3.0.wasm"
+          "https://plugins.dprint.dev/typescript-0.44.1.wasm",
+          "https://plugins.dprint.dev/json-0.7.2.wasm",
+          "https://plugins.dprint.dev/markdown-0.4.3.wasm",
+          "https://plugins.dprint.dev/rustfmt-0.3.0.wasm"
         ]
       }
     JSON
 
-    (testpath"test.js").write("const arr = [1,2];")
-    system bin"dprint", "fmt", testpath"test.js"
-    assert_match "const arr = [1, 2];", File.read(testpath"test.js")
+    (testpath/"test.js").write("const arr = [1,2];")
+    system bin/"dprint", "fmt", testpath/"test.js"
+    assert_match "const arr = [1, 2];", File.read(testpath/"test.js")
 
-    assert_match "dprint #{version}", shell_output("#{bin}dprint --version")
+    assert_match "dprint #{version}", shell_output("#{bin}/dprint --version")
   end
 end

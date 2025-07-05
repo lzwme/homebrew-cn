@@ -1,10 +1,10 @@
 class Terrascan < Formula
   desc "Detect compliance and security violations across Infrastructure as Code"
-  homepage "https:runterrascan.io"
-  url "https:github.comtenableterrascanarchiverefstagsv1.19.9.tar.gz"
+  homepage "https://runterrascan.io/"
+  url "https://ghfast.top/https://github.com/tenable/terrascan/archive/refs/tags/v1.19.9.tar.gz"
   sha256 "13c120a63d7024ca8c54422e047424e318622625336ed77b2c1a36ef5fb1441c"
   license "Apache-2.0"
-  head "https:github.comtenableterrascan.git", branch: "master"
+  head "https://github.com/tenable/terrascan.git", branch: "master"
 
   bottle do
     rebuild 1
@@ -20,21 +20,21 @@ class Terrascan < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = "-s -w -X google.golang.orgprotobufreflectprotoregistry.conflictPolicy=ignore"
-    system "go", "build", *std_go_args(ldflags:), ".cmdterrascan"
+    ldflags = "-s -w -X google.golang.org/protobuf/reflect/protoregistry.conflictPolicy=ignore"
+    system "go", "build", *std_go_args(ldflags:), "./cmd/terrascan"
 
-    generate_completions_from_executable(bin"terrascan", "completion")
+    generate_completions_from_executable(bin/"terrascan", "completion")
   end
 
   test do
-    (testpath"ami.tf").write <<~HCL
+    (testpath/"ami.tf").write <<~HCL
       resource "aws_ami" "example" {
         name                = "terraform-example"
         virtualization_type = "hvm"
-        root_device_name    = "devxvda"
+        root_device_name    = "/dev/xvda"
 
         ebs_block_device {
-          device_name = "devxvda"
+          device_name = "/dev/xvda"
           snapshot_id = "snap-xxxxxxxx"
           volume_size = 8
         }
@@ -48,8 +48,8 @@ class Terrascan < Formula
       \tHigh                :\t0
     EOS
 
-    output = shell_output("#{bin}terrascan scan -f #{testpath}ami.tf -t aws")
+    output = shell_output("#{bin}/terrascan scan -f #{testpath}/ami.tf -t aws")
     assert_match expected, output
-    assert_match(Policies Validated\s+:\s+\d+, output)
+    assert_match(/Policies Validated\s+:\s+\d+/, output)
   end
 end

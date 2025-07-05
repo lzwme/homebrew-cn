@@ -1,10 +1,10 @@
 class Gosu < Formula
   desc "Pragmatic language for the JVM"
-  homepage "https:gosu-lang.github.io"
-  url "https:github.comgosu-langgosu-langarchiverefstagsv1.18.6.tar.gz"
+  homepage "https://gosu-lang.github.io/"
+  url "https://ghfast.top/https://github.com/gosu-lang/gosu-lang/archive/refs/tags/v1.18.6.tar.gz"
   sha256 "22e756ece97b9139f04d75dd19e61e13d923a8b777e8f457606a32e25c2e8447"
   license "Apache-2.0"
-  head "https:github.comgosu-langgosu-lang.git", branch: "master"
+  head "https://github.com/gosu-lang/gosu-lang.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "484794e12ddc3dd5531947172771bfa1af355d2b6c5d835cc12d2548f09c0af4"
@@ -19,19 +19,19 @@ class Gosu < Formula
   depends_on "maven" => :build
   depends_on "openjdk@11"
 
-  skip_clean "libexecext"
+  skip_clean "libexec/ext"
 
   def install
     ENV["JAVA_HOME"] = Language::Java.java_home("11")
 
     system "mvn", "package"
-    libexec.install Dir["gosutargetgosu-#{version}-fullgosu-#{version}*"]
-    (libexec"ext").mkpath
-    (bin"gosu").write_env_script libexec"bingosu", Language::Java.java_home_env("11")
+    libexec.install Dir["gosu/target/gosu-#{version}-full/gosu-#{version}/*"]
+    (libexec/"ext").mkpath
+    (bin/"gosu").write_env_script libexec/"bin/gosu", Language::Java.java_home_env("11")
   end
 
   test do
-    (testpath"test.gsp").write 'print ("burp")'
-    assert_equal "burp", shell_output("#{bin}gosu test.gsp").chomp
+    (testpath/"test.gsp").write 'print ("burp")'
+    assert_equal "burp", shell_output("#{bin}/gosu test.gsp").chomp
   end
 end

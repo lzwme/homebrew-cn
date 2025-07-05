@@ -1,7 +1,7 @@
 class Solidity < Formula
   desc "Contract-oriented programming language"
-  homepage "https:soliditylang.org"
-  url "https:github.comethereumsolidityreleasesdownloadv0.8.30solidity_0.8.30.tar.gz"
+  homepage "https://soliditylang.org"
+  url "https://ghfast.top/https://github.com/ethereum/solidity/releases/download/v0.8.30/solidity_0.8.30.tar.gz"
   sha256 "5e8d58dff551a18205e325c22f1a3b194058efbdc128853afd75d31b0568216d"
   license all_of: ["GPL-3.0-or-later", "MIT", "BSD-3-Clause", "Apache-2.0", "CC0-1.0"]
 
@@ -45,8 +45,8 @@ class Solidity < Formula
   end
 
   test do
-    (testpath"hello.sol").write <<~SOLIDITY
-       SPDX-License-Identifier: GPL-3.0
+    (testpath/"hello.sol").write <<~SOLIDITY
+      // SPDX-License-Identifier: GPL-3.0
       pragma solidity ^0.8.0;
       contract HelloWorld {
         function helloWorld() external pure returns (string memory) {
@@ -55,7 +55,7 @@ class Solidity < Formula
       }
     SOLIDITY
 
-    output = shell_output("#{bin}solc --bin hello.sol")
+    output = shell_output("#{bin}/solc --bin hello.sol")
     assert_match "hello.sol:HelloWorld", output
     assert_match "Binary:", output
   end

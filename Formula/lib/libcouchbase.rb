@@ -1,16 +1,16 @@
 class Libcouchbase < Formula
   desc "C library for Couchbase"
-  homepage "https:docs.couchbase.comc-sdkcurrenthello-worldstart-using-sdk.html"
-  url "https:packages.couchbase.comclientsclibcouchbase-3.3.17.tar.gz"
+  homepage "https://docs.couchbase.com/c-sdk/current/hello-world/start-using-sdk.html"
+  url "https://packages.couchbase.com/clients/c/libcouchbase-3.3.17.tar.gz"
   sha256 "2d48cac746efc4e01fc5292e9e359989bd666f1ebf8ae9d6bde49ef653a2d6a6"
   license "Apache-2.0"
-  head "https:github.comcouchbaselibcouchbase.git", branch: "master"
+  head "https://github.com/couchbase/libcouchbase.git", branch: "master"
 
   # github_releases is used here as there have been tags pushed for new
   # releases but without a corresponding GitHub release
   livecheck do
     url :head
-    regex(^?(\d+(?:\.\d+)+)$i)
+    regex(/^?(\d+(?:\.\d+)+)$/i)
     strategy :github_releases
   end
 
@@ -45,6 +45,6 @@ class Libcouchbase < Formula
 
   test do
     assert_match "LCB_ERR_CONNECTION_REFUSED",
-      shell_output("#{bin}cbc cat document_id -U couchbase:localhost:1 2>&1", 1).strip
+      shell_output("#{bin}/cbc cat document_id -U couchbase://localhost:1 2>&1", 1).strip
   end
 end

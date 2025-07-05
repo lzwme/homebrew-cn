@@ -1,7 +1,7 @@
 class Solid < Formula
   desc "Collision detection library for geometric objects in 3D space"
-  homepage "https:github.comdtectasolid3"
-  url "https:github.comdtectasolid3archiveec3e218616749949487f81165f8b478b16bc7932.tar.gz"
+  homepage "https://github.com/dtecta/solid3/"
+  url "https://ghfast.top/https://github.com/dtecta/solid3/archive/ec3e218616749949487f81165f8b478b16bc7932.tar.gz"
   version "3.5.8"
   sha256 "e3a23751ebbad5e35f50e685061f1ab9e1bd3777317efc6912567f55259d0f15"
   license any_of: ["GPL-2.0-only", "QPL-1.0"]
@@ -40,21 +40,21 @@ class Solid < Formula
     touch ["AUTHORS", "ChangeLog", "NEWS"]
 
     system "autoreconf", "--force", "--install", "--verbose"
-    system ".configure", "--infodir=#{info}", *std_configure_args
+    system "./configure", "--infodir=#{info}", *std_configure_args
 
     # Don't make examples, as they do not compile because the include
     # statements for the GLUT library are not platform independent
-    inreplace "Makefile", ^(SUBDIRS *=.*) examples( .+)?, '\1\2'
+    inreplace "Makefile", /^(SUBDIRS *=.*) examples( .+)?/, '\1\2'
 
     system "make", "install"
   end
 end
 
 __END__
-diff --git asrccomplexDT_CBox.h bsrccomplexDT_CBox.h
+diff --git a/src/complex/DT_CBox.h b/src/complex/DT_CBox.h
 index 7fc7c5d..16ce972 100644
---- asrccomplexDT_CBox.h
-+++ bsrccomplexDT_CBox.h
+--- a/src/complex/DT_CBox.h
++++ b/src/complex/DT_CBox.h
 @@ -131,4 +131,6 @@ inline DT_CBox operator-(const DT_CBox& b1, const DT_CBox& b2)
                     b1.getExtent() + b2.getExtent());
  }

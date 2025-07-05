@@ -2,8 +2,8 @@ class SaltLint < Formula
   include Language::Python::Virtualenv
 
   desc "Check for best practices in SaltStack"
-  homepage "https:github.comwarpnetsalt-lint"
-  url "https:files.pythonhosted.orgpackagese5e94df64ca147c084ca1cdbea9210549758d07f4ed94ac37d1cd1c99288ef5csalt-lint-0.9.2.tar.gz"
+  homepage "https://github.com/warpnet/salt-lint"
+  url "https://files.pythonhosted.org/packages/e5/e9/4df64ca147c084ca1cdbea9210549758d07f4ed94ac37d1cd1c99288ef5c/salt-lint-0.9.2.tar.gz"
   sha256 "7f74e682e7fd78722a6d391ea8edc9fc795113ecfd40657d68057d404ee7be8e"
   license "MIT"
 
@@ -24,12 +24,12 @@ class SaltLint < Formula
   depends_on "python@3.13"
 
   resource "pathspec" do
-    url "https:files.pythonhosted.orgpackagescabcf35b8446f4531a7cb215605d100cd88b7ac6f44ab3fc94870c120ab3adbfpathspec-0.12.1.tar.gz"
+    url "https://files.pythonhosted.org/packages/ca/bc/f35b8446f4531a7cb215605d100cd88b7ac6f44ab3fc94870c120ab3adbf/pathspec-0.12.1.tar.gz"
     sha256 "a482d51503a1ab33b1c67a6c3813a26953dbdc71c31dacaef9a838c4e29f5712"
   end
 
   resource "pyyaml" do
-    url "https:files.pythonhosted.orgpackages54ed79a089b6be93607fa5cdaedf301d7dfb23af5f25c398d5ead2525b063e17pyyaml-6.0.2.tar.gz"
+    url "https://files.pythonhosted.org/packages/54/ed/79a089b6be93607fa5cdaedf301d7dfb23af5f25c398d5ead2525b063e17/pyyaml-6.0.2.tar.gz"
     sha256 "d584d9ec91ad65861cc08d42e834324ef890a082e591037abe114850ff7bbc3e"
   end
 
@@ -38,12 +38,12 @@ class SaltLint < Formula
   end
 
   test do
-    (testpath"test.sls").write <<~YAML
-      tmptestfile:
+    (testpath/"test.sls").write <<~YAML
+      /tmp/testfile:
         file.managed:
-            - source: salt:{{unspaced_var}}example
+            - source: salt://{{unspaced_var}}/example
     YAML
-    out = shell_output("#{bin}salt-lint #{testpath}test.sls", 2)
+    out = shell_output("#{bin}/salt-lint #{testpath}/test.sls", 2)
     assert_match "[206] Jinja variables should have spaces before and after: '{{ var_name }}'", out
   end
 end

@@ -1,7 +1,7 @@
 class PythonTkAT312 < Formula
-  desc "Python interface to TclTk"
-  homepage "https:www.python.org"
-  url "https:www.python.orgftppython3.12.11Python-3.12.11.tgz"
+  desc "Python interface to Tcl/Tk"
+  homepage "https://www.python.org/"
+  url "https://www.python.org/ftp/python/3.12.11/Python-3.12.11.tgz"
   sha256 "7b8d59af8216044d2313de8120bfc2cc00a9bd2e542f15795e1d616c51faf3d6"
   license "Python-2.0"
 
@@ -29,22 +29,22 @@ class PythonTkAT312 < Formula
   end
 
   # Apply commit from open PR to fix TCL 9 threaded detection
-  # PR ref: https:github.compythoncpythonpull128103
+  # PR ref: https://github.com/python/cpython/pull/128103
   patch do
-    url "https:github.compythoncpythoncommita2019e226e4650cef35ebfde7ecd7ce044a4a670.patch?full_index=1"
+    url "https://github.com/python/cpython/commit/a2019e226e4650cef35ebfde7ecd7ce044a4a670.patch?full_index=1"
     sha256 "03c4b6a293d4a51f534858657717bdc1465c42acb3b78e64c41f9011f966e449"
   end
 
-  # Backport of https:github.compythoncpythoncommit47cbf038850852cdcbe7a404ed7c64542340d58a
-  # TODO: Remove if https:github.compythoncpythonpull124156 is backported to Python 3.12
+  # Backport of https://github.com/python/cpython/commit/47cbf038850852cdcbe7a404ed7c64542340d58a
+  # TODO: Remove if https://github.com/python/cpython/pull/124156 is backported to Python 3.12
   patch :DATA
 
   def install
     xy = Language::Python.major_minor_version python3
     python_include = if OS.mac?
-      Formula["python@#{xy}"].opt_frameworks"Python.frameworkVersions#{xy}includepython#{xy}"
+      Formula["python@#{xy}"].opt_frameworks/"Python.framework/Versions/#{xy}/include/python#{xy}"
     else
-      Formula["python@#{xy}"].opt_include"python#{xy}"
+      Formula["python@#{xy}"].opt_include/"python#{xy}"
     end
 
     cd "Modules" do
@@ -58,7 +58,7 @@ class PythonTkAT312 < Formula
               ext_modules = [
                 Extension("_tkinter", ["_tkinter.c", "tkappinit.c"],
                           define_macros=[("WITH_APPINIT", 1), ("TCL_WITH_EXTERNAL_TOMMATH", 1)],
-                          include_dirs=["#{python_include}internal", "#{Formula["tcl-tk"].opt_include"tcl-tk"}"],
+                          include_dirs=["#{python_include}/internal", "#{Formula["tcl-tk"].opt_include/"tcl-tk"}"],
                           libraries=["tcl#{tcltk_version}", "tcl#{tcltk_version.major}tk#{tcltk_version}"],
                           library_dirs=["#{Formula["tcl-tk"].opt_lib}"])
               ]
@@ -80,10 +80,10 @@ class PythonTkAT312 < Formula
 end
 
 __END__
-diff --git aLibtkinterttk.py bLibtkinterttk.py
+diff --git a/Lib/tkinter/ttk.py b/Lib/tkinter/ttk.py
 index 073b3ae20797c3..8ddb7f97e3b233 100644
---- aLibtkinterttk.py
-+++ bLibtkinterttk.py
+--- a/Lib/tkinter/ttk.py
++++ b/Lib/tkinter/ttk.py
 @@ -321,6 +321,8 @@ def _tclobj_to_py(val):
      elif hasattr(val, 'typename'): # some other (single) Tcl object
          val = _convert_stringval(val)
@@ -93,10 +93,10 @@ index 073b3ae20797c3..8ddb7f97e3b233 100644
      return val
 
  def tclobjs_to_py(adict):
-diff --git aModules_tkinter.c bModules_tkinter.c
+diff --git a/Modules/_tkinter.c b/Modules/_tkinter.c
 index b0b70ccb8cc3d3..45897817a56051 100644
---- aModules_tkinter.c
-+++ bModules_tkinter.c
+--- a/Modules/_tkinter.c
++++ b/Modules/_tkinter.c
 @@ -325,6 +325,7 @@ typedef struct {
      const Tcl_ObjType *ListType;
      const Tcl_ObjType *StringType;
@@ -111,7 +111,7 @@ index b0b70ccb8cc3d3..45897817a56051 100644
      v->UTF32StringType = Tcl_GetObjType("utf32string");
 +    v->PixelType = Tcl_GetObjType("pixel");
 
-     * Delete the 'exit' command, which can screw things up *
+     /* Delete the 'exit' command, which can screw things up */
      Tcl_DeleteCommand(v->interp, "exit");
 @@ -1236,7 +1238,8 @@ FromObj(TkappObject *tkapp, Tcl_Obj *value)
      }

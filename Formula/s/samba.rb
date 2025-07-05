@@ -1,16 +1,16 @@
 class Samba < Formula
   # Samba can be used to share directories with the guest in QEMU user-mode
-  # (SLIRP) networking with the `-net nic -net user,smb=sharethiswithguest`
+  # (SLIRP) networking with the `-net nic -net user,smb=/share/this/with/guest`
   # option. The shared folder appears in the guest as "\\10.0.2.4\qemu".
-  desc "SMBCIFS file, print, and login server for UNIX"
-  homepage "https:www.samba.org"
-  url "https:download.samba.orgpubsambastablesamba-4.22.2.tar.gz"
+  desc "SMB/CIFS file, print, and login server for UNIX"
+  homepage "https://www.samba.org/"
+  url "https://download.samba.org/pub/samba/stable/samba-4.22.2.tar.gz"
   sha256 "d9ac8e224a200159e62c651cf42307dc162212ec25d04eb6800b9a7ccfbcc3c1"
   license "GPL-3.0-or-later"
 
   livecheck do
-    url "https:www.samba.orgsambadownload"
-    regex(href=.*?samba[._-]v?(\d+(?:\.\d+)+)\.ti)
+    url "https://www.samba.org/samba/download/"
+    regex(/href=.*?samba[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   bottle do
@@ -59,35 +59,35 @@ class Samba < Formula
   conflicts_with "puzzles", because: "both install `net` binaries"
 
   resource "Parse::Yapp" do
-    url "https:cpan.metacpan.orgauthorsidWWBWBRASWELLParse-Yapp-1.21.tar.gz"
+    url "https://cpan.metacpan.org/authors/id/W/WB/WBRASWELL/Parse-Yapp-1.21.tar.gz"
     sha256 "3810e998308fba2e0f4f26043035032b027ce51ce5c8a52a8b8e340ca65f13e5"
   end
 
-  # upstream bug report, https:bugzilla.samba.orgshow_bug.cgi?id=10791
-  # https:bugzilla.samba.orgshow_bug.cgi?id=10626
-  # https:bugzilla.samba.orgshow_bug.cgi?id=9665
-  # upstream pr ref, https:gitlab.comsamba-teamsamba-merge_requests3902
+  # upstream bug report, https://bugzilla.samba.org/show_bug.cgi?id=10791
+  # https://bugzilla.samba.org/show_bug.cgi?id=10626
+  # https://bugzilla.samba.org/show_bug.cgi?id=9665
+  # upstream pr ref, https://gitlab.com/samba-team/samba/-/merge_requests/3902
   patch do
-    url "https:gitlab.comsamba-teamsamba-commita2736fe78a4e75e71b9bc53dc24c36d71b911d2a.diff"
+    url "https://gitlab.com/samba-team/samba/-/commit/a2736fe78a4e75e71b9bc53dc24c36d71b911d2a.diff"
     sha256 "7d1bf9eb26211e2ab9e3e67ae32308a3704ff9904ab2369e5d863e079ea8a03f"
   end
 
   def install
     # Skip building test that fails on ARM with error: initializer element is not a compile-time constant
-    inreplace "libldbwscript", \('test_ldb_comparison_fold',$, "\\0 enabled=False," if Hardware::CPU.arm?
+    inreplace "lib/ldb/wscript", /\('test_ldb_comparison_fold',$/, "\\0 enabled=False," if Hardware::CPU.arm?
 
     # avoid `perl module "Parse::Yapp::Driver" not found` error on macOS 10.xx (not required on 11)
     if !OS.mac? || MacOS.version < :big_sur
-      ENV.prepend_create_path "PERL5LIB", buildpath"libperl5"
-      ENV.prepend_path "PATH", buildpath"bin"
+      ENV.prepend_create_path "PERL5LIB", buildpath/"lib/perl5"
+      ENV.prepend_path "PATH", buildpath/"bin"
       resource("Parse::Yapp").stage do
         system "perl", "Makefile.PL", "INSTALL_BASE=#{buildpath}"
         system "make"
         system "make", "install"
       end
     end
-    ENV.append "LDFLAGS", "-Wl,-rpath,#{lib}private" if OS.linux?
-    system ".configure",
+    ENV.append "LDFLAGS", "-Wl,-rpath,#{lib}/private" if OS.linux?
+    system "./configure",
            "--bundled-libraries=NONE",
            "--private-libraries=!ldb",
            "--disable-cephfs",
@@ -115,51 +115,51 @@ class Samba < Formula
     system "make", "install"
     return unless OS.mac?
 
-    # macOS has its own SMB daemon as usrsbinsmbd, so rename our smbd to samba-dot-org-smbd to avoid conflict.
+    # macOS has its own SMB daemon as /usr/sbin/smbd, so rename our smbd to samba-dot-org-smbd to avoid conflict.
     # samba-dot-org-smbd is used by qemu.rb .
-    # Rename profiles as well to avoid conflicting with usrbinprofiles
-    mv sbin"smbd", sbin"samba-dot-org-smbd"
-    mv bin"profiles", bin"samba-dot-org-profiles"
+    # Rename profiles as well to avoid conflicting with /usr/bin/profiles
+    mv sbin/"smbd", sbin/"samba-dot-org-smbd"
+    mv bin/"profiles", bin/"samba-dot-org-profiles"
   end
 
   def caveats
     on_macos do
       <<~EOS
         To avoid conflicting with macOS system binaries, some files were installed with non-standard name:
-        - smbd:     #{HOMEBREW_PREFIX}sbinsamba-dot-org-smbd
-        - profiles: #{HOMEBREW_PREFIX}binsamba-dot-org-profiles
+        - smbd:     #{HOMEBREW_PREFIX}/sbin/samba-dot-org-smbd
+        - profiles: #{HOMEBREW_PREFIX}/bin/samba-dot-org-profiles
       EOS
     end
   end
 
   test do
     smbd = if OS.mac?
-      "#{sbin}samba-dot-org-smbd"
+      "#{sbin}/samba-dot-org-smbd"
     else
-      "#{sbin}smbd"
+      "#{sbin}/smbd"
     end
 
-    system smbd, "--build-options", "--configfile=devnull"
+    system smbd, "--build-options", "--configfile=/dev/null"
     system smbd, "--version"
 
-    mkdir_p "sambastate"
-    mkdir_p "sambadata"
-    (testpath"sambadatahello").write "hello"
+    mkdir_p "samba/state"
+    mkdir_p "samba/data"
+    (testpath/"samba/data/hello").write "hello"
 
     # mimic smb.conf generated by qemu
-    # https:github.comqemuqemublobv6.0.0netslirp.c#L862
-    (testpath"smb.conf").write <<~EOS
+    # https://github.com/qemu/qemu/blob/v6.0.0/net/slirp.c#L862
+    (testpath/"smb.conf").write <<~EOS
       [global]
-      private dir=#{testpath}sambastate
+      private dir=#{testpath}/samba/state
       interfaces=127.0.0.1
       bind interfaces only=yes
-      pid directory=#{testpath}sambastate
-      lock directory=#{testpath}sambastate
-      state directory=#{testpath}sambastate
-      cache directory=#{testpath}sambastate
-      ncalrpc dir=#{testpath}sambastatencalrpc
-      log file=#{testpath}sambastatelog.smbd
-      smb passwd file=#{testpath}sambastatesmbpasswd
+      pid directory=#{testpath}/samba/state
+      lock directory=#{testpath}/samba/state
+      state directory=#{testpath}/samba/state
+      cache directory=#{testpath}/samba/state
+      ncalrpc dir=#{testpath}/samba/state/ncalrpc
+      log file=#{testpath}/samba/state/log.smbd
+      smb passwd file=#{testpath}/samba/state/smbpasswd
       security = user
       map to guest = Bad User
       load printers = no
@@ -167,18 +167,18 @@ class Samba < Formula
       disable spoolss = yes
       usershare max shares = 0
       [test]
-      path=#{testpath}sambadata
+      path=#{testpath}/samba/data
       read only=no
       guest ok=yes
       force user=#{ENV["USER"]}
     EOS
 
     port = free_port
-    spawn smbd, "--debug-stdout", "-F", "--configfile=smb.conf", "--port=#{port}", "--debuglevel=4", in: "devnull"
+    spawn smbd, "--debug-stdout", "-F", "--configfile=smb.conf", "--port=#{port}", "--debuglevel=4", in: "/dev/null"
 
     sleep 5
     mkdir_p "got"
-    system bin"smbclient", "-p", port.to_s, "-N", "127.0.0.1test", "-c", "get hello #{testpath}gothello"
-    assert_equal "hello", (testpath"gothello").read
+    system bin/"smbclient", "-p", port.to_s, "-N", "//127.0.0.1/test", "-c", "get hello #{testpath}/got/hello"
+    assert_equal "hello", (testpath/"got/hello").read
   end
 end

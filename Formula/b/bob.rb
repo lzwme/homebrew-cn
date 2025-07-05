@@ -1,7 +1,7 @@
 class Bob < Formula
   desc "Version manager for neovim"
-  homepage "https:github.comMordechaiHadadbob"
-  url "https:github.comMordechaiHadadbobarchiverefstagsv4.1.1.tar.gz"
+  homepage "https://github.com/MordechaiHadad/bob"
+  url "https://ghfast.top/https://github.com/MordechaiHadad/bob/archive/refs/tags/v4.1.1.tar.gz"
   sha256 "2ed43e82505f462bcd8851579b55a5f37089825e1b717b3c928b2bfdbf5eecd0"
   license "MIT"
 
@@ -19,29 +19,29 @@ class Bob < Formula
 
   def install
     system "cargo", "install", *std_cargo_args
-    generate_completions_from_executable(bin"bob", "complete")
+    generate_completions_from_executable(bin/"bob", "complete")
   end
 
   test do
-    config_file = testpath"config.json"
+    config_file = testpath/"config.json"
     config_file.write <<~JSON
       {
-        "downloads_location": "#{testpath}.localsharebob",
-        "installation_location": "#{testpath}.localsharebobnvim-bin"
+        "downloads_location": "#{testpath}/.local/share/bob",
+        "installation_location": "#{testpath}/.local/share/bob/nvim-bin"
       }
     JSON
 
     ENV["BOB_CONFIG"] = config_file
-    mkdir_p testpath".localsharebob"
-    mkdir_p testpath".localsharenvim-bin"
+    mkdir_p testpath/".local/share/bob"
+    mkdir_p testpath/".local/share/nvim-bin"
 
     neovim_version = "v0.11.0"
-    system bin"bob", "install", neovim_version
-    assert_match neovim_version, shell_output("#{bin}bob list")
-    assert_path_exists testpath".localsharebob"neovim_version
+    system bin/"bob", "install", neovim_version
+    assert_match neovim_version, shell_output("#{bin}/bob list")
+    assert_path_exists testpath/".local/share/bob"/neovim_version
 
     # failed to run `bob erase` in linux CI
-    # upstream bug report, https:github.comMordechaiHadadbobissues287
-    system bin"bob", "erase" unless OS.linux?
+    # upstream bug report, https://github.com/MordechaiHadad/bob/issues/287
+    system bin/"bob", "erase" unless OS.linux?
   end
 end

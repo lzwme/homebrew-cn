@@ -1,10 +1,10 @@
 class Blueutil < Formula
-  desc "Getset bluetooth power and discoverable state"
-  homepage "https:github.comtoyblueutil"
-  url "https:github.comtoyblueutilarchiverefstagsv2.12.0.tar.gz"
+  desc "Get/set bluetooth power and discoverable state"
+  homepage "https://github.com/toy/blueutil"
+  url "https://ghfast.top/https://github.com/toy/blueutil/archive/refs/tags/v2.12.0.tar.gz"
   sha256 "944d5d1a3003a453e5c6eb05e860185763f4898c6e419a3858d981743f88afcd"
   license "MIT"
-  head "https:github.comtoyblueutil.git", branch: "master"
+  head "https://github.com/toy/blueutil.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "aed3c4cc18a795d9b00d44c727e304e95a30d779adf1a3f5516c5ef919d2222d"
@@ -23,13 +23,13 @@ class Blueutil < Formula
                "SDKROOT=",
                "SYMROOT=build",
                "MACOSX_DEPLOYMENT_TARGET=#{MacOS.version}"
-    bin.install "buildReleaseblueutil"
+    bin.install "build/Release/blueutil"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}blueutil --version")
+    assert_match version.to_s, shell_output("#{bin}/blueutil --version")
     # We cannot test any useful command since Sonoma as OS privacy restrictions
     # will wait until Bluetooth permission is either accepted or rejected.
-    system bin"blueutil", "--discoverable", "0" if MacOS.version < :sonoma
+    system bin/"blueutil", "--discoverable", "0" if MacOS.version < :sonoma
   end
 end

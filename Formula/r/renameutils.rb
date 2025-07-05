@@ -1,14 +1,14 @@
 class Renameutils < Formula
   desc "Tools for file renaming"
-  homepage "https:www.nongnu.orgrenameutils"
-  url "https:download.savannah.gnu.orgreleasesrenameutilsrenameutils-0.12.0.tar.gz"
+  homepage "https://www.nongnu.org/renameutils/"
+  url "https://download.savannah.gnu.org/releases/renameutils/renameutils-0.12.0.tar.gz"
   sha256 "cbd2f002027ccf5a923135c3f529c6d17fabbca7d85506a394ca37694a9eb4a3"
   license "GPL-3.0-or-later"
   revision 3
 
   livecheck do
-    url "https:download.savannah.gnu.orgreleasesrenameutils"
-    regex(href=.*?renameutils[._-]v?(\d+(?:\.\d+)+)\.ti)
+    url "https://download.savannah.gnu.org/releases/renameutils/"
+    regex(/href=.*?renameutils[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -36,13 +36,13 @@ class Renameutils < Formula
   conflicts_with "ipmiutil", because: "both install `icmd` binaries"
 
   # Use the GNU versions of certain system utilities. See:
-  # https:trac.macports.orgticket24525
+  # https://trac.macports.org/ticket/24525
   # Patches rewritten at version 0.12.0 to handle file changes.
   # The fourth patch is new and fixes a Makefile syntax error that causes
   # make install to fail.  Reported upstream via email and fixed in HEAD.
   # Remove patch #4 at version > 0.12.0.  The first three should persist.
   patch do
-    url "https:raw.githubusercontent.comHomebrewformula-patches85fa66a9renameutils0.12.0.patch"
+    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/85fa66a9/renameutils/0.12.0.patch"
     sha256 "ed964edbaf388db40a787ffd5ca34d525b24c23d3589c68dc9aedd8b45160cd9"
   end
 
@@ -55,15 +55,15 @@ class Renameutils < Formula
     # Help old config scripts identify arm64 linux
     args << "--build=aarch64-unknown-linux-gnu" if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
 
-    system ".configure", "--with-packager=Homebrew", *args, *std_configure_args
+    system "./configure", "--with-packager=Homebrew", *args, *std_configure_args
     system "make"
     ENV.deparallelize # parallel install fails
     system "make", "install"
   end
 
   test do
-    (testpath"test.txt").write "Hello World!"
-    pipe_output("#{bin}icp test.txt", ".2\n")
+    (testpath/"test.txt").write "Hello World!"
+    pipe_output("#{bin}/icp test.txt", ".2\n")
     assert_equal File.read("test.txt"), File.read("test.txt.2")
   end
 end

@@ -1,10 +1,10 @@
 class Catimg < Formula
   desc "Insanely fast image printing in your terminal"
-  homepage "https:github.composvacatimg"
-  url "https:github.composvacatimgarchiverefstags2.7.0.tar.gz"
+  homepage "https://github.com/posva/catimg"
+  url "https://ghfast.top/https://github.com/posva/catimg/archive/refs/tags/2.7.0.tar.gz"
   sha256 "3a6450316ff62fb07c3facb47ea208bf98f62abd02783e88c56f2a6508035139"
   license "MIT"
-  head "https:github.composvacatimg.git", branch: "master"
+  head "https://github.com/posva/catimg.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -34,6 +34,6 @@ class Catimg < Formula
   end
 
   test do
-    system bin"catimg", test_fixtures("test.png")
+    system bin/"catimg", test_fixtures("test.png")
   end
 end

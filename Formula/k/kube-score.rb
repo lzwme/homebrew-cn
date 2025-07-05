@@ -1,11 +1,11 @@
 class KubeScore < Formula
   desc "Kubernetes object analysis recommendations for improved reliability and security"
-  homepage "https:kube-score.com"
-  url "https:github.comzeglkube-score.git",
+  homepage "https://kube-score.com"
+  url "https://github.com/zegl/kube-score.git",
       tag:      "v1.20.0",
       revision: "81371e9f53b633bec69423fc298295bd71bd869a"
   license "MIT"
-  head "https:github.comzeglkube-score.git", branch: "master"
+  head "https://github.com/zegl/kube-score.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "8c59a7d469dad58f1fa600c7e28fd9355ea66991c5c96921c72408eb631c8823"
@@ -25,20 +25,20 @@ class KubeScore < Formula
       -X main.commit=#{Utils.git_head}
       -X main.date=#{time.iso8601}
     ]
-    system "go", "build", *std_go_args(ldflags:), ".cmdkube-score"
+    system "go", "build", *std_go_args(ldflags:), "./cmd/kube-score"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}kube-score version")
+    assert_match version.to_s, shell_output("#{bin}/kube-score version")
 
-    (testpath"test.yaml").write <<~YAML
+    (testpath/"test.yaml").write <<~YAML
       apiVersion: v1
       kind: Service
       metadata:
         name: node-port-service-with-ignore
         namespace: foospace
         annotations:
-          kube-scoreignore: service-type
+          kube-score/ignore: service-type
       spec:
         selector:
           app: my-app
@@ -48,6 +48,6 @@ class KubeScore < Formula
           targetPort: 8080
         type: NodePort
     YAML
-    assert_match "The services selector does not match any pods", shell_output("#{bin}kube-score score test.yaml", 1)
+    assert_match "The services selector does not match any pods", shell_output("#{bin}/kube-score score test.yaml", 1)
   end
 end

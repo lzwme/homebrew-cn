@@ -1,7 +1,7 @@
 class Faac < Formula
   desc "ISO AAC audio encoder"
-  homepage "https:sourceforge.netprojectsfaac"
-  url "https:github.comknik0faacarchiverefstagsfaac-1.31.1.tar.gz"
+  homepage "https://sourceforge.net/projects/faac/"
+  url "https://ghfast.top/https://github.com/knik0/faac/archive/refs/tags/faac-1.31.1.tar.gz"
   sha256 "3191bf1b131f1213221ed86f65c2dfabf22d41f6b3771e7e65b6d29478433527"
   license "LGPL-2.1-or-later"
 
@@ -20,13 +20,13 @@ class Faac < Formula
   depends_on "libtool" => :build
 
   def install
-    system ".bootstrap"
-    system ".configure", *std_configure_args
+    system "./bootstrap"
+    system "./configure", *std_configure_args
     system "make", "install"
   end
 
   test do
-    system bin"faac", test_fixtures("test.mp3"), "-P", "-o", "test.m4a"
-    assert_path_exists testpath"test.m4a"
+    system bin/"faac", test_fixtures("test.mp3"), "-P", "-o", "test.m4a"
+    assert_path_exists testpath/"test.m4a"
   end
 end

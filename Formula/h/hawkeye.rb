@@ -1,7 +1,7 @@
 class Hawkeye < Formula
   desc "Simple license header checker and formatter, in multiple distribution forms"
-  homepage "https:github.comkorandoruhawkeye"
-  url "https:github.comkorandoruhawkeyearchiverefstagsv6.1.1.tar.gz"
+  homepage "https://github.com/korandoru/hawkeye"
+  url "https://ghfast.top/https://github.com/korandoru/hawkeye/archive/refs/tags/v6.1.1.tar.gz"
   sha256 "9a3f4b4d44bbbc887c3aeaeb4da9a43ae3eeee96699c6afc79e21d2636833739"
   license "Apache-2.0"
 
@@ -22,9 +22,9 @@ class Hawkeye < Formula
   end
 
   test do
-    assert_includes shell_output("#{bin}hawkeye --version"), "hawkeye \nversion: #{version}\n"
+    assert_includes shell_output("#{bin}/hawkeye --version"), "hawkeye \nversion: #{version}\n"
 
-    configfile = testpath"licenserc.toml"
+    configfile = testpath/"licenserc.toml"
     configfile.write <<~EOS
       inlineHeader = """
       Copyright © 1970
@@ -33,7 +33,7 @@ class Hawkeye < Formula
       includes = ["licenserc.toml"]
     EOS
 
-    shell_output("#{bin}hawkeye format", 1)
+    shell_output("#{bin}/hawkeye format", 1)
     assert File.read("licenserc.toml").start_with?("# Copyright © 1970")
   end
 end

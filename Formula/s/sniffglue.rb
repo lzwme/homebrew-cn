@@ -1,7 +1,7 @@
 class Sniffglue < Formula
   desc "Secure multithreaded packet sniffer"
-  homepage "https:github.comkpcyrdsniffglue"
-  url "https:github.comkpcyrdsniffgluearchiverefstagsv0.16.1.tar.gz"
+  homepage "https://github.com/kpcyrd/sniffglue"
+  url "https://ghfast.top/https://github.com/kpcyrd/sniffglue/archive/refs/tags/v0.16.1.tar.gz"
   sha256 "f30b31861b07160b4efe23eda996491aaf885037d6907227d2230cd0e7db3265"
   license "GPL-3.0-or-later"
 
@@ -30,18 +30,18 @@ class Sniffglue < Formula
     system "make", "docs"
 
     etc.install "sniffglue.conf"
-    man1.install "docssniffglue.1"
+    man1.install "docs/sniffglue.1"
 
-    generate_completions_from_executable(bin"sniffglue", "--gen-completions")
+    generate_completions_from_executable(bin/"sniffglue", "--gen-completions")
   end
 
   test do
     resource "homebrew-testdata" do
-      url "https:github.comkpcyrdsniffglueraw163ca299bab711fb0082de216d07d7089c176de6pcapsSkypeIRC.pcap"
+      url "https://github.com/kpcyrd/sniffglue/raw/163ca299bab711fb0082de216d07d7089c176de6/pcaps/SkypeIRC.pcap"
       sha256 "bac79a9c3413637f871193589d848697af895b7f2700d949022224d59aa6830f"
     end
 
     testpath.install resource("homebrew-testdata")
-    system bin"sniffglue", "-r", "SkypeIRC.pcap"
+    system bin/"sniffglue", "-r", "SkypeIRC.pcap"
   end
 end

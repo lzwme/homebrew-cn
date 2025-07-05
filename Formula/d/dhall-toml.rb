@@ -1,10 +1,10 @@
 class DhallToml < Formula
   desc "Convert between Dhall and Toml"
-  homepage "https:github.comdhall-langdhall-haskelltreemaindhall-toml"
-  url "https:hackage.haskell.orgpackagedhall-toml-1.0.4dhall-toml-1.0.4.tar.gz"
+  homepage "https://github.com/dhall-lang/dhall-haskell/tree/main/dhall-toml"
+  url "https://hackage.haskell.org/package/dhall-toml-1.0.4/dhall-toml-1.0.4.tar.gz"
   sha256 "e2a71fe3a9939728b4829f32146ca949b3c5b3f61e1245486a9fd43ba86f32dc"
   license "BSD-3-Clause"
-  head "https:github.comdhall-langdhall-haskell.git", branch: "main"
+  head "https://github.com/dhall-lang/dhall-haskell.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "fa04be536e7446641318c9d7ee241d0280b24061fda69b889a2988f48898e8b9"
@@ -28,7 +28,7 @@ class DhallToml < Formula
   end
 
   test do
-    assert_match "value = 1\n\n", pipe_output("#{bin}dhall-to-toml", "{ value = 1 }", 0)
-    assert_match "\n", pipe_output("#{bin}dhall-to-toml", "{ value = None Natural }", 0)
+    assert_match "value = 1\n\n", pipe_output("#{bin}/dhall-to-toml", "{ value = 1 }", 0)
+    assert_match "\n", pipe_output("#{bin}/dhall-to-toml", "{ value = None Natural }", 0)
   end
 end

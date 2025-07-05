@@ -1,18 +1,18 @@
 class VorbisTools < Formula
   desc "Ogg Vorbis CODEC tools"
-  homepage "https:github.comxiphvorbis-tools"
-  url "https:ftp.osuosl.orgpubxiphreleasesvorbisvorbis-tools-1.4.3.tar.gz"
-  mirror "https:mirror.csclub.uwaterloo.caxiphreleasesvorbisvorbis-tools-1.4.3.tar.gz"
+  homepage "https://github.com/xiph/vorbis-tools"
+  url "https://ftp.osuosl.org/pub/xiph/releases/vorbis/vorbis-tools-1.4.3.tar.gz"
+  mirror "https://mirror.csclub.uwaterloo.ca/xiph/releases/vorbis/vorbis-tools-1.4.3.tar.gz"
   sha256 "a1fe3ddc6777bdcebf6b797e7edfe0437954b24756ffcc8c6b816b63e0460dde"
   license all_of: [
-    "LGPL-2.0-or-later", # intl (libintl)
-    "GPL-2.0-or-later", # share
-    "GPL-2.0-only", # oggenc, vorbiscomment
+    "LGPL-2.0-or-later", # intl/ (libintl)
+    "GPL-2.0-or-later", # share/
+    "GPL-2.0-only", # oggenc/, vorbiscomment/
   ]
 
   livecheck do
-    url "https:ftp.osuosl.orgpubxiphreleasesvorbis?C=M&O=D"
-    regex(%r{href=(?:["']?|.*?)vorbis-tools[._-]v?(\d+(?:\.\d+)+)\.t}i)
+    url "https://ftp.osuosl.org/pub/xiph/releases/vorbis/?C=M&O=D"
+    regex(%r{href=(?:["']?|.*?/)vorbis-tools[._-]v?(\d+(?:\.\d+)+)\.t}i)
   end
 
   bottle do
@@ -48,14 +48,14 @@ class VorbisTools < Formula
     # Fix compile with newer Clang
     ENV.append_to_cflags "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1403
 
-    system ".configure", *std_configure_args, "--disable-nls", "--without-speex"
+    system "./configure", *std_configure_args, "--disable-nls", "--without-speex"
     system "make", "install"
   end
 
   test do
-    system bin"oggenc", test_fixtures("test.wav"), "-o", "test.ogg"
-    assert_path_exists testpath"test.ogg"
-    output = shell_output("#{bin}ogginfo test.ogg")
-    assert_match "20.625000 kbs", output
+    system bin/"oggenc", test_fixtures("test.wav"), "-o", "test.ogg"
+    assert_path_exists testpath/"test.ogg"
+    output = shell_output("#{bin}/ogginfo test.ogg")
+    assert_match "20.625000 kb/s", output
   end
 end

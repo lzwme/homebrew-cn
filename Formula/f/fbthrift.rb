@@ -1,10 +1,10 @@
 class Fbthrift < Formula
   desc "Facebook's branch of Apache Thrift, including a new C++ server"
-  homepage "https:github.comfacebookfbthrift"
-  url "https:github.comfacebookfbthriftarchiverefstagsv2025.06.30.00.tar.gz"
+  homepage "https://github.com/facebook/fbthrift"
+  url "https://ghfast.top/https://github.com/facebook/fbthrift/archive/refs/tags/v2025.06.30.00.tar.gz"
   sha256 "41825864dfeee3e6bbda7e74eed771e5c9802573631a8fd1d082367fc16627a2"
   license "Apache-2.0"
-  head "https:github.comfacebookfbthrift.git", branch: "main"
+  head "https://github.com/facebook/fbthrift.git", branch: "main"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "7af61ef2c87a34dfc0fa155f723e8574eca5817716703c6858fcababea874360"
@@ -49,15 +49,15 @@ class Fbthrift < Formula
 
   def install
     # Work around build failure with Xcode 16
-    # Issue ref: https:github.comfacebookfbthriftissues618
-    # Issue ref: https:github.comfacebookfbthriftissues607
+    # Issue ref: https://github.com/facebook/fbthrift/issues/618
+    # Issue ref: https://github.com/facebook/fbthrift/issues/607
     ENV.append "CXXFLAGS", "-fno-assume-unique-vtables" if DevelopmentTools.clang_build_version >= 1600
 
     ENV.llvm_clang if OS.mac? && (DevelopmentTools.clang_build_version <= 1100)
     ENV["OPENSSL_ROOT_DIR"] = Formula["openssl@3"].opt_prefix
 
     # The static libraries are a bit annoying to build. If modifying this formula
-    # to include them, make sure `binthrift1` links with the dynamic libraries
+    # to include them, make sure `bin/thrift1` links with the dynamic libraries
     # instead of the static ones (e.g. `libcompiler_base`, `libcompiler_lib`, etc.)
     shared_args = ["-DBUILD_SHARED_LIBS=ON", "-DCMAKE_INSTALL_RPATH=#{rpath}", "-DCMAKE_POSITION_INDEPENDENT_CODE=ON"]
     if OS.mac?
@@ -65,21 +65,21 @@ class Fbthrift < Formula
       shared_args << "-DCMAKE_EXE_LINKER_FLAGS=-Wl,-dead_strip_dylibs"
     end
 
-    # We build in-source to avoid an error from thriftlibcpp2test:
-    # Output path ...buildsharedthriftlibcpp2test......conformanceif is unusable or not a directory
+    # We build in-source to avoid an error from thrift/lib/cpp2/test:
+    # Output path .../build/shared/thrift/lib/cpp2/test/../../../conformance/if is unusable or not a directory
     system "cmake", "-S", ".", "-B", ".", *shared_args, *std_cmake_args
     system "cmake", "--build", "."
     system "cmake", "--install", "."
 
-    elisp.install "thriftcontribthrift.el"
-    (share"vimvimfilessyntax").install "thriftcontribthrift.vim"
+    elisp.install "thrift/contrib/thrift.el"
+    (share/"vim/vimfiles/syntax").install "thrift/contrib/thrift.vim"
 
     # Save a copy of FindxxHash.cmake to test with as it is used in FBThriftConfig.cmake
-    (libexec"cmake").install "buildfbcode_builderCMakeFindXxhash.cmake"
+    (libexec/"cmake").install "build/fbcode_builder/CMake/FindXxhash.cmake"
   end
 
   test do
-    (testpath"example.thrift").write <<~THRIFT
+    (testpath/"example.thrift").write <<~THRIFT
       namespace cpp tamvm
 
       service ExampleService {
@@ -87,21 +87,21 @@ class Fbthrift < Formula
       }
     THRIFT
 
-    system bin"thrift1", "--gen", "mstch_cpp2", "example.thrift"
-    assert_path_exists testpath"gen-cpp2"
-    assert_predicate testpath"gen-cpp2", :directory?
+    system bin/"thrift1", "--gen", "mstch_cpp2", "example.thrift"
+    assert_path_exists testpath/"gen-cpp2"
+    assert_predicate testpath/"gen-cpp2", :directory?
 
     # TODO: consider adding an actual test
-    (testpath"test.cpp").write "int main() { return 0; }\n"
+    (testpath/"test.cpp").write "int main() { return 0; }\n"
 
     # Test CMake package to make sure required dependencies without linkage are kept,
     # Link to `FBThrift::transport` as it uses path to `zstd` shared library
-    (testpath"CMakeLists.txt").write <<~CMAKE
+    (testpath/"CMakeLists.txt").write <<~CMAKE
       cmake_minimum_required(VERSION 3.5)
       project(test LANGUAGES CXX)
 
-      list(APPEND CMAKE_MODULE_PATH "#{Formula["fizz"].opt_libexec}cmake")
-      list(APPEND CMAKE_MODULE_PATH "#{opt_libexec}cmake")
+      list(APPEND CMAKE_MODULE_PATH "#{Formula["fizz"].opt_libexec}/cmake")
+      list(APPEND CMAKE_MODULE_PATH "#{opt_libexec}/cmake")
       find_package(gflags REQUIRED)
       find_package(FBThrift CONFIG REQUIRED)
 

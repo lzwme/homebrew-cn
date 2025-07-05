@@ -1,7 +1,7 @@
 class Rink < Formula
   desc "Unit conversion tool and library written in rust"
-  homepage "https:rinkcalc.appabout"
-  url "https:github.comtiffany352rink-rsarchiverefstagsv0.8.0.tar.gz"
+  homepage "https://rinkcalc.app/about"
+  url "https://ghfast.top/https://github.com/tiffany352/rink-rs/archive/refs/tags/v0.8.0.tar.gz"
   sha256 "40048e84c2b606e50bf05dec2813acedeb48066cd48537d0dea453a72d000d60"
   license all_of: ["MPL-2.0", "GPL-3.0-or-later"]
 
@@ -30,17 +30,17 @@ class Rink < Formula
     system "cargo", "install", *std_cargo_args(path: "cli")
 
     system "make", "man"
-    man1.install "buildrink.1"
-    man5.install "buildrink-dates.5"
-    man5.install "buildrink-defs.5"
-    man5.install "buildrink.5"
-    man7.install "buildrink.7"
+    man1.install "build/rink.1"
+    man5.install "build/rink-dates.5"
+    man5.install "build/rink-defs.5"
+    man5.install "build/rink.5"
+    man7.install "build/rink.7"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}rink --version")
+    assert_match version.to_s, shell_output("#{bin}/rink --version")
 
-    output = shell_output("#{bin}rink '1 inch to centi meter'")
+    output = shell_output("#{bin}/rink '1 inch to centi meter'")
     assert_match "> 1 inch to centi meter", output
     assert_match "2.54 centi meter (length)", output
   end

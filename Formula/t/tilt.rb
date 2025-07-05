@@ -1,11 +1,11 @@
 class Tilt < Formula
   desc "Define your dev environment as code. For microservice apps on Kubernetes"
-  homepage "https:tilt.dev"
-  url "https:github.comtilt-devtilt.git",
+  homepage "https://tilt.dev/"
+  url "https://github.com/tilt-dev/tilt.git",
       tag:      "v0.35.0",
       revision: "f43ca2120a05906725b67493f6cf35b23ec720bf"
   license "Apache-2.0"
-  head "https:github.comtilt-devtilt.git", branch: "master"
+  head "https://github.com/tilt-dev/tilt.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -36,14 +36,14 @@ class Tilt < Formula
       -X main.commit=#{Utils.git_head}
       -X main.date=#{time.iso8601}
     ]
-    system "go", "build", *std_go_args(ldflags:), ".cmdtilt"
+    system "go", "build", *std_go_args(ldflags:), "./cmd/tilt"
 
-    generate_completions_from_executable(bin"tilt", "completion")
+    generate_completions_from_executable(bin/"tilt", "completion")
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}tilt version")
+    assert_match version.to_s, shell_output("#{bin}/tilt version")
 
-    assert_match "Error: No tilt apiserver found: tilt-default", shell_output("#{bin}tilt api-resources 2>&1", 1)
+    assert_match "Error: No tilt apiserver found: tilt-default", shell_output("#{bin}/tilt api-resources 2>&1", 1)
   end
 end

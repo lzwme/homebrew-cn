@@ -1,7 +1,7 @@
 class Lammps < Formula
   desc "Molecular Dynamics Simulator"
-  homepage "https:docs.lammps.org"
-  url "https:github.comlammpslammpsarchiverefstagsstable_29Aug2024_update3.tar.gz"
+  homepage "https://docs.lammps.org/"
+  url "https://ghfast.top/https://github.com/lammps/lammps/archive/refs/tags/stable_29Aug2024_update3.tar.gz"
   # lammps releases are named after their release date. We transform it to
   # YYYY-MM-DD (year-month-day) so that we get a sane version numbering.
   # We only track stable releases as announced on the LAMMPS homepage.
@@ -14,7 +14,7 @@ class Lammps < Formula
   # to be able to do proper `Version` comparison.
   livecheck do
     url :stable
-    regex(^stable[._-](\d{1,2}\w+\d{2,4})(?:[._-](update\d*))?$i)
+    regex(/^stable[._-](\d{1,2}\w+\d{2,4})(?:[._-](update\d*))?$/i)
     strategy :git do |tags, regex|
       tags.map do |tag|
         match = tag.match(regex)
@@ -60,8 +60,8 @@ class Lammps < Formula
     %w[serial mpi].each do |variant|
       args = [
         "-S", "cmake", "-B", "build_#{variant}",
-        "-C", "cmakepresetsall_on.cmake",
-        "-C", "cmakepresetsnolib.cmake",
+        "-C", "cmake/presets/all_on.cmake",
+        "-C", "cmake/presets/nolib.cmake",
         "-DPKG_INTEL=no",
         "-DPKG_KIM=yes",
         "-DPKG_VORONOI=yes",
@@ -85,8 +85,8 @@ class Lammps < Formula
   end
 
   test do
-    system bin"lmp_serial", "-in", pkgshare"benchin.lj"
-    output = shell_output("#{bin}lmp_serial -h")
+    system bin/"lmp_serial", "-in", pkgshare/"bench/in.lj"
+    output = shell_output("#{bin}/lmp_serial -h")
     %w[KSPACE POEMS VORONOI].each do |pkg|
       assert_match pkg, output
     end

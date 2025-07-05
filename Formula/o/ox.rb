@@ -1,10 +1,10 @@
 class Ox < Formula
   desc "Independent Rust text editor that runs in your terminal"
-  homepage "https:github.comcurlpipeox"
-  url "https:github.comcurlpipeoxarchiverefstags0.7.7.tar.gz"
+  homepage "https://github.com/curlpipe/ox"
+  url "https://ghfast.top/https://github.com/curlpipe/ox/archive/refs/tags/0.7.7.tar.gz"
   sha256 "9dc869836e92beb5806739da25bf929b45bbb4173a6bffac31b762fcece74a0a"
   license "GPL-2.0-only"
-  head "https:github.comcurlpipeox.git", branch: "master"
+  head "https://github.com/curlpipe/ox.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "8f9eb95e6a465fefc00454f9f2df68ca87ef65122639b18f8b65b2ebbf8b5240"
@@ -24,7 +24,7 @@ class Ox < Formula
 
   test do
     # ox is a TUI application, hard to test in CI
-    # see https:github.comcurlpipeoxissues178 for discussions
-    assert_match version.to_s, shell_output("#{bin}ox --version")
+    # see https://github.com/curlpipe/ox/issues/178 for discussions
+    assert_match version.to_s, shell_output("#{bin}/ox --version")
   end
 end

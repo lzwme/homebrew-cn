@@ -1,7 +1,7 @@
 class Tmx < Formula
   desc "Portable C library to load tiled maps in your games"
-  homepage "https:libtmx.readthedocs.ioenlatest"
-  url "https:github.combaylejtmxarchiverefstagstmx_1.10.0.tar.gz"
+  homepage "https://libtmx.readthedocs.io/en/latest/"
+  url "https://ghfast.top/https://github.com/baylej/tmx/archive/refs/tags/tmx_1.10.0.tar.gz"
   sha256 "8ee42d1728c567d6047a58b2624c39c8844aaf675c470f9f284c4ed17e94188f"
   license "BSD-2-Clause"
 
@@ -28,23 +28,23 @@ class Tmx < Formula
   end
 
   test do
-    (testpath"test.tmx").write <<~XML
+    (testpath/"test.tmx").write <<~XML
       <?xml version="1.0" encoding="UTF-8"?>
       <map version="1.0" tiledversion="1.0.2" orientation="orthogonal" renderorder="right-down" width="28" height="18" tilewidth="32" tileheight="32">
         <tileset firstgid="1" name="base" tilewidth="32" tileheight="32" spacing="1" tilecount="9" columns="3">
-          <image source="numbers.png" width="100" height="100">
-          <tile id="0">
-        <tileset>
+          <image source="numbers.png" width="100" height="100"/>
+          <tile id="0"/>
+        </tileset>
         <group name="Group">
           <layer name="Layer" width="28" height="18">
           <data encoding="base64" compression="zlib">
-          eJy9lN0OgCAIRjX6v1fuLXZxr7BB9bq4twochioLaVUfqAB11qfyLisYK1nOFsnReztYr8bTsvP9vJ0Yfyq7yno6x7iuF7mucQRH3WeZYL96y4TZmfVyeueTV4Pq8fXq+YM+Ibk0g9GIv1sX56OTTnGxmqwTWd80X6T3+ffgPRubNfOjEv0DC3suKTzoHYfV+RtgJlkd7f7fTm4OWi6GdZXNn93H1rqLzBIoiCFE=
-          <data>
-          <layer>
-        <group>
-      <map>
+          eJy9lN0OgCAIRjX/6v1fuLXZxr7BB9bq4twochioLaVUfqAB11qfyLisYK1nOFsnReztYr8bTsvP9vJ0Yfyq7yno6x/7iuF7mucQRH3WeZYL96y4TZmfVyeueTV4Pq8fXq+YM+Ibk0g9GIv1sX56OTTnGx/mqwTWd80X6T3+ffgPRubNfOjEv0DC3suKTzoHYfV+RtgJlkd7f7fTm4OWi6GdZXNn93H1rqLzBIoiCFE=
+          </data>
+          </layer>
+        </group>
+      </map>
     XML
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include <tmx.h>
 
       int main(void) {
@@ -57,7 +57,7 @@ class Tmx < Formula
         return 0;
       }
     C
-    system ENV.cc, "test.c", "#{lib}#{shared_library("libtmx")}", "-lz", "-lxml2", "-o", "test"
-    system ".test"
+    system ENV.cc, "test.c", "#{lib}/#{shared_library("libtmx")}", "-lz", "-lxml2", "-o", "test"
+    system "./test"
   end
 end

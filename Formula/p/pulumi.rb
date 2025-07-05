@@ -1,11 +1,11 @@
 class Pulumi < Formula
   desc "Cloud native development platform"
-  homepage "https:pulumi.io"
-  url "https:github.compulumipulumi.git",
+  homepage "https://pulumi.io/"
+  url "https://github.com/pulumi/pulumi.git",
       tag:      "v3.181.0",
       revision: "c53ffb7ac46c37cba575096f5c166dcfee74d282"
   license "Apache-2.0"
-  head "https:github.compulumipulumi.git", branch: "master"
+  head "https://github.com/pulumi/pulumi.git", branch: "master"
 
   no_autobump! because: :bumped_by_upstream
 
@@ -21,26 +21,26 @@ class Pulumi < Formula
   depends_on "go" => :build
 
   def install
-    cd ".sdk" do
+    cd "./sdk" do
       system "go", "mod", "download"
     end
-    cd ".pkg" do
+    cd "./pkg" do
       system "go", "mod", "download"
     end
 
     system "make", "brew"
 
-    bin.install Dir["#{ENV["GOPATH"]}binpulumi*"]
+    bin.install Dir["#{ENV["GOPATH"]}/bin/pulumi*"]
 
     # Install shell completions
-    generate_completions_from_executable(bin"pulumi", "gen-completion")
+    generate_completions_from_executable(bin/"pulumi", "gen-completion")
   end
 
   test do
-    ENV["PULUMI_ACCESS_TOKEN"] = "local:"
+    ENV["PULUMI_ACCESS_TOKEN"] = "local://"
     ENV["PULUMI_HOME"] = testpath
-    ENV["PULUMI_TEMPLATE_PATH"] = testpath"templates"
+    ENV["PULUMI_TEMPLATE_PATH"] = testpath/"templates"
     assert_match "invalid access token",
-                 shell_output(bin"pulumi new aws-typescript --generate-only --force --yes 2>&1", 255)
+                 shell_output(bin/"pulumi new aws-typescript --generate-only --force --yes 2>&1", 255)
   end
 end

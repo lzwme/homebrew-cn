@@ -2,8 +2,8 @@ class Rpl < Formula
   include Language::Python::Virtualenv
 
   desc "Text replacement utility"
-  homepage "https:github.comrrthomasrpl"
-  url "https:files.pythonhosted.orgpackagesf08581cd913d43251f923a56b44586c717f41e8ff5e4ea35d2ced60e9de00bbdrpl-1.18.tar.gz"
+  homepage "https://github.com/rrthomas/rpl"
+  url "https://files.pythonhosted.org/packages/f0/85/81cd913d43251f923a56b44586c717f41e8ff5e4ea35d2ced60e9de00bbd/rpl-1.18.tar.gz"
   sha256 "378d38de283f6682f85e93695396f3461d719778e17a8013f64bd87d7f671d7e"
   license "GPL-3.0-or-later"
 
@@ -20,17 +20,17 @@ class Rpl < Formula
   depends_on "python@3.13"
 
   resource "chainstream" do
-    url "https:files.pythonhosted.orgpackagesa5cc93357fd1f53c61fdc6111a6d9ea2cc565b2c1be9227c15bb036a0db0396bchainstream-1.0.2.tar.gz"
+    url "https://files.pythonhosted.org/packages/a5/cc/93357fd1f53c61fdc6111a6d9ea2cc565b2c1be9227c15bb036a0db0396b/chainstream-1.0.2.tar.gz"
     sha256 "b32975d3b3d1c030a507ac298044c28fa3ca30d527abdfae281edd53276617b3"
   end
 
   resource "chardet" do
-    url "https:files.pythonhosted.orgpackagesf30df7b6ab21ec75897ed80c17d79b15951a719226b9fababf1e40ea74d69079chardet-5.2.0.tar.gz"
+    url "https://files.pythonhosted.org/packages/f3/0d/f7b6ab21ec75897ed80c17d79b15951a719226b9fababf1e40ea74d69079/chardet-5.2.0.tar.gz"
     sha256 "1b3b6ff479a8c414bc3fa2c0852995695c4a026dcd6d0633b2dd092ca39c1cf7"
   end
 
   resource "regex" do
-    url "https:files.pythonhosted.orgpackages8e5fbd69653fbfb76cf8604468d3b4ec4c403197144c7bfe0e6a5fc9e02a07cbregex-2024.11.6.tar.gz"
+    url "https://files.pythonhosted.org/packages/8e/5f/bd69653fbfb76cf8604468d3b4ec4c403197144c7bfe0e6a5fc9e02a07cb/regex-2024.11.6.tar.gz"
     sha256 "7ab159b063c52a0333c884e4679f8d7a85112ee3078fe3d9004b2dd875585519"
   end
 
@@ -39,9 +39,9 @@ class Rpl < Formula
   end
 
   test do
-    (testpath"test").write "I like water."
+    (testpath/"test").write "I like water."
 
-    system bin"rpl", "-v", "water", "beer", "test"
-    assert_equal "I like beer.", (testpath"test").read
+    system bin/"rpl", "-v", "water", "beer", "test"
+    assert_equal "I like beer.", (testpath/"test").read
   end
 end

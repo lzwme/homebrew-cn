@@ -2,14 +2,14 @@ cask "font-devicons" do
   version "1.8.0"
   sha256 "d8d2dc243ca42897a082ffe32a22cab53cdd148cf87b24162cf450ccfc12fece"
 
-  url "https:github.comvorillazdeviconsarchiverefstags#{version}.tar.gz",
-      verified: "github.comvorillazdevicons"
+  url "https://ghfast.top/https://github.com/vorillaz/devicons/archive/refs/tags/#{version}.tar.gz",
+      verified: "github.com/vorillaz/devicons/"
   name "Devicons"
-  homepage "https:vorillaz.github.iodevicons"
+  homepage "https://vorillaz.github.io/devicons/"
 
   no_autobump! because: :requires_manual_review
 
-  font "devicons-#{version}fontsdevicons.ttf"
+  font "devicons-#{version}/fonts/devicons.ttf"
 
   # No zap stanza required
 end

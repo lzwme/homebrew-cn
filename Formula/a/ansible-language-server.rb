@@ -1,7 +1,7 @@
 class AnsibleLanguageServer < Formula
   desc "Language Server for Ansible Files"
-  homepage "https:github.comansiblevscode-ansible"
-  url "https:registry.npmjs.org@ansibleansible-language-server-ansible-language-server-1.2.3.tgz"
+  homepage "https://github.com/ansible/vscode-ansible"
+  url "https://registry.npmjs.org/@ansible/ansible-language-server/-/ansible-language-server-1.2.3.tgz"
   sha256 "3182960a35f229f453d520cfb6c9624ca18104653457eca99dc1406690fa5aa2"
   license "MIT"
 
@@ -23,7 +23,7 @@ class AnsibleLanguageServer < Formula
 
   def install
     system "npm", "install", *std_npm_args
-    bin.install_symlink Dir["#{libexec}bin*"]
+    bin.install_symlink Dir["#{libexec}/bin/*"]
   end
 
   test do
@@ -41,10 +41,10 @@ class AnsibleLanguageServer < Formula
       }
     JSON
 
-    Open3.popen3(bin"ansible-language-server", "--stdio") do |stdin, stdout|
+    Open3.popen3(bin/"ansible-language-server", "--stdio") do |stdin, stdout|
       stdin.write "Content-Length: #{json.size}\r\n\r\n#{json}"
       sleep 3
-      assert_match(^Content-Length: \d+i, stdout.readline)
+      assert_match(/^Content-Length: \d+/i, stdout.readline)
     end
   end
 end

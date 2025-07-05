@@ -1,10 +1,10 @@
 class Json2hcl < Formula
   desc "Convert JSON to HCL, and vice versa"
-  homepage "https:github.comkvzjson2hcl"
-  url "https:github.comkvzjson2hclarchiverefstagsv0.2.0.tar.gz"
+  homepage "https://github.com/kvz/json2hcl"
+  url "https://ghfast.top/https://github.com/kvz/json2hcl/archive/refs/tags/v0.2.0.tar.gz"
   sha256 "ac10155d2d86a196a97e9cfb98e7a66f0b0505dee8904bbd3e32979370b81f34"
   license "MIT"
-  head "https:github.comkvzjson2hcl.git", branch: "master"
+  head "https://github.com/kvz/json2hcl.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "3a798a235db04843eee5ce55e66bc4bd3b1c197b9868fe945fba5137be4f190e"
@@ -23,20 +23,20 @@ class Json2hcl < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}json2hcl -version")
+    assert_match version.to_s, shell_output("#{bin}/json2hcl -version")
 
-    (testpath"input.json").write <<~JSON
+    (testpath/"input.json").write <<~JSON
       {
         "hello": "world"
       }
     JSON
 
-    assert_equal "\"hello\" = \"world\"", shell_output("#{bin}json2hcl < input.json")
+    assert_equal "\"hello\" = \"world\"", shell_output("#{bin}/json2hcl < input.json")
 
-    (testpath"input.tf").write <<~HCL
+    (testpath/"input.tf").write <<~HCL
       hello = "world"
     HCL
 
-    assert_equal "{\n  \"hello\": \"world\"\n}", shell_output("#{bin}json2hcl -reverse < input.tf").chomp
+    assert_equal "{\n  \"hello\": \"world\"\n}", shell_output("#{bin}/json2hcl -reverse < input.tf").chomp
   end
 end

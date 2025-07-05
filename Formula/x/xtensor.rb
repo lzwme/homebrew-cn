@@ -1,7 +1,7 @@
 class Xtensor < Formula
   desc "Multi-dimensional arrays with broadcasting and lazy computing"
-  homepage "https:xtensor.readthedocs.ioenlatest"
-  url "https:github.comxtensor-stackxtensorarchiverefstags0.26.0.tar.gz"
+  homepage "https://xtensor.readthedocs.io/en/latest/"
+  url "https://ghfast.top/https://github.com/xtensor-stack/xtensor/archive/refs/tags/0.26.0.tar.gz"
   sha256 "f5f42267d850f781d71097b50567a480a82cd6875a5ec3e6238555e0ef987dc6"
   license "BSD-3-Clause"
   revision 1
@@ -20,11 +20,11 @@ class Xtensor < Formula
   end
 
   test do
-    (testpath"test.cc").write <<~CPP
+    (testpath/"test.cc").write <<~CPP
       #include <iostream>
-      #include "xtensorcontainersxarray.hpp"
-      #include "xtensorioxio.hpp"
-      #include "xtensorviewsxview.hpp"
+      #include "xtensor/containers/xarray.hpp"
+      #include "xtensor/io/xio.hpp"
+      #include "xtensor/views/xview.hpp"
 
       int main() {
         xt::xarray<double> arr1
@@ -43,6 +43,6 @@ class Xtensor < Formula
     CPP
 
     system ENV.cxx, "-std=c++17", "test.cc", "-o", "test", "-I#{include}"
-    assert_equal "323", shell_output(".test").chomp
+    assert_equal "323", shell_output("./test").chomp
   end
 end

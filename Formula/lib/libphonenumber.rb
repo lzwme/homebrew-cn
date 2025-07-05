@@ -1,7 +1,7 @@
 class Libphonenumber < Formula
   desc "C++ Phone Number library by Google"
-  homepage "https:github.comgooglelibphonenumber"
-  url "https:github.comgooglelibphonenumberarchiverefstagsv9.0.8.tar.gz"
+  homepage "https://github.com/google/libphonenumber"
+  url "https://ghfast.top/https://github.com/google/libphonenumber/archive/refs/tags/v9.0.8.tar.gz"
   sha256 "06c7b1744fd74418bde502b00dcab73b8475e9a30764fc73b1deb30a3d452154"
   license "Apache-2.0"
 
@@ -37,9 +37,9 @@ class Libphonenumber < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~CPP
-      #include <phonenumbersphonenumberutil.h>
-      #include <phonenumbersphonenumber.pb.h>
+    (testpath/"test.cpp").write <<~CPP
+      #include <phonenumbers/phonenumberutil.h>
+      #include <phonenumbers/phonenumber.pb.h>
       #include <iostream>
       #include <string>
 
@@ -60,7 +60,7 @@ class Libphonenumber < Formula
       }
     CPP
 
-    (testpath"CMakeLists.txt").write <<~CMAKE
+    (testpath/"CMakeLists.txt").write <<~CMAKE
       cmake_minimum_required(VERSION 3.14)
       set(CMAKE_CXX_STANDARD 17)
       project(test LANGUAGES CXX)
@@ -72,6 +72,6 @@ class Libphonenumber < Formula
 
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"
-    system ".buildtest"
+    system "./build/test"
   end
 end

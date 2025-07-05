@@ -1,7 +1,7 @@
 class Portmidi < Formula
-  desc "Cross-platform library for real-time MIDI IO"
-  homepage "https:github.comPortMidiportmidi"
-  url "https:github.comPortMidiportmidiarchiverefstagsv2.0.6.tar.gz"
+  desc "Cross-platform library for real-time MIDI I/O"
+  homepage "https://github.com/PortMidi/portmidi"
+  url "https://ghfast.top/https://github.com/PortMidi/portmidi/archive/refs/tags/v2.0.6.tar.gz"
   sha256 "81d22b34051621cd56c8d5ef12908ef2a59764c9cdfba6dae47aabddb71ac914"
   license "MIT"
   version_scheme 1
@@ -24,7 +24,7 @@ class Portmidi < Formula
 
   def install
     if OS.mac? && MacOS.version <= :sierra
-      # Fix "fatal error: 'osavailability.h' file not found" on 10.11 and
+      # Fix "fatal error: 'os/availability.h' file not found" on 10.11 and
       # "error: expected function body after function declarator" on 10.12
       # Requires the CLT to be the active developer directory if Xcode is
       # installed
@@ -37,7 +37,7 @@ class Portmidi < Formula
   end
 
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include <portmidi.h>
 
       int main()
@@ -51,6 +51,6 @@ class Portmidi < Formula
       }
     C
     system ENV.cc, "test.c", "-L#{lib}", "-lportmidi", "-o", "test"
-    system ".test"
+    system "./test"
   end
 end

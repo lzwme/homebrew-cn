@@ -1,10 +1,10 @@
 class UmkaLang < Formula
   desc "Statically typed embeddable scripting language"
-  homepage "https:github.comvtereshkovumka-lang"
-  url "https:github.comvtereshkovumka-langarchiverefstagsv1.5.3.tar.gz"
+  homepage "https://github.com/vtereshkov/umka-lang"
+  url "https://ghfast.top/https://github.com/vtereshkov/umka-lang/archive/refs/tags/v1.5.3.tar.gz"
   sha256 "03b69332644c60979ba2d2e5956efd22aff3cfc2e910f14f49a8ec89ef8d5cb9"
   license "BSD-2-Clause"
-  head "https:github.comvtereshkovumka-lang.git", branch: "master"
+  head "https://github.com/vtereshkov/umka-lang.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "619485bf5111fe84290708d9cb36087218f6c1c86f93a20e84572b08bf7a8147"
@@ -29,15 +29,15 @@ class UmkaLang < Formula
   end
 
   test do
-    (testpath"hello.um").write <<~UMKA
+    (testpath/"hello.um").write <<~UMKA
       fn main() {
         printf("Hello Umka!")
       }
     UMKA
 
-    assert_match "Hello Umka!", shell_output("#{bin}umka #{testpath}hello.um")
+    assert_match "Hello Umka!", shell_output("#{bin}/umka #{testpath}/hello.um")
 
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include <stdio.h>
       #include <umka_api.h>
       int main(void) {
@@ -46,6 +46,6 @@ class UmkaLang < Formula
       }
     C
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lumka", "-o", "test"
-    system ".test"
+    system "./test"
   end
 end

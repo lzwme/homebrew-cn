@@ -1,7 +1,7 @@
 class Crystalline < Formula
   desc "Language Server Protocol implementation for Crystal"
-  homepage "https:github.comelbywancrystalline"
-  url "https:github.comelbywancrystallinearchiverefstagsv0.17.1.tar.gz"
+  homepage "https://github.com/elbywan/crystalline"
+  url "https://ghfast.top/https://github.com/elbywan/crystalline/archive/refs/tags/v0.17.1.tar.gz"
   sha256 "3e8f4c3f41830092300219ef91c3d03e15536774ef18a5395ff6a9fffc27be5b"
   license "MIT"
 
@@ -24,7 +24,7 @@ class Crystalline < Formula
 
   def install
     system "shards", "install"
-    system "crystal", "build", ".srccrystalline.cr",
+    system "crystal", "build", "./src/crystalline.cr",
       "--release", "--no-debug",
       "-Dpreview_mt",
       "--progress", "--stats", "--time",
@@ -55,7 +55,7 @@ class Crystalline < Formula
       #{payload}
     LSP_REQUEST
 
-    output = pipe_output(bin"crystalline", request, 0)
+    output = pipe_output(bin/"crystalline", request, 0)
     assert_match "Content-Length", output
   end
 end

@@ -1,10 +1,10 @@
 class Werf < Formula
   desc "Consistent delivery tool for Kubernetes"
-  homepage "https:werf.io"
-  url "https:github.comwerfwerfarchiverefstagsv2.39.1.tar.gz"
+  homepage "https://werf.io/"
+  url "https://ghfast.top/https://github.com/werf/werf/archive/refs/tags/v2.39.1.tar.gz"
   sha256 "fdc6f3f092d0e1ac418c50a64eb56f86eb98ccaa7c57b991b48962944b6507d9"
   license "Apache-2.0"
-  head "https:github.comwerfwerf.git", branch: "main"
+  head "https://github.com/werf/werf.git", branch: "main"
 
   # This repository has some tagged versions that are higher than the newest
   # stable release (e.g., `v1.5.2`) and the `GithubLatest` strategy is
@@ -38,24 +38,24 @@ class Werf < Formula
         -linkmode external
         -extldflags=-static
         -s -w
-        -X github.comwerfwerfv2pkgwerf.Version=#{version}
+        -X github.com/werf/werf/v2/pkg/werf.Version=#{version}
       ]
       tags = %w[
         dfrunsecurity dfrunnetwork dfrunmount dfssh containers_image_openpgp
         osusergo exclude_graphdriver_devicemapper netgo no_devmapper static_build
       ]
     else
-      ldflags = "-s -w -X github.comwerfwerfv2pkgwerf.Version=#{version}"
+      ldflags = "-s -w -X github.com/werf/werf/v2/pkg/werf.Version=#{version}"
       tags = "dfrunsecurity dfrunnetwork dfrunmount dfssh containers_image_openpgp"
     end
 
-    system "go", "build", *std_go_args(ldflags:, tags:), ".cmdwerf"
+    system "go", "build", *std_go_args(ldflags:, tags:), "./cmd/werf"
 
-    generate_completions_from_executable(bin"werf", "completion")
+    generate_completions_from_executable(bin/"werf", "completion")
   end
 
   test do
-    werf_config = testpath"werf.yaml"
+    werf_config = testpath/"werf.yaml"
     werf_config.write <<~YAML
       configVersion: 1
       project: quickstart-application
@@ -83,8 +83,8 @@ class Werf < Formula
     system "git", "add", werf_config
     system "git", "commit", "-m", "Initial commit"
 
-    assert_equal output, shell_output("#{bin}werf config graph")
+    assert_equal output, shell_output("#{bin}/werf config graph")
 
-    assert_match version.to_s, shell_output("#{bin}werf version")
+    assert_match version.to_s, shell_output("#{bin}/werf version")
   end
 end

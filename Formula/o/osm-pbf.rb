@@ -1,7 +1,7 @@
 class OsmPbf < Formula
   desc "Tools related to PBF (an alternative to XML format)"
-  homepage "https:wiki.openstreetmap.orgwikiPBF_Format"
-  url "https:github.comopenstreetmapOSM-binaryarchiverefstagsv1.5.1.tar.gz"
+  homepage "https://wiki.openstreetmap.org/wiki/PBF_Format"
+  url "https://ghfast.top/https://github.com/openstreetmap/OSM-binary/archive/refs/tags/v1.5.1.tar.gz"
   sha256 "183ad76c5905c7abd35d938824320ffb82d9ca8987796018f2da8380b51cdac2"
   license "LGPL-3.0-or-later"
   revision 13
@@ -28,10 +28,10 @@ class OsmPbf < Formula
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
-    pkgshare.install "resourcessample.pbf"
+    pkgshare.install "resources/sample.pbf"
   end
 
   test do
-    assert_match "OSMHeader", shell_output("#{bin}osmpbf-outline #{pkgshare}sample.pbf")
+    assert_match "OSMHeader", shell_output("#{bin}/osmpbf-outline #{pkgshare}/sample.pbf")
   end
 end

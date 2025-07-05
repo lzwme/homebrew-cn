@@ -1,10 +1,10 @@
 class Ord < Formula
   desc "Index, block explorer, and command-line wallet"
-  homepage "https:ordinals.com"
-  url "https:github.comordinalsordarchiverefstags0.23.2.tar.gz"
+  homepage "https://ordinals.com/"
+  url "https://ghfast.top/https://github.com/ordinals/ord/archive/refs/tags/0.23.2.tar.gz"
   sha256 "616eae2491fc825c5936186b986089d862fe11dfba0ff76dbe3aad051e369dbe"
   license "CC0-1.0"
-  head "https:github.comordinalsord.git", branch: "master"
+  head "https://github.com/ordinals/ord.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "e966fc5cb5fd47bdd1b729d23fda7974f6f00961d15fbb9dabb71b637ededaff"
@@ -32,9 +32,9 @@ class Ord < Formula
   end
 
   test do
-    output = shell_output("#{bin}ord list xx:xx 2>&1", 2)
+    output = shell_output("#{bin}/ord list xx:xx 2>&1", 2)
     assert_match "invalid value 'xx:xx' for '<OUTPOINT>': error parsing TXID", output
 
-    assert_match "ord #{version}", shell_output("#{bin}ord --version")
+    assert_match "ord #{version}", shell_output("#{bin}/ord --version")
   end
 end

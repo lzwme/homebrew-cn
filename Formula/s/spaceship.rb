@@ -1,10 +1,10 @@
 class Spaceship < Formula
   desc "Zsh prompt for Astronauts"
-  homepage "https:spaceship-prompt.sh"
-  url "https:github.comspaceship-promptspaceship-promptarchiverefstagsv4.19.0.tar.gz"
+  homepage "https://spaceship-prompt.sh/"
+  url "https://ghfast.top/https://github.com/spaceship-prompt/spaceship-prompt/archive/refs/tags/v4.19.0.tar.gz"
   sha256 "89c8127666b9990d8f126c7e806894c1777210413a4e837e4ce819ca1d04777f"
   license "MIT"
-  head "https:github.comspaceship-promptspaceship-prompt.git", branch: "master"
+  head "https://github.com/spaceship-prompt/spaceship-prompt.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -28,14 +28,14 @@ class Spaceship < Formula
 
   def caveats
     <<~EOS
-      To activate Spaceship, add the following line to ~.zshrc:
-        source "#{opt_prefix}spaceship.zsh"
+      To activate Spaceship, add the following line to ~/.zshrc:
+        source "#{opt_prefix}/spaceship.zsh"
       If your .zshrc sets ZSH_THEME, remove that line.
     EOS
   end
 
   test do
     assert_match "SUCCESS",
-      shell_output("zsh -fic '. #{opt_prefix}spaceship.zsh && (( ${+SPACESHIP_VERSION} )) && echo SUCCESS'")
+      shell_output("zsh -fic '. #{opt_prefix}/spaceship.zsh && (( ${+SPACESHIP_VERSION} )) && echo SUCCESS'")
   end
 end

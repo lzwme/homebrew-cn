@@ -1,7 +1,7 @@
 class So < Formula
   desc "Terminal interface for StackOverflow"
-  homepage "https:github.comsamtayso"
-  url "https:github.comsamtaysoarchiverefstagsv0.4.10.tar.gz"
+  homepage "https://github.com/samtay/so"
+  url "https://ghfast.top/https://github.com/samtay/so/archive/refs/tags/v0.4.10.tar.gz"
   sha256 "36d8bc53b9c05e242fd4c9ba8ae447fae6c4a35d8c7e071f8994a7c0f07c225d"
   license "MIT"
 
@@ -35,9 +35,9 @@ class So < Formula
     opts = "--search-engine stackexchange --limit 1 --lucky"
     query = "how do I exit Vim"
     env_vars = "LC_CTYPE=en_US.UTF-8 LANG=en_US.UTF-8 TERM=xterm"
-    input, _, wait_thr = Open3.popen2 "script -q devnull"
+    input, _, wait_thr = Open3.popen2 "script -q /dev/null"
     input.puts "stty rows 80 cols 130"
-    input.puts "env #{env_vars} #{bin}so #{opts} #{query} 2>&1 > output"
+    input.puts "env #{env_vars} #{bin}/so #{opts} #{query} 2>&1 > output"
     sleep 3
 
     # quit

@@ -1,14 +1,14 @@
 class TclTk < Formula
   desc "Tool Command Language"
-  homepage "https:www.tcl-lang.org"
-  url "https:downloads.sourceforge.netprojecttclTcl9.0.2tcl9.0.2-src.tar.gz"
-  mirror "https:fossies.orglinuxmisctcl9.0.2-src.tar.gz"
+  homepage "https://www.tcl-lang.org"
+  url "https://downloads.sourceforge.net/project/tcl/Tcl/9.0.2/tcl9.0.2-src.tar.gz"
+  mirror "https://fossies.org/linux/misc/tcl9.0.2-src.tar.gz"
   sha256 "e074c6a8d9ba2cddf914ba97b6677a552d7a52a3ca102924389a05ccb249b520"
   license "TCL"
 
   livecheck do
     url :stable
-    regex(%r{url=.*?(?:tcl|tk).?v?(\d+(?:\.\d+)+)[._-]src\.t}i)
+    regex(%r{url=.*?/(?:tcl|tk).?v?(\d+(?:\.\d+)+)[._-]src\.t}i)
   end
 
   bottle do
@@ -37,31 +37,31 @@ class TclTk < Formula
   conflicts_with "the_platinum_searcher", because: "both install `pt` binaries"
 
   resource "critcl" do
-    url "https:github.comandreas-kupriescritclarchiverefstags3.3.1.tar.gz"
+    url "https://ghfast.top/https://github.com/andreas-kupries/critcl/archive/refs/tags/3.3.1.tar.gz"
     sha256 "d970a06ae1cdee7854ca1bc571e8b5fe7189788dc5a806bce67e24bbadbe7ae2"
 
     livecheck do
-      regex(^v?(\d+(?:\.\d+)+)$i)
+      regex(/^v?(\d+(?:\.\d+)+)$/i)
     end
   end
 
   resource "tcllib" do
-    url "https:downloads.sourceforge.netprojecttcllibtcllib2.0tcllib-2.0.tar.xz"
+    url "https://downloads.sourceforge.net/project/tcllib/tcllib/2.0/tcllib-2.0.tar.xz"
     sha256 "642c2c679c9017ab6fded03324e4ce9b5f4292473b62520e82aacebb63c0ce20"
   end
 
   # There is no tcltls release compatible with TCL 9 so using latest
-  # check-in at https:core.tcl-lang.orgtcltlstimeline
-  # Ref: https:core.tcl-lang.orgtcltlstktviewf5a0fe8ddf
-  # Ref: https:sourceforge.netptclmailmantcl-corethreadeab3a8bf-b846-45ef-a80c-6bc94d6dfe91@elmicron.de
+  # check-in at https://core.tcl-lang.org/tcltls/timeline
+  # Ref: https://core.tcl-lang.org/tcltls/tktview/f5a0fe8ddf
+  # Ref: https://sourceforge.net/p/tcl/mailman/tcl-core/thread/eab3a8bf-b846-45ef-a80c-6bc94d6dfe91@elmicron.de/
   resource "tcltls" do
-    url "https:core.tcl-lang.orgtcltlstarballe03e54ee87tcltls-e03e54ee87.tar.gz"
+    url "https://core.tcl-lang.org/tcltls/tarball/e03e54ee87/tcltls-e03e54ee87.tar.gz"
     sha256 "db473afa98924c0a2b44ecacea35bb2609e6810de1df389ad55bb3688023f8d1"
   end
 
   resource "tk" do
-    url "https:downloads.sourceforge.netprojecttclTcl9.0.2tk9.0.2-src.tar.gz"
-    mirror "https:fossies.orglinuxmisctk9.0.2-src.tar.gz"
+    url "https://downloads.sourceforge.net/project/tcl/Tcl/9.0.2/tk9.0.2-src.tar.gz"
+    mirror "https://fossies.org/linux/misc/tk9.0.2-src.tar.gz"
     sha256 "76fb852b2f167592fe8b41aa6549ce4e486dbf3b259a269646600e3894517c76"
 
     livecheck do
@@ -69,12 +69,12 @@ class TclTk < Formula
     end
   end
 
-  # "https:downloads.sourceforge.netprojectincrtcl%5Bincr%20Tcl_Tk%5D-4-sourceitk%204.1.0itk4.1.0.tar.gz"
-  # would cause `bad URI(is not URI?)` error on 1213 builds
+  # "https://downloads.sourceforge.net/project/incrtcl/%5Bincr%20Tcl_Tk%5D-4-source/itk%204.1.0/itk4.1.0.tar.gz"
+  # would cause `bad URI(is not URI?)` error on 12/13 builds
   # Also need a newer release than available on SourceForce for TCL 9
   # so we use the GitHub mirror which is easier to access than Fossil
   resource "itk4" do
-    url "https:github.comtcltkitkarchiverefstagsitk-4-2-3.tar.gz"
+    url "https://ghfast.top/https://github.com/tcltk/itk/archive/refs/tags/itk-4-2-3.tar.gz"
     version "4.2.3"
     sha256 "bc5ed347212fce403e04d3161cd429319af98da47effd3e32e20d2f04293b036"
   end
@@ -83,24 +83,24 @@ class TclTk < Formula
     odie "tk resource needs to be updated" if version != resource("tk").version
 
     # Remove bundled libraries. Some private headers are still needed
-    ["compatzlib", "libtommath"].each do |dir|
-      (buildpathdir).find do |path|
+    ["compat/zlib", "libtommath"].each do |dir|
+      (buildpath/dir).find do |path|
         rm(path) if path.file? && path.extname != ".h"
       end
     end
 
     args = %W[
       --prefix=#{prefix}
-      --includedir=#{include}tcl-tk
+      --includedir=#{include}/tcl-tk
       --mandir=#{man}
       --disable-zipfs
       --enable-man-suffix
       --enable-64bit
     ]
 
-    ENV["TCL_PACKAGE_PATH"] = "#{HOMEBREW_PREFIX}lib"
+    ENV["TCL_PACKAGE_PATH"] = "#{HOMEBREW_PREFIX}/lib"
     cd "unix" do
-      system ".configure", *args, "--with-system-libtommath"
+      system "./configure", *args, "--with-system-libtommath"
       system "make"
       system "make", "install"
       system "make", "install-private-headers"
@@ -113,7 +113,7 @@ class TclTk < Formula
     resource("tk").stage do
       cd "unix" do
         args << "--enable-aqua=yes" if OS.mac?
-        system ".configure", *args, "--without-x", "--with-tcl=#{lib}"
+        system "./configure", *args, "--without-x", "--with-tcl=#{lib}"
         system "make"
         system "make", "install"
         system "make", "install-private-headers"
@@ -122,19 +122,19 @@ class TclTk < Formula
     end
 
     resource("critcl").stage do
-      system bin"tclsh", "build.tcl", "install"
+      system bin/"tclsh", "build.tcl", "install"
     end
 
     resource("tcllib").stage do
-      system ".configure", "--prefix=#{prefix}", "--mandir=#{man}"
+      system "./configure", "--prefix=#{prefix}", "--mandir=#{man}"
       system "make", "install"
       system "make", "critcl"
-      cp_r "modulestcllibc", "#{lib}"
-      ln_s "#{lib}tcllibcmacosx-x86_64-clang", "#{lib}tcllibcmacosx-x86_64" if OS.mac?
+      cp_r "modules/tcllibc", "#{lib}/"
+      ln_s "#{lib}/tcllibc/macosx-x86_64-clang", "#{lib}/tcllibc/macosx-x86_64" if OS.mac?
     end
 
     resource("tcltls").stage do
-      system ".configure", "--with-openssl-dir=#{Formula["openssl@3"].opt_prefix}",
+      system "./configure", "--with-openssl-dir=#{Formula["openssl@3"].opt_prefix}",
                             "--prefix=#{prefix}",
                             "--mandir=#{man}"
       system "make", "install"
@@ -144,25 +144,25 @@ class TclTk < Formula
       itcl_dir = lib.glob("itcl*").last
       # Workaround to build non-release tarball by using TEA files from itcl
       odie "Update `itk4` build step!" if Pathname("tclconfig").exist?
-      Pathname.pwd.install_symlink buildpath"pkgs#{itcl_dir.basename}tclconfig"
+      Pathname.pwd.install_symlink buildpath/"pkgs/#{itcl_dir.basename}/tclconfig"
 
       args = %W[
         --prefix=#{prefix}
         --exec-prefix=#{prefix}
         --with-tcl=#{lib}
-        --with-tclinclude=#{include}tcl-tk
+        --with-tclinclude=#{include}/tcl-tk
         --with-tk=#{lib}
-        --with-tkinclude=#{include}tcl-tk
+        --with-tkinclude=#{include}/tcl-tk
         --with-itcl=#{itcl_dir}
       ]
-      system ".configure", *args
+      system "./configure", *args
       system "make"
       system "make", "install"
     end
 
     # Use the sqlite-analyzer formula instead
-    # https:github.comHomebrewhomebrew-corepull82698
-    rm bin"sqlite3_analyzer"
+    # https://github.com/Homebrew/homebrew-core/pull/82698
+    rm bin/"sqlite3_analyzer"
   end
 
   def caveats
@@ -172,8 +172,8 @@ class TclTk < Formula
   end
 
   test do
-    assert_match "#{HOMEBREW_PREFIX}lib", pipe_output("#{bin}tclsh", "puts $auto_path\n")
-    assert_equal "honk", pipe_output("#{bin}tclsh", "puts honk\n").chomp
+    assert_match "#{HOMEBREW_PREFIX}/lib", pipe_output("#{bin}/tclsh", "puts $auto_path\n")
+    assert_equal "honk", pipe_output("#{bin}/tclsh", "puts honk\n").chomp
 
     # Fails with: no display name and no $DISPLAY environment variable
     return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
@@ -209,6 +209,6 @@ class TclTk < Formula
       }
       exit
     TCL
-    assert_equal "OK\n", pipe_output("#{bin}wish", test_itk), "Itk test failed"
+    assert_equal "OK\n", pipe_output("#{bin}/wish", test_itk), "Itk test failed"
   end
 end

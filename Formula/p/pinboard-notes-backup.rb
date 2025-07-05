@@ -1,10 +1,10 @@
 class PinboardNotesBackup < Formula
   desc "Efficiently back up the notes you've saved to Pinboard"
-  homepage "https:github.combdeshampinboard-notes-backup"
-  url "https:github.combdeshampinboard-notes-backuparchiverefstagsv1.0.7.tar.gz"
+  homepage "https://github.com/bdesham/pinboard-notes-backup"
+  url "https://ghfast.top/https://github.com/bdesham/pinboard-notes-backup/archive/refs/tags/v1.0.7.tar.gz"
   sha256 "bd26a1cd7ec4e0a83cd06c1234420ac9262d39c926a42820958502967005f63c"
   license "GPL-3.0-or-later"
-  head "https:github.combdeshampinboard-notes-backup.git", branch: "main"
+  head "https://github.com/bdesham/pinboard-notes-backup.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "db4446ba2acc253e4311931498466fcbb817a7d4f0a40586c57a398199e28272"
@@ -26,19 +26,19 @@ class PinboardNotesBackup < Formula
   def install
     # Workaround to build with GHC 9.12
     args = [
-      "--allow-newer=http-api-data:base", # https:github.comfizrukhttp-api-datapull146
-      "--allow-newer=req:template-haskell", # https:github.commrkkrpreqpull182
+      "--allow-newer=http-api-data:base", # https://github.com/fizruk/http-api-data/pull/146
+      "--allow-newer=req:template-haskell", # https://github.com/mrkkrp/req/pull/182
     ]
 
     system "cabal", "v2-update"
     system "cabal", "v2-install", *args, *std_cabal_v2_args
-    man1.install "manpnbackup.1"
+    man1.install "man/pnbackup.1"
   end
 
   # A real test would require hard-coding someone's Pinboard API key here
   test do
-    assert_match "TOKEN", shell_output("#{bin}pnbackup Notes.sqlite 2>&1", 1)
-    output = shell_output("#{bin}pnbackup -t token Notes.sqlite 2>&1", 1)
+    assert_match "TOKEN", shell_output("#{bin}/pnbackup Notes.sqlite 2>&1", 1)
+    output = shell_output("#{bin}/pnbackup -t token Notes.sqlite 2>&1", 1)
     assert_match "HTTP 500 response", output
   end
 end

@@ -1,10 +1,10 @@
 class Zimg < Formula
   desc "Scaling, colorspace conversion, and dithering library"
-  homepage "https:github.comsekrit-twczimg"
-  url "https:github.comsekrit-twczimgarchiverefstagsrelease-3.0.5.tar.gz"
+  homepage "https://github.com/sekrit-twc/zimg"
+  url "https://ghfast.top/https://github.com/sekrit-twc/zimg/archive/refs/tags/release-3.0.5.tar.gz"
   sha256 "a9a0226bf85e0d83c41a8ebe4e3e690e1348682f6a2a7838f1b8cbff1b799bcf"
   license "WTFPL"
-  head "https:github.comsekrit-twczimg.git", branch: "master"
+  head "https://github.com/sekrit-twc/zimg.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -27,13 +27,13 @@ class Zimg < Formula
   depends_on "libtool" => :build
 
   def install
-    system ".autogen.sh"
-    system ".configure", "--prefix=#{prefix}"
+    system "./autogen.sh"
+    system "./configure", "--prefix=#{prefix}"
     system "make", "install"
   end
 
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include <assert.h>
       #include <zimg.h>
 
@@ -46,6 +46,6 @@ class Zimg < Formula
       }
     C
     system ENV.cc, "test.c", "-L#{lib}", "-lzimg", "-o", "test"
-    system ".test"
+    system "./test"
   end
 end

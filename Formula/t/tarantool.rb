@@ -1,13 +1,13 @@
 class Tarantool < Formula
   desc "In-memory database and Lua application server"
-  homepage "https:tarantool.org"
-  url "https:download.tarantool.orgtarantoolsrctarantool-3.4.0.tar.gz"
+  homepage "https://tarantool.org/"
+  url "https://download.tarantool.org/tarantool/src/tarantool-3.4.0.tar.gz"
   sha256 "3ff1e8de285943eedef6b2cd14caacb51e7998d9da2e4d75eb4d9a770b3173b4"
   license "BSD-2-Clause"
   version_scheme 1
-  head "https:github.comtarantooltarantool.git", branch: "master"
+  head "https://github.com/tarantool/tarantool.git", branch: "master"
 
-  # The upstream release page (https:www.tarantool.ioendoclatestrelease)
+  # The upstream release page (https://www.tarantool.io/en/doc/latest/release/)
   # simply links to GitHub releases, so we check the "latest" release directly.
   livecheck do
     url :head
@@ -38,9 +38,9 @@ class Tarantool < Formula
     depends_on "libunwind"
   end
 
-  # cmake 4 build patch, upstream pr ref, https:github.comtarantooltarantoolpull11382
+  # cmake 4 build patch, upstream pr ref, https://github.com/tarantool/tarantool/pull/11382
   patch do
-    url "https:github.comtarantooltarantoolcommit68d591d8eb43d0a5de35cf7492955f18598629f2.patch?full_index=1"
+    url "https://github.com/tarantool/tarantool/commit/68d591d8eb43d0a5de35cf7492955f18598629f2.patch?full_index=1"
     sha256 "7aeace515b991cf45a477e706a69b2ee5621d45a0394065bf75b92dcb1086534"
   end
 
@@ -51,11 +51,11 @@ class Tarantool < Formula
     # Workaround for clang >= 16 until upstream fix is available[^1].
     # Also, trying to apply LuaJIT commit[^2] worked on Xcode 16 but caused issue on Xcode 15.
     #
-    # [^1]: https:github.comtarantooltarantoolissues10566
-    # [^2]: https:github.comLuaJITLuaJITcommit2240d84464cc3dcb22fd976f1db162b36b5b52d5
+    # [^1]: https://github.com/tarantool/tarantool/issues/10566
+    # [^2]: https://github.com/LuaJIT/LuaJIT/commit/2240d84464cc3dcb22fd976f1db162b36b5b52d5
     ENV.append "LDFLAGS", "-Wl,-no_deduplicate" if DevelopmentTools.clang_build_version >= 1600
 
-    icu4c = deps.find { |dep| dep.name.match?(^icu4c(@\d+)?$) }
+    icu4c = deps.find { |dep| dep.name.match?(/^icu4c(@\d+)?$/) }
                 .to_formula
     args = %W[
       -DCMAKE_INSTALL_SYSCONFDIR=#{etc}
@@ -79,13 +79,13 @@ class Tarantool < Formula
   end
 
   def post_install
-    (var"libtarantool").mkpath
-    (var"logtarantool").mkpath
-    (var"runtarantool").mkpath
+    (var/"lib/tarantool").mkpath
+    (var/"log/tarantool").mkpath
+    (var/"run/tarantool").mkpath
   end
 
   test do
-    (testpath"test.lua").write <<~LUA
+    (testpath/"test.lua").write <<~LUA
       box.cfg{}
       local s = box.schema.create_space("test")
       s:create_index("primary")
@@ -97,6 +97,6 @@ class Tarantool < Formula
       end
       os.exit(0)
     LUA
-    system bin"tarantool", "#{testpath}test.lua"
+    system bin/"tarantool", "#{testpath}/test.lua"
   end
 end

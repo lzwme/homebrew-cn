@@ -2,10 +2,10 @@ cask "font-playwrite-au-nsw-guides" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefontsrawmainoflplaywriteaunswguidesPlaywriteAUNSWGuides-Regular.ttf",
-      verified: "github.comgooglefonts"
+  url "https://github.com/google/fonts/raw/main/ofl/playwriteaunswguides/PlaywriteAUNSWGuides-Regular.ttf",
+      verified: "github.com/google/fonts/"
   name "Playwrite AU NSW Guides"
-  homepage "https:fonts.google.comspecimenPlaywrite+AU+NSW+Guides"
+  homepage "https://fonts.google.com/specimen/Playwrite+AU+NSW+Guides"
 
   font "PlaywriteAUNSWGuides-Regular.ttf"
 

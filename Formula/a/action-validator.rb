@@ -1,27 +1,27 @@
 class ActionValidator < Formula
   desc "Tool to validate GitHub Action and Workflow YAML files"
-  homepage "https:github.commpalmeraction-validator"
+  homepage "https://github.com/mpalmer/action-validator"
   license "GPL-3.0-only"
 
   stable do
-    url "https:github.commpalmeraction-validatorarchiverefstagsv0.6.0.tar.gz"
+    url "https://ghfast.top/https://github.com/mpalmer/action-validator/archive/refs/tags/v0.6.0.tar.gz"
     sha256 "bdec75f6383a887986192685538a736c88be365505e950aab262977c8845aa88"
 
     # always pull the HEAD commit hash
     resource "schemastore" do
-      url "https:github.comSchemaStoreschemastore.git",
+      url "https://github.com/SchemaStore/schemastore.git",
           revision: "7bf746bd90d7e88cd11f0a9dc4bc34c91fbbf7b4"
     end
 
-    # shell completion and manpage support, upstream pr ref, https:github.commpalmeraction-validatorpull82
+    # shell completion and manpage support, upstream pr ref, https://github.com/mpalmer/action-validator/pull/82
     patch do
-      url "https:raw.githubusercontent.comHomebrewformula-patchesffcaead14f73c08531313dcb7c300918db576c3baction-validator0.6.0-completion-manpage.patch"
+      url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/ffcaead14f73c08531313dcb7c300918db576c3b/action-validator/0.6.0-completion-manpage.patch"
       sha256 "91b0f5170e52537f78e4b196e3b3dd580e3e56e6479f14ba59cdfcff556f4680"
     end
 
     # rust 1.87.0 patch
     patch do
-      url "https:raw.githubusercontent.comHomebrewformula-patches9bc980d441be50bce28156456113fa52af0d0ff3action-validator0.6.0-rust-1.87.patch"
+      url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/9bc980d441be50bce28156456113fa52af0d0ff3/action-validator/0.6.0-rust-1.87.patch"
       sha256 "5748743bb855cdb2eae732a6dca354a27dcf57ebbead3dbc645775b7029a97a9"
     end
   end
@@ -38,10 +38,10 @@ class ActionValidator < Formula
   end
 
   head do
-    url "https:github.commpalmeraction-validator.git", branch: "main"
+    url "https://github.com/mpalmer/action-validator.git", branch: "main"
 
     resource "schemastore" do
-      url "https:github.comSchemaStoreschemastore.git", branch: "master"
+      url "https://github.com/SchemaStore/schemastore.git", branch: "master"
     end
   end
 
@@ -50,18 +50,18 @@ class ActionValidator < Formula
   def install
     ENV["GEN_DIR"] = buildpath
 
-    (buildpath"srcschemastore").install resource("schemastore")
+    (buildpath/"src/schemastore").install resource("schemastore")
 
     system "cargo", "install", *std_cargo_args
 
-    bash_completion.install "completionsaction-validator.bash" => "action-validator"
-    fish_completion.install "completionsaction-validator.fish"
-    zsh_completion.install "completions_action-validator"
-    man1.install "manaction-validator.1"
+    bash_completion.install "completions/action-validator.bash" => "action-validator"
+    fish_completion.install "completions/action-validator.fish"
+    zsh_completion.install "completions/_action-validator"
+    man1.install "man/action-validator.1"
   end
 
   test do
-    test_action = testpath"action.yml"
+    test_action = testpath/"action.yml"
     test_action.write <<~YAML
       name: "Brew Test Action"
       description: "Test Action"
@@ -74,7 +74,7 @@ class ActionValidator < Formula
         main: "index.js"
     YAML
 
-    test_workflow = testpath"workflow.yml"
+    test_workflow = testpath/"workflow.yml"
     test_workflow.write <<~YAML
       name: "Brew Test Workflow"
       on: [push111]
@@ -82,13 +82,13 @@ class ActionValidator < Formula
         build:
           runs-on: ubuntu-latest
           steps:
-            - uses: actionscheckout@v4
+            - uses: actions/checkout@v4
     YAML
 
-    output = shell_output("#{bin}action-validator --verbose #{test_action}")
+    output = shell_output("#{bin}/action-validator --verbose #{test_action}")
     assert_match "Treating action.yml as an Action definition", output
 
-    output = shell_output("#{bin}action-validator --verbose #{test_workflow} 2>&1", 1)
+    output = shell_output("#{bin}/action-validator --verbose #{test_workflow} 2>&1", 1)
     assert_match "Fatal error validating #{test_workflow}", output
     assert_match "Type of the value is wrong", output
   end

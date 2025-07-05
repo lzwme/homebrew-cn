@@ -1,15 +1,15 @@
 class Montage < Formula
   desc "Toolkit for assembling FITS images into custom mosaics"
-  homepage "http:montage.ipac.caltech.edu"
-  url "http:montage.ipac.caltech.edudownloadMontage_v6.0.tar.gz"
+  homepage "http://montage.ipac.caltech.edu"
+  url "http://montage.ipac.caltech.edu/download/Montage_v6.0.tar.gz"
   sha256 "1f540a7389d30fcf9f8cd9897617cc68b19350fbcde97c4d1cdc5634de1992c6"
   license "BSD-3-Clause"
   revision 1
-  head "https:github.comCaltech-IPACMontage.git", branch: "main"
+  head "https://github.com/Caltech-IPAC/Montage.git", branch: "main"
 
   livecheck do
-    url "http:montage.ipac.caltech.edudocsdownload2.html"
-    regex(href=.*?Montage[._-]v?(\d+(?:\.\d+)+)\.t.*?i)
+    url "http://montage.ipac.caltech.edu/docs/download2.html"
+    regex(/href=.*?Montage[._-]v?(\d+(?:\.\d+)+)\.t.*?/i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -39,33 +39,33 @@ class Montage < Formula
 
   def install
     # Work around multiple definition of `fstatus'. Remove in the next release.
-    # Ref: https:github.comCaltech-IPACMontagecommitf5358e2152f301ecc44dd2d7fb33ee5daecc39f5
-    makefiles = %w[libsrccoordMakefile MontageMakefile.LINUX]
-    inreplace makefiles, ^CC\s*=.*$, "\\0 -fcommon" if OS.linux? && build.stable?
+    # Ref: https://github.com/Caltech-IPAC/Montage/commit/f5358e2152f301ecc44dd2d7fb33ee5daecc39f5
+    makefiles = %w[lib/src/coord/Makefile Montage/Makefile.LINUX]
+    inreplace makefiles, /^CC\s*=.*$/, "\\0 -fcommon" if OS.linux? && build.stable?
 
     # Avoid building bundled libraries
     libs = %w[bzip2 cfitsio freetype jpeg]
-    rm_r buildpath.glob("libsrc{#{libs.join(",")}}*")
-    inreplace "libsrcMakefile", ^[ \t]*\(cd (?:#{libs.join("|")}).*\)$, ""
-    inreplace "MontageLibMakefile", %r{^.*libsrc(?:#{libs.join("|")}).*$\n}, ""
-    inreplace "MontageLibViewerMakefile.#{OS.kernel_name.upcase}",
-              "-I....libfreetypeincludefreetype2",
-              "-I#{Formula["freetype"].opt_include}freetype2"
+    rm_r buildpath.glob("lib/src/{#{libs.join(",")}}*")
+    inreplace "lib/src/Makefile", /^[ \t]*\(cd (?:#{libs.join("|")}).*\)$/, ""
+    inreplace "MontageLib/Makefile", %r{^.*/lib/src/(?:#{libs.join("|")}).*$\n}, ""
+    inreplace "MontageLib/Viewer/Makefile.#{OS.kernel_name.upcase}",
+              "-I../../lib/freetype/include/freetype2",
+              "-I#{Formula["freetype"].opt_include}/freetype2"
 
     ENV.deparallelize # Build requires targets to be built in specific order
     system "make"
-    bin.install Dir["binm*"]
+    bin.install Dir["bin/m*"]
   end
 
   def caveats
     <<~EOS
-      Montage is under the CaltechJPL non-exclusive, non-commercial software
+      Montage is under the Caltech/JPL non-exclusive, non-commercial software
       licence agreement available at:
-        http:montage.ipac.caltech.edudocsdownload.html
+        http://montage.ipac.caltech.edu/docs/download.html
     EOS
   end
 
   test do
-    system bin"mHdr", "m31", "1", "template.hdr"
+    system bin/"mHdr", "m31", "1", "template.hdr"
   end
 end

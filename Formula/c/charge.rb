@@ -1,10 +1,10 @@
 class Charge < Formula
   desc "Opinionated, zero-config static site generator"
-  homepage "https:charge.js.org"
-  url "https:registry.npmjs.org@staticcharge-charge-1.7.0.tgz"
+  homepage "https://charge.js.org"
+  url "https://registry.npmjs.org/@static/charge/-/charge-1.7.0.tgz"
   sha256 "477e6eb2a5d99854b4640017d85ee5f4ea09431a2ff046113047764f64d21ab5"
   license "MIT"
-  head "https:github.combrandonweisscharge.git", branch: "master"
+  head "https://github.com/brandonweiss/charge.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -31,28 +31,28 @@ class Charge < Formula
 
   def install
     system "npm", "install", *std_npm_args
-    bin.install_symlink libexec.glob("bin*")
+    bin.install_symlink libexec.glob("bin/*")
 
     # Replace universal binaries with their native slices.
     deuniversalize_machos
   end
 
   test do
-    (testpath"srcindex.html.jsx").write <<~JS
-      import Component from ".component.html.jsx"
+    (testpath/"src/index.html.jsx").write <<~JS
+      import Component from "./component.html.jsx"
 
       export default () => {
-        return <Component message="Hello!" >
+        return <Component message="Hello!" />
       }
     JS
 
-    (testpath"srccomponent.html.jsx").write <<~JS
+    (testpath/"src/component.html.jsx").write <<~JS
       export default (props) => {
-        return <p>{props.message}<p>
+        return <p>{props.message}</p>
       }
     JS
 
-    system bin"charge", "build", "src", "out"
-    assert_path_exists testpath"outindex.html"
+    system bin/"charge", "build", "src", "out"
+    assert_path_exists testpath/"out/index.html"
   end
 end

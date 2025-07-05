@@ -1,23 +1,23 @@
 class Tectonic < Formula
-  desc "Modernized, complete, self-contained TeXLaTeX engine"
-  homepage "https:tectonic-typesetting.github.io"
+  desc "Modernized, complete, self-contained TeX/LaTeX engine"
+  homepage "https://tectonic-typesetting.github.io/"
   license "MIT"
   revision 4
-  head "https:github.comtectonic-typesettingtectonic.git", branch: "master"
+  head "https://github.com/tectonic-typesetting/tectonic.git", branch: "master"
 
   stable do
-    url "https:github.comtectonic-typesettingtectonicarchiverefstagstectonic@0.15.0.tar.gz"
+    url "https://ghfast.top/https://github.com/tectonic-typesetting/tectonic/archive/refs/tags/tectonic@0.15.0.tar.gz"
     sha256 "3c13de312c4fe39ff905ad17e64a15a3a59d33ab65dacb0a8b9482c57e6bc6aa"
 
     # Backport `time` update to build on newer Rust
     patch do
-      url "https:github.comtectonic-typesettingtectoniccommit6b49ca8db40aaca29cb375ce75add3e575558375.patch?full_index=1"
+      url "https://github.com/tectonic-typesetting/tectonic/commit/6b49ca8db40aaca29cb375ce75add3e575558375.patch?full_index=1"
       sha256 "86e5343d1ce3e725a7dab0227003dddd09dcdd5913eb9e5866612cb77962affb"
     end
 
     # Backport fix for icu4c 75
     patch do
-      url "https:github.comtectonic-typesettingtectoniccommitd260961426b01f7643ba0f35f493bdb671eeaf3f.patch?full_index=1"
+      url "https://github.com/tectonic-typesetting/tectonic/commit/d260961426b01f7643ba0f35f493bdb671eeaf3f.patch?full_index=1"
       sha256 "7d2014a1208569a63fca044b8957e2d2256fa169ea2ebe562aed6f490eec17d1"
     end
   end
@@ -27,7 +27,7 @@ class Tectonic < Formula
   # release on GitHub sometimes points to a tag that isn't a release version.
   livecheck do
     url :stable
-    regex(^tectonic@v?(\d+(?:\.\d+)+)$i)
+    regex(/^tectonic@v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -62,21 +62,21 @@ class Tectonic < Formula
     end
 
     # Ensure that the `openssl` crate picks up the intended library.
-    # https:crates.iocratesopenssl#manual-configuration
+    # https://crates.io/crates/openssl#manual-configuration
     ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
 
     system "cargo", "install", "--features", "external-harfbuzz", *std_cargo_args
-    bin.install_symlink bin"tectonic" => "nextonic"
+    bin.install_symlink bin/"tectonic" => "nextonic"
   end
 
   test do
-    (testpath"test.tex").write 'Hello, World!\bye'
-    system bin"tectonic", "-o", testpath, "--format", "plain", testpath"test.tex"
-    assert_path_exists testpath"test.pdf", "Failed to create test.pdf"
+    (testpath/"test.tex").write 'Hello, World!\bye'
+    system bin/"tectonic", "-o", testpath, "--format", "plain", testpath/"test.tex"
+    assert_path_exists testpath/"test.pdf", "Failed to create test.pdf"
     assert_match "PDF document", shell_output("file test.pdf")
 
-    system bin"nextonic", "new", "."
-    system bin"nextonic", "build"
-    assert_path_exists testpath"builddefaultdefault.pdf", "Failed to create default.pdf"
+    system bin/"nextonic", "new", "."
+    system bin/"nextonic", "build"
+    assert_path_exists testpath/"build/default/default.pdf", "Failed to create default.pdf"
   end
 end

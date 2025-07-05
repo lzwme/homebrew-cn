@@ -1,10 +1,10 @@
 class Libtins < Formula
   desc "C++ network packet sniffing and crafting library"
-  homepage "https:libtins.github.io"
-  url "https:github.commfontaninilibtinsarchiverefstagsv4.5.tar.gz"
+  homepage "https://libtins.github.io/"
+  url "https://ghfast.top/https://github.com/mfontanini/libtins/archive/refs/tags/v4.5.tar.gz"
   sha256 "6ff5fe1ada10daef8538743dccb9c9b3e19d05d028ffdc24838e62ff3fc55841"
   license "BSD-2-Clause"
-  head "https:github.commfontaninilibtins.git", branch: "master"
+  head "https://github.com/mfontanini/libtins.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -38,8 +38,8 @@ class Libtins < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~CPP
-      #include <tinstins.h>
+    (testpath/"test.cpp").write <<~CPP
+      #include <tins/tins.h>
       int main() {
         Tins::Sniffer sniffer("en0");
       }

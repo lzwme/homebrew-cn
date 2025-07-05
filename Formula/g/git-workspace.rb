@@ -1,7 +1,7 @@
 class GitWorkspace < Formula
   desc "Sync personal and work git repositories from multiple providers"
-  homepage "https:github.comorfgit-workspace"
-  url "https:github.comorfgit-workspacearchiverefstagsv1.9.0.tar.gz"
+  homepage "https://github.com/orf/git-workspace"
+  url "https://ghfast.top/https://github.com/orf/git-workspace/archive/refs/tags/v1.9.0.tar.gz"
   sha256 "d5e2a5a0a568c46b408f82f981ea3672066d4496755fc14837e553e451c69f2d"
   license "MIT"
 
@@ -35,23 +35,23 @@ class GitWorkspace < Formula
   end
 
   test do
-    require "utilslinkage"
+    require "utils/linkage"
 
     ENV["GIT_WORKSPACE"] = Pathname.pwd
     ENV["GITHUB_TOKEN"] = "foo"
-    system bin"git-workspace", "add", "github", "foo"
+    system bin/"git-workspace", "add", "github", "foo"
     assert_match "provider = \"github\"", File.read("workspace.toml")
-    output = shell_output("#{bin}git-workspace update 2>&1", 1)
-    assert_match "Error fetching repositories from Github userorg foo", output
+    output = shell_output("#{bin}/git-workspace update 2>&1", 1)
+    assert_match "Error fetching repositories from Github user/org foo", output
 
     linked_libraries = [
-      Formula["libgit2"].opt_libshared_library("libgit2"),
-      Formula["libssh2"].opt_libshared_library("libssh2"),
-      Formula["openssl@3"].opt_libshared_library("libssl"),
+      Formula["libgit2"].opt_lib/shared_library("libgit2"),
+      Formula["libssh2"].opt_lib/shared_library("libssh2"),
+      Formula["openssl@3"].opt_lib/shared_library("libssl"),
     ]
-    linked_libraries << (Formula["openssl@3"].opt_libshared_library("libcrypto")) if OS.mac?
+    linked_libraries << (Formula["openssl@3"].opt_lib/shared_library("libcrypto")) if OS.mac?
     linked_libraries.each do |library|
-      assert Utils.binary_linked_to_library?(bin"git-workspace", library),
+      assert Utils.binary_linked_to_library?(bin/"git-workspace", library),
              "No linkage with #{library.basename}! Cargo is likely using a vendored version."
     end
   end

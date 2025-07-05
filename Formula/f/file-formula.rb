@@ -1,15 +1,15 @@
 # "File" is a reserved class name
 class FileFormula < Formula
   desc "Utility to determine file types"
-  homepage "https:darwinsys.comfile"
-  url "https:astron.compubfilefile-5.46.tar.gz"
+  homepage "https://darwinsys.com/file/"
+  url "https://astron.com/pub/file/file-5.46.tar.gz"
   sha256 "c9cc77c7c560c543135edc555af609d5619dbef011997e988ce40a3d75d86088"
   license "BSD-2-Clause-Darwin"
-  head "https:github.comfilefile.git", branch: "master"
+  head "https://github.com/file/file.git", branch: "master"
 
   livecheck do
-    url "https:astron.compubfile"
-    regex(href=.*?file[._-]v?(\d+(?:\.\d+)+)\.ti)
+    url "https://astron.com/pub/file/"
+    regex(/href=.*?file[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -33,7 +33,7 @@ class FileFormula < Formula
   def install
     ENV.prepend "LDFLAGS", "-L#{Formula["libmagic"].opt_lib} -lmagic"
 
-    system ".configure", "--disable-dependency-tracking",
+    system "./configure", "--disable-dependency-tracking",
                           "--prefix=#{prefix}"
     system "make", "install-exec"
     system "make", "-C", "doc", "install-man1"
@@ -41,15 +41,15 @@ class FileFormula < Formula
   end
 
   test do
-    system bin"file", test_fixtures("test.mp3")
+    system bin/"file", test_fixtures("test.mp3")
   end
 end
 
 __END__
-diff --git asrcMakefile.in bsrcMakefile.in
+diff --git a/src/Makefile.in b/src/Makefile.in
 index 155034b..0cc9f4d 100644
---- asrcMakefile.in
-+++ bsrcMakefile.in
+--- a/src/Makefile.in
++++ b/src/Makefile.in
 @@ -151,7 +151,6 @@ libmagic_la_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
  	$(libmagic_la_LDFLAGS) $(LDFLAGS) -o $@
  am_file_OBJECTS = file.$(OBJEXT) seccomp.$(OBJEXT)
@@ -66,4 +66,4 @@ index 155034b..0cc9f4d 100644
 +file_LDADD = $(LDADD) -lm
  CLEANFILES = magic.h
  EXTRA_DIST = magic.h.in cdf.mk BNF memtest.c
- HDR = $(top_srcdir)srcmagic.h.in
+ HDR = $(top_srcdir)/src/magic.h.in

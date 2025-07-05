@@ -1,10 +1,10 @@
 class Vaulted < Formula
   desc "Allows the secure storage and execution of environments"
-  homepage "https:github.commiquellavaulted"
-  url "https:github.commiquellavaultedarchiverefstagsv3.0.0.tar.gz"
+  homepage "https://github.com/miquella/vaulted"
+  url "https://ghfast.top/https://github.com/miquella/vaulted/archive/refs/tags/v3.0.0.tar.gz"
   sha256 "ea5183f285930ffa4014d54d4ed80ac8f7aa9afd1114e5fce6e65f2e9ed1af0c"
   license "MIT"
-  head "https:github.commiquellavaulted.git", branch: "master"
+  head "https://github.com/miquella/vaulted.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -29,13 +29,13 @@ class Vaulted < Formula
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
-    man1.install Dir["docmanvaulted*.1"]
+    man1.install Dir["doc/man/vaulted*.1"]
   end
 
   test do
-    (testpath".localsharevaulted").mkpath
-    touch(".localsharevaultedtest_vault")
-    output = IO.popen([bin"vaulted", "ls"], &:read)
+    (testpath/".local/share/vaulted").mkpath
+    touch(".local/share/vaulted/test_vault")
+    output = IO.popen([bin/"vaulted", "ls"], &:read)
     output == "test_vault\n"
   end
 end

@@ -1,11 +1,11 @@
 class Cppcheck < Formula
   desc "Static analysis of C and C++ code"
-  homepage "https:sourceforge.netprojectscppcheck"
-  url "https:github.comdanmarcppcheckarchiverefstags2.17.1.tar.gz"
+  homepage "https://sourceforge.net/projects/cppcheck/"
+  url "https://ghfast.top/https://github.com/danmar/cppcheck/archive/refs/tags/2.17.1.tar.gz"
   sha256 "bfd681868248ec03855ca7c2aea7bcb1f39b8b18860d76aec805a92a967b966c"
   license "GPL-3.0-or-later"
   revision 2
-  head "https:github.comdanmarcppcheck.git", branch: "main"
+  head "https://github.com/danmar/cppcheck.git", branch: "main"
 
   # There can be a notable gap between when a version is tagged and a
   # corresponding release is created, so we check the "latest" release instead
@@ -52,7 +52,7 @@ class Cppcheck < Formula
 
   test do
     # Execution test with an input .cpp file
-    test_cpp_file = testpath"test.cpp"
+    test_cpp_file = testpath/"test.cpp"
     test_cpp_file.write <<~CPP
       #include <iostream>
       using namespace std;
@@ -77,10 +77,10 @@ class Cppcheck < Formula
         number = initialNumber;
       }
     CPP
-    system bin"cppcheck", test_cpp_file
+    system bin/"cppcheck", test_cpp_file
 
     # Test the "out of bounds" check
-    test_cpp_file_check = testpath"testcheck.cpp"
+    test_cpp_file_check = testpath/"testcheck.cpp"
     test_cpp_file_check.write <<~CPP
       int main()
       {
@@ -89,21 +89,21 @@ class Cppcheck < Formula
         return 0;
       }
     CPP
-    output = shell_output("#{bin}cppcheck #{test_cpp_file_check} 2>&1")
+    output = shell_output("#{bin}/cppcheck #{test_cpp_file_check} 2>&1")
     assert_match "out of bounds", output
 
     # Test the addon functionality: sampleaddon.py imports the cppcheckdata python
     # module and uses it to parse a cppcheck dump into an OOP structure. We then
     # check the correct number of detected tokens and function names.
-    addons_dir = pkgshare"addons"
+    addons_dir = pkgshare/"addons"
     cppcheck_module = "#{name}data"
     expect_token_count = 51
     expect_function_names = "main,GetNumber,Example"
     assert_parse_message = "Error: sampleaddon.py: failed: can't parse the #{name} dump."
 
-    sample_addon_file = testpath"sampleaddon.py"
+    sample_addon_file = testpath/"sampleaddon.py"
     sample_addon_file.write <<~PYTHON
-      #!usrbinenv #{python3}
+      #!/usr/bin/env #{python3}
       """A simple test addon for #{name}, prints function names and token count"""
       import sys
       from importlib import machinery, util
@@ -125,9 +125,9 @@ class Cppcheck < Formula
           print("%s\\n%s" %(detected_functions, detected_token_count))
     PYTHON
 
-    system bin"cppcheck", "--dump", test_cpp_file
+    system bin/"cppcheck", "--dump", test_cpp_file
     test_cpp_file_dump = "#{test_cpp_file}.dump"
-    assert_path_exists testpathtest_cpp_file_dump
+    assert_path_exists testpath/test_cpp_file_dump
     output = shell_output("#{python3} #{sample_addon_file} #{test_cpp_file_dump}")
     assert_match "#{expect_function_names}\n#{expect_token_count}", output
   end

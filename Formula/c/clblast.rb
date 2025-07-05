@@ -1,7 +1,7 @@
 class Clblast < Formula
   desc "Tuned OpenCL BLAS library"
-  homepage "https:github.comCNugterenCLBlast"
-  url "https:github.comCNugterenCLBlastarchiverefstags1.6.3.tar.gz"
+  homepage "https://github.com/CNugteren/CLBlast"
+  url "https://ghfast.top/https://github.com/CNugteren/CLBlast/archive/refs/tags/1.6.3.tar.gz"
   sha256 "c05668c7461e8440fce48c9f7a8966a6f9e0923421acd7c0357ece9b1d83f20e"
   license "Apache-2.0"
 
@@ -35,7 +35,7 @@ class Clblast < Formula
 
   test do
     opencl_library = OS.mac? ? ["-framework", "OpenCL"] : ["-lOpenCL"]
-    system ENV.cc, pkgshare"samplessgemm.c", "-I#{include}", "-L#{lib}",
+    system ENV.cc, pkgshare/"samples/sgemm.c", "-I#{include}", "-L#{lib}",
                    "-lclblast", *opencl_library
   end
 end

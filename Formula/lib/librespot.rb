@@ -1,10 +1,10 @@
 class Librespot < Formula
   desc "Open Source Spotify client library"
-  homepage "https:github.comlibrespot-orglibrespot"
-  url "https:github.comlibrespot-orglibrespotarchiverefstagsv0.6.0.tar.gz"
+  homepage "https://github.com/librespot-org/librespot"
+  url "https://ghfast.top/https://github.com/librespot-org/librespot/archive/refs/tags/v0.6.0.tar.gz"
   sha256 "9ec881edb11e37d31a2b41dd30d56a3413445eedb720e1b0d278567dccfca8fc"
   license "MIT"
-  head "https:github.comlibrespot-orglibrespot.git", branch: "dev"
+  head "https://github.com/librespot-org/librespot.git", branch: "dev"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "d5a2cafcfec99611b21e631568c66d6f48fb44fe253082d3fe4243ffb5ff4735"
@@ -33,7 +33,7 @@ class Librespot < Formula
     require "open3"
     require "timeout"
 
-    Open3.popen3({ "RUST_LOG" => "DEBUG" }, bin"librespot", "-v") do |_, _, stderr, wait_thr|
+    Open3.popen3({ "RUST_LOG" => "DEBUG" }, bin/"librespot", "-v") do |_, _, stderr, wait_thr|
       Timeout.timeout(5) do
         stderr.each do |line|
           refute_match "ERROR", line

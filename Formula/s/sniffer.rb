@@ -1,7 +1,7 @@
 class Sniffer < Formula
   desc "Modern alternative network traffic sniffer"
-  homepage "https:github.comchenjiandongxsniffer"
-  url "https:github.comchenjiandongxsnifferarchiverefstagsv0.6.2.tar.gz"
+  homepage "https://github.com/chenjiandongx/sniffer"
+  url "https://ghfast.top/https://github.com/chenjiandongx/sniffer/archive/refs/tags/v0.6.2.tar.gz"
   sha256 "8da1a20155518da7c195fd370ab2811d02eddcfc11f423f75335f7b8024d42f0"
   license "MIT"
 
@@ -26,6 +26,6 @@ class Sniffer < Formula
   end
 
   test do
-    assert_match "lo", shell_output("#{bin}sniffer -l")
+    assert_match "lo", shell_output("#{bin}/sniffer -l")
   end
 end

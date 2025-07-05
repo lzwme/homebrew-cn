@@ -2,15 +2,15 @@ cask "marathon-infinity" do
   version "20250302"
   sha256 "a86f4af4d2b6c15565ce524228f23d493661285353bbc708eb491815879a3f8c"
 
-  url "https:github.comAleph-One-Marathonalephonereleasesdownloadrelease-#{version}MarathonInfinity-#{version}-Mac.dmg",
-      verified: "github.comAleph-One-Marathonalephone"
+  url "https://ghfast.top/https://github.com/Aleph-One-Marathon/alephone/releases/download/release-#{version}/MarathonInfinity-#{version}-Mac.dmg",
+      verified: "github.com/Aleph-One-Marathon/alephone/"
   name "Marathon Infinity"
   desc "First-person shooter, third in a trilogy"
-  homepage "https:alephone.lhowon.org"
+  homepage "https://alephone.lhowon.org/"
 
   livecheck do
     url :homepage
-    regex(%r{href=.*?MarathonInfinity[._-]v?(\d+(?:\.\d+)*)[._-]Mac\.dmg}i)
+    regex(%r{href=.*?/MarathonInfinity[._-]v?(\d+(?:\.\d+)*)[._-]Mac\.dmg}i)
   end
 
   depends_on macos: ">= :high_sierra"
@@ -18,9 +18,9 @@ cask "marathon-infinity" do
   app "Classic Marathon Infinity.app"
 
   zap trash: [
-    "~LibraryApplication SupportMarathon Infinity",
-    "~LibraryLogsMarathon Infinity Log.txt",
-    "~LibraryPreferencesMarathon Infinity",
-    "~LibrarySaved Application Stateorg.bungie.source.MarathonInfinity.savedState",
+    "~/Library/Application Support/Marathon Infinity",
+    "~/Library/Logs/Marathon Infinity Log.txt",
+    "~/Library/Preferences/Marathon Infinity",
+    "~/Library/Saved Application State/org.bungie.source.MarathonInfinity.savedState",
   ]
 end

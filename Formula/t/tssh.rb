@@ -1,7 +1,7 @@
 class Tssh < Formula
   desc "SSH Lightweight management tools"
-  homepage "https:github.comluanruisongtssh"
-  url "https:github.comluanruisongtssharchiverefstags2.1.3.tar.gz"
+  homepage "https://github.com/luanruisong/tssh"
+  url "https://ghfast.top/https://github.com/luanruisong/tssh/archive/refs/tags/2.1.3.tar.gz"
   sha256 "35b2b28eea5e41d6faa1e0eeee30ad18e069cc3489121257661097297692cd73"
   license "Apache-2.0"
 
@@ -26,9 +26,9 @@ class Tssh < Formula
   end
 
   test do
-    output_v = shell_output("#{bin}tssh -v")
+    output_v = shell_output("#{bin}/tssh -v")
     assert_match "version #{version}", output_v
-    output_e = shell_output("#{bin}tssh -e")
+    output_e = shell_output("#{bin}/tssh -e")
     assert_match "TSSH_HOME", output_e
   end
 end

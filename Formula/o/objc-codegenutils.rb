@@ -1,10 +1,10 @@
 class ObjcCodegenutils < Formula
   desc "Three small tools to help work with XCode"
-  homepage "https:github.compulsobjc-codegenutils"
-  url "https:github.compulsobjc-codegenutilsarchiverefstagsv1.0.tar.gz"
+  homepage "https://github.com/puls/objc-codegenutils"
+  url "https://ghfast.top/https://github.com/puls/objc-codegenutils/archive/refs/tags/v1.0.tar.gz"
   sha256 "98b8819e77e18029f1bda56622d42c162e52ef98f3ba4c6c8fcf5d40c256e845"
   license "Apache-2.0"
-  head "https:github.compulsobjc-codegenutils.git", branch: "master"
+  head "https://github.com/puls/objc-codegenutils.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -36,27 +36,27 @@ class ObjcCodegenutils < Formula
                "SYMROOT=build",
                "OBJROOT=build",
                "MACOSX_DEPLOYMENT_TARGET=#{MacOS.version}"
-    bin.install "buildReleaseobjc-assetgen"
+    bin.install "build/Release/objc-assetgen"
     xcodebuild "-arch", Hardware::CPU.arch,
                "-target", "colordump",
                "-configuration", "Release",
                "SYMROOT=build",
                "OBJROOT=build",
                "MACOSX_DEPLOYMENT_TARGET=#{MacOS.version}"
-    bin.install "buildReleaseobjc-colordump"
+    bin.install "build/Release/objc-colordump"
     xcodebuild "-arch", Hardware::CPU.arch,
                "-target", "identifierconstants",
                "-configuration", "Release",
                "SYMROOT=build",
                "OBJROOT=build",
                "MACOSX_DEPLOYMENT_TARGET=#{MacOS.version}"
-    bin.install "buildReleaseobjc-identifierconstants"
+    bin.install "build/Release/objc-identifierconstants"
   end
 
   test do
     # Would do more verification here but it would require fixture Xcode projects not in the main repo
-    system bin"objc-assetgen", "-h"
-    system bin"objc-colordump", "-h"
-    system bin"objc-identifierconstants", "-h"
+    system bin/"objc-assetgen", "-h"
+    system bin/"objc-colordump", "-h"
+    system bin/"objc-identifierconstants", "-h"
   end
 end

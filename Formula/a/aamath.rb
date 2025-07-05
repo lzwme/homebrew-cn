@@ -1,13 +1,13 @@
 class Aamath < Formula
   desc "Renders mathematical expressions as ASCII art"
-  homepage "http:fuse.superglue.seaamath"
-  url "http:fuse.superglue.seaamathaamath-0.3.tar.gz"
+  homepage "http://fuse.superglue.se/aamath/"
+  url "http://fuse.superglue.se/aamath/aamath-0.3.tar.gz"
   sha256 "9843f4588695e2cd55ce5d8f58921d4f255e0e65ed9569e1dcddf3f68f77b631"
   license "GPL-2.0-only"
 
   livecheck do
     url :homepage
-    regex(href=.*?aamath[._-]v?(\d+(?:\.\d+)+)\.ti)
+    regex(/href=.*?aamath[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -39,9 +39,9 @@ class Aamath < Formula
   end
 
   # Fix build on clang; patch by Homebrew team
-  # https:github.comHomebrewhomebrewissues23872
+  # https://github.com/Homebrew/homebrew/issues/23872
   patch do
-    url "https:raw.githubusercontent.comHomebrewformula-patches85fa66a9aamath0.3.patch"
+    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/85fa66a9/aamath/0.3.patch"
     sha256 "9443881d7950ac8d2da217a23ae3f2c936fbd6880f34dceba717f1246d8608f1"
   end
 
@@ -55,7 +55,7 @@ class Aamath < Formula
   end
 
   test do
-    s = pipe_output(bin"aamath", (prefix"testcases").read, 0)
+    s = pipe_output(bin/"aamath", (prefix/"testcases").read, 0)
     assert_match "f(x + h) = f(x) + h f'(x)", s
   end
 end

@@ -1,7 +1,7 @@
 class LibgrapeLite < Formula
   desc "C++ library for parallel graph processing"
-  homepage "https:github.comalibabalibgrape-lite"
-  url "https:github.comalibabalibgrape-litearchiverefstagsv0.3.5.tar.gz"
+  homepage "https://github.com/alibaba/libgrape-lite"
+  url "https://ghfast.top/https://github.com/alibaba/libgrape-lite/archive/refs/tags/v0.3.5.tar.gz"
   sha256 "77b7f08ad10b26ec7e6f60bf90ab8281208758702a9e8d9dd00b1cd6f5560f39"
   license "Apache-2.0"
 
@@ -29,12 +29,12 @@ class LibgrapeLite < Formula
   end
 
   test do
-    (testpath"test.cc").write <<~CPP
+    (testpath/"test.cc").write <<~CPP
       #include <iostream>
-      #include <grapegrape.h>
+      #include <grape/grape.h>
 
       int main() {
-         init
+        // init
         grape::InitMPIComm();
 
         {
@@ -43,7 +43,7 @@ class LibgrapeLite < Formula
           std::cout << "current worker id: " << comm_spec.worker_id() << std::endl;
         }
 
-         finalize
+        // finalize
         grape::FinalizeMPIComm();
       }
     CPP
@@ -60,6 +60,6 @@ class LibgrapeLite < Formula
                     "-lmpi",
                     "-o", "test_libgrape_lite"
 
-    assert_equal("current worker id: 0\n", shell_output(".test_libgrape_lite"))
+    assert_equal("current worker id: 0\n", shell_output("./test_libgrape_lite"))
   end
 end

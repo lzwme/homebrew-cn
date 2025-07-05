@@ -1,11 +1,11 @@
 class Helm < Formula
   desc "Kubernetes package manager"
-  homepage "https:helm.sh"
-  url "https:github.comhelmhelm.git",
+  homepage "https://helm.sh/"
+  url "https://github.com/helm/helm.git",
       tag:      "v3.18.3",
       revision: "6838ebcf265a3842d1433956e8a622e3290cf324"
   license "Apache-2.0"
-  head "https:github.comhelmhelm.git", branch: "main"
+  head "https://github.com/helm/helm.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "43945e6a380688198cc9dece6e8d8aa252d0705084c5f2b9cdad813890ef1c0d"
@@ -21,21 +21,21 @@ class Helm < Formula
 
   def install
     system "make", "build"
-    bin.install "binhelm"
+    bin.install "bin/helm"
 
     mkdir "man1" do
-      system bin"helm", "docs", "--type", "man"
+      system bin/"helm", "docs", "--type", "man"
       man1.install Dir["*"]
     end
 
-    generate_completions_from_executable(bin"helm", "completion")
+    generate_completions_from_executable(bin/"helm", "completion")
   end
 
   test do
-    system bin"helm", "create", "foo"
-    assert File.directory? testpath"foocharts"
+    system bin/"helm", "create", "foo"
+    assert File.directory? testpath/"foo/charts"
 
-    version_output = shell_output("#{bin}helm version 2>&1")
+    version_output = shell_output("#{bin}/helm version 2>&1")
     assert_match "GitCommit:\"#{stable.specs[:revision]}\"", version_output
     assert_match "Version:\"v#{version}\"", version_output
   end

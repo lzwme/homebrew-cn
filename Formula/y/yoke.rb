@@ -1,12 +1,12 @@
 class Yoke < Formula
   desc "Helm-inspired infrastructure-as-code package deployer"
-  homepage "https:yokecd.github.iodocs"
+  homepage "https://yokecd.github.io/docs/"
   # We use a git checkout since the build relies on tags for the version
-  url "https:github.comyokecdyoke.git",
+  url "https://github.com/yokecd/yoke.git",
       tag:      "v0.14.3",
       revision: "62ab2b67d9b32d1be7336b6e3300602d4994883d"
   license "MIT"
-  head "https:github.comyokecdyoke.git", branch: "main"
+  head "https://github.com/yokecd/yoke.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "b40337bbaa341f6b1e9b9634fec7d72520380c166d31eac47fabb2e8b5771c09"
@@ -21,12 +21,12 @@ class Yoke < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), ".cmdyoke"
+    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/yoke"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}yoke version")
+    assert_match version.to_s, shell_output("#{bin}/yoke version")
 
-    assert_match "failed to build k8 config", shell_output("#{bin}yoke inspect 2>&1", 1)
+    assert_match "failed to build k8 config", shell_output("#{bin}/yoke inspect 2>&1", 1)
   end
 end

@@ -2,12 +2,12 @@ cask "font-grandstander" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefonts.git",
-      verified:  "github.comgooglefonts",
+  url "https://github.com/google/fonts.git",
+      verified:  "github.com/google/fonts",
       branch:    "main",
-      only_path: "oflgrandstander"
+      only_path: "ofl/grandstander"
   name "Grandstander"
-  homepage "https:fonts.google.comspecimenGrandstander"
+  homepage "https://fonts.google.com/specimen/Grandstander"
 
   font "Grandstander-Italic[wght].ttf"
   font "Grandstander[wght].ttf"

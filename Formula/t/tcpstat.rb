@@ -1,11 +1,11 @@
 class Tcpstat < Formula
   desc "Active TCP connections monitoring tool"
-  homepage "https:github.comjtttcpstat"
-  url "https:github.comjtttcpstatarchiverefstagsrel-0-1.tar.gz"
+  homepage "https://github.com/jtt/tcpstat"
+  url "https://ghfast.top/https://github.com/jtt/tcpstat/archive/refs/tags/rel-0-1.tar.gz"
   version "0.1"
   sha256 "366a221950759015378775862a7499aaf727a3a9de67b15463b0991c2362fdaf"
   license "BSD-2-Clause"
-  head "https:github.comjtttcpstat.git", branch: "master"
+  head "https://github.com/jtt/tcpstat.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -43,6 +43,6 @@ class Tcpstat < Formula
   end
 
   test do
-    assert_match "Resolving", pipe_output(bin"tcpstat", "q")
+    assert_match "Resolving", pipe_output(bin/"tcpstat", "q")
   end
 end

@@ -1,10 +1,10 @@
 class Levant < Formula
   desc "Templating and deployment tool for HashiCorp Nomad jobs"
-  homepage "https:github.comhashicorplevant"
-  url "https:github.comhashicorplevantarchiverefstagsv0.3.3.tar.gz"
+  homepage "https://github.com/hashicorp/levant"
+  url "https://ghfast.top/https://github.com/hashicorp/levant/archive/refs/tags/v0.3.3.tar.gz"
   sha256 "0e87c27e2d4be7cd2a24cb0459d0a55f1bb7b5d65e6f7da4a2babd7d95d1bd92"
   license "MPL-2.0"
-  head "https:github.comhashicorplevant.git", branch: "main"
+  head "https://github.com/hashicorp/levant.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "cea6e51299dcb25689bb89534f249efced99ea5caf759edca53099bd0507a978"
@@ -24,22 +24,22 @@ class Levant < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.comhashicorplevantversion.Version=#{version}
-      -X github.comhashicorplevantversion.VersionPrerelease=#{tap.user}
+      -X github.com/hashicorp/levant/version.Version=#{version}
+      -X github.com/hashicorp/levant/version.VersionPrerelease=#{tap.user}
     ]
 
     system "go", "build", *std_go_args(ldflags:)
   end
 
   test do
-    (testpath"template.nomad").write <<~HCL
+    (testpath/"template.nomad").write <<~HCL
       resources {
           cpu    = [[.resources.cpu]]
           memory = [[.resources.memory]]
       }
     HCL
 
-    (testpath"variables.json").write <<~JSON
+    (testpath/"variables.json").write <<~JSON
       {
         "resources":{
           "cpu":250,
@@ -52,8 +52,8 @@ class Levant < Formula
     JSON
 
     assert_match "resources {\n    cpu    = 250\n    memory = 512\n}\n",
-      shell_output("#{bin}levant render -var-file=#{testpath}variables.json #{testpath}template.nomad")
+      shell_output("#{bin}/levant render -var-file=#{testpath}/variables.json #{testpath}/template.nomad")
 
-    assert_match "Levant v#{version}-#{tap.user}", shell_output("#{bin}levant --version")
+    assert_match "Levant v#{version}-#{tap.user}", shell_output("#{bin}/levant --version")
   end
 end

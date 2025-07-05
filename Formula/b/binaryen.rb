@@ -1,14 +1,14 @@
 class Binaryen < Formula
   desc "Compiler infrastructure and toolchain library for WebAssembly"
-  homepage "https:webassembly.org"
-  url "https:github.comWebAssemblybinaryenarchiverefstagsversion_123.tar.gz"
+  homepage "https://webassembly.org/"
+  url "https://ghfast.top/https://github.com/WebAssembly/binaryen/archive/refs/tags/version_123.tar.gz"
   sha256 "a1e1caf250cab3a83938713594e55b6762591208e82087e3337f793e8c8eb7ab"
   license "Apache-2.0"
-  head "https:github.comWebAssemblybinaryen.git", branch: "main"
+  head "https://github.com/WebAssembly/binaryen.git", branch: "main"
 
   livecheck do
     url :stable
-    regex(^version[._-](\d+(?:\.\d+)*)$i)
+    regex(/^version[._-](\d+(?:\.\d+)*)$/i)
   end
 
   bottle do
@@ -28,11 +28,11 @@ class Binaryen < Formula
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 
-    pkgshare.install "test"
+    pkgshare.install "test/"
   end
 
   test do
-    system bin"wasm-opt", "-O", pkgshare"testpassesO1_print-stack-ir.wast", "-o", "1.wast"
-    assert_match "stacky-help", (testpath"1.wast").read
+    system bin/"wasm-opt", "-O", pkgshare/"test/passes/O1_print-stack-ir.wast", "-o", "1.wast"
+    assert_match "stacky-help", (testpath/"1.wast").read
   end
 end

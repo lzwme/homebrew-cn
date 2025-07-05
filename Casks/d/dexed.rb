@@ -2,11 +2,11 @@ cask "dexed" do
   version "0.9.8"
   sha256 "3be32f98e56b40d9555a4069368c7307b8bae3368459bb087cf6195ae7538704"
 
-  url "https:github.comasb2m10dexedreleasesdownloadv#{version}dexed-#{version}-macos.zip",
-      verified: "github.comasb2m10dexed"
+  url "https://ghfast.top/https://github.com/asb2m10/dexed/releases/download/v#{version}/dexed-#{version}-macos.zip",
+      verified: "github.com/asb2m10/dexed/"
   name "Dexed"
   desc "DX7 FM synthesiser"
-  homepage "https:asb2m10.github.iodexed"
+  homepage "https://asb2m10.github.io/dexed/"
 
   livecheck do
     url :url
@@ -23,11 +23,11 @@ cask "dexed" do
               "com.digitalsuburban.dexed.component.pkg",
               "com.digitalsuburban.dexed.vst3.pkg",
             ],
-            delete:  "ApplicationsDexed.app"
+            delete:  "/Applications/Dexed.app"
 
   zap trash: [
-    "privatevardbreceiptscom.digitalsuburban.dexed.*",
-    "~LibraryApplication SupportDexed.settings",
-    "~LibrarySaved Application Statecom.digitalsuburban.Dexed.savedState",
+    "/private/var/db/receipts/com.digitalsuburban.dexed.*",
+    "~/Library/Application Support/Dexed.settings",
+    "~/Library/Saved Application State/com.digitalsuburban.Dexed.savedState",
   ]
 end

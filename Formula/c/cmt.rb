@@ -1,11 +1,11 @@
 class Cmt < Formula
   desc "Write consistent git commit messages based on a custom template"
-  homepage "https:github.comsmallhadroncollidercmt"
-  url "https:github.comsmallhadroncollidercmtarchiverefstags0.7.1.tar.gz"
+  homepage "https://github.com/smallhadroncollider/cmt"
+  url "https://ghfast.top/https://github.com/smallhadroncollider/cmt/archive/refs/tags/0.7.1.tar.gz"
   sha256 "364faaf5f44544f952b511be184a724e2011fba8f0f88fdfc05fef6985dd32f6"
   license "BSD-3-Clause"
   revision 1
-  head "https:github.comsmallhadroncollidercmt.git", branch: "master"
+  head "https://github.com/smallhadroncollider/cmt.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -39,7 +39,7 @@ class Cmt < Formula
   end
 
   test do
-    (testpath".cmt").write <<~EOS
+    (testpath/".cmt").write <<~EOS
       {}
 
       Homebrew Test: ${*}
@@ -54,6 +54,6 @@ class Cmt < Formula
       run: cmt --prev to commit
     EOS
 
-    assert_match expected, shell_output("#{bin}cmt --dry-run --no-color 'Blah blah blah'")
+    assert_match expected, shell_output("#{bin}/cmt --dry-run --no-color 'Blah blah blah'")
   end
 end

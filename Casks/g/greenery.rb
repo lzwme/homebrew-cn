@@ -2,11 +2,11 @@ cask "greenery" do
   version "0.9.12"
   sha256 "ea4e398ef990aa40961e566441335e6d15196a6347afda7f5dd1a51aa607aa65"
 
-  url "https:github.comGreenfireIncReleases.Greeneryreleasesdownloadv#{version}Greenery.#{version}.zip",
-      verified: "github.comGreenfireIncReleases.Greenery"
+  url "https://ghfast.top/https://github.com/GreenfireInc/Releases.Greenery/releases/download/v#{version}/Greenery.#{version}.zip",
+      verified: "github.com/GreenfireInc/Releases.Greenery/"
   name "Greenery"
   desc "Cryptocurrency bookkeeping and accounting wallet"
-  homepage "https:www.greenery.finance"
+  homepage "https://www.greenery.finance/"
 
   livecheck do
     url :url
@@ -20,8 +20,8 @@ cask "greenery" do
   app "Greenery.app"
 
   zap trash: [
-    "~LibraryApplication SupportGreenery",
-    "~LibraryPreferencescom.greenery.app.plist",
-    "~LibrarySaved Application Statecom.greenery.app.savedState",
+    "~/Library/Application Support/Greenery",
+    "~/Library/Preferences/com.greenery.app.plist",
+    "~/Library/Saved Application State/com.greenery.app.savedState",
   ]
 end

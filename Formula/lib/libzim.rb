@@ -1,7 +1,7 @@
 class Libzim < Formula
   desc "Reference implementation of the ZIM specification"
-  homepage "https:github.comopenzimlibzim"
-  url "https:github.comopenzimlibzimarchiverefstags9.3.0.tar.gz"
+  homepage "https://github.com/openzim/libzim"
+  url "https://ghfast.top/https://github.com/openzim/libzim/archive/refs/tags/9.3.0.tar.gz"
   sha256 "791220e51e6a160d349491b9744ec1a9c1a104f11a79e8e73673daf242be69ed"
   license "GPL-2.0-or-later"
   revision 2
@@ -28,9 +28,9 @@ class Libzim < Formula
   uses_from_macos "python" => :build
 
   # Apply commit from open PR to fix build with ICU 76+
-  # PR ref: https:github.comopenzimlibzimpull936
+  # PR ref: https://github.com/openzim/libzim/pull/936
   patch do
-    url "https:github.comopenzimlibzimcommit48c8c3fa7ad7a54f6df9a5be2676d189bbaf0022.patch?full_index=1"
+    url "https://github.com/openzim/libzim/commit/48c8c3fa7ad7a54f6df9a5be2676d189bbaf0022.patch?full_index=1"
     sha256 "f88890feab66aec7861b4eaab58202d6417c7c4d3692fe56f0e4b5fba06c64a3"
   end
 
@@ -41,17 +41,17 @@ class Libzim < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~CPP
+    (testpath/"test.cpp").write <<~CPP
       #include <iostream>
-      #include <zimversion.h>
+      #include <zim/version.h>
       int main(void) {
-        zim::printVersions();  first line should print "libzim <version>"
+        zim::printVersions(); // first line should print "libzim <version>"
         return 0;
       }
     CPP
     system ENV.cxx, "test.cpp", "-L#{lib}", "-lzim", "-o", "test", "-std=c++11"
 
     # Assert the first line of output contains "libzim <version>"
-    assert_match "libzim #{version}", shell_output(".test")
+    assert_match "libzim #{version}", shell_output("./test")
   end
 end

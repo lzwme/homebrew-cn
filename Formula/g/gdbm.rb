@@ -1,8 +1,8 @@
 class Gdbm < Formula
   desc "GNU database manager"
-  homepage "https:www.gnu.org.uasoftwaregdbm"
-  url "https:ftp.gnu.orggnugdbmgdbm-1.25.tar.gz"
-  mirror "https:ftpmirror.gnu.orggdbmgdbm-1.25.tar.gz"
+  homepage "https://www.gnu.org.ua/software/gdbm/"
+  url "https://ftp.gnu.org/gnu/gdbm/gdbm-1.25.tar.gz"
+  mirror "https://ftpmirror.gnu.org/gdbm/gdbm-1.25.tar.gz"
   sha256 "d02db3c5926ed877f8817b81cd1f92f53ef74ca8c6db543fbba0271b34f393ec"
   license "GPL-3.0-or-later"
 
@@ -19,32 +19,32 @@ class Gdbm < Formula
 
   # Backport fix for macOS
   patch do
-    url "https:git.savannah.gnu.orgcgitgdbm.gitrawdiff?id=ed0a865345681982ea02c6159c0f3d7702c928a1"
+    url "https://git.savannah.gnu.org/cgit/gdbm.git/rawdiff/?id=ed0a865345681982ea02c6159c0f3d7702c928a1"
     sha256 "cdba23a8da0bbdf91921247d226f9ca13e2a1c9541434f7a9132ba39346762ad"
   end
 
   def install
-    # --enable-libgdbm-compat for dbm.h  gdbm-ndbm.h compatibility:
-    #   https:www.gnu.org.uasoftwaregdbmmanualhtml_chaptergdbm_19.html
+    # --enable-libgdbm-compat for dbm.h / gdbm-ndbm.h compatibility:
+    #   https://www.gnu.org.ua/software/gdbm/manual/html_chapter/gdbm_19.html
     # Use --without-readline because readline detection is broken in 1.13
-    # https:github.comHomebrewhomebrew-corepull10903
+    # https://github.com/Homebrew/homebrew-core/pull/10903
     args = %w[
       --disable-silent-rules
       --enable-libgdbm-compat
       --without-readline
     ]
 
-    system ".configure", *args, *std_configure_args
+    system "./configure", *args, *std_configure_args
     system "make", "install"
 
     # Avoid conflicting with macOS SDK's ndbm.h.  Renaming to gdbm-ndbm.h
     # matches Debian's convention for gdbm's ndbm.h (libgdbm-compat-dev).
-    mv include"ndbm.h", include"gdbm-ndbm.h"
+    mv include/"ndbm.h", include/"gdbm-ndbm.h"
   end
 
   test do
-    pipe_output("#{bin}gdbmtool --norc --newdb test", "store 1 2\nquit\n")
-    assert_path_exists testpath"test"
-    assert_match "2", pipe_output("#{bin}gdbmtool --norc test", "fetch 1\nquit\n")
+    pipe_output("#{bin}/gdbmtool --norc --newdb test", "store 1 2\nquit\n")
+    assert_path_exists testpath/"test"
+    assert_match "2", pipe_output("#{bin}/gdbmtool --norc test", "fetch 1\nquit\n")
   end
 end

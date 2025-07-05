@@ -1,14 +1,14 @@
 class Ibex < Formula
   desc "C++ library for constraint processing over real numbers"
-  homepage "https:ibex-team.github.ioibex-lib"
-  url "https:github.comibex-teamibex-libarchiverefstagsibex-2.9.1.tar.gz"
+  homepage "https://ibex-team.github.io/ibex-lib/"
+  url "https://ghfast.top/https://github.com/ibex-team/ibex-lib/archive/refs/tags/ibex-2.9.1.tar.gz"
   sha256 "b3cd09c3be137fd2ff0f2570c3bcbdfcd9ea62fcf04d45d058db3b0dbb1d8872"
   license "LGPL-3.0-only"
-  head "https:github.comibex-teamibex-lib.git", branch: "master"
+  head "https://github.com/ibex-team/ibex-lib.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(^ibex[._-]v?(\d+(?:\.\d+)+)$i)
+    regex(/^ibex[._-]v?(\d+(?:\.\d+)+)$/i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -30,16 +30,16 @@ class Ibex < Formula
   uses_from_macos "zlib"
 
   on_linux do
-    # https:github.comibex-teamibex-libblobmasterinterval_lib_wrappergaol3rdmathlib-2.1.1CMakeLists.txt
+    # https://github.com/ibex-team/ibex-lib/blob/master/interval_lib_wrapper/gaol/3rd/mathlib-2.1.1/CMakeLists.txt
     depends_on arch: :x86_64
   end
 
   # Workaround for Intel macOS processor detection
-  # Issue ref: https:github.comibex-teamibex-libissues567
+  # Issue ref: https://github.com/ibex-team/ibex-lib/issues/567
   patch :DATA
 
   def install
-    rpaths = [loader_path, rpath, rpath(target: lib"ibex3rd")]
+    rpaths = [loader_path, rpath, rpath(target: lib/"ibex/3rd")]
 
     system "cmake", "-S", ".", "-B", "build",
                     "-DBUILD_SHARED_LIBS=ON",
@@ -47,9 +47,9 @@ class Ibex < Formula
                     *std_cmake_args.reject { |s| s["CMAKE_INSTALL_LIBDIR"] }
 
     # Workaround for Intel macOS build error: no member named '__fpcr' in 'fenv_t'
-    # Issue ref: https:github.comibex-teamibex-libissues567
+    # Issue ref: https://github.com/ibex-team/ibex-lib/issues/567
     if OS.mac? && Hardware::CPU.intel?
-      inreplace "buildinterval_lib_wrappergaolgaol-4.2.3alpha0gaolgaol_fpu_fenv.h",
+      inreplace "build/interval_lib_wrapper/gaol/gaol-4.2.3alpha0/gaol/gaol_fpu_fenv.h",
                 "#if __APPLE__\n#   define CTRLWORD(v) (v).__fpcr",
                 "#if __APPLE__\n#   define CTRLWORD(v) (v).__control"
     end
@@ -57,8 +57,8 @@ class Ibex < Formula
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 
-    pkgshare.install %w[examples benchssolver]
-    (pkgshare"examplessymb01.txt").write <<~EOS
+    pkgshare.install %w[examples benchs/solver]
+    (pkgshare/"examples/symb01.txt").write <<~EOS
       function f(x)
         return ((2*x,-x);(-x,3*x));
       end
@@ -66,18 +66,18 @@ class Ibex < Formula
   end
 
   test do
-    system "cmake", "-S", pkgshare"examples", "-B", ".", "-DCMAKE_BUILD_RPATH=#{lib};#{lib}ibex3rd"
+    system "cmake", "-S", pkgshare/"examples", "-B", ".", "-DCMAKE_BUILD_RPATH=#{lib};#{lib}/ibex/3rd"
     system "cmake", "--build", "."
-    (1..8).each { |n| system ".lab#{n}" }
-    (1..3).each { |n| system ".slam#{n}" }
+    (1..8).each { |n| system "./lab#{n}" }
+    (1..3).each { |n| system "./slam#{n}" }
   end
 end
 
 __END__
-diff --git ainterval_lib_wrappergaol3rdmathlib-2.1.1CMakeLists.txt binterval_lib_wrappergaol3rdmathlib-2.1.1CMakeLists.txt
+diff --git a/interval_lib_wrapper/gaol/3rd/mathlib-2.1.1/CMakeLists.txt b/interval_lib_wrapper/gaol/3rd/mathlib-2.1.1/CMakeLists.txt
 index 65b5ea8b..24a2e5b9 100644
---- ainterval_lib_wrappergaol3rdmathlib-2.1.1CMakeLists.txt
-+++ binterval_lib_wrappergaol3rdmathlib-2.1.1CMakeLists.txt
+--- a/interval_lib_wrapper/gaol/3rd/mathlib-2.1.1/CMakeLists.txt
++++ b/interval_lib_wrapper/gaol/3rd/mathlib-2.1.1/CMakeLists.txt
 @@ -43,7 +43,7 @@ elseif (CMAKE_SYSTEM MATCHES "CYGWIN" AND CMAKE_SYSTEM_PROCESSOR MATCHES "i.86")
  elseif (CMAKE_SYSTEM MATCHES "Darwin")
    if (CMAKE_SYSTEM_PROCESSOR MATCHES "arm64")

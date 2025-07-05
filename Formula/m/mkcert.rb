@@ -1,10 +1,10 @@
 class Mkcert < Formula
   desc "Simple tool to make locally trusted development certificates"
-  homepage "https:github.comFiloSottilemkcert"
-  url "https:github.comFiloSottilemkcertarchiverefstagsv1.4.4.tar.gz"
+  homepage "https://github.com/FiloSottile/mkcert"
+  url "https://ghfast.top/https://github.com/FiloSottile/mkcert/archive/refs/tags/v1.4.4.tar.gz"
   sha256 "32bd5519581bf0b03f53e5b22721692b99f39ab5b161dc27532c51eafa512ca9"
   license "BSD-3-Clause"
-  head "https:github.comFiloSottilemkcert.git", branch: "master"
+  head "https://github.com/FiloSottile/mkcert.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -30,12 +30,12 @@ class Mkcert < Formula
 
   test do
     ENV["CAROOT"] = testpath
-    system bin"mkcert", "brew.test"
-    assert_path_exists testpath"brew.test.pem"
-    assert_path_exists testpath"brew.test-key.pem"
-    output = (testpath"brew.test.pem").read
+    system bin/"mkcert", "brew.test"
+    assert_path_exists testpath/"brew.test.pem"
+    assert_path_exists testpath/"brew.test-key.pem"
+    output = (testpath/"brew.test.pem").read
     assert_match "-----BEGIN CERTIFICATE-----", output
-    output = (testpath"brew.test-key.pem").read
+    output = (testpath/"brew.test-key.pem").read
     assert_match "-----BEGIN PRIVATE KEY-----", output
   end
 end

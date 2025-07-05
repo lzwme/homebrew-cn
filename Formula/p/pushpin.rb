@@ -1,11 +1,11 @@
 class Pushpin < Formula
   desc "Reverse proxy for realtime web services"
-  homepage "https:pushpin.org"
-  url "https:github.comfastlypushpinreleasesdownloadv1.40.1pushpin-1.40.1.tar.bz2"
+  homepage "https://pushpin.org/"
+  url "https://ghfast.top/https://github.com/fastly/pushpin/releases/download/v1.40.1/pushpin-1.40.1.tar.bz2"
   sha256 "64b6486160ecffdac9d6452463e980433800858cc0877c40736985bf67634044"
   license "Apache-2.0"
   revision 1
-  head "https:github.comfastlypushpin.git", branch: "main"
+  head "https://github.com/fastly/pushpin.git", branch: "main"
 
   bottle do
     rebuild 1
@@ -28,7 +28,7 @@ class Pushpin < Formula
 
   def install
     # Work around `cc` crate picking non-shim compiler when compiling `ring`.
-    # This causes includeGFpcheck.h:27:11: fatal error: 'assert.h' file not found
+    # This causes include/GFp/check.h:27:11: fatal error: 'assert.h' file not found
     ENV["HOST_CC"] = ENV.cc
 
     args = %W[
@@ -36,8 +36,8 @@ class Pushpin < Formula
       PREFIX=#{prefix}
       LIBDIR=#{lib}
       CONFIGDIR=#{etc}
-      RUNDIR=#{var}run
-      LOGDIR=#{var}log
+      RUNDIR=#{var}/run
+      LOGDIR=#{var}/log
       BOOST_INCLUDE_DIR=#{Formula["boost"].include}
     ]
 
@@ -46,15 +46,15 @@ class Pushpin < Formula
   end
 
   test do
-    conffile = testpath"pushpin.conf"
-    routesfile = testpath"routes"
-    runfile = testpath"test.py"
+    conffile = testpath/"pushpin.conf"
+    routesfile = testpath/"routes"
+    runfile = testpath/"test.py"
 
-    cp HOMEBREW_PREFIX"etcpushpinpushpin.conf", conffile
+    cp HOMEBREW_PREFIX/"etc/pushpin/pushpin.conf", conffile
 
     inreplace conffile do |s|
-      s.gsub! "rundir=#{HOMEBREW_PREFIX}varrunpushpin", "rundir=#{testpath}varrunpushpin"
-      s.gsub! "logdir=#{HOMEBREW_PREFIX}varlogpushpin", "logdir=#{testpath}varlogpushpin"
+      s.gsub! "rundir=#{HOMEBREW_PREFIX}/var/run/pushpin", "rundir=#{testpath}/var/run/pushpin"
+      s.gsub! "logdir=#{HOMEBREW_PREFIX}/var/log/pushpin", "logdir=#{testpath}/var/log/pushpin"
     end
 
     routesfile.write <<~EOS
@@ -92,7 +92,7 @@ class Pushpin < Formula
       tries = 0
       while True:
         try:
-          with urlopen('http:localhost:7999test') as f:
+          with urlopen('http://localhost:7999/test') as f:
             body = f.read()
             assert(body == b'test response\\n')
           break
@@ -107,11 +107,11 @@ class Pushpin < Formula
     ENV["LC_ALL"] = "en_US.UTF-8"
     ENV["LANG"] = "en_US.UTF-8"
 
-    pid = spawn bin"pushpin", "--config=#{conffile}"
+    pid = spawn bin/"pushpin", "--config=#{conffile}"
     sleep 5
 
     begin
-      system Formula["python@3.13"].opt_bin"python3.13", runfile
+      system Formula["python@3.13"].opt_bin/"python3.13", runfile
     ensure
       Process.kill("TERM", pid)
       Process.wait(pid)

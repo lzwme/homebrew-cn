@@ -1,7 +1,7 @@
 class Libltc < Formula
-  desc "POSIX-C Library for handling LinearLogitudinal Time Code (LTC)"
-  homepage "https:x42.github.iolibltc"
-  url "https:github.comx42libltcreleasesdownloadv1.3.2libltc-1.3.2.tar.gz"
+  desc "POSIX-C Library for handling Linear/Logitudinal Time Code (LTC)"
+  homepage "https://x42.github.io/libltc/"
+  url "https://ghfast.top/https://github.com/x42/libltc/releases/download/v1.3.2/libltc-1.3.2.tar.gz"
   sha256 "0a6d42cd6c21e925a27fa560dc45ac80057d275f23342102825909c02d3b1249"
   license "LGPL-3.0-or-later"
 
@@ -23,14 +23,14 @@ class Libltc < Formula
   end
 
   def install
-    system ".configure", "--prefix=#{prefix}"
+    system "./configure", "--prefix=#{prefix}"
     system "make", "install"
   end
 
   test do
-    (testpath"test.c").write <<~C
-       stripped-down copy of:
-       https:raw.githubusercontent.comx42libltc87d45b3testsexample_encode.c
+    (testpath/"test.c").write <<~C
+      // stripped-down copy of:
+      // https://ghfast.top/https://raw.githubusercontent.com/x42/libltc/87d45b3/tests/example_encode.c
       #include <stdio.h>
       #include <stdlib.h>
       #include <string.h>
@@ -41,7 +41,7 @@ class Libltc < Formula
         double length = 2;
         double fps = 25;
         double sample_rate = 48000;
-        char *filename = "#{testpath}foobar";
+        char *filename = "#{testpath}/foobar";
         int vframe_cnt;
         int vframe_last;
         int total = 0;
@@ -97,7 +97,7 @@ class Libltc < Formula
       }
     C
     system ENV.cc, "test.c", "-L#{lib}", "-lltc", "-lm", "-o", "test"
-    system ".test"
-    assert (testpath"foobar").file?
+    system "./test"
+    assert (testpath/"foobar").file?
   end
 end

@@ -1,7 +1,7 @@
 class AwsCrtCpp < Formula
   desc "C++ wrapper around the aws-c-* libraries"
-  homepage "https:github.comawslabsaws-crt-cpp"
-  url "https:github.comawslabsaws-crt-cpparchiverefstagsv0.32.10.tar.gz"
+  homepage "https://github.com/awslabs/aws-crt-cpp"
+  url "https://ghfast.top/https://github.com/awslabs/aws-crt-cpp/archive/refs/tags/v0.32.10.tar.gz"
   sha256 "3ae101aa7a0a62d9868575b0e07a64536da1566283a5a314a4eee0326d808295"
   license "Apache-2.0"
 
@@ -31,7 +31,7 @@ class AwsCrtCpp < Formula
     args = %W[
       -DBUILD_DEPS=OFF
       -DBUILD_SHARED_LIBS=ON
-      -DCMAKE_MODULE_PATH=#{Formula["aws-c-common"].opt_lib}cmake
+      -DCMAKE_MODULE_PATH=#{Formula["aws-c-common"].opt_lib}/cmake
     ]
     # Avoid linkage to `aws-c-compression`
     args << "-DCMAKE_SHARED_LINKER_FLAGS=-Wl,-dead_strip_dylibs" if OS.mac?
@@ -42,11 +42,11 @@ class AwsCrtCpp < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~CPP
-      #include <awscrtAllocator.h>
-      #include <awscrtApi.h>
-      #include <awscrtTypes.h>
-      #include <awscrtchecksumCRC.h>
+    (testpath/"test.cpp").write <<~CPP
+      #include <aws/crt/Allocator.h>
+      #include <aws/crt/Api.h>
+      #include <aws/crt/Types.h>
+      #include <aws/crt/checksum/CRC.h>
 
       int main() {
         Aws::Crt::ApiHandle apiHandle(Aws::Crt::DefaultAllocatorImplementation());
@@ -57,6 +57,6 @@ class AwsCrtCpp < Formula
       }
     CPP
     system ENV.cxx, "-std=c++11", "test.cpp", "-o", "test", "-L#{lib}", "-laws-crt-cpp"
-    system ".test"
+    system "./test"
   end
 end

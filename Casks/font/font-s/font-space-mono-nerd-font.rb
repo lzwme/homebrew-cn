@@ -2,9 +2,9 @@ cask "font-space-mono-nerd-font" do
   version "3.4.0"
   sha256 "5edd68ef794c54cda235eb88b350e75f86b459bf8d499c698ea715cb121045e1"
 
-  url "https:github.comryanoasisnerd-fontsreleasesdownloadv#{version}SpaceMono.zip"
+  url "https://ghfast.top/https://github.com/ryanoasis/nerd-fonts/releases/download/v#{version}/SpaceMono.zip"
   name "SpaceMono Nerd Font (Space Mono)"
-  homepage "https:github.comryanoasisnerd-fonts"
+  homepage "https://github.com/ryanoasis/nerd-fonts"
 
   livecheck do
     url :url

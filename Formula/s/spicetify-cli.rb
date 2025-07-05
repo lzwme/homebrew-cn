@@ -1,10 +1,10 @@
 class SpicetifyCli < Formula
   desc "Command-line tool to customize Spotify client"
-  homepage "https:spicetify.app"
-  url "https:github.comspicetifycliarchiverefstagsv2.40.11v2.40.11.tar.gz"
+  homepage "https://spicetify.app/"
+  url "https://ghfast.top/https://github.com/spicetify/cli/archive/refs/tags/v2.40.11/v2.40.11.tar.gz"
   sha256 "64575466e75fc0909a14ce3e82bdfa4ecd0fee55556a27d50e5eeb7db6aa1656"
   license "LGPL-2.1-only"
-  head "https:github.comspicetifycli.git", branch: "master"
+  head "https://github.com/spicetify/cli.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "a109dad77ff112a3d2ccce59f214281087cf056dbf2484c8bf5e78cf865f08a3"
@@ -22,7 +22,7 @@ class SpicetifyCli < Formula
       -s -w
       -X main.version=#{version}
     ]
-    system "go", "build", *std_go_args(ldflags:, output: libexec"spicetify")
+    system "go", "build", *std_go_args(ldflags:, output: libexec/"spicetify")
     cd buildpath do
       libexec.install [
         "css-map.json",
@@ -32,16 +32,16 @@ class SpicetifyCli < Formula
         "jsHelper",
         "Themes",
       ]
-      bin.install_symlink libexec"spicetify"
+      bin.install_symlink libexec/"spicetify"
     end
   end
 
   test do
-    spotify_folder = testpath"com.spotify.Client"
-    pref_file = spotify_folder"com.spotify.client.plist"
+    spotify_folder = testpath/"com.spotify.Client"
+    pref_file = spotify_folder/"com.spotify.client.plist"
     mkdir_p spotify_folder
     touch pref_file
-    path = testpath".configspicetifyconfig-xpui.ini"
+    path = testpath/".config/spicetify/config-xpui.ini"
     path.write <<~INI
       [Setting]
       spotify_path            = #{spotify_folder}
@@ -49,10 +49,10 @@ class SpicetifyCli < Formula
       prefs_path              = #{pref_file}
     INI
 
-    quiet_system bin"spicetify", "config"
-    assert_match version.to_s, shell_output("#{bin}spicetify -v")
+    quiet_system bin/"spicetify", "config"
+    assert_match version.to_s, shell_output("#{bin}/spicetify -v")
 
-    output = shell_output("#{bin}spicetify config current_theme 2>&1", 1)
+    output = shell_output("#{bin}/spicetify config current_theme 2>&1", 1)
     assert_match "com.spotify.Client is not a valid path", output
   end
 end

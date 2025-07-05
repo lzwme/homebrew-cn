@@ -5,11 +5,11 @@ cask "yaak@beta" do
   sha256 arm:   "26ce8a322961f7e851ece9298b25e293233e504e8379b446e7f6ba8dc23715b2",
          intel: "9b515726d98deb6db6fc38c2e72f65b5d6756c1180ca21f2b74b415a81490d15"
 
-  url "https:github.commountain-loopyaakreleasesdownloadv#{version}Yaak_#{version}_#{arch}.dmg",
-      verified: "github.commountain-loopyaak"
+  url "https://ghfast.top/https://github.com/mountain-loop/yaak/releases/download/v#{version}/Yaak_#{version}_#{arch}.dmg",
+      verified: "github.com/mountain-loop/yaak/"
   name "Yaak Beta"
   desc "REST, GraphQL and gRPC client"
-  homepage "https:yaak.app"
+  homepage "https://yaak.app/"
 
   # Beta releases of the app use the same update URL as stable releases but an
   # `x-update-mode: beta` request header is used to retrieve beta updates
@@ -18,7 +18,7 @@ cask "yaak@beta" do
   # instead of Git tags, as there can be a notable gap between tag and release.
   livecheck do
     url :url
-    regex(^v?(\d+(?:\.\d+)+(?:[._-](?:beta|rc)[._-]\d+)?)$i)
+    regex(/^v?(\d+(?:\.\d+)+(?:[._-](?:beta|rc)[._-]\d+)?)$/i)
     strategy :github_releases do |json, regex|
       json.map do |release|
         next if release["draft"]
@@ -38,10 +38,10 @@ cask "yaak@beta" do
   app "yaak.app"
 
   zap trash: [
-    "~LibraryApplication Supportapp.yaak.desktop",
-    "~LibraryCachesapp.yaak.desktop",
-    "~LibraryLogsapp.yaak.desktop",
-    "~LibrarySaved Application Stateapp.yaak.desktop.savedState",
-    "~LibraryWebkitapp.yaak.desktop",
+    "~/Library/Application Support/app.yaak.desktop",
+    "~/Library/Caches/app.yaak.desktop",
+    "~/Library/Logs/app.yaak.desktop",
+    "~/Library/Saved Application State/app.yaak.desktop.savedState",
+    "~/Library/Webkit/app.yaak.desktop",
   ]
 end

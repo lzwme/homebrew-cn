@@ -1,10 +1,10 @@
 class Talosctl < Formula
   desc "CLI for out-of-band management of Kubernetes nodes created by Talos"
-  homepage "https:www.talos.dev"
-  url "https:github.comsiderolabstalosarchiverefstagsv1.10.5.tar.gz"
+  homepage "https://www.talos.dev/"
+  url "https://ghfast.top/https://github.com/siderolabs/talos/archive/refs/tags/v1.10.5.tar.gz"
   sha256 "339b4264bbdb0ff67002588f2a7826a97cb3a0218148891e47dcf908d837ee24"
   license "MPL-2.0"
-  head "https:github.comsiderolabstalos.git", branch: "main"
+  head "https://github.com/siderolabs/talos.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "af4a58b8e68490c5d6e85dc5cb5e94bd1a1ba5c152d65dd4ea9f5247b7392a5a"
@@ -21,20 +21,20 @@ class Talosctl < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.comsiderolabstalospkgmachineryversion.Tag=#{version}
-      -X github.comsiderolabstalospkgmachineryversion.Built=#{time.iso8601}
+      -X github.com/siderolabs/talos/pkg/machinery/version.Tag=#{version}
+      -X github.com/siderolabs/talos/pkg/machinery/version.Built=#{time.iso8601}
 
     ]
-    system "go", "build", *std_go_args(ldflags:), ".cmdtalosctl"
+    system "go", "build", *std_go_args(ldflags:), "./cmd/talosctl"
 
-    generate_completions_from_executable(bin"talosctl", "completion")
+    generate_completions_from_executable(bin/"talosctl", "completion")
   end
 
   test do
     # version check also failed with `failed to determine endpoints` for server config
-    assert_match version.to_s, shell_output("#{bin}talosctl version 2>&1", 1)
+    assert_match version.to_s, shell_output("#{bin}/talosctl version 2>&1", 1)
 
-    output = shell_output("#{bin}talosctl list 2>&1", 1)
+    output = shell_output("#{bin}/talosctl list 2>&1", 1)
     assert_match "error constructing client: failed to determine endpoints", output
   end
 end

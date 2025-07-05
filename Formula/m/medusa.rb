@@ -1,10 +1,10 @@
 class Medusa < Formula
   desc "Solidity smart contract fuzzer powered by go-ethereum"
-  homepage "https:github.comcryticmedusa"
-  url "https:github.comcryticmedusaarchiverefstagsv1.2.1.tar.gz"
+  homepage "https://github.com/crytic/medusa"
+  url "https://ghfast.top/https://github.com/crytic/medusa/archive/refs/tags/v1.2.1.tar.gz"
   sha256 "dc1d759a0037350b51adce293cc678bf441386606ccf622745e8ff2d04a86cb0"
   license "AGPL-3.0-only"
-  head "https:github.comcryticmedusa.git", branch: "master"
+  head "https://github.com/crytic/medusa.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "d0a87e647f278b365177ba8493606325a91557de070e7f8e1346cec0854dc7df"
@@ -24,13 +24,13 @@ class Medusa < Formula
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
-    generate_completions_from_executable(bin"medusa", "completion", shells: [:bash, :zsh])
+    generate_completions_from_executable(bin/"medusa", "completion", shells: [:bash, :zsh])
   end
 
   test do
     system "truffle", "init"
 
-    (testpath"contractstest.sol").write <<~SOLIDITY
+    (testpath/"contracts/test.sol").write <<~SOLIDITY
       pragma solidity ^0.8.0;
       contract Test {
         function assert_true() public {
@@ -42,8 +42,8 @@ class Medusa < Formula
       }
     SOLIDITY
 
-    fuzz_output = shell_output("#{bin}medusa fuzz --compilation-target #{testpath} --test-limit 100", 7)
-    assert_match(PASSED.*assert_true, fuzz_output)
-    assert_match(FAILED.*assert_false, fuzz_output)
+    fuzz_output = shell_output("#{bin}/medusa fuzz --compilation-target #{testpath} --test-limit 100", 7)
+    assert_match(/PASSED.*assert_true/, fuzz_output)
+    assert_match(/FAILED.*assert_false/, fuzz_output)
   end
 end

@@ -2,11 +2,11 @@ cask "spatterlight" do
   version "1.4.5"
   sha256 "0e3fc18e323fe6fe012dcbc674293c7411ae88dd8daaa65f7d0aa7ebf6bbbe1f"
 
-  url "https:github.comangstsmurfspatterlightreleasesdownloadv#{version}Spatterlight.app.zip",
-      verified: "github.comangstsmurfspatterlight"
+  url "https://ghfast.top/https://github.com/angstsmurf/spatterlight/releases/download/v#{version}/Spatterlight.app.zip",
+      verified: "github.com/angstsmurf/spatterlight/"
   name "Spatterlight"
   desc "Play most kinds of interactive fiction game files"
-  homepage "https:ccxvii.netspatterlight"
+  homepage "https://ccxvii.net/spatterlight/"
 
   livecheck do
     url :url
@@ -18,8 +18,8 @@ cask "spatterlight" do
   app "Spatterlight.app"
 
   zap trash: [
-    "~LibraryApplication Scriptsnet.ccxvii.spatterlight.*",
-    "~LibraryContainersnet.ccxvii.spatterlight.*",
-    "~LibraryPreferencesnet.ccxvii.spatterlight.plist",
+    "~/Library/Application Scripts/net.ccxvii.spatterlight.*",
+    "~/Library/Containers/net.ccxvii.spatterlight.*",
+    "~/Library/Preferences/net.ccxvii.spatterlight.plist",
   ]
 end

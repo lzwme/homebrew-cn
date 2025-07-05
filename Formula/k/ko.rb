@@ -1,10 +1,10 @@
 class Ko < Formula
   desc "Build and deploy Go applications on Kubernetes"
-  homepage "https:ko.build"
-  url "https:github.comko-buildkoarchiverefstagsv0.18.0.tar.gz"
+  homepage "https://ko.build"
+  url "https://ghfast.top/https://github.com/ko-build/ko/archive/refs/tags/v0.18.0.tar.gz"
   sha256 "4499c8a65f9474443bcf9c194cd0406b03887a7c36557a94f22f040a33a95608"
   license "Apache-2.0"
-  head "https:github.comko-buildko.git", branch: "main"
+  head "https://github.com/ko-build/ko.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "51ebbf1f9c0117c708c6837f964c9cd66192d0d40b6bf70be489b232c2b97e90"
@@ -18,13 +18,13 @@ class Ko < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w -X github.comgooglekopkgcommands.Version=#{version}")
+    system "go", "build", *std_go_args(ldflags: "-s -w -X github.com/google/ko/pkg/commands.Version=#{version}")
 
-    generate_completions_from_executable(bin"ko", "completion")
+    generate_completions_from_executable(bin/"ko", "completion")
   end
 
   test do
-    output = shell_output("#{bin}ko login reg.example.com -u brew -p test 2>&1")
-    assert_match "logged in via #{testpath}.dockerconfig.json", output
+    output = shell_output("#{bin}/ko login reg.example.com -u brew -p test 2>&1")
+    assert_match "logged in via #{testpath}/.docker/config.json", output
   end
 end

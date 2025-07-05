@@ -1,7 +1,7 @@
 class Advancecomp < Formula
   desc "Recompression utilities for .PNG, .MNG, .ZIP, and .GZ files"
-  homepage "https:www.advancemame.itcomp-readme.html"
-  url "https:github.comamadvanceadvancecompreleasesdownloadv2.6advancecomp-2.6.tar.gz"
+  homepage "https://www.advancemame.it/comp-readme.html"
+  url "https://ghfast.top/https://github.com/amadvance/advancecomp/releases/download/v2.6/advancecomp-2.6.tar.gz"
   sha256 "b07d77735540409771cbe1b6df165b5151c11bb9c3d8f01290be0ec88ec3498f"
   license "GPL-3.0-only"
 
@@ -28,17 +28,17 @@ class Advancecomp < Formula
 
   def install
     system "autoreconf", "--force", "--install", "--verbose"
-    system ".configure", "--enable-bzip2", "--mandir=#{man}", *std_configure_args
+    system "./configure", "--enable-bzip2", "--mandir=#{man}", *std_configure_args
     system "make", "install"
   end
 
   test do
-    system bin"advdef", "--version"
+    system bin/"advdef", "--version"
 
     cp test_fixtures("test.png"), "test.png"
-    system bin"advpng", "--recompress", "--shrink-fast", "test.png"
+    system bin/"advpng", "--recompress", "--shrink-fast", "test.png"
 
-    version_string = shell_output("#{bin}advpng --version")
+    version_string = shell_output("#{bin}/advpng --version")
     assert_includes version_string, "advancecomp v#{version}"
   end
 end

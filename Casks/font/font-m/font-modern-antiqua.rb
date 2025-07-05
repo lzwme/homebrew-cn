@@ -2,10 +2,10 @@ cask "font-modern-antiqua" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefontsrawmainoflmodernantiquaModernAntiqua-Regular.ttf",
-      verified: "github.comgooglefonts"
+  url "https://github.com/google/fonts/raw/main/ofl/modernantiqua/ModernAntiqua-Regular.ttf",
+      verified: "github.com/google/fonts/"
   name "Modern Antiqua"
-  homepage "https:fonts.google.comspecimenModern+Antiqua"
+  homepage "https://fonts.google.com/specimen/Modern+Antiqua"
 
   font "ModernAntiqua-Regular.ttf"
 

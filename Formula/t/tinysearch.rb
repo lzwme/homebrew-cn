@@ -1,10 +1,10 @@
 class Tinysearch < Formula
   desc "Tiny, full-text search engine for static websites built with Rust and Wasm"
-  homepage "https:github.comtinysearchtinysearch"
-  url "https:github.comtinysearchtinysearcharchiverefstagsv0.8.2.tar.gz"
+  homepage "https://github.com/tinysearch/tinysearch"
+  url "https://ghfast.top/https://github.com/tinysearch/tinysearch/archive/refs/tags/v0.8.2.tar.gz"
   sha256 "103214d77f0624bbb7e396667136156fdb8c8c7abeb6860adb231bf2a00b256d"
   license any_of: ["Apache-2.0", "MIT"]
-  head "https:github.comtinysearchtinysearch.git", branch: "master"
+  head "https://github.com/tinysearch/tinysearch.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -37,8 +37,8 @@ class Tinysearch < Formula
     system "rustup", "set", "profile", "minimal"
     system "rustup", "default", "stable"
 
-    system bin"tinysearch", pkgshare"fixturesindex.json"
-    assert_path_exists testpath"wasm_outputtinysearch_engine_bg.wasm"
-    assert_match "A tiny search engine for static websites", (testpath"wasm_outputpackage.json").read
+    system bin/"tinysearch", pkgshare/"fixtures/index.json"
+    assert_path_exists testpath/"wasm_output/tinysearch_engine_bg.wasm"
+    assert_match "A tiny search engine for static websites", (testpath/"wasm_output/package.json").read
   end
 end

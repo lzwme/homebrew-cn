@@ -1,10 +1,10 @@
 class Dissent < Formula
   desc "GTK4 Discord client in Go"
-  homepage "https:github.comdiamondburneddissent"
-  url "https:github.comdiamondburneddissentarchiverefstagsv0.0.35.tar.gz"
+  homepage "https://github.com/diamondburned/dissent"
+  url "https://ghfast.top/https://github.com/diamondburned/dissent/archive/refs/tags/v0.0.35.tar.gz"
   sha256 "86f3fc10a02fc8a84a0e55a8c8c42e280004a57688c743bbe7df16d433abbe5f"
   license "GPL-3.0-or-later"
-  head "https:github.comdiamondburneddissent.git", branch: "main"
+  head "https://github.com/diamondburned/dissent.git", branch: "main"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "51b9767ca1f33b9d998547d6a58ff5cd7089b3938d180dbd2597b8e6823ee87a"
@@ -45,6 +45,6 @@ class Dissent < Formula
     return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
 
     # dissent is a GUI application
-    system bin"dissent", "--help"
+    system bin/"dissent", "--help"
   end
 end

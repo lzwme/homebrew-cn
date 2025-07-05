@@ -1,11 +1,11 @@
 class Rsgain < Formula
   desc "ReplayGain 2.0 tagging utility"
-  homepage "https:github.comcomplexlogicrsgain"
-  url "https:github.comcomplexlogicrsgainarchiverefstagsv3.6.tar.gz"
+  homepage "https://github.com/complexlogic/rsgain"
+  url "https://ghfast.top/https://github.com/complexlogic/rsgain/archive/refs/tags/v3.6.tar.gz"
   sha256 "26f7acd1ba0851929dc756c93b3b1a6d66d7f2f36b31f744c8181f14d7b5c8a7"
   license "BSD-2-Clause"
   revision 1
-  head "https:github.comcomplexlogicrsgain.git", branch: "master"
+  head "https://github.com/complexlogic/rsgain.git", branch: "master"
 
   bottle do
     sha256 arm64_sequoia: "518dcf26b5b0c4c7600e6380f10c9219605ca8802eb2abd29a54510e88cad140"
@@ -32,9 +32,9 @@ class Rsgain < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}rsgain -v")
+    assert_match version.to_s, shell_output("#{bin}/rsgain -v")
 
     assert_match "No files were scanned",
-      shell_output("#{bin}rsgain easy -S #{testpath}")
+      shell_output("#{bin}/rsgain easy -S #{testpath}")
   end
 end

@@ -1,10 +1,10 @@
 class Typstfmt < Formula
   desc "Formatter for typst"
-  homepage "https:github.comastrale-sharptypstfmt"
-  url "https:github.comastrale-sharptypstfmtarchiverefstags0.2.10.tar.gz"
+  homepage "https://github.com/astrale-sharp/typstfmt"
+  url "https://ghfast.top/https://github.com/astrale-sharp/typstfmt/archive/refs/tags/0.2.10.tar.gz"
   sha256 "5a3f413a428b2590552c2d0ab0ab04c7a745e1cca128844b7b82ea49326d65c4"
   license one_of: ["MIT", "Apache-2.0"]
-  head "https:github.comastrale-sharptypstfmt.git", branch: "main"
+  head "https://github.com/astrale-sharp/typstfmt.git", branch: "main"
 
   no_autobump! because: :requires_manual_review
 
@@ -30,9 +30,9 @@ class Typstfmt < Formula
   end
 
   test do
-    (testpath"Hello.typ").write("Hello World!")
-    system bin"typstfmt", "Hello.typ"
+    (testpath/"Hello.typ").write("Hello World!")
+    system bin/"typstfmt", "Hello.typ"
 
-    assert_match version.to_s, shell_output("#{bin}typstfmt --version")
+    assert_match version.to_s, shell_output("#{bin}/typstfmt --version")
   end
 end

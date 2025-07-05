@@ -1,16 +1,16 @@
 class Pinact < Formula
   desc "Pins GitHub Actions to full hashes and versions"
-  homepage "https:github.comsuzuki-shunsukepinact"
-  url "https:github.comsuzuki-shunsukepinactarchiverefstagsv3.3.0.tar.gz"
+  homepage "https://github.com/suzuki-shunsuke/pinact"
+  url "https://ghfast.top/https://github.com/suzuki-shunsuke/pinact/archive/refs/tags/v3.3.0.tar.gz"
   sha256 "2646a3857f59accf33812cb926ac8b1eb2d139de487686f08adff56c531eb83b"
   license "MIT"
-  head "https:github.comsuzuki-shunsukepinact.git", branch: "main"
+  head "https://github.com/suzuki-shunsuke/pinact.git", branch: "main"
 
   # Pre-release version has a suffix `-\d` for example `3.0.0-0`
   # so we restrict the regex to only match stable versions
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -31,13 +31,13 @@ class Pinact < Formula
       -X main.commit=#{tap.user}
       -X main.date=#{time.iso8601}
     ]
-    system "go", "build", *std_go_args(ldflags:), ".cmdpinact"
+    system "go", "build", *std_go_args(ldflags:), "./cmd/pinact"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}pinact --version")
+    assert_match version.to_s, shell_output("#{bin}/pinact --version")
 
-    (testpath"action.yml").write <<~YAML
+    (testpath/"action.yml").write <<~YAML
       name: CI
 
       on: push
@@ -46,12 +46,12 @@ class Pinact < Formula
         build:
           runs-on: ubuntu-latest
           steps:
-            - uses: actionscheckout@v3
+            - uses: actions/checkout@v3
             - run: npm install && npm test
     YAML
 
-    system bin"pinact", "run", "action.yml"
+    system bin/"pinact", "run", "action.yml"
 
-    assert_match(%r{.*?actionscheckout@[a-f0-9]{40}}, (testpath"action.yml").read)
+    assert_match(%r{.*?actions/checkout@[a-f0-9]{40}}, (testpath/"action.yml").read)
   end
 end

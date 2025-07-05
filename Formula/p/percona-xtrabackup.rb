@@ -1,21 +1,21 @@
 class PerconaXtrabackup < Formula
   desc "Open source hot backup tool for InnoDB and XtraDB databases"
-  homepage "https:www.percona.comsoftwaremysql-databasepercona-xtrabackup"
-  url "https:downloads.percona.comdownloadsPercona-XtraBackup-8.4Percona-XtraBackup-8.4.0-2sourcetarballpercona-xtrabackup-8.4.0-2.tar.gz"
+  homepage "https://www.percona.com/software/mysql-database/percona-xtrabackup"
+  url "https://downloads.percona.com/downloads/Percona-XtraBackup-8.4/Percona-XtraBackup-8.4.0-2/source/tarball/percona-xtrabackup-8.4.0-2.tar.gz"
   sha256 "0777e3d3c3b4d4649ed23ed7197ec0aa71379b4a4a41b969b7286f6cf8888b4a"
   license "GPL-2.0-only"
   revision 1
 
   livecheck do
-    url "https:www.percona.comproducts-api.php", post_form: {
+    url "https://www.percona.com/products-api.php", post_form: {
       version: "Percona-XtraBackup-#{version.major_minor}",
     }
-    regex(value=["']?[^"' >]*?v?(\d+(?:[.-]\d+)+)[|"' >]i)
+    regex(/value=["']?[^"' >]*?v?(\d+(?:[.-]\d+)+)[|"' >]/i)
     strategy :page_match do |page, regex|
       page.scan(regex).map do |match|
         # Convert a version like 1.2.3-4.0 to 1.2.3-4 (but leave a version like
         # 1.2.3-4.5 as-is).
-        match[0].sub((-\d+)\.0$, '\1')
+        match[0].sub(/(-\d+)\.0$/, '\1')
       end
     end
   end
@@ -57,15 +57,15 @@ class PerconaXtrabackup < Formula
     depends_on "procps"
   end
 
-  # Apply fix for newer protobuf from MySQL repo. Remove once Percona syncs with MySQL 8.0.40  8.4.3
+  # Apply fix for newer protobuf from MySQL repo. Remove once Percona syncs with MySQL 8.0.40 / 8.4.3
   patch do
-    url "https:github.commysqlmysql-servercommit941e4ac8cfdacc7c2cd1c11b4d72329b70c46564.patch?full_index=1"
+    url "https://github.com/mysql/mysql-server/commit/941e4ac8cfdacc7c2cd1c11b4d72329b70c46564.patch?full_index=1"
     sha256 "1c39061a6c90e25a542f547ff8e5463d84c446009b4ab317c2c52184a4f931b8"
   end
 
   # Patch out check for Homebrew `boost`.
   # This should not be necessary when building inside `brew`.
-  # https:github.comHomebrewhomebrew-test-botpull820
+  # https://github.com/Homebrew/homebrew-test-bot/pull/820
   patch :DATA
 
   def install
@@ -73,29 +73,29 @@ class PerconaXtrabackup < Formula
     # `boost` and `rapidjson` must use bundled copy due to patches.
     # `lz4` is still needed due to xxhash.c used by mysqlgcs
     keep = %w[boost libbacktrace libcno libkmip lz4 rapidjson unordered_dense]
-    (buildpath"extra").each_child { |dir| rm_r(dir) unless keep.include?(dir.basename.to_s) }
+    (buildpath/"extra").each_child { |dir| rm_r(dir) unless keep.include?(dir.basename.to_s) }
 
-    perl = "usrbinperl"
+    perl = "/usr/bin/perl"
     if OS.linux?
-      perl = Formula["perl"].opt_bin"perl"
+      perl = Formula["perl"].opt_bin/"perl"
       # Disable ABI checking
-      inreplace "cmakeabi_check.cmake", "RUN_ABI_CHECK 1", "RUN_ABI_CHECK 0"
+      inreplace "cmake/abi_check.cmake", "RUN_ABI_CHECK 1", "RUN_ABI_CHECK 0"
     end
 
     # Make sure Perl from `perl-dbd-mysql` is used at runtime. Otherwise may have incompatible modules
-    inreplace "storageinnobasextrabackupsrcbackup_copy.cc", 'popen("perl",', "popen(\"#{perl}\","
+    inreplace "storage/innobase/xtrabackup/src/backup_copy.cc", 'popen("perl",', "popen(\"#{perl}\","
 
-    icu4c = deps.map(&:to_formula).find { |f| f.name.match?(^icu4c@\d+$) }
+    icu4c = deps.map(&:to_formula).find { |f| f.name.match?(/^icu4c@\d+$/) }
     # -DWITH_FIDO=system isn't set as feature isn't enabled and bundled copy was removed.
     # Formula paths are set to avoid HOMEBREW_HOME logic in CMake scripts
     cmake_args = %W[
       -DBUILD_CONFIG=xtrabackup_release
       -DCOMPILATION_COMMENT=Homebrew
-      -DINSTALL_PLUGINDIR=libpercona-xtrabackupplugin
+      -DINSTALL_PLUGINDIR=lib/percona-xtrabackup/plugin
       -DINSTALL_MANDIR=#{man}
       -DWITH_MAN_PAGES=ON
       -DINSTALL_MYSQLTESTDIR=
-      -DBISON_EXECUTABLE=#{Formula["bison"].opt_bin}bison
+      -DBISON_EXECUTABLE=#{Formula["bison"].opt_bin}/bison
       -DOPENSSL_ROOT_DIR=#{Formula["openssl@3"].opt_prefix}
       -DWITH_ICU=#{icu4c.opt_prefix}
       -DWITH_SYSTEM_LIBS=ON
@@ -110,74 +110,74 @@ class PerconaXtrabackup < Formula
     cmake_args += %w[EXE MODULE].map { |type| "-DCMAKE_#{type}_LINKER_FLAGS=-Wl,-dead_strip_dylibs" } if OS.mac?
 
     # Remove conflicting manpages
-    rm (Dir["man*"] - ["manCMakeLists.txt"])
+    rm (Dir["man/*"] - ["man/CMakeLists.txt"])
 
     system "cmake", "-S", ".", "-B", "build", *cmake_args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
-    bin.env_script_all_files(libexec"bin", PERL5LIB: Formula["perl-dbd-mysql"].opt_libexec"libperl5")
+    bin.env_script_all_files(libexec/"bin", PERL5LIB: Formula["perl-dbd-mysql"].opt_libexec/"lib/perl5")
 
     # remove conflicting library that is already installed by mysql
-    (lib"libmysqlservices.a").unlink
-    # remove conflicting librariesheaders that are installed by percona-server
-    (lib"libkmip.a").unlink
-    (lib"libkmippp.a").unlink
-    (include"kmip.h").unlink
-    (include"kmippp.h").unlink
+    (lib/"libmysqlservices.a").unlink
+    # remove conflicting libraries/headers that are installed by percona-server
+    (lib/"libkmip.a").unlink
+    (lib/"libkmippp.a").unlink
+    (include/"kmip.h").unlink
+    (include/"kmippp.h").unlink
   end
 
   test do
     mysql = Formula["mysql@8.4"]
-    common_args = %W[--no-defaults --port=#{free_port} --socket=#{testpath}mysql.sock]
+    common_args = %W[--no-defaults --port=#{free_port} --socket=#{testpath}/mysql.sock]
     client_args = %w[--user=root --password=]
-    server_args = %W[--datadir=#{testpath}mysql --tmpdir=#{testpath}tmp]
+    server_args = %W[--datadir=#{testpath}/mysql --tmpdir=#{testpath}/tmp]
     mysqld_args = common_args + server_args + %W[--mysqlx=OFF --user=#{ENV["USER"]}]
     mysqladmin_args = common_args + client_args
-    xtrabackup_args = common_args + client_args + server_args + %W[--target-dir=#{testpath}backup --backup]
+    xtrabackup_args = common_args + client_args + server_args + %W[--target-dir=#{testpath}/backup --backup]
 
-    (testpath"backup").mkpath
-    (testpath"mysql").mkpath
-    (testpath"tmp").mkpath
+    (testpath/"backup").mkpath
+    (testpath/"mysql").mkpath
+    (testpath/"tmp").mkpath
 
-    assert_match version.to_s, shell_output("#{bin}xtrabackup --version 2>&1")
+    assert_match version.to_s, shell_output("#{bin}/xtrabackup --version 2>&1")
 
-    output = shell_output("#{bin}xtrabackup #{xtrabackup_args.join(" ")} 2>&1", 1)
+    output = shell_output("#{bin}/xtrabackup #{xtrabackup_args.join(" ")} 2>&1", 1)
     assert_match "Failed to connect to MySQL server", output
 
-    system mysql.bin"mysqld", *mysqld_args, "--initialize-insecure"
-    pid = spawn(mysql.bin"mysqld", *mysqld_args)
+    system mysql.bin/"mysqld", *mysqld_args, "--initialize-insecure"
+    pid = spawn(mysql.bin/"mysqld", *mysqld_args)
     begin
       sleep 5
-      output = shell_output("#{bin}xtrabackup #{xtrabackup_args.join(" ")} 2>&1")
+      output = shell_output("#{bin}/xtrabackup #{xtrabackup_args.join(" ")} 2>&1")
       refute_match "[ERROR]", output
       assert_match "[Xtrabackup] completed OK!", output
       assert_match "version_check Done.", output # check Perl modules work
-      assert_path_exists testpath"backupxtrabackup_info"
+      assert_path_exists testpath/"backup/xtrabackup_info"
     ensure
-      system mysql.bin"mysqladmin", *mysqladmin_args, "shutdown"
+      system mysql.bin/"mysqladmin", *mysqladmin_args, "shutdown"
       Process.kill "TERM", pid
     end
   end
 end
 
 __END__
-diff --git aCMakeLists.txt bCMakeLists.txt
+diff --git a/CMakeLists.txt b/CMakeLists.txt
 index 438dff720c5..47863c17e23 100644
---- aCMakeLists.txt
-+++ bCMakeLists.txt
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
 @@ -1948,31 +1948,6 @@ MYSQL_CHECK_RAPIDJSON()
  MYSQL_CHECK_FIDO()
  MYSQL_CHECK_FIDO_DLLS()
 
 -IF(APPLE)
 -  GET_FILENAME_COMPONENT(HOMEBREW_BASE ${HOMEBREW_HOME} DIRECTORY)
--  IF(EXISTS ${HOMEBREW_BASE}includeboost)
+-  IF(EXISTS ${HOMEBREW_BASE}/include/boost)
 -    FOREACH(SYSTEM_LIB ICU LZ4 PROTOBUF ZSTD FIDO)
 -      IF(WITH_${SYSTEM_LIB} STREQUAL "system")
 -        MESSAGE(FATAL_ERROR
 -          "WITH_${SYSTEM_LIB}=system is not compatible with Homebrew boost\n"
 -          "MySQL depends on ${BOOST_PACKAGE_NAME} with a set of patches.\n"
--          "Including headers from ${HOMEBREW_BASE}include "
+-          "Including headers from ${HOMEBREW_BASE}/include "
 -          "will break the build.\n"
 -          "Please use WITH_${SYSTEM_LIB}=bundled\n"
 -          "or do 'brew uninstall boost' or 'brew unlink boost'"
@@ -185,10 +185,10 @@ index 438dff720c5..47863c17e23 100644
 -      ENDIF()
 -    ENDFOREACH()
 -  ENDIF()
--  # Ensure that we look in usrlocalinclude or opthomebrewinclude
+-  # Ensure that we look in /usr/local/include or /opt/homebrew/include
 -  FOREACH(SYSTEM_LIB ICU LZ4 PROTOBUF ZSTD FIDO)
 -    IF(WITH_${SYSTEM_LIB} STREQUAL "system")
--      INCLUDE_DIRECTORIES(SYSTEM ${HOMEBREW_BASE}include)
+-      INCLUDE_DIRECTORIES(SYSTEM ${HOMEBREW_BASE}/include)
 -      BREAK()
 -    ENDIF()
 -  ENDFOREACH()

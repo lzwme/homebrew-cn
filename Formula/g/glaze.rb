@@ -1,7 +1,7 @@
 class Glaze < Formula
   desc "Extremely fast, in-memory JSON and interface library for modern C++"
-  homepage "https:github.comstephenberryglaze"
-  url "https:github.comstephenberryglazearchiverefstagsv5.5.2.tar.gz"
+  homepage "https://github.com/stephenberry/glaze"
+  url "https://ghfast.top/https://github.com/stephenberry/glaze/archive/refs/tags/v5.5.2.tar.gz"
   sha256 "92382568999829a531db5a3800a36d8699674d640d3862fcb7e79ee2879d95ec"
   license "MIT"
 
@@ -23,11 +23,11 @@ class Glaze < Formula
   end
 
   test do
-    ENV["CXX"] = Formula["llvm"].opt_bin"clang++"
-    # Issue ref: https:github.comstephenberryglazeissues1500
+    ENV["CXX"] = Formula["llvm"].opt_bin/"clang++"
+    # Issue ref: https://github.com/stephenberry/glaze/issues/1500
     ENV.append_to_cflags "-stdlib=libc++" if OS.linux?
 
-    (testpath"CMakeLists.txt").write <<~CMAKE
+    (testpath/"CMakeLists.txt").write <<~CMAKE
       cmake_minimum_required(VERSION 3.16)
       project(GlazeTest LANGUAGES CXX)
 
@@ -40,8 +40,8 @@ class Glaze < Formula
       target_link_libraries(glaze_test PRIVATE glaze::glaze)
     CMAKE
 
-    (testpath"test.cpp").write <<~CPP
-      #include <glazeglaze.hpp>
+    (testpath/"test.cpp").write <<~CPP
+      #include <glaze/glaze.hpp>
       #include <map>
       #include <string_view>
 
@@ -53,8 +53,8 @@ class Glaze < Formula
       }
     CPP
 
-    system "cmake", "-S", ".", "-B", "build", "-Dglaze_DIR=#{share}glaze"
+    system "cmake", "-S", ".", "-B", "build", "-Dglaze_DIR=#{share}/glaze"
     system "cmake", "--build", "build"
-    system ".buildglaze_test"
+    system "./build/glaze_test"
   end
 end

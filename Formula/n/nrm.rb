@@ -1,7 +1,7 @@
 class Nrm < Formula
   desc "NPM registry manager, fast switch between different registries"
-  homepage "https:github.comPananrm"
-  url "https:registry.npmjs.orgnrm-nrm-2.0.1.tgz"
+  homepage "https://github.com/Pana/nrm"
+  url "https://registry.npmjs.org/nrm/-/nrm-2.0.1.tgz"
   sha256 "64f2462cb18a097a82c7520e9f84bf10159b1d5af85c20e2b760268993af1866"
   license "MIT"
 
@@ -19,12 +19,12 @@ class Nrm < Formula
 
   def install
     system "npm", "install", *std_npm_args
-    bin.install_symlink Dir["#{libexec}bin*"]
+    bin.install_symlink Dir["#{libexec}/bin/*"]
   end
 
   test do
-    assert_match "SUCCESS", shell_output("#{bin}nrm add test http:localhost")
-    assert_match "test --------- http:localhost", shell_output("#{bin}nrm ls")
-    assert_match "SUCCESS", shell_output("#{bin}nrm del test")
+    assert_match "SUCCESS", shell_output("#{bin}/nrm add test http://localhost")
+    assert_match "test --------- http://localhost/", shell_output("#{bin}/nrm ls")
+    assert_match "SUCCESS", shell_output("#{bin}/nrm del test")
   end
 end

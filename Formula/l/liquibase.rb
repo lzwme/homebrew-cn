@@ -1,7 +1,7 @@
 class Liquibase < Formula
   desc "Library for database change tracking"
-  homepage "https:www.liquibase.org"
-  url "https:github.comliquibaseliquibasereleasesdownloadv4.32.0liquibase-4.32.0.tar.gz"
+  homepage "https://www.liquibase.org/"
+  url "https://ghfast.top/https://github.com/liquibase/liquibase/releases/download/v4.32.0/liquibase-4.32.0.tar.gz"
   sha256 "10910d42ae9990c95a4ac8f0a3665a24bd40d08fb264055d78b923a512774d54"
   license "Apache-2.0"
 
@@ -29,8 +29,8 @@ class Liquibase < Formula
 
     chmod 0755, "liquibase"
     libexec.install Dir["*"]
-    (bin"liquibase").write_env_script libexec"liquibase", Language::Java.overridable_java_home_env
-    (libexec"lib").install_symlink Dir["#{libexec}sdklib-sdkslf4j*"]
+    (bin/"liquibase").write_env_script libexec/"liquibase", Language::Java.overridable_java_home_env
+    (libexec/"lib").install_symlink Dir["#{libexec}/sdk/lib-sdk/slf4j*"]
   end
 
   def caveats
@@ -41,6 +41,6 @@ class Liquibase < Formula
   end
 
   test do
-    system bin"liquibase", "--version"
+    system bin/"liquibase", "--version"
   end
 end

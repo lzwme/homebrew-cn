@@ -1,10 +1,10 @@
 class OpenscaCli < Formula
   desc "OpenSCA is a supply-chain security tool for security researchers and developers"
-  homepage "https:opensca.xmirror.cn"
-  url "https:github.comXmirrorSecurityOpenSCA-cliarchiverefstagsv3.0.7.tar.gz"
+  homepage "https://opensca.xmirror.cn"
+  url "https://ghfast.top/https://github.com/XmirrorSecurity/OpenSCA-cli/archive/refs/tags/v3.0.7.tar.gz"
   sha256 "ccf553dbfd5fea4e33dbc35a25d61db3392370f5b9976d1ee2c2763c27076ea1"
   license "Apache-2.0"
-  head "https:github.comXmirrorSecurityOpenSCA-cli.git", branch: "master"
+  head "https://github.com/XmirrorSecurity/OpenSCA-cli.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -26,8 +26,8 @@ class OpenscaCli < Formula
   end
 
   test do
-    system bin"opensca-cli", "-path", testpath
-    assert_path_exists testpath"opensca.log"
-    assert_match version.to_s, shell_output(bin"opensca-cli -version")
+    system bin/"opensca-cli", "-path", testpath
+    assert_path_exists testpath/"opensca.log"
+    assert_match version.to_s, shell_output(bin/"opensca-cli -version")
   end
 end

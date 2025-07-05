@@ -1,7 +1,7 @@
 class Osqp < Formula
   desc "Operator splitting QP solver"
-  homepage "https:osqp.org"
-  url "https:github.comosqposqparchiverefstagsv1.0.0.tar.gz"
+  homepage "https://osqp.org/"
+  url "https://ghfast.top/https://github.com/osqp/osqp/archive/refs/tags/v1.0.0.tar.gz"
   sha256 "dd6a1c2e7e921485697d5e7cdeeb043c712526c395b3700601f51d472a7d8e48"
   license "Apache-2.0"
 
@@ -20,28 +20,28 @@ class Osqp < Formula
   depends_on "cmake" => [:build, :test]
 
   resource "qdldl" do
-    url "https:github.comosqpqdldlarchiverefstagsv0.1.8.tar.gz"
+    url "https://ghfast.top/https://github.com/osqp/qdldl/archive/refs/tags/v0.1.8.tar.gz"
     sha256 "ecf113fd6ad8714f16289eb4d5f4d8b27842b6775b978c39def5913f983f6daa"
 
     livecheck do
-      url "https:raw.githubusercontent.comosqposqprefstagsv#{LATEST_VERSION}algebra_commonlin_sysqdldlqdldl.cmake"
-      regex(GIT_TAG\s+v?(\d+(?:\.\d+)+)i)
+      url "https://ghfast.top/https://raw.githubusercontent.com/osqp/osqp/refs/tags/v#{LATEST_VERSION}/algebra/_common/lin_sys/qdldl/qdldl.cmake"
+      regex(/GIT_TAG\s+v?(\d+(?:\.\d+)+)/i)
     end
   end
 
   def install
-    (buildpath"qdldl").install resource("qdldl")
+    (buildpath/"qdldl").install resource("qdldl")
 
-    system "cmake", "-S", ".", "-B", "build", "-DFETCHCONTENT_SOURCE_DIR_QDLDL=#{buildpath}qdldl", *std_cmake_args
+    system "cmake", "-S", ".", "-B", "build", "-DFETCHCONTENT_SOURCE_DIR_QDLDL=#{buildpath}/qdldl", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 
     # Remove unnecessary qdldl install.
-    rm_r(Dir[include"qdldl", lib"cmakeqdldl", lib"libqdldl.a", libshared_library("libqdldl")])
+    rm_r(Dir[include/"qdldl", lib/"cmake/qdldl", lib/"libqdldl.a", lib/shared_library("libqdldl")])
   end
 
   test do
-    (testpath"CMakeLists.txt").write <<~CMAKE
+    (testpath/"CMakeLists.txt").write <<~CMAKE
       cmake_minimum_required(VERSION 4.0 FATAL_ERROR)
       project(osqp_demo LANGUAGES C)
       find_package(osqp CONFIG REQUIRED)
@@ -53,8 +53,8 @@ class Osqp < Formula
       target_link_libraries(osqp_demo_static PRIVATE osqp::osqpstatic -lm)
     CMAKE
 
-    # https:github.comosqposqpblobmasterexamplesosqp_simple_demo.c
-    (testpath"osqp_demo.c").write <<~C
+    # https://github.com/osqp/osqp/blob/master/examples/osqp_simple_demo.c
+    (testpath/"osqp_demo.c").write <<~C
       #include <assert.h>
       #include <stdlib.h>
       #include <osqp.h>
@@ -95,7 +95,7 @@ class Osqp < Formula
 
     system "cmake", "-S", ".", "-B", "build"
     system "cmake", "--build", "build"
-    system ".buildosqp_demo"
-    system ".buildosqp_demo_static"
+    system "./build/osqp_demo"
+    system "./build/osqp_demo_static"
   end
 end

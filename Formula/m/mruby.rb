@@ -1,10 +1,10 @@
 class Mruby < Formula
   desc "Lightweight implementation of the Ruby language"
-  homepage "https:mruby.org"
-  url "https:github.commrubymrubyarchiverefstags3.4.0.tar.gz"
+  homepage "https://mruby.org/"
+  url "https://ghfast.top/https://github.com/mruby/mruby/archive/refs/tags/3.4.0.tar.gz"
   sha256 "183711c7a26d932b5342e64860d16953f1cc6518d07b2c30a02937fb362563f8"
   license "MIT"
-  head "https:github.commrubymruby.git", branch: "master"
+  head "https://github.com/mruby/mruby.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "1e76e20320c6a2d04d0af8785e59a94aa7e7d992a5db9a50ffbb34cb068a9b44"
@@ -24,16 +24,16 @@ class Mruby < Formula
   end
 
   def install
-    cp "build_configdefault.rb", buildpath"homebrew.rb"
-    inreplace buildpath"homebrew.rb",
+    cp "build_config/default.rb", buildpath/"homebrew.rb"
+    inreplace buildpath/"homebrew.rb",
       "conf.gembox 'default'",
       "conf.gembox 'full-core'"
-    ENV["MRUBY_CONFIG"] = buildpath"homebrew.rb"
+    ENV["MRUBY_CONFIG"] = buildpath/"homebrew.rb"
 
     system "make"
 
-    cd "buildhost" do
-      lib.install Dir["lib*.a"]
+    cd "build/host/" do
+      lib.install Dir["lib/*.a"]
       prefix.install %w[bin mrbgems mrblib]
     end
 
@@ -41,6 +41,6 @@ class Mruby < Formula
   end
 
   test do
-    system bin"mruby", "-e", "true"
+    system bin/"mruby", "-e", "true"
   end
 end

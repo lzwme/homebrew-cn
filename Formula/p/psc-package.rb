@@ -1,7 +1,7 @@
 class PscPackage < Formula
   desc "Package manager for PureScript based on package sets"
-  homepage "https:psc-package.readthedocs.io"
-  url "https:github.compurescriptpsc-packagearchiverefstagsv0.6.2.tar.gz"
+  homepage "https://psc-package.readthedocs.io"
+  url "https://ghfast.top/https://github.com/purescript/psc-package/archive/refs/tags/v0.6.2.tar.gz"
   sha256 "96c3bf2c65d381c61eff3d16d600eadd71ac821bbe7db02acec1d8b3b6dbecfc"
   license "BSD-3-Clause"
   revision 2
@@ -27,11 +27,11 @@ class PscPackage < Formula
 
   # Apply upstream patch to fix build. Remove with next release.
   patch do
-    url "https:github.compurescriptpsc-packagecommit2817cfd7bbc29de790d2ab7bee582cd6167c16b5.patch?full_index=1"
+    url "https://github.com/purescript/psc-package/commit/2817cfd7bbc29de790d2ab7bee582cd6167c16b5.patch?full_index=1"
     sha256 "e49585ff8127ccca0b35dc8a7caa04551de1638edfd9ac38e031d1148212091c"
   end
 
-  # Another patch to fix build. See https:github.compurescriptpsc-packagepull169.
+  # Another patch to fix build. See https://github.com/purescript/psc-package/pull/169.
   patch :DATA
 
   def install
@@ -43,19 +43,19 @@ class PscPackage < Formula
   end
 
   test do
-    assert_match "Initializing new project in current directory", shell_output("#{bin}psc-package init --set=master")
-    package_json = (testpath"psc-package.json").read
+    assert_match "Initializing new project in current directory", shell_output("#{bin}/psc-package init --set=master")
+    package_json = (testpath/"psc-package.json").read
     package_hash = JSON.parse(package_json)
     assert_match "master", package_hash["set"]
-    assert_match "Install complete", shell_output("#{bin}psc-package install")
+    assert_match "Install complete", shell_output("#{bin}/psc-package install")
   end
 end
 
 __END__
-diff --git aappTypes.hs bappTypes.hs
+diff --git a/app/Types.hs b/app/Types.hs
 index e0a6b73..3614dab 100644
---- aappTypes.hs
-+++ bappTypes.hs
+--- a/app/Types.hs
++++ b/app/Types.hs
 @@ -10,6 +10,7 @@ module Types
  
  import           Control.Category ((>>>))

@@ -2,22 +2,22 @@ cask "font-baloo" do
   version "1.443"
   sha256 "86db29e7463475fd0ce93376fff7eefb3a787525b8113bca9662b9cdc1c3a139"
 
-  url "https:github.comEkTypeBalooreleasesdownload#{version}Baloo_#{version}.zip"
+  url "https://ghfast.top/https://github.com/EkType/Baloo/releases/download/#{version}/Baloo_#{version}.zip"
   name "Baloo"
-  homepage "https:github.comEkTypeBaloo"
+  homepage "https://github.com/EkType/Baloo"
 
   no_autobump! because: :requires_manual_review
 
-  font "FontsBaloo-Regular.ttf"
-  font "FontsBalooBhai-Regular.ttf"
-  font "FontsBalooBhaijaan-Regular.ttf"
-  font "FontsBalooBhaina-Regular.ttf"
-  font "FontsBalooChettan-Regular.ttf"
-  font "FontsBalooDa-Regular.ttf"
-  font "FontsBalooPaaji-Regular.ttf"
-  font "FontsBalooTamma-Regular.ttf"
-  font "FontsBalooTammudu-Regular.ttf"
-  font "FontsBalooThambi-Regular.ttf"
+  font "Fonts/Baloo-Regular.ttf"
+  font "Fonts/BalooBhai-Regular.ttf"
+  font "Fonts/BalooBhaijaan-Regular.ttf"
+  font "Fonts/BalooBhaina-Regular.ttf"
+  font "Fonts/BalooChettan-Regular.ttf"
+  font "Fonts/BalooDa-Regular.ttf"
+  font "Fonts/BalooPaaji-Regular.ttf"
+  font "Fonts/BalooTamma-Regular.ttf"
+  font "Fonts/BalooTammudu-Regular.ttf"
+  font "Fonts/BalooThambi-Regular.ttf"
 
   # No zap stanza required
 end

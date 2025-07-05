@@ -1,10 +1,10 @@
 class ZlibRs < Formula
   desc "C API for zlib-rs"
-  homepage "https:github.comtrifectatechfoundationzlib-rstreemainlibz-rs-sys-cdylib#libz-rs-sys-cdylib"
-  url "https:github.comtrifectatechfoundationzlib-rsarchiverefstagsv0.5.1.tar.gz"
+  homepage "https://github.com/trifectatechfoundation/zlib-rs/tree/main/libz-rs-sys-cdylib#libz-rs-sys-cdylib"
+  url "https://ghfast.top/https://github.com/trifectatechfoundation/zlib-rs/archive/refs/tags/v0.5.1.tar.gz"
   sha256 "270dedde7e1cd63e7a743a520a74b92e82aaf02a2cb7e5e461364f58a03cc720"
   license "Zlib"
-  head "https:github.comtrifectatechfoundationzlib-rs.git", branch: "main"
+  head "https://github.com/trifectatechfoundation/zlib-rs.git", branch: "main"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "38915205b01501c510264cd8aefb8da5d750efcab57330393899815bb4360784"
@@ -21,7 +21,7 @@ class ZlibRs < Formula
   uses_from_macos "zlib" => :test
 
   def install
-    # https:github.comtrifectatechfoundationzlib-rstreemainlibz-rs-sys-cdylib#-cllvm-args-enable-dfa-jump-thread
+    # https://github.com/trifectatechfoundation/zlib-rs/tree/main/libz-rs-sys-cdylib#-cllvm-args-enable-dfa-jump-thread
     ENV.append "RUSTFLAGS", "-Cllvm-args=-enable-dfa-jump-thread"
     cd "libz-rs-sys-cdylib" do
       system "cargo", "cinstall", "--jobs", ENV.make_jobs.to_s, "--prefix", prefix, "--libdir", lib, "--release"
@@ -29,9 +29,9 @@ class ZlibRs < Formula
   end
 
   test do
-    # https:zlib.netzlib_how.html
+    # https://zlib.net/zlib_how.html
     resource "test_artifact" do
-      url "https:zlib.netzpipe.c"
+      url "https://zlib.net/zpipe.c"
       version "20051211"
       sha256 "68140a82582ede938159630bca0fb13a93b4bf1cb2e85b08943c26242cf8f3a6"
     end
@@ -43,7 +43,7 @@ class ZlibRs < Formula
     system "make", "zpipe"
 
     text = "Hello, Homebrew!"
-    compressed = pipe_output(".zpipe", text)
-    assert_equal text, pipe_output(".zpipe -d", compressed)
+    compressed = pipe_output("./zpipe", text)
+    assert_equal text, pipe_output("./zpipe -d", compressed)
   end
 end

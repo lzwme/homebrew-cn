@@ -1,13 +1,13 @@
 class Globjects < Formula
   desc "C++ library strictly wrapping OpenGL objects"
-  homepage "https:globjects.org"
+  homepage "https://globjects.org/"
   license "MIT"
   revision 1
 
-  # TODO: Switch to `glbinding` with v2 release and remove stablehead blocks.
+  # TODO: Switch to `glbinding` with v2 release and remove stable/head blocks.
   # Also consider deprecating `glbinding@2` based on upstream support status.
   stable do
-    url "https:github.comcginternalsglobjectsarchiverefstagsv1.1.0.tar.gz"
+    url "https://ghfast.top/https://github.com/cginternals/globjects/archive/refs/tags/v1.1.0.tar.gz"
     sha256 "68fa218c1478c09b555e44f2209a066b28be025312e0bab6e3a0b142a01ebbc6"
     depends_on "glbinding@2"
   end
@@ -27,7 +27,7 @@ class Globjects < Formula
   end
 
   head do
-    url "https:github.comcginternalsglobjects.git", branch: "master"
+    url "https://github.com/cginternals/globjects.git", branch: "master"
     depends_on "glbinding"
   end
 
@@ -36,7 +36,7 @@ class Globjects < Formula
 
   def install
     # Force install to use system directory structure as the upstream only
-    # considers usr and usrlocal to be valid for a system installation
+    # considers /usr and /usr/local to be valid for a system installation
     inreplace "CMakeLists.txt", "set(SYSTEM_DIR_INSTALL FALSE)", "set(SYSTEM_DIR_INSTALL TRUE)"
 
     system "cmake", "-S", ".", "-B", "build",
@@ -48,8 +48,8 @@ class Globjects < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~CPP
-      #include <globjectsglobjects.h>
+    (testpath/"test.cpp").write <<~CPP
+      #include <globjects/globjects.h>
       int main(void)
       {
         globjects::init();
@@ -58,11 +58,11 @@ class Globjects < Formula
     flags = ["-std=c++11"]
     flags << "-stdlib=libc++" if OS.mac?
     system ENV.cxx, "-o", "test", "test.cpp", *flags,
-                    "-I#{include}globjects",
+                    "-I#{include}/globjects",
                     "-I#{Formula["glbinding@2"].opt_include}",
-                    "-I#{Formula["glm"].opt_include}glm",
+                    "-I#{Formula["glm"].opt_include}/glm",
                     "-L#{lib}", "-L#{Formula["glbinding@2"].opt_lib}",
                     "-lglobjects", "-lglbinding", *ENV.cflags.to_s.split
-    system ".test"
+    system "./test"
   end
 end

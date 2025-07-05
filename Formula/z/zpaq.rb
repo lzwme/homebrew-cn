@@ -1,12 +1,12 @@
 class Zpaq < Formula
   desc "Incremental, journaling command-line archiver"
-  homepage "https:mattmahoney.netdczpaq.html"
-  url "https:mattmahoney.netdczpaq715.zip"
+  homepage "https://mattmahoney.net/dc/zpaq.html"
+  url "https://mattmahoney.net/dc/zpaq715.zip"
   version "7.15"
   sha256 "e85ec2529eb0ba22ceaeabd461e55357ef099b80f61c14f377b429ea3d49d418"
   license all_of: ["Unlicense", "MIT", :public_domain]
   revision 1
-  head "https:github.comzpaqzpaq.git", branch: "master"
+  head "https://github.com/zpaq/zpaq.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -27,7 +27,7 @@ class Zpaq < Formula
   end
 
   resource "test" do
-    url "https:mattmahoney.netdccalgarytest2.zpaq"
+    url "https://mattmahoney.net/dc/calgarytest2.zpaq"
     sha256 "b110688939477bbe62263faff1ce488872c68c0352aa8e55779346f1bd1ed07e"
   end
 
@@ -42,6 +42,6 @@ class Zpaq < Formula
 
   test do
     testpath.install resource("test")
-    assert_match "all OK", shell_output("#{bin}zpaq x calgarytest2.zpaq 2>&1")
+    assert_match "all OK", shell_output("#{bin}/zpaq x calgarytest2.zpaq 2>&1")
   end
 end

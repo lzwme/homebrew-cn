@@ -1,14 +1,14 @@
 class Cmigemo < Formula
   desc "Migemo is a tool that supports Japanese incremental search with Romaji"
-  homepage "https:www.kaoriya.netsoftwarecmigemo"
+  homepage "https://www.kaoriya.net/software/cmigemo"
   license "MIT"
-  head "https:github.comkoroncmigemo.git", branch: "master"
+  head "https://github.com/koron/cmigemo.git", branch: "master"
 
   stable do
-    url "https:storage.googleapis.comgoogle-code-archive-downloadsv2code.google.comcmigemocmigemo-default-src-20110227.zip"
+    url "https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/cmigemo/cmigemo-default-src-20110227.zip"
     sha256 "4aa759b2e055ef3c3fbeb9e92f7f0aacc1fd1f8602fdd2f122719793ee14414c"
 
-    # Patch per discussion at: https:github.comHomebrewlegacy-homebrewpull7005
+    # Patch per discussion at: https://github.com/Homebrew/legacy-homebrew/pull/7005
     patch :DATA
   end
 
@@ -36,8 +36,8 @@ class Cmigemo < Formula
   depends_on "nkf" => :build
 
   def install
-    chmod 0755, ".configure"
-    system ".configure", "--prefix=#{prefix}"
+    chmod 0755, "./configure"
+    system "./configure", "--prefix=#{prefix}"
     os = if OS.mac?
       "osx"
     else
@@ -52,15 +52,15 @@ class Cmigemo < Formula
 
   def caveats
     <<~EOS
-      See also https:github.comemacs-jpmigemo to use cmigemo with Emacs.
+      See also https://github.com/emacs-jp/migemo to use cmigemo with Emacs.
       You will have to save as migemo.el and put it in your load-path.
     EOS
   end
 end
 
 __END__
---- asrcwordbuf.c	2011-08-15 02:57:05.000000000 +0900
-+++ bsrcwordbuf.c	2011-08-15 02:57:17.000000000 +0900
+--- a/src/wordbuf.c	2011-08-15 02:57:05.000000000 +0900
++++ b/src/wordbuf.c	2011-08-15 02:57:17.000000000 +0900
 @@ -9,6 +9,7 @@
  #include <stdio.h>
  #include <stdlib.h>

@@ -1,10 +1,10 @@
 class Shtools < Formula
   desc "Spherical Harmonic Tools"
-  homepage "https:shtools.github.ioSHTOOLS"
-  url "https:github.comSHTOOLSSHTOOLSarchiverefstagsv4.13.1.tar.gz"
+  homepage "https://shtools.github.io/SHTOOLS/"
+  url "https://ghfast.top/https://github.com/SHTOOLS/SHTOOLS/archive/refs/tags/v4.13.1.tar.gz"
   sha256 "d5890049fb915604f25576cbbb9f18980a3fc88d28fe380809e3c3497448dacb"
   license "BSD-3-Clause"
-  head "https:github.comSHTOOLSSHTOOLS.git", branch: "master"
+  head "https://github.com/SHTOOLS/SHTOOLS.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "59ee77323ec5349e2ec3220bbb5addd94e5d8c61c51ed83f542e1c5b76e1b5da"
@@ -27,7 +27,7 @@ class Shtools < Formula
   end
 
   def install
-    # Workaround for arm64 linux, https:github.comSHTOOLSSHTOOLSissues507
+    # Workaround for arm64 linux, https://github.com/SHTOOLS/SHTOOLS/issues/507
     inreplace "Makefile", " -m64 ", " " if OS.linux? && Hardware::CPU.arm?
 
     system "make", "fortran"
@@ -36,16 +36,16 @@ class Shtools < Formula
   end
 
   test do
-    cp_r "#{share}examplesshtools", testpath
+    cp_r "#{share}/examples/shtools", testpath
     m64 = "-m64" if Hardware::CPU.intel?
-    system "make", "-C", "shtoolsfortran",
+    system "make", "-C", "shtools/fortran",
                    "run-fortran-tests-no-timing",
                    "F95=gfortran",
                    "F95FLAGS=#{m64} -fPIC -O3 -std=gnu -ffast-math",
-                   "MODFLAG=-I#{HOMEBREW_PREFIX}include",
-                   "LIBPATH=#{HOMEBREW_PREFIX}lib",
+                   "MODFLAG=-I#{HOMEBREW_PREFIX}/include",
+                   "LIBPATH=#{HOMEBREW_PREFIX}/lib",
                    "LIBNAME=SHTOOLS",
-                   "FFTW=-L #{HOMEBREW_PREFIX}lib -lfftw3 -lm",
+                   "FFTW=-L #{HOMEBREW_PREFIX}/lib -lfftw3 -lm",
                    "LAPACK=-L #{Formula["openblas"].opt_lib} -lopenblas",
                    "BLAS="
   end

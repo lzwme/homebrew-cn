@@ -2,11 +2,11 @@ cask "beaver-notes" do
   version "4.0.0"
   sha256 "633630cb1d8b96df25edb4dd8328910f61d53c19370d8344fb65642303a45d7c"
 
-  url "https:github.comBeaver-NotesBeaver-Notesreleasesdownload#{version}Beaver-notes-#{version}-universal.dmg",
-      verified: "github.comBeaver-NotesBeaver-Notes"
+  url "https://ghfast.top/https://github.com/Beaver-Notes/Beaver-Notes/releases/download/#{version}/Beaver-notes-#{version}-universal.dmg",
+      verified: "github.com/Beaver-Notes/Beaver-Notes/"
   name "Beaver Notes"
   desc "Privacy-focused note-taking app"
-  homepage "https:beavernotes.com"
+  homepage "https://beavernotes.com/"
 
   no_autobump! because: :requires_manual_review
 
@@ -15,8 +15,8 @@ cask "beaver-notes" do
   app "Beaver-notes.app"
 
   zap trash: [
-    "~LibraryCachescom.danielerolli.beaver-notes",
-    "~LibraryPreferencescom.danielerolli.beaver-notes.plist",
-    "~LibrarySaved Application Statecom.danielerolli.beaver-notes.savedState",
+    "~/Library/Caches/com.danielerolli.beaver-notes",
+    "~/Library/Preferences/com.danielerolli.beaver-notes.plist",
+    "~/Library/Saved Application State/com.danielerolli.beaver-notes.savedState",
   ]
 end

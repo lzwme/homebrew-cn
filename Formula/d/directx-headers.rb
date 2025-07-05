@@ -1,7 +1,7 @@
 class DirectxHeaders < Formula
   desc "Official DirectX headers available under an open source license"
-  homepage "https:devblogs.microsoft.comdirectx"
-  url "https:github.commicrosoftDirectX-Headersarchiverefstagsv1.616.0.tar.gz"
+  homepage "https://devblogs.microsoft.com/directx/"
+  url "https://ghfast.top/https://github.com/microsoft/DirectX-Headers/archive/refs/tags/v1.616.0.tar.gz"
   sha256 "125f492802939b40223bfccb83badd3f599af2d3449613d6cb893720607b9025"
   license "MIT"
 
@@ -27,7 +27,7 @@ class DirectxHeaders < Formula
 
   test do
     resource "test.cpp" do
-      url "https:raw.githubusercontent.commicrosoftDirectX-Headersa7d19030b872967c4224607c454273a2e65a5ed4testtest.cpp"
+      url "https://ghfast.top/https://raw.githubusercontent.com/microsoft/DirectX-Headers/a7d19030b872967c4224607c454273a2e65a5ed4/test/test.cpp"
       sha256 "6ff077a364a5f0f96b675d21aa8f053711fbef75bfdb193b44cc10b8475e2294"
     end
 
@@ -35,6 +35,6 @@ class DirectxHeaders < Formula
 
     ENV.remove_macosxsdk if OS.mac?
 
-    system Formula["mingw-w64"].bin"x86_64-w64-mingw32-g++", "-I#{include}", "-c", "test.cpp"
+    system Formula["mingw-w64"].bin/"x86_64-w64-mingw32-g++", "-I#{include}", "-c", "test.cpp"
   end
 end

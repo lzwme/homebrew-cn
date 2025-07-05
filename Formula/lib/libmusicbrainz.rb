@@ -1,7 +1,7 @@
 class Libmusicbrainz < Formula
   desc "MusicBrainz Client Library"
-  homepage "https:musicbrainz.orgdoclibmusicbrainz"
-  url "https:github.commetabrainzlibmusicbrainzreleasesdownloadrelease-5.1.0libmusicbrainz-5.1.0.tar.gz"
+  homepage "https://musicbrainz.org/doc/libmusicbrainz"
+  url "https://ghfast.top/https://github.com/metabrainz/libmusicbrainz/releases/download/release-5.1.0/libmusicbrainz-5.1.0.tar.gz"
   sha256 "6749259e89bbb273f3f5ad7acdffb7c47a2cf8fcaeab4c4695484cef5f4c6b46"
   license "LGPL-2.1-or-later"
 
@@ -34,7 +34,7 @@ class Libmusicbrainz < Formula
 
   # Backport fix to build with newer libxml2
   patch do
-    url "https:github.commetabrainzlibmusicbrainzcommit4655b571a70d73d41467091f59c518517c956198.patch?full_index=1"
+    url "https://github.com/metabrainz/libmusicbrainz/commit/4655b571a70d73d41467091f59c518517c956198.patch?full_index=1"
     sha256 "ee0c63e56a17156bca13b157744a54aeed6e19b39f65b14f2a5ac4e504358c8e"
   end
 

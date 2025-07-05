@@ -2,10 +2,10 @@ cask "font-monoid" do
   version "0.61"
   sha256 :no_check
 
-  url "https:github.comlarsenworkmonoidblobreleaseMonoid.zip?raw=true",
-      verified: "github.comlarsenworkmonoid"
+  url "https://github.com/larsenwork/monoid/blob/release/Monoid.zip?raw=true",
+      verified: "github.com/larsenwork/monoid/"
   name "Monoid"
-  homepage "https:larsenwork.commonoid"
+  homepage "https://larsenwork.com/monoid/"
 
   livecheck do
     url :url
@@ -20,8 +20,8 @@ cask "font-monoid" do
 
   caveats <<~EOS
     #{token} only installs the Normal Weight, Medium LineHeight, with Ligatures variant.
-    To get other styles, please tap the sscotthhomebrew-monoid repo
-      brew tap sscotthmonoid
+    To get other styles, please tap the sscotth/homebrew-monoid repo
+      brew tap sscotth/monoid
   EOS
 
   # No zap stanza required

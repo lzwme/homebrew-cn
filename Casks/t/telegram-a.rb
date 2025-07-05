@@ -5,19 +5,19 @@ cask "telegram-a" do
   sha256 arm:   "9299cc0b54a6ed896f07d0347476084401e2e96ae01476c3c9fac222ce528e09",
          intel: "92f3d64df020309878d23d65c393ddb64c4cb2bbc5902974fea57348b57a31ee"
 
-  url "https:github.comAjaxytelegram-ttreleasesdownloadv#{version}Telegram-A-#{arch}.dmg",
-      verified: "github.comAjaxytelegram-tt"
+  url "https://ghfast.top/https://github.com/Ajaxy/telegram-tt/releases/download/v#{version}/Telegram-A-#{arch}.dmg",
+      verified: "github.com/Ajaxy/telegram-tt/"
   name "Telegram A"
   desc "Web client for Telegram messenger"
-  homepage "https:web.telegram.orgaget"
+  homepage "https://web.telegram.org/a/get"
 
   depends_on macos: ">= :high_sierra"
 
   app "Telegram A.app"
 
   zap trash: [
-    "~LibraryApplication SupportTelegram A",
-    "~LibraryPreferencesorg.telegram.TelegramA.plist",
-    "~LibrarySaved Application Stateorg.telegram.TelegramA.savedState",
+    "~/Library/Application Support/Telegram A",
+    "~/Library/Preferences/org.telegram.TelegramA.plist",
+    "~/Library/Saved Application State/org.telegram.TelegramA.savedState",
   ]
 end

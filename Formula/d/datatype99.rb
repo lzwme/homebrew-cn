@@ -1,10 +1,10 @@
 class Datatype99 < Formula
   desc "Algebraic data types for C99"
-  homepage "https:github.comHirrolotdatatype99"
-  url "https:github.comHirrolotdatatype99archiverefstagsv1.6.5.tar.gz"
+  homepage "https://github.com/Hirrolot/datatype99"
+  url "https://ghfast.top/https://github.com/Hirrolot/datatype99/archive/refs/tags/v1.6.5.tar.gz"
   sha256 "f38c077afdb91b7d754321be5d3c4a43ed5420c1ad51514d1de20023960f9a8e"
   license "MIT"
-  head "https:github.comHirrolotdatatype99.git", branch: "master"
+  head "https://github.com/Hirrolot/datatype99.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, all: "de27c538560d8993175a1c972437f30e9de4d719154b3a4851f154610cb577b1"
@@ -17,7 +17,7 @@ class Datatype99 < Formula
   end
 
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include <datatype99.h>
       #include <stdio.h>
 
@@ -47,6 +47,6 @@ class Datatype99 < Formula
       }
     C
     system ENV.cc, "test.c", "-I#{include}", "-I#{Formula["metalang99"].opt_include}", "-o", "test"
-    assert_equal "28", shell_output(".test")
+    assert_equal "28", shell_output("./test")
   end
 end

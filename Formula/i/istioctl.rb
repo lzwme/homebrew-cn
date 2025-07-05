@@ -1,10 +1,10 @@
 class Istioctl < Formula
   desc "Istio configuration command-line utility"
-  homepage "https:istio.io"
-  url "https:github.comistioistioarchiverefstags1.26.2.tar.gz"
+  homepage "https://istio.io/"
+  url "https://ghfast.top/https://github.com/istio/istio/archive/refs/tags/1.26.2.tar.gz"
   sha256 "fb3b3569165e8b1cf01c676b7ce9a903abf730446df7e2753f436072aefbfd5e"
   license "Apache-2.0"
-  head "https:github.comistioistio.git", branch: "master"
+  head "https://github.com/istio/istio.git", branch: "master"
 
   livecheck do
     url :stable
@@ -26,20 +26,20 @@ class Istioctl < Formula
   def install
     ldflags = %W[
       -s -w
-      -X istio.ioistiopkgversion.buildVersion=#{version}
-      -X istio.ioistiopkgversion.buildGitRevision=#{tap.user}
-      -X istio.ioistiopkgversion.buildStatus=#{tap.user}
-      -X istio.ioistiopkgversion.buildTag=#{version}
-      -X istio.ioistiopkgversion.buildHub=docker.ioistio
+      -X istio.io/istio/pkg/version.buildVersion=#{version}
+      -X istio.io/istio/pkg/version.buildGitRevision=#{tap.user}
+      -X istio.io/istio/pkg/version.buildStatus=#{tap.user}
+      -X istio.io/istio/pkg/version.buildTag=#{version}
+      -X istio.io/istio/pkg/version.buildHub=docker.io/istio
     ]
-    system "go", "build", *std_go_args(ldflags:), ".istioctlcmdistioctl"
+    system "go", "build", *std_go_args(ldflags:), "./istioctl/cmd/istioctl"
 
-    generate_completions_from_executable(bin"istioctl", "completion")
-    system bin"istioctl", "collateral", "--man"
+    generate_completions_from_executable(bin/"istioctl", "completion")
+    system bin/"istioctl", "collateral", "--man"
     man1.install Dir["*.1"]
   end
 
   test do
-    assert_equal "client version: #{version}", shell_output("#{bin}istioctl version --remote=false").strip
+    assert_equal "client version: #{version}", shell_output("#{bin}/istioctl version --remote=false").strip
   end
 end

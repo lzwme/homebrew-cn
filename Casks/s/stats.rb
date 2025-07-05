@@ -12,10 +12,10 @@ cask "stats" do
     sha256 "39d67c2c253490208a93849ec83af20e9c8252c8dff1a51902fda8fdc478197f"
   end
 
-  url "https:github.comexelbanstatsreleasesdownloadv#{version}Stats.dmg"
+  url "https://ghfast.top/https://github.com/exelban/stats/releases/download/v#{version}/Stats.dmg"
   name "Stats"
   desc "System monitor for the menu bar"
-  homepage "https:github.comexelbanstats"
+  homepage "https://github.com/exelban/stats"
 
   auto_updates true
   depends_on macos: ">= :mojave"
@@ -24,16 +24,16 @@ cask "stats" do
 
   uninstall quit: "eu.exelban.Stats"
 
-  zap delete: "LibraryLaunchDaemonseu.exelban.Stats.SMC.Helper.plist",
+  zap delete: "/Library/LaunchDaemons/eu.exelban.Stats.SMC.Helper.plist",
       trash:  [
-        "~LibraryApplication Scriptseu.exelban.Stats.LaunchAtLogin",
-        "~LibraryApplication Scriptseu.exelban.Stats.Widgets",
-        "~LibraryCacheseu.exelban.Stats",
-        "~LibraryContainerseu.exelban.Stats.LaunchAtLogin",
-        "~LibraryContainerseu.exelban.Stats.Widgets",
-        "~LibraryCookieseu.exelban.Stats.binarycookies",
-        "~LibraryGroup Containerseu.exelban.Stats.widgets",
-        "~LibraryHTTPStorageseu.exelban.Stats",
-        "~LibraryPreferenceseu.exelban.Stats.plist",
+        "~/Library/Application Scripts/eu.exelban.Stats.LaunchAtLogin",
+        "~/Library/Application Scripts/eu.exelban.Stats.Widgets",
+        "~/Library/Caches/eu.exelban.Stats",
+        "~/Library/Containers/eu.exelban.Stats.LaunchAtLogin",
+        "~/Library/Containers/eu.exelban.Stats.Widgets",
+        "~/Library/Cookies/eu.exelban.Stats.binarycookies",
+        "~/Library/Group Containers/eu.exelban.Stats.widgets",
+        "~/Library/HTTPStorages/eu.exelban.Stats",
+        "~/Library/Preferences/eu.exelban.Stats.plist",
       ]
 end

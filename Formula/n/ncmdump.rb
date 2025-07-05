@@ -1,10 +1,10 @@
 class Ncmdump < Formula
-  desc "Convert Netease Cloud Music ncm files to mp3flac files"
-  homepage "https:github.comtaurusxinncmdump"
-  url "https:github.comtaurusxinncmdumparchiverefstags1.5.0.tar.gz"
+  desc "Convert Netease Cloud Music ncm files to mp3/flac files"
+  homepage "https://github.com/taurusxin/ncmdump"
+  url "https://ghfast.top/https://github.com/taurusxin/ncmdump/archive/refs/tags/1.5.0.tar.gz"
   sha256 "f59e4e5296b939c88a45d37844545d2e9c4c2cd3bb4f1f1a53a8c4fb72d53a2d"
   license "MIT"
-  head "https:github.comtaurusxinncmdump.git", branch: "main"
+  head "https://github.com/taurusxin/ncmdump.git", branch: "main"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "9b8b18693e23e28c86536d252255072708216e857cd2e8e7102551dbbd07e4ea"
@@ -21,12 +21,12 @@ class Ncmdump < Formula
 
   def install
     # Use Homebrew's taglib
-    # See discussion: https:github.comtaurusxinncmdumpdiscussions49
+    # See discussion: https://github.com/taurusxin/ncmdump/discussions/49
     inreplace "CMakeLists.txt", "add_subdirectory(taglib)\n", ""
-    inreplace buildpath"srcncmcrypt.cpp" do |s|
+    inreplace buildpath/"src/ncmcrypt.cpp" do |s|
       s.gsub! "#define TAGLIB_STATIC\n", ""
-      s.gsub! "#include \"taglibtag.h\"", "#include <taglibtag.h>"
-      s.gsub!(%r{#include "taglib.*(.*)\.h"}, '#include <taglib\1.h>')
+      s.gsub! "#include \"taglib/tag.h\"", "#include <taglib/tag.h>"
+      s.gsub!(%r{#include "taglib/.*/(.*)\.h"}, '#include <taglib/\1.h>')
     end
 
     system "cmake", "-S", ".", "-B", "build", "-DCMAKE_PREFIX_PATH=#{Formula["taglib"].opt_prefix}", *std_cmake_args
@@ -36,12 +36,12 @@ class Ncmdump < Formula
 
   test do
     resource "homebrew-test" do
-      url "https:raw.githubusercontent.comtaurusxinncmdump516b31ab68f806ef388084add11d9e4b2253f1c7testtest.ncm"
+      url "https://ghfast.top/https://raw.githubusercontent.com/taurusxin/ncmdump/516b31ab68f806ef388084add11d9e4b2253f1c7/test/test.ncm"
       sha256 "a1586bbbbad95019eee566411de58a57c3a3bd7c86d97f2c3c82427efce8964b"
     end
 
     resource("homebrew-test").stage(testpath)
-    system bin"ncmdump", "#{testpath}test.ncm"
-    assert_path_exists testpath"test.flac"
+    system bin/"ncmdump", "#{testpath}/test.ncm"
+    assert_path_exists testpath/"test.flac"
   end
 end

@@ -2,31 +2,31 @@ cask "kitty@nightly" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comkovidgoyalkittyreleasesdownloadnightlykitty-nightly.dmg"
+  url "https://ghfast.top/https://github.com/kovidgoyal/kitty/releases/download/nightly/kitty-nightly.dmg"
   name "kitty-nightly"
   desc "GPU-based terminal emulator"
-  homepage "https:github.comkovidgoyalkitty"
+  homepage "https://github.com/kovidgoyal/kitty"
 
   conflicts_with cask: "kitty"
   depends_on macos: ">= :big_sur"
 
   app "kitty.app"
-  # shim script (https:github.comHomebrewhomebrew-caskissues18809)
-  shimscript = "#{staged_path}kitty.wrapper.sh"
+  # shim script (https://github.com/Homebrew/homebrew-cask/issues/18809)
+  shimscript = "#{staged_path}/kitty.wrapper.sh"
   binary shimscript, target: "kitty"
 
   preflight do
     File.write shimscript, <<~EOS
-      #!binsh
-      exec '#{appdir}kitty.appContentsMacOSkitty' "$@"
+      #!/bin/sh
+      exec '#{appdir}/kitty.app/Contents/MacOS/kitty' "$@"
     EOS
   end
 
   zap trash: [
-    "~.configkitty",
-    "~LibraryCacheskitty",
-    "~LibraryPreferenceskitty",
-    "~LibraryPreferencesnet.kovidgoyal.kitty.plist",
-    "~LibrarySaved Application Statenet.kovidgoyal.kitty.savedState",
+    "~/.config/kitty",
+    "~/Library/Caches/kitty",
+    "~/Library/Preferences/kitty",
+    "~/Library/Preferences/net.kovidgoyal.kitty.plist",
+    "~/Library/Saved Application State/net.kovidgoyal.kitty.savedState",
   ]
 end

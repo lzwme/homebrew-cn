@@ -2,14 +2,14 @@ class Mlx < Formula
   include Language::Python::Virtualenv
 
   desc "Array framework for Apple silicon"
-  homepage "https:github.comml-exploremlx"
-  url "https:github.comml-exploremlxarchiverefstagsv0.26.2.tar.gz"
+  homepage "https://github.com/ml-explore/mlx"
+  url "https://ghfast.top/https://github.com/ml-explore/mlx/archive/refs/tags/v0.26.2.tar.gz"
   sha256 "326ce8da407b7c15f721b28f77dd18cf22b2d51edaaa4623c0e1ee46e93df1ba"
   license all_of: [
     "MIT", # main license
     "Apache-2.0", # metal-cpp resource
   ]
-  head "https:github.comml-exploremlx.git", branch: "main"
+  head "https://github.com/ml-explore/mlx.git", branch: "main"
 
   bottle do
     sha256 cellar: :any, arm64_sequoia: "cbe266cb34736f1faa24fc8f30e61fdb8a88eb6053f8183978b63b0948e21954"
@@ -37,18 +37,18 @@ class Mlx < Formula
     depends_on "openblas"
   end
 
-  # https:github.comml-exploremlxblobv#{version}CMakeLists.txt#L98
+  # https://github.com/ml-explore/mlx/blob/v#{version}/CMakeLists.txt#L98
   # Included in not_a_binary_url_prefix_allowlist.json
   resource "metal-cpp" do
     on_arm do
-      url "https:developer.apple.commetalcppfilesmetal-cpp_macOS15_iOS18.zip"
+      url "https://developer.apple.com/metal/cpp/files/metal-cpp_macOS15_iOS18.zip"
       sha256 "0433df1e0ab13c2b0becbd78665071e3fa28381e9714a3fce28a497892b8a184"
     end
   end
 
-  # Update to GIT_TAG at https:github.comml-exploremlxblobv#{version}mlxioCMakeLists.txt#L21
+  # Update to GIT_TAG at https://github.com/ml-explore/mlx/blob/v#{version}/mlx/io/CMakeLists.txt#L21
   resource "gguflib" do
-    url "https:github.comantirezgguf-toolsarchiveaf7d88d808a7608a33723fba067036202910acb3.tar.gz"
+    url "https://ghfast.top/https://github.com/antirez/gguf-tools/archive/af7d88d808a7608a33723fba067036202910acb3.tar.gz"
     sha256 "1ee2dde74a3f9506af9ad61d7638a5e87b5e891b5e36a5dd3d5f412a8ce8dd03"
   end
 
@@ -57,10 +57,10 @@ class Mlx < Formula
   end
 
   def install
-    ENV.append_to_cflags "-I#{Formula["nlohmann-json"].opt_include}nlohmann"
-    (buildpath"gguflib").install resource("gguflib")
+    ENV.append_to_cflags "-I#{Formula["nlohmann-json"].opt_include}/nlohmann"
+    (buildpath/"gguflib").install resource("gguflib")
 
-    mlx_python_dir = prefixLanguage::Python.site_packages(python3)"mlx"
+    mlx_python_dir = prefix/Language::Python.site_packages(python3)/"mlx"
 
     # We bypass brew's dependency provider to set `FETCHCONTENT_TRY_FIND_PACKAGE_MODE`
     # which redirects FetchContent_Declare() to find_package() and helps find our `fmt`.
@@ -70,11 +70,11 @@ class Mlx < Formula
       -DHOMEBREW_ALLOW_FETCHCONTENT=ON
       -DFETCHCONTENT_FULLY_DISCONNECTED=ON
       -DFETCHCONTENT_TRY_FIND_PACKAGE_MODE=ALWAYS
-      -DFETCHCONTENT_SOURCE_DIR_GGUFLIB=#{buildpath}gguflib
+      -DFETCHCONTENT_SOURCE_DIR_GGUFLIB=#{buildpath}/gguflib
     ]
     args << if Hardware::CPU.arm?
-      (buildpath"metal_cpp").install resource("metal-cpp")
-      "-DFETCHCONTENT_SOURCE_DIR_METAL_CPP=#{buildpath}metal_cpp"
+      (buildpath/"metal_cpp").install resource("metal-cpp")
+      "-DFETCHCONTENT_SOURCE_DIR_METAL_CPP=#{buildpath}/metal_cpp"
     else
       "-DMLX_ENABLE_X64_MAC=ON"
     end
@@ -87,10 +87,10 @@ class Mlx < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~CPP
+    (testpath/"test.cpp").write <<~CPP
       #include <cassert>
 
-      #include <mlxmlx.h>
+      #include <mlx/mlx.h>
 
       int main() {
         mlx::core::array x({1.0f, 2.0f, 3.0f, 4.0f}, {2, 2});
@@ -109,9 +109,9 @@ class Mlx < Formula
     system ENV.cxx, "test.cpp", "-std=c++17",
                     "-I#{include}", "-L#{lib}", "-lmlx",
                     "-o", "test"
-    system ".test"
+    system "./test"
 
-    (testpath"test.py").write <<~PYTHON
+    (testpath/"test.py").write <<~PYTHON
       import mlx.core as mx
       x = mx.array(0.0)
       assert mx.allclose(mx.cos(x), mx.array(1.0))

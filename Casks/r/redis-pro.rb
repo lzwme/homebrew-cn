@@ -2,10 +2,10 @@ cask "redis-pro" do
   version "3.1.0"
   sha256 "d7e408a5a7f409bd47e841cb2e48670820a19029f73737ec60a86eb75dda28f6"
 
-  url "https:github.comcmushroomredis-proreleasesdownload#{version}redis-pro.dmg"
+  url "https://ghfast.top/https://github.com/cmushroom/redis-pro/releases/download/#{version}/redis-pro.dmg"
   name "redis-pro"
   desc "Redis desktop"
-  homepage "https:github.comcmushroomredis-pro"
+  homepage "https://github.com/cmushroom/redis-pro"
 
   livecheck do
     url :url
@@ -19,11 +19,11 @@ cask "redis-pro" do
   app "redis-pro.app"
 
   zap trash: [
-    "~LibraryApplication Scriptscom.cmushroom.redis-pro",
-    "~LibraryApplication Supportcom.cmushroom.redis-pro",
-    "~LibraryCachescom.cmushroom.redis-pro",
-    "~LibraryContainerscom.cmushroom.redis-pro",
-    "~LibraryPreferencescom.cmushroom.redis-pro.plist",
-    "~LibrarySaved Application Statecom.cmushroom.redis-pro.savedState",
+    "~/Library/Application Scripts/com.cmushroom.redis-pro",
+    "~/Library/Application Support/com.cmushroom.redis-pro",
+    "~/Library/Caches/com.cmushroom.redis-pro",
+    "~/Library/Containers/com.cmushroom.redis-pro",
+    "~/Library/Preferences/com.cmushroom.redis-pro.plist",
+    "~/Library/Saved Application State/com.cmushroom.redis-pro.savedState",
   ]
 end

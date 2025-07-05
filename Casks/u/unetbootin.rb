@@ -2,22 +2,22 @@ cask "unetbootin" do
   version "702"
   sha256 "204f867e9b2604a5ba8818b7d7f4be83d08fa0c3eb0c22e51c39fc5526bd1aed"
 
-  url "https:github.comunetbootinunetbootinreleasesdownload#{version}unetbootin-mac-#{version}.dmg",
-      verified: "github.comunetbootinunetbootin"
+  url "https://ghfast.top/https://github.com/unetbootin/unetbootin/releases/download/#{version}/unetbootin-mac-#{version}.dmg",
+      verified: "github.com/unetbootin/unetbootin/"
   name "UNetbootin"
-  desc "Tool to install LinuxBSD distributions to a partition or USB drive"
-  homepage "https:unetbootin.github.io"
+  desc "Tool to install Linux/BSD distributions to a partition or USB drive"
+  homepage "https://unetbootin.github.io/"
 
   livecheck do
     url :url
-    regex(^v?(\d+(?:\.\d+)*)$i)
+    regex(/^v?(\d+(?:\.\d+)*)$/i)
   end
 
   no_autobump! because: :requires_manual_review
 
   app "unetbootin.app"
 
-  zap trash: "~LibraryApplication Supportcom.apple.sharedfilelistcom.apple.LSSharedFileList.ApplicationRecentDocumentscom.yourcompany.unetbootin.sfl*"
+  zap trash: "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.yourcompany.unetbootin.sfl*"
 
   caveats do
     requires_rosetta

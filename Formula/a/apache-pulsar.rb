@@ -1,11 +1,11 @@
 class ApachePulsar < Formula
   desc "Cloud-native distributed messaging and streaming platform"
-  homepage "https:pulsar.apache.org"
-  url "https:www.apache.orgdyncloser.lua?path=pulsarpulsar-4.0.5apache-pulsar-4.0.5-src.tar.gz"
-  mirror "https:archive.apache.orgdistpulsarpulsar-4.0.5apache-pulsar-4.0.5-src.tar.gz"
+  homepage "https://pulsar.apache.org/"
+  url "https://www.apache.org/dyn/closer.lua?path=pulsar/pulsar-4.0.5/apache-pulsar-4.0.5-src.tar.gz"
+  mirror "https://archive.apache.org/dist/pulsar/pulsar-4.0.5/apache-pulsar-4.0.5-src.tar.gz"
   sha256 "1b4b1c955c30e6402e779d09848fd7efba48336ba7dc0bf9776ef755eec1cfd0"
   license "Apache-2.0"
-  head "https:github.comapachepulsar.git", branch: "master"
+  head "https://github.com/apache/pulsar.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "e0f18b0a39760074fd3cd0a7e731c826610779350bbb5fe3a4022f850743fb17"
@@ -23,9 +23,9 @@ class ApachePulsar < Formula
 
   def install
     # Avoid using pre-built `protoc-gen-grpc-java`
-    grpc_java_files = ["pulsar-clientpom.xml", "pulsar-functionsprotopom.xml"]
+    grpc_java_files = ["pulsar-client/pom.xml", "pulsar-functions/proto/pom.xml"]
     plugin_artifact = "io.grpc:protoc-gen-grpc-java:${protoc-gen-grpc-java.version}:exe:${os.detected.classifier}"
-    inreplace grpc_java_files, %r{<pluginArtifact>#{Regexp.escape(plugin_artifact)}\s*<pluginArtifact>}, ""
+    inreplace grpc_java_files, %r{<pluginArtifact>#{Regexp.escape(plugin_artifact)}\s*</pluginArtifact>}, ""
 
     java_home_env = Language::Java.java_home_env("21")
     with_env(TMPDIR: buildpath, **java_home_env) do
@@ -33,48 +33,48 @@ class ApachePulsar < Formula
     end
 
     tarball = if build.head?
-      Dir["distributionservertargetapache-pulsar-*-bin.tar.gz"].first
+      Dir["distribution/server/target/apache-pulsar-*-bin.tar.gz"].first
     else
-      "distributionservertargetapache-pulsar-#{version}-bin.tar.gz"
+      "distribution/server/target/apache-pulsar-#{version}-bin.tar.gz"
     end
 
     libexec.mkpath
     system "tar", "--extract", "--file", tarball, "--directory", libexec, "--strip-components=1"
-    pkgshare.install libexec"examples"
-    (etc"pulsar").install_symlink libexec"conf"
+    pkgshare.install libexec/"examples"
+    (etc/"pulsar").install_symlink libexec/"conf"
 
-    rm libexec.glob("bin*.cmd")
-    libexec.glob("bin*") do |path|
+    rm libexec.glob("bin/*.cmd")
+    libexec.glob("bin/*") do |path|
       next if !path.file? || path.fnmatch?("*common.sh")
 
-      (binpath.basename).write_env_script path, java_home_env
+      (bin/path.basename).write_env_script path, java_home_env
     end
   end
 
   def post_install
-    (var"logpulsar").mkpath
+    (var/"log/pulsar").mkpath
   end
 
   service do
-    run [opt_bin"pulsar", "standalone"]
-    log_path var"logpulsaroutput.log"
-    error_log_path var"logpulsarerror.log"
+    run [opt_bin/"pulsar", "standalone"]
+    log_path var/"log/pulsar/output.log"
+    error_log_path var/"log/pulsar/error.log"
   end
 
   test do
-    ENV["PULSAR_GC_LOG"] = "-Xlog:gc*:#{testpath}pulsar_gc_%p.log:time,uptime:filecount=10,filesize=20M"
+    ENV["PULSAR_GC_LOG"] = "-Xlog:gc*:#{testpath}/pulsar_gc_%p.log:time,uptime:filecount=10,filesize=20M"
     ENV["PULSAR_LOG_DIR"] = testpath
     ENV["PULSAR_STANDALONE_USE_ZOOKEEPER"] = "1"
 
-    spawn bin"pulsar", "standalone", "--zookeeper-dir", "#{testpath}zk", "--bookkeeper-dir", "#{testpath}bk"
+    spawn bin/"pulsar", "standalone", "--zookeeper-dir", "#{testpath}/zk", "--bookkeeper-dir", "#{testpath}/bk"
     # The daemon takes some time to start; pulsar-client will retry until it gets a connection, but emit confusing
     # errors until that happens, so sleep to reduce log spam.
     sleep 30
     sleep 30 if OS.mac? && Hardware::CPU.intel?
 
-    output = shell_output("#{bin}pulsar-client produce my-topic --messages 'hello-pulsar'")
+    output = shell_output("#{bin}/pulsar-client produce my-topic --messages 'hello-pulsar'")
     assert_match "1 messages successfully produced", output
-    output = shell_output("#{bin}pulsar initialize-cluster-metadata -c a -cs localhost -uw localhost -zk localhost")
+    output = shell_output("#{bin}/pulsar initialize-cluster-metadata -c a -cs localhost -uw localhost -zk localhost")
     assert_match "Cluster metadata for 'a' setup correctly", output
   end
 end

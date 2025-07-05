@@ -1,10 +1,10 @@
 class Dockutil < Formula
   desc "Tool for managing dock items"
-  homepage "https:github.comkcrawforddockutil"
-  url "https:github.comkcrawforddockutilarchiverefstags3.1.3.tar.gz"
+  homepage "https://github.com/kcrawford/dockutil"
+  url "https://ghfast.top/https://github.com/kcrawford/dockutil/archive/refs/tags/3.1.3.tar.gz"
   sha256 "622bbb5c97f09b3f46ebea9a612f7470dd7fb6a7daaed12b87dee5af7a0177f6"
   license "Apache-2.0"
-  head "https:github.comkcrawforddockutil.git", branch: "main"
+  head "https://github.com/kcrawford/dockutil.git", branch: "main"
 
   no_autobump! because: :requires_manual_review
 
@@ -24,10 +24,10 @@ class Dockutil < Formula
 
   def install
     system "swift", "build", "--disable-sandbox", "--configuration", "release"
-    bin.install ".buildreleasedockutil"
+    bin.install ".build/release/dockutil"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}dockutil --version")
+    assert_match version.to_s, shell_output("#{bin}/dockutil --version")
   end
 end

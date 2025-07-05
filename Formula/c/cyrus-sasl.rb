@@ -1,7 +1,7 @@
 class CyrusSasl < Formula
   desc "Simple Authentication and Security Layer"
-  homepage "https:www.cyrusimap.orgsasl"
-  url "https:github.comcyrusimapcyrus-saslreleasesdownloadcyrus-sasl-2.1.28cyrus-sasl-2.1.28.tar.gz"
+  homepage "https://www.cyrusimap.org/sasl/"
+  url "https://ghfast.top/https://github.com/cyrusimap/cyrus-sasl/releases/download/cyrus-sasl-2.1.28/cyrus-sasl-2.1.28.tar.gz"
   sha256 "7ccfc6abd01ed67c1a0924b353e526f1b766b21f42d4562ee635a8ebfc5bb38c"
   license "BSD-3-Clause-Attribution"
   revision 2
@@ -28,7 +28,7 @@ class CyrusSasl < Formula
   uses_from_macos "libxcrypt"
 
   def install
-    system ".configure",
+    system "./configure",
       "--disable-macos-framework",
       "--disable-dependency-tracking",
       "--disable-silent-rules",
@@ -37,8 +37,8 @@ class CyrusSasl < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~CPP
-      #include <saslsaslutil.h>
+    (testpath/"test.cpp").write <<~CPP
+      #include <sasl/saslutil.h>
       #include <assert.h>
       #include <stdio.h>
       int main(void) {
@@ -52,6 +52,6 @@ class CyrusSasl < Formula
     CPP
 
     system ENV.cxx, "-o", "test", "test.cpp", "-I#{include}", "-L#{lib}", "-lsasl2"
-    assert_equal "20 SGVsbG8sIHdvcmxkIQ==", shell_output(".test")
+    assert_equal "20 SGVsbG8sIHdvcmxkIQ==", shell_output("./test")
   end
 end

@@ -1,10 +1,10 @@
 class Vhs < Formula
   desc "Your CLI home video recorder"
-  homepage "https:github.comcharmbraceletvhs"
-  url "https:github.comcharmbraceletvhsarchiverefstagsv0.10.0.tar.gz"
+  homepage "https://github.com/charmbracelet/vhs"
+  url "https://ghfast.top/https://github.com/charmbracelet/vhs/archive/refs/tags/v0.10.0.tar.gz"
   sha256 "ae37fe7e52ade753f850ab81c7d5344f8e540ab6886f877bf5b613620c909893"
   license "MIT"
-  head "https:github.comcharmbraceletvhs.git", branch: "main"
+  head "https://github.com/charmbracelet/vhs.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "62e58ee735695f64fff35b0c32c1ddda7688d7da3c970652e3118ec8843394be"
@@ -22,21 +22,21 @@ class Vhs < Formula
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w -X main.Version=#{version}")
 
-    (man1"vhs.1").write Utils.safe_popen_read(bin"vhs", "man")
+    (man1/"vhs.1").write Utils.safe_popen_read(bin/"vhs", "man")
 
-    generate_completions_from_executable(bin"vhs", "completion")
+    generate_completions_from_executable(bin/"vhs", "completion")
   end
 
   test do
-    (testpath"test.tape").write <<~TAPE
+    (testpath/"test.tape").write <<~TAPE
       Output test.gif
       Type "Foo Bar"
       Enter
       Sleep 1s
     TAPE
 
-    system bin"vhs", "validate", "test.tape"
+    system bin/"vhs", "validate", "test.tape"
 
-    assert_match version.to_s, shell_output("#{bin}vhs --version")
+    assert_match version.to_s, shell_output("#{bin}/vhs --version")
   end
 end

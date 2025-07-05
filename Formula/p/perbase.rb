@@ -1,10 +1,10 @@
 class Perbase < Formula
-  desc "Fast and correct perbase BAMCRAM analysis"
-  homepage "https:github.comsstadickperbase"
-  url "https:github.comsstadickperbasearchiverefstagsv0.10.3.tar.gz"
+  desc "Fast and correct perbase BAM/CRAM analysis"
+  homepage "https://github.com/sstadick/perbase"
+  url "https://ghfast.top/https://github.com/sstadick/perbase/archive/refs/tags/v0.10.3.tar.gz"
   sha256 "15fb5ac4ef4c7eae39292d0eb5fbfb5e5f8cd8fb0e88dab8983f856720a7e72d"
   license "MIT"
-  head "https:github.comsstadickperbase.git", branch: "master"
+  head "https://github.com/sstadick/perbase.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "231fdd1559c4c3f10b8870998a9c4b65c368fdfecae4eb3ba3d6ffe57a266205"
@@ -30,9 +30,9 @@ class Perbase < Formula
   end
 
   test do
-    cp pkgshare"testtest.bam", testpath
-    system Formula["bamtools"].opt_bin"bamtools", "index", "-in", "test.bam"
-    system bin"perbase", "base-depth", "test.bam", "-o", "output.tsv"
+    cp pkgshare/"test/test.bam", testpath
+    system Formula["bamtools"].opt_bin/"bamtools", "index", "-in", "test.bam"
+    system bin/"perbase", "base-depth", "test.bam", "-o", "output.tsv"
     assert_path_exists "output.tsv"
   end
 end

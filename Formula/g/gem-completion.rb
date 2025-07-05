@@ -1,11 +1,11 @@
 class GemCompletion < Formula
   desc "Bash completion for gem"
-  homepage "https:github.commernencompletion-ruby"
-  url "https:github.commernencompletion-rubyarchiverefstagsv1.0.3.tar.gz"
+  homepage "https://github.com/mernen/completion-ruby"
+  url "https://ghfast.top/https://github.com/mernen/completion-ruby/archive/refs/tags/v1.0.3.tar.gz"
   sha256 "cbcd002bba2a43730cff54f5386565917913d9dec16dcd89345fbe298fe4316b"
   license "MIT"
   version_scheme 1
-  head "https:github.commernencompletion-ruby.git", branch: "main"
+  head "https://github.com/mernen/completion-ruby.git", branch: "main"
 
   livecheck do
     formula "ruby-completion"
@@ -23,6 +23,6 @@ class GemCompletion < Formula
 
   test do
     assert_match "-F __gem",
-      shell_output("bash -c 'source #{bash_completion}gem && complete -p gem'")
+      shell_output("bash -c 'source #{bash_completion}/gem && complete -p gem'")
   end
 end

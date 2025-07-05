@@ -1,7 +1,7 @@
 class Truecrack < Formula
   desc "Brute-force password cracker for TrueCrypt"
-  homepage "https:github.comlvaccarotruecrack"
-  url "https:storage.googleapis.comgoogle-code-archive-downloadsv2code.google.comtruecracktruecrack_v35.tar.gz"
+  homepage "https://github.com/lvaccaro/truecrack"
+  url "https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/truecrack/truecrack_v35.tar.gz"
   version "3.5"
   sha256 "25bf270fa3bc3591c3d795e5a4b0842f6581f76c0b5d17c0aef260246fe726b3"
   license "GPL-3.0-or-later"
@@ -29,19 +29,19 @@ class Truecrack < Formula
   end
 
   # Fix missing return value compilation issue
-  # https:github.comlvaccarotruecrackissues41
+  # https://github.com/lvaccaro/truecrack/issues/41
   patch do
-    url "https:gist.githubusercontent.comanonymousb912a1ede06eb1e8eb38raw1394a8a6bedb7caae8ee034f512f76a99fe55976truecrack-return-value-fix.patch"
+    url "https://ghfast.top/https://gist.githubusercontent.com/anonymous/b912a1ede06eb1e8eb38/raw/1394a8a6bedb7caae8ee034f512f76a99fe55976/truecrack-return-value-fix.patch"
     sha256 "8aa608054f9b822a1fb7294a5087410f347ba632bbd4b46002aada76c289ed77"
   end
 
   def install
     if OS.linux?
-      # Issue ref: https:github.comlvaccarotruecrackissues56
-      inreplace "srcMakefile.in", ^CFLAGS = , "\\0-fcommon -Wno-implicit-function-declaration "
+      # Issue ref: https://github.com/lvaccaro/truecrack/issues/56
+      inreplace "src/Makefile.in", /^CFLAGS = /, "\\0-fcommon -Wno-implicit-function-declaration "
     elsif DevelopmentTools.clang_build_version >= 1403
       # Fix compile with newer Clang
-      inreplace "srcMakefile.in", ^CFLAGS = , "\\0-Wno-implicit-function-declaration "
+      inreplace "src/Makefile.in", /^CFLAGS = /, "\\0-Wno-implicit-function-declaration "
     end
 
     args = []
@@ -50,7 +50,7 @@ class Truecrack < Formula
 
     # Re datarootdir override: Dumps two files in top-level share
     # (autogen.sh and cudalt.py) which could cause conflict elsewhere.
-    system ".configure", "--enable-cpu",
+    system "./configure", "--enable-cpu",
                           "--datarootdir=#{pkgshare}",
                           "--mandir=#{man}",
                           *args, *std_configure_args
@@ -58,6 +58,6 @@ class Truecrack < Formula
   end
 
   test do
-    system bin"truecrack"
+    system bin/"truecrack"
   end
 end

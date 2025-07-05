@@ -2,10 +2,10 @@ cask "font-fascinate" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefontsrawmainoflfascinateFascinate-Regular.ttf",
-      verified: "github.comgooglefonts"
+  url "https://github.com/google/fonts/raw/main/ofl/fascinate/Fascinate-Regular.ttf",
+      verified: "github.com/google/fonts/"
   name "Fascinate"
-  homepage "https:fonts.google.comspecimenFascinate"
+  homepage "https://fonts.google.com/specimen/Fascinate"
 
   font "Fascinate-Regular.ttf"
 

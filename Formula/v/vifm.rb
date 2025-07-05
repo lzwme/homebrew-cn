@@ -1,10 +1,10 @@
 class Vifm < Formula
   desc "Ncurses-based file manager with vi-like keybindings"
-  homepage "https:vifm.info"
-  url "https:github.comvifmvifmreleasesdownloadv0.14.3vifm-0.14.3.tar.bz2"
+  homepage "https://vifm.info/"
+  url "https://ghfast.top/https://github.com/vifm/vifm/releases/download/v0.14.3/vifm-0.14.3.tar.bz2"
   sha256 "16a9be1108d6a5a09e9f947f7256375e519ba41ebe9473659b20739fdbf3440e"
   license "GPL-2.0-or-later"
-  head "https:github.comvifmvifm.git", branch: "master"
+  head "https://github.com/vifm/vifm.git", branch: "master"
 
   bottle do
     sha256 arm64_sequoia: "803d2f505403b4c23e678df422bbaf2f2aa1dd6e568274b32a4eb50f0a34ee98"
@@ -21,7 +21,7 @@ class Vifm < Formula
   uses_from_macos "mandoc" => :build
 
   def install
-    system ".configure", "--disable-dependency-tracking",
+    system "./configure", "--disable-dependency-tracking",
                           "--prefix=#{prefix}",
                           "--with-curses=#{Formula["ncurses"].opt_prefix}",
                           "--without-gtk",
@@ -34,6 +34,6 @@ class Vifm < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}vifm --version")
+    assert_match version.to_s, shell_output("#{bin}/vifm --version")
   end
 end

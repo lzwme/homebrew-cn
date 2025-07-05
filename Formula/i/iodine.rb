@@ -1,10 +1,10 @@
 class Iodine < Formula
   desc "Tunnel IPv4 traffic through a DNS server"
-  homepage "https:code.kryo.seiodine"
-  url "https:github.comyarrickiodinearchiverefstagsv0.8.0.tar.gz"
+  homepage "https://code.kryo.se/iodine"
+  url "https://ghfast.top/https://github.com/yarrick/iodine/archive/refs/tags/v0.8.0.tar.gz"
   sha256 "ffc7a58cdde390a01580f4cfc78c446b0965bcb719bde2c68c5e0c27345a8dfc"
   license "ISC"
-  head "https:github.comyarrickiodine.git", branch: "master"
+  head "https://github.com/yarrick/iodine.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -33,7 +33,7 @@ class Iodine < Formula
   test do
     # iodine and iodined require being run as root. Match on the non-root error text, which is printed to
     # stderr, as a successful test
-    assert_match("iodine: Run as root and you'll be happy.", pipe_output("#{sbin}iodine google.com 2>&1"))
-    assert_match("iodined: Run as root and you'll be happy.", pipe_output("#{sbin}iodined google.com 2>&1"))
+    assert_match("iodine: Run as root and you'll be happy.", pipe_output("#{sbin}/iodine google.com 2>&1"))
+    assert_match("iodined: Run as root and you'll be happy.", pipe_output("#{sbin}/iodined google.com 2>&1"))
   end
 end

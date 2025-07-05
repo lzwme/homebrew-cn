@@ -1,10 +1,10 @@
 class Makeself < Formula
   desc "Generates a self-extracting compressed tar archive"
-  homepage "https:makeself.io"
-  url "https:github.commegastepmakeselfarchiverefstagsrelease-2.5.0.tar.gz"
+  homepage "https://makeself.io/"
+  url "https://ghfast.top/https://github.com/megastep/makeself/archive/refs/tags/release-2.5.0.tar.gz"
   sha256 "705d0376db9109a8ef1d4f3876c9997ee6bed454a23619e1dbc03d25033e46ea"
   license "GPL-2.0-or-later"
-  head "https:github.commegastepmakeself.git", branch: "master"
+  head "https://github.com/megastep/makeself.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -14,8 +14,8 @@ class Makeself < Formula
   end
 
   def install
-    # Replace `usrlocal` references to make bottles uniform
-    inreplace ["makeself-header.sh", "makeself.sh"], "usrlocal", HOMEBREW_PREFIX
+    # Replace `/usr/local` references to make bottles uniform
+    inreplace ["makeself-header.sh", "makeself.sh"], "/usr/local", HOMEBREW_PREFIX
     libexec.install "makeself-header.sh"
     # install makeself-header.sh to libexec so change its location in makeself.sh
     inreplace "makeself.sh", '`dirname "$0"`', libexec
@@ -24,16 +24,16 @@ class Makeself < Formula
   end
 
   test do
-    source = testpath"source"
+    source = testpath/"source"
     source.mkdir
-    (source"foo").write "bar"
-    (source"script.sh").write <<~SH
-      #!binsh
+    (source/"foo").write "bar"
+    (source/"script.sh").write <<~SH
+      #!/bin/sh
       echo 'Hello Homebrew!'
     SH
-    chmod 0755, source"script.sh"
-    system bin"makeself", source, "testfile.run", "'A test file'", ".script.sh"
-    assert_match "Hello Homebrew!", shell_output(".testfile.run --target output")
-    assert_equal (source"foo").read, (testpath"outputfoo").read
+    chmod 0755, source/"script.sh"
+    system bin/"makeself", source, "testfile.run", "'A test file'", "./script.sh"
+    assert_match "Hello Homebrew!", shell_output("./testfile.run --target output")
+    assert_equal (source/"foo").read, (testpath/"output/foo").read
   end
 end

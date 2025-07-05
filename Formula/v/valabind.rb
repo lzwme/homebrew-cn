@@ -1,11 +1,11 @@
 class Valabind < Formula
   desc "Vala bindings for radare, reverse engineering framework"
-  homepage "https:github.comradarevalabind"
-  url "https:github.comradarevalabindarchiverefstags1.8.0.tar.gz"
+  homepage "https://github.com/radare/valabind"
+  url "https://ghfast.top/https://github.com/radare/valabind/archive/refs/tags/1.8.0.tar.gz"
   sha256 "3eba8c36c923eda932a95b8d0c16b7b30e8cdda442252431990436519cf87cdd"
   license "GPL-3.0-or-later"
   revision 3
-  head "https:github.comradarevalabind.git", branch: "master"
+  head "https://github.com/radare/valabind.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "ec16d96176ce495628ccf3a5311f73bf79372b0f43916402658f889766a8d671"
@@ -37,14 +37,14 @@ class Valabind < Formula
 
   def install
     # Workaround to build with newer clang
-    # Upstream bug report, https:github.comradarevalabindissues61
+    # Upstream bug report, https://github.com/radare/valabind/issues/61
     ENV.append_to_cflags "-Wno-incompatible-function-pointer-types" if DevelopmentTools.clang_build_version >= 1500
 
-    system "make", "VALA_PKGLIBDIR=#{Formula["vala"].opt_lib}vala-#{Formula["vala"].version.major_minor}"
+    system "make", "VALA_PKGLIBDIR=#{Formula["vala"].opt_lib}/vala-#{Formula["vala"].version.major_minor}"
     system "make", "install", "PREFIX=#{prefix}"
   end
 
   test do
-    system bin"valabind", "--help"
+    system bin/"valabind", "--help"
   end
 end

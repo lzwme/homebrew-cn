@@ -2,9 +2,9 @@ cask "font-sauce-code-pro-nerd-font" do
   version "3.4.0"
   sha256 "f8abc5576d1761b8c2a7c03aaff54a692af109f12f2cde641320c8d2f4c5ad53"
 
-  url "https:github.comryanoasisnerd-fontsreleasesdownloadv#{version}SourceCodePro.zip"
+  url "https://ghfast.top/https://github.com/ryanoasis/nerd-fonts/releases/download/v#{version}/SourceCodePro.zip"
   name "SauceCodePro Nerd Font (Source Code Pro)"
-  homepage "https:github.comryanoasisnerd-fonts"
+  homepage "https://github.com/ryanoasis/nerd-fonts"
 
   livecheck do
     url :url

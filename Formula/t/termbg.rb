@@ -1,10 +1,10 @@
 class Termbg < Formula
   desc "Rust library for terminal background color detection"
-  homepage "https:github.comdalancetermbg"
-  url "https:github.comdalancetermbgarchiverefstagsv0.6.2.tar.gz"
+  homepage "https://github.com/dalance/termbg"
+  url "https://ghfast.top/https://github.com/dalance/termbg/archive/refs/tags/v0.6.2.tar.gz"
   sha256 "b933907d181e59ce0aa522ed598a9fa70125a6523f7fbd1f537c3b99bd75ffdd"
   license any_of: ["Apache-2.0", "MIT"]
-  head "https:github.comdalancetermbg.git", branch: "master"
+  head "https://github.com/dalance/termbg.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "73367dc16651ae85eddfc43526501a01ea3721d3c1d40de0e7dcff2f49f0ea90"
@@ -23,6 +23,6 @@ class Termbg < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}termbg --version")
+    assert_match version.to_s, shell_output("#{bin}/termbg --version")
   end
 end

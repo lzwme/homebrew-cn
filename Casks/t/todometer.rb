@@ -2,19 +2,19 @@ cask "todometer" do
   version "2.0.1"
   sha256 "b8de5c09dc1d5d026130555f3cc85c949ddd7bd0cbf63a45bd1d4c2aba6cbf31"
 
-  url "https:github.comcassidootodometerreleasesdownloadv#{version}todometer.for.mac.zip",
-      verified: "github.comcassidootodometer"
+  url "https://ghfast.top/https://github.com/cassidoo/todometer/releases/download/v#{version}/todometer.for.mac.zip",
+      verified: "github.com/cassidoo/todometer/"
   name "todometer"
   desc "Meter-based to-do list"
-  homepage "https:cassidoo.github.iotodometer"
+  homepage "https://cassidoo.github.io/todometer/"
 
   no_autobump! because: :requires_manual_review
 
-  app "mactodometer.app"
+  app "mac/todometer.app"
 
   zap trash: [
-    "~LibraryApplication Supporttodometer",
-    "~LibraryPreferencescom.electron.todometer.plist",
+    "~/Library/Application Support/todometer",
+    "~/Library/Preferences/com.electron.todometer.plist",
   ]
 
   caveats do

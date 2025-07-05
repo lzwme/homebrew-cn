@@ -2,11 +2,11 @@ cask "porting-kit" do
   version "6.5.0"
   sha256 "e3c7fc05e865669671d2d99c4da932ffafad4b7a1835130a3bdb753647259e5d"
 
-  url "https:github.comvitor251093porting-kit-releasesreleasesdownloadv#{version}Porting-Kit-#{version}.dmg",
-      verified: "github.comvitor251093porting-kit-releases"
+  url "https://ghfast.top/https://github.com/vitor251093/porting-kit-releases/releases/download/v#{version}/Porting-Kit-#{version}.dmg",
+      verified: "github.com/vitor251093/porting-kit-releases/"
   name "Porting Kit"
   desc "Install games and apps compiled for Microsoft Windows"
-  homepage "https:portingkit.com"
+  homepage "https://portingkit.com/"
 
   no_autobump! because: :requires_manual_review
 
@@ -16,10 +16,10 @@ cask "porting-kit" do
   app "Porting Kit.app"
 
   zap trash: [
-    "~LibraryApplication Supportcom.apple.sharedfilelistcom.apple.LSSharedFileList.ApplicationRecentDocumentscom.paulthetall.portingkit.sfl*",
-    "~LibraryApplication Supportportingkit",
-    "~LibraryPreferencescom.paulthetall.portingkit.plist",
-    "~LibrarySaved Application Statecom.paulthetall.portingkit.savedState",
+    "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.paulthetall.portingkit.sfl*",
+    "~/Library/Application Support/portingkit",
+    "~/Library/Preferences/com.paulthetall.portingkit.plist",
+    "~/Library/Saved Application State/com.paulthetall.portingkit.savedState",
   ]
 
   caveats do

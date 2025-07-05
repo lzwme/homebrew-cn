@@ -1,10 +1,10 @@
 class Samurai < Formula
   desc "Ninja-compatible build tool written in C"
-  homepage "https:github.commichaelforneysamurai"
-  url "https:github.commichaelforneysamuraireleasesdownload1.2samurai-1.2.tar.gz"
+  homepage "https://github.com/michaelforney/samurai"
+  url "https://ghfast.top/https://github.com/michaelforney/samurai/releases/download/1.2/samurai-1.2.tar.gz"
   sha256 "3b8cf51548dfc49b7efe035e191ff5e1963ebc4fe8f6064a5eefc5343eaf78a5"
   license "Apache-2.0"
-  head "https:github.commichaelforneysamurai.git", branch: "master"
+  head "https://github.com/michaelforney/samurai.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -29,19 +29,19 @@ class Samurai < Formula
   end
 
   test do
-    (testpath"build.ninja").write <<~EOS
+    (testpath/"build.ninja").write <<~EOS
       rule cc
         command = #{ENV.cc} $in -o $out
       build hello: cc hello.c
     EOS
-    (testpath"hello.c").write <<~C
+    (testpath/"hello.c").write <<~C
       #include <stdio.h>
       int main() {
         puts("Hello, world!");
         return 0;
       }
     C
-    system bin"samu"
-    assert_match "Hello, world!", shell_output(".hello")
+    system bin/"samu"
+    assert_match "Hello, world!", shell_output("./hello")
   end
 end

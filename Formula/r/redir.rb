@@ -1,7 +1,7 @@
 class Redir < Formula
   desc "TCP port redirector for UNIX"
-  homepage "https:github.comtroglobitredir"
-  url "https:github.comtroglobitredirreleasesdownloadv3.3redir-3.3.tar.xz"
+  homepage "https://github.com/troglobit/redir"
+  url "https://ghfast.top/https://github.com/troglobit/redir/releases/download/v3.3/redir-3.3.tar.xz"
   sha256 "7ce53ac52a24c1b3279b994bfffbd429c44df2db10a4b1a0f54e108604fdae6e"
   license "GPL-2.0-or-later"
 
@@ -18,14 +18,14 @@ class Redir < Formula
   end
 
   def install
-    system ".configure", "--disable-silent-rules", "--enable-compat", *std_configure_args
+    system "./configure", "--disable-silent-rules", "--enable-compat", *std_configure_args
     system "make", "install"
   end
 
   test do
     cport = free_port
     lport = free_port
-    redir_pid = spawn bin"redir", "--cport=#{cport}", "--lport=#{lport}"
+    redir_pid = spawn bin/"redir", "--cport=#{cport}", "--lport=#{lport}"
     Process.detach(redir_pid)
 
     server = TCPServer.new(cport)

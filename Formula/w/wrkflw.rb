@@ -1,10 +1,10 @@
 class Wrkflw < Formula
   desc "Validate and execute GitHub Actions workflows locally"
-  homepage "https:github.combahdotshwrkflw"
-  url "https:github.combahdotshwrkflwarchiverefstagsv0.4.0.tar.gz"
+  homepage "https://github.com/bahdotsh/wrkflw"
+  url "https://ghfast.top/https://github.com/bahdotsh/wrkflw/archive/refs/tags/v0.4.0.tar.gz"
   sha256 "e145daaef2d52f685de41021151dc7a213e5cc57ee78157bb171200d5195467c"
   license "MIT"
-  head "https:github.combahdotshwrkflw.git", branch: "main"
+  head "https://github.com/bahdotsh/wrkflw.git", branch: "main"
 
   bottle do
     rebuild 1
@@ -29,9 +29,9 @@ class Wrkflw < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}wrkflw --version")
+    assert_match version.to_s, shell_output("#{bin}/wrkflw --version")
 
-    test_action_config = testpath".githubworkflowstest.yml"
+    test_action_config = testpath/".github/workflows/test.yml"
     test_action_config.write <<~YAML
       name: test
 
@@ -41,10 +41,10 @@ class Wrkflw < Formula
         test:
           runs-on: ubuntu-latest
           steps:
-            - uses: actionscheckout@v4
+            - uses: actions/checkout@v4
     YAML
 
-    output = shell_output("#{bin}wrkflw validate #{test_action_config}")
+    output = shell_output("#{bin}/wrkflw validate #{test_action_config}")
     assert_match "Summary: 1 valid, 0 invalid", output
   end
 end

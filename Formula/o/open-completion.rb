@@ -1,10 +1,10 @@
 class OpenCompletion < Formula
   desc "Bash completion for open"
-  homepage "https:github.commoshenopen-bash-completion"
-  url "https:github.commoshenopen-bash-completionarchiverefstagsv1.0.5.tar.gz"
+  homepage "https://github.com/moshen/open-bash-completion"
+  url "https://ghfast.top/https://github.com/moshen/open-bash-completion/archive/refs/tags/v1.0.5.tar.gz"
   sha256 "bee63ee57278de3305b26a581ae23323285a3e2af80ee75d7cfca3f92dfe3721"
   license "MIT"
-  head "https:github.commoshenopen-bash-completion.git", branch: "master"
+  head "https://github.com/moshen/open-bash-completion.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -21,6 +21,6 @@ class OpenCompletion < Formula
 
   test do
     assert_match "-F _open",
-      shell_output("bash -c 'source #{bash_completion}open && complete -p open'")
+      shell_output("bash -c 'source #{bash_completion}/open && complete -p open'")
   end
 end

@@ -1,12 +1,12 @@
 class Cpprestsdk < Formula
   desc "C++ libraries for cloud-based client-server communication"
-  homepage "https:github.commicrosoftcpprestsdk"
+  homepage "https://github.com/microsoft/cpprestsdk"
   # do not pull bundled libraries in submodules
-  url "https:github.commicrosoftcpprestsdkarchiverefstagsv2.10.19.tar.gz"
+  url "https://ghfast.top/https://github.com/microsoft/cpprestsdk/archive/refs/tags/v2.10.19.tar.gz"
   sha256 "4b0d14e5bfe77ce419affd253366e861968ae6ef2c35ae293727c1415bd145c8"
   license "MIT"
   revision 2
-  head "https:github.commicrosoftcpprestsdk.git", branch: "master"
+  head "https://github.com/microsoft/cpprestsdk.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -28,10 +28,10 @@ class Cpprestsdk < Formula
   uses_from_macos "zlib"
 
   # Apply vcpkg patch to support Boost 1.87.0+
-  # Issue ref: https:github.commicrosoftcpprestsdkissues1815
-  # Issue ref: https:github.commicrosoftcpprestsdkissues1323
+  # Issue ref: https://github.com/microsoft/cpprestsdk/issues/1815
+  # Issue ref: https://github.com/microsoft/cpprestsdk/issues/1323
   patch do
-    url "https:raw.githubusercontent.commicrosoftvcpkg566f9496b7e00ee0cc00aca0ab90493d122d148aportscpprestsdkfix-asio-error.patch"
+    url "https://ghfast.top/https://raw.githubusercontent.com/microsoft/vcpkg/566f9496b7e00ee0cc00aca0ab90493d122d148a/ports/cpprestsdk/fix-asio-error.patch"
     sha256 "8fa4377a86afb4cdb5eb2331b5fb09fd7323dc2de90eb2af2b46bb3585a8022e"
   end
 
@@ -39,7 +39,7 @@ class Cpprestsdk < Formula
     system "cmake", "-S", "Release", "-B", "build",
                     "-DBUILD_SAMPLES=OFF",
                     "-DBUILD_TESTS=OFF",
-                    # Disable websockets feature due to https:github.comzaphoydwebsocketppissues1157
+                    # Disable websockets feature due to https://github.com/zaphoyd/websocketpp/issues/1157
                     # Needs upstream response and fix in `websocketpp` formula (do not use bundled copy)
                     "-DCPPREST_EXCLUDE_WEBSOCKETS=ON",
                     "-DOPENSSL_ROOT_DIR=#{Formula["openssl@3"].opt_prefix}",
@@ -49,11 +49,11 @@ class Cpprestsdk < Formula
   end
 
   test do
-    (testpath"test.cc").write <<~CPP
+    (testpath/"test.cc").write <<~CPP
       #include <iostream>
-      #include <cppresthttp_client.h>
+      #include <cpprest/http_client.h>
       int main() {
-        web::http::client::http_client client(U("https:example.com"));
+        web::http::client::http_client client(U("https://example.com/"));
         std::cout << client.request(web::http::methods::GET).get().extract_string().get() << std::endl;
       }
     CPP
@@ -64,6 +64,6 @@ class Cpprestsdk < Formula
                     "-lssl", "-lcrypto", "-lboost_random", "-lboost_chrono", "-lboost_thread",
                     "-lboost_system", "-lboost_filesystem", "-lcpprest",
                     "-o", "test_cpprest"
-    assert_match "<title>Example Domain<title>", shell_output(".test_cpprest")
+    assert_match "<title>Example Domain</title>", shell_output("./test_cpprest")
   end
 end

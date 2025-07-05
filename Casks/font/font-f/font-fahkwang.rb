@@ -2,12 +2,12 @@ cask "font-fahkwang" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefonts.git",
-      verified:  "github.comgooglefonts",
+  url "https://github.com/google/fonts.git",
+      verified:  "github.com/google/fonts",
       branch:    "main",
-      only_path: "oflfahkwang"
+      only_path: "ofl/fahkwang"
   name "Fahkwang"
-  homepage "https:fonts.google.comspecimenFahkwang"
+  homepage "https://fonts.google.com/specimen/Fahkwang"
 
   font "Fahkwang-Bold.ttf"
   font "Fahkwang-BoldItalic.ttf"

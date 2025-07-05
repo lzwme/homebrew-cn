@@ -1,10 +1,10 @@
 class Babelfish < Formula
   desc "Translate bash scripts to fish"
-  homepage "https:github.comboukbabelfish"
-  url "https:github.comboukbabelfisharchiverefstagsv1.2.1.tar.gz"
+  homepage "https://github.com/bouk/babelfish"
+  url "https://ghfast.top/https://github.com/bouk/babelfish/archive/refs/tags/v1.2.1.tar.gz"
   sha256 "967a9020e905f01b0d3150a37f35d21e8d051c634eebf479bc1503d95f81a1d9"
   license "MIT"
-  head "https:github.comboukbabelfish.git", branch: "master"
+  head "https://github.com/bouk/babelfish.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -30,13 +30,13 @@ class Babelfish < Formula
     <<~EOS
       The shell hook has been installed, you can use it by running:
 
-        $ source #{HOMEBREW_PREFIX}sharefishvendor_functions.dbabel.fish
+        $ source #{HOMEBREW_PREFIX}/share/fish/vendor_functions.d/babel.fish
     EOS
   end
 
   test do
     script = 'echo ${#@}'
-    translated = pipe_output(bin"babelfish", script)
+    translated = pipe_output(bin/"babelfish", script)
     assert_equal "0", pipe_output("fish", translated).strip
   end
 end

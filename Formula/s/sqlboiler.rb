@@ -1,10 +1,10 @@
 class Sqlboiler < Formula
   desc "Generate a Go ORM tailored to your database schema"
-  homepage "https:github.comvolatiletechsqlboiler"
-  url "https:github.comvolatiletechsqlboilerarchiverefstagsv4.19.5.tar.gz"
+  homepage "https://github.com/volatiletech/sqlboiler"
+  url "https://ghfast.top/https://github.com/volatiletech/sqlboiler/archive/refs/tags/v4.19.5.tar.gz"
   sha256 "fae160e36637c5d0c57db53bafc11439cf61b02dc30656277d7e90c546b04a4d"
   license "BSD-3-Clause"
-  head "https:github.comvolatiletechsqlboiler.git", branch: "master"
+  head "https://github.com/volatiletech/sqlboiler.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "24bf4847e512fc0c4987ffb7aa9731270eb83642f874cceac6e3163be7ac7da5"
@@ -20,16 +20,16 @@ class Sqlboiler < Formula
   def install
     %w[mssql mysql psql sqlite3].each do |driver|
       f = "sqlboiler-#{driver}"
-      system "go", "build", *std_go_args(ldflags: "-s -w", output: binf), ".drivers#{f}"
+      system "go", "build", *std_go_args(ldflags: "-s -w", output: bin/f), "./drivers/#{f}"
     end
 
     system "go", "build", *std_go_args(ldflags: "-s -w")
   end
 
   test do
-    output = shell_output("#{bin}sqlboiler psql 2>&1", 1)
+    output = shell_output("#{bin}/sqlboiler psql 2>&1", 1)
     assert_match "failed to find key user in config", output
 
-    assert_match version.to_s, shell_output("#{bin}sqlboiler --version")
+    assert_match version.to_s, shell_output("#{bin}/sqlboiler --version")
   end
 end

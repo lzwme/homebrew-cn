@@ -1,13 +1,13 @@
 class Keychain < Formula
   desc "User-friendly front-end to ssh-agent(1)"
-  homepage "https:www.funtoo.orgKeychain"
-  url "https:github.comfuntookeychainarchiverefstags2.9.5.tar.gz"
+  homepage "https://www.funtoo.org/Keychain"
+  url "https://ghfast.top/https://github.com/funtoo/keychain/archive/refs/tags/2.9.5.tar.gz"
   sha256 "c883f26db616bc1c81ba5ef3832c7ad912f3e8bd0baf6aaff981164c538a1411"
   license "GPL-2.0-only"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -21,9 +21,9 @@ class Keychain < Formula
   end
 
   test do
-    system bin"keychain"
+    system bin/"keychain"
     hostname = shell_output("hostname").chomp
-    assert_match "SSH_AGENT_PID", File.read(testpath".keychain#{hostname}-sh")
-    system bin"keychain", "--stop", "mine"
+    assert_match "SSH_AGENT_PID", File.read(testpath/".keychain/#{hostname}-sh")
+    system bin/"keychain", "--stop", "mine"
   end
 end

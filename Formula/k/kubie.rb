@@ -1,14 +1,14 @@
 class Kubie < Formula
   desc "Much more powerful alternative to kubectx and kubens"
-  homepage "https:blog.sbstp.caintroducing-kubie"
-  url "https:github.comsbstpkubiearchiverefstagsv0.26.0.tar.gz"
+  homepage "https://blog.sbstp.ca/introducing-kubie/"
+  url "https://ghfast.top/https://github.com/sbstp/kubie/archive/refs/tags/v0.26.0.tar.gz"
   sha256 "b4f9d92f69714a700deb79eb20c657a0d6fe1fb7bc6f205e9affe739c73e4961"
   license "Zlib"
-  head "https:github.comsbstpkubie.git", branch: "master"
+  head "https://github.com/sbstp/kubie.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -26,16 +26,16 @@ class Kubie < Formula
 
   def install
     system "cargo", "install", *std_cargo_args
-    bash_completion.install ".completionkubie.bash" => "kubie"
-    fish_completion.install ".completionkubie.fish"
+    bash_completion.install "./completion/kubie.bash" => "kubie"
+    fish_completion.install "./completion/kubie.fish"
   end
 
   test do
-    (testpath".kubekubie-test.yaml").write <<~YAML
+    (testpath/".kube/kubie-test.yaml").write <<~YAML
       apiVersion: v1
       clusters:
       - cluster:
-          server: http:0.0.0.0
+          server: http://0.0.0.0/
         name: kubie-test-cluster
       contexts:
       - context:
@@ -52,6 +52,6 @@ class Kubie < Formula
     YAML
 
     assert_match "The connection to the server 0.0.0.0 was refused - did you specify the right host or port?",
-      shell_output("#{bin}kubie exec kubie-test kubie-test-namespace kubectl get pod 2>&1")
+      shell_output("#{bin}/kubie exec kubie-test kubie-test-namespace kubectl get pod 2>&1")
   end
 end

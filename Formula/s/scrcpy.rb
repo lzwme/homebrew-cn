@@ -1,13 +1,13 @@
 class Scrcpy < Formula
   desc "Display and control your Android device"
-  homepage "https:github.comGenymobilescrcpy"
-  url "https:github.comGenymobilescrcpyarchiverefstagsv3.3.1.tar.gz"
+  homepage "https://github.com/Genymobile/scrcpy"
+  url "https://ghfast.top/https://github.com/Genymobile/scrcpy/archive/refs/tags/v3.3.1.tar.gz"
   sha256 "9999d2ff3605e1c5d1efb0b737ed6e240a93a928091ab356ba07199c92f52ace"
   license "Apache-2.0"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -28,7 +28,7 @@ class Scrcpy < Formula
   depends_on "sdl2"
 
   resource "prebuilt-server" do
-    url "https:github.comGenymobilescrcpyreleasesdownloadv3.3.1scrcpy-server-v3.3.1", using: :nounzip
+    url "https://ghfast.top/https://github.com/Genymobile/scrcpy/releases/download/v3.3.1/scrcpy-server-v3.3.1", using: :nounzip
     sha256 "a0f70b20aa4998fbf658c94118cd6c8dab6abbb0647a3bdab344d70bc1ebcbb8"
 
     livecheck do
@@ -42,7 +42,7 @@ class Scrcpy < Formula
     buildpath.install resource("prebuilt-server")
     cp "scrcpy-server-v#{version}", "prebuilt-server.jar"
 
-    system "meson", "setup", "build", "-Dprebuilt_server=#{buildpath}prebuilt-server.jar",
+    system "meson", "setup", "build", "-Dprebuilt_server=#{buildpath}/prebuilt-server.jar",
                                       *std_meson_args
     system "meson", "compile", "-C", "build", "--verbose"
     system "meson", "install", "-C", "build"
@@ -58,7 +58,7 @@ class Scrcpy < Formula
   end
 
   test do
-    fakeadb = (testpath"fakeadb.sh")
+    fakeadb = (testpath/"fakeadb.sh")
 
     # When running, scrcpy calls adb five times:
     #  - adb start-server
@@ -70,8 +70,8 @@ class Scrcpy < Formula
     # fakeadb exits on $3 = reverse
 
     fakeadb.write <<~SH
-      #!binsh
-      echo "$@" >> #{testpath"fakeadb.log"}
+      #!/bin/sh
+      echo "$@" >> #{testpath/"fakeadb.log"}
 
       if [ "$1" = "devices" ]; then
         echo "List of devices attached"
@@ -88,15 +88,15 @@ class Scrcpy < Formula
 
     # It's expected to fail after adb reverse step because fakeadb exits
     # with code 42
-    out = shell_output("#{bin}scrcpy --no-window --record=file.mp4 -p 1337 2>&1", 1)
-    assert_match( 42, out)
+    out = shell_output("#{bin}/scrcpy --no-window --record=file.mp4 -p 1337 2>&1", 1)
+    assert_match(/ 42/, out)
 
-    log_content = File.read(testpath"fakeadb.log")
+    log_content = File.read(testpath/"fakeadb.log")
 
     # Check that it used port we've specified
-    assert_match(tcp:1337, log_content)
+    assert_match(/tcp:1337/, log_content)
 
     # Check that it tried to push something from its prefix
-    assert_match(push #{prefix}, log_content)
+    assert_match(/push #{prefix}/, log_content)
   end
 end

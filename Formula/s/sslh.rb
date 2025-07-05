@@ -1,11 +1,11 @@
 class Sslh < Formula
   desc "Forward connections based on first data packet sent by client"
-  homepage "https:www.rutschle.nettechsslh.shtml"
-  url "https:www.rutschle.nettechsslhsslh-v2.2.4.tar.gz"
+  homepage "https://www.rutschle.net/tech/sslh.shtml"
+  url "https://www.rutschle.net/tech/sslh/sslh-v2.2.4.tar.gz"
   sha256 "696edac467111d0c1353a4ff32ed8dfa33bc914036644c69a7b9506b7ee49115"
   license all_of: ["GPL-2.0-or-later", "BSD-2-Clause"]
   revision 1
-  head "https:github.comyrutschlesslh.git", branch: "master"
+  head "https://github.com/yrutschle/sslh.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "e33d422b1f3f1d783ee9eeec9cd64c42cd6e0d06c362637f1bfc7f537d5f2814"
@@ -22,26 +22,26 @@ class Sslh < Formula
   depends_on "pcre2"
 
   def install
-    system ".configure", *std_configure_args
+    system "./configure", *std_configure_args
     system "make", "install", "PREFIX=#{prefix}"
   end
 
   test do
     listen_port = free_port
     target_port = free_port
-    pid = spawn sbin"sslh", "--http=localhost:#{target_port}", "--listen=localhost:#{listen_port}", "--foreground"
+    pid = spawn sbin/"sslh", "--http=localhost:#{target_port}", "--listen=localhost:#{listen_port}", "--foreground"
 
     fork do
       TCPServer.open(target_port) do |server|
         session = server.accept
-        session.write "HTTP1.1 200 OK\r\n\r\nHello world!"
+        session.write "HTTP/1.1 200 OK\r\n\r\nHello world!"
         session.close
       end
     end
 
     sleep 1
     sleep 5 if OS.mac? && Hardware::CPU.intel?
-    assert_equal "Hello world!", shell_output("curl -s http:localhost:#{listen_port}")
+    assert_equal "Hello world!", shell_output("curl -s http://localhost:#{listen_port}")
   ensure
     Process.kill "TERM", pid
     Process.wait pid

@@ -1,11 +1,11 @@
 class Bit < Formula
   desc "Distributed Code Component Manager"
-  homepage "https:bit.dev"
-  url "https:registry.npmjs.orgbit-bin-bit-bin-14.8.8.tgz"
+  homepage "https://bit.dev"
+  url "https://registry.npmjs.org/bit-bin/-/bit-bin-14.8.8.tgz"
   sha256 "25d899bacd06d77fad41026a9b19cbe94c8fb986f5fe59ead7ccec9f60fd0ef9"
   license "Apache-2.0"
   revision 1
-  head "https:github.comteambitbit.git", branch: "master"
+  head "https://github.com/teambit/bit.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -32,34 +32,34 @@ class Bit < Formula
 
   def install
     system "npm", "install", *std_npm_args
-    bin.install_symlink libexec.glob("bin*")
+    bin.install_symlink libexec.glob("bin/*")
 
     # Remove incompatible pre-built binaries
     os = OS.kernel_name.downcase
     arch = Hardware::CPU.intel? ? "x64" : Hardware::CPU.arch.to_s
-    node_modules = libexec"libnode_modulesbit-binnode_modules"
-    (node_modules"leveldownprebuildslinux-x64node.napi.musl.node").unlink
-    (node_modules"leveldownprebuilds").each_child { |dir| rm_r(dir) if dir.basename.to_s != "#{os}-#{arch}" }
+    node_modules = libexec/"lib/node_modules/bit-bin/node_modules"
+    (node_modules/"leveldown/prebuilds/linux-x64/node.napi.musl.node").unlink
+    (node_modules/"leveldown/prebuilds").each_child { |dir| rm_r(dir) if dir.basename.to_s != "#{os}-#{arch}" }
 
     # Remove vendored pre-built binary `terminal-notifier`
-    node_notifier_vendor_dir = node_modules"node-notifiervendor"
+    node_notifier_vendor_dir = node_modules/"node-notifier/vendor"
     rm_r(node_notifier_vendor_dir) # remove vendored pre-built binaries
 
     if OS.mac?
-      terminal_notifier_dir = node_notifier_vendor_dir"mac.noindex"
+      terminal_notifier_dir = node_notifier_vendor_dir/"mac.noindex"
       terminal_notifier_dir.mkpath
 
       # replace vendored `terminal-notifier` with our own
-      terminal_notifier_app = Formula["terminal-notifier"].opt_prefix"terminal-notifier.app"
+      terminal_notifier_app = Formula["terminal-notifier"].opt_prefix/"terminal-notifier.app"
       ln_sf terminal_notifier_app.relative_path_from(terminal_notifier_dir), terminal_notifier_dir
     end
   end
 
   test do
-    (testpath"LibraryCachesBitconfigconfig.json").write <<~JSON
+    (testpath/"Library/Caches/Bit/config/config.json").write <<~JSON
       { "analytics_reporting": false, "error_reporting": false }
     JSON
-    output = shell_output("#{bin}bit init --skip-update")
+    output = shell_output("#{bin}/bit init --skip-update")
     assert_match "successfully initialized", output
   end
 end

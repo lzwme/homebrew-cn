@@ -1,7 +1,7 @@
 class Cbfmt < Formula
   desc "Format codeblocks inside markdown and org documents"
-  homepage "https:github.comlukas-reinekecbfmt"
-  url "https:github.comlukas-reinekecbfmtarchiverefstagsv0.2.0.tar.gz"
+  homepage "https://github.com/lukas-reineke/cbfmt"
+  url "https://ghfast.top/https://github.com/lukas-reineke/cbfmt/archive/refs/tags/v0.2.0.tar.gz"
   sha256 "42973e9b1e95f4f3d7e72ef17a41333dab1e04d3d91c7930aabfc08f72c14126"
   license "MIT"
 
@@ -22,14 +22,14 @@ class Cbfmt < Formula
   end
 
   test do
-    test_config = testpath".cbfmt.toml"
+    test_config = testpath/".cbfmt.toml"
     test_config.write <<~TOML
       [languages]
       rust = ["rustfmt"]
     TOML
 
-    test_file = testpath"test.md"
-    (testpath"test.md").write <<~MARKDOWN
+    test_file = testpath/"test.md"
+    (testpath/"test.md").write <<~MARKDOWN
       ```rust
       fn main() {
               println!("Hello, world!");
@@ -37,7 +37,7 @@ class Cbfmt < Formula
       ```
     MARKDOWN
 
-    system bin"cbfmt", "--config", test_config, "--write", test_file
+    system bin/"cbfmt", "--config", test_config, "--write", test_file
 
     assert_equal <<~MARKDOWN, test_file.read
       ```rust
@@ -47,8 +47,8 @@ class Cbfmt < Formula
       ```
     MARKDOWN
 
-    system bin"cbfmt", "--config", test_config, "--check", test_file
+    system bin/"cbfmt", "--config", test_config, "--check", test_file
 
-    assert_match version.to_s, shell_output("#{bin}cbfmt --version")
+    assert_match version.to_s, shell_output("#{bin}/cbfmt --version")
   end
 end

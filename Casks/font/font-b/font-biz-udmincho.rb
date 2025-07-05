@@ -2,12 +2,12 @@ cask "font-biz-udmincho" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefonts.git",
-      verified:  "github.comgooglefonts",
+  url "https://github.com/google/fonts.git",
+      verified:  "github.com/google/fonts",
       branch:    "main",
-      only_path: "oflbizudmincho"
+      only_path: "ofl/bizudmincho"
   name "BIZ UDMincho"
-  homepage "https:fonts.google.comspecimenBIZ+UDMincho"
+  homepage "https://fonts.google.com/specimen/BIZ+UDMincho"
 
   font "BIZUDMincho-Bold.ttf"
   font "BIZUDMincho-Regular.ttf"

@@ -1,10 +1,10 @@
 class Fortitude < Formula
   desc "Fortran linter"
-  homepage "https:fortitude.readthedocs.ioenstable"
-  url "https:github.comPlasmaFAIRfortitudearchiverefstagsv0.7.3.tar.gz"
+  homepage "https://fortitude.readthedocs.io/en/stable/"
+  url "https://ghfast.top/https://github.com/PlasmaFAIR/fortitude/archive/refs/tags/v0.7.3.tar.gz"
   sha256 "caf5148a20a433e8031fbb875465648ca7a918fd975dd704249e41d7a98bafe6"
   license "MIT"
-  head "https:github.comPlasmaFAIRfortitude.git", branch: "main"
+  head "https://github.com/PlasmaFAIR/fortitude.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "ed2b0286e104580fbf915dd75496887b73dfbc88655b8e2e5f0821f8cacaf22c"
@@ -23,15 +23,15 @@ class Fortitude < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}fortitude --version")
+    assert_match version.to_s, shell_output("#{bin}/fortitude --version")
 
-    (testpath"test.f90").write <<~FORTRAN
+    (testpath/"test.f90").write <<~FORTRAN
       PROGRAM hello
         WRITE(*,'(A)') 'Hello World!'
       ENDPROGRAM
     FORTRAN
 
-    output = shell_output("#{bin}fortitude check #{testpath}test.f90 2>&1", 1)
+    output = shell_output("#{bin}/fortitude check #{testpath}/test.f90 2>&1", 1)
     assert_match <<~EOS, output
       fortitude: 1 files scanned.
       Number of errors: 2

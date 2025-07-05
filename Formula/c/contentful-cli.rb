@@ -1,7 +1,7 @@
 class ContentfulCli < Formula
   desc "Contentful command-line tools"
-  homepage "https:github.comcontentfulcontentful-cli"
-  url "https:registry.npmjs.orgcontentful-cli-contentful-cli-3.8.9.tgz"
+  homepage "https://github.com/contentful/contentful-cli"
+  url "https://registry.npmjs.org/contentful-cli/-/contentful-cli-3.8.9.tgz"
   sha256 "33fe546c9454aae8fb396894c0ccd6f616d2cf923caf4a94278cecbe197a2cb3"
   license "MIT"
 
@@ -19,11 +19,11 @@ class ContentfulCli < Formula
 
   def install
     system "npm", "install", *std_npm_args
-    bin.install_symlink Dir["#{libexec}bin*"]
+    bin.install_symlink Dir["#{libexec}/bin/*"]
   end
 
   test do
-    output = shell_output("#{bin}contentful space list 2>&1", 1)
+    output = shell_output("#{bin}/contentful space list 2>&1", 1)
     assert_match "🚨  Error: You have to be logged in to do this.", output
     assert_match "You can log in via contentful login", output
     assert_match "Or provide a management token via --management-token argument", output

@@ -1,10 +1,10 @@
 class Mkp224o < Formula
   desc "Vanity address generator for tor onion v3 (ed25519) hidden services"
-  homepage "https:github.comcathuggermkp224o"
-  url "https:github.comcathuggermkp224oreleasesdownloadv1.7.0mkp224o-1.7.0-src.tar.gz"
+  homepage "https://github.com/cathugger/mkp224o"
+  url "https://ghfast.top/https://github.com/cathugger/mkp224o/releases/download/v1.7.0/mkp224o-1.7.0-src.tar.gz"
   sha256 "e38465ea893c6032ddfd7c133cbbf0de2eeaf1c428ca563fac5e85aeb609c929"
   license "CC0-1.0"
-  head "https:github.comcathuggermkp224o.git", branch: "master"
+  head "https://github.com/cathugger/mkp224o.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -23,12 +23,12 @@ class Mkp224o < Formula
   depends_on "libsodium"
 
   def install
-    system ".configure", *std_configure_args
+    system "./configure", *std_configure_args
     system "make"
     bin.install "mkp224o"
   end
 
   test do
-    assert_match "waiting for threads to finish...", shell_output("#{bin}mkp224o -n 3 home 2>&1")
+    assert_match "waiting for threads to finish...", shell_output("#{bin}/mkp224o -n 3 home 2>&1")
   end
 end

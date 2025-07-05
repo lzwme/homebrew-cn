@@ -1,10 +1,10 @@
 class Simdjson < Formula
   desc "SIMD-accelerated C++ JSON parser"
-  homepage "https:simdjson.org"
-  url "https:github.comsimdjsonsimdjsonarchiverefstagsv3.13.0.tar.gz"
+  homepage "https://simdjson.org"
+  url "https://ghfast.top/https://github.com/simdjson/simdjson/archive/refs/tags/v3.13.0.tar.gz"
   sha256 "07a1bb3587aac18fd6a10a83fe4ab09f1100ab39f0cb73baea1317826b9f9e0d"
   license "Apache-2.0"
-  head "https:github.comsimdjsonsimdjson.git", branch: "master"
+  head "https://github.com/simdjson/simdjson.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "2d66e98360e79ddc9c6659aea66532e472b31186f83a9d6efe240065833ef1a0"
@@ -24,12 +24,12 @@ class Simdjson < Formula
     system "cmake", "--install", "build"
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args, "-DBUILD_SHARED_LIBS=OFF"
     system "cmake", "--build", "build"
-    lib.install "buildlibsimdjson.a"
+    lib.install "build/libsimdjson.a"
   end
 
   test do
-    (testpath"test.json").write "{\"name\":\"Homebrew\",\"isNull\":null}"
-    (testpath"test.cpp").write <<~CPP
+    (testpath/"test.json").write "{\"name\":\"Homebrew\",\"isNull\":null}"
+    (testpath/"test.cpp").write <<~CPP
       #include <iostream>
       #include <simdjson.h>
       int main(void) {
@@ -41,6 +41,6 @@ class Simdjson < Formula
 
     system ENV.cxx, "test.cpp", "-std=c++11",
            "-I#{include}", "-L#{lib}", "-lsimdjson", "-o", "test"
-    assert_equal "\"Homebrew\"\n", shell_output(".test")
+    assert_equal "\"Homebrew\"\n", shell_output("./test")
   end
 end

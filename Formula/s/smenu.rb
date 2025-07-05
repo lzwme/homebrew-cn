@@ -1,14 +1,14 @@
 class Smenu < Formula
   desc "Powerful and versatile CLI selection tool for interactive or scripting use"
-  homepage "https:github.comp-gensmenu"
-  url "https:github.comp-gensmenureleasesdownloadv1.5.0smenu-1.5.0.tar.bz2"
+  homepage "https://github.com/p-gen/smenu"
+  url "https://ghfast.top/https://github.com/p-gen/smenu/releases/download/v1.5.0/smenu-1.5.0.tar.bz2"
   sha256 "2de2217d322a5e28cb20f9128e60df6c00b4e8e8879381ac8ed8bdcdccc4c5ca"
   license "MPL-2.0"
 
   # Exclude release candidate tags
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -24,20 +24,20 @@ class Smenu < Formula
   uses_from_macos "ncurses"
 
   def install
-    system ".configure", *std_configure_args
+    system "./configure", *std_configure_args
     system "make", "install"
   end
 
   test do
     require "pty"
 
-    PTY.spawn(bin"smenu", "--version") do |r, _w, _pid|
+    PTY.spawn(bin/"smenu", "--version") do |r, _w, _pid|
       r.winsize = [80, 60]
 
       begin
         assert_match version.to_s, r.read
       rescue Errno::EIO
-        # GNULinux raises EIO when read is done on closed pty
+        # GNU/Linux raises EIO when read is done on closed pty
       end
     end
   end

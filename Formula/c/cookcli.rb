@@ -1,10 +1,10 @@
 class Cookcli < Formula
   desc "CLI-tool for cooking recipes formated using Cooklang"
-  homepage "https:cooklang.org"
-  url "https:github.comcooklangcookcliarchiverefstagsv0.14.0.tar.gz"
+  homepage "https://cooklang.org"
+  url "https://ghfast.top/https://github.com/cooklang/cookcli/archive/refs/tags/v0.14.0.tar.gz"
   sha256 "b4a52440e2ff2d1fc53206ff65993ccc29ed5d043f29be7d0bc1e07f6663824b"
   license "MIT"
-  head "https:github.comcooklangcookcli.git", branch: "main"
+  head "https://github.com/cooklang/cookcli.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "b083f53dc4c290a7055c352cff7f85a4610ae6b05ad1214d02ed4b7c56243f59"
@@ -26,13 +26,13 @@ class Cookcli < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}cook --version")
+    assert_match version.to_s, shell_output("#{bin}/cook --version")
 
-    (testpath"pancakes.cook").write <<~COOK
+    (testpath/"pancakes.cook").write <<~COOK
       Crack the @eggs{3} into a #blender, then add the @plain flour{125%g},
       @milk{250%ml} and @sea salt{1%pinch}, and blitz until smooth.
     COOK
-    (testpath"expected.md").write <<~MARKDOWN
+    (testpath/"expected.md").write <<~MARKDOWN
       ## Ingredients
 
       - *3* eggs
@@ -49,7 +49,7 @@ class Cookcli < Formula
       1. Crack the eggs into a blender, then add the plain flour, milk and sea salt,
       and blitz until smooth.
     MARKDOWN
-    assert_match (testpath"expected.md").read,
-      shell_output("#{bin}cook recipe read --format markdown pancakes.cook")
+    assert_match (testpath/"expected.md").read,
+      shell_output("#{bin}/cook recipe read --format markdown pancakes.cook")
   end
 end

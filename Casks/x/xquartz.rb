@@ -2,14 +2,14 @@ cask "xquartz" do
   version "2.8.5"
   sha256 "e89538a134738dfa71d5b80f8e4658cb812e0803115a760629380b851b608782"
 
-  url "https:github.comXQuartzXQuartzreleasesdownloadXQuartz-#{version}XQuartz-#{version}.pkg",
-      verified: "github.comXQuartzXQuartz"
+  url "https://ghfast.top/https://github.com/XQuartz/XQuartz/releases/download/XQuartz-#{version}/XQuartz-#{version}.pkg",
+      verified: "github.com/XQuartz/XQuartz/"
   name "XQuartz"
   desc "Open-source version of the X.Org X Window System"
-  homepage "https:www.xquartz.org"
+  homepage "https://www.xquartz.org/"
 
   livecheck do
-    url "https:www.xquartz.orgreleasessparkle-r1release.xml"
+    url "https://www.xquartz.org/releases/sparkle-r1/release.xml"
     strategy :sparkle do |item|
       item.short_version.delete_prefix("XQuartz-")
     end
@@ -25,21 +25,21 @@ cask "xquartz" do
             pkgutil:   "org.xquartz.X11"
 
   zap trash: [
-        "~.Xauthority",
-        "~LibraryApplication Supportcom.apple.sharedfilelistcom.apple.LSSharedFileList.ApplicationRecentDocumentsorg.xquartz.x11.sfl*",
-        "~LibraryApplication SupportXQuartz",
-        "~LibraryCachesorg.xquartz.X11",
-        "~LibraryCookiesorg.xquartz.X11.binarycookies",
-        "~LibraryHTTPStoragesorg.xquartz.X11",
-        "~LibraryLogsX11org.xquartz.log",
-        "~LibraryLogsX11org.xquartz.log.old",
-        "~LibraryPreferencesorg.macosforge.xquartz.X11.plist",
-        "~LibraryPreferencesorg.xquartz.X11.plist",
-        "~LibrarySaved Application Stateorg.xquartz.X11.savedState",
-        "~LibraryWebKitorg.xquartz.X11",
+        "~/.Xauthority",
+        "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/org.xquartz.x11.sfl*",
+        "~/Library/Application Support/XQuartz",
+        "~/Library/Caches/org.xquartz.X11",
+        "~/Library/Cookies/org.xquartz.X11.binarycookies",
+        "~/Library/HTTPStorages/org.xquartz.X11",
+        "~/Library/Logs/X11/org.xquartz.log",
+        "~/Library/Logs/X11/org.xquartz.log.old",
+        "~/Library/Preferences/org.macosforge.xquartz.X11.plist",
+        "~/Library/Preferences/org.xquartz.X11.plist",
+        "~/Library/Saved Application State/org.xquartz.X11.savedState",
+        "~/Library/WebKit/org.xquartz.X11",
       ],
       rmdir: [
-        "~.fonts",
-        "~LibraryLogsX11",
+        "~/.fonts",
+        "~/Library/Logs/X11",
       ]
 end

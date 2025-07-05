@@ -1,10 +1,10 @@
 class Ncnn < Formula
   desc "High-performance neural network inference framework"
-  homepage "https:github.comTencentncnn"
-  url "https:github.comTencentncnnarchiverefstags20250503.tar.gz"
+  homepage "https://github.com/Tencent/ncnn"
+  url "https://ghfast.top/https://github.com/Tencent/ncnn/archive/refs/tags/20250503.tar.gz"
   sha256 "3afea4cf092ce97d06305b72c6affbcfb3530f536ae8e81a4f22007d82b729e9"
   license "BSD-3-Clause"
-  head "https:github.comTencentncnn.git", branch: "master"
+  head "https://github.com/Tencent/ncnn.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "72f1114fb730f083917dc054456e626e247c09d6012693754c69e75446fcd7f3"
@@ -33,7 +33,7 @@ class Ncnn < Formula
 
   def install
     # fix `libabsl_log_internal_check_op.so.2301.0.0: error adding symbols: DSO missing from command line` error
-    # https:stackoverflow.coma55086637
+    # https://stackoverflow.com/a/55086637
     ENV.append "LDFLAGS", "-Wl,--copy-dt-needed-entries" if OS.linux?
 
     args = %W[
@@ -44,14 +44,14 @@ class Ncnn < Formula
       -DNCNN_BUILD_BENCHMARK=OFF
       -DNCNN_BUILD_EXAMPLES=OFF
       -DNCNN_SYSTEM_GLSLANG=ON
-      -DGLSLANG_TARGET_DIR=#{Formula["glslang"].opt_lib}cmake
+      -DGLSLANG_TARGET_DIR=#{Formula["glslang"].opt_lib}/cmake
       -DNCNN_VULKAN=ON
     ]
 
     if OS.mac?
       args += %W[
         -DVulkan_INCLUDE_DIR=#{Formula["molten-vk"].opt_include}
-        -DVulkan_LIBRARY=#{Formula["molten-vk"].opt_libshared_library("libMoltenVK")}
+        -DVulkan_LIBRARY=#{Formula["molten-vk"].opt_lib/shared_library("libMoltenVK")}
       ]
     end
 
@@ -64,17 +64,17 @@ class Ncnn < Formula
     vulkan = 1
     if OS.linux?
       # Use a fake Vulkan ICD on Linux as it is lighter-weight than testing
-      # with `vulkan-loader` and `mesa` (CPULLVMpipe) dependencies.
-      ENV["VK_ICD_FILENAMES"] = Formula["vulkan-tools"].lib"mock_icdVkICD_mock_icd.json"
+      # with `vulkan-loader` and `mesa` (CPU/LLVMpipe) dependencies.
+      ENV["VK_ICD_FILENAMES"] = Formula["vulkan-tools"].lib/"mock_icd/VkICD_mock_icd.json"
     elsif ENV["HOMEBREW_GITHUB_ACTIONS"] && Hardware::CPU.intel?
       # Don't test Vulkan on GitHub Intel macOS runners as they fail with: "vkCreateInstance failed -9"
       vulkan = 0
     end
 
-    (testpath"test.cpp").write <<~CPP
+    (testpath/"test.cpp").write <<~CPP
       #include <cassert>
-      #include <ncnngpu.h>
-      #include <ncnnmat.h>
+      #include <ncnn/gpu.h>
+      #include <ncnn/mat.h>
 
       int main(void) {
           ncnn::Mat myMat = ncnn::Mat(500, 500);
@@ -96,6 +96,6 @@ class Ncnn < Formula
     system ENV.cxx, "test.cpp", "-std=c++11",
                     "-I#{include}", "-L#{lib}", "-lncnn",
                     "-o", "test"
-    system ".test"
+    system "./test"
   end
 end

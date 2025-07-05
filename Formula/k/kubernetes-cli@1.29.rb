@@ -1,7 +1,7 @@
 class KubernetesCliAT129 < Formula
   desc "Kubernetes command-line interface"
-  homepage "https:kubernetes.iodocsreferencekubectl"
-  url "https:github.comkuberneteskubernetes.git",
+  homepage "https://kubernetes.io/docs/reference/kubectl/"
+  url "https://github.com/kubernetes/kubernetes.git",
       tag:      "v1.29.14",
       revision: "4f359b2e16764ab5e175195ee6992dfb53b36acf"
   license "Apache-2.0"
@@ -19,7 +19,7 @@ class KubernetesCliAT129 < Formula
 
   keg_only :versioned_formula
 
-  # https:kubernetes.ioreleasespatch-releases#1-29
+  # https://kubernetes.io/releases/patch-releases/#1-29
   disable! date: "2025-02-28", because: :deprecated_upstream
 
   depends_on "bash" => :build
@@ -32,24 +32,24 @@ class KubernetesCliAT129 < Formula
   end
 
   def install
-    ENV.prepend_path "PATH", Formula["coreutils"].libexec"gnubin" if OS.mac? # needs GNU date
+    ENV.prepend_path "PATH", Formula["coreutils"].libexec/"gnubin" if OS.mac? # needs GNU date
     ENV["FORCE_HOST_GO"] = "1"
-    system "make", "WHAT=cmdkubectl"
-    bin.install "_outputbinkubectl"
+    system "make", "WHAT=cmd/kubectl"
+    bin.install "_output/bin/kubectl"
 
-    generate_completions_from_executable(bin"kubectl", "completion")
+    generate_completions_from_executable(bin/"kubectl", "completion")
 
     # Install man pages
     # Leave this step for the end as this dirties the git tree
-    system "hackupdate-generated-docs.sh"
-    man1.install Dir["docsmanman1*.1"]
+    system "hack/update-generated-docs.sh"
+    man1.install Dir["docs/man/man1/*.1"]
   end
 
   test do
-    run_output = shell_output("#{bin}kubectl 2>&1")
+    run_output = shell_output("#{bin}/kubectl 2>&1")
     assert_match "kubectl controls the Kubernetes cluster manager.", run_output
 
-    version_output = shell_output("#{bin}kubectl version --client --output=yaml 2>&1")
+    version_output = shell_output("#{bin}/kubectl version --client --output=yaml 2>&1")
     assert_match "gitTreeState: clean", version_output
     assert_match stable.specs[:revision].to_s, version_output
   end

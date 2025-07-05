@@ -1,10 +1,10 @@
 class Ohcount < Formula
   desc "Source code line counter"
-  homepage "https:github.comblackducksoftwareohcount"
-  url "https:github.comblackducksoftwareohcountarchiverefstags4.0.0.tar.gz"
+  homepage "https://github.com/blackducksoftware/ohcount"
+  url "https://ghfast.top/https://github.com/blackducksoftware/ohcount/archive/refs/tags/4.0.0.tar.gz"
   sha256 "d71f69fd025f5bae58040988108f0d8d84f7204edda1247013cae555bfdae1b9"
   license "GPL-2.0-only"
-  head "https:github.comblackducksoftwareohcount.git", branch: "master"
+  head "https://github.com/blackducksoftware/ohcount.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -32,17 +32,17 @@ class Ohcount < Formula
   depends_on "ragel"
 
   def install
-    system ".build", "ohcount"
-    bin.install "binohcount"
+    system "./build", "ohcount"
+    bin.install "bin/ohcount"
   end
 
   test do
-    (testpath"test.rb").write <<~RUBY
+    (testpath/"test.rb").write <<~RUBY
       # comment
       puts
       puts
     RUBY
-    stats = shell_output("#{bin}ohcount -i test.rb").lines.last
+    stats = shell_output("#{bin}/ohcount -i test.rb").lines.last
     assert_equal ["ruby", "2", "1", "33.3%"], stats.split[0..3]
   end
 end

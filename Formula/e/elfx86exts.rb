@@ -1,14 +1,14 @@
 class Elfx86exts < Formula
   desc "Decodes x86 binaries (ELF and Mach-O) and prints out ISA extensions in use"
-  homepage "https:github.compkgwelfx86exts"
-  url "https:github.compkgwelfx86extsarchiverefstagselfx86exts@0.6.2.tar.gz"
+  homepage "https://github.com/pkgw/elfx86exts"
+  url "https://ghfast.top/https://github.com/pkgw/elfx86exts/archive/refs/tags/elfx86exts@0.6.2.tar.gz"
   sha256 "55e2ee8c6481e46749b622910597a01e86207250d57e4430b7ce31a22b982e1a"
   license "MIT"
-  head "https:github.compkgwelfx86exts.git", branch: "master"
+  head "https://github.com/pkgw/elfx86exts.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(^(?:elfx86exts@)?v?(\d+(?:\.\d+)+)$i)
+    regex(/^(?:elfx86exts@)?v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -37,7 +37,7 @@ class Elfx86exts < Formula
       Instruction set extensions used: MODE64
       CPU Generation: Intel Core
     EOS
-    actual = shell_output("#{bin}elfx86exts #{test_fixtures("elfhello")}")
+    actual = shell_output("#{bin}/elfx86exts #{test_fixtures("elf/hello")}")
     assert_equal expected, actual
   end
 end

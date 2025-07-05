@@ -1,10 +1,10 @@
 class Quill < Formula
   desc "C++17 Asynchronous Low Latency Logging Library"
-  homepage "https:github.comodygrdquill"
-  url "https:github.comodygrdquillarchiverefstagsv10.0.1.tar.gz"
+  homepage "https://github.com/odygrd/quill"
+  url "https://ghfast.top/https://github.com/odygrd/quill/archive/refs/tags/v10.0.1.tar.gz"
   sha256 "ec7c0291d8b6533fc6e01d8e6694c5fcc3c803109b7397197c2c7ebd0107129f"
   license "MIT"
-  head "https:github.comodygrdquill.git", branch: "master"
+  head "https://github.com/odygrd/quill.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, all: "ce5f487185aded67edd6b72922aaa29f37610736423633acb096432cd142b362"
@@ -20,23 +20,23 @@ class Quill < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~CPP
-      #include "quillBackend.h"
-      #include "quillFrontend.h"
-      #include "quillLogMacros.h"
-      #include "quillLogger.h"
-      #include "quillsinksConsoleSink.h"
+    (testpath/"test.cpp").write <<~CPP
+      #include "quill/Backend.h"
+      #include "quill/Frontend.h"
+      #include "quill/LogMacros.h"
+      #include "quill/Logger.h"
+      #include "quill/sinks/ConsoleSink.h"
 
       int main()
       {
-         Start the backend thread
+        // Start the backend thread
         quill::Backend::start();
 
-         Frontend
+        // Frontend
         auto console_sink = quill::Frontend::create_or_get_sink<quill::ConsoleSink>("sink_id_1");
         quill::Logger* logger = quill::Frontend::create_or_get_logger("root", std::move(console_sink));
 
-         Change the LogLevel to print everything
+        // Change the LogLevel to print everything
         logger->set_log_level(quill::LogLevel::TraceL3);
 
         LOG_INFO(logger, "Welcome to Quill!");
@@ -51,6 +51,6 @@ class Quill < Formula
     CPP
 
     system ENV.cxx, "-std=c++17", "test.cpp", "-I#{include}", "-o", "test", "-pthread"
-    system ".test"
+    system "./test"
   end
 end

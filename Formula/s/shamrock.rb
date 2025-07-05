@@ -1,10 +1,10 @@
 class Shamrock < Formula
   desc "Astrophysical hydrodynamics using SYCL"
-  homepage "https:github.comShamrock-codeShamrock"
-  url "https:github.comShamrock-codeShamrockreleasesdownloadv2025.05.0shamrock-2025.05.0.tar"
+  homepage "https://github.com/Shamrock-code/Shamrock"
+  url "https://ghfast.top/https://github.com/Shamrock-code/Shamrock/releases/download/v2025.05.0/shamrock-2025.05.0.tar"
   sha256 "59d5652467fd9453a65ae7b48e0c9b7d4162edc8df92e09d08dcc5275407a897"
   license "CECILL-2.1"
-  head "https:github.comShamrock-codeShamrock.git", branch: "main"
+  head "https://github.com/Shamrock-code/Shamrock.git", branch: "main"
 
   no_autobump! because: :requires_manual_review
 
@@ -34,7 +34,7 @@ class Shamrock < Formula
   end
 
   def site_packages(python)
-    prefixLanguage::Python.site_packages(python)
+    prefix/Language::Python.site_packages(python)
   end
 
   def install
@@ -54,23 +54,23 @@ class Shamrock < Formula
     py_package = site_packages(python).join("shamrock")
 
     mkdir_p py_package
-    cp_r Dir["build*.so"], py_package
+    cp_r Dir["build/*.so"], py_package
 
-    (py_package"__init__.py").write <<~PY
+    (py_package/"__init__.py").write <<~PY
       from .shamrock import *
     PY
   end
 
   test do
-    system bin"shamrock", "--help"
-    system bin"shamrock", "--smi"
-    system "mpirun", "-n", "1", bin"shamrock", "--smi", "--sycl-cfg", "auto:OpenMP"
-    (testpath"test.py").write <<~PY
+    system bin/"shamrock", "--help"
+    system bin/"shamrock", "--smi"
+    system "mpirun", "-n", "1", bin/"shamrock", "--smi", "--sycl-cfg", "auto:OpenMP"
+    (testpath/"test.py").write <<~PY
       import shamrock
       shamrock.change_loglevel(125)
       shamrock.sys.init('0:0')
       shamrock.sys.close()
     PY
-    system "python3.13", testpath"test.py"
+    system "python3.13", testpath/"test.py"
   end
 end

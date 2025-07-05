@@ -1,7 +1,7 @@
 class Nyancat < Formula
   desc "Renders an animated, color, ANSI-text loop of the Poptart Cat"
-  homepage "https:nyancat.dakko.us"
-  url "https:github.comklangenyancatarchiverefstags1.5.2.tar.gz"
+  homepage "https://nyancat.dakko.us/"
+  url "https://ghfast.top/https://github.com/klange/nyancat/archive/refs/tags/1.5.2.tar.gz"
   sha256 "88cdcaa9c7134503dd0364a97fa860da3381a09cb555c3aae9918360827c2032"
   license "NCSA"
 
@@ -27,9 +27,9 @@ class Nyancat < Formula
   end
 
   # Makefile: Add install directory option
-  # See https:github.comklangenyancatpull34
+  # See https://github.com/klange/nyancat/pull/34
   patch do
-    url "https:github.comklangenyancatcommite11af77f2938ea851f712df62f08de4d369598d4.patch?full_index=1"
+    url "https://github.com/klange/nyancat/commit/e11af77f2938ea851f712df62f08de4d369598d4.patch?full_index=1"
     sha256 "24a0772d2725e151b57727ce887f4b3911d19e875785eb7e13a68f4b987831e8"
   end
 
@@ -39,6 +39,6 @@ class Nyancat < Formula
   end
 
   test do
-    system bin"nyancat", "--frames", "1", "--width", "40", "--height", "20", "--no-clear"
+    system bin/"nyancat", "--frames", "1", "--width", "40", "--height", "20", "--no-clear"
   end
 end

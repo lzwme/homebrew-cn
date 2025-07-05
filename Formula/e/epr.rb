@@ -2,11 +2,11 @@ class Epr < Formula
   include Language::Python::Virtualenv
 
   desc "Command-line EPUB reader"
-  homepage "https:github.comwusthoepr"
-  url "https:files.pythonhosted.orgpackages3920d647083aa86ec9da89b4f04b62dd6942aabb77528fd2efe018ff1cd145d2epr-reader-2.4.15.tar.gz"
+  homepage "https://github.com/wustho/epr"
+  url "https://files.pythonhosted.org/packages/39/20/d647083aa86ec9da89b4f04b62dd6942aabb77528fd2efe018ff1cd145d2/epr-reader-2.4.15.tar.gz"
   sha256 "a5cd0fbab946c9a949a18d0cb48a5255b47e8efd08ddb804921aaaf0caa781cc"
   license "MIT"
-  head "https:github.comwusthoepr.git", branch: "master"
+  head "https://github.com/wustho/epr.git", branch: "master"
 
   bottle do
     rebuild 6
@@ -20,6 +20,6 @@ class Epr < Formula
   end
 
   test do
-    assert_match "Reading history:", shell_output("#{bin}epr -r")
+    assert_match "Reading history:", shell_output("#{bin}/epr -r")
   end
 end

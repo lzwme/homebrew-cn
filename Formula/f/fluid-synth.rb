@@ -1,10 +1,10 @@
 class FluidSynth < Formula
   desc "Real-time software synthesizer based on the SoundFont 2 specs"
-  homepage "https:www.fluidsynth.org"
-  url "https:github.comFluidSynthfluidsyntharchiverefstagsv2.4.6.tar.gz"
+  homepage "https://www.fluidsynth.org"
+  url "https://ghfast.top/https://github.com/FluidSynth/fluidsynth/archive/refs/tags/v2.4.6.tar.gz"
   sha256 "a6be90fd4842b9e7246500597180af5cf213c11bfa3998a3236dd8ff47961ea8"
   license "LGPL-2.1-or-later"
-  head "https:github.comFluidSynthfluidsynth.git", branch: "master"
+  head "https://github.com/FluidSynth/fluidsynth.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "4258e54e69fbb2d7d4d3fa4f827326bf70b8503a62c6c13656d2364fbb7c948a"
@@ -78,9 +78,9 @@ class FluidSynth < Formula
     # uses_from_macos "readline" produces another error
     # Related error: Package 'readline', required by 'fluidsynth', not found
     if OS.mac?
-      inreplace "buildfluidsynth.pc",
+      inreplace "build/fluidsynth.pc",
                 "readline",
-                "#{Formula["readline"].opt_lib}pkgconfigreadline.pc"
+                "#{Formula["readline"].opt_lib}/pkgconfig/readline.pc"
     end
 
     system "cmake", "--build", "build"
@@ -89,23 +89,23 @@ class FluidSynth < Formula
 
     system "cmake", "-S", ".", "-B", "static", *args, *std_cmake_args, "-DBUILD_SHARED_LIBS=OFF"
     system "cmake", "--build", "static"
-    lib.install "staticsrclibfluidsynth.a"
+    lib.install "static/src/libfluidsynth.a"
   end
 
   test do
     resource "homebrew-test" do
-      url "https:upload.wikimedia.orgwikipediacommons661Drum_sample.mid"
+      url "https://upload.wikimedia.org/wikipedia/commons/6/61/Drum_sample.mid"
       sha256 "a1259360c48adc81f2c5b822f221044595632bd1a76302db1f9d983c44f45a30"
     end
 
     # Synthesize wav file from example midi
     resource("homebrew-test").stage testpath
-    wavout = testpath"Drum_sample.wav"
-    system bin"fluidsynth", "-F", wavout, pkgshare"sf2VintageDreamsWaves-v2.sf2", testpath"Drum_sample.mid"
+    wavout = testpath/"Drum_sample.wav"
+    system bin/"fluidsynth", "-F", wavout, pkgshare/"sf2/VintageDreamsWaves-v2.sf2", testpath/"Drum_sample.mid"
     assert_path_exists wavout
 
     # Check the pkg-config module
-    ENV.append_path "PKG_CONFIG_PATH", Formula["systemd"].lib"pkgconfig" if OS.linux?
-    system "pkgconf", "--cflags", "--libs", "--static", lib"pkgconfigfluidsynth.pc"
+    ENV.append_path "PKG_CONFIG_PATH", Formula["systemd"].lib/"pkgconfig" if OS.linux?
+    system "pkgconf", "--cflags", "--libs", "--static", lib/"pkgconfig/fluidsynth.pc"
   end
 end

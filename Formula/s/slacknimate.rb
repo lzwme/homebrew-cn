@@ -1,10 +1,10 @@
 class Slacknimate < Formula
   desc "Text animation for Slack messages"
-  homepage "https:github.commrothslacknimate"
-  url "https:github.commrothslacknimatearchiverefstagsv1.1.0.tar.gz"
+  homepage "https://github.com/mroth/slacknimate"
+  url "https://ghfast.top/https://github.com/mroth/slacknimate/archive/refs/tags/v1.1.0.tar.gz"
   sha256 "71c7a65192c8bbb790201787fabbb757de87f8412e0d41fe386c6b4343cb845c"
   license "MPL-2.0"
-  head "https:github.commrothslacknimate.git", branch: "master"
+  head "https://github.com/mroth/slacknimate.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -28,11 +28,11 @@ class Slacknimate < Formula
 
   def install
     ldflags = "-s -w -X main.version=#{version}"
-    system "go", "build", *std_go_args(ldflags:), ".cmdslacknimate"
+    system "go", "build", *std_go_args(ldflags:), "./cmd/slacknimate"
   end
 
   test do
-    system bin"slacknimate", "--version"
-    system bin"slacknimate", "--help"
+    system bin/"slacknimate", "--version"
+    system bin/"slacknimate", "--help"
   end
 end

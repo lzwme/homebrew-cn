@@ -1,10 +1,10 @@
 class Marksman < Formula
   desc "Language Server Protocol for Markdown"
-  homepage "https:github.comartempyanykhmarksman"
-  url "https:github.comartempyanykhmarksmanarchiverefstags2024-12-18.tar.gz"
+  homepage "https://github.com/artempyanykh/marksman"
+  url "https://ghfast.top/https://github.com/artempyanykh/marksman/archive/refs/tags/2024-12-18.tar.gz"
   sha256 "7392822c196e6bef68fc1cef3a873aac79b27bf95478c2419ea4761651a6a957"
   license "MIT"
-  head "https:github.comartempyanykhmarksman.git", branch: "main"
+  head "https://github.com/artempyanykh/marksman.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "b9d34d209ff066fc670ef526ef4e1921698345ce643eeeb8e2d5dfff80bffbfc"
@@ -34,8 +34,8 @@ class Marksman < Formula
     ]
     args << "-p:VersionString=#{version}" if build.stable?
 
-    system "dotnet", "publish", "MarksmanMarksman.fsproj", *args
-    (bin"marksman").write_env_script libexec"marksman", DOTNET_ROOT: dotnet.opt_libexec
+    system "dotnet", "publish", "Marksman/Marksman.fsproj", *args
+    (bin/"marksman").write_env_script libexec/"marksman", DOTNET_ROOT: dotnet.opt_libexec
   end
 
   test do
@@ -55,12 +55,12 @@ class Marksman < Formula
 
     ENV["DOTNET_SYSTEM_GLOBALIZATION_INVARIANT"] = "1"
 
-    Open3.popen3(bin"marksman", "server") do |stdin, stdout|
+    Open3.popen3(bin/"marksman", "server") do |stdin, stdout|
       stdin.write "Content-Length: #{json.size}\r\n\r\n#{json}"
 
       sleep 3
 
-      assert_match(^Content-Length: \d+i, stdout.readline)
+      assert_match(/^Content-Length: \d+/i, stdout.readline)
     end
   end
 end

@@ -1,11 +1,11 @@
 class Sophus < Formula
   desc "C++ implementation of Lie Groups using Eigen"
-  homepage "https:github.comstrasdatSophus"
-  url "https:github.comstrasdatSophusarchiverefstags1.24.6.tar.gz"
+  homepage "https://github.com/strasdat/Sophus"
+  url "https://ghfast.top/https://github.com/strasdat/Sophus/archive/refs/tags/1.24.6.tar.gz"
   sha256 "3f3098bdac2c74d42a921dbfb0e5e4b23601739e35a1c1236c2807c399da960c"
   license "MIT"
   version_scheme 1
-  head "https:github.comstrasdatSophus.git", branch: "master"
+  head "https://github.com/strasdat/Sophus.git", branch: "master"
 
   bottle do
     rebuild 1
@@ -22,12 +22,12 @@ class Sophus < Formula
                     "-DBUILD_SOPHUS_EXAMPLES=OFF"
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
-    (pkgshare"examples").install "exampleshello_so3.cpp"
+    (pkgshare/"examples").install "examples/hello_so3.cpp"
   end
 
   test do
-    cp pkgshare"exampleshello_so3.cpp", testpath
-    (testpath"CMakeLists.txt").write <<~CMAKE
+    cp pkgshare/"examples/hello_so3.cpp", testpath
+    (testpath/"CMakeLists.txt").write <<~CMAKE
       cmake_minimum_required(VERSION #{Formula["cmake"].version})
       project(HelloSO3)
 
@@ -39,8 +39,8 @@ class Sophus < Formula
       target_link_libraries(HelloSO3 Sophus::Sophus)
     CMAKE
 
-    system "cmake", "-S", ".", "-B", "build", "-DSophus_DIR=#{share}Sophus"
+    system "cmake", "-S", ".", "-B", "build", "-DSophus_DIR=#{share}/Sophus"
     system "cmake", "--build", "build"
-    assert_match "The rotation matrices are", shell_output(".buildHelloSO3")
+    assert_match "The rotation matrices are", shell_output("./build/HelloSO3")
   end
 end

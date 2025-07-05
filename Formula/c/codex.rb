@@ -1,14 +1,14 @@
 class Codex < Formula
   desc "OpenAI's coding agent that runs in your terminal"
-  homepage "https:github.comopenaicodex"
-  url "https:github.comopenaicodexarchiverefstagsrust-v0.2.0.tar.gz"
+  homepage "https://github.com/openai/codex"
+  url "https://ghfast.top/https://github.com/openai/codex/archive/refs/tags/rust-v0.2.0.tar.gz"
   sha256 "aa59d6af465d1fe89a82ae684ae3d8d5e6c1f6fbc270cc389c5966c6e969d867"
   license "Apache-2.0"
-  head "https:github.comopenaicodex.git", branch: "main"
+  head "https://github.com/openai/codex.git", branch: "main"
 
   livecheck do
     url :stable
-    regex(^rust-v?(\d+(?:\.\d+)+)$i)
+    regex(/^rust-v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -33,17 +33,17 @@ class Codex < Formula
       ENV["OPENSSL_NO_VENDOR"] = "1"
     end
 
-    system "cargo", "install", "--bin", "codex", *std_cargo_args(path: "codex-rscli")
+    system "cargo", "install", "--bin", "codex", *std_cargo_args(path: "codex-rs/cli")
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}codex --version")
+    assert_match version.to_s, shell_output("#{bin}/codex --version")
 
     assert_equal "Reading prompt from stdin...\nNo prompt provided via stdin.\n",
-pipe_output("#{bin}codex exec 2>&1", "", 1)
+pipe_output("#{bin}/codex exec 2>&1", "", 1)
 
     return unless OS.linux?
 
-    assert_equal "hello\n", shell_output("#{bin}codex debug landlock echo hello")
+    assert_equal "hello\n", shell_output("#{bin}/codex debug landlock echo hello")
   end
 end

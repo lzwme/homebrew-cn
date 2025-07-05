@@ -1,14 +1,14 @@
 class DockerCredentialHelperEcr < Formula
   desc "Docker Credential Helper for Amazon ECR"
-  homepage "https:github.comawslabsamazon-ecr-credential-helper"
-  url "https:github.comawslabsamazon-ecr-credential-helperarchiverefstagsv0.10.1.tar.gz"
+  homepage "https://github.com/awslabs/amazon-ecr-credential-helper"
+  url "https://ghfast.top/https://github.com/awslabs/amazon-ecr-credential-helper/archive/refs/tags/v0.10.1.tar.gz"
   sha256 "872f612d8ff2ec294024c58b5ca452bebcd9eeceb29e105e159e5579ec6056b2"
   license "Apache-2.0"
-  head "https:github.comawslabsamazon-ecr-credential-helper.git", branch: "main"
+  head "https://github.com/awslabs/amazon-ecr-credential-helper.git", branch: "main"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -26,13 +26,13 @@ class DockerCredentialHelperEcr < Formula
   conflicts_with cask: "docker"
 
   def install
-    (buildpath"GITCOMMIT_SHA").write tap.user
+    (buildpath/"GITCOMMIT_SHA").write tap.user
     system "make", "build"
-    bin.install "binlocaldocker-credential-ecr-login"
+    bin.install "bin/local/docker-credential-ecr-login"
   end
 
   test do
-    output = shell_output("#{bin}docker-credential-ecr-login", 1)
-    assert_match(^Usage: .*docker-credential-ecr-login, output)
+    output = shell_output("#{bin}/docker-credential-ecr-login", 1)
+    assert_match(/^Usage: .*docker-credential-ecr-login/, output)
   end
 end

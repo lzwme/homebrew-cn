@@ -1,7 +1,7 @@
 class Packetry < Formula
   desc "Fast, intuitive USB 2.0 protocol analysis application for use with Cynthion"
-  homepage "https:github.comgreatscottgadgetspacketry"
-  url "https:github.comgreatscottgadgetspacketryarchiverefstagsv0.4.0.tar.gz"
+  homepage "https://github.com/greatscottgadgets/packetry"
+  url "https://ghfast.top/https://github.com/greatscottgadgets/packetry/archive/refs/tags/v0.4.0.tar.gz"
   sha256 "2f2e36500fd29a46bf9043cf3b9a8dde6d14864ac7e6a1782cdce573b81859ee"
   license "BSD-3-Clause"
 
@@ -36,10 +36,10 @@ class Packetry < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}packetry --version")
+    assert_match version.to_s, shell_output("#{bin}/packetry --version")
 
     # Expected result is panic because Cynthion is not connected via USB.
-    output = shell_output("#{bin}packetry --test-cynthion 2>&1", 1)
+    output = shell_output("#{bin}/packetry --test-cynthion 2>&1", 1)
     assert_match "Test failed: No Cynthion devices found", output
   end
 end

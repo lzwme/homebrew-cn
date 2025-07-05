@@ -2,11 +2,11 @@ cask "osquery" do
   version "5.17.0"
   sha256 "d087c88377e22eee9f0647df96d3dda4a82e73b78a48a24cf4d9d4eb021513d8"
 
-  url "https:github.comosqueryosqueryreleasesdownload#{version}osquery-#{version}.pkg",
-      verified: "github.comosqueryosquery"
+  url "https://ghfast.top/https://github.com/osquery/osquery/releases/download/#{version}/osquery-#{version}.pkg",
+      verified: "github.com/osquery/osquery/"
   name "osquery"
   desc "SQL powered operating system instrumentation and analytics"
-  homepage "https:osquery.io"
+  homepage "https://osquery.io/"
 
   livecheck do
     url :url

@@ -1,7 +1,7 @@
 class Bgpstream < Formula
   desc "For live and historical BGP data analysis"
-  homepage "https:bgpstream.caida.org"
-  url "https:github.comCAIDAlibbgpstreamreleasesdownloadv2.3.0libbgpstream-2.3.0.tar.gz"
+  homepage "https://bgpstream.caida.org/"
+  url "https://ghfast.top/https://github.com/CAIDA/libbgpstream/releases/download/v2.3.0/libbgpstream-2.3.0.tar.gz"
   sha256 "c6be2c761ed216edc23a85409a5de3639172bc42db115c8574c2108ace7481a4"
   license "BSD-2-Clause"
 
@@ -23,12 +23,12 @@ class Bgpstream < Formula
   depends_on "wandio"
 
   def install
-    system ".configure", *std_configure_args, "--disable-silent-rules"
+    system "./configure", *std_configure_args, "--disable-silent-rules"
     system "make", "install"
   end
 
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include <stdio.h>
       #include "bgpstream.h"
       int main()
@@ -40,6 +40,6 @@ class Bgpstream < Formula
       }
     C
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lbgpstream", "-o", "test"
-    system ".test"
+    system "./test"
   end
 end

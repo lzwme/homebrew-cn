@@ -1,7 +1,7 @@
 class ElixirLs < Formula
   desc "Language Server and Debugger for Elixir"
-  homepage "https:elixir-lsp.github.ioelixir-ls"
-  url "https:github.comelixir-lspelixir-lsarchiverefstagsv0.28.0.tar.gz"
+  homepage "https://elixir-lsp.github.io/elixir-ls"
+  url "https://ghfast.top/https://github.com/elixir-lsp/elixir-ls/archive/refs/tags/v0.28.0.tar.gz"
   sha256 "9b4f496c58ebc7409405f2593f38cbc589e482a53c1c8ac817dbcbee454fabbf"
   license "Apache-2.0"
 
@@ -26,11 +26,11 @@ class ElixirLs < Formula
     system "mix", "elixir_ls.release2", "-o", libexec
     libexec.glob("*.bat").map(&:unlink)
 
-    bin.install_symlink libexec"language_server.sh" => "elixir-ls"
+    bin.install_symlink libexec/"language_server.sh" => "elixir-ls"
   end
 
   test do
-    assert_path_exists bin"elixir-ls"
+    assert_path_exists bin/"elixir-ls"
     system "mix", "local.hex", "--force"
 
     input =
@@ -40,7 +40,7 @@ class ElixirLs < Formula
       "processId\":88075,\"rootUri\":null,\"capabilities\":{},\"trace\":\"ver" \
       "bose\",\"workspaceFolders\":null}}\r\n"
 
-    output = pipe_output(bin"elixir-ls", input, 0)
+    output = pipe_output(bin/"elixir-ls", input, 0)
     assert_match "Content-Length", output
   end
 end

@@ -2,10 +2,10 @@ cask "font-butcherman" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefontsrawmainoflbutchermanButcherman-Regular.ttf",
-      verified: "github.comgooglefonts"
+  url "https://github.com/google/fonts/raw/main/ofl/butcherman/Butcherman-Regular.ttf",
+      verified: "github.com/google/fonts/"
   name "Butcherman"
-  homepage "https:fonts.google.comspecimenButcherman"
+  homepage "https://fonts.google.com/specimen/Butcherman"
 
   font "Butcherman-Regular.ttf"
 

@@ -1,23 +1,23 @@
 class Theora < Formula
   desc "Open video compression format"
-  homepage "https:www.theora.org"
+  homepage "https://www.theora.org/"
   license "BSD-3-Clause"
 
   stable do
-    url "https:ftp.osuosl.orgpubxiphreleasestheoralibtheora-1.1.1.tar.bz2"
-    mirror "https:mirror.csclub.uwaterloo.caxiphreleasestheoralibtheora-1.1.1.tar.bz2"
+    url "https://ftp.osuosl.org/pub/xiph/releases/theora/libtheora-1.1.1.tar.bz2"
+    mirror "https://mirror.csclub.uwaterloo.ca/xiph/releases/theora/libtheora-1.1.1.tar.bz2"
     sha256 "b6ae1ee2fa3d42ac489287d3ec34c5885730b1296f0801ae577a35193d3affbc"
 
     # Fix -flat_namespace being used on Big Sur and later.
     patch do
-      url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-pre-0.4.2.418-big_sur.diff"
+      url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-pre-0.4.2.418-big_sur.diff"
       sha256 "83af02f2aa2b746bb7225872cab29a253264be49db0ecebb12f841562d9a2923"
     end
   end
 
   livecheck do
-    url "https:ftp.osuosl.orgpubxiphreleasestheora?C=M&O=D"
-    regex(%r{href=(?:["']?|.*?)libtheora[._-]v?(\d+(?:\.\d+)+)\.t}i)
+    url "https://ftp.osuosl.org/pub/xiph/releases/theora/?C=M&O=D"
+    regex(%r{href=(?:["']?|.*?/)libtheora[._-]v?(\d+(?:\.\d+)+)\.t}i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -40,7 +40,7 @@ class Theora < Formula
   end
 
   head do
-    url "https:gitlab.xiph.orgxiphtheora.git", branch: "master"
+    url "https://gitlab.xiph.org/xiph/theora.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -52,8 +52,8 @@ class Theora < Formula
   depends_on "libvorbis"
 
   def install
-    cp Dir["#{Formula["libtool"].opt_share}libtool*config.{guess,sub}"], buildpath
-    system ".autogen.sh" if build.head?
+    cp Dir["#{Formula["libtool"].opt_share}/libtool/*/config.{guess,sub}"], buildpath
+    system "./autogen.sh" if build.head?
 
     args = %w[
       --disable-oggtest
@@ -63,13 +63,13 @@ class Theora < Formula
 
     args << "--disable-asm" if build.head?
 
-    system ".configure", *args, *std_configure_args
+    system "./configure", *args, *std_configure_args
     system "make", "install"
   end
 
   test do
-    (testpath"test.c").write <<~C
-      #include <theoratheora.h>
+    (testpath/"test.c").write <<~C
+      #include <theora/theora.h>
 
       int main()
       {
@@ -80,6 +80,6 @@ class Theora < Formula
       }
     C
     system ENV.cc, "test.c", "-L#{lib}", "-ltheora", "-o", "test"
-    system ".test"
+    system "./test"
   end
 end

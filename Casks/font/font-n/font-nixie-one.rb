@@ -2,10 +2,10 @@ cask "font-nixie-one" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefontsrawmainoflnixieoneNixieOne-Regular.ttf",
-      verified: "github.comgooglefonts"
+  url "https://github.com/google/fonts/raw/main/ofl/nixieone/NixieOne-Regular.ttf",
+      verified: "github.com/google/fonts/"
   name "Nixie One"
-  homepage "https:fonts.google.comspecimenNixie+One"
+  homepage "https://fonts.google.com/specimen/Nixie+One"
 
   font "NixieOne-Regular.ttf"
 

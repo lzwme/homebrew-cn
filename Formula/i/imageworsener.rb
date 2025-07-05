@@ -1,13 +1,13 @@
 class Imageworsener < Formula
   desc "Utility and library for image scaling and processing"
-  homepage "https:entropymine.comimageworsener"
-  url "https:entropymine.comimageworsenerimageworsener-1.3.5.tar.gz"
+  homepage "https://entropymine.com/imageworsener/"
+  url "https://entropymine.com/imageworsener/imageworsener-1.3.5.tar.gz"
   sha256 "a7fbb65c5ade67d9ebc32e52c58988a4f986bacc008c9021fe36b598466d5c8d"
   license "MIT"
 
   livecheck do
     url :homepage
-    regex(href=.*?imageworsener[._-]v?(\d+(?:\.\d+)+)\.ti)
+    regex(/href=.*?imageworsener[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -28,7 +28,7 @@ class Imageworsener < Formula
   end
 
   head do
-    url "https:github.comjsummersimageworsener.git", branch: "master"
+    url "https://github.com/jsummers/imageworsener.git", branch: "master"
     depends_on "autoconf" => :build
     depends_on "automake" => :build
     depends_on "libtool" => :build
@@ -41,17 +41,17 @@ class Imageworsener < Formula
 
   def install
     if build.head?
-      inreplace ".scriptsautogen.sh", "libtoolize", "glibtoolize"
-      system ".scriptsautogen.sh"
+      inreplace "./scripts/autogen.sh", "libtoolize", "glibtoolize"
+      system "./scripts/autogen.sh"
     end
 
-    system ".configure", *std_configure_args, "--without-webp"
+    system "./configure", *std_configure_args, "--without-webp"
     system "make", "install"
     pkgshare.install "tests"
   end
 
   test do
-    cp_r Dir["#{pkgshare}tests*"], testpath
-    system ".runtest", bin"imagew"
+    cp_r Dir["#{pkgshare}/tests/*"], testpath
+    system "./runtest", bin/"imagew"
   end
 end

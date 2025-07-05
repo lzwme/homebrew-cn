@@ -1,10 +1,10 @@
 class Octobuild < Formula
   desc "Compiler cache for Unreal Engine"
-  homepage "https:github.comoctobuildoctobuild"
-  url "https:github.comoctobuildoctobuildarchiverefstags1.8.1.tar.gz"
+  homepage "https://github.com/octobuild/octobuild"
+  url "https://ghfast.top/https://github.com/octobuild/octobuild/archive/refs/tags/1.8.1.tar.gz"
   sha256 "5638c8759899bfc7a5658d44d8cfcf091f0afc001fdcaa5d305a03f6aa668475"
   license "MIT"
-  head "https:github.comoctobuildoctobuild.git", branch: "master"
+  head "https://github.com/octobuild/octobuild.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -28,12 +28,12 @@ class Octobuild < Formula
   resource "ipc-rs" do
     on_linux do
       on_arm do
-        url "https:github.comoctobuildipc-rsarchivee8d76ee36146d4548d18ba8480bf5b5a2f116eac.tar.gz"
+        url "https://ghfast.top/https://github.com/octobuild/ipc-rs/archive/e8d76ee36146d4548d18ba8480bf5b5a2f116eac.tar.gz"
         sha256 "aaa5418086f55df5bea924848671df365e85aa57102abd0751366e1237abcff5"
 
-        # Apply commit from open PR https:github.comoctobuildipc-rspull12
+        # Apply commit from open PR https://github.com/octobuild/ipc-rs/pull/12
         patch do
-          url "https:github.comoctobuildipc-rscommit1eabde12d785ceda197588490abeb15615a00dad.patch?full_index=1"
+          url "https://github.com/octobuild/ipc-rs/commit/1eabde12d785ceda197588490abeb15615a00dad.patch?full_index=1"
           sha256 "521d8161be9695480f5b578034166c8e7e15b078733d3571cd5db2a00951cdd8"
         end
       end
@@ -42,17 +42,17 @@ class Octobuild < Formula
 
   def install
     if OS.linux? && Hardware::CPU.arm?
-      (buildpath"ipc-rs").install resource("ipc-rs")
-      (buildpath"Cargo.toml").append_lines <<~TOML
-        [patch."https:github.comoctobuildipc-rs"]
-        ipc = { path = ".ipc-rs" }
+      (buildpath/"ipc-rs").install resource("ipc-rs")
+      (buildpath/"Cargo.toml").append_lines <<~TOML
+        [patch."https://github.com/octobuild/ipc-rs"]
+        ipc = { path = "./ipc-rs" }
       TOML
     end
     system "cargo", "install", *std_cargo_args
   end
 
   test do
-    output = shell_output bin"xgConsole"
+    output = shell_output bin/"xgConsole"
     assert_match "Current configuration", output
     assert_match "cache_limit_mb", output
   end

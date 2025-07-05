@@ -1,10 +1,10 @@
 class Mlc < Formula
   desc "Check for broken links in markup files"
-  homepage "https:github.combecheranmlc"
-  url "https:github.combecheranmlcarchiverefstagsv0.22.0.tar.gz"
+  homepage "https://github.com/becheran/mlc"
+  url "https://ghfast.top/https://github.com/becheran/mlc/archive/refs/tags/v0.22.0.tar.gz"
   sha256 "18d22c96cf2fccd6937268db141c74f24fa3113d21ac55452d8a7eb05150b489"
   license "MIT"
-  head "https:github.combecheranmlc.git", branch: "master"
+  head "https://github.com/becheran/mlc.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "50d59b381fee447f206cf88af1af1b2650c8d88ba52022dd9d71d22e283291cb"
@@ -35,17 +35,17 @@ class Mlc < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}mlc --version")
+    assert_match version.to_s, shell_output("#{bin}/mlc --version")
 
-    (testpath"test.md").write <<~MARKDOWN
+    (testpath/"test.md").write <<~MARKDOWN
       This link is valid: [test2](test2.md)
     MARKDOWN
 
-    (testpath"test2.md").write <<~MARKDOWN
+    (testpath/"test2.md").write <<~MARKDOWN
       This link is not valid: [test3](test3.md)
     MARKDOWN
 
-    assert_match(OK\s+1\nSkipped\s+0\nWarnings\s+0\nErrors\s+0, shell_output("#{bin}mlc #{testpath}test.md"))
-    assert_match(OK\s+1\nSkipped\s+0\nWarnings\s+0\nErrors\s+1, shell_output("#{bin}mlc .", 1))
+    assert_match(/OK\s+1\nSkipped\s+0\nWarnings\s+0\nErrors\s+0/, shell_output("#{bin}/mlc #{testpath}/test.md"))
+    assert_match(/OK\s+1\nSkipped\s+0\nWarnings\s+0\nErrors\s+1/, shell_output("#{bin}/mlc .", 1))
   end
 end

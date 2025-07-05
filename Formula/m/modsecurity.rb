@@ -1,7 +1,7 @@
 class Modsecurity < Formula
   desc "Libmodsecurity is one component of the ModSecurity v3 project"
-  homepage "https:github.comowasp-modsecurityModSecurity"
-  url "https:github.comowasp-modsecurityModSecurityreleasesdownloadv3.0.14modsecurity-v3.0.14.tar.gz"
+  homepage "https://github.com/owasp-modsecurity/ModSecurity"
+  url "https://ghfast.top/https://github.com/owasp-modsecurity/ModSecurity/releases/download/v3.0.14/modsecurity-v3.0.14.tar.gz"
   sha256 "f7599057b35e67ab61764265daddf9ab03c35cee1e55527547afb073ce8f04e8"
   license "Apache-2.0"
 
@@ -29,16 +29,16 @@ class Modsecurity < Formula
 
   # Use ArchLinux patch to fix build with libxml2 2.12.
   # TODO: Check if fixed in future libxml2 release.
-  # Issue ref: https:github.comowasp-modsecurityModSecurityissues3023
+  # Issue ref: https://github.com/owasp-modsecurity/ModSecurity/issues/3023
   patch do
-    url "https:gitlab.archlinux.orgarchlinuxpackagingpackageslibmodsecurity-raw5c78cfaaeb00c842731c52851341884c74bdc9b2libxml-includes.patch"
+    url "https://gitlab.archlinux.org/archlinux/packaging/packages/libmodsecurity/-/raw/5c78cfaaeb00c842731c52851341884c74bdc9b2/libxml-includes.patch"
     sha256 "7ee0adbe5b164ca512c49e51e30ffd41e29244156a695e619dcf1d0387e69aef"
   end
 
   def install
     system "autoreconf", "--force", "--install", "--verbose"
 
-    libxml2 = OS.mac? ? "#{MacOS.sdk_path_if_needed}usr" : Formula["libxml2"].opt_prefix
+    libxml2 = OS.mac? ? "#{MacOS.sdk_path_if_needed}/usr" : Formula["libxml2"].opt_prefix
 
     args = [
       "--disable-debug-logs",
@@ -52,12 +52,12 @@ class Modsecurity < Formula
       "--without-geoip",
     ]
 
-    system ".configure", *args, *std_configure_args
+    system "./configure", *args, *std_configure_args
     system "make", "install"
   end
 
   test do
-    output = shell_output("#{bin}modsec-rules-check \"SecAuditEngine RelevantOnly\"")
+    output = shell_output("#{bin}/modsec-rules-check \"SecAuditEngine RelevantOnly\"")
     assert_match("Test ok", output)
   end
 end

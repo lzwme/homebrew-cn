@@ -1,10 +1,10 @@
 class Mairix < Formula
   desc "Email index and search tool"
-  homepage "https:github.comvandrymairix"
-  url "https:github.comvandrymairixreleasesdownload0.24mairix-0.24.tar.gz"
+  homepage "https://github.com/vandry/mairix"
+  url "https://ghfast.top/https://github.com/vandry/mairix/releases/download/0.24/mairix-0.24.tar.gz"
   sha256 "a0702e079c768b6fbe25687ebcbabe7965eb493d269a105998c7c1c2caef4a57"
   license "GPL-2.0-only"
-  head "https:github.comvandrymairix.git", branch: "master"
+  head "https://github.com/vandry/mairix.git", branch: "master"
 
   livecheck do
     url :stable
@@ -38,12 +38,12 @@ class Mairix < Formula
 
   def install
     ENV.deparallelize
-    system ".configure", "--prefix=#{prefix}", "--mandir=#{man}"
+    system "./configure", "--prefix=#{prefix}", "--mandir=#{man}"
     system "make"
     system "make", "install"
   end
 
   test do
-    system bin"mairix", "--version"
+    system bin/"mairix", "--version"
   end
 end

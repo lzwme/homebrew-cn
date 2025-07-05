@@ -1,10 +1,10 @@
 class Lf < Formula
   desc "Terminal file manager"
-  homepage "https:godoc.orggithub.comgokcehanlf"
-  url "https:github.comgokcehanlfarchiverefstagsr35.tar.gz"
+  homepage "https://godoc.org/github.com/gokcehan/lf"
+  url "https://ghfast.top/https://github.com/gokcehan/lf/archive/refs/tags/r35.tar.gz"
   sha256 "bf2ecd63eb75ceeb88f42977d49515bbd755b7f3d4db651a097c6ba47fd2d989"
   license "MIT"
-  head "https:github.comgokcehanlf.git", branch: "master"
+  head "https://github.com/gokcehan/lf.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "bb2fd1277994cd58d26058b7b79b560563b1733f86ef7b1931afb091ea5f8929"
@@ -21,13 +21,13 @@ class Lf < Formula
     system "go", "build", *std_go_args(ldflags: "-s -w -X main.gVersion=#{version}")
 
     man1.install "lf.1"
-    bash_completion.install "etclf.bash" => "lf"
-    fish_completion.install "etclf.fish"
-    zsh_completion.install "etclf.zsh" => "_lf"
+    bash_completion.install "etc/lf.bash" => "lf"
+    fish_completion.install "etc/lf.fish"
+    zsh_completion.install "etc/lf.zsh" => "_lf"
   end
 
   test do
-    assert_equal version.to_s, shell_output("#{bin}lf -version").chomp
-    assert_match "file manager", shell_output("#{bin}lf -doc")
+    assert_equal version.to_s, shell_output("#{bin}/lf -version").chomp
+    assert_match "file manager", shell_output("#{bin}/lf -doc")
   end
 end

@@ -1,15 +1,15 @@
 class Qd < Formula
-  desc "C++Fortran-90 double-double and quad-double package"
-  homepage "https:www.davidhbailey.comdhbsoftware"
-  url "https:www.davidhbailey.comdhbsoftwareqd-2.3.24.tar.gz"
+  desc "C++/Fortran-90 double-double and quad-double package"
+  homepage "https://www.davidhbailey.com/dhbsoftware/"
+  url "https://www.davidhbailey.com/dhbsoftware/qd-2.3.24.tar.gz"
   sha256 "ad6738e8330928308e10346ff7fd357ed17386408f8fb7a23704cd6f5d52a6c8"
   license "BSD-3-Clause-LBNL"
 
   # The homepage no longer links to a QD tarball and instead directs users to
   # the GitHub repository, so we check the Git tags.
   livecheck do
-    url "https:github.comBL-highprecisionQD.git"
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    url "https://github.com/BL-highprecision/QD.git"
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -34,11 +34,11 @@ class Qd < Formula
     # regenerate since the files were generated using automake 1.16.5
     system "autoreconf", "--install", "--force", "--verbose"
 
-    system ".configure", "--enable-shared", *std_configure_args
+    system "./configure", "--enable-shared", *std_configure_args
     system "make", "install"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}qd-config --configure-args")
+    assert_match version.to_s, shell_output("#{bin}/qd-config --configure-args")
   end
 end

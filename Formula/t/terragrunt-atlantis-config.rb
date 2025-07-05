@@ -1,7 +1,7 @@
 class TerragruntAtlantisConfig < Formula
   desc "Generate Atlantis config for Terragrunt projects"
-  homepage "https:github.comtranscend-ioterragrunt-atlantis-config"
-  url "https:github.comtranscend-ioterragrunt-atlantis-configarchiverefstagsv1.20.0.tar.gz"
+  homepage "https://github.com/transcend-io/terragrunt-atlantis-config"
+  url "https://ghfast.top/https://github.com/transcend-io/terragrunt-atlantis-config/archive/refs/tags/v1.20.0.tar.gz"
   sha256 "b21ee84341cd94ba369c6f0b3124f6d260ed9141129e345c6c64d76b2f54ce91"
   license "MIT"
 
@@ -21,9 +21,9 @@ class TerragruntAtlantisConfig < Formula
   end
 
   test do
-    output = shell_output("#{bin}terragrunt-atlantis-config generate --root #{testpath} 2>&1")
+    output = shell_output("#{bin}/terragrunt-atlantis-config generate --root #{testpath} 2>&1")
     assert_match "Could not find an old config file. Starting from scratch", output
 
-    assert_match version.to_s, shell_output("#{bin}terragrunt-atlantis-config version")
+    assert_match version.to_s, shell_output("#{bin}/terragrunt-atlantis-config version")
   end
 end

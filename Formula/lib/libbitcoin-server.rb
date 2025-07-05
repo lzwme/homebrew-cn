@@ -1,7 +1,7 @@
 class LibbitcoinServer < Formula
   desc "Bitcoin Full Node and Query Server"
-  homepage "https:github.comlibbitcoinlibbitcoin-server"
-  url "https:github.comlibbitcoinlibbitcoin-serverarchiverefstagsv3.8.0.tar.gz"
+  homepage "https://github.com/libbitcoin/libbitcoin-server"
+  url "https://ghfast.top/https://github.com/libbitcoin/libbitcoin-server/archive/refs/tags/v3.8.0.tar.gz"
   sha256 "17e6f72606a2d132a966727c87f8afeef652b0e882b6e961673e06af89c56516"
   license "AGPL-3.0-or-later"
   revision 2
@@ -20,14 +20,14 @@ class LibbitcoinServer < Formula
   end
 
   # About 2 years since request for release with support for recent `boost`.
-  # Ref: https:github.comlibbitcoinlibbitcoin-systemissues1234
+  # Ref: https://github.com/libbitcoin/libbitcoin-system/issues/1234
   disable! date: "2024-12-14", because: "uses deprecated `boost@1.76`"
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
   depends_on "pkgconf" => :build
-  # https:github.comlibbitcoinlibbitcoin-systemissues1234
+  # https://github.com/libbitcoin/libbitcoin-system/issues/1234
   depends_on "boost@1.76"
   depends_on "libbitcoin-node"
   depends_on "libbitcoin-protocol"
@@ -36,22 +36,22 @@ class LibbitcoinServer < Formula
 
   def install
     ENV.cxx11
-    ENV.prepend_path "PKG_CONFIG_PATH", Formula["libbitcoin"].opt_libexec"libpkgconfig"
+    ENV.prepend_path "PKG_CONFIG_PATH", Formula["libbitcoin"].opt_libexec/"lib/pkgconfig"
 
-    system ".autogen.sh"
-    system ".configure", "--disable-dependency-tracking",
+    system "./autogen.sh"
+    system "./configure", "--disable-dependency-tracking",
                           "--disable-silent-rules",
                           "--prefix=#{prefix}",
                           "--with-boost-libdir=#{Formula["boost@1.76"].opt_lib}"
     system "make", "install"
 
-    bash_completion.install "databs"
+    bash_completion.install "data/bs"
   end
 
   test do
     boost = Formula["boost@1.76"]
-    (testpath"test.cpp").write <<~CPP
-      #include <bitcoinserver.hpp>
+    (testpath/"test.cpp").write <<~CPP
+      #include <bitcoin/server.hpp>
       int main() {
           libbitcoin::server::message message(true);
           assert(message.secure() == true);
@@ -63,6 +63,6 @@ class LibbitcoinServer < Formula
                     "-L#{Formula["libbitcoin"].opt_lib}", "-lbitcoin-system",
                     "-L#{lib}", "-lbitcoin-server",
                     "-L#{boost.lib}", "-lboost_system"
-    system ".test"
+    system "./test"
   end
 end

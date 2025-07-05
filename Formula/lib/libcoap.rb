@@ -1,7 +1,7 @@
 class Libcoap < Formula
   desc "Lightweight application-protocol for resource-constrained devices"
-  homepage "https:github.comobgmlibcoap"
-  url "https:github.comobgmlibcoaparchiverefstagsv4.3.5.tar.gz"
+  homepage "https://github.com/obgm/libcoap"
+  url "https://ghfast.top/https://github.com/obgm/libcoap/archive/refs/tags/v4.3.5.tar.gz"
   sha256 "a417ed26ec6c95c041b42353b5b6fad1602e2bf42a6e26c09863450e227b7b5f"
   license "BSD-2-Clause"
 
@@ -23,17 +23,17 @@ class Libcoap < Formula
   depends_on "openssl@3"
 
   def install
-    system ".autogen.sh"
-    system ".configure", "--disable-manpages", "--disable-doxygen", *std_configure_args
+    system "./autogen.sh"
+    system "./configure", "--disable-manpages", "--disable-doxygen", *std_configure_args
     system "make"
     system "make", "install"
   end
 
   test do
     port = free_port
-    spawn bin"coap-server", "-p", port.to_s
+    spawn bin/"coap-server", "-p", port.to_s
     sleep 1
-    output = shell_output(bin"coap-client -B 5 -m get coap:localhost:#{port}")
+    output = shell_output(bin/"coap-client -B 5 -m get coap://localhost:#{port}")
     assert_match "This is a test server made with libcoap", output
   end
 end

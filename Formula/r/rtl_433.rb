@@ -1,10 +1,10 @@
 class Rtl433 < Formula
   desc "Program to decode radio transmissions from devices"
-  homepage "https:github.commerbananrtl_433"
-  url "https:github.commerbananrtl_433archiverefstags25.02.tar.gz"
+  homepage "https://github.com/merbanan/rtl_433"
+  url "https://ghfast.top/https://github.com/merbanan/rtl_433/archive/refs/tags/25.02.tar.gz"
   sha256 "5a409ea10e6d3d7d4aa5ea91d2d6cc92ebb2d730eb229c7b37ade65458223432"
   license "GPL-2.0-or-later"
-  head "https:github.commerbananrtl_433.git", branch: "master"
+  head "https://github.com/merbanan/rtl_433.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "cadc9ac43692b5342a8d9fd305bf36598ce8e8f9cbcf088f3b87e7117f569f4c"
@@ -30,20 +30,20 @@ class Rtl433 < Formula
 
   test do
     resource "homebrew-test_cu8" do
-      url "https:raw.githubusercontent.commerbananrtl_433_testsmastertestsoregon_scientificuvr128g001_433.92M_250k.cu8"
+      url "https://ghfast.top/https://raw.githubusercontent.com/merbanan/rtl_433_tests/master/tests/oregon_scientific/uvr128/g001_433.92M_250k.cu8"
       sha256 "7aa07b72cec9926f463410cda6056eb2411ac9e76006ba4917a0527492c5f65d"
     end
 
     resource "homebrew-expected_json" do
-      url "https:raw.githubusercontent.commerbananrtl_433_testsmastertestsoregon_scientificuvr128g001_433.92M_250k.json"
+      url "https://ghfast.top/https://raw.githubusercontent.com/merbanan/rtl_433_tests/master/tests/oregon_scientific/uvr128/g001_433.92M_250k.json"
       sha256 "5054c0f322030dd1ee3ca78261b64e691da832900a2c6e4d13cc22f0fbbfbbfa"
     end
 
     testpath.install resource("homebrew-test_cu8")
     testpath.install resource("homebrew-expected_json")
 
-    expected_output = (testpath"g001_433.92M_250k.json").read
-    rtl_433_output = shell_output("#{bin}rtl_433 -c 0 -F json -r #{testpath}g001_433.92M_250k.cu8")
+    expected_output = (testpath/"g001_433.92M_250k.json").read
+    rtl_433_output = shell_output("#{bin}/rtl_433 -c 0 -F json -r #{testpath}/g001_433.92M_250k.cu8")
 
     assert_equal rtl_433_output, expected_output
   end

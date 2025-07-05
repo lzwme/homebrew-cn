@@ -1,14 +1,14 @@
 class Zabbix < Formula
   desc "Availability and monitoring solution"
-  homepage "https:www.zabbix.com"
-  url "https:cdn.zabbix.comzabbixsourcesstable7.4zabbix-7.4.0.tar.gz"
+  homepage "https://www.zabbix.com/"
+  url "https://cdn.zabbix.com/zabbix/sources/stable/7.4/zabbix-7.4.0.tar.gz"
   sha256 "7bd56fcd83359e11682eff412d53a0ceb9e39843ddbde0f09eb97faac80a1fa2"
   license "AGPL-3.0-only"
-  head "https:github.comzabbixzabbix.git", branch: "master"
+  head "https://github.com/zabbix/zabbix.git", branch: "master"
 
   livecheck do
-    url "https:www.zabbix.comdownload_sources"
-    regex(href=.*?zabbix[._-]v?(\d+(?:\.\d+)+)\.ti)
+    url "https://www.zabbix.com/download_sources"
+    regex(/href=.*?zabbix[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   bottle do
@@ -36,14 +36,14 @@ class Zabbix < Formula
 
     if OS.mac?
       sdk = MacOS::CLT.installed? ? "" : MacOS.sdk_path
-      args << "--with-iconv=#{sdk}usr"
+      args << "--with-iconv=#{sdk}/usr"
     end
 
-    system ".configure", *args, *std_configure_args
+    system "./configure", *args, *std_configure_args
     system "make", "install"
   end
 
   test do
-    system sbin"zabbix_agentd", "--print"
+    system sbin/"zabbix_agentd", "--print"
   end
 end

@@ -2,10 +2,10 @@ cask "jewelrybox" do
   version "1.5"
   sha256 "96c0bae3cc0ce312ce3df290a4d1eddff2da781dfaafe4707b298dc17eb53993"
 
-  url "https:github.comremearjewelryboxreleasesdownload#{version}JewelryBox_v#{version}.tar.bz2"
+  url "https://ghfast.top/https://github.com/remear/jewelrybox/releases/download/#{version}/JewelryBox_v#{version}.tar.bz2"
   name "JewelryBox"
   desc "RVM manager"
-  homepage "https:github.comremearjewelrybox"
+  homepage "https://github.com/remear/jewelrybox"
 
   no_autobump! because: :requires_manual_review
 

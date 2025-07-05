@@ -2,18 +2,18 @@ cask "minecraft-server" do
   version "1.21.7,05e4b48fbc01f0385adb74bcff9751d34552486c"
   sha256 "b955b8f75d811cc326179472174941358eeaf97a68999ee119ccd3873350c4ee"
 
-  url "https:launcher.mojang.comv#{version.major}objects#{version.csv.second}server.jar",
-      verified: "launcher.mojang.com"
+  url "https://launcher.mojang.com/v#{version.major}/objects/#{version.csv.second}/server.jar",
+      verified: "launcher.mojang.com/"
   name "Minecraft Server"
   desc "Run a Minecraft multiplayer server"
-  homepage "https:www.minecraft.neten-us"
+  homepage "https://www.minecraft.net/en-us/"
 
-  # The server download page (https:www.minecraft.neten-usdownloadserver)
+  # The server download page (https://www.minecraft.net/en-us/download/server)
   # HTML does not contain version information or a download link, as they are
   # fetched using separate JavaScript requests.
   livecheck do
-    url "https:net-secondary.web.minecraft-services.netapiv1.0downloadlatest"
-    regex(%r{objects(\h+)server\.jar}i)
+    url "https://net-secondary.web.minecraft-services.net/api/v1.0/download/latest"
+    regex(%r{/objects/(\h+)/server\.jar}i)
     strategy :json do |json, regex|
       latest_version = json["result"]
       next unless latest_version
@@ -23,7 +23,7 @@ cask "minecraft-server" do
       next version if latest_version == version.csv.first
 
       links_content = Homebrew::Livecheck::Strategy.page_content(
-        "https:net-secondary.web.minecraft-services.netapiv1.0downloadlinks",
+        "https://net-secondary.web.minecraft-services.net/api/v1.0/download/links",
       )[:content]
       next latest_version if links_content.blank?
 
@@ -45,8 +45,8 @@ cask "minecraft-server" do
 
   container type: :naked
 
-  # shim script (https:github.comHomebrewhomebrew-caskissues18809)
-  shimscript = "#{staged_path}minecraft-server.wrapper.sh"
+  # shim script (https://github.com/Homebrew/homebrew-cask/issues/18809)
+  shimscript = "#{staged_path}/minecraft-server.wrapper.sh"
   binary shimscript, target: "minecraft-server"
 
   config_dir = HOMEBREW_PREFIX.join("etc", "minecraft-server")
@@ -55,9 +55,9 @@ cask "minecraft-server" do
     FileUtils.mkdir_p config_dir
 
     File.write shimscript, <<~EOS
-      #!binsh
+      #!/bin/sh
       cd '#{config_dir}' && \
-        exec usrbinjava ${@:--Xms1024M -Xmx1024M} -jar '#{staged_path}server.jar' nogui
+        exec /usr/bin/java ${@:--Xms1024M -Xmx1024M} -jar '#{staged_path}/server.jar' nogui
     EOS
   end
 

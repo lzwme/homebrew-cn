@@ -1,15 +1,15 @@
 class Gstreamer < Formula
   desc "Development framework for multimedia applications"
-  homepage "https:gstreamer.freedesktop.org"
+  homepage "https://gstreamer.freedesktop.org/"
   license all_of: ["LGPL-2.0-or-later", "LGPL-2.1-or-later", "MIT"]
 
   stable do
-    url "https:gitlab.freedesktop.orggstreamergstreamer-archive1.26.3gstreamer-1.26.3.tar.bz2"
+    url "https://gitlab.freedesktop.org/gstreamer/gstreamer/-/archive/1.26.3/gstreamer-1.26.3.tar.bz2"
     sha256 "2dafd2a99f9cc7df4bdd202927f7aa25a1879e3d574b5bc3248856d91c11734e"
 
     # When updating this resource, use the tag that matches the GStreamer version.
     resource "rs" do
-      url "https:gitlab.freedesktop.orggstreamergst-plugins-rs-archivegstreamer-1.26.3gst-plugins-rs-gstreamer-1.26.3.tar.bz2"
+      url "https://gitlab.freedesktop.org/gstreamer/gst-plugins-rs/-/archive/gstreamer-1.26.3/gst-plugins-rs-gstreamer-1.26.3.tar.bz2"
       sha256 "43ed8a7a59162f96684665826c00a20d8f38056719b433d80aa9d7bd9b7b4bba"
 
       livecheck do
@@ -19,8 +19,8 @@ class Gstreamer < Formula
   end
 
   livecheck do
-    url "https:gstreamer.freedesktop.orgsrcgstreamer"
-    regex(href=.*?gstreamer[._-]v?(\d+\.\d*[02468](?:\.\d+)*)\.ti)
+    url "https://gstreamer.freedesktop.org/src/gstreamer/"
+    regex(/href=.*?gstreamer[._-]v?(\d+\.\d*[02468](?:\.\d+)*)\.t/i)
   end
 
   bottle do
@@ -34,10 +34,10 @@ class Gstreamer < Formula
   end
 
   head do
-    url "https:gitlab.freedesktop.orggstreamergstreamer.git", branch: "main"
+    url "https://gitlab.freedesktop.org/gstreamer/gstreamer.git", branch: "main"
 
     resource "rs" do
-      url "https:gitlab.freedesktop.orggstreamergst-plugins-rs.git", branch: "main"
+      url "https://gitlab.freedesktop.org/gstreamer/gst-plugins-rs.git", branch: "main"
     end
   end
 
@@ -117,7 +117,7 @@ class Gstreamer < Formula
     depends_on "gettext"
     depends_on "harfbuzz"
     # musepack is not bottled on Linux
-    # https:github.comHomebrewhomebrew-corepull92041
+    # https://github.com/Homebrew/homebrew-core/pull/92041
     depends_on "musepack"
   end
 
@@ -137,21 +137,21 @@ class Gstreamer < Formula
   end
 
   # These paths used to live in various `gst-*` formulae.
-  link_overwrite "bingst-*", "libligst*", "liblibges*", "libgirepository-1.0Gst*-1.0.typelib"
-  link_overwrite "libgirepository-1.0GES-1.0.typelib", "libgst-validate-launcher*", "libgstreamer-1.0*"
-  link_overwrite "libpkgconfiggst*.pc", "libpython3.13site-packagesgioverrides*", "includegstreamer-1.0*"
-  link_overwrite "sharegir-1.0Gst*.gir", "sharegir-1.0GES-1.0.gir", "sharegstreamer-1.0*"
-  link_overwrite "sharelocale*LC_MESSAGESgst-*.mo", "sharemanman1g*"
+  link_overwrite "bin/gst-*", "lib/ligst*", "lib/libges*", "lib/girepository-1.0/Gst*-1.0.typelib"
+  link_overwrite "lib/girepository-1.0/GES-1.0.typelib", "lib/gst-validate-launcher/*", "lib/gstreamer-1.0/*"
+  link_overwrite "lib/pkgconfig/gst*.pc", "lib/python3.13/site-packages/gi/overrides/*", "include/gstreamer-1.0/*"
+  link_overwrite "share/gir-1.0/Gst*.gir", "share/gir-1.0/GES-1.0.gir", "share/gstreamer-1.0/*"
+  link_overwrite "share/locale/*/LC_MESSAGES/gst-*.mo", "share/man/man1/g*"
 
   # Avoid overlinking of `gst-python` python extension module.
-  # https:gitlab.freedesktop.orggstreamergst-python-merge_requests41
+  # https://gitlab.freedesktop.org/gstreamer/gst-python/-/merge_requests/41
   # TODO: Migrate patch to gstreamer monorepo.
   patch :DATA
 
   def install
     odie "rs resource needs to be updated" if build.stable? && version != resource("rs").version
 
-    (buildpath"subprojectsgst-plugins-rs").install resource("rs")
+    (buildpath/"subprojects/gst-plugins-rs").install resource("rs")
 
     site_packages = Language::Python.site_packages(python3)
     # To pass arguments to subprojects (e.g. `gst-editing-services`), use
@@ -185,8 +185,8 @@ class Gstreamer < Formula
       -Dpackage-origin=#{tap.default_remote}
       -Dgst-devtools:validate=enabled
       -Dgst-devtools:cairo=enabled
-      -Dgst-editing-services:pygi-overrides-dir=#{site_packages}gioverrides
-      -Dgst-python:pygi-overrides-dir=#{site_packages}gioverrides
+      -Dgst-editing-services:pygi-overrides-dir=#{site_packages}/gi/overrides
+      -Dgst-python:pygi-overrides-dir=#{site_packages}/gi/overrides
       -Dgst-python:python=#{python3}
       -Dgst-plugins-bad:opencv=disabled
       -Dgst-plugins-bad:sctp=enabled
@@ -204,15 +204,15 @@ class Gstreamer < Formula
     args << "-Dgst-plugins-bad:applemedia=disabled" if OS.mac? && MacOS.version <= :high_sierra
 
     # Ban trying to chown to root.
-    # https:bugzilla.gnome.orgshow_bug.cgi?id=750367
+    # https://bugzilla.gnome.org/show_bug.cgi?id=750367
     args << "-Dgstreamer:ptp-helper-permissions=none"
 
     # Prevent the build from downloading an x86-64 version of bison.
     args << "-Dbuild-tools-source=system"
 
     # Set `RPATH` since `cargo-c` doesn't seem to.
-    # https:gitlab.freedesktop.orggstreamergst-plugins-rs-issues279
-    plugin_dir = lib"gstreamer-1.0"
+    # https://gitlab.freedesktop.org/gstreamer/gst-plugins-rs/-/issues/279
+    plugin_dir = lib/"gstreamer-1.0"
     rpath_args = [loader_path, rpath(source: plugin_dir)].map { |path| "-rpath,#{path}" }
     ENV.append "RUSTFLAGS", "--codegen link-args=-Wl,#{rpath_args.join(",")}"
 
@@ -220,11 +220,11 @@ class Gstreamer < Formula
     # RPATH-related flags, due to the presence of `$` in $ORIGIN.
     if OS.linux?
       wrapper_files = %w[
-        subprojectsgst-plugins-rscargo_wrapper.py
-        subprojectsgst-devtoolsdots-viewercargo_wrapper.py
+        subprojects/gst-plugins-rs/cargo_wrapper.py
+        subprojects/gst-devtools/dots-viewer/cargo_wrapper.py
       ]
       inreplace wrapper_files do |s|
-        s.gsub!(shlex\.split\(env\.get\(("RUSTFLAGS"|'RUSTFLAGS'), (""|'')\)\),
+        s.gsub!(/shlex\.split\(env\.get\(("RUSTFLAGS"|'RUSTFLAGS'), (""|'')\)\)/,
                 "' '.split(env.get(\"RUSTFLAGS\", \"\"))")
         s.gsub! "shlex_join(rust_flags)", "' '.join(rust_flags)"
       end
@@ -242,8 +242,8 @@ class Gstreamer < Formula
   def post_install
     # Support finding the `libnice` plugin, which is in a separate formula.
     # Needs to be done in `post_install`, since bottling prunes this symlink.
-    libnice_gst_plugin = Formula["libnice-gstreamer"].opt_libexec"gstreamer-1.0"shared_library("libgstnice")
-    gst_plugin_dir = lib"gstreamer-1.0"
+    libnice_gst_plugin = Formula["libnice-gstreamer"].opt_libexec/"gstreamer-1.0"/shared_library("libgstnice")
+    gst_plugin_dir = lib/"gstreamer-1.0"
     ln_sf libnice_gst_plugin.relative_path_from(gst_plugin_dir), gst_plugin_dir
   end
 
@@ -251,8 +251,8 @@ class Gstreamer < Formula
     <<~EOS
       All gst-* GStreamer plugins are now bundled in this formula.
       For GStreamer to find your own plugins, add their paths to `GST_PLUGIN_PATH`.
-      For example, if you have plugins in `~.locallibgstreamer-1.0`:
-        export GST_PLUGIN_PATH="~.locallibgstreamer-1.0"
+      For example, if you have plugins in `~/.local/lib/gstreamer-1.0`:
+        export GST_PLUGIN_PATH="~/.local/lib/gstreamer-1.0"
 
       Do not install plugins into GStreamer's prefix. They will be deleted
       by `brew upgrade`.
@@ -261,8 +261,8 @@ class Gstreamer < Formula
 
   test do
     # TODO: Improve test according to suggestions at
-    #   https:github.comorgsHomebrewdiscussions3740
-    system bin"gst-validate-launcher", "--usage"
+    #   https://github.com/orgs/Homebrew/discussions/3740
+    system bin/"gst-validate-launcher", "--usage"
 
     system python3, "-c", <<~PYTHON
       import gi
@@ -275,32 +275,32 @@ class Gstreamer < Formula
     # macOS, which frequently causes the slower Intel macOS runners to time out.
     # Need to allow a longer timeout or see if CI terminal can be made a developer tool.
     #
-    # Ref: https:gitlab.freedesktop.orggstreamergstreamer-issues1119
+    # Ref: https://gitlab.freedesktop.org/gstreamer/gstreamer/-/issues/1119
     skip_plugins = OS.mac? && Hardware::CPU.intel? && ENV["HOMEBREW_GITHUB_ACTIONS"]
     ENV["GST_PLUGIN_SYSTEM_PATH"] = testpath if skip_plugins
 
-    assert_match(^Total count: \d+ plugin, shell_output(bin"gst-inspect-1.0"))
+    assert_match(/^Total count: \d+ plugin/, shell_output(bin/"gst-inspect-1.0"))
     return if skip_plugins
 
-    system bin"ges-launch-1.0", "--ges-version"
-    system bin"gst-inspect-1.0", "libav"
-    system bin"gst-inspect-1.0", "--plugin", "dvbsuboverlay"
-    system bin"gst-inspect-1.0", "--plugin", "fdkaac"
-    system bin"gst-inspect-1.0", "--plugin", "volume"
-    system bin"gst-inspect-1.0", "--plugin", "cairo"
-    system bin"gst-inspect-1.0", "--plugin", "dvdsub"
-    system bin"gst-inspect-1.0", "--plugin", "x264"
-    system bin"gst-inspect-1.0", "--plugin", "rtspclientsink"
-    system bin"gst-inspect-1.0", "--plugin", "rsfile"
-    system bin"gst-inspect-1.0", "hlsdemux2"
+    system bin/"ges-launch-1.0", "--ges-version"
+    system bin/"gst-inspect-1.0", "libav"
+    system bin/"gst-inspect-1.0", "--plugin", "dvbsuboverlay"
+    system bin/"gst-inspect-1.0", "--plugin", "fdkaac"
+    system bin/"gst-inspect-1.0", "--plugin", "volume"
+    system bin/"gst-inspect-1.0", "--plugin", "cairo"
+    system bin/"gst-inspect-1.0", "--plugin", "dvdsub"
+    system bin/"gst-inspect-1.0", "--plugin", "x264"
+    system bin/"gst-inspect-1.0", "--plugin", "rtspclientsink"
+    system bin/"gst-inspect-1.0", "--plugin", "rsfile"
+    system bin/"gst-inspect-1.0", "hlsdemux2"
   end
 end
 
 __END__
-diff --git asubprojectsgst-pythongioverridesmeson.build bsubprojectsgst-pythongioverridesmeson.build
+diff --git a/subprojects/gst-python/gi/overrides/meson.build b/subprojects/gst-python/gi/overrides/meson.build
 index 20aeb06ac9..3c53eab6d7 100644
---- asubprojectsgst-pythongioverridesmeson.build
-+++ bsubprojectsgst-pythongioverridesmeson.build
+--- a/subprojects/gst-python/gi/overrides/meson.build
++++ b/subprojects/gst-python/gi/overrides/meson.build
 @@ -7,9 +7,11 @@ python.install_sources(pysources,
  host_system = host_machine.system()
  if host_system == 'windows'

@@ -1,10 +1,10 @@
 class Glasskube < Formula
   desc "Missing Package Manager for Kubernetes"
-  homepage "https:glasskube.devproductspackage-managerdocs"
-  url "https:github.comglasskubeglasskubearchiverefstagsv0.26.1.tar.gz"
+  homepage "https://glasskube.dev/products/package-manager/docs/"
+  url "https://ghfast.top/https://github.com/glasskube/glasskube/archive/refs/tags/v0.26.1.tar.gz"
   sha256 "c044187e49683b39aa89c26bc02dab38781578c24b6ab277c0a58ae811066996"
   license "Apache-2.0"
-  head "https:github.comglasskubeglasskube.git", branch: "main"
+  head "https://github.com/glasskube/glasskube.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "063ecfd9f5070323a625742f6501bfa047a48b75ae7b82034a65019fb28d383a"
@@ -21,21 +21,21 @@ class Glasskube < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.comglasskubeglasskubeinternalconfig.Version=#{version}
-      -X github.comglasskubeglasskubeinternalconfig.Commit=#{tap.user}
-      -X github.comglasskubeglasskubeinternalconfig.Date=#{time.iso8601}
+      -X github.com/glasskube/glasskube/internal/config.Version=#{version}
+      -X github.com/glasskube/glasskube/internal/config.Commit=#{tap.user}
+      -X github.com/glasskube/glasskube/internal/config.Date=#{time.iso8601}
     ]
 
     system "make", "web"
-    system "go", "build", *std_go_args(ldflags:), ".cmdglasskube"
+    system "go", "build", *std_go_args(ldflags:), "./cmd/glasskube"
 
-    generate_completions_from_executable(bin"glasskube", "completion")
+    generate_completions_from_executable(bin/"glasskube", "completion")
   end
 
   test do
-    output = shell_output("#{bin}glasskube bootstrap --type slim 2>&1", 1)
+    output = shell_output("#{bin}/glasskube bootstrap --type slim 2>&1", 1)
     assert_match "Your kubeconfig file is either empty or missing!", output
 
-    assert_match version.to_s, shell_output("#{bin}glasskube --version")
+    assert_match version.to_s, shell_output("#{bin}/glasskube --version")
   end
 end

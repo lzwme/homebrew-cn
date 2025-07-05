@@ -5,15 +5,15 @@ cask "kyokan-bob" do
   sha256 arm:   "0fe432c089333b21af568ba1ef5f33fda95c1ab2a27e9cc445413ec012661fd1",
          intel: "84aa56ec0d7269dd66764d8ca01bb110d9fd88e380b5fbc7749dc7d6b321bd22"
 
-  url "https:github.comkyokanbob-walletreleasesdownloadv#{version}Bob-#{version}-#{arch}.dmg",
-      verified: "github.comkyokanbob-wallet"
+  url "https://ghfast.top/https://github.com/kyokan/bob-wallet/releases/download/v#{version}/Bob-#{version}-#{arch}.dmg",
+      verified: "github.com/kyokan/bob-wallet/"
   name "Bob Wallet"
   desc "Handshake wallet GUI for managing transactions, name auctions, and DNS records"
-  homepage "https:bobwallet.io"
+  homepage "https://bobwallet.io/"
 
   livecheck do
     url :url
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -23,8 +23,8 @@ cask "kyokan-bob" do
   app "Bob.app"
 
   zap trash: [
-    "~LibraryApplication SupportBob",
-    "~LibraryPreferencescom.kyokan.BobRelease.plist",
-    "~LibrarySaved Application Statecom.kyokan.BobRelease.savedState",
+    "~/Library/Application Support/Bob",
+    "~/Library/Preferences/com.kyokan.BobRelease.plist",
+    "~/Library/Saved Application State/com.kyokan.BobRelease.savedState",
   ]
 end

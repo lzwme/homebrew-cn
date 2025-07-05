@@ -1,7 +1,7 @@
 class Openmotif < Formula
   desc "LGPL release of the Motif toolkit"
-  homepage "https:motif.ics.commotif"
-  url "https:downloads.sourceforge.netprojectmotifMotif%202.3.8%20Source%20Codemotif-2.3.8.tar.gz"
+  homepage "https://motif.ics.com/motif"
+  url "https://downloads.sourceforge.net/project/motif/Motif%202.3.8%20Source%20Code/motif-2.3.8.tar.gz"
   sha256 "859b723666eeac7df018209d66045c9853b50b4218cecadb794e2359619ebce7"
   license "LGPL-2.1-or-later"
   revision 3
@@ -39,14 +39,14 @@ class Openmotif < Formula
 
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
-    url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-big_sur.diff"
+    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-big_sur.diff"
     sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
   end
 
   # Fix 2-level namespace using MacPorts patch
   patch :p0 do
     on_macos do
-      url "https:raw.githubusercontent.commacportsmacports-ports8c436a9c53a7b786da8d42cda16eead0fb8733d4x11openmotiffilespatch-lib-xm-vendor.diff"
+      url "https://ghfast.top/https://raw.githubusercontent.com/macports/macports-ports/8c436a9c53a7b786da8d42cda16eead0fb8733d4/x11/openmotif/files/patch-lib-xm-vendor.diff"
       sha256 "697ac026386dec59b82883fb4a9ba77164dd999fa3fb0569dbc8fbdca57fe200"
     end
   end
@@ -56,8 +56,8 @@ class Openmotif < Formula
       # This patch is needed for Ubuntu 16.04 LTS, which uses
       # --as-needed with ld.  It should no longer
       # be needed on Ubuntu 18.04 LTS.
-      inreplace ["demosprogramsExmsimple_appMakefile.am", "demosprogramsExmsimple_appMakefile.in"],
-        (LDADD.*\n.*libExm.a),
+      inreplace ["demos/programs/Exm/simple_app/Makefile.am", "demos/programs/Exm/simple_app/Makefile.in"],
+        /(LDADD.*\n.*libExm.a)/,
         "\\1 -lX11"
     end
 
@@ -65,15 +65,15 @@ class Openmotif < Formula
     ENV.append_to_cflags "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1403
     ENV.append_to_cflags "-Wno-incompatible-function-pointer-types" if DevelopmentTools.clang_build_version >= 1500
 
-    system ".configure", "--disable-silent-rules", *std_configure_args
+    system "./configure", "--disable-silent-rules", *std_configure_args
     system "make"
     system "make", "install"
 
     # Avoid conflict with Perl
-    mv man3"Core.3", man3"openmotif-Core.3"
+    mv man3/"Core.3", man3/"openmotif-Core.3"
   end
 
   test do
-    assert_match "no source file specified", pipe_output("#{bin}uil 2>&1")
+    assert_match "no source file specified", pipe_output("#{bin}/uil 2>&1")
   end
 end

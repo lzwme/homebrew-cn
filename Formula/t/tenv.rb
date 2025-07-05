@@ -1,10 +1,10 @@
 class Tenv < Formula
-  desc "OpenTofu  Terraform  Terragrunt  Terramate  Atmos version manager"
-  homepage "https:tofuutils.github.iotenv"
-  url "https:github.comtofuutilstenvarchiverefstagsv4.7.6.tar.gz"
+  desc "OpenTofu / Terraform / Terragrunt / Terramate / Atmos version manager"
+  homepage "https://tofuutils.github.io/tenv/"
+  url "https://ghfast.top/https://github.com/tofuutils/tenv/archive/refs/tags/v4.7.6.tar.gz"
   sha256 "006233f57c84f10d33716ffb192326c45460475de9bde6ea81acae1d42e8654b"
   license "Apache-2.0"
-  head "https:github.comtofuutilstenv.git", branch: "main"
+  head "https://github.com/tofuutils/tenv.git", branch: "main"
 
   livecheck do
     url :stable
@@ -35,13 +35,13 @@ class Tenv < Formula
     ENV["CGO_ENABLED"] = "0"
     ldflags = "-s -w -X main.version=#{version}"
     %w[tenv terraform terragrunt terramate tf tofu atmos].each do |f|
-      system "go", "build", *std_go_args(ldflags:, output: binf), ".cmd#{f}"
+      system "go", "build", *std_go_args(ldflags:, output: bin/f), "./cmd/#{f}"
     end
-    generate_completions_from_executable(bin"tenv", "completion")
+    generate_completions_from_executable(bin/"tenv", "completion")
   end
 
   test do
-    assert_match "1.6.2", shell_output("#{bin}tenv tofu list-remote")
-    assert_match version.to_s, shell_output("#{bin}tenv --version")
+    assert_match "1.6.2", shell_output("#{bin}/tenv tofu list-remote")
+    assert_match version.to_s, shell_output("#{bin}/tenv --version")
   end
 end

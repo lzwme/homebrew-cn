@@ -1,7 +1,7 @@
 class Pcapplusplus < Formula
   desc "C++ network sniffing, packet parsing and crafting framework"
-  homepage "https:pcapplusplus.github.io"
-  url "https:github.comseladbPcapPlusPlusarchiverefstagsv25.05.tar.gz"
+  homepage "https://pcapplusplus.github.io"
+  url "https://ghfast.top/https://github.com/seladb/PcapPlusPlus/archive/refs/tags/v25.05.tar.gz"
   sha256 "66c11d61f3c8019eaf74171ad10229dfaeab27eb86859c897fb0ba1298f80c94"
   license "Unlicense"
 
@@ -28,7 +28,7 @@ class Pcapplusplus < Formula
   end
 
   test do
-    (testpath"CMakeLists.txt").write <<~CMAKE
+    (testpath/"CMakeLists.txt").write <<~CMAKE
       cmake_minimum_required(VERSION 3.12)
       project(TestPcapPlusPlus)
       set(CMAKE_CXX_STANDARD 11)
@@ -40,9 +40,9 @@ class Pcapplusplus < Formula
       set_target_properties(test PROPERTIES NO_SYSTEM_FROM_IMPORTED ON)
     CMAKE
 
-    (testpath"test.cpp").write <<~CPP
+    (testpath/"test.cpp").write <<~CPP
       #include <cstdlib>
-      #include <pcapplusplusPcapLiveDeviceList.h>
+      #include <pcapplusplus/PcapLiveDeviceList.h>
       int main() {
         const std::vector<pcpp::PcapLiveDevice*>& devList =
           pcpp::PcapLiveDeviceList::getInstance().getPcapLiveDevicesList();
@@ -57,6 +57,6 @@ class Pcapplusplus < Formula
 
     system "cmake", "-S", ".", "-B", "build"
     system "cmake", "--build", "build", "--target", "test"
-    system ".buildtest"
+    system "./build/test"
   end
 end

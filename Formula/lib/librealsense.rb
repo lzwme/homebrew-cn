@@ -1,10 +1,10 @@
 class Librealsense < Formula
   desc "Intel RealSense D400 series and SR300 capture"
-  homepage "https:github.comIntelRealSenselibrealsense"
-  url "https:github.comIntelRealSenselibrealsensearchiverefstagsv2.56.3.tar.gz"
+  homepage "https://github.com/IntelRealSense/librealsense"
+  url "https://ghfast.top/https://github.com/IntelRealSense/librealsense/archive/refs/tags/v2.56.3.tar.gz"
   sha256 "a18112df0dc0bf442b58fb754f719be1992ddbba154564db5321729ba340c8a9"
   license "Apache-2.0"
-  head "https:github.comIntelRealSenselibrealsense.git", branch: "master"
+  head "https://github.com/IntelRealSense/librealsense.git", branch: "master"
 
   livecheck do
     url :stable
@@ -50,8 +50,8 @@ class Librealsense < Formula
   end
 
   test do
-    (testpath"test.c").write <<~C
-      #include <librealsense2rs.h>
+    (testpath/"test.c").write <<~C
+      #include <librealsense2/rs.h>
       #include <stdio.h>
       int main()
       {
@@ -60,6 +60,6 @@ class Librealsense < Formula
       }
     C
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-o", "test"
-    assert_equal version.to_s, shell_output(".test").strip
+    assert_equal version.to_s, shell_output("./test").strip
   end
 end

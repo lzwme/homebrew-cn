@@ -1,7 +1,7 @@
 class AmplAsl < Formula
   desc "AMPL Solver Library"
-  homepage "https:ampl.com"
-  url "https:github.comamplaslarchiverefstagsv1.0.1.tar.gz"
+  homepage "https://ampl.com/"
+  url "https://ghfast.top/https://github.com/ampl/asl/archive/refs/tags/v1.0.1.tar.gz"
   sha256 "57b767161fd95869757daa0761d9b19fa39ad5de4315f95a3c0dff08b0d4c4f2"
   license "BSD-3-Clause"
 
@@ -28,10 +28,10 @@ class AmplAsl < Formula
   end
 
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include <stdio.h>
       #include <stdlib.h>
-      #include "aslasl.h"
+      #include "asl/asl.h"
 
       int main() {
           void* asl_instance = malloc(sizeof(void));
@@ -40,7 +40,7 @@ class AmplAsl < Formula
       }
     C
 
-    system ENV.cc, "test.c", "-o", "test", "-I#{include}asl", "-L#{lib}", "-lasl"
-    system ".test"
+    system ENV.cc, "test.c", "-o", "test", "-I#{include}/asl", "-L#{lib}", "-lasl"
+    system "./test"
   end
 end

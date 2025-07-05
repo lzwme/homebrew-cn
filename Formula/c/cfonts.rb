@@ -1,14 +1,14 @@
 class Cfonts < Formula
   desc "Sexy ANSI fonts for the console"
-  homepage "https:github.comdominikwilkowskicfonts"
-  url "https:github.comdominikwilkowskicfontsarchiverefstagsv1.2.0rust.tar.gz"
+  homepage "https://github.com/dominikwilkowski/cfonts"
+  url "https://ghfast.top/https://github.com/dominikwilkowski/cfonts/archive/refs/tags/v1.2.0rust.tar.gz"
   sha256 "8337423201558b43ae48e0749058a58623700cfb777288f3a520dcdb0d723a6f"
   license "GPL-3.0-or-later"
-  head "https:github.comdominikwilkowskicfonts.git", branch: "released"
+  head "https://github.com/dominikwilkowski/cfonts.git", branch: "released"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)[._-]?rust$i)
+    regex(/^v?(\d+(?:\.\d+)+)[._-]?rust$/i)
   end
 
   bottle do
@@ -29,13 +29,13 @@ class Cfonts < Formula
     chdir "rust" do
       system "make"
       system "cargo", "install", *std_cargo_args
-      bin.install "targetreleasecfonts"
+      bin.install "target/release/cfonts"
     end
   end
 
   test do
-    system bin"cfonts", "--version"
-    assert_match <<~EOS, shell_output("#{bin}cfonts t")
+    system bin/"cfonts", "--version"
+    assert_match <<~EOS, shell_output("#{bin}/cfonts t")
       \n
        ████████╗
        ╚══██╔══╝
@@ -45,6 +45,6 @@ class Cfonts < Formula
           ╚═╝  \s
       \n
     EOS
-    assert_match "\n\ntest\n\n\n", shell_output("#{bin}cfonts test -f console")
+    assert_match "\n\ntest\n\n\n", shell_output("#{bin}/cfonts test -f console")
   end
 end

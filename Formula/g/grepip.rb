@@ -1,14 +1,14 @@
 class Grepip < Formula
   desc "Filters IPv4 & IPv6 addresses with a grep-compatible interface"
-  homepage "https:ipinfo.io"
-  url "https:github.comipinfocliarchiverefstagsgrepip-1.2.2.tar.gz"
+  homepage "https://ipinfo.io"
+  url "https://ghfast.top/https://github.com/ipinfo/cli/archive/refs/tags/grepip-1.2.2.tar.gz"
   sha256 "2ed9477bc5599a10348a7026968242fb4609e6b580c04aaae46d7c71b9fa3d55"
   license "Apache-2.0"
-  head "https:github.comipinfocli.git", branch: "master"
+  head "https://github.com/ipinfo/cli.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(^grepip[._-]v?(\d+(?:\.\d+)+)$i)
+    regex(/^grepip[._-]v?(\d+(?:\.\d+)+)$/i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -26,22 +26,22 @@ class Grepip < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), ".grepip"
+    system "go", "build", *std_go_args(ldflags: "-s -w"), "./grepip"
 
-    generate_completions_from_executable(bin"grepip", shell_parameter_format: "--completions-")
+    generate_completions_from_executable(bin/"grepip", shell_parameter_format: "--completions-")
   end
 
   test do
-    assert_equal version.to_s, shell_output("#{bin}grepip --version").chomp
-    assert_equal "1.1.1.1", pipe_output("#{bin}grepip -o", "asdf 1.1.1.1 asdf").chomp
+    assert_equal version.to_s, shell_output("#{bin}/grepip --version").chomp
+    assert_equal "1.1.1.1", pipe_output("#{bin}/grepip -o", "asdf 1.1.1.1 asdf").chomp
 
-    (testpath"access.log").write <<~EOS
+    (testpath/"access.log").write <<~EOS
       127.0.0.1 valid ip but reserved
       111.119.187.44 valid ip
       8.8.8. invalid ip
       no ip
     EOS
-    output = shell_output("#{bin}grepip --exclude-reserved -h access.log")
+    output = shell_output("#{bin}/grepip --exclude-reserved -h access.log")
     assert_equal "111.119.187.44 valid ip", output.strip
   end
 end

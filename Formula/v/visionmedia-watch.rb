@@ -1,10 +1,10 @@
 class VisionmediaWatch < Formula
   desc "Periodically executes the given command"
-  homepage "https:github.comtjwatch"
-  url "https:github.comtjwatcharchiverefstags0.4.0.tar.gz"
+  homepage "https://github.com/tj/watch"
+  url "https://ghfast.top/https://github.com/tj/watch/archive/refs/tags/0.4.0.tar.gz"
   sha256 "d37ead189a644661d219b566170122b80d44f235c0df6df71b2b250f3b412547"
   license "MIT"
-  head "https:github.comtjwatch.git", branch: "master"
+  head "https://github.com/tj/watch.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 

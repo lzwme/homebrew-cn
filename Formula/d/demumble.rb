@@ -1,10 +1,10 @@
 class Demumble < Formula
   desc "More powerful symbol demangler (a la c++filt)"
-  homepage "https:github.comnicodemumble"
-  url "https:github.comnicodemumblearchiverefstagsv1.3.0.tar.gz"
+  homepage "https://github.com/nico/demumble"
+  url "https://ghfast.top/https://github.com/nico/demumble/archive/refs/tags/v1.3.0.tar.gz"
   sha256 "29501fbd5522820a1672aea0292105b8706899e4e4b283ff51c126f79b3b2c41"
   license "Apache-2.0"
-  head "https:github.comnicodemumble.git", branch: "main"
+  head "https://github.com/nico/demumble.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "a9d309fe6c5f674b30ec35a6e96839df670025d244eeaa5858ec82ec344e0088"
@@ -25,12 +25,12 @@ class Demumble < Formula
     system "cmake", "--build", "build"
 
     # CMakeLists.txt does not contain install rules
-    bin.install "builddemumble"
+    bin.install "build/demumble"
   end
 
   test do
     mangled = "__imp_?FLAGS_logtostderr@fLB@@3_NA"
     demangled = "__imp_bool fLB::FLAGS_logtostderr"
-    assert_equal demangled, pipe_output(bin"demumble", mangled)
+    assert_equal demangled, pipe_output(bin/"demumble", mangled)
   end
 end

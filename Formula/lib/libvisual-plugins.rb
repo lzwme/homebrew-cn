@@ -1,7 +1,7 @@
 class LibvisualPlugins < Formula
   desc "Audio Visualization tool and library"
-  homepage "https:github.comLibvisuallibvisual"
-  url "https:github.comLibvisuallibvisualreleasesdownloadlibvisual-plugins-0.4.2libvisual-plugins-0.4.2.tar.gz"
+  homepage "https://github.com/Libvisual/libvisual"
+  url "https://ghfast.top/https://github.com/Libvisual/libvisual/releases/download/libvisual-plugins-0.4.2/libvisual-plugins-0.4.2.tar.gz"
   sha256 "55988403682b180d0de5e6082f804f3cf066d9a08e887b10eb6a315eb40d9f87"
   license all_of: ["GPL-2.0-or-later", "GPL-3.0-or-later", "LGPL-2.1-or-later"]
 
@@ -45,17 +45,17 @@ class LibvisualPlugins < Formula
       "--disable-gforce",
       "--disable-gstreamer-plugin",
       # NOTE: This relies on brew's auto-symlinking to
-      #       <HOMEBREW_PREFIX>liblibvisual-<major>.<minor> .
-      "--with-plugins-base-dir=#{lib}libvisual-#{libvisual.version.major_minor}",
+      #       <HOMEBREW_PREFIX>/lib/libvisual-<major>.<minor> .
+      "--with-plugins-base-dir=#{lib}/libvisual-#{libvisual.version.major_minor}",
     ]
-    system ".configure", *configure_args, *std_configure_args
+    system "./configure", *configure_args, *std_configure_args
     system "make"
     system "make", "install"
   end
 
   test do
     libvisual = Formula["libvisual"]
-    lv_tool = libvisual.bin"lv-tool-#{libvisual.version.major_minor}"
+    lv_tool = libvisual.bin/"lv-tool-#{libvisual.version.major_minor}"
 
     # Test that locating key plugins works properly
     plugin_help_output = shell_output("#{lv_tool} --plugin-help 2>&1")
@@ -65,7 +65,7 @@ class LibvisualPlugins < Formula
 
     # Tests that lv-tool starts up without crashing
     xvfb_pid = fork do
-      exec Formula["xorg-server"].bin"Xvfb", ":1"
+      exec Formula["xorg-server"].bin/"Xvfb", ":1"
     end
     ENV["DISPLAY"] = ":1"
 

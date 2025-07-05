@@ -1,10 +1,10 @@
 class Gauge < Formula
   desc "Test automation tool that supports executable documentation"
-  homepage "https:gauge.org"
-  url "https:github.comgetgaugegaugearchiverefstagsv1.6.18.tar.gz"
+  homepage "https://gauge.org"
+  url "https://ghfast.top/https://github.com/getgauge/gauge/archive/refs/tags/v1.6.18.tar.gz"
   sha256 "103d4a567e9e9bbd2cfc9569603f6069dc3c8787d76eeb7ae93787aeea7db68f"
   license "Apache-2.0"
-  head "https:github.comgetgaugegauge.git", branch: "master"
+  head "https://github.com/getgauge/gauge.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "642b5b0bc143826cbd923c54356e06832124b95aef8f865d46fe9131c4781e45"
@@ -18,12 +18,12 @@ class Gauge < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "run", "buildmake.go"
-    system "go", "run", "buildmake.go", "--install", "--prefix", prefix
+    system "go", "run", "build/make.go"
+    system "go", "run", "build/make.go", "--install", "--prefix", prefix
   end
 
   test do
-    (testpath"manifest.json").write <<~JSON
+    (testpath/"manifest.json").write <<~JSON
       {
         "Plugins": [
           "html-report"
@@ -31,12 +31,12 @@ class Gauge < Formula
       }
     JSON
 
-    system(bin"gauge", "install")
-    assert_path_exists testpath".gaugeplugins"
+    system(bin/"gauge", "install")
+    assert_path_exists testpath/".gauge/plugins"
 
-    system(bin"gauge", "config", "check_updates", "false")
-    assert_match "false", shell_output("#{bin}gauge config check_updates")
+    system(bin/"gauge", "config", "check_updates", "false")
+    assert_match "false", shell_output("#{bin}/gauge config check_updates")
 
-    assert_match version.to_s, shell_output("#{bin}gauge -v 2>&1")
+    assert_match version.to_s, shell_output("#{bin}/gauge -v 2>&1")
   end
 end

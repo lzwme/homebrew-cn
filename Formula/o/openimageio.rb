@@ -1,14 +1,14 @@
 class Openimageio < Formula
   desc "Library for reading, processing and writing images"
-  homepage "https:openimageio.readthedocs.ioenstable"
-  url "https:github.comAcademySoftwareFoundationOpenImageIOarchiverefstagsv3.0.8.0.tar.gz"
+  homepage "https://openimageio.readthedocs.io/en/stable/"
+  url "https://ghfast.top/https://github.com/AcademySoftwareFoundation/OpenImageIO/archive/refs/tags/v3.0.8.0.tar.gz"
   sha256 "2a7ed70a6baea11f5e85ef4d91338a005738e1d51c74fe966ab35c98347ff33d"
   license "Apache-2.0"
-  head "https:github.comAcademySoftwareFoundationOpenImageIO.git", branch: "master"
+  head "https://github.com/AcademySoftwareFoundation/OpenImageIO.git", branch: "master"
 
   livecheck do
     url :stable
-    regex((?:Release[._-])?v?(\d+(?:\.\d+)+)i)
+    regex(/(?:Release[._-])?v?(\d+(?:\.\d+)+)/i)
     strategy :github_latest
   end
 
@@ -45,7 +45,7 @@ class Openimageio < Formula
 
   uses_from_macos "zlib"
 
-  # https:github.comAcademySoftwareFoundationOpenImageIOblobmainINSTALL.md
+  # https://github.com/AcademySoftwareFoundation/OpenImageIO/blob/main/INSTALL.md
   fails_with :gcc do
     version "8"
     cause "Requires GCC 9.3 or later"
@@ -55,18 +55,18 @@ class Openimageio < Formula
     "python3.13"
   end
 
-  # libheif 1.19+ build patch, upstream pr ref, https:github.comAcademySoftwareFoundationOpenImageIOpull4822
+  # libheif 1.19+ build patch, upstream pr ref, https://github.com/AcademySoftwareFoundation/OpenImageIO/pull/4822
   patch do
-    url "https:github.comAcademySoftwareFoundationOpenImageIOcommitbeed875f983c2b80a61c32be1d22d08f5be725bd.patch?full_index=1"
+    url "https://github.com/AcademySoftwareFoundation/OpenImageIO/commit/beed875f983c2b80a61c32be1d22d08f5be725bd.patch?full_index=1"
     sha256 "f4f6509c7e1dd7a196eed4545d4c52341d629502c8d88719ff25da35d8eff622"
   end
 
   def install
     py3ver = Language::Python.major_minor_version python3
-    ENV["PYTHONPATH"] = site_packages = prefixLanguage::Python.site_packages(python3)
+    ENV["PYTHONPATH"] = site_packages = prefix/Language::Python.site_packages(python3)
 
     args = %W[
-      -DCMAKE_INSTALL_RPATH=#{rpath};#{rpath(source: site_packages"OpenImageIO")}
+      -DCMAKE_INSTALL_RPATH=#{rpath};#{rpath(source: site_packages/"OpenImageIO")}
       -DPython3_EXECUTABLE=#{which(python3)}
       -DPYTHON_VERSION=#{py3ver}
       -DCCACHE_FOUND=
@@ -90,7 +90,7 @@ class Openimageio < Formula
   test do
     test_image = test_fixtures("test.jpg")
     assert_match "#{test_image} :    1 x    1, 3 channel, uint8 jpeg",
-                 shell_output("#{bin}oiiotool --info #{test_image} 2>&1")
+                 shell_output("#{bin}/oiiotool --info #{test_image} 2>&1")
 
     output = <<~PYTHON
       import OpenImageIO

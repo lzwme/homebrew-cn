@@ -2,13 +2,13 @@ cask "only-switch" do
   version "2.5.8"
   sha256 "beefa4d8264b3b2327e1001a2d1da6b4a6f4c2b843f44510f736b0d1eb65ae6f"
 
-  url "https:github.comjacklandrinOnlySwitchreleasesdownloadrelease_#{version}OnlySwitch.dmg"
+  url "https://ghfast.top/https://github.com/jacklandrin/OnlySwitch/releases/download/release_#{version}/OnlySwitch.dmg"
   name "OnlySwitch"
   desc "System and utility switches"
-  homepage "https:github.comjacklandrinOnlySwitch"
+  homepage "https://github.com/jacklandrin/OnlySwitch"
 
   livecheck do
-    url "https:jacklandrin.github.ioappcast.xml"
+    url "https://jacklandrin.github.io/appcast.xml"
     strategy :sparkle, &:short_version
   end
 
@@ -20,9 +20,9 @@ cask "only-switch" do
   app "Only Switch.app"
 
   zap trash: [
-    "~LibraryApplication SupportOnlySwitch",
-    "~LibraryCachesjacklandrin.OnlySwitch",
-    "~LibraryOnlySwitch",
-    "~LibraryPreferencesjacklandrin.OnlySwitch.plist",
+    "~/Library/Application Support/OnlySwitch",
+    "~/Library/Caches/jacklandrin.OnlySwitch",
+    "~/Library/OnlySwitch",
+    "~/Library/Preferences/jacklandrin.OnlySwitch.plist",
   ]
 end

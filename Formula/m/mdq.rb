@@ -1,10 +1,10 @@
 class Mdq < Formula
   desc "Like jq but for Markdown"
-  homepage "https:github.comyshavitmdq"
-  url "https:github.comyshavitmdqarchiverefstagsv0.7.2.tar.gz"
+  homepage "https://github.com/yshavit/mdq"
+  url "https://ghfast.top/https://github.com/yshavit/mdq/archive/refs/tags/v0.7.2.tar.gz"
   sha256 "78c4a7d3aef8b9db3a96bf5e8cfce4de6140b54e199f95bb0aa12e3faf945e6d"
   license any_of: ["Apache-2.0", "MIT"]
-  head "https:github.comyshavitmdq.git", branch: "main"
+  head "https://github.com/yshavit/mdq.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "48d62733d4ff5786040dabb855faf2bdfd3afc18dc71e2e5e8eba6a95ea34cac"
@@ -23,9 +23,9 @@ class Mdq < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}mdq --version")
+    assert_match version.to_s, shell_output("#{bin}/mdq --version")
 
-    test_file = testpath"test.md"
+    test_file = testpath/"test.md"
     test_file.write <<~MARKDOWN
       # Sample Markdown
 
@@ -39,7 +39,7 @@ class Mdq < Formula
       - Item A
     MARKDOWN
 
-    assert_equal <<~MARKDOWN, pipe_output("#{bin}mdq '# Section 2'", test_file.read)
+    assert_equal <<~MARKDOWN, pipe_output("#{bin}/mdq '# Section 2'", test_file.read)
       ## Section 2
 
       - Item A

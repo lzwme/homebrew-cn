@@ -2,12 +2,12 @@ cask "font-atma" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefonts.git",
-      verified:  "github.comgooglefonts",
+  url "https://github.com/google/fonts.git",
+      verified:  "github.com/google/fonts",
       branch:    "main",
-      only_path: "oflatma"
+      only_path: "ofl/atma"
   name "Atma"
-  homepage "https:fonts.google.comspecimenAtma"
+  homepage "https://fonts.google.com/specimen/Atma"
 
   font "Atma-Bold.ttf"
   font "Atma-Light.ttf"

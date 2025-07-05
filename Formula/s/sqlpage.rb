@@ -1,10 +1,10 @@
 class Sqlpage < Formula
   desc "Web app builder using SQL queries to create dynamic webapps quickly"
-  homepage "https:sql-page.com"
-  url "https:github.comsqlpageSQLpagearchiverefstagsv0.35.2.tar.gz"
+  homepage "https://sql-page.com/"
+  url "https://ghfast.top/https://github.com/sqlpage/SQLpage/archive/refs/tags/v0.35.2.tar.gz"
   sha256 "e04cdcd74a1b41a3f46b67ec99f941fd149a79a3d2b8eb8fb095b3883d564f05"
   license "MIT"
-  head "https:github.comsqlpageSQLpage.git", branch: "main"
+  head "https://github.com/sqlpage/SQLpage.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "eae7ad1b7852267faf16fe9e73d69a04c54afc7e3663329381403a5880f470c8"
@@ -29,7 +29,7 @@ class Sqlpage < Formula
       exec "sqlpage"
     end
     sleep(2)
-    assert_match "It works", shell_output("curl -s http:localhost:#{port}")
+    assert_match "It works", shell_output("curl -s http://localhost:#{port}")
     Process.kill(9, pid)
   end
 end

@@ -1,10 +1,10 @@
 class Rofi < Formula
   desc "Window switcher, application launcher and dmenu replacement"
-  homepage "https:davatorium.github.iorofi"
-  url "https:github.comdavatoriumrofireleasesdownload1.7.9.1rofi-1.7.9.1.tar.gz"
+  homepage "https://davatorium.github.io/rofi/"
+  url "https://ghfast.top/https://github.com/davatorium/rofi/releases/download/1.7.9.1/rofi-1.7.9.1.tar.gz"
   sha256 "bb2c0f073b4422acc51a3f97d05275a82464750a33d2f4b120e3d866bb7b9ae5"
   license "MIT"
-  head "https:github.comdavatoriumrofi.git", branch: "next"
+  head "https://github.com/davatorium/rofi.git", branch: "next"
 
   livecheck do
     url :stable
@@ -51,13 +51,13 @@ class Rofi < Formula
     system "autoreconf", "--force", "--install", "--verbose" if build.head?
 
     mkdir "build" do
-      system "..configure", "--disable-silent-rules", *std_configure_args
+      system "../configure", "--disable-silent-rules", *std_configure_args
       system "make", "install"
     end
   end
 
   test do
     # rofi is a GUI application
-    assert_match "Version: #{version}", shell_output("#{bin}rofi -v")
+    assert_match "Version: #{version}", shell_output("#{bin}/rofi -v")
   end
 end

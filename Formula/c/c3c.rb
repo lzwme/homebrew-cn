@@ -1,10 +1,10 @@
 class C3c < Formula
   desc "Compiler for the C3 language"
-  homepage "https:github.comc3langc3c"
-  url "https:github.comc3langc3carchiverefstagsv0.7.3.tar.gz"
+  homepage "https://github.com/c3lang/c3c"
+  url "https://ghfast.top/https://github.com/c3lang/c3c/archive/refs/tags/v0.7.3.tar.gz"
   sha256 "ffa28a134fb21efd525387f430fbd01b8e3ed6ed08d8614e6561e73d3d63f512"
   license "LGPL-3.0-only"
-  head "https:github.comc3langc3c.git", branch: "master"
+  head "https://github.com/c3lang/c3c.git", branch: "master"
 
   # Upstream creates releases that use a stable tag (e.g., `v1.2.3`) but are
   # labeled as "pre-release" on GitHub before the version is released, so it's
@@ -41,13 +41,13 @@ class C3c < Formula
       "-DC3_USE_MIMALLOC=OFF",
       "-DC3_USE_TB=OFF",
       "-DCMAKE_POSITION_INDEPENDENT_CODE=ON",
-      "-DLLVM=#{Formula["llvm"].opt_libshared_library("libLLVM")}",
-      "-DLLD_COFF=#{Formula["lld"].opt_libshared_library("liblldCOFF")}",
-      "-DLLD_COMMON=#{Formula["lld"].opt_libshared_library("liblldCommon")}",
-      "-DLLD_ELF=#{Formula["lld"].opt_libshared_library("liblldELF")}",
-      "-DLLD_MACHO=#{Formula["lld"].opt_libshared_library("liblldMachO")}",
-      "-DLLD_MINGW=#{Formula["lld"].opt_libshared_library("liblldMinGW")}",
-      "-DLLD_WASM=#{Formula["lld"].opt_libshared_library("liblldWasm")}",
+      "-DLLVM=#{Formula["llvm"].opt_lib/shared_library("libLLVM")}",
+      "-DLLD_COFF=#{Formula["lld"].opt_lib/shared_library("liblldCOFF")}",
+      "-DLLD_COMMON=#{Formula["lld"].opt_lib/shared_library("liblldCommon")}",
+      "-DLLD_ELF=#{Formula["lld"].opt_lib/shared_library("liblldELF")}",
+      "-DLLD_MACHO=#{Formula["lld"].opt_lib/shared_library("liblldMachO")}",
+      "-DLLD_MINGW=#{Formula["lld"].opt_lib/shared_library("liblldMinGW")}",
+      "-DLLD_WASM=#{Formula["lld"].opt_lib/shared_library("liblldWasm")}",
     ]
 
     ENV.append "LDFLAGS", "-lzstd -lz"
@@ -61,13 +61,13 @@ class C3c < Formula
     # Let's replace those copies with a symlink instead.
     libexec.install bin.children
     bin.install_symlink libexec.children.select { |child| child.file? && child.executable? }
-    rm_r libexec"c3c_rt"
+    rm_r libexec/"c3c_rt"
     llvm = Formula["llvm"]
-    libexec.install_symlink llvm.opt_lib"clang"llvm.version.major"libdarwin" => "c3c_rt"
+    libexec.install_symlink llvm.opt_lib/"clang"/llvm.version.major/"lib/darwin" => "c3c_rt"
   end
 
   test do
-    (testpath"test.c3").write <<~EOS
+    (testpath/"test.c3").write <<~EOS
       module hello_world;
       import std::io;
 
@@ -76,7 +76,7 @@ class C3c < Formula
         io::printn("Hello, world!");
       }
     EOS
-    system bin"c3c", "compile", "test.c3", "-o", "test"
-    assert_match "Hello, world!", shell_output("#{testpath}test")
+    system bin/"c3c", "compile", "test.c3", "-o", "test"
+    assert_match "Hello, world!", shell_output("#{testpath}/test")
   end
 end

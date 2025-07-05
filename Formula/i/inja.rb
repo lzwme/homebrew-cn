@@ -1,10 +1,10 @@
 class Inja < Formula
   desc "Template engine for modern C++"
-  homepage "https:pantor.github.ioinja"
-  url "https:github.compantorinjaarchiverefstagsv3.4.0.tar.gz"
+  homepage "https://pantor.github.io/inja/"
+  url "https://ghfast.top/https://github.com/pantor/inja/archive/refs/tags/v3.4.0.tar.gz"
   sha256 "7155f944553ca6064b26e88e6cae8b71f8be764832c9c7c6d5998e0d5fd60c55"
   license "MIT"
-  head "https:github.compantorinja.git", branch: "master"
+  head "https://github.com/pantor/inja.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -28,8 +28,8 @@ class Inja < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~CPP
-      #include <injainja.hpp>
+    (testpath/"test.cpp").write <<~CPP
+      #include <inja/inja.hpp>
 
       int main() {
           nlohmann::json data;
@@ -41,6 +41,6 @@ class Inja < Formula
 
     system ENV.cxx, "-std=c++17", "test.cpp", "-o", "test",
            "-I#{include}", "-I#{Formula["nlohmann-json"].opt_include}"
-    assert_equal "Hello world!\n", shell_output(".test")
+    assert_equal "Hello world!\n", shell_output("./test")
   end
 end

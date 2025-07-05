@@ -1,10 +1,10 @@
 class Xcv < Formula
   desc "Cut, copy and paste files with Bash"
-  homepage "https:github.combustercxcv"
-  url "https:github.combustercxcvarchiverefstagsv1.0.1.tar.gz"
+  homepage "https://github.com/busterc/xcv"
+  url "https://ghfast.top/https://github.com/busterc/xcv/archive/refs/tags/v1.0.1.tar.gz"
   sha256 "f2898f78bb05f4334073adb8cdb36de0f91869636a7770c8e955cee8758c0644"
   license "ISC"
-  head "https:github.combustercxcv.git", branch: "master"
+  head "https://github.com/busterc/xcv.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -18,6 +18,6 @@ class Xcv < Formula
   end
 
   test do
-    system bin"xcv"
+    system bin/"xcv"
   end
 end

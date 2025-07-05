@@ -1,10 +1,10 @@
 class Marmite < Formula
   desc "Static Site Generator for Blogs using Markdown"
-  homepage "https:rochacbruno.github.iomarmite"
-  url "https:github.comrochacbrunomarmitearchiverefstags0.2.5.tar.gz"
+  homepage "https://rochacbruno.github.io/marmite/"
+  url "https://ghfast.top/https://github.com/rochacbruno/marmite/archive/refs/tags/0.2.5.tar.gz"
   sha256 "b1de4525533185b9d0dcd592bb2eb7e9af7cdc863bf110a45720be2534e2e301"
   license "AGPL-3.0-or-later"
-  head "https:github.comrochacbrunomarmite.git", branch: "main"
+  head "https://github.com/rochacbruno/marmite.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "9044fed2abbe05930f74bee4f4f1de20700f8d6f32a1e0d03fe6141f1036c8e8"
@@ -23,9 +23,9 @@ class Marmite < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}marmite --version")
+    assert_match version.to_s, shell_output("#{bin}/marmite --version")
 
-    system bin"marmite", testpath"site", "--init-site"
-    assert_path_exists testpath"site"
+    system bin/"marmite", testpath/"site", "--init-site"
+    assert_path_exists testpath/"site"
   end
 end

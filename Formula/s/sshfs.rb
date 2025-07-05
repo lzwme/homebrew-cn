@@ -1,7 +1,7 @@
 class Sshfs < Formula
   desc "File system client based on SSH File Transfer Protocol"
-  homepage "https:github.comlibfusesshfs"
-  url "https:github.comlibfusesshfsarchiverefstagssshfs-3.7.3.tar.gz"
+  homepage "https://github.com/libfuse/sshfs"
+  url "https://ghfast.top/https://github.com/libfuse/sshfs/archive/refs/tags/sshfs-3.7.3.tar.gz"
   sha256 "52a1a1e017859dfe72a550e6fef8ad4f8703ce312ae165f74b579fd7344e3a26"
   license any_of: ["LGPL-2.1-only", "GPL-2.0-only"]
   revision 1
@@ -27,6 +27,6 @@ class Sshfs < Formula
   end
 
   test do
-    system bin"sshfs", "--version"
+    system bin/"sshfs", "--version"
   end
 end

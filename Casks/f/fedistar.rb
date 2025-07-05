@@ -2,11 +2,11 @@ cask "fedistar" do
   version "1.11.7"
   sha256 "d40179aa333f3bc1d85e769c470de982473887e9029bbaaa4b6901614d198c14"
 
-  url "https:github.comh3potetofedistarreleasesdownloadv#{version}fedistar_#{version}_universal.dmg",
-      verified: "github.comh3potetofedistar"
+  url "https://ghfast.top/https://github.com/h3poteto/fedistar/releases/download/v#{version}/fedistar_#{version}_universal.dmg",
+      verified: "github.com/h3poteto/fedistar/"
   name "fedistar"
   desc "Multi-column Mastodon, Pleroma, and Friendica client for desktop"
-  homepage "https:fedistar.net"
+  homepage "https://fedistar.net/"
 
   livecheck do
     url :url
@@ -18,9 +18,9 @@ cask "fedistar" do
   app "fedistar.app"
 
   zap trash: [
-    "~LibraryApplication Scripts*.net.fedistar",
-    "~LibraryApplication Scriptsnet.fedistar",
-    "~LibraryContainersnet.fedistar",
-    "~LibraryGroup Containers*.net.fedistar",
+    "~/Library/Application Scripts/*.net.fedistar",
+    "~/Library/Application Scripts/net.fedistar",
+    "~/Library/Containers/net.fedistar",
+    "~/Library/Group Containers/*.net.fedistar",
   ]
 end

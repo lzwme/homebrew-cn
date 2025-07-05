@@ -1,13 +1,13 @@
 class Libfastjson < Formula
   desc "Fast json library for C"
-  homepage "https:github.comrsysloglibfastjson"
-  url "https:download.rsyslog.comlibfastjsonlibfastjson-1.2304.0.tar.gz"
+  homepage "https://github.com/rsyslog/libfastjson"
+  url "https://download.rsyslog.com/libfastjson/libfastjson-1.2304.0.tar.gz"
   sha256 "ef30d1e57a18ec770f90056aaac77300270c6203bbe476f4181cc83a2d5dc80c"
   license "BSD-2-Clause"
 
   livecheck do
-    url "https:download.rsyslog.comlibfastjson"
-    regex(href=.*?libfastjson[._-]v?(\d+(?:\.\d+)+)\.ti)
+    url "https://download.rsyslog.com/libfastjson/"
+    regex(/href=.*?libfastjson[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -27,14 +27,14 @@ class Libfastjson < Formula
   end
 
   def install
-    system ".configure", *std_configure_args
+    system "./configure", *std_configure_args
     system "make", "install"
   end
 
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include <stdio.h>
-      #include <libfastjsonjson.h>
+      #include <libfastjson/json.h>
 
       int main() {
         char json_string[]  = "{\\"message\\":\\"Hello world!\\"}";
@@ -59,6 +59,6 @@ class Libfastjson < Formula
       }
     C
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lfastjson", "-o", "test"
-    system ".test"
+    system "./test"
   end
 end

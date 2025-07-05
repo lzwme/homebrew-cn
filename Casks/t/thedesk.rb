@@ -2,11 +2,11 @@ cask "thedesk" do
   version "25.0.15"
   sha256 "6acd958ea4a1ea496bd1b7069a231170c8be5ded50964b712d715dd548bf82b4"
 
-  url "https:github.comcutlsthedesk-nextreleasesdownloadv#{version}TheDesk-#{version}-universal.dmg",
-      verified: "github.comcutlsthedesk-next"
+  url "https://ghfast.top/https://github.com/cutls/thedesk-next/releases/download/v#{version}/TheDesk-#{version}-universal.dmg",
+      verified: "github.com/cutls/thedesk-next/"
   name "TheDesk"
-  desc "MastodonMisskey Client for PC"
-  homepage "https:thedesk.top"
+  desc "Mastodon/Misskey Client for PC"
+  homepage "https://thedesk.top/"
 
   livecheck do
     url :url
@@ -20,8 +20,8 @@ cask "thedesk" do
   app "TheDesk.app"
 
   zap trash: [
-    "~LibraryApplication Supportthedesk",
-    "~LibraryPreferencestop.thedesk.plist",
-    "~LibrarySaved Application Statetop.thedesk.savedState",
+    "~/Library/Application Support/thedesk",
+    "~/Library/Preferences/top.thedesk.plist",
+    "~/Library/Saved Application State/top.thedesk.savedState",
   ]
 end

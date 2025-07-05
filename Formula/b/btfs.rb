@@ -1,10 +1,10 @@
 class Btfs < Formula
   desc "BitTorrent filesystem based on FUSE"
-  homepage "https:github.comjohangbtfs"
-  url "https:github.comjohangbtfsarchiverefstagsv3.1.tar.gz"
+  homepage "https://github.com/johang/btfs"
+  url "https://ghfast.top/https://github.com/johang/btfs/archive/refs/tags/v3.1.tar.gz"
   sha256 "c363f04149f97baf1c5e10ac90677b8309724f2042ab045a45041cfb7b44649b"
   license "GPL-3.0-only"
-  head "https:github.comjohangbtfs.git", branch: "master"
+  head "https://github.com/johang/btfs.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_linux:  "cb3c4a3351015895e992b3c059b012aa24410edfa4795decafdbe7a850b9201c"
@@ -23,11 +23,11 @@ class Btfs < Formula
   def install
     ENV.cxx11
     system "autoreconf", "--force", "--install", "--verbose"
-    system ".configure", "--disable-silent-rules", *std_configure_args
+    system "./configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
   end
 
   test do
-    system bin"btfs", "--help"
+    system bin/"btfs", "--help"
   end
 end

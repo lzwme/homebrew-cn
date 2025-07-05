@@ -1,7 +1,7 @@
 class Dcfldd < Formula
   desc "Enhanced version of dd for forensics and security"
-  homepage "https:github.comresurrecting-open-source-projectsdcfldd"
-  url "https:github.comresurrecting-open-source-projectsdcflddarchiverefstagsv1.9.3.tar.gz"
+  homepage "https://github.com/resurrecting-open-source-projects/dcfldd"
+  url "https://ghfast.top/https://github.com/resurrecting-open-source-projects/dcfldd/archive/refs/tags/v1.9.3.tar.gz"
   sha256 "e5813e97bbc8f498f034f5e05178489c1be86de015e8da838de59f90f68491e7"
   license "GPL-2.0-or-later"
 
@@ -22,12 +22,12 @@ class Dcfldd < Formula
   depends_on "pkgconf" => :build
 
   def install
-    system ".autogen.sh"
-    system ".configure", "--disable-silent-rules", *std_configure_args
+    system "./autogen.sh"
+    system "./configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
   end
 
   test do
-    system bin"dcfldd", "--version"
+    system bin/"dcfldd", "--version"
   end
 end

@@ -1,10 +1,10 @@
 class Cpansearch < Formula
   desc "CPAN module search written in C"
-  homepage "https:github.comc9scpansearch"
-  url "https:github.comc9scpansearcharchiverefstags0.2.tar.gz"
+  homepage "https://github.com/c9s/cpansearch"
+  url "https://ghfast.top/https://github.com/c9s/cpansearch/archive/refs/tags/0.2.tar.gz"
   sha256 "09e631f361766fcacd608a0f5b3effe7b66b3a9e0970a458d418d58b8f3f2a74"
   revision 1
-  head "https:github.comc9scpansearch.git", branch: "master"
+  head "https://github.com/c9s/cpansearch.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -21,7 +21,7 @@ class Cpansearch < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "2f88cd961acac2cdd3fd6711aea3c5e7fde3a23356c0a299f08cf440bed88d7d"
   end
 
-  # upstream missing license report, https:github.comc9scpansearchissues5
+  # upstream missing license report, https://github.com/c9s/cpansearch/issues/5
   disable! date: "2024-08-10", because: :no_license
 
   depends_on "pkgconf" => :build
@@ -39,7 +39,7 @@ class Cpansearch < Formula
   def install
     unless OS.mac?
       # Help find some ncursesw headers
-      ENV.append "CPPFLAGS", "-I#{Formula["ncurses"].include}ncursesw"
+      ENV.append "CPPFLAGS", "-I#{Formula["ncurses"].include}/ncursesw"
       # Temporary Homebrew-specific work around for linker flag ordering problem in Ubuntu 16.04.
       # Remove after migration to 18.04.
       inreplace "Makefile", "$(LDFLAGS) $(OBJS)", "$(OBJS) $(LDFLAGS)"
@@ -49,7 +49,7 @@ class Cpansearch < Formula
   end
 
   test do
-    output = shell_output("#{bin}cpans --fetch https:cpan.metacpan.org")
+    output = shell_output("#{bin}/cpans --fetch https://cpan.metacpan.org/")
     assert_match "packages recorded", output
   end
 end

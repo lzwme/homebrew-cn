@@ -1,16 +1,16 @@
 class Soapysdr < Formula
   desc "Vendor and platform neutral SDR support library"
-  homepage "https:github.compothoswareSoapySDRwiki"
+  homepage "https://github.com/pothosware/SoapySDR/wiki"
   license "BSL-1.0"
   revision 1
-  head "https:github.compothoswareSoapySDR.git", branch: "master"
+  head "https://github.com/pothosware/SoapySDR.git", branch: "master"
 
   stable do
-    url "https:github.compothoswareSoapySDRarchiverefstagssoapy-sdr-0.8.1.tar.gz"
+    url "https://ghfast.top/https://github.com/pothosware/SoapySDR/archive/refs/tags/soapy-sdr-0.8.1.tar.gz"
     sha256 "a508083875ed75d1090c24f88abef9895ad65f0f1b54e96d74094478f0c400e6"
 
     # Replace distutils for python 3.12+
-    # https:github.compothoswareSoapySDRcommit1ee5670803f89b21d84a6a84acbb578da051c119
+    # https://github.com/pothosware/SoapySDR/commit/1ee5670803f89b21d84a6a84acbb578da051c119
     patch :DATA
   end
 
@@ -49,16 +49,16 @@ class Soapysdr < Formula
   end
 
   test do
-    assert_match "Loading modules... done", shell_output("#{bin}SoapySDRUtil --check=null")
+    assert_match "Loading modules... done", shell_output("#{bin}/SoapySDRUtil --check=null")
     system python3, "-c", "import SoapySDR"
   end
 end
 
 __END__
-diff --git apythonget_python_lib.py bpythonget_python_lib.py
+diff --git a/python/get_python_lib.py b/python/get_python_lib.py
 index 0c71652..307ab51 100644
---- apythonget_python_lib.py
-+++ bpythonget_python_lib.py
+--- a/python/get_python_lib.py
++++ b/python/get_python_lib.py
 @@ -1,19 +1,35 @@
  import os
 +import pathlib

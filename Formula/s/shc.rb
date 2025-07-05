@@ -1,10 +1,10 @@
 class Shc < Formula
   desc "Shell Script Compiler"
-  homepage "https:neurobin.github.ioshc"
-  url "https:github.comneurobinshcarchiverefstags4.0.3.tar.gz"
+  homepage "https://neurobin.github.io/shc"
+  url "https://ghfast.top/https://github.com/neurobin/shc/archive/refs/tags/4.0.3.tar.gz"
   sha256 "7d7fa6a9f5f53d607ab851d739ae3d3b99ca86e2cb1425a6cab9299f673aee16"
   license "GPL-3.0-or-later"
-  head "https:github.comneurobinshc.git", branch: "master"
+  head "https://github.com/neurobin/shc.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -27,18 +27,18 @@ class Shc < Formula
   end
 
   def install
-    system ".configure", *std_configure_args
+    system "./configure", *std_configure_args
     system "make", "install", "prefix=#{prefix}"
     pkgshare.install "test"
   end
 
   test do
-    (testpath"test.sh").write <<~SH
-      #!binsh
+    (testpath/"test.sh").write <<~SH
+      #!/bin/sh
       echo hello
       exit 0
     SH
-    system bin"shc", "-f", "test.sh", "-o", "test"
-    assert_equal "hello", shell_output(".test").chomp
+    system bin/"shc", "-f", "test.sh", "-o", "test"
+    assert_equal "hello", shell_output("./test").chomp
   end
 end

@@ -5,10 +5,10 @@ cask "decrediton" do
   sha256 arm:   "1485fa3c0ec5ad2e9d02e84f0112a26fdbbf528b5f01ae765505db27e47bb8c3",
          intel: "84a274f8139cf852762adc06ac9d0ed143eabdcf3316035ed1bc7ccf1af58efd"
 
-  url "https:github.comdecreddecred-binariesreleasesdownloadv#{version}decrediton-darwin-#{arch}-v#{version}.dmg"
+  url "https://ghfast.top/https://github.com/decred/decred-binaries/releases/download/v#{version}/decrediton-darwin-#{arch}-v#{version}.dmg"
   name "Decrediton"
   desc "GUI for the Decred wallet"
-  homepage "https:github.comdecreddecrediton"
+  homepage "https://github.com/decred/decrediton"
 
   no_autobump! because: :requires_manual_review
 
@@ -17,7 +17,7 @@ cask "decrediton" do
   app "decrediton.app"
 
   zap trash: [
-    "~LibraryApplication Supportdecrediton",
-    "~LibraryPreferencescom.Electron.Decrediton.plist",
+    "~/Library/Application Support/decrediton",
+    "~/Library/Preferences/com.Electron.Decrediton.plist",
   ]
 end

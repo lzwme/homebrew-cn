@@ -1,7 +1,7 @@
 class TextEmbeddingsInference < Formula
   desc "Blazing fast inference solution for text embeddings models"
-  homepage "https:huggingface.codocstext-embeddings-inferencequick_tour"
-  url "https:github.comhuggingfacetext-embeddings-inferencearchiverefstagsv1.7.3.tar.gz"
+  homepage "https://huggingface.co/docs/text-embeddings-inference/quick_tour"
+  url "https://ghfast.top/https://github.com/huggingface/text-embeddings-inference/archive/refs/tags/v1.7.3.tar.gz"
   sha256 "64842ec3ed0b87663a628c493dede0cc62ca0377b387562c5db4d68287d4dd7a"
   license "Apache-2.0"
 
@@ -27,12 +27,12 @@ class TextEmbeddingsInference < Formula
   test do
     port = free_port
     fork do
-      exec bin"text-embeddings-router", "-p", port.to_s, "--model-id", "sentence-transformersall-MiniLM-L6-v2"
+      exec bin/"text-embeddings-router", "-p", port.to_s, "--model-id", "sentence-transformers/all-MiniLM-L6-v2"
     end
 
     data = "{\"inputs\":\"What is Deep Learning?\"}"
-    header = "Content-Type: applicationjson"
+    header = "Content-Type: application/json"
     retries = "--retry 5 --retry-connrefused"
-    assert_match "[[", shell_output("curl 127.0.0.1:#{port}embed -X POST -d '#{data}' -H '#{header}' #{retries}")
+    assert_match "[[", shell_output("curl 127.0.0.1:#{port}/embed -X POST -d '#{data}' -H '#{header}' #{retries}")
   end
 end

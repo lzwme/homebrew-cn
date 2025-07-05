@@ -1,7 +1,7 @@
 class SshPermitA38 < Formula
   desc "Central management and deployment for SSH keys"
-  homepage "https:github.comierrorssh-permit-a38"
-  url "https:github.comierrorssh-permit-a38archiverefstagsv0.2.0.tar.gz"
+  homepage "https://github.com/ierror/ssh-permit-a38"
+  url "https://ghfast.top/https://github.com/ierror/ssh-permit-a38/archive/refs/tags/v0.2.0.tar.gz"
   sha256 "cb8d94954c0e68eb86e3009d6f067b92464f9c095b6a7754459cfce329576bd9"
   license "MIT"
   revision 1
@@ -34,16 +34,16 @@ class SshPermitA38 < Formula
 
   def install
     # Ensure that the `openssl` crate picks up the intended library.
-    # https:crates.iocratesopenssl#manual-configuration
+    # https://crates.io/crates/openssl#manual-configuration
     ENV["OPENSSL_DIR"] = Formula["openssl@1.1"].opt_prefix
 
     system "cargo", "install", *std_cargo_args
   end
 
   test do
-    system bin"ssh-permit-a38 host 1.example.com add"
+    system bin/"ssh-permit-a38 host 1.example.com add"
 
-    assert File.readlines("ssh-permit.json").grep(1.example.com).size == 1,
+    assert File.readlines("ssh-permit.json").grep(/1.example.com/).size == 1,
       "Test host not found in ssh-permit.json"
   end
 end

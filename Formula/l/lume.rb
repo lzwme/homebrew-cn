@@ -1,14 +1,14 @@
 class Lume < Formula
   desc "Create and manage Apple Silicon-native virtual machines"
-  homepage "https:github.comtrycuacua"
-  url "https:github.comtrycuacuaarchiverefstagslume-v0.2.22.tar.gz"
+  homepage "https://github.com/trycua/cua"
+  url "https://ghfast.top/https://github.com/trycua/cua/archive/refs/tags/lume-v0.2.22.tar.gz"
   sha256 "39a401f59a51d404db2458907af6786a2e625d542d36339f15c9358b1e1f9b6e"
   license "MIT"
-  head "https:github.comtrycuacua.git", branch: "main"
+  head "https://github.com/trycua/cua.git", branch: "main"
 
   livecheck do
     url :stable
-    regex(^(?:lume[._-])?v?(\d+(?:\.\d+)+)$i)
+    regex(/^(?:lume[._-])?v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -21,34 +21,34 @@ class Lume < Formula
   depends_on :macos
 
   def install
-    cd "libslume" do
+    cd "libs/lume" do
       system "swift", "build", "--disable-sandbox", "-c", "release", "--product", "lume"
-      system "usrbincodesign", "-f", "-s", "-",
-             "--entitlement", "resourceslume.entitlements",
-             ".buildreleaselume"
-      bin.install ".buildreleaselume"
+      system "/usr/bin/codesign", "-f", "-s", "-",
+             "--entitlement", "resources/lume.entitlements",
+             ".build/release/lume"
+      bin.install ".build/release/lume"
     end
   end
 
   service do
-    run [opt_bin"lume", "serve"]
+    run [opt_bin/"lume", "serve"]
     keep_alive true
     working_dir var
-    log_path var"loglume.log"
-    error_log_path var"loglume.log"
+    log_path var/"log/lume.log"
+    error_log_path var/"log/lume.log"
   end
 
   test do
     # Test ipsw command
-    assert_match "Found latest IPSW URL", shell_output("#{bin}lume ipsw")
+    assert_match "Found latest IPSW URL", shell_output("#{bin}/lume ipsw")
 
     # Test management HTTP server
     port = free_port
-    pid = spawn bin"lume", "serve", "--port", port.to_s
+    pid = spawn bin/"lume", "serve", "--port", port.to_s
     sleep 5
     begin
       # Serves 404 Not found if no machines created
-      assert_match %r{^HTTP\d(.\d)? (200|404)}, shell_output("curl -si localhost:#{port}lume").lines.first
+      assert_match %r{^HTTP/\d(.\d)? (200|404)}, shell_output("curl -si localhost:#{port}/lume").lines.first
     ensure
       Process.kill "SIGTERM", pid
     end

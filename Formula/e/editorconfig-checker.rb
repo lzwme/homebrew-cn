@@ -1,10 +1,10 @@
 class EditorconfigChecker < Formula
   desc "Tool to verify that your files are in harmony with your .editorconfig"
-  homepage "https:github.comeditorconfig-checkereditorconfig-checker"
-  url "https:github.comeditorconfig-checkereditorconfig-checkerarchiverefstagsv3.3.0.tar.gz"
+  homepage "https://github.com/editorconfig-checker/editorconfig-checker"
+  url "https://ghfast.top/https://github.com/editorconfig-checker/editorconfig-checker/archive/refs/tags/v3.3.0.tar.gz"
   sha256 "d35214fa6d799190945d2e0bf313dc31b52938d94ec04f40bb45015a9f409f16"
   license "MIT"
-  head "https:github.comeditorconfig-checkereditorconfig-checker.git", branch: "main"
+  head "https://github.com/editorconfig-checker/editorconfig-checker.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "981490c9fdfdc4d52da78ba943d4f44cae48e01e11d6751acbf5f5595de1d961"
@@ -20,16 +20,16 @@ class EditorconfigChecker < Formula
 
   def install
     ldflags = "-s -w -X main.version=#{version}"
-    system "go", "build", *std_go_args(ldflags:), ".cmdeditorconfig-checkermain.go"
+    system "go", "build", *std_go_args(ldflags:), "./cmd/editorconfig-checker/main.go"
   end
 
   test do
-    (testpath"version.txt").write <<~EOS
+    (testpath/"version.txt").write <<~EOS
       version=#{version}
     EOS
 
-    system bin"editorconfig-checker", testpath"version.txt"
+    system bin/"editorconfig-checker", testpath/"version.txt"
 
-    assert_match version.to_s, shell_output("#{bin}editorconfig-checker --version")
+    assert_match version.to_s, shell_output("#{bin}/editorconfig-checker --version")
   end
 end

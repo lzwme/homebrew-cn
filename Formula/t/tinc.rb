@@ -1,13 +1,13 @@
 class Tinc < Formula
   desc "Virtual Private Network (VPN) tool"
-  homepage "https:www.tinc-vpn.org"
-  url "https:tinc-vpn.orgpackagestinc-1.0.36.tar.gz"
+  homepage "https://www.tinc-vpn.org/"
+  url "https://tinc-vpn.org/packages/tinc-1.0.36.tar.gz"
   sha256 "40f73bb3facc480effe0e771442a706ff0488edea7a5f2505d4ccb2aa8163108"
   license "GPL-2.0-or-later" => { with: "openvpn-openssl-exception" }
 
   livecheck do
-    url "https:www.tinc-vpn.orgdownload"
-    regex(href=.*?tinc[._-]v?(\d+(?:\.\d+)+)\.ti)
+    url "https://www.tinc-vpn.org/download/"
+    regex(/href=.*?tinc[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -33,38 +33,38 @@ class Tinc < Formula
 
   uses_from_macos "zlib"
 
-  # fix build errors, upstream pr ref, https:github.comgsliepentincpull464
+  # fix build errors, upstream pr ref, https://github.com/gsliepen/tinc/pull/464
   patch :DATA
 
   def install
-    system ".configure", "--prefix=#{prefix}", "--sysconfdir=#{etc}",
+    system "./configure", "--prefix=#{prefix}", "--sysconfdir=#{etc}",
                           "--with-openssl=#{Formula["openssl@3"].opt_prefix}"
     system "make", "install"
   end
 
   def post_install
-    (var"runtinc").mkpath
+    (var/"run/tinc").mkpath
   end
 
   service do
-    run [opt_sbin"tincd", "--config=#{etc}tinc", "--pidfile=#{var}runtinctinc.pid", "-D"]
+    run [opt_sbin/"tincd", "--config=#{etc}/tinc", "--pidfile=#{var}/run/tinc/tinc.pid", "-D"]
     keep_alive true
     require_root true
-    working_dir etc"tinc"
-    log_path var"logtincstdout.log"
-    error_log_path var"logtincstderr.log"
+    working_dir etc/"tinc"
+    log_path var/"log/tinc/stdout.log"
+    error_log_path var/"log/tinc/stderr.log"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{sbin}tincd --version")
+    assert_match version.to_s, shell_output("#{sbin}/tincd --version")
   end
 end
 
 __END__
-diff --git asrcnet_socket.c bsrcnet_socket.c
+diff --git a/src/net_socket.c b/src/net_socket.c
 index 6195c16..e072970 100644
---- asrcnet_socket.c
-+++ bsrcnet_socket.c
+--- a/src/net_socket.c
++++ b/src/net_socket.c
 @@ -102,14 +102,14 @@ static bool bind_to_interface(int sd) {
 
  #if defined(SOL_SOCKET) && defined(SO_BINDTODEVICE)
@@ -100,10 +100,10 @@ index 6195c16..e072970 100644
  			return -1;
  		}
 
-diff --git asrcraw_socket_device.c bsrcraw_socket_device.c
+diff --git a/src/raw_socket_device.c b/src/raw_socket_device.c
 index f4ed694..cf13fe9 100644
---- asrcraw_socket_device.c
-+++ bsrcraw_socket_device.c
+--- a/src/raw_socket_device.c
++++ b/src/raw_socket_device.c
 @@ -61,12 +61,12 @@ static bool setup_device(void) {
  #endif
 

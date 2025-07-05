@@ -1,10 +1,10 @@
 class Serie < Formula
   desc "Rich git commit graph in your terminal"
-  homepage "https:github.comlusinganderserie"
-  url "https:github.comlusinganderseriearchiverefstagsv0.4.6.tar.gz"
+  homepage "https://github.com/lusingander/serie"
+  url "https://ghfast.top/https://github.com/lusingander/serie/archive/refs/tags/v0.4.6.tar.gz"
   sha256 "a5d95b283c83f5efdf7d6a7faa66e9bfeec771924349edd7df80a1f0c631256b"
   license "MIT"
-  head "https:github.comlusinganderserie.git", branch: "master"
+  head "https://github.com/lusingander/serie.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "b3313fbf0747b7dd4f69f35c45159e818b6afae30f6eb0e9ab9f18dd4ecc0a8a"
@@ -23,7 +23,7 @@ class Serie < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}serie --version")
+    assert_match version.to_s, shell_output("#{bin}/serie --version")
 
     # Fails in Linux CI with "failed to initialize terminal: ... message: \"No such device or address\" }"
     return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
@@ -32,8 +32,8 @@ class Serie < Formula
     system "git", "commit", "--allow-empty", "-m", "Initial commit"
 
     begin
-      output_log = testpath"output.log"
-      pid = spawn bin"serie", [:out, :err] => output_log.to_s
+      output_log = testpath/"output.log"
+      pid = spawn bin/"serie", [:out, :err] => output_log.to_s
       sleep 1
       assert_match "Initial commit", output_log.read
     ensure

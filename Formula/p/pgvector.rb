@@ -1,7 +1,7 @@
 class Pgvector < Formula
   desc "Open-source vector similarity search for Postgres"
-  homepage "https:github.compgvectorpgvector"
-  url "https:github.compgvectorpgvectorarchiverefstagsv0.8.0.tar.gz"
+  homepage "https://github.com/pgvector/pgvector"
+  url "https://ghfast.top/https://github.com/pgvector/pgvector/archive/refs/tags/v0.8.0.tar.gz"
   sha256 "867a2c328d4928a5a9d6f052cd3bc78c7d60228a9b914ad32aa3db88e9de27b0"
   license "PostgreSQL"
 
@@ -26,11 +26,11 @@ class Pgvector < Formula
 
   def install
     postgresqls.each do |postgresql|
-      ENV["PG_CONFIG"] = postgresql.opt_bin"pg_config"
+      ENV["PG_CONFIG"] = postgresql.opt_bin/"pg_config"
       system "make"
-      system "make", "install", "pkglibdir=#{libpostgresql.name}",
-                                "datadir=#{sharepostgresql.name}",
-                                "pkgincludedir=#{includepostgresql.name}"
+      system "make", "install", "pkglibdir=#{lib/postgresql.name}",
+                                "datadir=#{share/postgresql.name}",
+                                "pkgincludedir=#{include/postgresql.name}"
       system "make", "clean"
     end
   end
@@ -38,16 +38,16 @@ class Pgvector < Formula
   test do
     ENV["LC_ALL"] = "C"
     postgresqls.each do |postgresql|
-      pg_ctl = postgresql.opt_bin"pg_ctl"
-      psql = postgresql.opt_bin"psql"
+      pg_ctl = postgresql.opt_bin/"pg_ctl"
+      psql = postgresql.opt_bin/"psql"
       port = free_port
 
-      datadir = testpathpostgresql.name
+      datadir = testpath/postgresql.name
       system pg_ctl, "initdb", "-D", datadir
-      (datadir"postgresql.conf").write <<~EOS, mode: "a+"
+      (datadir/"postgresql.conf").write <<~EOS, mode: "a+"
         port = #{port}
       EOS
-      system pg_ctl, "start", "-D", datadir, "-l", testpath"log-#{postgresql.name}"
+      system pg_ctl, "start", "-D", datadir, "-l", testpath/"log-#{postgresql.name}"
       begin
         system psql, "-p", port.to_s, "-c", "CREATE EXTENSION vector;", "postgres"
       ensure

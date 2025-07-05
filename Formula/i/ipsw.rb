@@ -1,10 +1,10 @@
 class Ipsw < Formula
   desc "Research tool for iOS & macOS devices"
-  homepage "https:blacktop.github.ioipsw"
-  url "https:github.comblacktopipswarchiverefstagsv3.1.621.tar.gz"
+  homepage "https://blacktop.github.io/ipsw"
+  url "https://ghfast.top/https://github.com/blacktop/ipsw/archive/refs/tags/v3.1.621.tar.gz"
   sha256 "bde0adeb91f076aa4e34e0c0e520ae9e3e4edc3f58a654bb245ecdea22f5a73c"
   license "MIT"
-  head "https:github.comblacktopipsw.git", branch: "master"
+  head "https://github.com/blacktop/ipsw.git", branch: "master"
 
   livecheck do
     url :stable
@@ -26,16 +26,16 @@ class Ipsw < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.comblacktopipswcmdipswcmd.AppVersion=#{version}
-      -X github.comblacktopipswcmdipswcmd.AppBuildCommit=#{tap.user}
+      -X github.com/blacktop/ipsw/cmd/ipsw/cmd.AppVersion=#{version}
+      -X github.com/blacktop/ipsw/cmd/ipsw/cmd.AppBuildCommit=#{tap.user}
     ]
-    system "go", "build", *std_go_args(ldflags:), ".cmdipsw"
-    generate_completions_from_executable(bin"ipsw", "completion")
+    system "go", "build", *std_go_args(ldflags:), "./cmd/ipsw"
+    generate_completions_from_executable(bin/"ipsw", "completion")
   end
 
   test do
-    assert_match version.to_s, shell_output(bin"ipsw version")
+    assert_match version.to_s, shell_output(bin/"ipsw version")
 
-    assert_match "MacFamily20,1", shell_output(bin"ipsw device-list")
+    assert_match "MacFamily20,1", shell_output(bin/"ipsw device-list")
   end
 end

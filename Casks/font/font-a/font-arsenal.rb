@@ -2,12 +2,12 @@ cask "font-arsenal" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefonts.git",
-      verified:  "github.comgooglefonts",
+  url "https://github.com/google/fonts.git",
+      verified:  "github.com/google/fonts",
       branch:    "main",
-      only_path: "oflarsenal"
+      only_path: "ofl/arsenal"
   name "Arsenal"
-  homepage "https:fonts.google.comspecimenArsenal"
+  homepage "https://fonts.google.com/specimen/Arsenal"
 
   font "Arsenal-Bold.ttf"
   font "Arsenal-BoldItalic.ttf"

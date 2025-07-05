@@ -1,10 +1,10 @@
 class Pixiewps < Formula
   desc "Offline Wi-Fi Protected Setup brute-force utility"
-  homepage "https:github.comwiire-apixiewps"
-  url "https:github.comwiire-apixiewpsreleasesdownloadv1.4.2pixiewps-1.4.2.tar.xz"
+  homepage "https://github.com/wiire-a/pixiewps"
+  url "https://ghfast.top/https://github.com/wiire-a/pixiewps/releases/download/v1.4.2/pixiewps-1.4.2.tar.xz"
   sha256 "c4dc0569e476ebdbd85992da2d1ff799db97ed0040da9dc44e13d08a97a9de1e"
   license "GPL-3.0-or-later"
-  head "https:github.comwiire-apixiewps.git", branch: "master"
+  head "https://github.com/wiire-a/pixiewps.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -31,7 +31,7 @@ class Pixiewps < Formula
 
   test do
     output = shell_output(
-      "#{bin}pixiewps " \
+      "#{bin}/pixiewps " \
       "-a 7f:de:11:b9:69:1c:de:26:4a:21:a4:6f:eb:3d:b8:aa:aa:d7:30:09:09:32:b8:24:43:9b:e0:91:78:e7:6f:2c " \
       "-e d4:38:91:0d:4e:6e:15:fe:70:f0:97:a8:70:2a:b8:94:f5:75:74:bf:64:19:9f:92:82:9b:e0:2c:c0:a3:75:48" \
       ":08:8f:63:0a:82:37:0c:b7:95:42:cf:55:ca:a5:f0:f7:6c:b2:c7:5f:0e:23:18:44:f4:2d:00:f1:da:d4:94:23:56" \

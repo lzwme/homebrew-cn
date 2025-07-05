@@ -1,7 +1,7 @@
 class Keydb < Formula
   desc "Multithreaded fork of Redis"
-  homepage "https:keydb.dev"
-  url "https:github.comSnapchatKeyDBarchiverefstagsv6.3.4.tar.gz"
+  homepage "https://keydb.dev"
+  url "https://ghfast.top/https://github.com/Snapchat/KeyDB/archive/refs/tags/v6.3.4.tar.gz"
   sha256 "229190b251f921e05aff7b0d2f04b5676c198131e2abbec1e2cfb2e61215e2f3"
   license "BSD-3-Clause"
 
@@ -31,11 +31,11 @@ class Keydb < Formula
 
   # Backport fixes for ARM Sonoma
   patch do
-    url "https:github.comSnapchatKeyDBcommit674d9fb7eea1e6cca6ac8da3b2d1a63dc38c9d2b.patch?full_index=1"
+    url "https://github.com/Snapchat/KeyDB/commit/674d9fb7eea1e6cca6ac8da3b2d1a63dc38c9d2b.patch?full_index=1"
     sha256 "aa175e61c8a8b5c12f8608afdb20985a558c14cc94f69be43ab3e0e0c999a3bc"
   end
   patch do
-    url "https:github.comSnapchatKeyDBcommit603ebb27fb82a27fb98b0feb6749b0f7661a1c4b.patch?full_index=1"
+    url "https://github.com/Snapchat/KeyDB/commit/603ebb27fb82a27fb98b0feb6749b0f7661a1c4b.patch?full_index=1"
     sha256 "3cece0a51cc74606bcfa32f1b745b615078be5c67ba3e97287ce9c5c982c1ba7"
   end
 
@@ -44,7 +44,7 @@ class Keydb < Formula
   end
 
   test do
-    output = shell_output("#{bin}keydb-server --test-memory 2")
+    output = shell_output("#{bin}/keydb-server --test-memory 2")
     assert_match "Your memory passed this test", output
   end
 end

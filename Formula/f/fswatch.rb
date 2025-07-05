@@ -1,13 +1,13 @@
 class Fswatch < Formula
   desc "Monitor a directory for changes and run a shell command"
-  homepage "https:github.comemcrisostomofswatch"
-  url "https:github.comemcrisostomofswatchreleasesdownload1.18.3fswatch-1.18.3.tar.gz"
+  homepage "https://github.com/emcrisostomo/fswatch"
+  url "https://ghfast.top/https://github.com/emcrisostomo/fswatch/releases/download/1.18.3/fswatch-1.18.3.tar.gz"
   sha256 "08b13c0e0f92bd5eee5a310bb58fc373f0cda8304f9decc34cfabc42adf8e9ca"
   license all_of: ["GPL-3.0-or-later", "Apache-2.0"]
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -21,11 +21,11 @@ class Fswatch < Formula
   end
 
   def install
-    system ".configure", *std_configure_args
+    system "./configure", *std_configure_args
     system "make", "install"
   end
 
   test do
-    system bin"fswatch", "-h"
+    system bin/"fswatch", "-h"
   end
 end

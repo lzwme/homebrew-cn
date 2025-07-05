@@ -1,11 +1,11 @@
 class Ccache < Formula
   desc "Object-file caching compiler wrapper"
-  homepage "https:ccache.dev"
-  url "https:github.comccacheccachereleasesdownloadv4.11.3ccache-4.11.3.tar.xz"
+  homepage "https://ccache.dev/"
+  url "https://ghfast.top/https://github.com/ccache/ccache/releases/download/v4.11.3/ccache-4.11.3.tar.xz"
   sha256 "d5a340e199977b7b1e89c0add794132c977fdc2ecc7ca5451e03d43627a1b1be"
   license "GPL-3.0-or-later"
   revision 1
-  head "https:github.comccacheccache.git", branch: "master"
+  head "https://github.com/ccache/ccache.git", branch: "master"
 
   bottle do
     sha256               arm64_sequoia: "e99e59f16c682d93fe0b9b5c7681cdce749f0b90291108fa74edcad569286d96"
@@ -43,7 +43,7 @@ class Ccache < Formula
     # We run the test suite for ccache because it provides a more in-depth functional test of the software
     # (especially with IPO enabled), adds negligible time to the build process, and we don't actually test
     # this formula properly in the test block since doing so would be too complicated.
-    # See https:github.comHomebrewhomebrew-corepull83900#issuecomment-90624064
+    # See https://github.com/Homebrew/homebrew-core/pull/83900#issuecomment-90624064
     with_env(CC: DevelopmentTools.locate(DevelopmentTools.default_compiler)) do
       system "ctest", "-j#{ENV.make_jobs}", "--test-dir", "build"
     end
@@ -71,7 +71,7 @@ class Ccache < Formula
       i686-w64-mingw32-gcc i686-w64-mingw32-g++
       x86_64-w64-mingw32-gcc x86_64-w64-mingw32-g++
     ].each do |prog|
-      libexec.install_symlink bin"ccache" => prog
+      libexec.install_symlink bin/"ccache" => prog
     end
   end
 
@@ -92,14 +92,14 @@ class Ccache < Formula
 
   test do
     ENV.prepend_path "PATH", opt_libexec
-    assert_equal "#{opt_libexec}gcc", shell_output("which gcc").chomp
-    assert_match etc.to_s, shell_output("#{bin}ccache --show-stats --verbose")
+    assert_equal "#{opt_libexec}/gcc", shell_output("which gcc").chomp
+    assert_match etc.to_s, shell_output("#{bin}/ccache --show-stats --verbose")
 
     # Calling `--help` can catch issues with fmt upgrades.
-    # https:github.comorgsHomebrewdiscussions5830
-    system bin"ccache", "--help"
+    # https://github.com/orgs/Homebrew/discussions/5830
+    system bin/"ccache", "--help"
 
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include <stdio.h>
       int main(void) {
         printf("hello, world");
@@ -108,13 +108,13 @@ class Ccache < Formula
     C
 
     # Test that we link with xxhash correctly.
-    assert_equal "6ef4b356229ca145dca726e94e88ad10", shell_output("#{bin}ccache --checksum-file test.c").chomp
+    assert_equal "6ef4b356229ca145dca726e94e88ad10", shell_output("#{bin}/ccache --checksum-file test.c").chomp
     # Test that we link with blake3 correctly.
-    file_hash = shell_output("#{bin}ccache --hash-file test.c").chomp
+    file_hash = shell_output("#{bin}/ccache --hash-file test.c").chomp
     assert_equal "5af3d23skapbcgbs975geemfqv6r6utsu", file_hash
 
-    system bin"ccache", ENV.cc, "-c", "test.c"
-    system bin"ccache", "debug=true", ENV.cc, "-c", "test.c"
+    system bin/"ccache", ENV.cc, "-c", "test.c"
+    system bin/"ccache", "debug=true", ENV.cc, "-c", "test.c"
 
     input_text = testpath.glob("test.o.*.ccache-input-text").first.read
     assert_match File.basename(ENV.cc), input_text

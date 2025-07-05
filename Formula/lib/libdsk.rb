@@ -1,13 +1,13 @@
 class Libdsk < Formula
   desc "Library for accessing discs and disc image files"
-  homepage "https:www.seasip.infoUnixLibDsk"
-  url "https:www.seasip.infoUnixLibDsklibdsk-1.4.2.tar.gz"
+  homepage "https://www.seasip.info/Unix/LibDsk/"
+  url "https://www.seasip.info/Unix/LibDsk/libdsk-1.4.2.tar.gz"
   sha256 "71eda9d0e33ab580cea1bb507467877d33d887cea6ec042b8d969004db89901a"
   license "LGPL-2.0-or-later"
 
   livecheck do
     url :homepage
-    regex(Stable version.*?href=.*?libdsk[._-]v?(\d+(?:\.\d+)+)\.tim)
+    regex(/Stable version.*?href=.*?libdsk[._-]v?(\d+(?:\.\d+)+)\.t/im)
   end
 
   no_autobump! because: :requires_manual_review
@@ -35,7 +35,7 @@ class Libdsk < Formula
 
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
-    url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-big_sur.diff"
+    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-big_sur.diff"
     sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
   end
 
@@ -49,18 +49,18 @@ class Libdsk < Formula
       # Help old config scripts identify arm64 linux
       args << "--build=aarch64-unknown-linux-gnu" if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       # Workaround for undefined reference to `major'. Remove in the next release
-      ENV.append "CFLAGS", "-include syssysmacros.h"
-      odie "Remove syssysmacros.h workaround!" if version >= "1.5"
+      ENV.append "CFLAGS", "-include sys/sysmacros.h"
+      odie "Remove sys/sysmacros.h workaround!" if version >= "1.5"
     end
 
-    system ".configure", *args, *std_configure_args
+    system "./configure", *args, *std_configure_args
     system "make"
     system "make", "check"
     system "make", "install"
-    doc.install Dir["doc*.{html,pdf,sample,txt}"]
+    doc.install Dir["doc/*.{html,pdf,sample,txt}"]
   end
 
   test do
-    assert_equal "#{name} version #{version}\n", shell_output(bin"dskutil --version")
+    assert_equal "#{name} version #{version}\n", shell_output(bin/"dskutil --version")
   end
 end

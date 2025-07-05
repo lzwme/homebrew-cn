@@ -1,10 +1,10 @@
 class Astroterm < Formula
   desc "Planetarium for your terminal"
-  homepage "https:github.comda-luceastroterm"
-  url "https:github.comda-luceastrotermarchiverefstagsv1.0.7.tar.gz"
+  homepage "https://github.com/da-luce/astroterm"
+  url "https://ghfast.top/https://github.com/da-luce/astroterm/archive/refs/tags/v1.0.7.tar.gz"
   sha256 "3b8b1597afb31d1cb8ad54030b5766652b4d3f42f0a3d510bbc3191c0c6a4aa5"
   license "MIT"
-  head "https:github.comda-luceastroterm.git", branch: "main"
+  head "https://github.com/da-luce/astroterm.git", branch: "main"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "91761c77d2816c3ed68f269657e1ff8234ba3391f4e56db01d1b0730ccdbfc10"
@@ -24,14 +24,14 @@ class Astroterm < Formula
   uses_from_macos "ncurses"
 
   resource "bsc5" do
-    url "http:tdc-www.harvard.educatalogsBSC5", using: :nounzip
+    url "http://tdc-www.harvard.edu/catalogs/BSC5", using: :nounzip
     sha256 "e471d02eaf4eecb61c12f879a1cb6432ba9d7b68a9a8c5654a1eb42a0c8cc340"
   end
 
   def install
     resource("bsc5").stage do
-      (buildpath"data").install "BSC5"
-      mv buildpath"dataBSC5", buildpath"databsc5" if OS.linux?
+      (buildpath/"data").install "BSC5"
+      mv buildpath/"data/BSC5", buildpath/"data/bsc5" if OS.linux?
     end
 
     system "meson", "setup", "build", *std_meson_args
@@ -41,6 +41,6 @@ class Astroterm < Formula
 
   test do
     # astroterm is a TUI application
-    assert_match version.to_s, shell_output("#{bin}astroterm --version")
+    assert_match version.to_s, shell_output("#{bin}/astroterm --version")
   end
 end

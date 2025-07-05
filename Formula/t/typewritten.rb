@@ -1,10 +1,10 @@
 class Typewritten < Formula
   desc "Minimal zsh prompt"
-  homepage "https:typewritten.dev"
-  url "https:github.comreobintypewrittenarchiverefstagsv1.5.2.tar.gz"
+  homepage "https://typewritten.dev"
+  url "https://ghfast.top/https://github.com/reobin/typewritten/archive/refs/tags/v1.5.2.tar.gz"
   sha256 "03dcd8239e66cbeac7fa31457bae8355d1fc05fb49dcb05b77ed40f4771226fd"
   license "MIT"
-  head "https:github.comreobintypewritten.git", branch: "main"
+  head "https://github.com/reobin/typewritten.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, all: "8a6b8fe7ec007b83306cbb94c0d4fed1f6a39fb4f3f053cce9420e4ddbca6137"
@@ -14,7 +14,7 @@ class Typewritten < Formula
 
   def install
     libexec.install "typewritten.zsh", "async.zsh", "lib"
-    zsh_function.install_symlink libexec"typewritten.zsh" => "prompt_typewritten_setup"
+    zsh_function.install_symlink libexec/"typewritten.zsh" => "prompt_typewritten_setup"
   end
 
   test do

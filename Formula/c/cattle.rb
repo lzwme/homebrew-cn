@@ -1,22 +1,22 @@
 class Cattle < Formula
   desc "Brainfuck language toolkit"
-  homepage "https:kiyuko.orgsoftwarecattle"
+  homepage "https://kiyuko.org/software/cattle"
   license "GPL-2.0-or-later"
 
   stable do
-    url "https:kiyuko.orgsoftwarecattlereleasescattle-1.4.0.tar.xz"
+    url "https://kiyuko.org/software/cattle/releases/cattle-1.4.0.tar.xz"
     sha256 "9ba2d746f940978b5bfc6c39570dde7dc55d5b4d09d0d25f29252d6a25fb562f"
 
     # Fix -flat_namespace being used on Big Sur and later.
     patch do
-      url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-big_sur.diff"
+      url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-big_sur.diff"
       sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
     end
   end
 
   livecheck do
-    url "https:kiyuko.orgsoftwarecattlereleases"
-    regex(href=.*?cattle[._-]v?(\d+(?:\.\d+)+)\.ti)
+    url "https://kiyuko.org/software/cattle/releases"
+    regex(/href=.*?cattle[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -39,7 +39,7 @@ class Cattle < Formula
   end
 
   head do
-    url "https:github.comandreabolognanicattle.git", branch: "master"
+    url "https://github.com/andreabolognani/cattle.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -59,7 +59,7 @@ class Cattle < Formula
   def install
     pkgshare.mkpath
     cp_r ["examples", "tests"], pkgshare
-    rm Dir["#{pkgshare}{examples,tests}{Makefile.am,.gitignore}"]
+    rm Dir["#{pkgshare}/{examples,tests}/{Makefile.am,.gitignore}"]
 
     if build.head?
       inreplace "autogen.sh", "libtoolize", "glibtoolize"
@@ -67,21 +67,21 @@ class Cattle < Formula
     end
 
     mkdir "build" do
-      system "..configure", "--disable-silent-rules", *std_configure_args
+      system "../configure", "--disable-silent-rules", *std_configure_args
       system "make", "install"
     end
   end
 
   test do
-    cp_r (pkgshare"examples").children, testpath
-    cp_r (pkgshare"tests").children, testpath
+    cp_r (pkgshare/"examples").children, testpath
+    cp_r (pkgshare/"tests").children, testpath
     system ENV.cc, "common.c", "run.c", "-o", "test",
-           "-I#{include}cattle-1.0",
-           "-I#{Formula["glib"].include}glib-2.0",
-           "-I#{Formula["glib"].lib}glib-2.0include",
+           "-I#{include}/cattle-1.0",
+           "-I#{Formula["glib"].include}/glib-2.0",
+           "-I#{Formula["glib"].lib}/glib-2.0/include",
            "-L#{lib}",
            "-L#{Formula["glib"].lib}",
            "-lcattle-1.0", "-lglib-2.0", "-lgio-2.0", "-lgobject-2.0"
-    assert_match "Unbalanced brackets", shell_output(".test program.c 2>&1", 1)
+    assert_match "Unbalanced brackets", shell_output("./test program.c 2>&1", 1)
   end
 end

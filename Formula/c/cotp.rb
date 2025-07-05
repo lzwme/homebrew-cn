@@ -1,10 +1,10 @@
 class Cotp < Formula
-  desc "TOTPHOTP authenticator app with import functionality"
-  homepage "https:github.comreplydevcotp"
-  url "https:github.comreplydevcotparchiverefstagsv1.9.6.tar.gz"
+  desc "TOTP/HOTP authenticator app with import functionality"
+  homepage "https://github.com/replydev/cotp"
+  url "https://ghfast.top/https://github.com/replydev/cotp/archive/refs/tags/v1.9.6.tar.gz"
   sha256 "4a712b2f01575cecad02d44ee49f941a70f18d9548ae163ff938885457ccc71a"
   license "GPL-3.0-only"
-  head "https:github.comreplydevcotp.git", branch: "main"
+  head "https://github.com/replydev/cotp.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "230b300e4658e75da28ecb2480f4fd59b3b85d699c1ba077427debd9da5fcfec"
@@ -24,11 +24,11 @@ class Cotp < Formula
 
   test do
     # Proper test needs password input, so use error message for executable check
-    assert_match <<~EOS, shell_output("#{bin}cotp edit 2>&1", 2)
+    assert_match <<~EOS, shell_output("#{bin}/cotp edit 2>&1", 2)
       error: the following required arguments were not provided:
         --index <INDEX>
     EOS
 
-    assert_match version.to_s, shell_output("#{bin}cotp --version")
+    assert_match version.to_s, shell_output("#{bin}/cotp --version")
   end
 end

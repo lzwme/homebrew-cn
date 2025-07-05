@@ -1,7 +1,7 @@
 class Jack < Formula
   desc "Audio Connection Kit"
-  homepage "https:jackaudio.org"
-  url "https:github.comjackaudiojack2archiverefstagsv1.9.22.tar.gz"
+  homepage "https://jackaudio.org/"
+  url "https://ghfast.top/https://github.com/jackaudio/jack2/archive/refs/tags/v1.9.22.tar.gz"
   sha256 "1e42b9fc4ad7db7befd414d45ab2f8a159c0b30fcd6eee452be662298766a849"
   license "GPL-2.0-or-later"
   revision 1
@@ -45,34 +45,34 @@ class Jack < Formula
 
   # Backport new waf to fix build on Python 3.12
   patch do
-    url "https:github.comjackaudiojack2commit250420381b1a6974798939ad7104ab1a4b9a9994.patch?full_index=1"
+    url "https://github.com/jackaudio/jack2/commit/250420381b1a6974798939ad7104ab1a4b9a9994.patch?full_index=1"
     sha256 "919f94a5eb4a00854f90b6618a35be4ba9ab3d8cc56f09a1fba2277030363b20"
   end
 
   def install
     if OS.mac? && MacOS.version <= :high_sierra
-      # See https:github.comjackaudiojack2issues640#issuecomment-723022578
+      # See https://github.com/jackaudio/jack2/issues/640#issuecomment-723022578
       ENV.append "LDFLAGS", "-Wl,-compatibility_version,1"
       ENV.append "LDFLAGS", "-Wl,-current_version,#{version}"
     end
 
-    system "python3", ".waf", "configure", "--prefix=#{prefix}"
-    system "python3", ".waf", "build"
-    system "python3", ".waf", "install"
+    system "python3", "./waf", "configure", "--prefix=#{prefix}"
+    system "python3", "./waf", "build"
+    system "python3", "./waf", "install"
   end
 
   service do
-    run [opt_bin"jackd", "-X", "coremidi", "-d", "coreaudio"]
+    run [opt_bin/"jackd", "-X", "coremidi", "-d", "coreaudio"]
     keep_alive true
     working_dir opt_prefix
-    environment_variables PATH: "usrbin:bin:usrsbin:sbin:#{HOMEBREW_PREFIX}bin"
+    environment_variables PATH: "/usr/bin:/bin:/usr/sbin:/sbin:#{HOMEBREW_PREFIX}/bin"
   end
 
   test do
     args = ["-d", "dummy"]
     args += ["-X", "coremidi"] if OS.mac?
-    spawn bin"jackd", *args
+    spawn bin/"jackd", *args
 
-    assert_match "jackdmp version #{version}", shell_output("#{bin}jackd --version")
+    assert_match "jackdmp version #{version}", shell_output("#{bin}/jackd --version")
   end
 end

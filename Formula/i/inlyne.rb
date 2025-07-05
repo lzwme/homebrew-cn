@@ -1,10 +1,10 @@
 class Inlyne < Formula
   desc "GPU powered yet browserless tool to help you quickly view markdown files"
-  homepage "https:github.comInlyne-Projectinlyne"
-  url "https:github.comInlyne-Projectinlynearchiverefstagsv0.5.0.tar.gz"
+  homepage "https://github.com/Inlyne-Project/inlyne"
+  url "https://ghfast.top/https://github.com/Inlyne-Project/inlyne/archive/refs/tags/v0.5.0.tar.gz"
   sha256 "0473d154469c4f078029c2fdb58dca19b8d415633934773c41930536b54e71e0"
   license "MIT"
-  head "https:github.comInlyne-Projectinlyne.git", branch: "main"
+  head "https://github.com/Inlyne-Project/inlyne.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "08618c2b26c159f199bb3b0ec92f989d0cc101f615288f1eec2a587f60fb0622"
@@ -29,29 +29,29 @@ class Inlyne < Formula
   def install
     system "cargo", "install", *std_cargo_args
 
-    bash_completion.install "completionsinlyne.bash" => "inlyne"
-    fish_completion.install "completionsinlyne.fish"
-    zsh_completion.install "completions_inlyne"
+    bash_completion.install "completions/inlyne.bash" => "inlyne"
+    fish_completion.install "completions/inlyne.fish"
+    zsh_completion.install "completions/_inlyne"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}inlyne --version")
+    assert_match version.to_s, shell_output("#{bin}/inlyne --version")
 
     # Fails in Linux CI with
     # "Failed to initialize any backend! Wayland status: XdgRuntimeDirNotSet X11 status: XOpenDisplayFailed"
     return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
 
-    test_markdown = testpath"test.md"
+    test_markdown = testpath/"test.md"
     test_markdown.write <<~EOS
       _lorem_ **ipsum** dolor **sit** _amet_
     EOS
 
-    script = (testpath"test.exp")
+    script = (testpath/"test.exp")
     script.write <<~EOS
-      #!usrbinenv expect -f
+      #!/usr/bin/env expect -f
       set timeout 2
 
-      spawn #{bin}inlyne #{test_markdown}
+      spawn #{bin}/inlyne #{test_markdown}
 
       send -- "q\r"
 

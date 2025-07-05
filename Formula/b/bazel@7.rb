@@ -1,13 +1,13 @@
 class BazelAT7 < Formula
   desc "Google's own build tool"
-  homepage "https:bazel.build"
-  url "https:github.combazelbuildbazelreleasesdownload7.6.1bazel-7.6.1-dist.zip"
+  homepage "https://bazel.build/"
+  url "https://ghfast.top/https://github.com/bazelbuild/bazel/releases/download/7.6.1/bazel-7.6.1-dist.zip"
   sha256 "c1106db93eb8a719a6e2e1e9327f41b003b6d7f7e9d04f206057990775a7760e"
   license "Apache-2.0"
 
   livecheck do
     url :stable
-    regex(^v?(7(?:\.\d+)+)$i)
+    regex(/^v?(7(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -22,7 +22,7 @@ class BazelAT7 < Formula
 
   keg_only :versioned_formula
 
-  # https:bazel.buildrelease#support-matrix
+  # https://bazel.build/release#support-matrix
   deprecate! date: "2027-01-01", because: :unsupported
 
   depends_on "python@3.13" => :build
@@ -40,15 +40,15 @@ class BazelAT7 < Formula
   end
 
   def bazel_real
-    libexec"binbazel-real"
+    libexec/"bin/bazel-real"
   end
 
   def install
     java_home_env = Language::Java.java_home_env("21")
 
     ENV["EMBED_LABEL"] = "#{version}-homebrew"
-    # Force Bazel .compile.sh to put its temporary files in the buildpath
-    ENV["BAZEL_WRKDIR"] = buildpath"work"
+    # Force Bazel ./compile.sh to put its temporary files in the buildpath
+    ENV["BAZEL_WRKDIR"] = buildpath/"work"
     # Force Bazel to use brew OpenJDK
     extra_bazel_args = ["--tool_java_runtime_version=local_jdk"]
     ENV.merge! java_home_env.transform_keys(&:to_s)
@@ -61,32 +61,32 @@ class BazelAT7 < Formula
     end
     ENV["EXTRA_BAZEL_ARGS"] = extra_bazel_args.join(" ")
 
-    (buildpath"sources").install buildpath.children
+    (buildpath/"sources").install buildpath.children
 
     cd "sources" do
-      system ".compile.sh"
-      system ".outputbazel", "--output_user_root=#{buildpath}output_user_root",
+      system "./compile.sh"
+      system "./output/bazel", "--output_user_root=#{buildpath}/output_user_root",
                                "build",
                                "scripts:bash_completion",
                                "scripts:fish_completion"
 
-      bin.install "scriptspackagesbazel.sh" => "bazel"
-      ln_s bazel_real, bin"bazel-#{version}"
-      (libexec"bin").install "outputbazel" => "bazel-real"
-      bin.env_script_all_files libexec"bin", java_home_env
+      bin.install "scripts/packages/bazel.sh" => "bazel"
+      ln_s bazel_real, bin/"bazel-#{version}"
+      (libexec/"bin").install "output/bazel" => "bazel-real"
+      bin.env_script_all_files libexec/"bin", java_home_env
 
-      bash_completion.install "bazel-binscriptsbazel-complete.bash" => "bazel"
-      zsh_completion.install "scriptszsh_completion_bazel"
-      fish_completion.install "bazel-binscriptsbazel.fish"
+      bash_completion.install "bazel-bin/scripts/bazel-complete.bash" => "bazel"
+      zsh_completion.install "scripts/zsh_completion/_bazel"
+      fish_completion.install "bazel-bin/scripts/bazel.fish"
     end
 
     # Workaround to avoid breaking the zip-appended `bazel-real` binary.
     # Can remove if brew correctly handles these binaries or if upstream
-    # provides an alternative in https:github.combazelbuildbazelissues11842
+    # provides an alternative in https://github.com/bazelbuild/bazel/issues/11842
     if OS.linux? && build.bottle?
       Utils::Gzip.compress(bazel_real)
       bazel_real.write <<~SHELL
-        #!binbash
+        #!/bin/bash
         echo 'ERROR: Need to run `brew postinstall #{name}`' >&2
         exit 1
       SHELL
@@ -103,9 +103,9 @@ class BazelAT7 < Formula
   end
 
   test do
-    touch testpath"WORKSPACE"
+    touch testpath/"WORKSPACE"
 
-    (testpath"ProjectRunner.java").write <<~JAVA
+    (testpath/"ProjectRunner.java").write <<~JAVA
       public class ProjectRunner {
         public static void main(String args[]) {
           System.out.println("Hi!");
@@ -113,7 +113,7 @@ class BazelAT7 < Formula
       }
     JAVA
 
-    (testpath"BUILD").write <<~STARLARK
+    (testpath/"BUILD").write <<~STARLARK
       java_binary(
         name = "bazel-test",
         srcs = glob(["*.java"]),
@@ -121,20 +121,20 @@ class BazelAT7 < Formula
       )
     STARLARK
 
-    system bin"bazel", "build", ":bazel-test"
-    assert_equal "Hi!\n", shell_output("bazel-binbazel-test")
+    system bin/"bazel", "build", "//:bazel-test"
+    assert_equal "Hi!\n", shell_output("bazel-bin/bazel-test")
 
     # Verify that `bazel` invokes Bazel's wrapper script, which delegates to
-    # project-specific `toolsbazel` if present. Invoking `bazel-VERSION`
+    # project-specific `tools/bazel` if present. Invoking `bazel-VERSION`
     # bypasses this behavior.
-    (testpath"toolsbazel").write <<~SHELL
-      #!binbash
+    (testpath/"tools/bazel").write <<~SHELL
+      #!/bin/bash
       echo "stub-wrapper"
       exit 1
     SHELL
-    (testpath"toolsbazel").chmod 0755
+    (testpath/"tools/bazel").chmod 0755
 
-    assert_equal "stub-wrapper\n", shell_output("#{bin}bazel --version", 1)
-    assert_equal "bazel #{version}-homebrew\n", shell_output("#{bin}bazel-#{version} --version")
+    assert_equal "stub-wrapper\n", shell_output("#{bin}/bazel --version", 1)
+    assert_equal "bazel #{version}-homebrew\n", shell_output("#{bin}/bazel-#{version} --version")
   end
 end

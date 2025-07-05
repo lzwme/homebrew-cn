@@ -2,9 +2,9 @@ cask "font-code-new-roman-nerd-font" do
   version "3.4.0"
   sha256 "4a3de867f398ab32d5e1a750e0149d57413952e318d0cf41d33dac57e8dabe2a"
 
-  url "https:github.comryanoasisnerd-fontsreleasesdownloadv#{version}CodeNewRoman.zip"
+  url "https://ghfast.top/https://github.com/ryanoasis/nerd-fonts/releases/download/v#{version}/CodeNewRoman.zip"
   name "CodeNewRoman Nerd Font (Code New Roman)"
-  homepage "https:github.comryanoasisnerd-fonts"
+  homepage "https://github.com/ryanoasis/nerd-fonts"
 
   livecheck do
     url :url

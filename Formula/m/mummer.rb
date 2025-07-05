@@ -1,7 +1,7 @@
 class Mummer < Formula
   desc "Genome alignment tool"
-  homepage "https:github.commummer4mummer"
-  url "https:github.commummer4mummerreleasesdownloadv4.0.1mummer-4.0.1.tar.gz"
+  homepage "https://github.com/mummer4/mummer"
+  url "https://ghfast.top/https://github.com/mummer4/mummer/releases/download/v4.0.1/mummer-4.0.1.tar.gz"
   sha256 "bc20ae2701a0b2e323e4e515b7cfa18a0f0cb34a4ff5844b289b2de0154e3d3e"
   license "Artistic-2.0"
 
@@ -33,22 +33,22 @@ class Mummer < Formula
   end
 
   def install
-    system ".configure", "--disable-silent-rules", *std_configure_args
+    system "./configure", "--disable-silent-rules", *std_configure_args
     system "make"
     system "make", "install"
   end
 
   test do
     # Align two small sequences with nucmer
-    (testpath"seq1.fa").write <<~SEQ1
+    (testpath/"seq1.fa").write <<~SEQ1
       >101
       ggtttatgcgctgttatgtctatggacaaaaaggctacgagaaactgtagccccgttcgctcggacccgcgtcattcgtcggcccagctctacccg
     SEQ1
-    (testpath"seq2.fa").write <<~SEQ2
+    (testpath/"seq2.fa").write <<~SEQ2
       >21
       ggtttatgcgctgttttgtctatggaaaaaaggctacgagaaactgtagccccgttcgctcggtacccgcgtcattcgtcggcccatctctacccg
     SEQ2
-    cmdline = [bin"nucmer", "--sam-long", testpath"output.sam", "-l", "10", "seq1.fa", "seq2.fa"]
+    cmdline = [bin/"nucmer", "--sam-long", testpath/"output.sam", "-l", "10", "seq1.fa", "seq2.fa"]
     result = <<~RESULT
       @HD\tVN:1.4\tSO:unsorted
       @SQ\tSN:101\tLN:96
@@ -57,6 +57,6 @@ class Mummer < Formula
     RESULT
 
     system(*cmdline)
-    assert_equal result, (testpath"output.sam").read
+    assert_equal result, (testpath/"output.sam").read
   end
 end

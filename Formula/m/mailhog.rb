@@ -1,10 +1,10 @@
 class Mailhog < Formula
   desc "Web and API based SMTP testing tool"
-  homepage "https:github.commailhogMailHog"
-  url "https:github.commailhogMailHogarchiverefstagsv1.0.1.tar.gz"
+  homepage "https://github.com/mailhog/MailHog"
+  url "https://ghfast.top/https://github.com/mailhog/MailHog/archive/refs/tags/v1.0.1.tar.gz"
   sha256 "6227b566f3f7acbfee0011643c46721e20389eba4c8c2d795c0d2f4d2905f282"
   license "MIT"
-  head "https:github.commailhogMailHog.git", branch: "master"
+  head "https://github.com/mailhog/MailHog.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -23,7 +23,7 @@ class Mailhog < Formula
   end
 
   # No support for Go modules and needs deprecated `go_resource` DSL.
-  # https:github.commailhogMailHogissues442#issuecomment-1493415258
+  # https://github.com/mailhog/MailHog/issues/442#issuecomment-1493415258
   deprecate! date: "2024-03-27", because: :unmaintained
   disable! date: "2025-03-31", because: :unmaintained
 
@@ -33,15 +33,15 @@ class Mailhog < Formula
     ENV["GOPATH"] = buildpath
     ENV["GO111MODULE"] = "auto"
 
-    path = buildpath"srcgithub.commailhogMailHog"
+    path = buildpath/"src/github.com/mailhog/MailHog"
     path.install buildpath.children
 
-    system "go", "build", *std_go_args(output: bin"MailHog", ldflags: "-s -w"), path
+    system "go", "build", *std_go_args(output: bin/"MailHog", ldflags: "-s -w"), path
   end
 
   service do
     run [
-      opt_bin"MailHog",
+      opt_bin/"MailHog",
       "-api-bind-addr",
       "127.0.0.1:8025",
       "-smtp-bind-addr",
@@ -50,16 +50,16 @@ class Mailhog < Formula
       "127.0.0.1:8025",
     ]
     keep_alive true
-    log_path var"logmailhog.log"
-    error_log_path var"logmailhog.log"
+    log_path var/"log/mailhog.log"
+    error_log_path var/"log/mailhog.log"
   end
 
   test do
     address = "127.0.0.1:#{free_port}"
-    fork { exec "#{bin}MailHog", "-ui-bind-addr", address }
+    fork { exec "#{bin}/MailHog", "-ui-bind-addr", address }
     sleep 2
 
     output = shell_output("curl --silent #{address}")
-    assert_match "<title>MailHog<title>", output
+    assert_match "<title>MailHog</title>", output
   end
 end

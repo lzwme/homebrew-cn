@@ -1,13 +1,13 @@
 class Proctools < Formula
   desc "OpenBSD and Darwin versions of pgrep, pkill, and pfind"
-  homepage "https:proctools.sourceforge.net"
-  url "https:downloads.sourceforge.netprojectproctoolsproctools0.4pre1proctools-0.4pre1.tar.gz"
+  homepage "https://proctools.sourceforge.net/"
+  url "https://downloads.sourceforge.net/project/proctools/proctools/0.4pre1/proctools-0.4pre1.tar.gz"
   sha256 "4553b9c6eda959b12913bc39b6e048a8a66dad18f888f983697fece155ec5538"
   license all_of: ["BSD-3-Clause", "BSD-4-Clause-UC"]
 
   livecheck do
     url :stable
-    regex(%r{url=.*?proctools[^]+proctools[._-]v?(\d+(?:\.\d+)+(?:pre\d+)?)\.t}i)
+    regex(%r{url=.*?/proctools/[^/]+/proctools[._-]v?(\d+(?:\.\d+)+(?:pre\d+)?)\.t}i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -43,7 +43,7 @@ class Proctools < Formula
     "proctools-proctools.h" => "7c2ee6ac3dc7b26fb6738496fbabb1d1d065302a39207ae3fbacb1bc3a64371a",
   }.each do |name, sha|
     patch :p0 do
-      url "https:raw.githubusercontent.comHomebrewformula-patchesf411d167proctoolspatch-#{name}.diff"
+      url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/f411d167/proctools/patch-#{name}.diff"
       sha256 sha
     end
   end
@@ -51,7 +51,7 @@ class Proctools < Formula
   def install
     system "bsdmake", "PREFIX=#{prefix}"
 
-    ["pgreppgrep", "pkillpkill", "pfindpfind"].each do |prog|
+    ["pgrep/pgrep", "pkill/pkill", "pfind/pfind"].each do |prog|
       bin.install prog
       man1.install prog + ".1"
     end

@@ -1,10 +1,10 @@
 class Ali < Formula
   desc "Generate HTTP load and plot the results in real-time"
-  homepage "https:github.comnakabonneali"
-  url "https:github.comnakabonnealiarchiverefstagsv0.7.5.tar.gz"
+  homepage "https://github.com/nakabonne/ali"
+  url "https://ghfast.top/https://github.com/nakabonne/ali/archive/refs/tags/v0.7.5.tar.gz"
   sha256 "3eed2d7cbdf8365cad78833362e99138e7c0945d6dbc19e1253f8e0438a72f81"
   license "MIT"
-  head "https:github.comnakabonneali.git", branch: "master"
+  head "https://github.com/nakabonne/ali.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -29,9 +29,9 @@ class Ali < Formula
   end
 
   test do
-    output = shell_output(bin"ali --duration=10m --rate=100 http:host.xz 2>&1", 1)
+    output = shell_output(bin/"ali --duration=10m --rate=100 http://host.xz 2>&1", 1)
     assert_match "failed to start application: failed to generate terminal interface", output
 
-    assert_match version.to_s, shell_output("#{bin}ali --version 2>&1")
+    assert_match version.to_s, shell_output("#{bin}/ali --version 2>&1")
   end
 end

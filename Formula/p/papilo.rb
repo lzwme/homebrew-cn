@@ -1,7 +1,7 @@
 class Papilo < Formula
   desc "Parallel Presolve for Integer and Linear Optimization"
-  homepage "https:www.scipopt.org"
-  url "https:github.comscipoptpapiloarchiverefstagsv2.4.2.tar.gz"
+  homepage "https://www.scipopt.org"
+  url "https://ghfast.top/https://github.com/scipopt/papilo/archive/refs/tags/v2.4.2.tar.gz"
   sha256 "d2042c06b77db8dbb63d21ae238a110ffbc21d3378a0838c8091dcb9fab3ca4a"
   license all_of: ["LGPL-3.0-only", "GPL-3.0-only"]
   version_scheme 1
@@ -37,11 +37,11 @@ class Papilo < Formula
     system "cmake", "--build", "papilo-build"
     system "cmake", "--install", "papilo-build"
 
-    pkgshare.install "testinstancestest.mps"
+    pkgshare.install "test/instances/test.mps"
   end
 
   test do
-    output = shell_output("#{bin}papilo presolve -f #{pkgshare}test.mps")
+    output = shell_output("#{bin}/papilo presolve -f #{pkgshare}/test.mps")
     assert_match "presolving finished after", output
   end
 end

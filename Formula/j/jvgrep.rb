@@ -1,10 +1,10 @@
 class Jvgrep < Formula
   desc "Grep for Japanese users of Vim"
-  homepage "https:github.commattnjvgrep"
-  url "https:github.commattnjvgreparchiverefstagsv5.8.12.tar.gz"
+  homepage "https://github.com/mattn/jvgrep"
+  url "https://ghfast.top/https://github.com/mattn/jvgrep/archive/refs/tags/v5.8.12.tar.gz"
   sha256 "7e24a6954db1874f226054d1ca2e720945a1c92f9b6aac219e20ed4c3ab6e79c"
   license "MIT"
-  head "https:github.commattnjvgrep.git", branch: "master"
+  head "https://github.com/mattn/jvgrep.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -26,7 +26,7 @@ class Jvgrep < Formula
   end
 
   test do
-    (testpath"Hello.txt").write("Hello World!")
-    system bin"jvgrep", "Hello World!", testpath
+    (testpath/"Hello.txt").write("Hello World!")
+    system bin/"jvgrep", "Hello World!", testpath
   end
 end

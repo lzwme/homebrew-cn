@@ -2,12 +2,12 @@ cask "font-gelasio" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefonts.git",
-      verified:  "github.comgooglefonts",
+  url "https://github.com/google/fonts.git",
+      verified:  "github.com/google/fonts",
       branch:    "main",
-      only_path: "oflgelasio"
+      only_path: "ofl/gelasio"
   name "Gelasio"
-  homepage "https:fonts.google.comspecimenGelasio"
+  homepage "https://fonts.google.com/specimen/Gelasio"
 
   font "Gelasio-Italic[wght].ttf"
   font "Gelasio[wght].ttf"

@@ -1,10 +1,10 @@
 class Benthos < Formula
   desc "Stream processor for mundane tasks written in Go"
-  homepage "https:github.comredpanda-databenthos"
-  url "https:github.comredpanda-databenthosarchiverefstagsv4.53.0.tar.gz"
+  homepage "https://github.com/redpanda-data/benthos"
+  url "https://ghfast.top/https://github.com/redpanda-data/benthos/archive/refs/tags/v4.53.0.tar.gz"
   sha256 "d8c8c5495764814c4804f177e9474fbe2d927cc423e78b358c4c60479c149edd"
   license "MIT"
-  head "https:github.comredpanda-databenthos.git", branch: "main"
+  head "https://github.com/redpanda-data/benthos.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "b5723b16d59d32705cd4724b566b291fd264e66c709252c91b12e4ffd683b0f8"
@@ -18,21 +18,21 @@ class Benthos < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), ".cmdbenthos"
+    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/benthos"
   end
 
   test do
-    (testpath"sample.txt").write <<~EOS
+    (testpath/"sample.txt").write <<~EOS
       QmVudGhvcyByb2NrcyE=
     EOS
 
-    (testpath"test_pipeline.yaml").write <<~YAML
+    (testpath/"test_pipeline.yaml").write <<~YAML
       ---
       logger:
         level: ERROR
       input:
         file:
-          paths: [ .sample.txt ]
+          paths: [ ./sample.txt ]
       pipeline:
         threads: 1
         processors:
@@ -40,7 +40,7 @@ class Benthos < Formula
       output:
         stdout: {}
     YAML
-    output = shell_output("#{bin}benthos -c test_pipeline.yaml")
+    output = shell_output("#{bin}/benthos -c test_pipeline.yaml")
     assert_match "Benthos rocks!", output.strip
   end
 end

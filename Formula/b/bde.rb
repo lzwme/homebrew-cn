@@ -1,13 +1,13 @@
 class Bde < Formula
   desc "Basic Development Environment: foundational C++ libraries used at Bloomberg"
-  homepage "https:github.combloombergbde"
-  url "https:github.combloombergbdearchiverefstags4.25.0.0.tar.gz"
+  homepage "https://github.com/bloomberg/bde"
+  url "https://ghfast.top/https://github.com/bloomberg/bde/archive/refs/tags/4.25.0.0.tar.gz"
   sha256 "18a39abd2de974307d6e789667787ef154dd56a6d53ccf673921ceb92d398168"
   license "Apache-2.0"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -26,7 +26,7 @@ class Bde < Formula
   depends_on "pcre2"
 
   resource "bde-tools" do
-    url "https:github.combloombergbde-toolsarchiverefstags4.25.0.0.tar.gz"
+    url "https://ghfast.top/https://github.com/bloomberg/bde-tools/archive/refs/tags/4.25.0.0.tar.gz"
     sha256 "2e565d40b16696ffd81614e1fb356138d1f49645e3b7960bb69e631007d152b4"
 
     livecheck do
@@ -35,23 +35,23 @@ class Bde < Formula
   end
 
   def install
-    (buildpath"bde-tools").install resource("bde-tools")
+    (buildpath/"bde-tools").install resource("bde-tools")
 
     # Use brewed pcre2 instead of bundled sources
-    rm_r buildpath"thirdpartypcre2"
-    inreplace "thirdpartyCMakeLists.txt", "add_subdirectory(pcre2)\n", ""
-    inreplace "groupsbdlgroupbdl.dep", "pcre2", "libpcre2-posix"
-    inreplace "groupsbdlbdlpcrebdlpcre_regex.h", "#include <pcre2pcre2.h>", "#include <pcre2.h>"
+    rm_r buildpath/"thirdparty/pcre2"
+    inreplace "thirdparty/CMakeLists.txt", "add_subdirectory(pcre2)\n", ""
+    inreplace "groups/bdl/group/bdl.dep", "pcre2", "libpcre2-posix"
+    inreplace "groups/bdl/bdlpcre/bdlpcre_regex.h", "#include <pcre2/pcre2.h>", "#include <pcre2.h>"
 
-    toolchain_file = "bde-toolscmaketoolchains#{OS.kernel_name.downcase}default.cmake"
+    toolchain_file = "bde-tools/cmake/toolchains/#{OS.kernel_name.downcase}/default.cmake"
     args = %W[
       -DBUILD_BITNESS=64
       -DUFID=opt_exc_mt_64_shr
-      -DCMAKE_MODULE_PATH=.bde-toolscmake
+      -DCMAKE_MODULE_PATH=./bde-tools/cmake
       -DCMAKE_INSTALL_RPATH=#{rpath}
       -DCMAKE_TOOLCHAIN_FILE=#{toolchain_file}
       -DPYTHON_EXECUTABLE=#{which("python3.13")}
-      -DBdeBuildSystem_DIR=#{buildpath}bde-toolsBdeBuildSystem
+      -DBdeBuildSystem_DIR=#{buildpath}/bde-tools/BdeBuildSystem/
     ]
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
@@ -62,7 +62,7 @@ class Bde < Formula
   test do
     # bde tests are incredibly performance intensive
     # test below does a simple sanity check for linking against bsl.
-    (testpath"test.cpp").write <<~CPP
+    (testpath/"test.cpp").write <<~CPP
       #include <bsl_string.h>
       #include <bslma_default.h>
       int main() {
@@ -72,6 +72,6 @@ class Bde < Formula
       }
     CPP
     system ENV.cxx, "-I#{include}", "test.cpp", "-L#{lib}", "-lbsl", "-o", "test"
-    system ".test"
+    system "./test"
   end
 end

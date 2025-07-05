@@ -1,12 +1,12 @@
 class FlowControl < Formula
   desc "Programmer's text editor"
-  homepage "https:flow-control.dev"
+  homepage "https://flow-control.dev/"
   # version is used to build by `git describe --always --tags`
-  url "https:github.comneurocyteflow.git",
+  url "https://github.com/neurocyte/flow.git",
       tag:      "v0.3.3",
       revision: "fb5cd46d0b1fd277d6de3ded0a9d1d99bd73d643"
   license "MIT"
-  head "https:github.comneurocyteflow.git", branch: "master"
+  head "https://github.com/neurocyte/flow.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -23,7 +23,7 @@ class FlowControl < Formula
 
   def install
     # Fix illegal instruction errors when using bottles on older CPUs.
-    # https:github.comHomebrewhomebrew-coreissues92282
+    # https://github.com/Homebrew/homebrew-core/issues/92282
     cpu = case Hardware.oldest_cpu
     when :arm_vortex_tempest then "apple_m1" # See `zig targets`.
     else Hardware.oldest_cpu
@@ -39,10 +39,10 @@ class FlowControl < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}flow --version")
-    assert_match "Flow Control: a programmer's text editor", shell_output("#{bin}flow --help")
+    assert_match version.to_s, shell_output("#{bin}/flow --version")
+    assert_match "Flow Control: a programmer's text editor", shell_output("#{bin}/flow --help")
 
     # flow-control is a tui application
-    system bin"flow", "--list-languages"
+    system bin/"flow", "--list-languages"
   end
 end

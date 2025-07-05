@@ -1,11 +1,11 @@
 class Dcadec < Formula
   desc "DTS Coherent Acoustics decoder with support for HD extensions"
-  homepage "https:github.comfoo86dcadec"
-  url "https:github.comfoo86dcadec.git",
+  homepage "https://github.com/foo86/dcadec"
+  url "https://github.com/foo86/dcadec.git",
       tag:      "v0.2.0",
       revision: "0e074384c9569e921f8facfe3863912cdb400596"
   license "LGPL-2.1-or-later"
-  head "https:github.comfoo86dcadec.git", branch: "master"
+  head "https://github.com/foo86/dcadec.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "3ae8134706fc28f0b3e951bd4dddbba4c3e13b58b61484e5988180fba679570f"
@@ -26,7 +26,7 @@ class Dcadec < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "6f727365cbd24d678682c06e73ff49a7fdf92b17a5a1c6b82068522e4d0e0b1f"
   end
 
-  # Ref https:github.comfoo86dcadeccommitb93deed1a231dd6dd7e39b9fe7d2abe05aa00158
+  # Ref https://github.com/foo86/dcadec/commit/b93deed1a231dd6dd7e39b9fe7d2abe05aa00158
   deprecate! date: "2024-06-30", because: :deprecated_upstream
   disable! date: "2025-07-02", because: :deprecated_upstream
 
@@ -39,12 +39,12 @@ class Dcadec < Formula
 
   test do
     resource "homebrew-testdata" do
-      url "https:github.comfoo86dcadec-samplesrawfa7dcf8c98c6dxll_71_24_96_768.dtshd"
+      url "https://github.com/foo86/dcadec-samples/raw/fa7dcf8c98c6d/xll_71_24_96_768.dtshd"
       sha256 "d2911b34183f7379359cf914ee93228796894e0b0f0055e6ee5baefa4fd6a923"
     end
 
     resource("homebrew-testdata").stage do
-      system bin"dcadec", resource("homebrew-testdata").cached_download
+      system bin/"dcadec", resource("homebrew-testdata").cached_download
     end
   end
 end

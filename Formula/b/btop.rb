@@ -1,10 +1,10 @@
 class Btop < Formula
   desc "Resource monitor. C++ version and continuation of bashtop and bpytop"
-  homepage "https:github.comaristocratosbtop"
-  url "https:github.comaristocratosbtoparchiverefstagsv1.4.4.tar.gz"
+  homepage "https://github.com/aristocratos/btop"
+  url "https://ghfast.top/https://github.com/aristocratos/btop/archive/refs/tags/v1.4.4.tar.gz"
   sha256 "98d464041015c888c7b48de14ece5ebc6e410bc00ca7bb7c5a8010fe781f1dd8"
   license "Apache-2.0"
-  head "https:github.comaristocratosbtop.git", branch: "main"
+  head "https://github.com/aristocratos/btop.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "655e862017b804e7b2fde1e2f17ffe6ef46aeb5a78420580f6a270c4d6848dc6"
@@ -29,7 +29,7 @@ class Btop < Formula
   end
 
   # -ftree-loop-vectorize -flto=12 -s
-  # Needs Clang 16  Xcode 15+
+  # Needs Clang 16 / Xcode 15+
   fails_with :clang do
     build 1499
     cause "Requires C++20 support"
@@ -49,22 +49,22 @@ class Btop < Formula
   test do
     # The build will silently skip the manpage if it can't be built,
     # so let's double-check that it was.
-    assert_path_exists man1"btop.1"
+    assert_path_exists man1/"btop.1"
 
     require "pty"
-    require "ioconsole"
+    require "io/console"
 
-    config = (testpath".configbtop")
-    mkdir config"themes"
+    config = (testpath/".config/btop")
+    mkdir config/"themes"
     begin
-      (config"btop.conf").write <<~EOS
+      (config/"btop.conf").write <<~EOS
         #? Config file for btop v. #{version}
 
         update_ms=2000
         log_level=DEBUG
       EOS
 
-      r, w, pid = PTY.spawn(bin"btop", "--force-utf")
+      r, w, pid = PTY.spawn(bin/"btop", "--force-utf")
       r.winsize = [80, 130]
       sleep 5
       w.write "q"
@@ -72,11 +72,11 @@ class Btop < Formula
       # Apple silicon raises EIO
     end
 
-    log = (testpath".localstatebtop.log").read
+    log = (testpath/".local/state/btop.log").read
     # SMC is not available in VMs.
-    log = log.lines.grep_v(ERROR:.* SMC ).join if Hardware::CPU.virtualized?
+    log = log.lines.grep_v(/ERROR:.* SMC /).join if Hardware::CPU.virtualized?
     assert_match "===> btop++ v.#{version}", log
-    refute_match(ERROR:, log)
+    refute_match(/ERROR:/, log)
   ensure
     Process.kill("TERM", pid)
   end

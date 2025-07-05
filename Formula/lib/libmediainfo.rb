@@ -1,14 +1,14 @@
 class Libmediainfo < Formula
   desc "Shared library for mediainfo"
-  homepage "https:mediaarea.netenMediaInfo"
-  url "https:mediaarea.netdownloadsourcelibmediainfo25.04libmediainfo_25.04.tar.xz"
+  homepage "https://mediaarea.net/en/MediaInfo"
+  url "https://mediaarea.net/download/source/libmediainfo/25.04/libmediainfo_25.04.tar.xz"
   sha256 "ad45ed7c9db7807aa803845ca88bad9526aa8da883a58127e5390aaa2d81bbb1"
   license "BSD-2-Clause"
-  head "https:github.comMediaAreaMediaInfoLib.git", branch: "master"
+  head "https://github.com/MediaArea/MediaInfoLib.git", branch: "master"
 
   livecheck do
-    url "https:mediaarea.netenMediaInfoDownloadSource"
-    regex(href=.*?libmediainfo[._-]v?(\d+(?:\.\d+)+)\.ti)
+    url "https://mediaarea.net/en/MediaInfo/Download/Source"
+    regex(/href=.*?libmediainfo[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -33,24 +33,24 @@ class Libmediainfo < Formula
   uses_from_macos "zlib"
 
   # These files used to be distributed as part of the media-info formula
-  link_overwrite "includeMediaInfo*"
-  link_overwrite "includeMediaInfoDLL*"
-  link_overwrite "libpkgconfiglibmediainfo.pc"
-  link_overwrite "liblibmediainfo.*"
+  link_overwrite "include/MediaInfo/*"
+  link_overwrite "include/MediaInfoDLL/*"
+  link_overwrite "lib/pkgconfig/libmediainfo.pc"
+  link_overwrite "lib/libmediainfo.*"
 
   def install
-    system "cmake", "-S", "ProjectCMake", "-B", "build", "-DBUILD_SHARED_LIBS=ON", *std_cmake_args
+    system "cmake", "-S", "Project/CMake", "-B", "build", "-DBUILD_SHARED_LIBS=ON", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end
 
   test do
-    (testpath"test.cc").write <<~CPP
+    (testpath/"test.cc").write <<~CPP
       #define _UNICODE
       #include <iostream>
       #include <string>
       #include <filesystem>
-      #include <MediaInfoMediaInfo.h>
+      #include <MediaInfo/MediaInfo.h>
 
       int main(int argc, char* argv[]) {
           std::wstring file_path = std::filesystem::path(argv[1]).wstring();
@@ -59,7 +59,7 @@ class Libmediainfo < Formula
           size_t open_result = media_info.Open(file_path);
           std::wstring result;
 
-           Get information about audio streams.
+          // Get information about audio streams.
           size_t audio_streams = media_info.Count_Get(MediaInfoLib::stream_t::Stream_Audio);
           for (size_t i = 0; i < audio_streams; ++i) {
               result = media_info.Get(MediaInfoLib::stream_t::Stream_Audio, i, L"Format");
@@ -75,6 +75,6 @@ class Libmediainfo < Formula
       }
     CPP
     system ENV.cxx, "-std=c++17", "test.cc", "-I#{include}", "-L#{lib}", "-lmediainfo", "-o", "test"
-    system ".test", test_fixtures("test.m4a")
+    system "./test", test_fixtures("test.m4a")
   end
 end

@@ -1,14 +1,14 @@
 class Clipboard < Formula
   desc "Cut, copy, and paste anything, anywhere, all from the terminal"
-  homepage "https:getclipboard.app"
-  url "https:github.comSlackadaysClipboardarchiverefstags0.10.0.tar.gz"
+  homepage "https://getclipboard.app"
+  url "https://ghfast.top/https://github.com/Slackadays/Clipboard/archive/refs/tags/0.10.0.tar.gz"
   sha256 "741717ee505a7852fab5c69740b019e2b33f81d948232894ce294ed0a55e70fb"
   license "GPL-3.0-or-later"
-  head "https:github.comSlackadaysClipboard.git", branch: "main"
+  head "https://github.com/Slackadays/Clipboard.git", branch: "main"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -45,8 +45,8 @@ class Clipboard < Formula
     ENV.llvm_clang if OS.mac? && DevelopmentTools.clang_build_version <= 1300
 
     # `-Os` is slow and buggy.
-    #   https:github.comHomebrewhomebrew-coreissues136551
-    #   https:github.comSlackadaysClipboardissues147
+    #   https://github.com/Homebrew/homebrew-core/issues/136551
+    #   https://github.com/Slackadays/Clipboard/issues/147
     ENV.O3
 
     system "cmake", "-S", ".", "-B", "build", "-DCMAKE_OSX_ARCHITECTURES=#{Hardware::CPU.arch}", *std_cmake_args
@@ -57,8 +57,8 @@ class Clipboard < Formula
   test do
     ENV["CLIPBOARD_FORCETTY"] = "1"
     ENV["CLIPBOARD_NOGUI"] = "1"
-    system bin"cb", "copy", test_fixtures("test.png")
-    system bin"cb", "paste"
-    assert_path_exists testpath"test.png"
+    system bin/"cb", "copy", test_fixtures("test.png")
+    system bin/"cb", "paste"
+    assert_path_exists testpath/"test.png"
   end
 end

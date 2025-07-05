@@ -1,10 +1,10 @@
 class Weighttp < Formula
   desc "Webserver benchmarking tool that supports multithreading"
-  homepage "https:redmine.lighttpd.netprojectsweighttpwiki"
-  url "https:github.comlighttpdweighttparchiverefstagsweighttp-0.5.tar.gz"
+  homepage "https://redmine.lighttpd.net/projects/weighttp/wiki"
+  url "https://ghfast.top/https://github.com/lighttpd/weighttp/archive/refs/tags/weighttp-0.5.tar.gz"
   sha256 "5900600cc108041d0e38abd02354d7d3b14649c827c4266c0d550b87904f1141"
   license "MIT"
-  head "https:git.lighttpd.netlighttpdweighttp.git", branch: "master"
+  head "https://git.lighttpd.net/lighttpd/weighttp.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "747f42a474d5c96eb75aa6d3f26dd2871d4df6f4d81b183331fd884fa3494548"
@@ -29,6 +29,6 @@ class Weighttp < Formula
 
   test do
     # Stick with HTTP to avoid 'error: no ssl support yet'
-    system bin"weighttp", "-n", "1", "http:redmine.lighttpd.netprojectsweighttpwiki"
+    system bin/"weighttp", "-n", "1", "http://redmine.lighttpd.net/projects/weighttp/wiki"
   end
 end

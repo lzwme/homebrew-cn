@@ -1,10 +1,10 @@
 class ImmichGo < Formula
   desc "Alternative to the official immich-CLI command written in Go"
-  homepage "https:github.comsimulotimmich-go"
-  url "https:github.comsimulotimmich-goarchiverefstagsv0.27.0.tar.gz"
+  homepage "https://github.com/simulot/immich-go"
+  url "https://ghfast.top/https://github.com/simulot/immich-go/archive/refs/tags/v0.27.0.tar.gz"
   sha256 "8ba4a21d3b69d6543cd4445d4a7c4a05facb53bb9c3666400c11543b7c4a5bbf"
   license "AGPL-3.0-only"
-  head "https:github.comsimulotimmich-go.git", branch: "main"
+  head "https://github.com/simulot/immich-go.git", branch: "main"
 
   livecheck do
     url :stable
@@ -23,16 +23,16 @@ class ImmichGo < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = "-s -w -X github.comsimulotimmich-goapp.Version=#{version}"
+    ldflags = "-s -w -X github.com/simulot/immich-go/app.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:)
 
-    generate_completions_from_executable(bin"immich-go", "completion")
+    generate_completions_from_executable(bin/"immich-go", "completion")
   end
 
   test do
-    output = shell_output("#{bin}immich-go --server http:localhost --api-key test upload from-folder . 2>&1", 1)
+    output = shell_output("#{bin}/immich-go --server http://localhost --api-key test upload from-folder . 2>&1", 1)
     assert_match "Error: error while calling the immich's ping API", output
 
-    assert_match version.to_s, shell_output("#{bin}immich-go --version")
+    assert_match version.to_s, shell_output("#{bin}/immich-go --version")
   end
 end

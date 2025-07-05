@@ -1,10 +1,10 @@
 class Dog < Formula
   desc "Command-line DNS client"
-  homepage "https:dns.lookup.dog"
-  url "https:github.comoghamdogarchiverefstagsv0.1.0.tar.gz"
+  homepage "https://dns.lookup.dog/"
+  url "https://ghfast.top/https://github.com/ogham/dog/archive/refs/tags/v0.1.0.tar.gz"
   sha256 "82387d38727bac7fcdb080970e84b36de80bfe7923ce83f993a77d9ac7847858"
   license "EUPL-1.2"
-  head "https:github.comoghamdog.git", branch: "master"
+  head "https://github.com/ogham/dog.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -30,21 +30,21 @@ class Dog < Formula
 
   on_linux do
     depends_on "pkgconf" => :build
-    depends_on "openssl@1.1" # OpenSSL 3 issue: https:github.comoghamdogissues98
+    depends_on "openssl@1.1" # OpenSSL 3 issue: https://github.com/ogham/dog/issues/98
   end
 
   def install
     system "cargo", "install", *std_cargo_args
-    bash_completion.install "completionsdog.bash" => "dog"
-    zsh_completion.install "completionsdog.zsh" => "_dog"
-    fish_completion.install "completionsdog.fish"
+    bash_completion.install "completions/dog.bash" => "dog"
+    zsh_completion.install "completions/dog.zsh" => "_dog"
+    fish_completion.install "completions/dog.fish"
     system "just", "man"
-    man1.install "targetmandog.1"
+    man1.install "target/man/dog.1"
   end
 
   test do
-    output = shell_output("#{bin}dog dns.google A --seconds --color=never")
-    assert_match(^A\s+dns\.google\.\s+\d+\s+8\.8\.4\.4, output)
-    assert_match(^A\s+dns\.google\.\s+\d+\s+8\.8\.8\.8, output)
+    output = shell_output("#{bin}/dog dns.google A --seconds --color=never")
+    assert_match(/^A\s+dns\.google\.\s+\d+\s+8\.8\.4\.4/, output)
+    assert_match(/^A\s+dns\.google\.\s+\d+\s+8\.8\.8\.8/, output)
   end
 end

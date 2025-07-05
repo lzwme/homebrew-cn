@@ -2,12 +2,12 @@ cask "font-inknut-antiqua" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefonts.git",
-      verified:  "github.comgooglefonts",
+  url "https://github.com/google/fonts.git",
+      verified:  "github.com/google/fonts",
       branch:    "main",
-      only_path: "oflinknutantiqua"
+      only_path: "ofl/inknutantiqua"
   name "Inknut Antiqua"
-  homepage "https:fonts.google.comspecimenInknut+Antiqua"
+  homepage "https://fonts.google.com/specimen/Inknut+Antiqua"
 
   font "InknutAntiqua-Black.ttf"
   font "InknutAntiqua-Bold.ttf"

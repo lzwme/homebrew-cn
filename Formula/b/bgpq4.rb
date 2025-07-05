@@ -1,14 +1,14 @@
 class Bgpq4 < Formula
   desc "BGP filtering automation for Cisco, Juniper, BIRD and OpenBGPD routers"
-  homepage "https:github.combgpbgpq4"
-  url "https:github.combgpbgpq4archiverefstags1.15.tar.gz"
+  homepage "https://github.com/bgp/bgpq4"
+  url "https://ghfast.top/https://github.com/bgp/bgpq4/archive/refs/tags/1.15.tar.gz"
   sha256 "30fea8d6274af6e3fba30497b977a924c79de326ae2211e490362dc7282403d6"
   license "BSD-2-Clause"
-  head "https:github.combgpbgpq4.git", branch: "main"
+  head "https://github.com/bgp/bgpq4.git", branch: "main"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -28,8 +28,8 @@ class Bgpq4 < Formula
   depends_on "libtool" => :build
 
   def install
-    system ".bootstrap"
-    system ".configure", "--prefix=#{prefix}", "--mandir=#{man}"
+    system "./bootstrap"
+    system "./configure", "--prefix=#{prefix}", "--mandir=#{man}"
     system "make", "install"
   end
 
@@ -37,9 +37,9 @@ class Bgpq4 < Formula
     output = <<~EOS
       no ip prefix-list NN
       ! generated prefix-list NN is empty
-      ip prefix-list NN deny 0.0.0.00
+      ip prefix-list NN deny 0.0.0.0/0
     EOS
 
-    assert_match output, shell_output("#{bin}bgpq4 AS-ANY")
+    assert_match output, shell_output("#{bin}/bgpq4 AS-ANY")
   end
 end

@@ -1,14 +1,14 @@
 class Zbar < Formula
   desc "Suite of barcodes-reading tools"
-  homepage "https:github.commchehabzbar"
-  url "https:linuxtv.orgdownloadszbarzbar-0.23.93.tar.bz2"
+  homepage "https://github.com/mchehab/zbar"
+  url "https://linuxtv.org/downloads/zbar/zbar-0.23.93.tar.bz2"
   sha256 "83be8f85fc7c288fd91f98d52fc55db7eedbddcf10a83d9221d7034636683fa0"
   license "LGPL-2.1-only"
   revision 2
 
   livecheck do
-    url "https:linuxtv.orgdownloadszbar"
-    regex(href=.*?zbar[._-]v?(\d+(?:\.\d+)+)\.ti)
+    url "https://linuxtv.org/downloads/zbar/"
+    regex(/href=.*?zbar[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -24,7 +24,7 @@ class Zbar < Formula
   end
 
   head do
-    url "https:github.commchehabzbar.git", branch: "master"
+    url "https://github.com/mchehab/zbar.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -54,11 +54,11 @@ class Zbar < Formula
   end
 
   def install
-    ENV["XML_CATALOG_FILES"] = etc"xmlcatalog"
+    ENV["XML_CATALOG_FILES"] = etc/"xml/catalog"
 
     system "autoreconf", "--force", "--install", "--verbose" if build.head?
 
-    system ".configure", "--disable-silent-rules",
+    system "./configure", "--disable-silent-rules",
                           "--disable-video",
                           "--without-python",
                           "--without-qt",
@@ -69,6 +69,6 @@ class Zbar < Formula
   end
 
   test do
-    system bin"zbarimg", "-h"
+    system bin/"zbarimg", "-h"
   end
 end

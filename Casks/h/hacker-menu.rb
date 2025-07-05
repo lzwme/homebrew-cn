@@ -2,10 +2,10 @@ cask "hacker-menu" do
   version "1.1.5"
   sha256 "ab7de53e74b4514f46726f6dc3be467a1dd7f320990656b60cbb7ea4dd74bacf"
 
-  url "https:github.comowentherealhacker-menureleasesdownloadv#{version}hacker-menu-mac.zip"
+  url "https://ghfast.top/https://github.com/owenthereal/hacker-menu/releases/download/v#{version}/hacker-menu-mac.zip"
   name "Hacker Menu"
   desc "Hacker News Delivered to Desktop"
-  homepage "https:github.comowentherealhacker-menu"
+  homepage "https://github.com/owenthereal/hacker-menu"
 
   no_autobump! because: :requires_manual_review
 
@@ -15,12 +15,12 @@ cask "hacker-menu" do
   app "Hacker Menu.app"
 
   zap trash: [
-    "~LibraryApplication Supportcom.electron.hacker_menu.ShipIt",
-    "~LibraryApplication SupportHacker Menu",
-    "~LibraryCachescom.electron.hacker_menu",
-    "~LibraryCachesHacker Menu",
-    "~LibraryPreferencescom.electron.hacker_menu.plist",
-    "~LibrarySaved Application Statecom.electron.hacker_menu.savedState",
+    "~/Library/Application Support/com.electron.hacker_menu.ShipIt",
+    "~/Library/Application Support/Hacker Menu",
+    "~/Library/Caches/com.electron.hacker_menu",
+    "~/Library/Caches/Hacker Menu",
+    "~/Library/Preferences/com.electron.hacker_menu.plist",
+    "~/Library/Saved Application State/com.electron.hacker_menu.savedState",
   ]
 
   caveats do

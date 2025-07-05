@@ -1,10 +1,10 @@
 class MistCli < Formula
-  desc "Mac command-line tool that automatically downloads macOS Firmwares  Installers"
-  homepage "https:github.comninxsoftmist-cli"
-  url "https:github.comninxsoftmist-cliarchiverefstagsv2.1.1.tar.gz"
+  desc "Mac command-line tool that automatically downloads macOS Firmwares / Installers"
+  homepage "https://github.com/ninxsoft/mist-cli"
+  url "https://ghfast.top/https://github.com/ninxsoft/mist-cli/archive/refs/tags/v2.1.1.tar.gz"
   sha256 "aec30c9ff043e17ce0e6dd563480bd8015910ea1f110d4b767522e41e92bc00e"
   license "MIT"
-  head "https:github.comninxsoftmist-cli.git", branch: "main"
+  head "https://github.com/ninxsoft/mist-cli.git", branch: "main"
 
   bottle do
     rebuild 1
@@ -21,16 +21,16 @@ class MistCli < Formula
 
   def install
     system "swift", "build", "--disable-sandbox", "--configuration", "release"
-    bin.install ".buildreleasemist"
+    bin.install ".build/release/mist"
   end
 
   test do
     # basic usage output
-    assert_match "-h, --help", shell_output("#{bin}mist").strip
+    assert_match "-h, --help", shell_output("#{bin}/mist").strip
 
     # check we can export the output list
-    out = testpath"out.json"
-    system bin"mist", "list", "firmware", "--quiet", "--export=#{out}", "--output-type=json"
+    out = testpath/"out.json"
+    system bin/"mist", "list", "firmware", "--quiet", "--export=#{out}", "--output-type=json"
     assert_path_exists out
 
     # check that it's parseable JSON in the format we expect

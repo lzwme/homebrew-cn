@@ -2,14 +2,14 @@ cask "azookey" do
   version "0.1.0-alpha.19"
   sha256 "bc40d2dbc81f7d5982ad008551c89c5bb5442d7031bf5c1a0d555bdfc7a4c14e"
 
-  url "https:github.comazooKeyazooKey-Desktopreleasesdownloadv#{version}azooKey-release-signed.pkg"
+  url "https://ghfast.top/https://github.com/azooKey/azooKey-Desktop/releases/download/v#{version}/azooKey-release-signed.pkg"
   name "azooKey"
   desc "Japanese input method"
-  homepage "https:github.comazooKeyazooKey-Desktop"
+  homepage "https://github.com/azooKey/azooKey-Desktop"
 
   livecheck do
     url :url
-    regex(^v?(\d+(?:\.\d+)+(?:[._-]alpha[._-]?\d+)?)$i)
+    regex(/^v?(\d+(?:\.\d+)+(?:[._-]alpha[._-]?\d+)?)$/i)
     strategy :github_latest
   end
 
@@ -21,9 +21,9 @@ cask "azookey" do
             pkgutil: "dev.ensan.inputmethod.azooKeyMac"
 
   zap trash: [
-    "~LibraryApplication Scriptsdev.ensan.inputmethod.azooKeyMac",
-    "~LibraryApplication Scriptsgroup.dev.ensan.inputmethod.azooKeyMac",
-    "~LibraryContainersdev.ensan.inputmethod.azooKeyMac",
-    "~LibraryGroup Containersgroup.dev.ensan.inputmethod.azooKeyMac",
+    "~/Library/Application Scripts/dev.ensan.inputmethod.azooKeyMac",
+    "~/Library/Application Scripts/group.dev.ensan.inputmethod.azooKeyMac",
+    "~/Library/Containers/dev.ensan.inputmethod.azooKeyMac",
+    "~/Library/Group Containers/group.dev.ensan.inputmethod.azooKeyMac",
   ]
 end

@@ -5,13 +5,13 @@ cask "cables" do
   sha256 arm:   "26ac6599da608c909b9a723c546de9940ad54f3f344221f4830f34e14881b266",
          intel: "c2ca56de7444e5860cb63751916fb1ef22f48c83c57b741f1f5b438c4c03ae12"
 
-  url "https:github.comcables-glcables_electronreleasesdownloadv#{version}cables-#{version}-mac#{arch}.dmg"
+  url "https://ghfast.top/https://github.com/cables-gl/cables_electron/releases/download/v#{version}/cables-#{version}-mac#{arch}.dmg"
   name "Cables"
   desc "Visual programming tool"
-  homepage "https:github.comcables-glcables_electron"
+  homepage "https://github.com/cables-gl/cables_electron"
 
   livecheck do
-    url "https:dev.cables.glapidownloadslatest"
+    url "https://dev.cables.gl/api/downloads/latest/"
     strategy :json do |json|
       json["name"]
     end
@@ -22,10 +22,10 @@ cask "cables" do
   app "cables-#{version}.app"
 
   zap trash: [
-    "~LibraryApplication Supportcables_electron",
-    "~LibraryApplication Supportcom.apple.sharedfilelistcom.apple.LSSharedFileList.ApplicationRecentDocumentsgl.cables.standalone.sfl*",
-    "~LibraryLogscables_electron",
-    "~LibraryPreferencesgl.cables.standalone.plist",
-    "~LibrarySaved Application Stategl.cables.standalone.savedState",
+    "~/Library/Application Support/cables_electron",
+    "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/gl.cables.standalone.sfl*",
+    "~/Library/Logs/cables_electron",
+    "~/Library/Preferences/gl.cables.standalone.plist",
+    "~/Library/Saved Application State/gl.cables.standalone.savedState",
   ]
 end

@@ -2,8 +2,8 @@ class Iproute2mac < Formula
   include Language::Python::Shebang
 
   desc "CLI wrapper for basic network utilities on macOS - ip command"
-  homepage "https:github.combronaiproute2mac"
-  url "https:github.combronaiproute2macreleasesdownloadv1.5.4iproute2mac-1.5.4.tar.gz"
+  homepage "https://github.com/brona/iproute2mac"
+  url "https://ghfast.top/https://github.com/brona/iproute2mac/releases/download/v1.5.4/iproute2mac-1.5.4.tar.gz"
   sha256 "9548ed9ead114a3a7095890c51e0e5b1d8ea1dd955692400e19fb97f1b6ad015"
   license "MIT"
 
@@ -18,18 +18,18 @@ class Iproute2mac < Formula
   depends_on "python@3.13"
 
   def install
-    libexec.install "srciproute2mac.py"
-    libexec.install "srcip.py" => "ip"
-    libexec.install "srcbridge.py" => "bridge"
-    rewrite_shebang detected_python_shebang, libexec"ip", libexec"bridge", libexec"iproute2mac.py"
-    bin.write_exec_script (libexec"ip"), (libexec"bridge")
+    libexec.install "src/iproute2mac.py"
+    libexec.install "src/ip.py" => "ip"
+    libexec.install "src/bridge.py" => "bridge"
+    rewrite_shebang detected_python_shebang, libexec/"ip", libexec/"bridge", libexec/"iproute2mac.py"
+    bin.write_exec_script (libexec/"ip"), (libexec/"bridge")
   end
 
   test do
-    system "sbinifconfig -v -a 2>devnull"
-    system bin"ip", "route"
-    system bin"ip", "address"
-    system bin"ip", "neigh"
-    system bin"bridge", "link"
+    system "/sbin/ifconfig -v -a 2>/dev/null"
+    system bin/"ip", "route"
+    system bin/"ip", "address"
+    system bin/"ip", "neigh"
+    system bin/"bridge", "link"
   end
 end

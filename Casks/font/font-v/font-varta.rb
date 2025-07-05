@@ -2,10 +2,10 @@ cask "font-varta" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefontsrawmainoflvartaVarta%5Bwght%5D.ttf",
-      verified: "github.comgooglefonts"
+  url "https://github.com/google/fonts/raw/main/ofl/varta/Varta%5Bwght%5D.ttf",
+      verified: "github.com/google/fonts/"
   name "Varta"
-  homepage "https:fonts.google.comspecimenVarta"
+  homepage "https://fonts.google.com/specimen/Varta"
 
   font "Varta[wght].ttf"
 

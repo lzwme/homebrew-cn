@@ -1,7 +1,7 @@
 class Rospo < Formula
   desc "Simple, reliable, persistent ssh tunnels with embedded ssh server"
-  homepage "https:github.comferamarospo"
-  url "https:github.comferamarospoarchiverefstagsv0.15.0.tar.gz"
+  homepage "https://github.com/ferama/rospo"
+  url "https://ghfast.top/https://github.com/ferama/rospo/archive/refs/tags/v0.15.0.tar.gz"
   sha256 "098c84c2c6904761065aeb7fdacdbd53b59fa12cc3d0368f1ca1712993323efa"
   license "MIT"
 
@@ -17,15 +17,15 @@ class Rospo < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w -X 'github.comferamarospocmd.Version=#{version}'")
+    system "go", "build", *std_go_args(ldflags: "-s -w -X 'github.com/ferama/rospo/cmd.Version=#{version}'")
 
-    generate_completions_from_executable(bin"rospo", "completion")
+    generate_completions_from_executable(bin/"rospo", "completion")
   end
 
   test do
-    system bin"rospo", "-v"
-    system bin"rospo", "keygen", "-s"
-    assert_path_exists testpath"identity"
-    assert_path_exists testpath"identity.pub"
+    system bin/"rospo", "-v"
+    system bin/"rospo", "keygen", "-s"
+    assert_path_exists testpath/"identity"
+    assert_path_exists testpath/"identity.pub"
   end
 end

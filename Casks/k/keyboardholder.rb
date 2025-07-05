@@ -2,11 +2,11 @@ cask "keyboardholder" do
   version "1.13.8"
   sha256 "9233f4fe0b3293b681566ce88fa62b1979d5a234367a96f2bb1c9ebe2d939933"
 
-  url "https:github.comleaves615KeyboardHolderreleasesdownloadv#{version}KeyboardHolder-#{version}.zip",
-      verified: "github.comleaves615KeyboardHolder"
+  url "https://ghfast.top/https://github.com/leaves615/KeyboardHolder/releases/download/v#{version}/KeyboardHolder-#{version}.zip",
+      verified: "github.com/leaves615/KeyboardHolder/"
   name "KeyboardHolder"
   desc "Switch input method per application"
-  homepage "https:keyboardholder.leavesc.com"
+  homepage "https://keyboardholder.leavesc.com/"
 
   no_autobump! because: :requires_manual_review
 
@@ -15,12 +15,12 @@ cask "keyboardholder" do
   app "KeyboardHolder.app"
 
   zap trash: [
-    "~LibraryApplication Scriptscn.leaves.KeyboardHolderLaunchHelper",
-    "~LibraryApplication Supportcn.leaves.KeyboardHolder",
-    "~LibraryCachescn.leaves.KeyboardHolder",
-    "~LibraryCachescom.plausiblelabs.crashreporter.datacn.leaves.KeyboardHolder",
-    "~LibraryContainerscn.leaves.KeyboardHolderLaunchHelper",
-    "~LibraryLogscn.leaves.KeyboardHolder",
-    "~LibraryPreferencescn.leaves.KeyboardHolder.plist",
+    "~/Library/Application Scripts/cn.leaves.KeyboardHolderLaunchHelper",
+    "~/Library/Application Support/cn.leaves.KeyboardHolder",
+    "~/Library/Caches/cn.leaves.KeyboardHolder",
+    "~/Library/Caches/com.plausiblelabs.crashreporter.data/cn.leaves.KeyboardHolder",
+    "~/Library/Containers/cn.leaves.KeyboardHolderLaunchHelper",
+    "~/Library/Logs/cn.leaves.KeyboardHolder",
+    "~/Library/Preferences/cn.leaves.KeyboardHolder.plist",
   ]
 end

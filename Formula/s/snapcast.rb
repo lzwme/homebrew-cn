@@ -1,7 +1,7 @@
 class Snapcast < Formula
   desc "Synchronous multiroom audio player"
-  homepage "https:github.combadaixsnapcast"
-  url "https:github.combadaixsnapcastarchiverefstagsv0.31.0.tar.gz"
+  homepage "https://github.com/badaix/snapcast"
+  url "https://ghfast.top/https://github.com/badaix/snapcast/archive/refs/tags/v0.31.0.tar.gz"
   sha256 "d38d576f85bfa936412413b6860875ba3b462a8e67405f3984a0485778f2fdac"
   license "GPL-3.0-or-later"
   revision 1
@@ -40,17 +40,17 @@ class Snapcast < Formula
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
     # FIXME: if permissions aren't changed, the install fails with:
-    # Error: Failed to read Mach-O binary: sharesnapserverplug-insmeta_mpd.py
-    chmod 0555, share"snapserverplug-insmeta_mpd.py"
+    # Error: Failed to read Mach-O binary: share/snapserver/plug-ins/meta_mpd.py
+    chmod 0555, share/"snapserver/plug-ins/meta_mpd.py"
   end
 
   test do
-    server_pid = spawn bin"snapserver"
+    server_pid = spawn bin/"snapserver"
     sleep 2
 
     begin
-      output_log = testpath"output.log"
-      client_pid = spawn bin"snapclient", [:out, :err] => output_log.to_s
+      output_log = testpath/"output.log"
+      client_pid = spawn bin/"snapclient", [:out, :err] => output_log.to_s
       sleep 10
       if OS.mac?
         assert_match("Connected to", output_log.read)

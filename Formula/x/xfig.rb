@@ -1,13 +1,13 @@
 class Xfig < Formula
   desc "Facility for interactive generation of figures"
-  homepage "https:mcj.sourceforge.net"
-  url "https:downloads.sourceforge.netmcjxfig-3.2.9a.tar.xz"
+  homepage "https://mcj.sourceforge.net/"
+  url "https://downloads.sourceforge.net/mcj/xfig-3.2.9a.tar.xz"
   sha256 "bc572a1881e5e20987ac590158b041ab7803845a9691036d3ba5e982f66d9ca3"
   license "MIT"
 
   livecheck do
     url :stable
-    regex(%r{url=.*?xfig[._-]v?(\d+(?:\.\d+)+[a-z]?)\.t}i)
+    regex(%r{url=.*?/xfig[._-]v?(\d+(?:\.\d+)+[a-z]?)\.t}i)
   end
 
   bottle do
@@ -40,30 +40,30 @@ class Xfig < Formula
 
   def install
     # Use GNU sed on macOS to avoid this build failure:
-    # `sed: 1: " ^[ \t]*\(!\|$\) d; s ...": bad flag in substitute command: '}'`
-    ENV.prepend_path "PATH", Formula["gnu-sed"].libexec"gnubin" if OS.mac?
+    # `sed: 1: " /^[ \t]*\(!\|$\)/ d; s ...": bad flag in substitute command: '}'`
+    ENV.prepend_path "PATH", Formula["gnu-sed"].libexec/"gnubin" if OS.mac?
 
-    # Xft #includes <ft2build.h>, not <freetype2ft2build.h>, hence freetype2
+    # Xft #includes <ft2build.h>, not <freetype2/ft2build.h>, hence freetype2
     # must be put into the search path.
-    ENV.append "CFLAGS", "-I#{Formula["freetype"].opt_include}freetype2"
+    ENV.append "CFLAGS", "-I#{Formula["freetype"].opt_include}/freetype2"
 
-    system ".configure", "--with-appdefaultdir=#{etc}X11app-defaults",
+    system "./configure", "--with-appdefaultdir=#{etc}/X11/app-defaults",
                           "--disable-silent-rules",
                           *std_configure_args
     system "make", "install-strip"
 
     if OS.mac?
-      (etc"X11app-defaultsFig").append_lines <<~X11_DEFAULTS
+      (etc/"X11/app-defaults/Fig").append_lines <<~X11_DEFAULTS
         ! Disable internationalization to stop segfaults
-        ! https:github.comHomebrewhomebrew-coreissues221146
-        ! https:sourceforge.netpmcjtickets177#7c23
+        ! https://github.com/Homebrew/homebrew-core/issues/221146
+        ! https://sourceforge.net/p/mcj/tickets/177/#7c23
         Fig.international: False
       X11_DEFAULTS
     end
   end
 
   test do
-    assert_equal "Xfig #{version}", shell_output("#{bin}xfig -V 2>&1").strip
-    assert_equal "Error: Can't open display:", shell_output("DISPLAY= #{bin}xfig 2>&1", 1).strip
+    assert_equal "Xfig #{version}", shell_output("#{bin}/xfig -V 2>&1").strip
+    assert_equal "Error: Can't open display:", shell_output("DISPLAY= #{bin}/xfig 2>&1", 1).strip
   end
 end

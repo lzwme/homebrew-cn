@@ -1,13 +1,13 @@
 class Dhcpdump < Formula
   desc "Monitor DHCP traffic for debugging purposes"
-  homepage "https:github.combbonevdhcpdump"
-  url "https:github.combbonevdhcpdumpreleasesdownloadv1.9dhcpdump-1.9.tar.xz"
+  homepage "https://github.com/bbonev/dhcpdump"
+  url "https://ghfast.top/https://github.com/bbonev/dhcpdump/releases/download/v1.9/dhcpdump-1.9.tar.xz"
   sha256 "3658ac21cc33e79e72bed070454e49c543017991cb6c37f4253c85e9176869d1"
   license "BSD-2-Clause"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -34,6 +34,6 @@ class Dhcpdump < Formula
   end
 
   test do
-    system bin"dhcpdump", "-h"
+    system bin/"dhcpdump", "-h"
   end
 end

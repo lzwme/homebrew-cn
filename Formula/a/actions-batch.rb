@@ -1,10 +1,10 @@
 class ActionsBatch < Formula
   desc "Time-sharing supercomputer built on GitHub Actions"
-  homepage "https:github.comalexellisactions-batch"
-  url "https:github.comalexellisactions-batcharchiverefstagsv0.0.3.tar.gz"
+  homepage "https://github.com/alexellis/actions-batch"
+  url "https://ghfast.top/https://github.com/alexellis/actions-batch/archive/refs/tags/v0.0.3.tar.gz"
   sha256 "9290b338e41ff71fb599de9996c64e33a58ec9aa4e8fdd7c4484ec2b085f2160"
   license "MIT"
-  head "https:github.comalexellisactions-batch.git", branch: "master"
+  head "https://github.com/alexellis/actions-batch.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -29,13 +29,13 @@ class ActionsBatch < Formula
 
   test do
     # fake token file
-    (testpath"notvavlid").write "fake"
+    (testpath/"notvavlid").write "fake"
 
-    cmd = "#{bin}actions-batch --private=false --owner alexellis " \
-          "--token-file #{testpath}notvavlid --runs-on ubuntu-latest " \
-          "--org=false --file #{pkgshare}examplescurl.sh"
+    cmd = "#{bin}/actions-batch --private=false --owner alexellis " \
+          "--token-file #{testpath}/notvavlid --runs-on ubuntu-latest " \
+          "--org=false --file #{pkgshare}/examples/curl.sh"
 
     output = shell_output("#{cmd} 2>&1", 2)
-    assert_match "POST https:api.github.comuserrepos: 401 Bad credentials", output
+    assert_match "POST https://api.github.com/user/repos: 401 Bad credentials", output
   end
 end

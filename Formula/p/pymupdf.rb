@@ -1,7 +1,7 @@
 class Pymupdf < Formula
   desc "Python bindings for the PDF toolkit and renderer MuPDF"
-  homepage "https:pymupdf.readthedocs.ioenlatest"
-  url "https:files.pythonhosted.orgpackages6dd470a265e4bcd43e97480ae62da69396ef4507c8f9cfd179005ee731c92a04pymupdf-1.26.3.tar.gz"
+  homepage "https://pymupdf.readthedocs.io/en/latest/"
+  url "https://files.pythonhosted.org/packages/6d/d4/70a265e4bcd43e97480ae62da69396ef4507c8f9cfd179005ee731c92a04/pymupdf-1.26.3.tar.gz"
   sha256 "b7d2c3ffa9870e1e4416d18862f5ccd356af5fe337b4511093bbbce2ca73b7e5"
   license "AGPL-3.0-only"
 
@@ -27,16 +27,16 @@ class Pymupdf < Formula
 
   def install
     # Makes setup skip build stage for mupdf
-    # https:github.compymupdfPyMuPDFblob1.20.0setup.py#L447
+    # https://github.com/pymupdf/PyMuPDF/blob/1.20.0/setup.py#L447
     ENV["PYMUPDF_SETUP_MUPDF_BUILD"] = ""
-    ENV["PYMUPDF_INCLUDES"] = "#{Formula["mupdf"].opt_include}:#{Formula["freetype"].opt_include}freetype2"
+    ENV["PYMUPDF_INCLUDES"] = "#{Formula["mupdf"].opt_include}:#{Formula["freetype"].opt_include}/freetype2"
     ENV["PYMUPDF_MUPDF_LIB"] = Formula["mupdf"].opt_lib.to_s
 
     system python3, "-m", "pip", "install", *std_pip_args, "."
   end
 
   test do
-    (testpath"test.py").write <<~PYTHON
+    (testpath/"test.py").write <<~PYTHON
       import sys
       from pathlib import Path
 
@@ -54,9 +54,9 @@ class Pymupdf < Formula
     PYTHON
 
     in_pdf = test_fixtures("test.pdf")
-    out_png = testpath"test.png"
+    out_png = testpath/"test.png"
 
-    system python3, testpath"test.py", in_pdf, out_png
+    system python3, testpath/"test.py", in_pdf, out_png
     assert_path_exists out_png
   end
 end

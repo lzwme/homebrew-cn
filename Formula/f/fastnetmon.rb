@@ -1,7 +1,7 @@
 class Fastnetmon < Formula
   desc "DDoS detection tool with sFlow, Netflow, IPFIX and port mirror support"
-  homepage "https:github.compavel-odintsovfastnetmon"
-  url "https:github.compavel-odintsovfastnetmonarchiverefstagsv1.2.8.tar.gz"
+  homepage "https://github.com/pavel-odintsov/fastnetmon/"
+  url "https://ghfast.top/https://github.com/pavel-odintsov/fastnetmon/archive/refs/tags/v1.2.8.tar.gz"
   sha256 "d16901b00963f395241c818d02ad2751f14e33fd32ed3cb3011641ab680e0d01"
   license "GPL-2.0-only"
   revision 7
@@ -38,13 +38,13 @@ class Fastnetmon < Formula
 
   # Backport support for Boost 1.87.0
   patch do
-    url "https:github.compavel-odintsovfastnetmoncommitf02063204d2b07a525d70e502571b31514653604.patch?full_index=1"
+    url "https://github.com/pavel-odintsov/fastnetmon/commit/f02063204d2b07a525d70e502571b31514653604.patch?full_index=1"
     sha256 "273d22bdfae85e464ab8cc1044423b2589800bef1db649f664049030f2cf719b"
   end
 
   # Backport fix to build with Clang
   patch do
-    url "https:github.compavel-odintsovfastnetmoncommit8a91b5a8c8be1af0fe96ffe1ee1c002c30494662.patch?full_index=1"
+    url "https://github.com/pavel-odintsov/fastnetmon/commit/8a91b5a8c8be1af0fe96ffe1ee1c002c30494662.patch?full_index=1"
     sha256 "cb2dd41177c73ed3ef4ee3a372d8f99b6471f695041dc1c05299ea03a572a202"
   end
 
@@ -60,30 +60,30 @@ class Fastnetmon < Formula
 
   service do
     run [
-      opt_sbin"fastnetmon",
+      opt_sbin/"fastnetmon",
       "--configuration_file",
-      etc"fastnetmon.conf",
+      etc/"fastnetmon.conf",
       "--log_to_console",
       "--disable_pid_logic",
     ]
     keep_alive false
     working_dir HOMEBREW_PREFIX
-    log_path var"logfastnetmon.log"
-    error_log_path var"logfastnetmon.log"
+    log_path var/"log/fastnetmon.log"
+    error_log_path var/"log/fastnetmon.log"
   end
 
   test do
-    cp etc"fastnetmon.conf", testpath
-    inreplace "fastnetmon.conf", %r{tmp(fastnetmon(?:_ipv6)?\.dat)}, "#{testpath}\\1"
+    cp etc/"fastnetmon.conf", testpath
+    inreplace "fastnetmon.conf", %r{/tmp/(fastnetmon(?:_ipv6)?\.dat)}, "#{testpath}/\\1"
 
-    pid = spawn opt_sbin"fastnetmon", "--configuration_file", testpath"fastnetmon.conf", "--log_to_console"
+    pid = spawn opt_sbin/"fastnetmon", "--configuration_file", testpath/"fastnetmon.conf", "--log_to_console"
     sleep 60
     sleep 40 if OS.mac? && Hardware::CPU.intel?
 
-    assert_path_exists testpath"fastnetmon.dat"
-    assert_path_exists testpath"fastnetmon_ipv6.dat"
-    assert_match "Incoming traffic", (testpath"fastnetmon.dat").read
-    assert_match "Incoming traffic", (testpath"fastnetmon_ipv6.dat").read
+    assert_path_exists testpath/"fastnetmon.dat"
+    assert_path_exists testpath/"fastnetmon_ipv6.dat"
+    assert_match "Incoming traffic", (testpath/"fastnetmon.dat").read
+    assert_match "Incoming traffic", (testpath/"fastnetmon_ipv6.dat").read
   ensure
     Process.kill "SIGTERM", pid
   end

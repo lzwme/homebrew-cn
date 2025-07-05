@@ -1,13 +1,13 @@
 class FsUae < Formula
   desc "Amiga emulator"
-  homepage "https:fs-uae.net"
-  url "https:fs-uae.netfilesFS-UAEStable3.1.66fs-uae-3.1.66.tar.xz"
+  homepage "https://fs-uae.net/"
+  url "https://fs-uae.net/files/FS-UAE/Stable/3.1.66/fs-uae-3.1.66.tar.xz"
   sha256 "606e1868b500413d69bd33bb469f8fd08d6c08988801f17b7dd022f3fbe23832"
   license "GPL-2.0-or-later"
 
   livecheck do
-    url "https:fs-uae.netdownload"
-    regex(href=.*?fs-uae[._-]v?(\d+(?:\.\d+)+)\.ti)
+    url "https://fs-uae.net/download"
+    regex(/href=.*?fs-uae[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -28,7 +28,7 @@ class FsUae < Formula
   end
 
   head do
-    url "https:github.comFrodeSolheimfs-uae.git", branch: "master"
+    url "https://github.com/FrodeSolheim/fs-uae.git", branch: "master"
     depends_on "autoconf" => :build
     depends_on "automake" => :build
     depends_on "libtool" => :build
@@ -57,20 +57,20 @@ class FsUae < Formula
   end
 
   def install
-    system ".bootstrap" if build.head?
-    system ".configure", "--disable-silent-rules", *std_configure_args
+    system "./bootstrap" if build.head?
+    system "./configure", "--disable-silent-rules", *std_configure_args
     mkdir "gen"
     system "make"
     system "make", "install"
 
     # Remove unnecessary files
-    rm_r(share"applications")
-    rm_r(share"icons")
-    rm_r(share"mime")
+    rm_r(share/"applications")
+    rm_r(share/"icons")
+    rm_r(share/"mime")
   end
 
   test do
     # fs-uae is a GUI application
-    assert_equal version.to_s, shell_output("#{bin}fs-uae --version").chomp
+    assert_equal version.to_s, shell_output("#{bin}/fs-uae --version").chomp
   end
 end

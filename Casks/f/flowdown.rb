@@ -2,11 +2,11 @@ cask "flowdown" do
   version "1.28.281"
   sha256 "025590009b8f3323d73c23d48e1e14ae2e80af6bb13122eda2535d06e89e170e"
 
-  url "https:github.comLakr233FlowDownreleasesdownload#{version}FlowDown-v#{version}.zip",
-      verified: "github.comLakr233FlowDown"
+  url "https://ghfast.top/https://github.com/Lakr233/FlowDown/releases/download/#{version}/FlowDown-v#{version}.zip",
+      verified: "github.com/Lakr233/FlowDown/"
   name "FlowDown"
   desc "AI agent"
-  homepage "https:flowdown.ai"
+  homepage "https://flowdown.ai/"
 
   livecheck do
     url :url
@@ -18,7 +18,7 @@ cask "flowdown" do
   app "FlowDown.app"
 
   zap trash: [
-    "~LibraryContainerswiki.qaq.flow.FlowDownWidget",
-    "~LibraryContainerswiki.qaq.FlowDown.Community",
+    "~/Library/Containers/wiki.qaq.flow.FlowDownWidget",
+    "~/Library/Containers/wiki.qaq.FlowDown.Community",
   ]
 end

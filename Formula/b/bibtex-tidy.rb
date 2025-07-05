@@ -1,7 +1,7 @@
 class BibtexTidy < Formula
   desc "Cleaner and Formatter for BibTeX files"
-  homepage "https:github.comFlamingTempurabibtex-tidy"
-  url "https:registry.npmjs.orgbibtex-tidy-bibtex-tidy-1.14.0.tgz"
+  homepage "https://github.com/FlamingTempura/bibtex-tidy"
+  url "https://registry.npmjs.org/bibtex-tidy/-/bibtex-tidy-1.14.0.tgz"
   sha256 "0a2c1bb73911a7cee36a30ce1fc86feffe39b2d39acd4c94d02aac6f84a00285"
   license "MIT"
 
@@ -13,11 +13,11 @@ class BibtexTidy < Formula
 
   def install
     system "npm", "install", *std_npm_args
-    bin.install_symlink Dir["#{libexec}bin*"]
+    bin.install_symlink Dir["#{libexec}/bin/*"]
   end
 
   test do
-    test_file = testpath"test.bib"
+    test_file = testpath/"test.bib"
     test_file.write <<~BIBTEX
       @article{example,
         author = {Author},
@@ -26,7 +26,7 @@ class BibtexTidy < Formula
       }
     BIBTEX
 
-    output = shell_output("#{bin}bibtex-tidy #{test_file}")
+    output = shell_output("#{bin}/bibtex-tidy #{test_file}")
     assert_match "Done. Successfully tidied 1 entries.", output
   end
 end

@@ -1,7 +1,7 @@
 class Pkgdiff < Formula
   desc "Tool for analyzing changes in software packages (e.g. RPM, DEB, TAR.GZ)"
-  homepage "https:lvc.github.iopkgdiff"
-  url "https:github.comlvcpkgdiffarchiverefstags1.8.tar.gz"
+  homepage "https://lvc.github.io/pkgdiff/"
+  url "https://ghfast.top/https://github.com/lvc/pkgdiff/archive/refs/tags/1.8.tar.gz"
   sha256 "4b44a933a776500937887134cf89b94a89199304c416ad05b2ac365cce1076d8"
   license "GPL-2.0-only"
 
@@ -18,6 +18,6 @@ class Pkgdiff < Formula
   end
 
   test do
-    system bin"pkgdiff"
+    system bin/"pkgdiff"
   end
 end

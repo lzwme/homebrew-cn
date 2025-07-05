@@ -1,10 +1,10 @@
 class Kuzu < Formula
   desc "Embeddable graph database management system built for query speed & scalability"
-  homepage "https:kuzudb.com"
-  url "https:github.comkuzudbkuzuarchiverefstagsv0.10.1.tar.gz"
+  homepage "https://kuzudb.com/"
+  url "https://ghfast.top/https://github.com/kuzudb/kuzu/archive/refs/tags/v0.10.1.tar.gz"
   sha256 "b1aa4eb4f542e4dc2f2e25bf02cac827da7c416bd5b431cfde9a1b0281afe85d"
   license "MIT"
-  head "https:github.comkuzudbkuzu.git", branch: "master"
+  head "https://github.com/kuzudb/kuzu.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "fa8d9356c983d7f781d37a537a7cb951c69a6aa98a44fc4f3db3ba834208950d"
@@ -25,7 +25,7 @@ class Kuzu < Formula
   end
 
   on_linux do
-    depends_on "gcc@12" if DevelopmentTools.gcc_version("usrbingcc") < 12
+    depends_on "gcc@12" if DevelopmentTools.gcc_version("/usr/bin/gcc") < 12
   end
 
   fails_with :clang do
@@ -45,7 +45,7 @@ class Kuzu < Formula
       # Undefined symbols for architecture arm64:
       #   "std::exception_ptr::__from_native_exception_pointer(void*)", referenced from:
       #       std::exception_ptr std::make_exception_ptr[abi:ne180100]<antlr4::NoViableAltException>...
-      ENV.prepend_path "HOMEBREW_LIBRARY_PATHS", Formula["llvm"].opt_lib"c++"
+      ENV.prepend_path "HOMEBREW_LIBRARY_PATHS", Formula["llvm"].opt_lib/"c++"
     end
 
     args = %w[
@@ -58,8 +58,8 @@ class Kuzu < Formula
   end
 
   test do
-    db_path = testpath"testdb"
-    cypher_path = testpath"test.cypher"
+    db_path = testpath/"testdb/"
+    cypher_path = testpath/"test.cypher"
     cypher_path.write <<~EOS
       CREATE NODE TABLE Person(name STRING, age INT64, PRIMARY KEY(name));
       CREATE (:Person {name: 'Alice', age: 25});
@@ -67,7 +67,7 @@ class Kuzu < Formula
       MATCH (a:Person) RETURN a.name AS NAME, a.age AS AGE ORDER BY a.name ASC;
     EOS
 
-    output = shell_output("#{bin}kuzu #{db_path} < #{cypher_path}")
+    output = shell_output("#{bin}/kuzu #{db_path} < #{cypher_path}")
 
     expected_1 = <<~EOS
       ┌────────────────────────────────┐

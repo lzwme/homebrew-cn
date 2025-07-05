@@ -2,12 +2,12 @@ cask "font-inria-sans" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefonts.git",
-      verified:  "github.comgooglefonts",
+  url "https://github.com/google/fonts.git",
+      verified:  "github.com/google/fonts",
       branch:    "main",
-      only_path: "oflinriasans"
+      only_path: "ofl/inriasans"
   name "Inria Sans"
-  homepage "https:fonts.google.comspecimenInria+Sans"
+  homepage "https://fonts.google.com/specimen/Inria+Sans"
 
   font "InriaSans-Bold.ttf"
   font "InriaSans-BoldItalic.ttf"

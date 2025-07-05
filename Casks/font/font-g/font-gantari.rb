@@ -2,12 +2,12 @@ cask "font-gantari" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefonts.git",
-      verified:  "github.comgooglefonts",
+  url "https://github.com/google/fonts.git",
+      verified:  "github.com/google/fonts",
       branch:    "main",
-      only_path: "oflgantari"
+      only_path: "ofl/gantari"
   name "Gantari"
-  homepage "https:fonts.google.comspecimenGantari"
+  homepage "https://fonts.google.com/specimen/Gantari"
 
   font "Gantari-Italic[wght].ttf"
   font "Gantari[wght].ttf"

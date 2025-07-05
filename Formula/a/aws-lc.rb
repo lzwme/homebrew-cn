@@ -1,13 +1,13 @@
 class AwsLc < Formula
   desc "General-purpose cryptographic library"
-  homepage "https:github.comawsaws-lc"
-  url "https:github.comawsaws-lcarchiverefstagsv1.55.0.tar.gz"
+  homepage "https://github.com/aws/aws-lc"
+  url "https://ghfast.top/https://github.com/aws/aws-lc/archive/refs/tags/v1.55.0.tar.gz"
   sha256 "a216e5e572ad9f68e6b93666f0bbca4d7792f400ca525731583196c139c12ce9"
   license all_of: ["Apache-2.0", "ISC", "OpenSSL", "MIT", "BSD-3-Clause"]
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -38,9 +38,9 @@ class AwsLc < Formula
   end
 
   test do
-    (testpath"testfile.txt").write("This is a test file")
+    (testpath/"testfile.txt").write("This is a test file")
     expected_checksum = "e2d0fe1585a63ec6009c8016ff8dda8b17719a637405a4e23c0ff81339148249"
-    output = shell_output("#{bin}bssl sha256sum testfile.txt")
+    output = shell_output("#{bin}/bssl sha256sum testfile.txt")
     assert_match expected_checksum, output
   end
 end

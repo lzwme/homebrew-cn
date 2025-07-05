@@ -1,10 +1,10 @@
 class Minuit2 < Formula
   desc "Physics analysis tool for function minimization"
-  homepage "https:root.cern.chdocmasterMinuit2Page.html"
-  url "https:root.cern.chdownloadroot_v6.36.00.source.tar.gz"
+  homepage "https://root.cern.ch/doc/master/Minuit2Page.html"
+  url "https://root.cern.ch/download/root_v6.36.00.source.tar.gz"
   sha256 "94afc8def92842679a130a27521be66e2abdaa37620888e61d828a43fc4b01a2"
   license "LGPL-2.1-or-later"
-  head "https:github.comroot-projectroot.git", branch: "master"
+  head "https://github.com/root-project/root.git", branch: "master"
 
   livecheck do
     formula "root"
@@ -23,23 +23,23 @@ class Minuit2 < Formula
   depends_on "cmake" => :build
 
   def install
-    system "cmake", "-S", "mathminuit2", "-B", "buildshared", *std_cmake_args,
+    system "cmake", "-S", "math/minuit2", "-B", "build/shared", *std_cmake_args,
                     "-Dminuit2_standalone=ON", "-DCMAKE_CXX_FLAGS='-std=c++14'", "-DBUILD_SHARED_LIBS=ON",
                     "-DCMAKE_INSTALL_RPATH=#{rpath}"
-    system "cmake", "--build", "buildshared"
-    system "cmake", "--install", "buildshared"
+    system "cmake", "--build", "build/shared"
+    system "cmake", "--install", "build/shared"
 
-    system "cmake", "-S", "mathminuit2", "-B", "buildstatic", *std_cmake_args,
+    system "cmake", "-S", "math/minuit2", "-B", "build/static", *std_cmake_args,
                     "-Dminuit2_standalone=ON", "-DCMAKE_CXX_FLAGS='-std=c++14'", "-DBUILD_SHARED_LIBS=OFF"
-    system "cmake", "--build", "buildstatic"
-    lib.install Dir["buildstaticliblibMinuit2*.a"]
+    system "cmake", "--build", "build/static"
+    lib.install Dir["build/static/lib/libMinuit2*.a"]
 
-    pkgshare.install "mathminuit2testMnTutorial"
+    pkgshare.install "math/minuit2/test/MnTutorial"
   end
 
   test do
-    cp Dir[pkgshare"MnTutorial{Quad1FMain.cxx,Quad1F.h}"], testpath
-    system ENV.cxx, "-std=c++14", "Quad1FMain.cxx", "-o", "test", "-I#{include}Minuit2", "-L#{lib}", "-lMinuit2"
-    assert_match "par0: -8.26907e-11 -1 1", shell_output(".test")
+    cp Dir[pkgshare/"MnTutorial/{Quad1FMain.cxx,Quad1F.h}"], testpath
+    system ENV.cxx, "-std=c++14", "Quad1FMain.cxx", "-o", "test", "-I#{include}/Minuit2", "-L#{lib}", "-lMinuit2"
+    assert_match "par0: -8.26907e-11 -1 1", shell_output("./test")
   end
 end

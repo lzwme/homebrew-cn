@@ -1,10 +1,10 @@
 class SingBox < Formula
   desc "Universal proxy platform"
-  homepage "https:sing-box.sagernet.org"
-  url "https:github.comSagerNetsing-boxarchiverefstagsv1.11.14.tar.gz"
+  homepage "https://sing-box.sagernet.org"
+  url "https://ghfast.top/https://github.com/SagerNet/sing-box/archive/refs/tags/v1.11.14.tar.gz"
   sha256 "0f68f46f979d9622386939bafa2adba20acf8f371f5c448c69154770c7759717"
   license "GPL-3.0-or-later"
-  head "https:github.comSagerNetsing-box.git", branch: "dev-next"
+  head "https://github.com/SagerNet/sing-box.git", branch: "dev-next"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "5be9cb9bb5c720ce29ae467da63b9fd650b12d058493fd78a95c7bfd86de4745"
@@ -18,21 +18,21 @@ class SingBox < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = "-s -w -X github.comsagernetsing-boxconstant.Version=#{version} -buildid="
+    ldflags = "-s -w -X github.com/sagernet/sing-box/constant.Version=#{version} -buildid="
     tags = "with_gvisor,with_quic,with_wireguard,with_utls,with_reality_server,with_clash_api"
-    system "go", "build", *std_go_args(ldflags:, tags:), ".cmdsing-box"
-    generate_completions_from_executable(bin"sing-box", "completion")
+    system "go", "build", *std_go_args(ldflags:, tags:), "./cmd/sing-box"
+    generate_completions_from_executable(bin/"sing-box", "completion")
   end
 
   service do
-    run [opt_bin"sing-box", "run", "--config", etc"sing-boxconfig.json", "--directory", var"libsing-box"]
+    run [opt_bin/"sing-box", "run", "--config", etc/"sing-box/config.json", "--directory", var/"lib/sing-box"]
     run_type :immediate
     keep_alive true
   end
 
   test do
     ss_port = free_port
-    (testpath"shadowsocks.json").write <<~JSON
+    (testpath/"shadowsocks.json").write <<~JSON
       {
         "inbounds": [
           {
@@ -45,10 +45,10 @@ class SingBox < Formula
         ]
       }
     JSON
-    server = fork { exec bin"sing-box", "run", "-D", testpath, "-c", testpath"shadowsocks.json" }
+    server = fork { exec bin/"sing-box", "run", "-D", testpath, "-c", testpath/"shadowsocks.json" }
 
     sing_box_port = free_port
-    (testpath"config.json").write <<~JSON
+    (testpath/"config.json").write <<~JSON
       {
         "inbounds": [
           {
@@ -68,8 +68,8 @@ class SingBox < Formula
         ]
       }
     JSON
-    system bin"sing-box", "check", "-D", testpath, "-c", "config.json"
-    client = fork { exec bin"sing-box", "run", "-D", testpath, "-c", "config.json" }
+    system bin/"sing-box", "check", "-D", testpath, "-c", "config.json"
+    client = fork { exec bin/"sing-box", "run", "-D", testpath, "-c", "config.json" }
 
     sleep 3
     begin

@@ -1,11 +1,11 @@
 class RbenvBinstubs < Formula
   desc "Make rbenv aware of bundler binstubs"
-  homepage "https:github.comPurple-Devsrbenv-binstubs"
-  url "https:github.comPurple-Devsrbenv-binstubsarchiverefstagsv1.5.tar.gz"
+  homepage "https://github.com/Purple-Devs/rbenv-binstubs"
+  url "https://ghfast.top/https://github.com/Purple-Devs/rbenv-binstubs/archive/refs/tags/v1.5.tar.gz"
   sha256 "305000b8ba5b829df1a98fc834b7868b9e817815c661f429b0e28c1f613f4d0c"
   license "MIT"
   revision 1
-  head "https:github.comPurple-Devsrbenv-binstubs.git", branch: "master"
+  head "https://github.com/Purple-Devs/rbenv-binstubs.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 

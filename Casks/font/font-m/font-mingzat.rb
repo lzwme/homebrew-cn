@@ -2,10 +2,10 @@ cask "font-mingzat" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefontsrawmainoflmingzatMingzat-Regular.ttf",
-      verified: "github.comgooglefonts"
+  url "https://github.com/google/fonts/raw/main/ofl/mingzat/Mingzat-Regular.ttf",
+      verified: "github.com/google/fonts/"
   name "Mingzat"
-  homepage "https:fonts.google.comspecimenMingzat"
+  homepage "https://fonts.google.com/specimen/Mingzat"
 
   font "Mingzat-Regular.ttf"
 

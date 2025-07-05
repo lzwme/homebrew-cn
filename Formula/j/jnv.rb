@@ -1,10 +1,10 @@
 class Jnv < Formula
   desc "Interactive JSON filter using jq"
-  homepage "https:github.comynqajnv"
-  url "https:github.comynqajnvarchiverefstagsv0.6.0.tar.gz"
+  homepage "https://github.com/ynqa/jnv"
+  url "https://ghfast.top/https://github.com/ynqa/jnv/archive/refs/tags/v0.6.0.tar.gz"
   sha256 "8220bf433728b57ddb174920a48c1750c5087b52154567074020b6800d6579d3"
   license "MIT"
-  head "https:github.comynqajnv.git", branch: "main"
+  head "https://github.com/ynqa/jnv.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "868d0e7996d85cc836e6c960afdeb90c99b169ee2c23e0070988e8957439cd4b"
@@ -23,9 +23,9 @@ class Jnv < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output(bin"jnv --version")
+    assert_match version.to_s, shell_output(bin/"jnv --version")
 
-    output = pipe_output("#{bin}jnv 2>&1", "homebrew", 1)
+    output = pipe_output("#{bin}/jnv 2>&1", "homebrew", 1)
     expected_output = if OS.mac?
       "Error: The cursor position could not be read within a normal duration"
     else

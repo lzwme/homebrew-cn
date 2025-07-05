@@ -1,7 +1,7 @@
 class ChooseGui < Formula
   desc "Fuzzy matcher that uses std{in,out} and a native GUI"
-  homepage "https:github.comchipsenkbeilchoose"
-  url "https:github.comchipsenkbeilchoosearchiverefstags1.5.0.tar.gz"
+  homepage "https://github.com/chipsenkbeil/choose"
+  url "https://ghfast.top/https://github.com/chipsenkbeil/choose/archive/refs/tags/1.5.0.tar.gz"
   sha256 "34dd16ac0b5e1b8b2468d677a985690e3bac01cb0c45e2eaf5d493df968cca2b"
   license "MIT"
 
@@ -22,10 +22,10 @@ class ChooseGui < Formula
   def install
     xcodebuild "SDKROOT=", "SYMROOT=build", "clean"
     xcodebuild "-arch", Hardware::CPU.arch, "SDKROOT=", "SYMROOT=build", "-configuration", "Release", "build"
-    bin.install "buildReleasechoose"
+    bin.install "build/Release/choose"
   end
 
   test do
-    system bin"choose", "-h"
+    system bin/"choose", "-h"
   end
 end

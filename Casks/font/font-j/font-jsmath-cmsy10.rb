@@ -2,10 +2,10 @@ cask "font-jsmath-cmsy10" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefontsrawmainapachejsmathcmsy10jsMath-cmsy10.ttf",
-      verified: "github.comgooglefonts"
+  url "https://github.com/google/fonts/raw/main/apache/jsmathcmsy10/jsMath-cmsy10.ttf",
+      verified: "github.com/google/fonts/"
   name "jsMath cmsy10"
-  homepage "https:fonts.google.comspecimenjsMath+cmsy10"
+  homepage "https://fonts.google.com/specimen/jsMath+cmsy10"
 
   font "jsMath-cmsy10.ttf"
 

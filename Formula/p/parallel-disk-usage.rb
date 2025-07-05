@@ -1,10 +1,10 @@
 class ParallelDiskUsage < Formula
   desc "Highly parallelized, blazing fast directory tree analyzer"
-  homepage "https:github.comKSXGitHubparallel-disk-usage"
-  url "https:github.comKSXGitHubparallel-disk-usagearchiverefstags0.13.1.tar.gz"
+  homepage "https://github.com/KSXGitHub/parallel-disk-usage"
+  url "https://ghfast.top/https://github.com/KSXGitHub/parallel-disk-usage/archive/refs/tags/0.13.1.tar.gz"
   sha256 "9f22e20764a434b3cb39a8f92b7e11bea851cca99077e15de165a8a25342cde6"
   license "Apache-2.0"
-  head "https:github.comKSXGitHubparallel-disk-usage.git", branch: "master"
+  head "https://github.com/KSXGitHub/parallel-disk-usage.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "bb45d1cb3873aeef446fe1660474a7b6de315806487b4d6fa17aaec1ded2af6c"
@@ -21,22 +21,22 @@ class ParallelDiskUsage < Formula
   def install
     system "cargo", "install", "--features", "cli,cli-completions", *std_cargo_args
 
-    system bin"pdu-completions", "--name", "pdu", "--shell", "bash", "--output", "pdu.bash"
-    system bin"pdu-completions", "--name", "pdu", "--shell", "fish", "--output", "pdu.fish"
-    system bin"pdu-completions", "--name", "pdu", "--shell", "zsh", "--output", "_pdu"
+    system bin/"pdu-completions", "--name", "pdu", "--shell", "bash", "--output", "pdu.bash"
+    system bin/"pdu-completions", "--name", "pdu", "--shell", "fish", "--output", "pdu.fish"
+    system bin/"pdu-completions", "--name", "pdu", "--shell", "zsh", "--output", "_pdu"
     bash_completion.install "pdu.bash" => "pdu"
     fish_completion.install "pdu.fish"
     zsh_completion.install "_pdu"
 
-    rm bin"pdu-completions"
+    rm bin/"pdu-completions"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}pdu --version")
+    assert_match version.to_s, shell_output("#{bin}/pdu --version")
 
-    system bin"pdu"
+    system bin/"pdu"
 
-    (testpath"test").write("test")
-    system bin"pdu", testpath"test"
+    (testpath/"test").write("test")
+    system bin/"pdu", testpath/"test"
   end
 end

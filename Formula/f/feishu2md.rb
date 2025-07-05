@@ -1,10 +1,10 @@
 class Feishu2md < Formula
-  desc "Convert feishularksuite documents to markdown"
-  homepage "https:github.comWsinefeishu2md"
-  url "https:github.comWsinefeishu2mdarchiverefstagsv2.4.5.tar.gz"
+  desc "Convert feishu/larksuite documents to markdown"
+  homepage "https://github.com/Wsine/feishu2md"
+  url "https://ghfast.top/https://github.com/Wsine/feishu2md/archive/refs/tags/v2.4.5.tar.gz"
   sha256 "938feb85d798732ed53b1e15b5cb94dc892b79c4eea5bc897750d00f6fcf012f"
   license "MIT"
-  head "https:github.comWsinefeishu2md.git", branch: "main"
+  head "https://github.com/Wsine/feishu2md.git", branch: "main"
 
   # Upstream creates releases that use a stable tag (e.g., `v1.2.3`) but are
   # labeled as "pre-release" on GitHub before the version is released, so it's
@@ -27,13 +27,13 @@ class Feishu2md < Formula
 
   def install
     ldflags = "-s -w -X main.version=#{version}"
-    system "go", "build", *std_go_args(ldflags:), ".cmd"
+    system "go", "build", *std_go_args(ldflags:), "./cmd"
   end
 
   test do
-    output = shell_output("#{bin}feishu2md config --appId testAppId --appSecret testSecret")
+    output = shell_output("#{bin}/feishu2md config --appId testAppId --appSecret testSecret")
     assert_match "testAppId", output
 
-    assert_match version.to_s, shell_output("#{bin}feishu2md --version")
+    assert_match version.to_s, shell_output("#{bin}/feishu2md --version")
   end
 end

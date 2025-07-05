@@ -1,14 +1,14 @@
 class Mydumper < Formula
   desc "MySQL logical backup tool"
-  homepage "https:github.commydumpermydumper"
-  url "https:github.commydumpermydumperarchiverefstagsv0.19.3-2.tar.gz"
+  homepage "https://github.com/mydumper/mydumper"
+  url "https://ghfast.top/https://github.com/mydumper/mydumper/archive/refs/tags/v0.19.3-2.tar.gz"
   sha256 "8db52befb7cca70fdad19376dc8abd3589d112bdbc8fb824fc0fb2f3ce087424"
   license "GPL-3.0-or-later"
-  head "https:github.commydumpermydumper.git", branch: "master"
+  head "https://github.com/mydumper/mydumper.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(v?(\d+(?:\.\d+)+(-\d+)?)i)
+    regex(/v?(\d+(?:\.\d+)+(-\d+)?)/i)
     strategy :github_latest
   end
 
@@ -34,8 +34,8 @@ class Mydumper < Formula
   end
 
   def install
-    # Avoid installing config into etc
-    inreplace "CMakeLists.txt", "etc", etc
+    # Avoid installing config into /etc
+    inreplace "CMakeLists.txt", "/etc", etc
 
     # Override location of mysql-client
     args = %W[
@@ -49,6 +49,6 @@ class Mydumper < Formula
   end
 
   test do
-    system bin"mydumper", "--help"
+    system bin/"mydumper", "--help"
   end
 end

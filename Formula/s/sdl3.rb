@@ -1,14 +1,14 @@
 class Sdl3 < Formula
   desc "Low-level access to audio, keyboard, mouse, joystick, and graphics"
-  homepage "https:libsdl.org"
-  url "https:github.comlibsdl-orgSDLreleasesdownloadrelease-3.2.16SDL3-3.2.16.tar.gz"
+  homepage "https://libsdl.org/"
+  url "https://ghfast.top/https://github.com/libsdl-org/SDL/releases/download/release-3.2.16/SDL3-3.2.16.tar.gz"
   sha256 "6340e58879b2d15830c8460d2f589a385c444d1faa2a4828a9626c7322562be8"
   license "Zlib"
-  head "https:github.comlibsdl-orgSDL.git", branch: "main"
+  head "https://github.com/libsdl-org/SDL.git", branch: "main"
 
   livecheck do
     url :stable
-    regex(release[._-](\d+(?:\.\d+)+)i)
+    regex(/release[._-](\d+(?:\.\d+)+)/i)
     strategy :github_latest
   end
 
@@ -35,7 +35,7 @@ class Sdl3 < Formula
   end
 
   def install
-    inreplace "cmakesdl3.pc.in", "@SDL_PKGCONFIG_PREFIX@", HOMEBREW_PREFIX
+    inreplace "cmake/sdl3.pc.in", "@SDL_PKGCONFIG_PREFIX@", HOMEBREW_PREFIX
 
     args = [
       "-DSDL_HIDAPI=ON",
@@ -54,8 +54,8 @@ class Sdl3 < Formula
   end
 
   test do
-    (testpath"test.c").write <<~CPP
-      #include <SDL3SDL.h>
+    (testpath/"test.c").write <<~CPP
+      #include <SDL3/SDL.h>
       int main() {
         if (SDL_Init(SDL_INIT_VIDEO) != 1) {
           return 1;
@@ -66,6 +66,6 @@ class Sdl3 < Formula
     CPP
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lSDL3", "-o", "test"
     ENV["SDL_VIDEODRIVER"] = "dummy"
-    system ".test"
+    system "./test"
   end
 end

@@ -1,7 +1,7 @@
 class BazelDiff < Formula
   desc "Performs Bazel Target Diffing between two revisions in Git"
-  homepage "https:github.comTinderbazel-diff"
-  url "https:github.comTinderbazel-diffreleasesdownload9.0.5bazel-diff_deploy.jar"
+  homepage "https://github.com/Tinder/bazel-diff/"
+  url "https://ghfast.top/https://github.com/Tinder/bazel-diff/releases/download/9.0.5/bazel-diff_deploy.jar"
   sha256 "fc43012fa58ee7ceb286dcf3673e8c0f6fd38dbc08e73b331c515bfc6cb26a63"
   license "BSD-3-Clause"
 
@@ -14,11 +14,11 @@ class BazelDiff < Formula
 
   def install
     libexec.install "bazel-diff_deploy.jar"
-    bin.write_jar_script libexec"bazel-diff_deploy.jar", "bazel-diff"
+    bin.write_jar_script libexec/"bazel-diff_deploy.jar", "bazel-diff"
   end
 
   test do
-    output = shell_output("#{bin}bazel-diff generate-hashes --workspacePath=#{testpath} 2>&1", 1)
+    output = shell_output("#{bin}/bazel-diff generate-hashes --workspacePath=#{testpath} 2>&1", 1)
     assert_match "ERROR: The 'info' command is only supported from within a workspace", output
   end
 end

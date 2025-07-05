@@ -1,11 +1,11 @@
 class Lld < Formula
   desc "LLVM Project Linker"
-  homepage "https:lld.llvm.org"
-  url "https:github.comllvmllvm-projectreleasesdownloadllvmorg-20.1.7llvm-project-20.1.7.src.tar.xz"
+  homepage "https://lld.llvm.org/"
+  url "https://ghfast.top/https://github.com/llvm/llvm-project/releases/download/llvmorg-20.1.7/llvm-project-20.1.7.src.tar.xz"
   sha256 "cd8fd55d97ad3e360b1d5aaf98388d1f70dfffb7df36beee478be3b839ff9008"
   # The LLVM Project is under the Apache License v2.0 with LLVM Exceptions
   license "Apache-2.0" => { with: "LLVM-exception" }
-  head "https:github.comllvmllvm-project.git", branch: "main"
+  head "https://github.com/llvm/llvm-project.git", branch: "main"
 
   livecheck do
     formula "llvm"
@@ -27,8 +27,8 @@ class Lld < Formula
   uses_from_macos "zlib"
 
   # These used to be part of LLVM.
-  link_overwrite "binlld", "binld64.lld", "binld.lld", "binlld-link", "binwasm-ld"
-  link_overwrite "includelld*", "libcmakelld*"
+  link_overwrite "bin/lld", "bin/ld64.lld", "bin/ld.lld", "bin/lld-link", "bin/wasm-ld"
+  link_overwrite "include/lld/*", "lib/cmake/lld/*"
 
   def install
     system "cmake", "-S", "lld", "-B", "build",
@@ -45,16 +45,16 @@ class Lld < Formula
   end
 
   test do
-    (testpath"binlld").write <<~BASH
-      #!binbash
+    (testpath/"bin/lld").write <<~BASH
+      #!/bin/bash
       exit 1
     BASH
-    chmod "+x", "binlld"
+    chmod "+x", "bin/lld"
 
-    (testpath"bin").install_symlink "lld" => "ld64.lld"
-    (testpath"bin").install_symlink "lld" => "ld.lld"
+    (testpath/"bin").install_symlink "lld" => "ld64.lld"
+    (testpath/"bin").install_symlink "lld" => "ld.lld"
 
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include <stdio.h>
       int main() {
         printf("hello, world!");
@@ -63,17 +63,17 @@ class Lld < Formula
     C
 
     error_message = case ENV.compiler
-    when ^gcc(-\d+)?$ then "ld returned 1 exit status"
+    when /^gcc(-\d+)?$/ then "ld returned 1 exit status"
     when :clang then "linker command failed"
     else odie "unexpected compiler"
     end
 
     # Check that the `-fuse-ld=lld` flag actually picks up LLD from PATH.
-    with_env(PATH: "#{testpath}bin:#{ENV["PATH"]}") do
+    with_env(PATH: "#{testpath}/bin:#{ENV["PATH"]}") do
       assert_match error_message, shell_output("#{ENV.cc} -v -fuse-ld=lld test.c 2>&1", 1)
     end
 
     system ENV.cc, "-v", "-fuse-ld=lld", "test.c", "-o", "test"
-    assert_match "hello, world!", shell_output(".test")
+    assert_match "hello, world!", shell_output("./test")
   end
 end

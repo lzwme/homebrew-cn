@@ -5,11 +5,11 @@ cask "persepolis-download-manager" do
   sha256 arm:   "7983546e40b8e17e4d4b5bc10630a77d145bc8aa21c523f972e1ca46bffe9925",
          intel: "8c7eb9934f81160b6d11f4979d417bebab5bbd1b4fd63f97f96d729879f0c7fb"
 
-  url "https:github.compersepolisdmpersepolisreleasesdownload#{version}persepolis_#{version}_macos_#{arch}.dmg",
-      verified: "github.compersepolisdmpersepolis"
+  url "https://ghfast.top/https://github.com/persepolisdm/persepolis/releases/download/#{version}/persepolis_#{version}_macos_#{arch}.dmg",
+      verified: "github.com/persepolisdm/persepolis/"
   name "Persepolis"
   desc "Download manager"
-  homepage "https:persepolisdm.github.io"
+  homepage "https://persepolisdm.github.io/"
 
   livecheck do
     url :url
@@ -21,7 +21,7 @@ cask "persepolis-download-manager" do
   app "Persepolis Download Manager.app"
 
   zap trash: [
-    "~.persepolis",
-    "~LibraryApplication Supportpersepolis_download_manager",
+    "~/.persepolis",
+    "~/Library/Application Support/persepolis_download_manager",
   ]
 end

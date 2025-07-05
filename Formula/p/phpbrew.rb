@@ -1,7 +1,7 @@
 class Phpbrew < Formula
   desc "Brew & manage PHP versions in pure PHP at HOME"
-  homepage "https:phpbrew.github.iophpbrew"
-  url "https:github.comphpbrewphpbrewreleasesdownload2.2.0phpbrew.phar"
+  homepage "https://phpbrew.github.io/phpbrew"
+  url "https://ghfast.top/https://github.com/phpbrew/phpbrew/releases/download/2.2.0/phpbrew.phar"
   sha256 "3247b8438888827d068542b2891392e3beffebe122f4955251fa4f9efa0da03d"
   license "MIT"
 
@@ -22,7 +22,7 @@ class Phpbrew < Formula
 
   depends_on "php"
 
-  # Keg-relocation breaks the formula when it replaces `usrlocal` with a non-default prefix
+  # Keg-relocation breaks the formula when it replaces `/usr/local` with a non-default prefix
   on_macos do
     on_intel do
       pour_bottle? only_if: :default_prefix
@@ -34,7 +34,7 @@ class Phpbrew < Formula
   end
 
   test do
-    system bin"phpbrew", "init"
-    assert_match "8.0", shell_output("#{bin}phpbrew known")
+    system bin/"phpbrew", "init"
+    assert_match "8.0", shell_output("#{bin}/phpbrew known")
   end
 end

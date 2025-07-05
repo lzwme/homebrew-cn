@@ -1,10 +1,10 @@
 class Precious < Formula
   desc "One code quality tool to rule them all"
-  homepage "https:github.comhouseabsoluteprecious"
-  url "https:github.comhouseabsolutepreciousarchiverefstagsv0.9.0.tar.gz"
+  homepage "https://github.com/houseabsolute/precious"
+  url "https://ghfast.top/https://github.com/houseabsolute/precious/archive/refs/tags/v0.9.0.tar.gz"
   sha256 "473c1f32227fb63c30d7f9cfb516158c3157c5b0f497ac4d3a57834756c1c0f6"
   license any_of: ["Apache-2.0", "MIT"]
-  head "https:github.comhouseabsoluteprecious.git", branch: "master"
+  head "https://github.com/houseabsolute/precious.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "5895cd2fad0927f9ae3dbb4c3d50e5d690419713807580f5fae7be0bbe52517c"
@@ -23,9 +23,9 @@ class Precious < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}precious --version")
+    assert_match version.to_s, shell_output("#{bin}/precious --version")
 
-    system bin"precious", "config", "init", "--auto"
-    assert_path_exists testpath"precious.toml"
+    system bin/"precious", "config", "init", "--auto"
+    assert_path_exists testpath/"precious.toml"
   end
 end

@@ -1,11 +1,11 @@
 class Aerc < Formula
   desc "Email client that runs in your terminal"
-  homepage "https:aerc-mail.org"
-  url "https:git.sr.ht~rjarryaercarchive0.20.1.tar.gz"
-  mirror "https:github.comrjarryaercarchiverefstags0.20.1.tar.gz"
+  homepage "https://aerc-mail.org/"
+  url "https://git.sr.ht/~rjarry/aerc/archive/0.20.1.tar.gz"
+  mirror "https://ghfast.top/https://github.com/rjarry/aerc/archive/refs/tags/0.20.1.tar.gz"
   sha256 "fbfbf2cc4f6e251731698d6d1b7be4e88835b4e089d55e3254d37d450700db07"
   license "MIT"
-  head "https:git.sr.ht~rjarryaerc", branch: "master"
+  head "https://git.sr.ht/~rjarry/aerc", branch: "master"
 
   bottle do
     rebuild 1
@@ -27,7 +27,7 @@ class Aerc < Formula
   end
 
   test do
-    output = shell_output("#{bin}aerc -v")
-    assert_match(aerc #{version} \+notmuch\.*, output)
+    output = shell_output("#{bin}/aerc -v")
+    assert_match(/aerc #{version} \+notmuch\.*/, output)
   end
 end

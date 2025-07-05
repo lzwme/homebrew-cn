@@ -1,10 +1,10 @@
 class Masscan < Formula
   desc "TCP port scanner, scans entire Internet in under 5 minutes"
-  homepage "https:github.comrobertdavidgrahammasscan"
-  url "https:github.comrobertdavidgrahammasscanarchiverefstags1.3.2.tar.gz"
+  homepage "https://github.com/robertdavidgraham/masscan/"
+  url "https://ghfast.top/https://github.com/robertdavidgraham/masscan/archive/refs/tags/1.3.2.tar.gz"
   sha256 "0363e82c07e6ceee68a2da48acd0b2807391ead9a396cf9c70b53a2a901e3d5f"
   license "AGPL-3.0-only"
-  head "https:github.comrobertdavidgrahammasscan.git", branch: "master"
+  head "https://github.com/robertdavidgraham/masscan.git", branch: "master"
 
   livecheck do
     url :stable
@@ -31,10 +31,10 @@ class Masscan < Formula
 
   def install
     system "make"
-    bin.install "binmasscan"
+    bin.install "bin/masscan"
   end
 
   test do
-    assert_match "ports =", shell_output("#{bin}masscan --echo")
+    assert_match "ports =", shell_output("#{bin}/masscan --echo")
   end
 end

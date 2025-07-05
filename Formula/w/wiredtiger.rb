@@ -1,13 +1,13 @@
 class Wiredtiger < Formula
   desc "High performance NoSQL extensible platform for data management"
-  homepage "https:source.wiredtiger.com"
-  url "https:github.comwiredtigerwiredtigerarchiverefstags11.3.1.tar.gz"
+  homepage "https://source.wiredtiger.com/"
+  url "https://ghfast.top/https://github.com/wiredtiger/wiredtiger/archive/refs/tags/11.3.1.tar.gz"
   sha256 "ac0417c10cecc686baff5fdc00a7872003fc007993163bafba387fad903d5091"
   license any_of: ["GPL-2.0-only", "GPL-3.0-only"]
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -31,7 +31,7 @@ class Wiredtiger < Formula
   uses_from_macos "zlib"
 
   def install
-    # CRC32 hardware detection: https:github.comwiredtigerwiredtigertreedevelopsrcchecksum
+    # CRC32 hardware detection: https://github.com/wiredtiger/wiredtiger/tree/develop/src/checksum
     ENV.runtime_cpu_detection
 
     args = %W[
@@ -46,7 +46,7 @@ class Wiredtiger < Formula
   end
 
   test do
-    system bin"wt", "create", "table:test"
-    system bin"wt", "drop", "table:test"
+    system bin/"wt", "create", "table:test"
+    system bin/"wt", "drop", "table:test"
   end
 end

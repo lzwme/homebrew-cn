@@ -1,10 +1,10 @@
 class Openjpeg < Formula
   desc "Library for JPEG-2000 image manipulation"
-  homepage "https:www.openjpeg.org"
-  url "https:github.comuclouvainopenjpegarchiverefstagsv2.5.3.tar.gz"
+  homepage "https://www.openjpeg.org/"
+  url "https://ghfast.top/https://github.com/uclouvain/openjpeg/archive/refs/tags/v2.5.3.tar.gz"
   sha256 "368fe0468228e767433c9ebdea82ad9d801a3ad1e4234421f352c8b06e7aa707"
   license "BSD-2-Clause"
-  head "https:github.comuclouvainopenjpeg.git", branch: "master"
+  head "https://github.com/uclouvain/openjpeg.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "a8091181f4cdd66cc41e7c4bebdfb205c70fc52c069f8ddfdc26bc91e3fa417a"
@@ -31,7 +31,7 @@ class Openjpeg < Formula
   end
 
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include <openjpeg.h>
 
       int main () {
@@ -46,7 +46,7 @@ class Openjpeg < Formula
       }
     C
     system ENV.cc, "-I#{include.children.first}",
-           testpath"test.c", "-L#{lib}", "-lopenjp2", "-o", "test"
-    system ".test"
+           testpath/"test.c", "-L#{lib}", "-lopenjp2", "-o", "test"
+    system "./test"
   end
 end

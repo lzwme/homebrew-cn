@@ -1,10 +1,10 @@
 class Shush < Formula
   desc "Encrypt and decrypt secrets using the AWS Key Management Service"
-  homepage "https:github.comrealestate-com-aushush"
-  url "https:github.comrealestate-com-aushusharchiverefstagsv1.5.5.tar.gz"
+  homepage "https://github.com/realestate-com-au/shush"
+  url "https://ghfast.top/https://github.com/realestate-com-au/shush/archive/refs/tags/v1.5.5.tar.gz"
   sha256 "b759401d94b2ebcc4a5561e28e1c533f3bd19aaa75eb0a48efc53c71f864e11b"
   license "MIT"
-  head "https:github.comrealestate-com-aushush.git", branch: "master"
+  head "https://github.com/realestate-com-au/shush.git", branch: "master"
 
   bottle do
     rebuild 1
@@ -23,9 +23,9 @@ class Shush < Formula
   end
 
   test do
-    output = shell_output("#{bin}shush encrypt brewtest 2>&1", 64)
+    output = shell_output("#{bin}/shush encrypt brewtest 2>&1", 64)
     assert_match "ERROR: please specify region (--region or $AWS_DEFAULT_REGION)", output
 
-    assert_match version.to_s, shell_output("#{bin}shush --version")
+    assert_match version.to_s, shell_output("#{bin}/shush --version")
   end
 end

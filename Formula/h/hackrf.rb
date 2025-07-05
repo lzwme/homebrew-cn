@@ -1,10 +1,10 @@
 class Hackrf < Formula
   desc "Low cost software radio platform"
-  homepage "https:github.comgreatscottgadgetshackrf"
-  url "https:github.comgreatscottgadgetshackrfreleasesdownloadv2024.02.1hackrf-2024.02.1.tar.xz"
+  homepage "https://github.com/greatscottgadgets/hackrf"
+  url "https://ghfast.top/https://github.com/greatscottgadgets/hackrf/releases/download/v2024.02.1/hackrf-2024.02.1.tar.xz"
   sha256 "d9ced67e6b801cd02c18d0c4654ed18a4bcb36c24a64330c347dfccbd859ad16"
   license "GPL-2.0-or-later"
-  head "https:github.comgreatscottgadgetshackrf.git", branch: "master"
+  head "https://github.com/greatscottgadgets/hackrf.git", branch: "master"
 
   livecheck do
     url :stable
@@ -29,15 +29,15 @@ class Hackrf < Formula
   depends_on "libusb"
 
   def install
-    args = OS.linux? ? ["-DUDEV_RULES_GROUP=plugdev", "-DUDEV_RULES_PATH=#{lib}udevrules.d"] : []
+    args = OS.linux? ? ["-DUDEV_RULES_GROUP=plugdev", "-DUDEV_RULES_PATH=#{lib}/udev/rules.d"] : []
 
     system "cmake", "-S", "host", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
-    pkgshare.install "firmware-bin"
+    pkgshare.install "firmware-bin/"
   end
 
   test do
-    shell_output("#{bin}hackrf_transfer", 1)
+    shell_output("#{bin}/hackrf_transfer", 1)
   end
 end

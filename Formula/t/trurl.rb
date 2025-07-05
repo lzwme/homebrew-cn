@@ -1,10 +1,10 @@
 class Trurl < Formula
   desc "Command-line tool for URL parsing and manipulation"
-  homepage "https:curl.setrurl"
-  url "https:github.comcurltrurlreleasesdownloadtrurl-0.16.1trurl-0.16.1.tar.gz"
+  homepage "https://curl.se/trurl/"
+  url "https://ghfast.top/https://github.com/curl/trurl/releases/download/trurl-0.16.1/trurl-0.16.1.tar.gz"
   sha256 "aac947d4fb421a58abc19a3771e87942cd4721b8f855c433478c94c11a8203ba"
   license "curl"
-  head "https:github.comcurltrurl.git", branch: "master"
+  head "https://github.com/curl/trurl.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "2e77852df0afaaf260ec8a9bba1c4b0536866a72c0d6d4070fea5f344aa81070"
@@ -24,8 +24,8 @@ class Trurl < Formula
   end
 
   test do
-    output = shell_output("#{bin}trurl https:example.comhello.html " \
+    output = shell_output("#{bin}/trurl https://example.com/hello.html " \
                           "--default-port --get '{scheme} {port} {path}'").chomp
-    assert_equal "https 443 hello.html", output
+    assert_equal "https 443 /hello.html", output
   end
 end

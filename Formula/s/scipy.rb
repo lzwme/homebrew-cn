@@ -1,10 +1,10 @@
 class Scipy < Formula
   desc "Software for mathematics, science, and engineering"
-  homepage "https:www.scipy.org"
-  url "https:files.pythonhosted.orgpackages8118b06a83f0c5ee8cddbde5e3f3d0bb9b702abfa5136ef6d4620ff67df7eee5scipy-1.16.0.tar.gz"
+  homepage "https://www.scipy.org"
+  url "https://files.pythonhosted.org/packages/81/18/b06a83f0c5ee8cddbde5e3f3d0bb9b702abfa5136ef6d4620ff67df7eee5/scipy-1.16.0.tar.gz"
   sha256 "b5ef54021e832869c8cfb03bc3bf20366cbcd426e02a58e8a58d7584dfbb8f62"
   license "BSD-3-Clause"
-  head "https:github.comscipyscipy.git", branch: "main"
+  head "https://github.com/scipy/scipy.git", branch: "main"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "68e792894b6bb09448a409d75ad4dc0bdc0085159da3dffa6c3ae90052f86123"
@@ -35,7 +35,7 @@ class Scipy < Formula
   def pythons
     deps.map(&:to_formula)
         .select { |f| f.name.start_with?("python@") }
-        .map { |f| f.opt_libexec"binpython" }
+        .map { |f| f.opt_libexec/"bin/python" }
   end
 
   def install
@@ -45,11 +45,11 @@ class Scipy < Formula
   end
 
   def post_install
-    HOMEBREW_PREFIX.glob("libpython*.*site-packagesscipy***.pyc").map(&:unlink)
+    HOMEBREW_PREFIX.glob("lib/python*.*/site-packages/scipy/**/*.pyc").map(&:unlink)
   end
 
   test do
-    (testpath"test.py").write <<~PYTHON
+    (testpath/"test.py").write <<~PYTHON
       from scipy import special
       print(special.exp10(3))
     PYTHON

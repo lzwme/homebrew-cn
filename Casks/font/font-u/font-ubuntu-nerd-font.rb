@@ -2,9 +2,9 @@ cask "font-ubuntu-nerd-font" do
   version "3.4.0"
   sha256 "ad18de7f0ccf503123652c92eb8bcb08b53a54153b467aa46a1c58f04a4d4915"
 
-  url "https:github.comryanoasisnerd-fontsreleasesdownloadv#{version}Ubuntu.zip"
+  url "https://ghfast.top/https://github.com/ryanoasis/nerd-fonts/releases/download/v#{version}/Ubuntu.zip"
   name "Ubuntu Nerd Font (Ubuntu)"
-  homepage "https:github.comryanoasisnerd-fonts"
+  homepage "https://github.com/ryanoasis/nerd-fonts"
 
   livecheck do
     url :url

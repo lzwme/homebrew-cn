@@ -1,8 +1,8 @@
 class Nghttp2 < Formula
-  desc "HTTP2 C Library"
-  homepage "https:nghttp2.org"
-  url "https:github.comnghttp2nghttp2releasesdownloadv1.66.0nghttp2-1.66.0.tar.gz"
-  mirror "http:fresh-center.netlinuxwwwnghttp2-1.66.0.tar.gz"
+  desc "HTTP/2 C Library"
+  homepage "https://nghttp2.org/"
+  url "https://ghfast.top/https://github.com/nghttp2/nghttp2/releases/download/v1.66.0/nghttp2-1.66.0.tar.gz"
+  mirror "http://fresh-center.net/linux/www/nghttp2-1.66.0.tar.gz"
   sha256 "e178687730c207f3a659730096df192b52d3752786c068b8e5ee7aeb8edae05a"
   license "MIT"
 
@@ -17,7 +17,7 @@ class Nghttp2 < Formula
   end
 
   head do
-    url "https:github.comnghttp2nghttp2.git", branch: "master"
+    url "https://github.com/nghttp2/nghttp2.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -56,15 +56,15 @@ class Nghttp2 < Formula
     ENV.llvm_clang if OS.mac? && DevelopmentTools.clang_build_version <= 1500
 
     # fix for clang not following C++14 behaviour
-    # https:github.commacportsmacports-portscommit54d83cca9fc0f2ed6d3f873282b6dd3198635891
-    inreplace "srcshrpx_client_handler.cc", "return dconn;", "return std::move(dconn);"
+    # https://github.com/macports/macports-ports/commit/54d83cca9fc0f2ed6d3f873282b6dd3198635891
+    inreplace "src/shrpx_client_handler.cc", "return dconn;", "return std::move(dconn);"
 
     # Don't build nghttp2 library - use the previously built one.
-    inreplace "Makefile.in", (SUBDIRS =) lib, "\\1"
-    inreplace Dir["**Makefile.in"] do |s|
+    inreplace "Makefile.in", /(SUBDIRS =) lib/, "\\1"
+    inreplace Dir["**/Makefile.in"] do |s|
       # These don't exist in all files, hence audit_result being false.
-      s.gsub!(%r{^(LDADD = )\$[({]top_builddir[)}]liblibnghttp2\.la}, "\\1-lnghttp2", audit_result: false)
-      s.gsub!(%r{\$[({]top_builddir[)}]liblibnghttp2\.la}, "", audit_result: false)
+      s.gsub!(%r{^(LDADD = )\$[({]top_builddir[)}]/lib/libnghttp2\.la}, "\\1-lnghttp2", audit_result: false)
+      s.gsub!(%r{\$[({]top_builddir[)}]/lib/libnghttp2\.la}, "", audit_result: false)
     end
 
     args = %w[
@@ -77,13 +77,13 @@ class Nghttp2 < Formula
     ]
 
     system "autoreconf", "--force", "--install", "--verbose" if build.head?
-    system ".configure", *args, *std_configure_args
+    system "./configure", *args, *std_configure_args
     system "make"
     system "make", "install"
   end
 
   test do
-    system bin"nghttp", "-nv", "https:nghttp2.org"
+    system bin/"nghttp", "-nv", "https://nghttp2.org"
     refute_path_exists lib
   end
 end

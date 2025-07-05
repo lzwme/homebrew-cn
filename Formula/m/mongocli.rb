@@ -1,10 +1,10 @@
 class Mongocli < Formula
   desc "MongoDB CLI enables you to manage your MongoDB in the Cloud"
-  homepage "https:www.mongodb.comdocsmongoclicurrent"
-  url "https:github.commongodbmongodb-cliarchiverefstagsmongocliv2.0.4.tar.gz"
+  homepage "https://www.mongodb.com/docs/mongocli/current/"
+  url "https://ghfast.top/https://github.com/mongodb/mongodb-cli/archive/refs/tags/mongocli/v2.0.4.tar.gz"
   sha256 "30ffcc61931147c6ace31e87ac487cc2b125a6cb65178e63e8c0f73e6b454cbe"
   license "Apache-2.0"
-  head "https:github.commongodbmongodb-cli.git", branch: "main"
+  head "https://github.com/mongodb/mongodb-cli.git", branch: "main"
 
   livecheck do
     url :stable
@@ -29,14 +29,14 @@ class Mongocli < Formula
     ) do
       system "make", "build"
     end
-    bin.install "binmongocli"
+    bin.install "bin/mongocli"
 
-    generate_completions_from_executable(bin"mongocli", "completion")
+    generate_completions_from_executable(bin/"mongocli", "completion")
   end
 
   test do
-    assert_match "mongocli version: #{version}", shell_output("#{bin}mongocli --version")
-    assert_match "Error: this action requires authentication", shell_output("#{bin}mongocli iam projects ls 2>&1", 1)
-    assert_match "PROFILE NAME", shell_output("#{bin}mongocli config ls")
+    assert_match "mongocli version: #{version}", shell_output("#{bin}/mongocli --version")
+    assert_match "Error: this action requires authentication", shell_output("#{bin}/mongocli iam projects ls 2>&1", 1)
+    assert_match "PROFILE NAME", shell_output("#{bin}/mongocli config ls")
   end
 end

@@ -1,10 +1,10 @@
 class RosaCli < Formula
   desc "RedHat OpenShift Service on AWS (ROSA) command-line interface"
-  homepage "https:www.openshift.comproductsamazon-openshift"
-  url "https:github.comopenshiftrosaarchiverefstagsv1.2.54.tar.gz"
+  homepage "https://www.openshift.com/products/amazon-openshift"
+  url "https://ghfast.top/https://github.com/openshift/rosa/archive/refs/tags/v1.2.54.tar.gz"
   sha256 "6bb473213ebb4088e44fbc294a27e5d46462f03fa91d0b46e0b3ed6a7a65d7c7"
   license "Apache-2.0"
-  head "https:github.comopenshiftrosa.git", branch: "master"
+  head "https://github.com/openshift/rosa.git", branch: "master"
 
   livecheck do
     url :stable
@@ -24,15 +24,15 @@ class RosaCli < Formula
   depends_on "awscli"
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w", output: bin"rosa"), ".cmdrosa"
+    system "go", "build", *std_go_args(ldflags: "-s -w", output: bin/"rosa"), "./cmd/rosa"
 
-    generate_completions_from_executable(bin"rosa", "completion")
+    generate_completions_from_executable(bin/"rosa", "completion")
   end
 
   test do
-    output = shell_output("#{bin}rosa create cluster 2<&1", 1)
+    output = shell_output("#{bin}/rosa create cluster 2<&1", 1)
     assert_match "Failed to create OCM connection: Not logged in", output
 
-    assert_match version.to_s, shell_output("#{bin}rosa version")
+    assert_match version.to_s, shell_output("#{bin}/rosa version")
   end
 end

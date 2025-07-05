@@ -1,10 +1,10 @@
 class Rocksdb < Formula
   desc "Embeddable, persistent key-value store for fast storage"
-  homepage "https:rocksdb.org"
-  url "https:github.comfacebookrocksdbarchiverefstagsv10.2.1.tar.gz"
+  homepage "https://rocksdb.org/"
+  url "https://ghfast.top/https://github.com/facebook/rocksdb/archive/refs/tags/v10.2.1.tar.gz"
   sha256 "d1ddfd3551e649f7e2d180d5a6a006d90cfde56dcfe1e548c58d95b7f1c87049"
   license any_of: ["GPL-2.0-only", "Apache-2.0"]
-  head "https:github.comfacebookrocksdb.git", branch: "main"
+  head "https://github.com/facebook/rocksdb.git", branch: "main"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "074e5716d66bf92a47427fa9122783753547675413ada2616a5a8ade73a85472"
@@ -43,7 +43,7 @@ class Rocksdb < Formula
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 
-    cd "buildtools" do
+    cd "build/tools" do
       bin.install "sst_dump" => "rocksdb_sst_dump"
       bin.install "db_sanity_test" => "rocksdb_sanity_test"
       bin.install "write_stress" => "rocksdb_write_stress"
@@ -52,14 +52,14 @@ class Rocksdb < Formula
       bin.install "rocksdb_dump"
       bin.install "rocksdb_undump"
     end
-    bin.install "builddb_stress_tooldb_stress" => "rocksdb_stress"
+    bin.install "build/db_stress_tool/db_stress" => "rocksdb_stress"
   end
 
   test do
-    (testpath"test.cpp").write <<~CPP
+    (testpath/"test.cpp").write <<~CPP
       #include <assert.h>
-      #include <rocksdboptions.h>
-      #include <rocksdbmemtablerep.h>
+      #include <rocksdb/options.h>
+      #include <rocksdb/memtablerep.h>
       using namespace rocksdb;
       int main() {
         Options options;
@@ -80,26 +80,26 @@ class Rocksdb < Formula
                                 "-L#{Formula["snappy"].opt_lib}", "-lsnappy",
                                 "-L#{Formula["lz4"].opt_lib}", "-llz4",
                                 "-L#{Formula["zstd"].opt_lib}", "-lzstd"
-    system ".db_test"
+    system "./db_test"
 
-    assert_match "sst_dump --file=", shell_output("#{bin}rocksdb_sst_dump --help 2>&1")
-    assert_match "rocksdb_sanity_test <path>", shell_output("#{bin}rocksdb_sanity_test --help 2>&1", 1)
-    assert_match "rocksdb_stress [OPTIONS]...", shell_output("#{bin}rocksdb_stress --help 2>&1", 1)
-    assert_match "rocksdb_write_stress [OPTIONS]...", shell_output("#{bin}rocksdb_write_stress --help 2>&1", 1)
-    assert_match "ldb - RocksDB Tool", shell_output("#{bin}rocksdb_ldb --help 2>&1")
-    assert_match "rocksdb_repl_stress:", shell_output("#{bin}rocksdb_repl_stress --help 2>&1", 1)
-    assert_match "rocksdb_dump:", shell_output("#{bin}rocksdb_dump --help 2>&1", 1)
-    assert_match "rocksdb_undump:", shell_output("#{bin}rocksdb_undump --help 2>&1", 1)
+    assert_match "sst_dump --file=", shell_output("#{bin}/rocksdb_sst_dump --help 2>&1")
+    assert_match "rocksdb_sanity_test <path>", shell_output("#{bin}/rocksdb_sanity_test --help 2>&1", 1)
+    assert_match "rocksdb_stress [OPTIONS]...", shell_output("#{bin}/rocksdb_stress --help 2>&1", 1)
+    assert_match "rocksdb_write_stress [OPTIONS]...", shell_output("#{bin}/rocksdb_write_stress --help 2>&1", 1)
+    assert_match "ldb - RocksDB Tool", shell_output("#{bin}/rocksdb_ldb --help 2>&1")
+    assert_match "rocksdb_repl_stress:", shell_output("#{bin}/rocksdb_repl_stress --help 2>&1", 1)
+    assert_match "rocksdb_dump:", shell_output("#{bin}/rocksdb_dump --help 2>&1", 1)
+    assert_match "rocksdb_undump:", shell_output("#{bin}/rocksdb_undump --help 2>&1", 1)
 
-    db = testpath"db"
+    db = testpath/"db"
     %w[no snappy zlib bzip2 lz4 zstd].each_with_index do |comp, idx|
       key = "key-#{idx}"
       value = "value-#{idx}"
 
-      put_cmd = "#{bin}rocksdb_ldb put --db=#{db} --create_if_missing --compression_type=#{comp} #{key} #{value}"
+      put_cmd = "#{bin}/rocksdb_ldb put --db=#{db} --create_if_missing --compression_type=#{comp} #{key} #{value}"
       assert_equal "OK", shell_output(put_cmd).chomp
 
-      get_cmd = "#{bin}rocksdb_ldb get --db=#{db} #{key}"
+      get_cmd = "#{bin}/rocksdb_ldb get --db=#{db} #{key}"
       assert_equal value, shell_output(get_cmd).chomp
     end
   end

@@ -1,11 +1,11 @@
 class K9s < Formula
   desc "Kubernetes CLI To Manage Your Clusters In Style!"
-  homepage "https:k9scli.io"
-  url "https:github.comderailedk9s.git",
+  homepage "https://k9scli.io/"
+  url "https://github.com/derailed/k9s.git",
       tag:      "v0.50.6",
       revision: "13cb55bb66272ac4c872a1f6bfa3e820d7d0ca5b"
   license "Apache-2.0"
-  head "https:github.comderailedk9s.git", branch: "master"
+  head "https://github.com/derailed/k9s.git", branch: "master"
 
   livecheck do
     url :stable
@@ -27,16 +27,16 @@ class K9s < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.comderailedk9scmd.version=#{version}
-      -X github.comderailedk9scmd.commit=#{Utils.git_head}
+      -X github.com/derailed/k9s/cmd.version=#{version}
+      -X github.com/derailed/k9s/cmd.commit=#{Utils.git_head}
     ]
     system "go", "build", *std_go_args(ldflags:)
 
-    generate_completions_from_executable(bin"k9s", "completion")
+    generate_completions_from_executable(bin/"k9s", "completion")
   end
 
   test do
     assert_match "K9s is a CLI to view and manage your Kubernetes clusters.",
-                 shell_output("#{bin}k9s --help")
+                 shell_output("#{bin}/k9s --help")
   end
 end

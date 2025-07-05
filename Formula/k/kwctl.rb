@@ -1,10 +1,10 @@
 class Kwctl < Formula
   desc "CLI tool for the Kubewarden policy engine for Kubernetes"
-  homepage "https:www.kubewarden.io"
-  url "https:github.comkubewardenkwctlarchiverefstagsv1.26.0.tar.gz"
+  homepage "https://www.kubewarden.io/"
+  url "https://ghfast.top/https://github.com/kubewarden/kwctl/archive/refs/tags/v1.26.0.tar.gz"
   sha256 "de4dd48a3765a7f186412d2a054c045714d663480a411402fcf4dd16543a2224"
   license "Apache-2.0"
-  head "https:github.comkubewardenkwctl.git", branch: "main"
+  head "https://github.com/kubewarden/kwctl.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "8403bd9a9455cc509e8f19883d625367aa19970fccba4356f5840721ca1068f0"
@@ -22,16 +22,16 @@ class Kwctl < Formula
   def install
     system "cargo", "install", *std_cargo_args
 
-    generate_completions_from_executable(bin"kwctl", "completions", "--shell")
+    generate_completions_from_executable(bin/"kwctl", "completions", "--shell")
   end
 
   test do
-    test_policy = "ghcr.iokubewardenpoliciessafe-labels:v0.1.7"
-    assert_equal "kwctl #{version}", shell_output("#{bin}kwctl --version").strip.split("\n")[0]
-    system bin"kwctl", "pull", test_policy
-    assert_match test_policy, shell_output("#{bin}kwctl policies")
+    test_policy = "ghcr.io/kubewarden/policies/safe-labels:v0.1.7"
+    assert_equal "kwctl #{version}", shell_output("#{bin}/kwctl --version").strip.split("\n")[0]
+    system bin/"kwctl", "pull", test_policy
+    assert_match test_policy, shell_output("#{bin}/kwctl policies")
 
-    (testpath"ingress.json").write <<~JSON
+    (testpath/"ingress.json").write <<~JSON
       {
         "uid": "1299d386-525b-4032-98ae-1949f69f9cfc",
         "kind": {
@@ -54,7 +54,7 @@ class Kwctl < Formula
           ]
         },
         "object": {
-          "apiVersion": "networking.k8s.iov1",
+          "apiVersion": "networking.k8s.io/v1",
           "kind": "Ingress",
           "metadata": {
             "name": "tls-example-ingress",
@@ -67,7 +67,7 @@ class Kwctl < Formula
         }
       }
     JSON
-    (testpath"policy-settings.json").write <<~JSON
+    (testpath/"policy-settings.json").write <<~JSON
       {
         "denied_labels": [
           "owner"
@@ -76,10 +76,10 @@ class Kwctl < Formula
     JSON
 
     output = shell_output(
-      "#{bin}kwctl run " \
-      "registry:#{test_policy} " \
-      "--request-path #{testpath}ingress.json " \
-      "--settings-path #{testpath}policy-settings.json",
+      "#{bin}/kwctl run " \
+      "registry://#{test_policy} " \
+      "--request-path #{testpath}/ingress.json " \
+      "--settings-path #{testpath}/policy-settings.json",
     )
     assert_match "The following labels are denied: owner", output
   end

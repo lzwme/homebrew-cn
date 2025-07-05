@@ -1,11 +1,11 @@
 class GitDelta < Formula
   desc "Syntax-highlighting pager for git and diff output"
-  homepage "https:github.comdandavisondelta"
-  url "https:github.comdandavisondeltaarchiverefstags0.18.2.tar.gz"
+  homepage "https://github.com/dandavison/delta"
+  url "https://ghfast.top/https://github.com/dandavison/delta/archive/refs/tags/0.18.2.tar.gz"
   sha256 "64717c3b3335b44a252b8e99713e080cbf7944308b96252bc175317b10004f02"
   license "MIT"
   revision 3
-  head "https:github.comdandavisondelta.git", branch: "main"
+  head "https://github.com/dandavison/delta.git", branch: "main"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "7c27a32de04509f9a25338f7cc4bafb70afd00f7cbea5da8c204a71c0f2a732b"
@@ -24,9 +24,9 @@ class GitDelta < Formula
 
   uses_from_macos "zlib"
 
-  # support libgit2 1.9, https:github.comdandavisondeltapull1930
+  # support libgit2 1.9, https://github.com/dandavison/delta/pull/1930
   patch do
-    url "https:github.comdandavisondeltacommit9d6101e82a79daecfa9e81fa54c440b2e0442a33.patch?full_index=1"
+    url "https://github.com/dandavison/delta/commit/9d6101e82a79daecfa9e81fa54c440b2e0442a33.patch?full_index=1"
     sha256 "1967b73aeaba44cf96a3f2866d436449668028d6f8a6fa77dbc0d5c3c386c0cf"
   end
 
@@ -36,24 +36,24 @@ class GitDelta < Formula
 
     system "cargo", "install", *std_cargo_args
 
-    generate_completions_from_executable(bin"delta", "--generate-completion")
+    generate_completions_from_executable(bin/"delta", "--generate-completion")
   end
 
   test do
-    assert_match "delta #{version}", shell_output("#{bin}delta --version")
+    assert_match "delta #{version}", shell_output("#{bin}/delta --version")
 
     # Create a test repo
     system "git", "init"
-    (testpath"test.txt").write("Hello, Homebrew!")
+    (testpath/"test.txt").write("Hello, Homebrew!")
     system "git", "add", "test.txt"
     system "git", "commit", "-m", "Initial commit"
-    (testpath"test.txt").append_lines("Hello, Delta!")
+    (testpath/"test.txt").append_lines("Hello, Delta!")
     system "git", "add", "test.txt"
     system "git", "commit", "-m", "Update test.txt"
 
     # Test delta with git log using pipe_output
     git_log_output = shell_output("git log -p --color=always")
-    output = pipe_output(bin"delta", git_log_output)
+    output = pipe_output(bin/"delta", git_log_output)
     assert_match "Hello, Delta!", output
   end
 end

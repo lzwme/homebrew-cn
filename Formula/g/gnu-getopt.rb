@@ -1,16 +1,16 @@
 class GnuGetopt < Formula
   desc "Command-line option parsing utility"
-  homepage "https:github.comutil-linuxutil-linux"
-  url "https:mirrors.edge.kernel.orgpublinuxutilsutil-linuxv2.41util-linux-2.41.1.tar.xz"
+  homepage "https://github.com/util-linux/util-linux"
+  url "https://mirrors.edge.kernel.org/pub/linux/utils/util-linux/v2.41/util-linux-2.41.1.tar.xz"
   sha256 "be9ad9a276f4305ab7dd2f5225c8be1ff54352f565ff4dede9628c1aaa7dec57"
   license "GPL-2.0-or-later"
 
   livecheck do
-    url "https:mirrors.edge.kernel.orgpublinuxutilsutil-linux"
-    regex(href=.*?util-linux[._-]v?(\d+(?:\.\d+)+)\.ti)
+    url "https://mirrors.edge.kernel.org/pub/linux/utils/util-linux/"
+    regex(/href=.*?util-linux[._-]v?(\d+(?:\.\d+)+)\.t/i)
     strategy :page_match do |page, regex|
       # Match versions from directories
-      versions = page.scan(%r{href=["']?v?(\d+(?:\.\d+)+)?["' >]}i)
+      versions = page.scan(%r{href=["']?v?(\d+(?:\.\d+)+)/?["' >]}i)
                      .flatten
                      .uniq
                      .sort_by { |v| Version.new(v) }
@@ -24,7 +24,7 @@ class GnuGetopt < Formula
       versions[-2..].reverse_each do |version|
         # Fetch the page for the version directory
         dir_page = Homebrew::Livecheck::Strategy.page_content(
-          URI.join(@url, "v#{version}").to_s,
+          URI.join(@url, "v#{version}/").to_s,
         )
         next versions if dir_page[:content].blank?
 
@@ -54,22 +54,22 @@ class GnuGetopt < Formula
   end
 
   def install
-    system ".configure", "--disable-silent-rules",
+    system "./configure", "--disable-silent-rules",
                           "--disable-liblastlog2",
                           *std_configure_args
 
-    system "make", "getopt", "misc-utilsgetopt.1"
+    system "make", "getopt", "misc-utils/getopt.1"
 
     bin.install "getopt"
-    man1.install "misc-utilsgetopt.1"
-    bash_completion.install "bash-completiongetopt"
-    doc.install "misc-utilsgetopt-example.bash", "misc-utilsgetopt-example.tcsh"
+    man1.install "misc-utils/getopt.1"
+    bash_completion.install "bash-completion/getopt"
+    doc.install "misc-utils/getopt-example.bash", "misc-utils/getopt-example.tcsh"
   end
 
   test do
-    output = shell_output("#{bin}getopt --longoptions foo --options ab:c test -b bar --foo baz")
+    output = shell_output("#{bin}/getopt --longoptions foo --options ab:c test -b bar --foo baz")
     assert_equal " -b 'bar' --foo -- 'test' 'baz'\n", output
     # Check that getopt is enhanced
-    assert_empty shell_output("#{bin}getopt --test", 4)
+    assert_empty shell_output("#{bin}/getopt --test", 4)
   end
 end

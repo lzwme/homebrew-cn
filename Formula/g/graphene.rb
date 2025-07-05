@@ -1,7 +1,7 @@
 class Graphene < Formula
   desc "Thin layer of graphic data types"
-  homepage "https:ebassi.github.iographene"
-  url "https:github.comebassigraphenearchiverefstags1.10.8.tar.gz"
+  homepage "https://ebassi.github.io/graphene/"
+  url "https://ghfast.top/https://github.com/ebassi/graphene/archive/refs/tags/1.10.8.tar.gz"
   sha256 "922dc109d2dc5dc56617a29bd716c79dd84db31721a8493a13a5f79109a4a4ed"
   license "MIT"
 
@@ -40,7 +40,7 @@ class Graphene < Formula
   end
 
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include <graphene-gobject.h>
 
       int main(int argc, char *argv[]) {

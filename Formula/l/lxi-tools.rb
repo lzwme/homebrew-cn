@@ -1,7 +1,7 @@
 class LxiTools < Formula
   desc "Open source tools for managing network attached LXI compatible instruments"
-  homepage "https:github.comlxi-toolslxi-tools"
-  url "https:github.comlxi-toolslxi-toolsarchiverefstagsv2.8.tar.gz"
+  homepage "https://github.com/lxi-tools/lxi-tools"
+  url "https://ghfast.top/https://github.com/lxi-tools/lxi-tools/archive/refs/tags/v2.8.tar.gz"
   sha256 "ef9d013189c9449f850d467dd35ac3840929e76a888cdb77e0edbce067da0b2d"
   license "BSD-3-Clause"
 
@@ -37,19 +37,19 @@ class LxiTools < Formula
   end
 
   def install
-    ENV["DESTDIR"] = ""
+    ENV["DESTDIR"] = "/"
     system "meson", "setup", "build", *std_meson_args
     system "meson", "compile", "-C", "build", "--verbose"
     system "meson", "install", "-C", "build"
   end
 
   def post_install
-    system Formula["glib"].opt_bin"glib-compile-schemas", HOMEBREW_PREFIX"shareglib-2.0schemas"
-    system Formula["gtk4"].opt_bin"gtk4-update-icon-cache", "-f", "-t", HOMEBREW_PREFIX"shareiconshicolor"
-    system Formula["desktop-file-utils"].opt_bin"update-desktop-database", HOMEBREW_PREFIX"shareapplications"
+    system Formula["glib"].opt_bin/"glib-compile-schemas", HOMEBREW_PREFIX/"share/glib-2.0/schemas"
+    system Formula["gtk4"].opt_bin/"gtk4-update-icon-cache", "-f", "-t", HOMEBREW_PREFIX/"share/icons/hicolor"
+    system Formula["desktop-file-utils"].opt_bin/"update-desktop-database", HOMEBREW_PREFIX/"share/applications"
   end
 
   test do
-    assert_match "Error: Missing address", shell_output("#{bin}lxi screenshot 2>&1", 1)
+    assert_match "Error: Missing address", shell_output("#{bin}/lxi screenshot 2>&1", 1)
   end
 end

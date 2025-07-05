@@ -1,10 +1,10 @@
 class KymaCli < Formula
   desc "Kyma command-line interface"
-  homepage "https:kyma-project.io"
-  url "https:github.comkyma-projectcliarchiverefstags3.0.1.tar.gz"
+  homepage "https://kyma-project.io"
+  url "https://ghfast.top/https://github.com/kyma-project/cli/archive/refs/tags/3.0.1.tar.gz"
   sha256 "503a7a248e6c5bca55ddaf2366203c7e6f161335bcce9dc253d88e381c48732b"
   license "Apache-2.0"
-  head "https:github.comkyma-projectcli.git", branch: "main"
+  head "https://github.com/kyma-project/cli.git", branch: "main"
 
   # Upstream appears to use GitHub releases to indicate that a version is
   # released and they sometimes re-tag versions before that point, so it's
@@ -28,18 +28,18 @@ class KymaCli < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.comkyma-projectcli.v#{version.major}internalcmdversion.version=#{version}
+      -X github.com/kyma-project/cli.v#{version.major}/internal/cmd/version.version=#{version}
     ]
 
-    system "go", "build", *std_go_args(output: bin"kyma", ldflags:)
+    system "go", "build", *std_go_args(output: bin/"kyma", ldflags:)
 
-    generate_completions_from_executable(bin"kyma", "completion")
+    generate_completions_from_executable(bin/"kyma", "completion")
   end
 
   test do
     assert_match "failed to create cluster connection",
-      shell_output("#{bin}kyma alpha kubeconfig generate --token test-token --skip-extensions 2>&1", 1)
+      shell_output("#{bin}/kyma alpha kubeconfig generate --token test-token --skip-extensions 2>&1", 1)
 
-    assert_match "Kyma-CLI Version: #{version}", shell_output("#{bin}kyma version")
+    assert_match "Kyma-CLI Version: #{version}", shell_output("#{bin}/kyma version")
   end
 end

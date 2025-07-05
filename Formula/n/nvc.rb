@@ -1,7 +1,7 @@
 class Nvc < Formula
   desc "VHDL compiler and simulator"
-  homepage "https:www.nickg.me.uknvc"
-  url "https:github.comnickgnvcreleasesdownloadr1.16.2nvc-1.16.2.tar.gz"
+  homepage "https://www.nickg.me.uk/nvc/"
+  url "https://ghfast.top/https://github.com/nickg/nvc/releases/download/r1.16.2/nvc-1.16.2.tar.gz"
   sha256 "e6ae398b579a02f390257e34df9c7a9e228bdde37562a541d13547b346299a4d"
   license "GPL-3.0-or-later"
 
@@ -16,7 +16,7 @@ class Nvc < Formula
   end
 
   head do
-    url "https:github.comnickgnvc.git", branch: "master"
+    url "https://github.com/nickg/nvc.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -36,14 +36,14 @@ class Nvc < Formula
   end
 
   def install
-    system ".autogen.sh" if build.head?
+    system "./autogen.sh" if build.head?
 
     # Avoid hardcoding path to the `ld` shim.
     ENV["ac_cv_path_linker_path"] = "ld" if OS.linux?
 
     # In-tree builds are not supported.
     mkdir "build" do
-      system "..configure", "--with-llvm=#{Formula["llvm"].opt_bin}llvm-config",
+      system "../configure", "--with-llvm=#{Formula["llvm"].opt_bin}/llvm-config",
                              "--prefix=#{prefix}",
                              "--with-system-cc=#{ENV.cc}",
                              "--disable-silent-rules"
@@ -51,17 +51,17 @@ class Nvc < Formula
       system "make", "V=1", "install"
     end
 
-    (pkgshare"examples").install "testregresswait1.vhd"
+    (pkgshare/"examples").install "test/regress/wait1.vhd"
   end
 
   test do
     resource "homebrew-test" do
-      url "https:raw.githubusercontent.comsuotovim-hdl-examplesfcb93c287c8e4af7cc30dc3e5758b12ee4f7ed9bbasic_libraryvery_common_pkg.vhd"
+      url "https://ghfast.top/https://raw.githubusercontent.com/suoto/vim-hdl-examples/fcb93c287c8e4af7cc30dc3e5758b12ee4f7ed9b/basic_library/very_common_pkg.vhd"
       sha256 "42560455663d9c42aaa077ca635e2fdc83fda33b7d1ff813da6faa790a7af41a"
     end
 
     testpath.install resource("homebrew-test")
-    system bin"nvc", "-a", testpath"very_common_pkg.vhd"
-    system bin"nvc", "-a", pkgshare"exampleswait1.vhd", "-e", "wait1", "-r"
+    system bin/"nvc", "-a", testpath/"very_common_pkg.vhd"
+    system bin/"nvc", "-a", pkgshare/"examples/wait1.vhd", "-e", "wait1", "-r"
   end
 end

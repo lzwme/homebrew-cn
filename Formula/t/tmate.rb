@@ -1,17 +1,17 @@
 class Tmate < Formula
   desc "Instant terminal sharing"
-  homepage "https:tmate.io"
+  homepage "https://tmate.io/"
   license "ISC"
-  head "https:github.comtmate-iotmate.git", branch: "master"
+  head "https://github.com/tmate-io/tmate.git", branch: "master"
 
   stable do
-    url "https:github.comtmate-iotmatearchiverefstags2.4.0.tar.gz"
+    url "https://ghfast.top/https://github.com/tmate-io/tmate/archive/refs/tags/2.4.0.tar.gz"
     sha256 "62b61eb12ab394012c861f6b48ba0bc04ac8765abca13bdde5a4d9105cb16138"
 
     # Fix finding `msgpack`
-    # https:github.comtmate-iotmatepull281
+    # https://github.com/tmate-io/tmate/pull/281
     patch do
-      url "https:github.comtmate-iotmatecommita5c6e80d3c54cd7faed52de5283b4f96bea86c13.patch?full_index=1"
+      url "https://github.com/tmate-io/tmate/commit/a5c6e80d3c54cd7faed52de5283b4f96bea86c13.patch?full_index=1"
       sha256 "d48006bf00d6addd5db7c6b875b7a890d6f9bc1a8984a9e12e1087af5ff58f35"
     end
   end
@@ -49,11 +49,11 @@ class Tmate < Formula
     system "sh", "autogen.sh"
 
     ENV.append "LDFLAGS", "-lresolv"
-    system ".configure", "--sysconfdir=#{etc}", *std_configure_args
+    system "./configure", "--sysconfdir=#{etc}", *std_configure_args
     system "make", "install"
   end
 
   test do
-    system bin"tmate", "-V"
+    system bin/"tmate", "-V"
   end
 end

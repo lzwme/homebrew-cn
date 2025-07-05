@@ -1,7 +1,7 @@
 class Xcodes < Formula
   desc "Best command-line tool to install and switch between multiple versions of Xcode"
-  homepage "https:github.comXcodesOrgxcodes"
-  url "https:github.comXcodesOrgxcodesarchiverefstags1.6.2.tar.gz"
+  homepage "https://github.com/XcodesOrg/xcodes"
+  url "https://ghfast.top/https://github.com/XcodesOrg/xcodes/archive/refs/tags/1.6.2.tar.gz"
   sha256 "0c38a39ecd527d15c3343da9b9bc57c9f0d5217f4c9d36fc3879c3ae423b1295"
   license "MIT"
 
@@ -21,11 +21,11 @@ class Xcodes < Formula
 
   def install
     system "swift", "build", "--disable-sandbox", "--configuration", "release"
-    bin.install ".buildreleasexcodes"
-    generate_completions_from_executable(bin"xcodes", "--generate-completion-script")
+    bin.install ".build/release/xcodes"
+    generate_completions_from_executable(bin/"xcodes", "--generate-completion-script")
   end
 
   test do
-    assert_match "1.0", shell_output("#{bin}xcodes list")
+    assert_match "1.0", shell_output("#{bin}/xcodes list")
   end
 end

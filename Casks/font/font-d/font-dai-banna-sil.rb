@@ -2,12 +2,12 @@ cask "font-dai-banna-sil" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefonts.git",
-      verified:  "github.comgooglefonts",
+  url "https://github.com/google/fonts.git",
+      verified:  "github.com/google/fonts",
       branch:    "main",
-      only_path: "ofldaibannasil"
+      only_path: "ofl/daibannasil"
   name "Dai Banna SIL"
-  homepage "https:fonts.google.comspecimenDai+Banna+SIL"
+  homepage "https://fonts.google.com/specimen/Dai+Banna+SIL"
 
   font "DaiBannaSIL-Bold.ttf"
   font "DaiBannaSIL-BoldItalic.ttf"

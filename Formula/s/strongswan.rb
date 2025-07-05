@@ -1,13 +1,13 @@
 class Strongswan < Formula
   desc "VPN based on IPsec"
-  homepage "https:www.strongswan.org"
-  url "https:download.strongswan.orgstrongswan-6.0.1.tar.bz2"
+  homepage "https://www.strongswan.org"
+  url "https://download.strongswan.org/strongswan-6.0.1.tar.bz2"
   sha256 "212368cbc674fed31f3292210303fff06da8b90acad2d1387375ed855e6879c4"
   license "GPL-2.0-or-later"
 
   livecheck do
-    url "https:download.strongswan.org"
-    regex(href=.*?strongswan[._-]v?(\d+(?:\.\d+)+[a-z]?)\.ti)
+    url "https://download.strongswan.org/"
+    regex(/href=.*?strongswan[._-]v?(\d+(?:\.\d+)+[a-z]?)\.t/i)
   end
 
   bottle do
@@ -21,7 +21,7 @@ class Strongswan < Formula
   end
 
   head do
-    url "https:github.comstrongswanstrongswan.git", branch: "master"
+    url "https://github.com/strongswan/strongswan.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -37,7 +37,7 @@ class Strongswan < Formula
 
   def install
     # Work around RPATH modifications corrupting binary. Upstream patchelf fixed this issue
-    # https:github.comNixOSpatchelfissues315 but it may be missing in patchelf.rb
+    # https://github.com/NixOS/patchelf/issues/315 but it may be missing in patchelf.rb
     ENV.append_path "HOMEBREW_RPATH_PATHS", libexec if OS.linux?
 
     args = %W[
@@ -79,8 +79,8 @@ class Strongswan < Formula
 
     args << "--enable-kernel-pfroute" << "--enable-osx-attr" if OS.mac?
 
-    system ".autogen.sh" if build.head?
-    system ".configure", *args, *std_configure_args
+    system "./autogen.sh" if build.head?
+    system "./configure", *args, *std_configure_args
     system "make", "install"
   end
 
@@ -91,7 +91,7 @@ class Strongswan < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}ipsec --version")
-    assert_match version.to_s, shell_output("#{bin}charon-cmd --version")
+    assert_match version.to_s, shell_output("#{bin}/ipsec --version")
+    assert_match version.to_s, shell_output("#{bin}/charon-cmd --version")
   end
 end

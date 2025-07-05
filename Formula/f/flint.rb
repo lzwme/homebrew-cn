@@ -1,13 +1,13 @@
 class Flint < Formula
   desc "C library for number theory"
-  homepage "https:flintlib.org"
-  url "https:github.comflintlibflintreleasesdownloadv3.3.1flint-3.3.1.tar.gz"
+  homepage "https://flintlib.org/"
+  url "https://ghfast.top/https://github.com/flintlib/flint/releases/download/v3.3.1/flint-3.3.1.tar.gz"
   sha256 "64d70e513076cfa971e0410b58c1da5d35112913e9a56b44e2c681b459d3eafb"
   license "LGPL-3.0-or-later"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+(?:[._-]?p\d+)?)$i)
+    regex(/^v?(\d+(?:\.\d+)+(?:[._-]?p\d+)?)$/i)
     strategy :github_latest
   end
 
@@ -22,7 +22,7 @@ class Flint < Formula
   end
 
   head do
-    url "https:github.comflintlibflint.git", branch: "main"
+    url "https://github.com/flintlib/flint.git", branch: "main"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -44,7 +44,7 @@ class Flint < Formula
     ]
 
     if Hardware::CPU.intel?
-      # enabledisable avx{2,512}
+      # enable/disable avx{2,512}
       # Because flint doesn't use CPUID at runtime
       # we cannot rely on -march options
       if build.bottle?
@@ -60,14 +60,14 @@ class Flint < Formula
       end
     end
 
-    system ".bootstrap.sh" if build.head?
-    system ".configure", *args, *std_configure_args
+    system "./bootstrap.sh" if build.head?
+    system "./configure", *args, *std_configure_args
     system "make"
     system "make", "install"
   end
 
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include <stdlib.h>
       #include <stdio.h>
       #include "flint.h"
@@ -117,8 +117,8 @@ class Flint < Formula
           return EXIT_SUCCESS;
       }
     C
-    system ENV.cc, "test.c", "-I#{include}flint", "-L#{lib}", "-L#{Formula["gmp"].lib}",
+    system ENV.cc, "test.c", "-I#{include}/flint", "-L#{lib}", "-L#{Formula["gmp"].lib}",
            "-lflint", "-lgmp", "-o", "test"
-    system ".test", "2"
+    system "./test", "2"
   end
 end

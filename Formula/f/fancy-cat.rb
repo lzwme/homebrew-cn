@@ -1,7 +1,7 @@
 class FancyCat < Formula
   desc "PDF reader for terminal emulators using the Kitty image protocol"
-  homepage "https:github.comfrereffancy-cat"
-  url "https:github.comfrereffancy-catarchiverefstagsv0.4.0.tar.gz"
+  homepage "https://github.com/freref/fancy-cat"
+  url "https://ghfast.top/https://github.com/freref/fancy-cat/archive/refs/tags/v0.4.0.tar.gz"
   sha256 "bce101d5eb009ec9057f7b87f6ad767ee96238abcee8854a9db7febd0229a2bf"
   license "AGPL-3.0-or-later"
   revision 6
@@ -21,13 +21,13 @@ class FancyCat < Formula
 
   # Upstream fix for hash mismatch of dependencies
   patch do
-    url "https:github.comfrereffancy-catcommitc16075f5c5760a40f5b9d855dc6fe4ab5c91f2b2.patch?full_index=1"
+    url "https://github.com/freref/fancy-cat/commit/c16075f5c5760a40f5b9d855dc6fe4ab5c91f2b2.patch?full_index=1"
     sha256 "8f4540ff942c5175df6d87bbe8c70312634a0f5237d3970e1ea5e7a9e55eba12"
   end
 
   def install
     # Fix illegal instruction errors when using bottles on older CPUs.
-    # https:github.comHomebrewhomebrew-coreissues92282
+    # https://github.com/Homebrew/homebrew-core/issues/92282
     cpu = case ENV.effective_arch
     when :arm_vortex_tempest then "apple_m1" # See `zig targets`.
     when :armv8 then "xgene1" # Closest to `-march=armv8-a`
@@ -42,6 +42,6 @@ class FancyCat < Formula
 
   test do
     # fancy-cat is a TUI application, unfortunately we cannot test it properly
-    assert_match version.to_s, shell_output("#{bin}fancy-cat --version")
+    assert_match version.to_s, shell_output("#{bin}/fancy-cat --version")
   end
 end

@@ -1,10 +1,10 @@
 class Berglas < Formula
   desc "Tool for managing secrets on Google Cloud"
-  homepage "https:github.comGoogleCloudPlatformberglas"
-  url "https:github.comGoogleCloudPlatformberglasarchiverefstagsv2.0.8.tar.gz"
+  homepage "https://github.com/GoogleCloudPlatform/berglas"
+  url "https://ghfast.top/https://github.com/GoogleCloudPlatform/berglas/archive/refs/tags/v2.0.8.tar.gz"
   sha256 "1765994e212c0281b215aabae3ec95eef2894a6bfa99f5434db4bf6814c0c940"
   license "Apache-2.0"
-  head "https:github.comGoogleCloudPlatformberglas.git", branch: "main"
+  head "https://github.com/GoogleCloudPlatform/berglas.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "bacaef230bd9189cece3229c9ae695c9a38547e0cf7bcff8d38d993de445f437"
@@ -20,18 +20,18 @@ class Berglas < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.comGoogleCloudPlatformberglasv2internalversion.name=berglas
-      -X github.comGoogleCloudPlatformberglasv2internalversion.version=#{version}
+      -X github.com/GoogleCloudPlatform/berglas/v2/internal/version.name=berglas
+      -X github.com/GoogleCloudPlatform/berglas/v2/internal/version.version=#{version}
     ]
     system "go", "build", *std_go_args(ldflags:)
 
-    generate_completions_from_executable(bin"berglas", "completion", shells: [:bash, :zsh])
+    generate_completions_from_executable(bin/"berglas", "completion", shells: [:bash, :zsh])
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}berglas -v")
+    assert_match version.to_s, shell_output("#{bin}/berglas -v")
 
-    out = shell_output("#{bin}berglas list -l info homebrewtest 2>&1", 61)
+    out = shell_output("#{bin}/berglas list -l info homebrewtest 2>&1", 61)
     assert_match "could not find default credentials.", out
   end
 end

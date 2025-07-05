@@ -1,10 +1,10 @@
 class Bindgen < Formula
   desc "Automatically generates Rust FFI bindings to C (and some C++) libraries"
-  homepage "https:rust-lang.github.iorust-bindgen"
-  url "https:github.comrust-langrust-bindgenarchiverefstagsv0.72.0.tar.gz"
+  homepage "https://rust-lang.github.io/rust-bindgen/"
+  url "https://ghfast.top/https://github.com/rust-lang/rust-bindgen/archive/refs/tags/v0.72.0.tar.gz"
   sha256 "1da7050a17fdab0e20d5d8c20d48cddce2973e8b7cb0afc15185bfad22f8ce5b"
   license "BSD-3-Clause"
-  head "https:github.comrust-langrust-bindgen.git", branch: "main"
+  head "https://github.com/rust-lang/rust-bindgen.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "ab793bcbe793c0693c14daff5b477d5397d7e069f3190189e83d9659c10f9bc7"
@@ -23,11 +23,11 @@ class Bindgen < Formula
   def install
     system "cargo", "install", *std_cargo_args(path: "bindgen-cli")
 
-    generate_completions_from_executable(bin"bindgen", "--generate-shell-completions")
+    generate_completions_from_executable(bin/"bindgen", "--generate-shell-completions")
   end
 
   test do
-    (testpath"cool.h").write <<~C
+    (testpath/"cool.h").write <<~C
       typedef struct CoolStruct {
           int x;
           int y;
@@ -36,9 +36,9 @@ class Bindgen < Formula
       void cool_function(int i, char c, CoolStruct* cs);
     C
 
-    output = shell_output("#{bin}bindgen cool.h")
+    output = shell_output("#{bin}/bindgen cool.h")
     assert_match "pub struct CoolStruct", output
 
-    assert_match version.to_s, shell_output("#{bin}bindgen --version")
+    assert_match version.to_s, shell_output("#{bin}/bindgen --version")
   end
 end

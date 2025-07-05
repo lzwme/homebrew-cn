@@ -2,10 +2,10 @@ cask "font-noto-serif-todhri" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefontsrawmainoflnotoseriftodhriNotoSerifTodhri-Regular.ttf",
-      verified: "github.comgooglefonts"
+  url "https://github.com/google/fonts/raw/main/ofl/notoseriftodhri/NotoSerifTodhri-Regular.ttf",
+      verified: "github.com/google/fonts/"
   name "Noto Serif Todhri"
-  homepage "https:fonts.google.comspecimenNoto+Serif+Todhri"
+  homepage "https://fonts.google.com/specimen/Noto+Serif+Todhri"
 
   font "NotoSerifTodhri-Regular.ttf"
 

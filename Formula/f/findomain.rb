@@ -1,7 +1,7 @@
 class Findomain < Formula
   desc "Cross-platform subdomain enumerator"
-  homepage "https:github.comFindomainFindomain"
-  url "https:github.comFindomainFindomainarchiverefstags9.0.4.tar.gz"
+  homepage "https://github.com/Findomain/Findomain"
+  url "https://ghfast.top/https://github.com/Findomain/Findomain/archive/refs/tags/9.0.4.tar.gz"
   sha256 "98c142e2e6ed67726bdea7a1726a54fb6773a8d1ccaa262e008804432af29190"
   license "GPL-3.0-or-later"
 
@@ -23,7 +23,7 @@ class Findomain < Formula
 
   # bump traitobject to build against rust 1.87
   patch do
-    url "https:github.comFindomainFindomaincommit1c246de8300ef6dee7096bad2d2a1a239549c7f0.patch?full_index=1"
+    url "https://github.com/Findomain/Findomain/commit/1c246de8300ef6dee7096bad2d2a1a239549c7f0.patch?full_index=1"
     sha256 "b200ac84d9542af1f7c8cfd6b462f01e2dc8c1468cadb0ec74a49703f2b42e31"
   end
 
@@ -36,6 +36,6 @@ class Findomain < Formula
   end
 
   test do
-    assert_match "Good luck Hax0r", shell_output("#{bin}findomain -t brew.sh")
+    assert_match "Good luck Hax0r", shell_output("#{bin}/findomain -t brew.sh")
   end
 end

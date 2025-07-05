@@ -1,7 +1,7 @@
 class CargoInstruments < Formula
   desc "Easily generate Instruments traces for your rust crate"
-  homepage "https:github.comcmyrcargo-instruments"
-  url "https:github.comcmyrcargo-instrumentsarchiverefstagsv0.4.12.tar.gz"
+  homepage "https://github.com/cmyr/cargo-instruments"
+  url "https://ghfast.top/https://github.com/cmyr/cargo-instruments/archive/refs/tags/v0.4.12.tar.gz"
   sha256 "0ecc0440dd36a40aed1cfc5222c93ec432f084b0ffa569ba9f48439c4bf41211"
   license "MIT"
 
@@ -22,7 +22,7 @@ class CargoInstruments < Formula
   end
 
   test do
-    output = shell_output "#{bin}cargo-instruments instruments", 1
+    output = shell_output "#{bin}/cargo-instruments instruments", 1
     assert_match output, "could not find `Cargo.toml` in `#{Dir.pwd}` or any parent directory"
   end
 end

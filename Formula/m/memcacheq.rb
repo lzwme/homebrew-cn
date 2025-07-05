@@ -1,7 +1,7 @@
 class Memcacheq < Formula
   desc "Queue service for memcache"
-  homepage "https:github.comstvchumemcacheq"
-  url "https:github.comstvchumemcacheqarchiverefstagsv0.2.1.tar.gz"
+  homepage "https://github.com/stvchu/memcacheq"
+  url "https://ghfast.top/https://github.com/stvchu/memcacheq/archive/refs/tags/v0.2.1.tar.gz"
   sha256 "ace33313568959b5a301dda491f63af09793987b73fd15abd3fb613829eda07e"
   license "BSD-3-Clause"
 
@@ -22,19 +22,19 @@ class Memcacheq < Formula
 
   def install
     ENV.append "CFLAGS", "-std=gnu89"
-    system ".configure", "--enable-threads", *std_configure_args
+    system "./configure", "--enable-threads", *std_configure_args
     system "make", "install"
   end
 
   test do
     port = free_port
-    pid = spawn(bin"memcacheq", "-p", port.to_s, "-H", testpath)
+    pid = spawn(bin/"memcacheq", "-p", port.to_s, "-H", testpath)
     sleep 5
     TCPSocket.open("localhost", port) do |sock|
       sock.puts("set brew 2 0 3\r\n100\r\n")
       assert_equal "STORED\r\n", sock.gets
       sock.puts("stats queue\r\n")
-      assert_equal "STAT brew 10\r\n", sock.gets
+      assert_equal "STAT brew 1/0\r\n", sock.gets
     ensure
       sock.close
     end

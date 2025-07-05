@@ -1,10 +1,10 @@
 class Buf < Formula
   desc "New way of working with Protocol Buffers"
-  homepage "https:github.combufbuildbuf"
-  url "https:github.combufbuildbufarchiverefstagsv1.55.1.tar.gz"
+  homepage "https://github.com/bufbuild/buf"
+  url "https://ghfast.top/https://github.com/bufbuild/buf/archive/refs/tags/v1.55.1.tar.gz"
   sha256 "01663475792aa851d4b3af16be9ec19d808cead673f986902343beed1a0063dd"
   license "Apache-2.0"
-  head "https:github.combufbuildbuf.git", branch: "main"
+  head "https://github.com/bufbuild/buf.git", branch: "main"
 
   # There can be a notable gap between when a version is tagged and a
   # corresponding release is created, so we check the "latest" release instead
@@ -27,23 +27,23 @@ class Buf < Formula
 
   def install
     %w[buf protoc-gen-buf-breaking protoc-gen-buf-lint].each do |name|
-      system "go", "build", *std_go_args(ldflags: "-s -w", output: binname), ".cmd#{name}"
+      system "go", "build", *std_go_args(ldflags: "-s -w", output: bin/name), "./cmd/#{name}"
     end
 
-    generate_completions_from_executable(bin"buf", "completion")
+    generate_completions_from_executable(bin/"buf", "completion")
     man1.mkpath
-    system bin"buf", "manpages", man1
+    system bin/"buf", "manpages", man1
   end
 
   test do
-    (testpath"invalidFileName.proto").write <<~PROTO
+    (testpath/"invalidFileName.proto").write <<~PROTO
       syntax = "proto3";
       package examplepb;
     PROTO
 
-    (testpath"buf.yaml").write <<~YAML
+    (testpath/"buf.yaml").write <<~YAML
       version: v1
-      name: buf.buildbufbuildbuf
+      name: buf.build/bufbuild/buf
       lint:
         use:
           - STANDARD
@@ -62,8 +62,8 @@ class Buf < Formula
       invalidFileName.proto:2:1:Package name "examplepb" should be suffixed \
       with a correctly formed version, such as "examplepb.v1".
     EOS
-    assert_equal expected, shell_output("#{bin}buf lint invalidFileName.proto 2>&1", 100)
+    assert_equal expected, shell_output("#{bin}/buf lint invalidFileName.proto 2>&1", 100)
 
-    assert_match version.to_s, shell_output("#{bin}buf --version")
+    assert_match version.to_s, shell_output("#{bin}/buf --version")
   end
 end

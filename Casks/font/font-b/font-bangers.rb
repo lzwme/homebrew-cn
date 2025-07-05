@@ -2,10 +2,10 @@ cask "font-bangers" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefontsrawmainoflbangersBangers-Regular.ttf",
-      verified: "github.comgooglefonts"
+  url "https://github.com/google/fonts/raw/main/ofl/bangers/Bangers-Regular.ttf",
+      verified: "github.com/google/fonts/"
   name "Bangers"
-  homepage "https:fonts.google.comspecimenBangers"
+  homepage "https://fonts.google.com/specimen/Bangers"
 
   font "Bangers-Regular.ttf"
 

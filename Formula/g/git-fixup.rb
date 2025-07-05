@@ -1,10 +1,10 @@
 class GitFixup < Formula
   desc "Alias for git commit --fixup <ref>"
-  homepage "https:github.comkeisgit-fixup"
-  url "https:github.comkeisgit-fixuparchiverefstagsv1.6.1.tar.gz"
+  homepage "https://github.com/keis/git-fixup"
+  url "https://ghfast.top/https://github.com/keis/git-fixup/archive/refs/tags/v1.6.1.tar.gz"
   sha256 "414d207687059094df9603c79d5e52343704e077b72777f25eda4d6ce291046e"
   license "ISC"
-  head "https:github.comkeisgit-fixup.git", branch: "master"
+  head "https://github.com/keis/git-fixup.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -19,18 +19,18 @@ class GitFixup < Formula
   end
 
   test do
-    (testpath".gitconfig").write <<~EOS
+    (testpath/".gitconfig").write <<~EOS
       [user]
         name = Real Person
         email = notacat@hotmail.cat
     EOS
     system "git", "init"
-    (testpath"test").write "foo"
+    (testpath/"test").write "foo"
     system "git", "add", "test"
     system "git", "commit", "--message", "Initial commit"
 
-    (testpath"test").delete
-    (testpath"test").write "bar"
+    (testpath/"test").delete
+    (testpath/"test").write "bar"
     system "git", "add", "test"
     system "git", "fixup"
   end

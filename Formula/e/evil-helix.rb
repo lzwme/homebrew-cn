@@ -1,10 +1,10 @@
 class EvilHelix < Formula
   desc "Soft fork of the helix editor"
-  homepage "https:github.comusagi-flowevil-helix"
-  url "https:github.comusagi-flowevil-helixarchiverefstagsrelease-20250601b.tar.gz"
+  homepage "https://github.com/usagi-flow/evil-helix"
+  url "https://ghfast.top/https://github.com/usagi-flow/evil-helix/archive/refs/tags/release-20250601b.tar.gz"
   sha256 "920b36721a6a984c39208ea8825b1f0c68b0bf7d15e029e8ac6896c3442ccc78"
   license "MPL-2.0"
-  head "https:github.comusagi-flowevil-helix.git", branch: "main"
+  head "https://github.com/usagi-flow/evil-helix.git", branch: "main"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "68dc4d8bef7fcc1f8f18a1c64517ad01e6ef805d64341280dddd7d1c289f49c1"
@@ -22,20 +22,20 @@ class EvilHelix < Formula
   conflicts_with "hex", because: "both install `hx` binaries"
 
   def install
-    ENV["HELIX_DEFAULT_RUNTIME"] = libexec"runtime"
+    ENV["HELIX_DEFAULT_RUNTIME"] = libexec/"runtime"
     system "cargo", "install", "-vv", *std_cargo_args(path: "helix-term")
-    rm_r "runtimegrammarssources"
+    rm_r "runtime/grammars/sources/"
     libexec.install "runtime"
 
-    bash_completion.install "contribcompletionhx.bash" => "hx"
-    fish_completion.install "contribcompletionhx.fish"
-    zsh_completion.install "contribcompletionhx.zsh" => "_hx"
+    bash_completion.install "contrib/completion/hx.bash" => "hx"
+    fish_completion.install "contrib/completion/hx.fish"
+    zsh_completion.install "contrib/completion/hx.zsh" => "_hx"
   end
 
   test do
-    file = "https:raw.githubusercontent.comusagi-flowevil-helixrefstagsrelease-#{version}Cargo.toml"
-    version = shell_output("curl #{file}")&.gsub!(.0$i, "")
-    assert_match version.to_s, shell_output("#{bin}hx --version")
-    assert_match "✓", shell_output("#{bin}hx --health")
+    file = "https://ghfast.top/https://raw.githubusercontent.com/usagi-flow/evil-helix/refs/tags/release-#{version}/Cargo.toml"
+    version = shell_output("curl #{file}")&.gsub!(/.0$/i, "")
+    assert_match version.to_s, shell_output("#{bin}/hx --version")
+    assert_match "✓", shell_output("#{bin}/hx --health")
   end
 end

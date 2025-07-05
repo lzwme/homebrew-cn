@@ -2,21 +2,21 @@ cask "google-assistant" do
   version "1.1.0"
   sha256 "fe95491bb55136e62b4a85ad49e648d03e662df8445c417bade70d95d711116b"
 
-  url "https:github.comMelvin-AbrahamGoogle-Assistant-Unofficial-Desktop-Clientreleasesdownloadv#{version}Google-Assistant-#{version}.dmg"
+  url "https://ghfast.top/https://github.com/Melvin-Abraham/Google-Assistant-Unofficial-Desktop-Client/releases/download/v#{version}/Google-Assistant-#{version}.dmg"
   name "Google Assistant Unofficial Desktop Client"
   desc "Cross-platform unofficial Google Assistant Client for Desktop"
-  homepage "https:github.comMelvin-AbrahamGoogle-Assistant-Unofficial-Desktop-Client"
+  homepage "https://github.com/Melvin-Abraham/Google-Assistant-Unofficial-Desktop-Client"
 
   no_autobump! because: :requires_manual_review
 
   app "Google Assistant.app"
 
   zap trash: [
-    "~LibraryApplication SupportCachesg-assist-updater",
-    "~LibraryApplication SupportGoogle Assistant",
-    "~LibraryLogsGoogle Assistant",
-    "~LibraryPreferencescom.redvirus.g-assist.plist",
-    "~LibrarySaved Application Statecom.redvirus.g-assist.savedState",
+    "~/Library/Application Support/Caches/g-assist-updater",
+    "~/Library/Application Support/Google Assistant",
+    "~/Library/Logs/Google Assistant",
+    "~/Library/Preferences/com.redvirus.g-assist.plist",
+    "~/Library/Saved Application State/com.redvirus.g-assist.savedState",
   ]
 
   caveats do

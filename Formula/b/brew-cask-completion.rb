@@ -1,11 +1,11 @@
 class BrewCaskCompletion < Formula
   desc "Fish completion for brew-cask"
-  homepage "https:github.comxybhomebrew-cask-completion"
-  url "https:github.comxybhomebrew-cask-completionarchiverefstagsv2.1.tar.gz"
+  homepage "https://github.com/xyb/homebrew-cask-completion"
+  url "https://ghfast.top/https://github.com/xyb/homebrew-cask-completion/archive/refs/tags/v2.1.tar.gz"
   sha256 "27c7ea3b7f7c060f5b5676a419220c4ce6ebf384237e859a61c346f61c8f7a1b"
   license "BSD-2-Clause"
   revision 1
-  head "https:github.comxybhomebrew-cask-completion.git", branch: "master"
+  head "https://github.com/xyb/homebrew-cask-completion.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -32,6 +32,6 @@ class BrewCaskCompletion < Formula
   end
 
   test do
-    assert_path_exists fish_completion"brew-cask.fish"
+    assert_path_exists fish_completion/"brew-cask.fish"
   end
 end

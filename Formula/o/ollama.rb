@@ -1,11 +1,11 @@
 class Ollama < Formula
   desc "Create, run, and share large language models (LLMs)"
-  homepage "https:ollama.com"
-  url "https:github.comollamaollama.git",
+  homepage "https://ollama.com/"
+  url "https://github.com/ollama/ollama.git",
       tag:      "v0.9.5",
       revision: "5d8c1735296299c3d81bb40f00038398dc729579"
   license "MIT"
-  head "https:github.comollamaollama.git", branch: "main"
+  head "https://github.com/ollama/ollama.git", branch: "main"
 
   # Upstream creates releases that use a stable tag (e.g., `v1.2.3`) but are
   # labeled as "pre-release" on GitHub before the version is released, so it's
@@ -36,20 +36,20 @@ class Ollama < Formula
 
     ldflags = %W[
       -s -w
-      -X=github.comollamaollamaversion.Version=#{version}
-      -X=github.comollamaollamaserver.mode=release
+      -X=github.com/ollama/ollama/version.Version=#{version}
+      -X=github.com/ollama/ollama/server.mode=release
     ]
 
-    system "go", "generate", "...."
+    system "go", "generate", "./..."
     system "go", "build", *std_go_args(ldflags:)
   end
 
   service do
-    run [opt_bin"ollama", "serve"]
+    run [opt_bin/"ollama", "serve"]
     keep_alive true
     working_dir var
-    log_path var"logollama.log"
-    error_log_path var"logollama.log"
+    log_path var/"log/ollama.log"
+    error_log_path var/"log/ollama.log"
     environment_variables OLLAMA_FLASH_ATTENTION: "1",
                           OLLAMA_KV_CACHE_TYPE:   "q8_0"
   end
@@ -58,7 +58,7 @@ class Ollama < Formula
     port = free_port
     ENV["OLLAMA_HOST"] = "localhost:#{port}"
 
-    pid = fork { exec bin"ollama", "serve" }
+    pid = fork { exec bin/"ollama", "serve" }
     sleep 3
     begin
       assert_match "Ollama is running", shell_output("curl -s localhost:#{port}")

@@ -1,10 +1,10 @@
 class Gotests < Formula
   desc "Automatically generate Go test boilerplate from your source code"
-  homepage "https:github.comcweillgotests"
-  url "https:github.comcweillgotestsarchiverefstagsv1.6.0.tar.gz"
+  homepage "https://github.com/cweill/gotests"
+  url "https://ghfast.top/https://github.com/cweill/gotests/archive/refs/tags/v1.6.0.tar.gz"
   sha256 "f0236dbebd8a3fd19ec4260f490cb164240e1d518d3971b42872978f7a50c040"
   license "Apache-2.0"
-  head "https:github.comcweillgotests.git", branch: "develop"
+  head "https://github.com/cweill/gotests.git", branch: "develop"
 
   no_autobump! because: :requires_manual_review
 
@@ -26,11 +26,11 @@ class Gotests < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), ".gotests"
+    system "go", "build", *std_go_args(ldflags: "-s -w"), "./gotests"
   end
 
   test do
-    (testpath"test.go").write <<~GO
+    (testpath/"test.go").write <<~GO
       package main
 
       func add(x int, y int) int {
@@ -53,7 +53,7 @@ class Gotests < Formula
       		args args
       		want int
       	}{
-      		 TODO: Add test cases.
+      		// TODO: Add test cases.
       	}
       	for _, tt := range tests {
       		t.Run(tt.name, func(t *testing.T) {
@@ -64,6 +64,6 @@ class Gotests < Formula
       	}
       }
     EOS
-    assert_equal expected, shell_output("#{bin}gotests -all test.go")
+    assert_equal expected, shell_output("#{bin}/gotests -all test.go")
   end
 end

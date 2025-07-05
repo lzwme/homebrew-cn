@@ -1,10 +1,10 @@
 class UutilsDiffutils < Formula
   desc "Cross-platform Rust rewrite of the GNU diffutils"
-  homepage "https:uutils.github.iodiffutils"
-  url "https:github.comuutilsdiffutilsarchiverefstagsv0.4.2.tar.gz"
+  homepage "https://uutils.github.io/diffutils/"
+  url "https://ghfast.top/https://github.com/uutils/diffutils/archive/refs/tags/v0.4.2.tar.gz"
   sha256 "3be767b5417fb5358d6a979603628c9a926367c700c45335e888b605d9d16ef4"
   license any_of: ["Apache-2.0", "MIT"]
-  head "https:github.comuutilsdiffutils.git", branch: "main"
+  head "https://github.com/uutils/diffutils.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "5b9c46a4be56b29642e8ea525e0e4f805fbb17285bb255359f20b373fb8ad189"
@@ -22,9 +22,9 @@ class UutilsDiffutils < Formula
 
   def install
     system "cargo", "install", *std_cargo_args(root: libexec)
-    mv libexec"bin", libexec"uubin"
-    Dir.children(libexec"uubin").each do |cmd|
-      bin.install_symlink libexec"uubin"cmd => "u#{cmd}"
+    mv libexec/"bin", libexec/"uubin"
+    Dir.children(libexec/"uubin").each do |cmd|
+      bin.install_symlink libexec/"uubin"/cmd => "u#{cmd}"
     end
   end
 
@@ -33,13 +33,13 @@ class UutilsDiffutils < Formula
       All commands have been installed with the prefix "u".
       If you need to use these commands with their normal names, you
       can add a "uubin" directory to your PATH from your bashrc like:
-        PATH="#{opt_libexec}uubin:$PATH"
+        PATH="#{opt_libexec}/uubin:$PATH"
     EOS
   end
 
   test do
-    (testpath"a").write "foo"
-    (testpath"b").write "foo"
-    system bin"udiffutils", "a", "b"
+    (testpath/"a").write "foo"
+    (testpath/"b").write "foo"
+    system bin/"udiffutils", "a", "b"
   end
 end

@@ -1,10 +1,10 @@
 class Richgo < Formula
   desc "Enrich `go test` outputs with text decorations"
-  homepage "https:github.comkyoh86richgo"
-  url "https:github.comkyoh86richgoarchiverefstagsv0.3.12.tar.gz"
+  homepage "https://github.com/kyoh86/richgo"
+  url "https://ghfast.top/https://github.com/kyoh86/richgo/archive/refs/tags/v0.3.12.tar.gz"
   sha256 "811db92c36818be053fa3950d40f8cca13912b8a4a9f54b82a63e2f112d2c4fe"
   license "MIT"
-  head "https:github.comkyoh86richgo.git", branch: "main"
+  head "https://github.com/kyoh86/richgo.git", branch: "main"
 
   no_autobump! because: :requires_manual_review
 
@@ -26,13 +26,13 @@ class Richgo < Formula
   end
 
   test do
-    (testpath"go.mod").write <<~GOMOD
-      module github.comHomebrewbrew-test
+    (testpath/"go.mod").write <<~GOMOD
+      module github.com/Homebrew/brew-test
 
       go 1.21
     GOMOD
 
-    (testpath"main.go").write <<~GO
+    (testpath/"main.go").write <<~GO
       package main
 
       import "fmt"
@@ -46,7 +46,7 @@ class Richgo < Formula
       }
     GO
 
-    (testpath"main_test.go").write <<~GO
+    (testpath/"main_test.go").write <<~GO
       package main
 
       import "testing"
@@ -60,12 +60,12 @@ class Richgo < Formula
       }
     GO
 
-    output = shell_output("#{bin}richgo test ....")
+    output = shell_output("#{bin}/richgo test ./...")
 
     expected = if OS.mac?
-      "PASS | github.comHomebrewbrew-test"
+      "PASS | github.com/Homebrew/brew-test"
     else
-      "ok  \tgithub.comHomebrewbrew-test"
+      "ok  \tgithub.com/Homebrew/brew-test"
     end
     assert_match expected, output
   end

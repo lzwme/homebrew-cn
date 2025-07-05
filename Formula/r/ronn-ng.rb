@@ -1,7 +1,7 @@
 class RonnNg < Formula
   desc "Build man pages from Markdown"
-  homepage "https:github.comapjankeronn-ng"
-  url "https:github.comapjankeronn-ngarchiverefstagsv0.10.1.tar.gz"
+  homepage "https://github.com/apjanke/ronn-ng"
+  url "https://ghfast.top/https://github.com/apjanke/ronn-ng/archive/refs/tags/v0.10.1.tar.gz"
   sha256 "180f18015ce01be1d10c24e13414134363d56f9efb741fda460358bb67d96684"
   license "MIT"
   revision 1
@@ -25,23 +25,23 @@ class RonnNg < Formula
     ENV["GEM_HOME"] = libexec
     system "gem", "build", "ronn-ng.gemspec"
     system "gem", "install", "ronn-ng-#{version}.gem"
-    bin.install libexec"binronn"
-    bin.env_script_all_files(libexec"bin", GEM_HOME: ENV["GEM_HOME"])
+    bin.install libexec/"bin/ronn"
+    bin.env_script_all_files(libexec/"bin", GEM_HOME: ENV["GEM_HOME"])
 
-    bash_completion.install "completionbashronn"
-    zsh_completion.install "completionzsh_ronn"
-    man1.install Dir["man*.1"]
-    man7.install Dir["man*.7"]
+    bash_completion.install "completion/bash/ronn"
+    zsh_completion.install "completion/zsh/_ronn"
+    man1.install Dir["man/*.1"]
+    man7.install Dir["man/*.7"]
   end
 
   test do
-    (testpath"test.ronn").write <<~MARKDOWN
+    (testpath/"test.ronn").write <<~MARKDOWN
       helloworld
       ==========
 
       Hello, world!
     MARKDOWN
 
-    assert_match "Hello, world", shell_output("#{bin}ronn --roff --pipe test.ronn")
+    assert_match "Hello, world", shell_output("#{bin}/ronn --roff --pipe test.ronn")
   end
 end

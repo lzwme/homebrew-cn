@@ -1,10 +1,10 @@
 class GoBindata < Formula
   desc "Small utility that generates Go code from any file"
-  homepage "https:github.comkevinburkego-bindata"
-  url "https:github.comkevinburkego-bindataarchiverefstagsv4.0.2.tar.gz"
+  homepage "https://github.com/kevinburke/go-bindata"
+  url "https://ghfast.top/https://github.com/kevinburke/go-bindata/archive/refs/tags/v4.0.2.tar.gz"
   sha256 "ac343c4b316b234b8ea354d86eb3c7ded2da4fe8f40d45f60391d289c66cd950"
   license "BSD-2-Clause"
-  head "https:github.comkevinburkego-bindata.git", branch: "master"
+  head "https://github.com/kevinburke/go-bindata.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -25,13 +25,13 @@ class GoBindata < Formula
   depends_on "go"
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), ".go-bindata"
+    system "go", "build", *std_go_args(ldflags: "-s -w"), "./go-bindata"
   end
 
   test do
-    (testpath"data").write "hello world"
-    system bin"go-bindata", "-o", "data.go", "data"
-    assert_path_exists testpath"data.go"
-    assert_match '\xff\xff\x85\x11\x4a', (testpath"data.go").read
+    (testpath/"data").write "hello world"
+    system bin/"go-bindata", "-o", "data.go", "data"
+    assert_path_exists testpath/"data.go"
+    assert_match '\xff\xff\x85\x11\x4a', (testpath/"data.go").read
   end
 end

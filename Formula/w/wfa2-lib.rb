@@ -1,10 +1,10 @@
 class Wfa2Lib < Formula
   desc "Wavefront alignment algorithm library v2"
-  homepage "https:github.comsmarcoWFA2-lib"
-  url "https:github.comsmarcoWFA2-libarchiverefstagsv2.3.5.tar.gz"
+  homepage "https://github.com/smarco/WFA2-lib"
+  url "https://ghfast.top/https://github.com/smarco/WFA2-lib/archive/refs/tags/v2.3.5.tar.gz"
   sha256 "2609d5f267f4dd91dce1776385b5a24a2f1aa625ac844ce0c3571c69178afe6e"
   license "MIT"
-  head "https:github.comsmarcoWFA2-lib.git", branch: "main"
+  head "https://github.com/smarco/WFA2-lib.git", branch: "main"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "1b837b83b531386b7c1812a251f2eb030761e51799f4c812b8428844219cc670"
@@ -31,7 +31,7 @@ class Wfa2Lib < Formula
   end
 
   test do
-    system ENV.cc, pkgshare"exampleswfa_basic.c", "-o", "test", "-I#{include}wfa2lib", "-L#{lib}", "-lwfa2", "-lm"
-    assert_match "WFA-Alignment returns score -24", shell_output(".test 2>&1")
+    system ENV.cc, pkgshare/"examples/wfa_basic.c", "-o", "test", "-I#{include}/wfa2lib", "-L#{lib}", "-lwfa2", "-lm"
+    assert_match "WFA-Alignment returns score -24", shell_output("./test 2>&1")
   end
 end

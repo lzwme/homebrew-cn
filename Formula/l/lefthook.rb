@@ -1,10 +1,10 @@
 class Lefthook < Formula
   desc "Fast and powerful Git hooks manager for any type of projects"
-  homepage "https:github.comevilmartianslefthook"
-  url "https:github.comevilmartianslefthookarchiverefstagsv1.11.16.tar.gz"
+  homepage "https://github.com/evilmartians/lefthook"
+  url "https://ghfast.top/https://github.com/evilmartians/lefthook/archive/refs/tags/v1.11.16.tar.gz"
   sha256 "aa99bca23b9d840d8f465adf402d6dffadea6d84409e1342b6629eb995d36338"
   license "MIT"
-  head "https:github.comevilmartianslefthook.git", branch: "master"
+  head "https://github.com/evilmartians/lefthook.git", branch: "master"
 
   no_autobump! because: :bumped_by_upstream
 
@@ -22,14 +22,14 @@ class Lefthook < Formula
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w", tags: "no_self_update")
 
-    generate_completions_from_executable(bin"lefthook", "completion")
+    generate_completions_from_executable(bin/"lefthook", "completion")
   end
 
   test do
     system "git", "init"
-    system bin"lefthook", "install"
+    system bin/"lefthook", "install"
 
-    assert_path_exists testpath"lefthook.yml"
-    assert_match version.to_s, shell_output("#{bin}lefthook version")
+    assert_path_exists testpath/"lefthook.yml"
+    assert_match version.to_s, shell_output("#{bin}/lefthook version")
   end
 end

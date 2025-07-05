@@ -1,7 +1,7 @@
 class Dssim < Formula
   desc "RGBA Structural Similarity Rust implementation"
-  homepage "https:github.comkornelskidssim"
-  url "https:github.comkornelskidssimarchiverefstags3.4.0.tar.gz"
+  homepage "https://github.com/kornelski/dssim"
+  url "https://ghfast.top/https://github.com/kornelski/dssim/archive/refs/tags/3.4.0.tar.gz"
   sha256 "5267e79f4604558d9f24ce02aa20597396a9b052d0ad1b2f8000d4d6bd162126"
   license "AGPL-3.0-or-later"
 
@@ -23,6 +23,6 @@ class Dssim < Formula
   end
 
   test do
-    system bin"dssim", test_fixtures("test.png"), test_fixtures("test.png")
+    system bin/"dssim", test_fixtures("test.png"), test_fixtures("test.png")
   end
 end

@@ -1,21 +1,21 @@
 class PhpAT85DebugZts < Formula
   desc "General-purpose scripting language"
-  homepage "https:www.php.net"
-  url "https:github.comphpphp-srcarchive50ddf6a68f78a8c084420955b04f52f4e57281f4.tar.gz?commit=50ddf6a68f78a8c084420955b04f52f4e57281f4"
+  homepage "https://www.php.net/"
+  url "https://ghfast.top/https://github.com/php/php-src/archive/4560f7037da25ae0738d025f0d3c9143b15921bd.tar.gz?commit=4560f7037da25ae0738d025f0d3c9143b15921bd"
   version "8.5.0"
-  sha256 "b7a40656de46d1b828f809561d5316a7099c2afe30a79dc6427919df04a7cf3e"
+  sha256 "c16123728c2001c6da75ebc7cd711ac24b0e92ef33154a488d91c7ed2da91a22"
   license "PHP-3.01"
   revision 4
 
   bottle do
-    root_url "https:ghcr.iov2shivammathurphp"
-    rebuild 26
-    sha256 arm64_sequoia: "dee61125e487c93156bb8fcd94833827392b01f6edea07827c1ee97c734c1a5b"
-    sha256 arm64_sonoma:  "2f44109eecc3c1626dd438fab42e03517b3abaec4b74e2692431444fa85aaceb"
-    sha256 arm64_ventura: "8948e4ad577f6db5ab87e2fd979356a55e890898ddb93376038ec0926688f9e4"
-    sha256 ventura:       "202c09044019209112796e95c7fecd63ad9731e43830cfa54167898ff756dfe1"
-    sha256 arm64_linux:   "dec733225818ef875d7b9269df197a07a3fecea2aa5e8af2a2b8b7aaa451e1e2"
-    sha256 x86_64_linux:  "65dd9fd2ed32b2fd19f7f0f7120d46b40d0bef575ccd59a95749435e731320c6"
+    root_url "https://ghcr.io/v2/shivammathur/php"
+    rebuild 27
+    sha256 arm64_sequoia: "139af374bc2fcc0735db7dc695b75ff6692a37da4d1e9c1d5db93740424eca7a"
+    sha256 arm64_sonoma:  "ee78bc91e5d4a9cca6f63ec60237b0562fcd698fa8289dbf65cef0c03d4c3c76"
+    sha256 arm64_ventura: "7a00bb4b91b0235c66b490591bd74ad79b628893afe645a4879abfbdd499139e"
+    sha256 ventura:       "a803d683eee56e33b6acadbdf4f6605fcba602ce9dc51c71718c49f9cafe82a0"
+    sha256 arm64_linux:   "4a7d524bd08c85887ddcf1ae7a302e8de132f164ab5cb5aeabc28a9e1cbb35a4"
+    sha256 x86_64_linux:  "4002feb93670888bfc38e8e076b6703f0fd1803c0658bac8e06219eb4112c895"
   end
 
   keg_only :versioned_formula
@@ -62,19 +62,19 @@ class PhpAT85DebugZts < Formula
 
   def install
     # buildconf required due to system library linking bug patch
-    system ".buildconf", "--force"
+    system "./buildconf", "--force"
 
     inreplace "configure" do |s|
-      s.gsub! "$APXS_HTTPD -V 2>devnull | grep 'threaded:.*yes' >devnull 2>&1",
+      s.gsub! "$APXS_HTTPD -V 2>/dev/null | grep 'threaded:.*yes' >/dev/null 2>&1",
               "false"
       s.gsub! "APXS_LIBEXECDIR='$(INSTALL_ROOT)'$($APXS -q LIBEXECDIR)",
-              "APXS_LIBEXECDIR='$(INSTALL_ROOT)#{lib}httpdmodules'"
+              "APXS_LIBEXECDIR='$(INSTALL_ROOT)#{lib}/httpd/modules'"
       s.gsub! "-z $($APXS -q SYSCONFDIR)",
               "-z ''"
 
-      # apxs will interpolate the @ in the versioned prefix: https:bz.apache.orgbugzillashow_bug.cgi?id=61944
+      # apxs will interpolate the @ in the versioned prefix: https://bz.apache.org/bugzilla/show_bug.cgi?id=61944
       s.gsub! "LIBEXECDIR='$APXS_LIBEXECDIR'",
-              "LIBEXECDIR='" + "#{lib}httpdmodules".gsub("@", "\\@") + "'"
+              "LIBEXECDIR='" + "#{lib}/httpd/modules".gsub("@", "\\@") + "'"
     end
 
     # Update error message in apache sapi to better explain the requirements
@@ -82,17 +82,17 @@ class PhpAT85DebugZts < Formula
     # has been selected. Homebrew has chosen not to support being able to
     # compile a thread safe version of PHP and therefore it is not
     # possible to recompile as suggested in the original message
-    inreplace "sapiapache2handlersapi_apache2.c",
+    inreplace "sapi/apache2handler/sapi_apache2.c",
               "You need to recompile PHP.",
               "Homebrew PHP does not support a thread-safe php binary. " \
               "To use the PHP apache sapi please change " \
               "your httpd config to use the prefork MPM"
 
-    inreplace "sapifpmphp-fpm.conf.in", ";daemonize = yes", "daemonize = no"
+    inreplace "sapi/fpm/php-fpm.conf.in", ";daemonize = yes", "daemonize = no"
 
-    config_path = etc"php#{php_version}"
+    config_path = etc/"php/#{php_version}"
     # Prevent system pear config from inhibiting pear install
-    (config_path"pear.conf").delete if (config_path"pear.conf").exist?
+    (config_path/"pear.conf").delete if (config_path/"pear.conf").exist?
 
     # Prevent homebrew from hardcoding path to sed shim in phpize script
     ENV["lt_cv_path_SED"] = "sed"
@@ -103,7 +103,7 @@ class PhpAT85DebugZts < Formula
     # system pkg-config missing
     ENV["KERBEROS_CFLAGS"] = " "
     if OS.mac?
-      ENV["SASL_CFLAGS"] = "-I#{MacOS.sdk_path_if_needed}usrincludesasl"
+      ENV["SASL_CFLAGS"] = "-I#{MacOS.sdk_path_if_needed}/usr/include/sasl"
       ENV["SASL_LIBS"] = "-lsasl2"
     else
       ENV["SQLITE_CFLAGS"] = "-I#{Formula["sqlite"].opt_include}"
@@ -113,7 +113,7 @@ class PhpAT85DebugZts < Formula
 
     # Each extension that is built on Mojave needs a direct reference to the
     # sdk path or it won't find the headers
-    headers_path = "=#{MacOS.sdk_path_if_needed}usr" if OS.mac?
+    headers_path = "=#{MacOS.sdk_path_if_needed}/usr" if OS.mac?
 
     # `_www` only exists on macOS.
     fpm_user = OS.mac? ? "_www" : "www-data"
@@ -124,8 +124,8 @@ class PhpAT85DebugZts < Formula
       --localstatedir=#{var}
       --sysconfdir=#{config_path}
       --with-config-file-path=#{config_path}
-      --with-config-file-scan-dir=#{config_path}conf.d
-      --with-pear=#{pkgshare}pear
+      --with-config-file-scan-dir=#{config_path}/conf.d
+      --with-pear=#{pkgshare}/pear
       --disable-zend-signals
       --enable-bcmath
       --enable-calendar
@@ -165,7 +165,7 @@ class PhpAT85DebugZts < Formula
       --with-libxml
       --with-libedit
       --with-mhash#{headers_path}
-      --with-mysql-sock=tmpmysql.sock
+      --with-mysql-sock=/tmp/mysql.sock
       --with-mysqli=mysqlnd
       --with-ndbm#{headers_path}
       --with-openssl
@@ -199,12 +199,12 @@ class PhpAT85DebugZts < Formula
     end
 
     args = shared_args.map(&:clone)
-    args << "--with-apxs2=#{Formula["httpd"].opt_bin}apxs"
+    args << "--with-apxs2=#{Formula["httpd"].opt_bin}/apxs"
     args << "--enable-fpm"
     args << "--with-fpm-user=#{fpm_user}"
     args << "--with-fpm-group=#{fpm_group}"
 
-    system ".configure", *args
+    system "./configure", *args
     system "make"
     system "make", "install"
 
@@ -216,107 +216,107 @@ class PhpAT85DebugZts < Formula
     args << "--disable-phpdbg"
     args << "--enable-embed"
 
-    system ".configure", *args
+    system "./configure", *args
     system "make"
     system "make", "install"
 
     # Allow pecl to install outside of Cellar
-    extension_dir = Utils.safe_popen_read("#{bin}php-config", "--extension-dir").chomp
+    extension_dir = Utils.safe_popen_read("#{bin}/php-config", "--extension-dir").chomp
     orig_ext_dir = File.basename(extension_dir)
-    inreplace bin"php-config", lib"php", prefix"pecl"
+    inreplace bin/"php-config", lib/"php", prefix/"pecl"
     %w[development production].each do |mode|
-      inreplace "php.ini-#{mode}", %r{; ?extension_dir = "\."},
-        "extension_dir = \"#{HOMEBREW_PREFIX}libphppecl#{orig_ext_dir}\""
+      inreplace "php.ini-#{mode}", %r{; ?extension_dir = "\./"},
+        "extension_dir = \"#{HOMEBREW_PREFIX}/lib/php/pecl/#{orig_ext_dir}\""
     end
 
     # Use OpenSSL cert bundle
     openssl = Formula["openssl@3"]
     %w[development production].each do |mode|
-      inreplace "php.ini-#{mode}", ; ?openssl\.cafile=,
-        "openssl.cafile = \"#{openssl.pkgetc}cert.pem\""
-      inreplace "php.ini-#{mode}", ; ?openssl\.capath=,
-        "openssl.capath = \"#{openssl.pkgetc}certs\""
+      inreplace "php.ini-#{mode}", /; ?openssl\.cafile=/,
+        "openssl.cafile = \"#{openssl.pkgetc}/cert.pem\""
+      inreplace "php.ini-#{mode}", /; ?openssl\.capath=/,
+        "openssl.capath = \"#{openssl.pkgetc}/certs\""
     end
 
     config_files = {
       "php.ini-development"   => "php.ini",
       "php.ini-production"    => "php.ini-production",
-      "sapifpmphp-fpm.conf" => "php-fpm.conf",
-      "sapifpmwww.conf"     => "php-fpm.dwww.conf",
+      "sapi/fpm/php-fpm.conf" => "php-fpm.conf",
+      "sapi/fpm/www.conf"     => "php-fpm.d/www.conf",
     }
     config_files.each_value do |dst|
-      dst_default = config_path"#{dst}.default"
+      dst_default = config_path/"#{dst}.default"
       rm dst_default if dst_default.exist?
     end
     config_path.install config_files
 
-    unless (var"logphp-fpm.log").exist?
-      (var"log").mkpath
-      touch var"logphp-fpm.log"
+    unless (var/"log/php-fpm.log").exist?
+      (var/"log").mkpath
+      touch var/"log/php-fpm.log"
     end
   end
 
   def post_install
-    pear_prefix = pkgshare"pear"
+    pear_prefix = pkgshare/"pear"
     pear_files = %W[
-      #{pear_prefix}.depdblock
-      #{pear_prefix}.filemap
-      #{pear_prefix}.depdb
-      #{pear_prefix}.lock
+      #{pear_prefix}/.depdblock
+      #{pear_prefix}/.filemap
+      #{pear_prefix}/.depdb
+      #{pear_prefix}/.lock
     ]
 
     %W[
-      #{pear_prefix}.channels
-      #{pear_prefix}.channels.alias
+      #{pear_prefix}/.channels
+      #{pear_prefix}/.channels/.alias
     ].each do |f|
       chmod 0755, f
-      pear_files.concat(Dir["#{f}*"])
+      pear_files.concat(Dir["#{f}/*"])
     end
 
     chmod 0644, pear_files
 
     # Custom location for extensions installed via pecl
-    pecl_path = HOMEBREW_PREFIX"libphppecl"
+    pecl_path = HOMEBREW_PREFIX/"lib/php/pecl"
     pecl_path.mkpath
-    ln_s pecl_path, prefix"pecl" unless (prefix"pecl").exist?
-    extension_dir = Utils.safe_popen_read("#{bin}php-config", "--extension-dir").chomp
+    ln_s pecl_path, prefix/"pecl" unless (prefix/"pecl").exist?
+    extension_dir = Utils.safe_popen_read("#{bin}/php-config", "--extension-dir").chomp
     php_basename = File.basename(extension_dir)
-    php_ext_dir = opt_prefix"libphp"php_basename
+    php_ext_dir = opt_prefix/"lib/php"/php_basename
 
     # fix pear config to install outside cellar
-    pear_path = HOMEBREW_PREFIX"sharepear@#{php_version}"
-    cp_r pkgshare"pear.", pear_path
+    pear_path = HOMEBREW_PREFIX/"share/pear@#{php_version}"
+    cp_r pkgshare/"pear/.", pear_path
     {
-      "php_ini"  => etc"php#{php_version}php.ini",
+      "php_ini"  => etc/"php/#{php_version}/php.ini",
       "php_dir"  => pear_path,
-      "doc_dir"  => pear_path"doc",
-      "ext_dir"  => pecl_pathphp_basename,
+      "doc_dir"  => pear_path/"doc",
+      "ext_dir"  => pecl_path/php_basename,
       "bin_dir"  => opt_bin,
-      "data_dir" => pear_path"data",
-      "cfg_dir"  => pear_path"cfg",
-      "www_dir"  => pear_path"htdocs",
-      "man_dir"  => HOMEBREW_PREFIX"shareman",
-      "test_dir" => pear_path"test",
-      "php_bin"  => opt_bin"php",
+      "data_dir" => pear_path/"data",
+      "cfg_dir"  => pear_path/"cfg",
+      "www_dir"  => pear_path/"htdocs",
+      "man_dir"  => HOMEBREW_PREFIX/"share/man",
+      "test_dir" => pear_path/"test",
+      "php_bin"  => opt_bin/"php",
     }.each do |key, value|
-      value.mkpath if (?<!bin|man)_dir$.match?(key)
-      system bin"pear", "config-set", key, value, "system"
+      value.mkpath if /(?<!bin|man)_dir$/.match?(key)
+      system bin/"pear", "config-set", key, value, "system"
     end
 
-    system bin"pear", "update-channels"
+    system bin/"pear", "update-channels"
 
     %w[
       opcache
     ].each do |e|
-      ext_config_path = etc"php#{php_version}conf.dext-#{e}.ini"
+      ext_config_path = etc/"php/#{php_version}/conf.d/ext-#{e}.ini"
       extension_type = (e == "opcache") ? "zend_extension" : "extension"
       if ext_config_path.exist?
         inreplace ext_config_path,
-          #{extension_type}=.*$, "#{extension_type}=#{php_ext_dir}#{e}.so"
+          /#{extension_type}=.*$/, "#{extension_type}=#{php_ext_dir}/#{e}.so"
       else
         ext_config_path.write <<~EOS
           [#{e}]
-          #{extension_type}="#{php_ext_dir}#{e}.so"
+          #{extension_type}="#{php_ext_dir}/#{e}.so"
         EOS
       end
     end
@@ -325,17 +325,17 @@ class PhpAT85DebugZts < Formula
   def caveats
     <<~EOS
       To enable PHP in Apache add the following to httpd.conf and restart Apache:
-          LoadModule php_module #{opt_lib}httpdmoduleslibphp.so
+          LoadModule php_module #{opt_lib}/httpd/modules/libphp.so
 
           <FilesMatch \\.php$>
-              SetHandler applicationx-httpd-php
-          <FilesMatch>
+              SetHandler application/x-httpd-php
+          </FilesMatch>
 
       Finally, check DirectoryIndex includes index.php
           DirectoryIndex index.php index.html
 
       The php.ini and php-fpm.ini file can be found in:
-          #{etc}php#{php_version}
+          #{etc}/php/#{php_version}/
     EOS
   end
 
@@ -344,33 +344,33 @@ class PhpAT85DebugZts < Formula
   end
 
   service do
-    run [opt_sbin"php-fpm", "--nodaemonize"]
+    run [opt_sbin/"php-fpm", "--nodaemonize"]
     run_type :immediate
     keep_alive true
-    error_log_path var"logphp-fpm.log"
+    error_log_path var/"log/php-fpm.log"
     working_dir var
   end
 
   test do
-    assert_match(^Zend OPcache$, shell_output("#{bin}php -i"),
+    assert_match(/^Zend OPcache$/, shell_output("#{bin}/php -i"),
       "Zend OPCache extension not loaded")
     # Test related to libxml2 and
-    # https:github.comHomebrewhomebrew-coreissues28398
-    assert_includes (bin"php").dynamically_linked_libraries,
-                    (Formula["libpq"].opt_libshared_library("libpq", 5)).to_s
+    # https://github.com/Homebrew/homebrew-core/issues/28398
+    assert_includes (bin/"php").dynamically_linked_libraries,
+                    (Formula["libpq"].opt_lib/shared_library("libpq", 5)).to_s
 
-    system "#{sbin}php-fpm", "-t"
-    system "#{bin}phpdbg", "-V"
-    system "#{bin}php-cgi", "-m"
+    system "#{sbin}/php-fpm", "-t"
+    system "#{bin}/phpdbg", "-V"
+    system "#{bin}/php-cgi", "-m"
     # Prevent SNMP extension to be added
-    refute_match(^snmp$, shell_output("#{bin}php -m"),
+    refute_match(/^snmp$/, shell_output("#{bin}/php -m"),
       "SNMP extension doesn't work reliably with Homebrew on High Sierra")
     begin
       port = free_port
       port_fpm = free_port
 
-      expected_output = ^Hello world!$
-      (testpath"index.php").write <<~EOS
+      expected_output = /^Hello world!$/
+      (testpath/"index.php").write <<~EOS
         <?php
         echo 'Hello world!' . PHP_EOL;
         var_dump(ldap_connect());
@@ -379,25 +379,25 @@ class PhpAT85DebugZts < Formula
         Listen #{port}
         ServerName localhost:#{port}
         DocumentRoot "#{testpath}"
-        ErrorLog "#{testpath}httpd-error.log"
+        ErrorLog "#{testpath}/httpd-error.log"
         ServerRoot "#{Formula["httpd"].opt_prefix}"
-        PidFile "#{testpath}httpd.pid"
-        LoadModule authz_core_module libhttpdmodulesmod_authz_core.so
-        LoadModule unixd_module libhttpdmodulesmod_unixd.so
-        LoadModule dir_module libhttpdmodulesmod_dir.so
+        PidFile "#{testpath}/httpd.pid"
+        LoadModule authz_core_module lib/httpd/modules/mod_authz_core.so
+        LoadModule unixd_module lib/httpd/modules/mod_unixd.so
+        LoadModule dir_module lib/httpd/modules/mod_dir.so
         DirectoryIndex index.php
       EOS
 
-      (testpath"httpd.conf").write <<~EOS
+      (testpath/"httpd.conf").write <<~EOS
         #{main_config}
-        LoadModule mpm_prefork_module libhttpdmodulesmod_mpm_prefork.so
-        LoadModule php_module #{lib}httpdmoduleslibphp.so
+        LoadModule mpm_prefork_module lib/httpd/modules/mod_mpm_prefork.so
+        LoadModule php_module #{lib}/httpd/modules/libphp.so
         <FilesMatch \\.(php|phar)$>
-          SetHandler applicationx-httpd-php
-        <FilesMatch>
+          SetHandler application/x-httpd-php
+        </FilesMatch>
       EOS
 
-      (testpath"fpm.conf").write <<~EOS
+      (testpath/"fpm.conf").write <<~EOS
         [global]
         daemonize=no
         [www]
@@ -409,18 +409,18 @@ class PhpAT85DebugZts < Formula
         pm.max_spare_servers = 3
       EOS
 
-      (testpath"httpd-fpm.conf").write <<~EOS
+      (testpath/"httpd-fpm.conf").write <<~EOS
         #{main_config}
-        LoadModule mpm_event_module libhttpdmodulesmod_mpm_event.so
-        LoadModule proxy_module libhttpdmodulesmod_proxy.so
-        LoadModule proxy_fcgi_module libhttpdmodulesmod_proxy_fcgi.so
+        LoadModule mpm_event_module lib/httpd/modules/mod_mpm_event.so
+        LoadModule proxy_module lib/httpd/modules/mod_proxy.so
+        LoadModule proxy_fcgi_module lib/httpd/modules/mod_proxy_fcgi.so
         <FilesMatch \\.(php|phar)$>
-          SetHandler "proxy:fcgi:127.0.0.1:#{port_fpm}"
-        <FilesMatch>
+          SetHandler "proxy:fcgi://127.0.0.1:#{port_fpm}"
+        </FilesMatch>
       EOS
 
       pid = fork do
-        exec Formula["httpd"].opt_bin"httpd", "-X", "-f", "#{testpath}httpd.conf"
+        exec Formula["httpd"].opt_bin/"httpd", "-X", "-f", "#{testpath}/httpd.conf"
       end
       sleep 5
 
@@ -430,10 +430,10 @@ class PhpAT85DebugZts < Formula
       Process.wait(pid)
 
       fpm_pid = fork do
-        exec sbin"php-fpm", "-y", "fpm.conf"
+        exec sbin/"php-fpm", "-y", "fpm.conf"
       end
       pid = fork do
-        exec Formula["httpd"].opt_bin"httpd", "-X", "-f", "#{testpath}httpd-fpm.conf"
+        exec Formula["httpd"].opt_bin/"httpd", "-X", "-f", "#{testpath}/httpd-fpm.conf"
       end
       sleep 3
 
@@ -452,12 +452,12 @@ class PhpAT85DebugZts < Formula
 end
 
 __END__
-diff --git ascriptsphp-config.in bscriptsphp-config.in
+diff --git a/scripts/php-config.in b/scripts/php-config.in
 index 87c20089bb..879299f9cf 100644
---- ascriptsphp-config.in
-+++ bscriptsphp-config.in
+--- a/scripts/php-config.in
++++ b/scripts/php-config.in
 @@ -11,7 +11,7 @@ lib_dir="@orig_libdir@"
- includes="-I$include_dir -I$include_dirmain -I$include_dirTSRM -I$include_dirZend -I$include_dirext -I$include_dirextdatelib"
+ includes="-I$include_dir -I$include_dir/main -I$include_dir/TSRM -I$include_dir/Zend -I$include_dir/ext -I$include_dir/ext/date/lib"
  ldflags="@PHP_LDFLAGS@"
  libs="@EXTRA_LIBS@"
 -extension_dir="@EXTENSION_DIR@"
@@ -465,16 +465,16 @@ index 87c20089bb..879299f9cf 100644
  man_dir=`eval echo @mandir@`
  program_prefix="@program_prefix@"
  program_suffix="@program_suffix@"
-diff --git abuildphp.m4 bbuildphp.m4
+diff --git a/build/php.m4 b/build/php.m4
 index 176d4d4144..f71d642bb4 100644
---- abuildphp.m4
-+++ bbuildphp.m4
+--- a/build/php.m4
++++ b/build/php.m4
 @@ -429,7 +429,7 @@ dnl
- dnl Adds a path to linkpathrunpath (LDFLAGS).
+ dnl Adds a path to linkpath/runpath (LDFLAGS).
  dnl
  AC_DEFUN([PHP_ADD_LIBPATH],[
--  if test "$1" != "usr$PHP_LIBDIR" && test "$1" != "usrlib"; then
-+  if test "$1" != "$PHP_OS_SDKPATHusr$PHP_LIBDIR" && test "$1" != "usrlib"; then
+-  if test "$1" != "/usr/$PHP_LIBDIR" && test "$1" != "/usr/lib"; then
++  if test "$1" != "$PHP_OS_SDKPATH/usr/$PHP_LIBDIR" && test "$1" != "/usr/lib"; then
      PHP_EXPAND_PATH($1, ai_p)
      ifelse([$2],,[
        _PHP_ADD_LIBPATH_GLOBAL([$ai_p])
@@ -482,24 +482,24 @@ index 176d4d4144..f71d642bb4 100644
  dnl
  AC_DEFUN([PHP_ADD_INCLUDE], [
  for include_path in m4_normalize(m4_expand([$1])); do
--  AS_IF([test "$include_path" != "usrinclude"], [
-+  AS_IF([test "$include_path" != "$PHP_OS_SDKPATHusrinclude"], [
+-  AS_IF([test "$include_path" != "/usr/include"], [
++  AS_IF([test "$include_path" != "$PHP_OS_SDKPATH/usr/include"], [
      PHP_EXPAND_PATH([$include_path], [ai_p])
      PHP_RUN_ONCE([INCLUDEPATH], [$ai_p], [m4_ifnblank([$2],
        [INCLUDES="-I$ai_p $INCLUDES"],
-diff --git aconfigure.ac bconfigure.ac
+diff --git a/configure.ac b/configure.ac
 index 36c6e5e3e2..71b1a16607 100644
---- aconfigure.ac
-+++ bconfigure.ac
+--- a/configure.ac
++++ b/configure.ac
 @@ -190,6 +190,14 @@ PHP_ARG_WITH([libdir],
    [lib],
    [no])
 
-+dnl Support systems with system librariesincludes in e.g. ApplicationsXcode.appContentsDeveloperPlatformsMacOSX.platformDeveloperSDKsMacOSX10.14.sdk.
++dnl Support systems with system libraries/includes in e.g. /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk.
 +PHP_ARG_WITH([os-sdkpath],
 +  [for system SDK directory],
 +  [AS_HELP_STRING([--with-os-sdkpath=NAME],
-+    [Ignore system libraries and includes in NAME rather than ])],
++    [Ignore system libraries and includes in NAME rather than /])],
 +  [],
 +  [no])
 +

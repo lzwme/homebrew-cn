@@ -1,10 +1,10 @@
 class KubeLinter < Formula
   desc "Static analysis tool for Kubernetes YAML files and Helm charts"
-  homepage "https:github.comstackroxkube-linter"
-  url "https:github.comstackroxkube-linterarchiverefstagsv0.7.4.tar.gz"
+  homepage "https://github.com/stackrox/kube-linter"
+  url "https://ghfast.top/https://github.com/stackrox/kube-linter/archive/refs/tags/v0.7.4.tar.gz"
   sha256 "c0f69e0fa67b27ca84efa180eb398290dfa0d7a7f6f2d1de82a935e0432dd793"
   license "Apache-2.0"
-  head "https:github.comstackroxkube-linter.git", branch: "master"
+  head "https://github.com/stackrox/kube-linter.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "83bab66d3d0155c4c1861234d8830112459c9198dc4bd369a57b8f41abf2a817"
@@ -20,14 +20,14 @@ class KubeLinter < Formula
 
   def install
     ENV["CGO_ENABLED"] = "0"
-    ldflags = "-s -w -X golang.stackrox.iokube-linterinternalversion.version=#{version}"
-    system "go", "build", *std_go_args(ldflags:), ".cmdkube-linter"
+    ldflags = "-s -w -X golang.stackrox.io/kube-linter/internal/version.version=#{version}"
+    system "go", "build", *std_go_args(ldflags:), "./cmd/kube-linter"
 
-    generate_completions_from_executable(bin"kube-linter", "completion")
+    generate_completions_from_executable(bin/"kube-linter", "completion")
   end
 
   test do
-    (testpath"pod.yaml").write <<~YAML
+    (testpath/"pod.yaml").write <<~YAML
       apiVersion: v1
       kind: Pod
       metadata:
@@ -52,7 +52,7 @@ class KubeLinter < Formula
     YAML
 
     # Lint pod.yaml for default errors
-    assert_match "No lint errors found!", shell_output("#{bin}kube-linter lint pod.yaml 2>&1").chomp
-    assert_equal version.to_s, shell_output("#{bin}kube-linter version").chomp
+    assert_match "No lint errors found!", shell_output("#{bin}/kube-linter lint pod.yaml 2>&1").chomp
+    assert_equal version.to_s, shell_output("#{bin}/kube-linter version").chomp
   end
 end

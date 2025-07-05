@@ -2,11 +2,11 @@ class ArcadeLearningEnvironment < Formula
   include Language::Python::Virtualenv
 
   desc "Platform for AI research"
-  homepage "https:github.comFarama-FoundationArcade-Learning-Environment"
-  url "https:github.comFarama-FoundationArcade-Learning-Environmentarchiverefstagsv0.11.1.tar.gz"
+  homepage "https://github.com/Farama-Foundation/Arcade-Learning-Environment"
+  url "https://ghfast.top/https://github.com/Farama-Foundation/Arcade-Learning-Environment/archive/refs/tags/v0.11.1.tar.gz"
   sha256 "2b878ae1b7febb498c7ab5351791c6d9838dc214b4825eec0df1b53b58b6aaa3"
   license "GPL-2.0-only"
-  head "https:github.comFarama-FoundationArcade-Learning-Environment.git", branch: "master"
+  head "https://github.com/Farama-Foundation/Arcade-Learning-Environment.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:  "8d87d2e4b11ba564c543865131922e5c1dff39a4e435b6131de0457dd22cae2c"
@@ -29,14 +29,14 @@ class ArcadeLearningEnvironment < Formula
 
   uses_from_macos "zlib"
 
-  # See https:github.comFarama-FoundationArcade-Learning-Environmentblobmasterscriptsdownload_unpack_roms.sh
+  # See https://github.com/Farama-Foundation/Arcade-Learning-Environment/blob/master/scripts/download_unpack_roms.sh
   resource "roms" do
-    url "https:gist.githubusercontent.comjjshoots61b22aefce4456920ba99f2c36906edaraw00046ac3403768bfe45857610a3d333b8e35e026Roms.tar.gz.b64"
+    url "https://ghfast.top/https://gist.githubusercontent.com/jjshoots/61b22aefce4456920ba99f2c36906eda/raw/00046ac3403768bfe45857610a3d333b8e35e026/Roms.tar.gz.b64"
     sha256 "02ca777c16476a72fa36680a2ba78f24c3ac31b2155033549a5f37a0653117de"
   end
 
   resource "gymnasium" do
-    url "https:files.pythonhosted.orgpackages906970cd29e9fc4953d013b15981ee71d4c9ef4d8b2183e6ef2fe89756746dcegymnasium-1.1.1.tar.gz"
+    url "https://files.pythonhosted.org/packages/90/69/70cd29e9fc4953d013b15981ee71d4c9ef4d8b2183e6ef2fe89756746dce/gymnasium-1.1.1.tar.gz"
     sha256 "8bd9ea9bdef32c950a444ff36afc785e1d81051ec32d30435058953c20d2456d"
   end
 
@@ -55,18 +55,18 @@ class ArcadeLearningEnvironment < Formula
                     *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
-    pkgshare.install "testsresourcestetris.bin"
+    pkgshare.install "tests/resources/tetris.bin"
 
     # Install ROMs
     resource("roms").stage do
       require "base64"
 
       pwd = Pathname.pwd
-      encoded = (pwd"Roms.tar.gz.b64").read
-      (pwd"Roms.tar.gz").write Base64.decode64(encoded)
+      encoded = (pwd/"Roms.tar.gz.b64").read
+      (pwd/"Roms.tar.gz").write Base64.decode64(encoded)
 
       system "tar", "-xzf", "Roms.tar.gz"
-      (buildpath"srcpythonroms").install pwd.glob("ROM**.bin")
+      (buildpath/"src/python/roms").install pwd.glob("ROM/*/*.bin")
     end
 
     inreplace "setup.py" do |s|
@@ -78,23 +78,23 @@ class ArcadeLearningEnvironment < Formula
     system python3, "-m", "pip", "install", *std_pip_args, "."
 
     # Replace vendored `libSDL2` with a symlink to our own.
-    libsdl2 = Formula["sdl2"].opt_libshared_library("libSDL2")
-    vendored_libsdl2_dir = prefixLanguage::Python.site_packages(python3)"ale_py"
-    (vendored_libsdl2_dirshared_library("libSDL2")).unlink
+    libsdl2 = Formula["sdl2"].opt_lib/shared_library("libSDL2")
+    vendored_libsdl2_dir = prefix/Language::Python.site_packages(python3)/"ale_py"
+    (vendored_libsdl2_dir/shared_library("libSDL2")).unlink
 
     # Use `ln_s` to avoid referencing a Cellar path.
     ln_s libsdl2.relative_path_from(vendored_libsdl2_dir), vendored_libsdl2_dir
   end
 
   test do
-    (testpath"roms.py").write <<~PYTHON
+    (testpath/"roms.py").write <<~PYTHON
       from ale_py.roms import get_all_rom_ids
       print(get_all_rom_ids())
     PYTHON
     assert_match "adventure", shell_output("#{python3} roms.py")
 
-    cp pkgshare"tetris.bin", testpath
-    (testpath"test.py").write <<~PYTHON
+    cp pkgshare/"tetris.bin", testpath
+    (testpath/"test.py").write <<~PYTHON
       from ale_py import ALEInterface, SDL_SUPPORT
       assert SDL_SUPPORT
 

@@ -1,12 +1,12 @@
 class Mapnik < Formula
   desc "Toolkit for developing mapping applications"
-  homepage "https:mapnik.org"
+  homepage "https://mapnik.org/"
   # needs submodules
-  url "https:github.commapnikmapnik.git",
+  url "https://github.com/mapnik/mapnik.git",
       tag:      "v4.1.1",
       revision: "bb6aaa0cdd9f54cd08426e9c0fe051bc7a25072c"
   license "LGPL-2.1-or-later"
-  head "https:github.commapnikmapnik.git", branch: "master"
+  head "https://github.com/mapnik/mapnik.git", branch: "master"
 
   livecheck do
     url :stable
@@ -60,13 +60,13 @@ class Mapnik < Formula
   end
 
   test do
-    output = shell_output("#{Formula["pkgconf"].bin}pkgconf libmapnik --variable prefix").chomp
+    output = shell_output("#{Formula["pkgconf"].bin}/pkgconf libmapnik --variable prefix").chomp
     assert_equal prefix.to_s, output
 
-    output = shell_output("#{bin}mapnik-index --version 2>&1", 1).chomp
+    output = shell_output("#{bin}/mapnik-index --version 2>&1", 1).chomp
     assert_equal "version #{stable.version}", output
 
-    output = shell_output("#{bin}mapnik-render --version 2>&1", 1).chomp
+    output = shell_output("#{bin}/mapnik-render --version 2>&1", 1).chomp
     assert_equal "version #{stable.version}", output
   end
 end

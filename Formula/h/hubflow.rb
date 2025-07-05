@@ -1,12 +1,12 @@
 # NOTE: Pull from git tag to get submodules
 class Hubflow < Formula
   desc "GitFlow for GitHub"
-  homepage "https:github.comdatasiftgitflow"
-  url "https:github.comdatasiftgitflow.git",
+  homepage "https://github.com/datasift/gitflow"
+  url "https://github.com/datasift/gitflow.git",
       tag:      "v1.5.4",
       revision: "61a7dbec2bb463216b4cad2645d6721ab713f597"
   license "BSD-2-Clause"
-  head "https:github.comdatasiftgitflow.git", branch: "master"
+  head "https://github.com/datasift/gitflow.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -20,11 +20,11 @@ class Hubflow < Formula
 
   def install
     ENV["INSTALL_INTO"] = libexec
-    system ".install.sh", "install"
-    bin.write_exec_script libexec"git-hf"
+    system "./install.sh", "install"
+    bin.write_exec_script libexec/"git-hf"
   end
 
   test do
-    system bin"git-hf", "version"
+    system bin/"git-hf", "version"
   end
 end

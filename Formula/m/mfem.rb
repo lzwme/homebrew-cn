@@ -1,10 +1,10 @@
 class Mfem < Formula
   desc "Free, lightweight, scalable C++ library for FEM"
-  homepage "https:mfem.org"
-  url "https:github.commfemmfemarchiverefstagsv4.8.tar.gz"
+  homepage "https://mfem.org/"
+  url "https://ghfast.top/https://github.com/mfem/mfem/archive/refs/tags/v4.8.tar.gz"
   sha256 "65472f732d273832c64b2c39460649dd862df674222c71bfa82cf2da76705052"
   license "BSD-3-Clause"
-  head "https:github.commfemmfem.git", branch: "master"
+  head "https://github.com/mfem/mfem.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "3e9c3599701802b5f1fe3c2e8fcd933dbec04f03adc247b1f2e438545dac1e4c"
@@ -23,12 +23,12 @@ class Mfem < Formula
   depends_on "suite-sparse"
 
   def install
-    # fix `libcmakemfemMFEMConfig.cmake` file audit failure
-    inreplace "configcmakeMFEMConfig.cmake.in", "@CMAKE_CXX_COMPILER@", ENV.cxx
+    # fix `lib/cmake/mfem/MFEMConfig.cmake` file audit failure
+    inreplace "config/cmake/MFEMConfig.cmake.in", "@CMAKE_CXX_COMPILER@", ENV.cxx
 
-    # fix `sharemfemconfig.mk` file audit failure
-    inreplace "configconfig.mk.in", "@MFEM_CXX@", ENV.cxx
-    inreplace "configconfig.mk.in", "@MFEM_HOST_CXX@", ENV.cxx
+    # fix `share/mfem/config.mk` file audit failure
+    inreplace "config/config.mk.in", "@MFEM_CXX@", ENV.cxx
+    inreplace "config/config.mk.in", "@MFEM_HOST_CXX@", ENV.cxx
 
     args = [
       "-DCMAKE_INSTALL_RPATH=#{rpath}",
@@ -46,11 +46,11 @@ class Mfem < Formula
   end
 
   test do
-    cp_r pkgshare"examples", testpath
-    cp pkgshare"datastar.mesh", testpath"examples"
-    system "make", "-C", testpath"examples", "all", "MFEM_INSTALL_DIR=#{prefix}", "CONFIG_MK=#{pkgshare}config.mk"
-    args = ["-m", testpath"examplesstar.mesh", "--no-visualization"]
-    system testpath"examplesex1", *args
-    system "mpirun", "-np", "1", testpath"examplesex1p", *args
+    cp_r pkgshare/"examples", testpath
+    cp pkgshare/"data/star.mesh", testpath/"examples"
+    system "make", "-C", testpath/"examples", "all", "MFEM_INSTALL_DIR=#{prefix}", "CONFIG_MK=#{pkgshare}/config.mk"
+    args = ["-m", testpath/"examples/star.mesh", "--no-visualization"]
+    system testpath/"examples/ex1", *args
+    system "mpirun", "-np", "1", testpath/"examples/ex1p", *args
   end
 end

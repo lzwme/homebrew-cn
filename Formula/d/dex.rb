@@ -1,10 +1,10 @@
 class Dex < Formula
   desc "Dextrous text editor"
-  homepage "https:github.comtihirvondex"
-  url "https:github.comtihirvondexarchiverefstagsv1.0.tar.gz"
+  homepage "https://github.com/tihirvon/dex"
+  url "https://ghfast.top/https://github.com/tihirvon/dex/archive/refs/tags/v1.0.tar.gz"
   sha256 "4468b53debe8da6391186dccb78288a8a77798cb4c0a00fab9a7cdc711cd2123"
   license "GPL-2.0-only"
-  head "https:github.comtihirvondex.git", branch: "master"
+  head "https://github.com/tihirvon/dex.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -41,6 +41,6 @@ class Dex < Formula
   end
 
   test do
-    system bin"dex", "-V"
+    system bin/"dex", "-V"
   end
 end

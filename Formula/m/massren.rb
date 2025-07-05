@@ -1,10 +1,10 @@
 class Massren < Formula
   desc "Easily rename multiple files using your text editor"
-  homepage "https:github.comlaurent22massren"
-  url "https:github.comlaurent22massrenarchiverefstagsv1.5.7.tar.gz"
+  homepage "https://github.com/laurent22/massren"
+  url "https://ghfast.top/https://github.com/laurent22/massren/archive/refs/tags/v1.5.7.tar.gz"
   sha256 "7e7dd149bd3364235247268cc684b5a35badd9bee22f39960e075c792d037a8c"
   license "MIT"
-  head "https:github.comlaurent22massren.git", branch: "master"
+  head "https://github.com/laurent22/massren.git", branch: "master"
 
   bottle do
     rebuild 1
@@ -24,7 +24,7 @@ class Massren < Formula
   end
 
   test do
-    system bin"massren", "--config", "editor", "nano"
-    assert_match 'editor = "nano"', shell_output("#{bin}massren --config")
+    system bin/"massren", "--config", "editor", "nano"
+    assert_match 'editor = "nano"', shell_output("#{bin}/massren --config")
   end
 end

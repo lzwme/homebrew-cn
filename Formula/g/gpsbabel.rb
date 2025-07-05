@@ -1,13 +1,13 @@
 class Gpsbabel < Formula
-  desc "Convertsuploads GPS waypoints, tracks, and routes"
-  homepage "https:www.gpsbabel.org"
-  url "https:github.comGPSBabelgpsbabelarchiverefstagsgpsbabel_1_10_0.tar.gz"
+  desc "Converts/uploads GPS waypoints, tracks, and routes"
+  homepage "https://www.gpsbabel.org/"
+  url "https://ghfast.top/https://github.com/GPSBabel/gpsbabel/archive/refs/tags/gpsbabel_1_10_0.tar.gz"
   sha256 "a89756fb988a54f5c5f371413845b9aecb66628a594cd83bd529c0f18382c968"
   license "GPL-2.0-or-later"
 
   livecheck do
     url :stable
-    regex(^gpsbabel[._-]v?(\d+(?:[._]\d+)+)$i)
+    regex(/^gpsbabel[._-]v?(\d+(?:[._]\d+)+)$/i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -33,7 +33,7 @@ class Gpsbabel < Formula
     # force use of homebrew libusb-1.0 instead of included version.
     # force use of homebrew shapelib instead of included version.
     # force use of system zlib instead of included version.
-    rm_r "maclibusb"
+    rm_r "mac/libusb"
     rm_r "shapelib"
     rm_r "zlib"
     system "cmake", "-S", ".", "-B", "build",
@@ -42,20 +42,20 @@ class Gpsbabel < Formula
                     "-DGPSBABEL_WITH_ZLIB=pkgconfig",
                     *std_cmake_args
     system "cmake", "--build", "build", "--target", "gpsbabel"
-    bin.install "buildgpsbabel"
+    bin.install "build/gpsbabel"
   end
 
   test do
-    (testpath"test.loc").write <<~EOS
+    (testpath/"test.loc").write <<~EOS
       <?xml version="1.0"?>
       <loc version="1.0">
         <waypoint>
-          <name id="1 Infinite Loop"><![CDATA[Apple headquarters]]><name>
-          <coord lat="37.331695" lon="-122.030091">
-        <waypoint>
-      <loc>
+          <name id="1 Infinite Loop"><![CDATA[Apple headquarters]]></name>
+          <coord lat="37.331695" lon="-122.030091"/>
+        </waypoint>
+      </loc>
     EOS
-    system bin"gpsbabel", "-i", "geo", "-f", "test.loc", "-o", "gpx", "-F", "test.gpx"
-    assert_path_exists testpath"test.gpx"
+    system bin/"gpsbabel", "-i", "geo", "-f", "test.loc", "-o", "gpx", "-F", "test.gpx"
+    assert_path_exists testpath/"test.gpx"
   end
 end

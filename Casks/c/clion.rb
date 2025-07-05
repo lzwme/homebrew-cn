@@ -5,13 +5,13 @@ cask "clion" do
   sha256 arm:   "b415b03f8099cb4bcfd443562f9a88aecbe641ba387586d437031b5d2dc2726d",
          intel: "8144071d2c4485b5fd2447a00be3577533a7bc5c510b4b4fdd5db68bb93607a1"
 
-  url "https:download.jetbrains.comcppCLion-#{version.csv.first}#{arch}.dmg"
+  url "https://download.jetbrains.com/cpp/CLion-#{version.csv.first}#{arch}.dmg"
   name "CLion"
   desc "C and C++ IDE"
-  homepage "https:www.jetbrains.comclion"
+  homepage "https://www.jetbrains.com/clion/"
 
   livecheck do
-    url "https:data.services.jetbrains.comproductsreleases?code=CL&latest=true&type=release"
+    url "https://data.services.jetbrains.com/products/releases?code=CL&latest=true&type=release"
     strategy :json do |json|
       json["CL"]&.map do |release|
         version = release["version"]
@@ -27,22 +27,22 @@ cask "clion" do
   depends_on macos: ">= :catalina"
 
   app "CLion.app"
-  # shim script (https:github.comHomebrewhomebrew-caskissues18809)
-  shimscript = "#{staged_path}clion.wrapper.sh"
+  # shim script (https://github.com/Homebrew/homebrew-cask/issues/18809)
+  shimscript = "#{staged_path}/clion.wrapper.sh"
   binary shimscript, target: "clion"
 
   preflight do
     File.write shimscript, <<~EOS
-      #!binsh
-      exec '#{appdir}CLion.appContentsMacOSclion' "$@"
+      #!/bin/sh
+      exec '#{appdir}/CLion.app/Contents/MacOS/clion' "$@"
     EOS
   end
 
   zap trash: [
-    "~LibraryApplication SupportJetBrainsCLion#{version.major_minor}",
-    "~LibraryCachesJetBrainsCLion#{version.major_minor}",
-    "~LibraryLogsJetBrainsCLion#{version.major_minor}",
-    "~LibraryPreferencescom.jetbrains.CLion.plist",
-    "~LibrarySaved Application Statecom.jetbrains.CLion.savedState",
+    "~/Library/Application Support/JetBrains/CLion#{version.major_minor}",
+    "~/Library/Caches/JetBrains/CLion#{version.major_minor}",
+    "~/Library/Logs/JetBrains/CLion#{version.major_minor}",
+    "~/Library/Preferences/com.jetbrains.CLion.plist",
+    "~/Library/Saved Application State/com.jetbrains.CLion.savedState",
   ]
 end

@@ -1,14 +1,14 @@
 class Autotrace < Formula
   desc "Convert bitmap to vector graphics"
-  homepage "https:autotrace.sourceforge.net"
-  url "https:github.comautotraceautotracearchiverefstags0.31.10.tar.gz"
+  homepage "https://autotrace.sourceforge.net/"
+  url "https://ghfast.top/https://github.com/autotrace/autotrace/archive/refs/tags/0.31.10.tar.gz"
   sha256 "14627f93bb02fe14eeda0163434a7cb9b1f316c0f1727f0bdf6323a831ffe80d"
   license all_of: ["GPL-2.0-or-later", "LGPL-2.1-or-later"]
-  head "https:github.comautotraceautotrace.git", branch: "master"
+  head "https://github.com/autotrace/autotrace.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -53,8 +53,8 @@ class Autotrace < Formula
   end
 
   def install
-    system ".autogen.sh"
-    system ".configure", "--enable-magick-readers",
+    system "./autogen.sh"
+    system "./configure", "--enable-magick-readers",
                           "--mandir=#{man}",
                           *std_configure_args
     system "make", "install"
@@ -63,7 +63,7 @@ class Autotrace < Formula
   test do
     system "convert", "-size", "1x1", "canvas:black", "test.png"
     system "convert", "test.png", "test.bmp"
-    output = shell_output("#{bin}autotrace -output-format svg test.bmp")
+    output = shell_output("#{bin}/autotrace -output-format svg test.bmp")
     assert_match "<svg", output
   end
 end

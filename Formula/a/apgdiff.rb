@@ -1,13 +1,13 @@
 class Apgdiff < Formula
   desc "Another PostgreSQL diff tool"
-  homepage "https:www.apgdiff.com"
-  url "https:github.comfordfrogapgdiffarchiverefstagsrelease_2.7.0.tar.gz"
+  homepage "https://www.apgdiff.com/"
+  url "https://ghfast.top/https://github.com/fordfrog/apgdiff/archive/refs/tags/release_2.7.0.tar.gz"
   sha256 "932a7e9fef69a289f4c7bed31a9c0709ebd2816c834b65bad796bdc49ca38341"
   license "MIT"
 
   livecheck do
     url :stable
-    regex(^release[._-]v?(\d+(?:\.\d+)+)$i)
+    regex(/^release[._-]v?(\d+(?:\.\d+)+)$/i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -18,27 +18,27 @@ class Apgdiff < Formula
   end
 
   head do
-    url "https:github.comfordfrogapgdiff.git", branch: "develop"
+    url "https://github.com/fordfrog/apgdiff.git", branch: "develop"
     depends_on "ant" => :build
   end
 
   depends_on "openjdk"
 
   def install
-    jar = "releasesapgdiff-#{version}.jar"
+    jar = "releases/apgdiff-#{version}.jar"
 
     if build.head?
       system "ant", "-Dnoget=1"
-      jar = Dir["distapgdiff-*.jar"].first
+      jar = Dir["dist/apgdiff-*.jar"].first
     end
 
     libexec.install jar
-    bin.write_jar_script libexecFile.basename(jar), "apgdiff"
+    bin.write_jar_script libexec/File.basename(jar), "apgdiff"
   end
 
   test do
-    sql_orig = testpath"orig.sql"
-    sql_new = testpath"new.sql"
+    sql_orig = testpath/"orig.sql"
+    sql_new = testpath/"new.sql"
 
     sql_orig.write <<~SQL
       SET search_path = public, pg_catalog;
@@ -60,6 +60,6 @@ class Apgdiff < Formula
       \tADD COLUMN field2 boolean DEFAULT false NOT NULL;
     SQL
 
-    assert_equal expected, shell_output("#{bin}apgdiff #{sql_orig} #{sql_new}").strip
+    assert_equal expected, shell_output("#{bin}/apgdiff #{sql_orig} #{sql_new}").strip
   end
 end

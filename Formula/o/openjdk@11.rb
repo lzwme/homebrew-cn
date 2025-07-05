@@ -1,13 +1,13 @@
 class OpenjdkAT11 < Formula
   desc "Development kit for the Java programming language"
-  homepage "https:openjdk.java.net"
-  url "https:github.comopenjdkjdk11uarchiverefstagsjdk-11.0.27-ga.tar.gz"
+  homepage "https://openjdk.java.net/"
+  url "https://ghfast.top/https://github.com/openjdk/jdk11u/archive/refs/tags/jdk-11.0.27-ga.tar.gz"
   sha256 "eb1d802f854824261d7babac917179ce21c608a39675cf6e78f2ab19121cc7d0"
   license "GPL-2.0-only"
 
   livecheck do
     url :stable
-    regex(^jdk[._-]v?(11(?:\.\d+)*)-ga$i)
+    regex(/^jdk[._-]v?(11(?:\.\d+)*)-ga$/i)
   end
 
   bottle do
@@ -48,35 +48,35 @@ class OpenjdkAT11 < Formula
     depends_on "libxtst"
   end
 
-  # ARM64: https:www.azul.comdownloads?version=java-11-lts&package=jdk
-  # Intel: https:jdk.java.netarchive
+  # ARM64: https://www.azul.com/downloads/?version=java-11-lts&package=jdk
+  # Intel: https://jdk.java.net/archive/
   resource "boot-jdk" do
     on_macos do
       on_arm do
-        url "https:cdn.azul.comzulubinzulu11.68.17-ca-jdk11.0.21-macosx_aarch64.tar.gz"
+        url "https://cdn.azul.com/zulu/bin/zulu11.68.17-ca-jdk11.0.21-macosx_aarch64.tar.gz"
         sha256 "f7b7d10d42b75f9ac8e7311732d039faee2ce854b9ad462e0936e6c88d01a19f"
       end
       on_intel do
-        url "https:download.java.netjavaGAjdk119GPLopenjdk-11.0.2_osx-x64_bin.tar.gz"
+        url "https://download.java.net/java/GA/jdk11/9/GPL/openjdk-11.0.2_osx-x64_bin.tar.gz"
         sha256 "f365750d4be6111be8a62feda24e265d97536712bc51783162982b8ad96a70ee"
       end
     end
     on_linux do
       on_arm do
-        url "https:cdn.azul.comzulubinzulu11.68.17-ca-jdk11.0.21-linux_aarch64.tar.gz"
+        url "https://cdn.azul.com/zulu/bin/zulu11.68.17-ca-jdk11.0.21-linux_aarch64.tar.gz"
         sha256 "5638887df0e680c890b4c6f9543c9b61c96c90fb01f877d79ae57566466d3b3d"
       end
       on_intel do
-        url "https:download.java.netjavaGAjdk119GPLopenjdk-11.0.2_linux-x64_bin.tar.gz"
+        url "https://download.java.net/java/GA/jdk11/9/GPL/openjdk-11.0.2_linux-x64_bin.tar.gz"
         sha256 "99be79935354f5c0df1ad293620ea36d13f48ec3ea870c838f20c504c9668b57"
       end
     end
   end
 
   def install
-    boot_jdk = buildpath"boot-jdk"
+    boot_jdk = buildpath/"boot-jdk"
     resource("boot-jdk").stage boot_jdk
-    boot_jdk = "ContentsHome" if OS.mac? && !Hardware::CPU.arm?
+    boot_jdk /= "Contents/Home" if OS.mac? && !Hardware::CPU.arm?
     java_options = ENV.delete("_JAVA_OPTIONS")
 
     args = %W[
@@ -105,12 +105,12 @@ class OpenjdkAT11 < Formula
       --with-zlib=system
     ]
 
-    ldflags = ["-Wl,-rpath,#{loader_path.gsub("$", "\\$$")}server"]
+    ldflags = ["-Wl,-rpath,#{loader_path.gsub("$", "\\$$")}/server"]
     args += if OS.mac?
       ldflags << "-headerpad_max_install_names"
 
       # Allow unbundling `freetype` on macOS
-      inreplace "makeautoconflib-freetype.m4", '= "xmacosx"', '= ""'
+      inreplace "make/autoconf/lib-freetype.m4", '= "xmacosx"', '= ""'
 
       %W[
         --enable-dtrace
@@ -139,29 +139,29 @@ class OpenjdkAT11 < Formula
 
     jdk = libexec
     if OS.mac?
-      libexec.install Dir["buildreleaseimagesjdk-bundle*"].first => "openjdk.jdk"
-      jdk = "openjdk.jdkContentsHome"
+      libexec.install Dir["build/release/images/jdk-bundle/*"].first => "openjdk.jdk"
+      jdk /= "openjdk.jdk/Contents/Home"
     else
-      libexec.install Dir["buildreleaseimagesjdk*"]
+      libexec.install Dir["build/release/images/jdk/*"]
     end
 
-    bin.install_symlink Dir[jdk"bin*"]
-    include.install_symlink Dir[jdk"include*.h"]
-    include.install_symlink Dir[jdk"include"OS.kernel_name.downcase"*.h"]
-    man1.install_symlink Dir[jdk"manman1*"]
+    bin.install_symlink Dir[jdk/"bin/*"]
+    include.install_symlink Dir[jdk/"include/*.h"]
+    include.install_symlink Dir[jdk/"include"/OS.kernel_name.downcase/"*.h"]
+    man1.install_symlink Dir[jdk/"man/man1/*"]
   end
 
   def caveats
     on_macos do
       <<~EOS
         For the system Java wrappers to find this JDK, symlink it with
-          sudo ln -sfn #{opt_libexec}openjdk.jdk LibraryJavaJavaVirtualMachinesopenjdk-11.jdk
+          sudo ln -sfn #{opt_libexec}/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk-11.jdk
       EOS
     end
   end
 
   test do
-    (testpath"HelloWorld.java").write <<~JAVA
+    (testpath/"HelloWorld.java").write <<~JAVA
       class HelloWorld {
         public static void main(String args[]) {
           System.out.println("Hello, world!");
@@ -169,8 +169,8 @@ class OpenjdkAT11 < Formula
       }
     JAVA
 
-    system bin"javac", "HelloWorld.java"
+    system bin/"javac", "HelloWorld.java"
 
-    assert_match "Hello, world!", shell_output("#{bin}java HelloWorld")
+    assert_match "Hello, world!", shell_output("#{bin}/java HelloWorld")
   end
 end

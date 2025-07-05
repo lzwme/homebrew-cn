@@ -1,10 +1,10 @@
 class Vis < Formula
   desc "Vim-like text editor"
-  homepage "https:github.commartannevis"
-  url "https:github.commartannevisarchiverefstagsv0.9.tar.gz"
+  homepage "https://github.com/martanne/vis"
+  url "https://ghfast.top/https://github.com/martanne/vis/archive/refs/tags/v0.9.tar.gz"
   sha256 "bd37ffba5535e665c1e883c25ba5f4e3307569b6d392c60f3c7d5dedd2efcfca"
   license "ISC"
-  head "https:github.commartannevis.git", branch: "master"
+  head "https://github.com/martanne/vis.git", branch: "master"
 
   bottle do
     sha256 arm64_sequoia:  "6edc0624be797ed3bbee95686dd3af6f164c24e95d520b809004f12518d02553"
@@ -27,20 +27,20 @@ class Vis < Formula
   uses_from_macos "ncurses"
 
   def install
-    system ".configure", "--enable-lua", "--enable-lpeg-static=no", *std_configure_args
+    system "./configure", "--enable-lua", "--enable-lpeg-static=no", *std_configure_args
     system "make", "install"
 
     return unless OS.mac?
 
     # Rename vis & the matching manpage to avoid clashing with the system.
-    mv bin"vis", bin"vise"
-    mv man1"vis.1", man1"vise.1"
+    mv bin/"vis", bin/"vise"
+    mv man1/"vis.1", man1/"vise.1"
   end
 
   def caveats
     on_macos do
       <<~EOS
-        To avoid a name conflict with the macOS system utility usrbinvis,
+        To avoid a name conflict with the macOS system utility /usr/bin/vis,
         this text editor must be invoked by calling `vise` ("vis-editor").
       EOS
     end
@@ -48,9 +48,9 @@ class Vis < Formula
 
   test do
     binary = if OS.mac?
-      bin"vise"
+      bin/"vise"
     else
-      bin"vis"
+      bin/"vis"
     end
 
     assert_match "vis #{version} +curses +lua", shell_output("#{binary} -v 2>&1")

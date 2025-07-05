@@ -1,14 +1,14 @@
 class BuildpulseTestReporter < Formula
   desc "Connect your CI to BuildPulse to detect, track, and rank flaky tests"
-  homepage "https:buildpulse.io"
-  url "https:github.combuildpulsetest-reporterarchiverefstagsv0.29.0.tar.gz"
+  homepage "https://buildpulse.io"
+  url "https://ghfast.top/https://github.com/buildpulse/test-reporter/archive/refs/tags/v0.29.0.tar.gz"
   sha256 "4235de52b6068f9f3d2d04f3b43ca8d2de1d1e421ae3cfbcdbcef2629d9b8263"
   license "MIT"
-  head "https:github.combuildpulsetest-reporter.git", branch: "main"
+  head "https://github.com/buildpulse/test-reporter.git", branch: "main"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -28,11 +28,11 @@ class BuildpulseTestReporter < Formula
       -X main.Version=#{version}
       -X main.Commit=#{tap.user}
     ]
-    system "go", "build", *std_go_args(ldflags: goldflags), ".cmdtest-reporter"
+    system "go", "build", *std_go_args(ldflags: goldflags), "./cmd/test-reporter"
   end
 
   test do
-    binary = bin"buildpulse-test-reporter"
+    binary = bin/"buildpulse-test-reporter"
     assert_match version.to_s, shell_output("#{binary} --version")
 
     fake_dir = "im-not-real"

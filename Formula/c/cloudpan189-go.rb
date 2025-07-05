@@ -1,10 +1,10 @@
 class Cloudpan189Go < Formula
   desc "Command-line client tool for Cloud189 web disk"
-  homepage "https:github.comtickstepcloudpan189-go"
-  url "https:github.comtickstepcloudpan189-goarchiverefstagsv0.1.3.tar.gz"
+  homepage "https://github.com/tickstep/cloudpan189-go"
+  url "https://ghfast.top/https://github.com/tickstep/cloudpan189-go/archive/refs/tags/v0.1.3.tar.gz"
   sha256 "a215b75369af535aed214c94b66ebb3239b6ef5fcbc2f74039cf9c3eda4b04c1"
   license "Apache-2.0"
-  head "https:github.comtickstepcloudpan189-go.git", branch: "master"
+  head "https://github.com/tickstep/cloudpan189-go.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -25,12 +25,12 @@ class Cloudpan189Go < Formula
 
   def install
     # TODO: remove `-checklinkname=0` workaround when fixed
-    # https:github.comtickstepcloudpan189-goissues101
+    # https://github.com/tickstep/cloudpan189-go/issues/101
     system "go", "build", *std_go_args(ldflags: "-s -w -checklinkname=0")
   end
 
   test do
-    system bin"cloudpan189-go", "run", "touch", "output.txt"
-    assert_path_exists testpath"output.txt"
+    system bin/"cloudpan189-go", "run", "touch", "output.txt"
+    assert_path_exists testpath/"output.txt"
   end
 end

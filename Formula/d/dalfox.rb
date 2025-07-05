@@ -1,10 +1,10 @@
 class Dalfox < Formula
   desc "XSS scanner and utility focused on automation"
-  homepage "https:dalfox.hahwul.com"
-  url "https:github.comhahwuldalfoxarchiverefstagsv2.11.0.tar.gz"
+  homepage "https://dalfox.hahwul.com"
+  url "https://ghfast.top/https://github.com/hahwul/dalfox/archive/refs/tags/v2.11.0.tar.gz"
   sha256 "3bb78fcdcfd620aebb5f7488770ee4df7c7fb6448181963f290e60a1cba95459"
   license "MIT"
-  head "https:github.comhahwuldalfox.git", branch: "main"
+  head "https://github.com/hahwul/dalfox.git", branch: "main"
 
   no_autobump! because: :requires_manual_review
 
@@ -22,14 +22,14 @@ class Dalfox < Formula
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
 
-    generate_completions_from_executable(bin"dalfox", "completion")
+    generate_completions_from_executable(bin/"dalfox", "completion")
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}dalfox version 2>&1")
+    assert_match version.to_s, shell_output("#{bin}/dalfox version 2>&1")
 
-    url = "http:testphp.vulnweb.comlistproducts.php?cat=123&artist=123&asdf=ff"
-    output = shell_output("#{bin}dalfox url \"#{url}\" 2>&1")
+    url = "http://testphp.vulnweb.com/listproducts.php?cat=123&artist=123&asdf=ff"
+    output = shell_output("#{bin}/dalfox url \"#{url}\" 2>&1")
     assert_match "Finish Scan!", output
   end
 end

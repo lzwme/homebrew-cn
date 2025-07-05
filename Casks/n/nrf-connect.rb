@@ -5,11 +5,11 @@ cask "nrf-connect" do
   sha256 arm:   "935e2eac4dcd28e15bbb109cf591e37f8a403326f0472ab4a4e21e7e0024ac1a",
          intel: "7f7148d6eb07650a8d8b50902acb568ed3406572eb9506e5bf50dc1ead80c8da"
 
-  url "https:github.comNordicSemiconductorpc-nrfconnect-launcherreleasesdownloadv#{version}nrfconnect-#{version}-#{arch}.dmg",
-      verified: "github.comNordicSemiconductorpc-nrfconnect-launcher"
+  url "https://ghfast.top/https://github.com/NordicSemiconductor/pc-nrfconnect-launcher/releases/download/v#{version}/nrfconnect-#{version}-#{arch}.dmg",
+      verified: "github.com/NordicSemiconductor/pc-nrfconnect-launcher/"
   name "nRF Connect for Desktop"
   desc "Framework for development on BLE devices"
-  homepage "https:www.nordicsemi.comProductsDevelopment-toolsnRF-Connect-for-Desktop"
+  homepage "https://www.nordicsemi.com/Products/Development-tools/nRF-Connect-for-Desktop"
 
   livecheck do
     url :url
@@ -24,9 +24,9 @@ cask "nrf-connect" do
   app "nRF Connect for Desktop.app"
 
   zap trash: [
-    "~.nrfconnect-apps",
-    "~LibraryApplication Supportnrfconnect",
-    "~LibraryPreferencescom.nordicsemi.nrfconnect.plist",
-    "~LibrarySaved Application Statecom.nordicsemi.nrfconnect.savedState",
+    "~/.nrfconnect-apps",
+    "~/Library/Application Support/nrfconnect",
+    "~/Library/Preferences/com.nordicsemi.nrfconnect.plist",
+    "~/Library/Saved Application State/com.nordicsemi.nrfconnect.savedState",
   ]
 end

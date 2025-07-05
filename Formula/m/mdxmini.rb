@@ -1,7 +1,7 @@
 class Mdxmini < Formula
   desc "Plays music in X68000 MDX chiptune format"
-  homepage "https:github.commistydemeomdxmini"
-  url "https:github.commistydemeomdxminiarchiverefstagsv2.0.0.tar.gz"
+  homepage "https://github.com/mistydemeo/mdxmini/"
+  url "https://ghfast.top/https://github.com/mistydemeo/mdxmini/archive/refs/tags/v2.0.0.tar.gz"
   sha256 "9b623b365e893a769084f7a2effedc9ece453c6e3861c571ba503f045471a0e0"
   license "GPL-2.0-or-later"
 
@@ -25,7 +25,7 @@ class Mdxmini < Formula
   depends_on "sdl2"
 
   resource "test_song" do
-    url "https:ftp.modland.compubmodulesMDX-%20unknownPopful%20Mailpop-00.mdx"
+    url "https://ftp.modland.com/pub/modules/MDX/-%20unknown/Popful%20Mail/pop-00.mdx"
     sha256 "86f21fbbaf93eb60e79fa07c759b906a782afe4e1db5c7e77a1640e6bf63fd14"
   end
 
@@ -41,25 +41,25 @@ class Mdxmini < Formula
     flags = if OS.mac?
       %W[
         -dynamiclib
-        -install_name #{liblibmdxmini}
+        -install_name #{lib/libmdxmini}
         -undefined dynamic_lookup
       ]
     else
       ["-shared"]
     end
 
-    system ENV.cc, *flags, "-o", libmdxmini, *Dir["obj*.o"]
+    system ENV.cc, *flags, "-o", libmdxmini, *Dir["obj/*.o"]
 
     bin.install "mdxplay"
     lib.install libmdxmini
-    (include"libmdxmini").install Dir["src*.h"]
+    (include/"libmdxmini").install Dir["src/*.h"]
   end
 
   test do
     resource("test_song").stage testpath
-    (testpath"mdxtest.c").write <<~C
+    (testpath/"mdxtest.c").write <<~C
       #include <stdio.h>
-      #include "libmdxminimdxmini.h"
+      #include "libmdxmini/mdxmini.h"
 
       int main(int argc, char** argv)
       {
@@ -72,7 +72,7 @@ class Mdxmini < Formula
     C
     system ENV.cc, "mdxtest.c", "-L#{lib}", "-L#{Formula["sdl2"].opt_lib}", "-lmdxmini", "-lSDL2", "-o", "mdxtest"
 
-    result = shell_output("#{testpath}mdxtest #{testpath}pop-00.mdx #{testpath}").chomp
+    result = shell_output("#{testpath}/mdxtest #{testpath}/pop-00.mdx #{testpath}").chomp
     result.force_encoding("ascii-8bit") if result.respond_to? :force_encoding
 
     # Song title is in Shift-JIS
@@ -90,22 +90,22 @@ class Mdxmini < Formula
 end
 
 __END__
-diff --git aMakefile bMakefile
+diff --git a/Makefile b/Makefile
 index 9b63041..ff725c3 100644
---- aMakefile
-+++ bMakefile
+--- a/Makefile
++++ b/Makefile
 @@ -43,6 +43,7 @@ FILES_ORG = COPYING AUTHORS
- LIB = $(OBJDIR)lib$(TITLE).a
+ LIB = $(OBJDIR)/lib$(TITLE).a
 
  LIBS += $(LIB)
 +LIBS += -lm
 
  ZIPSRC = $(TITLE)`date +"%y%m%d"`.zip
  TOUCH = touch -t `date +"%m%d0000"`
-diff --git amakgeneral.mak bmakgeneral.mak
+diff --git a/mak/general.mak b/mak/general.mak
 index 6f88e4c..c552eb3 100644
---- amakgeneral.mak
-+++ bmakgeneral.mak
+--- a/mak/general.mak
++++ b/mak/general.mak
 @@ -17,10 +17,16 @@ CFLAGS = -g -O3
  OBJDIR = obj
  endif

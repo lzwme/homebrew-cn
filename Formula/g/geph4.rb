@@ -1,14 +1,14 @@
 class Geph4 < Formula
   desc "Modular Internet censorship circumvention system to deal with national filtering"
-  homepage "https:geph.io"
-  url "https:github.comgeph-officialgeph4-clientarchiverefstagsv4.99.32.tar.gz"
+  homepage "https://geph.io/"
+  url "https://ghfast.top/https://github.com/geph-official/geph4-client/archive/refs/tags/v4.99.32.tar.gz"
   sha256 "fd6585717448b796d90b7b6dadd609c86c806ee7b4c9f0a21e27ffb47e8ff59c"
   license "GPL-3.0-only"
-  head "https:github.comgeph-officialgeph4-client.git", branch: "master"
+  head "https://github.com/geph-official/geph4-client.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -33,14 +33,14 @@ class Geph4 < Formula
     ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
     ENV["OPENSSL_NO_VENDOR"] = "1"
 
-    rm_r(buildpath".cargo")
+    rm_r(buildpath/".cargo")
     system "cargo", "install", *std_cargo_args
   end
 
   test do
-    output = shell_output("#{bin}geph4-client sync --credential-cache ~test.db auth-password 2>&1", 1)
+    output = shell_output("#{bin}/geph4-client sync --credential-cache ~/test.db auth-password 2>&1", 1)
     assert_match "incorrect credentials", output
 
-    assert_match version.to_s, shell_output("#{bin}geph4-client --version")
+    assert_match version.to_s, shell_output("#{bin}/geph4-client --version")
   end
 end

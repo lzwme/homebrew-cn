@@ -2,9 +2,9 @@ cask "font-intone-mono-nerd-font" do
   version "3.4.0"
   sha256 "5fcefd22e8cae586559365cb8353a77077dba4b4773fa57538926e31cf4629ce"
 
-  url "https:github.comryanoasisnerd-fontsreleasesdownloadv#{version}IntelOneMono.zip"
+  url "https://ghfast.top/https://github.com/ryanoasis/nerd-fonts/releases/download/v#{version}/IntelOneMono.zip"
   name "IntoneMono Nerd Font (Intel One Mono)"
-  homepage "https:github.comryanoasisnerd-fonts"
+  homepage "https://github.com/ryanoasis/nerd-fonts"
 
   livecheck do
     url :url

@@ -1,10 +1,10 @@
 class Zeek < Formula
   desc "Network security monitor"
-  homepage "https:zeek.org"
-  url "https:github.comzeekzeekreleasesdownloadv7.2.1zeek-7.2.1.tar.gz"
+  homepage "https://zeek.org/"
+  url "https://ghfast.top/https://github.com/zeek/zeek/releases/download/v7.2.1/zeek-7.2.1.tar.gz"
   sha256 "9dbab6e531aafc7b9b4df032b31b951d4df8c69dc0909a7cc811c1db4165502d"
   license "BSD-3-Clause"
-  head "https:github.comzeekzeek.git", branch: "master"
+  head "https://github.com/zeek/zeek.git", branch: "master"
 
   livecheck do
     url :stable
@@ -39,14 +39,14 @@ class Zeek < Formula
 
   def install
     # Remove SDK paths from zeek-config. This breaks usage with other SDKs.
-    # https:github.comHomebrewhomebrew-corepull74932
-    inreplace "cmake_templateszeek-config.in" do |s|
+    # https://github.com/Homebrew/homebrew-core/pull/74932
+    inreplace "cmake_templates/zeek-config.in" do |s|
       s.gsub! "@ZEEK_CONFIG_PCAP_INCLUDE_DIR@", ""
       s.gsub! "@ZEEK_CONFIG_ZLIB_INCLUDE_DIR@", ""
     end
 
     # Avoid references to the Homebrew shims directory
-    inreplace "auxilspicyhiltitoolchainsrcconfig.cc.in", "${CMAKE_CXX_COMPILER}", ENV.cxx
+    inreplace "auxil/spicy/hilti/toolchain/src/config.cc.in", "${CMAKE_CXX_COMPILER}", ENV.cxx
 
     unless build.head?
       # Benchmarks are not installed, but building them on Linux breaks in the
@@ -56,16 +56,16 @@ class Zeek < Formula
       # This is fixed on Zeek's `master` branch and will be available with
       # zeek-8.0. There there is a CMake variable `SPICY_ENABLE_TESTS` which
       # defaults to `OFF`.
-      inreplace "auxilspicyhiltiruntimeCMakeLists.txt",
-        "add_executable(hilti-rt-fiber-benchmark srcbenchmarksfiber.cc)",
-        "add_executable(hilti-rt-fiber-benchmark EXCLUDE_FROM_ALL srcbenchmarksfiber.cc)"
-      inreplace "auxilspicyspicyruntimetestsbenchmarksCMakeLists.txt",
+      inreplace "auxil/spicy/hilti/runtime/CMakeLists.txt",
+        "add_executable(hilti-rt-fiber-benchmark src/benchmarks/fiber.cc)",
+        "add_executable(hilti-rt-fiber-benchmark EXCLUDE_FROM_ALL src/benchmarks/fiber.cc)"
+      inreplace "auxil/spicy/spicy/runtime/tests/benchmarks/CMakeLists.txt",
         "add_executable(spicy-rt-parsing-benchmark parsing.cc ${_generated_sources})",
         "add_executable(spicy-rt-parsing-benchmark EXCLUDE_FROM_ALL parsing.cc ${_generated_sources})"
-      inreplace "auxilspicy3rdpartyjustrxsrctestsCMakeLists.txt",
+      inreplace "auxil/spicy/3rdparty/justrx/src/tests/CMakeLists.txt",
         "add_executable(bench benchmark.cc)",
         "add_executable(bench EXCLUDE_FROM_ALL benchmark.cc)"
-      (buildpath"auxilspicy3rdpartyCMakeLists.txt").append_lines <<~CMAKE
+      (buildpath/"auxil/spicy/3rdparty/CMakeLists.txt").append_lines <<~CMAKE
         set_target_properties(benchmark PROPERTIES EXCLUDE_FROM_ALL ON)
         set_target_properties(benchmark_main PROPERTIES EXCLUDE_FROM_ALL ON)
       CMAKE
@@ -77,8 +77,8 @@ class Zeek < Formula
                     "-DINSTALL_ZEEKCTL=on",
                     "-DUSE_GEOIP=on",
                     "-DCARES_ROOT_DIR=#{Formula["c-ares"].opt_prefix}",
-                    "-DCARES_LIBRARIES=#{Formula["c-ares"].opt_libshared_library("libcares")}",
-                    "-DLibMMDB_LIBRARY=#{Formula["libmaxminddb"].opt_libshared_library("libmaxminddb")}",
+                    "-DCARES_LIBRARIES=#{Formula["c-ares"].opt_lib/shared_library("libcares")}",
+                    "-DLibMMDB_LIBRARY=#{Formula["libmaxminddb"].opt_lib/shared_library("libmaxminddb")}",
                     "-DOPENSSL_ROOT_DIR=#{Formula["openssl@3"].opt_prefix}",
                     "-DPYTHON_EXECUTABLE=#{which("python3.13")}",
                     "-DZEEK_ETC_INSTALL_DIR=#{etc}",
@@ -89,14 +89,14 @@ class Zeek < Formula
   end
 
   test do
-    assert_match "version #{version}", shell_output("#{bin}zeek --version")
-    assert_match "ARP packet analyzer", shell_output("#{bin}zeek --print-plugins")
-    system bin"zeek", "-C", "-r", test_fixtures("test.pcap")
-    assert_path_exists testpath"conn.log"
-    refute_empty (testpath"conn.log").read
-    assert_path_exists testpath"http.log"
-    refute_empty (testpath"http.log").read
-    # For bottling MacOS SDK paths must not be part of the public include directories, see zeekzeek#1468.
-    refute_includes shell_output("#{bin}zeek-config --include_dir").chomp, "MacOSX"
+    assert_match "version #{version}", shell_output("#{bin}/zeek --version")
+    assert_match "ARP packet analyzer", shell_output("#{bin}/zeek --print-plugins")
+    system bin/"zeek", "-C", "-r", test_fixtures("test.pcap")
+    assert_path_exists testpath/"conn.log"
+    refute_empty (testpath/"conn.log").read
+    assert_path_exists testpath/"http.log"
+    refute_empty (testpath/"http.log").read
+    # For bottling MacOS SDK paths must not be part of the public include directories, see zeek/zeek#1468.
+    refute_includes shell_output("#{bin}/zeek-config --include_dir").chomp, "MacOSX"
   end
 end

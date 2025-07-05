@@ -2,10 +2,10 @@ cask "font-baskervville-sc" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefontsrawmainoflbaskervvillescBaskervvilleSC%5Bwght%5D.ttf",
-      verified: "github.comgooglefonts"
+  url "https://github.com/google/fonts/raw/main/ofl/baskervvillesc/BaskervvilleSC%5Bwght%5D.ttf",
+      verified: "github.com/google/fonts/"
   name "Baskervville SC"
-  homepage "https:fonts.google.comspecimenBaskervville+SC"
+  homepage "https://fonts.google.com/specimen/Baskervville+SC"
 
   font "BaskervvilleSC[wght].ttf"
 

@@ -1,10 +1,10 @@
 class Phoneinfoga < Formula
   desc "Information gathering framework for phone numbers"
-  homepage "https:sundowndev.github.iophoneinfoga"
-  url "https:github.comsundowndevphoneinfogaarchiverefstagsv2.11.0.tar.gz"
+  homepage "https://sundowndev.github.io/phoneinfoga/"
+  url "https://ghfast.top/https://github.com/sundowndev/phoneinfoga/archive/refs/tags/v2.11.0.tar.gz"
   sha256 "adb3cf459d36c4372b5cab235506afcba24df175eca87bb36539126bb1dbf64e"
   license "GPL-3.0-only"
-  head "https:github.comsundowndevphoneinfoga.git", branch: "master"
+  head "https://github.com/sundowndev/phoneinfoga.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -24,23 +24,23 @@ class Phoneinfoga < Formula
   depends_on "node"
 
   def install
-    cd "webclient" do
+    cd "web/client" do
       system "yarn", "install", "--immutable"
       system "yarn", "build"
     end
 
     ldflags = %W[
       -s -w
-      -X github.comsundowndevphoneinfogav2build.Version=v#{version}
-      -X github.comsundowndevphoneinfogav2build.Commit=brew
+      -X github.com/sundowndev/phoneinfoga/v2/build.Version=v#{version}
+      -X github.com/sundowndev/phoneinfoga/v2/build.Commit=brew
     ]
 
     system "go", "build", *std_go_args(ldflags:)
   end
 
   test do
-    assert_match "PhoneInfoga v#{version}-brew", shell_output("#{bin}phoneinfoga version")
-    system bin"phoneinfoga", "scanners"
-    assert_match "given phone number is not valid", shell_output("#{bin}phoneinfoga scan -n foobar 2>&1", 1)
+    assert_match "PhoneInfoga v#{version}-brew", shell_output("#{bin}/phoneinfoga version")
+    system bin/"phoneinfoga", "scanners"
+    assert_match "given phone number is not valid", shell_output("#{bin}/phoneinfoga scan -n foobar 2>&1", 1)
   end
 end

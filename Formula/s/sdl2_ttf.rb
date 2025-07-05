@@ -1,13 +1,13 @@
 class Sdl2Ttf < Formula
   desc "Library for using TrueType fonts in SDL applications"
-  homepage "https:github.comlibsdl-orgSDL_ttf"
-  url "https:github.comlibsdl-orgSDL_ttfreleasesdownloadrelease-2.24.0SDL2_ttf-2.24.0.tar.gz"
+  homepage "https://github.com/libsdl-org/SDL_ttf"
+  url "https://ghfast.top/https://github.com/libsdl-org/SDL_ttf/releases/download/release-2.24.0/SDL2_ttf-2.24.0.tar.gz"
   sha256 "0b2bf1e7b6568adbdbc9bb924643f79d9dedafe061fa1ed687d1d9ac4e453bfd"
   license "Zlib"
 
   livecheck do
     url :stable
-    regex(^(?:release[._-])?v?(2(?:\.\d+)+)$i)
+    regex(/^(?:release[._-])?v?(2(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -21,7 +21,7 @@ class Sdl2Ttf < Formula
   end
 
   head do
-    url "https:github.comlibsdl-orgSDL_ttf.git", branch: "main"
+    url "https://github.com/libsdl-org/SDL_ttf.git", branch: "main"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -36,11 +36,11 @@ class Sdl2Ttf < Formula
   def install
     inreplace "SDL2_ttf.pc.in", "@prefix@", HOMEBREW_PREFIX
 
-    system ".autogen.sh" if build.head?
+    system "./autogen.sh" if build.head?
 
     # `--enable-harfbuzz` is the default, but we pass it
     # explicitly to generate an error when it isn't found.
-    system ".configure", "--disable-freetype-builtin",
+    system "./configure", "--disable-freetype-builtin",
                           "--disable-harfbuzz-builtin",
                           "--enable-harfbuzz",
                           *std_configure_args
@@ -48,8 +48,8 @@ class Sdl2Ttf < Formula
   end
 
   test do
-    (testpath"test.c").write <<~C
-      #include <SDL2SDL_ttf.h>
+    (testpath/"test.c").write <<~C
+      #include <SDL2/SDL_ttf.h>
 
       int main()
       {
@@ -58,7 +58,7 @@ class Sdl2Ttf < Formula
           return success;
       }
     C
-    system ENV.cc, "test.c", "-I#{Formula["sdl2"].opt_include}SDL2", "-L#{lib}", "-lSDL2_ttf", "-o", "test"
-    system ".test"
+    system ENV.cc, "test.c", "-I#{Formula["sdl2"].opt_include}/SDL2", "-L#{lib}", "-lSDL2_ttf", "-o", "test"
+    system "./test"
   end
 end

@@ -1,7 +1,7 @@
 class Tunnel < Formula
   desc "Expose local servers to the internet securely"
-  homepage "https:github.comlabstacktunnel-client"
-  url "https:github.comlabstacktunnel-clientarchiverefstagsv0.5.15.tar.gz"
+  homepage "https://github.com/labstack/tunnel-client"
+  url "https://ghfast.top/https://github.com/labstack/tunnel-client/archive/refs/tags/v0.5.15.tar.gz"
   sha256 "7a57451416b76dbf220e69c7dd3e4c33dc84758a41cdb9337a464338565e3e6e"
   license "MIT"
 
@@ -22,16 +22,16 @@ class Tunnel < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "9a079e012dffd514c536355269716695a150db0dc30cd3ea2c27aee789615805"
   end
 
-  # `https:tunnel.labstack.comdocs` is no longer accessible
+  # `https://tunnel.labstack.com/docs` is no longer accessible
   deprecate! date: "2025-02-23", because: :unmaintained
 
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), ".cmdtunnel"
+    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/tunnel"
   end
 
   test do
-    assert_match "you need an api key", shell_output(bin"tunnel 8080", 1)
+    assert_match "you need an api key", shell_output(bin/"tunnel 8080", 1)
   end
 end

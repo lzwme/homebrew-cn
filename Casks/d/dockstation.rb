@@ -2,10 +2,10 @@ cask "dockstation" do
   version "1.5.1"
   sha256 "3449009fcd2fc8476381d4de62b2086999281ede81f903dfb63715c3383491c7"
 
-  url "https:github.comDockStationdockstationreleasesdownloadv#{version}dockstation-#{version}.dmg",
-      verified: "github.comDockStationdockstation"
+  url "https://ghfast.top/https://github.com/DockStation/dockstation/releases/download/v#{version}/dockstation-#{version}.dmg",
+      verified: "github.com/DockStation/dockstation/"
   name "DockStation"
-  homepage "https:dockstation.io"
+  homepage "https://dockstation.io/"
 
   no_autobump! because: :requires_manual_review
 
@@ -16,10 +16,10 @@ cask "dockstation" do
   app "DockStation.app"
 
   zap trash: [
-    "~LibraryApplication Supportdockstation",
-    "~LibraryPreferencesorg.dockstation.DockStation.helper.plist",
-    "~LibraryPreferencesorg.dockstation.DockStation.plist",
-    "~LibrarySaved Application Stateorg.dockstation.DockStation.savedState",
+    "~/Library/Application Support/dockstation",
+    "~/Library/Preferences/org.dockstation.DockStation.helper.plist",
+    "~/Library/Preferences/org.dockstation.DockStation.plist",
+    "~/Library/Saved Application State/org.dockstation.DockStation.savedState",
   ]
 
   caveats do

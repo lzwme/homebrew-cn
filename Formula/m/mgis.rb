@@ -1,11 +1,11 @@
 class Mgis < Formula
   desc "Provide tools to handle MFront generic interface behaviours"
-  homepage "https:thelfer.github.iomgiswebindex.html"
-  url "https:github.comthelferMFrontGenericInterfaceSupportarchiverefstagsMFrontGenericInterfaceSupport-3.0.tar.gz"
+  homepage "https://thelfer.github.io/mgis/web/index.html"
+  url "https://ghfast.top/https://github.com/thelfer/MFrontGenericInterfaceSupport/archive/refs/tags/MFrontGenericInterfaceSupport-3.0.tar.gz"
   sha256 "dae915201fd20848b69745dabda1a334eb242d823af600825b8b010ddc597640"
   license any_of: ["LGPL-3.0-only", "CECILL-1.0"]
   revision 1
-  head "https:github.comthelferMFrontGenericInterfaceSupport.git", branch: "master"
+  head "https://github.com/thelfer/MFrontGenericInterfaceSupport.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "609ed0597809fb94917de333e84bc8e4576ca5578fc9cfd597683930c8271319"
@@ -47,10 +47,10 @@ class Mgis < Formula
 
     if OS.mac?
       # Use -dead_strip_dylibs to avoid linkage to boost container and graph modules
-      # Issue ref: https:github.comboostorgboostissues985
+      # Issue ref: https://github.com/boostorg/boost/issues/985
       linker_flags = %W[
         -Wl,-dead_strip_dylibs
-        -Wl,-rpath,#{rpath(source: prefixLanguage::Python.site_packages(python3)"mgis")}
+        -Wl,-rpath,#{rpath(source: prefix/Language::Python.site_packages(python3)/"mgis")}
       ]
       args << "-DCMAKE_MODULE_LINKER_FLAGS=#{linker_flags.join(" ")}"
     end

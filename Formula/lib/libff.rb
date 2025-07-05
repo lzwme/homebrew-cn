@@ -1,8 +1,8 @@
 class Libff < Formula
   desc "C++ library for Finite Fields and Elliptic Curves"
-  homepage "https:github.comscipr-lablibff"
+  homepage "https://github.com/scipr-lab/libff"
   # pull from git tag to get submodules
-  url "https:github.comscipr-lablibff.git",
+  url "https://github.com/scipr-lab/libff.git",
       tag:      "v0.2.1",
       revision: "5835b8c59d4029249645cf551f417608c48f2770"
   license "MIT"
@@ -34,7 +34,7 @@ class Libff < Formula
     curve = Hardware::CPU.intel? ? "BN128" : "ALT_BN128"
 
     # build libff dynamically. The project only builds statically by default
-    inreplace "libffCMakeLists.txt", "STATIC", "SHARED"
+    inreplace "libff/CMakeLists.txt", "STATIC", "SHARED"
 
     system "cmake", "-S", ".", "-B", "build",
                     "-DWITH_PROCPS=OFF",
@@ -47,8 +47,8 @@ class Libff < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~CPP
-      #include <libffalgebracurvesedwardsedwards_pp.hpp>
+    (testpath/"test.cpp").write <<~CPP
+      #include <libff/algebra/curves/edwards/edwards_pp.hpp>
 
       using namespace libff;
 
@@ -59,6 +59,6 @@ class Libff < Formula
     CPP
 
     system ENV.cxx, "-std=c++11", "test.cpp", "-I#{include}", "-L#{lib}", "-lff", "-o", "test"
-    system ".test"
+    system "./test"
   end
 end

@@ -1,10 +1,10 @@
 class GitCodereview < Formula
   desc "Tool for working with Gerrit code reviews"
-  homepage "https:pkg.go.devgolang.orgxreviewgit-codereview"
-  url "https:github.comgolangreviewarchiverefstagsv1.15.0.tar.gz"
+  homepage "https://pkg.go.dev/golang.org/x/review/git-codereview"
+  url "https://ghfast.top/https://github.com/golang/review/archive/refs/tags/v1.15.0.tar.gz"
   sha256 "0a8d3ce0124e5bbf394607723a42942b9af91aaa7c03e0037c26bd462519a3b1"
   license "BSD-3-Clause"
-  head "https:github.comgolangreview.git", branch: "master"
+  head "https://github.com/golang/review.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "44771d7e045d4d01e2074dcd75e123b79f547d16965eea79349c85ee297e029a"
@@ -18,12 +18,12 @@ class GitCodereview < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), ".git-codereview"
+    system "go", "build", *std_go_args(ldflags: "-s -w"), "./git-codereview"
   end
 
   test do
     system "git", "init"
     system "git", "codereview", "hooks"
-    assert_match "git-codereview hook-invoke", (testpath".githookscommit-msg").read
+    assert_match "git-codereview hook-invoke", (testpath/".git/hooks/commit-msg").read
   end
 end

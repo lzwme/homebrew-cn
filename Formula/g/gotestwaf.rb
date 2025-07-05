@@ -1,10 +1,10 @@
 class Gotestwaf < Formula
   desc "Tool for API and OWASP attack simulation"
-  homepage "https:lab.wallarm.comtest-your-waf-before-hackers"
-  url "https:github.comwallarmgotestwafarchiverefstagsv0.5.6.tar.gz"
+  homepage "https://lab.wallarm.com/test-your-waf-before-hackers/"
+  url "https://ghfast.top/https://github.com/wallarm/gotestwaf/archive/refs/tags/v0.5.6.tar.gz"
   sha256 "8edd398b694de728894055f80d4809bdfa762aa25e9d29e86fdccee62ac2e1ae"
   license "MIT"
-  head "https:github.comwallarmgotestwaf.git", branch: "master"
+  head "https://github.com/wallarm/gotestwaf.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "8f9b83b297bbab0ec18a8ad46548c809e98236377504480df8906d455b779907"
@@ -18,16 +18,16 @@ class Gotestwaf < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = "-s -w -X github.comwallarmgotestwafinternalversion.Version=#{version}"
-    system "go", "build", *std_go_args(ldflags:), ".cmdgotestwaf"
+    ldflags = "-s -w -X github.com/wallarm/gotestwaf/internal/version.Version=#{version}"
+    system "go", "build", *std_go_args(ldflags:), "./cmd/gotestwaf"
 
     pkgetc.install "config.yaml"
   end
 
   test do
-    cp pkgetc"config.yaml", testpath
+    cp pkgetc/"config.yaml", testpath
 
-    (testpath"testcasessql-injectiontest.yaml").write <<~YAML
+    (testpath/"testcases/sql-injection/test.yaml").write <<~YAML
       ---
       payload:
         - '"union select -7431.1, name, @aaa from u_base--w-'
@@ -44,10 +44,10 @@ class Gotestwaf < Formula
         - Header
     YAML
 
-    output = shell_output("#{bin}gotestwaf --noEmailReport --url https:example.com 2>&1", 1)
+    output = shell_output("#{bin}/gotestwaf --noEmailReport --url https://example.com/ 2>&1", 1)
     assert_match "Try to identify WAF solution", output
     assert_match "error=\"WAF was not detected", output
 
-    assert_match version.to_s, shell_output("#{bin}gotestwaf --version 2>&1")
+    assert_match version.to_s, shell_output("#{bin}/gotestwaf --version 2>&1")
   end
 end

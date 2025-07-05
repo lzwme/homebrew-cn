@@ -1,10 +1,10 @@
 class Hex < Formula
   desc "Futuristic take on hexdump"
-  homepage "https:github.comsitkevijhex"
-  url "https:github.comsitkevijhexarchiverefstagsv0.6.0.tar.gz"
+  homepage "https://github.com/sitkevij/hex"
+  url "https://ghfast.top/https://github.com/sitkevij/hex/archive/refs/tags/v0.6.0.tar.gz"
   sha256 "7952ee2b6782e49259f82155c3b5287f1be72f15360a88e379c9270bd0d2416c"
   license "MIT"
-  head "https:github.comsitkevijhex.git", branch: "master"
+  head "https://github.com/sitkevij/hex.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -30,11 +30,11 @@ class Hex < Formula
   end
 
   test do
-    (testpath"tiny.txt").write("il")
-    output = shell_output("#{bin}hx tiny.txt")
+    (testpath/"tiny.txt").write("il")
+    output = shell_output("#{bin}/hx tiny.txt")
     assert_match "0x000000: 0x69 0x6c", output
 
-    output = shell_output("#{bin}hx -ar -c8 tiny.txt")
+    output = shell_output("#{bin}/hx -ar -c8 tiny.txt")
     expected = <<~EOS
       let ARRAY: [u8; 2] = [
           0x69, 0x6c
@@ -42,6 +42,6 @@ class Hex < Formula
     EOS
     assert_equal expected, output
 
-    assert_match "hx #{version}", shell_output("#{bin}hx --version")
+    assert_match "hx #{version}", shell_output("#{bin}/hx --version")
   end
 end

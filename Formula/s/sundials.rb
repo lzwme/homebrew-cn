@@ -1,13 +1,13 @@
 class Sundials < Formula
-  desc "Nonlinear and differentialalgebraic equations solver"
-  homepage "https:computing.llnl.govprojectssundials"
-  url "https:github.comLLNLsundialsreleasesdownloadv7.3.0sundials-7.3.0.tar.gz"
+  desc "Nonlinear and differential/algebraic equations solver"
+  homepage "https://computing.llnl.gov/projects/sundials"
+  url "https://ghfast.top/https://github.com/LLNL/sundials/releases/download/v7.3.0/sundials-7.3.0.tar.gz"
   sha256 "fd970a9023f8ea37b81c5065c067bf1726f656b39f5907b48169a6f98d306ba7"
   license "BSD-3-Clause"
 
   livecheck do
-    url "https:computing.llnl.govprojectssundialssundials-software"
-    regex(href=.*?sundials[._-]v?(\d+(?:\.\d+)+)\.ti)
+    url "https://computing.llnl.gov/projects/sundials/sundials-software"
+    regex(/href=.*?sundials[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   bottle do
@@ -34,7 +34,7 @@ class Sundials < Formula
       -DBUILD_SHARED_LIBS=ON
       -DKLU_ENABLE=ON
       -DKLU_LIBRARY_DIR=#{Formula["suite-sparse"].opt_lib}
-      -DKLU_INCLUDE_DIR=#{Formula["suite-sparse"].opt_include}suitesparse
+      -DKLU_INCLUDE_DIR=#{Formula["suite-sparse"].opt_include}/suitesparse
       -DLAPACK_ENABLE=ON
       -DLAPACK_LIBRARIES=#{blas};#{blas}
       -DMPI_ENABLE=ON
@@ -45,16 +45,16 @@ class Sundials < Formula
     system "cmake", "--install", "build"
 
     # Only keep one example for testing purposes
-    (pkgshare"examples").install Dir[
-      "testunit_testsnvectortest_nvector.c",
-      "testunit_testsnvectortest_nvector.h",
-      "testunit_testsnvectorserialtest_nvector_serial.c",
+    (pkgshare/"examples").install Dir[
+      "test/unit_tests/nvector/test_nvector.c",
+      "test/unit_tests/nvector/test_nvector.h",
+      "test/unit_tests/nvector/serial/test_nvector_serial.c",
     ]
-    rm_r(prefix"examples")
+    rm_r(prefix/"examples")
   end
 
   test do
-    cp Dir[pkgshare"examples*"], testpath
+    cp Dir[pkgshare/"examples/*"], testpath
     args = %W[
       -I#{include}
       -L#{lib}
@@ -68,6 +68,6 @@ class Sundials < Formula
 
     system ENV.cc, "test_nvector.c", "test_nvector_serial.c", "-o", "test", *args
 
-    assert_match "SUCCESS: NVector module passed all tests", shell_output(".test 42 0")
+    assert_match "SUCCESS: NVector module passed all tests", shell_output("./test 42 0")
   end
 end

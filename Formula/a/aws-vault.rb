@@ -1,14 +1,14 @@
 class AwsVault < Formula
   desc "Securely store and access AWS credentials in development environments"
-  homepage "https:github.comByteNessaws-vault"
-  url "https:github.comByteNessaws-vaultarchiverefstagsv7.5.0.tar.gz"
+  homepage "https://github.com/ByteNess/aws-vault"
+  url "https://ghfast.top/https://github.com/ByteNess/aws-vault/archive/refs/tags/v7.5.0.tar.gz"
   sha256 "93e9ed87cb31b3713b39bd302891f02dc791156fea4f5cba44d83f55bf49023d"
   license "MIT"
-  head "https:github.comByteNessaws-vault.git", branch: "main"
+  head "https://github.com/ByteNess/aws-vault.git", branch: "main"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -32,15 +32,15 @@ class AwsVault < Formula
     system "make", "aws-vault-#{os}-#{arch}", "VERSION=#{version}-#{tap.user}"
     system "make", "install", "INSTALL_DIR=#{bin}", "VERSION=#{version}-#{tap.user}"
 
-    zsh_completion.install "contribcompletionszshaws-vault.zsh" => "_aws-vault"
-    bash_completion.install "contribcompletionsbashaws-vault.bash" => "aws-vault"
-    fish_completion.install "contribcompletionsfishaws-vault.fish"
+    zsh_completion.install "contrib/completions/zsh/aws-vault.zsh" => "_aws-vault"
+    bash_completion.install "contrib/completions/bash/aws-vault.bash" => "aws-vault"
+    fish_completion.install "contrib/completions/fish/aws-vault.fish"
   end
 
   test do
     assert_match("aws-vault: error: login: unable to select a 'profile', nor any AWS env vars found.",
-      shell_output("#{bin}aws-vault --backend=file login 2>&1", 1))
+      shell_output("#{bin}/aws-vault --backend=file login 2>&1", 1))
 
-    assert_match version.to_s, shell_output("#{bin}aws-vault --version 2>&1")
+    assert_match version.to_s, shell_output("#{bin}/aws-vault --version 2>&1")
   end
 end

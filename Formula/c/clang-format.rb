@@ -1,17 +1,17 @@
 class ClangFormat < Formula
   desc "Formatting tools for C, C++, Obj-C, Java, JavaScript, TypeScript"
-  homepage "https:clang.llvm.orgdocsClangFormat.html"
+  homepage "https://clang.llvm.org/docs/ClangFormat.html"
   # The LLVM Project is under the Apache License v2.0 with LLVM Exceptions
   license "Apache-2.0" => { with: "LLVM-exception" }
   version_scheme 1
-  head "https:github.comllvmllvm-project.git", branch: "main"
+  head "https://github.com/llvm/llvm-project.git", branch: "main"
 
   stable do
-    url "https:github.comllvmllvm-projectreleasesdownloadllvmorg-20.1.7llvm-20.1.7.src.tar.xz"
+    url "https://ghfast.top/https://github.com/llvm/llvm-project/releases/download/llvmorg-20.1.7/llvm-20.1.7.src.tar.xz"
     sha256 "10b62d003f16afbd1a5ee0aa6397704c13d9a12a2562103998a8c1eff4a0f1ea"
 
     resource "clang" do
-      url "https:github.comllvmllvm-projectreleasesdownloadllvmorg-20.1.7clang-20.1.7.src.tar.xz"
+      url "https://ghfast.top/https://github.com/llvm/llvm-project/releases/download/llvmorg-20.1.7/clang-20.1.7.src.tar.xz"
       sha256 "cb74965a2481008ae405419357a55fda2df6fa3aee262a0a9293a558532a29ae"
 
       livecheck do
@@ -20,7 +20,7 @@ class ClangFormat < Formula
     end
 
     resource "cmake" do
-      url "https:github.comllvmllvm-projectreleasesdownloadllvmorg-20.1.7cmake-20.1.7.src.tar.xz"
+      url "https://ghfast.top/https://github.com/llvm/llvm-project/releases/download/llvmorg-20.1.7/cmake-20.1.7.src.tar.xz"
       sha256 "afdab526c9b337a4eacbb401685beb98a18fb576037ecfaa93171d4c644fe791"
 
       livecheck do
@@ -29,7 +29,7 @@ class ClangFormat < Formula
     end
 
     resource "third-party" do
-      url "https:github.comllvmllvm-projectreleasesdownloadllvmorg-20.1.7third-party-20.1.7.src.tar.xz"
+      url "https://ghfast.top/https://github.com/llvm/llvm-project/releases/download/llvmorg-20.1.7/third-party-20.1.7.src.tar.xz"
       sha256 "592019ad4d17ffa6e0162c7584474b2ae8883a61bbfade5f15382ed26b7ce52a"
 
       livecheck do
@@ -40,7 +40,7 @@ class ClangFormat < Formula
 
   livecheck do
     url :stable
-    regex(llvmorg[._-]v?(\d+(?:\.\d+)+)i)
+    regex(/llvmorg[._-]v?(\d+(?:\.\d+)+)/i)
     strategy :github_latest
   end
 
@@ -71,16 +71,16 @@ class ClangFormat < Formula
     odie "third-party resource needs to be updated" if build.stable? && version != resource("third-party").version
 
     llvmpath = if build.head?
-      ln_s buildpath"clang", buildpath"llvmtoolsclang"
+      ln_s buildpath/"clang", buildpath/"llvm/tools/clang"
 
-      buildpath"llvm"
+      buildpath/"llvm"
     else
-      (buildpath"src").install buildpath.children
-      (buildpath"srctoolsclang").install resource("clang")
-      (buildpath"cmake").install resource("cmake")
-      (buildpath"third-party").install resource("third-party")
+      (buildpath/"src").install buildpath.children
+      (buildpath/"src/tools/clang").install resource("clang")
+      (buildpath/"cmake").install resource("cmake")
+      (buildpath/"third-party").install resource("third-party")
 
-      buildpath"src"
+      buildpath/"src"
     end
 
     system "cmake", "-S", llvmpath, "-B", "build",
@@ -89,9 +89,9 @@ class ClangFormat < Formula
                     *std_cmake_args
     system "cmake", "--build", "build", "--target", "clang-format"
 
-    bin.install "buildbinclang-format"
-    bin.install llvmpath"toolsclangtoolsclang-formatgit-clang-format"
-    (share"clang").install llvmpath.glob("toolsclangtoolsclang-formatclang-format*")
+    bin.install "build/bin/clang-format"
+    bin.install llvmpath/"tools/clang/tools/clang-format/git-clang-format"
+    (share/"clang").install llvmpath.glob("tools/clang/tools/clang-format/clang-format*")
   end
 
   test do
@@ -99,13 +99,13 @@ class ClangFormat < Formula
     system "git", "commit", "--allow-empty", "-m", "initial commit", "--quiet"
 
     # NB: below C code is messily formatted on purpose.
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       int         main(char *args) { \n   \t printf("hello"); }
     C
     system "git", "add", "test.c"
 
     assert_equal "int main(char *args) { printf(\"hello\"); }\n",
-        shell_output("#{bin}clang-format -style=Google test.c")
+        shell_output("#{bin}/clang-format -style=Google test.c")
 
     ENV.prepend_path "PATH", bin
     assert_match "test.c", shell_output("git clang-format", 1)

@@ -1,13 +1,13 @@
 class Sleuthkit < Formula
   desc "Forensic toolkit"
-  homepage "https:www.sleuthkit.org"
-  url "https:github.comsleuthkitsleuthkitreleasesdownloadsleuthkit-4.14.0sleuthkit-4.14.0.tar.gz"
+  homepage "https://www.sleuthkit.org/"
+  url "https://ghfast.top/https://github.com/sleuthkit/sleuthkit/releases/download/sleuthkit-4.14.0/sleuthkit-4.14.0.tar.gz"
   sha256 "fb6ea1801bcfc4c7d3a283d7592c6bd65add655411749513b5c429b86541e9a9"
   license all_of: ["IPL-1.0", "CPL-1.0", "GPL-2.0-or-later"]
 
   livecheck do
     url :stable
-    regex(sleuthkit[._-]v?(\d+(?:\.\d+)+)i)
+    regex(/sleuthkit[._-]v?(\d+(?:\.\d+)+)/i)
     strategy :github_latest
   end
 
@@ -36,16 +36,16 @@ class Sleuthkit < Formula
 
   def install
     ENV["JAVA_HOME"] = java_home = Language::Java.java_home
-    # https:github.comsleuthkitsleuthkitblobdevelopdocsREADME_Java.md#macos
-    ENV["JNI_CPPFLAGS"] = "-I#{java_home}include -I#{java_home}includedarwin" if OS.mac?
-    # https:github.comsleuthkitsleuthkitissues3216
+    # https://github.com/sleuthkit/sleuthkit/blob/develop/docs/README_Java.md#macos
+    ENV["JNI_CPPFLAGS"] = "-I#{java_home}/include -I#{java_home}/include/darwin" if OS.mac?
+    # https://github.com/sleuthkit/sleuthkit/issues/3216
     ENV.deparallelize
 
-    system ".configure", "--disable-silent-rules", "--enable-java", *std_configure_args
+    system "./configure", "--disable-silent-rules", "--enable-java", *std_configure_args
     system "make", "install"
   end
 
   test do
-    system bin"tsk_loaddb", "-V"
+    system bin/"tsk_loaddb", "-V"
   end
 end

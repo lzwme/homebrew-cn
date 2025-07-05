@@ -1,7 +1,7 @@
 class Bold < Formula
   desc "Drop-in replacement for Apple system linker ld"
-  homepage "https:github.comkubkonbold"
-  url "https:github.comkubkonboldarchiverefstagsv0.2.0.tar.gz"
+  homepage "https://github.com/kubkon/bold"
+  url "https://ghfast.top/https://github.com/kubkon/bold/archive/refs/tags/v0.2.0.tar.gz"
   sha256 "7b12aceeabe32249784347f3bb1befde6dcf621668d0352497ee8ef8c381d9ee"
   license "MIT"
 
@@ -18,7 +18,7 @@ class Bold < Formula
 
   def install
     # Fix illegal instruction errors when using bottles on older CPUs.
-    # https:github.comHomebrewhomebrew-coreissues92282
+    # https://github.com/Homebrew/homebrew-core/issues/92282
     cpu = case Hardware.oldest_cpu
     when :arm_vortex_tempest then "apple_m1" # See `zig targets`.
     else Hardware.oldest_cpu
@@ -32,7 +32,7 @@ class Bold < Formula
   end
 
   test do
-    (testpath"hello.c").write <<~EOS
+    (testpath/"hello.c").write <<~EOS
       #include <stdio.h>
       int main() {
         printf("Hello from Bold\\n");
@@ -44,9 +44,9 @@ class Bold < Formula
     arch = Hardware::CPU.arm? ? "arm64" : "x86_64"
     macos_min = MacOS.version.to_s
 
-    system bin"bold", "hello.o", "-arch", arch, "-macos_version_min", macos_min,
+    system bin/"bold", "hello.o", "-arch", arch, "-macos_version_min", macos_min,
                         "-syslibroot", MacOS.sdk_path, "-lSystem", "-o", "test"
 
-    assert_equal "Hello from Bold\n", shell_output(".test")
+    assert_equal "Hello from Bold\n", shell_output("./test")
   end
 end

@@ -1,10 +1,10 @@
 class Cowsay < Formula
   desc "Apjanke's fork of the classic cowsay project"
-  homepage "https:cowsay.diamonds"
-  url "https:github.comcowsay-orgcowsayarchiverefstagsv3.8.4.tar.gz"
+  homepage "https://cowsay.diamonds"
+  url "https://ghfast.top/https://github.com/cowsay-org/cowsay/archive/refs/tags/v3.8.4.tar.gz"
   sha256 "c15bc10712835d3a9bcda780dc9453362567bf48d1185905dc7ef2334d79aadd"
   license "GPL-3.0-only"
-  head "https:github.comcowsay-orgcowsay.git", branch: "main"
+  head "https://github.com/cowsay-org/cowsay.git", branch: "main"
 
   no_autobump! because: :requires_manual_review
 
@@ -17,7 +17,7 @@ class Cowsay < Formula
   end
 
   test do
-    output = shell_output("#{bin}cowsay moo")
+    output = shell_output("#{bin}/cowsay moo")
     assert_match "moo", output  # bubble
     assert_match "^__^", output # cow
   end

@@ -1,10 +1,10 @@
 class SvtAv1 < Formula
   desc "AV1 encoder"
-  homepage "https:gitlab.comAOMediaCodecSVT-AV1"
-  url "https:gitlab.comAOMediaCodecSVT-AV1-archivev3.0.2SVT-AV1-v3.0.2.tar.bz2"
+  homepage "https://gitlab.com/AOMediaCodec/SVT-AV1"
+  url "https://gitlab.com/AOMediaCodec/SVT-AV1/-/archive/v3.0.2/SVT-AV1-v3.0.2.tar.bz2"
   sha256 "7548a380cd58a46998ab4f1a02901ef72c37a7c6317c930cde5df2e6349e437b"
   license "BSD-3-Clause"
-  head "https:gitlab.comAOMediaCodecSVT-AV1.git", branch: "master"
+  head "https://gitlab.com/AOMediaCodec/SVT-AV1.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "e93837b76e46e9cfff5d2826fdeb6312842353b899d3e851c81d943e3cb87b57"
@@ -19,19 +19,19 @@ class SvtAv1 < Formula
   depends_on "cmake" => :build
   depends_on "nasm" => :build
 
-  # Match the version of cpuinfo specified in https:gitlab.comAOMediaCodecSVT-AV1-blobmastercmakecpuinfo.cmake
+  # Match the version of cpuinfo specified in https://gitlab.com/AOMediaCodec/SVT-AV1/-/blob/master/cmake/cpuinfo.cmake
   resource "cpuinfo" do
-    url "https:github.com1480c1cpuinfoarchivee649baaa95efeb61517c06cc783287d4942ffe0e.tar.gz"
+    url "https://ghfast.top/https://github.com/1480c1/cpuinfo/archive/e649baaa95efeb61517c06cc783287d4942ffe0e.tar.gz"
     sha256 "f89abf172b93d75a79a5456fa778a401ab2fc4ef84d538f5c4df7c6938591c6f"
   end
 
   def install
     # Features are enabled based on compiler support, and then the appropriate
     # implementations are chosen at runtime.
-    # See https:gitlab.comAOMediaCodecSVT-AV1-blobmasterSourceLibCodeccommon_dsp_rtcd.c
+    # See https://gitlab.com/AOMediaCodec/SVT-AV1/-/blob/master/Source/Lib/Codec/common_dsp_rtcd.c
     ENV.runtime_cpu_detection
 
-    (buildpath"cpuinfo").install resource("cpuinfo")
+    (buildpath/"cpuinfo").install resource("cpuinfo")
 
     cd "cpuinfo" do
       args = %W[
@@ -39,7 +39,7 @@ class SvtAv1 < Formula
         -DCPUINFO_BUILD_UNIT_TESTS=OFF
         -DCPUINFO_BUILD_MOCK_TESTS=OFF
         -DCPUINFO_BUILD_BENCHMARKS=OFF
-        -DCMAKE_INSTALL_PREFIX=#{buildpath}cpuinfo-install
+        -DCMAKE_INSTALL_PREFIX=#{buildpath}/cpuinfo-install
         -DCMAKE_POSITION_INDEPENDENT_CODE=ON
       ] + std_cmake_args.reject { |arg| arg.start_with? "-DCMAKE_INSTALL_PREFIX=" }
 
@@ -51,7 +51,7 @@ class SvtAv1 < Formula
     args = %W[
       -DCMAKE_INSTALL_RPATH=#{rpath}
       -DUSE_CPUINFO=SYSTEM
-      -Dcpuinfo_DIR=#{buildpath"cpuinfo-installsharecpuinfo"}
+      -Dcpuinfo_DIR=#{buildpath/"cpuinfo-install/share/cpuinfo"}
     ]
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
@@ -61,12 +61,12 @@ class SvtAv1 < Formula
 
   test do
     resource "homebrew-testvideo" do
-      url "https:github.comgrusellsvt-av1-homebrew-testdatarawmainvideo_64x64_yuv420p_25frames.yuv"
+      url "https://github.com/grusell/svt-av1-homebrew-testdata/raw/main/video_64x64_yuv420p_25frames.yuv"
       sha256 "0c5cc90b079d0d9c1ded1376357d23a9782a704a83e01731f50ccd162e246492"
     end
 
     testpath.install resource("homebrew-testvideo")
-    system bin"SvtAv1EncApp", "-w", "64", "-h", "64", "-i", "video_64x64_yuv420p_25frames.yuv", "-b", "output.ivf"
-    assert_path_exists testpath"output.ivf"
+    system bin/"SvtAv1EncApp", "-w", "64", "-h", "64", "-i", "video_64x64_yuv420p_25frames.yuv", "-b", "output.ivf"
+    assert_path_exists testpath/"output.ivf"
   end
 end

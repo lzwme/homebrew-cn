@@ -1,10 +1,10 @@
 class Canfigger < Formula
   desc "Simple configuration file parser library"
-  homepage "https:github.comandy5995canfigger"
-  url "https:github.comandy5995canfiggerreleasesdownloadv0.3.0canfigger-0.3.0.tar.xz"
+  homepage "https://github.com/andy5995/canfigger/"
+  url "https://ghfast.top/https://github.com/andy5995/canfigger/releases/download/v0.3.0/canfigger-0.3.0.tar.xz"
   sha256 "3d813e69e0cc3a43c09cf565138ac1278f7bcea74053204f54e3872c094cb534"
   license "GPL-3.0-or-later"
-  head "https:github.comandy5995canfigger.git", branch: "trunk"
+  head "https://github.com/andy5995/canfigger.git", branch: "trunk"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "1eea36988f6c7adf32c10b85effe85af3344fd9c294de23c7d3f8b391222c56e"
@@ -28,11 +28,11 @@ class Canfigger < Formula
   end
 
   test do
-    (testpath"test.conf").write <<~EOS
+    (testpath/"test.conf").write <<~EOS
       Numbers = list, one , two, three, four, five, six, seven
     EOS
 
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include <canfigger.h>
       #include <stdio.h>
 
@@ -67,7 +67,7 @@ class Canfigger < Formula
     C
 
     system ENV.cc, "test.c", "-L#{lib}", "-lcanfigger", "-o", "test"
-    assert_match <<~EOS, shell_output(".test")
+    assert_match <<~EOS, shell_output("./test")
       Key: Numbers, Value: list
       Attribute: one
       Attribute: two

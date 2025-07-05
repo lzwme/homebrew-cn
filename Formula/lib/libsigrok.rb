@@ -1,41 +1,41 @@
 class Libsigrok < Formula
   desc "Drivers for logic analyzers and other supported devices"
-  homepage "https:sigrok.org"
+  homepage "https://sigrok.org/"
   # libserialport is LGPL3+
   # fw-fx2lafw is GPL-2.0-or-later and LGPL-2.1-or-later"
   license all_of: ["GPL-3.0-or-later", "LGPL-3.0-or-later", "GPL-2.0-or-later", "LGPL-2.1-or-later"]
   revision 5
 
   stable do
-    url "https:sigrok.orgdownloadsourcelibsigroklibsigrok-0.5.2.tar.gz"
+    url "https://sigrok.org/download/source/libsigrok/libsigrok-0.5.2.tar.gz"
     sha256 "4d341f90b6220d3e8cb251dacf726c41165285612248f2c52d15df4590a1ce3c"
 
     # build patch to replace `PyEval_CallObject` with `PyObject_CallObject`
     patch do
-      url "https:github.comsigrokprojectlibsigrokcommit5bc8174531df86991ba8aa6d12942923925d9e72.patch?full_index=1"
+      url "https://github.com/sigrokproject/libsigrok/commit/5bc8174531df86991ba8aa6d12942923925d9e72.patch?full_index=1"
       sha256 "247bfee9777a39d5dc454a999ce425a061cdc48f4956fdb0cc31ec67a8086ce0"
     end
 
     resource "libserialport" do
-      url "https:sigrok.orgdownloadsourcelibserialportlibserialport-0.1.1.tar.gz"
+      url "https://sigrok.org/download/source/libserialport/libserialport-0.1.1.tar.gz"
       sha256 "4a2af9d9c3ff488e92fb75b4ba38b35bcf9b8a66df04773eba2a7bbf1fa7529d"
     end
 
     resource "fw-fx2lafw" do
-      url "https:sigrok.orgdownloadsourcesigrok-firmware-fx2lafwsigrok-firmware-fx2lafw-0.1.7.tar.gz"
+      url "https://sigrok.org/download/source/sigrok-firmware-fx2lafw/sigrok-firmware-fx2lafw-0.1.7.tar.gz"
       sha256 "a3f440d6a852a46e2c5d199fc1c8e4dacd006bc04e0d5576298ee55d056ace3b"
 
       # Backport fixes to build with sdcc>=4.2.3. Remove in the next release of fw-fx2lafw.
       patch do
-        url "https:sigrok.orggitweb?p=sigrok-firmware-fx2lafw.git;a=commitdiff_plain;h=5aab87d358a4585a10ad89277bb88ad139077abd"
+        url "https://sigrok.org/gitweb/?p=sigrok-firmware-fx2lafw.git;a=commitdiff_plain;h=5aab87d358a4585a10ad89277bb88ad139077abd"
         sha256 "ddf21e9e655c78d93cb58742e1a4dcbe769dfa2d88cfc963f97b6e5794c2fdcf"
       end
       patch do
-        url "https:sigrok.orggitweb?p=sigrok-firmware-fx2lafw.git;a=commitdiff_plain;h=3e08500d22f87f69941b65cf8b8c1b85f9b41173"
+        url "https://sigrok.org/gitweb/?p=sigrok-firmware-fx2lafw.git;a=commitdiff_plain;h=3e08500d22f87f69941b65cf8b8c1b85f9b41173"
         sha256 "dd74b58ae0e255bca4558dc6604e32c34c49ddb05281d7edc35495f0c506373a"
       end
       patch do
-        url "https:sigrok.orggitweb?p=sigrok-firmware-fx2lafw.git;a=commitdiff_plain;h=96b0b476522c3f93a47ff8f479ec08105ba6a2a5"
+        url "https://sigrok.org/gitweb/?p=sigrok-firmware-fx2lafw.git;a=commitdiff_plain;h=96b0b476522c3f93a47ff8f479ec08105ba6a2a5"
         sha256 "b75c7b6a1705e2f8d97d5bdaac01d1ae2476c0b0f1b624d766d722dd12b402db"
       end
     end
@@ -45,8 +45,8 @@ class Libsigrok < Formula
   # download page is not available, so this checks the directory listing page
   # where the `stable` archive is found until the download page returns.
   livecheck do
-    url "https:sigrok.orgdownloadsourcelibsigrok"
-    regex(href=.*?libsigrok[._-]v?(\d+(?:\.\d+)+)\.ti)
+    url "https://sigrok.org/download/source/libsigrok/"
+    regex(/href=.*?libsigrok[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -63,14 +63,14 @@ class Libsigrok < Formula
   end
 
   head do
-    url "git:sigrok.orglibsigrok", branch: "master"
+    url "git://sigrok.org/libsigrok", branch: "master"
 
     resource "libserialport" do
-      url "git:sigrok.orglibserialport", branch: "master"
+      url "git://sigrok.org/libserialport", branch: "master"
     end
 
     resource "fw-fx2lafw" do
-      url "git:sigrok.orgsigrok-firmware-fx2lafw", branch: "master"
+      url "git://sigrok.org/sigrok-firmware-fx2lafw", branch: "master"
     end
   end
 
@@ -101,7 +101,7 @@ class Libsigrok < Formula
   end
 
   resource "fw-fx2lafw" do
-    url "https:sigrok.orgdownloadbinarysigrok-firmware-fx2lafwsigrok-firmware-fx2lafw-bin-0.1.7.tar.gz"
+    url "https://sigrok.org/download/binary/sigrok-firmware-fx2lafw/sigrok-firmware-fx2lafw-bin-0.1.7.tar.gz"
     sha256 "c876fd075549e7783a6d5bfc8d99a695cfc583ddbcea0217d8e3f9351d1723af"
   end
 
@@ -112,26 +112,26 @@ class Libsigrok < Formula
   def install
     resource("fw-fx2lafw").stage do
       if build.head?
-        system ".autogen.sh"
+        system "./autogen.sh"
       else
         system "autoreconf", "--force", "--install", "--verbose"
       end
 
       mkdir "build" do
-        system "..configure", *std_configure_args
+        system "../configure", *std_configure_args
         system "make", "install"
       end
     end
 
     resource("libserialport").stage do
       if build.head?
-        system ".autogen.sh"
+        system "./autogen.sh"
       else
         system "autoreconf", "--force", "--install", "--verbose"
       end
 
       mkdir "build" do
-        system "..configure", *std_configure_args
+        system "../configure", *std_configure_args
         system "make", "install"
       end
     end
@@ -139,37 +139,37 @@ class Libsigrok < Formula
     # We need to use the Makefile to generate all of the dependencies
     # for setup.py, so the easiest way to make the Python libraries
     # work is to adjust setup.py's arguments here.
-    prefix_site_packages = prefixLanguage::Python.site_packages(python3)
+    prefix_site_packages = prefix/Language::Python.site_packages(python3)
     inreplace "Makefile.am" do |s|
-      s.gsub!(^(setup_py =.*setup\.py .*), "\\1 --no-user-cfg")
+      s.gsub!(/^(setup_py =.*setup\.py .*)/, "\\1 --no-user-cfg")
       s.gsub!(
-        (\$\(setup_py\) install),
+        /(\$\(setup_py\) install)/,
         "\\1 --single-version-externally-managed --record=installed.txt --install-lib=#{prefix_site_packages}",
       )
     end
 
     if build.head?
-      system ".autogen.sh"
+      system "./autogen.sh"
     else
       system "autoreconf", "--force", "--install", "--verbose"
     end
 
     mkdir "build" do
       ENV["PYTHON"] = python3
-      ENV.prepend_path "PKG_CONFIG_PATH", lib"pkgconfig"
+      ENV.prepend_path "PKG_CONFIG_PATH", lib/"pkgconfig"
       args = %w[
         --disable-java
         --disable-ruby
       ]
-      system "..configure", *std_configure_args, *args
+      system "../configure", *std_configure_args, *args
       system "make"
       system "make", "install"
     end
   end
 
   test do
-    (testpath"test.c").write <<~C
-      #include <libsigroklibsigrok.h>
+    (testpath/"test.c").write <<~C
+      #include <libsigrok/libsigrok.h>
 
       int main() {
         struct sr_context *ctx;
@@ -182,9 +182,9 @@ class Libsigrok < Formula
         return 0;
       }
     C
-    flags = shell_output("#{Formula["pkgconf"].opt_bin}pkgconf --cflags --libs libsigrok").strip.split
+    flags = shell_output("#{Formula["pkgconf"].opt_bin}/pkgconf --cflags --libs libsigrok").strip.split
     system ENV.cc, "test.c", "-o", "test", *flags
-    system ".test"
+    system "./test"
 
     system python3, "-c", <<~PYTHON
       import sigrok.core as sr

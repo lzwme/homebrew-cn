@@ -1,7 +1,7 @@
 class Tzdiff < Formula
   desc "Displays Timezone differences with localtime in CLI (shell script)"
-  homepage "https:github.combelgianbeertzdiff"
-  url "https:github.combelgianbeertzdiffarchiverefstags1.2.1.tar.gz"
+  homepage "https://github.com/belgianbeer/tzdiff"
+  url "https://ghfast.top/https://github.com/belgianbeer/tzdiff/archive/refs/tags/1.2.1.tar.gz"
   sha256 "3438af02d6f808e9984e1746d5fd2e4bbf6e53cdb866fc0d4ded74a382d48d62"
   license "BSD-2-Clause"
 
@@ -15,7 +15,7 @@ class Tzdiff < Formula
   end
 
   test do
-    assert_match "AsiaTokyo", shell_output("#{bin}tzdiff -l Tokyo")
-    assert_match version.to_s, shell_output("#{bin}tzdiff -v")
+    assert_match "Asia/Tokyo", shell_output("#{bin}/tzdiff -l Tokyo")
+    assert_match version.to_s, shell_output("#{bin}/tzdiff -v")
   end
 end

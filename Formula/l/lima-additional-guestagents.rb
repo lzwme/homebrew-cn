@@ -1,10 +1,10 @@
 class LimaAdditionalGuestagents < Formula
   desc "Additional guest agents for Lima"
-  homepage "https:lima-vm.io"
-  url "https:github.comlima-vmlimaarchiverefstagsv1.1.1.tar.gz"
+  homepage "https://lima-vm.io/"
+  url "https://ghfast.top/https://github.com/lima-vm/lima/archive/refs/tags/v1.1.1.tar.gz"
   sha256 "82577e2223dc0ba06ea5aac539ab836e1724cdd0440d800e47c8b7d0f23d7de5"
   license "Apache-2.0"
-  head "https:github.comlima-vmlima.git", branch: "master"
+  head "https://github.com/lima-vm/lima.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -30,8 +30,8 @@ class LimaAdditionalGuestagents < Formula
       system "make", "additional-guestagents", "VERSION=#{version}"
     end
 
-    bin.install Dir["_outputbin*"]
-    share.install Dir["_outputshare*"]
+    bin.install Dir["_output/bin/*"]
+    share.install Dir["_output/share/*"]
   end
 
   test do

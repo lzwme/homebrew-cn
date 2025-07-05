@@ -1,10 +1,10 @@
 class GopassJsonapi < Formula
   desc "Gopass Browser Bindings"
-  homepage "https:github.comgopasspwgopass-jsonapi"
-  url "https:github.comgopasspwgopass-jsonapiarchiverefstagsv1.15.16.tar.gz"
+  homepage "https://github.com/gopasspw/gopass-jsonapi"
+  url "https://ghfast.top/https://github.com/gopasspw/gopass-jsonapi/archive/refs/tags/v1.15.16.tar.gz"
   sha256 "8ca561234d700b0b76206b90a053ad3da1daa3fc7fdb47837afae8891610b264"
   license "MIT"
-  head "https:github.comgopasspwgopass-jsonapi.git", branch: "master"
+  head "https://github.com/gopasspw/gopass-jsonapi.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "4e70311e42c120d8efb3eb0eb9e8d6ae8c9265881054b923628e3b3beed1137e"
@@ -23,7 +23,7 @@ class GopassJsonapi < Formula
   end
 
   test do
-    (testpath"batch.gpg").write <<~EOS
+    (testpath/"batch.gpg").write <<~EOS
       Key-Type: RSA
       Key-Length: 2048
       Subkey-Type: RSA
@@ -36,20 +36,20 @@ class GopassJsonapi < Formula
     EOS
 
     begin
-      system Formula["gnupg"].opt_bin"gpg", "--batch", "--gen-key", "batch.gpg"
+      system Formula["gnupg"].opt_bin/"gpg", "--batch", "--gen-key", "batch.gpg"
 
-      system Formula["gopass"].opt_bin"gopass", "init", "--path", testpath, "noop", "testing@foo.bar"
-      system Formula["gopass"].opt_bin"gopass", "generate", "Emailother@foo.bar", "15"
+      system Formula["gopass"].opt_bin/"gopass", "init", "--path", testpath, "noop", "testing@foo.bar"
+      system Formula["gopass"].opt_bin/"gopass", "generate", "Email/other@foo.bar", "15"
     ensure
-      system Formula["gnupg"].opt_bin"gpgconf", "--kill", "gpg-agent"
-      system Formula["gnupg"].opt_bin"gpgconf", "--homedir", "keyringslive",
+      system Formula["gnupg"].opt_bin/"gpgconf", "--kill", "gpg-agent"
+      system Formula["gnupg"].opt_bin/"gpgconf", "--homedir", "keyrings/live",
                                                  "--kill", "gpg-agent"
     end
 
-    assert_match(^gopass-jsonapi version #{version}$, shell_output("#{bin}gopass-jsonapi --version"))
+    assert_match(/^gopass-jsonapi version #{version}$/, shell_output("#{bin}/gopass-jsonapi --version"))
 
     msg = '{"type": "query", "query": "foo.bar"}'
-    assert_match "Emailother@foo.bar",
-      pipe_output("#{bin}gopass-jsonapi listen", "#{[msg.length].pack("L<")}#{msg}")
+    assert_match "Email/other@foo.bar",
+      pipe_output("#{bin}/gopass-jsonapi listen", "#{[msg.length].pack("L<")}#{msg}")
   end
 end

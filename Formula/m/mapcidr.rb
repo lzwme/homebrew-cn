@@ -1,10 +1,10 @@
 class Mapcidr < Formula
-  desc "SubnetCIDR operation utility"
-  homepage "https:projectdiscovery.io"
-  url "https:github.comprojectdiscoverymapcidrarchiverefstags1.1.94.tar.gz"
+  desc "Subnet/CIDR operation utility"
+  homepage "https://projectdiscovery.io"
+  url "https://ghfast.top/https://github.com/projectdiscovery/mapcidr/archive/refs/tags/1.1.94.tar.gz"
   sha256 "2c905a2993638d57dc335005a709e19e37ba8c6512f2a8136a7df278cd49df08"
   license "MIT"
-  head "https:github.comprojectdiscoverymapcidr.git", branch: "master"
+  head "https://github.com/projectdiscovery/mapcidr.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "686bfce3317571c04dce3cac870517c935268e7640c10430066ef36f51936079"
@@ -18,12 +18,12 @@ class Mapcidr < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), ".cmdmapcidr"
+    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/mapcidr"
   end
 
   test do
-    expected = "192.168.0.018\n192.168.64.018\n192.168.128.018\n192.168.192.018\n"
-    output = shell_output("#{bin}mapcidr -cidr 192.168.1.016 -sbh 16384 -silent")
+    expected = "192.168.0.0/18\n192.168.64.0/18\n192.168.128.0/18\n192.168.192.0/18\n"
+    output = shell_output("#{bin}/mapcidr -cidr 192.168.1.0/16 -sbh 16384 -silent")
     assert_equal expected, output
   end
 end

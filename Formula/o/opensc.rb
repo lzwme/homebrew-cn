@@ -1,7 +1,7 @@
 class Opensc < Formula
   desc "Tools and libraries for smart cards"
-  homepage "https:github.comOpenSCOpenSCwiki"
-  url "https:github.comOpenSCOpenSCreleasesdownload0.26.1opensc-0.26.1.tar.gz"
+  homepage "https://github.com/OpenSC/OpenSC/wiki"
+  url "https://ghfast.top/https://github.com/OpenSC/OpenSC/releases/download/0.26.1/opensc-0.26.1.tar.gz"
   sha256 "f16291a031d86e570394762e9f35eaf2fcbc2337a49910f3feae42d54e1688cb"
   license "LGPL-2.1-or-later"
 
@@ -21,7 +21,7 @@ class Opensc < Formula
   end
 
   head do
-    url "https:github.comOpenSCOpenSC.git", branch: "master"
+    url "https://github.com/OpenSC/OpenSC.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -47,11 +47,11 @@ class Opensc < Formula
       --enable-openssl
       --enable-pcsc
       --enable-sm
-      --with-xsl-stylesheetsdir=#{Formula["docbook-xsl"].opt_prefix}docbook-xsl
+      --with-xsl-stylesheetsdir=#{Formula["docbook-xsl"].opt_prefix}/docbook-xsl
     ]
 
-    system ".bootstrap" if build.head?
-    system ".configure", *args, *std_configure_args
+    system "./bootstrap" if build.head?
+    system "./configure", *args, *std_configure_args
     system "make", "install"
   end
 
@@ -66,6 +66,6 @@ class Opensc < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}opensc-tool -i")
+    assert_match version.to_s, shell_output("#{bin}/opensc-tool -i")
   end
 end

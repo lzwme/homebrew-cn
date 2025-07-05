@@ -1,10 +1,10 @@
 class Sttr < Formula
   desc "CLI to perform various operations on string"
-  homepage "https:github.comabhimanyu003sttr"
-  url "https:github.comabhimanyu003sttrarchiverefstagsv0.2.25.tar.gz"
+  homepage "https://github.com/abhimanyu003/sttr"
+  url "https://ghfast.top/https://github.com/abhimanyu003/sttr/archive/refs/tags/v0.2.25.tar.gz"
   sha256 "0369a28a944f3f2f3c5bde527572acafbeeeee1a5cf158c1dc8dd5e9f068e059"
   license "MIT"
-  head "https:github.comabhimanyu003sttr.git", branch: "main"
+  head "https://github.com/abhimanyu003/sttr.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "f2564fe8ff7366d62ae106fa1f722bcb723af6c3e71fad0c3a85ba4c0af05eb3"
@@ -22,13 +22,13 @@ class Sttr < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}sttr version")
+    assert_match version.to_s, shell_output("#{bin}/sttr version")
 
-    assert_equal "foobar", shell_output("#{bin}sttr reverse raboof")
+    assert_equal "foobar", shell_output("#{bin}/sttr reverse raboof")
 
-    output = shell_output("#{bin}sttr sha1 foobar")
+    output = shell_output("#{bin}/sttr sha1 foobar")
     assert_equal "8843d7f92416211de9ebb963ff4ce28125932878", output
 
-    assert_equal "good_test", shell_output("#{bin}sttr snake 'good test'")
+    assert_equal "good_test", shell_output("#{bin}/sttr snake 'good test'")
   end
 end

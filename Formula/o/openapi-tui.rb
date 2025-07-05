@@ -1,10 +1,10 @@
 class OpenapiTui < Formula
   desc "TUI to list, browse and run APIs defined with openapi spec"
-  homepage "https:github.comzaghaghiopenapi-tui"
-  url "https:github.comzaghaghiopenapi-tuiarchiverefstags0.10.2.tar.gz"
+  homepage "https://github.com/zaghaghi/openapi-tui"
+  url "https://ghfast.top/https://github.com/zaghaghi/openapi-tui/archive/refs/tags/0.10.2.tar.gz"
   sha256 "e9ca7bc160ca6fdf50f7534318589fcb725564c05b81f40742e37a422f35a191"
   license "MIT"
-  head "https:github.comzaghaghiopenapi-tui.git", branch: "main"
+  head "https://github.com/zaghaghi/openapi-tui.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "f7b112fae0439ef77af1a9e09c8a410f01e8c1252b844bc2f7d6b60ab9d07d75"
@@ -28,16 +28,16 @@ class OpenapiTui < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}openapi-tui --version")
+    assert_match version.to_s, shell_output("#{bin}/openapi-tui --version")
 
     # Fails in Linux CI with `No such device or address (os error 6)`
     return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
 
-    openapi_url = "https:raw.githubusercontent.comTufinoasdiff8fdb99634d0f7f827810ee1ba7b23aa4ada8b124dataopenapi-test1.yaml"
+    openapi_url = "https://ghfast.top/https://raw.githubusercontent.com/Tufin/oasdiff/8fdb99634d0f7f827810ee1ba7b23aa4ada8b124/data/openapi-test1.yaml"
 
     begin
-      output_log = testpath"output.log"
-      pid = spawn bin"openapi-tui", "--input", openapi_url, [:out, :err] => output_log.to_s
+      output_log = testpath/"output.log"
+      pid = spawn bin/"openapi-tui", "--input", openapi_url, [:out, :err] => output_log.to_s
       sleep 1
       assert_match "APIs", output_log.read
     ensure

@@ -1,14 +1,14 @@
 class Yek < Formula
   desc "Fast Rust based tool to serialize text-based files for LLM consumption"
-  homepage "https:github.combodo-runyek"
-  url "https:github.combodo-runyekarchiverefstagsv0.21.0.tar.gz"
+  homepage "https://github.com/bodo-run/yek"
+  url "https://ghfast.top/https://github.com/bodo-run/yek/archive/refs/tags/v0.21.0.tar.gz"
   sha256 "2c0e863e0f49f690977910498a1b8dd151c625bf04b88a7d6ff20553590b6ccf"
   license "MIT"
-  head "https:github.combodo-runyek.git", branch: "main"
+  head "https://github.com/bodo-run/yek.git", branch: "main"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -35,9 +35,9 @@ class Yek < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}yek --version")
+    assert_match version.to_s, shell_output("#{bin}/yek --version")
 
-    (testpath"main.c").write <<~C
+    (testpath/"main.c").write <<~C
       #include <stdio.h>
       #include <stdlib.h>
 
@@ -46,7 +46,7 @@ class Yek < Formula
         return EXIT_SUCCESS;
       }
     C
-    expected_file = shell_output("#{bin}yek --output-dir #{testpath}")
+    expected_file = shell_output("#{bin}/yek --output-dir #{testpath}")
     assert_match ">>>> main.c", expected_file
   end
 end

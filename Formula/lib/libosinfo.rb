@@ -1,13 +1,13 @@
 class Libosinfo < Formula
   desc "Operating System information database"
-  homepage "https:libosinfo.org"
-  url "https:releases.pagure.orglibosinfolibosinfo-1.12.0.tar.xz"
+  homepage "https://libosinfo.org/"
+  url "https://releases.pagure.org/libosinfo/libosinfo-1.12.0.tar.xz"
   sha256 "ad8557ece26793da43d26de565e3d68ce2ee6bfb8d0113b7cc7dfe07f6bfc6b6"
   license "LGPL-2.0-or-later"
 
   livecheck do
-    url "https:releases.pagure.orglibosinfo?C=M&O=D"
-    regex(href=.*?libosinfo[._-]v?(\d+(?:\.\d+)+)\.ti)
+    url "https://releases.pagure.org/libosinfo/?C=M&O=D"
+    regex(/href=.*?libosinfo[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   bottle do
@@ -37,30 +37,30 @@ class Libosinfo < Formula
   uses_from_macos "libxslt"
 
   resource "pci.ids" do
-    url "https:raw.githubusercontent.compciutilspciidsfd7d37fcca8edc95f174382a9a5a29c368f26acfpci.ids"
+    url "https://ghfast.top/https://raw.githubusercontent.com/pciutils/pciids/fd7d37fcca8edc95f174382a9a5a29c368f26acf/pci.ids"
     sha256 "3ed78330ac32d8cba9a90831f88654c30346b9705c9befb013424e274d2f3fbf"
   end
 
   def install
-    (share"misc").install resource("pci.ids")
+    (share/"misc").install resource("pci.ids")
 
     args = %W[
       -Denable-gtk-doc=false
-      -Dwith-pci-ids-path=#{share"miscpci.ids"}
-      -Dwith-usb-ids-path=#{Formula["usb.ids"].opt_share"miscusb.ids"}
+      -Dwith-pci-ids-path=#{share/"misc/pci.ids"}
+      -Dwith-usb-ids-path=#{Formula["usb.ids"].opt_share/"misc/usb.ids"}
       -Dsysconfdir=#{etc}
     ]
     system "meson", "setup", "build", *args, *std_meson_args
     system "meson", "compile", "-C", "build", "--verbose"
     system "meson", "install", "-C", "build"
 
-    share.install_symlink HOMEBREW_PREFIX"shareosinfo"
+    share.install_symlink HOMEBREW_PREFIX/"share/osinfo"
   end
 
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include <stdio.h>
-      #include <osinfoosinfo.h>
+      #include <osinfo/osinfo.h>
 
       int main(int argc, char *argv[]) {
         GError *err = NULL;
@@ -77,7 +77,7 @@ class Libosinfo < Formula
 
     flags = shell_output("pkgconf --cflags --libs libosinfo-1.0").chomp.split
     system ENV.cc, "test.c", "-o", "test", *flags
-    system ".test"
-    system bin"osinfo-query", "device", "vendor=Apple Inc."
+    system "./test"
+    system bin/"osinfo-query", "device", "vendor=Apple Inc."
   end
 end

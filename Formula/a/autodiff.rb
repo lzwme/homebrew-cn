@@ -1,10 +1,10 @@
 class Autodiff < Formula
   desc "Automatic differentiation made easier for C++"
-  homepage "https:autodiff.github.io"
-  url "https:github.comautodiffautodiffarchiverefstagsv1.1.2.tar.gz"
+  homepage "https://autodiff.github.io"
+  url "https://ghfast.top/https://github.com/autodiff/autodiff/archive/refs/tags/v1.1.2.tar.gz"
   sha256 "86f68aabdae1eed214bfbf0ddaa182c78ea1bb99e4df404efb7b94d30e06b744"
   license "MIT"
-  head "https:github.comautodiffautodiff.git", branch: "main"
+  head "https://github.com/autodiff/autodiff.git", branch: "main"
 
   bottle do
     rebuild 1
@@ -36,17 +36,17 @@ class Autodiff < Formula
     system "cmake", "--build", "_build"
     system "cmake", "--install", "_build"
 
-    (pkgshare"test").install "examplesforwardexample-forward-single-variable-function.cpp" => "forward.cpp"
-    (pkgshare"test").install "examplesreverseexample-reverse-single-variable-function.cpp" => "reverse.cpp"
+    (pkgshare/"test").install "examples/forward/example-forward-single-variable-function.cpp" => "forward.cpp"
+    (pkgshare/"test").install "examples/reverse/example-reverse-single-variable-function.cpp" => "reverse.cpp"
   end
 
   test do
-    system ENV.cxx, pkgshare"testforward.cpp", "--std=c++17",
-                    "-I#{include}", "-I#{Formula["eigen"].opt_include}eigen3", "-o", "forward"
-    system ENV.cxx, pkgshare"testreverse.cpp", "--std=c++17",
-                    "-I#{include}", "-I#{Formula["eigen"].opt_include}eigen3", "-o", "reverse"
-    assert_match "u = 8.19315\ndudx = 5.25\n", shell_output(testpath"forward")
-    assert_match "u = 8.19315\nux = 5.25\n", shell_output(testpath"reverse")
+    system ENV.cxx, pkgshare/"test/forward.cpp", "--std=c++17",
+                    "-I#{include}", "-I#{Formula["eigen"].opt_include}/eigen3", "-o", "forward"
+    system ENV.cxx, pkgshare/"test/reverse.cpp", "--std=c++17",
+                    "-I#{include}", "-I#{Formula["eigen"].opt_include}/eigen3", "-o", "reverse"
+    assert_match "u = 8.19315\ndu/dx = 5.25\n", shell_output(testpath/"forward")
+    assert_match "u = 8.19315\nux = 5.25\n", shell_output(testpath/"reverse")
     system python3, "-c", "import autodiff"
   end
 end

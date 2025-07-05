@@ -1,13 +1,13 @@
 class EmsFlasher < Formula
   desc "Software for flashing the EMS Gameboy USB cart"
-  homepage "https:lacklustre.netprojectsems-flasher"
-  url "https:lacklustre.netprojectsems-flasherems-flasher-0.03.tgz"
+  homepage "https://lacklustre.net/projects/ems-flasher/"
+  url "https://lacklustre.net/projects/ems-flasher/ems-flasher-0.03.tgz"
   sha256 "d77723a3956e00a9b8af9a3545ed2c55cd2653d65137e91b38523f7805316786"
   license "MIT"
 
   livecheck do
     url :homepage
-    regex(href=.*?ems-flasher[._-]v?(\d+(?:\.\d+)+)\.ti)
+    regex(/href=.*?ems-flasher[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -32,7 +32,7 @@ class EmsFlasher < Formula
   end
 
   head do
-    url "https:github.commikeryanems-flasher.git", branch: "master"
+    url "https://github.com/mikeryan/ems-flasher.git", branch: "master"
     depends_on "coreutils" => :build
     depends_on "gawk" => :build
   end
@@ -42,7 +42,7 @@ class EmsFlasher < Formula
 
   def install
     if build.head?
-      system ".config.sh", "--prefix", prefix
+      system "./config.sh", "--prefix", prefix
       man1.mkpath
       system "make", "install"
     else
@@ -52,6 +52,6 @@ class EmsFlasher < Formula
   end
 
   test do
-    system bin"ems-flasher", "--version"
+    system bin/"ems-flasher", "--version"
   end
 end

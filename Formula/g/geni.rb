@@ -1,7 +1,7 @@
 class Geni < Formula
   desc "Standalone database migration tool"
-  homepage "https:github.comemilprivergeni"
-  url "https:github.comemilprivergeniarchiverefstagsv1.1.6.tar.gz"
+  homepage "https://github.com/emilpriver/geni"
+  url "https://ghfast.top/https://github.com/emilpriver/geni/archive/refs/tags/v1.1.6.tar.gz"
   sha256 "b157ff3c57b4c36e2f48f57da1b6dba60bf2f9770061e068e4302bc555df3b3c"
   license "MIT"
 
@@ -22,9 +22,9 @@ class Geni < Formula
   end
 
   test do
-    ENV["DATABASE_URL"] = "sqlite3:test.sqlite"
-    system bin"geni", "create"
-    assert_path_exists testpath"test.sqlite", "failed to create test.sqlite"
-    assert_match version.to_s, shell_output("#{bin}geni --version")
+    ENV["DATABASE_URL"] = "sqlite3://test.sqlite"
+    system bin/"geni", "create"
+    assert_path_exists testpath/"test.sqlite", "failed to create test.sqlite"
+    assert_match version.to_s, shell_output("#{bin}/geni --version")
   end
 end

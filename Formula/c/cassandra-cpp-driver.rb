@@ -1,10 +1,10 @@
 class CassandraCppDriver < Formula
-  desc "DataStax CC++ Driver for Apache Cassandra"
-  homepage "https:docs.datastax.comendevelopercpp-driverlatest"
-  url "https:github.comdatastaxcpp-driverarchiverefstags2.17.1.tar.gz"
+  desc "DataStax C/C++ Driver for Apache Cassandra"
+  homepage "https://docs.datastax.com/en/developer/cpp-driver/latest"
+  url "https://ghfast.top/https://github.com/datastax/cpp-driver/archive/refs/tags/2.17.1.tar.gz"
   sha256 "53b4123aad59b39f2da0eb0ce7fe0e92559f7bba0770b2e958254f17bffcd7cf"
   license "Apache-2.0"
-  head "https:github.comdatastaxcpp-driver.git", branch: "master"
+  head "https://github.com/datastax/cpp-driver.git", branch: "master"
 
   livecheck do
     url :stable
@@ -42,7 +42,7 @@ class CassandraCppDriver < Formula
   end
 
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include <stdio.h>
       #include <cassandra.h>
 
@@ -52,8 +52,8 @@ class CassandraCppDriver < Formula
 
         CassFuture* future = cass_session_connect(session, cluster);
 
-         Because we haven't set any contact points, this connection
-         should fail even if a server is running locally
+        // Because we haven't set any contact points, this connection
+        // should fail even if a server is running locally
         CassError error = cass_future_error_code(future);
         if (error != CASS_OK) {
           printf("connection failed");
@@ -68,6 +68,6 @@ class CassandraCppDriver < Formula
       }
     C
     system ENV.cc, "test.c", "-L#{lib}", "-lcassandra", "-o", "test"
-    assert_equal "connection failed", shell_output(".test")
+    assert_equal "connection failed", shell_output("./test")
   end
 end

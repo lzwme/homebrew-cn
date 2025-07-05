@@ -1,10 +1,10 @@
 class Frpc < Formula
   desc "Client app of fast reverse proxy to expose a local server to the internet"
-  homepage "https:github.comfatedierfrp"
-  url "https:github.comfatedierfrparchiverefstagsv0.63.0.tar.gz"
+  homepage "https://github.com/fatedier/frp"
+  url "https://ghfast.top/https://github.com/fatedier/frp/archive/refs/tags/v0.63.0.tar.gz"
   sha256 "e5269cf3d545a90fe3773dd39abe6eb8511f02c1dc0cdf759a65d1e776dc1520"
   license "Apache-2.0"
-  head "https:github.comfatedierfrp.git", branch: "dev"
+  head "https://github.com/fatedier/frp.git", branch: "dev"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "df72c0a8e47c443bc47cd6a2313c9791fe0686cf049dfd09c6d641aa28e2653f"
@@ -20,20 +20,20 @@ class Frpc < Formula
 
   def install
     ENV["CGO_ENABLED"] = "0"
-    system "go", "build", *std_go_args(ldflags: "-s -w", tags: "frpc"), ".cmdfrpc"
-    (etc"frp").install "conffrpc.toml"
+    system "go", "build", *std_go_args(ldflags: "-s -w", tags: "frpc"), "./cmd/frpc"
+    (etc/"frp").install "conf/frpc.toml"
   end
 
   service do
-    run [opt_bin"frpc", "-c", etc"frpfrpc.toml"]
+    run [opt_bin/"frpc", "-c", etc/"frp/frpc.toml"]
     keep_alive true
-    error_log_path var"logfrpc.log"
-    log_path var"logfrpc.log"
+    error_log_path var/"log/frpc.log"
+    log_path var/"log/frpc.log"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}frpc -v")
-    assert_match "Commands", shell_output("#{bin}frpc help")
-    assert_match "name should not be empty", shell_output("#{bin}frpc http", 1)
+    assert_match version.to_s, shell_output("#{bin}/frpc -v")
+    assert_match "Commands", shell_output("#{bin}/frpc help")
+    assert_match "name should not be empty", shell_output("#{bin}/frpc http", 1)
   end
 end

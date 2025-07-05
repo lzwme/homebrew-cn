@@ -2,13 +2,13 @@ cask "font-edlo" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comehamiterEdloarchiverefsheadsmaster.tar.gz",
-      verified: "github.comehamiterEdlo"
+  url "https://ghfast.top/https://github.com/ehamiter/Edlo/archive/refs/heads/master.tar.gz",
+      verified: "github.com/ehamiter/Edlo/"
   name "Edlo"
-  homepage "https:ehamiter.github.ioEdlo"
+  homepage "https://ehamiter.github.io/Edlo/"
 
-  font "Edlo-masteredlo.ttf"
-  font "Edlo-masteredlo-nerd-font.ttf"
+  font "Edlo-master/edlo.ttf"
+  font "Edlo-master/edlo-nerd-font.ttf"
 
   # No zap stanza required
 end

@@ -1,7 +1,7 @@
 class Mint < Formula
   desc "Dependency manager that installs and runs Swift command-line tool packages"
-  homepage "https:github.comyonaskolbMint"
-  url "https:github.comyonaskolbMintarchiverefstags0.18.0.tar.gz"
+  homepage "https://github.com/yonaskolb/Mint"
+  url "https://ghfast.top/https://github.com/yonaskolb/Mint/archive/refs/tags/0.18.0.tar.gz"
   sha256 "e99c0a351cf7452451d72180c8ccd18e1da710dc55d036502809a0db52779a99"
   license "MIT"
 
@@ -28,13 +28,13 @@ class Mint < Formula
       ["--static-swift-stdlib"]
     end
     system "swift", "build", *args, "-c", "release"
-    bin.install ".buildrelease#{name}"
+    bin.install ".build/release/#{name}"
   end
 
   test do
     # Test by showing the help scree
-    system bin"mint", "help"
+    system bin/"mint", "help"
     # Test showing list of installed tools
-    system bin"mint", "list"
+    system bin/"mint", "list"
   end
 end

@@ -1,7 +1,7 @@
 class WhisperkitCli < Formula
   desc "Swift native on-device speech recognition with Whisper for Apple Silicon"
-  homepage "https:github.comargmaxincWhisperKit"
-  url "https:github.comargmaxincWhisperKitarchiverefstagsv0.13.0.tar.gz"
+  homepage "https://github.com/argmaxinc/WhisperKit"
+  url "https://ghfast.top/https://github.com/argmaxinc/WhisperKit/archive/refs/tags/v0.13.0.tar.gz"
   sha256 "a1f138bea9899e838c400fa1576c1eb2ee4bbfa7d59280b3a6b63237550003fa"
   license "MIT"
 
@@ -22,16 +22,16 @@ class WhisperkitCli < Formula
 
   def install
     system "swift", "build", "-c", "release", "--product", "whisperkit-cli", "--disable-sandbox"
-    bin.install ".buildreleasewhisperkit-cli"
+    bin.install ".build/release/whisperkit-cli"
   end
 
   test do
-    mkdir_p "#{testpath}tokenizer"
-    mkdir_p "#{testpath}model"
+    mkdir_p "#{testpath}/tokenizer"
+    mkdir_p "#{testpath}/model"
 
     test_file = test_fixtures("test.mp3")
-    output = shell_output("#{bin}whisperkit-cli transcribe --model tiny --download-model-path #{testpath}model " \
-                          "--download-tokenizer-path #{testpath}tokenizer --audio-path #{test_file} --verbose")
+    output = shell_output("#{bin}/whisperkit-cli transcribe --model tiny --download-model-path #{testpath}/model " \
+                          "--download-tokenizer-path #{testpath}/tokenizer --audio-path #{test_file} --verbose")
     assert_match "Transcription of test.mp3", output
   end
 end

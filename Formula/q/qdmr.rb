@@ -1,7 +1,7 @@
 class Qdmr < Formula
   desc "Codeplug programming tool for DMR radios"
-  homepage "https:dm3mat.darc.deqdmr"
-  url "https:github.comhmatuschekqdmrarchiverefstagsv0.12.3.tar.gz"
+  homepage "https://dm3mat.darc.de/qdmr/"
+  url "https://ghfast.top/https://github.com/hmatuschek/qdmr/archive/refs/tags/v0.12.3.tar.gz"
   sha256 "1ee2adc912120025190eff65c78b1f8a153d1cab14909cbd5291403fb7b04643"
   license "GPL-3.0-or-later"
 
@@ -30,7 +30,7 @@ class Qdmr < Formula
   end
 
   test do
-    (testpath"config.yaml").write <<~YAML
+    (testpath/"config.yaml").write <<~YAML
       radioIDs:
         - dmr: {id: id1, name: DM3MAT, number: 2621370}
 
@@ -42,6 +42,6 @@ class Qdmr < Formula
             txFrequency: 1234.567890
 
     YAML
-    system bin"dmrconf", "--radio=d878uv2", "encode", "config.yaml", "config.dfu"
+    system bin/"dmrconf", "--radio=d878uv2", "encode", "config.yaml", "config.dfu"
   end
 end

@@ -1,14 +1,14 @@
 class Exiv2 < Formula
   desc "EXIF and IPTC metadata manipulation library and tools"
-  homepage "https:exiv2.org"
-  url "https:github.comExiv2exiv2archiverefstagsv0.28.5.tar.gz"
+  homepage "https://exiv2.org/"
+  url "https://ghfast.top/https://github.com/Exiv2/exiv2/archive/refs/tags/v0.28.5.tar.gz"
   sha256 "e1671f744e379a87ba0c984617406fdf8c0ad0c594e5122f525b2fb7c28d394d"
   license "GPL-2.0-or-later"
-  head "https:github.comExiv2exiv2.git", branch: "main"
+  head "https://github.com/Exiv2/exiv2.git", branch: "main"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -52,7 +52,7 @@ class Exiv2 < Formula
       -DEXIV2_ENABLE_SSH=ON
       -DEXIV2_ENABLE_BMFF=ON
       -DEXIV2_BUILD_SAMPLES=OFF
-      -DSSH_LIBRARY=#{Formula["libssh"].opt_lib}#{shared_library("libssh")}
+      -DSSH_LIBRARY=#{Formula["libssh"].opt_lib}/#{shared_library("libssh")}
       -DSSH_INCLUDE_DIR=#{Formula["libssh"].opt_include}
       -DCMAKE_INSTALL_NAME_DIR:STRING=#{lib}
     ]
@@ -63,6 +63,6 @@ class Exiv2 < Formula
   end
 
   test do
-    assert_match "288 Bytes", shell_output("#{bin}exiv2 #{test_fixtures("test.jpg")}", 253)
+    assert_match "288 Bytes", shell_output("#{bin}/exiv2 #{test_fixtures("test.jpg")}", 253)
   end
 end

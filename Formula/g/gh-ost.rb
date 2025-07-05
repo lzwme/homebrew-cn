@@ -1,14 +1,14 @@
 class GhOst < Formula
   desc "Triggerless online schema migration solution for MySQL"
-  homepage "https:github.comgithubgh-ost"
-  url "https:github.comgithubgh-ostarchiverefstagsv1.1.7.tar.gz"
+  homepage "https://github.com/github/gh-ost"
+  url "https://ghfast.top/https://github.com/github/gh-ost/archive/refs/tags/v1.1.7.tar.gz"
   sha256 "f3ebf966a84ddeb97e5dd0a70dd027c2d088c71dd18f72c1ac75373f2be430ab"
   license "MIT"
-  head "https:github.comgithubgh-ost.git", branch: "master"
+  head "https://github.com/github/gh-ost.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -24,13 +24,13 @@ class GhOst < Formula
 
   def install
     ldflags = "-s -w -X main.AppVersion=#{version} -X main.GitCommit=#{tap.user}"
-    system "go", "build", *std_go_args(ldflags: ldflags), ".gocmdgh-ost"
+    system "go", "build", *std_go_args(ldflags: ldflags), "./go/cmd/gh-ost"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}gh-ost -version")
+    assert_match version.to_s, shell_output("#{bin}/gh-ost -version")
 
-    error_output = shell_output("#{bin}gh-ost --database invalid " \
+    error_output = shell_output("#{bin}/gh-ost --database invalid " \
                                 "--table invalid --execute --alter 'ADD COLUMN c INT' 2>&1", 1)
     assert_match "connect: connection refused", error_output
   end

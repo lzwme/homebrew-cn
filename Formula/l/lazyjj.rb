@@ -1,10 +1,10 @@
 class Lazyjj < Formula
-  desc "TUI for Jujutsujj"
-  homepage "https:github.comCretezylazyjj"
-  url "https:github.comCretezylazyjjarchiverefstagsv0.5.0.tar.gz"
+  desc "TUI for Jujutsu/jj"
+  homepage "https://github.com/Cretezy/lazyjj"
+  url "https://ghfast.top/https://github.com/Cretezy/lazyjj/archive/refs/tags/v0.5.0.tar.gz"
   sha256 "67cb6363e40e97fdbced8a789d93a4fde14ac12a74baf83a600ecc48b8baa0ef"
   license "Apache-2.0"
-  head "https:github.comCretezylazyjj.git", branch: "main"
+  head "https://github.com/Cretezy/lazyjj.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "0212c6dc5663065e4ddd53929fdc6d3810b7b7f762f17cc52e1f02c32231073e"
@@ -26,10 +26,10 @@ class Lazyjj < Formula
   test do
     ENV["LAZYJJ_LOG"] = "1"
 
-    assert_match version.to_s, shell_output("#{bin}lazyjj --version")
+    assert_match version.to_s, shell_output("#{bin}/lazyjj --version")
 
-    output = shell_output("#{bin}lazyjj 2>&1", 1)
+    output = shell_output("#{bin}/lazyjj 2>&1", 1)
     assert_match "Error: No jj repository found", output
-    assert_path_exists testpath"lazyjj.log"
+    assert_path_exists testpath/"lazyjj.log"
   end
 end

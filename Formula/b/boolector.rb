@@ -1,7 +1,7 @@
 class Boolector < Formula
   desc "SMT solver for fixed-size bit-vectors"
-  homepage "https:boolector.github.io"
-  url "https:github.comBoolectorboolectorarchiverefstags3.2.4.tar.gz"
+  homepage "https://boolector.github.io/"
+  url "https://ghfast.top/https://github.com/Boolector/boolector/archive/refs/tags/3.2.4.tar.gz"
   sha256 "249c6dbf4e52ea6e8df1ddf7965d47f5c30f2c14905dce9b8f411756b05878bf"
   license "MIT"
 
@@ -23,40 +23,40 @@ class Boolector < Formula
 
   depends_on "cmake" => :build
 
-  # Use commit hash from `contribsetup-lingeling.sh`
+  # Use commit hash from `contrib/setup-lingeling.sh`
   resource "lingeling" do
-    url "https:github.comarminbierelingelingarchive7d5db72420b95ab356c98ca7f7a4681ed2c59c70.tar.gz"
+    url "https://ghfast.top/https://github.com/arminbiere/lingeling/archive/7d5db72420b95ab356c98ca7f7a4681ed2c59c70.tar.gz"
     sha256 "cf04c8f5706c14f00dd66e4db529c48513a450cc0f195242d8d0762b415f4427"
   end
 
-  # Use commit has from `contribsetup-btor2tools.sh`
+  # Use commit has from `contrib/setup-btor2tools.sh`
   resource "btor2tools" do
-    url "https:github.comboolectorbtor2toolsarchive037f1fa88fb439dca6f648ad48a3463256d69d8b.tar.gz"
+    url "https://ghfast.top/https://github.com/boolector/btor2tools/archive/037f1fa88fb439dca6f648ad48a3463256d69d8b.tar.gz"
     sha256 "d6a5836b9e26719c3b7fe1711d93d86ca4720dc9d4bac11d1fc006fa0a140965"
   end
 
   def install
-    deps_dir = buildpath"depsinstall"
+    deps_dir = buildpath/"deps/install"
 
     resource("lingeling").stage do
-      system ".configure.sh", "-fPIC"
+      system "./configure.sh", "-fPIC"
       system "make"
-      (deps_dir"lib").install "liblgl.a"
-      (deps_dir"include").install "lglib.h"
+      (deps_dir/"lib").install "liblgl.a"
+      (deps_dir/"include").install "lglib.h"
     end
 
     resource("btor2tools").stage do
-      system ".configure.sh", 'CFLAGS="-fPIC"', "--static"
+      system "./configure.sh", 'CFLAGS="-fPIC"', "--static"
       cd "build" do
         system "cmake", "..", "-DBUILD_SHARED_LIBS=OFF" if OS.mac?
         system "make"
       end
-      (deps_dir"lib").install "buildliblibbtor2parser.a"
-      (deps_dir"includebtor2parser").install "srcbtor2parserbtor2parser.h"
+      (deps_dir/"lib").install "build/lib/libbtor2parser.a"
+      (deps_dir/"include/btor2parser").install "src/btor2parser/btor2parser.h"
     end
 
     args = %W[
-      -DBtor2Tools_INCLUDE_DIR=#{deps_dir}includebtor2parser
+      -DBtor2Tools_INCLUDE_DIR=#{deps_dir}/include/btor2parser
     ]
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
@@ -65,7 +65,7 @@ class Boolector < Formula
   end
 
   test do
-    (testpath"test.btor").write <<~EOS
+    (testpath/"test.btor").write <<~EOS
       (set-logic BV)
       (declare-fun x () (_ BitVec 4))
       (declare-fun y () (_ BitVec 4))
@@ -73,6 +73,6 @@ class Boolector < Formula
       (check-sat)
       (get-value (x y))
     EOS
-    assert_match "sat", shell_output("#{bin}boolector test.btor 2>devnull", 1)
+    assert_match "sat", shell_output("#{bin}/boolector test.btor 2>/dev/null", 1)
   end
 end

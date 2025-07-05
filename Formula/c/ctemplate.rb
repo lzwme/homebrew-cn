@@ -1,11 +1,11 @@
 class Ctemplate < Formula
   desc "Template language for C++"
-  homepage "https:github.comolafvdspekctemplate"
-  url "https:github.comOlafvdSpekctemplatearchiverefstagsctemplate-2.4.tar.gz"
+  homepage "https://github.com/olafvdspek/ctemplate"
+  url "https://ghfast.top/https://github.com/OlafvdSpek/ctemplate/archive/refs/tags/ctemplate-2.4.tar.gz"
   sha256 "ccc4105b3dc51c82b0f194499979be22d5a14504f741115be155bd991ee93cfa"
   license "BSD-3-Clause"
   revision 1
-  head "https:github.comolafvdspekctemplate.git", branch: "master"
+  head "https://github.com/olafvdspek/ctemplate.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -30,16 +30,16 @@ class Ctemplate < Formula
   uses_from_macos "python" => :build
 
   def install
-    system ".autogen.sh"
-    system ".configure", "--disable-dependency-tracking", "--prefix=#{prefix}"
+    system "./autogen.sh"
+    system "./configure", "--disable-dependency-tracking", "--prefix=#{prefix}"
     system "make", "install"
   end
 
   test do
-    (testpath"test.cpp").write <<~CPP
+    (testpath/"test.cpp").write <<~CPP
       #include <iostream>
       #include <string>
-      #include <ctemplatetemplate.h>
+      #include <ctemplate/template.h>
       int main(int argc, char** argv) {
         ctemplate::TemplateDictionary dict("example");
         dict.SetValue("NAME", "Jane Doe");
@@ -49,6 +49,6 @@ class Ctemplate < Formula
 
     system ENV.cxx, "test.cpp", "-std=c++11", "-I#{include}", "-L#{lib}",
                     "-lctemplate_nothreads", "-o", "test"
-    system ".test"
+    system "./test"
   end
 end

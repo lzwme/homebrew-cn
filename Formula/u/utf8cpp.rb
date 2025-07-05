@@ -1,7 +1,7 @@
 class Utf8cpp < Formula
   desc "UTF-8 with C++ in a Portable Way"
-  homepage "https:github.comnemtrifutfcpp"
-  url "https:github.comnemtrifutfcpparchiverefstagsv4.0.6.tar.gz"
+  homepage "https://github.com/nemtrif/utfcpp"
+  url "https://ghfast.top/https://github.com/nemtrif/utfcpp/archive/refs/tags/v4.0.6.tar.gz"
   sha256 "6920a6a5d6a04b9a89b2a89af7132f8acefd46e0c2a7b190350539e9213816c0"
   license "BSL-1.0"
 
@@ -18,15 +18,15 @@ class Utf8cpp < Formula
   end
 
   test do
-    (testpath"CMakeLists.txt").write <<~CMAKE
+    (testpath/"CMakeLists.txt").write <<~CMAKE
       cmake_minimum_required(VERSION 4.0 FATAL_ERROR)
       project(utf8_append LANGUAGES CXX)
       find_package(utf8cpp REQUIRED CONFIG)
       add_executable(utf8_append utf8_append.cpp)
     CMAKE
 
-    (testpath"utf8_append.cpp").write <<~CPP
-      #include <utf8cpputf8.h>
+    (testpath/"utf8_append.cpp").write <<~CPP
+      #include <utf8cpp/utf8.h>
       int main() {
         unsigned char u[5] = {0, 0, 0, 0, 0};
         utf8::append(0x0448, u);
@@ -36,6 +36,6 @@ class Utf8cpp < Formula
 
     system "cmake", "-S", ".", "-B", "build", "-DCMAKE_PREFIX_PATH=#{opt_lib}", "-DCMAKE_VERBOSE_MAKEFILE=ON"
     system "cmake", "--build", "build"
-    system ".buildutf8_append"
+    system "./build/utf8_append"
   end
 end

@@ -1,7 +1,7 @@
 class Aravis < Formula
   desc "Vision library for genicam based cameras"
-  homepage "https:github.comAravisProjectaravis"
-  url "https:github.comAravisProjectaravisreleasesdownload0.8.35aravis-0.8.35.tar.xz"
+  homepage "https://github.com/AravisProject/aravis"
+  url "https://ghfast.top/https://github.com/AravisProject/aravis/releases/download/0.8.35/aravis-0.8.35.tar.xz"
   sha256 "8089af991fc3a2644ab04b2ddf82623cd663d80c7ebbdefa93ddbc17ea702ddb"
   license "LGPL-2.1-or-later"
 
@@ -48,7 +48,7 @@ class Aravis < Formula
   end
 
   def install
-    ENV["XML_CATALOG_FILES"] = "#{etc}xmlcatalog"
+    ENV["XML_CATALOG_FILES"] = "#{etc}/xml/catalog"
 
     system "meson", "setup", "build", *std_meson_args
     system "meson", "compile", "-C", "build", "--verbose"
@@ -56,13 +56,13 @@ class Aravis < Formula
   end
 
   def post_install
-    system "#{Formula["gtk+3"].opt_bin}gtk3-update-icon-cache", "-f", "-t", "#{HOMEBREW_PREFIX}shareiconshicolor"
+    system "#{Formula["gtk+3"].opt_bin}/gtk3-update-icon-cache", "-f", "-t", "#{HOMEBREW_PREFIX}/share/icons/hicolor"
   end
 
   def caveats
     <<~EOS
       For GStreamer to find the bundled plugin:
-        export GST_PLUGIN_PATH=#{opt_lib}gstreamer-1.0
+        export GST_PLUGIN_PATH=#{opt_lib}/gstreamer-1.0
     EOS
   end
 
@@ -70,11 +70,11 @@ class Aravis < Formula
     # The initial plugin load takes a long time without extra permissions on
     # macOS, which frequently causes the slower Intel macOS runners to time out.
     #
-    # Ref: https:gitlab.freedesktop.orggstreamergstreamer-issues1119
+    # Ref: https://gitlab.freedesktop.org/gstreamer/gstreamer/-/issues/1119
     ENV["GST_PLUGIN_SYSTEM_PATH"] = testpath if OS.mac? && Hardware::CPU.intel? && ENV["HOMEBREW_GITHUB_ACTIONS"]
 
     lib_ext = OS.mac? ? "dylib" : "so"
-    output = shell_output("gst-inspect-1.0 #{lib}gstreamer-1.0libgstaravis.#{version.major_minor}.#{lib_ext}")
-    assert_match(Description *Aravis Video Source, output)
+    output = shell_output("gst-inspect-1.0 #{lib}/gstreamer-1.0/libgstaravis.#{version.major_minor}.#{lib_ext}")
+    assert_match(/Description *Aravis Video Source/, output)
   end
 end

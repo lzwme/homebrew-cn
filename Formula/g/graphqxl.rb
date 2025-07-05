@@ -1,10 +1,10 @@
 class Graphqxl < Formula
   desc "Language for creating big and scalable GraphQL server-side schemas"
-  homepage "https:gabotechs.github.iographqxl"
-  url "https:github.comgabotechsgraphqxlarchiverefstagsv0.40.2.tar.gz"
+  homepage "https://gabotechs.github.io/graphqxl"
+  url "https://ghfast.top/https://github.com/gabotechs/graphqxl/archive/refs/tags/v0.40.2.tar.gz"
   sha256 "2ddc205e3943e97273984e64bdac3d41c70b87eb408976d7d2108163fca35d4e"
   license "MIT"
-  head "https:github.comgabotechsgraphqxl.git", branch: "main"
+  head "https://github.com/gabotechs/graphqxl.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "18eac4ebc83fcdae08fbc9fb551a1bcb8482c335a6fb8e8dcbbf4094b2d68a54"
@@ -25,9 +25,9 @@ class Graphqxl < Formula
   end
 
   test do
-    test_file = testpath"test.graphqxl"
+    test_file = testpath/"test.graphqxl"
     test_file.write "type MyType { foo: String! }"
-    system bin"graphqxl", test_file
-    assert_equal "type MyType {\n  foo: String!\n}\n\n", (testpath"test.graphql").read
+    system bin/"graphqxl", test_file
+    assert_equal "type MyType {\n  foo: String!\n}\n\n", (testpath/"test.graphql").read
   end
 end

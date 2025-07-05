@@ -1,10 +1,10 @@
 class QalculateQt < Formula
   desc "Multi-purpose desktop calculator"
-  homepage "https:qalculate.github.io"
-  url "https:github.comQalculateqalculate-qtreleasesdownloadv5.6.0qalculate-qt-5.6.0.tar.gz"
+  homepage "https://qalculate.github.io/"
+  url "https://ghfast.top/https://github.com/Qalculate/qalculate-qt/releases/download/v5.6.0/qalculate-qt-5.6.0.tar.gz"
   sha256 "9255bb18f96cb305a9d087ef2129ffa76fa4e906e5638d4b83a918a623cdd82e"
   license "GPL-2.0-or-later"
-  head "https:github.comQalculateqalculate-qt.git", branch: "main"
+  head "https://github.com/Qalculate/qalculate-qt.git", branch: "main"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:  "5d52b8f8485d2422e32350047685b124d6c45308c80e5187a1660382326cb4db"
@@ -25,11 +25,11 @@ class QalculateQt < Formula
   end
 
   def install
-    system Formula["qt"].bin"qmake", "qalculate-qt.pro"
+    system Formula["qt"].bin/"qmake", "qalculate-qt.pro"
     system "make"
     if OS.mac?
       prefix.install "qalculate-qt.app"
-      bin.install_symlink prefix"qalculate-qt.appContentsMacOSqalculate-qt" => "qalculate-qt"
+      bin.install_symlink prefix/"qalculate-qt.app/Contents/MacOS/qalculate-qt" => "qalculate-qt"
     else
       bin.install "qalculate-qt"
     end
@@ -38,6 +38,6 @@ class QalculateQt < Formula
   test do
     # Set QT_QPA_PLATFORM to minimal to avoid error "qt.qpa.xcb: could not connect to display"
     ENV["QT_QPA_PLATFORM"] = "minimal" if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
-    assert_match version.to_s, shell_output("#{bin}qalculate-qt -v")
+    assert_match version.to_s, shell_output("#{bin}/qalculate-qt -v")
   end
 end

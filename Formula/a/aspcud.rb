@@ -1,7 +1,7 @@
 class Aspcud < Formula
   desc "Package dependency solver"
-  homepage "https:potassco.orgaspcud"
-  url "https:github.compotasscoaspcudarchiverefstagsv1.9.6.tar.gz"
+  homepage "https://potassco.org/aspcud/"
+  url "https://ghfast.top/https://github.com/potassco/aspcud/archive/refs/tags/v1.9.6.tar.gz"
   sha256 "4dddfd4a74e4324887a1ddd7f8ff36231774fc1aa78b383256546e83acdf516c"
   license "MIT"
 
@@ -29,8 +29,8 @@ class Aspcud < Formula
 
   def install
     args = %W[
-      -DASPCUD_GRINGO_PATH=#{Formula["clingo"].opt_bin}gringo
-      -DASPCUD_CLASP_PATH=#{Formula["clingo"].opt_bin}clasp
+      -DASPCUD_GRINGO_PATH=#{Formula["clingo"].opt_bin}/gringo
+      -DASPCUD_CLASP_PATH=#{Formula["clingo"].opt_bin}/clasp
     ]
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
@@ -39,12 +39,12 @@ class Aspcud < Formula
   end
 
   test do
-    (testpath"in.cudf").write <<~EOS
+    (testpath/"in.cudf").write <<~EOS
       package: foo
       version: 1
 
       request: foo >= 1
     EOS
-    system bin"aspcud", "in.cudf", "out.cudf"
+    system bin/"aspcud", "in.cudf", "out.cudf"
   end
 end

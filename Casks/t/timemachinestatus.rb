@@ -2,13 +2,13 @@ cask "timemachinestatus" do
   version "0.2.6"
   sha256 "f3a58386965fdcfe261172c0167a41b887fa635e42e1ed908c337d2f48562627"
 
-  url "https:github.comlukepistrolTimeMachineStatusreleasesdownload#{version}TimeMachineStatus.dmg"
+  url "https://ghfast.top/https://github.com/lukepistrol/TimeMachineStatus/releases/download/#{version}/TimeMachineStatus.dmg"
   name "TimeMachineStatus"
   desc "Menu bar app to show Time Machine information"
-  homepage "https:github.comlukepistrolTimeMachineStatus"
+  homepage "https://github.com/lukepistrol/TimeMachineStatus"
 
   livecheck do
-    url "https:github.comlukepistrolTimeMachineStatusreleaseslatestdownloadappcast.xml"
+    url "https://github.com/lukepistrol/TimeMachineStatus/releases/latest/download/appcast.xml"
     strategy :sparkle, &:short_version
   end
 
@@ -20,7 +20,7 @@ cask "timemachinestatus" do
   uninstall launchctl: "com.lukepistrol.TimeMachineStatusHelper"
 
   zap trash: [
-    "~LibraryApplication Scriptscom.lukepistrol.TimeMachineStatus*",
-    "~LibraryPreferencescom.lukepistrol.TimeMachineStatus*.plist",
+    "~/Library/Application Scripts/com.lukepistrol.TimeMachineStatus*",
+    "~/Library/Preferences/com.lukepistrol.TimeMachineStatus*.plist",
   ]
 end

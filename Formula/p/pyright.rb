@@ -1,7 +1,7 @@
 class Pyright < Formula
   desc "Static type checker for Python"
-  homepage "https:github.commicrosoftpyright"
-  url "https:registry.npmjs.orgpyright-pyright-1.1.402.tgz"
+  homepage "https://github.com/microsoft/pyright"
+  url "https://registry.npmjs.org/pyright/-/pyright-1.1.402.tgz"
   sha256 "c0f45ed549c216f1aea353f8888a9a38744790be195a73541188853f5159453d"
   license "MIT"
 
@@ -19,15 +19,15 @@ class Pyright < Formula
 
   def install
     system "npm", "install", *std_npm_args
-    bin.install_symlink Dir["#{libexec}bin*"]
+    bin.install_symlink Dir["#{libexec}/bin/*"]
   end
 
   test do
-    (testpath"broken.py").write <<~PYTHON
+    (testpath/"broken.py").write <<~PYTHON
       def wrong_types(a: int, b: int) -> str:
           return a + b
     PYTHON
-    output = pipe_output("#{bin}pyright broken.py 2>&1")
+    output = pipe_output("#{bin}/pyright broken.py 2>&1")
     assert_match "error: Type \"int\" is not assignable to return type \"str\"", output
   end
 end

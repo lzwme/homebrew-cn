@@ -1,8 +1,8 @@
 class Libiconv < Formula
   desc "Conversion library"
-  homepage "https:www.gnu.orgsoftwarelibiconv"
-  url "https:ftp.gnu.orggnulibiconvlibiconv-1.18.tar.gz"
-  mirror "https:ftpmirror.gnu.orglibiconvlibiconv-1.18.tar.gz"
+  homepage "https://www.gnu.org/software/libiconv/"
+  url "https://ftp.gnu.org/gnu/libiconv/libiconv-1.18.tar.gz"
+  mirror "https://ftpmirror.gnu.org/libiconv/libiconv-1.18.tar.gz"
   sha256 "3b08f5f4f9b4eb82f151a7040bfd6fe6c6fb922efe4b1659c66ea933276965e8"
   license all_of: ["GPL-3.0-or-later", "LGPL-2.0-or-later"]
 
@@ -21,7 +21,7 @@ class Libiconv < Formula
   depends_on :macos # is not needed on Linux, where iconv.h is provided by glibc
 
   patch do
-    url "https:raw.githubusercontent.comHomebrewpatches9be2793aflibiconvpatch-utf8mac.diff"
+    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/patches/9be2793af/libiconv/patch-utf8mac.diff"
     sha256 "e8128732f22f63b5c656659786d2cf76f1450008f36bcf541285268c66cabeab"
   end
 
@@ -30,10 +30,10 @@ class Libiconv < Formula
   def install
     ENV.deparallelize
 
-    # Reported at https:savannah.gnu.orgbugsindex.php?66170
+    # Reported at https://savannah.gnu.org/bugs/index.php?66170
     ENV.append_to_cflags "-Wno-incompatible-function-pointer-types" if DevelopmentTools.clang_build_version >= 1500
 
-    system ".configure", "--disable-debug",
+    system "./configure", "--disable-debug",
                           "--disable-dependency-tracking",
                           "--prefix=#{prefix}",
                           "--enable-extra-encodings",
@@ -44,16 +44,16 @@ class Libiconv < Formula
   end
 
   test do
-    system bin"iconv", "--help"
+    system bin/"iconv", "--help"
   end
 end
 
 
 __END__
-diff --git alibflags.h blibflags.h
+diff --git a/lib/flags.h b/lib/flags.h
 index d7cda21..4cabcac 100644
---- alibflags.h
-+++ blibflags.h
+--- a/lib/flags.h
++++ b/lib/flags.h
 @@ -14,6 +14,7 @@
 
  #define ei_ascii_oflags (0)

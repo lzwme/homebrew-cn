@@ -1,7 +1,7 @@
 class Pmd < Formula
   desc "Source code analyzer for Java, JavaScript, and more"
-  homepage "https:pmd.github.io"
-  url "https:github.compmdpmdreleasesdownloadpmd_releases%2F7.15.0pmd-dist-7.15.0-bin.zip"
+  homepage "https://pmd.github.io"
+  url "https://ghfast.top/https://github.com/pmd/pmd/releases/download/pmd_releases%2F7.15.0/pmd-dist-7.15.0-bin.zip"
   sha256 "693776e2d39f4f24d9d5f4dc75055828dadd6671605bc7cf1246f2a277eb0b35"
   license "BSD-4-Clause"
 
@@ -12,15 +12,15 @@ class Pmd < Formula
   depends_on "openjdk"
 
   def install
-    rm Dir["bin*.bat"]
+    rm Dir["bin/*.bat"]
     libexec.install Dir["*"]
-    (bin"pmd").write_env_script libexec"binpmd", Language::Java.overridable_java_home_env
+    (bin/"pmd").write_env_script libexec/"bin/pmd", Language::Java.overridable_java_home_env
   end
 
   test do
-    (testpath"javatestClass.java").write <<~JAVA
+    (testpath/"java/testClass.java").write <<~JAVA
       public class BrewTestClass {
-         dummy constant
+        // dummy constant
         public String SOME_CONST = "foo";
 
         public boolean doTest () {
@@ -29,8 +29,8 @@ class Pmd < Formula
       }
     JAVA
 
-    output = shell_output("#{bin}pmd check -d #{testpath}java " \
-                          "-R categoryjavabestpractices.xml -f json")
+    output = shell_output("#{bin}/pmd check -d #{testpath}/java " \
+                          "-R category/java/bestpractices.xml -f json")
     assert_empty JSON.parse(output)["processingErrors"]
   end
 end

@@ -1,10 +1,10 @@
 class Grpcui < Formula
   desc "Interactive web UI for gRPC, along the lines of postman"
-  homepage "https:github.comfullstorydevgrpcui"
-  url "https:github.comfullstorydevgrpcuiarchiverefstagsv1.4.3.tar.gz"
+  homepage "https://github.com/fullstorydev/grpcui"
+  url "https://ghfast.top/https://github.com/fullstorydev/grpcui/archive/refs/tags/v1.4.3.tar.gz"
   sha256 "7fa3039bfa6c06a688c1094177445f759c592be2f04574a234da7a88ab2d0efd"
   license "MIT"
-  head "https:github.comfullstorydevgrpcui.git", branch: "master"
+  head "https://github.com/fullstorydev/grpcui.git", branch: "master"
 
   livecheck do
     url :stable
@@ -23,12 +23,12 @@ class Grpcui < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}"), ".cmdgrpcui"
+    system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}"), "./cmd/grpcui"
   end
 
   test do
     host = "no.such.host.dev"
-    output = shell_output("#{bin}grpcui #{host}:999 2>&1", 1)
-    assert_match(Failed to dial target host "#{Regexp.escape(host)}:999":.*: no such host, output)
+    output = shell_output("#{bin}/grpcui #{host}:999 2>&1", 1)
+    assert_match(/Failed to dial target host "#{Regexp.escape(host)}:999":.*: no such host/, output)
   end
 end

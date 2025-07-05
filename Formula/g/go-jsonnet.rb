@@ -1,14 +1,14 @@
 class GoJsonnet < Formula
   desc "Go implementation of configuration language for defining JSON data"
-  homepage "https:jsonnet.org"
-  url "https:github.comgooglego-jsonnetarchiverefstagsv0.21.0.tar.gz"
+  homepage "https://jsonnet.org/"
+  url "https://ghfast.top/https://github.com/google/go-jsonnet/archive/refs/tags/v0.21.0.tar.gz"
   sha256 "ee7aa004e78fb49608bcf28142a7494dc204a07cc07d323dd2cff3d97298c696"
   license "Apache-2.0"
-  head "https:github.comgooglego-jsonnet.git", branch: "master"
+  head "https://github.com/google/go-jsonnet.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -30,14 +30,14 @@ class GoJsonnet < Formula
   def install
     ldflags = "-s -w"
 
-    system "go", "build", *std_go_args(ldflags:, output: bin"jsonnet"), ".cmdjsonnet"
-    system "go", "build", *std_go_args(ldflags:, output: bin"jsonnetfmt"), ".cmdjsonnetfmt"
-    system "go", "build", *std_go_args(ldflags:, output: bin"jsonnet-lint"), ".cmdjsonnet-lint"
-    system "go", "build", *std_go_args(ldflags:, output: bin"jsonnet-deps"), ".cmdjsonnet-deps"
+    system "go", "build", *std_go_args(ldflags:, output: bin/"jsonnet"), "./cmd/jsonnet"
+    system "go", "build", *std_go_args(ldflags:, output: bin/"jsonnetfmt"), "./cmd/jsonnetfmt"
+    system "go", "build", *std_go_args(ldflags:, output: bin/"jsonnet-lint"), "./cmd/jsonnet-lint"
+    system "go", "build", *std_go_args(ldflags:, output: bin/"jsonnet-deps"), "./cmd/jsonnet-deps"
   end
 
   test do
-    (testpath"example.jsonnet").write <<~JSONNET
+    (testpath/"example.jsonnet").write <<~JSONNET
       {
         person1: {
           name: "Alice",
@@ -58,7 +58,7 @@ class GoJsonnet < Formula
       },
     }
 
-    output = shell_output("#{bin}jsonnet #{testpath}example.jsonnet")
+    output = shell_output("#{bin}/jsonnet #{testpath}/example.jsonnet")
     assert_equal expected_output, JSON.parse(output)
   end
 end

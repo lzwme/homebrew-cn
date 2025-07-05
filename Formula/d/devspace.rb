@@ -1,10 +1,10 @@
 class Devspace < Formula
-  desc "CLI helps developdeploydebug apps with Docker and k8s"
-  homepage "https:devspace.sh"
-  url "https:github.comdevspace-shdevspacearchiverefstagsv6.3.15.tar.gz"
+  desc "CLI helps develop/deploy/debug apps with Docker and k8s"
+  homepage "https://devspace.sh/"
+  url "https://ghfast.top/https://github.com/devspace-sh/devspace/archive/refs/tags/v6.3.15.tar.gz"
   sha256 "9026064ed3ede1c1214ca1fa58e64379a7679bae6d00d32847a216d13960f498"
   license "Apache-2.0"
-  head "https:github.comloft-shdevspace.git", branch: "master"
+  head "https://github.com/loft-sh/devspace.git", branch: "master"
 
   livecheck do
     url :stable
@@ -28,16 +28,16 @@ class Devspace < Formula
     ldflags = "-s -w -X main.commitHash=#{tap.user} -X main.version=#{version}"
     system "go", "build", *std_go_args(ldflags:)
 
-    generate_completions_from_executable(bin"devspace", "completion")
+    generate_completions_from_executable(bin/"devspace", "completion")
   end
 
   test do
     help_output = "DevSpace accelerates developing, deploying and debugging applications with Docker and Kubernetes."
-    assert_match help_output, shell_output("#{bin}devspace --help")
+    assert_match help_output, shell_output("#{bin}/devspace --help")
 
     init_help_output = "Initializes a new devspace project"
-    assert_match init_help_output, shell_output("#{bin}devspace init --help")
+    assert_match init_help_output, shell_output("#{bin}/devspace init --help")
 
-    assert_match version.to_s, shell_output("#{bin}devspace version")
+    assert_match version.to_s, shell_output("#{bin}/devspace version")
   end
 end

@@ -1,11 +1,11 @@
 class Surelog < Formula
   desc "SystemVerilog Pre-processor, parser, elaborator, UHDM compiler"
-  homepage "https:github.comchipsallianceSurelog"
-  url "https:github.comchipsallianceSurelogarchiverefstagsv1.84.tar.gz"
+  homepage "https://github.com/chipsalliance/Surelog"
+  url "https://ghfast.top/https://github.com/chipsalliance/Surelog/archive/refs/tags/v1.84.tar.gz"
   sha256 "ddcbc0d943ee52f2487b7a064c57a8239d525efd9a45b1f3e3e4a96a56cb3377"
   license "Apache-2.0"
   revision 2
-  head "https:github.comchipsallianceSurelog.git", branch: "master"
+  head "https://github.com/chipsalliance/Surelog.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -36,7 +36,7 @@ class Surelog < Formula
   def install
     antlr = Formula["antlr"]
     system "cmake", "-S", ".", "-B", "build",
-                    "-DANTLR_JAR_LOCATION=#{antlr.opt_prefix}antlr-#{antlr.version}-complete.jar",
+                    "-DANTLR_JAR_LOCATION=#{antlr.opt_prefix}/antlr-#{antlr.version}-complete.jar",
                     "-DBUILD_SHARED_LIBS=ON",
                     "-DCMAKE_INSTALL_RPATH=#{rpath}",
                     "-DPython3_EXECUTABLE=#{which("python3.13")}",
@@ -50,20 +50,20 @@ class Surelog < Formula
 
   test do
     # ensure linking is ok
-    system bin"surelog", "--version"
+    system bin/"surelog", "--version"
 
     # ensure library is ok
-    (testpath"test.cpp").write <<~CPP
-      #include <SurelogAPISurelog.h>
-      #include <SurelogCommandLineCommandLineParser.h>
-      #include <SurelogCommonFileSystem.h>
-      #include <SurelogDesignDesign.h>
-      #include <SurelogDesignModuleInstance.h>
-      #include <SurelogErrorReportingErrorContainer.h>
-      #include <SurelogSourceCompileSymbolTable.h>
+    (testpath/"test.cpp").write <<~CPP
+      #include <Surelog/API/Surelog.h>
+      #include <Surelog/CommandLine/CommandLineParser.h>
+      #include <Surelog/Common/FileSystem.h>
+      #include <Surelog/Design/Design.h>
+      #include <Surelog/Design/ModuleInstance.h>
+      #include <Surelog/ErrorReporting/ErrorContainer.h>
+      #include <Surelog/SourceCompile/SymbolTable.h>
       #include <functional>
       #include <iostream>
-      #include <uhdmuhdm.h>
+      #include <uhdm/uhdm.h>
       int main(int argc, const char** argv) {
         uint32_t code = 0;
         SURELOG::SymbolTable* symbolTable = new SURELOG::SymbolTable();
@@ -108,9 +108,9 @@ class Surelog < Formula
     CPP
 
     flags = shell_output("pkgconf --cflags --libs Surelog").chomp.split
-    system ENV.cxx, testpath"test.cpp", "-o", "test",
-                    "-L#{Formula["antlr4-cpp-runtime"].opt_prefix}lib",
+    system ENV.cxx, testpath/"test.cpp", "-o", "test",
+                    "-L#{Formula["antlr4-cpp-runtime"].opt_prefix}/lib",
                     "-fPIC", "-std=c++17", *flags
-    system testpath"test"
+    system testpath/"test"
   end
 end

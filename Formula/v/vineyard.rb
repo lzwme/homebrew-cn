@@ -1,7 +1,7 @@
 class Vineyard < Formula
   desc "In-memory immutable data manager. (Project under CNCF)"
-  homepage "https:v6d.io"
-  url "https:github.comv6d-iov6dreleasesdownloadv0.24.4v6d-0.24.4.tar.gz"
+  homepage "https://v6d.io"
+  url "https://ghfast.top/https://github.com/v6d-io/v6d/releases/download/v0.24.4/v6d-0.24.4.tar.gz"
   sha256 "055bab09ca67542ccb13229de8c176b7875b4ba8c8a818e942218dccc32a6bae"
   license "Apache-2.0"
 
@@ -37,39 +37,39 @@ class Vineyard < Formula
   end
 
   def install
-    # Workaround to support Boost 1.87.0+ until upstream fix for https:github.comv6d-iov6dissues2041
+    # Workaround to support Boost 1.87.0+ until upstream fix for https://github.com/v6d-io/v6d/issues/2041
     boost_asio_post_files = %w[
-      srcserverasyncsocket_server.cc
-      srcserverservervineyard_server.cc
-      srcserverservicesetcd_meta_service.cc
-      srcserverserviceslocal_meta_service.cc
-      srcserverserviceslocal_meta_service.h
-      srcserverservicesmeta_service.cc
+      src/server/async/socket_server.cc
+      src/server/server/vineyard_server.cc
+      src/server/services/etcd_meta_service.cc
+      src/server/services/local_meta_service.cc
+      src/server/services/local_meta_service.h
+      src/server/services/meta_service.cc
     ]
-    inreplace boost_asio_post_files, ^(\s*)(\S+)\.post\(, "\\1boost::asio::post(\\2,"
-    inreplace "srcserverservicesetcd_meta_service.cc", "backoff_timer_->cancel(ec);", "backoff_timer_->cancel();"
+    inreplace boost_asio_post_files, /^(\s*)(\S+)\.post\(/, "\\1boost::asio::post(\\2,"
+    inreplace "src/server/services/etcd_meta_service.cc", "backoff_timer_->cancel(ec);", "backoff_timer_->cancel();"
 
     # Workaround to support Boost 1.88.0+
     # TODO: Try upstreaming fix along with above
     boost_process_files = %w[
-      srcserverutiletcd_launcher.cc
-      srcserverutiletcd_member.cc
-      srcserverutilkubectl.cc
-      srcserverutilproc.cc
-      srcserverutilproc.h
-      srcserverutilredis_launcher.h
+      src/server/util/etcd_launcher.cc
+      src/server/util/etcd_member.cc
+      src/server/util/kubectl.cc
+      src/server/util/proc.cc
+      src/server/util/proc.h
+      src/server/util/redis_launcher.h
     ]
-    inreplace boost_process_files, '#include "boostprocess.hpp"', ""
-    inreplace "srcserverutiletcd_launcher.h", '#include "boostprocesschild.hpp"', ""
+    inreplace boost_process_files, '#include "boost/process.hpp"', ""
+    inreplace "src/server/util/etcd_launcher.h", '#include "boost/process/child.hpp"', ""
     ENV.append "CXXFLAGS", "-std=c++17"
     ENV.append "CXXFLAGS", "-DBOOST_PROCESS_VERSION=1"
     headers = %w[args async child env environment io search_path]
-    headers.each { |header| ENV.append "CXXFLAGS", "-include boostprocessv1#{header}.hpp" }
+    headers.each { |header| ENV.append "CXXFLAGS", "-include boost/process/v1/#{header}.hpp" }
 
     python3 = "python3.13"
     # LLVM is keg-only.
-    llvm = deps.map(&:to_formula).find { |f| f.name.match?(^llvm(@\d+)?$) }
-    ENV.prepend_path "PYTHONPATH", llvm.opt_prefixLanguage::Python.site_packages(python3)
+    llvm = deps.map(&:to_formula).find { |f| f.name.match?(/^llvm(@\d+)?$/) }
+    ENV.prepend_path "PYTHONPATH", llvm.opt_prefix/Language::Python.site_packages(python3)
 
     args = [
       "-DBUILD_VINEYARD_PYTHON_BINDINGS=OFF",
@@ -92,18 +92,18 @@ class Vineyard < Formula
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 
-    # Replace `open-mpi` Cellar path that breaks on `open-mpi` versionrevision bumps.
+    # Replace `open-mpi` Cellar path that breaks on `open-mpi` version/revision bumps.
     # CMake FindMPI uses REALPATH so there isn't a clean way to handle during generation.
     openmpi = Formula["open-mpi"]
-    inreplace lib"cmakevineyardvineyard-targets.cmake", openmpi.prefix.realpath, openmpi.opt_prefix
+    inreplace lib/"cmake/vineyard/vineyard-targets.cmake", openmpi.prefix.realpath, openmpi.opt_prefix
   end
 
   test do
-    (testpath"test.cc").write <<~CPP
+    (testpath/"test.cc").write <<~CPP
       #include <iostream>
       #include <memory>
 
-      #include <vineyardclientclient.h>
+      #include <vineyard/client/client.h>
 
       int main(int argc, char **argv) {
         vineyard::Client client;
@@ -117,35 +117,35 @@ class Vineyard < Formula
       }
     CPP
 
-    (testpath"CMakeLists.txt").write <<~CMAKE
+    (testpath/"CMakeLists.txt").write <<~CMAKE
       cmake_minimum_required(VERSION 3.5)
 
       project(vineyard-test LANGUAGES C CXX)
 
       find_package(vineyard REQUIRED)
 
-      add_executable(vineyard-test ${CMAKE_CURRENT_SOURCE_DIR}test.cc)
+      add_executable(vineyard-test ${CMAKE_CURRENT_SOURCE_DIR}/test.cc)
       target_include_directories(vineyard-test PRIVATE ${VINEYARD_INCLUDE_DIRS})
       target_link_libraries(vineyard-test PRIVATE ${VINEYARD_LIBRARIES})
     CMAKE
 
     # Remove Homebrew's lib directory from LDFLAGS as it is not available during
     # `shell_output`.
-    ENV.remove "LDFLAGS", "-L#{HOMEBREW_PREFIX}lib"
+    ENV.remove "LDFLAGS", "-L#{HOMEBREW_PREFIX}/lib"
 
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"
 
     # prepare vineyardd
-    vineyardd_pid = spawn bin"vineyardd", "--norpc",
+    vineyardd_pid = spawn bin/"vineyardd", "--norpc",
                                            "--meta=local",
-                                           "--socket=#{testpath}vineyard.sock"
+                                           "--socket=#{testpath}/vineyard.sock"
 
     # sleep to let vineyardd get its wits about it
     sleep 10
 
     assert_equal("vineyard instance is: 0\n",
-                 shell_output("#{testpath}buildvineyard-test #{testpath}vineyard.sock"))
+                 shell_output("#{testpath}/build/vineyard-test #{testpath}/vineyard.sock"))
   ensure
     # clean up the vineyardd process before we leave
     Process.kill("HUP", vineyardd_pid)

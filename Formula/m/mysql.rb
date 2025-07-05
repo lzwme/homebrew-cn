@@ -1,15 +1,15 @@
 class Mysql < Formula
   desc "Open source relational database management system"
   # FIXME: Actual homepage fails audit due to Homebrew's user-agent
-  # homepage "https:dev.mysql.comdocrefman9.3en"
-  homepage "https:github.commysqlmysql-server"
-  url "https:cdn.mysql.comDownloadsMySQL-9.3mysql-9.3.0.tar.gz"
+  # homepage "https://dev.mysql.com/doc/refman/9.3/en/"
+  homepage "https://github.com/mysql/mysql-server"
+  url "https://cdn.mysql.com/Downloads/MySQL-9.3/mysql-9.3.0.tar.gz"
   sha256 "1a3ee236f1daac5ef897c6325c9b0e0aae486389be1b8001deb3ff77ce682d60"
   license "GPL-2.0-only" => { with: "Universal-FOSS-exception-1.0" }
 
   livecheck do
-    url "https:dev.mysql.comdownloadsmysql?tpl=files&os=src"
-    regex(href=.*?mysql[._-](?:boost[._-])?v?(\d+(?:\.\d+)+)\.ti)
+    url "https://dev.mysql.com/downloads/mysql/?tpl=files&os=src"
+    regex(/href=.*?mysql[._-](?:boost[._-])?v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -63,11 +63,11 @@ class Mysql < Formula
 
   # Patch out check for Homebrew `boost`.
   # This should not be necessary when building inside `brew`.
-  # https:github.comHomebrewhomebrew-test-botpull820
+  # https://github.com/Homebrew/homebrew-test-bot/pull/820
   patch :DATA
 
   def datadir
-    var"mysql"
+    var/"mysql"
   end
 
   def install
@@ -75,35 +75,35 @@ class Mysql < Formula
     # `boost` and `rapidjson` must use bundled copy due to patches.
     # `lz4` is still needed due to xxhash.c used by mysqlgcs
     keep = %w[boost duktape libbacktrace libcno lz4 rapidjson unordered_dense xxhash]
-    (buildpath"extra").each_child { |dir| rm_r(dir) unless keep.include?(dir.basename.to_s) }
+    (buildpath/"extra").each_child { |dir| rm_r(dir) unless keep.include?(dir.basename.to_s) }
 
     if OS.linux?
       # Disable ABI checking
-      inreplace "cmakeabi_check.cmake", "RUN_ABI_CHECK 1", "RUN_ABI_CHECK 0"
+      inreplace "cmake/abi_check.cmake", "RUN_ABI_CHECK 1", "RUN_ABI_CHECK 0"
     elsif MacOS.version <= :ventura
       ENV.llvm_clang
-      ENV.append "LDFLAGS", "-L#{Formula["llvm"].opt_lib}unwind -lunwind"
+      ENV.append "LDFLAGS", "-L#{Formula["llvm"].opt_lib}/unwind -lunwind"
       # When using Homebrew's superenv shims, we need to use HOMEBREW_LIBRARY_PATHS
       # rather than LDFLAGS for libc++ in order to correctly link to LLVM's libc++.
-      ENV.prepend_path "HOMEBREW_LIBRARY_PATHS", Formula["llvm"].opt_lib"c++"
+      ENV.prepend_path "HOMEBREW_LIBRARY_PATHS", Formula["llvm"].opt_lib/"c++"
     end
 
-    icu4c = deps.find { |dep| dep.name.match?(^icu4c(@\d+)?$) }
+    icu4c = deps.find { |dep| dep.name.match?(/^icu4c(@\d+)?$/) }
                 .to_formula
     # -DINSTALL_* are relative to `CMAKE_INSTALL_PREFIX` (`prefix`)
     # -DWITH_FIDO=system isn't set as feature isn't enabled and bundled copy was removed.
     # Formula paths are set to avoid HOMEBREW_HOME logic in CMake scripts
     args = %W[
       -DCOMPILATION_COMMENT=Homebrew
-      -DINSTALL_DOCDIR=sharedoc#{name}
-      -DINSTALL_INCLUDEDIR=includemysql
-      -DINSTALL_INFODIR=shareinfo
-      -DINSTALL_MANDIR=shareman
-      -DINSTALL_MYSQLSHAREDIR=sharemysql
-      -DINSTALL_PLUGINDIR=libplugin
+      -DINSTALL_DOCDIR=share/doc/#{name}
+      -DINSTALL_INCLUDEDIR=include/mysql
+      -DINSTALL_INFODIR=share/info
+      -DINSTALL_MANDIR=share/man
+      -DINSTALL_MYSQLSHAREDIR=share/mysql
+      -DINSTALL_PLUGINDIR=lib/plugin
       -DMYSQL_DATADIR=#{datadir}
       -DSYSCONFDIR=#{etc}
-      -DBISON_EXECUTABLE=#{Formula["bison"].opt_bin}bison
+      -DBISON_EXECUTABLE=#{Formula["bison"].opt_bin}/bison
       -DOPENSSL_ROOT_DIR=#{Formula["openssl@3"].opt_prefix}
       -DWITH_ICU=#{icu4c.opt_prefix}
       -DWITH_SYSTEM_LIBS=ON
@@ -120,21 +120,21 @@ class Mysql < Formula
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 
-    cd prefix"mysql-test" do
-      system ".mysql-test-run.pl", "status", "--vardir=#{buildpath}mysql-test-vardir"
+    cd prefix/"mysql-test" do
+      system "./mysql-test-run.pl", "status", "--vardir=#{buildpath}/mysql-test-vardir"
     end
 
     # Remove the tests directory
-    rm_r(prefix"mysql-test")
+    rm_r(prefix/"mysql-test")
 
     # Fix up the control script and link into bin.
-    inreplace prefix"support-filesmysql.server",
-              ^(PATH=".*)("),
-              "\\1:#{HOMEBREW_PREFIX}bin\\2"
-    bin.install_symlink prefix"support-filesmysql.server"
+    inreplace prefix/"support-files/mysql.server",
+              /^(PATH=".*)(")/,
+              "\\1:#{HOMEBREW_PREFIX}/bin\\2"
+    bin.install_symlink prefix/"support-files/mysql.server"
 
     # Install my.cnf that binds to 127.0.0.1 by default
-    (buildpath"my.cnf").write <<~INI
+    (buildpath/"my.cnf").write <<~INI
       # Default Homebrew MySQL server config
       [mysqld]
       # Only allow connections from localhost
@@ -145,10 +145,10 @@ class Mysql < Formula
   end
 
   def post_install
-    # Make sure the varmysql directory exists
-    (var"mysql").mkpath
+    # Make sure the var/mysql directory exists
+    (var/"mysql").mkpath
 
-    if (my_cnf = ["etcmy.cnf", "etcmysqlmy.cnf"].find { |x| File.exist? x })
+    if (my_cnf = ["/etc/my.cnf", "/etc/mysql/my.cnf"].find { |x| File.exist? x })
       opoo <<~EOS
         A "#{my_cnf}" from another install may interfere with a Homebrew-built
         server starting up correctly.
@@ -158,10 +158,10 @@ class Mysql < Formula
     # Don't initialize database, it clashes when testing other MySQL-like implementations.
     return if ENV["HOMEBREW_GITHUB_ACTIONS"]
 
-    unless (datadir"mysqlgeneral_log.CSM").exist?
+    unless (datadir/"mysql/general_log.CSM").exist?
       ENV["TMPDIR"] = nil
-      system bin"mysqld", "--initialize-insecure", "--user=#{ENV["USER"]}",
-                           "--basedir=#{prefix}", "--datadir=#{datadir}", "--tmpdir=tmp"
+      system bin/"mysqld", "--initialize-insecure", "--user=#{ENV["USER"]}",
+                           "--basedir=#{prefix}", "--datadir=#{datadir}", "--tmpdir=/tmp"
     end
   end
 
@@ -185,17 +185,17 @@ class Mysql < Formula
   end
 
   service do
-    run [opt_bin"mysqld_safe", "--datadir=#{var}mysql"]
+    run [opt_bin/"mysqld_safe", "--datadir=#{var}/mysql"]
     keep_alive true
-    working_dir var"mysql"
+    working_dir var/"mysql"
   end
 
   test do
-    (testpath"mysql").mkpath
-    (testpath"tmp").mkpath
+    (testpath/"mysql").mkpath
+    (testpath/"tmp").mkpath
 
     port = free_port
-    socket = testpath"mysql.sock"
+    socket = testpath/"mysql.sock"
     mysqld_args = %W[
       --no-defaults
       --mysqlx=OFF
@@ -203,8 +203,8 @@ class Mysql < Formula
       --port=#{port}
       --socket=#{socket}
       --basedir=#{prefix}
-      --datadir=#{testpath}mysql
-      --tmpdir=#{testpath}tmp
+      --datadir=#{testpath}/mysql
+      --tmpdir=#{testpath}/tmp
     ]
     client_args = %W[
       --port=#{port}
@@ -213,37 +213,37 @@ class Mysql < Formula
       --password=
     ]
 
-    system bin"mysqld", *mysqld_args, "--initialize-insecure"
-    pid = spawn(bin"mysqld", *mysqld_args)
+    system bin/"mysqld", *mysqld_args, "--initialize-insecure"
+    pid = spawn(bin/"mysqld", *mysqld_args)
     begin
       sleep 5
-      output = shell_output("#{bin}mysql #{client_args.join(" ")} --execute='show databases;'")
+      output = shell_output("#{bin}/mysql #{client_args.join(" ")} --execute='show databases;'")
       assert_match "information_schema", output
     ensure
-      system bin"mysqladmin", *client_args, "shutdown"
+      system bin/"mysqladmin", *client_args, "shutdown"
       Process.kill "TERM", pid
     end
   end
 end
 
 __END__
-diff --git aCMakeLists.txt bCMakeLists.txt
+diff --git a/CMakeLists.txt b/CMakeLists.txt
 index 438dff720c5..47863c17e23 100644
---- aCMakeLists.txt
-+++ bCMakeLists.txt
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
 @@ -1948,31 +1948,6 @@ MYSQL_CHECK_RAPIDJSON()
  MYSQL_CHECK_FIDO()
  MYSQL_CHECK_FIDO_DLLS()
 
 -IF(APPLE)
 -  GET_FILENAME_COMPONENT(HOMEBREW_BASE ${HOMEBREW_HOME} DIRECTORY)
--  IF(EXISTS ${HOMEBREW_BASE}includeboost)
+-  IF(EXISTS ${HOMEBREW_BASE}/include/boost)
 -    FOREACH(SYSTEM_LIB ICU LZ4 PROTOBUF ZSTD FIDO)
 -      IF(WITH_${SYSTEM_LIB} STREQUAL "system")
 -        MESSAGE(FATAL_ERROR
 -          "WITH_${SYSTEM_LIB}=system is not compatible with Homebrew boost\n"
 -          "MySQL depends on ${BOOST_PACKAGE_NAME} with a set of patches.\n"
--          "Including headers from ${HOMEBREW_BASE}include "
+-          "Including headers from ${HOMEBREW_BASE}/include "
 -          "will break the build.\n"
 -          "Please use WITH_${SYSTEM_LIB}=bundled\n"
 -          "or do 'brew uninstall boost' or 'brew unlink boost'"
@@ -251,10 +251,10 @@ index 438dff720c5..47863c17e23 100644
 -      ENDIF()
 -    ENDFOREACH()
 -  ENDIF()
--  # Ensure that we look in usrlocalinclude or opthomebrewinclude
+-  # Ensure that we look in /usr/local/include or /opt/homebrew/include
 -  FOREACH(SYSTEM_LIB ICU LZ4 PROTOBUF ZSTD FIDO)
 -    IF(WITH_${SYSTEM_LIB} STREQUAL "system")
--      INCLUDE_DIRECTORIES(SYSTEM ${HOMEBREW_BASE}include)
+-      INCLUDE_DIRECTORIES(SYSTEM ${HOMEBREW_BASE}/include)
 -      BREAK()
 -    ENDIF()
 -  ENDFOREACH()

@@ -5,14 +5,14 @@ cask "chatwise" do
   sha256 arm:   "142928b8868f12b60c978d09676cdeb398ce27ff88c5c92328ea21f22510364e",
          intel: "c96b21baa34512dc1c3f6a94a623daea656645fab20cb87458b85168c4531736"
 
-  url "https:github.comegoistchatwise-releasesreleasesdownloadv#{version}ChatWise_#{version}_#{arch}.dmg",
-      verified: "github.comegoistchatwise-releases"
+  url "https://ghfast.top/https://github.com/egoist/chatwise-releases/releases/download/v#{version}/ChatWise_#{version}_#{arch}.dmg",
+      verified: "github.com/egoist/chatwise-releases/"
   name "ChatWise"
   desc "AI chatbot for many LLMs"
-  homepage "https:chatwise.app"
+  homepage "https://chatwise.app/"
 
   livecheck do
-    url "https:chatwise.appapitrpcgetReleases"
+    url "https://chatwise.app/api/trpc/getReleases"
     strategy :json do |json|
       json.dig("result", "data")&.map { |item| item["tag"]&.tr("v", "") }
     end
@@ -26,9 +26,9 @@ cask "chatwise" do
   uninstall quit: "app.chatwise"
 
   zap trash: [
-    "~LibraryApplication Supportapp.chatwise",
-    "~LibraryCachesapp.chatwise",
-    "~LibrarySaved Application Stateapp.chatwise.savedState",
-    "~LibraryWebKitapp.chatwise",
+    "~/Library/Application Support/app.chatwise",
+    "~/Library/Caches/app.chatwise",
+    "~/Library/Saved Application State/app.chatwise.savedState",
+    "~/Library/WebKit/app.chatwise",
   ]
 end

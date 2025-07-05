@@ -1,16 +1,16 @@
 class Cryptopp < Formula
   desc "Free C++ class library of cryptographic schemes"
-  homepage "https:cryptopp.com"
-  url "https:cryptopp.comcryptopp890.zip"
-  mirror "https:github.comweidai11cryptoppreleasesdownloadCRYPTOPP_8_9_0cryptopp890.zip"
+  homepage "https://cryptopp.com/"
+  url "https://cryptopp.com/cryptopp890.zip"
+  mirror "https://ghfast.top/https://github.com/weidai11/cryptopp/releases/download/CRYPTOPP_8_9_0/cryptopp890.zip"
   version "8.9.0"
   sha256 "4cc0ccc324625b80b695fcd3dee63a66f1a460d3e51b71640cdbfc4cd1a3779c"
   license all_of: [:public_domain, "BSL-1.0"]
-  head "https:github.comweidai11cryptopp.git", branch: "master"
+  head "https://github.com/weidai11/cryptopp.git", branch: "master"
 
   livecheck do
     url :head
-    regex(^CRYPTOPP[._-]V?(\d+(?:[._-]\d+)+)$i)
+    regex(/^CRYPTOPP[._-]V?(\d+(?:[._-]\d+)+)$/i)
     strategy :git do |tags, regex|
       tags.map { |tag| tag[regex, 1]&.tr("_", ".") }
     end
@@ -31,7 +31,7 @@ class Cryptopp < Formula
 
   def install
     ENV.cxx11
-    ENV.runtime_cpu_detection # https:github.comweidai11cryptoppblobmastercpu.h
+    ENV.runtime_cpu_detection # https://github.com/weidai11/cryptopp/blob/master/cpu.h
 
     system "make", "all", "libcryptopp.pc", "PREFIX=#{prefix}"
     system "make", "test"
@@ -40,8 +40,8 @@ class Cryptopp < Formula
 
   test do
     # Test program modified from:
-    #   https:www.cryptopp.comwikiAdvanced_Encryption_Standard
-    (testpath"test.cc").write <<~CPP
+    #   https://www.cryptopp.com/wiki/Advanced_Encryption_Standard
+    (testpath/"test.cc").write <<~CPP
       #ifdef NDEBUG
       #undef NDEBUG
       #endif
@@ -49,10 +49,10 @@ class Cryptopp < Formula
       #include <iostream>
       #include <string>
 
-      #include <cryptoppcryptlib.h>
-      #include <cryptoppmodes.h>
-      #include <cryptopposrng.h>
-      #include <cryptopprijndael.h>
+      #include <cryptopp/cryptlib.h>
+      #include <cryptopp/modes.h>
+      #include <cryptopp/osrng.h>
+      #include <cryptopp/rijndael.h>
 
       int main(int argc, char *argv[]) {
         using namespace CryptoPP;
@@ -95,6 +95,6 @@ class Cryptopp < Formula
     CPP
     system ENV.cxx, "-std=c++11", "test.cc", "-I#{include}", "-L#{lib}",
                     "-lcryptopp", "-o", "test"
-    system ".test"
+    system "./test"
   end
 end

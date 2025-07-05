@@ -1,7 +1,7 @@
 class Bioawk < Formula
   desc "AWK modified for biological data"
-  homepage "https:github.comlh3bioawk"
-  url "https:github.comlh3bioawkarchiverefstagsv1.0.tar.gz"
+  homepage "https://github.com/lh3/bioawk"
+  url "https://ghfast.top/https://github.com/lh3/bioawk/archive/refs/tags/v1.0.tar.gz"
   sha256 "5cbef3f39b085daba45510ff450afcf943cfdfdd483a546c8a509d3075ff51b5"
   license "HPND"
 
@@ -39,12 +39,12 @@ class Bioawk < Formula
   end
 
   test do
-    (testpath"test.fasta").write <<~EOS
+    (testpath/"test.fasta").write <<~EOS
       >U00096.2:1-70
       AGCTTTTCATTCTGACTGCAACGGGCAATATGTCT
       CTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC
     EOS
-    cmd = "#{bin}bioawk -cfastx '{print length($seq)}' test.fasta"
+    cmd = "#{bin}/bioawk -cfastx '{print length($seq)}' test.fasta"
     assert_equal "70", shell_output(cmd).chomp
   end
 end

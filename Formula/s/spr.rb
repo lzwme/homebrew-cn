@@ -1,10 +1,10 @@
 class Spr < Formula
   desc "Submit pull requests for individual, amendable, rebaseable commits to GitHub"
-  homepage "https:spacedentist.github.iospr"
-  url "https:github.comspacedentistsprarchiverefstagsv1.3.6.tar.gz"
+  homepage "https://spacedentist.github.io/spr/"
+  url "https://ghfast.top/https://github.com/spacedentist/spr/archive/refs/tags/v1.3.6.tar.gz"
   sha256 "a9ee0f3e1c90176841a42f2177a31c83a93a8cfb83bc1507fcb544ff8d997de7"
   license "MIT"
-  head "https:github.comspacedentistspr.git", branch: "master"
+  head "https://github.com/spacedentist/spr.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "a8989faccafce9c9bf1eee5eeb1046a18729f9acf67fee5ae16b0110f647a722"
@@ -30,24 +30,24 @@ class Spr < Formula
   end
 
   test do
-    spr = bin"spr"
+    spr = bin/"spr"
     assert_match "spr #{version}", shell_output("#{spr} --version")
 
     system "git", "config", "--global", "user.email", "nobody@example.com"
     system "git", "config", "--global", "user.name", "Nobody"
     system "git", "config", "--global", "init.defaultBranch", "trunk"
-    system "git", "init", testpath"test-repo"
+    system "git", "init", testpath/"test-repo"
     cd "test-repo" do
       system "git", "config", "spr.githubMasterBranch", "trunk"
 
       # Some bogus config
-      system "git", "config", "spr.githubRepository", "ab"
-      system "git", "config", "spr.branchPrefix", "spr"
+      system "git", "config", "spr.githubRepository", "a/b"
+      system "git", "config", "spr.branchPrefix", "spr/"
 
       # Create an empty commit, which is set to be upstream
       system "git", "commit", "--allow-empty", "--message", "Empty commit"
-      mkdir ".gitrefsremotesorigin"
-      (testpath"test-repo.gitrefsremotesorigintrunk").atomic_write Utils.git_head
+      mkdir ".git/refs/remotes/origin"
+      (testpath/"test-repo/.git/refs/remotes/origin/trunk").atomic_write Utils.git_head
       system "git", "commit", "--allow-empty", "--message", <<~EOS
         Hello world
 

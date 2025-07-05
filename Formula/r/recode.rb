@@ -1,7 +1,7 @@
 class Recode < Formula
   desc "Convert character set (charsets)"
-  homepage "https:github.comrrthomasrecode"
-  url "https:github.comrrthomasrecodereleasesdownloadv3.7.15recode-3.7.15.tar.gz"
+  homepage "https://github.com/rrthomas/recode"
+  url "https://ghfast.top/https://github.com/rrthomas/recode/releases/download/v3.7.15/recode-3.7.15.tar.gz"
   sha256 "f590407fc51badb351973fc1333ee33111f05ec83a8f954fd8cf0c5e30439806"
   license "GPL-3.0-or-later"
 
@@ -22,11 +22,11 @@ class Recode < Formula
   end
 
   def install
-    system ".configure", "--disable-silent-rules", *std_configure_args
+    system "./configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}recode --version")
+    assert_match version.to_s, shell_output("#{bin}/recode --version")
   end
 end

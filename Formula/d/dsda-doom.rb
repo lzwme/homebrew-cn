@@ -1,15 +1,15 @@
 class DsdaDoom < Formula
   desc "Fork of prboom+ with a focus on speedrunning"
-  homepage "https:github.comkraflabdsda-doom"
-  url "https:github.comkraflabdsda-doomarchiverefstagsv0.29.3.tar.gz"
+  homepage "https://github.com/kraflab/dsda-doom"
+  url "https://ghfast.top/https://github.com/kraflab/dsda-doom/archive/refs/tags/v0.29.3.tar.gz"
   sha256 "9b9218d26055d2e2a3b830913cfe52f56b2a6dd4a16720634f0bc5dbe560fb84"
   license "GPL-2.0-only"
   revision 1
-  head "https:github.comkraflabdsda-doom.git", branch: "master"
+  head "https://github.com/kraflab/dsda-doom.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -46,7 +46,7 @@ class DsdaDoom < Formula
   end
 
   def doomwaddir(root)
-    root"sharegamesdoom"
+    root/"share/games/doom"
   end
 
   def install
@@ -78,9 +78,9 @@ class DsdaDoom < Formula
   test do
     ENV["HOME"] = testpath
     ENV["XDG_DATA_HOME"] = testpath
-    mkdir testpath"LibraryApplication Support"
+    mkdir testpath/"Library/Application Support"
 
     expected_output = "dsda-doom v#{version.major_minor_patch}"
-    assert_match expected_output, shell_output("#{bin}dsda-doom -iwad invalid_wad 2>&1", 255)
+    assert_match expected_output, shell_output("#{bin}/dsda-doom -iwad invalid_wad 2>&1", 255)
   end
 end

@@ -1,7 +1,7 @@
 class Hyperscan < Formula
   desc "High-performance regular expression matching library"
-  homepage "https:www.intel.comcontentwwwusendeveloperarticlestechnicalintroduction-to-hyperscan.html"
-  url "https:github.comintelhyperscanarchiverefstagsv5.4.2.tar.gz"
+  homepage "https://www.intel.com/content/www/us/en/developer/articles/technical/introduction-to-hyperscan.html"
+  url "https://ghfast.top/https://github.com/intel/hyperscan/archive/refs/tags/v5.4.2.tar.gz"
   sha256 "32b0f24b3113bbc46b6bfaa05cf7cf45840b6b59333d078cc1f624e4c40b2b99"
   license "BSD-3-Clause"
 
@@ -25,9 +25,9 @@ class Hyperscan < Formula
   depends_on "pkgconf" => :build
   depends_on "ragel" => :build
   # Only supports x86 instructions and will fail to build on ARM.
-  # See https:github.comintelhyperscanissues197
+  # See https://github.com/intel/hyperscan/issues/197
   depends_on arch: :x86_64
-  depends_on "pcre" # PCRE2 issue: https:github.comintelhyperscanissues397
+  depends_on "pcre" # PCRE2 issue: https://github.com/intel/hyperscan/issues/397
 
   uses_from_macos "python" => :build
 
@@ -46,9 +46,9 @@ class Hyperscan < Formula
   end
 
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include <stdio.h>
-      #include <hshs.h>
+      #include <hs/hs.h>
       int main()
       {
         printf("hyperscan v%s", hs_version());
@@ -56,6 +56,6 @@ class Hyperscan < Formula
       }
     C
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lhs", "-o", "test"
-    system ".test"
+    system "./test"
   end
 end

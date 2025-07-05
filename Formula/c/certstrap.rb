@@ -1,14 +1,14 @@
 class Certstrap < Formula
   desc "Tools to bootstrap CAs, certificate requests, and signed certificates"
-  homepage "https:github.comsquarecertstrap"
-  url "https:github.comsquarecertstraparchiverefstagsv1.3.0.tar.gz"
+  homepage "https://github.com/square/certstrap"
+  url "https://ghfast.top/https://github.com/square/certstrap/archive/refs/tags/v1.3.0.tar.gz"
   sha256 "4b32289c20dfad7bf8ab653c200954b3b9981fcbf101b699ceb575c6e7661a90"
   license "Apache-2.0"
-  head "https:github.comsquarecertstrap.git", branch: "master"
+  head "https://github.com/square/certstrap.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -35,6 +35,6 @@ class Certstrap < Formula
   end
 
   test do
-    system bin"certstrap", "init", "--common-name", "Homebrew Test CA", "--passphrase", "beerformyhorses"
+    system bin/"certstrap", "init", "--common-name", "Homebrew Test CA", "--passphrase", "beerformyhorses"
   end
 end

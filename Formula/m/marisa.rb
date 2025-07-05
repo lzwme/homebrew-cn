@@ -1,7 +1,7 @@
 class Marisa < Formula
   desc "Matching Algorithm with Recursively Implemented StorAge"
-  homepage "https:github.coms-yatamarisa-trie"
-  url "https:github.coms-yatamarisa-triearchiverefstagsv0.3.0.tar.gz"
+  homepage "https://github.com/s-yata/marisa-trie"
+  url "https://ghfast.top/https://github.com/s-yata/marisa-trie/archive/refs/tags/v0.3.0.tar.gz"
   sha256 "a3057d0c2da0a9a57f43eb8e07b73715bc5ff053467ee8349844d01da91b5efb"
   license any_of: ["BSD-2-Clause", "LGPL-2.1-or-later"]
 
@@ -27,7 +27,7 @@ class Marisa < Formula
   end
 
   test do
-    (testpath"test.cc").write <<~CPP
+    (testpath/"test.cc").write <<~CPP
       #include <cstdlib>
       #include <cstring>
       #include <ctime>
@@ -45,7 +45,7 @@ class Marisa < Formula
       }
     CPP
 
-    system ENV.cxx, "-std=c++17", ".test.cc", "-o", "test"
-    assert_equal "200,100", shell_output(".test").strip
+    system ENV.cxx, "-std=c++17", "./test.cc", "-o", "test"
+    assert_equal "200,100", shell_output("./test").strip
   end
 end

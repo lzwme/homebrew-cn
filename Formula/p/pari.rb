@@ -1,13 +1,13 @@
 class Pari < Formula
   desc "Computer algebra system designed for fast computations in number theory"
-  homepage "https:pari.math.u-bordeaux.fr"
-  url "https:pari.math.u-bordeaux.frpubpariunixpari-2.17.2.tar.gz"
+  homepage "https://pari.math.u-bordeaux.fr/"
+  url "https://pari.math.u-bordeaux.fr/pub/pari/unix/pari-2.17.2.tar.gz"
   sha256 "7d30578f5cf97b137a281f4548d131aafc0cde86bcfd10cc1e1bd72a81e65061"
   license "GPL-2.0-or-later"
 
   livecheck do
-    url "https:pari.math.u-bordeaux.frpubpariunix"
-    regex(href=.*?pari[._-]v?(\d+(?:\.\d+)+)\.ti)
+    url "https://pari.math.u-bordeaux.fr/pub/pari/unix/"
+    regex(/href=.*?pari[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   bottle do
@@ -25,29 +25,29 @@ class Pari < Formula
 
   def install
     # Work around for optimization bug causing corrupted last_tmp_file
-    # Ref: https:github.comHomebrewhomebrew-coreissues207722
-    # Ref: https:pari.math.u-bordeaux.frcgi-binbugreport.cgi?bug=2608
+    # Ref: https://github.com/Homebrew/homebrew-core/issues/207722
+    # Ref: https://pari.math.u-bordeaux.fr/cgi-bin/bugreport.cgi?bug=2608
     ENV.O1 if ENV.compiler == :clang
 
     readline = Formula["readline"].opt_prefix
     gmp = Formula["gmp"].opt_prefix
-    system ".Configure", "--prefix=#{prefix}",
+    system "./Configure", "--prefix=#{prefix}",
                           "--with-gmp=#{gmp}",
                           "--with-readline=#{readline}",
                           "--graphic=ps",
                           "--mt=pthread"
 
-    # Explicitly set datadir to HOMEBREW_PREFIXsharepari to allow for external packages to be found
+    # Explicitly set datadir to HOMEBREW_PREFIX/share/pari to allow for external packages to be found
     # We do this here rather than in configure because we still want the actual files to be installed to the Cellar
-    objdir = Utils.safe_popen_read(".configobjdir").chomp
-    inreplace %W[#{objdir}pari.cfg #{objdir}paricfg.h], pkgshare, "#{HOMEBREW_PREFIX}sharepari"
+    objdir = Utils.safe_popen_read("./config/objdir").chomp
+    inreplace %W[#{objdir}/pari.cfg #{objdir}/paricfg.h], pkgshare, "#{HOMEBREW_PREFIX}/share/pari"
 
     # make needs to be done in two steps
     system "make", "all"
     system "make", "install"
 
     # Avoid references to Homebrew shims
-    inreplace lib"paripari.cfg", Superenv.shims_path, "usrbin"
+    inreplace lib/"pari/pari.cfg", Superenv.shims_path, "/usr/bin"
   end
 
   def caveats
@@ -58,15 +58,15 @@ class Pari < Formula
   end
 
   test do
-    (testpath"math.tex").write "$k_{n+1} = n^2 + k_n^2 - k_{n-1}$"
-    system bin"tex2mail", testpath"math.tex"
+    (testpath/"math.tex").write "$k_{n+1} = n^2 + k_n^2 - k_{n-1}$"
+    system bin/"tex2mail", testpath/"math.tex"
 
-    (testpath"test.gp").write <<~GP
+    (testpath/"test.gp").write <<~GP
       default(parisize,"1G");
       default(realprecision,10);
       dist(a,b) = sqrt(a^2+b^2);
       print(dist(1,2));
     GP
-    assert_equal "2.236067977\n", pipe_output("#{bin}gp --quiet test.gp", "", 0)
+    assert_equal "2.236067977\n", pipe_output("#{bin}/gp --quiet test.gp", "", 0)
   end
 end

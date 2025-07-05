@@ -1,10 +1,10 @@
 class Jid < Formula
   desc "Json incremental digger"
-  homepage "https:github.comsimejijid"
-  url "https:github.comsimejijidarchiverefstagsv0.7.6.tar.gz"
+  homepage "https://github.com/simeji/jid"
+  url "https://ghfast.top/https://github.com/simeji/jid/archive/refs/tags/v0.7.6.tar.gz"
   sha256 "0912050b3be3760804afaf7ecd6b42bfe79e7160066587fbc0afa5324b03fb48"
   license "MIT"
-  head "https:github.comsimejijid.git", branch: "master"
+  head "https://github.com/simeji/jid.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -29,10 +29,10 @@ class Jid < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "cmdjidjid.go"
+    system "go", "build", *std_go_args(ldflags: "-s -w"), "cmd/jid/jid.go"
   end
 
   test do
-    assert_match "jid version v#{version}", shell_output("#{bin}jid --version")
+    assert_match "jid version v#{version}", shell_output("#{bin}/jid --version")
   end
 end

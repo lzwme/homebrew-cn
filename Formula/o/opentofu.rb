@@ -1,10 +1,10 @@
 class Opentofu < Formula
   desc "Drop-in replacement for Terraform. Infrastructure as Code Tool"
-  homepage "https:opentofu.org"
-  url "https:github.comopentofuopentofuarchiverefstagsv1.10.2.tar.gz"
+  homepage "https://opentofu.org/"
+  url "https://ghfast.top/https://github.com/opentofu/opentofu/archive/refs/tags/v1.10.2.tar.gz"
   sha256 "442d51e0595e79a3eceb84d8a2891e691f7277d0da7dd34f87836692d4aeca91"
   license "MPL-2.0"
-  head "https:github.comopentofuopentofu.git", branch: "main"
+  head "https://github.com/opentofu/opentofu.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "2decc3b3b8a2e791a3586de8084f74d823ccdbc7e5a2b6d2d1a57ea5dff9755d"
@@ -20,12 +20,12 @@ class Opentofu < Formula
   conflicts_with "tenv", "tofuenv", because: "both install tofu binary"
 
   def install
-    ldflags = "-s -w -X github.comopentofuopentofuversion.dev=no"
-    system "go", "build", *std_go_args(output: bin"tofu", ldflags:), ".cmdtofu"
+    ldflags = "-s -w -X github.com/opentofu/opentofu/version.dev=no"
+    system "go", "build", *std_go_args(output: bin/"tofu", ldflags:), "./cmd/tofu"
   end
 
   test do
-    minimal = testpath"minimal.tf"
+    minimal = testpath/"minimal.tf"
     minimal.write <<~HCL
       variable "aws_region" {
         default = "us-west-2"
@@ -54,7 +54,7 @@ class Opentofu < Formula
       }
     HCL
 
-    system bin"tofu", "init"
-    system bin"tofu", "graph"
+    system bin/"tofu", "init"
+    system bin/"tofu", "graph"
   end
 end

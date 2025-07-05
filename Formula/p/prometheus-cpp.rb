@@ -1,11 +1,11 @@
 class PrometheusCpp < Formula
   desc "Prometheus Client Library for Modern C++"
-  homepage "https:github.comjupp0rprometheus-cpp"
-  url "https:github.comjupp0rprometheus-cppreleasesdownloadv1.3.0prometheus-cpp-with-submodules.tar.gz"
+  homepage "https://github.com/jupp0r/prometheus-cpp"
+  url "https://ghfast.top/https://github.com/jupp0r/prometheus-cpp/releases/download/v1.3.0/prometheus-cpp-with-submodules.tar.gz"
   sha256 "62bc2cc9772db2314dbaae506ae2a75c8ee897dab053d8729e86a637b018fdb6"
   license "MIT"
   revision 1
-  head "https:github.comjupp0rprometheus-cpp.git", branch: "master"
+  head "https://github.com/jupp0r/prometheus-cpp.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "67fe748cad481abce5867c7402ea31ad4deaee191260205d8800abf5a892c3d4"
@@ -33,14 +33,14 @@ class PrometheusCpp < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~CPP
-      #include <prometheusregistry.h>
+    (testpath/"test.cpp").write <<~CPP
+      #include <prometheus/registry.h>
       int main() {
         prometheus::Registry reg;
         return 0;
       }
     CPP
     system ENV.cxx, "-std=c++14", "test.cpp", "-I#{include}", "-L#{lib}", "-lprometheus-cpp-core", "-o", "test"
-    system ".test"
+    system "./test"
   end
 end

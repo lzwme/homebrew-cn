@@ -2,12 +2,12 @@ cask "font-neuton" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefonts.git",
-      verified:  "github.comgooglefonts",
+  url "https://github.com/google/fonts.git",
+      verified:  "github.com/google/fonts",
       branch:    "main",
-      only_path: "oflneuton"
+      only_path: "ofl/neuton"
   name "Neuton"
-  homepage "https:fonts.google.comspecimenNeuton"
+  homepage "https://fonts.google.com/specimen/Neuton"
 
   font "Neuton-Bold.ttf"
   font "Neuton-ExtraBold.ttf"

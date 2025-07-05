@@ -1,11 +1,11 @@
 class Glew < Formula
   desc "OpenGL Extension Wrangler Library"
-  homepage "https:glew.sourceforge.net"
-  url "https:downloads.sourceforge.netprojectglewglew2.2.0glew-2.2.0.tgz"
+  homepage "https://glew.sourceforge.net/"
+  url "https://downloads.sourceforge.net/project/glew/glew/2.2.0/glew-2.2.0.tgz"
   sha256 "d4fc82893cfb00109578d0a1a2337fb8ca335b3ceccf97b97e5cc7f08e4353e1"
   license "BSD-3-Clause"
   revision 1
-  head "https:github.comnigels-comglew.git", branch: "master"
+  head "https://github.com/nigels-com/glew.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -34,20 +34,20 @@ class Glew < Formula
     depends_on "mesa-glu"
   end
 
-  # cmake 4.0 build patch, upstream bug report, https:github.comnigels-comglewissues432
+  # cmake 4.0 build patch, upstream bug report, https://github.com/nigels-com/glew/issues/432
   patch :DATA
 
   def install
-    system "cmake", "-S", ".buildcmake", "-B", "_build",
+    system "cmake", "-S", "./build/cmake", "-B", "_build",
                     "-DCMAKE_INSTALL_RPATH=#{rpath}",
                     *std_cmake_args(find_framework: "FIRST")
     system "cmake", "--build", "_build"
     system "cmake", "--install", "_build"
-    doc.install Dir["doc*"]
+    doc.install Dir["doc/*"]
   end
 
   test do
-    (testpath"CMakeLists.txt").write <<~CMAKE
+    (testpath/"CMakeLists.txt").write <<~CMAKE
       cmake_minimum_required(VERSION 4.0)
       project(test_glew)
 
@@ -60,8 +60,8 @@ class Glew < Formula
       target_link_libraries(${PROJECT_NAME} PUBLIC OpenGL::GL GLEW::GLEW)
     CMAKE
 
-    (testpath"main.cpp").write <<~CPP
-      #include <GLglew.h>
+    (testpath/"main.cpp").write <<~CPP
+      #include <GL/glew.h>
 
       int main()
       {
@@ -77,9 +77,9 @@ class Glew < Formula
     else
       "GL"
     end
-    (testpath"test.c").write <<~C
-      #include <GLglew.h>
-      #include <#{glut}glut.h>
+    (testpath/"test.c").write <<~C
+      #include <GL/glew.h>
+      #include <#{glut}/glut.h>
 
       int main(int argc, char** argv) {
         glutInit(&argc, argv);
@@ -97,19 +97,19 @@ class Glew < Formula
     else
       flags << "-lglut"
     end
-    system ENV.cc, testpath"test.c", "-o", "test", *flags
-    # Fails in Linux CI with: freeglut (.test): failed to open display ''
+    system ENV.cc, testpath/"test.c", "-o", "test", *flags
+    # Fails in Linux CI with: freeglut (./test): failed to open display ''
     return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
 
-    system ".test"
+    system "./test"
   end
 end
 
 __END__
-diff --git abuildcmakeCMakeLists.txt bbuildcmakeCMakeLists.txt
+diff --git a/build/cmake/CMakeLists.txt b/build/cmake/CMakeLists.txt
 index 419c243..8c66ae2 100644
---- abuildcmakeCMakeLists.txt
-+++ bbuildcmakeCMakeLists.txt
+--- a/build/cmake/CMakeLists.txt
++++ b/build/cmake/CMakeLists.txt
 @@ -4,7 +4,7 @@ endif ()
 
  project (glew C)

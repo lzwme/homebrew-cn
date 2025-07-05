@@ -1,7 +1,7 @@
 class Curlpp < Formula
   desc "C++ wrapper for libcURL"
-  homepage "https:www.curlpp.org"
-  url "https:github.comjpbarrettecurlpparchiverefstagsv0.8.1.tar.gz"
+  homepage "https://www.curlpp.org/"
+  url "https://ghfast.top/https://github.com/jpbarrette/curlpp/archive/refs/tags/v0.8.1.tar.gz"
   sha256 "97e3819bdcffc3e4047b6ac57ca14e04af85380bd93afe314bee9dd5c7f46a0a"
   license "MIT"
   revision 2
@@ -25,7 +25,7 @@ class Curlpp < Formula
   patch do
     # build patch for curl 8.10+
     on_linux do
-      url "https:raw.githubusercontent.comHomebrewformula-patches0089ecdbd3df70aa0efc06801d82700bd24be023curlppcurl-8.10.patch"
+      url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/0089ecdbd3df70aa0efc06801d82700bd24be023/curlpp/curl-8.10.patch"
       sha256 "77212f725bc4916432bff3cd6ecf009e6a24dcec31048a9311b02af8c9b7b338"
     end
   end
@@ -36,21 +36,21 @@ class Curlpp < Formula
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 
-    inreplace bin"curlpp-config", Superenv.shims_pathENV.cc, ENV.cc
+    inreplace bin/"curlpp-config", Superenv.shims_path/ENV.cc, ENV.cc
   end
 
   test do
-    (testpath"test.cpp").write <<~CPP
-      #include <curlppcURLpp.hpp>
-      #include <curlppEasy.hpp>
-      #include <curlppOptions.hpp>
-      #include <curlppException.hpp>
+    (testpath/"test.cpp").write <<~CPP
+      #include <curlpp/cURLpp.hpp>
+      #include <curlpp/Easy.hpp>
+      #include <curlpp/Options.hpp>
+      #include <curlpp/Exception.hpp>
 
       int main() {
         try {
           curlpp::Cleanup myCleanup;
           curlpp::Easy myHandle;
-          myHandle.setOpt(new curlpp::options::Url("https:google.com"));
+          myHandle.setOpt(new curlpp::options::Url("https://google.com"));
           myHandle.perform();
         } catch (curlpp::RuntimeError & e) {
           std::cout << e.what() << std::endl;
@@ -65,6 +65,6 @@ class Curlpp < Formula
     CPP
     system ENV.cxx, "-std=c++11", "test.cpp", "-o", "test", "-I#{include}",
                     "-L#{lib}", "-lcurlpp", "-lcurl"
-    system ".test"
+    system "./test"
   end
 end

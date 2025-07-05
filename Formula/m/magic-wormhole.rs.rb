@@ -1,10 +1,10 @@
 class MagicWormholeRs < Formula
   desc "Rust implementation of Magic Wormhole, with new features and enhancements"
-  homepage "https:github.commagic-wormholemagic-wormhole.rs"
-  url "https:github.commagic-wormholemagic-wormhole.rsarchiverefstags0.7.6.tar.gz"
+  homepage "https://github.com/magic-wormhole/magic-wormhole.rs"
+  url "https://ghfast.top/https://github.com/magic-wormhole/magic-wormhole.rs/archive/refs/tags/0.7.6.tar.gz"
   sha256 "1d76e80108291f0a31e1a0e2e1d6199decb55bec73bc725baacb93ea0ae06e5e"
   license "EUPL-1.2"
-  head "https:github.commagic-wormholemagic-wormhole.rs.git", branch: "master"
+  head "https://github.com/magic-wormhole/magic-wormhole.rs.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "9a058269ba3e3e3c576f06dee4eb6a70314d3c0dd0719d515e6f56e33e111992"
@@ -21,16 +21,16 @@ class MagicWormholeRs < Formula
   def install
     system "cargo", "install", *std_cargo_args(path: "cli")
 
-    generate_completions_from_executable(bin"wormhole-rs", "completion")
+    generate_completions_from_executable(bin/"wormhole-rs", "completion")
   end
 
   test do
     n = rand(1e6)
-    pid = spawn bin"wormhole-rs", "send", "--code=#{n}-homebrew-test", test_fixtures("test.svg")
+    pid = spawn bin/"wormhole-rs", "send", "--code=#{n}-homebrew-test", test_fixtures("test.svg")
     begin
       sleep 1
-      exec bin"wormhole-rs", "receive", "--noconfirm", "#{n}-homebrew-test"
-      assert_path_exists testpath"received.svg"
+      exec bin/"wormhole-rs", "receive", "--noconfirm", "#{n}-homebrew-test"
+      assert_path_exists testpath/"received.svg"
     ensure
       Process.kill("TERM", pid)
       Process.wait(pid)

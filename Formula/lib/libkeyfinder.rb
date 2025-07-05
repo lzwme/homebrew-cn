@@ -1,7 +1,7 @@
 class Libkeyfinder < Formula
   desc "Musical key detection for digital audio, GPL v3"
-  homepage "https:mixxxdj.github.iolibkeyfinder"
-  url "https:github.commixxxdjlibkeyfinderarchiverefstags2.2.8.tar.gz"
+  homepage "https://mixxxdj.github.io/libkeyfinder/"
+  url "https://ghfast.top/https://github.com/mixxxdj/libkeyfinder/archive/refs/tags/2.2.8.tar.gz"
   sha256 "a54fc6c5ff435bb4b447f175bc97f9081fb5abf0edd5d125e6f5215c8fff4d11"
   license "GPL-3.0-or-later"
 
@@ -27,9 +27,9 @@ class Libkeyfinder < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~CPP
-      #include <keyfinderkeyfinder.h>
-      #include <keyfinderworkspace.h>
+    (testpath/"test.cpp").write <<~CPP
+      #include <keyfinder/keyfinder.h>
+      #include <keyfinder/workspace.h>
       int main(void) {
         KeyFinder::Workspace w;
         w.chromagram = new KeyFinder::Chromagram(1);
@@ -38,6 +38,6 @@ class Libkeyfinder < Formula
       }
     CPP
     system ENV.cxx, "test.cpp", "-std=c++11", "-I#{include}", "-L#{lib}", "-lkeyfinder", "-o", "test"
-    system ".test"
+    system "./test"
   end
 end

@@ -1,13 +1,13 @@
 class Latex2html < Formula
   desc "LaTeX-to-HTML translator"
-  homepage "https:www.latex2html.org"
-  url "https:github.comlatex2htmllatex2htmlarchiverefstagsv2025.tar.gz"
+  homepage "https://www.latex2html.org"
+  url "https://ghfast.top/https://github.com/latex2html/latex2html/archive/refs/tags/v2025.tar.gz"
   sha256 "d6f4e9f674994c82cbdff5a39441258add4a8822087fc0d418c0a697dbf3d191"
   license "GPL-2.0-or-later"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)*)$i)
+    regex(/^v?(\d+(?:\.\d+)*)$/i)
   end
 
   bottle do
@@ -24,14 +24,14 @@ class Latex2html < Formula
   depends_on "netpbm"
 
   def install
-    system ".configure", "--prefix=#{prefix}",
+    system "./configure", "--prefix=#{prefix}",
                           "--without-mktexlsr",
-                          "--with-texpath=#{share}texmftexlatexhtml"
+                          "--with-texpath=#{share}/texmf/tex/latex/html"
     system "make", "install"
   end
 
   test do
-    (testpath"test.tex").write <<~'TEX'
+    (testpath/"test.tex").write <<~'TEX'
       \documentclass{article}
       \usepackage[utf8]{inputenc}
       \title{Experimental Setup}
@@ -40,7 +40,7 @@ class Latex2html < Formula
       \maketitle
       \end{document}
     TEX
-    system bin"latex2html", "test.tex"
-    assert_match "Experimental Setup", File.read("testtest.html")
+    system bin/"latex2html", "test.tex"
+    assert_match "Experimental Setup", File.read("test/test.html")
   end
 end

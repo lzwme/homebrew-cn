@@ -1,13 +1,13 @@
 class BibTool < Formula
   desc "Manipulates BibTeX databases"
-  homepage "https:www.gerd-neugebauer.desoftwareTeXBibToolen"
-  url "https:github.comge-nebibtoolreleasesdownloadBibTool_2_68BibTool-2.68.tar.gz"
+  homepage "https://www.gerd-neugebauer.de/software/TeX/BibTool/en/"
+  url "https://ghfast.top/https://github.com/ge-ne/bibtool/releases/download/BibTool_2_68/BibTool-2.68.tar.gz"
   sha256 "e1964d199b0726f431f9a1dc4ff7257bb3dba879b9fa221803e0aa7840dee0e0"
   license "GPL-2.0-or-later"
 
   livecheck do
     url :stable
-    regex(^BibTool[._-]v?(\d+(?:[._-]\d+)+)$i)
+    regex(/^BibTool[._-]v?(\d+(?:[._-]\d+)+)$/i)
     strategy :git do |tags, regex|
       tags.map { |tag| tag[regex, 1]&.tr("_", ".") }
     end
@@ -33,13 +33,13 @@ class BibTool < Formula
   end
 
   def install
-    system ".configure", "--prefix=#{prefix}", "--without-kpathsea"
+    system "./configure", "--prefix=#{prefix}", "--without-kpathsea"
     system "make"
     system "make", "install"
   end
 
   test do
-    (testpath"test.bib").write <<~BIBTEX
+    (testpath/"test.bib").write <<~BIBTEX
       @article{Homebrew,
           title   = {Something},
           author  = {Someone},
@@ -50,6 +50,6 @@ class BibTool < Formula
       }
     BIBTEX
 
-    system bin"bibtool", "test.bib"
+    system bin/"bibtool", "test.bib"
   end
 end

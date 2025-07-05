@@ -1,10 +1,10 @@
 class Trash < Formula
   desc "CLI tool that moves files or folder to the trash"
-  homepage "https:hasseg.orgtrash"
-  url "https:github.comali-rantakaritrasharchiverefstagsv0.9.2.tar.gz"
+  homepage "https://hasseg.org/trash/"
+  url "https://ghfast.top/https://github.com/ali-rantakari/trash/archive/refs/tags/v0.9.2.tar.gz"
   sha256 "e8739c93d710ac4da721e16878e7693019d3a2ad7d8acd817f41426601610083"
   license "MIT"
-  head "https:github.comali-rantakaritrash.git", branch: "master"
+  head "https://github.com/ali-rantakari/trash.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -33,7 +33,7 @@ class Trash < Formula
   conflicts_with "trash-cli", because: "both install a `trash` binary"
 
   def install
-    # https:github.comali-rantakaritrashissues43
+    # https://github.com/ali-rantakari/trash/issues/43
     inreplace "Makefile", "-force_cpusubtype_ALL", ""
 
     system "make"
@@ -43,6 +43,6 @@ class Trash < Formula
   end
 
   test do
-    system bin"trash"
+    system bin/"trash"
   end
 end

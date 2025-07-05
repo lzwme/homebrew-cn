@@ -1,14 +1,14 @@
 class Libtrng < Formula
   desc "Tina's Random Number Generator Library"
-  homepage "https:www.numbercrunch.detrng"
-  url "https:github.comrabauketrng4archiverefstagsv4.27.tar.gz"
+  homepage "https://www.numbercrunch.de/trng/"
+  url "https://ghfast.top/https://github.com/rabauke/trng4/archive/refs/tags/v4.27.tar.gz"
   sha256 "5d04cc66b7163c869c061c1155e47fe6d54d9a7f1c1fcc0fddecb9269b66a3de"
   license "BSD-3-Clause"
-  head "https:github.comrabauketrng4.git", branch: "master"
+  head "https://github.com/rabauke/trng4.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -36,9 +36,9 @@ class Libtrng < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~CPP
-      #include <trngyarn2.hpp>
-      #include <trngnormal_dist.hpp>
+    (testpath/"test.cpp").write <<~CPP
+      #include <trng/yarn2.hpp>
+      #include <trng/normal_dist.hpp>
       int main()
       {
         trng::yarn2 R;
@@ -48,6 +48,6 @@ class Libtrng < Formula
       }
     CPP
     system ENV.cxx, "-std=c++11", "test.cpp", "-o", "test", "-I#{include}", "-L#{lib}", "-ltrng4"
-    system ".test"
+    system "./test"
   end
 end

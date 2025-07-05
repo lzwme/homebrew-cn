@@ -1,7 +1,7 @@
 class Gurk < Formula
   desc "Signal Messenger client for terminal"
-  homepage "https:github.comboxdotgurk-rs"
-  url "https:github.comboxdotgurk-rsarchiverefstagsv0.7.1.tar.gz"
+  homepage "https://github.com/boxdot/gurk-rs"
+  url "https://ghfast.top/https://github.com/boxdot/gurk-rs/archive/refs/tags/v0.7.1.tar.gz"
   sha256 "e86e6e0938439ac84af5b1f08a99810f0e632c60c63ba58e566181ffd2578874"
   license "AGPL-3.0-only"
 
@@ -29,13 +29,13 @@ class Gurk < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}gurk --version")
+    assert_match version.to_s, shell_output("#{bin}/gurk --version")
 
     return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
 
     begin
-      output_log = testpath"output.log"
-      pid = spawn bin"gurk", "--relink", [:out, :err] => output_log.to_s
+      output_log = testpath/"output.log"
+      pid = spawn bin/"gurk", "--relink", [:out, :err] => output_log.to_s
       sleep 2
       assert_match "Please enter your display name", output_log.read
     ensure

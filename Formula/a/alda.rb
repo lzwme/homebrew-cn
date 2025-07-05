@@ -1,7 +1,7 @@
 class Alda < Formula
   desc "Music programming language for musicians"
-  homepage "https:alda.io"
-  url "https:github.comalda-langaldaarchiverefstagsrelease-2.3.2.tar.gz"
+  homepage "https://alda.io"
+  url "https://ghfast.top/https://github.com/alda-lang/alda/archive/refs/tags/release-2.3.2.tar.gz"
   sha256 "1dc4ad595a14a6c5a2f93dc30f2c340f68a9353bf2f8eaa5ec285b622a33260d"
   license "EPL-2.0"
 
@@ -26,14 +26,14 @@ class Alda < Formula
     end
     cd "player" do
       system "gradle", "build"
-      libexec.install "buildlibsalda-player-fat.jar"
-      bin.write_jar_script libexec"alda-player-fat.jar", "alda-player"
+      libexec.install "build/libs/alda-player-fat.jar"
+      bin.write_jar_script libexec/"alda-player-fat.jar", "alda-player"
     end
   end
 
   test do
-    (testpath"hello.alda").write "piano: c8 d e f g f e d c2."
-    json_output = JSON.parse(shell_output("#{bin}alda parse -f hello.alda 2>devnull"))
+    (testpath/"hello.alda").write "piano: c8 d e f g f e d c2."
+    json_output = JSON.parse(shell_output("#{bin}/alda parse -f hello.alda 2>/dev/null"))
     midi_notes = json_output["events"].map { |event| event["midi-note"] }
     assert_equal [60, 62, 64, 65, 67, 65, 64, 62, 60], midi_notes
   end

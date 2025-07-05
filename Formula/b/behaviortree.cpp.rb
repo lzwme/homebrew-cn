@@ -1,7 +1,7 @@
 class BehaviortreeCpp < Formula
   desc "Behavior Trees Library in C++"
-  homepage "https:www.behaviortree.dev"
-  url "https:github.comBehaviorTreeBehaviorTree.CPParchiverefstags4.7.2.tar.gz"
+  homepage "https://www.behaviortree.dev/"
+  url "https://ghfast.top/https://github.com/BehaviorTree/BehaviorTree.CPP/archive/refs/tags/4.7.2.tar.gz"
   sha256 "fa52bfd1f23a65ecf7da887b565213441a3628dab85179329d4731a6d273ebd5"
   license "MIT"
 
@@ -34,8 +34,8 @@ class BehaviortreeCpp < Formula
   end
 
   test do
-    cp pkgshare"examplest03_generic_ports.cpp", testpath"test.cpp"
+    cp pkgshare/"examples/t03_generic_ports.cpp", testpath/"test.cpp"
     system ENV.cxx, "-std=c++17", "test.cpp", "-L#{lib}", "-lbehaviortree_cpp", "-o", "test"
-    assert_match "Target positions: [ -1.0, 3.0 ]", shell_output(".test")
+    assert_match "Target positions: [ -1.0, 3.0 ]", shell_output("./test")
   end
 end

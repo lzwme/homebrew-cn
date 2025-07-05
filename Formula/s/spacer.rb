@@ -1,7 +1,7 @@
 class Spacer < Formula
   desc "Small command-line utility for adding spacers to command output"
-  homepage "https:github.comsamwhospacer"
-  url "https:github.comsamwhospacerarchiverefstagsv0.3.9.tar.gz"
+  homepage "https://github.com/samwho/spacer"
+  url "https://ghfast.top/https://github.com/samwho/spacer/archive/refs/tags/v0.3.9.tar.gz"
   sha256 "5bbb11699b59f81f74236e1b68ae090dbce5344cda9e386c117747f87d12dd78"
   license "MIT"
 
@@ -22,14 +22,14 @@ class Spacer < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}spacer --version").chomp
+    assert_match version.to_s, shell_output("#{bin}/spacer --version").chomp
     date = shell_output("date +'%Y-%m-%d'").chomp
     spacer_in = shell_output(
       "i=0
       while [ $i -le 2 ];
         do echo $i; sleep 1
         i=$(( i + 1 ))
-      done | #{bin}spacer --after 0.5",
+      done | #{bin}/spacer --after 0.5",
     ).chomp
     assert_includes spacer_in, date
   end

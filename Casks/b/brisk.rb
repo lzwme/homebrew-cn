@@ -2,13 +2,13 @@ cask "brisk" do
   version "1.2.0"
   sha256 "1ad1da10a3bb2b31af88bc19b6f5b3a018de63e922f632fbdcd7a5e626b96601"
 
-  url "https:github.combr1skbriskreleasesdownload#{version}Brisk.app.tar.gz"
+  url "https://ghfast.top/https://github.com/br1sk/brisk/releases/download/#{version}/Brisk.app.tar.gz"
   name "Brisk"
   desc "App for submitting radars"
-  homepage "https:github.combr1skbrisk"
+  homepage "https://github.com/br1sk/brisk"
 
   livecheck do
-    url "https:raw.githubusercontent.combr1skbriskmasterappcast.xml"
+    url "https://ghfast.top/https://raw.githubusercontent.com/br1sk/brisk/master/appcast.xml"
     strategy :sparkle
   end
 
@@ -19,10 +19,10 @@ cask "brisk" do
   app "Brisk.app"
 
   zap trash: [
-    "~LibraryApplication SupportBlisk",
-    "~LibraryCachesBlisk",
-    "~LibraryPreferencesorg.blisk.Blisk.plist",
-    "~LibrarySaved Application Stateorg.blisk.Blisk.savedState",
+    "~/Library/Application Support/Blisk",
+    "~/Library/Caches/Blisk",
+    "~/Library/Preferences/org.blisk.Blisk.plist",
+    "~/Library/Saved Application State/org.blisk.Blisk.savedState",
   ]
 
   caveats do

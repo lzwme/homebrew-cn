@@ -1,11 +1,11 @@
 class Libsass < Formula
   desc "C implementation of a Sass compiler"
-  homepage "https:github.comsasslibsass"
-  url "https:github.comsasslibsass.git",
+  homepage "https://github.com/sass/libsass"
+  url "https://github.com/sass/libsass.git",
       tag:      "3.6.6",
       revision: "7037f03fabeb2b18b5efa84403f5a6d7a990f460"
   license "MIT"
-  head "https:github.comsasslibsass.git", branch: "master"
+  head "https://github.com/sass/libsass.git", branch: "master"
 
   livecheck do
     url :stable
@@ -33,14 +33,14 @@ class Libsass < Formula
   def install
     ENV.cxx11
     system "autoreconf", "--force", "--install", "--verbose"
-    system ".configure", "--disable-silent-rules", *std_configure_args
+    system "./configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
   end
 
   test do
     # This will need to be updated when devel = stable due to API changes.
-    (testpath"test.c").write <<~C
-      #include <sasscontext.h>
+    (testpath/"test.c").write <<~C
+      #include <sass/context.h>
       #include <string.h>
 
       int main()
@@ -62,6 +62,6 @@ class Libsass < Formula
       }
     C
     system ENV.cc, "-o", "test", "test.c", "-L#{lib}", "-lsass"
-    system ".test"
+    system "./test"
   end
 end

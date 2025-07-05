@@ -1,10 +1,10 @@
 class Hercules < Formula
-  desc "System370, ESA390 and zArchitecture Emulator"
-  homepage "https:sdl-hercules-390.github.iohtml"
-  url "https:github.comSDL-Hercules-390hyperionarchiverefstagsRelease_4.8.tar.gz"
+  desc "System/370, ESA/390 and z/Architecture Emulator"
+  homepage "https://sdl-hercules-390.github.io/html/"
+  url "https://ghfast.top/https://github.com/SDL-Hercules-390/hyperion/archive/refs/tags/Release_4.8.tar.gz"
   sha256 "91ac45a1cce8196f32a7d7918db6f935c29a891cd0baedeec70f9290bce91de9"
   license "QPL-1.0"
-  head "https:github.comSDL-Hercules-390hyperion.git", branch: "master"
+  head "https://github.com/SDL-Hercules-390/hyperion.git", branch: "master"
 
   bottle do
     sha256 arm64_sequoia: "99d22a70c57b1ef09d2af6f4f1f1836dac37bb9f6a5d4bbb516b78f902bdf770"
@@ -25,30 +25,30 @@ class Hercules < Formula
   uses_from_macos "zlib"
 
   resource "crypto" do
-    url "https:github.comSDL-Hercules-390cryptoarchivea5096e5dd79f46b568806240c0824cd8cb2fcda2.tar.gz"
+    url "https://ghfast.top/https://github.com/SDL-Hercules-390/crypto/archive/a5096e5dd79f46b568806240c0824cd8cb2fcda2.tar.gz"
     sha256 "78bda462d46c75ab4a92e7fd6755b648658851f5f1ac3f07423e55251bd83a8c"
   end
 
   resource "decNumber" do
-    url "https:github.comSDL-Hercules-390decNumberarchive3aa2f4531b5fcbd0478ecbaf72ccc47079c67280.tar.gz"
+    url "https://ghfast.top/https://github.com/SDL-Hercules-390/decNumber/archive/3aa2f4531b5fcbd0478ecbaf72ccc47079c67280.tar.gz"
     sha256 "527192832f191454b19da953d1f3324c11a4f01770ad2451c42dc6d638baca62"
   end
 
   resource "SoftFloat" do
-    url "https:github.comSDL-Hercules-390SoftFloatarchivec114c53e672d92671e0971cfbf8fe2bed3d5ae9e.tar.gz"
+    url "https://ghfast.top/https://github.com/SDL-Hercules-390/SoftFloat/archive/c114c53e672d92671e0971cfbf8fe2bed3d5ae9e.tar.gz"
     sha256 "3dfbd1c1dc2ee6b1dcc6d67fa831d0590982c28f518ef207363950125d36aa47"
   end
 
   resource "telnet" do
-    url "https:github.comSDL-Hercules-390telnetarchive729f0b688c1426018112c1e509f207fb5f266efa.tar.gz"
+    url "https://ghfast.top/https://github.com/SDL-Hercules-390/telnet/archive/729f0b688c1426018112c1e509f207fb5f266efa.tar.gz"
     sha256 "222bc9c5b56056b3fa4afdf4dd78ab1c87673c26c725309b1b3a6fd3e0e88d51"
   end
 
   def install
     resources.each do |r|
-      resource_prefix = buildpathr.name
+      resource_prefix = buildpath/r.name
       rm_r(resource_prefix)
-      build_dir = buildpath"#{r.name}64.Release"
+      build_dir = buildpath/"#{r.name}64.Release"
 
       r.stage do
         system "cmake", "-S", ".", "-B", build_dir, *std_cmake_args(install_prefix: resource_prefix)
@@ -56,10 +56,10 @@ class Hercules < Formula
         system "cmake", "--install", build_dir
       end
 
-      (resource_prefix"libaarch64").install_symlink (resource_prefix"lib").children if Hardware::CPU.arm?
+      (resource_prefix/"lib/aarch64").install_symlink (resource_prefix/"lib").children if Hardware::CPU.arm?
     end
 
-    system ".configure", *std_configure_args,
+    system "./configure", *std_configure_args,
                           "--disable-silent-rules",
                           "--enable-optimization=no",
                           "--disable-getoptwrapper",
@@ -71,11 +71,11 @@ class Hercules < Formula
   end
 
   test do
-    (testpath"test00.ctl").write <<~EOS
+    (testpath/"test00.ctl").write <<~EOS
       TEST00 3390 10
       TEST.PDS EMPTY CYL 1 0 5 PO FB 80 6080
     EOS
 
-    system bin"dasdload", "test00.ctl", "test00.ckd"
+    system bin/"dasdload", "test00.ctl", "test00.ckd"
   end
 end

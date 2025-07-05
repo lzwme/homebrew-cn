@@ -1,7 +1,7 @@
 class Libre < Formula
-  desc "Toolkit library for asynchronous network IO with protocol stacks"
-  homepage "https:github.combaresipre"
-  url "https:github.combaresiprearchiverefstagsv3.23.0.tar.gz"
+  desc "Toolkit library for asynchronous network I/O with protocol stacks"
+  homepage "https://github.com/baresip/re"
+  url "https://ghfast.top/https://github.com/baresip/re/archive/refs/tags/v3.23.0.tar.gz"
   sha256 "94cdd17b4b177b9c764548ded24c74e7f4f5360ce60507bb1b5186b2a6cd3cbb"
   license "BSD-3-Clause"
 
@@ -27,13 +27,13 @@ class Libre < Formula
   end
 
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include <stdint.h>
-      #include <rere.h>
+      #include <re/re.h>
       int main() {
         return libre_init();
       }
     C
-    system ENV.cc, "-I#{include}", "-I#{include}re", "test.c", "-L#{lib}", "-lre"
+    system ENV.cc, "-I#{include}", "-I#{include}/re", "test.c", "-L#{lib}", "-lre"
   end
 end

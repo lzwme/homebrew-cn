@@ -1,10 +1,10 @@
 class Pdfpc < Formula
   desc "Presenter console with multi-monitor support for PDF files"
-  homepage "https:pdfpc.github.io"
-  url "https:github.compdfpcpdfpcarchiverefstagsv4.7.0.tar.gz"
+  homepage "https://pdfpc.github.io/"
+  url "https://ghfast.top/https://github.com/pdfpc/pdfpc/archive/refs/tags/v4.7.0.tar.gz"
   sha256 "0083a958a2e9288a15c31aabb76b3eadf104672b4e815017f31ffa0d87db02ec"
   license "GPL-3.0-or-later"
-  head "https:github.compdfpcpdfpc.git", branch: "master"
+  head "https://github.com/pdfpc/pdfpc.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -59,6 +59,6 @@ class Pdfpc < Formula
     # Gtk-WARNING **: 00:25:01.545: cannot open display
     return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"].present?
 
-    system bin"pdfpc", "--version"
+    system bin/"pdfpc", "--version"
   end
 end

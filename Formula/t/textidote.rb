@@ -1,10 +1,10 @@
 class Textidote < Formula
   desc "Spelling, grammar and style checking on LaTeX documents"
-  homepage "https:sylvainhalle.github.iotextidote"
-  url "https:github.comsylvainhalletextidotearchiverefstagsv0.8.3.tar.gz"
+  homepage "https://sylvainhalle.github.io/textidote"
+  url "https://ghfast.top/https://github.com/sylvainhalle/textidote/archive/refs/tags/v0.8.3.tar.gz"
   sha256 "8c55d6f6f35d51fb5b84e7dcc86a4041e06b3f92d6a919023dc332ba2effd584"
   license "GPL-3.0-or-later"
-  head "https:github.comsylvainhalletextidote.git", branch: "master"
+  head "https://github.com/sylvainhalle/textidote.git", branch: "master"
 
   livecheck do
     url :stable
@@ -35,35 +35,35 @@ class Textidote < Formula
     # Install the JAR + a wrapper script
     libexec.install "textidote.jar"
     # Fix run with `openjdk` 24.
-    # Reported upstream at https:github.comsylvainhalletextidoteissues265.
-    bin.write_jar_script libexec"textidote.jar", "textidote", "-Djdk.xml.totalEntitySizeLimit=50000000"
+    # Reported upstream at https://github.com/sylvainhalle/textidote/issues/265.
+    bin.write_jar_script libexec/"textidote.jar", "textidote", "-Djdk.xml.totalEntitySizeLimit=50000000"
 
-    bash_completion.install "Completionstextidote.bash" => "textidote"
-    zsh_completion.install "Completionstextidote.zsh" => "_textidote"
+    bash_completion.install "Completions/textidote.bash" => "textidote"
+    zsh_completion.install "Completions/textidote.zsh" => "_textidote"
   end
 
   test do
-    output = shell_output("#{bin}textidote --version")
+    output = shell_output("#{bin}/textidote --version")
     assert_match "TeXtidote", output
 
-    (testpath"test1.tex").write <<~'TEX'
+    (testpath/"test1.tex").write <<~'TEX'
       \documentclass{article}
       \begin{document}
         This should fails.
       \end{document}
     TEX
 
-    output = shell_output("#{bin}textidote --check en #{testpath}test1.tex", 1)
+    output = shell_output("#{bin}/textidote --check en #{testpath}/test1.tex", 1)
     assert_match "The modal verb 'should' requires the verb's base form..", output
 
-    (testpath"test2.tex").write <<~'TEX'
+    (testpath/"test2.tex").write <<~'TEX'
       \documentclass{article}
       \begin{document}
         This should work.
       \end{document}
     TEX
 
-    output = shell_output("#{bin}textidote --check en #{testpath}test2.tex")
+    output = shell_output("#{bin}/textidote --check en #{testpath}/test2.tex")
     assert_match "Everything is OK!", output
   end
 end

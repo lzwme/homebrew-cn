@@ -5,11 +5,11 @@ cask "ganttproject" do
   sha256 arm:   "fd5f8941b73bec53f1f08ef5696480a22f872fc2a098b6aef2defa99817bce25",
          intel: "0bb0e3af5b1e3627ea8cc5f4c33ec84d6829aa682b118369039fbaf95ab4f096"
 
-  url "https:github.combardsoftwareganttprojectreleasesdownloadganttproject-#{version}ganttproject-#{version}-#{arch}.dmg",
-      verified: "github.combardsoftwareganttproject"
+  url "https://ghfast.top/https://github.com/bardsoftware/ganttproject/releases/download/ganttproject-#{version}/ganttproject-#{version}-#{arch}.dmg",
+      verified: "github.com/bardsoftware/ganttproject/"
   name "GanttProject"
   desc "Gantt chart and project management application"
-  homepage "https:www.ganttproject.biz"
+  homepage "https://www.ganttproject.biz/"
 
   livecheck do
     url :url
@@ -21,8 +21,8 @@ cask "ganttproject" do
   app "GanttProject.app"
 
   zap trash: [
-    "~.ganttproject",
-    "~.ganttproject.d",
-    "~LibraryPreferencescom.bardsoftware.ganttproject.plist",
+    "~/.ganttproject",
+    "~/.ganttproject.d",
+    "~/Library/Preferences/com.bardsoftware.ganttproject.plist",
   ]
 end

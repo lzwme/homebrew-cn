@@ -1,7 +1,7 @@
 class Pdfcpu < Formula
   desc "PDF processor written in Go"
-  homepage "https:pdfcpu.io"
-  url "https:github.compdfcpupdfcpuarchiverefstagsv0.11.0.tar.gz"
+  homepage "https://pdfcpu.io"
+  url "https://ghfast.top/https://github.com/pdfcpu/pdfcpu/archive/refs/tags/v0.11.0.tar.gz"
   sha256 "16e6e4fbcf809f9d737d8931c267220e5e4cb00fbce793eeaa4501193b954c55"
   license "Apache-2.0"
 
@@ -20,18 +20,18 @@ class Pdfcpu < Formula
     ldflags = %W[
       -s -w
       -X main.version=#{version}
-      -X github.compdfcpupdfcpupkgpdfcpu.VersionStr=#{version}
+      -X github.com/pdfcpu/pdfcpu/pkg/pdfcpu.VersionStr=#{version}
       -X main.commit=#{tap.user}
       -X main.date=#{time.iso8601}
     ]
-    system "go", "build", *std_go_args(ldflags:), ".cmdpdfcpu"
+    system "go", "build", *std_go_args(ldflags:), "./cmd/pdfcpu"
   end
 
   test do
     config_file = if OS.mac?
-      testpath"LibraryApplication Supportpdfcpuconfig.yml"
+      testpath/"Library/Application Support/pdfcpu/config.yml"
     else
-      testpath".configpdfcpuconfig.yml"
+      testpath/".config/pdfcpu/config.yml"
     end
     # basic config.yml
     config_file.write <<~YAML
@@ -42,9 +42,9 @@ class Pdfcpu < Formula
       unit: points
     YAML
 
-    assert_match version.to_s, shell_output("#{bin}pdfcpu version")
+    assert_match version.to_s, shell_output("#{bin}/pdfcpu version")
 
-    info_output = shell_output("#{bin}pdfcpu info #{test_fixtures("test.pdf")}")
+    info_output = shell_output("#{bin}/pdfcpu info #{test_fixtures("test.pdf")}")
     assert_match <<~EOS, info_output
       #{test_fixtures("test.pdf")}:
                     Source: #{test_fixtures("test.pdf")}
@@ -53,6 +53,6 @@ class Pdfcpu < Formula
                 Page sizes: 500.00 x 800.00 points
     EOS
 
-    assert_match "validation ok", shell_output("#{bin}pdfcpu validate #{test_fixtures("test.pdf")}")
+    assert_match "validation ok", shell_output("#{bin}/pdfcpu validate #{test_fixtures("test.pdf")}")
   end
 end

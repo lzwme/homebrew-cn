@@ -1,13 +1,13 @@
 class Wal2json < Formula
   desc "Convert PostgreSQL changesets to JSON format"
-  homepage "https:github.comeulertowal2json"
-  url "https:github.comeulertowal2jsonarchiverefstagswal2json_2_6.tar.gz"
+  homepage "https://github.com/eulerto/wal2json"
+  url "https://ghfast.top/https://github.com/eulerto/wal2json/archive/refs/tags/wal2json_2_6.tar.gz"
   sha256 "18b4bdec28c74a8fc98a11c72de38378a760327ef8e5e42e975b0029eb96ba0d"
   license "BSD-3-Clause"
 
   livecheck do
     url :stable
-    regex((?:wal2json[._-])?v?(\d+(?:[._]\d+)+)i)
+    regex(/(?:wal2json[._-])?v?(\d+(?:[._]\d+)+)/i)
     strategy :github_latest
   end
 
@@ -34,8 +34,8 @@ class Wal2json < Formula
   def install
     postgresqls.each do |postgresql|
       system "make", "install", "USE_PGXS=1",
-                                "PG_CONFIG=#{postgresql.opt_bin}pg_config",
-                                "pkglibdir=#{libpostgresql.name}"
+                                "PG_CONFIG=#{postgresql.opt_bin}/pg_config",
+                                "pkglibdir=#{lib/postgresql.name}"
       system "make", "clean"
     end
   end
@@ -43,17 +43,17 @@ class Wal2json < Formula
   test do
     ENV["LC_ALL"] = "C"
     postgresqls.each do |postgresql|
-      pg_ctl = postgresql.opt_bin"pg_ctl"
+      pg_ctl = postgresql.opt_bin/"pg_ctl"
       port = free_port
 
-      datadir = testpathpostgresql.name
+      datadir = testpath/postgresql.name
       system pg_ctl, "initdb", "-D", datadir
-      (datadir"postgresql.conf").write <<~EOS, mode: "a+"
+      (datadir/"postgresql.conf").write <<~EOS, mode: "a+"
 
         shared_preload_libraries = 'wal2json'
         port = #{port}
       EOS
-      system pg_ctl, "start", "-D", datadir, "-l", testpath"log-#{postgresql.name}"
+      system pg_ctl, "start", "-D", datadir, "-l", testpath/"log-#{postgresql.name}"
       system pg_ctl, "stop", "-D", datadir
     end
   end

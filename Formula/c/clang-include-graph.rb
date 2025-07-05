@@ -1,10 +1,10 @@
 class ClangIncludeGraph < Formula
-  desc "Simple tool for visualizing and analyzing CC++ project include graph"
-  homepage "https:github.combkryzaclang-include-graph"
-  url "https:github.combkryzaclang-include-grapharchiverefstags0.2.0.tar.gz"
+  desc "Simple tool for visualizing and analyzing C/C++ project include graph"
+  homepage "https://github.com/bkryza/clang-include-graph"
+  url "https://ghfast.top/https://github.com/bkryza/clang-include-graph/archive/refs/tags/0.2.0.tar.gz"
   sha256 "174bbf961a2426030102bcf444eb2ca4ac10c05cfd5b993fef24bf4d492c420c"
   license "Apache-2.0"
-  head "https:github.combkryzaclang-include-graph.git", branch: "main"
+  head "https://github.com/bkryza/clang-include-graph.git", branch: "main"
 
   no_autobump! because: :requires_manual_review
 
@@ -25,7 +25,7 @@ class ClangIncludeGraph < Formula
 
   def llvm
     deps.map(&:to_formula)
-        .find { |f| f.name.match?(^llvm(@\d+)?$) }
+        .find { |f| f.name.match?(/^llvm(@\d+)?$/) }
   end
 
   def install
@@ -45,23 +45,23 @@ class ClangIncludeGraph < Formula
 
   test do
     # Check if clang-include-graph is linked properly
-    system bin"clang-include-graph", "--version"
-    system bin"clang-include-graph", "--help"
+    system bin/"clang-include-graph", "--version"
+    system bin/"clang-include-graph", "--help"
 
     # Initialize a minimal C++ CMake project and try to generate a
     # PlantUML diagram from it
-    (testpath"test.h").write <<~CPP
+    (testpath/"test.h").write <<~CPP
       #pragma once
       namespace A {
         struct AA { size_t s; };
       }
     CPP
-    (testpath"test.cc").write <<~CPP
+    (testpath/"test.cc").write <<~CPP
       #include "test.h"
       #include <stddef.h>
       int main(int argc, char** argv) { A::AA a; return 0; }
     CPP
-    (testpath"CMakeLists.txt").write <<~CMAKE
+    (testpath/"CMakeLists.txt").write <<~CMAKE
       cmake_minimum_required(VERSION 3.15)
 
       project(clang-include-graph-test CXX)
@@ -73,8 +73,8 @@ class ClangIncludeGraph < Formula
 
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
 
-    system bin"clang-include-graph", "-d", testpath"build", "--plantuml",
-      "--relative-to", testpath, "--relative-only", "--output", testpath"test.puml"
+    system bin/"clang-include-graph", "-d", testpath/"build", "--plantuml",
+      "--relative-to", testpath, "--relative-only", "--output", testpath/"test.puml"
 
     expected_output = Regexp.new(<<~EOS, Regexp::MULTILINE)
       @startuml
@@ -84,8 +84,8 @@ class ClangIncludeGraph < Formula
       @enduml
     EOS
 
-    assert_path_exists testpath"test.puml"
+    assert_path_exists testpath/"test.puml"
 
-    assert_match expected_output, (testpath"test.puml").read
+    assert_match expected_output, (testpath/"test.puml").read
   end
 end

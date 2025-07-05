@@ -1,7 +1,7 @@
 class Ncc < Formula
   desc "Compile a Node.js project into a single file"
-  homepage "https:github.comvercelncc"
-  url "https:registry.npmjs.org@vercelncc-ncc-0.38.3.tgz"
+  homepage "https://github.com/vercel/ncc"
+  url "https://registry.npmjs.org/@vercel/ncc/-/ncc-0.38.3.tgz"
   sha256 "c9f9d715af74152fd248220a43a2a09868fdab68f7438dd558bbb69aa487bb86"
   license "MIT"
 
@@ -13,11 +13,11 @@ class Ncc < Formula
 
   def install
     system "npm", "install", *std_npm_args
-    bin.install_symlink Dir["#{libexec}bin*"]
+    bin.install_symlink Dir["#{libexec}/bin/*"]
   end
 
   test do
-    (testpath"input.js").write <<~JS
+    (testpath/"input.js").write <<~JS
       function component() {
         const element = document.createElement('div');
         element.innerHTML = 'Hello' + ' ' + 'webpack';
@@ -27,7 +27,7 @@ class Ncc < Formula
       document.body.appendChild(component());
     JS
 
-    system bin"ncc", "build", "input.js", "-o", "dist"
-    assert_match "document.createElement", File.read("distindex.js")
+    system bin/"ncc", "build", "input.js", "-o", "dist"
+    assert_match "document.createElement", File.read("dist/index.js")
   end
 end

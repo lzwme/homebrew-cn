@@ -1,7 +1,7 @@
 class Zzuf < Formula
   desc "Transparent application input fuzzer"
-  homepage "http:caca.zoy.orgwikizzuf"
-  url "https:github.comsamhocevarzzufreleasesdownloadv0.15zzuf-0.15.tar.bz2"
+  homepage "http://caca.zoy.org/wiki/zzuf"
+  url "https://ghfast.top/https://github.com/samhocevar/zzuf/releases/download/v0.15/zzuf-0.15.tar.bz2"
   sha256 "04353d94c68391b3945199f100ab47fc5ff7815db1e92581a600d4175e3a6872"
   license "WTFPL"
 
@@ -27,7 +27,7 @@ class Zzuf < Formula
   end
 
   head do
-    url "https:github.comsamhocevarzzuf.git", branch: "master"
+    url "https://github.com/samhocevar/zzuf.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -36,18 +36,18 @@ class Zzuf < Formula
   end
 
   def install
-    system ".bootstrap" if build.head?
+    system "./bootstrap" if build.head?
 
     # Fix compile with newer Clang
     ENV.append_to_cflags "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1403
     ENV.append_to_cflags "-Wno-int-conversion" if DevelopmentTools.clang_build_version >= 1500
 
-    system ".configure", "--disable-silent-rules", *std_configure_args
+    system "./configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
   end
 
   test do
-    output = pipe_output("#{bin}zzuf -i -B 4194304 -r 0.271828 -s 314159 -m < devzero").chomp
+    output = pipe_output("#{bin}/zzuf -i -B 4194304 -r 0.271828 -s 314159 -m < /dev/zero").chomp
     assert_equal "zzuf[s=314159,r=0.271828]: 549e1200590e9c013e907039fe535f41", output
   end
 end

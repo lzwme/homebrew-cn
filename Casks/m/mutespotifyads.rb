@@ -2,9 +2,9 @@ cask "mutespotifyads" do
   version "1.11.2"
   sha256 "8285a957ee67918f0ca08b50e183717a89ec689b502155b08acb6cd913eb9dff"
 
-  url "https:github.comsimonmeuselMuteSpotifyAdsreleasesdownloadv#{version}MuteSpotifyAds.app.zip"
+  url "https://ghfast.top/https://github.com/simonmeusel/MuteSpotifyAds/releases/download/v#{version}/MuteSpotifyAds.app.zip"
   name "MuteSpotifyAds"
-  homepage "https:github.comsimonmeuselMuteSpotifyAds"
+  homepage "https://github.com/simonmeusel/MuteSpotifyAds"
 
   no_autobump! because: :requires_manual_review
 
@@ -14,5 +14,5 @@ cask "mutespotifyads" do
 
   app "MuteSpotifyAds.app"
 
-  zap trash: "~LibrarySyncedPreferencesde.simonmeusel.MuteSpotifyAds.plist"
+  zap trash: "~/Library/SyncedPreferences/de.simonmeusel.MuteSpotifyAds.plist"
 end

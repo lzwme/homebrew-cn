@@ -2,14 +2,14 @@ cask "radio-silence" do
   version "3.3"
   sha256 "8641185630145365408de24b12ca8307b817c4b51d8f32b267904dcfd16a06de"
 
-  url "https:radiosilenceapp.comdownloadsRadio_Silence_#{version}.pkg"
+  url "https://radiosilenceapp.com/downloads/Radio_Silence_#{version}.pkg"
   name "Radio Silence"
   desc "Network monitor and firewall"
-  homepage "https:radiosilenceapp.com"
+  homepage "https://radiosilenceapp.com/"
 
   livecheck do
-    url "https:radiosilenceapp.comupdate"
-    regex(%r{href=.*?Radio_Silence_(\d+(?:\.\d+)*)\.pkg}i)
+    url "https://radiosilenceapp.com/update"
+    regex(%r{href=.*?/Radio_Silence_(\d+(?:\.\d+)*)\.pkg}i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -17,10 +17,10 @@ cask "radio-silence" do
   pkg "Radio_Silence_#{version}.pkg"
 
   # We intentionally unload the kext twice as a workaround
-  # See https:github.comHomebrewhomebrew-caskpull1802#issuecomment-34171151
+  # See https://github.com/Homebrew/homebrew-cask/pull/1802#issuecomment-34171151
 
   uninstall early_script: {
-              executable:   "sbinkextunload",
+              executable:   "/sbin/kextunload",
               args:         ["-b", "com.radiosilenceapp.nke.filter"],
               must_succeed: false,
             },
@@ -33,5 +33,5 @@ cask "radio-silence" do
             kext:         "com.radiosilenceapp.nke.filter",
             pkgutil:      "com.radiosilenceapp.*"
 
-  zap trash: "~LibraryApplication SupportRadio Silence"
+  zap trash: "~/Library/Application Support/Radio Silence"
 end

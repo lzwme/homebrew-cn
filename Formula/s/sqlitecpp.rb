@@ -1,7 +1,7 @@
 class Sqlitecpp < Formula
   desc "Smart and easy to use C++ SQLite3 wrapper"
-  homepage "https:srombauts.github.ioSQLiteCpp"
-  url "https:github.comSRombautsSQLiteCpparchiverefstags3.3.3.tar.gz"
+  homepage "https://srombauts.github.io/SQLiteCpp/"
+  url "https://ghfast.top/https://github.com/SRombauts/SQLiteCpp/archive/refs/tags/3.3.3.tar.gz"
   sha256 "33bd4372d83bc43117928ee842be64d05e7807f511b5195f85d30015cad9cac6"
   license "MIT"
 
@@ -27,11 +27,11 @@ class Sqlitecpp < Formula
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 
-    (pkgshare"example").install "examplesexample2srcmain.cpp"
+    (pkgshare/"example").install "examples/example2/src/main.cpp"
   end
 
   test do
-    system ENV.cxx, "-std=c++11", pkgshare"examplemain.cpp", "-o", "test", "-L#{lib}", "-lSQLiteCpp"
-    system ".test"
+    system ENV.cxx, "-std=c++11", pkgshare/"example/main.cpp", "-o", "test", "-L#{lib}", "-lSQLiteCpp"
+    system "./test"
   end
 end

@@ -5,11 +5,11 @@ cask "bluebubbles" do
   sha256 arm:   "fafd650c883f52e7494a6625e45249f2144d197378a4d57143ccf6198bb2e862",
          intel: "9681e65f60214a6a95f3bd12b57bd4cc8ad6d8f58cd9c1d8811b2a4606ad7c04"
 
-  url "https:github.comBlueBubblesAppbluebubbles-serverreleasesdownloadv#{version}BlueBubbles-#{version}#{arch}.dmg",
-      verified: "github.comBlueBubblesAppbluebubbles-server"
+  url "https://ghfast.top/https://github.com/BlueBubblesApp/bluebubbles-server/releases/download/v#{version}/BlueBubbles-#{version}#{arch}.dmg",
+      verified: "github.com/BlueBubblesApp/bluebubbles-server/"
   name "BlueBubbles"
   desc "Server for forwarding iMessages"
-  homepage "https:bluebubbles.app"
+  homepage "https://bluebubbles.app/"
 
   livecheck do
     url :url
@@ -34,11 +34,11 @@ cask "bluebubbles" do
             login_item: "BlueBubbles"
 
   zap trash: [
-    "~LibraryApplication Support@bluebubbles",
-    "~LibraryApplication Supportbluebubbles-server",
-    "~LibraryLogs@bluebubbles",
-    "~LibraryLogsbluebubbles-server",
-    "~LibraryPreferencescom.BlueBubbles.BlueBubbles-Server.plist",
-    "~LibrarySaved Application Statecom.BlueBubbles.BlueBubbles-Server.savedState",
+    "~/Library/Application Support/@bluebubbles",
+    "~/Library/Application Support/bluebubbles-server",
+    "~/Library/Logs/@bluebubbles",
+    "~/Library/Logs/bluebubbles-server",
+    "~/Library/Preferences/com.BlueBubbles.BlueBubbles-Server.plist",
+    "~/Library/Saved Application State/com.BlueBubbles.BlueBubbles-Server.savedState",
   ]
 end

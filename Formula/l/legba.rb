@@ -1,10 +1,10 @@
 class Legba < Formula
-  desc "Multiprotocol credentials bruteforcerpassword sprayer and enumerator"
-  homepage "https:github.comevilsocketlegba"
-  url "https:github.comevilsocketlegbaarchiverefstagsv0.11.0.tar.gz"
+  desc "Multiprotocol credentials bruteforcer/password sprayer and enumerator"
+  homepage "https://github.com/evilsocket/legba"
+  url "https://ghfast.top/https://github.com/evilsocket/legba/archive/refs/tags/v0.11.0.tar.gz"
   sha256 "c5e0cf14d372792ac99d692894d407911106b97f1307494bfa68e791ef2273c7"
   license "AGPL-3.0-only"
-  head "https:github.comevilsocketlegba.git", branch: "main"
+  head "https://github.com/evilsocket/legba.git", branch: "main"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "546c0cfae3b2ccf6ad22072dd561490c38959ca611c7f76996d1001975f3a850"
@@ -29,13 +29,13 @@ class Legba < Formula
 
     system "cargo", "install", *std_cargo_args
 
-    generate_completions_from_executable(bin"legba", "--generate-completions")
+    generate_completions_from_executable(bin/"legba", "--generate-completions")
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}legba --version")
+    assert_match version.to_s, shell_output("#{bin}/legba --version")
 
-    output = shell_output("#{bin}legba --list-plugins")
+    output = shell_output("#{bin}/legba --list-plugins")
     assert_match "Samba password authentication", output
   end
 end

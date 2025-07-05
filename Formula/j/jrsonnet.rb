@@ -1,14 +1,14 @@
 class Jrsonnet < Formula
   desc "Rust implementation of Jsonnet language"
-  homepage "https:github.comCertainLachjrsonnet"
-  url "https:github.comCertainLachjrsonnetarchiverefstagsv0.4.2.tar.gz"
+  homepage "https://github.com/CertainLach/jrsonnet"
+  url "https://ghfast.top/https://github.com/CertainLach/jrsonnet/archive/refs/tags/v0.4.2.tar.gz"
   sha256 "2396c57a49a20db99da17b8ddd1b0b283f1a6e7c5ae1dc94823e7503cbb6ce3f"
   license "MIT"
-  head "https:github.comCertainLachjrsonnet.git", branch: "master"
+  head "https://github.com/CertainLach/jrsonnet.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -32,15 +32,15 @@ class Jrsonnet < Formula
   depends_on "rust" => :build
 
   def install
-    system "cargo", "install", *std_cargo_args(path: "cmdsjrsonnet")
+    system "cargo", "install", *std_cargo_args(path: "cmds/jrsonnet")
     if build.head?
-      generate_completions_from_executable(bin"jrsonnet", "generate")
+      generate_completions_from_executable(bin/"jrsonnet", "generate")
     else
-      generate_completions_from_executable(bin"jrsonnet", "-", "--generate")
+      generate_completions_from_executable(bin/"jrsonnet", "-", "--generate")
     end
   end
 
   test do
-    assert_equal "2\n", shell_output("#{bin}jrsonnet -e '({ x: 1, y: self.x } { x: 2 }).y'")
+    assert_equal "2\n", shell_output("#{bin}/jrsonnet -e '({ x: 1, y: self.x } { x: 2 }).y'")
   end
 end

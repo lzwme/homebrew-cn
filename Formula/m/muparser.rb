@@ -1,11 +1,11 @@
 class Muparser < Formula
   desc "C++ math expression parser library"
-  homepage "https:github.combeltoforionmuparser"
-  url "https:github.combeltoforionmuparserarchiverefstagsv2.3.5.tar.gz"
+  homepage "https://github.com/beltoforion/muparser"
+  url "https://ghfast.top/https://github.com/beltoforion/muparser/archive/refs/tags/v2.3.5.tar.gz"
   sha256 "20b43cc68c655665db83711906f01b20c51909368973116dfc8d7b3c4ddb5dd4"
   license "BSD-2-Clause"
   revision 1
-  head "https:github.combeltoforionmuparser.git", branch: "master"
+  head "https://github.com/beltoforion/muparser.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "b9dd0fef93be805c1e9d38e0a65f780482e4f31600e2ca06de03117961482515"
@@ -32,7 +32,7 @@ class Muparser < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~CPP
+    (testpath/"test.cpp").write <<~CPP
       #include <iostream>
       #include <muParser.h>
 
@@ -52,7 +52,7 @@ class Muparser < Formula
 
           for (std::size_t a=0; a<100; ++a)
           {
-            fVal = a;   Change value of variable a
+            fVal = a;  // Change value of variable a
             std::cout << p.Eval() << std::endl;
           }
         } catch (Parser::exception_type &e) {
@@ -64,6 +64,6 @@ class Muparser < Formula
     CPP
 
     system ENV.cxx, "-std=c++11", "test.cpp", "-o", "test", "-I#{include}", "-L#{lib}", "-lmuparser"
-    system ".test"
+    system "./test"
   end
 end

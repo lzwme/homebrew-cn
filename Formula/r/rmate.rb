@@ -1,10 +1,10 @@
 class Rmate < Formula
   desc "Edit files from an SSH session in TextMate"
-  homepage "https:github.comtextmatermate"
-  url "https:github.comtextmatermatearchiverefstagsv1.5.8.tar.gz"
+  homepage "https://github.com/textmate/rmate"
+  url "https://ghfast.top/https://github.com/textmate/rmate/archive/refs/tags/v1.5.8.tar.gz"
   sha256 "40be07ae251bfa47b408eb56395dd2385d8e9ea220a19efd5145593cd8cbd89c"
   license "MIT"
-  head "https:github.comtextmatermate.git", branch: "master"
+  head "https://github.com/textmate/rmate.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -16,10 +16,10 @@ class Rmate < Formula
   uses_from_macos "ruby"
 
   def install
-    bin.install "binrmate"
+    bin.install "bin/rmate"
   end
 
   test do
-    system bin"rmate", "--version"
+    system bin/"rmate", "--version"
   end
 end

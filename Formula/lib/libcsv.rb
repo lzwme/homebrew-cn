@@ -1,7 +1,7 @@
 class Libcsv < Formula
   desc "CSV library in ANSI C89"
-  homepage "https:sourceforge.netprojectslibcsv"
-  url "https:downloads.sourceforge.netprojectlibcsvlibcsvlibcsv-3.0.3libcsv-3.0.3.tar.gz"
+  homepage "https://sourceforge.net/projects/libcsv/"
+  url "https://downloads.sourceforge.net/project/libcsv/libcsv/libcsv-3.0.3/libcsv-3.0.3.tar.gz"
   sha256 "d9c0431cb803ceb9896ce74f683e6e5a0954e96ae1d9e4028d6e0f967bebd7e4"
   license "LGPL-2.1-or-later"
 
@@ -29,7 +29,7 @@ class Libcsv < Formula
 
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
-    url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-pre-0.4.2.418-big_sur.diff"
+    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-pre-0.4.2.418-big_sur.diff"
     sha256 "83af02f2aa2b746bb7225872cab29a253264be49db0ecebb12f841562d9a2923"
   end
 
@@ -38,12 +38,12 @@ class Libcsv < Formula
     # Help old config scripts identify arm64 linux
     args << "--build=aarch64-unknown-linux-gnu" if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
 
-    system ".configure", *args, *std_configure_args
+    system "./configure", *args, *std_configure_args
     system "make", "install"
   end
 
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include <csv.h>
       int main(void) {
         struct csv_parser p;
@@ -51,6 +51,6 @@ class Libcsv < Formula
       }
     C
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lcsv", "-o", "test"
-    system ".test"
+    system "./test"
   end
 end

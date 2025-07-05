@@ -1,10 +1,10 @@
 class Nudoku < Formula
   desc "Ncurses based sudoku game"
-  homepage "https:jubalh.github.ionudoku"
-  url "https:github.comjubalhnudokuarchiverefstags5.0.0.tar.gz"
+  homepage "https://jubalh.github.io/nudoku/"
+  url "https://ghfast.top/https://github.com/jubalh/nudoku/archive/refs/tags/5.0.0.tar.gz"
   sha256 "ba60a99c9832b5c950a00a0a9d1e0938fddf2cef32765bca18041e770afc3c4a"
   license "GPL-3.0-or-later"
-  head "https:github.comjubalhnudoku.git", branch: "master"
+  head "https://github.com/jubalh/nudoku.git", branch: "master"
 
   bottle do
     sha256 arm64_sequoia:  "f829eb3b002dc33ea48c3d58926a3ca3c5a0378941ce0b587737d4ed1a11a100"
@@ -28,13 +28,13 @@ class Nudoku < Formula
 
   def install
     system "autoreconf", "--force", "--install", "--verbose"
-    system ".configure", "--disable-silent-rules",
+    system "./configure", "--disable-silent-rules",
                           "--enable-cairo",
                           *std_configure_args
     system "make", "install"
   end
 
   test do
-    assert_match "nudoku version #{version}", shell_output("#{bin}nudoku -v")
+    assert_match "nudoku version #{version}", shell_output("#{bin}/nudoku -v")
   end
 end

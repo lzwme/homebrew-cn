@@ -1,10 +1,10 @@
 class Tflint < Formula
   desc "Linter for Terraform files"
-  homepage "https:github.comterraform-linterstflint"
-  url "https:github.comterraform-linterstflintarchiverefstagsv0.58.0.tar.gz"
+  homepage "https://github.com/terraform-linters/tflint"
+  url "https://ghfast.top/https://github.com/terraform-linters/tflint/archive/refs/tags/v0.58.0.tar.gz"
   sha256 "c65176cfc5d9c7291b1f240e469670bf222baf8fdf2b9b3555bf0b6fce74a4c7"
   license "MPL-2.0"
-  head "https:github.comterraform-linterstflint.git", branch: "master"
+  head "https://github.com/terraform-linters/tflint.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -24,13 +24,13 @@ class Tflint < Formula
   end
 
   test do
-    (testpath"test.tf").write <<~HCL
+    (testpath/"test.tf").write <<~HCL
       terraform {
         required_version = ">= 1.0"
 
         required_providers {
           aws = {
-            source = "hashicorpaws"
+            source = "hashicorp/aws"
             version = "~> 4"
           }
         }
@@ -42,7 +42,7 @@ class Tflint < Formula
     HCL
 
     # tflint returns exitstatus: 0 (no issues), 2 (errors occurred), 3 (no errors but issues found)
-    assert_empty shell_output("#{bin}tflint --filter=test.tf")
-    assert_match version.to_s, shell_output("#{bin}tflint --version")
+    assert_empty shell_output("#{bin}/tflint --filter=test.tf")
+    assert_match version.to_s, shell_output("#{bin}/tflint --version")
   end
 end

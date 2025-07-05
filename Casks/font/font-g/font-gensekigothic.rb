@@ -2,9 +2,9 @@ cask "font-gensekigothic" do
   version "2.100"
   sha256 "a1e4a7b1e60b206451336f3c0e224f2936310cdcdb85f54a7642baba7cdd6cdf"
 
-  url "https:github.comButTaiwangenseki-fontreleasesdownloadv#{version}GenSekiGothic#{version.major}-ttc.zip"
+  url "https://ghfast.top/https://github.com/ButTaiwan/genseki-font/releases/download/v#{version}/GenSekiGothic#{version.major}-ttc.zip"
   name "GenSekiGothic"
-  homepage "https:github.comButTaiwangenseki-font"
+  homepage "https://github.com/ButTaiwan/genseki-font"
 
   no_autobump! because: :requires_manual_review
 

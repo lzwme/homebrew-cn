@@ -1,16 +1,16 @@
 class Root < Formula
   desc "Analyzing petabytes of data, scientifically"
-  homepage "https:root.cern"
-  url "https:root.cerndownloadroot_v6.36.00.source.tar.gz"
+  homepage "https://root.cern"
+  url "https://root.cern/download/root_v6.36.00.source.tar.gz"
   sha256 "94afc8def92842679a130a27521be66e2abdaa37620888e61d828a43fc4b01a2"
   license "LGPL-2.1-or-later"
-  head "https:github.comroot-projectroot.git", branch: "master"
+  head "https://github.com/root-project/root.git", branch: "master"
 
   livecheck do
-    url "https:root.cerninstallall_releases"
-    regex(%r{Release\s+v?(\d+(?:[.]\d*[02468])+)[ >]}i)
+    url "https://root.cern/install/all_releases/"
+    regex(%r{Release\s+v?(\d+(?:[./]\d*[02468])+)[ >]}i)
     strategy :page_match do |page, regex|
-      page.scan(regex).map { |match| match[0].tr("", ".") }
+      page.scan(regex).map { |match| match[0].tr("/", ".") }
     end
   end
 
@@ -82,20 +82,20 @@ class Root < Formula
   end
 
   def install
-    # Workaround for CMake 4 due to VDT, https:github.comdpiparovdtblobmasterCMakeLists.txt
+    # Workaround for CMake 4 due to VDT, https://github.com/dpiparo/vdt/blob/master/CMakeLists.txt
     ENV["CMAKE_POLICY_VERSION_MINIMUM"] = "3.5"
 
     # Skip modification of CLING_OSX_SYSROOT to the unversioned SDK path
-    # Related: https:github.comHomebrewhomebrew-coreissues135714
-    # Related: https:github.comroot-projectclingissues457
+    # Related: https://github.com/Homebrew/homebrew-core/issues/135714
+    # Related: https://github.com/root-project/cling/issues/457
     if OS.mac? && MacOS.version > :ventura
-      inreplace "interpreterclinglibInterpreterCMakeLists.txt", '"MacOSX[.0-9]+\.sdk"', '"SKIP"'
+      inreplace "interpreter/cling/lib/Interpreter/CMakeLists.txt", '"MacOSX[.0-9]+\.sdk"', '"SKIP"'
     end
 
-    inreplace "cmakemodulesSearchInstalledSoftware.cmake" do |s|
+    inreplace "cmake/modules/SearchInstalledSoftware.cmake" do |s|
       # Enforce secure downloads of vendored dependencies. These are
       # checksummed in the cmake file with sha256.
-      s.gsub! "http:lcgpackages", "https:lcgpackages"
+      s.gsub! "http://lcgpackages", "https://lcgpackages"
       # Patch out check that skips using brewed glew.
       s.gsub! "CMAKE_VERSION VERSION_GREATER 3.15", "CMAKE_VERSION VERSION_GREATER 99.99"
     end
@@ -163,19 +163,19 @@ class Root < Formula
     ]
 
     # Workaround the shim directory being embedded into the output
-    inreplace "cmakeunixcompiledata.sh", "`type -path $CXX`", ENV.cxx
+    inreplace "cmake/unix/compiledata.sh", "`type -path $CXX`", ENV.cxx
 
-    # Homebrew now sets CMAKE_INSTALL_LIBDIR to lib, which is incorrect
+    # Homebrew now sets CMAKE_INSTALL_LIBDIR to /lib, which is incorrect
     # for ROOT with gnuinstall, so we set it back here.
-    system "cmake", "-S", ".", "-B", "builddir", *args, *std_cmake_args(install_libdir: "libroot")
+    system "cmake", "-S", ".", "-B", "builddir", *args, *std_cmake_args(install_libdir: "lib/root")
     system "cmake", "--build", "builddir"
     system "ctest", "-R", "tutorial-tree", "--verbose", "--parallel", ENV.make_jobs, "--test-dir", "builddir"
     system "cmake", "--install", "builddir"
 
     chmod 0755, bin.glob("*.*sh")
 
-    pth_contents = "import site; site.addsitedir('#{lib}root')\n"
-    (prefixLanguage::Python.site_packages(python3)"homebrew-root.pth").write pth_contents
+    pth_contents = "import site; site.addsitedir('#{lib}/root')\n"
+    (prefix/Language::Python.site_packages(python3)/"homebrew-root.pth").write pth_contents
   end
 
   def caveats
@@ -184,18 +184,18 @@ class Root < Formula
       depend on the custom variables set by them, you can still run them:
 
       For bash users:
-        . #{HOMEBREW_PREFIX}binthisroot.sh
+        . #{HOMEBREW_PREFIX}/bin/thisroot.sh
       For zsh users:
-        pushd #{HOMEBREW_PREFIX} >devnull; . binthisroot.sh; popd >devnull
-      For cshtcsh users:
-        source #{HOMEBREW_PREFIX}binthisroot.csh
+        pushd #{HOMEBREW_PREFIX} >/dev/null; . bin/thisroot.sh; popd >/dev/null
+      For csh/tcsh users:
+        source #{HOMEBREW_PREFIX}/bin/thisroot.csh
       For fish users:
-        . #{HOMEBREW_PREFIX}binthisroot.fish
+        . #{HOMEBREW_PREFIX}/bin/thisroot.fish
     TEXT
   end
 
   test do
-    (testpath"test.C").write <<~CPP
+    (testpath/"test.C").write <<~CPP
       #include <iostream>
       void test() {
         std::cout << "Hello, world!" << std::endl;
@@ -203,18 +203,18 @@ class Root < Formula
     CPP
 
     # Test ROOT command line mode
-    system bin"root", "-b", "-l", "-q", "-e", "gSystem->LoadAllLibraries(); 0"
+    system bin/"root", "-b", "-l", "-q", "-e", "gSystem->LoadAllLibraries(); 0"
 
     # Test ROOT executable
     assert_equal "\nProcessing test.C...\nHello, world!\n",
-                 shell_output("#{bin}root -l -b -n -q test.C")
+                 shell_output("#{bin}/root -l -b -n -q test.C")
 
     # Test ACLiC
     assert_equal "\nProcessing test.C+...\nHello, world!\n",
-                 shell_output("#{bin}root -l -b -n -q test.C+")
+                 shell_output("#{bin}/root -l -b -n -q test.C+")
 
     # Test linking
-    (testpath"test.cpp").write <<~CPP
+    (testpath/"test.cpp").write <<~CPP
       #include <iostream>
       #include <TString.h>
       int main() {
@@ -222,10 +222,10 @@ class Root < Formula
         return 0;
       }
     CPP
-    flags = %w[cflags libs ldflags].map { |f| "$(#{bin}root-config --#{f})" }
-    flags << "-Wl,-rpath,#{lib}root"
-    shell_output("$(#{bin}root-config --cxx) test.cpp #{flags.join(" ")}")
-    assert_equal "Hello, world!\n", shell_output(".a.out")
+    flags = %w[cflags libs ldflags].map { |f| "$(#{bin}/root-config --#{f})" }
+    flags << "-Wl,-rpath,#{lib}/root"
+    shell_output("$(#{bin}/root-config --cxx) test.cpp #{flags.join(" ")}")
+    assert_equal "Hello, world!\n", shell_output("./a.out")
 
     # Test Python module
     system python3, "-c", "import ROOT; ROOT.gSystem.LoadAllLibraries()"

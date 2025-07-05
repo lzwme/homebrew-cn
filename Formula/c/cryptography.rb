@@ -1,10 +1,10 @@
 class Cryptography < Formula
   desc "Cryptographic recipes and primitives for Python"
-  homepage "https:cryptography.ioenlatest"
-  url "https:files.pythonhosted.orgpackages951e49527ac611af559665f71cbb8f92b332b5ec9c6fbc4e88b0f8e92f5e85dfcryptography-45.0.5.tar.gz"
+  homepage "https://cryptography.io/en/latest/"
+  url "https://files.pythonhosted.org/packages/95/1e/49527ac611af559665f71cbb8f92b332b5ec9c6fbc4e88b0f8e92f5e85df/cryptography-45.0.5.tar.gz"
   sha256 "72e76caa004ab63accdf26023fccd1d087f6d90ec6048ff33ad0445abf7f605a"
   license any_of: ["Apache-2.0", "BSD-3-Clause"]
-  head "https:github.compycacryptography.git", branch: "main"
+  head "https://github.com/pyca/cryptography.git", branch: "main"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "daba4bfadcb353312cfb0b10511a79a0d4046e768e866c89ef688142eb006cee"
@@ -28,7 +28,7 @@ class Cryptography < Formula
   def pythons
     deps.map(&:to_formula)
         .select { |f| f.name.start_with?("python@") }
-        .map { |f| f.opt_libexec"binpython" }
+        .map { |f| f.opt_libexec/"bin/python" }
   end
 
   def install
@@ -39,7 +39,7 @@ class Cryptography < Formula
   end
 
   test do
-    (testpath"test.py").write <<~PYTHON
+    (testpath/"test.py").write <<~PYTHON
       from cryptography.fernet import Fernet
       key = Fernet.generate_key()
       f = Fernet(key)

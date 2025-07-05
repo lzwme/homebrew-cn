@@ -2,8 +2,8 @@ class Csvtomd < Formula
   include Language::Python::Virtualenv
 
   desc "CSV to Markdown table converter"
-  homepage "https:github.commplewiscsvtomd"
-  url "https:files.pythonhosted.orgpackages9d59ea3c8b102f9c72e5d276a169f7f343432213441c39a6eac7a8f444c66681csvtomd-0.3.0.tar.gz"
+  homepage "https://github.com/mplewis/csvtomd"
+  url "https://files.pythonhosted.org/packages/9d/59/ea3c8b102f9c72e5d276a169f7f343432213441c39a6eac7a8f444c66681/csvtomd-0.3.0.tar.gz"
   sha256 "a1fbf1db86d4b7b62a75dc259807719b2301ed01db5d1d7d9bb49c4a8858778b"
   license "MIT"
   revision 3
@@ -27,7 +27,7 @@ class Csvtomd < Formula
   end
 
   test do
-    (testpath"test.csv").write <<~CSV
+    (testpath/"test.csv").write <<~CSV
       column 1,column 2
       hello,world
     CSV
@@ -36,15 +36,15 @@ class Csvtomd < Formula
       ----------|----------
       hello     |  world
     MARKDOWN
-    assert_equal markdown, shell_output("#{bin}csvtomd test.csv").strip
+    assert_equal markdown, shell_output("#{bin}/csvtomd test.csv").strip
   end
 end
 
 __END__
-diff --git acsvtomdcsvtomd.py bcsvtomdcsvtomd.py
+diff --git a/csvtomd/csvtomd.py b/csvtomd/csvtomd.py
 index a0589a3..137f8da 100755
---- acsvtomdcsvtomd.py
-+++ bcsvtomdcsvtomd.py
+--- a/csvtomd/csvtomd.py
++++ b/csvtomd/csvtomd.py
 @@ -146,7 +146,7 @@ def main():
          if filename == '-':
              table = csv_to_table(sys.stdin, args.delimiter)

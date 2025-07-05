@@ -1,10 +1,10 @@
 class Lolcrab < Formula
   desc "Make your console colorful, with OpenSimplex noise"
-  homepage "https:github.commazznoerlolcrab"
-  url "https:github.commazznoerlolcrabarchiverefstagsv0.4.1.tar.gz"
+  homepage "https://github.com/mazznoer/lolcrab"
+  url "https://ghfast.top/https://github.com/mazznoer/lolcrab/archive/refs/tags/v0.4.1.tar.gz"
   sha256 "b318f430e95a64dac1d92bb2a1aee2c2c0010ba74dbc5b26dc3d3dd82673dd37"
   license "MIT"
-  head "https:github.commazznoerlolcrab.git", branch: "main"
+  head "https://github.com/mazznoer/lolcrab.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "d410c8c3acea7346c1f07c55c8e0227f6410877e35a32f8a7b8beaff4a9f6b36"
@@ -23,7 +23,7 @@ class Lolcrab < Formula
   end
 
   test do
-    assert_match "\e[38;", pipe_output(bin"lolcrab", "lorem ipsum dolor sit amet")
-    assert_match "\e[48;", pipe_output("#{bin}lolcrab -i", "lorem ipsum dolor sit amet")
+    assert_match "\e[38;", pipe_output(bin/"lolcrab", "lorem ipsum dolor sit amet")
+    assert_match "\e[48;", pipe_output("#{bin}/lolcrab -i", "lorem ipsum dolor sit amet")
   end
 end

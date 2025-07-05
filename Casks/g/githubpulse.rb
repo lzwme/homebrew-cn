@@ -2,10 +2,10 @@ cask "githubpulse" do
   version "0.3.10"
   sha256 :no_check
 
-  url "https:github.comtadeuzagalloGithubPulserawmasterdistGithubPulse.zip"
+  url "https://github.com/tadeuzagallo/GithubPulse/raw/master/dist/GithubPulse.zip"
   name "GithubPulse"
   desc "Statusbar app to help you remember to contribute every day on Github"
-  homepage "https:github.comtadeuzagalloGithubPulse"
+  homepage "https://github.com/tadeuzagallo/GithubPulse"
 
   no_autobump! because: :requires_manual_review
 

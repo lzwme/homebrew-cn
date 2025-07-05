@@ -1,7 +1,7 @@
 class BoostAT185 < Formula
   desc "Collection of portable C++ source libraries"
-  homepage "https:www.boost.org"
-  url "https:github.comboostorgboostreleasesdownloadboost-1.85.0boost-1.85.0-b2-nodocs.tar.xz"
+  homepage "https://www.boost.org/"
+  url "https://ghfast.top/https://github.com/boostorg/boost/releases/download/boost-1.85.0/boost-1.85.0-b2-nodocs.tar.xz"
   sha256 "09f0628bded81d20b0145b30925d7d7492fd99583671586525d5d66d4c28266a"
   license "BSL-1.0"
   revision 3
@@ -40,7 +40,7 @@ class BoostAT185 < Formula
     end
 
     # libdir should be set by --prefix but isn't
-    icu4c = deps.find { |dep| dep.name.match?(^icu4c(@\d+)?$) }
+    icu4c = deps.find { |dep| dep.name.match?(/^icu4c(@\d+)?$/) }
                 .to_formula
     bootstrap_args = %W[
       --prefix=#{prefix}
@@ -82,19 +82,19 @@ class BoostAT185 < Formula
     # > (for example, it would be only used with GCC runtime)
     args << "define=BOOST_STACKTRACE_LIBCXX_RUNTIME_MAY_CAUSE_MEMORY_LEAK" if OS.linux? && Hardware::CPU.arm?
 
-    system ".bootstrap.sh", *bootstrap_args
-    system ".b2", "headers"
-    system ".b2", *args
+    system "./bootstrap.sh", *bootstrap_args
+    system "./b2", "headers"
+    system "./b2", *args
   end
 
   test do
-    (testpath"test.cpp").write <<~CPP
-      #include <boostalgorithmstring.hpp>
-      #include <boostiostreamsdevicearray.hpp>
-      #include <boostiostreamsdeviceback_inserter.hpp>
-      #include <boostiostreamsfilterzstd.hpp>
-      #include <boostiostreamsfiltering_stream.hpp>
-      #include <boostiostreamsstream.hpp>
+    (testpath/"test.cpp").write <<~CPP
+      #include <boost/algorithm/string.hpp>
+      #include <boost/iostreams/device/array.hpp>
+      #include <boost/iostreams/device/back_inserter.hpp>
+      #include <boost/iostreams/filter/zstd.hpp>
+      #include <boost/iostreams/filtering_stream.hpp>
+      #include <boost/iostreams/stream.hpp>
 
       #include <string>
       #include <iostream>
@@ -114,7 +114,7 @@ class BoostAT185 < Formula
         assert(strVec[0]=="a");
         assert(strVec[1]=="b");
 
-         Test boost::iostreams::zstd_compressor() linking
+        // Test boost::iostreams::zstd_compressor() linking
         std::vector<char> v;
         back_insert_device<std::vector<char>> snk{v};
         filtering_ostream os;
@@ -137,6 +137,6 @@ class BoostAT185 < Formula
     CPP
     system ENV.cxx, "test.cpp", "-std=c++14", "-o", "test", "-I#{include}",
                     "-L#{lib}", "-lboost_iostreams", "-L#{Formula["zstd"].opt_lib}", "-lzstd"
-    system ".test"
+    system "./test"
   end
 end

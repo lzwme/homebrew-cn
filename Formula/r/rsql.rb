@@ -1,10 +1,10 @@
 class Rsql < Formula
   desc "CLI for relational databases and common data file formats"
-  homepage "https:github.comtheseus-rsrsql"
-  url "https:github.comtheseus-rsrsqlarchiverefstagsv0.19.0.tar.gz"
+  homepage "https://github.com/theseus-rs/rsql"
+  url "https://ghfast.top/https://github.com/theseus-rs/rsql/archive/refs/tags/v0.19.0.tar.gz"
   sha256 "9d7a3450f0e883c1ca14719c3ed69e63c7dc1066cf3fc98ac025ae2d9b76e68a"
   license any_of: ["Apache-2.0", "MIT"]
-  head "https:github.comtheseus-rsrsql.git", branch: "main"
+  head "https://github.com/theseus-rs/rsql.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "ea669ada67646a584f8e2710050903185e7a81f977df63ffc17b01e9c8c13843"
@@ -27,10 +27,10 @@ class Rsql < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}rsql --version")
+    assert_match version.to_s, shell_output("#{bin}/rsql --version")
 
     # Create a sample CSV file
-    (testpath"data.csv").write <<~CSV
+    (testpath/"data.csv").write <<~CSV
       name,age
       Alice,30
       Bob,25
@@ -38,6 +38,6 @@ class Rsql < Formula
     CSV
 
     query = "SELECT * FROM data WHERE age > 30"
-    assert_match "Charlie", shell_output("#{bin}rsql --url 'csv:#{testpath}data.csv' -- '#{query}'")
+    assert_match "Charlie", shell_output("#{bin}/rsql --url 'csv://#{testpath}/data.csv' -- '#{query}'")
   end
 end

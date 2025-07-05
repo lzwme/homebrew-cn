@@ -1,7 +1,7 @@
 class Libnfc < Formula
   desc "Low level NFC SDK and Programmers API"
-  homepage "https:github.comnfc-toolslibnfc"
-  url "https:github.comnfc-toolslibnfcreleasesdownloadlibnfc-1.8.0libnfc-1.8.0.tar.bz2"
+  homepage "https://github.com/nfc-tools/libnfc"
+  url "https://ghfast.top/https://github.com/nfc-tools/libnfc/releases/download/libnfc-1.8.0/libnfc-1.8.0.tar.bz2"
   sha256 "6d9ad31c86408711f0a60f05b1933101c7497683c2e0d8917d1611a3feba3dd5"
   license "LGPL-3.0-or-later"
 
@@ -25,7 +25,7 @@ class Libnfc < Formula
   end
 
   head do
-    url "https:github.comnfc-toolslibnfc.git", branch: "master"
+    url "https://github.com/nfc-tools/libnfc.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -39,14 +39,14 @@ class Libnfc < Formula
 
   def install
     system "autoreconf", "--force", "--install", "--verbose" if build.head?
-    system ".configure", "--enable-serial-autoprobe",
+    system "./configure", "--enable-serial-autoprobe",
                           "--with-drivers=all",
                           *std_configure_args
     system "make", "install"
-    (prefix"etcnfclibnfc.conf").write "allow_intrusive_scan=yes"
+    (prefix/"etc/nfc/libnfc.conf").write "allow_intrusive_scan=yes"
   end
 
   test do
-    system bin"nfc-list"
+    system bin/"nfc-list"
   end
 end

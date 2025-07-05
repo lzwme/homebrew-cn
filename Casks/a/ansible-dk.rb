@@ -2,11 +2,11 @@ cask "ansible-dk" do
   version "1.2.0,3"
   sha256 "70fe9e4b8f27e8961c992de3ed1e30bb39c43319af28aae73c177f9530352a49"
 
-  url "https:github.comomniti-labsansible-dkreleasesdownload#{version.csv.first}ansible-dk-#{version.csv.first}-#{version.csv.second}.dmg"
+  url "https://ghfast.top/https://github.com/omniti-labs/ansible-dk/releases/download/#{version.csv.first}/ansible-dk-#{version.csv.first}-#{version.csv.second}.dmg"
   name "Ansible DK"
   name "Ansible Development Kit"
   desc "Omnibus-based toolkit for working on Ansible-based infrastructure code"
-  homepage "https:github.comomniti-labsansible-dk"
+  homepage "https://github.com/omniti-labs/ansible-dk"
 
   no_autobump! because: :requires_manual_review
 

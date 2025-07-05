@@ -1,15 +1,15 @@
 class GitAnnex < Formula
   desc "Manage files with git without checking in file contents"
-  homepage "https:git-annex.branchable.com"
-  url "https:hackage.haskell.orgpackagegit-annex-10.20250630git-annex-10.20250630.tar.gz"
+  homepage "https://git-annex.branchable.com/"
+  url "https://hackage.haskell.org/package/git-annex-10.20250630/git-annex-10.20250630.tar.gz"
   sha256 "03df602f2f72110d5a782a760399b64a57d37661f84aed6612d9d62d727459ed"
   license all_of: ["AGPL-3.0-or-later", "BSD-2-Clause", "BSD-3-Clause",
                    "GPL-2.0-only", "GPL-3.0-or-later", "MIT"]
-  head "git:git-annex.branchable.com", branch: "master"
+  head "git://git-annex.branchable.com/", branch: "master"
 
   livecheck do
-    url "https:hackage.haskell.orgpackagegit-annex"
-    regex(href=.*?git-annex[._-]v?(\d+(?:\.\d+)+)\.ti)
+    url "https://hackage.haskell.org/package/git-annex"
+    regex(/href=.*?git-annex[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   bottle do
@@ -31,14 +31,14 @@ class GitAnnex < Formula
 
   def install
     system "cabal", "v2-update"
-    # Work around https:github.comyesodwebyesodissues1854 with constraint
+    # Work around https://github.com/yesodweb/yesod/issues/1854 with constraint
     # TODO: Remove once fixed upstream
     system "cabal", "v2-install", *std_cabal_v2_args, "--flags=+S3", "--constraint=wai-extra<3.1.17"
     bin.install_symlink "git-annex" => "git-annex-shell"
   end
 
   service do
-    run [opt_bin"git-annex", "assistant", "--autostart"]
+    run [opt_bin/"git-annex", "assistant", "--autostart"]
   end
 
   test do
@@ -47,11 +47,11 @@ class GitAnnex < Formula
 
     system "git", "init"
     system "git", "annex", "init"
-    (testpath"Hello.txt").write "Hello!"
-    refute_predicate (testpath"Hello.txt"), :symlink?
-    assert_match(^add Hello.txt.*ok.*\(recording state in git\.\.\.\)m, shell_output("git annex add ."))
+    (testpath/"Hello.txt").write "Hello!"
+    refute_predicate (testpath/"Hello.txt"), :symlink?
+    assert_match(/^add Hello.txt.*ok.*\(recording state in git\.\.\.\)/m, shell_output("git annex add ."))
     system "git", "commit", "-a", "-m", "Initial Commit"
-    assert_predicate (testpath"Hello.txt"), :symlink?
+    assert_predicate (testpath/"Hello.txt"), :symlink?
 
     # make sure the various remotes were built
     assert_match "remote types: git gcrypt p2p S3 bup directory rsync web bittorrent " \

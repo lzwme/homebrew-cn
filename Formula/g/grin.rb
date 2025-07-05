@@ -1,7 +1,7 @@
 class Grin < Formula
   desc "Minimal implementation of the Mimblewimble protocol"
-  homepage "https:grin.mw"
-  url "https:github.commimblewimblegrinarchiverefstagsv5.3.3_rebuild.tar.gz"
+  homepage "https://grin.mw/"
+  url "https://ghfast.top/https://github.com/mimblewimble/grin/archive/refs/tags/v5.3.3_rebuild.tar.gz"
   version "5.3.3_rebuild"
   sha256 "c3bd99e02e078c81cd4c5f1bfe8d666c09fa6697b7bc14c5611e94c404b032d8"
   license "Apache-2.0"
@@ -26,7 +26,7 @@ class Grin < Formula
   end
 
   test do
-    system bin"grin", "server", "config"
-    assert_path_exists testpath"grin-server.toml"
+    system bin/"grin", "server", "config"
+    assert_path_exists testpath/"grin-server.toml"
   end
 end

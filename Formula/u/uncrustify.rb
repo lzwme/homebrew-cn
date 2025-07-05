@@ -1,10 +1,10 @@
 class Uncrustify < Formula
   desc "Source code beautifier"
-  homepage "https:uncrustify.sourceforge.net"
-  url "https:github.comuncrustifyuncrustifyarchiverefstagsuncrustify-0.81.0.tar.gz"
+  homepage "https://uncrustify.sourceforge.net/"
+  url "https://ghfast.top/https://github.com/uncrustify/uncrustify/archive/refs/tags/uncrustify-0.81.0.tar.gz"
   sha256 "484623dc16b92206adc6ac0770077c6c67c6e441102148c2a121a19549330ff9"
   license "GPL-2.0-or-later"
-  head "https:github.comuncrustifyuncrustify.git", branch: "master"
+  head "https://github.com/uncrustify/uncrustify.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "95185b021122589ff6c0c457ca16433fa0dad4199eda25ac9d27dd3766ad45ed"
@@ -24,11 +24,11 @@ class Uncrustify < Formula
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 
-    doc.install (buildpath"documentation").children
+    doc.install (buildpath/"documentation").children
   end
 
   test do
-    (testpath"t.c").write <<~C
+    (testpath/"t.c").write <<~C
       #include <stdio.h>
       int main(void) {return 0;}
     C
@@ -40,7 +40,7 @@ class Uncrustify < Formula
       }
     C
 
-    system bin"uncrustify", "-c", doc"htdocsdefault.cfg", "t.c"
-    assert_equal expected, (testpath"t.c.uncrustify").read
+    system bin/"uncrustify", "-c", doc/"htdocs/default.cfg", "t.c"
+    assert_equal expected, (testpath/"t.c.uncrustify").read
   end
 end

@@ -1,10 +1,10 @@
 class Xlsxio < Formula
   desc "C library for reading values from and writing values to .xlsx files"
-  homepage "https:github.combrechtsandersxlsxio"
-  url "https:github.combrechtsandersxlsxioarchiverefstags0.2.35.tar.gz"
+  homepage "https://github.com/brechtsanders/xlsxio"
+  url "https://ghfast.top/https://github.com/brechtsanders/xlsxio/archive/refs/tags/0.2.35.tar.gz"
   sha256 "03a4d1b1613953d46c8fc2ea048cd32007fbddcd376ab6d4156f72da2815adfa"
   license "MIT"
-  head "https:github.combrechtsandersxlsxio.git", branch: "master"
+  head "https://github.com/brechtsanders/xlsxio.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "f77f704e935976f1a6ef0afda3838ca144b7d9fa42d111edc3e636e0bc75c5f5"
@@ -26,7 +26,7 @@ class Xlsxio < Formula
   end
 
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include <stdlib.h>
       #include <stdio.h>
       #include <unistd.h>
@@ -43,7 +43,7 @@ class Xlsxio < Formula
     C
 
     system ENV.cc, "test.c", "-L#{lib}", "-I#{include}", "-lxlsxio_read", "-lxlsxio_write", "-o", "test"
-    system ".test"
-    assert_path_exists testpath"myexcel.xlsx", "Failed to create xlsx file"
+    system "./test"
+    assert_path_exists testpath/"myexcel.xlsx", "Failed to create xlsx file"
   end
 end

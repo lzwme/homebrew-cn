@@ -1,14 +1,14 @@
 class Madplay < Formula
   desc "MPEG Audio Decoder"
-  homepage "https:www.underbit.comproductsmad"
-  url "https:downloads.sourceforge.netprojectmadmadplay0.15.2bmadplay-0.15.2b.tar.gz"
+  homepage "https://www.underbit.com/products/mad/"
+  url "https://downloads.sourceforge.net/project/mad/madplay/0.15.2b/madplay-0.15.2b.tar.gz"
   sha256 "5a79c7516ff7560dffc6a14399a389432bc619c905b13d3b73da22fa65acede0"
   license "GPL-2.0-or-later"
   revision 3
 
   livecheck do
     url :stable
-    regex(%r{url=.*?madplay[._-]v?(\d+(?:\.\d+)+[a-z]?)\.t}i)
+    regex(%r{url=.*?/madplay[._-]v?(\d+(?:\.\d+)+[a-z]?)\.t}i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -29,7 +29,7 @@ class Madplay < Formula
   depends_on "mad"
 
   patch :p0 do
-    url "https:raw.githubusercontent.comHomebrewformula-patchesf6c5992cmadplaypatch-audio_carbon.c"
+    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/f6c5992c/madplay/patch-audio_carbon.c"
     sha256 "380e1a5ee3357fef46baa9ba442705433e044ae9e37eece52c5146f56da75647"
   end
 
@@ -42,11 +42,11 @@ class Madplay < Formula
       --build=x86_64
     ]
 
-    system ".configure", *args
+    system "./configure", *args
     system "make", "install"
   end
 
   test do
-    system bin"madplay", "--version"
+    system bin/"madplay", "--version"
   end
 end

@@ -1,11 +1,11 @@
 class ProtocGenJs < Formula
   desc "Protocol buffers JavaScript generator plugin"
-  homepage "https:github.comprotocolbuffersprotobuf-javascript"
-  url "https:github.comprotocolbuffersprotobuf-javascriptarchiverefstagsv3.21.4.tar.gz"
+  homepage "https://github.com/protocolbuffers/protobuf-javascript"
+  url "https://ghfast.top/https://github.com/protocolbuffers/protobuf-javascript/archive/refs/tags/v3.21.4.tar.gz"
   sha256 "8cef92b4c803429af0c11c4090a76b6a931f82d21e0830760a17f9c6cb358150"
   license "BSD-3-Clause"
   revision 9
-  head "https:github.comprotocolbuffersprotobuf-javascript.git", branch: "main"
+  head "https://github.com/protocolbuffers/protobuf-javascript.git", branch: "main"
 
   no_autobump! because: :requires_manual_review
 
@@ -25,15 +25,15 @@ class ProtocGenJs < Formula
 
   # We manually build rather than use Bazel as Bazel will build its own copy of Abseil
   # and Protobuf that get statically linked into binary. Check for any upstream changes at
-  # https:github.comprotocolbuffersprotobuf-javascriptblobmaingeneratorBUILD.bazel
+  # https://github.com/protocolbuffers/protobuf-javascript/blob/main/generator/BUILD.bazel
   def install
     protobuf_flags = Utils.safe_popen_read("pkgconf", "--cflags", "--libs", "protobuf").chomp.split.uniq
-    system ENV.cxx, "-std=c++17", *Dir["generator*.cc"], "-o", "protoc-gen-js", "-I.", *protobuf_flags, "-lprotoc"
+    system ENV.cxx, "-std=c++17", *Dir["generator/*.cc"], "-o", "protoc-gen-js", "-I.", *protobuf_flags, "-lprotoc"
     bin.install "protoc-gen-js"
   end
 
   test do
-    (testpath"person.proto").write <<~PROTO
+    (testpath/"person.proto").write <<~PROTO
       syntax = "proto3";
 
       message Person {
@@ -41,8 +41,8 @@ class ProtocGenJs < Formula
         string name = 2;
       }
     PROTO
-    system Formula["protobuf@29"].bin"protoc", "--js_out=import_style=commonjs:.", "person.proto"
-    assert_path_exists testpath"person_pb.js"
-    refute_predicate (testpath"person_pb.js").size, :zero?
+    system Formula["protobuf@29"].bin/"protoc", "--js_out=import_style=commonjs:.", "person.proto"
+    assert_path_exists testpath/"person_pb.js"
+    refute_predicate (testpath/"person_pb.js").size, :zero?
   end
 end

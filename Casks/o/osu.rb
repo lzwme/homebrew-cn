@@ -5,10 +5,10 @@ cask "osu" do
   sha256 arm:   "62b9502d65219f4958a7ecfdf2069c6514db0e7c4d1d3800ce069ef7e5d28ad9",
          intel: "6697e89fbcc7b997adbdc51ca1e0b056337a8f621ae25ea21910a31dec830fa7"
 
-  url "https:github.comppyosureleasesdownload#{version}osu.app.#{arch}.zip"
+  url "https://ghfast.top/https://github.com/ppy/osu/releases/download/#{version}/osu.app.#{arch}.zip"
   name "osu!"
   desc "Rhythm game"
-  homepage "https:github.comppyosu"
+  homepage "https://github.com/ppy/osu/"
 
   livecheck do
     url :url
@@ -21,7 +21,7 @@ cask "osu" do
   app "osu!.app"
 
   zap trash: [
-    "~.localshareosu",
-    "~LibrarySaved Application Statesh.ppy.osu.lazer.savedState",
+    "~/.local/share/osu",
+    "~/Library/Saved Application State/sh.ppy.osu.lazer.savedState",
   ]
 end

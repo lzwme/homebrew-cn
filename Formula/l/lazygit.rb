@@ -1,14 +1,14 @@
 class Lazygit < Formula
   desc "Simple terminal UI for git commands"
-  homepage "https:github.comjesseduffieldlazygit"
-  url "https:github.comjesseduffieldlazygitarchiverefstagsv0.52.0.tar.gz"
+  homepage "https://github.com/jesseduffield/lazygit/"
+  url "https://ghfast.top/https://github.com/jesseduffield/lazygit/archive/refs/tags/v0.52.0.tar.gz"
   sha256 "2d6b045105cca36fb4a9ea9fa8834bab70f99a71dcb6f7a1aea11184ac1f66f8"
   license "MIT"
-  head "https:github.comjesseduffieldlazygit.git", branch: "master"
+  head "https://github.com/jesseduffield/lazygit.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -30,9 +30,9 @@ class Lazygit < Formula
   test do
     system "git", "init", "--initial-branch=main"
 
-    output = shell_output("#{bin}lazygit log 2>&1", 1)
+    output = shell_output("#{bin}/lazygit log 2>&1", 1)
     assert_match "errors.errorString terminal not cursor addressable", output
 
-    assert_match version.to_s, shell_output("#{bin}lazygit -v")
+    assert_match version.to_s, shell_output("#{bin}/lazygit -v")
   end
 end

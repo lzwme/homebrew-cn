@@ -1,10 +1,10 @@
 class GitSvnAbandon < Formula
   desc "History-preserving svn-to-git migration"
-  homepage "https:github.comnothingmuchgit-svn-abandon"
-  url "https:github.comnothingmuchgit-svn-abandonarchiverefstags0.0.1.tar.gz"
+  homepage "https://github.com/nothingmuch/git-svn-abandon"
+  url "https://ghfast.top/https://github.com/nothingmuch/git-svn-abandon/archive/refs/tags/0.0.1.tar.gz"
   sha256 "65c11b5e575e6af4d21ef7624941c4581a5570748d50e38714bd33fee56e4485"
   license "MIT"
-  head "https:github.comnothingmuchgit-svn-abandon.git", branch: "master"
+  head "https://github.com/nothingmuch/git-svn-abandon.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -19,7 +19,7 @@ class GitSvnAbandon < Formula
 
   test do
     system "git", "init"
-    system "git", "symbolic-ref", "HEAD", "refsheadstrunk"
+    system "git", "symbolic-ref", "HEAD", "refs/heads/trunk"
     system "git", "commit", "--allow-empty", "-m", "foo"
     system "git", "svn-abandon-fix-refs"
     assert_equal "* master", shell_output("git branch -a").chomp

@@ -1,7 +1,7 @@
 class Opendht < Formula
   desc "C++17 Distributed Hash Table implementation"
-  homepage "https:github.comsavoirfairelinuxopendht"
-  url "https:github.comsavoirfairelinuxopendhtarchiverefstagsv3.4.0.tar.gz"
+  homepage "https://github.com/savoirfairelinux/opendht"
+  url "https://ghfast.top/https://github.com/savoirfairelinux/opendht/archive/refs/tags/v3.4.0.tar.gz"
   sha256 "965732ac3c2bce767bb543b8b033c29979ef5357c9a0003e3631dcb15f5a457c"
   license "GPL-3.0-or-later"
 
@@ -44,13 +44,13 @@ class Opendht < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~CPP
+    (testpath/"test.cpp").write <<~CPP
       #include <opendht.h>
       int main() {
         dht::DhtRunner node;
 
-         Launch a dht node on a new thread, using a
-         generated RSA key pair, and listen on port 4222.
+        // Launch a dht node on a new thread, using a
+        // generated RSA key pair, and listen on port 4222.
         node.run(4222, dht::crypto::generateIdentity(), true);
         node.join();
 
@@ -58,6 +58,6 @@ class Opendht < Formula
       }
     CPP
     system ENV.cxx, "test.cpp", "-std=c++17", "-L#{lib}", "-lopendht", "-o", "test"
-    system ".test"
+    system "./test"
   end
 end

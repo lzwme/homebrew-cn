@@ -1,7 +1,7 @@
 class Htslib < Formula
   desc "C library for high-throughput sequencing data formats"
-  homepage "https:www.htslib.org"
-  url "https:github.comsamtoolshtslibreleasesdownload1.22htslib-1.22.tar.bz2"
+  homepage "https://www.htslib.org/"
+  url "https://ghfast.top/https://github.com/samtools/htslib/releases/download/1.22/htslib-1.22.tar.bz2"
   sha256 "6250c1df297db477516e60ac8df45ed75a652d1f25b0f37f12f5b17269eafde9"
   license "MIT"
 
@@ -32,23 +32,23 @@ class Htslib < Formula
   end
 
   def install
-    system ".configure", "--prefix=#{prefix}", "--enable-libcurl", "--with-libdeflate"
+    system "./configure", "--prefix=#{prefix}", "--enable-libcurl", "--with-libdeflate"
     system "make", "install"
   end
 
   test do
-    sam = testpath"test.sam"
+    sam = testpath/"test.sam"
     sam.write <<~EOS
       @SQ	SN:chr1	LN:500
       r1	0	chr1	100	0	4M	*	0	0	ATGC	ABCD
       r2	0	chr1	200	0	4M	*	0	0	AATT	EFGH
     EOS
-    assert_match "SAM", shell_output("#{bin}htsfile #{sam}")
+    assert_match "SAM", shell_output("#{bin}/htsfile #{sam}")
 
-    system "#{bin}bgzip -c #{sam} > sam.gz"
-    assert_path_exists testpath"sam.gz"
+    system "#{bin}/bgzip -c #{sam} > sam.gz"
+    assert_path_exists testpath/"sam.gz"
 
-    system bin"tabix", "-p", "sam", "sam.gz"
-    assert_path_exists testpath"sam.gz.tbi"
+    system bin/"tabix", "-p", "sam", "sam.gz"
+    assert_path_exists testpath/"sam.gz.tbi"
   end
 end

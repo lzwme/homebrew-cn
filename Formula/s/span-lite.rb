@@ -1,10 +1,10 @@
 class SpanLite < Formula
   desc "C++20-like span for C++98, C++11 and later in a single-file header-only library"
-  homepage "https:github.commartinmoenespan-lite"
-  url "https:github.commartinmoenespan-litearchiverefstagsv0.11.0.tar.gz"
+  homepage "https://github.com/martinmoene/span-lite"
+  url "https://ghfast.top/https://github.com/martinmoene/span-lite/archive/refs/tags/v0.11.0.tar.gz"
   sha256 "ef4e028e18ff21044da4b4641ca1bc8a2e2d656e2028322876c0e1b9b6904f9d"
   license "BSL-1.0"
-  head "https:github.commartinmoenespan-lite.git", branch: "master"
+  head "https://github.com/martinmoene/span-lite.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -20,8 +20,8 @@ class SpanLite < Formula
   end
 
   test do
-    (testpath"basic.cpp").write <<~CPP
-      #include "nonstdspan.hpp"
+    (testpath/"basic.cpp").write <<~CPP
+      #include "nonstd/span.hpp"
       #include <array>
       #include <vector>
       #include <iostream>
@@ -43,6 +43,6 @@ class SpanLite < Formula
     CPP
 
     system ENV.cxx, "-std=c++11", "-I#{include}", "basic.cpp", "-o", "basic"
-    system ".basic"
+    system "./basic"
   end
 end

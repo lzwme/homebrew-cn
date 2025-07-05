@@ -1,12 +1,12 @@
 cask "telegram-desktop@beta" do
-  version "5.16.1"
-  sha256 "9a5532802eb9d32f7f211f0c6ffc8134dac2208344333311f5f54e7e1dc395be"
+  version "5.16.2"
+  sha256 "0d4217c7a9e69a309c4e9c69ab07456875674848e544bfddcfb845483359804a"
 
-  url "https:github.comtelegramdesktoptdesktopreleasesdownloadv#{version}tsetup.#{version}.dmg",
-      verified: "github.comtelegramdesktoptdesktop"
+  url "https://ghfast.top/https://github.com/telegramdesktop/tdesktop/releases/download/v#{version}/tsetup.#{version}.dmg",
+      verified: "github.com/telegramdesktop/tdesktop/"
   name "Telegram Desktop"
   desc "Desktop client for Telegram messenger"
-  homepage "https:desktop.telegram.org"
+  homepage "https://desktop.telegram.org/"
 
   auto_updates true
   conflicts_with cask: "telegram-desktop"
@@ -16,8 +16,8 @@ cask "telegram-desktop@beta" do
   app "Telegram.app", target: "Telegram Desktop.app"
 
   zap trash: [
-    "~LibraryApplication SupportTelegram Desktop",
-    "~LibraryPreferencescom.tdesktop.Telegram.plist",
-    "~LibrarySaved Application Statecom.tdesktop.Telegram.savedState",
+    "~/Library/Application Support/Telegram Desktop",
+    "~/Library/Preferences/com.tdesktop.Telegram.plist",
+    "~/Library/Saved Application State/com.tdesktop.Telegram.savedState",
   ]
 end

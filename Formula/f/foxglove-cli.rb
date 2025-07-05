@@ -1,10 +1,10 @@
 class FoxgloveCli < Formula
   desc "Foxglove command-line tool"
-  homepage "https:github.comfoxglovefoxglove-cli"
-  url "https:github.comfoxglovefoxglove-cliarchiverefstagsv1.0.23.tar.gz"
+  homepage "https://github.com/foxglove/foxglove-cli"
+  url "https://ghfast.top/https://github.com/foxglove/foxglove-cli/archive/refs/tags/v1.0.23.tar.gz"
   sha256 "d03e708033cf7665ddec02625fc97380dbbb06177807f3c8b4d27f6a696bb348"
   license "MIT"
-  head "https:github.comfoxglovefoxglove-cli.git", branch: "main"
+  head "https://github.com/foxglove/foxglove-cli.git", branch: "main"
 
   no_autobump! because: :requires_manual_review
 
@@ -28,9 +28,9 @@ class FoxgloveCli < Formula
   end
 
   test do
-    system bin"foxglove", "auth", "configure-api-key", "--api-key", "foobar"
+    system bin/"foxglove", "auth", "configure-api-key", "--api-key", "foobar"
     expected = "Authenticated with API key"
-    assert_match expected, shell_output("#{bin}foxglove auth info")
-    assert_match version.to_s, shell_output("#{bin}foxglove version")
+    assert_match expected, shell_output("#{bin}/foxglove auth info")
+    assert_match version.to_s, shell_output("#{bin}/foxglove version")
   end
 end

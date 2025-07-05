@@ -1,13 +1,13 @@
 class Cadical < Formula
   desc "Clean and efficient state-of-the-art SAT solver"
-  homepage "https:fmv.jku.atcadical"
-  url "https:github.comarminbierecadicalarchiverefstagsrel-2.1.3.tar.gz"
+  homepage "https://fmv.jku.at/cadical/"
+  url "https://ghfast.top/https://github.com/arminbiere/cadical/archive/refs/tags/rel-2.1.3.tar.gz"
   sha256 "abfe890aa4ccda7b8449c7ad41acb113cfb8e7e8fbf5e49369075f9b00d70465"
   license "MIT"
 
   livecheck do
     url :stable
-    regex(^rel[._-]v?(\d+(?:\.\d+)+)$i)
+    regex(/^rel[._-]v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -23,29 +23,29 @@ class Cadical < Formula
   def install
     ENV.append_to_cflags "-fPIC" if OS.linux?
 
-    system ".configure"
+    system "./configure"
     chdir "build" do
       system "make"
       bin.install "cadical"
       lib.install "libcadical.a"
-      include.install "..srccadical.hpp"
-      include.install "..srcccadical.h"
-      include.install "..srcipasir.h"
+      include.install "../src/cadical.hpp"
+      include.install "../src/ccadical.h"
+      include.install "../src/ipasir.h"
     end
   end
 
   test do
-    (testpath"simple.cnf").write <<~EOS
+    (testpath/"simple.cnf").write <<~EOS
       p cnf 3 4
       1 0
       -2 0
       -3 0
       -1 2 3 0
     EOS
-    result = shell_output("#{bin}cadical simple.cnf", 20)
+    result = shell_output("#{bin}/cadical simple.cnf", 20)
     assert_match "s UNSATISFIABLE", result
 
-    (testpath"test.cpp").write <<~CPP
+    (testpath/"test.cpp").write <<~CPP
       #include <cadical.hpp>
       #include <cassert>
       int main() {
@@ -60,6 +60,6 @@ class Cadical < Formula
       }
     CPP
     system ENV.cxx, "test.cpp", "-L#{lib}", "-lcadical", "-o", "test", "-std=c++11"
-    system ".test"
+    system "./test"
   end
 end

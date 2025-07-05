@@ -1,7 +1,7 @@
 class GitlabGem < Formula
   desc "Ruby client and CLI for GitLab API"
-  homepage "https:narkoz.github.iogitlab"
-  url "https:github.comNARKOZgitlabarchiverefstagsv6.0.0.tar.gz"
+  homepage "https://narkoz.github.io/gitlab/"
+  url "https://ghfast.top/https://github.com/NARKOZ/gitlab/archive/refs/tags/v6.0.0.tar.gz"
   sha256 "dfafb3b2ddaaaa94b78da5e2cb7515199160def567cb936606a5dae9e270a9b7"
   license "BSD-2-Clause"
 
@@ -20,42 +20,42 @@ class GitlabGem < Formula
   # list with `gem install --explain httparty terminal-table`
 
   resource "bigdecimal" do
-    url "https:rubygems.orggemsbigdecimal-3.1.8.gem"
+    url "https://rubygems.org/gems/bigdecimal-3.1.8.gem"
     sha256 "a89467ed5a44f8ae01824af49cbc575871fa078332e8f77ea425725c1ffe27be"
   end
 
   resource "multi_xml" do
-    url "https:rubygems.orggemsmulti_xml-0.7.2.gem"
+    url "https://rubygems.org/gems/multi_xml-0.7.2.gem"
     sha256 "307a96dc48613badb7b2fc174fd4e62d7c7b619bc36ea33bfd0c49f64f5787ce"
   end
 
   resource "mini_mime" do
-    url "https:rubygems.orggemsmini_mime-1.1.5.gem"
+    url "https://rubygems.org/gems/mini_mime-1.1.5.gem"
     sha256 "8681b7e2e4215f2a159f9400b5816d85e9d8c6c6b491e96a12797e798f8bccef"
   end
 
   resource "csv" do
-    url "https:rubygems.orggemscsv-3.3.2.gem"
+    url "https://rubygems.org/gems/csv-3.3.2.gem"
     sha256 "6ff0c135e65e485d1864dde6c1703b60d34cc9e19bed8452834a0b28a519bd4e"
   end
 
   resource "httparty" do
-    url "https:rubygems.orggemshttparty-0.23.1.gem"
+    url "https://rubygems.org/gems/httparty-0.23.1.gem"
     sha256 "3ac1dd62f2010f6ece551716f5ceec2b2012011d89f1751917ab7f724e966b55"
   end
 
   resource "unicode-emoji" do
-    url "https:rubygems.orggemsunicode-emoji-4.0.4.gem"
+    url "https://rubygems.org/gems/unicode-emoji-4.0.4.gem"
     sha256 "2c2c4ef7f353e5809497126285a50b23056cc6e61b64433764a35eff6c36532a"
   end
 
   resource "unicode-display_width" do
-    url "https:rubygems.orggemsunicode-display_width-3.1.4.gem"
+    url "https://rubygems.org/gems/unicode-display_width-3.1.4.gem"
     sha256 "8caf2af1c0f2f07ec89ef9e18c7d88c2790e217c482bfc78aaa65eadd5415ac1"
   end
 
   resource "terminal-table" do
-    url "https:rubygems.orggemsterminal-table-4.0.0.gem"
+    url "https://rubygems.org/gems/terminal-table-4.0.0.gem"
     sha256 "f504793203f8251b2ea7c7068333053f0beeea26093ec9962e62ea79f94301d2"
   end
 
@@ -68,15 +68,15 @@ class GitlabGem < Formula
     end
     system "gem", "build", "gitlab.gemspec"
     system "gem", "install", "--ignore-dependencies", "gitlab-#{version}.gem"
-    (bin"gitlab").write_env_script libexec"bingitlab", GEM_HOME: ENV["GEM_HOME"]
+    (bin/"gitlab").write_env_script libexec/"bin/gitlab", GEM_HOME: ENV["GEM_HOME"]
   end
 
   test do
-    ENV["GITLAB_API_ENDPOINT"] = "https:example.com"
+    ENV["GITLAB_API_ENDPOINT"] = "https://example.com/"
     ENV["GITLAB_API_PRIVATE_TOKEN"] = "token"
-    output = shell_output("#{bin}gitlab user 2>&1", 1)
+    output = shell_output("#{bin}/gitlab user 2>&1", 1)
     assert_match "Server responded with code 404, message", output
 
-    assert_match version.to_s, shell_output("#{bin}gitlab --version")
+    assert_match version.to_s, shell_output("#{bin}/gitlab --version")
   end
 end

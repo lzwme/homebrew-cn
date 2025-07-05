@@ -1,7 +1,7 @@
 class AwsCAuth < Formula
   desc "C99 library implementation of AWS client-side authentication"
-  homepage "https:github.comawslabsaws-c-auth"
-  url "https:github.comawslabsaws-c-autharchiverefstagsv0.9.0.tar.gz"
+  homepage "https://github.com/awslabs/aws-c-auth"
+  url "https://ghfast.top/https://github.com/awslabs/aws-c-auth/archive/refs/tags/v0.9.0.tar.gz"
   sha256 "aa6e98864fefb95c249c100da4ae7aed36ba13a8a91415791ec6fad20bec0427"
   license "Apache-2.0"
 
@@ -33,9 +33,9 @@ class AwsCAuth < Formula
   end
 
   test do
-    (testpath"test.c").write <<~C
-      #include <awsauthcredentials.h>
-      #include <awscommonallocator.h>
+    (testpath/"test.c").write <<~C
+      #include <aws/auth/credentials.h>
+      #include <aws/common/allocator.h>
       #include <assert.h>
 
       int main(void) {
@@ -54,6 +54,6 @@ class AwsCAuth < Formula
     C
     system ENV.cc, "test.c", "-o", "test", "-L#{lib}", "-laws-c-auth",
                    "-L#{Formula["aws-c-common"].opt_lib}", "-laws-c-common"
-    system ".test"
+    system "./test"
   end
 end

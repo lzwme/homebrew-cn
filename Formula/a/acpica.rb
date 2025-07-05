@@ -1,14 +1,14 @@
 class Acpica < Formula
   desc "OS-independent implementation of the ACPI specification"
-  homepage "https:github.comacpicaacpica"
-  url "https:github.comacpicaacpicareleasesdownloadR2025_04_04acpica-unix2-20250404.tar.gz"
+  homepage "https://github.com/acpica/acpica"
+  url "https://ghfast.top/https://github.com/acpica/acpica/releases/download/R2025_04_04/acpica-unix2-20250404.tar.gz"
   sha256 "2abeef0b11d208aa9607d8acde07f3e5cee8cc7a43fc354701efa8075b2e5a9f"
   license any_of: ["Intel-ACPI", "GPL-2.0-only", "BSD-3-Clause"]
-  head "https:github.comacpicaacpica.git", branch: "master"
+  head "https://github.com/acpica/acpica.git", branch: "master"
 
   livecheck do
-    url "https:www.intel.comcontentwwwusendownload776303acpi-component-architecture-downloads-unix-format-source-code-and-build-environment-with-an-intel-license.html"
-    regex(href=.*?acpica-unix[._-]v?(\d+(?:\.\d+)*)\.ti)
+    url "https://www.intel.com/content/www/us/en/download/776303/acpi-component-architecture-downloads-unix-format-source-code-and-build-environment-with-an-intel-license.html"
+    regex(/href=.*?acpica-unix[._-]v?(\d+(?:\.\d+)*)\.t/i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -29,12 +29,12 @@ class Acpica < Formula
 
   def install
     # ACPI_PACKED_POINTERS_NOT_SUPPORTED:
-    # https:github.comacpicaacpicaissues781#issuecomment-1718084901
+    # https://github.com/acpica/acpica/issues/781#issuecomment-1718084901
     system "make", "PREFIX=#{prefix}", "OPT_CFLAGS=\"-DACPI_PACKED_POINTERS_NOT_SUPPORTED\""
     system "make", "install", "PREFIX=#{prefix}"
   end
 
   test do
-    system bin"acpihelp", "-u"
+    system bin/"acpihelp", "-u"
   end
 end

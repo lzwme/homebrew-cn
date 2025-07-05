@@ -1,10 +1,10 @@
 class Trunk < Formula
   desc "Build, bundle & ship your Rust WASM application to the web"
-  homepage "https:trunkrs.dev"
-  url "https:github.comtrunk-rstrunkarchiverefstagsv0.21.14.tar.gz"
+  homepage "https://trunkrs.dev/"
+  url "https://ghfast.top/https://github.com/trunk-rs/trunk/archive/refs/tags/v0.21.14.tar.gz"
   sha256 "8687bcf96bdc4decee88458745bbb760ad31dfd109e955cf455c2b64caeeae2f"
   license any_of: ["Apache-2.0", "MIT"]
-  head "https:github.comtrunk-rstrunk.git", branch: "main"
+  head "https://github.com/trunk-rs/trunk.git", branch: "main"
 
   no_autobump! because: :requires_manual_review
 
@@ -33,8 +33,8 @@ class Trunk < Formula
   end
 
   test do
-    ENV["TRUNK_CONFIG"] = testpath"Trunk.toml"
-    (testpath"Trunk.toml").write <<~TOML
+    ENV["TRUNK_CONFIG"] = testpath/"Trunk.toml"
+    (testpath/"Trunk.toml").write <<~TOML
       trunk-version = ">=0.19.0"
 
       [build]
@@ -42,8 +42,8 @@ class Trunk < Formula
       dist = "dist"
     TOML
 
-    assert_match "Configuration {\n", shell_output("#{bin}trunk config show")
+    assert_match "Configuration {\n", shell_output("#{bin}/trunk config show")
 
-    assert_match version.to_s, shell_output("#{bin}trunk --version")
+    assert_match version.to_s, shell_output("#{bin}/trunk --version")
   end
 end

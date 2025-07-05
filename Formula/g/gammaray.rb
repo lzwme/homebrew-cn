@@ -1,10 +1,10 @@
 class Gammaray < Formula
   desc "Examine and manipulate Qt application internals at runtime"
-  homepage "https:www.kdab.comsoftware-technologiesdeveloper-toolsgammaray"
-  url "https:github.comKDABGammaRayreleasesdownloadv3.2.0gammaray-3.2.0.tar.gz"
+  homepage "https://www.kdab.com/software-technologies/developer-tools/gammaray/"
+  url "https://ghfast.top/https://github.com/KDAB/GammaRay/releases/download/v3.2.0/gammaray-3.2.0.tar.gz"
   sha256 "a7c00a5a33c400579002bbe535a667efdea1e726950ecddbf39cf3d8a3f50f07"
   license "GPL-2.0-or-later"
-  head "https:github.comKDABGammaRay.git", branch: "master"
+  head "https://github.com/KDAB/GammaRay.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:  "bc38ac14b372b5eadd5f40332cf95989a8d6f2eba6b3b83b8b8f887f16b5dfa5"
@@ -34,7 +34,7 @@ class Gammaray < Formula
   end
 
   test do
-    gammaray = OS.mac? ? prefix"GammaRay.appContentsMacOSgammaray" : bin"gammaray"
+    gammaray = OS.mac? ? prefix/"GammaRay.app/Contents/MacOS/gammaray" : bin/"gammaray"
     assert_predicate gammaray, :executable?
   end
 end

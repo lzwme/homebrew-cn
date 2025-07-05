@@ -1,7 +1,7 @@
 class Overarch < Formula
   desc "Data driven description of software architecture"
-  homepage "https:github.comsoulspace-orgoverarch"
-  url "https:github.comsoulspace-orgoverarchreleasesdownloadv0.39.0overarch.jar"
+  homepage "https://github.com/soulspace-org/overarch"
+  url "https://ghfast.top/https://github.com/soulspace-org/overarch/releases/download/v0.39.0/overarch.jar"
   sha256 "69e58ec5c507815f62059470ac5b90debebaba4430e5314ddaee364938444c79"
   license "EPL-1.0"
 
@@ -10,7 +10,7 @@ class Overarch < Formula
   end
 
   head do
-    url "https:github.comsoulspace-orgoverarch.git", branch: "main"
+    url "https://github.com/soulspace-org/overarch.git", branch: "main"
     depends_on "leiningen" => :build
   end
 
@@ -19,17 +19,17 @@ class Overarch < Formula
   def install
     if build.head?
       system "lein", "uberjar"
-      jar = "targetoverarch.jar"
+      jar = "target/overarch.jar"
     else
       jar = "overarch.jar"
     end
 
     libexec.install jar
-    bin.write_jar_script libexec"overarch.jar", "overarch"
+    bin.write_jar_script libexec/"overarch.jar", "overarch"
   end
 
   test do
-    (testpath"test.edn").write <<~EOS
+    (testpath/"test.edn").write <<~EOS
       \#{
         {:el :person
          :id :test-customer}
@@ -68,6 +68,6 @@ class Overarch < Formula
        :synthetic-count {:normal 3},
        :external-count {:internal 3}}
     EOS
-    assert_equal expected, shell_output("#{bin}overarch --model-dir=#{testpath} --model-info").chomp
+    assert_equal expected, shell_output("#{bin}/overarch --model-dir=#{testpath} --model-info").chomp
   end
 end

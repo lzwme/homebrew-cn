@@ -1,13 +1,13 @@
 class Ogmtools < Formula
   desc "OGG media streams manipulation tools"
-  homepage "https:www.bunkus.orgvideotoolsogmtools"
-  url "https:www.bunkus.orgvideotoolsogmtoolsogmtools-1.5.tar.bz2"
+  homepage "https://www.bunkus.org/videotools/ogmtools/"
+  url "https://www.bunkus.org/videotools/ogmtools/ogmtools-1.5.tar.bz2"
   sha256 "c8d61d1dbceb981dc7399c1a85e43b509fd3d071fb8d3ca89ea9385e6e40fdea"
   license "GPL-2.0-only"
 
   livecheck do
     url :homepage
-    regex(href=.*?ogmtools[._-]v?(\d+(?:\.\d+)+)\.ti)
+    regex(/href=.*?ogmtools[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -36,7 +36,7 @@ class Ogmtools < Formula
 
   # Borrow patch from MacPorts
   patch :p0 do
-    url "https:raw.githubusercontent.comHomebrewformula-patchese4957439ogmtoolscommon.h.diff"
+    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/e4957439/ogmtools/common.h.diff"
     sha256 "2dd18dea6de0d2820221bde8dfea163101d0037196cb2e94cd910808d10119c0"
   end
 
@@ -44,7 +44,7 @@ class Ogmtools < Formula
     ENV.cxx11
 
     ENV.append "CPPFLAGS", "-I#{Formula["libvorbis"].opt_include}"
-    system ".configure", "--mandir=#{man}", *std_configure_args
+    system "./configure", "--mandir=#{man}", *std_configure_args
 
     system "make", "install", "LIBS=-L#{Formula["libvorbis"].opt_lib} -lvorbis -lvorbisenc"
   end

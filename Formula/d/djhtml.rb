@@ -1,9 +1,9 @@
 class Djhtml < Formula
   include Language::Python::Virtualenv
 
-  desc "DjangoJinja template indenter"
-  homepage "https:github.comrttsdjhtml"
-  url "https:files.pythonhosted.orgpackages49e8c2d12facfc47fec732633ea3c2d820298e0e314331fc43bcf694099abcb5djhtml-3.0.8.tar.gz"
+  desc "Django/Jinja template indenter"
+  homepage "https://github.com/rtts/djhtml"
+  url "https://files.pythonhosted.org/packages/49/e8/c2d12facfc47fec732633ea3c2d820298e0e314331fc43bcf694099abcb5/djhtml-3.0.8.tar.gz"
   sha256 "ec3b4cf25f0959474c7793da1becba654ca9587689ce143955bcbc2638eeabce"
   license "GPL-3.0-or-later"
 
@@ -18,20 +18,20 @@ class Djhtml < Formula
   end
 
   test do
-    test_file = testpath"test.html"
+    test_file = testpath/"test.html"
     test_file.write <<~HTML
       <html>
-      <p>Hello, World!<p>
-      <html>
+      <p>Hello, World!</p>
+      </html>
     HTML
 
     expected_output = <<~HTML
       <html>
-        <p>Hello, World!<p>
-      <html>
+        <p>Hello, World!</p>
+      </html>
     HTML
 
-    system bin"djhtml", "--tabwidth", "2", test_file
+    system bin/"djhtml", "--tabwidth", "2", test_file
     assert_equal expected_output, test_file.read
   end
 end

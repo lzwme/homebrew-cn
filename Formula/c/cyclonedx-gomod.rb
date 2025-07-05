@@ -1,10 +1,10 @@
 class CyclonedxGomod < Formula
   desc "Creates CycloneDX Software Bill of Materials (SBOM) from Go modules"
-  homepage "https:cyclonedx.org"
-  url "https:github.comCycloneDXcyclonedx-gomodarchiverefstagsv1.9.0.tar.gz"
+  homepage "https://cyclonedx.org/"
+  url "https://ghfast.top/https://github.com/CycloneDX/cyclonedx-gomod/archive/refs/tags/v1.9.0.tar.gz"
   sha256 "4490e44e2478a3f8b62e568a530b604ace14bd12d26c0fb41656a24ffec566c7"
   license "Apache-2.0"
-  head "https:github.comCycloneDXcyclonedx-gomod.git", branch: "main"
+  head "https://github.com/CycloneDX/cyclonedx-gomod.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "265722bab2f4df44779e227d2a45ee302a98730f803ff0edbc35b4bd5d20f160"
@@ -18,17 +18,17 @@ class CyclonedxGomod < Formula
   depends_on "go" => [:build, :test]
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), ".cmdcyclonedx-gomod"
+    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/cyclonedx-gomod"
   end
 
   test do
-    (testpath"go.mod").write <<~GOMOD
-      module github.comHomebrewbrew-test
+    (testpath/"go.mod").write <<~GOMOD
+      module github.com/Homebrew/brew-test
 
       go 1.21
     GOMOD
 
-    (testpath"main.go").write <<~GO
+    (testpath/"main.go").write <<~GO
       package main
 
       import (
@@ -41,8 +41,8 @@ class CyclonedxGomod < Formula
       }
     GO
 
-    output = shell_output("#{bin}cyclonedx-gomod mod 2>&1")
+    output = shell_output("#{bin}/cyclonedx-gomod mod 2>&1")
     assert_match "failed to determine version of main module", output
-    assert_match " <name>github.comHomebrewbrew-test<name>", output
+    assert_match " <name>github.com/Homebrew/brew-test</name>", output
   end
 end

@@ -4,20 +4,20 @@ cask "wine@devel" do
 
   # Current winehq packages are deprecated and these are packages from
   # the new maintainers that will eventually be pushed to Winehq.
-  # See https:www.winehq.orgpipermailwine-devel2021-July191504.html
-  url "https:github.comGcenxmacOS_Wine_buildsreleasesdownload#{version}wine-devel-#{version}-osx64.tar.xz",
-      verified: "github.comGcenxmacOS_Wine_builds"
+  # See https://www.winehq.org/pipermail/wine-devel/2021-July/191504.html
+  url "https://ghfast.top/https://github.com/Gcenx/macOS_Wine_builds/releases/download/#{version}/wine-devel-#{version}-osx64.tar.xz",
+      verified: "github.com/Gcenx/macOS_Wine_builds/"
   name "WineHQ-devel"
   desc "Compatibility layer to run Windows applications"
-  homepage "https:wiki.winehq.orgMacOS"
+  homepage "https://wiki.winehq.org/MacOS"
 
   # Not every GitHub release provides a `wine-devel` file, so we check multiple
   # recent releases instead of only the "latest" release.
   livecheck do
     url :url
-    regex(^v?((?:\d+(?:\.\d+)+)(?:-RC\d)?)$i)
+    regex(/^v?((?:\d+(?:\.\d+)+)(?:-RC\d)?)$/i)
     strategy :github_releases do |json, regex|
-      file_regex = ^wine[._-]devel[._-].*?$i
+      file_regex = /^wine[._-]devel[._-].*?$/i
 
       json.map do |release|
         next if release["draft"] || release["prerelease"]
@@ -39,37 +39,37 @@ cask "wine@devel" do
   depends_on macos: ">= :catalina"
 
   app "Wine Devel.app"
-  dir_path = "#{appdir}Wine Devel.appContentsResources"
-  binary "#{dir_path}startbinappdb"
-  binary "#{dir_path}startbinwinehelp"
-  binary "#{dir_path}winebinmsidb"
-  binary "#{dir_path}winebinmsiexec"
-  binary "#{dir_path}winebinnotepad"
-  binary "#{dir_path}winebinregedit"
-  binary "#{dir_path}winebinregsvr32"
-  binary "#{dir_path}winebinwine"
-  binary "#{dir_path}winebinwineboot"
-  binary "#{dir_path}winebinwinecfg"
-  binary "#{dir_path}winebinwineconsole"
-  binary "#{dir_path}winebinwinedbg"
-  binary "#{dir_path}winebinwinefile"
-  binary "#{dir_path}winebinwinemine"
-  binary "#{dir_path}winebinwinepath"
-  binary "#{dir_path}winebinwineserver"
+  dir_path = "#{appdir}/Wine Devel.app/Contents/Resources"
+  binary "#{dir_path}/start/bin/appdb"
+  binary "#{dir_path}/start/bin/winehelp"
+  binary "#{dir_path}/wine/bin/msidb"
+  binary "#{dir_path}/wine/bin/msiexec"
+  binary "#{dir_path}/wine/bin/notepad"
+  binary "#{dir_path}/wine/bin/regedit"
+  binary "#{dir_path}/wine/bin/regsvr32"
+  binary "#{dir_path}/wine/bin/wine"
+  binary "#{dir_path}/wine/bin/wineboot"
+  binary "#{dir_path}/wine/bin/winecfg"
+  binary "#{dir_path}/wine/bin/wineconsole"
+  binary "#{dir_path}/wine/bin/winedbg"
+  binary "#{dir_path}/wine/bin/winefile"
+  binary "#{dir_path}/wine/bin/winemine"
+  binary "#{dir_path}/wine/bin/winepath"
+  binary "#{dir_path}/wine/bin/wineserver"
 
   zap trash: [
-        "~.localshareapplicationswine*",
-        "~.localshareiconshicolor**application-x-wine*",
-        "~.localsharemimeapplicationx-wine*",
-        "~.localsharemimepackagesx-wine*",
-        "~.wine",
-        "~.wine32",
-        "~LibrarySaved Application Stateorg.winehq.wine-devel.wine.savedState",
+        "~/.local/share/applications/wine*",
+        "~/.local/share/icons/hicolor/**/application-x-wine*",
+        "~/.local/share/mime/application/x-wine*",
+        "~/.local/share/mime/packages/x-wine*",
+        "~/.wine",
+        "~/.wine32",
+        "~/Library/Saved Application State/org.winehq.wine-devel.wine.savedState",
       ],
       rmdir: [
-        "~.localshareapplications",
-        "~.localshareicons",
-        "~.localsharemime",
+        "~/.local/share/applications",
+        "~/.local/share/icons",
+        "~/.local/share/mime",
       ]
 
   caveats do

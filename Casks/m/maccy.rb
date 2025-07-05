@@ -2,14 +2,14 @@ cask "maccy" do
   version "2.3.0"
   sha256 "3ebaf4b773af3d6527510ddc4c4dc3fa38f501228a983bc66489ca953d56b09d"
 
-  url "https:github.comp0dejeMaccyreleasesdownload#{version}Maccy.app.zip",
-      verified: "github.comp0dejeMaccy"
+  url "https://ghfast.top/https://github.com/p0deje/Maccy/releases/download/#{version}/Maccy.app.zip",
+      verified: "github.com/p0deje/Maccy/"
   name "Maccy"
   desc "Clipboard manager"
-  homepage "https:maccy.app"
+  homepage "https://maccy.app/"
 
   livecheck do
-    url "https:raw.githubusercontent.comp0dejeMaccymasterappcast.xml"
+    url "https://ghfast.top/https://raw.githubusercontent.com/p0deje/Maccy/master/appcast.xml"
     strategy :sparkle, &:short_version
   end
 
@@ -22,8 +22,8 @@ cask "maccy" do
 
   zap login_item: "Maccy",
       trash:      [
-        "~LibraryApplication Scriptsorg.p0deje.Maccy",
-        "~LibraryContainersorg.p0deje.Maccy",
-        "~LibraryPreferencesorg.p0deje.Maccy.plist",
+        "~/Library/Application Scripts/org.p0deje.Maccy",
+        "~/Library/Containers/org.p0deje.Maccy",
+        "~/Library/Preferences/org.p0deje.Maccy.plist",
       ]
 end

@@ -1,11 +1,11 @@
 class Cherrybomb < Formula
   desc "Tool designed to validate your spec"
-  # Original homepage taken over: https:github.comblst-securitycherrybombissues158
-  homepage "https:github.comblst-securitycherrybomb"
-  url "https:github.comblst-securitycherrybombarchiverefstagsv1.0.1.tar.gz"
+  # Original homepage taken over: https://github.com/blst-security/cherrybomb/issues/158
+  homepage "https://github.com/blst-security/cherrybomb"
+  url "https://ghfast.top/https://github.com/blst-security/cherrybomb/archive/refs/tags/v1.0.1.tar.gz"
   sha256 "1cbea9046f2a6fb7264d82e1695661e93a759d1d536c6d1e742032e4689efe9f"
   license "Apache-2.0"
-  head "https:github.comblst-securitycherrybomb.git", branch: "main"
+  head "https://github.com/blst-security/cherrybomb.git", branch: "main"
 
   no_autobump! because: :requires_manual_review
 
@@ -19,7 +19,7 @@ class Cherrybomb < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "c267814c22eb06a91e7029572694a158b1de67d986e76ebd36973b42f4e840a1"
   end
 
-  # https:github.comblst-securitycherrybombissues156
+  # https://github.com/blst-security/cherrybomb/issues/156
   disable! date: "2024-09-16", because: "needs a service that is no longer available"
 
   depends_on "rust" => :build
@@ -30,13 +30,13 @@ class Cherrybomb < Formula
 
   test do
     resource "homebrew-testconfig" do
-      url "https:raw.githubusercontent.comblst-securitycherrybomb9e704e1cadd90c8a8a5be4e99e847dd144c68b0aimagesapi-with-examples.yaml"
+      url "https://ghfast.top/https://raw.githubusercontent.com/blst-security/cherrybomb/9e704e1cadd90c8a8a5be4e99e847dd144c68b0a/images/api-with-examples.yaml"
       sha256 "f7dc3d69f69ca11ae3e7e6ee702aff13fee3faca565033058d9fd073a15d9d45"
     end
 
     testpath.install resource("homebrew-testconfig")
-    test_config = testpath"api-with-examples.yaml"
-    output = shell_output("#{bin}cherrybomb --file=#{test_config} --format json")
+    test_config = testpath/"api-with-examples.yaml"
+    output = shell_output("#{bin}/cherrybomb --file=#{test_config} --format json")
     assert_match <<~EOS, output
       Starting Cherrybomb...
       Opening OAS file...
@@ -47,6 +47,6 @@ class Cherrybomb < Formula
       No servers supplied
     EOS
 
-    assert_match version.to_s, shell_output("#{bin}cherrybomb --version")
+    assert_match version.to_s, shell_output("#{bin}/cherrybomb --version")
   end
 end

@@ -2,15 +2,15 @@ cask "copytranslator" do
   version "11.0.0"
   sha256 "b05cd929b0e285d0b5300f71a575b20287f3c814043138ce04e1bcfc4d1dff96"
 
-  url "https:github.comCopyTranslatorCopyTranslatorreleasesdownloadv#{version}copytranslator-#{version}.dmg",
-      verified: "github.comCopyTranslatorCopyTranslator"
+  url "https://ghfast.top/https://github.com/CopyTranslator/CopyTranslator/releases/download/v#{version}/copytranslator-#{version}.dmg",
+      verified: "github.com/CopyTranslator/CopyTranslator/"
   name "CopyTranslator"
   desc "Tool that translates text in real-time while copying"
-  homepage "https:copytranslator.github.io"
+  homepage "https://copytranslator.github.io/"
 
   livecheck do
-    url "https:github.comCopyTranslatorcopytranslator.github.ioblobmasterdocs.vuepresspublicwikimac.md"
-    regex(%r{href=.*?copytranslator[._-]v?(\d+(?:\.\d+)+)\.dmg}i)
+    url "https://github.com/CopyTranslator/copytranslator.github.io/blob/master/docs/.vuepress/public/wiki/mac.md"
+    regex(%r{href=.*?/copytranslator[._-]v?(\d+(?:\.\d+)+)\.dmg}i)
     strategy :page_match
   end
 
@@ -21,15 +21,15 @@ cask "copytranslator" do
   app "copytranslator.app"
 
   zap trash: [
-        "~copytranslatorcopytranslator.json",
-        "~copytranslatorlocalShortcuts.json",
-        "~copytranslatorshortcuts.json",
-        "~copytranslatorstyles.css",
-        "~LibraryApplication Supportcopytranslator",
-        "~LibraryPreferencescom.copytranslator.copytranslator.plist",
-        "~LibrarySaved Application Statecom.copytranslator.copytranslator.savedState",
+        "~/copytranslator/copytranslator.json",
+        "~/copytranslator/localShortcuts.json",
+        "~/copytranslator/shortcuts.json",
+        "~/copytranslator/styles.css",
+        "~/Library/Application Support/copytranslator",
+        "~/Library/Preferences/com.copytranslator.copytranslator.plist",
+        "~/Library/Saved Application State/com.copytranslator.copytranslator.savedState",
       ],
-      rmdir: "~copytranslatorlocales"
+      rmdir: "~/copytranslator/locales"
 
   caveats do
     requires_rosetta

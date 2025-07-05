@@ -1,10 +1,10 @@
 class HelmDocs < Formula
   desc "Tool for automatically generating markdown documentation for helm charts"
-  homepage "https:github.comnorwoodjhelm-docs"
-  url "https:github.comnorwoodjhelm-docsarchiverefstagsv1.14.2.tar.gz"
+  homepage "https://github.com/norwoodj/helm-docs"
+  url "https://ghfast.top/https://github.com/norwoodj/helm-docs/archive/refs/tags/v1.14.2.tar.gz"
   sha256 "88d1b3401220b2032cd27974264d2dc0da8f9e7b67a8a929a0848505c4e4a0ae"
   license "GPL-3.0-or-later"
-  head "https:github.comnorwoodjhelm-docs.git", branch: "master"
+  head "https://github.com/norwoodj/helm-docs.git", branch: "master"
 
   # This repository originally used a date-based version format like `19.0110`
   # (from 2019-01-10) instead of the newer `v1.2.3` format. The regex below
@@ -12,7 +12,7 @@ class HelmDocs < Formula
   # newer until version 20.x.
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d{1,3})(?:\.\d)*)$i)
+    regex(/^v?(\d+(?:\.\d{1,3})(?:\.\d)*)$/i)
   end
 
   bottle do
@@ -29,13 +29,13 @@ class HelmDocs < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}"), ".cmdhelm-docs"
+    system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}"), "./cmd/helm-docs"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}helm-docs --version")
+    assert_match version.to_s, shell_output("#{bin}/helm-docs --version")
 
-    (testpath"Chart.yaml").write <<~YAML
+    (testpath/"Chart.yaml").write <<~YAML
       apiVersion: v2
       name: test-app
       description: A test Helm chart
@@ -43,7 +43,7 @@ class HelmDocs < Formula
       type: application
     YAML
 
-    (testpath"values.yaml").write <<~YAML
+    (testpath/"values.yaml").write <<~YAML
       replicaCount: 1
       image: "nginx:1.19.10"
       service:
@@ -51,8 +51,8 @@ class HelmDocs < Formula
         port: 80
     YAML
 
-    output = shell_output("#{bin}helm-docs --chart-search-root . 2>&1")
+    output = shell_output("#{bin}/helm-docs --chart-search-root . 2>&1")
     assert_match "Generating README Documentation for chart .", output
-    assert_match "A test Helm chart", (testpath"README.md").read
+    assert_match "A test Helm chart", (testpath/"README.md").read
   end
 end

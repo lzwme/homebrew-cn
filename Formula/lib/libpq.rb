@@ -1,13 +1,13 @@
 class Libpq < Formula
   desc "Postgres C API library"
-  homepage "https:www.postgresql.orgdocscurrentlibpq.html"
-  url "https:ftp.postgresql.orgpubsourcev17.5postgresql-17.5.tar.bz2"
+  homepage "https://www.postgresql.org/docs/current/libpq.html"
+  url "https://ftp.postgresql.org/pub/source/v17.5/postgresql-17.5.tar.bz2"
   sha256 "fcb7ab38e23b264d1902cb25e6adafb4525a6ebcbd015434aeef9eda80f528d8"
   license "PostgreSQL"
 
   livecheck do
-    url "https:ftp.postgresql.orgpubsource"
-    regex(%r{href=["']?v?(\d+(?:\.\d+)+)?["' >]}i)
+    url "https://ftp.postgresql.org/pub/source/"
+    regex(%r{href=["']?v?(\d+(?:\.\d+)+)/?["' >]}i)
   end
 
   bottle do
@@ -27,7 +27,7 @@ class Libpq < Formula
   depends_on "pkgconf" => :build
   depends_on "icu4c@77"
   # GSSAPI provided by Kerberos.framework crashes when forked.
-  # See https:github.comHomebrewhomebrew-coreissues47494.
+  # See https://github.com/Homebrew/homebrew-core/issues/47494.
   depends_on "krb5"
   depends_on "openssl@3"
 
@@ -42,10 +42,10 @@ class Libpq < Formula
   end
 
   def install
-    ENV["XML_CATALOG_FILES"] = "#{etc}xmlcatalog"
+    ENV["XML_CATALOG_FILES"] = "#{etc}/xml/catalog"
     ENV.runtime_cpu_detection
 
-    system ".configure", "--disable-debug",
+    system "./configure", "--disable-debug",
                           "--prefix=#{prefix}",
                           "--with-gssapi",
                           "--with-openssl",
@@ -54,21 +54,21 @@ class Libpq < Formula
     dirs = %W[
       libdir=#{lib}
       includedir=#{include}
-      pkgincludedir=#{include}postgresql
-      includedir_server=#{include}postgresqlserver
-      includedir_internal=#{include}postgresqlinternal
+      pkgincludedir=#{include}/postgresql
+      includedir_server=#{include}/postgresql/server
+      includedir_internal=#{include}/postgresql/internal
     ]
     system "make"
-    system "make", "-C", "srcbin", "install", *dirs
-    system "make", "-C", "srcinclude", "install", *dirs
-    system "make", "-C", "srcinterfaces", "install", *dirs
-    system "make", "-C", "srccommon", "install", *dirs
-    system "make", "-C", "srcport", "install", *dirs
+    system "make", "-C", "src/bin", "install", *dirs
+    system "make", "-C", "src/include", "install", *dirs
+    system "make", "-C", "src/interfaces", "install", *dirs
+    system "make", "-C", "src/common", "install", *dirs
+    system "make", "-C", "src/port", "install", *dirs
     system "make", "-C", "doc", "install", *dirs
   end
 
   test do
-    (testpath"libpq.c").write <<~C
+    (testpath/"libpq.c").write <<~C
       #include <stdlib.h>
       #include <stdio.h>
       #include <libpq-fe.h>
@@ -82,7 +82,7 @@ class Libpq < Formula
 
           conn = PQconnectdb(conninfo);
 
-          if (PQstatus(conn) != CONNECTION_OK)  This should always fail
+          if (PQstatus(conn) != CONNECTION_OK) // This should always fail
           {
               printf("Connection to database attempted and failed");
               PQfinish(conn);
@@ -93,6 +93,6 @@ class Libpq < Formula
         }
     C
     system ENV.cc, "libpq.c", "-L#{lib}", "-I#{include}", "-lpq", "-o", "libpqtest"
-    assert_equal "Connection to database attempted and failed", shell_output(".libpqtest")
+    assert_equal "Connection to database attempted and failed", shell_output("./libpqtest")
   end
 end

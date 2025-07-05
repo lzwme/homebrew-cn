@@ -1,14 +1,14 @@
 class Redland < Formula
   desc "RDF Library"
-  homepage "https:librdf.org"
-  url "https:download.librdf.orgsourceredland-1.0.17.tar.gz"
+  homepage "https://librdf.org/"
+  url "https://download.librdf.org/source/redland-1.0.17.tar.gz"
   sha256 "de1847f7b59021c16bdc72abb4d8e2d9187cd6124d69156f3326dd34ee043681"
   license any_of: ["LGPL-2.1-or-later", "GPL-2.0-or-later", "Apache-2.0"]
   revision 1
 
   livecheck do
     url :homepage
-    regex(href=.*?redland[._-]v?(\d+(?:\.\d+)+)\.ti)
+    regex(/href=.*?redland[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -40,18 +40,18 @@ class Redland < Formula
   depends_on "unixodbc"
 
   resource "bindings" do
-    url "https:download.librdf.orgsourceredland-bindings-1.0.17.1.tar.gz"
+    url "https://download.librdf.org/source/redland-bindings-1.0.17.1.tar.gz"
     sha256 "ff72b587ab55f09daf81799cb3f9d263708fad5df7a5458f0c28566a2563b7f5"
   end
 
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
-    url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-pre-0.4.2.418-big_sur.diff"
+    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-pre-0.4.2.418-big_sur.diff"
     sha256 "83af02f2aa2b746bb7225872cab29a253264be49db0ecebb12f841562d9a2923"
   end
 
   def install
-    system ".configure", "--with-bdb=no",
+    system "./configure", "--with-bdb=no",
                           "--with-mysql=no",
                           "--with-sqlite=yes",
                           *std_configure_args
@@ -59,7 +59,7 @@ class Redland < Formula
   end
 
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include <stdio.h>
       #include <redland.h>
 
@@ -75,8 +75,8 @@ class Redland < Formula
         model = librdf_new_model(world, storage, NULL);
         statement = librdf_new_statement_from_nodes(
           world,
-          librdf_new_node_from_uri_string(world, (const unsigned char*) "https:example.org"),
-          librdf_new_node_from_uri_string(world, (const unsigned char*) "http:purl.orgdcelements1.1title"),
+          librdf_new_node_from_uri_string(world, (const unsigned char*) "https://example.org/"),
+          librdf_new_node_from_uri_string(world, (const unsigned char*) "http://purl.org/dc/elements/1.1/title"),
           librdf_new_node_from_literal(world, (const unsigned char*) "Homebrew was here", NULL, 0)
         );
 
@@ -90,25 +90,25 @@ class Redland < Formula
       }
     C
 
-    (testpath"file.rdf").write <<~EOS
+    (testpath/"file.rdf").write <<~EOS
       <?xml version="1.0"?>
-      <rdf:RDF xmlns:rdf="http:www.w3.org19990222-rdf-syntax-ns#"
-          xmlns:dc="http:purl.orgdcelements1.1">
-        <rdf:Description rdf:about="https:example.org">
-          <dc:title>Example Site<dc:title>
-          <dc:creator>Internet Assigned Numbers Authority<dc:creator>
+      <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+          xmlns:dc="http://purl.org/dc/elements/1.1/">
+        <rdf:Description rdf:about="https://example.org">
+          <dc:title>Example Site</dc:title>
+          <dc:creator>Internet Assigned Numbers Authority</dc:creator>
           <dc:description>
             This domain is for use in illustrative examples in documents.
             You may use this domain in literature without prior coordination or asking for permission.
-          <dc:description>
-        <rdf:Description>
-      <rdf:RDF>
+          </dc:description>
+        </rdf:Description>
+      </rdf:RDF>
     EOS
 
     includes = %W[
       -I#{include}
-      -I#{Formula["raptor"].opt_include}raptor2
-      -I#{Formula["rasqal"].opt_include}rasqal
+      -I#{Formula["raptor"].opt_include}/raptor2
+      -I#{Formula["rasqal"].opt_include}/rasqal
     ]
 
     libs = %W[
@@ -119,13 +119,13 @@ class Redland < Formula
     ]
 
     system ENV.cc, *includes, "test.c", *libs, "-o", "test"
-    system testpath"test"
+    system testpath/"test"
 
     expected = <<~EOS
-      #{" " * 2}<rdf:Description rdf:about="https:example.org">
-      #{" " * 4}<ns0:title xmlns:ns0="http:purl.orgdcelements1.1">Homebrew was here<ns0:title>
-      #{" " * 2}<rdf:Description>
+      #{" " * 2}<rdf:Description rdf:about="https://example.org/">
+      #{" " * 4}<ns0:title xmlns:ns0="http://purl.org/dc/elements/1.1/">Homebrew was here</ns0:title>
+      #{" " * 2}</rdf:Description>
     EOS
-    assert_match expected, (testpath"file.rdf").read
+    assert_match expected, (testpath/"file.rdf").read
   end
 end

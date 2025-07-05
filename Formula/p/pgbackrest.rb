@@ -1,7 +1,7 @@
 class Pgbackrest < Formula
   desc "Reliable PostgreSQL Backup & Restore"
-  homepage "https:pgbackrest.org"
-  url "https:github.compgbackrestpgbackrestarchiverefstagsrelease2.55.1.tar.gz"
+  homepage "https://pgbackrest.org"
+  url "https://ghfast.top/https://github.com/pgbackrest/pgbackrest/archive/refs/tags/release/2.55.1.tar.gz"
   sha256 "5f050ad751feb5b506cf3c58a5cf1674a7b502328abcb50b37756175f80990e9"
   license "MIT"
 
@@ -41,7 +41,7 @@ class Pgbackrest < Formula
   end
 
   test do
-    output = shell_output("#{bin}pgbackrest info")
+    output = shell_output("#{bin}/pgbackrest info")
     assert_match "No stanzas exist in the repository.", output
   end
 end

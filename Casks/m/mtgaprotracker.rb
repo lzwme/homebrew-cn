@@ -2,11 +2,11 @@ cask "mtgaprotracker" do
   version "2.1.35"
   sha256 "f71552a5e97755adf705758c11147ab15b5adb145707daa5ca689da937e3ec40"
 
-  url "https:github.comRazviarmtgapreleasesdownloadv#{version}mtgaprotracker.dmg",
-      verified: "github.comRazviarmtgap"
+  url "https://ghfast.top/https://github.com/Razviar/mtgap/releases/download/v#{version}/mtgaprotracker.dmg",
+      verified: "github.com/Razviar/mtgap/"
   name "MTGA Pro Tracker"
   desc "Advanced Magic: The Gathering Arena tracking tool"
-  homepage "https:mtgarena.promtga-pro-tracker"
+  homepage "https://mtgarena.pro/mtga-pro-tracker/"
 
   no_autobump! because: :requires_manual_review
 
@@ -15,11 +15,11 @@ cask "mtgaprotracker" do
   app "mtgaprotracker.app"
 
   zap trash: [
-    "~LibraryApplication Supportmtgaprotracker",
-    "~LibraryCachescom.mtgarenapro.mtgaprotracker",
-    "~LibraryCachescom.mtgarenapro.mtgaprotracker.ShipIt",
-    "~LibraryLogsMTGAproTracker",
-    "~LibraryPreferencescom.mtgarenapro.mtgaprotracker.plist",
+    "~/Library/Application Support/mtgaprotracker",
+    "~/Library/Caches/com.mtgarenapro.mtgaprotracker",
+    "~/Library/Caches/com.mtgarenapro.mtgaprotracker.ShipIt",
+    "~/Library/Logs/MTGAproTracker",
+    "~/Library/Preferences/com.mtgarenapro.mtgaprotracker.plist",
   ]
 
   caveats do

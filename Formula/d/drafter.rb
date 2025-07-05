@@ -1,10 +1,10 @@
 class Drafter < Formula
-  desc "Native CC++ API Blueprint Parser"
-  homepage "https:apiblueprint.org"
-  url "https:github.comapiaryiodrafterreleasesdownloadv5.1.0drafter-v5.1.0.tar.gz"
+  desc "Native C/C++ API Blueprint Parser"
+  homepage "https://apiblueprint.org/"
+  url "https://ghfast.top/https://github.com/apiaryio/drafter/releases/download/v5.1.0/drafter-v5.1.0.tar.gz"
   sha256 "b3f60d9e77ace0d40d32b892b99852d3ed92e2fd358abd7f43d813c8dc473913"
   license "MIT"
-  head "https:github.comapiaryiodrafter.git", branch: "master"
+  head "https://github.com/apiaryio/drafter.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -28,7 +28,7 @@ class Drafter < Formula
 
   # patch release version
   patch do
-    url "https:github.comapiaryiodraftercommit481d0ba83370d2cd45aa1979308cac4c2dbd3ab3.patch?full_index=1"
+    url "https://github.com/apiaryio/drafter/commit/481d0ba83370d2cd45aa1979308cac4c2dbd3ab3.patch?full_index=1"
     sha256 "3c3579ab3c0ae71a4449f547b734023b40a872b82ea81a8ccc0961f1d47e9a25"
   end
 
@@ -39,15 +39,15 @@ class Drafter < Formula
   end
 
   test do
-    (testpath"api.apib").write <<~EOS
-      # Homebrew API [brew]
+    (testpath/"api.apib").write <<~EOS
+      # Homebrew API [/brew]
 
-      ## Retrieve All Formula [GET Formula]
-      + Response 200 (applicationjson)
+      ## Retrieve All Formula [GET /Formula]
+      + Response 200 (application/json)
         + Attributes (array)
     EOS
-    assert_equal "OK.", shell_output("#{bin}drafter -l api.apib 2>&1").strip
+    assert_equal "OK.", shell_output("#{bin}/drafter -l api.apib 2>&1").strip
 
-    assert_match version.to_s, shell_output("#{bin}drafter --version")
+    assert_match version.to_s, shell_output("#{bin}/drafter --version")
   end
 end

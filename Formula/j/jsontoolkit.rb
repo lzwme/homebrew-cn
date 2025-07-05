@@ -1,7 +1,7 @@
 class Jsontoolkit < Formula
   desc "Swiss-army knife library for expressive JSON programming in modern C++"
-  homepage "https:jsontoolkit.sourcemeta.com"
-  url "https:github.comsourcemetajsontoolkitarchiverefstagsv2.0.0.tar.gz"
+  homepage "https://jsontoolkit.sourcemeta.com/"
+  url "https://ghfast.top/https://github.com/sourcemeta/jsontoolkit/archive/refs/tags/v2.0.0.tar.gz"
   sha256 "00f82f02166beabec80522e2bbc7b839ee9b7ccb631411c42e6fab65186e80ba"
   license "AGPL-3.0-only"
 
@@ -39,30 +39,30 @@ class Jsontoolkit < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~CPP
-      #include <sourcemetajsontoolkitjson.h>
-      #include <sourcemetajsontoolkitjsonl.h>
-      #include <sourcemetajsontoolkitjsonpointer.h>
-      #include <sourcemetajsontoolkitjsonschema.h>
+    (testpath/"test.cpp").write <<~CPP
+      #include <sourcemeta/jsontoolkit/json.h>
+      #include <sourcemeta/jsontoolkit/jsonl.h>
+      #include <sourcemeta/jsontoolkit/jsonpointer.h>
+      #include <sourcemeta/jsontoolkit/jsonschema.h>
 
       #include <cassert>
       #include <iostream>
       #include <sstream>
 
       int main() {
-         JSON
+        // JSON
         const sourcemeta::jsontoolkit::JSON json_doc =
             sourcemeta::jsontoolkit::parse(R"([ { "foo": 1 }, { "bar": 2 } ])");
         assert(json_doc.is_array());
 
-         JSON Pointer
+        // JSON Pointer
         const sourcemeta::jsontoolkit::Pointer pointer{1, "bar"};
         const sourcemeta::jsontoolkit::JSON &value{
             sourcemeta::jsontoolkit::get(json_doc, pointer)};
         assert(value.is_integer());
         assert(value.to_integer() == 2);
 
-         JSONL
+        // JSONL
         std::istringstream jsonl_input(
             R"JSON({ "foo": 1 }
             { "bar": 2 }
@@ -71,10 +71,10 @@ class Jsontoolkit < Formula
           assert(document.is_object());
         }
 
-         JSON Schema
+        // JSON Schema
         const sourcemeta::jsontoolkit::JSON schema{
             sourcemeta::jsontoolkit::parse(R"JSON({
-          "$schema": "http:json-schema.orgdraft-04schema#",
+          "$schema": "http://json-schema.org/draft-04/schema#",
           "type": "string"
         })JSON")};
 
@@ -101,6 +101,6 @@ class Jsontoolkit < Formula
        "-lsourcemeta_jsontoolkit_jsonpointer",
        "-lsourcemeta_jsontoolkit_uri",
        "-o", "test"
-    system ".test"
+    system "./test"
   end
 end

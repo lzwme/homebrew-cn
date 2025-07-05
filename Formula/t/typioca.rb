@@ -1,10 +1,10 @@
 class Typioca < Formula
   desc "Cozy typing speed tester in terminal"
-  homepage "https:github.combloznelistypioca"
-  url "https:github.combloznelistypiocaarchiverefstags3.1.0.tar.gz"
+  homepage "https://github.com/bloznelis/typioca"
+  url "https://ghfast.top/https://github.com/bloznelis/typioca/archive/refs/tags/3.1.0.tar.gz"
   sha256 "b58dfd36e9f23054b96cbd5859d1a93bc8d3f22b4ce4fd16546c9f19fc4a003c"
   license "MIT"
-  head "https:github.combloznelistypioca.git", branch: "master"
+  head "https://github.com/bloznelis/typioca.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "d67b7e8e8f4bf06519b363da75af9c40805aec9a4a11373cd464d9d3acd59785"
@@ -18,19 +18,19 @@ class Typioca < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = "-s -w -X github.combloznelistypiocacmd.Version=#{version}"
+    ldflags = "-s -w -X github.com/bloznelis/typioca/cmd.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:)
 
-    generate_completions_from_executable(bin"typioca", "completion")
+    generate_completions_from_executable(bin/"typioca", "completion")
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}typioca --version")
+    assert_match version.to_s, shell_output("#{bin}/typioca --version")
 
-    pid = spawn bin"typioca", "serve"
+    pid = spawn bin/"typioca", "serve"
     sleep 1
-    assert_path_exists testpath"typioca"
-    assert_path_exists testpath"typioca.pub"
+    assert_path_exists testpath/"typioca"
+    assert_path_exists testpath/"typioca.pub"
   ensure
     Process.kill("TERM", pid)
     Process.wait(pid)

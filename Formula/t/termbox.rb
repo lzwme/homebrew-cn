@@ -1,10 +1,10 @@
 class Termbox < Formula
   desc "Library for writing text-based user interfaces"
-  homepage "https:github.comtermboxtermbox"
-  url "https:github.comtermboxtermboxarchiverefstagsv1.1.4.tar.gz"
+  homepage "https://github.com/termbox/termbox"
+  url "https://ghfast.top/https://github.com/termbox/termbox/archive/refs/tags/v1.1.4.tar.gz"
   sha256 "402fa1b353882d18e8ddd48f9f37346bbb6f5277993d3b36f1fc7a8d6097ee8a"
   license "MIT"
-  head "https:github.comtermboxtermbox.git", branch: "master"
+  head "https://github.com/termbox/termbox.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -28,16 +28,16 @@ class Termbox < Formula
   end
 
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include <termbox.h>
       int main() {
-         we can't test other functions because the CI test runs in a
-         non-interactive shell
+        // we can't test other functions because the CI test runs in a
+        // non-interactive shell
         tb_set_clear_attributes(42, 42);
       }
     C
 
     system ENV.cc, "test.c", "-L#{lib}", "-ltermbox", "-o", "test"
-    system ".test"
+    system "./test"
   end
 end

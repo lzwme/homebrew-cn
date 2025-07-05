@@ -1,7 +1,7 @@
 class Tabulate < Formula
   desc "Table Maker for Modern C++"
-  homepage "https:github.comp-ranavtabulate"
-  url "https:github.comp-ranavtabulatearchiverefstagsv1.5.tar.gz"
+  homepage "https://github.com/p-ranav/tabulate"
+  url "https://ghfast.top/https://github.com/p-ranav/tabulate/archive/refs/tags/v1.5.tar.gz"
   sha256 "16b289f46306283544bb593f4601e80d6ea51248fde52e910cc569ef08eba3fb"
   license all_of: [
     "MIT",
@@ -24,9 +24,9 @@ class Tabulate < Formula
   end
 
   test do
-    # https:github.comp-ranavtabulateblobmastersamplesshape.cpp
-    (testpath"test.cpp").write <<~CPP
-      #include <tabulatetable.hpp>
+    # https://github.com/p-ranav/tabulate/blob/master/samples/shape.cpp
+    (testpath/"test.cpp").write <<~CPP
+      #include <tabulate/table.hpp>
       using namespace tabulate;
       using Row_t = Table::Row_t;
 
@@ -45,6 +45,6 @@ class Tabulate < Formula
       }
     CPP
     system ENV.cxx, "-std=c++11", "test.cpp", "-o", "test"
-    assert_match "Shape: (63, 7)", shell_output(".test")
+    assert_match "Shape: (63, 7)", shell_output("./test")
   end
 end

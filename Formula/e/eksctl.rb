@@ -1,11 +1,11 @@
 class Eksctl < Formula
   desc "Simple command-line tool for creating clusters on Amazon EKS"
-  homepage "https:eksctl.io"
-  url "https:github.comeksctl-ioeksctl.git",
+  homepage "https://eksctl.io"
+  url "https://github.com/eksctl-io/eksctl.git",
       tag:      "0.210.0",
       revision: "b54410c56b4c4056e4271b3a3b783bf9a357d37d"
   license "Apache-2.0"
-  head "https:github.comeksctl-ioeksctl.git", branch: "main"
+  head "https://github.com/eksctl-io/eksctl.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "816904575e0c15ebd660c8519b521de60fadcdd9b357ccfa6aa57e1ec59eca66"
@@ -23,14 +23,14 @@ class Eksctl < Formula
     system "make", "binary"
     bin.install "eksctl"
 
-    generate_completions_from_executable(bin"eksctl", "completion")
+    generate_completions_from_executable(bin/"eksctl", "completion")
   end
 
   test do
     assert_match "The official CLI for Amazon EKS",
-      shell_output("#{bin}eksctl --help")
+      shell_output("#{bin}/eksctl --help")
 
     assert_match "Error: couldn't create node group filter from command line options: --cluster must be set",
-      shell_output("#{bin}eksctl create nodegroup 2>&1", 1)
+      shell_output("#{bin}/eksctl create nodegroup 2>&1", 1)
   end
 end

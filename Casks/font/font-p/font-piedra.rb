@@ -2,10 +2,10 @@ cask "font-piedra" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefontsrawmainoflpiedraPiedra-Regular.ttf",
-      verified: "github.comgooglefonts"
+  url "https://github.com/google/fonts/raw/main/ofl/piedra/Piedra-Regular.ttf",
+      verified: "github.com/google/fonts/"
   name "Piedra"
-  homepage "https:fonts.google.comspecimenPiedra"
+  homepage "https://fonts.google.com/specimen/Piedra"
 
   font "Piedra-Regular.ttf"
 

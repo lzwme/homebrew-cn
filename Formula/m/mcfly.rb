@@ -1,10 +1,10 @@
 class Mcfly < Formula
   desc "Fly through your shell history"
-  homepage "https:github.comcantinomcfly"
-  url "https:github.comcantinomcflyarchiverefstagsv0.9.3.tar.gz"
+  homepage "https://github.com/cantino/mcfly"
+  url "https://ghfast.top/https://github.com/cantino/mcfly/archive/refs/tags/v0.9.3.tar.gz"
   sha256 "194383276095b71dd6d085fb959ba7981384cbe09776fd5f182e95bbed5a3a13"
   license "MIT"
-  head "https:github.comcantinomcfly.git", branch: "master"
+  head "https://github.com/cantino/mcfly.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "3a329184731d417bc6016e81b3ce19d17effb7d42350eee294e1618406275033"
@@ -23,7 +23,7 @@ class Mcfly < Formula
   end
 
   test do
-    assert_match "mcfly_prompt_command", shell_output("#{bin}mcfly init bash")
-    assert_match version.to_s, shell_output("#{bin}mcfly --version")
+    assert_match "mcfly_prompt_command", shell_output("#{bin}/mcfly init bash")
+    assert_match version.to_s, shell_output("#{bin}/mcfly --version")
   end
 end

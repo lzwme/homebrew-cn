@@ -1,14 +1,14 @@
 class Acl2 < Formula
   desc "Logic and programming language in which you can model computer systems"
-  homepage "https:www.cs.utexas.edu~mooreacl2"
-  url "https:github.comacl2acl2archiverefstags8.6.tar.gz"
+  homepage "https://www.cs.utexas.edu/~moore/acl2/"
+  url "https://ghfast.top/https://github.com/acl2/acl2/archive/refs/tags/8.6.tar.gz"
   sha256 "c2d73e66422901b3cc2a6f5a9ab50f5f3b1b4060cf9dc9148d076f3a8b957cf9"
   license "BSD-3-Clause"
   revision 9
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -25,41 +25,41 @@ class Acl2 < Formula
   def install
     # Remove prebuilt binaries
     [
-      "bookskestrelaxex86examplespopcountpopcount-macho-64.executable",
-      "bookskestrelaxex86examplesfactorialfactorial.macho64",
-      "bookskestrelaxex86examplesteatea.macho64",
+      "books/kestrel/axe/x86/examples/popcount/popcount-macho-64.executable",
+      "books/kestrel/axe/x86/examples/factorial/factorial.macho64",
+      "books/kestrel/axe/x86/examples/tea/tea.macho64",
     ].each do |f|
-      (buildpathf).unlink
+      (buildpath/f).unlink
     end
 
     system "make",
-           "LISP=#{HOMEBREW_PREFIX}binsbcl",
-           "ACL2=#{buildpath}saved_acl2",
+           "LISP=#{HOMEBREW_PREFIX}/bin/sbcl",
+           "ACL2=#{buildpath}/saved_acl2",
            "USE_QUICKLISP=0",
            "all", "basic"
     system "make",
-           "LISP=#{HOMEBREW_PREFIX}binsbcl",
+           "LISP=#{HOMEBREW_PREFIX}/bin/sbcl",
            "ACL2_PAR=p",
-           "ACL2=#{buildpath}saved_acl2p",
+           "ACL2=#{buildpath}/saved_acl2p",
            "USE_QUICKLISP=0",
            "all", "basic"
     libexec.install Dir["*"]
 
-    (bin"acl2").write <<~EOF
-      #!binsh
-      export ACL2_SYSTEM_BOOKS='#{libexec}books'
-      #{Formula["sbcl"].opt_bin}sbcl --core '#{libexec}saved_acl2.core' --userinit devnull --eval '(acl2::sbcl-restart)'
+    (bin/"acl2").write <<~EOF
+      #!/bin/sh
+      export ACL2_SYSTEM_BOOKS='#{libexec}/books'
+      #{Formula["sbcl"].opt_bin}/sbcl --core '#{libexec}/saved_acl2.core' --userinit /dev/null --eval '(acl2::sbcl-restart)'
     EOF
-    (bin"acl2p").write <<~EOF
-      #!binsh
-      export ACL2_SYSTEM_BOOKS='#{libexec}books'
-      #{Formula["sbcl"].opt_bin}sbcl --core '#{libexec}saved_acl2p.core' --userinit devnull --eval '(acl2::sbcl-restart)'
+    (bin/"acl2p").write <<~EOF
+      #!/bin/sh
+      export ACL2_SYSTEM_BOOKS='#{libexec}/books'
+      #{Formula["sbcl"].opt_bin}/sbcl --core '#{libexec}/saved_acl2p.core' --userinit /dev/null --eval '(acl2::sbcl-restart)'
     EOF
   end
 
   test do
-    (testpath"simple.lisp").write "(+ 2 2)"
-    output = shell_output("#{bin}acl2 < #{testpath}simple.lisp | grep 'ACL2 !>'")
+    (testpath/"simple.lisp").write "(+ 2 2)"
+    output = shell_output("#{bin}/acl2 < #{testpath}/simple.lisp | grep 'ACL2 !>'")
     assert_equal "ACL2 !>4\nACL2 !>Bye.", output.strip
   end
 end

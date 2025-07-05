@@ -1,7 +1,7 @@
 class Lune < Formula
   desc "Standalone Luau script runtime"
-  homepage "https:lune-org.github.iodocs"
-  url "https:github.comlune-orglunearchiverefstagsv0.9.4.tar.gz"
+  homepage "https://lune-org.github.io/docs"
+  url "https://ghfast.top/https://github.com/lune-org/lune/archive/refs/tags/v0.9.4.tar.gz"
   sha256 "73651a1e3edaa2c563d420d653906d2280c3ad8a92fb338a39faf95928508af1"
   license "MPL-2.0"
 
@@ -19,11 +19,11 @@ class Lune < Formula
   depends_on "rust" => :build
 
   def install
-    system "cargo", "install", "--all-features", *std_cargo_args(path: "crateslune")
+    system "cargo", "install", "--all-features", *std_cargo_args(path: "crates/lune")
   end
 
   test do
-    (testpath"test.lua").write("print(2 + 2)")
-    assert_equal "4", shell_output("#{bin}lune run test.lua").chomp
+    (testpath/"test.lua").write("print(2 + 2)")
+    assert_equal "4", shell_output("#{bin}/lune run test.lua").chomp
   end
 end

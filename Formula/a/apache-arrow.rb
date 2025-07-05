@@ -1,12 +1,12 @@
 class ApacheArrow < Formula
   desc "Columnar in-memory analytics layer designed to accelerate big data"
-  homepage "https:arrow.apache.org"
-  url "https:www.apache.orgdyncloser.lua?path=arrowarrow-20.0.0apache-arrow-20.0.0.tar.gz"
-  mirror "https:archive.apache.orgdistarrowarrow-20.0.0apache-arrow-20.0.0.tar.gz"
+  homepage "https://arrow.apache.org/"
+  url "https://www.apache.org/dyn/closer.lua?path=arrow/arrow-20.0.0/apache-arrow-20.0.0.tar.gz"
+  mirror "https://archive.apache.org/dist/arrow/arrow-20.0.0/apache-arrow-20.0.0.tar.gz"
   sha256 "89efbbf852f5a1f79e9c99ab4c217e2eb7f991837c005cba2d4a2fbd35fad212"
   license "Apache-2.0"
   revision 1
-  head "https:github.comapachearrow.git", branch: "main"
+  head "https://github.com/apache/arrow.git", branch: "main"
 
   no_autobump! because: :requires_manual_review
 
@@ -44,7 +44,7 @@ class ApacheArrow < Formula
   uses_from_macos "bzip2"
   uses_from_macos "zlib"
 
-  # Issue ref: https:github.comprotocolbuffersprotobufissues19447
+  # Issue ref: https://github.com/protocolbuffers/protobuf/issues/19447
   fails_with :gcc do
     version "12"
     cause "Protobuf 29+ generated code with visibility and deprecated attributes needs GCC 13+"
@@ -87,7 +87,7 @@ class ApacheArrow < Formula
     args << "-DCMAKE_SHARED_LINKER_FLAGS=-Wl,#{OS.mac? ? "-dead_strip_dylibs" : "--as-needed"}"
     # ARROW_SIMD_LEVEL sets the minimum required SIMD. Since this defaults to
     # SSE4.2 on x86_64, we need to reduce level to match oldest supported CPU.
-    # Ref: https:arrow.apache.orgdocscppenv_vars.html#envvar-ARROW_USER_SIMD_LEVEL
+    # Ref: https://arrow.apache.org/docs/cpp/env_vars.html#envvar-ARROW_USER_SIMD_LEVEL
     if build.bottle? && Hardware::CPU.intel? && (!OS.mac? || !MacOS.version.requires_sse42?)
       args << "-DARROW_SIMD_LEVEL=NONE"
     end
@@ -100,14 +100,14 @@ class ApacheArrow < Formula
   test do
     ENV.method(DevelopmentTools.default_compiler).call if OS.linux?
 
-    (testpath"test.cpp").write <<~CPP
-      #include "arrowapi.h"
+    (testpath/"test.cpp").write <<~CPP
+      #include "arrow/api.h"
       int main(void) {
         arrow::int64();
         return 0;
       }
     CPP
     system ENV.cxx, "test.cpp", "-std=c++17", "-I#{include}", "-L#{lib}", "-larrow", "-o", "test"
-    system ".test"
+    system "./test"
   end
 end

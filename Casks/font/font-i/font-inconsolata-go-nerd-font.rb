@@ -2,9 +2,9 @@ cask "font-inconsolata-go-nerd-font" do
   version "3.4.0"
   sha256 "fe1f0d46c96269534d732b1a7e35ef9d0ed83573e70ef1b61f9e3a75668ef5c2"
 
-  url "https:github.comryanoasisnerd-fontsreleasesdownloadv#{version}InconsolataGo.zip"
+  url "https://ghfast.top/https://github.com/ryanoasis/nerd-fonts/releases/download/v#{version}/InconsolataGo.zip"
   name "InconsolataGo Nerd Font (InconsolataGo)"
-  homepage "https:github.comryanoasisnerd-fonts"
+  homepage "https://github.com/ryanoasis/nerd-fonts"
 
   livecheck do
     url :url

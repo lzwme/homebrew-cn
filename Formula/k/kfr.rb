@@ -1,7 +1,7 @@
 class Kfr < Formula
   desc "Fast, modern C++ DSP framework"
-  homepage "https:www.kfrlib.com"
-  url "https:github.comkfrlibkfrarchiverefstags6.2.0.tar.gz"
+  homepage "https://www.kfrlib.com/"
+  url "https://ghfast.top/https://github.com/kfrlib/kfr/archive/refs/tags/6.2.0.tar.gz"
   sha256 "bc9507e1dde17a86b68fb045404b66c5c486e61e324d9209468ea1e6cac7173c"
   license "GPL-2.0-or-later"
 
@@ -39,8 +39,8 @@ class Kfr < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~CPP
-      #include <kfrio.hpp>
+    (testpath/"test.cpp").write <<~CPP
+      #include <kfr/io.hpp>
 
       using namespace kfr;
 
@@ -53,6 +53,6 @@ class Kfr < Formula
     ENV.clang if OS.linux? && Hardware::CPU.arm?
     system ENV.cxx, "test.cpp", "-std=c++17", "-I#{include}", "-L#{lib}", "-lkfr_io",
                     "-o", "test"
-    assert_equal "Hello KFR!", shell_output(".test").chomp
+    assert_equal "Hello KFR!", shell_output("./test").chomp
   end
 end

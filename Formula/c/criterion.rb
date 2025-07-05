@@ -1,11 +1,11 @@
 class Criterion < Formula
   desc "Cross-platform C and C++ unit testing framework for the 21st century"
-  homepage "https:github.comSnaipeCriterion"
-  url "https:github.comSnaipeCriterionreleasesdownloadv2.4.2criterion-2.4.2.tar.xz"
+  homepage "https://github.com/Snaipe/Criterion"
+  url "https://ghfast.top/https://github.com/Snaipe/Criterion/releases/download/v2.4.2/criterion-2.4.2.tar.xz"
   sha256 "e3c52fae0e90887aeefa1d45066b1fde64b82517d7750db7a0af9226ca6571c0"
   license "MIT"
   revision 2
-  head "https:github.comSnaipeCriterion.git", branch: "bleeding"
+  head "https://github.com/Snaipe/Criterion.git", branch: "bleeding"
 
   no_autobump! because: :requires_manual_review
 
@@ -36,8 +36,8 @@ class Criterion < Formula
   end
 
   test do
-    (testpath"test-criterion.c").write <<~C
-      #include <criterioncriterion.h>
+    (testpath/"test-criterion.c").write <<~C
+      #include <criterion/criterion.h>
 
       Test(suite_name, test_name)
       {
@@ -46,6 +46,6 @@ class Criterion < Formula
     C
 
     system ENV.cc, "test-criterion.c", "-I#{include}", "-L#{lib}", "-lcriterion", "-o", "test-criterion"
-    system ".test-criterion"
+    system "./test-criterion"
   end
 end

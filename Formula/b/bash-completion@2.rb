@@ -1,7 +1,7 @@
 class BashCompletionAT2 < Formula
   desc "Programmable completion for Bash 4.2+"
-  homepage "https:github.comscopbash-completion"
-  url "https:github.comscopbash-completionreleasesdownload2.16.0bash-completion-2.16.0.tar.xz"
+  homepage "https://github.com/scop/bash-completion"
+  url "https://ghfast.top/https://github.com/scop/bash-completion/releases/download/2.16.0/bash-completion-2.16.0.tar.xz"
   sha256 "3369bd5e418a75fb990863925aed5b420398acebb320ec4c0306b3eae23f107a"
   license "GPL-2.0-or-later"
 
@@ -21,7 +21,7 @@ class BashCompletionAT2 < Formula
   end
 
   head do
-    url "https:github.comscopbash-completion.git", branch: "master"
+    url "https://github.com/scop/bash-completion.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -34,27 +34,27 @@ class BashCompletionAT2 < Formula
 
   def install
     inreplace "bash_completion" do |s|
-      # `usrbinreadlink -f` exists since macOS 12.3. Older systems
+      # `/usr/bin/readlink -f` exists since macOS 12.3. Older systems
       # (including earlier Monterey releases) do not support this option.
       s.gsub! "readlink -f", "readlink" if OS.mac? && MacOS.version <= :monterey
       # Automatically read Homebrew's existing v1 completions
-      s.gsub! "(etcbash_completion.d)", "(#{etc}bash_completion.d)"
+      s.gsub! "(/etc/bash_completion.d)", "(#{etc}/bash_completion.d)"
     end
 
     system "autoreconf", "--force", "--install", "--verbose" if build.head?
-    system ".configure", *std_configure_args
+    system "./configure", *std_configure_args
     ENV.deparallelize
     system "make", "install"
   end
 
   def caveats
     <<~EOS
-      Add the following line to your ~.bash_profile:
-        [[ -r "#{etc}profile.dbash_completion.sh" ]] && . "#{etc}profile.dbash_completion.sh"
+      Add the following line to your ~/.bash_profile:
+        [[ -r "#{etc}/profile.d/bash_completion.sh" ]] && . "#{etc}/profile.d/bash_completion.sh"
     EOS
   end
 
   test do
-    system "test", "-f", "#{share}bash-completionbash_completion"
+    system "test", "-f", "#{share}/bash-completion/bash_completion"
   end
 end

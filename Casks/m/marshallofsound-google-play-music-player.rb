@@ -2,10 +2,10 @@ cask "marshallofsound-google-play-music-player" do
   version "4.7.1"
   sha256 "de6409bca32072d231ff636b68589329731923239ebf1c36e6f557fa26ebddf6"
 
-  url "https:github.comMarshallOfSoundGoogle-Play-Music-Desktop-Player-UNOFFICIAL-releasesdownloadv#{version}Google.Play.Music.Desktop.Player.OSX.zip",
-      verified: "github.comMarshallOfSoundGoogle-Play-Music-Desktop-Player-UNOFFICIAL-"
+  url "https://ghfast.top/https://github.com/MarshallOfSound/Google-Play-Music-Desktop-Player-UNOFFICIAL-/releases/download/v#{version}/Google.Play.Music.Desktop.Player.OSX.zip",
+      verified: "github.com/MarshallOfSound/Google-Play-Music-Desktop-Player-UNOFFICIAL-/"
   name "Google Play Music Desktop Player"
-  homepage "https:www.googleplaymusicdesktopplayer.com"
+  homepage "https://www.googleplaymusicdesktopplayer.com/"
 
   no_autobump! because: :requires_manual_review
 
@@ -19,17 +19,17 @@ cask "marshallofsound-google-play-music-player" do
   ]
 
   zap trash: [
-    "~LibraryApplication Supportcom.apple.sharedfilelistcom.apple.LSSharedFileList.ApplicationRecentDocumentsgoogle-play-music-desktop-player.sfl*",
-    "~LibraryApplication SupportGoogle Play Music Desktop Player",
-    "~LibraryApplication Supportgoogle-play-music-desktop-player.ShipIt",
-    "~LibraryCachesGoogle Play Music Desktop Player",
-    "~LibraryCachesgoogle-play-music-desktop-player",
-    "~LibraryCachesgoogle-play-music-desktop-player.ShipIt",
-    "~LibraryCookiesgoogle-play-music-desktop-player.binarycookies",
-    "~LibraryLogsGoogle Play Music Desktop Player",
-    "~LibraryPreferencesgoogle-play-music-desktop-player.helper.plist",
-    "~LibraryPreferencesgoogle-play-music-desktop-player.plist",
-    "~LibrarySaved Application Stategoogle-play-music-desktop-player.savedState",
+    "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/google-play-music-desktop-player.sfl*",
+    "~/Library/Application Support/Google Play Music Desktop Player",
+    "~/Library/Application Support/google-play-music-desktop-player.ShipIt",
+    "~/Library/Caches/Google Play Music Desktop Player",
+    "~/Library/Caches/google-play-music-desktop-player",
+    "~/Library/Caches/google-play-music-desktop-player.ShipIt",
+    "~/Library/Cookies/google-play-music-desktop-player.binarycookies",
+    "~/Library/Logs/Google Play Music Desktop Player",
+    "~/Library/Preferences/google-play-music-desktop-player.helper.plist",
+    "~/Library/Preferences/google-play-music-desktop-player.plist",
+    "~/Library/Saved Application State/google-play-music-desktop-player.savedState",
   ]
 
   caveats do

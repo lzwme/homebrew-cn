@@ -1,10 +1,10 @@
 class KamalProxy < Formula
   desc "Lightweight proxy server for Kamal"
-  homepage "https:kamal-deploy.org"
-  url "https:github.combasecampkamal-proxyarchiverefstagsv0.9.1.tar.gz"
+  homepage "https://kamal-deploy.org/"
+  url "https://ghfast.top/https://github.com/basecamp/kamal-proxy/archive/refs/tags/v0.9.1.tar.gz"
   sha256 "12d8a7ac96c71cbcb46b51b7d004f268a86cb45a44da010a1e524fb6ccd924a7"
   license "MIT"
-  head "https:github.combasecampkamal-proxy.git", branch: "main"
+  head "https://github.com/basecamp/kamal-proxy.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "b4ef131344c9f0f105992aec587df576bbf7c2413f0ac17993785b3efe1a0e8c"
@@ -18,19 +18,19 @@ class KamalProxy < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), ".cmdkamal-proxy"
+    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/kamal-proxy"
   end
 
   test do
-    assert_match "HTTP proxy for zero downtime deployments", shell_output(bin"kamal-proxy")
+    assert_match "HTTP proxy for zero downtime deployments", shell_output(bin/"kamal-proxy")
 
     read, write = IO.pipe
     port = free_port
     pid = fork do
-      exec "#{bin}kamal-proxy run --http-port=#{port}", out: write
+      exec "#{bin}/kamal-proxy run --http-port=#{port}", out: write
     end
 
-    system "curl -A 'HOMEBREW' http:localhost:#{port} > devnull 2>&1"
+    system "curl -A 'HOMEBREW' http://localhost:#{port} > /dev/null 2>&1"
     sleep 2
 
     output = read.gets

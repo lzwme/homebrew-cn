@@ -1,10 +1,10 @@
 class TfSummarize < Formula
   desc "CLI to print the summary of the terraform plan"
-  homepage "https:github.comdineshbatf-summarize"
-  url "https:github.comdineshbatf-summarizearchiverefstagsv0.3.14.tar.gz"
+  homepage "https://github.com/dineshba/tf-summarize"
+  url "https://ghfast.top/https://github.com/dineshba/tf-summarize/archive/refs/tags/v0.3.14.tar.gz"
   sha256 "c4ea4825aef3bb393917aaa97beec66a07e58890229bd4832f719b1dad4f449e"
   license "MIT"
-  head "https:github.comdineshbatf-summarize.git", branch: "main"
+  head "https://github.com/dineshba/tf-summarize.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "49d532560bc3caf6e781226c2f9559532f8f73bf1132664b36b97883f2573ad5"
@@ -24,14 +24,14 @@ class TfSummarize < Formula
 
   test do
     resource "tfplan.json" do
-      url "https:raw.githubusercontent.comdineshbatf-summarizec447ded989b8e84b52d993e0b0e30139b5fb5818exampletfplan.json"
+      url "https://ghfast.top/https://raw.githubusercontent.com/dineshba/tf-summarize/c447ded989b8e84b52d993e0b0e30139b5fb5818/example/tfplan.json"
       sha256 "ceca61c72c77b4400d4170e58abc0cafd3ad1d42d622fe8a5b06cdfba3273131"
     end
 
-    assert_match version.to_s, shell_output("#{bin}tf-summarize -v")
+    assert_match version.to_s, shell_output("#{bin}/tf-summarize -v")
 
     testpath.install resource("tfplan.json")
-    output = shell_output("#{bin}tf-summarize -json-sum #{testpath}tfplan.json")
+    output = shell_output("#{bin}/tf-summarize -json-sum #{testpath}/tfplan.json")
     assert_match "7", JSON.parse(output)["changes"]["add"].to_s
   end
 end

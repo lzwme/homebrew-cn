@@ -1,10 +1,10 @@
 class Vgt < Formula
   desc "Visualising Go Tests"
-  homepage "https:github.comroblaszczakvgt"
-  url "https:github.comroblaszczakvgtarchiverefstagsv1.0.0.tar.gz"
+  homepage "https://github.com/roblaszczak/vgt"
+  url "https://ghfast.top/https://github.com/roblaszczak/vgt/archive/refs/tags/v1.0.0.tar.gz"
   sha256 "1db7e7d9c2e2d0b4c5c6f33a71b4e13142a20319238f7d47166fea68919488c5"
   license "MIT"
-  head "https:github.comroblaszczakvgt.git", branch: "main"
+  head "https://github.com/roblaszczak/vgt.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "7b7d4427dfe87372d187344ca5f584db793edcba6c21a64161ad1a7e19e3b723"
@@ -22,7 +22,7 @@ class Vgt < Formula
   end
 
   test do
-    (testpath"test.go").write <<~EOS
+    (testpath/"test.go").write <<~EOS
       package test
 
       import "testing"
@@ -32,7 +32,7 @@ class Vgt < Formula
       }
     EOS
 
-    output = pipe_output("#{bin}vgt --print-html", "go test -json #{testpath}sample_test.go", 0)
+    output = pipe_output("#{bin}/vgt --print-html", "go test -json #{testpath}/sample_test.go", 0)
     assert_match "Test Results (0s 0 passed, 0 failed)", output
   end
 end

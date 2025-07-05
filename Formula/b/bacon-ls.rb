@@ -1,10 +1,10 @@
 class BaconLs < Formula
   desc "Rust diagnostic provider based on Bacon"
-  homepage "https:github.comcrisidevbacon-ls"
-  url "https:github.comcrisidevbacon-lsarchiverefstags0.21.0.tar.gz"
+  homepage "https://github.com/crisidev/bacon-ls"
+  url "https://ghfast.top/https://github.com/crisidev/bacon-ls/archive/refs/tags/0.21.0.tar.gz"
   sha256 "85435d98030c54ef52598827018f9df587d60ff7a8dff3915198778546ca7c93"
   license "MIT"
-  head "https:github.comcrisidevbacon-ls.git", branch: "main"
+  head "https://github.com/crisidev/bacon-ls.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "9b82dd97acdfd53d0dc57a7fe745f259b15d790423031b040adb6df4a404d0ba"
@@ -30,7 +30,7 @@ class BaconLs < Formula
   test do
     require "open3"
 
-    assert_match version.to_s, shell_output("#{bin}bacon-ls --version")
+    assert_match version.to_s, shell_output("#{bin}/bacon-ls --version")
 
     init_json = <<~JSON
       {
@@ -44,11 +44,11 @@ class BaconLs < Formula
       }
     JSON
 
-    Open3.popen3(bin"bacon-ls") do |stdin, stdout, _|
+    Open3.popen3(bin/"bacon-ls") do |stdin, stdout, _|
       stdin.write "Content-Length: #{init_json.bytesize}\r\n\r\n#{init_json}"
       stdin.close
 
-      assert_match(^Content-Length: \d+i, stdout.read)
+      assert_match(/^Content-Length: \d+/i, stdout.read)
     end
   end
 end

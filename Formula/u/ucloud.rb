@@ -1,7 +1,7 @@
 class Ucloud < Formula
   desc "Official tool for managing UCloud services"
-  homepage "https:www.ucloud.cn"
-  url "https:github.comuclouducloud-cliarchiverefstagsv0.3.0.tar.gz"
+  homepage "https://www.ucloud.cn"
+  url "https://ghfast.top/https://github.com/ucloud/ucloud-cli/archive/refs/tags/v0.3.0.tar.gz"
   sha256 "4b70919ce47d14fe92496be1686ac2264a23a5f898cba5faff1bcc0f38363686"
   license "Apache-2.0"
 
@@ -21,9 +21,9 @@ class Ucloud < Formula
   end
 
   test do
-    system bin"ucloud", "config", "--project-id", "org-test", "--profile", "default", "--active", "true"
-    config_json = (testpath".ucloudconfig.json").read
+    system bin/"ucloud", "config", "--project-id", "org-test", "--profile", "default", "--active", "true"
+    config_json = (testpath/".ucloud/config.json").read
     assert_match '"project_id":"org-test"', config_json
-    assert_match version.to_s, shell_output("#{bin}ucloud --version")
+    assert_match version.to_s, shell_output("#{bin}/ucloud --version")
   end
 end

@@ -1,10 +1,10 @@
 class Glfw < Formula
   desc "Multi-platform library for OpenGL applications"
-  homepage "https:www.glfw.org"
-  url "https:github.comglfwglfwarchiverefstags3.4.tar.gz"
+  homepage "https://www.glfw.org/"
+  url "https://ghfast.top/https://github.com/glfw/glfw/archive/refs/tags/3.4.tar.gz"
   sha256 "c038d34200234d071fae9345bc455e4a8f2f544ab60150765d7704e08f3dac01"
   license "Zlib"
-  head "https:github.comglfwglfw.git", branch: "master"
+  head "https://github.com/glfw/glfw.git", branch: "master"
 
   bottle do
     rebuild 2
@@ -30,7 +30,7 @@ class Glfw < Formula
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"
-    lib.install "buildsrclibglfw3.a"
+    lib.install "build/src/libglfw3.a"
 
     system "cmake", "-S", ".", "-B", "build", "-DBUILD_SHARED_LIBS=TRUE", *std_cmake_args
     system "cmake", "--build", "build"
@@ -38,9 +38,9 @@ class Glfw < Formula
   end
 
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #define GLFW_INCLUDE_GLU
-      #include <GLFWglfw3.h>
+      #include <GLFW/glfw3.h>
       #include <stdlib.h>
       int main()
       {
@@ -56,6 +56,6 @@ class Glfw < Formula
 
     return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
 
-    system ".test"
+    system "./test"
   end
 end

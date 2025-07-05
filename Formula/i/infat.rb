@@ -1,7 +1,7 @@
 class Infat < Formula
   desc "Tool to set default openers for file formats and url schemes on MacOS"
-  homepage "https:github.comphilocalystinfat"
-  url "https:github.comphilocalystinfatarchiverefstagsv2.5.2.tar.gz"
+  homepage "https://github.com/philocalyst/infat"
+  url "https://ghfast.top/https://github.com/philocalyst/infat/archive/refs/tags/v2.5.2.tar.gz"
   sha256 "145d37b264113f4826fcf2c7e2be3f58ffd0ebcb25031163daef8ee38589219e"
   license "MIT"
 
@@ -17,13 +17,13 @@ class Infat < Formula
 
   def install
     system "swift", "build", "--disable-sandbox", "-c", "release", "--static-swift-stdlib"
-    bin.install ".buildreleaseinfat"
+    bin.install ".build/release/infat"
 
-    generate_completions_from_executable(bin"infat", "--generate-completion-script")
+    generate_completions_from_executable(bin/"infat", "--generate-completion-script")
   end
 
   test do
-    output = shell_output("#{bin}infat set TextEdit --ext txt")
+    output = shell_output("#{bin}/infat set TextEdit --ext txt")
     assert_match "Successfully bound TextEdit to txt", output
   end
 end

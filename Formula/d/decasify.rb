@@ -1,7 +1,7 @@
 class Decasify < Formula
   desc "Utility for casting strings to title-case according to locale-aware style guides"
-  homepage "https:github.comalerquedecasify"
-  url "https:github.comalerquedecasifyreleasesdownloadv0.10.1decasify-0.10.1.tar.zst"
+  homepage "https://github.com/alerque/decasify"
+  url "https://ghfast.top/https://github.com/alerque/decasify/releases/download/v0.10.1/decasify-0.10.1.tar.zst"
   sha256 "5cf9781df864c211d191f73ae014da7de1e02cad6507850728fea5a0b9f946e7"
   license "LGPL-3.0-only"
 
@@ -16,7 +16,7 @@ class Decasify < Formula
   end
 
   head do
-    url "https:github.comalerquedecasify.git", branch: "master"
+    url "https://github.com/alerque/decasify.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -30,14 +30,14 @@ class Decasify < Formula
   uses_from_macos "zlib"
 
   def install
-    system ".bootstrap.sh" if build.head?
-    system ".configure", "--disable-silent-rules", *std_configure_args
+    system "./bootstrap.sh" if build.head?
+    system "./configure", "--disable-silent-rules", *std_configure_args
     system "make"
     system "make", "install"
   end
 
   test do
-    assert_match "decasify v#{version}", shell_output("#{bin}decasify --version")
-    assert_match "Ben ve İvan", shell_output("#{bin}decasify -l tr -c title 'ben VE ivan'")
+    assert_match "decasify v#{version}", shell_output("#{bin}/decasify --version")
+    assert_match "Ben ve İvan", shell_output("#{bin}/decasify -l tr -c title 'ben VE ivan'")
   end
 end

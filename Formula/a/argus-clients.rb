@@ -1,7 +1,7 @@
 class ArgusClients < Formula
   desc "Audit Record Generation and Utilization System clients"
-  homepage "https:openargus.org"
-  url "https:github.comopenargusclientsarchiverefstagsv5.0.0.tar.gz"
+  homepage "https://openargus.org"
+  url "https://ghfast.top/https://github.com/openargus/clients/archive/refs/tags/v5.0.0.tar.gz"
   sha256 "c695e69f8cfffcb6ed978f1f29b1292a2638e4882a66ea8652052ba1e42fe8bc"
   license "GPL-3.0-or-later"
 
@@ -30,14 +30,14 @@ class ArgusClients < Formula
   end
 
   resource "Switch" do
-    url "https:cpan.metacpan.orgauthorsidCCHCHORNYSwitch-2.17.tar.gz"
+    url "https://cpan.metacpan.org/authors/id/C/CH/CHORNY/Switch-2.17.tar.gz"
     sha256 "31354975140fe6235ac130a109496491ad33dd42f9c62189e23f49f75f936d75"
   end
 
   def install
-    ENV.append_to_cflags "-I#{Formula["libtirpc"].opt_include}tirpc" if OS.linux?
+    ENV.append_to_cflags "-I#{Formula["libtirpc"].opt_include}/tirpc" if OS.linux?
 
-    ENV.prepend_create_path "PERL5LIB", libexec"libperl5"
+    ENV.prepend_create_path "PERL5LIB", libexec/"lib/perl5"
     resources.each do |r|
       r.stage do
         system "perl", "Makefile.PL", "INSTALL_BASE=#{libexec}"
@@ -46,17 +46,17 @@ class ArgusClients < Formula
       end
     end
 
-    ENV["PERL_EXT_LIB"] = libexec"libperl5"
+    ENV["PERL_EXT_LIB"] = libexec/"lib/perl5"
 
-    system ".configure", "--prefix=#{prefix}", "--without-examples"
+    system "./configure", "--prefix=#{prefix}", "--without-examples"
     system "make"
     system "make", "install"
   end
 
   test do
-    ENV["PERL5LIB"] = libexec"libperl5"
+    ENV["PERL5LIB"] = libexec/"lib/perl5"
     system "perl", "-e", "use qosient::util;"
 
-    assert_match "Ra Version #{version}", shell_output("#{bin}ra -h", 1)
+    assert_match "Ra Version #{version}", shell_output("#{bin}/ra -h", 1)
   end
 end

@@ -1,10 +1,10 @@
 class EfmLangserver < Formula
   desc "General purpose Language Server"
-  homepage "https:github.commattnefm-langserver"
-  url "https:github.commattnefm-langserverarchiverefstagsv0.0.54.tar.gz"
+  homepage "https://github.com/mattn/efm-langserver"
+  url "https://ghfast.top/https://github.com/mattn/efm-langserver/archive/refs/tags/v0.0.54.tar.gz"
   sha256 "4149b2922899ce313a89f60851f6678369253ed542dd65bdc8dd22f3cf1629bb"
   license "MIT"
-  head "https:github.commattnefm-langserver.git", branch: "master"
+  head "https://github.com/mattn/efm-langserver.git", branch: "master"
 
   bottle do
     rebuild 1
@@ -24,16 +24,16 @@ class EfmLangserver < Formula
   end
 
   test do
-    (testpath"config.yml").write <<~YAML
+    (testpath/"config.yml").write <<~YAML
       version: 2
       root-markers:
-        - ".git"
+        - ".git/"
       languages:
         python:
           - lint-command: "flake8 --stdin-display-name ${INPUT} -"
             lint-stdin: true
     YAML
-    output = shell_output("#{bin}efm-langserver -c #{testpath"config.yml"} -d")
+    output = shell_output("#{bin}/efm-langserver -c #{testpath/"config.yml"} -d")
     assert_match "version: 2", output
     assert_match "lint-command: flake8 --stdin-display-name ${INPUT} -", output
   end

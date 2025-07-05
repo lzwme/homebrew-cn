@@ -1,10 +1,10 @@
 class Counterfeiter < Formula
   desc "Tool for generating self-contained, type-safe test doubles in go"
-  homepage "https:github.commaxbrunsfeldcounterfeiter"
-  url "https:github.commaxbrunsfeldcounterfeiterarchiverefstagsv6.11.2.tar.gz"
+  homepage "https://github.com/maxbrunsfeld/counterfeiter"
+  url "https://ghfast.top/https://github.com/maxbrunsfeld/counterfeiter/archive/refs/tags/v6.11.2.tar.gz"
   sha256 "8a8cc2c51d3118ba8fdac1bc93bb1c25fd6fcc135415f34ce3b02fc057be2f2b"
   license "MIT"
-  head "https:github.commaxbrunsfeldcounterfeiter.git", branch: "master"
+  head "https://github.com/maxbrunsfeld/counterfeiter.git", branch: "master"
 
   livecheck do
     url :stable
@@ -30,11 +30,11 @@ class Counterfeiter < Formula
   test do
     ENV["GOROOT"] = Formula["go"].opt_libexec
 
-    output = shell_output("#{bin}counterfeiter -p os 2>&1")
-    assert_path_exists testpath"osshim"
-    assert_match "Writing `Os` to `osshimos.go`...", output
+    output = shell_output("#{bin}/counterfeiter -p os 2>&1")
+    assert_path_exists testpath/"osshim"
+    assert_match "Writing `Os` to `osshim/os.go`...", output
 
-    output = shell_output("#{bin}counterfeiter -generate 2>&1", 1)
+    output = shell_output("#{bin}/counterfeiter -generate 2>&1", 1)
     assert_match "no buildable Go source files", output
   end
 end

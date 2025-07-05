@@ -1,10 +1,10 @@
 class Mise < Formula
   desc "Polyglot runtime manager (asdf rust clone)"
-  homepage "https:mise.jdx.dev"
-  url "https:github.comjdxmisearchiverefstagsv2025.7.0.tar.gz"
+  homepage "https://mise.jdx.dev/"
+  url "https://ghfast.top/https://github.com/jdx/mise/archive/refs/tags/v2025.7.0.tar.gz"
   sha256 "ddbb548d2f4e5d27bffa11f61747b377e029939d62f49601cf291409f1d84d8c"
   license "MIT"
-  head "https:github.comjdxmise.git", branch: "main"
+  head "https://github.com/jdx/mise.git", branch: "main"
 
   livecheck do
     url :stable
@@ -38,19 +38,19 @@ class Mise < Formula
     ENV["OPENSSL_NO_VENDOR"] = "1"
 
     system "cargo", "install", *std_cargo_args
-    man1.install "manman1mise.1"
+    man1.install "man/man1/mise.1"
     lib.mkpath
-    touch lib".disable-self-update"
-    (share"fish""vendor_conf.d""mise-activate.fish").write <<~FISH
+    touch lib/".disable-self-update"
+    (share/"fish"/"vendor_conf.d"/"mise-activate.fish").write <<~FISH
       if [ "$MISE_FISH_AUTO_ACTIVATE" != "0" ]
-        #{opt_bin}mise activate fish | source
+        #{opt_bin}/mise activate fish | source
       end
     FISH
 
     # Untrusted config path problem, `generate_completions_from_executable` is not usable
-    bash_completion.install "completionsmise.bash" => "mise"
-    fish_completion.install "completionsmise.fish"
-    zsh_completion.install "completions_mise"
+    bash_completion.install "completions/mise.bash" => "mise"
+    fish_completion.install "completions/mise.fish"
+    zsh_completion.install "completions/_mise"
   end
 
   def caveats
@@ -60,8 +60,8 @@ class Mise < Formula
   end
 
   test do
-    system bin"mise", "settings", "set", "experimental", "true"
-    system bin"mise", "use", "go@1.23"
-    assert_match "1.23", shell_output("#{bin}mise exec -- go version")
+    system bin/"mise", "settings", "set", "experimental", "true"
+    system bin/"mise", "use", "go@1.23"
+    assert_match "1.23", shell_output("#{bin}/mise exec -- go version")
   end
 end

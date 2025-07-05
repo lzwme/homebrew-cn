@@ -1,10 +1,10 @@
 class Tsduck < Formula
   desc "MPEG Transport Stream Toolkit"
-  homepage "https:tsduck.io"
-  url "https:github.comtsducktsduckarchiverefstagsv3.41-4299.tar.gz"
+  homepage "https://tsduck.io/"
+  url "https://ghfast.top/https://github.com/tsduck/tsduck/archive/refs/tags/v3.41-4299.tar.gz"
   sha256 "1940946f5d15b9c1fea941e91d4685eb60cf4857a77f55eb3ad71d4e7e79ce65"
   license "BSD-2-Clause"
-  head "https:github.comtsducktsduck.git", branch: "master"
+  head "https://github.com/tsduck/tsduck.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "89caf54a4a8b3a60372e677578e3d075b8701fc1bd691a0025967a590ba87dba"
@@ -48,7 +48,7 @@ class Tsduck < Formula
   def install
     if OS.linux?
       ENV["LINUXBREW"] = "true"
-      ENV["VATEK_CFLAGS"] = "-I#{Formula["libvatek"].opt_include}vatek"
+      ENV["VATEK_CFLAGS"] = "-I#{Formula["libvatek"].opt_include}/vatek"
     end
     system "gmake", "NOGITHUB=1", "NOTEST=1"
     ENV.deparallelize
@@ -56,16 +56,16 @@ class Tsduck < Formula
   end
 
   test do
-    assert_match "TSDuck - The MPEG Transport Stream Toolkit", shell_output("#{bin}tsp --version 2>&1")
-    input = shell_output("#{bin}tsp --list=input 2>&1")
+    assert_match "TSDuck - The MPEG Transport Stream Toolkit", shell_output("#{bin}/tsp --version 2>&1")
+    input = shell_output("#{bin}/tsp --list=input 2>&1")
     %w[craft file hls http srt rist].each do |str|
       assert_match "#{str}:", input
     end
-    output = shell_output("#{bin}tsp --list=output 2>&1")
+    output = shell_output("#{bin}/tsp --list=output 2>&1")
     %w[ip file hls srt rist].each do |str|
       assert_match "#{str}:", output
     end
-    packet = shell_output("#{bin}tsp --list=packet 2>&1")
+    packet = shell_output("#{bin}/tsp --list=packet 2>&1")
     %w[fork tables analyze sdt timeshift nitscan].each do |str|
       assert_match "#{str}:", packet
     end

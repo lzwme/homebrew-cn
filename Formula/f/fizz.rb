@@ -1,10 +1,10 @@
 class Fizz < Formula
   desc "C++14 implementation of the TLS-1.3 standard"
-  homepage "https:github.comfacebookincubatorfizz"
-  url "https:github.comfacebookincubatorfizzreleasesdownloadv2025.06.30.00fizz-v2025.06.30.00.tar.gz"
+  homepage "https://github.com/facebookincubator/fizz"
+  url "https://ghfast.top/https://github.com/facebookincubator/fizz/releases/download/v2025.06.30.00/fizz-v2025.06.30.00.tar.gz"
   sha256 "39a40a9da3c32199cf82d948a661cbe8ecb6ff4de3bb1ee7ca7c03c17680016e"
   license "BSD-3-Clause"
-  head "https:github.comfacebookincubatorfizz.git", branch: "main"
+  head "https://github.com/facebookincubator/fizz.git", branch: "main"
 
   bottle do
     sha256                               arm64_sequoia: "fed60e0c31c6eb8e44e365e4503bebf15390ab418e5e7c894e15d588f09429cf"
@@ -49,14 +49,14 @@ class Fizz < Formula
     # Since fizz-config.cmake requires FindSodium.cmake[^2], we save a copy in
     # libexec that can be used internally for testing `fizz` and dependents.
     #
-    # [^1]: https:cmake.orgcmakehelplatestmanualcmake-packages.7.html#find-module-packages
-    # [^2]: https:github.comfacebookincubatorfizzissues141
-    (libexec"cmake").install "buildfbcode_builderCMakeFindSodium.cmake"
+    # [^1]: https://cmake.org/cmake/help/latest/manual/cmake-packages.7.html#find-module-packages
+    # [^2]: https://github.com/facebookincubator/fizz/issues/141
+    (libexec/"cmake").install "build/fbcode_builder/CMake/FindSodium.cmake"
   end
 
   test do
-    (testpath"test.cpp").write <<~CPP
-      #include <fizzclientAsyncFizzClient.h>
+    (testpath/"test.cpp").write <<~CPP
+      #include <fizz/client/AsyncFizzClient.h>
       #include <iostream>
 
       int main() {
@@ -65,12 +65,12 @@ class Fizz < Formula
       }
     CPP
 
-    (testpath"CMakeLists.txt").write <<~CMAKE
+    (testpath/"CMakeLists.txt").write <<~CMAKE
       cmake_minimum_required(VERSION 3.10)
       project(test LANGUAGES CXX)
       set(CMAKE_CXX_STANDARD 17)
 
-      list(APPEND CMAKE_MODULE_PATH "#{libexec}cmake")
+      list(APPEND CMAKE_MODULE_PATH "#{libexec}/cmake")
       find_package(gflags REQUIRED)
       find_package(fizz CONFIG REQUIRED)
 
@@ -80,9 +80,9 @@ class Fizz < Formula
 
     ENV.delete "CPATH"
 
-    args = OS.mac? ? [] : ["-DCMAKE_BUILD_RPATH=#{lib};#{HOMEBREW_PREFIX}lib"]
+    args = OS.mac? ? [] : ["-DCMAKE_BUILD_RPATH=#{lib};#{HOMEBREW_PREFIX}/lib"]
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
-    assert_match "TLS", shell_output(".buildtest")
+    assert_match "TLS", shell_output("./build/test")
   end
 end

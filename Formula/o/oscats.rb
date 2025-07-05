@@ -1,7 +1,7 @@
 class Oscats < Formula
   desc "Computerized adaptive testing system"
-  homepage "https:code.google.comarchiveposcats"
-  url "https:storage.googleapis.comgoogle-code-archive-downloadsv2code.google.comoscatsoscats-0.6.tar.gz"
+  homepage "https://code.google.com/archive/p/oscats/"
+  url "https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/oscats/oscats-0.6.tar.gz"
   sha256 "2f7c88cdab6a2106085f7a3e5b1073c74f7d633728c76bd73efba5dc5657a604"
   license "GPL-3.0-or-later"
   revision 7
@@ -30,15 +30,15 @@ class Oscats < Formula
 
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
-    url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-pre-0.4.2.418-big_sur.diff"
+    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-pre-0.4.2.418-big_sur.diff"
     sha256 "83af02f2aa2b746bb7225872cab29a253264be49db0ecebb12f841562d9a2923"
   end
 
   # Fix issue with conflicting definitions of select on Linux.
   # Patch submitted to discussion group:
-  # https:groups.google.comgoscatscWZ7gRjkxmIk.
+  # https://groups.google.com/g/oscats/c/WZ7gRjkxmIk.
   patch do
-    url "https:raw.githubusercontent.comHomebrewformula-patches29a7d4c819af3ea8e48efb68bb98e6bd2a4b6196oscatslinux.patch"
+    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/29a7d4c819af3ea8e48efb68bb98e6bd2a4b6196/oscats/linux.patch"
     sha256 "95fcfa861ed75a9292a6dfbb246a62be3ad3bd9c63db43c3d283ba68069313af"
   end
 
@@ -47,22 +47,22 @@ class Oscats < Formula
     # Help old config scripts identify arm64 linux
     args << "--build=aarch64-unknown-linux-gnu" if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
 
-    system ".configure", *args, *std_configure_args
+    system "./configure", *args, *std_configure_args
     system "make", "install"
     pkgshare.install "examples"
     # Fix shim references in examples Makefile.
     if OS.mac?
-      inreplace pkgshare"examplesMakefile",
-        Superenv.shims_path"pkg-config",
-        Formula["pkgconf"].opt_bin"pkg-config"
+      inreplace pkgshare/"examples/Makefile",
+        Superenv.shims_path/"pkg-config",
+        Formula["pkgconf"].opt_bin/"pkg-config"
     else
-      inreplace pkgshare"examplesMakefile", Superenv.shims_path"ld", "ld"
+      inreplace pkgshare/"examples/Makefile", Superenv.shims_path/"ld", "ld"
     end
   end
 
   test do
     pkgconf_flags = shell_output("pkgconf --cflags --libs oscats glib-2.0").chomp.split
-    system ENV.cc, "-Wno-incompatible-pointer-types", pkgshare"examplesex01.c", *pkgconf_flags, "-o", "ex01"
-    assert_match "Done", shell_output("#{testpath}ex01")
+    system ENV.cc, "-Wno-incompatible-pointer-types", pkgshare/"examples/ex01.c", *pkgconf_flags, "-o", "ex01"
+    assert_match "Done", shell_output("#{testpath}/ex01")
   end
 end

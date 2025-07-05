@@ -1,10 +1,10 @@
 class AdamstarkAudiofile < Formula
   desc "C++ Audio File Library by Adam Stark"
-  homepage "https:github.comadamstarkAudioFile"
-  url "https:github.comadamstarkAudioFilearchiverefstags1.1.3.tar.gz"
+  homepage "https://github.com/adamstark/AudioFile"
+  url "https://ghfast.top/https://github.com/adamstark/AudioFile/archive/refs/tags/1.1.3.tar.gz"
   sha256 "abc22bbe798cb552048485ce19278f35f587340bf0d5c68ac0028505eaf70dfe"
   license "MIT"
-  head "https:github.comadamstarkAudioFile.git", branch: "master"
+  head "https://github.com/adamstark/AudioFile.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, all: "be3c28ee81b69cd235ffdc3a9085037178558b2714b431781404b13d2a4cc5b3"
@@ -15,7 +15,7 @@ class AdamstarkAudiofile < Formula
   end
 
   test do
-    (testpath"audiofile.cc").write <<~CPP
+    (testpath/"audiofile.cc").write <<~CPP
       #include "AudioFile.h"
       int main(int argc, char* *argv) {
         AudioFile<double> audioFile;
@@ -28,6 +28,6 @@ class AdamstarkAudiofile < Formula
            "-I#{include}",
            "-o", "audiofile",
            "audiofile.cc"
-    system ".audiofile"
+    system "./audiofile"
   end
 end

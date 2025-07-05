@@ -1,14 +1,14 @@
 class Grafana < Formula
   desc "Gorgeous metric visualizations and dashboards for timeseries databases"
-  homepage "https:grafana.com"
-  url "https:github.comgrafanagrafanaarchiverefstagsv12.0.2.tar.gz"
+  homepage "https://grafana.com"
+  url "https://ghfast.top/https://github.com/grafana/grafana/archive/refs/tags/v12.0.2.tar.gz"
   sha256 "8524498289e7d1900626ea7c0763fd923cf7bd1effa48cda476e63b299acfe2d"
   license "AGPL-3.0-only"
-  head "https:github.comgrafanagrafana.git", branch: "main"
+  head "https://github.com/grafana/grafana.git", branch: "main"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -43,33 +43,33 @@ class Grafana < Formula
 
     os = OS.kernel_name.downcase
     arch = Hardware::CPU.intel? ? "amd64" : Hardware::CPU.arch.to_s
-    bin.install "bin#{os}-#{arch}grafana"
-    bin.install "bin#{os}-#{arch}grafana-cli"
-    bin.install "bin#{os}-#{arch}grafana-server"
+    bin.install "bin/#{os}-#{arch}/grafana"
+    bin.install "bin/#{os}-#{arch}/grafana-cli"
+    bin.install "bin/#{os}-#{arch}/grafana-server"
 
-    cp "confsample.ini", "confgrafana.ini.example"
-    pkgetc.install "confsample.ini" => "grafana.ini"
-    pkgetc.install "confgrafana.ini.example"
+    cp "conf/sample.ini", "conf/grafana.ini.example"
+    pkgetc.install "conf/sample.ini" => "grafana.ini"
+    pkgetc.install "conf/grafana.ini.example"
     pkgshare.install "conf", "public", "tools"
   end
 
   def post_install
-    (var"loggrafana").mkpath
-    (var"libgrafanaplugins").mkpath
+    (var/"log/grafana").mkpath
+    (var/"lib/grafana/plugins").mkpath
   end
 
   service do
-    run [opt_bin"grafana", "server",
-         "--config", etc"grafanagrafana.ini",
+    run [opt_bin/"grafana", "server",
+         "--config", etc/"grafana/grafana.ini",
          "--homepath", opt_pkgshare,
          "--packaging=brew",
-         "cfg:default.paths.logs=#{var}loggrafana",
-         "cfg:default.paths.data=#{var}libgrafana",
-         "cfg:default.paths.plugins=#{var}libgrafanaplugins"]
+         "cfg:default.paths.logs=#{var}/log/grafana",
+         "cfg:default.paths.data=#{var}/lib/grafana",
+         "cfg:default.paths.plugins=#{var}/lib/grafana/plugins"]
     keep_alive true
-    error_log_path var"loggrafana-stderr.log"
-    log_path var"loggrafana-stdout.log"
-    working_dir var"libgrafana"
+    error_log_path var/"log/grafana-stderr.log"
+    log_path var/"log/grafana-stdout.log"
+    working_dir var/"lib/grafana"
   end
 
   test do
@@ -77,7 +77,7 @@ class Grafana < Formula
     require "timeout"
 
     # first test
-    system bin"grafana", "server", "-v"
+    system bin/"grafana", "server", "-v"
 
     # avoid stepping on anything that may be present in this directory
     tdir = File.join(Dir.pwd, "grafana-test")
@@ -90,7 +90,7 @@ class Grafana < Formula
     end
     Dir.chdir(pkgshare)
 
-    res = PTY.spawn(bin"grafana", "server",
+    res = PTY.spawn(bin/"grafana", "server",
       "cfg:default.paths.logs=#{logdir}",
       "cfg:default.paths.data=#{datadir}",
       "cfg:default.paths.plugins=#{plugdir}",

@@ -1,13 +1,13 @@
 class Libp11 < Formula
   desc "PKCS#11 wrapper library in C"
-  homepage "https:github.comOpenSClibp11wiki"
-  url "https:github.comOpenSClibp11releasesdownloadlibp11-0.4.16libp11-0.4.16.tar.gz"
+  homepage "https://github.com/OpenSC/libp11/wiki"
+  url "https://ghfast.top/https://github.com/OpenSC/libp11/releases/download/libp11-0.4.16/libp11-0.4.16.tar.gz"
   sha256 "97777640492fa9e5831497e5892e291dfbf39a7b119d9cb6abb3ec8c56d17553"
   license "LGPL-2.1-or-later"
 
   livecheck do
     url :stable
-    regex(^libp11[._-]v?(\d+(?:\.\d+)+)$i)
+    regex(/^libp11[._-]v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -21,7 +21,7 @@ class Libp11 < Formula
   end
 
   head do
-    url "https:github.comOpenSClibp11.git", branch: "master"
+    url "https://github.com/OpenSC/libp11.git", branch: "master"
     depends_on "autoconf" => :build
     depends_on "automake" => :build
   end
@@ -31,7 +31,7 @@ class Libp11 < Formula
   depends_on "openssl@3"
 
   def install
-    openssl = deps.find { |d| d.name.match?(^openssl) }
+    openssl = deps.find { |d| d.name.match?(/^openssl/) }
                   .to_formula
     enginesdir = Utils.safe_popen_read("pkgconf", "--variable=enginesdir", "libcrypto").chomp
     enginesdir.sub!(openssl.prefix.realpath, prefix)
@@ -39,17 +39,17 @@ class Libp11 < Formula
     modulesdir = Utils.safe_popen_read("pkgconf", "--variable=modulesdir", "libcrypto").chomp
     modulesdir.sub!(openssl.prefix.realpath, prefix)
 
-    system ".bootstrap" if build.head?
-    system ".configure", "--disable-silent-rules",
+    system "./bootstrap" if build.head?
+    system "./configure", "--disable-silent-rules",
                           "--with-enginesdir=#{enginesdir}",
                           "--with-modulesdir=#{modulesdir}",
                           *std_configure_args
     system "make", "install"
-    pkgshare.install "examplesauth.c"
+    pkgshare.install "examples/auth.c"
   end
 
   test do
-    system ENV.cc, pkgshare"auth.c", "-I#{Formula["openssl@3"].include}",
+    system ENV.cc, pkgshare/"auth.c", "-I#{Formula["openssl@3"].include}",
                    "-L#{lib}", "-L#{Formula["openssl@3"].lib}",
                    "-lp11", "-lcrypto", "-o", "test"
   end

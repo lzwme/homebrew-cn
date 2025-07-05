@@ -1,10 +1,10 @@
 class Mbt < Formula
   desc "Multi-Target Application (MTA) build tool for Cloud Applications"
-  homepage "https:sap.github.iocloud-mta-build-tool"
-  url "https:github.comSAPcloud-mta-build-toolarchiverefstagsv1.2.34.tar.gz"
+  homepage "https://sap.github.io/cloud-mta-build-tool"
+  url "https://ghfast.top/https://github.com/SAP/cloud-mta-build-tool/archive/refs/tags/v1.2.34.tar.gz"
   sha256 "831450c20115a2446513629b71597ae1dd6d81d185cb65a3d49fba5d1c7c220d"
   license "Apache-2.0"
-  head "https:github.comSAPcloud-mta-build-tool.git", branch: "master"
+  head "https://github.com/SAP/cloud-mta-build-tool.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "c402f06fa3ad380a2cf919861555eb18c0a1c649a9d772c84e96251ee8beba58"
@@ -23,7 +23,7 @@ class Mbt < Formula
   end
 
   test do
-    assert_match(generating the "Makefile_\d+.mta" file, shell_output("#{bin}mbt build", 1))
-    assert_match("Cloud MTA Build Tool", shell_output("#{bin}mbt --version"))
+    assert_match(/generating the "Makefile_\d+.mta" file/, shell_output("#{bin}/mbt build", 1))
+    assert_match("Cloud MTA Build Tool", shell_output("#{bin}/mbt --version"))
   end
 end

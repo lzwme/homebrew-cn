@@ -1,7 +1,7 @@
 class Miniflux < Formula
   desc "Minimalist and opinionated feed reader"
-  homepage "https:miniflux.app"
-  url "https:github.comminifluxv2archiverefstags2.2.10.tar.gz"
+  homepage "https://miniflux.app"
+  url "https://ghfast.top/https://github.com/miniflux/v2/archive/refs/tags/2.2.10.tar.gz"
   sha256 "a216b93a32d14a7a6ca48fd7f5e86b8a4e8c58b1bf5d83fc4d3aacaaaf4e6a48"
   license "Apache-2.0"
 
@@ -20,18 +20,18 @@ class Miniflux < Formula
   def install
     ldflags = %W[
       -s -w
-      -X miniflux.appv2internalversion.Version=#{version}
-      -X miniflux.appv2internalversion.Commit=#{tap.user}
-      -X miniflux.appv2internalversion.BuildDate=#{time.iso8601}
+      -X miniflux.app/v2/internal/version.Version=#{version}
+      -X miniflux.app/v2/internal/version.Commit=#{tap.user}
+      -X miniflux.app/v2/internal/version.BuildDate=#{time.iso8601}
     ]
     system "go", "build", *std_go_args(ldflags:)
   end
 
   service do
-    run [opt_bin"miniflux", "-c", etc"miniflux.conf"]
+    run [opt_bin/"miniflux", "-c", etc/"miniflux.conf"]
     keep_alive true
-    error_log_path var"logminiflux.log"
-    log_path var"logminiflux.log"
+    error_log_path var/"log/miniflux.log"
+    log_path var/"log/miniflux.log"
     working_dir var
   end
 
@@ -40,24 +40,24 @@ class Miniflux < Formula
 
     pg_port = free_port
     pg_bin = Formula["postgresql@17"].opt_bin
-    pg_ctl = pg_bin"pg_ctl"
+    pg_ctl = pg_bin/"pg_ctl"
 
-    datadir = testpath"postgres"
+    datadir = testpath/"postgres"
     system pg_ctl, "init", "-D", datadir
 
-    (datadir"postgresql.conf").write <<~EOS, mode: "a+"
+    (datadir/"postgresql.conf").write <<~EOS, mode: "a+"
       port = #{pg_port}
       unix_socket_directories = '#{datadir}'
     EOS
 
-    system pg_ctl, "start", "-D", datadir, "-l", testpath"postgres.log"
+    system pg_ctl, "start", "-D", datadir, "-l", testpath/"postgres.log"
     begin
-      system pg_bin"createdb", "-h", datadir, "-p", pg_port.to_s, "miniflux_test"
+      system pg_bin/"createdb", "-h", datadir, "-p", pg_port.to_s, "miniflux_test"
 
       # Run Miniflux
       miniflux_port = free_port
-      (testpath"miniflux.conf").write <<~CONF
-        DATABASE_URL=postgres:localhost:#{pg_port}miniflux_test?sslmode=disable
+      (testpath/"miniflux.conf").write <<~CONF
+        DATABASE_URL=postgres://localhost:#{pg_port}/miniflux_test?sslmode=disable
         ADMIN_USERNAME=admin
         ADMIN_PASSWORD=test123
         CREATE_ADMIN=1
@@ -66,10 +66,10 @@ class Miniflux < Formula
         LISTEN_ADDR=127.0.0.1:#{miniflux_port}
       CONF
 
-      miniflux_pid = spawn(bin"miniflux", "-c", testpath"miniflux.conf")
+      miniflux_pid = spawn(bin/"miniflux", "-c", testpath/"miniflux.conf")
       begin
         sleep 2
-        assert_equal "OK", shell_output("curl -s http:127.0.0.1:#{miniflux_port}healthcheck")
+        assert_equal "OK", shell_output("curl -s http://127.0.0.1:#{miniflux_port}/healthcheck")
       ensure
         Process.kill "TERM", miniflux_pid
         Process.wait miniflux_pid

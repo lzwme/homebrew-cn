@@ -1,7 +1,7 @@
 class Libpinyin < Formula
   desc "Library to deal with pinyin"
-  homepage "https:github.comlibpinyinlibpinyin"
-  url "https:github.comlibpinyinlibpinyinarchiverefstags2.10.2.tar.gz"
+  homepage "https://github.com/libpinyin/libpinyin"
+  url "https://ghfast.top/https://github.com/libpinyin/libpinyin/archive/refs/tags/2.10.2.tar.gz"
   sha256 "8409bc81c8fce83f31649f7287e94cc71813947b1e767c544a782023ac2b5a22"
   license "GPL-3.0-or-later"
 
@@ -9,7 +9,7 @@ class Libpinyin < Formula
   # pre-release on GitHub) and this regex should only match the stable versions.
   livecheck do
     url :stable
-    regex(^v?(\d+\.\d+\.(?:\d|[1-8]\d+)(?:\.\d+)*)$i)
+    regex(/^v?(\d+\.\d+\.(?:\d|[1-8]\d+)(?:\.\d+)*)$/i)
   end
 
   bottle do
@@ -26,7 +26,7 @@ class Libpinyin < Formula
   depends_on "automake" => :build
   depends_on "libtool" => :build
   # macOS `ld64` does not like the `.la` files created during the build.
-  # upstream issue report, https:github.comlibpinyinlibpinyinissues158
+  # upstream issue report, https://github.com/libpinyin/libpinyin/issues/158
   depends_on "lld" => :build if DevelopmentTools.clang_build_version >= 1400
   depends_on "pkgconf" => [:build, :test]
   depends_on "glib"
@@ -43,9 +43,9 @@ class Libpinyin < Formula
   end
 
   # The language model file is independently maintained by the project owner.
-  # To update this resource block, the URL can be found in dataMakefile.am.
+  # To update this resource block, the URL can be found in data/Makefile.am.
   resource "model" do
-    url "https:downloads.sourceforge.netlibpinyinmodelsmodel20.text.tar.gz"
+    url "https://downloads.sourceforge.net/libpinyin/models/model20.text.tar.gz"
     sha256 "59c68e89d43ff85f5a309489499cbcde282d2b04bd91888734884b7defcb1155"
   end
 
@@ -57,13 +57,13 @@ class Libpinyin < Formula
       ENV.O3
     end
 
-    resource("model").stage buildpath"data"
-    system ".autogen.sh", "--enable-libzhuyin=yes", "--disable-silent-rules", *std_configure_args
+    resource("model").stage buildpath/"data"
+    system "./autogen.sh", "--enable-libzhuyin=yes", "--disable-silent-rules", *std_configure_args
     system "make", "install"
   end
 
   test do
-    (testpath"test.cc").write <<~CPP
+    (testpath/"test.cc").write <<~CPP
       #include <pinyin.h>
 
       int main()
@@ -87,8 +87,8 @@ class Libpinyin < Formula
     CPP
 
     flags = shell_output("pkgconf --cflags --libs libpinyin").chomp.split
-    system ENV.cxx, "test.cc", "-o", "test", "-DLIBPINYIN_DATADIR=\"#{lib}libpinyindata\"", *flags
+    system ENV.cxx, "test.cc", "-o", "test", "-DLIBPINYIN_DATADIR=\"#{lib}/libpinyin/data/\"", *flags
     touch "user.conf"
-    system ".test"
+    system "./test"
   end
 end

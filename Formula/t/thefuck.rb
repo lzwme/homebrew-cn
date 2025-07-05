@@ -2,11 +2,11 @@ class Thefuck < Formula
   include Language::Python::Virtualenv
 
   desc "Programmatically correct mistyped console commands"
-  homepage "https:github.comnvbnthefuck"
-  url "https:files.pythonhosted.orgpackagesacd00c256afd3ba1d05882154d16aa0685018f21c60a6769a496558da7d9d8f1thefuck-3.32.tar.gz"
+  homepage "https://github.com/nvbn/thefuck"
+  url "https://files.pythonhosted.org/packages/ac/d0/0c256afd3ba1d05882154d16aa0685018f21c60a6769a496558da7d9d8f1/thefuck-3.32.tar.gz"
   sha256 "976740b9aa536726fa23cadc9a10bf457e92e335901c61fcff9152c84485ac3d"
   license "MIT"
-  head "https:github.comnvbnthefuck.git", branch: "master"
+  head "https://github.com/nvbn/thefuck.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -24,42 +24,42 @@ class Thefuck < Formula
   depends_on "python@3.13"
 
   resource "colorama" do
-    url "https:files.pythonhosted.orgpackagesd8536f443c9a4a8358a93a6792e2acffb9d9d5cb0a5cfd8802644b7b1c9a02e4colorama-0.4.6.tar.gz"
+    url "https://files.pythonhosted.org/packages/d8/53/6f443c9a4a8358a93a6792e2acffb9d9d5cb0a5cfd8802644b7b1c9a02e4/colorama-0.4.6.tar.gz"
     sha256 "08695f5cb7ed6e0531a20572697297273c47b8cae5a63ffc6d6ed5c201be6e44"
   end
 
   resource "decorator" do
-    url "https:files.pythonhosted.orgpackages660c8d907af351aa16b42caae42f9d6aa37b900c67308052d10fdce809f8d952decorator-5.1.1.tar.gz"
+    url "https://files.pythonhosted.org/packages/66/0c/8d907af351aa16b42caae42f9d6aa37b900c67308052d10fdce809f8d952/decorator-5.1.1.tar.gz"
     sha256 "637996211036b6385ef91435e4fae22989472f9d571faba8927ba8253acbc330"
   end
 
   resource "psutil" do
-    url "https:files.pythonhosted.orgpackages18c78c6872f7372eb6a6b2e4708b88419fb46b857f7a2e1892966b851cc79fc9psutil-6.0.0.tar.gz"
+    url "https://files.pythonhosted.org/packages/18/c7/8c6872f7372eb6a6b2e4708b88419fb46b857f7a2e1892966b851cc79fc9/psutil-6.0.0.tar.gz"
     sha256 "8faae4f310b6d969fa26ca0545338b21f73c6b15db7c4a8d934a5482faa818f2"
   end
 
   resource "pyte" do
-    url "https:files.pythonhosted.orgpackagesababb599762933eba04de7dc5b31ae083112a6c9a9db15b01d3109ad797559d9pyte-0.8.2.tar.gz"
+    url "https://files.pythonhosted.org/packages/ab/ab/b599762933eba04de7dc5b31ae083112a6c9a9db15b01d3109ad797559d9/pyte-0.8.2.tar.gz"
     sha256 "5af970e843fa96a97149d64e170c984721f20e52227a2f57f0a54207f08f083f"
   end
 
   resource "six" do
-    url "https:files.pythonhosted.orgpackages7139171f1c67cd00715f190ba0b100d606d440a28c93c7714febeca8b79af85esix-1.16.0.tar.gz"
+    url "https://files.pythonhosted.org/packages/71/39/171f1c67cd00715f190ba0b100d606d440a28c93c7714febeca8b79af85e/six-1.16.0.tar.gz"
     sha256 "1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926"
   end
 
   resource "wcwidth" do
-    url "https:files.pythonhosted.orgpackages6c6353559446a878410fc5a5974feb13d31d78d752eb18aeba59c7fef1af7598wcwidth-0.2.13.tar.gz"
+    url "https://files.pythonhosted.org/packages/6c/63/53559446a878410fc5a5974feb13d31d78d752eb18aeba59c7fef1af7598/wcwidth-0.2.13.tar.gz"
     sha256 "72ea0c06399eb286d978fdedb6923a9eb47e1c486ce63e9b4e64fc18303972b5"
   end
 
-  # Drop distutils for 3.12: https:github.comnvbnthefuckpull1404
+  # Drop distutils for 3.12: https://github.com/nvbn/thefuck/pull/1404
   patch do
-    url "https:github.comnvbnthefuckcommitdd26fb91a0fdec42fc1990bb91eab21e2c44a0a8.patch?full_index=1"
+    url "https://github.com/nvbn/thefuck/commit/dd26fb91a0fdec42fc1990bb91eab21e2c44a0a8.patch?full_index=1"
     sha256 "ea7824d7e4947fb9cd81ed1b5850b53b0e071a82b7e77acaba2391a8bf161b85"
   end
 
-  # Drop imp for 3.12: https:github.comnvbnthefuckcommit0420442e778dd7bc53bdbdb50278eea2c207dc74
+  # Drop imp for 3.12: https://github.com/nvbn/thefuck/commit/0420442e778dd7bc53bdbdb50278eea2c207dc74
   patch :DATA
 
   def install
@@ -72,7 +72,7 @@ class Thefuck < Formula
 
         eval $(thefuck --alias)
 
-      For other shells, check https:github.comnvbnthefuckwikiShell-aliases
+      For other shells, check https://github.com/nvbn/thefuck/wiki/Shell-aliases
     EOS
   end
 
@@ -80,25 +80,25 @@ class Thefuck < Formula
     ENV["THEFUCK_REQUIRE_CONFIRMATION"] = "false"
     ENV["LC_ALL"] = "en_US.UTF-8"
 
-    output = shell_output("#{bin}thefuck --version 2>&1")
+    output = shell_output("#{bin}/thefuck --version 2>&1")
     assert_match "The Fuck #{version} using Python", output
 
-    output = shell_output("#{bin}thefuck --alias")
+    output = shell_output("#{bin}/thefuck --alias")
     assert_match "TF_ALIAS=fuck", output
 
-    output = shell_output("#{bin}thefuck echho ok")
+    output = shell_output("#{bin}/thefuck echho ok")
     assert_equal "echo ok", output.chomp
 
-    output = shell_output("#{bin}fuck")
+    output = shell_output("#{bin}/fuck")
     assert_match "Seems like fuck alias isn't configured!", output
   end
 end
 
 __END__
-diff --git athefuckconf.py bthefuckconf.py
+diff --git a/thefuck/conf.py b/thefuck/conf.py
 index 27876ef47..611ec84b7 100644
---- athefuckconf.py
-+++ bthefuckconf.py
+--- a/thefuck/conf.py
++++ b/thefuck/conf.py
 @@ -1,4 +1,3 @@
 -from imp import load_source
  import os
@@ -122,10 +122,10 @@ index 27876ef47..611ec84b7 100644
 
  class Settings(dict):
      def __getattr__(self, item):
-diff --git athefucktypes.py bthefucktypes.py
+diff --git a/thefuck/types.py b/thefuck/types.py
 index 96e6ace67..b3b64c35d 100644
---- athefucktypes.py
-+++ bthefucktypes.py
+--- a/thefuck/types.py
++++ b/thefuck/types.py
 @@ -1,9 +1,8 @@
 -from imp import load_source
  import os

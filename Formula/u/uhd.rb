@@ -2,12 +2,12 @@ class Uhd < Formula
   include Language::Python::Virtualenv
 
   desc "Hardware driver for all USRP devices"
-  homepage "https:files.ettus.commanual"
-  url "https:github.comEttusResearchuhdarchiverefstagsv4.8.0.0.tar.gz"
+  homepage "https://files.ettus.com/manual/"
+  url "https://ghfast.top/https://github.com/EttusResearch/uhd/archive/refs/tags/v4.8.0.0.tar.gz"
   sha256 "a2159491949477dca67f5a9b05f5a80d8c2b32e91b95dd7fac8ddd3893e36d09"
   license all_of: ["GPL-3.0-or-later", "LGPL-3.0-or-later", "MIT", "BSD-3-Clause", "Apache-2.0"]
   revision 1
-  head "https:github.comEttusResearchuhd.git", branch: "master"
+  head "https://github.com/EttusResearch/uhd.git", branch: "master"
 
   livecheck do
     url :stable
@@ -36,24 +36,24 @@ class Uhd < Formula
   end
 
   resource "mako" do
-    url "https:files.pythonhosted.orgpackages5fd98518279534ed7dace1795d5a47e49d5299dd0994eed1053996402a8902f9mako-1.3.8.tar.gz"
+    url "https://files.pythonhosted.org/packages/5f/d9/8518279534ed7dace1795d5a47e49d5299dd0994eed1053996402a8902f9/mako-1.3.8.tar.gz"
     sha256 "577b97e414580d3e088d47c2dbbe9594aa7a5146ed2875d4dfa9075af2dd3cc8"
   end
 
   resource "markupsafe" do
-    url "https:files.pythonhosted.orgpackagesb2975d42485e71dfc078108a86d6de8fa46db44a1a9295e89c5d6d4a06e23a62markupsafe-3.0.2.tar.gz"
+    url "https://files.pythonhosted.org/packages/b2/97/5d42485e71dfc078108a86d6de8fa46db44a1a9295e89c5d6d4a06e23a62/markupsafe-3.0.2.tar.gz"
     sha256 "ee55d3edf80167e48ea11a923c7386f4669df67d7994554387f84e7d8b0a2bf0"
   end
 
-  # Support building with CMake 4.0, pr ref: https:github.comEttusResearchuhdpull849
+  # Support building with CMake 4.0, pr ref: https://github.com/EttusResearch/uhd/pull/849
   patch do
-    url "https:github.comEttusResearchuhdcommit8caa8e1d1adb6f73a30676f42c2c80041ccc4e9a.patch?full_index=1"
+    url "https://github.com/EttusResearch/uhd/commit/8caa8e1d1adb6f73a30676f42c2c80041ccc4e9a.patch?full_index=1"
     sha256 "818dd3e65c7c25040887850713fa9bf9a3f6cf3ef791b1f73f7b8de12921452f"
   end
 
-  # Support building with Boost 1.88.0, pr ref: https:github.comEttusResearchuhdpull850
+  # Support building with Boost 1.88.0, pr ref: https://github.com/EttusResearch/uhd/pull/850
   patch do
-    url "https:github.comEttusResearchuhdcommit16dbcb37976ca1e959d275f20246924fb455176e.patch?full_index=1"
+    url "https://github.com/EttusResearch/uhd/commit/16dbcb37976ca1e959d275f20246924fb455176e.patch?full_index=1"
     sha256 "0dc5cf491ca2037819e894fdb21b8b98230eb8ca2aee0d2312889e365da961e8"
   end
 
@@ -62,7 +62,7 @@ class Uhd < Formula
   end
 
   def install
-    venv = virtualenv_create(buildpath"venv", python3)
+    venv = virtualenv_create(buildpath/"venv", python3)
     venv.pip_install resources
     ENV.prepend_path "PYTHONPATH", venv.site_packages
 
@@ -75,6 +75,6 @@ class Uhd < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}uhd_config_info --version")
+    assert_match version.to_s, shell_output("#{bin}/uhd_config_info --version")
   end
 end

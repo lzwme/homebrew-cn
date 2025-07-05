@@ -1,10 +1,10 @@
 class Comtrya < Formula
   desc "Configuration and dotfile management tool"
-  homepage "https:comtrya.dev"
-  url "https:github.comcomtryacomtryaarchiverefstagsv0.9.2.tar.gz"
+  homepage "https://comtrya.dev"
+  url "https://ghfast.top/https://github.com/comtrya/comtrya/archive/refs/tags/v0.9.2.tar.gz"
   sha256 "7bbd6ac04314e2dd541d8104908a2e8991a7489daab5563d01d28a3e48c08350"
   license "MIT"
-  head "https:github.comcomtryacomtrya.git", branch: "main"
+  head "https://github.com/comtrya/comtrya.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "46bf7dfc1bc293ec74fc38268c4ea93141cc02e9da597659c9b7211e31b1d7ff"
@@ -21,19 +21,19 @@ class Comtrya < Formula
   def install
     system "cargo", "install", *std_cargo_args(path: "app")
 
-    generate_completions_from_executable(bin"comtrya", "gen-completions")
+    generate_completions_from_executable(bin/"comtrya", "gen-completions")
   end
 
   test do
-    assert_match "comtrya #{version}", shell_output("#{bin}comtrya --version")
+    assert_match "comtrya #{version}", shell_output("#{bin}/comtrya --version")
 
     resource "testmanifest" do
-      url "https:raw.githubusercontent.comcomtryacomtryarefsheadsmainexamplesonlyvariantsmain.yaml"
+      url "https://ghfast.top/https://raw.githubusercontent.com/comtrya/comtrya/refs/heads/main/examples/onlyvariants/main.yaml"
       sha256 "0715e12cbbb95c8d6c36bb02ae4b49f9fa479e2f28356b8c1f3b5adfb000b93f"
     end
 
     resource("testmanifest").stage do
-      system bin"comtrya", "-d", "main.yaml", "apply"
+      system bin/"comtrya", "-d", "main.yaml", "apply"
     end
   end
 end

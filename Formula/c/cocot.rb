@@ -1,10 +1,10 @@
 class Cocot < Formula
   desc "Code converter on tty"
-  homepage "https:vmi.jpsoftwarecygwincocot.html"
-  url "https:github.comvmicocotarchiverefstagscocot-1.2-20171118.tar.gz"
+  homepage "https://vmi.jp/software/cygwin/cocot.html"
+  url "https://ghfast.top/https://github.com/vmi/cocot/archive/refs/tags/cocot-1.2-20171118.tar.gz"
   sha256 "b718630ce3ddf79624d7dcb625fc5a17944cbff0b76574d321fb80c61bb91e4c"
   license "BSD-3-Clause"
-  head "https:github.comvmicocot.git", branch: "master"
+  head "https://github.com/vmi/cocot.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -31,7 +31,7 @@ class Cocot < Formula
     # Workaround for newer Clang
     ENV.append_to_cflags "-Wno-incompatible-function-pointer-types" if DevelopmentTools.clang_build_version >= 1500
 
-    system ".configure", *std_configure_args
+    system "./configure", *std_configure_args
     system "make", "install"
   end
 end

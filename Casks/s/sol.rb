@@ -2,13 +2,13 @@ cask "sol" do
   version "2.1.243"
   sha256 "39878fe26695c0995e7a6773d0dd323b779e5b54581e18da5ef52079639c0fc3"
 
-  url "https:github.comospfrancosolreleasesdownload#{version}#{version}.zip"
+  url "https://ghfast.top/https://github.com/ospfranco/sol/releases/download/#{version}/#{version}.zip"
   name "Sol"
   desc "Launcher & command palette"
-  homepage "https:github.comospfrancosol"
+  homepage "https://github.com/ospfranco/sol"
 
   livecheck do
-    url "https:raw.githubusercontent.comospfrancosolmainreleasesappcast.xml"
+    url "https://ghfast.top/https://raw.githubusercontent.com/ospfranco/sol/main/releases/appcast.xml"
     strategy :sparkle, &:short_version
   end
 
@@ -20,10 +20,10 @@ cask "sol" do
             quit:      "com.ospfranco.sol"
 
   zap trash: [
-    "~LibraryApplication Scriptscom.ospfranco.sol-LaunchAtLoginHelper",
-    "~LibraryApplication Supportcom.ospfranco.sol",
-    "~LibraryContainerscom.ospfranco.sol-LaunchAtLoginHelper",
-    "~LibraryHTTPStoragescom.ospfranco.sol",
-    "~LibraryPreferencescom.ospfranco.sol.plist",
+    "~/Library/Application Scripts/com.ospfranco.sol-LaunchAtLoginHelper",
+    "~/Library/Application Support/com.ospfranco.sol",
+    "~/Library/Containers/com.ospfranco.sol-LaunchAtLoginHelper",
+    "~/Library/HTTPStorages/com.ospfranco.sol",
+    "~/Library/Preferences/com.ospfranco.sol.plist",
   ]
 end

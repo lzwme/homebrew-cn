@@ -1,7 +1,7 @@
 class TrzszSsh < Formula
-  desc "Simple ssh client with trzsz ( trz  tsz ) support"
-  homepage "https:trzsz.github.iossh"
-  url "https:github.comtrzsztrzsz-ssharchiverefstagsv0.1.22.tar.gz"
+  desc "Simple ssh client with trzsz ( trz / tsz ) support"
+  homepage "https://trzsz.github.io/ssh"
+  url "https://ghfast.top/https://github.com/trzsz/trzsz-ssh/archive/refs/tags/v0.1.22.tar.gz"
   sha256 "ccf5a113d68156b409d89fead784256b4fd6a6bbae6a2d70df1e4403d383a962"
   license "MIT"
 
@@ -23,15 +23,15 @@ class TrzszSsh < Formula
   conflicts_with "tssh", because: "both install `tssh` binaries"
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w", output: bin"tssh"), ".cmdtssh"
+    system "go", "build", *std_go_args(ldflags: "-s -w", output: bin/"tssh"), "./cmd/tssh"
   end
 
   test do
-    assert_match "trzsz ssh #{version}", shell_output("#{bin}tssh -V 2>&1")
-    assert_match "trzsz ssh #{version}", shell_output("#{bin}tssh --version 2>&1")
+    assert_match "trzsz ssh #{version}", shell_output("#{bin}/tssh -V 2>&1")
+    assert_match "trzsz ssh #{version}", shell_output("#{bin}/tssh --version 2>&1")
 
-    assert_match "invalid option", shell_output("#{bin}tssh -o abc 2>&1", 255)
-    assert_match "invalid bind specification", shell_output("#{bin}tssh -D xyz 2>&1", 255)
-    assert_match "invalid forward specification", shell_output("#{bin}tssh -L 123 2>&1", 255)
+    assert_match "invalid option", shell_output("#{bin}/tssh -o abc 2>&1", 255)
+    assert_match "invalid bind specification", shell_output("#{bin}/tssh -D xyz 2>&1", 255)
+    assert_match "invalid forward specification", shell_output("#{bin}/tssh -L 123 2>&1", 255)
   end
 end

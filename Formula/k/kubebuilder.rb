@@ -1,11 +1,11 @@
 class Kubebuilder < Formula
   desc "SDK for building Kubernetes APIs using CRDs"
-  homepage "https:github.comkubernetes-sigskubebuilder"
-  url "https:github.comkubernetes-sigskubebuilder.git",
+  homepage "https://github.com/kubernetes-sigs/kubebuilder"
+  url "https://github.com/kubernetes-sigs/kubebuilder.git",
       tag:      "v4.6.0",
       revision: "cd90bd82a2d692fbf63ba0231699e2e3dc0b6a08"
   license "Apache-2.0"
-  head "https:github.comkubernetes-sigskubebuilder.git", branch: "master"
+  head "https://github.com/kubernetes-sigs/kubebuilder.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "a65bc2936b3229b9c8b72004778f281d988dd5b596770741445c778b014ad813"
@@ -19,40 +19,40 @@ class Kubebuilder < Formula
   depends_on "go"
 
   def install
-    goos = Utils.safe_popen_read("#{Formula["go"].bin}go", "env", "GOOS").chomp
-    goarch = Utils.safe_popen_read("#{Formula["go"].bin}go", "env", "GOARCH").chomp
+    goos = Utils.safe_popen_read("#{Formula["go"].bin}/go", "env", "GOOS").chomp
+    goarch = Utils.safe_popen_read("#{Formula["go"].bin}/go", "env", "GOARCH").chomp
 
     ldflags = %W[
       -s -w
-      -X sigs.k8s.iokubebuilderv4cmd.kubeBuilderVersion=#{version}
-      -X sigs.k8s.iokubebuilderv4cmd.goos=#{goos}
-      -X sigs.k8s.iokubebuilderv4cmd.goarch=#{goarch}
-      -X sigs.k8s.iokubebuilderv4cmd.gitCommit=#{Utils.git_head}
-      -X sigs.k8s.iokubebuilderv4cmd.buildDate=#{time.iso8601}
+      -X sigs.k8s.io/kubebuilder/v4/cmd.kubeBuilderVersion=#{version}
+      -X sigs.k8s.io/kubebuilder/v4/cmd.goos=#{goos}
+      -X sigs.k8s.io/kubebuilder/v4/cmd.goarch=#{goarch}
+      -X sigs.k8s.io/kubebuilder/v4/cmd.gitCommit=#{Utils.git_head}
+      -X sigs.k8s.io/kubebuilder/v4/cmd.buildDate=#{time.iso8601}
     ]
     system "go", "build", *std_go_args(ldflags:)
 
-    generate_completions_from_executable(bin"kubebuilder", "completion")
+    generate_completions_from_executable(bin/"kubebuilder", "completion")
   end
 
   test do
     mkdir "test" do
       system "go", "mod", "init", "example.com"
-      system bin"kubebuilder", "init",
-                 "--plugins", "go.kubebuilder.iov4",
+      system bin/"kubebuilder", "init",
+                 "--plugins", "go.kubebuilder.io/v4",
                  "--project-version", "3",
                  "--skip-go-version-check"
     end
 
-    assert_match <<~YAML, (testpath"testPROJECT").read
+    assert_match <<~YAML, (testpath/"test/PROJECT").read
       domain: my.domain
       layout:
-      - go.kubebuilder.iov4
+      - go.kubebuilder.io/v4
       projectName: test
       repo: example.com
       version: "3"
     YAML
 
-    assert_match version.to_s, shell_output("#{bin}kubebuilder version")
+    assert_match version.to_s, shell_output("#{bin}/kubebuilder version")
   end
 end

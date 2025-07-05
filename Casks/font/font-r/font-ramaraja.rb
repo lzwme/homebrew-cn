@@ -2,10 +2,10 @@ cask "font-ramaraja" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefontsrawmainoflramarajaRamaraja-Regular.ttf",
-      verified: "github.comgooglefonts"
+  url "https://github.com/google/fonts/raw/main/ofl/ramaraja/Ramaraja-Regular.ttf",
+      verified: "github.com/google/fonts/"
   name "Ramaraja"
-  homepage "https:fonts.google.comspecimenRamaraja"
+  homepage "https://fonts.google.com/specimen/Ramaraja"
 
   font "Ramaraja-Regular.ttf"
 

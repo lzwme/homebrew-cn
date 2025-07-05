@@ -2,10 +2,10 @@ cask "cryptr" do
   version "0.6.0"
   sha256 "22f526a8f804c203148034eba3704f0478f58b1bf2ee3999e1a199b3b52eefd5"
 
-  url "https:github.comadobecryptrreleasesdownloadv#{version}Cryptr-#{version}.dmg"
+  url "https://ghfast.top/https://github.com/adobe/cryptr/releases/download/v#{version}/Cryptr-#{version}.dmg"
   name "Cryptr"
   desc "GUI for Hashicorp's Vault"
-  homepage "https:github.comadobecryptr"
+  homepage "https://github.com/adobe/cryptr"
 
   no_autobump! because: :requires_manual_review
 
@@ -14,9 +14,9 @@ cask "cryptr" do
   app "Cryptr.app"
 
   zap trash: [
-    "~LibraryApplication Supportcryptr",
-    "~LibraryPreferencesio.cryptr.plist",
-    "~LibrarySaved Application Stateio.cryptr.savedState",
+    "~/Library/Application Support/cryptr",
+    "~/Library/Preferences/io.cryptr.plist",
+    "~/Library/Saved Application State/io.cryptr.savedState",
   ]
 
   caveats do

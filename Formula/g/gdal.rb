@@ -1,27 +1,28 @@
 class Gdal < Formula
   desc "Geospatial Data Abstraction Library"
-  homepage "https:gdal.orgenstable"
-  url "https:github.comOSGeogdalreleasesdownloadv3.11.1gdal-3.11.1.tar.gz"
+  homepage "https://gdal.org/en/stable/"
+  url "https://ghfast.top/https://github.com/OSGeo/gdal/releases/download/v3.11.1/gdal-3.11.1.tar.gz"
   sha256 "21f1806070ccff697946ba5df5a0ec9ee9ecfcbb7e7e6163f2c61466883e23f8"
   license "MIT"
+  revision 1
 
   livecheck do
-    url "https:download.osgeo.orggdalCURRENT"
-    regex(href=.*?gdal[._-]v?(\d+(?:\.\d+)+)\.ti)
+    url "https://download.osgeo.org/gdal/CURRENT/"
+    regex(/href=.*?gdal[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   bottle do
-    sha256 arm64_sequoia: "b19b4a5d5ad56b05be2a220a958d6dd31f892d48057d50d326ee33f8271976e4"
-    sha256 arm64_sonoma:  "1bf583523592c5361b01f0bea6580cc02c27da6f97b9d7c56aac3baceca72ec3"
-    sha256 arm64_ventura: "3c5341d1af3c566957cd7a96338368258a792b96986782cbd1524f6e924bfbb0"
-    sha256 sonoma:        "c6ab1c1eec9c437c0263cd83aceaa0538aa9d2e4cbd68276a8a0cb89b957c2c3"
-    sha256 ventura:       "37a0b93b81a71e066bd3bb4dd2ee984ce71b475b782ce9a6047d5b55ffd8686d"
-    sha256 arm64_linux:   "0760673ad756ec720ce13312181c3efbdf1b635502767b466869afdd22f5bc7d"
-    sha256 x86_64_linux:  "c31fbdcc6ec0fa1790c2f996a11ab8f63ae65a77f2f431c94877dc9a7c34d32d"
+    sha256 arm64_sequoia: "209088a61ad9e241ccf2961adf274fded9cbba16810348a54526e8572cc0dad7"
+    sha256 arm64_sonoma:  "7aa877875053b9882846e5e4b3dfb605bef58b5a130fa83aead125c41c9b5f88"
+    sha256 arm64_ventura: "305d71c54286b91ddbc92d24f1c2d6c0c154d536b702a2576058cc0b8d3bd449"
+    sha256 sonoma:        "852c47a38ceebe6108989be5b45f76080eaa0aea3588cd8933baa6a904280925"
+    sha256 ventura:       "82811a203288e3597bc35bc622a65abf0cd1a643cef33dd480d850846890df4f"
+    sha256 arm64_linux:   "26914bc309862b928f5c37b53a0273be314d325bbff7058c89ea83de8ec9e47c"
+    sha256 x86_64_linux:  "c6d777985c870dfcdcdba5c6462cc933e209f18a9538f685a0f103e84aab1c70"
   end
 
   head do
-    url "https:github.comOSGeogdal.git", branch: "master"
+    url "https://github.com/OSGeo/gdal.git", branch: "master"
     depends_on "doxygen" => :build
   end
 
@@ -93,14 +94,14 @@ class Gdal < Formula
   end
 
   def install
-    site_packages = prefixLanguage::Python.site_packages(python3)
+    site_packages = prefix/Language::Python.site_packages(python3)
     # Work around Homebrew's "prefix scheme" patch which causes non-pip installs
-    # to incorrectly try to write into HOMEBREW_PREFIXlib since Python 3.10.
-    inreplace "swigpythonCMakeLists.txt",
+    # to incorrectly try to write into HOMEBREW_PREFIX/lib since Python 3.10.
+    inreplace "swig/python/CMakeLists.txt",
               'set(INSTALL_ARGS "--single-version-externally-managed --record=record.txt',
               "\\0 --install-lib=#{site_packages} --install-scripts=#{bin}"
 
-    osgeo_ext = site_packages"osgeo"
+    osgeo_ext = site_packages/"osgeo"
     rpaths = [rpath, rpath(source: osgeo_ext)]
     ENV.append "LDFLAGS", "-Wl,#{rpaths.map { |rp| "-rpath,#{rp}" }.join(",")}"
     # keep C++ standard in sync with `abseil.rb`
@@ -120,16 +121,16 @@ class Gdal < Formula
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 
-    bash_completion.install (share"bash-completioncompletions").children
+    bash_completion.install (share/"bash-completion/completions").children
   end
 
   test do
     # basic tests to see if third-party dylibs are loading OK
-    system bin"gdalinfo", "--formats"
-    system bin"ogrinfo", "--formats"
+    system bin/"gdalinfo", "--formats"
+    system bin/"ogrinfo", "--formats"
     # Changed Python package name from "gdal" to "osgeo.gdal" in 3.2.0.
     system python3, "-c", "import osgeo.gdal"
     # test for zarr blosc compressor
-    assert_match "BLOSC_COMPRESSORS", shell_output("#{bin}gdalinfo --format Zarr")
+    assert_match "BLOSC_COMPRESSORS", shell_output("#{bin}/gdalinfo --format Zarr")
   end
 end

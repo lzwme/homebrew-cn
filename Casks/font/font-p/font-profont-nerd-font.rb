@@ -2,9 +2,9 @@ cask "font-profont-nerd-font" do
   version "3.4.0"
   sha256 "8c6a220533cf398ccb1e42735bcfa546d72f7854cf4d2ed3baa94d21e4200413"
 
-  url "https:github.comryanoasisnerd-fontsreleasesdownloadv#{version}ProFont.zip"
+  url "https://ghfast.top/https://github.com/ryanoasis/nerd-fonts/releases/download/v#{version}/ProFont.zip"
   name "ProFont Nerd Font families (ProFont)"
-  homepage "https:github.comryanoasisnerd-fonts"
+  homepage "https://github.com/ryanoasis/nerd-fonts"
 
   livecheck do
     url :url

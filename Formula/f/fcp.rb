@@ -1,13 +1,13 @@
 class Fcp < Formula
   desc "Significantly faster alternative to the classic Unix cp(1) command"
-  homepage "https:github.comSvetlitskifcp"
-  url "https:github.comSvetlitskifcparchiverefstagsv0.2.1.tar.gz"
+  homepage "https://github.com/Svetlitski/fcp/"
+  url "https://ghfast.top/https://github.com/Svetlitski/fcp/archive/refs/tags/v0.2.1.tar.gz"
   sha256 "e835d014849f5a3431a0798bcac02332915084bf4f4070fb1c6914b1865295f2"
   license "BSD-3-Clause"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -27,9 +27,9 @@ class Fcp < Formula
 
   depends_on "rust" => :build
 
-  # rust 1.80 build patch, upstream pr ref, https:github.comSvetlitskifcppull42
+  # rust 1.80 build patch, upstream pr ref, https://github.com/Svetlitski/fcp/pull/42
   patch do
-    url "https:raw.githubusercontent.comHomebrewformula-patchesd4491a45e0f208e75d48bdc665db2d6e87813675fcprust-1.80.patch"
+    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/d4491a45e0f208e75d48bdc665db2d6e87813675/fcp/rust-1.80.patch"
     sha256 "cd9057498c939c9a9999408128b0561a4a7c0bc618b0426216c7fe94e00a99da"
   end
 
@@ -38,19 +38,19 @@ class Fcp < Formula
   end
 
   test do
-    (testpath"src.old").write "Hello world!"
-    system bin"fcp", "src.old", "dest.txt"
-    assert_equal (testpath"src.old").read, (testpath"dest.txt").read
+    (testpath/"src.old").write "Hello world!"
+    system bin/"fcp", "src.old", "dest.txt"
+    assert_equal (testpath/"src.old").read, (testpath/"dest.txt").read
 
-    (testpath"src.new").write "Hello Homebrew!"
-    system bin"fcp", "src.new", "dest.txt"
-    assert_equal (testpath"src.new").read, (testpath"dest.txt").read
+    (testpath/"src.new").write "Hello Homebrew!"
+    system bin/"fcp", "src.new", "dest.txt"
+    assert_equal (testpath/"src.new").read, (testpath/"dest.txt").read
 
-    ["foo", "bar", "baz"].each { |f| (testpathf).write f }
-    (testpath"dest_dir").mkdir
-    system bin"fcp", "foo", "bar", "baz", "dest_dir"
-    assert_equal (testpath"foo").read, (testpath"dest_dirfoo").read
-    assert_equal (testpath"bar").read, (testpath"dest_dirbar").read
-    assert_equal (testpath"baz").read, (testpath"dest_dirbaz").read
+    ["foo", "bar", "baz"].each { |f| (testpath/f).write f }
+    (testpath/"dest_dir").mkdir
+    system bin/"fcp", "foo", "bar", "baz", "dest_dir/"
+    assert_equal (testpath/"foo").read, (testpath/"dest_dir/foo").read
+    assert_equal (testpath/"bar").read, (testpath/"dest_dir/bar").read
+    assert_equal (testpath/"baz").read, (testpath/"dest_dir/baz").read
   end
 end

@@ -1,14 +1,14 @@
 class Veryfasttree < Formula
   desc "Efficient phylogenetic tree inference for massive taxonomic datasets"
-  homepage "https:github.comcitiususcveryfasttree"
-  url "https:github.comcitiususcveryfasttreearchiverefstagsv4.0.5.tar.gz"
+  homepage "https://github.com/citiususc/veryfasttree"
+  url "https://ghfast.top/https://github.com/citiususc/veryfasttree/archive/refs/tags/v4.0.5.tar.gz"
   sha256 "e753c01555b3363747ea1d51248d691aa1e79d228cac187a6725ea8cd86ad321"
   license all_of: [
     "GPL-3.0-only",
-    "BSD-3-Clause", # libscli11
-    "MPL-2.0", # libsbxzstr
+    "BSD-3-Clause", # libs/cli11
+    "MPL-2.0", # libs/bxzstr
   ]
-  head "https:github.comcitiususcveryfasttree.git", branch: "master"
+  head "https://github.com/citiususc/veryfasttree.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "e377c3426836e11514282dfcd1fc2699fc6c25f721eaae8cf4f2bdf9ea41d0b1"
@@ -34,7 +34,7 @@ class Veryfasttree < Formula
 
   def install
     # remove libraries that can be unbundled
-    rm_r(Dir["libs*"] - ["libsCLI11", "libsbxzstr"])
+    rm_r(Dir["libs/*"] - ["libs/CLI11", "libs/bxzstr"])
 
     # workaround to use brew `robin-map` which needs C++17
     inreplace "CMakeLists.txt", "set(CMAKE_CXX_STANDARD 11)", "set(CMAKE_CXX_STANDARD 17)"
@@ -47,11 +47,11 @@ class Veryfasttree < Formula
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
-    man1.install "manVeryFastTree.1"
+    man1.install "man/VeryFastTree.1"
   end
 
   test do
-    (testpath"test.fasta").write <<~FASTA
+    (testpath/"test.fasta").write <<~FASTA
       >N3289
       --RNRSCRRDNTNGQDLQAALAIFAAKVYVGVALQSVQVAAGIGKHPVYKHIPSKKYTGL
       IIQELYLERLMAELADGLADAAPDVLLDIRGLMLALDAPAREKPIIL-LHLAASAGDALR
@@ -108,6 +108,6 @@ class Veryfasttree < Formula
       GKLKEFSRELLERLAASVITGLAVPELTGDEGTLAAGVILMALLAALLLYLLLDPLLSGF
       SGDLPDSGLAVHA----
     FASTA
-    system bin"VeryFastTree", "test.fasta"
+    system bin/"VeryFastTree", "test.fasta"
   end
 end

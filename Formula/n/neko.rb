@@ -1,11 +1,11 @@
 class Neko < Formula
   desc "High-level, dynamically typed programming language"
-  homepage "https:nekovm.org"
-  url "https:github.comHaxeFoundationnekoarchiverefstagsv2-4-1.tar.gz"
+  homepage "https://nekovm.org/"
+  url "https://ghfast.top/https://github.com/HaxeFoundation/neko/archive/refs/tags/v2-4-1.tar.gz"
   version "2.4.1"
   sha256 "702282028190dffa2078b00cca515b8e2ba889186a221df2226d2b6deb3ffaca"
   license "MIT"
-  head "https:github.comHaxeFoundationneko.git", branch: "master"
+  head "https://github.com/HaxeFoundation/neko.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -38,15 +38,15 @@ class Neko < Formula
 
   def install
     args = %W[
-      -DMARIADB_CONNECTOR_LIBRARIES=#{Formula["mariadb-connector-c"].opt_lib"mariadb"shared_library("libmariadb")}
+      -DMARIADB_CONNECTOR_LIBRARIES=#{Formula["mariadb-connector-c"].opt_lib/"mariadb"/shared_library("libmariadb")}
       -DRELOCATABLE=OFF
       -DRUN_LDCONFIG=OFF
     ]
     if OS.linux?
       args << "-DAPR_LIBRARY=#{Formula["apr"].opt_lib}"
-      args << "-DAPR_INCLUDE_DIR=#{Formula["apr"].opt_include}apr-1"
+      args << "-DAPR_INCLUDE_DIR=#{Formula["apr"].opt_include}/apr-1"
       args << "-DAPRUTIL_LIBRARY=#{Formula["apr-util"].opt_lib}"
-      args << "-DAPRUTIL_INCLUDE_DIR=#{Formula["apr-util"].opt_include}apr-1"
+      args << "-DAPRUTIL_INCLUDE_DIR=#{Formula["apr-util"].opt_include}/apr-1"
     end
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
@@ -57,15 +57,15 @@ class Neko < Formula
   def caveats
     <<~EOS
       You must add the following line to your .bashrc or equivalent:
-        export NEKOPATH="#{HOMEBREW_PREFIX}libneko"
+        export NEKOPATH="#{HOMEBREW_PREFIX}/lib/neko"
     EOS
   end
 
   test do
-    ENV["NEKOPATH"] = "#{HOMEBREW_PREFIX}libneko"
-    system bin"neko", "-version"
-    (testpath"hello.neko").write '$print("Hello world!\n");'
-    system bin"nekoc", "hello.neko"
-    assert_equal "Hello world!\n", shell_output("#{bin}neko hello")
+    ENV["NEKOPATH"] = "#{HOMEBREW_PREFIX}/lib/neko"
+    system bin/"neko", "-version"
+    (testpath/"hello.neko").write '$print("Hello world!\n");'
+    system bin/"nekoc", "hello.neko"
+    assert_equal "Hello world!\n", shell_output("#{bin}/neko hello")
   end
 end

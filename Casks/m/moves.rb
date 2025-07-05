@@ -2,14 +2,14 @@ cask "moves" do
   version "1.8.0"
   sha256 "c1476ffc9835468ed7b4a214521fa046a1be3b7724eaab6085c49f7d6589d376"
 
-  url "https:github.commikkerMoves.appreleasesdownloadv#{version}Moves.app.zip",
-      verified: "github.commikkerMoves.app"
+  url "https://ghfast.top/https://github.com/mikker/Moves.app/releases/download/v#{version}/Moves.app.zip",
+      verified: "github.com/mikker/Moves.app/"
   name "Moves"
   desc "Window manager"
-  homepage "https:mikkelmalmberg.commoves"
+  homepage "https://mikkelmalmberg.com/moves"
 
   livecheck do
-    url "https:mikker.github.ioMoves.appappcast.xml"
+    url "https://mikker.github.io/Moves.app/appcast.xml"
     strategy :sparkle, &:short_version
   end
 
@@ -20,5 +20,5 @@ cask "moves" do
 
   app "Moves.app"
 
-  zap trash: "~LibraryApplication SupportMoves"
+  zap trash: "~/Library/Application Support/Moves"
 end

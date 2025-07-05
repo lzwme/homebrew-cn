@@ -1,10 +1,10 @@
 class CrunchyCli < Formula
   desc "Command-line downloader for Crunchyroll"
-  homepage "https:github.comcrunchy-labscrunchy-cli"
-  url "https:github.comcrunchy-labscrunchy-cliarchiverefstagsv3.6.7.tar.gz"
+  homepage "https://github.com/crunchy-labs/crunchy-cli"
+  url "https://ghfast.top/https://github.com/crunchy-labs/crunchy-cli/archive/refs/tags/v3.6.7.tar.gz"
   sha256 "743c2d5dd603ee14e63af8ac8cbae1cd80acce6bfa87934571e379bcf01949e6"
   license "MIT"
-  head "https:github.comcrunchy-labscrunchy-cli.git", branch: "master"
+  head "https://github.com/crunchy-labs/crunchy-cli.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -29,16 +29,16 @@ class CrunchyCli < Formula
 
   def install
     system "cargo", "install", "--no-default-features", "--features", "openssl-tls", *std_cargo_args
-    man1.install Dir["targetreleasemanpages*"]
-    bash_completion.install "targetreleasecompletionscrunchy-cli.bash"
-    fish_completion.install "targetreleasecompletionscrunchy-cli.fish"
-    zsh_completion.install "targetreleasecompletions_crunchy-cli"
+    man1.install Dir["target/release/manpages/*"]
+    bash_completion.install "target/release/completions/crunchy-cli.bash"
+    fish_completion.install "target/release/completions/crunchy-cli.fish"
+    zsh_completion.install "target/release/completions/_crunchy-cli"
   end
 
   test do
-    agent = "Mozilla5.0 (Macintosh; Intel Mac OS X 10.15; rv:109.0) Gecko20100101 Firefox119.0"
+    agent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:109.0) Gecko/20100101 Firefox/119.0"
     opts = "--anonymous --user-agent '#{agent}'"
-    output = shell_output("#{bin}crunchy-cli #{opts} login 2>&1", 1).strip
-    assert_match((An error occurred: Anonymous login cannot be saved|Triggered Cloudflare bot protection), output)
+    output = shell_output("#{bin}/crunchy-cli #{opts} login 2>&1", 1).strip
+    assert_match(/(An error occurred: Anonymous login cannot be saved|Triggered Cloudflare bot protection)/, output)
   end
 end

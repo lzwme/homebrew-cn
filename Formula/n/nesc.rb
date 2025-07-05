@@ -1,7 +1,7 @@
 class Nesc < Formula
   desc "Programming language for deeply networked systems"
-  homepage "https:github.comtinyosnesc"
-  url "https:github.comtinyosnescarchiverefstagsv1.4.0.tar.gz"
+  homepage "https://github.com/tinyos/nesc"
+  url "https://ghfast.top/https://github.com/tinyos/nesc/archive/refs/tags/v1.4.0.tar.gz"
   sha256 "ea9a505d55e122bf413dff404bebfa869a8f0dd76a01a8efc7b4919c375ca000"
   license "GPL-2.0-only"
   revision 2
@@ -44,8 +44,8 @@ class Nesc < Formula
     # lead to locking on the same file
     ENV.deparallelize
 
-    system ".Bootstrap"
-    system ".configure", "--disable-debug", "--disable-dependency-tracking", "--prefix=#{prefix}"
+    system "./Bootstrap"
+    system "./configure", "--disable-debug", "--disable-dependency-tracking", "--prefix=#{prefix}"
     system "make"
     system "make", "install"
   end

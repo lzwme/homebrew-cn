@@ -1,7 +1,7 @@
 class Appstream < Formula
   desc "Tools and libraries to work with AppStream metadata"
-  homepage "https:www.freedesktop.orgwikiDistributionsAppStream"
-  url "https:github.comximionappstreamarchiverefstagsv1.0.5.tar.gz"
+  homepage "https://www.freedesktop.org/wiki/Distributions/AppStream/"
+  url "https://ghfast.top/https://github.com/ximion/appstream/archive/refs/tags/v1.0.5.tar.gz"
   sha256 "dd33b1375ba4221ffee060e2778c478e8150d7b1108c6309148f5fb1ca6e90c0"
   license "LGPL-2.1-or-later"
 
@@ -43,16 +43,16 @@ class Appstream < Formula
     depends_on "systemd"
   end
 
-  # fix macos build, upstream PR ref, https:github.comximionappstreampull556
+  # fix macos build, upstream PR ref, https://github.com/ximion/appstream/pull/556
   patch do
-    url "https:github.comximionappstreamcommit06eeffe7eba5c4e82a1dd548e100c6fe4f71b413.patch?full_index=1"
+    url "https://github.com/ximion/appstream/commit/06eeffe7eba5c4e82a1dd548e100c6fe4f71b413.patch?full_index=1"
     sha256 "d0ad5853d451eb073fc64bd3e9e58e81182f4142220e0f413794752cda235d28"
   end
 
   def install
-    ENV["XML_CATALOG_FILES"] = "#{etc}xmlcatalog"
+    ENV["XML_CATALOG_FILES"] = "#{etc}/xml/catalog"
 
-    inreplace "meson.build", "usrinclude", prefix.to_s
+    inreplace "meson.build", "/usr/include", prefix.to_s
 
     args = %w[
       -Dstemming=false
@@ -71,14 +71,14 @@ class Appstream < Formula
   end
 
   test do
-    (testpath"appdata.xml").write <<~XML
+    (testpath/"appdata.xml").write <<~XML
       <?xml version="1.0" encoding="UTF-8"?>
       <component type="desktop-application">
-        <id>org.test.test-app<id>
-        <name>Test App<name>
-      <component>
+        <id>org.test.test-app</id>
+        <name>Test App</name>
+      </component>
     XML
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include "appstream.h"
 
       int main(int argc, char *argv[]) {
@@ -86,7 +86,7 @@ class Appstream < Formula
         char *appdata_uri;
         AsMetadata *metadata;
         GError *error = NULL;
-        char *resource_path = "#{testpath}appdata.xml";
+        char *resource_path = "#{testpath}/appdata.xml";
         appdata_file = g_file_new_for_path (resource_path);
         metadata = as_metadata_new ();
         if (!as_metadata_parse_file (metadata, appdata_file, AS_FORMAT_KIND_UNKNOWN, &error)) {
@@ -97,8 +97,8 @@ class Appstream < Formula
     C
     flags = shell_output("pkg-config --cflags --libs appstream").strip.split
     system ENV.cc, "test.c", "-o", "test", *flags
-    system ".test"
+    system "./test"
 
-    assert_match version.to_s, shell_output("#{bin}appstreamcli --version")
+    assert_match version.to_s, shell_output("#{bin}/appstreamcli --version")
   end
 end

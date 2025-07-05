@@ -1,10 +1,10 @@
 class Oxker < Formula
   desc "Terminal User Interface (TUI) to view & control docker containers"
-  homepage "https:github.commrjackwillsoxker"
-  url "https:github.commrjackwillsoxkerarchiverefstagsv0.10.5.tar.gz"
+  homepage "https://github.com/mrjackwills/oxker"
+  url "https://ghfast.top/https://github.com/mrjackwills/oxker/archive/refs/tags/v0.10.5.tar.gz"
   sha256 "d8c79a1732320d84d149b0db892f3875a6513c7c36b05b4c37d22dfebdf5dee0"
   license "MIT"
-  head "https:github.commrjackwillsoxker.git", branch: "main"
+  head "https://github.com/mrjackwills/oxker.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "c6bbdfda2462128afbb22b9d2f2339fcde3755c33adeb401b01e5ad5921644f5"
@@ -23,9 +23,9 @@ class Oxker < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output(bin"oxker --version")
+    assert_match version.to_s, shell_output(bin/"oxker --version")
 
     assert_match "a value is required for '--host <HOST>' but none was supplied",
-      shell_output(bin"oxker --host 2>&1", 2)
+      shell_output(bin/"oxker --host 2>&1", 2)
   end
 end

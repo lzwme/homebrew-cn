@@ -1,14 +1,14 @@
 class VulkanValidationlayers < Formula
   desc "Vulkan layers that enable developers to verify correct use of the Vulkan API"
-  homepage "https:github.comKhronosGroupVulkan-ValidationLayers"
-  url "https:github.comKhronosGroupVulkan-ValidationLayersarchiverefstagsv1.4.320.tar.gz"
+  homepage "https://github.com/KhronosGroup/Vulkan-ValidationLayers"
+  url "https://ghfast.top/https://github.com/KhronosGroup/Vulkan-ValidationLayers/archive/refs/tags/v1.4.320.tar.gz"
   sha256 "96488f23efe7ca71d3ec539c43ed0eacba7ace9adeb052b6fde771c256c1bf66"
   license "Apache-2.0"
-  head "https:github.comKhronosGroupVulkan-ValidationLayers.git", branch: "main"
+  head "https://github.com/KhronosGroup/Vulkan-ValidationLayers.git", branch: "main"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -37,41 +37,41 @@ class VulkanValidationlayers < Formula
     depends_on "wayland" => :build
   end
 
-  # https:github.comKhronosGroupVulkan-ValidationLayersblobv#{version}scriptsknown_good.json#L32
+  # https://github.com/KhronosGroup/Vulkan-ValidationLayers/blob/v#{version}/scripts/known_good.json#L32
   resource "SPIRV-Headers" do
-    url "https:github.comKhronosGroupSPIRV-Headers.git",
+    url "https://github.com/KhronosGroup/SPIRV-Headers.git",
         revision: "2a611a970fdbc41ac2e3e328802aed9985352dca"
   end
 
-  # https:github.comKhronosGroupVulkan-ValidationLayersblobv#{version}scriptsknown_good.json#L46
+  # https://github.com/KhronosGroup/Vulkan-ValidationLayers/blob/v#{version}/scripts/known_good.json#L46
   resource "SPIRV-Tools" do
-    url "https:github.comKhronosGroupSPIRV-Tools.git",
+    url "https://github.com/KhronosGroup/SPIRV-Tools.git",
         revision: "33e02568181e3312f49a3cf33df470bf96ef293a"
   end
 
   def install
     resource("SPIRV-Headers").stage do
-      system "cmake", "-S", ".", "-B", "build", *std_cmake_args(install_prefix: buildpath"third_partySPIRV-Headers")
+      system "cmake", "-S", ".", "-B", "build", *std_cmake_args(install_prefix: buildpath/"third_party/SPIRV-Headers")
       system "cmake", "--build", "build"
       system "cmake", "--install", "build"
     end
 
     resource("SPIRV-Tools").stage do
       system "cmake", "-S", ".", "-B", "build",
-                      "-DSPIRV-Headers_SOURCE_DIR=#{buildpath}third_partySPIRV-Headers",
+                      "-DSPIRV-Headers_SOURCE_DIR=#{buildpath}/third_party/SPIRV-Headers",
                       "-DSPIRV_WERROR=OFF",
                       "-DSPIRV_SKIP_TESTS=ON",
                       "-DSPIRV_SKIP_EXECUTABLES=ON",
                       "-DCMAKE_INSTALL_RPATH=#{rpath(target: Formula["vulkan-loader"].opt_lib)}",
-                      *std_cmake_args(install_prefix: buildpath"third_partySPIRV-Tools")
+                      *std_cmake_args(install_prefix: buildpath/"third_party/SPIRV-Tools")
       system "cmake", "--build", "build"
       system "cmake", "--install", "build"
     end
 
     args = [
       "-DGLSLANG_INSTALL_DIR=#{Formula["glslang"].prefix}",
-      "-DSPIRV_HEADERS_INSTALL_DIR=#{buildpath}third_partySPIRV-Headers",
-      "-DSPIRV_TOOLS_INSTALL_DIR=#{buildpath}third_partySPIRV-Tools",
+      "-DSPIRV_HEADERS_INSTALL_DIR=#{buildpath}/third_party/SPIRV-Headers",
+      "-DSPIRV_TOOLS_INSTALL_DIR=#{buildpath}/third_party/SPIRV-Tools",
       "-DVULKAN_HEADERS_INSTALL_DIR=#{Formula["vulkan-headers"].prefix}",
       "-DVULKAN_UTILITY_LIBRARIES_INSTALL_DIR=#{Formula["vulkan-utility-libraries"].prefix}",
       "-DCMAKE_INSTALL_RPATH=#{rpath(target: Formula["vulkan-loader"].opt_lib)}",
@@ -95,13 +95,13 @@ class VulkanValidationlayers < Formula
   def caveats
     <<~EOS
       In order to use this layer in a Vulkan application, you may need to place it in the environment with
-        export VK_LAYER_PATH=#{opt_share}vulkanexplicit_layer.d
+        export VK_LAYER_PATH=#{opt_share}/vulkan/explicit_layer.d
     EOS
   end
 
   test do
-    ENV.prepend_path "VK_LAYER_PATH", share"vulkanexplicit_layer.d"
-    ENV["VK_ICD_FILENAMES"] = Formula["vulkan-tools"].lib"mock_icdVkICD_mock_icd.json"
+    ENV.prepend_path "VK_LAYER_PATH", share/"vulkan/explicit_layer.d"
+    ENV["VK_ICD_FILENAMES"] = Formula["vulkan-tools"].lib/"mock_icd/VkICD_mock_icd.json"
 
     actual = shell_output("vulkaninfo")
     %w[VK_EXT_debug_report VK_EXT_debug_utils VK_EXT_validation_features

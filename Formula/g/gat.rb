@@ -1,10 +1,10 @@
 class Gat < Formula
   desc "Cat alternative written in Go"
-  homepage "https:github.comkoki-developgat"
-  url "https:github.comkoki-developgatarchiverefstagsv0.24.1.tar.gz"
+  homepage "https://github.com/koki-develop/gat"
+  url "https://ghfast.top/https://github.com/koki-develop/gat/archive/refs/tags/v0.24.1.tar.gz"
   sha256 "df5766003034aeaff39ad8d2b3a3faf326961a06edd5387b8f06c72b2aca39f4"
   license "MIT"
-  head "https:github.comkoki-developgat.git", branch: "main"
+  head "https://github.com/koki-develop/gat.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "0b974198fd67de388ecb6028f8827b13fbdfaadbb51069acb83b5ea5c97d4fd0"
@@ -18,15 +18,15 @@ class Gat < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w -X github.comkoki-developgatcmd.version=v#{version}")
+    system "go", "build", *std_go_args(ldflags: "-s -w -X github.com/koki-develop/gat/cmd.version=v#{version}")
   end
 
   test do
-    (testpath"test.sh").write 'echo "hello gat"'
+    (testpath/"test.sh").write 'echo "hello gat"'
 
     assert_equal \
       "\e[38;5;231mecho\e[0m\e[38;5;231m \e[0m\e[38;5;186m\"hello gat\"\e[0m",
-      shell_output("#{bin}gat --force-color test.sh")
-    assert_match version.to_s, shell_output("#{bin}gat --version")
+      shell_output("#{bin}/gat --force-color test.sh")
+    assert_match version.to_s, shell_output("#{bin}/gat --version")
   end
 end

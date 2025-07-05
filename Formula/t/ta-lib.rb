@@ -1,7 +1,7 @@
 class TaLib < Formula
   desc "Tools for market analysis"
-  homepage "https:ta-lib.org"
-  url "https:github.comta-libta-libreleasesdownloadv0.6.4ta-lib-0.6.4-src.tar.gz"
+  homepage "https://ta-lib.org/"
+  url "https://ghfast.top/https://github.com/ta-lib/ta-lib/releases/download/v0.6.4/ta-lib-0.6.4-src.tar.gz"
   sha256 "aa04066d17d69c73b1baaef0883414d3d56ab3775872d82916d1cdb376a3ae86"
   license "BSD-3-Clause"
 
@@ -25,12 +25,12 @@ class TaLib < Formula
     ENV.deparallelize
     # Call autoreconf on macOS to fix -flat_namespace usage
     system "autoreconf", "--force", "--install", "--verbose" if OS.mac?
-    system ".configure", *std_configure_args
+    system "./configure", *std_configure_args
     system "make", "install"
-    bin.install "srctoolsta_regtest.libsta_regtest"
+    bin.install "src/tools/ta_regtest/.libs/ta_regtest"
   end
 
   test do
-    system bin"ta_regtest"
+    system bin/"ta_regtest"
   end
 end

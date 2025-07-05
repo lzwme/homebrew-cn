@@ -1,10 +1,10 @@
 class M1ddc < Formula
-  desc "Control external displays (USB-CDisplayPort Alt Mode) using DDCCI on M1 Macs"
-  homepage "https:github.comwaydabberm1ddc"
-  url "https:github.comwaydabberm1ddcarchiverefstagsv1.2.0.tar.gz"
+  desc "Control external displays (USB-C/DisplayPort Alt Mode) using DDC/CI on M1 Macs"
+  homepage "https://github.com/waydabber/m1ddc"
+  url "https://ghfast.top/https://github.com/waydabber/m1ddc/archive/refs/tags/v1.2.0.tar.gz"
   sha256 "d633c06502e650108bb2f581b5db25d2592955fa9a57de7feeae3ed7710c59ca"
   license "MIT"
-  head "https:github.comwaydabberm1ddc.git", branch: "main"
+  head "https://github.com/waydabber/m1ddc.git", branch: "main"
 
   no_autobump! because: :requires_manual_review
 
@@ -26,10 +26,10 @@ class M1ddc < Formula
 
   test do
     # Ensure helptext is rendered
-    assert_includes shell_output("#{bin}m1ddc help", 1), "Controls volume, luminance"
+    assert_includes shell_output("#{bin}/m1ddc help", 1), "Controls volume, luminance"
 
     # Attempt getting maximum luminance (usually 100),
     # will return code 1 if a screen can't be found (e.g., in CI)
-    assert_match((\d*)|(Could not find a suitable external display\.), pipe_output("#{bin}m1ddc get luminance"))
+    assert_match(/(\d*)|(Could not find a suitable external display\.)/, pipe_output("#{bin}/m1ddc get luminance"))
   end
 end

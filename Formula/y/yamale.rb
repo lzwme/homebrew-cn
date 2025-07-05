@@ -2,11 +2,11 @@ class Yamale < Formula
   include Language::Python::Virtualenv
 
   desc "Schema and validator for YAML"
-  homepage "https:github.com23andMeYamale"
-  url "https:files.pythonhosted.orgpackages3727da3742a358015f3c2a069ccdaf7e5766ac358e8200319f640755db3128aeyamale-6.0.0.tar.gz"
+  homepage "https://github.com/23andMe/Yamale"
+  url "https://files.pythonhosted.org/packages/37/27/da3742a358015f3c2a069ccdaf7e5766ac358e8200319f640755db3128ae/yamale-6.0.0.tar.gz"
   sha256 "60be681f35e4939320b89de0d6f187ee0e5479ae7f7286b7f17f0859ddee4a66"
   license "MIT"
-  head "https:github.com23andMeYamale.git", branch: "master"
+  head "https://github.com/23andMe/Yamale.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "e48267ff74adef8ba5d4d66834e837278195007081f1ba45e3b9142d17edcc1b"
@@ -22,7 +22,7 @@ class Yamale < Formula
   depends_on "python@3.13"
 
   resource "pyyaml" do
-    url "https:files.pythonhosted.orgpackages54ed79a089b6be93607fa5cdaedf301d7dfb23af5f25c398d5ead2525b063e17pyyaml-6.0.2.tar.gz"
+    url "https://files.pythonhosted.org/packages/54/ed/79a089b6be93607fa5cdaedf301d7dfb23af5f25c398d5ead2525b063e17/pyyaml-6.0.2.tar.gz"
     sha256 "d584d9ec91ad65861cc08d42e834324ef890a082e591037abe114850ff7bbc3e"
   end
 
@@ -31,31 +31,31 @@ class Yamale < Formula
   end
 
   test do
-    (testpath"schema.yaml").write <<~YAML
+    (testpath/"schema.yaml").write <<~YAML
       string: str()
       number: num(required=False)
       datetime: timestamp(min='2010-01-01 0:0:0')
     YAML
-    (testpath"data1.yaml").write <<~YAML
+    (testpath/"data1.yaml").write <<~YAML
       string: bo is awesome
       datetime: 2011-01-01 00:00:00
     YAML
-    (testpath"some_data.yaml").write <<~YAML
+    (testpath/"some_data.yaml").write <<~YAML
       string: one
       number: 3
       datetime: 2015-01-01 00:00:00
     YAML
-    output = shell_output("#{bin}yamale -s schema.yaml data1.yaml")
+    output = shell_output("#{bin}/yamale -s schema.yaml data1.yaml")
     assert_match "Validation success!", output
 
-    output = shell_output("#{bin}yamale -s schema.yaml some_data.yaml")
+    output = shell_output("#{bin}/yamale -s schema.yaml some_data.yaml")
     assert_match "Validation success!", output
 
-    (testpath"good.yaml").write <<~YAML
+    (testpath/"good.yaml").write <<~YAML
       ---
       foo: bar
     YAML
-    output = shell_output("#{bin}yamale -s schema.yaml schema.yaml", 1)
+    output = shell_output("#{bin}/yamale -s schema.yaml schema.yaml", 1)
     assert_match "Validation failed!", output
   end
 end

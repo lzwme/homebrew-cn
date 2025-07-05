@@ -1,10 +1,10 @@
 class Massdriver < Formula
   desc "Manage applications and infrastructure on Massdriver Cloud"
-  homepage "https:www.massdriver.cloud"
-  url "https:github.commassdriver-cloudmassarchiverefstags1.11.3.tar.gz"
+  homepage "https://www.massdriver.cloud/"
+  url "https://ghfast.top/https://github.com/massdriver-cloud/mass/archive/refs/tags/1.11.3.tar.gz"
   sha256 "76f84e36973067245ae82073b6b444c8514087d3c41786c0253e16ec6cc9f123"
   license "Apache-2.0"
-  head "https:github.commassdriver-cloudmass.git", branch: "main"
+  head "https://github.com/massdriver-cloud/mass.git", branch: "main"
 
   # There can be a notable gap between when a version is tagged and a
   # corresponding release is created, so we check the "latest" release instead
@@ -28,18 +28,18 @@ class Massdriver < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.commassdriver-cloudmasspkgversion.version=#{version}
-      -X github.commassdriver-cloudmasspkgversion.gitSHA=#{tap.user}
+      -X github.com/massdriver-cloud/mass/pkg/version.version=#{version}
+      -X github.com/massdriver-cloud/mass/pkg/version.gitSHA=#{tap.user}
     ]
-    system "go", "build", *std_go_args(ldflags:, output: bin"mass")
+    system "go", "build", *std_go_args(ldflags:, output: bin/"mass")
 
-    generate_completions_from_executable(bin"mass", "completion")
+    generate_completions_from_executable(bin/"mass", "completion")
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}mass version")
+    assert_match version.to_s, shell_output("#{bin}/mass version")
 
-    output = shell_output("#{bin}mass bundle build 2>&1", 1)
+    output = shell_output("#{bin}/mass bundle build 2>&1", 1)
     assert_match "Error: open massdriver.yaml: no such file or directory", output
   end
 end

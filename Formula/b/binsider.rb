@@ -1,10 +1,10 @@
 class Binsider < Formula
   desc "Analyzes ELF binaries"
-  homepage "https:binsider.dev"
-  url "https:github.comorhunbinsiderarchiverefstagsv0.2.1.tar.gz"
+  homepage "https://binsider.dev/"
+  url "https://ghfast.top/https://github.com/orhun/binsider/archive/refs/tags/v0.2.1.tar.gz"
   sha256 "a3bc10379677b19656436924f478798f205b371bc703feab938c1b2512f39500"
   license any_of: ["Apache-2.0", "MIT"]
-  head "https:github.comorhunbinsider.git", branch: "main"
+  head "https://github.com/orhun/binsider.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "2c11ab382fd297958dded8d9685f67fe756a24d97f528330dfae16a42d7a73dd"
@@ -28,12 +28,12 @@ class Binsider < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}binsider -V")
+    assert_match version.to_s, shell_output("#{bin}/binsider -V")
 
     # IO error: `No such device or address (os error 6)`
     return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
 
     assert_match "Invalid Magic Bytes",
-      shell_output(bin"binsider 2>&1", 1)
+      shell_output(bin/"binsider 2>&1", 1)
   end
 end

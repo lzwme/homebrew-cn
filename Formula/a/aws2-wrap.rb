@@ -2,8 +2,8 @@ class Aws2Wrap < Formula
   include Language::Python::Virtualenv
 
   desc "Script to export current AWS SSO credentials or run a sub-process with them"
-  homepage "https:github.comlinaro-itsaws2-wrap"
-  url "https:files.pythonhosted.orgpackages6dc78afdf4d0c7c6e2072c73a0150f9789445af33381a611d33333f4c9bf1ef6aws2-wrap-1.4.0.tar.gz"
+  homepage "https://github.com/linaro-its/aws2-wrap"
+  url "https://files.pythonhosted.org/packages/6d/c7/8afdf4d0c7c6e2072c73a0150f9789445af33381a611d33333f4c9bf1ef6/aws2-wrap-1.4.0.tar.gz"
   sha256 "77613ae13423a6407e79760bdd35843ddd128612672a0ad3a934ecade76aa7fc"
   license "GPL-3.0-only"
 
@@ -23,7 +23,7 @@ class Aws2Wrap < Formula
   depends_on "python@3.13"
 
   resource "psutil" do
-    url "https:files.pythonhosted.orgpackages18c78c6872f7372eb6a6b2e4708b88419fb46b857f7a2e1892966b851cc79fc9psutil-6.0.0.tar.gz"
+    url "https://files.pythonhosted.org/packages/18/c7/8c6872f7372eb6a6b2e4708b88419fb46b857f7a2e1892966b851cc79fc9/psutil-6.0.0.tar.gz"
     sha256 "8faae4f310b6d969fa26ca0545338b21f73c6b15db7c4a8d934a5482faa818f2"
   end
 
@@ -32,10 +32,10 @@ class Aws2Wrap < Formula
   end
 
   test do
-    mkdir testpath".aws"
-    touch testpath".awsconfig"
-    ENV["AWS_CONFIG_FILE"] = testpath".awsconfig"
+    mkdir testpath/".aws"
+    touch testpath/".aws/config"
+    ENV["AWS_CONFIG_FILE"] = testpath/".aws/config"
 
-    assert_match "Cannot find profile 'default'", shell_output("#{bin}aws2-wrap 2>&1", 1).strip
+    assert_match "Cannot find profile 'default'", shell_output("#{bin}/aws2-wrap 2>&1", 1).strip
   end
 end

@@ -1,14 +1,14 @@
 class Entr < Formula
   desc "Run arbitrary commands when files change"
-  homepage "https:eradman.comentrproject"
-  url "https:eradman.comentrprojectcodeentr-5.7.tar.gz"
+  homepage "https://eradman.com/entrproject/"
+  url "https://eradman.com/entrproject/code/entr-5.7.tar.gz"
   sha256 "90c5d943820c70cef37eb41a382a6ea4f5dd7fd95efef13b2b5520d320f5d067"
   license "ISC"
-  head "https:github.comeradmanentr.git", branch: "master"
+  head "https://github.com/eradman/entr.git", branch: "master"
 
   livecheck do
-    url "https:eradman.comentrprojectcode"
-    regex(href=.*?entr[._-]v?(\d+(?:\.\d+)+)\.ti)
+    url "https://eradman.com/entrproject/code/"
+    regex(/href=.*?entr[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   bottle do
@@ -24,18 +24,18 @@ class Entr < Formula
   def install
     ENV["PREFIX"] = prefix
     ENV["MANPREFIX"] = man
-    system ".configure", *std_configure_args
+    system "./configure", *std_configure_args
     system "make"
     system "make", "install"
   end
 
   test do
-    touch testpath"test.1"
+    touch testpath/"test.1"
     fork do
       sleep 2
-      touch testpath"test.2"
+      touch testpath/"test.2"
     end
 
-    assert_equal "New File", pipe_output("#{bin}entr -n -p -d echo 'New File'", testpath.to_s).strip
+    assert_equal "New File", pipe_output("#{bin}/entr -n -p -d echo 'New File'", testpath.to_s).strip
   end
 end

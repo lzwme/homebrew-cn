@@ -1,10 +1,10 @@
 class Kuzco < Formula
   desc "Reviews Terraform and OpenTofu resources and uses AI to suggest improvements"
-  homepage "https:github.comRoseSecurityKuzco"
-  url "https:github.comRoseSecurityKuzcoarchiverefstagsv1.4.0.tar.gz"
+  homepage "https://github.com/RoseSecurity/Kuzco"
+  url "https://ghfast.top/https://github.com/RoseSecurity/Kuzco/archive/refs/tags/v1.4.0.tar.gz"
   sha256 "03d8a3bd5265be55e7d3cc862eeba7672bd27f04bffab2f14824ebf98e35ac7f"
   license "Apache-2.0"
-  head "https:github.comRoseSecurityKuzco.git", branch: "main"
+  head "https://github.com/RoseSecurity/Kuzco.git", branch: "main"
 
   no_autobump! because: :requires_manual_review
 
@@ -21,14 +21,14 @@ class Kuzco < Formula
   depends_on "opentofu" => :test
 
   def install
-    ldflags = "-s -w -X github.comRoseSecuritykuzcocmd.Version=#{version}"
+    ldflags = "-s -w -X github.com/RoseSecurity/kuzco/cmd.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:)
 
-    generate_completions_from_executable(bin"kuzco", "completion")
+    generate_completions_from_executable(bin/"kuzco", "completion")
   end
 
   test do
-    test_file = testpath"main.tf"
+    test_file = testpath/"main.tf"
     test_file.write <<~EOS
       resource "aws_s3_bucket" "cloudtrail_logs" {
         bucket              = "my-cloudtrail-logs-bucket"
@@ -42,9 +42,9 @@ class Kuzco < Formula
       }
     EOS
 
-    output = shell_output("#{bin}kuzco recommend -t opentofu -f #{test_file} --dry-run")
+    output = shell_output("#{bin}/kuzco recommend -t opentofu -f #{test_file} --dry-run")
     assert_match "version block", output
 
-    assert_match version.to_s, shell_output("#{bin}kuzco version")
+    assert_match version.to_s, shell_output("#{bin}/kuzco version")
   end
 end

@@ -43,11 +43,11 @@ cask "openzfs" do
            intel: "0de75e00932199d04187dc4e09d3b84218c957974dd3ecb837f7967340f4c90d"
   end
 
-  url "https:github.comopenzfsonosxopenzfs-forkreleasesdownloadzfs-macOS-#{version}OpenZFSonOsX-#{version}-#{arch}.pkg",
-      verified: "github.comopenzfsonosxopenzfs-fork"
+  url "https://ghfast.top/https://github.com/openzfsonosx/openzfs-fork/releases/download/zfs-macOS-#{version}/OpenZFSonOsX-#{version}-#{arch}.pkg",
+      verified: "github.com/openzfsonosx/openzfs-fork/"
   name "OpenZFS on OS X"
   desc "ZFS driver and utilities"
-  homepage "https:openzfsonosx.org"
+  homepage "https://openzfsonosx.org/"
 
   livecheck do
     url :url
@@ -57,15 +57,15 @@ cask "openzfs" do
   no_autobump! because: :requires_manual_review
 
   pkg "OpenZFSonOsX-#{version}-#{arch}.pkg"
-  bash_completion "etcbash_completion.dzfs"
-  bash_completion "etcbash_completion.dzpool"
+  bash_completion "/etc/bash_completion.d/zfs"
+  bash_completion "/etc/bash_completion.d/zpool"
 
   postflight do
-    set_ownership "usrlocalzfs"
+    set_ownership "/usr/local/zfs"
   end
 
   uninstall_preflight do
-    system "sudo", "usrlocalzfsbinzpool", "export", "-af"
+    system "sudo", "/usr/local/zfs/bin/zpool", "export", "-af"
   end
 
   uninstall launchctl: [
@@ -78,11 +78,11 @@ cask "openzfs" do
             pkgutil:   "org.openzfsonosx.zfs"
 
   zap trash: [
-    "~LibraryLaunchDaemonsorg.openzfsonosx.InvariantDisks.plist",
-    "~LibraryLaunchDaemonsorg.openzfsonosx.zconfigd.plist",
-    "~LibraryLaunchDaemonsorg.openzfsonosx.zed.plist",
-    "~LibraryLaunchDaemonsorg.openzfsonosx.zpool-import-all.plist",
-    "~LibraryLaunchDaemonsorg.openzfsonosx.zpool-import.plist",
+    "~/Library/LaunchDaemons/org.openzfsonosx.InvariantDisks.plist",
+    "~/Library/LaunchDaemons/org.openzfsonosx.zconfigd.plist",
+    "~/Library/LaunchDaemons/org.openzfsonosx.zed.plist",
+    "~/Library/LaunchDaemons/org.openzfsonosx.zpool-import-all.plist",
+    "~/Library/LaunchDaemons/org.openzfsonosx.zpool-import.plist",
   ]
 
   caveats do

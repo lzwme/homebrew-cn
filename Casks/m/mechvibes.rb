@@ -2,15 +2,15 @@ cask "mechvibes" do
   version "2.3.4"
   sha256 "ba1d345a8c1eb7ff9445e0621b2a9bd2e051a2e92541323dde5d4051f78acef0"
 
-  url "https:github.comhainguyents13mechvibesreleasesdownloadv#{version.csv.second || version.csv.first}Mechvibes-#{version.csv.first}.dmg",
-      verified: "github.comhainguyents13mechvibes"
+  url "https://ghfast.top/https://github.com/hainguyents13/mechvibes/releases/download/v#{version.csv.second || version.csv.first}/Mechvibes-#{version.csv.first}.dmg",
+      verified: "github.com/hainguyents13/mechvibes/"
   name "Mechvibes"
   desc "Play mechanical keyboard sounds as you type"
-  homepage "https:mechvibes.com"
+  homepage "https://mechvibes.com/"
 
   livecheck do
     url :url
-    regex(%r{v?(\d+(?:\.\d+)+)Mechvibes[._-]v?(\d+(?:\.\d+)+(?:-hotfix)?)\.dmg}i)
+    regex(%r{/v?(\d+(?:\.\d+)+)/Mechvibes[._-]v?(\d+(?:\.\d+)+(?:-hotfix)?)\.dmg}i)
     strategy :github_latest do |json, regex|
       json["assets"]&.map do |asset|
         match = asset["browser_download_url"]&.match(regex)
@@ -26,11 +26,11 @@ cask "mechvibes" do
   app "Mechvibes.app"
 
   zap trash: [
-        "~LibraryApplication SupportMechvibes",
-        "~LibraryPreferencescom.electron.mechvibes.plist",
-        "~LibrarySaved Application Statecom.electron.mechvibes.savedState",
+        "~/Library/Application Support/Mechvibes",
+        "~/Library/Preferences/com.electron.mechvibes.plist",
+        "~/Library/Saved Application State/com.electron.mechvibes.savedState",
       ],
-      rmdir: "~mechvibes_custom"
+      rmdir: "~/mechvibes_custom"
 
   caveats do
     requires_rosetta

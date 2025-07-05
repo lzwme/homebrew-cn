@@ -2,11 +2,11 @@ class Mypy < Formula
   include Language::Python::Virtualenv
 
   desc "Experimental optional static type checker for Python"
-  homepage "https:www.mypy-lang.org"
-  url "https:files.pythonhosted.orgpackages816992c7fa98112e4d9eb075a239caa4ef4649ad7d441545ccffbd5e34607cbbmypy-1.16.1.tar.gz"
+  homepage "https://www.mypy-lang.org/"
+  url "https://files.pythonhosted.org/packages/81/69/92c7fa98112e4d9eb075a239caa4ef4649ad7d441545ccffbd5e34607cbb/mypy-1.16.1.tar.gz"
   sha256 "6bd00a0a2094841c5e47e7374bb42b83d64c527a502e3334e1173a0c24437bab"
   license "MIT"
-  head "https:github.compythonmypy.git", branch: "master"
+  head "https://github.com/python/mypy.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "543a5b7ca5efa4571845cb6cd262ddc31d5186da9f6256f90a660bc85ef1a591"
@@ -21,17 +21,17 @@ class Mypy < Formula
   depends_on "python@3.13"
 
   resource "mypy-extensions" do
-    url "https:files.pythonhosted.orgpackagesa26e371856a3fb9d31ca8dac321cda606860fa4548858c0cc45d9d1d4ca2628bmypy_extensions-1.1.0.tar.gz"
+    url "https://files.pythonhosted.org/packages/a2/6e/371856a3fb9d31ca8dac321cda606860fa4548858c0cc45d9d1d4ca2628b/mypy_extensions-1.1.0.tar.gz"
     sha256 "52e68efc3284861e772bbcd66823fde5ae21fd2fdb51c62a211403730b916558"
   end
 
   resource "pathspec" do
-    url "https:files.pythonhosted.orgpackagescabcf35b8446f4531a7cb215605d100cd88b7ac6f44ab3fc94870c120ab3adbfpathspec-0.12.1.tar.gz"
+    url "https://files.pythonhosted.org/packages/ca/bc/f35b8446f4531a7cb215605d100cd88b7ac6f44ab3fc94870c120ab3adbf/pathspec-0.12.1.tar.gz"
     sha256 "a482d51503a1ab33b1c67a6c3813a26953dbdc71c31dacaef9a838c4e29f5712"
   end
 
   resource "typing-extensions" do
-    url "https:files.pythonhosted.orgpackagesd1bc51647cd02527e87d05cb083ccc402f93e441606ff1f01739a62c8ad09ba5typing_extensions-4.14.0.tar.gz"
+    url "https://files.pythonhosted.org/packages/d1/bc/51647cd02527e87d05cb083ccc402f93e441606ff1f01739a62c8ad09ba5/typing_extensions-4.14.0.tar.gz"
     sha256 "8676b788e32f02ab42d9e7c61324048ae4c6d844a399eebace3d4979d75ceef4"
   end
 
@@ -42,15 +42,15 @@ class Mypy < Formula
   end
 
   test do
-    (testpath"broken.py").write <<~PYTHON
+    (testpath/"broken.py").write <<~PYTHON
       def p() -> None:
         print('hello')
       a = p()
     PYTHON
-    output = pipe_output("#{bin}mypy broken.py 2>&1")
+    output = pipe_output("#{bin}/mypy broken.py 2>&1")
     assert_match '"p" does not return a value', output
 
-    output = pipe_output("#{bin}mypy --version 2>&1")
+    output = pipe_output("#{bin}/mypy --version 2>&1")
     assert_match "(compiled: yes)", output
   end
 end

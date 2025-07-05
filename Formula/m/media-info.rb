@@ -1,14 +1,14 @@
 class MediaInfo < Formula
-  desc "Unified display of technical and tag data for audiovideo"
-  homepage "https:mediaarea.net"
-  url "https:mediaarea.netdownloadbinarymediainfo25.04MediaInfo_CLI_25.04_GNU_FromSource.tar.xz"
+  desc "Unified display of technical and tag data for audio/video"
+  homepage "https://mediaarea.net/"
+  url "https://mediaarea.net/download/binary/mediainfo/25.04/MediaInfo_CLI_25.04_GNU_FromSource.tar.xz"
   sha256 "ecd286de77cb13ea4b6ce0ebdbbff3f3da89c67ec2d5c330d47f385a4329c5d2"
   license "BSD-2-Clause"
-  head "https:github.comMediaAreaMediaInfo.git", branch: "master"
+  head "https://github.com/MediaArea/MediaInfo.git", branch: "master"
 
   livecheck do
-    url "https:mediaarea.netenMediaInfoDownloadSource"
-    regex(href=.*?mediainfo[._-]v?(\d+(?:\.\d+)+)\.ti)
+    url "https://mediaarea.net/en/MediaInfo/Download/Source"
+    regex(/href=.*?mediainfo[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -30,20 +30,20 @@ class MediaInfo < Formula
   uses_from_macos "zlib"
 
   def install
-    cd "MediaInfoProjectGNUCLI" do
-      system ".configure", *std_configure_args
+    cd "MediaInfo/Project/GNU/CLI" do
+      system "./configure", *std_configure_args
       system "make", "install"
     end
   end
 
   test do
-    output = shell_output("#{bin}mediainfo #{test_fixtures("test.mp3")}")
+    output = shell_output("#{bin}/mediainfo #{test_fixtures("test.mp3")}")
     assert_match <<~EOS, output
       General
       Complete name                            : #{test_fixtures("test.mp3")}
       Format                                   : MPEG Audio
     EOS
 
-    assert_match version.to_s, shell_output("#{bin}mediainfo --Version")
+    assert_match version.to_s, shell_output("#{bin}/mediainfo --Version")
   end
 end

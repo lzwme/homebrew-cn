@@ -1,7 +1,7 @@
 class LibbitcoinSystem < Formula
   desc "Bitcoin Cross-Platform C++ Development Toolkit"
-  homepage "https:github.comlibbitcoinlibbitcoin-system"
-  url "https:github.comlibbitcoinlibbitcoin-systemarchiverefstagsv3.8.0.tar.gz"
+  homepage "https://github.com/libbitcoin/libbitcoin-system"
+  url "https://ghfast.top/https://github.com/libbitcoin/libbitcoin-system/archive/refs/tags/v3.8.0.tar.gz"
   sha256 "b5dd2a97289370fbb93672dd3114383f30d877061de1d1683fa8bdda5309bfa2"
   license "AGPL-3.0-or-later"
 
@@ -21,26 +21,26 @@ class LibbitcoinSystem < Formula
   end
 
   # About 2 years since request for release with support for recent `boost`.
-  # Ref: https:github.comlibbitcoinlibbitcoin-systemissues1234
+  # Ref: https://github.com/libbitcoin/libbitcoin-system/issues/1234
   disable! date: "2024-12-14", because: "uses deprecated `boost@1.76`"
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
   depends_on "pkgconf" => :build
-  # https:github.comlibbitcoinlibbitcoin-systemissues1234
+  # https://github.com/libbitcoin/libbitcoin-system/issues/1234
   depends_on "boost@1.76"
 
   resource "secp256k1" do
-    url "https:github.comlibbitcoinsecp256k1archiverefstagsv0.1.0.20.tar.gz"
+    url "https://ghfast.top/https://github.com/libbitcoin/secp256k1/archive/refs/tags/v0.1.0.20.tar.gz"
     sha256 "61583939f1f25b92e6401e5b819e399da02562de663873df3056993b40148701"
   end
 
   def install
     ENV.cxx11
     resource("secp256k1").stage do
-      system ".autogen.sh"
-      system ".configure", "--disable-dependency-tracking",
+      system "./autogen.sh"
+      system "./configure", "--disable-dependency-tracking",
                             "--disable-silent-rules",
                             "--prefix=#{libexec}",
                             "--enable-module-recovery",
@@ -48,10 +48,10 @@ class LibbitcoinSystem < Formula
       system "make", "install"
     end
 
-    ENV.prepend_path "PKG_CONFIG_PATH", "#{libexec}libpkgconfig"
+    ENV.prepend_path "PKG_CONFIG_PATH", "#{libexec}/lib/pkgconfig"
 
-    system ".autogen.sh"
-    system ".configure", "--disable-dependency-tracking",
+    system "./autogen.sh"
+    system "./configure", "--disable-dependency-tracking",
                           "--disable-silent-rules",
                           "--prefix=#{prefix}",
                           "--with-boost-libdir=#{Formula["boost@1.76"].opt_lib}"
@@ -60,8 +60,8 @@ class LibbitcoinSystem < Formula
 
   test do
     boost = Formula["boost@1.76"]
-    (testpath"test.cpp").write <<~CPP
-      #include <bitcoinsystem.hpp>
+    (testpath/"test.cpp").write <<~CPP
+      #include <bitcoin/system.hpp>
       int main() {
         const auto block = bc::chain::block::genesis_mainnet();
         const auto& tx = block.transactions().front();
@@ -77,6 +77,6 @@ class LibbitcoinSystem < Formula
                     "-L#{lib}", "-lbitcoin-system",
                     "-L#{boost.lib}", "-lboost_system",
                     "-o", "test"
-    system ".test"
+    system "./test"
   end
 end

@@ -1,17 +1,17 @@
 class Curl < Formula
   desc "Get a file from an HTTP, HTTPS or FTP server"
-  homepage "https:curl.se"
+  homepage "https://curl.se"
   # Don't forget to update both instances of the version in the GitHub mirror URL.
-  url "https:curl.sedownloadcurl-8.14.1.tar.bz2"
-  mirror "https:github.comcurlcurlreleasesdownloadcurl-8_14_1curl-8.14.1.tar.bz2"
-  mirror "http:fresh-center.netlinuxwwwcurl-8.14.1.tar.bz2"
-  mirror "http:fresh-center.netlinuxwwwlegacycurl-8.14.1.tar.bz2"
+  url "https://curl.se/download/curl-8.14.1.tar.bz2"
+  mirror "https://ghfast.top/https://github.com/curl/curl/releases/download/curl-8_14_1/curl-8.14.1.tar.bz2"
+  mirror "http://fresh-center.net/linux/www/curl-8.14.1.tar.bz2"
+  mirror "http://fresh-center.net/linux/www/legacy/curl-8.14.1.tar.bz2"
   sha256 "5760ed3c1a6aac68793fc502114f35c3e088e8cd5c084c2d044abdf646ee48fb"
   license "curl"
 
   livecheck do
-    url "https:curl.sedownload"
-    regex(href=.*?curl[._-]v?(.*?)\.ti)
+    url "https://curl.se/download/"
+    regex(/href=.*?curl[._-]v?(.*?)\.t/i)
   end
 
   bottle do
@@ -25,7 +25,7 @@ class Curl < Formula
   end
 
   head do
-    url "https:github.comcurlcurl.git", branch: "master"
+    url "https://github.com/curl/curl.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -52,13 +52,13 @@ class Curl < Formula
 
   def install
     tag_name = "curl-#{version.to_s.tr(".", "_")}"
-    if build.stable? && stable.mirrors.grep(github\.com).first.exclude?(tag_name)
+    if build.stable? && stable.mirrors.grep(/github\.com/).first.exclude?(tag_name)
       odie "Tag name #{tag_name} is not found in the GitHub mirror URL! " \
            "Please make sure the URL is correct."
     end
 
     # Use our `curl` formula with `wcurl`
-    inreplace "scriptswcurl", 'CMD="curl "', "CMD=\"#{opt_bin}curl \""
+    inreplace "scripts/wcurl", 'CMD="curl "', "CMD=\"#{opt_bin}/curl \""
 
     system "autoreconf", "--force", "--install", "--verbose" if build.head?
 
@@ -95,34 +95,34 @@ class Curl < Formula
       ]
     end
 
-    system ".configure", *args, *std_configure_args
+    system "./configure", *args, *std_configure_args
     system "make", "install"
     system "make", "install", "-C", "scripts"
-    libexec.install "scriptsmk-ca-bundle.pl"
+    libexec.install "scripts/mk-ca-bundle.pl"
   end
 
   test do
     # Fetch the curl tarball and see that the checksum matches.
     # This requires a network connection, but so does Homebrew in general.
-    filename = testpath"test.tar.gz"
-    system bin"curl", "-L", stable.url, "-o", filename
+    filename = testpath/"test.tar.gz"
+    system bin/"curl", "-L", stable.url, "-o", filename
     filename.verify_checksum stable.checksum
 
     # Check dependencies linked correctly
-    curl_features = shell_output("#{bin}curl-config --features").split("\n")
+    curl_features = shell_output("#{bin}/curl-config --features").split("\n")
     %w[brotli GSS-API HTTP2 IDN libz SSL zstd].each do |feature|
       assert_includes curl_features, feature
     end
-    curl_protocols = shell_output("#{bin}curl-config --protocols").split("\n")
+    curl_protocols = shell_output("#{bin}/curl-config --protocols").split("\n")
     %w[LDAPS RTMP SCP SFTP].each do |protocol|
       assert_includes curl_protocols, protocol
     end
 
-    system libexec"mk-ca-bundle.pl", "test.pem"
-    assert_path_exists testpath"test.pem"
-    assert_path_exists testpath"certdata.txt"
+    system libexec/"mk-ca-bundle.pl", "test.pem"
+    assert_path_exists testpath/"test.pem"
+    assert_path_exists testpath/"certdata.txt"
 
-    with_env(PKG_CONFIG_PATH: lib"pkgconfig") do
+    with_env(PKG_CONFIG_PATH: lib/"pkgconfig") do
       system "pkgconf", "--cflags", "libcurl"
     end
   end

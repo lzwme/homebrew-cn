@@ -2,9 +2,9 @@ cask "font-martian-mono-nerd-font" do
   version "3.4.0"
   sha256 "76efe59051015cd688d027995c0bca6f365c75438025ba065ac9c744e82c8095"
 
-  url "https:github.comryanoasisnerd-fontsreleasesdownloadv#{version}MartianMono.zip"
+  url "https://ghfast.top/https://github.com/ryanoasis/nerd-fonts/releases/download/v#{version}/MartianMono.zip"
   name "MartianMono Nerd Font (MartianMono)"
-  homepage "https:github.comryanoasisnerd-fonts"
+  homepage "https://github.com/ryanoasis/nerd-fonts"
 
   livecheck do
     url :url

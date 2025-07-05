@@ -4,18 +4,18 @@ class QtAT5 < Formula
   include Language::Python::Virtualenv
 
   desc "Cross-platform application and UI framework"
-  homepage "https:www.qt.io"
-  # NOTE: Use *.diff for GitLabKDE patches to avoid their checksums changing.
-  url "https:download.qt.ioofficial_releasesqt5.155.15.16singleqt-everywhere-opensource-src-5.15.16.tar.xz"
-  mirror "https:mirrors.dotsrc.orgqtprojectarchiveqt5.155.15.16singleqt-everywhere-opensource-src-5.15.16.tar.xz"
-  mirror "https:mirrors.ocf.berkeley.eduqtarchiveqt5.155.15.16singleqt-everywhere-opensource-src-5.15.16.tar.xz"
+  homepage "https://www.qt.io/"
+  # NOTE: Use *.diff for GitLab/KDE patches to avoid their checksums changing.
+  url "https://download.qt.io/official_releases/qt/5.15/5.15.16/single/qt-everywhere-opensource-src-5.15.16.tar.xz"
+  mirror "https://mirrors.dotsrc.org/qtproject/archive/qt/5.15/5.15.16/single/qt-everywhere-opensource-src-5.15.16.tar.xz"
+  mirror "https://mirrors.ocf.berkeley.edu/qt/archive/qt/5.15/5.15.16/single/qt-everywhere-opensource-src-5.15.16.tar.xz"
   sha256 "efa99827027782974356aceff8a52bd3d2a8a93a54dd0db4cca41b5e35f1041c"
   license all_of: ["GFDL-1.3-only", "GPL-2.0-only", "GPL-3.0-only", "LGPL-2.1-only", "LGPL-3.0-only"]
   revision 2
 
   livecheck do
-    url "https:download.qt.ioofficial_releasesqt5.15"
-    regex(%r{href=["']?v?(\d+(?:\.\d+)+)?["' >]}i)
+    url "https://download.qt.io/official_releases/qt/5.15/"
+    regex(%r{href=["']?v?(\d+(?:\.\d+)+)/?["' >]}i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -102,63 +102,63 @@ class QtAT5 < Formula
   end
 
   resource "qtwebengine" do
-    url "https:code.qt.ioqtqtwebengine.git",
+    url "https://code.qt.io/qt/qtwebengine.git",
         tag:      "v5.15.18-lts",
         revision: "87ceb6a2ef5ee25d56f765dc533728c4ca4787e0"
 
     # Use Debian patches for ICU 75+, brew Ninja and Python 3.13
     patch do
-      url "https:deb.debian.orgdebianpoolmainqqtwebengine-opensource-srcqtwebengine-opensource-src_5.15.18+dfsg-2.debian.tar.xz"
+      url "https://deb.debian.org/debian/pool/main/q/qtwebengine-opensource-src/qtwebengine-opensource-src_5.15.18+dfsg-2.debian.tar.xz"
       sha256 "2d2d671c26a94ec1ec9d5fb3cbe57b3ec0ed98a2e5cc7471c573b763d8e098e6"
-      apply "patchesbuild-with-c++17.patch",
-            "patchesninja-1.12.patch",
-            "patchespython3.12-imp.patch",
-            "patchespython3.12-six.patch",
-            "patchespython3.13-pipes.patch"
+      apply "patches/build-with-c++17.patch",
+            "patches/ninja-1.12.patch",
+            "patches/python3.12-imp.patch",
+            "patches/python3.12-six.patch",
+            "patches/python3.13-pipes.patch"
     end
   end
 
   resource "html5lib" do
-    url "https:files.pythonhosted.orgpackagesacb6b55c3f49042f1df3dcd422b7f224f939892ee94f22abcf503a9b7339eaf2html5lib-1.1.tar.gz"
+    url "https://files.pythonhosted.org/packages/ac/b6/b55c3f49042f1df3dcd422b7f224f939892ee94f22abcf503a9b7339eaf2/html5lib-1.1.tar.gz"
     sha256 "b2e5b40261e20f354d198eae92afc10d750afb487ed5e50f9c4eaf07c184146f"
   end
 
   resource "six" do
-    url "https:files.pythonhosted.orgpackages7139171f1c67cd00715f190ba0b100d606d440a28c93c7714febeca8b79af85esix-1.16.0.tar.gz"
+    url "https://files.pythonhosted.org/packages/71/39/171f1c67cd00715f190ba0b100d606d440a28c93c7714febeca8b79af85e/six-1.16.0.tar.gz"
     sha256 "1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926"
   end
 
   resource "webencodings" do
-    url "https:files.pythonhosted.orgpackages0b02ae6ceac1baeda530866a85075641cec12989bd8d31af6d5ab4a3e8c92f47webencodings-0.5.1.tar.gz"
+    url "https://files.pythonhosted.org/packages/0b/02/ae6ceac1baeda530866a85075641cec12989bd8d31af6d5ab4a3e8c92f47/webencodings-0.5.1.tar.gz"
     sha256 "b36a1c245f2d304965eb4e0a82848379241dc04b865afcc4aab16748587e1923"
   end
 
   # Fix build with ICU 75
   patch do
     on_linux do
-      url "https:invent.kde.orgqtqtqtlocation-mapboxgl-commit35d566724c48180c9a372c2ed50a253871a51574.diff"
+      url "https://invent.kde.org/qt/qt/qtlocation-mapboxgl/-/commit/35d566724c48180c9a372c2ed50a253871a51574.diff"
       sha256 "9e61d46c0a8ae39903cbcbb228e384f2878a06e50448f3bba60ec65fe2890081"
-      directory "qtlocationsrc3rdpartymapbox-gl-native"
+      directory "qtlocation/src/3rdparty/mapbox-gl-native"
     end
   end
 
   # Fix build with Xcode 14.3.
-  # https:bugreports.qt.iobrowseQTBUG-112906
+  # https://bugreports.qt.io/browse/QTBUG-112906
   patch do
-    url "https:invent.kde.orgqtqtqtlocation-mapboxgl-commit5a07e1967dcc925d9def47accadae991436b9686.diff"
+    url "https://invent.kde.org/qt/qt/qtlocation-mapboxgl/-/commit/5a07e1967dcc925d9def47accadae991436b9686.diff"
     sha256 "4f433bb009087d3fe51e3eec3eee6e33a51fde5c37712935b9ab96a7d7571e7d"
-    directory "qtlocationsrc3rdpartymapbox-gl-native"
+    directory "qtlocation/src/3rdparty/mapbox-gl-native"
   end
 
   # CVE-2023-51714
   # Remove with Qt 5.15.17
   patch do
-    url "https:download.qt.ioofficial_releasesqt5.150001-CVE-2023-51714-qtbase-5.15.diff"
+    url "https://download.qt.io/official_releases/qt/5.15/0001-CVE-2023-51714-qtbase-5.15.diff"
     sha256 "2129058a5e24d98ee80a776c49a58c2671e06c338dffa7fc0154e82eef96c9d4"
     directory "qtbase"
   end
   patch do
-    url "https:download.qt.ioofficial_releasesqt5.150002-CVE-2023-51714-qtbase-5.15.diff"
+    url "https://download.qt.io/official_releases/qt/5.15/0002-CVE-2023-51714-qtbase-5.15.diff"
     sha256 "99d5d32527e767d6ab081ee090d92e0b11f27702619a4af8966b711db4f23e42"
     directory "qtbase"
   end
@@ -166,7 +166,7 @@ class QtAT5 < Formula
   # CVE-2024-25580
   # Remove with Qt 5.15.17
   patch do
-    url "https:download.qt.ioofficial_releasesqt5.15CVE-2024-25580-qtbase-5.15.diff"
+    url "https://download.qt.io/official_releases/qt/5.15/CVE-2024-25580-qtbase-5.15.diff"
     sha256 "7cc9bf74f696de8ec5386bb80ce7a2fed5aa3870ac0e2c7db4628621c5c1a731"
     directory "qtbase"
   end
@@ -174,7 +174,7 @@ class QtAT5 < Formula
   # CVE-2024-36048
   # Remove with Qt 5.15.17
   patch do
-    url "https:download.qt.ioofficial_releasesqt5.15CVE-2024-36048-qtnetworkauth-5.15.diff"
+    url "https://download.qt.io/official_releases/qt/5.15/CVE-2024-36048-qtnetworkauth-5.15.diff"
     sha256 "e5d385d636b5241b59ac16c4a75359e21e510506b26839a4e2033891245f33f9"
     directory "qtnetworkauth"
   end
@@ -182,7 +182,7 @@ class QtAT5 < Formula
   # CVE-2024-39936
   # Remove with Qt 5.15.18
   patch do
-    url "https:download.qt.ioofficial_releasesqt5.15CVE-2024-39936-qtbase-5.15.patch"
+    url "https://download.qt.io/official_releases/qt/5.15/CVE-2024-39936-qtbase-5.15.patch"
     sha256 "2cc23afba9d7e48f8faf8664b4c0324a9ac31a4191da3f18bd0accac5c7704de"
     directory "qtbase"
   end
@@ -190,23 +190,23 @@ class QtAT5 < Formula
   # CVE-2025-23050
   # Remove with Qt 5.15.19
   patch do
-    url "https:download.qt.ioofficial_releasesqt5.15CVE-2025-23050-qtconnectivity-5.15.diff"
+    url "https://download.qt.io/official_releases/qt/5.15/CVE-2025-23050-qtconnectivity-5.15.diff"
     sha256 "76e303b6465babb6d0d275792f7f3c41e3df87a6a17992e8b7b8e47272682ce7"
     directory "qtconnectivity"
   end
 
   def install
     # Install python dependencies for QtWebEngine
-    venv = virtualenv_create(buildpath"venv", "python3.13")
+    venv = virtualenv_create(buildpath/"venv", "python3.13")
     venv.pip_install resources.reject { |r| r.name == "qtwebengine" }
-    ENV.prepend_path "PATH", venv.root"bin"
+    ENV.prepend_path "PATH", venv.root/"bin"
 
-    rm_r(buildpath"qtwebengine")
-    (buildpath"qtwebengine").install resource("qtwebengine")
+    rm_r(buildpath/"qtwebengine")
+    (buildpath/"qtwebengine").install resource("qtwebengine")
 
-    # FIXME: GN requires clang in clangBasePathbin
-    inreplace "qtwebenginesrc3rdpartychromiumbuildtoolchainmacBUILD.gn",
-              'rebase_path("$clang_base_pathbin", root_build_dir)', '""'
+    # FIXME: GN requires clang in clangBasePath/bin
+    inreplace "qtwebengine/src/3rdparty/chromium/build/toolchain/mac/BUILD.gn",
+              'rebase_path("$clang_base_path/bin/", root_build_dir)', '""'
 
     args = %W[
       -verbose
@@ -236,13 +236,13 @@ class QtAT5 < Formula
       # This fixes invocation of Assistant via the Help menu of apps like Designer and
       # Linguist as they originally relied on Assistant.app being in `bin`.
       assistant_files = %w[
-        qttoolssrcdesignersrcdesignerassistantclient.cpp
-        qttoolssrclinguistlinguistmainwindow.cpp
+        qttools/src/designer/src/designer/assistantclient.cpp
+        qttools/src/linguist/linguist/mainwindow.cpp
       ]
-      inreplace assistant_files, '"Assistant.appContentsMacOSAssistant"', '"Assistant"'
+      inreplace assistant_files, '"Assistant.app/Contents/MacOS/Assistant"', '"Assistant"'
     else
       args << "-R#{lib}"
-      # https:bugreports.qt.iobrowseQTBUG-71564
+      # https://bugreports.qt.io/browse/QTBUG-71564
       args << "-no-avx2"
       args << "-no-avx512"
       args << "-no-sql-mysql"
@@ -251,7 +251,7 @@ class QtAT5 < Formula
       # Currently we have to use vendored ffmpeg because the chromium copy adds a symbol not
       # provided by the brewed version.
       # See here for an explanation of why upstream ffmpeg does not want to add this:
-      # https:www.mail-archive.comffmpeg-devel@ffmpeg.orgmsg124998.html
+      # https://www.mail-archive.com/ffmpeg-devel@ffmpeg.org/msg124998.html
       # On macOS chromium will always use bundled copies and the webengine_*
       # arguments are ignored.
       args += %w[
@@ -266,7 +266,7 @@ class QtAT5 < Formula
       ]
 
       # Homebrew-specific workaround to ignore spurious linker warnings on Linux.
-      inreplace "qtwebenginesrc3rdpartychromiumbuildconfigcompilerBUILD.gn",
+      inreplace "qtwebengine/src/3rdparty/chromium/build/config/compiler/BUILD.gn",
                 "fatal_linker_warnings = true",
                 "fatal_linker_warnings = false"
     end
@@ -275,30 +275,30 @@ class QtAT5 < Formula
     # error: integer value -1 is outside the valid range of values [0, 3] for this enumeration type
     if DevelopmentTools.clang_build_version >= 1500
       args << "QMAKE_CXXFLAGS+=-Wno-enum-constexpr-conversion"
-      inreplace "qtwebenginesrc3rdpartychromiumbuildconfigcompilerBUILD.gn",
-                ^\s*"-Wno-thread-safety-attributes",$,
+      inreplace "qtwebengine/src/3rdparty/chromium/build/config/compiler/BUILD.gn",
+                /^\s*"-Wno-thread-safety-attributes",$/,
                 "\\0 \"-Wno-enum-constexpr-conversion\","
     end
 
     # Work around Clang failure in bundled freetype: error: unknown type name 'Byte'
-    # https:gitlab.freedesktop.orgfreetypefreetype-commita25e85ed95dc855e42e6bb55138e27d362c5ea1e
+    # https://gitlab.freedesktop.org/freetype/freetype/-/commit/a25e85ed95dc855e42e6bb55138e27d362c5ea1e
     if DevelopmentTools.clang_build_version >= 1600
-      inreplace "qtwebenginesrc3rdpartychromiumthird_partyfreetypesrcsrcgzipftzconf.h",
+      inreplace "qtwebengine/src/3rdparty/chromium/third_party/freetype/src/src/gzip/ftzconf.h",
                 "#if !defined(MACOS) && !defined(TARGET_OS_MAC)", "#if !defined(__MACTYPES__)"
     end
 
-    system ".configure", *args
+    system "./configure", *args
     system "make"
     ENV.deparallelize
     system "make", "install"
 
     # Remove reference to shims directory
-    inreplace prefix"mkspecsqmodule.pri",
-              ^PKG_CONFIG_EXECUTABLE = .*$,
-              "PKG_CONFIG_EXECUTABLE = #{Formula["pkgconf"].opt_bin}pkg-config"
+    inreplace prefix/"mkspecs/qmodule.pri",
+              /^PKG_CONFIG_EXECUTABLE = .*$/,
+              "PKG_CONFIG_EXECUTABLE = #{Formula["pkgconf"].opt_bin}/pkg-config"
 
     # Fix find_package call using QtWebEngine version to find other Qt5 modules.
-    inreplace lib.glob("cmakeQt5WebEngine**Config.cmake"),
+    inreplace lib.glob("cmake/Qt5WebEngine*/*Config.cmake"),
               " #{resource("qtwebengine").version} ", " #{version} "
 
     # Install a qtversion.xml to ease integration with QtCreator
@@ -309,27 +309,27 @@ class QtAT5 < Formula
     # Given Qt upstream seems extremely unlikely to accept this: let's ship our
     # own version.
     # If you read this and you can eliminate it or upstream it: please do!
-    # More context in https:github.comHomebrewhomebrew-corepull124923
-    (share"qtcreatorQtProjectqtcreatorqtversion.xml").write <<~XML
+    # More context in https://github.com/Homebrew/homebrew-core/pull/124923
+    (share/"qtcreator/QtProject/qtcreator/qtversion.xml").write <<~XML
       <?xml version="1.0" encoding="UTF-8"?>
       <!DOCTYPE QtCreatorQtVersions>
       <qtcreator>
       <data>
-        <variable>QtVersion.0<variable>
+        <variable>QtVersion.0</variable>
         <valuemap type="QVariantMap">
-        <value type="int" key="Id">1<value>
-        <value type="QString" key="Name">Qt %{Qt:Version} (#{opt_prefix})<value>
-        <value type="QString" key="QMakePath">#{opt_bin}qmake<value>
-        <value type="QString" key="QtVersion.Type">Qt4ProjectManager.QtVersion.Desktop<value>
-        <value type="QString" key="autodetectionSource"><value>
-        <value type="bool" key="isAutodetected">false<value>
-        <valuemap>
+        <value type="int" key="Id">1</value>
+        <value type="QString" key="Name">Qt %{Qt:Version} (#{opt_prefix})</value>
+        <value type="QString" key="QMakePath">#{opt_bin}/qmake</value>
+        <value type="QString" key="QtVersion.Type">Qt4ProjectManager.QtVersion.Desktop</value>
+        <value type="QString" key="autodetectionSource"></value>
+        <value type="bool" key="isAutodetected">false</value>
+        </valuemap>
+      </data>
       <data>
-      <data>
-        <variable>Version<variable>
-        <value type="int">1<value>
-      <data>
-      <qtcreator>
+        <variable>Version</variable>
+        <value type="int">1</value>
+      </data>
+      </qtcreator>
     XML
 
     return unless OS.mac?
@@ -340,14 +340,14 @@ class QtAT5 < Formula
     lib.glob("*.framework") do |f|
       # Some config scripts will only find Qt in a "Frameworks" folder
       frameworks.install_symlink f
-      include.install_symlink f"Headers" => f.stem
+      include.install_symlink f/"Headers" => f.stem
     end
 
     # Move `*.app` bundles into `libexec` to expose them to `brew linkapps` and
     # because we don't like having them in `bin`.
     bin.glob("*.app") do |app|
       libexec.install app
-      bin.write_exec_script libexecapp.basename"ContentsMacOS"app.stem
+      bin.write_exec_script libexec/app.basename/"Contents/MacOS"/app.stem
     end
   end
 
@@ -364,7 +364,7 @@ class QtAT5 < Formula
   end
 
   test do
-    (testpath"hello.pro").write <<~EOS
+    (testpath/"hello.pro").write <<~EOS
       QT       += core
       QT       -= gui
       TARGET    = hello
@@ -374,7 +374,7 @@ class QtAT5 < Formula
       SOURCES  += main.cpp
     EOS
 
-    (testpath"main.cpp").write <<~CPP
+    (testpath/"main.cpp").write <<~CPP
       #include <QCoreApplication>
       #include <QDebug>
 
@@ -389,10 +389,10 @@ class QtAT5 < Formula
     # Work around "error: no member named 'signbit' in the global namespace"
     ENV.delete "CPATH"
 
-    system bin"qmake", testpath"hello.pro"
+    system bin/"qmake", testpath/"hello.pro"
     system "make"
-    assert_path_exists testpath"hello"
-    assert_path_exists testpath"main.o"
-    system ".hello"
+    assert_path_exists testpath/"hello"
+    assert_path_exists testpath/"main.o"
+    system "./hello"
   end
 end

@@ -2,10 +2,10 @@ cask "jmc" do
   version "0.3-beta"
   sha256 "b6e9303815d80948b80e1f94d797e1ee4ce1017940b236284930abc583ce6e41"
 
-  url "https:github.comjcm93jmcreleasesdownloadv#{version}jmc.app.zip"
+  url "https://ghfast.top/https://github.com/jcm93/jmc/releases/download/v#{version}/jmc.app.zip"
   name "jmc"
   desc "Media organiser"
-  homepage "https:github.comjcm93jmc"
+  homepage "https://github.com/jcm93/jmc"
 
   no_autobump! because: :requires_manual_review
 
@@ -16,10 +16,10 @@ cask "jmc" do
   app "jmc.app"
 
   zap trash: [
-        "~LibraryApplication Supportjcm.jmc",
-        "~LibraryPreferencescom.jcm.jmc.plist",
+        "~/Library/Application Support/jcm.jmc",
+        "~/Library/Preferences/com.jcm.jmc.plist",
       ],
-      rmdir: "~Musicjmc"
+      rmdir: "~/Music/jmc"
 
   caveats do
     requires_rosetta

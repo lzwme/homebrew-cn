@@ -1,10 +1,10 @@
 class Ingress2gateway < Formula
   desc "Convert Kubernetes Ingress resources to Kubernetes Gateway API resources"
-  homepage "https:github.comkubernetes-sigsingress2gateway"
-  url "https:github.comkubernetes-sigsingress2gatewayarchiverefstagsv0.4.0.tar.gz"
+  homepage "https://github.com/kubernetes-sigs/ingress2gateway"
+  url "https://ghfast.top/https://github.com/kubernetes-sigs/ingress2gateway/archive/refs/tags/v0.4.0.tar.gz"
   sha256 "7c511e4c309b62d01ce2128643922637f0ca77524bab2c4c6811bebbb43ff119"
   license "Apache-2.0"
-  head "https:github.comkubernetes-sigsingress2gateway.git", branch: "main"
+  head "https://github.com/kubernetes-sigs/ingress2gateway.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "804894e94d5995db30d5c70e8ae93fadb64d95488792ad588f01508178f7c6ab"
@@ -21,22 +21,22 @@ class Ingress2gateway < Formula
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
 
-    generate_completions_from_executable(bin"ingress2gateway", "completion")
+    generate_completions_from_executable(bin/"ingress2gateway", "completion")
   end
 
   test do
-    test_file = testpath"test.yml"
+    test_file = testpath/"test.yml"
     test_file.write <<~YAML
-      apiVersion: networking.k8s.iov1
+      apiVersion: networking.k8s.io/v1
       kind: Ingress
       metadata:
         name: foo
         namespace: bar
         annotations:
-          nginx.ingress.kubernetes.ioforce-ssl-redirect: "true"
-          nginx.ingress.kubernetes.iobackend-protocol: "HTTPS"
-          nginx.ingress.kubernetes.iossl-passthrough: "true"
-          cert-manager.iocluster-issuer: "letsencrypt-prod"
+          nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+          nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
+          nginx.ingress.kubernetes.io/ssl-passthrough: "true"
+          cert-manager.io/cluster-issuer: "letsencrypt-prod"
         labels:
           name: foo
       spec:
@@ -46,7 +46,7 @@ class Ingress2gateway < Formula
           http:
             paths:
             - pathType: Prefix
-              path: ""
+              path: "/"
               backend:
                 service:
                   name: foo-bar
@@ -59,11 +59,11 @@ class Ingress2gateway < Formula
     YAML
 
     expected = <<~YAML
-      apiVersion: gateway.networking.k8s.iov1
+      apiVersion: gateway.networking.k8s.io/v1
       kind: Gateway
       metadata:
         annotations:
-          gateway.networking.k8s.iogenerator: ingress2gateway-#{version}
+          gateway.networking.k8s.io/generator: ingress2gateway-#{version}
         creationTimestamp: null
         name: nginx
         namespace: bar
@@ -85,11 +85,11 @@ class Ingress2gateway < Formula
               name: foo-bar-cert
       status: {}
       ---
-      apiVersion: gateway.networking.k8s.iov1
+      apiVersion: gateway.networking.k8s.io/v1
       kind: HTTPRoute
       metadata:
         annotations:
-          gateway.networking.k8s.iogenerator: ingress2gateway-#{version}
+          gateway.networking.k8s.io/generator: ingress2gateway-#{version}
         creationTimestamp: null
         name: foo-foo-bar
         namespace: bar
@@ -105,15 +105,15 @@ class Ingress2gateway < Formula
           matches:
           - path:
               type: PathPrefix
-              value: 
+              value: /
       status:
         parents: []
     YAML
 
-    result = shell_output("#{bin}ingress2gateway\
+    result = shell_output("#{bin}/ingress2gateway\
                           print\
                           --providers ingress-nginx\
-                          --input-file #{testpath}test.yml\
+                          --input-file #{testpath}/test.yml\
                           -A")
 
     assert_equal expected.chomp, result.chomp

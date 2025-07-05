@@ -1,10 +1,10 @@
 class Mmctl < Formula
   desc "Remote CLI tool for Mattermost server"
-  homepage "https:github.commattermostmattermost"
-  url "https:github.commattermostmattermostarchiverefstagsv10.9.1.tar.gz"
+  homepage "https://github.com/mattermost/mattermost"
+  url "https://ghfast.top/https://github.com/mattermost/mattermost/archive/refs/tags/v10.9.1.tar.gz"
   sha256 "b660efa723992ebf3edf24fc2d7024b5deae57a165f0c02ae27b4a4c41413408"
   license all_of: ["AGPL-3.0-only", "Apache-2.0"]
-  head "https:github.commattermostmattermost.git", branch: "master"
+  head "https://github.com/mattermost/mattermost.git", branch: "master"
 
   livecheck do
     url :stable
@@ -24,20 +24,20 @@ class Mmctl < Formula
 
   def install
     # remove non open source files
-    rm_r("serverenterprise")
+    rm_r("server/enterprise")
 
-    ldflags = "-s -w -X github.commattermostmattermostserverv8cmdmmctlcommands.buildDate=#{time.iso8601}"
+    ldflags = "-s -w -X github.com/mattermost/mattermost/server/v8/cmd/mmctl/commands.buildDate=#{time.iso8601}"
     system "make", "-C", "server", "setup-go-work"
-    system "go", "build", "-C", "server", *std_go_args(ldflags:), ".cmdmmctl"
+    system "go", "build", "-C", "server", *std_go_args(ldflags:), "./cmd/mmctl"
 
     # Install shell completions
-    generate_completions_from_executable(bin"mmctl", "completion", shells: [:bash, :zsh])
+    generate_completions_from_executable(bin/"mmctl", "completion", shells: [:bash, :zsh])
   end
 
   test do
-    output = pipe_output("#{bin}mmctl help 2>&1")
-    refute_match(.*No such file or directory.*, output)
-    refute_match(.*command not found.*, output)
-    assert_match(.*mmctl \[command\].*, output)
+    output = pipe_output("#{bin}/mmctl help 2>&1")
+    refute_match(/.*No such file or directory.*/, output)
+    refute_match(/.*command not found.*/, output)
+    assert_match(/.*mmctl \[command\].*/, output)
   end
 end

@@ -1,7 +1,7 @@
 class Mbw < Formula
   desc "Memory Bandwidth Benchmark"
-  homepage "https:github.comraasmbw"
-  url "https:github.comraasmbwarchiverefstagsv2.0.tar.gz"
+  homepage "https://github.com/raas/mbw/"
+  url "https://ghfast.top/https://github.com/raas/mbw/archive/refs/tags/v2.0.tar.gz"
   sha256 "557f670e13ff663086fe239e4184d8ca6154b004bd5fde2b0a748e5aa543c87f"
   license "GPL-3.0-or-later"
 
@@ -30,6 +30,6 @@ class Mbw < Formula
   end
 
   test do
-    assert_match "AVG\tMethod: MEMCPY\tElapsed", pipe_output("#{bin}mbw 8", "0")
+    assert_match "AVG\tMethod: MEMCPY\tElapsed", pipe_output("#{bin}/mbw 8", "0")
   end
 end

@@ -1,7 +1,7 @@
 class HowardHinnantDate < Formula
   desc "C++ library for date and time operations based on <chrono>"
-  homepage "https:github.comHowardHinnantdate"
-  url "https:github.comHowardHinnantdatearchiverefstagsv3.0.4.tar.gz"
+  homepage "https://github.com/HowardHinnant/date"
+  url "https://ghfast.top/https://github.com/HowardHinnant/date/archive/refs/tags/v3.0.4.tar.gz"
   sha256 "56e05531ee8994124eeb498d0e6a5e1c3b9d4fccbecdf555fe266631368fb55f"
   license "MIT"
 
@@ -31,8 +31,8 @@ class HowardHinnantDate < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~CPP
-      #include "datetz.h"
+    (testpath/"test.cpp").write <<~CPP
+      #include "date/tz.h"
       #include <iostream>
 
       int main() {
@@ -41,6 +41,6 @@ class HowardHinnantDate < Formula
       }
     CPP
     system ENV.cxx, "test.cpp", "-std=c++1y", "-L#{lib}", "-ldate-tz", "-o", "test"
-    system ".test"
+    system "./test"
   end
 end

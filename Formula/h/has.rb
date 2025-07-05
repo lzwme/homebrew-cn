@@ -1,10 +1,10 @@
 class Has < Formula
   desc "Checks presence of various command-line tools and their versions on the path"
-  homepage "https:github.comkdabirhas"
-  url "https:github.comkdabirhasarchiverefstagsv1.5.0.tar.gz"
+  homepage "https://github.com/kdabir/has"
+  url "https://ghfast.top/https://github.com/kdabir/has/archive/refs/tags/v1.5.0.tar.gz"
   sha256 "d45be15f234556cdbaffa46edae417b214858a4bd427a44a2a94aaa893da7d99"
   license "MIT"
-  head "https:github.comkdabirhas.git", branch: "master"
+  head "https://github.com/kdabir/has.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -18,7 +18,7 @@ class Has < Formula
   end
 
   test do
-    assert_match "git", shell_output("#{bin}has git")
-    assert_match version.to_s, shell_output("#{bin}has --version")
+    assert_match "git", shell_output("#{bin}/has git")
+    assert_match version.to_s, shell_output("#{bin}/has --version")
   end
 end

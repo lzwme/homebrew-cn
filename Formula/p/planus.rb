@@ -1,10 +1,10 @@
 class Planus < Formula
   desc "Alternative compiler for flatbuffers,"
-  homepage "https:github.complanus-orgplanus"
-  url "https:github.complanus-orgplanusarchiverefstagsv1.1.1.tar.gz"
+  homepage "https://github.com/planus-org/planus"
+  url "https://ghfast.top/https://github.com/planus-org/planus/archive/refs/tags/v1.1.1.tar.gz"
   sha256 "d79f5d9a1acfcadc86376537c297853dcd6f326016f8049c28df57bb4f39c957"
   license any_of: ["Apache-2.0", "MIT"]
-  head "https:github.complanus-orgplanus.git", branch: "main"
+  head "https://github.com/planus-org/planus.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "d9dba48be6e547ba8587b1817226ca0ae1f55641cdc1d6f2dd9c41c9c8fb1903"
@@ -19,21 +19,21 @@ class Planus < Formula
   depends_on "rust" => :build
 
   def install
-    system "cargo", "install", *std_cargo_args(path: "cratesplanus-cli")
+    system "cargo", "install", *std_cargo_args(path: "crates/planus-cli")
 
-    generate_completions_from_executable(bin"planus", "generate-completions")
+    generate_completions_from_executable(bin/"planus", "generate-completions")
   end
 
   test do
-    test_fbs = testpath"test.fbs"
+    test_fbs = testpath/"test.fbs"
     test_fbs.write <<~EOS
-       example IDL file
+      // example IDL file
 
       namespace MyGame.Sample;
 
       enum Color:byte { Red = 0, Green, Blue = 2 }
 
-      union Any { Monster }   add more elements..
+      union Any { Monster }  // add more elements..
 
         struct Vec3 {
           x:float;
@@ -55,7 +55,7 @@ class Planus < Formula
 
     EOS
 
-    system bin"planus", "format", test_fbs
-    system bin"planus", "check", test_fbs
+    system bin/"planus", "format", test_fbs
+    system bin/"planus", "check", test_fbs
   end
 end

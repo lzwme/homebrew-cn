@@ -1,10 +1,10 @@
 class GitUrlSub < Formula
   desc "Recursively substitute remote URLs for multiple repos"
-  homepage "https:gosuri.github.iogit-url-sub"
-  url "https:github.comgosurigit-url-subarchiverefstags1.0.1.tar.gz"
+  homepage "https://gosuri.github.io/git-url-sub"
+  url "https://ghfast.top/https://github.com/gosuri/git-url-sub/archive/refs/tags/1.0.1.tar.gz"
   sha256 "6c943b55087e786e680d360cb9e085d8f1d7b9233c88e8f2e6a36f8e598a00a9"
   license "MIT"
-  head "https:github.comgosurigit-url-sub.git", branch: "master"
+  head "https://github.com/gosuri/git-url-sub.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -14,7 +14,7 @@ class GitUrlSub < Formula
   end
 
   # Script runs `find . -type dir` which is incorrect input to `-type` but
-  # macOSBSD `find` ignores the extra characters while GNU `find` fails.
+  # macOS/BSD `find` ignores the extra characters while GNU `find` fails.
   # Also uses shell features that don't work with `dash`.
   depends_on :macos
 
@@ -25,7 +25,7 @@ class GitUrlSub < Formula
   test do
     system "git", "init"
     system "git", "remote", "add", "origin", "foo"
-    system bin"git-url-sub", "-c", "foo", "bar"
-    assert_match(origin\s+bar \(fetch\), shell_output("git remote -v"))
+    system bin/"git-url-sub", "-c", "foo", "bar"
+    assert_match(/origin\s+bar \(fetch\)/, shell_output("git remote -v"))
   end
 end

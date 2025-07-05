@@ -1,13 +1,13 @@
 class Ares < Formula
   desc "Automated decoding of encrypted text"
-  homepage "https:github.combee-sanAres"
-  url "https:github.combee-sanAresarchiverefstags0.11.0.tar.gz"
+  homepage "https://github.com/bee-san/Ares"
+  url "https://ghfast.top/https://github.com/bee-san/Ares/archive/refs/tags/0.11.0.tar.gz"
   sha256 "fd8751de6c46eb523d62d4ca52018b9127b9fa5fbd4a372b7f22e0f9957f030f"
   license "MIT"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -33,7 +33,7 @@ class Ares < Formula
     input_string = "SGVsbG8gZnJvbSBIb21lYnJldw=="
     expected_text = "Hello from Homebrew"
     # Disable custom color scheme
-    output = pipe_output("#{bin}ares -d -t #{input_string}", "N", 0)
+    output = pipe_output("#{bin}/ares -d -t #{input_string}", "N", 0)
     assert_match expected_text, output
   end
 end

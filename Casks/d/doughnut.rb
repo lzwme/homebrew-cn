@@ -2,13 +2,13 @@ cask "doughnut" do
   version "2.0.1"
   sha256 "56e2a41087ee9793b667feaa1bef2e96e20cee6ff7cd8bee4a9acbd1ca1e8aeb"
 
-  url "https:github.comdyercDoughnutreleasesdownloadv#{version}Doughnut-#{version}.dmg"
+  url "https://ghfast.top/https://github.com/dyerc/Doughnut/releases/download/v#{version}/Doughnut-#{version}.dmg"
   name "Doughnut"
   desc "Podcast client"
-  homepage "https:github.comdyercDoughnut"
+  homepage "https://github.com/dyerc/Doughnut/"
 
   livecheck do
-    url "https:raw.githubusercontent.comdyercDoughnutmasterappcast.xml"
+    url "https://ghfast.top/https://raw.githubusercontent.com/dyerc/Doughnut/master/appcast.xml"
     strategy :sparkle, &:short_version
   end
 
@@ -20,7 +20,7 @@ cask "doughnut" do
   app "Doughnut.app"
 
   zap trash: [
-    "~LibraryPreferencescom.cdyer.doughnut.plist",
-    "~MusicDoughnut",
+    "~/Library/Preferences/com.cdyer.doughnut.plist",
+    "~/Music/Doughnut",
   ]
 end

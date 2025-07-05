@@ -1,10 +1,10 @@
 class Blitz < Formula
   desc "Multi-dimensional array library for C++"
-  homepage "https:github.comblitzppblitzwiki"
-  url "https:github.comblitzppblitzarchiverefstags1.0.2.tar.gz"
+  homepage "https://github.com/blitzpp/blitz/wiki"
+  url "https://ghfast.top/https://github.com/blitzpp/blitz/archive/refs/tags/1.0.2.tar.gz"
   sha256 "500db9c3b2617e1f03d0e548977aec10d36811ba1c43bb5ef250c0e3853ae1c2"
   license "Artistic-2.0"
-  head "https:github.comblitzppblitz.git", branch: "master"
+  head "https://github.com/blitzpp/blitz.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -36,8 +36,8 @@ class Blitz < Formula
   end
 
   test do
-    (testpath"testfile.cpp").write <<~CPP
-      #include <blitzarray.h>
+    (testpath/"testfile.cpp").write <<~CPP
+      #include <blitz/array.h>
       #include <cstdlib>
 
       using namespace blitz;
@@ -49,7 +49,7 @@ class Blitz < Formula
     CPP
 
     system ENV.cxx, "testfile.cpp", "-o", "testfile"
-    output = shell_output(".testfile")
+    output = shell_output("./testfile")
     assert_match <<~EOS, output
       A = (0,2) x (0,0)
       [ 17\s

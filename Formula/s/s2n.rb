@@ -1,10 +1,10 @@
 class S2n < Formula
-  desc "Implementation of the TLSSSL protocols"
-  homepage "https:github.comawss2n-tls"
-  url "https:github.comawss2n-tlsarchiverefstagsv1.5.21.tar.gz"
+  desc "Implementation of the TLS/SSL protocols"
+  homepage "https://github.com/aws/s2n-tls"
+  url "https://ghfast.top/https://github.com/aws/s2n-tls/archive/refs/tags/v1.5.21.tar.gz"
   sha256 "203d69d6f557f6ab303438ad186fca13fd2c60581b2cca6348a9fbee10d79995"
   license "Apache-2.0"
-  head "https:github.comawss2n-tls.git", branch: "main"
+  head "https://github.com/aws/s2n-tls.git", branch: "main"
 
   livecheck do
     url :stable
@@ -35,7 +35,7 @@ class S2n < Formula
   end
 
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include <assert.h>
       #include <s2n.h>
       int main() {
@@ -45,6 +45,6 @@ class S2n < Formula
     C
     system ENV.cc, "test.c", "-L#{opt_lib}", "-ls2n", "-o", "test"
     ENV["S2N_DONT_MLOCK"] = "1" if OS.linux?
-    system ".test"
+    system "./test"
   end
 end

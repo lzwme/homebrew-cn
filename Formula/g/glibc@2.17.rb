@@ -1,4 +1,4 @@
-require "oslinuxglibc"
+require "os/linux/glibc"
 
 class GlibcBaseRequirement < Requirement
   def message
@@ -61,9 +61,9 @@ end
 
 class GlibcAT217 < Formula
   desc "GNU C Library"
-  homepage "https:www.gnu.orgsoftwarelibc"
-  url "https:ftp.gnu.orggnuglibcglibc-2.17.tar.gz"
-  mirror "https:ftpmirror.gnu.orggnuglibcglibc-2.17.tar.gz"
+  homepage "https://www.gnu.org/software/libc/"
+  url "https://ftp.gnu.org/gnu/glibc/glibc-2.17.tar.gz"
+  mirror "https://ftpmirror.gnu.org/gnu/glibc/glibc-2.17.tar.gz"
   sha256 "a3b2086d5414e602b4b3d5a8792213feb3be664ffc1efe783a829818d3fca37a"
   license all_of: ["GPL-2.0-or-later", "LGPL-2.1-or-later"]
 
@@ -85,16 +85,16 @@ class GlibcAT217 < Formula
   depends_on LinuxKernelRequirement
 
   # Backport of:
-  # https:sourceware.orggit?p=glibc.git;a=commit;h=e9177fba13549a8e2a6232f46080e5c6d3e467b1
+  # https://sourceware.org/git/?p=glibc.git;a=commit;h=e9177fba13549a8e2a6232f46080e5c6d3e467b1
   patch do
-    url "https:git.centos.orgrpmsglibcrawca483cc5b0e3e6a595a2c103755dee4d72f14f25fSOURCESglibc-rh1500908.patch"
+    url "https://git.centos.org/rpms/glibc/raw/ca483cc5b0e3e6a595a2c103755dee4d72f14f25/f/SOURCES/glibc-rh1500908.patch"
     sha256 "48bfb15f5a26161bbef3d58e18d44876a170ddbfcc5922a39c77fd8da9fe68f6"
   end
 
   # Backport of:
-  # https:sourceware.orggit?p=glibc.git;a=commit;h=43d06ed218fc8be58987bdfd00e21e5720f0b862
+  # https://sourceware.org/git/?p=glibc.git;a=commit;h=43d06ed218fc8be58987bdfd00e21e5720f0b862
   patch do
-    url "https:raw.githubusercontent.comHomebrewformula-patches41fdb9d5ec21fc8165cd4bee89bd23d0c90572eeglibc2.17-aarch64-dl-machine.diff"
+    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/41fdb9d5ec21fc8165cd4bee89bd23d0c90572ee/glibc/2.17-aarch64-dl-machine.diff"
     sha256 "ece66819f9ef3a1b73081d0f5cda8c814b5204d25c07f8a7adb8209ee286c39d"
   end
 
@@ -117,13 +117,13 @@ class GlibcAT217 < Formula
 
     # Fix relocation R_X86_64_32S against symbol `__libc_csu_fini' can not be
     # used when making a PIE object; recompile with -fPIE
-    # See https:sourceware.orgpipermaillibc-alpha2020-March111688.html
+    # See https://sourceware.org/pipermail/libc-alpha/2020-March/111688.html
     ENV.append "LDFLAGS", "-no-pie" if Hardware::CPU.intel?
 
-    # Use brewed ld.so.preload rather than the host's etcld.so.preload
-    inreplace "elfrtld.c",
-              '= "etcld.so.preload";',
-              '= SYSCONFDIR "ld.so.preload";'
+    # Use brewed ld.so.preload rather than the host's /etc/ld.so.preload
+    inreplace "elf/rtld.c",
+              '= "/etc/ld.so.preload";',
+              '= SYSCONFDIR "/ld.so.preload";'
 
     mkdir "build" do
       args = [
@@ -136,33 +136,33 @@ class GlibcAT217 < Formula
         "--without-selinux",
         "--with-headers=#{Formula["linux-headers@4.4"].include}",
       ]
-      system "..configure", *args
+      system "../configure", *args
       system "make", "all"
       system "make", "install"
       prefix.install_symlink "lib" => "lib64"
     end
 
     # Fix quoting of filenames that contain @
-    inreplace [lib"libc.so", lib"libpthread.so"],
-              %r{(#{Regexp.escape(prefix)}\S*) },
+    inreplace [lib/"libc.so", lib/"libpthread.so"],
+              %r{(#{Regexp.escape(prefix)}/\S*) },
               '"\1" '
 
-    # Remove executablesdylibs that link with system libnsl
+    # Remove executables/dylibs that link with system libnsl
     [
-      sbin"nscd",
-      lib"libnss_nisplus-#{version}.so",
-      lib"libnss_compat-#{version}.so",
-      lib"libnss_nis-#{version}.so",
+      sbin/"nscd",
+      lib/"libnss_nisplus-#{version}.so",
+      lib/"libnss_compat-#{version}.so",
+      lib/"libnss_nis-#{version}.so",
     ].each(&:unlink)
   end
 
   def post_install
     # Compile locale definition files
-    mkdir_p lib"locale"
+    mkdir_p lib/"locale"
 
     # Get all extra installed locales from the system, except C locales
     locales = ENV.filter_map do |k, v|
-      v if k[^LANG$|^LC_] && v != "C" && !v.start_with?("C.")
+      v if k[/^LANG$|^LC_/] && v != "C" && !v.start_with?("C.")
     end
 
     # en_US.UTF-8 is required by gawk make check
@@ -172,26 +172,26 @@ class GlibcAT217 < Formula
       lang, charmap = locale.split(".", 2)
       if charmap.present?
         charmap = "UTF-8" if charmap == "utf8"
-        system bin"localedef", "-i", lang, "-f", charmap, locale
+        system bin/"localedef", "-i", lang, "-f", charmap, locale
       else
-        system bin"localedef", "-i", lang, locale
+        system bin/"localedef", "-i", lang, locale
       end
     end
 
     # Set the local time zone
-    sys_localtime = Pathname("etclocaltime")
-    brew_localtime = etc"localtime"
+    sys_localtime = Pathname("/etc/localtime")
+    brew_localtime = etc/"localtime"
     etc.install_symlink sys_localtime if sys_localtime.exist? && !brew_localtime.exist?
 
     # Set zoneinfo correctly using the system installed zoneinfo
-    sys_zoneinfo = Pathname("usrsharezoneinfo")
-    brew_zoneinfo = share"zoneinfo"
+    sys_zoneinfo = Pathname("/usr/share/zoneinfo")
+    brew_zoneinfo = share/"zoneinfo"
     share.install_symlink sys_zoneinfo if sys_zoneinfo.exist? && !brew_zoneinfo.exist?
   end
 
   test do
-    assert_match "Usage", shell_output("#{lib}ld-#{version}.so 2>&1", 127)
-    safe_system lib"libc.so.6", "--version"
-    safe_system bin"locale", "--version"
+    assert_match "Usage", shell_output("#{lib}/ld-#{version}.so 2>&1", 127)
+    safe_system lib/"libc.so.6", "--version"
+    safe_system bin/"locale", "--version"
   end
 end

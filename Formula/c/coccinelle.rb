@@ -1,15 +1,15 @@
 class Coccinelle < Formula
   desc "Program matching and transformation engine for C code"
-  homepage "https:coccinelle.gitlabpages.inria.frwebsite"
-  url "https:github.comcoccinellecoccinelle.git",
+  homepage "https://coccinelle.gitlabpages.inria.fr/website/"
+  url "https://github.com/coccinelle/coccinelle.git",
       tag:      "1.3.0",
       revision: "e1906ad639c5eeeba2521639998eafadf989b0ac"
   license "GPL-2.0-only"
-  head "https:github.comcoccinellecoccinelle.git", branch: "master"
+  head "https://github.com/coccinelle/coccinelle.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -42,8 +42,8 @@ class Coccinelle < Formula
       ENV["OPAMVERBOSE"] = "1"
       system "opam", "init", "--no-setup", "--disable-sandboxing"
       system "opam", "exec", "--", "opam", "install", ".", "--deps-only", "-y", "--no-depexts"
-      system ".autogen"
-      system "opam", "exec", "--", ".configure", "--disable-silent-rules",
+      system "./autogen"
+      system "opam", "exec", "--", "./configure", "--disable-silent-rules",
                                                   "--enable-ocaml",
                                                   "--enable-opt",
                                                   "--without-pdflatex",
@@ -54,11 +54,11 @@ class Coccinelle < Formula
       system "make", "install"
     end
 
-    pkgshare.install "demossimple.cocci", "demossimple.c"
+    pkgshare.install "demos/simple.cocci", "demos/simple.c"
   end
 
   test do
-    system bin"spatch", "-sp_file", "#{pkgshare}simple.cocci", "#{pkgshare}simple.c", "-o", "new_simple.c"
+    system bin/"spatch", "-sp_file", "#{pkgshare}/simple.cocci", "#{pkgshare}/simple.c", "-o", "new_simple.c"
     expected = <<~EOS
       int main(int i) {
         f("ca va", 3);
@@ -66,6 +66,6 @@ class Coccinelle < Formula
       }
     EOS
 
-    assert_equal expected, (testpath"new_simple.c").read
+    assert_equal expected, (testpath/"new_simple.c").read
   end
 end

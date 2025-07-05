@@ -2,15 +2,15 @@ cask "gcollazo-mongodb" do
   version "8.0.5-build.1"
   sha256 "bc545179d510b4fc80ac9866d34228faa7153137eea8f5ebcac957abf9d3ef89"
 
-  url "https:github.comgcollazomongodbappreleasesdownload#{version}MongoDB.zip",
-      verified: "github.comgcollazomongodbapp"
+  url "https://ghfast.top/https://github.com/gcollazo/mongodbapp/releases/download/#{version}/MongoDB.zip",
+      verified: "github.com/gcollazo/mongodbapp/"
   name "MongoDB"
   desc "App wrapper for MongoDB"
-  homepage "https:gcollazo.commongodb-app"
+  homepage "https://gcollazo.com/mongodb-app/"
 
   livecheck do
     url :url
-    regex(^v?(\d+(?:\.\d+)+(?:-build[._-]?\d+)?)$i)
+    regex(/^v?(\d+(?:\.\d+)+(?:-build[._-]?\d+)?)$/i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -20,7 +20,7 @@ cask "gcollazo-mongodb" do
   app "MongoDB.app"
 
   zap trash: [
-    "~LibraryCachesio.blimp.MongoDB",
-    "~LibraryPreferencesio.blimp.MongoDB.plist",
+    "~/Library/Caches/io.blimp.MongoDB",
+    "~/Library/Preferences/io.blimp.MongoDB.plist",
   ]
 end

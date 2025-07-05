@@ -1,13 +1,13 @@
 class Amfora < Formula
   desc "Fancy terminal browser for the Gemini protocol"
-  homepage "https:github.commakew0rldamfora"
-  url "https:github.commakew0rldamforaarchiverefstagsv1.10.0.tar.gz"
+  homepage "https://github.com/makew0rld/amfora"
+  url "https://ghfast.top/https://github.com/makew0rld/amfora/archive/refs/tags/v1.10.0.tar.gz"
   sha256 "0bc9964ccefb3ea0d66944231492f66c3b0009ab0040e19cc115d0b4cd9b8078"
   license all_of: [
     "GPL-3.0-only",
     any_of: ["GPL-3.0-only", "MIT"], # rr
   ]
-  head "https:github.commakew0rldamfora.git", branch: "master"
+  head "https://github.com/makew0rld/amfora.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -27,7 +27,7 @@ class Amfora < Formula
   def install
     ldflags = "-s -w -X main.version=#{version} -X main.commit=#{tap.user} -X main.builtBy=#{tap.user}"
     system "go", "build", *std_go_args(ldflags:)
-    pkgshare.install "contribthemes"
+    pkgshare.install "contrib/themes"
   end
 
   test do
@@ -37,7 +37,7 @@ class Amfora < Formula
 
     input, _, wait_thr = Open3.popen2 "script -q screenlog.txt"
     input.puts "stty rows 80 cols 43"
-    input.puts bin"amfora"
+    input.puts bin/"amfora"
     sleep 1
     input.putc "1"
     sleep 1
@@ -45,7 +45,7 @@ class Amfora < Formula
     sleep 1
     input.putc "q"
 
-    screenlog = (testpath"screenlog.txt").read
+    screenlog = (testpath/"screenlog.txt").read
     assert_match "# New Tab", screenlog
     assert_match "## Learn more about Amfora!", screenlog
   ensure

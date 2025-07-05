@@ -1,7 +1,7 @@
 class Dexter < Formula
   desc "Automatic indexer for Postgres"
-  homepage "https:github.comankanedexter"
-  url "https:github.comankanedexterarchiverefstagsv0.6.1.tar.gz"
+  homepage "https://github.com/ankane/dexter"
+  url "https://ghfast.top/https://github.com/ankane/dexter/archive/refs/tags/v0.6.1.tar.gz"
   sha256 "77b9d2b28689dfd3b2a16c94ef8e20bf16cd0bf4dcc62b6d350ee8257d0763db"
   license "MIT"
 
@@ -22,28 +22,28 @@ class Dexter < Formula
   depends_on "ruby"
 
   resource "google-protobuf" do
-    url "https:rubygems.orggemsgoogle-protobuf-4.31.1.gem"
+    url "https://rubygems.org/gems/google-protobuf-4.31.1.gem"
     sha256 "022bc82931a0860a7f2ace41bd48e904c8e65032c1d5eefc33294b5edf9741f8"
   end
 
   resource "pg" do
-    url "https:rubygems.orggemspg-1.5.9.gem"
+    url "https://rubygems.org/gems/pg-1.5.9.gem"
     sha256 "761efbdf73b66516f0c26fcbe6515dc7500c3f0aa1a1b853feae245433c64fdc"
   end
 
   resource "pg_query" do
-    url "https:rubygems.orggemspg_query-6.1.0.gem"
+    url "https://rubygems.org/gems/pg_query-6.1.0.gem"
     sha256 "8b005229e209f12c5887c34c60d0eb2a241953b9475b53a9840d24578532481e"
   end
 
   resource "slop" do
-    url "https:rubygems.orggemsslop-4.10.1.gem"
+    url "https://rubygems.org/gems/slop-4.10.1.gem"
     sha256 "844322b5ffcf17ed4815fdb173b04a20dd82b4fd93e3744c88c8fafea696d9c7"
   end
 
   def install
     ENV["GEM_HOME"] = libexec
-    ENV["PG_CONFIG"] = Formula["libpq"].opt_bin"pg_config"
+    ENV["PG_CONFIG"] = Formula["libpq"].opt_bin/"pg_config"
 
     resources.each do |r|
       r.fetch
@@ -54,28 +54,28 @@ class Dexter < Formula
     system "gem", "build", "pgdexter.gemspec"
     system "gem", "install", "--ignore-dependencies", "pgdexter-#{version}.gem"
 
-    bin.install libexec"bindexter"
-    bin.env_script_all_files(libexec"bin", GEM_HOME: ENV["GEM_HOME"])
+    bin.install libexec/"bin/dexter"
+    bin.env_script_all_files(libexec/"bin", GEM_HOME: ENV["GEM_HOME"])
   end
 
   test do
     ENV["LC_ALL"] = "C"
 
     postgresql = Formula["postgresql@17"]
-    pg_ctl = postgresql.opt_bin"pg_ctl"
+    pg_ctl = postgresql.opt_bin/"pg_ctl"
     port = free_port
 
-    system pg_ctl, "initdb", "-D", testpath"test"
-    (testpath"testpostgresql.conf").write <<~EOS, mode: "a+"
+    system pg_ctl, "initdb", "-D", testpath/"test"
+    (testpath/"test/postgresql.conf").write <<~EOS, mode: "a+"
       port = #{port}
     EOS
-    system pg_ctl, "start", "-D", testpath"test", "-l", testpath"log"
+    system pg_ctl, "start", "-D", testpath/"test", "-l", testpath/"log"
 
     begin
-      output = shell_output("#{bin}dexter -d postgres -p #{port} -s SELECT 1 2>&1", 1)
+      output = shell_output("#{bin}/dexter -d postgres -p #{port} -s SELECT 1 2>&1", 1)
       assert_match "Install HypoPG", output
     ensure
-      system pg_ctl, "stop", "-D", testpath"test"
+      system pg_ctl, "stop", "-D", testpath/"test"
     end
   end
 end

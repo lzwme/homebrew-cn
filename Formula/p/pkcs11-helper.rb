@@ -1,14 +1,14 @@
 class Pkcs11Helper < Formula
   desc "Library to simplify the interaction with PKCS#11"
-  homepage "https:github.comOpenSCOpenSCwikipkcs11-helper"
-  url "https:github.comOpenSCpkcs11-helperreleasesdownloadpkcs11-helper-1.30.0pkcs11-helper-1.30.0.tar.bz2"
+  homepage "https://github.com/OpenSC/OpenSC/wiki/pkcs11-helper"
+  url "https://ghfast.top/https://github.com/OpenSC/pkcs11-helper/releases/download/pkcs11-helper-1.30.0/pkcs11-helper-1.30.0.tar.bz2"
   sha256 "4c5815ba910cabf26df08d449ca2909daf4538c9899aa7f7fadc61229d3488a9"
   license any_of: ["BSD-3-Clause", "GPL-2.0-or-later"]
-  head "https:github.comOpenSCpkcs11-helper.git", branch: "master"
+  head "https://github.com/OpenSC/pkcs11-helper.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(pkcs11-helper[._-]v?(\d+(?:\.\d+)+)i)
+    regex(/pkcs11-helper[._-]v?(\d+(?:\.\d+)+)/i)
     strategy :github_latest
   end
 
@@ -34,15 +34,15 @@ class Pkcs11Helper < Formula
 
   def install
     system "autoreconf", "--force", "--install", "--verbose"
-    system ".configure", *std_configure_args
+    system "./configure", *std_configure_args
     system "make", "install"
   end
 
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include <stdio.h>
       #include <stdlib.h>
-      #include <pkcs11-helper-1.0pkcs11h-core.h>
+      #include <pkcs11-helper-1.0/pkcs11h-core.h>
 
       int main() {
         printf("Version: %08x", pkcs11h_getVersion ());
@@ -50,6 +50,6 @@ class Pkcs11Helper < Formula
       }
     C
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lpkcs11-helper", "-o", "test"
-    system ".test"
+    system "./test"
   end
 end

@@ -1,10 +1,10 @@
 class Libtommath < Formula
   desc "C library for number theoretic multiple-precision integers"
-  homepage "https:www.libtom.netLibTomMath"
-  url "https:github.comlibtomlibtommathreleasesdownloadv1.3.0ltm-1.3.0.tar.xz"
+  homepage "https://www.libtom.net/LibTomMath/"
+  url "https://ghfast.top/https://github.com/libtom/libtommath/releases/download/v1.3.0/ltm-1.3.0.tar.xz"
   sha256 "296272d93435991308eb73607600c034b558807a07e829e751142e65ccfa9d08"
   license "Unlicense"
-  head "https:github.comlibtomlibtommath.git", branch: "develop"
+  head "https://github.com/libtom/libtommath.git", branch: "develop"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "180de0f47bf4ce7ec3a513db509d368e148b42e50cf310666bf9c60a78cf778b"
@@ -26,7 +26,7 @@ class Libtommath < Formula
   # from a fork due to file name differences between 1.2.0 and master.
   # Remove with the next version.
   patch do
-    url "https:github.comMoarVMlibtommathcommitdb0d387b808d557bd408a6a253c5bf3a688ef274.patch?full_index=1"
+    url "https://github.com/MoarVM/libtommath/commit/db0d387b808d557bd408a6a253c5bf3a688ef274.patch?full_index=1"
     sha256 "e5eef1762dd3e92125e36034afa72552d77f066eaa19a0fd03cd4f1a656f9ab0"
   end
 
@@ -39,6 +39,6 @@ class Libtommath < Formula
   end
 
   test do
-    system pkgshare"test"
+    system pkgshare/"test"
   end
 end

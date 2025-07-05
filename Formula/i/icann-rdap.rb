@@ -1,7 +1,7 @@
 class IcannRdap < Formula
   desc "Full-rich client for the Registry Data Access Protocol (RDAP) sponsored by ICANN"
-  homepage "https:github.comicannicann-rdapwiki"
-  url "https:github.comicannicann-rdaparchiverefstagsv0.0.22.tar.gz"
+  homepage "https://github.com/icann/icann-rdap/wiki"
+  url "https://ghfast.top/https://github.com/icann/icann-rdap/archive/refs/tags/v0.0.22.tar.gz"
   sha256 "42360a82605bf92891b4de0a133d43baabb041446b16063094c4abc94c531c30"
   license any_of: ["Apache-2.0", "MIT"]
 
@@ -28,17 +28,17 @@ class IcannRdap < Formula
 
   test do
     # check version of rdap
-    assert_match "icann-rdap-cli #{version}", shell_output("#{bin}rdap -V")
+    assert_match "icann-rdap-cli #{version}", shell_output("#{bin}/rdap -V")
 
     # check version of rdap-test
-    assert_match "icann-rdap-cli #{version}", shell_output("#{bin}rdap-test -V")
+    assert_match "icann-rdap-cli #{version}", shell_output("#{bin}/rdap-test -V")
 
     # lookup com TLD at IANA with rdap
-    output = shell_output("#{bin}rdap -O pretty-json https:rdap.iana.orgdomaincom")
+    output = shell_output("#{bin}/rdap -O pretty-json https://rdap.iana.org/domain/com")
     assert_match '"ldhName": "com"', output
 
     # test com TLD at IANA with rdap-test
-    output = shell_output("#{bin}rdap-test -O pretty-json --skip-v6 -C icann-error https:rdap.iana.orgdomaincom")
+    output = shell_output("#{bin}/rdap-test -O pretty-json --skip-v6 -C icann-error https://rdap.iana.org/domain/com")
     assert_match '"status_code": 200', output
   end
 end

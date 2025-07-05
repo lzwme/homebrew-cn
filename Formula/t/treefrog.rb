@@ -1,15 +1,15 @@
 class Treefrog < Formula
   desc "High-speed C++ MVC Framework for Web Application"
-  homepage "https:www.treefrogframework.org"
-  url "https:github.comtreefrogframeworktreefrog-frameworkarchiverefstagsv2.11.0.tar.gz"
+  homepage "https://www.treefrogframework.org/"
+  url "https://ghfast.top/https://github.com/treefrogframework/treefrog-framework/archive/refs/tags/v2.11.0.tar.gz"
   sha256 "67cbd3d2ee9810007feb97694c6eb1f7ddf9040210e69ca3adc7995c96f63df9"
   license "BSD-3-Clause"
   revision 1
-  head "https:github.comtreefrogframeworktreefrog-framework.git", branch: "master"
+  head "https://github.com/treefrogframework/treefrog-framework.git", branch: "master"
 
   livecheck do
     url :head
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -31,7 +31,7 @@ class Treefrog < Formula
     # Skip unneeded CMake check
     inreplace "configure", "if ! which cmake ", "if false "
 
-    system ".configure", "--prefix=#{prefix}",
+    system "./configure", "--prefix=#{prefix}",
                           "--enable-shared-glog",
                           "--enable-shared-lz4",
                           "--enable-shared-mongoc"
@@ -41,15 +41,15 @@ class Treefrog < Formula
 
   test do
     ENV.delete "CPATH"
-    system bin"tspawn", "new", "hello"
-    assert_path_exists testpath"hello"
+    system bin/"tspawn", "new", "hello"
+    assert_path_exists testpath/"hello"
     cd "hello" do
-      assert_path_exists Pathname.pwd"hello.pro"
+      assert_path_exists Pathname.pwd/"hello.pro"
 
-      system Formula["qt"].opt_bin"qmake"
-      assert_path_exists Pathname.pwd"Makefile"
+      system Formula["qt"].opt_bin/"qmake"
+      assert_path_exists Pathname.pwd/"Makefile"
       system "make"
-      system bin"treefrog", "-v"
+      system bin/"treefrog", "-v"
     end
   end
 end

@@ -1,7 +1,7 @@
 class Clac < Formula
   desc "Command-line, stack-based calculator with postfix notation"
-  homepage "https:github.comsoveranclac"
-  url "https:github.comsoveranclacarchiverefstags0.3.4.tar.gz"
+  homepage "https://github.com/soveran/clac"
+  url "https://ghfast.top/https://github.com/soveran/clac/archive/refs/tags/0.3.4.tar.gz"
   sha256 "3ee19329cc2e2d3a4d70eab9aa9e89f0e6f07becaa89e9156e5eb2cf94dc568a"
   license "BSD-2-Clause"
 
@@ -20,6 +20,6 @@ class Clac < Formula
   end
 
   test do
-    assert_equal "7", shell_output("#{bin}clac '3 4 +'").strip
+    assert_equal "7", shell_output("#{bin}/clac '3 4 +'").strip
   end
 end

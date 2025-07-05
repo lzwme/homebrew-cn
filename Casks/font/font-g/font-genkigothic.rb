@@ -2,10 +2,10 @@ cask "font-genkigothic" do
   version "2.100"
   sha256 "0104ba39ff119ed691e10b0da28684226928e1862058fa6096ac87e125fe31f0"
 
-  url "https:github.comButTaiwangenyog-fontreleasesdownloadv#{version}GenKiGothic#{version.major}-ttc.zip"
+  url "https://ghfast.top/https://github.com/ButTaiwan/genyog-font/releases/download/v#{version}/GenKiGothic#{version.major}-ttc.zip"
   name "GenKiGothic"
   name "源起黑體"
-  homepage "https:github.comButTaiwangenyog-font"
+  homepage "https://github.com/ButTaiwan/genyog-font"
 
   no_autobump! because: :requires_manual_review
 

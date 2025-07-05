@@ -1,13 +1,13 @@
 class Rebar3 < Formula
   desc "Erlang build tool"
-  homepage "https:rebar3.org"
-  url "https:github.comerlangrebar3archiverefstags3.25.0.tar.gz"
+  homepage "https://rebar3.org"
+  url "https://ghfast.top/https://github.com/erlang/rebar3/archive/refs/tags/3.25.0.tar.gz"
   sha256 "7d3f42dc0e126e18fb73e4366129f11dd37bad14d404f461e0a3129ce8903440"
   license "Apache-2.0"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -25,7 +25,7 @@ class Rebar3 < Formula
   depends_on "erlang"
 
   def install
-    erlang_build_dep = deps.find { |dep| dep.build? && dep.name.match?(^erlang@\d+$) }&.to_formula
+    erlang_build_dep = deps.find { |dep| dep.build? && dep.name.match?(/^erlang@\d+$/) }&.to_formula
     odie "Could not find build-time erlang!" if erlang_build_dep.blank?
 
     # To guarantee compatibility with various erlang versions, build with an older erlang.
@@ -38,23 +38,23 @@ class Rebar3 < Formula
 
     # Ensure we're building with versioned `erlang`
     ENV.remove "PATH", "#{Formula["erlang"].opt_bin}:"
-    system ".bootstrap"
+    system "./bootstrap"
     bin.install "rebar3"
 
-    bash_completion.install "appsrebarprivshell-completionbashrebar3"
-    zsh_completion.install "appsrebarprivshell-completionzsh_rebar3"
-    fish_completion.install "appsrebarprivshell-completionfishrebar3.fish"
+    bash_completion.install "apps/rebar/priv/shell-completion/bash/rebar3"
+    zsh_completion.install "apps/rebar/priv/shell-completion/zsh/_rebar3"
+    fish_completion.install "apps/rebar/priv/shell-completion/fish/rebar3.fish"
   end
 
   test do
     deps.each do |dep|
-      next unless dep.name.match?(^erlang(@\d+)?$)
+      next unless dep.name.match?(/^erlang(@\d+)?$/)
 
       erlang = dep.to_formula
       erlang_bin = erlang.opt_bin
       erlang_version = erlang.version.major
       with_env(PATH: "#{erlang_bin}:#{ENV["PATH"]}") do
-        assert_match "OTP #{erlang_version}", shell_output("#{bin}rebar3 --version")
+        assert_match "OTP #{erlang_version}", shell_output("#{bin}/rebar3 --version")
       end
     end
   end

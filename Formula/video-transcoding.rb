@@ -1,7 +1,7 @@
 class VideoTranscoding < Formula
   desc "Tools to transcode, inspect and convert videos"
-  homepage "https:github.comlisameltonvideo_transcoding"
-  url "https:github.comlisameltonvideo_transcodingarchiverefstags2025.01.28.tar.gz"
+  homepage "https://github.com/lisamelton/video_transcoding"
+  url "https://ghfast.top/https://github.com/lisamelton/video_transcoding/archive/refs/tags/2025.01.28.tar.gz"
   sha256 "628cf1181979bb5eac0ecd5a2283355c7005ab032678a309ccdd596c742b8ce6"
   license "MIT"
 

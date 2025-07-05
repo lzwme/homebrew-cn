@@ -1,17 +1,17 @@
 class MinioMc < Formula
   desc "Replacement for ls, cp and other commands for object storage"
-  homepage "https:github.comminiomc"
-  url "https:github.comminiomc.git",
+  homepage "https://github.com/minio/mc"
+  url "https://github.com/minio/mc.git",
       tag:      "RELEASE.2025-05-21T01-59-54Z",
       revision: "f71ad84bcf0fd4369691952af5d925347837dcec"
   version "2025-05-21T01-59-54Z"
   license "AGPL-3.0-or-later"
   version_scheme 1
-  head "https:github.comminiomc.git", branch: "master"
+  head "https://github.com/minio/mc.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(^(?:RELEASE[._-]?)?([\dTZ-]+)$i)
+    regex(/^(?:RELEASE[._-]?)?([\dTZ-]+)$/i)
     strategy :github_latest
   end
 
@@ -30,28 +30,28 @@ class MinioMc < Formula
 
   def install
     if build.head?
-      system "go", "build", *std_go_args(ldflags: "-s -w", output: bin"mc")
+      system "go", "build", *std_go_args(ldflags: "-s -w", output: bin/"mc")
     else
       minio_release = stable.specs[:tag]
-      minio_version = version.to_s.gsub(T(\d+)-(\d+)-(\d+)Z, 'T\1:\2:\3Z')
-      proj = "github.comminiomc"
+      minio_version = version.to_s.gsub(/T(\d+)-(\d+)-(\d+)Z/, 'T\1:\2:\3Z')
+      proj = "github.com/minio/mc"
 
       ldflags = %W[
         -s -w
-        -X #{proj}cmd.Version=#{minio_version}
-        -X #{proj}cmd.ReleaseTag=#{minio_release}
-        -X #{proj}cmd.CommitID=#{Utils.git_head}
-        -X #{proj}cmd.CopyrightYear=#{version.major}
+        -X #{proj}/cmd.Version=#{minio_version}
+        -X #{proj}/cmd.ReleaseTag=#{minio_release}
+        -X #{proj}/cmd.CommitID=#{Utils.git_head}
+        -X #{proj}/cmd.CopyrightYear=#{version.major}
       ]
-      system "go", "build", *std_go_args(ldflags:, output: bin"mc")
+      system "go", "build", *std_go_args(ldflags:, output: bin/"mc")
     end
   end
 
   test do
-    output = shell_output("#{bin}mc --version 2>&1")
-    assert_equal version.to_s, output[(?:RELEASE[._-]?)?([\dTZ-]+), 1], "`version` is incorrect"
+    output = shell_output("#{bin}/mc --version 2>&1")
+    assert_equal version.to_s, output[/(?:RELEASE[._-]?)?([\dTZ-]+)/, 1], "`version` is incorrect"
 
-    system bin"mc", "mb", testpath"test"
-    assert_path_exists testpath"test"
+    system bin/"mc", "mb", testpath/"test"
+    assert_path_exists testpath/"test"
   end
 end

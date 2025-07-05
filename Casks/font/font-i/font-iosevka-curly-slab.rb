@@ -2,9 +2,9 @@ cask "font-iosevka-curly-slab" do
   version "33.2.6"
   sha256 "67e20e3f6c449d7fe1dc05f06cdd70f2665a2a4ad4905006b71e2ffa8b52103e"
 
-  url "https:github.combe5invisIosevkareleasesdownloadv#{version}SuperTTC-IosevkaCurlySlab-#{version}.zip"
+  url "https://ghfast.top/https://github.com/be5invis/Iosevka/releases/download/v#{version}/SuperTTC-IosevkaCurlySlab-#{version}.zip"
   name "Iosevka Curly Slab"
-  homepage "https:github.combe5invisIosevka"
+  homepage "https://github.com/be5invis/Iosevka/"
 
   livecheck do
     url :url

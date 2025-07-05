@@ -2,10 +2,10 @@ cask "gitify" do
   version "6.4.1"
   sha256 "9a0847082cd12579f6c637849200317f24a297b0fe50a6fffe6182ee887bffe2"
 
-  url "https:github.comgitify-appgitifyreleasesdownloadv#{version}Gitify-#{version}-universal-mac.zip"
+  url "https://ghfast.top/https://github.com/gitify-app/gitify/releases/download/v#{version}/Gitify-#{version}-universal-mac.zip"
   name "Gitify"
   desc "GitHub notifications on your menu bar"
-  homepage "https:github.comgitify-appgitify"
+  homepage "https://github.com/gitify-app/gitify"
 
   livecheck do
     url :url
@@ -20,7 +20,7 @@ cask "gitify" do
   preflight do
     retries ||= 3
     ohai "Attempting to close Gitify.app to avoid unwanted user intervention" if retries >= 3
-    return unless system_command "usrbinpkill", args: ["-f", "ApplicationsGitify.app"]
+    return unless system_command "/usr/bin/pkill", args: ["-f", "/Applications/Gitify.app"]
   rescue RuntimeError
     sleep 1
     retry unless (retries -= 1).zero?
@@ -33,12 +33,12 @@ cask "gitify" do
   ]
 
   zap trash: [
-    "~LibraryApplication Supportcom.apple.sharedfilelistcom.apple.LSSharedFileList.ApplicationRecentDocumentscom.electron.gitify.sfl*",
-    "~LibraryApplication Supportgitify",
-    "~LibraryCachescom.electron.gitify*",
-    "~LibraryCachesgitify-updater",
-    "~LibraryHTTPStoragescom.electron.gitify",
-    "~LibraryPreferencescom.electron.gitify*.plist",
-    "~LibrarySaved Application Statecom.electron.gitify.savedState",
+    "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.electron.gitify.sfl*",
+    "~/Library/Application Support/gitify",
+    "~/Library/Caches/com.electron.gitify*",
+    "~/Library/Caches/gitify-updater",
+    "~/Library/HTTPStorages/com.electron.gitify",
+    "~/Library/Preferences/com.electron.gitify*.plist",
+    "~/Library/Saved Application State/com.electron.gitify.savedState",
   ]
 end

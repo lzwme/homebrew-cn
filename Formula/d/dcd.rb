@@ -1,11 +1,11 @@
 class Dcd < Formula
   desc "Auto-complete program for the D programming language"
-  homepage "https:github.comdlang-communityDCD"
-  url "https:github.comdlang-communityDCD.git",
+  homepage "https://github.com/dlang-community/DCD"
+  url "https://github.com/dlang-community/DCD.git",
       tag:      "v0.15.2",
       revision: "4946d49abdc35810254151923bab30fb3cc2c004"
   license "GPL-3.0-or-later"
-  head "https:github.comdlang-communitydcd.git", branch: "master"
+  head "https://github.com/dlang-community/dcd.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "df136836a7f0fd898d199c404fb3a51b47612950fbd325ccc712689fa79a0f49"
@@ -32,7 +32,7 @@ class Dcd < Formula
     target = OS.mac? ? "ldc" : "dmd"
     ENV.append "DFLAGS", "-fPIC" if OS.linux?
     system "make", target
-    bin.install "bindcd-client", "bindcd-server"
+    bin.install "bin/dcd-client", "bin/dcd-server"
   end
 
   test do
@@ -41,12 +41,12 @@ class Dcd < Formula
     # spawn a server, using a non-default port to avoid
     # clashes with pre-existing dcd-server instances
     server = fork do
-      exec bin"dcd-server", "-p", port.to_s
+      exec bin/"dcd-server", "-p", port.to_s
     end
     # Give it generous time to load
     sleep 0.5
     # query the server from a client
-    system bin"dcd-client", "-q", "-p", port.to_s
+    system bin/"dcd-client", "-q", "-p", port.to_s
   ensure
     Process.kill "TERM", server
     Process.wait server

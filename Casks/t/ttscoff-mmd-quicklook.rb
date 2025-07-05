@@ -2,10 +2,10 @@ cask "ttscoff-mmd-quicklook" do
   version "1.2"
   sha256 "6370fa8d98e627d83fe70e9bc5bd400bd7b6b68257a40bf33bb70df5d12935c1"
 
-  url "https:github.comttscoffMMD-QuickLookreleasesdownload#{version}MMD-QuickLook#{version}.zip"
+  url "https://ghfast.top/https://github.com/ttscoff/MMD-QuickLook/releases/download/#{version}/MMD-QuickLook#{version}.zip"
   name "MMD-QuickLook"
   desc "Quick Look plugin for viewing MultiMarkdown"
-  homepage "https:github.comttscoffmmd-quicklook"
+  homepage "https://github.com/ttscoff/mmd-quicklook"
 
   no_autobump! because: :requires_manual_review
 

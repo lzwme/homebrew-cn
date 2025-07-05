@@ -1,7 +1,7 @@
 class Tbb < Formula
   desc "Rich and complete approach to parallelism in C++"
-  homepage "https:uxlfoundation.github.iooneTBB"
-  url "https:github.comuxlfoundationoneTBBarchiverefstagsv2022.2.0.tar.gz"
+  homepage "https://uxlfoundation.github.io/oneTBB/"
+  url "https://ghfast.top/https://github.com/uxlfoundation/oneTBB/archive/refs/tags/v2022.2.0.tar.gz"
   sha256 "f0f78001c8c8edb4bddc3d4c5ee7428d56ae313254158ad1eec49eced57f6a5b"
   license "Apache-2.0"
 
@@ -30,11 +30,11 @@ class Tbb < Formula
     # Prevent `setup.py` from installing tbb4py as a deprecated egg directly into HOMEBREW_PREFIX.
     # We need this due to our Python patch.
     site_packages = Language::Python.site_packages(python3)
-    inreplace "pythonCMakeLists.txt",
+    inreplace "python/CMakeLists.txt",
               "install --prefix build -f",
-              "\\0 --install-lib build#{site_packages} --single-version-externally-managed --record=RECORD"
+              "\\0 --install-lib build/#{site_packages} --single-version-externally-managed --record=RECORD"
 
-    tbb_site_packages = prefixsite_packages"tbb"
+    tbb_site_packages = prefix/site_packages/"tbb"
     ENV.append "LDFLAGS", "-Wl,-rpath,#{rpath},-rpath,#{rpath(source: tbb_site_packages)}"
 
     args = %W[
@@ -43,29 +43,29 @@ class Tbb < Formula
       -DPYTHON_EXECUTABLE=#{which(python3)}
     ]
 
-    system "cmake", "-S", ".", "-B", "buildshared",
+    system "cmake", "-S", ".", "-B", "build/shared",
                     "-DBUILD_SHARED_LIBS=ON",
                     "-DCMAKE_INSTALL_RPATH=#{rpath}",
                     *args, *std_cmake_args
-    system "cmake", "--build", "buildshared"
-    system "cmake", "--install", "buildshared"
+    system "cmake", "--build", "build/shared"
+    system "cmake", "--install", "build/shared"
 
-    system "cmake", "-S", ".", "-B", "buildstatic",
+    system "cmake", "-S", ".", "-B", "build/static",
                     "-DBUILD_SHARED_LIBS=OFF",
                     *args, *std_cmake_args
-    system "cmake", "--build", "buildstatic"
-    lib.install buildpath.glob("buildstatic*libtbb*.a")
+    system "cmake", "--build", "build/static"
+    lib.install buildpath.glob("build/static/*/libtbb*.a")
   end
 
   test do
     # The glob that installs these might fail,
     # so let's check their existence.
-    assert_path_exists lib"libtbb.a"
-    assert_path_exists lib"libtbbmalloc.a"
+    assert_path_exists lib/"libtbb.a"
+    assert_path_exists lib/"libtbbmalloc.a"
 
-    (testpath"cores-types.cpp").write <<~CPP
+    (testpath/"cores-types.cpp").write <<~CPP
       #include <cstdlib>
-      #include <tbbtask_arena.h>
+      #include <tbb/task_arena.h>
 
       int main() {
           const auto numa_nodes = tbb::info::numa_nodes();
@@ -77,12 +77,12 @@ class Tbb < Formula
 
     system ENV.cxx, "cores-types.cpp", "-std=c++14", "-DTBB_PREVIEW_TASK_ARENA_CONSTRAINTS_EXTENSION=1",
                                       "-L#{lib}", "-ltbb", "-o", "core-types"
-    system ".core-types"
+    system "./core-types"
 
-    (testpath"sum1-100.cpp").write <<~CPP
+    (testpath/"sum1-100.cpp").write <<~CPP
       #include <iostream>
-      #include <tbbblocked_range.h>
-      #include <tbbparallel_reduce.h>
+      #include <tbb/blocked_range.h>
+      #include <tbb/parallel_reduce.h>
 
       int main()
       {
@@ -105,7 +105,7 @@ class Tbb < Formula
     CPP
 
     system ENV.cxx, "sum1-100.cpp", "-std=c++14", "-L#{lib}", "-ltbb", "-o", "sum1-100"
-    assert_equal "5050", shell_output(".sum1-100").chomp
+    assert_equal "5050", shell_output("./sum1-100").chomp
 
     system python3, "-c", "import tbb"
   end

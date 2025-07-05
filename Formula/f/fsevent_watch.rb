@@ -1,10 +1,10 @@
 class FseventWatch < Formula
   desc "macOS FSEvents client"
-  homepage "https:github.comprogerfsevent_watch"
-  url "https:github.comprogerfsevent_watcharchiverefstagsv0.2.tar.gz"
+  homepage "https://github.com/proger/fsevent_watch"
+  url "https://ghfast.top/https://github.com/proger/fsevent_watch/archive/refs/tags/v0.2.tar.gz"
   sha256 "1cfd66d551bb5a7ef80b53bcc7952b766cf81ce2059aacdf7380a9870aa0af6c"
   license "MIT"
-  head "https:github.comprogerfsevent_watch.git", branch: "master"
+  head "https://github.com/proger/fsevent_watch.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -30,6 +30,6 @@ class FseventWatch < Formula
   end
 
   test do
-    system bin"fsevent_watch", "--version"
+    system bin/"fsevent_watch", "--version"
   end
 end

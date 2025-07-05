@@ -1,7 +1,7 @@
 class Arping < Formula
   desc "Utility to check whether MAC addresses are already taken on a LAN"
-  homepage "https:github.comThomasHabetsarping"
-  url "https:github.comThomasHabetsarpingarchiverefstagsarping-2.26.tar.gz"
+  homepage "https://github.com/ThomasHabets/arping"
+  url "https://ghfast.top/https://github.com/ThomasHabets/arping/archive/refs/tags/arping-2.26.tar.gz"
   sha256 "58e866dce813d848fb77d5e5e0e866fb4a02b55bab366a0d66409da478ccb12f"
   license "GPL-2.0-or-later"
 
@@ -22,13 +22,13 @@ class Arping < Formula
   uses_from_macos "libpcap"
 
   def install
-    system ".bootstrap.sh"
-    system ".configure", "--disable-dependency-tracking",
+    system "./bootstrap.sh"
+    system "./configure", "--disable-dependency-tracking",
                           "--prefix=#{prefix}"
     system "make", "install"
   end
 
   test do
-    system "#{sbin}arping", "--help"
+    system "#{sbin}/arping", "--help"
   end
 end

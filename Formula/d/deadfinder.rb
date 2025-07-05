@@ -1,10 +1,10 @@
 class Deadfinder < Formula
   desc "Finds broken links"
-  homepage "https:rubygems.orggemsdeadfinder"
-  url "https:github.comhahwuldeadfinderarchiverefstags1.7.1.tar.gz"
+  homepage "https://rubygems.org/gems/deadfinder"
+  url "https://ghfast.top/https://github.com/hahwul/deadfinder/archive/refs/tags/1.7.1.tar.gz"
   sha256 "fa9f8843b3c793a21b8c3c4c9623f15691c7ef94b8ce9d174d4b8cac7c13b8bd"
   license "MIT"
-  head "https:github.comhahwuldeadfinder.git", branch: "main"
+  head "https://github.com/hahwul/deadfinder.git", branch: "main"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "13018df0825a8907536fd51b444abffff1a403cb75a66541784068e344380294"
@@ -34,16 +34,16 @@ class Deadfinder < Formula
     system "gem", "build", "#{name}.gemspec"
     system "gem", "install", "#{name}-#{version}.gem"
 
-    bin.install libexec"bin#{name}"
-    bin.env_script_all_files(libexec"bin", GEM_HOME: ENV["GEM_HOME"])
+    bin.install libexec/"bin/#{name}"
+    bin.env_script_all_files(libexec/"bin", GEM_HOME: ENV["GEM_HOME"])
 
     # Remove mkmf.log files to avoid shims references
-    rm Dir["#{libexec}extensions***mkmf.log"]
+    rm Dir["#{libexec}/extensions/*/*/*/mkmf.log"]
   end
 
   test do
-    assert_match version.to_s, shell_output(bin"deadfinder version")
+    assert_match version.to_s, shell_output(bin/"deadfinder version")
 
-    assert_match "Task completed", shell_output(bin"deadfinder url https:brew.sh")
+    assert_match "Task completed", shell_output(bin/"deadfinder url https://brew.sh")
   end
 end

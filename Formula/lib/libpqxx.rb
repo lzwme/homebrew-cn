@@ -1,7 +1,7 @@
 class Libpqxx < Formula
   desc "C++ connector for PostgreSQL"
-  homepage "https:pqxx.orgdevelopmentlibpqxx"
-  url "https:github.comjtvlibpqxxarchiverefstags7.10.1.tar.gz"
+  homepage "https://pqxx.org/development/libpqxx/"
+  url "https://ghfast.top/https://github.com/jtv/libpqxx/archive/refs/tags/7.10.1.tar.gz"
   sha256 "cfbbb1d93a0a3d81319ec71d9a3db80447bb033c4f6cee088554a88862fd77d7"
   license "BSD-3-Clause"
 
@@ -24,15 +24,15 @@ class Libpqxx < Formula
 
   def install
     ENV.append "CXXFLAGS", "-std=c++17"
-    ENV["PG_CONFIG"] = Formula["libpq"].opt_bin"pg_config"
+    ENV["PG_CONFIG"] = Formula["libpq"].opt_bin/"pg_config"
 
-    system ".configure", "--disable-silent-rules", "--enable-shared", *std_configure_args
+    system "./configure", "--disable-silent-rules", "--enable-shared", *std_configure_args
     system "make", "install"
   end
 
   test do
-    (testpath"test.cpp").write <<~CPP
-      #include <pqxxpqxx>
+    (testpath/"test.cpp").write <<~CPP
+      #include <pqxx/pqxx>
       int main(int argc, char** argv) {
         pqxx::connection con;
         return 0;
@@ -40,7 +40,7 @@ class Libpqxx < Formula
     CPP
     system ENV.cxx, "-std=c++17", "test.cpp", "-L#{lib}", "-lpqxx",
            "-I#{include}", "-o", "test"
-    # Running .test will fail because there is no running postgresql server
-    # system ".test"
+    # Running ./test will fail because there is no running postgresql server
+    # system "./test"
   end
 end

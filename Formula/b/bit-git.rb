@@ -1,10 +1,10 @@
 class BitGit < Formula
   desc "Bit is a modern Git CLI"
-  homepage "https:github.comchriswalzbit"
-  url "https:github.comchriswalzbitarchiverefstagsv1.1.2.tar.gz"
+  homepage "https://github.com/chriswalz/bit"
+  url "https://ghfast.top/https://github.com/chriswalz/bit/archive/refs/tags/v1.1.2.tar.gz"
   sha256 "563ae6b0fa279cb8ea8f66b4b455c7cb74a9e65a0edbe694505b2c8fc719b2ff"
   license "Apache-2.0"
-  head "https:github.comchriswalzbit.git", branch: "master"
+  head "https://github.com/chriswalz/bit.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -33,15 +33,15 @@ class BitGit < Formula
   end
 
   test do
-    system "git", "init", testpath"test-repository"
+    system "git", "init", testpath/"test-repository"
 
-    cd testpath"test-repository" do
-      (testpath"test-repositorytest.txt").write <<~EOS
+    cd testpath/"test-repository" do
+      (testpath/"test-repository/test.txt").write <<~EOS
         Hello Homebrew!
       EOS
-      system bin"bit", "add", "test.txt"
+      system bin/"bit", "add", "test.txt"
 
-      output = shell_output("#{bin}bit status").chomp
+      output = shell_output("#{bin}/bit status").chomp
       assert_equal "new file:   test.txt", output.lines.last.strip
     end
   end

@@ -1,17 +1,17 @@
 class MariadbConnectorC < Formula
   desc "MariaDB database connector for C applications"
-  homepage "https:mariadb.orgdownload?tab=connector&prod=connector-c"
+  homepage "https://mariadb.org/download/?tab=connector&prod=connector-c"
   # TODO: Remove backward compatibility library symlinks on breaking version bump
-  url "https:archive.mariadb.orgconnector-c-3.4.5mariadb-connector-c-3.4.5-src.tar.gz"
-  mirror "https:fossies.orglinuxmiscmariadb-connector-c-3.4.5-src.tar.gz"
+  url "https://archive.mariadb.org/connector-c-3.4.5/mariadb-connector-c-3.4.5-src.tar.gz"
+  mirror "https://fossies.org/linux/misc/mariadb-connector-c-3.4.5-src.tar.gz/"
   sha256 "b17e193816cb25c3364c2cc92a0ad3f1d0ad9f0f484dc76b8e7bdb5b50eac1a3"
   license "LGPL-2.1-or-later"
-  head "https:github.commariadb-corporationmariadb-connector-c.git", branch: "3.4"
+  head "https://github.com/mariadb-corporation/mariadb-connector-c.git", branch: "3.4"
 
-  # The REST API may omit the newest majorminor versions unless the
+  # The REST API may omit the newest major/minor versions unless the
   # `olderReleases` parameter is set to `true`.
   livecheck do
-    url "https:downloads.mariadb.orgrest-apiconnector-call-releases?olderReleases=true"
+    url "https://downloads.mariadb.org/rest-api/connector-c/all-releases/?olderReleases=true"
     strategy :json do |json|
       json["releases"]&.map do |_, group|
         group["children"]&.map do |release|
@@ -49,7 +49,7 @@ class MariadbConnectorC < Formula
     # -DINSTALL_* are relative to prefix
     args = %w[
       -DINSTALL_LIBDIR=lib
-      -DINSTALL_MANDIR=shareman
+      -DINSTALL_MANDIR=share/man
       -DWITH_EXTERNAL_ZLIB=ON
       -DWITH_MYSQLCOMPAT=ON
       -DWITH_UNIT_TESTS=OFF
@@ -63,18 +63,18 @@ class MariadbConnectorC < Formula
     # some dependents. This is done in the full `mariadb` installation[^1]
     # but not in the standalone `mariadb-connector-c`.
     #
-    # [^1]: https:github.comMariaDBserverblobmaincmakesymlinks.cmake
+    # [^1]: https://github.com/MariaDB/server/blob/main/cmake/symlinks.cmake
     bin.install_symlink "mariadb_config" => "mysql_config"
 
     # Temporary symlinks for backwards compatibility.
     # TODO: Remove in future version update.
-    (lib"mariadb").install_symlink lib.glob(shared_library("*"))
+    (lib/"mariadb").install_symlink lib.glob(shared_library("*"))
 
     # TODO: Automatically compress manpages in brew
     Utils::Gzip.compress(*man3.glob("*.3"))
   end
 
   test do
-    system bin"mariadb_config", "--cflags"
+    system bin/"mariadb_config", "--cflags"
   end
 end

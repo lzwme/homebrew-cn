@@ -1,7 +1,7 @@
 class Libseccomp < Formula
   desc "Interface to the Linux Kernel's syscall filtering mechanism"
-  homepage "https:github.comseccomplibseccomp"
-  url "https:github.comseccomplibseccompreleasesdownloadv2.6.0libseccomp-2.6.0.tar.gz"
+  homepage "https://github.com/seccomp/libseccomp"
+  url "https://ghfast.top/https://github.com/seccomp/libseccomp/releases/download/v2.6.0/libseccomp-2.6.0.tar.gz"
   sha256 "83b6085232d1588c379dc9b9cae47bb37407cf262e6e74993c61ba72d2a784dc"
   license "LGPL-2.1-only"
 
@@ -16,7 +16,7 @@ class Libseccomp < Formula
   end
 
   head do
-    url "https:github.comseccomplibseccomp.git", branch: "main"
+    url "https://github.com/seccomp/libseccomp.git", branch: "main"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -27,15 +27,15 @@ class Libseccomp < Formula
   depends_on :linux
 
   def install
-    system ".autogen.sh" if build.head?
-    system ".configure", *std_configure_args, "--disable-silent-rules"
+    system "./autogen.sh" if build.head?
+    system "./configure", *std_configure_args, "--disable-silent-rules"
     system "make", "install"
   end
 
   test do
     ver_major, ver_minor, = version.to_s.split(".")
 
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include <seccomp.h>
       int main(int argc, char *argv[])
       {
@@ -47,6 +47,6 @@ class Libseccomp < Formula
     C
 
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lseccomp", "-o", "test"
-    system ".test"
+    system "./test"
   end
 end

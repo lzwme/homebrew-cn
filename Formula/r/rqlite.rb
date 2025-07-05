@@ -1,10 +1,10 @@
 class Rqlite < Formula
   desc "Lightweight, distributed relational database built on SQLite"
-  homepage "https:www.rqlite.io"
-  url "https:github.comrqliterqlitearchiverefstagsv8.38.3.tar.gz"
+  homepage "https://www.rqlite.io/"
+  url "https://ghfast.top/https://github.com/rqlite/rqlite/archive/refs/tags/v8.38.3.tar.gz"
   sha256 "d9b87b39440dec2b0e9a47a31c26539cb0cb1ed18e9be4035e6fa3dbb4ccd3fb"
   license "MIT"
-  head "https:github.comrqliterqlite.git", branch: "master"
+  head "https://github.com/rqlite/rqlite.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "071c971b49fdb7cf506dd2c82af174d90a536b4ef05b4eabda6f2211a778eaac"
@@ -18,39 +18,39 @@ class Rqlite < Formula
   depends_on "go" => :build
 
   def install
-    version_ldflag_prefix = "-X github.comrqliterqlitev#{version.major}"
+    version_ldflag_prefix = "-X github.com/rqlite/rqlite/v#{version.major}"
     ldflags = %W[
       -s -w
-      #{version_ldflag_prefix}cmd.Commit=unknown
-      #{version_ldflag_prefix}cmd.Branch=master
-      #{version_ldflag_prefix}cmd.Buildtime=#{time.iso8601}
-      #{version_ldflag_prefix}cmd.Version=v#{version}
+      #{version_ldflag_prefix}/cmd.Commit=unknown
+      #{version_ldflag_prefix}/cmd.Branch=master
+      #{version_ldflag_prefix}/cmd.Buildtime=#{time.iso8601}
+      #{version_ldflag_prefix}/cmd.Version=v#{version}
     ]
     %w[rqbench rqlite rqlited].each do |cmd|
-      system "go", "build", *std_go_args(ldflags:), "-o", bincmd, ".cmd#{cmd}"
+      system "go", "build", *std_go_args(ldflags:), "-o", bin/cmd, "./cmd/#{cmd}"
     end
   end
 
   test do
     port = free_port
     fork do
-      exec bin"rqlited", "-http-addr", "localhost:#{port}",
+      exec bin/"rqlited", "-http-addr", "localhost:#{port}",
                           "-raft-addr", "localhost:#{free_port}",
                           testpath
     end
     sleep 5
 
-    (testpath"test.sql").write <<~SQL
+    (testpath/"test.sql").write <<~SQL
       CREATE TABLE foo (id INTEGER NOT NULL PRIMARY KEY, name TEXT)
       .schema
       quit
     SQL
-    output = shell_output("#{bin}rqlite -p #{port} < test.sql")
+    output = shell_output("#{bin}/rqlite -p #{port} < test.sql")
     assert_match "foo", output
 
-    output = shell_output("#{bin}rqbench -a localhost:#{port} 'SELECT 1'")
-    assert_match "Statementssec", output
+    output = shell_output("#{bin}/rqbench -a localhost:#{port} 'SELECT 1'")
+    assert_match "Statements/sec", output
 
-    assert_match "Version v#{version}", shell_output("#{bin}rqlite -v")
+    assert_match "Version v#{version}", shell_output("#{bin}/rqlite -v")
   end
 end

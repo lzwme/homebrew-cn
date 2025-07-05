@@ -1,17 +1,17 @@
 class Hledger < Formula
   desc "Easy plain text accounting with command-line, terminal and web UIs"
-  homepage "https:hledger.org"
-  url "https:github.comsimonmichaelhledgerarchiverefstags1.43.2.tar.gz"
+  homepage "https://hledger.org/"
+  url "https://ghfast.top/https://github.com/simonmichael/hledger/archive/refs/tags/1.43.2.tar.gz"
   sha256 "60b74c70ddfc6b84ca87debd2ac302aac754da3c0d9089821182e56796cb841e"
   license "GPL-3.0-or-later"
-  head "https:github.comsimonmichaelhledger.git", branch: "master"
+  head "https://github.com/simonmichael/hledger.git", branch: "master"
 
   # A new version is sometimes present on Hackage before it's officially
   # released on the upstream homepage, so we check the first-party download
   # page instead.
   livecheck do
-    url "https:hledger.orginstall.html"
-    regex(%r{href=.*?tag(?:hledger[._-])?v?(\d+(?:\.\d+)+)(?:#[^"' >]+?)?["' >]}i)
+    url "https://hledger.org/install.html"
+    regex(%r{href=.*?/tag/(?:hledger[._-])?v?(\d+(?:\.\d+)+)(?:#[^"' >]+?)?["' >]}i)
   end
 
   bottle do
@@ -33,14 +33,14 @@ class Hledger < Formula
   def install
     system "stack", "update"
     system "stack", "install", "--system-ghc", "--no-install-ghc", "--skip-ghc-check", "--local-bin-path=#{bin}"
-    man1.install Dir["hledger**.1"]
-    info.install Dir["hledger**.info"]
-    bash_completion.install "hledgershell-completionhledger-completion.bash" => "hledger"
+    man1.install Dir["hledger*/*.1"]
+    info.install Dir["hledger*/*.info"]
+    bash_completion.install "hledger/shell-completion/hledger-completion.bash" => "hledger"
   end
 
   test do
-    system bin"hledger", "test"
-    system bin"hledger-ui", "--version"
-    system bin"hledger-web", "--test"
+    system bin/"hledger", "test"
+    system bin/"hledger-ui", "--version"
+    system bin/"hledger-web", "--test"
   end
 end

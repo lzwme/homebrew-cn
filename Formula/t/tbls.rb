@@ -1,10 +1,10 @@
 class Tbls < Formula
   desc "CI-Friendly tool to document a database"
-  homepage "https:github.comk1LoWtbls"
-  url "https:github.comk1LoWtblsarchiverefstagsv1.86.1.tar.gz"
+  homepage "https://github.com/k1LoW/tbls"
+  url "https://ghfast.top/https://github.com/k1LoW/tbls/archive/refs/tags/v1.86.1.tar.gz"
   sha256 "82d5dbab4000c18754f928b48d328a151a9bb3bbb85d8b6a8c5dfcfdd0d51fd3"
   license "MIT"
-  head "https:github.comk1LoWtbls.git", branch: "main"
+  head "https://github.com/k1LoW/tbls.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "48c01c437f02dfd029525151dedf2d2135ed1ac97b9a0fc7c0102eb27e8ecc81"
@@ -21,17 +21,17 @@ class Tbls < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.comk1LoWtbls.version=#{version}
-      -X github.comk1LoWtbls.date=#{time.iso8601}
-      -X github.comk1LoWtblsversion.Version=#{version}
+      -X github.com/k1LoW/tbls.version=#{version}
+      -X github.com/k1LoW/tbls.date=#{time.iso8601}
+      -X github.com/k1LoW/tbls/version.Version=#{version}
     ]
     system "go", "build", *std_go_args(ldflags:)
 
-    generate_completions_from_executable(bin"tbls", "completion")
+    generate_completions_from_executable(bin/"tbls", "completion")
   end
 
   test do
-    assert_match "unsupported driver", shell_output(bin"tbls doc", 1)
-    assert_match version.to_s, shell_output(bin"tbls version")
+    assert_match "unsupported driver", shell_output(bin/"tbls doc", 1)
+    assert_match version.to_s, shell_output(bin/"tbls version")
   end
 end

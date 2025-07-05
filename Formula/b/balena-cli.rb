@@ -1,12 +1,12 @@
 class BalenaCli < Formula
   desc "Command-line tool for interacting with the balenaCloud and balena API"
-  homepage "https:docs.balena.ioreferencebalena-clilatest"
-  url "https:registry.npmjs.orgbalena-cli-balena-cli-22.1.1.tgz"
+  homepage "https://docs.balena.io/reference/balena-cli/latest/"
+  url "https://registry.npmjs.org/balena-cli/-/balena-cli-22.1.1.tgz"
   sha256 "2ae5970eaa2f09252e136578ddb68cd6d6fc7aa95e1f3d70a206ee5381060ac4"
   license "Apache-2.0"
 
   livecheck do
-    url "https:registry.npmjs.orgbalena-clilatest"
+    url "https://registry.npmjs.org/balena-cli/latest"
     strategy :json do |json|
       json["version"]
     end
@@ -22,7 +22,7 @@ class BalenaCli < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "ebf3fccb9ca6ae40607fc9c8a997c304c3520e0d5f4a88abfeb86c8c51c95850"
   end
 
-  # need node@20, and also align with upstream, https:github.combalena-iobalena-cliblobmaster.githubactionspublishaction.yml#L21
+  # need node@20, and also align with upstream, https://github.com/balena-io/balena-cli/blob/master/.github/actions/publish/action.yml#L21
   depends_on "node@20"
 
   on_linux do
@@ -35,17 +35,17 @@ class BalenaCli < Formula
     ENV.deparallelize
 
     system "npm", "install", *std_npm_args
-    bin.install_symlink libexec.glob("bin*")
+    bin.install_symlink libexec.glob("bin/*")
 
     # Remove incompatible pre-built binaries
     os = OS.kernel_name.downcase
     arch = Hardware::CPU.intel? ? "x64" : Hardware::CPU.arch.to_s
-    node_modules = libexec"libnode_modulesbalena-clinode_modules"
-    node_modules.glob("{ffi-napi,ref-napi}prebuilds*")
+    node_modules = libexec/"lib/node_modules/balena-cli/node_modules"
+    node_modules.glob("{ffi-napi,ref-napi}/prebuilds/*")
                 .each { |dir| rm_r(dir) if dir.basename.to_s != "#{os}-#{arch}" }
 
-    rm_r(node_modules"lzma-nativebuild")
-    rm_r(node_modules"usb") if OS.linux?
+    rm_r(node_modules/"lzma-native/build")
+    rm_r(node_modules/"usb") if OS.linux?
 
     # Replace universal binaries with native slices
     deuniversalize_machos
@@ -53,6 +53,6 @@ class BalenaCli < Formula
 
   test do
     assert_match "Logging in to balena-cloud.com",
-      shell_output("#{bin}balena login --credentials --email johndoe@gmail.com --password secret 2>devnull", 1)
+      shell_output("#{bin}/balena login --credentials --email johndoe@gmail.com --password secret 2>/dev/null", 1)
   end
 end

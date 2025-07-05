@@ -1,14 +1,14 @@
 class Steampipe < Formula
   desc "Use SQL to instantly query your cloud services"
-  homepage "https:steampipe.io"
-  url "https:github.comturbotsteampipearchiverefstagsv2.0.1.tar.gz"
+  homepage "https://steampipe.io/"
+  url "https://ghfast.top/https://github.com/turbot/steampipe/archive/refs/tags/v2.0.1.tar.gz"
   sha256 "d9ef636ac596930fe88741fd3e9703df802409f17e6e2ee31648f075590d0f46"
   license "AGPL-3.0-only"
-  head "https:github.comturbotsteampipe.git", branch: "main"
+  head "https://github.com/turbot/steampipe.git", branch: "main"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -25,17 +25,17 @@ class Steampipe < Formula
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
 
-    generate_completions_from_executable(bin"steampipe", "completion")
+    generate_completions_from_executable(bin/"steampipe", "completion")
   end
 
   test do
     if OS.mac?
-      output = shell_output(bin"steampipe service status 2>&1", 255)
+      output = shell_output(bin/"steampipe service status 2>&1", 255)
       assert_match "Error: could not create logs directory", output
     else # Linux
-      output = shell_output(bin"steampipe service status 2>&1")
+      output = shell_output(bin/"steampipe service status 2>&1")
       assert_match "Steampipe service is not installed", output
     end
-    assert_match "Steampipe v#{version}", shell_output(bin"steampipe --version")
+    assert_match "Steampipe v#{version}", shell_output(bin/"steampipe --version")
   end
 end

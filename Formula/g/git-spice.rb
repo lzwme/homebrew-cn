@@ -1,10 +1,10 @@
 class GitSpice < Formula
   desc "Manage stacked Git branches"
-  homepage "https:abhinav.github.iogit-spice"
-  url "https:github.comabhinavgit-spicearchiverefstagsv0.15.1.tar.gz"
+  homepage "https://abhinav.github.io/git-spice/"
+  url "https://ghfast.top/https://github.com/abhinav/git-spice/archive/refs/tags/v0.15.1.tar.gz"
   sha256 "f10bbe6d27c68957d52859c81a0f91f11389d77c3f8ee32791040d80d5124e60"
   license "GPL-3.0-or-later"
-  head "https:github.comabhinavgit-spice.git", branch: "main"
+  head "https://github.com/abhinav/git-spice.git", branch: "main"
 
   no_autobump! because: :bumped_by_upstream
 
@@ -23,9 +23,9 @@ class GitSpice < Formula
 
   def install
     ldflags = "-s -w -X main._version=#{version}"
-    system "go", "build", *std_go_args(ldflags:, output: bin"gs")
+    system "go", "build", *std_go_args(ldflags:, output: bin/"gs")
 
-    generate_completions_from_executable(bin"gs", "shell", "completion")
+    generate_completions_from_executable(bin/"gs", "shell", "completion")
   end
 
   test do
@@ -36,11 +36,11 @@ class GitSpice < Formula
     system "git", "add", "foo"
     system "git", "commit", "-m", "bar"
 
-    assert_match "main", shell_output("#{bin}gs log long 2>&1")
+    assert_match "main", shell_output("#{bin}/gs log long 2>&1")
 
-    output = shell_output("#{bin}gs branch create feat1 2>&1", 1)
+    output = shell_output("#{bin}/gs branch create feat1 2>&1", 1)
     assert_match "error: Terminal is dumb, but EDITOR unset", output
 
-    assert_match version.to_s, shell_output("#{bin}gs --version")
+    assert_match version.to_s, shell_output("#{bin}/gs --version")
   end
 end

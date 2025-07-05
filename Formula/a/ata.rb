@@ -1,7 +1,7 @@
 class Ata < Formula
   desc "ChatGPT in the terminal"
-  homepage "https:github.comtransformrsata"
-  url "https:github.comtransformrsataarchiverefstagsv2.0.4.tar.gz"
+  homepage "https://github.com/transformrs/ata"
+  url "https://ghfast.top/https://github.com/transformrs/ata/archive/refs/tags/v2.0.4.tar.gz"
   sha256 "a70498492fce7b46a2a62175886a801f61f9f530c5c6d01b664af2750d3af555"
   license "MIT"
 
@@ -26,9 +26,9 @@ class Ata < Formula
   end
 
   test do
-    system bin"ata", "--version"
+    system bin/"ata", "--version"
 
-    config_file = testpath"configata.toml"
+    config_file = testpath/"config/ata.toml"
     config_file.write <<~TOML
       api_key = "<YOUR SECRET API KEY>"
       model = "gpt-3.5-turbo"
@@ -36,7 +36,7 @@ class Ata < Formula
       temperature = 0.8
     TOML
 
-    IO.popen("#{bin}ata --config #{config_file} 2>&1", "r+") do |pipe|
+    IO.popen("#{bin}/ata --config #{config_file} 2>&1", "r+") do |pipe|
       assert_match "Ask the Terminal Anything", pipe.gets.chomp
       assert_empty pipe.gets.chomp
       assert_match "model: gpt-3.5-turbo", pipe.gets.chomp

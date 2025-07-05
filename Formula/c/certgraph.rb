@@ -1,10 +1,10 @@
 class Certgraph < Formula
   desc "Crawl the graph of certificate Alternate Names"
-  homepage "https:lanrat.github.iocertgraph"
-  url "https:github.comlanratcertgrapharchiverefstags20220513.tar.gz"
+  homepage "https://lanrat.github.io/certgraph/"
+  url "https://ghfast.top/https://github.com/lanrat/certgraph/archive/refs/tags/20220513.tar.gz"
   sha256 "739c7a7d29de354814a8799d6c5ce4ba2236aee16ab7be980203bc7780769b47"
   license "GPL-2.0-or-later"
-  head "https:github.comlanratcertgraph.git", branch: "master"
+  head "https://github.com/lanrat/certgraph.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -27,10 +27,10 @@ class Certgraph < Formula
   end
 
   test do
-    output = shell_output("#{bin}certgraph github.io")
+    output = shell_output("#{bin}/certgraph github.io")
     assert_match "githubusercontent.com", output
     assert_match "pages.github.com", output
 
-    assert_match version.to_s, shell_output("#{bin}certgraph --version")
+    assert_match version.to_s, shell_output("#{bin}/certgraph --version")
   end
 end

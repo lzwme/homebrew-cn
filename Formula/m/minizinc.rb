@@ -1,10 +1,10 @@
 class Minizinc < Formula
   desc "Medium-level constraint modeling language"
-  homepage "https:www.minizinc.org"
-  url "https:github.comMiniZinclibminizincarchiverefstags2.9.3.tar.gz"
+  homepage "https://www.minizinc.org/"
+  url "https://ghfast.top/https://github.com/MiniZinc/libminizinc/archive/refs/tags/2.9.3.tar.gz"
   sha256 "6380c8a294232bc3c015e63b5ac247885a3ae0e57badab8e329218288e396619"
   license "MPL-2.0"
-  head "https:github.comMiniZinclibminizinc.git", branch: "develop"
+  head "https://github.com/MiniZinc/libminizinc.git", branch: "develop"
 
   bottle do
     sha256               arm64_sonoma:  "c79b4e639723b668800912165f376351716e7baca0d8b014e9055316e3032b1b"
@@ -32,18 +32,18 @@ class Minizinc < Formula
   end
 
   test do
-    (testpath"satisfy.mzn").write <<~EOS
+    (testpath/"satisfy.mzn").write <<~EOS
       array[1..2] of var bool: x;
       constraint x[1] xor x[2];
       solve satisfy;
     EOS
-    assert_match "----------", shell_output("#{bin}minizinc --solver gecode_presolver satisfy.mzn").strip
+    assert_match "----------", shell_output("#{bin}/minizinc --solver gecode_presolver satisfy.mzn").strip
 
-    (testpath"optimise.mzn").write <<~EOS
+    (testpath/"optimise.mzn").write <<~EOS
       array[1..2] of var 1..3: x;
       constraint x[1] < x[2];
       solve maximize sum(x);
     EOS
-    assert_match "==========", shell_output("#{bin}minizinc --solver cbc optimise.mzn").strip
+    assert_match "==========", shell_output("#{bin}/minizinc --solver cbc optimise.mzn").strip
   end
 end

@@ -1,10 +1,10 @@
 class Slowhttptest < Formula
   desc "Simulates application layer denial of service attacks"
-  homepage "https:github.comshekyanslowhttptest"
-  url "https:github.comshekyanslowhttptestarchiverefstagsv1.9.0.tar.gz"
+  homepage "https://github.com/shekyan/slowhttptest"
+  url "https://ghfast.top/https://github.com/shekyan/slowhttptest/archive/refs/tags/v1.9.0.tar.gz"
   sha256 "a3910b9b844e05ee55838aa17beddc6aa9d6c5c0012eab647a21cc9ccd6c8749"
   license "Apache-2.0"
-  head "https:github.comshekyanslowhttptest.git", branch: "master"
+  head "https://github.com/shekyan/slowhttptest.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -27,14 +27,14 @@ class Slowhttptest < Formula
   depends_on "openssl@3"
 
   def install
-    system ".configure", *std_configure_args, "--disable-silent-rules"
+    system "./configure", *std_configure_args, "--disable-silent-rules"
     system "make", "install"
   end
 
   test do
-    system bin"slowhttptest", "-u", "https:google.com",
+    system bin/"slowhttptest", "-u", "https://google.com",
                                   "-p", "1", "-r", "1", "-l", "1", "-i", "1"
 
-    assert_match version.to_s, shell_output("#{bin}slowhttptest -h", 1)
+    assert_match version.to_s, shell_output("#{bin}/slowhttptest -h", 1)
   end
 end

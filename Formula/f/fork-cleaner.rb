@@ -1,10 +1,10 @@
 class ForkCleaner < Formula
   desc "Cleans up old and inactive forks on your GitHub account"
-  homepage "https:github.comcaarlos0fork-cleaner"
-  url "https:github.comcaarlos0fork-cleanerarchiverefstagsv2.3.1.tar.gz"
+  homepage "https://github.com/caarlos0/fork-cleaner"
+  url "https://ghfast.top/https://github.com/caarlos0/fork-cleaner/archive/refs/tags/v2.3.1.tar.gz"
   sha256 "9fde99ed9877efc80e6940f9958468531b72a232d98c433cfe7022fd4c6018d8"
   license "MIT"
-  head "https:github.comcaarlos0fork-cleaner.git", branch: "main"
+  head "https://github.com/caarlos0/fork-cleaner.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "be8dcf5b7a339c075e68b9730dff3d8eb91995ff18000c36b4aa21eaffbc867e"
@@ -20,11 +20,11 @@ class ForkCleaner < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}"), ".cmdfork-cleaner"
+    system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}"), "./cmd/fork-cleaner"
   end
 
   test do
-    output = shell_output("#{bin}fork-cleaner 2>&1", 1)
+    output = shell_output("#{bin}/fork-cleaner 2>&1", 1)
     assert_match "missing github token", output
   end
 end

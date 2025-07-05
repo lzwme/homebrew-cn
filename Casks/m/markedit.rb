@@ -2,10 +2,10 @@ cask "markedit" do
   version "1.25.0"
   sha256 "9a02c7d1bdff092620cf74dd70b4602eff0efc54d633efc9445000c3ad96f829"
 
-  url "https:github.comMarkEdit-appMarkEditreleasesdownloadv#{version}MarkEdit-#{version}.dmg"
+  url "https://ghfast.top/https://github.com/MarkEdit-app/MarkEdit/releases/download/v#{version}/MarkEdit-#{version}.dmg"
   name "MarkEdit"
   desc "Markdown editor"
-  homepage "https:github.comMarkEdit-appMarkEdit"
+  homepage "https://github.com/MarkEdit-app/MarkEdit"
 
   livecheck do
     url :url
@@ -17,11 +17,11 @@ cask "markedit" do
   app "MarkEdit.app"
 
   zap trash: [
-    "~LibraryApplication Scriptsapp.cyan.markedit",
-    "~LibraryApplication Scriptsapp.cyan.markedit.preview-extension",
-    "~LibraryApplication Supportcom.apple.sharedfilelistcom.apple.LSSharedFileList.ApplicationRecentDocumentsapp.cyan.markedit.sfl*",
-    "~LibraryContainersapp.cyan.markedit",
-    "~LibraryContainersapp.cyan.markedit.preview-extension",
-    "~LibrarySaved Application Stateapp.cyan.markedit.savedState",
+    "~/Library/Application Scripts/app.cyan.markedit",
+    "~/Library/Application Scripts/app.cyan.markedit.preview-extension",
+    "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/app.cyan.markedit.sfl*",
+    "~/Library/Containers/app.cyan.markedit",
+    "~/Library/Containers/app.cyan.markedit.preview-extension",
+    "~/Library/Saved Application State/app.cyan.markedit.savedState",
   ]
 end

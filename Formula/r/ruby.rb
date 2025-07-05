@@ -1,32 +1,32 @@
 class Ruby < Formula
   desc "Powerful, clean, object-oriented scripting language"
-  homepage "https:www.ruby-lang.org"
+  homepage "https://www.ruby-lang.org/"
   license "Ruby"
-  head "https:github.comrubyruby.git", branch: "master"
+  head "https://github.com/ruby/ruby.git", branch: "master"
 
   stable do
     # Consider changing the default of `Gem.default_user_install` to true with Ruby 3.5.
-    # This may depend on https:github.comrubygemsrubygemsissues5682.
-    url "https:cache.ruby-lang.orgpubruby3.4ruby-3.4.4.tar.gz"
+    # This may depend on https://github.com/rubygems/rubygems/issues/5682.
+    url "https://cache.ruby-lang.org/pub/ruby/3.4/ruby-3.4.4.tar.gz"
     sha256 "a0597bfdf312e010efd1effaa8d7f1d7833146fdc17950caa8158ffa3dcbfa85"
 
     # Should be updated only when Ruby is updated (if an update is available).
     # The exception is Rubygem security fixes, which mandate updating this
     # formula & the versioned equivalents and bumping the revisions.
     resource "rubygems" do
-      url "https:rubygems.orgrubygemsrubygems-3.6.9.tgz"
+      url "https://rubygems.org/rubygems/rubygems-3.6.9.tgz"
       sha256 "ffdd46c6adbecb9dac561cc003666406efd2ed93ca21b5fcc47062025007209d"
 
       livecheck do
-        url "https:rubygems.orgpagesdownload"
-        regex(href=.*?rubygems[._-]v?(\d+(?:\.\d+)+)\.ti)
+        url "https://rubygems.org/pages/download"
+        regex(/href=.*?rubygems[._-]v?(\d+(?:\.\d+)+)\.t/i)
       end
     end
   end
 
   livecheck do
-    url "https:www.ruby-lang.orgendownloadsreleases"
-    regex(href=.*?ruby[._-]v?(\d+(?:\.\d+)+)\.ti)
+    url "https://www.ruby-lang.org/en/downloads/releases/"
+    regex(/href=.*?ruby[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   bottle do
@@ -54,7 +54,7 @@ class Ruby < Formula
   uses_from_macos "zlib"
 
   def determine_api_version
-    Utils.safe_popen_read(bin"ruby", "-e", "print Gem.ruby_api_version")
+    Utils.safe_popen_read(bin/"ruby", "-e", "print Gem.ruby_api_version")
   end
 
   def api_version
@@ -71,7 +71,7 @@ class Ruby < Formula
   end
 
   def rubygems_bindir
-    HOMEBREW_PREFIX"librubygems#{api_version}bin"
+    HOMEBREW_PREFIX/"lib/ruby/gems/#{api_version}/bin"
   end
 
   def install
@@ -79,19 +79,19 @@ class Ruby < Formula
     ENV.delete("SDKROOT")
 
     # Prevent `make` from trying to install headers into the SDK
-    # TODO: Remove this workaround when the following PR is mergedresolved:
-    #       https:github.comHomebrewbrewpull12508
-    inreplace "toolmkconfig.rb", ^(\s+val = )'"\$\(SDKROOT\)"'\+, "\\1"
+    # TODO: Remove this workaround when the following PR is merged/resolved:
+    #       https://github.com/Homebrew/brew/pull/12508
+    inreplace "tool/mkconfig.rb", /^(\s+val = )'"\$\(SDKROOT\)"'\+/, "\\1"
 
-    system ".autogen.sh" if build.head?
+    system "./autogen.sh" if build.head?
 
     paths = %w[libyaml openssl@3].map { |f| Formula[f].opt_prefix }
     args = %W[
       --prefix=#{prefix}
       --enable-shared
       --disable-silent-rules
-      --with-sitedir=#{HOMEBREW_PREFIX}librubysite_ruby
-      --with-vendordir=#{HOMEBREW_PREFIX}librubyvendor_ruby
+      --with-sitedir=#{HOMEBREW_PREFIX}/lib/ruby/site_ruby
+      --with-vendordir=#{HOMEBREW_PREFIX}/lib/ruby/vendor_ruby
       --with-opt-dir=#{paths.join(":")}
       --without-gmp
     ]
@@ -99,13 +99,13 @@ class Ruby < Formula
     args << "--disable-dtrace" if OS.mac? && !MacOS::CLT.installed?
 
     # Correct MJIT_CC to not use superenv shim
-    args << "MJIT_CC=usrbin#{DevelopmentTools.default_compiler}"
+    args << "MJIT_CC=/usr/bin/#{DevelopmentTools.default_compiler}"
 
     # Avoid stdckdint.h on macOS 15 as it's not available in Xcode 16.0-16.2,
     # and if the build system picks it up it'll use it for runtime builds too.
     args << "ac_cv_header_stdckdint_h=no" if OS.mac? && MacOS.version == :sequoia
 
-    system ".configure", *args
+    system "./configure", *args
 
     # Ruby has been configured to look in the HOMEBREW_PREFIX for the
     # sitedir and vendordir directories; however we don't actually want to create
@@ -113,7 +113,7 @@ class Ruby < Formula
     #
     # These directories are empty on install; sitedir is used for non-rubygems
     # third party libraries, and vendordir is used for packager-provided libraries.
-    inreplace "toolrbinstall.rb" do |s|
+    inreplace "tool/rbinstall.rb" do |s|
       s.gsub! 'prepare "extension scripts", sitelibdir', ""
       s.gsub! 'prepare "extension scripts", vendorlibdir', ""
       s.gsub! 'prepare "extension objects", sitearchlibdir', ""
@@ -124,18 +124,18 @@ class Ruby < Formula
     system "make", "install"
 
     # A newer version of ruby-mode.el is shipped with Emacs
-    elisp.install Dir["misc*.el"].reject { |f| f == "miscruby-mode.el" }
+    elisp.install Dir["misc/*.el"].reject { |f| f == "misc/ruby-mode.el" }
 
     if OS.linux?
       arch = Utils.safe_popen_read(
-        bin"ruby", "-rrbconfig", "-e", 'print RbConfig::CONFIG["arch"]'
+        bin/"ruby", "-rrbconfig", "-e", 'print RbConfig::CONFIG["arch"]'
       ).chomp
       # Don't restrict to a specific GCC compiler binary we used (e.g. gcc-5).
-      inreplace lib"ruby#{api_version}#{arch}rbconfig.rb" do |s|
+      inreplace lib/"ruby/#{api_version}/#{arch}/rbconfig.rb" do |s|
         s.gsub! ENV.cxx, "c++"
         s.gsub! ENV.cc, "cc"
         # Change e.g. `CONFIG["AR"] = "gcc-ar-11"` to `CONFIG["AR"] = "ar"`
-        s.gsub!((CONFIG\[".+"\] = )"(?:gcc|g\+\+)-(.*)-\d+", '\\1"\\2"')
+        s.gsub!(/(CONFIG\[".+"\] = )"(?:gcc|g\+\+)-(.*)-\d+"/, '\\1"\\2"')
       end
     end
 
@@ -145,44 +145,44 @@ class Ruby < Formula
       resource("rubygems").stage do
         ENV.prepend_path "PATH", bin
 
-        system bin"ruby", "setup.rb", "--prefix=#{buildpath}vendor_gem"
-        rg_in = lib"ruby#{api_version}"
-        rg_gems_in = lib"rubygems#{api_version}"
+        system bin/"ruby", "setup.rb", "--prefix=#{buildpath}/vendor_gem"
+        rg_in = lib/"ruby/#{api_version}"
+        rg_gems_in = lib/"ruby/gems/#{api_version}"
 
         # Remove bundled Rubygem and Bundler
-        rm_r rg_in"bundler"
-        rm rg_in"bundler.rb"
-        rm_r Dir[rg_gems_in"gemsbundler-*"]
-        rm Dir[rg_gems_in"specificationsdefaultbundler-*.gemspec"]
-        rm_r rg_in"rubygems"
-        rm rg_in"rubygems.rb"
-        rm bin"gem"
+        rm_r rg_in/"bundler"
+        rm rg_in/"bundler.rb"
+        rm_r Dir[rg_gems_in/"gems/bundler-*"]
+        rm Dir[rg_gems_in/"specifications/default/bundler-*.gemspec"]
+        rm_r rg_in/"rubygems"
+        rm rg_in/"rubygems.rb"
+        rm bin/"gem"
 
         # Drop in the new version.
-        rg_in.install Dir[buildpath"vendor_gemlib*"]
-        (rg_gems_in"gems").install Dir[buildpath"vendor_gemgems*"]
-        (rg_gems_in"specificationsdefault").install Dir[buildpath"vendor_gemspecificationsdefault*"]
-        bin.install buildpath"vendor_gembingem" => "gem"
-        bin.install buildpath"vendor_gembinbundle" => "bundle"
-        bin.install buildpath"vendor_gembinbundler" => "bundler"
+        rg_in.install Dir[buildpath/"vendor_gem/lib/*"]
+        (rg_gems_in/"gems").install Dir[buildpath/"vendor_gem/gems/*"]
+        (rg_gems_in/"specifications/default").install Dir[buildpath/"vendor_gem/specifications/default/*"]
+        bin.install buildpath/"vendor_gem/bin/gem" => "gem"
+        bin.install buildpath/"vendor_gem/bin/bundle" => "bundle"
+        bin.install buildpath/"vendor_gem/bin/bundler" => "bundler"
       end
     end
 
-    # Customize rubygems to lookinstall in the global gem directory
+    # Customize rubygems to look/install in the global gem directory
     # instead of in the Cellar, making gems last across reinstalls
-    config_file = lib"ruby#{api_version}rubygemsdefaultsoperating_system.rb"
+    config_file = lib/"ruby/#{api_version}/rubygems/defaults/operating_system.rb"
     config_file.write rubygems_config
   end
 
   def post_install
-    # Since Gem ships Bundle we want to provide that fullexpected installation
+    # Since Gem ships Bundle we want to provide that full/expected installation
     # but to do so we need to handle the case where someone has previously
     # installed bundle manually via `gem install`.
     rm(%W[
-      #{rubygems_bindir}bundle
-      #{rubygems_bindir}bundler
+      #{rubygems_bindir}/bundle
+      #{rubygems_bindir}/bundler
     ].select { |file| File.exist?(file) })
-    rm_r(Dir[HOMEBREW_PREFIX"librubygems#{api_version}gemsbundler-*"])
+    rm_r(Dir[HOMEBREW_PREFIX/"lib/ruby/gems/#{api_version}/gems/bundler-*"])
   end
 
   def rubygems_config
@@ -246,11 +246,11 @@ class Ruby < Formula
         end
 
         def self.ruby
-          "#{opt_bin}ruby"
+          "#{opt_bin}/ruby"
         end
 
-        # https:github.comHomebrewhomebrew-coreissues40872#issuecomment-542092547
-        # https:github.comHomebrewhomebrew-corepull48329#issuecomment-584418161
+        # https://github.com/Homebrew/homebrew-core/issues/40872#issuecomment-542092547
+        # https://github.com/Homebrew/homebrew-core/pull/48329#issuecomment-584418161
         def self.default_specifications_dir
           File.join(Gem.old_default_dir, "specifications", "default")
         end
@@ -268,20 +268,20 @@ class Ruby < Formula
   end
 
   test do
-    hello_text = shell_output("#{bin}ruby -e 'puts :hello'")
+    hello_text = shell_output("#{bin}/ruby -e 'puts :hello'")
     assert_equal "hello\n", hello_text
 
     assert_equal api_version, determine_api_version
 
     ENV["GEM_HOME"] = testpath
-    system bin"gem", "install", "json"
+    system bin/"gem", "install", "json"
 
-    (testpath"Gemfile").write <<~EOS
-      source 'https:rubygems.org'
+    (testpath/"Gemfile").write <<~EOS
+      source 'https://rubygems.org'
       gem 'github-markup'
     EOS
-    system bin"bundle", "exec", "ls" # https:github.comHomebrewhomebrew-coreissues53247
-    system bin"bundle", "install", "--binstubs=#{testpath}bin"
-    assert_path_exists testpath"bingithub-markup", "github-markup is not installed in #{testpath}bin"
+    system bin/"bundle", "exec", "ls" # https://github.com/Homebrew/homebrew-core/issues/53247
+    system bin/"bundle", "install", "--binstubs=#{testpath}/bin"
+    assert_path_exists testpath/"bin/github-markup", "github-markup is not installed in #{testpath}/bin"
   end
 end

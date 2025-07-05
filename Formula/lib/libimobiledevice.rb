@@ -1,7 +1,7 @@
 class Libimobiledevice < Formula
   desc "Library to communicate with iOS devices natively"
-  homepage "https:www.libimobiledevice.org"
-  url "https:github.comlibimobiledevicelibimobiledevicereleasesdownload1.3.0libimobiledevice-1.3.0.tar.bz2"
+  homepage "https://www.libimobiledevice.org/"
+  url "https://ghfast.top/https://github.com/libimobiledevice/libimobiledevice/releases/download/1.3.0/libimobiledevice-1.3.0.tar.bz2"
   sha256 "53f2640c6365cd9f302a6248f531822dc94a6cced3f17128d4479a77bd75b0f6"
   license "LGPL-2.1-or-later"
   revision 3
@@ -22,7 +22,7 @@ class Libimobiledevice < Formula
   # libimobiledevice-glue is required for building future versions
   # Move outside of HEAD clause when there's a new release.
   head do
-    url "https:github.comlibimobiledevicelibimobiledevice.git", branch: "master"
+    url "https://github.com/libimobiledevice/libimobiledevice.git", branch: "master"
     depends_on "libimobiledevice-glue"
     depends_on "libtatsu"
   end
@@ -39,8 +39,8 @@ class Libimobiledevice < Formula
   def install
     # Make libimobiledevice work with libplist 2.3.0
     # Remove this once libimobiledevice gets a new release
-    inreplace "commonutils.h", "PLIST_FORMAT_XML", "PLIST_FORMAT_XML_" if build.stable?
-    inreplace "commonutils.h", "PLIST_FORMAT_BINARY", "PLIST_FORMAT_BINARY_" if build.stable?
+    inreplace "common/utils.h", "PLIST_FORMAT_XML", "PLIST_FORMAT_XML_" if build.stable?
+    inreplace "common/utils.h", "PLIST_FORMAT_BINARY", "PLIST_FORMAT_BINARY_" if build.stable?
 
     # As long as libplist builds without Cython bindings,
     # so should libimobiledevice as well.
@@ -50,12 +50,12 @@ class Libimobiledevice < Formula
       --enable-debug
     ]
 
-    configure = build.head? ? ".autogen.sh" : ".configure"
+    configure = build.head? ? "./autogen.sh" : "./configure"
     system configure, *args, *std_configure_args
     system "make", "install"
   end
 
   test do
-    system bin"idevicedate", "--help"
+    system bin/"idevicedate", "--help"
   end
 end

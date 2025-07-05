@@ -1,14 +1,14 @@
 class Asdf < Formula
   desc "Extendable version manager with support for Ruby, Node.js, Erlang & more"
-  homepage "https:asdf-vm.com"
-  url "https:github.comasdf-vmasdfarchiverefstagsv0.18.0.tar.gz"
+  homepage "https://asdf-vm.com/"
+  url "https://ghfast.top/https://github.com/asdf-vm/asdf/archive/refs/tags/v0.18.0.tar.gz"
   sha256 "c452a886503277260b7c82c07031800340f892bb2147bb3af67dca7268a410b5"
   license "MIT"
-  head "https:github.comasdf-vmasdf.git", branch: "master"
+  head "https://github.com/asdf-vm/asdf.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -25,17 +25,17 @@ class Asdf < Formula
   depends_on "git"
 
   def install
-    # fix https:github.comasdf-vmasdfissues1992
-    # relates to https:github.comHomebrewhomebrew-coreissues163826
+    # fix https://github.com/asdf-vm/asdf/issues/1992
+    # relates to https://github.com/Homebrew/homebrew-core/issues/163826
     ENV["CGO_ENABLED"] = OS.mac? ? "1" : "0"
 
-    system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}"), ".cmdasdf"
-    generate_completions_from_executable(bin"asdf", "completion")
+    system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}"), "./cmd/asdf"
+    generate_completions_from_executable(bin/"asdf", "completion")
     libexec.install Dir["asdf.*"]
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}asdf version")
-    assert_match "No plugins installed", shell_output("#{bin}asdf plugin list 2>&1")
+    assert_match version.to_s, shell_output("#{bin}/asdf version")
+    assert_match "No plugins installed", shell_output("#{bin}/asdf plugin list 2>&1")
   end
 end

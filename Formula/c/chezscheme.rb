@@ -1,7 +1,7 @@
 class Chezscheme < Formula
   desc "Implementation of the Chez Scheme language"
-  homepage "https:cisco.github.ioChezScheme"
-  url "https:github.comciscoChezSchemereleasesdownloadv10.2.0csv10.2.0.tar.gz"
+  homepage "https://cisco.github.io/ChezScheme/"
+  url "https://ghfast.top/https://github.com/cisco/ChezScheme/releases/download/v10.2.0/csv10.2.0.tar.gz"
   sha256 "b795916d4cfed59240c5f44b1b507a8657efd28e62e72e134d03486e9f3e374a"
   license "Apache-2.0"
 
@@ -20,10 +20,10 @@ class Chezscheme < Formula
   uses_from_macos "ncurses"
 
   def install
-    inreplace "cversion.h", "usrX11R6", Formula["libx11"].opt_prefix
-    inreplace "cexpeditor.c", "usrX11binresize", Formula["xterm"].opt_bin"resize"
+    inreplace "c/version.h", "/usr/X11R6", Formula["libx11"].opt_prefix
+    inreplace "c/expeditor.c", "/usr/X11/bin/resize", Formula["xterm"].opt_bin/"resize"
 
-    system ".configure",
+    system "./configure",
               "--installprefix=#{prefix}",
               "--threads",
               "--installschemename=chez"
@@ -32,7 +32,7 @@ class Chezscheme < Formula
   end
 
   test do
-    (testpath"hello.ss").write <<~SCHEME
+    (testpath/"hello.ss").write <<~SCHEME
       (display "Hello, World!") (newline)
     SCHEME
 
@@ -40,6 +40,6 @@ class Chezscheme < Formula
       Hello, World!
     EOS
 
-    assert_equal expected, shell_output("#{bin}chez --script hello.ss")
+    assert_equal expected, shell_output("#{bin}/chez --script hello.ss")
   end
 end

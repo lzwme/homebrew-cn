@@ -2,12 +2,12 @@ cask "font-spectral-sc" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefonts.git",
-      verified:  "github.comgooglefonts",
+  url "https://github.com/google/fonts.git",
+      verified:  "github.com/google/fonts",
       branch:    "main",
-      only_path: "oflspectralsc"
+      only_path: "ofl/spectralsc"
   name "Spectral SC"
-  homepage "https:fonts.google.comspecimenSpectral+SC"
+  homepage "https://fonts.google.com/specimen/Spectral+SC"
 
   font "SpectralSC-Bold.ttf"
   font "SpectralSC-BoldItalic.ttf"

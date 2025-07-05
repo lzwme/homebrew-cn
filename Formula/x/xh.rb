@@ -1,10 +1,10 @@
 class Xh < Formula
   desc "Friendly and fast tool for sending HTTP requests"
-  homepage "https:github.comducaalexh"
-  url "https:github.comducaalexharchiverefstagsv0.24.1.tar.gz"
+  homepage "https://github.com/ducaale/xh"
+  url "https://ghfast.top/https://github.com/ducaale/xh/archive/refs/tags/v0.24.1.tar.gz"
   sha256 "c5902052c66e20fd2c0b49db14edb027f54500b502108327e17260c64a42edee"
   license "MIT"
-  head "https:github.comducaalexh.git", branch: "master"
+  head "https://github.com/ducaale/xh.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "0f01773b794e7e494e39bde6660a2b3cd31512a80f9b777eac95b2418ba60f66"
@@ -20,16 +20,16 @@ class Xh < Formula
 
   def install
     system "cargo", "install", *std_cargo_args
-    bin.install_symlink bin"xh" => "xhs"
+    bin.install_symlink bin/"xh" => "xhs"
 
-    man1.install "docxh.1"
-    bash_completion.install "completionsxh.bash" => "xh"
-    fish_completion.install "completionsxh.fish"
-    zsh_completion.install "completions_xh"
+    man1.install "doc/xh.1"
+    bash_completion.install "completions/xh.bash" => "xh"
+    fish_completion.install "completions/xh.fish"
+    zsh_completion.install "completions/_xh"
   end
 
   test do
-    hash = JSON.parse(shell_output("#{bin}xh -I -f POST https:httpbin.orgpost foo=bar"))
+    hash = JSON.parse(shell_output("#{bin}/xh -I -f POST https://httpbin.org/post foo=bar"))
     assert_equal hash["form"]["foo"], "bar"
   end
 end

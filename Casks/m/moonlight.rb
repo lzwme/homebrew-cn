@@ -2,11 +2,11 @@ cask "moonlight" do
   version "6.1.0"
   sha256 "d494740eead8ad4e620cdc8feedb56083bc29cabbbeef34cb82585fd87725fa2"
 
-  url "https:github.commoonlight-streammoonlight-qtreleasesdownloadv#{version}Moonlight-#{version}.dmg",
-      verified: "github.commoonlight-streammoonlight-qt"
+  url "https://ghfast.top/https://github.com/moonlight-stream/moonlight-qt/releases/download/v#{version}/Moonlight-#{version}.dmg",
+      verified: "github.com/moonlight-stream/moonlight-qt/"
   name "Moonlight"
   desc "GameStream client"
-  homepage "https:moonlight-stream.org"
+  homepage "https://moonlight-stream.org/"
 
   no_autobump! because: :requires_manual_review
 
@@ -15,8 +15,8 @@ cask "moonlight" do
   app "Moonlight.app"
 
   zap trash: [
-    "~LibraryCachesMoonlight Game Streaming Project",
-    "~LibraryPreferencescom.moonlight-stream.Moonlight.plist",
-    "~LibrarySaved Application Statecom.moonlight-stream.Moonlight.savedState",
+    "~/Library/Caches/Moonlight Game Streaming Project",
+    "~/Library/Preferences/com.moonlight-stream.Moonlight.plist",
+    "~/Library/Saved Application State/com.moonlight-stream.Moonlight.savedState",
   ]
 end

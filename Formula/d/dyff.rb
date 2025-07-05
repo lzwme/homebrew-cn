@@ -1,10 +1,10 @@
 class Dyff < Formula
   desc "Diff tool for YAML files, and sometimes JSON"
-  homepage "https:github.comhomeportdyff"
-  url "https:github.comhomeportdyffarchiverefstagsv1.10.1.tar.gz"
+  homepage "https://github.com/homeport/dyff"
+  url "https://ghfast.top/https://github.com/homeport/dyff/archive/refs/tags/v1.10.1.tar.gz"
   sha256 "8f20ba3580fbb45957211efdf5ac4fc60dd339a2f798db0ecf521c930fdb0be0"
   license "MIT"
-  head "https:github.comhomeportdyff.git", branch: "main"
+  head "https://github.com/homeport/dyff.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "d709739f34f69642ebbadc8aa382b0ef0a4914593dbf31722ad409a79007fd2b"
@@ -18,26 +18,26 @@ class Dyff < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = "-s -w -X github.comhomeportdyffinternalcmd.version=#{version}"
-    system "go", "build", *std_go_args(ldflags:), ".cmddyff"
+    ldflags = "-s -w -X github.com/homeport/dyff/internal/cmd.version=#{version}"
+    system "go", "build", *std_go_args(ldflags:), "./cmd/dyff"
 
-    generate_completions_from_executable(bin"dyff", "completion")
+    generate_completions_from_executable(bin/"dyff", "completion")
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}dyff version")
+    assert_match version.to_s, shell_output("#{bin}/dyff version")
 
-    (testpath"file1.yaml").write <<~YAML
+    (testpath/"file1.yaml").write <<~YAML
       name: Alice
       age: 30
     YAML
 
-    (testpath"file2.yaml").write <<~YAML
+    (testpath/"file2.yaml").write <<~YAML
       name: Alice
       age: 31
     YAML
 
-    output = shell_output("#{bin}dyff between file1.yaml file2.yaml")
+    output = shell_output("#{bin}/dyff between file1.yaml file2.yaml")
     assert_match <<~EOS, output
       age
         ± value change

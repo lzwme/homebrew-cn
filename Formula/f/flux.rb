@@ -1,11 +1,11 @@
 class Flux < Formula
   desc "Lightweight scripting language for querying databases"
-  homepage "https:www.influxdata.comproductsflux"
-  url "https:github.cominfluxdataflux.git",
+  homepage "https://www.influxdata.com/products/flux/"
+  url "https://github.com/influxdata/flux.git",
       tag:      "v0.197.0",
       revision: "6f5f1c0c24c7da7a705f9805c2782ba091599c5f"
   license "MIT"
-  head "https:github.cominfluxdataflux.git", branch: "master"
+  head "https://github.com/influxdata/flux.git", branch: "master"
 
   livecheck do
     url :stable
@@ -30,12 +30,12 @@ class Flux < Formula
   # NOTE: The version here is specified in the go.mod of influxdb.
   # If you're upgrading to a newer influxdb version, check to see if this needs upgraded too.
   resource "pkg-config-wrapper" do
-    url "https:github.cominfluxdatapkg-configarchiverefstagsv0.3.0.tar.gz"
+    url "https://ghfast.top/https://github.com/influxdata/pkg-config/archive/refs/tags/v0.3.0.tar.gz"
     sha256 "769deabe12733224eaebbfff3b5a9d69491b0158bdf58bbbbc7089326d33a9c8"
 
     livecheck do
-      url "https:raw.githubusercontent.cominfluxdatafluxv#{LATEST_VERSION}go.mod"
-      regex(pkg-config\s+v?(\d+(?:\.\d+)+)i)
+      url "https://ghfast.top/https://raw.githubusercontent.com/influxdata/flux/v#{LATEST_VERSION}/go.mod"
+      regex(/pkg-config\s+v?(\d+(?:\.\d+)+)/i)
     end
   end
 
@@ -43,21 +43,21 @@ class Flux < Formula
     # Set up the influxdata pkg-config wrapper to enable just-in-time compilation & linking
     # of the Rust components in the server.
     resource("pkg-config-wrapper").stage do
-      system "go", "build", *std_go_args(output: buildpath"bootstrappkg-config")
+      system "go", "build", *std_go_args(output: buildpath/"bootstrap/pkg-config")
     end
-    ENV.prepend_path "PATH", buildpath"bootstrap"
+    ENV.prepend_path "PATH", buildpath/"bootstrap"
 
     system "make", "build"
-    system "go", "build", *std_go_args(ldflags: "-s -w"), ".cmdflux"
-    include.install "libfluxincludeinfluxdata"
-    lib.install Dir["libfluxtarget*releaselibflux.{dylib,a,so}"]
+    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/flux"
+    include.install "libflux/include/influxdata"
+    lib.install Dir["libflux/target/*/release/libflux.{dylib,a,so}"]
   end
 
   test do
-    (testpath"test.flux").write <<~EOS
+    (testpath/"test.flux").write <<~EOS
       1.0   + 2.0
     EOS
-    system bin"flux", "fmt", "--write-result-to-source", testpath"test.flux"
-    assert_equal "1.0 + 2.0\n", (testpath"test.flux").read
+    system bin/"flux", "fmt", "--write-result-to-source", testpath/"test.flux"
+    assert_equal "1.0 + 2.0\n", (testpath/"test.flux").read
   end
 end

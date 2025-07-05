@@ -2,11 +2,11 @@
 # needed to use macOS DBI and to avoid overlinking to libraries like `zlib`.
 class PerlDbdMysql < Formula
   desc "MySQL driver for the Perl5 Database Interface (DBI)"
-  homepage "https:dbi.perl.org"
-  url "https:cpan.metacpan.orgauthorsidDDVDVEEDENDBD-mysql-5.012.tar.gz"
+  homepage "https://dbi.perl.org/"
+  url "https://cpan.metacpan.org/authors/id/D/DV/DVEEDEN/DBD-mysql-5.012.tar.gz"
   sha256 "f54ad1bb7ae167e26cd557b5e1b87f7fa49c1dd126f3523eaace6e5c19dbaf46"
   license any_of: ["Artistic-1.0-Perl", "GPL-1.0-or-later"]
-  head "https:github.comperl5-dbiDBD-mysql.git", branch: "master"
+  head "https://github.com/perl5-dbi/DBD-mysql.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "a818c34194b7033c3468ec5d901cdbf66afe40d5a4efccb7d634eecd773b0677"
@@ -29,24 +29,24 @@ class PerlDbdMysql < Formula
   uses_from_macos "perl"
 
   resource "Devel::CheckLib" do
-    url "https:cpan.metacpan.orgauthorsidMMAMATTNDevel-CheckLib-1.16.tar.gz"
+    url "https://cpan.metacpan.org/authors/id/M/MA/MATTN/Devel-CheckLib-1.16.tar.gz"
     sha256 "869d38c258e646dcef676609f0dd7ca90f085f56cf6fd7001b019a5d5b831fca"
   end
 
   resource "DBI" do
     on_linux do
-      url "https:cpan.metacpan.orgauthorsidHHMHMBRANDDBI-1.647.tgz"
+      url "https://cpan.metacpan.org/authors/id/H/HM/HMBRAND/DBI-1.647.tgz"
       sha256 "0df16af8e5b3225a68b7b592ab531004ddb35a9682b50300ce50174ad867d9aa"
     end
   end
 
   def install
-    ENV.prepend_create_path "PERL5LIB", buildpath"build_depslibperl5"
-    ENV.prepend_create_path "PERL5LIB", libexec"libperl5"
+    ENV.prepend_create_path "PERL5LIB", buildpath/"build_deps/lib/perl5"
+    ENV.prepend_create_path "PERL5LIB", libexec/"lib/perl5"
 
     resources.each do |r|
       r.stage do
-        install_base = (r.name == "Devel::CheckLib") ? buildpath"build_deps" : libexec
+        install_base = (r.name == "Devel::CheckLib") ? buildpath/"build_deps" : libexec
         system "perl", "Makefile.PL", "INSTALL_BASE=#{install_base}", "INSTALLMAN1DIR=none", "INSTALLMAN3DIR=none"
         system "make", "install"
       end
@@ -63,7 +63,7 @@ class PerlDbdMysql < Formula
         old_dbi_instarch_dir = s.get_make_var("DBI_INSTARCH_DIR")
         new_dbi_instarch_dir = "#{MacOS.sdk_path_if_needed}#{old_dbi_instarch_dir}"
         s.change_make_var! "DBI_INSTARCH_DIR", new_dbi_instarch_dir
-        s.gsub! " #{old_dbi_instarch_dir}Driver_xst.h", " #{new_dbi_instarch_dir}Driver_xst.h"
+        s.gsub! " #{old_dbi_instarch_dir}/Driver_xst.h", " #{new_dbi_instarch_dir}/Driver_xst.h"
       end
     end
 
@@ -71,9 +71,9 @@ class PerlDbdMysql < Formula
   end
 
   test do
-    perl = OS.mac? ? "usrbinperl" : Formula["perl"].bin"perl"
+    perl = OS.mac? ? "/usr/bin/perl" : Formula["perl"].bin/"perl"
     port = free_port
-    socket = testpath"mysql.sock"
+    socket = testpath/"mysql.sock"
     mysql = Formula["mysql"]
     mysqld_args = %W[
       --no-defaults
@@ -82,13 +82,13 @@ class PerlDbdMysql < Formula
       --port=#{port}
       --socket=#{socket}
       --basedir=#{mysql.prefix}
-      --datadir=#{testpath}mysql
-      --tmpdir=#{testpath}tmp
+      --datadir=#{testpath}/mysql
+      --tmpdir=#{testpath}/tmp
     ]
 
-    (testpath"mysql").mkpath
-    (testpath"tmp").mkpath
-    (testpath"test.pl").write <<~PERL
+    (testpath/"mysql").mkpath
+    (testpath/"tmp").mkpath
+    (testpath/"test.pl").write <<~PERL
       use strict;
       use warnings;
       use DBI;
@@ -106,13 +106,13 @@ class PerlDbdMysql < Formula
       $dbh->disconnect();
     PERL
 
-    system mysql.bin"mysqld", *mysqld_args, "--initialize-insecure"
-    pid = spawn(mysql.bin"mysqld", *mysqld_args)
-    with_env(PERL5LIB: libexec"libperl5") do
+    system mysql.bin/"mysqld", *mysqld_args, "--initialize-insecure"
+    pid = spawn(mysql.bin/"mysqld", *mysqld_args)
+    with_env(PERL5LIB: libexec/"lib/perl5") do
       sleep 5
       assert_equal "1,Tim\n2,Jochen\n", shell_output("#{perl} test.pl")
     ensure
-      system mysql.bin"mysqladmin", "--port=#{port}", "--socket=#{socket}", "--user=root", "--password=", "shutdown"
+      system mysql.bin/"mysqladmin", "--port=#{port}", "--socket=#{socket}", "--user=root", "--password=", "shutdown"
       Process.kill "TERM", pid
     end
   end

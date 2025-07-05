@@ -2,12 +2,12 @@ cask "font-open-sans-hebrew" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefonts.git",
-      verified:  "github.comgooglefonts",
+  url "https://github.com/google/fonts.git",
+      verified:  "github.com/google/fonts",
       branch:    "main",
-      only_path: "apacheopensanshebrew"
+      only_path: "apache/opensanshebrew"
   name "Open Sans Hebrew"
-  homepage "https:fonts.google.comearlyaccess"
+  homepage "https://fonts.google.com/earlyaccess"
 
   font "OpenSansHebrew-Bold.ttf"
   font "OpenSansHebrew-BoldItalic.ttf"

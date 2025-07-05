@@ -1,10 +1,10 @@
 class Shpotify < Formula
   desc "Command-line interface for Spotify on a Mac"
-  homepage "https:harishnarayanan.orgprojectsshpotify"
-  url "https:github.comhnarayananshpotifyarchiverefstags2.1.tar.gz"
+  homepage "https://harishnarayanan.org/projects/shpotify/"
+  url "https://ghfast.top/https://github.com/hnarayanan/shpotify/archive/refs/tags/2.1.tar.gz"
   sha256 "b41d8798687be250d0306ac0c5a79420fa46619c5954286711a5d63c86a6c071"
   license "MIT"
-  head "https:github.comhnarayananshpotify.git", branch: "master"
+  head "https://github.com/hnarayanan/shpotify.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -18,6 +18,6 @@ class Shpotify < Formula
   end
 
   test do
-    system bin"spotify"
+    system bin/"spotify"
   end
 end

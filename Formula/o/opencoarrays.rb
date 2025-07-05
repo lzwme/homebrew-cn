@@ -1,11 +1,11 @@
 class Opencoarrays < Formula
   desc "Open-source coarray Fortran ABI, API, and compiler wrapper"
-  homepage "http:www.opencoarrays.org"
-  url "https:github.comsourceryinstituteOpenCoarraysreleasesdownload2.10.2OpenCoarrays-2.10.2.tar.gz"
+  homepage "http://www.opencoarrays.org"
+  url "https://ghfast.top/https://github.com/sourceryinstitute/OpenCoarrays/releases/download/2.10.2/OpenCoarrays-2.10.2.tar.gz"
   sha256 "e13f0dc54b966b0113deed7f407514d131990982ad0fe4dea6b986911d26890c"
   license "BSD-3-Clause"
   revision 5
-  head "https:github.comsourceryinstituteopencoarrays.git", branch: "main"
+  head "https://github.com/sourceryinstitute/opencoarrays.git", branch: "main"
 
   no_autobump! because: :requires_manual_review
 
@@ -28,15 +28,15 @@ class Opencoarrays < Formula
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 
-    # Replace `open-mpi` Cellar path that breaks on `open-mpi` versionrevision bumps.
+    # Replace `open-mpi` Cellar path that breaks on `open-mpi` version/revision bumps.
     # CMake FindMPI uses REALPATH so there isn't a clean way to handle during generation.
     openmpi = Formula["open-mpi"]
-    inreplace_files = [bin"caf", lib"cmakeopencoarraysOpenCoarraysTargets.cmake"]
+    inreplace_files = [bin/"caf", lib/"cmake/opencoarrays/OpenCoarraysTargets.cmake"]
     inreplace inreplace_files, openmpi.prefix.realpath, openmpi.opt_prefix
   end
 
   test do
-    (testpath"tally.f90").write <<~FORTRAN
+    (testpath/"tally.f90").write <<~FORTRAN
       program main
         use iso_c_binding, only : c_int
         use iso_fortran_env, only : error_unit
@@ -46,7 +46,7 @@ class Opencoarrays < Formula
         call co_sum(tally)
         verify: block
           integer(c_int) :: image
-          if (tally=sum([(image,image=1,num_images())])) then
+          if (tally/=sum([(image,image=1,num_images())])) then
              write(error_unit,'(a,i5)') "Incorrect tally on image ",this_image()
              error stop 2
           end if
@@ -56,8 +56,8 @@ class Opencoarrays < Formula
         if (this_image()==1) write(*,*) "Test passed"
       end program
     FORTRAN
-    system bin"caf", "tally.f90", "-o", "tally"
-    system bin"cafrun", "-np", "3", "--oversubscribe", ".tally"
-    assert_match Formula["open-mpi"].opt_lib.to_s, shell_output("#{bin}caf --show")
+    system bin/"caf", "tally.f90", "-o", "tally"
+    system bin/"cafrun", "-np", "3", "--oversubscribe", "./tally"
+    assert_match Formula["open-mpi"].opt_lib.to_s, shell_output("#{bin}/caf --show")
   end
 end

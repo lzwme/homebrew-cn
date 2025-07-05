@@ -1,10 +1,10 @@
 class Libcotp < Formula
   desc "C library that generates TOTP and HOTP"
-  homepage "https:github.compaolostivaninlibcotp"
-  url "https:github.compaolostivaninlibcotparchiverefstagsv3.1.0.tar.gz"
+  homepage "https://github.com/paolostivanin/libcotp"
+  url "https://ghfast.top/https://github.com/paolostivanin/libcotp/archive/refs/tags/v3.1.0.tar.gz"
   sha256 "a48bbfd95b7ec12d23e4e2c4a017f8acddecc14bf10541ff144563cee044b39c"
   license "Apache-2.0"
-  head "https:github.compaolostivaninlibcotp.git", branch: "master"
+  head "https://github.com/paolostivanin/libcotp.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "a55767669aadfbc33ca5047a9bf5a1371ebaf4ccb3c9e3e14a3296516f0702e9"
@@ -27,7 +27,7 @@ class Libcotp < Formula
   end
 
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include <stdio.h>
       #include <stdlib.h>
       #include <string.h>
@@ -52,6 +52,6 @@ class Libcotp < Formula
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lcotp", "-o", "test"
 
     expected_output = %w[94287082 07081804 14050471 89005924 69279037 65353130]
-    assert_equal expected_output, shell_output(".test").split("\n")
+    assert_equal expected_output, shell_output("./test").split("\n")
   end
 end

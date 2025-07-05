@@ -2,10 +2,10 @@ cask "font-felipa" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefontsrawmainoflfelipaFelipa-Regular.ttf",
-      verified: "github.comgooglefonts"
+  url "https://github.com/google/fonts/raw/main/ofl/felipa/Felipa-Regular.ttf",
+      verified: "github.com/google/fonts/"
   name "Felipa"
-  homepage "https:fonts.google.comspecimenFelipa"
+  homepage "https://fonts.google.com/specimen/Felipa"
 
   font "Felipa-Regular.ttf"
 

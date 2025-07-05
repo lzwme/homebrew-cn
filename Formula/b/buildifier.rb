@@ -1,10 +1,10 @@
 class Buildifier < Formula
   desc "Format bazel BUILD files with a standard convention"
-  homepage "https:github.combazelbuildbuildtools"
-  url "https:github.combazelbuildbuildtoolsarchiverefstagsv8.2.1.tar.gz"
+  homepage "https://github.com/bazelbuild/buildtools"
+  url "https://ghfast.top/https://github.com/bazelbuild/buildtools/archive/refs/tags/v8.2.1.tar.gz"
   sha256 "53119397bbce1cd7e4c590e117dcda343c2086199de62932106c80733526c261"
   license "Apache-2.0"
-  head "https:github.combazelbuildbuildtools.git", branch: "master"
+  head "https://github.com/bazelbuild/buildtools.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "a50bef2309f22e994b9f6f44b8a33461504ab6608d33012fa5a6afece978d8d9"
@@ -19,11 +19,11 @@ class Buildifier < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), ".buildifier"
+    system "go", "build", *std_go_args(ldflags: "-s -w"), "./buildifier"
   end
 
   test do
-    touch testpath"BUILD"
-    system bin"buildifier", "-mode=check", "BUILD"
+    touch testpath/"BUILD"
+    system bin/"buildifier", "-mode=check", "BUILD"
   end
 end

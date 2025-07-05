@@ -1,10 +1,10 @@
 class AnycableGo < Formula
   desc "WebSocket server with action cable protocol"
-  homepage "https:github.comanycableanycable"
-  url "https:github.comanycableanycablearchiverefstagsv1.6.2.tar.gz"
+  homepage "https://github.com/anycable/anycable"
+  url "https://ghfast.top/https://github.com/anycable/anycable/archive/refs/tags/v1.6.2.tar.gz"
   sha256 "2f38f8231e3d52873bdfadac7eadcb048dcae48c0d3075a3fd8ce8ac143fd110"
   license "MIT"
-  head "https:github.comanycableanycable.git", branch: "main"
+  head "https://github.com/anycable/anycable.git", branch: "main"
 
   livecheck do
     url :stable
@@ -27,22 +27,22 @@ class AnycableGo < Formula
       -s -w
     ]
     ldflags << if build.head?
-      "-X github.comanycableanycableutils.sha=#{version.commit}"
+      "-X github.com/anycable/anycable/utils.sha=#{version.commit}"
     else
-      "-X github.comanycableanycableutils.version=#{version}"
+      "-X github.com/anycable/anycable/utils.version=#{version}"
     end
 
-    system "go", "build", *std_go_args(ldflags:), ".cmdanycable-go"
+    system "go", "build", *std_go_args(ldflags:), "./cmd/anycable-go"
   end
 
   test do
     port = free_port
     pid = fork do
-      exec "#{bin}anycable-go --port=#{port}"
+      exec "#{bin}/anycable-go --port=#{port}"
     end
     sleep 1
-    output = shell_output("curl -sI http:localhost:#{port}health")
-    assert_match(200 OKm, output)
+    output = shell_output("curl -sI http://localhost:#{port}/health")
+    assert_match(/200 OK/m, output)
   ensure
     Process.kill("HUP", pid)
   end

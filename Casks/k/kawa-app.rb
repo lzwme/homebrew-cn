@@ -2,10 +2,10 @@ cask "kawa-app" do
   version "1.1.0"
   sha256 "19a30df528471f688d3d4f43d82b6a5f5e435ba8c361e8f5ed971c0471705f72"
 
-  url "https:github.comutattikawareleasesdownloadv#{version}Kawa.zip"
+  url "https://ghfast.top/https://github.com/utatti/kawa/releases/download/v#{version}/Kawa.zip"
   name "Kawa"
   desc "Alternative input source switcher"
-  homepage "https:github.comutattikawa"
+  homepage "https://github.com/utatti/kawa"
 
   no_autobump! because: :requires_manual_review
 

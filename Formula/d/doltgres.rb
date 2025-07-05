@@ -1,10 +1,10 @@
 class Doltgres < Formula
   desc "Dolt for Postgres"
-  homepage "https:github.comdolthubdoltgresql"
-  url "https:github.comdolthubdoltgresqlarchiverefstagsv0.50.1.tar.gz"
+  homepage "https://github.com/dolthub/doltgresql"
+  url "https://ghfast.top/https://github.com/dolthub/doltgresql/archive/refs/tags/v0.50.1.tar.gz"
   sha256 "6be207f152003ffa989daa53c2a34f924e46a706ee574c9148092b4a4f7664aa"
   license "Apache-2.0"
-  head "https:github.comdolthubdoltgresql.git", branch: "main"
+  head "https://github.com/dolthub/doltgresql.git", branch: "main"
 
   # Upstream creates releases that use a stable tag (e.g., `v1.2.3`) but are
   # labeled as "pre-release" on GitHub before the version is released, so it's
@@ -28,14 +28,14 @@ class Doltgres < Formula
   depends_on "libpq" => :test
 
   def install
-    system ".postgresparserbuild.sh"
-    system "go", "build", *std_go_args(ldflags: "-s -w"), ".cmddoltgres"
+    system "./postgres/parser/build.sh"
+    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/doltgres"
   end
 
   test do
     port = free_port
 
-    (testpath"config.yaml").write <<~YAML
+    (testpath/"config.yaml").write <<~YAML
       log_level: debug
 
       behavior:
@@ -51,12 +51,12 @@ class Doltgres < Formula
     YAML
 
     fork do
-      exec bin"doltgres", "--config", testpath"config.yaml"
+      exec bin/"doltgres", "--config", testpath/"config.yaml"
     end
     sleep 5
 
-    psql = Formula["libpq"].opt_bin"psql"
-    connection_string = "postgresql:postgres:password@localhost:#{port}"
+    psql = Formula["libpq"].opt_bin/"psql"
+    connection_string = "postgresql://postgres:password@localhost:#{port}"
     output = shell_output("#{psql} #{connection_string} -c 'SELECT DATABASE()' 2>&1")
     assert_match "database \n----------\n postgres\n(1 row)", output
   end

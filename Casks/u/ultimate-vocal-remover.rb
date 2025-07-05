@@ -5,10 +5,10 @@ cask "ultimate-vocal-remover" do
   sha256 arm:   "3b3d925c0af0a3a72e44629db137240f4d22ac1e8b3156599c36164fffe55249",
          intel: "d822058155514387e769b053c1850541a87aff9052dcf945cf51bb1525e7e996"
 
-  url "https:github.comAnjok07ultimatevocalremoverguireleasesdownloadv#{version}Ultimate_Vocal_Remover_v#{version.major_minor.dots_to_underscores}_MacOS_#{arch}.dmg"
+  url "https://ghfast.top/https://github.com/Anjok07/ultimatevocalremovergui/releases/download/v#{version}/Ultimate_Vocal_Remover_v#{version.major_minor.dots_to_underscores}_MacOS_#{arch}.dmg"
   name "Ultimate Vocal Remover"
   desc "Removes vocals from audio files"
-  homepage "https:github.comAnjok07ultimatevocalremovergui"
+  homepage "https://github.com/Anjok07/ultimatevocalremovergui/"
 
   no_autobump! because: :requires_manual_review
 

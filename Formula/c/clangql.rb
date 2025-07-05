@@ -1,10 +1,10 @@
 class Clangql < Formula
-  desc "Run a SQL like language to perform queries on CC++ files"
-  homepage "https:github.comAmrDeveloperClangQL"
-  url "https:github.comAmrDeveloperClangQLarchiverefstags0.10.0.tar.gz"
+  desc "Run a SQL like language to perform queries on C/C++ files"
+  homepage "https://github.com/AmrDeveloper/ClangQL"
+  url "https://ghfast.top/https://github.com/AmrDeveloper/ClangQL/archive/refs/tags/0.10.0.tar.gz"
   sha256 "216a8faf76cd59f149bac4800cf7bebd5c709d6f97abbe4fffde2f9585f7c518"
   license "MIT"
-  head "https:github.comAmrDeveloperClangQL.git", branch: "master"
+  head "https://github.com/AmrDeveloper/ClangQL.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "4d7d3dec4acffb5b26561003d115b54fb8c0ca6c137e5796ffc97e21c0a5d521"
@@ -24,14 +24,14 @@ class Clangql < Formula
   end
 
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       int main()
       {
           return 0;
       }
     C
 
-    output = JSON.parse(shell_output("#{bin}clangql -f test.c -q 'SELECT name FROM functions' -o json"))
+    output = JSON.parse(shell_output("#{bin}/clangql -f test.c -q 'SELECT name FROM functions' -o json"))
     assert_equal "main", output.first["name"]
   end
 end

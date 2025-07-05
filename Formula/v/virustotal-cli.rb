@@ -1,7 +1,7 @@
 class VirustotalCli < Formula
   desc "Command-line interface for VirusTotal"
-  homepage "https:github.comVirusTotalvt-cli"
-  url "https:github.comVirusTotalvt-cliarchiverefstags1.1.1.tar.gz"
+  homepage "https://github.com/VirusTotal/vt-cli"
+  url "https://ghfast.top/https://github.com/VirusTotal/vt-cli/archive/refs/tags/1.1.1.tar.gz"
   sha256 "c92aaa24254bf0e54d9c413dba4f2889757292387614ba67a968153419012869"
   license "Apache-2.0"
 
@@ -25,13 +25,13 @@ class VirustotalCli < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w -X cmd.Version=#{version}", output: bin"vt"), ".vt"
+    system "go", "build", *std_go_args(ldflags: "-s -w -X cmd.Version=#{version}", output: bin/"vt"), "./vt"
 
-    generate_completions_from_executable(bin"vt", "completion")
+    generate_completions_from_executable(bin/"vt", "completion")
   end
 
   test do
-    output = shell_output("#{bin}vt url #{homepage} 2>&1", 1)
+    output = shell_output("#{bin}/vt url #{homepage} 2>&1", 1)
     assert_match "Error: An API key is needed", output
   end
 end

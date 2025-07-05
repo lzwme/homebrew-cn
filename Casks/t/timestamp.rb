@@ -2,11 +2,11 @@ cask "timestamp" do
   version "1.0.1"
   sha256 "b8062b283ed80f62267e50a4486a8610b7d59cd60d6697ad018c9aae97d478bb"
 
-  url "https:github.commzdrtimestampreleasesdownload#{version}Timestamp-#{version}-mac.zip",
-      verified: "github.commzdrtimestamp"
+  url "https://ghfast.top/https://github.com/mzdr/timestamp/releases/download/#{version}/Timestamp-#{version}-mac.zip",
+      verified: "github.com/mzdr/timestamp/"
   name "Timestamp"
   desc "Improved clock for the menu bar"
-  homepage "https:mzdr.github.iotimestamp"
+  homepage "https://mzdr.github.io/timestamp/"
 
   no_autobump! because: :requires_manual_review
 

@@ -2,16 +2,16 @@ cask "colemak-dhk" do
   version "2.0.0"
   sha256 :no_check
 
-  url "https:github.comColemakModsmod-dharchiverefsheadsmaster.tar.gz",
-      verified: "github.comColemakModsmod-dh"
+  url "https://ghfast.top/https://github.com/ColemakMods/mod-dh/archive/refs/heads/master.tar.gz",
+      verified: "github.com/ColemakMods/mod-dh/"
   name "Colemak-DHk Keyboard Layout"
   desc "Colemak mod for more comfortable typing (DHk variant)"
-  homepage "https:colemakmods.github.iomod-dh"
+  homepage "https://colemakmods.github.io/mod-dh/"
 
   livecheck do
-    url "https:raw.githubusercontent.comColemakModsmod-dhmastermacOSColemak%20DHk.bundleContentsInfo.plist"
+    url "https://ghfast.top/https://raw.githubusercontent.com/ColemakMods/mod-dh/master/macOS/Colemak%20DHk.bundle/Contents/Info.plist"
     strategy :xml do |xml|
-      version = xml.elements["key[text()='CFBundleVersion']"]&.next_element&.text
+      version = xml.elements["//key[text()='CFBundleVersion']"]&.next_element&.text
       next if version.blank?
 
       version.strip
@@ -20,7 +20,7 @@ cask "colemak-dhk" do
 
   no_autobump! because: :requires_manual_review
 
-  keyboard_layout "mod-dh-mastermacOSColemak DHk.bundle"
+  keyboard_layout "mod-dh-master/macOS/Colemak DHk.bundle"
 
   # No zap stanza required
 

@@ -1,11 +1,11 @@
 class Periscope < Formula
   desc "Organize and de-duplicate your files without losing data"
-  homepage "https:github.comanishathalyeperiscope"
-  url "https:github.comanishathalyeperiscope.git",
+  homepage "https://github.com/anishathalye/periscope"
+  url "https://github.com/anishathalye/periscope.git",
       tag:      "v1.0.0",
       revision: "3d398cb7c9d8e41690c54371861d1b0a0119c485"
   license "GPL-3.0-only"
-  head "https:github.comanishathalyeperiscope.git", branch: "master"
+  head "https://github.com/anishathalye/periscope.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "9640cda5271196d7ae0b4ec8fd4aac56378bf70a89529dcae21995c9bb53ab36"
@@ -25,36 +25,36 @@ class Periscope < Formula
       -X main.version=#{version}
       -X main.commit=#{Utils.git_head}
     ]
-    system "go", "build", *std_go_args(output: bin"psc", ldflags:), ".cmdpsc"
+    system "go", "build", *std_go_args(output: bin/"psc", ldflags:), "./cmd/psc"
 
-    generate_completions_from_executable(bin"psc", "completion")
+    generate_completions_from_executable(bin/"psc", "completion")
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}psc version")
+    assert_match version.to_s, shell_output("#{bin}/psc version")
 
     # setup
-    scandir = testpath"scandir"
+    scandir = testpath/"scandir"
     scandir.mkdir
-    (scandir"a").write("dupe")
-    (scandir"b").write("dupe")
-    (scandir"c").write("unique")
+    (scandir/"a").write("dupe")
+    (scandir/"b").write("dupe")
+    (scandir/"c").write("unique")
 
     # scan + summary is correct
-    shell_output "#{bin}psc scan #{scandir} 2>devnull"
-    summary = shell_output("#{bin}psc summary").strip.split("\n").map { |l| l.strip.split }
+    shell_output "#{bin}/psc scan #{scandir} 2>/dev/null"
+    summary = shell_output("#{bin}/psc summary").strip.split("\n").map { |l| l.strip.split }
     assert_equal [["tracked", "3"], ["unique", "2"], ["duplicate", "1"], ["overhead", "4", "B"]], summary
 
     # rm allows deleting dupes but not uniques
-    shell_output "#{bin}psc rm #{scandir"a"}"
-    refute_path_exists (scandir"a")
+    shell_output "#{bin}/psc rm #{scandir/"a"}"
+    refute_path_exists (scandir/"a")
     # now b is unique
-    shell_output "#{bin}psc rm #{scandir"b"} 2>devnull", 1
-    assert_path_exists (scandir"b")
-    shell_output "#{bin}psc rm #{scandir"c"} 2>devnull", 1
-    assert_path_exists (scandir"c")
+    shell_output "#{bin}/psc rm #{scandir/"b"} 2>/dev/null", 1
+    assert_path_exists (scandir/"b")
+    shell_output "#{bin}/psc rm #{scandir/"c"} 2>/dev/null", 1
+    assert_path_exists (scandir/"c")
 
     # cleanup
-    shell_output("#{bin}psc finish")
+    shell_output("#{bin}/psc finish")
   end
 end

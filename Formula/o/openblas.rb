@@ -1,15 +1,15 @@
 class Openblas < Formula
   desc "Optimized BLAS library"
-  homepage "https:www.openblas.net"
-  url "https:github.comOpenMathLibOpenBLASarchiverefstagsv0.3.30.tar.gz"
+  homepage "https://www.openblas.net/"
+  url "https://ghfast.top/https://github.com/OpenMathLib/OpenBLAS/archive/refs/tags/v0.3.30.tar.gz"
   sha256 "27342cff518646afb4c2b976d809102e368957974c250a25ccc965e53063c95d"
   # The main license is BSD-3-Clause. Additionally,
   # 1. OpenBLAS is based on GotoBLAS2 so some code is under original BSD-2-Clause-Views
-  # 2. lapack-netlib is a bundled LAPACK so it is BSD-3-Clause-Open-MPI
-  # 3. interface{gemmt.c,sbgemmt.c} is BSD-2-Clause
-  # 4. relapack is MIT but license is omitted as it is not enabled
+  # 2. lapack-netlib/ is a bundled LAPACK so it is BSD-3-Clause-Open-MPI
+  # 3. interface/{gemmt.c,sbgemmt.c} is BSD-2-Clause
+  # 4. relapack/ is MIT but license is omitted as it is not enabled
   license all_of: ["BSD-3-Clause", "BSD-2-Clause-Views", "BSD-3-Clause-Open-MPI", "BSD-2-Clause"]
-  head "https:github.comOpenMathLibOpenBLAS.git", branch: "develop"
+  head "https://github.com/OpenMathLib/OpenBLAS.git", branch: "develop"
 
   livecheck do
     url :stable
@@ -52,7 +52,7 @@ class Openblas < Formula
     end
 
     # Apple Silicon does not support SVE
-    # https:github.comOpenMathLibOpenBLASissues4212
+    # https://github.com/OpenMathLib/OpenBLAS/issues/4212
     ENV["NO_SVE"] = "1" if Hardware::CPU.arm?
 
     # Must call in two steps
@@ -64,7 +64,7 @@ class Openblas < Formula
   end
 
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include <stdio.h>
       #include <stdlib.h>
       #include <math.h>
@@ -87,6 +87,6 @@ class Openblas < Formula
     C
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lopenblas",
                    "-o", "test"
-    system ".test"
+    system "./test"
   end
 end

@@ -1,10 +1,10 @@
 class Tuisky < Formula
   desc "TUI client for bluesky"
-  homepage "https:github.comsugyantuisky"
-  url "https:github.comsugyantuiskyarchiverefstagsv0.2.1.tar.gz"
+  homepage "https://github.com/sugyan/tuisky"
+  url "https://ghfast.top/https://github.com/sugyan/tuisky/archive/refs/tags/v0.2.1.tar.gz"
   sha256 "b87e50c8483624a2ccb4beeceb0503c3ad1f0a7ff3ac20a6da92eb952752c85d"
   license "MIT"
-  head "https:github.comsugyantuisky.git", branch: "main"
+  head "https://github.com/sugyan/tuisky.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "b34ae115c6eec39e76460e02f3bb6756d12715293f45979205c44f5d775f019f"
@@ -26,20 +26,20 @@ class Tuisky < Formula
   def install
     system "cargo", "install", *std_cargo_args
 
-    pkgetc.install "configexample.config.toml" => "config.toml"
+    pkgetc.install "config/example.config.toml" => "config.toml"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}tuisky --version")
+    assert_match version.to_s, shell_output("#{bin}/tuisky --version")
 
     # Fails in Linux CI with `No such device or address (os error 6)`
     return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
 
     begin
-      output_log = testpath"output.log"
-      pid = spawn bin"tuisky", [:out, :err] => output_log.to_s
+      output_log = testpath/"output.log"
+      pid = spawn bin/"tuisky", [:out, :err] => output_log.to_s
       sleep 1
-      assert_match "https:bsky.social", output_log.read
+      assert_match "https://bsky.social", output_log.read
     ensure
       Process.kill("TERM", pid)
       Process.wait(pid)

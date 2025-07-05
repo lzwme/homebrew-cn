@@ -1,7 +1,7 @@
 class Duckdb < Formula
   desc "Embeddable SQL OLAP Database Management System"
-  homepage "https:www.duckdb.org"
-  url "https:github.comduckdbduckdb.git",
+  homepage "https://www.duckdb.org"
+  url "https://github.com/duckdb/duckdb.git",
       tag:      "v1.3.1",
       revision: "2063dda3e6bd955c364ce8e61939c6248a907be6"
   license "MIT"
@@ -32,13 +32,13 @@ class Duckdb < Formula
 
     # The cli tool was renamed (0.1.8 -> 0.1.9)
     # Create a symlink to not break compatibility
-    bin.install_symlink bin"duckdb" => "duckdb_cli"
+    bin.install_symlink bin/"duckdb" => "duckdb_cli"
 
     rm lib.glob("*.a")
   end
 
   test do
-    path = testpath"weather.sql"
+    path = testpath/"weather.sql"
     path.write <<~SQL
       CREATE TABLE weather (temp INTEGER);
       INSERT INTO weather (temp) VALUES (40), (45), (50);
@@ -54,6 +54,6 @@ class Duckdb < Formula
       └─────────────┘
     EOS
 
-    assert_equal expected_output, shell_output("#{bin}duckdb_cli < #{path}")
+    assert_equal expected_output, shell_output("#{bin}/duckdb_cli < #{path}")
   end
 end

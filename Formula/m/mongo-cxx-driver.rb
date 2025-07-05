@@ -1,14 +1,14 @@
 class MongoCxxDriver < Formula
   desc "C++ driver for MongoDB"
-  homepage "https:github.commongodbmongo-cxx-driver"
-  url "https:github.commongodbmongo-cxx-driverreleasesdownloadr4.1.1mongo-cxx-driver-r4.1.1.tar.gz"
+  homepage "https://github.com/mongodb/mongo-cxx-driver"
+  url "https://ghfast.top/https://github.com/mongodb/mongo-cxx-driver/releases/download/r4.1.1/mongo-cxx-driver-r4.1.1.tar.gz"
   sha256 "19dff3cf834a3e09229260f22a0325820a7e30c78b294db91794dd934776b33a"
   license "Apache-2.0"
-  head "https:github.commongodbmongo-cxx-driver.git", branch: "master"
+  head "https://github.com/mongodb/mongo-cxx-driver.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(^[rv]?(\d+(?:\.\d+)+)$i)
+    regex(/^[rv]?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -27,9 +27,9 @@ class MongoCxxDriver < Formula
 
   def install
     # We want to avoid shims referencing in examples,
-    # but we need to have examplesCMakeLists.txt file to make cmake happy
+    # but we need to have examples/CMakeLists.txt file to make cmake happy
     pkgshare.install "examples"
-    (buildpath  "examplesCMakeLists.txt").write ""
+    (buildpath / "examples/CMakeLists.txt").write ""
 
     mongo_c_prefix = Formula["mongo-c-driver"].opt_prefix
     args = %W[
@@ -46,13 +46,13 @@ class MongoCxxDriver < Formula
 
   test do
     pkgconf_flags = shell_output("pkgconf --cflags --libs libbsoncxx").chomp.split
-    system ENV.cc, "-std=c++11", pkgshare"examplesbsoncxxbuilder_basic.cpp",
+    system ENV.cc, "-std=c++11", pkgshare/"examples/bsoncxx/builder_basic.cpp",
                    "-I#{pkgshare}", *pkgconf_flags, "-lstdc++", "-o", "test"
-    system ".test"
+    system "./test"
 
     pkgconf_flags = shell_output("pkgconf --cflags --libs libbsoncxx libmongocxx").chomp.split
-    system ENV.cc, "-std=c++11", pkgshare"examplesmongocxxconnect.cpp",
+    system ENV.cc, "-std=c++11", pkgshare/"examples/mongocxx/connect.cpp",
                    "-I#{pkgshare}", *pkgconf_flags, "-lstdc++", "-o", "test"
-    assert_match "No suitable servers", shell_output(".test mongodb:0.0.0.0 2>&1", 1)
+    assert_match "No suitable servers", shell_output("./test mongodb://0.0.0.0 2>&1", 1)
   end
 end

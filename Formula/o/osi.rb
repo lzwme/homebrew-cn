@@ -1,13 +1,13 @@
 class Osi < Formula
   desc "Open Solver Interface"
-  homepage "https:github.comcoin-orOsi"
-  url "https:github.comcoin-orOsiarchiverefstagsreleases0.108.11.tar.gz"
+  homepage "https://github.com/coin-or/Osi"
+  url "https://ghfast.top/https://github.com/coin-or/Osi/archive/refs/tags/releases/0.108.11.tar.gz"
   sha256 "1063b6a057e80222e2ede3ef0c73c0c54697e0fee1d913e2bef530310c13a670"
   license "EPL-2.0"
 
   livecheck do
     url :stable
-    regex(%r{^releasesv?(\d+(?:\.\d+)+)$}i)
+    regex(%r{^releases/v?(\d+(?:\.\d+)+)$}i)
   end
 
   bottle do
@@ -31,15 +31,15 @@ class Osi < Formula
 
   def install
     # Work around - same as clp formula
-    # Error 1: "mkdir: #{include}osicoin: File exists."
-    mkdir include"osicoin"
+    # Error 1: "mkdir: #{include}/osi/coin: File exists."
+    mkdir include/"osi/coin"
 
-    system ".configure", "--disable-silent-rules", "--includedir=#{include}osi", *std_configure_args
+    system "./configure", "--disable-silent-rules", "--includedir=#{include}/osi", *std_configure_args
     system "make", "install"
   end
 
   test do
-    (testpath"test.cpp").write <<~CPP
+    (testpath/"test.cpp").write <<~CPP
       #include <OsiSolverInterface.hpp>
 
       int main() {
@@ -47,9 +47,9 @@ class Osi < Formula
       }
     CPP
     system ENV.cxx, "-std=c++11", "test.cpp", "-L#{lib}", "-lOsi",
-                    "-I#{include}osicoin",
-                    "-I#{Formula["coinutils"].include}coinutilscoin",
+                    "-I#{include}/osi/coin",
+                    "-I#{Formula["coinutils"].include}/coinutils/coin",
                     "-o", "test"
-    system ".test"
+    system "./test"
   end
 end

@@ -1,7 +1,7 @@
 class Libspng < Formula
   desc "C library for reading and writing PNG format files"
-  homepage "https:libspng.org"
-  url "https:github.comrandy408libspngarchiverefstagsv0.7.4.tar.gz"
+  homepage "https://libspng.org/"
+  url "https://ghfast.top/https://github.com/randy408/libspng/archive/refs/tags/v0.7.4.tar.gz"
   sha256 "47ec02be6c0a6323044600a9221b049f63e1953faf816903e7383d4dc4234487"
   license "BSD-2-Clause"
 
@@ -32,15 +32,15 @@ class Libspng < Formula
     system "meson", "compile", "-C", "build", "--verbose"
     system "meson", "install", "-C", "build"
 
-    pkgshare.install "examplesexample.c"
+    pkgshare.install "examples/example.c"
   end
 
   test do
     fixture = test_fixtures("test.png")
-    cp pkgshare"example.c", testpath"example.c"
+    cp pkgshare/"example.c", testpath/"example.c"
     system ENV.cc, "example.c", "-L#{lib}", "-I#{include}", "-lspng", "-o", "example"
 
-    output = shell_output(".example #{fixture}")
+    output = shell_output("./example #{fixture}")
     assert_match "width: 8\nheight: 8\nbit depth: 1\ncolor type: 3 - indexed color\n" \
                  "compression method: 0\nfilter method: 0\ninterlace method: 0", output
   end

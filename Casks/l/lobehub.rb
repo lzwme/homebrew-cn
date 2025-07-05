@@ -5,16 +5,16 @@ cask "lobehub" do
   sha256 arm:   "457ab79cdb079c684d2fc2846fc7aeebf4a88325c8fc00e5979176e86c642ad5",
          intel: "2d8a68905c121344252215f6cd3aee77418b4ef6924e65ba88d1750c41084a00"
 
-  url "https:github.comlobehublobe-chatreleasesdownloadv#{version}LobeHub-Beta-#{version}#{arch}-mac.zip"
+  url "https://ghfast.top/https://github.com/lobehub/lobe-chat/releases/download/v#{version}/LobeHub-Beta-#{version}#{arch}-mac.zip"
   name "LobeHub"
   desc "AI chat framework"
-  homepage "https:github.comlobehublobe-chat"
+  homepage "https://github.com/lobehub/lobe-chat"
 
   # Not every GitHub release provides a file for macOS, so we check multiple
   # recent releases instead of only the "latest" release.
   livecheck do
     url :url
-    regex(^LobeHub(?:[._-]Beta)?[._-]v?(\d+(?:\.\d+)+)#{arch}[._-]mac\.zip$i)
+    regex(/^LobeHub(?:[._-]Beta)?[._-]v?(\d+(?:\.\d+)+)#{arch}[._-]mac\.zip$/i)
     strategy :github_releases do |json, regex|
       json.map do |release|
         next if release["draft"] || release["prerelease"]
@@ -35,9 +35,9 @@ cask "lobehub" do
   app "LobeHub-Beta.app"
 
   zap trash: [
-    "~LibraryApplication Supportcom.apple.sharedfilelistcom.apple.LSSharedFileList.ApplicationRecentDocumentscom.lobehub.lobehub-desktop-beta.sfl*",
-    "~LibraryApplication SupportLobeHub-Beta",
-    "~LibraryLogsLobeHub-Beta",
-    "~LibraryPreferencescom.lobehub.lobehub-desktop-beta.plist",
+    "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.lobehub.lobehub-desktop-beta.sfl*",
+    "~/Library/Application Support/LobeHub-Beta",
+    "~/Library/Logs/LobeHub-Beta",
+    "~/Library/Preferences/com.lobehub.lobehub-desktop-beta.plist",
   ]
 end

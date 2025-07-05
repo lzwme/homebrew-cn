@@ -1,7 +1,7 @@
 class AskCli < Formula
   desc "CLI tool for Alexa Skill Kit"
-  homepage "https:github.comalexaask-cli"
-  url "https:registry.npmjs.orgask-cli-ask-cli-2.30.7.tgz"
+  homepage "https://github.com/alexa/ask-cli"
+  url "https://registry.npmjs.org/ask-cli/-/ask-cli-2.30.7.tgz"
   sha256 "437b55f774064e053b0185956afc69ecb38a8b53c996a6e1e49960918b54f909"
   license "Apache-2.0"
 
@@ -21,11 +21,11 @@ class AskCli < Formula
 
   def install
     system "npm", "install", *std_npm_args
-    bin.write_exec_script libexec"binask"
+    bin.write_exec_script libexec/"bin/ask"
   end
 
   test do
-    output = shell_output("#{bin}ask deploy 2>&1", 1)
-    assert_match "File #{testpath}.askcli_config not exists.", output
+    output = shell_output("#{bin}/ask deploy 2>&1", 1)
+    assert_match "File #{testpath}/.ask/cli_config not exists.", output
   end
 end

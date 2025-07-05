@@ -1,10 +1,10 @@
 class Cfnctl < Formula
   desc "Brings the Terraform cli experience to AWS Cloudformation"
-  homepage "https:github.comrogerwelincfnctl"
-  url "https:github.comrogerwelincfnctlarchiverefstagsv0.1.1.tar.gz"
+  homepage "https://github.com/rogerwelin/cfnctl"
+  url "https://ghfast.top/https://github.com/rogerwelin/cfnctl/archive/refs/tags/v0.1.1.tar.gz"
   sha256 "8e987272db5cb76769631a29a02a7ead2171539148e09c57549bc6b9ed707be3"
   license "Apache-2.0"
-  head "https:github.comrogerwelincfnctl.git", branch: "master"
+  head "https://github.com/rogerwelin/cfnctl.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "d18150beed91b47a03146e5cceaa9d117dbde79fc14bdc923fd32b83443af4e5"
@@ -18,23 +18,23 @@ class Cfnctl < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w -X cli.version=#{version}"), ".cmdcfnctl"
+    system "go", "build", *std_go_args(ldflags: "-s -w -X cli.version=#{version}"), "./cmd/cfnctl"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}cfnctl version")
+    assert_match version.to_s, shell_output("#{bin}/cfnctl version")
 
     ENV["AWS_DEFAULT_REGION"] = "us-east-1"
     ENV["AWS_ACCESS_KEY_ID"]     = "dummy"
     ENV["AWS_SECRET_ACCESS_KEY"] = "dummy"
 
-    (testpath"test.yaml").write <<~YAML
+    (testpath/"test.yaml").write <<~YAML
       Resources:
         Bucket:
           Type: AWS::S3::Bucket
     YAML
 
-    output = shell_output("#{bin}cfnctl validate --template-file test.yaml 2>&1")
+    output = shell_output("#{bin}/cfnctl validate --template-file test.yaml 2>&1")
     assert_match "ValidateTemplate, https response error StatusCode: 403", output
   end
 end

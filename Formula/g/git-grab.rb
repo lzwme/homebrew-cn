@@ -1,7 +1,7 @@
 class GitGrab < Formula
   desc "Clone a git repository into a standard location organised by domain and path"
-  homepage "https:github.comwezmgit-grab"
-  url "https:github.comwezmgit-grabarchiverefstags3.0.0.tar.gz"
+  homepage "https://github.com/wezm/git-grab"
+  url "https://ghfast.top/https://github.com/wezm/git-grab/archive/refs/tags/3.0.0.tar.gz"
   sha256 "542a1e1c1d2a3f1f073e23817bfbab1b98f352f590991e50c6a484177a724b95"
   license any_of: ["Apache-2.0", "MIT"]
 
@@ -24,9 +24,9 @@ class GitGrab < Formula
   end
 
   test do
-    system "git", "grab", "--home", testpath, "https:github.comwezmgit-grab.git"
-    assert_path_exists testpath"github.comwezmgit-grabCargo.toml"
+    system "git", "grab", "--home", testpath, "https://github.com/wezm/git-grab.git"
+    assert_path_exists testpath/"github.com/wezm/git-grab/Cargo.toml"
 
-    assert_match "git-grab version #{version}", shell_output("#{bin}git-grab --version")
+    assert_match "git-grab version #{version}", shell_output("#{bin}/git-grab --version")
   end
 end

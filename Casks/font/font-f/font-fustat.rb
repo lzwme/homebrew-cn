@@ -2,10 +2,10 @@ cask "font-fustat" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefontsrawmainoflfustatFustat%5Bwght%5D.ttf",
-      verified: "github.comgooglefonts"
+  url "https://github.com/google/fonts/raw/main/ofl/fustat/Fustat%5Bwght%5D.ttf",
+      verified: "github.com/google/fonts/"
   name "Fustat"
-  homepage "https:fonts.google.comspecimenFustat"
+  homepage "https://fonts.google.com/specimen/Fustat"
 
   font "Fustat[wght].ttf"
 

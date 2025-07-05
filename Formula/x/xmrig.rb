@@ -1,10 +1,10 @@
 class Xmrig < Formula
   desc "Monero (XMR) CPU miner"
-  homepage "https:github.comxmrigxmrig"
-  url "https:github.comxmrigxmrigarchiverefstagsv6.24.0.tar.gz"
+  homepage "https://github.com/xmrig/xmrig"
+  url "https://ghfast.top/https://github.com/xmrig/xmrig/archive/refs/tags/v6.24.0.tar.gz"
   sha256 "3521c592a18ada781d79c919ea6c1b7e5a8bcfe2ec666789bc55fd88a2aee8d3"
   license "GPL-3.0-or-later"
-  head "https:github.comxmrigxmrig.git", branch: "dev"
+  head "https://github.com/xmrig/xmrig.git", branch: "dev"
 
   livecheck do
     url :stable
@@ -27,25 +27,25 @@ class Xmrig < Formula
   depends_on "openssl@3"
 
   def install
-    # Use shared OpenSSL on macOS. In cmakeOpenSSL.cmake:
+    # Use shared OpenSSL on macOS. In cmake/OpenSSL.cmake:
     # elseif (APPLE)
     #   set(OPENSSL_USE_STATIC_LIBS TRUE)
     # endif()
-    inreplace "cmakeOpenSSL.cmake", "OPENSSL_USE_STATIC_LIBS TRUE", "OPENSSL_USE_STATIC_LIBS FALSE"
+    inreplace "cmake/OpenSSL.cmake", "OPENSSL_USE_STATIC_LIBS TRUE", "OPENSSL_USE_STATIC_LIBS FALSE"
 
-    # Allow using shared libuv. In cmakeFindUV.cmake:
+    # Allow using shared libuv. In cmake/FindUV.cmake:
     # find_library(UV_LIBRARY NAMES libuv.a uv libuv ...)
-    inreplace "cmakeFindUV.cmake", "libuv.a", ""
+    inreplace "cmake/FindUV.cmake", "libuv.a", ""
 
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"
-    bin.install "buildxmrig"
-    pkgshare.install "srcconfig.json"
+    bin.install "build/xmrig"
+    pkgshare.install "src/config.json"
   end
 
   test do
     require "pty"
-    assert_match version.to_s, shell_output("#{bin}xmrig -V")
+    assert_match version.to_s, shell_output("#{bin}/xmrig -V")
     test_server = "donotexist.localhost:65535"
     output = ""
     args = %W[
@@ -56,22 +56,22 @@ class Xmrig < Formula
       --retries=1
       --url=#{test_server}
     ]
-    PTY.spawn(bin"xmrig", *args) do |r, _w, pid|
+    PTY.spawn(bin/"xmrig", *args) do |r, _w, pid|
       sleep 5
       Process.kill("SIGINT", pid)
       begin
         r.each_line { |line| output += line }
       rescue Errno::EIO
-        # GNULinux raises EIO when read is done on closed pty
+        # GNU/Linux raises EIO when read is done on closed pty
       end
     end
 
-    assert_match(POOL #1\s+#{Regexp.escape(test_server)} algo auto, output)
+    assert_match(/POOL #1\s+#{Regexp.escape(test_server)} algo auto/, output)
 
     if OS.mac?
       assert_match "#{test_server} DNS error: \"unknown node or service\"", output
     else
-      assert_match(#{Regexp.escape(test_server)} (?:::1|127\.0\.0\.1) connect error: "connection refused", output)
+      assert_match(/#{Regexp.escape(test_server)} (?:::1|127\.0\.0\.1) connect error: "connection refused"/, output)
     end
   end
 end

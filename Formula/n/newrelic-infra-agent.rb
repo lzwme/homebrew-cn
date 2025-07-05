@@ -1,11 +1,11 @@
 class NewrelicInfraAgent < Formula
   desc "New Relic infrastructure agent"
-  homepage "https:github.comnewrelicinfrastructure-agent"
-  url "https:github.comnewrelicinfrastructure-agent.git",
+  homepage "https://github.com/newrelic/infrastructure-agent"
+  url "https://github.com/newrelic/infrastructure-agent.git",
       tag:      "1.65.1",
       revision: "003aeeba6c6c80767dd23260e67fa399353bd779"
   license "Apache-2.0"
-  head "https:github.comnewrelicinfrastructure-agent.git", branch: "master"
+  head "https://github.com/newrelic/infrastructure-agent.git", branch: "master"
 
   # Upstream sometimes creates a tag with a stable version format but marks it
   # as pre-release on GitHub.
@@ -35,25 +35,25 @@ class NewrelicInfraAgent < Formula
     ENV["GOARCH"] = goarch
 
     system "make", "dist-for-os"
-    bin.install "dist#{os}-newrelic-infra_#{os}_#{goarch}newrelic-infra"
-    bin.install "dist#{os}-newrelic-infra-ctl_#{os}_#{goarch}newrelic-infra-ctl"
-    bin.install "dist#{os}-newrelic-infra-service_#{os}_#{goarch}newrelic-infra-service"
-    (var"dbnewrelic-infra").install "assetslicenceLICENSE.macos.txt" if OS.mac?
+    bin.install "dist/#{os}-newrelic-infra_#{os}_#{goarch}/newrelic-infra"
+    bin.install "dist/#{os}-newrelic-infra-ctl_#{os}_#{goarch}/newrelic-infra-ctl"
+    bin.install "dist/#{os}-newrelic-infra-service_#{os}_#{goarch}/newrelic-infra-service"
+    (var/"db/newrelic-infra").install "assets/licence/LICENSE.macos.txt" if OS.mac?
   end
 
   def post_install
-    (etc"newrelic-infra").mkpath
-    (var"lognewrelic-infra").mkpath
+    (etc/"newrelic-infra").mkpath
+    (var/"log/newrelic-infra").mkpath
   end
 
   service do
-    run [opt_bin"newrelic-infra-service", "-config", etc"newrelic-infranewrelic-infra.yml"]
-    log_path var"lognewrelic-infranewrelic-infra.log"
-    error_log_path var"lognewrelic-infranewrelic-infra.stderr.log"
+    run [opt_bin/"newrelic-infra-service", "-config", etc/"newrelic-infra/newrelic-infra.yml"]
+    log_path var/"log/newrelic-infra/newrelic-infra.log"
+    error_log_path var/"log/newrelic-infra/newrelic-infra.stderr.log"
   end
 
   test do
-    output = shell_output("#{bin}newrelic-infra -validate")
+    output = shell_output("#{bin}/newrelic-infra -validate")
     assert_match "config validation", output
   end
 end

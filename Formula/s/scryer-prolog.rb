@@ -1,15 +1,15 @@
 class ScryerProlog < Formula
   desc "Modern ISO Prolog implementation written mostly in Rust"
-  homepage "https:www.scryer.pl"
+  homepage "https://www.scryer.pl"
   license "BSD-3-Clause"
-  head "https:github.commthomscryer-prolog.git", branch: "master"
+  head "https://github.com/mthom/scryer-prolog.git", branch: "master"
 
   stable do
-    url "https:github.commthomscryer-prologarchiverefstagsv0.9.4.tar.gz"
+    url "https://ghfast.top/https://github.com/mthom/scryer-prolog/archive/refs/tags/v0.9.4.tar.gz"
     sha256 "ccf533c5c34ee7efbf9c702dbffea21ba1c837144c3592a9e97c515abd4d6904"
 
     # patch libffi to build against rust 1.87
-    # upstream pr ref, https:github.commthomscryer-prologpull2895 and https:github.commthomscryer-prologpull2956
+    # upstream pr ref, https://github.com/mthom/scryer-prolog/pull/2895 and https://github.com/mthom/scryer-prolog/pull/2956
     patch :DATA
   end
 
@@ -37,27 +37,27 @@ class ScryerProlog < Formula
   end
 
   test do
-    (testpath"test.pl").write <<~EOS
+    (testpath/"test.pl").write <<~EOS
       test :-
         write('Hello from Scryer Prolog').
     EOS
 
-    assert_equal "Hello from Scryer Prolog", shell_output("#{bin}scryer-prolog -g 'test,halt' #{testpath}test.pl")
+    assert_equal "Hello from Scryer Prolog", shell_output("#{bin}/scryer-prolog -g 'test,halt' #{testpath}/test.pl")
   end
 end
 
 __END__
-diff --git aCargo.lock bCargo.lock
+diff --git a/Cargo.lock b/Cargo.lock
 index 5e406c6..26f3d5a 100644
---- aCargo.lock
-+++ bCargo.lock
+--- a/Cargo.lock
++++ b/Cargo.lock
 @@ -1477,9 +1477,9 @@ checksum = "302d7ab3130588088d277783b1e2d2e10c9e9e4a16dd9050e6ec93fb3e7048f4"
 
  [[package]]
  name = "libffi"
 -version = "3.2.0"
 +version = "4.1.0"
- source = "registry+https:github.comrust-langcrates.io-index"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
 -checksum = "ce826c243048e3d5cec441799724de52e2d42f820468431fc3fceee2341871e2"
 +checksum = "ebfd30a67b482a08116e753d0656cb626548cf4242543e5cc005be7639d99838"
  dependencies = [
@@ -69,16 +69,16 @@ index 5e406c6..26f3d5a 100644
  name = "libffi-sys"
 -version = "2.3.0"
 +version = "3.3.1"
- source = "registry+https:github.comrust-langcrates.io-index"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
 -checksum = "f36115160c57e8529781b4183c2bb51fdc1f6d6d1ed345591d84be7703befb3c"
 +checksum = "f003aa318c9f0ee69eb0ada7c78f5c9d2fedd2ceb274173b5c7ff475eee584a3"
  dependencies = [
   "cc",
  ]
-diff --git aCargo.toml bCargo.toml
+diff --git a/Cargo.toml b/Cargo.toml
 index 2af52e2..af8a464 100644
---- aCargo.toml
-+++ bCargo.toml
+--- a/Cargo.toml
++++ b/Cargo.toml
 @@ -80,7 +80,7 @@ serde = "1.0.159"
  crossterm = { version = "0.20.0", optional = true }
  ctrlc = { version = "3.2.2", optional = true }
@@ -88,10 +88,10 @@ index 2af52e2..af8a464 100644
  native-tls = { version = "0.2.4", optional = true }
  reqwest = { version = "0.11.18", optional = true }
  rustyline = { version = "12.0.0", optional = true }
-diff --git asrcffi.rs bsrcffi.rs
+diff --git a/src/ffi.rs b/src/ffi.rs
 index a8ffd74..835a06e 100644
---- asrcffi.rs
-+++ bsrcffi.rs
+--- a/src/ffi.rs
++++ b/src/ffi.rs
 @@ -53,13 +53,23 @@ pub struct ForeignFunctionTable {
      structs: HashMap<String, StructImpl>,
  }

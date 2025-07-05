@@ -1,10 +1,10 @@
 class Sl < Formula
   desc "Prints a steam locomotive if you type sl instead of ls"
-  homepage "https:github.commtoyodasl"
-  url "https:github.commtoyodaslarchiverefstags5.02.tar.gz"
+  homepage "https://github.com/mtoyoda/sl"
+  url "https://ghfast.top/https://github.com/mtoyoda/sl/archive/refs/tags/5.02.tar.gz"
   sha256 "1e5996757f879c81f202a18ad8e982195cf51c41727d3fea4af01fdcbbb5563a"
   license "MIT"
-  head "https:github.commtoyodasl.git", branch: "master"
+  head "https://github.com/mtoyoda/sl.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -38,6 +38,6 @@ class Sl < Formula
   end
 
   test do
-    system bin"sl", "-c"
+    system bin/"sl", "-c"
   end
 end

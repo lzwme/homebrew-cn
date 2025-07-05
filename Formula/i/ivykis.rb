@@ -1,13 +1,13 @@
 class Ivykis < Formula
-  desc "Async IO-assisting library"
-  homepage "https:sourceforge.netprojectslibivykis"
-  url "https:github.combuytenhivykisarchiverefstagsv0.43.2-trunk.tar.gz"
+  desc "Async I/O-assisting library"
+  homepage "https://sourceforge.net/projects/libivykis/"
+  url "https://ghfast.top/https://github.com/buytenh/ivykis/archive/refs/tags/v0.43.2-trunk.tar.gz"
   sha256 "22621ae6a7144039cfb8666ed509b99ea1876d7642021a3505c7351502641103"
   license "LGPL-2.1-only"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)(?:[._-]trunk)?$i)
+    regex(/^v?(\d+(?:\.\d+)+)(?:[._-]trunk)?$/i)
   end
 
   bottle do
@@ -28,14 +28,14 @@ class Ivykis < Formula
 
   def install
     system "autoreconf", "--force", "--install", "--verbose"
-    system ".configure", *std_configure_args
+    system "./configure", *std_configure_args
     system "make"
     system "make", "check"
     system "make", "install"
   end
 
   test do
-    (testpath"test_ivykis.c").write <<~C
+    (testpath/"test_ivykis.c").write <<~C
       #include <stdio.h>
       #include <iv.h>
       int main()
@@ -46,6 +46,6 @@ class Ivykis < Formula
       }
     C
     system ENV.cc, "test_ivykis.c", "-L#{lib}", "-livykis", "-o", "test_ivykis"
-    system ".test_ivykis"
+    system "./test_ivykis"
   end
 end

@@ -1,10 +1,10 @@
 class Notify < Formula
   desc "Stream the output of any CLI and publish it to a variety of supported platforms"
-  homepage "https:docs.projectdiscovery.iotoolsnotifyoverview"
-  url "https:github.comprojectdiscoverynotifyarchiverefstagsv1.0.7.tar.gz"
+  homepage "https://docs.projectdiscovery.io/tools/notify/overview"
+  url "https://ghfast.top/https://github.com/projectdiscovery/notify/archive/refs/tags/v1.0.7.tar.gz"
   sha256 "ec9f1e6c48f975b58d30162071d954db0cd771ea3f5dc7168f5ecdc73658c0ad"
   license "MIT"
-  head "https:github.comprojectdiscoverynotify.git", branch: "master"
+  head "https://github.com/projectdiscovery/notify.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "7be1bc9e0154bb8c4f496425c468dec71e6a373461aa7883445e57d2d7e2a738"
@@ -18,12 +18,12 @@ class Notify < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), ".cmdnotify"
+    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/notify"
   end
 
   test do
-    assert_match "Current Version: #{version}", shell_output("#{bin}notify -disable-update-check -version 2>&1")
-    output = shell_output("#{bin}notify -disable-update-check -config \"#{testpath}non_existent\" 2>&1", 1)
+    assert_match "Current Version: #{version}", shell_output("#{bin}/notify -disable-update-check -version 2>&1")
+    output = shell_output("#{bin}/notify -disable-update-check -config \"#{testpath}/non_existent\" 2>&1", 1)
     assert_match "Could not read config", output
   end
 end

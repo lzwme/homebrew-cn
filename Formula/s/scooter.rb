@@ -1,7 +1,7 @@
 class Scooter < Formula
   desc "Interactive find and replace in the terminal"
-  homepage "https:github.comthomasschaferscooter"
-  url "https:github.comthomasschaferscooterarchiverefstagsv0.5.3.tar.gz"
+  homepage "https://github.com/thomasschafer/scooter"
+  url "https://ghfast.top/https://github.com/thomasschafer/scooter/archive/refs/tags/v0.5.3.tar.gz"
   sha256 "6d03fcf8809ff61a8483b07300792b5deb0dc22f6295b498e729956c4a4c5823"
   license "MIT"
 
@@ -23,6 +23,6 @@ class Scooter < Formula
 
   test do
     # scooter is a TUI application
-    assert_match "Interactive find and replace TUI.", shell_output("#{bin}scooter -h")
+    assert_match "Interactive find and replace TUI.", shell_output("#{bin}/scooter -h")
   end
 end

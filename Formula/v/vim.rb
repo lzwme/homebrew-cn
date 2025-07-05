@@ -1,18 +1,18 @@
 class Vim < Formula
   desc "Vi 'workalike' with many additional features"
-  homepage "https:www.vim.org"
+  homepage "https://www.vim.org/"
   # vim should only be updated every 50 releases on multiples of 50
-  url "https:github.comvimvimarchiverefstagsv9.1.1500.tar.gz"
+  url "https://ghfast.top/https://github.com/vim/vim/archive/refs/tags/v9.1.1500.tar.gz"
   sha256 "70f0e75bf77af00b870a967fcb325031f0a32d787bc3cacc1ca1729727d0bbc7"
   license "Vim"
-  head "https:github.comvimvim.git", branch: "master"
+  head "https://github.com/vim/vim.git", branch: "master"
 
   # The Vim repository contains thousands of tags and the `Git` strategy isn't
   # ideal in this context. This is an exceptional situation, so this checks the
   # first 50 tags using the GitHub API (to minimize data transfer).
   livecheck do
-    url "https:api.github.comreposvimvimtags?per_page=50"
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    url "https://api.github.com/repos/vim/vim/tags?per_page=50"
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
     strategy :json do |json, regex|
       json.map do |tag|
         match = tag["name"]&.match(regex)
@@ -48,15 +48,15 @@ class Vim < Formula
   end
 
   conflicts_with "ex-vi",
-    because: "vim and ex-vi both install binex and binview"
+    because: "vim and ex-vi both install bin/ex and bin/view"
 
   conflicts_with "macvim",
     because: "vim and macvim both install vi* binaries"
 
   def install
-    ENV.prepend_path "PATH", Formula["python@3.13"].opt_libexec"bin"
+    ENV.prepend_path "PATH", Formula["python@3.13"].opt_libexec/"bin"
 
-    # https:github.comHomebrewhomebrew-corepull1046
+    # https://github.com/Homebrew/homebrew-core/pull/1046
     ENV.delete("SDKROOT")
 
     # vim doesn't require any Python package, unset PYTHONPATH.
@@ -65,12 +65,12 @@ class Vim < Formula
     ENV.append_to_cflags "-mllvm -enable-constraint-elimination=0" if DevelopmentTools.clang_build_version == 1600
 
     # We specify HOMEBREW_PREFIX as the prefix to make vim look in the
-    # the right place (HOMEBREW_PREFIXsharevim{vimrc,vimfiles}) for
+    # the right place (HOMEBREW_PREFIX/share/vim/{vimrc,vimfiles}) for
     # system vimscript files. We specify the normal installation prefix
     # when calling "make install".
     # Homebrew will use the first suitable Perl & Ruby in your PATH if you
     # build from source. Please don't attempt to hardcode either.
-    system ".configure", "--prefix=#{HOMEBREW_PREFIX}",
+    system "./configure", "--prefix=#{HOMEBREW_PREFIX}",
                           "--mandir=#{man}",
                           "--enable-multibyte",
                           "--with-tlib=ncurses",
@@ -86,23 +86,23 @@ class Vim < Formula
                           "--with-lua-prefix=#{Formula["lua"].opt_prefix}"
     system "make"
     # Parallel install could miss some symlinks
-    # https:github.comvimvimissues1031
+    # https://github.com/vim/vim/issues/1031
     ENV.deparallelize
     # If stripping the binaries is enabled, vim will segfault with
     # statically-linked interpreters like ruby
-    # https:github.comvimvimissues114
+    # https://github.com/vim/vim/issues/114
     system "make", "install", "prefix=#{prefix}", "STRIP=#{which "true"}"
     bin.install_symlink "vim" => "vi"
   end
 
   test do
-    (testpath"commands.vim").write <<~VIM
+    (testpath/"commands.vim").write <<~VIM
       :python3 import vim; vim.current.buffer[0] = 'hello python3'
       :wq
     VIM
-    system bin"vim", "-T", "dumb", "-s", "commands.vim", "test.txt"
+    system bin/"vim", "-T", "dumb", "-s", "commands.vim", "test.txt"
     assert_equal "hello python3", File.read("test.txt").chomp
-    assert_match "+gettext", shell_output("#{bin}vim --version")
-    assert_match "+sodium", shell_output("#{bin}vim --version")
+    assert_match "+gettext", shell_output("#{bin}/vim --version")
+    assert_match "+sodium", shell_output("#{bin}/vim --version")
   end
 end

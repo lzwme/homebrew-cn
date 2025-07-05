@@ -1,7 +1,7 @@
 class Libghthash < Formula
   desc "Generic hash table for C++"
-  homepage "https:github.comSimonKagstromlibghthash"
-  url "https:github.comSimonKagstromlibghthasharchiverefstagsv0.6.2.tar.gz"
+  homepage "https://github.com/SimonKagstrom/libghthash"
+  url "https://ghfast.top/https://github.com/SimonKagstrom/libghthash/archive/refs/tags/v0.6.2.tar.gz"
   sha256 "e7e5f77df3e2a9152e0805f279ac048af9e572b83e60d29257cc754f8f9c22d6"
   license "LGPL-2.0-or-later"
 
@@ -32,13 +32,13 @@ class Libghthash < Formula
 
   def install
     system "autoreconf", "--force", "--install", "--verbose"
-    system ".configure", "--disable-dependency-tracking",
+    system "./configure", "--disable-dependency-tracking",
            "--prefix=#{prefix}"
     system "make", "install"
   end
 
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include <string.h>
       #include <stdio.h>
       #include <stdlib.h>
@@ -75,6 +75,6 @@ class Libghthash < Formula
       }
     C
     system ENV.cc, "test.c", "-L#{lib}", "-lghthash", "-o", "test"
-    system ".test"
+    system "./test"
   end
 end

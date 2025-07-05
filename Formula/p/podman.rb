@@ -1,16 +1,16 @@
 class Podman < Formula
   desc "Tool for managing OCI containers and pods"
-  homepage "https:podman.io"
-  url "https:github.comcontainerspodmanarchiverefstagsv5.5.2.tar.gz"
+  homepage "https://podman.io/"
+  url "https://ghfast.top/https://github.com/containers/podman/archive/refs/tags/v5.5.2.tar.gz"
   sha256 "a2dbd8280cd92d4741f32f5a99d385d7fc6f0dd36bc9cc90a7273767e26d43d9"
   license all_of: ["Apache-2.0", "GPL-3.0-or-later"]
-  head "https:github.comcontainerspodman.git", branch: "main"
+  head "https://github.com/containers/podman.git", branch: "main"
 
   # There can be a notable gap between when a version is tagged and a
   # corresponding release is created and upstream uses GitHub releases to
   # indicate when a version is released, so we check the "latest" release
   # instead of the Git tags. Maintainers confirmed:
-  # https:github.comHomebrewhomebrew-corepull205162#issuecomment-2607793814
+  # https://github.com/Homebrew/homebrew-core/pull/205162#issuecomment-2607793814
   livecheck do
     url :stable
     strategy :github_latest
@@ -27,7 +27,7 @@ class Podman < Formula
 
   depends_on "go" => :build
   depends_on "go-md2man" => :build
-  depends_on macos: :ventura # see discussions in https:github.comcontainerspodmanissues22121
+  depends_on macos: :ventura # see discussions in https://github.com/containers/podman/issues/22121
   uses_from_macos "python" => :build
 
   on_macos do
@@ -52,40 +52,40 @@ class Podman < Formula
   end
 
   # Bump these resources versions to match those in the corresponding version-tagged Makefile
-  # at https:github.comcontainerspodmanblob#{version}contribpkginstallerMakefile
+  # at https://github.com/containers/podman/blob/#{version}/contrib/pkginstaller/Makefile
   #
-  # More context: https:github.comHomebrewhomebrew-corepull205303
+  # More context: https://github.com/Homebrew/homebrew-core/pull/205303
   resource "gvproxy" do
     on_macos do
-      url "https:github.comcontainersgvisor-tap-vsockarchiverefstagsv0.8.6.tar.gz"
+      url "https://ghfast.top/https://github.com/containers/gvisor-tap-vsock/archive/refs/tags/v0.8.6.tar.gz"
       sha256 "eb08309d452823ca7e309da2f58c031bb42bb1b1f2f0bf09ca98b299e326b215"
     end
   end
 
   resource "vfkit" do
     on_macos do
-      url "https:github.comcrc-orgvfkitarchiverefstagsv0.6.1.tar.gz"
+      url "https://ghfast.top/https://github.com/crc-org/vfkit/archive/refs/tags/v0.6.1.tar.gz"
       sha256 "e35b44338e43d465f76dddbd3def25cbb31e56d822db365df9a79b13fc22698c"
     end
   end
 
   resource "catatonit" do
     on_linux do
-      url "https:github.comopenSUSEcatatonitarchiverefstagsv0.2.1.tar.gz"
+      url "https://ghfast.top/https://github.com/openSUSE/catatonit/archive/refs/tags/v0.2.1.tar.gz"
       sha256 "771385049516fdd561fbb9164eddf376075c4c7de3900a8b18654660172748f1"
     end
   end
 
   resource "netavark" do
     on_linux do
-      url "https:github.comcontainersnetavarkarchiverefstagsv1.15.2.tar.gz"
+      url "https://ghfast.top/https://github.com/containers/netavark/archive/refs/tags/v1.15.2.tar.gz"
       sha256 "84325e03aa0a2818aef9fb57b62cda8e9472584744d91ce5e5b191098f9e6d6a"
     end
   end
 
   resource "aardvark-dns" do
     on_linux do
-      url "https:github.comcontainersaardvark-dnsarchiverefstagsv1.15.0.tar.gz"
+      url "https://ghfast.top/https://github.com/containers/aardvark-dns/archive/refs/tags/v1.15.0.tar.gz"
       sha256 "4ecc3996eeb8c579fbfe50901a2d73662441730ca4101e88983751a96b9fc010"
     end
   end
@@ -96,15 +96,15 @@ class Podman < Formula
       ENV["BUILD_ORIGIN"] = "brew"
 
       system "gmake", "podman-remote"
-      bin.install "bindarwinpodman" => "podman-remote"
-      bin.install_symlink bin"podman-remote" => "podman"
+      bin.install "bin/darwin/podman" => "podman-remote"
+      bin.install_symlink bin/"podman-remote" => "podman"
 
       system "gmake", "podman-mac-helper"
-      bin.install "bindarwinpodman-mac-helper" => "podman-mac-helper"
+      bin.install "bin/darwin/podman-mac-helper" => "podman-mac-helper"
 
       resource("gvproxy").stage do
         system "gmake", "gvproxy"
-        (libexec"podman").install "bingvproxy"
+        (libexec/"podman").install "bin/gvproxy"
       end
 
       resource("vfkit").stage do
@@ -112,58 +112,58 @@ class Podman < Formula
         ENV["CGO_CFLAGS"] = "-mmacosx-version-min=11.0"
         ENV["GOOS"]="darwin"
         arch = Hardware::CPU.intel? ? "amd64" : Hardware::CPU.arch.to_s
-        system "gmake", "outvfkit-#{arch}"
-        (libexec"podman").install "outvfkit-#{arch}" => "vfkit"
+        system "gmake", "out/vfkit-#{arch}"
+        (libexec/"podman").install "out/vfkit-#{arch}" => "vfkit"
       end
 
       system "gmake", "podman-remote-darwin-docs"
-      man1.install Dir["docsbuildremotedarwin*.1"]
+      man1.install Dir["docs/build/remote/darwin/*.1"]
 
-      bash_completion.install "completionsbashpodman"
-      zsh_completion.install "completionszsh_podman"
-      fish_completion.install "completionsfishpodman.fish"
+      bash_completion.install "completions/bash/podman"
+      zsh_completion.install "completions/zsh/_podman"
+      fish_completion.install "completions/fish/podman.fish"
     else
-      paths = Dir["***.go"].select do |file|
-        (buildpathfile).read.lines.grep(%r{etccontainers}).any?
+      paths = Dir["**/*.go"].select do |file|
+        (buildpath/file).read.lines.grep(%r{/etc/containers/}).any?
       end
-      inreplace paths, "etccontainers", etc"containers"
+      inreplace paths, "/etc/containers/", etc/"containers/"
 
       ENV.O0
       ENV["PREFIX"] = prefix
-      ENV["HELPER_BINARIES_DIR"] = opt_libexec"podman"
+      ENV["HELPER_BINARIES_DIR"] = opt_libexec/"podman"
       ENV["BUILD_ORIGIN"] = "brew"
 
       system "make"
       system "make", "install", "install.completions"
 
-      (prefix"etccontainerspolicy.json").write <<~JSON
+      (prefix/"etc/containers/policy.json").write <<~JSON
         {"default":[{"type":"insecureAcceptAnything"}]}
       JSON
 
-      (prefix"etccontainersstorage.conf").write <<~EOS
+      (prefix/"etc/containers/storage.conf").write <<~EOS
         [storage]
         driver="overlay"
       EOS
 
-      (prefix"etccontainersregistries.conf").write <<~EOS
+      (prefix/"etc/containers/registries.conf").write <<~EOS
         unqualified-search-registries=["docker.io"]
       EOS
 
       resource("catatonit").stage do
-        system ".autogen.sh"
-        system ".configure"
+        system "./autogen.sh"
+        system "./configure"
         system "make"
-        mv "catatonit", libexec"podman"
+        mv "catatonit", libexec/"podman/"
       end
 
       resource("netavark").stage do
         system "make"
-        mv "binnetavark", libexec"podman"
+        mv "bin/netavark", libexec/"podman/"
       end
 
       resource("aardvark-dns").stage do
         system "make"
-        mv "binaardvark-dns", libexec"podman"
+        mv "bin/aardvark-dns", libexec/"podman/"
       end
     end
   end
@@ -186,33 +186,33 @@ class Podman < Formula
   end
 
   service do
-    run linux: [opt_bin"podman", "system", "service", "--time", "0"]
+    run linux: [opt_bin/"podman", "system", "service", "--time", "0"]
     environment_variables PATH: std_service_path_env
     working_dir HOMEBREW_PREFIX
   end
 
   test do
-    assert_match "podman-remote version #{version}", shell_output("#{bin}podman-remote -v")
-    out = shell_output("#{bin}podman-remote info 2>&1", 125)
+    assert_match "podman-remote version #{version}", shell_output("#{bin}/podman-remote -v")
+    out = shell_output("#{bin}/podman-remote info 2>&1", 125)
     assert_match "Cannot connect to Podman", out
 
     if OS.mac?
       # This test will fail if VM images are not built yet. Re-run after VM images are built if this is the case
-      # See https:github.comHomebrewhomebrew-corepull166471
-      out = shell_output("#{bin}podman-remote machine init homebrew-testvm")
+      # See https://github.com/Homebrew/homebrew-core/pull/166471
+      out = shell_output("#{bin}/podman-remote machine init homebrew-testvm")
       assert_match "Machine init complete", out
-      system bin"podman-remote", "machine", "rm", "-f", "homebrew-testvm"
+      system bin/"podman-remote", "machine", "rm", "-f", "homebrew-testvm"
     else
       assert_equal %w[podman podman-remote podmansh]
-        .map { |binary| File.join(bin, binary) }.sort, Dir[bin"*"]
+        .map { |binary| File.join(bin, binary) }.sort, Dir[bin/"*"]
       assert_equal %W[
-        #{libexec}podmancatatonit
-        #{libexec}podmannetavark
-        #{libexec}podmanaardvark-dns
-        #{libexec}podmanquadlet
-        #{libexec}podmanrootlessport
-      ].sort, Dir[libexec"podman*"]
-      out = shell_output("file #{libexec}podmancatatonit")
+        #{libexec}/podman/catatonit
+        #{libexec}/podman/netavark
+        #{libexec}/podman/aardvark-dns
+        #{libexec}/podman/quadlet
+        #{libexec}/podman/rootlessport
+      ].sort, Dir[libexec/"podman/*"]
+      out = shell_output("file #{libexec}/podman/catatonit")
       assert_match "statically linked", out
     end
   end

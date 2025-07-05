@@ -1,7 +1,7 @@
 class Libmobi < Formula
   desc "C library for handling Kindle (MOBI) formats of ebook documents"
-  homepage "https:github.combfabiszewskilibmobi"
-  url "https:github.combfabiszewskilibmobireleasesdownloadv0.12libmobi-0.12.tar.gz"
+  homepage "https://github.com/bfabiszewski/libmobi"
+  url "https://ghfast.top/https://github.com/bfabiszewski/libmobi/releases/download/v0.12/libmobi-0.12.tar.gz"
   sha256 "9a6fb2c56b916f8fa8b15e0c71008d908109508c944ea1d297881d4e277bf7e7"
   license "LGPL-3.0-or-later"
 
@@ -22,17 +22,17 @@ class Libmobi < Formula
 
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
-    url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-big_sur.diff"
+    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-big_sur.diff"
     sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
   end
 
   def install
-    system ".configure", *std_configure_args, "--disable-silent-rules"
+    system "./configure", *std_configure_args, "--disable-silent-rules"
     system "make", "install"
   end
 
   test do
-    (testpath"test.cpp").write <<~CPP
+    (testpath/"test.cpp").write <<~CPP
       #include <mobi.h>
       int main() {
         MOBIData *m = mobi_init();
@@ -44,6 +44,6 @@ class Libmobi < Formula
       }
     CPP
     system ENV.cxx, "test.cpp", "-I#{include}", "-L#{lib}", "-lmobi", "-o", "test"
-    system ".test"
+    system "./test"
   end
 end

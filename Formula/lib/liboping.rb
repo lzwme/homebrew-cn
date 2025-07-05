@@ -1,13 +1,13 @@
 class Liboping < Formula
   desc "C library to generate ICMP echo requests"
-  homepage "https:noping.cc"
-  url "https:noping.ccfilesliboping-1.10.0.tar.bz2"
+  homepage "https://noping.cc/"
+  url "https://noping.cc/files/liboping-1.10.0.tar.bz2"
   sha256 "eb38aa93f93e8ab282d97e2582fbaea88b3f889a08cbc9dbf20059c3779d5cd8"
   license "LGPL-2.1-or-later"
 
   livecheck do
     url :homepage
-    regex(href=.*?liboping[._-]v?(\d+(?:\.\d+)+)\.ti)
+    regex(/href=.*?liboping[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -36,22 +36,22 @@ class Liboping < Formula
 
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
-    url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-pre-0.4.2.418-big_sur.diff"
+    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-pre-0.4.2.418-big_sur.diff"
     sha256 "83af02f2aa2b746bb7225872cab29a253264be49db0ecebb12f841562d9a2923"
   end
 
   def install
-    system ".configure", "--mandir=#{man}", *std_configure_args
+    system "./configure", "--mandir=#{man}", *std_configure_args
     system "make", "install"
 
     # move `Net::Oping.3` manpage to man3 dir
 
     if OS.linux?
-      mv prefix"manman3Net::Oping.3", man3
-      rm_r prefix"man"
+      mv prefix/"man/man3/Net::Oping.3", man3
+      rm_r prefix/"man"
     else
-      mv prefix"localsharemanman3Net::Oping.3pm", man3
-      rm_r prefix"local"
+      mv prefix/"local/share/man/man3/Net::Oping.3pm", man3
+      rm_r prefix/"local"
     end
   end
 
@@ -60,7 +60,7 @@ class Liboping < Formula
   end
 
   test do
-    system bin"oping", "-h"
-    system bin"noping", "-h"
+    system bin/"oping", "-h"
+    system bin/"noping", "-h"
   end
 end

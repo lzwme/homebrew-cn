@@ -1,14 +1,14 @@
 class Chainhook < Formula
   desc "Reorg-aware indexing engine for the Stacks & Bitcoin blockchains"
-  homepage "https:github.comhirosystemschainhook"
-  url "https:github.comhirosystemschainhookarchiverefstagsv1.9.0.tar.gz"
+  homepage "https://github.com/hirosystems/chainhook"
+  url "https://ghfast.top/https://github.com/hirosystems/chainhook/archive/refs/tags/v1.9.0.tar.gz"
   sha256 "fea917fcd18032a280a965bd84b57894008110ec15191f4efca6aaab26011443"
   license "GPL-3.0-only"
-  head "https:github.comhirosystemschainhook.git", branch: "develop"
+  head "https://github.com/hirosystems/chainhook.git", branch: "develop"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -27,11 +27,11 @@ class Chainhook < Formula
 
   def install
     system "cargo", "install", "--features", "cli,debug", "--no-default-features",
-                                *std_cargo_args(path: "componentschainhook-cli")
+                                *std_cargo_args(path: "components/chainhook-cli")
   end
 
   test do
-    pipe_output("#{bin}chainhook config new --mainnet", "n\n")
-    assert_match "mode = \"mainnet\"", (testpath"Chainhook.toml").read
+    pipe_output("#{bin}/chainhook config new --mainnet", "n\n")
+    assert_match "mode = \"mainnet\"", (testpath/"Chainhook.toml").read
   end
 end

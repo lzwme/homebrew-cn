@@ -1,13 +1,13 @@
 class SeleniumServer < Formula
   desc "Browser automation for testing purposes"
-  homepage "https:www.selenium.dev"
-  url "https:github.comSeleniumHQseleniumreleasesdownloadselenium-4.34.0selenium-server-4.34.0.jar"
+  homepage "https://www.selenium.dev/"
+  url "https://ghfast.top/https://github.com/SeleniumHQ/selenium/releases/download/selenium-4.34.0/selenium-server-4.34.0.jar"
   sha256 "c4ca7b2453abec28ac705cfc61321ba7ed62e886fbfd54c997b133d73c69c508"
   license "Apache-2.0"
 
   livecheck do
-    url "https:www.selenium.devdownloads"
-    regex(href=.*?selenium-server[._-]v?(\d+(?:\.\d+)+)\.jari)
+    url "https://www.selenium.dev/downloads/"
+    regex(/href=.*?selenium-server[._-]v?(\d+(?:\.\d+)+)\.jar/i)
   end
 
   bottle do
@@ -22,19 +22,19 @@ class SeleniumServer < Formula
 
   def install
     libexec.install "selenium-server-#{version}.jar"
-    bin.write_jar_script libexec"selenium-server-#{version}.jar", "selenium-server"
+    bin.write_jar_script libexec/"selenium-server-#{version}.jar", "selenium-server"
   end
 
   service do
-    run [opt_bin"selenium-server", "standalone", "--port", "4444"]
+    run [opt_bin/"selenium-server", "standalone", "--port", "4444"]
     keep_alive false
-    log_path var"logselenium-output.log"
-    error_log_path var"logselenium-error.log"
+    log_path var/"log/selenium-output.log"
+    error_log_path var/"log/selenium-error.log"
   end
 
   test do
     port = free_port
-    spawn "#{bin}selenium-server standalone --selenium-manager true --port #{port}"
+    spawn "#{bin}/selenium-server standalone --selenium-manager true --port #{port}"
 
     parsed_output = nil
 
@@ -47,7 +47,7 @@ class SeleniumServer < Formula
 
       sleep 3
 
-      output = Utils.popen_read("curl", "--silent", "localhost:#{port}status")
+      output = Utils.popen_read("curl", "--silent", "localhost:#{port}/status")
       next unless $CHILD_STATUS.exitstatus.zero?
 
       parsed_output = JSON.parse(output)

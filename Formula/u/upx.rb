@@ -1,10 +1,10 @@
 class Upx < Formula
-  desc "Compressexpand executable files"
-  homepage "https:upx.github.io"
-  url "https:github.comupxupxreleasesdownloadv4.2.4upx-4.2.4-src.tar.xz"
+  desc "Compress/expand executable files"
+  homepage "https://upx.github.io/"
+  url "https://ghfast.top/https://github.com/upx/upx/releases/download/v4.2.4/upx-4.2.4-src.tar.xz"
   sha256 "5ed6561607d27fb4ef346fc19f08a93696fa8fa127081e7a7114068306b8e1c4"
   license "GPL-2.0-or-later"
-  head "https:github.comupxupx.git", branch: "devel"
+  head "https://github.com/upx/upx.git", branch: "devel"
 
   no_autobump! because: :requires_manual_review
 
@@ -32,8 +32,8 @@ class Upx < Formula
   end
 
   test do
-    system bin"upx", "-1", "-o", ".hello", test_fixtures("elfhello")
-    assert_path_exists testpath"hello"
-    system bin"upx", "-d", ".hello"
+    system bin/"upx", "-1", "-o", "./hello", test_fixtures("elf/hello")
+    assert_path_exists testpath/"hello"
+    system bin/"upx", "-d", "./hello"
   end
 end

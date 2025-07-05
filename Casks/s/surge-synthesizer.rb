@@ -2,11 +2,11 @@ cask "surge-synthesizer" do
   version "1.9.0"
   sha256 "f64329c0dcba60fea9c7bf56c584e124de24527e6625dab19f1f689b128880e5"
 
-  url "https:github.comsurge-synthesizerreleasesreleasesdownload#{version}Surge-#{version}-Setup.dmg",
-      verified: "github.comsurge-synthesizerreleases"
+  url "https://ghfast.top/https://github.com/surge-synthesizer/releases/releases/download/#{version}/Surge-#{version}-Setup.dmg",
+      verified: "github.com/surge-synthesizer/releases/"
   name "Surge"
   desc "Hybrid synthesiser"
-  homepage "https:surge-synthesizer.github.io"
+  homepage "https://surge-synthesizer.github.io/"
 
   no_autobump! because: :requires_manual_review
 

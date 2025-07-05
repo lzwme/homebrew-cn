@@ -1,10 +1,10 @@
 class Dysk < Formula
   desc "Linux utility to get information on filesystems, like df but better"
-  homepage "https:dystroy.orgdysk"
-  url "https:github.comCanopdyskarchiverefstagsv2.10.1.tar.gz"
+  homepage "https://dystroy.org/dysk/"
+  url "https://ghfast.top/https://github.com/Canop/dysk/archive/refs/tags/v2.10.1.tar.gz"
   sha256 "3b7576b700b11052123a91780a6af26fbbd2560ad31fef917af8df8fcceffa04"
   license "MIT"
-  head "https:github.comCanopdysk.git", branch: "main"
+  head "https://github.com/Canop/dysk.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_linux:  "66a69344a33513bf01fec33960a6b88f6bee689671af08704efbb6481ec4f06b"
@@ -19,7 +19,7 @@ class Dysk < Formula
   end
 
   test do
-    assert_match "filesystem", shell_output("#{bin}dysk -s free-d")
-    assert_match version.to_s, shell_output("#{bin}dysk --version")
+    assert_match "filesystem", shell_output("#{bin}/dysk -s free-d")
+    assert_match version.to_s, shell_output("#{bin}/dysk --version")
   end
 end

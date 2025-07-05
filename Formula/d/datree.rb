@@ -1,10 +1,10 @@
 class Datree < Formula
   desc "CLI tool to run policies against Kubernetes manifests YAML files or Helm charts"
-  homepage "https:datree.io"
-  url "https:github.comdatreeiodatreearchiverefstags1.9.19.tar.gz"
+  homepage "https://datree.io/"
+  url "https://ghfast.top/https://github.com/datreeio/datree/archive/refs/tags/1.9.19.tar.gz"
   sha256 "a8b6bf3d3cf0e325590ba3901db6a00e1a268f4a0652f9892af3c7c98efe196b"
   license "Apache-2.0"
-  head "https:github.comdatreeiodatree.git", branch: "main"
+  head "https://github.com/datreeio/datree.git", branch: "main"
 
   no_autobump! because: :requires_manual_review
 
@@ -19,7 +19,7 @@ class Datree < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "6a786ae16a4d3a8ae959cdc9f6571df8e528822389f852c5ddaacb9c27995492"
   end
 
-  # project is deprecated per https:github.comdatreeiodatreepull964
+  # project is deprecated per https://github.com/datreeio/datree/pull/964
   disable! date: "2024-12-22", because: :unmaintained
 
   depends_on "go" => :build
@@ -27,15 +27,15 @@ class Datree < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.comdatreeiodatreecmd.CliVersion=#{version}
+      -X github.com/datreeio/datree/cmd.CliVersion=#{version}
     ]
     system "go", "build", *std_go_args(ldflags:, tags: "main")
 
-    generate_completions_from_executable(bin"datree", "completion")
+    generate_completions_from_executable(bin/"datree", "completion")
   end
 
   test do
-    (testpath"invalidK8sSchema.yaml").write <<~YAML
+    (testpath/"invalidK8sSchema.yaml").write <<~YAML
       apiversion: v1
       kind: Service
       metadata:
@@ -50,11 +50,11 @@ class Datree < Formula
     YAML
 
     # Set to work in the offline mode
-    system bin"datree", "config", "set", "offline", "local"
+    system bin/"datree", "config", "set", "offline", "local"
 
     assert_match "k8s schema validation error: For field (root): Additional property apiversion is not allowed",
-      shell_output("#{bin}datree test #{testpath}invalidK8sSchema.yaml --no-record 2>&1", 2)
+      shell_output("#{bin}/datree test #{testpath}/invalidK8sSchema.yaml --no-record 2>&1", 2)
 
-    assert_match "#{version}\n", shell_output("#{bin}datree version")
+    assert_match "#{version}\n", shell_output("#{bin}/datree version")
   end
 end

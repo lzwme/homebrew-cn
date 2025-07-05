@@ -2,10 +2,10 @@ cask "gmail-notifier" do
   version "2.1.0"
   sha256 "562cad2fd5ea034ff778b4bc37d028b34d535888eac96674e9084afdc3f20092"
 
-  url "https:github.comjashepheGmail-Notifierreleasesdownloadv#{version}Gmail.Notifier.v#{version}.zip"
+  url "https://ghfast.top/https://github.com/jashephe/Gmail-Notifier/releases/download/v#{version}/Gmail.Notifier.v#{version}.zip"
   name "Gmail Notifier"
   desc "Minimalist Gmail inbox notifications app"
-  homepage "https:github.comjashepheGmail-Notifier"
+  homepage "https://github.com/jashephe/Gmail-Notifier"
 
   no_autobump! because: :requires_manual_review
 

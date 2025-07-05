@@ -1,10 +1,10 @@
 class Arangodb < Formula
   desc "Multi-Model NoSQL Database"
-  homepage "https:arangodb.com"
-  url "https:download.arangodb.comSourceArangoDB-3.10.4.tar.bz2"
+  homepage "https://arangodb.com/"
+  url "https://download.arangodb.com/Source/ArangoDB-3.10.4.tar.bz2"
   sha256 "bc9cfaac5747995a6185d2cfea452b9fea8461bf91d2996dd75af75eef3cfddd"
   license "Apache-2.0"
-  head "https:github.comarangodbarangodb.git", branch: "devel"
+  head "https://github.com/arangodb/arangodb.git", branch: "devel"
 
   no_autobump! because: :requires_manual_review
 
@@ -19,7 +19,7 @@ class Arangodb < Formula
   end
 
   # Vendors deps, has a low download count, build always breaks
-  # https:github.comHomebrewhomebrew-corepull135487#issuecomment-1616018628
+  # https://github.com/Homebrew/homebrew-core/pull/135487#issuecomment-1616018628
   disable! date: "2024-07-05", because: :does_not_build
 
   depends_on "cmake" => :build
@@ -38,18 +38,18 @@ class Arangodb < Formula
 
   fails_with :clang do
     cause <<~EOS
-      ...arangodIResearchAqlHelper.h:563:40: error: no matching constructor
+      .../arangod/IResearch/AqlHelper.h:563:40: error: no matching constructor
       for initialization of 'std::string_view' (aka 'basic_string_view<char>')
               std::forward<Visitor>(visitor)(std::string_view{prev, begin});
                                              ^               ~~~~~~~~~~~~~
     EOS
   end
 
-  # https:github.comarangodbarangodbissues17454
-  # https:github.comarangodbarangodbissues17454
+  # https://github.com/arangodb/arangodb/issues/17454
+  # https://github.com/arangodb/arangodb/issues/17454
   fails_with gcc: "11"
 
-  # https:www.arangodb.comdocsstableinstallation-compiling-debian.html
+  # https://www.arangodb.com/docs/stable/installation-compiling-debian.html
   fails_with :gcc do
     version "8"
     cause "requires at least g++ 9.2 as compiler since v3.7"
@@ -59,7 +59,7 @@ class Arangodb < Formula
   # it is used to easily start single server and clusters
   # with a unified CLI
   resource "starter" do
-    url "https:github.comarangodb-helperarangodb.git",
+    url "https://github.com/arangodb-helper/arangodb.git",
         tag:      "0.15.7",
         revision: "0cd043932e6c6f2bd9dc0391ea0313c304b3ca9d"
   end
@@ -74,7 +74,7 @@ class Arangodb < Formula
     elsif Hardware.oldest_cpu == :core2
       # Closest options to Homebrew's core2 are `core`, `merom`, and `penryn`.
       # `core` only enables up to SSE3 so we use `merom` which enables up to SSSE3.
-      # As -march=merom doesn't exist in GCCLLVM, build will fall back to -march=core2
+      # As -march=merom doesn't exist in GCC/LLVM, build will fall back to -march=core2
       "merom"
     else
       Hardware.oldest_cpu
@@ -99,7 +99,7 @@ class Arangodb < Formula
       cmake_args << "-DCMAKE_OSX_DEPLOYMENT_TARGET=#{MacOS.version}"
 
       # Fix building bundled boost with newer LLVM by avoiding removed `std::unary_function`.
-      # ...boost1.78.0boostcontainer_hashhash.hpp:132:33: error: no template named
+      # .../boost/1.78.0/boost/container_hash/hash.hpp:132:33: error: no template named
       # 'unary_function' in namespace 'std'; did you mean '__unary_function'?
       ENV.append "CXXFLAGS", "-DBOOST_NO_CXX98_FUNCTION_BASE=1"
     end
@@ -119,19 +119,19 @@ class Arangodb < Formula
   end
 
   def post_install
-    (var"libarangodb3").mkpath
-    (var"logarangodb3").mkpath
+    (var/"lib/arangodb3").mkpath
+    (var/"log/arangodb3").mkpath
   end
 
   def caveats
     <<~EOS
       An empty password has been set. Please change it by executing
-        #{opt_sbin}arango-secure-installation
+        #{opt_sbin}/arango-secure-installation
     EOS
   end
 
   service do
-    run opt_sbin"arangod"
+    run opt_sbin/"arangod"
     keep_alive true
   end
 
@@ -139,14 +139,14 @@ class Arangodb < Formula
     require "pty"
 
     testcase = "require('@arangodb').print('it works!')"
-    output = shell_output("#{bin}arangosh --server.password \"\" --javascript.execute-string \"#{testcase}\"")
+    output = shell_output("#{bin}/arangosh --server.password \"\" --javascript.execute-string \"#{testcase}\"")
     assert_equal "it works!", output.chomp
 
-    ohai "#{bin}arangodb --starter.instance-up-timeout 1m --starter.mode single"
-    PTY.spawn(bin"arangodb", "--starter.instance-up-timeout", "1m",
+    ohai "#{bin}/arangodb --starter.instance-up-timeout 1m --starter.mode single"
+    PTY.spawn(bin/"arangodb", "--starter.instance-up-timeout", "1m",
               "--starter.mode", "single", "--starter.disable-ipv6",
-              "--server.arangod", "#{sbin}arangod",
-              "--server.js-dir", "#{share}arangodb3js") do |r, _, pid|
+              "--server.arangod", "#{sbin}/arangod",
+              "--server.js-dir", "#{share}/arangodb3/js") do |r, _, pid|
       loop do
         available = r.wait_readable(60)
         refute_equal available, nil

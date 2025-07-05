@@ -1,7 +1,7 @@
 class Fisher < Formula
   desc "Plugin manager for the Fish shell"
-  homepage "https:github.comjorgebucaranfisher"
-  url "https:github.comjorgebucaranfisherarchiverefstags4.4.5.tar.gz"
+  homepage "https://github.com/jorgebucaran/fisher"
+  url "https://ghfast.top/https://github.com/jorgebucaran/fisher/archive/refs/tags/4.4.5.tar.gz"
   sha256 "73518f76a3537d744c6bd1bea7bd848b21b6676801dc5400fc00a4688d7a7964"
   license "MIT"
 
@@ -12,12 +12,12 @@ class Fisher < Formula
   depends_on "fish"
 
   def install
-    fish_function.install "functionsfisher.fish"
-    fish_completion.install "completionsfisher.fish"
+    fish_function.install "functions/fisher.fish"
+    fish_completion.install "completions/fisher.fish"
   end
 
   test do
-    system "#{Formula["fish"].bin}fish", "-c", "fisher install jethrokuanz"
-    assert_equal File.read(testpath".configfishfish_plugins"), "jethrokuanz\n"
+    system "#{Formula["fish"].bin}/fish", "-c", "fisher install jethrokuan/z"
+    assert_equal File.read(testpath/".config/fish/fish_plugins"), "jethrokuan/z\n"
   end
 end

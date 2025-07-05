@@ -1,10 +1,10 @@
 class Ghostunnel < Formula
-  desc "Simple SSLTLS proxy with mutual authentication"
-  homepage "https:github.comghostunnelghostunnel"
-  url "https:github.comghostunnelghostunnelarchiverefstagsv1.8.4.tar.gz"
+  desc "Simple SSL/TLS proxy with mutual authentication"
+  homepage "https://github.com/ghostunnel/ghostunnel"
+  url "https://ghfast.top/https://github.com/ghostunnel/ghostunnel/archive/refs/tags/v1.8.4.tar.gz"
   sha256 "6700ea0ae9a83df18aa216f6346f177ff70e6d80df16690742b823a92af3af46"
   license "Apache-2.0"
-  head "https:github.comghostunnelghostunnel.git", branch: "master"
+  head "https://github.com/ghostunnel/ghostunnel.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "c224c228e987028819e5d11a479f03ebba9173fe8efc946c00bf1df7820a8472"
@@ -21,18 +21,18 @@ class Ghostunnel < Formula
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}")
 
-    generate_completions_from_executable(bin"ghostunnel", shell_parameter_format: "--completion-script-",
+    generate_completions_from_executable(bin/"ghostunnel", shell_parameter_format: "--completion-script-",
                                                            shells:                 [:bash, :zsh])
   end
 
   test do
     port = free_port
     fork do
-      exec bin"ghostunnel", "client", "--listen=localhost:#{port}", "--target=localhost:4",
+      exec bin/"ghostunnel", "client", "--listen=localhost:#{port}", "--target=localhost:4",
         "--disable-authentication", "--shutdown-timeout=1s", "--connect-timeout=1s"
     end
     sleep 1
     sleep 2 if OS.mac? && Hardware::CPU.intel?
-    shell_output("curl -o devnull http:localhost:#{port}", 56)
+    shell_output("curl -o /dev/null http://localhost:#{port}/", 56)
   end
 end

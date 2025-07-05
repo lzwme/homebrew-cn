@@ -1,8 +1,8 @@
 class GrpcAT154 < Formula
   desc "Next generation open source RPC library and framework"
-  homepage "https:grpc.io"
+  homepage "https://grpc.io/"
   # TODO: Check if we can use unversioned `protobuf` at version bump
-  url "https:github.comgrpcgrpc.git",
+  url "https://github.com/grpc/grpc.git",
       tag:      "v1.54.3",
       revision: "868412b573a0663c8db41558498caf44098f4390"
   license "Apache-2.0"
@@ -50,9 +50,9 @@ class GrpcAT154 < Formula
 
   def install
     ENV.llvm_clang if OS.mac? && (DevelopmentTools.clang_build_version <= 1100)
-    mkdir "cmakebuild" do
+    mkdir "cmake/build" do
       args = %W[
-        ....
+        ../..
         -DCMAKE_CXX_STANDARD=17
         -DCMAKE_CXX_STANDARD_REQUIRED=TRUE
         -DCMAKE_INSTALL_RPATH=#{rpath}
@@ -71,7 +71,7 @@ class GrpcAT154 < Formula
       system "make", "install"
 
       args = %W[
-        ....
+        ../..
         -DCMAKE_INSTALL_RPATH=#{rpath}
         -DBUILD_SHARED_LIBS=ON
         -DgRPC_BUILD_TESTS=ON
@@ -83,29 +83,29 @@ class GrpcAT154 < Formula
 
       if OS.mac?
         # These are installed manually, so need to be relocated manually as well
-        MachO::Tools.add_rpath(bin"grpc_cli", rpath)
-        MachO::Tools.add_rpath(libshared_library("libgrpc++_test_config"), rpath)
+        MachO::Tools.add_rpath(bin/"grpc_cli", rpath)
+        MachO::Tools.add_rpath(lib/shared_library("libgrpc++_test_config"), rpath)
       end
     end
   end
 
   test do
-    (testpath"test.cpp").write <<~CPP
-      #include <grpcgrpc.h>
+    (testpath/"test.cpp").write <<~CPP
+      #include <grpc/grpc.h>
       int main() {
         grpc_init();
         grpc_shutdown();
         return GRPC_STATUS_OK;
       }
     CPP
-    ENV.prepend_path "PKG_CONFIG_PATH", lib"pkgconfig"
-    ENV.prepend_path "PKG_CONFIG_PATH", Formula["protobuf@21"].opt_lib"pkgconfig"
-    ENV.prepend_path "PKG_CONFIG_PATH", Formula["openssl@3"].opt_lib"pkgconfig"
+    ENV.prepend_path "PKG_CONFIG_PATH", lib/"pkgconfig"
+    ENV.prepend_path "PKG_CONFIG_PATH", Formula["protobuf@21"].opt_lib/"pkgconfig"
+    ENV.prepend_path "PKG_CONFIG_PATH", Formula["openssl@3"].opt_lib/"pkgconfig"
     pkg_config_flags = shell_output("pkg-config --cflags --libs libcares protobuf re2 grpc++").chomp.split
     system ENV.cc, "test.cpp", "-L#{Formula["abseil"].opt_lib}", *pkg_config_flags, "-o", "test"
-    system ".test"
+    system "./test"
 
-    output = shell_output("#{bin}grpc_cli ls localhost:#{free_port} 2>&1", 1)
+    output = shell_output("#{bin}/grpc_cli ls localhost:#{free_port} 2>&1", 1)
     assert_match "Received an error when querying services endpoint.", output
   end
 end

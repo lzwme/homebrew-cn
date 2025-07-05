@@ -1,10 +1,10 @@
 class Hamlib < Formula
   desc "Ham radio control libraries"
-  homepage "http:www.hamlib.org"
-  url "https:github.comHamlibHamlibreleasesdownload4.6.3hamlib-4.6.3.tar.gz"
+  homepage "http://www.hamlib.org/"
+  url "https://ghfast.top/https://github.com/Hamlib/Hamlib/releases/download/4.6.3/hamlib-4.6.3.tar.gz"
   sha256 "aefd1b1e53a8548870a266ae362044ad3ff43008d10f1050c965cf99ac5a9630"
   license "LGPL-2.1-or-later"
-  head "https:github.comhamlibhamlib.git", branch: "master"
+  head "https://github.com/hamlib/hamlib.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "7ffbbba247c2c2285f2b19e9fda50646bbdd45476a293c4e908963d4614676ee"
@@ -28,12 +28,12 @@ class Hamlib < Formula
   end
 
   def install
-    system ".bootstrap" if build.head?
-    system ".configure", "--disable-silent-rules", *std_configure_args
+    system "./bootstrap" if build.head?
+    system "./configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
   end
 
   test do
-    system bin"rigctl", "-V"
+    system bin/"rigctl", "-V"
   end
 end

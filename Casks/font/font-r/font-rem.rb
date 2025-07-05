@@ -2,12 +2,12 @@ cask "font-rem" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefonts.git",
-      verified:  "github.comgooglefonts",
+  url "https://github.com/google/fonts.git",
+      verified:  "github.com/google/fonts",
       branch:    "main",
-      only_path: "oflrem"
+      only_path: "ofl/rem"
   name "REM"
-  homepage "https:fonts.google.comspecimenREM"
+  homepage "https://fonts.google.com/specimen/REM"
 
   font "REM-Italic[wght].ttf"
   font "REM[wght].ttf"

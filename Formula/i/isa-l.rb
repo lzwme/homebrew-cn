@@ -1,7 +1,7 @@
 class IsaL < Formula
   desc "Intelligent Storage Acceleration Library"
-  homepage "https:github.comintelisa-l"
-  url "https:github.comintelisa-larchiverefstagsv2.31.1.tar.gz"
+  homepage "https://github.com/intel/isa-l"
+  url "https://ghfast.top/https://github.com/intel/isa-l/archive/refs/tags/v2.31.1.tar.gz"
   sha256 "e1d5573a4019738243b568ab1e1422e6ab7557c5cae33cc8686944d327ad6bb4"
   license "BSD-3-Clause"
 
@@ -22,17 +22,17 @@ class IsaL < Formula
   depends_on "nasm" => :build
 
   def install
-    system ".autogen.sh"
-    system ".configure", "--disable-silent-rules", *std_configure_args
+    system "./autogen.sh"
+    system "./configure", "--disable-silent-rules", *std_configure_args
     system "make"
     system "make", "install"
     pkgshare.install "examples"
   end
 
   test do
-    cp pkgshare"examplesecec_simple_example.c", testpath
+    cp pkgshare/"examples/ec/ec_simple_example.c", testpath
     inreplace "ec_simple_example.c", "erasure_code.h", "isa-l.h"
     system ENV.cc, "ec_simple_example.c", "-L#{lib}", "-lisal", "-o", "test"
-    assert_match "Pass", shell_output(".test")
+    assert_match "Pass", shell_output("./test")
   end
 end

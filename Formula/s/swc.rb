@@ -1,14 +1,14 @@
 class Swc < Formula
-  desc "Super-fast Rust-based JavaScriptTypeScript compiler"
-  homepage "https:swc.rs"
-  url "https:github.comswc-projectswcarchiverefstagsv1.12.9.tar.gz"
+  desc "Super-fast Rust-based JavaScript/TypeScript compiler"
+  homepage "https://swc.rs"
+  url "https://ghfast.top/https://github.com/swc-project/swc/archive/refs/tags/v1.12.9.tar.gz"
   sha256 "6bae04b4a8ced7975d87d4b16219a03f7593403289f5e995b2b39d85548b506c"
   license "Apache-2.0"
-  head "https:github.comswc-projectswc.git", branch: "main"
+  head "https://github.com/swc-project/swc.git", branch: "main"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -25,20 +25,20 @@ class Swc < Formula
 
   def install
     # `-Zshare-generics=y` flag is only supported on nightly Rust
-    rm ".cargoconfig.toml"
+    rm ".cargo/config.toml"
 
-    system "cargo", "install", *std_cargo_args(path: "cratesswc_cli_impl")
+    system "cargo", "install", *std_cargo_args(path: "crates/swc_cli_impl")
   end
 
   test do
-    (testpath"test.js").write <<~JS
+    (testpath/"test.js").write <<~JS
       const x = () => 42;
     JS
 
-    system bin"swc", "compile", "test.js", "--out-file", "test.out.js"
-    assert_path_exists testpath"test.out.js"
+    system bin/"swc", "compile", "test.js", "--out-file", "test.out.js"
+    assert_path_exists testpath/"test.out.js"
 
-    output = shell_output("#{bin}swc lint 2>&1", 101)
+    output = shell_output("#{bin}/swc lint 2>&1", 101)
     assert_match "Lint command is not yet implemented", output
   end
 end

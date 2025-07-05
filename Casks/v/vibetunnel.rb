@@ -2,27 +2,27 @@ cask "vibetunnel" do
   version "1.0.0-beta.5"
   sha256 "3871042da79d81dbdb3c128a7202601cab8f248717ca32a8da52ec72bb7134b3"
 
-  url "https:github.comamantus-aivibetunnelreleasesdownloadv#{version}VibeTunnel-#{version}.dmg",
-      verified: "github.comamantus-aivibetunnel"
+  url "https://ghfast.top/https://github.com/amantus-ai/vibetunnel/releases/download/v#{version}/VibeTunnel-#{version}.dmg",
+      verified: "github.com/amantus-ai/vibetunnel/"
   name "VibeTunnel"
   desc "Turn any browser into your terminal"
-  homepage "https:vibetunnel.sh"
+  homepage "https://vibetunnel.sh/"
 
   livecheck do
     url :url
-    regex(^v?(\d+(?:\.\d+)*(?:-beta\.\d+)?)$i)
+    regex(/^v?(\d+(?:\.\d+)*(?:-beta\.\d+)?)$/i)
   end
 
   depends_on macos: ">= :sonoma"
   depends_on arch: :arm64
 
   app "VibeTunnel.app"
-  binary "#{appdir}VibeTunnel.appContentsResourcesvt"
+  binary "#{appdir}/VibeTunnel.app/Contents/Resources/vt"
 
   zap trash: [
-    "~LibraryApplication SupportVibeTunnel",
-    "~LibraryCachescom.amantus.vibetunnel",
-    "~LibraryPreferencescom.amantus.vibetunnel.plist",
-    "~LibrarySaved Application Statecom.amantus.vibetunnel.savedState",
+    "~/Library/Application Support/VibeTunnel",
+    "~/Library/Caches/com.amantus.vibetunnel",
+    "~/Library/Preferences/com.amantus.vibetunnel.plist",
+    "~/Library/Saved Application State/com.amantus.vibetunnel.savedState",
   ]
 end

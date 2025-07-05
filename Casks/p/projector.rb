@@ -6,11 +6,11 @@ cask "projector" do
   sha256 arm:   "a2f51be000977500a0b1e08a6f357495c98600f542d5cd9cdd8e88cc3785679a",
          intel: "a509d7fe44ffdfbb6fb81058172558b47591ac5ac25376782574cf99be58397b"
 
-  url "https:github.comJetBrainsprojector-clientreleasesdownloadlauncher-v#{version}projector-darwin-signed-#{arch}-launcher-v#{version}.zip",
-      verified: "github.comJetBrainsprojector-client"
+  url "https://ghfast.top/https://github.com/JetBrains/projector-client/releases/download/launcher-v#{version}/projector-darwin-signed-#{arch}-launcher-v#{version}.zip",
+      verified: "github.com/JetBrains/projector-client/"
   name "JetBrains Projector"
   desc "Common and client-related code for running Swing applications remotely"
-  homepage "https:lp.jetbrains.comprojector"
+  homepage "https://lp.jetbrains.com/projector/"
 
   no_autobump! because: :requires_manual_review
 
@@ -21,8 +21,8 @@ cask "projector" do
   app "projector#{archapp}.app"
 
   zap trash: [
-    "~LibraryApplication Supportprojector-launcher",
-    "~LibraryPreferencescom.electron.projector.plist",
-    "~LibrarySaved Application Statecom.electron.projector.savedState",
+    "~/Library/Application Support/projector-launcher",
+    "~/Library/Preferences/com.electron.projector.plist",
+    "~/Library/Saved Application State/com.electron.projector.savedState",
   ]
 end

@@ -2,20 +2,20 @@ cask "rnnoise" do
   version "1.10"
   sha256 "53c41fe3ce8af529b1d2d18802ecbd7e9f0b6d7ad013fd5f92f6af974472a9e9"
 
-  url "https:github.comwermannoise-suppression-for-voicereleasesdownloadv#{version}macos-rnnoise.zip"
+  url "https://ghfast.top/https://github.com/werman/noise-suppression-for-voice/releases/download/v#{version}/macos-rnnoise.zip"
   name "Noise Suppression for Voice"
   desc "Real-time Noise Suppression Plugin"
-  homepage "https:github.comwermannoise-suppression-for-voice"
+  homepage "https://github.com/werman/noise-suppression-for-voice"
 
   no_autobump! because: :requires_manual_review
 
-  audio_unit_plugin "macos-rnnoisernnoise.component"
-  vst_plugin "macos-rnnoisevstrnnoise_mono.vst"
-  vst_plugin "macos-rnnoisevstrnnoise_stereo.vst"
-  vst3_plugin "macos-rnnoisernnoise.vst3"
+  audio_unit_plugin "macos-rnnoise/rnnoise.component"
+  vst_plugin "macos-rnnoise/vst/rnnoise_mono.vst"
+  vst_plugin "macos-rnnoise/vst/rnnoise_stereo.vst"
+  vst3_plugin "macos-rnnoise/rnnoise.vst3"
 
   zap rmdir: [
-    "~LibraryAudioPlug-InsVST",
-    "~LibraryAudioPlug-InsVST3",
+    "~/Library/Audio/Plug-Ins/VST",
+    "~/Library/Audio/Plug-Ins/VST3",
   ]
 end

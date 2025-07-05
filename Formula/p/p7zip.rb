@@ -1,7 +1,7 @@
 class P7zip < Formula
   desc "7-Zip (high compression file archiver) implementation"
-  homepage "https:github.comp7zip-projectp7zip"
-  url "https:github.comp7zip-projectp7ziparchiverefstagsv17.06.tar.gz"
+  homepage "https://github.com/p7zip-project/p7zip"
+  url "https://ghfast.top/https://github.com/p7zip-project/p7zip/archive/refs/tags/v17.06.tar.gz"
   sha256 "c35640020e8f044b425d9c18e1808ff9206dc7caf77c9720f57eb0849d714cd1"
   license all_of: ["LGPL-2.1-or-later", "GPL-2.0-or-later"]
 
@@ -33,38 +33,38 @@ class P7zip < Formula
   end
 
   test do
-    (testpath"foo.txt").write("hello world!\n")
-    system bin"7z", "a", "-t7z", "foo.7z", "foo.txt"
-    system bin"7z", "e", "foo.7z", "-oout"
-    assert_equal "hello world!\n", File.read(testpath"outfoo.txt")
+    (testpath/"foo.txt").write("hello world!\n")
+    system bin/"7z", "a", "-t7z", "foo.7z", "foo.txt"
+    system bin/"7z", "e", "foo.7z", "-oout"
+    assert_equal "hello world!\n", File.read(testpath/"out/foo.txt")
   end
 end
 
 __END__
-diff -u -r amakefile bmakefile
---- amakefile	2021-02-21 14:27:14.000000000 +0800
-+++ bmakefile	2021-02-21 14:27:31.000000000 +0800
+diff -u -r a/makefile b/makefile
+--- a/makefile	2021-02-21 14:27:14.000000000 +0800
++++ b/makefile	2021-02-21 14:27:31.000000000 +0800
 @@ -31,7 +31,6 @@
- 	$(MAKE) -C CPP7zipUIClient7z           depend
- 	$(MAKE) -C CPP7zipUIConsole            depend
- 	$(MAKE) -C CPP7zipBundlesFormat7zFree  depend
--	$(MAKE) -C CPP7zipCompressRar          depend
- 	$(MAKE) -C CPP7zipUIGUI                depend
- 	$(MAKE) -C CPP7zipUIFileManager        depend
+ 	$(MAKE) -C CPP/7zip/UI/Client7z           depend
+ 	$(MAKE) -C CPP/7zip/UI/Console            depend
+ 	$(MAKE) -C CPP/7zip/Bundles/Format7zFree  depend
+-	$(MAKE) -C CPP/7zip/Compress/Rar          depend
+ 	$(MAKE) -C CPP/7zip/UI/GUI                depend
+ 	$(MAKE) -C CPP/7zip/UI/FileManager        depend
 
 @@ -42,7 +41,6 @@
  common7z:common
- 	$(MKDIR) binCodecs
- 	$(MAKE) -C CPP7zipBundlesFormat7zFree all
--	$(MAKE) -C CPP7zipCompressRar         all
+ 	$(MKDIR) bin/Codecs
+ 	$(MAKE) -C CPP/7zip/Bundles/Format7zFree all
+-	$(MAKE) -C CPP/7zip/Compress/Rar         all
 
  lzham:common
- 	$(MKDIR) binCodecs
+ 	$(MKDIR) bin/Codecs
 @@ -67,7 +65,6 @@
- 	$(MAKE) -C CPP7zipUIFileManager       clean
- 	$(MAKE) -C CPP7zipUIGUI               clean
- 	$(MAKE) -C CPP7zipBundlesFormat7zFree clean
--	$(MAKE) -C CPP7zipCompressRar         clean
- 	$(MAKE) -C CPP7zipCompressLzham       clean
- 	$(MAKE) -C CPP7zipBundlesLzmaCon      clean2
- 	$(MAKE) -C CPP7zipBundlesAloneGCOV    clean
+ 	$(MAKE) -C CPP/7zip/UI/FileManager       clean
+ 	$(MAKE) -C CPP/7zip/UI/GUI               clean
+ 	$(MAKE) -C CPP/7zip/Bundles/Format7zFree clean
+-	$(MAKE) -C CPP/7zip/Compress/Rar         clean
+ 	$(MAKE) -C CPP/7zip/Compress/Lzham       clean
+ 	$(MAKE) -C CPP/7zip/Bundles/LzmaCon      clean2
+ 	$(MAKE) -C CPP/7zip/Bundles/AloneGCOV    clean

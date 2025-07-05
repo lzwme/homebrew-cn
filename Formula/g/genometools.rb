@@ -1,11 +1,11 @@
 class Genometools < Formula
   desc "Versatile open source genome analysis software"
-  homepage "https:genometools.org"
+  homepage "https://genometools.org/"
   # genometools does not have source code on par with their binary dist on their website
-  url "https:github.comgenometoolsgenometoolsarchiverefstagsv1.6.5.tar.gz"
+  url "https://ghfast.top/https://github.com/genometools/genometools/archive/refs/tags/v1.6.5.tar.gz"
   sha256 "f71b95c84761847223cd52a17d30ad9e6d55854448c2139fcd0aac437f73fbbe"
   license "ISC"
-  head "https:github.comgenometoolsgenometools.git", branch: "master"
+  head "https://github.com/genometools/genometools.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -37,7 +37,7 @@ class Genometools < Formula
     depends_on "harfbuzz"
   end
 
-  conflicts_with "libslax", because: "both install `bingt`"
+  conflicts_with "libslax", because: "both install `bin/gt`"
 
   def python3
     which("python3.13")
@@ -45,11 +45,11 @@ class Genometools < Formula
 
   def install
     # Workaround for arm64 linux from char being unsigned.
-    # Same root cause as https:github.comgenometoolsgenometoolsissues311
+    # Same root cause as https://github.com/genometools/genometools/issues/311
     ENV.append_to_cflags "-fsigned-char" if OS.linux? && Hardware::CPU.arm?
 
     # Manually unbundle as useshared=yes requires Lua 5.1 and older SAMtools
-    rm_r(Dir["srcexternal{bzip2,expat,sqlite,tre,zlib}*"])
+    rm_r(Dir["src/external/{bzip2,expat,sqlite,tre,zlib}*"])
 
     system "make", "install", "prefix=#{prefix}",
                               "ADDITIONAL_SO_DEPS=",
@@ -64,9 +64,9 @@ class Genometools < Formula
 
     cd "gtpython" do
       # Use the shared library from this specific version of genometools.
-      inreplace "gtdlload.py",
+      inreplace "gt/dlload.py",
         "gtlib = CDLL(\"libgenometools\" + soext)",
-        "gtlib = CDLL(\"#{lib}libgenometools\" + soext)"
+        "gtlib = CDLL(\"#{lib}/libgenometools\" + soext)"
 
       system python3, "-m", "pip", "install", *std_pip_args(build_isolation: true), "."
       system python3, "-m", "unittest", "discover", "tests"
@@ -74,7 +74,7 @@ class Genometools < Formula
   end
 
   test do
-    system bin"gt", "-test"
+    system bin/"gt", "-test"
     system python3, "-c", "import gt"
   end
 end

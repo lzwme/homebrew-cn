@@ -1,7 +1,7 @@
 class StripeCli < Formula
   desc "Command-line tool for Stripe"
-  homepage "https:docs.stripe.comstripe-cli"
-  url "https:github.comstripestripe-cliarchiverefstagsv1.28.0.tar.gz"
+  homepage "https://docs.stripe.com/stripe-cli"
+  url "https://ghfast.top/https://github.com/stripe/stripe-cli/archive/refs/tags/v1.28.0.tar.gz"
   sha256 "a54917683819e323aaf650248e422c0f5b23c1176948e7e5d9764ae68a959180"
   license "Apache-2.0"
 
@@ -17,26 +17,26 @@ class StripeCli < Formula
 
   depends_on "go" => :build
 
-  # fish completion support patch, upstream pr ref, https:github.comstripestripe-clipull1282
+  # fish completion support patch, upstream pr ref, https://github.com/stripe/stripe-cli/pull/1282
   patch do
-    url "https:github.comstripestripe-clicommitde62a98881671ce83973e1b696d3a7ea820b8d0e.patch?full_index=1"
+    url "https://github.com/stripe/stripe-cli/commit/de62a98881671ce83973e1b696d3a7ea820b8d0e.patch?full_index=1"
     sha256 "2b30ee04680e16b5648495e2fe93db3362931cf7151b1daa1f7e95023b690db8"
   end
 
   def install
     # See configuration in `.goreleaser` directory
     ENV["CGO_ENABLED"] = OS.mac? ? "1" : "0"
-    ldflags = %W[-s -w -X github.comstripestripe-clipkgversion.Version=#{version}]
-    system "go", "build", *std_go_args(ldflags:, output: bin"stripe"), "cmdstripemain.go"
+    ldflags = %W[-s -w -X github.com/stripe/stripe-cli/pkg/version.Version=#{version}]
+    system "go", "build", *std_go_args(ldflags:, output: bin/"stripe"), "cmd/stripe/main.go"
 
-    generate_completions_from_executable(bin"stripe", "completion", "--write-to-stdout", "--shell")
+    generate_completions_from_executable(bin/"stripe", "completion", "--write-to-stdout", "--shell")
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}stripe version")
+    assert_match version.to_s, shell_output("#{bin}/stripe version")
     assert_match "secret or restricted key",
-                 shell_output("#{bin}stripe --api-key=not_real_key get ch_1EGYgUByst5pquEtjb0EkYha", 1)
+                 shell_output("#{bin}/stripe --api-key=not_real_key get ch_1EGYgUByst5pquEtjb0EkYha", 1)
     assert_match "-F __start_stripe",
-                 shell_output("bash -c 'source #{bash_completion}stripe && complete -p stripe'")
+                 shell_output("bash -c 'source #{bash_completion}/stripe && complete -p stripe'")
   end
 end

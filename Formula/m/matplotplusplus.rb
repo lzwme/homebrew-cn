@@ -1,7 +1,7 @@
 class Matplotplusplus < Formula
   desc "C++ Graphics Library for Data Visualization"
-  homepage "https:github.comalandefreitasmatplotplusplus"
-  url "https:github.comalandefreitasmatplotplusplusarchiverefstagsv1.2.2.tar.gz"
+  homepage "https://github.com/alandefreitas/matplotplusplus"
+  url "https://ghfast.top/https://github.com/alandefreitas/matplotplusplus/archive/refs/tags/v1.2.2.tar.gz"
   sha256 "c7434b4fea0d0cc3508fd7104fafbb2fa7c824b1d2ccc51c52eaee26fc55a9a0"
   license "MIT"
 
@@ -43,9 +43,9 @@ class Matplotplusplus < Formula
     # Set QT_QTP_PLATFORM to "minimal" on Linux so that it does not fail with this error:
     # qt.qpa.xcb: could not connect to display
     ENV["QT_QPA_PLATFORM"] = "minimal" unless OS.mac?
-    cp pkgshare"examplesexportingsavesave_1.cpp", testpath"test.cpp"
+    cp pkgshare/"examples/exporting/save/save_1.cpp", testpath/"test.cpp"
     system ENV.cxx, "-std=c++17", "test.cpp", "-L#{lib}", "-lmatplot", "-o", "test"
-    system ".test"
-    assert_path_exists testpath"imgbarchart.svg"
+    system "./test"
+    assert_path_exists testpath/"img/barchart.svg"
   end
 end

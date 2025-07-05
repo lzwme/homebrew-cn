@@ -1,8 +1,8 @@
 class Usbutils < Formula
   desc "List detailed info about USB devices"
   # Homepage for multiple Linux USB tools, 'usbutils' is one of them.
-  homepage "http:www.linux-usb.org"
-  url "https:mirrors.edge.kernel.orgpublinuxutilsusbusbutilsusbutils-018.tar.gz"
+  homepage "http://www.linux-usb.org/"
+  url "https://mirrors.edge.kernel.org/pub/linux/utils/usb/usbutils/usbutils-018.tar.gz"
   sha256 "0048d2d8518fb0cc7c0516e16e52af023e52b55ddb3b2068a77041b5ef285768"
   license all_of: [
     "GPL-2.0-only",
@@ -11,8 +11,8 @@ class Usbutils < Formula
   ]
 
   livecheck do
-    url "https:mirrors.edge.kernel.orgpublinuxutilsusbusbutils"
-    regex(href=.*?usbutils[._-]v?(\d+(?:\.\d+)*)\.ti)
+    url "https://mirrors.edge.kernel.org/pub/linux/utils/usb/usbutils/"
+    regex(/href=.*?usbutils[._-]v?(\d+(?:\.\d+)*)\.t/i)
   end
 
   bottle do
@@ -37,7 +37,7 @@ class Usbutils < Formula
   conflicts_with "lsusb", "lsusb-laniksj", because: "both provide an `lsusb` binary"
 
   patch do
-    url "https:raw.githubusercontent.comHomebrewformula-patches24a6945778381a62ecdcc1d78bcc16b9f86778c1usbutilsportable.patch"
+    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/24a6945778381a62ecdcc1d78bcc16b9f86778c1/usbutils/portable.patch"
     sha256 "ec09531017e1fa45dbc37233b286a736a24d7f98668e38a92e3697559f739c7f"
   end
 
@@ -55,6 +55,6 @@ class Usbutils < Formula
   end
 
   test do
-    assert_empty shell_output("#{bin}lsusb -d ffff:ffff", 1)
+    assert_empty shell_output("#{bin}/lsusb -d ffff:ffff", 1)
   end
 end

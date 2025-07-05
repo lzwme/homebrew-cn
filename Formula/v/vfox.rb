@@ -1,10 +1,10 @@
 class Vfox < Formula
   desc "Version manager with support for Java, Node.js, Flutter, .NET & more"
-  homepage "https:vfox.dev"
-  url "https:github.comversion-foxvfoxarchiverefstagsv0.6.10.tar.gz"
+  homepage "https://vfox.dev/"
+  url "https://ghfast.top/https://github.com/version-fox/vfox/archive/refs/tags/v0.6.10.tar.gz"
   sha256 "397c93d5bc8284128c1d8e7271c95cf7f15d0744f2886bd99ce39b1601257574"
   license "Apache-2.0"
-  head "https:github.comversion-foxvfox.git", branch: "main"
+  head "https://github.com/version-fox/vfox.git", branch: "main"
 
   livecheck do
     url :stable
@@ -25,15 +25,15 @@ class Vfox < Formula
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
 
-    bash_completion.install "completionsbash_autocomplete" => "vfox"
-    zsh_completion.install "completionszsh_autocomplete" => "_vfox"
+    bash_completion.install "completions/bash_autocomplete" => "vfox"
+    zsh_completion.install "completions/zsh_autocomplete" => "_vfox"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}vfox --version")
+    assert_match version.to_s, shell_output("#{bin}/vfox --version")
 
-    system bin"vfox", "add", "golang"
-    output = shell_output(bin"vfox info golang")
-    assert_match "Golang plugin, https:go.devdl", output
+    system bin/"vfox", "add", "golang"
+    output = shell_output(bin/"vfox info golang")
+    assert_match "Golang plugin, https://go.dev/dl/", output
   end
 end

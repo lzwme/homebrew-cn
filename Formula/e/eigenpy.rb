@@ -1,10 +1,10 @@
 class Eigenpy < Formula
   desc "Python bindings of Eigen library with Numpy support"
-  homepage "https:github.comstack-of-taskseigenpy"
-  url "https:github.comstack-of-taskseigenpyreleasesdownloadv3.11.0eigenpy-3.11.0.tar.gz"
+  homepage "https://github.com/stack-of-tasks/eigenpy"
+  url "https://ghfast.top/https://github.com/stack-of-tasks/eigenpy/releases/download/v3.11.0/eigenpy-3.11.0.tar.gz"
   sha256 "5c618843194cc372e1ba4e0430240f310985edd9fd7d99a7c24794d1b62e1b3d"
   license "BSD-2-Clause"
-  head "https:github.comstack-of-taskseigenpy.git", branch: "master"
+  head "https://github.com/stack-of-tasks/eigenpy.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "eb4740eff258d271fa4b407aefd4b033b88d3f2a055d29b70c575c3d48ace7c7"
@@ -31,15 +31,15 @@ class Eigenpy < Formula
   end
 
   def install
-    ENV.prepend_path "PYTHONPATH", Formula["numpy"].opt_prefixLanguage::Python.site_packages(python3)
-    ENV.prepend_path "Eigen3_DIR", Formula["eigen"].opt_share"eigen3cmake"
+    ENV.prepend_path "PYTHONPATH", Formula["numpy"].opt_prefix/Language::Python.site_packages(python3)
+    ENV.prepend_path "Eigen3_DIR", Formula["eigen"].opt_share/"eigen3/cmake"
 
     args = %W[
       -DPYTHON_EXECUTABLE=#{which(python3)}
       -DBUILD_UNIT_TESTS=OFF
     ]
     # Avoid linkage to boost container and graph modules
-    # Issue ref: https:github.comboostorgboostissues985
+    # Issue ref: https://github.com/boostorg/boost/issues/985
     args += %w[MODULE SHARED].map { |type| "-DCMAKE_#{type}_LINKER_FLAGS=-Wl,-dead_strip_dylibs" } if OS.mac?
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args

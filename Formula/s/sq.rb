@@ -1,7 +1,7 @@
 class Sq < Formula
   desc "Data wrangler with jq-like query language"
-  homepage "https:sq.io"
-  url "https:github.comneilotoolesqarchiverefstagsv0.48.5.tar.gz"
+  homepage "https://sq.io"
+  url "https://ghfast.top/https://github.com/neilotoole/sq/archive/refs/tags/v0.48.5.tar.gz"
   sha256 "4ed9cef836e66174b6e01c8d410cd393aeae7f7069a428a7ab2adcd1e282cf68"
   license "MIT"
 
@@ -23,7 +23,7 @@ class Sq < Formula
   conflicts_with "squirrel-lang", because: "both install `sq` binaries"
 
   def install
-    pkg = "github.comneilotoolesqclibuildinfo"
+    pkg = "github.com/neilotoole/sq/cli/buildinfo"
     ldflags = %W[
       -s -w
       -X #{pkg}.Version=v#{version}
@@ -35,19 +35,19 @@ class Sq < Formula
       sqlite_json sqlite_math_functions
     ]
     system "go", "build", *std_go_args(ldflags:, tags:)
-    generate_completions_from_executable(bin"sq", "completion")
-    (man1"sq.1").write Utils.safe_popen_read(bin"sq", "man")
+    generate_completions_from_executable(bin/"sq", "completion")
+    (man1/"sq.1").write Utils.safe_popen_read(bin/"sq", "man")
   end
 
   test do
-    (testpath"test.sql").write <<~SQL
+    (testpath/"test.sql").write <<~SQL
       create table t(a text, b integer);
       insert into t values ('hello',1),('there',42);
     SQL
     system "sqlite3 test.db < test.sql"
-    out1 = shell_output("#{bin}sq add --active --handle @tst test.db")
-    assert_equal %w[@tst sqlite3 test.db], out1.strip.split(\s+)
-    out2 = shell_output("#{bin}sq '@tst.t | .b' <devnull 2>&1")
+    out1 = shell_output("#{bin}/sq add --active --handle @tst test.db")
+    assert_equal %w[@tst sqlite3 test.db], out1.strip.split(/\s+/)
+    out2 = shell_output("#{bin}/sq '@tst.t | .b' </dev/null 2>&1")
     assert_equal %w[b 1 42], out2.strip.split("\n")
   end
 end

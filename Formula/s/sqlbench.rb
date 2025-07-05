@@ -1,10 +1,10 @@
 class Sqlbench < Formula
   desc "Measures and compares the execution time of one or more SQL queries"
-  homepage "https:github.comfelixgesqlbench"
-  url "https:github.comfelixgesqlbencharchiverefstagsv1.1.0.tar.gz"
+  homepage "https://github.com/felixge/sqlbench"
+  url "https://ghfast.top/https://github.com/felixge/sqlbench/archive/refs/tags/v1.1.0.tar.gz"
   sha256 "deaf4c299891ce75abff00429343eded76e8ddc8295d488938aa9ee418a7c9b3"
   license "MIT"
-  head "https:github.comfelixgesqlbench.git", branch: "master"
+  head "https://github.com/felixge/sqlbench.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -31,8 +31,8 @@ class Sqlbench < Formula
   end
 
   test do
-    cp_r pkgshare"examples", testpath
+    cp_r pkgshare/"examples", testpath
     assert_match "failed to connect to",
-      shell_output("#{bin}sqlbench #{testpath}examplessum*.sql 2>&1", 1)
+      shell_output("#{bin}/sqlbench #{testpath}/examples/sum/*.sql 2>&1", 1)
   end
 end

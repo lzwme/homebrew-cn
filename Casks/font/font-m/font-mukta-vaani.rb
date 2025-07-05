@@ -2,12 +2,12 @@ cask "font-mukta-vaani" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefonts.git",
-      verified:  "github.comgooglefonts",
+  url "https://github.com/google/fonts.git",
+      verified:  "github.com/google/fonts",
       branch:    "main",
-      only_path: "oflmuktavaani"
+      only_path: "ofl/muktavaani"
   name "Mukta Vaani"
-  homepage "https:fonts.google.comspecimenMukta+Vaani"
+  homepage "https://fonts.google.com/specimen/Mukta+Vaani"
 
   font "MuktaVaani-Bold.ttf"
   font "MuktaVaani-ExtraBold.ttf"

@@ -1,10 +1,10 @@
 class Periphery < Formula
   desc "Identify unused code in Swift projects"
-  homepage "https:github.comperipheryappperiphery"
-  url "https:github.comperipheryappperipheryarchiverefstags3.2.0.tar.gz"
+  homepage "https://github.com/peripheryapp/periphery"
+  url "https://ghfast.top/https://github.com/peripheryapp/periphery/archive/refs/tags/3.2.0.tar.gz"
   sha256 "84041cf27e1f7b1f9981651f0d7c78b317388040f1f31cf131dabb744a5f922c"
   license "MIT"
-  head "https:github.comperipheryappperiphery.git", branch: "master"
+  head "https://github.com/peripheryapp/periphery.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "c314b1a1ce15e2ff50ddab92984142cc48128665bf1fda0f2da5077b7c450ce8"
@@ -27,13 +27,13 @@ class Periphery < Formula
       ["--static-swift-stdlib"]
     end
     system "swift", "build", *args, "--configuration", "release", "--product", "periphery"
-    bin.install ".buildreleaseperiphery"
+    bin.install ".build/release/periphery"
   end
 
   test do
     # Periphery dynamically loads 'libIndexStore' at runtime and must find its location depending on the host OS.
     # On macOS, the library is bundled within Xcode at a consistent location. On Linux, the library path is assumed
-    # to be at 'liblibIndexStore.so' relative to the path of the 'swift' binary, which is a reasonable assumption for
+    # to be at 'lib/libIndexStore.so' relative to the path of the 'swift' binary, which is a reasonable assumption for
     # most installations. However, this is not the case on the Homebrew Linux test container, and the shared libraries
     # do not appear to be present.
     return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
@@ -42,6 +42,6 @@ class Periphery < Formula
     system "swift", "build", "--disable-sandbox"
     manifest = shell_output "swift package --disable-sandbox describe --type json"
     File.write "manifest.json", manifest
-    system bin"periphery", "scan", "--strict", "--skip-build", "--json-package-manifest-path", "manifest.json"
+    system bin/"periphery", "scan", "--strict", "--skip-build", "--json-package-manifest-path", "manifest.json"
   end
 end

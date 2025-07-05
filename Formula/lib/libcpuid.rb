@@ -1,10 +1,10 @@
 class Libcpuid < Formula
   desc "Small C library for x86 CPU detection and feature extraction"
-  homepage "https:github.comanriefflibcpuid"
-  url "https:github.comanriefflibcpuidarchiverefstagsv0.8.0.tar.gz"
+  homepage "https://github.com/anrieff/libcpuid"
+  url "https://ghfast.top/https://github.com/anrieff/libcpuid/archive/refs/tags/v0.8.0.tar.gz"
   sha256 "a5fe37d79bda121cbdf385ae3f6fa621da6a3102aa609400a718a4b8b82ed8aa"
   license "BSD-2-Clause"
-  head "https:github.comanriefflibcpuid.git", branch: "master"
+  head "https://github.com/anrieff/libcpuid.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 sonoma:       "a96631f0f039e5fbdac221e14ee15515a85e07cb0244e8bb975f97661fbf7c95"
@@ -23,14 +23,14 @@ class Libcpuid < Formula
 
   def install
     system "autoreconf", "--force", "--install", "--verbose"
-    system ".configure", "--disable-silent-rules", *std_configure_args
+    system "./configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
   end
 
   test do
-    system bin"cpuid_tool"
-    assert_path_exists testpath"raw.txt"
-    assert_path_exists testpath"report.txt"
-    assert_match "CPUID is present", File.read(testpath"report.txt")
+    system bin/"cpuid_tool"
+    assert_path_exists testpath/"raw.txt"
+    assert_path_exists testpath/"report.txt"
+    assert_match "CPUID is present", File.read(testpath/"report.txt")
   end
 end

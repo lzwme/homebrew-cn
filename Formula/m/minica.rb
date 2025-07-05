@@ -1,10 +1,10 @@
 class Minica < Formula
   desc "Small, simple certificate authority"
-  homepage "https:github.comjshaminica"
-  url "https:github.comjshaminicaarchiverefstagsv1.1.0.tar.gz"
+  homepage "https://github.com/jsha/minica"
+  url "https://ghfast.top/https://github.com/jsha/minica/archive/refs/tags/v1.1.0.tar.gz"
   sha256 "4f56ea73d2a943656f8a5b533e554b435bc10f56c12d0b53836e84a96b513bf7"
   license "MIT"
-  head "https:github.comjshaminica.git", branch: "master"
+  head "https://github.com/jsha/minica.git", branch: "master"
 
   livecheck do
     url :stable
@@ -29,7 +29,7 @@ class Minica < Formula
   end
 
   test do
-    system bin"minica", "--domains", "foo.com"
-    assert_path_exists testpath"minica.pem"
+    system bin/"minica", "--domains", "foo.com"
+    assert_path_exists testpath/"minica.pem"
   end
 end

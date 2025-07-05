@@ -1,10 +1,10 @@
 class Arelo < Formula
   desc "Simple auto reload (live reload) utility"
-  homepage "https:github.commakiuchi-darelo"
-  url "https:github.commakiuchi-dareloarchiverefstagsv1.15.3.tar.gz"
+  homepage "https://github.com/makiuchi-d/arelo"
+  url "https://ghfast.top/https://github.com/makiuchi-d/arelo/archive/refs/tags/v1.15.3.tar.gz"
   sha256 "7726530e551200ae2cf932518566cc903d1dcc02b587c795382ee291e11ccbf9"
   license "MIT"
-  head "https:github.commakiuchi-darelo.git", branch: "master"
+  head "https://github.com/makiuchi-d/arelo.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "ef538d5b66f8ac04b533621fbfb9fcedc6d5fd0c540b832eb10b4aed0c8098d4"
@@ -23,22 +23,22 @@ class Arelo < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}arelo --version")
+    assert_match version.to_s, shell_output("#{bin}/arelo --version")
 
-    (testpath"test.sh").write <<~EOS
-      #!binsh
+    (testpath/"test.sh").write <<~EOS
+      #!/bin/sh
       echo "Hello, world!"
     EOS
-    chmod 0755, testpath"test.sh"
+    chmod 0755, testpath/"test.sh"
 
-    logfile = testpath"arelo.log"
-    arelo_pid = spawn bin"arelo", "--pattern", "test.sh", "--", ".test.sh", out: logfile.to_s
+    logfile = testpath/"arelo.log"
+    arelo_pid = spawn bin/"arelo", "--pattern", "test.sh", "--", "./test.sh", out: logfile.to_s
 
     sleep 1
-    touch testpath"test.sh"
+    touch testpath/"test.sh"
     sleep 1
 
-    assert_path_exists testpath"test.sh"
+    assert_path_exists testpath/"test.sh"
     assert_match "Hello, world!", logfile.read
   ensure
     Process.kill("TERM", arelo_pid)

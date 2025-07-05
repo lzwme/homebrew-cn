@@ -1,14 +1,14 @@
 class Beast < Formula
   desc "Bayesian Evolutionary Analysis Sampling Trees"
-  homepage "https:beast.community"
-  url "https:github.combeast-devbeast-mcmcarchiverefstagsv10.5.0.tar.gz"
+  homepage "https://beast.community/"
+  url "https://ghfast.top/https://github.com/beast-dev/beast-mcmc/archive/refs/tags/v10.5.0.tar.gz"
   sha256 "6287ebbe85e65e44f421b7e9ec3fd17d9a736ff909dfa3b4ab6b1b1fd361b52b"
   license "LGPL-2.1-or-later"
-  head "https:github.combeast-devbeast-mcmc.git", branch: "master"
+  head "https://github.com/beast-dev/beast-mcmc.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -28,18 +28,18 @@ class Beast < Formula
   def install
     ENV["JAVA_HOME"] = Language::Java.java_home
     system "ant", "linux"
-    libexec.install Dir["releaseLinuxBEAST_X_v**"]
-    pkgshare.install_symlink libexec"examples"
-    bin.install Dir[libexec"bin*"]
+    libexec.install Dir["release/Linux/BEAST_X_v*/*"]
+    pkgshare.install_symlink libexec/"examples"
+    bin.install Dir[libexec/"bin/*"]
 
     env = Language::Java.overridable_java_home_env
-    env["PATH"] = "${JAVA_HOME}bin:${PATH}" if OS.linux?
-    bin.env_script_all_files libexec"bin", env
-    inreplace libexec"binbeast", "usrlocal", HOMEBREW_PREFIX
+    env["PATH"] = "${JAVA_HOME}/bin:${PATH}" if OS.linux?
+    bin.env_script_all_files libexec/"bin", env
+    inreplace libexec/"bin/beast", "/usr/local", HOMEBREW_PREFIX
   end
 
   test do
-    cp pkgshare"examplesTestXMLClockModelstestUCRelaxedClockLogNormal.xml", testpath
+    cp pkgshare/"examples/TestXML/ClockModels/testUCRelaxedClockLogNormal.xml", testpath
 
     # Run fewer generations to speed up tests
     inreplace "testUCRelaxedClockLogNormal.xml", 'chainLength="10000000"',
@@ -47,16 +47,16 @@ class Beast < Formula
 
     # OpenCL is not supported on virtualized arm64 macOS and causes all beast commands to fail
     if OS.mac? && Hardware::CPU.arm? && Hardware::CPU.virtualized?
-      output = shell_output("#{bin}beast testUCRelaxedClockLogNormal.xml 2>&1", 255)
+      output = shell_output("#{bin}/beast testUCRelaxedClockLogNormal.xml 2>&1", 255)
       assert_match "OpenCL error: CL_INVALID_VALUE", output
       return
     end
 
-    system bin"beast", "testUCRelaxedClockLogNormal.xml"
+    system bin/"beast", "testUCRelaxedClockLogNormal.xml"
 
     %w[ops log trees].each do |ext|
       output = "testUCRelaxedClockLogNormal." + ext
-      assert_path_exists testpathoutput, "Failed to create #{output}"
+      assert_path_exists testpath/output, "Failed to create #{output}"
     end
   end
 end

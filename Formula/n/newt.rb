@@ -1,13 +1,13 @@
 class Newt < Formula
   desc "Library for color text mode, widget based user interfaces"
-  homepage "https:pagure.ionewt"
-  url "https:releases.pagure.orgnewtnewt-0.52.25.tar.gz"
+  homepage "https://pagure.io/newt"
+  url "https://releases.pagure.org/newt/newt-0.52.25.tar.gz"
   sha256 "ef0ca9ee27850d1a5c863bb7ff9aa08096c9ed312ece9087b30f3a426828de82"
   license "LGPL-2.0-or-later"
 
   livecheck do
-    url "https:releases.pagure.orgnewt"
-    regex(href=.*?newt[._-]v?(\d+(?:\.\d+)+)\.ti)
+    url "https://releases.pagure.org/newt/"
+    regex(/href=.*?newt[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   bottle do
@@ -37,22 +37,22 @@ class Newt < Formula
     inreplace "Makefile.in" do |s|
       if OS.mac?
         # name libraries correctly
-        # https:bugzilla.redhat.comshow_bug.cgi?id=1192285
+        # https://bugzilla.redhat.com/show_bug.cgi?id=1192285
         s.gsub! "libnewt.$(SOEXT).$(SONAME)", "libnewt.$(SONAME).dylib"
         s.gsub! "libnewt.$(SOEXT).$(VERSION)", "libnewt.$(VERSION).dylib"
 
         # don't link to libpython.dylib
-        # causes https:github.comHomebrewhomebrewissues30252
-        # https:bugzilla.redhat.comshow_bug.cgi?id=1192286
+        # causes https://github.com/Homebrew/homebrew/issues/30252
+        # https://bugzilla.redhat.com/show_bug.cgi?id=1192286
         s.gsub! "`$$pyconfig --ldflags --embed || $$pyconfig --ldflags`", '"-undefined dynamic_lookup"'
       end
 
       # install python modules in Cellar rather than global site-packages
       s.gsub! "`$$ver -c \"import sysconfig; print(sysconfig.get_path('platlib'))\"`",
-              "#{lib}python3.13site-packages"
+              "#{lib}/python3.13/site-packages"
     end
 
-    system ".configure", "--prefix=#{prefix}", "--without-tcl", "--with-python=#{python3}"
+    system "./configure", "--prefix=#{prefix}", "--without-tcl", "--with-python=#{python3}"
     system "make", "install"
   end
 
@@ -60,7 +60,7 @@ class Newt < Formula
     ENV["TERM"] = "xterm"
     system python3, "-c", "import snack"
 
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #import <newt.h>
       int main() {
         newtInit();
@@ -68,6 +68,6 @@ class Newt < Formula
       }
     C
     system ENV.cc, "test.c", "-o", "test", "-L#{lib}", "-lnewt"
-    system ".test"
+    system "./test"
   end
 end

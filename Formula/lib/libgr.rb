@@ -1,7 +1,7 @@
 class Libgr < Formula
   desc "GR framework: a graphics library for visualisation applications"
-  homepage "https:gr-framework.org"
-  url "https:github.comsciappgrarchiverefstagsv0.73.17.tar.gz"
+  homepage "https://gr-framework.org/"
+  url "https://ghfast.top/https://github.com/sciapp/gr/archive/refs/tags/v0.73.17.tar.gz"
   sha256 "dafd6ee72d36226d4664ca32d85d0b68224d5dba710abb8a4578c427259858e1"
   license "MIT"
 
@@ -41,7 +41,7 @@ class Libgr < Formula
   end
 
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include <stdio.h>
       #include <gr.h>
 
@@ -60,8 +60,8 @@ class Libgr < Formula
     C
 
     system ENV.cc, "test.c", "-o", "test", "-I#{include}", "-L#{lib}", "-lGR"
-    system ".test"
+    system "./test"
 
-    assert_path_exists testpath"test.png"
+    assert_path_exists testpath/"test.png"
   end
 end

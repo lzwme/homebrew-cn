@@ -1,14 +1,14 @@
 class Multitail < Formula
   desc "Tail multiple files in one terminal simultaneously"
-  homepage "https:vanheusden.commultitail"
-  url "https:github.comfolkertvanheusdenmultitailarchiverefstags7.1.5.tar.gz"
+  homepage "https://vanheusden.com/multitail/"
+  url "https://ghfast.top/https://github.com/folkertvanheusden/multitail/archive/refs/tags/7.1.5.tar.gz"
   sha256 "b0c92bf5f504b39591bf3e2e30a1902925c11556e14b89a07cfa7533f9bd171b"
   license "MIT"
-  head "https:github.comfolkertvanheusdenmultitail.git", head: "master"
+  head "https://github.com/folkertvanheusden/multitail.git", head: "master"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -35,6 +35,6 @@ class Multitail < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}multitail -h 2>&1", 1)
+    assert_match version.to_s, shell_output("#{bin}/multitail -h 2>&1", 1)
   end
 end

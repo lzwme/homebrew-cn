@@ -2,12 +2,12 @@ cask "font-mali" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefonts.git",
-      verified:  "github.comgooglefonts",
+  url "https://github.com/google/fonts.git",
+      verified:  "github.com/google/fonts",
       branch:    "main",
-      only_path: "oflmali"
+      only_path: "ofl/mali"
   name "Mali"
-  homepage "https:fonts.google.comspecimenMali"
+  homepage "https://fonts.google.com/specimen/Mali"
 
   font "Mali-Bold.ttf"
   font "Mali-BoldItalic.ttf"

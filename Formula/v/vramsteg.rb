@@ -1,14 +1,14 @@
 class Vramsteg < Formula
   desc "Add progress bars to command-line applications"
-  homepage "https:gothenburgbitfactory.orgvramsteg"
-  url "https:github.comGothenburgBitFactoryvramstegreleasesdownloadv1.1.0vramsteg-1.1.0.tar.gz"
+  homepage "https://gothenburgbitfactory.org/vramsteg/"
+  url "https://ghfast.top/https://github.com/GothenburgBitFactory/vramsteg/releases/download/v1.1.0/vramsteg-1.1.0.tar.gz"
   sha256 "9cc82eb195e4673d9ee6151373746bd22513033e96411ffc1d250920801f7037"
   license "MIT"
-  head "https:github.comGothenburgBitFactoryvramsteg.git", branch: "1.1.1"
+  head "https://github.com/GothenburgBitFactory/vramsteg.git", branch: "1.1.1"
 
   livecheck do
-    url "https:gothenburgbitfactory.org"
-    regex(href=.*?vramsteg[._-]v?(\d+(?:\.\d+)+)\.ti)
+    url "https://gothenburgbitfactory.org"
+    regex(/href=.*?vramsteg[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -42,6 +42,6 @@ class Vramsteg < Formula
 
   test do
     # Check to see if vramsteg can obtain the current time as epoch
-    assert_match(^\d+$, shell_output("#{bin}vramsteg --now"))
+    assert_match(/^\d+$/, shell_output("#{bin}/vramsteg --now"))
   end
 end

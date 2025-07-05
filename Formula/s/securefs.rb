@@ -1,10 +1,10 @@
 class Securefs < Formula
   desc "Filesystem with transparent authenticated encryption"
-  homepage "https:github.comnetheril96securefs"
-  url "https:github.comnetheril96securefsarchiverefstagsv1.1.1.tar.gz"
+  homepage "https://github.com/netheril96/securefs"
+  url "https://ghfast.top/https://github.com/netheril96/securefs/archive/refs/tags/v1.1.1.tar.gz"
   sha256 "a4b0ceaaca98d25ed062bce0649bd43c83d5ea78d93d1fa4f227a2d59bfb7e62"
   license "MIT"
-  head "https:github.comnetheril96securefs.git", branch: "master"
+  head "https://github.com/netheril96/securefs.git", branch: "master"
 
   livecheck do
     url :stable
@@ -24,7 +24,7 @@ class Securefs < Formula
   depends_on "cryptopp"
   depends_on "fruit"
   depends_on "jsoncpp"
-  depends_on "libfuse@2" # FUSE 3 issue: https:github.comnetheril96securefsissues181
+  depends_on "libfuse@2" # FUSE 3 issue: https://github.com/netheril96/securefs/issues/181
   depends_on :linux # on macOS, requires closed-source macFUSE
   depends_on "protobuf"
   depends_on "sqlite"
@@ -43,6 +43,6 @@ class Securefs < Formula
   end
 
   test do
-    system bin"securefs", "version" # The sandbox prevents a more thorough test
+    system bin/"securefs", "version" # The sandbox prevents a more thorough test
   end
 end

@@ -2,11 +2,11 @@ cask "penc" do
   version "1.0.0"
   sha256 "67e53ad3f05031473021676e32b001824d754d757818fd8fd44751462cf3e812"
 
-  url "https:github.comdgurkaynakPencreleasesdownload#{version}Penc-#{version}.dmg",
-      verified: "github.comdgurkaynakPenc"
+  url "https://ghfast.top/https://github.com/dgurkaynak/Penc/releases/download/#{version}/Penc-#{version}.dmg",
+      verified: "github.com/dgurkaynak/Penc/"
   name "Penc"
   desc "Trackpad-oriented window manager"
-  homepage "https:deniz.copenc"
+  homepage "https://deniz.co/penc/"
 
   no_autobump! because: :requires_manual_review
 
@@ -14,5 +14,5 @@ cask "penc" do
 
   app "Penc.app"
 
-  zap trash: "~LibraryPreferencescom.denizgurkaynak.Penc.plist"
+  zap trash: "~/Library/Preferences/com.denizgurkaynak.Penc.plist"
 end

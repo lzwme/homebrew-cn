@@ -1,7 +1,7 @@
 class FortranStdlib < Formula
   desc "Fortran Standard Library"
-  homepage "https:stdlib.fortran-lang.org"
-  url "https:github.comfortran-langstdlibarchiverefstagsv0.7.0.tar.gz"
+  homepage "https://stdlib.fortran-lang.org"
+  url "https://ghfast.top/https://github.com/fortran-lang/stdlib/archive/refs/tags/v0.7.0.tar.gz"
   sha256 "07615b1fd0d9c78f04ec5a26234d091cb7e359933ba2caee311dcd6f58d87af0"
   license "MIT"
 
@@ -29,9 +29,9 @@ class FortranStdlib < Formula
   end
 
   test do
-    cp pkgshare"exampleversionexample_version.f90", testpath
+    cp pkgshare/"example/version/example_version.f90", testpath
 
-    (testpath"CMakeLists.txt").write <<~CMAKE
+    (testpath/"CMakeLists.txt").write <<~CMAKE
       cmake_minimum_required(VERSION 3.14)
       project(test LANGUAGES Fortran)
 
@@ -43,6 +43,6 @@ class FortranStdlib < Formula
 
     system "cmake", "-S", "."
     system "cmake", "--build", "."
-    system ".test"
+    system "./test"
   end
 end

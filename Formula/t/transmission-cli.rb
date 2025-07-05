@@ -1,7 +1,7 @@
 class TransmissionCli < Formula
   desc "Lightweight BitTorrent client"
-  homepage "https:transmissionbt.com"
-  url "https:github.comtransmissiontransmissionreleasesdownload4.0.6transmission-4.0.6.tar.xz"
+  homepage "https://transmissionbt.com/"
+  url "https://ghfast.top/https://github.com/transmission/transmission/releases/download/4.0.6/transmission-4.0.6.tar.xz"
   sha256 "2a38fe6d8a23991680b691c277a335f8875bdeca2b97c6b26b598bc9c7b0c45f"
   license any_of: ["GPL-2.0-only", "GPL-3.0-only"]
   revision 4
@@ -59,7 +59,7 @@ class TransmissionCli < Formula
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 
-    (var"transmission").mkpath
+    (var/"transmission").mkpath
   end
 
   def caveats
@@ -67,7 +67,7 @@ class TransmissionCli < Formula
       This formula only installs the command line utilities.
 
       Transmission.app can be downloaded directly from the website:
-        https:www.transmissionbt.com
+        https://www.transmissionbt.com/
 
       Alternatively, install with Homebrew Cask:
         brew install --cask transmission
@@ -75,22 +75,22 @@ class TransmissionCli < Formula
   end
 
   service do
-    run [opt_bin"transmission-daemon", "--foreground", "--config-dir", var"transmission", "--log-info",
-         "--logfile", var"transmissiontransmission-daemon.log"]
+    run [opt_bin/"transmission-daemon", "--foreground", "--config-dir", var/"transmission/", "--log-info",
+         "--logfile", var/"transmission/transmission-daemon.log"]
     keep_alive true
   end
 
   test do
-    system bin"transmission-create", "-o", testpath"test.mp3.torrent", test_fixtures("test.mp3")
-    assert_match(^magnet:, shell_output("#{bin}transmission-show -m #{testpath}test.mp3.torrent"))
+    system bin/"transmission-create", "-o", testpath/"test.mp3.torrent", test_fixtures("test.mp3")
+    assert_match(/^magnet:/, shell_output("#{bin}/transmission-show -m #{testpath}/test.mp3.torrent"))
   end
 end
 
 __END__
-diff --git alibtransmissionport-forwarding-upnp.cc blibtransmissionport-forwarding-upnp.cc
+diff --git a/libtransmission/port-forwarding-upnp.cc b/libtransmission/port-forwarding-upnp.cc
 index 7c4865b..695d43f 100644
---- alibtransmissionport-forwarding-upnp.cc
-+++ blibtransmissionport-forwarding-upnp.cc
+--- a/libtransmission/port-forwarding-upnp.cc
++++ b/libtransmission/port-forwarding-upnp.cc
 @@ -275,8 +275,13 @@ tr_port_forwarding_state tr_upnpPulse(tr_upnp* handle, tr_port port, bool is_ena
  
          FreeUPNPUrls(&handle->urls);

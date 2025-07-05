@@ -1,7 +1,7 @@
 class Bedtools < Formula
   desc "Tools for genome arithmetic (set theory on the genome)"
-  homepage "https:github.comarq5xbedtools2"
-  url "https:github.comarq5xbedtools2archiverefstagsv2.31.1.tar.gz"
+  homepage "https://github.com/arq5x/bedtools2"
+  url "https://ghfast.top/https://github.com/arq5x/bedtools2/archive/refs/tags/v2.31.1.tar.gz"
   sha256 "79a1ba318d309f4e74bfa74258b73ef578dccb1045e270998d7fe9da9f43a50e"
   license "MIT"
 
@@ -27,7 +27,7 @@ class Bedtools < Formula
 
   def install
     # Remove on the next release which has commit try both python and python3
-    # Ref: https:github.comarq5xbedtools2commitffbc4e18d100ccb488e4a9e7e64146ec5d3af849
+    # Ref: https://github.com/arq5x/bedtools2/commit/ffbc4e18d100ccb488e4a9e7e64146ec5d3af849
     inreplace "Makefile", "python", "python3" if !OS.mac? || MacOS.version >= :catalina
 
     system "make"
@@ -35,7 +35,7 @@ class Bedtools < Formula
   end
 
   test do
-    (testpath"t.bed").write "c\t1\t5\nc\t4\t9"
-    assert_equal "c\t1\t9", shell_output("#{bin}bedtools merge -i t.bed").chomp
+    (testpath/"t.bed").write "c\t1\t5\nc\t4\t9"
+    assert_equal "c\t1\t9", shell_output("#{bin}/bedtools merge -i t.bed").chomp
   end
 end

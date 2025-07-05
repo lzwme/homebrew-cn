@@ -1,7 +1,7 @@
 class P11Kit < Formula
   desc "Library to load and enumerate PKCS#11 modules"
-  homepage "https:p11-glue.freedesktop.org"
-  url "https:github.comp11-gluep11-kitreleasesdownload0.25.5p11-kit-0.25.5.tar.xz"
+  homepage "https://p11-glue.freedesktop.org"
+  url "https://ghfast.top/https://github.com/p11-glue/p11-kit/releases/download/0.25.5/p11-kit-0.25.5.tar.xz"
   sha256 "04d0a86450cdb1be018f26af6699857171a188ac6d5b8c90786a60854e1198e5"
   license "BSD-3-Clause"
 
@@ -17,7 +17,7 @@ class P11Kit < Formula
   end
 
   head do
-    url "https:github.comp11-gluep11-kit.git", branch: "master"
+    url "https://github.com/p11-glue/p11-kit.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -34,13 +34,13 @@ class P11Kit < Formula
   uses_from_macos "libffi", since: :catalina
 
   def install
-    # https:bugs.freedesktop.orgshow_bug.cgi?id=91602#c1
+    # https://bugs.freedesktop.org/show_bug.cgi?id=91602#c1
     ENV["FAKED_MODE"] = "1"
 
     args = %W[
       -Dsystem_config=#{etc}
-      -Dmodule_config=#{etc}pkcs11modules
-      -Dtrust_paths=#{etc}ca-certificatescert.pem
+      -Dmodule_config=#{etc}/pkcs11/modules
+      -Dtrust_paths=#{etc}/ca-certificates/cert.pem
       -Dsystemd=disabled
     ]
 
@@ -50,12 +50,12 @@ class P11Kit < Formula
     system "meson", "test", "-C", "_build", "--timeout-multiplier=2"
     system "meson", "install", "-C", "_build"
 
-    # HACK: Work around p11-kit: couldn't load module: ...libpkcs11p11-kit-trust.so
-    # Issue ref: https:github.comp11-gluep11-kitissues612
-    (lib"pkcs11").install_symlink "p11-kit-trust.dylib" => "p11-kit-trust.so" if OS.mac?
+    # HACK: Work around p11-kit: couldn't load module: .../lib/pkcs11/p11-kit-trust.so
+    # Issue ref: https://github.com/p11-glue/p11-kit/issues/612
+    (lib/"pkcs11").install_symlink "p11-kit-trust.dylib" => "p11-kit-trust.so" if OS.mac?
   end
 
   test do
-    assert_match "library-manufacturer: PKCS#11 Kit", shell_output("#{bin}p11-kit list-modules --verbose")
+    assert_match "library-manufacturer: PKCS#11 Kit", shell_output("#{bin}/p11-kit list-modules --verbose")
   end
 end

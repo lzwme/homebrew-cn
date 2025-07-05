@@ -1,14 +1,14 @@
 class Qtads < Formula
   desc "TADS multimedia interpreter"
-  homepage "https:realnc.github.ioqtads"
-  url "https:github.comrealncqtadsreleasesdownloadv3.4.0qtads-3.4.0-source.tar.xz"
+  homepage "https://realnc.github.io/qtads/"
+  url "https://ghfast.top/https://github.com/realnc/qtads/releases/download/v3.4.0/qtads-3.4.0-source.tar.xz"
   sha256 "3c8f1b47ee42d89753d68e7c804ca3677b0c89a5d765d1fd4f80f9cdc29d3473"
   license "GPL-3.0-or-later"
-  head "https:github.comrealncqtads.git", branch: "master"
+  head "https://github.com/realnc/qtads.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -31,7 +31,7 @@ class Qtads < Formula
   depends_on "libsndfile"
   depends_on "libvorbis"
   depends_on "mpg123"
-  depends_on "qt@5" # Qt6 PR: https:github.comrealncqtadspull21
+  depends_on "qt@5" # Qt6 PR: https://github.com/realnc/qtads/pull/21
   depends_on "sdl2"
 
   def install
@@ -43,16 +43,16 @@ class Qtads < Formula
 
     if OS.mac?
       prefix.install "QTads.app"
-      bin.write_exec_script "#{prefix}QTads.appContentsMacOSQTads"
+      bin.write_exec_script "#{prefix}/QTads.app/Contents/MacOS/QTads"
     else
       system "make", "install"
     end
 
-    man6.install "desktopmanman6qtads.6"
+    man6.install "desktop/man/man6/qtads.6"
   end
 
   test do
     bin_name = OS.mac? ? "QTads" : "qtads"
-    assert_path_exists testpath"#{bin}#{bin_name}", "I'm an untestable GUI app."
+    assert_path_exists testpath/"#{bin}/#{bin_name}", "I'm an untestable GUI app."
   end
 end

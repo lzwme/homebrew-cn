@@ -1,10 +1,10 @@
 class Colormake < Formula
   desc "Wrapper around make to colorize the output"
-  homepage "https:github.compagekiteColormake"
-  url "https:github.compagekiteColormakearchiverefstags0.9.20140503.tar.gz"
+  homepage "https://github.com/pagekite/Colormake"
+  url "https://ghfast.top/https://github.com/pagekite/Colormake/archive/refs/tags/0.9.20140503.tar.gz"
   sha256 "a3f9fae9a455ac96be1cce0371b28bda33a9af73b06fa8e4329aa2f693d68d22"
   license "GPL-2.0-or-later"
-  head "https:github.compagekiteColormake.git", branch: "master"
+  head "https://github.com/pagekite/Colormake.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -14,7 +14,7 @@ class Colormake < Formula
   end
 
   def install
-    inreplace "colormake", "colormake.pl", "#{libexec}colormake.pl"
+    inreplace "colormake", "colormake.pl", "#{libexec}/colormake.pl"
 
     # Prefers symlinks than the original duplicate files
     File.unlink "colormake-short", "clmake", "clmake-short"
@@ -32,7 +32,7 @@ class Colormake < Formula
   end
 
   test do
-    (testpath"Makefile").write("all:\n\techo Hello World!\n")
-    assert_match "Hello World!", shell_output(bin"colormake")
+    (testpath/"Makefile").write("all:\n\techo Hello World!\n")
+    assert_match "Hello World!", shell_output(bin/"colormake")
   end
 end

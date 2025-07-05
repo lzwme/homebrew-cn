@@ -2,10 +2,10 @@ cask "font-warnes" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefontsrawmainoflwarnesWarnes-Regular.ttf",
-      verified: "github.comgooglefonts"
+  url "https://github.com/google/fonts/raw/main/ofl/warnes/Warnes-Regular.ttf",
+      verified: "github.com/google/fonts/"
   name "Warnes"
-  homepage "https:fonts.google.comspecimenWarnes"
+  homepage "https://fonts.google.com/specimen/Warnes"
 
   font "Warnes-Regular.ttf"
 

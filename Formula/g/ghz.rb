@@ -1,14 +1,14 @@
 class Ghz < Formula
   desc "Simple gRPC benchmarking and load testing tool"
-  homepage "https:ghz.sh"
-  url "https:github.combojandghzarchiverefstagsv0.120.0.tar.gz"
+  homepage "https://ghz.sh"
+  url "https://ghfast.top/https://github.com/bojand/ghz/archive/refs/tags/v0.120.0.tar.gz"
   sha256 "e058b1dc3aa09ca7594a79f92bad3b481c4193a0db31b2ac310b54ad802b2580"
   license "Apache-2.0"
-  head "https:github.combojandghz.git", branch: "master"
+  head "https://github.com/bojand/ghz.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -26,12 +26,12 @@ class Ghz < Formula
 
   def install
     ldflags = "-s -w -X main.version=#{version}"
-    system "go", "build", *std_go_args(ldflags:), ".cmdghz"
+    system "go", "build", *std_go_args(ldflags:), "./cmd/ghz"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}ghz -v 2>&1")
-    (testpath"config.toml").write <<~TOML
+    assert_match version.to_s, shell_output("#{bin}/ghz -v 2>&1")
+    (testpath/"config.toml").write <<~TOML
       proto = "greeter.proto"
       call = "helloworld.Greeter.SayHello"
       host = "0.0.0.0:50051"
@@ -40,6 +40,6 @@ class Ghz < Formula
       name = "Bob"
     TOML
     assert_match "open greeter.proto: no such file or directory",
-      shell_output("#{bin}ghz --config config.toml 2>&1", 1)
+      shell_output("#{bin}/ghz --config config.toml 2>&1", 1)
   end
 end

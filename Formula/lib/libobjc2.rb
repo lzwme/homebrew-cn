@@ -1,7 +1,7 @@
 class Libobjc2 < Formula
   desc "Objective-C runtime library intended for use with Clang"
-  homepage "https:github.comgnusteplibobjc2"
-  url "https:github.comgnusteplibobjc2archiverefstagsv2.2.1.tar.gz"
+  homepage "https://github.com/gnustep/libobjc2"
+  url "https://ghfast.top/https://github.com/gnustep/libobjc2/archive/refs/tags/v2.2.1.tar.gz"
   sha256 "768ea8c5bd0999a29b5d15781125494f986456c1dc5c51d370fb31852cd31ea1"
   license "MIT"
 
@@ -16,7 +16,7 @@ class Libobjc2 < Formula
   depends_on "robin-map" => :build
   depends_on "pkgconf" => :test
   # Clang explicitly forbids building Mach-O binaries of libobjc2.
-  # https:reviews.llvm.orgD46052
+  # https://reviews.llvm.org/D46052
   # macOS provides an equivalent Objective-C runtime.
   depends_on :linux
 
@@ -29,18 +29,18 @@ class Libobjc2 < Formula
     system "cmake", "--install", "build"
 
     # Change Objective-C header path which assumes tests are being run in source tree.
-    inreplace ["TestTest.h", "TestTest.m"], "..objc", "objc"
+    inreplace ["Test/Test.h", "Test/Test.m"], "../objc", "objc"
     pkgshare.install "Test"
   end
 
   test do
     # ENV.cc returns llvm_clang, which does not work in a test block.
-    ENV["CC"] = Formula["llvm"].opt_bin"clang"
+    ENV["CC"] = Formula["llvm"].opt_bin/"clang"
 
     # Copy over test library and header and runtime test.
-    cp pkgshare"TestTest.h", testpath
-    cp pkgshare"TestTest.m", testpath
-    cp pkgshare"TestRuntimeTest.m", testpath
+    cp pkgshare/"Test/Test.h", testpath
+    cp pkgshare/"Test/Test.m", testpath
+    cp pkgshare/"Test/RuntimeTest.m", testpath
 
     # First build test shared library and then link it to RuntimeTest.
     flags = shell_output("pkgconf --cflags --libs libobjc").chomp.split
@@ -50,6 +50,6 @@ class Libobjc2 < Formula
                    "-L#{testpath}", "-Wl,-rpath,#{testpath}", "-lTest", "-o", "RuntimeTest"
 
     # RuntimeTest deliberately throws a test exception and outputs this to stderr.
-    assert_match "testExceptions() ran", shell_output(".RuntimeTest 2>&1")
+    assert_match "testExceptions() ran", shell_output("./RuntimeTest 2>&1")
   end
 end

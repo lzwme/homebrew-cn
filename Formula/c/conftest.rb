@@ -1,10 +1,10 @@
 class Conftest < Formula
   desc "Test your configuration files using Open Policy Agent"
-  homepage "https:www.conftest.dev"
-  url "https:github.comopen-policy-agentconftestarchiverefstagsv0.61.2.tar.gz"
+  homepage "https://www.conftest.dev/"
+  url "https://ghfast.top/https://github.com/open-policy-agent/conftest/archive/refs/tags/v0.61.2.tar.gz"
   sha256 "af8138e94ebd602ca98e0af3320669230130abfcc2a042ce9e35d301b4144863"
   license "Apache-2.0"
-  head "https:github.comopen-policy-agentconftest.git", branch: "master"
+  head "https://github.com/open-policy-agent/conftest.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "db6f9c83b30924132636d3fc79e5f448a944f3bb4a1c50d8a99c42135204d7f1"
@@ -18,18 +18,18 @@ class Conftest < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = "-s -w -X github.comopen-policy-agentconftestinternalcommands.version=#{version}"
+    ldflags = "-s -w -X github.com/open-policy-agent/conftest/internal/commands.version=#{version}"
     system "go", "build", *std_go_args(ldflags:)
 
-    generate_completions_from_executable(bin"conftest", "completion")
+    generate_completions_from_executable(bin/"conftest", "completion")
   end
 
   test do
-    assert_match "Test your configuration files using Open Policy Agent", shell_output("#{bin}conftest --help")
+    assert_match "Test your configuration files using Open Policy Agent", shell_output("#{bin}/conftest --help")
 
     # Using the policy parameter changes the default location to look for policies.
     # If no policies are found, a non-zero status code is returned.
-    (testpath"test.rego").write("package main")
-    system bin"conftest", "verify", "-p", "test.rego"
+    (testpath/"test.rego").write("package main")
+    system bin/"conftest", "verify", "-p", "test.rego"
   end
 end

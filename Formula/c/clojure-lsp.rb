@@ -1,16 +1,16 @@
 class ClojureLsp < Formula
   desc "Language Server (LSP) for Clojure"
-  homepage "https:github.comclojure-lspclojure-lsp"
-  url "https:github.comclojure-lspclojure-lspreleasesdownload2025.06.13-20.45.44clojure-lsp-standalone.jar"
+  homepage "https://github.com/clojure-lsp/clojure-lsp"
+  url "https://ghfast.top/https://github.com/clojure-lsp/clojure-lsp/releases/download/2025.06.13-20.45.44/clojure-lsp-standalone.jar"
   version "2025.06.13-20.45.44"
   sha256 "11e28abda97f57dfc0cee3e4015b40ef98c6d9ee633a4583b3aa1957cba5211d"
   license "MIT"
   version_scheme 1
-  head "https:github.comclojure-lspclojure-lsp.git", branch: "master"
+  head "https://github.com/clojure-lsp/clojure-lsp.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(^v?(\d{4}(?:[.-]\d+)+)$i)
+    regex(/^v?(\d{4}(?:[.-]\d+)+)$/i)
   end
 
   bottle do
@@ -21,7 +21,7 @@ class ClojureLsp < Formula
 
   def install
     libexec.install "clojure-lsp-standalone.jar"
-    bin.write_jar_script libexec"clojure-lsp-standalone.jar", "clojure-lsp"
+    bin.write_jar_script libexec/"clojure-lsp-standalone.jar", "clojure-lsp"
   end
 
   test do
@@ -42,9 +42,9 @@ class ClojureLsp < Formula
       }
     JSON
 
-    Open3.popen3(bin"clojure-lsp") do |stdin, stdout|
+    Open3.popen3(bin/"clojure-lsp") do |stdin, stdout|
       stdin.write "Content-Length: #{json.size}\r\n\r\n#{json}"
-      assert_match(^Content-Length: \d+i, stdout.readline)
+      assert_match(/^Content-Length: \d+/i, stdout.readline)
     end
   end
 end

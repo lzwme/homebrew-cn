@@ -1,7 +1,7 @@
 class Weaver < Formula
   desc "Command-line tool for Weaver"
-  homepage "https:github.comscribdWeaver"
-  url "https:github.comscribdWeaverarchiverefstags1.1.7.tar.gz"
+  homepage "https://github.com/scribd/Weaver"
+  url "https://ghfast.top/https://github.com/scribd/Weaver/archive/refs/tags/1.1.7.tar.gz"
   sha256 "8d53fbcd1283cea93532d8b301f11353bd7634d865c8148df3bc3f65d0447a19"
   license "MIT"
 
@@ -27,7 +27,7 @@ class Weaver < Formula
   test do
     # Weaver uses Sourcekitten and thus, has the same sandbox issues.
     # Rewrite test after sandbox issues investigated.
-    # https:github.comHomebrewhomebrewpull50211
-    system bin"weaver", "version"
+    # https://github.com/Homebrew/homebrew/pull/50211
+    system bin/"weaver", "version"
   end
 end

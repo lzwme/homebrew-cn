@@ -1,10 +1,10 @@
 class Kubefirst < Formula
   desc "GitOps Infrastructure & Application Delivery Platform for kubernetes"
-  homepage "https:kubefirst.konstruct.iodocs"
-  url "https:github.comkonstructiokubefirstarchiverefstagsv2.8.4.tar.gz"
+  homepage "https://kubefirst.konstruct.io/docs/"
+  url "https://ghfast.top/https://github.com/konstructio/kubefirst/archive/refs/tags/v2.8.4.tar.gz"
   sha256 "020a245191e8e247a417e623bd467e98644fe4456c0a2ca3cefa7ba0cda81c45"
   license "MIT"
-  head "https:github.comkonstructiokubefirst.git", branch: "main"
+  head "https://github.com/konstructio/kubefirst.git", branch: "main"
 
   # Upstream appears to use GitHub releases to indicate that a version is
   # released, so it's necessary to check release versions instead of tags.
@@ -26,18 +26,18 @@ class Kubefirst < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = "-s -w -X github.comkonstructiokubefirst-apiconfigs.K1Version=v#{version}"
+    ldflags = "-s -w -X github.com/konstructio/kubefirst-api/configs.K1Version=v#{version}"
     system "go", "build", *std_go_args(ldflags:)
 
-    generate_completions_from_executable(bin"kubefirst", "completion")
+    generate_completions_from_executable(bin/"kubefirst", "completion")
   end
 
   test do
-    system bin"kubefirst", "info"
-    assert_match "k1-paths:", (testpath".kubefirst").read
-    assert_path_exists testpath".k1logs"
+    system bin/"kubefirst", "info"
+    assert_match "k1-paths:", (testpath/".kubefirst").read
+    assert_path_exists testpath/".k1/logs"
 
-    output = shell_output("#{bin}kubefirst version 2>&1")
+    output = shell_output("#{bin}/kubefirst version 2>&1")
     expected = if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
       ""
     else

@@ -1,15 +1,15 @@
 class BoostBuild < Formula
   desc "C++ build system"
-  homepage "https:www.boost.orgbuild"
-  url "https:github.comboostorgbuildarchiverefstagsboost-1.88.0.tar.gz"
+  homepage "https://www.boost.org/build/"
+  url "https://ghfast.top/https://github.com/boostorg/build/archive/refs/tags/boost-1.88.0.tar.gz"
   sha256 "a131c25bfe7c1b1e20da89a4c6e90a58a4bc55b361ae8c10199bb68b280aab96"
   license "BSL-1.0"
   version_scheme 1
-  head "https:github.comboostorgbuild.git", branch: "develop"
+  head "https://github.com/boostorg/build.git", branch: "develop"
 
   livecheck do
     url :stable
-    regex(^boost[._-]v?(\d+(?:\.\d+)+)$i)
+    regex(/^boost[._-]v?(\d+(?:\.\d+)+)$/i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -27,22 +27,22 @@ class BoostBuild < Formula
   conflicts_with "b2-tools", because: "both install `b2` binaries"
 
   def install
-    system ".bootstrap.sh"
-    system ".b2", "--prefix=#{prefix}", "install"
+    system "./bootstrap.sh"
+    system "./b2", "--prefix=#{prefix}", "install"
   end
 
   test do
-    (testpath"hello.cpp").write <<~CPP
+    (testpath/"hello.cpp").write <<~CPP
       #include <iostream>
       int main (void) { std::cout << "Hello world"; }
     CPP
-    (testpath"Jamroot.jam").write <<~JAM
+    (testpath/"Jamroot.jam").write <<~JAM
       exe hello : hello.cpp ;
       install install-bin : hello : <location>"#{testpath}" ;
     JAM
 
-    system bin"b2", "release"
-    assert_path_exists testpath"hello"
-    assert_equal "Hello world", shell_output(".hello")
+    system bin/"b2", "release"
+    assert_path_exists testpath/"hello"
+    assert_equal "Hello world", shell_output("./hello")
   end
 end

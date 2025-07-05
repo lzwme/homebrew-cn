@@ -1,10 +1,10 @@
 class TerraformCleaner < Formula
   desc "Tiny utility which detects unused variables in your terraform modules"
-  homepage "https:github.comsylwitterraform-cleaner"
-  url "https:github.comsylwitterraform-cleanerarchiverefstagsv0.0.4.tar.gz"
+  homepage "https://github.com/sylwit/terraform-cleaner"
+  url "https://ghfast.top/https://github.com/sylwit/terraform-cleaner/archive/refs/tags/v0.0.4.tar.gz"
   sha256 "61628133831ec667aa37cd5fc1a34a3a2c31e4e997d5f41fdf380fe3e017ab55"
   license "MIT"
-  head "https:github.comsylwitterraform-cleaner.git", branch: "main"
+  head "https://github.com/sylwit/terraform-cleaner.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "67a332100916e31bdbef196c2f08954acccdfaf069c23c84d62bcb51d8452066"
@@ -22,13 +22,13 @@ class TerraformCleaner < Formula
   end
 
   test do
-    (testpath"test.tf").write <<~HCL
+    (testpath/"test.tf").write <<~HCL
       terraform {
         required_version = ">= 1.0"
 
         required_providers {
           aws = {
-            source = "hashicorpaws"
+            source = "hashicorp/aws"
             version = "~> 5"
           }
         }
@@ -49,7 +49,7 @@ class TerraformCleaner < Formula
       }
     HCL
 
-    output = shell_output("#{bin}terraform-cleaner --unused-only")
+    output = shell_output("#{bin}/terraform-cleaner --unused-only")
     assert_equal <<~EOS.chomp, output
 
        🚀 Module: .

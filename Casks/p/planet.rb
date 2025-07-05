@@ -2,15 +2,15 @@ cask "planet" do
   version "0.21.1"
   sha256 "91261bf4b17d40d040485ad804d9096db22edd6c2462a072d53e4eabcd2356e2"
 
-  url "https:github.comPlanetablePlanetreleasesdownloadrelease-#{version}Planet.zip",
-      verified: "github.comPlanetablePlanet"
+  url "https://ghfast.top/https://github.com/Planetable/Planet/releases/download/release-#{version}/Planet.zip",
+      verified: "github.com/Planetable/Planet/"
   name "Planet"
   desc "Decentralised blogs and websites powered by IPFS and Ethereum Name System"
-  homepage "https:www.planetable.xyz"
+  homepage "https://www.planetable.xyz/"
 
   livecheck do
     url :url
-    regex(^release[._-](\d+(?:[.-]\d+)+)$i)
+    regex(/^release[._-](\d+(?:[.-]\d+)+)$/i)
   end
 
   auto_updates true
@@ -18,5 +18,5 @@ cask "planet" do
 
   app "Planet.app"
 
-  zap trash: "~LibraryContainersxyz.planetable.Planet"
+  zap trash: "~/Library/Containers/xyz.planetable.Planet"
 end

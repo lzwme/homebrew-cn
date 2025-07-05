@@ -1,13 +1,13 @@
 class Libnice < Formula
   desc "GLib ICE implementation"
-  homepage "https:wiki.freedesktop.orgnice"
-  url "https:libnice.freedesktop.orgreleaseslibnice-0.1.22.tar.gz"
+  homepage "https://wiki.freedesktop.org/nice/"
+  url "https://libnice.freedesktop.org/releases/libnice-0.1.22.tar.gz"
   sha256 "a5f724cf09eae50c41a7517141d89da4a61ec9eaca32da4a0073faed5417ad7e"
   license any_of: ["LGPL-2.1-only", "MPL-1.1"]
 
   livecheck do
-    url "https:github.comlibnicelibnice.git"
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    url "https://github.com/libnice/libnice.git"
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -45,14 +45,14 @@ class Libnice < Formula
   end
 
   test do
-    # Based on https:github.comlibnicelibniceblobHEADexamplessimple-example.c
-    (testpath"test.c").write <<~C
+    # Based on https://github.com/libnice/libnice/blob/HEAD/examples/simple-example.c
+    (testpath/"test.c").write <<~C
       #include <agent.h>
       int main(int argc, char *argv[]) {
         NiceAgent *agent;
         GMainLoop *gloop;
         gloop = g_main_loop_new(NULL, FALSE);
-         Create the nice agent
+        // Create the nice agent
         agent = nice_agent_new(g_main_loop_get_context (gloop),
           NICE_COMPATIBILITY_RFC5245);
         if (agent == NULL)
@@ -66,6 +66,6 @@ class Libnice < Formula
 
     flags = shell_output("pkgconf --cflags --libs nice").chomp.split
     system ENV.cc, "test.c", "-o", "test", *flags
-    system ".test"
+    system "./test"
   end
 end

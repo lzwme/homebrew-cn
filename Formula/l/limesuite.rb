@@ -1,7 +1,7 @@
 class Limesuite < Formula
   desc "Device drivers utilities, and interface layers for LimeSDR"
-  homepage "https:myriadrf.orgprojectssoftwarelime-suite"
-  url "https:github.commyriadrfLimeSuitearchiverefstagsv23.11.0.tar.gz"
+  homepage "https://myriadrf.org/projects/software/lime-suite/"
+  url "https://ghfast.top/https://github.com/myriadrf/LimeSuite/archive/refs/tags/v23.11.0.tar.gz"
   sha256 "fd8a448b92bc5ee4012f0ba58785f3c7e0a4d342b24e26275318802dfe00eb33"
   license "Apache-2.0"
   revision 1
@@ -50,6 +50,6 @@ class Limesuite < Formula
 
   test do
     assert_match "Checking driver 'lime'... PRESENT",
-                 shell_output("#{Formula["soapysdr"].bin}SoapySDRUtil --check=lime")
+                 shell_output("#{Formula["soapysdr"].bin}/SoapySDRUtil --check=lime")
   end
 end

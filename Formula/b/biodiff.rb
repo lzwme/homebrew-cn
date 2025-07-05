@@ -1,11 +1,11 @@
 class Biodiff < Formula
   desc "Hex diff viewer using alignment algorithms from biology"
-  homepage "https:github.com8051Enthusiastbiodiff"
-  url "https:github.com8051Enthusiastbiodiff.git",
+  homepage "https://github.com/8051Enthusiast/biodiff"
+  url "https://github.com/8051Enthusiast/biodiff.git",
       tag:      "v1.2.1",
       revision: "48468e9e7493c5bec608035f86459feb2469be14"
   license "MIT"
-  head "https:github.com8051Enthusiastbiodiff.git", branch: "main"
+  head "https://github.com/8051Enthusiast/biodiff.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "08203fed461dddc5d59a07694f40c3f6a42b8cf9c1aeec91e3fc943936bd2315"
@@ -30,17 +30,17 @@ class Biodiff < Formula
 
   test do
     begin
-      (testpath"file1").write "foo"
-      (testpath"file2").write "bar"
+      (testpath/"file1").write "foo"
+      (testpath/"file2").write "bar"
 
-      r, w, pid = PTY.spawn "#{bin}biodiff file1 file2"
+      r, w, pid = PTY.spawn "#{bin}/biodiff file1 file2"
       sleep 1
       w.write "q"
       assert_match "unaligned            file1  | unaligned            file2", r.read
 
-      assert_match version.to_s, shell_output("#{bin}biodiff --version")
+      assert_match version.to_s, shell_output("#{bin}/biodiff --version")
     rescue Errno::EIO
-      # GNULinux raises EIO when read is done on closed pty
+      # GNU/Linux raises EIO when read is done on closed pty
     end
   ensure
     Process.kill("TERM", pid)

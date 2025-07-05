@@ -2,10 +2,10 @@ cask "obs-websocket" do
   version "5.0.1"
   sha256 "baf54b5dad9bc355c3af960ce94ddf8e88ed86c7d23d86e41baa8377cb1d4d06"
 
-  url "https:github.comobsprojectobs-websocketreleasesdownload#{version}obs-websocket-#{version}-macOS.pkg"
+  url "https://ghfast.top/https://github.com/obsproject/obs-websocket/releases/download/#{version}/obs-websocket-#{version}-macOS.pkg"
   name "obs-websocket"
   desc "Remote-control OBS Studio through WebSockets"
-  homepage "https:github.comobsprojectobs-websocket"
+  homepage "https://github.com/obsproject/obs-websocket"
 
   no_autobump! because: :requires_manual_review
 

@@ -1,10 +1,10 @@
 class LibgeditTepl < Formula
   desc "Gedit Technology - Text editor product line"
-  homepage "https:gitlab.gnome.orgWorldgeditlibgedit-tepl"
-  url "https:gitlab.gnome.orgWorldgeditlibgedit-tepl-archive6.13.0libgedit-tepl-6.13.0.tar.bz2"
+  homepage "https://gitlab.gnome.org/World/gedit/libgedit-tepl"
+  url "https://gitlab.gnome.org/World/gedit/libgedit-tepl/-/archive/6.13.0/libgedit-tepl-6.13.0.tar.bz2"
   sha256 "5d738ca56ae31facba0d88b0a2e406b2507a3dc95f75bfb9f509ff4b2a9d20d3"
   license "LGPL-2.1-or-later"
-  head "https:gitlab.gnome.orgWorldgeditlibgedit-tepl.git", branch: "main"
+  head "https://gitlab.gnome.org/World/gedit/libgedit-tepl.git", branch: "main"
 
   bottle do
     sha256 arm64_sequoia: "836b139117cb325933282df854052d538ed5ba692b72c2aeaf87c2eeee468d8c"
@@ -42,17 +42,17 @@ class LibgeditTepl < Formula
 
     # `pkg-config --libs libgedit-tepl-6` includes icu-uc and icu-i18n but modules
     # are from keg-only `icu4c@75` so pkg-config needs to look in the opt path.
-    # TODO: Remove after https:github.comHomebrewbrewpull18229
-    icu4c_dep = deps.find { |dep| dep.name.match?(^icu4c(@\d+)?$) }
-    icu4c_pc_dir = icu4c_dep.to_formula.opt_lib"pkgconfig"
-    inreplace lib"pkgconfiglibgedit-tepl-6.pc",
-              ^(Requires\.private:.*) icu-uc, icu-i18n,,
-              "\\1 #{icu4c_pc_dir}icu-uc.pc, #{icu4c_pc_dir}icu-i18n.pc,"
+    # TODO: Remove after https://github.com/Homebrew/brew/pull/18229
+    icu4c_dep = deps.find { |dep| dep.name.match?(/^icu4c(@\d+)?$/) }
+    icu4c_pc_dir = icu4c_dep.to_formula.opt_lib/"pkgconfig"
+    inreplace lib/"pkgconfig/libgedit-tepl-6.pc",
+              /^(Requires\.private:.*) icu-uc, icu-i18n,/,
+              "\\1 #{icu4c_pc_dir}/icu-uc.pc, #{icu4c_pc_dir}/icu-i18n.pc,"
   end
 
   test do
-    (testpath"test.c").write <<~C
-      #include <tepltepl.h>
+    (testpath/"test.c").write <<~C
+      #include <tepl/tepl.h>
 
       int main(int argc, char *argv[]) {
         GType type = tepl_file_get_type();
@@ -62,6 +62,6 @@ class LibgeditTepl < Formula
 
     flags = shell_output("pkgconf --cflags --libs libgedit-tepl-6").chomp.split
     system ENV.cc, "test.c", "-o", "test", *flags
-    system ".test"
+    system "./test"
   end
 end

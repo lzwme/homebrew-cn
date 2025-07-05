@@ -1,10 +1,10 @@
 class Descope < Formula
   desc "Command-line utility for performing common tasks on Descope projects"
-  homepage "https:www.descope.com"
-  url "https:github.comdescopedescopecliarchiverefstagsv0.8.13.tar.gz"
+  homepage "https://www.descope.com"
+  url "https://ghfast.top/https://github.com/descope/descopecli/archive/refs/tags/v0.8.13.tar.gz"
   sha256 "0f2aea0e65687db859563206c421567c4a5b664b5975fc621b4c2bada17ac6e5"
   license "MIT"
-  head "https:github.comdescopedescopecli.git", branch: "main"
+  head "https://github.com/descope/descopecli.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "056ade67fc5866133bd18e5c5a3f618fc89267f07b094e88ee363d5dc36581e4"
@@ -20,12 +20,12 @@ class Descope < Formula
   def install
     ldflags = "-s -w -X main.version=#{version}"
     system "go", "build", *std_go_args(ldflags:)
-    generate_completions_from_executable(bin"descope", "completion")
+    generate_completions_from_executable(bin/"descope", "completion")
   end
 
   test do
-    assert_match "working with audit logs", shell_output("#{bin}descope audit")
-    assert_match "managing projects", shell_output("#{bin}descope project")
-    assert_match version.to_s, shell_output("#{bin}descope --version")
+    assert_match "working with audit logs", shell_output("#{bin}/descope audit")
+    assert_match "managing projects", shell_output("#{bin}/descope project")
+    assert_match version.to_s, shell_output("#{bin}/descope --version")
   end
 end

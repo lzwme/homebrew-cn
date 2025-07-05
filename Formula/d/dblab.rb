@@ -1,10 +1,10 @@
 class Dblab < Formula
   desc "Database client every command-line junkie deserves"
-  homepage "https:dblab.danvergara.com"
-  url "https:github.comdanvergaradblabarchiverefstagsv0.33.0.tar.gz"
+  homepage "https://dblab.danvergara.com/"
+  url "https://ghfast.top/https://github.com/danvergara/dblab/archive/refs/tags/v0.33.0.tar.gz"
   sha256 "9a2d664cfe8ae553aa71598bcaecbaff0ce554ad05d9f0cbd4f18b3e941c2273"
   license "MIT"
-  head "https:github.comdanvergaradblab.git", branch: "main"
+  head "https://github.com/danvergara/dblab.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "416e983fac3e039383f7950d42d1bdd84b12c2e669e5cd32e590fc1152857c12"
@@ -21,13 +21,13 @@ class Dblab < Formula
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}")
 
-    generate_completions_from_executable(bin"dblab", "completion")
+    generate_completions_from_executable(bin/"dblab", "completion")
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}dblab --version")
+    assert_match version.to_s, shell_output("#{bin}/dblab --version")
 
-    output = shell_output("#{bin}dblab --url mysql:user:password@tcp\\(localhost:3306\\)db 2>&1", 1)
+    output = shell_output("#{bin}/dblab --url mysql://user:password@tcp\\(localhost:3306\\)/db 2>&1", 1)
     assert_match "connect: connection refused", output
   end
 end

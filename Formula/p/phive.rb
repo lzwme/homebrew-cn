@@ -1,7 +1,7 @@
 class Phive < Formula
   desc "Phar Installation and Verification Environment (PHIVE)"
-  homepage "https:phar.io"
-  url "https:github.comphar-iophivereleasesdownload0.16.0phive-0.16.0.phar"
+  homepage "https://phar.io"
+  url "https://ghfast.top/https://github.com/phar-io/phive/releases/download/0.16.0/phive-0.16.0.phar"
   sha256 "1525f25afec4bcdc0aa8db7bb4b0063851332e916698daf90c747461642a42ed"
   license "BSD-3-Clause"
 
@@ -16,6 +16,6 @@ class Phive < Formula
   end
 
   test do
-    assert_match "No PHARs configured for this project", shell_output("#{bin}phive status")
+    assert_match "No PHARs configured for this project", shell_output("#{bin}/phive status")
   end
 end

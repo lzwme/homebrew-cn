@@ -2,10 +2,10 @@ cask "ramme" do
   version "3.2.5"
   sha256 "49a4f8d1623f855322a34e670e17261a8add1ac8b764ffcd027ccb71b82fb1b0"
 
-  url "https:github.comterkelgrammereleasesdownloadv#{version}Ramme-#{version}.dmg"
+  url "https://ghfast.top/https://github.com/terkelg/ramme/releases/download/v#{version}/Ramme-#{version}.dmg"
   name "Ramme"
   desc "Unofficial Instagram Desktop App"
-  homepage "https:github.comterkelgramme"
+  homepage "https://github.com/terkelg/ramme/"
 
   no_autobump! because: :requires_manual_review
 

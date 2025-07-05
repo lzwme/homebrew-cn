@@ -2,10 +2,10 @@ cask "font-anuphan" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefontsrawmainoflanuphanAnuphan%5Bwght%5D.ttf",
-      verified: "github.comgooglefonts"
+  url "https://github.com/google/fonts/raw/main/ofl/anuphan/Anuphan%5Bwght%5D.ttf",
+      verified: "github.com/google/fonts/"
   name "Anuphan"
-  homepage "https:fonts.google.comspecimenAnuphan"
+  homepage "https://fonts.google.com/specimen/Anuphan"
 
   font "Anuphan[wght].ttf"
 

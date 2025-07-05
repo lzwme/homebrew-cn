@@ -1,10 +1,10 @@
 class Diffoci < Formula
   desc "Diff for Docker and OCI container images"
-  homepage "https:github.comreproducible-containersdiffoci"
-  url "https:github.comreproducible-containersdiffociarchiverefstagsv0.1.7.tar.gz"
+  homepage "https://github.com/reproducible-containers/diffoci"
+  url "https://ghfast.top/https://github.com/reproducible-containers/diffoci/archive/refs/tags/v0.1.7.tar.gz"
   sha256 "86ff1f7d0a91934790369184fa88b5402c5b7b0ec87358c915b2fb1e97bd5c0d"
   license "Apache-2.0"
-  head "https:github.comreproducible-containersdiffoci.git", branch: "master"
+  head "https://github.com/reproducible-containers/diffoci.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "94baef5d5a95a35f21622becbf6e538c1690c2266477ed37e240e4b4200e9253"
@@ -20,16 +20,16 @@ class Diffoci < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.comreproducible-containersdiffocicmddiffociversion.Version=#{version}
+      -X github.com/reproducible-containers/diffoci/cmd/diffoci/version.Version=#{version}
     ]
-    system "go", "build", *std_go_args(ldflags:), ".cmddiffoci"
+    system "go", "build", *std_go_args(ldflags:), "./cmd/diffoci"
 
-    generate_completions_from_executable(bin"diffoci", "completion")
+    generate_completions_from_executable(bin/"diffoci", "completion")
   end
 
   test do
-    assert_match "Backend: local", shell_output("#{bin}diffoci info")
+    assert_match "Backend: local", shell_output("#{bin}/diffoci info")
 
-    assert_match version.to_s, shell_output("#{bin}diffoci --version")
+    assert_match version.to_s, shell_output("#{bin}/diffoci --version")
   end
 end

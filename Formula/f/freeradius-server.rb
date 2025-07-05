@@ -1,14 +1,14 @@
 class FreeradiusServer < Formula
   desc "High-performance and highly configurable RADIUS server"
-  homepage "https:freeradius.org"
-  url "https:github.comFreeRADIUSfreeradius-serverarchiverefstagsrelease_3_2_7.tar.gz"
+  homepage "https://freeradius.org/"
+  url "https://ghfast.top/https://github.com/FreeRADIUS/freeradius-server/archive/refs/tags/release_3_2_7.tar.gz"
   sha256 "ebb906a236a8db71ba96875c9e53405bc8493e363c3815af65ae829cb6c288a3"
   license all_of: ["GPL-2.0-or-later", "LGPL-2.1-or-later"]
-  head "https:github.comFreeRADIUSfreeradius-server.git", branch: "master"
+  head "https://github.com/FreeRADIUS/freeradius-server.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(^release[._-](\d+(?:[._]\d+)+)$i)
+    regex(/^release[._-](\d+(?:[._]\d+)+)$/i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -55,21 +55,21 @@ class FreeradiusServer < Formula
 
     args << "--without-rlm_python" if OS.mac?
 
-    system ".configure", *args
+    system "./configure", *args
     system "make"
     system "make", "install"
   end
 
   def post_install
-    (var"runradiusd").mkpath
-    (var"logradius").mkpath
+    (var/"run/radiusd").mkpath
+    (var/"log/radius").mkpath
   end
 
   test do
     assert_match "77C8009C912CFFCF3832C92FC614B7D1",
-                 shell_output("#{bin}smbencrypt homebrew")
+                 shell_output("#{bin}/smbencrypt homebrew")
 
     assert_match "Configuration appears to be OK",
-                 shell_output("#{bin}radiusd -CX")
+                 shell_output("#{bin}/radiusd -CX")
   end
 end

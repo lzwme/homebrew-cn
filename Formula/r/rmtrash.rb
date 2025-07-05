@@ -1,10 +1,10 @@
 class Rmtrash < Formula
   desc "Move files and directories to the trash"
-  homepage "https:github.comTBXarkrmtrash"
-  url "https:github.comTBXarkrmtrasharchiverefstags0.6.8.tar.gz"
+  homepage "https://github.com/TBXark/rmtrash"
+  url "https://ghfast.top/https://github.com/TBXark/rmtrash/archive/refs/tags/0.6.8.tar.gz"
   sha256 "9055a538b7e282aebd61f74241d5e2009455b1ae7e7029eba87bc41bbd684d4a"
   license "MIT"
-  head "https:github.comTBXarkrmtrash.git", branch: "master"
+  head "https://github.com/TBXark/rmtrash.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -21,12 +21,12 @@ class Rmtrash < Formula
 
   def install
     system "swift", "build", "--disable-sandbox", "-c", "release"
-    bin.install ".buildreleasermtrash"
-    man1.install "Manualrmtrash.1"
+    bin.install ".build/release/rmtrash"
+    man1.install "Manual/rmtrash.1"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}rmtrash --version")
-    system bin"rmtrash", "--force", "non_existent_file"
+    assert_match version.to_s, shell_output("#{bin}/rmtrash --version")
+    system bin/"rmtrash", "--force", "non_existent_file"
   end
 end

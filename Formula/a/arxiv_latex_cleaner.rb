@@ -2,11 +2,11 @@ class ArxivLatexCleaner < Formula
   include Language::Python::Virtualenv
 
   desc "Clean LaTeX code to submit to arXiv"
-  homepage "https:github.comgoogle-researcharxiv-latex-cleaner"
-  url "https:files.pythonhosted.orgpackages7bbee0afb37ba09060368e3858c8248328faf187d814f9cb9da00e5611d150d0arxiv_latex_cleaner-1.0.8.tar.gz"
+  homepage "https://github.com/google-research/arxiv-latex-cleaner"
+  url "https://files.pythonhosted.org/packages/7b/be/e0afb37ba09060368e3858c8248328faf187d814f9cb9da00e5611d150d0/arxiv_latex_cleaner-1.0.8.tar.gz"
   sha256 "e40215f486770a90aaec3d4d5c666a5695ce282b4bf57cdd39c2f4623866e3f4"
   license "Apache-2.0"
-  head "https:github.comgoogle-researcharxiv-latex-cleaner.git", branch: "main"
+  head "https://github.com/google-research/arxiv-latex-cleaner.git", branch: "main"
 
   bottle do
     rebuild 1
@@ -24,17 +24,17 @@ class ArxivLatexCleaner < Formula
   depends_on "python@3.13"
 
   resource "absl-py" do
-    url "https:files.pythonhosted.orgpackages7a8ffc001b92ecc467cc32ab38398bd0bfb45df46e7523bf33c2ad22a505f06eabsl-py-2.1.0.tar.gz"
+    url "https://files.pythonhosted.org/packages/7a/8f/fc001b92ecc467cc32ab38398bd0bfb45df46e7523bf33c2ad22a505f06e/absl-py-2.1.0.tar.gz"
     sha256 "7820790efbb316739cde8b4e19357243fc3608a152024288513dd968d7d959ff"
   end
 
   resource "pyyaml" do
-    url "https:files.pythonhosted.orgpackages54ed79a089b6be93607fa5cdaedf301d7dfb23af5f25c398d5ead2525b063e17pyyaml-6.0.2.tar.gz"
+    url "https://files.pythonhosted.org/packages/54/ed/79a089b6be93607fa5cdaedf301d7dfb23af5f25c398d5ead2525b063e17/pyyaml-6.0.2.tar.gz"
     sha256 "d584d9ec91ad65861cc08d42e834324ef890a082e591037abe114850ff7bbc3e"
   end
 
   resource "regex" do
-    url "https:files.pythonhosted.orgpackagesf938148df33b4dbca3bd069b963acab5e0fa1a9dbd6820f8c322d0dd6faeff96regex-2024.9.11.tar.gz"
+    url "https://files.pythonhosted.org/packages/f9/38/148df33b4dbca3bd069b963acab5e0fa1a9dbd6820f8c322d0dd6faeff96/regex-2024.9.11.tar.gz"
     sha256 "6c188c307e8433bcb63dc1915022deb553b4203a70722fc542c363bf120a01fd"
   end
 
@@ -43,14 +43,14 @@ class ArxivLatexCleaner < Formula
   end
 
   test do
-    latexdir = testpath"latex"
+    latexdir = testpath/"latex"
     latexdir.mkpath
-    (latexdir"test.tex").write <<~TEX
+    (latexdir/"test.tex").write <<~TEX
       % remove
       keep
     TEX
-    system bin"arxiv_latex_cleaner", latexdir
-    assert_path_exists testpath"latex_arXiv"
-    assert_equal "keep", (testpath"latex_arXivtest.tex").read.strip
+    system bin/"arxiv_latex_cleaner", latexdir
+    assert_path_exists testpath/"latex_arXiv"
+    assert_equal "keep", (testpath/"latex_arXiv/test.tex").read.strip
   end
 end

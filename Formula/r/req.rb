@@ -1,7 +1,7 @@
 class Req < Formula
   desc "Simple and opinionated HTTP scripting language"
-  homepage "https:github.comandrewpillarreq"
-  url "https:github.comandrewpillarreqarchiverefstagsv1.1.0.tar.gz"
+  homepage "https://github.com/andrewpillar/req"
+  url "https://ghfast.top/https://github.com/andrewpillar/req/archive/refs/tags/v1.1.0.tar.gz"
   sha256 "4b628556876a5d16e05bdcca8b9a0e9147d48d801e49b0acc624adf6cb4e5350"
   license "Apache-2.0"
 
@@ -28,10 +28,10 @@ class Req < Formula
   end
 
   test do
-    (testpath"test.req").write <<~EOS
-      Stderr = open "devstderr";
-      Endpoint = "https:api.github.comusers";
-      Resp = GET "$(Endpoint)defunkt" -> send;
+    (testpath/"test.req").write <<~EOS
+      Stderr = open "/dev/stderr";
+      Endpoint = "https://api.github.com/users";
+      Resp = GET "$(Endpoint)/defunkt" -> send;
       match $Resp.StatusCode {
           200 -> {
               User = decode json $Resp.Body;
@@ -43,6 +43,6 @@ class Req < Formula
           }
       }
     EOS
-    assert_match "Got user: defunkt", shell_output("#{bin}req test.req")
+    assert_match "Got user: defunkt", shell_output("#{bin}/req test.req")
   end
 end

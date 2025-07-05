@@ -1,7 +1,7 @@
 class Ncspot < Formula
   desc "Cross-platform ncurses Spotify client written in Rust"
-  homepage "https:github.comhrkfdnncspot"
-  url "https:github.comhrkfdnncspotarchiverefstagsv1.2.2.tar.gz"
+  homepage "https://github.com/hrkfdn/ncspot"
+  url "https://ghfast.top/https://github.com/hrkfdn/ncspot/archive/refs/tags/v1.2.2.tar.gz"
   sha256 "11555a61be381afa6196b0603d12ea34ee0c6e1660d7c586d13927f3e5ba802c"
   license "BSD-2-Clause"
 
@@ -32,19 +32,19 @@ class Ncspot < Formula
   def install
     ENV["COREAUDIO_SDK_PATH"] = MacOS.sdk_path_if_needed if OS.mac?
     system "cargo", "install", "--no-default-features",
-                               "--features", "portaudio_backend,cursivepancurses-backend,share_clipboard",
+                               "--features", "portaudio_backend,cursive/pancurses-backend,share_clipboard",
                                *std_cargo_args
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}ncspot --version")
-    assert_match "portaudio", shell_output("#{bin}ncspot --help")
+    assert_match version.to_s, shell_output("#{bin}/ncspot --version")
+    assert_match "portaudio", shell_output("#{bin}/ncspot --help")
 
     # Linux CI has an issue running `script`-based testcases
     if OS.mac?
-      stdin, stdout, wait_thr = Open3.popen2 "script -q devnull"
+      stdin, stdout, wait_thr = Open3.popen2 "script -q /dev/null"
       stdin.puts "stty rows 80 cols 130"
-      stdin.puts "env LC_CTYPE=en_US.UTF-8 LANG=en_US.UTF-8 TERM=xterm #{bin}ncspot -b ."
+      stdin.puts "env LC_CTYPE=en_US.UTF-8 LANG=en_US.UTF-8 TERM=xterm #{bin}/ncspot -b ."
       sleep 1
       Process.kill("INT", wait_thr.pid)
 

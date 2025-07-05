@@ -1,11 +1,11 @@
 class Typst < Formula
   desc "Markup-based typesetting system"
-  homepage "https:typst.app"
-  url "https:github.comtypsttypstarchiverefstagsv0.13.1.tar.gz"
+  homepage "https://typst.app/"
+  url "https://ghfast.top/https://github.com/typst/typst/archive/refs/tags/v0.13.1.tar.gz"
   sha256 "2ffd8443668bc0adb59e9893f7904fd9f64dce8799a1930569f56a91305e8b71"
   license "Apache-2.0"
   version_scheme 1
-  head "https:github.comtypsttypst.git", branch: "main"
+  head "https://github.com/typst/typst.git", branch: "main"
 
   livecheck do
     url :stable
@@ -32,19 +32,19 @@ class Typst < Formula
   def install
     ENV["TYPST_VERSION"] = version.to_s
     ENV["GEN_ARTIFACTS"] = "artifacts"
-    system "cargo", "install", *std_cargo_args(path: "cratestypst-cli")
+    system "cargo", "install", *std_cargo_args(path: "crates/typst-cli")
 
-    man1.install Dir["cratestypst-cliartifacts*.1"]
-    bash_completion.install "cratestypst-cliartifactstypst.bash" => "typst"
-    fish_completion.install "cratestypst-cliartifactstypst.fish"
-    zsh_completion.install "cratestypst-cliartifacts_typst"
+    man1.install Dir["crates/typst-cli/artifacts/*.1"]
+    bash_completion.install "crates/typst-cli/artifacts/typst.bash" => "typst"
+    fish_completion.install "crates/typst-cli/artifacts/typst.fish"
+    zsh_completion.install "crates/typst-cli/artifacts/_typst"
   end
 
   test do
-    (testpath"Hello.typ").write("Hello World!")
-    system bin"typst", "compile", "Hello.typ", "Hello.pdf"
-    assert_path_exists testpath"Hello.pdf"
+    (testpath/"Hello.typ").write("Hello World!")
+    system bin/"typst", "compile", "Hello.typ", "Hello.pdf"
+    assert_path_exists testpath/"Hello.pdf"
 
-    assert_match version.to_s, shell_output("#{bin}typst --version")
+    assert_match version.to_s, shell_output("#{bin}/typst --version")
   end
 end

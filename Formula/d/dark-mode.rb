@@ -1,10 +1,10 @@
 class DarkMode < Formula
   desc "Control the macOS dark mode from the command-line"
-  homepage "https:github.comsindresorhusdark-mode"
-  url "https:github.comsindresorhusdark-modearchiverefstagsv3.0.2.tar.gz"
+  homepage "https://github.com/sindresorhus/dark-mode"
+  url "https://ghfast.top/https://github.com/sindresorhus/dark-mode/archive/refs/tags/v3.0.2.tar.gz"
   sha256 "fda7d4337fe3f0af92267fb517a17f11a267b5f8f38ec2db0c416526efd42619"
   license "MIT"
-  head "https:github.comsindresorhusdark-mode.git", branch: "main"
+  head "https://github.com/sindresorhus/dark-mode.git", branch: "main"
 
   no_autobump! because: :requires_manual_review
 
@@ -27,7 +27,7 @@ class DarkMode < Formula
   depends_on macos: :mojave
 
   def install
-    # https:github.comsindresorhusdark-modeblobmainbuild
+    # https://github.com/sindresorhus/dark-mode/blob/main/build
     Dir.mktmpdir do |tmpdir|
       xcodebuild "-arch", Hardware::CPU.arch,
                  "-derivedDataPath", tmpdir,
@@ -37,10 +37,10 @@ class DarkMode < Formula
                  "OBJROOT=.build",
                  "SYMROOT=.build"
     end
-    bin.install ".buildReleasedark-mode"
+    bin.install ".build/Release/dark-mode"
   end
 
   test do
-    assert_match(\A(on|off)\z, shell_output("#{bin}dark-mode status").chomp)
+    assert_match(/\A(on|off)\z/, shell_output("#{bin}/dark-mode status").chomp)
   end
 end

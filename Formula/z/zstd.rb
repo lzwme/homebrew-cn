@@ -1,16 +1,16 @@
 class Zstd < Formula
   desc "Zstandard is a real-time compression algorithm"
-  homepage "https:facebook.github.iozstd"
-  url "https:github.comfacebookzstdarchiverefstagsv1.5.7.tar.gz"
-  mirror "http:fresh-center.netlinuxmisczstd-1.5.7.tar.gz"
-  mirror "http:fresh-center.netlinuxmisclegacyzstd-1.5.7.tar.gz"
+  homepage "https://facebook.github.io/zstd/"
+  url "https://ghfast.top/https://github.com/facebook/zstd/archive/refs/tags/v1.5.7.tar.gz"
+  mirror "http://fresh-center.net/linux/misc/zstd-1.5.7.tar.gz"
+  mirror "http://fresh-center.net/linux/misc/legacy/zstd-1.5.7.tar.gz"
   sha256 "37d7284556b20954e56e1ca85b80226768902e2edabd3b649e9e72c0c9012ee3"
   license all_of: [
     { any_of: ["BSD-3-Clause", "GPL-2.0-only"] },
-    "BSD-2-Clause", # programszstdgrep, liblibzstd.pc.in
-    "MIT", # libdictBuilderdivsufsort.c
+    "BSD-2-Clause", # programs/zstdgrep, lib/libzstd.pc.in
+    "MIT", # lib/dictBuilder/divsufsort.c
   ]
-  head "https:github.comfacebookzstd.git", branch: "dev"
+  head "https://github.com/facebook/zstd.git", branch: "dev"
 
   # The upstream repository contains old, one-off tags (5.5.5, 6.6.6) that are
   # higher than current versions, so we check the "latest" release instead.
@@ -38,9 +38,9 @@ class Zstd < Formula
 
   def install
     # Legacy support is the default after
-    # https:github.comfacebookzstdcommitdb104f6e839cbef94df4df8268b5fecb58471274
+    # https://github.com/facebook/zstd/commit/db104f6e839cbef94df4df8268b5fecb58471274
     # Set it to `ON` to be explicit about the configuration.
-    system "cmake", "-S", "buildcmake", "-B", "builddir",
+    system "cmake", "-S", "build/cmake", "-B", "builddir",
                     "-DZSTD_PROGRAMS_LINK_SHARED=ON", # link `zstd` to `libzstd`
                     "-DZSTD_BUILD_CONTRIB=ON",
                     "-DCMAKE_INSTALL_RPATH=#{rpath}",
@@ -54,19 +54,19 @@ class Zstd < Formula
     system "cmake", "--install", "builddir"
 
     # Prevent dependents from relying on fragile Cellar paths.
-    # https:github.comocamlocamlissues12431
-    inreplace lib"pkgconfiglibzstd.pc", prefix, opt_prefix
+    # https://github.com/ocaml/ocaml/issues/12431
+    inreplace lib/"pkgconfig/libzstd.pc", prefix, opt_prefix
   end
 
   test do
-    [bin"zstd", bin"pzstd", "xz", "lz4", "gzip"].each do |prog|
+    [bin/"zstd", bin/"pzstd", "xz", "lz4", "gzip"].each do |prog|
       data = "Hello, #{prog}"
-      assert_equal data, pipe_output("#{bin}zstd -d", pipe_output(prog, data))
+      assert_equal data, pipe_output("#{bin}/zstd -d", pipe_output(prog, data))
       if prog.to_s.end_with?("zstd")
         # `pzstd` can only decompress zstd-compressed data.
-        assert_equal data, pipe_output("#{bin}pzstd -d", pipe_output(prog, data))
+        assert_equal data, pipe_output("#{bin}/pzstd -d", pipe_output(prog, data))
       else
-        assert_equal data, pipe_output("#{prog} -d", pipe_output("#{bin}zstd --format=#{prog}", data))
+        assert_equal data, pipe_output("#{prog} -d", pipe_output("#{bin}/zstd --format=#{prog}", data))
       end
     end
   end

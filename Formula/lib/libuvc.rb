@@ -1,10 +1,10 @@
 class Libuvc < Formula
   desc "Cross-platform library for USB video devices"
-  homepage "https:github.comlibuvclibuvc"
-  url "https:github.comlibuvclibuvcarchiverefstagsv0.0.7.tar.gz"
+  homepage "https://github.com/libuvc/libuvc"
+  url "https://ghfast.top/https://github.com/libuvc/libuvc/archive/refs/tags/v0.0.7.tar.gz"
   sha256 "7c6ba79723ad5d0ccdfbe6cadcfbd03f9f75b701d7ba96631eb1fd929a86ee72"
   license "BSD-3-Clause"
-  head "https:github.comlibuvclibuvc.git", branch: "master"
+  head "https://github.com/libuvc/libuvc.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -33,8 +33,8 @@ class Libuvc < Formula
   end
 
   test do
-    (testpath"test.c").write <<~C
-      #include <libuvclibuvc.h>
+    (testpath/"test.c").write <<~C
+      #include <libuvc/libuvc.h>
       int main() {
         uvc_context_t *ctx;
         uvc_error_t res = uvc_init(&ctx, NULL);
@@ -46,6 +46,6 @@ class Libuvc < Formula
 
     flags = shell_output("pkgconf --cflags --libs libuvc").strip.split
     system ENV.cc, "test.c", "-o", "test", *flags
-    system ".test"
+    system "./test"
   end
 end

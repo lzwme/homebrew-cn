@@ -1,7 +1,7 @@
 class Vcprompt < Formula
   desc "Provide version control info in shell prompts"
-  homepage "https:github.compowermanvcprompt"
-  url "https:github.compowermanvcpromptarchiverefstagsv1.3.0.tar.gz"
+  homepage "https://github.com/powerman/vcprompt"
+  url "https://ghfast.top/https://github.com/powerman/vcprompt/archive/refs/tags/v1.3.0.tar.gz"
   sha256 "3db5ebad2e333d43b464b665c8d43b35156b0f144052f10c340a5c5007a6874d"
   license "GPL-2.0-or-later"
 
@@ -23,13 +23,13 @@ class Vcprompt < Formula
 
   def install
     system "autoreconf", "--force", "--install", "--verbose"
-    system ".configure", *std_configure_args
+    system "./configure", *std_configure_args
     system "make", "PREFIX=#{prefix}",
                    "MANDIR=#{man1}",
                    "install"
   end
 
   test do
-    system bin"vcprompt"
+    system bin/"vcprompt"
   end
 end

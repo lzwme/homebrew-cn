@@ -2,11 +2,11 @@ cask "quicksilver" do
   version "2.5.2"
   sha256 "bdc0c6e89cd9913b4e36b8a91ad170c257e99d82858574292a4df9af62c4324b"
 
-  url "https:github.comquicksilverQuicksilverreleasesdownloadv#{version}Quicksilver.#{version}.dmg",
-      verified: "github.comquicksilverQuicksilver"
+  url "https://ghfast.top/https://github.com/quicksilver/Quicksilver/releases/download/v#{version}/Quicksilver.#{version}.dmg",
+      verified: "github.com/quicksilver/Quicksilver/"
   name "Quicksilver"
   desc "Productivity application"
-  homepage "https:qsapp.com"
+  homepage "https://qsapp.com/"
 
   livecheck do
     url :url
@@ -19,7 +19,7 @@ cask "quicksilver" do
   app "Quicksilver.app"
 
   zap trash: [
-    "~LibraryApplication SupportQuicksilver",
-    "~LibraryPreferencescom.blacktree.Quicksilver.plist",
+    "~/Library/Application Support/Quicksilver",
+    "~/Library/Preferences/com.blacktree.Quicksilver.plist",
   ]
 end

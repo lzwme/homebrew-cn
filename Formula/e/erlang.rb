@@ -1,15 +1,15 @@
 class Erlang < Formula
   desc "Programming language for highly scalable real-time systems"
-  homepage "https:www.erlang.org"
+  homepage "https://www.erlang.org/"
   # Download tarball from GitHub; it is served faster than the official tarball.
   # Don't forget to update the documentation resource along with the url!
-  url "https:github.comerlangotpreleasesdownloadOTP-28.0.1otp_src_28.0.1.tar.gz"
+  url "https://ghfast.top/https://github.com/erlang/otp/releases/download/OTP-28.0.1/otp_src_28.0.1.tar.gz"
   sha256 "a1d26330e3089d4d70a752210f8794385e8844e3d19684835810f1a59a752158"
   license "Apache-2.0"
 
   livecheck do
     url :stable
-    regex(^OTP[._-]v?(\d+(?:\.\d+)+)$i)
+    regex(/^OTP[._-]v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -23,7 +23,7 @@ class Erlang < Formula
   end
 
   head do
-    url "https:github.comerlangotp.git", branch: "master"
+    url "https://github.com/erlang/otp.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "libtool" => :build
@@ -42,8 +42,8 @@ class Erlang < Formula
   end
 
   resource "html" do
-    url "https:github.comerlangotpreleasesdownloadOTP-28.0.1otp_doc_html_28.0.1.tar.gz"
-    mirror "https:fossies.orglinuxmiscotp_doc_html_28.0.1.tar.gz"
+    url "https://ghfast.top/https://github.com/erlang/otp/releases/download/OTP-28.0.1/otp_doc_html_28.0.1.tar.gz"
+    mirror "https://fossies.org/linux/misc/otp_doc_html_28.0.1.tar.gz"
     sha256 "2a391d8d9ab46a0bb5ffbd1181a1d471da9aee7066ae94a7133ea4b378df72ee"
 
     livecheck do
@@ -51,14 +51,14 @@ class Erlang < Formula
     end
   end
 
-  # https:github.comerlangotpblobOTP-#{version}makeex_doc_link
+  # https://github.com/erlang/otp/blob/OTP-#{version}/make/ex_doc_link
   resource "ex_doc" do
-    url "https:github.comelixir-langex_docreleasesdownloadv0.38.1ex_doc_otp_27"
+    url "https://ghfast.top/https://github.com/elixir-lang/ex_doc/releases/download/v0.38.1/ex_doc_otp_27"
     sha256 "4aaafd13d056aeeca8b23a016b330114947c8d33ea657c22f637259e626e701e"
   end
 
   def install
-    ex_doc_url = (buildpath"makeex_doc_link").read.strip
+    ex_doc_url = (buildpath/"make/ex_doc_link").read.strip
     odie "`ex_doc` resource needs updating!" if ex_doc_url != resource("ex_doc").url
     odie "html resource needs to be updated" if version != resource("html").version
 
@@ -67,7 +67,7 @@ class Erlang < Formula
     %w[LIBS FLAGS AFLAGS ZFLAGS].each { |k| ENV.delete("ERL_#{k}") }
 
     # Do this if building from a checkout to generate configure
-    system ".otp_build", "autoconf" unless File.exist? "configure"
+    system "./otp_build", "autoconf" unless File.exist? "configure"
 
     args = %W[
       --enable-dynamic-ssl-lib
@@ -82,13 +82,13 @@ class Erlang < Formula
       args << "--with-dynamic-trace=dtrace" if MacOS::CLT.installed?
     end
 
-    system ".configure", *std_configure_args, *args
+    system "./configure", *std_configure_args, *args
     system "make"
     system "make", "install"
     resource("ex_doc").stage do |r|
-      (buildpath"bin").install File.basename(r.url) => "ex_doc"
+      (buildpath/"bin").install File.basename(r.url) => "ex_doc"
     end
-    chmod "+x", "binex_doc"
+    chmod "+x", "bin/ex_doc"
 
     # Build the doc chunks (manpages are also built by default)
     ENV.deparallelize { system "make", "docs", "install-docs", "DOC_TARGETS=chunks man" }
@@ -99,17 +99,17 @@ class Erlang < Formula
   def caveats
     <<~EOS
       Man pages can be found in:
-        #{opt_lib}erlangman
+        #{opt_lib}/erlang/man
 
       Access them with `erl -man`, or add this directory to MANPATH.
     EOS
   end
 
   test do
-    system bin"erl", "-noshell", "-eval", "crypto:start().", "-s", "init", "stop"
+    system bin/"erl", "-noshell", "-eval", "crypto:start().", "-s", "init", "stop"
 
-    (testpath"factorial").write <<~EOS
-      #!#{bin}escript
+    (testpath/"factorial").write <<~EOS
+      #!#{bin}/escript
       %% -*- erlang -*-
       %%! -smp enable -sname factorial -mnesia debug verbose
       main([String]) ->
@@ -132,7 +132,7 @@ class Erlang < Formula
     EOS
 
     chmod 0755, "factorial"
-    assert_match "usage: factorial integer", shell_output(".factorial")
-    assert_match "factorial 42 = 1405006117752879898543142606244511569936384000000000", shell_output(".factorial 42")
+    assert_match "usage: factorial integer", shell_output("./factorial")
+    assert_match "factorial 42 = 1405006117752879898543142606244511569936384000000000", shell_output("./factorial 42")
   end
 end

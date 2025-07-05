@@ -1,7 +1,7 @@
 class Lilypond < Formula
   desc "Music engraving system"
-  homepage "https:lilypond.org"
-  url "https:lilypond.orgdownloadsourcesv2.24lilypond-2.24.4.tar.gz"
+  homepage "https://lilypond.org"
+  url "https://lilypond.org/download/sources/v2.24/lilypond-2.24.4.tar.gz"
   sha256 "e96fa03571c79f20e1979653afabdbe4ee42765a3d9fd14953f0cd9eea51781c"
   license all_of: [
     "GPL-3.0-or-later",
@@ -15,8 +15,8 @@ class Lilypond < Formula
   ]
 
   livecheck do
-    url "https:lilypond.orgsource.html"
-    regex(href=.*?lilypond[._-]v?(\d+(?:\.\d+)+)\.ti)
+    url "https://lilypond.org/source.html"
+    regex(/href=.*?lilypond[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -33,9 +33,9 @@ class Lilypond < Formula
   end
 
   head do
-    url "https:gitlab.comlilypondlilypond.git", branch: "master"
-    mirror "https:github.comlilypondlilypond.git"
-    mirror "https:git.savannah.gnu.orggitlilypond.git"
+    url "https://gitlab.com/lilypond/lilypond.git", branch: "master"
+    mirror "https://github.com/lilypond/lilypond.git"
+    mirror "https://git.savannah.gnu.org/git/lilypond.git"
 
     depends_on "autoconf" => :build
     depends_on "make" => :build # make >= 4.2 is required
@@ -69,14 +69,14 @@ class Lilypond < Formula
   end
 
   resource "font-urw-base35" do
-    url "https:github.comArtifexSoftwareurw-base35-fontsarchiverefstags20200910.tar.gz"
+    url "https://ghfast.top/https://github.com/ArtifexSoftware/urw-base35-fonts/archive/refs/tags/20200910.tar.gz"
     sha256 "e0d9b7f11885fdfdc4987f06b2aa0565ad2a4af52b22e5ebf79e1a98abd0ae2f"
   end
 
   def install
-    system ".autogen.sh", "--noconfigure" if build.head?
+    system "./autogen.sh", "--noconfigure" if build.head?
 
-    system ".configure", "--datadir=#{share}",
+    system "./configure", "--datadir=#{share}",
                           "--disable-documentation",
                           *("--with-flexlexer-dir=#{Formula["flex"].include}" if OS.linux?),
                           "GUILE_FLAVOR=guile-3.0",
@@ -88,29 +88,29 @@ class Lilypond < Formula
     system "make", "bytecode"
     system "make", "install-bytecode"
 
-    elisp.install share.glob("emacssite-lisp*.el")
+    elisp.install share.glob("emacs/site-lisp/*.el")
 
-    fonts = pkgshare(build.head? ? File.read("outVERSION").chomp : version)"fontsotf"
+    fonts = pkgshare/(build.head? ? File.read("out/VERSION").chomp : version)/"fonts/otf"
 
     resource("font-urw-base35").stage do
       ["C059", "NimbusMonoPS", "NimbusSans"].each do |name|
-        Dir["fonts#{name}-*.otf"].each do |font|
+        Dir["fonts/#{name}-*.otf"].each do |font|
           fonts.install font
         end
       end
     end
 
     ["cursor", "heros", "schola"].each do |name|
-      cp Dir[Formula["texlive"].share"texmf-distfontsopentypepublictex-gyretexgyre#{name}-*.otf"], fonts
+      cp Dir[Formula["texlive"].share/"texmf-dist/fonts/opentype/public/tex-gyre/texgyre#{name}-*.otf"], fonts
     end
   end
 
   test do
-    (testpath"test.ly").write "\\relative { c' d e f g a b c }"
-    system bin"lilypond", "--loglevel=ERROR", "test.ly"
-    assert_path_exists testpath"test.pdf"
+    (testpath/"test.ly").write "\\relative { c' d e f g a b c }"
+    system bin/"lilypond", "--loglevel=ERROR", "test.ly"
+    assert_path_exists testpath/"test.pdf"
 
-    output = shell_output("#{bin}lilypond --define-default=show-available-fonts 2>&1")
+    output = shell_output("#{bin}/lilypond --define-default=show-available-fonts 2>&1")
              .encode("UTF-8", invalid: :replace, replace: "\ufffd")
     common_styles = ["Regular", "Bold", "Italic", "Bold Italic"]
     {
@@ -122,7 +122,7 @@ class Lilypond < Formula
       "TeX Gyre Schola" => common_styles,
     }.each do |family, styles|
       styles.each do |style|
-        assert_match(^\s*#{family}:style=#{style}$, output)
+        assert_match(/^\s*#{family}:style=#{style}$/, output)
       end
     end
   end

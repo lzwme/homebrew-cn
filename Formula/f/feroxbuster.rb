@@ -1,7 +1,7 @@
 class Feroxbuster < Formula
   desc "Fast, simple, recursive content discovery tool written in Rust"
-  homepage "https:epi052.github.ioferoxbuster"
-  url "https:github.comepi052feroxbusterarchiverefstagsv2.11.0.tar.gz"
+  homepage "https://epi052.github.io/feroxbuster"
+  url "https://ghfast.top/https://github.com/epi052/feroxbuster/archive/refs/tags/v2.11.0.tar.gz"
   sha256 "61aa0a5654584c015ff58df69091ec40919b38235b20862975a8ab0649467a83"
   license "MIT"
 
@@ -28,27 +28,27 @@ class Feroxbuster < Formula
 
     system "cargo", "install", *std_cargo_args
 
-    bash_completion.install "shell_completionsferoxbuster.bash" => "feroxbuster"
-    fish_completion.install "shell_completionsferoxbuster.fish"
-    zsh_completion.install "shell_completions_feroxbuster"
+    bash_completion.install "shell_completions/feroxbuster.bash" => "feroxbuster"
+    fish_completion.install "shell_completions/feroxbuster.fish"
+    zsh_completion.install "shell_completions/_feroxbuster"
   end
 
   test do
-    (testpath"wordlist").write <<~EOS
+    (testpath/"wordlist").write <<~EOS
       a.txt
       b.txt
     EOS
 
-    (testpath"web").mkpath
-    (testpath"weba.txt").write "a"
-    (testpath"webb.txt").write "b"
+    (testpath/"web").mkpath
+    (testpath/"web/a.txt").write "a"
+    (testpath/"web/b.txt").write "b"
 
     port = free_port
-    pid = spawn "miniserve", testpath"web", "-i", "127.0.0.1", "--port", port.to_s
+    pid = spawn "miniserve", testpath/"web", "-i", "127.0.0.1", "--port", port.to_s
     sleep 1
 
     begin
-      exec bin"feroxbuster", "-q", "-w", testpath"wordlist", "-u", "http:127.0.0.1:#{port}"
+      exec bin/"feroxbuster", "-q", "-w", testpath/"wordlist", "-u", "http://127.0.0.1:#{port}"
     ensure
       Process.kill("SIGINT", pid)
       Process.wait(pid)

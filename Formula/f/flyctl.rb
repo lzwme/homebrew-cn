@@ -1,11 +1,11 @@
 class Flyctl < Formula
   desc "Command-line tools for fly.io services"
-  homepage "https:fly.io"
-  url "https:github.comsuperflyflyctl.git",
+  homepage "https://fly.io"
+  url "https://github.com/superfly/flyctl.git",
       tag:      "v0.3.149",
       revision: "2c142c1141c084c54311d00923ae1c00be4d9407"
   license "Apache-2.0"
-  head "https:github.comsuperflyflyctl.git", branch: "master"
+  head "https://github.com/superfly/flyctl.git", branch: "master"
 
   # Upstream tags versions like `v0.1.92` and `v2023.9.8` but, as of writing,
   # they only create releases for the former and those are the versions we use
@@ -33,22 +33,22 @@ class Flyctl < Formula
     ENV["CGO_ENABLED"] = "0"
     ldflags = %W[
       -s -w
-      -X github.comsuperflyflyctlinternalbuildinfo.buildDate=#{time.iso8601}
-      -X github.comsuperflyflyctlinternalbuildinfo.buildVersion=#{version}
-      -X github.comsuperflyflyctlinternalbuildinfo.commit=#{Utils.git_short_head}
+      -X github.com/superfly/flyctl/internal/buildinfo.buildDate=#{time.iso8601}
+      -X github.com/superfly/flyctl/internal/buildinfo.buildVersion=#{version}
+      -X github.com/superfly/flyctl/internal/buildinfo.commit=#{Utils.git_short_head}
     ]
     system "go", "build", *std_go_args(ldflags:, tags: "production")
 
     bin.install_symlink "flyctl" => "fly"
 
-    generate_completions_from_executable(bin"flyctl", "completion")
-    generate_completions_from_executable(bin"fly", "completion")
+    generate_completions_from_executable(bin/"flyctl", "completion")
+    generate_completions_from_executable(bin/"fly", "completion")
   end
 
   test do
-    assert_match "flyctl v#{version}", shell_output("#{bin}flyctl version")
+    assert_match "flyctl v#{version}", shell_output("#{bin}/flyctl version")
 
-    flyctl_status = shell_output("#{bin}flyctl status 2>&1", 1)
+    flyctl_status = shell_output("#{bin}/flyctl status 2>&1", 1)
     assert_match "Error: No access token available. Please login with 'flyctl auth login'", flyctl_status
   end
 end

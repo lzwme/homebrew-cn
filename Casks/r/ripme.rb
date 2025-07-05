@@ -2,13 +2,13 @@ cask "ripme" do
   version "2.1.18-16-1342b621"
   sha256 "204ebb7fb4f822d503f9dd1350a5703eb1f62aaf4a280da37cf3310472170afc"
 
-  url "https:github.comRipMeAppripmereleasesdownload#{version}ripme-#{version}.jar"
+  url "https://ghfast.top/https://github.com/RipMeApp/ripme/releases/download/#{version}/ripme-#{version}.jar"
   name "RipMe"
   desc "Album ripper for various websites"
-  homepage "https:github.comRipMeAppripme"
+  homepage "https://github.com/RipMeApp/ripme"
 
   livecheck do
-    url "https:raw.githubusercontent.comRipMeAppripmerefsheadsmainripme.json"
+    url "https://ghfast.top/https://raw.githubusercontent.com/RipMeApp/ripme/refs/heads/main/ripme.json"
     strategy :json do |json|
       json["latestVersion"]
     end
@@ -17,11 +17,11 @@ cask "ripme" do
   auto_updates true
   container type: :naked
 
-  artifact "ripme-#{version}.jar", target: "#{appdir}ripme.jar"
+  artifact "ripme-#{version}.jar", target: "#{appdir}/ripme.jar"
 
-  uninstall delete: "Applicationsrips"
+  uninstall delete: "/Applications/rips"
 
-  zap trash: "~LibraryApplication Supportripme"
+  zap trash: "~/Library/Application Support/ripme"
 
   caveats do
     depends_on_java "17+"

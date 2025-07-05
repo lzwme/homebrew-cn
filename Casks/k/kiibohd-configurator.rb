@@ -2,11 +2,11 @@ cask "kiibohd-configurator" do
   version "1.1.0"
   sha256 "996abcfd4f05420199e0302be50d9e878bd28bb50f541b5f6886a1654862e20f"
 
-  url "https:github.comkiibohdconfiguratorreleasesdownloadv#{version}kiibohd-configurator-#{version}-mac.dmg",
-      verified: "github.comkiibohdconfigurator"
+  url "https://ghfast.top/https://github.com/kiibohd/configurator/releases/download/v#{version}/kiibohd-configurator-#{version}-mac.dmg",
+      verified: "github.com/kiibohd/configurator/"
   name "Kiibohd Configurator"
   desc "Modular community keyboard firmware"
-  homepage "https:kiibohd.com"
+  homepage "https://kiibohd.com/"
 
   no_autobump! because: :requires_manual_review
 
@@ -17,10 +17,10 @@ cask "kiibohd-configurator" do
   uninstall quit: "club.input.KiibohdConfigurator"
 
   zap trash: [
-    "~LibraryApplication Supportkiibohd-configurator",
-    "~LibraryLogsKiibohd Configurator",
-    "~LibraryPreferencesclub.input.KiibohdConfigurator.plist",
-    "~LibrarySaved Application Stateclub.input.KiibohdConfigurator.savedState",
+    "~/Library/Application Support/kiibohd-configurator",
+    "~/Library/Logs/Kiibohd Configurator",
+    "~/Library/Preferences/club.input.KiibohdConfigurator.plist",
+    "~/Library/Saved Application State/club.input.KiibohdConfigurator.savedState",
   ]
 
   caveats do

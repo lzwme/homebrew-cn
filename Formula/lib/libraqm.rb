@@ -1,7 +1,7 @@
 class Libraqm < Formula
   desc "Library for complex text layout"
-  homepage "https:github.comHOST-Omanlibraqm"
-  url "https:github.comHOST-Omanlibraqmarchiverefstagsv0.10.2.tar.gz"
+  homepage "https://github.com/HOST-Oman/libraqm"
+  url "https://ghfast.top/https://github.com/HOST-Oman/libraqm/archive/refs/tags/v0.10.2.tar.gz"
   sha256 "db68fd9f034fc40ece103e511ffdf941d69f5e935c48ded8a31590468e42ba72"
   license "MIT"
 
@@ -29,7 +29,7 @@ class Libraqm < Formula
   end
 
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include <raqm.h>
 
       int main() {
@@ -39,8 +39,8 @@ class Libraqm < Formula
 
     system ENV.cc, "test.c",
                    "-I#{include}",
-                   "-I#{Formula["freetype"].include"freetype2"}",
+                   "-I#{Formula["freetype"].include/"freetype2"}",
                    "-o", "test"
-    system ".test"
+    system "./test"
   end
 end

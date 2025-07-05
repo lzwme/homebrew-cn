@@ -2,10 +2,10 @@ cask "swiftdefaultappsprefpane" do
   version "2.0.1"
   sha256 "e8ca50cc23a5edacaecde66755083bbf232f0a056e1e874011edbd2c603cbdc9"
 
-  url "https:github.comLord-KaminaSwiftDefaultAppsreleasesdownloadv#{version}SwiftDefaultApps-v#{version}.zip"
+  url "https://ghfast.top/https://github.com/Lord-Kamina/SwiftDefaultApps/releases/download/v#{version}/SwiftDefaultApps-v#{version}.zip"
   name "SwiftDefaultApps"
   desc "Replacement for RCDefaultApps, written in Swift"
-  homepage "https:github.comLord-KaminaSwiftDefaultApps"
+  homepage "https://github.com/Lord-Kamina/SwiftDefaultApps"
 
   no_autobump! because: :requires_manual_review
 

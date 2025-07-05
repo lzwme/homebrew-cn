@@ -5,14 +5,14 @@ cask "witsy" do
   sha256 arm:   "82245d9dd78b7e3aca89d53ff885dd96108418c3cbdf226e0dc99b1b32210fbb",
          intel: "21fd424fc7313b327d75b83e769d283c4d0d6d126bfe4c48877465f4f3fcf3ed"
 
-  url "https:github.comnbonamywitsyreleasesdownloadv#{version}Witsy-#{version}-darwin-#{arch}.dmg",
-      verified: "github.comnbonamywitsy"
+  url "https://ghfast.top/https://github.com/nbonamy/witsy/releases/download/v#{version}/Witsy-#{version}-darwin-#{arch}.dmg",
+      verified: "github.com/nbonamy/witsy/"
   name "Witsy"
   desc "BYOK (Bring Your Own Keys) AI assistant"
-  homepage "https:witsyai.com"
+  homepage "https://witsyai.com/"
 
   livecheck do
-    url "https:update.electronjs.orgnbonamywitsydarwin-#{arch}0.0.0"
+    url "https://update.electronjs.org/nbonamy/witsy/darwin-#{arch}/0.0.0"
     strategy :json do |json|
       json["name"]
     end
@@ -24,7 +24,7 @@ cask "witsy" do
   app "Witsy.app"
 
   zap trash: [
-    "~LibraryApplication SupportWitsy",
-    "~LibraryLogsWitsy",
+    "~/Library/Application Support/Witsy",
+    "~/Library/Logs/Witsy",
   ]
 end

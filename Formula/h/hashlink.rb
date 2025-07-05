@@ -1,16 +1,16 @@
 class Hashlink < Formula
   desc "Virtual machine for Haxe"
-  homepage "https:hashlink.haxe.org"
+  homepage "https://hashlink.haxe.org/"
   license "MIT"
-  head "https:github.comHaxeFoundationhashlink.git", branch: "master"
+  head "https://github.com/HaxeFoundation/hashlink.git", branch: "master"
 
   stable do
-    url "https:github.comHaxeFoundationhashlinkarchiverefstags1.15.tar.gz"
+    url "https://ghfast.top/https://github.com/HaxeFoundation/hashlink/archive/refs/tags/1.15.tar.gz"
     sha256 "3c3e3d47ed05139163310cbe49200de8fb220cd343a979cd1f39afd91e176973"
 
-    # Backport fix for arm64 linux, https:github.comHaxeFoundationhashlinkpull765
+    # Backport fix for arm64 linux, https://github.com/HaxeFoundation/hashlink/pull/765
     patch do
-      url "https:github.comHaxeFoundationhashlinkcommit6794cdbe4407d26f405e5978890de67d4d42a96d.patch?full_index=1"
+      url "https://github.com/HaxeFoundation/hashlink/commit/6794cdbe4407d26f405e5978890de67d4d42a96d.patch?full_index=1"
       sha256 "fe885f32e89831a3269cb0da738316843af8ee80f55dc859c97a9cfb1725e7d8"
     end
   end
@@ -46,7 +46,7 @@ class Hashlink < Formula
   end
 
   def install
-    # NOTE: This installs lib*.hdll files which would be audited by `--new`.
+    # NOTE: This installs lib/*.hdll files which would be audited by `--new`.
     # These appear to be renamed shared libraries specifically used by HashLink.
     args = ["PREFIX=#{prefix}"]
 
@@ -66,10 +66,10 @@ class Hashlink < Formula
   def caveats
     on_arm do
       <<~EOS
-        The HashLinkJIT virtual machine (hl) is not installed as only
-        HashLinkC native compilation is supported on ARM processors.
+        The HashLink/JIT virtual machine (hl) is not installed as only
+        HashLink/C native compilation is supported on ARM processors.
 
-        See https:github.comHaxeFoundationhashlinkissues557
+        See https://github.com/HaxeFoundation/hashlink/issues/557
       EOS
     end
   end
@@ -77,16 +77,16 @@ class Hashlink < Formula
   test do
     haxebin = Formula["haxe"].bin
 
-    (testpath"HelloWorld.hx").write <<~EOS
+    (testpath/"HelloWorld.hx").write <<~EOS
       class HelloWorld {
           static function main() Sys.println("Hello world!");
       }
     EOS
 
-    (testpath"TestHttps.hx").write <<~EOS
+    (testpath/"TestHttps.hx").write <<~EOS
       class TestHttps {
         static function main() {
-          var http = new haxe.Http("https:www.google.com");
+          var http = new haxe.Http("https://www.google.com/");
           http.onStatus = status -> Sys.println(status);
           http.onError = error -> {
             trace('error: $error');
@@ -97,19 +97,19 @@ class Hashlink < Formula
       }
     EOS
 
-    system "#{haxebin}haxe", "-hl", "HelloWorld.hl", "-main", "HelloWorld"
-    system "#{haxebin}haxe", "-hl", "TestHttps.hl", "-main", "TestHttps"
+    system "#{haxebin}/haxe", "-hl", "HelloWorld.hl", "-main", "HelloWorld"
+    system "#{haxebin}/haxe", "-hl", "TestHttps.hl", "-main", "TestHttps"
 
     if Hardware::CPU.intel?
-      assert_equal "Hello world!\n", shell_output("#{bin}hl HelloWorld.hl")
-      assert_equal "200\n", shell_output("#{bin}hl TestHttps.hl")
+      assert_equal "Hello world!\n", shell_output("#{bin}/hl HelloWorld.hl")
+      assert_equal "200\n", shell_output("#{bin}/hl TestHttps.hl")
     end
 
-    (testpath"build").mkdir
-    system "#{haxebin}haxelib", "newrepo"
-    system "#{haxebin}haxelib", "install", "hashlink"
+    (testpath/"build").mkdir
+    system "#{haxebin}/haxelib", "newrepo"
+    system "#{haxebin}/haxelib", "install", "hashlink"
 
-    system "#{haxebin}haxe", "-hl", "HelloWorldmain.c", "-main", "HelloWorld"
+    system "#{haxebin}/haxe", "-hl", "HelloWorld/main.c", "-main", "HelloWorld"
 
     flags = %W[
       -I#{include}
@@ -117,13 +117,13 @@ class Hashlink < Formula
     ]
     flags << "-Wl,-rpath,#{lib}" unless OS.mac?
 
-    system ENV.cc, "HelloWorldmain.c", "-O3", "-std=c11", "-IHelloWorld",
-                   *flags, "-lhl", "-o", "buildHelloWorld"
-    assert_equal "Hello world!\n", `.buildHelloWorld`
+    system ENV.cc, "HelloWorld/main.c", "-O3", "-std=c11", "-IHelloWorld",
+                   *flags, "-lhl", "-o", "build/HelloWorld"
+    assert_equal "Hello world!\n", `./build/HelloWorld`
 
-    system "#{haxebin}haxe", "-hl", "TestHttpsmain.c", "-main", "TestHttps"
-    system ENV.cc, "TestHttpsmain.c", "-O3", "-std=c11", "-ITestHttps",
-                   *flags, "-lhl", "-o", "buildTestHttps", lib"ssl.hdll"
-    assert_equal "200\n", `.buildTestHttps`
+    system "#{haxebin}/haxe", "-hl", "TestHttps/main.c", "-main", "TestHttps"
+    system ENV.cc, "TestHttps/main.c", "-O3", "-std=c11", "-ITestHttps",
+                   *flags, "-lhl", "-o", "build/TestHttps", lib/"ssl.hdll"
+    assert_equal "200\n", `./build/TestHttps`
   end
 end

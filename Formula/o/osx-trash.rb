@@ -1,14 +1,14 @@
 class OsxTrash < Formula
   desc "Allows trashing of files instead of tempting fate with rm"
-  homepage "https:github.commorganttools-osx#trash"
-  url "https:github.commorganttools-osxarchiverefstagstrash-0.7.1.tar.gz"
+  homepage "https://github.com/morgant/tools-osx#trash"
+  url "https://ghfast.top/https://github.com/morgant/tools-osx/archive/refs/tags/trash-0.7.1.tar.gz"
   sha256 "9ac54a5eb87c4c6a71568256c0e29094a913f2adf538fb2c504f6c8b1f63be12"
   license "MIT"
-  head "https:github.commorganttools-osx.git", branch: "master"
+  head "https://github.com/morgant/tools-osx.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(^trash[._-]v?(\d+(?:\.\d+)+)$i)
+    regex(/^trash[._-]v?(\d+(?:\.\d+)+)$/i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -26,11 +26,11 @@ class OsxTrash < Formula
   conflicts_with "trash", because: "both install a `trash` binary"
 
   def install
-    bin.install "srctrash"
+    bin.install "src/trash"
   end
 
   test do
     # Direct execution would trigger accessibility permissions, failing CI.
-    assert_match "v#{version}", shell_output("strings #{bin}trash")
+    assert_match "v#{version}", shell_output("strings #{bin}/trash")
   end
 end

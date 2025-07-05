@@ -1,14 +1,14 @@
 class Binkd < Formula
-  desc "TCPIP FTN Mailer"
-  homepage "https:github.compgulbinkd"
-  url "https:github.compgulbinkdarchiverefstagsbinkd-1_0_4.tar.gz"
+  desc "TCP/IP FTN Mailer"
+  homepage "https://github.com/pgul/binkd"
+  url "https://ghfast.top/https://github.com/pgul/binkd/archive/refs/tags/binkd-1_0_4.tar.gz"
   sha256 "67cc5c254198005e6d7c5c98b1d161ad146615874df4839daa86735aa5e3fa1d"
   license "GPL-2.0-or-later"
-  head "https:github.compgulbinkd.git", branch: "master"
+  head "https://github.com/pgul/binkd.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(^(?:binkd[._-])?v?(\d+(?:[._]\d+)+)$i)
+    regex(/^(?:binkd[._-])?v?(\d+(?:[._]\d+)+)$/i)
     strategy :git do |tags|
       tags.filter_map { |tag| tag[regex, 1]&.tr("_", ".") }
     end
@@ -30,9 +30,9 @@ class Binkd < Formula
   uses_from_macos "zlib"
 
   def install
-    cp Dir["mkflsunix*"].select { |f| File.file? f }, "."
-    inreplace "binkd.conf", "var", "#{var}" if build.stable?
-    system ".configure", "--disable-debug",
+    cp Dir["mkfls/unix/*"].select { |f| File.file? f }, "."
+    inreplace "binkd.conf", "/var/", "#{var}/" if build.stable?
+    system "./configure", "--disable-debug",
                           "--disable-dependency-tracking",
                           "--disable-silent-rules",
                           "--prefix=#{prefix}",
@@ -41,6 +41,6 @@ class Binkd < Formula
   end
 
   test do
-    system "#{sbin}binkd", "-v"
+    system "#{sbin}/binkd", "-v"
   end
 end

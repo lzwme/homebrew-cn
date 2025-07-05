@@ -1,10 +1,10 @@
 class Grantlee < Formula
   desc "Libraries for text templating with Qt"
-  homepage "https:github.comsteveiregrantlee"
-  url "https:github.comsteveiregrantleereleasesdownloadv5.3.1grantlee-5.3.1.tar.gz"
+  homepage "https://github.com/steveire/grantlee"
+  url "https://ghfast.top/https://github.com/steveire/grantlee/releases/download/v5.3.1/grantlee-5.3.1.tar.gz"
   sha256 "ba288ae9ed37ec0c3622ceb40ae1f7e1e6b2ea89216ad8587f0863d64be24f06"
   license "LGPL-2.1-or-later"
-  head "https:github.comsteveiregrantlee.git", branch: "master"
+  head "https://github.com/steveire/grantlee.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -21,7 +21,7 @@ class Grantlee < Formula
     sha256 x86_64_linux:   "9fa1fc4626d293531c6a3823ed4124b114a5f823a58753731cdc4fd3c008271b"
   end
 
-  # From https:steveire.wordpress.com20221111grantlee-version-5-3-1-now-available
+  # From https://steveire.wordpress.com/2022/11/11/grantlee-version-5-3-1-now-available/
   # > The continuation of Grantlee for Qt 6 is happening as KTextTemplate
   #
   # Just deprecating with replacement message due to incompatible API.
@@ -34,7 +34,7 @@ class Grantlee < Formula
   depends_on "qt"
 
   patch do
-    url "https:github.comsteveiregrantleecommit1efeb1cb61947e69b8c99ddbfc5b75cd27013a87.patch?full_index=1"
+    url "https://github.com/steveire/grantlee/commit/1efeb1cb61947e69b8c99ddbfc5b75cd27013a87.patch?full_index=1"
     sha256 "6c5fa321c5df2b970ec2873df610ec43dd2d50977cb0a104d0d7c4ecb90621c2"
   end
 
@@ -44,13 +44,13 @@ class Grantlee < Formula
     system "cmake", "--install", "build"
 
     system "cmake", "--build", "build", "--target", "docs"
-    (pkgshare"doc").install Dir["buildapidox*"]
+    (pkgshare/"doc").install Dir["build/apidox/*"]
 
     pkgshare.install "examples"
   end
 
   test do
-    system "cmake", (pkgshare"examplescodegen"), "-DGRANTLEE_BUILD_WITH_QT6=TRUE", *std_cmake_args
+    system "cmake", (pkgshare/"examples/codegen"), "-DGRANTLEE_BUILD_WITH_QT6=TRUE", *std_cmake_args
     system "cmake", "--build", "."
   end
 end

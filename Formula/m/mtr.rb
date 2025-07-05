@@ -1,14 +1,14 @@
 class Mtr < Formula
   desc "'traceroute' and 'ping' in a single tool"
-  homepage "https:www.bitwizard.nlmtr"
-  url "https:github.comtraviscrossmtrarchiverefstagsv0.95.tar.gz"
+  homepage "https://www.bitwizard.nl/mtr/"
+  url "https://ghfast.top/https://github.com/traviscross/mtr/archive/refs/tags/v0.95.tar.gz"
   sha256 "12490fb660ba5fb34df8c06a0f62b4f9cbd11a584fc3f6eceda0a99124e8596f"
   # Main license is GPL-2.0-only but some compatibility code is under other licenses:
-  # 1. portabilityqueue.h is BSD-3-Clause
-  # 2. portabilityerror.* is LGPL-2.0-only (only used on macOS)
-  # 3. portabilitygetopt.* is omitted as unused
+  # 1. portability/queue.h is BSD-3-Clause
+  # 2. portability/error.* is LGPL-2.0-only (only used on macOS)
+  # 3. portability/getopt.* is omitted as unused
   license all_of: ["GPL-2.0-only", "BSD-3-Clause", "LGPL-2.0-only"]
-  head "https:github.comtraviscrossmtr.git", branch: "master"
+  head "https://github.com/traviscross/mtr.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -35,7 +35,7 @@ class Mtr < Formula
   def install
     # Fix UNKNOWN version reported by `mtr --version`.
     inreplace "configure.ac",
-              "m4_esyscmd([build-auxgit-version-gen .tarball-version])",
+              "m4_esyscmd([build-aux/git-version-gen .tarball-version])",
               version.to_s
 
     args = %W[
@@ -44,8 +44,8 @@ class Mtr < Formula
       --without-gtk
       --with-bashcompletiondir=#{bash_completion}
     ]
-    system ".bootstrap.sh"
-    system ".configure", *args, *std_configure_args
+    system "./bootstrap.sh"
+    system "./configure", *args, *std_configure_args
     system "make", "install"
   end
 
@@ -58,15 +58,15 @@ class Mtr < Formula
 
   test do
     # We patch generation of the version, so let's check that we did that properly.
-    assert_match "mtr #{version}", shell_output("#{sbin}mtr --version")
+    assert_match "mtr #{version}", shell_output("#{sbin}/mtr --version")
     if OS.mac?
       # mtr will not run without root privileges
-      assert_match "Failure to open", shell_output("#{sbin}mtr google.com 2>&1", 1)
-      assert_match "Failure to open", shell_output("#{sbin}mtr --json google.com 2>&1", 1)
+      assert_match "Failure to open", shell_output("#{sbin}/mtr google.com 2>&1", 1)
+      assert_match "Failure to open", shell_output("#{sbin}/mtr --json google.com 2>&1", 1)
     else
       # mtr runs but won't produce useful output without extra privileges
-      assert_match "2.|-- ???", shell_output("#{sbin}mtr google.com 2>&1")
-      assert_match '"dst": "google.com"', shell_output("#{sbin}mtr --json google.com 2>&1")
+      assert_match "2.|-- ???", shell_output("#{sbin}/mtr google.com 2>&1")
+      assert_match '"dst": "google.com"', shell_output("#{sbin}/mtr --json google.com 2>&1")
     end
   end
 end

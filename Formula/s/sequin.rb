@@ -1,10 +1,10 @@
 class Sequin < Formula
   desc "Human-readable ANSI sequences"
-  homepage "https:github.comcharmbraceletsequin"
-  url "https:github.comcharmbraceletsequinarchiverefstagsv0.3.1.tar.gz"
+  homepage "https://github.com/charmbracelet/sequin"
+  url "https://ghfast.top/https://github.com/charmbracelet/sequin/archive/refs/tags/v0.3.1.tar.gz"
   sha256 "52f4d704a6e019df05dfc0ee3808fdf6c7d3245dcaa6262db8ca33c9de303da9"
   license "MIT"
-  head "https:github.comcharmbraceletsequin.git", branch: "main"
+  head "https://github.com/charmbracelet/sequin.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "32652611883fd7d3c9a2cab5202df945420db404bb0058c07faab677c9276086"
@@ -22,8 +22,8 @@ class Sequin < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}sequin -v")
+    assert_match version.to_s, shell_output("#{bin}/sequin -v")
 
-    assert_match "CSI m: Reset style", pipe_output(bin"sequin", "\x1b[m")
+    assert_match "CSI m: Reset style", pipe_output(bin/"sequin", "\x1b[m")
   end
 end

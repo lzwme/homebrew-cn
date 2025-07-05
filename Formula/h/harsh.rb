@@ -1,10 +1,10 @@
 class Harsh < Formula
   desc "Habit tracking for geeks"
-  homepage "https:github.comwakataraharsh"
-  url "https:github.comwakataraharsharchiverefstagsv0.10.22.tar.gz"
+  homepage "https://github.com/wakatara/harsh"
+  url "https://ghfast.top/https://github.com/wakatara/harsh/archive/refs/tags/v0.10.22.tar.gz"
   sha256 "941198dae44835635836459e8a682a13aa4ca5aed334f5adcd8b708746f5c366"
   license "MIT"
-  head "https:github.comwakataraharsh.git", branch: "master"
+  head "https://github.com/wakatara/harsh.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "e2f582ac18703ce292d79434f447cbc34a9737e9126dd75ffc309215ecee043d"
@@ -22,7 +22,7 @@ class Harsh < Formula
   end
 
   test do
-    assert_match "Harsh version #{version}", shell_output("#{bin}harsh --version")
-    assert_match "Welcome to harsh!", shell_output("#{bin}harsh todo")
+    assert_match "Harsh version #{version}", shell_output("#{bin}/harsh --version")
+    assert_match "Welcome to harsh!", shell_output("#{bin}/harsh todo")
   end
 end

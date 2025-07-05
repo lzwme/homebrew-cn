@@ -1,7 +1,7 @@
 class SuiteSparse < Formula
   desc "Suite of Sparse Matrix Software"
-  homepage "https:people.engr.tamu.edudavissuitesparse.html"
-  url "https:github.comDrTimothyAldenDavisSuiteSparsearchiverefstagsv7.10.3.tar.gz"
+  homepage "https://people.engr.tamu.edu/davis/suitesparse.html"
+  url "https://ghfast.top/https://github.com/DrTimothyAldenDavis/SuiteSparse/archive/refs/tags/v7.10.3.tar.gz"
   sha256 "09e7bcc8e5de0a5b55d2ae9fd6378d5f4dc1b85a933593339a0872b24e2cc102"
   license all_of: [
     "BSD-3-Clause",
@@ -14,7 +14,7 @@ class SuiteSparse < Formula
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -45,7 +45,7 @@ class SuiteSparse < Formula
 
   def install
     # Avoid references to Homebrew shims
-    inreplace "GraphBLAScmake_modulesGraphBLAS_JIT_configure.cmake",
+    inreplace "GraphBLAS/cmake_modules/GraphBLAS_JIT_configure.cmake",
               "C_COMPILER_BINARY \"${CMAKE_C_COMPILER}\"", "C_COMPILER_BINARY \"#{ENV.cc}\""
 
     system "cmake", "-S", ".", "-B", "build", "-DCMAKE_INSTALL_RPATH=#{rpath}",
@@ -53,14 +53,14 @@ class SuiteSparse < Formula
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 
-    pkgshare.install "KLUDemoklu_simple.c"
+    pkgshare.install "KLU/Demo/klu_simple.c"
   end
 
   test do
-    system ENV.cc, "-o", "test", pkgshare"klu_simple.c",
-                   "-I#{include}suitesparse", "-L#{lib}",
+    system ENV.cc, "-o", "test", pkgshare/"klu_simple.c",
+                   "-I#{include}/suitesparse", "-L#{lib}",
                    "-lsuitesparseconfig", "-lklu"
-    assert_path_exists testpath"test"
-    assert_match "x [0] = 1", shell_output(".test")
+    assert_path_exists testpath/"test"
+    assert_match "x [0] = 1", shell_output("./test")
   end
 end

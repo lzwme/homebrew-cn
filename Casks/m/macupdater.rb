@@ -4,20 +4,20 @@ cask "macupdater" do
     sha256 "81e7a1f64499128c131d169408829962ca913996830a7e19d372099e657d5894"
   end
   on_ventura :or_newer do
-    version "3.4.2"
-    # required as upstream package is regularly updated in-place https:github.comHomebrewhomebrew-caskpull182188#issuecomment-2284199515
+    version "3.4.5"
+    # required as upstream package is regularly updated in-place https://github.com/Homebrew/homebrew-cask/pull/182188#issuecomment-2284199515
     sha256 :no_check
 
-    binary "#{appdir}MacUpdater.appContentsResourcesmacupdater_install"
+    binary "#{appdir}/MacUpdater.app/Contents/Resources/macupdater_install"
   end
 
-  url "https:www.corecode.iodownloadsmacupdater_#{version}.dmg"
+  url "https://www.corecode.io/downloads/macupdater_#{version}.dmg"
   name "MacUpdater"
   desc "Track and update to the latest versions of installed software"
-  homepage "https:www.corecode.iomacupdaterindex.html"
+  homepage "https://www.corecode.io/macupdater/index.html"
 
   livecheck do
-    url "https:www.corecode.iomacupdatermacupdater#{version.major}.xml"
+    url "https://www.corecode.io/macupdater/macupdater#{version.major}.xml"
     strategy :sparkle, &:short_version
   end
 
@@ -25,17 +25,17 @@ cask "macupdater" do
   depends_on macos: ">= :mojave"
 
   app "MacUpdater.app"
-  binary "#{appdir}MacUpdater.appContentsResourcesmacupdater_client"
+  binary "#{appdir}/MacUpdater.app/Contents/Resources/macupdater_client"
 
   uninstall launchctl: "com.corecode.MacUpdaterLaunchHelper",
             quit:      "com.corecode.MacUpdater"
 
   zap trash: [
-    "~LibraryApplication Scriptscom.corecode.MacUpdaterLaunchHelper",
-    "~LibraryApplication SupportMacUpdater*",
-    "~LibraryCachescom.corecode.MacUpdater",
-    "~LibraryContainerscom.corecode.MacUpdaterLaunchHelper",
-    "~LibraryCookiescom.corecode.MacUpdater.binarycookies",
-    "~LibraryPreferencescom.corecode.MacUpdater.plist",
+    "~/Library/Application Scripts/com.corecode.MacUpdaterLaunchHelper",
+    "~/Library/Application Support/MacUpdater*",
+    "~/Library/Caches/com.corecode.MacUpdater",
+    "~/Library/Containers/com.corecode.MacUpdaterLaunchHelper",
+    "~/Library/Cookies/com.corecode.MacUpdater.binarycookies",
+    "~/Library/Preferences/com.corecode.MacUpdater.plist",
   ]
 end

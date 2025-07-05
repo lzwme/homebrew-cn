@@ -1,7 +1,7 @@
 class WebExt < Formula
   desc "Command-line tool to help build, run, and test web extensions"
-  homepage "https:github.commozillaweb-ext"
-  url "https:registry.npmjs.orgweb-ext-web-ext-8.8.0.tgz"
+  homepage "https://github.com/mozilla/web-ext"
+  url "https://registry.npmjs.org/web-ext/-/web-ext-8.8.0.tgz"
   sha256 "1efa644ae65069bf8b3c0a343fdd9bc500ffd0a0989999eb567a15fb2a49ab8d"
   license "MPL-2.0"
 
@@ -23,31 +23,31 @@ class WebExt < Formula
 
   def install
     system "npm", "install", *std_npm_args
-    bin.install_symlink Dir["#{libexec}bin*"]
+    bin.install_symlink Dir["#{libexec}/bin/*"]
 
     # Remove vendored pre-built binary `terminal-notifier`
-    node_notifier_vendor_dir = libexec"libnode_modulesweb-extnode_modulesnode-notifiervendor"
+    node_notifier_vendor_dir = libexec/"lib/node_modules/web-ext/node_modules/node-notifier/vendor"
     rm_r(node_notifier_vendor_dir) # remove vendored pre-built binaries
 
     if OS.mac?
-      terminal_notifier_dir = node_notifier_vendor_dir"mac.noindex"
+      terminal_notifier_dir = node_notifier_vendor_dir/"mac.noindex"
       terminal_notifier_dir.mkpath
 
       # replace vendored `terminal-notifier` with our own
-      terminal_notifier_app = Formula["terminal-notifier"].opt_prefix"terminal-notifier.app"
+      terminal_notifier_app = Formula["terminal-notifier"].opt_prefix/"terminal-notifier.app"
       ln_sf terminal_notifier_app.relative_path_from(terminal_notifier_dir), terminal_notifier_dir
     end
   end
 
   test do
-    (testpath"manifest.json").write <<~JSON
+    (testpath/"manifest.json").write <<~JSON
       {
         "manifest_version": 2,
         "name": "minimal web extension",
         "version": "0.0.1"
       }
     JSON
-    assert_equal <<~EOF, shell_output("#{bin}web-ext lint").gsub( +$, "")
+    assert_equal <<~EOF, shell_output("#{bin}/web-ext lint").gsub(/ +$/, "")
       Validation Summary:
 
       errors          0
@@ -56,6 +56,6 @@ class WebExt < Formula
 
     EOF
 
-    assert_match version.to_s, shell_output("#{bin}web-ext --version")
+    assert_match version.to_s, shell_output("#{bin}/web-ext --version")
   end
 end

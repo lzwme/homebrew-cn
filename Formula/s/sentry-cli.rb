@@ -1,10 +1,10 @@
 class SentryCli < Formula
   desc "Command-line utility to interact with Sentry"
-  homepage "https:docs.sentry.iocli"
-  url "https:github.comgetsentrysentry-cliarchiverefstags2.46.0.tar.gz"
+  homepage "https://docs.sentry.io/cli/"
+  url "https://ghfast.top/https://github.com/getsentry/sentry-cli/archive/refs/tags/2.46.0.tar.gz"
   sha256 "eb7ab4f8ea6338582baf9335fef5d9e5340f918e8ac41116f9f83559b7c4d344"
   license "BSD-3-Clause"
-  head "https:github.comgetsentrysentry-cli.git", branch: "master"
+  head "https://github.com/getsentry/sentry-cli.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "7da89ac606667a40338012b27cf303f4f9c4354752386ad5d2eb55596ff574cd"
@@ -29,14 +29,14 @@ class SentryCli < Formula
   def install
     system "cargo", "install", *std_cargo_args
 
-    generate_completions_from_executable(bin"sentry-cli", "completions")
+    generate_completions_from_executable(bin/"sentry-cli", "completions")
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}sentry-cli --version")
+    assert_match version.to_s, shell_output("#{bin}/sentry-cli --version")
 
-    output = shell_output("#{bin}sentry-cli info 2>&1", 1)
-    assert_match "Sentry Server: https:sentry.io", output
+    output = shell_output("#{bin}/sentry-cli info 2>&1", 1)
+    assert_match "Sentry Server: https://sentry.io", output
     assert_match "Auth token is required for this request.", output
   end
 end

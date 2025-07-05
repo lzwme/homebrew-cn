@@ -1,10 +1,10 @@
 class Tfprovidercheck < Formula
   desc "CLI to prevent malicious Terraform Providers from being executed"
-  homepage "https:github.comsuzuki-shunsuketfprovidercheck"
-  url "https:github.comsuzuki-shunsuketfprovidercheckarchiverefstagsv1.0.4.tar.gz"
+  homepage "https://github.com/suzuki-shunsuke/tfprovidercheck"
+  url "https://ghfast.top/https://github.com/suzuki-shunsuke/tfprovidercheck/archive/refs/tags/v1.0.4.tar.gz"
   sha256 "999816d11c9b30a01af4725a118e2e974f6927875fe0d1045ae6e0ab49e95284"
   license "MIT"
-  head "https:github.comsuzuki-shunsuketfprovidercheck.git", branch: "main"
+  head "https://github.com/suzuki-shunsuke/tfprovidercheck.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "677d19930251eac409e75565e6325a56fc7e31014329b3719434de20212c085f"
@@ -19,19 +19,19 @@ class Tfprovidercheck < Formula
   depends_on "opentofu" => :test
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}"), ".cmdtfprovidercheck"
+    system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}"), "./cmd/tfprovidercheck"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}tfprovidercheck -version")
+    assert_match version.to_s, shell_output("#{bin}/tfprovidercheck -version")
 
-    (testpath"test.tf").write <<~HCL
+    (testpath/"test.tf").write <<~HCL
       terraform {
         required_version = ">= 1.0"
 
         required_providers {
           aws = {
-            source = "hashicorpaws"
+            source = "hashicorp/aws"
             version = "~> 5"
           }
         }
@@ -43,16 +43,16 @@ class Tfprovidercheck < Formula
     HCL
 
     # Only google provider and azurerm provider are allowed
-    (testpath".tfprovidercheck.yaml").write <<~YAML
+    (testpath/".tfprovidercheck.yaml").write <<~YAML
       providers:
-        - name: registry.terraform.iohashicorpgoogle
+        - name: registry.terraform.io/hashicorp/google
           version: ">= 4.0.0"
-        - name: registry.terraform.iohashicorpazurerm
+        - name: registry.terraform.io/hashicorp/azurerm
     YAML
 
     system "tofu", "init"
     json_output = shell_output("tofu version -json")
-    output = pipe_output("#{bin}tfprovidercheck 2>&1", json_output, 1)
+    output = pipe_output("#{bin}/tfprovidercheck 2>&1", json_output, 1)
     assert_match "Terraform Provider is disallowed", output
   end
 end

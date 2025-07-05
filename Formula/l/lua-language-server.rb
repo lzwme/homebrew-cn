@@ -1,12 +1,12 @@
 class LuaLanguageServer < Formula
   desc "Language Server for the Lua language"
-  homepage "https:github.comLuaLSlua-language-server"
+  homepage "https://github.com/LuaLS/lua-language-server"
   # pull from git tag to get submodules
-  url "https:github.comLuaLSlua-language-server.git",
+  url "https://github.com/LuaLS/lua-language-server.git",
       tag:      "3.14.0",
       revision: "485835e2a89004e1ffc5feb4484dc798a12af69e"
   license "MIT"
-  head "https:github.comLuaLSlua-language-server.git", branch: "master"
+  head "https://github.com/LuaLS/lua-language-server.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -26,33 +26,33 @@ class LuaLanguageServer < Formula
     ENV.cxx11
 
     # disable all tests by build script (fail in build environment)
-    inreplace buildpath.glob("**3rdbee.luatesttest.lua"),
+    inreplace buildpath.glob("**/3rd/bee.lua/test/test.lua"),
       "os.exit(lt.run(), true)",
       "os.exit(true, true)"
 
-    chdir "3rdluamake" do
-      system "compileinstall.sh"
+    chdir "3rd/luamake" do
+      system "compile/install.sh"
     end
-    system "3rdluamakeluamake", "rebuild"
+    system "3rd/luamake/luamake", "rebuild"
 
-    (libexec"bin").install "binlua-language-server", "binmain.lua"
+    (libexec/"bin").install "bin/lua-language-server", "bin/main.lua"
     libexec.install "main.lua", "debugger.lua", "locale", "meta", "script"
 
     # Make sure `lua-language-server` does not need to write into the Cellar.
-    (bin"lua-language-server").write <<~BASH
-      #!binbash
-      exec -a lua-language-server #{libexec}binlua-language-server \
-        --logpath="${XDG_CACHE_HOME:-${HOME}.cache}lua-language-serverlog" \
-        --metapath="${XDG_CACHE_HOME:-${HOME}.cache}lua-language-servermeta" \
+    (bin/"lua-language-server").write <<~BASH
+      #!/bin/bash
+      exec -a lua-language-server #{libexec}/bin/lua-language-server \
+        --logpath="${XDG_CACHE_HOME:-${HOME}/.cache}/lua-language-server/log" \
+        --metapath="${XDG_CACHE_HOME:-${HOME}/.cache}/lua-language-server/meta" \
         "$@"
     BASH
   end
 
   test do
-    pid = spawn bin"lua-language-server", "--logpath=."
+    pid = spawn bin/"lua-language-server", "--logpath=."
     sleep 5
-    assert_path_exists testpath"service.log"
-    refute_predicate testpath"service.log", :empty?
+    assert_path_exists testpath/"service.log"
+    refute_predicate testpath/"service.log", :empty?
   ensure
     Process.kill "TERM", pid
   end

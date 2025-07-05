@@ -2,11 +2,11 @@ cask "igdm" do
   version "3.0.4"
   sha256 "fe032a9657267018efc16697d218dbdcda02564f5d42e4b2e21bf68ea9e715c7"
 
-  url "https:github.comifedapoolarewajuigdmreleasesdownloadv#{version}IGdm-#{version}.dmg",
-      verified: "github.comifedapoolarewajuigdm"
+  url "https://ghfast.top/https://github.com/ifedapoolarewaju/igdm/releases/download/v#{version}/IGdm-#{version}.dmg",
+      verified: "github.com/ifedapoolarewaju/igdm/"
   name "IG:dm"
   desc "Desktop application for Instagram DMs"
-  homepage "https:igdm.me"
+  homepage "https://igdm.me/"
 
   no_autobump! because: :requires_manual_review
 
@@ -15,11 +15,11 @@ cask "igdm" do
   uninstall quit: "com.ifedapoolarewaju.desktop.igdm"
 
   zap trash: [
-    "~LibraryApplication SupportIGdm",
-    "~LibraryLogsIGdm",
-    "~LibraryPreferencescom.ifedapoolarewaju.desktop.igdm.helper.plist",
-    "~LibraryPreferencescom.ifedapoolarewaju.desktop.igdm.plist",
-    "~LibrarySaved Application Statecom.ifedapoolarewaju.desktop.igdm.savedState",
+    "~/Library/Application Support/IGdm",
+    "~/Library/Logs/IGdm",
+    "~/Library/Preferences/com.ifedapoolarewaju.desktop.igdm.helper.plist",
+    "~/Library/Preferences/com.ifedapoolarewaju.desktop.igdm.plist",
+    "~/Library/Saved Application State/com.ifedapoolarewaju.desktop.igdm.savedState",
   ]
 
   caveats do

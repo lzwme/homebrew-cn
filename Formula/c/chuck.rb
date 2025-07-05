@@ -1,15 +1,15 @@
 class Chuck < Formula
   desc "Concurrent, on-the-fly audio programming language"
-  homepage "https:chuck.cs.princeton.edu"
-  url "https:chuck.cs.princeton.edureleasefileschuck-1.5.5.1.tgz"
-  mirror "https:chuck.stanford.edureleasefileschuck-1.5.5.1.tgz"
+  homepage "https://chuck.cs.princeton.edu/"
+  url "https://chuck.cs.princeton.edu/release/files/chuck-1.5.5.1.tgz"
+  mirror "https://chuck.stanford.edu/release/files/chuck-1.5.5.1.tgz"
   sha256 "be9785d8c639d355f32d34bef211e6ebb93d4bf7c508ee294f36f7b28ed3c8ed"
   license "GPL-2.0-or-later"
-  head "https:github.comccrmachuck.git", branch: "main"
+  head "https://github.com/ccrma/chuck.git", branch: "main"
 
   livecheck do
-    url "https:chuck.cs.princeton.edureleasefiles"
-    regex(href=.*?chuck[._-]v?(\d+(?:\.\d+)+)\.ti)
+    url "https://chuck.cs.princeton.edu/release/files/"
+    regex(/href=.*?chuck[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   bottle do
@@ -34,11 +34,11 @@ class Chuck < Formula
   def install
     os = OS.mac? ? "mac" : "linux-pulse"
     system "make", "-C", "src", os
-    bin.install "srcchuck"
+    bin.install "src/chuck"
     pkgshare.install "examples"
   end
 
   test do
-    assert_match "device", shell_output("#{bin}chuck --probe 2>&1")
+    assert_match "device", shell_output("#{bin}/chuck --probe 2>&1")
   end
 end

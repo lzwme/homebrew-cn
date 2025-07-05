@@ -1,10 +1,10 @@
 class Edbrowse < Formula
   desc "Command-line editor and web browser"
-  homepage "https:edbrowse.org"
-  url "https:github.comedbrowseedbrowsearchiverefstagsv3.8.12.tar.gz"
+  homepage "https://edbrowse.org"
+  url "https://ghfast.top/https://github.com/edbrowse/edbrowse/archive/refs/tags/v3.8.12.tar.gz"
   sha256 "b5125c7d13c2ed4491dc0d5a31116b244db62ae1c417ba5d29910311d1194632"
   license "GPL-2.0-or-later"
-  head "https:github.comedbrowseedbrowse.git", branch: "master"
+  head "https://github.com/edbrowse/edbrowse.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "1059c249fdc4473bb94aecdb88165610ce77bb5ac7ef3b0f305de0547b9f95e2"
@@ -27,8 +27,8 @@ class Edbrowse < Formula
   def install
     cd "src" do
       make_args = [
-        "QUICKJS_INCLUDE=#{Formula["quickjs"].opt_include}quickjs",
-        "QUICKJS_LIB=#{Formula["quickjs"].opt_lib}quickjs",
+        "QUICKJS_INCLUDE=#{Formula["quickjs"].opt_include}/quickjs",
+        "QUICKJS_LIB=#{Formula["quickjs"].opt_lib}/quickjs",
       ]
 
       system "make", *make_args
@@ -37,10 +37,10 @@ class Edbrowse < Formula
   end
 
   test do
-    (testpath".ebrc").write("")
-    (testpath"test.txt").write("Hello from ed\n")
+    (testpath/".ebrc").write("")
+    (testpath/"test.txt").write("Hello from ed\n")
 
-    system "printf %s\\\\n 'sededbrowse' 'w' 'q' | #{bin}edbrowse -c .ebrc test.txt"
-    assert_equal "Hello from edbrowse", (testpath"test.txt").read.chomp
+    system "printf %s\\\\n 's/ed/edbrowse/' 'w' 'q' | #{bin}/edbrowse -c .ebrc test.txt"
+    assert_equal "Hello from edbrowse", (testpath/"test.txt").read.chomp
   end
 end

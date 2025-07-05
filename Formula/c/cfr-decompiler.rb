@@ -1,15 +1,15 @@
 class CfrDecompiler < Formula
   desc "Yet Another Java Decompiler"
-  homepage "https:www.benf.orgothercfr"
-  url "https:github.comleibnitz27cfr.git",
+  homepage "https://www.benf.org/other/cfr/"
+  url "https://github.com/leibnitz27/cfr.git",
       tag:      "0.152",
       revision: "68477be3ff7171ee17ddd1a26064b9b253f1604f"
   license "MIT"
-  head "https:github.comleibnitz27cfr.git", branch: "master"
+  head "https://github.com/leibnitz27/cfr.git", branch: "master"
 
   livecheck do
     url :homepage
-    regex(href=.*?cfr[._-]v?(\d+(?:\.\d+)+)\.jari)
+    regex(/href=.*?cfr[._-]v?(\d+(?:\.\d+)+)\.jar/i)
   end
 
   bottle do
@@ -33,7 +33,7 @@ class CfrDecompiler < Formula
   def install
     # build
     ENV["JAVA_HOME"] = Formula["openjdk@11"].opt_prefix
-    system Formula["maven"].bin"mvn", "package"
+    system Formula["maven"].bin/"mvn", "package"
 
     cd "target" do
       # switch on jar names
@@ -50,13 +50,13 @@ class CfrDecompiler < Formula
 
       # install library and binary
       libexec.install lib_jar
-      bin.write_jar_script libexeclib_jar, "cfr-decompiler", java_version: "11"
+      bin.write_jar_script libexec/lib_jar, "cfr-decompiler", java_version: "11"
 
       # install library docs
       doc.install doc_jar
-      mkdir doc"javadoc"
-      cd doc"javadoc" do
-        system Formula["openjdk@11"].bin"jar", "-xf", docdoc_jar
+      mkdir doc/"javadoc"
+      cd doc/"javadoc" do
+        system Formula["openjdk@11"].bin/"jar", "-xf", doc/doc_jar
         rm_r("META-INF")
       end
     end
@@ -64,9 +64,9 @@ class CfrDecompiler < Formula
 
   test do
     fixture = <<~JAVA
-      *
+      /*
        * Decompiled with CFR #{version}.
-       *
+       */
       class T {
           T() {
           }
@@ -76,9 +76,9 @@ class CfrDecompiler < Formula
           }
       }
     JAVA
-    (testpath"T.java").write fixture
-    system Formula["openjdk@11"].bin"javac", "T.java"
-    output = pipe_output("#{bin}cfr-decompiler --comments false T.class")
+    (testpath/"T.java").write fixture
+    system Formula["openjdk@11"].bin/"javac", "T.java"
+    output = pipe_output("#{bin}/cfr-decompiler --comments false T.class")
     assert_match fixture, output
   end
 end

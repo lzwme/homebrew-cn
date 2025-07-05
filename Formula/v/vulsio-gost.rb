@@ -1,7 +1,7 @@
 class VulsioGost < Formula
   desc "Local CVE tracker & notification system"
-  homepage "https:github.comvulsiogost"
-  url "https:github.comvulsiogostarchiverefstagsv0.6.1.tar.gz"
+  homepage "https://github.com/vulsio/gost"
+  url "https://ghfast.top/https://github.com/vulsio/gost/archive/refs/tags/v0.6.1.tar.gz"
   sha256 "8812f4874acb1ccb565def5732bedf6dbf43e46ed1de3324b8ecdd908d5943dd"
   license "MIT"
 
@@ -21,18 +21,18 @@ class VulsioGost < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.comvulsiogostconfig.Version=#{version}
-      -X github.comvulsiogostconfig.Revision=#{tap.user}
+      -X github.com/vulsio/gost/config.Version=#{version}
+      -X github.com/vulsio/gost/config.Revision=#{tap.user}
     ]
-    system "go", "build", *std_go_args(output: bin"gost", ldflags:)
+    system "go", "build", *std_go_args(output: bin/"gost", ldflags:)
 
-    generate_completions_from_executable(bin"gost", "completion")
+    generate_completions_from_executable(bin/"gost", "completion")
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}gost version")
+    assert_match version.to_s, shell_output("#{bin}/gost version")
 
-    output = shell_output("#{bin}gost fetch debian 2>&1")
+    output = shell_output("#{bin}/gost fetch debian 2>&1")
     assert_match "Fetched all CVEs from Debian", output
   end
 end

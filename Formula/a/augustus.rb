@@ -1,11 +1,11 @@
 class Augustus < Formula
   desc "Predict genes in eukaryotic genomic sequences"
-  homepage "https:bioinf.uni-greifswald.deaugustus"
-  url "https:github.comGaius-AugustusAugustusarchiverefstagsv3.5.0.tar.gz"
+  homepage "https://bioinf.uni-greifswald.de/augustus/"
+  url "https://ghfast.top/https://github.com/Gaius-Augustus/Augustus/archive/refs/tags/v3.5.0.tar.gz"
   sha256 "5ed6ce6106303b800c5e91d37a250baff43b20824657b853ae04d11ad8bdd686"
   license "Artistic-1.0"
   revision 10
-  head "https:github.comGaius-AugustusAugustus.git", branch: "master"
+  head "https://github.com/Gaius-Augustus/Augustus.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -33,30 +33,30 @@ class Augustus < Formula
     ENV.append "CXXFLAGS", "-std=c++14"
 
     system "make", "COMPGENEPRED=false",
-                   "INCLUDE_PATH_BAMTOOLS=-I#{Formula["bamtools"].opt_include}bamtools",
+                   "INCLUDE_PATH_BAMTOOLS=-I#{Formula["bamtools"].opt_include}/bamtools",
                    "LIBRARY_PATH_BAMTOOLS=-L#{Formula["bamtools"].opt_lib}",
-                   "INCLUDE_PATH_HTSLIB=-I#{Formula["htslib"].opt_include}htslib",
+                   "INCLUDE_PATH_HTSLIB=-I#{Formula["htslib"].opt_include}/htslib",
                    "LIBRARY_PATH_HTSLIB=-L#{Formula["htslib"].opt_lib}"
 
-    # Set PREFIX to prevent symlinking into usrlocalbin
-    (buildpath"tmpbin").mkpath
-    system "make", "install", "INSTALLDIR=#{prefix}", "PREFIX=#{buildpath}tmp"
+    # Set PREFIX to prevent symlinking into /usr/local/bin/
+    (buildpath/"tmp/bin").mkpath
+    system "make", "install", "INSTALLDIR=#{prefix}", "PREFIX=#{buildpath}/tmp"
 
-    bin.env_script_all_files libexec"bin", AUGUSTUS_CONFIG_PATH: prefix"config"
+    bin.env_script_all_files libexec/"bin", AUGUSTUS_CONFIG_PATH: prefix/"config"
     pkgshare.install "examples"
   end
 
   test do
-    (testpath"test.fasta").write <<~EOS
+    (testpath/"test.fasta").write <<~EOS
       >U00096.2:1-70
       AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC
     EOS
-    cmd = "#{bin}augustus --species=human test.fasta"
+    cmd = "#{bin}/augustus --species=human test.fasta"
     assert_match "Predicted genes", shell_output(cmd)
 
-    cp pkgshare"examplesexample.fa", testpath
-    cp pkgshare"examplesprofileHsDHC.prfl", testpath
-    cmd = "#{bin}augustus --species=human --proteinprofile=HsDHC.prfl example.fa 2> devnull"
+    cp pkgshare/"examples/example.fa", testpath
+    cp pkgshare/"examples/profile/HsDHC.prfl", testpath
+    cmd = "#{bin}/augustus --species=human --proteinprofile=HsDHC.prfl example.fa 2> /dev/null"
     assert_match "HS04636	AUGUSTUS	gene	966	6903	1	+	.	g1", shell_output(cmd)
   end
 end

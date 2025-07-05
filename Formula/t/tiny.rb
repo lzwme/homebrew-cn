@@ -1,10 +1,10 @@
 class Tiny < Formula
   desc "Terminal IRC client"
-  homepage "https:github.comosa1tiny"
-  url "https:github.comosa1tinyarchiverefstagsv0.13.0.tar.gz"
+  homepage "https://github.com/osa1/tiny"
+  url "https://ghfast.top/https://github.com/osa1/tiny/archive/refs/tags/v0.13.0.tar.gz"
   sha256 "599697fa736d7500b093566a32204691093bd16abd76f43a76b761487a7c584c"
   license "MIT"
-  head "https:github.comosa1tiny.git", branch: "master"
+  head "https://github.com/osa1/tiny.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "b6362dac49c5a0b79b04dc91ded217ab137a122398a14dce062179667802278e"
@@ -25,15 +25,15 @@ class Tiny < Formula
   end
 
   def install
-    system "cargo", "install", *std_cargo_args(path: "cratestiny")
+    system "cargo", "install", *std_cargo_args(path: "crates/tiny")
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}tiny --version")
+    assert_match version.to_s, shell_output("#{bin}/tiny --version")
 
     begin
-      output_log = testpath"output.log"
-      pid = spawn bin"tiny", [:out, :err] => output_log.to_s
+      output_log = testpath/"output.log"
+      pid = spawn bin/"tiny", [:out, :err] => output_log.to_s
       sleep 1
       assert_match "tiny couldn't find a config file", output_log.read
     ensure

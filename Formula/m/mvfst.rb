@@ -1,10 +1,10 @@
 class Mvfst < Formula
   desc "QUIC transport protocol implementation"
-  homepage "https:github.comfacebookmvfst"
-  url "https:github.comfacebookmvfstarchiverefstagsv2025.06.30.00.tar.gz"
+  homepage "https://github.com/facebook/mvfst"
+  url "https://ghfast.top/https://github.com/facebook/mvfst/archive/refs/tags/v2025.06.30.00.tar.gz"
   sha256 "93a9a1900169d450dd7b208de1c434ffe731de7e5d051a5f69f349eb9a570c05"
   license "MIT"
-  head "https:github.comfacebookmvfst.git", branch: "main"
+  head "https://github.com/facebook/mvfst.git", branch: "main"
 
   bottle do
     sha256                               arm64_sequoia: "07e9052ea6960620586c039b8da09123db9187b902b5a1fd0e806a217126c754"
@@ -42,37 +42,37 @@ class Mvfst < Formula
     ENV.delete "CPATH"
     stable.stage testpath
 
-    (testpath"CMakeLists.txt").atomic_write <<~CMAKE
+    (testpath/"CMakeLists.txt").atomic_write <<~CMAKE
       cmake_minimum_required(VERSION 3.20)
       project(echo CXX)
       set(CMAKE_CXX_STANDARD 17)
 
-      list(PREPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}cmake")
+      list(PREPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
       find_package(fizz REQUIRED)
       find_package(gflags REQUIRED)
       find_package(GTest REQUIRED)
       find_package(mvfst REQUIRED)
 
       add_executable(echo
-        quicsamplesechomain.cpp
-        quiccommontestTestUtils.cpp
-        quiccommontestTestPacketBuilders.cpp
+        quic/samples/echo/main.cpp
+        quic/common/test/TestUtils.cpp
+        quic/common/test/TestPacketBuilders.cpp
       )
       target_link_libraries(echo ${mvfst_LIBRARIES} fizz::fizz_test_support GTest::gmock)
       target_include_directories(echo PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
-      set_target_properties(echo PROPERTIES BUILD_RPATH "#{lib};#{HOMEBREW_PREFIX}lib")
+      set_target_properties(echo PROPERTIES BUILD_RPATH "#{lib};#{HOMEBREW_PREFIX}/lib")
     CMAKE
 
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"
 
     server_port = free_port
-    server_pid = spawn ".buildecho", "--mode", "server",
+    server_pid = spawn "./build/echo", "--mode", "server",
                                        "--host", "127.0.0.1", "--port", server_port.to_s
     sleep 5
 
     Open3.popen3(
-      ".buildecho", "--mode", "client",
+      "./build/echo", "--mode", "client",
                 "--host", "127.0.0.1", "--port", server_port.to_s
     ) do |stdin, _, stderr, w|
       stdin.write "Hello world!\n"

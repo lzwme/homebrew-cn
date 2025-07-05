@@ -2,12 +2,12 @@ cask "font-sitara" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefonts.git",
-      verified:  "github.comgooglefonts",
+  url "https://github.com/google/fonts.git",
+      verified:  "github.com/google/fonts",
       branch:    "main",
-      only_path: "oflsitara"
+      only_path: "ofl/sitara"
   name "Sitara"
-  homepage "https:www.cdnfonts.comsitara.font"
+  homepage "https://www.cdnfonts.com/sitara.font"
 
   font "Sitara-Bold.ttf"
   font "Sitara-BoldItalic.ttf"

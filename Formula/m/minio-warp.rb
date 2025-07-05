@@ -1,10 +1,10 @@
 class MinioWarp < Formula
   desc "S3 benchmarking tool"
-  homepage "https:github.comminiowarp"
-  url "https:github.comminiowarparchiverefstagsv1.1.6.tar.gz"
+  homepage "https://github.com/minio/warp"
+  url "https://ghfast.top/https://github.com/minio/warp/archive/refs/tags/v1.1.6.tar.gz"
   sha256 "c125ce0c8043c62e5683f1519e529ca0fcd43c320e828a3a66255f58c494ede8"
   license "AGPL-3.0-or-later"
-  head "https:github.comminiowarp.git", branch: "master"
+  head "https://github.com/minio/warp.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "4626aab4abb51ca6aefcee735a7affbb87c174829be30ee90bcb853fb4ca7b82"
@@ -20,19 +20,19 @@ class MinioWarp < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.comminiowarppkg.ReleaseTag=v#{version}
-      -X github.comminiowarppkg.CommitID=#{tap.user}
-      -X github.comminiowarppkg.Version=#{version}
-      -X github.comminiowarppkg.ReleaseTime=#{time.iso8601}
+      -X github.com/minio/warp/pkg.ReleaseTag=v#{version}
+      -X github.com/minio/warp/pkg.CommitID=#{tap.user}
+      -X github.com/minio/warp/pkg.Version=#{version}
+      -X github.com/minio/warp/pkg.ReleaseTime=#{time.iso8601}
     ]
 
-    system "go", "build", *std_go_args(ldflags:, output: bin"warp")
+    system "go", "build", *std_go_args(ldflags:, output: bin/"warp")
   end
 
   test do
-    output = shell_output("#{bin}warp list --no-color 2>&1", 1)
+    output = shell_output("#{bin}/warp list --no-color 2>&1", 1)
     assert_match "warp: <ERROR> Error preparing server", output
 
-    assert_match version.to_s, shell_output("#{bin}warp --version")
+    assert_match version.to_s, shell_output("#{bin}/warp --version")
   end
 end

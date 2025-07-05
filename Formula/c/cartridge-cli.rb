@@ -1,11 +1,11 @@
 class CartridgeCli < Formula
   desc "Tarantool Cartridge command-line utility"
-  homepage "https:tarantool.org"
-  url "https:github.comtarantoolcartridge-cli.git",
+  homepage "https://tarantool.org/"
+  url "https://github.com/tarantool/cartridge-cli.git",
       tag:      "2.12.12",
       revision: "7f7efcfd4aaf7a2b4061f8424b6843a462794ed6"
   license "BSD-2-Clause"
-  head "https:github.comtarantoolcartridge-cli.git", branch: "master"
+  head "https://github.com/tarantool/cartridge-cli.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -26,7 +26,7 @@ class CartridgeCli < Formula
   def install
     system "mage", "build"
     bin.install "cartridge"
-    generate_completions_from_executable(bin"cartridge", "gen", "completion",
+    generate_completions_from_executable(bin/"cartridge", "gen", "completion",
                                          shells:                 [:bash, :zsh],
                                          shell_parameter_format: :none)
   end
@@ -34,7 +34,7 @@ class CartridgeCli < Formula
   test do
     project_path = Pathname("test-project")
     rm_r(project_path) if project_path.exist?
-    system bin"cartridge", "create", "--name", project_path
+    system bin/"cartridge", "create", "--name", project_path
     assert_path_exists project_path
     assert_path_exists project_path.join("init.lua")
   end

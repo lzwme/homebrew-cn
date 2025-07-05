@@ -1,7 +1,7 @@
 class Havn < Formula
   desc "Fast configurable port scanner with reasonable defaults"
-  homepage "https:github.commrjackwillshavn"
-  url "https:github.commrjackwillshavnarchiverefstagsv0.2.1.tar.gz"
+  homepage "https://github.com/mrjackwills/havn"
+  url "https://ghfast.top/https://github.com/mrjackwills/havn/archive/refs/tags/v0.2.1.tar.gz"
   sha256 "fb6b6020f46da25d47297bc4ef6532d05ab2b4a6e15d2b2fa604c94332d29106"
   license "MIT"
 
@@ -22,9 +22,9 @@ class Havn < Formula
   end
 
   test do
-    output = shell_output("#{bin}havn example.com -p 443 -r 6")
+    output = shell_output("#{bin}/havn example.com -p 443 -r 6")
     assert_match "1 open\e[0m, \e[31m0 closed", output
 
-    assert_match version.to_s, shell_output("#{bin}havn --version")
+    assert_match version.to_s, shell_output("#{bin}/havn --version")
   end
 end

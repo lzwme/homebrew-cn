@@ -1,8 +1,8 @@
 class Jsvc < Formula
   desc "Wrapper to launch Java applications as daemons"
-  homepage "https:commons.apache.orgdaemonjsvc.html"
-  url "https:www.apache.orgdyncloser.lua?path=commonsdaemonsourcecommons-daemon-1.4.1-src.tar.gz"
-  mirror "https:archive.apache.orgdistcommonsdaemonsourcecommons-daemon-1.4.1-src.tar.gz"
+  homepage "https://commons.apache.org/daemon/jsvc.html"
+  url "https://www.apache.org/dyn/closer.lua?path=commons/daemon/source/commons-daemon-1.4.1-src.tar.gz"
+  mirror "https://archive.apache.org/dist/commons/daemon/source/commons-daemon-1.4.1-src.tar.gz"
   sha256 "c8fb223456ea6df0c61f3c65afb4a8f2c66ddfde4100160427b8ce98b1215131"
   license "Apache-2.0"
 
@@ -21,20 +21,20 @@ class Jsvc < Formula
   def install
     prefix.install %w[NOTICE.txt LICENSE.txt RELEASE-NOTES.txt]
 
-    cd "srcnativeunix" do
-      # https:github.comHomebrewhomebrew-corepull168294#issuecomment-2104388230
+    cd "src/native/unix" do
+      # https://github.com/Homebrew/homebrew-core/pull/168294#issuecomment-2104388230
       ENV.append_to_cflags "-Wno-incompatible-function-pointer-types" if DevelopmentTools.clang_build_version >= 1500
 
-      system ".configure", "--with-java=#{Formula["openjdk@21"].opt_prefix}"
+      system "./configure", "--with-java=#{Formula["openjdk@21"].opt_prefix}"
       system "make"
 
       libexec.install "jsvc"
-      (bin"jsvc").write_env_script libexec"jsvc", Language::Java.overridable_java_home_env("21")
+      (bin/"jsvc").write_env_script libexec/"jsvc", Language::Java.overridable_java_home_env("21")
     end
   end
 
   test do
-    output = shell_output("#{bin}jsvc -help")
+    output = shell_output("#{bin}/jsvc -help")
     assert_match "jsvc (Apache Commons Daemon)", output
   end
 end

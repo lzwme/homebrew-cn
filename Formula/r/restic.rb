@@ -1,10 +1,10 @@
 class Restic < Formula
   desc "Fast, efficient and secure backup program"
-  homepage "https:restic.net"
-  url "https:github.comresticresticarchiverefstagsv0.18.0.tar.gz"
+  homepage "https://restic.net/"
+  url "https://ghfast.top/https://github.com/restic/restic/archive/refs/tags/v0.18.0.tar.gz"
   sha256 "fc068d7fdd80dd6a968b57128d736b8c6147aa23bcba584c925eb73832f6523e"
   license "BSD-2-Clause"
-  head "https:github.comresticrestic.git", branch: "master"
+  head "https://github.com/restic/restic.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "2c5e5f38a7c321b978414f6539399447307087b8f62ec240196cd8e7f486fb89"
@@ -22,31 +22,31 @@ class Restic < Formula
     system "go", "run", "build.go"
 
     mkdir "completions"
-    system ".restic", "generate", "--bash-completion", "completionsrestic"
-    system ".restic", "generate", "--zsh-completion", "completions_restic"
-    system ".restic", "generate", "--fish-completion", "completionsrestic.fish"
+    system "./restic", "generate", "--bash-completion", "completions/restic"
+    system "./restic", "generate", "--zsh-completion", "completions/_restic"
+    system "./restic", "generate", "--fish-completion", "completions/restic.fish"
 
     mkdir "man"
-    system ".restic", "generate", "--man", "man"
+    system "./restic", "generate", "--man", "man"
 
     bin.install "restic"
-    bash_completion.install "completionsrestic"
-    zsh_completion.install "completions_restic"
-    fish_completion.install "completionsrestic.fish"
-    man1.install Dir["man*.1"]
+    bash_completion.install "completions/restic"
+    zsh_completion.install "completions/_restic"
+    fish_completion.install "completions/restic.fish"
+    man1.install Dir["man/*.1"]
   end
 
   test do
-    mkdir testpath"restic_repo"
-    ENV["RESTIC_REPOSITORY"] = testpath"restic_repo"
+    mkdir testpath/"restic_repo"
+    ENV["RESTIC_REPOSITORY"] = testpath/"restic_repo"
     ENV["RESTIC_PASSWORD"] = "foo"
 
-    (testpath"testfile").write("This is a testfile")
+    (testpath/"testfile").write("This is a testfile")
 
-    system bin"restic", "init"
-    system bin"restic", "backup", "testfile"
+    system bin/"restic", "init"
+    system bin/"restic", "backup", "testfile"
 
-    system bin"restic", "restore", "latest", "-t", "#{testpath}restore"
-    assert compare_file "testfile", "#{testpath}restoretestfile"
+    system bin/"restic", "restore", "latest", "-t", "#{testpath}/restore"
+    assert compare_file "testfile", "#{testpath}/restore/testfile"
   end
 end

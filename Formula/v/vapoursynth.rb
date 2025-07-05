@@ -1,14 +1,14 @@
 class Vapoursynth < Formula
   desc "Video processing framework with simplicity in mind"
-  homepage "https:www.vapoursynth.com"
-  url "https:github.comvapoursynthvapoursyntharchiverefstagsR72.tar.gz"
+  homepage "https://www.vapoursynth.com"
+  url "https://ghfast.top/https://github.com/vapoursynth/vapoursynth/archive/refs/tags/R72.tar.gz"
   sha256 "650f77feebfd08842b521273f59e0c88f7ba9d7cb5f151d89b79b8dfdd4ce633"
   license "LGPL-2.1-or-later"
-  head "https:github.comvapoursynthvapoursynth.git", branch: "master"
+  head "https://github.com/vapoursynth/vapoursynth.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(^R(\d+(?:\.\d+)*?)$i)
+    regex(/^R(\d+(?:\.\d+)*?)$/i)
   end
 
   bottle do
@@ -41,14 +41,14 @@ class Vapoursynth < Formula
   def install
     if OS.mac? && MacOS.version <= :ventura
       ENV.llvm_clang
-      ENV.prepend "LDFLAGS", "-L#{Formula["llvm"].opt_lib}c++"
+      ENV.prepend "LDFLAGS", "-L#{Formula["llvm"].opt_lib}/c++"
     end
 
-    system ".autogen.sh"
+    system "./autogen.sh"
     inreplace "Makefile.in", "pkglibdir = $(libdir)", "pkglibdir = $(exec_prefix)"
-    system ".configure", "--disable-silent-rules",
-                          "--with-cython=#{Formula["cython"].bin}cython",
-                          "--with-plugindir=#{HOMEBREW_PREFIX}libvapoursynth",
+    system "./configure", "--disable-silent-rules",
+                          "--with-cython=#{Formula["cython"].bin}/cython",
+                          "--with-plugindir=#{HOMEBREW_PREFIX}/lib/vapoursynth",
                           "--with-python_prefix=#{prefix}",
                           "--with-python_exec_prefix=#{prefix}",
                           *std_configure_args
@@ -66,14 +66,14 @@ class Vapoursynth < Formula
         brew install vapoursynth-imwri
       To use vapoursynth.core.ffms2, execute the following:
         brew install ffms2
-        ln -s "..libffms2.dylib" "#{HOMEBREW_PREFIX}libvapoursynth#{shared_library("libffms2")}"
+        ln -s "../libffms2.dylib" "#{HOMEBREW_PREFIX}/lib/vapoursynth/#{shared_library("libffms2")}"
       For more information regarding plugins, please visit:
-        http:www.vapoursynth.comdocplugins.html
+        http://www.vapoursynth.com/doc/plugins.html
     EOS
   end
 
   test do
-    system Formula["python@3.13"].opt_bin"python3.13", "-c", "import vapoursynth"
-    system bin"vspipe", "--version"
+    system Formula["python@3.13"].opt_bin/"python3.13", "-c", "import vapoursynth"
+    system bin/"vspipe", "--version"
   end
 end

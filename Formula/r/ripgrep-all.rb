@@ -1,10 +1,10 @@
 class RipgrepAll < Formula
   desc "Wrapper around ripgrep that adds multiple rich file types"
-  homepage "https:github.comphireskyripgrep-all"
-  url "https:github.comphireskyripgrep-allarchiverefstagsv0.10.9.tar.gz"
+  homepage "https://github.com/phiresky/ripgrep-all"
+  url "https://ghfast.top/https://github.com/phiresky/ripgrep-all/archive/refs/tags/v0.10.9.tar.gz"
   sha256 "a5b3150940dcddd35a26e9de398f11a563d0466a335e5450ceb7ff369e9fef45"
   license "AGPL-3.0-or-later"
-  head "https:github.comphireskyripgrep-all.git", branch: "master"
+  head "https://github.com/phiresky/ripgrep-all.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "2a1935b715dabb6d04c7650f07092ed20883a28d3230c82a189eaf4be8e6ca46"
@@ -26,10 +26,10 @@ class RipgrepAll < Formula
   end
 
   test do
-    (testpath"file.txt").write("Hello World")
+    (testpath/"file.txt").write("Hello World")
     system "zip", "archive.zip", "file.txt"
 
-    output = shell_output("#{bin}rga 'Hello World' #{testpath}")
+    output = shell_output("#{bin}/rga 'Hello World' #{testpath}")
     assert_match "Hello World", output
   end
 end

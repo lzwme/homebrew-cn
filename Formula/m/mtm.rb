@@ -1,7 +1,7 @@
 class Mtm < Formula
   desc "Micro terminal multiplexer"
-  homepage "https:github.comdeadpiximtm"
-  url "https:github.comdeadpiximtmarchiverefstags1.2.11.2.1.tar.gz"
+  homepage "https://github.com/deadpixi/mtm"
+  url "https://ghfast.top/https://github.com/deadpixi/mtm/archive/refs/tags/1.2.1/1.2.1.tar.gz"
   sha256 "2ae05466ef44efa7ddb4bce58efc425617583d9196b72e80ec1090bd77df598c"
   license "GPL-3.0-or-later"
 
@@ -20,7 +20,7 @@ class Mtm < Formula
   end
 
   head do
-    url "https:github.comdeadpiximtm.git", branch: "master"
+    url "https://github.com/deadpixi/mtm.git", branch: "master"
 
     uses_from_macos "ncurses" # 1.2.2+ can use macOS' ncurses 5.7
   end
@@ -40,8 +40,8 @@ class Mtm < Formula
   test do
     require "open3"
 
-    env = { "SHELL" => "binsh", "TERM" => "xterm" }
-    Open3.popen2(env, bin"mtm") do |input, output, wait_thr|
+    env = { "SHELL" => "/bin/sh", "TERM" => "xterm" }
+    Open3.popen2(env, bin/"mtm") do |input, output, wait_thr|
       input.puts "printf 'TERM=%s PID=%s\n' $TERM $MTM"
       input.putc "\cG"
       sleep 1

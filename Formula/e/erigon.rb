@@ -1,10 +1,10 @@
 class Erigon < Formula
   desc "Implementation of Ethereum (execution client), on the efficiency frontier"
-  homepage "https:github.comerigontecherigon"
-  url "https:github.comerigontecherigonarchiverefstagsv2.55.1.tar.gz"
+  homepage "https://github.com/erigontech/erigon"
+  url "https://ghfast.top/https://github.com/erigontech/erigon/archive/refs/tags/v2.55.1.tar.gz"
   sha256 "2e340bb5504f565bb9fe8c4d246dea50bd54bfcf6a91e9196aeb4fbda722ae9e"
   license all_of: ["GPL-3.0-or-later", "LGPL-3.0-or-later"]
-  head "https:github.comerigontecherigon.git", branch: "devel"
+  head "https://github.com/erigontech/erigon.git", branch: "devel"
 
   no_autobump! because: :requires_manual_review
 
@@ -20,7 +20,7 @@ class Erigon < Formula
   end
 
   # Upstream includes pre-built libsilkworm_capi inside silkworm-go and recommends copying to installation:
-  # https:github.comerigontecherigon?tab=readme-ov-file#how-to-run-erigon-as-a-separate-user-eg-as-a-systemd-daemon
+  # https://github.com/erigontech/erigon?tab=readme-ov-file#how-to-run-erigon-as-a-separate-user-eg-as-a-systemd-daemon
   # Trying to build library from source only works with `conan` which would use their pre-built libraries.
   deprecate! date: "2024-02-29", because: "needs a pre-built copy of libsilkworm_capi"
   disable! date: "2025-03-04", because: "needs a pre-built copy of libsilkworm_capi"
@@ -38,11 +38,11 @@ class Erigon < Formula
     end
 
     system "make", "all"
-    bin.install Dir["buildbin*"]
+    bin.install Dir["build/bin/*"]
   end
 
   test do
-    (testpath"genesis.json").write <<~JSON
+    (testpath/"genesis.json").write <<~JSON
       {
         "config": {
           "homesteadBlock": 10
@@ -63,7 +63,7 @@ class Erigon < Formula
       --log.dir.verbosity debug
       --log.dir.path #{testpath}
     ]
-    system bin"erigon", *args, "init", "genesis.json"
-    assert_path_exists testpath"erigon.log"
+    system bin/"erigon", *args, "init", "genesis.json"
+    assert_path_exists testpath/"erigon.log"
   end
 end

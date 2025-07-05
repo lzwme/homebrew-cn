@@ -1,13 +1,13 @@
 class Tiledb < Formula
   desc "Universal storage engine"
-  homepage "https:tiledb.com"
-  url "https:github.comTileDB-IncTileDBarchiverefstags2.28.0.tar.gz"
+  homepage "https://tiledb.com/"
+  url "https://ghfast.top/https://github.com/TileDB-Inc/TileDB/archive/refs/tags/2.28.0.tar.gz"
   sha256 "de731cd0c8e82fe8cfca084b937dc0df41e451c8eb93071e4cc5aba7bbef854e"
   license "MIT"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -48,8 +48,8 @@ class Tiledb < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~CPP
-      #include <tiledbtiledb>
+    (testpath/"test.cpp").write <<~CPP
+      #include <tiledb/tiledb>
       #include <iostream>
 
       int main() {
@@ -59,6 +59,6 @@ class Tiledb < Formula
       }
     CPP
     system ENV.cxx, "test.cpp", "-std=c++17", "-I#{include}", "-L#{lib}", "-ltiledb", "-o", "test"
-    assert_match version.to_s, shell_output(".test")
+    assert_match version.to_s, shell_output("./test")
   end
 end

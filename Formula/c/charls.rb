@@ -1,10 +1,10 @@
 class Charls < Formula
   desc "C++ JPEG-LS library implementation"
-  homepage "https:github.comteam-charlscharls"
-  url "https:github.comteam-charlscharlsarchiverefstags2.4.2.tar.gz"
+  homepage "https://github.com/team-charls/charls"
+  url "https://ghfast.top/https://github.com/team-charls/charls/archive/refs/tags/2.4.2.tar.gz"
   sha256 "d1c2c35664976f1e43fec7764d72755e6a50a80f38eca70fcc7553cad4fe19d9"
   license "BSD-3-Clause"
-  head "https:github.comteam-charlscharls.git", branch: "main"
+  head "https://github.com/team-charls/charls.git", branch: "main"
 
   no_autobump! because: :requires_manual_review
 
@@ -38,8 +38,8 @@ class Charls < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~CPP
-      #include <charlscharls.h>
+    (testpath/"test.cpp").write <<~CPP
+      #include <charls/charls.h>
       #include <iostream>
 
       int main() {
@@ -50,6 +50,6 @@ class Charls < Formula
     CPP
 
     system ENV.cxx, "test.cpp", "-std=c++14", "-I#{include}", "-L#{lib}", "-lcharls", "-o", "test"
-    assert_equal "ok", shell_output(testpath"test").chomp
+    assert_equal "ok", shell_output(testpath/"test").chomp
   end
 end

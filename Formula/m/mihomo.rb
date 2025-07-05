@@ -1,10 +1,10 @@
 class Mihomo < Formula
   desc "Another rule-based tunnel in Go, formerly known as ClashMeta"
-  homepage "https:wiki.metacubex.one"
-  url "https:github.comMetaCubeXmihomoarchiverefstagsv1.19.11.tar.gz"
+  homepage "https://wiki.metacubex.one"
+  url "https://ghfast.top/https://github.com/MetaCubeX/mihomo/archive/refs/tags/v1.19.11.tar.gz"
   sha256 "72730aff2c89f1cba60bfc9318e17ac8161db4e6c69bd24b54eb37f9fa646540"
   license "GPL-3.0-or-later"
-  head "https:github.comMetaCubeXmihomo.git", branch: "main"
+  head "https://github.com/MetaCubeX/mihomo.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "da4a0bc0ffa33edd0c6ba6646c12a823256b3414e204d1b71aa95dc4767804c5"
@@ -21,13 +21,13 @@ class Mihomo < Formula
   def install
     ldflags = %W[
       -s -w -buildid=
-      -X "github.commetacubexmihomoconstant.Version=#{version}"
-      -X "github.commetacubexmihomoconstant.BuildTime=#{time.iso8601}"
+      -X "github.com/metacubex/mihomo/constant.Version=#{version}"
+      -X "github.com/metacubex/mihomo/constant.BuildTime=#{time.iso8601}"
     ]
     system "go", "build", *std_go_args(ldflags:, tags: "with_gvisor")
 
-    (buildpath"config.yaml").write <<~YAML
-      # Document: https:wiki.metacubex.oneconfig
+    (buildpath/"config.yaml").write <<~YAML
+      # Document: https://wiki.metacubex.one/config/
       mixed-port: 7890
     YAML
     pkgetc.install "config.yaml"
@@ -35,24 +35,24 @@ class Mihomo < Formula
 
   def caveats
     <<~EOS
-      You need to customize #{etc}mihomoconfig.yaml.
+      You need to customize #{etc}/mihomo/config.yaml.
     EOS
   end
 
   service do
-    run [opt_bin"mihomo", "-d", etc"mihomo"]
+    run [opt_bin/"mihomo", "-d", etc/"mihomo"]
     keep_alive true
-    working_dir etc"mihomo"
-    log_path var"logmihomo.log"
-    error_log_path var"logmihomo.log"
+    working_dir etc/"mihomo"
+    log_path var/"log/mihomo.log"
+    error_log_path var/"log/mihomo.log"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}mihomo -v")
+    assert_match version.to_s, shell_output("#{bin}/mihomo -v")
 
-    (testpath"mihomoconfig.yaml").write <<~YAML
+    (testpath/"mihomo/config.yaml").write <<~YAML
       mixed-port: #{free_port}
     YAML
-    system bin"mihomo", "-t", "-d", testpath"mihomo"
+    system bin/"mihomo", "-t", "-d", testpath/"mihomo"
   end
 end

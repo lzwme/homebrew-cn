@@ -1,13 +1,13 @@
 class Ledit < Formula
   desc "Line editor for interactive commands"
-  homepage "https:pauillac.inria.fr~ddrledit"
-  url "https:github.comchetmurthyleditarchiverefstagsledit-2-07.tar.gz"
+  homepage "https://pauillac.inria.fr/~ddr/ledit/"
+  url "https://ghfast.top/https://github.com/chetmurthy/ledit/archive/refs/tags/ledit-2-07.tar.gz"
   sha256 "0252dc8d3eb40ba20b6792f9d23b3a736b1b982b674a90efb913795f02225877"
   license "BSD-3-Clause"
 
   livecheck do
     url :stable
-    regex(^ledit[._-]v?(\d+(?:[.-]\d+)+)$i)
+    regex(/^ledit[._-]v?(\d+(?:[.-]\d+)+)$/i)
     strategy :git do |tags, regex|
       tags.filter_map { |tag| tag[regex, 1]&.tr("-", ".") }
     end
@@ -29,9 +29,9 @@ class Ledit < Formula
   depends_on "ocaml"
 
   def install
-    # Work around for https:github.comHomebrewhomebrew-test-botissues805
-    if ENV["HOMEBREW_GITHUB_ACTIONS"] && !(Formula["ocaml-findlib"].etc"findlib.conf").exist?
-      ENV["OCAMLFIND_CONF"] = Formula["ocaml-findlib"].opt_libexec"findlib.conf"
+    # Work around for https://github.com/Homebrew/homebrew-test-bot/issues/805
+    if ENV["HOMEBREW_GITHUB_ACTIONS"] && !(Formula["ocaml-findlib"].etc/"findlib.conf").exist?
+      ENV["OCAMLFIND_CONF"] = Formula["ocaml-findlib"].opt_libexec/"findlib.conf"
     end
 
     # like camlp5, this build fails if the jobs are parallelized
@@ -43,8 +43,8 @@ class Ledit < Formula
   end
 
   test do
-    history = testpath"history"
-    pipe_output("#{bin}ledit -x -h #{history} bash", "exit\n", 0)
+    history = testpath/"history"
+    pipe_output("#{bin}/ledit -x -h #{history} bash", "exit\n", 0)
     assert_path_exists history
     assert_equal "exit\n", history.read
   end

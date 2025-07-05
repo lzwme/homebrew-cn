@@ -1,11 +1,11 @@
 class GitCinnabar < Formula
   desc "Git remote helper to interact with mercurial repositories"
-  homepage "https:github.comglandiumgit-cinnabar"
-  url "https:github.comglandiumgit-cinnabar.git",
+  homepage "https://github.com/glandium/git-cinnabar"
+  url "https://github.com/glandium/git-cinnabar.git",
       tag:      "0.7.2",
       revision: "1975d040654a4f015456eef6869e40d32761d083"
   license "GPL-2.0-only"
-  head "https:github.comglandiumgit-cinnabar.git", branch: "master"
+  head "https://github.com/glandium/git-cinnabar.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "52a241ac1a64424dd93ba9794a5319f1bedcf64fc3c028e3e89ee7d6cea60e9a"
@@ -28,14 +28,14 @@ class GitCinnabar < Formula
 
   def install
     system "cargo", "install", *std_cargo_args
-    bin.install_symlink bin"git-cinnabar" => "git-remote-hg"
+    bin.install_symlink bin/"git-cinnabar" => "git-remote-hg"
   end
 
   test do
     # Protocol \"https\" not supported or disabled in libcurl"
     return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
 
-    system "git", "clone", "hg::https:www.mercurial-scm.orgrepohello"
-    assert_path_exists testpath"hellohello.c", "hello.c not found in cloned repo"
+    system "git", "clone", "hg::https://www.mercurial-scm.org/repo/hello"
+    assert_path_exists testpath/"hello/hello.c", "hello.c not found in cloned repo"
   end
 end

@@ -1,21 +1,24 @@
 class HyperMcp < Formula
   desc "MCP server that extends its capabilities through WebAssembly plugins"
-  homepage "https:github.comtuananhhyper-mcp"
-  url "https:github.comtuananhhyper-mcparchiverefstagsv0.1.3.tar.gz"
-  sha256 "32a7515748856f2564006dec54b3ad822dee90187ce88c384c18f4e5cacc0066"
+  homepage "https://github.com/tuananh/hyper-mcp"
+  url "https://ghfast.top/https://github.com/tuananh/hyper-mcp/archive/refs/tags/v0.1.4.tar.gz"
+  sha256 "36a850d7292293d9169ee50f4ef915bbe37c77aa8bc0048d06b8e4b8c6553113"
   license "Apache-2.0"
-  head "https:github.comtuananhhyper-mcp.git", branch: "main"
+  head "https://github.com/tuananh/hyper-mcp.git", branch: "main"
 
-  no_autobump! because: :requires_manual_review
+  livecheck do
+    url :stable
+    strategy :github_releases
+  end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2a47ba9534141b16a9f7599a0ae988a98c6d12c21d57655be20330833a1b9324"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "68f718a26b90661c85b10b330128bc2176c5eddbc2e7f762057f212b8c34c330"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "d1cae9171ecf44e4af0685fb6b33300bf4be6aa66392903e83672d84578a7315"
-    sha256 cellar: :any_skip_relocation, sonoma:        "54ab3644c4c208c07084484366629734e2eea3fc969bbe840b92213571a0675c"
-    sha256 cellar: :any_skip_relocation, ventura:       "10086f91485d4a86d7688d8b77a8c2145a2ac67fb799c3d45d4d365852989268"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e35f8ba102fa85f79279a21802ce8b0484fbc1119c59420b20f2f48aef88920b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e6bece954e8e2edbe6cd19a2a8817dc3776c1d3db12157f7d1dce12998daace8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8917afdf6798d7f43df3bb5a82db3448a15cf4762edac774ca324b1285012a5e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "694dfc8b4ee94dd5c92ec7956700478a06f3d572a9d6dcd10ab3e3f04dd96cf1"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "579bf9f8d3b7813742a8a169995b622d7e46394eab64b1cf2e54ba227b2d70ca"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ea9a7c990d504a89bd7a4b4e77d5ad94198917bdc83777c8f93175f2d12b0ed4"
+    sha256 cellar: :any_skip_relocation, ventura:       "5c995391cf5888bf339024096020ab35f996e8380fa83fc9a0ace4cc740dd892"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "babe57801d67a562cdd26af5f5718461c18d75b4e78385e35725456161cda075"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "18447ca13ff3fe7b626eac68443adc078de631542603520403878d79b95e90ee"
   end
 
   depends_on "rust" => :build
@@ -30,7 +33,7 @@ class HyperMcp < Formula
   end
 
   test do
-    (testpath"config.json").write <<~JSON
+    (testpath/"config.json").write <<~JSON
       {
         "plugins": []
       }
@@ -57,7 +60,7 @@ class HyperMcp < Formula
     JSON
 
     require "open3"
-    Open3.popen3(bin"hyper-mcp", "--config-file", testpath"config.json") do |stdin, stdout, _, w|
+    Open3.popen3(bin/"hyper-mcp", "--config-file", testpath/"config.json") do |stdin, stdout, _, w|
       sleep 2
       stdin.puts JSON.generate(JSON.parse(init_json))
       Timeout.timeout(10) do

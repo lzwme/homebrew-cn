@@ -1,14 +1,14 @@
 class Psqlodbc < Formula
   desc "Official PostgreSQL ODBC driver"
-  homepage "https:odbc.postgresql.org"
-  url "https:github.compostgresql-interfacespsqlodbcarchiverefstagsREL-17_00_0006.tar.gz"
+  homepage "https://odbc.postgresql.org"
+  url "https://ghfast.top/https://github.com/postgresql-interfaces/psqlodbc/archive/refs/tags/REL-17_00_0006.tar.gz"
   sha256 "1c886c5303a43fae3b7bdc4f674aaf3927813e937c310716b6f83fd61434f44c"
   license "LGPL-2.0-or-later"
-  head "https:github.compostgresql-interfacespsqlodbc.git", branch: "main"
+  head "https://github.com/postgresql-interfaces/psqlodbc.git", branch: "main"
 
   livecheck do
     url :stable
-    regex(^REL[._-]?v?(\d+(?:[._]\d+)+)$i)
+    regex(/^REL[._-]?v?(\d+(?:[._]\d+)+)$/i)
     strategy :git do |tags, regex|
       tags.filter_map { |tag| tag[regex, 1]&.tr("_", ".") }
     end
@@ -33,15 +33,15 @@ class Psqlodbc < Formula
   depends_on "unixodbc"
 
   def install
-    system ".bootstrap"
-    system ".configure", "--prefix=#{prefix}",
+    system "./bootstrap"
+    system "./configure", "--prefix=#{prefix}",
                           "--with-unixodbc=#{Formula["unixodbc"].opt_prefix}"
     system "make"
     system "make", "install"
   end
 
   test do
-    output = shell_output("#{Formula["unixodbc"].bin}dltest #{lib}psqlodbcw.so")
-    assert_equal "SUCCESS: Loaded #{lib}psqlodbcw.so\n", output
+    output = shell_output("#{Formula["unixodbc"].bin}/dltest #{lib}/psqlodbcw.so")
+    assert_equal "SUCCESS: Loaded #{lib}/psqlodbcw.so\n", output
   end
 end

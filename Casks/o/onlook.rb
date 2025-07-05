@@ -5,11 +5,11 @@ cask "onlook" do
   sha256 arm:   "d209e137a8241b0b21c2b160af88484a69a40bc21f048e1946fefced13d425fc",
          intel: "c365973a82683deae0319077e1126c68e177d19c23f1c24454055d1fe724f350"
 
-  url "https:github.comonlook-devonlookreleasesdownloadv#{version}Onlook-#{arch}.dmg",
-      verified: "github.comonlook-devonlook"
+  url "https://ghfast.top/https://github.com/onlook-dev/onlook/releases/download/v#{version}/Onlook-#{arch}.dmg",
+      verified: "github.com/onlook-dev/onlook/"
   name "Onlook"
   desc "Open-source visual editor for React apps"
-  homepage "https:onlook.com"
+  homepage "https://onlook.com/"
 
   livecheck do
     url :url
@@ -24,9 +24,9 @@ cask "onlook" do
   app "Onlook.app"
 
   zap trash: [
-    "~LibraryApplication Supportcom.apple.sharedfilelistcom.apple.LSSharedFileList.ApplicationRecentDocumentsdev.onlook.studio.sfl*",
-    "~LibraryApplication SupportOnlook",
-    "~LibraryLogsOnlook",
-    "~LibraryPreferencesdev.onlook.studio.plist",
+    "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/dev.onlook.studio.sfl*",
+    "~/Library/Application Support/Onlook",
+    "~/Library/Logs/Onlook",
+    "~/Library/Preferences/dev.onlook.studio.plist",
   ]
 end

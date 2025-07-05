@@ -1,7 +1,7 @@
 class JoplinCli < Formula
   desc "Note taking and to-do application with synchronization capabilities"
-  homepage "https:joplinapp.org"
-  url "https:registry.npmjs.orgjoplin-joplin-3.3.1.tgz"
+  homepage "https://joplinapp.org/"
+  url "https://registry.npmjs.org/joplin/-/joplin-3.3.1.tgz"
   sha256 "b0cc8590966d01eaa5a5d60bdec870ed51c342c80b1ebcbfb33eef222a1c4b01"
   license "MIT"
 
@@ -33,20 +33,20 @@ class JoplinCli < Formula
   end
 
   def install
-    # Need node-addon-api v7+: https:github.comlovellsharpissues3920
+    # Need node-addon-api v7+: https://github.com/lovell/sharp/issues/3920
     system "npm", "add", "node-addon-api@8.0.0"
     system "npm", "install", *std_npm_args
-    bin.install_symlink libexec.glob("bin*")
+    bin.install_symlink libexec.glob("bin/*")
 
-    node_notifier_vendor_dir = libexec"libnode_modulesjoplinnode_modulesnode-notifiervendor"
+    node_notifier_vendor_dir = libexec/"lib/node_modules/joplin/node_modules/node-notifier/vendor"
     rm_r(node_notifier_vendor_dir) # remove vendored pre-built binaries
 
     if OS.mac?
-      terminal_notifier_dir = node_notifier_vendor_dir"mac.noindex"
+      terminal_notifier_dir = node_notifier_vendor_dir/"mac.noindex"
       terminal_notifier_dir.mkpath
 
       # replace vendored terminal-notifier with our own
-      terminal_notifier_app = Formula["terminal-notifier"].opt_prefix"terminal-notifier.app"
+      terminal_notifier_app = Formula["terminal-notifier"].opt_prefix/"terminal-notifier.app"
       ln_sf terminal_notifier_app.relative_path_from(terminal_notifier_dir), terminal_notifier_dir
     end
   end
@@ -56,6 +56,6 @@ class JoplinCli < Formula
   # to be run in homebrew tests. Hence we test with `joplin version` here. This
   # does assert that joplin runs successfully on the environment.
   test do
-    assert_match "joplin #{version}", shell_output("#{bin}joplin version")
+    assert_match "joplin #{version}", shell_output("#{bin}/joplin version")
   end
 end

@@ -1,7 +1,7 @@
 class Psysh < Formula
   desc "Runtime developer console, interactive debugger and REPL for PHP"
-  homepage "https:psysh.org"
-  url "https:github.combobthecowpsyshreleasesdownloadv0.12.9psysh-v0.12.9.tar.gz"
+  homepage "https://psysh.org/"
+  url "https://ghfast.top/https://github.com/bobthecow/psysh/releases/download/v0.12.9/psysh-v0.12.9.tar.gz"
   sha256 "67c4f2c1c3fcf32177b0b740f0cf97818e6abc888ab2bfbde8a270b72371d630"
   license "MIT"
 
@@ -22,12 +22,12 @@ class Psysh < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}psysh --version")
+    assert_match version.to_s, shell_output("#{bin}/psysh --version")
 
-    (testpath"srchello.php").write <<~PHP
+    (testpath/"src/hello.php").write <<~PHP
       <?php echo 'hello brew';
     PHP
 
-    assert_match "hello brew", shell_output("#{bin}psysh -n srchello.php")
+    assert_match "hello brew", shell_output("#{bin}/psysh -n src/hello.php")
   end
 end

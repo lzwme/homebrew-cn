@@ -2,12 +2,12 @@ cask "font-gentium-book-plus" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefonts.git",
-      verified:  "github.comgooglefonts",
+  url "https://github.com/google/fonts.git",
+      verified:  "github.com/google/fonts",
       branch:    "main",
-      only_path: "oflgentiumbookplus"
+      only_path: "ofl/gentiumbookplus"
   name "Gentium Book Plus"
-  homepage "https:fonts.google.comspecimenGentium+Book+Plus"
+  homepage "https://fonts.google.com/specimen/Gentium+Book+Plus"
 
   font "GentiumBookPlus-Bold.ttf"
   font "GentiumBookPlus-BoldItalic.ttf"

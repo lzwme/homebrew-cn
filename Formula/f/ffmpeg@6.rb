@@ -1,7 +1,7 @@
 class FfmpegAT6 < Formula
   desc "Play, record, convert, and stream audio and video"
-  homepage "https:ffmpeg.org"
-  url "https:ffmpeg.orgreleasesffmpeg-6.1.2.tar.xz"
+  homepage "https://ffmpeg.org/"
+  url "https://ffmpeg.org/releases/ffmpeg-6.1.2.tar.xz"
   sha256 "3b624649725ecdc565c903ca6643d41f33bd49239922e45c9b1442c63dca4e38"
   # None of these parts are used by default, you have to explicitly pass `--enable-gpl`
   # to configure to activate them. In this case, FFmpeg's license changes to GPL v2+.
@@ -9,8 +9,8 @@ class FfmpegAT6 < Formula
   revision 10
 
   livecheck do
-    url "https:ffmpeg.orgdownload.html"
-    regex(href=.*?ffmpeg[._-]v?(6(?:\.\d+)+)\.ti)
+    url "https://ffmpeg.org/download.html"
+    regex(/href=.*?ffmpeg[._-]v?(6(?:\.\d+)+)\.t/i)
   end
 
   bottle do
@@ -88,20 +88,20 @@ class FfmpegAT6 < Formula
   end
 
   # Fix for QtWebEngine, do not remove
-  # https:bugs.freebsd.orgbugzillashow_bug.cgi?id=270209
+  # https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=270209
   patch do
-    url "https:gitlab.archlinux.orgarchlinuxpackagingpackagesffmpeg-raw5670ccd86d3b816f49ebc18cab878125eca2f81fadd-av_stream_get_first_dts-for-chromium.patch"
+    url "https://gitlab.archlinux.org/archlinux/packaging/packages/ffmpeg/-/raw/5670ccd86d3b816f49ebc18cab878125eca2f81f/add-av_stream_get_first_dts-for-chromium.patch"
     sha256 "57e26caced5a1382cb639235f9555fc50e45e7bf8333f7c9ae3d49b3241d3f77"
   end
 
   # Backport support for recent svt-av1 (3.0.0)
   patch do
-    url "https:github.comFFmpegFFmpegcommitd1ed5c06e3edc5f2b5f3664c80121fa55b0baa95.patch?full_index=1"
+    url "https://github.com/FFmpeg/FFmpeg/commit/d1ed5c06e3edc5f2b5f3664c80121fa55b0baa95.patch?full_index=1"
     sha256 "0eb23ab90c0e5904590731dd3b81c86a4127785bc2b367267d77723990fb94a2"
   end
 
   def install
-    # The new linker leads to duplicate symbol issue https:github.comhomebrew-ffmpeghomebrew-ffmpegissues140
+    # The new linker leads to duplicate symbol issue https://github.com/homebrew-ffmpeg/homebrew-ffmpeg/issues/140
     ENV.append "LDFLAGS", "-Wl,-ld_classic" if DevelopmentTools.clang_build_version >= 1500
 
     args = %W[
@@ -161,19 +161,19 @@ class FfmpegAT6 < Formula
     args += %w[--enable-videotoolbox --enable-audiotoolbox] if OS.mac?
     args << "--enable-neon" if Hardware::CPU.arm?
 
-    system ".configure", *args
+    system "./configure", *args
     system "make", "install"
 
     # Build and install additional FFmpeg tools
     system "make", "alltools"
-    bin.install (buildpath"tools").children.select { |f| f.file? && f.executable? }
-    (share"ffmpeg").install buildpath"toolspython"
+    bin.install (buildpath/"tools").children.select { |f| f.file? && f.executable? }
+    (share/"ffmpeg").install buildpath/"tools/python"
   end
 
   test do
     # Create an example mp4 file
-    mp4out = testpath"video.mp4"
-    system bin"ffmpeg", "-filter_complex", "testsrc=rate=1:duration=1", mp4out
+    mp4out = testpath/"video.mp4"
+    system bin/"ffmpeg", "-filter_complex", "testsrc=rate=1:duration=1", mp4out
     assert_path_exists mp4out
   end
 end

@@ -1,13 +1,13 @@
 class LibreadlineJava < Formula
   desc "Port of GNU readline for Java"
-  homepage "https:github.comaclemonsjava-readline"
-  url "https:github.comaclemonsjava-readlinereleasesdownloadv0.8.4libreadline-java-0.8.4-src.tar.gz"
+  homepage "https://github.com/aclemons/java-readline"
+  url "https://ghfast.top/https://github.com/aclemons/java-readline/releases/download/v0.8.4/libreadline-java-0.8.4-src.tar.gz"
   sha256 "8767f1e5ba01c5bece9401871b318e9a28607d199a14def7a7bcb495059c2958"
   license "LGPL-2.1-or-later"
 
   livecheck do
     url :stable
-    regex(^[vR]?_?(\d+(?:[._-]\d+)+)$i)
+    regex(/^[vR]?_?(\d+(?:[._-]\d+)+)$/i)
   end
 
   bottle do
@@ -27,9 +27,9 @@ class LibreadlineJava < Formula
     ENV["JAVA_HOME"] = java_home = Language::Java.java_home
 
     # Current Oracle JDKs put the jni.h and jni_md.h in a different place than the
-    # original AppleSun JDK used to.
-    ENV["JAVAINCLUDE"] = "#{java_home}include"
-    ENV["JAVANATINC"]  = "#{java_home}include#{OS.kernel_name.downcase}"
+    # original Apple/Sun JDK used to.
+    ENV["JAVAINCLUDE"] = "#{java_home}/include"
+    ENV["JAVANATINC"]  = "#{java_home}/include/#{OS.kernel_name.downcase}"
 
     # Take care of some hard-coded paths,
     # adjust postfix of jni libraries,
@@ -37,7 +37,7 @@ class LibreadlineJava < Formula
     inreplace "Makefile" do |s|
       s.change_make_var! "PREFIX", prefix
       s.change_make_var! "JAVAC_VERSION", Formula["openjdk"].version.to_s
-      s.change_make_var! "JAVALIBDIR", "$(PREFIX)sharelibreadline-java"
+      s.change_make_var! "JAVALIBDIR", "$(PREFIX)/share/libreadline-java"
       s.change_make_var! "JAVAINCLUDE", ENV["JAVAINCLUDE"]
       s.change_make_var! "JAVANATINC", ENV["JAVANATINC"]
       s.gsub! "*.so", "*.jnilib" if OS.mac?
@@ -47,14 +47,14 @@ class LibreadlineJava < Formula
     # Take care of some hard-coded paths,
     # adjust CC variable,
     # adjust postfix of jni libraries
-    inreplace "srcnativeMakefile" do |s|
+    inreplace "src/native/Makefile" do |s|
       readline = Formula["readline"]
       s.change_make_var! "INCLUDES", "-I $(JAVAINCLUDE) -I $(JAVANATINC) -I #{readline.opt_include}"
       s.change_make_var! "LIBPATH", "-L#{readline.opt_lib}"
       s.change_make_var! "CC", "cc"
       if OS.mac?
         s.change_make_var! "LIB_EXT", "jnilib"
-        s.change_make_var! "LD_FLAGS", "-install_name #{HOMEBREW_PREFIX}lib$(LIB_PRE)$(TG).$(LIB_EXT) -dynamiclib"
+        s.change_make_var! "LD_FLAGS", "-install_name #{HOMEBREW_PREFIX}/lib/$(LIB_PRE)$(TG).$(LIB_EXT) -dynamiclib"
       end
     end
 
@@ -70,15 +70,15 @@ class LibreadlineJava < Formula
   def caveats
     <<~EOS
       You may need to set JAVA_HOME:
-        export JAVA_HOME="$(usrlibexecjava_home)"
+        export JAVA_HOME="$(/usr/libexec/java_home)"
     EOS
   end
 
   # Testing libreadline-java (can we execute and exit libreadline without exceptions?)
   test do
-    java_path = Formula["openjdk"].opt_bin"java"
-    assert(Exception !~ pipe_output(
-      "#{java_path} -Djava.library.path=#{lib} -cp #{pkgshare}libreadline-java.jar test.ReadlineTest",
+    java_path = Formula["openjdk"].opt_bin/"java"
+    assert(/Exception/ !~ pipe_output(
+      "#{java_path} -Djava.library.path=#{lib} -cp #{pkgshare}/libreadline-java.jar test.ReadlineTest",
       "exit",
     ))
   end

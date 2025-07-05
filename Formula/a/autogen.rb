@@ -1,15 +1,15 @@
 class Autogen < Formula
   desc "Automated text file generator"
-  homepage "https:autogen.sourceforge.net"
-  url "https:ftp.gnu.orggnuautogenrel5.18.16autogen-5.18.16.tar.xz"
-  mirror "https:ftpmirror.gnu.orgautogenrel5.18.16autogen-5.18.16.tar.xz"
+  homepage "https://autogen.sourceforge.net/"
+  url "https://ftp.gnu.org/gnu/autogen/rel5.18.16/autogen-5.18.16.tar.xz"
+  mirror "https://ftpmirror.gnu.org/autogen/rel5.18.16/autogen-5.18.16.tar.xz"
   sha256 "f8a13466b48faa3ba99fe17a069e71c9ab006d9b1cfabe699f8c60a47d5bb49a"
   license "GPL-3.0-or-later"
   revision 2
 
   livecheck do
     url :stable
-    regex(%r{href=.*?rel(\d+(?:\.\d+)+)?["' >]}i)
+    regex(%r{href=.*?rel(\d+(?:\.\d+)+)/?["' >]}i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -42,18 +42,18 @@ class Autogen < Formula
 
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
-    url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-big_sur.diff"
+    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-big_sur.diff"
     sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
   end
 
-  # Fix guile detection, see https:sourceforge.netpautogenbugs196
+  # Fix guile detection, see https://sourceforge.net/p/autogen/bugs/196/
   patch :DATA
 
   def install
-    # Uses GNU-specific mktemp syntax: https:sourceforge.netpautogenbugs189
-    inreplace %w[agen5mk-stamps.sh build-auxrun-ag.sh configmk-shdefs.in], "mktemp", "gmktemp"
-    # Upstream bug regarding "stat" struct: https:sourceforge.netpautogenbugs187
-    system ".configure", "ac_cv_func_utimensat=no",
+    # Uses GNU-specific mktemp syntax: https://sourceforge.net/p/autogen/bugs/189/
+    inreplace %w[agen5/mk-stamps.sh build-aux/run-ag.sh config/mk-shdefs.in], "mktemp", "gmktemp"
+    # Upstream bug regarding "stat" struct: https://sourceforge.net/p/autogen/bugs/187/
+    system "./configure", "ac_cv_func_utimensat=no",
                           "--disable-silent-rules",
                           *std_configure_args
 
@@ -63,15 +63,15 @@ class Autogen < Formula
   end
 
   test do
-    system bin"autogen", "-v"
+    system bin/"autogen", "-v"
   end
 end
 
 __END__
-Index: autogen-5.18.16agen5guile-iface.h
+Index: autogen-5.18.16/agen5/guile-iface.h
 ===================================================================
---- autogen-5.18.16.origagen5guile-iface.h
-+++ autogen-5.18.16agen5guile-iface.h
+--- autogen-5.18.16.orig/agen5/guile-iface.h
++++ autogen-5.18.16/agen5/guile-iface.h
 @@ -9,16 +9,13 @@
  # error AutoGen does not work with this version of Guile
    choke me.
@@ -89,11 +89,11 @@ Index: autogen-5.18.16agen5guile-iface.h
 -  choke me.
  #endif
 
- #endif * MUTATING_GUILE_IFACE_H_GUARD *
-Index: autogen-5.18.16configure
+ #endif /* MUTATING_GUILE_IFACE_H_GUARD */
+Index: autogen-5.18.16/configure
 ===================================================================
---- autogen-5.18.16.origconfigure
-+++ autogen-5.18.16configure
+--- autogen-5.18.16.orig/configure
++++ autogen-5.18.16/configure
 @@ -14798,7 +14798,7 @@ $as_echo "no" >&6; }
     PKG_CONFIG=""
   fi

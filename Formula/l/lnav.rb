@@ -1,7 +1,7 @@
 class Lnav < Formula
   desc "Curses-based tool for viewing and analyzing log files"
-  homepage "https:lnav.org"
-  url "https:github.comtstacklnavreleasesdownloadv0.12.4lnav-0.12.4.tar.gz"
+  homepage "https://lnav.org/"
+  url "https://ghfast.top/https://github.com/tstack/lnav/releases/download/v0.12.4/lnav-0.12.4.tar.gz"
   sha256 "e1e70c9e5a2fce21da80eec9b9c3adb09fd05e03986285098a9f2567c1eb4792"
   license "BSD-2-Clause"
 
@@ -21,7 +21,7 @@ class Lnav < Formula
   end
 
   head do
-    url "https:github.comtstacklnav.git", branch: "master"
+    url "https://github.com/tstack/lnav.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -41,8 +41,8 @@ class Lnav < Formula
   uses_from_macos "zlib"
 
   def install
-    system ".autogen.sh" if build.head?
-    system ".configure", "--with-sqlite3=#{Formula["sqlite"].opt_prefix}",
+    system "./autogen.sh" if build.head?
+    system "./configure", "--with-sqlite3=#{Formula["sqlite"].opt_prefix}",
                           "--with-readline=#{Formula["readline"].opt_prefix}",
                           "--with-libarchive=#{Formula["libarchive"].opt_prefix}",
                           "--with-ncurses=#{Formula["ncurses"].opt_prefix}",
@@ -51,8 +51,8 @@ class Lnav < Formula
   end
 
   test do
-    system bin"lnav", "-V"
+    system bin/"lnav", "-V"
 
-    assert_match "col1", pipe_output("#{bin}lnav -n -c ';from [{ col1=1 }] | take 1'", "foo")
+    assert_match "col1", pipe_output("#{bin}/lnav -n -c ';from [{ col1=1 }] | take 1'", "foo")
   end
 end

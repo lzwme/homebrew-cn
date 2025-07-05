@@ -1,9 +1,9 @@
 # This is an exception to Homebrew policy on Python libraries. See:
-# https:github.comHomebrewhomebrew-coreissues167905#issuecomment-2328118401
+# https://github.com/Homebrew/homebrew-core/issues/167905#issuecomment-2328118401
 class PythonPackaging < Formula
   desc "Core utilities for Python packages"
-  homepage "https:packaging.pypa.io"
-  url "https:files.pythonhosted.orgpackagesa1d41fc4078c65507b51b96ca8f8c3ba19e6a61c8253c72794544580a7b6c24dpackaging-25.0.tar.gz"
+  homepage "https://packaging.pypa.io/"
+  url "https://files.pythonhosted.org/packages/a1/d4/1fc4078c65507b51b96ca8f8c3ba19e6a61c8253c72794544580a7b6c24d/packaging-25.0.tar.gz"
   sha256 "d443872c98d677bf60f6a1f2f8c1cb748e8fe762d2bf9d3148b5599295b0fc4f"
   license any_of: ["Apache-2.0", "BSD-2-Clause"]
 
@@ -17,7 +17,7 @@ class PythonPackaging < Formula
   def pythons
     deps.map(&:to_formula)
         .select { |f| f.name.start_with?("python@") }
-        .map { |f| f.opt_libexec"binpython" }
+        .map { |f| f.opt_libexec/"bin/python" }
   end
 
   def install

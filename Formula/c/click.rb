@@ -1,14 +1,14 @@
 class Click < Formula
   desc "Command-line interactive controller for Kubernetes"
-  homepage "https:github.comdatabricksclick"
-  url "https:github.comdatabricksclickarchiverefstagsv0.6.3.tar.gz"
+  homepage "https://github.com/databricks/click"
+  url "https://ghfast.top/https://github.com/databricks/click/archive/refs/tags/v0.6.3.tar.gz"
   sha256 "da64d1d205b6136f318dea967eec4e9d67569be8f332875afcc6b31c9a0ef1b7"
   license "Apache-2.0"
-  head "https:github.comdatabricksclick.git", branch: "master"
+  head "https://github.com/databricks/click.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -38,7 +38,7 @@ class Click < Formula
 
   test do
     # Default state configuration file to avoid warning on startup
-    (testpath"configclick.config").write <<~YAML
+    (testpath/"config/click.config").write <<~YAML
       ---
       namespace: ~
       context: ~
@@ -47,12 +47,12 @@ class Click < Formula
     YAML
 
     # Fake K8s configuration
-    (testpath"configconfig").write <<~YAML
+    (testpath/"config/config").write <<~YAML
       apiVersion: v1
       clusters:
         - cluster:
             insecure-skip-tls-verify: true
-            server: 'https:localhost:6443'
+            server: 'https://localhost:6443'
           name: test-cluster
       contexts:
         - context:
@@ -73,7 +73,7 @@ class Click < Formula
     YAML
 
     # This test cannot test actual K8s connectivity, but it is enough to prove click starts
-    output = pipe_output("#{bin}click --config_dir #{testpath}config", "quit")
+    output = pipe_output("#{bin}/click --config_dir #{testpath}/config", "quit")
     assert_equal "[\e[38;5;9m\e[1mnone\e[0m] [\e[38;5;10m\e[1mnone\e[0m] [\e[38;5;3mnone\e[39m] > ", output
   end
 end

@@ -1,15 +1,15 @@
 class Lapack < Formula
   desc "Linear Algebra PACKage"
-  homepage "https:www.netlib.orglapack"
-  url "https:github.comReference-LAPACKlapackarchiverefstagsv3.12.1.tar.gz"
+  homepage "https://www.netlib.org/lapack/"
+  url "https://ghfast.top/https://github.com/Reference-LAPACK/lapack/archive/refs/tags/v3.12.1.tar.gz"
   sha256 "2ca6407a001a474d4d4d35f3a61550156050c48016d949f0da0529c0aa052422"
   # LAPACK is BSD-3-Clause-Open-MPI while LAPACKE is BSD-3-Clause
   license all_of: ["BSD-3-Clause-Open-MPI", "BSD-3-Clause"]
-  head "https:github.comReference-LAPACKlapack.git", branch: "master"
+  head "https://github.com/Reference-LAPACK/lapack.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -46,7 +46,7 @@ class Lapack < Formula
   end
 
   test do
-    (testpath"lp.c").write <<~C
+    (testpath/"lp.c").write <<~C
       #include "lapacke.h"
       int main() {
         void *p = LAPACKE_malloc(sizeof(char)*100);
@@ -57,6 +57,6 @@ class Lapack < Formula
       }
     C
     system ENV.cc, "lp.c", "-I#{include}", "-L#{lib}", "-llapacke", "-o", "lp"
-    system ".lp"
+    system "./lp"
   end
 end

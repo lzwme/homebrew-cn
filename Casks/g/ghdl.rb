@@ -34,11 +34,11 @@ cask "ghdl" do
     end
   end
 
-  url "https:github.comghdlghdlreleasesdownloadv#{version}ghdl-llvm-#{version}-macos#{macos_version}-#{arch}.tar.gz",
-      verified: "github.comghdlghdl"
+  url "https://ghfast.top/https://github.com/ghdl/ghdl/releases/download/v#{version}/ghdl-llvm-#{version}-macos#{macos_version}-#{arch}.tar.gz",
+      verified: "github.com/ghdl/ghdl/"
   name "ghdl"
-  desc "VHDL 20089387 simulator"
-  homepage "https:ghdl.github.ioghdl"
+  desc "VHDL 2008/93/87 simulator"
+  homepage "https://ghdl.github.io/ghdl/"
 
   livecheck do
     url :url
@@ -53,11 +53,11 @@ cask "ghdl" do
 
   ghdlbins = ["ghdl", "ghwdump", "ghdl1-llvm"]
   ghdlbins.each do |bin|
-    binary "#{directory}bin#{bin}"
+    binary "#{directory}/bin/#{bin}"
   end
 
-  binary "#{directory}includeghdl", target: "#{HOMEBREW_PREFIX}includeghdl"
-  binary "#{directory}libghdl", target: "#{HOMEBREW_PREFIX}libghdl"
+  binary "#{directory}/include/ghdl", target: "#{HOMEBREW_PREFIX}/include/ghdl"
+  binary "#{directory}/lib/ghdl", target: "#{HOMEBREW_PREFIX}/lib/ghdl"
 
   # No zap stanza required
 end

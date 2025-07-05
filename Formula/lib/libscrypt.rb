@@ -1,7 +1,7 @@
 class Libscrypt < Formula
   desc "Library for scrypt"
-  homepage "https:github.comtechnionlibscrypt"
-  url "https:github.comtechnionlibscryptarchiverefstagsv1.22.tar.gz"
+  homepage "https://github.com/technion/libscrypt"
+  url "https://ghfast.top/https://github.com/technion/libscrypt/archive/refs/tags/v1.22.tar.gz"
   sha256 "a2d30ea16e6d288772791de68be56153965fe4fd4bcd787777618b8048708936"
   license "BSD-2-Clause"
 
@@ -23,7 +23,7 @@ class Libscrypt < Formula
   end
 
   def install
-    # `-Os` leads to bugs. https:github.comtechnionlibscryptissues60
+    # `-Os` leads to bugs. https://github.com/technion/libscrypt/issues/60
     ENV.O1
 
     args = ["PREFIX=#{prefix}"]
@@ -44,7 +44,7 @@ class Libscrypt < Formula
   end
 
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include <libscrypt.h>
       int main(void) {
         char buf[SCRYPT_MCF_LEN];
@@ -52,6 +52,6 @@ class Libscrypt < Formula
       }
     C
     system ENV.cc, "test.c", "-L#{lib}", "-lscrypt", "-o", "test"
-    system ".test"
+    system "./test"
   end
 end

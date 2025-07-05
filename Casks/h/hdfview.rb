@@ -2,11 +2,11 @@ cask "hdfview" do
   version "3.3.2"
   sha256 "40d111afc43fe9f1138692d1fb40c1330ea4f4416a2163e5dc4b4c398fb779bf"
 
-  url "https:github.comHDFGrouphdfviewreleasesdownloadv#{version}HDFView-#{version}-Darwin.tar.gz",
-      verified: "github.comHDFGrouphdfview"
+  url "https://ghfast.top/https://github.com/HDFGroup/hdfview/releases/download/v#{version}/HDFView-#{version}-Darwin.tar.gz",
+      verified: "github.com/HDFGroup/hdfview/"
   name "HDFView"
   desc "Tool for browsing and editing HDF files"
-  homepage "https:www.hdfgroup.orgdownload-hdfview"
+  homepage "https://www.hdfgroup.org/download-hdfview/"
 
   # The "latest" release on GitHub is set to the `snapshot` release instead of
   # the latest stable version. This checks the version from the filename text
@@ -17,7 +17,7 @@ cask "hdfview" do
   # `HDFView-3.3.99` isn't marked as pre-release).
   livecheck do
     url :homepage
-    regex(HDFView[._-]v?(\d+(?:\.\d+)+)\.ti)
+    regex(/HDFView[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -28,9 +28,9 @@ cask "hdfview" do
   app "HDFView.app"
 
   zap trash: [
-    "~.hdfview*",
-    "~LibraryPreferencesHDFView.hdfgroup.org.plist",
-    "~LibrarySaved Application Statehdf.view.savedState",
+    "~/.hdfview*",
+    "~/Library/Preferences/HDFView.hdfgroup.org.plist",
+    "~/Library/Saved Application State/hdf.view.savedState",
   ]
 
   caveats do

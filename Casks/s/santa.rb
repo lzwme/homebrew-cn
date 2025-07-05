@@ -2,15 +2,15 @@ cask "santa" do
   version "2025.6"
   sha256 "8bee8c183397e84726a92c12de92c5525d115d4173c5c5de2a442d6299beac2c"
 
-  url "https:github.comnorthpolesecsantareleasesdownload#{version}santa-#{version}.dmg"
+  url "https://ghfast.top/https://github.com/northpolesec/santa/releases/download/#{version}/santa-#{version}.dmg"
   name "Santa"
   desc "Binary authorization system"
-  homepage "https:github.comnorthpolesecsanta"
+  homepage "https://github.com/northpolesec/santa"
 
   pkg "santa-#{version}.pkg"
 
   uninstall early_script: {
-              executable:   "ApplicationsSanta.appContentsMacOSSanta",
+              executable:   "/Applications/Santa.app/Contents/MacOS/Santa",
               args:         ["--unload-system-extension"],
               sudo:         true,
               must_succeed: false,
@@ -24,16 +24,16 @@ cask "santa" do
             ],
             pkgutil:      "com.northpolesec.santa",
             delete:       [
-              "ApplicationsSanta.app",
-              "usrlocalbinsantactl",
+              "/Applications/Santa.app",
+              "/usr/local/bin/santactl",
             ]
 
   zap delete: [
-        "vardbsanta",
-        "varlogsanta*",
+        "/var/db/santa",
+        "/var/log/santa*",
       ],
       trash:  [
-        "privateetcaslcom.northpolesec.santa.asl.conf",
-        "privateetcnewsyslog.dcom.northpolesec.santa.newsyslog.conf",
+        "/private/etc/asl/com.northpolesec.santa.asl.conf",
+        "/private/etc/newsyslog.d/com.northpolesec.santa.newsyslog.conf",
       ]
 end

@@ -1,14 +1,14 @@
 class Rav1e < Formula
   desc "Fastest and safest AV1 video encoder"
-  homepage "https:github.comxiphrav1e"
-  url "https:github.comxiphrav1earchiverefstagsv0.8.1.tar.gz"
+  homepage "https://github.com/xiph/rav1e"
+  url "https://ghfast.top/https://github.com/xiph/rav1e/archive/refs/tags/v0.8.1.tar.gz"
   sha256 "06d1523955fb6ed9cf9992eace772121067cca7e8926988a1ee16492febbe01e"
   license "BSD-2-Clause"
-  head "https:github.comxiphrav1e.git", branch: "master"
+  head "https://github.com/xiph/rav1e.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -35,11 +35,11 @@ class Rav1e < Formula
 
   test do
     resource "homebrew-bus_qcif_7.5fps.y4m" do
-      url "https:media.xiph.orgvideoderfy4mbus_qcif_7.5fps.y4m"
+      url "https://media.xiph.org/video/derf/y4m/bus_qcif_7.5fps.y4m"
       sha256 "1f5bfcce0c881567ea31c1eb9ecb1da9f9583fdb7d6bb1c80a8c9acfc6b66f6b"
     end
 
     testpath.install resource("homebrew-bus_qcif_7.5fps.y4m")
-    system bin"rav1e", "--tile-rows=2", "bus_qcif_7.5fps.y4m", "--output=bus_qcif_15fps.ivf"
+    system bin/"rav1e", "--tile-rows=2", "bus_qcif_7.5fps.y4m", "--output=bus_qcif_15fps.ivf"
   end
 end

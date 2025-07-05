@@ -2,9 +2,9 @@ cask "font-zed-mono-nerd-font" do
   version "3.4.0"
   sha256 "14cdf24d017986c8912d3a23a29d532171f31e5800b579bb20b9aa542e8d6b3c"
 
-  url "https:github.comryanoasisnerd-fontsreleasesdownloadv#{version}ZedMono.zip"
+  url "https://ghfast.top/https://github.com/ryanoasis/nerd-fonts/releases/download/v#{version}/ZedMono.zip"
   name "ZedMono Nerd Font (Zed Mono)"
-  homepage "https:github.comryanoasisnerd-fonts"
+  homepage "https://github.com/ryanoasis/nerd-fonts"
 
   livecheck do
     url :url

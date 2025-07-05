@@ -1,13 +1,13 @@
 class PostgresqlAT17 < Formula
   desc "Object-relational database system"
-  homepage "https:www.postgresql.org"
-  url "https:ftp.postgresql.orgpubsourcev17.5postgresql-17.5.tar.bz2"
+  homepage "https://www.postgresql.org/"
+  url "https://ftp.postgresql.org/pub/source/v17.5/postgresql-17.5.tar.bz2"
   sha256 "fcb7ab38e23b264d1902cb25e6adafb4525a6ebcbd015434aeef9eda80f528d8"
   license "PostgreSQL"
 
   livecheck do
-    url "https:ftp.postgresql.orgpubsource"
-    regex(%r{href=["']?v?(17(?:\.\d+)+)?["' >]}i)
+    url "https://ftp.postgresql.org/pub/source/"
+    regex(%r{href=["']?v?(17(?:\.\d+)+)/?["' >]}i)
   end
 
   bottle do
@@ -22,7 +22,7 @@ class PostgresqlAT17 < Formula
 
   keg_only :versioned_formula
 
-  # https:www.postgresql.orgsupportversioning
+  # https://www.postgresql.org/support/versioning/
   deprecate! date: "2029-11-08", because: :unsupported
 
   depends_on "docbook" => :build
@@ -31,7 +31,7 @@ class PostgresqlAT17 < Formula
   depends_on "pkgconf" => :build
   depends_on "icu4c@77"
   # GSSAPI provided by Kerberos.framework crashes when forked.
-  # See https:github.comHomebrewhomebrew-coreissues47494.
+  # See https://github.com/Homebrew/homebrew-core/issues/47494.
   depends_on "krb5"
   depends_on "lz4"
   depends_on "openssl@3"
@@ -57,11 +57,11 @@ class PostgresqlAT17 < Formula
 
   def install
     # Modify Makefile to link macOS binaries using Cellar path. Otherwise, binaries are linked
-    # using #{HOMEBREW_PREFIX}lib path set during .configure, which will cause audit failures
+    # using #{HOMEBREW_PREFIX}/lib path set during ./configure, which will cause audit failures
     # for broken linkage as the paths are not created until post-install step.
-    inreplace "srcMakefile.shlib", "-install_name '$(libdir)", "-install_name '#{lib}postgresql"
+    inreplace "src/Makefile.shlib", "-install_name '$(libdir)/", "-install_name '#{lib}/postgresql/"
 
-    ENV["XML_CATALOG_FILES"] = etc"xmlcatalog"
+    ENV["XML_CATALOG_FILES"] = etc/"xml/catalog"
     ENV.runtime_cpu_detection
     ENV.delete "PKG_CONFIG_LIBDIR"
     ENV.prepend "LDFLAGS", "-L#{Formula["openssl@3"].opt_lib} -L#{Formula["readline"].opt_lib}"
@@ -75,8 +75,8 @@ class PostgresqlAT17 < Formula
     end
 
     args = %W[
-      --datadir=#{HOMEBREW_PREFIX}share#{name}
-      --includedir=#{HOMEBREW_PREFIX}include#{name}
+      --datadir=#{HOMEBREW_PREFIX}/share/#{name}
+      --includedir=#{HOMEBREW_PREFIX}/include/#{name}
       --sysconfdir=#{etc}
       --docdir=#{doc}
       --enable-nls
@@ -100,30 +100,30 @@ class PostgresqlAT17 < Formula
     # which does not work on CLT-only installs.
     args << "PG_SYSROOT=#{MacOS.sdk_path}" if OS.mac? && MacOS.sdk_root_needed?
 
-    system ".configure", *args, *std_configure_args(libdir: HOMEBREW_PREFIX"lib#{name}")
+    system "./configure", *args, *std_configure_args(libdir: HOMEBREW_PREFIX/"lib/#{name}")
     system "make"
     # We use an unversioned `postgresql` subdirectory rather than `#{name}` so that the
     # post-installed symlinks can use non-conflicting `#{name}` and be retained on `brew unlink`.
-    # Removing symlinks may break PostgreSQL as its binaries expect paths from .configure step.
-    system "make", "install-world", "datadir=#{share}postgresql",
-                                    "libdir=#{lib}postgresql",
-                                    "includedir=#{include}postgresql"
+    # Removing symlinks may break PostgreSQL as its binaries expect paths from ./configure step.
+    system "make", "install-world", "datadir=#{share}/postgresql",
+                                    "libdir=#{lib}/postgresql",
+                                    "includedir=#{include}/postgresql"
 
     # Modify the Makefile back so dependents pick up common path
-    makefile = lib"postgresqlpgxssrcMakefile.shlib"
-    inreplace makefile, "-install_name '#{lib}postgresql", "-install_name '$(libdir)"
+    makefile = lib/"postgresql/pgxs/src/Makefile.shlib"
+    inreplace makefile, "-install_name '#{lib}/postgresql/", "-install_name '$(libdir)/"
   end
 
   def post_install
-    (var"log").mkpath
+    (var/"log").mkpath
     postgresql_datadir.mkpath
 
     # Manually link files from keg to non-conflicting versioned directories in HOMEBREW_PREFIX.
     %w[include lib share].each do |dir|
-      dst_dir = HOMEBREW_PREFIXdirname
-      src_dir = prefixdir"postgresql"
+      dst_dir = HOMEBREW_PREFIX/dir/name
+      src_dir = prefix/dir/"postgresql"
       src_dir.find do |src|
-        dst = dst_dirsrc.relative_path_from(src_dir)
+        dst = dst_dir/src.relative_path_from(src_dir)
 
         # Retain existing real directories for extensions if directory structure matches
         next if dst.directory? && !dst.symlink? && src.directory? && !src.symlink?
@@ -139,24 +139,24 @@ class PostgresqlAT17 < Formula
     end
 
     # Also link versioned executables
-    bin.each_child { |f| (HOMEBREW_PREFIX"bin").install_symlink f => "#{f.basename}-#{version.major}" }
+    bin.each_child { |f| (HOMEBREW_PREFIX/"bin").install_symlink f => "#{f.basename}-#{version.major}" }
 
     # Don't initialize database, it clashes when testing other PostgreSQL versions.
     return if ENV["HOMEBREW_GITHUB_ACTIONS"]
 
-    system bin"initdb", "--locale=C", "-E", "UTF-8", postgresql_datadir unless pg_version_exists?
+    system bin/"initdb", "--locale=C", "-E", "UTF-8", postgresql_datadir unless pg_version_exists?
   end
 
   def postgresql_datadir
-    varname
+    var/name
   end
 
   def postgresql_log_path
-    var"log#{name}.log"
+    var/"log/#{name}.log"
   end
 
   def pg_version_exists?
-    (postgresql_datadir"PG_VERSION").exist?
+    (postgresql_datadir/"PG_VERSION").exist?
   end
 
   def caveats
@@ -170,7 +170,7 @@ class PostgresqlAT17 < Formula
   end
 
   service do
-    run [opt_bin"postgres", "-D", f.postgresql_datadir]
+    run [opt_bin/"postgres", "-D", f.postgresql_datadir]
     environment_variables LC_ALL: "C"
     keep_alive true
     log_path f.postgresql_log_path
@@ -179,13 +179,13 @@ class PostgresqlAT17 < Formula
   end
 
   test do
-    system bin"initdb", testpath"test" unless ENV["HOMEBREW_GITHUB_ACTIONS"]
-    [bin"pg_config", HOMEBREW_PREFIX"binpg_config-#{version.major}"].each do |pg_config|
-      assert_equal "#{HOMEBREW_PREFIX}share#{name}", shell_output("#{pg_config} --sharedir").chomp
-      assert_equal "#{HOMEBREW_PREFIX}lib#{name}", shell_output("#{pg_config} --libdir").chomp
-      assert_equal "#{HOMEBREW_PREFIX}lib#{name}", shell_output("#{pg_config} --pkglibdir").chomp
-      assert_equal "#{HOMEBREW_PREFIX}include#{name}", shell_output("#{pg_config} --pkgincludedir").chomp
-      assert_equal "#{HOMEBREW_PREFIX}include#{name}server", shell_output("#{pg_config} --includedir-server").chomp
+    system bin/"initdb", testpath/"test" unless ENV["HOMEBREW_GITHUB_ACTIONS"]
+    [bin/"pg_config", HOMEBREW_PREFIX/"bin/pg_config-#{version.major}"].each do |pg_config|
+      assert_equal "#{HOMEBREW_PREFIX}/share/#{name}", shell_output("#{pg_config} --sharedir").chomp
+      assert_equal "#{HOMEBREW_PREFIX}/lib/#{name}", shell_output("#{pg_config} --libdir").chomp
+      assert_equal "#{HOMEBREW_PREFIX}/lib/#{name}", shell_output("#{pg_config} --pkglibdir").chomp
+      assert_equal "#{HOMEBREW_PREFIX}/include/#{name}", shell_output("#{pg_config} --pkgincludedir").chomp
+      assert_equal "#{HOMEBREW_PREFIX}/include/#{name}/server", shell_output("#{pg_config} --includedir-server").chomp
       assert_match "-I#{Formula["gettext"].opt_include}", shell_output("#{pg_config} --cppflags") if OS.mac?
     end
   end

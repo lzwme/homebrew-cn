@@ -2,10 +2,10 @@ cask "font-pirata-one" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefontsrawmainoflpirataonePirataOne-Regular.ttf",
-      verified: "github.comgooglefonts"
+  url "https://github.com/google/fonts/raw/main/ofl/pirataone/PirataOne-Regular.ttf",
+      verified: "github.com/google/fonts/"
   name "Pirata One"
-  homepage "https:fonts.google.comspecimenPirata+One"
+  homepage "https://fonts.google.com/specimen/Pirata+One"
 
   font "PirataOne-Regular.ttf"
 

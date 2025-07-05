@@ -2,11 +2,11 @@ class Fwupd < Formula
   include Language::Python::Virtualenv
 
   desc "Firmware update daemon"
-  homepage "https:github.comfwupdfwupd"
-  url "https:github.comfwupdfwupdreleasesdownload2.0.12fwupd-2.0.12.tar.xz"
+  homepage "https://github.com/fwupd/fwupd"
+  url "https://ghfast.top/https://github.com/fwupd/fwupd/releases/download/2.0.12/fwupd-2.0.12.tar.xz"
   sha256 "83eab17ef2e65249491aef5e99419827b43ac56d40c5b0747b59ee94b147215e"
   license "LGPL-2.1-or-later"
-  head "https:github.comfwupdfwupd.git", branch: "main"
+  head "https://github.com/fwupd/fwupd.git", branch: "main"
 
   bottle do
     sha256 arm64_sequoia: "999ce90d7b9597c8b945ec4d95e56221a62ac2fca2ad60939c9ac657dd434db6"
@@ -53,12 +53,12 @@ class Fwupd < Formula
   end
 
   resource "jinja2" do
-    url "https:files.pythonhosted.orgpackagesdfbff7da0350254c0ed7c72f3e33cef02e048281fec7ecec5f032d4aac52226bjinja2-3.1.6.tar.gz"
+    url "https://files.pythonhosted.org/packages/df/bf/f7da0350254c0ed7c72f3e33cef02e048281fec7ecec5f032d4aac52226b/jinja2-3.1.6.tar.gz"
     sha256 "0137fb05990d35f1275a587e9aee6d56da821fc83491a0fb838183be43f66d6d"
   end
 
   resource "markupsafe" do
-    url "https:files.pythonhosted.orgpackagesb2975d42485e71dfc078108a86d6de8fa46db44a1a9295e89c5d6d4a06e23a62markupsafe-3.0.2.tar.gz"
+    url "https://files.pythonhosted.org/packages/b2/97/5d42485e71dfc078108a86d6de8fa46db44a1a9295e89c5d6d4a06e23a62/markupsafe-3.0.2.tar.gz"
     sha256 "ee55d3edf80167e48ea11a923c7386f4669df67d7994554387f84e7d8b0a2bf0"
   end
 
@@ -67,9 +67,9 @@ class Fwupd < Formula
   end
 
   def install
-    venv = virtualenv_create(buildpath"venv", python3)
+    venv = virtualenv_create(buildpath/"venv", python3)
     venv.pip_install resources
-    ENV.prepend_path "PYTHONPATH", buildpath"venv"Language::Python.site_packages(python3)
+    ENV.prepend_path "PYTHONPATH", buildpath/"venv"/Language::Python.site_packages(python3)
 
     system "meson", "setup", "build",
                     "-Dbuild=standalone", # this is used as PolicyKit is not available on macOS
@@ -80,7 +80,7 @@ class Fwupd < Formula
                     "-Dplugin_modem_manager=disabled",
                     "-Dplugin_uefi_capsule_splash=false",
                     "-Dtests=false",
-                    "-Dvendor_ids_dir=#{Formula["usb.ids"].opt_share}miscusb.ids",
+                    "-Dvendor_ids_dir=#{Formula["usb.ids"].opt_share}/misc/usb.ids",
                     *std_meson_args
     system "meson", "compile", "-C", "build", "--verbose"
     system "meson", "install", "-C", "build"
@@ -88,7 +88,7 @@ class Fwupd < Formula
 
   test do
     # check apps like gnome-firmware can link
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include <fwupd.h>
       int main(int argc, char *argv[]) {
         FwupdClient *client = fwupd_client_new();
@@ -99,9 +99,9 @@ class Fwupd < Formula
 
     pkgconf_flags = shell_output("pkgconf --cflags --libs fwupd").chomp.split
     system ENV.cc, "test.c", "-o", "test", *pkgconf_flags
-    system ".test"
+    system "./test"
 
     # this is a lame test, but fwupdtool requires root access to do anything much interesting
-    system bin"fwupdtool", "-h"
+    system bin/"fwupdtool", "-h"
   end
 end

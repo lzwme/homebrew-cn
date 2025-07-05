@@ -1,16 +1,16 @@
 class Zzz < Formula
   desc "Command-line tool to put Macs to sleep"
-  homepage "https:github.comOrcZzz"
+  homepage "https://github.com/Orc/Zzz"
   license :public_domain
-  head "https:github.comOrcZzz.git", branch: "main"
+  head "https://github.com/Orc/Zzz.git", branch: "main"
 
   stable do
-    url "https:github.comOrcZzzarchiverefstagsv1.tar.gz"
+    url "https://ghfast.top/https://github.com/Orc/Zzz/archive/refs/tags/v1.tar.gz"
     sha256 "8c8958b65a74ab1081ce1a950af6d360166828bdb383d71cc8fe37ddb1702576"
 
     # Backport fix for C99
     patch do
-      url "https:github.comOrcZzzcommit2bf4284ecdbdfd0d629ed00752bcda5d0d0f63f6.patch?full_index=1"
+      url "https://github.com/Orc/Zzz/commit/2bf4284ecdbdfd0d629ed00752bcda5d0d0f63f6.patch?full_index=1"
       sha256 "b861283f25c6c6f160929c630203861dc9bbaf501d89cb6e6d7a3b383c53bf20"
     end
   end
@@ -40,6 +40,6 @@ class Zzz < Formula
   # No test is possible: this has no --help or --version, it just
   # sleeps the Mac instantly.
   test do
-    assert_path_exists bin"Zzz"
+    assert_path_exists bin/"Zzz"
   end
 end

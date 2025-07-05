@@ -1,7 +1,7 @@
 class Sherif < Formula
   desc "Opinionated, zero-config linter for JavaScript monorepos"
-  homepage "https:github.comQuiiBzsherif"
-  url "https:registry.npmjs.orgsherif-sherif-1.6.1.tgz"
+  homepage "https://github.com/QuiiBz/sherif"
+  url "https://registry.npmjs.org/sherif/-/sherif-1.6.1.tgz"
   sha256 "416172fbd1ec78120e8f90a8fb195a87030c2326a8ec3fd28d0af72aa51ecf68"
   license "MIT"
 
@@ -19,11 +19,11 @@ class Sherif < Formula
 
   def install
     system "npm", "install", *std_npm_args
-    bin.install_symlink Dir["#{libexec}bin*"]
+    bin.install_symlink Dir["#{libexec}/bin/*"]
   end
 
   test do
-    (testpath"package.json").write <<~JSON
+    (testpath/"package.json").write <<~JSON
       {
         "name": "test",
         "version": "1.0.0",
@@ -32,9 +32,9 @@ class Sherif < Formula
         "workspaces": [ "." ]
       }
     JSON
-    (testpath"test.js").write <<~JS
+    (testpath/"test.js").write <<~JS
       console.log('Hello, world!');
     JS
-    assert_match "No issues found", shell_output("#{bin}sherif --no-install .")
+    assert_match "No issues found", shell_output("#{bin}/sherif --no-install .")
   end
 end

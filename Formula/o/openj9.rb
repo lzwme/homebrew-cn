@@ -1,7 +1,7 @@
 class Openj9 < Formula
   desc "High performance, scalable, Java virtual machine"
-  homepage "https:www.eclipse.orgopenj9"
-  url "https:github.comeclipse-openj9openj9.git",
+  homepage "https://www.eclipse.org/openj9/"
+  url "https://github.com/eclipse-openj9/openj9.git",
       tag:      "openj9-0.48.0",
       revision: "1d5831436ec378c7dd9f57415bec39d3f5817d57"
   license any_of: [
@@ -13,7 +13,7 @@ class Openj9 < Formula
 
   livecheck do
     url :stable
-    regex(^openj9-(\d+(?:\.\d+)+)$i)
+    regex(/^openj9-(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -66,51 +66,51 @@ class Openj9 < Formula
     depends_on "nasm" => :build
   end
 
-  # From https:github.comeclipse-openj9openj9blobopenj9-#{version}docbuild-instructions
+  # From https://github.com/eclipse-openj9/openj9/blob/openj9-#{version}/doc/build-instructions/
   # We use JDK 22 to bootstrap.
   resource "boot-jdk" do
     on_macos do
       on_arm do
-        url "https:github.comAdoptOpenJDKsemeru22-binariesreleasesdownloadjdk-22.0.1%2B8_openj9-0.45.0ibm-semeru-open-jdk_aarch64_mac_22.0.1_8_openj9-0.45.0.tar.gz"
+        url "https://ghfast.top/https://github.com/AdoptOpenJDK/semeru22-binaries/releases/download/jdk-22.0.1%2B8_openj9-0.45.0/ibm-semeru-open-jdk_aarch64_mac_22.0.1_8_openj9-0.45.0.tar.gz"
         sha256 "623cc15daa3b4c7f21d47f225c94a163e2261074cc3c11f30d2938fc249b9355"
       end
       on_intel do
-        url "https:github.comAdoptOpenJDKsemeru22-binariesreleasesdownloadjdk-22.0.1%2B8_openj9-0.45.0ibm-semeru-open-jdk_x64_mac_22.0.1_8_openj9-0.45.0.tar.gz"
+        url "https://ghfast.top/https://github.com/AdoptOpenJDK/semeru22-binaries/releases/download/jdk-22.0.1%2B8_openj9-0.45.0/ibm-semeru-open-jdk_x64_mac_22.0.1_8_openj9-0.45.0.tar.gz"
         sha256 "f0e459df70b5a3c8fc0abc099d5c06a596da40b95f8226d76474516a646a3861"
       end
     end
     on_linux do
       on_arm do
-        url "https:github.comAdoptOpenJDKsemeru22-binariesreleasesdownloadjdk-22.0.1%2B8_openj9-0.45.0ibm-semeru-open-jdk_aarch64_linux_22.0.1_8_openj9-0.45.0.tar.gz"
+        url "https://ghfast.top/https://github.com/AdoptOpenJDK/semeru22-binaries/releases/download/jdk-22.0.1%2B8_openj9-0.45.0/ibm-semeru-open-jdk_aarch64_linux_22.0.1_8_openj9-0.45.0.tar.gz"
         sha256 "feb2734b519990d730c577254df5a97f7110bb851994ce775977894a9fdc22c7"
       end
       on_intel do
-        url "https:github.comAdoptOpenJDKsemeru22-binariesreleasesdownloadjdk-22.0.1%2B8_openj9-0.45.0ibm-semeru-open-jdk_x64_linux_22.0.1_8_openj9-0.45.0.tar.gz"
+        url "https://ghfast.top/https://github.com/AdoptOpenJDK/semeru22-binaries/releases/download/jdk-22.0.1%2B8_openj9-0.45.0/ibm-semeru-open-jdk_x64_linux_22.0.1_8_openj9-0.45.0.tar.gz"
         sha256 "6e54d984bc0c058ffb7a604810dfffba210d79e12855e5c61e9295fedeff32db"
       end
     end
   end
 
   resource "omr" do
-    url "https:github.comeclipse-openj9openj9-omr.git",
+    url "https://github.com/eclipse-openj9/openj9-omr.git",
         tag:      "openj9-0.48.0",
         revision: "d10a4d553a3cfbf35db0bcde9ebccb24cdf1189f"
   end
 
   resource "openj9-openjdk-jdk" do
-    url "https:github.comibmruntimesopenj9-openjdk-jdk22.git",
+    url "https://github.com/ibmruntimes/openj9-openjdk-jdk22.git",
         tag:      "openj9-0.46.1",
         revision: "b77827589c585158319340068dae8497b75322c6"
   end
 
   def install
     openj9_files = buildpath.children
-    (buildpath"openj9").install openj9_files
+    (buildpath/"openj9").install openj9_files
     resource("openj9-openjdk-jdk").stage buildpath
-    resource("omr").stage buildpath"omr"
-    boot_jdk = buildpath"boot-jdk"
+    resource("omr").stage buildpath/"omr"
+    boot_jdk = buildpath/"boot-jdk"
     resource("boot-jdk").stage boot_jdk
-    boot_jdk = "ContentsHome" if OS.mac?
+    boot_jdk /= "Contents/Home" if OS.mac?
     java_options = ENV.delete("_JAVA_OPTIONS")
 
     config_args = %W[
@@ -121,7 +121,7 @@ class Openj9 < Formula
       --with-debug-level=release
       --with-jvm-variants=server
       --with-native-debug-symbols=none
-      --with-extra-ldflags=-Wl,-rpath,#{loader_path.gsub("$", "\\$$")},-rpath,#{loader_path.gsub("$", "\\$$")}server
+      --with-extra-ldflags=-Wl,-rpath,#{loader_path.gsub("$", "\\$$")},-rpath,#{loader_path.gsub("$", "\\$$")}/server
 
       --with-vendor-bug-url=#{tap.issues_url}
       --with-vendor-name=#{tap.user}
@@ -145,7 +145,7 @@ class Openj9 < Formula
     ]
     config_args += if OS.mac?
       # Allow unbundling `freetype` on macOS
-      inreplace "makeautoconflib-freetype.m4", '= "xmacosx"', '= ""'
+      inreplace "make/autoconf/lib-freetype.m4", '= "xmacosx"', '= ""'
 
       %W[
         --enable-dtrace
@@ -154,8 +154,8 @@ class Openj9 < Formula
         --with-sysroot=#{MacOS.sdk_path}
       ]
     else
-      # Override hardcoded usrinclude directory when checking for numa headers
-      inreplace "closedautoconfcustom-hook.m4", "usrincludenuma", Formula["numactl"].opt_include"numa"
+      # Override hardcoded /usr/include directory when checking for numa headers
+      inreplace "closed/autoconf/custom-hook.m4", "/usr/include/numa", Formula["numactl"].opt_include/"numa"
 
       %W[
         --with-x=#{HOMEBREW_PREFIX}
@@ -164,43 +164,43 @@ class Openj9 < Formula
         --with-stdc++lib=dynamic
       ]
     end
-    # Ref: https:github.comeclipse-openj9openj9issues13767
+    # Ref: https://github.com/eclipse-openj9/openj9/issues/13767
     # TODO: Remove once compressed refs mode is supported on Apple Silicon
     config_args << "--with-noncompressedrefs" if OS.mac? && Hardware::CPU.arm?
 
     ENV["CMAKE_CONFIG_TYPE"] = "Release"
     ENV["CMAKE_POLICY_VERSION_MINIMUM"] = "3.5"
 
-    system "bash", ".configure", *config_args
+    system "bash", "./configure", *config_args
     system "make", "all", "-j"
 
     jdk = libexec
     if OS.mac?
-      libexec.install Dir["build*imagesjdk-bundle*"].first => "openj9.jdk"
-      jdk = "openj9.jdkContentsHome"
+      libexec.install Dir["build/*/images/jdk-bundle/*"].first => "openj9.jdk"
+      jdk /= "openj9.jdk/Contents/Home"
     else
-      libexec.install Dir["buildlinux-*-server-releaseimagesjdk*"]
+      libexec.install Dir["build/linux-*-server-release/images/jdk/*"]
     end
-    rm jdk"libsrc.zip"
-    rm_r(jdk.glob("***.{dSYM,debuginfo}"))
+    rm jdk/"lib/src.zip"
+    rm_r(jdk.glob("**/*.{dSYM,debuginfo}"))
 
-    bin.install_symlink Dir[jdk"bin*"]
-    include.install_symlink Dir[jdk"include*.h"]
-    include.install_symlink Dir[jdk"include"OS.kernel_name.downcase"*.h"]
-    man1.install_symlink Dir[jdk"manman1*"]
+    bin.install_symlink Dir[jdk/"bin/*"]
+    include.install_symlink Dir[jdk/"include/*.h"]
+    include.install_symlink Dir[jdk/"include"/OS.kernel_name.downcase/"*.h"]
+    man1.install_symlink Dir[jdk/"man/man1/*"]
   end
 
   def caveats
     on_macos do
       <<~EOS
         For the system Java wrappers to find this JDK, symlink it with
-          sudo ln -sfn #{opt_libexec}openj9.jdk LibraryJavaJavaVirtualMachinesopenj9.jdk
+          sudo ln -sfn #{opt_libexec}/openj9.jdk /Library/Java/JavaVirtualMachines/openj9.jdk
       EOS
     end
   end
 
   test do
-    (testpath"HelloWorld.java").write <<~JAVA
+    (testpath/"HelloWorld.java").write <<~JAVA
       class HelloWorld {
         public static void main(String args[]) {
           System.out.println("Hello, world!");
@@ -208,8 +208,8 @@ class Openj9 < Formula
       }
     JAVA
 
-    system bin"javac", "HelloWorld.java"
+    system bin/"javac", "HelloWorld.java"
 
-    assert_match "Hello, world!", shell_output("#{bin}java HelloWorld")
+    assert_match "Hello, world!", shell_output("#{bin}/java HelloWorld")
   end
 end

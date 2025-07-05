@@ -1,11 +1,11 @@
 class Carla < Formula
-  desc "Audio plugin host supporting LADSPA, LV2, VST23, SF2 and more"
-  homepage "https:kx.studioApplications:Carla"
+  desc "Audio plugin host supporting LADSPA, LV2, VST2/3, SF2 and more"
+  homepage "https://kx.studio/Applications:Carla"
   license "GPL-2.0-or-later"
   revision 1
 
   stable do
-    url "https:github.comfalkTXCarlaarchiverefstagsv2.5.9.tar.gz"
+    url "https://ghfast.top/https://github.com/falkTX/Carla/archive/refs/tags/v2.5.9.tar.gz"
     sha256 "226fb5d646b7541b82035080190e7440df1f92372fb798b4ad49289570e5ad81"
 
     # TODO: Remove in 2.6.0
@@ -30,7 +30,7 @@ class Carla < Formula
   end
 
   head do
-    url "https:github.comfalkTXCarla.git", branch: "main"
+    url "https://github.com/falkTX/Carla.git", branch: "main"
 
     depends_on "pyqt"
     depends_on "qt"
@@ -57,12 +57,12 @@ class Carla < Formula
     system "make"
     system "make", "install", "PREFIX=#{prefix}"
 
-    inreplace bin"carla", "PYTHON=$(which python3 2>devnull)",
+    inreplace bin/"carla", "PYTHON=$(which python3 2>/dev/null)",
                            "PYTHON=#{which("python3.13")}"
   end
 
   test do
-    system bin"carla", "--version"
-    system lib"carlacarla-discovery-native", "internal", ":all"
+    system bin/"carla", "--version"
+    system lib/"carla/carla-discovery-native", "internal", ":all"
   end
 end

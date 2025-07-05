@@ -1,7 +1,7 @@
 class Tenere < Formula
   desc "TUI interface for LLMs written in Rust"
-  homepage "https:github.compythopstenere"
-  url "https:github.compythopstenerearchiverefstagsv0.11.2.tar.gz"
+  homepage "https://github.com/pythops/tenere"
+  url "https://ghfast.top/https://github.com/pythops/tenere/archive/refs/tags/v0.11.2.tar.gz"
   sha256 "865c9b041faf935545dbb9753b33a8ff09bf4bfd8917d25ca93f5dc0c0cac114"
   license "GPL-3.0-or-later"
   revision 1
@@ -25,7 +25,7 @@ class Tenere < Formula
 
   def install
     # TODO: ENV["LIBGIT2_NO_VENDOR"] = "1"
-    libgit2_version = File.read("Cargo.lock")[name = "libgit2-sys"\nversion = "(.+)\+(.+)", 2]
+    libgit2_version = File.read("Cargo.lock")[/name = "libgit2-sys"\nversion = "(.+)\+(.+)"/, 2]
     odie "Unbundled libgit2 as now using #{libgit2_version}!" if Version.new(libgit2_version) >= "1.8"
 
     ENV["RUSTONIG_SYSTEM_LIBONIG"] = "1"
@@ -34,7 +34,7 @@ class Tenere < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}tenere --version")
-    assert_match "Can not find the openai api key", shell_output("#{bin}tenere 2>&1", 1)
+    assert_match version.to_s, shell_output("#{bin}/tenere --version")
+    assert_match "Can not find the openai api key", shell_output("#{bin}/tenere 2>&1", 1)
   end
 end

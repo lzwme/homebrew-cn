@@ -1,7 +1,7 @@
 class Miniserve < Formula
   desc "High performance static file server"
-  homepage "https:github.comsvenstarominiserve"
-  url "https:github.comsvenstarominiservearchiverefstagsv0.31.0.tar.gz"
+  homepage "https://github.com/svenstaro/miniserve"
+  url "https://ghfast.top/https://github.com/svenstaro/miniserve/archive/refs/tags/v0.31.0.tar.gz"
   sha256 "a4773ae5a6fbc45baf15a5dcb54fd6b7e0151f2fde25c26ddafc0f95b7d26c32"
   license "MIT"
 
@@ -20,20 +20,20 @@ class Miniserve < Formula
   def install
     system "cargo", "install", *std_cargo_args
 
-    generate_completions_from_executable(bin"miniserve", "--print-completions")
-    (man1"miniserve.1").write Utils.safe_popen_read(bin"miniserve", "--print-manpage")
+    generate_completions_from_executable(bin/"miniserve", "--print-completions")
+    (man1/"miniserve.1").write Utils.safe_popen_read(bin/"miniserve", "--print-manpage")
   end
 
   test do
     port = free_port
     pid = fork do
-      exec bin"miniserve", bin"miniserve", "-i", "127.0.0.1", "--port", port.to_s
+      exec bin/"miniserve", bin/"miniserve", "-i", "127.0.0.1", "--port", port.to_s
     end
 
     sleep 2
 
     begin
-      read = (bin"miniserve").read
+      read = (bin/"miniserve").read
       assert_equal read, shell_output("curl localhost:#{port}")
     ensure
       Process.kill("SIGINT", pid)

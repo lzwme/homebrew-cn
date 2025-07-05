@@ -1,7 +1,7 @@
 class Comby < Formula
   desc "Tool for changing code across many languages"
-  homepage "https:comby.dev"
-  url "https:github.comcomby-toolscombyarchiverefstags1.8.1.tar.gz"
+  homepage "https://comby.dev"
+  url "https://ghfast.top/https://github.com/comby-tools/comby/archive/refs/tags/1.8.1.tar.gz"
   sha256 "04d51cf742bbbf5e5fda064a710be44537fac49bff598d0e9762a3a799d666e2"
   license "Apache-2.0"
   revision 1
@@ -22,7 +22,7 @@ class Comby < Formula
 
   depends_on "autoconf" => :build
   depends_on "gmp" => :build
-  depends_on "ocaml@4" => :build # https:github.comcomby-toolscombyissues358
+  depends_on "ocaml@4" => :build # https://github.com/comby-tools/comby/issues/358
   depends_on "opam" => :build
   depends_on "pkgconf" => :build
   depends_on "gmp"
@@ -36,19 +36,19 @@ class Comby < Formula
 
   def install
     ENV.deparallelize
-    opamroot = buildpath".opam"
+    opamroot = buildpath/".opam"
     ENV["OPAMROOT"] = opamroot
     ENV["OPAMYES"] = "1"
 
     system "opam", "init", "--no-setup", "--disable-sandboxing"
-    # Workaround for https:github.comcomby-toolscombyissues381
+    # Workaround for https://github.com/comby-tools/comby/issues/381
     system "opam", "exec", "--", "opam", "pin", "add", "tar-unix", "2.6.0"
     system "opam", "exec", "--", "opam", "install", ".", "--deps-only", "-y", "--no-depexts"
 
-    ENV.prepend_path "LIBRARY_PATH", opamroot"defaultlibhack_parallel" # for -lhp
+    ENV.prepend_path "LIBRARY_PATH", opamroot/"default/lib/hack_parallel" # for -lhp
     system "opam", "exec", "--", "make", "release"
 
-    bin.install "_builddefaultsrcmain.exe" => "comby"
+    bin.install "_build/default/src/main.exe" => "comby"
   end
 
   test do
@@ -62,7 +62,7 @@ class Comby < Formula
        }
     DIFF
 
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       int main(void) {
         printf("hello world!");
       }
@@ -71,6 +71,6 @@ class Comby < Formula
     match = 'printf(":[1] :[2]!")'
     rewrite = 'printf("comby, :[1]!")'
 
-    assert_equal expect, shell_output("#{bin}comby '#{match}' '#{rewrite}' test.c -diff")
+    assert_equal expect, shell_output("#{bin}/comby '#{match}' '#{rewrite}' test.c -diff")
   end
 end

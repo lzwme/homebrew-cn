@@ -1,14 +1,14 @@
 class Llgo < Formula
   desc "Go compiler based on LLVM integrate with the C ecosystem and Python"
-  homepage "https:github.comgoplusllgo"
-  url "https:github.comgoplusllgoarchiverefstagsv0.11.5.tar.gz"
+  homepage "https://github.com/goplus/llgo"
+  url "https://ghfast.top/https://github.com/goplus/llgo/archive/refs/tags/v0.11.5.tar.gz"
   sha256 "e025993d12c1f5e49e5b8dcb31c0e8b349efe56970d1a23d6c089ebd10928c6b"
   license "Apache-2.0"
-  head "https:github.comgoplusllgo.git", branch: "main"
+  head "https://github.com/goplus/llgo.git", branch: "main"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -35,16 +35,16 @@ class Llgo < Formula
   end
 
   def find_dep(name)
-    deps.map(&:to_formula).find { |f| f.name.match?(^#{name}(@\d+)?$) }
+    deps.map(&:to_formula).find { |f| f.name.match?(/^#{name}(@\d+)?$/) }
   end
 
   def install
     llvm = find_dep("llvm")
     ldflags = %W[
       -s -w
-      -X github.comgoplusllgointernalenv.buildVersion=v#{version}
-      -X github.comgoplusllgointernalenv.buildTime=#{time.iso8601}
-      -X github.comgoplusllgoxtoolenvllvm.ldLLVMConfigBin=#{llvm.opt_bin"llvm-config"}
+      -X github.com/goplus/llgo/internal/env.buildVersion=v#{version}
+      -X github.com/goplus/llgo/internal/env.buildTime=#{time.iso8601}
+      -X github.com/goplus/llgo/xtool/env/llvm.ldLLVMConfigBin=#{llvm.opt_bin/"llvm-config"}
     ]
     tags = nil
     if OS.linux?
@@ -58,7 +58,7 @@ class Llgo < Formula
       tags = "byollvm"
     end
 
-    system "go", "build", *std_go_args(ldflags:, tags:), "-o", libexec"bin", ".cmdllgo"
+    system "go", "build", *std_go_args(ldflags:, tags:), "-o", libexec/"bin/", "./cmd/llgo"
 
     libexec.install "LICENSE", "README.md", "go.mod", "go.sum", "runtime"
 
@@ -71,31 +71,31 @@ class Llgo < Formula
       script_env[:LDFLAGS] = "-L#{libunwind.opt_lib} -rpath #{libunwind.opt_lib} $LDFLAGS"
     end
 
-    (libexec"bin").children.each do |f|
+    (libexec/"bin").children.each do |f|
       next if f.directory?
 
       cmd = File.basename(f)
-      (bincmd).write_env_script libexec"bin"cmd, script_env
+      (bin/cmd).write_env_script libexec/"bin"/cmd, script_env
     end
   end
 
   test do
     goos = shell_output("go env GOOS").chomp
     goarch = shell_output("go env GOARCH").chomp
-    assert_equal "llgo v#{version} #{goos}#{goarch}", shell_output("#{bin}llgo version").chomp
+    assert_equal "llgo v#{version} #{goos}/#{goarch}", shell_output("#{bin}/llgo version").chomp
 
     # Add bdw-gc library path to LD_LIBRARY_PATH, this is a workaround for the libgc.so not found issue
     # Will be fixed in the next release
     bdwgc = find_dep("bdw-gc")
     ENV.prepend_path "LD_LIBRARY_PATH", bdwgc.opt_lib
 
-    (testpath"hello.go").write <<~GO
+    (testpath/"hello.go").write <<~GO
       package main
 
       import (
           "fmt"
 
-          "github.comgopluslibc"
+          "github.com/goplus/lib/c"
       )
 
       func Foo() string {
@@ -107,7 +107,7 @@ class Llgo < Formula
         c.Printf(c.Str("Hello LLGO by c.Printf\\n"))
       }
     GO
-    (testpath"hello_test.go").write <<~GO
+    (testpath/"hello_test.go").write <<~GO
       package main
 
       import "testing"
@@ -120,20 +120,20 @@ class Llgo < Formula
         }
       }
     GO
-    (testpath"go.mod").write <<~GOMOD
+    (testpath/"go.mod").write <<~GOMOD
       module hello
     GOMOD
-    system "go", "get", "github.comgopluslib"
+    system "go", "get", "github.com/goplus/lib"
     # Test llgo run
     assert_equal "Hello LLGO by fmt.Println\n" \
                  "Hello LLGO by c.Printf\n",
-                 shell_output("#{bin}llgo run .")
+                 shell_output("#{bin}/llgo run .")
     # Test llgo build
-    system bin"llgo", "build", "-o", "hello", "."
+    system bin/"llgo", "build", "-o", "hello", "."
     assert_equal "Hello LLGO by fmt.Println\n" \
                  "Hello LLGO by c.Printf\n",
-                 shell_output(".hello")
+                 shell_output("./hello")
     # Test llgo test
-    assert_match "PASS", shell_output("#{bin}llgo test .")
+    assert_match "PASS", shell_output("#{bin}/llgo test .")
   end
 end

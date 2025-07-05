@@ -1,10 +1,10 @@
 class Envchain < Formula
   desc "Secure your credentials in environment variables"
-  homepage "https:github.comsorahenvchain"
-  url "https:github.comsorahenvchainarchiverefstagsv1.1.0.tar.gz"
+  homepage "https://github.com/sorah/envchain"
+  url "https://ghfast.top/https://github.com/sorah/envchain/archive/refs/tags/v1.1.0.tar.gz"
   sha256 "832bcf58037db6187f7327282e347e45627ea617c2e09a9e6d18629e7310fff9"
   license "MIT"
-  head "https:github.comsorahenvchain.git", branch: "master"
+  head "https://github.com/sorah/envchain.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "89bc49ffc1341fb5f06e5510be523ddb5d3a7270ad02a53382505f2cb817675b"
@@ -30,6 +30,6 @@ class Envchain < Formula
   end
 
   test do
-    assert_match "envchain version #{version}", shell_output("#{bin}envchain 2>&1", 2)
+    assert_match "envchain version #{version}", shell_output("#{bin}/envchain 2>&1", 2)
   end
 end

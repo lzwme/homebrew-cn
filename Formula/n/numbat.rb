@@ -1,10 +1,10 @@
 class Numbat < Formula
   desc "Statically typed programming language for scientific computations"
-  homepage "https:numbat.dev"
-  url "https:github.comsharkdpnumbatarchiverefstagsv1.16.0.tar.gz"
+  homepage "https://numbat.dev/"
+  url "https://ghfast.top/https://github.com/sharkdp/numbat/archive/refs/tags/v1.16.0.tar.gz"
   sha256 "33f3744a31f62f7ebd985c6b3ec3c6a6d6f897527e8db5bc2de48dd299a63cdd"
   license any_of: ["Apache-2.0", "MIT"]
-  head "https:github.comsharkdpnumbat.git", branch: "master"
+  head "https://github.com/sharkdp/numbat.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "487fd2bfbd8ac5b590386c8686b32335c475a4aa49fe7e5a58e5a4e6e3dd44dd"
@@ -19,18 +19,18 @@ class Numbat < Formula
   depends_on "rust" => :build
 
   def install
-    ENV["NUMBAT_SYSTEM_MODULE_PATH"] = "#{pkgshare}modules"
+    ENV["NUMBAT_SYSTEM_MODULE_PATH"] = "#{pkgshare}/modules"
     system "cargo", "install", *std_cargo_args(path: "numbat-cli")
 
-    pkgshare.install "numbatmodules"
+    pkgshare.install "numbat/modules"
   end
 
   test do
-    (testpath"test.nbt").write <<~EOS
+    (testpath/"test.nbt").write <<~EOS
       print("pi = {pi}")
     EOS
 
-    output = shell_output("#{bin}numbat test.nbt")
+    output = shell_output("#{bin}/numbat test.nbt")
 
     assert_equal "pi = 3.14159", output.chomp
   end

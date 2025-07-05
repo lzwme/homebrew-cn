@@ -1,10 +1,10 @@
 class Taskflow < Formula
   desc "General-purpose Task-parallel Programming System using Modern C++"
-  homepage "https:github.comtaskflowtaskflow"
-  url "https:github.comtaskflowtaskflowarchiverefstagsv3.10.0.tar.gz"
+  homepage "https://github.com/taskflow/taskflow"
+  url "https://ghfast.top/https://github.com/taskflow/taskflow/archive/refs/tags/v3.10.0.tar.gz"
   sha256 "fe86765da417f6ceaa2d232ffac70c9afaeb3dc0816337d39a7c93e39c2dee0b"
   license "MIT"
-  head "https:github.comtaskflowtaskflow.git", branch: "master"
+  head "https://github.com/taskflow/taskflow.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -27,8 +27,8 @@ class Taskflow < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~CPP
-      #include <taskflowtaskflow.hpp>
+    (testpath/"test.cpp").write <<~CPP
+      #include <taskflow/taskflow.hpp>
       int main() {
         tf::Executor executor;
         tf::Taskflow taskflow;
@@ -36,6 +36,6 @@ class Taskflow < Formula
       }
     CPP
     system ENV.cxx, "test.cpp", "-std=c++20", "-pthread", "-o", "test"
-    system ".test"
+    system "./test"
   end
 end

@@ -1,10 +1,10 @@
 class Polaris < Formula
   desc "Validation of best practices in your Kubernetes clusters"
-  homepage "https:www.fairwinds.compolaris"
-  url "https:github.comFairwindsOpspolarisarchiverefstags9.6.4.tar.gz"
+  homepage "https://www.fairwinds.com/polaris"
+  url "https://ghfast.top/https://github.com/FairwindsOps/polaris/archive/refs/tags/9.6.4.tar.gz"
   sha256 "f2ba54978d8ffef3ed19194e20ba41f3cc76ab8f834fc1c159d33e4cb9caedde"
   license "Apache-2.0"
-  head "https:github.comFairwindsOpspolaris.git", branch: "master"
+  head "https://github.com/FairwindsOps/polaris.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "2ef434ef6cd56dd69897c9e5590bd70733a70857470aead4e5d75ef7d75af424"
@@ -20,14 +20,14 @@ class Polaris < Formula
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w -X main.Version=#{version} -X main.Commit=#{tap.user}")
 
-    generate_completions_from_executable(bin"polaris", "completion")
+    generate_completions_from_executable(bin/"polaris", "completion")
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}polaris version")
+    assert_match version.to_s, shell_output("#{bin}/polaris version")
 
-    (testpath"deployment.yaml").write <<~YAML
-      apiVersion: appsv1
+    (testpath/"deployment.yaml").write <<~YAML
+      apiVersion: apps/v1
       kind: Deployment
       metadata:
         name: nginx
@@ -47,7 +47,7 @@ class Polaris < Formula
               resources: {}
     YAML
 
-    output = shell_output("#{bin}polaris audit --format=json #{testpath}deployment.yaml 2>&1", 1)
+    output = shell_output("#{bin}/polaris audit --format=json #{testpath}/deployment.yaml 2>&1", 1)
     assert_match "try setting KUBERNETES_MASTER environment variable", output
   end
 end

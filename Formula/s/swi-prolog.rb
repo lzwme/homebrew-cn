@@ -1,14 +1,14 @@
 class SwiProlog < Formula
-  desc "ISOEdinburgh-style Prolog interpreter"
-  homepage "https:www.swi-prolog.org"
-  url "https:www.swi-prolog.orgdownloadstablesrcswipl-9.2.9.tar.gz"
+  desc "ISO/Edinburgh-style Prolog interpreter"
+  homepage "https://www.swi-prolog.org/"
+  url "https://www.swi-prolog.org/download/stable/src/swipl-9.2.9.tar.gz"
   sha256 "53f428e2d9bbdf30e53b06c9c42def9a13ff82fc36a111d410fc8b0bc889ee2d"
   license "BSD-2-Clause"
-  head "https:github.comSWI-Prologswipl-devel.git", branch: "master"
+  head "https://github.com/SWI-Prolog/swipl-devel.git", branch: "master"
 
   livecheck do
-    url "https:www.swi-prolog.orgdownloadstablesrc"
-    regex(href=.*?swipl[._-]v?(\d+(?:\.\d+)+)\.ti)
+    url "https://www.swi-prolog.org/download/stable/src/"
+    regex(/href=.*?swipl[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   bottle do
@@ -47,9 +47,9 @@ class SwiProlog < Formula
     ]
     if OS.mac?
       macosx_dependencies_from = case HOMEBREW_PREFIX.to_s
-      when "usrlocal"
+      when "/usr/local"
         "HomebrewLocal"
-      when "opthomebrew"
+      when "/opt/homebrew"
         "HomebrewOpt"
       else
         HOMEBREW_PREFIX
@@ -62,10 +62,10 @@ class SwiProlog < Formula
   end
 
   test do
-    (testpath"test.pl").write <<~PROLOG
+    (testpath/"test.pl").write <<~PROLOG
       test :-
           write('Homebrew').
     PROLOG
-    assert_equal "Homebrew", shell_output("#{bin}swipl -s #{testpath}test.pl -g test -t halt")
+    assert_equal "Homebrew", shell_output("#{bin}/swipl -s #{testpath}/test.pl -g test -t halt")
   end
 end

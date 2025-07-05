@@ -1,7 +1,7 @@
 class Hdf5Mpi < Formula
   desc "File format designed to store large amounts of data"
-  homepage "https:www.hdfgroup.orgsolutionshdf5"
-  url "https:github.comHDFGrouphdf5releasesdownloadhdf5_1.14.6hdf5-1.14.6.tar.gz"
+  homepage "https://www.hdfgroup.org/solutions/hdf5/"
+  url "https://ghfast.top/https://github.com/HDFGroup/hdf5/releases/download/hdf5_1.14.6/hdf5-1.14.6.tar.gz"
   sha256 "e4defbac30f50d64e1556374aa49e574417c9e72c6b1de7a4ff88c4b1bea6e9b"
   license "BSD-3-Clause"
   version_scheme 1
@@ -35,7 +35,7 @@ class Hdf5Mpi < Formula
   def install
     args = %w[
       -DHDF5_USE_GNU_DIRS:BOOL=ON
-      -DHDF5_INSTALL_CMAKE_DIR=libcmakehdf5
+      -DHDF5_INSTALL_CMAKE_DIR=lib/cmake/hdf5
       -DHDF5_ENABLE_PARALLEL:BOOL=ON
       -DALLOW_UNSUPPORTED:BOOL=ON
       -DHDF5_BUILD_FORTRAN:BOOL=ON
@@ -43,32 +43,32 @@ class Hdf5Mpi < Formula
       -DHDF5_ENABLE_SZIP_SUPPORT:BOOL=ON
     ]
 
-    # https:github.comHDFGrouphdf5issues4310
+    # https://github.com/HDFGroup/hdf5/issues/4310
     args << "-DHDF5_ENABLE_NONSTANDARD_FEATURE_FLOAT16:BOOL=OFF"
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
 
     # Avoid c shims in settings files
     inreplace_c_files = %w[
-      buildsrcH5build_settings.c
-      buildsrclibhdf5.settings
+      build/src/H5build_settings.c
+      build/src/libhdf5.settings
     ]
-    inreplace inreplace_c_files, Superenv.shims_pathENV.cc, ENV.cc
+    inreplace inreplace_c_files, Superenv.shims_path/ENV.cc, ENV.cc
 
     # Avoid cpp shims in settings files
     inreplace_cxx_files = %w[
-      buildCMakeFilesh5c++
-      buildCMakeFilesh5hlc++
+      build/CMakeFiles/h5c++
+      build/CMakeFiles/h5hlc++
     ]
-    inreplace_cxx_files << "buildsrclibhdf5.settings" if OS.linux?
-    inreplace inreplace_cxx_files, Superenv.shims_pathENV.cxx, ENV.cxx
+    inreplace_cxx_files << "build/src/libhdf5.settings" if OS.linux?
+    inreplace inreplace_cxx_files, Superenv.shims_path/ENV.cxx, ENV.cxx
 
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end
 
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include <stdio.h>
       #include "hdf5.h"
       int main()
@@ -77,41 +77,41 @@ class Hdf5Mpi < Formula
         return 0;
       }
     C
-    system bin"h5pcc", "test.c"
-    assert_equal version.major_minor_patch.to_s, shell_output(".a.out").chomp
+    system bin/"h5pcc", "test.c"
+    assert_equal version.major_minor_patch.to_s, shell_output("./a.out").chomp
 
-    (testpath"test.f90").write <<~FORTRAN
+    (testpath/"test.f90").write <<~FORTRAN
       use hdf5
       integer(hid_t) :: f, dspace, dset
       integer(hsize_t), dimension(2) :: dims = [2, 2]
       integer :: error = 0, major, minor, rel
 
       call h5open_f (error)
-      if (error = 0) call abort
+      if (error /= 0) call abort
       call h5fcreate_f ("test.h5", H5F_ACC_TRUNC_F, f, error)
-      if (error = 0) call abort
+      if (error /= 0) call abort
       call h5screate_simple_f (2, dims, dspace, error)
-      if (error = 0) call abort
+      if (error /= 0) call abort
       call h5dcreate_f (f, "data", H5T_NATIVE_INTEGER, dspace, dset, error)
-      if (error = 0) call abort
+      if (error /= 0) call abort
       call h5dclose_f (dset, error)
-      if (error = 0) call abort
+      if (error /= 0) call abort
       call h5sclose_f (dspace, error)
-      if (error = 0) call abort
+      if (error /= 0) call abort
       call h5fclose_f (f, error)
-      if (error = 0) call abort
+      if (error /= 0) call abort
       call h5close_f (error)
-      if (error = 0) call abort
+      if (error /= 0) call abort
       CALL h5get_libversion_f (major, minor, rel, error)
-      if (error = 0) call abort
+      if (error /= 0) call abort
       write (*,"(I0,'.',I0,'.',I0)") major, minor, rel
       end
     FORTRAN
-    system bin"h5pfc", "test.f90"
-    assert_equal version.major_minor_patch.to_s, shell_output(".a.out").chomp
+    system bin/"h5pfc", "test.f90"
+    assert_equal version.major_minor_patch.to_s, shell_output("./a.out").chomp
 
-    # Make sure that it was built with SZIPlibaec
-    config = shell_output("#{bin}h5cc -showconfig")
-    assert_match %r{IO filters.*DECODE}, config
+    # Make sure that it was built with SZIP/libaec
+    config = shell_output("#{bin}/h5cc -showconfig")
+    assert_match %r{I/O filters.*DECODE}, config
   end
 end

@@ -1,13 +1,13 @@
 class Libclc < Formula
   desc "Implementation of the library requirements of the OpenCL C programming language"
-  homepage "https:libclc.llvm.org"
-  url "https:github.comllvmllvm-projectreleasesdownloadllvmorg-20.1.7libclc-20.1.7.src.tar.xz"
+  homepage "https://libclc.llvm.org/"
+  url "https://ghfast.top/https://github.com/llvm/llvm-project/releases/download/llvmorg-20.1.7/libclc-20.1.7.src.tar.xz"
   sha256 "22b29c1a9f18d8744e5a24f36ce6d4f198d523c126cd7182569c73806e1e1854"
   license "Apache-2.0" => { with: "LLVM-exception" }
 
   livecheck do
     url :stable
-    regex(^llvmorg[._-]v?(\d+(?:\.\d+)+)$i)
+    regex(/^llvmorg[._-]v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -25,14 +25,14 @@ class Libclc < Formula
   depends_on "spirv-llvm-translator" => :build
 
   def install
-    llvm_spirv = Formula["spirv-llvm-translator"].opt_bin"llvm-spirv"
+    llvm_spirv = Formula["spirv-llvm-translator"].opt_bin/"llvm-spirv"
     system "cmake", "-S", ".", "-B", "build",
                     "-DLLVM_SPIRV=#{llvm_spirv}",
                     *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 
-    inreplace share"pkgconfiglibclc.pc", prefix, opt_prefix
+    inreplace share/"pkgconfig/libclc.pc", prefix, opt_prefix
   end
 
   test do
@@ -40,17 +40,17 @@ class Libclc < Formula
       -target nvptx--nvidiacl
       -c -emit-llvm
       -Xclang -mlink-bitcode-file
-      -Xclang #{share}clcnvptx--nvidiacl.bc
+      -Xclang #{share}/clc/nvptx--nvidiacl.bc
     ]
     llvm_bin = Formula["llvm"].opt_bin
 
-    (testpath"add_sat.cl").write <<~EOS
+    (testpath/"add_sat.cl").write <<~EOS
       __kernel void foo(__global char *a, __global char *b, __global char *c) {
         *a = add_sat(*b, *c);
       }
     EOS
 
-    system llvm_bin"clang", *clang_args, ".add_sat.cl"
-    assert_match "@llvm.sadd.sat.i8", shell_output("#{llvm_bin}llvm-dis .add_sat.bc -o -")
+    system llvm_bin/"clang", *clang_args, "./add_sat.cl"
+    assert_match "@llvm.sadd.sat.i8", shell_output("#{llvm_bin}/llvm-dis ./add_sat.bc -o -")
   end
 end

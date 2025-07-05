@@ -1,10 +1,10 @@
 class SwiftProtobuf < Formula
   desc "Plugin and runtime library for using protobuf with Swift"
-  homepage "https:github.comappleswift-protobuf"
-  url "https:github.comappleswift-protobufarchiverefstags1.30.0.tar.gz"
+  homepage "https://github.com/apple/swift-protobuf"
+  url "https://ghfast.top/https://github.com/apple/swift-protobuf/archive/refs/tags/1.30.0.tar.gz"
   sha256 "fbcdcca3aae7ca11756d4d183cb7b886c0e95bea4f516352f3a6aad77270b091"
   license "Apache-2.0"
-  head "https:github.comappleswift-protobuf.git", branch: "main"
+  head "https://github.com/apple/swift-protobuf.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "6a479553914a58e9b3d2b314f2ce472b8e894a3eb601846aa14d58746915b6fd"
@@ -26,12 +26,12 @@ class SwiftProtobuf < Formula
       ["--static-swift-stdlib"]
     end
     system "swift", "build", *args, "-c", "release"
-    bin.install ".buildreleaseprotoc-gen-swift"
-    doc.install "DocumentationPLUGIN.md"
+    bin.install ".build/release/protoc-gen-swift"
+    doc.install "Documentation/PLUGIN.md"
   end
 
   test do
-    (testpath"test.proto").write <<~PROTO
+    (testpath/"test.proto").write <<~PROTO
       syntax = "proto3";
       enum Flavor {
         CHOCOLATE = 0;
@@ -42,7 +42,7 @@ class SwiftProtobuf < Formula
         Flavor flavor = 2;
       }
     PROTO
-    system Formula["protobuf"].opt_bin"protoc", "test.proto", "--swift_out=."
-    assert_path_exists testpath"test.pb.swift"
+    system Formula["protobuf"].opt_bin/"protoc", "test.proto", "--swift_out=."
+    assert_path_exists testpath/"test.pb.swift"
   end
 end

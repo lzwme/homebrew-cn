@@ -1,7 +1,7 @@
 class Mapcrafter < Formula
   desc "Minecraft map renderer"
-  homepage "https:github.commapcraftermapcrafter"
-  url "https:github.commapcraftermapcrafterarchiverefstagsv.2.4.tar.gz"
+  homepage "https://github.com/mapcrafter/mapcrafter"
+  url "https://ghfast.top/https://github.com/mapcrafter/mapcrafter/archive/refs/tags/v.2.4.tar.gz"
   sha256 "f3b698d34c02c2da0c4d2b7f4e251bcba058d0d1e4479c0418eeba264d1c8dae"
   license "GPL-3.0-or-later"
   revision 14
@@ -24,9 +24,9 @@ class Mapcrafter < Formula
   depends_on "libpng"
 
   # Fix build with `boost` 1.85.0 using open PR.
-  # PR ref: https:github.commapcraftermapcrafterpull394
+  # PR ref: https://github.com/mapcrafter/mapcrafter/pull/394
   patch do
-    url "https:github.commapcraftermapcraftercommit28dbc86803650eb487782e937cbb4513dbd0a650.patch?full_index=1"
+    url "https://github.com/mapcrafter/mapcrafter/commit/28dbc86803650eb487782e937cbb4513dbd0a650.patch?full_index=1"
     sha256 "55edc91aee2fbe0727282d8b3e967ac654455e7fb4ca424c490caf7556eca179"
   end
 
@@ -36,13 +36,13 @@ class Mapcrafter < Formula
                     "-DCMAKE_POLICY_VERSION_MINIMUM=3.5",
                     "-DOPT_SKIP_TESTS=ON",
                     "-DJPEG_INCLUDE_DIR=#{Formula["jpeg-turbo"].opt_include}",
-                    "-DJPEG_LIBRARY=#{Formula["jpeg-turbo"].opt_libshared_library("libjpeg")}",
+                    "-DJPEG_LIBRARY=#{Formula["jpeg-turbo"].opt_lib/shared_library("libjpeg")}",
                     *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end
 
   test do
-    assert_match(Mapcrafter, shell_output("#{bin}mapcrafter --version"))
+    assert_match(/Mapcrafter/, shell_output("#{bin}/mapcrafter --version"))
   end
 end

@@ -1,10 +1,10 @@
 class Simg2img < Formula
   desc "Tool to convert Android sparse images to raw images and back"
-  homepage "https:github.comanestisbandroid-simg2img"
-  url "https:github.comanestisbandroid-simg2imgarchiverefstags1.1.5.tar.gz"
+  homepage "https://github.com/anestisb/android-simg2img"
+  url "https://ghfast.top/https://github.com/anestisb/android-simg2img/archive/refs/tags/1.1.5.tar.gz"
   sha256 "d9e9ec2c372dbbb69b9f90b4da24c89b092689e45cd5f74f0e13003bc367f3fc"
   license "Apache-2.0"
-  head "https:github.comanestisbandroid-simg2img.git", branch: "master"
+  head "https://github.com/anestisb/android-simg2img.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "4379d5396841f588cdc104f78d544b13c8ffced771e3951a1f125832c254655e"
@@ -23,14 +23,14 @@ class Simg2img < Formula
   end
 
   test do
-    system "dd", "if=devzero", "of=512k-zeros.img", "bs=512", "count=1024"
-    assert_equal 524288, (testpath"512k-zeros.img").size?,
+    system "dd", "if=/dev/zero", "of=512k-zeros.img", "bs=512", "count=1024"
+    assert_equal 524288, (testpath/"512k-zeros.img").size?,
                  "Could not create 512k-zeros.img with 512KiB of zeros"
-    system bin"img2simg", "512k-zeros.img", "512k-zeros.simg"
-    assert_equal 44, (testpath"512k-zeros.simg").size?,
+    system bin/"img2simg", "512k-zeros.img", "512k-zeros.simg"
+    assert_equal 44, (testpath/"512k-zeros.simg").size?,
                  "Converting 512KiB of zeros did not result in a 44 byte simg"
-    system bin"simg2img", "512k-zeros.simg", "new-512k-zeros.img"
-    assert_equal 524288, (testpath"new-512k-zeros.img").size?,
+    system bin/"simg2img", "512k-zeros.simg", "new-512k-zeros.img"
+    assert_equal 524288, (testpath/"new-512k-zeros.img").size?,
                  "Converting a 44 byte simg did not result in 512KiB"
     system "diff", "512k-zeros.img", "new-512k-zeros.img"
   end

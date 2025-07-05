@@ -1,10 +1,10 @@
 class Pumba < Formula
   desc "Chaos testing tool for Docker"
-  homepage "https:github.comalexei-ledpumba"
-  url "https:github.comalexei-ledpumbaarchiverefstags0.11.6.tar.gz"
+  homepage "https://github.com/alexei-led/pumba"
+  url "https://ghfast.top/https://github.com/alexei-led/pumba/archive/refs/tags/0.11.6.tar.gz"
   sha256 "50df612ecd3cfb2b99c41732f5ed80018aea4e4cdaa8dfee2a60ea9ff9d474eb"
   license "Apache-2.0"
-  head "https:github.comalexei-ledpumba.git", branch: "master"
+  head "https://github.com/alexei-led/pumba.git", branch: "master"
 
   livecheck do
     url :stable
@@ -30,15 +30,15 @@ class Pumba < Formula
       -X main.branch=master
       -X main.buildTime=#{time.iso8601}
     ]
-    system "go", "build", *std_go_args(ldflags: goldflags), ".cmd"
+    system "go", "build", *std_go_args(ldflags: goldflags), "./cmd"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}pumba --version")
+    assert_match version.to_s, shell_output("#{bin}/pumba --version")
     # CI runs in a Docker container, so the test does not run as expected.
     return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"].present?
 
-    output = pipe_output("#{bin}pumba rm test-container 2>&1")
+    output = pipe_output("#{bin}/pumba rm test-container 2>&1")
     assert_match "Is the docker daemon running?", output
   end
 end

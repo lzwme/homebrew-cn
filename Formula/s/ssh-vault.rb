@@ -1,10 +1,10 @@
 class SshVault < Formula
-  desc "Encryptdecrypt using SSH keys"
-  homepage "https:ssh-vault.com"
-  url "https:github.comssh-vaultssh-vaultarchiverefstags1.1.0.tar.gz"
+  desc "Encrypt/decrypt using SSH keys"
+  homepage "https://ssh-vault.com/"
+  url "https://ghfast.top/https://github.com/ssh-vault/ssh-vault/archive/refs/tags/1.1.0.tar.gz"
   sha256 "3bde1ad4d1f8f0eb7ade501e4b12a89e83b6508675d46286462af1eccbda646c"
   license "BSD-3-Clause"
-  head "https:github.comssh-vaultssh-vault.git", branch: "main"
+  head "https://github.com/ssh-vault/ssh-vault.git", branch: "main"
 
   no_autobump! because: :requires_manual_review
 
@@ -34,19 +34,19 @@ class SshVault < Formula
   end
 
   test do
-    require "utilslinkage"
+    require "utils/linkage"
 
     test_key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINixf2m2nj8TDeazbWuemUY8ZHNg7znA7hVPN8TJLr2W"
-    (testpath"public_key").write test_key
-    cmd = "#{bin}ssh-vault f -k  #{testpath}public_key"
+    (testpath/"public_key").write test_key
+    cmd = "#{bin}/ssh-vault f -k  #{testpath}/public_key"
     assert_match "SHA256:hgIL5fEHz5zuOWY1CDlUuotdaUl4MvYG7vAgE4q4TzM", shell_output(cmd)
 
     if OS.linux?
       [
-        Formula["openssl@3"].opt_libshared_library("libssl"),
-        Formula["openssl@3"].opt_libshared_library("libcrypto"),
+        Formula["openssl@3"].opt_lib/shared_library("libssl"),
+        Formula["openssl@3"].opt_lib/shared_library("libcrypto"),
       ].each do |library|
-        assert Utils.binary_linked_to_library?(bin"ssh-vault", library),
+        assert Utils.binary_linked_to_library?(bin/"ssh-vault", library),
               "No linkage with #{library.basename}! Cargo is likely using a vendored version."
       end
     end

@@ -1,10 +1,10 @@
 class GolangciLintLangserver < Formula
   desc "Language server for `golangci-lint`"
-  homepage "https:github.comnametakegolangci-lint-langserver"
-  url "https:github.comnametakegolangci-lint-langserverarchiverefstagsv0.0.11.tar.gz"
+  homepage "https://github.com/nametake/golangci-lint-langserver"
+  url "https://ghfast.top/https://github.com/nametake/golangci-lint-langserver/archive/refs/tags/v0.0.11.tar.gz"
   sha256 "d9f1fc02861eeb9ce60c89e79be706d7ec636f653d5039a76857b18cb98875fb"
   license "MIT"
-  head "https:github.comnametakegolangci-lint-langserver.git", branch: "master"
+  head "https://github.com/nametake/golangci-lint-langserver.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "d5eafe079a2d42f9cd35c722bb93765f700b9c547595897a8f6b97c9905ff2a5"
@@ -36,7 +36,7 @@ class GolangciLintLangserver < Formula
     JSON
 
     input = "Content-Length: #{json.size}\r\n\r\n#{json}"
-    output = pipe_output(bin"golangci-lint-langserver", input)
-    assert_match(^Content-Length: \d+i, output)
+    output = pipe_output(bin/"golangci-lint-langserver", input)
+    assert_match(/^Content-Length: \d+/i, output)
   end
 end

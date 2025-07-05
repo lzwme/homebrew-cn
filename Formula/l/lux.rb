@@ -1,10 +1,10 @@
 class Lux < Formula
   desc "Fast and simple video downloader"
-  homepage "https:github.comiawia002lux"
-  url "https:github.comiawia002luxarchiverefstagsv0.24.1.tar.gz"
+  homepage "https://github.com/iawia002/lux"
+  url "https://ghfast.top/https://github.com/iawia002/lux/archive/refs/tags/v0.24.1.tar.gz"
   sha256 "69d4fe58c588cc6957b8682795210cd8154170ac51af83520c6b1334901c6d3d"
   license "MIT"
-  head "https:github.comiawia002lux.git", branch: "master"
+  head "https://github.com/iawia002/lux.git", branch: "master"
 
   bottle do
     rebuild 1
@@ -23,12 +23,12 @@ class Lux < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.comiawia002luxapp.version=#{version}
+      -X github.com/iawia002/lux/app.version=#{version}
     ]
     system "go", "build", *std_go_args(ldflags:)
   end
 
   test do
-    system bin"lux", "-i", "https:upload.wikimedia.orgwikipediacommonscc2GitHub_Invertocat_Logo.svg"
+    system bin/"lux", "-i", "https://upload.wikimedia.org/wikipedia/commons/c/c2/GitHub_Invertocat_Logo.svg"
   end
 end

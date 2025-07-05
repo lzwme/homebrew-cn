@@ -1,10 +1,10 @@
 class Railway < Formula
   desc "Develop and deploy code with zero configuration"
-  homepage "https:railway.com"
-  url "https:github.comrailwayappcliarchiverefstagsv4.5.4.tar.gz"
+  homepage "https://railway.com/"
+  url "https://ghfast.top/https://github.com/railwayapp/cli/archive/refs/tags/v4.5.4.tar.gz"
   sha256 "c92c182fdb5ae9d29b481f2ed071dfd60632c46980a9c15a07e9ce1d2fd820c0"
   license "MIT"
-  head "https:github.comrailwayappcli.git", branch: "master"
+  head "https://github.com/railwayapp/cli.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "9bca0ea6380c5197f88ef81c127d331677a572c5c4c15cccb594cf4b26c6aebf"
@@ -21,13 +21,13 @@ class Railway < Formula
   def install
     system "cargo", "install", *std_cargo_args
 
-    generate_completions_from_executable(bin"railway", "completion")
+    generate_completions_from_executable(bin/"railway", "completion")
   end
 
   test do
-    output = shell_output("#{bin}railway init 2>&1", 1).chomp
+    output = shell_output("#{bin}/railway init 2>&1", 1).chomp
     assert_match "Unauthorized. Please login with `railway login`", output
 
-    assert_equal "railway #{version}", shell_output("#{bin}railway --version").strip
+    assert_equal "railway #{version}", shell_output("#{bin}/railway --version").strip
   end
 end

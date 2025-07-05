@@ -2,11 +2,11 @@ cask "shuttle" do
   version "1.2.9"
   sha256 "0b80bf62922291da391098f979683e69cc7b65c4bdb986a431e3f1d9175fba20"
 
-  url "https:github.comfitztrevshuttlereleasesdownloadv#{version}Shuttle.zip",
-      verified: "github.comfitztrevshuttle"
+  url "https://ghfast.top/https://github.com/fitztrev/shuttle/releases/download/v#{version}/Shuttle.zip",
+      verified: "github.com/fitztrev/shuttle/"
   name "Shuttle"
   desc "Simple shortcut menu"
-  homepage "https:fitztrev.github.ioshuttle"
+  homepage "https://fitztrev.github.io/shuttle/"
 
   no_autobump! because: :requires_manual_review
 
@@ -14,7 +14,7 @@ cask "shuttle" do
 
   app "Shuttle.app"
 
-  zap trash: "~.shuttle.json"
+  zap trash: "~/.shuttle.json"
 
   caveats do
     requires_rosetta

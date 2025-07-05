@@ -5,11 +5,11 @@ cask "cutter" do
   sha256 arm:   "172d364bb4d3bdbd7cedc12f32721003b3630536a96d1e6c382d9a453f483ea9",
          intel: "b88d772cbcce0186d36beca0e49ec58573e8c1d9af4be77dc3225467748f29ab"
 
-  url "https:github.comrizinorgcutterreleasesdownloadv#{version}Cutter-v#{version}-macOS-#{arch}.dmg",
-      verified: "github.comrizinorgcutter"
+  url "https://ghfast.top/https://github.com/rizinorg/cutter/releases/download/v#{version}/Cutter-v#{version}-macOS-#{arch}.dmg",
+      verified: "github.com/rizinorg/cutter/"
   name "Cutter"
   desc "Reverse engineering platform powered by Rizin"
-  homepage "https:cutter.re"
+  homepage "https://cutter.re/"
 
   livecheck do
     url :url
@@ -19,23 +19,23 @@ cask "cutter" do
   depends_on macos: ">= :sierra"
 
   app "Cutter.app"
-  # shim script (https:github.comHomebrewhomebrew-caskissues18809)
-  shimscript = "#{staged_path}cutter.wrapper.sh"
+  # shim script (https://github.com/Homebrew/homebrew-cask/issues/18809)
+  shimscript = "#{staged_path}/cutter.wrapper.sh"
   binary shimscript, target: "cutter"
 
   preflight do
     File.write shimscript, <<~EOS
-      #!binsh
-      '#{appdir}Cutter.appContentsMacOSCutter' "$@"
+      #!/bin/sh
+      '#{appdir}/Cutter.app/Contents/MacOS/Cutter' "$@"
     EOS
   end
 
   zap trash: [
-    "~.configrizin",
-    "~.localsharerizin",
-    "~LibraryApplication Supportcom.apple.sharedfilelistcom.apple.LSSharedFileList.ApplicationRecentDocumentsre.rizin.cutter.sfl*",
-    "~LibraryApplication Supportrizin",
-    "~LibraryPreferencesre.rizin.cutter.plist",
-    "~LibrarySaved Application Statere.rizin.cutter.savedState",
+    "~/.config/rizin",
+    "~/.local/share/rizin",
+    "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/re.rizin.cutter.sfl*",
+    "~/Library/Application Support/rizin",
+    "~/Library/Preferences/re.rizin.cutter.plist",
+    "~/Library/Saved Application State/re.rizin.cutter.savedState",
   ]
 end

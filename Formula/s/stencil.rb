@@ -1,10 +1,10 @@
 class Stencil < Formula
   desc "Modern living-template engine for evolving repositories"
-  homepage "https:stencil.rgst.io"
-  url "https:github.comrgst-iostencilarchiverefstagsv2.5.4.tar.gz"
+  homepage "https://stencil.rgst.io"
+  url "https://ghfast.top/https://github.com/rgst-io/stencil/archive/refs/tags/v2.5.4.tar.gz"
   sha256 "de0e3c817aa3591c8cb69dbf053249d49278086a28cde56d3dce478c74f15a64"
   license "Apache-2.0"
-  head "https:github.comrgst-iostencil.git", branch: "main"
+  head "https://github.com/rgst-io/stencil.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "287c158d5a3026588e2059c8aa4f8f5ceaa77903ab97de4b0f38c028bef729f6"
@@ -21,16 +21,16 @@ class Stencil < Formula
   def install
     ldflags = %W[
       -s -w
-      -X go.rgst.iostencilv2internalversion.version=#{version}
-      -X go.rgst.iostencilv2internalversion.builtBy=#{tap.user}
+      -X go.rgst.io/stencil/v2/internal/version.version=#{version}
+      -X go.rgst.io/stencil/v2/internal/version.builtBy=#{tap.user}
     ]
 
-    system "go", "build", *std_go_args(ldflags:), ".cmdstencil"
+    system "go", "build", *std_go_args(ldflags:), "./cmd/stencil"
   end
 
   test do
-    (testpath"service.yaml").write "name: test"
-    system bin"stencil"
-    assert_path_exists testpath"stencil.lock"
+    (testpath/"service.yaml").write "name: test"
+    system bin/"stencil"
+    assert_path_exists testpath/"stencil.lock"
   end
 end

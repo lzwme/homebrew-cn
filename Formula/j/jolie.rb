@@ -1,7 +1,7 @@
 class Jolie < Formula
   desc "Service-oriented programming language"
-  homepage "https:www.jolie-lang.org"
-  url "https:github.comjoliejoliereleasesdownloadv1.13.1jolie-1.13.1.jar"
+  homepage "https://www.jolie-lang.org/"
+  url "https://ghfast.top/https://github.com/jolie/jolie/releases/download/v1.13.1/jolie-1.13.1.jar"
   sha256 "957db44873a0b1207a7f40e8911e4c384e02d2aabd81afa444b379acc6da8628"
   license "LGPL-2.1-only"
 
@@ -12,18 +12,18 @@ class Jolie < Formula
   depends_on "openjdk"
 
   def install
-    system Formula["openjdk"].opt_bin"java",
+    system Formula["openjdk"].opt_bin/"java",
     "-jar", "jolie-#{version}.jar",
     "--jolie-home", libexec,
-    "--jolie-launchers", libexec"bin"
-    bin.install Dir["#{libexec}bin*"]
-    bin.env_script_all_files libexec"bin",
+    "--jolie-launchers", libexec/"bin"
+    bin.install Dir["#{libexec}/bin/*"]
+    bin.env_script_all_files libexec/"bin",
       JOLIE_HOME: "${JOLIE_HOME:-#{libexec}}",
       JAVA_HOME:  "${JAVA_HOME:-#{Formula["openjdk"].opt_prefix}}"
   end
 
   test do
-    file = testpath"test.ol"
+    file = testpath/"test.ol"
     file.write <<~EOS
       from console import Console, ConsoleIface
 
@@ -35,12 +35,12 @@ class Jolie < Formula
         embed Console in Console
 
         inputPort In {
-          location: "local:testPort"
+          location: "local://testPort"
           interfaces: PowTwoInterface
         }
 
         outputPort Self {
-          location: "local:testPort"
+          location: "local://testPort"
           interfaces: PowTwoInterface
         }
 
@@ -56,7 +56,7 @@ class Jolie < Formula
       }
     EOS
 
-    out = shell_output("#{bin}jolie #{file}").strip
+    out = shell_output("#{bin}/jolie #{file}").strip
 
     assert_equal "16", out
   end

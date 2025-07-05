@@ -1,10 +1,10 @@
 class Amass < Formula
   desc "In-depth attack surface mapping and asset discovery"
-  homepage "https:owasp.orgwww-project-amass"
-  url "https:github.comowasp-amassamassarchiverefstagsv4.2.0.tar.gz"
+  homepage "https://owasp.org/www-project-amass/"
+  url "https://ghfast.top/https://github.com/owasp-amass/amass/archive/refs/tags/v4.2.0.tar.gz"
   sha256 "cc6b88593972e7078b73f07a0cef2cd0cd3702694cbc1f727829340a3d33425c"
   license "Apache-2.0"
-  head "https:github.comowasp-amassamass.git", branch: "master"
+  head "https://github.com/owasp-amass/amass.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -22,11 +22,11 @@ class Amass < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), ".cmdamass"
+    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/amass"
   end
 
   test do
-    assert_match "github.com", shell_output("#{bin}amass intel -asn 36459 -include Google")
-    assert_match version.to_s, shell_output("#{bin}amass --version 2>&1")
+    assert_match "github.com", shell_output("#{bin}/amass intel -asn 36459 -include Google")
+    assert_match version.to_s, shell_output("#{bin}/amass --version 2>&1")
   end
 end

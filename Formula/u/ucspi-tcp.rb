@@ -1,13 +1,13 @@
 class UcspiTcp < Formula
   desc "Tools for building TCP client-server applications"
-  homepage "https:cr.yp.toucspi-tcp.html"
-  url "https:cr.yp.toucspi-tcpucspi-tcp-0.88.tar.gz"
+  homepage "https://cr.yp.to/ucspi-tcp.html"
+  url "https://cr.yp.to/ucspi-tcp/ucspi-tcp-0.88.tar.gz"
   sha256 "4a0615cab74886f5b4f7e8fd32933a07b955536a3476d74ea087a3ea66a23e9c"
   license :public_domain
 
   livecheck do
-    url "https:cr.yp.toucspi-tcpinstall.html"
-    regex(href=.*?ucspi-tcp[._-]v?(\d+(?:\.\d+)+)\.ti)
+    url "https://cr.yp.to/ucspi-tcp/install.html"
+    regex(/href=.*?ucspi-tcp[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -32,9 +32,9 @@ class UcspiTcp < Formula
   end
 
   # IPv6 patch
-  # Used to be https:www.fefe.deucspiucspi-tcp-0.88-ipv6.diff19.bz2
+  # Used to be https://www.fefe.de/ucspi/ucspi-tcp-0.88-ipv6.diff19.bz2
   patch do
-    url "https:raw.githubusercontent.comhomebrewpatches2b3e4daucspi-tcppatch-0.88-ipv6.diff"
+    url "https://ghfast.top/https://raw.githubusercontent.com/homebrew/patches/2b3e4da/ucspi-tcp/patch-0.88-ipv6.diff"
     sha256 "c2d6ce17c87397253f298cc28499da873efe23afe97e855bdcf34ae66374036a"
   end
 
@@ -47,17 +47,17 @@ class UcspiTcp < Formula
     # either ``make'' as root or ``make'' while you're in one or more supplementary groups."
     inreplace "Makefile", "( cat warn-shsgr; exit 1 )", "cat warn-shsgr" if OS.linux?
 
-    (buildpath"conf-home").unlink
-    (buildpath"conf-home").write prefix
+    (buildpath/"conf-home").unlink
+    (buildpath/"conf-home").write prefix
 
     system "make"
     bin.mkpath
     system "make", "setup"
-    share.install prefix"man"
+    share.install prefix/"man"
   end
 
   test do
-    assert_match(usage: tcpserver,
-      shell_output("#{bin}tcpserver 2>&1", 100))
+    assert_match(/usage: tcpserver/,
+      shell_output("#{bin}/tcpserver 2>&1", 100))
   end
 end

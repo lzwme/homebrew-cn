@@ -2,9 +2,9 @@ cask "font-zed-sans" do
   version "1.2.0"
   sha256 "eb861c35c6f1639a674793f71135b1370ffefc9bd6e69a5ff5fffa2659f150c1"
 
-  url "https:github.comzed-industrieszed-fontsreleasesdownload#{version}zed-sans-#{version}.zip"
+  url "https://ghfast.top/https://github.com/zed-industries/zed-fonts/releases/download/#{version}/zed-sans-#{version}.zip"
   name "Zed Sans"
-  homepage "https:github.comzed-industrieszed-fonts"
+  homepage "https://github.com/zed-industries/zed-fonts"
 
   livecheck do
     url :url

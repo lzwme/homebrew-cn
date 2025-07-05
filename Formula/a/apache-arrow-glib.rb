@@ -1,11 +1,11 @@
 class ApacheArrowGlib < Formula
   desc "GLib bindings for Apache Arrow"
-  homepage "https:arrow.apache.org"
-  url "https:www.apache.orgdyncloser.lua?path=arrowarrow-20.0.0apache-arrow-20.0.0.tar.gz"
-  mirror "https:archive.apache.orgdistarrowarrow-20.0.0apache-arrow-20.0.0.tar.gz"
+  homepage "https://arrow.apache.org/"
+  url "https://www.apache.org/dyn/closer.lua?path=arrow/arrow-20.0.0/apache-arrow-20.0.0.tar.gz"
+  mirror "https://archive.apache.org/dist/arrow/arrow-20.0.0/apache-arrow-20.0.0.tar.gz"
   sha256 "89efbbf852f5a1f79e9c99ab4c217e2eb7f991837c005cba2d4a2fbd35fad212"
   license "Apache-2.0"
-  head "https:github.comapachearrow.git", branch: "main"
+  head "https://github.com/apache/arrow.git", branch: "main"
 
   livecheck do
     formula "apache-arrow"
@@ -37,8 +37,8 @@ class ApacheArrowGlib < Formula
   end
 
   test do
-    (testpath"test.c").write <<~C
-      #include <arrow-glibarrow-glib.h>
+    (testpath/"test.c").write <<~C
+      #include <arrow-glib/arrow-glib.h>
       int main(void) {
         GArrowNullArray *array = garrow_null_array_new(10);
         g_object_unref(array);
@@ -48,6 +48,6 @@ class ApacheArrowGlib < Formula
 
     flags = shell_output("pkgconf --cflags --libs arrow-glib gobject-2.0").chomp.split
     system ENV.cc, "test.c", "-o", "test", *flags
-    system ".test"
+    system "./test"
   end
 end

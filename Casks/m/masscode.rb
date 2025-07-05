@@ -5,15 +5,15 @@ cask "masscode" do
   sha256 arm:   "07935b2d734dd82ea65a977f2b6f388ed2ceb1818c85fbb890bf369f19bd1916",
          intel: "ca1ac865b7aedb8a765799a67927f3b59e623efa9a3fbcafb34a7189ae063b10"
 
-  url "https:github.commassCodeIOmassCodereleasesdownloadv#{version}massCode-#{version}#{arch}.dmg",
-      verified: "github.commassCodeIOmassCode"
+  url "https://ghfast.top/https://github.com/massCodeIO/massCode/releases/download/v#{version}/massCode-#{version}#{arch}.dmg",
+      verified: "github.com/massCodeIO/massCode/"
   name "massCode"
   desc "Code snippets manager for developers"
-  homepage "https:masscode.io"
+  homepage "https://masscode.io/"
 
   livecheck do
     url :url
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -21,9 +21,9 @@ cask "masscode" do
   app "massCode.app"
 
   zap trash: [
-        "~LibraryApplication SupportmassCode",
-        "~LibraryPreferencesio.masscode.app.plist",
-        "~LibrarySaved Application Stateio.masscode.app.savedState",
+        "~/Library/Application Support/massCode",
+        "~/Library/Preferences/io.masscode.app.plist",
+        "~/Library/Saved Application State/io.masscode.app.savedState",
       ],
-      rmdir: "~massCode"
+      rmdir: "~/massCode"
 end

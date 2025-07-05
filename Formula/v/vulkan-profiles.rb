@@ -1,24 +1,24 @@
 class VulkanProfiles < Formula
   desc "Tools for Vulkan profiles"
-  homepage "https:github.comKhronosGroupVulkan-Profiles"
-  url "https:github.comKhronosGroupVulkan-Profilesarchiverefstagsv1.4.320.tar.gz"
-  sha256 "3b82e41b3181aba9d016da96b39e514522ee804f6de700daeb0c0a7537b58a8d"
+  homepage "https://github.com/KhronosGroup/Vulkan-Profiles"
+  url "https://ghfast.top/https://github.com/KhronosGroup/Vulkan-Profiles/archive/refs/tags/v1.4.321.tar.gz"
+  sha256 "24bac474fc14f15a6dfe1d5b345d4d1f8058dbcfc47fffc2120a0a06fbe70ca2"
   license "Apache-2.0"
-  head "https:github.comKhronosGroupVulkan-Profiles.git", branch: "main"
+  head "https://github.com/KhronosGroup/Vulkan-Profiles.git", branch: "main"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "d48888b40e099b1087a0d195b52a7e072e460c9fe9a0e0f1b237b4365c440816"
-    sha256 cellar: :any,                 arm64_sonoma:  "51de21339056a016cdbc53e8ee2c3448039d19f883e65bb2b5be9ed67296abf8"
-    sha256 cellar: :any,                 arm64_ventura: "4bf719c2d170ac6f85d801419ed58a451d8ccca297e2e01a31e7ac9f20480206"
-    sha256 cellar: :any,                 sonoma:        "ab350e8db914557a2d30f216c388ebc0a5fe3eba2795aaaeb1bedebade4eaedf"
-    sha256 cellar: :any,                 ventura:       "bbe2fb887d9c50a463eac8761662543a9ff1e5a087215eef956dc256ac0e2c39"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e7ca17245c581d6c4cd68591cc0a2137dc5a537f83c0082c30362b10076be5ca"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2370b041175138f396a9f9478fb0369cd144a7c4d9ab792f41c8fd0addf1bf19"
+    sha256 cellar: :any,                 arm64_sequoia: "a6b4d7aa6fb4a06b6663d4d28970ed523f4b788c8f2776d364ac9c48a6bbec92"
+    sha256 cellar: :any,                 arm64_sonoma:  "9455caddefb5c462f92446f2f537b7d67c8744d21c265516795d9114f1c84dcb"
+    sha256 cellar: :any,                 arm64_ventura: "55b98f0d03192a814b41f9ea287ad2005f764f91ceb864c4b616398edc4df861"
+    sha256 cellar: :any,                 sonoma:        "02db7cc2d7be8ca3ae4c84784d4544351153c33837a797eedc7d7b800413d894"
+    sha256 cellar: :any,                 ventura:       "94df36eb00e40da139eb6048cdd75b6d0b1319299d78dd4b8f67d85c6a7c74e9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1168b3ca3501a40f2c355ca29677dc6424312702ecb0f7e1acfc88fb56ad6208"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ff11428cbd0a967dbccc16ff34afd147ce6fbf25f966f7ba5ed3257716521a84"
   end
 
   depends_on "cmake" => :build
@@ -44,8 +44,8 @@ class VulkanProfiles < Formula
     inreplace "CMakeLists.txt",
               "find_package(jsoncpp REQUIRED CONFIG)",
               "find_package(PkgConfig REQUIRED QUIET)\npkg_search_module(jsoncpp REQUIRED jsoncpp)"
-    inreplace "layerCMakeLists.txt", "jsoncpp_static", "jsoncpp"
-    inreplace "profilestestCMakeLists.txt", "jsoncpp_static", "jsoncpp"
+    inreplace "layer/CMakeLists.txt", "jsoncpp_static", "jsoncpp"
+    inreplace "profiles/test/CMakeLists.txt", "jsoncpp_static", "jsoncpp"
 
     system "cmake", "-S", ".", "-B", "build",
                     "-DVULKAN_HEADERS_INSTALL_DIR=#{Formula["vulkan-headers"].prefix}",
@@ -62,7 +62,7 @@ class VulkanProfiles < Formula
   def caveats
     <<~EOS
       In order to use the provided layer in a Vulkan application, you may need to place it in the environment with
-        export VK_LAYER_PATH=#{opt_share}vulkanexplicit_layer.d
+        export VK_LAYER_PATH=#{opt_share}/vulkan/explicit_layer.d
     EOS
   end
 
@@ -70,9 +70,9 @@ class VulkanProfiles < Formula
     # FIXME: when GitHub Actions Intel Mac runners support the use of Metal,
     # remove this weakened version and conditional
     if OS.mac? && Hardware::CPU.intel?
-      assert_path_exists share"vulkanexplicit_layer.dVkLayer_khronos_profiles.json"
+      assert_path_exists share/"vulkan/explicit_layer.d/VkLayer_khronos_profiles.json"
     else
-      ENV.prepend_path "VK_LAYER_PATH", share"vulkanexplicit_layer.d"
+      ENV.prepend_path "VK_LAYER_PATH", share/"vulkan/explicit_layer.d"
 
       actual = shell_output("vulkaninfo")
       %w[VK_EXT_layer_settings VK_EXT_tooling_info].each do |expected|

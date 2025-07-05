@@ -1,15 +1,15 @@
 class GccAT12 < Formula
   desc "GNU compiler collection"
-  homepage "https:gcc.gnu.org"
-  # TODO: Remove maximum_macos if Xcode 16 support is added to https:github.comiainsgcc-12-branch
-  url "https:ftp.gnu.orggnugccgcc-12.4.0gcc-12.4.0.tar.xz"
-  mirror "https:ftpmirror.gnu.orggccgcc-12.4.0gcc-12.4.0.tar.xz"
+  homepage "https://gcc.gnu.org/"
+  # TODO: Remove maximum_macos if Xcode 16 support is added to https://github.com/iains/gcc-12-branch
+  url "https://ftp.gnu.org/gnu/gcc/gcc-12.4.0/gcc-12.4.0.tar.xz"
+  mirror "https://ftpmirror.gnu.org/gcc/gcc-12.4.0/gcc-12.4.0.tar.xz"
   sha256 "704f652604ccbccb14bdabf3478c9511c89788b12cb3bbffded37341916a9175"
   license "GPL-3.0-or-later" => { with: "GCC-exception-3.1" }
 
   livecheck do
     url :stable
-    regex(%r{href=["']?gcc[._-]v?(12(?:\.\d+)+)(?:?["' >]|\.t)}i)
+    regex(%r{href=["']?gcc[._-]v?(12(?:\.\d+)+)(?:/?["' >]|\.t)}i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -29,8 +29,8 @@ class GccAT12 < Formula
   # out of the box on Xcode-only systems due to an incorrect sysroot.
   pour_bottle? only_if: :clt_installed
 
-  # https:github.comiainsgcc-12-branchissues24
-  # https:github.comiainsgcc-12-branchissues25
+  # https://github.com/iains/gcc-12-branch/issues/24
+  # https://github.com/iains/gcc-12-branch/issues/25
   depends_on maximum_macos: [:ventura, :build] # Xcode < 16
   depends_on "gmp"
   depends_on "isl"
@@ -48,9 +48,9 @@ class GccAT12 < Formula
   cxxstdlib_check :skip
 
   # Branch from the Darwin maintainer of GCC, with a few generic fixes and
-  # Apple Silicon support, located at https:github.comiainsgcc-12-branch
+  # Apple Silicon support, located at https://github.com/iains/gcc-12-branch
   patch do
-    url "https:raw.githubusercontent.comHomebrewformula-patchesca7047dad38f16fb02eb63bd4447e17d0b68b3bbgccgcc-12.4.0.diff"
+    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/ca7047dad38f16fb02eb63bd4447e17d0b68b3bb/gcc/gcc-12.4.0.diff"
     sha256 "c0e8e94fbf65a6ce13286e7f13beb5a1d84b182a610489026ce3e2420fc3d45c"
   end
 
@@ -68,7 +68,7 @@ class GccAT12 < Formula
 
     args = %W[
       --prefix=#{opt_prefix}
-      --libdir=#{opt_lib}gcc#{version.major}
+      --libdir=#{opt_lib}/gcc/#{version.major}
       --disable-nls
       --enable-checking=release
       --with-gcc-major-version-only
@@ -88,14 +88,14 @@ class GccAT12 < Formula
       cpu = Hardware::CPU.arm? ? "aarch64" : "x86_64"
       args << "--build=#{cpu}-apple-darwin#{OS.kernel_version.major}"
 
-      # System headers may not be in usrinclude
+      # System headers may not be in /usr/include
       sdk = MacOS.sdk_path_if_needed
       args << "--with-sysroot=#{sdk}" if sdk
 
       # Work around a bug in Xcode 15's new linker (FB13038083)
       if DevelopmentTools.clang_build_version >= 1500
-        toolchain_path = "LibraryDeveloperCommandLineTools"
-        args << "--with-ld=#{toolchain_path}usrbinld-classic"
+        toolchain_path = "/Library/Developer/CommandLineTools"
+        args << "--with-ld=#{toolchain_path}/usr/bin/ld-classic"
       end
 
       make_args = []
@@ -103,16 +103,16 @@ class GccAT12 < Formula
       # Fix cc1: error while loading shared libraries: libisl.so.15
       args << "--with-boot-ldflags=-static-libstdc++ -static-libgcc #{ENV.ldflags}"
 
-      # Fix Linux error: gnustubs-32.h: No such file or directory.
+      # Fix Linux error: gnu/stubs-32.h: No such file or directory.
       args << "--disable-multilib"
 
       # Enable to PIE by default to match what the host GCC uses
       args << "--enable-default-pie"
 
       # Change the default directory name for 64-bit libraries to `lib`
-      # https:stackoverflow.coma54038769
-      inreplace "gccconfigi386t-linux64", "m64=..lib64", "m64="
-      inreplace "gccconfigaarch64t-aarch64-linux", "lp64=..lib64", "lp64="
+      # https://stackoverflow.com/a/54038769
+      inreplace "gcc/config/i386/t-linux64", "m64=../lib64", "m64="
+      inreplace "gcc/config/aarch64/t-aarch64-linux", "lp64=../lib64", "lp64="
 
       make_args = %W[
         BOOT_CFLAGS=-I#{Formula["zlib"].opt_include}
@@ -121,7 +121,7 @@ class GccAT12 < Formula
     end
 
     mkdir "build" do
-      system "..configure", *args
+      system "../configure", *args
       system "make", *make_args
 
       # Do not strip the binaries on macOS, it makes them unsuitable
@@ -131,8 +131,8 @@ class GccAT12 < Formula
       # To make sure GCC does not record cellar paths, we configure it with
       # opt_prefix as the prefix. Then we use DESTDIR to install into a
       # temporary location, then move into the cellar path.
-      system "make", install_target, "DESTDIR=#{Pathname.pwd}..instdir"
-      mv Dir[Pathname.pwd"..instdir#{opt_prefix}*"], prefix
+      system "make", install_target, "DESTDIR=#{Pathname.pwd}/../instdir"
+      mv Dir[Pathname.pwd/"../instdir/#{opt_prefix}/*"], prefix
     end
 
     # Handle conflicts between GCC formulae and avoid interfering
@@ -143,7 +143,7 @@ class GccAT12 < Formula
     rm_r(info)
 
     # Work around GCC install bug
-    # https:gcc.gnu.orgbugzillashow_bug.cgi?id=105664
+    # https://gcc.gnu.org/bugzilla/show_bug.cgi?id=105664
     rm_r(bin.glob("*-gcc-tmp"))
   end
 
@@ -151,12 +151,12 @@ class GccAT12 < Formula
     dir = File.dirname(file)
     ext = File.extname(file)
     base = File.basename(file, ext)
-    File.rename file, "#{dir}#{base}-#{suffix}#{ext}"
+    File.rename file, "#{dir}/#{base}-#{suffix}#{ext}"
   end
 
   def post_install
     if OS.linux?
-      gcc = bin"gcc-#{version.major}"
+      gcc = bin/"gcc-#{version.major}"
       libgcc = Pathname.new(Utils.safe_popen_read(gcc, "-print-libgcc-file-name")).parent
       raise "command failed: #{gcc} -print-libgcc-file-name" if $CHILD_STATUS.exitstatus.nonzero?
 
@@ -167,30 +167,30 @@ class GccAT12 < Formula
       crtdir = if glibc_installed
         glibc.opt_lib
       else
-        Pathname.new(Utils.safe_popen_read("usrbincc", "-print-file-name=crti.o")).parent
+        Pathname.new(Utils.safe_popen_read("/usr/bin/cc", "-print-file-name=crti.o")).parent
       end
-      ln_sf Dir[crtdir"*crt?.o"], libgcc
+      ln_sf Dir[crtdir/"*crt?.o"], libgcc
 
       # Create the GCC specs file
-      # See https:gcc.gnu.orgonlinedocsgccSpec-Files.html
+      # See https://gcc.gnu.org/onlinedocs/gcc/Spec-Files.html
 
       # Locate the specs file
-      specs = libgcc"specs"
+      specs = libgcc/"specs"
       ohai "Creating the GCC specs file: #{specs}"
       specs_orig = Pathname.new("#{specs}.orig")
       rm([specs_orig, specs].select(&:exist?))
 
-      system_header_dirs = ["#{HOMEBREW_PREFIX}include"]
+      system_header_dirs = ["#{HOMEBREW_PREFIX}/include"]
 
       if glibc_installed
-        # https:github.comLinuxbrewbrewissues724
+        # https://github.com/Linuxbrew/brew/issues/724
         system_header_dirs << glibc.opt_include
       else
         # Locate the native system header dirs if user uses system glibc
         target = Utils.safe_popen_read(gcc, "-print-multiarch").chomp
         raise "command failed: #{gcc} -print-multiarch" if $CHILD_STATUS.exitstatus.nonzero?
 
-        system_header_dirs += ["usrinclude#{target}", "usrinclude"]
+        system_header_dirs += ["/usr/include/#{target}", "/usr/include"]
       end
 
       # Save a backup of the default specs file
@@ -201,7 +201,7 @@ class GccAT12 < Formula
 
       # Set the library search path
       # For include path:
-      #   * `-isysroot #{HOMEBREW_PREFIX}nonexistent` prevents gcc searching built-in
+      #   * `-isysroot #{HOMEBREW_PREFIX}/nonexistent` prevents gcc searching built-in
       #     system header files.
       #   * `-idirafter <dir>` instructs gcc to search system header
       #     files after gcc internal header files.
@@ -212,22 +212,22 @@ class GccAT12 < Formula
       #     libraries. It is essential if there are multiple brewed gcc
       #     with different versions installed.
       #     Noted that it should only be passed for the `gcc@*` formulae.
-      #   * `-L#{HOMEBREW_PREFIX}lib` instructs gcc to find the rest
+      #   * `-L#{HOMEBREW_PREFIX}/lib` instructs gcc to find the rest
       #     brew libraries.
       # Note: *link will silently add #{libdir} first to the RPATH
-      libdir = HOMEBREW_PREFIX"libgcc#{version.major}"
+      libdir = HOMEBREW_PREFIX/"lib/gcc/#{version.major}"
       specs.write specs_string + <<~EOS
         *cpp_unique_options:
-        + -isysroot #{HOMEBREW_PREFIX}nonexistent #{system_header_dirs.map { |p| "-idirafter #{p}" }.join(" ")}
+        + -isysroot #{HOMEBREW_PREFIX}/nonexistent #{system_header_dirs.map { |p| "-idirafter #{p}" }.join(" ")}
 
         *link_libgcc:
-        #{glibc_installed ? "-nostdlib -L#{libgcc} -L#{glibc.opt_lib}" : "+"} -L#{libdir} -L#{HOMEBREW_PREFIX}lib
+        #{glibc_installed ? "-nostdlib -L#{libgcc} -L#{glibc.opt_lib}" : "+"} -L#{libdir} -L#{HOMEBREW_PREFIX}/lib
 
         *link:
-        + --dynamic-linker #{HOMEBREW_PREFIX}libld.so -rpath #{libdir}
+        + --dynamic-linker #{HOMEBREW_PREFIX}/lib/ld.so -rpath #{libdir}
 
         *homebrew_rpath:
-        -rpath #{HOMEBREW_PREFIX}lib
+        -rpath #{HOMEBREW_PREFIX}/lib
 
       EOS
       inreplace(specs, " %o ", "\\0%(homebrew_rpath) ")
@@ -235,7 +235,7 @@ class GccAT12 < Formula
   end
 
   test do
-    (testpath"hello-c.c").write <<~C
+    (testpath/"hello-c.c").write <<~C
       #include <stdio.h>
       int main()
       {
@@ -243,10 +243,10 @@ class GccAT12 < Formula
         return 0;
       }
     C
-    system bin"gcc-#{version.major}", "-o", "hello-c", "hello-c.c"
-    assert_equal "Hello, world!\n", shell_output(".hello-c")
+    system bin/"gcc-#{version.major}", "-o", "hello-c", "hello-c.c"
+    assert_equal "Hello, world!\n", shell_output("./hello-c")
 
-    (testpath"hello-cc.cc").write <<~CPP
+    (testpath/"hello-cc.cc").write <<~CPP
       #include <iostream>
       struct exception { };
       int main()
@@ -258,10 +258,10 @@ class GccAT12 < Formula
         return 0;
       }
     CPP
-    system bin"g++-#{version.major}", "-o", "hello-cc", "hello-cc.cc"
-    assert_equal "Hello, world!\n", shell_output(".hello-cc")
+    system bin/"g++-#{version.major}", "-o", "hello-cc", "hello-cc.cc"
+    assert_equal "Hello, world!\n", shell_output("./hello-cc")
 
-    (testpath"test.f90").write <<~FORTRAN
+    (testpath/"test.f90").write <<~FORTRAN
       integer,parameter::m=10000
       real::a(m), b(m)
       real::fact=0.5
@@ -272,7 +272,7 @@ class GccAT12 < Formula
       write(*,"(A)") "Done"
       end
     FORTRAN
-    system bin"gfortran-#{version.major}", "-o", "test", "test.f90"
-    assert_equal "Done\n", shell_output(".test")
+    system bin/"gfortran-#{version.major}", "-o", "test", "test.f90"
+    assert_equal "Done\n", shell_output("./test")
   end
 end

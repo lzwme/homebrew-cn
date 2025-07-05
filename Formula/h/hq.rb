@@ -1,13 +1,13 @@
 class Hq < Formula
   desc "Jq, but for HTML"
-  homepage "https:github.comorfhtml-query"
-  url "https:github.comorfhtml-queryarchiverefstagshtml-query-v1.2.2.tar.gz"
+  homepage "https://github.com/orf/html-query"
+  url "https://ghfast.top/https://github.com/orf/html-query/archive/refs/tags/html-query-v1.2.2.tar.gz"
   sha256 "0fdc12100c178cd2e5ae61c54e640ecb68533017fcee4845ceb4050d1e4fff60"
   license "MIT"
 
   livecheck do
     url :stable
-    regex(^html-query[._-]v?(\d+(?:\.\d+)+)$i)
+    regex(/^html-query[._-]v?(\d+(?:\.\d+)+)$/i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -33,11 +33,11 @@ class Hq < Formula
   end
 
   test do
-    html = testpath"test.html"
+    html = testpath/"test.html"
     html.write <<~EOS
-      <p class="foo">Test<p>
+      <p class="foo">Test</p>
     EOS
-    output = shell_output("#{bin}hq '{foo: .foo}' test.html")
+    output = shell_output("#{bin}/hq '{foo: .foo}' test.html")
     assert_match '{"foo":"Test"}', output
   end
 end

@@ -1,18 +1,18 @@
 class Mkvdts2ac3 < Formula
   desc "Convert DTS audio to AC3 within a matroska file"
-  homepage "https:github.comJakeWhartonmkvdts2ac3"
+  homepage "https://github.com/JakeWharton/mkvdts2ac3"
   license "Apache-2.0"
   revision 3
-  head "https:github.comJakeWhartonmkvdts2ac3.git", branch: "master"
+  head "https://github.com/JakeWharton/mkvdts2ac3.git", branch: "master"
 
   stable do
-    url "https:github.comJakeWhartonmkvdts2ac3archiverefstags1.6.0.tar.gz"
+    url "https://ghfast.top/https://github.com/JakeWharton/mkvdts2ac3/archive/refs/tags/1.6.0.tar.gz"
     sha256 "f9f070c00648c1ea062ac772b160c61d1b222ad2b7d30574145bf230e9288982"
 
     # patch with upstream fix for newer mkvtoolnix compatibility
-    # https:github.comJakeWhartonmkvdts2ac3commitf5008860e7ec2cbd950a0628c979f06387bf76d0
+    # https://github.com/JakeWharton/mkvdts2ac3/commit/f5008860e7ec2cbd950a0628c979f06387bf76d0
     patch do
-      url "https:raw.githubusercontent.comHomebrewformula-patches85fa66a9mkvdts2ac31.6.0.patch"
+      url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/85fa66a9/mkvdts2ac3/1.6.0.patch"
       sha256 "208393d170387092cb953b6cd32e8c0201ba73560e25ed4930e4e2af6f72e4d9"
     end
   end
@@ -32,6 +32,6 @@ class Mkvdts2ac3 < Formula
   end
 
   test do
-    system bin"mkvdts2ac3", "--version"
+    system bin/"mkvdts2ac3", "--version"
   end
 end

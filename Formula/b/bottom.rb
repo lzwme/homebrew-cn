@@ -1,10 +1,10 @@
 class Bottom < Formula
-  desc "Yet another cross-platform graphical processsystem monitor"
-  homepage "https:clementtsang.github.iobottom"
-  url "https:github.comClementTsangbottomarchiverefstags0.10.2.tar.gz"
+  desc "Yet another cross-platform graphical process/system monitor"
+  homepage "https://clementtsang.github.io/bottom/"
+  url "https://ghfast.top/https://github.com/ClementTsang/bottom/archive/refs/tags/0.10.2.tar.gz"
   sha256 "1db45fe9bc1fabb62d67bf8a1ea50c96e78ff4d2a5e25bf8ae8880e3ad5af80a"
   license "MIT"
-  head "https:github.comClementTsangbottom.git", branch: "main"
+  head "https://github.com/ClementTsang/bottom.git", branch: "main"
 
   # There can be a notable gap between when a version is tagged and a
   # corresponding release is created, so we check the "latest" release instead
@@ -35,15 +35,15 @@ class Bottom < Formula
 
     # Completion scripts are generated in the crate's build
     # directory, which includes a fingerprint hash. Try to locate it first
-    out_dir = "targettmpbottom"
-    bash_completion.install "#{out_dir}completionbtm.bash" => "btm"
-    fish_completion.install "#{out_dir}completionbtm.fish"
-    zsh_completion.install "#{out_dir}completion_btm"
-    man1.install "#{out_dir}manpagebtm.1"
+    out_dir = "target/tmp/bottom"
+    bash_completion.install "#{out_dir}/completion/btm.bash" => "btm"
+    fish_completion.install "#{out_dir}/completion/btm.fish"
+    zsh_completion.install "#{out_dir}/completion/_btm"
+    man1.install "#{out_dir}/manpage/btm.1"
   end
 
   test do
-    assert_equal "bottom #{version}", shell_output(bin"btm --version").chomp
-    assert_match "error: unexpected argument '--invalid' found", shell_output(bin"btm --invalid 2>&1", 2)
+    assert_equal "bottom #{version}", shell_output(bin/"btm --version").chomp
+    assert_match "error: unexpected argument '--invalid' found", shell_output(bin/"btm --invalid 2>&1", 2)
   end
 end

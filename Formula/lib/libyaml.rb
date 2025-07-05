@@ -1,7 +1,7 @@
 class Libyaml < Formula
   desc "YAML Parser"
-  homepage "https:github.comyamllibyaml"
-  url "https:github.comyamllibyamlarchiverefstags0.2.5.tar.gz"
+  homepage "https://github.com/yaml/libyaml"
+  url "https://ghfast.top/https://github.com/yaml/libyaml/archive/refs/tags/0.2.5.tar.gz"
   sha256 "fa240dbf262be053f3898006d502d514936c818e422afdcf33921c63bed9bf2e"
   license "MIT"
 
@@ -34,13 +34,13 @@ class Libyaml < Formula
   depends_on "libtool" => :build
 
   def install
-    system ".bootstrap"
-    system ".configure", "--disable-dependency-tracking", "--prefix=#{prefix}"
+    system "./bootstrap"
+    system "./configure", "--disable-dependency-tracking", "--prefix=#{prefix}"
     system "make", "install"
   end
 
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include <yaml.h>
 
       int main()
@@ -52,6 +52,6 @@ class Libyaml < Formula
       }
     C
     system ENV.cc, "test.c", "-L#{lib}", "-lyaml", "-o", "test"
-    system ".test"
+    system "./test"
   end
 end

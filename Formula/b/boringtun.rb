@@ -1,10 +1,10 @@
 class Boringtun < Formula
   desc "Userspace WireGuard implementation in Rust"
-  homepage "https:github.comcloudflareboringtun"
-  url "https:github.comcloudflareboringtunarchiverefstagsboringtun-0.6.0.tar.gz"
+  homepage "https://github.com/cloudflare/boringtun"
+  url "https://ghfast.top/https://github.com/cloudflare/boringtun/archive/refs/tags/boringtun-0.6.0.tar.gz"
   sha256 "3b9fbd7bbc76c5e98237b34b9790656fb38d09cb9ac417361bf5881e44581035"
   license "BSD-3-Clause"
-  head "https:github.comcloudflareboringtun.git", branch: "master"
+  head "https://github.com/cloudflare/boringtun.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "b99c028395d91a7117b2287ea874730fa564416df85b646a6a078543a139320a"
@@ -30,10 +30,10 @@ class Boringtun < Formula
   end
 
   test do
-    system bin"boringtun-cli", "--help"
-    assert_match "boringtun #{version}", shell_output("#{bin}boringtun-cli -V")
+    system bin/"boringtun-cli", "--help"
+    assert_match "boringtun #{version}", shell_output("#{bin}/boringtun-cli -V")
 
-    output = shell_output("#{bin}boringtun-cli utun --foreground 2>&1", 1)
+    output = shell_output("#{bin}/boringtun-cli utun --foreground 2>&1", 1)
     # requires `sudo` to start
     assert_match "Failed to initialize tunnel", output
   end

@@ -1,11 +1,11 @@
 class Mas < Formula
   desc "Mac App Store command-line interface"
-  homepage "https:github.commas-climas"
-  url "https:github.commas-climas.git",
+  homepage "https://github.com/mas-cli/mas"
+  url "https://github.com/mas-cli/mas.git",
       tag:      "v2.2.2",
       revision: "7dacbbf3fb9a622247c1b0b9f18a4a9c7673ee53"
   license "MIT"
-  head "https:github.commas-climas.git", branch: "main"
+  head "https://github.com/mas-cli/mas.git", branch: "main"
 
   livecheck do
     url :stable
@@ -27,15 +27,15 @@ class Mas < Formula
 
   def install
     ENV["MAS_DIRTY_INDICATOR"] = ""
-    system "scriptbuild", "homebrewcoremas", "--disable-sandbox"
-    bin.install ".buildreleasemas"
+    system "script/build", "homebrew/core/mas", "--disable-sandbox"
+    bin.install ".build/release/mas"
 
-    bash_completion.install "contribcompletionmas-completion.bash" => "mas"
-    fish_completion.install "contribcompletionmas.fish"
+    bash_completion.install "contrib/completion/mas-completion.bash" => "mas"
+    fish_completion.install "contrib/completion/mas.fish"
   end
 
   test do
-    assert_equal version.to_s, shell_output("#{bin}mas version").chomp
-    assert_includes shell_output("#{bin}mas info 497799835"), "Xcode"
+    assert_equal version.to_s, shell_output("#{bin}/mas version").chomp
+    assert_includes shell_output("#{bin}/mas info 497799835"), "Xcode"
   end
 end

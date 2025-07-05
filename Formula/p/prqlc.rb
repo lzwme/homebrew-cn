@@ -1,10 +1,10 @@
 class Prqlc < Formula
   desc "Simple, powerful, pipelined SQL replacement"
-  homepage "https:prql-lang.org"
-  url "https:github.comPRQLprqlarchiverefstags0.13.4.tar.gz"
+  homepage "https://prql-lang.org"
+  url "https://ghfast.top/https://github.com/PRQL/prql/archive/refs/tags/0.13.4.tar.gz"
   sha256 "1d214df7827659e9573afc339078e421e326953f7954ba0cba0b996e0d110531"
   license "Apache-2.0"
-  head "https:github.comprqlprql.git", branch: "main"
+  head "https://github.com/prql/prql.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "2b7e06cd44eb914925c510a1960a2dc4300256a8110e61a48c9376cc5db73f4d"
@@ -19,16 +19,16 @@ class Prqlc < Formula
   depends_on "rust" => :build
 
   def install
-    system "cargo", "install", "prqlc", *std_cargo_args(path: "prqlcprqlc")
+    system "cargo", "install", "prqlc", *std_cargo_args(path: "prqlc/prqlc")
 
-    generate_completions_from_executable(bin"prqlc", "shell-completion")
+    generate_completions_from_executable(bin/"prqlc", "shell-completion")
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}prqlc --version")
+    assert_match version.to_s, shell_output("#{bin}/prqlc --version")
 
     stdin = "from employees | filter has_dog | select salary"
-    stdout = pipe_output("#{bin}prqlc compile", stdin)
+    stdout = pipe_output("#{bin}/prqlc compile", stdin)
     assert_match "SELECT", stdout
   end
 end

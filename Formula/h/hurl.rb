@@ -1,10 +1,10 @@
 class Hurl < Formula
   desc "Run and Test HTTP Requests with plain text and curl"
-  homepage "https:hurl.dev"
-  url "https:github.comOrange-OpenSourcehurlarchiverefstags6.1.1.tar.gz"
+  homepage "https://hurl.dev"
+  url "https://ghfast.top/https://github.com/Orange-OpenSource/hurl/archive/refs/tags/6.1.1.tar.gz"
   sha256 "26ef1ed685f4b94190914a0e03127f7b7f6a488abf65758c19092dc6b9034b2c"
   license "Apache-2.0"
-  head "https:github.comOrange-OpenSourcehurl.git", branch: "master"
+  head "https://github.com/Orange-OpenSource/hurl.git", branch: "master"
 
   # Upstream uses GitHub releases to indicate that a version is released
   # (there's also sometimes a notable gap between when a version is tagged and
@@ -35,27 +35,27 @@ class Hurl < Formula
     ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
     ENV["OPENSSL_NO_VENDOR"] = "1"
 
-    system "cargo", "install", *std_cargo_args(path: "packageshurl")
-    system "cargo", "install", *std_cargo_args(path: "packageshurlfmt")
+    system "cargo", "install", *std_cargo_args(path: "packages/hurl")
+    system "cargo", "install", *std_cargo_args(path: "packages/hurlfmt")
 
-    man1.install "docsmanualhurl.1"
-    man1.install "docsmanualhurlfmt.1"
+    man1.install "docs/manual/hurl.1"
+    man1.install "docs/manual/hurlfmt.1"
 
-    bash_completion.install "completionshurl.bash" => "hurl"
-    zsh_completion.install "completions_hurl"
-    fish_completion.install "completionshurl.fish"
-    bash_completion.install "completionshurlfmt.bash" => "hurlfmt"
-    zsh_completion.install "completions_hurlfmt"
-    fish_completion.install "completionshurlfmt.fish"
+    bash_completion.install "completions/hurl.bash" => "hurl"
+    zsh_completion.install "completions/_hurl"
+    fish_completion.install "completions/hurl.fish"
+    bash_completion.install "completions/hurlfmt.bash" => "hurlfmt"
+    zsh_completion.install "completions/_hurlfmt"
+    fish_completion.install "completions/hurlfmt.fish"
   end
 
   test do
-    # Perform a GET request to https:hurl.dev.
+    # Perform a GET request to https://hurl.dev.
     # This requires a network connection, but so does Homebrew in general.
-    test_file = testpath"test.hurl"
-    test_file.write "GET https:hurl.dev"
+    test_file = testpath/"test.hurl"
+    test_file.write "GET https://hurl.dev"
 
-    system bin"hurl", "--color", test_file
-    system bin"hurlfmt", "--color", test_file
+    system bin/"hurl", "--color", test_file
+    system bin/"hurlfmt", "--color", test_file
   end
 end

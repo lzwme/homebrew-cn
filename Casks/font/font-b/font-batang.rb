@@ -2,9 +2,9 @@ cask "font-batang" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefontsrawmainoflbatangBatang-Regular.ttf"
+  url "https://github.com/google/fonts/raw/main/ofl/batang/Batang-Regular.ttf"
   name "Batang"
-  homepage "https:github.comgooglefontsbatang"
+  homepage "https://github.com/googlefonts/batang"
 
   font "Batang-Regular.ttf"
 

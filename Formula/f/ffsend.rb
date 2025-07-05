@@ -1,7 +1,7 @@
 class Ffsend < Formula
   desc "Fully featured Firefox Send client"
-  homepage "https:gitlab.comtimviseeffsend"
-  url "https:github.comtimviseeffsendarchiverefstagsv0.2.77.tar.gz"
+  homepage "https://gitlab.com/timvisee/ffsend"
+  url "https://ghfast.top/https://github.com/timvisee/ffsend/archive/refs/tags/v0.2.77.tar.gz"
   sha256 "b13329704c5eab7c74ebc29c3f2209290ea00e758139daaefc0ab0d5728c2fa4"
   license "GPL-3.0-only"
 
@@ -22,26 +22,26 @@ class Ffsend < Formula
     depends_on "openssl@3"
   end
 
-  # rust 1.87.0 patch, upstream pr ref, https:gitlab.comtimviseeffsend-merge_requests44
+  # rust 1.87.0 patch, upstream pr ref, https://gitlab.com/timvisee/ffsend/-/merge_requests/44
   patch do
-    url "https:gitlab.comtimviseeffsend-commit29eb167d4367929a2546c20b3f2bbf890b63c631.diff"
+    url "https://gitlab.com/timvisee/ffsend/-/commit/29eb167d4367929a2546c20b3f2bbf890b63c631.diff"
     sha256 "e5171b23ffd3cc0f4f1d47b29d110735c211ce96ba601a166a66537df28ed1c4"
   end
 
   def install
     system "cargo", "install", *std_cargo_args
 
-    bash_completion.install "contribcompletionsffsend.bash" => "ffsend"
-    fish_completion.install "contribcompletionsffsend.fish"
-    zsh_completion.install "contribcompletions_ffsend"
+    bash_completion.install "contrib/completions/ffsend.bash" => "ffsend"
+    fish_completion.install "contrib/completions/ffsend.fish"
+    zsh_completion.install "contrib/completions/_ffsend"
   end
 
   test do
-    system bin"ffsend", "help"
+    system bin/"ffsend", "help"
 
-    (testpath"file.txt").write("test")
-    url = shell_output("#{bin}ffsend upload -Iq #{testpath}file.txt").strip
-    output = shell_output("#{bin}ffsend del -I #{url} 2>&1")
+    (testpath/"file.txt").write("test")
+    url = shell_output("#{bin}/ffsend upload -Iq #{testpath}/file.txt").strip
+    output = shell_output("#{bin}/ffsend del -I #{url} 2>&1")
     assert_match "File deleted", output
   end
 end

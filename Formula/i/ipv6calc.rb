@@ -1,7 +1,7 @@
 class Ipv6calc < Formula
   desc "Small utility for manipulating IPv6 addresses"
-  homepage "https:www.deepspace6.netprojectsipv6calc.html"
-  url "https:github.compbieringipv6calcarchiverefstags4.3.2.tar.gz"
+  homepage "https://www.deepspace6.net/projects/ipv6calc.html"
+  url "https://ghfast.top/https://github.com/pbiering/ipv6calc/archive/refs/tags/4.3.2.tar.gz"
   sha256 "4335c4edf7d51dbd0cafdd42ecda5598101f7a8ab257a74be2d9ec81f5bf895b"
   license "GPL-2.0-only"
 
@@ -26,13 +26,13 @@ class Ipv6calc < Formula
   uses_from_macos "perl"
 
   def install
-    system ".configure", *std_configure_args
+    system "./configure", *std_configure_args
     system "make"
     system "make", "install"
   end
 
   test do
     assert_equal "192.168.251.97",
-      shell_output("#{bin}ipv6calc -q --action conv6to4 --in ipv6 2002:c0a8:fb61::1 --out ipv4").strip
+      shell_output("#{bin}/ipv6calc -q --action conv6to4 --in ipv6 2002:c0a8:fb61::1 --out ipv4").strip
   end
 end

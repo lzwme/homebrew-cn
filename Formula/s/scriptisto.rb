@@ -1,7 +1,7 @@
 class Scriptisto < Formula
   desc "Language-agnostic \"shebang interpreter\" to write scripts in compiled languages"
-  homepage "https:github.comigor-petrukscriptisto"
-  url "https:github.comigor-petrukscriptistoarchiverefstagsv2.2.0.tar.gz"
+  homepage "https://github.com/igor-petruk/scriptisto"
+  url "https://ghfast.top/https://github.com/igor-petruk/scriptisto/archive/refs/tags/v2.2.0.tar.gz"
   sha256 "192d20885b563eeaf66766695314ab3e2711dc10c44f938aeeee6271e9720397"
   license "Apache-2.0"
 
@@ -25,13 +25,13 @@ class Scriptisto < Formula
   end
 
   test do
-    (testpath"hello-c.c").write <<~C
-      #!usrbinenv scriptisto
+    (testpath/"hello-c.c").write <<~C
+      #!/usr/bin/env scriptisto
 
-       scriptisto-begin
-       script_src: main.c
-       build_cmd: cc -O2 main.c -o .script
-       scriptisto-end
+      // scriptisto-begin
+      // script_src: main.c
+      // build_cmd: cc -O2 main.c -o ./script
+      // scriptisto-end
 
       #include <stdio.h>
       int main()
@@ -40,6 +40,6 @@ class Scriptisto < Formula
         return 0;
       }
     C
-    assert_equal "Hello, world!\n", shell_output("#{bin}scriptisto .hello-c.c")
+    assert_equal "Hello, world!\n", shell_output("#{bin}/scriptisto ./hello-c.c")
   end
 end

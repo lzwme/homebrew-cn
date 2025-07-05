@@ -1,22 +1,22 @@
 class Libdvdread < Formula
   desc "C library for reading DVD-video images"
-  homepage "https:www.videolan.orgdeveloperslibdvdnav.html"
+  homepage "https://www.videolan.org/developers/libdvdnav.html"
   license "GPL-2.0-or-later"
 
   stable do
-    url "https:download.videolan.orgpubvideolanlibdvdread6.1.3libdvdread-6.1.3.tar.bz2"
+    url "https://download.videolan.org/pub/videolan/libdvdread/6.1.3/libdvdread-6.1.3.tar.bz2"
     sha256 "ce35454997a208cbe50e91232f0e73fb1ac3471965813a13b8730a8f18a15369"
 
     # Fix -flat_namespace being used on Big Sur and later.
     patch do
-      url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-big_sur.diff"
+      url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-big_sur.diff"
       sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
     end
   end
 
   livecheck do
-    url "https:download.videolan.orgpubvideolanlibdvdread"
-    regex(%r{href=["']?v?(\d+(?:\.\d+)+)?["' >]}i)
+    url "https://download.videolan.org/pub/videolan/libdvdread/"
+    regex(%r{href=["']?v?(\d+(?:\.\d+)+)/?["' >]}i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -37,7 +37,7 @@ class Libdvdread < Formula
   end
 
   head do
-    url "https:code.videolan.orgvideolanlibdvdread.git", branch: "master"
+    url "https://code.videolan.org/videolan/libdvdread.git", branch: "master"
     depends_on "autoconf" => :build
     depends_on "automake" => :build
     depends_on "libtool" => :build
@@ -50,7 +50,7 @@ class Libdvdread < Formula
     ENV.append "LDFLAGS", "-ldvdcss"
 
     system "autoreconf", "--force", "--install", "--verbose" if build.head?
-    system ".configure", *std_configure_args
+    system "./configure", *std_configure_args
     system "make", "install"
   end
 end

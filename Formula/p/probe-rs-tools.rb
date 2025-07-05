@@ -1,14 +1,14 @@
 class ProbeRsTools < Formula
   desc "Collection of on chip debugging tools to communicate with microchips"
-  homepage "https:probe.rs"
-  url "https:github.comprobe-rsprobe-rsarchiverefstagsv0.29.0.tar.gz"
+  homepage "https://probe.rs"
+  url "https://ghfast.top/https://github.com/probe-rs/probe-rs/archive/refs/tags/v0.29.0.tar.gz"
   sha256 "bf90e22c2bf9a843f47e71e0701b3d95975cf6c1eaa525981d25b07e40276f24"
   license "Apache-2.0"
-  head "https:github.comprobe-rsprobe-rs.git", branch: "master"
+  head "https://github.com/probe-rs/probe-rs.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -36,9 +36,9 @@ class ProbeRsTools < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}probe-rs --version")
+    assert_match version.to_s, shell_output("#{bin}/probe-rs --version")
 
-    output = shell_output("#{bin}probe-rs chip list")
+    output = shell_output("#{bin}/probe-rs chip list")
     assert_match "nRF52833_xxAA", output # micro:bit v2
     assert_match "STM32F3 Series", output
   end

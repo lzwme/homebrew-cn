@@ -1,7 +1,7 @@
 class Cppzmq < Formula
   desc "Header-only C++ binding for libzmq"
-  homepage "https:www.zeromq.org"
-  url "https:github.comzeromqcppzmqarchiverefstagsv4.11.0.tar.gz"
+  homepage "https://www.zeromq.org"
+  url "https://ghfast.top/https://github.com/zeromq/cppzmq/archive/refs/tags/v4.11.0.tar.gz"
   sha256 "0fff4ff311a7c88fdb76fceefba0e180232d56984f577db371d505e4d4c91afd"
   license "MIT"
 
@@ -22,9 +22,9 @@ class Cppzmq < Formula
   end
 
   test do
-    cp pkgshare"exampleshello_world.cpp", testpath
+    cp pkgshare/"examples/hello_world.cpp", testpath
     system ENV.cxx, "-std=c++11", "hello_world.cpp", "-I#{include}",
                     "-L#{Formula["zeromq"].opt_lib}", "-lzmq", "-o", "test"
-    system ".test"
+    system "./test"
   end
 end

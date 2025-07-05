@@ -1,10 +1,10 @@
 class Cdebug < Formula
   desc "Swiss army knife of container debugging"
-  homepage "https:github.comiximiuzcdebug"
-  url "https:github.comiximiuzcdebugarchiverefstagsv0.0.18.tar.gz"
+  homepage "https://github.com/iximiuz/cdebug"
+  url "https://ghfast.top/https://github.com/iximiuz/cdebug/archive/refs/tags/v0.0.18.tar.gz"
   sha256 "c28d6c079177aa8de850e2edcbd284ac08cd3f9d77aac851928e1cc85a77fbcb"
   license "Apache-2.0"
-  head "https:github.comiximiuzcdebug.git", branch: "main"
+  head "https://github.com/iximiuz/cdebug.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "3cea617c367a9f6d5e3266264ce47fac44590794eb7a61b877f29077056acce5"
@@ -28,7 +28,7 @@ class Cdebug < Formula
     ]
     system "go", "build", *std_go_args(ldflags:)
 
-    generate_completions_from_executable(bin"cdebug", "completion")
+    generate_completions_from_executable(bin/"cdebug", "completion")
   end
 
   test do
@@ -38,8 +38,8 @@ class Cdebug < Formula
     else
       "cdebug: Permission denied while trying to connect to the Docker daemon socket"
     end
-    assert_match expected, shell_output("#{bin}cdebug exec nginx 2>&1", 1)
+    assert_match expected, shell_output("#{bin}/cdebug exec nginx 2>&1", 1)
 
-    assert_match "cdebug version #{version}", shell_output("#{bin}cdebug --version")
+    assert_match "cdebug version #{version}", shell_output("#{bin}/cdebug --version")
   end
 end

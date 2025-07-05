@@ -1,10 +1,10 @@
 class ZshFastSyntaxHighlighting < Formula
   desc "Feature-rich syntax highlighting for Zsh"
-  homepage "https:github.comzdharma-continuumfast-syntax-highlighting"
-  url "https:github.comzdharma-continuumfast-syntax-highlightingarchiverefstagsv1.55.tar.gz"
+  homepage "https://github.com/zdharma-continuum/fast-syntax-highlighting"
+  url "https://ghfast.top/https://github.com/zdharma-continuum/fast-syntax-highlighting/archive/refs/tags/v1.55.tar.gz"
   sha256 "d06cea9c047ce46ad09ffd01a8489a849fc65b8b6310bd08f8bcec9d6f81a898"
   license "BSD-3-Clause"
-  head "https:github.comzdharma-continuumfast-syntax-highlighting.git", branch: "master"
+  head "https://github.com/zdharma-continuum/fast-syntax-highlighting.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -28,15 +28,15 @@ class ZshFastSyntaxHighlighting < Formula
   def caveats
     <<~EOS
       To activate the syntax highlighting, add the following at the end of your .zshrc:
-        source #{opt_pkgshare}fast-syntax-highlighting.plugin.zsh
+        source #{opt_pkgshare}/fast-syntax-highlighting.plugin.zsh
     EOS
   end
 
   test do
-    test_script = testpath"script.zsh"
+    test_script = testpath/"script.zsh"
     test_script.write <<~ZSH
-      #!usrbinenv zsh
-      source #{pkgshare}fast-syntax-highlighting.plugin.zsh
+      #!/usr/bin/env zsh
+      source #{pkgshare}/fast-syntax-highlighting.plugin.zsh
       printf '%s' ${FAST_HIGHLIGHT_STYLES+yes}
     ZSH
     assert_match "yes", shell_output("zsh #{test_script}")

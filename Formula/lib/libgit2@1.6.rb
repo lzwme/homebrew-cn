@@ -1,7 +1,7 @@
 class Libgit2AT16 < Formula
   desc "C library of Git core methods that is re-entrant and linkable"
-  homepage "https:libgit2.github.com"
-  url "https:github.comlibgit2libgit2archiverefstagsv1.6.5.tar.gz"
+  homepage "https://libgit2.github.com/"
+  url "https://ghfast.top/https://github.com/libgit2/libgit2/archive/refs/tags/v1.6.5.tar.gz"
   sha256 "0f09dd49e409913c94df00eeb5b54f8b597905071b454c7f614f8c6e1ddb8d75"
   license "GPL-2.0-only" => { with: "GCC-exception-2.0" }
 
@@ -21,7 +21,7 @@ class Libgit2AT16 < Formula
 
   keg_only :versioned_formula
 
-  # https:github.comlibgit2libgit2?tab=security-ov-file
+  # https://github.com/libgit2/libgit2/?tab=security-ov-file
   deprecate! date: "2024-04-11", because: :unmaintained
   disable! date: "2025-04-12", because: :unmaintained
 
@@ -39,11 +39,11 @@ class Libgit2AT16 < Formula
 
     system "cmake", "-S", ".", "-B", "build-static", "-DBUILD_SHARED_LIBS=OFF", *args, *std_cmake_args
     system "cmake", "--build", "build-static"
-    lib.install "build-staticlibgit2.a"
+    lib.install "build-static/libgit2.a"
   end
 
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include <git2.h>
       #include <assert.h>
 
@@ -61,6 +61,6 @@ class Libgit2AT16 < Formula
       -lgit2
     ]
     system ENV.cc, "test.c", "-o", "test", *flags
-    system ".test"
+    system "./test"
   end
 end

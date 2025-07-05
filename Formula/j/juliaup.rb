@@ -1,10 +1,10 @@
 class Juliaup < Formula
   desc "Julia installer and version multiplexer"
-  homepage "https:github.comJuliaLangjuliaup"
-  url "https:github.comJuliaLangjuliauparchiverefstagsv1.17.19.tar.gz"
+  homepage "https://github.com/JuliaLang/juliaup"
+  url "https://ghfast.top/https://github.com/JuliaLang/juliaup/archive/refs/tags/v1.17.19.tar.gz"
   sha256 "5bcc9d9145e0d60d47aace5104805f6a21cab75ba19d8cfda88e1b7573291c7e"
   license "MIT"
-  head "https:github.comJuliaLangjuliaup.git", branch: "master"
+  head "https://github.com/JuliaLang/juliaup.git", branch: "master"
 
   livecheck do
     url :stable
@@ -33,11 +33,11 @@ class Juliaup < Formula
 
     bin.install_symlink "julialauncher" => "julia"
 
-    generate_completions_from_executable(bin"juliaup", "completions")
+    generate_completions_from_executable(bin/"juliaup", "completions")
   end
 
   test do
     expected = "Default  Channel  Version  Update"
-    assert_equal expected, shell_output("#{bin}juliaup status").lines.first.strip
+    assert_equal expected, shell_output("#{bin}/juliaup status").lines.first.strip
   end
 end

@@ -1,7 +1,7 @@
 class Vroom < Formula
   desc "Vehicle Routing Open-Source Optimization Machine"
-  homepage "http:vroom-project.org"
-  url "https:github.comVROOM-Projectvroom.git",
+  homepage "http://vroom-project.org/"
+  url "https://github.com/VROOM-Project/vroom.git",
       tag:      "v1.13.0",
       revision: "c87a87c4053b01396fb1011f665910c696e27c91"
   license "BSD-2-Clause"
@@ -29,28 +29,28 @@ class Vroom < Formula
   depends_on "openssl@3"
 
   def install
-    # fixes https:github.comVROOM-Projectvroomissues997 , remove in version > 1.13.0
-    inreplace "srcmain.cpp", "throw cxxopts::OptionException", "throw cxxopts::exceptions::parsing"
-    inreplace "srcmain.cpp", "catch (const cxxopts::OptionException", "catch (const cxxopts::exceptions::exception"
+    # fixes https://github.com/VROOM-Project/vroom/issues/997 , remove in version > 1.13.0
+    inreplace "src/main.cpp", "throw cxxopts::OptionException", "throw cxxopts::exceptions::parsing"
+    inreplace "src/main.cpp", "catch (const cxxopts::OptionException", "catch (const cxxopts::exceptions::exception"
 
     # Use brewed dependencies instead of vendored dependencies
     cd "include" do
       rm_r(["cxxopts", "rapidjson"])
       mkdir_p "cxxopts"
-      ln_s Formula["cxxopts"].opt_include, "cxxoptsinclude"
+      ln_s Formula["cxxopts"].opt_include, "cxxopts/include"
       ln_s Formula["rapidjson"].opt_include, "rapidjson"
     end
 
     cd "src" do
       system "make"
     end
-    bin.install "binvroom"
+    bin.install "bin/vroom"
     pkgshare.install "docs"
   end
 
   test do
-    output = shell_output("#{bin}vroom -i #{pkgshare}docsexample_2.json")
-    expected_routes = JSON.parse((pkgshare"docsexample_2_sol.json").read)["routes"]
+    output = shell_output("#{bin}/vroom -i #{pkgshare}/docs/example_2.json")
+    expected_routes = JSON.parse((pkgshare/"docs/example_2_sol.json").read)["routes"]
     actual_routes = JSON.parse(output)["routes"]
     assert_equal expected_routes, actual_routes
   end

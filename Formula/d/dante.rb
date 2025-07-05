@@ -1,13 +1,13 @@
 class Dante < Formula
   desc "SOCKS server and client, implementing RFC 1928 and related standards"
-  homepage "https:www.inet.nodante"
-  url "https:www.inet.nodantefilesdante-1.4.4.tar.gz"
+  homepage "https://www.inet.no/dante/"
+  url "https://www.inet.no/dante/files/dante-1.4.4.tar.gz"
   sha256 "1973c7732f1f9f0a4c0ccf2c1ce462c7c25060b25643ea90f9b98f53a813faec"
   license "BSD-Inferno-Nettverk"
 
   livecheck do
-    url "https:www.inet.nodantedownload.html"
-    regex(href=.*?dante[._-]v?(\d+(?:\.\d+)+)\.ti)
+    url "https://www.inet.no/dante/download.html"
+    regex(/href=.*?dante[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   bottle do
@@ -24,22 +24,22 @@ class Dante < Formula
 
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
-    url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-pre-0.4.2.418-big_sur.diff"
+    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-pre-0.4.2.418-big_sur.diff"
     sha256 "83af02f2aa2b746bb7225872cab29a253264be49db0ecebb12f841562d9a2923"
   end
 
   def install
-    system ".configure", "--disable-debug",
+    system "./configure", "--disable-debug",
                           "--disable-silent-rules",
                           # Enabling dependency tracking disables universal
                           # build, avoiding causing size or memmove detection issues.
                           "--enable-dependency-tracking",
                           "--prefix=#{prefix}",
-                          "--sysconfdir=#{etc}dante"
+                          "--sysconfdir=#{etc}/dante"
     system "make", "install"
   end
 
   test do
-    system sbin"sockd", "-v"
+    system sbin/"sockd", "-v"
   end
 end

@@ -5,11 +5,11 @@ cask "mcreator" do
   sha256 arm:   "10113c83388b9df45c7da929352f8110b1954189a0095c44ba1196dbaf90f15b",
          intel: "5eee72d9372031769215faa3aa10ca64faac83f4c6f6c5cf2f5a3d04bfd935b2"
 
-  url "https:github.comMCreatorMCreatorreleasesdownload#{version}MCreator.#{version.major_minor}.Mac.#{arch}.dmg",
-      verified: "github.comMCreatorMCreator"
+  url "https://ghfast.top/https://github.com/MCreator/MCreator/releases/download/#{version}/MCreator.#{version.major_minor}.Mac.#{arch}.dmg",
+      verified: "github.com/MCreator/MCreator/"
   name "MCreator"
   desc "Software used to make Minecraft Java Edition mods"
-  homepage "https:mcreator.net"
+  homepage "https://mcreator.net/"
 
   livecheck do
     url :url
@@ -20,5 +20,5 @@ cask "mcreator" do
 
   app "MCreator.app"
 
-  zap trash: "~.mcreator"
+  zap trash: "~/.mcreator"
 end

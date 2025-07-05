@@ -1,10 +1,10 @@
 class Bkmr < Formula
   desc "Unified CLI Tool for Bookmark, Snippet, and Knowledge Management"
-  homepage "https:github.comsysidbkmr"
-  url "https:github.comsysidbkmrarchiverefstagsv4.28.3.tar.gz"
+  homepage "https://github.com/sysid/bkmr"
+  url "https://ghfast.top/https://github.com/sysid/bkmr/archive/refs/tags/v4.28.3.tar.gz"
   sha256 "3be293b3efa2d738efddddccb675cfb6b82b08f11962285735d755f1fcc302fe"
   license "BSD-3-Clause"
-  head "https:github.comsysidbkmr.git", branch: "main"
+  head "https://github.com/sysid/bkmr.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "415d28c6d75e7d0dd775c0942f8612a4500a922ec50b5285e7836d8e90d6436d"
@@ -24,20 +24,20 @@ class Bkmr < Formula
   def install
     cd "bkmr" do
       # Ensure that the `openssl` crate picks up the intended library.
-      # https:docs.rsopenssllatestopenssl#manual
+      # https://docs.rs/openssl/latest/openssl/#manual
       ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
 
       system "cargo", "install", *std_cargo_args
     end
 
-    generate_completions_from_executable(bin"bkmr", "completion")
+    generate_completions_from_executable(bin/"bkmr", "completion")
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}bkmr --version")
+    assert_match version.to_s, shell_output("#{bin}/bkmr --version")
 
-    output = shell_output("#{bin}bkmr info")
-    assert_match "Database URL: #{testpath}.configbkmrbkmr.db", output
+    output = shell_output("#{bin}/bkmr info")
+    assert_match "Database URL: #{testpath}/.config/bkmr/bkmr.db", output
     assert_match "Database Statistics", output
   end
 end

@@ -1,11 +1,11 @@
 class Ubertooth < Formula
   desc "Host tools for Project Ubertooth"
-  homepage "https:greatscottgadgets.comubertoothone"
-  url "https:github.comgreatscottgadgetsubertoothreleasesdownload2020-12-R1ubertooth-2020-12-R1.tar.xz"
+  homepage "https://greatscottgadgets.com/ubertoothone/"
+  url "https://ghfast.top/https://github.com/greatscottgadgets/ubertooth/releases/download/2020-12-R1/ubertooth-2020-12-R1.tar.xz"
   version "2020-12-R1"
   sha256 "93a4ce7af8eddcc299d65aff8dd3a0455293022f7fea4738b286353f833bf986"
   license "GPL-2.0-or-later"
-  head "https:github.comgreatscottgadgetsubertooth.git", branch: "master"
+  head "https://github.com/greatscottgadgets/ubertooth.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -27,8 +27,8 @@ class Ubertooth < Formula
 
   def install
     args = ["-DENABLE_PYTHON=OFF"]
-    # Tell CMake to install udev rules in HOMEBREW_PREFIXetc on Linux because it defaults to etc.
-    args << "-DUDEV_RULES_PATH=#{etc}udevrules.d" unless OS.mac?
+    # Tell CMake to install udev rules in HOMEBREW_PREFIX/etc on Linux because it defaults to /etc.
+    args << "-DUDEV_RULES_PATH=#{etc}/udev/rules.d" unless OS.mac?
 
     system "cmake", "-S", "host", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
@@ -37,6 +37,6 @@ class Ubertooth < Formula
 
   test do
     # Most ubertooth utilities require an ubertooth device present.
-    system bin"ubertooth-rx", "-i", File::NULL
+    system bin/"ubertooth-rx", "-i", File::NULL
   end
 end

@@ -2,11 +2,11 @@ cask "sigdigger" do
   version "0.3.0"
   sha256 "18314d22fdc0d41061312b02d088f6cb903292c741d1e4f6aa3371c804406c98"
 
-  url "https:github.comBatchDrakeSigDiggerreleasesdownloadv#{version}SigDigger-#{version}-x86_64.dmg",
-      verified: "github.comBatchDrakeSigDigger"
+  url "https://ghfast.top/https://github.com/BatchDrake/SigDigger/releases/download/v#{version}/SigDigger-#{version}-x86_64.dmg",
+      verified: "github.com/BatchDrake/SigDigger/"
   name "SigDigger"
   desc "Qt-based digital signal analyzer"
-  homepage "https:batchdrake.github.ioSigDigger"
+  homepage "https://batchdrake.github.io/SigDigger/"
 
   livecheck do
     url :url
@@ -20,8 +20,8 @@ cask "sigdigger" do
   app "SigDigger.app"
 
   zap trash: [
-    "~LibraryPreferencesorg.actinid.SigDigger.plist",
-    "~LibrarySaved Application Stateorg.actinid.SigDigger.savedState",
+    "~/Library/Preferences/org.actinid.SigDigger.plist",
+    "~/Library/Saved Application State/org.actinid.SigDigger.savedState",
   ]
 
   caveats do

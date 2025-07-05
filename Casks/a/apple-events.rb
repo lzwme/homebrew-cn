@@ -2,10 +2,10 @@ cask "apple-events" do
   version "1.6"
   sha256 "00dee705888f2e7f8f036afe06bafb7d70042bd1eaa1bdf93146fddb63bc8e76"
 
-  url "https:github.cominsideguiAppleEventsreleasesdownload#{version}AppleEvents_v#{version}.zip"
+  url "https://ghfast.top/https://github.com/insidegui/AppleEvents/releases/download/#{version}/AppleEvents_v#{version}.zip"
   name "Apple Events"
   desc "Unofficial Apple Events app"
-  homepage "https:github.cominsideguiAppleEvents"
+  homepage "https://github.com/insidegui/AppleEvents"
 
   no_autobump! because: :requires_manual_review
 
@@ -16,8 +16,8 @@ cask "apple-events" do
   app "Apple Events.app"
 
   zap trash: [
-    "~LibraryApplication Supportbr.com.guilhermerambo.Apple-Events",
-    "~LibraryCachesbr.com.guilhermerambo.Apple-Events",
-    "~LibraryPreferencesbr.com.guilhermerambo.Apple-Events.plist",
+    "~/Library/Application Support/br.com.guilhermerambo.Apple-Events",
+    "~/Library/Caches/br.com.guilhermerambo.Apple-Events",
+    "~/Library/Preferences/br.com.guilhermerambo.Apple-Events.plist",
   ]
 end

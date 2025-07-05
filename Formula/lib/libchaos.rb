@@ -1,7 +1,7 @@
 class Libchaos < Formula
   desc "Advanced library for randomization, hashing and statistical analysis"
-  homepage "https:github.commaciejczyzewskilibchaos"
-  url "https:github.commaciejczyzewskilibchaosreleasesdownloadv1.0libchaos-1.0.tar.gz"
+  homepage "https://github.com/maciejczyzewski/libchaos"
+  url "https://ghfast.top/https://github.com/maciejczyzewski/libchaos/releases/download/v1.0/libchaos-1.0.tar.gz"
   sha256 "29940ff014359c965d62f15bc34e5c182a6d8a505dc496c636207675843abd15"
   license "BSD-2-Clause"
 
@@ -42,11 +42,11 @@ class Libchaos < Formula
 
     system "cmake", "-S", ".", "-B", "build", "-DBUILD_SHARED_LIBS=OFF", *args, *std_cmake_args
     system "cmake", "--build", "build"
-    lib.install "buildlibchaos.a"
+    lib.install "build/libchaos.a"
   end
 
   test do
-    (testpath"test.cc").write <<~CPP
+    (testpath/"test.cc").write <<~CPP
       #include <chaos.h>
       #include <iostream>
       #include <string>
@@ -63,15 +63,15 @@ class Libchaos < Formula
     CPP
 
     system ENV.cxx, "test.cc", "-std=c++11", "-L#{lib}", "-lchaos", "-o", "test"
-    system ".test"
+    system "./test"
   end
 end
 
 __END__
-diff --git aincludechaosanalysis.hh bincludechaosanalysis.hh
+diff --git a/include/chaos/analysis.hh b/include/chaos/analysis.hh
 index 2b24d01..57423d1 100755
---- aincludechaosanalysis.hh
-+++ bincludechaosanalysis.hh
+--- a/include/chaos/analysis.hh
++++ b/include/chaos/analysis.hh
 @@ -37,15 +37,17 @@ class basic_adapter {
  	AP adapter;
 

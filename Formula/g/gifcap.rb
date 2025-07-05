@@ -1,10 +1,10 @@
 class Gifcap < Formula
   desc "Capture video from an Android device and make a gif"
-  homepage "https:github.comoutlookgifcap"
-  url "https:github.comoutlookgifcaparchiverefstags1.0.4.tar.gz"
+  homepage "https://github.com/outlook/gifcap"
+  url "https://ghfast.top/https://github.com/outlook/gifcap/archive/refs/tags/1.0.4.tar.gz"
   sha256 "32747a6cf77f7ea99380752ba35ecd929bb185167e5908cf910d2a92f05029ad"
   license "MIT"
-  head "https:github.comoutlookgifcap.git", branch: "master"
+  head "https://github.com/outlook/gifcap.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -20,6 +20,6 @@ class Gifcap < Formula
   end
 
   test do
-    assert_match(^usage: gifcap, shell_output("#{bin}gifcap --help").strip)
+    assert_match(/^usage: gifcap/, shell_output("#{bin}/gifcap --help").strip)
   end
 end

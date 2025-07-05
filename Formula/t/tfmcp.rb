@@ -1,10 +1,10 @@
 class Tfmcp < Formula
   desc "Terraform Model Context Protocol (MCP) Tool"
-  homepage "https:github.comnwiizotfmcp"
-  url "https:github.comnwiizotfmcparchiverefstagsv0.1.5.tar.gz"
+  homepage "https://github.com/nwiizo/tfmcp"
+  url "https://ghfast.top/https://github.com/nwiizo/tfmcp/archive/refs/tags/v0.1.5.tar.gz"
   sha256 "a89882037b1c0a85d900b9e5d34edbc3c4ca78c648e7e54f423663c286f769cd"
   license "MIT"
-  head "https:github.comnwiizotfmcp.git", branch: "main"
+  head "https://github.com/nwiizo/tfmcp.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "8c1d37d1f0afc8606af8d61b58ce87562353684d98ed17d6e95d5056092a448d"
@@ -23,12 +23,12 @@ class Tfmcp < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}tfmcp --version")
+    assert_match version.to_s, shell_output("#{bin}/tfmcp --version")
 
     ENV["TERRAFORM_BINARY_NAME"] = "tofu"
 
-    output = shell_output("#{bin}tfmcp analyze 2>&1")
+    output = shell_output("#{bin}/tfmcp analyze 2>&1")
     assert_match "Terraform analysis complete", output
-    assert_match "Hello from tfmcp!", (testpath"main.tf").read
+    assert_match "Hello from tfmcp!", (testpath/"main.tf").read
   end
 end

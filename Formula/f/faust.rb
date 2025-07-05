@@ -1,7 +1,7 @@
 class Faust < Formula
   desc "Functional programming language for real time signal processing"
-  homepage "https:faust.grame.fr"
-  url "https:github.comgrame-cncmfaustreleasesdownload2.81.2faust-2.81.2.tar.gz"
+  homepage "https://faust.grame.fr"
+  url "https://ghfast.top/https://github.com/grame-cncm/faust/releases/download/2.81.2/faust-2.81.2.tar.gz"
   sha256 "c91afe17cc01f1f75e4928dc2d2971dd83b37d10be991dda7e8b94ffab1f1ac9"
   license "GPL-2.0-or-later"
 
@@ -33,7 +33,7 @@ class Faust < Formula
     # `brew linkage` doesn't like the pre-built Android libsndfile.so for faust2android.
     # Not an essential feature so just remove it when building arm64 linux in CI.
     if ENV["HOMEBREW_GITHUB_ACTIONS"].present? && OS.linux? && Hardware::CPU.arm?
-      rm("architectureandroidappliblibsndfilelibarm64-v8alibsndfile.so")
+      rm("architecture/android/app/lib/libsndfile/lib/arm64-v8a/libsndfile.so")
     end
 
     system "cmake", "-S", "build", "-B", "homebrew_build",
@@ -68,16 +68,16 @@ class Faust < Formula
     system "cmake", "--build", "homebrew_build"
     system "cmake", "--install", "homebrew_build"
 
-    system "make", "--directory=toolssound2faust", "PREFIX=#{prefix}"
-    system "make", "--directory=toolssound2faust", "install", "PREFIX=#{prefix}"
+    system "make", "--directory=tools/sound2faust", "PREFIX=#{prefix}"
+    system "make", "--directory=tools/sound2faust", "install", "PREFIX=#{prefix}"
   end
 
   test do
-    (testpath"noise.dsp").write <<~EOS
+    (testpath/"noise.dsp").write <<~EOS
       import("stdfaust.lib");
       process = no.noise;
     EOS
 
-    system bin"faust", "noise.dsp"
+    system bin/"faust", "noise.dsp"
   end
 end

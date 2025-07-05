@@ -1,14 +1,14 @@
 class Biome < Formula
   desc "Toolchain of the web"
-  homepage "https:biomejs.dev"
-  url "https:github.combiomejsbiomearchiverefstags@biomejsbiome@2.0.6.tar.gz"
+  homepage "https://biomejs.dev/"
+  url "https://ghfast.top/https://github.com/biomejs/biome/archive/refs/tags/@biomejs/biome@2.0.6.tar.gz"
   sha256 "52d5e449346bfb15855a3bac85ba5d43b81d0fb1a99be9d4b7dca8c51521404c"
   license any_of: ["Apache-2.0", "MIT"]
-  head "https:github.combiomejsbiome.git", branch: "main"
+  head "https://github.com/biomejs/biome.git", branch: "main"
 
   livecheck do
     url :stable
-    regex(%r{^@biomejsbiome@v?(\d+(?:\.\d+)+)$}i)
+    regex(%r{^@biomejs/biome@v?(\d+(?:\.\d+)+)$}i)
   end
 
   bottle do
@@ -25,14 +25,14 @@ class Biome < Formula
 
   def install
     ENV["BIOME_VERSION"] = version.to_s
-    system "cargo", "install", *std_cargo_args(path: "cratesbiome_cli")
+    system "cargo", "install", *std_cargo_args(path: "crates/biome_cli")
   end
 
   test do
-    (testpath"test.js").write("const x = 1")
-    system bin"biome", "format", "--semicolons=always", "--write", testpath"test.js"
-    assert_match "const x = 1;", (testpath"test.js").read
+    (testpath/"test.js").write("const x = 1")
+    system bin/"biome", "format", "--semicolons=always", "--write", testpath/"test.js"
+    assert_match "const x = 1;", (testpath/"test.js").read
 
-    assert_match version.to_s, shell_output("#{bin}biome --version")
+    assert_match version.to_s, shell_output("#{bin}/biome --version")
   end
 end

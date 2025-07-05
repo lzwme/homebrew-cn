@@ -1,10 +1,10 @@
 class Geogram < Formula
   desc "Programming library of geometric algorithms"
-  homepage "https:github.comBrunoLevygeogramwiki"
-  url "https:github.comBrunoLevygeogramreleasesdownloadv1.9.6geogram_1.9.6.tar.gz"
+  homepage "https://github.com/BrunoLevy/geogram/wiki"
+  url "https://ghfast.top/https://github.com/BrunoLevy/geogram/releases/download/v1.9.6/geogram_1.9.6.tar.gz"
   sha256 "79dbe919737d8988668d6a72196a82389e0dfd8760250d26a28414afd558477f"
   license all_of: ["BSD-3-Clause", :public_domain, "LGPL-3.0-or-later", "MIT"]
-  head "https:github.comBrunoLevygeogram.git", branch: "main"
+  head "https://github.com/BrunoLevy/geogram.git", branch: "main"
 
   livecheck do
     url :stable
@@ -29,7 +29,7 @@ class Geogram < Formula
   end
 
   def install
-    (buildpath"CMakeOptions.txt").append_lines <<~CMAKE
+    (buildpath/"CMakeOptions.txt").append_lines <<~CMAKE
       set(CMAKE_INSTALL_PREFIX #{prefix})
       set(GEOGRAM_USE_SYSTEM_GLFW3 ON)
     CMAKE
@@ -42,20 +42,20 @@ class Geogram < Formula
       "Linux64-gcc-aarch64"
     end
 
-    system ".configure.sh"
-    system "make", "-C", "build#{platform}-Release", "install"
+    system "./configure.sh"
+    system "make", "-C", "build/#{platform}-Release", "install"
 
-    (share"cmakeModules").install Dir[lib"cmakemodules*"]
+    (share/"cmake/Modules").install Dir[lib/"cmake/modules/*"]
   end
 
   test do
     resource "homebrew-bunny" do
-      url "https:raw.githubusercontent.comFreeCADExamplesbe0b4f9Point_cloud_ExampleFilesPointCloud-Data_Stanford-Bunny.asc"
+      url "https://ghfast.top/https://raw.githubusercontent.com/FreeCAD/Examples/be0b4f9/Point_cloud_ExampleFiles/PointCloud-Data_Stanford-Bunny.asc"
       sha256 "4fc5496098f4f4aa106a280c24255075940656004c6ef34b3bf3c78989cbad08"
     end
 
     resource("homebrew-bunny").stage { testpath.install Dir["*"].first => "bunny.xyz" }
-    system bin"vorpalite", "profile=reconstruct", "bunny.xyz", "bunny.meshb"
-    assert_path_exists testpath"bunny.meshb", "bunny.meshb should exist!"
+    system bin/"vorpalite", "profile=reconstruct", "bunny.xyz", "bunny.meshb"
+    assert_path_exists testpath/"bunny.meshb", "bunny.meshb should exist!"
   end
 end

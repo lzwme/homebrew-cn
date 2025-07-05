@@ -1,13 +1,13 @@
 class BareosClient < Formula
   desc "Client for Bareos (Backup Archiving REcovery Open Sourced)"
-  homepage "https:www.bareos.com"
-  url "https:github.combareosbareosarchiverefstagsRelease24.0.3.tar.gz"
+  homepage "https://www.bareos.com/"
+  url "https://ghfast.top/https://github.com/bareos/bareos/archive/refs/tags/Release/24.0.3.tar.gz"
   sha256 "df3e193593f9ab2797d293ea4186a62bfbe1195fc0144d172a02ed6065a32034"
   license "AGPL-3.0-only"
 
   livecheck do
     url :stable
-    regex(%r{^Release(\d+(?:\.\d+)+)$}i)
+    regex(%r{^Release/(\d+(?:\.\d+)+)$}i)
   end
 
   bottle do
@@ -45,36 +45,36 @@ class BareosClient < Formula
 
   def install
     # Work around Linux build failure by disabling warnings:
-    # lmdbmdb.c:2282:13: error: variable 'rc' set but not used [-Werror=unused-but-set-variable]
+    # lmdb/mdb.c:2282:13: error: variable 'rc' set but not used [-Werror=unused-but-set-variable]
     # fastlzlib.c:512:63: error: unused parameter ‘output_length’ [-Werror=unused-parameter]
-    # Upstream issue: https:bugs.bareos.orgview.php?id=1504
+    # Upstream issue: https://bugs.bareos.org/view.php?id=1504
     if OS.linux?
       ENV.append_to_cflags "-Wno-unused-but-set-variable"
       ENV.append_to_cflags "-Wno-unused-parameter"
     end
 
     # Work around hardcoded paths forced static linkage on macOS
-    inreplace "corecmakeBareosFindAllLibraries.cmake" do |s|
+    inreplace "core/cmake/BareosFindAllLibraries.cmake" do |s|
       s.gsub! "set(OPENSSL_USE_STATIC_LIBS 1)", ""
-      s.gsub! "${HOMEBREW_PREFIX}optlzolibliblzo2.a", Formula["lzo"].opt_libshared_library("liblzo2")
+      s.gsub! "${HOMEBREW_PREFIX}/opt/lzo/lib/liblzo2.a", Formula["lzo"].opt_lib/shared_library("liblzo2")
     end
 
-    inreplace "corecmakeFindReadline.cmake",
-              "${HOMEBREW_PREFIX}optreadlineliblibreadline.a",
-              Formula["readline"].opt_libshared_library("libreadline")
+    inreplace "core/cmake/FindReadline.cmake",
+              "${HOMEBREW_PREFIX}/opt/readline/lib/libreadline.a",
+              Formula["readline"].opt_lib/shared_library("libreadline")
 
-    inreplace "coresrcfiledCMakeLists.txt",
-              "bareos-fd PROPERTIES INSTALL_RPATH \"@loader_path..${libdir}\"",
+    inreplace "core/src/filed/CMakeLists.txt",
+              "bareos-fd PROPERTIES INSTALL_RPATH \"@loader_path/../${libdir}\"",
               "bareos-fd PROPERTIES INSTALL_RPATH \"${libdir}\""
 
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args,
                     "-DENABLE_PYTHON=OFF",
-                    "-Dworkingdir=#{var}libbareos",
-                    "-Darchivedir=#{var}bareos",
-                    "-Dconfdir=#{etc}bareos",
-                    "-Dconfigtemplatedir=#{lib}bareosdefaultconfigs",
-                    "-Dscriptdir=#{lib}bareosscripts",
-                    "-Dplugindir=#{lib}bareosplugins",
+                    "-Dworkingdir=#{var}/lib/bareos",
+                    "-Darchivedir=#{var}/bareos",
+                    "-Dconfdir=#{etc}/bareos",
+                    "-Dconfigtemplatedir=#{lib}/bareos/defaultconfigs",
+                    "-Dscriptdir=#{lib}/bareos/scripts",
+                    "-Dplugindir=#{lib}/bareos/plugins",
                     "-Dfd-password=XXX_REPLACE_WITH_CLIENT_PASSWORD_XXX",
                     "-Dmon-fd-password=XXX_REPLACE_WITH_CLIENT_MONITOR_PASSWORD_XXX",
                     "-Dbasename=XXX_REPLACE_WITH_LOCAL_HOSTNAME_XXX",
@@ -86,28 +86,28 @@ class BareosClient < Formula
   end
 
   def post_install
-    (var"libbareos").mkpath
+    (var/"lib/bareos").mkpath
     # If no configuration files are present,
     # deploy them (copy them and replace variables).
-    unless (etc"bareosbareos-fd.d").exist?
-      system lib"bareosscriptsbareos-config", "deploy_config",
-             lib"bareosdefaultconfigs", etc"bareos", "bareos-fd"
-      system lib"bareosscriptsbareos-config", "deploy_config",
-             lib"bareosdefaultconfigs", etc"bareos", "bconsole"
+    unless (etc/"bareos/bareos-fd.d").exist?
+      system lib/"bareos/scripts/bareos-config", "deploy_config",
+             lib/"bareos/defaultconfigs", etc/"bareos", "bareos-fd"
+      system lib/"bareos/scripts/bareos-config", "deploy_config",
+             lib/"bareos/defaultconfigs", etc/"bareos", "bconsole"
     end
   end
 
   service do
-    run [opt_sbin"bareos-fd", "-f"]
+    run [opt_sbin/"bareos-fd", "-f"]
     require_root true
-    log_path var"runbareos-fd.log"
-    error_log_path var"runbareos-fd.log"
+    log_path var/"run/bareos-fd.log"
+    error_log_path var/"run/bareos-fd.log"
   end
 
   test do
     # Check if bareos-fd starts at all.
-    assert_match version.to_s, shell_output("#{sbin}bareos-fd -? 2>&1")
+    assert_match version.to_s, shell_output("#{sbin}/bareos-fd -? 2>&1")
     # Check if the configuration is valid.
-    system sbin"bareos-fd", "-t"
+    system sbin/"bareos-fd", "-t"
   end
 end

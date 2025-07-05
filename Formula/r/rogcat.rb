@@ -1,7 +1,7 @@
 class Rogcat < Formula
   desc "Adb logcat wrapper"
-  homepage "https:github.comflxorogcat"
-  url "https:github.comflxorogcatarchiverefstagsv0.5.0.tar.gz"
+  homepage "https://github.com/flxo/rogcat"
+  url "https://ghfast.top/https://github.com/flxo/rogcat/archive/refs/tags/v0.5.0.tar.gz"
   sha256 "8b4d90dd1254ff82bc01cadcb8a157dc4d66d2e987471ae3c3eaa99f03e34ba3"
   license "MIT"
 
@@ -27,7 +27,7 @@ class Rogcat < Formula
   def install
     system "cargo", "install", *std_cargo_args
 
-    generate_completions_from_executable(bin"rogcat", "completions")
+    generate_completions_from_executable(bin/"rogcat", "completions")
   end
 
   def caveats
@@ -40,9 +40,9 @@ class Rogcat < Formula
   end
 
   test do
-    output = shell_output("#{bin}rogcat devices 2>&1", 101)
+    output = shell_output("#{bin}/rogcat devices 2>&1", 101)
     assert_match "Failed to find adb", output
 
-    assert_match version.to_s, shell_output("#{bin}rogcat --version")
+    assert_match version.to_s, shell_output("#{bin}/rogcat --version")
   end
 end

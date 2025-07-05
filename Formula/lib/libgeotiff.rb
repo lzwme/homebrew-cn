@@ -1,22 +1,22 @@
 class Libgeotiff < Formula
   desc "Library and tools for dealing with GeoTIFF"
-  homepage "https:github.comOSGeolibgeotiff"
+  homepage "https://github.com/OSGeo/libgeotiff"
   license "MIT"
 
   stable do
-    url "https:github.comOSGeolibgeotiffreleasesdownload1.7.4libgeotiff-1.7.4.tar.gz"
+    url "https://ghfast.top/https://github.com/OSGeo/libgeotiff/releases/download/1.7.4/libgeotiff-1.7.4.tar.gz"
     sha256 "c598d04fdf2ba25c4352844dafa81dde3f7fd968daa7ad131228cd91e9d3dc47"
 
     # Fix -flat_namespace being used on Big Sur and later.
     patch do
-      url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-big_sur.diff"
+      url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-big_sur.diff"
       sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
     end
   end
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -30,7 +30,7 @@ class Libgeotiff < Formula
   end
 
   head do
-    url "https:github.comOSGeolibgeotiff.git", branch: "master"
+    url "https://github.com/OSGeo/libgeotiff.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -42,14 +42,14 @@ class Libgeotiff < Formula
   depends_on "proj"
 
   def install
-    system ".autogen.sh" if build.head?
-    system ".configure", *std_configure_args, "--with-jpeg"
+    system "./autogen.sh" if build.head?
+    system "./configure", *std_configure_args, "--with-jpeg"
     system "make" # Separate steps or install fails
     system "make", "install"
   end
 
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include "geotiffio.h"
       #include "xtiffio.h"
       #include <stdlib.h>
@@ -79,8 +79,8 @@ class Libgeotiff < Formula
 
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lgeotiff",
                    "-L#{Formula["libtiff"].opt_lib}", "-ltiff", "-o", "test"
-    system ".test", "test.tif"
-    output = shell_output("#{bin}listgeo test.tif")
-    assert_match(GeogInvFlatteningGeoKey.*123\.456, output)
+    system "./test", "test.tif"
+    output = shell_output("#{bin}/listgeo test.tif")
+    assert_match(/GeogInvFlatteningGeoKey.*123\.456/, output)
   end
 end

@@ -1,7 +1,7 @@
 class AwsCCal < Formula
   desc "AWS Crypto Abstraction Layer"
-  homepage "https:github.comawslabsaws-c-cal"
-  url "https:github.comawslabsaws-c-calarchiverefstagsv0.9.2.tar.gz"
+  homepage "https://github.com/awslabs/aws-c-cal"
+  url "https://ghfast.top/https://github.com/awslabs/aws-c-cal/archive/refs/tags/v0.9.2.tar.gz"
   sha256 "f9f3bc6a069e2efe25fcdf73e4d2b16b5608c327d2eb57c8f7a8524e9e1fcad0"
   license "Apache-2.0"
 
@@ -32,12 +32,12 @@ class AwsCCal < Formula
   end
 
   test do
-    (testpath"test.c").write <<~C
-      #include <awscalcal.h>
-      #include <awscalhash.h>
-      #include <awscommonallocator.h>
-      #include <awscommonbyte_buf.h>
-      #include <awscommonerror.h>
+    (testpath/"test.c").write <<~C
+      #include <aws/cal/cal.h>
+      #include <aws/cal/hash.h>
+      #include <aws/common/allocator.h>
+      #include <aws/common/byte_buf.h>
+      #include <aws/common/error.h>
       #include <assert.h>
 
       int main(void) {
@@ -74,6 +74,6 @@ class AwsCCal < Formula
     C
     system ENV.cc, "test.c", "-o", "test", "-L#{lib}", "-laws-c-cal",
                    "-L#{Formula["aws-c-common"].opt_lib}", "-laws-c-common"
-    system ".test"
+    system "./test"
   end
 end

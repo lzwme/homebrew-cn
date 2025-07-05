@@ -1,7 +1,7 @@
 class ProtobufAT3 < Formula
   desc "Protocol buffers (Google's data interchange format)"
-  homepage "https:github.comprotocolbuffersprotobuf"
-  url "https:github.comprotocolbuffersprotobufreleasesdownloadv3.20.3protobuf-all-3.20.3.tar.gz"
+  homepage "https://github.com/protocolbuffers/protobuf/"
+  url "https://ghfast.top/https://github.com/protocolbuffers/protobuf/releases/download/v3.20.3/protobuf-all-3.20.3.tar.gz"
   sha256 "acb71ce46502683c31d4f15bafb611b9e7b858b6024804d6fb84b85750884208"
   license "BSD-3-Clause"
 
@@ -31,31 +31,31 @@ class ProtobufAT3 < Formula
 
   # Backport support for Python 3.11
   patch do
-    url "https:github.comprotocolbuffersprotobufcommitda973aff2adab60a9e516d3202c111dbdde1a50f.patch?full_index=1"
+    url "https://github.com/protocolbuffers/protobuf/commit/da973aff2adab60a9e516d3202c111dbdde1a50f.patch?full_index=1"
     sha256 "911925e427a396fa5e54354db8324c0178f5c602b3f819f7d471bb569cc34f53"
   end
 
   def pythons
     deps.map(&:to_formula)
-        .select { |f| f.name.match?(^python@\d\.\d+$) }
-        .map { |f| f.opt_libexec"binpython" }
+        .select { |f| f.name.match?(/^python@\d\.\d+$/) }
+        .map { |f| f.opt_libexec/"bin/python" }
   end
 
   def install
     # Don't build in debug mode. See:
-    # https:github.comHomebrewhomebrewissues9279
-    # https:github.comprotocolbuffersprotobufblob5c24564811c08772d090305be36fae82d8f12bbeconfigure.ac#L61
+    # https://github.com/Homebrew/homebrew/issues/9279
+    # https://github.com/protocolbuffers/protobuf/blob/5c24564811c08772d090305be36fae82d8f12bbe/configure.ac#L61
     ENV.prepend "CXXFLAGS", "-DNDEBUG"
     ENV.cxx11
 
-    system ".autogen.sh" if build.head?
-    system ".configure", "--with-zlib", "--with-pic", *std_configure_args
+    system "./autogen.sh" if build.head?
+    system "./configure", "--with-zlib", "--with-pic", *std_configure_args
     system "make"
     system "make", "install"
 
     # Install editor support and examples
-    pkgshare.install "editorsproto.vim", "examples"
-    elisp.install "editorsprotobuf-mode.el"
+    pkgshare.install "editors/proto.vim", "examples"
+    elisp.install "editors/protobuf-mode.el"
 
     ENV.append_to_cflags "-I#{include}"
     ENV.append_to_cflags "-L#{lib}"
@@ -63,7 +63,7 @@ class ProtobufAT3 < Formula
     pip_args = ["--config-settings=--build-option=--cpp_implementation"]
     pythons.each do |python|
       build_isolation = Language::Python.major_minor_version(python) >= "3.12"
-      system python, "-m", "pip", "install", *pip_args, *std_pip_args(build_isolation:), ".python"
+      system python, "-m", "pip", "install", *pip_args, *std_pip_args(build_isolation:), "./python"
     end
   end
 
@@ -78,11 +78,11 @@ class ProtobufAT3 < Formula
         repeated TestCase case = 1;
       }
     PROTO
-    (testpath"test.proto").write testdata
-    system bin"protoc", "test.proto", "--cpp_out=."
+    (testpath/"test.proto").write testdata
+    system bin/"protoc", "test.proto", "--cpp_out=."
 
     pythons.each do |python|
-      with_env(PYTHONPATH: prefixLanguage::Python.site_packages(python)) do
+      with_env(PYTHONPATH: prefix/Language::Python.site_packages(python)) do
         system python, "-c", "import google.protobuf"
       end
     end

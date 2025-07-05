@@ -1,14 +1,14 @@
 class Nickel < Formula
   desc "Better configuration for less"
-  homepage "https:nickel-lang.org"
-  url "https:github.comtweagnickelarchiverefstags1.12.2.tar.gz"
+  homepage "https://nickel-lang.org/"
+  url "https://ghfast.top/https://github.com/tweag/nickel/archive/refs/tags/1.12.2.tar.gz"
   sha256 "1161b901c238d78dfb2529fee878f37d69c4187ba10d5bd0e2723836d19f7c15"
   license "MIT"
-  head "https:github.comtweagnickel.git", branch: "master"
+  head "https://github.com/tweag/nickel.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(^v?((?!9\.9\.9)\d+(?:\.\d+)+)$i)
+    regex(/^v?((?!9\.9\.9)\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -28,17 +28,17 @@ class Nickel < Formula
 
     system "cargo", "install", *std_cargo_args(path: "cli")
 
-    generate_completions_from_executable(bin"nickel", "gen-completions")
+    generate_completions_from_executable(bin/"nickel", "gen-completions")
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}nickel --version")
+    assert_match version.to_s, shell_output("#{bin}/nickel --version")
 
-    (testpath"program.ncl").write <<~NICKEL
+    (testpath/"program.ncl").write <<~NICKEL
       let s = "world" in "Hello, " ++ s
     NICKEL
 
-    output = shell_output("#{bin}nickel eval program.ncl")
+    output = shell_output("#{bin}/nickel eval program.ncl")
     assert_match "Hello, world", output
   end
 end

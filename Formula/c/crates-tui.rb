@@ -1,10 +1,10 @@
 class CratesTui < Formula
   desc "TUI for exploring crates.io using Ratatui"
-  homepage "https:github.comratatuicrates-tui"
-  url "https:github.comratatuicrates-tuiarchiverefstagsv0.1.25.tar.gz"
+  homepage "https://github.com/ratatui/crates-tui"
+  url "https://ghfast.top/https://github.com/ratatui/crates-tui/archive/refs/tags/v0.1.25.tar.gz"
   sha256 "b02e2fa3b7225b5638f9ab8716c3cf21dfb32d96aee140ead2f451005abd58c2"
   license "MIT"
-  head "https:github.comratatuicrates-tui.git", branch: "main"
+  head "https://github.com/ratatui/crates-tui.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "f56fcc14fa7ac18c23012b124c2c1332b496ca0e9ade5a07a6d531a5f7bb4e62"
@@ -28,14 +28,14 @@ class CratesTui < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}crates-tui --version")
+    assert_match version.to_s, shell_output("#{bin}/crates-tui --version")
 
     # failed with Linux CI, `No such device or address (os error 6)`
     return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
 
     begin
-      output_log = testpath"output.log"
-      pid = spawn bin"crates-tui", [:out, :err] => output_log.to_s
+      output_log = testpath/"output.log"
+      pid = spawn bin/"crates-tui", [:out, :err] => output_log.to_s
       sleep 2
       assert_match "New Crates", output_log.read
     ensure

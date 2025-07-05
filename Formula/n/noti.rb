@@ -1,10 +1,10 @@
 class Noti < Formula
   desc "Trigger notifications when a process completes"
-  homepage "https:github.comvariadiconoti"
-  url "https:github.comvariadiconotiarchiverefstags3.8.0.tar.gz"
+  homepage "https://github.com/variadico/noti"
+  url "https://ghfast.top/https://github.com/variadico/noti/archive/refs/tags/3.8.0.tar.gz"
   sha256 "b637b4b4e5eb10b3ea2c5b2cf0fbd1904ab8fd26eaec4b911f4ce2db3ab881a2"
   license "MIT"
-  head "https:github.comvariadiconoti.git", branch: "main"
+  head "https://github.com/variadico/noti.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "7373f99acea5809bcc89237de6cfe9b869fb194603f9ffa69d90c6a01ae60cf1"
@@ -20,15 +20,15 @@ class Noti < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.comvariadiconotiinternalcommand.Version=#{version}
+      -X github.com/variadico/noti/internal/command.Version=#{version}
     ]
-    system "go", "build", *std_go_args(ldflags:), "cmdnotimain.go"
-    man1.install "docsmandistnoti.1"
-    man5.install "docsmandistnoti.yaml.5"
+    system "go", "build", *std_go_args(ldflags:), "cmd/noti/main.go"
+    man1.install "docs/man/dist/noti.1"
+    man5.install "docs/man/dist/noti.yaml.5"
   end
 
   test do
-    assert_match "noti version #{version}", shell_output("#{bin}noti --version").chomp
-    system bin"noti", "-t", "Noti", "-m", "'Noti recipe installation test has finished.'"
+    assert_match "noti version #{version}", shell_output("#{bin}/noti --version").chomp
+    system bin/"noti", "-t", "Noti", "-m", "'Noti recipe installation test has finished.'"
   end
 end

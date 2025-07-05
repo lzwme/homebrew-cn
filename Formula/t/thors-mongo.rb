@@ -1,7 +1,7 @@
 class ThorsMongo < Formula
   desc "Mongo API and Serialization library"
-  homepage "https:github.comLoki-AstariThorsMongo"
-  url "https:github.comLoki-AstariThorsMongo.git",
+  homepage "https://github.com/Loki-Astari/ThorsMongo"
+  url "https://github.com/Loki-Astari/ThorsMongo.git",
       tag:      "6.0.06",
       revision: "9ff64c7f7d52415a9f09d764078a9d2b29b06f16"
   license "GPL-3.0-only"
@@ -29,9 +29,9 @@ class ThorsMongo < Formula
   def install
     ENV["COV"] = "gcov"
 
-    system ".brewinit"
+    system "./brew/init"
 
-    system ".configure", "--disable-vera",
+    system "./configure", "--disable-vera",
                           "--prefix=#{prefix}",
                           "--disable-test-with-integration",
                           "--disable-test-with-mongo-query",
@@ -42,9 +42,9 @@ class ThorsMongo < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~CPP
-      #include "ThorSerializeJsonThor.h"
-      #include "ThorSerializeSerUtil.h"
+    (testpath/"test.cpp").write <<~CPP
+      #include "ThorSerialize/JsonThor.h"
+      #include "ThorSerialize/SerUtil.h"
       #include <sstream>
       #include <iostream>
       #include <string>
@@ -76,6 +76,6 @@ class ThorsMongo < Formula
     CPP
     system ENV.cxx, "-std=c++20", "test.cpp", "-o", "test",
            "-I#{include}", "-L#{lib}", "-lThorSerialize", "-lThorsLogging", "-ldl"
-    system ".test"
+    system "./test"
   end
 end

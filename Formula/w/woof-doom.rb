@@ -1,10 +1,10 @@
 class WoofDoom < Formula
-  desc "Woof! is a continuation of the BoomMBF bloodline of Doom source ports"
-  homepage "https:github.comfabiangreffrathwoof"
-  url "https:github.comfabiangreffrathwoofarchiverefstagswoof_15.2.0.tar.gz"
+  desc "Woof! is a continuation of the Boom/MBF bloodline of Doom source ports"
+  homepage "https://github.com/fabiangreffrath/woof"
+  url "https://ghfast.top/https://github.com/fabiangreffrath/woof/archive/refs/tags/woof_15.2.0.tar.gz"
   sha256 "aa2842c2897b1a8c733a79db190c2e6c17cef10651c5cd5105c7bf1360799932"
   license "GPL-2.0-only"
-  head "https:github.comfabiangreffrathwoof.git", branch: "master"
+  head "https://github.com/fabiangreffrath/woof.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "9f0b9979cbb09840542e15f524abb725a5531e1c10b7d4bbcfc9333096acd39d"
@@ -41,11 +41,11 @@ class WoofDoom < Formula
     testdata = <<~EOS
       Invalid IWAD file
     EOS
-    (testpath"test_invalid.wad").write testdata
+    (testpath/"test_invalid.wad").write testdata
 
     expected_output = "Error: Failed to load test_invalid.wad"
-    assert_match expected_output, shell_output("#{bin}woof -nogui -iwad test_invalid.wad 2>&1", 255)
+    assert_match expected_output, shell_output("#{bin}/woof -nogui -iwad test_invalid.wad 2>&1", 255)
 
-    assert_match version.to_s, shell_output("#{bin}woof -version")
+    assert_match version.to_s, shell_output("#{bin}/woof -version")
   end
 end

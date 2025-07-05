@@ -1,10 +1,10 @@
 class CouchbaseShell < Formula
   desc "Modern and fun shell for Couchbase Server and Capella"
-  homepage "https:couchbase.sh"
-  url "https:github.comcouchbaselabscouchbase-shellarchiverefstagsv1.1.0.tar.gz"
+  homepage "https://couchbase.sh"
+  url "https://ghfast.top/https://github.com/couchbaselabs/couchbase-shell/archive/refs/tags/v1.1.0.tar.gz"
   sha256 "2679e5e2655ea0744efe66cce665481d95676ef26d284ea0341311068ccfb972"
   license "Apache-2.0"
-  head "https:github.comcouchbaselabscouchbase-shell.git", branch: "main"
+  head "https://github.com/couchbaselabs/couchbase-shell.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "1e4207cdae2d36437ad70fed865a844849ade6670facd075383a78a8152e8726"
@@ -32,6 +32,6 @@ class CouchbaseShell < Formula
   end
 
   test do
-    assert_match "homebrew_test", shell_output("#{bin}cbsh -c '{ foo: 1, bar: homebrew_test} | get bar'")
+    assert_match "homebrew_test", shell_output("#{bin}/cbsh -c '{ foo: 1, bar: homebrew_test} | get bar'")
   end
 end

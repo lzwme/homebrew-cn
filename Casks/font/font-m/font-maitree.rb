@@ -2,12 +2,12 @@ cask "font-maitree" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefonts.git",
-      verified:  "github.comgooglefonts",
+  url "https://github.com/google/fonts.git",
+      verified:  "github.com/google/fonts",
       branch:    "main",
-      only_path: "oflmaitree"
+      only_path: "ofl/maitree"
   name "Maitree"
-  homepage "https:fonts.google.comspecimenMaitree"
+  homepage "https://fonts.google.com/specimen/Maitree"
 
   font "Maitree-Bold.ttf"
   font "Maitree-ExtraLight.ttf"

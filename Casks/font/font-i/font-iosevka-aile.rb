@@ -2,9 +2,9 @@ cask "font-iosevka-aile" do
   version "33.2.6"
   sha256 "c97f0a3850db9cf30635d19e62d74c3536b089953dfc56ec3c101b0d892a8e03"
 
-  url "https:github.combe5invisIosevkareleasesdownloadv#{version}SuperTTC-IosevkaAile-#{version}.zip"
+  url "https://ghfast.top/https://github.com/be5invis/Iosevka/releases/download/v#{version}/SuperTTC-IosevkaAile-#{version}.zip"
   name "Iosevka Aile"
-  homepage "https:github.combe5invisIosevka"
+  homepage "https://github.com/be5invis/Iosevka/"
 
   livecheck do
     url :url

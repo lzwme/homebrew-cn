@@ -1,10 +1,10 @@
 class OpenclIcdLoader < Formula
   desc "OpenCL Installable Client Driver (ICD) Loader"
-  homepage "https:www.khronos.orgregistryOpenCL"
-  url "https:github.comKhronosGroupOpenCL-ICD-Loaderarchiverefstagsv2024.10.24.tar.gz"
+  homepage "https://www.khronos.org/registry/OpenCL/"
+  url "https://ghfast.top/https://github.com/KhronosGroup/OpenCL-ICD-Loader/archive/refs/tags/v2024.10.24.tar.gz"
   sha256 "95f2f0cda375b13d2760290df044ebea9c6ff954a7d7faa0867422442c9174dc"
   license "Apache-2.0"
-  head "https:github.comKhronosGroupOpenCL-ICD-Loader.git", branch: "main"
+  head "https://github.com/KhronosGroup/OpenCL-ICD-Loader.git", branch: "main"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "da02c657410f1f99d71a8fb4a512a65dffb83725d0e3e5fe83c56dadd5195951"
@@ -21,25 +21,25 @@ class OpenclIcdLoader < Formula
   depends_on "cmake" => :build
   depends_on "opencl-headers" => [:build, :test]
 
-  conflicts_with "ocl-icd", because: "both install `liblibOpenCL.so` library"
+  conflicts_with "ocl-icd", because: "both install `lib/libOpenCL.so` library"
 
   def install
-    inreplace "loadericd_platform.h", "\"etc", "\"#{etc}"
+    inreplace "loader/icd_platform.h", "\"/etc/", "\"#{etc}/"
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
-    pkgshare.install "testloader_test"
-    (pkgshare"loader_test").install "testincplatform", "testlogicd_test_log.c"
+    pkgshare.install "test/loader_test"
+    (pkgshare/"loader_test").install "test/inc/platform", "test/log/icd_test_log.c"
   end
 
   def caveats
-    s = "The default vendors directory is #{etc}OpenCLvendors\n"
+    s = "The default vendors directory is #{etc}/OpenCL/vendors\n"
     on_linux do
       s += <<~EOS
         No OpenCL implementation is pre-installed, so all dependents will require either
         installing a compatible formula or creating an ".icd" file mapping to an externally
         installed implementation. Any ".icd" files copied or symlinked into
-        `#{etc}OpenCLvendors` will automatically be detected by `opencl-icd-loader`.
+        `#{etc}/OpenCL/vendors` will automatically be detected by `opencl-icd-loader`.
         A portable OpenCL implementation is available via the `pocl` formula.
       EOS
     end
@@ -47,11 +47,11 @@ class OpenclIcdLoader < Formula
   end
 
   test do
-    cp_r (pkgshare"loader_test").children, testpath
+    cp_r (pkgshare/"loader_test").children, testpath
     system ENV.cc, *testpath.glob("*.c"), "-o", "icd_loader_test",
                    "-DCL_TARGET_OPENCL_VERSION=300",
                    "-I#{Formula["opencl-headers"].opt_include}", "-I#{testpath}",
                    "-L#{lib}", "-lOpenCL"
-    assert_match "ERROR: App log and stub log differ.", shell_output("#{testpath}icd_loader_test", 1)
+    assert_match "ERROR: App log and stub log differ.", shell_output("#{testpath}/icd_loader_test", 1)
   end
 end

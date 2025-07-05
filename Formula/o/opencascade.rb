@@ -1,19 +1,19 @@
 class Opencascade < Formula
-  desc "3D modeling and numerical simulation software for CADCAMCAE"
-  homepage "https:dev.opencascade.org"
-  url "https:git.dev.opencascade.orggitweb?p=occt.git;a=snapshot;h=refstagsV7_9_1;sf=tgz"
+  desc "3D modeling and numerical simulation software for CAD/CAM/CAE"
+  homepage "https://dev.opencascade.org/"
+  url "https://git.dev.opencascade.org/gitweb/?p=occt.git;a=snapshot;h=refs/tags/V7_9_1;sf=tgz"
   version "7.9.1"
   sha256 "e70b8c08c74f9693cbc91baa48610f1f5448ad167425fb8b957cf5a8f2cafed5"
   license "LGPL-2.1-only"
 
-  # The first-party download page (https:dev.opencascade.orgrelease)
+  # The first-party download page (https://dev.opencascade.org/release)
   # references version 7.5.0 and hasn't been updated for later maintenance
   # releases (e.g., 7.6.2, 7.5.2), so we check the Git tags instead. Release
-  # information is posted at https:dev.opencascade.orgforumsocct-releases
+  # information is posted at https://dev.opencascade.org/forums/occt-releases
   # but the text varies enough that we can't reliably match versions from it.
   livecheck do
-    url "https:git.dev.opencascade.orgreposocct.git"
-    regex(^v?(\d+(?:[._]\d+)+(?:p\d+)?)$i)
+    url "https://git.dev.opencascade.org/repos/occt.git"
+    regex(/^v?(\d+(?:[._]\d+)+(?:p\d+)?)$/i)
     strategy :git do |tags, regex|
       tags.filter_map { |tag| tag[regex, 1]&.tr("_", ".") }
     end
@@ -37,7 +37,7 @@ class Opencascade < Formula
   depends_on "freeimage"
   depends_on "freetype"
   depends_on "tbb"
-  depends_on "tcl-tk@8" # TCL 9 issue: https:tracker.dev.opencascade.orgview.php?id=33725
+  depends_on "tcl-tk@8" # TCL 9 issue: https://tracker.dev.opencascade.org/view.php?id=33725
 
   on_linux do
     depends_on "libx11"
@@ -46,8 +46,8 @@ class Opencascade < Formula
 
   def install
     tcltk = Formula["tcl-tk@8"]
-    libtcl = tcltk.opt_libshared_library("libtcl#{tcltk.version.major_minor}")
-    libtk = tcltk.opt_libshared_library("libtk#{tcltk.version.major_minor}")
+    libtcl = tcltk.opt_lib/shared_library("libtcl#{tcltk.version.major_minor}")
+    libtk = tcltk.opt_lib/shared_library("libtk#{tcltk.version.major_minor}")
 
     system "cmake", "-S", ".", "-B", "build",
                     "-DUSE_FREEIMAGE=ON",
@@ -62,8 +62,8 @@ class Opencascade < Formula
                     "-D3RDPARTY_TBB_DIR=#{Formula["tbb"].opt_prefix}",
                     "-D3RDPARTY_TCL_DIR:PATH=#{tcltk.opt_prefix}",
                     "-D3RDPARTY_TK_DIR:PATH=#{tcltk.opt_prefix}",
-                    "-D3RDPARTY_TCL_INCLUDE_DIR:PATH=#{tcltk.opt_include}tcl-tk",
-                    "-D3RDPARTY_TK_INCLUDE_DIR:PATH=#{tcltk.opt_include}tcl-tk",
+                    "-D3RDPARTY_TCL_INCLUDE_DIR:PATH=#{tcltk.opt_include}/tcl-tk",
+                    "-D3RDPARTY_TK_INCLUDE_DIR:PATH=#{tcltk.opt_include}/tcl-tk",
                     "-D3RDPARTY_TCL_LIBRARY_DIR:PATH=#{tcltk.opt_lib}",
                     "-D3RDPARTY_TK_LIBRARY_DIR:PATH=#{tcltk.opt_lib}",
                     "-D3RDPARTY_TCL_LIBRARY:FILEPATH=#{libtcl}",
@@ -73,7 +73,7 @@ class Opencascade < Formula
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 
-    # The soname  install name of libtbb and libtbbmalloc are versioned only
+    # The soname / install name of libtbb and libtbbmalloc are versioned only
     # by the minor version (e.g., `libtbb.so.12`), but Open CASCADE's CMake
     # config files reference the fully-versioned filenames (e.g.,
     # `libtbb.so.12.11`).
@@ -85,34 +85,34 @@ class Opencascade < Formula
     #   libtbb.12.11.dylib => libtbb.12.dylib
     #   libtbbmalloc.2.11.dylib => libtbbmalloc.2.dylib
     # See also:
-    #   https:github.comHomebrewhomebrew-coreissues129111
-    #   https:dev.opencascade.orgcontentcmake-files-macos-link-non-existent-libtbb128dylib
-    tbb_regex = 
+    #   https://github.com/Homebrew/homebrew-core/issues/129111
+    #   https://dev.opencascade.org/content/cmake-files-macos-link-non-existent-libtbb128dylib
+    tbb_regex = /
       libtbb
       (malloc)? # 1
       (\.so)? # 2
       \.(\d+) # 3
       \.(\d+) # 4
       (\.dylib)? # 5
-    x
-    inreplace (lib"cmakeopencascade").glob("*.cmake") do |s|
+    /x
+    inreplace (lib/"cmake/opencascade").glob("*.cmake") do |s|
       s.gsub! tbb_regex, 'libtbb\1\2.\3\5', audit_result: false
     end
 
     bin.env_script_all_files(libexec, CASROOT: prefix)
 
-    # Some apps expect resources in legacy ${CASROOT}src directory
-    prefix.install_symlink pkgshare"resources" => "src"
+    # Some apps expect resources in legacy ${CASROOT}/src directory
+    prefix.install_symlink pkgshare/"resources" => "src"
   end
 
   test do
-    output = shell_output("#{bin}DRAWEXE -b -c \"pload ALL\"")
+    output = shell_output("#{bin}/DRAWEXE -b -c \"pload ALL\"")
 
     # Discard the first line ("DRAW is running in batch mode"), and check that the second line is "1"
     assert_equal "1", output.split("\n", 2)[1].chomp
 
     # Make sure hardcoded library name references in our CMake config files are valid.
-    (testpath"CMakeLists.txt").write <<~CMAKE
+    (testpath/"CMakeLists.txt").write <<~CMAKE
       cmake_minimum_required(VERSION 3.5)
       set(CMAKE_CXX_STANDARD 11)
       project(test LANGUAGES CXX)
@@ -122,7 +122,7 @@ class Opencascade < Formula
       target_link_libraries(test PRIVATE TKernel)
     CMAKE
 
-    (testpath"main.cpp").write <<~CPP
+    (testpath/"main.cpp").write <<~CPP
       #include <Quantity_Color.hxx>
       #include <Standard_Version.hxx>
       #include <iostream>
@@ -136,6 +136,6 @@ class Opencascade < Formula
     system "cmake", "-S", ".", "-B", "build"
     system "cmake", "--build", "build"
     ENV.append_path "LD_LIBRARY_PATH", lib if OS.linux?
-    assert_equal "OCCT Version: #{version}", shell_output(".buildtest").chomp
+    assert_equal "OCCT Version: #{version}", shell_output("./build/test").chomp
   end
 end

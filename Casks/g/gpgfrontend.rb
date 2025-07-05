@@ -45,11 +45,11 @@ cask "gpgfrontend" do
     end
   end
 
-  url "https:github.comsaturnericGpgFrontendreleasesdownloadv#{version}GpgFrontend-#{version}-macos-#{macos_version}.dmg",
-      verified: "github.comsaturnericGpgFrontend"
+  url "https://ghfast.top/https://github.com/saturneric/GpgFrontend/releases/download/v#{version}/GpgFrontend-#{version}-macos-#{macos_version}.dmg",
+      verified: "github.com/saturneric/GpgFrontend/"
   name "GpgFrontend"
-  desc "OpenPGPGnuPG crypto, sign and key management tool"
-  homepage "https:gpgfrontend.bktus.com"
+  desc "OpenPGP/GnuPG crypto, sign and key management tool"
+  homepage "https://gpgfrontend.bktus.com/"
 
   no_autobump! because: :requires_manual_review
 
@@ -59,12 +59,12 @@ cask "gpgfrontend" do
   app "GpgFrontend.app"
 
   zap trash: [
-    "~LibraryApplication Scriptspub.gpgfrontend.gpgfrontend",
-    "~LibraryApplication SupportGpgFrontend",
-    "~LibraryContainerspub.gpgfrontend.gpgfrontend",
-    "~LibraryPreferencesGpgFrontend",
-    "~LibraryPreferencesGpgFrontend.plist",
-    "~LibraryPreferencespub.gpgfrontend.gpgfrontend.plist",
-    "~LibrarySaved Application Statepub.gpgfrontend.gpgfrontend.savedState",
+    "~/Library/Application Scripts/pub.gpgfrontend.gpgfrontend",
+    "~/Library/Application Support/GpgFrontend",
+    "~/Library/Containers/pub.gpgfrontend.gpgfrontend",
+    "~/Library/Preferences/GpgFrontend",
+    "~/Library/Preferences/GpgFrontend.plist",
+    "~/Library/Preferences/pub.gpgfrontend.gpgfrontend.plist",
+    "~/Library/Saved Application State/pub.gpgfrontend.gpgfrontend.savedState",
   ]
 end

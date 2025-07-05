@@ -1,7 +1,7 @@
 class Libsoundio < Formula
   desc "Cross-platform audio input and output"
-  homepage "http:libsound.io"
-  url "https:github.comandrewrklibsoundioarchiverefstags2.0.1-7.tar.gz"
+  homepage "http://libsound.io"
+  url "https://ghfast.top/https://github.com/andrewrk/libsoundio/archive/refs/tags/2.0.1-7.tar.gz"
   sha256 "941f1347dabab02c88ef57e225b04587c3f69824e550e1045e4a9119cd657a4e"
   license "MIT"
 
@@ -26,8 +26,8 @@ class Libsoundio < Formula
   end
 
   test do
-    (testpath"test.c").write <<~C
-      #include <soundiosoundio.h>
+    (testpath/"test.c").write <<~C
+      #include <soundio/soundio.h>
 
       int main() {
         struct SoundIo *soundio = soundio_create();
@@ -42,6 +42,6 @@ class Libsoundio < Formula
       }
     C
     system ENV.cc, "test.c", "-L#{lib}", "-lsoundio", "-o", "test"
-    system ".test"
+    system "./test"
   end
 end

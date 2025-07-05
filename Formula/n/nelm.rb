@@ -1,10 +1,10 @@
 class Nelm < Formula
   desc "Kubernetes deployment tool that manages and deploys Helm Charts"
-  homepage "https:github.comwerfnelm"
-  url "https:github.comwerfnelmarchiverefstagsv1.7.0.tar.gz"
+  homepage "https://github.com/werf/nelm"
+  url "https://ghfast.top/https://github.com/werf/nelm/archive/refs/tags/v1.7.0.tar.gz"
   sha256 "5e32d9cf1a6053bc5a2adbacfbcd791e8e73ca43456e0891f3f590688594320a"
   license "Apache-2.0"
-  head "https:github.comwerfnelm.git", branch: "main"
+  head "https://github.com/werf/nelm.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "9c6c3c9856931f220b5c0e1e0d498cfabd841e4cb0f03d92a78c350e37e582f2"
@@ -21,25 +21,25 @@ class Nelm < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.comwerfnelminternalcommon.Version=#{version}
+      -X github.com/werf/nelm/internal/common.Version=#{version}
     ]
-    system "go", "build", *std_go_args(ldflags:), ".cmdnelm"
+    system "go", "build", *std_go_args(ldflags:), "./cmd/nelm"
 
-    generate_completions_from_executable(bin"nelm", "completion")
+    generate_completions_from_executable(bin/"nelm", "completion")
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}nelm version")
+    assert_match version.to_s, shell_output("#{bin}/nelm version")
 
-    (testpath"Chart.yaml").write <<~YAML
+    (testpath/"Chart.yaml").write <<~YAML
       apiVersion: v2
       name: mychart
       version: 1.0.0
       dependencies:
       - name: cert-manager
         version: 1.13.3
-        repository: https:127.0.0.1
+        repository: https://127.0.0.1
     YAML
-    assert_match "Error: no cached repository", shell_output("#{bin}nelm chart dependency download 2>&1", 1)
+    assert_match "Error: no cached repository", shell_output("#{bin}/nelm chart dependency download 2>&1", 1)
   end
 end

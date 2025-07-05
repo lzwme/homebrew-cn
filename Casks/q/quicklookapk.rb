@@ -2,10 +2,10 @@ cask "quicklookapk" do
   version "1.0"
   sha256 :no_check
 
-  url "https:github.comheziQuickLookAPKrawmasterQuickLookAPK.qlgenerator.zip"
+  url "https://github.com/hezi/QuickLookAPK/raw/master/QuickLookAPK.qlgenerator.zip"
   name "QuickLookAPK"
   desc "Quick Look plugin for Android packages"
-  homepage "https:github.comheziQuickLookAPK"
+  homepage "https://github.com/hezi/QuickLookAPK"
 
   no_autobump! because: :requires_manual_review
 

@@ -1,11 +1,11 @@
 class Vgrep < Formula
   desc "User-friendly pager for grep"
-  homepage "https:github.comvrothbergvgrep"
-  url "https:github.comvrothbergvgreparchiverefstagsv2.8.0.tar.gz"
+  homepage "https://github.com/vrothberg/vgrep"
+  url "https://ghfast.top/https://github.com/vrothberg/vgrep/archive/refs/tags/v2.8.0.tar.gz"
   sha256 "325b28bd5e8da316e319361f2dd8e3cc74fcd55724fc8ad4b2a73c21b2903bd8"
   license "GPL-3.0-only"
   version_scheme 1
-  head "https:github.comvrothbergvgrep.git", branch: "main"
+  head "https://github.com/vrothberg/vgrep.git", branch: "main"
 
   # The leading `v` in this regex is intentionally non-optional, as we need to
   # exclude a few older tags that use a different version scheme and would
@@ -15,7 +15,7 @@ class Vgrep < Formula
   # but not necessarily the newest version in this context).
   livecheck do
     url :stable
-    regex(^v(\d+(?:\.\d+)+)$i)
+    regex(/^v(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -39,8 +39,8 @@ class Vgrep < Formula
   end
 
   test do
-    (testpath"test.txt").write "Hello from Homebrew!\n"
-    output = shell_output("#{bin}vgrep -w Homebrew --no-less .")
+    (testpath/"test.txt").write "Hello from Homebrew!\n"
+    output = shell_output("#{bin}/vgrep -w Homebrew --no-less .")
     assert_match "Hello from", output
     assert_match "Homebrew", output
   end

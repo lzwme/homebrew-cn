@@ -1,10 +1,10 @@
 class Spdlog < Formula
   desc "Super fast C++ logging library"
-  homepage "https:github.comgabimespdlog"
-  url "https:github.comgabimespdlogarchiverefstagsv1.15.3.tar.gz"
+  homepage "https://github.com/gabime/spdlog"
+  url "https://ghfast.top/https://github.com/gabime/spdlog/archive/refs/tags/v1.15.3.tar.gz"
   sha256 "15a04e69c222eb6c01094b5c7ff8a249b36bb22788d72519646fb85feb267e67"
   license "MIT"
-  head "https:github.comgabimespdlog.git", branch: "v1.x"
+  head "https://github.com/gabime/spdlog.git", branch: "v1.x"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "b885d77ddec4626dd6f31bc9a94fae28b4bd3ac4e5e91c36624891d262d6d3de"
@@ -22,7 +22,7 @@ class Spdlog < Formula
   def install
     ENV.cxx11
 
-    inreplace "includespdlogtweakme.h", " #define SPDLOG_FMT_EXTERNAL", <<~C
+    inreplace "include/spdlog/tweakme.h", "// #define SPDLOG_FMT_EXTERNAL", <<~C
       #ifndef SPDLOG_FMT_EXTERNAL
       #define SPDLOG_FMT_EXTERNAL
       #endif
@@ -40,18 +40,18 @@ class Spdlog < Formula
     system "cmake", "--install", "build"
     system "cmake", "-S", ".", "-B", "build", "-DSPDLOG_BUILD_SHARED=OFF", *args
     system "cmake", "--build", "build"
-    lib.install "buildlibspdlog.a"
+    lib.install "build/libspdlog.a"
   end
 
   test do
-    (testpath"test.cpp").write <<~CPP
-      #include "spdlogsinksbasic_file_sink.h"
+    (testpath/"test.cpp").write <<~CPP
+      #include "spdlog/sinks/basic_file_sink.h"
       #include <iostream>
       #include <memory>
       int main()
       {
         try {
-          auto console = spdlog::basic_logger_mt("basic_logger", "#{testpath}basic-log.txt");
+          auto console = spdlog::basic_logger_mt("basic_logger", "#{testpath}/basic-log.txt");
           console->info("Test");
         }
         catch (const spdlog::spdlog_ex &ex)
@@ -63,8 +63,8 @@ class Spdlog < Formula
     CPP
 
     system ENV.cxx, "-std=c++11", "test.cpp", "-I#{include}", "-L#{Formula["fmt"].opt_lib}", "-lfmt", "-o", "test"
-    system ".test"
-    assert_path_exists testpath"basic-log.txt"
-    assert_match "Test", (testpath"basic-log.txt").read
+    system "./test"
+    assert_path_exists testpath/"basic-log.txt"
+    assert_match "Test", (testpath/"basic-log.txt").read
   end
 end

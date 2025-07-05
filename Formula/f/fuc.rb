@@ -1,10 +1,10 @@
 class Fuc < Formula
   desc "Modern, performance focused unix commands"
-  homepage "https:github.comsupercilexfuc"
-  url "https:github.comsupercilexfucarchiverefstags3.1.0.tar.gz"
+  homepage "https://github.com/supercilex/fuc"
+  url "https://ghfast.top/https://github.com/supercilex/fuc/archive/refs/tags/3.1.0.tar.gz"
   sha256 "cfc1faaec08e7b2a5aec124abea12a8779cf7c2da937931964112210d2bdb576"
   license "Apache-2.0"
-  head "https:github.comsupercilexfuc.git", branch: "master"
+  head "https://github.com/supercilex/fuc.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "810b9cc7306a29745fee1872c9c80e73742c3b60c0b531c013f7ab8595e2d4be"
@@ -24,10 +24,10 @@ class Fuc < Formula
   end
 
   test do
-    system bin"cpz", test_fixtures("test.png"), testpath"test.png"
-    system bin"rmz", testpath"test.png"
+    system bin/"cpz", test_fixtures("test.png"), testpath/"test.png"
+    system bin/"rmz", testpath/"test.png"
 
-    assert_match "cpz #{version}", shell_output("#{bin}cpz --version")
-    assert_match "rmz #{version}", shell_output("#{bin}rmz --version")
+    assert_match "cpz #{version}", shell_output("#{bin}/cpz --version")
+    assert_match "rmz #{version}", shell_output("#{bin}/rmz --version")
   end
 end

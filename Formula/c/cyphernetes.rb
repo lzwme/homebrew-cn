@@ -1,10 +1,10 @@
 class Cyphernetes < Formula
   desc "Kubernetes Query Language"
-  homepage "https:cyphernet.es"
-  url "https:github.comAvitalTamircyphernetesarchiverefstagsv0.18.2.tar.gz"
+  homepage "https://cyphernet.es"
+  url "https://ghfast.top/https://github.com/AvitalTamir/cyphernetes/archive/refs/tags/v0.18.2.tar.gz"
   sha256 "98c48dbc4263854c74c9216274c8ec1cb327d9accbf0458f86c2231de8c889e9"
   license "Apache-2.0"
-  head "https:github.comAvitalTamircyphernetes.git", branch: "main"
+  head "https://github.com/AvitalTamir/cyphernetes.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "f8e2d361e03bd89d0b809099a72eac56a8ab8ad739965a12cf7786733198e937"
@@ -19,15 +19,15 @@ class Cyphernetes < Formula
 
   def install
     system "make", "operator-manifests"
-    system "go", "build", *std_go_args(ldflags: "-s -w -X main.Version=#{version}"), ".cmdcyphernetes"
+    system "go", "build", *std_go_args(ldflags: "-s -w -X main.Version=#{version}"), "./cmd/cyphernetes"
 
-    generate_completions_from_executable(bin"cyphernetes", "completion")
+    generate_completions_from_executable(bin/"cyphernetes", "completion")
   end
 
   test do
-    output = shell_output("#{bin}cyphernetes query 'MATCH (d:Deployment)->(s:Service) RETURN d' 2>&1", 1)
+    output = shell_output("#{bin}/cyphernetes query 'MATCH (d:Deployment)->(s:Service) RETURN d' 2>&1", 1)
     assert_match("Error creating provider:  failed to create config: invalid configuration", output)
 
-    assert_match version.to_s, shell_output("#{bin}cyphernetes version")
+    assert_match version.to_s, shell_output("#{bin}/cyphernetes version")
   end
 end

@@ -1,11 +1,11 @@
 class Etcd < Formula
   desc "Key value store for shared configuration and service discovery"
-  homepage "https:github.cometcd-ioetcd"
-  url "https:github.cometcd-ioetcd.git",
+  homepage "https://github.com/etcd-io/etcd"
+  url "https://github.com/etcd-io/etcd.git",
       tag:      "v3.6.1",
       revision: "a4708beb0f5dfba937145762516ac98f15797940"
   license "Apache-2.0"
-  head "https:github.cometcd-ioetcd.git", branch: "main"
+  head "https://github.com/etcd-io/etcd.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "e5debf906d36e65bfdd936fdf3b651b4877a19d68989ad099cbb5b27d14086c0"
@@ -21,12 +21,12 @@ class Etcd < Formula
 
   def install
     system "make", "build"
-    bin.install Dir[buildpath"bin*"]
+    bin.install Dir[buildpath/"bin/*"]
   end
 
   service do
     environment_variables ETCD_UNSUPPORTED_ARCH: "arm64" if Hardware::CPU.arm?
-    run [opt_bin"etcd"]
+    run [opt_bin/"etcd"]
     run_type :immediate
     keep_alive true
     working_dir var
@@ -35,7 +35,7 @@ class Etcd < Formula
   test do
     test_string = "Hello from brew test!"
     etcd_pid = fork do
-      exec bin"etcd",
+      exec bin/"etcd",
            "--force-new-cluster",
            "--logger=zap",
            "--data-dir=#{testpath}"
@@ -49,11 +49,11 @@ class Etcd < Formula
 
     # PUT the key using the v3 API
     put_payload = { key: key_base64, value: value_base64 }.to_json
-    system "curl", "-L", "http:127.0.0.1:2379v3kvput", "-X", "POST", "-d", put_payload
+    system "curl", "-L", "http://127.0.0.1:2379/v3/kv/put", "-X", "POST", "-d", put_payload
 
     # GET the key back
     get_payload = { key: key_base64 }.to_json
-    curl_output = shell_output("curl -L http:127.0.0.1:2379v3kvrange -X POST -d '#{get_payload}'")
+    curl_output = shell_output("curl -L http://127.0.0.1:2379/v3/kv/range -X POST -d '#{get_payload}'")
     response_hash = JSON.parse(curl_output)
 
     retrieved_value_base64 = response_hash.dig("kvs", 0, "value")
@@ -61,8 +61,8 @@ class Etcd < Formula
 
     assert_equal test_string, retrieved_value
 
-    assert_equal "OK\n", shell_output("#{bin}etcdctl put foo bar")
-    assert_equal "foo\nbar\n", shell_output("#{bin}etcdctl get foo 2>&1")
+    assert_equal "OK\n", shell_output("#{bin}/etcdctl put foo bar")
+    assert_equal "foo\nbar\n", shell_output("#{bin}/etcdctl get foo 2>&1")
   ensure
     Process.kill("HUP", etcd_pid)
   end

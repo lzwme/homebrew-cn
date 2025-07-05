@@ -5,10 +5,10 @@ cask "nethlink" do
   sha256 arm:   "2aa31ea497f41dc7e24e62f15292748ec19ccdfb29fdaffb89dcced46ce430b9",
          intel: "5a3b1085b8493a5f6a9d7691f5c963bc60ca0b8e6ed599d2952a5b72cb3822f4"
 
-  url "https:github.comNethServernethlinkreleasesdownloadv#{version}nethlink-#{version}-#{arch}.dmg"
+  url "https://ghfast.top/https://github.com/NethServer/nethlink/releases/download/v#{version}/nethlink-#{version}-#{arch}.dmg"
   name "NethLink"
   desc "Link NethServer systems and provide remote access tools"
-  homepage "https:github.comNethServernethlink"
+  homepage "https://github.com/NethServer/nethlink"
 
   livecheck do
     url :url
@@ -22,5 +22,5 @@ cask "nethlink" do
 
   app "NethLink.app"
 
-  zap trash: "~LibraryApplication Supportnethlink"
+  zap trash: "~/Library/Application Support/nethlink"
 end

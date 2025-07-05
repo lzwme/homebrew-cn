@@ -1,7 +1,7 @@
 class Micropython < Formula
   desc "Python implementation for microcontrollers and constrained systems"
-  homepage "https:www.micropython.org"
-  url "https:github.commicropythonmicropythonreleasesdownloadv1.25.0micropython-1.25.0.tar.xz"
+  homepage "https://www.micropython.org/"
+  url "https://ghfast.top/https://github.com/micropython/micropython/releases/download/v1.25.0/micropython-1.25.0.tar.xz"
   sha256 "9fe99ad5808e66bb40d374f5cad187c32c7d1c49cf47f72b38fd453c28c2aebe"
   license "MIT"
 
@@ -20,15 +20,15 @@ class Micropython < Formula
   uses_from_macos "python" # Requires libffi v3 closure API
 
   def install
-    system "make", "-C", "portsunix", "install", "PREFIX=#{prefix}"
-    bin.install "mpy-crossbuildmpy-cross"
+    system "make", "-C", "ports/unix", "install", "PREFIX=#{prefix}"
+    bin.install "mpy-cross/build/mpy-cross"
   end
 
   test do
     lib_version = "6" if OS.linux?
 
     # Test the FFI module
-    (testpath"ffi-hello.py").write <<~PYTHON
+    (testpath/"ffi-hello.py").write <<~PYTHON
       import ffi
 
       libc = ffi.open("#{shared_library("libc", lib_version)}")
@@ -36,7 +36,7 @@ class Micropython < Formula
       printf("Hello!\\n")
     PYTHON
 
-    system bin"mpy-cross", "ffi-hello.py"
-    system bin"micropython", "ffi-hello.py"
+    system bin/"mpy-cross", "ffi-hello.py"
+    system bin/"micropython", "ffi-hello.py"
   end
 end

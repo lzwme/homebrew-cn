@@ -1,10 +1,10 @@
 class Redka < Formula
   desc "Redis re-implemented with SQLite"
-  homepage "https:github.comnalgeonredka"
-  url "https:github.comnalgeonredkaarchiverefstagsv0.5.3.tar.gz"
+  homepage "https://github.com/nalgeon/redka"
+  url "https://ghfast.top/https://github.com/nalgeon/redka/archive/refs/tags/v0.5.3.tar.gz"
   sha256 "c5b1746f5c1af905d79247b1e3d808c0da14fd8caf1115023a4d12fe3ad8ebe4"
   license "BSD-3-Clause"
-  head "https:github.comnalgeonredka.git", branch: "main"
+  head "https://github.com/nalgeon/redka.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "d76c91050ffe415ee014050dac28fedb3983a99ddda83e6a04c4009b7a100313"
@@ -23,16 +23,16 @@ class Redka < Formula
 
   def install
     ldflags = "-s -w -X main.version=v#{version}"
-    system "go", "build", *std_go_args(ldflags:, output: bin"redka"), ".cmdredka"
-    system "go", "build", *std_go_args(ldflags:, output: bin"redka-cli"), ".cmdcli"
+    system "go", "build", *std_go_args(ldflags:, output: bin/"redka"), "./cmd/redka"
+    system "go", "build", *std_go_args(ldflags:, output: bin/"redka-cli"), "./cmd/cli"
   end
 
   test do
     port = free_port
-    test_db = testpath"test.db"
+    test_db = testpath/"test.db"
 
     pid = fork do
-      exec bin"redka", "-h", "127.0.0.1", "-p", port.to_s, test_db
+      exec bin/"redka", "-h", "127.0.0.1", "-p", port.to_s, test_db
     end
     sleep 2
 

@@ -20,18 +20,18 @@ cask "betterdisplay" do
     sha256 "fbfdaac8699245db60260ecd4dc0d0644e3639774c20e45e2f548bd6a751f2bb"
 
     livecheck do
-      url "https:betterdisplay.probetterdisplaysparkleappcast.xml"
+      url "https://betterdisplay.pro/betterdisplay/sparkle/appcast.xml"
       strategy :sparkle do |items|
         items.find { |item| item.channel.nil? }&.short_version
       end
     end
   end
 
-  url "https:github.comwaydabberBetterDisplayreleasesdownloadv#{version}BetterDisplay-v#{version}.dmg",
-      verified: "github.comwaydabberBetterDisplay"
+  url "https://ghfast.top/https://github.com/waydabber/BetterDisplay/releases/download/v#{version}/BetterDisplay-v#{version}.dmg",
+      verified: "github.com/waydabber/BetterDisplay/"
   name "BetterDisplay"
   desc "Display management tool"
-  homepage "https:betterdisplay.pro"
+  homepage "https://betterdisplay.pro/"
 
   auto_updates true
   depends_on macos: ">= :mojave"
@@ -42,12 +42,12 @@ cask "betterdisplay" do
             login_item: "BetterDisplay"
 
   zap trash: [
-    "~LibraryApplication SupportBetterDisplay",
-    "~LibraryApplication SupportBetterDummy",
-    "~LibraryCachespro.betterdisplay.BetterDisplay",
-    "~LibraryCachesSentryCrashBetterDisplay",
-    "~LibraryHTTPStoragespro.betterdisplay.BetterDisplay",
-    "~LibraryHTTPStoragespro.betterdisplay.BetterDisplay.binarycookies",
-    "~LibraryPreferencespro.betterdisplay.BetterDisplay.plist",
+    "~/Library/Application Support/BetterDisplay",
+    "~/Library/Application Support/BetterDummy",
+    "~/Library/Caches/pro.betterdisplay.BetterDisplay",
+    "~/Library/Caches/SentryCrash/BetterDisplay",
+    "~/Library/HTTPStorages/pro.betterdisplay.BetterDisplay",
+    "~/Library/HTTPStorages/pro.betterdisplay.BetterDisplay.binarycookies",
+    "~/Library/Preferences/pro.betterdisplay.BetterDisplay.plist",
   ]
 end

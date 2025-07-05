@@ -1,11 +1,11 @@
 class LibjsonRpcCpp < Formula
   desc "C++ framework for json-rpc"
-  homepage "https:github.comcinemastlibjson-rpc-cpp"
-  url "https:github.comcinemastlibjson-rpc-cpparchiverefstagsv1.4.1.tar.gz"
+  homepage "https://github.com/cinemast/libjson-rpc-cpp"
+  url "https://ghfast.top/https://github.com/cinemast/libjson-rpc-cpp/archive/refs/tags/v1.4.1.tar.gz"
   sha256 "7a057e50d6203e4ea0a10ba5e4dbf344c48b177e5a3bf82e850eb3a783c11eb5"
   license "MIT"
   revision 4
-  head "https:github.comcinemastlibjson-rpc-cpp.git", branch: "master"
+  head "https://github.com/cinemast/libjson-rpc-cpp.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -30,7 +30,7 @@ class LibjsonRpcCpp < Formula
   def install
     # Fix to Policy CMP0042 may not be set to OLD behavior
     # because this version of CMake no longer supports it.
-    # Issue ref: https:github.comcinemastlibjson-rpc-cppissues334
+    # Issue ref: https://github.com/cinemast/libjson-rpc-cpp/issues/334
     inreplace "CMakeLists.txt", "cmake_policy(SET CMP0042 OLD)", ""
     args = %W[
       -DCOMPILE_EXAMPLES=OFF
@@ -45,6 +45,6 @@ class LibjsonRpcCpp < Formula
   end
 
   test do
-    system bin"jsonrpcstub", "-h"
+    system bin/"jsonrpcstub", "-h"
   end
 end

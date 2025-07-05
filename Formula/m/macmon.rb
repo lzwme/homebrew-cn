@@ -1,10 +1,10 @@
 class Macmon < Formula
   desc "Sudoless performance monitoring for Apple Silicon processors"
-  homepage "https:github.comvladkensmacmon"
-  url "https:github.comvladkensmacmonarchiverefstagsv0.6.1.tar.gz"
+  homepage "https://github.com/vladkens/macmon"
+  url "https://ghfast.top/https://github.com/vladkens/macmon/archive/refs/tags/v0.6.1.tar.gz"
   sha256 "3bac768a080f9231660a77b1c696e540a2d751807d088c8d7877db4ffb782aec"
   license "MIT"
-  head "https:github.comvladkensmacmon.git", branch: "main"
+  head "https://github.com/vladkens/macmon.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "40c85d57a50a820f9bce74cc027391722b92db792c96103d08e3be6bd5f3f066"
@@ -21,7 +21,7 @@ class Macmon < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}macmon --version")
-    assert_match "Failed to get channels", shell_output("#{bin}macmon debug 2>&1", 1)
+    assert_match version.to_s, shell_output("#{bin}/macmon --version")
+    assert_match "Failed to get channels", shell_output("#{bin}/macmon debug 2>&1", 1)
   end
 end

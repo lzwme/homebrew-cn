@@ -1,10 +1,10 @@
 class Watcher < Formula
   desc "Filesystem watcher, works anywhere, simple, efficient and friendly"
-  homepage "https:github.come-dantwatcher"
-  url "https:github.come-dantwatcherarchiverefstags0.13.6.tar.gz"
+  homepage "https://github.com/e-dant/watcher"
+  url "https://ghfast.top/https://github.com/e-dant/watcher/archive/refs/tags/0.13.6.tar.gz"
   sha256 "d2a9890b5d394311ca08cea53f6ecc1e9e2566a5adfe4e829a26ac1d7d974dfa"
   license "MIT"
-  head "https:github.come-dantwatcher.git", branch: "release"
+  head "https://github.com/e-dant/watcher.git", branch: "release"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "f71809a7937ee6d36f429d5edabb3455ee90c7a2c0ffd1e263ca5b87f2623978"
@@ -27,12 +27,12 @@ class Watcher < Formula
   end
 
   test do
-    output = shell_output("#{bin}wtr.watcher . -ms 1")
+    output = shell_output("#{bin}/wtr.watcher . -ms 1")
     assert_match "create", output
     assert_match "destroy", output
 
-    (testpath"test.c").write <<~C
-      #include <wtrwatcher-c.h>
+    (testpath/"test.c").write <<~C
+      #include <wtr/watcher-c.h>
       #include <stdio.h>
 
       void callback(struct wtr_watcher_event event, void* _ctx) {
@@ -55,6 +55,6 @@ class Watcher < Formula
     C
 
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lwatcher-c", "-o", "test"
-    system ".test"
+    system "./test"
   end
 end

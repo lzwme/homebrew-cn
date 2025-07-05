@@ -1,8 +1,8 @@
 class LeelaZero < Formula
   desc "Neural Network Go engine with no human-provided knowledge"
-  homepage "https:zero.sjeng.org"
+  homepage "https://zero.sjeng.org/"
   # pull from git tag to get submodules
-  url "https:github.comleela-zeroleela-zero.git",
+  url "https://github.com/leela-zero/leela-zero.git",
       tag:      "v0.17",
       revision: "3f297889563bcbec671982c655996ccff63fa253"
   license "GPL-3.0-or-later"
@@ -32,13 +32,13 @@ class LeelaZero < Formula
   end
 
   resource "network" do
-    url "https:zero.sjeng.orgnetworks00ff08ebcdc92a2554aaae815fbf5d91e8d76b9edfe82c9999427806e30eae77.gz", using: :nounzip
+    url "https://zero.sjeng.org/networks/00ff08ebcdc92a2554aaae815fbf5d91e8d76b9edfe82c9999427806e30eae77.gz", using: :nounzip
     sha256 "5302f23818c23e1961dff986ba00f5df5c58dc9c780ed74173402d58fdb6349c"
   end
 
   def install
     # Workaround as upstream targets C++14 for older distros but Boost.Spirit 1.88.0 needs C++17 std::optional
-    # https:github.comleela-zeroleela-zeroblobnextCONTRIBUTING.md#upgrading-dependencies
+    # https://github.com/leela-zero/leela-zero/blob/next/CONTRIBUTING.md#upgrading-dependencies
     inreplace "CMakeLists.txt", "set(CMAKE_CXX_STANDARD 14)", "set(CMAKE_CXX_STANDARD 17)"
     ENV.append "CXXFLAGS", "-D_LIBCPP_ENABLE_CXX17_REMOVED_UNARY_BINARY_FUNCTION" if ENV.compiler == :clang
 
@@ -49,8 +49,8 @@ class LeelaZero < Formula
   end
 
   test do
-    system bin"leelaz", "--help"
-    assert_match(^= [A-T][0-9]+$,
-      pipe_output("#{bin}leelaz --cpu-only --gtp -w #{pkgshare}*.gz", "genmove b\n", 0))
+    system bin/"leelaz", "--help"
+    assert_match(/^= [A-T][0-9]+$/,
+      pipe_output("#{bin}/leelaz --cpu-only --gtp -w #{pkgshare}/*.gz", "genmove b\n", 0))
   end
 end

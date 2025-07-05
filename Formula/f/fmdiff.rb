@@ -1,10 +1,10 @@
 class Fmdiff < Formula
   desc "Use FileMerge as a diff command for Subversion and Mercurial"
-  homepage "https:github.combrunodefrainefmscripts"
-  url "https:github.combrunodefrainefmscriptsarchiverefstags20150915.tar.gz"
+  homepage "https://github.com/brunodefraine/fmscripts"
+  url "https://ghfast.top/https://github.com/brunodefraine/fmscripts/archive/refs/tags/20150915.tar.gz"
   sha256 "45ead0c972aa8ff5b3f9cf1bcefbc069931fd8218b2e28ff76958437a3fabf96"
   license :public_domain
-  head "https:github.combrunodefrainefmscripts.git", branch: "master"
+  head "https://github.com/brunodefraine/fmscripts.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -39,14 +39,14 @@ class Fmdiff < Formula
     ENV.prepend_path "PATH", testpath
 
     # dummy filemerge script
-    (testpath"filemerge").write <<~EOS
-      #!binsh
+    (testpath/"filemerge").write <<~EOS
+      #!/bin/sh
       echo "it works"
     EOS
 
-    chmod 0744, testpath"filemerge"
+    chmod 0744, testpath/"filemerge"
     touch "test"
 
-    assert_match(it works, shell_output("#{bin}fmdiff test test"))
+    assert_match(/it works/, shell_output("#{bin}/fmdiff test test"))
   end
 end

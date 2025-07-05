@@ -2,10 +2,10 @@ cask "font-rhodium-libre" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefontsrawmainoflrhodiumlibreRhodiumLibre-Regular.ttf",
-      verified: "github.comgooglefonts"
+  url "https://github.com/google/fonts/raw/main/ofl/rhodiumlibre/RhodiumLibre-Regular.ttf",
+      verified: "github.com/google/fonts/"
   name "Rhodium Libre"
-  homepage "https:fonts.google.comspecimenRhodium+Libre"
+  homepage "https://fonts.google.com/specimen/Rhodium+Libre"
 
   font "RhodiumLibre-Regular.ttf"
 

@@ -1,7 +1,7 @@
 class Fits < Formula
   desc "File Information Tool Set"
-  homepage "https:projects.iq.harvard.edufits"
-  url "https:github.comharvard-ltsfitsreleasesdownload1.6.0fits-1.6.0.zip"
+  homepage "https://projects.iq.harvard.edu/fits"
+  url "https://ghfast.top/https://github.com/harvard-lts/fits/releases/download/1.6.0/fits-1.6.0.zip"
   sha256 "32e436effe7251c5b067ec3f02321d5baf4944b3f0d1010fb8ec42039d9e3b73"
   license "LGPL-2.1-only"
 
@@ -33,30 +33,30 @@ class Fits < Formula
   def install
     # Remove Windows, PPC, and 32-bit Linux binaries
     %w[macho elf exe dylib].each do |ext|
-      (buildpath"toolsexiftoolperltimagesEXE.#{ext}").unlink
+      (buildpath/"tools/exiftool/perl/t/images/EXE.#{ext}").unlink
     end
 
     # Remove Windows-only directories
-    %w[exiftoolwindows file_utility_windows mediainfowindows].each do |dir|
-      rm_r(buildpath"tools"dir)
+    %w[exiftool/windows file_utility_windows mediainfo/windows].each do |dir|
+      rm_r(buildpath/"tools"/dir)
     end
 
     libexec.install "lib", "tools", "xml", *buildpath.glob("*.properties")
 
     inreplace "fits-env.sh" do |s|
-      s.gsub!(^FITS_HOME=.*, "FITS_HOME=#{libexec}")
-      s.gsub! "${FITS_HOME}lib", "#{libexec}lib"
+      s.gsub!(/^FITS_HOME=.*/, "FITS_HOME=#{libexec}")
+      s.gsub! "${FITS_HOME}/lib", "#{libexec}/lib"
     end
 
     inreplace %w[fits.sh fits-ngserver.sh],
-              %r{\$\(dirname .*\)fits-env\.sh}, "#{libexec}fits-env.sh"
+              %r{\$\(dirname .*\)/fits-env\.sh}, "#{libexec}/fits-env.sh"
 
     # fits-env.sh is a helper script that sets up environment
     # variables, so we want to tuck this away in libexec
     libexec.install "fits-env.sh"
-    (libexec"bin").install %w[fits.sh fits-ngserver.sh]
-    (bin"fits").write_env_script libexec"binfits.sh", Language::Java.overridable_java_home_env
-    (bin"fits-ngserver").write_env_script libexec"binfits.sh", Language::Java.overridable_java_home_env
+    (libexec/"bin").install %w[fits.sh fits-ngserver.sh]
+    (bin/"fits").write_env_script libexec/"bin/fits.sh", Language::Java.overridable_java_home_env
+    (bin/"fits-ngserver").write_env_script libexec/"bin/fits.sh", Language::Java.overridable_java_home_env
 
     # Replace universal binaries with their native slices (for `libmediainfo.dylib`)
     deuniversalize_machos
@@ -64,6 +64,6 @@ class Fits < Formula
 
   test do
     cp test_fixtures("test.mp3"), testpath
-    assert_match 'mimetype="audiompeg"', shell_output("#{bin}fits -i test.mp3")
+    assert_match 'mimetype="audio/mpeg"', shell_output("#{bin}/fits -i test.mp3")
   end
 end

@@ -1,10 +1,10 @@
 class Vultr < Formula
   desc "Command-line tool for Vultr services"
-  homepage "https:github.comvultrvultr-cli"
-  url "https:github.comvultrvultr-cliarchiverefstagsv3.5.0.tar.gz"
+  homepage "https://github.com/vultr/vultr-cli"
+  url "https://ghfast.top/https://github.com/vultr/vultr-cli/archive/refs/tags/v3.5.0.tar.gz"
   sha256 "da6caf170ef61627022d4558e704d9f269a716aa583820ce335d93d2c70d9117"
   license "Apache-2.0"
-  head "https:github.comvultrvultr-cli.git", branch: "master"
+  head "https://github.com/vultr/vultr-cli.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "4a2ebbb295ddd6ee824582f0fd7439116d88a79666631689aefa5c7c0d93b933"
@@ -20,11 +20,11 @@ class Vultr < Formula
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
 
-    generate_completions_from_executable(bin"vultr", "completion")
+    generate_completions_from_executable(bin/"vultr", "completion")
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}vultr version")
-    assert_match "Custom", shell_output("#{bin}vultr os list")
+    assert_match version.to_s, shell_output("#{bin}/vultr version")
+    assert_match "Custom", shell_output("#{bin}/vultr os list")
   end
 end

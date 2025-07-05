@@ -1,10 +1,10 @@
 class Sdns < Formula
   desc "Privacy important, fast, recursive dns resolver server with dnssec support"
-  homepage "https:sdns.dev"
-  url "https:github.comsemihalevsdnsarchiverefstagsv1.5.3.tar.gz"
+  homepage "https://sdns.dev/"
+  url "https://ghfast.top/https://github.com/semihalev/sdns/archive/refs/tags/v1.5.3.tar.gz"
   sha256 "83b82288a59eaa8f52cb2fa0e2461d2a3640083a140dadfb0ae212467abdd6a7"
   license "MIT"
-  head "https:github.comsemihalevsdns.git", branch: "master"
+  head "https://github.com/semihalev/sdns.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "a650f4202675e05a17c37c5a186151d03ab3187dbe4d6590b171e72010ab6dae"
@@ -24,17 +24,17 @@ class Sdns < Formula
   end
 
   service do
-    run [opt_bin"sdns", "--config", etc"sdns.conf"]
+    run [opt_bin/"sdns", "--config", etc/"sdns.conf"]
     keep_alive true
     require_root true
-    error_log_path var"logsdns.log"
-    log_path var"logsdns.log"
+    error_log_path var/"log/sdns.log"
+    log_path var/"log/sdns.log"
     working_dir opt_prefix
   end
 
   test do
-    spawn bin"sdns", "--config", testpath"sdns.conf"
+    spawn bin/"sdns", "--config", testpath/"sdns.conf"
     sleep 2
-    assert_path_exists testpath"sdns.conf"
+    assert_path_exists testpath/"sdns.conf"
   end
 end

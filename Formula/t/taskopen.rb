@@ -1,10 +1,10 @@
 class Taskopen < Formula
   desc "Tool for taking notes and open urls with taskwarrior"
-  homepage "https:github.comjschlatowtaskopen"
-  url "https:github.comjschlatowtaskopenarchiverefstagsv2.0.2.tar.gz"
+  homepage "https://github.com/jschlatow/taskopen"
+  url "https://ghfast.top/https://github.com/jschlatow/taskopen/archive/refs/tags/v2.0.2.tar.gz"
   sha256 "249cce42ac427376a8909e81e49f2d2ba0e79d29b9f83224560cb45df8b7d31c"
   license "GPL-2.0-only"
-  head "https:github.comjschlatowtaskopen.git", branch: "master"
+  head "https://github.com/jschlatow/taskopen.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "d5f5c99069492f89ba1914486b47319087cadb8cfdf6f01ee6916e54253ca18c"
@@ -24,16 +24,16 @@ class Taskopen < Formula
   end
 
   test do
-    touch testpath".taskrc"
-    touch testpath".taskopenrc"
+    touch testpath/".taskrc"
+    touch testpath/".taskopenrc"
 
     system "task", "add", "BrewTest"
     system "task", "1", "annotate", "Notes"
 
-    assert_match <<~EOS, shell_output("#{bin}taskopen diagnostics")
+    assert_match <<~EOS, shell_output("#{bin}/taskopen diagnostics")
       Taskopen:       #{version}
         Taskwarrior:    #{Formula["task"].version}
-        Configuration:  #{testpath}.taskopenrc
+        Configuration:  #{testpath}/.taskopenrc
     EOS
   end
 end

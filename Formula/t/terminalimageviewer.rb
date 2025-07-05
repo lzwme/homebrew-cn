@@ -1,10 +1,10 @@
 class Terminalimageviewer < Formula
   desc "Display images in a terminal using block graphic characters"
-  homepage "https:github.comstefanhausteinTerminalImageViewer"
-  url "https:github.comstefanhausteinTerminalImageViewerarchiverefstagsv1.2.1.tar.gz"
+  homepage "https://github.com/stefanhaustein/TerminalImageViewer"
+  url "https://ghfast.top/https://github.com/stefanhaustein/TerminalImageViewer/archive/refs/tags/v1.2.1.tar.gz"
   sha256 "08d0c30e3ffa47b69d1bce07bea56f04b7deb4a8a79307ce435a4f0852fbcd5f"
   license "Apache-2.0"
-  head "https:github.comstefanhausteinTerminalImageViewer.git", branch: "master"
+  head "https://github.com/stefanhaustein/TerminalImageViewer.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -31,6 +31,6 @@ class Terminalimageviewer < Formula
   end
 
   test do
-    system bin"tiv", test_fixtures("test.png")
+    system bin/"tiv", test_fixtures("test.png")
   end
 end

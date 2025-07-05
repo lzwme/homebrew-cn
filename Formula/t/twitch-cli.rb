@@ -1,10 +1,10 @@
 class TwitchCli < Formula
   desc "CLI to make developing on Twitch easier"
-  homepage "https:github.comtwitchdevtwitch-cli"
-  url "https:github.comtwitchdevtwitch-cliarchiverefstagsv1.1.25.tar.gz"
+  homepage "https://github.com/twitchdev/twitch-cli"
+  url "https://ghfast.top/https://github.com/twitchdev/twitch-cli/archive/refs/tags/v1.1.25.tar.gz"
   sha256 "63d13cd54b64e17237650d7aaadb1453fe28565f54111be056beb24d58831c67"
   license "Apache-2.0"
-  head "https:github.comtwitchdevtwitch-cli.git", branch: "main"
+  head "https://github.com/twitchdev/twitch-cli.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "46c2326b2b21618cdbc86c7469e863301a71a1e9ab5b5f3313c5e204cb62e099"
@@ -19,12 +19,12 @@ class TwitchCli < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w -X main.buildVersion=#{version}", output: bin"twitch")
+    system "go", "build", *std_go_args(ldflags: "-s -w -X main.buildVersion=#{version}", output: bin/"twitch")
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}twitch version")
-    output = shell_output("#{bin}twitch mock-api generate 2>&1")
+    assert_match version.to_s, shell_output("#{bin}/twitch version")
+    output = shell_output("#{bin}/twitch mock-api generate 2>&1")
     assert_match "Name: Mock API Client", output
   end
 end

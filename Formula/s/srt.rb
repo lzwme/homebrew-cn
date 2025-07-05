@@ -1,10 +1,10 @@
 class Srt < Formula
   desc "Secure Reliable Transport"
-  homepage "https:www.srtalliance.org"
-  url "https:github.comHaivisionsrtarchiverefstagsv1.5.4.tar.gz"
+  homepage "https://www.srtalliance.org/"
+  url "https://ghfast.top/https://github.com/Haivision/srt/archive/refs/tags/v1.5.4.tar.gz"
   sha256 "d0a8b600fe1b4eaaf6277530e3cfc8f15b8ce4035f16af4a5eb5d4b123640cdd"
   license "MPL-2.0"
-  head "https:github.comHaivisionsrt.git", branch: "master"
+  head "https://github.com/Haivision/srt.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "2c7b2c84e165de83ce32e46bb6263158c2c9e680b816032d5b6771ccc6f32d7d"
@@ -21,9 +21,9 @@ class Srt < Formula
   depends_on "openssl@3"
 
   # Fix to cmake 4 compatibility
-  # PR ref: https:github.comHaivisionsrtpull3167
+  # PR ref: https://github.com/Haivision/srt/pull/3167
   patch do
-    url "https:github.comHaivisionsrtcommit7962936829e016295e5c570539eb2520b326da4c.patch?full_index=1"
+    url "https://github.com/Haivision/srt/commit/7962936829e016295e5c570539eb2520b326da4c.patch?full_index=1"
     sha256 "e4489630886bf8b26f63a23c8b1aec549f7280f07713ded07fce281e542725f7"
   end
 
@@ -44,7 +44,7 @@ class Srt < Formula
   end
 
   test do
-    cmd = "#{bin}srt-live-transmit file:devnull file:con 2>&1"
+    cmd = "#{bin}/srt-live-transmit file:///dev/null file://con/ 2>&1"
     assert_match "Unsupported source type", shell_output(cmd, 1)
   end
 end

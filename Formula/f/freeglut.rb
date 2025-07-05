@@ -1,7 +1,7 @@
 class Freeglut < Formula
   desc "Open-source alternative to the OpenGL Utility Toolkit (GLUT) library"
-  homepage "https:freeglut.sourceforge.net"
-  url "https:github.comfreeglutfreeglutreleasesdownloadv3.6.0freeglut-3.6.0.tar.gz"
+  homepage "https://freeglut.sourceforge.net/"
+  url "https://ghfast.top/https://github.com/freeglut/freeglut/releases/download/v3.6.0/freeglut-3.6.0.tar.gz"
   sha256 "9c3d4d6516fbfa0280edc93c77698fb7303e443c1aaaf37d269e3288a6c3ea52"
   license "MIT"
 
@@ -31,18 +31,18 @@ class Freeglut < Formula
   end
 
   resource "init_error_func.c" do
-    url "https:raw.githubusercontent.comdcniehoFreeGLUTc63102d06d09f8a9d4044fd107fbda2034bb30c6freeglutfreeglutprogsdemosinit_error_funcinit_error_func.c"
+    url "https://ghfast.top/https://raw.githubusercontent.com/dcnieho/FreeGLUT/c63102d06d09f8a9d4044fd107fbda2034bb30c6/freeglut/freeglut/progs/demos/init_error_func/init_error_func.c"
     sha256 "74ff9c3f722043fc617807f19d3052440073b1cb5308626c1cefd6798a284613"
   end
 
   def install
     # Can remove cmake policy minimum in next release
-    # https:github.comfreeglutfreeglutcommit2294389397912c9a6505a88221abb7dca0a4fb79
+    # https://github.com/freeglut/freeglut/commit/2294389397912c9a6505a88221abb7dca0a4fb79
     args = %W[
       -DCMAKE_POLICY_VERSION_MINIMUM=3.5
       -DFREEGLUT_BUILD_DEMOS=OFF
       -DOPENGL_INCLUDE_DIR=#{Formula["mesa"].include}
-      -DOPENGL_gl_LIBRARY=#{Formula["mesa"].libshared_library("libGL")}
+      -DOPENGL_gl_LIBRARY=#{Formula["mesa"].lib/shared_library("libGL")}
     ]
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args, *args
     system "cmake", "--build", "build"
@@ -53,6 +53,6 @@ class Freeglut < Formula
     resource("init_error_func.c").stage(testpath)
     flags = shell_output("pkgconf --cflags --libs glut gl xext x11").chomp.split
     system ENV.cc, "init_error_func.c", "-o", "init_error_func", *flags
-    assert_match "Entering user defined error handler", shell_output(".init_error_func 2>&1", 1)
+    assert_match "Entering user defined error handler", shell_output("./init_error_func 2>&1", 1)
   end
 end

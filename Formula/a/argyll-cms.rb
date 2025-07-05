@@ -1,13 +1,13 @@
 class ArgyllCms < Formula
   desc "ICC compatible color management system"
-  homepage "https:www.argyllcms.com"
-  url "https:www.argyllcms.comArgyll_V3.3.0_src.zip"
+  homepage "https://www.argyllcms.com/"
+  url "https://www.argyllcms.com/Argyll_V3.3.0_src.zip"
   sha256 "69db1c9ef66f8cacbbbab4ed9910147de6100c3afd17a0a8c12e6525b778e8ce"
   license "AGPL-3.0-only"
 
   livecheck do
-    url "https:www.argyllcms.comdownloadsrc.html"
-    regex(href=.*?Argyll[._-]v?(\d+(?:\.\d+)+)[._-]src\.zipi)
+    url "https://www.argyllcms.com/downloadsrc.html"
+    regex(/href=.*?Argyll[._-]v?(\d+(?:\.\d+)+)[._-]src\.zip/i)
   end
 
   bottle do
@@ -49,9 +49,9 @@ class ArgyllCms < Formula
 
     # The argyll-cms maintainer told us that they want to keep jam as a build system
     # even if it is not maintained anymore
-    # https:www.freelists.orgpostargyllcmsStatus-of-Jam-build,1
+    # https://www.freelists.org/post/argyllcms/Status-of-Jam-build,1
     # Vendoring jam will allow to get rid of our jam formula
-    url "https:swarm.workshop.perforce.comdownloadsguestperforce_softwarejamjam-2.6.1.zip"
+    url "https://swarm.workshop.perforce.com/downloads/guest/perforce_software/jam/jam-2.6.1.zip"
     sha256 "72ea48500ad3d61877f7212aa3d673eab2db28d77b874c5a0b9f88decf41cb73"
 
     # * Ensure <unistd.h> is included on macOS, fixing the following error:
@@ -59,7 +59,7 @@ class ArgyllCms < Formula
     # * Fix a typo that leads to an undeclared function error:
     #   `parse.c:102:20: error: call to undeclared function 'yylineno'`
     patch do
-      url "https:raw.githubusercontent.comHomebrewformula-patchescf70f015e7398796660da57212ff0ab90c609acfjam2.6.1.patch"
+      url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/cf70f015e7398796660da57212ff0ab90c609acf/jam/2.6.1.patch"
       sha256 "1850cf53c4db0e05978d52b90763b519c00fa4f2fbd6fc2753200e49943821ec"
     end
   end
@@ -67,57 +67,57 @@ class ArgyllCms < Formula
   def install
     resource("jam").stage do
       system "make", "CC=#{ENV.cc}", "CFLAGS=#{ENV.cflags}", "LOCATE_TARGET=bin"
-      (buildpath"bin").install "binjam"
+      (buildpath/"bin").install "bin/jam"
     end
 
     # Remove bundled libraries to prevent fallback
-    %w[jpeg png tiff zlib].each { |l| rm_r(buildpathl) }
+    %w[jpeg png tiff zlib].each { |l| rm_r(buildpath/l) }
 
     inreplace "Jamtop" do |s|
       openssl = Formula["openssl@3"]
       libname = shared_library("lib$(lcase)")
       usr = if OS.mac?
-        "#{MacOS.sdk_path_if_needed}usr"
+        "#{MacOS.sdk_path_if_needed}/usr"
       else
-        "usr"
+        "/usr"
       end
 
       # These two inreplaces make sure all Homebrew and SDK libraries can be found by the Jamfile
-      s.gsub! "[ GLOB usrinclude$(subd) : $(lcase).h $(lcase)lib.h ]",
+      s.gsub! "[ GLOB /usr/include$(subd) : $(lcase).h $(lcase)lib.h ]",
               "[ GLOB #{openssl.opt_include}$(subd) : $(lcase).h $(lcase)lib.h ] || " \
-              "[ GLOB #{HOMEBREW_PREFIX}include$(subd) : $(lcase).h $(lcase)lib.h ] || " \
-              "[ GLOB #{usr}include$(subd) : $(lcase).h $(lcase)lib.h ]"
-      s.gsub! "[ GLOB usrlib : lib$(lcase).so ]",
+              "[ GLOB #{HOMEBREW_PREFIX}/include$(subd) : $(lcase).h $(lcase)lib.h ] || " \
+              "[ GLOB #{usr}/include$(subd) : $(lcase).h $(lcase)lib.h ]"
+      s.gsub! "[ GLOB /usr/lib : lib$(lcase).so ]",
               "[ GLOB #{openssl.opt_lib} : #{libname} ] || " \
-              "[ GLOB #{HOMEBREW_PREFIX}lib : #{libname} ] || " \
-              "[ GLOB #{usr}lib : #{libname} lib$(lcase).tbd ]"
+              "[ GLOB #{HOMEBREW_PREFIX}/lib : #{libname} ] || " \
+              "[ GLOB #{usr}/lib : #{libname} lib$(lcase).tbd ]"
 
       # These two inreplaces make sure the X11 headers can be found on Linux.
-      s.gsub! "usrX11R6include", HOMEBREW_PREFIX"include"
-      s.gsub! "usrX11R6lib", HOMEBREW_PREFIX"lib"
+      s.gsub! "/usr/X11R6/include", HOMEBREW_PREFIX/"include"
+      s.gsub! "/usr/X11R6/lib", HOMEBREW_PREFIX/"lib"
     end
 
     ENV["NUMBER_OF_PROCESSORS"] = ENV.make_jobs.to_s
 
-    inreplace "makeall.sh", "jam", buildpath"binjam"
-    inreplace "makeinstall.sh", "jam", buildpath"binjam"
+    inreplace "makeall.sh", "jam", buildpath/"bin/jam"
+    inreplace "makeinstall.sh", "jam", buildpath/"bin/jam"
     system "sh", "makeall.sh"
-    system ".makeinstall.sh"
-    rm "binLicense.txt"
+    system "./makeinstall.sh"
+    rm "bin/License.txt"
     prefix.install "bin", "ref", "doc"
   end
 
   test do
-    system bin"targen", "-d", "0", "test.ti1"
-    system bin"printtarg", testpath"test.ti1"
+    system bin/"targen", "-d", "0", "test.ti1"
+    system bin/"printtarg", testpath/"test.ti1"
 
     %w[test.ti1.ps test.ti1.ti1 test.ti1.ti2].each do |f|
-      assert_path_exists testpathf
+      assert_path_exists testpath/f
     end
 
     # Skip this part of the test on Linux because it hangs due to lack of a display.
     return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
 
-    assert_match "Calibrate a Display", shell_output("#{bin}dispcal 2>&1", 1)
+    assert_match "Calibrate a Display", shell_output("#{bin}/dispcal 2>&1", 1)
   end
 end

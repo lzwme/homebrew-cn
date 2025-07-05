@@ -2,12 +2,12 @@ cask "font-niramit" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefonts.git",
-      verified:  "github.comgooglefonts",
+  url "https://github.com/google/fonts.git",
+      verified:  "github.com/google/fonts",
       branch:    "main",
-      only_path: "oflniramit"
+      only_path: "ofl/niramit"
   name "Niramit"
-  homepage "https:fonts.google.comspecimenNiramit"
+  homepage "https://fonts.google.com/specimen/Niramit"
 
   font "Niramit-Bold.ttf"
   font "Niramit-BoldItalic.ttf"

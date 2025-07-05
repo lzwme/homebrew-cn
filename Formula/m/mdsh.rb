@@ -1,10 +1,10 @@
 class Mdsh < Formula
   desc "Markdown shell pre-processor"
-  homepage "https:zimbatm.github.iomdsh"
-  url "https:github.comzimbatmmdsharchiverefstagsv0.9.2.tar.gz"
+  homepage "https://zimbatm.github.io/mdsh/"
+  url "https://ghfast.top/https://github.com/zimbatm/mdsh/archive/refs/tags/v0.9.2.tar.gz"
   sha256 "4e6aea8fb398f52ec1c2a2bcd2d8238c885aa9bc4b3739a158e64dcc4826dad4"
   license "MIT"
-  head "https:github.comzimbatmmdsh.git", branch: "main"
+  head "https://github.com/zimbatm/mdsh.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "33ca4d9a2440a8488bd6babfdea6622acdfc6deab3e7c38b37622305adb55dea"
@@ -23,9 +23,9 @@ class Mdsh < Formula
   end
 
   test do
-    (testpath"README.md").write "`$ seq 4 | sort -r`"
-    system bin"mdsh"
-    assert_equal <<~MARKDOWN.strip, (testpath"README.md").read
+    (testpath/"README.md").write "`$ seq 4 | sort -r`"
+    system bin/"mdsh"
+    assert_equal <<~MARKDOWN.strip, (testpath/"README.md").read
       `$ seq 4 | sort -r`
 
       ```
@@ -36,6 +36,6 @@ class Mdsh < Formula
       ```
     MARKDOWN
 
-    assert_match version.to_s, shell_output("#{bin}mdsh --version")
+    assert_match version.to_s, shell_output("#{bin}/mdsh --version")
   end
 end

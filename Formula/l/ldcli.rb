@@ -1,10 +1,10 @@
 class Ldcli < Formula
   desc "CLI for managing LaunchDarkly feature flags"
-  homepage "https:launchdarkly.comdocshomegetting-startedldcli"
-  url "https:github.comlaunchdarklyldcliarchiverefstagsv1.15.4.tar.gz"
+  homepage "https://launchdarkly.com/docs/home/getting-started/ldcli"
+  url "https://ghfast.top/https://github.com/launchdarkly/ldcli/archive/refs/tags/v1.15.4.tar.gz"
   sha256 "22f8309b139b03d499e624eadde8dad1dd92992c18886ddebd243dd5ad6ab4a3"
   license "Apache-2.0"
-  head "https:github.comlaunchdarklyldcli.git", branch: "main"
+  head "https://github.com/launchdarkly/ldcli.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "d0351985936b82301d9d08222b08ed7baedc58098cfc191c014dc19a6e15e6ec"
@@ -25,13 +25,13 @@ class Ldcli < Formula
     ]
     system "go", "build", *std_go_args(ldflags:)
 
-    generate_completions_from_executable(bin"ldcli", "completion")
+    generate_completions_from_executable(bin/"ldcli", "completion")
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}ldcli --version")
+    assert_match version.to_s, shell_output("#{bin}/ldcli --version")
 
     assert_match "Invalid account ID header",
-      shell_output("#{bin}ldcli flags list --access-token=Homebrew --project=Homebrew 2>&1")
+      shell_output("#{bin}/ldcli flags list --access-token=Homebrew --project=Homebrew 2>&1")
   end
 end

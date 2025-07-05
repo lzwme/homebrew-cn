@@ -1,10 +1,10 @@
 class FaasCli < Formula
-  desc "CLI for templating andor deploying FaaS functions"
-  homepage "https:www.openfaas.com"
-  url "https:github.comopenfaasfaas-cliarchiverefstags0.17.4.tar.gz"
+  desc "CLI for templating and/or deploying FaaS functions"
+  homepage "https://www.openfaas.com/"
+  url "https://ghfast.top/https://github.com/openfaas/faas-cli/archive/refs/tags/0.17.4.tar.gz"
   sha256 "7a76aede9f9b22e758ab58310d3f6d23c3c07b2668f2871b11d46ce7f322cae0"
   license "MIT"
-  head "https:github.comopenfaasfaas-cli.git", branch: "master"
+  head "https://github.com/openfaas/faas-cli.git", branch: "master"
 
   livecheck do
     url :stable
@@ -25,18 +25,18 @@ class FaasCli < Formula
   def install
     ENV["XC_OS"] = OS.kernel_name.downcase
     ENV["XC_ARCH"] = Hardware::CPU.intel? ? "amd64" : Hardware::CPU.arch.to_s
-    project = "github.comopenfaasfaas-cli"
+    project = "github.com/openfaas/faas-cli"
     ldflags = %W[
       -s -w
-      -X #{project}version.GitCommit=
-      -X #{project}version.Version=#{version}
+      -X #{project}/version.GitCommit=
+      -X #{project}/version.Version=#{version}
     ]
     system "go", "build", *std_go_args(ldflags:), "-a", "-installsuffix", "cgo"
     bin.install_symlink "faas-cli" => "faas"
 
-    generate_completions_from_executable(bin"faas-cli", "completion", "--shell", shells: [:bash, :zsh])
+    generate_completions_from_executable(bin/"faas-cli", "completion", "--shell", shells: [:bash, :zsh])
     # make zsh completions also work for `faas` symlink
-    inreplace zsh_completion"_faas-cli", "#compdef faas-cli", "#compdef faas-cli\ncompdef faas=faas-cli"
+    inreplace zsh_completion/"_faas-cli", "#compdef faas-cli", "#compdef faas-cli\ncompdef faas=faas-cli"
   end
 
   test do
@@ -48,7 +48,7 @@ class FaasCli < Formula
       loop do
         socket = server.accept
         response = "OK"
-        socket.print "HTTP1.1 200 OK\r\n" \
+        socket.print "HTTP/1.1 200 OK\r\n" \
                      "Content-Length: #{response.bytesize}\r\n" \
                      "Connection: close\r\n"
         socket.print "\r\n"
@@ -57,30 +57,30 @@ class FaasCli < Formula
       end
     end
 
-    (testpath"test.yml").write <<~YAML
+    (testpath/"test.yml").write <<~YAML
       provider:
         name: openfaas
-        gateway: https:localhost:#{port}
+        gateway: https://localhost:#{port}
         network: "func_functions"
 
       functions:
         dummy_function:
           lang: python
-          handler: .dummy_function
+          handler: ./dummy_function
           image: dummy_image
     YAML
 
     begin
-      output = shell_output("#{bin}faas-cli deploy --tls-no-verify -yaml test.yml 2>&1", 1)
-      assert_match "stat .templatepythontemplate.yml", output
+      output = shell_output("#{bin}/faas-cli deploy --tls-no-verify -yaml test.yml 2>&1", 1)
+      assert_match "stat ./template/python/template.yml", output
 
-      assert_match "dockerfile", shell_output("#{bin}faas-cli template pull 2>&1")
-      assert_match "node20", shell_output("#{bin}faas-cli new --list")
+      assert_match "dockerfile", shell_output("#{bin}/faas-cli template pull 2>&1")
+      assert_match "node20", shell_output("#{bin}/faas-cli new --list")
 
-      output = shell_output("#{bin}faas-cli deploy --tls-no-verify -yaml test.yml", 1)
+      output = shell_output("#{bin}/faas-cli deploy --tls-no-verify -yaml test.yml", 1)
       assert_match "Deploying: dummy_function.", output
 
-      faas_cli_version = shell_output("#{bin}faas-cli version")
+      faas_cli_version = shell_output("#{bin}/faas-cli version")
       assert_match version.to_s, faas_cli_version
     ensure
       Process.kill("TERM", pid)

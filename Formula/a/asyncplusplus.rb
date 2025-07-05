@@ -1,7 +1,7 @@
 class Asyncplusplus < Formula
   desc "Concurrency framework for C++11"
-  homepage "https:github.comAmanieuasyncplusplus"
-  url "https:github.comAmanieuasyncplusplusarchiverefstagsv1.2.tar.gz"
+  homepage "https://github.com/Amanieu/asyncplusplus"
+  url "https://ghfast.top/https://github.com/Amanieu/asyncplusplus/archive/refs/tags/v1.2.tar.gz"
   sha256 "0711c8db231bf3eb1066400f49ed73b5c3211a10eb3b8c3e64da3d5fdee8a4bf"
   license "MIT"
 
@@ -24,7 +24,7 @@ class Asyncplusplus < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~CPP
+    (testpath/"test.cpp").write <<~CPP
       #include <iostream>
       #include <async++.h>
 
@@ -70,6 +70,6 @@ class Asyncplusplus < Formula
       }
     CPP
     system ENV.cxx, "test.cpp", "-I#{include}", "-L#{lib}", "-lasync++", "--std=c++11", "-o", "test"
-    assert_equal "10", shell_output(".test").chomp.lines.last
+    assert_equal "10", shell_output("./test").chomp.lines.last
   end
 end

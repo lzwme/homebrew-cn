@@ -1,7 +1,7 @@
 class Strace < Formula
   desc "Diagnostic, instructional, and debugging tool for the Linux kernel"
-  homepage "https:strace.io"
-  url "https:github.comstracestracereleasesdownloadv6.15strace-6.15.tar.xz"
+  homepage "https://strace.io/"
+  url "https://ghfast.top/https://github.com/strace/strace/releases/download/v6.15/strace-6.15.tar.xz"
   sha256 "8552dfab08abc22a0f2048c98fd9541fd4d71b6882507952780dab7c7c512f51"
   license "LGPL-2.1-or-later"
 
@@ -11,7 +11,7 @@ class Strace < Formula
   end
 
   head do
-    url "https:github.comstracestrace.git", branch: "master"
+    url "https://github.com/strace/strace.git", branch: "master"
     depends_on "autoconf" => :build
     depends_on "automake" => :build
   end
@@ -19,8 +19,8 @@ class Strace < Formula
   depends_on :linux
 
   def install
-    system ".bootstrap" if build.head?
-    system ".configure", "--disable-silent-rules",
+    system "./bootstrap" if build.head?
+    system "./configure", "--disable-silent-rules",
                           "--enable-mpers=no", # FIX: configure: error: Cannot enable m32 personality support
                           *std_configure_args.reject { |s| s["--disable-debug"] }
     system "make", "install"

@@ -1,7 +1,7 @@
 class Liblc3 < Formula
   desc "Low Complexity Communication Codec library and tools"
-  homepage "https:github.comgoogleliblc3"
-  url "https:github.comgoogleliblc3archiverefstagsv1.1.3.tar.gz"
+  homepage "https://github.com/google/liblc3"
+  url "https://ghfast.top/https://github.com/google/liblc3/archive/refs/tags/v1.1.3.tar.gz"
   sha256 "276752ff54ce6a77d54ec133397b9d7e71f90caf3d9afa32d8b0e891b8ecb8af"
   license "Apache-2.0"
 
@@ -21,7 +21,7 @@ class Liblc3 < Formula
   uses_from_macos "python"
 
   def install
-    # disable tools build due to rpath issue, see https:github.comgoogleliblc3pull53
+    # disable tools build due to rpath issue, see https://github.com/google/liblc3/pull/53
     args = %w[
       -Dtools=false
       -Dpython=true
@@ -33,16 +33,16 @@ class Liblc3 < Formula
   end
 
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include "lc3.h"
       #include <stdio.h>
       #include <stdlib.h>
 
       int main() {
-          int frame_duration_us = 10000;  10 ms frame duration
-          int sample_rate_hz = 48000;     48 kHz sample rate
+          int frame_duration_us = 10000; // 10 ms frame duration
+          int sample_rate_hz = 48000;    // 48 kHz sample rate
 
-           Memory allocation for encoder and decoder
+          // Memory allocation for encoder and decoder
           size_t encoder_mem_size = lc3_encoder_size(frame_duration_us, sample_rate_hz);
           void* encoder_mem = malloc(encoder_mem_size);
           if (!encoder_mem) {
@@ -58,7 +58,7 @@ class Liblc3 < Formula
               return 1;
           }
 
-           Setup encoder and decoder
+          // Setup encoder and decoder
           lc3_encoder_t encoder = lc3_setup_encoder(frame_duration_us, sample_rate_hz, 0, encoder_mem);
           if (!encoder) {
               printf("Failed to setup the encoder.\\n");
@@ -86,6 +86,6 @@ class Liblc3 < Formula
     C
 
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-llc3", "-o", "test"
-    system ".test"
+    system "./test"
   end
 end

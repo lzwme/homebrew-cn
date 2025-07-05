@@ -2,9 +2,9 @@ cask "font-m+-nerd-font" do
   version "3.4.0"
   sha256 "1eb51a672a5d2fc2b8ceb9ff5f238ced6d3e9abea243e9779269bcf17a5552d0"
 
-  url "https:github.comryanoasisnerd-fontsreleasesdownloadv#{version}MPlus.zip"
+  url "https://ghfast.top/https://github.com/ryanoasis/nerd-fonts/releases/download/v#{version}/MPlus.zip"
   name "M+ Nerd Font families (MPlus)"
-  homepage "https:github.comryanoasisnerd-fonts"
+  homepage "https://github.com/ryanoasis/nerd-fonts"
 
   livecheck do
     url :url

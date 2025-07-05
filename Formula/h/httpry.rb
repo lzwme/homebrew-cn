@@ -1,10 +1,10 @@
 class Httpry < Formula
   desc "Packet sniffer for displaying and logging HTTP traffic"
-  homepage "https:github.comjbittelhttpry"
-  url "https:github.comjbittelhttpryarchiverefstagshttpry-0.1.8.tar.gz"
+  homepage "https://github.com/jbittel/httpry"
+  url "https://ghfast.top/https://github.com/jbittel/httpry/archive/refs/tags/httpry-0.1.8.tar.gz"
   sha256 "b3bcbec3fc6b72342022e940de184729d9cdecb30aa754a2c994073447468cf0"
   license "GPL-2.0-only"
-  head "https:github.comjbittelhttpry.git", branch: "master"
+  head "https://github.com/jbittel/httpry.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -34,10 +34,10 @@ class Httpry < Formula
     system "make"
     bin.install "httpry"
     man1.install "httpry.1"
-    doc.install Dir["doc*"]
+    doc.install Dir["doc/*"]
   end
 
   test do
-    system bin"httpry", "-h"
+    system bin/"httpry", "-h"
   end
 end

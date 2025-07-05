@@ -1,7 +1,7 @@
 class EslintD < Formula
   desc "Speed up eslint to accelerate your development workflow"
-  homepage "https:github.commantonieslint_d.js"
-  url "https:registry.npmjs.orgeslint_d-eslint_d-14.3.0.tgz"
+  homepage "https://github.com/mantoni/eslint_d.js"
+  url "https://registry.npmjs.org/eslint_d/-/eslint_d-14.3.0.tgz"
   sha256 "f873d33ca7b7851704555a6453798163956a3f525a322d3caea8c16b294933c3"
   license "MIT"
 
@@ -19,21 +19,21 @@ class EslintD < Formula
 
   def install
     system "npm", "install", *std_npm_args
-    bin.install_symlink Dir["#{libexec}bin*"]
+    bin.install_symlink Dir["#{libexec}/bin/*"]
   end
 
   service do
-    run [opt_bin"eslint_d", "start"]
+    run [opt_bin/"eslint_d", "start"]
     keep_alive true
     working_dir var
-    log_path var"logeslint_d.log"
-    error_log_path var"logeslint_d.err.log"
+    log_path var/"log/eslint_d.log"
+    error_log_path var/"log/eslint_d.err.log"
   end
 
   test do
-    output = shell_output("#{bin}eslint_d status")
+    output = shell_output("#{bin}/eslint_d status")
     assert_match "eslint_d: Not running", output
 
-    assert_match version.to_s, shell_output("#{bin}eslint_d --version")
+    assert_match version.to_s, shell_output("#{bin}/eslint_d --version")
   end
 end

@@ -1,7 +1,7 @@
 class CppPeglib < Formula
   desc "Header-only PEG (Parsing Expression Grammars) library for C++"
-  homepage "https:github.comyhirosecpp-peglib"
-  url "https:github.comyhirosecpp-peglibarchiverefstagsv1.9.1.tar.gz"
+  homepage "https://github.com/yhirose/cpp-peglib"
+  url "https://ghfast.top/https://github.com/yhirose/cpp-peglib/archive/refs/tags/v1.9.1.tar.gz"
   sha256 "f57aa0f14372cbb772af29e3a4549a8033ea07eb25c39949cba6178e0e2ba9cc"
   license "MIT"
 
@@ -26,11 +26,11 @@ class CppPeglib < Formula
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 
-    bin.install "buildlintpeglint"
+    bin.install "build/lint/peglint"
   end
 
   test do
-    (testpath"test.cpp").write <<~CPP
+    (testpath/"test.cpp").write <<~CPP
       #include <peglib.h>
 
       int main() {
@@ -44,16 +44,16 @@ class CppPeglib < Formula
     CPP
 
     system ENV.cxx, "-std=c++17", "test.cpp", "-I#{include}", "-o", "test"
-    system ".test"
+    system "./test"
 
-    (testpath"grammar.peg").write <<~EOS
+    (testpath/"grammar.peg").write <<~EOS
       START <- [0-9]+ EOF
       EOF <- !.
     EOS
 
-    (testpath"source.txt").write "12345"
+    (testpath/"source.txt").write "12345"
 
-    output = shell_output("#{bin}peglint --profile #{testpath}grammar.peg #{testpath}source.txt")
+    output = shell_output("#{bin}/peglint --profile #{testpath}/grammar.peg #{testpath}/source.txt")
     assert_match "success", output
   end
 end

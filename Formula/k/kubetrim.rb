@@ -1,10 +1,10 @@
 class Kubetrim < Formula
   desc "Trim your KUBECONFIG automatically"
-  homepage "https:github.comalexelliskubetrim"
-  url "https:github.comalexelliskubetrimarchiverefstagsv0.0.1.tar.gz"
+  homepage "https://github.com/alexellis/kubetrim"
+  url "https://ghfast.top/https://github.com/alexellis/kubetrim/archive/refs/tags/v0.0.1.tar.gz"
   sha256 "fb1c127efa8c927e74627bae9a043e2cf505183d607cbfacf6eea8c8449a3383"
   license "MIT"
-  head "https:github.comalexelliskubetrim.git", branch: "master"
+  head "https://github.com/alexellis/kubetrim.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "acbcdd0bef57b7bebf823e4a8188e92008bd28ff5bddad717c6d730e4931a30e"
@@ -18,20 +18,20 @@ class Kubetrim < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = "-s -w -X github.comalexelliskubetrimpkg.Version=#{version} -X github.comalexelliskubetrimpkg.GitCommit=#{tap.user}"
+    ldflags = "-s -w -X github.com/alexellis/kubetrim/pkg.Version=#{version} -X github.com/alexellis/kubetrim/pkg.GitCommit=#{tap.user}"
     system "go", "build", *std_go_args(ldflags:)
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}kubetrim --help")
+    assert_match version.to_s, shell_output("#{bin}/kubetrim --help")
 
     # fake k8s configuration
-    (testpath".kubeconfig").write <<~YAML
+    (testpath/".kube/config").write <<~YAML
       apiVersion: v1
       clusters:
         - cluster:
             insecure-skip-tls-verify: true
-            server: 'https:localhost:6443'
+            server: 'https://localhost:6443'
           name: test-cluster
       contexts:
         - context:
@@ -47,7 +47,7 @@ class Kubetrim < Formula
             token: test-token
     YAML
 
-    output = shell_output("#{bin}kubetrim -write=false")
+    output = shell_output("#{bin}/kubetrim -write=false")
     assert_match "failed to connect to cluster", output
   end
 end

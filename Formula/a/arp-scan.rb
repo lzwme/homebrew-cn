@@ -1,14 +1,14 @@
 class ArpScan < Formula
   desc "ARP scanning and fingerprinting tool"
-  homepage "https:github.comroyhillsarp-scan"
-  url "https:github.comroyhillsarp-scanarchiverefstags1.10.0.tar.gz"
+  homepage "https://github.com/royhills/arp-scan"
+  url "https://ghfast.top/https://github.com/royhills/arp-scan/archive/refs/tags/1.10.0.tar.gz"
   sha256 "204b13487158b8e46bf6dd207757a52621148fdd1d2467ebd104de17493bab25"
   license all_of: [
     "GPL-3.0-or-later",
     "BSD-3-Clause", # mt19937ar.c
     "ISC", # strlcpy.c (Linux)
   ]
-  head "https:github.comroyhillsarp-scan.git", branch: "master"
+  head "https://github.com/royhills/arp-scan.git", branch: "master"
 
   bottle do
     rebuild 1
@@ -30,11 +30,11 @@ class ArpScan < Formula
 
   def install
     system "autoreconf", "--force", "--install", "--verbose"
-    system ".configure", "--disable-silent-rules", *std_configure_args
+    system "./configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
   end
 
   test do
-    system bin"arp-scan", "-V"
+    system bin/"arp-scan", "-V"
   end
 end

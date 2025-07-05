@@ -1,10 +1,10 @@
 class Goshs < Formula
   desc "Simple, yet feature-rich web server written in Go"
-  homepage "https:goshs.deenindex.html"
-  url "https:github.compatrickhenergoshsarchiverefstagsv1.1.0.tar.gz"
+  homepage "https://goshs.de/en/index.html"
+  url "https://ghfast.top/https://github.com/patrickhener/goshs/archive/refs/tags/v1.1.0.tar.gz"
   sha256 "61000f308cd48b23aa02d2dd41184824260a8d7d6bf47e6a7f658e4d228ac8d1"
   license "MIT"
-  head "https:github.compatrickhenergoshs.git", branch: "main"
+  head "https://github.com/patrickhener/goshs.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "c8dbc48ee5ff0bd67f1dcd6907ae1528903fcb01d7ad2d1194240b4e1f2bedce"
@@ -22,14 +22,14 @@ class Goshs < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}goshs -v")
+    assert_match version.to_s, shell_output("#{bin}/goshs -v")
 
-    (testpath"test.txt").write "Hello, Goshs!"
+    (testpath/"test.txt").write "Hello, Goshs!"
 
     port = free_port
-    server_pid = spawn bin"goshs", "-p", port.to_s, "-d", testpath, "-si"
+    server_pid = spawn bin/"goshs", "-p", port.to_s, "-d", testpath, "-si"
     sleep 2
-    output = shell_output("curl -s http:localhost:#{port}test.txt")
+    output = shell_output("curl -s http://localhost:#{port}/test.txt")
     assert_match "Hello, Goshs!", output
   ensure
     Process.kill("TERM", server_pid)

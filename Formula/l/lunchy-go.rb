@@ -1,10 +1,10 @@
 class LunchyGo < Formula
   desc "Friendly wrapper for launchctl"
-  homepage "https:github.comsosedofflunchy-go"
-  url "https:github.comsosedofflunchy-goarchiverefstagsv0.2.1.tar.gz"
+  homepage "https://github.com/sosedoff/lunchy-go"
+  url "https://ghfast.top/https://github.com/sosedoff/lunchy-go/archive/refs/tags/v0.2.1.tar.gz"
   sha256 "58f10dd7d823eff369a3181b7b244e41c09ad8fec2820c9976b822b3daee022e"
   license "MIT"
-  head "https:github.comsosedofflunchy-go.git", branch: "master"
+  head "https://github.com/sosedoff/lunchy-go.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -30,39 +30,39 @@ class LunchyGo < Formula
 
   # Add go.mod
   patch do
-    url "https:github.comsosedofflunchy-gocommit756ad7892ca91763c9c1e70ff9c6570607843725.patch?full_index=1"
+    url "https://github.com/sosedoff/lunchy-go/commit/756ad7892ca91763c9c1e70ff9c6570607843725.patch?full_index=1"
     sha256 "e929312d6bb2441343e488988981e27fedab365fd963020089553608a9f93d5b"
   end
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w", output: bin"lunchy")
+    system "go", "build", *std_go_args(ldflags: "-s -w", output: bin/"lunchy")
   end
 
   test do
-    plist = testpath"LibraryLaunchAgentscom.example.echo.plist"
+    plist = testpath/"Library/LaunchAgents/com.example.echo.plist"
     plist.write <<~EOS
       <?xml version="1.0" encoding="UTF-8"?>
-      <!DOCTYPE plist PUBLIC "-AppleDTD PLIST 1.0EN" "http:www.apple.comDTDsPropertyList-1.0.dtd">
+      <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
       <plist version="1.0">
       <dict>
-        <key>KeepAlive<key>
-        <true>
-        <key>Label<key>
-        <string>com.example.echo<string>
-        <key>ProgramArguments<key>
+        <key>KeepAlive</key>
+        <true/>
+        <key>Label</key>
+        <string>com.example.echo</string>
+        <key>ProgramArguments</key>
         <array>
-          <string>bincat<string>
-        <array>
-        <key>RunAtLoad<key>
-        <true>
-      <dict>
-      <plist>
+          <string>/bin/cat</string>
+        </array>
+        <key>RunAtLoad</key>
+        <true/>
+      </dict>
+      </plist>
     EOS
 
-    assert_equal "com.example.echo\n", shell_output("#{bin}lunchy list echo")
+    assert_equal "com.example.echo\n", shell_output("#{bin}/lunchy list echo")
 
     system "launchctl", "load", plist
-    assert_equal <<~EOS, shell_output("#{bin}lunchy remove com.example.echo")
+    assert_equal <<~EOS, shell_output("#{bin}/lunchy remove com.example.echo")
       removed #{plist}
     EOS
 

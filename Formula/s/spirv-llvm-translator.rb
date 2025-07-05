@@ -1,7 +1,7 @@
 class SpirvLlvmTranslator < Formula
   desc "Tool and a library for bi-directional translation between SPIR-V and LLVM IR"
-  homepage "https:github.comKhronosGroupSPIRV-LLVM-Translator"
-  url "https:github.comKhronosGroupSPIRV-LLVM-Translatorarchiverefstagsv20.1.4.tar.gz"
+  homepage "https://github.com/KhronosGroup/SPIRV-LLVM-Translator"
+  url "https://ghfast.top/https://github.com/KhronosGroup/SPIRV-LLVM-Translator/archive/refs/tags/v20.1.4.tar.gz"
   sha256 "f6c414f9384c8f68775d9461e55e7c492f01759f5a1754f30dad4cbfb049c7d7"
   license "Apache-2.0" => { with: "LLVM-exception" }
 
@@ -21,7 +21,7 @@ class SpirvLlvmTranslator < Formula
   depends_on "llvm"
 
   def llvm
-    deps.map(&:to_formula).find { |f| f.name.match?(^llvm(@\d+)?$) }
+    deps.map(&:to_formula).find { |f| f.name.match?(/^llvm(@\d+)?$/) }
   end
 
   def install
@@ -37,7 +37,7 @@ class SpirvLlvmTranslator < Formula
   end
 
   test do
-    (testpath"test.ll").write <<~EOS
+    (testpath/"test.ll").write <<~EOS
       target datalayout = "e-i64:64-v16:16-v24:32-v32:32-v48:64-v96:128-v192:256-v256:256-v512:512-v1024:1024"
       target triple = "spir64-unknown-unknown"
 
@@ -45,8 +45,8 @@ class SpirvLlvmTranslator < Formula
         ret void
       }
     EOS
-    system llvm.opt_bin"llvm-as", "test.ll"
-    system bin"llvm-spirv", "test.bc"
-    assert_path_exists testpath"test.spv"
+    system llvm.opt_bin/"llvm-as", "test.ll"
+    system bin/"llvm-spirv", "test.bc"
+    assert_path_exists testpath/"test.spv"
   end
 end

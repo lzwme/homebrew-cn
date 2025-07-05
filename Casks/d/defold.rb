@@ -4,14 +4,14 @@ cask "defold" do
   version "1.10.2"
   sha256 :no_check # required as upstream package is updated in-place
 
-  url "https:github.comdefolddefoldreleasesdownload#{version}Defold-#{arch}-macos.dmg",
-      verified: "github.comdefolddefold"
+  url "https://ghfast.top/https://github.com/defold/defold/releases/download/#{version}/Defold-#{arch}-macos.dmg",
+      verified: "github.com/defold/defold/"
   name "Defold"
   desc "Game engine for development of desktop, mobile and web games"
-  homepage "https:defold.com"
+  homepage "https://defold.com/"
 
   livecheck do
-    url "http:d.defold.comstableinfo.json"
+    url "http://d.defold.com/stable/info.json"
     strategy :json do |json|
       json["version"]
     end
@@ -26,9 +26,9 @@ cask "defold" do
   app "Defold.app"
 
   zap trash: [
-    "~LibraryApplication SupportDefold",
-    "~LibraryCachescom.defold.editor",
-    "~LibraryPreferencescom.defold.editor.plist",
-    "~LibrarySaved Application Statecom.defold.editor.savedState",
+    "~/Library/Application Support/Defold",
+    "~/Library/Caches/com.defold.editor",
+    "~/Library/Preferences/com.defold.editor.plist",
+    "~/Library/Saved Application State/com.defold.editor.savedState",
   ]
 end

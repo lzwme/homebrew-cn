@@ -1,10 +1,10 @@
 class ConsulTemplate < Formula
   desc "Generic template rendering and notifications with Consul"
-  homepage "https:github.comhashicorpconsul-template"
-  url "https:github.comhashicorpconsul-templatearchiverefstagsv0.41.0.tar.gz"
+  homepage "https://github.com/hashicorp/consul-template"
+  url "https://ghfast.top/https://github.com/hashicorp/consul-template/archive/refs/tags/v0.41.0.tar.gz"
   sha256 "8cf922fa04fd26b035e00ffbb300101e11aeb54edbfc0364f7dd4270370f18cf"
   license "MPL-2.0"
-  head "https:github.comhashicorpconsul-template.git", branch: "master"
+  head "https://github.com/hashicorp/consul-template.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "f0155355643cf7b119fe853f46489d4e45c31b546e999450077733285d7e9497"
@@ -18,20 +18,20 @@ class ConsulTemplate < Formula
   depends_on "go" => :build
 
   def install
-    project = "github.comhashicorpconsul-template"
+    project = "github.com/hashicorp/consul-template"
     ldflags = %W[
       -s -w
-      -X #{project}version.Name=consul-template
-      -X #{project}version.GitCommit=#{tap.user}
+      -X #{project}/version.Name=consul-template
+      -X #{project}/version.GitCommit=#{tap.user}
     ]
     system "go", "build", *std_go_args(ldflags:)
   end
 
   test do
-    (testpath"template").write <<~EOS
+    (testpath/"template").write <<~EOS
       {{"homebrew" | toTitle}}
     EOS
-    system bin"consul-template", "-once", "-template", "template:test-result"
-    assert_equal "Homebrew", (testpath"test-result").read.chomp
+    system bin/"consul-template", "-once", "-template", "template:test-result"
+    assert_equal "Homebrew", (testpath/"test-result").read.chomp
   end
 end

@@ -1,7 +1,7 @@
 class Khiva < Formula
   desc "Algorithms to analyse time series"
-  homepage "https:khiva.readthedocs.io"
-  url "https:github.comshapeletskhiva.git",
+  homepage "https://khiva.readthedocs.io/"
+  url "https://github.com/shapelets/khiva.git",
       tag:      "v0.5.0",
       revision: "c2c72474f98ce3547cbde5f934deabb1b4eda1c9"
   license "MPL-2.0"
@@ -21,7 +21,7 @@ class Khiva < Formula
   end
 
   # Not compatible with newer `arrayfire` 3.9.0+ after changes in
-  # https:github.comarrayfirearrayfirecommitbe7f2d93de3796050e56037cc0c340a2ef34e813
+  # https://github.com/arrayfire/arrayfire/commit/be7f2d93de3796050e56037cc0c340a2ef34e813
   # Last release on 2020-04-29 and last commit on 2020-05-20.
   deprecate! date: "2024-09-27", because: :does_not_build
 
@@ -43,7 +43,7 @@ class Khiva < Formula
   end
 
   test do
-    cp pkgshare"examplesmatrixExample.cpp", testpath
+    cp pkgshare/"examples/matrixExample.cpp", testpath
     system ENV.cxx, "-std=c++11", "matrixExample.cpp",
                     "-L#{Formula["arrayfire"].opt_lib}", "-laf",
                     "-L#{lib}", "-lkhiva",
@@ -51,6 +51,6 @@ class Khiva < Formula
     # OpenCL does not work on ephemeral ARM CI.
     return if Hardware::CPU.arm? && OS.mac? && ENV["HOMEBREW_GITHUB_ACTIONS"].present?
 
-    system ".test"
+    system "./test"
   end
 end

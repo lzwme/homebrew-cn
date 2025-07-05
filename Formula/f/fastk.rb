@@ -1,14 +1,14 @@
 class Fastk < Formula
   desc "K-mer counter for high-fidelity shotgun datasets"
-  homepage "https:github.comthegenemyersFASTK"
-  url "https:github.comthegenemyersFASTKarchiverefstagsv1.1.0.tar.gz"
+  homepage "https://github.com/thegenemyers/FASTK"
+  url "https://ghfast.top/https://github.com/thegenemyers/FASTK/archive/refs/tags/v1.1.0.tar.gz"
   sha256 "28a2de98ede77d4b4476596851f92413a9d99a1d3341afc6682d5333ac797f07"
   license all_of: [
     "BSD-3-Clause",
     { all_of: ["MIT", "BSD-3-Clause"] }, # HTSLIB
     "MIT", # LIBDEFLATE
   ]
-  head "https:github.comthegenemyersFASTK.git", branch: "master"
+  head "https://github.com/thegenemyers/FASTK.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -37,11 +37,11 @@ class Fastk < Formula
   end
 
   test do
-    (testpath"test.fasta").write <<~EOS
+    (testpath/"test.fasta").write <<~EOS
       >U00096.2:1-70
       AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC
     EOS
-    system bin"FastK", "test.fasta"
+    system bin/"FastK", "test.fasta"
     assert_path_exists "test.hist"
   end
 end

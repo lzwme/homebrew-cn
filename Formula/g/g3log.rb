@@ -1,7 +1,7 @@
 class G3log < Formula
   desc "Asynchronous, 'crash safe', logger that is easy to use"
-  homepage "https:github.comKjellKodg3log"
-  url "https:github.comKjellKodg3logarchiverefstags2.6.tar.gz"
+  homepage "https://github.com/KjellKod/g3log"
+  url "https://ghfast.top/https://github.com/KjellKod/g3log/archive/refs/tags/2.6.tar.gz"
   sha256 "afd3d3d8de29825de408e1227be72f3bef8a01c2c0180c46271b4da9bb4fa509"
   license "Unlicense"
 
@@ -26,9 +26,9 @@ class G3log < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~CPP.gsub("TESTDIR", testpath)
-      #include <g3logg3log.hpp>
-      #include <g3loglogworker.hpp>
+    (testpath/"test.cpp").write <<~CPP.gsub("TESTDIR", testpath)
+      #include <g3log/g3log.hpp>
+      #include <g3log/logworker.hpp>
       int main()
       {
         using namespace g3;
@@ -40,7 +40,7 @@ class G3log < Formula
       }
     CPP
     system ENV.cxx, "-std=c++17", "test.cpp", "-L#{lib}", "-lg3log", "-o", "test"
-    system ".test"
-    Dir.glob(testpath"test.g3log.*.log").any?
+    system "./test"
+    Dir.glob(testpath/"test.g3log.*.log").any?
   end
 end

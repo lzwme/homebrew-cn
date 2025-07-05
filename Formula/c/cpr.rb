@@ -1,10 +1,10 @@
 class Cpr < Formula
   desc "C++ Requests, a spiritual port of Python Requests"
-  homepage "https:docs.libcpr.org"
-  url "https:github.comlibcprcprarchiverefstags1.12.0.tar.gz"
+  homepage "https://docs.libcpr.org/"
+  url "https://ghfast.top/https://github.com/libcpr/cpr/archive/refs/tags/1.12.0.tar.gz"
   sha256 "f64b501de66e163d6a278fbb6a95f395ee873b7a66c905dd785eae107266a709"
   license "MIT"
-  head "https:github.comlibcprcpr.git", branch: "master"
+  head "https://github.com/libcpr/cpr.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "09b831bfeb3f9574473d0389d56c54a98d6114401fc2461a459b81fae35441b7"
@@ -37,17 +37,17 @@ class Cpr < Formula
 
     system "cmake", "-S", ".", "-B", "build-static", "-DBUILD_SHARED_LIBS=OFF", *args
     system "cmake", "--build", "build-static"
-    lib.install "build-staticliblibcpr.a"
+    lib.install "build-static/lib/libcpr.a"
   end
 
   test do
-    (testpath"test.cpp").write <<~CPP
+    (testpath/"test.cpp").write <<~CPP
       #include <iostream>
-      #include <curlcurl.h>
-      #include <cprcpr.h>
+      #include <curl/curl.h>
+      #include <cpr/cpr.h>
 
       int main(int argc, char** argv) {
-          auto r = cpr::Get(cpr::Url{"https:example.org"});
+          auto r = cpr::Get(cpr::Url{"https://example.org"});
           std::cout << r.status_code << std::endl;
 
           return 0;
@@ -61,7 +61,7 @@ class Cpr < Formula
     ]
     args << "-I#{Formula["curl"].opt_include}" if !OS.mac? || MacOS.version <= :big_sur
 
-    system ENV.cxx, "test.cpp", "-std=c++17", *args, "-o", testpath"test"
-    assert_match "200", shell_output(".test")
+    system ENV.cxx, "test.cpp", "-std=c++17", *args, "-o", testpath/"test"
+    assert_match "200", shell_output("./test")
   end
 end

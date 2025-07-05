@@ -1,10 +1,10 @@
 class Gerust < Formula
   desc "Project generator for Rust backend projects"
-  homepage "https:gerust.rs"
-  url "https:github.commainmattergerustarchiverefstagsv0.0.6.tar.gz"
+  homepage "https://gerust.rs/"
+  url "https://ghfast.top/https://github.com/mainmatter/gerust/archive/refs/tags/v0.0.6.tar.gz"
   sha256 "1036cc5461e91f775bf499575f2352cba8a91ac2c97d2b312bdc19601d300038"
   license "MIT"
-  head "https:github.commainmattergerust.git", branch: "main"
+  head "https://github.com/mainmatter/gerust.git", branch: "main"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "33193f2009b585cad43201824cd2d2a10569a273a4a0e857074a4782b68eb731"
@@ -30,19 +30,19 @@ class Gerust < Formula
   end
 
   test do
-    require "utilslinkage"
+    require "utils/linkage"
 
-    assert_match version.to_s, shell_output("#{bin}gerust --version")
+    assert_match version.to_s, shell_output("#{bin}/gerust --version")
 
-    (testpath"brewtest").mkpath
-    output = shell_output("#{bin}gerust brewtest --minimal 2>&1")
+    (testpath/"brewtest").mkpath
+    output = shell_output("#{bin}/gerust brewtest --minimal 2>&1")
     assert_match "Could not generate project!", output
 
     [
-      Formula["openssl@3"].opt_libshared_library("libssl"),
-      Formula["openssl@3"].opt_libshared_library("libcrypto"),
+      Formula["openssl@3"].opt_lib/shared_library("libssl"),
+      Formula["openssl@3"].opt_lib/shared_library("libcrypto"),
     ].each do |library|
-      assert Utils.binary_linked_to_library?(bin"gerust", library),
+      assert Utils.binary_linked_to_library?(bin/"gerust", library),
              "No linkage with #{library.basename}! Cargo is likely using a vendored version."
     end
   end

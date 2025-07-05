@@ -1,11 +1,11 @@
 class Libmowgli < Formula
   desc "Core framework for Atheme applications"
-  homepage "https:github.comathemelibmowgli-2"
-  url "https:github.comathemelibmowgli-2archiverefstagsv2.1.3.tar.gz"
+  homepage "https://github.com/atheme/libmowgli-2"
+  url "https://ghfast.top/https://github.com/atheme/libmowgli-2/archive/refs/tags/v2.1.3.tar.gz"
   sha256 "b7faab2fb9f46366a52b51443054a2ed4ecdd04774c65754bf807c5e9bdda477"
   license "ISC"
   revision 1
-  head "https:github.comathemelibmowgli-2.git", branch: "master"
+  head "https://github.com/atheme/libmowgli-2.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -28,14 +28,14 @@ class Libmowgli < Formula
   depends_on "openssl@3"
 
   def install
-    system ".configure", "--prefix=#{prefix}",
+    system "./configure", "--prefix=#{prefix}",
                           "--with-openssl=#{Formula["openssl@3"].opt_prefix}"
     system "make"
     system "make", "install"
   end
 
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include <mowgli.h>
 
       int main(int argc, char *argv[]) {
@@ -49,7 +49,7 @@ class Libmowgli < Formula
         return EXIT_SUCCESS;
       }
     C
-    system ENV.cc, "-I#{include}libmowgli-2", "-o", "test", "test.c", "-L#{lib}", "-lmowgli-2"
-    system ".test"
+    system ENV.cc, "-I#{include}/libmowgli-2", "-o", "test", "test.c", "-L#{lib}", "-lmowgli-2"
+    system "./test"
   end
 end

@@ -1,10 +1,10 @@
 class Cminpack < Formula
   desc "Solves nonlinear equations and nonlinear least squares problems"
-  homepage "http:devernay.free.frhackscminpackcminpack.html"
-  url "https:github.comdevernaycminpackarchiverefstagsv1.3.11.tar.gz"
+  homepage "http://devernay.free.fr/hacks/cminpack/cminpack.html"
+  url "https://ghfast.top/https://github.com/devernay/cminpack/archive/refs/tags/v1.3.11.tar.gz"
   sha256 "45675fac0a721a1c7600a91a9842fe1ab313069db163538f2923eaeddb0f46de"
   license "Minpack"
-  head "https:github.comdevernaycminpack.git", branch: "master"
+  head "https://github.com/devernay/cminpack.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "a3742c503095e979488e41caa028da813433223e16d138233a03b6a50566c8fe"
@@ -29,12 +29,12 @@ class Cminpack < Formula
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 
-    man3.install Dir["docs*.3"]
-    doc.install Dir["docs*"]
+    man3.install Dir["docs/*.3"]
+    doc.install Dir["docs/*"]
   end
 
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include <stdio.h>
       #include <cminpack.h>
 
@@ -67,8 +67,8 @@ class Cminpack < Formula
       }
     C
 
-    system ENV.cc, "test.c", "-I#{include}cminpack-1",
+    system ENV.cc, "test.c", "-I#{include}/cminpack-1",
                    "-L#{lib}", "-lcminpack", "-lm", "-o", "test"
-    system ".test"
+    system "./test"
   end
 end

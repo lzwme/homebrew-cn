@@ -1,10 +1,10 @@
 class LolHtml < Formula
-  desc "Low output latency streaming HTML parserrewriter with CSS selector-based API"
-  homepage "https:github.comcloudflarelol-html"
-  url "https:github.comcloudflarelol-htmlarchiverefstagsv2.5.0.tar.gz"
+  desc "Low output latency streaming HTML parser/rewriter with CSS selector-based API"
+  homepage "https://github.com/cloudflare/lol-html"
+  url "https://ghfast.top/https://github.com/cloudflare/lol-html/archive/refs/tags/v2.5.0.tar.gz"
   sha256 "94a67aaa601b456fe8cf765456571854850162498da2cd0efcfeed2a3149aa9a"
   license "BSD-3-Clause"
-  head "https:github.comcloudflarelol-html.git", branch: "master"
+  head "https://github.com/cloudflare/lol-html.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "9a5bf511b0e79fafebf68e51d8d70ce2849b7cac56441234176b45b0d4283984"
@@ -22,12 +22,12 @@ class LolHtml < Formula
 
   def install
     system "cargo", "cinstall", "--jobs", ENV.make_jobs.to_s, "--release", "--locked",
-                    "--manifest-path", "c-apiCargo.toml",
+                    "--manifest-path", "c-api/Cargo.toml",
                     "--prefix", prefix, "--libdir", lib
   end
 
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include <stdio.h>
       #include <lol_html.h>
 
@@ -43,6 +43,6 @@ class LolHtml < Formula
 
     flags = shell_output("pkgconf --cflags --libs lol-html").chomp.split
     system ENV.cc, "test.c", "-o", "test", *flags
-    system ".test"
+    system "./test"
   end
 end

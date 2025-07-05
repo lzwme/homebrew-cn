@@ -2,12 +2,12 @@ cask "font-kaisei-tokumin" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefonts.git",
-      verified:  "github.comgooglefonts",
+  url "https://github.com/google/fonts.git",
+      verified:  "github.com/google/fonts",
       branch:    "main",
-      only_path: "oflkaiseitokumin"
+      only_path: "ofl/kaiseitokumin"
   name "Kaisei Tokumin"
-  homepage "https:fonts.google.comspecimenKaisei+Tokumin"
+  homepage "https://fonts.google.com/specimen/Kaisei+Tokumin"
 
   font "KaiseiTokumin-Bold.ttf"
   font "KaiseiTokumin-ExtraBold.ttf"

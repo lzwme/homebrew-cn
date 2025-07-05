@@ -1,7 +1,7 @@
 class Jam < Formula
   desc "Make-like build tool"
-  homepage "https:www.perforce.comdocumentationjam-documentation"
-  url "https:swarm.workshop.perforce.comdownloadsguestperforce_softwarejamjam-2.6.1.zip"
+  homepage "https://www.perforce.com/documentation/jam-documentation"
+  url "https://swarm.workshop.perforce.com/downloads/guest/perforce_software/jam/jam-2.6.1.zip"
   sha256 "72ea48500ad3d61877f7212aa3d673eab2db28d77b874c5a0b9f88decf41cb73"
   license "Jam"
 
@@ -35,7 +35,7 @@ class Jam < Formula
   # * Fix a typo that leads to an undeclared function error:
   #   `parse.c:102:20: error: call to undeclared function 'yylineno'`
   patch do
-    url "https:raw.githubusercontent.comHomebrewformula-patches42252ab3d438f7ada66e83b92bb51a9178d3df10jam2.6.1-undeclared_functions.diff"
+    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/42252ab3d438f7ada66e83b92bb51a9178d3df10/jam/2.6.1-undeclared_functions.diff"
     sha256 "d567cbaf3914f38bb8c5017ff01cc40fe85970c34d3ad84dbeda8c893518ffae"
   end
 
@@ -44,15 +44,15 @@ class Jam < Formula
     ENV.append "CC", "-Wno-implicit-int" if DevelopmentTools.clang_build_version >= 1403
 
     system "make", "CC=#{ENV.cc}", "CFLAGS=#{ENV.cflags}", "LOCATE_TARGET=bin"
-    bin.install "binjam", "binmkjambase"
+    bin.install "bin/jam", "bin/mkjambase"
   end
 
   test do
-    (testpath"Jamfile").write <<~EOS
+    (testpath/"Jamfile").write <<~EOS
       Main jamtest : jamtest.c ;
     EOS
 
-    (testpath"jamtest.c").write <<~C
+    (testpath/"jamtest.c").write <<~C
       #include <stdio.h>
 
       int main(void)
@@ -62,7 +62,7 @@ class Jam < Formula
       }
     C
 
-    assert_match "Cc jamtest.o", shell_output(bin"jam")
-    assert_equal "Jam Test", shell_output(".jamtest").strip
+    assert_match "Cc jamtest.o", shell_output(bin/"jam")
+    assert_equal "Jam Test", shell_output("./jamtest").strip
   end
 end

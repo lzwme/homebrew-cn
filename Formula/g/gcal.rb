@@ -1,8 +1,8 @@
 class Gcal < Formula
   desc "Program for calculating and printing calendars"
-  homepage "https:www.gnu.orgsoftwaregcal"
-  url "https:ftp.gnu.orggnugcalgcal-4.1.tar.xz"
-  mirror "https:ftpmirror.gnu.orggcalgcal-4.1.tar.xz"
+  homepage "https://www.gnu.org/software/gcal/"
+  url "https://ftp.gnu.org/gnu/gcal/gcal-4.1.tar.xz"
+  mirror "https://ftpmirror.gnu.org/gcal/gcal-4.1.tar.xz"
   sha256 "91b56c40b93eee9bda27ec63e95a6316d848e3ee047b5880ed71e5e8e60f61ab"
   license "GPL-3.0-or-later"
 
@@ -22,8 +22,8 @@ class Gcal < Formula
   end
 
   # Does not build on macOS Ventura
-  # https:lists.gnu.orgarchivehtmlbug-gcal2022-11msg00000.html
-  # https:github.comHomebrewhomebrew-corepull129779
+  # https://lists.gnu.org/archive/html/bug-gcal/2022-11/msg00000.html
+  # https://github.com/Homebrew/homebrew-core/pull/129779
   disable! date: "2024-08-03", because: :unmaintained
 
   on_system :linux, macos: :ventura_or_newer do
@@ -36,16 +36,16 @@ class Gcal < Formula
 
   def install
     # @setshortcontentsaftertitlepage was removed in Texinfo 6.3
-    inreplace "docengcal.texi", "@setshortcontentsaftertitlepage\n", "" if OS.linux?
+    inreplace "doc/en/gcal.texi", "@setshortcontentsaftertitlepage\n", "" if OS.linux?
 
-    system ".configure", "--prefix=#{prefix}", "--disable-dependency-tracking"
+    system "./configure", "--prefix=#{prefix}", "--disable-dependency-tracking"
     system "make", "install"
-    system "make", "-C", "docen", "html"
-    doc.install "docengcal.html"
+    system "make", "-C", "doc/en", "html"
+    doc.install "doc/en/gcal.html"
   end
 
   test do
     date = Time.now.year
-    assert_match date.to_s, shell_output(bin"gcal")
+    assert_match date.to_s, shell_output(bin/"gcal")
   end
 end

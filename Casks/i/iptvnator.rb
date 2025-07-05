@@ -2,10 +2,10 @@ cask "iptvnator" do
   version "0.16.0"
   sha256 "ccea0edb6237fc4e94be5119d111b2479774cc459fb758ab14f7abb7031180c5"
 
-  url "https:github.com4grayiptvnatorreleasesdownloadv#{version}IPTVnator-#{version}-universal.dmg"
+  url "https://ghfast.top/https://github.com/4gray/iptvnator/releases/download/v#{version}/IPTVnator-#{version}-universal.dmg"
   name "IPTVnator"
   desc "Open Source m3u, m3u8 player"
-  homepage "https:github.com4grayiptvnator"
+  homepage "https://github.com/4gray/iptvnator"
 
   livecheck do
     url :url
@@ -19,8 +19,8 @@ cask "iptvnator" do
   app "iptvnator.app"
 
   zap trash: [
-    "~LibraryApplication Supportiptvnator",
-    "~LibraryPreferencescom.electron.iptvnator.plist",
-    "~LibrarySaved Application Statecom.electron.iptvnator.savedState",
+    "~/Library/Application Support/iptvnator",
+    "~/Library/Preferences/com.electron.iptvnator.plist",
+    "~/Library/Saved Application State/com.electron.iptvnator.savedState",
   ]
 end

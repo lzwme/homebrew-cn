@@ -1,16 +1,16 @@
 class Mlton < Formula
   desc "Whole-program, optimizing compiler for Standard ML"
-  homepage "http:mlton.org"
-  url "https:downloads.sourceforge.netprojectmltonmlton20241230mlton-20241230.src.tgz"
+  homepage "http://mlton.org"
+  url "https://downloads.sourceforge.net/project/mlton/mlton/20241230/mlton-20241230.src.tgz"
   version "20241230"
   sha256 "cd170218f67b76c3fcb4d487ba8841518babcebb41e4702074668e61156ca6f6"
   license "HPND"
   version_scheme 1
-  head "https:github.comMLtonmlton.git", branch: "master"
+  head "https://github.com/MLton/mlton.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(%r{url=.*?mlton[._-]v?(\d+(?:\.\d+)*(?:-\d+)?)[._-]src\.t}i)
+    regex(%r{url=.*?/mlton[._-]v?(\d+(?:\.\d+)*(?:-\d+)?)[._-]src\.t}i)
   end
 
   bottle do
@@ -30,30 +30,30 @@ class Mlton < Formula
   # The corresponding upstream binary release used to bootstrap.
   resource "bootstrap" do
     on_macos do
-      # See https:projects.laas.frtinahowto-arm64-darwin.html and
-      # https:projects.laas.frtinasoftware.php
+      # See https://projects.laas.fr/tina/howto-arm64-darwin.html and
+      # https://projects.laas.fr/tina/software.php
       # macos-15 is arm runner
       on_arm do
-        url "https:github.comMLtonmltonreleasesdownloadon-20241230-releasemlton-20241230-1.arm64-darwin.macos-15_gmp-static.tgz"
+        url "https://ghfast.top/https://github.com/MLton/mlton/releases/download/on-20241230-release/mlton-20241230-1.arm64-darwin.macos-15_gmp-static.tgz"
         sha256 "c6114fda99458cffe66cbcf508db65673926d0ac7ab707c3fc39a7efd563f74f"
       end
-      # https:github.comHomebrewhomebrew-corepull58438#issuecomment-665375929
+      # https://github.com/Homebrew/homebrew-core/pull/58438#issuecomment-665375929
       # new `mlton-20241230-1.amd64-darwin.macos-13_gmp-static.tgz` artifact
       # used here for bootstrapping all homebrew versions
       # macos-13 is intel runner
       on_intel do
-        url "https:github.comMLtonmltonreleasesdownloadon-20241230-releasemlton-20241230-1.amd64-darwin.macos-13_gmp-static.tgz"
+        url "https://ghfast.top/https://github.com/MLton/mlton/releases/download/on-20241230-release/mlton-20241230-1.amd64-darwin.macos-13_gmp-static.tgz"
         sha256 "7d6d21aa3ad651ccbe3c837c5876f5af811881fbb017d673deaedfd99b713a2d"
       end
     end
 
     on_linux do
       on_arm do
-        url "https:github.comMLtonmltonreleasesdownloadon-20241230-releasemlton-20241230-1.arm64-linux.ubuntu-24.04-arm_glibc2.39.tgz"
+        url "https://ghfast.top/https://github.com/MLton/mlton/releases/download/on-20241230-release/mlton-20241230-1.arm64-linux.ubuntu-24.04-arm_glibc2.39.tgz"
         sha256 "ae7eb9b76e7749f51284033791788b4091d3ec94bb10eddf00f076dcb588c1f7"
       end
       on_intel do
-        url "https:github.comMLtonmltonreleasesdownloadon-20241230-releasemlton-20241230-1.amd64-linux.ubuntu-24.04_glibc2.39.tgz"
+        url "https://ghfast.top/https://github.com/MLton/mlton/releases/download/on-20241230-release/mlton-20241230-1.amd64-linux.ubuntu-24.04_glibc2.39.tgz"
         sha256 "95d5e78c77161aeefb2cff562fabd30ba1678338713c50147e5000f9ba481593"
       end
     end
@@ -61,24 +61,24 @@ class Mlton < Formula
 
   def install
     # Install the corresponding upstream binary release to 'bootstrap'.
-    bootstrap = buildpath"bootstrap"
+    bootstrap = buildpath/"bootstrap"
     resource("bootstrap").stage do
       args = %W[
         WITH_GMP_DIR=#{Formula["gmp"].opt_prefix}
         PREFIX=#{bootstrap}
-        MAN_PREFIX_EXTRA=share
+        MAN_PREFIX_EXTRA=/share
       ]
       system "make", *(args + ["install"])
     end
-    ENV.prepend_path "PATH", bootstrap"bin"
+    ENV.prepend_path "PATH", bootstrap/"bin"
 
-    # Support parallel builds (https:github.comMLtonmltonissues132)
+    # Support parallel builds (https://github.com/MLton/mlton/issues/132)
     ENV.deparallelize
     args = %W[
       WITH_GMP_DIR=#{Formula["gmp"].opt_prefix}
       DESTDIR=
       PREFIX=#{prefix}
-      MAN_PREFIX_EXTRA=share
+      MAN_PREFIX_EXTRA=/share
     ]
     args << "OLD_MLTON_COMPILE_ARGS=-link-opt '-no-pie'" if OS.linux?
     system "make", *(args + ["all"])
@@ -86,10 +86,10 @@ class Mlton < Formula
   end
 
   test do
-    (testpath"hello.sml").write <<~'EOS'
+    (testpath/"hello.sml").write <<~'EOS'
       val () = print "Hello, Homebrew!\n"
     EOS
-    system bin"mlton", "hello.sml"
-    assert_equal "Hello, Homebrew!\n", `.hello`
+    system bin/"mlton", "hello.sml"
+    assert_equal "Hello, Homebrew!\n", `./hello`
   end
 end

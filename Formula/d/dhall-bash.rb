@@ -1,16 +1,16 @@
 class DhallBash < Formula
   desc "Compile Dhall to Bash"
-  homepage "https:github.comdhall-langdhall-haskelltreemaindhall-bash"
+  homepage "https://github.com/dhall-lang/dhall-haskell/tree/main/dhall-bash"
   license "BSD-3-Clause"
-  head "https:github.comdhall-langdhall-haskell.git", branch: "main"
+  head "https://github.com/dhall-lang/dhall-haskell.git", branch: "main"
 
   stable do
-    url "https:hackage.haskell.orgpackagedhall-bash-1.0.41dhall-bash-1.0.41.tar.gz"
+    url "https://hackage.haskell.org/package/dhall-bash-1.0.41/dhall-bash-1.0.41.tar.gz"
     sha256 "2aeb9316c22ddbc0c9c53ca0b347c49087351f326cba7a1cb95f4265691a5f26"
 
     # Use newer metadata revision to relax upper bounds on dependencies for GHC 9.10
     resource "2.cabal" do
-      url "https:hackage.haskell.orgpackagedhall-bash-1.0.41revision2.cabal"
+      url "https://hackage.haskell.org/package/dhall-bash-1.0.41/revision/2.cabal"
       sha256 "7284bb69b7b551c0c63dc83d2d797f1ec1666c7b9bcd6382cedeaac19e0975d3"
     end
   end
@@ -38,7 +38,7 @@ class DhallBash < Formula
       # Backport support for GHC 9.10
       odie "Remove resource and workaround!" if version > "1.0.41"
       resource("2.cabal").stage { buildpath.install "2.cabal" => "dhall-bash.cabal" }
-      # https:github.comdhall-langdhall-haskellcommitdfa82861ed13796f6d7b96b30139a6f11e057e7b
+      # https://github.com/dhall-lang/dhall-haskell/commit/dfa82861ed13796f6d7b96b30139a6f11e057e7b
       inreplace "#{name}.cabal", "text                      >= 0.2      && < 2.1",
                                  "text                      >= 0.2      && < 2.2"
     end
@@ -49,7 +49,7 @@ class DhallBash < Formula
   end
 
   test do
-    assert_match "true", pipe_output("#{bin}dhall-to-bash", "Naturaleven 100", 0)
-    assert_match "unset FOO", pipe_output("#{bin}dhall-to-bash --declare FOO", "None Natural", 0)
+    assert_match "true", pipe_output("#{bin}/dhall-to-bash", "Natural/even 100", 0)
+    assert_match "unset FOO", pipe_output("#{bin}/dhall-to-bash --declare FOO", "None Natural", 0)
   end
 end

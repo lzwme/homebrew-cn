@@ -1,10 +1,10 @@
 class Cotila < Formula
   desc "Compile-time linear algebra system for C++"
-  homepage "https:github.comcalebzulawskicotila"
-  url "https:github.comcalebzulawskicotilaarchiverefstags1.2.1.tar.gz"
+  homepage "https://github.com/calebzulawski/cotila"
+  url "https://ghfast.top/https://github.com/calebzulawski/cotila/archive/refs/tags/1.2.1.tar.gz"
   sha256 "898ebfdf562cd1a3622870e17a703b38559cf2c607b2d5f79e6b3a55563af619"
   license "Apache-2.0"
-  head "https:github.comcalebzulawskicotila.git", branch: "master"
+  head "https://github.com/calebzulawski/cotila.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, all: "8144c977b0567dff23206cbf5e24f7fc4aed78092dd187517e8813ca1e12f495"
@@ -19,9 +19,9 @@ class Cotila < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~CPP
+    (testpath/"test.cpp").write <<~CPP
       #include <iostream>
-      #include <cotilacotila.h>
+      #include <cotila/cotila.h>
 
       int main() {
         constexpr cotila::vector<double, 3> v1 {{1., -2., 3.}};
@@ -43,6 +43,6 @@ class Cotila < Formula
     CPP
 
     system ENV.cxx, "test.cpp", "-std=c++17", "-I#{include}", "-o", "test"
-    assert_equal "2\n", shell_output(".test")
+    assert_equal "2\n", shell_output("./test")
   end
 end

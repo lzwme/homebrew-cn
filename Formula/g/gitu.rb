@@ -1,10 +1,10 @@
 class Gitu < Formula
   desc "TUI Git client inspired by Magit"
-  homepage "https:github.comaltsemgitu"
-  url "https:github.comaltsemgituarchiverefstagsv0.34.0.tar.gz"
+  homepage "https://github.com/altsem/gitu"
+  url "https://ghfast.top/https://github.com/altsem/gitu/archive/refs/tags/v0.34.0.tar.gz"
   sha256 "65fac3b521fd94bc7a21585df7f8c75930beb1b62e6a1f8760333f51245161f5"
   license "MIT"
-  head "https:github.comaltsemgitu.git", branch: "master"
+  head "https://github.com/altsem/gitu.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "123d1c4cb97930bc1af447704cfeb144614997bdee7f2d1591fd7f28f0c33bb4"
@@ -25,9 +25,9 @@ class Gitu < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}gitu --version")
+    assert_match version.to_s, shell_output("#{bin}/gitu --version")
 
-    output = shell_output(bin"gitu 2>&1", 1)
+    output = shell_output(bin/"gitu 2>&1", 1)
     if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
       assert_match "No such device or address", output
     else

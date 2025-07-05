@@ -1,10 +1,10 @@
 class TerminalNotifier < Formula
   desc "Send macOS User Notifications from the command-line"
-  homepage "https:github.comjulienXXterminal-notifier"
-  url "https:github.comjulienXXterminal-notifierarchiverefstags2.0.0.tar.gz"
+  homepage "https://github.com/julienXX/terminal-notifier"
+  url "https://ghfast.top/https://github.com/julienXX/terminal-notifier/archive/refs/tags/2.0.0.tar.gz"
   sha256 "6f22a7626e4e68e88df2005a5f256f7d3b432dbf4c0f8a0c15c968d9e38bf84c"
   license "MIT"
-  head "https:github.comjulienXXterminal-notifier.git", branch: "master"
+  head "https://github.com/julienXX/terminal-notifier.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -36,11 +36,11 @@ class TerminalNotifier < Formula
                "-verbose",
                "MACOSX_DEPLOYMENT_TARGET=#{MacOS.version}",
                "CODE_SIGN_IDENTITY="
-    prefix.install "buildReleaseterminal-notifier.app"
-    bin.write_exec_script prefix"terminal-notifier.appContentsMacOSterminal-notifier"
+    prefix.install "build/Release/terminal-notifier.app"
+    bin.write_exec_script prefix/"terminal-notifier.app/Contents/MacOS/terminal-notifier"
   end
 
   test do
-    assert_match version.to_s, pipe_output("#{bin}terminal-notifier -help")
+    assert_match version.to_s, pipe_output("#{bin}/terminal-notifier -help")
   end
 end

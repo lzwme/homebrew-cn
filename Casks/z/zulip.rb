@@ -5,11 +5,11 @@ cask "zulip" do
   sha256 arm:   "c735eb529fe3ac40dc9c7237efc7fc5711b6a42175eb847c8e752f1bbe6fc8bb",
          intel: "7205c4a1da3f02bbe3e8c8b107344fa00038904236228b1d98ca7c752e61dca8"
 
-  url "https:github.comzulipzulip-desktopreleasesdownloadv#{version}Zulip-#{version}-#{arch}.dmg",
-      verified: "github.comzulipzulip-desktop"
+  url "https://ghfast.top/https://github.com/zulip/zulip-desktop/releases/download/v#{version}/Zulip-#{version}-#{arch}.dmg",
+      verified: "github.com/zulip/zulip-desktop/"
   name "Zulip"
   desc "Desktop client for the Zulip team chat platform"
-  homepage "https:zulipchat.comapps"
+  homepage "https://zulipchat.com/apps/"
 
   no_autobump! because: :requires_manual_review
 
@@ -19,11 +19,11 @@ cask "zulip" do
   app "Zulip.app"
 
   zap trash: [
-    "~LibraryApplication SupportZulip",
-    "~LibraryCachesorg.zulip.zulip-electron.helper",
-    "~LibraryLogsZulip",
-    "~LibraryPreferencesorg.zulip.zulip-electron.helper.plist",
-    "~LibraryPreferencesorg.zulip.zulip-electron.plist",
-    "~LibrarySaved Application Stateorg.zulip.zulip-electron.savedState",
+    "~/Library/Application Support/Zulip",
+    "~/Library/Caches/org.zulip.zulip-electron.helper",
+    "~/Library/Logs/Zulip",
+    "~/Library/Preferences/org.zulip.zulip-electron.helper.plist",
+    "~/Library/Preferences/org.zulip.zulip-electron.plist",
+    "~/Library/Saved Application State/org.zulip.zulip-electron.savedState",
   ]
 end

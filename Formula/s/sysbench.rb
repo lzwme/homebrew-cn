@@ -1,11 +1,11 @@
 class Sysbench < Formula
   desc "System performance benchmark tool"
-  homepage "https:github.comakopytovsysbench"
-  url "https:github.comakopytovsysbencharchiverefstags1.0.20.tar.gz"
+  homepage "https://github.com/akopytov/sysbench"
+  url "https://ghfast.top/https://github.com/akopytov/sysbench/archive/refs/tags/1.0.20.tar.gz"
   sha256 "e8ee79b1f399b2d167e6a90de52ccc90e52408f7ade1b9b7135727efe181347f"
   license "GPL-2.0-or-later"
   revision 7
-  head "https:github.comakopytovsysbench.git", branch: "master"
+  head "https://github.com/akopytov/sysbench.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -30,12 +30,12 @@ class Sysbench < Formula
   uses_from_macos "vim" # needed for xxd
 
   def install
-    system ".autogen.sh"
-    system ".configure", "--with-mysql", "--with-pgsql", "--with-system-luajit", *std_configure_args
+    system "./autogen.sh"
+    system "./configure", "--with-mysql", "--with-pgsql", "--with-system-luajit", *std_configure_args
     system "make", "install"
   end
 
   test do
-    system bin"sysbench", "--test=cpu", "--cpu-max-prime=1", "run"
+    system bin/"sysbench", "--test=cpu", "--cpu-max-prime=1", "run"
   end
 end

@@ -1,7 +1,7 @@
 class SignalCli < Formula
-  desc "CLI and dbus interface for WhisperSystemslibsignal-service-java"
-  homepage "https:github.comAsamKsignal-cli"
-  url "https:github.comAsamKsignal-cliarchiverefstagsv0.13.17.tar.gz"
+  desc "CLI and dbus interface for WhisperSystems/libsignal-service-java"
+  homepage "https://github.com/AsamK/signal-cli"
+  url "https://ghfast.top/https://github.com/AsamK/signal-cli/archive/refs/tags/v0.13.17.tar.gz"
   sha256 "40bb1259ff2e84f97d3b5f3b1d96d30bd71e614ca19b5d5572f4a67e9b944eea"
   license "GPL-3.0-or-later"
 
@@ -25,17 +25,17 @@ class SignalCli < Formula
   uses_from_macos "llvm" => :build # For `libclang`, used by `boring-sys` crate
   uses_from_macos "zip" => :build
 
-  # FIXME: Uncomment below when https:github.comHomebrewbrewissues19838 is resolved
+  # FIXME: Uncomment below when https://github.com/Homebrew/brew/issues/19838 is resolved
   # FIXME: on_linux do
-  # FIXME:  depends_on arch: :x86_64 # `:libsignal-cli:test` failure, https:github.comAsamKsignal-cliissues1787
+  # FIXME:  depends_on arch: :x86_64 # `:libsignal-cli:test` failure, https://github.com/AsamK/signal-cli/issues/1787
   # FIXME: end
 
-  # https:github.comAsamKsignal-cliwikiProvide-native-lib-for-libsignal#determine-the-required-libsignal-client-version
+  # https://github.com/AsamK/signal-cli/wiki/Provide-native-lib-for-libsignal#determine-the-required-libsignal-client-version
   # To check the version of `libsignal-client`, run:
-  # url=https:github.comAsamKsignal-clireleasesdownloadv$versionsignal-cli-$version.tar.gz
+  # url=https://ghfast.top/https://github.com/AsamK/signal-cli/releases/download/v$version/signal-cli-$version.tar.gz
   # curl -fsSL $url | tar -tz | grep libsignal-client
   resource "libsignal-client" do
-    url "https:github.comsignalapplibsignalarchiverefstagsv0.76.0.tar.gz"
+    url "https://ghfast.top/https://github.com/signalapp/libsignal/archive/refs/tags/v0.76.0.tar.gz"
     sha256 "64a78ff474e102eedeeba25838fc6f3375e6e5dcdd999be6596250bd1419268a"
   end
 
@@ -43,15 +43,15 @@ class SignalCli < Formula
     ENV["JAVA_HOME"] = Language::Java.java_home("21")
     system "gradle", "build"
     system "gradle", "installDist"
-    libexec.install (buildpath"buildinstallsignal-cli").children
-    (libexec"binsignal-cli.bat").unlink
-    (bin"signal-cli").write_env_script libexec"binsignal-cli", Language::Java.overridable_java_home_env("21")
+    libexec.install (buildpath/"build/install/signal-cli").children
+    (libexec/"bin/signal-cli.bat").unlink
+    (bin/"signal-cli").write_env_script libexec/"bin/signal-cli", Language::Java.overridable_java_home_env("21")
 
     resource("libsignal-client").stage do |r|
-      # https:github.comAsamKsignal-cliwikiProvide-native-lib-for-libsignal#manual-build
+      # https://github.com/AsamK/signal-cli/wiki/Provide-native-lib-for-libsignal#manual-build
 
-      libsignal_client_jar = libexec.glob("liblibsignal-client-*.jar").first
-      embedded_jar_version = Version.new(libsignal_client_jar.to_s[libsignal-client-(.*)\.jar$, 1])
+      libsignal_client_jar = libexec.glob("lib/libsignal-client-*.jar").first
+      embedded_jar_version = Version.new(libsignal_client_jar.to_s[/libsignal-client-(.*)\.jar$/, 1])
       res = r.resource
       odie "#{res.name} needs to be updated to #{embedded_jar_version}!" if embedded_jar_version != res.version
 
@@ -61,8 +61,8 @@ class SignalCli < Formula
       # build & embed library for current platform
       cd "java" do
         inreplace "settings.gradle", "include ':android'", ""
-        system ".build_jni.sh", "desktop"
-        cd "clientsrcmainresources" do
+        system "./build_jni.sh", "desktop"
+        cd "client/src/main/resources" do
           arch = Hardware::CPU.intel? ? "amd64" : "aarch64"
           system "zip", "-u", libsignal_client_jar, shared_library("libsignal_jni_#{arch}")
         end
@@ -72,17 +72,17 @@ class SignalCli < Formula
 
   test do
     # test 1: checks class loading is working and version is correct
-    output = shell_output("#{bin}signal-cli --version")
+    output = shell_output("#{bin}/signal-cli --version")
     assert_match "signal-cli #{version}", output
 
     # test 2: ensure crypto is working
     begin
-      io = IO.popen("#{bin}signal-cli link", err: [:child, :out])
+      io = IO.popen("#{bin}/signal-cli link", err: [:child, :out])
       sleep 24
     ensure
       Process.kill("SIGINT", io.pid)
       Process.wait(io.pid)
     end
-    assert_match "sgnl:linkdevice?uuid=", io.read
+    assert_match "sgnl://linkdevice?uuid=", io.read
   end
 end

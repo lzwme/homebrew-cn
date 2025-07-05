@@ -1,21 +1,21 @@
 class PerconaServerAT80 < Formula
   desc "Drop-in MySQL replacement"
-  homepage "https:www.percona.com"
-  url "https:downloads.percona.comdownloadsPercona-Server-8.0Percona-Server-8.0.40-31sourcetarballpercona-server-8.0.40-31.tar.gz"
+  homepage "https://www.percona.com"
+  url "https://downloads.percona.com/downloads/Percona-Server-8.0/Percona-Server-8.0.40-31/source/tarball/percona-server-8.0.40-31.tar.gz"
   sha256 "1318670d8e176c24df74019f748f5f233e2787f865dd3d41d61790ab5a772c4e"
   license "BSD-3-Clause"
   revision 3
 
   livecheck do
-    url "https:www.percona.comproducts-api.php", post_form: {
+    url "https://www.percona.com/products-api.php", post_form: {
       version: "Percona-Server-#{version.major_minor}",
     }
-    regex(value=["']?[^"' >]*?v?(\d+(?:[.-]\d+)+)[|"' >]i)
+    regex(/value=["']?[^"' >]*?v?(\d+(?:[.-]\d+)+)[|"' >]/i)
     strategy :page_match do |page, regex|
       page.scan(regex).map do |match|
         # Convert a version like 1.2.3-4.0 to 1.2.3-4 (but leave a version like
         # 1.2.3-4.5 as-is).
-        match[0].sub((-\d+)\.0$, '\1')
+        match[0].sub(/(-\d+)\.0$/, '\1')
       end
     end
   end
@@ -58,47 +58,47 @@ class PerconaServerAT80 < Formula
     depends_on "libtirpc"
   end
 
-  # https:github.comperconapercona-serverblob8.0cmakeosDarwin.cmake
+  # https://github.com/percona/percona-server/blob/8.0/cmake/os/Darwin.cmake
   fails_with :clang do
     build 999
     cause "Requires Apple Clang 10.0 or newer"
   end
 
-  # https:github.comperconapercona-serverblobPercona-Server-#{version}cmakeboost.cmake
+  # https://github.com/percona/percona-server/blob/Percona-Server-#{version}/cmake/boost.cmake
   resource "boost" do
-    url "https:downloads.sourceforge.netprojectboostboost1.77.0boost_1_77_0.tar.bz2"
+    url "https://downloads.sourceforge.net/project/boost/boost/1.77.0/boost_1_77_0.tar.bz2"
     sha256 "fc9f85fc030e233142908241af7a846e60630aa7388de9a5fafb1f3a26840854"
 
     livecheck do
-      url "https:raw.githubusercontent.comperconapercona-serverrefstagsPercona-Server-#{LATEST_VERSION}cmakeboost.cmake"
-      regex(%r{releasev?(\d+(?:\.\d+)+)}i)
+      url "https://ghfast.top/https://raw.githubusercontent.com/percona/percona-server/refs/tags/Percona-Server-#{LATEST_VERSION}/cmake/boost.cmake"
+      regex(%r{/release/v?(\d+(?:\.\d+)+)/}i)
     end
   end
 
   # Patch out check for Homebrew `boost`.
   # This should not be necessary when building inside `brew`.
-  # https:github.comHomebrewhomebrew-test-botpull820
+  # https://github.com/Homebrew/homebrew-test-bot/pull/820
   patch do
-    url "https:raw.githubusercontent.comHomebrewformula-patches030f7433e89376ffcff836bb68b3903ab90f9cdcmysqlboost-check.patch"
+    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/030f7433e89376ffcff836bb68b3903ab90f9cdc/mysql/boost-check.patch"
     sha256 "af27e4b82c84f958f91404a9661e999ccd1742f57853978d8baec2f993b51153"
   end
 
   # Fix for system ssl add_library error
-  # Issue ref: https:perconadev.atlassian.netjirasoftwarecprojectsPSissuesPS-9641
+  # Issue ref: https://perconadev.atlassian.net/jira/software/c/projects/PS/issues/PS-9641
   patch do
-    url "https:github.comperconapercona-servercommita693e5d67abf6f27f5284c86361604babec529c6.patch?full_index=1"
+    url "https://github.com/percona/percona-server/commit/a693e5d67abf6f27f5284c86361604babec529c6.patch?full_index=1"
     sha256 "d4afcdfb0dd8dcb7c0f7e380a88605b515874628107295ab5b892e8f1e019604"
   end
 
   # Backport fix for CMake 4.0
   patch do
-    url "https:github.comPercona-Labcoredumpercommit715fa9da1d7958e39d69e9b959c7a23fec8650ab.patch?full_index=1"
+    url "https://github.com/Percona-Lab/coredumper/commit/715fa9da1d7958e39d69e9b959c7a23fec8650ab.patch?full_index=1"
     sha256 "632a6aff4091d9cbe010ed600eeb548ae7762ac7e822113f9c93e3fef9aafb4f"
-    directory "extracoredumper"
+    directory "extra/coredumper"
   end
 
   def datadir
-    var"mysql"
+    var/"mysql"
   end
 
   def install
@@ -106,40 +106,40 @@ class PerconaServerAT80 < Formula
     # `boost` and `rapidjson` must use bundled copy due to patches.
     # `lz4` is still needed due to xxhash.c used by mysqlgcs
     keep = %w[coredumper duktape libkmip lz4 opensslpp rapidjson robin-hood-hashing unordered_dense]
-    (buildpath"extra").each_child { |dir| rm_r(dir) unless keep.include?(dir.basename.to_s) }
-    (buildpath"boost").install resource("boost")
+    (buildpath/"extra").each_child { |dir| rm_r(dir) unless keep.include?(dir.basename.to_s) }
+    (buildpath/"boost").install resource("boost")
 
     # Find Homebrew OpenLDAP instead of the macOS framework
-    inreplace "cmakeldap.cmake", "NAMES ldap_r ldap", "NAMES ldap"
+    inreplace "cmake/ldap.cmake", "NAMES ldap_r ldap", "NAMES ldap"
 
     # Fix mysqlrouter_passwd RPATH to link to metadata_cache.so
-    inreplace "routersrchttpsrcCMakeLists.txt",
+    inreplace "router/src/http/src/CMakeLists.txt",
               "ADD_INSTALL_RPATH(mysqlrouter_passwd \"${ROUTER_INSTALL_RPATH}\")",
-              "\\0\nADD_INSTALL_RPATH(mysqlrouter_passwd \"${RPATH_ORIGIN}..${ROUTER_INSTALL_PLUGINDIR}\")"
+              "\\0\nADD_INSTALL_RPATH(mysqlrouter_passwd \"${RPATH_ORIGIN}/../${ROUTER_INSTALL_PLUGINDIR}\")"
 
     # Disable ABI checking
-    inreplace "cmakeabi_check.cmake", "RUN_ABI_CHECK 1", "RUN_ABI_CHECK 0" if OS.linux?
+    inreplace "cmake/abi_check.cmake", "RUN_ABI_CHECK 1", "RUN_ABI_CHECK 0" if OS.linux?
 
-    icu4c = deps.find { |dep| dep.name.match?(^icu4c(@\d+)?$) }
+    icu4c = deps.find { |dep| dep.name.match?(/^icu4c(@\d+)?$/) }
                 .to_formula
     # -DINSTALL_* are relative to `CMAKE_INSTALL_PREFIX` (`prefix`)
     args = %W[
       -DCOMPILATION_COMMENT=Homebrew
       -DDEFAULT_CHARSET=utf8mb4
       -DDEFAULT_COLLATION=utf8mb4_0900_ai_ci
-      -DINSTALL_DOCDIR=sharedoc#{name}
-      -DINSTALL_INCLUDEDIR=includemysql
-      -DINSTALL_INFODIR=shareinfo
-      -DINSTALL_MANDIR=shareman
-      -DINSTALL_MYSQLSHAREDIR=sharemysql
-      -DINSTALL_PLUGINDIR=libpercona-serverplugin
+      -DINSTALL_DOCDIR=share/doc/#{name}
+      -DINSTALL_INCLUDEDIR=include/mysql
+      -DINSTALL_INFODIR=share/info
+      -DINSTALL_MANDIR=share/man
+      -DINSTALL_MYSQLSHAREDIR=share/mysql
+      -DINSTALL_PLUGINDIR=lib/percona-server/plugin
       -DMYSQL_DATADIR=#{datadir}
       -DSYSCONFDIR=#{etc}
-      -DBISON_EXECUTABLE=#{Formula["bison"].opt_bin}bison
+      -DBISON_EXECUTABLE=#{Formula["bison"].opt_bin}/bison
       -DOPENSSL_ROOT_DIR=#{Formula["openssl@3"].opt_prefix}
       -DWITH_ICU=#{icu4c.opt_prefix}
       -DWITH_SYSTEM_LIBS=ON
-      -DWITH_BOOST=#{buildpath}boost
+      -DWITH_BOOST=#{buildpath}/boost
       -DWITH_EDITLINE=system
       -DWITH_FIDO=system
       -DWITH_LIBEVENT=system
@@ -163,25 +163,25 @@ class PerconaServerAT80 < Formula
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 
-    cd prefix"mysql-test" do
-      test_args = ["--vardir=#{buildpath}mysql-test-vardir"]
+    cd prefix/"mysql-test" do
+      test_args = ["--vardir=#{buildpath}/mysql-test-vardir"]
       # For Linux, disable failing on warning: "Setting thread 31563 nice to 0 failed"
       # Docker containers lack CAP_SYS_NICE capability by default.
       test_args << "--nowarnings" if OS.linux?
-      system ".mysql-test-run.pl", "status", *test_args
+      system "./mysql-test-run.pl", "status", *test_args
     end
 
     # Remove the tests directory
-    rm_r(prefix"mysql-test")
+    rm_r(prefix/"mysql-test")
 
     # Fix up the control script and link into bin.
-    inreplace prefix"support-filesmysql.server",
-              ^(PATH=".*)("),
-              "\\1:#{HOMEBREW_PREFIX}bin\\2"
-    bin.install_symlink prefix"support-filesmysql.server"
+    inreplace prefix/"support-files/mysql.server",
+              /^(PATH=".*)(")/,
+              "\\1:#{HOMEBREW_PREFIX}/bin\\2"
+    bin.install_symlink prefix/"support-files/mysql.server"
 
     # Install my.cnf that binds to 127.0.0.1 by default
-    (buildpath"my.cnf").write <<~INI
+    (buildpath/"my.cnf").write <<~INI
       # Default Homebrew MySQL server config
       [mysqld]
       # Only allow connections from localhost
@@ -192,10 +192,10 @@ class PerconaServerAT80 < Formula
   end
 
   def post_install
-    # Make sure the varmysql directory exists
-    (var"mysql").mkpath
+    # Make sure the var/mysql directory exists
+    (var/"mysql").mkpath
 
-    if (my_cnf = ["etcmy.cnf", "etcmysqlmy.cnf"].find { |x| File.exist? x })
+    if (my_cnf = ["/etc/my.cnf", "/etc/mysql/my.cnf"].find { |x| File.exist? x })
       opoo <<~EOS
 
         A "#{my_cnf}" from another install may interfere with a Homebrew-built
@@ -206,10 +206,10 @@ class PerconaServerAT80 < Formula
     # Don't initialize database, it clashes when testing other MySQL-like implementations.
     return if ENV["HOMEBREW_GITHUB_ACTIONS"]
 
-    unless (datadir"mysqlgeneral_log.CSM").exist?
+    unless (datadir/"mysql/general_log.CSM").exist?
       ENV["TMPDIR"] = nil
-      system bin"mysqld", "--initialize-insecure", "--user=#{ENV["USER"]}",
-                           "--basedir=#{prefix}", "--datadir=#{datadir}", "--tmpdir=tmp"
+      system bin/"mysqld", "--initialize-insecure", "--user=#{ENV["USER"]}",
+                           "--basedir=#{prefix}", "--datadir=#{datadir}", "--tmpdir=/tmp"
     end
   end
 
@@ -226,17 +226,17 @@ class PerconaServerAT80 < Formula
   end
 
   service do
-    run [opt_bin"mysqld_safe", "--datadir=#{var}mysql"]
+    run [opt_bin/"mysqld_safe", "--datadir=#{var}/mysql"]
     keep_alive true
-    working_dir var"mysql"
+    working_dir var/"mysql"
   end
 
   test do
-    (testpath"mysql").mkpath
-    (testpath"tmp").mkpath
+    (testpath/"mysql").mkpath
+    (testpath/"tmp").mkpath
 
     port = free_port
-    socket = testpath"mysql.sock"
+    socket = testpath/"mysql.sock"
     mysqld_args = %W[
       --no-defaults
       --mysqlx=OFF
@@ -244,8 +244,8 @@ class PerconaServerAT80 < Formula
       --port=#{port}
       --socket=#{socket}
       --basedir=#{prefix}
-      --datadir=#{testpath}mysql
-      --tmpdir=#{testpath}tmp
+      --datadir=#{testpath}/mysql
+      --tmpdir=#{testpath}/tmp
     ]
     client_args = %W[
       --port=#{port}
@@ -254,14 +254,14 @@ class PerconaServerAT80 < Formula
       --password=
     ]
 
-    system bin"mysqld", *mysqld_args, "--initialize-insecure"
-    pid = spawn(bin"mysqld", *mysqld_args)
+    system bin/"mysqld", *mysqld_args, "--initialize-insecure"
+    pid = spawn(bin/"mysqld", *mysqld_args)
     begin
       sleep 5
-      output = shell_output("#{bin}mysql #{client_args.join(" ")} --execute='show databases;'")
+      output = shell_output("#{bin}/mysql #{client_args.join(" ")} --execute='show databases;'")
       assert_match "information_schema", output
     ensure
-      system bin"mysqladmin", *client_args, "shutdown"
+      system bin/"mysqladmin", *client_args, "shutdown"
       Process.kill "TERM", pid
     end
   end

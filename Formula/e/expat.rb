@@ -1,13 +1,13 @@
 class Expat < Formula
   desc "XML 1.0 parser"
-  homepage "https:libexpat.github.io"
-  url "https:github.comlibexpatlibexpatreleasesdownloadR_2_7_1expat-2.7.1.tar.lz"
+  homepage "https://libexpat.github.io/"
+  url "https://ghfast.top/https://github.com/libexpat/libexpat/releases/download/R_2_7_1/expat-2.7.1.tar.lz"
   sha256 "baacdd8d98d5d3b753f2a2780d84b0bc7731be11cacdc1b98cb8ad73f0504e68"
   license "MIT"
 
   livecheck do
     url :stable
-    regex(^\D*?(\d+(?:[._]\d+)*)$i)
+    regex(/^\D*?(\d+(?:[._]\d+)*)$/i)
     strategy :github_latest do |json, regex|
       json["tag_name"]&.scan(regex)&.map { |match| match[0].tr("_", ".") }
     end
@@ -26,7 +26,7 @@ class Expat < Formula
   end
 
   head do
-    url "https:github.comlibexpatlibexpat.git", branch: "master"
+    url "https://github.com/libexpat/libexpat.git", branch: "master"
     depends_on "autoconf" => :build
     depends_on "automake" => :build
     depends_on "docbook2x" => :build
@@ -40,12 +40,12 @@ class Expat < Formula
     system "autoreconf", "-fiv" if build.head?
     args = ["--mandir=#{man}"]
     args << "--with-docbook" if build.head?
-    system ".configure", *std_configure_args, *args
+    system "./configure", *std_configure_args, *args
     system "make", "install"
   end
 
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include <stdio.h>
       #include "expat.h"
 
@@ -67,7 +67,7 @@ class Expat < Formula
 
       int main()
       {
-        static const char str[] = "<str>Hello, world!<str>";
+        static const char str[] = "<str>Hello, world!</str>";
         int result;
 
         XML_Parser parser = XML_ParserCreate("utf-8");
@@ -80,6 +80,6 @@ class Expat < Formula
       }
     C
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lexpat", "-o", "test"
-    assert_equal "tag:str|data:Hello, world!|", shell_output(".test")
+    assert_equal "tag:str|data:Hello, world!|", shell_output("./test")
   end
 end

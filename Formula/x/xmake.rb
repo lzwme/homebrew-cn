@@ -1,10 +1,10 @@
 class Xmake < Formula
   desc "Cross-platform build utility based on Lua"
-  homepage "https:xmake.io"
-  url "https:github.comxmake-ioxmakereleasesdownloadv3.0.0xmake-v3.0.0.tar.gz"
+  homepage "https://xmake.io/"
+  url "https://ghfast.top/https://github.com/xmake-io/xmake/releases/download/v3.0.0/xmake-v3.0.0.tar.gz"
   sha256 "e749c2a902a1b88e6e3b73b78962a6417c9a04f91ce3c6e174a252598f10eb28"
   license "Apache-2.0"
-  head "https:github.comxmake-ioxmake.git", branch: "master"
+  head "https://github.com/xmake-io/xmake.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "02820b3b2e1a9e9d0c074df82c1c77d452b1b050876b6a088ca1f76980c9d77b"
@@ -23,17 +23,17 @@ class Xmake < Formula
   end
 
   def install
-    system ".configure"
+    system "./configure"
     system "make"
     system "make", "install", "PREFIX=#{prefix}"
   end
 
   test do
     ENV.delete "CPATH"
-    system bin"xmake", "create", "test"
+    system bin/"xmake", "create", "test"
     cd "test" do
-      system bin"xmake"
-      assert_equal "hello world!", shell_output("#{bin}xmake run").chomp
+      system bin/"xmake"
+      assert_equal "hello world!", shell_output("#{bin}/xmake run").chomp
     end
   end
 end

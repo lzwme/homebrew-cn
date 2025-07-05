@@ -1,10 +1,10 @@
 class Virtctl < Formula
   desc "Allows for using more advanced kubevirt features"
-  homepage "https:kubevirt.io"
-  url "https:github.comkubevirtkubevirtarchiverefstagsv1.5.2.tar.gz"
+  homepage "https://kubevirt.io/"
+  url "https://ghfast.top/https://github.com/kubevirt/kubevirt/archive/refs/tags/v1.5.2.tar.gz"
   sha256 "1f6c12ca3345086b2991cd3313cc78f87f9c85984e8414087245a4f5e895ccd6"
   license "Apache-2.0"
-  head "https:github.comkubevirtkubevirt.git", branch: "main"
+  head "https://github.com/kubevirt/kubevirt.git", branch: "main"
 
   # Upstream creates releases that use a stable tag (e.g., `v1.2.3`) but are
   # labeled as "pre-release" on GitHub before the version is released, so it's
@@ -26,14 +26,14 @@ class Virtctl < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = "-s -w -X kubevirt.ioclient-goversion.gitVersion=#{version}"
-    system "go", "build", *std_go_args(ldflags:), ".cmdvirtctl"
+    ldflags = "-s -w -X kubevirt.io/client-go/version.gitVersion=#{version}"
+    system "go", "build", *std_go_args(ldflags:), "./cmd/virtctl"
 
-    generate_completions_from_executable(bin"virtctl", "completion")
+    generate_completions_from_executable(bin/"virtctl", "completion")
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}virtctl version -c")
-    assert_match "connection refused", shell_output("#{bin}virtctl userlist myvm 2>&1", 1)
+    assert_match version.to_s, shell_output("#{bin}/virtctl version -c")
+    assert_match "connection refused", shell_output("#{bin}/virtctl userlist myvm 2>&1", 1)
   end
 end

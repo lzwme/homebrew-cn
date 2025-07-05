@@ -1,13 +1,13 @@
 class Lighthouse < Formula
   desc "Rust Ethereum 2.0 Client"
-  homepage "https:lighthouse.sigmaprime.io"
-  url "https:github.comsigplighthousearchiverefstagsv7.0.1.tar.gz"
+  homepage "https://lighthouse.sigmaprime.io/"
+  url "https://ghfast.top/https://github.com/sigp/lighthouse/archive/refs/tags/v7.0.1.tar.gz"
   sha256 "e2432feb02d6dd86faec3831731a88993c428a87df1fa6a43efd576bdf01f259"
   license "Apache-2.0"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -37,29 +37,29 @@ class Lighthouse < Formula
     ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
     ENV["OPENSSL_NO_VENDOR"] = "1"
     # Use correct compiler to prevent blst from enabling AVX support on macOS
-    ENV["CC"] = Formula["llvm"].opt_bin"clang" if OS.mac?
+    ENV["CC"] = Formula["llvm"].opt_bin/"clang" if OS.mac?
 
-    system "cargo", "install", "--no-default-features", *std_cargo_args(path: ".lighthouse")
+    system "cargo", "install", "--no-default-features", *std_cargo_args(path: "./lighthouse")
   end
 
   test do
-    assert_match "Lighthouse", shell_output("#{bin}lighthouse --version")
+    assert_match "Lighthouse", shell_output("#{bin}/lighthouse --version")
 
-    (testpath"jwt.hex").write <<~EOS
+    (testpath/"jwt.hex").write <<~EOS
       d6a1572e2859ba87a707212f0cc9170f744849b08d7456fe86492cbf93807092
     EOS
 
     http_port = free_port
     args = [
-      "--execution-endpoint", "http:localhost:8551",
+      "--execution-endpoint", "http://localhost:8551",
       "--execution-jwt", "jwt.hex",
       "--allow-insecure-genesis-sync", "--http",
       "--http-port=#{http_port}", "--port=#{free_port}"
     ]
-    spawn bin"lighthouse", "beacon_node", *args
+    spawn bin/"lighthouse", "beacon_node", *args
     sleep 18
 
-    output = shell_output("curl -sS -XGET http:127.0.0.1:#{http_port}ethv1nodesyncing")
+    output = shell_output("curl -sS -XGET http://127.0.0.1:#{http_port}/eth/v1/node/syncing")
     assert_match "is_syncing", output
   end
 end

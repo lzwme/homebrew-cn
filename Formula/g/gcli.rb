@@ -1,10 +1,10 @@
 class Gcli < Formula
-  desc "Portable Git(hub|lab|tea)ForgejoBugzilla CLI tool"
-  homepage "https:herrhotzenplotz.degcli"
-  url "https:github.comherrhotzenplotzgcliarchiverefstagsv2.8.0.tar.gz"
+  desc "Portable Git(hub|lab|tea)/Forgejo/Bugzilla CLI tool"
+  homepage "https://herrhotzenplotz.de/gcli/"
+  url "https://ghfast.top/https://github.com/herrhotzenplotz/gcli/archive/refs/tags/v2.8.0.tar.gz"
   sha256 "d5024ffe77cdd482bfef8a0652285ce7a087d21c0e3ab9df821fc43565743538"
   license "BSD-2-Clause"
-  head "https:github.comherrhotzenplotzgcli.git", branch: "trunk"
+  head "https://github.com/herrhotzenplotz/gcli.git", branch: "trunk"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "2ee08d1373d2499064b4517a6c7f45417b038760225ec08a6a7bfb808cb0a7fe"
@@ -27,15 +27,15 @@ class Gcli < Formula
   uses_from_macos "libedit"
 
   def install
-    # Do not use `*std_configure_args`, `.configure` script throws errors if unknown flag is passed
-    system ".configure", "--prefix=#{prefix}", "--release"
+    # Do not use `*std_configure_args`, `./configure` script throws errors if unknown flag is passed
+    system "./configure", "--prefix=#{prefix}", "--release"
     system "make", "install"
   end
 
   test do
     assert_match "gcli: error: no account specified or no default account configured",
-      shell_output("#{bin}gcli -t github repos 2>&1", 1)
-    assert_match(FORK\s+VISBLTY\s+DATE\s+FULLNAME,
-      shell_output("#{bin}gcli -t github repos -o linus"))
+      shell_output("#{bin}/gcli -t github repos 2>&1", 1)
+    assert_match(/FORK\s+VISBLTY\s+DATE\s+FULLNAME/,
+      shell_output("#{bin}/gcli -t github repos -o linus"))
   end
 end

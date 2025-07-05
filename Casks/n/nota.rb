@@ -5,11 +5,11 @@ cask "nota" do
   sha256 arm:   "727571f727486376127f0a52b8b460f2bc6ab152e3f2c7377eb7154ef5ec88dd",
          intel: "4ef87e0c7f5cbf796eb6a730569334cc02db76f50ecb06f475847d2ea155ee90"
 
-  url "https:github.comnotaappreleasesreleasesdownload#{version}Nota-#{version}-#{arch}.zip",
-      verified: "github.comnotaappreleases"
+  url "https://ghfast.top/https://github.com/notaapp/releases/releases/download/#{version}/Nota-#{version}-#{arch}.zip",
+      verified: "github.com/notaapp/releases/"
   name "Nota"
   desc "Markdown files editor"
-  homepage "https:nota.md"
+  homepage "https://nota.md/"
 
   no_autobump! because: :requires_manual_review
 
@@ -17,14 +17,14 @@ cask "nota" do
   depends_on macos: ">= :catalina"
 
   app "Nota.app"
-  binary "#{appdir}Nota.appContentsResourcesapp.asar.unpackedassetsnota.sh", target: "nota"
+  binary "#{appdir}/Nota.app/Contents/Resources/app.asar.unpacked/assets/nota.sh", target: "nota"
 
   zap trash: [
-    "~LibraryApplication SupportNota",
-    "~LibraryCachesmd.nota.macos",
-    "~LibraryCachesmd.nota.macos.ShipIt",
-    "~LibraryLogsNota",
-    "~LibraryPreferencesmd.nota.macos.plist",
-    "~LibrarySaved Application Statemd.nota.macos.savedState",
+    "~/Library/Application Support/Nota",
+    "~/Library/Caches/md.nota.macos",
+    "~/Library/Caches/md.nota.macos.ShipIt",
+    "~/Library/Logs/Nota",
+    "~/Library/Preferences/md.nota.macos.plist",
+    "~/Library/Saved Application State/md.nota.macos.savedState",
   ]
 end

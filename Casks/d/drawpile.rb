@@ -5,8 +5,8 @@ cask "drawpile" do
     version "2.2.1"
     sha256 "d4b29c78da9a64eb8a5526c464f9647b48a99b60cace0ce3eaf06a4e484dec60"
 
-    url "https:github.comdrawpileDrawpilereleasesdownload#{version}Drawpile-#{version}.dmg",
-        verified: "github.comdrawpileDrawpile"
+    url "https://ghfast.top/https://github.com/drawpile/Drawpile/releases/download/#{version}/Drawpile-#{version}.dmg",
+        verified: "github.com/drawpile/Drawpile"
 
     livecheck do
       skip "Legacy version"
@@ -21,8 +21,8 @@ cask "drawpile" do
     sha256 arm:   "06c9a282761d79d0f41402fa56996388da3b861363a61d6213430238a2c068b4",
            intel: "8dd6f517c9fbbe767570d4fc1a01bef3ddef03328606b517623c8eac4409cb8c"
 
-    url "https:github.comdrawpileDrawpilereleasesdownload#{version}Drawpile-#{version}-#{arch}.dmg",
-        verified: "github.comdrawpileDrawpile"
+    url "https://ghfast.top/https://github.com/drawpile/Drawpile/releases/download/#{version}/Drawpile-#{version}-#{arch}.dmg",
+        verified: "github.com/drawpile/Drawpile"
 
     livecheck do
       url :url
@@ -32,7 +32,7 @@ cask "drawpile" do
 
   name "Drawpile"
   desc "Collaborative drawing app"
-  homepage "https:drawpile.net"
+  homepage "https://drawpile.net/"
 
   no_autobump! because: :requires_manual_review
 
@@ -41,9 +41,9 @@ cask "drawpile" do
   app "Drawpile.app"
 
   zap trash: [
-    "~LibraryApplication Supportdrawpile",
-    "~LibraryPreferencesnet.drawpile.drawpile.plist",
-    "~LibraryPreferencesnet.drawpile.DrawpileClient.plist",
-    "~LibrarySaved Application Statenet.drawpile.DrawpileClient.savedState",
+    "~/Library/Application Support/drawpile",
+    "~/Library/Preferences/net.drawpile.drawpile.plist",
+    "~/Library/Preferences/net.drawpile.DrawpileClient.plist",
+    "~/Library/Saved Application State/net.drawpile.DrawpileClient.savedState",
   ]
 end

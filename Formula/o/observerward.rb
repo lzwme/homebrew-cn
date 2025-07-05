@@ -1,7 +1,7 @@
 class Observerward < Formula
   desc "Web application and service fingerprint identification tool"
-  homepage "https:emo-crab.github.ioobserver_ward"
-  url "https:github.comemo-crabobserver_wardarchiverefstagsv2025.6.5.tar.gz"
+  homepage "https://emo-crab.github.io/observer_ward/"
+  url "https://ghfast.top/https://github.com/emo-crab/observer_ward/archive/refs/tags/v2025.6.5.tar.gz"
   sha256 "7edf8db2e601b9d240bd847541c40e7001e6223344c181da7e7aeb80dcb22d72"
   license "GPL-3.0-only"
 
@@ -18,14 +18,14 @@ class Observerward < Formula
   depends_on "rust" => :build
 
   def install
-    rm ".cargoconfig.toml" # disable `+crc-static`
+    rm ".cargo/config.toml" # disable `+crc-static`
     system "cargo", "install", *std_cargo_args(path: "observer_ward")
   end
 
   test do
-    require "utilslinkage"
+    require "utils/linkage"
 
-    system bin"observer_ward", "-u"
-    assert_match "0example", shell_output("#{bin}observer_ward -t https:www.example.com")
+    system bin/"observer_ward", "-u"
+    assert_match "0example", shell_output("#{bin}/observer_ward -t https://www.example.com/")
   end
 end

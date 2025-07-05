@@ -5,11 +5,11 @@ cask "clash-verge-rev" do
   sha256 arm:   "2a0342b819408f182befcaa45123b443bde52d6da51ee5e69661a0da3809d1b4",
          intel: "d644e9bbab2d83c4e72371ceb1c6c02a61338c0821f75d184401b18acb951e9d"
 
-  url "https:github.comclash-verge-revclash-verge-revreleasesdownloadv#{version}Clash.Verge_#{version}_#{arch}.dmg",
-      verified: "github.comclash-verge-revclash-verge-rev"
+  url "https://ghfast.top/https://github.com/clash-verge-rev/clash-verge-rev/releases/download/v#{version}/Clash.Verge_#{version}_#{arch}.dmg",
+      verified: "github.com/clash-verge-rev/clash-verge-rev/"
   name "Clash Verge Rev"
   desc "Continuation of Clash Verge - A Clash Meta GUI based on Tauri"
-  homepage "https:clash-verge-rev.github.io"
+  homepage "https://clash-verge-rev.github.io/"
 
   livecheck do
     url :url
@@ -22,8 +22,8 @@ cask "clash-verge-rev" do
   app "Clash Verge.app"
 
   zap trash: [
-    "~LibraryApplication Supportio.github.clash-verge-rev.clash-verge-rev",
-    "~LibraryCachesio.github.clash-verge-rev.clash-verge-rev",
-    "~LibraryWebKitio.github.clash-verge-rev.clash-verge-rev",
+    "~/Library/Application Support/io.github.clash-verge-rev.clash-verge-rev",
+    "~/Library/Caches/io.github.clash-verge-rev.clash-verge-rev",
+    "~/Library/WebKit/io.github.clash-verge-rev.clash-verge-rev",
   ]
 end

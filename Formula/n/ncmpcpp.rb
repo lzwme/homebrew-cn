@@ -1,12 +1,12 @@
 class Ncmpcpp < Formula
   desc "Ncurses-based client for the Music Player Daemon"
-  homepage "https:rybczak.netncmpcpp"
+  homepage "https://rybczak.net/ncmpcpp/"
   # note, homepage did not get updated to the latest release tag in github
-  url "https:github.comncmpcppncmpcpparchiverefstags0.10.1.tar.gz"
+  url "https://ghfast.top/https://github.com/ncmpcpp/ncmpcpp/archive/refs/tags/0.10.1.tar.gz"
   sha256 "ddc89da86595d272282ae8726cc7913867b9517eec6e765e66e6da860b58e2f9"
   license "GPL-2.0-or-later"
   revision 4
-  head "https:github.comncmpcppncmpcpp.git", branch: "master"
+  head "https://github.com/ncmpcpp/ncmpcpp.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "85bce87b0b6063cdbf8be5b857c8a2d411a645d11f37f12d66dc99431bf7b034"
@@ -47,12 +47,12 @@ class Ncmpcpp < Formula
     ]
 
     system "autoreconf", "--force", "--install", "--verbose"
-    system ".configure", *args, *std_configure_args
+    system "./configure", *args, *std_configure_args
     system "make", "install"
   end
 
   test do
     ENV.delete("LC_CTYPE")
-    assert_match version.to_s, shell_output("#{bin}ncmpcpp --version")
+    assert_match version.to_s, shell_output("#{bin}/ncmpcpp --version")
   end
 end

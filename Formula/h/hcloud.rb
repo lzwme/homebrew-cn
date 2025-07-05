@@ -1,10 +1,10 @@
 class Hcloud < Formula
   desc "Command-line interface for Hetzner Cloud"
-  homepage "https:github.comhetznercloudcli"
-  url "https:github.comhetznercloudcliarchiverefstagsv1.51.0.tar.gz"
+  homepage "https://github.com/hetznercloud/cli"
+  url "https://ghfast.top/https://github.com/hetznercloud/cli/archive/refs/tags/v1.51.0.tar.gz"
   sha256 "530b5925a93da73b7f346e61ff7f8742fae400cd6dfaa1374963b1adbe594138"
   license "MIT"
-  head "https:github.comhetznercloudcli.git", branch: "main"
+  head "https://github.com/hetznercloud/cli.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "7827e1af3e21d91e64cd6b32a2aaf2b9a4700a79f093dae9205e24e848fd01dd"
@@ -20,26 +20,26 @@ class Hcloud < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.comhetznercloudcliinternalversion.version=v#{version}
-      -X github.comhetznercloudcliinternalversion.versionPrerelease=
+      -X github.com/hetznercloud/cli/internal/version.version=v#{version}
+      -X github.com/hetznercloud/cli/internal/version.versionPrerelease=
     ]
-    system "go", "build", *std_go_args(ldflags:), ".cmdhcloud"
+    system "go", "build", *std_go_args(ldflags:), "./cmd/hcloud"
 
-    generate_completions_from_executable(bin"hcloud", "completion")
+    generate_completions_from_executable(bin/"hcloud", "completion")
   end
 
   test do
-    config_path = testpath".confighcloudcli.toml"
+    config_path = testpath/".config/hcloud/cli.toml"
     ENV["HCLOUD_CONFIG"] = config_path
-    assert_match "", shell_output("#{bin}hcloud context active")
+    assert_match "", shell_output("#{bin}/hcloud context active")
     config_path.write <<~EOS
       active_context = "test"
       [[contexts]]
       name = "test"
       token = "foobar"
     EOS
-    assert_match "test", shell_output("#{bin}hcloud context list")
-    assert_match "test", shell_output("#{bin}hcloud context active")
-    assert_match "hcloud v#{version}", shell_output("#{bin}hcloud version")
+    assert_match "test", shell_output("#{bin}/hcloud context list")
+    assert_match "test", shell_output("#{bin}/hcloud context active")
+    assert_match "hcloud v#{version}", shell_output("#{bin}/hcloud version")
   end
 end

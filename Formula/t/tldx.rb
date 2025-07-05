@@ -1,7 +1,7 @@
 class Tldx < Formula
   desc "Domain Availability Research Tool"
-  homepage "https:brandonyoung.devblogintroducing-tldx"
-  url "https:github.combrandonyoungdevtldxarchiverefstagsv1.2.5.tar.gz"
+  homepage "https://brandonyoung.dev/blog/introducing-tldx/"
+  url "https://ghfast.top/https://github.com/brandonyoungdev/tldx/archive/refs/tags/v1.2.5.tar.gz"
   sha256 "fd137e59e495da1458cb3ff44be62af63856096a5f9a1879bc6d311fed62ca86"
   license "Apache-2.0"
 
@@ -17,12 +17,12 @@ class Tldx < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w -X github.combrandonyoungdevtldxcmd.Version=#{version}")
+    system "go", "build", *std_go_args(ldflags: "-s -w -X github.com/brandonyoungdev/tldx/cmd.Version=#{version}")
   end
 
   test do
-    assert_match "brew.sh is not available", shell_output("#{bin}tldx brew --tlds sh")
+    assert_match "brew.sh is not available", shell_output("#{bin}/tldx brew --tlds sh")
 
-    assert_match version.to_s, shell_output("#{bin}tldx --version")
+    assert_match version.to_s, shell_output("#{bin}/tldx --version")
   end
 end

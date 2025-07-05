@@ -1,10 +1,10 @@
 class Verilator < Formula
   desc "Verilog simulator"
-  homepage "https:www.veripool.orgwikiverilator"
-  url "https:github.comverilatorverilatorarchiverefstagsv5.036.tar.gz"
+  homepage "https://www.veripool.org/wiki/verilator"
+  url "https://ghfast.top/https://github.com/verilator/verilator/archive/refs/tags/v5.036.tar.gz"
   sha256 "4199964882d56cf6a19ce80c6a297ebe3b0c35ea81106cd4f722342594337c47"
   license any_of: ["LGPL-3.0-only", "Artistic-2.0"]
-  head "https:github.comverilatorverilator.git", branch: "master"
+  head "https://github.com/verilator/verilator.git", branch: "master"
 
   bottle do
     sha256 arm64_sequoia: "51abe3f812ae2f799bdd1d179d6ad7aa7d717f858ca34e23627f0e2fd0374c2e"
@@ -29,14 +29,14 @@ class Verilator < Formula
 
   def install
     system "autoconf"
-    system ".configure", "--prefix=#{prefix}"
+    system "./configure", "--prefix=#{prefix}"
     ENV.deparallelize if OS.mac?
     # `make` and `make install` need to be separate for parallel builds
     system "make"
     system "make", "install"
 
     # Avoid hardcoding build-time references that may not be valid at runtime.
-    inreplace pkgshare"includeverilated.mk" do |s|
+    inreplace pkgshare/"include/verilated.mk" do |s|
       s.change_make_var! "CXX", "c++"
       s.change_make_var! "LINK", "c++"
       s.change_make_var! "PERL", "perl"
@@ -45,12 +45,12 @@ class Verilator < Formula
   end
 
   test do
-    (testpath"test.v").write <<~VERILOG
+    (testpath/"test.v").write <<~VERILOG
       module test;
          initial begin $display("Hello World"); $finish; end
       endmodule
     VERILOG
-    (testpath"test.cpp").write <<~CPP
+    (testpath/"test.cpp").write <<~CPP
       #include "Vtest.h"
       #include "verilated.h"
       int main(int argc, char **argv, char **env) {
@@ -61,14 +61,14 @@ class Verilator < Formula
           exit(0);
       }
     CPP
-    system bin"verilator", "-Wall", "--cc", "test.v", "--exe", "test.cpp"
+    system bin/"verilator", "-Wall", "--cc", "test.v", "--exe", "test.cpp"
     cd "obj_dir" do
       system "make", "-j", "-f", "Vtest.mk", "Vtest"
       expected = <<~EOS
         Hello World
         - test.v:2: Verilog $finish
       EOS
-      assert_equal expected, shell_output(".Vtest")
+      assert_equal expected, shell_output("./Vtest")
     end
   end
 end

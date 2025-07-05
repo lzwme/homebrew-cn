@@ -2,19 +2,19 @@ cask "ares-emulator" do
   version "144"
   sha256 "ca7d6b9d7bc4a342c6b0dbfb85b6d1f30872321bc92906a41c3c4c744edb56fc"
 
-  url "https:github.comares-emulatoraresreleasesdownloadv#{version}ares-macos-universal.zip",
-      verified: "github.comares-emulatorares"
+  url "https://ghfast.top/https://github.com/ares-emulator/ares/releases/download/v#{version}/ares-macos-universal.zip",
+      verified: "github.com/ares-emulator/ares/"
   name "ares"
   desc "Cross-platform, multi-system emulator, focusing on accuracy and preservation"
-  homepage "https:ares-emu.net"
+  homepage "https://ares-emu.net/"
 
   depends_on macos: ">= :catalina"
 
-  app "ares-v#{version}ares.app"
+  app "ares-v#{version}/ares.app"
 
   zap trash: [
-    "~LibraryApplication Supportares",
-    "~LibraryPreferencesdev.ares.ares.plist",
-    "~LibrarySaved Application Statedev.ares.ares.savedState",
+    "~/Library/Application Support/ares",
+    "~/Library/Preferences/dev.ares.ares.plist",
+    "~/Library/Saved Application State/dev.ares.ares.savedState",
   ]
 end

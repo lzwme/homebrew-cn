@@ -1,11 +1,11 @@
 class Kn < Formula
   desc "Command-line interface for managing Knative Serving and Eventing resources"
-  homepage "https:github.comknativeclient"
-  url "https:github.comknativeclient.git",
+  homepage "https://github.com/knative/client"
+  url "https://github.com/knative/client.git",
       tag:      "knative-v1.18.0",
       revision: "96721e598f770d3cd9ee1f0a437bf45bb7951b54"
   license "Apache-2.0"
-  head "https:github.comknativeclient.git", branch: "main"
+  head "https://github.com/knative/client.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "3034a9a7ed80e2919485a4e85ec962d428a0c0cbb9864d77589db2b5f5ccfb97"
@@ -24,30 +24,30 @@ class Kn < Formula
 
     ldflags = %W[
       -s -w
-      -X knative.devclientpkgcommandsversion.Version=v#{version}
-      -X knative.devclientpkgcommandsversion.GitRevision=#{Utils.git_head(length: 8)}
-      -X knative.devclientpkgcommandsversion.BuildDate=#{time.iso8601}
+      -X knative.dev/client/pkg/commands/version.Version=v#{version}
+      -X knative.dev/client/pkg/commands/version.GitRevision=#{Utils.git_head(length: 8)}
+      -X knative.dev/client/pkg/commands/version.BuildDate=#{time.iso8601}
     ]
 
-    system "go", "build", *std_go_args(ldflags:), ".cmdkn"
+    system "go", "build", *std_go_args(ldflags:), "./cmd/kn"
 
-    generate_completions_from_executable(bin"kn", "completion")
+    generate_completions_from_executable(bin/"kn", "completion")
   end
 
   test do
-    system bin"kn", "service", "create", "foo",
+    system bin/"kn", "service", "create", "foo",
       "--namespace", "bar",
-      "--image", "gcr.iocloudrunhello",
+      "--image", "gcr.io/cloudrun/hello",
       "--target", "."
 
-    yaml = File.read(testpath"barksvcfoo.yaml")
+    yaml = File.read(testpath/"bar/ksvc/foo.yaml")
     assert_match("name: foo", yaml)
     assert_match("namespace: bar", yaml)
-    assert_match("image: gcr.iocloudrunhello", yaml)
+    assert_match("image: gcr.io/cloudrun/hello", yaml)
 
-    version_output = shell_output("#{bin}kn version")
+    version_output = shell_output("#{bin}/kn version")
     assert_match("Version:      v#{version}", version_output)
     assert_match("Build Date:   ", version_output)
-    assert_match(Git Revision: [a-f0-9]{8}, version_output)
+    assert_match(/Git Revision: [a-f0-9]{8}/, version_output)
   end
 end

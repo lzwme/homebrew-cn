@@ -1,10 +1,10 @@
 class Regal < Formula
   desc "Linter and language server for Rego"
-  homepage "https:docs.styra.comregal"
-  url "https:github.comStyraIncregalarchiverefstagsv0.35.1.tar.gz"
+  homepage "https://docs.styra.com/regal"
+  url "https://ghfast.top/https://github.com/StyraInc/regal/archive/refs/tags/v0.35.1.tar.gz"
   sha256 "49bfa9e94f66fffebe963c886686cdf7a202f7d4fbe6ed59b02d13e0bd0e3fc3"
   license "Apache-2.0"
-  head "https:github.comStyraIncregal.git", branch: "main"
+  head "https://github.com/StyraInc/regal.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "6439d599a24d1ab0885f6d082d7621b444b064ca0dcbb9e29f44fd1b8c33329e"
@@ -20,20 +20,20 @@ class Regal < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.comstyraincregalpkgversion.Version=#{version}
-      -X github.comstyraincregalpkgversion.Commit=#{tap.user}
-      -X github.comstyraincregalpkgversion.Timestamp=#{time.iso8601}
-      -X github.comstyraincregalpkgversion.Hostname=#{tap.user}
+      -X github.com/styrainc/regal/pkg/version.Version=#{version}
+      -X github.com/styrainc/regal/pkg/version.Commit=#{tap.user}
+      -X github.com/styrainc/regal/pkg/version.Timestamp=#{time.iso8601}
+      -X github.com/styrainc/regal/pkg/version.Hostname=#{tap.user}
     ]
     system "go", "build", *std_go_args(ldflags:)
 
-    generate_completions_from_executable(bin"regal", "completion")
+    generate_completions_from_executable(bin/"regal", "completion")
   end
 
   test do
-    (testpath"test").mkdir
+    (testpath/"test").mkdir
 
-    (testpath"testexample.rego").write <<~REGO
+    (testpath/"test/example.rego").write <<~REGO
       package test
 
       import rego.v1
@@ -41,9 +41,9 @@ class Regal < Formula
       default allow := false
     REGO
 
-    output = shell_output("#{bin}regal lint testexample.rego 2>&1")
+    output = shell_output("#{bin}/regal lint test/example.rego 2>&1")
     assert_equal "1 file linted. No violations found.", output.chomp
 
-    assert_match version.to_s, shell_output("#{bin}regal version")
+    assert_match version.to_s, shell_output("#{bin}/regal version")
   end
 end

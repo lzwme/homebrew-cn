@@ -1,14 +1,14 @@
 class Atmos < Formula
   desc "Universal Tool for DevOps and Cloud Automation"
-  homepage "https:github.comcloudposseatmos"
-  url "https:github.comcloudposseatmosarchiverefstagsv1.182.0.tar.gz"
+  homepage "https://github.com/cloudposse/atmos"
+  url "https://ghfast.top/https://github.com/cloudposse/atmos/archive/refs/tags/v1.182.0.tar.gz"
   sha256 "c1f7e3507b547d29d016eda9493c2311be565f529493533b141e91167e078deb"
   license "Apache-2.0"
-  head "https:github.comcloudposseatmos.git", branch: "main"
+  head "https://github.com/cloudposse/atmos.git", branch: "main"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   no_autobump! because: :bumped_by_upstream
@@ -27,44 +27,44 @@ class Atmos < Formula
   conflicts_with "tenv", because: "tenv symlinks atmos binaries"
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w -X 'github.comcloudposseatmospkgversion.Version=#{version}'")
+    system "go", "build", *std_go_args(ldflags: "-s -w -X 'github.com/cloudposse/atmos/pkg/version.Version=#{version}'")
 
-    generate_completions_from_executable(bin"atmos", "completion")
+    generate_completions_from_executable(bin/"atmos", "completion")
   end
 
   test do
     # create basic atmos.yaml
-    (testpath"atmos.yaml").write <<~YAML
+    (testpath/"atmos.yaml").write <<~YAML
       components:
         terraform:
-          base_path: ".componentsterraform"
+          base_path: "./components/terraform"
           apply_auto_approve: false
           deploy_run_init: true
           auto_generate_backend_file: false
         helmfile:
-          base_path: ".componentshelmfile"
-          kubeconfig_path: "devshm"
+          base_path: "./components/helmfile"
+          kubeconfig_path: "/dev/shm"
           helm_aws_profile_pattern: "{namespace}-{tenant}-gbl-{stage}-helm"
           cluster_name_pattern: "{namespace}-{tenant}-{environment}-{stage}-eks-cluster"
       stacks:
-        base_path: ".stacks"
+        base_path: "./stacks"
         included_paths:
-          - "***"
+          - "**/*"
         excluded_paths:
-          - "globals***"
-          - "catalog***"
-          - "***globals*"
+          - "globals/**/*"
+          - "catalog/**/*"
+          - "**/*globals*"
         name_pattern: "{tenant}-{environment}-{stage}"
       logs:
-        file: "devstderr"
+        file: "/dev/stderr"
         verbose: false
         colors: true
     YAML
 
     # create scaffold
-    mkdir_p testpath"stacks"
-    mkdir_p testpath"componentsterraformtop-level-component1"
-    (testpath"stackstenant1-ue2-dev.yaml").write <<~YAML
+    mkdir_p testpath/"stacks"
+    mkdir_p testpath/"components/terraform/top-level-component1"
+    (testpath/"stacks/tenant1-ue2-dev.yaml").write <<~YAML
       terraform:
         backend_type: s3 # s3, remote, vault, static, etc.
         backend:
@@ -91,7 +91,7 @@ class Atmos < Formula
     YAML
 
     # create expected file
-    (testpath"backend.tf.json").write <<~JSON
+    (testpath/"backend.tf.json").write <<~JSON
       {
         "terraform": {
           "backend": {
@@ -110,11 +110,11 @@ class Atmos < Formula
       }
     JSON
 
-    system bin"atmos", "terraform", "generate", "backend", "top-level-component1", "--stack", "tenant1-ue2-dev"
-    actual_json = JSON.parse(File.read(testpath"componentsterraformtop-level-component1backend.tf.json"))
-    expected_json = JSON.parse(File.read(testpath"backend.tf.json"))
+    system bin/"atmos", "terraform", "generate", "backend", "top-level-component1", "--stack", "tenant1-ue2-dev"
+    actual_json = JSON.parse(File.read(testpath/"components/terraform/top-level-component1/backend.tf.json"))
+    expected_json = JSON.parse(File.read(testpath/"backend.tf.json"))
     assert_equal expected_json["terraform"].to_set, actual_json["terraform"].to_set
 
-    assert_match "Atmos #{version}", shell_output("#{bin}atmos version")
+    assert_match "Atmos #{version}", shell_output("#{bin}/atmos version")
   end
 end

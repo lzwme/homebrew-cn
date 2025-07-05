@@ -1,10 +1,10 @@
 class Cubeb < Formula
   desc "Cross-platform audio library"
-  homepage "https:github.commozillacubeb"
+  homepage "https://github.com/mozilla/cubeb"
   license "ISC"
 
   stable do
-    url "https:github.commozillacubebarchiverefstagscubeb-0.2.tar.gz"
+    url "https://ghfast.top/https://github.com/mozilla/cubeb/archive/refs/tags/cubeb-0.2.tar.gz"
     sha256 "cac10876da4fa3b3d2879e0c658d09e8a258734562198301d99c1e8228e66907"
 
     depends_on "autoconf" => :build
@@ -34,7 +34,7 @@ class Cubeb < Formula
   end
 
   head do
-    url "https:github.commozillacubeb.git", branch: "master"
+    url "https://github.com/mozilla/cubeb.git", branch: "master"
 
     depends_on "cmake" => :build
   end
@@ -56,15 +56,15 @@ class Cubeb < Formula
       system "cmake", "--install", "build"
     else
       system "autoreconf", "--force", "--install", "--verbose"
-      system ".configure", "--disable-silent-rules", *std_configure_args
+      system "./configure", "--disable-silent-rules", *std_configure_args
       system "make", "install"
     end
   end
 
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include <stdio.h>
-      #include <cubebcubeb.h>
+      #include <cubeb/cubeb.h>
 
       #define TEST(test, msg) \
         if ((test)) { \
@@ -74,7 +74,7 @@ class Cubeb < Formula
           goto end; \
         }
 
-      * Dummy callbacks to use for audio stream test *
+      /* Dummy callbacks to use for audio stream test */
       static long data_callback(cubeb_stream *stream, void *user, void *buffer,
           long nframes) {
         return nframes;
@@ -89,31 +89,31 @@ class Cubeb < Formula
         cubeb_stream *stream;
         cubeb_stream_params params;
 
-        * Verify that the library initialises itself successfully *
+        /* Verify that the library initialises itself successfully */
         ret = cubeb_init(&ctx, "test_context");
         TEST(ret == CUBEB_OK, "initialise cubeb context");
 
-        * Verify backend id can be retrieved *
+        /* Verify backend id can be retrieved */
         backend_id = cubeb_get_backend_id(ctx);
         TEST(backend_id != NULL, "retrieve backend id");
 
-        * Verify that an audio stream gets opened successfully *
-        params.format = CUBEB_SAMPLE_S16LE; * use commonly supported       *
-        params.rate = 48000;                * parameters, so that the test *
-        params.channels = 1;                * doesn't give a false fail    *
+        /* Verify that an audio stream gets opened successfully */
+        params.format = CUBEB_SAMPLE_S16LE; /* use commonly supported       */
+        params.rate = 48000;                /* parameters, so that the test */
+        params.channels = 1;                /* doesn't give a false fail    */
         ret = cubeb_stream_init(ctx, &stream, "test_stream", params, 100,
           data_callback, state_callback, NULL);
         TEST(ret == CUBEB_OK, "initialise stream");
 
       end:
-        * Cleanup and return *
+        /* Cleanup and return */
         cubeb_stream_destroy(stream);
         cubeb_destroy(ctx);
         return 0;
       }
     C
-    system ENV.cc, "-o", "test", "#{testpath}test.c", "-L#{lib}", "-lcubeb"
-    refute_match(FAIL:.*, shell_output("#{testpath}test"),
+    system ENV.cc, "-o", "test", "#{testpath}/test.c", "-L#{lib}", "-lcubeb"
+    refute_match(/FAIL:.*/, shell_output("#{testpath}/test"),
                     "Basic sanity test failed.")
   end
 end

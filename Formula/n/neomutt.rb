@@ -1,10 +1,10 @@
 class Neomutt < Formula
   desc "E-mail reader with support for Notmuch, NNTP and much more"
-  homepage "https:neomutt.org"
-  url "https:github.comneomuttneomuttarchiverefstags20250510.tar.gz"
+  homepage "https://neomutt.org/"
+  url "https://ghfast.top/https://github.com/neomutt/neomutt/archive/refs/tags/20250510.tar.gz"
   sha256 "12d225e270d8e16cda41d855880b9d938750a4f1d647f55c6353337d32ffd653"
   license "GPL-2.0-or-later"
-  head "https:github.comneomuttneomutt.git", branch: "main"
+  head "https://github.com/neomutt/neomutt.git", branch: "main"
 
   bottle do
     sha256 arm64_sequoia: "aeeccca4cdcc5bcfdd187ff32ec295746bd0ff57a92b108a67609917ca6ca96e"
@@ -45,7 +45,7 @@ class Neomutt < Formula
   end
 
   def install
-    ENV["XML_CATALOG_FILES"] = etc"xmlcatalog"
+    ENV["XML_CATALOG_FILES"] = etc/"xml/catalog"
 
     args = %W[
       --sysconfdir=#{etc}
@@ -70,12 +70,12 @@ class Neomutt < Formula
 
     args << "--with-iconv=#{Formula["libiconv"].opt_prefix}" if OS.mac?
 
-    system ".configure", *args, *std_configure_args
+    system "./configure", *args, *std_configure_args
     system "make", "install"
   end
 
   test do
-    output = shell_output("#{bin}neomutt -F devnull -Q debug_level", 1)
+    output = shell_output("#{bin}/neomutt -F /dev/null -Q debug_level", 1)
     assert_equal "set debug_level = 0", output.chomp
   end
 end

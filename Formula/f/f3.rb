@@ -1,10 +1,10 @@
 class F3 < Formula
   desc "Test various flash cards"
-  homepage "https:fight-flash-fraud.readthedocs.ioenlatest"
-  url "https:github.comAltraMayorf3archiverefstagsv9.0.tar.gz"
+  homepage "https://fight-flash-fraud.readthedocs.io/en/latest/"
+  url "https://ghfast.top/https://github.com/AltraMayor/f3/archive/refs/tags/v9.0.tar.gz"
   sha256 "569ec069dc3ec1c74d90d6704aa8b7f45240f5998a9dc6f14f1736c917506ecb"
   license "GPL-3.0-only"
-  head "https:github.comAltraMayorf3.git", branch: "master"
+  head "https://github.com/AltraMayor/f3.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "ed686149cfd98b9c7a128f67a438f6c81f3152b2cd489c17fe71d40860e16dcf"
@@ -30,6 +30,6 @@ class F3 < Formula
   end
 
   test do
-    system bin"f3read", testpath
+    system bin/"f3read", testpath
   end
 end

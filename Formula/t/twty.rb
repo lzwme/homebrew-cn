@@ -1,7 +1,7 @@
 class Twty < Formula
   desc "Command-line twitter client written in golang"
-  homepage "https:github.commattntwty"
-  url "https:github.commattntwtyarchiverefstagsv0.0.13.tar.gz"
+  homepage "https://github.com/mattn/twty/"
+  url "https://ghfast.top/https://github.com/mattn/twty/archive/refs/tags/v0.0.13.tar.gz"
   sha256 "4e76ada5e7c5f2e20881fbf303fb50d3d4a443a8e37f2444371a90102737e49b"
   license "MIT"
 
@@ -21,8 +21,8 @@ class Twty < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "fb45326df2a5cb80531378ae156fc20400346d5c5c8d82548429b62463ec603e"
   end
 
-  # see discussions in https:github.commattntwtyissues28
-  # and https:github.comorakarorainbowstreamissues342
+  # see discussions in https://github.com/mattn/twty/issues/28
+  # and https://github.com/orakaro/rainbowstream/issues/342
   disable! date: "2025-01-01", because: "uses the old, unsupported Twitter API"
 
   depends_on "go" => :build
@@ -33,14 +33,14 @@ class Twty < Formula
 
   test do
     # Prevent twty executing open or xdg-open
-    testpath_bin = testpath"bin"
+    testpath_bin = testpath/"bin"
     ENV.prepend_path "PATH", testpath_bin
     testpath_bin.install_symlink which("true") => "open"
     testpath_bin.install_symlink which("true") => "xdg-open"
 
     # twty requires PIN code from stdin and putting nothing to stdin to make authentication failed
     require "pty"
-    PTY.spawn(bin"twty") do |r, _w, pid|
+    PTY.spawn(bin/"twty") do |r, _w, pid|
       output = r.gets
       assert_match "cannot request temporary credentials: OAuth server status 401", output
       assert_match "{\"errors\":[{\"code\":32,\"message\":\"Could not authenticate you.\"}]}", output

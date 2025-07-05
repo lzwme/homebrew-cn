@@ -1,11 +1,11 @@
 class Xrootd < Formula
   desc "High performance, scalable, fault-tolerant access to data"
-  homepage "https:xrootd.slac.stanford.edu"
-  url "https:github.comxrootdxrootdreleasesdownloadv5.8.3xrootd-5.8.3.tar.gz"
-  mirror "https:xrootd.slac.stanford.edudownloadv5.8.3xrootd-5.8.3.tar.gz"
+  homepage "https://xrootd.slac.stanford.edu/"
+  url "https://ghfast.top/https://github.com/xrootd/xrootd/releases/download/v5.8.3/xrootd-5.8.3.tar.gz"
+  mirror "https://xrootd.slac.stanford.edu/download/v5.8.3/xrootd-5.8.3.tar.gz"
   sha256 "8d7ac76eff83540c595a290c56e9cb493d582a93af743e7ef4b4160289c25ff3"
   license "LGPL-3.0-or-later"
-  head "https:github.comxrootdxrootd.git", branch: "master"
+  head "https://github.com/xrootd/xrootd.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "1e609819ccacfb7b1eab2f3fea963877af14bfac8a3c46750489a4ce5bb15cb5"
@@ -65,7 +65,7 @@ class Xrootd < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}xrootd -v 2>&1")
+    assert_match version.to_s, shell_output("#{bin}/xrootd -v 2>&1")
 
     system python3, "-c", <<~PYTHON
       import XRootD

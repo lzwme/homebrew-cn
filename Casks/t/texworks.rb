@@ -10,15 +10,15 @@ cask "texworks" do
     sha256 "c0561bd2bf185a7783ae201af041506cf634fcb373c58027a5c203abada8ead0"
   end
 
-  url "https:github.comTeXworkstexworksreleasesdownloadrelease-#{version.csv.first}TeXworks-macos11-#{version.csv.first}-#{arch}-#{version.csv.second}-git_#{version.csv.third}.dmg",
-      verified: "github.comTeXworkstexworks"
+  url "https://ghfast.top/https://github.com/TeXworks/texworks/releases/download/release-#{version.csv.first}/TeXworks-macos11-#{version.csv.first}-#{arch}-#{version.csv.second}-git_#{version.csv.third}.dmg",
+      verified: "github.com/TeXworks/texworks/"
   name "TeXworks"
   desc "LaTeX editor"
-  homepage "https:www.tug.orgtexworks"
+  homepage "https://www.tug.org/texworks/"
 
   livecheck do
     url :url
-    regex(^TeXworks[._-]macos11[._-]v?(\d+(?:\.\d+)+)[._-]#{arch}[._-](\d+)[._-]git[._-](.*?)\.dmg$i)
+    regex(/^TeXworks[._-]macos11[._-]v?(\d+(?:\.\d+)+)[._-]#{arch}[._-](\d+)[._-]git[._-](.*?)\.dmg$/i)
     strategy :github_latest do |json, regex|
       json["assets"]&.map do |asset|
         match = asset["name"]&.match(regex)
@@ -35,5 +35,5 @@ cask "texworks" do
 
   app "TeXworks.app"
 
-  zap trash: "~LibraryPreferencesorg.tug.TeXworks.plist"
+  zap trash: "~/Library/Preferences/org.tug.TeXworks.plist"
 end

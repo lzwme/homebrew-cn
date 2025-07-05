@@ -1,11 +1,11 @@
 class PyenvVirtualenv < Formula
   desc "Pyenv plugin to manage virtualenv"
-  homepage "https:github.compyenvpyenv-virtualenv"
-  url "https:github.compyenvpyenv-virtualenvarchiverefstagsv1.2.4.tar.gz"
+  homepage "https://github.com/pyenv/pyenv-virtualenv"
+  url "https://ghfast.top/https://github.com/pyenv/pyenv-virtualenv/archive/refs/tags/v1.2.4.tar.gz"
   sha256 "6f49a395a17221f87e1e16f0f92c99c3d21d4fc27072d5c80e65ca11b686eedd"
   license "MIT"
   version_scheme 1
-  head "https:github.compyenvpyenv-virtualenv.git", branch: "master"
+  head "https://github.com/pyenv/pyenv-virtualenv.git", branch: "master"
 
   livecheck do
     url :stable
@@ -33,10 +33,10 @@ class PyenvVirtualenv < Formula
 
   def install
     ENV["PREFIX"] = prefix
-    system ".install.sh"
+    system "./install.sh"
 
     # macOS Big Sur and earlier do not support `readlink -f`
-    inreplace bin"pyenv-virtualenv-prefix", "readlink", "#{Formula["coreutils"].opt_bin}greadlink" if OS.mac?
+    inreplace bin/"pyenv-virtualenv-prefix", "readlink", "#{Formula["coreutils"].opt_bin}/greadlink" if OS.mac?
   end
 
   test do

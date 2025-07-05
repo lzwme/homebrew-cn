@@ -1,13 +1,13 @@
 class Libupnp < Formula
   desc "Portable UPnP development kit"
-  homepage "https:pupnp.sourceforge.io"
-  url "https:github.compupnppupnpreleasesdownloadrelease-1.14.24libupnp-1.14.24.tar.bz2"
+  homepage "https://pupnp.sourceforge.io/"
+  url "https://ghfast.top/https://github.com/pupnp/pupnp/releases/download/release-1.14.24/libupnp-1.14.24.tar.bz2"
   sha256 "8dfde05f63e91644e907dcfb7305955ad064b4cf6e5103cb37a7c57c50d1dd11"
   license "BSD-3-Clause"
 
   livecheck do
     url :stable
-    regex(^release[._-]v?(\d+(?:\.\d+)+)$i)
+    regex(/^release[._-]v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -28,7 +28,7 @@ class Libupnp < Formula
       --enable-ipv6
     ]
 
-    system ".configure", *args
+    system "./configure", *args
     system "make", "install"
   end
 end

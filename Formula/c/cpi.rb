@@ -1,10 +1,10 @@
 class Cpi < Formula
   desc "Tiny c++ interpreter"
-  homepage "https:treefrogframework.github.iocpi"
-  url "https:github.comtreefrogframeworkcpiarchiverefstagsv2.2.0.tar.gz"
+  homepage "https://treefrogframework.github.io/cpi/"
+  url "https://ghfast.top/https://github.com/treefrogframework/cpi/archive/refs/tags/v2.2.0.tar.gz"
   sha256 "fb62a1e620850dcb69a1e65d0ff22c309c0469c876c718db017d0f92bcd114e5"
   license "MIT"
-  head "https:github.comtreefrogframeworkcpi.git", branch: "master"
+  head "https://github.com/treefrogframework/cpi.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:  "83f1d3e84a6717be85bd5d5303ec9844674adb1815e8356f7689e9932916fb06"
@@ -25,7 +25,7 @@ class Cpi < Formula
   end
 
   test do
-    (testpath"test1.cpp").write <<~CPP
+    (testpath/"test1.cpp").write <<~CPP
       #include <iostream>
       int main()
       {
@@ -34,9 +34,9 @@ class Cpi < Formula
       }
     CPP
 
-    assert_match "Hello world", shell_output("#{bin}cpi #{testpath}test1.cpp")
+    assert_match "Hello world", shell_output("#{bin}/cpi #{testpath}/test1.cpp")
 
-    (testpath"test2.cpp").write <<~CPP
+    (testpath/"test2.cpp").write <<~CPP
       #include <iostream>
       #include <cmath>
       #include <cstdlib>
@@ -47,9 +47,9 @@ class Cpi < Formula
           std::cout << sqrt(atoi(argv[1])) << std::endl;
           return 0;
       }
-       CompileOptions: -lm
+      // CompileOptions: -lm
     CPP
 
-    assert_match "1.41421", shell_output("#{bin}cpi #{testpath}test2.cpp 2")
+    assert_match "1.41421", shell_output("#{bin}/cpi #{testpath}/test2.cpp 2")
   end
 end

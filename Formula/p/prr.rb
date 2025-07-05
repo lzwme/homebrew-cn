@@ -1,10 +1,10 @@
 class Prr < Formula
   desc "Mailing list style code reviews for github"
-  homepage "https:github.comdanobiprr"
-  url "https:github.comdanobiprrarchiverefstagsv0.20.0.tar.gz"
+  homepage "https://github.com/danobi/prr"
+  url "https://ghfast.top/https://github.com/danobi/prr/archive/refs/tags/v0.20.0.tar.gz"
   sha256 "fa25e4690a6976af37738b417b01f1fa0df7448efd631239aadea0399a9e862a"
   license "GPL-2.0-only"
-  head "https:github.comdanobiprr.git", branch: "master"
+  head "https://github.com/danobi/prr.git", branch: "master"
 
   bottle do
     rebuild 1
@@ -37,24 +37,24 @@ class Prr < Formula
 
     system "cargo", "install", *std_cargo_args
 
-    bash_completion.install "completionsprr.bash" => "prr"
-    fish_completion.install "completionsprr.fish"
-    zsh_completion.install "completions_prr"
-    man1.install Dir["man*.1"]
+    bash_completion.install "completions/prr.bash" => "prr"
+    fish_completion.install "completions/prr.fish"
+    zsh_completion.install "completions/_prr"
+    man1.install Dir["man/*.1"]
   end
 
   test do
-    require "utilslinkage"
+    require "utils/linkage"
 
-    assert_match "Failed to read config", shell_output("#{bin}prr get Homebrewhomebrew-core6 2>&1", 1)
+    assert_match "Failed to read config", shell_output("#{bin}/prr get Homebrew/homebrew-core/6 2>&1", 1)
 
     [
-      Formula["libgit2"].opt_libshared_library("libgit2"),
-      Formula["libssh2"].opt_libshared_library("libssh2"),
-      Formula["openssl@3"].opt_libshared_library("libssl"),
-      Formula["openssl@3"].opt_libshared_library("libcrypto"),
+      Formula["libgit2"].opt_lib/shared_library("libgit2"),
+      Formula["libssh2"].opt_lib/shared_library("libssh2"),
+      Formula["openssl@3"].opt_lib/shared_library("libssl"),
+      Formula["openssl@3"].opt_lib/shared_library("libcrypto"),
     ].each do |library|
-      assert Utils.binary_linked_to_library?(bin"prr", library),
+      assert Utils.binary_linked_to_library?(bin/"prr", library),
              "No linkage with #{library.basename}! Cargo is likely using a vendored version."
     end
   end

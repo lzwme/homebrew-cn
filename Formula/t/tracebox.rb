@@ -1,15 +1,15 @@
 class Tracebox < Formula
   desc "Middlebox detection tool"
-  homepage "https:github.comtraceboxtracebox"
-  url "https:github.comtraceboxtracebox.git",
+  homepage "https://github.com/tracebox/tracebox"
+  url "https://github.com/tracebox/tracebox.git",
       tag:      "v0.4.4",
       revision: "4fc12b2e330e52d340ecd64b3a33dbc34c160390"
   license all_of: [
     "GPL-2.0-only",
-    "BSD-3-Clause", # noinstlibcrafter
+    "BSD-3-Clause", # noinst/libcrafter
   ]
   revision 3
-  head "https:github.comtraceboxtracebox.git", branch: "master"
+  head "https://github.com/tracebox/tracebox.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -42,11 +42,11 @@ class Tracebox < Formula
     end
     # Work around limited `libpcap` and `lua` search paths in configure.ac
     ENV.append "LIBS", "-lpcap -lm"
-    ENV["LUA_INCLUDE"] = "-I#{Formula["lua"].opt_include}lua"
+    ENV["LUA_INCLUDE"] = "-I#{Formula["lua"].opt_include}/lua"
     ENV["LUA_LIB"] = "-L#{Formula["lua"].opt_lib} -llua"
 
     system "autoreconf", "--force", "--install", "--verbose"
-    system ".configure", "--disable-silent-rules",
+    system "./configure", "--disable-silent-rules",
                           "--with-libpcap=yes",
                           *std_configure_args
     system "make"
@@ -63,6 +63,6 @@ class Tracebox < Formula
   end
 
   test do
-    system bin"tracebox", "-v"
+    system bin/"tracebox", "-v"
   end
 end

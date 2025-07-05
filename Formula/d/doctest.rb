@@ -1,7 +1,7 @@
 class Doctest < Formula
-  desc "Feature-rich C++1114172023 single-header testing framework"
-  homepage "https:github.comdoctestdoctest"
-  url "https:github.comdoctestdoctestarchiverefstagsv2.4.12.tar.gz"
+  desc "Feature-rich C++11/14/17/20/23 single-header testing framework"
+  homepage "https://github.com/doctest/doctest"
+  url "https://ghfast.top/https://github.com/doctest/doctest/archive/refs/tags/v2.4.12.tar.gz"
   sha256 "73381c7aa4dee704bd935609668cf41880ea7f19fa0504a200e13b74999c2d70"
   license "MIT"
 
@@ -18,9 +18,9 @@ class Doctest < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~CPP
+    (testpath/"test.cpp").write <<~CPP
       #define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
-      #include <doctestdoctest.h>
+      #include <doctest/doctest.h>
       TEST_CASE("Basic") {
         int x = 1;
         SUBCASE("Test section 1") {
@@ -34,6 +34,6 @@ class Doctest < Formula
     CPP
 
     system ENV.cxx, "test.cpp", "-std=c++11", "-o", "test"
-    system ".test"
+    system "./test"
   end
 end

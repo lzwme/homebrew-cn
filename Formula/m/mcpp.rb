@@ -1,13 +1,13 @@
 class Mcpp < Formula
-  desc "Alternative CC++ preprocessor"
-  homepage "https:mcpp.sourceforge.net"
-  url "https:downloads.sourceforge.netprojectmcppmcppV.2.7.2mcpp-2.7.2.tar.gz"
+  desc "Alternative C/C++ preprocessor"
+  homepage "https://mcpp.sourceforge.net/"
+  url "https://downloads.sourceforge.net/project/mcpp/mcpp/V.2.7.2/mcpp-2.7.2.tar.gz"
   sha256 "3b9b4421888519876c4fc68ade324a3bbd81ceeb7092ecdbbc2055099fcb8864"
   license "BSD-2-Clause"
 
   livecheck do
     url :stable
-    regex(%r{url=.*?mcpp[._-]v?(\d+(?:\.\d+)+)\.t}i)
+    regex(%r{url=.*?/mcpp[._-]v?(\d+(?:\.\d+)+)\.t}i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -34,9 +34,9 @@ class Mcpp < Formula
 
   # stpcpy is a macro on macOS; trying to define it as an extern is invalid.
   # Patch from ZeroC fixing EOL comment parsing
-  # https:forums.zeroc.comdiscussion5445mishap-in-slice-compilers
+  # https://forums.zeroc.com/discussion/5445/mishap-in-slice-compilers
   patch do
-    url "https:raw.githubusercontent.comHomebrewformula-patches3fd7fbamcpp2.7.2.patch"
+    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/3fd7fba/mcpp/2.7.2.patch"
     sha256 "4bc6a6bd70b67cb78fc48d878cd264b32d7bd0b1ad9705563320d81d5f1abb71"
   end
 
@@ -52,7 +52,7 @@ class Mcpp < Formula
     # Help old config scripts identify arm64 linux
     args << "--build=aarch64-unknown-linux-gnu" if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
 
-    system ".configure", "--enable-mcpplib", *args, *std_configure_args
+    system "./configure", "--enable-mcpplib", *args, *std_configure_args
     system "make", "install"
   end
 
@@ -60,13 +60,13 @@ class Mcpp < Formula
     # fix `warning: Unknown encoding: C.utf8`
     ENV["LC_ALL"] = "en_US.UTF-8"
 
-    (testpath"test.c.in").write <<~C
+    (testpath/"test.c.in").write <<~C
       #define RET 5
       int main() { return RET; }
     C
 
-    (testpath"test.c").write shell_output("#{bin}mcpp test.c.in")
+    (testpath/"test.c").write shell_output("#{bin}/mcpp test.c.in")
     system ENV.cc, "test.c", "-o", "test"
-    assert_empty shell_output(".test", 5)
+    assert_empty shell_output("./test", 5)
   end
 end

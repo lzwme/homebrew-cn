@@ -1,7 +1,7 @@
 class Tomlplusplus < Formula
   desc "Header-only TOML config file parser and serializer for C++17"
-  homepage "https:marzer.github.iotomlplusplus"
-  url "https:github.commarzertomlplusplusarchiverefstagsv3.4.0.tar.gz"
+  homepage "https://marzer.github.io/tomlplusplus/"
+  url "https://ghfast.top/https://github.com/marzer/tomlplusplus/archive/refs/tags/v3.4.0.tar.gz"
   sha256 "8517f65938a4faae9ccf8ebb36631a38c1cadfb5efa85d9a72e15b9e97d25155"
   license "MIT"
 
@@ -31,9 +31,9 @@ class Tomlplusplus < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~CPP
+    (testpath/"test.cpp").write <<~CPP
       #include <iostream>
-      #include <toml++toml.hpp>
+      #include <toml++/toml.hpp>
 
       int main()
       {
@@ -55,6 +55,6 @@ class Tomlplusplus < Formula
 
     pkg_config_flags = shell_output("pkgconf --cflags --libs tomlplusplus").chomp.split
     system ENV.cxx, "test.cpp", *pkg_config_flags, "-std=c++17", "-o", "test"
-    assert_match "Title: TOML Example", shell_output(".test")
+    assert_match "Title: TOML Example", shell_output("./test")
   end
 end

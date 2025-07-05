@@ -1,10 +1,10 @@
 class LtcTools < Formula
   desc "Tools to deal with linear-timecode (LTC)"
-  homepage "https:github.comx42ltc-tools"
-  url "https:github.comx42ltc-toolsarchiverefstagsv0.7.0.tar.gz"
+  homepage "https://github.com/x42/ltc-tools"
+  url "https://ghfast.top/https://github.com/x42/ltc-tools/archive/refs/tags/v0.7.0.tar.gz"
   sha256 "5b7a2ab7f98bef6c99bafbbc5605a3364e01c9c19fe81411ddea0e1a01cd6287"
   license "GPL-2.0-or-later"
-  head "https:github.comx42ltc-tools.git", branch: "master"
+  head "https://github.com/x42/ltc-tools.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -37,7 +37,7 @@ class LtcTools < Formula
   end
 
   test do
-    system bin"ltcgen", "test.wav"
-    system bin"ltcdump", "test.wav"
+    system bin/"ltcgen", "test.wav"
+    system bin/"ltcdump", "test.wav"
   end
 end

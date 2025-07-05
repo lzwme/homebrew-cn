@@ -1,10 +1,10 @@
 class Zbctl < Formula
   desc "Zeebe CLI client"
-  homepage "https:docs.camunda.iodocsapis-toolscommunity-clientscli-client"
-  url "https:github.comcamunda-community-hubzeebe-client-goarchiverefstagsv8.6.0.tar.gz"
+  homepage "https://docs.camunda.io/docs/apis-tools/community-clients/cli-client/"
+  url "https://ghfast.top/https://github.com/camunda-community-hub/zeebe-client-go/archive/refs/tags/v8.6.0.tar.gz"
   sha256 "849c3f951b923dfa2bd34443d47bc06b705cb8faa10d2be5e0d411c238dc1f72"
   license "Apache-2.0"
-  head "https:github.comcamunda-community-hubzeebe-client-go.git", branch: "main"
+  head "https://github.com/camunda-community-hub/zeebe-client-go.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "1489e5d2afe5a0243c62c1387ba42bdd12bceb5882ee85b8f86acea85efb1a7b"
@@ -19,11 +19,11 @@ class Zbctl < Formula
   depends_on "go" => :build
 
   def install
-    project = "github.comcamunda-community-hubzeebe-client-gov8cmdzbctlinternalcommands"
+    project = "github.com/camunda-community-hub/zeebe-client-go/v8/cmd/zbctl/internal/commands"
     ldflags = "-s -w -X #{project}.Version=#{version} -X #{project}.Commit=#{tap.user}"
-    system "go", "build", *std_go_args(ldflags:, tags: "netgo"), ".cmdzbctl"
+    system "go", "build", *std_go_args(ldflags:, tags: "netgo"), "./cmd/zbctl"
 
-    generate_completions_from_executable(bin"zbctl", "completion")
+    generate_completions_from_executable(bin/"zbctl", "completion")
   end
 
   test do
@@ -32,9 +32,9 @@ class Zbctl < Formula
       "Error: rpc error: code = " \
       "Unavailable desc = connection error: " \
       "desc = \"transport: Error while dialing: dial tcp 127.0.0.1:26500: connect: connection refused\""
-    output = shell_output("#{bin}zbctl status 2>&1", 1)
+    output = shell_output("#{bin}/zbctl status 2>&1", 1)
     assert_match status_error_message, output
 
-    assert_match version.to_s, shell_output("#{bin}zbctl version")
+    assert_match version.to_s, shell_output("#{bin}/zbctl version")
   end
 end

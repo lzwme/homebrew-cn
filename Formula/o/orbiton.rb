@@ -1,10 +1,10 @@
 class Orbiton < Formula
   desc "Fast and config-free text editor and IDE limited by VT100"
-  homepage "https:roboticoverlords.orgorbiton"
-  url "https:github.comxyprotoorbitonarchiverefstagsv2.70.0.tar.gz"
+  homepage "https://roboticoverlords.org/orbiton/"
+  url "https://ghfast.top/https://github.com/xyproto/orbiton/archive/refs/tags/v2.70.0.tar.gz"
   sha256 "ab940369469a534311466621f8e65f712446aadc6a4016e9d912b68d420d5371"
   license "BSD-3-Clause"
-  head "https:github.comxyprotoorbiton.git", branch: "main"
+  head "https://github.com/xyproto/orbiton.git", branch: "main"
 
   livecheck do
     url :stable
@@ -32,9 +32,9 @@ class Orbiton < Formula
   end
 
   test do
-    (testpath"hello.txt").write "hello\n"
-    copy_command = "#{bin}o --copy #{testpath}hello.txt"
-    paste_command = "#{bin}o --paste #{testpath}hello2.txt"
+    (testpath/"hello.txt").write "hello\n"
+    copy_command = "#{bin}/o --copy #{testpath}/hello.txt"
+    paste_command = "#{bin}/o --paste #{testpath}/hello2.txt"
 
     if OS.linux?
       system "xvfb-run", "sh", "-c", "#{copy_command} && #{paste_command}"
@@ -43,6 +43,6 @@ class Orbiton < Formula
       system paste_command
     end
 
-    assert_equal (testpath"hello.txt").read, (testpath"hello2.txt").read
+    assert_equal (testpath/"hello.txt").read, (testpath/"hello2.txt").read
   end
 end

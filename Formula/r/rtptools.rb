@@ -1,14 +1,14 @@
 class Rtptools < Formula
   desc "Set of tools for processing RTP data"
-  homepage "https:github.comirtlabrtptools"
-  url "https:github.comirtlabrtptoolsarchiverefstags1.22.tar.gz"
+  homepage "https://github.com/irtlab/rtptools"
+  url "https://ghfast.top/https://github.com/irtlab/rtptools/archive/refs/tags/1.22.tar.gz"
   sha256 "ac6641558200f5689234989e28ed3c44ead23757ccf2381c8878933f9c2523e0"
   license "BSD-3-Clause"
-  head "https:github.comirtlabrtptools.git", branch: "master"
+  head "https://github.com/irtlab/rtptools.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -39,7 +39,7 @@ class Rtptools < Formula
 
   def install
     system "autoreconf", "--verbose", "--install", "--force"
-    system ".configure", "--disable-dependency-tracking",
+    system "./configure", "--disable-dependency-tracking",
                           "--disable-silent-rules",
                           "--prefix=#{prefix}"
     system "make", "install"
@@ -53,12 +53,12 @@ class Rtptools < Formula
       0x64, 0x4f, 0xda, 0x56
     ]
 
-    (testpath"test.rtp").open("wb") do |f|
-      f.puts "#!rtpplay1.0 127.0.0.155568"
+    (testpath/"test.rtp").open("wb") do |f|
+      f.puts "#!rtpplay1.0 127.0.0.1/55568"
       f.write packet.pack("c*")
     end
 
-    output = shell_output("#{bin}rtpdump -F ascii -f #{testpath}test.rtp")
+    output = shell_output("#{bin}/rtpdump -F ascii -f #{testpath}/test.rtp")
     assert_match "seq=56657 ts=854698932 ssrc=0xdb249b07", output
   end
 end

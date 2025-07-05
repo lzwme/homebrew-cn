@@ -1,10 +1,10 @@
 class Tz < Formula
   desc "CLI time zone visualizer"
-  homepage "https:github.comoztz"
-  url "https:github.comoztzarchiverefstagsv0.8.0.tar.gz"
+  homepage "https://github.com/oz/tz"
+  url "https://ghfast.top/https://github.com/oz/tz/archive/refs/tags/v0.8.0.tar.gz"
   sha256 "dfb6829483e7455e6d2038e946243022db15ea5475c096ad18f091eb9f6eb5ad"
   license "GPL-3.0-or-later"
-  head "https:github.comoztz.git", branch: "main"
+  head "https://github.com/oz/tz.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "d201f92d60530fcf9037fd2064ab8cc4843fcbc1d5c65a881d12874de7696d0a"
@@ -23,8 +23,8 @@ class Tz < Formula
   end
 
   test do
-    assert_match "USEastern", shell_output("#{bin}tz --list")
+    assert_match "US/Eastern", shell_output("#{bin}/tz --list")
 
-    assert_match version.to_s, shell_output("#{bin}tz -v")
+    assert_match version.to_s, shell_output("#{bin}/tz -v")
   end
 end

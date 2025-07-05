@@ -1,7 +1,7 @@
 class TrecEval < Formula
   desc "Evaluation software used in the Text Retrieval Conference"
-  homepage "https:trec.nist.gov"
-  url "https:github.comusnistgovtrec_evalarchiverefstagsv9.0.8.tar.gz"
+  homepage "https://trec.nist.gov/"
+  url "https://ghfast.top/https://github.com/usnistgov/trec_eval/archive/refs/tags/v9.0.8.tar.gz"
   sha256 "c3994a73103ec842e12df693749584a45814c35c36dcc15f38984bd463566ba1"
   license :public_domain
 
@@ -45,9 +45,9 @@ class TrecEval < Formula
       recall_10             \tall\t0.5000
       ndcg_cut_10           \tall\t0.5000
     EOS
-    (testpath"qrels.test").write(qrels)
-    (testpath"results.test").write(results)
-    test_out = shell_output("#{bin}trec_eval -m runid -m num_q -m\
+    (testpath/"qrels.test").write(qrels)
+    (testpath/"results.test").write(results)
+    test_out = shell_output("#{bin}/trec_eval -m runid -m num_q -m\
       map -m ndcg_cut.10 -m P.10 -m recall.10 qrels.test results.test")
     assert_equal out, test_out
   end

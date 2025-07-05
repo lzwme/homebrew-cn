@@ -1,13 +1,13 @@
 class Dotslash < Formula
   desc "Simplified executable deployment"
-  homepage "https:dotslash-cli.com"
-  url "https:github.comfacebookdotslasharchiverefstagsv0.5.5.tar.gz"
+  homepage "https://dotslash-cli.com"
+  url "https://ghfast.top/https://github.com/facebook/dotslash/archive/refs/tags/v0.5.5.tar.gz"
   sha256 "15d5c66afe187f220d86ec99cd34f54ac75b651477299e7d5fc12332207c49a6"
   license "Apache-2.0"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -27,11 +27,11 @@ class Dotslash < Formula
   end
 
   test do
-    (testpath"node").write <<~EOS
-      #!usrbinenv dotslash
+    (testpath/"node").write <<~EOS
+      #!/usr/bin/env dotslash
 
-       Example file from https:dotslash-cli.comdocs.
-       The URLs in this file were taken from https:nodejs.orgdistv18.19.0
+      // Example file from https://dotslash-cli.com/docs/.
+      // The URLs in this file were taken from https://nodejs.org/dist/v18.19.0/
 
       {
         "name": "node-v18.19.0",
@@ -41,10 +41,10 @@ class Dotslash < Formula
             "hash": "blake3",
             "digest": "6e2ca33951e586e7670016dd9e503d028454bf9249d5ff556347c3d98c347c34",
             "format": "tar.gz",
-            "path": "node-v18.19.0-darwin-arm64binnode",
+            "path": "node-v18.19.0-darwin-arm64/bin/node",
             "providers": [
               {
-                "url": "https:nodejs.orgdistv18.19.0node-v18.19.0-darwin-arm64.tar.gz"
+                "url": "https://nodejs.org/dist/v18.19.0/node-v18.19.0-darwin-arm64.tar.gz"
               }
             ]
           },
@@ -53,10 +53,10 @@ class Dotslash < Formula
             "hash": "blake3",
             "digest": "37521058114e7f71e0de3fe8042c8fa7908305e9115488c6c29b514f9cd2a24c",
             "format": "tar.gz",
-            "path": "node-v18.19.0-darwin-x64binnode",
+            "path": "node-v18.19.0-darwin-x64/bin/node",
             "providers": [
               {
-                "url": "https:nodejs.orgdistv18.19.0node-v18.19.0-darwin-x64.tar.gz"
+                "url": "https://nodejs.org/dist/v18.19.0/node-v18.19.0-darwin-x64.tar.gz"
               }
             ]
           },
@@ -65,10 +65,10 @@ class Dotslash < Formula
             "hash": "blake3",
             "digest": "bd605f5957f792def0885db18a9595202ba13f64d2e8d92514f95fb8c8ee5de5",
             "format": "tar.gz",
-            "path": "node-v18.19.0-linux-arm64binnode",
+            "path": "node-v18.19.0-linux-arm64/bin/node",
             "providers": [
               {
-                "url": "https:nodejs.orgdistv18.19.0node-v18.19.0-linux-arm64.tar.gz"
+                "url": "https://nodejs.org/dist/v18.19.0/node-v18.19.0-linux-arm64.tar.gz"
               }
             ]
           },
@@ -77,17 +77,17 @@ class Dotslash < Formula
             "hash": "blake3",
             "digest": "72b81fc3a30b7bedc1a09a3fafc4478a1b02e5ebf0ad04ea15d23b3e9dc89212",
             "format": "tar.gz",
-            "path": "node-v18.19.0-linux-x64binnode",
+            "path": "node-v18.19.0-linux-x64/bin/node",
             "providers": [
               {
-                "url": "https:nodejs.orgdistv18.19.0node-v18.19.0-linux-x64.tar.gz"
+                "url": "https://nodejs.org/dist/v18.19.0/node-v18.19.0-linux-x64.tar.gz"
               }
             ]
           }
         }
       }
     EOS
-    chmod 0755, testpath"node"
-    assert_match "v18.19.0", shell_output("#{testpath}node -v")
+    chmod 0755, testpath/"node"
+    assert_match "v18.19.0", shell_output("#{testpath}/node -v")
   end
 end

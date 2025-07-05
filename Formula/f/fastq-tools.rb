@@ -1,7 +1,7 @@
 class FastqTools < Formula
   desc "Small utilities for working with fastq sequence files"
-  homepage "https:github.comdcjonesfastq-tools"
-  url "https:github.comdcjonesfastq-toolsarchiverefstagsv0.8.3.tar.gz"
+  homepage "https://github.com/dcjones/fastq-tools"
+  url "https://ghfast.top/https://github.com/dcjones/fastq-tools/archive/refs/tags/v0.8.3.tar.gz"
   sha256 "0cd7436e81129090e707f69695682df80623b06448d95df483e572c61ddf538e"
   license "MIT"
 
@@ -29,29 +29,29 @@ class FastqTools < Formula
   depends_on "pcre"
 
   def install
-    system ".autogen.sh"
+    system "./autogen.sh"
 
     # Fix compile with newer Clang
-    # upstream bug report, https:github.comdcjonesfastq-toolsissues32
+    # upstream bug report, https://github.com/dcjones/fastq-tools/issues/32
     if DevelopmentTools.clang_build_version >= 1403
       inreplace "configure" do |s|
         s.sub! "-Wall", "-Wall -Wno-implicit-function-declaration"
       end
     end
 
-    system ".configure", "--disable-silent-rules", *std_configure_args
+    system "./configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
   end
 
   test do
-    (testpath"test.fq").write <<~EOS
+    (testpath/"test.fq").write <<~EOS
       @U00096.2:1-70
       AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC
       +
       IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII0000000000
     EOS
 
-    assert_match "A\t20", shell_output("#{bin}fastq-kmers test.fq")
-    assert_match "1 copies", shell_output("#{bin}fastq-uniq test.fq")
+    assert_match "A\t20", shell_output("#{bin}/fastq-kmers test.fq")
+    assert_match "1 copies", shell_output("#{bin}/fastq-uniq test.fq")
   end
 end

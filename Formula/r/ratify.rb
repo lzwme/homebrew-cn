@@ -1,10 +1,10 @@
 class Ratify < Formula
   desc "Artifact Ratification Framework"
-  homepage "https:ratify.dev"
-  url "https:github.comnotaryprojectratifyarchiverefstagsv1.4.0.tar.gz"
+  homepage "https://ratify.dev"
+  url "https://ghfast.top/https://github.com/notaryproject/ratify/archive/refs/tags/v1.4.0.tar.gz"
   sha256 "36b18d2070d76a6e85aa86bf94e4e68350c6c277985d6bc8e87a28c78ebb08b8"
   license "Apache-2.0"
-  head "https:github.comnotaryprojectratify.git", branch: "dev"
+  head "https://github.com/notaryproject/ratify.git", branch: "dev"
 
   bottle do
     rebuild 1
@@ -21,19 +21,19 @@ class Ratify < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.comratify-projectratifyinternalversion.GitTag=#{version}
-      -X github.comratify-projectratifyinternalversion.GitCommitHash=#{tap.user}
+      -X github.com/ratify-project/ratify/internal/version.GitTag=#{version}
+      -X github.com/ratify-project/ratify/internal/version.GitCommitHash=#{tap.user}
     ]
 
-    system "go", "build", *std_go_args(ldflags:), ".cmdratify"
+    system "go", "build", *std_go_args(ldflags:), "./cmd/ratify"
 
-    generate_completions_from_executable(bin"ratify", "completion")
+    generate_completions_from_executable(bin/"ratify", "completion")
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}ratify version")
+    assert_match version.to_s, shell_output("#{bin}/ratify version")
 
-    test_config = testpath"ratify.json"
+    test_config = testpath/"ratify.json"
     test_config.write <<~JSON
       {
         "store": {
@@ -58,8 +58,8 @@ class Ratify < Formula
       }
     JSON
 
-    example_subject = "example.comartifact:latest"
-    output = shell_output("#{bin}ratify verify --config #{test_config} --subject #{example_subject} 2>&1", 1)
+    example_subject = "example.com/artifact:latest"
+    output = shell_output("#{bin}/ratify verify --config #{test_config} --subject #{example_subject} 2>&1", 1)
     assert_match "referrer store config should have at least one store", output
   end
 end

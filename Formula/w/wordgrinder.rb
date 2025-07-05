@@ -1,11 +1,11 @@
 class Wordgrinder < Formula
   desc "Unicode-aware word processor that runs in a terminal"
-  homepage "https:cowlark.comwordgrinder"
-  url "https:github.comdavidgivenwordgrinderarchiverefstags0.8.tar.gz"
+  homepage "https://cowlark.com/wordgrinder"
+  url "https://ghfast.top/https://github.com/davidgiven/wordgrinder/archive/refs/tags/0.8.tar.gz"
   sha256 "856cbed2b4ccd5127f61c4997a30e642d414247970f69932f25b4b5a81b18d3f"
   license "MIT"
   revision 1
-  head "https:github.comdavidgivenwordgrinder.git", branch: "master"
+  head "https://github.com/davidgiven/wordgrinder.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -34,14 +34,14 @@ class Wordgrinder < Formula
 
   def install
     ENV["CURSES_PACKAGE"] = "ncursesw"
-    system "make", "OBJDIR=#{buildpath}wg-build"
-    bin.install "binwordgrinder-builtin-curses-release" => "wordgrinder"
-    man1.install "binwordgrinder.1"
+    system "make", "OBJDIR=#{buildpath}/wg-build"
+    bin.install "bin/wordgrinder-builtin-curses-release" => "wordgrinder"
+    man1.install "bin/wordgrinder.1"
     doc.install "README.wg"
   end
 
   test do
-    system bin"wordgrinder", "--convert", "#{doc}README.wg", "#{testpath}converted.txt"
-    assert_path_exists testpath"converted.txt"
+    system bin/"wordgrinder", "--convert", "#{doc}/README.wg", "#{testpath}/converted.txt"
+    assert_path_exists testpath/"converted.txt"
   end
 end

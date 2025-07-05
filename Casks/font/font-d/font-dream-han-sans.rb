@@ -2,13 +2,13 @@ cask "font-dream-han-sans" do
   version "3.02,2.004,2.003"
   sha256 "3c40a9966252220e862f9d36285745b0e87bd0959791d2d2594127153d703ab8"
 
-  url "https:github.comPal3lovedream-han-cjkreleasesdownloaddream-#{version.csv.first}-sans-#{version.csv.second}-serif-#{version.csv.third}DreamHanSans.zip"
+  url "https://ghfast.top/https://github.com/Pal3love/dream-han-cjk/releases/download/dream-#{version.csv.first}-sans-#{version.csv.second}-serif-#{version.csv.third}/DreamHanSans.zip"
   name "Dream Han Sans"
-  homepage "https:github.comPal3lovedream-han-cjk"
+  homepage "https://github.com/Pal3love/dream-han-cjk/"
 
   livecheck do
     url :url
-    regex(^dream[._-]v?(\d+(?:\.\d+)+)[._-]sans[._-]v?(\d+(?:\.\d+)+)[._-]serif[._-]v?(\d+(?:\.\d+)+)$i)
+    regex(/^dream[._-]v?(\d+(?:\.\d+)+)[._-]sans[._-]v?(\d+(?:\.\d+)+)[._-]serif[._-]v?(\d+(?:\.\d+)+)$/i)
     strategy :github_latest do |json, regex|
       match = json["tag_name"]&.match(regex)
       next if match.blank?

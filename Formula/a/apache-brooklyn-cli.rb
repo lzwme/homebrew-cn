@@ -1,14 +1,14 @@
 class ApacheBrooklynCli < Formula
   desc "Apache Brooklyn command-line interface"
-  homepage "https:brooklyn.apache.org"
-  url "https:github.comapachebrooklyn-clientarchiverefstagsrelapache-brooklyn-1.1.0.tar.gz"
+  homepage "https://brooklyn.apache.org"
+  url "https://ghfast.top/https://github.com/apache/brooklyn-client/archive/refs/tags/rel/apache-brooklyn-1.1.0.tar.gz"
   sha256 "0c9ec77413e88d4ca23d0821c4d053b7cc69818962d4ccb9e7082c9d1dea7146"
   license "Apache-2.0"
-  head "https:github.comapachebrooklyn-client.git", branch: "master"
+  head "https://github.com/apache/brooklyn-client.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(%r{^(?:rel)?apache-brooklyn[._-]v?(\d+(?:\.\d+)+)$}i)
+    regex(%r{^(?:rel/)?apache-brooklyn[._-]v?(\d+(?:\.\d+)+)$}i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -28,7 +28,7 @@ class ApacheBrooklynCli < Formula
 
   def install
     cd "cli" do
-      system "go", "build", *std_go_args(ldflags: "-s -w", output: bin"br"), ".br"
+      system "go", "build", *std_go_args(ldflags: "-s -w", output: bin/"br"), "./br"
     end
   end
 
@@ -39,8 +39,8 @@ class ApacheBrooklynCli < Formula
       loop do
         socket = server.accept
         response = '{"version":"1.2.3","buildSha1":"dummysha","buildBranch":"1.2.3"}'
-        socket.print "HTTP1.1 200 OK\r\n" \
-                     "Content-Type: applicationjson\r\n" \
+        socket.print "HTTP/1.1 200 OK\r\n" \
+                     "Content-Type: application/json\r\n" \
                      "Content-Length: #{response.bytesize}\r\n" \
                      "Connection: close\r\n"
         socket.print "\r\n"
@@ -50,9 +50,9 @@ class ApacheBrooklynCli < Formula
     end
 
     begin
-      mock_brooklyn_url = "http:localhost:#{port}"
+      mock_brooklyn_url = "http://localhost:#{port}"
       assert_equal "Connected to Brooklyn version 1.2.3 at #{mock_brooklyn_url}\n",
-        shell_output("#{bin}br login #{mock_brooklyn_url} username password")
+        shell_output("#{bin}/br login #{mock_brooklyn_url} username password")
     ensure
       Process.kill("KILL", pid_mock_brooklyn)
     end

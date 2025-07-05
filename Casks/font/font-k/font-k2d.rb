@@ -2,12 +2,12 @@ cask "font-k2d" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefonts.git",
-      verified:  "github.comgooglefonts",
+  url "https://github.com/google/fonts.git",
+      verified:  "github.com/google/fonts",
       branch:    "main",
-      only_path: "oflk2d"
+      only_path: "ofl/k2d"
   name "K2D"
-  homepage "https:fonts.google.comspecimenK2D"
+  homepage "https://fonts.google.com/specimen/K2D"
 
   font "K2D-Bold.ttf"
   font "K2D-BoldItalic.ttf"

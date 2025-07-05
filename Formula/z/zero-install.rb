@@ -1,14 +1,14 @@
 class ZeroInstall < Formula
   desc "Decentralised cross-platform software installation system"
-  homepage "https:0install.net"
-  url "https:github.com0install0installreleasesdownloadv2.180install-2.18.tbz"
+  homepage "https://0install.net/"
+  url "https://ghfast.top/https://github.com/0install/0install/releases/download/v2.18/0install-2.18.tbz"
   sha256 "648c4b318c1a26dfcb44065c226ab8ca723795924ad80a3bf39ae1ce0e9920c3"
   license "LGPL-2.1-or-later"
-  head "https:github.com0install0install.git", branch: "master"
+  head "https://github.com/0install/0install.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -38,37 +38,37 @@ class ZeroInstall < Formula
   uses_from_macos "curl"
 
   def install
-    ENV["OPAMROOT"] = buildpath".opam"
+    ENV["OPAMROOT"] = buildpath/".opam"
     ENV["OPAMYES"] = "1"
     ENV["OPAMVERBOSE"] = "1"
-    packages = [".0install.opam", ".0install-solver.opam"]
+    packages = ["./0install.opam", "./0install-solver.opam"]
 
     system "opam", "init", "--no-setup", "--disable-sandboxing"
     system "opam", "exec", "--", "opam", "install", *packages, "--deps-only", "-y", "--no-depexts"
     system "opam", "exec", "--", "make", "all"
-    system "opam", "exec", "--", "distinstall.sh", prefix
+    system "opam", "exec", "--", "dist/install.sh", prefix
   end
 
   test do
-    (testpath"hello.sh").write <<~SH
-      #!binsh
+    (testpath/"hello.sh").write <<~SH
+      #!/bin/sh
       echo "hello world"
     SH
-    chmod 0755, testpath"hello.sh"
-    (testpath"hello.xml").write <<~XML
+    chmod 0755, testpath/"hello.sh"
+    (testpath/"hello.xml").write <<~XML
       <?xml version="1.0" ?>
-      <interface xmlns="http:zero-install.sourceforge.net2004injectorinterface" xmlns:compile="http:zero-install.sourceforge.net2006namespaces0compile">
-        <name>hello-bash<name>
-        <summary>template source package for a bash program<summary>
-        <description>This package demonstrates how to create a simple program that uses bash.<description>
+      <interface xmlns="http://zero-install.sourceforge.net/2004/injector/interface" xmlns:compile="http://zero-install.sourceforge.net/2006/namespaces/0compile">
+        <name>hello-bash</name>
+        <summary>template source package for a bash program</summary>
+        <description>This package demonstrates how to create a simple program that uses bash.</description>
 
         <group>
           <implementation id="." version="0.1-pre" compile:min-version='1.1'>
-            <command name='run' path='hello.sh'><command>
-          <implementation>
-        <group>
-      <interface>
+            <command name='run' path='hello.sh'></command>
+          </implementation>
+        </group>
+      </interface>
     XML
-    assert_equal "hello world\n", shell_output("#{bin}0launch --console hello.xml")
+    assert_equal "hello world\n", shell_output("#{bin}/0launch --console hello.xml")
   end
 end

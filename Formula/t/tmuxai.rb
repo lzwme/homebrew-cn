@@ -1,7 +1,7 @@
 class Tmuxai < Formula
   desc "AI-powered, non-intrusive terminal assistant"
-  homepage "https:tmuxai.dev"
-  url "https:github.comalvinunrealtmuxaiarchiverefstagsv1.1.0.tar.gz"
+  homepage "https://tmuxai.dev/"
+  url "https://ghfast.top/https://github.com/alvinunreal/tmuxai/archive/refs/tags/v1.1.0.tar.gz"
   sha256 "cd4e7eca5958b83e726a81d96ab0d5304fc57c6b336423fc6aeaa90ce43dff83"
   license "Apache-2.0"
 
@@ -18,15 +18,15 @@ class Tmuxai < Formula
   depends_on "tmux"
 
   def install
-    ldflags = "-s -w -X github.comalvinunrealtmuxaiinternal.Version=v#{version}"
+    ldflags = "-s -w -X github.com/alvinunreal/tmuxai/internal.Version=v#{version}"
 
     system "go", "build", *std_go_args(ldflags:)
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}tmuxai -v")
+    assert_match version.to_s, shell_output("#{bin}/tmuxai -v")
 
-    output = shell_output("#{bin}tmuxai -f nonexistent 2>&1", 1)
+    output = shell_output("#{bin}/tmuxai -f nonexistent 2>&1", 1)
     assert_match "Error reading task file", output
   end
 end

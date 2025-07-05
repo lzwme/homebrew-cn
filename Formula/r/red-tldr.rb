@@ -1,10 +1,10 @@
 class RedTldr < Formula
   desc "Used to help red team staff quickly find the commands and key points"
-  homepage "https:payloads.onlinered-tldr"
-  url "https:github.comRvn0xsyred-tldrarchiverefstagsv0.4.3.tar.gz"
+  homepage "https://payloads.online/red-tldr/"
+  url "https://ghfast.top/https://github.com/Rvn0xsy/red-tldr/archive/refs/tags/v0.4.3.tar.gz"
   sha256 "3f32a438226287d80ae86509964d7767c2002952c95da03501beb882cae22d2d"
   license "MIT"
-  head "https:github.comRvn0xsyred-tldr.git", branch: "main"
+  head "https://github.com/Rvn0xsy/red-tldr.git", branch: "main"
 
   no_autobump! because: :requires_manual_review
 
@@ -30,6 +30,6 @@ class RedTldr < Formula
   end
 
   test do
-    assert_match "privilege", shell_output("#{bin}red-tldr mimikatz")
+    assert_match "privilege", shell_output("#{bin}/red-tldr mimikatz")
   end
 end

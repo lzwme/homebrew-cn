@@ -3,11 +3,11 @@ cask "google-drive" do
   sha256 :no_check
 
   # "5-percent" is included in the url to ensure that `brew upgrade` does not update to an older version as the
-  # in-app updater can upgrade to a new version than https:dl.google.comdrive-file-streamGoogleDrive.dmg provides
-  url "https:dl.google.comdrive-file-stream5-percentGoogleDrive.dmg"
+  # in-app updater can upgrade to a new version than https://dl.google.com/drive-file-stream/GoogleDrive.dmg provides
+  url "https://dl.google.com/drive-file-stream/5-percent/GoogleDrive.dmg"
   name "Google Drive"
   desc "Client for the Google Drive storage service"
-  homepage "https:www.google.comdrive"
+  homepage "https://www.google.com/drive/"
 
   livecheck do
     url :url
@@ -22,7 +22,7 @@ cask "google-drive" do
   pkg "GoogleDrive.pkg"
 
   # Some launchctl and pkgutil items are shared with other Google apps, they should only be removed in the zap stanza
-  # See: https:github.comHomebrewhomebrew-caskpull92704#issuecomment-727163169
+  # See: https://github.com/Homebrew/homebrew-cask/pull/92704#issuecomment-727163169
   # launchctl: com.google.GoogleUpdater.wake.system, com.google.keystone.daemon,
   #            com.google.keystone.system.agent, com.google.keystone.system.xpcservice
 
@@ -50,14 +50,14 @@ cask "google-drive" do
       ],
       pkgutil:   "com.google.pkg.Keystone",
       trash:     [
-        "~LibraryApplication Scriptscom.google.drivefs*",
-        "~LibraryApplication ScriptsEQHXZ8M8AV.group.com.google.drivefs",
-        "~LibraryApplication SupportFileProvidercom.google.drivefs.fpext",
-        "~LibraryApplication SupportGoogleDriveFS",
-        "~LibraryCachescom.google.drivefs",
-        "~LibraryContainerscom.google.drivefs*",
-        "~LibraryGroup Containers*group.com.google.drivefs",
-        "~LibraryPreferencescom.google.drivefs*.plist",
-        "~LibraryPreferencesGoogle Drive File Stream Helper.plist",
+        "~/Library/Application Scripts/com.google.drivefs*",
+        "~/Library/Application Scripts/EQHXZ8M8AV.group.com.google.drivefs",
+        "~/Library/Application Support/FileProvider/com.google.drivefs.fpext",
+        "~/Library/Application Support/Google/DriveFS",
+        "~/Library/Caches/com.google.drivefs",
+        "~/Library/Containers/com.google.drivefs*",
+        "~/Library/Group Containers/*group.com.google.drivefs",
+        "~/Library/Preferences/com.google.drivefs*.plist",
+        "~/Library/Preferences/Google Drive File Stream Helper.plist",
       ]
 end

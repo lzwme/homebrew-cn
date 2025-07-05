@@ -1,10 +1,10 @@
 class Libxkbcommon < Formula
   desc "Keyboard handling library"
-  homepage "https:xkbcommon.org"
-  url "https:github.comxkbcommonlibxkbcommonarchiverefstagsxkbcommon-1.10.0.tar.gz"
+  homepage "https://xkbcommon.org/"
+  url "https://ghfast.top/https://github.com/xkbcommon/libxkbcommon/archive/refs/tags/xkbcommon-1.10.0.tar.gz"
   sha256 "0427585a4d6ca17c9fc1ac4b539bf303348e9080af70c5ea402503bc370a9631"
   license "MIT"
-  head "https:github.comxkbcommonlibxkbcommon.git", branch: "master"
+  head "https://github.com/xkbcommon/libxkbcommon.git", branch: "master"
 
   bottle do
     sha256 arm64_sequoia: "5d111042432537f1ad4d4d63425952aa95478538525b0e3fc2a9d155b15e2f65"
@@ -32,8 +32,8 @@ class Libxkbcommon < Formula
       -Denable-wayland=false
       -Denable-x11=true
       -Denable-docs=false
-      -Dxkb-config-root=#{HOMEBREW_PREFIX}shareX11xkb
-      -Dx-locale-root=#{HOMEBREW_PREFIX}shareX11locale
+      -Dxkb-config-root=#{HOMEBREW_PREFIX}/share/X11/xkb
+      -Dx-locale-root=#{HOMEBREW_PREFIX}/share/X11/locale
     ]
 
     system "meson", "setup", "build", *args, *std_meson_args
@@ -42,9 +42,9 @@ class Libxkbcommon < Formula
   end
 
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include <stdlib.h>
-      #include <xkbcommonxkbcommon.h>
+      #include <xkbcommon/xkbcommon.h>
       int main() {
         return (xkb_context_new(XKB_CONTEXT_NO_FLAGS) == NULL)
           ? EXIT_FAILURE
@@ -54,6 +54,6 @@ class Libxkbcommon < Formula
 
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lxkbcommon",
                    "-o", "test"
-    system ".test"
+    system "./test"
   end
 end

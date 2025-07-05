@@ -5,15 +5,15 @@ cask "toinane-colorpicker" do
   sha256 arm:   "59e0df7270d53902e0971a2f70c7cce6c646a0f58634ac8d7418dcc72a526d82",
          intel: "dc1af14fe9785a3e5906153aec20f2960266628b0428d9ca98ef4944dc4bef9b"
 
-  url "https:github.comtoinanecolorpickerreleasesdownload#{version}Colorpicker-#{version}-#{arch}.dmg",
-      verified: "github.comtoinanecolorpicker"
+  url "https://ghfast.top/https://github.com/toinane/colorpicker/releases/download/#{version}/Colorpicker-#{version}-#{arch}.dmg",
+      verified: "github.com/toinane/colorpicker/"
   name "Colorpicker"
   desc "Get and save colour codes"
-  homepage "https:colorpicker.fr"
+  homepage "https://colorpicker.fr/"
 
   no_autobump! because: :requires_manual_review
 
   app "Colorpicker.app"
 
-  zap trash: "~LibraryApplication SupportColorpicker"
+  zap trash: "~/Library/Application Support/Colorpicker"
 end

@@ -1,14 +1,14 @@
 class Bitlbee < Formula
   desc "IRC to other chat networks gateway"
-  homepage "https:www.bitlbee.org"
-  url "https:get.bitlbee.orgsrcbitlbee-3.6.tar.gz"
+  homepage "https://www.bitlbee.org/"
+  url "https://get.bitlbee.org/src/bitlbee-3.6.tar.gz"
   sha256 "9f15de46f29b46bf1e39fc50bdf4515e71b17f551f3955094c5da792d962107e"
   license "GPL-2.0-or-later"
-  head "https:github.combitlbeebitlbee.git", branch: "master"
+  head "https://github.com/bitlbee/bitlbee.git", branch: "master"
 
   livecheck do
-    url "https:get.bitlbee.orgsrc"
-    regex(href=.*?bitlbee[._-]v?(\d+(?:\.\d+)+)\.ti)
+    url "https://get.bitlbee.org/src/"
+    regex(/href=.*?bitlbee[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -42,16 +42,16 @@ class Bitlbee < Formula
   def install
     args = %W[
       --prefix=#{prefix}
-      --plugindir=#{HOMEBREW_PREFIX}libbitlbee
+      --plugindir=#{HOMEBREW_PREFIX}/lib/bitlbee/
       --debug=0
       --ssl=gnutls
-      --etcdir=#{etc}bitlbee
-      --pidfile=#{var}bitlbeerunbitlbee.pid
-      --config=#{var}bitlbeelib
-      --ipsocket=#{var}bitlbeerunbitlbee.sock
+      --etcdir=#{etc}/bitlbee
+      --pidfile=#{var}/bitlbee/run/bitlbee.pid
+      --config=#{var}/bitlbee/lib/
+      --ipsocket=#{var}/bitlbee/run/bitlbee.sock
     ]
 
-    system ".configure", *args
+    system "./configure", *args
 
     # This build depends on make running first.
     system "make"
@@ -63,16 +63,16 @@ class Bitlbee < Formula
   end
 
   def post_install
-    (var"bitlbeerun").mkpath
-    (var"bitlbeelib").mkpath
+    (var/"bitlbee/run").mkpath
+    (var/"bitlbee/lib").mkpath
   end
 
   service do
-    run opt_sbin"bitlbee"
-    sockets "tcp:127.0.0.1:6667"
+    run opt_sbin/"bitlbee"
+    sockets "tcp://127.0.0.1:6667"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{sbin}bitlbee -V", 1)
+    assert_match version.to_s, shell_output("#{sbin}/bitlbee -V", 1)
   end
 end

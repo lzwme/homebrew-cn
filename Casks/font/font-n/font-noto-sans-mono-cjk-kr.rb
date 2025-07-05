@@ -2,9 +2,9 @@ cask "font-noto-sans-mono-cjk-kr" do
   version "2.004"
   sha256 "8c1368d3faac3c43991a91392fb73d985409ffe078cb731c7e303e226e4fd619"
 
-  url "https:github.comnotofontsnoto-cjkreleasesdownloadSans#{version}12_NotoSansMonoCJKkr.zip"
+  url "https://ghfast.top/https://github.com/notofonts/noto-cjk/releases/download/Sans#{version}/12_NotoSansMonoCJKkr.zip"
   name "Noto Sans Mono CJK KR"
-  homepage "https:github.comnotofontsnoto-cjktreemainSans"
+  homepage "https://github.com/notofonts/noto-cjk/tree/main/Sans"
 
   livecheck do
     cask "font-noto-sans-cjk"

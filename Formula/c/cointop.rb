@@ -1,10 +1,10 @@
 class Cointop < Formula
   desc "Interactive terminal based UI application for tracking cryptocurrencies"
-  homepage "https:cointop.sh"
-  url "https:github.comcointop-shcointoparchiverefstagsv1.6.10.tar.gz"
+  homepage "https://cointop.sh"
+  url "https://ghfast.top/https://github.com/cointop-sh/cointop/archive/refs/tags/v1.6.10.tar.gz"
   sha256 "18da0d25288deec7156ddd1d6923960968ab4adcdc917f85726b97d555d9b1b7"
   license "Apache-2.0"
-  head "https:github.comcointop-shcointop.git", branch: "master"
+  head "https://github.com/cointop-sh/cointop.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -29,12 +29,12 @@ class Cointop < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-X github.comcointop-shcointopcointop.version=#{version}")
+    system "go", "build", *std_go_args(ldflags: "-X github.com/cointop-sh/cointop/cointop.version=#{version}")
 
-    generate_completions_from_executable(bin"cointop", "completion")
+    generate_completions_from_executable(bin/"cointop", "completion")
   end
 
   test do
-    system bin"cointop", "test"
+    system bin/"cointop", "test"
   end
 end

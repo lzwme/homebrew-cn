@@ -2,10 +2,10 @@ cask "phoenix" do
   version "4.0.1"
   sha256 "7d194ca75f33f6c018fe8fb974e372544a61a058222d62d57e6c929fe91949c3"
 
-  url "https:github.comkasperphoenixreleasesdownload#{version}phoenix-#{version}.tar.gz"
+  url "https://ghfast.top/https://github.com/kasper/phoenix/releases/download/#{version}/phoenix-#{version}.tar.gz"
   name "Phoenix"
   desc "Window and app manager scriptable with JavaScript"
-  homepage "https:github.comkasperphoenix"
+  homepage "https://github.com/kasper/phoenix/"
 
   no_autobump! because: :requires_manual_review
 
@@ -21,10 +21,10 @@ cask "phoenix" do
             login_item: "Phoenix"
 
   zap trash: [
-    "~LibraryApplication Scriptsorg.khirviko.Phoenix.Launcher",
-    "~LibraryCachesorg.khirviko.Phoenix",
-    "~LibraryContainersorg.khirviko.Phoenix.Launcher",
-    "~LibraryHTTPStoragesorg.khirviko.Phoenix",
-    "~LibraryWebKitorg.khirviko.Phoenix",
+    "~/Library/Application Scripts/org.khirviko.Phoenix.Launcher",
+    "~/Library/Caches/org.khirviko.Phoenix",
+    "~/Library/Containers/org.khirviko.Phoenix.Launcher",
+    "~/Library/HTTPStorages/org.khirviko.Phoenix",
+    "~/Library/WebKit/org.khirviko.Phoenix",
   ]
 end

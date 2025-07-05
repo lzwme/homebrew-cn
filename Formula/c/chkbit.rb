@@ -1,10 +1,10 @@
 class Chkbit < Formula
   desc "Check your files for data corruption"
-  homepage "https:github.comlaktakchkbit"
-  url "https:github.comlaktakchkbitarchiverefstagsv6.4.1.tar.gz"
+  homepage "https://github.com/laktak/chkbit"
+  url "https://ghfast.top/https://github.com/laktak/chkbit/archive/refs/tags/v6.4.1.tar.gz"
   sha256 "7af5185a1db2efbec2e3f1e7fb26af2a6fe905c19caa59377ea495a71bc81b45"
   license "MIT"
-  head "https:github.comlaktakchkbit.git", branch: "master"
+  head "https://github.com/laktak/chkbit.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "e6bd3e9f0e1782b5239cd3afe0bb894a30cff7a7566575f261771dbfe3fda2ba"
@@ -19,12 +19,12 @@ class Chkbit < Formula
 
   def install
     ldflags = "-s -w -X main.appVersion=#{version}"
-    system "go", "build", *std_go_args(ldflags:), ".cmdchkbit"
+    system "go", "build", *std_go_args(ldflags:), "./cmd/chkbit"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}chkbit version").chomp
-    system bin"chkbit", "init", "split", testpath
-    assert_path_exists testpath".chkbit"
+    assert_match version.to_s, shell_output("#{bin}/chkbit version").chomp
+    system bin/"chkbit", "init", "split", testpath
+    assert_path_exists testpath/".chkbit"
   end
 end

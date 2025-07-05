@@ -1,11 +1,11 @@
 class Nutcracker < Formula
   desc "Proxy for memcached and redis"
-  homepage "https:github.comtwittertwemproxy"
-  url "https:github.comtwittertwemproxyarchiverefstags0.5.0.tar.gz"
+  homepage "https://github.com/twitter/twemproxy"
+  url "https://ghfast.top/https://github.com/twitter/twemproxy/archive/refs/tags/0.5.0.tar.gz"
   sha256 "73f305d8525abbaaa6a5f203c1fba438f99319711bfcb2bb8b2f06f0d63d1633"
   license "Apache-2.0"
   revision 1
-  head "https:github.comtwittertwemproxy.git", branch: "master"
+  head "https://github.com/twitter/twemproxy.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -33,19 +33,19 @@ class Nutcracker < Formula
   # Use Homebrew libyaml instead of the vendored one.
   # Adapted from Debian's equivalent patch.
   patch do
-    url "https:raw.githubusercontent.comHomebrewformula-patches0e1ac7ef20e83159554b6522380b1c4b48ce4f2fnutcrackeruse-system-libyaml.patch"
+    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/0e1ac7ef20e83159554b6522380b1c4b48ce4f2f/nutcracker/use-system-libyaml.patch"
     sha256 "9105f2bd784f291da5c3f3fb4f6876e62ab7a6f78256f81f5574d593924e424c"
   end
 
   def install
     system "autoreconf", "--force", "--install", "--verbose"
-    system ".configure", *std_configure_args
+    system "./configure", *std_configure_args
     system "make", "install"
 
     pkgshare.install "conf", "notes", "scripts"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{sbin}nutcracker -V 2>&1")
+    assert_match version.to_s, shell_output("#{sbin}/nutcracker -V 2>&1")
   end
 end

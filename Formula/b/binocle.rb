@@ -1,10 +1,10 @@
 class Binocle < Formula
   desc "Graphical tool to visualize binary data"
-  homepage "https:github.comsharkdpbinocle"
-  url "https:github.comsharkdpbinoclearchiverefstagsv0.3.2.tar.gz"
+  homepage "https://github.com/sharkdp/binocle"
+  url "https://ghfast.top/https://github.com/sharkdp/binocle/archive/refs/tags/v0.3.2.tar.gz"
   sha256 "b58d450f343539242b9f146606f5e70d0d183e12ce03e1b003c5197e6e41727b"
   license any_of: ["Apache-2.0", "MIT"]
-  head "https:github.comsharkdpbinocle.git", branch: "master"
+  head "https://github.com/sharkdp/binocle.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "ed724155e7422f1dbdb1336e55beb128771c94d7508824dd3218a2aa4f833b05"
@@ -29,7 +29,7 @@ class Binocle < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}binocle --version")
+    assert_match version.to_s, shell_output("#{bin}/binocle --version")
 
     # Fails in Linux CI with
     # "Failed to initialize any backend! Wayland status: XdgRuntimeDirNotSet X11 status: XOpenDisplayFailed"
@@ -41,6 +41,6 @@ class Binocle < Formula
       "Error: No suitable `wgpu::Adapter` found."
     end
 
-    assert_match expected, shell_output("#{bin}binocle test.txt 2>&1", 1)
+    assert_match expected, shell_output("#{bin}/binocle test.txt 2>&1", 1)
   end
 end

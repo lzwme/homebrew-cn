@@ -1,7 +1,7 @@
 class Ungit < Formula
   desc "Easiest way to use Git. On any platform. Anywhere"
-  homepage "https:github.comFredrikNorenungit"
-  url "https:registry.npmjs.orgungit-ungit-1.5.28.tgz"
+  homepage "https://github.com/FredrikNoren/ungit"
+  url "https://registry.npmjs.org/ungit/-/ungit-1.5.28.tgz"
   sha256 "51f2e120f7b4ceb88ff19c7debf77877d50363f15df07d2df1235257387858af"
   license "MIT"
 
@@ -19,17 +19,17 @@ class Ungit < Formula
 
   def install
     system "npm", "install", *std_npm_args
-    bin.install_symlink libexec.glob("bin*")
+    bin.install_symlink libexec.glob("bin/*")
   end
 
   test do
     port = free_port
 
     fork do
-      exec bin"ungit", "--no-launchBrowser", "--port=#{port}"
+      exec bin/"ungit", "--no-launchBrowser", "--port=#{port}"
     end
     sleep 15
 
-    assert_includes shell_output("curl -s 127.0.0.1:#{port}"), "<title>ungit<title>"
+    assert_includes shell_output("curl -s 127.0.0.1:#{port}/"), "<title>ungit</title>"
   end
 end

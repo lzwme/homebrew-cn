@@ -1,14 +1,14 @@
 class OktaAwsCli < Formula
   desc "Okta federated identity for AWS CLI"
-  homepage "https:github.comoktaokta-aws-cli"
-  url "https:github.comoktaokta-aws-cliarchiverefstagsv2.5.0.tar.gz"
+  homepage "https://github.com/okta/okta-aws-cli"
+  url "https://ghfast.top/https://github.com/okta/okta-aws-cli/archive/refs/tags/v2.5.0.tar.gz"
   sha256 "e47f39fd2021cbcc3c86e0bfb96ee46aad506b8de4f35935a5cb86d8fd33e939"
   license "Apache-2.0"
-  head "https:github.comoktaokta-aws-cli.git", branch: "master"
+  head "https://github.com/okta/okta-aws-cli.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -23,13 +23,13 @@ class OktaAwsCli < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), ".cmdokta-aws-cli"
+    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/okta-aws-cli"
   end
 
   test do
-    output = shell_output("#{bin}okta-aws-cli list-profiles")
+    output = shell_output("#{bin}/okta-aws-cli list-profiles")
     assert_match "Profiles:", output
 
-    assert_match version.to_s, shell_output("#{bin}okta-aws-cli --version")
+    assert_match version.to_s, shell_output("#{bin}/okta-aws-cli --version")
   end
 end

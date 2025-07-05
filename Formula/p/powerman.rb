@@ -1,7 +1,7 @@
 class Powerman < Formula
   desc "Control (remotely and in parallel) switched power distribution units"
-  homepage "https:github.comchaospowerman"
-  url "https:github.comchaospowermanreleasesdownloadv2.4.4powerman-2.4.4.tar.gz"
+  homepage "https://github.com/chaos/powerman"
+  url "https://ghfast.top/https://github.com/chaos/powerman/releases/download/v2.4.4/powerman-2.4.4.tar.gz"
   sha256 "d675502144bc0875def92dad4c0efc6d43bc81c78d6fdb09ebc5f3558b3b7c85"
   license "GPL-2.0-or-later"
 
@@ -18,7 +18,7 @@ class Powerman < Formula
   end
 
   head do
-    url "https:github.comchaospowerman.git", branch: "master"
+    url "https://github.com/chaos/powerman.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -32,8 +32,8 @@ class Powerman < Formula
   uses_from_macos "flex" => :build
 
   def install
-    system ".autogen.sh" if build.head?
-    system ".configure", "--disable-dependency-tracking",
+    system "./autogen.sh" if build.head?
+    system "./configure", "--disable-dependency-tracking",
                           "--prefix=#{prefix}",
                           "--localstatedir=#{var}",
                           "--with-httppower",
@@ -45,6 +45,6 @@ class Powerman < Formula
   end
 
   test do
-    system "#{sbin}powermand", "-h"
+    system "#{sbin}/powermand", "-h"
   end
 end

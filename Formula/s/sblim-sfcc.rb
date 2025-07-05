@@ -1,14 +1,14 @@
 class SblimSfcc < Formula
-  desc "Project to enhance the manageability of GNULinux system"
-  homepage "https:sourceforge.netprojectssblim"
-  url "https:downloads.sourceforge.netprojectsblimsblim-sfccsblim-sfcc-2.2.8.tar.bz2"
+  desc "Project to enhance the manageability of GNU/Linux system"
+  homepage "https://sourceforge.net/projects/sblim/"
+  url "https://downloads.sourceforge.net/project/sblim/sblim-sfcc/sblim-sfcc-2.2.8.tar.bz2"
   sha256 "1b8f187583bc6c6b0a63aae0165ca37892a2a3bd4bb0682cd76b56268b42c3d6"
   license "EPL-1.0"
   revision 1
 
   livecheck do
     url :stable
-    regex(%r{url=.*?sblim-sfcc[._-]v?(\d+(?:\.\d+)+)\.t}i)
+    regex(%r{url=.*?/sblim-sfcc[._-]v?(\d+(?:\.\d+)+)\.t}i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -38,16 +38,16 @@ class SblimSfcc < Formula
 
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
-    url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-pre-0.4.2.418-big_sur.diff"
+    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-pre-0.4.2.418-big_sur.diff"
     sha256 "83af02f2aa2b746bb7225872cab29a253264be49db0ecebb12f841562d9a2923"
   end
 
   def install
     if DevelopmentTools.clang_build_version >= 1500
-      # Work around "backendcimxmlgrammar.c:305:9: error: call to undeclared function 'guessType'"
-      # Ref: https:sourceforge.netpsblimbugs2767
+      # Work around "backend/cimxml/grammar.c:305:9: error: call to undeclared function 'guessType'"
+      # Ref: https://sourceforge.net/p/sblim/bugs/2767/
       ENV.append_to_cflags "-Wno-implicit-function-declaration"
-      # Work around "ld: unknown file type in '...cimclibcimcclient.Versions'"
+      # Work around "ld: unknown file type in '.../cimc/libcimcclient.Versions'"
       ENV.append "LDFLAGS", "-Wl,-ld_classic"
     end
 
@@ -55,19 +55,19 @@ class SblimSfcc < Formula
     # Help old config scripts identify arm64 linux
     args << "--build=aarch64-unknown-linux-gnu" if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
 
-    system ".configure", *args, *std_configure_args
+    system "./configure", *args, *std_configure_args
     system "make", "install"
   end
 
   test do
-    (testpath"test.cpp").write <<~CPP
-      #include <cimccimc.h>
+    (testpath/"test.cpp").write <<~CPP
+      #include <cimc/cimc.h>
       int main()
       {
         return 0;
       }
     CPP
     system ENV.cxx, "test.cpp", "-L#{lib}", "-lcimcclient", "-o", "test"
-    system ".test"
+    system "./test"
   end
 end

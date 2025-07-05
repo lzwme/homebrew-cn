@@ -1,14 +1,14 @@
 class Enigma < Formula
   desc "Puzzle game inspired by Oxyd and Rock'n'Roll"
-  homepage "https:www.nongnu.orgenigma"
-  url "https:github.comEnigma-GameEnigmareleasesdownload1.30Enigma-1.30-src.tar.gz"
+  homepage "https://www.nongnu.org/enigma/"
+  url "https://ghfast.top/https://github.com/Enigma-Game/Enigma/releases/download/1.30/Enigma-1.30-src.tar.gz"
   sha256 "ae64b91fbc2b10970071d0d78ed5b4ede9ee3868de2e6e9569546fc58437f8af"
   license "GPL-2.0-or-later"
   revision 1
 
   livecheck do
     url :stable
-    regex(v?(\d+(?:\.\d+)+)$i)
+    regex(/v?(\d+(?:\.\d+)+)$/i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -24,7 +24,7 @@ class Enigma < Formula
   end
 
   head do
-    url "https:github.comEnigma-GameEnigma.git", branch: "master"
+    url "https://github.com/Enigma-Game/Enigma.git", branch: "master"
     depends_on "autoconf" => :build
     depends_on "automake" => :build
     depends_on "texi2html" => :build
@@ -50,12 +50,12 @@ class Enigma < Formula
   end
 
   def install
-    system ".autogen.sh" if build.head?
-    system ".configure", "--with-system-enet", *std_configure_args
+    system "./autogen.sh" if build.head?
+    system "./configure", "--with-system-enet", *std_configure_args
     system "make", "install"
   end
 
   test do
-    assert_equal "Enigma v#{version}", shell_output("#{bin}enigma --version").chomp
+    assert_equal "Enigma v#{version}", shell_output("#{bin}/enigma --version").chomp
   end
 end

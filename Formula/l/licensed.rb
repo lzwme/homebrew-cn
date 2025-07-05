@@ -1,7 +1,7 @@
 class Licensed < Formula
   desc "Cache and verify the licenses of dependencies"
-  homepage "https:github.comlicenseelicensed"
-  url "https:github.comlicenseelicensed.git",
+  homepage "https://github.com/licensee/licensed"
+  url "https://github.com/licensee/licensed.git",
       tag:      "v5.0.4",
       revision: "6f7a4675fdf69647f524af3facd1d55f6f221d46"
   license "MIT"
@@ -36,15 +36,15 @@ class Licensed < Formula
     system "gem", "build", "#{name}.gemspec"
     system "gem", "install", "#{name}-#{version}.gem"
 
-    bin.install libexec"bin#{name}"
-    bin.env_script_all_files(libexec"bin", GEM_HOME: ENV["GEM_HOME"])
+    bin.install libexec/"bin/#{name}"
+    bin.env_script_all_files(libexec/"bin", GEM_HOME: ENV["GEM_HOME"])
 
     # Avoid references to the Homebrew shims directory
     shims_references = Dir[
-      libexec"extensions**rugged-*gem_make.out",
-      libexec"extensions**rugged-*mkmf.log",
-      libexec"gemsrugged-*vendorlibgit2buildCMakeCache.txt",
-      libexec"gemsrugged-*vendorlibgit2build**CMakeFiles***",
+      libexec/"extensions/**/rugged-*/gem_make.out",
+      libexec/"extensions/**/rugged-*/mkmf.log",
+      libexec/"gems/rugged-*/vendor/libgit2/build/CMakeCache.txt",
+      libexec/"gems/rugged-*/vendor/libgit2/build/**/CMakeFiles/**/*",
     ].select { |f| File.file? f }
     inreplace shims_references,
               Superenv.shims_path.to_s,
@@ -53,19 +53,19 @@ class Licensed < Formula
   end
 
   test do
-    assert_equal version.to_s, shell_output("#{bin}licensed version").strip
+    assert_equal version.to_s, shell_output("#{bin}/licensed version").strip
 
-    (testpath"Gemfile").write <<~EOS
-      source 'https:rubygems.org'
+    (testpath/"Gemfile").write <<~EOS
+      source 'https://rubygems.org'
       gem 'licensed', '#{version}'
     EOS
 
-    (testpath".licensed.yml").write <<~YAML
+    (testpath/".licensed.yml").write <<~YAML
       name: 'test'
       allowed:
         - mit
     YAML
 
-    assert_match "Caching dependency records for test", shell_output("#{bin}licensed cache")
+    assert_match "Caching dependency records for test", shell_output("#{bin}/licensed cache")
   end
 end

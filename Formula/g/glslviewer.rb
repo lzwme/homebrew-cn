@@ -1,12 +1,12 @@
 class Glslviewer < Formula
   desc "Live-coding console tool that renders GLSL Shaders"
-  homepage "https:patriciogonzalezvivo.com2015glslViewer"
-  url "https:github.compatriciogonzalezvivoglslViewer.git",
+  homepage "https://patriciogonzalezvivo.com/2015/glslViewer/"
+  url "https://github.com/patriciogonzalezvivo/glslViewer.git",
       tag:      "v3.10.1",
       revision: "2671e0f0b362bfd94ea5160f2ecb7f7363d4991d"
   license "BSD-3-Clause"
   revision 2
-  head "https:github.compatriciogonzalezvivoglslViewer.git", branch: "main"
+  head "https://github.com/patriciogonzalezvivo/glslViewer.git", branch: "main"
 
   no_autobump! because: :requires_manual_review
 
@@ -43,8 +43,8 @@ class Glslviewer < Formula
   end
 
   test do
-    cp_r pkgshare"examplesio.", testpath
-    pid = spawn bin"glslViewer", "orca.frag", "-l"
+    cp_r pkgshare/"examples/io/.", testpath
+    pid = spawn bin/"glslViewer", "orca.frag", "-l"
     sleep 1
   ensure
     Process.kill("HUP", pid)

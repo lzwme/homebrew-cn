@@ -1,7 +1,7 @@
 class Mongoose < Formula
   desc "Web server build on top of Libmongoose embedded library"
-  homepage "https:mongoose.ws"
-  url "https:github.comcesantamongoosearchiverefstags7.18.tar.gz"
+  homepage "https://mongoose.ws/"
+  url "https://ghfast.top/https://github.com/cesanta/mongoose/archive/refs/tags/7.18.tar.gz"
   sha256 "8b661e8aceb00528fc21993afe218b1da0f0154575a61b63ce0791ad8b66b112"
   license "GPL-2.0-only"
 
@@ -19,8 +19,8 @@ class Mongoose < Formula
 
   def install
     # No Makefile but is an expectation upstream of binary creation
-    # https:github.comcesantamongooseissues326
-    cd "tutorialshttphttp-server" do
+    # https://github.com/cesanta/mongoose/issues/326
+    cd "tutorials/http/http-server" do
       system "make", "mongoose_mac", "PROG=mongoose_mac"
       bin.install "mongoose_mac" => "mongoose"
     end
@@ -33,26 +33,26 @@ class Mongoose < Formula
     lib.install shared_library("libmongoose")
     include.install "mongoose.h"
     pkgshare.install "tutorials"
-    doc.install Dir["docs*"]
+    doc.install Dir["docs/*"]
   end
 
   test do
-    (testpath"hello.html").write <<~HTML
+    (testpath/"hello.html").write <<~HTML
       <!DOCTYPE html>
       <html>
         <head>
-          <title>Homebrew<title>
-        <head>
+          <title>Homebrew</title>
+        </head>
         <body>
-          <p>Hi!<p>
-        <body>
-      <html>
+          <p>Hi!</p>
+        </body>
+      </html>
     HTML
 
     begin
-      pid = fork { exec bin"mongoose" }
+      pid = fork { exec bin/"mongoose" }
       sleep 2
-      assert_match "Hi!", shell_output("curl http:localhost:8000hello.html")
+      assert_match "Hi!", shell_output("curl http://localhost:8000/hello.html")
     ensure
       Process.kill("SIGINT", pid)
       Process.wait(pid)

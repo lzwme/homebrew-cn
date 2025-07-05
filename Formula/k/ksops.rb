@@ -1,10 +1,10 @@
 class Ksops < Formula
   desc "Flexible Kustomize Plugin for SOPS Encrypted Resources"
-  homepage "https:github.comviaduct-aikustomize-sops"
-  url "https:github.comviaduct-aikustomize-sopsarchiverefstagsv4.4.0.tar.gz"
+  homepage "https://github.com/viaduct-ai/kustomize-sops"
+  url "https://ghfast.top/https://github.com/viaduct-ai/kustomize-sops/archive/refs/tags/v4.4.0.tar.gz"
   sha256 "d498284ee6a523fd4b87d284693b313fea289b4a374f2c0d1b5023f2b18bf77a"
   license "Apache-2.0"
-  head "https:github.comviaduct-aikustomize-sops.git", branch: "master"
+  head "https://github.com/viaduct-ai/kustomize-sops.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "3aa747b7c1f4bcfabfd3942ff92a66ee859762d82a495509742df676e0682a48"
@@ -22,18 +22,18 @@ class Ksops < Formula
   end
 
   test do
-    (testpath"secret-generator.yaml").write <<~YAML
-      apiVersion: viaduct.aiv1
+    (testpath/"secret-generator.yaml").write <<~YAML
+      apiVersion: viaduct.ai/v1
       kind: ksops
       metadata:
         name: secret-generator
         annotations:
-          config.kubernetes.iofunction: |
+          config.kubernetes.io/function: |
             exec:
               path: ksops
       files: []
     YAML
 
-    system bin"ksops", testpath"secret-generator.yaml"
+    system bin/"ksops", testpath/"secret-generator.yaml"
   end
 end

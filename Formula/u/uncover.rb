@@ -1,10 +1,10 @@
 class Uncover < Formula
   desc "Tool to discover exposed hosts on the internet using multiple search engines"
-  homepage "https:github.comprojectdiscoveryuncover"
-  url "https:github.comprojectdiscoveryuncoverarchiverefstagsv1.1.0.tar.gz"
+  homepage "https://github.com/projectdiscovery/uncover"
+  url "https://ghfast.top/https://github.com/projectdiscovery/uncover/archive/refs/tags/v1.1.0.tar.gz"
   sha256 "63858b248a5e5729d2887a080359335bbf435965bc8c75acb26b377ff5db98ce"
   license "MIT"
-  head "https:github.comprojectdiscoveryuncover.git", branch: "main"
+  head "https://github.com/projectdiscovery/uncover.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "e53b9641ef3ca32670c2beef2889926f5dc3c1a24a2459b80c9bda3383a4f280"
@@ -18,11 +18,11 @@ class Uncover < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), ".cmduncover"
+    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/uncover"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}uncover -version 2>&1")
-    assert_match "no keys were found", shell_output("#{bin}uncover -q brew -e shodan 2>&1", 1)
+    assert_match version.to_s, shell_output("#{bin}/uncover -version 2>&1")
+    assert_match "no keys were found", shell_output("#{bin}/uncover -q brew -e shodan 2>&1", 1)
   end
 end

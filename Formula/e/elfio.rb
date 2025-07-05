@@ -1,10 +1,10 @@
 class Elfio < Formula
   desc "Header-only C++ library for reading and generating ELF files"
-  homepage "https:serge1.github.ioELFIO"
-  url "https:github.comserge1ELFIOarchiverefstagsRelease_3.12.tar.gz"
+  homepage "https://serge1.github.io/ELFIO"
+  url "https://ghfast.top/https://github.com/serge1/ELFIO/archive/refs/tags/Release_3.12.tar.gz"
   sha256 "e4ebc9ce3d6916461bc3e7765bb45e6210f0a9b93978bf91e59b05388c024489"
   license "MIT"
-  head "https:github.comserge1ELFIO.git", branch: "main"
+  head "https://github.com/serge1/ELFIO.git", branch: "main"
 
   no_autobump! because: :requires_manual_review
 
@@ -21,8 +21,8 @@ class Elfio < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~CPP
-      #include <elfioelfio.hpp>
+    (testpath/"test.cpp").write <<~CPP
+      #include <elfio/elfio.hpp>
 
       using namespace ELFIO;
 
@@ -32,6 +32,6 @@ class Elfio < Formula
       }
     CPP
     system ENV.cxx, "test.cpp", "-o", "test", "-I#{include}", "-std=c++17"
-    system ".test"
+    system "./test"
   end
 end

@@ -1,14 +1,14 @@
 class Mavsdk < Formula
   desc "API and library for MAVLink compatible systems written in C++17"
-  homepage "https:mavsdk.mavlink.io"
-  url "https:github.commavlinkMAVSDK.git",
+  homepage "https://mavsdk.mavlink.io"
+  url "https://github.com/mavlink/MAVSDK.git",
       tag:      "v3.6.0",
       revision: "35a9fb376706d68f54adb8f71fdb3a9cad223f4e"
   license "BSD-3-Clause"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -49,10 +49,10 @@ class Mavsdk < Formula
   end
 
   # ver={version} && \
-  # curl -s https:raw.githubusercontent.commavlinkMAVSDKv$verthird_partymavlinkCMakeLists.txt \
+  # curl -s https://ghfast.top/https://raw.githubusercontent.com/mavlink/MAVSDK/v$ver/third_party/mavlink/CMakeLists.txt \
   # | grep 'MAVLINK_GIT_HASH'
   resource "mavlink" do
-    url "https:github.commavlinkmavlink.git",
+    url "https://github.com/mavlink/mavlink.git",
         revision: "5e3a42b8f3f53038f2779f9f69bd64767b913bb8"
   end
 
@@ -63,7 +63,7 @@ class Mavsdk < Formula
     inreplace "CMakeLists.txt", "OUTPUT_VARIABLE VERSION_STR", "OUTPUT_VARIABLE VERSION_STR_IGNORED"
 
     # Regenerate files to support newer protobuf
-    system "toolsgenerate_from_protos.sh"
+    system "tools/generate_from_protos.sh"
 
     resource("mavlink").stage do
       system "cmake", "-S", ".", "-B", "build",
@@ -74,7 +74,7 @@ class Mavsdk < Formula
     end
 
     # Source build adapted from
-    # https:mavsdk.mavlink.iodevelopencontributingbuild.html
+    # https://mavsdk.mavlink.io/develop/en/contributing/build.html
     args = %W[
       -DSUPERBUILD=OFF
       -DBUILD_SHARED_LIBS=ON
@@ -94,9 +94,9 @@ class Mavsdk < Formula
     # Force use of Clang on Mojave
     ENV.clang if OS.mac?
 
-    (testpath"test.cpp").write <<~CPP
+    (testpath/"test.cpp").write <<~CPP
       #include <iostream>
-      #include <mavsdkmavsdk.h>
+      #include <mavsdk/mavsdk.h>
       using namespace mavsdk;
       int main() {
           Mavsdk mavsdk{Mavsdk::Configuration{ComponentType::GroundStation}};
@@ -104,11 +104,11 @@ class Mavsdk < Formula
           return 0;
       }
     CPP
-    system ENV.cxx, "-std=c++17", testpath"test.cpp", "-o", "test",
+    system ENV.cxx, "-std=c++17", testpath/"test.cpp", "-o", "test",
                     "-I#{include}", "-L#{lib}", "-lmavsdk"
-    assert_match "v#{version}-#{tap.user}", shell_output(".test").chomp
+    assert_match "v#{version}-#{tap.user}", shell_output("./test").chomp
 
-    assert_equal "Usage: #{bin}mavsdk_server [Options] [Connection URL]",
-                 shell_output("#{bin}mavsdk_server --help").split("\n").first
+    assert_equal "Usage: #{bin}/mavsdk_server [Options] [Connection URL]",
+                 shell_output("#{bin}/mavsdk_server --help").split("\n").first
   end
 end

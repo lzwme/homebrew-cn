@@ -1,13 +1,13 @@
 class Cadaver < Formula
   desc "Command-line client for DAV"
-  homepage "https:notroj.github.iocadaver"
-  url "https:notroj.github.iocadavercadaver-0.26.tar.gz"
+  homepage "https://notroj.github.io/cadaver/"
+  url "https://notroj.github.io/cadaver/cadaver-0.26.tar.gz"
   sha256 "9236e43cdf3505d9ef06185fda43252840105c0c02d9370b6e1077d866357b55"
   license "GPL-2.0-only"
 
   livecheck do
     url :homepage
-    regex(href=.*?cadaver[._-]v?(\d+(?:\.\d+)+)\.ti)
+    regex(/href=.*?cadaver[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   bottle do
@@ -21,7 +21,7 @@ class Cadaver < Formula
   end
 
   head do
-    url "https:github.comnotrojcadaver.git", branch: "master"
+    url "https://github.com/notroj/cadaver.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -41,9 +41,9 @@ class Cadaver < Formula
   def install
     if build.head?
       ENV["LIBTOOLIZE"] = "glibtoolize"
-      system ".autogen.sh"
+      system "./autogen.sh"
     end
-    system ".configure", "--with-ssl=openssl",
+    system "./configure", "--with-ssl=openssl",
                           "--with-libs=#{Formula["openssl@3"].opt_prefix}",
                           "--with-neon=#{Formula["neon"].opt_prefix}",
                           *std_configure_args
@@ -52,6 +52,6 @@ class Cadaver < Formula
   end
 
   test do
-    assert_match "cadaver #{version}", shell_output("#{bin}cadaver -V", 255)
+    assert_match "cadaver #{version}", shell_output("#{bin}/cadaver -V", 255)
   end
 end

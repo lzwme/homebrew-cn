@@ -1,10 +1,10 @@
 class Ctlptl < Formula
   desc "Making local Kubernetes clusters fun and easy to set up"
-  homepage "https:github.comtilt-devctlptl"
-  url "https:github.comtilt-devctlptlarchiverefstagsv0.8.42.tar.gz"
+  homepage "https://github.com/tilt-dev/ctlptl"
+  url "https://ghfast.top/https://github.com/tilt-dev/ctlptl/archive/refs/tags/v0.8.42.tar.gz"
   sha256 "2f940b982ec10dbd5464a4c65947a022a345b1d76b5c0446dae1cd2459eff669"
   license "Apache-2.0"
-  head "https:github.comtilt-devctlptl.git", branch: "main"
+  head "https://github.com/tilt-dev/ctlptl.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "1f65690a21428923a104907bf1f36d68fe5548a8d1818bdd2c6b9d70ce9dd3c4"
@@ -24,14 +24,14 @@ class Ctlptl < Formula
       -X main.version=#{version}
       -X main.date=#{time.iso8601}
     ]
-    system "go", "build", *std_go_args(ldflags:), ".cmdctlptl"
+    system "go", "build", *std_go_args(ldflags:), "./cmd/ctlptl"
 
-    generate_completions_from_executable(bin"ctlptl", "completion")
+    generate_completions_from_executable(bin/"ctlptl", "completion")
   end
 
   test do
-    assert_match "v#{version}", shell_output("#{bin}ctlptl version")
-    assert_empty shell_output("#{bin}ctlptl get")
-    assert_match "not found", shell_output("#{bin}ctlptl delete cluster nonexistent 2>&1", 1)
+    assert_match "v#{version}", shell_output("#{bin}/ctlptl version")
+    assert_empty shell_output("#{bin}/ctlptl get")
+    assert_match "not found", shell_output("#{bin}/ctlptl delete cluster nonexistent 2>&1", 1)
   end
 end

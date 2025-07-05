@@ -5,11 +5,11 @@ cask "groestlcoin-core" do
   sha256 arm:   "381446d49527fe2291498a01773ab44615bb970e0e7ea3bd8e14e0458f02e072",
          intel: "2195198790178321d3f0233e4ad7439c6f387f0e5d5f6e6c80ed338a54df2014"
 
-  url "https:github.comgroestlcoingroestlcoinreleasesdownloadv#{version}groestlcoin-#{version}-#{arch}-apple-darwin.zip",
-      verified: "github.comgroestlcoingroestlcoin"
+  url "https://ghfast.top/https://github.com/groestlcoin/groestlcoin/releases/download/v#{version}/groestlcoin-#{version}-#{arch}-apple-darwin.zip",
+      verified: "github.com/groestlcoin/groestlcoin/"
   name "Groestlcoin Core"
   desc "Groestlcoin client and wallet"
-  homepage "https:www.groestlcoin.orggroestlcoin-core-wallet"
+  homepage "https://www.groestlcoin.org/groestlcoin-core-wallet/"
 
   depends_on macos: ">= :big_sur"
 
@@ -17,8 +17,8 @@ cask "groestlcoin-core" do
   app "Groestlcoin-Qt.app", target: "Groestlcoin Core.app"
 
   preflight do
-    set_permissions "#{staged_path}Groestlcoin-Qt.app", "0755"
+    set_permissions "#{staged_path}/Groestlcoin-Qt.app", "0755"
   end
 
-  zap trash: "~LibraryPreferencesorg.groestlcoin.Groestlcoin-Qt.plist"
+  zap trash: "~/Library/Preferences/org.groestlcoin.Groestlcoin-Qt.plist"
 end

@@ -1,10 +1,10 @@
 class Iamy < Formula
   desc "AWS IAM import and export tool"
-  homepage "https:github.com99designsiamy"
-  url "https:github.com99designsiamyarchiverefstagsv2.4.0.tar.gz"
+  homepage "https://github.com/99designs/iamy"
+  url "https://ghfast.top/https://github.com/99designs/iamy/archive/refs/tags/v2.4.0.tar.gz"
   sha256 "13bd9e66afbeb30d386aa132a4af5d2e9a231d2aadf54fe8e5dc325583379359"
   license "MIT"
-  head "https:github.com99designsiamy.git", branch: "master"
+  head "https://github.com/99designs/iamy.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "be58860790e074a6d7d6c53dead8c0b2868b7bba94c5cb1c6f7e1eff9c881bc5"
@@ -31,7 +31,7 @@ class Iamy < Formula
   test do
     ENV.delete "AWS_ACCESS_KEY"
     ENV.delete "AWS_SECRET_KEY"
-    output = shell_output("#{bin}iamy pull 2>&1", 1)
+    output = shell_output("#{bin}/iamy pull 2>&1", 1)
     assert_match "Can't determine the AWS account", output
   end
 end

@@ -1,7 +1,7 @@
 class TerraformDocs < Formula
   desc "Tool to generate documentation from Terraform modules"
-  homepage "https:terraform-docs.io"
-  url "https:github.comterraform-docsterraform-docsarchiverefstagsv0.20.0.tar.gz"
+  homepage "https://terraform-docs.io/"
+  url "https://ghfast.top/https://github.com/terraform-docs/terraform-docs/archive/refs/tags/v0.20.0.tar.gz"
   sha256 "793ad60be207292b9f27664d5c73bd75512e7a5e458b0fe2daa872b5ad46d6a9"
   license "MIT"
 
@@ -24,21 +24,21 @@ class TerraformDocs < Formula
     cpu = Hardware::CPU.intel? ? "amd64" : Hardware::CPU.arch.to_s
     os = OS.kernel_name.downcase
 
-    bin.install "bin#{os}-#{cpu}terraform-docs"
+    bin.install "bin/#{os}-#{cpu}/terraform-docs"
 
-    generate_completions_from_executable(bin"terraform-docs", "completion", shells: [:bash, :zsh])
+    generate_completions_from_executable(bin/"terraform-docs", "completion", shells: [:bash, :zsh])
   end
 
   test do
-    (testpath"main.tf").write <<~HCL
-      **
+    (testpath/"main.tf").write <<~HCL
+      /**
        * Module usage:
        *
        *      module "foo" {
-       *        source = "github.comfoobaz"
+       *        source = "github.com/foo/baz"
        *        subnet_ids = "${join(",", subnet.*.id)}"
        *      }
-       *
+       */
 
       variable "subnet_ids" {
         description = "a comma-separated list of subnet IDs"
@@ -61,11 +61,11 @@ class TerraformDocs < Formula
         }
       }
 
-       The VPC ID.
+      // The VPC ID.
       output "vpc_id" {
         value = "vpc-5c1f55fd"
       }
     HCL
-    system bin"terraform-docs", "json", testpath
+    system bin/"terraform-docs", "json", testpath
   end
 end

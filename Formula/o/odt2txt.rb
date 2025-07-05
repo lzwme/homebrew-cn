@@ -1,7 +1,7 @@
 class Odt2txt < Formula
   desc "Convert OpenDocument files to plain text"
-  homepage "https:github.comdstosbergodt2txt"
-  url "https:github.comdstosbergodt2txtarchiverefstagsv0.5.tar.gz"
+  homepage "https://github.com/dstosberg/odt2txt/"
+  url "https://ghfast.top/https://github.com/dstosberg/odt2txt/archive/refs/tags/v0.5.tar.gz"
   sha256 "23a889109ca9087a719c638758f14cc3b867a5dcf30a6c90bf6a0985073556dd"
   license "GPL-2.0-only"
 
@@ -35,11 +35,11 @@ class Odt2txt < Formula
 
   test do
     resource "homebrew-sample" do
-      url "https:github.comTurbo87odt2txtrawsamplessamplessample-1.odt"
+      url "https://github.com/Turbo87/odt2txt/raw/samples/samples/sample-1.odt"
       sha256 "78a5b17613376e50a66501ec92260d03d9d8106a9d98128f1efb5c07c8bfa0b2"
     end
 
     testpath.install resource("homebrew-sample")
-    system bin"odt2txt", "sample-1.odt"
+    system bin/"odt2txt", "sample-1.odt"
   end
 end

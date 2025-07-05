@@ -1,7 +1,7 @@
 class Inchi < Formula
   desc "IUPAC International Chemical Identifier"
-  homepage "https:www.inchi-trust.org"
-  url "https:github.comIUPAC-InChIInChIreleasesdownloadv1.07.3INCHI-1-SRC.zip"
+  homepage "https://www.inchi-trust.org/"
+  url "https://ghfast.top/https://github.com/IUPAC-InChI/InChI/releases/download/v1.07.3/INCHI-1-SRC.zip"
   sha256 "b42d828b5d645bd60bc43df7e0516215808d92e5a46c28e12b1f4f75dfaae333"
   license "MIT"
 
@@ -16,33 +16,33 @@ class Inchi < Formula
   end
 
   # These used to be part of open-babel
-  link_overwrite "includeinchiinchi_api.h", "liblibinchi.dylib", "liblibinchi.so"
+  link_overwrite "include/inchi/inchi_api.h", "lib/libinchi.dylib", "lib/libinchi.so"
 
   def install
     bin.mkpath
     lib.mkpath
 
     args = ["C_COMPILER=#{ENV.cc}", "BIN_DIR=#{bin}", "LIB_DIR=#{lib}"]
-    system "make", "-C", "INCHI_APIlibinchigcc", *args
-    system "make", "-C", "INCHI_EXEinchi-1gcc", *args
+    system "make", "-C", "INCHI_API/libinchi/gcc", *args
+    system "make", "-C", "INCHI_EXE/inchi-1/gcc", *args
 
     # Add major versioned and unversioned symlinks
-    libinchi = shared_library("libinchi", version.to_s[^(\d+\.\d+), 1])
-    odie "Unable to find #{libinchi}" unless (liblibinchi).exist?
+    libinchi = shared_library("libinchi", version.to_s[/^(\d+\.\d+)/, 1])
+    odie "Unable to find #{libinchi}" unless (lib/libinchi).exist?
     lib.install_symlink libinchi => shared_library("libinchi", version.major.to_s)
     lib.install_symlink shared_library("libinchi", version.major.to_s) => shared_library("libinchi")
 
     # Install the same headers as Debian[^1] and Fedora[^2]. Some are needed by `open-babel`[^3].
     #
-    # [^1]: https:packages.debian.orgsidamd64libinchi-devfilelist
-    # [^2]: https:packages.fedoraproject.orgpkgsinchiinchi-develfedora-rawhide.html#files
-    # [^3]: https:github.comopenbabelopenbabelblobmastercmakemodulesFindInchi.cmake
-    (include"inchi").install %w[ichisize.h inchi_api.h ixa.h].map { |header| "INCHI_BASEsrc#{header}" }
+    # [^1]: https://packages.debian.org/sid/amd64/libinchi-dev/filelist
+    # [^2]: https://packages.fedoraproject.org/pkgs/inchi/inchi-devel/fedora-rawhide.html#files
+    # [^3]: https://github.com/openbabel/openbabel/blob/master/cmake/modules/FindInchi.cmake
+    (include/"inchi").install %w[ichisize.h inchi_api.h ixa.h].map { |header| "INCHI_BASE/src/#{header}" }
   end
 
   test do
-    # https:github.comopenbabelopenbabelblobmastertestfilesalanine.mol
-    (testpath"alanine.mol").write <<~EOS
+    # https://github.com/openbabel/openbabel/blob/master/test/files/alanine.mol
+    (testpath/"alanine.mol").write <<~EOS
 
         Ketcher 02131813502D 1   1.00000     0.00000     0
 
@@ -64,10 +64,10 @@ class Inchi < Formula
       $$$$
     EOS
 
-    assert_equal <<~EOS, shell_output("#{bin}inchi-1 alanine.mol -STDIO")
+    assert_equal <<~EOS, shell_output("#{bin}/inchi-1 alanine.mol -STDIO")
       Structure: 1
-      InChI=1SC3H7NO2c1-2(4)3(5)6h2H,4H2,1H3,(H,5,6)t2-m0s1
-      AuxInfo=11N:4,2,3,1,5,6E:(5,6)it:imrA:7nNCCCOOHrB:s1;s2;P2;s3;d3;N2;rC:1,1,0;1,2,0;1.866,2.5,0;.5,2.866,0;2.7321,2,0;1.866,3.5,0;0,2,0;
+      InChI=1S/C3H7NO2/c1-2(4)3(5)6/h2H,4H2,1H3,(H,5,6)/t2-/m0/s1
+      AuxInfo=1/1/N:4,2,3,1,5,6/E:(5,6)/it:im/rA:7nNCCCOOH/rB:s1;s2;P2;s3;d3;N2;/rC:1,1,0;1,2,0;1.866,2.5,0;.5,2.866,0;2.7321,2,0;1.866,3.5,0;0,2,0;
     EOS
   end
 end

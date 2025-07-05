@@ -1,14 +1,14 @@
 class ArduinoCli < Formula
   desc "Arduino command-line interface"
-  homepage "https:arduino.github.ioarduino-clilatest"
-  url "https:github.comarduinoarduino-cliarchiverefstagsv1.2.2.tar.gz"
+  homepage "https://arduino.github.io/arduino-cli/latest/"
+  url "https://ghfast.top/https://github.com/arduino/arduino-cli/archive/refs/tags/v1.2.2.tar.gz"
   sha256 "c999f61e23c253d567f49c20ac4dc5d4e3187515dc7e1a42ac0482cb7124730a"
   license "GPL-3.0-only"
-  head "https:github.comarduinoarduino-cli.git", branch: "master"
+  head "https://github.com/arduino/arduino-cli.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -25,19 +25,19 @@ class ArduinoCli < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.comarduinoarduino-cliinternalversion.versionString=#{version}
-      -X github.comarduinoarduino-cliinternalversion.commit=#{tap.user}
-      -X github.comarduinoarduino-cliinternalversion.date=#{time.iso8601}
+      -X github.com/arduino/arduino-cli/internal/version.versionString=#{version}
+      -X github.com/arduino/arduino-cli/internal/version.commit=#{tap.user}
+      -X github.com/arduino/arduino-cli/internal/version.date=#{time.iso8601}
     ]
     system "go", "build", *std_go_args(ldflags:)
 
-    generate_completions_from_executable(bin"arduino-cli", "completion")
+    generate_completions_from_executable(bin/"arduino-cli", "completion")
   end
 
   test do
-    system bin"arduino-cli", "sketch", "new", "test_sketch"
-    assert_path_exists testpath"test_sketchtest_sketch.ino"
+    system bin/"arduino-cli", "sketch", "new", "test_sketch"
+    assert_path_exists testpath/"test_sketch/test_sketch.ino"
 
-    assert_match version.to_s, shell_output("#{bin}arduino-cli version")
+    assert_match version.to_s, shell_output("#{bin}/arduino-cli version")
   end
 end

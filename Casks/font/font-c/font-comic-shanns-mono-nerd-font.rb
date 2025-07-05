@@ -2,9 +2,9 @@ cask "font-comic-shanns-mono-nerd-font" do
   version "3.4.0"
   sha256 "b1d1966f508343c6f4117ab959c323a26fd7e1fa028fcba6d60096bb782e96c1"
 
-  url "https:github.comryanoasisnerd-fontsreleasesdownloadv#{version}ComicShannsMono.zip"
+  url "https://ghfast.top/https://github.com/ryanoasis/nerd-fonts/releases/download/v#{version}/ComicShannsMono.zip"
   name "ComicShannsMono Nerd Font (Comic Shanns Mono)"
-  homepage "https:github.comryanoasisnerd-fonts"
+  homepage "https://github.com/ryanoasis/nerd-fonts"
 
   livecheck do
     url :url

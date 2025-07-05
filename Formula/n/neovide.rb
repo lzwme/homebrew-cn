@@ -1,10 +1,10 @@
 class Neovide < Formula
   desc "No Nonsense Neovim Client in Rust"
-  homepage "https:neovide.dev"
-  url "https:github.comneovideneovidearchiverefstags0.15.0.tar.gz"
+  homepage "https://neovide.dev/"
+  url "https://ghfast.top/https://github.com/neovide/neovide/archive/refs/tags/0.15.0.tar.gz"
   sha256 "89900673314f4dba66a1716197aca3b51f01365d9f8351563c3dc5604b3e48ab"
   license "MIT"
-  head "https:github.comneovideneovide.git", branch: "main"
+  head "https://github.com/neovide/neovide.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "beadfba290080cf999c7cec2415e8e2000b6d3d2cd8d43be6acd235a97c57482"
@@ -36,7 +36,7 @@ class Neovide < Formula
     depends_on "jpeg-turbo"
     depends_on "libpng"
     # `libxcursor` is loaded when using X11 (DISPLAY) instead of Wayland (WAYLAND_DISPLAY).
-    # Once https:github.comrust-windowingwinitcommitaee95114db9c90eef6f4d895790552791cf41ab9
+    # Once https://github.com/rust-windowing/winit/commit/aee95114db9c90eef6f4d895790552791cf41ab9
     # is in a `winit` release, check `lsof -p <neovide-pid>` to see if dependency can be removed
     depends_on "libxcursor"
     depends_on "libxkbcommon" # dynamically loaded by xkbcommon-dl
@@ -57,18 +57,18 @@ class Neovide < Formula
       ENV["CLANG_PATH"] = which(ENV.cc) # force bindgen to use superenv clang to find brew libraries
 
       # GN doesn't use CFLAGS so pass extra paths using superenv
-      ENV.append_path "HOMEBREW_INCLUDE_PATHS", Formula["freetype"].opt_include"freetype2"
-      ENV.append_path "HOMEBREW_INCLUDE_PATHS", Formula["harfbuzz"].opt_include"harfbuzz"
+      ENV.append_path "HOMEBREW_INCLUDE_PATHS", Formula["freetype"].opt_include/"freetype2"
+      ENV.append_path "HOMEBREW_INCLUDE_PATHS", Formula["harfbuzz"].opt_include/"harfbuzz"
     end
 
     system "cargo", "install", *std_cargo_args
 
     return unless OS.mac?
 
-    # https:github.comburtonageocargo-bundleissues118
+    # https://github.com/burtonageo/cargo-bundle/issues/118
     with_env(TERM: "xterm") { system "cargo", "bundle", "--release" }
-    prefix.install "targetreleasebundleosxNeovide.app"
-    bin.write_exec_script prefix"Neovide.appContentsMacOSneovide"
+    prefix.install "target/release/bundle/osx/Neovide.app"
+    bin.write_exec_script prefix/"Neovide.app/Contents/MacOS/neovide"
   end
 
   test do
@@ -79,7 +79,7 @@ class Neovide < Formula
 
     sleep 10
 
-    neovide_cmd = [bin"neovide", "--no-fork", "--remote-tcp=#{test_server}"]
+    neovide_cmd = [bin/"neovide", "--no-fork", "--remote-tcp=#{test_server}"]
     ohai neovide_cmd.join(" ")
     neovide_pid = spawn(*neovide_cmd)
 

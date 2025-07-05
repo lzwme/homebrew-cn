@@ -1,7 +1,7 @@
 class Frugal < Formula
   desc "Cross language code generator for creating scalable microservices"
-  homepage "https:github.comWorkivafrugal"
-  url "https:github.comWorkivafrugalarchiverefstagsv3.17.13.tar.gz"
+  homepage "https://github.com/Workiva/frugal"
+  url "https://ghfast.top/https://github.com/Workiva/frugal/archive/refs/tags/v3.17.13.tar.gz"
   sha256 "3e55ad273b96bfc802beffe51ad694ce7b305a33a50c05efb1dfcf0bb4c7715f"
   license "Apache-2.0"
 
@@ -26,8 +26,8 @@ class Frugal < Formula
   end
 
   test do
-    (testpath"test.frugal").write("typedef double Test")
-    system bin"frugal", "--gen", "go", "test.frugal"
-    assert_match "type Test float64", (testpath"gen-gotestf_types.go").read
+    (testpath/"test.frugal").write("typedef double Test")
+    system bin/"frugal", "--gen", "go", "test.frugal"
+    assert_match "type Test float64", (testpath/"gen-go/test/f_types.go").read
   end
 end

@@ -1,7 +1,7 @@
 class Staq < Formula
   desc "Full-stack quantum processing toolkit"
-  homepage "https:github.comsoftwareQincstaq"
-  url "https:github.comsoftwareQincstaqarchiverefstagsv3.5.tar.gz"
+  homepage "https://github.com/softwareQinc/staq"
+  url "https://ghfast.top/https://github.com/softwareQinc/staq/archive/refs/tags/v3.5.tar.gz"
   sha256 "838402b6ca541200740cc3ab989b3026f3b001ebf3e1ce7d89ae7f09a0e33195"
   license "MIT"
 
@@ -24,15 +24,15 @@ class Staq < Formula
   def install
     system "cmake", "-S", ".", "-B", "build",
                     "-DINSTALL_SOURCES=ON",
-                    "-DFETCHCONTENT_SOURCE_DIR_GOOGLETEST=devnull", # skip unused FetchContent
-                    "-DPython3_EXECUTABLE=devnull", # skip macOS usrbinpython3
+                    "-DFETCHCONTENT_SOURCE_DIR_GOOGLETEST=/dev/null", # skip unused FetchContent
+                    "-DPython3_EXECUTABLE=/dev/null", # skip macOS /usr/bin/python3
                     *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end
 
   test do
-    (testpath"input.qasm").write <<~QASM
+    (testpath/"input.qasm").write <<~QASM
       OPENQASM 2.0;
       include "qelib1.inc";
 
@@ -42,7 +42,7 @@ class Staq < Formula
       h q[0];
       measure q->c;
     QASM
-    assert_equal <<~QASM, shell_output("#{bin}staq -O3 .input.qasm").chomp
+    assert_equal <<~QASM, shell_output("#{bin}/staq -O3 ./input.qasm").chomp
       OPENQASM 2.0;
       include "qelib1.inc";
 

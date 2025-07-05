@@ -1,10 +1,10 @@
 class BoostMpi < Formula
-  desc "C++ library for C++MPI interoperability"
-  homepage "https:www.boost.org"
-  url "https:github.comboostorgboostreleasesdownloadboost-1.88.0boost-1.88.0-b2-nodocs.tar.xz"
+  desc "C++ library for C++/MPI interoperability"
+  homepage "https://www.boost.org/"
+  url "https://ghfast.top/https://github.com/boostorg/boost/releases/download/boost-1.88.0/boost-1.88.0-b2-nodocs.tar.xz"
   sha256 "ad9ce2c91bc0977a7adc92d51558f3b9c53596bb88246a280175ebb475da1762"
   license "BSL-1.0"
-  head "https:github.comboostorgboost.git", branch: "master"
+  head "https://github.com/boostorg/boost.git", branch: "master"
 
   livecheck do
     formula "boost"
@@ -23,7 +23,7 @@ class BoostMpi < Formula
   end
 
   # Test with cmake to avoid issues like:
-  # https:github.comHomebrewhomebrew-coreissues67285
+  # https://github.com/Homebrew/homebrew-core/issues/67285
   depends_on "cmake" => :test
   depends_on "boost"
   depends_on "open-mpi"
@@ -46,7 +46,7 @@ class BoostMpi < Formula
     args << "cxxflags=-stdlib=libc++" << "linkflags=-stdlib=libc++" if ENV.compiler == :clang
 
     # Avoid linkage to boost container and graph modules
-    # Issue ref: https:github.comboostorgboostissues985
+    # Issue ref: https://github.com/boostorg/boost/issues/985
     args << "linkflags=-Wl,-dead_strip_dylibs" if OS.mac?
 
     open("user-config.jam", "a") do |file|
@@ -58,30 +58,30 @@ class BoostMpi < Formula
       file.write "using mpi ;\n"
     end
 
-    system ".bootstrap.sh", "--prefix=#{prefix}", "--libdir=#{lib}", "--with-libraries=mpi"
+    system "./bootstrap.sh", "--prefix=#{prefix}", "--libdir=#{lib}", "--with-libraries=mpi"
 
-    system ".b2",
+    system "./b2",
            "--prefix=install-mpi",
-           "--libdir=install-mpilib",
+           "--libdir=install-mpi/lib",
            *args
 
-    lib.install Dir["install-mpilib*mpi*"]
-    (lib"cmake").install Dir["install-mpilibcmake*mpi*"]
+    lib.install Dir["install-mpi/lib/*mpi*"]
+    (lib/"cmake").install Dir["install-mpi/lib/cmake/*mpi*"]
 
     if OS.mac?
       # libboost_mpi links to libboost_serialization, which comes from the main boost formula
       boost = Formula["boost"]
-      MachO::Tools.change_install_name("#{lib}libboost_mpi.dylib",
+      MachO::Tools.change_install_name("#{lib}/libboost_mpi.dylib",
                                        "libboost_serialization.dylib",
-                                       "#{boost.lib}libboost_serialization.dylib")
+                                       "#{boost.lib}/libboost_serialization.dylib")
     end
   end
 
   test do
-    (testpath"test.cpp").write <<~CPP
-      #include <boostmpi.hpp>
+    (testpath/"test.cpp").write <<~CPP
+      #include <boost/mpi.hpp>
       #include <iostream>
-      #include <boostserializationstring.hpp>
+      #include <boost/serialization/string.hpp>
       namespace mpi = boost::mpi;
 
       int main(int argc, char* argv[])
@@ -119,9 +119,9 @@ class BoostMpi < Formula
     end
 
     system "mpic++", "test.cpp", *args, "-o", "test"
-    system "mpirun", "-np", "2", ".test"
+    system "mpirun", "-np", "2", "./test"
 
-    (testpath"CMakeLists.txt").write <<~CMAKE
+    (testpath/"CMakeLists.txt").write <<~CMAKE
       cmake_minimum_required(VERSION 4.0)
       find_package(Boost COMPONENTS mpi REQUIRED)
     CMAKE

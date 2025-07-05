@@ -1,10 +1,10 @@
 class Deno < Formula
   desc "Secure runtime for JavaScript and TypeScript"
-  homepage "https:deno.com"
-  url "https:github.comdenolanddenoreleasesdownloadv2.4.0deno_src.tar.gz"
+  homepage "https://deno.com/"
+  url "https://ghfast.top/https://github.com/denoland/deno/releases/download/v2.4.0/deno_src.tar.gz"
   sha256 "531039b7b27318f426dbc0c6b8928d965dc39a11d6494c6342edcd05a2bfb4f7"
   license "MIT"
-  head "https:github.comdenolanddeno.git", branch: "main"
+  head "https://github.com/denoland/deno.git", branch: "main"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "562f24a7da4c42f4c83ccc22da313fc32b561aadbccd4b85b691ce8c32dd0dd7"
@@ -41,16 +41,16 @@ class Deno < Formula
 
   def install
     inreplace "Cargo.toml" do |s|
-      # https:github.comHomebrewhomebrew-corepull227966#issuecomment-3001448018
-      s.gsub!(^lto = true$, 'lto = "thin"')
+      # https://github.com/Homebrew/homebrew-core/pull/227966#issuecomment-3001448018
+      s.gsub!(/^lto = true$/, 'lto = "thin"')
 
       # Avoid vendored dependencies.
-      s.gsub!(^libffi-sys = "(.+)"$,
+      s.gsub!(/^libffi-sys = "(.+)"$/,
               'libffi-sys = { version = "\\1", features = ["system"] }')
-      s.gsub!(^rusqlite = { version = "(.+)", features = \["unlock_notify", "bundled", "session",
+      s.gsub!(/^rusqlite = { version = "(.+)", features = \["unlock_notify", "bundled", "session"/,
               'rusqlite = { version = "\\1", features = ["unlock_notify", "session"')
     end
-    inreplace "libsnpm_cacheCargo.toml",
+    inreplace "libs/npm_cache/Cargo.toml",
               'flate2 = { workspace = true, features = ["zlib-ng-compat"] }',
               "flate2 = { workspace = true }"
 
@@ -68,38 +68,38 @@ class Deno < Formula
     ENV["GN_ARGS"] = "clang_version=#{llvm.version.major} use_lld=#{OS.linux?}"
 
     system "cargo", "install", "--no-default-features", "-vv", *std_cargo_args(path: "cli")
-    generate_completions_from_executable(bin"deno", "completions")
+    generate_completions_from_executable(bin/"deno", "completions")
   end
 
   test do
-    require "utilslinkage"
+    require "utils/linkage"
 
-    IO.popen("deno run -A -r https:fresh.deno.dev fresh-project", "r+") do |pipe|
+    IO.popen("deno run -A -r https://fresh.deno.dev fresh-project", "r+") do |pipe|
       pipe.puts "n"
       pipe.puts "n"
       pipe.close_write
       pipe.read
     end
 
-    assert_match "# Fresh project", (testpath"fresh-projectREADME.md").read
+    assert_match "# Fresh project", (testpath/"fresh-project/README.md").read
 
-    (testpath"hello.ts").write <<~TYPESCRIPT
+    (testpath/"hello.ts").write <<~TYPESCRIPT
       console.log("hello", "deno");
     TYPESCRIPT
-    assert_match "hello deno", shell_output("#{bin}deno run hello.ts")
+    assert_match "hello deno", shell_output("#{bin}/deno run hello.ts")
     assert_match "Welcome to Deno!",
-      shell_output("#{bin}deno run https:deno.landstd@0.100.0exampleswelcome.ts")
+      shell_output("#{bin}/deno run https://deno.land/std@0.100.0/examples/welcome.ts")
 
     linked_libraries = [
-      Formula["sqlite"].opt_libshared_library("libsqlite3"),
+      Formula["sqlite"].opt_lib/shared_library("libsqlite3"),
     ]
     unless OS.mac?
       linked_libraries += [
-        Formula["libffi"].opt_libshared_library("libffi"),
+        Formula["libffi"].opt_lib/shared_library("libffi"),
       ]
     end
     linked_libraries.each do |library|
-      assert Utils.binary_linked_to_library?(bin"deno", library),
+      assert Utils.binary_linked_to_library?(bin/"deno", library),
               "No linkage with #{library.basename}! Cargo is likely using a vendored version."
     end
   end

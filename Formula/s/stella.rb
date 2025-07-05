@@ -1,11 +1,11 @@
 class Stella < Formula
   desc "Atari 2600 VCS emulator"
-  homepage "https:stella-emu.github.io"
-  url "https:github.comstella-emustellaarchiverefstags7.0c.tar.gz"
+  homepage "https://stella-emu.github.io/"
+  url "https://ghfast.top/https://github.com/stella-emu/stella/archive/refs/tags/7.0c.tar.gz"
   version "7.0c"
   sha256 "1b40955f24f3f1f00dff0f4cb46bc1cab4c5e1b9017521b525c5e304be554e3a"
   license "GPL-2.0-or-later"
-  head "https:github.comstella-emustella.git", branch: "master"
+  head "https://github.com/stella-emu/stella.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -26,9 +26,9 @@ class Stella < Formula
   uses_from_macos "sqlite"
   uses_from_macos "zlib"
 
-  # ventura build patch, upstream pr ref, https:github.comstella-emustellapull1064
+  # ventura build patch, upstream pr ref, https://github.com/stella-emu/stella/pull/1064
   patch do
-    url "https:raw.githubusercontent.comHomebrewformula-patches932732469b2d4ace873187b55973cce3e1627b34stella7.0c-ventura.patch"
+    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/932732469b2d4ace873187b55973cce3e1627b34/stella/7.0c-ventura.patch"
     sha256 "6295953eced4509376f4deb7b1ab511df5fed10cff4fab40feaa4ca8c53922ad"
   end
 
@@ -36,22 +36,22 @@ class Stella < Formula
     sdl2 = Formula["sdl2"]
     libpng = Formula["libpng"]
     if OS.mac?
-      cd "srcosmacos" do
-        inreplace "stella.xcodeprojproject.pbxproj" do |s|
-          s.gsub! %r{(\w{24} \* SDL2\.framework)}, '\1'
-          s.gsub! %r{(\w{24} \* png)}, '\1'
-          s.gsub!((HEADER_SEARCH_PATHS) = \(,
-                  "\\1 = (#{sdl2.opt_include}SDL2, #{libpng.opt_include},")
-          s.gsub!((LIBRARY_SEARCH_PATHS) = ("\$\(LIBRARY_SEARCH_PATHS\)");,
+      cd "src/os/macos" do
+        inreplace "stella.xcodeproj/project.pbxproj" do |s|
+          s.gsub! %r{(\w{24} /\* SDL2\.framework)}, '//\1'
+          s.gsub! %r{(\w{24} /\* png)}, '//\1'
+          s.gsub!(/(HEADER_SEARCH_PATHS) = \(/,
+                  "\\1 = (#{sdl2.opt_include}/SDL2, #{libpng.opt_include},")
+          s.gsub!(/(LIBRARY_SEARCH_PATHS) = ("\$\(LIBRARY_SEARCH_PATHS\)");/,
                   "\\1 = (#{sdl2.opt_lib}, #{libpng.opt_lib}, \\2);")
-          s.gsub!((OTHER_LDFLAGS) = "((-\w+)*)", '\1 = "-lSDL2 -lpng \2"')
+          s.gsub!(/(OTHER_LDFLAGS) = "((-\w+)*)"/, '\1 = "-lSDL2 -lpng \2"')
         end
         xcodebuild "-arch", Hardware::CPU.arch, "SYMROOT=build", "MACOSX_DEPLOYMENT_TARGET=#{MacOS.version}"
-        prefix.install "buildReleaseStella.app"
-        bin.write_exec_script "#{prefix}Stella.appContentsMacOSStella"
+        prefix.install "build/Release/Stella.app"
+        bin.write_exec_script "#{prefix}/Stella.app/Contents/MacOS/Stella"
       end
     else
-      system ".configure", "--prefix=#{prefix}",
+      system "./configure", "--prefix=#{prefix}",
                             "--bindir=#{bin}",
                             "--enable-release",
                             "--with-sdl-prefix=#{sdl2.prefix}",
@@ -63,10 +63,10 @@ class Stella < Formula
 
   test do
     if OS.mac?
-      assert_match "E.T. - The Extra-Terrestrial", shell_output("#{bin}Stella -listrominfo").strip
+      assert_match "E.T. - The Extra-Terrestrial", shell_output("#{bin}/Stella -listrominfo").strip
     else
       assert_match "failed to initialize: unable to open database file",
-        shell_output("#{bin}stella -listrominfo").strip
+        shell_output("#{bin}/stella -listrominfo").strip
     end
   end
 end

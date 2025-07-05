@@ -1,13 +1,13 @@
 class CargoDepgraph < Formula
   desc "Creates dependency graphs for cargo projects"
-  homepage "https:sr.ht~jplattecargo-depgraph"
-  url "https:git.sr.ht~jplattecargo-depgrapharchivev1.6.0.tar.gz"
+  homepage "https://sr.ht/~jplatte/cargo-depgraph/"
+  url "https://git.sr.ht/~jplatte/cargo-depgraph/archive/v1.6.0.tar.gz"
   sha256 "79f7425bc37c59fc4b083bdc35f43d29c2078b427ec6bb30565a4c04841ce364"
   license "GPL-3.0-or-later"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -31,15 +31,15 @@ class CargoDepgraph < Formula
 
   test do
     # Show that we can use a different toolchain than the one provided by the `rust` formula.
-    # https:github.comHomebrewhomebrew-corepull134074#pullrequestreview-1484979359
+    # https://github.com/Homebrew/homebrew-core/pull/134074#pullrequestreview-1484979359
     ENV.prepend_path "PATH", Formula["rustup"].bin
     system "rustup", "set", "profile", "minimal"
     system "rustup", "default", "beta"
 
-    crate = testpath"demo-crate"
+    crate = testpath/"demo-crate"
     mkdir crate do
-      (crate"srcmain.rs").write " Dummy file"
-      (crate"Cargo.toml").write <<~TOML
+      (crate/"src/main.rs").write "// Dummy file"
+      (crate/"Cargo.toml").write <<~TOML
         [package]
         name = "demo-crate"
         version = "0.1.0"
@@ -55,7 +55,7 @@ class CargoDepgraph < Formula
         }
 
       EOS
-      output = shell_output("#{bin}cargo-depgraph depgraph")
+      output = shell_output("#{bin}/cargo-depgraph depgraph")
       assert_equal expected, output
     end
   end

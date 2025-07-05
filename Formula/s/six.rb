@@ -1,7 +1,7 @@
 class Six < Formula
   desc "Python 2 and 3 compatibility utilities"
-  homepage "https:github.combenjaminpsix"
-  url "https:files.pythonhosted.orgpackages94e7b2c673351809dca68a0e064b6af791aa332cf192da575fd474ed7d6f16a2six-1.17.0.tar.gz"
+  homepage "https://github.com/benjaminp/six"
+  url "https://files.pythonhosted.org/packages/94/e7/b2c673351809dca68a0e064b6af791aa332cf192da575fd474ed7d6f16a2/six-1.17.0.tar.gz"
   sha256 "ff70335d468e7eb6ec65b95b99d3a2836546063f63acc5171de367e834932a81"
   license "MIT"
 
@@ -18,7 +18,7 @@ class Six < Formula
 
   def install
     pythons.each do |python|
-      python_exe = python.opt_libexec"binpython"
+      python_exe = python.opt_libexec/"bin/python"
       system python_exe, "-m", "pip", "install", *std_pip_args(build_isolation: true), "."
     end
   end
@@ -36,7 +36,7 @@ class Six < Formula
 
   test do
     pythons.each do |python|
-      system python.opt_libexec"binpython", "-c", <<~PYTHON
+      system python.opt_libexec/"bin/python", "-c", <<~PYTHON
         import six
         assert not six.PY2
         assert six.PY3

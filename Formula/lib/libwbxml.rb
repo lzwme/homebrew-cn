@@ -1,10 +1,10 @@
 class Libwbxml < Formula
   desc "Library and tools to parse and encode WBXML documents"
-  homepage "https:github.comlibwbxmllibwbxml"
-  url "https:github.comlibwbxmllibwbxmlarchiverefstagslibwbxml-0.11.10.tar.gz"
+  homepage "https://github.com/libwbxml/libwbxml"
+  url "https://ghfast.top/https://github.com/libwbxml/libwbxml/archive/refs/tags/libwbxml-0.11.10.tar.gz"
   sha256 "027b77ab7c06458b73cbcf1f06f9cf73b65acdbb2ac170b234c1d736069acae4"
   license "LGPL-2.1-or-later"
-  head "https:github.comlibwbxmllibwbxml.git", branch: "master"
+  head "https://github.com/libwbxml/libwbxml.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "07916c39f4553dd58011f13bf93e38769b5e4995a7622b98fde568fbf77a0424"
@@ -37,13 +37,13 @@ class Libwbxml < Formula
   end
 
   test do
-    (testpath"input.xml").write <<~XML
+    (testpath/"input.xml").write <<~XML
       <?xml version="1.0"?>
-      <!DOCTYPE sl PUBLIC "-WAPFORUMDTD SL 1.0EN" "http:www.wapforum.orgDTDsl.dtd">
-      <sl href="http:www.xyz.comppaid123abc.wml"><sl>
+      <!DOCTYPE sl PUBLIC "-//WAPFORUM//DTD SL 1.0//EN" "http://www.wapforum.org/DTD/sl.dtd">
+      <sl href="http://www.xyz.com/ppaid/123/abc.wml"></sl>
     XML
 
-    system bin"xml2wbxml", "-o", "output.wbxml", "input.xml"
-    assert_path_exists testpath"output.wbxml"
+    system bin/"xml2wbxml", "-o", "output.wbxml", "input.xml"
+    assert_path_exists testpath/"output.wbxml"
   end
 end

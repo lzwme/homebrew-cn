@@ -1,7 +1,7 @@
 class Srecord < Formula
   desc "Tools for manipulating EPROM load files"
-  homepage "https:srecord.sourceforge.net"
-  url "https:downloads.sourceforge.netprojectsrecordsrecord1.65srecord-1.65.0-Source.tar.gz"
+  homepage "https://srecord.sourceforge.net/"
+  url "https://downloads.sourceforge.net/project/srecord/srecord/1.65/srecord-1.65.0-Source.tar.gz"
   sha256 "81c3d07cf15ce50441f43a82cefd0ac32767c535b5291bcc41bd2311d1337644"
   license all_of: ["GPL-3.0-or-later", "LGPL-3.0-or-later"]
 
@@ -36,26 +36,26 @@ class Srecord < Formula
   end
 
   # Apply Fedora patch to build shared library and avoid installing a duplicate libgcrypt
-  # Issue ref: https:github.comsierrafoxtrotsrecordissues29
+  # Issue ref: https://github.com/sierrafoxtrot/srecord/issues/29
   patch do
-    url "https:src.fedoraproject.orgrpmssrecordraw4d2b7a885e73398fe1caf7fa3d514b522a1bca2ffsrecord-1.65-fedora.patch"
+    url "https://src.fedoraproject.org/rpms/srecord/raw/4d2b7a885e73398fe1caf7fa3d514b522a1bca2f/f/srecord-1.65-fedora.patch"
     sha256 "8e6f0b3f71b99700d598b461272a6926ec5b5445b6758df455aaba02f596c8e9"
   end
 
   def install
-    # Issue ref: https:github.comsierrafoxtrotsrecordissues65
-    inreplace "CMakeLists.txt", 'set(CMAKE_INSTALL_PREFIX "usr")', ""
+    # Issue ref: https://github.com/sierrafoxtrot/srecord/issues/65
+    inreplace "CMakeLists.txt", 'set(CMAKE_INSTALL_PREFIX "/usr")', ""
 
     system "cmake", "-S", ".", "-B", "build", "-DCMAKE_INSTALL_RPATH=#{rpath}", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 
     # Remove over 40MB of documentation bringing install to 3MB
-    rm_r(doc"htdocs")
+    rm_r(doc/"htdocs")
   end
 
   test do
-    (testpath"test.srec").write <<~EOS
+    (testpath/"test.srec").write <<~EOS
       S012000068656C6C6F5F737265632E73726563F2
       S1130000303132333435363738396162636465668A
       S11300104142434445464748494A4B4C4D4E4F5054
@@ -70,9 +70,9 @@ class Srecord < Formula
       Data:   0000 - 0028
     EOS
 
-    output = shell_output("#{bin}srec_info #{testpath}test.srec")
+    output = shell_output("#{bin}/srec_info #{testpath}/test.srec")
     assert_equal expected, output
 
-    assert_match version.major_minor.to_s, shell_output("#{bin}srec_info --version")
+    assert_match version.major_minor.to_s, shell_output("#{bin}/srec_info --version")
   end
 end

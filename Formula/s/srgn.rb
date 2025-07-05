@@ -1,10 +1,10 @@
 class Srgn < Formula
   desc "Code surgeon for precise text and code transplantation"
-  homepage "https:github.comalexpovelsrgn"
-  url "https:github.comalexpovelsrgnarchiverefstagssrgn-v0.14.0.tar.gz"
+  homepage "https://github.com/alexpovel/srgn"
+  url "https://ghfast.top/https://github.com/alexpovel/srgn/archive/refs/tags/srgn-v0.14.0.tar.gz"
   sha256 "b6219c19214ad932b5df67c8ee00f32755014bf5ea2a1b6b57c6913c3124d202"
   license "MIT"
-  head "https:github.comalexpovelsrgn.git", branch: "main"
+  head "https://github.com/alexpovel/srgn.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "89afca697ec0afb55afbe31f14c294cc901d17c9abba1cb5f2d72f8e8b4f03b4"
@@ -21,15 +21,15 @@ class Srgn < Formula
   def install
     system "cargo", "install", *std_cargo_args
 
-    generate_completions_from_executable(bin"srgn", "--completions")
+    generate_completions_from_executable(bin/"srgn", "--completions")
   end
 
   test do
-    assert_match "H____", pipe_output("#{bin}srgn '[a-z]' -- '_'", "Hello")
+    assert_match "H____", pipe_output("#{bin}/srgn '[a-z]' -- '_'", "Hello")
 
     test_string = "Hide ghp_th15 and ghp_th4t"
-    assert_match "Hide * and *", pipe_output("#{bin}srgn '(ghp_[[:alnum:]]+)' -- '*'", test_string)
+    assert_match "Hide * and *", pipe_output("#{bin}/srgn '(ghp_[[:alnum:]]+)' -- '*'", test_string)
 
-    assert_match version.to_s, shell_output("#{bin}srgn --version")
+    assert_match version.to_s, shell_output("#{bin}/srgn --version")
   end
 end

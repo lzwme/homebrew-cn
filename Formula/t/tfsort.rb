@@ -1,10 +1,10 @@
 class Tfsort < Formula
   desc "CLI to sort Terraform variables and outputs"
-  homepage "https:github.comAlexNabokikhtfsort"
-  url "https:github.comAlexNabokikhtfsortarchiverefstagsv0.6.0.tar.gz"
+  homepage "https://github.com/AlexNabokikh/tfsort"
+  url "https://ghfast.top/https://github.com/AlexNabokikh/tfsort/archive/refs/tags/v0.6.0.tar.gz"
   sha256 "efbbb75b44d0a48e0871d6955c11d7210207b3d752c99d34c48468e4c2c8fe76"
   license "Apache-2.0"
-  head "https:github.comAlexNabokikhtfsort.git", branch: "master"
+  head "https://github.com/AlexNabokikh/tfsort.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "f9737612cc507fec8f0d4bb798459c93baa49bad0033efb14b8b3c35b4f8a40a"
@@ -22,15 +22,15 @@ class Tfsort < Formula
     system "go", "build", *std_go_args(ldflags:)
 
     # install testdata
-    pkgshare.install "internalhclsorttestdata"
+    pkgshare.install "internal/hclsort/testdata"
   end
 
   test do
-    cp_r pkgshare"testdata.", testpath
+    cp_r pkgshare/"testdata/.", testpath
 
-    assert_empty shell_output("#{bin}tfsort invalid.tf 2>&1")
+    assert_empty shell_output("#{bin}/tfsort invalid.tf 2>&1")
 
-    system bin"tfsort", "valid.tofu"
-    assert_equal (testpath"expected.tofu").read, (testpath"valid.tofu").read
+    system bin/"tfsort", "valid.tofu"
+    assert_equal (testpath/"expected.tofu").read, (testpath/"valid.tofu").read
   end
 end

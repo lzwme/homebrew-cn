@@ -1,10 +1,10 @@
 class Brainfuck < Formula
   desc "Interpreter for the brainfuck language"
-  homepage "https:github.comfabianisherebrainfuck"
-  url "https:github.comfabianisherebrainfuckarchiverefstags2.7.3.tar.gz"
+  homepage "https://github.com/fabianishere/brainfuck"
+  url "https://ghfast.top/https://github.com/fabianishere/brainfuck/archive/refs/tags/2.7.3.tar.gz"
   sha256 "d99be61271b4c27e26a8154151574aa3750133a0bedd07124b92ccca1e03b5a7"
   license "Apache-2.0"
-  head "https:github.comfabianisherebrainfuck.git", branch: "master"
+  head "https://github.com/fabianishere/brainfuck.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -40,7 +40,7 @@ class Brainfuck < Formula
   end
 
   test do
-    output = shell_output("#{bin}brainfuck -e '++++++++[>++++++++<-]>+.+.+.'")
+    output = shell_output("#{bin}/brainfuck -e '++++++++[>++++++++<-]>+.+.+.'")
     assert_equal "ABC", output.chomp
   end
 end

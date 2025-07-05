@@ -1,7 +1,7 @@
 class Modgit < Formula
   desc "Tool for git repo deploy with filters. Used for magento development"
-  homepage "https:github.comjreinkemodgit"
-  url "https:github.comjreinkemodgitarchiverefstagsv1.1.0.tar.gz"
+  homepage "https://github.com/jreinke/modgit"
+  url "https://ghfast.top/https://github.com/jreinke/modgit/archive/refs/tags/v1.1.0.tar.gz"
   sha256 "9d279c370eee29f54017ca20cf543efda87534bd6a584e7c0f489bbf931dccb8"
 
   no_autobump! because: :requires_manual_review
@@ -18,6 +18,6 @@ class Modgit < Formula
   end
 
   test do
-    system bin"modgit"
+    system bin/"modgit"
   end
 end

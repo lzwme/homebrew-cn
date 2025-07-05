@@ -1,10 +1,10 @@
 class Matterbridge < Formula
   desc "Protocol bridge for multiple chat platforms"
-  homepage "https:github.com42wimmatterbridge"
-  url "https:github.com42wimmatterbridgearchiverefstagsv1.26.0.tar.gz"
+  homepage "https://github.com/42wim/matterbridge"
+  url "https://ghfast.top/https://github.com/42wim/matterbridge/archive/refs/tags/v1.26.0.tar.gz"
   sha256 "00e1bbfe3b32f2feccf9a7f13a6f12b1ce28a5eb04cc7b922b344e3493497425"
   license "Apache-2.0"
-  head "https:github.com42wimmatterbridge.git", branch: "master"
+  head "https://github.com/42wim/matterbridge.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "6eec437022ff310f92909ef2f5e8b600f4e5cc2991fd7284fbed52d1d96a8ec0"
@@ -26,7 +26,7 @@ class Matterbridge < Formula
   end
 
   test do
-    touch testpath"test.toml"
-    assert_match "no [[gateway]] configured", shell_output("#{bin}matterbridge -conf test.toml 2>&1", 1)
+    touch testpath/"test.toml"
+    assert_match "no [[gateway]] configured", shell_output("#{bin}/matterbridge -conf test.toml 2>&1", 1)
   end
 end

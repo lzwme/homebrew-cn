@@ -1,10 +1,10 @@
 class Lego < Formula
   desc "Let's Encrypt client and ACME library"
-  homepage "https:go-acme.github.iolego"
-  url "https:github.comgo-acmelegoarchiverefstagsv4.23.1.tar.gz"
+  homepage "https://go-acme.github.io/lego/"
+  url "https://ghfast.top/https://github.com/go-acme/lego/archive/refs/tags/v4.23.1.tar.gz"
   sha256 "e86e62946397964d6f2db2a2487cc75acac08e9ad7811c2302d56c35ca521699"
   license "MIT"
-  head "https:github.comgo-acmelego.git", branch: "master"
+  head "https://github.com/go-acme/lego.git", branch: "master"
 
   livecheck do
     url :stable
@@ -23,18 +23,18 @@ class Lego < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}"), ".cmdlego"
+    system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}"), "./cmd/lego"
   end
 
   test do
-    output = shell_output("#{bin}lego -a --email test@brew.sh --dns digitalocean -d brew.test run 2>&1", 1)
+    output = shell_output("#{bin}/lego -a --email test@brew.sh --dns digitalocean -d brew.test run 2>&1", 1)
     assert_match "some credentials information are missing: DO_AUTH_TOKEN", output
 
     output = shell_output(
-      "DO_AUTH_TOKEN=xx #{bin}lego -a --email test@brew.sh --dns digitalocean -d brew.test run 2>&1", 1
+      "DO_AUTH_TOKEN=xx #{bin}/lego -a --email test@brew.sh --dns digitalocean -d brew.test run 2>&1", 1
     )
     assert_match "Could not obtain certificates", output
 
-    assert_match version.to_s, shell_output("#{bin}lego -v")
+    assert_match version.to_s, shell_output("#{bin}/lego -v")
   end
 end

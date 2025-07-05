@@ -1,18 +1,18 @@
 class Gping < Formula
   desc "Ping, but with a graph"
-  homepage "https:github.comorfgping"
-  url "https:github.comorfgpingarchiverefstagsgping-v1.19.0.tar.gz"
+  homepage "https://github.com/orf/gping"
+  url "https://ghfast.top/https://github.com/orf/gping/archive/refs/tags/gping-v1.19.0.tar.gz"
   sha256 "a979c9a8c7a1a540bb48a1e90bb7ad294560bddc16ca977bc8475fb14f20155d"
   license "MIT"
-  head "https:github.comorfgping.git", branch: "master"
+  head "https://github.com/orf/gping.git", branch: "master"
 
   # The GitHub repository has a "latest" release but it can sometimes point to
   # a release like `v1.2.3-post`, `v1.2.3-post2`, etc. We're checking the Git
   # tags because the author of `gping` requested that we omit `post` releases:
-  # https:github.comHomebrewhomebrew-corepull66366#discussion_r537339032
+  # https://github.com/Homebrew/homebrew-core/pull/66366#discussion_r537339032
   livecheck do
     url :stable
-    regex(^gping[._-]v?(\d+(?:\.\d+)+)$i)
+    regex(/^gping[._-]v?(\d+(?:\.\d+)+)$/i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -43,9 +43,9 @@ class Gping < Formula
 
   test do
     require "pty"
-    require "ioconsole"
+    require "io/console"
 
-    PTY.spawn(bin"gping", "google.com") do |r, w, _pid|
+    PTY.spawn(bin/"gping", "google.com") do |r, w, _pid|
       r.winsize = [80, 130]
       sleep 10
       w.write "q"
@@ -56,7 +56,7 @@ class Gping < Formula
         invalid: :replace,
         undef:   :replace,
         replace: "")
-      screenlog.gsub!(\e\[([;\d]+)?m, "")
+      screenlog.gsub!(/\e\[([;\d]+)?m/, "")
 
       assert_match "google.com (", screenlog
     end

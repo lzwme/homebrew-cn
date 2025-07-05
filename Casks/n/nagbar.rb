@@ -2,11 +2,11 @@ cask "nagbar" do
   version "1.3.7"
   sha256 "9a4b256250d4527423efd16e90cc7d087bc6ca9306bdc5267a6441194e73a44b"
 
-  url "https:github.comvolendavidovNagBarreleasesdownload#{version}NagBar.zip",
-      verified: "github.comvolendavidovNagBar"
+  url "https://ghfast.top/https://github.com/volendavidov/NagBar/releases/download/#{version}/NagBar.zip",
+      verified: "github.com/volendavidov/NagBar/"
   name "NagBar"
-  desc "Status bar monitor for Nagios, Icinga2 and Thruk"
-  homepage "https:sites.google.comsitenagbarapphome"
+  desc "Status bar monitor for Nagios, Icinga/2 and Thruk"
+  homepage "https://sites.google.com/site/nagbarapp/home"
 
   no_autobump! because: :requires_manual_review
 
@@ -15,9 +15,9 @@ cask "nagbar" do
   app "NagBar.app"
 
   zap trash: [
-    "~LibraryApplication Supportcom.apple.sharedfilelistcom.apple.LSSharedFileList.ApplicationRecentDocumentscom.volendavidov.nagbar.sfl*",
-    "~LibraryCachescom.volendavidov.NagBar",
-    "~LibraryPreferencescom.volendavidov.NagBar.plist",
+    "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.volendavidov.nagbar.sfl*",
+    "~/Library/Caches/com.volendavidov.NagBar",
+    "~/Library/Preferences/com.volendavidov.NagBar.plist",
   ]
 
   caveats do

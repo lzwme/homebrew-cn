@@ -1,14 +1,14 @@
 class Incus < Formula
   desc "CLI client for interacting with Incus"
-  homepage "https:linuxcontainers.orgincus"
-  url "https:linuxcontainers.orgdownloadsincusincus-6.14.tar.xz"
+  homepage "https://linuxcontainers.org/incus"
+  url "https://linuxcontainers.org/downloads/incus/incus-6.14.tar.xz"
   sha256 "9a4392ab12e56e75440b0b88dfe6db1f96bd7b7050305e8cf135848d8af99c21"
   license "Apache-2.0"
-  head "https:github.comlxcincus.git", branch: "main"
+  head "https://github.com/lxc/incus.git", branch: "main"
 
   livecheck do
-    url "https:linuxcontainers.orgincusdownloads"
-    regex(href=.*?incus[._-]v?(\d+(?:\.\d+)+)\.ti)
+    url "https://linuxcontainers.org/incus/downloads/"
+    regex(/href=.*?incus[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -26,15 +26,15 @@ class Incus < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), ".cmdincus"
+    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/incus"
 
-    generate_completions_from_executable(bin"incus", "completion")
+    generate_completions_from_executable(bin/"incus", "completion")
   end
 
   test do
-    output = JSON.parse(shell_output("#{bin}incus remote list --format json"))
-    assert_equal "https:images.linuxcontainers.org", output["images"]["Addr"]
+    output = JSON.parse(shell_output("#{bin}/incus remote list --format json"))
+    assert_equal "https://images.linuxcontainers.org", output["images"]["Addr"]
 
-    assert_match version.to_s, shell_output("#{bin}incus --version")
+    assert_match version.to_s, shell_output("#{bin}/incus --version")
   end
 end

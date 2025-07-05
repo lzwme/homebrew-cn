@@ -2,11 +2,11 @@ cask "emby" do
   version "2.2.39,35"
   sha256 :no_check
 
-  url "https:github.comMediaBrowserEmby.ReleasesrawmastermacosEmby.app.zip",
-      verified: "github.comMediaBrowserEmby.Releases"
+  url "https://github.com/MediaBrowser/Emby.Releases/raw/master/macos/Emby.app.zip",
+      verified: "github.com/MediaBrowser/Emby.Releases/"
   name "Emby"
   desc "Client for emby media server"
-  homepage "https:emby.media"
+  homepage "https://emby.media/"
 
   livecheck do
     url :url
@@ -18,10 +18,10 @@ cask "emby" do
   app "Emby.app"
 
   zap trash: [
-    "~LibraryApplication Scriptscom.emby.mobile",
-    "~LibraryApplication Scriptsgroup.com.emby.mobile",
-    "~LibraryContainerscom.emby.mobile",
-    "~LibraryGroup Containersgroup.com.emby.mobile",
-    "~LibrarySaved Application Statecom.emby.mobile.savedState",
+    "~/Library/Application Scripts/com.emby.mobile",
+    "~/Library/Application Scripts/group.com.emby.mobile",
+    "~/Library/Containers/com.emby.mobile",
+    "~/Library/Group Containers/group.com.emby.mobile",
+    "~/Library/Saved Application State/com.emby.mobile.savedState",
   ]
 end

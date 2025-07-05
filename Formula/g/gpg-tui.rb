@@ -1,7 +1,7 @@
 class GpgTui < Formula
   desc "Manage your GnuPG keys with ease!"
-  homepage "https:github.comorhungpg-tui"
-  url "https:github.comorhungpg-tuiarchiverefstagsv0.11.1.tar.gz"
+  homepage "https://github.com/orhun/gpg-tui"
+  url "https://ghfast.top/https://github.com/orhun/gpg-tui/archive/refs/tags/v0.11.1.tar.gz"
   sha256 "ecc232b42ff07888eb12a43daf5a956791a21efc85f6e71fbed9b9769ec50b50"
   license "MIT"
 
@@ -26,28 +26,28 @@ class GpgTui < Formula
     system "cargo", "install", *std_cargo_args
 
     ENV["OUT_DIR"] = buildpath
-    system bin"gpg-tui-completions"
+    system bin/"gpg-tui-completions"
     bash_completion.install "gpg-tui.bash"
     fish_completion.install "gpg-tui.fish"
     zsh_completion.install "_gpg-tui"
 
-    rm(bin"gpg-tui-completions")
-    rm(Dir[prefix".crates*"])
+    rm(bin/"gpg-tui-completions")
+    rm(Dir[prefix/".crates*"])
   end
 
   test do
     require "pty"
-    require "ioconsole"
+    require "io/console"
 
-    (testpath"gpg-tui").mkdir
+    (testpath/"gpg-tui").mkdir
     begin
-      r, w, pid = PTY.spawn bin"gpg-tui"
+      r, w, pid = PTY.spawn bin/"gpg-tui"
       r.winsize = [80, 43]
       sleep 1
       w.write "q"
-      assert_match(^.*<.*list.*pub.*>.*$, r.read)
+      assert_match(/^.*<.*list.*pub.*>.*$/, r.read)
     rescue Errno::EIO
-      # GNULinux raises EIO when read is done on closed pty
+      # GNU/Linux raises EIO when read is done on closed pty
     end
   ensure
     Process.kill("TERM", pid)

@@ -1,11 +1,11 @@
 class Pqiv < Formula
   desc "Powerful image viewer with minimal UI"
-  homepage "https:github.comphillipberndtpqiv"
-  url "https:github.comphillipberndtpqivarchiverefstags2.13.2.tar.gz"
+  homepage "https://github.com/phillipberndt/pqiv"
+  url "https://ghfast.top/https://github.com/phillipberndt/pqiv/archive/refs/tags/2.13.2.tar.gz"
   sha256 "154cbbe0a62be12cee23b0a46a86b2305d8128fd19924308ad5e9d22fa5ad4f7"
   license "GPL-3.0-or-later"
   revision 2
-  head "https:github.comphillipberndtpqiv.git", branch: "master"
+  head "https://github.com/phillipberndt/pqiv.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "e44986d59fbbfadb05ec2d40c769eb87deac34da0a21291a3ad933dd30af109c"
@@ -43,11 +43,11 @@ class Pqiv < Formula
 
   def install
     args = *std_configure_args.reject { |s| s["--disable-debug"]|| s["--disable-dependency-tracking"] }
-    system ".configure", *args
+    system "./configure", *args
     system "make", "install"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}pqiv --version 2>&1")
+    assert_match version.to_s, shell_output("#{bin}/pqiv --version 2>&1")
   end
 end

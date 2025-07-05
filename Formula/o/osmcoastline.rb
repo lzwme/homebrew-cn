@@ -1,7 +1,7 @@
 class Osmcoastline < Formula
   desc "Extracts coastline data from OpenStreetMap planet file"
-  homepage "https:osmcode.orgosmcoastline"
-  url "https:github.comosmcodeosmcoastlinearchiverefstagsv2.4.1.tar.gz"
+  homepage "https://osmcode.org/osmcoastline/"
+  url "https://ghfast.top/https://github.com/osmcode/osmcoastline/archive/refs/tags/v2.4.1.tar.gz"
   sha256 "3a76ed8c8481e5499c8fedbba3b6af4f33f73bbbfc4e6154ea50fe48ae7054a9"
   license "GPL-3.0-or-later"
   revision 1
@@ -34,12 +34,12 @@ class Osmcoastline < Formula
     # libunwind due to it being present in a library search path.
     if DevelopmentTools.clang_build_version >= 1500
       recursive_dependencies
-        .select { |d| d.name.match?(^llvm(@\d+)?$) }
+        .select { |d| d.name.match?(/^llvm(@\d+)?$/) }
         .map { |llvm_dep| llvm_dep.to_formula.opt_lib }
         .each { |llvm_lib| ENV.remove "HOMEBREW_LIBRARY_PATHS", llvm_lib }
     end
 
-    protozero = Formula["libosmium"].opt_libexec"include"
+    protozero = Formula["libosmium"].opt_libexec/"include"
     args = %W[
       -DPROTOZERO_INCLUDE_DIR=#{protozero}
     ]
@@ -49,13 +49,13 @@ class Osmcoastline < Formula
   end
 
   test do
-    (testpath"input.opl").write <<~EOS
+    (testpath/"input.opl").write <<~EOS
       n100 v1 x1.01 y1.01
       n101 v1 x1.04 y1.01
       n102 v1 x1.04 y1.04
       n103 v1 x1.01 y1.04
       w200 v1 Tnatural=coastline Nn100,n101,n102,n103,n100
     EOS
-    system bin"osmcoastline", "-v", "-o", "output.db", "input.opl"
+    system bin/"osmcoastline", "-v", "-o", "output.db", "input.opl"
   end
 end

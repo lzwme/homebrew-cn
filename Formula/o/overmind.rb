@@ -1,10 +1,10 @@
 class Overmind < Formula
   desc "Process manager for Procfile-based applications and tmux"
-  homepage "https:github.comDarthSimovermind"
-  url "https:github.comDarthSimovermindarchiverefstagsv2.5.1.tar.gz"
+  homepage "https://github.com/DarthSim/overmind"
+  url "https://ghfast.top/https://github.com/DarthSim/overmind/archive/refs/tags/v2.5.1.tar.gz"
   sha256 "d616b89465d488878ed2e1f79e66f8af5b5c2f1d3cf75c2b08e04fb04752d187"
   license "MIT"
-  head "https:github.comDarthSimovermind.git", branch: "master"
+  head "https://github.com/DarthSim/overmind.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "63ad87a46c888c096259183252addcd8ef53d521bf1a5e36fa3ef79b4a1c526a"
@@ -25,10 +25,10 @@ class Overmind < Formula
   end
 
   test do
-    expected_message = "overmind: open .Procfile: no such file or directory"
-    assert_match expected_message, shell_output("#{bin}overmind start 2>&1", 1)
-    (testpath"Procfile").write("test: echo 'test message'; sleep 1")
+    expected_message = "overmind: open ./Procfile: no such file or directory"
+    assert_match expected_message, shell_output("#{bin}/overmind start 2>&1", 1)
+    (testpath/"Procfile").write("test: echo 'test message'; sleep 1")
     expected_message = "test message"
-    assert_match expected_message, shell_output("#{bin}overmind start")
+    assert_match expected_message, shell_output("#{bin}/overmind start")
   end
 end

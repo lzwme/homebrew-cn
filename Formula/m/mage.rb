@@ -1,11 +1,11 @@
 class Mage < Formula
-  desc "Makerake-like build tool using Go"
-  homepage "https:magefile.org"
-  url "https:github.commagefilemage.git",
+  desc "Make/rake-like build tool using Go"
+  homepage "https://magefile.org"
+  url "https://github.com/magefile/mage.git",
       tag:      "v1.15.0",
       revision: "9e91a03eaa438d0d077aca5654c7757141536a60"
   license "Apache-2.0"
-  head "https:github.commagefilemage.git", branch: "master"
+  head "https://github.com/magefile/mage.git", branch: "master"
 
   bottle do
     rebuild 2
@@ -23,15 +23,15 @@ class Mage < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.commagefilemagemage.timestamp=#{time.iso8601}
-      -X github.commagefilemagemage.commitHash=#{Utils.git_short_head}
-      -X github.commagefilemagemage.gitTag=#{version}
+      -X github.com/magefile/mage/mage.timestamp=#{time.iso8601}
+      -X github.com/magefile/mage/mage.commitHash=#{Utils.git_short_head}
+      -X github.com/magefile/mage/mage.gitTag=#{version}
     ]
     system "go", "build", *std_go_args(ldflags:)
   end
 
   test do
-    assert_match "magefile.go created", shell_output("#{bin}mage -init 2>&1")
-    assert_path_exists testpath"magefile.go"
+    assert_match "magefile.go created", shell_output("#{bin}/mage -init 2>&1")
+    assert_path_exists testpath/"magefile.go"
   end
 end

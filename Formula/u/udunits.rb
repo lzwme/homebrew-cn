@@ -1,12 +1,12 @@
 class Udunits < Formula
   desc "Unidata unit conversion library"
-  homepage "https:docs.unidata.ucar.eduudunitscurrent"
-  url "https:downloads.unidata.ucar.eduudunits2.2.28udunits-2.2.28.tar.gz"
+  homepage "https://docs.unidata.ucar.edu/udunits/current/"
+  url "https://downloads.unidata.ucar.edu/udunits/2.2.28/udunits-2.2.28.tar.gz"
   sha256 "590baec83161a3fd62c00efa66f6113cec8a7c461e3f61a5182167e0cc5d579e"
   license "UCAR"
 
   livecheck do
-    url "https:downloads.unidata.ucar.eduudunitsrelease_info.json"
+    url "https://downloads.unidata.ucar.edu/udunits/release_info.json"
     strategy :json do |json|
       json["releases"]&.map { |item| item["version"] }
     end
@@ -31,7 +31,7 @@ class Udunits < Formula
   end
 
   head do
-    url "https:github.comUnidataUDUNITS-2.git", branch: "master"
+    url "https://github.com/Unidata/UDUNITS-2.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -48,11 +48,11 @@ class Udunits < Formula
 
   def install
     system "autoreconf", "--force", "--install", "--verbose" if build.head?
-    system ".configure", "--disable-silent-rules", *std_configure_args
+    system "./configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
   end
 
   test do
-    assert_match(1 kg = 1000 g, shell_output("#{bin}udunits2 -H kg -W g"))
+    assert_match(/1 kg = 1000 g/, shell_output("#{bin}/udunits2 -H kg -W g"))
   end
 end

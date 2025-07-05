@@ -1,10 +1,10 @@
 class Libgosu < Formula
   desc "2D game development library"
-  homepage "https:libgosu.org"
-  url "https:github.comgosugosuarchiverefstagsv1.4.6.tar.gz"
+  homepage "https://libgosu.org"
+  url "https://ghfast.top/https://github.com/gosu/gosu/archive/refs/tags/v1.4.6.tar.gz"
   sha256 "bbd4c4a868549702e190542f0dc5be8210c8290378ae9b24a75a86e57aa8f39e"
   license "MIT"
-  head "https:github.comgosugosu.git", branch: "master"
+  head "https://github.com/gosu/gosu.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -40,9 +40,9 @@ class Libgosu < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~CPP
+    (testpath/"test.cpp").write <<~CPP
       #include <stdlib.h>
-      #include <GosuGosu.hpp>
+      #include <Gosu/Gosu.hpp>
 
       class MyWindow : public Gosu::Window
       {
@@ -71,6 +71,6 @@ class Libgosu < Formula
     # Fails in Linux CI with "Could not initialize SDL Video: No available video device"
     return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
 
-    system ".test"
+    system "./test"
   end
 end

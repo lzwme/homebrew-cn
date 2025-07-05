@@ -1,10 +1,10 @@
 class Vvenc < Formula
   desc "Fraunhofer Versatile Video Encoder"
-  homepage "https:github.comfraunhoferhhivvenc"
-  url "https:github.comfraunhoferhhivvencarchiverefstagsv1.13.1.tar.gz"
+  homepage "https://github.com/fraunhoferhhi/vvenc"
+  url "https://ghfast.top/https://github.com/fraunhoferhhi/vvenc/archive/refs/tags/v1.13.1.tar.gz"
   sha256 "9d0d88319b9c200ebf428471a3f042ea7dcd868e8be096c66e19120a671a0bc8"
   license "BSD-3-Clause-Clear"
-  head "https:github.comfraunhoferhhivvenc.git", branch: "master"
+  head "https://github.com/fraunhoferhhi/vvenc.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "2e526df41954df8bd763675725849ffc2567bf9f44133309939d0d6623e0bb98"
@@ -29,18 +29,18 @@ class Vvenc < Formula
 
   test do
     resource "homebrew-test_video" do
-      url "https:raw.githubusercontent.comfraunhoferhhivvencmastertestdataRTn23_80x44p15_f15.yuv"
+      url "https://ghfast.top/https://raw.githubusercontent.com/fraunhoferhhi/vvenc/master/test/data/RTn23_80x44p15_f15.yuv"
       sha256 "ecd2ef466dd2975f4facc889e0ca128a6bea6645df61493a96d8e7763b6f3ae9"
     end
 
     resource("homebrew-test_video").stage testpath
-    system bin"vvencapp",
-           "-i", testpath"RTn23_80x44p15_f15.yuv",
+    system bin/"vvencapp",
+           "-i", testpath/"RTn23_80x44p15_f15.yuv",
            "-s", "360x640",
-           "--fps", "601",
+           "--fps", "60/1",
            "--format", "yuv420_10",
            "--hdr", "hdr10_2020",
-           "-o", testpath"RTn23_80x44p15_f15.vvc"
-    assert_path_exists testpath"RTn23_80x44p15_f15.vvc"
+           "-o", testpath/"RTn23_80x44p15_f15.vvc"
+    assert_path_exists testpath/"RTn23_80x44p15_f15.vvc"
   end
 end

@@ -1,10 +1,10 @@
 class Asnmap < Formula
   desc "Quickly map organization network ranges using ASN information"
-  homepage "https:github.comprojectdiscoveryasnmap"
-  url "https:github.comprojectdiscoveryasnmaparchiverefstagsv1.1.1.tar.gz"
+  homepage "https://github.com/projectdiscovery/asnmap"
+  url "https://ghfast.top/https://github.com/projectdiscovery/asnmap/archive/refs/tags/v1.1.1.tar.gz"
   sha256 "3d48657278a1f1fa27528e66d5cf4bcb6f3ee7ce26a518fcaf6ce9a9c9a8e317"
   license "MIT"
-  head "https:github.comprojectdiscoveryasnmap.git", branch: "main"
+  head "https://github.com/projectdiscovery/asnmap.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "b2f106b6ccfbce290cf32265b1198f1056b9622cd2fcbdb7e6fe146098bb98da"
@@ -20,16 +20,16 @@ class Asnmap < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), ".cmdasnmap"
+    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/asnmap"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}asnmap -version 2>&1")
+    assert_match version.to_s, shell_output("#{bin}/asnmap -version 2>&1")
 
     # Skip linux CI test as test not working there
     return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
 
     # need API key for IP lookup test, thus just run empty binary test
-    assert_match "no input defined", shell_output("#{bin}asnmap 2>&1", 1)
+    assert_match "no input defined", shell_output("#{bin}/asnmap 2>&1", 1)
   end
 end

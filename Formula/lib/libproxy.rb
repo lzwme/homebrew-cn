@@ -1,10 +1,10 @@
 class Libproxy < Formula
   desc "Library that provides automatic proxy configuration management"
-  homepage "https:libproxy.github.iolibproxy"
-  url "https:github.comlibproxylibproxyarchiverefstags0.5.10.tar.gz"
+  homepage "https://libproxy.github.io/libproxy/"
+  url "https://ghfast.top/https://github.com/libproxy/libproxy/archive/refs/tags/0.5.10.tar.gz"
   sha256 "84734a0b89c95f4834fd55c26b362be2fb846445383e37f5209691694ad2b5de"
   license "LGPL-2.1-or-later"
-  head "https:github.comlibproxylibproxy.git", branch: "master"
+  head "https://github.com/libproxy/libproxy.git", branch: "master"
 
   bottle do
     sha256 cellar: :any, arm64_sequoia: "f7eaa3e6e5af9257d15489974195fd4e3d88620ff7955a0af33ec49f95557dfc"
@@ -39,6 +39,6 @@ class Libproxy < Formula
   end
 
   test do
-    assert_equal "direct:", pipe_output("#{bin}proxy 127.0.0.1").chomp
+    assert_equal "direct://", pipe_output("#{bin}/proxy 127.0.0.1").chomp
   end
 end

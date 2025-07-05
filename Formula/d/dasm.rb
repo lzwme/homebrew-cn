@@ -1,7 +1,7 @@
 class Dasm < Formula
   desc "Macro assembler with support for several 8-bit microprocessors"
-  homepage "https:dasm-assembler.github.io"
-  url "https:github.comdasm-assemblerdasmarchiverefstags2.20.14.1.tar.gz"
+  homepage "https://dasm-assembler.github.io/"
+  url "https://ghfast.top/https://github.com/dasm-assembler/dasm/archive/refs/tags/2.20.14.1.tar.gz"
   sha256 "ec71ffd10eeaa70bf7587ee0d79a92cd3f0a017c0d6d793e37d10359ceea663a"
   license "GPL-2.0-or-later"
   version_scheme 1
@@ -31,7 +31,7 @@ class Dasm < Formula
   end
 
   test do
-    path = testpath"a.asm"
+    path = testpath/"a.asm"
     path.write <<~ASM
       ; Instructions must be preceded by whitespace
         processor 6502
@@ -39,8 +39,8 @@ class Dasm < Formula
         jmp $fce2
     ASM
 
-    system bin"dasm", path
-    code = (testpath"a.out").binread.unpack("C*")
+    system bin/"dasm", path
+    code = (testpath/"a.out").binread.unpack("C*")
     assert_equal [0x00, 0xc0, 0x4c, 0xe2, 0xfc], code
   end
 end

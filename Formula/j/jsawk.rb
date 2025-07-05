@@ -1,10 +1,10 @@
 class Jsawk < Formula
   desc "Like awk, but for JSON, using JavaScript objects and arrays"
-  homepage "https:github.commichajsawk"
-  url "https:github.commichajsawkarchiverefstags1.4.tar.gz"
+  homepage "https://github.com/micha/jsawk"
+  url "https://ghfast.top/https://github.com/micha/jsawk/archive/refs/tags/1.4.tar.gz"
   sha256 "3d38ffb4b9c6ff7f17072a12c5817ffe68bd0ab58d6182de300fc1e587d34530"
   license "BSD-3-Clause"
-  head "https:github.commichajsawk.git", branch: "master"
+  head "https://github.com/micha/jsawk.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -20,7 +20,7 @@ class Jsawk < Formula
   end
 
   test do
-    cmd = %Q(#{bin}jsawk 'this.a = "foo"')
+    cmd = %Q(#{bin}/jsawk 'this.a = "foo"')
     assert_equal %Q({"a":"foo"}\n), pipe_output(cmd, "{}")
   end
 end

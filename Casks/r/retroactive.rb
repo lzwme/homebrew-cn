@@ -2,10 +2,10 @@ cask "retroactive" do
   version "2.1"
   sha256 "bb1db2b54880164d577e2bc5e083046c2d3c6749de511652a84c5f7d2ce14142"
 
-  url "https:github.comcormiertyshawn895Retroactivereleasesdownload#{version}Retroactive.#{version}.zip"
+  url "https://ghfast.top/https://github.com/cormiertyshawn895/Retroactive/releases/download/#{version}/Retroactive.#{version}.zip"
   name "Retroactive"
   desc "Run Apple apps on incompatible OS versions"
-  homepage "https:github.comcormiertyshawn895Retroactive"
+  homepage "https://github.com/cormiertyshawn895/Retroactive"
 
   no_autobump! because: :requires_manual_review
 
@@ -13,9 +13,9 @@ cask "retroactive" do
 
   depends_on macos: ">= :high_sierra"
 
-  app "Retroactive #{version}Retroactive.app"
+  app "Retroactive #{version}/Retroactive.app"
 
-  zap delete: "~LibraryCachescom.retroactive.Retroactive"
+  zap delete: "~/Library/Caches/com.retroactive.Retroactive"
 
   caveats do
     requires_rosetta

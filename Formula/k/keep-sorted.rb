@@ -1,11 +1,11 @@
 class KeepSorted < Formula
   desc "Language-agnostic formatter that sorts selected lines"
-  homepage "https:github.comgooglekeep-sorted"
-  url "https:github.comgooglekeep-sorted.git",
+  homepage "https://github.com/google/keep-sorted"
+  url "https://github.com/google/keep-sorted.git",
       tag:      "v0.6.1",
       revision: "3f9cf7d52cc6832a6752433472925981f89d516f"
   license "Apache-2.0"
-  head "https:github.comgooglekeep-sorted.git", branch: "main"
+  head "https://github.com/google/keep-sorted.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "1d466d5e894f29a85aba011c84521034b3617336ff4197b8212b70f31b4c8344"
@@ -23,7 +23,7 @@ class KeepSorted < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}keep-sorted --version")
+    assert_match version.to_s, shell_output("#{bin}/keep-sorted --version")
     test_file = testpath + "test_input"
     test_file.write <<~EOS
       line will not be touched.
@@ -44,7 +44,7 @@ class KeepSorted < Formula
       line will also not be touched.
     EOS
 
-    system bin"keep-sorted", test_file
+    system bin/"keep-sorted", test_file
     assert_equal expected, test_file.read
   end
 end

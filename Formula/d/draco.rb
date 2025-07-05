@@ -1,7 +1,7 @@
 class Draco < Formula
   desc "3D geometric mesh and point cloud compression library"
-  homepage "https:google.github.iodraco"
-  url "https:github.comgoogledracoarchiverefstags1.5.7.tar.gz"
+  homepage "https://google.github.io/draco/"
+  url "https://ghfast.top/https://github.com/google/draco/archive/refs/tags/1.5.7.tar.gz"
   sha256 "bf6b105b79223eab2b86795363dfe5e5356050006a96521477973aba8f036fe1"
   license "Apache-2.0"
 
@@ -28,14 +28,14 @@ class Draco < Formula
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 
-    pkgshare.install "testdatacube_att.ply"
+    pkgshare.install "testdata/cube_att.ply"
   end
 
   test do
-    cp pkgshare"cube_att.ply", testpath
+    cp pkgshare/"cube_att.ply", testpath
 
-    output = shell_output("#{bin}draco_encoder -i cube_att.ply -o cube_att.drc")
-    assert_path_exists testpath"cube_att.drc"
+    output = shell_output("#{bin}/draco_encoder -i cube_att.ply -o cube_att.drc")
+    assert_path_exists testpath/"cube_att.drc"
     assert_match <<~EOS, output
       Encoder options:
         Compression level = 7

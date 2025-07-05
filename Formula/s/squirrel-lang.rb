@@ -1,14 +1,14 @@
 class SquirrelLang < Formula
   desc "High level, imperative, object-oriented programming language"
-  homepage "http:www.squirrel-lang.org"
-  url "https:downloads.sourceforge.netprojectsquirrelsquirrel3squirrel%203.2%20stablesquirrel_3_2_stable.tar.gz"
+  homepage "http://www.squirrel-lang.org"
+  url "https://downloads.sourceforge.net/project/squirrel/squirrel3/squirrel%203.2%20stable/squirrel_3_2_stable.tar.gz"
   sha256 "211f1452f00b24b94f60ba44b50abe327fd2735600a7bacabc5b774b327c81db"
   license "MIT"
-  head "https:github.comalbertodemichelissquirrel.git", branch: "master"
+  head "https://github.com/albertodemichelis/squirrel.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(%r{url=.*?squirrel[._-]v?(\d+(?:[_-]\d+)+)[._-]stable\.t}i)
+    regex(%r{url=.*?/squirrel[._-]v?(\d+(?:[_-]\d+)+)[._-]stable\.t}i)
     strategy :sourceforge do |page, regex|
       page.scan(regex).map { |match| match.first.tr("_", ".") }
     end
@@ -34,26 +34,26 @@ class SquirrelLang < Formula
     # build steps for stable and HEAD builds.
     squirrel_subdir = "squirrel#{version.major}"
     if Dir.exist?(squirrel_subdir)
-      mv Dir["squirrel#{version.major}*"], "."
+      mv Dir["squirrel#{version.major}/*"], "."
       rmdir squirrel_subdir
     end
 
     system "make"
     prefix.install %w[bin include lib]
-    doc.install Dir["doc*.pdf"]
+    doc.install Dir["doc/*.pdf"]
     doc.install %w[etc samples]
-    # See: https:github.comHomebrewhomebrewpull9977
-    (lib+"pkgconfiglibsquirrel.pc").write pc_file
+    # See: https://github.com/Homebrew/homebrew/pull/9977
+    (lib+"pkgconfig/libsquirrel.pc").write pc_file
   end
 
   def pc_file
     <<~EOS
       prefix=#{opt_prefix}
       exec_prefix=${prefix}
-      libdir=${exec_prefix}lib
-      includedir=${prefix}include
-      bindir=${prefix}bin
-      ldflags=  -L${prefix}lib
+      libdir=/${exec_prefix}/lib
+      includedir=/${prefix}/include
+      bindir=/${prefix}/bin
+      ldflags=  -L/${prefix}/lib
 
       Name: libsquirrel
       Description: squirrel library
@@ -66,9 +66,9 @@ class SquirrelLang < Formula
   end
 
   test do
-    (testpath"hello.nut").write <<~EOS
+    (testpath/"hello.nut").write <<~EOS
       print("hello");
     EOS
-    assert_equal "hello", shell_output("#{bin}sq #{testpath}hello.nut").chomp
+    assert_equal "hello", shell_output("#{bin}/sq #{testpath}/hello.nut").chomp
   end
 end

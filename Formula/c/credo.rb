@@ -1,7 +1,7 @@
 class Credo < Formula
   desc "Static code analysis tool for the Elixir"
-  homepage "https:github.comrrrenecredo"
-  url "https:github.comrrrenecredoarchiverefstagsv1.7.12.tar.gz"
+  homepage "https://github.com/rrrene/credo"
+  url "https://ghfast.top/https://github.com/rrrene/credo/archive/refs/tags/v1.7.12.tar.gz"
   sha256 "afdfb4e52fa073b3279c75d70a084d3813ee6966a45d1534557275eb240fd031"
   license "MIT"
 
@@ -19,8 +19,8 @@ class Credo < Formula
 
   def install
     ENV["MIX_ENV"] = "prod"
-    ENV["MIX_HOME"] = buildpath".mix"
-    ENV["HEX_HOME"] = buildpath".hex"
+    ENV["MIX_HOME"] = buildpath/".mix"
+    ENV["HEX_HOME"] = buildpath/".hex"
 
     system "mix", "deps.get", "--only", "prod"
     system "mix", "compile"
@@ -30,9 +30,9 @@ class Credo < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}credo --version")
+    assert_match version.to_s, shell_output("#{bin}/credo --version")
 
-    (testpath"test.ex").write <<~EOS
+    (testpath/"test.ex").write <<~EOS
       defmodule Test do
         @moduledoc """
         Test module for Credo.
@@ -43,6 +43,6 @@ class Credo < Formula
       end
     EOS
 
-    assert_match "2 modsfuns, found no issues", shell_output("#{bin}credo #{testpath}test.ex")
+    assert_match "2 mods/funs, found no issues", shell_output("#{bin}/credo #{testpath}/test.ex")
   end
 end

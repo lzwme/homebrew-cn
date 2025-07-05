@@ -1,16 +1,16 @@
 class Kyverno < Formula
   desc "Kubernetes Native Policy Management"
-  homepage "https:kyverno.io"
-  url "https:github.comkyvernokyvernoarchiverefstagsv1.14.4.tar.gz"
+  homepage "https://kyverno.io/"
+  url "https://ghfast.top/https://github.com/kyverno/kyverno/archive/refs/tags/v1.14.4.tar.gz"
   sha256 "92daf7aa0cc283a86402f722879693cf1467d008ef9c2d2e77d6977d615835cb"
   license "Apache-2.0"
-  head "https:github.comkyvernokyverno.git", branch: "main"
+  head "https://github.com/kyverno/kyverno.git", branch: "main"
 
   # This regex is intended to match Kyverno version tags (e.g., `v1.2.3`) and
   # omit unrelated tags (e.g., `helm-chart-v2.0.3`).
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -26,21 +26,21 @@ class Kyverno < Formula
   depends_on "go" => :build
 
   def install
-    project = "github.comkyvernokyverno"
+    project = "github.com/kyverno/kyverno"
     ldflags = %W[
       -s -w
-      -X #{project}pkgversion.BuildVersion=#{version}
-      -X #{project}pkgversion.BuildHash=
-      -X #{project}pkgversion.BuildTime=#{time.iso8601}
+      -X #{project}/pkg/version.BuildVersion=#{version}
+      -X #{project}/pkg/version.BuildHash=
+      -X #{project}/pkg/version.BuildTime=#{time.iso8601}
     ]
-    system "go", "build", *std_go_args(ldflags:), ".cmdclikubectl-kyverno"
+    system "go", "build", *std_go_args(ldflags:), "./cmd/cli/kubectl-kyverno"
 
-    generate_completions_from_executable(bin"kyverno", "completion")
+    generate_completions_from_executable(bin/"kyverno", "completion")
   end
 
   test do
-    assert_match "No test yamls available", shell_output("#{bin}kyverno test .")
+    assert_match "No test yamls available", shell_output("#{bin}/kyverno test .")
 
-    assert_match version.to_s, shell_output("#{bin}kyverno version")
+    assert_match version.to_s, shell_output("#{bin}/kyverno version")
   end
 end

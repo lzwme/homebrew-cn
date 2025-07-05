@@ -1,16 +1,16 @@
 class Liblqr < Formula
-  desc "CC++ seam carving library"
-  homepage "https:liblqr.wikidot.com"
+  desc "C/C++ seam carving library"
+  homepage "https://liblqr.wikidot.com/"
   license "LGPL-3.0-only"
-  head "https:github.comcarlobaldassiliblqr.git", branch: "master"
+  head "https://github.com/carlobaldassi/liblqr.git", branch: "master"
 
   stable do
-    url "https:github.comcarlobaldassiliblqrarchiverefstagsv0.4.3.tar.gz"
+    url "https://ghfast.top/https://github.com/carlobaldassi/liblqr/archive/refs/tags/v0.4.3.tar.gz"
     sha256 "64b0c4ac76d39cca79501b3f53544af3fc5f72b536ac0f28d2928319bfab6def"
 
     # Fix -flat_namespace being used on Big Sur and later.
     patch do
-      url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-big_sur.diff"
+      url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-big_sur.diff"
       sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
     end
   end
@@ -35,12 +35,12 @@ class Liblqr < Formula
   end
 
   def install
-    system ".configure", "--enable-install-man", *std_configure_args
+    system "./configure", "--enable-install-man", *std_configure_args
     system "make", "install"
   end
 
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include <lqr.h>
 
       int main() {
@@ -56,10 +56,10 @@ class Liblqr < Formula
     C
 
     system ENV.cc, "test.c", "-o", "test",
-                   "-I#{include}lqr-1",
-                   "-I#{Formula["glib"].opt_include}glib-2.0",
-                   "-I#{Formula["glib"].opt_lib}glib-2.0include",
+                   "-I#{include}/lqr-1",
+                   "-I#{Formula["glib"].opt_include}/glib-2.0",
+                   "-I#{Formula["glib"].opt_lib}/glib-2.0/include",
                    "-L#{lib}", "-llqr-1"
-    system ".test"
+    system "./test"
   end
 end

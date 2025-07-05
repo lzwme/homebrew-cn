@@ -1,10 +1,10 @@
 class Ftxui < Formula
   desc "C++ Functional Terminal User Interface"
-  homepage "https:github.comArthurSonzogniFTXUI"
-  url "https:github.comArthurSonzogniFTXUIarchiverefstagsv6.1.9.tar.gz"
+  homepage "https://github.com/ArthurSonzogni/FTXUI"
+  url "https://ghfast.top/https://github.com/ArthurSonzogni/FTXUI/archive/refs/tags/v6.1.9.tar.gz"
   sha256 "45819c1e54914783d4a1ca5633885035d74146778a1f74e1213cdb7b76340e71"
   license "MIT"
-  head "https:github.comArthurSonzogniFTXUI.git", branch: "main"
+  head "https://github.com/ArthurSonzogni/FTXUI.git", branch: "main"
 
   no_autobump! because: :requires_manual_review
 
@@ -37,8 +37,8 @@ class Ftxui < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~CPP
-      #include <ftxuidomelements.hpp>
+    (testpath/"test.cpp").write <<~CPP
+      #include <ftxui/dom/elements.hpp>
       int main() {
         using namespace ftxui;
         auto summary = [&] {
@@ -50,6 +50,6 @@ class Ftxui < Formula
       }
     CPP
     system ENV.cxx, "test.cpp", "-std=c++17", "-o", "test"
-    system ".test"
+    system "./test"
   end
 end

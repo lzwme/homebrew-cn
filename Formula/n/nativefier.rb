@@ -1,7 +1,7 @@
 class Nativefier < Formula
   desc "Wrap web apps natively"
-  homepage "https:github.comnativefiernativefier"
-  url "https:registry.npmjs.orgnativefier-nativefier-52.0.0.tgz"
+  homepage "https://github.com/nativefier/nativefier"
+  url "https://registry.npmjs.org/nativefier/-/nativefier-52.0.0.tgz"
   sha256 "483c4fc8e941d5f870c610150f61835ff92ee313688bd3262cf3dca6fb910876"
   license "MIT"
 
@@ -25,10 +25,10 @@ class Nativefier < Formula
 
   def install
     system "npm", "install", *std_npm_args
-    bin.install_symlink Dir["#{libexec}bin*"]
+    bin.install_symlink Dir["#{libexec}/bin/*"]
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}nativefier --version")
+    assert_match version.to_s, shell_output("#{bin}/nativefier --version")
   end
 end

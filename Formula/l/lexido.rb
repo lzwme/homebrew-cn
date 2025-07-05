@@ -1,10 +1,10 @@
 class Lexido < Formula
   desc "Innovative assistant for the command-line"
-  homepage "https:github.commicr0-devlexido"
-  url "https:github.commicr0-devlexidoarchiverefstagsv1.4.3.tar.gz"
+  homepage "https://github.com/micr0-dev/lexido"
+  url "https://ghfast.top/https://github.com/micr0-dev/lexido/archive/refs/tags/v1.4.3.tar.gz"
   sha256 "c39cf8f93cce2480773c9099ece1d8a90c1e350cf48cad56eebea96fbc04981f"
   license "AGPL-3.0-or-later"
-  head "https:github.commicr0-devlexido.git", branch: "main"
+  head "https://github.com/micr0-dev/lexido.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "f118ba60cdf4e4e921ff03359e5e57e481f6c2178e098cd3192305c1792ba054"
@@ -25,9 +25,9 @@ class Lexido < Formula
 
   test do
     # Run the `lexido` command and ensure it outputs the expected error message
-    output = shell_output("#{bin}lexido -l 2>&1", 1)
+    output = shell_output("#{bin}/lexido -l 2>&1", 1)
     assert_match "Error initializing ollama: ollama not installed on system,", output
     assert_match "please install it first using the guide on", output
-    assert_match "https:github.commicr0-devlexido?tab=readme-ov-file#running-locally", output
+    assert_match "https://github.com/micr0-dev/lexido?tab=readme-ov-file#running-locally", output
   end
 end

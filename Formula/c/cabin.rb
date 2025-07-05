@@ -1,10 +1,10 @@
 class Cabin < Formula
   desc "Package manager and build system for C++"
-  homepage "https:github.comcabinpkgcabin"
-  url "https:github.comcabinpkgcabinarchiverefstags0.12.1.tar.gz"
+  homepage "https://github.com/cabinpkg/cabin"
+  url "https://ghfast.top/https://github.com/cabinpkg/cabin/archive/refs/tags/0.12.1.tar.gz"
   sha256 "a8e038452b28880a464885dcbfe515441e0a066e673d3cce5df46871ad4fa38f"
   license "Apache-2.0"
-  head "https:github.comcabinpkgcabin.git", branch: "main"
+  head "https://github.com/cabinpkg/cabin.git", branch: "main"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "f38e629c4c0d3fd5460f41643ce97d2fdeffe237112eaf72937f9570406fa60f"
@@ -53,14 +53,14 @@ class Cabin < Formula
   def install
     ENV.llvm_clang if OS.mac? && (DevelopmentTools.clang_build_version <= 1499 || MacOS.version == :ventura)
     # Avoid cloning `toml11` at build-time.
-    (buildpath"buildDEPStoml11").install_symlink Formula["toml11"].opt_include
+    (buildpath/"build/DEPS/toml11").install_symlink Formula["toml11"].opt_include
     system "make", "RELEASE=1", "PREFIX=#{prefix}", "install"
   end
 
   test do
-    system bin"cabin", "new", "hello_world"
+    system bin/"cabin", "new", "hello_world"
     cd "hello_world" do
-      assert_equal "Hello, world!", shell_output("#{bin}cabin run").split("\n").last
+      assert_equal "Hello, world!", shell_output("#{bin}/cabin run").split("\n").last
     end
   end
 end

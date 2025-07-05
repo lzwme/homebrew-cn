@@ -2,19 +2,19 @@ cask "moebius" do
   version "1.0.29"
   sha256 "014e355767fa27796a6f5f5778b608a3a802ba064655c23776fa89f0dd1163ba"
 
-  url "https:github.comblocktronicsmoebiusreleasesdownload#{version}Moebius.dmg",
-      verified: "github.comblocktronicsmoebius"
+  url "https://ghfast.top/https://github.com/blocktronics/moebius/releases/download/#{version}/Moebius.dmg",
+      verified: "github.com/blocktronics/moebius/"
   name "Moebius"
   desc "ANSI editor"
-  homepage "https:blocktronics.github.iomoebius"
+  homepage "https://blocktronics.github.io/moebius/"
 
   no_autobump! because: :requires_manual_review
 
   app "Moebius.app"
 
   zap trash: [
-    "~LibraryApplication SupportMoebius",
-    "~LibraryPreferencesorg.andyherbert.moebius.plist",
+    "~/Library/Application Support/Moebius",
+    "~/Library/Preferences/org.andyherbert.moebius.plist",
   ]
 
   caveats do

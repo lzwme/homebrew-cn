@@ -5,11 +5,11 @@ cask "crosspaste" do
   sha256 arm:   "2a323b87a6bd52157d1501b80cd549ba4e4639ff7491243d7a9357d5fe26b05e",
          intel: "10f349c4172b6cb90929d571cc43087568834aaf73ff95e1805f2babaf7aaaee"
 
-  url "https:github.comCrossPastecrosspaste-desktopreleasesdownload#{version}crosspaste-#{version.major_minor_patch}-#{version.split(".").last}-mac-#{arch}.zip",
-      verified: "github.comCrossPastecrosspaste-desktop"
+  url "https://ghfast.top/https://github.com/CrossPaste/crosspaste-desktop/releases/download/#{version}/crosspaste-#{version.major_minor_patch}-#{version.split(".").last}-mac-#{arch}.zip",
+      verified: "github.com/CrossPaste/crosspaste-desktop/"
   name "CrossPaste"
   desc "Universal Pasteboard Across Devices"
-  homepage "https:crosspaste.comen"
+  homepage "https://crosspaste.com/en/"
 
   livecheck do
     url :url
@@ -21,10 +21,10 @@ cask "crosspaste" do
   app "CrossPaste.app"
 
   zap trash: [
-    "~LibraryApplication SupportCrossPaste",
-    "~LibraryHTTPStoragescom.crosspaste.mac",
-    "~LibraryHTTPStoragescom.crosspaste.mac.binarycookies",
-    "~LibraryLaunchAgentscom.crosspaste.mac.plist",
-    "~LibraryPreferencescom.crosspaste.mac.plist",
+    "~/Library/Application Support/CrossPaste",
+    "~/Library/HTTPStorages/com.crosspaste.mac",
+    "~/Library/HTTPStorages/com.crosspaste.mac.binarycookies",
+    "~/Library/LaunchAgents/com.crosspaste.mac.plist",
+    "~/Library/Preferences/com.crosspaste.mac.plist",
   ]
 end

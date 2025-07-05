@@ -1,10 +1,10 @@
 class Runme < Formula
   desc "Execute commands inside your runbooks, docs, and READMEs"
-  homepage "https:runme.dev"
-  url "https:github.comrunmedevrunmearchiverefstagsv3.14.2.tar.gz"
+  homepage "https://runme.dev/"
+  url "https://ghfast.top/https://github.com/runmedev/runme/archive/refs/tags/v3.14.2.tar.gz"
   sha256 "af3d1fae4468f740ea9da6dffc9fbe010f391e0521377d46887bc5129f07a1fa"
   license "Apache-2.0"
-  head "https:github.comrunmedevrunme.git", branch: "main"
+  head "https://github.com/runmedev/runme.git", branch: "main"
 
   no_autobump! because: :requires_manual_review
 
@@ -22,18 +22,18 @@ class Runme < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.comrunmedevrunmev3internalversion.BuildDate=#{time.iso8601}
-      -X github.comrunmedevrunmev3internalversion.BuildVersion=#{version}
-      -X github.comrunmedevrunmev3internalversion.Commit=#{tap.user}
+      -X github.com/runmedev/runme/v3/internal/version.BuildDate=#{time.iso8601}
+      -X github.com/runmedev/runme/v3/internal/version.BuildVersion=#{version}
+      -X github.com/runmedev/runme/v3/internal/version.Commit=#{tap.user}
     ]
 
     system "go", "build", *std_go_args(ldflags:)
-    generate_completions_from_executable(bin"runme", "completion")
+    generate_completions_from_executable(bin/"runme", "completion")
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}runme --version")
-    markdown = (testpath"README.md")
+    assert_match version.to_s, shell_output("#{bin}/runme --version")
+    markdown = (testpath/"README.md")
     markdown.write <<~MARKDOWN
       # Some Markdown
 
@@ -43,7 +43,7 @@ class Runme < Formula
       echo "Hello World"
       ```
     MARKDOWN
-    assert_match "Hello World", shell_output("#{bin}runme run --git-ignore=false foobar")
-    assert_match "foobar", shell_output("#{bin}runme list --git-ignore=false")
+    assert_match "Hello World", shell_output("#{bin}/runme run --git-ignore=false foobar")
+    assert_match "foobar", shell_output("#{bin}/runme list --git-ignore=false")
   end
 end

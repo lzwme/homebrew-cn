@@ -1,7 +1,7 @@
 class Ctpv < Formula
   desc "Image previews for lf file manager"
-  homepage "https:github.comNikitaIvanovVctpv"
-  url "https:github.comNikitaIvanovVctpvarchiverefstagsv1.1.tar.gz"
+  homepage "https://github.com/NikitaIvanovV/ctpv"
+  url "https://ghfast.top/https://github.com/NikitaIvanovV/ctpv/archive/refs/tags/v1.1.tar.gz"
   sha256 "29e458fbc822e960f052b47a1550cb149c28768615cc2dddf21facc5c86f7463"
   license "MIT"
 
@@ -30,7 +30,7 @@ class Ctpv < Formula
   end
 
   def install
-    # Workaround for arm64 linux, issue ref: https:github.comNikitaIvanovVctpvissues101
+    # Workaround for arm64 linux, issue ref: https://github.com/NikitaIvanovV/ctpv/issues/101
     ENV.append_to_cflags "-fsigned-char" if OS.linux? && Hardware::CPU.arm?
 
     system "make", "PREFIX=#{prefix}", "install"
@@ -38,7 +38,7 @@ class Ctpv < Formula
 
   test do
     file = test_fixtures("test.diff")
-    output = shell_output("#{bin}ctpv #{file}")
+    output = shell_output("#{bin}/ctpv #{file}")
     assert_match shell_output("cat #{file}"), output
   end
 end

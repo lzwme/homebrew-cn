@@ -1,13 +1,13 @@
 class MidnightCommander < Formula
   desc "Terminal-based visual file manager"
-  homepage "https:www.midnight-commander.org"
-  url "https:ftp.osuosl.orgpubmidnightcommandermc-4.8.33.tar.xz"
+  homepage "https://www.midnight-commander.org/"
+  url "https://ftp.osuosl.org/pub/midnightcommander/mc-4.8.33.tar.xz"
   sha256 "cae149d42f844e5185d8c81d7db3913a8fa214c65f852200a9d896b468af164c"
   license "GPL-3.0-or-later"
 
   livecheck do
-    url "https:ftp.osuosl.orgpubmidnightcommander"
-    regex(href=.*?mc[._-]v?(\d+(?:\.\d+)+)\.ti)
+    url "https://ftp.osuosl.org/pub/midnightcommander/"
+    regex(/href=.*?mc[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   bottle do
@@ -21,7 +21,7 @@ class MidnightCommander < Formula
   end
 
   head do
-    url "https:github.comMidnightCommandermc.git", branch: "master"
+    url "https://github.com/MidnightCommander/mc.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -50,17 +50,17 @@ class MidnightCommander < Formula
       --enable-vfs-sftp
     ]
 
-    system ".autogen.sh" if build.head?
-    system ".configure", *args, *std_configure_args
+    system "./autogen.sh" if build.head?
+    system "./configure", *args, *std_configure_args
     system "make", "install"
 
     if OS.mac?
-      inreplace share"mcsyntaxSyntax", Superenv.shims_path, "usrbin"
-      bin.env_script_all_files(libexec"bin", PATH: "#{Formula["diffutils"].opt_bin}:$PATH")
+      inreplace share/"mc/syntax/Syntax", Superenv.shims_path, "/usr/bin"
+      bin.env_script_all_files(libexec/"bin", PATH: "#{Formula["diffutils"].opt_bin}:$PATH")
     end
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}mc --version")
+    assert_match version.to_s, shell_output("#{bin}/mc --version")
   end
 end

@@ -1,10 +1,10 @@
 class Pomsky < Formula
   desc "Regular expression language"
-  homepage "https:pomsky-lang.org"
-  url "https:github.compomsky-langpomskyarchiverefstagsv0.11.tar.gz"
+  homepage "https://pomsky-lang.org/"
+  url "https://ghfast.top/https://github.com/pomsky-lang/pomsky/archive/refs/tags/v0.11.tar.gz"
   sha256 "602cf73d7f7343b8c59ae82973635f5f62f26e2fe341fa990fca5fe504736384"
   license any_of: ["Apache-2.0", "MIT"]
-  head "https:github.compomsky-langpomsky.git", branch: "main"
+  head "https://github.com/pomsky-lang/pomsky.git", branch: "main"
 
   no_autobump! because: :requires_manual_review
 
@@ -24,15 +24,15 @@ class Pomsky < Formula
   def install
     system "cargo", "install", *std_cargo_args(path: "pomsky-bin")
 
-    bash_completion.install "completionspomsky.bash" => "pomsky"
-    fish_completion.install "completionspomsky.fish"
-    zsh_completion.install "completionspomsky.zsh" => "_pomsky"
+    bash_completion.install "completions/pomsky.bash" => "pomsky"
+    fish_completion.install "completions/pomsky.fish"
+    zsh_completion.install "completions/pomsky.zsh" => "_pomsky"
   end
 
   test do
     assert_match "Backslash escapes are not supported",
-      shell_output("#{bin}pomsky \"'Hello world'* \\X+\" 2>&1", 1)
+      shell_output("#{bin}/pomsky \"'Hello world'* \\X+\" 2>&1", 1)
 
-    assert_match version.to_s, shell_output("#{bin}pomsky --version")
+    assert_match version.to_s, shell_output("#{bin}/pomsky --version")
   end
 end

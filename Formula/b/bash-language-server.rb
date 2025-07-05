@@ -1,7 +1,7 @@
 class BashLanguageServer < Formula
   desc "Language Server for Bash"
-  homepage "https:github.combash-lspbash-language-server"
-  url "https:registry.npmjs.orgbash-language-server-bash-language-server-5.6.0.tgz"
+  homepage "https://github.com/bash-lsp/bash-language-server"
+  url "https://registry.npmjs.org/bash-language-server/-/bash-language-server-5.6.0.tgz"
   sha256 "56d22481ffd0eed3edd23d1130554da31dc186d935202f08cf7ce3894fe801be"
   license "MIT"
 
@@ -13,7 +13,7 @@ class BashLanguageServer < Formula
 
   def install
     system "npm", "install", *std_npm_args
-    bin.install_symlink Dir["#{libexec}bin*"]
+    bin.install_symlink Dir["#{libexec}/bin/*"]
   end
 
   test do
@@ -29,7 +29,7 @@ class BashLanguageServer < Formula
       }
     JSON
     input = "Content-Length: #{json.size}\r\n\r\n#{json}"
-    output = pipe_output("#{bin}bash-language-server start", input, 0)
-    assert_match(^Content-Length: \d+i, output)
+    output = pipe_output("#{bin}/bash-language-server start", input, 0)
+    assert_match(/^Content-Length: \d+/i, output)
   end
 end

@@ -1,14 +1,14 @@
 class Liblinear < Formula
   desc "Library for large linear classification"
-  homepage "https:www.csie.ntu.edu.tw~cjlinliblinear"
-  url "https:www.csie.ntu.edu.tw~cjlinliblinearoldfilesliblinear-2.49.tar.gz"
+  homepage "https://www.csie.ntu.edu.tw/~cjlin/liblinear/"
+  url "https://www.csie.ntu.edu.tw/~cjlin/liblinear/oldfiles/liblinear-2.49.tar.gz"
   sha256 "166ca3c741b2207a74978cdb55077261be43b1e58e55f2b4c4f40e6ec1d8a347"
   license "BSD-3-Clause"
-  head "https:github.comcjlin1liblinear.git", branch: "master"
+  head "https://github.com/cjlin1/liblinear.git", branch: "master"
 
   livecheck do
-    url "https:www.csie.ntu.edu.tw~cjlinliblinearoldfiles"
-    regex(href=.*?liblinear[._-]v?(\d+(?:\.\d+)+)\.ti)
+    url "https://www.csie.ntu.edu.tw/~cjlin/liblinear/oldfiles/"
+    regex(/href=.*?liblinear[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   bottle do
@@ -23,13 +23,13 @@ class Liblinear < Formula
 
   # Fix sonames
   patch :p0 do
-    url "https:raw.githubusercontent.comHomebrewformula-patchesbac35ae9140405dec00f1f700d2ecc27cf82526bliblinearpatch-Makefile.diff"
+    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/bac35ae9140405dec00f1f700d2ecc27cf82526b/liblinear/patch-Makefile.diff"
     sha256 "11a47747918f665d219b108fac073c626779555b5022903c9b240a4c29bbc2a0"
   end
 
   def install
-    soversion_regex = ^SHVER = (\d+)$
-    soversion = (buildpath"Makefile").read
+    soversion_regex = /^SHVER = (\d+)$/
+    soversion = (buildpath/"Makefile").read
                                       .lines
                                       .grep(soversion_regex)
                                       .first[soversion_regex, 1]
@@ -41,7 +41,7 @@ class Liblinear < Formula
   end
 
   test do
-    (testpath"train_classification.txt").write <<~EOS
+    (testpath/"train_classification.txt").write <<~EOS
       +1 201:1.2 3148:1.8 3983:1 4882:1
       -1 874:0.3 3652:1.1 3963:1 6179:1
       +1 1168:1.2 3318:1.2 3938:1.8 4481:1
@@ -49,6 +49,6 @@ class Liblinear < Formula
       -1 99:1 3057:1 3957:1 5838:0.3
     EOS
 
-    system bin"train", "train_classification.txt"
+    system bin/"train", "train_classification.txt"
   end
 end

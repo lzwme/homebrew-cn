@@ -1,10 +1,10 @@
 class Kubeaudit < Formula
   desc "Helps audit your Kubernetes clusters against common security controls"
-  homepage "https:github.comShopifykubeaudit"
-  url "https:github.comShopifykubeauditarchiverefstagsv0.22.2.tar.gz"
+  homepage "https://github.com/Shopify/kubeaudit"
+  url "https://ghfast.top/https://github.com/Shopify/kubeaudit/archive/refs/tags/v0.22.2.tar.gz"
   sha256 "90752d42c4d502ab6776af3358ae87a02d2893fc2bb7a0364d6c1fdcd8ff0570"
   license "MIT"
-  head "https:github.comShopifykubeaudit.git", branch: "main"
+  head "https://github.com/Shopify/kubeaudit.git", branch: "main"
 
   no_autobump! because: :requires_manual_review
 
@@ -19,7 +19,7 @@ class Kubeaudit < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "36c94b606075a297fd812aa94fa7c8c95f5cac0dcec866d0f3d6d7c6ec6e8a74"
   end
 
-  # https:github.comShopifykubeauditpull594
+  # https://github.com/Shopify/kubeaudit/pull/594
   deprecate! date: "2025-01-10", because: :repo_archived, replacement_formula: "kube-bench"
 
   depends_on "go" => :build
@@ -27,17 +27,17 @@ class Kubeaudit < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.comShopifykubeauditcmd.Version=#{version}
-      -X github.comShopifykubeauditcmd.BuildDate=#{time.strftime("%F")}
+      -X github.com/Shopify/kubeaudit/cmd.Version=#{version}
+      -X github.com/Shopify/kubeaudit/cmd.BuildDate=#{time.strftime("%F")}
     ]
 
-    system "go", "build", *std_go_args(ldflags:), ".cmd"
+    system "go", "build", *std_go_args(ldflags:), "./cmd"
 
-    generate_completions_from_executable(bin"kubeaudit", "completion")
+    generate_completions_from_executable(bin/"kubeaudit", "completion")
   end
 
   test do
-    output = shell_output(bin"kubeaudit --kubeconfig some-file-that-does-not-exist all 2>&1", 1).chomp
-    assert_match "failed to open kubeconfig file some-file-that-does-not-exist", output
+    output = shell_output(bin/"kubeaudit --kubeconfig /some-file-that-does-not-exist all 2>&1", 1).chomp
+    assert_match "failed to open kubeconfig file /some-file-that-does-not-exist", output
   end
 end

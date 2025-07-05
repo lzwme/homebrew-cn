@@ -1,10 +1,10 @@
 class Qrencode < Formula
   desc "QR Code generation"
-  homepage "https:fukuchi.orgworksqrencodeindex.html.en"
-  url "https:github.comfukuchilibqrencodearchiverefstagsv4.1.1.tar.gz"
+  homepage "https://fukuchi.org/works/qrencode/index.html.en"
+  url "https://ghfast.top/https://github.com/fukuchi/libqrencode/archive/refs/tags/v4.1.1.tar.gz"
   sha256 "5385bc1b8c2f20f3b91d258bf8ccc8cf62023935df2d2676b5b67049f31a049c"
   license "LGPL-2.1-or-later"
-  head "https:github.comfukuchilibqrencode.git", branch: "master"
+  head "https://github.com/fukuchi/libqrencode.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -31,6 +31,6 @@ class Qrencode < Formula
   end
 
   test do
-    system bin"qrencode", "123456789", "-o", "test.png"
+    system bin/"qrencode", "123456789", "-o", "test.png"
   end
 end

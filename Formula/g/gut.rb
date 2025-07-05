@@ -1,10 +1,10 @@
 class Gut < Formula
   desc "Beginner friendly porcelain for git"
-  homepage "https:gut-cli.dev"
-  url "https:github.comjulien040gutarchiverefstags0.3.2.tar.gz"
+  homepage "https://gut-cli.dev/"
+  url "https://ghfast.top/https://github.com/julien040/gut/archive/refs/tags/0.3.2.tar.gz"
   sha256 "49431ba0d24f9abf4c7cdbdf1956d2b6e70e16f955b5bbb70d8d8f4b8a5a48d1"
   license "MIT"
-  head "https:github.comjulien040gut.git", branch: "main"
+  head "https://github.com/julien040/gut.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "2ffd25ab7b96ef2951a298214af160e7beb7e0079019bfac20f398bec5a42ce0"
@@ -18,19 +18,19 @@ class Gut < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = "-s -w -X github.comjulien040gutsrctelemetry.gutVersion=#{version}"
+    ldflags = "-s -w -X github.com/julien040/gut/src/telemetry.gutVersion=#{version}"
     system "go", "build", *std_go_args(ldflags:)
 
-    generate_completions_from_executable(bin"gut", "completion")
+    generate_completions_from_executable(bin/"gut", "completion")
   end
 
   test do
-    system bin"gut", "telemetry", "disable"
+    system bin/"gut", "telemetry", "disable"
 
-    assert_match version.to_s, shell_output("#{bin}gut --version")
+    assert_match version.to_s, shell_output("#{bin}/gut --version")
 
     system "git", "init", "--initial-branch=main"
     system "git", "commit", "--allow-empty", "-m", "test"
-    assert_match "on branch main", shell_output("#{bin}gut whereami")
+    assert_match "on branch main", shell_output("#{bin}/gut whereami")
   end
 end

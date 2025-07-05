@@ -1,10 +1,10 @@
 class Zk < Formula
   desc "Plain text note-taking assistant"
-  homepage "https:zk-org.github.iozk"
-  url "https:github.comzk-orgzkarchiverefstagsv0.15.1.tar.gz"
+  homepage "https://zk-org.github.io/zk/"
+  url "https://ghfast.top/https://github.com/zk-org/zk/archive/refs/tags/v0.15.1.tar.gz"
   sha256 "1f30aae497476342203b3cecb63edd92faf4d837860a894fdee4b372184e9ec4"
   license "GPL-3.0-only"
-  head "https:github.comzk-orgzk.git", branch: "main"
+  head "https://github.com/zk-org/zk.git", branch: "main"
 
   livecheck do
     url :stable
@@ -33,14 +33,14 @@ class Zk < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}zk --version")
+    assert_match version.to_s, shell_output("#{bin}/zk --version")
 
-    system bin"zk", "init", "--no-input"
-    system bin"zk", "index", "--no-input"
-    (testpath"testnote.md").write "note content"
-    (testpath"anothernote.md").write "todolist"
+    system bin/"zk", "init", "--no-input"
+    system bin/"zk", "index", "--no-input"
+    (testpath/"testnote.md").write "note content"
+    (testpath/"anothernote.md").write "todolist"
 
-    output = pipe_output("#{bin}zk list --quiet").chomp
+    output = pipe_output("#{bin}/zk list --quiet").chomp
     assert_match "note content", output
     assert_match "todolist", output
   end

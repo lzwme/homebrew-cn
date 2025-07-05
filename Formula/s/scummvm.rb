@@ -1,14 +1,14 @@
 class Scummvm < Formula
   desc "Graphic adventure game interpreter"
-  homepage "https:www.scummvm.org"
-  url "https:downloads.scummvm.orgfrsscummvm2.9.1scummvm-2.9.1.tar.xz"
+  homepage "https://www.scummvm.org/"
+  url "https://downloads.scummvm.org/frs/scummvm/2.9.1/scummvm-2.9.1.tar.xz"
   sha256 "6a82f36afa9de758ab1dd377101a26a53f12417cbfd350bb8e5d7fd5b8c257e3"
   license "GPL-3.0-or-later"
-  head "https:github.comscummvmscummvm.git", branch: "master"
+  head "https://github.com/scummvm/scummvm.git", branch: "master"
 
   livecheck do
-    url "https:www.scummvm.orgdownloads"
-    regex(href=.*?scummvm[._-]v?(\d+(?:\.\d+)+)\.ti)
+    url "https://www.scummvm.org/downloads/"
+    regex(/href=.*?scummvm[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   bottle do
@@ -50,17 +50,17 @@ class Scummvm < Formula
   end
 
   def install
-    system ".configure", "--enable-release", "--with-sdl-prefix=#{Formula["sdl2"].opt_prefix}", *std_configure_args
+    system "./configure", "--enable-release", "--with-sdl-prefix=#{Formula["sdl2"].opt_prefix}", *std_configure_args
     system "make", "install"
 
-    rm_r(share"pixmaps")
-    rm_r(share"icons")
+    rm_r(share/"pixmaps")
+    rm_r(share/"icons")
   end
 
   test do
     # Use dummy driver to avoid issues with headless CI
     ENV["SDL_VIDEODRIVER"] = "dummy"
     ENV["SDL_AUDIODRIVER"] = "dummy"
-    system bin"scummvm", "-v"
+    system bin/"scummvm", "-v"
   end
 end

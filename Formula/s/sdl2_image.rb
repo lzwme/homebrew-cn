@@ -1,14 +1,14 @@
 class Sdl2Image < Formula
   desc "Library for loading images as SDL surfaces and textures"
-  homepage "https:github.comlibsdl-orgSDL_image"
-  url "https:github.comlibsdl-orgSDL_imagereleasesdownloadrelease-2.8.8SDL2_image-2.8.8.tar.gz"
+  homepage "https://github.com/libsdl-org/SDL_image"
+  url "https://ghfast.top/https://github.com/libsdl-org/SDL_image/releases/download/release-2.8.8/SDL2_image-2.8.8.tar.gz"
   sha256 "2213b56fdaff2220d0e38c8e420cbe1a83c87374190cba8c70af2156097ce30a"
   license "Zlib"
-  head "https:github.comlibsdl-orgSDL_image.git", branch: "main"
+  head "https://github.com/libsdl-org/SDL_image.git", branch: "main"
 
   livecheck do
     url :stable
-    regex(^(?:release[._-])?v?(2(?:\.\d+)+)$i)
+    regex(/^(?:release[._-])?v?(2(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -36,9 +36,9 @@ class Sdl2Image < Formula
   def install
     inreplace "SDL2_image.pc.in", "@prefix@", HOMEBREW_PREFIX
 
-    # upstream bug report, https:github.comlibsdl-orgSDL_imageissues490
-    system ".autogen.sh"
-    system ".configure", "--disable-imageio",
+    # upstream bug report, https://github.com/libsdl-org/SDL_image/issues/490
+    system "./autogen.sh"
+    system "./configure", "--disable-imageio",
                           "--disable-avif-shared",
                           "--disable-jpg-shared",
                           "--disable-jxl-shared",
@@ -51,8 +51,8 @@ class Sdl2Image < Formula
   end
 
   test do
-    (testpath"test.c").write <<~C
-      #include <SDL2SDL_image.h>
+    (testpath/"test.c").write <<~C
+      #include <SDL2/SDL_image.h>
 
       int main()
       {
@@ -62,7 +62,7 @@ class Sdl2Image < Formula
           return result == INIT_FLAGS ? EXIT_SUCCESS : EXIT_FAILURE;
       }
     C
-    system ENV.cc, "test.c", "-I#{Formula["sdl2"].opt_include}SDL2", "-L#{lib}", "-lSDL2_image", "-o", "test"
-    system ".test"
+    system ENV.cc, "test.c", "-I#{Formula["sdl2"].opt_include}/SDL2", "-L#{lib}", "-lSDL2_image", "-o", "test"
+    system "./test"
   end
 end

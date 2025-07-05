@@ -1,10 +1,10 @@
 class Pistache < Formula
   desc "Modern, fast, elegant HTTP + REST C++17 framework with pleasant API"
-  homepage "https:github.compistacheiopistache"
-  url "https:github.compistacheiopistachearchiverefstagsv0.4.26.tar.gz"
+  homepage "https://github.com/pistacheio/pistache"
+  url "https://ghfast.top/https://github.com/pistacheio/pistache/archive/refs/tags/v0.4.26.tar.gz"
   sha256 "29af6562547497acf6f49170661786fe8cf1ed3712ad80e69c53da4661c59544"
   license "Apache-2.0"
-  head "https:github.compistacheiopistache.git", branch: "master"
+  head "https://github.com/pistacheio/pistache.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -51,13 +51,13 @@ class Pistache < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~CPP
-       Testing multiple clients making requests of a multithreaded server
+    (testpath/"test.cpp").write <<~CPP
+      // Testing multiple clients making requests of a multithreaded server
 
-      #include <pistacheasync.h>
-      #include <pistacheclient.h>
-      #include <pistacheendpoint.h>
-      #include <pistachehttp.h>
+      #include <pistache/async.h>
+      #include <pistache/client.h>
+      #include <pistache/endpoint.h>
+      #include <pistache/http.h>
 
       #include <chrono>
       #include <string>
@@ -70,7 +70,7 @@ class Pistache < Formula
       {
           HTTP_PROTOTYPE(HelloHandler)
 
-          void onRequest(const Http::Request& *request*,
+          void onRequest(const Http::Request& /*request*/,
                          Http::ResponseWriter writer) override
           {
               writer.send(Http::Code::Ok, "Hello, World!");
@@ -110,7 +110,7 @@ class Pistache < Formula
               responses.push_back(std::move(response));
           }
 
-          {  encapsulate
+          { // encapsulate
               auto sync = Async::whenAll(responses.begin(), responses.end());
               Async::Barrier<std::vector<Http::Response>> barrier(sync);
               barrier.wait_for(std::chrono::seconds(wait_seconds));
@@ -167,6 +167,6 @@ class Pistache < Formula
       }
     CPP
     system ENV.cxx, "-std=c++17", "test.cpp", "-L#{lib}", "-lpistache", "-o", "test"
-    system ".test"
+    system "./test"
   end
 end

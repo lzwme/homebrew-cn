@@ -2,10 +2,10 @@ cask "camera-live" do
   version "11"
   sha256 "4c7a6ecdbec677a6fbbb90af427e54b0d429278c87b49966c6448ce065c78e75"
 
-  url "https:github.comv002v002-Camera-Livereleasesdownload#{version}Camera.Live.zip"
+  url "https://ghfast.top/https://github.com/v002/v002-Camera-Live/releases/download/#{version}/Camera.Live.zip"
   name "Camera Live"
   desc "Syphon server for connected Canon DSLR cameras"
-  homepage "https:github.comv002v002-Camera-Live"
+  homepage "https://github.com/v002/v002-Camera-Live"
 
   no_autobump! because: :requires_manual_review
 
@@ -14,8 +14,8 @@ cask "camera-live" do
   app "Camera Live.app"
 
   zap trash: [
-    "~LibraryPreferencesinfo.v002.Camera-Live.plist",
-    "~LibrarySaved Application Stateinfo.v002.Camera-Live.savedState",
+    "~/Library/Preferences/info.v002.Camera-Live.plist",
+    "~/Library/Saved Application State/info.v002.Camera-Live.savedState",
   ]
 
   caveats do

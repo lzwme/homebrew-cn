@@ -1,10 +1,10 @@
 class IamPolicyJsonToTerraform < Formula
   desc "Convert a JSON IAM Policy into terraform"
-  homepage "https:github.comfloselliam-policy-json-to-terraform"
-  url "https:github.comfloselliam-policy-json-to-terraformarchiverefstags1.9.1.tar.gz"
+  homepage "https://github.com/flosell/iam-policy-json-to-terraform"
+  url "https://ghfast.top/https://github.com/flosell/iam-policy-json-to-terraform/archive/refs/tags/1.9.1.tar.gz"
   sha256 "5943b0a352758d4a6e9d7d759fd10af24f42abe7012b862cf92048b6dc6e15fb"
   license "Apache-2.0"
-  head "https:github.comfloselliam-policy-json-to-terraform.git", branch: "master"
+  head "https://github.com/flosell/iam-policy-json-to-terraform.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -26,11 +26,11 @@ class IamPolicyJsonToTerraform < Formula
 
   test do
     # test version
-    assert_match version.to_s, shell_output("#{bin}iam-policy-json-to-terraform -version")
+    assert_match version.to_s, shell_output("#{bin}/iam-policy-json-to-terraform -version")
 
     # test functionality
     test_input = '{"Statement":[{"Effect":"Allow","Action":["ec2:Describe*"],"Resource":"*"}]}'
-    output = pipe_output(bin"iam-policy-json-to-terraform", test_input)
+    output = pipe_output(bin/"iam-policy-json-to-terraform", test_input)
     assert_match "ec2:Describe*", output
   end
 end

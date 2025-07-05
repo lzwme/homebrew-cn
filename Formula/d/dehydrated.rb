@@ -1,7 +1,7 @@
 class Dehydrated < Formula
-  desc "LetsEncryptacme client implemented as a shell-script"
-  homepage "https:dehydrated.io"
-  url "https:github.comdehydrated-iodehydratedarchiverefstagsv0.7.2.tar.gz"
+  desc "LetsEncrypt/acme client implemented as a shell-script"
+  homepage "https://dehydrated.io"
+  url "https://ghfast.top/https://github.com/dehydrated-io/dehydrated/archive/refs/tags/v0.7.2.tar.gz"
   sha256 "34d0e316dd86108cf302fddfe1c6d7b72c2fa98bed338ddd6c0155da2ec75a94"
   license "MIT"
 
@@ -17,10 +17,10 @@ class Dehydrated < Formula
 
   def install
     bin.install "dehydrated"
-    man1.install "docsmandehydrated.1"
+    man1.install "docs/man/dehydrated.1"
   end
 
   test do
-    system bin"dehydrated", "--help"
+    system bin/"dehydrated", "--help"
   end
 end

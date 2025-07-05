@@ -1,14 +1,14 @@
 class JvmMon < Formula
   desc "Console-based JVM monitoring"
-  homepage "https:github.comajermakovicsjvm-mon"
-  url "https:github.comajermakovicsjvm-monarchiverefstags1.3.tar.gz"
+  homepage "https://github.com/ajermakovics/jvm-mon"
+  url "https://ghfast.top/https://github.com/ajermakovics/jvm-mon/archive/refs/tags/1.3.tar.gz"
   sha256 "71f27098bc130525c837ce5821481d795be1b315464f327dbe9d828a221338dd"
   license "Apache-2.0"
-  head "https:github.comajermakovicsjvm-mon.git", branch: "master"
+  head "https://github.com/ajermakovics/jvm-mon.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -27,17 +27,17 @@ class JvmMon < Formula
 
   def install
     cd "jvm-mon-go" do
-      system ".make-agent.sh"
+      system "./make-agent.sh"
       system "go", "build", *std_go_args(ldflags: "-s -w")
     end
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}jvm-mon -v 2>&1")
+    assert_match version.to_s, shell_output("#{bin}/jvm-mon -v 2>&1")
 
     require "pty"
     ENV["TERM"] = "xterm"
-    PTY.spawn(bin"jvm-mon") do |_r, w, _pid|
+    PTY.spawn(bin/"jvm-mon") do |_r, w, _pid|
       sleep 1
       w.write "q"
     end

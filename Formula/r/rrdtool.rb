@@ -1,21 +1,21 @@
 class Rrdtool < Formula
   desc "Round Robin Database"
-  homepage "https:oss.oetiker.chrrdtool"
+  homepage "https://oss.oetiker.ch/rrdtool/"
   license "GPL-2.0-only"
 
   stable do
-    url "https:github.comoetikerrrdtool-1.xreleasesdownloadv1.9.0rrdtool-1.9.0.tar.gz"
+    url "https://ghfast.top/https://github.com/oetiker/rrdtool-1.x/releases/download/v1.9.0/rrdtool-1.9.0.tar.gz"
     sha256 "5e65385e51f4a7c4b42aa09566396c20e7e1a0a30c272d569ed029a81656e56b"
 
     # Fix -flat_namespace being used on Big Sur and later.
     patch do
-      url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-big_sur.diff"
+      url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-big_sur.diff"
       sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
     end
 
-    # fix HAVE_DECL checks, upstream pr ref, https:github.comoetikerrrdtool-1.xpull1262
+    # fix HAVE_DECL checks, upstream pr ref, https://github.com/oetiker/rrdtool-1.x/pull/1262
     patch do
-      url "https:github.comoetikerrrdtool-1.xcommit98b2944d3b41f6e19b6a378d7959f569fdbaa9cd.patch?full_index=1"
+      url "https://github.com/oetiker/rrdtool-1.x/commit/98b2944d3b41f6e19b6a378d7959f569fdbaa9cd.patch?full_index=1"
       sha256 "86b2257fcd71072b712e7079b3fed87635538770a7619539eaa474cbeaa8b7f5"
     end
   end
@@ -33,7 +33,7 @@ class Rrdtool < Formula
   end
 
   head do
-    url "https:github.comoetikerrrdtool-1.x.git", branch: "master"
+    url "https://github.com/oetiker/rrdtool-1.x.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -67,17 +67,17 @@ class Rrdtool < Formula
       --disable-tcl
     ]
 
-    system ".bootstrap" if build.head?
-    inreplace "configure", ^sleep 1$, "#sleep 1"
-    system ".configure", *args, *std_configure_args
+    system "./bootstrap" if build.head?
+    inreplace "configure", /^sleep 1$/, "#sleep 1"
+    system "./configure", *args, *std_configure_args
     system "make", "install"
   end
 
   test do
-    system bin"rrdtool", "create", "temperature.rrd", "--step", "300",
+    system bin/"rrdtool", "create", "temperature.rrd", "--step", "300",
       "DS:temp:GAUGE:600:-273:5000", "RRA:AVERAGE:0.5:1:1200",
       "RRA:MIN:0.5:12:2400", "RRA:MAX:0.5:12:2400", "RRA:AVERAGE:0.5:12:2400"
 
-    system bin"rrdtool", "dump", "temperature.rrd"
+    system bin/"rrdtool", "dump", "temperature.rrd"
   end
 end

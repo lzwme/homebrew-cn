@@ -1,11 +1,11 @@
 class Carthage < Formula
   desc "Decentralized dependency manager for Cocoa"
-  homepage "https:github.comCarthageCarthage"
-  url "https:github.comCarthageCarthage.git",
+  homepage "https://github.com/Carthage/Carthage"
+  url "https://github.com/Carthage/Carthage.git",
       tag:      "0.40.0",
       revision: "e33e133a5427129b38bfb1ae18d8f56b29a93204"
   license "MIT"
-  head "https:github.comCarthageCarthage.git", branch: "master"
+  head "https://github.com/Carthage/Carthage.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -24,13 +24,13 @@ class Carthage < Formula
 
   def install
     system "make", "prefix_install", "PREFIX=#{prefix}"
-    bash_completion.install "SourceScriptscarthage-bash-completion" => "carthage"
-    zsh_completion.install "SourceScriptscarthage-zsh-completion" => "_carthage"
-    fish_completion.install "SourceScriptscarthage-fish-completion" => "carthage.fish"
+    bash_completion.install "Source/Scripts/carthage-bash-completion" => "carthage"
+    zsh_completion.install "Source/Scripts/carthage-zsh-completion" => "_carthage"
+    fish_completion.install "Source/Scripts/carthage-fish-completion" => "carthage.fish"
   end
 
   test do
-    (testpath"Cartfile").write 'github "jspahrsummersxcconfigs"'
-    system bin"carthage", "update"
+    (testpath/"Cartfile").write 'github "jspahrsummers/xcconfigs"'
+    system bin/"carthage", "update"
   end
 end

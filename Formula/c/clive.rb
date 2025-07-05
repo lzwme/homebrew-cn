@@ -1,10 +1,10 @@
 class Clive < Formula
   desc "Automates terminal operations"
-  homepage "https:github.comkoki-developclive"
-  url "https:github.comkoki-developclivearchiverefstagsv0.12.11.tar.gz"
+  homepage "https://github.com/koki-develop/clive"
+  url "https://ghfast.top/https://github.com/koki-develop/clive/archive/refs/tags/v0.12.11.tar.gz"
   sha256 "c406ff8c8a959f5de0730ecfd393c432587f824b86cc91979ee54e4e96b44ac0"
   license "MIT"
-  head "https:github.comkoki-developclive.git", branch: "main"
+  head "https://github.com/koki-develop/clive.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "5daeabe93c5968be4e4be53e2d1b87b7cacc87c7ac25b9a8be3643a665b85272"
@@ -19,14 +19,14 @@ class Clive < Formula
   depends_on "ttyd"
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w -X github.comkoki-developclivecmd.version=v#{version}")
+    system "go", "build", *std_go_args(ldflags: "-s -w -X github.com/koki-develop/clive/cmd.version=v#{version}")
   end
 
   test do
-    system bin"clive", "init"
-    assert_path_exists testpath"clive.yml"
+    system bin/"clive", "init"
+    assert_path_exists testpath/"clive.yml"
 
-    system bin"clive", "validate"
-    assert_match version.to_s, shell_output("#{bin}clive --version")
+    system bin/"clive", "validate"
+    assert_match version.to_s, shell_output("#{bin}/clive --version")
   end
 end

@@ -1,9 +1,9 @@
 class MixCompletion < Formula
-  desc "Elixir Mix completion plus shortcutscolors"
-  homepage "https:github.comdavidhqmix-power-completion"
-  url "https:github.comdavidhqmix-power-completionarchiverefstags0.8.2.tar.gz"
+  desc "Elixir Mix completion plus shortcuts/colors"
+  homepage "https://github.com/davidhq/mix-power-completion"
+  url "https://ghfast.top/https://github.com/davidhq/mix-power-completion/archive/refs/tags/0.8.2.tar.gz"
   sha256 "0e3e94b199f847926f3668b4cebf1b132e63a44d438425dd5c45ac4a299f28f3"
-  head "https:github.comdavidhqmix-power-completion.git", branch: "master"
+  head "https://github.com/davidhq/mix-power-completion.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -20,6 +20,6 @@ class MixCompletion < Formula
 
   test do
     assert_match "-F _mix",
-      shell_output("bash -c 'source #{bash_completion}mix && complete -p mix'")
+      shell_output("bash -c 'source #{bash_completion}/mix && complete -p mix'")
   end
 end

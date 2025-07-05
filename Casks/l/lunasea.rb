@@ -8,11 +8,11 @@ cask "lunasea" do
     sha256 "fa4ecb5bdf57d6f1326e356e248232040f1b2d0d409ea93ac96dc560eded980c"
   end
 
-  url "https:github.comJagandeepBrarLunaSeareleasesdownloadv#{version}lunasea-macos-amd64.zip",
-      verified: "github.comJagandeepBrarLunaSea"
+  url "https://ghfast.top/https://github.com/JagandeepBrar/LunaSea/releases/download/v#{version}/lunasea-macos-amd64.zip",
+      verified: "github.com/JagandeepBrar/LunaSea/"
   name "LunaSea"
   desc "Self-hosted controller built using the Flutter framework"
-  homepage "https:www.lunasea.app"
+  homepage "https://www.lunasea.app/"
 
   no_autobump! because: :requires_manual_review
 
@@ -21,7 +21,7 @@ cask "lunasea" do
   app "LunaSea.app"
 
   zap trash: [
-    "~LibraryApplication Scriptsapp.lunasea.lunasea",
-    "~LibraryContainersapp.lunasea.lunasea",
+    "~/Library/Application Scripts/app.lunasea.lunasea",
+    "~/Library/Containers/app.lunasea.lunasea",
   ]
 end

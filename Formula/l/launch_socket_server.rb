@@ -1,10 +1,10 @@
 class LaunchSocketServer < Formula
   desc "Bind to privileged ports without running a server as root"
-  homepage "https:github.commistydemeolaunch_socket_server"
-  url "https:github.commistydemeolaunch_socket_serverarchiverefstagsv2.0.0.tar.gz"
+  homepage "https://github.com/mistydemeo/launch_socket_server"
+  url "https://ghfast.top/https://github.com/mistydemeo/launch_socket_server/archive/refs/tags/v2.0.0.tar.gz"
   sha256 "507184544d170dab63e6112198212033aaa84edf0e092c1dfe641087f092f365"
   license "MIT"
-  head "https:github.commistydemeolaunch_socket_server.git", branch: "master"
+  head "https://github.com/mistydemeo/launch_socket_server.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -33,17 +33,17 @@ class LaunchSocketServer < Formula
   end
 
   service do
-    run [opt_sbin"launch_socket_server", "-"]
+    run [opt_sbin/"launch_socket_server", "-"]
     environment_variables LAUNCH_PROGRAM_TCP_ADDRESS: "127.0.0.1:8080"
     keep_alive true
     require_root true
-    error_log_path var"loglaunch_socket_server.log"
-    log_path var"loglaunch_socket_server.log"
-    sockets "tcp:0.0.0.0:80"
+    error_log_path var/"log/launch_socket_server.log"
+    log_path var/"log/launch_socket_server.log"
+    sockets "tcp://0.0.0.0:80"
   end
 
   test do
-    assert_includes shell_output("#{opt_sbin}launch_socket_server 2>&1; true"),
-      "usage: #{opt_sbin}launch_socket_server"
+    assert_includes shell_output("#{opt_sbin}/launch_socket_server 2>&1; true"),
+      "usage: #{opt_sbin}/launch_socket_server"
   end
 end

@@ -1,10 +1,10 @@
 class Zrepl < Formula
   desc "One-stop ZFS backup & replication solution"
-  homepage "https:zrepl.github.io"
-  url "https:github.comzreplzreplarchiverefstagsv0.6.1.tar.gz"
+  homepage "https://zrepl.github.io"
+  url "https://ghfast.top/https://github.com/zrepl/zrepl/archive/refs/tags/v0.6.1.tar.gz"
   sha256 "263c82501b75a1413f8a298c1d67d7e940c1b0cb967979790773237e2a30adbd"
   license "MIT"
-  head "https:github.comzreplzrepl.git", branch: "master"
+  head "https://github.com/zrepl/zrepl.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -22,34 +22,34 @@ class Zrepl < Formula
   depends_on "go" => :build
 
   resource "homebrew-sample_config" do
-    url "https:raw.githubusercontent.comzreplzreplrefstagsv0.6.1configsampleslocal.yml"
+    url "https://ghfast.top/https://raw.githubusercontent.com/zrepl/zrepl/refs/tags/v0.6.1/config/samples/local.yml"
     sha256 "f27b21716e6efdc208481a8f7399f35fd041183783e00c57f62b3a5520470c05"
   end
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w -X github.comzreplzreplversion.zreplVersion=#{version}")
+    system "go", "build", *std_go_args(ldflags: "-s -w -X github.com/zrepl/zrepl/version.zreplVersion=#{version}")
   end
 
   def post_install
-    (var"logzrepl").mkpath
-    (var"runzrepl").mkpath
-    (etc"zrepl").mkpath
+    (var/"log/zrepl").mkpath
+    (var/"run/zrepl").mkpath
+    (etc/"zrepl").mkpath
   end
 
   service do
-    run [opt_bin"zrepl", "daemon"]
+    run [opt_bin/"zrepl", "daemon"]
     keep_alive true
     require_root true
-    working_dir var"runzrepl"
-    log_path var"logzreplzrepl.out.log"
-    error_log_path var"logzreplzrepl.err.log"
+    working_dir var/"run/zrepl"
+    log_path var/"log/zrepl/zrepl.out.log"
+    error_log_path var/"log/zrepl/zrepl.err.log"
     environment_variables PATH: std_service_path_env
   end
 
   test do
     resources.each do |r|
       r.verify_download_integrity(r.fetch)
-      assert_empty shell_output("#{bin}zrepl configcheck --config #{r.cached_download}")
+      assert_empty shell_output("#{bin}/zrepl configcheck --config #{r.cached_download}")
     end
   end
 end

@@ -1,14 +1,14 @@
 class Fftw < Formula
   desc "C routines to compute the Discrete Fourier Transform"
-  homepage "https:fftw.org"
-  url "https:fftw.orgfftw-3.3.10.tar.gz"
+  homepage "https://fftw.org"
+  url "https://fftw.org/fftw-3.3.10.tar.gz"
   sha256 "56c932549852cddcfafdab3820b0200c7742675be92179e59e6215b340e26467"
   license all_of: ["GPL-2.0-or-later", "BSD-2-Clause"]
   revision 2
 
   livecheck do
     url :homepage
-    regex(%r{latest official release.*? <b>v?(\d+(?:\.\d+)+)<b>}i)
+    regex(%r{latest official release.*? <b>v?(\d+(?:\.\d+)+)</b>}i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -31,9 +31,9 @@ class Fftw < Formula
 
   fails_with :clang
 
-  # Fix the cmake config file when configured with autotools, upstream pr ref, https:github.comFFTWfftw3pull338
+  # Fix the cmake config file when configured with autotools, upstream pr ref, https://github.com/FFTW/fftw3/pull/338
   patch do
-    url "https:github.comFFTWfftw3commit394fa85ab5f8914b82b3404844444c53f5c7f095.patch?full_index=1"
+    url "https://github.com/FFTW/fftw3/commit/394fa85ab5f8914b82b3404844444c53f5c7f095.patch?full_index=1"
     sha256 "2f3c719ad965b3733e5b783a1512af9c2bd9731bb5109879fbce5a76fa62eb14"
   end
 
@@ -57,7 +57,7 @@ class Fftw < Formula
 
     # single precision
     # enable-sse2, enable-avx and enable-avx2 work for both single and double precision
-    system ".configure", "--enable-single", *(args + simd_args)
+    system "./configure", "--enable-single", *(args + simd_args)
     system "make", "install"
 
     # clean up so we can compile the double precision variant
@@ -65,7 +65,7 @@ class Fftw < Formula
 
     # double precision
     # enable-sse2, enable-avx and enable-avx2 work for both single and double precision
-    system ".configure", *(args + simd_args)
+    system "./configure", *(args + simd_args)
     system "make", "install"
 
     # clean up so we can compile the long-double precision variant
@@ -73,14 +73,14 @@ class Fftw < Formula
 
     # long-double precision
     # no SIMD optimization available
-    system ".configure", "--enable-long-double", *args
+    system "./configure", "--enable-long-double", *args
     system "make", "install"
   end
 
   test do
     # Adapted from the sample usage provided in the documentation:
-    # https:www.fftw.orgfftw3_docComplex-One_002dDimensional-DFTs.html
-    (testpath"fftw.c").write <<~C
+    # https://www.fftw.org/fftw3_doc/Complex-One_002dDimensional-DFTs.html
+    (testpath/"fftw.c").write <<~C
       #include <fftw3.h>
       int main(int argc, char* *argv)
       {
@@ -90,7 +90,7 @@ class Fftw < Formula
           in = (fftw_complex*) fftw_malloc(sizeof(fftw_complex) * N);
           out = (fftw_complex*) fftw_malloc(sizeof(fftw_complex) * N);
           p = fftw_plan_dft_1d(N, in, out, FFTW_FORWARD, FFTW_ESTIMATE);
-          fftw_execute(p); * repeat as needed *
+          fftw_execute(p); /* repeat as needed */
           fftw_destroy_plan(p);
           fftw_free(in); fftw_free(out);
           return 0;
@@ -98,6 +98,6 @@ class Fftw < Formula
     C
 
     system ENV.cc, "-o", "fftw", "fftw.c", "-L#{lib}", "-lfftw3"
-    system ".fftw"
+    system "./fftw"
   end
 end

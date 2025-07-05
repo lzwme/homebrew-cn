@@ -1,10 +1,10 @@
 class AwsIamAuthenticator < Formula
   desc "Use AWS IAM credentials to authenticate to Kubernetes"
-  homepage "https:github.comkubernetes-sigsaws-iam-authenticator"
-  url "https:github.comkubernetes-sigsaws-iam-authenticatorarchiverefstagsv0.7.3.tar.gz"
+  homepage "https://github.com/kubernetes-sigs/aws-iam-authenticator"
+  url "https://ghfast.top/https://github.com/kubernetes-sigs/aws-iam-authenticator/archive/refs/tags/v0.7.3.tar.gz"
   sha256 "834f0b38eec0aac72d78aa07d4f970519f898c7a18a97f94ab0bb9b740730436"
   license "Apache-2.0"
-  head "https:github.comkubernetes-sigsaws-iam-authenticator.git", branch: "master"
+  head "https://github.com/kubernetes-sigs/aws-iam-authenticator.git", branch: "master"
 
   # Upstream has marked a version as "pre-release" in the past, so we check
   # GitHub releases instead of Git tags. Upstream also doesn't always mark the
@@ -29,18 +29,18 @@ class AwsIamAuthenticator < Formula
   def install
     ldflags = %W[
       -s -w
-      -X sigs.k8s.ioaws-iam-authenticatorpkg.Version=#{version}
-      -X sigs.k8s.ioaws-iam-authenticatorpkg.CommitID=#{tap.user}
+      -X sigs.k8s.io/aws-iam-authenticator/pkg.Version=#{version}
+      -X sigs.k8s.io/aws-iam-authenticator/pkg.CommitID=#{tap.user}
       -buildid=
     ]
-    system "go", "build", *std_go_args(ldflags:), ".cmdaws-iam-authenticator"
+    system "go", "build", *std_go_args(ldflags:), "./cmd/aws-iam-authenticator"
   end
 
   test do
-    output = shell_output("#{bin}aws-iam-authenticator version")
+    output = shell_output("#{bin}/aws-iam-authenticator version")
     assert_match %Q("Version":"#{version}"), output
 
-    system bin"aws-iam-authenticator", "init", "-i", "test"
+    system bin/"aws-iam-authenticator", "init", "-i", "test"
     contents = Dir.entries(".")
     ["cert.pem", "key.pem", "aws-iam-authenticator.kubeconfig"].each do |created|
       assert_includes contents, created

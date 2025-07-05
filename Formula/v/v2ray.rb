@@ -1,10 +1,10 @@
 class V2ray < Formula
   desc "Platform for building proxies to bypass network restrictions"
-  homepage "https:v2fly.org"
-  url "https:github.comv2flyv2ray-corearchiverefstagsv5.35.0.tar.gz"
+  homepage "https://v2fly.org/"
+  url "https://ghfast.top/https://github.com/v2fly/v2ray-core/archive/refs/tags/v5.35.0.tar.gz"
   sha256 "caf1e4a8bbed61748ae21c88bf6d158a9921513b8fa69fc0d7265ef371e1205e"
   license all_of: ["MIT", "CC-BY-SA-4.0"]
-  head "https:github.comv2flyv2ray-core.git", branch: "master"
+  head "https://github.com/v2fly/v2ray-core.git", branch: "master"
 
   livecheck do
     url :stable
@@ -23,28 +23,28 @@ class V2ray < Formula
   depends_on "go" => :build
 
   resource "geoip" do
-    url "https:github.comv2flygeoipreleasesdownload202506050146geoip.dat"
+    url "https://ghfast.top/https://github.com/v2fly/geoip/releases/download/202506050146/geoip.dat"
     sha256 "58bf8f086473cad7df77f032815eb8d96bbd4a1aaef84c4f7da18cf1a3bb947a"
   end
 
   resource "geoip-only-cn-private" do
-    url "https:github.comv2flygeoipreleasesdownload202506050146geoip-only-cn-private.dat"
+    url "https://ghfast.top/https://github.com/v2fly/geoip/releases/download/202506050146/geoip-only-cn-private.dat"
     sha256 "1cc820dfe0c434f05fd92b8d9c2c41040c23c2bfe5847b573c8745c990d5bc98"
   end
 
   resource "geosite" do
-    url "https:github.comv2flydomain-list-communityreleasesdownload20250627153051dlc.dat"
+    url "https://ghfast.top/https://github.com/v2fly/domain-list-community/releases/download/20250627153051/dlc.dat"
     sha256 "01dae2a9c31b5c74ba7e54d8d51e0060688ed22da493eaf09f6eeeec89db395e"
   end
 
   def install
     ldflags = "-s -w -buildid="
-    system "go", "build", *std_go_args(ldflags:, output: libexec"v2ray"), ".main"
+    system "go", "build", *std_go_args(ldflags:, output: libexec/"v2ray"), "./main"
 
-    (bin"v2ray").write_env_script libexec"v2ray",
+    (bin/"v2ray").write_env_script libexec/"v2ray",
       V2RAY_LOCATION_ASSET: "${V2RAY_LOCATION_ASSET:-#{pkgshare}}"
 
-    pkgetc.install "releaseconfigconfig.json"
+    pkgetc.install "release/config/config.json"
 
     resource("geoip").stage do
       pkgshare.install "geoip.dat"
@@ -60,15 +60,15 @@ class V2ray < Formula
   end
 
   service do
-    run [opt_bin"v2ray", "run", "-config", etc"v2rayconfig.json"]
+    run [opt_bin/"v2ray", "run", "-config", etc/"v2ray/config.json"]
     keep_alive true
   end
 
   test do
-    (testpath"config.json").write <<~JSON
+    (testpath/"config.json").write <<~JSON
       {
         "log": {
-          "access": "#{testpath}log"
+          "access": "#{testpath}/log"
         },
         "outbounds": [
           {
@@ -96,9 +96,9 @@ class V2ray < Formula
         }
       }
     JSON
-    output = shell_output "#{bin}v2ray test -c #{testpath}config.json"
+    output = shell_output "#{bin}/v2ray test -c #{testpath}/config.json"
 
     assert_match "Configuration OK", output
-    assert_path_exists testpath"log"
+    assert_path_exists testpath/"log"
   end
 end

@@ -1,12 +1,12 @@
 class F2 < Formula
   desc "Command-line batch renaming tool"
-  homepage "https:github.comayoisaiahf2"
-  url "https:github.comayoisaiahf2archiverefstagsv2.1.2.tar.gz"
+  homepage "https://github.com/ayoisaiah/f2"
+  url "https://ghfast.top/https://github.com/ayoisaiah/f2/archive/refs/tags/v2.1.2.tar.gz"
   sha256 "bd7c6779f456e1ee7b4be4d4b7b24cca90dbbc2fa52efa8eb7ca012480e27830"
   license "MIT"
-  head "https:github.comayoisaiahf2.git", branch: "master"
+  head "https://github.com/ayoisaiah/f2.git", branch: "master"
 
-  # Upstream may addremove tags before releasing a version, so we check
+  # Upstream may add/remove tags before releasing a version, so we check
   # GitHub releases instead of the Git tags.
   livecheck do
     url :stable
@@ -25,20 +25,20 @@ class F2 < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), ".cmdf2"
+    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/f2"
 
-    bash_completion.install "scriptscompletionsf2.bash" => "f2"
-    fish_completion.install "scriptscompletionsf2.fish"
-    zsh_completion.install "scriptscompletionsf2.zsh" => "_f2"
+    bash_completion.install "scripts/completions/f2.bash" => "f2"
+    fish_completion.install "scripts/completions/f2.fish"
+    zsh_completion.install "scripts/completions/f2.zsh" => "_f2"
   end
 
   test do
     touch "test1-foo.foo"
     touch "test2-foo.foo"
-    system bin"f2", "-s", "-f", ".foo", "-r", ".bar", "-x"
-    assert_path_exists testpath"test1-foo.bar"
-    assert_path_exists testpath"test2-foo.bar"
-    refute_path_exists testpath"test1-foo.foo"
-    refute_path_exists testpath"test2-foo.foo"
+    system bin/"f2", "-s", "-f", ".foo", "-r", ".bar", "-x"
+    assert_path_exists testpath/"test1-foo.bar"
+    assert_path_exists testpath/"test2-foo.bar"
+    refute_path_exists testpath/"test1-foo.foo"
+    refute_path_exists testpath/"test2-foo.foo"
   end
 end

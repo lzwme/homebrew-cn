@@ -1,10 +1,10 @@
 class Wstunnel < Formula
   desc "Tunnel all your traffic over Websocket or HTTP2"
-  homepage "https:github.comerebewstunnel"
-  url "https:github.comerebewstunnelarchiverefstagsv10.4.4.tar.gz"
+  homepage "https://github.com/erebe/wstunnel"
+  url "https://ghfast.top/https://github.com/erebe/wstunnel/archive/refs/tags/v10.4.4.tar.gz"
   sha256 "69a12b8bbc2888dcefc84a90fbdf9925c7292e3b2839108a8aa1caf4a6758ffb"
   license "BSD-3-Clause"
-  head "https:github.comerebewstunnel.git", branch: "main"
+  head "https://github.com/erebe/wstunnel.git", branch: "main"
 
   # Upstream creates releases that use a stable tag (e.g., `v1.2.3`) but are
   # labeled as "pre-release" on GitHub before the version is released, so it's
@@ -35,13 +35,13 @@ class Wstunnel < Formula
 
     port = free_port
 
-    pid = fork { exec bin"wstunnel", "server", "ws:[::]:#{port}" }
+    pid = fork { exec bin/"wstunnel", "server", "ws://[::]:#{port}" }
     sleep 2
 
-    output = shell_output("curl -sI http:localhost:#{port}")
-    assert_match "HTTP1.1 400 Bad Request", output
+    output = shell_output("curl -sI http://localhost:#{port}")
+    assert_match "HTTP/1.1 400 Bad Request", output
 
-    assert_match version.to_s, shell_output("#{bin}wstunnel --version")
+    assert_match version.to_s, shell_output("#{bin}/wstunnel --version")
   ensure
     Process.kill("SIGINT", pid)
     Process.wait(pid)

@@ -1,7 +1,7 @@
 class Ivtools < Formula
   desc "X11 vector graphic servers"
-  homepage "https:github.comvectaportivtools"
-  url "https:github.comvectaportivtoolsarchiverefstagsivtools-2.1.1.tar.gz"
+  homepage "https://github.com/vectaport/ivtools"
+  url "https://ghfast.top/https://github.com/vectaport/ivtools/archive/refs/tags/ivtools-2.1.1.tar.gz"
   sha256 "4fa680b9d0fd2af610e9012258e150249d9a8abbc3b1f65eb17d01c959142cfc"
   license "MIT"
   revision 3
@@ -27,9 +27,9 @@ class Ivtools < Formula
   end
 
   # Fix to error: unknown type name '_LIBCPP_INLINE_VISIBILITY' and '_VSTD'
-  # PR ref: https:github.comvectaportivtoolspull25
+  # PR ref: https://github.com/vectaport/ivtools/pull/25
   patch do
-    url "https:github.comvectaportivtoolscommit6c4f2afb11d76fc34fb918c2ba53c4c4c5db55ae.patch?full_index=1"
+    url "https://github.com/vectaport/ivtools/commit/6c4f2afb11d76fc34fb918c2ba53c4c4c5db55ae.patch?full_index=1"
     sha256 "5aaa198d2c2721d30b1f31ea9817ca7fbf1a518dde782d6441cf5946a7b83ee2"
   end
 
@@ -37,25 +37,25 @@ class Ivtools < Formula
     # Workaround for ancient config files not recognizing aarch64 linux.
     if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       %w[config.guess config.sub].each do |fn|
-        cp Formula["automake"].share"automake-#{Formula["automake"].version.major_minor}"fn, "srcscripts#{fn}"
+        cp Formula["automake"].share/"automake-#{Formula["automake"].version.major_minor}"/fn, "src/scripts/#{fn}"
       end
     end
 
     cp "Makefile.orig", "Makefile"
     ace = Formula["ace"]
     args = %W[--mandir=#{man} --with-ace=#{ace.opt_include} --with-ace-libs=#{ace.opt_lib}]
-    system ".configure", *std_configure_args, *args
+    system "./configure", *std_configure_args, *args
     system "make"
     system "make", "install"
 
     # Conflicts with dialog
-    mv man3"Dialog.3", man3"Dialog_ivtools.3"
+    mv man3/"Dialog.3", man3/"Dialog_ivtools.3"
 
     # Delete unneeded symlink to libACE on Linux which conflicts with ace.
-    rm lib"libACE.so" unless OS.mac?
+    rm lib/"libACE.so" unless OS.mac?
   end
 
   test do
-    system bin"comterp", "exit(0)"
+    system bin/"comterp", "exit(0)"
   end
 end

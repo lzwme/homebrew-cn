@@ -1,10 +1,10 @@
 class Cyme < Formula
   desc "List system USB buses and devices"
-  homepage "https:github.comtuna-f1shcyme"
-  url "https:github.comtuna-f1shcymearchiverefstagsv2.2.3.tar.gz"
+  homepage "https://github.com/tuna-f1sh/cyme"
+  url "https://ghfast.top/https://github.com/tuna-f1sh/cyme/archive/refs/tags/v2.2.3.tar.gz"
   sha256 "566f9d7ee9dd183ddcc9f5a51a08446e84ba73222149298f5f64c606032355b2"
   license "GPL-3.0-or-later"
-  head "https:github.comtuna-f1shcyme.git", branch: "main"
+  head "https://github.com/tuna-f1sh/cyme.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "b472bfe15fa11e86fa90007edb1933a6784853bfe26cfa031b1b9e89f0852880"
@@ -21,17 +21,17 @@ class Cyme < Formula
 
   def install
     system "cargo", "install", *std_cargo_args
-    man1.install "doccyme.1"
-    bash_completion.install "doccyme.bash" => "cyme"
-    zsh_completion.install "doc_cyme"
-    fish_completion.install "doccyme.fish"
+    man1.install "doc/cyme.1"
+    bash_completion.install "doc/cyme.bash" => "cyme"
+    zsh_completion.install "doc/_cyme"
+    fish_completion.install "doc/cyme.fish"
   end
 
   test do
     # Test fails on headless CI
     return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
 
-    output = JSON.parse(shell_output("#{bin}cyme --tree --json"))
+    output = JSON.parse(shell_output("#{bin}/cyme --tree --json"))
     assert_predicate output["buses"], :present?
   end
 end

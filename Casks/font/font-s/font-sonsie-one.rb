@@ -2,10 +2,10 @@ cask "font-sonsie-one" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefontsrawmainoflsonsieoneSonsieOne-Regular.ttf",
-      verified: "github.comgooglefonts"
+  url "https://github.com/google/fonts/raw/main/ofl/sonsieone/SonsieOne-Regular.ttf",
+      verified: "github.com/google/fonts/"
   name "Sonsie One"
-  homepage "https:fonts.google.comspecimenSonsie+One"
+  homepage "https://fonts.google.com/specimen/Sonsie+One"
 
   font "SonsieOne-Regular.ttf"
 

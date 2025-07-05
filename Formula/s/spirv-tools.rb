@@ -1,15 +1,15 @@
 class SpirvTools < Formula
   desc "API and commands for processing SPIR-V modules"
-  homepage "https:github.comKhronosGroupSPIRV-Tools"
-  url "https:github.comKhronosGroupSPIRV-Toolsarchiverefstagsvulkan-sdk-1.4.313.0.tar.gz"
+  homepage "https://github.com/KhronosGroup/SPIRV-Tools"
+  url "https://ghfast.top/https://github.com/KhronosGroup/SPIRV-Tools/archive/refs/tags/vulkan-sdk-1.4.313.0.tar.gz"
   sha256 "6b60f723345ceed5291cceebbcfacf7fea9361a69332261fa08ae57e2a562005"
   license "Apache-2.0"
   version_scheme 1
-  head "https:github.comKhronosGroupSPIRV-Tools.git", branch: "main"
+  head "https://github.com/KhronosGroup/SPIRV-Tools.git", branch: "main"
 
   livecheck do
     url :stable
-    regex(^(?:vulkan[._-])?sdk[._-]v?(\d+(?:\.\d+)+)$i)
+    regex(/^(?:vulkan[._-])?sdk[._-]v?(\d+(?:\.\d+)+)$/i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -29,13 +29,13 @@ class SpirvTools < Formula
   uses_from_macos "python" => :build, since: :catalina
 
   resource "spirv-headers" do
-    # revision number could be found as `spirv_headers_revision` in `.DEPS`
-    url "https:github.comKhronosGroupSPIRV-Headers.git",
+    # revision number could be found as `spirv_headers_revision` in `./DEPS`
+    url "https://github.com/KhronosGroup/SPIRV-Headers.git",
         revision: "aa6cef192b8e693916eb713e7a9ccadf06062ceb"
   end
 
   def install
-    (buildpath"externalspirv-headers").install resource("spirv-headers")
+    (buildpath/"external/spirv-headers").install resource("spirv-headers")
 
     system "cmake", "-S", ".", "-B", "build",
                     "-DCMAKE_INSTALL_RPATH=#{rpath}",
@@ -47,11 +47,11 @@ class SpirvTools < Formula
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 
-    (libexec"examples").install "examplescpp-interfacemain.cpp"
+    (libexec/"examples").install "examples/cpp-interface/main.cpp"
   end
 
   test do
-    cp libexec"examples""main.cpp", "test.cpp"
+    cp libexec/"examples"/"main.cpp", "test.cpp"
 
     args = if OS.mac?
       ["-lc++"]
@@ -61,6 +61,6 @@ class SpirvTools < Formula
 
     system ENV.cc, "-o", "test", "test.cpp", "-std=c++11", "-I#{include}", "-L#{lib}",
                    "-lSPIRV-Tools", "-lSPIRV-Tools-link", "-lSPIRV-Tools-opt", *args
-    system ".test"
+    system "./test"
   end
 end

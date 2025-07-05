@@ -1,10 +1,10 @@
 class Hlint < Formula
   desc "Haskell source code suggestions"
-  homepage "https:github.comndmitchellhlint"
-  url "https:hackage.haskell.orgpackagehlint-3.10hlint-3.10.tar.gz"
+  homepage "https://github.com/ndmitchell/hlint"
+  url "https://hackage.haskell.org/package/hlint-3.10/hlint-3.10.tar.gz"
   sha256 "d99672337c06b455884ac14418d562701143141d0d7e46af476817c2ae3efe37"
   license "BSD-3-Clause"
-  head "https:github.comndmitchellhlint.git", branch: "master"
+  head "https://github.com/ndmitchell/hlint.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "b9f3a91f79fe82520ad8dfabefbce65bb2ea46b6204b4502f273e77c25ad6506"
@@ -26,18 +26,18 @@ class Hlint < Formula
   def install
     system "cabal", "v2-update"
     system "cabal", "v2-install", *std_cabal_v2_args
-    man1.install "datahlint.1"
+    man1.install "data/hlint.1"
   end
 
   test do
-    (testpath"test.hs").write <<~HASKELL
+    (testpath/"test.hs").write <<~HASKELL
       main = do putStrLn "Hello World"
     HASKELL
-    assert_match "No hints", shell_output("#{bin}hlint test.hs")
+    assert_match "No hints", shell_output("#{bin}/hlint test.hs")
 
-    (testpath"test1.hs").write <<~HASKELL
+    (testpath/"test1.hs").write <<~HASKELL
       main = do foo x; return 3; bar z
     HASKELL
-    assert_match "Redundant return", shell_output("#{bin}hlint test1.hs", 1)
+    assert_match "Redundant return", shell_output("#{bin}/hlint test1.hs", 1)
   end
 end

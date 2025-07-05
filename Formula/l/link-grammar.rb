@@ -1,10 +1,10 @@
 class LinkGrammar < Formula
   desc "Carnegie Mellon University's link grammar parser"
-  homepage "https:github.comopencoglink-grammar"
-  url "https:github.comopencoglink-grammararchiverefstagslink-grammar-5.12.5.tar.gz"
+  homepage "https://github.com/opencog/link-grammar"
+  url "https://ghfast.top/https://github.com/opencog/link-grammar/archive/refs/tags/link-grammar-5.12.5.tar.gz"
   sha256 "04d04c6017a99f38e1cef1fee8238d2c444fffc90989951cfd64331f156d0340"
   license "LGPL-2.1-or-later"
-  head "https:github.comopencoglink-grammar.git", branch: "master"
+  head "https://github.com/opencog/link-grammar.git", branch: "master"
 
   bottle do
     rebuild 1
@@ -35,19 +35,19 @@ class LinkGrammar < Formula
     ENV.append_to_cflags "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1403
 
     ENV["PYTHON_LIBS"] = "-undefined dynamic_lookup"
-    inreplace "bindingspythonMakefile.am", "$(PYTHON_LDFLAGS) -module -no-undefined",
+    inreplace "bindings/python/Makefile.am", "$(PYTHON_LDFLAGS) -module -no-undefined",
                                              "$(PYTHON_LDFLAGS) -module"
     system "autoreconf", "--force", "--install", "--verbose"
-    system ".configure", "--with-regexlib=c", *std_configure_args
+    system "./configure", "--with-regexlib=c", *std_configure_args
 
     # Work around error due to install using detected path inside Python formula.
-    # install: ...site-packageslinkgrammar.pth: Operation not permitted
-    site_packages = prefixLanguage::Python.site_packages("python3.13")
+    # install: .../site-packages/linkgrammar.pth: Operation not permitted
+    site_packages = prefix/Language::Python.site_packages("python3.13")
     system "make", "install", "pythondir=#{site_packages}",
                               "pyexecdir=#{site_packages}"
   end
 
   test do
-    system bin"link-parser", "--version"
+    system bin/"link-parser", "--version"
   end
 end

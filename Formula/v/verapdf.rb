@@ -1,14 +1,14 @@
 class Verapdf < Formula
-  desc "Open-source industry-supported PDFA validation"
-  homepage "https:verapdf.orghome"
-  url "https:github.comveraPDFveraPDF-appsarchiverefstagsv1.28.1.tar.gz"
+  desc "Open-source industry-supported PDF/A validation"
+  homepage "https://verapdf.org/home/"
+  url "https://ghfast.top/https://github.com/veraPDF/veraPDF-apps/archive/refs/tags/v1.28.1.tar.gz"
   sha256 "5ed7463a0d19068932482c19b632c58c315a9019d430d63521db9b51928e98dc"
   license any_of: ["GPL-3.0-or-later", "MPL-2.0"]
-  head "https:github.comveraPDFveraPDF-apps.git", branch: "integration"
+  head "https://github.com/veraPDF/veraPDF-apps.git", branch: "integration"
 
   livecheck do
     url :stable
-    regex(^v?(\d+\.\d*[02468]\.\d+)$i)
+    regex(/^v?(\d+\.\d*[02468]\.\d+)$/i)
   end
 
   bottle do
@@ -29,17 +29,17 @@ class Verapdf < Formula
     ENV["JAVA_HOME"] = Language::Java.java_home
     system "mvn", "clean", "install", "-DskipTests"
 
-    installer_file = Pathname.glob("installertargetverapdf-izpack-installer-*.jar").first
+    installer_file = Pathname.glob("installer/target/verapdf-izpack-installer-*.jar").first
     system "java", "-DINSTALL_PATH=#{libexec}", "-jar", installer_file, "-options-system"
 
-    bin.install libexec"verapdf", libexec"verapdf-gui"
+    bin.install libexec/"verapdf", libexec/"verapdf-gui"
     bin.env_script_all_files libexec, Language::Java.overridable_java_home_env
     prefix.install "tests"
   end
 
   test do
-    with_env(VERAPDF: bin"verapdf", NO_CD: "1") do
-      system prefix"testsexit-status.sh"
+    with_env(VERAPDF: bin/"verapdf", NO_CD: "1") do
+      system prefix/"tests/exit-status.sh"
     end
   end
 end

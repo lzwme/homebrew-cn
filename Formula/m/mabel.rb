@@ -1,11 +1,11 @@
 class Mabel < Formula
   desc "Fancy BitTorrent client for the terminal"
-  homepage "https:github.comsmmr-softwaremabel"
-  url "https:github.comsmmr-softwaremabel.git",
+  homepage "https://github.com/smmr-software/mabel"
+  url "https://github.com/smmr-software/mabel.git",
       tag:      "v0.1.7",
       revision: "1e74a44f69ce86a0ada6d162c0dabcf2ad3c5077"
   license "GPL-3.0-or-later"
-  head "https:github.comsmmr-softwaremabel.git", branch: "main"
+  head "https://github.com/smmr-software/mabel.git", branch: "main"
 
   no_autobump! because: :requires_manual_review
 
@@ -37,13 +37,13 @@ class Mabel < Formula
   end
 
   test do
-    vrsn_out = shell_output("#{bin}mabel --version")
+    vrsn_out = shell_output("#{bin}/mabel --version")
     assert_match "Mabel #{version}", vrsn_out
     assert_match "Built by: #{tap.user}", vrsn_out
 
-    trnt_out = shell_output("#{bin}mabel 'test.torrent' 2>&1", 1)
+    trnt_out = shell_output("#{bin}/mabel 'test.torrent' 2>&1", 1)
     error_message = if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"].present?
-      "open devtty: no such device or address"
+      "open /dev/tty: no such device or address"
     else
       "open test.torrent: no such file or directory"
     end

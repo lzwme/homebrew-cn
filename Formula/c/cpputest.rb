@@ -1,10 +1,10 @@
 class Cpputest < Formula
-  desc "C C++ based unit xUnit test framework"
-  homepage "https:cpputest.github.io"
-  url "https:github.comcpputestcpputestreleasesdownloadv4.0cpputest-4.0.tar.gz"
+  desc "C /C++ based unit xUnit test framework"
+  homepage "https://cpputest.github.io/"
+  url "https://ghfast.top/https://github.com/cpputest/cpputest/releases/download/v4.0/cpputest-4.0.tar.gz"
   sha256 "21c692105db15299b5529af81a11a7ad80397f92c122bd7bf1e4a4b0e85654f7"
   license "BSD-3-Clause"
-  head "https:github.comcpputestcpputest.git", branch: "master"
+  head "https://github.com/cpputest/cpputest.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -35,8 +35,8 @@ class Cpputest < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~CPP
-      #include "CppUTestCommandLineTestRunner.h"
+    (testpath/"test.cpp").write <<~CPP
+      #include "CppUTest/CommandLineTestRunner.h"
 
       TEST_GROUP(HomebrewTest)
       {
@@ -52,6 +52,6 @@ class Cpputest < Formula
       }
     CPP
     system ENV.cxx, "test.cpp", "-L#{lib}", "-lCppUTest", "-o", "test"
-    assert_match "OK (1 tests", shell_output(".test")
+    assert_match "OK (1 tests", shell_output("./test")
   end
 end

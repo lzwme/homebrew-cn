@@ -1,11 +1,11 @@
 class Flang < Formula
   desc "LLVM Fortran Frontend"
-  homepage "https:flang.llvm.org"
-  url "https:github.comllvmllvm-projectreleasesdownloadllvmorg-20.1.7llvm-project-20.1.7.src.tar.xz"
+  homepage "https://flang.llvm.org/"
+  url "https://ghfast.top/https://github.com/llvm/llvm-project/releases/download/llvmorg-20.1.7/llvm-project-20.1.7.src.tar.xz"
   sha256 "cd8fd55d97ad3e360b1d5aaf98388d1f70dfffb7df36beee478be3b839ff9008"
   # The LLVM Project is under the Apache License v2.0 with LLVM Exceptions
   license "Apache-2.0" => { with: "LLVM-exception" }
-  head "https:github.comllvmllvm-project.git", branch: "main"
+  head "https://github.com/llvm/llvm-project.git", branch: "main"
 
   livecheck do
     formula "llvm"
@@ -37,20 +37,20 @@ class Flang < Formula
 
   def install
     # Generate omp_lib.h and omp_lib.F90 to be used by flang build
-    system "cmake", "-S", "openmp", "-B", "buildprojectsopenmp", *std_cmake_args
+    system "cmake", "-S", "openmp", "-B", "build/projects/openmp", *std_cmake_args
 
     args = %W[
       -DLLVM_TOOL_OPENMP_BUILD=ON
-      -DCLANG_DIR=#{llvm.opt_lib}cmakeclang
+      -DCLANG_DIR=#{llvm.opt_lib}/cmake/clang
       -DFLANG_INCLUDE_TESTS=OFF
       -DFLANG_REPOSITORY_STRING=#{tap&.issues_url}
       -DFLANG_STANDALONE_BUILD=ON
       -DFLANG_VENDOR=#{tap&.user}
-      -DLLVM_DIR=#{llvm.opt_lib}cmakellvm
+      -DLLVM_DIR=#{llvm.opt_lib}/cmake/llvm
       -DLLVM_ENABLE_EH=OFF
       -DLLVM_ENABLE_LTO=ON
       -DLLVM_USE_SYMLINKS=ON
-      -DMLIR_DIR=#{llvm.opt_lib}cmakemlir
+      -DMLIR_DIR=#{llvm.opt_lib}/cmake/mlir
       -DMLIR_LINK_MLIR_DYLIB=ON
     ]
     args << "-DFLANG_VENDOR_UTI=sh.brew.flang" if tap&.official?
@@ -67,10 +67,10 @@ class Flang < Formula
     bin.install_symlink libexec.children
 
     # Help `flang-new` driver find `libLTO.dylib` and runtime libraries
-    resource_dir = Utils.safe_popen_read(llvm.opt_bin"clang", "-print-resource-dir").chomp
+    resource_dir = Utils.safe_popen_read(llvm.opt_bin/"clang", "-print-resource-dir").chomp
     resource_dir.gsub!(llvm.prefix.realpath, llvm.opt_prefix)
-    (libexec"flang.cfg").atomic_write <<~CONFIG
-      -Wl,-lto_library,#{llvm.opt_lib}libLTO.dylib
+    (libexec/"flang.cfg").atomic_write <<~CONFIG
+      -Wl,-lto_library,#{llvm.opt_lib}/libLTO.dylib
       -resource-dir=#{resource_dir}
     CONFIG
 
@@ -79,19 +79,19 @@ class Flang < Formula
     # See equivalent code in `llvm.rb`.
     lib.glob("*.a").each do |static_archive|
       mktemp do
-        system llvm.opt_bin"llvm-ar", "x", static_archive
+        system llvm.opt_bin/"llvm-ar", "x", static_archive
         rebuilt_files = []
 
         Pathname.glob("*.o").each do |bc_file|
           file_type = Utils.safe_popen_read("file", "--brief", bc_file)
-          next unless file_type.match?(^LLVM (IR )?bitcode)
+          next unless file_type.match?(/^LLVM (IR )?bitcode/)
 
           rebuilt_files << bc_file
           system ENV.cc, "-fno-lto", "-Wno-unused-command-line-argument",
                          "-x", "ir", bc_file, "-c", "-o", bc_file
         end
 
-        system llvm.opt_bin"llvm-ar", "r", static_archive, *rebuilt_files if rebuilt_files.present?
+        system llvm.opt_bin/"llvm-ar", "r", static_archive, *rebuilt_files if rebuilt_files.present?
       end
     end
   end
@@ -103,13 +103,13 @@ class Flang < Formula
     # ENV.delete "CPATH"
     # ENV.delete "SDKROOT"
 
-    (testpath"hello.f90").write <<~FORTRAN
+    (testpath/"hello.f90").write <<~FORTRAN
       PROGRAM hello
         WRITE(*,'(A)') 'Hello World!'
       ENDPROGRAM
     FORTRAN
 
-    (testpath"test.f90").write <<~FORTRAN
+    (testpath/"test.f90").write <<~FORTRAN
       integer,parameter::m=10000
       real::a(m), b(m)
       real::fact=0.5
@@ -121,13 +121,13 @@ class Flang < Formula
       end
     FORTRAN
 
-    system binflang_driver, "-v", "hello.f90", "-o", "hello"
-    assert_equal "Hello World!", shell_output(".hello").chomp
+    system bin/flang_driver, "-v", "hello.f90", "-o", "hello"
+    assert_equal "Hello World!", shell_output("./hello").chomp
 
-    system binflang_driver, "-v", "test.f90", "-o", "test"
-    assert_equal "Done", shell_output(".test").chomp
+    system bin/flang_driver, "-v", "test.f90", "-o", "test"
+    assert_equal "Done", shell_output("./test").chomp
 
-    (testpath"omptest.f90").write <<~FORTRAN
+    (testpath/"omptest.f90").write <<~FORTRAN
       PROGRAM omptest
       USE omp_lib
       !$OMP PARALLEL NUM_THREADS(4)
@@ -140,11 +140,11 @@ class Flang < Formula
     openmp_flags += if OS.mac?
       %W[-L#{llvm.opt_lib}]
     else
-      libomp_dir = llvm.opt_libUtils.safe_popen_read(llvm.opt_bin"clang", "--print-target-triple").chomp
+      libomp_dir = llvm.opt_lib/Utils.safe_popen_read(llvm.opt_bin/"clang", "--print-target-triple").chomp
       %W[-L#{libomp_dir} -Wl,-rpath,#{libomp_dir} -Wl,-rpath,#{lib}]
     end
-    system binflang_driver, "-v", *openmp_flags, "omptest.f90", "-o", "omptest"
-    testresult = shell_output(".omptest")
+    system bin/flang_driver, "-v", *openmp_flags, "omptest.f90", "-o", "omptest"
+    testresult = shell_output("./omptest")
 
     expected_result = <<~EOS
       Hello from thread 0, nthreads 4
@@ -156,19 +156,19 @@ class Flang < Formula
     sorted_testresult = testresult.split("\n").sort.join("\n")
     assert_equal expected_result.strip, sorted_testresult.strip
 
-    (testpath"runtimes.f90").write <<~FORTRAN
+    (testpath/"runtimes.f90").write <<~FORTRAN
       Program main
         Complex :: y
-        y = y2
+        y = y/2
       End Program
     FORTRAN
-    system binflang_driver, "-v", "runtimes.f90"
+    system bin/flang_driver, "-v", "runtimes.f90"
 
     return if OS.linux?
 
-    system "ar", "x", lib"libFortranCommon.a"
+    system "ar", "x", lib/"libFortranCommon.a"
     testpath.glob("*.o").each do |object_file|
-      refute_match(^LLVM (IR )?bitcode, shell_output("file --brief #{object_file}"))
+      refute_match(/^LLVM (IR )?bitcode/, shell_output("file --brief #{object_file}"))
     end
   end
 end

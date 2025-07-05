@@ -1,14 +1,14 @@
 class Kics < Formula
   desc "Detect vulnerabilities, compliance issues, and misconfigurations"
-  homepage "https:kics.io"
-  url "https:github.comCheckmarxkicsarchiverefstagsv2.1.10.tar.gz"
+  homepage "https://kics.io/"
+  url "https://ghfast.top/https://github.com/Checkmarx/kics/archive/refs/tags/v2.1.10.tar.gz"
   sha256 "f43dad94a7b81142d32cac827fdfe813d771c6af6d290c87a653db6341fff87e"
   license "Apache-2.0"
-  head "https:github.comCheckmarxkics.git", branch: "master"
+  head "https://github.com/Checkmarx/kics.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -24,27 +24,27 @@ class Kics < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = "-s -w -X github.comCheckmarxkicsv#{version.major}internalconstants.Version=#{version}"
-    system "go", "build", *std_go_args(ldflags:), ".cmdconsole"
+    ldflags = "-s -w -X github.com/Checkmarx/kics/v#{version.major}/internal/constants.Version=#{version}"
+    system "go", "build", *std_go_args(ldflags:), "./cmd/console"
 
     pkgshare.install "assets"
   end
 
   def caveats
     <<~EOS
-      KICS queries are placed under #{opt_pkgshare}assetsqueries
-      To use KICS default queries add KICS_QUERIES_PATH env to your ~.zshrc or ~.zprofile:
-          "echo 'export KICS_QUERIES_PATH=#{opt_pkgshare}assetsqueries' >> ~.zshrc"
+      KICS queries are placed under #{opt_pkgshare}/assets/queries
+      To use KICS default queries add KICS_QUERIES_PATH env to your ~/.zshrc or ~/.zprofile:
+          "echo 'export KICS_QUERIES_PATH=#{opt_pkgshare}/assets/queries' >> ~/.zshrc"
       usage of CLI flag --queries-path takes precedence.
     EOS
   end
 
   test do
-    ENV["KICS_QUERIES_PATH"] = pkgshare"assetsqueries"
+    ENV["KICS_QUERIES_PATH"] = pkgshare/"assets/queries"
     ENV["DISABLE_CRASH_REPORT"] = "0"
     ENV["NO_COLOR"] = "1"
 
-    assert_match <<~EOS, shell_output("#{bin}kics scan -p #{testpath}")
+    assert_match <<~EOS, shell_output("#{bin}/kics scan -p #{testpath}")
       Results Summary:
       CRITICAL: 0
       HIGH: 0
@@ -54,6 +54,6 @@ class Kics < Formula
       TOTAL: 0
     EOS
 
-    assert_match version.to_s, shell_output("#{bin}kics version")
+    assert_match version.to_s, shell_output("#{bin}/kics version")
   end
 end

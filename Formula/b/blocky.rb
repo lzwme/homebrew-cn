@@ -1,10 +1,10 @@
 class Blocky < Formula
   desc "Fast and lightweight DNS proxy as ad-blocker for local network"
-  homepage "https:0xerr0r.github.ioblocky"
-  url "https:github.com0xerr0rblockyarchiverefstagsv0.26.2.tar.gz"
+  homepage "https://0xerr0r.github.io/blocky/"
+  url "https://ghfast.top/https://github.com/0xerr0r/blocky/archive/refs/tags/v0.26.2.tar.gz"
   sha256 "b6aadd53253fe51d1bd41a1c19911091b944657fd034cd3dfad8c139ac5870b3"
   license "Apache-2.0"
-  head "https:github.com0xerr0rblocky.git", branch: "main"
+  head "https://github.com/0xerr0r/blocky.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "98de841022b35ce277c2b1193bb5989061cc65a4aee83ea5f87f5bd067640c03"
@@ -20,25 +20,25 @@ class Blocky < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.com0xERR0Rblockyutil.Version=#{version}
-      -X github.com0xERR0Rblockyutil.BuildTime=#{time.iso8601}
+      -X github.com/0xERR0R/blocky/util.Version=#{version}
+      -X github.com/0xERR0R/blocky/util.BuildTime=#{time.iso8601}
     ]
-    system "go", "build", *std_go_args(ldflags:, output: sbin"blocky")
+    system "go", "build", *std_go_args(ldflags:, output: sbin/"blocky")
 
-    pkgetc.install "docsconfig.yml"
+    pkgetc.install "docs/config.yml"
   end
 
   service do
-    run [opt_sbin"blocky", "--config", etc"blockyconfig.yml"]
+    run [opt_sbin/"blocky", "--config", etc/"blocky/config.yml"]
     keep_alive true
     require_root true
   end
 
   test do
     # client
-    assert_match "Version: #{version}", shell_output("#{sbin}blocky version")
+    assert_match "Version: #{version}", shell_output("#{sbin}/blocky version")
 
     # server
-    assert_match "NOT OK", shell_output("#{sbin}blocky healthcheck", 1)
+    assert_match "NOT OK", shell_output("#{sbin}/blocky healthcheck", 1)
   end
 end

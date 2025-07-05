@@ -1,10 +1,10 @@
 class Leaps < Formula
   desc "Collaborative web-based text editing service written in Golang"
-  homepage "https:github.comjeffailleaps"
-  url "https:github.comJeffailleapsarchiverefstagsv0.9.1.tar.gz"
+  homepage "https://github.com/jeffail/leaps"
+  url "https://ghfast.top/https://github.com/Jeffail/leaps/archive/refs/tags/v0.9.1.tar.gz"
   sha256 "8335e2a939ac5928a05f71df4014529b5b0f2097152017d691a0fb6d5ae27be4"
   license "MIT"
-  head "https:github.comjeffailleaps.git", branch: "master"
+  head "https://github.com/jeffail/leaps.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -26,7 +26,7 @@ class Leaps < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), ".cmdleaps"
+    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/leaps"
   end
 
   test do
@@ -34,14 +34,14 @@ class Leaps < Formula
 
     # Start the server in a fork
     leaps_pid = fork do
-      exec bin"leaps", "-address", port
+      exec bin/"leaps", "-address", port
     end
 
     # Give the server some time to start serving
     sleep(1)
 
     # Check that the server is responding correctly
-    assert_match "You are alone", shell_output("curl -o- http:localhost#{port}")
+    assert_match "You are alone", shell_output("curl -o- http://localhost#{port}")
   ensure
     # Stop the server gracefully
     Process.kill("HUP", leaps_pid)

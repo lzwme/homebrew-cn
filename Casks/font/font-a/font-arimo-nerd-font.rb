@@ -2,9 +2,9 @@ cask "font-arimo-nerd-font" do
   version "3.4.0"
   sha256 "ed6f9667a581d3406063110a330a98cf5b9f618031cce606db798944056604c4"
 
-  url "https:github.comryanoasisnerd-fontsreleasesdownloadv#{version}Arimo.zip"
+  url "https://ghfast.top/https://github.com/ryanoasis/nerd-fonts/releases/download/v#{version}/Arimo.zip"
   name "Arimo Nerd Font (Arimo)"
-  homepage "https:github.comryanoasisnerd-fonts"
+  homepage "https://github.com/ryanoasis/nerd-fonts"
 
   livecheck do
     url :url

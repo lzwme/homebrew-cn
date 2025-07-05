@@ -2,9 +2,9 @@ cask "font-monaspace-nerd-font" do
   version "3.4.0"
   sha256 "032c065c53fe08c633eefc7b866b32595316c3563626145480d612aceef93e62"
 
-  url "https:github.comryanoasisnerd-fontsreleasesdownloadv#{version}Monaspace.zip"
+  url "https://ghfast.top/https://github.com/ryanoasis/nerd-fonts/releases/download/v#{version}/Monaspace.zip"
   name "Monaspice Nerd Font families (Monaspace)"
-  homepage "https:github.comryanoasisnerd-fonts"
+  homepage "https://github.com/ryanoasis/nerd-fonts"
 
   livecheck do
     url :url

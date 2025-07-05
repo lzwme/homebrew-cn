@@ -1,7 +1,7 @@
 class GrammarlyLanguageserver < Formula
   desc "Language Server for Grammarly"
-  homepage "https:github.comznckgrammarly"
-  url "https:registry.npmjs.orggrammarly-languageserver-grammarly-languageserver-0.0.4.tgz"
+  homepage "https://github.com/znck/grammarly"
+  url "https://registry.npmjs.org/grammarly-languageserver/-/grammarly-languageserver-0.0.4.tgz"
   sha256 "0d50b88059b5a63c66e3973e94d4f368366087ef59427003106a99bb46c46728"
   license "MIT"
   revision 1
@@ -15,11 +15,11 @@ class GrammarlyLanguageserver < Formula
 
   disable! date: "2024-10-10", because: :repo_archived
 
-  depends_on "node@16" # try `node` after https:github.comznckgrammarlyissues334
+  depends_on "node@16" # try `node` after https://github.com/znck/grammarly/issues/334
 
   def install
     system "npm", "install", *std_npm_args
-    bin.install_symlink Dir["#{libexec}bin*"]
+    bin.install_symlink Dir["#{libexec}/bin/*"]
   end
 
   test do
@@ -35,10 +35,10 @@ class GrammarlyLanguageserver < Formula
         }
       }
     JSON
-    Open3.popen3("#{bin}grammarly-languageserver --stdio") do |stdin, stdout, _, w|
+    Open3.popen3("#{bin}/grammarly-languageserver --stdio") do |stdin, stdout, _, w|
       stdin.write "Content-Length: #{json.size}\r\n\r\n#{json}"
       sleep 3
-      assert_match(^Content-Length: \d+i, stdout.readline)
+      assert_match(/^Content-Length: \d+/i, stdout.readline)
       Process.kill("KILL", w.pid)
     end
   end

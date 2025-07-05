@@ -1,7 +1,7 @@
 class Ice < Formula
   desc "Comprehensive RPC framework"
-  homepage "https:zeroc.com"
-  url "https:github.comzeroc-iceicearchiverefstagsv3.7.10.tar.gz"
+  homepage "https://zeroc.com"
+  url "https://ghfast.top/https://github.com/zeroc-ice/ice/archive/refs/tags/v3.7.10.tar.gz"
   sha256 "b90e9015ca9124a9eadfdfc49c5fba24d3550c547f166f3c9b2b5914c00fb1df"
   license "GPL-2.0-only"
 
@@ -38,11 +38,11 @@ class Ice < Formula
 
   def install
     # Workaround for Xcode 16 (LLVM 17) Clang bug that causes:
-    # includeIceOutgoingAsync.h: error: declaration shadows a local variable [-Werror,-Wshadow-uncaptured-local]
-    # Ref: https:github.comllvmllvm-projectissues81307
-    # Ref: https:github.comllvmllvm-projectissues71976
+    # include/Ice/OutgoingAsync.h: error: declaration shadows a local variable [-Werror,-Wshadow-uncaptured-local]
+    # Ref: https://github.com/llvm/llvm-project/issues/81307
+    # Ref: https://github.com/llvm/llvm-project/issues/71976
     if DevelopmentTools.clang_build_version == 1600
-      inreplace "configMake.rules.Darwin", "-Wno-shadow-field ", "\\0-Wno-shadow-uncaptured-local "
+      inreplace "config/Make.rules.Darwin", "-Wno-shadow-field ", "\\0-Wno-shadow-uncaptured-local "
     end
 
     args = [
@@ -58,15 +58,15 @@ class Ice < Formula
     ]
 
     # Fails with Xcode < 12.5
-    inreplace "cppincludeIceObject.h", ^#.+"-Wdeprecated-copy-dtor"+, "" if OS.mac? && MacOS.version <= :catalina
+    inreplace "cpp/include/Ice/Object.h", /^#.+"-Wdeprecated-copy-dtor"+/, "" if OS.mac? && MacOS.version <= :catalina
 
     system "make", "install", *args
 
     # We install these binaries to libexec because they conflict with those
     # installed along with the ice packages from PyPI, RubyGems and npm.
-    (libexec"bin").mkpath
+    (libexec/"bin").mkpath
     %w[slice2py slice2rb slice2js].each do |r|
-      mv binr, libexec"bin"
+      mv bin/r, libexec/"bin"
     end
   end
 
@@ -74,14 +74,14 @@ class Ice < Formula
     <<~EOS
       slice2py, slice2js and slice2rb were installed in:
 
-        #{opt_libexec}bin
+        #{opt_libexec}/bin
 
       You may wish to add this directory to your PATH.
     EOS
   end
 
   test do
-    (testpath"Hello.ice").write <<~EOS
+    (testpath/"Hello.ice").write <<~EOS
       module Test
       {
           interface Hello
@@ -93,8 +93,8 @@ class Ice < Formula
 
     port = free_port
 
-    (testpath"Test.cpp").write <<~CPP
-      #include <IceIce.h>
+    (testpath/"Test.cpp").write <<~CPP
+      #include <Ice/Ice.h>
       #include <Hello.h>
 
       class HelloI : public Test::Hello
@@ -113,10 +113,10 @@ class Ice < Formula
       }
     CPP
 
-    system bin"slice2cpp", "Hello.ice"
+    system bin/"slice2cpp", "Hello.ice"
     system ENV.cxx, "-DICE_CPP11_MAPPING", "-std=c++11", "-c", "-I#{include}", "-I.", "Hello.cpp"
     system ENV.cxx, "-DICE_CPP11_MAPPING", "-std=c++11", "-c", "-I#{include}", "-I.", "Test.cpp"
     system ENV.cxx, "-L#{lib}", "-o", "test", "Test.o", "Hello.o", "-lIce++11", "-pthread"
-    system ".test"
+    system "./test"
   end
 end

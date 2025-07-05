@@ -1,10 +1,10 @@
 class DoubleConversion < Formula
   desc "Binary-decimal and decimal-binary routines for IEEE doubles"
-  homepage "https:github.comgoogledouble-conversion"
-  url "https:github.comgoogledouble-conversionarchiverefstagsv3.3.1.tar.gz"
+  homepage "https://github.com/google/double-conversion"
+  url "https://ghfast.top/https://github.com/google/double-conversion/archive/refs/tags/v3.3.1.tar.gz"
   sha256 "fe54901055c71302dcdc5c3ccbe265a6c191978f3761ce1414d0895d6b0ea90e"
   license "BSD-3-Clause"
-  head "https:github.comgoogledouble-conversion.git", branch: "master"
+  head "https://github.com/google/double-conversion.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "e45a082cb2703fa9054e6399e96aee5104cbeb25ce5e30799af503585e2015d4"
@@ -19,9 +19,9 @@ class DoubleConversion < Formula
   depends_on "cmake" => :build
 
   # Fix to cmake 4 compatibility
-  # PR ref: https:github.comgoogledouble-conversionpull240
+  # PR ref: https://github.com/google/double-conversion/pull/240
   patch do
-    url "https:github.comgoogledouble-conversioncommit69880f0e68d6ddcb760285709195d63c5fd193c4.patch?full_index=1"
+    url "https://github.com/google/double-conversion/commit/69880f0e68d6ddcb760285709195d63c5fd193c4.patch?full_index=1"
     sha256 "9895afd264e304368d78d83d4bedf85fbd282f79fe99f70cd7384cde2baab329"
   end
 
@@ -32,12 +32,12 @@ class DoubleConversion < Formula
 
     system "cmake", "-S", ".", "-B", "static", "-DBUILD_SHARED_LIBS=OFF", *std_cmake_args
     system "cmake", "--build", "static"
-    lib.install "staticlibdouble-conversion.a"
+    lib.install "static/libdouble-conversion.a"
   end
 
   test do
-    (testpath"test.cc").write <<~CPP
-      #include <double-conversionbignum.h>
+    (testpath/"test.cc").write <<~CPP
+      #include <double-conversion/bignum.h>
       #include <stdio.h>
       int main() {
           char buf[20] = {0};
@@ -49,6 +49,6 @@ class DoubleConversion < Formula
       }
     CPP
     system ENV.cc, "test.cc", "-L#{lib}", "-ldouble-conversion", "-o", "test"
-    assert_equal "1234567890ABCDEF", `.test`
+    assert_equal "1234567890ABCDEF", `./test`
   end
 end

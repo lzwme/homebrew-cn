@@ -2,10 +2,10 @@ cask "font-unlock" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefontsrawmainoflunlockUnlock-Regular.ttf",
-      verified: "github.comgooglefonts"
+  url "https://github.com/google/fonts/raw/main/ofl/unlock/Unlock-Regular.ttf",
+      verified: "github.com/google/fonts/"
   name "Unlock"
-  homepage "https:fonts.google.comspecimenUnlock"
+  homepage "https://fonts.google.com/specimen/Unlock"
 
   font "Unlock-Regular.ttf"
 

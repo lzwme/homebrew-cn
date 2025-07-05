@@ -1,13 +1,13 @@
 class Iperf3 < Formula
   desc "Update of iperf: measures TCP, UDP, and SCTP bandwidth"
-  homepage "https:github.comesnetiperf"
-  url "https:downloads.es.netpubiperfiperf-3.19.tar.gz"
+  homepage "https://github.com/esnet/iperf"
+  url "https://downloads.es.net/pub/iperf/iperf-3.19.tar.gz"
   sha256 "040161da1555ec7411a9d81191049830ef37717d429a94ee6cf0842618e0e29c"
   license "BSD-3-Clause"
 
   livecheck do
-    url "https:downloads.es.netpubiperf"
-    regex(href=.*?iperf[._-]v?(\d+(?:\.\d+)+)\.ti)
+    url "https://downloads.es.net/pub/iperf/"
+    regex(/href=.*?iperf[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   bottle do
@@ -21,7 +21,7 @@ class Iperf3 < Formula
   end
 
   head do
-    url "https:github.comesnetiperf.git", branch: "master"
+    url "https://github.com/esnet/iperf.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -31,8 +31,8 @@ class Iperf3 < Formula
   depends_on "openssl@3"
 
   def install
-    system ".bootstrap.sh" if build.head?
-    system ".configure", "--disable-silent-rules",
+    system "./bootstrap.sh" if build.head?
+    system "./configure", "--disable-silent-rules",
                           "--disable-profiling",
                           "--with-openssl=#{Formula["openssl@3"].opt_prefix}",
                           *std_configure_args
@@ -42,10 +42,10 @@ class Iperf3 < Formula
 
   test do
     port = free_port
-    pid = spawn bin"iperf3", "--server", "--port", port.to_s
+    pid = spawn bin/"iperf3", "--server", "--port", port.to_s
     sleep 1
     sleep 2 if OS.mac? && Hardware::CPU.intel?
-    assert_match "Bitrate", shell_output("#{bin}iperf3 --client 127.0.0.1 --port #{port} --time 1")
+    assert_match "Bitrate", shell_output("#{bin}/iperf3 --client 127.0.0.1 --port #{port} --time 1")
   ensure
     Process.kill("SIGINT", pid)
     Process.wait(pid)

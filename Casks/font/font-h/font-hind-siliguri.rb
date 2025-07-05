@@ -2,12 +2,12 @@ cask "font-hind-siliguri" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefonts.git",
-      verified:  "github.comgooglefonts",
+  url "https://github.com/google/fonts.git",
+      verified:  "github.com/google/fonts",
       branch:    "main",
-      only_path: "oflhindsiliguri"
+      only_path: "ofl/hindsiliguri"
   name "Hind Siliguri"
-  homepage "https:fonts.google.comspecimenHind+Siliguri"
+  homepage "https://fonts.google.com/specimen/Hind+Siliguri"
 
   font "HindSiliguri-Bold.ttf"
   font "HindSiliguri-Light.ttf"

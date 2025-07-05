@@ -1,10 +1,10 @@
 class Osm2pgsql < Formula
   desc "OpenStreetMap data to PostgreSQL converter"
-  homepage "https:osm2pgsql.org"
-  url "https:github.comosm2pgsql-devosm2pgsqlarchiverefstags2.1.1.tar.gz"
+  homepage "https://osm2pgsql.org"
+  url "https://ghfast.top/https://github.com/osm2pgsql-dev/osm2pgsql/archive/refs/tags/2.1.1.tar.gz"
   sha256 "b084e4a79317043410ff13ece4350a801384bd34e6c2c5959fa1e1424ce195b0"
   license "GPL-2.0-only"
-  head "https:github.comosm2pgsql-devosm2pgsql.git", branch: "master"
+  head "https://github.com/osm2pgsql-dev/osm2pgsql.git", branch: "master"
 
   bottle do
     sha256 arm64_sequoia: "ae6732f4577555118510370adccaeefe194a43638f3edf8c6fa7d74883b70daa"
@@ -35,8 +35,8 @@ class Osm2pgsql < Formula
   def install
     # This is essentially a CMake disrespects superenv problem
     # rather than an upstream issue to handle.
-    lua_version = Formula["lua"].version.to_s.match(\d\.\d)
-    inreplace "cmakeFindLua.cmake", set\(LUA_VERSIONS5( \d\.\d)+\),
+    lua_version = Formula["lua"].version.to_s.match(/\d\.\d/)
+    inreplace "cmake/FindLua.cmake", /set\(LUA_VERSIONS5( \d\.\d)+\)/,
                                      "set(LUA_VERSIONS5 #{lua_version})"
 
     # Remove bundled libraries
@@ -47,7 +47,7 @@ class Osm2pgsql < Formula
       -DEXTERNAL_FMT=ON
       -DEXTERNAL_LIBOSMIUM=ON
       -DEXTERNAL_PROTOZERO=ON
-      -DPROTOZERO_INCLUDE_DIR=#{Formula["libosmium"].opt_libexec}include
+      -DPROTOZERO_INCLUDE_DIR=#{Formula["libosmium"].opt_libexec}/include
       -DWITH_LUAJIT=ON
     ]
 
@@ -57,9 +57,9 @@ class Osm2pgsql < Formula
   end
 
   test do
-    output = shell_output("#{bin}osm2pgsql devnull 2>&1", 1)
+    output = shell_output("#{bin}/osm2pgsql /dev/null 2>&1", 1)
     assert_match "ERROR: Connecting to database failed", output
 
-    assert_match version.to_s, shell_output("#{bin}osm2pgsql --version 2>&1")
+    assert_match version.to_s, shell_output("#{bin}/osm2pgsql --version 2>&1")
   end
 end

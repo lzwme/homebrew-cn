@@ -1,7 +1,7 @@
 class GraphqlCli < Formula
   desc "Command-line tool for common GraphQL development workflows"
-  homepage "https:github.comUrigographql-cli"
-  url "https:registry.npmjs.orggraphql-cli-graphql-cli-4.1.0.tgz"
+  homepage "https://github.com/Urigo/graphql-cli"
+  url "https://registry.npmjs.org/graphql-cli/-/graphql-cli-4.1.0.tgz"
   sha256 "c52d62ac108d4a3f711dbead0939bd02e3e2d0c82f8480fd76fc28f285602f5c"
   license "MIT"
 
@@ -10,7 +10,7 @@ class GraphqlCli < Formula
   # check the Git tags in this instance.
   livecheck do
     url :homepage
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -32,14 +32,14 @@ class GraphqlCli < Formula
 
   def install
     system "npm", "install", *std_npm_args
-    bin.install_symlink Dir["#{libexec}bin*"]
+    bin.install_symlink Dir["#{libexec}/bin/*"]
   end
 
   test do
     require "expect"
     require "open3"
 
-    Open3.popen2(bin"graphql", "init") do |stdin, stdout, wait_thread|
+    Open3.popen2(bin/"graphql", "init") do |stdin, stdout, wait_thread|
       stdout.expect "Select the best option for you"
       stdin.write "1\n"
       stdout.expect "? What is the name of the project?"
@@ -49,7 +49,7 @@ class GraphqlCli < Formula
       wait_thread.join
     end
 
-    assert_path_exists testpath"brew"
-    assert_match "Graphback runtime template with Apollo Server and PostgreSQL", (testpath"brewpackage.json").read
+    assert_path_exists testpath/"brew"
+    assert_match "Graphback runtime template with Apollo Server and PostgreSQL", (testpath/"brew/package.json").read
   end
 end

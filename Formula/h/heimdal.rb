@@ -1,14 +1,14 @@
 class Heimdal < Formula
   desc "Free Kerberos 5 implementation"
-  homepage "https:www.h5l.org"
-  url "https:github.comheimdalheimdalreleasesdownloadheimdal-7.8.0heimdal-7.8.0.tar.gz"
+  homepage "https://www.h5l.org"
+  url "https://ghfast.top/https://github.com/heimdal/heimdal/releases/download/heimdal-7.8.0/heimdal-7.8.0.tar.gz"
   sha256 "fd87a207846fa650fd377219adc4b8a8193e55904d8a752c2c3715b4155d8d38"
   license "BSD-3-Clause"
   revision 1
 
   livecheck do
     url :stable
-    regex(heimdal[._-]v?(\d+(?:\.\d+)+)i)
+    regex(/heimdal[._-]v?(\d+(?:\.\d+)+)/i)
     strategy :github_latest
   end
 
@@ -43,15 +43,15 @@ class Heimdal < Formula
   uses_from_macos "libxcrypt"
 
   resource "JSON" do
-    url "https:cpan.metacpan.orgauthorsidIISISHIGAKIJSON-4.10.tar.gz"
+    url "https://cpan.metacpan.org/authors/id/I/IS/ISHIGAKI/JSON-4.10.tar.gz"
     sha256 "df8b5143d9a7de99c47b55f1a170bd1f69f711935c186a6dc0ab56dd05758e35"
   end
 
   def install
-    ENV.prepend_create_path "PERL5LIB", buildpath"perl5libperl5"
+    ENV.prepend_create_path "PERL5LIB", buildpath/"perl5/lib/perl5"
 
     resource("JSON").stage do
-      system "perl", "Makefile.PL", "INSTALL_BASE=#{buildpath}perl5"
+      system "perl", "Makefile.PL", "INSTALL_BASE=#{buildpath}/perl5"
       system "make"
       system "make", "install"
     end
@@ -75,11 +75,11 @@ class Heimdal < Formula
       --with-berkeley-db-include=#{Formula["berkeley-db@5"].opt_include}
     ]
 
-    system ".configure", *args, *std_configure_args
+    system "./configure", *args, *std_configure_args
     system "make", "install"
   end
 
   test do
-    assert_match "-L#{lib}", shell_output("#{bin}krb5-config --libs")
+    assert_match "-L#{lib}", shell_output("#{bin}/krb5-config --libs")
   end
 end

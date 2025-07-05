@@ -1,10 +1,10 @@
 class LanguagetoolRust < Formula
   desc "LanguageTool API in Rust"
-  homepage "https:docs.rslanguagetool-rust"
-  url "https:github.comjeertmanslanguagetool-rustarchiverefstagsv2.1.5.tar.gz"
+  homepage "https://docs.rs/languagetool-rust"
+  url "https://ghfast.top/https://github.com/jeertmans/languagetool-rust/archive/refs/tags/v2.1.5.tar.gz"
   sha256 "db1da3e821976c2e5e85c26037301dd43fe8baff6bff243c498f74f7c5e57d37"
   license "MIT"
-  head "https:github.comjeertmanslanguagetool-rust.git", branch: "main"
+  head "https://github.com/jeertmans/languagetool-rust.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "58375defa38ac43d3943c08967a4fab9ac2bec7ffd69d042f02296defb1abbe2"
@@ -26,16 +26,16 @@ class LanguagetoolRust < Formula
   def install
     system "cargo", "install", "--features", "full", *std_cargo_args
 
-    generate_completions_from_executable(bin"ltrs", "completions")
+    generate_completions_from_executable(bin/"ltrs", "completions")
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}ltrs --version")
+    assert_match version.to_s, shell_output("#{bin}/ltrs --version")
 
-    system bin"ltrs", "ping"
-    assert_match "\"name\": \"Arabic\"", shell_output("#{bin}ltrs languages")
+    system bin/"ltrs", "ping"
+    assert_match "\"name\": \"Arabic\"", shell_output("#{bin}/ltrs languages")
 
-    output = shell_output("#{bin}ltrs check --text \"Some phrase with a smal mistake\"")
+    output = shell_output("#{bin}/ltrs check --text \"Some phrase with a smal mistake\"")
     assert_match "error[MORFOLOGIK_RULE_EN_US]: Possible spelling mistake found", output
   end
 end

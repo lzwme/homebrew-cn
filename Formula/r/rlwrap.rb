@@ -1,14 +1,14 @@
 class Rlwrap < Formula
   desc "Readline wrapper: adds readline support to tools that lack it"
-  homepage "https:github.comhanslub42rlwrap"
-  url "https:github.comhanslub42rlwraparchiverefstagsv0.46.2.tar.gz"
+  homepage "https://github.com/hanslub42/rlwrap"
+  url "https://ghfast.top/https://github.com/hanslub42/rlwrap/archive/refs/tags/v0.46.2.tar.gz"
   sha256 "9abb0a0dc19e85794d9b8e72e480530563eb4ee1bf243e87c0e0dd05ea4a2f09"
   license "GPL-2.0-or-later"
-  head "https:github.comhanslub42rlwrap.git", branch: "master"
+  head "https://github.com/hanslub42/rlwrap.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -28,11 +28,11 @@ class Rlwrap < Formula
   def install
     system "autoreconf", "--force", "--install", "--verbose"
 
-    system ".configure", *std_configure_args
+    system "./configure", *std_configure_args
     system "make", "install"
   end
 
   test do
-    system bin"rlwrap", "--version"
+    system bin/"rlwrap", "--version"
   end
 end

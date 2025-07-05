@@ -1,7 +1,7 @@
 class Sylph < Formula
   desc "Ultrafast taxonomic profiling and genome querying for metagenomic samples"
-  homepage "https:github.combluenote-1577sylph"
-  url "https:github.combluenote-1577sylpharchiverefstagsv0.8.1.tar.gz"
+  homepage "https://github.com/bluenote-1577/sylph"
+  url "https://ghfast.top/https://github.com/bluenote-1577/sylph/archive/refs/tags/v0.8.1.tar.gz"
   sha256 "9dceb4e2302ece3ca225218dfb8367c88a88c98d1eb4e8eac82a202195584099"
   license "MIT"
 
@@ -26,8 +26,8 @@ class Sylph < Formula
   end
 
   test do
-    cp_r pkgshare"test_files.", testpath
-    system bin"sylph", "sketch", "o157_reads.fastq.gz"
+    cp_r pkgshare/"test_files/.", testpath
+    system bin/"sylph", "sketch", "o157_reads.fastq.gz"
     assert_path_exists "o157_reads.fastq.gz.sylsp"
   end
 end

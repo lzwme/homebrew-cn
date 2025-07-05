@@ -2,16 +2,16 @@ cask "zen@twilight" do
   version "1.15t"
   sha256 :no_check
 
-  url "https:github.comzen-browserdesktopreleasesdownloadtwilightzen.macos-universal.dmg",
-      verified: "github.comzen-browserdesktop"
+  url "https://ghfast.top/https://github.com/zen-browser/desktop/releases/download/twilight/zen.macos-universal.dmg",
+      verified: "github.com/zen-browser/desktop/"
   name "Zen Twilight"
   desc "Gecko based web browser"
-  homepage "https:zen-browser.app"
+  homepage "https://zen-browser.app/"
 
   livecheck do
-    url "https:updates.zen-browser.appupdatesbrowserDarwin_aarch64-gcc3twilightupdate.xml"
+    url "https://updates.zen-browser.app/updates/browser/Darwin_aarch64-gcc3/twilight/update.xml"
     strategy :xml do |xml|
-      xml.get_elements("update").map { |item| item.attributes["appVersion"] }
+      xml.get_elements("//update").map { |item| item.attributes["appVersion"] }
     end
   end
 
@@ -21,14 +21,14 @@ cask "zen@twilight" do
   app "Twilight.app"
 
   zap trash: [
-        "~LibraryApplication SupportZen",
-        "~LibraryCachesMozillaupdatesApplicationsTwilight",
-        "~LibraryCachesMozillaupdatesApplicationsZen Twilight",
-        "~LibraryCachesZen",
-        "~LibraryPreferencesapp.zen-browser.zen.plist",
-        "~LibraryPreferencesorg.mozilla.com.zen.browser.plist",
-        "~LibrarySaved Application Stateapp.zen-browser.zen.savedState",
-        "~LibrarySaved Application Stateorg.mozilla.com.zen.browser.savedState",
+        "~/Library/Application Support/Zen",
+        "~/Library/Caches/Mozilla/updates/Applications/Twilight",
+        "~/Library/Caches/Mozilla/updates/Applications/Zen Twilight",
+        "~/Library/Caches/Zen",
+        "~/Library/Preferences/app.zen-browser.zen.plist",
+        "~/Library/Preferences/org.mozilla.com.zen.browser.plist",
+        "~/Library/Saved Application State/app.zen-browser.zen.savedState",
+        "~/Library/Saved Application State/org.mozilla.com.zen.browser.savedState",
       ],
-      rmdir: "~LibraryCachesMozilla"
+      rmdir: "~/Library/Caches/Mozilla"
 end

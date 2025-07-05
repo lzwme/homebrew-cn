@@ -1,15 +1,15 @@
 class Synfig < Formula
   desc "Command-line renderer"
-  homepage "https:www.synfig.org"
+  homepage "https://www.synfig.org/"
   # TODO: Update livecheck to track only stable releases when 1.6.x is available.
-  url "https:github.comsynfigsynfigreleasesdownloadv1.5.3synfig-1.5.3.tar.gz"
+  url "https://ghfast.top/https://github.com/synfig/synfig/releases/download/v1.5.3/synfig-1.5.3.tar.gz"
   sha256 "913c9cee6e5ad8fd6db3b3607c5b5ae0312f9ee6720c60619e3a97da98501ea8"
   license "GPL-3.0-or-later"
-  head "https:github.comsynfigsynfig.git", branch: "master"
+  head "https://github.com/synfig/synfig.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -67,19 +67,19 @@ class Synfig < Formula
     ENV.cxx11
 
     # missing install-sh in the tarball, and re-generate configure script
-    # upstream bug report, https:github.comsynfigsynfigissues3398
+    # upstream bug report, https://github.com/synfig/synfig/issues/3398
     system "autoreconf", "--force", "--install", "--verbose"
 
-    system ".configure", "--disable-silent-rules",
+    system "./configure", "--disable-silent-rules",
                           "--without-jpeg",
                           *std_configure_args
     system "make", "install"
   end
 
   test do
-    (testpath"test.cpp").write <<~CPP
+    (testpath/"test.cpp").write <<~CPP
       #include <stddef.h>
-      #include <synfigversion.h>
+      #include <synfig/version.h>
       int main(int argc, char *argv[])
       {
         const char *version = synfig::get_version();
@@ -89,6 +89,6 @@ class Synfig < Formula
 
     pkgconf_flags = shell_output("pkgconf --cflags --libs libavcodec synfig").chomp.split
     system ENV.cxx, "-std=c++11", "test.cpp", "-o", "test", *pkgconf_flags
-    system ".test"
+    system "./test"
   end
 end

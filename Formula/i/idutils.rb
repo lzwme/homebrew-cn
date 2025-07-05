@@ -1,8 +1,8 @@
 class Idutils < Formula
   desc "ID database and query tools"
-  homepage "https:www.gnu.orgsoftwareidutils"
-  url "https:ftp.gnu.orggnuidutilsidutils-4.6.tar.xz"
-  mirror "https:ftpmirror.gnu.orgidutilsidutils-4.6.tar.xz"
+  homepage "https://www.gnu.org/software/idutils/"
+  url "https://ftp.gnu.org/gnu/idutils/idutils-4.6.tar.xz"
+  mirror "https://ftpmirror.gnu.org/idutils/idutils-4.6.tar.xz"
   sha256 "8181f43a4fb62f6f0ccf3b84dbe9bec71ecabd6dfdcf49c6b5584521c888aac2"
   license "GPL-3.0-or-later"
   revision 1
@@ -29,15 +29,15 @@ class Idutils < Formula
 
   patch :p0 do
     on_high_sierra :or_newer do
-      url "https:raw.githubusercontent.commacportsmacports-portsb76d1e48daceditorsnanofilessecure_snprintf.patch"
+      url "https://ghfast.top/https://raw.githubusercontent.com/macports/macports-ports/b76d1e48dac/editors/nano/files/secure_snprintf.patch"
       sha256 "57f972940a10d448efbd3d5ba46e65979ae4eea93681a85e1d998060b356e0d2"
     end
   end
 
   # Fix build on Linux. Upstream issue:
-  # https:savannah.gnu.orgbugs?57429
+  # https://savannah.gnu.org/bugs/?57429
   # Patch submitted here:
-  # https:savannah.gnu.orgpatchindex.php?10240
+  # https://savannah.gnu.org/patch/index.php?10240
   patch :DATA
 
   def install
@@ -48,35 +48,35 @@ class Idutils < Formula
       # Workaround to use outdated gnulib with glibc 2.28+ based on gnulib fix[^1].
       # Upstream updated to newer gnulib[^2] which should fix issue in next release.
       #
-      # [^1]: https:github.comcoreutilsgnulibcommit4af4a4a71827c0bc5e0ec67af23edef4f15cee8e
-      # [^2]: https:git.savannah.gnu.orgcgitidutils.gitcommit?id=6efa403e105381a468d8b2cb8c254c1c217d1b53
+      # [^1]: https://github.com/coreutils/gnulib/commit/4af4a4a71827c0bc5e0ec67af23edef4f15cee8e
+      # [^2]: https://git.savannah.gnu.org/cgit/idutils.git/commit/?id=6efa403e105381a468d8b2cb8c254c1c217d1b53
       ENV.append_to_cflags "-D_IO_ftrylockfile -D_IO_IN_BACKUP=0x100"
     end
 
-    system ".configure", *args, *std_configure_args
+    system "./configure", *args, *std_configure_args
     system "make", "install"
   end
 
   test do
     usr = if OS.mac?
-      "#{MacOS.sdk_path_if_needed}usr"
+      "#{MacOS.sdk_path_if_needed}/usr"
     else
-      "usr"
+      "/usr"
     end
-    system bin"mkid", "#{usr}include"
+    system bin/"mkid", "#{usr}/include"
 
-    system bin"lid", "FILE"
+    system bin/"lid", "FILE"
   end
 end
 
 __END__
-diff --git alibstdio.in.h blibstdio.in.h
+diff --git a/lib/stdio.in.h b/lib/stdio.in.h
 index 0481930..79720e0 100644
---- alibstdio.in.h
-+++ blibstdio.in.h
+--- a/lib/stdio.in.h
++++ b/lib/stdio.in.h
 @@ -715,7 +715,6 @@ _GL_CXXALIASWARN (gets);
- * It is very rare that the developer ever has full control of stdin,
+ /* It is very rare that the developer ever has full control of stdin,
     so any use of gets warrants an unconditional warning.  Assume it is
-    always declared, since it is required by C89.  *
+    always declared, since it is required by C89.  */
 -_GL_WARN_ON_USE (gets, "gets is a security hole - use fgets instead");
  #endif

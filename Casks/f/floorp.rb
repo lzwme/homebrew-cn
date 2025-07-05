@@ -2,11 +2,11 @@ cask "floorp" do
   version "11.28.0"
   sha256 "2cbb7a3535f60f3d6d0a61dc3484489919da4adf23b7ed31a5dce994b60b4e3b"
 
-  url "https:github.comFloorp-ProjectsFloorpreleasesdownloadv#{version}floorp-macOS-universal.dmg",
-      verified: "github.comFloorp-ProjectsFloorp"
+  url "https://ghfast.top/https://github.com/Floorp-Projects/Floorp/releases/download/v#{version}/floorp-macOS-universal.dmg",
+      verified: "github.com/Floorp-Projects/Floorp/"
   name "Floorp browser"
   desc "Privacy-focused Firefox-based browser"
-  homepage "https:floorp.app"
+  homepage "https://floorp.app/"
 
   livecheck do
     url :url
@@ -19,11 +19,11 @@ cask "floorp" do
   app "Floorp.app"
 
   zap trash: [
-        "~LibraryApplication SupportFloorp",
-        "~LibraryCachesFloorp",
-        "~LibraryCachesMozillaupdatesApplicationsFloorp",
-        "~LibraryPreferences*.floorp.plist",
-        "~LibrarySaved Application State*.floorp.savedState",
+        "~/Library/Application Support/Floorp",
+        "~/Library/Caches/Floorp",
+        "~/Library/Caches/Mozilla/updates/Applications/Floorp",
+        "~/Library/Preferences/*.floorp.plist",
+        "~/Library/Saved Application State/*.floorp.savedState",
       ],
-      rmdir: "~LibraryCachesMozilla"
+      rmdir: "~/Library/Caches/Mozilla"
 end

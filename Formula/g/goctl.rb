@@ -1,14 +1,14 @@
 class Goctl < Formula
   desc "Generates server-side and client-side code for web and RPC services"
-  homepage "https:go-zero.dev"
-  url "https:github.comzeromicrogo-zeroarchiverefstagstoolsgoctlv1.8.4.tar.gz"
+  homepage "https://go-zero.dev"
+  url "https://ghfast.top/https://github.com/zeromicro/go-zero/archive/refs/tags/tools/goctl/v1.8.4.tar.gz"
   sha256 "8760cdcbbca3af762e441ea0ad9ed40858e9e6209e3c6747274914b0d9b41be7"
   license "MIT"
-  head "https:github.comzeromicrogo-zero.git", branch: "master"
+  head "https://github.com/zeromicro/go-zero.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(%r{^toolsgoctlv?(\d+(?:\.\d+)+)$}i)
+    regex(%r{^tools/goctl/v?(\d+(?:\.\d+)+)$}i)
   end
 
   bottle do
@@ -23,20 +23,20 @@ class Goctl < Formula
   depends_on "go" => :build
 
   def install
-    chdir "toolsgoctl" do
+    chdir "tools/goctl" do
       system "go", "build", *std_go_args(ldflags: "-s -w"), "goctl.go"
     end
 
-    generate_completions_from_executable(bin"goctl", "completion")
+    generate_completions_from_executable(bin/"goctl", "completion")
   end
 
   test do
-    assert_match "goctl version #{version}", shell_output("#{bin}goctl --version")
+    assert_match "goctl version #{version}", shell_output("#{bin}/goctl --version")
     # configure project path
     %w[api model rpc docker kube mongo newapi gateway].each do |f|
-      mkdir_p testpath"#{version}#{f}"
+      mkdir_p testpath/"#{version}/#{f}"
     end
-    system bin"goctl", "template", "init", "--home=#{testpath}"
-    assert_path_exists testpath"apimain.tpl", "goctl install fail"
+    system bin/"goctl", "template", "init", "--home=#{testpath}"
+    assert_path_exists testpath/"api/main.tpl", "goctl install fail"
   end
 end

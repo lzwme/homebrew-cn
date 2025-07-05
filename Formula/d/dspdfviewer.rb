@@ -1,11 +1,11 @@
 class Dspdfviewer < Formula
   desc "Dual-Screen PDF Viewer for latex-beamer"
-  homepage "https:dspdfviewer.danny-edel.de"
-  url "https:github.comdannyedeldspdfviewerarchiverefstagsv1.15.1.tar.gz"
+  homepage "https://dspdfviewer.danny-edel.de/"
+  url "https://ghfast.top/https://github.com/dannyedel/dspdfviewer/archive/refs/tags/v1.15.1.tar.gz"
   sha256 "c5b6f8c93d732e65a27810286d49a4b1c6f777d725e26a207b14f6b792307b03"
   license "GPL-2.0-or-later"
   revision 24
-  head "https:github.comdannyedeldspdfviewer.git", branch: "master"
+  head "https://github.com/dannyedel/dspdfviewer.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -40,9 +40,9 @@ class Dspdfviewer < Formula
 
   def install
     # Allow setting CMAKE_CXX_STANDARD in args
-    inreplace "cmakecompiler_clang.cmake", 'add_definitions("-std=c++11")', ""
-    inreplace "cmakecompiler_gnu_gcc.cmake", "add_definitions(-std=c++11)", ""
-    inreplace "cmakecompiler_unknown.cmake", "add_definitions(-std=c++11)", ""
+    inreplace "cmake/compiler_clang.cmake", 'add_definitions("-std=c++11")', ""
+    inreplace "cmake/compiler_gnu_gcc.cmake", "add_definitions(-std=c++11)", ""
+    inreplace "cmake/compiler_unknown.cmake", "add_definitions(-std=c++11)", ""
 
     args = %w[
       -DRunDualScreenTests=OFF
@@ -61,6 +61,6 @@ class Dspdfviewer < Formula
   test do
     ENV["QT_QPA_PLATFORM"] = "minimal" if OS.linux?
 
-    system bin"dspdfviewer", "--help"
+    system bin/"dspdfviewer", "--help"
   end
 end

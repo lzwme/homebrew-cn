@@ -1,10 +1,10 @@
 class Scalapack < Formula
   desc "High-performance linear algebra for distributed memory machines"
-  homepage "https:netlib.orgscalapack"
-  url "https:github.comReference-ScaLAPACKscalapackarchiverefstagsv2.2.2.tar.gz"
+  homepage "https://netlib.org/scalapack/"
+  url "https://ghfast.top/https://github.com/Reference-ScaLAPACK/scalapack/archive/refs/tags/v2.2.2.tar.gz"
   sha256 "a2f0c9180a210bf7ffe126c9cb81099cf337da1a7120ddb4cbe4894eb7b7d022"
   license "BSD-3-Clause"
-  head "https:github.comReference-ScaLAPACKscalapack.git", branch: "master"
+  head "https://github.com/Reference-ScaLAPACK/scalapack.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "dc18849ba919f1b668d9367aa6b3c33de0c5da835880a6cff52a0cec5e959480"
@@ -38,11 +38,11 @@ class Scalapack < Formula
   end
 
   test do
-    cp_r (pkgshare"EXAMPLE").children, testpath
+    cp_r (pkgshare/"EXAMPLE").children, testpath
 
     %w[psscaex pdscaex pcscaex pzscaex].each do |name|
       system "mpif90", "#{name}.f", "pdscaexinfo.f", "-L#{opt_lib}", "-lscalapack", "-o", name
-      assert_match(INFO code returned by .* 0, shell_output("mpirun --map-by :OVERSUBSCRIBE -np 4 .#{name}"))
+      assert_match(/INFO code returned by .* 0/, shell_output("mpirun --map-by :OVERSUBSCRIBE -np 4 ./#{name}"))
     end
   end
 end

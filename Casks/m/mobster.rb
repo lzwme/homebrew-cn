@@ -2,10 +2,10 @@ cask "mobster" do
   version "0.0.48"
   sha256 "47ab506e59d9a3491f06943baecd1b225277e472ce71bc5052efc9d152712233"
 
-  url "https:github.comdillonkearnsmobsterreleasesdownloadv#{version}Mobster-#{version}.dmg"
+  url "https://ghfast.top/https://github.com/dillonkearns/mobster/releases/download/v#{version}/Mobster-#{version}.dmg"
   name "Mobster"
   desc "Pair and mob programming timer"
-  homepage "https:github.comdillonkearnsmobster"
+  homepage "https://github.com/dillonkearns/mobster/"
 
   no_autobump! because: :requires_manual_review
 
@@ -14,10 +14,10 @@ cask "mobster" do
   app "Mobster.app"
 
   zap trash: [
-    "~LibraryApplication SupportMobster",
-    "~LibraryPreferencescom.dillonkearns.mobster.helper.plist",
-    "~LibraryPreferencescom.dillonkearns.mobster.plist",
-    "~LibrarySaved Application Statecom.dillonkearns.mobster.savedState",
+    "~/Library/Application Support/Mobster",
+    "~/Library/Preferences/com.dillonkearns.mobster.helper.plist",
+    "~/Library/Preferences/com.dillonkearns.mobster.plist",
+    "~/Library/Saved Application State/com.dillonkearns.mobster.savedState",
   ]
 
   caveats do

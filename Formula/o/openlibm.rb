@@ -1,7 +1,7 @@
 class Openlibm < Formula
   desc "High quality, portable, open source libm implementation"
-  homepage "https:openlibm.org"
-  url "https:github.comJuliaMathopenlibmarchiverefstagsv0.8.7.tar.gz"
+  homepage "https://openlibm.org"
+  url "https://ghfast.top/https://github.com/JuliaMath/openlibm/archive/refs/tags/v0.8.7.tar.gz"
   sha256 "e328a1d59b94748b111e022bca6a9d2fc0481fb57d23c87d90f394b559d4f062"
   license all_of: ["MIT", "ISC", "BSD-2-Clause"]
 
@@ -17,26 +17,26 @@ class Openlibm < Formula
 
   def install
     lib.mkpath
-    (lib"pkgconfig").mkpath
-    (include"openlibm").mkpath
+    (lib/"pkgconfig").mkpath
+    (include/"openlibm").mkpath
 
     system "make", "install", "prefix=#{prefix}"
 
-    lib.install Dir["lib*"].reject { |f| File.directory? f }
-    (lib"pkgconfig").install Dir["libpkgconfig*"]
-    (include"openlibm").install Dir["includeopenlibm*"]
+    lib.install Dir["lib/*"].reject { |f| File.directory? f }
+    (lib/"pkgconfig").install Dir["lib/pkgconfig/*"]
+    (include/"openlibm").install Dir["include/openlibm/*"]
   end
 
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include <stdio.h>
       #include "openlibm.h"
       int main (void) {
         printf("%.1f", cos(acos(0.0)));
       }
     C
-    system ENV.cc, "test.c", "-L#{lib}", "-I#{include}openlibm",
+    system ENV.cc, "test.c", "-L#{lib}", "-I#{include}/openlibm",
            "-o", "test"
-    assert_equal "0.0", shell_output(".test")
+    assert_equal "0.0", shell_output("./test")
   end
 end

@@ -1,10 +1,10 @@
 class Zellij < Formula
   desc "Pluggable terminal workspace, with terminal multiplexer as the base feature"
-  homepage "https:zellij.dev"
-  url "https:github.comzellij-orgzellijarchiverefstagsv0.42.2.tar.gz"
+  homepage "https://zellij.dev"
+  url "https://ghfast.top/https://github.com/zellij-org/zellij/archive/refs/tags/v0.42.2.tar.gz"
   sha256 "f1cd4b36775dd367b839e394b54e91042b0cd0f2b9e0901b1dec8517ff3929c0"
   license "MIT"
-  head "https:github.comzellij-orgzellij.git", branch: "main"
+  head "https://github.com/zellij-org/zellij.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "d6d6723fdc5f786f2a6fc97ffff21e273cd939dee49830fc0e9f3bd644a68cd9"
@@ -28,11 +28,11 @@ class Zellij < Formula
 
     system "cargo", "install", *std_cargo_args
 
-    generate_completions_from_executable(bin"zellij", "setup", "--generate-completion")
+    generate_completions_from_executable(bin/"zellij", "setup", "--generate-completion")
   end
 
   test do
-    assert_match("keybinds", shell_output("#{bin}zellij setup --dump-config"))
-    assert_match("zellij #{version}", shell_output("#{bin}zellij --version"))
+    assert_match("keybinds", shell_output("#{bin}/zellij setup --dump-config"))
+    assert_match("zellij #{version}", shell_output("#{bin}/zellij --version"))
   end
 end

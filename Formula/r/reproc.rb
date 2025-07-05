@@ -1,10 +1,10 @@
 class Reproc < Formula
-  desc "Cross-platform (C99C++11) process library"
-  homepage "https:github.comDaanDeMeyerreproc"
-  url "https:github.comDaanDeMeyerreprocarchiverefstagsv14.2.5.tar.gz"
+  desc "Cross-platform (C99/C++11) process library"
+  homepage "https://github.com/DaanDeMeyer/reproc"
+  url "https://ghfast.top/https://github.com/DaanDeMeyer/reproc/archive/refs/tags/v14.2.5.tar.gz"
   sha256 "69467be0cfc80734b821c54ada263c8f1439f964314063f76b7cf256c3dc7ee8"
   license "MIT"
-  head "https:github.comDaanDeMeyerreproc.git", branch: "main"
+  head "https://github.com/DaanDeMeyer/reproc.git", branch: "main"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "d0c6ae20f545beb6bcdf1cef7492705e3ee5985c17799f43d4877d5d4c69db2c"
@@ -28,12 +28,12 @@ class Reproc < Formula
     rm_r("build")
     system "cmake", "-S", ".", "-B", "build", *args
     system "cmake", "--build", "build"
-    lib.install "buildreprocliblibreproc.a", "buildreproc++liblibreproc++.a"
+    lib.install "build/reproc/lib/libreproc.a", "build/reproc++/lib/libreproc++.a"
   end
 
   test do
-    (testpath"test.c").write <<~C
-      #include <reprocrun.h>
+    (testpath/"test.c").write <<~C
+      #include <reproc/run.h>
 
       int main(void) {
         const char *args[] = { "echo", "Hello, world!", NULL };
@@ -41,9 +41,9 @@ class Reproc < Formula
       }
     C
 
-    (testpath"test.cpp").write <<~CPP
+    (testpath/"test.cpp").write <<~CPP
       #include <iostream>
-      #include <reproc++run.hpp>
+      #include <reproc++/run.hpp>
 
       int main(void) {
         int status = -1;
@@ -60,7 +60,7 @@ class Reproc < Formula
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lreproc", "-o", "test-c"
     system ENV.cxx, "test.cpp", "-std=c++11", "-I#{include}", "-L#{lib}", "-lreproc++", "-o", "test-cpp"
 
-    assert_equal "Hello, world!", shell_output(".test-c").chomp
-    assert_equal "Hello, world!", shell_output(".test-cpp").chomp
+    assert_equal "Hello, world!", shell_output("./test-c").chomp
+    assert_equal "Hello, world!", shell_output("./test-cpp").chomp
   end
 end

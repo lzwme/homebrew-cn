@@ -1,7 +1,7 @@
 class OsmiumTool < Formula
   desc "Libosmium-based command-line tool for processing OpenStreetMap data"
-  homepage "https:osmcode.orgosmium-tool"
-  url "https:github.comosmcodeosmium-toolarchiverefstagsv1.18.0.tar.gz"
+  homepage "https://osmcode.org/osmium-tool/"
+  url "https://ghfast.top/https://github.com/osmcode/osmium-tool/archive/refs/tags/v1.18.0.tar.gz"
   sha256 "5438f57043c9df05137ca4bd1b1e4a5fb1c9c8c49cb4bec43a5f1ef30ed68fb5"
   license "GPL-3.0-or-later"
   revision 1
@@ -28,7 +28,7 @@ class OsmiumTool < Formula
   uses_from_macos "zlib"
 
   def install
-    protozero = Formula["libosmium"].opt_libexec"include"
+    protozero = Formula["libosmium"].opt_libexec/"include"
 
     system "cmake", "-S", ".", "-B", "build", "-DPROTOZERO_INCLUDE_DIR=#{protozero}", *std_cmake_args
     system "cmake", "--build", "build"
@@ -36,25 +36,25 @@ class OsmiumTool < Formula
   end
 
   test do
-    (testpath"test.osm").write <<~XML
+    (testpath/"test.osm").write <<~XML
       <?xml version="1.0" encoding="UTF-8"?>
       <osm version="0.6" generator="handwritten">
-        <node id="1" lat="0.001" lon="0.001" user="Dummy User" uid="1" version="1" changeset="1" timestamp="2015-11-01T19:00:00Z"><node>
-        <node id="2" lat="0.002" lon="0.002" user="Dummy User" uid="1" version="1" changeset="1" timestamp="2015-11-01T19:00:00Z"><node>
+        <node id="1" lat="0.001" lon="0.001" user="Dummy User" uid="1" version="1" changeset="1" timestamp="2015-11-01T19:00:00Z"></node>
+        <node id="2" lat="0.002" lon="0.002" user="Dummy User" uid="1" version="1" changeset="1" timestamp="2015-11-01T19:00:00Z"></node>
         <way id="1" user="Dummy User" uid="1" version="1" changeset="1" timestamp="2015-11-01T19:00:00Z">
-          <nd ref="1">
-          <nd ref="2">
-          <tag k="name" v="line">
-        <way>
+          <nd ref="1"/>
+          <nd ref="2"/>
+          <tag k="name" v="line"/>
+        </way>
         <relation id="1" user="Dummy User" uid="1" version="1" changeset="1" timestamp="2015-11-01T19:00:00Z">
-          <member type="node" ref="1" role="">
-          <member type="way" ref="1" role="">
-        <relation>
-      <osm>
+          <member type="node" ref="1" role=""/>
+          <member type="way" ref="1" role=""/>
+        </relation>
+      </osm>
     XML
 
-    output = shell_output("#{bin}osmium fileinfo test.osm")
-    assert_match(Compression.+generator=handwrittenm, output)
-    system bin"osmium", "tags-filter", "test.osm", "wname=line", "-f", "osm"
+    output = shell_output("#{bin}/osmium fileinfo test.osm")
+    assert_match(/Compression.+generator=handwritten/m, output)
+    system bin/"osmium", "tags-filter", "test.osm", "w/name=line", "-f", "osm"
   end
 end

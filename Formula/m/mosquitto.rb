@@ -1,16 +1,16 @@
 class Mosquitto < Formula
   desc "Message broker implementing the MQTT protocol"
-  homepage "https:mosquitto.org"
-  url "https:mosquitto.orgfilessourcemosquitto-2.0.21.tar.gz"
+  homepage "https://mosquitto.org/"
+  url "https://mosquitto.org/files/source/mosquitto-2.0.21.tar.gz"
   sha256 "7ad5e84caeb8d2bb6ed0c04614b2a7042def961af82d87f688ba33db857b899d"
   # # dual-licensed under EPL-1.0 and EDL-1.0 (Eclipse Distribution License v1.0),
   # EDL-1.0 is pretty the same as BSD-3-Clause,
-  # see discussions in https:github.comspdxlicense-list-XMLissues1149
+  # see discussions in https://github.com/spdx/license-list-XML/issues/1149
   license any_of: ["EPL-1.0", "BSD-3-Clause"]
 
   livecheck do
-    url "https:mosquitto.orgdownload"
-    regex(href=.*?mosquitto[._-]v?(\d+(?:\.\d+)+)\.ti)
+    url "https://mosquitto.org/download/"
+    regex(/href=.*?mosquitto[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   bottle do
@@ -48,27 +48,27 @@ class Mosquitto < Formula
   end
 
   def post_install
-    (var"mosquitto").mkpath
+    (var/"mosquitto").mkpath
   end
 
   def caveats
     <<~EOS
       mosquitto has been installed with a default configuration file.
       You can make changes to the configuration by editing:
-          #{etc}mosquittomosquitto.conf
+          #{etc}/mosquitto/mosquitto.conf
     EOS
   end
 
   service do
-    run [opt_sbin"mosquitto", "-c", etc"mosquittomosquitto.conf"]
+    run [opt_sbin/"mosquitto", "-c", etc/"mosquitto/mosquitto.conf"]
     keep_alive false
-    working_dir var"mosquitto"
+    working_dir var/"mosquitto"
   end
 
   test do
-    assert_match "Usage: mosquitto ", shell_output("#{sbin}mosquitto -h", 3)
-    assert_match "Dynamic Security module", shell_output("#{bin}mosquitto_ctrl dynsec help")
-    system bin"mosquitto_passwd", "-c", "-b", testpath"mosquitto.pass", "foo", "bar"
-    assert_match(^foo:, (testpath"mosquitto.pass").read)
+    assert_match "Usage: mosquitto ", shell_output("#{sbin}/mosquitto -h", 3)
+    assert_match "Dynamic Security module", shell_output("#{bin}/mosquitto_ctrl dynsec help")
+    system bin/"mosquitto_passwd", "-c", "-b", testpath/"mosquitto.pass", "foo", "bar"
+    assert_match(/^foo:/, (testpath/"mosquitto.pass").read)
   end
 end

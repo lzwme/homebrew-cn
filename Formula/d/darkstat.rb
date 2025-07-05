@@ -1,10 +1,10 @@
 class Darkstat < Formula
   desc "Network traffic analyzer"
-  homepage "https:unix4lyfe.orgdarkstat"
-  url "https:github.comemikulicdarkstatarchiverefstags3.0.721.tar.gz"
+  homepage "https://unix4lyfe.org/darkstat/"
+  url "https://ghfast.top/https://github.com/emikulic/darkstat/archive/refs/tags/3.0.721.tar.gz"
   sha256 "0b405a6c011240f577559d84db22684a6349b25067c3a800df12439783c25494"
   license all_of: ["BSD-4-Clause-UC", "GPL-2.0-only", "GPL-3.0-or-later", "X11"]
-  head "https:github.comemikulicdarkstat.git", branch: "master"
+  head "https://github.com/emikulic/darkstat.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "5373a3a8b0c7a8138b1dd756814c5d0f383a530170822c5cec37260145a55bf0"
@@ -30,17 +30,17 @@ class Darkstat < Formula
   # Patch reported to upstream on 2017-10-08
   # Work around `redefinition of clockid_t` issue on 10.12 SDK or newer
   patch do
-    url "https:raw.githubusercontent.comHomebrewformula-patches442ce4a5darkstatclock_gettime.patch"
+    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/442ce4a5/darkstat/clock_gettime.patch"
     sha256 "001b81d417a802f16c5bc4577c3b840799511a79ceedec27fc7ff1273df1018b"
   end
 
   def install
     system "autoreconf", "--force", "--install", "--verbose"
-    system ".configure", *std_configure_args
+    system "./configure", *std_configure_args
     system "make", "install"
   end
 
   test do
-    system sbin"darkstat", "--verbose", "-r", test_fixtures("test.pcap")
+    system sbin/"darkstat", "--verbose", "-r", test_fixtures("test.pcap")
   end
 end

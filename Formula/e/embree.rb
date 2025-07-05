@@ -1,14 +1,14 @@
 class Embree < Formula
   desc "High-performance ray tracing kernels"
-  homepage "https:www.embree.org"
-  url "https:github.comRenderKitembreearchiverefstagsv4.4.0.tar.gz"
+  homepage "https://www.embree.org/"
+  url "https://ghfast.top/https://github.com/RenderKit/embree/archive/refs/tags/v4.4.0.tar.gz"
   sha256 "acb517b0ea0f4b442235d5331b69f96192c28da6aca5d5dde0cbe40799638d5c"
   license "Apache-2.0"
-  head "https:github.comRenderKitembree.git", branch: "master"
+  head "https://github.com/RenderKit/embree.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -46,9 +46,9 @@ class Embree < Formula
   end
 
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include <assert.h>
-      #include <embree4rtcore.h>
+      #include <embree4/rtcore.h>
 
       int main() {
         RTCDevice device = rtcNewDevice("verbose=1");
@@ -59,6 +59,6 @@ class Embree < Formula
     C
 
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lembree4"
-    assert_match "Embree Ray Tracing Kernels #{version} ()", shell_output(".a.out")
+    assert_match "Embree Ray Tracing Kernels #{version} ()", shell_output("./a.out")
   end
 end

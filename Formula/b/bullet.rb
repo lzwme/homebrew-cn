@@ -1,10 +1,10 @@
 class Bullet < Formula
   desc "Physics SDK"
-  homepage "https:bulletphysics.org"
-  url "https:github.combulletphysicsbullet3archiverefstags3.25.tar.gz"
+  homepage "https://bulletphysics.org/"
+  url "https://ghfast.top/https://github.com/bulletphysics/bullet3/archive/refs/tags/3.25.tar.gz"
   sha256 "c45afb6399e3f68036ddb641c6bf6f552bf332d5ab6be62f7e6c54eda05ceb77"
   license "Zlib"
-  head "https:github.combulletphysicsbullet3.git", branch: "master"
+  head "https://github.com/bulletphysics/bullet3.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -30,7 +30,7 @@ class Bullet < Formula
 
   def install
     # C++11 for nullptr usage in examples. Can remove when fixed upstream.
-    # Issue ref: https:github.combulletphysicsbullet3pull4243
+    # Issue ref: https://github.com/bulletphysics/bullet3/pull/4243
     ENV.cxx11 if OS.linux?
 
     common_args = %w[
@@ -47,7 +47,7 @@ class Bullet < Formula
                     *common_args
     system "cmake", "--build", "build_double"
     system "cmake", "--install", "build_double"
-    (lib"bulletdouble").install lib.children
+    (lib/"bullet/double").install lib.children
 
     system "cmake", "-S", ".", "-B", "build_static",
                     "-DBUILD_SHARED_LIBS=OFF",
@@ -57,11 +57,11 @@ class Bullet < Formula
 
     python_version = Language::Python.major_minor_version python3
     python_prefix = if OS.mac?
-      Formula["python@#{python_version}"].opt_frameworks"Python.frameworkVersions#{python_version}"
+      Formula["python@#{python_version}"].opt_frameworks/"Python.framework/Versions/#{python_version}"
     else
       Formula["python@#{python_version}"].opt_prefix
     end
-    prefix_site_packages = prefixLanguage::Python.site_packages(python3)
+    prefix_site_packages = prefix/Language::Python.site_packages(python3)
 
     system "cmake", "-S", ".", "-B", "build_shared",
                     "-DBUILD_SHARED_LIBS=ON",
@@ -69,19 +69,19 @@ class Bullet < Formula
                     "-DBUILD_PYBULLET=ON",
                     "-DBUILD_PYBULLET_NUMPY=ON",
                     "-DPYTHON_EXECUTABLE=#{which(python3)}",
-                    "-DPYTHON_INCLUDE_DIR=#{python_prefix}includepython#{python_version}",
-                    "-DPYTHON_LIBRARY=#{python_prefix}lib",
+                    "-DPYTHON_INCLUDE_DIR=#{python_prefix}/include/python#{python_version}",
+                    "-DPYTHON_LIBRARY=#{python_prefix}/lib",
                     *common_args
     system "cmake", "--build", "build_shared"
     system "cmake", "--install", "build_shared"
 
-    # Install single-precision library symlinks into `lib"bulletsingle"` for consistency
-    (lib"bulletsingle").install_symlink (lib.children - [lib"bullet"])
+    # Install single-precision library symlinks into `lib/"bullet/single"` for consistency
+    (lib/"bullet/single").install_symlink (lib.children - [lib/"bullet"])
   end
 
   test do
-    (testpath"test.cpp").write <<~CPP
-      #include "LinearMathbtPolarDecomposition.h"
+    (testpath/"test.cpp").write <<~CPP
+      #include "LinearMath/btPolarDecomposition.h"
       int main() {
         btMatrix3x3 I = btMatrix3x3::getIdentity();
         btMatrix3x3 u, h;
@@ -97,14 +97,14 @@ class Bullet < Formula
     end
 
     # Test single-precision library
-    system ENV.cc, "test.cpp", "-I#{include}bullet", "-L#{lib}",
+    system ENV.cc, "test.cpp", "-I#{include}/bullet", "-L#{lib}",
                    "-lLinearMath", cxx_lib, "-o", "test"
-    system ".test"
+    system "./test"
 
     # Test double-precision library
-    system ENV.cc, "test.cpp", "-I#{include}bullet", "-L#{lib}bulletdouble",
+    system ENV.cc, "test.cpp", "-I#{include}/bullet", "-L#{lib}/bullet/double",
                    "-lLinearMath", cxx_lib, "-o", "test"
-    system ".test"
+    system "./test"
 
     system python3, "-c", <<~PYTHON
       import pybullet

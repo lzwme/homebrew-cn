@@ -1,11 +1,11 @@
 class Heartbeat < Formula
   desc "Lightweight Shipper for Uptime Monitoring"
-  homepage "https:www.elastic.cobeatsheartbeat"
-  url "https:github.comelasticbeats.git",
+  homepage "https://www.elastic.co/beats/heartbeat"
+  url "https://github.com/elastic/beats.git",
       tag:      "v9.0.3",
       revision: "c394cb8e6470384d0c93b85f96c281dd6ec6592a"
   license "Apache-2.0"
-  head "https:github.comelasticbeats.git", branch: "master"
+  head "https://github.com/elastic/beats.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "799801c3353bcf19206e0604ec7246b279dd345f9bde6ee8f0cd8c1d57af07a7"
@@ -25,8 +25,8 @@ class Heartbeat < Formula
     rm_r("x-pack")
 
     # remove requirements.txt files so that build fails if venv is used.
-    # currently only needed by docstests
-    rm buildpath.glob("**requirements.txt")
+    # currently only needed by docs/tests
+    rm buildpath.glob("**/requirements.txt")
 
     cd "heartbeat" do
       # don't build docs because we aren't installing them and allows avoiding venv
@@ -36,41 +36,41 @@ class Heartbeat < Formula
       system "mage", "-v", "update"
 
       pkgetc.install Dir["heartbeat.*"], "fields.yml"
-      (libexec"bin").install "heartbeat"
+      (libexec/"bin").install "heartbeat"
     end
 
-    (bin"heartbeat").write <<~EOS
-      #!binsh
-      exec #{libexec}binheartbeat \
-        --path.config #{etc}heartbeat \
-        --path.data #{var}libheartbeat \
+    (bin/"heartbeat").write <<~EOS
+      #!/bin/sh
+      exec #{libexec}/bin/heartbeat \
+        --path.config #{etc}/heartbeat \
+        --path.data #{var}/lib/heartbeat \
         --path.home #{prefix} \
-        --path.logs #{var}logheartbeat \
+        --path.logs #{var}/log/heartbeat \
         "$@"
     EOS
 
-    chmod 0555, bin"heartbeat" # generate_completions_from_executable fails otherwise
-    generate_completions_from_executable(bin"heartbeat", "completion", shells: [:bash, :zsh])
+    chmod 0555, bin/"heartbeat" # generate_completions_from_executable fails otherwise
+    generate_completions_from_executable(bin/"heartbeat", "completion", shells: [:bash, :zsh])
   end
 
   def post_install
-    (var"libheartbeat").mkpath
-    (var"logheartbeat").mkpath
+    (var/"lib/heartbeat").mkpath
+    (var/"log/heartbeat").mkpath
   end
 
   service do
-    run opt_bin"heartbeat"
+    run opt_bin/"heartbeat"
   end
 
   test do
     # FIXME: This keeps stalling CI when tested as a dependent. See, for example,
-    # https:github.comHomebrewhomebrew-corepull91712
+    # https://github.com/Homebrew/homebrew-core/pull/91712
     return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"].present?
 
     begin
       port = free_port
 
-      (testpath"configheartbeat.yml").write <<~YAML
+      (testpath/"config/heartbeat.yml").write <<~YAML
         heartbeat.monitors:
         - type: tcp
           schedule: '@every 5s'
@@ -78,13 +78,13 @@ class Heartbeat < Formula
           check.send: "hello\\n"
           check.receive: "goodbye\\n"
         output.file:
-          path: "#{testpath}heartbeat"
+          path: "#{testpath}/heartbeat"
           filename: heartbeat
           codec.format:
             string: '%{[monitor]}'
       YAML
 
-      pid = spawn bin"heartbeat", "--path.config", testpath"config", "--path.data", testpath"data"
+      pid = spawn bin/"heartbeat", "--path.config", testpath/"config", "--path.data", testpath/"data"
       TCPServer.open(port) do |server|
         session = server.accept
         assert_equal "hello", session.gets.chomp
@@ -92,10 +92,10 @@ class Heartbeat < Formula
         session.close
       end
 
-      output = JSON.parse((testpath"datameta.json").read)
+      output = JSON.parse((testpath/"data/meta.json").read)
       assert_includes output, "first_start"
 
-      (testpath"data").glob("heartbeat-*.ndjson") do |file|
+      (testpath/"data").glob("heartbeat-*.ndjson") do |file|
         s = JSON.parse(file.read)
         assert_match "up", s["status"]
       end

@@ -1,10 +1,10 @@
 class GhzWeb < Formula
   desc "Web interface for ghz"
-  homepage "https:ghz.sh"
-  url "https:github.combojandghzarchiverefstagsv0.120.0.tar.gz"
+  homepage "https://ghz.sh"
+  url "https://ghfast.top/https://github.com/bojand/ghz/archive/refs/tags/v0.120.0.tar.gz"
   sha256 "e058b1dc3aa09ca7594a79f92bad3b481c4193a0db31b2ac310b54ad802b2580"
   license "Apache-2.0"
-  head "https:github.combojandghz.git", branch: "master"
+  head "https://github.com/bojand/ghz.git", branch: "master"
 
   livecheck do
     formula "ghz"
@@ -26,18 +26,18 @@ class GhzWeb < Formula
 
   def install
     ldflags = "-s -w -X main.version=#{version}"
-    system "go", "build", *std_go_args(ldflags:), ".cmdghz-web"
+    system "go", "build", *std_go_args(ldflags:), "./cmd/ghz-web"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}ghz-web -v 2>&1")
+    assert_match version.to_s, shell_output("#{bin}/ghz-web -v 2>&1")
     port = free_port
     ENV["GHZ_SERVER_PORT"] = port.to_s
     fork do
-      exec bin"ghz-web"
+      exec bin/"ghz-web"
     end
     sleep 1
-    cmd = "curl -sIm3 -XGET http:localhost:#{port}"
+    cmd = "curl -sIm3 -XGET http://localhost:#{port}/"
     assert_match "200 OK", shell_output(cmd)
   end
 end

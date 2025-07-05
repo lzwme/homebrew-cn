@@ -1,10 +1,10 @@
 class Cadence < Formula
   desc "Resource-oriented smart contract programming language"
-  homepage "https:cadence-lang.org"
-  url "https:github.comonflowcadencearchiverefstagsv1.6.3.tar.gz"
+  homepage "https://cadence-lang.org/"
+  url "https://ghfast.top/https://github.com/onflow/cadence/archive/refs/tags/v1.6.3.tar.gz"
   sha256 "85499d39a6bb69289456ea5d970cae66f5a87f93412cc9def8bc316903bf9fa2"
   license "Apache-2.0"
-  head "https:github.comonflowcadence.git", branch: "master"
+  head "https://github.com/onflow/cadence.git", branch: "master"
 
   # Upstream uses GitHub releases to indicate that a version is released
   # (there's also sometimes a notable gap between when a version is tagged and
@@ -28,30 +28,30 @@ class Cadence < Formula
   conflicts_with "cadence-workflow", because: "both install a `cadence` executable"
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), ".cmdmain"
+    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/main"
   end
 
   test do
-    # from https:cadence-lang.orgdocstutorialhello-world
-    (testpath"hello.cdc").write <<~EOS
+    # from https://cadence-lang.org/docs/tutorial/hello-world
+    (testpath/"hello.cdc").write <<~EOS
       access(all) contract HelloWorld {
 
-           Declare a public (access(all)) field of type String.
-          
-           All fields must be initialized in the initializer.
+          // Declare a public (access(all)) field of type String.
+          //
+          // All fields must be initialized in the initializer.
           access(all) let greeting: String
 
-           The initializer is required if the contract contains any fields.
+          // The initializer is required if the contract contains any fields.
           init() {
               self.greeting = "Hello, World!"
           }
 
-           Public function that returns our friendly greeting!
+          // Public function that returns our friendly greeting!
           access(all) view fun hello(): String {
               return self.greeting
           }
       }
     EOS
-    system bin"cadence", "hello.cdc"
+    system bin/"cadence", "hello.cdc"
   end
 end

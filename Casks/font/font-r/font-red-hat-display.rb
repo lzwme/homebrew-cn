@@ -2,12 +2,12 @@ cask "font-red-hat-display" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefonts.git",
-      verified:  "github.comgooglefonts",
+  url "https://github.com/google/fonts.git",
+      verified:  "github.com/google/fonts",
       branch:    "main",
-      only_path: "oflredhatdisplay"
+      only_path: "ofl/redhatdisplay"
   name "Red Hat Display"
-  homepage "https:fonts.google.comspecimenRed+Hat+Display"
+  homepage "https://fonts.google.com/specimen/Red+Hat+Display"
 
   font "RedHatDisplay-Italic[wght].ttf"
   font "RedHatDisplay[wght].ttf"

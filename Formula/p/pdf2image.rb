@@ -1,7 +1,7 @@
 class Pdf2image < Formula
   desc "Convert PDFs to images"
-  homepage "https:code.google.comppdf2image"
-  url "https:storage.googleapis.comgoogle-code-archive-downloadsv2code.google.compdf2imagepdf2image-0.53-source.tar.gz"
+  homepage "https://code.google.com/p/pdf2image/"
+  url "https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/pdf2image/pdf2image-0.53-source.tar.gz"
   sha256 "e8672c3bdba118c83033c655d90311db003557869c92903e5012cdb368a68982"
   license "FSFUL"
   revision 1
@@ -33,20 +33,20 @@ class Pdf2image < Formula
     because: "poppler, pdftohtml, pdf2image, and xpdf install conflicting executables"
 
   def install
-    system ".configure", "--prefix=#{prefix}"
+    system "./configure", "--prefix=#{prefix}"
 
     # Fix manpage install location. See:
-    # https:github.comflexpaperpdf2jsonissues2
-    inreplace "Makefile", "man", "shareman"
+    # https://github.com/flexpaper/pdf2json/issues/2
+    inreplace "Makefile", "/man/", "/share/man/"
 
     # Fix incorrect variable name in Makefile
-    inreplace "srcMakefile", "$(srcdir)", "$(SRCDIR)"
+    inreplace "src/Makefile", "$(srcdir)", "$(SRCDIR)"
 
     system "make"
     system "make", "install"
   end
 
   test do
-    system bin"pdf2image", "--version"
+    system bin/"pdf2image", "--version"
   end
 end

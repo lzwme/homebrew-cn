@@ -1,13 +1,13 @@
 class Cbc < Formula
   desc "Mixed integer linear programming solver"
-  homepage "https:github.comcoin-orCbc"
-  url "https:github.comcoin-orCbcarchiverefstagsreleases2.10.12.tar.gz"
+  homepage "https://github.com/coin-or/Cbc"
+  url "https://ghfast.top/https://github.com/coin-or/Cbc/archive/refs/tags/releases/2.10.12.tar.gz"
   sha256 "9ed71e4b61668462fc3794c102e26b4bb01a047efbbbcbd69ae7bde1f04f46a8"
   license "EPL-2.0"
 
   livecheck do
     url :stable
-    regex(%r{^releasesv?(\d+(?:\.\d+)+)$}i)
+    regex(%r{^releases/v?(\d+(?:\.\d+)+)$}i)
   end
 
   bottle do
@@ -37,23 +37,23 @@ class Cbc < Formula
 
   def install
     # Work around for:
-    # Error 1: "mkdir: #{include}cbccoin: File exists."
-    (include"cbccoin").mkpath
+    # Error 1: "mkdir: #{include}/cbc/coin: File exists."
+    (include/"cbc/coin").mkpath
 
-    system ".configure", "--disable-silent-rules",
-                          "--includedir=#{include}cbc",
+    system "./configure", "--disable-silent-rules",
+                          "--includedir=#{include}/cbc",
                           "--enable-cbc-parallel",
                           *std_configure_args
     system "make", "install"
 
-    pkgshare.install "Cbcexamples"
+    pkgshare.install "Cbc/examples"
   end
 
   test do
-    cp_r pkgshare"examples.", testpath
+    cp_r pkgshare/"examples/.", testpath
 
     pkg_config_flags = shell_output("pkg-config --cflags --libs cbc").chomp.split
     system ENV.cxx, "-std=c++11", "sudoku.cpp", *pkg_config_flags, "-o", "sudoku"
-    assert_match "solution is valid", shell_output(".sudoku")
+    assert_match "solution is valid", shell_output("./sudoku")
   end
 end

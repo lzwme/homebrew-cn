@@ -1,11 +1,11 @@
 class DosboxX < Formula
   desc "DOSBox with accurate emulation and wide testing"
-  homepage "https:dosbox-x.com"
-  url "https:github.comjoncampbell123dosbox-xarchiverefstagsdosbox-x-v2025.05.03.tar.gz"
+  homepage "https://dosbox-x.com/"
+  url "https://ghfast.top/https://github.com/joncampbell123/dosbox-x/archive/refs/tags/dosbox-x-v2025.05.03.tar.gz"
   sha256 "b29a2c9c38bfe1d1c1f2420d546b8c2456ae2ddce4c1f6b4d19f258841ce1581"
   license "GPL-2.0-or-later"
   version_scheme 1
-  head "https:github.comjoncampbell123dosbox-x.git", branch: "master"
+  head "https://github.com/joncampbell123/dosbox-x.git", branch: "master"
 
   # We check multiple releases because upstream sometimes creates releases with
   # a `dosbox-x-windows-` tag prefix and we've historically only used releases
@@ -14,7 +14,7 @@ class DosboxX < Formula
   # the formula), we can update this to us the `GithubLatest` strategy.
   livecheck do
     url :stable
-    regex(^dosbox-x[._-]v?(\d+(?:\.\d+)+)$i)
+    regex(/^dosbox-x[._-]v?(\d+(?:\.\d+)+)$/i)
     strategy :github_releases
   end
 
@@ -66,13 +66,13 @@ class DosboxX < Formula
       --disable-sdltest
     ]
 
-    system ".autogen.sh"
-    system ".configure", *args, *std_configure_args
+    system "./autogen.sh"
+    system "./configure", *args, *std_configure_args
     system "make" # Needs to be called separately from `make install`.
     system "make", "install"
   end
 
   test do
-    assert_match "DOSBox-X version #{version}", shell_output("#{bin}dosbox-x -version 2>&1", 1)
+    assert_match "DOSBox-X version #{version}", shell_output("#{bin}/dosbox-x -version 2>&1", 1)
   end
 end

@@ -1,13 +1,13 @@
 class Libdap < Formula
   desc "Framework for scientific data networking"
-  homepage "https:www.opendap.org"
-  url "https:www.opendap.orgpubsourcelibdap-3.21.1.tar.gz"
+  homepage "https://www.opendap.org/"
+  url "https://www.opendap.org/pub/source/libdap-3.21.1.tar.gz"
   sha256 "1f6c084bdbf2686121f9b2f5e767275c1e37d9ccf67c8faabc762389f95a0c38"
   license "LGPL-2.1-or-later"
 
   livecheck do
-    url "https:www.opendap.orgpubsource"
-    regex(href=.*?libdap[._-]v?(\d+(?:[.-]\d+)+)\.ti)
+    url "https://www.opendap.org/pub/source/"
+    regex(/href=.*?libdap[._-]v?(\d+(?:[.-]\d+)+)\.t/i)
   end
 
   bottle do
@@ -21,7 +21,7 @@ class Libdap < Formula
   end
 
   head do
-    url "https:github.comOPENDAPlibdap4.git", branch: "master"
+    url "https://github.com/OPENDAP/libdap4.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -43,7 +43,7 @@ class Libdap < Formula
 
   def install
     system "autoreconf", "--force", "--install", "--verbose" if build.head?
-    system ".configure", "--with-included-regex", *std_configure_args
+    system "./configure", "--with-included-regex", *std_configure_args
     system "make"
     system "make", "check"
     system "make", "install"
@@ -52,6 +52,6 @@ class Libdap < Formula
   test do
     # Versions like `1.2.3-4` with a suffix appear as `1.2.3` in the output, so
     # we have to remove the suffix (if any) from the formula version to match.
-    assert_match version.to_s.sub(-\d+$, ""), shell_output("#{bin}dap-config --version")
+    assert_match version.to_s.sub(/-\d+$/, ""), shell_output("#{bin}/dap-config --version")
   end
 end

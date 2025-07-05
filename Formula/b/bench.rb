@@ -1,20 +1,20 @@
 class Bench < Formula
   desc "Command-line benchmark tool"
-  homepage "https:github.comGabriella439bench"
+  homepage "https://github.com/Gabriella439/bench"
   license "BSD-3-Clause"
-  head "https:github.comGabriella439bench.git", branch: "main"
+  head "https://github.com/Gabriella439/bench.git", branch: "main"
 
   stable do
-    url "https:hackage.haskell.orgpackagebench-1.0.13bench-1.0.13.tar.gz"
+    url "https://hackage.haskell.org/package/bench-1.0.13/bench-1.0.13.tar.gz"
     sha256 "170c396f59e37851ed626c07756dc394841f7597895e691bf26049fee9725a6c"
 
     # Backport relaxed upper bound on text to build with GHC 9.10
     patch do
-      url "https:github.comGabriella439benchcommitf7efa5225eda160ca1cf978dc0147db4e1902e3c.patch?full_index=1"
+      url "https://github.com/Gabriella439/bench/commit/f7efa5225eda160ca1cf978dc0147db4e1902e3c.patch?full_index=1"
       sha256 "dc9895f4421274daa4e1aca04150b9e07eb48dbe5c11c1894aa9060081260342"
     end
     patch do
-      url "https:github.comGabriella439benchcommit1c4b112436c3eb3e4e9cccaf60525fa4c40fd38e.patch?full_index=1"
+      url "https://github.com/Gabriella439/bench/commit/1c4b112436c3eb3e4e9cccaf60525fa4c40fd38e.patch?full_index=1"
       sha256 "df9192a1137883120580c9d1f51a2a742e099c28ad6733eca025bb606a71fdc6"
     end
   end
@@ -44,6 +44,6 @@ class Bench < Formula
   end
 
   test do
-    assert_match(time\s+[0-9.]+, shell_output("#{bin}bench pwd"))
+    assert_match(/time\s+[0-9.]+/, shell_output("#{bin}/bench pwd"))
   end
 end

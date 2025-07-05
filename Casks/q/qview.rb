@@ -2,19 +2,19 @@ cask "qview" do
   version "7.0"
   sha256 "87a27f000dff7aed3e63a3da55a0a0f33637aec3b29556e5283de7a3e393a58b"
 
-  url "https:github.comjurplelqViewreleasesdownload#{version}qView-#{version}.dmg"
+  url "https://ghfast.top/https://github.com/jurplel/qView/releases/download/#{version}/qView-#{version}.dmg"
   name "qView"
   desc "Image viewer"
-  homepage "https:github.comjurplelqView"
+  homepage "https://github.com/jurplel/qView/"
 
   depends_on macos: ">= :monterey"
 
   app "qView.app"
 
   zap trash: [
-    "~LibraryApplication Supportcom.apple.sharedfilelistcom.apple.LSSharedFileList.ApplicationRecentDocumentscom.interversehq.qview.sfl*",
-    "~LibraryPreferencescom.interversehq.qView.plist",
-    "~LibraryPreferencescom.qview.qView.plist",
-    "~LibrarySaved Application Statecom.interversehq.qView.savedState",
+    "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.interversehq.qview.sfl*",
+    "~/Library/Preferences/com.interversehq.qView.plist",
+    "~/Library/Preferences/com.qview.qView.plist",
+    "~/Library/Saved Application State/com.interversehq.qView.savedState",
   ]
 end

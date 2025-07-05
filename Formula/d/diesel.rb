@@ -1,10 +1,10 @@
 class Diesel < Formula
   desc "Command-line tool for Rust ORM Diesel"
-  homepage "https:diesel.rs"
-  url "https:github.comdiesel-rsdieselarchiverefstagsv2.2.11.tar.gz"
+  homepage "https://diesel.rs"
+  url "https://ghfast.top/https://github.com/diesel-rs/diesel/archive/refs/tags/v2.2.11.tar.gz"
   sha256 "d2fdb24e16b4a26775bf76833fbb410e97f68af1161a084a500bc79d8d06dc41"
   license any_of: ["Apache-2.0", "MIT"]
-  head "https:github.comdiesel-rsdiesel.git", branch: "master"
+  head "https://github.com/diesel-rs/diesel.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "cb6a01fc55d2b30f4d2dd947e2f9934b5d67c2406397a492e53e505e999cd504"
@@ -24,13 +24,13 @@ class Diesel < Formula
 
   def install
     system "cargo", "install", *std_cargo_args(path: "diesel_cli")
-    generate_completions_from_executable(bin"diesel", "completions")
+    generate_completions_from_executable(bin/"diesel", "completions")
   end
 
   test do
     ENV["DATABASE_URL"] = "db.sqlite"
     system "cargo", "init"
-    system bin"diesel", "setup"
-    assert_path_exists testpath"db.sqlite", "SQLite database should be created"
+    system bin/"diesel", "setup"
+    assert_path_exists testpath/"db.sqlite", "SQLite database should be created"
   end
 end

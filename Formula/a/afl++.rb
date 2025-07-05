@@ -1,14 +1,14 @@
 class Aflxx < Formula
   desc "American Fuzzy Lop++"
-  homepage "https:aflplus.plus"
-  url "https:github.comAFLplusplusAFLplusplusarchiverefstagsv4.33c.tar.gz"
+  homepage "https://aflplus.plus/"
+  url "https://ghfast.top/https://github.com/AFLplusplus/AFLplusplus/archive/refs/tags/v4.33c.tar.gz"
   version "4.33c"
   sha256 "98903c8036282c8908b1d8cc0d60caf3ea259db4339503a76449b47acce58d1d"
   license "Apache-2.0"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+c)$i)
+    regex(/^v?(\d+(?:\.\d+)+c)$/i)
   end
 
   bottle do
@@ -32,7 +32,7 @@ class Aflxx < Formula
   fails_with :gcc
 
   def install
-    ENV.prepend_path "PATH", Formula["coreutils"].libexec"gnubin"
+    ENV.prepend_path "PATH", Formula["coreutils"].libexec/"gnubin"
 
     if OS.mac?
       # Disable the in-build test runs as they require modifying system settings as root.
@@ -59,7 +59,7 @@ class Aflxx < Formula
   end
 
   test do
-    cpp_file = testpath"main.cpp"
+    cpp_file = testpath/"main.cpp"
     cpp_file.write <<~CPP
       #include <iostream>
 
@@ -68,7 +68,7 @@ class Aflxx < Formula
       }
     CPP
 
-    system bin"afl-c++", "-g", cpp_file, "-o", "test"
-    assert_equal "Hello, world!", shell_output(".test")
+    system bin/"afl-c++", "-g", cpp_file, "-o", "test"
+    assert_equal "Hello, world!", shell_output("./test")
   end
 end

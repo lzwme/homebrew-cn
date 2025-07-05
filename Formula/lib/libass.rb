@@ -1,7 +1,7 @@
 class Libass < Formula
-  desc "Subtitle renderer for the ASSSSA subtitle format"
-  homepage "https:github.comlibasslibass"
-  url "https:github.comlibasslibassreleasesdownload0.17.4libass-0.17.4.tar.xz"
+  desc "Subtitle renderer for the ASS/SSA subtitle format"
+  homepage "https://github.com/libass/libass"
+  url "https://ghfast.top/https://github.com/libass/libass/releases/download/0.17.4/libass-0.17.4.tar.xz"
   sha256 "78f1179b838d025e9c26e8fef33f8092f65611444ffa1bfc0cfac6a33511a05a"
   license "ISC"
 
@@ -16,7 +16,7 @@ class Libass < Formula
   end
 
   head do
-    url "https:github.comlibasslibass.git", branch: "master"
+    url "https://github.com/libass/libass.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -42,13 +42,13 @@ class Libass < Formula
     args = OS.mac? ? ["--disable-fontconfig"] : []
 
     system "autoreconf", "--force", "--install", "--verbose" if build.head?
-    system ".configure", *args, *std_configure_args
+    system "./configure", *args, *std_configure_args
     system "make", "install"
   end
 
   test do
-    (testpath"test.cpp").write <<~CPP
-      #include "assass.h"
+    (testpath/"test.cpp").write <<~CPP
+      #include "ass/ass.h"
       int main() {
         ASS_Library *library;
         ASS_Renderer *renderer;
@@ -71,6 +71,6 @@ class Libass < Formula
       }
     CPP
     system ENV.cc, "test.cpp", "-I#{include}", "-L#{lib}", "-lass", "-o", "test"
-    system ".test"
+    system "./test"
   end
 end

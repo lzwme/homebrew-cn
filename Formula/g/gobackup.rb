@@ -1,10 +1,10 @@
 class Gobackup < Formula
   desc "CLI tool for backup your databases, files to cloud storages"
-  homepage "https:gobackup.github.io"
-  url "https:github.comgobackupgobackuparchiverefstagsv2.15.3.tar.gz"
+  homepage "https://gobackup.github.io"
+  url "https://ghfast.top/https://github.com/gobackup/gobackup/archive/refs/tags/v2.15.3.tar.gz"
   sha256 "5ffb9daf0f0698c1f3020fa28cbfc2a4e100922db091a345602dd464f04b9589"
   license "MIT"
-  head "https:github.comgobackupgobackup.git", branch: "main"
+  head "https://github.com/gobackup/gobackup.git", branch: "main"
 
   no_autobump! because: :requires_manual_review
 
@@ -32,24 +32,24 @@ class Gobackup < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}gobackup -v")
+    assert_match version.to_s, shell_output("#{bin}/gobackup -v")
 
-    config_file = testpath"gobackup.yml"
+    config_file = testpath/"gobackup.yml"
     config_file.write <<~YAML
       models:
         test:
           storages:
             local:
               type: local
-              path: #{testpath}backups
+              path: #{testpath}/backups
           archive:
             includes:
               - #{config_file}
     YAML
 
-    out = shell_output("#{bin}gobackup perform -c #{config_file}").chomp
+    out = shell_output("#{bin}/gobackup perform -c #{config_file}").chomp
     assert_match "succeeded", out
-    tar_files = Dir.glob("#{testpath}backups*.tar")
+    tar_files = Dir.glob("#{testpath}/backups/*.tar")
     assert_equal 1, tar_files.length
   end
 end

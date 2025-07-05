@@ -1,11 +1,11 @@
 class Trufflehog < Formula
   desc "Find and verify credentials"
-  homepage "https:trufflesecurity.com"
-  url "https:github.comtrufflesecuritytrufflehogarchiverefstagsv3.89.2.tar.gz"
+  homepage "https://trufflesecurity.com/"
+  url "https://ghfast.top/https://github.com/trufflesecurity/trufflehog/archive/refs/tags/v3.89.2.tar.gz"
   sha256 "2971a31e08c28bbaf7eb4b511cd516a452a179f0eb356ff574dc2cc8d474fba8"
-  # upstream license ask, https:github.comtrufflesecuritytrufflehogissues1446
+  # upstream license ask, https://github.com/trufflesecurity/trufflehog/issues/1446
   license "AGPL-3.0-only"
-  head "https:github.comtrufflesecuritytrufflehog.git", branch: "main"
+  head "https://github.com/trufflesecurity/trufflehog.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "42cbcefb6de3addc28f956cc6747e70f656155f48ae2a82eb5b782ea163aa804"
@@ -20,16 +20,16 @@ class Trufflehog < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = "-s -w -X github.comtrufflesecuritytrufflehogv3pkgversion.BuildVersion=#{version}"
+    ldflags = "-s -w -X github.com/trufflesecurity/trufflehog/v3/pkg/version.BuildVersion=#{version}"
     system "go", "build", *std_go_args(ldflags:)
   end
 
   test do
-    repo = "https:github.comtrufflesecuritytest_keys"
-    output = shell_output("#{bin}trufflehog git #{repo} --no-update --only-verified 2>&1")
+    repo = "https://github.com/trufflesecurity/test_keys"
+    output = shell_output("#{bin}/trufflehog git #{repo} --no-update --only-verified 2>&1")
     expected = "{\"chunks\": 0, \"bytes\": 0, \"verified_secrets\": 0, \"unverified_secrets\": 0, \"scan_duration\":"
     assert_match expected, output
 
-    assert_match version.to_s, shell_output("#{bin}trufflehog --version 2>&1")
+    assert_match version.to_s, shell_output("#{bin}/trufflehog --version 2>&1")
   end
 end

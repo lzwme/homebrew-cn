@@ -1,13 +1,13 @@
 class TkeySshAgent < Formula
   desc "SSH agent for use with the TKey security stick"
-  homepage "https:tillitis.se"
-  url "https:github.comtillitistkey-ssh-agentarchiverefstagsv1.0.0.tar.gz"
+  homepage "https://tillitis.se/"
+  url "https://ghfast.top/https://github.com/tillitis/tkey-ssh-agent/archive/refs/tags/v1.0.0.tar.gz"
   sha256 "abe43e1948101a5da007ff997161216ee7d44a54e3fa6b0aa255c22fcab11ae1"
   license "GPL-2.0-only"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -33,46 +33,46 @@ class TkeySshAgent < Formula
 
   def install
     ldflags = "-s -w -X main.version=#{version}"
-    system "go", "build", *std_go_args(ldflags:), ".cmdtkey-ssh-agent"
-    man1.install "systemtkey-ssh-agent.1"
+    system "go", "build", *std_go_args(ldflags:), "./cmd/tkey-ssh-agent"
+    man1.install "system/tkey-ssh-agent.1"
   end
 
   def post_install
-    (var"run").mkpath
-    (var"log").mkpath
+    (var/"run").mkpath
+    (var/"log").mkpath
   end
 
   def caveats
     <<~EOS
-      To use this SSH agent, set this variable in your ~.zshrc andor ~.bashrc:
-        export SSH_AUTH_SOCK="#{var}runtkey-ssh-agent.sock"
+      To use this SSH agent, set this variable in your ~/.zshrc and/or ~/.bashrc:
+        export SSH_AUTH_SOCK="#{var}/run/tkey-ssh-agent.sock"
     EOS
   end
 
   service do
     run macos: [
-          opt_bin"tkey-ssh-agent",
+          opt_bin/"tkey-ssh-agent",
           "--agent-socket",
-          var"runtkey-ssh-agent.sock",
+          var/"run/tkey-ssh-agent.sock",
           "--uss",
           "--pinentry",
-          HOMEBREW_PREFIX"binpinentry-mac",
+          HOMEBREW_PREFIX/"bin/pinentry-mac",
         ],
         linux: [
-          opt_bin"tkey-ssh-agent",
+          opt_bin/"tkey-ssh-agent",
           "--agent-socket",
-          var"runtkey-ssh-agent.sock",
+          var/"run/tkey-ssh-agent.sock",
           "--uss",
         ]
     keep_alive true
-    log_path var"logtkey-ssh-agent.log"
-    error_log_path var"logtkey-ssh-agent.log"
+    log_path var/"log/tkey-ssh-agent.log"
+    error_log_path var/"log/tkey-ssh-agent.log"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}tkey-ssh-agent --version")
-    socket = testpath"tkey-ssh-agent.sock"
-    fork { exec bin"tkey-ssh-agent", "--agent-socket", socket }
+    assert_match version.to_s, shell_output("#{bin}/tkey-ssh-agent --version")
+    socket = testpath/"tkey-ssh-agent.sock"
+    fork { exec bin/"tkey-ssh-agent", "--agent-socket", socket }
     sleep 1
     assert_path_exists socket
   end

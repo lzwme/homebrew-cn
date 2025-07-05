@@ -1,9 +1,9 @@
 class Katago < Formula
   desc "Neural Network Go engine with no human-provided knowledge"
-  homepage "https:github.comlightvectorKataGo"
-  # Occasionally check upstream docs in case recommended modelnetwork is changed.
-  # Ref: https:github.comlightvectorKataGo?tab=readme-ov-file#other-questions
-  url "https:github.comlightvectorKataGoarchiverefstagsv1.16.3.tar.gz"
+  homepage "https://github.com/lightvector/KataGo"
+  # Occasionally check upstream docs in case recommended model/network is changed.
+  # Ref: https://github.com/lightvector/KataGo?tab=readme-ov-file#other-questions
+  url "https://ghfast.top/https://github.com/lightvector/KataGo/archive/refs/tags/v1.16.3.tar.gz"
   sha256 "3e9764cd9900a660ba2f87945167ed47fe1f38167498c91253ca865d00acf5c7"
   license all_of: [
     "MIT",
@@ -41,19 +41,19 @@ class Katago < Formula
 
   # Using most recent b18c384nbt rather than strongest as it is easier to track
   resource "b18c384nbt" do
-    url "https:media.katagotraining.orguploadednetworksmodelskata1kata1-b18c384nbt-s9996604416-d4316597426.bin.gz", using: :nounzip
+    url "https://media.katagotraining.org/uploaded/networks/models/kata1/kata1-b18c384nbt-s9996604416-d4316597426.bin.gz", using: :nounzip
     version "s9996604416-d4316597426"
     sha256 "9d7a6afed8ff5b74894727e156f04f0cd36060a24824892008fbb6e0cba51f1d"
 
     livecheck do
-      url "https:katagotraining.orgnetworks"
-      regex(href=.*?kata1[._-]b18c384nbt[._-](s\d+[._-]d\d+)\.bin\.gzi)
+      url "https://katagotraining.org/networks/"
+      regex(/href=.*?kata1[._-]b18c384nbt[._-](s\d+[._-]d\d+)\.bin\.gz/i)
     end
   end
 
   # Following resources are final g170 so shouldn't need to be updated
   resource "20b-network" do
-    url "https:github.comlightvectorKataGoreleasesdownloadv1.4.5g170e-b20c256x2-s5303129600-d1228401921.bin.gz", using: :nounzip
+    url "https://ghfast.top/https://github.com/lightvector/KataGo/releases/download/v1.4.5/g170e-b20c256x2-s5303129600-d1228401921.bin.gz", using: :nounzip
     sha256 "7c8a84ed9ee737e9c7e741a08bf242d63db37b648e7f64942f3a8b1b5101e7c2"
 
     livecheck do
@@ -62,7 +62,7 @@ class Katago < Formula
   end
 
   resource "40b-network" do
-    url "https:github.comlightvectorKataGoreleasesdownloadv1.4.5g170-b40c256x2-s5095420928-d1229425124.bin.gz", using: :nounzip
+    url "https://ghfast.top/https://github.com/lightvector/KataGo/releases/download/v1.4.5/g170-b40c256x2-s5095420928-d1229425124.bin.gz", using: :nounzip
     sha256 "2b3a78981d2b6b5fae1cf8972e01bf3e48d2b291bc5e52ef41c9b65c53d59a71"
 
     livecheck do
@@ -80,14 +80,14 @@ class Katago < Formula
 
     system "cmake", "-S", "cpp", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
-    bin.install "buildkatago"
+    bin.install "build/katago"
 
-    pkgshare.install "cppconfigs"
+    pkgshare.install "cpp/configs"
     resources.each { |r| pkgshare.install r }
   end
 
   test do
-    system bin"katago", "version"
-    assert_match(All tests passed$, shell_output("#{bin}katago runtests").strip)
+    system bin/"katago", "version"
+    assert_match(/All tests passed$/, shell_output("#{bin}/katago runtests").strip)
   end
 end

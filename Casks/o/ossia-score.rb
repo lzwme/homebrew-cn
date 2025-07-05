@@ -5,15 +5,15 @@ cask "ossia-score" do
   sha256 arm:   "3673897e2956029bd2cbbc53d5771b3b1b418252df6b199be72430bebbd870f0",
          intel: "3104e911cd5e51bcff5b60676f6f599a8cbee45fd42ee4ca4a6a74d3d9186adb"
 
-  url "https:github.comossiascorereleasesdownloadv#{version}ossia.score-#{version}-macOS-#{arch}.dmg",
-      verified: "github.comossiascore"
+  url "https://ghfast.top/https://github.com/ossia/score/releases/download/v#{version}/ossia.score-#{version}-macOS-#{arch}.dmg",
+      verified: "github.com/ossia/score/"
   name "ossia score"
   desc "Interactive sequencer for intermedia art"
-  homepage "https:ossia.io"
+  homepage "https://ossia.io/"
 
   livecheck do
     url :url
-    regex(ossia[._-]score[._-]v?(\d+(?:[.-]\d+)+)[._-]macOS[._-]#{arch}\.dmgi)
+    regex(/ossia[._-]score[._-]v?(\d+(?:[.-]\d+)+)[._-]macOS[._-]#{arch}\.dmg/i)
     strategy :github_releases do |json, regex|
       json.map do |release|
         next if release["draft"] || release["prerelease"]
@@ -33,7 +33,7 @@ cask "ossia-score" do
   app "ossia score.app"
 
   zap trash: [
-    "~LibraryPreferencesio.ossia.score.plist",
-    "~LibrarySaved Application Stateio.ossia.score.savedState",
+    "~/Library/Preferences/io.ossia.score.plist",
+    "~/Library/Saved Application State/io.ossia.score.savedState",
   ]
 end

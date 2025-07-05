@@ -1,14 +1,14 @@
 class Timidity < Formula
   desc "Software synthesizer"
-  homepage "https:timidity.sourceforge.net"
-  url "https:downloads.sourceforge.netprojecttimidityTiMidity++TiMidity++-2.15.0TiMidity++-2.15.0.tar.bz2"
+  homepage "https://timidity.sourceforge.net/"
+  url "https://downloads.sourceforge.net/project/timidity/TiMidity++/TiMidity++-2.15.0/TiMidity++-2.15.0.tar.bz2"
   sha256 "161fc0395af16b51f7117ad007c3e434c825a308fa29ad44b626ee8f9bb1c8f5"
   license "GPL-2.0-or-later"
   revision 3
 
   livecheck do
     url :stable
-    regex(%r{url=.*?TiMidity%2B%2B[._-]v?(\d+(?:\.\d+)+)\.t}i)
+    regex(%r{url=.*?/TiMidity%2B%2B[._-]v?(\d+(?:\.\d+)+)\.t}i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -34,7 +34,7 @@ class Timidity < Formula
   depends_on "speex"
 
   resource "freepats" do
-    url "https:github.comferossfreepatsarchiverefstagsv1.0.3.tar.gz"
+    url "https://ghfast.top/https://github.com/feross/freepats/archive/refs/tags/v1.0.3.tar.gz"
     sha256 "d79fa8719500880627b1b65286fde6ddb06274540a3eba21178d2058d525007e"
   end
 
@@ -48,21 +48,21 @@ class Timidity < Formula
     ]
     audio_options << "darwin" if OS.mac?
 
-    system ".autogen.sh" if Hardware::CPU.arm?
-    system ".configure", "--disable-dependency-tracking",
+    system "./autogen.sh" if Hardware::CPU.arm?
+    system "./configure", "--disable-dependency-tracking",
                           "--prefix=#{prefix}",
                           "--mandir=#{man}",
                           "--enable-audio=#{audio_options.join(",")}"
     system "make", "install"
 
-    # Freepats instrument patches from https:github.comferossfreepats
-    (share"freepats").install resource("freepats")
-    pkgshare.install_symlink share"freepatsTone_000",
-                             share"freepatsDrum_000",
-                             share"freepatsfreepats.cfg" => "timidity.cfg"
+    # Freepats instrument patches from https://github.com/feross/freepats
+    (share/"freepats").install resource("freepats")
+    pkgshare.install_symlink share/"freepats/Tone_000",
+                             share/"freepats/Drum_000",
+                             share/"freepats/freepats.cfg" => "timidity.cfg"
   end
 
   test do
-    system bin"timidity"
+    system bin/"timidity"
   end
 end

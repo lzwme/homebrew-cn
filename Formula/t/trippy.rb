@@ -1,10 +1,10 @@
 class Trippy < Formula
   desc "Network diagnostic tool, inspired by mtr"
-  homepage "https:trippy.rs"
-  url "https:github.comfujiapple852trippyarchiverefstags0.13.0.tar.gz"
+  homepage "https://trippy.rs/"
+  url "https://ghfast.top/https://github.com/fujiapple852/trippy/archive/refs/tags/0.13.0.tar.gz"
   sha256 "72e598d2e0b947e8bc46706021c511f169b7e7634a734c326e492e0f30725c35"
   license "Apache-2.0"
-  head "https:github.comfujiapple852trippy.git", branch: "master"
+  head "https://github.com/fujiapple852/trippy.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "5aa029604d2f1edc732e6c8fd9ccebe1e1c1d1b230b5fa2a176aa0fed0eb00aa"
@@ -19,17 +19,17 @@ class Trippy < Formula
   depends_on "rust" => :build
 
   def install
-    system "cargo", "install", *std_cargo_args(path: "cratestrippy")
+    system "cargo", "install", *std_cargo_args(path: "crates/trippy")
 
-    generate_completions_from_executable(bin"trip", "--generate")
+    generate_completions_from_executable(bin/"trip", "--generate")
   end
 
   test do
-    # https:github.comfujiapple852trippy#privileges
+    # https://github.com/fujiapple852/trippy#privileges
     expected = "Error: privileges are required"
-    output = shell_output("#{bin}trip brew.sh 2>&1", 1)
+    output = shell_output("#{bin}/trip brew.sh 2>&1", 1)
     assert_match expected, output
 
-    assert_match "trip #{version}", shell_output("#{bin}trip --version")
+    assert_match "trip #{version}", shell_output("#{bin}/trip --version")
   end
 end

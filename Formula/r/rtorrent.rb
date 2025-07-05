@@ -1,7 +1,7 @@
 class Rtorrent < Formula
   desc "Ncurses BitTorrent client based on libtorrent-rakshasa"
-  homepage "https:github.comrakshasartorrent"
-  url "https:github.comrakshasartorrentreleasesdownloadv0.15.5rtorrent-0.15.5.tar.gz"
+  homepage "https://github.com/rakshasa/rtorrent"
+  url "https://ghfast.top/https://github.com/rakshasa/rtorrent/releases/download/v0.15.5/rtorrent-0.15.5.tar.gz"
   sha256 "847a3fdb69188c621950a3a74eaf8dbc464118659c9638d10c7cf5df57508b17"
   license "GPL-2.0-or-later"
 
@@ -29,15 +29,15 @@ class Rtorrent < Formula
 
   def install
     system "autoreconf", "--force", "--install", "--verbose"
-    system ".configure", "--with-xmlrpc-c", *std_configure_args
+    system "./configure", "--with-xmlrpc-c", *std_configure_args
     system "make"
     system "make", "install"
   end
 
   test do
-    pid = spawn bin"rtorrent", "-n", "-s", testpath
+    pid = spawn bin/"rtorrent", "-n", "-s", testpath
     sleep 10
-    assert_path_exists testpath"rtorrent.lock"
+    assert_path_exists testpath/"rtorrent.lock"
   ensure
     Process.kill("HUP", pid)
   end

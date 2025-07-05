@@ -17,25 +17,25 @@ cask "gqrx" do
            intel: "f3743ac9ba3176f38522d90a7aa9cdab26f1c1d374217fe147c43363a1ced63d"
   end
 
-  url "https:github.comgqrx-sdrgqrxreleasesdownloadv#{version}Gqrx-#{version}-#{arch}.dmg",
-      verified: "github.comgqrx-sdrgqrx"
+  url "https://ghfast.top/https://github.com/gqrx-sdr/gqrx/releases/download/v#{version}/Gqrx-#{version}-#{arch}.dmg",
+      verified: "github.com/gqrx-sdr/gqrx/"
   name "Gqrx"
   desc "Software-defined radio receiver powered by GNU Radio and Qt"
-  homepage "https:www.gqrx.dk"
+  homepage "https://www.gqrx.dk/"
 
   depends_on macos: ">= :ventura"
 
   app "Gqrx.app"
-  # shim script (https:github.comHomebrewhomebrew-caskissues18809)
-  shimscript = "#{staged_path}gqrx.wrapper.sh"
+  # shim script (https://github.com/Homebrew/homebrew-cask/issues/18809)
+  shimscript = "#{staged_path}/gqrx.wrapper.sh"
   binary shimscript, target: "gqrx"
 
   preflight do
     File.write shimscript, <<~EOS
-      #!binsh
-      '#{appdir}Gqrx.appContentsMacOSgqrx' "$@"
+      #!/bin/sh
+      '#{appdir}/Gqrx.app/Contents/MacOS/gqrx' "$@"
     EOS
   end
 
-  zap trash: "~.configgqrx"
+  zap trash: "~/.config/gqrx"
 end

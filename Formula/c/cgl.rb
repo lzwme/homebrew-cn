@@ -1,13 +1,13 @@
 class Cgl < Formula
   desc "Cut Generation Library"
-  homepage "https:github.comcoin-orCgl"
-  url "https:github.comcoin-orCglarchiverefstagsreleases0.60.9.tar.gz"
+  homepage "https://github.com/coin-or/Cgl"
+  url "https://ghfast.top/https://github.com/coin-or/Cgl/archive/refs/tags/releases/0.60.9.tar.gz"
   sha256 "558421ccd6aa91d6922dd1baa04e37aa4c75ba0472118dc11779e5d6a19bfb38"
   license "EPL-2.0"
 
   livecheck do
     url :stable
-    regex(%r{^releasesv?(\d+(?:\.\d+)+)$}i)
+    regex(%r{^releases/v?(\d+(?:\.\d+)+)$}i)
   end
 
   bottle do
@@ -33,24 +33,24 @@ class Cgl < Formula
   end
 
   def install
-    system ".configure", "--disable-silent-rules", "--includedir=#{include}cgl", *std_configure_args
+    system "./configure", "--disable-silent-rules", "--includedir=#{include}/cgl", *std_configure_args
     system "make", "install"
 
-    pkgshare.install "Cglexamples"
+    pkgshare.install "Cgl/examples"
   end
 
   test do
     resource "homebrew-coin-or-tools-data-sample-p0033-mps" do
-      url "https:raw.githubusercontent.comcoin-or-toolsData-Samplereleases1.2.12p0033.mps"
+      url "https://ghfast.top/https://raw.githubusercontent.com/coin-or-tools/Data-Sample/releases/1.2.12/p0033.mps"
       sha256 "8ccff819023237c79ef32e238a5da9348725ce9a4425d48888baf3a0b3b42628"
     end
 
     resource("homebrew-coin-or-tools-data-sample-p0033-mps").stage testpath
-    cp pkgshare"examplescgl1.cpp", testpath
+    cp pkgshare/"examples/cgl1.cpp", testpath
 
     pkg_config_flags = shell_output("pkg-config --cflags --libs cgl").chomp.split
     system ENV.cxx, "-std=c++11", "cgl1.cpp", *pkg_config_flags, "-o", "test"
-    output = shell_output(".test p0033 min")
+    output = shell_output("./test p0033 min")
     assert_match "Cut generation phase completed", output
   end
 end

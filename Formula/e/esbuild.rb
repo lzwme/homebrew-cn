@@ -1,10 +1,10 @@
 class Esbuild < Formula
   desc "Extremely fast JavaScript bundler and minifier"
-  homepage "https:esbuild.github.io"
-  url "https:github.comevanwesbuildarchiverefstagsv0.25.5.tar.gz"
+  homepage "https://esbuild.github.io/"
+  url "https://ghfast.top/https://github.com/evanw/esbuild/archive/refs/tags/v0.25.5.tar.gz"
   sha256 "c9e48734d65ca4f444618d843a1f7efc597fa18f2ad524cf9ad3ba5ab782b0e0"
   license "MIT"
-  head "https:github.comevanwesbuild.git", branch: "main"
+  head "https://github.com/evanw/esbuild.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "41e72d852f95924c933565e25d16b10282cc71c01926b01b97fc38e15c6f1331"
@@ -21,22 +21,22 @@ class Esbuild < Formula
 
   def install
     ENV["CGO_ENABLED"] = OS.mac? ? "1" : "0"
-    system "go", "build", *std_go_args(ldflags: "-s -w"), ".cmdesbuild"
+    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/esbuild"
   end
 
   test do
-    (testpath"app.jsx").write <<~JS
+    (testpath/"app.jsx").write <<~JS
       import * as React from 'react'
-      import * as Server from 'react-domserver'
+      import * as Server from 'react-dom/server'
 
-      let Greet = () => <h1>Hello, world!<h1>
-      console.log(Server.renderToString(<Greet >))
+      let Greet = () => <h1>Hello, world!</h1>
+      console.log(Server.renderToString(<Greet />))
       process.exit()
     JS
 
-    system Formula["node"].libexec"binnpm", "install", "react", "react-dom"
-    system bin"esbuild", "app.jsx", "--bundle", "--outfile=out.js"
+    system Formula["node"].libexec/"bin/npm", "install", "react", "react-dom"
+    system bin/"esbuild", "app.jsx", "--bundle", "--outfile=out.js"
 
-    assert_equal "<h1>Hello, world!<h1>\n", shell_output("node out.js")
+    assert_equal "<h1>Hello, world!</h1>\n", shell_output("node out.js")
   end
 end

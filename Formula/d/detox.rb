@@ -1,7 +1,7 @@
 class Detox < Formula
   desc "Utility to replace problematic characters in filenames"
-  homepage "https:detox.sourceforge.net"
-  url "https:github.comdharpledetoxarchiverefstagsv2.0.0.tar.gz"
+  homepage "https://detox.sourceforge.net/"
+  url "https://ghfast.top/https://github.com/dharple/detox/archive/refs/tags/v2.0.0.tar.gz"
   sha256 "46e646855cfeae5aa51d00c834f7eeeb5967188aaa17f8882a14f98343d82924"
   license "BSD-3-Clause"
 
@@ -23,12 +23,12 @@ class Detox < Formula
 
   def install
     system "autoreconf", "--force", "--install", "--verbose"
-    system ".configure", "--mandir=#{man}", *std_configure_args
+    system "./configure", "--mandir=#{man}", *std_configure_args
     system "make", "install"
   end
 
   test do
-    (testpath"rename this").write "foobar"
-    assert_equal "rename this -> rename_this\n", shell_output("#{bin}detox --dry-run rename\\ this")
+    (testpath/"rename this").write "foobar"
+    assert_equal "rename this -> rename_this\n", shell_output("#{bin}/detox --dry-run rename\\ this")
   end
 end

@@ -1,7 +1,7 @@
 class Pdf2json < Formula
   desc "PDF to JSON and XML converter"
-  homepage "https:github.comflexpaperpdf2json"
-  url "https:github.comflexpaperpdf2jsonarchiverefstags0.71.tar.gz"
+  homepage "https://github.com/flexpaper/pdf2json"
+  url "https://ghfast.top/https://github.com/flexpaper/pdf2json/archive/refs/tags/0.71.tar.gz"
   sha256 "54878473a2afb568caf2da11d6804cabe0abe505da77584a3f8f52bcd37d9c55"
   license "GPL-2.0-only"
 
@@ -25,13 +25,13 @@ class Pdf2json < Formula
   end
 
   def install
-    system ".configure"
+    system "./configure"
     system "make", "CC=#{ENV.cc}", "CXX=#{ENV.cxx}"
-    bin.install "srcpdf2json"
+    bin.install "src/pdf2json"
   end
 
   test do
-    system bin"pdf2json", test_fixtures("test.pdf"), "test.json"
-    assert_path_exists testpath"test.json"
+    system bin/"pdf2json", test_fixtures("test.pdf"), "test.json"
+    assert_path_exists testpath/"test.json"
   end
 end

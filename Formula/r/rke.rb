@@ -1,7 +1,7 @@
 class Rke < Formula
   desc "Rancher Kubernetes Engine, a Kubernetes installer that works everywhere"
-  homepage "https:rke.docs.rancher.com"
-  url "https:github.comrancherrkearchiverefstagsv1.8.4.tar.gz"
+  homepage "https://rke.docs.rancher.com/"
+  url "https://ghfast.top/https://github.com/rancher/rke/archive/refs/tags/v1.8.4.tar.gz"
   sha256 "923a7cbcb4b0a355b66cf08fd89390c96a499a0a35ee3d62340e7ab964b15fc8"
   license "Apache-2.0"
 
@@ -11,7 +11,7 @@ class Rke < Formula
   # isn't the newest version at times).
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
     strategy :github_releases
   end
 
@@ -33,7 +33,7 @@ class Rke < Formula
   end
 
   test do
-    system bin"rke", "config", "-e"
-    assert_path_exists testpath"cluster.yml"
+    system bin/"rke", "config", "-e"
+    assert_path_exists testpath/"cluster.yml"
   end
 end

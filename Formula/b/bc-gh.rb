@@ -1,12 +1,12 @@
 class BcGh < Formula
   desc "Implementation of Unix dc and POSIX bc with GNU and BSD extensions"
-  # The homepage is https:git.gavinhoward.comgavinbc but the Linux CI runner
+  # The homepage is https://git.gavinhoward.com/gavin/bc but the Linux CI runner
   # has issues fetching the Gitea urls so we use the official GitHub mirror instead
-  homepage "https:github.comgavinhowardbc"
-  url "https:github.comgavinhowardbcreleasesdownload7.0.3bc-7.0.3.tar.xz"
+  homepage "https://github.com/gavinhoward/bc"
+  url "https://ghfast.top/https://github.com/gavinhoward/bc/releases/download/7.0.3/bc-7.0.3.tar.xz"
   sha256 "91eb74caed0ee6655b669711a4f350c25579778694df248e28363318e03c7fc4"
   license "BSD-2-Clause"
-  head "https:github.comgavinhowardbc.git", branch: "master"
+  head "https://github.com/gavinhoward/bc.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "9c25b6baed11d3e111039ea04100d211d37874750f42e2137d78e7774646e06b"
@@ -27,12 +27,12 @@ class BcGh < Formula
   conflicts_with "bc", because: "both install `bc` and `dc` binaries"
 
   def install
-    # https:git.gavinhoward.comgavinbc#recommended-optimizations
+    # https://git.gavinhoward.com/gavin/bc#recommended-optimizations
     ENV.O3
     ENV.append "CFLAGS", "-flto"
 
     # NOTE: `--predefined-build-type` should be kept first to avoid overwriting later args
-    system ".configure.sh", "--predefined-build-type=GNU",
+    system "./configure.sh", "--predefined-build-type=GNU",
                              "--disable-generated-tests",
                              "--disable-problematic-tests",
                              "--disable-nls",
@@ -43,7 +43,7 @@ class BcGh < Formula
   end
 
   test do
-    system bin"bc", "--version"
-    assert_match "2", pipe_output(bin"bc", "1+1\n", 0)
+    system bin/"bc", "--version"
+    assert_match "2", pipe_output(bin/"bc", "1+1\n", 0)
   end
 end

@@ -1,10 +1,10 @@
 class GitWho < Formula
   desc "Git blame for file trees"
-  homepage "https:github.comsinclairtargetgit-who"
-  url "https:github.comsinclairtargetgit-whoarchiverefstagsv1.1.tar.gz"
+  homepage "https://github.com/sinclairtarget/git-who"
+  url "https://ghfast.top/https://github.com/sinclairtarget/git-who/archive/refs/tags/v1.1.tar.gz"
   sha256 "b88efe18a39987006df113e097a0e96493955237613997b56c940ff591473ea2"
   license "MIT"
-  head "https:github.comsinclairtargetgit-who.git", branch: "master"
+  head "https://github.com/sinclairtarget/git-who.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "d1a53fb17a9a37e67ca3f9e59b2816c53ca34204c0779ed84a94aa27e1f5e10d"
@@ -23,13 +23,13 @@ class GitWho < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}git-who -version")
+    assert_match version.to_s, shell_output("#{bin}/git-who -version")
 
     system "git", "init"
     touch "example"
     system "git", "add", "example"
     system "git", "commit", "-m", "example"
 
-    assert_match "example", shell_output("#{bin}git-who tree")
+    assert_match "example", shell_output("#{bin}/git-who tree")
   end
 end

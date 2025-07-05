@@ -1,7 +1,7 @@
 class Gimme < Formula
   desc "Shell script to install any Go version"
-  homepage "https:github.comtravis-cigimme"
-  url "https:github.comtravis-cigimmearchiverefstagsv1.5.6.tar.gz"
+  homepage "https://github.com/travis-ci/gimme"
+  url "https://ghfast.top/https://github.com/travis-ci/gimme/archive/refs/tags/v1.5.6.tar.gz"
   sha256 "50c42ec01505bee0e5b60165a0f577fe1e08fe9278fe3fe4b073c521f781c61e"
   license "MIT"
 
@@ -14,6 +14,6 @@ class Gimme < Formula
   end
 
   test do
-    system bin"gimme", "-l"
+    system bin/"gimme", "-l"
   end
 end

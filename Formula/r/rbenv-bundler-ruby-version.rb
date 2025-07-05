@@ -1,11 +1,11 @@
 class RbenvBundlerRubyVersion < Formula
   desc "Pick a ruby version from bundler's Gemfile"
-  homepage "https:github.comaripollakrbenv-bundler-ruby-version"
-  url "https:github.comaripollakrbenv-bundler-ruby-versionarchiverefstagsv1.0.0.tar.gz"
+  homepage "https://github.com/aripollak/rbenv-bundler-ruby-version"
+  url "https://ghfast.top/https://github.com/aripollak/rbenv-bundler-ruby-version/archive/refs/tags/v1.0.0.tar.gz"
   sha256 "96c6b7eb191d436142fef0bb8c28071d54aca3e1a10ca01a525d1066699b03f2"
   license "Unlicense"
   revision 1
-  head "https:github.comaripollakrbenv-bundler-ruby-version.git", branch: "master"
+  head "https://github.com/aripollak/rbenv-bundler-ruby-version.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -21,7 +21,7 @@ class RbenvBundlerRubyVersion < Formula
   end
 
   test do
-    (testpath"Gemfile").write("ruby \"2.1.5\"")
+    (testpath/"Gemfile").write("ruby \"2.1.5\"")
     system "rbenv", "bundler-ruby-version"
   end
 end

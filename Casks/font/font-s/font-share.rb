@@ -2,12 +2,12 @@ cask "font-share" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefonts.git",
-      verified:  "github.comgooglefonts",
+  url "https://github.com/google/fonts.git",
+      verified:  "github.com/google/fonts",
       branch:    "main",
-      only_path: "oflshare"
+      only_path: "ofl/share"
   name "Share"
-  homepage "https:fonts.google.comspecimenShare"
+  homepage "https://fonts.google.com/specimen/Share"
 
   font "Share-Bold.ttf"
   font "Share-BoldItalic.ttf"

@@ -1,10 +1,10 @@
 class Gibo < Formula
   desc "Access GitHub's .gitignore boilerplates"
-  homepage "https:github.comsimonwhitakergibo"
-  url "https:github.comsimonwhitakergiboarchiverefstagsv3.0.14.tar.gz"
+  homepage "https://github.com/simonwhitaker/gibo"
+  url "https://ghfast.top/https://github.com/simonwhitaker/gibo/archive/refs/tags/v3.0.14.tar.gz"
   sha256 "ec6f3c82e57695b9fe8610b7c16d8c39a23769487a8ebf85408f661761b68c57"
   license "Unlicense"
-  head "https:github.comsimonwhitakergibo.git", branch: "main"
+  head "https://github.com/simonwhitaker/gibo.git", branch: "main"
 
   no_autobump! because: :requires_manual_review
 
@@ -22,18 +22,18 @@ class Gibo < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.comsimonwhitakergibocmd.version=#{version}
-      -X github.comsimonwhitakergibocmd.commit=brew
-      -X github.comsimonwhitakergibocmd.date=#{time.iso8601}
+      -X github.com/simonwhitaker/gibo/cmd.version=#{version}
+      -X github.com/simonwhitaker/gibo/cmd.commit=brew
+      -X github.com/simonwhitaker/gibo/cmd.date=#{time.iso8601}
     ]
     system "go", "build", *std_go_args(ldflags:)
-    generate_completions_from_executable(bin"gibo", "completion")
+    generate_completions_from_executable(bin/"gibo", "completion")
   end
 
   test do
-    system bin"gibo", "update"
-    assert_includes shell_output("#{bin}gibo dump Python"), "Python.gitignore"
+    system bin/"gibo", "update"
+    assert_includes shell_output("#{bin}/gibo dump Python"), "Python.gitignore"
 
-    assert_match version.to_s, shell_output("#{bin}gibo version")
+    assert_match version.to_s, shell_output("#{bin}/gibo version")
   end
 end

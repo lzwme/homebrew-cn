@@ -2,20 +2,20 @@ cask "font-stix" do
   version "2.14"
   sha256 "b9ce7effe9cf97185bc3bfd9b3c5e79e0928a500127d1f55d0a704e04d274420"
 
-  url "https:github.comstipubstixfontsreleasesdownloadv#{version}fonts.zip",
-      verified: "github.comstipubstixfonts"
+  url "https://ghfast.top/https://github.com/stipub/stixfonts/releases/download/v#{version}/fonts.zip",
+      verified: "github.com/stipub/stixfonts/"
   name "STIX"
-  homepage "https:stixfonts.org"
+  homepage "https://stixfonts.org/"
 
-  font "fontsSTIXTwoMathOTFSTIXTwoMath.otf"
-  font "fontsSTIXTwoTextOTFSTIXTwoText-Bold.otf"
-  font "fontsSTIXTwoTextOTFSTIXTwoText-BoldItalic.otf"
-  font "fontsSTIXTwoTextOTFSTIXTwoText-Italic.otf"
-  font "fontsSTIXTwoTextOTFSTIXTwoText-Medium.otf"
-  font "fontsSTIXTwoTextOTFSTIXTwoText-MediumItalic.otf"
-  font "fontsSTIXTwoTextOTFSTIXTwoText-Regular.otf"
-  font "fontsSTIXTwoTextOTFSTIXTwoText-SemiBold.otf"
-  font "fontsSTIXTwoTextOTFSTIXTwoText-SemiBoldItalic.otf"
+  font "fonts/STIXTwoMath/OTF/STIXTwoMath.otf"
+  font "fonts/STIXTwoText/OTF/STIXTwoText-Bold.otf"
+  font "fonts/STIXTwoText/OTF/STIXTwoText-BoldItalic.otf"
+  font "fonts/STIXTwoText/OTF/STIXTwoText-Italic.otf"
+  font "fonts/STIXTwoText/OTF/STIXTwoText-Medium.otf"
+  font "fonts/STIXTwoText/OTF/STIXTwoText-MediumItalic.otf"
+  font "fonts/STIXTwoText/OTF/STIXTwoText-Regular.otf"
+  font "fonts/STIXTwoText/OTF/STIXTwoText-SemiBold.otf"
+  font "fonts/STIXTwoText/OTF/STIXTwoText-SemiBoldItalic.otf"
 
   # No zap stanza required
 end

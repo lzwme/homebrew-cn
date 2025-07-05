@@ -12,16 +12,16 @@ cask "openemu" do
     sha256 "521ca1305c012d38f6f907f50399fefbf4e45a9bb8d9d4063157ffca78b217d4"
 
     livecheck do
-      url "https:raw.github.comOpenEmuOpenEmu-Updatemasterappcast.xml"
+      url "https://raw.github.com/OpenEmu/OpenEmu-Update/master/appcast.xml"
       strategy :sparkle
     end
   end
 
-  url "https:github.comOpenEmuOpenEmureleasesdownloadv#{version}OpenEmu_#{version}.zip",
-      verified: "github.comOpenEmuOpenEmu"
+  url "https://ghfast.top/https://github.com/OpenEmu/OpenEmu/releases/download/v#{version}/OpenEmu_#{version}.zip",
+      verified: "github.com/OpenEmu/OpenEmu/"
   name "OpenEmu"
   desc "Retro video game emulation"
-  homepage "https:openemu.org"
+  homepage "https://openemu.org/"
 
   no_autobump! because: :requires_manual_review
 
@@ -31,40 +31,40 @@ cask "openemu" do
   app "OpenEmu.app"
 
   zap trash: [
-    "~LibraryApplication Supportcom.apple.sharedfilelistcom.apple.LSSharedFileList.ApplicationRecentDocumentsorg.openemu.openemu.sfl*",
-    "~LibraryApplication SupportOpenEmu",
-    "~LibraryApplication Supportorg.openemu.OEXPCCAgent.Agents",
-    "~LibraryCachesOpenEmu",
-    "~LibraryCachesorg.openemu.OpenEmu",
-    "~LibraryCookiesorg.openemu.OpenEmu.binarycookies",
-    "~LibraryHTTPStoragesorg.openemu.OpenEmu",
-    "~LibraryHTTPStoragesorg.openemu.OpenEmu.binarycookies",
-    "~LibraryPreferencesorg.openemu.Atari800.plist",
-    "~LibraryPreferencesorg.openemu.Bliss.plist",
-    "~LibraryPreferencesorg.openemu.BSNES.plist",
-    "~LibraryPreferencesorg.openemu.CrabEmu.plist",
-    "~LibraryPreferencesorg.openemu.desmume.plist",
-    "~LibraryPreferencesorg.openemu.dolphin.plist",
-    "~LibraryPreferencesorg.openemu.FCEU.plist",
-    "~LibraryPreferencesorg.openemu.Gambatte.plist",
-    "~LibraryPreferencesorg.openemu.GenesisPlus.plist",
-    "~LibraryPreferencesorg.openemu.Higan.plist",
-    "~LibraryPreferencesorg.openemu.Mednafen.plist",
-    "~LibraryPreferencesorg.openemu.mGBA.plist",
-    "~LibraryPreferencesorg.openemu.Mupen64Plus.plist",
-    "~LibraryPreferencesorg.openemu.NeoPop.plist",
-    "~LibraryPreferencesorg.openemu.Nestopia.plist",
-    "~LibraryPreferencesorg.openemu.O2EM.plist",
-    "~LibraryPreferencesorg.openemu.OpenEmu.plist",
-    "~LibraryPreferencesorg.openemu.Picodrive.plist",
-    "~LibraryPreferencesorg.openemu.PPSSPP.plist",
-    "~LibraryPreferencesorg.openemu.ProSystem.plist",
-    "~LibraryPreferencesorg.openemu.SNES9x.plist",
-    "~LibraryPreferencesorg.openemu.Stella.plist",
-    "~LibraryPreferencesorg.openemu.TwoMbit.plist",
-    "~LibraryPreferencesorg.openemu.VecXGL.plist",
-    "~LibraryPreferencesorg.openemu.VisualBoyAdvance.plist",
-    "~LibrarySaved Application Stateorg.openemu.OpenEmu.savedState",
+    "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/org.openemu.openemu.sfl*",
+    "~/Library/Application Support/OpenEmu",
+    "~/Library/Application Support/org.openemu.OEXPCCAgent.Agents",
+    "~/Library/Caches/OpenEmu",
+    "~/Library/Caches/org.openemu.OpenEmu",
+    "~/Library/Cookies/org.openemu.OpenEmu.binarycookies",
+    "~/Library/HTTPStorages/org.openemu.OpenEmu",
+    "~/Library/HTTPStorages/org.openemu.OpenEmu.binarycookies",
+    "~/Library/Preferences/org.openemu.Atari800.plist",
+    "~/Library/Preferences/org.openemu.Bliss.plist",
+    "~/Library/Preferences/org.openemu.BSNES.plist",
+    "~/Library/Preferences/org.openemu.CrabEmu.plist",
+    "~/Library/Preferences/org.openemu.desmume.plist",
+    "~/Library/Preferences/org.openemu.dolphin.plist",
+    "~/Library/Preferences/org.openemu.FCEU.plist",
+    "~/Library/Preferences/org.openemu.Gambatte.plist",
+    "~/Library/Preferences/org.openemu.GenesisPlus.plist",
+    "~/Library/Preferences/org.openemu.Higan.plist",
+    "~/Library/Preferences/org.openemu.Mednafen.plist",
+    "~/Library/Preferences/org.openemu.mGBA.plist",
+    "~/Library/Preferences/org.openemu.Mupen64Plus.plist",
+    "~/Library/Preferences/org.openemu.NeoPop.plist",
+    "~/Library/Preferences/org.openemu.Nestopia.plist",
+    "~/Library/Preferences/org.openemu.O2EM.plist",
+    "~/Library/Preferences/org.openemu.OpenEmu.plist",
+    "~/Library/Preferences/org.openemu.Picodrive.plist",
+    "~/Library/Preferences/org.openemu.PPSSPP.plist",
+    "~/Library/Preferences/org.openemu.ProSystem.plist",
+    "~/Library/Preferences/org.openemu.SNES9x.plist",
+    "~/Library/Preferences/org.openemu.Stella.plist",
+    "~/Library/Preferences/org.openemu.TwoMbit.plist",
+    "~/Library/Preferences/org.openemu.VecXGL.plist",
+    "~/Library/Preferences/org.openemu.VisualBoyAdvance.plist",
+    "~/Library/Saved Application State/org.openemu.OpenEmu.savedState",
   ]
 
   caveats do

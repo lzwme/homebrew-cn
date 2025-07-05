@@ -1,7 +1,7 @@
 class ChooseRust < Formula
   desc "Human-friendly and fast alternative to cut and (sometimes) awk"
-  homepage "https:github.comtheryangearychoose"
-  url "https:github.comtheryangearychoosearchiverefstagsv1.3.6.tar.gz"
+  homepage "https://github.com/theryangeary/choose"
+  url "https://ghfast.top/https://github.com/theryangeary/choose/archive/refs/tags/v1.3.6.tar.gz"
   sha256 "3d28dc39339dbf5c6197eb803b199661d6d261bc827c194b31b19d1afad01487"
   license "GPL-3.0-or-later"
 
@@ -26,6 +26,6 @@ class ChooseRust < Formula
 
   test do
     input = "foo,  foobar,bar, baz"
-    assert_equal "foobar bar", pipe_output("#{bin}choose -f ',\\s*' 1..=2", input).strip
+    assert_equal "foobar bar", pipe_output("#{bin}/choose -f ',\\s*' 1..=2", input).strip
   end
 end

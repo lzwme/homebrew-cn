@@ -1,7 +1,7 @@
 class Vexctl < Formula
   desc "Tool to create, transform and attest VEX metadata"
-  homepage "https:openssf.orgprojectsopenvex"
-  url "https:github.comopenvexvexctlarchiverefstagsv0.3.0.tar.gz"
+  homepage "https://openssf.org/projects/openvex/"
+  url "https://ghfast.top/https://github.com/openvex/vexctl/archive/refs/tags/v0.3.0.tar.gz"
   sha256 "5a5904448ef1bf11bd8a165d737acc88afd9799618f6583c15cee5d99dd58e17"
   license "Apache-2.0"
 
@@ -20,21 +20,21 @@ class Vexctl < Formula
   def install
     ldflags = %W[
       -s -w
-      -X sigs.k8s.iorelease-utilsversion.gitVersion=#{version}
-      -X sigs.k8s.iorelease-utilsversion.gitCommit=#{tap.user}
-      -X sigs.k8s.iorelease-utilsversion.gitTreeState=clean
-      -X sigs.k8s.iorelease-utilsversion.buildDate=#{time.iso8601}
+      -X sigs.k8s.io/release-utils/version.gitVersion=#{version}
+      -X sigs.k8s.io/release-utils/version.gitCommit=#{tap.user}
+      -X sigs.k8s.io/release-utils/version.gitTreeState=clean
+      -X sigs.k8s.io/release-utils/version.buildDate=#{time.iso8601}
     ]
 
     system "go", "build", *std_go_args(ldflags:)
 
-    generate_completions_from_executable(bin"vexctl", "completion")
+    generate_completions_from_executable(bin/"vexctl", "completion")
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}vexctl version")
+    assert_match version.to_s, shell_output("#{bin}/vexctl version")
 
     assert_match "Valid Statuses:\n\tnot_affected\n\taffected\n\tfixed\n\tunder_investigation\n",
-    shell_output("#{bin}vexctl list status")
+    shell_output("#{bin}/vexctl list status")
   end
 end

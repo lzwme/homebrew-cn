@@ -2,14 +2,14 @@ cask "electrum-grs" do
   version "4.5.4"
   sha256 "87fd71fe9cf8e2f185664778fd0106056c34a5c545d40b50322b91c705702cd1"
 
-  url "https:github.comgroestlcoinelectrum-grsreleasesdownloadv#{version}electrum-grs-#{version}.dmg",
-      verified: "github.comgroestlcoinelectrum-grs"
+  url "https://ghfast.top/https://github.com/groestlcoin/electrum-grs/releases/download/v#{version}/electrum-grs-#{version}.dmg",
+      verified: "github.com/groestlcoin/electrum-grs/"
   name "Electrum-GRS"
   desc "Groestlcoin thin client"
-  homepage "https:www.groestlcoin.orggroestlcoin-electrum-wallet"
+  homepage "https://www.groestlcoin.org/groestlcoin-electrum-wallet/"
 
   livecheck do
-    url "https:groestlcoin.orgversion"
+    url "https://groestlcoin.org/version"
     strategy :json do |json|
       json["version"]
     end
@@ -22,10 +22,10 @@ cask "electrum-grs" do
   app "Electrum-GRS.app"
 
   zap trash: [
-    "~.electrum-grs",
-    "~LibraryPreferencesElectrum-GRS.plist",
-    "~LibraryPreferencesorg.org.pythonmac.unspecified.Electrum-GRS.plist",
-    "~LibrarySaved Application StateElectrum-GRS.savedState",
+    "~/.electrum-grs",
+    "~/Library/Preferences/Electrum-GRS.plist",
+    "~/Library/Preferences/org.org.pythonmac.unspecified.Electrum-GRS.plist",
+    "~/Library/Saved Application State/Electrum-GRS.savedState",
   ]
 
   caveats do

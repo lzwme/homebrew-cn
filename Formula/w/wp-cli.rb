@@ -1,7 +1,7 @@
 class WpCli < Formula
   desc "Command-line interface for WordPress"
-  homepage "https:wp-cli.org"
-  url "https:github.comwp-cliwp-clireleasesdownloadv2.12.0wp-cli-2.12.0.phar"
+  homepage "https://wp-cli.org/"
+  url "https://ghfast.top/https://github.com/wp-cli/wp-cli/releases/download/v2.12.0/wp-cli-2.12.0.phar"
   sha256 "ce34ddd838f7351d6759068d09793f26755463b4a4610a5a5c0a97b68220d85c"
   license "MIT"
 
@@ -24,7 +24,7 @@ class WpCli < Formula
 
   depends_on "php"
 
-  # Keg-relocation breaks the formula when it replaces `usrlocal` with a non-default prefix
+  # Keg-relocation breaks the formula when it replaces `/usr/local` with a non-default prefix
   on_macos do
     on_intel do
       pour_bottle? only_if: :default_prefix
@@ -36,11 +36,11 @@ class WpCli < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}wp --version")
+    assert_match version.to_s, shell_output("#{bin}/wp --version")
 
     # workaround to fix memory exhaustion error
-    # see https:make.wordpress.orgclihandbookguidescommon-issues#php-fatal-error-allowed-memory-size-of-999999-bytes-exhausted-tried-to-allocate-99-bytes
-    output = shell_output("php -d memory_limit=512M #{bin}wp core download --path=wptest")
+    # see https://make.wordpress.org/cli/handbook/guides/common-issues/#php-fatal-error-allowed-memory-size-of-999999-bytes-exhausted-tried-to-allocate-99-bytes
+    output = shell_output("php -d memory_limit=512M #{bin}/wp core download --path=wptest")
     assert_match "Success: WordPress downloaded.", output
   end
 end

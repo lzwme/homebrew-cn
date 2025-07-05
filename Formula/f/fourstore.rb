@@ -1,7 +1,7 @@
 class Fourstore < Formula
   desc "Efficient, stable RDF database"
-  homepage "https:github.com4store4store"
-  url "https:github.com4store4storearchiverefstagsv1.1.7.tar.gz"
+  homepage "https://github.com/4store/4store"
+  url "https://ghfast.top/https://github.com/4store/4store/archive/refs/tags/v1.1.7.tar.gz"
   sha256 "e511f1adb094e2506545d4773a6005a462f6b4532731e91f1115b038ab25a8f0"
   license "GPL-3.0-or-later"
 
@@ -41,26 +41,26 @@ class Fourstore < Formula
 
   def install
     # Work around failure from GCC 10+ using default of `-fno-common`
-    # usrbinld: query.o:(.bss+0x0): multiple definition of `rasqal_mutex'
+    # /usr/bin/ld: query.o:(.bss+0x0): multiple definition of `rasqal_mutex'
     ENV.append_to_cflags "-fcommon" if OS.linux?
-    # Upstream issue https:github.com4store4storeissues138
+    # Upstream issue https://github.com/4store/4store/issues/138
     # Otherwise .git directory is needed
-    (buildpath".version").write version.to_s
+    (buildpath/".version").write version.to_s
 
-    system ".autogen.sh"
-    system ".configure", "--prefix=#{prefix}",
-                          "--with-storage-path=#{var}fourstore",
-                          "--sysconfdir=#{etc}fourstore"
+    system "./autogen.sh"
+    system "./configure", "--prefix=#{prefix}",
+                          "--with-storage-path=#{var}/fourstore",
+                          "--sysconfdir=#{etc}/fourstore"
     system "make", "install"
   end
 
   def post_install
-    (var"fourstore").mkpath
+    (var/"fourstore").mkpath
   end
 
   def caveats
     <<~EOS
-      Databases will be created at #{var}fourstore.
+      Databases will be created at #{var}/fourstore.
 
       Create and start up a database:
           4s-backend-setup mydb
@@ -72,11 +72,11 @@ class Fourstore < Formula
       Start up HTTP SPARQL server without daemonizing:
           4s-httpd -p 8000 -D mydb
 
-      See https:4store.danielknoell.detracwikiDocumentation for more information.
+      See https://4store.danielknoell.de/trac/wiki/Documentation/ for more information.
     EOS
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}4s-admin --version")
+    assert_match version.to_s, shell_output("#{bin}/4s-admin --version")
   end
 end

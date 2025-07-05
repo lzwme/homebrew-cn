@@ -2,11 +2,11 @@ cask "fuse-t" do
   version "1.0.47"
   sha256 "b0121b5f92bd22f26206ed2aee8fbcb8c410ba2791fd30884faad2f2ec0407f3"
 
-  url "https:github.commacos-fuse-tfuse-treleasesdownload#{version}fuse-t-macos-installer-#{version}.pkg",
-      verified: "github.commacos-fuse-tfuse-t"
+  url "https://ghfast.top/https://github.com/macos-fuse-t/fuse-t/releases/download/#{version}/fuse-t-macos-installer-#{version}.pkg",
+      verified: "github.com/macos-fuse-t/fuse-t/"
   name "FUSE-T"
   desc "Kext-less implementation of FUSE"
-  homepage "https:www.fuse-t.org"
+  homepage "https://www.fuse-t.org/"
 
   livecheck do
     url :url
@@ -16,7 +16,7 @@ cask "fuse-t" do
   pkg "fuse-t-macos-installer-#{version}.pkg"
 
   uninstall script: {
-    executable: "LibraryApplication Supportfuse-tuninstall.sh",
+    executable: "/Library/Application Support/fuse-t/uninstall.sh",
     input:      ["Y"],
     sudo:       true,
   }

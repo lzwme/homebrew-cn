@@ -2,10 +2,10 @@ cask "cardinal" do
   version "25.06"
   sha256 "6b8833eea95dcbd4748a8a78cbd2ea095de1f5551a0fbc085b8eb431bbe555d6"
 
-  url "https:github.comDISTRHOCardinalreleasesdownload#{version}Cardinal-macOS-universal-#{version}.pkg"
+  url "https://ghfast.top/https://github.com/DISTRHO/Cardinal/releases/download/#{version}/Cardinal-macOS-universal-#{version}.pkg"
   name "Cardinal"
   desc "Virtual modular synthesiser plugin"
-  homepage "https:github.comDISTRHOCardinal"
+  homepage "https://github.com/DISTRHO/Cardinal"
 
   no_autobump! because: :requires_manual_review
 

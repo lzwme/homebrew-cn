@@ -1,10 +1,10 @@
 class Nerdlog < Formula
   desc "TUI log viewer with timeline histogram and no central server"
-  homepage "https:dmitryfrank.comprojectsnerdlogarticle"
-  url "https:github.comdimonomidnerdlogarchiverefstagsv1.10.0.tar.gz"
+  homepage "https://dmitryfrank.com/projects/nerdlog/article"
+  url "https://ghfast.top/https://github.com/dimonomid/nerdlog/archive/refs/tags/v1.10.0.tar.gz"
   sha256 "95fb629044c5a74c2c541d4c39a9622674f15e59b98e6d1b025a47c218f69189"
   license "BSD-2-Clause"
-  head "https:github.comdimonomidnerdlog.git", branch: "master"
+  head "https://github.com/dimonomid/nerdlog.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "d6fb84d243d9107eb44579b8efb03c69d1378ce7d51000e1485f7204d115db7e"
@@ -24,29 +24,29 @@ class Nerdlog < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.comdimonomidnerdlogversion.version=#{version}
-      -X github.comdimonomidnerdlogversion.commit=Homebrew
-      -X github.comdimonomidnerdlogversion.date=#{time.iso8601}
-      -X github.comdimonomidnerdlogversion.builtBy=Homebrew
+      -X github.com/dimonomid/nerdlog/version.version=#{version}
+      -X github.com/dimonomid/nerdlog/version.commit=Homebrew
+      -X github.com/dimonomid/nerdlog/version.date=#{time.iso8601}
+      -X github.com/dimonomid/nerdlog/version.builtBy=Homebrew
     ]
-    system "go", "build", *std_go_args(ldflags:), ".cmdnerdlog"
+    system "go", "build", *std_go_args(ldflags:), "./cmd/nerdlog"
   end
 
   test do
     require "pty"
     ENV["TERM"] = "xterm"
 
-    PTY.spawn(bin"nerdlog") do |r, _w, pid|
+    PTY.spawn(bin/"nerdlog") do |r, _w, pid|
       sleep 2
       Process.kill("TERM", pid)
       begin
         output = r.read
         assert_match "Edit query params", output
       rescue Errno::EIO
-        # GNULinux raises EIO when read is done on closed pty
+        # GNU/Linux raises EIO when read is done on closed pty
       end
     end
 
-    assert_match version.to_s, shell_output("#{bin}nerdlog --version")
+    assert_match version.to_s, shell_output("#{bin}/nerdlog --version")
   end
 end

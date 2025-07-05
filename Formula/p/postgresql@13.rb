@@ -1,13 +1,13 @@
 class PostgresqlAT13 < Formula
   desc "Object-relational database system"
-  homepage "https:www.postgresql.org"
-  url "https:ftp.postgresql.orgpubsourcev13.21postgresql-13.21.tar.bz2"
+  homepage "https://www.postgresql.org/"
+  url "https://ftp.postgresql.org/pub/source/v13.21/postgresql-13.21.tar.bz2"
   sha256 "dcda1294df45f033b0656cf7a8e4afbbc624c25e1b144aec79530f74d7ef4ab4"
   license "PostgreSQL"
 
   livecheck do
-    url "https:ftp.postgresql.orgpubsource"
-    regex(%r{href=["']?v?(13(?:\.\d+)+)?["' >]}i)
+    url "https://ftp.postgresql.org/pub/source/"
+    regex(%r{href=["']?v?(13(?:\.\d+)+)/?["' >]}i)
   end
 
   bottle do
@@ -22,14 +22,14 @@ class PostgresqlAT13 < Formula
 
   keg_only :versioned_formula
 
-  # https:www.postgresql.orgsupportversioning
+  # https://www.postgresql.org/support/versioning/
   deprecate! date: "2025-11-13", because: :unsupported
 
   depends_on "pkgconf" => :build
   depends_on "icu4c@77"
 
   # GSSAPI provided by Kerberos.framework crashes when forked.
-  # See https:github.comHomebrewhomebrew-coreissues47494.
+  # See https://github.com/Homebrew/homebrew-core/issues/47494.
   depends_on "krb5"
 
   depends_on "openssl@3"
@@ -77,49 +77,49 @@ class PostgresqlAT13 < Formula
     # which does not work on CLT-only installs.
     args << "PG_SYSROOT=#{MacOS.sdk_path}" if OS.mac? && MacOS.sdk_root_needed?
 
-    system ".configure", *args
+    system "./configure", *args
 
     # Work around busted path magic in Makefile.global.in. This can't be specified
-    # in .configure, but needs to be set here otherwise install prefixes containing
+    # in ./configure, but needs to be set here otherwise install prefixes containing
     # the string "postgres" will get an incorrect pkglibdir.
-    # See https:github.comHomebrewhomebrew-coreissues62930#issuecomment-709411789
-    system "make", "pkglibdir=#{opt_lib}postgresql",
-                   "pkgincludedir=#{opt_include}postgresql",
-                   "includedir_server=#{opt_include}postgresqlserver"
+    # See https://github.com/Homebrew/homebrew-core/issues/62930#issuecomment-709411789
+    system "make", "pkglibdir=#{opt_lib}/postgresql",
+                   "pkgincludedir=#{opt_include}/postgresql",
+                   "includedir_server=#{opt_include}/postgresql/server"
     system "make", "install-world", "datadir=#{pkgshare}",
                                     "libdir=#{lib}",
-                                    "pkglibdir=#{lib}postgresql",
+                                    "pkglibdir=#{lib}/postgresql",
                                     "includedir=#{include}",
-                                    "pkgincludedir=#{include}postgresql",
-                                    "includedir_server=#{include}postgresqlserver",
-                                    "includedir_internal=#{include}postgresqlinternal"
+                                    "pkgincludedir=#{include}/postgresql",
+                                    "includedir_server=#{include}/postgresql/server",
+                                    "includedir_internal=#{include}/postgresql/internal"
     return unless OS.linux?
 
-    inreplace lib"postgresqlpgxssrcMakefile.global",
-              "LD = #{Superenv.shims_path}ld",
-              "LD = #{HOMEBREW_PREFIX}binld"
+    inreplace lib/"postgresql/pgxs/src/Makefile.global",
+              "LD = #{Superenv.shims_path}/ld",
+              "LD = #{HOMEBREW_PREFIX}/bin/ld"
   end
 
   def post_install
-    (var"log").mkpath
+    (var/"log").mkpath
     postgresql_datadir.mkpath
 
     # Don't initialize database, it clashes when testing other PostgreSQL versions.
     return if ENV["HOMEBREW_GITHUB_ACTIONS"]
 
-    system bin"initdb", "--locale=C", "-E", "UTF-8", postgresql_datadir unless pg_version_exists?
+    system bin/"initdb", "--locale=C", "-E", "UTF-8", postgresql_datadir unless pg_version_exists?
   end
 
   def postgresql_datadir
-    varname
+    var/name
   end
 
   def postgresql_log_path
-    var"log#{name}.log"
+    var/"log/#{name}.log"
   end
 
   def pg_version_exists?
-    (postgresql_datadir"PG_VERSION").exist?
+    (postgresql_datadir/"PG_VERSION").exist?
   end
 
   def caveats
@@ -130,7 +130,7 @@ class PostgresqlAT13 < Formula
   end
 
   service do
-    run [opt_bin"postgres", "-D", f.postgresql_datadir]
+    run [opt_bin/"postgres", "-D", f.postgresql_datadir]
     keep_alive true
     log_path f.postgresql_log_path
     error_log_path f.postgresql_log_path
@@ -138,11 +138,11 @@ class PostgresqlAT13 < Formula
   end
 
   test do
-    system bin"initdb", testpath"test" unless ENV["HOMEBREW_GITHUB_ACTIONS"]
-    assert_equal opt_pkgshare.to_s, shell_output("#{bin}pg_config --sharedir").chomp
-    assert_equal opt_lib.to_s, shell_output("#{bin}pg_config --libdir").chomp
-    assert_equal (opt_lib"postgresql").to_s, shell_output("#{bin}pg_config --pkglibdir").chomp
-    assert_equal (opt_include"postgresql").to_s, shell_output("#{bin}pg_config --pkgincludedir").chomp
-    assert_equal (opt_include"postgresqlserver").to_s, shell_output("#{bin}pg_config --includedir-server").chomp
+    system bin/"initdb", testpath/"test" unless ENV["HOMEBREW_GITHUB_ACTIONS"]
+    assert_equal opt_pkgshare.to_s, shell_output("#{bin}/pg_config --sharedir").chomp
+    assert_equal opt_lib.to_s, shell_output("#{bin}/pg_config --libdir").chomp
+    assert_equal (opt_lib/"postgresql").to_s, shell_output("#{bin}/pg_config --pkglibdir").chomp
+    assert_equal (opt_include/"postgresql").to_s, shell_output("#{bin}/pg_config --pkgincludedir").chomp
+    assert_equal (opt_include/"postgresql/server").to_s, shell_output("#{bin}/pg_config --includedir-server").chomp
   end
 end

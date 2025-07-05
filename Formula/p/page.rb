@@ -1,10 +1,10 @@
 class Page < Formula
   desc "Use Neovim as pager"
-  homepage "https:github.comI60Rpage"
-  url "https:github.comI60Rpagearchiverefstagsv4.6.3.tar.gz"
+  homepage "https://github.com/I60R/page"
+  url "https://ghfast.top/https://github.com/I60R/page/archive/refs/tags/v4.6.3.tar.gz"
   sha256 "51cf01933180499b27027fcdbda067f0cf80cebaa06d62400b655419f1806d46"
   license "MIT"
-  head "https:github.comI60Rpage.git", branch: "master"
+  head "https://github.com/I60R/page.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -30,10 +30,10 @@ class Page < Formula
   def install
     system "cargo", "install", *std_cargo_args
 
-    asset_dir = Dir["targetreleasebuildpage-*outassets"].first
-    bash_completion.install "#{asset_dir}page.bash" => "page"
-    zsh_completion.install "#{asset_dir}_page"
-    fish_completion.install "#{asset_dir}page.fish"
+    asset_dir = Dir["target/release/build/page-*/out/assets"].first
+    bash_completion.install "#{asset_dir}/page.bash" => "page"
+    zsh_completion.install "#{asset_dir}/_page"
+    fish_completion.install "#{asset_dir}/page.fish"
   end
 
   test do
@@ -41,6 +41,6 @@ class Page < Formula
     return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
 
     text = "test"
-    assert_equal text, pipe_output("#{bin}page -O 1", text)
+    assert_equal text, pipe_output("#{bin}/page -O 1", text)
   end
 end

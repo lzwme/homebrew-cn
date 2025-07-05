@@ -1,37 +1,37 @@
 class Chakra < Formula
   desc "Core part of the JavaScript engine that powers Microsoft Edge"
-  homepage "https:github.comchakra-coreChakraCore"
+  homepage "https://github.com/chakra-core/ChakraCore"
   license "MIT"
   revision 9
-  head "https:github.comchakra-coreChakraCore.git", branch: "master"
+  head "https://github.com/chakra-core/ChakraCore.git", branch: "master"
 
   stable do
-    url "https:github.comchakra-coreChakraCorearchiverefstagsv1.11.24.tar.gz"
+    url "https://ghfast.top/https://github.com/chakra-core/ChakraCore/archive/refs/tags/v1.11.24.tar.gz"
     sha256 "b99e85f2d0fa24f2b6ccf9a6d2723f3eecfe986a9d2c4d34fa1fd0d015d0595e"
 
-    depends_on arch: :x86_64 # https:github.comchakra-coreChakraCoreissues6860
+    depends_on arch: :x86_64 # https://github.com/chakra-core/ChakraCore/issues/6860
 
     # Fix build with modern compilers.
     # Remove with 1.12.
     patch do
-      url "https:raw.githubusercontent.comHomebrewformula-patches204ce95fb69a2cd523ccb0f392b7cce4f791273achakraclang10.patch"
+      url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/204ce95fb69a2cd523ccb0f392b7cce4f791273a/chakra/clang10.patch"
       sha256 "5337b8d5de2e9b58f6908645d9e1deb8364d426628c415e0e37aa3288fae3de7"
     end
 
     # Support Python 3.
     # Remove with 1.12.
     patch do
-      url "https:raw.githubusercontent.comHomebrewformula-patches308bb29254605f0c207ea4ed67f049fdfe5ec92cchakrapython3.patch"
+      url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/308bb29254605f0c207ea4ed67f049fdfe5ec92c/chakra/python3.patch"
       sha256 "61c61c5376bc28ac52ec47e6d4c053eb27c04860aa4ba787a78266840ce57830"
     end
 
     # Backport fixes needed to build with newer Clang on Linux
     patch do
-      url "https:github.comchakra-coreChakraCorecommita2aae95cfb16cda814c557cc70c4bdb5156fd30f.patch?full_index=1"
+      url "https://github.com/chakra-core/ChakraCore/commit/a2aae95cfb16cda814c557cc70c4bdb5156fd30f.patch?full_index=1"
       sha256 "07c94241591be4f8c30b5ea68d7fa08e8e71186f26b124ee871eaf17b2590a28"
     end
     patch do
-      url "https:github.comchakra-coreChakraCorecommit46af28eb9e01dee240306c03edb5fa736055b5b7.patch?full_index=1"
+      url "https://github.com/chakra-core/ChakraCore/commit/46af28eb9e01dee240306c03edb5fa736055b5b7.patch?full_index=1"
       sha256 "d59f8bb5bbf716e4971b3a50d5fe2ca84c5901b354981e395a6c37adad8b2bb2"
     end
   end
@@ -54,7 +54,7 @@ class Chakra < Formula
   uses_from_macos "python" => :build
 
   fails_with :gcc do
-    cause "requires Clang, see https:github.comchakra-coreChakraCoreissues2038"
+    cause "requires Clang, see https://github.com/chakra-core/ChakraCore/issues/2038"
   end
 
   def install
@@ -63,7 +63,7 @@ class Chakra < Formula
     # Workaround to build with ICU 76+
     ENV.append_to_cflags "-DU_SHOW_CPLUSPLUS_HEADER_API=0"
 
-    icu4c_dep = deps.find { |dep| dep.name.match?(^icu4c(@\d+)?$) }
+    icu4c_dep = deps.find { |dep| dep.name.match?(/^icu4c(@\d+)?$/) }
     args = %W[
       --custom-icu=#{icu4c_dep.to_formula.opt_include}
       --jobs=#{ENV.make_jobs}
@@ -74,19 +74,19 @@ class Chakra < Formula
     # JIT is not supported on ARM and build fails since Xcode 16
     args << "--no-jit" if Hardware::CPU.arm? || DevelopmentTools.clang_build_version >= 1600
 
-    system ".build.sh", *args
+    system "./build.sh", *args
 
-    libexec.install "outReleasech" => "chakra"
-    include.install Dir["outReleaseinclude*"]
-    lib.install "outRelease#{shared_library("libChakraCore")}"
+    libexec.install "out/Release/ch" => "chakra"
+    include.install Dir["out/Release/include/*"]
+    lib.install "out/Release/#{shared_library("libChakraCore")}"
 
     # Non-statically built chakra expects libChakraCore to be in the same directory
-    bin.install_symlink libexec"chakra"
+    bin.install_symlink libexec/"chakra"
     libexec.install_symlink lib.children
   end
 
   test do
-    (testpath"test.js").write("print('Hello world!');\n")
-    assert_equal "Hello world!", shell_output("#{bin}chakra test.js").chomp
+    (testpath/"test.js").write("print('Hello world!');\n")
+    assert_equal "Hello world!", shell_output("#{bin}/chakra test.js").chomp
   end
 end

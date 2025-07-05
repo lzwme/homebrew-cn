@@ -1,17 +1,17 @@
 class Dotnet < Formula
   desc ".NET Core"
-  homepage "https:dotnet.microsoft.com"
+  homepage "https://dotnet.microsoft.com/"
   license "MIT"
   version_scheme 1
-  head "https:github.comdotnetdotnet.git", branch: "main"
+  head "https://github.com/dotnet/dotnet.git", branch: "main"
 
   stable do
-    # Source-build tag announced at https:github.comdotnetsource-builddiscussions
-    url "https:github.comdotnetdotnetarchiverefstagsv9.0.6.tar.gz"
+    # Source-build tag announced at https://github.com/dotnet/source-build/discussions
+    url "https://ghfast.top/https://github.com/dotnet/dotnet/archive/refs/tags/v9.0.6.tar.gz"
     sha256 "8f25d48e7ec0a94b30b702c190ee78609a348520eebef32c1e6bfa196f29d794"
 
     resource "release.json" do
-      url "https:github.comdotnetdotnetreleasesdownloadv9.0.6release.json"
+      url "https://ghfast.top/https://github.com/dotnet/dotnet/releases/download/v9.0.6/release.json"
       sha256 "b68de7f6e266c57d3698a0bd7310a6c7a302d9f6ca2c477e81d8282050067c4b"
 
       livecheck do
@@ -22,7 +22,7 @@ class Dotnet < Formula
 
   livecheck do
     url :stable
-    regex(^v?(\d+\.\d+\.\d{1,2})$i)
+    regex(/^v?(\d+\.\d+\.\d{1,2})$/i)
   end
 
   bottle do
@@ -62,20 +62,20 @@ class Dotnet < Formula
   def install
     if OS.mac?
       # Need GNU grep (Perl regexp support) to use release manifest rather than git repo
-      ENV.prepend_path "PATH", Formula["grep"].libexec"gnubin"
+      ENV.prepend_path "PATH", Formula["grep"].libexec/"gnubin"
 
       # Avoid mixing CLT and Xcode.app when building CoreCLR component which can
       # cause undefined symbols, e.g. __swift_FORCE_LOAD_$_swift_Builtin_float
       ENV["SDKROOT"] = MacOS.sdk_path
     else
-      icu4c_dep = deps.find { |dep| dep.name.match?(^icu4c(@\d+)?$) }
+      icu4c_dep = deps.find { |dep| dep.name.match?(/^icu4c(@\d+)?$/) }
       ENV.append_path "LD_LIBRARY_PATH", icu4c_dep.to_formula.opt_lib
 
       # Work around build script getting stuck when running shutdown command on Linux
       # TODO: Try removing in the next release
-      # Ref: https:github.comdotnetsource-builddiscussions3105#discussioncomment-4373142
-      inreplace "build.sh", '"$CLI_ROOTdotnet" build-server shutdown', ""
-      inreplace "repo-projectsDirectory.Build.targets",
+      # Ref: https://github.com/dotnet/source-build/discussions/3105#discussioncomment-4373142
+      inreplace "build.sh", '"$CLI_ROOT/dotnet" build-server shutdown', ""
+      inreplace "repo-projects/Directory.Build.targets",
                 '"$(DotnetTool) build-server shutdown --vbcscompiler"',
                 '"true"'
     end
@@ -87,24 +87,24 @@ class Dotnet < Formula
       buildpath.install resource("release.json")
     end
 
-    system ".prep-source-build.sh"
+    system "./prep-source-build.sh"
     # We unset "CI" environment variable to work around aspire build failure
     # error MSB4057: The target "GitInfo" does not exist in the project.
-    # Ref: https:github.comHomebrewhomebrew-corepull154584#issuecomment-1815575483
+    # Ref: https://github.com/Homebrew/homebrew-core/pull/154584#issuecomment-1815575483
     with_env(CI: nil) do
-      system ".build.sh", *args
+      system "./build.sh", *args
     end
 
     libexec.mkpath
-    tarball = buildpath.glob("artifacts*Releasedotnet-sdk-*.tar.gz").first
+    tarball = buildpath.glob("artifacts/*/Release/dotnet-sdk-*.tar.gz").first
     system "tar", "--extract", "--file", tarball, "--directory", libexec
     doc.install libexec.glob("*.txt")
-    (bin"dotnet").write_env_script libexec"dotnet", DOTNET_ROOT: libexec
+    (bin/"dotnet").write_env_script libexec/"dotnet", DOTNET_ROOT: libexec
 
-    bash_completion.install "srcsdkscriptsregister-completions.bash" => "dotnet"
-    zsh_completion.install "srcsdkscriptsregister-completions.zsh" => "_dotnet"
-    man1.install Utils::Gzip.compress(*buildpath.glob("srcsdkdocumentationmanpagessdk*.1"))
-    man7.install Utils::Gzip.compress(*buildpath.glob("srcsdkdocumentationmanpagessdk*.7"))
+    bash_completion.install "src/sdk/scripts/register-completions.bash" => "dotnet"
+    zsh_completion.install "src/sdk/scripts/register-completions.zsh" => "_dotnet"
+    man1.install Utils::Gzip.compress(*buildpath.glob("src/sdk/documentation/manpages/sdk/*.1"))
+    man7.install Utils::Gzip.compress(*buildpath.glob("src/sdk/documentation/manpages/sdk/*.7"))
   end
 
   def caveats
@@ -117,7 +117,7 @@ class Dotnet < Formula
   test do
     target_framework = "net#{version.major_minor}"
 
-    (testpath"test.cs").write <<~CS
+    (testpath/"test.cs").write <<~CS
       using System;
 
       namespace Homebrew
@@ -133,39 +133,39 @@ class Dotnet < Formula
       }
     CS
 
-    (testpath"test.csproj").write <<~XML
+    (testpath/"test.csproj").write <<~XML
       <Project Sdk="Microsoft.NET.Sdk">
         <PropertyGroup>
-          <OutputType>Exe<OutputType>
-          <TargetFrameworks>#{target_framework}<TargetFrameworks>
-          <PlatformTarget>AnyCPU<PlatformTarget>
-          <RootNamespace>Homebrew<RootNamespace>
-          <PackageId>Homebrew.Dotnet<PackageId>
-          <Title>Homebrew.Dotnet<Title>
-          <Product>$(AssemblyName)<Product>
-          <EnableDefaultCompileItems>false<EnableDefaultCompileItems>
-        <PropertyGroup>
+          <OutputType>Exe</OutputType>
+          <TargetFrameworks>#{target_framework}</TargetFrameworks>
+          <PlatformTarget>AnyCPU</PlatformTarget>
+          <RootNamespace>Homebrew</RootNamespace>
+          <PackageId>Homebrew.Dotnet</PackageId>
+          <Title>Homebrew.Dotnet</Title>
+          <Product>$(AssemblyName)</Product>
+          <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+        </PropertyGroup>
         <ItemGroup>
-          <Compile Include="test.cs" >
-        <ItemGroup>
-      <Project>
+          <Compile Include="test.cs" />
+        </ItemGroup>
+      </Project>
     XML
 
-    system bin"dotnet", "build", "--framework", target_framework, "--output", testpath, testpath"test.csproj"
-    output = shell_output("#{bin}dotnet run --framework #{target_framework} #{testpath}test.dll a b c")
+    system bin/"dotnet", "build", "--framework", target_framework, "--output", testpath, testpath/"test.csproj"
+    output = shell_output("#{bin}/dotnet run --framework #{target_framework} #{testpath}/test.dll a b c")
     # We switched to `assert_match` due to progress status ANSI codes in output.
     # TODO: Switch back to `assert_equal` once fixed in release.
-    # Issue ref: https:github.comdotnetsdkissues44610
-    assert_match "#{testpath}test.dll,a,b,c\n", output
+    # Issue ref: https://github.com/dotnet/sdk/issues/44610
+    assert_match "#{testpath}/test.dll,a,b,c\n", output
 
     # Test to avoid uploading broken Intel Sonoma bottle which has stack overflow on restore.
-    # See https:github.comHomebrewhomebrew-coreissues197546
+    # See https://github.com/Homebrew/homebrew-core/issues/197546
     resource "docfx" do
-      url "https:github.comdotnetdocfxarchiverefstagsv2.78.3.tar.gz"
+      url "https://ghfast.top/https://github.com/dotnet/docfx/archive/refs/tags/v2.78.3.tar.gz"
       sha256 "d97142ff71bd84e200e6d121f09f57d28379a0c9d12cb58f23badad22cc5c1b7"
     end
     resource("docfx").stage do
-      system bin"dotnet", "restore", "srcdocfx", "--disable-build-servers", "--no-cache"
+      system bin/"dotnet", "restore", "src/docfx", "--disable-build-servers", "--no-cache"
     end
   end
 end

@@ -2,22 +2,22 @@ cask "gdlauncher" do
   version "1.1.30"
   sha256 "d98a89f76047cef4ca7bdd99fe464f09fbe95c3ae916123ae4179dd8368514b9"
 
-  url "https:github.comgorilla-devsGDLauncherreleasesdownloadv#{version}GDLauncher-mac-setup.dmg",
-      verified: "github.comgorilla-devsGDLauncher"
+  url "https://ghfast.top/https://github.com/gorilla-devs/GDLauncher/releases/download/v#{version}/GDLauncher-mac-setup.dmg",
+      verified: "github.com/gorilla-devs/GDLauncher/"
   name "GDLauncher"
   desc "Custom Minecraft Launcher"
-  homepage "https:gdevs.io"
+  homepage "https://gdevs.io/"
 
   no_autobump! because: :requires_manual_review
 
   app "GDLauncher.app"
 
   zap trash: [
-    "~LibraryApplication Supportgdlauncher",
-    "~LibraryApplication Supportgdlauncher_next",
-    "~LibraryLogsgdlauncher",
-    "~LibraryPreferencesorg.gorilladevs.GDLauncher.plist",
-    "~LibrarySaved Application Stateorg.gorilladevs.GDLauncher.savedState",
+    "~/Library/Application Support/gdlauncher",
+    "~/Library/Application Support/gdlauncher_next",
+    "~/Library/Logs/gdlauncher",
+    "~/Library/Preferences/org.gorilladevs.GDLauncher.plist",
+    "~/Library/Saved Application State/org.gorilladevs.GDLauncher.savedState",
   ]
 
   caveats do

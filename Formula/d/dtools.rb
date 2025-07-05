@@ -1,11 +1,11 @@
 class Dtools < Formula
   desc "D programming language tools"
-  homepage "https:dlang.org"
-  url "https:github.comdlangtoolsarchiverefstagsv2.111.0.tar.gz"
+  homepage "https://dlang.org/"
+  url "https://ghfast.top/https://github.com/dlang/tools/archive/refs/tags/v2.111.0.tar.gz"
   sha256 "4c391349e929f73b7ffe97da7b98fbbdb04effda3e6389d9d46dc9d9938ece3b"
   license "BSL-1.0"
   revision 1
-  head "https:github.comdlangtools.git", branch: "master"
+  head "https://github.com/dlang/tools.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -22,13 +22,13 @@ class Dtools < Formula
   depends_on "dub" => :build
   depends_on "ldc" => [:build, :test]
 
-  link_overwrite "binddemangle"
-  link_overwrite "bindustmite"
-  link_overwrite "binrdmd"
+  link_overwrite "bin/ddemangle"
+  link_overwrite "bin/dustmite"
+  link_overwrite "bin/rdmd"
 
   def install
     # We only need the "public" tools, as listed at
-    # https:github.comdlangtoolsblobmasterREADME.md
+    # https://github.com/dlang/tools/blob/master/README.md
     #
     # Skip building dman as it requires getting and building the DMD
     # and dlang.org source trees.
@@ -40,17 +40,17 @@ class Dtools < Formula
       bin.install "dtools_#{tool}" => tool
     end
 
-    man1.install "manman1rdmd.1"
+    man1.install "man/man1/rdmd.1"
   end
 
   test do
-    (testpath"hello.d").write <<~D
+    (testpath/"hello.d").write <<~D
       import std.stdio;
       void main()
       {
         writeln("Hello world!");
       }
     D
-    assert_equal "Hello world!", shell_output("#{bin}rdmd #{testpath}hello.d").chomp
+    assert_equal "Hello world!", shell_output("#{bin}/rdmd #{testpath}/hello.d").chomp
   end
 end

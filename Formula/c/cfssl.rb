@@ -1,10 +1,10 @@
 class Cfssl < Formula
   desc "CloudFlare's PKI toolkit"
-  homepage "https:cfssl.org"
-  url "https:github.comcloudflarecfsslarchiverefstagsv1.6.5.tar.gz"
+  homepage "https://cfssl.org/"
+  url "https://ghfast.top/https://github.com/cloudflare/cfssl/archive/refs/tags/v1.6.5.tar.gz"
   sha256 "b682452402f403b6ee668bb042bd9b753fe48df84fa7a18a1c32606ffd4918af"
   license "BSD-2-Clause"
-  head "https:github.comcloudflarecfssl.git", branch: "master"
+  head "https://github.com/cloudflare/cfssl.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "e8989411cf61dac106b1fc275da274f0c07b58c16ce08f0fd194835679f495bd"
@@ -21,11 +21,11 @@ class Cfssl < Formula
   depends_on "libtool"
 
   def install
-    ldflags = "-s -w -X github.comcloudflarecfsslcliversion.version=#{version}"
+    ldflags = "-s -w -X github.com/cloudflare/cfssl/cli/version.version=#{version}"
 
-    system "go", "build", *std_go_args(ldflags:, output: bin"cfssl"), ".cmdcfssl"
-    system "go", "build", *std_go_args(ldflags:, output: bin"cfssljson"), ".cmdcfssljson"
-    system "go", "build", *std_go_args(ldflags: "-s -w", output: bin"mkbundle"), ".cmdmkbundle"
+    system "go", "build", *std_go_args(ldflags:, output: bin/"cfssl"), "./cmd/cfssl"
+    system "go", "build", *std_go_args(ldflags:, output: bin/"cfssljson"), "./cmd/cfssljson"
+    system "go", "build", *std_go_args(ldflags: "-s -w", output: bin/"mkbundle"), "./cmd/mkbundle"
   end
 
   def caveats
@@ -36,10 +36,10 @@ class Cfssl < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}cfssl version")
-    assert_match version.to_s, shell_output("#{bin}cfssljson --version")
+    assert_match version.to_s, shell_output("#{bin}/cfssl version")
+    assert_match version.to_s, shell_output("#{bin}/cfssljson --version")
 
-    (testpath"request.json").write <<~JSON
+    (testpath/"request.json").write <<~JSON
       {
         "CN" : "Your Certificate Authority",
         "hosts" : [],
@@ -58,11 +58,11 @@ class Cfssl < Formula
         ]
       }
     JSON
-    shell_output("#{bin}cfssl genkey -initca request.json > response.json")
-    response = JSON.parse(File.read(testpath"response.json"))
-    assert_match(^-----BEGIN CERTIFICATE-----.*, response["cert"])
-    assert_match(.*-----END CERTIFICATE-----$, response["cert"])
-    assert_match(^-----BEGIN RSA PRIVATE KEY-----.*, response["key"])
-    assert_match(.*-----END RSA PRIVATE KEY-----$, response["key"])
+    shell_output("#{bin}/cfssl genkey -initca request.json > response.json")
+    response = JSON.parse(File.read(testpath/"response.json"))
+    assert_match(/^-----BEGIN CERTIFICATE-----.*/, response["cert"])
+    assert_match(/.*-----END CERTIFICATE-----$/, response["cert"])
+    assert_match(/^-----BEGIN RSA PRIVATE KEY-----.*/, response["key"])
+    assert_match(/.*-----END RSA PRIVATE KEY-----$/, response["key"])
   end
 end

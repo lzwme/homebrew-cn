@@ -1,10 +1,10 @@
 class Croc < Formula
   desc "Securely send things from one computer to another"
-  homepage "https:github.comschollzcroc"
-  url "https:github.comschollzcrocarchiverefstagsv10.2.2.tar.gz"
+  homepage "https://github.com/schollz/croc"
+  url "https://ghfast.top/https://github.com/schollz/croc/archive/refs/tags/v10.2.2.tar.gz"
   sha256 "1d892bbf3f8dacd0f528f683ab6c3678483374b17076187da7d1af805326fa68"
   license "MIT"
-  head "https:github.comschollzcroc.git", branch: "master"
+  head "https://github.com/schollz/croc.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "533cdeef8a749ee8ec433e30f10d4ae6ac7f34de8c4bcdf4c058946c6858b215"
@@ -22,21 +22,21 @@ class Croc < Formula
   end
 
   test do
-    # As of https:github.comschollzcrocpull701 an alternate method is used to provide the secret code
+    # As of https://github.com/schollz/croc/pull/701 an alternate method is used to provide the secret code
     ENV["CROC_SECRET"] = "homebrew-test"
 
     port=free_port
 
     fork do
-      exec bin"croc", "relay", "--ports=#{port}"
+      exec bin/"croc", "relay", "--ports=#{port}"
     end
     sleep 3
 
     fork do
-      exec bin"croc", "--relay=localhost:#{port}", "send", "--code=homebrew-test", "--text=mytext"
+      exec bin/"croc", "--relay=localhost:#{port}", "send", "--code=homebrew-test", "--text=mytext"
     end
     sleep 3
 
-    assert_match shell_output("#{bin}croc --relay=localhost:#{port} --overwrite --yes homebrew-test").chomp, "mytext"
+    assert_match shell_output("#{bin}/croc --relay=localhost:#{port} --overwrite --yes homebrew-test").chomp, "mytext"
   end
 end

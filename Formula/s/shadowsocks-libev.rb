@@ -1,7 +1,7 @@
 class ShadowsocksLibev < Formula
   desc "Libev port of shadowsocks"
-  homepage "https:github.comshadowsocksshadowsocks-libev"
-  url "https:github.comshadowsocksshadowsocks-libevreleasesdownloadv3.3.5shadowsocks-libev-3.3.5.tar.gz"
+  homepage "https://github.com/shadowsocks/shadowsocks-libev"
+  url "https://ghfast.top/https://github.com/shadowsocks/shadowsocks-libev/releases/download/v3.3.5/shadowsocks-libev-3.3.5.tar.gz"
   sha256 "cfc8eded35360f4b67e18dc447b0c00cddb29cc57a3cec48b135e5fb87433488"
   license "GPL-3.0-or-later"
   revision 5
@@ -21,7 +21,7 @@ class ShadowsocksLibev < Formula
   end
 
   head do
-    url "https:github.comshadowsocksshadowsocks-libev.git", branch: "master"
+    url "https://github.com/shadowsocks/shadowsocks-libev.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -32,8 +32,8 @@ class ShadowsocksLibev < Formula
   # Bug-fix-only libev port of shadowsocks. Future development moved to shadowsocks-rust
   #
   # Unmerged dependency update PRs:
-  # * MbedTLS 3: https:github.comshadowsocksshadowsocks-libevpull2999
-  # * PCRE2:     https:github.comshadowsocksshadowsocks-libevpull1792
+  # * MbedTLS 3: https://github.com/shadowsocks/shadowsocks-libev/pull/2999
+  # * PCRE2:     https://github.com/shadowsocks/shadowsocks-libev/pull/1792
   deprecate! date: "2024-12-31", because: "uses deprecated `mbedtls@2`"
 
   depends_on "asciidoc" => :build
@@ -45,13 +45,13 @@ class ShadowsocksLibev < Formula
   depends_on "pcre"
 
   def install
-    ENV["XML_CATALOG_FILES"] = etc"xmlcatalog"
-    system ".autogen.sh" if build.head?
+    ENV["XML_CATALOG_FILES"] = etc/"xml/catalog"
+    system "./autogen.sh" if build.head?
 
-    system ".configure", "--prefix=#{prefix}"
+    system "./configure", "--prefix=#{prefix}"
     system "make"
 
-    (buildpath"shadowsocks-libev.json").write <<~JSON
+    (buildpath/"shadowsocks-libev.json").write <<~JSON
       {
           "server":"localhost",
           "server_port":8388,
@@ -67,7 +67,7 @@ class ShadowsocksLibev < Formula
   end
 
   service do
-    run [opt_bin"ss-local", "-c", etc"shadowsocks-libev.json"]
+    run [opt_bin/"ss-local", "-c", etc/"shadowsocks-libev.json"]
     keep_alive true
   end
 
@@ -75,7 +75,7 @@ class ShadowsocksLibev < Formula
     server_port = free_port
     local_port = free_port
 
-    (testpath"shadowsocks-libev.json").write <<~JSON
+    (testpath/"shadowsocks-libev.json").write <<~JSON
       {
           "server":"127.0.0.1",
           "server_port":#{server_port},
@@ -86,8 +86,8 @@ class ShadowsocksLibev < Formula
           "method":null
       }
     JSON
-    server = fork { exec bin"ss-server", "-c", testpath"shadowsocks-libev.json" }
-    client = fork { exec bin"ss-local", "-c", testpath"shadowsocks-libev.json" }
+    server = fork { exec bin/"ss-server", "-c", testpath/"shadowsocks-libev.json" }
+    client = fork { exec bin/"ss-local", "-c", testpath/"shadowsocks-libev.json" }
     sleep 3
     begin
       system "curl", "--socks5", "127.0.0.1:#{local_port}", "github.com"

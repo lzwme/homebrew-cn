@@ -1,7 +1,7 @@
 class Qjson < Formula
   desc "Map JSON to QVariant objects"
-  homepage "https:qjson.sourceforge.net"
-  url "https:github.comflavioqjsonarchiverefstags0.9.0.tar.gz"
+  homepage "https://qjson.sourceforge.net/"
+  url "https://ghfast.top/https://github.com/flavio/qjson/archive/refs/tags/0.9.0.tar.gz"
   sha256 "e812617477f3c2bb990561767a4cd8b1d3803a52018d4878da302529552610d4"
   license "LGPL-2.1-only"
   revision 2
@@ -33,8 +33,8 @@ class Qjson < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~CPP
-      #include <qjson-qt5parser.h>
+    (testpath/"test.cpp").write <<~CPP
+      #include <qjson-qt5/parser.h>
       int main() {
         QJson::Parser parser;
         return 0;
@@ -56,6 +56,6 @@ class Qjson < Formula
     end
     system ENV.cxx, "test.cpp", "-o", "test", "-std=c++11", "-I#{include}",
                     "-L#{lib}", "-lqjson-qt5", *flags
-    system ".test"
+    system "./test"
   end
 end

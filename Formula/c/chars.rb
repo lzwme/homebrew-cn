@@ -1,10 +1,10 @@
 class Chars < Formula
   desc "Command-line tool to display information about unicode characters"
-  homepage "https:github.comboinkor-netchars"
-  url "https:github.comboinkor-netcharsarchiverefstagsv0.7.0.tar.gz"
+  homepage "https://github.com/boinkor-net/chars/"
+  url "https://ghfast.top/https://github.com/boinkor-net/chars/archive/refs/tags/v0.7.0.tar.gz"
   sha256 "2f79843a3b1173870b41ebce491a54812b13a44090d0ae30a6f572caa91f0736"
   license "MIT"
-  head "https:github.comboinkor-netchars.git", branch: "master"
+  head "https://github.com/boinkor-net/chars.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "217f90ce26ac0d657e7ff5fc13bb07fa945453e9877adbf436af02380e65c8a7"
@@ -29,7 +29,7 @@ class Chars < Formula
   end
 
   test do
-    output = shell_output "#{bin}chars 1C"
+    output = shell_output "#{bin}/chars 1C"
     assert_match "Control character", output
     assert_match "FS", output
     assert_match "File Separator", output

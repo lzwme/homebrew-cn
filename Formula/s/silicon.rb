@@ -1,7 +1,7 @@
 class Silicon < Formula
   desc "Create beautiful image of your source code"
-  homepage "https:github.comAloxafsilicon"
-  url "https:github.comAloxafsiliconarchiverefstagsv0.5.3.tar.gz"
+  homepage "https://github.com/Aloxaf/silicon/"
+  url "https://ghfast.top/https://github.com/Aloxaf/silicon/archive/refs/tags/v0.5.3.tar.gz"
   sha256 "56e7f3be4118320b64e37a174cc2294484e27b019c59908c0a96680a5ae3ad58"
   license "MIT"
 
@@ -31,7 +31,7 @@ class Silicon < Formula
   end
 
   test do
-    (testpath"test.rs").write <<~RUST
+    (testpath/"test.rs").write <<~RUST
       fn factorial(n: u64) -> u64 {
           match n {
               0 => 1,
@@ -44,8 +44,8 @@ class Silicon < Formula
       }
     RUST
 
-    system bin"silicon", "-o", "output.png", "test.rs"
-    assert_path_exists testpath"output.png"
+    system bin/"silicon", "-o", "output.png", "test.rs"
+    assert_path_exists testpath/"output.png"
     expected_size = [894, 630]
     assert_equal expected_size, File.read("output.png")[0x10..0x18].unpack("NN")
   end

@@ -1,10 +1,10 @@
 class Halp < Formula
   desc "CLI tool to get help with CLI tools"
-  homepage "https:halp.cli.rs"
-  url "https:github.comorhunhalparchiverefstagsv0.2.0.tar.gz"
+  homepage "https://halp.cli.rs/"
+  url "https://ghfast.top/https://github.com/orhun/halp/archive/refs/tags/v0.2.0.tar.gz"
   sha256 "de4e931aebd420e800007c446115f9fa3e2e581cbb4f2db9cb10488862e5f98b"
   license any_of: ["Apache-2.0", "MIT"]
-  head "https:github.comorhunhalp.git", branch: "main"
+  head "https://github.com/orhun/halp.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "90151c6762fc2f8f021d83dcdfd7791a1ec6eeb8f21326a99045bf430f6fd04f"
@@ -26,27 +26,27 @@ class Halp < Formula
     # Setup OUT_DIR for completion and manpage generations
     ENV["OUT_DIR"] = buildpath
 
-    system bin"halp-completions"
+    system bin/"halp-completions"
     bash_completion.install "halp.bash" => "halp"
     fish_completion.install "halp.fish"
     zsh_completion.install "_halp"
 
-    system bin"halp-mangen"
+    system bin/"halp-mangen"
     man1.install "halp.1"
 
     # Remove binaries used for building completions and manpage
-    rm([bin"halp-completions", bin"halp-mangen", bin"halp-test"])
+    rm([bin/"halp-completions", bin/"halp-mangen", bin/"halp-test"])
   end
 
   test do
-    output = shell_output("#{bin}halp halp")
+    output = shell_output("#{bin}/halp halp")
     assert_match <<~EOS, output
       (\u00B0\u30ED\u00B0)  checking 'halp -v'
       (\u00D7\uFE4F\u00D7)      fail '-v' argument not found.
       (\u00B0\u30ED\u00B0)  checking 'halp -V'
-      \\(^\u30EE^) success '-V' argument found!
+      \\(^\u30EE^)/ success '-V' argument found!
     EOS
 
-    assert_match version.to_s, shell_output("#{bin}halp --version")
+    assert_match version.to_s, shell_output("#{bin}/halp --version")
   end
 end

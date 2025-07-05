@@ -2,11 +2,11 @@ cask "docker-toolbox" do
   version "19.03.1"
   sha256 "6ad3fe973d5c8198c24bc270b3bb89c6ad48db28d0d6232710990888bda369f6"
 
-  url "https:github.comdockertoolboxreleasesdownloadv#{version}DockerToolbox-#{version}.pkg",
-      verified: "github.comdockertoolbox"
+  url "https://ghfast.top/https://github.com/docker/toolbox/releases/download/v#{version}/DockerToolbox-#{version}.pkg",
+      verified: "github.com/docker/toolbox/"
   name "Docker Toolbox"
   desc "Install Docker, Docker Machine, Docker Compose, and Kitematic"
-  homepage "https:www.docker.comproductsdocker-toolbox"
+  homepage "https://www.docker.com/products/docker-toolbox"
 
   no_autobump! because: :requires_manual_review
 
@@ -44,7 +44,7 @@ cask "docker-toolbox" do
       ]
 
   postflight do
-    set_ownership "~.docker"
+    set_ownership "~/.docker"
   end
 
   uninstall pkgutil: [
@@ -56,5 +56,5 @@ cask "docker-toolbox" do
     "io.docker.pkg.kitematicapp",
   ]
 
-  zap trash: "~.docker"
+  zap trash: "~/.docker"
 end

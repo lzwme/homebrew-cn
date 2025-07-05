@@ -1,10 +1,10 @@
 class Pkgx < Formula
   desc "Standalone binary that can run anything"
-  homepage "https:pkgx.sh"
-  url "https:github.compkgxdevpkgxarchiverefstagsv2.7.tar.gz"
+  homepage "https://pkgx.sh"
+  url "https://ghfast.top/https://github.com/pkgxdev/pkgx/archive/refs/tags/v2.7.tar.gz"
   sha256 "479897abc6d51df25bda10b98ab6efef8424cb14bfd3003148d55216e6ca353b"
   license "Apache-2.0"
-  head "https:github.compkgxdevpkgx.git", branch: "main"
+  head "https://github.com/pkgxdev/pkgx.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "d54923e20f0940729bec3cda7d4d597ea3b5535776e8aaaffa76927a5d83fdf4"
@@ -24,18 +24,18 @@ class Pkgx < Formula
     ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
     ENV["OPENSSL_NO_VENDOR"] = "1"
 
-    system "cargo", "install", *std_cargo_args(path: "cratescli")
+    system "cargo", "install", *std_cargo_args(path: "crates/cli")
   end
 
   test do
-    (testpath"main.go").write <<~GO
+    (testpath/"main.go").write <<~GO
       package main
 
       func main() {
         println("Hello world")
       }
     GO
-    assert_match "1.23", shell_output("#{bin}pkgx go@1.23 version")
-    assert_match "Hello world", shell_output("#{bin}pkgx go@1.23 run main.go 2>&1")
+    assert_match "1.23", shell_output("#{bin}/pkgx go@1.23 version")
+    assert_match "Hello world", shell_output("#{bin}/pkgx go@1.23 run main.go 2>&1")
   end
 end

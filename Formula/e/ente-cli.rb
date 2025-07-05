@@ -1,14 +1,14 @@
 class EnteCli < Formula
   desc "Utility for exporting data from Ente and decrypt the export from Ente Auth"
-  homepage "https:github.comente-io"
-  url "https:github.comente-ioentearchiverefstagscli-v0.2.3.tar.gz"
+  homepage "https://github.com/ente-io/"
+  url "https://ghfast.top/https://github.com/ente-io/ente/archive/refs/tags/cli-v0.2.3.tar.gz"
   sha256 "6bd4ab7b60bf15dd52fbf531d7fa668660caf85c60ef8c4b4f619b777068b4e3"
   license "AGPL-3.0-only"
-  head "https:github.comente-ioente.git", branch: "main"
+  head "https://github.com/ente-io/ente.git", branch: "main"
 
   livecheck do
     url :stable
-    regex(^cli-v?(\d+(?:\.\d+)+)$i)
+    regex(/^cli-v?(\d+(?:\.\d+)+)$/i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -26,15 +26,15 @@ class EnteCli < Formula
 
   def install
     cd "cli" do
-      system "go", "build", *std_go_args(ldflags: "-s -w", output: bin"ente"), "main.go"
+      system "go", "build", *std_go_args(ldflags: "-s -w", output: bin/"ente"), "main.go"
     end
   end
 
   test do
     if OS.linux?
-      assert_match "Please mount a volume to cli-data", shell_output("#{bin}ente version 2>&1", 1)
+      assert_match "Please mount a volume to /cli-data/", shell_output("#{bin}/ente version 2>&1", 1)
     else
-      assert_match version.to_s, shell_output("#{bin}ente version")
+      assert_match version.to_s, shell_output("#{bin}/ente version")
     end
   end
 end

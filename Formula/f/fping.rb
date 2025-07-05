@@ -1,13 +1,13 @@
 class Fping < Formula
   desc "Scriptable ping program for checking if multiple hosts are up"
-  homepage "https:fping.org"
-  url "https:fping.orgdistfping-5.3.tar.gz"
+  homepage "https://fping.org/"
+  url "https://fping.org/dist/fping-5.3.tar.gz"
   sha256 "d57bd0141aea082e3adfc198bfc3db5dfd12a7014c7c2655e97f61cd54901d0e"
   license "BSD-3-Clause"
 
   livecheck do
     url :homepage
-    regex(href=.*?fping[._-]v?(\d+(?:\.\d+)+)\.ti)
+    regex(/href=.*?fping[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   bottle do
@@ -21,21 +21,21 @@ class Fping < Formula
   end
 
   head do
-    url "https:github.comschweikertfping.git", branch: "develop"
+    url "https://github.com/schweikert/fping.git", branch: "develop"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
   end
 
   def install
-    system ".autogen.sh" if build.head?
-    system ".configure", *std_configure_args, "--sbindir=#{bin}"
+    system "./autogen.sh" if build.head?
+    system "./configure", *std_configure_args, "--sbindir=#{bin}"
     system "make", "install"
   end
 
   test do
-    assert_match "Version #{version}", shell_output("#{bin}fping --version")
-    assert_match "Probing options:", shell_output("#{bin}fping --help")
-    assert_equal "127.0.0.1 is alive", shell_output("#{bin}fping -4 -A localhost").chomp
+    assert_match "Version #{version}", shell_output("#{bin}/fping --version")
+    assert_match "Probing options:", shell_output("#{bin}/fping --help")
+    assert_equal "127.0.0.1 is alive", shell_output("#{bin}/fping -4 -A localhost").chomp
   end
 end

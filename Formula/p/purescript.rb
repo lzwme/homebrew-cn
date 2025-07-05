@@ -1,12 +1,12 @@
 class Purescript < Formula
   desc "Strongly typed programming language that compiles to JavaScript"
-  homepage "https:www.purescript.org"
+  homepage "https://www.purescript.org/"
   # NOTE: If the build fails due to dependency resolution, do not report issue
   # upstream as we modify upstream's constraints in order to use a newer GHC.
-  url "https:hackage.haskell.orgpackagepurescript-0.15.15purescript-0.15.15.tar.gz"
+  url "https://hackage.haskell.org/package/purescript-0.15.15/purescript-0.15.15.tar.gz"
   sha256 "9c4a23ea47ff09adc34e260610beabd940ec5c15088234cf120e8660dd220e67"
   license "BSD-3-Clause"
-  head "https:github.compurescriptpurescript.git", branch: "master"
+  head "https://github.com/purescript/purescript.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "3c1767c6fe89d2e486911f5c60c81222996c3b47971d57b533bb57ace2d22a4b"
@@ -40,15 +40,15 @@ class Purescript < Formula
   end
 
   test do
-    test_module_path = testpath"Test.purs"
-    test_target_path = testpath"test-module.js"
+    test_module_path = testpath/"Test.purs"
+    test_target_path = testpath/"test-module.js"
     test_module_path.write <<~EOS
       module Test where
 
       main :: Int
       main = 1
     EOS
-    system bin"purs", "compile", test_module_path, "-o", test_target_path
+    system bin/"purs", "compile", test_module_path, "-o", test_target_path
     assert_path_exists test_target_path
   end
 end

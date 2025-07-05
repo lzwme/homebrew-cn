@@ -1,10 +1,10 @@
 class Mactop < Formula
   desc "Apple Silicon Monitor Top written in Golang"
-  homepage "https:github.comcontext-labsmactop"
-  url "https:github.comcontext-labsmactoparchiverefstagsv0.2.3.tar.gz"
+  homepage "https://github.com/context-labs/mactop"
+  url "https://ghfast.top/https://github.com/context-labs/mactop/archive/refs/tags/v0.2.3.tar.gz"
   sha256 "37bc8567f66d31b0cbcdd7b39deee3fd0155cffbe65daba53044cbcd69d5dbfd"
   license "MIT"
-  head "https:github.comcontext-labsmactop.git", branch: "main"
+  head "https://github.com/context-labs/mactop.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "dd7f16331f6a5bfab13fc8fc33ca1abc815409a7ab59317b75aa797c16e7897f"
@@ -29,6 +29,6 @@ class Mactop < Formula
 
   test do
     test_input = "This is a test input for brew"
-    assert_match "Test input received: #{test_input}", shell_output("#{bin}mactop --test '#{test_input}'")
+    assert_match "Test input received: #{test_input}", shell_output("#{bin}/mactop --test '#{test_input}'")
   end
 end

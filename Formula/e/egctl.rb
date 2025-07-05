@@ -1,19 +1,19 @@
 class Egctl < Formula
   desc "Command-line utility for operating Envoy Gateway"
-  homepage "https:gateway.envoyproxy.io"
-  url "https:github.comenvoyproxygatewayarchiverefstagsv1.4.1.tar.gz"
-  sha256 "325564511cbbd90ba3a674feaa88218c6f178323153a8921c5b4786441585cdb"
+  homepage "https://gateway.envoyproxy.io/"
+  url "https://ghfast.top/https://github.com/envoyproxy/gateway/archive/refs/tags/v1.4.2.tar.gz"
+  sha256 "5c8d2df2246a62f5314bebac3b95f07e3e0d77887201dfe44b5da0c553d9fbe3"
   license "Apache-2.0"
-  head "https:github.comenvoyproxygateway.git", branch: "main"
+  head "https://github.com/envoyproxy/gateway.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c2d4b853eafc777fc2a268d51e646a83753d83a9960d0bc76da87e81a344c07c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7164f4f67f2b2dac75b5efbcc4f3de394b86379be85200f3ea2db067902dc36a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "23aab29bbc30ac887830b22cbc1ee325a87cde562dbdd26df47927933d0f0142"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2fd3bddb49fd0d8106ea9a9c9ef7ac592d3daa6e681aad0907d1ab62516538ff"
-    sha256 cellar: :any_skip_relocation, ventura:       "0c44679a701a3bcda1cffa9ddd4e8225ddc45f6becf93d87b04fb9e561c9b79e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "954a6e6af1e3847567ee2b85d9299b1ddccdc7cb5f13cb2349cedda628909648"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e5cf93c224ef8c8a8996150d880c19d06ba840441efcba209ca6e4a19f775418"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dbea8d46d3331db5d0336a72a51a04e4e684631ce0a99c6d8c207393085c11f4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0005fcd6e8ad9ab0bb5d95925d2aaf0d110ca1d946b8f05fa3f3f568484139c7"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "a5a0d1c6a8e66241dd152632f3e653ea4cd031a8a9eb3e087057d80407326027"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5fef4b9f87090e1a2992a87d61310d378ecfaa93f6648ad347069afdae085dd2"
+    sha256 cellar: :any_skip_relocation, ventura:       "b62ecbf4b9237692c57db957acfc3b041bc8c493ad7ba1de5064bce352a57dbf"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f25da476d398e3fd220c3100f654d71099bd82b71b58aa84d12e524bdb13075b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d3e7feec93f81e58d321b73910706d9aa9431a75b464e84bae83bda0c365b623"
   end
 
   depends_on "go" => :build
@@ -25,26 +25,26 @@ class Egctl < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.comenvoyproxygatewayinternalcmdversion.envoyGatewayVersion=#{version}
-      -X github.comenvoyproxygatewayinternalcmdversion.gitCommitID=#{tap.user}
+      -X github.com/envoyproxy/gateway/internal/cmd/version.envoyGatewayVersion=#{version}
+      -X github.com/envoyproxy/gateway/internal/cmd/version.gitCommitID=#{tap.user}
     ]
-    system "go", "build", *std_go_args(ldflags:), ".cmdegctl"
+    system "go", "build", *std_go_args(ldflags:), "./cmd/egctl"
 
-    generate_completions_from_executable(bin"egctl", "completion")
+    generate_completions_from_executable(bin/"egctl", "completion")
   end
 
   test do
-    assert_equal version.to_s, shell_output("#{bin}egctl version --remote=false").strip
+    assert_equal version.to_s, shell_output("#{bin}/egctl version --remote=false").strip
 
-    (testpath"input.yaml").write <<~YAML
-      apiVersion: gateway.networking.k8s.iov1
+    (testpath/"input.yaml").write <<~YAML
+      apiVersion: gateway.networking.k8s.io/v1
       kind: GatewayClass
       metadata:
         name: eg
       spec:
-        controllerName: gateway.envoyproxy.iogatewayclass-controller
+        controllerName: gateway.envoyproxy.io/gatewayclass-controller
       ---
-      apiVersion: gateway.networking.k8s.iov1
+      apiVersion: gateway.networking.k8s.io/v1
       kind: Gateway
       metadata:
         name: eg
@@ -80,7 +80,7 @@ class Egctl < Formula
         selector:
           app: backend
       ---
-      apiVersion: gateway.networking.k8s.iov1
+      apiVersion: gateway.networking.k8s.io/v1
       kind: HTTPRoute
       metadata:
         name: backend
@@ -100,18 +100,18 @@ class Egctl < Formula
             matches:
               - path:
                   type: PathPrefix
-                  value: 
+                  value: /
     YAML
 
     expected = <<~EOS
       xds:
-        defaulteg:
-          '@type': type.googleapis.comenvoy.admin.v3.RoutesConfigDump
+        default/eg:
+          '@type': type.googleapis.com/envoy.admin.v3.RoutesConfigDump
           dynamicRouteConfigs:
           - routeConfig:
-              '@type': type.googleapis.comenvoy.config.route.v3.RouteConfiguration
+              '@type': type.googleapis.com/envoy.config.route.v3.RouteConfiguration
               ignorePortInHostMatching: true
-              name: defaulteghttp
+              name: default/eg/http
               virtualHosts:
               - domains:
                 - www.example.com
@@ -123,10 +123,10 @@ class Egctl < Formula
                         name: eg
                         namespace: default
                         sectionName: http
-                name: defaulteghttpwww_example_com
+                name: default/eg/http/www_example_com
                 routes:
                 - match:
-                    prefix: 
+                    prefix: /
                   metadata:
                     filterMetadata:
                       envoy-gateway:
@@ -134,15 +134,15 @@ class Egctl < Formula
                         - kind: HTTPRoute
                           name: backend
                           namespace: default
-                  name: httproutedefaultbackendrule0match0www_example_com
+                  name: httproute/default/backend/rule/0/match/0/www_example_com
                   route:
-                    cluster: httproutedefaultbackendrule0
+                    cluster: httproute/default/backend/rule/0
                     upgradeConfigs:
                     - upgradeType: websocket
 
     EOS
 
-    output = shell_output("#{bin}egctl x translate --from gateway-api --to xds -t route -f #{testpath}input.yaml")
+    output = shell_output("#{bin}/egctl x translate --from gateway-api --to xds -t route -f #{testpath}/input.yaml")
     assert_equal expected, output
   end
 end

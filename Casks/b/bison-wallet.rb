@@ -5,10 +5,10 @@ cask "bison-wallet" do
   sha256 arm:   "0dcafd9509b435a5e762aeb11cbc63baa084dc71c58d017072707bc292c72bbc",
          intel: "c0433ab203a5b9c631bb4c6bc21edaa27b90d6266203ef1c16c6c6a7a6a53c74"
 
-  url "https:github.comdecreddcrdexreleasesdownloadv#{version}bisonw-desktop-darwin-#{arch}-v#{version}.dmg"
+  url "https://ghfast.top/https://github.com/decred/dcrdex/releases/download/v#{version}/bisonw-desktop-darwin-#{arch}-v#{version}.dmg"
   name "Bison Wallet"
   desc "Multi-coin wallet with feeless DEX, atomic swaps, and arbitrage tools"
-  homepage "https:github.comdecreddcrdex"
+  homepage "https://github.com/decred/dcrdex"
 
   no_autobump! because: :requires_manual_review
 
@@ -17,7 +17,7 @@ cask "bison-wallet" do
   app "Bison Wallet.app"
 
   zap trash: [
-    "~LibraryApplication SupportDexc",
-    "~LibraryPreferencescom.decred.dcrdex.plist",
+    "~/Library/Application Support/Dexc",
+    "~/Library/Preferences/com.decred.dcrdex.plist",
   ]
 end

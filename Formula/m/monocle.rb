@@ -1,7 +1,7 @@
 class Monocle < Formula
   desc "See through all BGP data with a monocle"
-  homepage "https:github.combgpkitmonocle"
-  url "https:github.combgpkitmonoclearchiverefstagsv0.8.0.tar.gz"
+  homepage "https://github.com/bgpkit/monocle"
+  url "https://ghfast.top/https://github.com/bgpkit/monocle/archive/refs/tags/v0.8.0.tar.gz"
   sha256 "571f53116c345f1f8279a07e1aaaee3850ceb0fc01ba9c5cef3f393fbefa4a6c"
   license "MIT"
 
@@ -24,7 +24,7 @@ class Monocle < Formula
   end
 
   test do
-    output = shell_output("#{bin}monocle time 1735322400 --simple")
+    output = shell_output("#{bin}/monocle time 1735322400 --simple")
     assert_match "2024-12-27T18:00:00+00:00", output
   end
 end

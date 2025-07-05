@@ -1,16 +1,16 @@
 class Shellcheck < Formula
   desc "Static analysis and lint tool, for (ba)sh scripts"
-  homepage "https:www.shellcheck.net"
+  homepage "https://www.shellcheck.net/"
   license "GPL-3.0-or-later"
-  head "https:github.comkoalamanshellcheck.git", branch: "master"
+  head "https://github.com/koalaman/shellcheck.git", branch: "master"
 
   stable do
-    url "https:github.comkoalamanshellcheckarchiverefstagsv0.10.0.tar.gz"
+    url "https://ghfast.top/https://github.com/koalaman/shellcheck/archive/refs/tags/v0.10.0.tar.gz"
     sha256 "149ef8f90c0ccb8a5a9e64d2b8cdd079ac29f7d2f5a263ba64087093e9135050"
 
     # Backport upper bound increase for filepath, needed for GHC 9.12
     patch do
-      url "https:github.comkoalamanshellcheckcommit0ee46a0f33ebafde128e2c93dd45f2757de4d4ec.patch?full_index=1"
+      url "https://github.com/koalaman/shellcheck/commit/0ee46a0f33ebafde128e2c93dd45f2757de4d4ec.patch?full_index=1"
       sha256 "c73663bee3577068700b580140d468834cd42f88f7753f950f501e8781656ff5"
     end
   end
@@ -37,18 +37,18 @@ class Shellcheck < Formula
   def install
     system "cabal", "v2-update"
     system "cabal", "v2-install", *std_cabal_v2_args
-    system ".manpage"
+    system "./manpage"
     man1.install "shellcheck.1"
   end
 
   test do
-    sh = testpath"test.sh"
+    sh = testpath/"test.sh"
     sh.write <<~SH
       for f in $(ls *.wav)
       do
         echo "$f"
       done
     SH
-    assert_match "[SC2045]", shell_output("#{bin}shellcheck -f gcc #{sh}", 1)
+    assert_match "[SC2045]", shell_output("#{bin}/shellcheck -f gcc #{sh}", 1)
   end
 end

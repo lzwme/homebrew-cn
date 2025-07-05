@@ -1,10 +1,10 @@
 class CrispyDoom < Formula
   desc "Limit-removing enhanced-resolution Doom source port based on Chocolate Doom"
-  homepage "https:github.comfabiangreffrathcrispy-doom"
-  url "https:github.comfabiangreffrathcrispy-doomarchiverefstagscrispy-doom-7.0.tar.gz"
+  homepage "https://github.com/fabiangreffrath/crispy-doom"
+  url "https://ghfast.top/https://github.com/fabiangreffrath/crispy-doom/archive/refs/tags/crispy-doom-7.0.tar.gz"
   sha256 "25eea88fdbe1320ad0d1a3e0ed66ae8d985c39b79e442beab5fc36d9d5ddfc42"
   license "GPL-2.0-only"
-  head "https:github.comfabiangreffrathcrispy-doom.git", branch: "master"
+  head "https://github.com/fabiangreffrath/crispy-doom.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "b9b035b756e9b42de763784b2d232e18edd11778a9417f61155011aafef3c03e"
@@ -32,7 +32,7 @@ class CrispyDoom < Formula
 
   def install
     system "autoreconf", "--force", "--install", "--verbose"
-    system ".configure", "--disable-silent-rules",
+    system "./configure", "--disable-silent-rules",
                           "--disable-sdltest",
                           *std_configure_args
     system "make", "install", "execgamesdir=#{bin}"
@@ -42,9 +42,9 @@ class CrispyDoom < Formula
     testdata = <<~EOS
       Invalid IWAD file
     EOS
-    (testpath"test_invalid.wad").write testdata
+    (testpath/"test_invalid.wad").write testdata
 
     expected_output = "Wad file test_invalid.wad doesn't have IWAD or PWAD id"
-    assert_match expected_output, shell_output("#{bin}crispy-doom -nogui -iwad test_invalid.wad 2>&1", 255)
+    assert_match expected_output, shell_output("#{bin}/crispy-doom -nogui -iwad test_invalid.wad 2>&1", 255)
   end
 end

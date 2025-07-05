@@ -1,11 +1,11 @@
 class Tag < Formula
   desc "Manipulate and query tags on macOS files"
-  homepage "https:github.comjdberrytag"
-  url "https:github.comjdberrytagarchiverefstagsv0.10.tar.gz"
+  homepage "https://github.com/jdberry/tag/"
+  url "https://ghfast.top/https://github.com/jdberry/tag/archive/refs/tags/v0.10.tar.gz"
   sha256 "5ab057d3e3f0dbb5c3be3970ffd90f69af4cb6201c18c1cbaa23ef367e5b071e"
   license "MIT"
   revision 1
-  head "https:github.comjdberrytag.git", branch: "master"
+  head "https://github.com/jdberry/tag.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -35,7 +35,7 @@ class Tag < Formula
     test_tag = "test_tag"
     test_file = Pathname.pwd+"test_file"
     touch test_file
-    system bin"tag", "--add", test_tag, test_file
-    assert_equal test_tag, `#{bin}tag --list --no-name #{test_file}`.chomp
+    system bin/"tag", "--add", test_tag, test_file
+    assert_equal test_tag, `#{bin}/tag --list --no-name #{test_file}`.chomp
   end
 end

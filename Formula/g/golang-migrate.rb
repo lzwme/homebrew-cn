@@ -1,10 +1,10 @@
 class GolangMigrate < Formula
   desc "Database migrations CLI tool"
-  homepage "https:github.comgolang-migratemigrate"
-  url "https:github.comgolang-migratemigratearchiverefstagsv4.18.3.tar.gz"
+  homepage "https://github.com/golang-migrate/migrate"
+  url "https://ghfast.top/https://github.com/golang-migrate/migrate/archive/refs/tags/v4.18.3.tar.gz"
   sha256 "473342da619ce55bdb15e5ebcbcb6c798286b5dbd3f84f2884696b5cbe5d3d87"
   license "MIT"
-  head "https:github.comgolang-migratemigrate.git", branch: "master"
+  head "https://github.com/golang-migrate/migrate.git", branch: "master"
 
   # There can be a notable gap between when a version is tagged and a
   # corresponding release is created, so we check the "latest" release instead
@@ -33,7 +33,7 @@ class GolangMigrate < Formula
 
   test do
     touch "0001_migtest.up.sql"
-    output = shell_output("#{bin}migrate -database stub: -path . up 2>&1")
-    assert_match "1u migtest", output
+    output = shell_output("#{bin}/migrate -database stub: -path . up 2>&1")
+    assert_match "1/u migtest", output
   end
 end

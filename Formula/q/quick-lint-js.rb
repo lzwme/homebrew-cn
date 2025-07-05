@@ -1,11 +1,11 @@
 class QuickLintJs < Formula
   desc "Find bugs in your JavaScript code"
-  homepage "https:quick-lint-js.com"
-  url "https:c.quick-lint-js.comreleases3.2.0sourcequick-lint-js-3.2.0.tar.gz"
+  homepage "https://quick-lint-js.com/"
+  url "https://c.quick-lint-js.com/releases/3.2.0/source/quick-lint-js-3.2.0.tar.gz"
   sha256 "f17b39726622637946136076c406e89d3a98ae363d5e3c2a93ab1139bf0e828d"
   license "GPL-3.0-or-later"
   revision 6
-  head "https:github.comquick-lintquick-lint-js.git", branch: "master"
+  head "https://github.com/quick-lint/quick-lint-js.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "cc2bcf04b29c7454a5614d5d19d65160a91887f24abbb6192c58c3160eb9e8ed"
@@ -43,13 +43,13 @@ class QuickLintJs < Formula
   end
 
   test do
-    (testpath"errors.js").write <<~EOF
+    (testpath/"errors.js").write <<~EOF
       const x = 3;
       const x = 4;
     EOF
-    assert_match "E0034", shell_output("#{bin}quick-lint-js errors.js 2>&1", 1)
+    assert_match "E0034", shell_output("#{bin}/quick-lint-js errors.js 2>&1", 1)
 
-    (testpath"no-errors.js").write 'console.log("hello, world!");'
-    assert_empty shell_output("#{bin}quick-lint-js no-errors.js")
+    (testpath/"no-errors.js").write 'console.log("hello, world!");'
+    assert_empty shell_output("#{bin}/quick-lint-js no-errors.js")
   end
 end

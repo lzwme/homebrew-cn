@@ -1,11 +1,11 @@
 class DockerLs < Formula
   desc "Tools for browsing and manipulating docker registries"
-  homepage "https:github.commayflowerdocker-ls"
-  url "https:github.commayflowerdocker-ls.git",
+  homepage "https://github.com/mayflower/docker-ls"
+  url "https://github.com/mayflower/docker-ls.git",
       tag:      "v0.5.1",
       revision: "ae0856513066feff2ee6269efa5d665145709d2e"
   license "MIT"
-  head "https:github.commayflowerdocker-ls.git", branch: "master"
+  head "https://github.com/mayflower/docker-ls.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -27,21 +27,21 @@ class DockerLs < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "generate", ".lib"
+    system "go", "generate", "./lib"
 
     %w[docker-ls docker-rm].each do |name|
-      system "go", "build", *std_go_args(ldflags: "-s -w", output: binname), ".cli#{name}"
+      system "go", "build", *std_go_args(ldflags: "-s -w", output: bin/name), "./cli/#{name}"
     end
   end
 
   test do
-    assert_match(\Wlatest\Wm, pipe_output("#{bin}docker-ls tags \
-      -r https:index.docker.io -u '' -p '' \
-      --progress-indicator=false librarybusybox
+    assert_match(/\Wlatest\W/m, pipe_output("#{bin}/docker-ls tags \
+      -r https://index.docker.io -u '' -p '' \
+      --progress-indicator=false library/busybox
     "))
 
-    assert_match "401", pipe_output("#{bin}docker-rm  \
-      -r https:index.docker.io -u foo -p bar librarybusybox:latest 2<&1
+    assert_match "401", pipe_output("#{bin}/docker-rm  \
+      -r https://index.docker.io -u foo -p bar library/busybox:latest 2<&1
     ")
   end
 end

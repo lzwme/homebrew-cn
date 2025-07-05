@@ -1,10 +1,10 @@
 class Ol < Formula
   desc "Purely functional dialect of Lisp"
-  homepage "https:yuriy-chumak.github.iool"
-  url "https:github.comyuriy-chumakolarchiverefstags2.6.tar.gz"
+  homepage "https://yuriy-chumak.github.io/ol/"
+  url "https://ghfast.top/https://github.com/yuriy-chumak/ol/archive/refs/tags/2.6.tar.gz"
   sha256 "c5506de4005a63039dc96962322ae94bf6c33eeaf63dcc03b07b1e8cc3a4d8f3"
   license any_of: ["LGPL-3.0-or-later", "MIT"]
-  head "https:github.comyuriy-chumakol.git", branch: "master"
+  head "https://github.com/yuriy-chumak/ol.git", branch: "master"
 
   bottle do
     sha256 arm64_sequoia: "5a9e307abff85e27d842ad8de7f9ce281a037386154a7c39a0e8a57b3d378504"
@@ -27,9 +27,9 @@ class Ol < Formula
   end
 
   test do
-    (testpath"gcd.ol").write <<~LISP
+    (testpath/"gcd.ol").write <<~LISP
       (print (gcd 1071 1029))
     LISP
-    assert_equal "21", shell_output("#{bin}ol gcd.ol").strip
+    assert_equal "21", shell_output("#{bin}/ol gcd.ol").strip
   end
 end

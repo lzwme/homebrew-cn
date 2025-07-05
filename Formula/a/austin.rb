@@ -1,10 +1,10 @@
 class Austin < Formula
   desc "Python frame stack sampler for CPython"
-  homepage "https:github.comP403n1x87austin"
-  url "https:github.comP403n1x87austinarchiverefstagsv3.7.0.tar.gz"
+  homepage "https://github.com/P403n1x87/austin"
+  url "https://ghfast.top/https://github.com/P403n1x87/austin/archive/refs/tags/v3.7.0.tar.gz"
   sha256 "225968a4302529b62d212db07fa692446a6df58049f2f444011ef4866604339e"
   license "GPL-3.0-or-later"
-  head "https:github.comP403n1x87austin.git", branch: "master"
+  head "https://github.com/P403n1x87/austin.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "3e3d0412250ee9d07be534682f9dc585ca5300a1baf6d6fbf5430f0458fa6bdc"
@@ -23,20 +23,20 @@ class Austin < Formula
 
   def install
     system "autoreconf", "--force", "--install", "--verbose"
-    system ".configure", *std_configure_args, "--disable-silent-rules"
+    system "./configure", *std_configure_args, "--disable-silent-rules"
     system "make"
     system "make", "install"
-    man1.install "srcaustin.1"
+    man1.install "src/austin.1"
   end
 
   test do
     if OS.mac?
       assert_match "Insufficient permissions. Austin requires the use of sudo",
-        shell_output(bin"austin --gc 2>&1", 37)
+        shell_output(bin/"austin --gc 2>&1", 37)
     else
       assert_match "need either a command to run or a PID to attach to",
-        shell_output(bin"austin --gc 2>&1", 255)
+        shell_output(bin/"austin --gc 2>&1", 255)
     end
-    assert_equal "austin #{version}", shell_output(bin"austin --version").chomp
+    assert_equal "austin #{version}", shell_output(bin/"austin --version").chomp
   end
 end

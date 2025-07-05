@@ -1,11 +1,11 @@
 class Mmseqs2 < Formula
   desc "Software suite for very fast sequence search and clustering"
-  homepage "https:mmseqs.com"
-  url "https:github.comsoedinglabMMseqs2archiverefstags17-b804f.tar.gz"
+  homepage "https://mmseqs.com/"
+  url "https://ghfast.top/https://github.com/soedinglab/MMseqs2/archive/refs/tags/17-b804f.tar.gz"
   version "17-b804f"
   sha256 "300ebd14bf4e007b339037e5f73d8ff9c4e34f8495204c4a8c59c7672b689db2"
   license "MIT"
-  head "https:github.comsoedinglabMMseqs2.git", branch: "master"
+  head "https://github.com/soedinglab/MMseqs2.git", branch: "master"
 
   bottle do
     rebuild 1
@@ -32,9 +32,9 @@ class Mmseqs2 < Formula
     depends_on "gawk"
   end
 
-  # `git ls-remote https:github.comsoedinglabMMseqs2.wiki.git HEAD`
+  # `git ls-remote https://github.com/soedinglab/MMseqs2.wiki.git HEAD`
   resource "documentation" do
-    url "https:github.comsoedinglabMMseqs2.wiki.git",
+    url "https://github.com/soedinglab/MMseqs2.wiki.git",
         revision: "b1ccffcaf6be0f857e37670a260311f2416b6794"
   end
 
@@ -60,18 +60,18 @@ class Mmseqs2 < Formula
 
     resource("documentation").stage { doc.install Dir["*"] }
     pkgshare.install "examples"
-    bash_completion.install "utilbash-completion.sh" => "mmseqs.sh"
+    bash_completion.install "util/bash-completion.sh" => "mmseqs.sh"
   end
 
   test do
     resource "homebrew-testdata" do
-      url "https:github.comsoedinglabMMseqs2releasesdownload12-113e3MMseqs2-Regression-Minimal.zip"
+      url "https://ghfast.top/https://github.com/soedinglab/MMseqs2/releases/download/12-113e3/MMseqs2-Regression-Minimal.zip"
       sha256 "ab0c2953d1c27736c22a57a1ccbb976c1320435fad82b5c579dbd716b7bae4ce"
     end
 
     resource("homebrew-testdata").stage do
       ENV["CMAKE_POLICY_VERSION_MINIMUM"] = "3.5"
-      system ".run_regression.sh", "#{bin}mmseqs", "scratch"
+      system "./run_regression.sh", "#{bin}/mmseqs", "scratch"
     end
   end
 end

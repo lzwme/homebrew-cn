@@ -1,7 +1,7 @@
 class Cljfmt < Formula
   desc "Formatting Clojure code"
-  homepage "https:github.comweavejestercljfmt"
-  url "https:github.comweavejestercljfmtarchiverefstags0.13.1.tar.gz"
+  homepage "https://github.com/weavejester/cljfmt"
+  url "https://ghfast.top/https://github.com/weavejester/cljfmt/archive/refs/tags/0.13.1.tar.gz"
   sha256 "d9deca44683cbb8b81153ea596d1cffe2451ff59b39fcf654971bded96641000"
   license "EPL-1.0"
 
@@ -21,27 +21,27 @@ class Cljfmt < Formula
   def install
     cd "cljfmt" do
       system "lein", "uberjar"
-      libexec.install "targetcljfmt-#{version}-standalone.jar" => "cljfmt.jar"
+      libexec.install "target/cljfmt-#{version}-standalone.jar" => "cljfmt.jar"
     end
 
-    bin.write_jar_script libexec"cljfmt.jar", "cljfmt"
+    bin.write_jar_script libexec/"cljfmt.jar", "cljfmt"
   end
 
   test do
-    (testpath"test.clj").write <<~CLOJURE
+    (testpath/"test.clj").write <<~CLOJURE
       (ns test.core)
         (defn foo [] (println "hello"))
     CLOJURE
 
-    system bin"cljfmt", "fix", "--verbose", "test.clj"
+    system bin/"cljfmt", "fix", "--verbose", "test.clj"
 
-    assert_equal <<~CLOJURE, (testpath"test.clj").read
+    assert_equal <<~CLOJURE, (testpath/"test.clj").read
       (ns test.core)
       (defn foo [] (println "hello"))
     CLOJURE
 
-    system bin"cljfmt", "check", "test.clj"
+    system bin/"cljfmt", "check", "test.clj"
 
-    assert_match version.to_s, shell_output("#{bin}cljfmt --version")
+    assert_match version.to_s, shell_output("#{bin}/cljfmt --version")
   end
 end

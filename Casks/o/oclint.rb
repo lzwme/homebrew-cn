@@ -7,10 +7,10 @@ cask "oclint" do
            intel: "6f102a568af3a4344f9658b5f4bdf3d599a851456287bf7a1fae447891f7368c"
 
     on_intel do
-      binary "oclint-#{version}includec++v1", target: "#{HOMEBREW_PREFIX}includec++v1"
+      binary "oclint-#{version}/include/c++/v1", target: "#{HOMEBREW_PREFIX}/include/c++/v1"
     end
 
-    url "https:github.comoclintoclintreleasesdownloadv#{version}oclint-#{version}-llvm-13.0.1-#{arch}-darwin-macos-12.2-xcode-13.2.tar.gz"
+    url "https://ghfast.top/https://github.com/oclint/oclint/releases/download/v#{version}/oclint-#{version}-llvm-13.0.1-#{arch}-darwin-macos-12.2-xcode-13.2.tar.gz"
 
     livecheck do
       skip "Legacy version"
@@ -20,24 +20,24 @@ cask "oclint" do
     version "24.11"
     sha256 "85062776d437bfa496df542077e6a87f88dfd7435cdbe651a01b17ed8f9df972"
 
-    url "https:github.comoclintoclintreleasesdownloadv#{version}oclint-#{version}-llvm-16.0.5-#{arch}-darwin-macos-15.1.1-xcode-16.1.tar.gz"
+    url "https://ghfast.top/https://github.com/oclint/oclint/releases/download/v#{version}/oclint-#{version}-llvm-16.0.5-#{arch}-darwin-macos-15.1.1-xcode-16.1.tar.gz"
 
     depends_on arch: :arm64
   end
 
   name "OCLint"
   desc "Static source code analysis tool"
-  homepage "https:github.comoclintoclint"
+  homepage "https://github.com/oclint/oclint/"
 
   no_autobump! because: :requires_manual_review
 
   depends_on macos: ">= :monterey"
 
-  binary "oclint-#{version}binoclint-json-compilation-database"
-  binary "oclint-#{version}binoclint-xcodebuild"
-  binary "oclint-#{version}binoclint"
-  binary "oclint-#{version}libclang", target: "#{HOMEBREW_PREFIX}libclang"
-  binary "oclint-#{version}liboclint", target: "#{HOMEBREW_PREFIX}liboclint"
+  binary "oclint-#{version}/bin/oclint-json-compilation-database"
+  binary "oclint-#{version}/bin/oclint-xcodebuild"
+  binary "oclint-#{version}/bin/oclint"
+  binary "oclint-#{version}/lib/clang", target: "#{HOMEBREW_PREFIX}/lib/clang"
+  binary "oclint-#{version}/lib/oclint", target: "#{HOMEBREW_PREFIX}/lib/oclint"
 
   # No zap stanza required
 end

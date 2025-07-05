@@ -1,14 +1,14 @@
 class OpensearchDashboards < Formula
   desc "Open source visualization dashboards for OpenSearch"
-  homepage "https:opensearch.orgdocsdashboardsindex"
-  url "https:github.comopensearch-projectOpenSearch-Dashboards.git",
+  homepage "https://opensearch.org/docs/dashboards/index/"
+  url "https://github.com/opensearch-project/OpenSearch-Dashboards.git",
       tag:      "3.1.0",
       revision: "1feb86934e7f2d5fae58baebf1b98c5c0825bc3f"
   license "Apache-2.0"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -30,20 +30,20 @@ class OpensearchDashboards < Formula
 
   def install
     system "yarn", "osd", "bootstrap"
-    system "node", "scriptsbuild", "--release", "--skip-os-packages", "--skip-archives", "--skip-node-download"
+    system "node", "scripts/build", "--release", "--skip-os-packages", "--skip-archives", "--skip-node-download"
 
     os = OS.kernel_name.downcase
     arch = Hardware::CPU.intel? ? "x64" : Hardware::CPU.arch.to_s
-    cd "buildopensearch-dashboards-#{version}-#{os}-#{arch}" do
-      inreplace "binuse_node",
-                NODE=".+",
-                "NODE=\"#{Formula["node@20"].opt_bin"node"}\""
+    cd "build/opensearch-dashboards-#{version}-#{os}-#{arch}" do
+      inreplace "bin/use_node",
+                /NODE=".+"/,
+                "NODE=\"#{Formula["node@20"].opt_bin/"node"}\""
 
-      inreplace "configopensearch_dashboards.yml",
-                #\s*pid\.file: .+$,
-                "pid.file: #{var}runopensearchDashboards.pid"
+      inreplace "config/opensearch_dashboards.yml",
+                /#\s*pid\.file: .+$/,
+                "pid.file: #{var}/run/opensearchDashboards.pid"
 
-      (etc"opensearch-dashboards").install Dir["config*"]
+      (etc/"opensearch-dashboards").install Dir["config/*"]
       rm_r(Dir["{config,data,plugins}"])
 
       prefix.install Dir["*"]
@@ -51,52 +51,52 @@ class OpensearchDashboards < Formula
   end
 
   def post_install
-    (var"logopensearch-dashboards").mkpath
+    (var/"log/opensearch-dashboards").mkpath
 
-    (var"libopensearch-dashboards").mkpath
-    ln_s var"libopensearch-dashboards", prefix"data" unless (prefix"data").exist?
+    (var/"lib/opensearch-dashboards").mkpath
+    ln_s var/"lib/opensearch-dashboards", prefix/"data" unless (prefix/"data").exist?
 
-    (var"opensearch-dashboardsplugins").mkpath
-    ln_s var"opensearch-dashboardsplugins", prefix"plugins" unless (prefix"plugins").exist?
+    (var/"opensearch-dashboards/plugins").mkpath
+    ln_s var/"opensearch-dashboards/plugins", prefix/"plugins" unless (prefix/"plugins").exist?
 
-    ln_s etc"opensearch-dashboards", prefix"config" unless (prefix"config").exist?
+    ln_s etc/"opensearch-dashboards", prefix/"config" unless (prefix/"config").exist?
   end
 
   def caveats
     <<~EOS
-      Data:    #{var}libopensearch-dashboards
-      Logs:    #{var}logopensearch-dashboardsopensearch-dashboards.log
-      Plugins: #{var}opensearch-dashboardsplugins
-      Config:  #{etc}opensearch-dashboards
+      Data:    #{var}/lib/opensearch-dashboards/
+      Logs:    #{var}/log/opensearch-dashboards/opensearch-dashboards.log
+      Plugins: #{var}/opensearch-dashboards/plugins/
+      Config:  #{etc}/opensearch-dashboards/
     EOS
   end
 
   service do
-    run opt_bin"opensearch-dashboards"
-    log_path var"logopensearch-dashboards.log"
-    error_log_path var"logopensearch-dashboards.log"
+    run opt_bin/"opensearch-dashboards"
+    log_path var/"log/opensearch-dashboards.log"
+    error_log_path var/"log/opensearch-dashboards.log"
   end
 
   test do
-    ENV["BABEL_CACHE_PATH"] = testpath".babelcache.json"
+    ENV["BABEL_CACHE_PATH"] = testpath/".babelcache.json"
 
     os_port = free_port
-    (testpath"data").mkdir
-    (testpath"logs").mkdir
+    (testpath/"data").mkdir
+    (testpath/"logs").mkdir
     fork do
-      exec Formula["opensearch"].bin"opensearch", "-Ehttp.port=#{os_port}",
-                                                   "-Epath.data=#{testpath}data",
-                                                   "-Epath.logs=#{testpath}logs"
+      exec Formula["opensearch"].bin/"opensearch", "-Ehttp.port=#{os_port}",
+                                                   "-Epath.data=#{testpath}/data",
+                                                   "-Epath.logs=#{testpath}/logs"
     end
 
-    (testpath"config.yml").write <<~YAML
+    (testpath/"config.yml").write <<~YAML
       server.host: "127.0.0.1"
-      path.data: #{testpath}data
-      opensearch.hosts: ["http:127.0.0.1:#{os_port}"]
+      path.data: #{testpath}/data
+      opensearch.hosts: ["http://127.0.0.1:#{os_port}"]
     YAML
 
     osd_port = free_port
-    fork { exec bin"opensearch-dashboards", "-p", osd_port.to_s, "-c", testpath"config.yml" }
+    fork { exec bin/"opensearch-dashboards", "-p", osd_port.to_s, "-c", testpath/"config.yml" }
 
     output = nil
 
@@ -113,28 +113,28 @@ class OpensearchDashboards < Formula
       break if output.present? && output != "OpenSearch Dashboards server is not ready yet"
     end
 
-    assert_includes output, "<title>OpenSearch Dashboards<title>"
+    assert_includes output, "<title>OpenSearch Dashboards</title>"
   end
 end
 
 __END__
-diff --git asrcdevbuildbuild_distributables.ts bsrcdevbuildbuild_distributables.ts
+diff --git a/src/dev/build/build_distributables.ts b/src/dev/build/build_distributables.ts
 index d764c5df28..e37b71e04a 100644
---- asrcdevbuildbuild_distributables.ts
-+++ bsrcdevbuildbuild_distributables.ts
+--- a/src/dev/build/build_distributables.ts
++++ b/src/dev/build/build_distributables.ts
 @@ -63,8 +63,6 @@ export async function buildDistributables(log: ToolingLog, options: BuildOptions
-    *
+    */
    await run(Tasks.VerifyEnv);
    await run(Tasks.Clean);
 -  await run(options.downloadFreshNode ? Tasks.DownloadNodeBuilds : Tasks.VerifyExistingNodeBuilds);
 -  await run(Tasks.ExtractNodeBuilds);
 
-   **
+   /**
     * run platform-generic build tasks
-diff --git asrcdevbuildtaskscreate_archives_sources_task.ts bsrcdevbuildtaskscreate_archives_sources_task.ts
+diff --git a/src/dev/build/tasks/create_archives_sources_task.ts b/src/dev/build/tasks/create_archives_sources_task.ts
 index 5ba01ad129..b4ecbb0d3d 100644
---- asrcdevbuildtaskscreate_archives_sources_task.ts
-+++ bsrcdevbuildtaskscreate_archives_sources_task.ts
+--- a/src/dev/build/tasks/create_archives_sources_task.ts
++++ b/src/dev/build/tasks/create_archives_sources_task.ts
 @@ -41,38 +41,6 @@ export const CreateArchivesSources: Task = {
            source: build.resolvePath(),
            destination: build.resolvePathForPlatform(platform),
@@ -146,14 +146,14 @@ index 5ba01ad129..b4ecbb0d3d 100644
 -          'specific build directory'
 -        );
 -
--         copy node.js install
+-        // copy node.js install
 -        await scanCopy({
 -          source: (await getNodeDownloadInfo(config, platform)).extractDir,
 -          destination: build.resolvePathForPlatform(platform, 'node'),
 -        });
 -
--         ToDo [NODE14]: Remove this Node.js 14 fallback download
--         Copy the Node.js 14 binaries into nodefallback to be used by `use_node`
+-        // ToDo [NODE14]: Remove this Node.js 14 fallback download
+-        // Copy the Node.js 14 binaries into node/fallback to be used by `use_node`
 -        if (platform.getBuildName() === 'darwin-arm64') {
 -          log.warning(`There are no fallback Node.js versions released for darwin-arm64.`);
 -        } else {
@@ -174,10 +174,10 @@ index 5ba01ad129..b4ecbb0d3d 100644
        })
      );
    },
-diff --git asrcdevnoticegenerate_build_notice_text.js bsrcdevnoticegenerate_build_notice_text.js
+diff --git a/src/dev/notice/generate_build_notice_text.js b/src/dev/notice/generate_build_notice_text.js
 index b32e200915..2aab53f3ea 100644
---- asrcdevnoticegenerate_build_notice_text.js
-+++ bsrcdevnoticegenerate_build_notice_text.js
+--- a/src/dev/notice/generate_build_notice_text.js
++++ b/src/dev/notice/generate_build_notice_text.js
 @@ -48,7 +48,7 @@ export async function generateBuildNoticeText(options = {}) {
 
    const packageNotices = await Promise.all(packages.map(generatePackageNoticeText));

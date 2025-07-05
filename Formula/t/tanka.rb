@@ -1,10 +1,10 @@
 class Tanka < Formula
   desc "Flexible, reusable and concise configuration for Kubernetes using Jsonnet"
-  homepage "https:tanka.dev"
-  url "https:github.comgrafanatankaarchiverefstagsv0.33.0.tar.gz"
+  homepage "https://tanka.dev"
+  url "https://ghfast.top/https://github.com/grafana/tanka/archive/refs/tags/v0.33.0.tar.gz"
   sha256 "1e18499f0eb96b250d1b1129fc8be7660d67b73bbaa225071d8aa6a90b3f58ef"
   license "Apache-2.0"
-  head "https:github.comgrafanatanka.git", branch: "main"
+  head "https://github.com/grafana/tanka.git", branch: "main"
 
   livecheck do
     url :stable
@@ -28,13 +28,13 @@ class Tanka < Formula
     ENV["CGO_ENABLED"] = "0"
     ldflags = %W[
       -s -w
-      -X github.comgrafanatankapkgtanka.CurrentVersion=#{version}
+      -X github.com/grafana/tanka/pkg/tanka.CurrentVersion=#{version}
     ]
-    system "go", "build", *std_go_args(ldflags:, output: bin"tk"), ".cmdtk"
+    system "go", "build", *std_go_args(ldflags:, output: bin/"tk"), "./cmd/tk"
   end
 
   test do
-    system "git", "clone", "https:github.comsh0rezgrafana.libsonnet"
-    system bin"tk", "show", "--dangerous-allow-redirect", "grafana.libsonnetenvironmentsdefault"
+    system "git", "clone", "https://github.com/sh0rez/grafana.libsonnet"
+    system bin/"tk", "show", "--dangerous-allow-redirect", "grafana.libsonnet/environments/default"
   end
 end

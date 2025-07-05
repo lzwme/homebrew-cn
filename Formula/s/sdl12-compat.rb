@@ -1,14 +1,14 @@
 class Sdl12Compat < Formula
   desc "SDL 1.2 compatibility layer that uses SDL 2.0 behind the scenes"
-  homepage "https:github.comlibsdl-orgsdl12-compat"
-  url "https:github.comlibsdl-orgsdl12-compatarchiverefstagsrelease-1.2.68.tar.gz"
+  homepage "https://github.com/libsdl-org/sdl12-compat"
+  url "https://ghfast.top/https://github.com/libsdl-org/sdl12-compat/archive/refs/tags/release-1.2.68.tar.gz"
   sha256 "63c6e4dcc1154299e6f363c872900be7f3dcb3e42b9f8f57e05442ec3d89d02d"
   license all_of: ["Zlib", "MIT-0"]
-  head "https:github.comlibsdl-orgsdl12-compat.git", branch: "main"
+  head "https://github.com/libsdl-org/sdl12-compat.git", branch: "main"
 
   livecheck do
     url :stable
-    regex(^release[._-]v?(\d+(?:\.\d+)+)$i)
+    regex(/^release[._-]v?(\d+(?:\.\d+)+)$/i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -37,22 +37,22 @@ class Sdl12Compat < Formula
                     *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
-    (lib"pkgconfig").install_symlink "sdl12_compat.pc" => "sdl.pc"
+    (lib/"pkgconfig").install_symlink "sdl12_compat.pc" => "sdl.pc"
 
     # we have to do this because most build scripts assume that all sdl modules
     # are installed to the same prefix. Consequently SDL stuff cannot be keg-only
-    inreplace [bin"sdl-config", lib"pkgconfigsdl12_compat.pc"], prefix, HOMEBREW_PREFIX
+    inreplace [bin/"sdl-config", lib/"pkgconfig/sdl12_compat.pc"], prefix, HOMEBREW_PREFIX
   end
 
   test do
-    assert_path_exists libshared_library("libSDL")
+    assert_path_exists lib/shared_library("libSDL")
     versioned_libsdl = "libSDL-1.2"
     versioned_libsdl << ".0" if OS.mac?
-    assert_path_exists libshared_library(versioned_libsdl)
-    assert_path_exists lib"libSDLmain.a"
-    assert_equal version.to_s, shell_output("#{bin}sdl-config --version").strip
+    assert_path_exists lib/shared_library(versioned_libsdl)
+    assert_path_exists lib/"libSDLmain.a"
+    assert_equal version.to_s, shell_output("#{bin}/sdl-config --version").strip
 
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include <SDL.h>
 
       int main(int argc, char* argv[]) {
@@ -61,8 +61,8 @@ class Sdl12Compat < Formula
         return 0;
       }
     C
-    flags = Utils.safe_popen_read(bin"sdl-config", "--cflags", "--libs").split
+    flags = Utils.safe_popen_read(bin/"sdl-config", "--cflags", "--libs").split
     system ENV.cc, "test.c", "-o", "test", *flags
-    system ".test"
+    system "./test"
   end
 end

@@ -1,14 +1,14 @@
 class VulkanLoader < Formula
   desc "Vulkan ICD Loader"
-  homepage "https:github.comKhronosGroupVulkan-Loader"
-  url "https:github.comKhronosGroupVulkan-Loaderarchiverefstagsv1.4.320.tar.gz"
+  homepage "https://github.com/KhronosGroup/Vulkan-Loader"
+  url "https://ghfast.top/https://github.com/KhronosGroup/Vulkan-Loader/archive/refs/tags/v1.4.320.tar.gz"
   sha256 "8cec80f3b617a30a94a354121a47b090187d5fe70f668eb26eb71010a18a88a0"
   license "Apache-2.0"
-  head "https:github.comKhronosGroupVulkan-Loader.git", branch: "main"
+  head "https://github.com/KhronosGroup/Vulkan-Loader.git", branch: "main"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -38,17 +38,17 @@ class VulkanLoader < Formula
     system "cmake", "-S", ".", "-B", "build",
                     "-DVULKAN_HEADERS_INSTALL_DIR=#{Formula["vulkan-headers"].prefix}",
                     "-DCMAKE_INSTALL_INCLUDEDIR=#{Formula["vulkan-headers"].include}",
-                    "-DFALLBACK_DATA_DIRS=#{HOMEBREW_PREFIX}share:usrlocalshare:usrshare",
+                    "-DFALLBACK_DATA_DIRS=#{HOMEBREW_PREFIX}/share:/usr/local/share:/usr/share",
                     "-DCMAKE_INSTALL_SYSCONFDIR=#{etc}",
-                    "-DFALLBACK_CONFIG_DIRS=#{etc}xdg:etcxdg",
+                    "-DFALLBACK_CONFIG_DIRS=#{etc}/xdg:/etc/xdg",
                     *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end
 
   test do
-    (testpath"test.c").write <<~C
-      #include <vulkanvulkan_core.h>
+    (testpath/"test.c").write <<~C
+      #include <vulkan/vulkan_core.h>
       int main() {
         uint32_t version;
         vkEnumerateInstanceVersion(&version);
@@ -57,6 +57,6 @@ class VulkanLoader < Formula
     C
     system ENV.cc, "-o", "test", "test.c", "-I#{Formula["vulkan-headers"].opt_include}",
                    "-L#{lib}", "-lvulkan"
-    system ".test"
+    system "./test"
   end
 end

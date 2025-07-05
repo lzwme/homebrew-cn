@@ -1,13 +1,13 @@
 class CargoC < Formula
   desc "Helper program to build and install c-like libraries"
-  homepage "https:github.comlu-zerocargo-c"
-  url "https:github.comlu-zerocargo-carchiverefstagsv0.10.14.tar.gz"
+  homepage "https://github.com/lu-zero/cargo-c"
+  url "https://ghfast.top/https://github.com/lu-zero/cargo-c/archive/refs/tags/v0.10.14.tar.gz"
   sha256 "eb6d09e871516083448f77b8677dbefc1dcc14e88d73eea82bcee903343e19c1"
   license "MIT"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -28,7 +28,7 @@ class CargoC < Formula
 
   # curl-config on ventura builds do not report http2 feature,
   # this is a workaround to allow to build against system curl
-  # see discussions in https:github.comHomebrewhomebrew-corepull197727
+  # see discussions in https://github.com/Homebrew/homebrew-core/pull/197727
   uses_from_macos "curl", since: :sonoma
   uses_from_macos "zlib"
 
@@ -43,19 +43,19 @@ class CargoC < Formula
   end
 
   test do
-    require "utilslinkage"
+    require "utils/linkage"
 
     cargo_error = "could not find `Cargo.toml`"
-    assert_match cargo_error, shell_output("#{bin}cargo-cinstall cinstall 2>&1", 1)
-    assert_match cargo_error, shell_output("#{bin}cargo-cbuild cbuild 2>&1", 1)
+    assert_match cargo_error, shell_output("#{bin}/cargo-cinstall cinstall 2>&1", 1)
+    assert_match cargo_error, shell_output("#{bin}/cargo-cbuild cbuild 2>&1", 1)
 
     [
-      Formula["libgit2"].opt_libshared_library("libgit2"),
-      Formula["libssh2"].opt_libshared_library("libssh2"),
-      Formula["openssl@3"].opt_libshared_library("libssl"),
-      Formula["openssl@3"].opt_libshared_library("libcrypto"),
+      Formula["libgit2"].opt_lib/shared_library("libgit2"),
+      Formula["libssh2"].opt_lib/shared_library("libssh2"),
+      Formula["openssl@3"].opt_lib/shared_library("libssl"),
+      Formula["openssl@3"].opt_lib/shared_library("libcrypto"),
     ].each do |library|
-      assert Utils.binary_linked_to_library?(bin"cargo-cbuild", library),
+      assert Utils.binary_linked_to_library?(bin/"cargo-cbuild", library),
              "No linkage with #{library.basename}! Cargo is likely using a vendored version."
     end
   end

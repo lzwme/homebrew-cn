@@ -1,10 +1,10 @@
 class Cascadia < Formula
   desc "Go cascadia package command-line CSS selector"
-  homepage "https:github.comsuntongcascadia"
-  url "https:github.comsuntongcascadiaarchiverefstagsv1.3.0.tar.gz"
+  homepage "https://github.com/suntong/cascadia"
+  url "https://ghfast.top/https://github.com/suntong/cascadia/archive/refs/tags/v1.3.0.tar.gz"
   sha256 "1ee285d683aa3956dbeb28cd9ee2c60f0ab3a5da8e66a98ca3fb718d3214b775"
   license "MIT"
-  head "https:github.comsuntongcascadia.git", branch: "master"
+  head "https://github.com/suntong/cascadia.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -28,12 +28,12 @@ class Cascadia < Formula
   end
 
   test do
-    assert_match "Version #{version}", shell_output("#{bin}cascadia --help")
+    assert_match "Version #{version}", shell_output("#{bin}/cascadia --help")
 
-    test_html = "<foo><bar>aaa<bar><baz>bbb<baz><foo>"
+    test_html = "<foo><bar>aaa</bar><baz>bbb</baz></foo>"
     test_css_selector = "foo > bar"
-    expected_html_output = "<bar>aaa<bar>"
+    expected_html_output = "<bar>aaa</bar>"
     assert_equal expected_html_output,
-      pipe_output("#{bin}cascadia --in --out --css '#{test_css_selector}'", test_html).strip
+      pipe_output("#{bin}/cascadia --in --out --css '#{test_css_selector}'", test_html).strip
   end
 end

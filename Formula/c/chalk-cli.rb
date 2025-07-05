@@ -1,7 +1,7 @@
 class ChalkCli < Formula
   desc "Terminal string styling done right"
-  homepage "https:github.comchalkchalk-cli"
-  url "https:registry.npmjs.orgchalk-cli-chalk-cli-6.0.0.tgz"
+  homepage "https://github.com/chalk/chalk-cli"
+  url "https://registry.npmjs.org/chalk-cli/-/chalk-cli-6.0.0.tgz"
   sha256 "480a85e48da024092e1b63fe260f810880f5f82322d82f62304f32e970112216"
   license "MIT"
 
@@ -15,10 +15,10 @@ class ChalkCli < Formula
 
   def install
     system "npm", "install", *std_npm_args
-    bin.install_symlink Dir["#{libexec}bin*"]
+    bin.install_symlink Dir["#{libexec}/bin/*"]
   end
 
   test do
-    assert_match "hello, world!", pipe_output("#{bin}chalk bold cyan --stdin", "hello, world!")
+    assert_match "hello, world!", pipe_output("#{bin}/chalk bold cyan --stdin", "hello, world!")
   end
 end

@@ -1,7 +1,7 @@
 class Gitversion < Formula
   desc "Easy semantic versioning for projects using Git"
-  homepage "https:gitversion.netdocs"
-  url "https:github.comGitToolsGitVersionarchiverefstags6.3.0.tar.gz"
+  homepage "https://gitversion.net/docs/"
+  url "https://ghfast.top/https://github.com/GitTools/GitVersion/archive/refs/tags/6.3.0.tar.gz"
   sha256 "b2bc7fef4236722a08ea7441ffe4f5f9214bd24c159d1551d272b875948cd23b"
   license "MIT"
 
@@ -36,21 +36,21 @@ class Gitversion < Formula
 
     # GitVersion uses a global.json file to pin the latest SDK version, which may not be available
     File.rename("global.json", "global.json.ignored")
-    system "dotnet", "publish", "srcGitVersion.AppGitVersion.App.csproj", *args
+    system "dotnet", "publish", "src/GitVersion.App/GitVersion.App.csproj", *args
     env = { DOTNET_ROOT: "${DOTNET_ROOT:-#{dotnet.opt_libexec}}" }
-    (bin"gitversion").write_env_script libexec"gitversion", env
+    (bin/"gitversion").write_env_script libexec/"gitversion", env
   end
 
   test do
     # Circumvent GitVersion's build server detection scheme:
     ENV["GITHUB_ACTIONS"] = nil
 
-    (testpath"test.txt").write("test")
+    (testpath/"test.txt").write("test")
     system "git", "init"
     system "git", "config", "user.name", "Test"
     system "git", "config", "user.email", "test@example.com"
     system "git", "add", "test.txt"
     system "git", "commit", "-q", "--message='Test'"
-    assert_match '"FullSemVer": "0.0.1-1"', shell_output("#{bin}gitversion -output json")
+    assert_match '"FullSemVer": "0.0.1-1"', shell_output("#{bin}/gitversion -output json")
   end
 end

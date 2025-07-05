@@ -1,10 +1,10 @@
 class Imgproxy < Formula
   desc "Fast and secure server for resizing and converting remote images"
-  homepage "https:imgproxy.net"
-  url "https:github.comimgproxyimgproxyarchiverefstagsv3.28.0.tar.gz"
+  homepage "https://imgproxy.net"
+  url "https://ghfast.top/https://github.com/imgproxy/imgproxy/archive/refs/tags/v3.28.0.tar.gz"
   sha256 "43e1fa6f49b8a0cc82da7e5774342c7b95c74a65381a040cd39acc2c6bf862c6"
   license "MIT"
-  head "https:github.comimgproxyimgproxy.git", branch: "master"
+  head "https://github.com/imgproxy/imgproxy.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "73d5c6d819fbadd507b0282332e110e603076cabc27739df5a7dab59841fb552"
@@ -33,17 +33,17 @@ class Imgproxy < Formula
 
   test do
     port = free_port
-    cp test_fixtures("test.jpg"), testpath"test.jpg"
+    cp test_fixtures("test.jpg"), testpath/"test.jpg"
 
     ENV["IMGPROXY_BIND"] = "127.0.0.1:#{port}"
     ENV["IMGPROXY_LOCAL_FILESYSTEM_ROOT"] = testpath
 
-    pid = spawn bin"imgproxy"
+    pid = spawn bin/"imgproxy"
     sleep 20
     sleep 50 if OS.mac? && Hardware::CPU.intel?
 
-    output = testpath"test-converted.png"
-    url = "http:127.0.0.1:#{port}insecureresize:fit:100:100:trueplainlocal:test.jpg@png"
+    output = testpath/"test-converted.png"
+    url = "http://127.0.0.1:#{port}/insecure/resize:fit:100:100:true/plain/local:///test.jpg@png"
 
     system "curl", "-s", "-o", output, url
     assert_path_exists output

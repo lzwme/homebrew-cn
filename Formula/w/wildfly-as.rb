@@ -1,13 +1,13 @@
 class WildflyAs < Formula
   desc "Managed application runtime for building applications"
-  homepage "https:www.wildfly.org"
-  url "https:github.comwildflywildflyreleasesdownload36.0.1.Finalwildfly-36.0.1.Final.tar.gz"
+  homepage "https://www.wildfly.org/"
+  url "https://ghfast.top/https://github.com/wildfly/wildfly/releases/download/36.0.1.Final/wildfly-36.0.1.Final.tar.gz"
   sha256 "1a0f71680cac962cef03173e81f5ff8886175f18292db158b75c8077cf4ac38d"
   license "Apache-2.0"
 
   livecheck do
-    url "https:www.wildfly.orgdownloads"
-    regex(href=.*?wildfly[._-]v?(\d+(?:\.\d+)+)\.Final\.ti)
+    url "https://www.wildfly.org/downloads/"
+    regex(/href=.*?wildfly[._-]v?(\d+(?:\.\d+)+)\.Final\.t/i)
   end
 
   bottle do
@@ -23,23 +23,23 @@ class WildflyAs < Formula
   depends_on "openjdk"
 
   def install
-    buildpath.glob("bin*.{bat,ps1}").map(&:unlink)
-    rm_r buildpath.glob("**win-x86_64")
-    rm_r buildpath.glob("**linux-i686")
-    rm_r buildpath.glob("**linux-s390x")
-    rm_r buildpath.glob("**linux-x86_64")
-    rm_r buildpath.glob("**netty-transport-native-epoll**native")
+    buildpath.glob("bin/*.{bat,ps1}").map(&:unlink)
+    rm_r buildpath.glob("**/win-x86_64")
+    rm_r buildpath.glob("**/linux-i686")
+    rm_r buildpath.glob("**/linux-s390x")
+    rm_r buildpath.glob("**/linux-x86_64")
+    rm_r buildpath.glob("**/netty-transport-native-epoll/**/native")
     if Hardware::CPU.intel?
-      buildpath.glob("***_aarch_64.jnilib").map(&:unlink)
+      buildpath.glob("**/*_aarch_64.jnilib").map(&:unlink)
     else
-      rm_r buildpath.glob("**macosx-x86_64")
-      buildpath.glob("***_x86_64.jnilib").map(&:unlink)
+      rm_r buildpath.glob("**/macosx-x86_64")
+      buildpath.glob("**/*_x86_64.jnilib").map(&:unlink)
     end
 
-    inreplace "binstandalone.sh", JAVA="[^"]*", "JAVA='#{Formula["openjdk"].opt_bin}java'"
+    inreplace "bin/standalone.sh", /JAVA="[^"]*"/, "JAVA='#{Formula["openjdk"].opt_bin}/java'"
 
     libexec.install Dir["*"]
-    mkdir_p libexec"standalonelog"
+    mkdir_p libexec/"standalone/log"
   end
 
   def caveats
@@ -48,12 +48,12 @@ class WildflyAs < Formula
         #{opt_libexec}
       You may want to add the following to your .bash_profile:
         export JBOSS_HOME=#{opt_libexec}
-        export PATH=${PATH}:${JBOSS_HOME}bin
+        export PATH=${PATH}:${JBOSS_HOME}/bin
     EOS
   end
 
   service do
-    run [opt_libexec"binstandalone.sh", "--server-config=standalone.xml"]
+    run [opt_libexec/"bin/standalone.sh", "--server-config=standalone.xml"]
     environment_variables JBOSS_HOME: opt_libexec, WILDFLY_HOME: opt_libexec
     keep_alive successful_exit: false, crashed: true
   end
@@ -64,23 +64,23 @@ class WildflyAs < Formula
 
     port = free_port
 
-    pidfile = testpath"pidfile"
+    pidfile = testpath/"pidfile"
     ENV["LAUNCH_JBOSS_IN_BACKGROUND"] = "true"
     ENV["JBOSS_PIDFILE"] = pidfile
 
-    mkdir testpath"standalone"
-    mkdir testpath"standalonedeployments"
-    cp_r libexec"standaloneconfiguration", testpath"standalone"
+    mkdir testpath/"standalone"
+    mkdir testpath/"standalone/deployments"
+    cp_r libexec/"standalone/configuration", testpath/"standalone"
     fork do
-      exec opt_libexec"binstandalone.sh", "--server-config=standalone.xml",
+      exec opt_libexec/"bin/standalone.sh", "--server-config=standalone.xml",
                                             "-Djboss.http.port=#{port}",
-                                            "-Djboss.server.base.dir=#{testpath}standalone"
+                                            "-Djboss.server.base.dir=#{testpath}/standalone"
     end
     sleep 10
     sleep 10 if Hardware::CPU.intel?
 
     begin
-      system "curl", "-X", "GET", "localhost:#{port}"
+      system "curl", "-X", "GET", "localhost:#{port}/"
       output = shell_output("curl -s -X GET localhost:#{port}")
       assert_match "Welcome to WildFly", output
     ensure

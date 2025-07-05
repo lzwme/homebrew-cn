@@ -1,10 +1,10 @@
 class Kdoctor < Formula
   desc "Environment diagnostics for Kotlin Multiplatform Mobile app development"
-  homepage "https:github.comkotlinkdoctor"
-  url "https:github.comKotlinkdoctorarchiverefstagsv1.1.0.tar.gz"
+  homepage "https://github.com/kotlin/kdoctor"
+  url "https://ghfast.top/https://github.com/Kotlin/kdoctor/archive/refs/tags/v1.1.0.tar.gz"
   sha256 "d0c8cfeb84c49f98e0069aff55897ebdd5b79e6fc2f52744659377732769c7b9"
   license "Apache-2.0"
-  head "https:github.comKotlinkdoctor.git", branch: "master"
+  head "https://github.com/Kotlin/kdoctor.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -28,20 +28,20 @@ class Kdoctor < Formula
     mac_suffix = Hardware::CPU.intel? ? "X64" : Hardware::CPU.arch.to_s.capitalize
     build_task = "linkReleaseExecutableMacos#{mac_suffix}"
     system "gradle", "clean", build_task
-    bin.install "kdoctorbuildbinmacos#{mac_suffix}releaseExecutablekdoctor.kexe" => "kdoctor"
+    bin.install "kdoctor/build/bin/macos#{mac_suffix}/releaseExecutable/kdoctor.kexe" => "kdoctor"
   end
 
   test do
-    output = shell_output("#{bin}kdoctor --team-ids")
+    output = shell_output("#{bin}/kdoctor --team-ids")
     assert_match "Certificates are not found", output
 
-    output = shell_output(bin"kdoctor")
+    output = shell_output(bin/"kdoctor")
     assert_match "System", output
     assert_match "Java", output
     assert_match "Android Studio", output
     assert_match "Xcode", output
     assert_match "CocoaPods", output
 
-    assert_match version.to_s, shell_output("#{bin}kdoctor --version")
+    assert_match version.to_s, shell_output("#{bin}/kdoctor --version")
   end
 end

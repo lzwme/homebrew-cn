@@ -1,10 +1,10 @@
 class Resvg < Formula
   desc "SVG rendering tool and library"
-  homepage "https:github.comlinebenderresvg"
-  url "https:github.comlinebenderresvgarchiverefstagsv0.45.1.tar.gz"
+  homepage "https://github.com/linebender/resvg"
+  url "https://ghfast.top/https://github.com/linebender/resvg/archive/refs/tags/v0.45.1.tar.gz"
   sha256 "02915519b7409f43110f3cbdc5f87724efd58da1d8516914bdabf060c8a9a178"
   license "MPL-2.0"
-  head "https:github.comlinebenderresvg.git", branch: "master"
+  head "https://github.com/linebender/resvg.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "034dd22dbb4bf616d68ca85e3b2bdd929f780fcad78ba5b961daba8644f897da"
@@ -21,28 +21,28 @@ class Resvg < Formula
   depends_on "pkgconf" => :test
 
   def install
-    system "cargo", "install", *std_cargo_args(path: "cratesusvg")
-    system "cargo", "install", *std_cargo_args(path: "cratesresvg")
+    system "cargo", "install", *std_cargo_args(path: "crates/usvg")
+    system "cargo", "install", *std_cargo_args(path: "crates/resvg")
 
     system "cargo", "cinstall", "--jobs", ENV.make_jobs.to_s, "--release", "--locked",
-                    "--manifest-path", "cratesc-apiCargo.toml",
+                    "--manifest-path", "crates/c-api/Cargo.toml",
                     "--prefix", prefix, "--libdir", lib
   end
 
   test do
-    (testpath"circle.svg").write <<~EOS
-      <svg xmlns="http:www.w3.org2000svg" height="100" width="100" version="1.1">
-        <circle cx="50" cy="50" r="40" >
-      <svg>
+    (testpath/"circle.svg").write <<~EOS
+      <svg xmlns="http://www.w3.org/2000/svg" height="100" width="100" version="1.1">
+        <circle cx="50" cy="50" r="40" />
+      </svg>
     EOS
 
-    system bin"resvg", testpath"circle.svg", testpath"test.png"
-    assert_path_exists testpath"test.png"
+    system bin/"resvg", testpath/"circle.svg", testpath/"test.png"
+    assert_path_exists testpath/"test.png"
 
-    system bin"usvg", testpath"circle.svg", testpath"test.svg"
-    assert_path_exists testpath"test.svg"
+    system bin/"usvg", testpath/"circle.svg", testpath/"test.svg"
+    assert_path_exists testpath/"test.svg"
 
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include <stdlib.h>
       #include <stdio.h>
       #include <resvg.h>
@@ -72,6 +72,6 @@ class Resvg < Formula
 
     flags = shell_output("pkgconf --cflags --libs resvg").chomp.split
     system ENV.cc, "test.c", "-o", "test", *flags
-    assert_equal "160 35", shell_output(".test #{test_fixtures("test.svg")}").chomp
+    assert_equal "160 35", shell_output("./test #{test_fixtures("test.svg")}").chomp
   end
 end

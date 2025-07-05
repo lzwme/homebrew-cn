@@ -1,10 +1,10 @@
 class Enchive < Formula
   desc "Encrypted personal archives"
-  homepage "https:github.comskeetoenchive"
-  url "https:github.comskeetoenchivereleasesdownload3.5enchive-3.5.tar.xz"
+  homepage "https://github.com/skeeto/enchive"
+  url "https://ghfast.top/https://github.com/skeeto/enchive/releases/download/3.5/enchive-3.5.tar.xz"
   sha256 "cb867961149116443a85d3a64ef5963e3c399bdd377b326669bb566a3453bd06"
   license "Unlicense"
-  head "https:github.comskeetoenchive.git", branch: "master"
+  head "https://github.com/skeeto/enchive.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -34,15 +34,15 @@ class Enchive < Formula
     pub_key = "\x8c\xb7\xc8\xf0\x2c\xec\xa6\xf4\x63\xbc\xde\xd1\x92\xb5\x72\xae" \
               "\x58\x58\xe5\x13\x3f\x6f\x60\x77\xbb\xe7\xa3\xe0\xc0\x5d\x46\x16"
 
-    mkdir_p testpath".configenchive"
-    (testpath".configenchiveenchive.pub").binwrite pub_key
-    (testpath".configenchiveenchive.sec").binwrite sec_key
+    mkdir_p testpath/".config/enchive"
+    (testpath/".config/enchive/enchive.pub").binwrite pub_key
+    (testpath/".config/enchive/enchive.sec").binwrite sec_key
 
     plaintext = "Hello world!"
-    ciphertext = pipe_output("#{bin}enchive archive", plaintext)
-    assert_equal plaintext, pipe_output("#{bin}enchive extract", ciphertext)
+    ciphertext = pipe_output("#{bin}/enchive archive", plaintext)
+    assert_equal plaintext, pipe_output("#{bin}/enchive extract", ciphertext)
 
     expected_fingerprint = "eb57253d-995bcf9d-743c1053-ed32723b"
-    assert_equal expected_fingerprint, shell_output("#{bin}enchive fingerprint").chomp
+    assert_equal expected_fingerprint, shell_output("#{bin}/enchive fingerprint").chomp
   end
 end

@@ -1,14 +1,14 @@
 class Tcpdump < Formula
   desc "Command-line packet analyzer"
-  homepage "https:www.tcpdump.org"
-  url "https:www.tcpdump.orgreleasetcpdump-4.99.5.tar.gz"
+  homepage "https://www.tcpdump.org/"
+  url "https://www.tcpdump.org/release/tcpdump-4.99.5.tar.gz"
   sha256 "8c75856e00addeeadf70dad67c9ff3dd368536b2b8563abf6854d7c764cd3adb"
   license "BSD-3-Clause"
-  head "https:github.comthe-tcpdump-grouptcpdump.git", branch: "master"
+  head "https://github.com/the-tcpdump-group/tcpdump.git", branch: "master"
 
   livecheck do
-    url "https:www.tcpdump.orgrelease"
-    regex(href=.*?tcpdump[._-]v?(\d+(?:\.\d+)+)\.ti)
+    url "https://www.tcpdump.org/release/"
+    regex(/href=.*?tcpdump[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   bottle do
@@ -27,26 +27,26 @@ class Tcpdump < Formula
   depends_on "openssl@3"
 
   def install
-    system ".configure", "--prefix=#{prefix}",
+    system "./configure", "--prefix=#{prefix}",
                           "--disable-smb",
                           "--disable-universal"
     system "make", "install"
   end
 
   test do
-    output = shell_output("#{bin}tcpdump --help 2>&1")
+    output = shell_output("#{bin}/tcpdump --help 2>&1")
     assert_match "tcpdump version #{version}", output
     assert_match "libpcap version #{Formula["libpcap"].version}", output
     assert_match "OpenSSL #{Formula["openssl@3"].version}", output
 
     match = if OS.mac?
-      "tcpdump: (cannot open BPF device) devbpf0: Operation not permitted"
+      "tcpdump: (cannot open BPF device) /dev/bpf0: Operation not permitted"
     else
       <<~EOS
         tcpdump: eth0: You don't have permission to perform this capture on that device
         (socket: Operation not permitted)
       EOS
     end
-    assert_match match, shell_output("#{bin}tcpdump ipv6 2>&1", 1)
+    assert_match match, shell_output("#{bin}/tcpdump ipv6 2>&1", 1)
   end
 end

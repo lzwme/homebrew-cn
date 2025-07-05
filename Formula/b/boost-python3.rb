@@ -1,10 +1,10 @@
 class BoostPython3 < Formula
-  desc "C++ library for C++Python3 interoperability"
-  homepage "https:www.boost.org"
-  url "https:github.comboostorgboostreleasesdownloadboost-1.88.0boost-1.88.0-b2-nodocs.tar.xz"
+  desc "C++ library for C++/Python3 interoperability"
+  homepage "https://www.boost.org/"
+  url "https://ghfast.top/https://github.com/boostorg/boost/releases/download/boost-1.88.0/boost-1.88.0-b2-nodocs.tar.xz"
   sha256 "ad9ce2c91bc0977a7adc92d51558f3b9c53596bb88246a280175ebb475da1762"
   license "BSL-1.0"
-  head "https:github.comboostorgboost.git", branch: "master"
+  head "https://github.com/boostorg/boost.git", branch: "master"
 
   livecheck do
     formula "boost"
@@ -48,7 +48,7 @@ class BoostPython3 < Formula
     args << "cxxflags=-stdlib=libc++" << "linkflags=-stdlib=libc++" if ENV.compiler == :clang
 
     # Avoid linkage to boost container and graph modules
-    # Issue ref: https:github.comboostorgboostissues985
+    # Issue ref: https://github.com/boostorg/boost/issues/985
     args << "linkflags=-Wl,-dead_strip_dylibs" if OS.mac?
 
     # disable python detection in bootstrap.sh; it guesses the wrong include
@@ -58,45 +58,45 @@ class BoostPython3 < Formula
 
     pyver = Language::Python.major_minor_version python3
     py_prefix = if OS.mac?
-      Formula["python@#{pyver}"].opt_frameworks"Python.frameworkVersions"pyver
+      Formula["python@#{pyver}"].opt_frameworks/"Python.framework/Versions"/pyver
     else
       Formula["python@#{pyver}"].opt_prefix
     end
 
     # Force boost to compile with the desired compiler
-    (buildpath"user-config.jam").write <<~EOS
+    (buildpath/"user-config.jam").write <<~EOS
       using #{OS.mac? ? "darwin" : "gcc"} : : #{ENV.cxx} ;
       using python : #{pyver}
                    : #{python3}
-                   : #{py_prefix}includepython#{pyver}
-                   : #{py_prefix}lib ;
+                   : #{py_prefix}/include/python#{pyver}
+                   : #{py_prefix}/lib ;
     EOS
 
-    system ".bootstrap.sh", "--prefix=#{prefix}",
+    system "./bootstrap.sh", "--prefix=#{prefix}",
                              "--libdir=#{lib}",
                              "--with-libraries=python",
                              "--with-python=#{python3}",
                              "--with-python-root=#{py_prefix}"
 
-    system ".b2", "--build-dir=build-python3",
+    system "./b2", "--build-dir=build-python3",
                    "--stagedir=stage-python3",
-                   "--libdir=install-python3lib",
+                   "--libdir=install-python3/lib",
                    "--prefix=install-python3",
                    "python=#{pyver}",
                    *args
 
-    lib.install buildpath.glob("install-python3lib*{python,numpy}*")
-    (lib"cmake").install buildpath.glob("install-python3libcmake*{python,numpy}*")
+    lib.install buildpath.glob("install-python3/lib/*{python,numpy}*")
+    (lib/"cmake").install buildpath.glob("install-python3/lib/cmake/*{python,numpy}*")
 
     # Fix the path to headers installed in `boost` formula
-    cmake_configs = lib.glob("cmakeboost_{python,numpy}*boost_{python,numpy}-config.cmake")
-    inreplace cmake_configs, '(_BOOST_INCLUDEDIR "${_BOOST_CMAKEDIR}....include" ABSOLUTE)',
-                             "(_BOOST_INCLUDEDIR \"#{Formula["boost"].opt_include}\" ABSOLUTE)"
+    cmake_configs = lib.glob("cmake/boost_{python,numpy}*/boost_{python,numpy}-config.cmake")
+    inreplace cmake_configs, '(_BOOST_INCLUDEDIR "${_BOOST_CMAKEDIR}/../../include/" ABSOLUTE)',
+                             "(_BOOST_INCLUDEDIR \"#{Formula["boost"].opt_include}/\" ABSOLUTE)"
   end
 
   test do
-    (testpath"hello.cpp").write <<~CPP
-      #include <boostpython.hpp>
+    (testpath/"hello.cpp").write <<~CPP
+      #include <boost/python.hpp>
       char const* greet() {
         return "Hello, world!";
       }

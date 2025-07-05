@@ -1,10 +1,10 @@
 class Jj < Formula
   desc "Git-compatible distributed version control system"
-  homepage "https:github.comjj-vcsjj"
-  url "https:github.comjj-vcsjjarchiverefstagsv0.31.0.tar.gz"
+  homepage "https://github.com/jj-vcs/jj"
+  url "https://ghfast.top/https://github.com/jj-vcs/jj/archive/refs/tags/v0.31.0.tar.gz"
   sha256 "ff40515de7a5adac267c64c0163b38990a74a71bb7612a898832c812a81070b2"
   license "Apache-2.0"
-  head "https:github.comjj-vcsjj.git", branch: "main"
+  head "https://github.com/jj-vcs/jj.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "25fe173fe5db2c870b6627c29de2aae7a82fd887e7cb73a69b8e74e068a6c45f"
@@ -21,15 +21,15 @@ class Jj < Formula
   def install
     system "cargo", "install", *std_cargo_args(path: "cli")
 
-    generate_completions_from_executable(bin"jj", shell_parameter_format: :clap)
-    system bin"jj", "util", "install-man-pages", man
+    generate_completions_from_executable(bin/"jj", shell_parameter_format: :clap)
+    system bin/"jj", "util", "install-man-pages", man
   end
 
   test do
-    touch testpath"README.md"
-    system bin"jj", "git", "init"
-    system bin"jj", "describe", "-m", "initial commit"
-    assert_match "README.md", shell_output("#{bin}jj file list")
-    assert_match "initial commit", shell_output("#{bin}jj log")
+    touch testpath/"README.md"
+    system bin/"jj", "git", "init"
+    system bin/"jj", "describe", "-m", "initial commit"
+    assert_match "README.md", shell_output("#{bin}/jj file list")
+    assert_match "initial commit", shell_output("#{bin}/jj log")
   end
 end

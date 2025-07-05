@@ -1,7 +1,7 @@
 class GitSplitDiffs < Formula
   desc "Syntax highlighted side-by-side diffs in your terminal"
-  homepage "https:github.combangagit-split-diffs"
-  url "https:registry.npmjs.orggit-split-diffs-git-split-diffs-2.2.0.tgz"
+  homepage "https://github.com/banga/git-split-diffs"
+  url "https://registry.npmjs.org/git-split-diffs/-/git-split-diffs-2.2.0.tgz"
   sha256 "13d6691e49a21b24d6cff14bbe992b18a5bb92eb8d96aa76a35ec2edb79a9d84"
   license "MIT"
 
@@ -13,7 +13,7 @@ class GitSplitDiffs < Formula
 
   def install
     system "npm", "install", *std_npm_args
-    bin.install_symlink Dir["#{libexec}bin*"]
+    bin.install_symlink Dir["#{libexec}/bin/*"]
   end
 
   test do
@@ -21,11 +21,11 @@ class GitSplitDiffs < Formula
     system "git", "config", "user.name", "BrewTestBot"
     system "git", "config", "user.email", "BrewTestBot@test.com"
 
-    (testpath"test").write "foo"
+    (testpath/"test").write "foo"
     system "git", "add", "test"
     system "git", "commit", "-m", "Initial commit"
-    (testpath"test").delete
-    (testpath"test").write "bar"
+    (testpath/"test").delete
+    (testpath/"test").write "bar"
     system "git", "add", "test"
     system "git", "commit", "-m", "Second commit"
 

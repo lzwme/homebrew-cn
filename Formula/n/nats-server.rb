@@ -1,14 +1,14 @@
 class NatsServer < Formula
   desc "Lightweight cloud messaging system"
-  homepage "https:nats.io"
-  url "https:github.comnats-ionats-serverarchiverefstagsv2.11.6.tar.gz"
+  homepage "https://nats.io"
+  url "https://ghfast.top/https://github.com/nats-io/nats-server/archive/refs/tags/v2.11.6.tar.gz"
   sha256 "01eab5565268c280b322c8601932edaf41f3a2c688f119ecad90ffa47d55f015"
   license "Apache-2.0"
-  head "https:github.comnats-ionats-server.git", branch: "main"
+  head "https://github.com/nats-io/nats-server.git", branch: "main"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -27,22 +27,22 @@ class NatsServer < Formula
   end
 
   service do
-    run opt_bin"nats-server"
+    run opt_bin/"nats-server"
   end
 
   test do
     port = free_port
     http_port = free_port
     fork do
-      exec bin"nats-server",
+      exec bin/"nats-server",
            "--port=#{port}",
            "--http_port=#{http_port}",
-           "--pid=#{testpath}pid",
-           "--log=#{testpath}log"
+           "--pid=#{testpath}/pid",
+           "--log=#{testpath}/log"
     end
     sleep 3
 
-    assert_match version.to_s, shell_output("curl localhost:#{http_port}varz")
-    assert_path_exists testpath"log"
+    assert_match version.to_s, shell_output("curl localhost:#{http_port}/varz")
+    assert_path_exists testpath/"log"
   end
 end

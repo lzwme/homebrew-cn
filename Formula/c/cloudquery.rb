@@ -1,14 +1,14 @@
 class Cloudquery < Formula
   desc "Data movement tool to sync data from any source to any destination"
-  homepage "https:www.cloudquery.io"
-  url "https:github.comcloudquerycloudqueryarchiverefstagscli-v6.21.1.tar.gz"
+  homepage "https://www.cloudquery.io"
+  url "https://ghfast.top/https://github.com/cloudquery/cloudquery/archive/refs/tags/cli-v6.21.1.tar.gz"
   sha256 "11efdcb895f0a41a9883fbd2ed09f0f842db7c72d04c05f220e93d27c9682612"
   license "MPL-2.0"
-  head "https:github.comcloudquerycloudquery.git", branch: "main"
+  head "https://github.com/cloudquery/cloudquery.git", branch: "main"
 
   livecheck do
     url :stable
-    regex(^cli-v?(\d+(?:\.\d+)+)$i)
+    regex(/^cli-v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -24,23 +24,23 @@ class Cloudquery < Formula
 
   def install
     cd "cli" do
-      ldflags = "-s -w -X github.comcloudquerycloudquerycliv6cmd.Version=#{version}"
+      ldflags = "-s -w -X github.com/cloudquery/cloudquery/cli/v6/cmd.Version=#{version}"
       system "go", "build", *std_go_args(ldflags:)
     end
   end
 
   test do
-    system bin"cloudquery", "init", "--source", "aws", "--destination", "bigquery"
+    system bin/"cloudquery", "init", "--source", "aws", "--destination", "bigquery"
 
-    assert_path_exists testpath"cloudquery.log"
-    assert_match <<~YAML, (testpath"aws_to_bigquery.yaml").read
+    assert_path_exists testpath/"cloudquery.log"
+    assert_match <<~YAML, (testpath/"aws_to_bigquery.yaml").read
       kind: source
       spec:
         # Source spec section
         name: aws
-        path: cloudqueryaws
+        path: cloudquery/aws
     YAML
 
-    assert_match version.to_s, shell_output("#{bin}cloudquery --version")
+    assert_match version.to_s, shell_output("#{bin}/cloudquery --version")
   end
 end

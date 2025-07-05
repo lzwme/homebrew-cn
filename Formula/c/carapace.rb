@@ -1,10 +1,10 @@
 class Carapace < Formula
   desc "Multi-shell multi-command argument completer"
-  homepage "https:carapace.sh"
-  url "https:github.comcarapace-shcarapace-binarchiverefstagsv1.3.3.tar.gz"
+  homepage "https://carapace.sh"
+  url "https://ghfast.top/https://github.com/carapace-sh/carapace-bin/archive/refs/tags/v1.3.3.tar.gz"
   sha256 "0de73fc9338eb034a0c2bdbda72880f1de12ac0bc686d814beb1975a310264fc"
   license "MIT"
-  head "https:github.comcarapace-shcarapace-bin.git", branch: "master"
+  head "https://github.com/carapace-sh/carapace-bin.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "8f762830305f84a52eaf6920d414f2f81ddfea074f2702e774640069682dddce"
@@ -18,20 +18,20 @@ class Carapace < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "generate", "...."
+    system "go", "generate", "./..."
     ldflags = %W[
       -s -w
       -X main.version=#{version}
     ]
-    system "go", "build", *std_go_args(ldflags:, tags: "release"), ".cmdcarapace"
+    system "go", "build", *std_go_args(ldflags:, tags: "release"), "./cmd/carapace"
 
-    generate_completions_from_executable(bin"carapace", "_carapace")
+    generate_completions_from_executable(bin/"carapace", "_carapace")
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}carapace --version 2>&1")
+    assert_match version.to_s, shell_output("#{bin}/carapace --version 2>&1")
 
-    system bin"carapace", "--list"
-    system bin"carapace", "--macro", "color.HexColors"
+    system bin/"carapace", "--list"
+    system bin/"carapace", "--macro", "color.HexColors"
   end
 end

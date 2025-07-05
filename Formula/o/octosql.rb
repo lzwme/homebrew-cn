@@ -1,10 +1,10 @@
 class Octosql < Formula
   desc "SQL query tool to analyze data from different file formats and databases"
-  homepage "https:github.comcube2222octosql"
-  url "https:github.comcube2222octosqlarchiverefstagsv0.13.0.tar.gz"
+  homepage "https://github.com/cube2222/octosql/"
+  url "https://ghfast.top/https://github.com/cube2222/octosql/archive/refs/tags/v0.13.0.tar.gz"
   sha256 "e22bdb710ca0609019b842df347990ff9aed4f3635f5308ff1acf50d093b7942"
   license "MPL-2.0"
-  head "https:github.comcube2222octosql.git", branch: "main"
+  head "https://github.com/cube2222/octosql.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "6fb02732ee419bd030f5b4114904f013d2cbcbf6a5972c7c180cc8b39b50218f"
@@ -20,16 +20,16 @@ class Octosql < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = "-s -w -X github.comcube2222octosqlcmd.VERSION=#{version}"
+    ldflags = "-s -w -X github.com/cube2222/octosql/cmd.VERSION=#{version}"
     system "go", "build", *std_go_args(ldflags:)
 
-    generate_completions_from_executable(bin"octosql", "completion")
+    generate_completions_from_executable(bin/"octosql", "completion")
   end
 
   test do
     ENV["OCTOSQL_NO_TELEMETRY"] = "1"
 
-    test_json = testpath"test.json"
+    test_json = testpath/"test.json"
     test_json.write <<~JSON
       {"field1": "value", "field2": 42, "field3": {"field4": "eulav", "field5": 24}}
       {"field1": "value", "field2": 42, "field3": {"field5": "eulav", "field6": "value"}}
@@ -45,8 +45,8 @@ class Octosql < Formula
       +---------+--------+--------------------------+
     EOS
 
-    assert_equal expected, shell_output("#{bin}octosql \"select * from test.json\"")
+    assert_equal expected, shell_output("#{bin}/octosql \"select * from test.json\"")
 
-    assert_match version.to_s, shell_output("#{bin}octosql --version")
+    assert_match version.to_s, shell_output("#{bin}/octosql --version")
   end
 end

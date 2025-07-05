@@ -2,10 +2,10 @@ cask "font-comme" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefontsrawmainoflcommeComme%5Bwght%5D.ttf",
-      verified: "github.comgooglefonts"
+  url "https://github.com/google/fonts/raw/main/ofl/comme/Comme%5Bwght%5D.ttf",
+      verified: "github.com/google/fonts/"
   name "Comme"
-  homepage "https:fonts.google.comspecimenComme"
+  homepage "https://fonts.google.com/specimen/Comme"
 
   font "Comme[wght].ttf"
 

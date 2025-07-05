@@ -2,14 +2,14 @@ cask "applite" do
   version "1.3.1"
   sha256 "7c2972f21f373c1f64518212098a76604f14b05bd56eb7e56f84c25f4c9c8da2"
 
-  url "https:github.commilanvaradyApplitereleasesdownloadv#{version}Applite.dmg",
-      verified: "github.commilanvaradyApplite"
+  url "https://ghfast.top/https://github.com/milanvarady/Applite/releases/download/v#{version}/Applite.dmg",
+      verified: "github.com/milanvarady/Applite/"
   name "Applite"
   desc "User-friendly GUI app for Homebrew"
-  homepage "https:aerolite.devapplite"
+  homepage "https://aerolite.dev/applite"
 
   livecheck do
-    url "https:milanvarady.github.ioAppliteappcast.xml"
+    url "https://milanvarady.github.io/Applite/appcast.xml"
     strategy :sparkle, &:short_version
   end
 
@@ -19,13 +19,13 @@ cask "applite" do
   app "Applite.app"
 
   zap trash: [
-    "~LibraryApplication SupportApplite",
-    "~LibraryApplication Supportdev.aerolite.Applite",
-    "~LibraryCachesApplite",
-    "~LibraryCachesdev.aerolite.Applite",
-    "~LibraryContainersdev.aerolite.Applite",
-    "~LibraryHTTPStoragesdev.aerolite.Applite",
-    "~LibraryPreferencesdev.aerolite.Applite.plist",
-    "~LibrarySaved Application Statedev.aerolite.Applite.savedState",
+    "~/Library/Application Support/Applite",
+    "~/Library/Application Support/dev.aerolite.Applite",
+    "~/Library/Caches/Applite",
+    "~/Library/Caches/dev.aerolite.Applite",
+    "~/Library/Containers/dev.aerolite.Applite",
+    "~/Library/HTTPStorages/dev.aerolite.Applite",
+    "~/Library/Preferences/dev.aerolite.Applite.plist",
+    "~/Library/Saved Application State/dev.aerolite.Applite.savedState",
   ]
 end

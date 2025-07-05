@@ -1,10 +1,10 @@
 class Tlrc < Formula
   desc "Official tldr client written in Rust"
-  homepage "https:tldr.shtlrc"
-  url "https:github.comtldr-pagestlrcarchiverefstagsv1.11.1.tar.gz"
+  homepage "https://tldr.sh/tlrc/"
+  url "https://ghfast.top/https://github.com/tldr-pages/tlrc/archive/refs/tags/v1.11.1.tar.gz"
   sha256 "02262b432dd188772577fd3a37f8a236d46d924291ec1d013e419c77f7256f4a"
   license "MIT"
-  head "https:github.comtldr-pagestlrc.git", branch: "main"
+  head "https://github.com/tldr-pages/tlrc.git", branch: "main"
 
   no_autobump! because: :requires_manual_review
 
@@ -28,12 +28,12 @@ class Tlrc < Formula
 
     man1.install "tldr.1"
 
-    bash_completion.install "completionstldr.bash" => "tldr"
-    zsh_completion.install "completions_tldr"
-    fish_completion.install "completionstldr.fish"
+    bash_completion.install "completions/tldr.bash" => "tldr"
+    zsh_completion.install "completions/_tldr"
+    fish_completion.install "completions/tldr.fish"
   end
 
   test do
-    assert_match "brew", shell_output("#{bin}tldr brew")
+    assert_match "brew", shell_output("#{bin}/tldr brew")
   end
 end

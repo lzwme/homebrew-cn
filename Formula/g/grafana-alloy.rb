@@ -1,10 +1,10 @@
 class GrafanaAlloy < Formula
   desc "OpenTelemetry Collector distribution with programmable pipelines"
-  homepage "https:grafana.comossalloy-opentelemetry-collector"
-  url "https:github.comgrafanaalloyarchiverefstagsv1.9.2.tar.gz"
+  homepage "https://grafana.com/oss/alloy-opentelemetry-collector/"
+  url "https://ghfast.top/https://github.com/grafana/alloy/archive/refs/tags/v1.9.2.tar.gz"
   sha256 "e78e58b841730824875345ff496abce3e9df7e423fb64112c95e04e33f2253a9"
   license "Apache-2.0"
-  head "https:github.comgrafanaalloy.git", branch: "main"
+  head "https://github.com/grafana/alloy.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "025ca85813021f01740505ff0d04966b05d9832ee9ed69b0a2fea0db837f1e65"
@@ -28,24 +28,24 @@ class GrafanaAlloy < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.comgrafanaalloyinternalbuild.Branch=HEAD
-      -X github.comgrafanaalloyinternalbuild.Version=v#{version}
-      -X github.comgrafanaalloyinternalbuild.BuildUser=#{tap.user}
-      -X github.comgrafanaalloyinternalbuild.BuildDate=#{time.iso8601}
+      -X github.com/grafana/alloy/internal/build.Branch=HEAD
+      -X github.com/grafana/alloy/internal/build.Version=v#{version}
+      -X github.com/grafana/alloy/internal/build.BuildUser=#{tap.user}
+      -X github.com/grafana/alloy/internal/build.BuildDate=#{time.iso8601}
     ]
 
-    # https:github.comgrafanaalloyblobmaintoolsmakepackaging.mk
+    # https://github.com/grafana/alloy/blob/main/tools/make/packaging.mk
     tags = %w[netgo builtinassets]
     tags << "promtail_journal_enabled" if OS.linux?
 
     # Build the UI, which is baked into the final binary when the builtinassets
     # tag is set.
-    system "yarn", "--cwd", "internalwebui"
-    system "yarn", "--cwd", "internalwebui", "run", "build"
+    system "yarn", "--cwd", "internal/web/ui"
+    system "yarn", "--cwd", "internal/web/ui", "run", "build"
 
-    system "go", "build", *std_go_args(ldflags:, tags:, output: bin"alloy")
+    system "go", "build", *std_go_args(ldflags:, tags:, output: bin/"alloy")
 
-    generate_completions_from_executable(bin"alloy", "completion")
+    generate_completions_from_executable(bin/"alloy", "completion")
   end
 
   def post_install
@@ -57,19 +57,19 @@ class GrafanaAlloy < Formula
   end
 
   service do
-    run [opt_bin"alloy", "run", "--storage.path=#{var}libgrafana-alloydata", etc"grafana-alloy"]
+    run [opt_bin/"alloy", "run", "--storage.path=#{var}/lib/grafana-alloy/data", etc/"grafana-alloy"]
     keep_alive true
-    log_path var"loggrafana-alloy.log"
-    error_log_path var"loggrafana-alloy.log"
+    log_path var/"log/grafana-alloy.log"
+    error_log_path var/"log/grafana-alloy.log"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}alloy --version")
+    assert_match version.to_s, shell_output("#{bin}/alloy --version")
 
     port = free_port
-    pid = spawn bin"alloy", "run", "--server.http.listen-addr=127.0.0.1:#{port}", testpath
+    pid = spawn bin/"alloy", "run", "--server.http.listen-addr=127.0.0.1:#{port}", testpath
     sleep 10
-    output = shell_output("curl -s 127.0.0.1:#{port}metrics")
+    output = shell_output("curl -s 127.0.0.1:#{port}/metrics")
     assert_match "alloy_build_info", output
   ensure
     Process.kill "TERM", pid

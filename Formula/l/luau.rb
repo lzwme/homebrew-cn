@@ -1,25 +1,25 @@
 class Luau < Formula
   desc "Fast, safe, gradually typed embeddable scripting language derived from Lua"
-  homepage "https:luau.org"
-  url "https:github.comluau-langluauarchiverefstags0.680.tar.gz"
-  sha256 "f640c05950e62afc78ea2e83635e127c4a0b0c5e01b9320affd93a38f6aaba56"
+  homepage "https://luau.org"
+  url "https://ghfast.top/https://github.com/luau-lang/luau/archive/refs/tags/0.681.tar.gz"
+  sha256 "56994c0bafb743be7f463710c59d72fc006a772c559551de5a2c3a393575e90f"
   license "MIT"
   version_scheme 1
-  head "https:github.comluau-langluau.git", branch: "master"
+  head "https://github.com/luau-lang/luau.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a548372e1c27c4606324aa634f8e974d79530ead8b3f7caca45274c579e6d4b6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "38cc1bb69d52f5590d8de5a8323001c45ed074c184300c1985b5ebed76902ac2"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "d65bfa4ea0b6d86b30277ec71f346349fc79da2d49aa7a5ef34565b884202cfb"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a9dd2a37243bb99e5b7459258ed43d5eac02947c11375351bb8757110372217a"
-    sha256 cellar: :any_skip_relocation, ventura:       "9101266edaa82a3868ec05f33cf0473a2ab06b968ed9f7f53f2ac9ac465e0767"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "98bb7d92cb516e53f322d37a23d6faf27fe5ec69c70f15434adf0e2ab5e9f678"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3ff907dc2b92c863e68a6a8d121d997e0c3bf17f8b5260b0881e286a0abb1db1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d3f4a5f3d1ea04d626a3b12bdae20386533e36ac1397221fe442f086ee013d11"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a98dddf465dcf78730ad254866d45f4206b64847b442cb9a706f9d4f09a25555"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "77349a1760b190a303e509e043402e908eeb4eaafad377ae0bb37a683c1e8b38"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9f87ea59dada237493b694701edd92d2a0a5b6d18fe27191dacb551ceadc5dd7"
+    sha256 cellar: :any_skip_relocation, ventura:       "e8cfb68e7ae6e423cddf289ddd14c4486c094aae825deb282193c113bb26ea42"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "35790f2bbae2461cbf06a76964c994736b893713cb6ca7d7309dfb6990ce3b1c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "089dacff45a0f82ee3278af88d021883a626200a3e267e5c49e522f5cbcaf9de"
   end
 
   depends_on "cmake" => :build
@@ -28,16 +28,16 @@ class Luau < Formula
     system "cmake", "-S", ".", "-B", "build", "-DLUAU_BUILD_TESTS=OFF", *std_cmake_args
     system "cmake", "--build", "build"
     bin.install %w[
-      buildluau
-      buildluau-analyze
-      buildluau-ast
-      buildluau-compile
-      buildluau-reduce
+      build/luau
+      build/luau-analyze
+      build/luau-ast
+      build/luau-compile
+      build/luau-reduce
     ]
   end
 
   test do
-    (testpath"test.lua").write "print ('Homebrew is awesome!')\n"
-    assert_match "Homebrew is awesome!", shell_output("#{bin}luau test.lua")
+    (testpath/"test.lua").write "print ('Homebrew is awesome!')\n"
+    assert_match "Homebrew is awesome!", shell_output("#{bin}/luau test.lua")
   end
 end

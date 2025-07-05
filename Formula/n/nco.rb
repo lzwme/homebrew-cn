@@ -1,7 +1,7 @@
 class Nco < Formula
   desc "Command-line operators for netCDF and HDF files"
-  homepage "https:nco.sourceforge.net"
-  url "https:github.comnconcoarchiverefstags5.3.4.tar.gz"
+  homepage "https://nco.sourceforge.net/"
+  url "https://ghfast.top/https://github.com/nco/nco/archive/refs/tags/5.3.4.tar.gz"
   sha256 "265059157ab4e64e73b6aad96da1e09427ba8a03ed3e2348d0a5deb57cf76006"
   license "BSD-3-Clause"
 
@@ -16,7 +16,7 @@ class Nco < Formula
   end
 
   head do
-    url "https:github.comnconco.git", branch: "master"
+    url "https://github.com/nco/nco.git", branch: "master"
     depends_on "autoconf" => :build
     depends_on "automake" => :build
   end
@@ -31,7 +31,7 @@ class Nco < Formula
   uses_from_macos "flex" => :build
 
   resource "antlr2" do
-    url "https:github.comncoantlr2archiverefstagsantlr2-2.7.7-1.tar.gz"
+    url "https://ghfast.top/https://github.com/nco/antlr2/archive/refs/tags/antlr2-2.7.7-1.tar.gz"
     sha256 "d06e0ae7a0380c806321045d045ccacac92071f0f843aeef7bdf5841d330a989"
   end
 
@@ -41,26 +41,26 @@ class Nco < Formula
       # Help old config scripts identify arm64 linux
       args << "--build=aarch64-unknown-linux-gnu" if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
 
-      system ".configure", *args, *std_configure_args(prefix: buildpath)
+      system "./configure", *args, *std_configure_args(prefix: buildpath)
       system "make"
 
-      (buildpath"libexec").install "antlr.jar"
-      (buildpath"include").install "libcppantlr"
-      (buildpath"lib").install "libcppsrclibantlr.a"
+      (buildpath/"libexec").install "antlr.jar"
+      (buildpath/"include").install "lib/cpp/antlr"
+      (buildpath/"lib").install "lib/cpp/src/libantlr.a"
 
-      (buildpath"binantlr").write <<~SH
-        #!binsh
-        exec "#{Formula["openjdk"].opt_bin}java" -classpath "#{buildpath}libexecantlr.jar" antlr.Tool "$@"
+      (buildpath/"bin/antlr").write <<~SH
+        #!/bin/sh
+        exec "#{Formula["openjdk"].opt_bin}/java" -classpath "#{buildpath}/libexec/antlr.jar" antlr.Tool "$@"
       SH
 
-      chmod 0755, buildpath"binantlr"
+      chmod 0755, buildpath/"bin/antlr"
     end
 
-    ENV.append "CPPFLAGS", "-I#{buildpath}include"
-    ENV.append "LDFLAGS", "-L#{buildpath}lib"
-    ENV.prepend_path "PATH", buildpath"bin"
-    system ".autogen.sh" if build.head?
-    system ".configure", "--disable-dependency-tracking",
+    ENV.append "CPPFLAGS", "-I#{buildpath}/include"
+    ENV.append "LDFLAGS", "-L#{buildpath}/lib"
+    ENV.prepend_path "PATH", buildpath/"bin"
+    system "./autogen.sh" if build.head?
+    system "./configure", "--disable-dependency-tracking",
                           "--prefix=#{prefix}",
                           "--enable-netcdf4"
     system "make", "install"
@@ -68,12 +68,12 @@ class Nco < Formula
 
   test do
     resource "homebrew-example_nc" do
-      url "https:www.unidata.ucar.edusoftwarenetcdfexamplesWMI_Lear.nc"
+      url "https://www.unidata.ucar.edu/software/netcdf/examples/WMI_Lear.nc"
       sha256 "e37527146376716ef335d01d68efc8d0142bdebf8d9d7f4e8cbe6f880807bdef"
     end
 
     testpath.install resource("homebrew-example_nc")
-    output = shell_output("#{bin}ncks --json -M WMI_Lear.nc")
+    output = shell_output("#{bin}/ncks --json -M WMI_Lear.nc")
     assert_match "\"time\": 180", output
   end
 end

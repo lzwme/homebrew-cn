@@ -1,11 +1,11 @@
 class Mpv < Formula
   desc "Media player based on MPlayer and mplayer2"
-  homepage "https:mpv.io"
-  url "https:github.commpv-playermpvarchiverefstagsv0.40.0.tar.gz"
+  homepage "https://mpv.io"
+  url "https://ghfast.top/https://github.com/mpv-player/mpv/archive/refs/tags/v0.40.0.tar.gz"
   sha256 "10a0f4654f62140a6dd4d380dcf0bbdbdcf6e697556863dc499c296182f081a3"
   license :cannot_represent
   revision 2
-  head "https:github.commpv-playermpv.git", branch: "master"
+  head "https://github.com/mpv-player/mpv.git", branch: "master"
 
   bottle do
     sha256 arm64_sequoia: "8d833679b94acae40a7bb906179aea01032af2524874245dbfed9ef6786ac3c3"
@@ -70,7 +70,7 @@ class Mpv < Formula
 
   def install
     # LANG is unset by default on macOS and causes issues when calling getlocale
-    # or getdefaultlocale in docutils. Force the default cposix locale since
+    # or getdefaultlocale in docutils. Force the default c/posix locale since
     # that's good enough for building the manpage.
     ENV["LC_ALL"] = "C"
 
@@ -78,9 +78,9 @@ class Mpv < Formula
     ENV["NINJA"] = which("ninja")
 
     # libarchive is keg-only
-    ENV.prepend_path "PKG_CONFIG_PATH", Formula["libarchive"].opt_lib"pkgconfig" if OS.mac?
+    ENV.prepend_path "PKG_CONFIG_PATH", Formula["libarchive"].opt_lib/"pkgconfig" if OS.mac?
 
-    # Work around https:github.commpv-playermpvissues15591
+    # Work around https://github.com/mpv-player/mpv/issues/15591
     # This bug happens running classic ld, which is the default
     # prior to Xcode 15 and we enable it in the superenv prior to
     # Xcode 15.3 when using -dead_strip_dylibs (default for meson).
@@ -119,19 +119,19 @@ class Mpv < Formula
       # keg-only so it needs to look for the pkgconfig file in libarchive's opt
       # path.
       libarchive = Formula["libarchive"].opt_prefix
-      inreplace lib"pkgconfigmpv.pc" do |s|
-        s.gsub!(^Requires\.private:(.*)\blibarchive\b(.*?)(,.*)?$,
-                "Requires.private:\\1#{libarchive}libpkgconfiglibarchive.pc\\3")
+      inreplace lib/"pkgconfig/mpv.pc" do |s|
+        s.gsub!(/^Requires\.private:(.*)\blibarchive\b(.*?)(,.*)?$/,
+                "Requires.private:\\1#{libarchive}/lib/pkgconfig/libarchive.pc\\3")
       end
     end
 
-    bash_completion.install "etcmpv.bash-completion" => "mpv"
-    zsh_completion.install "etc_mpv.zsh" => "_mpv"
+    bash_completion.install "etc/mpv.bash-completion" => "mpv"
+    zsh_completion.install "etc/_mpv.zsh" => "_mpv"
   end
 
   test do
-    system bin"mpv", "--ao=null", "--vo=null", test_fixtures("test.wav")
-    assert_match "vapoursynth", shell_output(bin"mpv --vf=help")
+    system bin/"mpv", "--ao=null", "--vo=null", test_fixtures("test.wav")
+    assert_match "vapoursynth", shell_output(bin/"mpv --vf=help")
 
     # Make sure `pkgconf` can parse `mpv.pc` after the `inreplace`.
     system "pkgconf", "--print-errors", "mpv"

@@ -1,7 +1,7 @@
 class AppstreamGlib < Formula
   desc "Helper library for reading and writing AppStream metadata"
-  homepage "https:github.comhughsieappstream-glib"
-  url "https:github.comhughsieappstream-glibarchiverefstagsappstream_glib_0_8_3.tar.gz"
+  homepage "https://github.com/hughsie/appstream-glib"
+  url "https://ghfast.top/https://github.com/hughsie/appstream-glib/archive/refs/tags/appstream_glib_0_8_3.tar.gz"
   sha256 "15ad7690b0132d883bd066699a7b55f6cef4c0f266d18d781ce5d8112fb4ee63"
   license "LGPL-2.1-or-later"
 
@@ -41,12 +41,12 @@ class AppstreamGlib < Formula
     depends_on "util-linux"
   end
 
-  # see https:github.comhughsieappstream-glibissues258
+  # see https://github.com/hughsie/appstream-glib/issues/258
   patch :DATA
 
   def install
     # Find our docbook catalog
-    ENV["XML_CATALOG_FILES"] = "#{etc}xmlcatalog"
+    ENV["XML_CATALOG_FILES"] = "#{etc}/xml/catalog"
 
     system "meson", "setup", "build", "-Dbuilder=false", "-Drpm=false", "-Ddep11=false", *std_meson_args
     system "meson", "compile", "-C", "build", "--verbose"
@@ -54,7 +54,7 @@ class AppstreamGlib < Formula
   end
 
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include <appstream-glib.h>
 
       int main(int argc, char *argv[]) {
@@ -64,19 +64,19 @@ class AppstreamGlib < Formula
       }
     C
 
-    ENV.prepend_path "PKG_CONFIG_PATH", Formula["libarchive"].opt_lib"pkgconfig"
+    ENV.prepend_path "PKG_CONFIG_PATH", Formula["libarchive"].opt_lib/"pkgconfig"
     flags = shell_output("pkgconf --cflags --libs appstream-glib").chomp.split
     system ENV.cc, "test.c", "-o", "test", *flags
-    system ".test"
-    system bin"appstream-util", "--help"
+    system "./test"
+    system bin/"appstream-util", "--help"
   end
 end
 
 __END__
-diff --git alibappstream-glibmeson.build blibappstream-glibmeson.build
+diff --git a/libappstream-glib/meson.build b/libappstream-glib/meson.build
 index 5f726b0..7d29ac8 100644
---- alibappstream-glibmeson.build
-+++ blibappstream-glibmeson.build
+--- a/libappstream-glib/meson.build
++++ b/libappstream-glib/meson.build
 @@ -136,7 +136,6 @@ asglib = shared_library(
    dependencies : deps,
    c_args : cargs,

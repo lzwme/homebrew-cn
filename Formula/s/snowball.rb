@@ -1,7 +1,7 @@
 class Snowball < Formula
   desc "Stemming algorithms"
-  homepage "https:snowballstem.org"
-  url "https:github.comsnowballstemsnowballarchiverefstagsv3.0.1.tar.gz"
+  homepage "https://snowballstem.org"
+  url "https://ghfast.top/https://github.com/snowballstem/snowball/archive/refs/tags/v3.0.1.tar.gz"
   sha256 "80ac10ce40dc4fcfbfed8d085c457b5613da0e86a73611a3d5527d044a142d60"
   license "BSD-3-Clause"
 
@@ -21,14 +21,14 @@ class Snowball < Formula
     system "make"
 
     lib.install "libstemmer.a"
-    include.install Dir["include*"]
+    include.install Dir["include/*"]
     pkgshare.install "examples"
   end
 
   test do
-    (testpath"test.txt").write("connection")
-    cp pkgshare"examplesstemwords.c", testpath
+    (testpath/"test.txt").write("connection")
+    cp pkgshare/"examples/stemwords.c", testpath
     system ENV.cc, "stemwords.c", "-L#{lib}", "-lstemmer", "-o", "test"
-    assert_equal "connect\n", shell_output(".test -i test.txt")
+    assert_equal "connect\n", shell_output("./test -i test.txt")
   end
 end

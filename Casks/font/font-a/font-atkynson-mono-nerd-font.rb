@@ -2,9 +2,9 @@ cask "font-atkynson-mono-nerd-font" do
   version "3.4.0"
   sha256 "3b973f2d44f8dd1705e0865b81ea639830ceef7df0b50f232c123fe7e19e96d0"
 
-  url "https:github.comryanoasisnerd-fontsreleasesdownloadv#{version}AtkinsonHyperlegibleMono.zip"
+  url "https://ghfast.top/https://github.com/ryanoasis/nerd-fonts/releases/download/v#{version}/AtkinsonHyperlegibleMono.zip"
   name "AtkynsonMono Nerd Font (Atkinson Hyperlegible Mono)"
-  homepage "https:github.comryanoasisnerd-fonts"
+  homepage "https://github.com/ryanoasis/nerd-fonts"
 
   livecheck do
     url :url

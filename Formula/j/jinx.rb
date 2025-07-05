@@ -1,10 +1,10 @@
 class Jinx < Formula
   desc "Embeddable scripting language for real-time applications"
-  homepage "https:github.comJamesBoerJinx"
-  url "https:github.comJamesBoerJinxarchiverefstagsv1.3.10.tar.gz"
+  homepage "https://github.com/JamesBoer/Jinx"
+  url "https://ghfast.top/https://github.com/JamesBoer/Jinx/archive/refs/tags/v1.3.10.tar.gz"
   sha256 "5b3a3e6c2c4b976dfdb16519aee7299c98dbf417b8179099a5509a5fd4d513ac"
   license "MIT"
-  head "https:github.comJamesBoerJinx.git", branch: "master"
+  head "https://github.com/JamesBoer/Jinx.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -30,20 +30,20 @@ class Jinx < Formula
 
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"
-    lib.install "buildlibJinx.a"
+    lib.install "build/libJinx.a"
 
-    include.install Dir["Source*.h"]
+    include.install Dir["Source/*.h"]
   end
 
   test do
-    (testpath"test.cpp").write <<~CPP
+    (testpath/"test.cpp").write <<~CPP
       #include "Jinx.h"
 
       int main() {
-         Create the Jinx runtime object
+        // Create the Jinx runtime object
         auto runtime = Jinx::CreateRuntime();
 
-         Text containing our Jinx script
+        // Text containing our Jinx script
         const char * scriptText =
         u8R"(
 
@@ -55,11 +55,11 @@ class Jinx < Formula
 
         )";
 
-         Create and execute a script object
+        // Create and execute a script object
         auto script = runtime->ExecuteScript(scriptText);
       }
     CPP
     system ENV.cxx, "-std=c++17", "test.cpp", "-I#{include}", "-L#{lib}", "-lJinx", "-o", "test"
-    assert_match "Hello, world!", shell_output(".test")
+    assert_match "Hello, world!", shell_output("./test")
   end
 end

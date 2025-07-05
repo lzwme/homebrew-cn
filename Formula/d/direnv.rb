@@ -1,10 +1,10 @@
 class Direnv < Formula
-  desc "Loadunload environment variables based on $PWD"
-  homepage "https:direnv.net"
-  url "https:github.comdirenvdirenvarchiverefstagsv2.37.0.tar.gz"
+  desc "Load/unload environment variables based on $PWD"
+  homepage "https://direnv.net/"
+  url "https://ghfast.top/https://github.com/direnv/direnv/archive/refs/tags/v2.37.0.tar.gz"
   sha256 "6302f3eb824ae5f7d33475c6e9ac0ec46a228e282fca7dba881f3536575a25c8"
   license "MIT"
-  head "https:github.comdirenvdirenv.git", branch: "master"
+  head "https://github.com/direnv/direnv.git", branch: "master"
 
   bottle do
     sha256 arm64_sequoia: "ab0e6a6e1eb4470bdc3b32ef5624010001242093ec1373e31cfc6694f981807e"
@@ -19,10 +19,10 @@ class Direnv < Formula
   depends_on "bash"
 
   def install
-    system "make", "install", "PREFIX=#{prefix}", "BASH_PATH=#{Formula["bash"].opt_bin}bash"
+    system "make", "install", "PREFIX=#{prefix}", "BASH_PATH=#{Formula["bash"].opt_bin}/bash"
   end
 
   test do
-    system bin"direnv", "status"
+    system bin/"direnv", "status"
   end
 end

@@ -1,10 +1,10 @@
 class Sdl3Image < Formula
   desc "Library for loading images as SDL surfaces and textures"
-  homepage "https:github.comlibsdl-orgSDL_image"
-  url "https:github.comlibsdl-orgSDL_imagereleasesdownloadrelease-3.2.4SDL3_image-3.2.4.tar.gz"
+  homepage "https://github.com/libsdl-org/SDL_image"
+  url "https://ghfast.top/https://github.com/libsdl-org/SDL_image/releases/download/release-3.2.4/SDL3_image-3.2.4.tar.gz"
   sha256 "a725bd6d04261fdda0dd8d950659e1dc15a8065d025275ef460d32ae7dcfc182"
   license "Zlib"
-  head "https:github.comlibsdl-orgSDL_image.git", branch: "main"
+  head "https://github.com/libsdl-org/SDL_image.git", branch: "main"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "784b36fb3b932e3001d88f6bef9922b70ed8f39a24262dbce396224d15bab222"
@@ -45,8 +45,8 @@ class Sdl3Image < Formula
   end
 
   test do
-    (testpath"test.c").write <<~C
-      #include <SDL3_imageSDL_image.h>
+    (testpath/"test.c").write <<~C
+      #include <SDL3_image/SDL_image.h>
       #include <stdlib.h>
 
       int main() {
@@ -54,6 +54,6 @@ class Sdl3Image < Formula
       }
     C
     system ENV.cc, "test.c", "-I#{Formula["sdl3"].opt_include}", "-L#{lib}", "-lSDL3_image", "-o", "test"
-    system ".test"
+    system "./test"
   end
 end

@@ -1,11 +1,11 @@
 class CargoOutdated < Formula
   desc "Cargo subcommand for displaying when Rust dependencies are out of date"
-  homepage "https:github.comkbknappcargo-outdated"
-  url "https:github.comkbknappcargo-outdatedarchiverefstagsv0.17.0.tar.gz"
+  homepage "https://github.com/kbknapp/cargo-outdated"
+  url "https://ghfast.top/https://github.com/kbknapp/cargo-outdated/archive/refs/tags/v0.17.0.tar.gz"
   sha256 "6c1c6914f34d3c0d9ebf26b74224fa6744a374e876b35f9836193c2b03858fa4"
   license "MIT"
   revision 1
-  head "https:github.comkbknappcargo-outdated.git", branch: "master"
+  head "https://github.com/kbknapp/cargo-outdated.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "acdcb7ecd3db5e0b5a0d279d33f3f308d9180a9f434ff4f01f2ad2dd075db7d0"
@@ -25,14 +25,14 @@ class CargoOutdated < Formula
 
   uses_from_macos "zlib"
 
-  # libgit2 1.9 patch, upstream pr ref, https:github.comkbknappcargo-outdatedpull417
+  # libgit2 1.9 patch, upstream pr ref, https://github.com/kbknapp/cargo-outdated/pull/417
   patch do
-    url "https:github.comkbknappcargo-outdatedcommit67213eb08b60f402d543d4b2aeb79f813f1ade5e.patch?full_index=1"
+    url "https://github.com/kbknapp/cargo-outdated/commit/67213eb08b60f402d543d4b2aeb79f813f1ade5e.patch?full_index=1"
     sha256 "712df30c8293327848e5156df8524f60fb425c9d397f954d88c5d31c36189a79"
   end
   # cargo 0.87 update
   patch do
-    url "https:github.comkbknappcargo-outdatedcommit9c766bf49d37fc2d3fc19ee6b06c4b022c7138a1.patch?full_index=1"
+    url "https://github.com/kbknapp/cargo-outdated/commit/9c766bf49d37fc2d3fc19ee6b06c4b022c7138a1.patch?full_index=1"
     sha256 "5d3d1361804eb64272eb8d88110eeafbf998eff4262687989164b0d32e0c2225"
   end
 
@@ -45,17 +45,17 @@ class CargoOutdated < Formula
   end
 
   test do
-    require "utilslinkage"
+    require "utils/linkage"
 
     # Show that we can use a different toolchain than the one provided by the `rust` formula.
-    # https:github.comHomebrewhomebrew-corepull134074#pullrequestreview-1484979359
+    # https://github.com/Homebrew/homebrew-core/pull/134074#pullrequestreview-1484979359
     ENV.prepend_path "PATH", Formula["rustup"].bin
     system "rustup", "set", "profile", "minimal"
     system "rustup", "default", "beta"
 
-    crate = testpath"demo-crate"
+    crate = testpath/"demo-crate"
     mkdir crate do
-      (crate"Cargo.toml").write <<~TOML
+      (crate/"Cargo.toml").write <<~TOML
         [package]
         name = "demo-crate"
         version = "0.1.0"
@@ -67,7 +67,7 @@ class CargoOutdated < Formula
         libc = "0.1"
       TOML
 
-      (crate"lib.rs").write "use libc;"
+      (crate/"lib.rs").write "use libc;"
 
       output = shell_output("cargo outdated 2>&1")
       # libc 0.1 is outdated
@@ -75,11 +75,11 @@ class CargoOutdated < Formula
     end
 
     [
-      Formula["libgit2"].opt_libshared_library("libgit2"),
-      Formula["openssl@3"].opt_libshared_library("libssl"),
-      Formula["openssl@3"].opt_libshared_library("libcrypto"),
+      Formula["libgit2"].opt_lib/shared_library("libgit2"),
+      Formula["openssl@3"].opt_lib/shared_library("libssl"),
+      Formula["openssl@3"].opt_lib/shared_library("libcrypto"),
     ].each do |library|
-      assert Utils.binary_linked_to_library?(bin"cargo-outdated", library),
+      assert Utils.binary_linked_to_library?(bin/"cargo-outdated", library),
              "No linkage with #{library.basename}! Cargo is likely using a vendored version."
     end
   end

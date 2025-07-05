@@ -1,7 +1,7 @@
 class Orcania < Formula
   desc "Potluck with different functions for different purposes in C"
-  homepage "https:babelouest.github.ioorcania"
-  url "https:github.combabelouestorcaniaarchiverefstagsv2.3.3.tar.gz"
+  homepage "https://babelouest.github.io/orcania/"
+  url "https://ghfast.top/https://github.com/babelouest/orcania/archive/refs/tags/v2.3.3.tar.gz"
   sha256 "e26947f7622acf3660b71fb8018ee791c97376530ab6c4a00e4aa2775e052626"
   license "LGPL-2.1-only"
 
@@ -36,7 +36,7 @@ class Orcania < Formula
   end
 
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include <orcania.h>
       #include <stdio.h>
       #include <stdlib.h>
@@ -46,7 +46,7 @@ class Orcania < Formula
           char *src = "Orcania test string";
           char *dup_str;
 
-           Test o_strdup
+          // Test o_strdup
           dup_str = o_strdup(src);
           if (dup_str == NULL) {
               printf("o_strdup failed");
@@ -65,6 +65,6 @@ class Orcania < Formula
       }
     C
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lorcania", "-o", "test"
-    system ".test"
+    system "./test"
   end
 end

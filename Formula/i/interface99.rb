@@ -1,10 +1,10 @@
 class Interface99 < Formula
   desc "Full-featured interfaces for C99"
-  homepage "https:github.comHirrolotinterface99"
-  url "https:github.comHirrolotinterface99archiverefstagsv1.0.2.tar.gz"
+  homepage "https://github.com/Hirrolot/interface99"
+  url "https://ghfast.top/https://github.com/Hirrolot/interface99/archive/refs/tags/v1.0.2.tar.gz"
   sha256 "8bd007c48cf05436ced60884e8e3a05ede46105f3efae9bf29e0f4d30f938f9e"
   license "MIT"
-  head "https:github.comHirrolotinterface99.git", branch: "master"
+  head "https://github.com/Hirrolot/interface99.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, all: "cdcd1817a2f31b433c04ed591b2f5de07141a3e783de280b0c7431b68dec2556"
@@ -17,7 +17,7 @@ class Interface99 < Formula
   end
 
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include <interface99.h>
       #include <stdio.h>
 
@@ -60,6 +60,6 @@ class Interface99 < Formula
       }
     C
     system ENV.cc, "test.c", "-I#{include}", "-I#{Formula["metalang99"].opt_include}", "-o", "test"
-    assert_equal "24 60 120 300", shell_output(".test")
+    assert_equal "24 60 120 300", shell_output("./test")
   end
 end

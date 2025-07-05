@@ -1,14 +1,14 @@
 class Dumpling < Formula
   desc "Creating SQL dump from a MySQL-compatible database"
-  homepage "https:github.compingcaptidb"
-  url "https:github.compingcaptidbarchiverefstagsv8.5.2.tar.gz"
+  homepage "https://github.com/pingcap/tidb"
+  url "https://ghfast.top/https://github.com/pingcap/tidb/archive/refs/tags/v8.5.2.tar.gz"
   sha256 "bfabe08b914aad6a172ba32ad03ea6794d4f556c1d32e38d67feffc6a05bf4f4"
   license "Apache-2.0"
-  head "https:github.compingcaptidb.git", branch: "master"
+  head "https://github.com/pingcap/tidb.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -23,23 +23,23 @@ class Dumpling < Formula
   depends_on "go" => :build
 
   def install
-    project = "github.compingcaptidbdumpling"
+    project = "github.com/pingcap/tidb/dumpling"
     ldflags = %W[
       -s -w
-      -X #{project}cli.ReleaseVersion=#{version}
-      -X #{project}cli.BuildTimestamp=#{time.iso8601}
-      -X #{project}cli.GitHash=brew
-      -X #{project}cli.GitBranch=#{version}
-      -X #{project}cli.GoVersion=go#{Formula["go"].version}
+      -X #{project}/cli.ReleaseVersion=#{version}
+      -X #{project}/cli.BuildTimestamp=#{time.iso8601}
+      -X #{project}/cli.GitHash=brew
+      -X #{project}/cli.GitBranch=#{version}
+      -X #{project}/cli.GoVersion=go#{Formula["go"].version}
     ]
 
-    system "go", "build", *std_go_args(ldflags:), ".dumplingcmddumpling"
+    system "go", "build", *std_go_args(ldflags:), "./dumpling/cmd/dumpling"
   end
 
   test do
-    output = shell_output("#{bin}dumpling --database db 2>&1", 1)
+    output = shell_output("#{bin}/dumpling --database db 2>&1", 1)
     assert_match "create dumper failed", output
 
-    assert_match "Release version: #{version}", shell_output("#{bin}dumpling --version 2>&1")
+    assert_match "Release version: #{version}", shell_output("#{bin}/dumpling --version 2>&1")
   end
 end

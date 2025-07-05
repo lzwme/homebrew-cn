@@ -1,14 +1,14 @@
 class Yaws < Formula
   desc "Webserver for dynamic content (written in Erlang)"
-  homepage "https:erlyaws.github.io"
-  url "https:github.comerlyawsyawsarchiverefstagsyaws-2.2.0.tar.gz"
+  homepage "https://erlyaws.github.io/"
+  url "https://ghfast.top/https://github.com/erlyaws/yaws/archive/refs/tags/yaws-2.2.0.tar.gz"
   sha256 "39318736472c165d4aec769c89ac4edfe3cab7ff7759f32de0a4e699ef6c88e8"
   license "BSD-3-Clause"
-  head "https:github.comerlyawsyaws.git", branch: "master"
+  head "https://github.com/erlyaws/yaws.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(yaws[._-]v?(\d+(?:\.\d+)+)i)
+    regex(/yaws[._-]v?(\d+(?:\.\d+)+)/i)
     strategy :github_latest
   end
 
@@ -34,41 +34,41 @@ class Yaws < Formula
   end
 
   # the default config expects these folders to exist
-  skip_clean "varlogyaws"
-  skip_clean "libyawsexamplesebin"
-  skip_clean "libyawsexamplesinclude"
+  skip_clean "var/log/yaws"
+  skip_clean "lib/yaws/examples/ebin"
+  skip_clean "lib/yaws/examples/include"
 
   def install
     extra_args = if OS.mac?
       # Ensure pam headers are found on Xcode-only installs
       %W[
-        --with-extrainclude=#{MacOS.sdk_path}usrincludesecurity
+        --with-extrainclude=#{MacOS.sdk_path}/usr/include/security
       ]
     else
       %W[
-        --with-extrainclude=#{Formula["linux-pam"].opt_include}security
+        --with-extrainclude=#{Formula["linux-pam"].opt_include}/security
       ]
     end
     system "autoreconf", "--force", "--install", "--verbose"
-    system ".configure", *extra_args, *std_configure_args
+    system "./configure", *extra_args, *std_configure_args
     system "make", "install", "WARNINGS_AS_ERRORS="
 
-    cd "applicationsyapp" do
+    cd "applications/yapp" do
       system "make"
       system "make", "install"
     end
 
     # the default config expects these folders to exist
-    (lib"yawsexamplesebin").mkpath
-    (lib"yawsexamplesinclude").mkpath
+    (lib/"yaws/examples/ebin").mkpath
+    (lib/"yaws/examples/include").mkpath
 
     # Remove Homebrew shims references on Linux
-    inreplace Dir["#{prefix}varyawswww*Makefile"], Superenv.shims_path, "usrbin" if OS.linux?
+    inreplace Dir["#{prefix}/var/yaws/www/*/Makefile"], Superenv.shims_path, "/usr/bin" if OS.linux?
   end
 
   def post_install
-    (var"logyaws").mkpath
-    (var"yawswww").mkpath
+    (var/"log/yaws").mkpath
+    (var/"yaws/www").mkpath
   end
 
   test do
@@ -76,33 +76,33 @@ class Yaws < Formula
     password = "password"
     port = free_port
 
-    (testpath"wwwexample.txt").write <<~EOS
+    (testpath/"www/example.txt").write <<~EOS
       Hello World!
     EOS
 
-    (testpath"yaws.conf").write <<~EOS
-      logdir = #{mkdir(testpath"log").first}
-      ebin_dir = #{mkdir(testpath"ebin").first}
-      include_dir = #{mkdir(testpath"include").first}
+    (testpath/"yaws.conf").write <<~EOS
+      logdir = #{mkdir(testpath/"log").first}
+      ebin_dir = #{mkdir(testpath/"ebin").first}
+      include_dir = #{mkdir(testpath/"include").first}
 
       <server localhost>
         port = #{port}
         listen = 127.0.0.1
-        docroot = #{testpath}www
+        docroot = #{testpath}/www
         <auth>
                 realm = foobar
-                dir = 
+                dir = /
                 user = #{user}:#{password}
-        <auth>
-      <server>
+        </auth>
+      </server>
     EOS
-    spawn bin"yaws", "-c", testpath"yaws.conf", "--erlarg", "-noshell"
+    spawn bin/"yaws", "-c", testpath/"yaws.conf", "--erlarg", "-noshell"
     sleep 6
 
-    output = shell_output("curl --silent localhost:#{port}example.txt")
+    output = shell_output("curl --silent localhost:#{port}/example.txt")
     assert_match "401 authentication needed", output
 
-    output = shell_output("curl --user #{user}:#{password} --silent localhost:#{port}example.txt")
+    output = shell_output("curl --user #{user}:#{password} --silent localhost:#{port}/example.txt")
     assert_equal "Hello World!\n", output
   end
 end

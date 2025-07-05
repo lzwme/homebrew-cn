@@ -1,7 +1,7 @@
 class TtySolitaire < Formula
   desc "Ncurses-based klondike solitaire game"
-  homepage "https:github.commpereiratty-solitaire"
-  url "https:github.commpereiratty-solitairearchiverefstagsv1.4.1.tar.gz"
+  homepage "https://github.com/mpereira/tty-solitaire"
+  url "https://ghfast.top/https://github.com/mpereira/tty-solitaire/archive/refs/tags/v1.4.1.tar.gz"
   sha256 "8eb536a87f0586e1f057a3aa05256df34cbd92a3e22545d1df2f945e27d89db2"
   license "MIT"
 
@@ -23,6 +23,6 @@ class TtySolitaire < Formula
   end
 
   test do
-    system bin"ttysolitaire", "-h"
+    system bin/"ttysolitaire", "-h"
   end
 end

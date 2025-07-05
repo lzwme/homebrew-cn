@@ -2,11 +2,11 @@ class Libxmlb < Formula
   include Language::Python::Shebang
 
   desc "Library for querying compressed XML metadata"
-  homepage "https:github.comhughsielibxmlb"
-  url "https:github.comhughsielibxmlbreleasesdownload0.3.22libxmlb-0.3.22.tar.xz"
+  homepage "https://github.com/hughsie/libxmlb"
+  url "https://ghfast.top/https://github.com/hughsie/libxmlb/releases/download/0.3.22/libxmlb-0.3.22.tar.xz"
   sha256 "f3c46e85588145a1a86731c77824ec343444265a457647189a43b71941b20fa0"
   license "LGPL-2.1-or-later"
-  head "https:github.comhughsielibxmlb.git", branch: "main"
+  head "https://github.com/hughsie/libxmlb.git", branch: "main"
 
   bottle do
     sha256 cellar: :any, arm64_sequoia: "e0775233be69a811c661f8720b66a4711013ef27e6e36bdd8dff476c9b4c56e7"
@@ -30,7 +30,7 @@ class Libxmlb < Formula
   depends_on "zstd"
 
   def install
-    rewrite_shebang detected_python_shebang(use_python_from_path: true), "srcgenerate-version-script.py"
+    rewrite_shebang detected_python_shebang(use_python_from_path: true), "src/generate-version-script.py"
 
     system "meson", "setup", "build", "-Dgtkdoc=false", *std_meson_args
     system "meson", "compile", "-C", "build", "--verbose"
@@ -38,9 +38,9 @@ class Libxmlb < Formula
   end
 
   test do
-    system bin"xb-tool", "-h"
+    system bin/"xb-tool", "-h"
 
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include <xmlb.h>
       int main(int argc, char *argv[]) {
         XbBuilder *builder = xb_builder_new();
@@ -51,6 +51,6 @@ class Libxmlb < Formula
 
     flags = shell_output("pkgconf --cflags --libs xmlb").chomp.split
     system ENV.cc, "test.c", "-o", "test", *flags
-    system ".test"
+    system "./test"
   end
 end

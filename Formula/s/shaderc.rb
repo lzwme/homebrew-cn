@@ -1,27 +1,27 @@
 class Shaderc < Formula
   desc "Collection of tools, libraries, and tests for Vulkan shader compilation"
-  homepage "https:github.comgoogleshaderc"
+  homepage "https://github.com/google/shaderc"
   license "Apache-2.0"
 
   stable do
-    url "https:github.comgoogleshadercarchiverefstagsv2025.3.tar.gz"
+    url "https://ghfast.top/https://github.com/google/shaderc/archive/refs/tags/v2025.3.tar.gz"
     sha256 "a8e4a25e5c2686fd36981e527ed05e451fcfc226bddf350f4e76181371190937"
 
     resource "glslang" do
-      # https:github.comgoogleshadercblobknown-goodknown_good.json
-      url "https:github.comKhronosGroupglslang.git",
+      # https://github.com/google/shaderc/blob/known-good/known_good.json
+      url "https://github.com/KhronosGroup/glslang.git",
           revision: "efd24d75bcbc55620e759f6bf42c45a32abac5f8"
     end
 
     resource "spirv-headers" do
-      # https:github.comgoogleshadercblobknown-goodknown_good.json
-      url "https:github.comKhronosGroupSPIRV-Headers.git",
+      # https://github.com/google/shaderc/blob/known-good/known_good.json
+      url "https://github.com/KhronosGroup/SPIRV-Headers.git",
           revision: "2a611a970fdbc41ac2e3e328802aed9985352dca"
     end
 
     resource "spirv-tools" do
-      # https:github.comgoogleshadercblobknown-goodknown_good.json
-      url "https:github.comKhronosGroupSPIRV-Tools.git",
+      # https://github.com/google/shaderc/blob/known-good/known_good.json
+      url "https://github.com/KhronosGroup/SPIRV-Tools.git",
           revision: "33e02568181e3312f49a3cf33df470bf96ef293a"
     end
   end
@@ -37,18 +37,18 @@ class Shaderc < Formula
   end
 
   head do
-    url "https:github.comgoogleshaderc.git", branch: "main"
+    url "https://github.com/google/shaderc.git", branch: "main"
 
     resource "glslang" do
-      url "https:github.comKhronosGroupglslang.git", branch: "main"
+      url "https://github.com/KhronosGroup/glslang.git", branch: "main"
     end
 
     resource "spirv-tools" do
-      url "https:github.comKhronosGroupSPIRV-Tools.git", branch: "main"
+      url "https://github.com/KhronosGroup/SPIRV-Tools.git", branch: "main"
     end
 
     resource "spirv-headers" do
-      url "https:github.comKhronosGroupSPIRV-Headers.git", branch: "main"
+      url "https://github.com/KhronosGroup/SPIRV-Headers.git", branch: "main"
     end
   end
 
@@ -57,16 +57,16 @@ class Shaderc < Formula
   uses_from_macos "python" => :build
 
   # patch to fix `target "SPIRV-Tools-opt" that is not in any export set`
-  # upstream bug report, https:github.comgoogleshadercissues1413
+  # upstream bug report, https://github.com/google/shaderc/issues/1413
   patch :DATA
 
   def install
     resources.each do |res|
-      res.stage(buildpath"third_party"res.name)
+      res.stage(buildpath/"third_party"/res.name)
     end
 
     # Avoid installing packages that conflict with other formulae.
-    inreplace "third_partyCMakeLists.txt", "${SHADERC_SKIP_INSTALL}", "ON"
+    inreplace "third_party/CMakeLists.txt", "${SHADERC_SKIP_INSTALL}", "ON"
     system "cmake", "-S", ".", "-B", "build",
                     "-DSHADERC_SKIP_TESTS=ON",
                     "-DSKIP_GLSLANG_INSTALL=ON",
@@ -78,8 +78,8 @@ class Shaderc < Formula
   end
 
   test do
-    (testpath"test.c").write <<~C
-      #include <shadercshaderc.h>
+    (testpath/"test.c").write <<~C
+      #include <shaderc/shaderc.h>
       int main() {
         int version;
         shaderc_profile profile;
@@ -90,15 +90,15 @@ class Shaderc < Formula
     C
     system ENV.cc, "-o", "test", "test.c", "-I#{include}",
                    "-L#{lib}", "-lshaderc_shared"
-    system ".test"
+    system "./test"
   end
 end
 
 __END__
-diff --git athird_partyCMakeLists.txt bthird_partyCMakeLists.txt
+diff --git a/third_party/CMakeLists.txt b/third_party/CMakeLists.txt
 index d44f62a..dffac6a 100644
---- athird_partyCMakeLists.txt
-+++ bthird_partyCMakeLists.txt
+--- a/third_party/CMakeLists.txt
++++ b/third_party/CMakeLists.txt
 @@ -87,7 +87,6 @@ if (NOT TARGET glslang)
        # Glslang tests are off by default. Turn them on if testing Shaderc.
        set(GLSLANG_TESTS ON)

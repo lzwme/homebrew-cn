@@ -1,7 +1,7 @@
 class Flann < Formula
   desc "Fast Library for Approximate Nearest Neighbors"
-  homepage "https:github.comflann-libflann"
-  url "https:github.comflann-libflannarchiverefstags1.9.2.tar.gz"
+  homepage "https://github.com/flann-lib/flann"
+  url "https://ghfast.top/https://github.com/flann-lib/flann/archive/refs/tags/1.9.2.tar.gz"
   sha256 "e26829bb0017f317d9cc45ab83ddcb8b16d75ada1ae07157006c1e7d601c8824"
   license "BSD-3-Clause"
   revision 3
@@ -32,13 +32,13 @@ class Flann < Formula
 
   test do
     resource "homebrew-dataset" do
-      url "https:github.comflann-libflannfiles6518483dataset.zip"
+      url "https://github.com/flann-lib/flann/files/6518483/dataset.zip"
       sha256 "169442be3e9d8c862eb6ae4566306c31ff18406303d87b4d101f367bc5d17afa"
     end
 
     testpath.install resource("homebrew-dataset")
 
-    system bin"flann_example_c"
-    system bin"flann_example_cpp"
+    system bin/"flann_example_c"
+    system bin/"flann_example_cpp"
   end
 end

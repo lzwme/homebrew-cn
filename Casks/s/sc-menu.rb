@@ -2,10 +2,10 @@ cask "sc-menu" do
   version "1.8.1"
   sha256 "acdf2ba19bb1adc4cacc36554c1d18aa9591f3d4e7b22f437b094e88dfc84855"
 
-  url "https:github.comboberitosc_menureleasesdownload#{version}SC_Menu.dmg"
+  url "https://ghfast.top/https://github.com/boberito/sc_menu/releases/download/#{version}/SC_Menu.dmg"
   name "SC Menu"
   desc "Simple smartcard menu item"
-  homepage "https:github.comboberitosc_menu"
+  homepage "https://github.com/boberito/sc_menu"
 
   livecheck do
     url :url
@@ -19,9 +19,9 @@ cask "sc-menu" do
   app "SC Menu.app"
 
   zap trash: [
-    "~LibraryApplication Scriptscom.bob.sc-menu",
-    "~LibraryApplication Supportcom.apple.sharedfilelistcom.apple.LSSharedFileList.ApplicationRecentDocumentscom.bob.sc-menu.sfl*",
-    "~LibraryApplication Supportcom.apple.sharedfilelistcom.apple.LSSharedFileList.ApplicationRecentDocumentscom.ttinc.sc-menu.sfl*",
-    "~LibraryContainerscom.bob.sc-menu",
+    "~/Library/Application Scripts/com.bob.sc-menu",
+    "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.bob.sc-menu.sfl*",
+    "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.ttinc.sc-menu.sfl*",
+    "~/Library/Containers/com.bob.sc-menu",
   ]
 end

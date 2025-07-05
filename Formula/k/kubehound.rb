@@ -1,10 +1,10 @@
 class Kubehound < Formula
   desc "Tool for building Kubernetes attack paths"
-  homepage "https:kubehound.io"
-  url "https:github.comDataDogKubeHoundarchiverefstagsv1.6.4.tar.gz"
+  homepage "https://kubehound.io"
+  url "https://ghfast.top/https://github.com/DataDog/KubeHound/archive/refs/tags/v1.6.4.tar.gz"
   sha256 "63cb38cc12f33842a255852a45d2c795f8b20cd7de546154af1dc6a7c9fa0441"
   license "Apache-2.0"
-  head "https:github.comDataDogKubeHound.git", branch: "main"
+  head "https://github.com/DataDog/KubeHound.git", branch: "main"
 
   livecheck do
     url :stable
@@ -23,26 +23,26 @@ class Kubehound < Formula
   depends_on "go" => [:build, :test]
 
   def install
-    goos = Utils.safe_popen_read("#{Formula["go"].bin}go", "env", "GOOS").chomp
-    goarch = Utils.safe_popen_read("#{Formula["go"].bin}go", "env", "GOARCH").chomp
+    goos = Utils.safe_popen_read("#{Formula["go"].bin}/go", "env", "GOOS").chomp
+    goarch = Utils.safe_popen_read("#{Formula["go"].bin}/go", "env", "GOARCH").chomp
 
     ldflags = %W[
       -s -w
-      -X github.comDataDogKubeHoundpkgconfig.BuildVersion=v#{version}
-      -X github.comDataDogKubeHoundpkgconfig.BuildBranch=main
-      -X github.comDataDogKubeHoundpkgconfig.BuildOs=#{goos}
-      -X github.comDataDogKubeHoundpkgconfig.BuildArch=#{goarch}
+      -X github.com/DataDog/KubeHound/pkg/config.BuildVersion=v#{version}
+      -X github.com/DataDog/KubeHound/pkg/config.BuildBranch=main
+      -X github.com/DataDog/KubeHound/pkg/config.BuildOs=#{goos}
+      -X github.com/DataDog/KubeHound/pkg/config.BuildArch=#{goarch}
     ]
-    system "go", "build", *std_go_args(ldflags:, tags: "no_backend"), ".cmdkubehound"
+    system "go", "build", *std_go_args(ldflags:, tags: "no_backend"), "./cmd/kubehound/"
 
-    generate_completions_from_executable(bin"kubehound", "completion")
+    generate_completions_from_executable(bin/"kubehound", "completion")
   end
 
   test do
-    assert_match "kubehound version: v#{version}", shell_output("#{bin}kubehound version")
+    assert_match "kubehound version: v#{version}", shell_output("#{bin}/kubehound version")
 
-    ENV["DOCKER_HOST"] = "unix:#{testpath}invalid.sock"
+    ENV["DOCKER_HOST"] = "unix://#{testpath}/invalid.sock"
     error_message = "error starting the kubehound stack"
-    assert_match error_message, shell_output("#{bin}kubehound backend up 2>&1", 1)
+    assert_match error_message, shell_output("#{bin}/kubehound backend up 2>&1", 1)
   end
 end

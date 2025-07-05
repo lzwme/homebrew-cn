@@ -1,7 +1,7 @@
 class Readerwriterqueue < Formula
   desc "Fast single-producer, single-consumer lock-free queue for C++"
-  homepage "https:github.comcameron314readerwriterqueue"
-  url "https:github.comcameron314readerwriterqueuearchiverefstagsv1.0.7.tar.gz"
+  homepage "https://github.com/cameron314/readerwriterqueue"
+  url "https://ghfast.top/https://github.com/cameron314/readerwriterqueue/archive/refs/tags/v1.0.7.tar.gz"
   sha256 "532224ed052bcd5f4c6be0ed9bb2b8c88dfe7e26e3eb4dd9335303b059df6691"
   license all_of: ["BSD-2-Clause", "Zlib"]
 
@@ -20,10 +20,10 @@ class Readerwriterqueue < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath/"test.cpp").write <<~EOS
       #include <cassert>
       #include <iostream>
-      #include <readerwriterqueuereaderwriterqueue.h>
+      #include <readerwriterqueue/readerwriterqueue.h>
 
       using namespace moodycamel;
 
@@ -49,6 +49,6 @@ class Readerwriterqueue < Formula
     EOS
 
     system ENV.cxx, "-I#{include}", "test.cpp", "-o", "test"
-    assert_equal "OK\n", shell_output(testpath"test")
+    assert_equal "OK\n", shell_output(testpath/"test")
   end
 end

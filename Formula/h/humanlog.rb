@@ -1,10 +1,10 @@
 class Humanlog < Formula
   desc "Logs for humans to read"
-  homepage "https:github.comhumanlogiohumanlog"
-  url "https:github.comhumanlogiohumanlogarchiverefstagsv0.8.5.tar.gz"
+  homepage "https://github.com/humanlogio/humanlog"
+  url "https://ghfast.top/https://github.com/humanlogio/humanlog/archive/refs/tags/v0.8.5.tar.gz"
   sha256 "f57cc04582a84cc786ea1a9198ea2866fd269c2ab5a2df4ea6f9998394786186"
   license "Apache-2.0"
-  head "https:github.comhumanlogiohumanlog.git", branch: "master"
+  head "https://github.com/humanlogio/humanlog.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "acc12c7ec58b20fdfbcb5e198946b3b875469ac8e2ad91a08c7fa293af82a3a2"
@@ -25,16 +25,16 @@ class Humanlog < Formula
       -X main.versionPatch=#{version.patch}
       -X main.versionPrerelease=
     ]
-    system "go", "build", *std_go_args(ldflags:), ".cmdhumanlog"
+    system "go", "build", *std_go_args(ldflags:), "./cmd/humanlog"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}humanlog --version")
+    assert_match version.to_s, shell_output("#{bin}/humanlog --version")
 
     test_input = '{"time":"2024-12-23T12:34:56Z","level":"info","message":"brewtest log"}'
     expected_output = "brewtest log"
 
-    output = pipe_output(bin"humanlog", test_input)
+    output = pipe_output(bin/"humanlog", test_input)
     assert_match expected_output, output
   end
 end

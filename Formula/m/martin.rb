@@ -1,7 +1,7 @@
 class Martin < Formula
   desc "Blazing fast tile server, tile generation, and mbtiles tooling"
-  homepage "https:martin.maplibre.org"
-  url "https:github.commaplibremartinarchiverefstagsv0.17.0.tar.gz"
+  homepage "https://martin.maplibre.org"
+  url "https://ghfast.top/https://github.com/maplibre/martin/archive/refs/tags/v0.17.0.tar.gz"
   sha256 "61b495e96d6d75e9d65057c9b4c95ed78fcdab6dfa2b73424cbc930431e99e6c"
   license any_of: ["Apache-2.0", "MIT"]
 
@@ -21,19 +21,19 @@ class Martin < Formula
   def install
     system "cargo", "install", *std_cargo_args(path: "martin")
     system "cargo", "install", *std_cargo_args(path: "mbtiles")
-    pkgshare.install "testsfixturesmbtiles"
+    pkgshare.install "tests/fixtures/mbtiles"
   end
 
   test do
-    mbtiles = pkgshare"mbtilesworld_cities.mbtiles"
+    mbtiles = pkgshare/"mbtiles/world_cities.mbtiles"
     port = free_port
     fork do
-      exec bin"martin", mbtiles, "-l", "127.0.0.1:#{port}"
+      exec bin/"martin", mbtiles, "-l", "127.0.0.1:#{port}"
     end
     sleep 3
     output = shell_output("curl -s 127.0.0.1:#{port}")
     assert_match "Martin server is running.", output
 
-    system bin"mbtiles", "summary", mbtiles
+    system bin/"mbtiles", "summary", mbtiles
   end
 end

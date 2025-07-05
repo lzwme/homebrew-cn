@@ -1,14 +1,14 @@
 class Msgpack < Formula
   desc "Library for a binary-based efficient data interchange format"
-  homepage "https:msgpack.org"
-  url "https:github.commsgpackmsgpack-creleasesdownloadc-6.1.0msgpack-c-6.1.0.tar.gz"
+  homepage "https://msgpack.org/"
+  url "https://ghfast.top/https://github.com/msgpack/msgpack-c/releases/download/c-6.1.0/msgpack-c-6.1.0.tar.gz"
   sha256 "674119f1a85b5f2ecc4c7d5c2859edf50c0b05e0c10aa0df85eefa2c8c14b796"
   license "BSL-1.0"
-  head "https:github.commsgpackmsgpack-c.git", branch: "c_master"
+  head "https://github.com/msgpack/msgpack-c.git", branch: "c_master"
 
   livecheck do
     url :stable
-    regex(^c[._-]v?(\d+(?:\.\d+)+)$i)
+    regex(/^c[._-]v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -44,8 +44,8 @@ class Msgpack < Formula
     refute_empty lib.glob(shared_library("libmsgpackc", "2")),
                  "Upstream has bumped `SOVERSION`! The workaround in the `install` method can be removed"
 
-    # Reference: https:github.commsgpackmsgpack-cblobc_masterQUICKSTART-C.md
-    (testpath"test.c").write <<~C
+    # Reference: https://github.com/msgpack/msgpack-c/blob/c_master/QUICKSTART-C.md
+    (testpath/"test.c").write <<~C
       #include <msgpack.h>
       #include <stdio.h>
 
@@ -57,16 +57,16 @@ class Msgpack < Formula
          msgpack_pack_int(pk, 2);
          msgpack_pack_int(pk, 3);
 
-         * deserializes these objects using msgpack_unpacker. *
+         /* deserializes these objects using msgpack_unpacker. */
          msgpack_unpacker pac;
          msgpack_unpacker_init(&pac, MSGPACK_UNPACKER_INIT_BUFFER_SIZE);
 
-         * feeds the buffer. *
+         /* feeds the buffer. */
          msgpack_unpacker_reserve_buffer(&pac, buffer->size);
          memcpy(msgpack_unpacker_buffer(&pac), buffer->data, buffer->size);
          msgpack_unpacker_buffer_consumed(&pac, buffer->size);
 
-         * now starts streaming deserialization. *
+         /* now starts streaming deserialization. */
          msgpack_unpacked result;
          msgpack_unpacked_init(&result);
 
@@ -78,6 +78,6 @@ class Msgpack < Formula
     C
 
     system ENV.cc, "-o", "test", "test.c", "-L#{lib}", "-lmsgpack-c"
-    assert_equal "1\n2\n3\n", `.test`
+    assert_equal "1\n2\n3\n", `./test`
   end
 end

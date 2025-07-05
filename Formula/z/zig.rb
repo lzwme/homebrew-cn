@@ -1,13 +1,13 @@
 class Zig < Formula
   desc "Programming language designed for robustness, optimality, and clarity"
-  homepage "https:ziglang.org"
-  url "https:ziglang.orgdownload0.14.1zig-0.14.1.tar.xz"
+  homepage "https://ziglang.org/"
+  url "https://ziglang.org/download/0.14.1/zig-0.14.1.tar.xz"
   sha256 "237f8abcc8c3fd68c70c66cdbf63dce4fb5ad4a2e6225ac925e3d5b4c388f203"
   license "MIT"
 
   livecheck do
-    url "https:ziglang.orgdownload"
-    regex(href=.*?zig[._-]v?(\d+(?:\.\d+)+)\.ti)
+    url "https://ziglang.org/download/"
+    regex(/href=.*?zig[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   bottle do
@@ -23,22 +23,22 @@ class Zig < Formula
   depends_on "cmake" => :build
   depends_on "lld@19"
   depends_on "llvm@19"
-  depends_on macos: :big_sur # https:github.comziglangzigissues13313
+  depends_on macos: :big_sur # https://github.com/ziglang/zig/issues/13313
 
   # NOTE: `z3` should be macOS-only dependency whenever we need to re-add
   on_macos do
     depends_on "zstd"
   end
 
-  # https:github.comHomebrewhomebrew-coreissues209483
-  skip_clean "libziglibcdarwinlibSystem.tbd"
+  # https://github.com/Homebrew/homebrew-core/issues/209483
+  skip_clean "lib/zig/libc/darwin/libSystem.tbd"
 
   # Fix linkage with libc++.
-  # https:github.comziglangzigpull23264
+  # https://github.com/ziglang/zig/pull/23264
   patch :DATA
 
   def install
-    llvm = deps.find { |dep| dep.name.match?(^llvm(@\d+)?$) }
+    llvm = deps.find { |dep| dep.name.match?(/^llvm(@\d+)?$/) }
                .to_formula
     if llvm.versioned_formula? && deps.any? { |dep| dep.name == "z3" }
       # Don't remove this check even if we're using a versioned LLVM
@@ -46,8 +46,8 @@ class Zig < Formula
       odie "`z3` dependency should be removed!"
     end
 
-    # Workaround for https:github.comHomebrewhomebrew-corepull141453#discussion_r1320821081.
-    # This will likely be fixed upstream by https:github.comziglangzigpull16062.
+    # Workaround for https://github.com/Homebrew/homebrew-core/pull/141453#discussion_r1320821081.
+    # This will likely be fixed upstream by https://github.com/ziglang/zig/pull/16062.
     if OS.linux?
       ENV["NIX_LDFLAGS"] = ENV["HOMEBREW_RPATH_PATHS"].split(":")
                                                       .map { |p| "-rpath #{p}" }
@@ -56,7 +56,7 @@ class Zig < Formula
 
     cpu = case Hardware.oldest_cpu # See `zig targets`.
     # Cortex A-53 seems to be the oldest available ARMv8-A processor.
-    # https:en.wikipedia.orgwikiARM_Cortex-A53
+    # https://en.wikipedia.org/wiki/ARM_Cortex-A53
     when :armv8 then "cortex_a53"
     when :arm_vortex_tempest then "apple_m1"
     else Hardware.oldest_cpu
@@ -71,55 +71,55 @@ class Zig < Formula
   end
 
   test do
-    (testpath"hello.zig").write <<~ZIG
+    (testpath/"hello.zig").write <<~ZIG
       const std = @import("std");
       pub fn main() !void {
           const stdout = std.io.getStdOut().writer();
           try stdout.print("Hello, world!", .{});
       }
     ZIG
-    system bin"zig", "build-exe", "hello.zig"
-    assert_equal "Hello, world!", shell_output(".hello")
+    system bin/"zig", "build-exe", "hello.zig"
+    assert_equal "Hello, world!", shell_output("./hello")
 
     arches = ["aarch64", "x86_64"]
     systems = ["macos", "linux"]
     arches.each do |arch|
       systems.each do |os|
-        system bin"zig", "build-exe", "hello.zig", "-target", "#{arch}-#{os}", "--name", "hello-#{arch}-#{os}"
-        assert_path_exists testpath"hello-#{arch}-#{os}"
+        system bin/"zig", "build-exe", "hello.zig", "-target", "#{arch}-#{os}", "--name", "hello-#{arch}-#{os}"
+        assert_path_exists testpath/"hello-#{arch}-#{os}"
         file_output = shell_output("file --brief hello-#{arch}-#{os}").strip
         if os == "linux"
-          assert_match(\bELF\b, file_output)
-          assert_match(\b#{arch.tr("_", "-")}\b, file_output)
+          assert_match(/\bELF\b/, file_output)
+          assert_match(/\b#{arch.tr("_", "-")}\b/, file_output)
         else
-          assert_match(\bMach-O\b, file_output)
+          assert_match(/\bMach-O\b/, file_output)
           expected_arch = (arch == "aarch64") ? "arm64" : arch
-          assert_match(\b#{expected_arch}\b, file_output)
+          assert_match(/\b#{expected_arch}\b/, file_output)
         end
       end
     end
 
     native_os = OS.mac? ? "macos" : OS.kernel_name.downcase
     native_arch = Hardware::CPU.arm? ? "aarch64" : Hardware::CPU.arch
-    assert_equal "Hello, world!", shell_output(".hello-#{native_arch}-#{native_os}")
+    assert_equal "Hello, world!", shell_output("./hello-#{native_arch}-#{native_os}")
 
     # error: 'TARGET_OS_IPHONE' is not defined, evaluates to 0
-    # https:github.comziglangzigissues10377
+    # https://github.com/ziglang/zig/issues/10377
     ENV.delete "CPATH"
-    (testpath"hello.c").write <<~C
+    (testpath/"hello.c").write <<~C
       #include <stdio.h>
       int main() {
         fprintf(stdout, "Hello, world!");
         return 0;
       }
     C
-    system bin"zig", "cc", "hello.c", "-o", "hello-c"
-    assert_equal "Hello, world!", shell_output(".hello-c")
+    system bin/"zig", "cc", "hello.c", "-o", "hello-c"
+    assert_equal "Hello, world!", shell_output("./hello-c")
 
     return unless OS.mac?
 
-    # See https:github.comHomebrewhomebrew-corepull211129
-    assert_includes (bin"zig").dynamically_linked_libraries, "usrliblibc++.1.dylib"
+    # See https://github.com/Homebrew/homebrew-core/pull/211129
+    assert_includes (bin/"zig").dynamically_linked_libraries, "/usr/lib/libc++.1.dylib"
   end
 end
 
@@ -138,10 +138,10 @@ closes #23189
  build.zig | 8 +++++++-
  1 file changed, 7 insertions(+), 1 deletion(-)
 
-diff --git abuild.zig bbuild.zig
+diff --git a/build.zig b/build.zig
 index 15762f0ae881..ea729f408f74 100644
---- abuild.zig
-+++ bbuild.zig
+--- a/build.zig
++++ b/build.zig
 @@ -782,7 +782,13 @@ fn addCmakeCfgOptionsToExe(
                  mod.linkSystemLibrary("unwind", .{});
              },
@@ -151,7 +151,7 @@ index 15762f0ae881..ea729f408f74 100644
 +                    mod.link_libcpp = true;
 +                } else {
 +                    const sdk = std.zig.system.darwin.getSdk(b.allocator, b.graph.host.result) orelse return error.SdkDetectFailed;
-+                    const @"libc++" = b.pathJoin(&.{ sdk, "usrliblibc++.tbd" });
++                    const @"libc++" = b.pathJoin(&.{ sdk, "usr/lib/libc++.tbd" });
 +                    exe.root_module.addObjectFile(.{ .cwd_relative = @"libc++" });
 +                }
              },

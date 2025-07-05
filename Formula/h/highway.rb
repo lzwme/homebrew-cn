@@ -1,10 +1,10 @@
 class Highway < Formula
   desc "Performance-portable, length-agnostic SIMD with runtime dispatch"
-  homepage "https:github.comgooglehighway"
-  url "https:github.comgooglehighwayarchiverefstags1.2.0.tar.gz"
+  homepage "https://github.com/google/highway"
+  url "https://ghfast.top/https://github.com/google/highway/archive/refs/tags/1.2.0.tar.gz"
   sha256 "7e0be78b8318e8bdbf6fa545d2ecb4c90f947df03f7aadc42c1967f019e63343"
   license "Apache-2.0"
-  head "https:github.comgooglehighway.git", branch: "master"
+  head "https://github.com/google/highway.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -23,10 +23,10 @@ class Highway < Formula
   depends_on "cmake" => :build
 
   # These used to be bundled with `jpeg-xl`.
-  link_overwrite "includehwy*", "libpkgconfiglibhwy*"
+  link_overwrite "include/hwy/*", "lib/pkgconfig/libhwy*"
 
   # Avoid compiling ARM SVE on Apple Silicon
-  # Issue ref: https:github.comgooglehighwayissues2317
+  # Issue ref: https://github.com/google/highway/issues/2317
   patch :DATA
 
   def install
@@ -39,28 +39,28 @@ class Highway < Formula
                     *std_cmake_args
     system "cmake", "--build", "builddir"
     system "cmake", "--install", "builddir"
-    (share"hwy").install "hwyexamples"
+    (share/"hwy").install "hwy/examples"
   end
 
   test do
     system ENV.cxx, "-std=c++11", "-I#{share}", "-I#{include}",
-                    share"hwyexamplesbenchmark.cc", "-L#{lib}", "-lhwy"
-    system ".a.out"
+                    share/"hwy/examples/benchmark.cc", "-L#{lib}", "-lhwy"
+    system "./a.out"
   end
 end
 
 __END__
-diff --git ahwydetect_targets.h bhwydetect_targets.h
+diff --git a/hwy/detect_targets.h b/hwy/detect_targets.h
 index a8d4a13f..e0ffb33a 100644
---- ahwydetect_targets.h
-+++ bhwydetect_targets.h
+--- a/hwy/detect_targets.h
++++ b/hwy/detect_targets.h
 @@ -223,8 +223,12 @@
  #endif
 
-  SVE[2] require recent clang or gcc versions.
-+
-+ SVE is not supported on Apple arm64 CPUs and also crashes the compiler:
-+ https:github.comllvmllvm-projectissues97198
+ // SVE[2] require recent clang or gcc versions.
++//
++// SVE is not supported on Apple arm64 CPUs and also crashes the compiler:
++// https://github.com/llvm/llvm-project/issues/97198
  #if (HWY_COMPILER_CLANG && HWY_COMPILER_CLANG < 1100) || \
 -    (HWY_COMPILER_GCC_ACTUAL && HWY_COMPILER_GCC_ACTUAL < 1000)
 +    (HWY_COMPILER_GCC_ACTUAL && HWY_COMPILER_GCC_ACTUAL < 1000) || \

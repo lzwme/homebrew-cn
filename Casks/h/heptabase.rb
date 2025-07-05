@@ -5,11 +5,11 @@ cask "heptabase" do
   sha256 arm:   "7ab4bca6dc462dfbe73384160ddcdefe042f68d86f427b4abb817ec858a77eb8",
          intel: "92b2a60552a4d6f9b22271a2e4a0166b9c3a72c483c39f7092aea57515a08f5a"
 
-  url "https:github.comheptametaproject-metareleasesdownloadv#{version}Heptabase-#{version}#{arch}-mac.zip",
-      verified: "github.comheptametaproject-meta"
+  url "https://ghfast.top/https://github.com/heptameta/project-meta/releases/download/v#{version}/Heptabase-#{version}#{arch}-mac.zip",
+      verified: "github.com/heptameta/project-meta/"
   name "Hepta"
   desc "Note-taking tool for visual learning"
-  homepage "https:heptabase.com"
+  homepage "https://heptabase.com/"
 
   livecheck do
     url :url
@@ -22,7 +22,7 @@ cask "heptabase" do
   app "Heptabase.app"
 
   zap trash: [
-    "~LibraryPreferencesapp.projectmeta.projectmeta.plist",
-    "~LibrarySaved Application Stateapp.projectmeta.projectmeta.savedState",
+    "~/Library/Preferences/app.projectmeta.projectmeta.plist",
+    "~/Library/Saved Application State/app.projectmeta.projectmeta.savedState",
   ]
 end

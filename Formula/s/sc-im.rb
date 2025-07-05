@@ -1,11 +1,11 @@
 class ScIm < Formula
   desc "Spreadsheet program for the terminal, using ncurses"
-  homepage "https:github.comandmarti1424sc-im"
-  url "https:github.comandmarti1424sc-imarchiverefstagsv0.8.5.tar.gz"
+  homepage "https://github.com/andmarti1424/sc-im"
+  url "https://ghfast.top/https://github.com/andmarti1424/sc-im/archive/refs/tags/v0.8.5.tar.gz"
   sha256 "49adb76fc55bc3e6ea8ee414f41428db4aef947e247718d9210be8d14a6524bd"
   license "BSD-4-Clause"
   revision 1
-  head "https:github.comandmarti1424sc-im.git", branch: "main"
+  head "https://github.com/andmarti1424/sc-im.git", branch: "main"
 
   bottle do
     sha256 arm64_sequoia: "7aba3a846b8467a016703a76d89d74adbc8dff5bf280bf2efdb74b606a3e9af3"
@@ -41,8 +41,8 @@ class ScIm < Formula
         s.gsub! "MAXROWS=65536", "MAXROWS=1048576"
         if OS.mac?
           # Use `pbcopy` and `pbpaste` as the default clipboard commands.
-          s.gsub!(^CFLAGS.*(xclip|tmux).*, "#\\0")
-          s.gsub!(^#(CFLAGS.*pb(copy|paste).*)$, "\\1")
+          s.gsub!(/^CFLAGS.*(xclip|tmux).*/, "#\\0")
+          s.gsub!(/^#(CFLAGS.*pb(copy|paste).*)$/, "\\1")
         end
       end
       system "make", "prefix=#{prefix}"
@@ -57,7 +57,7 @@ class ScIm < Formula
       getnum A1
     EOS
     output = pipe_output(
-      "#{bin}sc-im --nocurses --quit_afterload 2>devnull", input
+      "#{bin}/sc-im --nocurses --quit_afterload 2>/dev/null", input
     )
     assert_equal "2", output.lines.last.chomp
   end

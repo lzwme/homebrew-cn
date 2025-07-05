@@ -1,10 +1,10 @@
 class DockerGen < Formula
   desc "Generate files from docker container metadata"
-  homepage "https:github.comnginx-proxydocker-gen"
-  url "https:github.comnginx-proxydocker-genarchiverefstags0.14.7.tar.gz"
+  homepage "https://github.com/nginx-proxy/docker-gen"
+  url "https://ghfast.top/https://github.com/nginx-proxy/docker-gen/archive/refs/tags/0.14.7.tar.gz"
   sha256 "a00a5bf583e1f4be77be35c2adb1d0377ae51ecb1fd8b00951f443237edf94f4"
   license "MIT"
-  head "https:github.comnginx-proxydocker-gen.git", branch: "main"
+  head "https://github.com/nginx-proxy/docker-gen.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "5fda1495e6af67b21c960c2e689e47f77219c6106fe129b01c3a9b58e48b4811"
@@ -19,10 +19,10 @@ class DockerGen < Formula
 
   def install
     ldflags = "-s -w -X main.buildVersion=#{version}"
-    system "go", "build", *std_go_args(ldflags:), ".cmddocker-gen"
+    system "go", "build", *std_go_args(ldflags:), "./cmd/docker-gen"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}docker-gen --version")
+    assert_match version.to_s, shell_output("#{bin}/docker-gen --version")
   end
 end

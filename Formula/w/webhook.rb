@@ -1,10 +1,10 @@
 class Webhook < Formula
   desc "Lightweight, configurable incoming webhook server"
-  homepage "https:github.comadnanhwebhook"
-  url "https:github.comadnanhwebhookarchiverefstags2.8.2.tar.gz"
+  homepage "https://github.com/adnanh/webhook"
+  url "https://ghfast.top/https://github.com/adnanh/webhook/archive/refs/tags/2.8.2.tar.gz"
   sha256 "c233a810effc24b5ed5653f4fa82152f288ec937d5744a339f7066a6cbccc565"
   license "MIT"
-  head "https:github.comadnanhwebhook.git", branch: "master"
+  head "https://github.com/adnanh/webhook.git", branch: "master"
 
   bottle do
     rebuild 1
@@ -23,9 +23,9 @@ class Webhook < Formula
   end
 
   test do
-    (testpath"hooks.yaml").write <<~YAML
+    (testpath/"hooks.yaml").write <<~YAML
       - id: test
-        execute-command: binsh
+        execute-command: /bin/sh
         command-working-directory: "#{testpath}"
         pass-arguments-to-command:
         - source: string
@@ -36,12 +36,12 @@ class Webhook < Formula
 
     port = free_port
     fork do
-      exec bin"webhook", "-hooks", "hooks.yaml", "-port", port.to_s
+      exec bin/"webhook", "-hooks", "hooks.yaml", "-port", port.to_s
     end
     sleep 1
 
-    system "curl", "localhost:#{port}hookstest"
+    system "curl", "localhost:#{port}/hooks/test"
     sleep 1
-    assert_equal testpath.to_s, (testpath"out.txt").read.chomp
+    assert_equal testpath.to_s, (testpath/"out.txt").read.chomp
   end
 end

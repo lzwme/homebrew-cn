@@ -1,7 +1,7 @@
 class Mask < Formula
   desc "CLI task runner defined by a simple markdown file"
-  homepage "https:github.comjacobdeichertmask"
-  url "https:github.comjacobdeichertmaskarchiverefstagsmask0.11.6.tar.gz"
+  homepage "https://github.com/jacobdeichert/mask/"
+  url "https://ghfast.top/https://github.com/jacobdeichert/mask/archive/refs/tags/mask/0.11.6.tar.gz"
   sha256 "e76ae20a120c3ab44f1b14e73ff3f1b39d900bc66f8d2dab7fed4706bacd92fd"
   license "MIT"
 
@@ -26,7 +26,7 @@ class Mask < Formula
   end
 
   test do
-    (testpath"maskfile.md").write <<~MARKDOWN
+    (testpath/"maskfile.md").write <<~MARKDOWN
       # Example maskfile
 
       ## hello (name)
@@ -35,6 +35,6 @@ class Mask < Formula
       printf "Hello %s!" "$name"
       ```
     MARKDOWN
-    assert_equal "Hello Homebrew!", shell_output("#{bin}mask hello Homebrew")
+    assert_equal "Hello Homebrew!", shell_output("#{bin}/mask hello Homebrew")
   end
 end

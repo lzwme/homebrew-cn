@@ -1,10 +1,10 @@
 class Helix < Formula
   desc "Post-modern modal text editor"
-  homepage "https:helix-editor.com"
-  url "https:github.comhelix-editorhelixreleasesdownload25.01.1helix-25.01.1-source.tar.xz"
+  homepage "https://helix-editor.com"
+  url "https://ghfast.top/https://github.com/helix-editor/helix/releases/download/25.01.1/helix-25.01.1-source.tar.xz"
   sha256 "12508c4f5b9ae6342299bd40d281cd9582d3b51487bffe798f3889cb8f931609"
   license "MPL-2.0"
-  head "https:github.comhelix-editorhelix.git", branch: "master"
+  head "https://github.com/helix-editor/helix.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "cca895da8d7984d1dc974a69c1cac38111fab2b7c32d5f0bc66e919dbd2bd4a6"
@@ -22,18 +22,18 @@ class Helix < Formula
   conflicts_with "hex", because: "both install `hx` binaries"
 
   def install
-    ENV["HELIX_DEFAULT_RUNTIME"] = libexec"runtime"
+    ENV["HELIX_DEFAULT_RUNTIME"] = libexec/"runtime"
     system "cargo", "install", "-vv", *std_cargo_args(path: "helix-term")
-    rm_r "runtimegrammarssources"
+    rm_r "runtime/grammars/sources/"
     libexec.install "runtime"
 
-    bash_completion.install "contribcompletionhx.bash" => "hx"
-    fish_completion.install "contribcompletionhx.fish"
-    zsh_completion.install "contribcompletionhx.zsh" => "_hx"
+    bash_completion.install "contrib/completion/hx.bash" => "hx"
+    fish_completion.install "contrib/completion/hx.fish"
+    zsh_completion.install "contrib/completion/hx.zsh" => "_hx"
   end
 
   test do
-    assert_match "post-modern text editor", shell_output("#{bin}hx --help")
-    assert_match "✓", shell_output("#{bin}hx --health")
+    assert_match "post-modern text editor", shell_output("#{bin}/hx --help")
+    assert_match "✓", shell_output("#{bin}/hx --health")
   end
 end

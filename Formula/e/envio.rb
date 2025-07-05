@@ -1,10 +1,10 @@
 class Envio < Formula
   desc "Modern And Secure CLI Tool For Managing Environment Variables"
-  homepage "https:envio-cli.github.iohome"
-  url "https:github.comenvio-clienvioarchiverefstagsv0.6.1.tar.gz"
+  homepage "https://envio-cli.github.io/home"
+  url "https://ghfast.top/https://github.com/envio-cli/envio/archive/refs/tags/v0.6.1.tar.gz"
   sha256 "24cd7c485226be7f7921a95ae4edaf3cb510c90a339c51e51423c3eb4deee6dc"
   license any_of: ["Apache-2.0", "MIT"]
-  head "https:github.comenvio-clienvio.git", branch: "main"
+  head "https://github.com/envio-cli/envio.git", branch: "main"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "f0d968440fe2fcddd6c39d2541817b3cd51267e520d06ecd2cb1e80f03ffd4a5"
@@ -27,10 +27,10 @@ class Envio < Formula
 
   test do
     # Setup envio config path
-    mkdir testpath".envio"
-    touch testpath".enviosetenv.sh"
+    mkdir testpath/".envio"
+    touch testpath/".envio/setenv.sh"
 
-    (testpath"batch.gpg").write <<~EOS
+    (testpath/"batch.gpg").write <<~EOS
       Key-Type: RSA
       Key-Length: 2048
       Subkey-Type: RSA
@@ -42,19 +42,19 @@ class Envio < Formula
       %commit
     EOS
 
-    system Formula["gnupg"].opt_bin"gpg", "--batch", "--gen-key", "batch.gpg"
+    system Formula["gnupg"].opt_bin/"gpg", "--batch", "--gen-key", "batch.gpg"
 
     begin
-      output = shell_output("#{bin}envio create brewtest -g #{testpath}.gnupgtrustdb.gpg", 1)
+      output = shell_output("#{bin}/envio create brewtest -g #{testpath}/.gnupg/trustdb.gpg", 1)
       assert_match "Profiles directory does not exist creating it now..", output
-      assert_path_exists testpath".envioprofilesbrewtest.env"
+      assert_path_exists testpath/".envio/profiles/brewtest.env"
 
-      output = shell_output("#{bin}envio list")
+      output = shell_output("#{bin}/envio list")
       assert_empty output
 
-      assert_match version.to_s, shell_output("#{bin}envio version")
+      assert_match version.to_s, shell_output("#{bin}/envio version")
     ensure
-      system Formula["gnupg"].opt_bin"gpgconf", "--kill", "gpg-agent"
+      system Formula["gnupg"].opt_bin/"gpgconf", "--kill", "gpg-agent"
     end
   end
 end

@@ -1,13 +1,13 @@
 class MysqlConnectorCxx < Formula
   desc "MySQL database connector for C++ applications"
-  homepage "https:github.commysqlmysql-connector-cpp"
-  url "https:cdn.mysql.comDownloadsConnector-C++mysql-connector-c++-9.3.0-src.tar.gz"
+  homepage "https://github.com/mysql/mysql-connector-cpp"
+  url "https://cdn.mysql.com/Downloads/Connector-C++/mysql-connector-c++-9.3.0-src.tar.gz"
   sha256 "268a6f7f4a6cb59f53dde59623be1559f913a29ec1de81bf0ffccbf780d1b416"
   license "GPL-2.0-only" => { with: "Universal-FOSS-exception-1.0" }
 
   livecheck do
-    url "https:dev.mysql.comdownloadsconnectorcpp?tpl=files&os=src"
-    regex(href=.*?mysql-connector-c%2B%2B[._-]v?(\d+(?:\.\d+)+)[._-]src\.ti)
+    url "https://dev.mysql.com/downloads/connector/cpp/?tpl=files&os=src"
+    regex(/href=.*?mysql-connector-c%2B%2B[._-]v?(\d+(?:\.\d+)+)[._-]src\.t/i)
   end
 
   bottle do
@@ -31,7 +31,7 @@ class MysqlConnectorCxx < Formula
     ENV["CMAKE_POLICY_VERSION_MINIMUM"] = "3.5"
 
     args = %w[lz4 rapidjson zlib zstd].map do |libname|
-      rm_r(buildpath"cdkextra"libname)
+      rm_r(buildpath/"cdk/extra"/libname)
       "-DWITH_#{libname.upcase}=system"
     end
 
@@ -41,12 +41,12 @@ class MysqlConnectorCxx < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~CPP
+    (testpath/"test.cpp").write <<~CPP
       #include <iostream>
-      #include <mysqlxxdevapi.h>
+      #include <mysqlx/xdevapi.h>
       int main(void)
       try {
-        ::mysqlx::Session sess("mysqlx:root@127.0.0.1");
+        ::mysqlx::Session sess("mysqlx://root@127.0.0.1");
         return 1;
       }
       catch (const mysqlx::Error &err)
@@ -57,7 +57,7 @@ class MysqlConnectorCxx < Formula
     CPP
     system ENV.cxx, "test.cpp", "-std=c++11", "-I#{include}",
                     "-L#{lib}", "-lmysqlcppconnx", "-o", "test"
-    output = shell_output(".test")
+    output = shell_output("./test")
     assert_match "Connection refused", output
   end
 end

@@ -1,14 +1,14 @@
 class Cdncheck < Formula
   desc "Utility to detect various technology for a given IP address"
-  homepage "https:projectdiscovery.io"
-  url "https:github.comprojectdiscoverycdncheckarchiverefstagsv1.1.25.tar.gz"
+  homepage "https://projectdiscovery.io"
+  url "https://ghfast.top/https://github.com/projectdiscovery/cdncheck/archive/refs/tags/v1.1.25.tar.gz"
   sha256 "61a9ca3ea6663fe4fe2c105ca98cb503e8a39edd7b77c8698522aac60ef57785"
   license "MIT"
-  head "https:github.comprojectdiscoverycdncheck.git", branch: "main"
+  head "https://github.com/projectdiscovery/cdncheck.git", branch: "main"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -23,12 +23,12 @@ class Cdncheck < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), ".cmdcdncheck"
+    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/cdncheck"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}cdncheck -version 2>&1")
+    assert_match version.to_s, shell_output("#{bin}/cdncheck -version 2>&1")
 
-    assert_match "Found result: 1", shell_output("#{bin}cdncheck -i 173.245.48.1232 2>&1")
+    assert_match "Found result: 1", shell_output("#{bin}/cdncheck -i 173.245.48.12/32 2>&1")
   end
 end

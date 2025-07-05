@@ -2,12 +2,12 @@ cask "font-birthstone-bounce" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefonts.git",
-      verified:  "github.comgooglefonts",
+  url "https://github.com/google/fonts.git",
+      verified:  "github.com/google/fonts",
       branch:    "main",
-      only_path: "oflbirthstonebounce"
+      only_path: "ofl/birthstonebounce"
   name "Birthstone Bounce"
-  homepage "https:fonts.google.comspecimenBirthstone+Bounce"
+  homepage "https://fonts.google.com/specimen/Birthstone+Bounce"
 
   font "BirthstoneBounce-Medium.ttf"
   font "BirthstoneBounce-Regular.ttf"

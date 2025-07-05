@@ -1,11 +1,11 @@
 class Swiftlint < Formula
   desc "Tool to enforce Swift style and conventions"
-  homepage "https:github.comrealmSwiftLint"
-  url "https:github.comrealmSwiftLint.git",
+  homepage "https://github.com/realm/SwiftLint"
+  url "https://github.com/realm/SwiftLint.git",
       tag:      "0.59.1",
       revision: "625792423014cc49b0a1e5a1a5c0d6b8b3de10f9"
   license "MIT"
-  head "https:github.comrealmSwiftLint.git", branch: "main"
+  head "https://github.com/realm/SwiftLint.git", branch: "main"
 
   no_autobump! because: :requires_manual_review
 
@@ -33,16 +33,16 @@ class Swiftlint < Formula
       ["--static-swift-stdlib"]
     end
     system "swift", "build", *args, "--configuration", "release", "--product", "swiftlint"
-    bin.install ".buildreleaseswiftlint"
-    generate_completions_from_executable(bin"swiftlint", "--generate-completion-script")
+    bin.install ".build/release/swiftlint"
+    generate_completions_from_executable(bin/"swiftlint", "--generate-completion-script")
   end
 
   test do
-    (testpath"Test.swift").write "import Foundation"
+    (testpath/"Test.swift").write "import Foundation"
     assert_match "Test.swift:1:1: warning: Trailing Newline Violation: " \
                  "Files should have a single trailing newline (trailing_newline)",
-      shell_output("SWIFTLINT_SWIFT_VERSION=5 SWIFTLINT_DISABLE_SOURCEKIT=1 #{bin}swiftlint lint --no-cache").chomp
+      shell_output("SWIFTLINT_SWIFT_VERSION=5 SWIFTLINT_DISABLE_SOURCEKIT=1 #{bin}/swiftlint lint --no-cache").chomp
     assert_match version.to_s,
-      shell_output("#{bin}swiftlint version").chomp
+      shell_output("#{bin}/swiftlint version").chomp
   end
 end

@@ -1,15 +1,15 @@
 class ProtocGenGrpcSwift < Formula
   desc "Protoc plugin for generating gRPC Swift stubs"
-  homepage "https:github.comgrpcgrpc-swift-protobuf"
-  url "https:github.comgrpcgrpc-swift-protobufarchiverefstags2.0.0.tar.gz"
+  homepage "https://github.com/grpc/grpc-swift-protobuf"
+  url "https://ghfast.top/https://github.com/grpc/grpc-swift-protobuf/archive/refs/tags/2.0.0.tar.gz"
   sha256 "308e62a9160603310f055a8fa02484f80e245ad49e094cef4193b520a1736adf"
   license "Apache-2.0"
   version_scheme 1
-  head "https:github.comgrpcgrpc-swift-protobuf.git", branch: "main"
+  head "https://github.com/grpc/grpc-swift-protobuf.git", branch: "main"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -19,7 +19,7 @@ class ProtocGenGrpcSwift < Formula
   end
 
   depends_on xcode: ["15.0", :build]
-  # https:swiftpackageindex.comgrpcgrpc-swiftdocumentationgrpccorecompatibility#Platforms
+  # https://swiftpackageindex.com/grpc/grpc-swift/documentation/grpccore/compatibility#Platforms
   depends_on macos: :sequoia
   depends_on "protobuf"
   depends_on "swift-protobuf"
@@ -33,11 +33,11 @@ class ProtocGenGrpcSwift < Formula
       ["--static-swift-stdlib"]
     end
     system "swift", "build", *args, "-c", "release", "--product", "protoc-gen-grpc-swift-2"
-    bin.install ".buildreleaseprotoc-gen-grpc-swift-2"
+    bin.install ".build/release/protoc-gen-grpc-swift-2"
   end
 
   test do
-    (testpath"echo.proto").write <<~PROTO
+    (testpath/"echo.proto").write <<~PROTO
       syntax = "proto3";
       service Echo {
         rpc Get(EchoRequest) returns (EchoResponse) {}
@@ -52,7 +52,7 @@ class ProtocGenGrpcSwift < Formula
         string text = 1;
       }
     PROTO
-    system Formula["protobuf"].opt_bin"protoc", "echo.proto", "--grpc-swift-2_out=."
-    assert_path_exists testpath"echo.grpc.swift"
+    system Formula["protobuf"].opt_bin/"protoc", "echo.proto", "--grpc-swift-2_out=."
+    assert_path_exists testpath/"echo.grpc.swift"
   end
 end

@@ -1,7 +1,7 @@
 class Bpmnlint < Formula
   desc "Validate BPMN diagrams based on configurable lint rules"
-  homepage "https:github.combpmn-iobpmnlint"
-  url "https:registry.npmjs.orgbpmnlint-bpmnlint-11.6.0.tgz"
+  homepage "https://github.com/bpmn-io/bpmnlint"
+  url "https://registry.npmjs.org/bpmnlint/-/bpmnlint-11.6.0.tgz"
   sha256 "718a92edbbb5f9ebab34e3c059cb6843c0b38b6d73c2e37a82252d4c00866447"
   license "MIT"
 
@@ -13,25 +13,25 @@ class Bpmnlint < Formula
 
   def install
     system "npm", "install", *std_npm_args
-    bin.install_symlink libexec"binbpmnlint"
+    bin.install_symlink libexec/"bin/bpmnlint"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}bpmnlint --version")
+    assert_match version.to_s, shell_output("#{bin}/bpmnlint --version")
 
-    system bin"bpmnlint", "--init"
-    assert_match "\"extends\": \"bpmnlint:recommended\"", (testpath".bpmnlintrc").read
+    system bin/"bpmnlint", "--init"
+    assert_match "\"extends\": \"bpmnlint:recommended\"", (testpath/".bpmnlintrc").read
 
-    (testpath"diagram.bpmn").write <<~XML
+    (testpath/"diagram.bpmn").write <<~XML
       <?xml version="1.0" encoding="UTF-8"?>
-      <bpmn:definitions xmlns:bpmn="http:www.omg.orgspecBPMN20100524MODEL" id="Definitions_1">
+      <bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" id="Definitions_1">
         <bpmn:process id="Process_1" isExecutable="false">
-          <bpmn:startEvent id="StartEvent_1">
-        <bpmn:process>
-      <bpmn:definitions>
+          <bpmn:startEvent id="StartEvent_1"/>
+        </bpmn:process>
+      </bpmn:definitions>
     XML
 
-    output = shell_output("#{bin}bpmnlint diagram.bpmn 2>&1", 1)
+    output = shell_output("#{bin}/bpmnlint diagram.bpmn 2>&1", 1)
     assert_match "Process_1     error  Process is missing end event   end-event-required", output
   end
 end

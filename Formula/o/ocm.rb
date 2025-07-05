@@ -1,10 +1,10 @@
 class Ocm < Formula
   desc "CLI for the Red Hat OpenShift Cluster Manager"
-  homepage "https:www.openshift.com"
-  url "https:github.comopenshift-onlineocm-cliarchiverefstagsv1.0.6.tar.gz"
+  homepage "https://www.openshift.com/"
+  url "https://ghfast.top/https://github.com/openshift-online/ocm-cli/archive/refs/tags/v1.0.6.tar.gz"
   sha256 "2773eb36c66cea85f4fb6aa5f0ffbf323046dae2b1ed5a37f18b487022f6414b"
   license "Apache-2.0"
-  head "https:github.comopenshift-onlineocm-cli.git", branch: "main"
+  head "https://github.com/openshift-online/ocm-cli.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "3095b2b95242640613530c462d6eeab9e5574d9cc838995bba0d4b42d183b34c"
@@ -19,16 +19,16 @@ class Ocm < Formula
 
   def install
     ldflags = "-s -w"
-    system "go", "build", *std_go_args(ldflags:), ".cmdocm"
-    generate_completions_from_executable(bin"ocm", "completion")
+    system "go", "build", *std_go_args(ldflags:), "./cmd/ocm"
+    generate_completions_from_executable(bin/"ocm", "completion")
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}ocm version")
+    assert_match version.to_s, shell_output("#{bin}/ocm version")
 
     # Test that the config can be created and configuration set in it
-    ENV["OCM_CONFIG"] = testpath"ocm.json"
-    system bin"ocm", "config", "set", "pager", "less"
+    ENV["OCM_CONFIG"] = testpath/"ocm.json"
+    system bin/"ocm", "config", "set", "pager", "less"
     config_json = JSON.parse(File.read(ENV["OCM_CONFIG"]))
     assert_equal "less", config_json["pager"]
   end

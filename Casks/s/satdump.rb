@@ -5,11 +5,11 @@ cask "satdump" do
   sha256 arm:   "a84cdf81b27a8b484b654ccafe6072cd5b3e7dc06fc3280dd2b801a2ffeef93c",
          intel: "009e48d0b243a1090e07ffe71b2678a0aab314129802522c6aafef4c83b7dcd7"
 
-  url "https:github.comSatDumpSatDumpreleasesdownload#{version}SatDump-macOS-#{arch}.dmg",
-      verified: "github.comSatDumpSatDump"
+  url "https://ghfast.top/https://github.com/SatDump/SatDump/releases/download/#{version}/SatDump-macOS-#{arch}.dmg",
+      verified: "github.com/SatDump/SatDump/"
   name "SatDump"
   desc "Generic satellite data processing software"
-  homepage "https:www.satdump.org"
+  homepage "https://www.satdump.org/"
 
   livecheck do
     url :url
@@ -19,7 +19,7 @@ cask "satdump" do
   no_autobump! because: :requires_manual_review
 
   app "SatDump.app"
-  binary "#{appdir}SatDump.appContentsMacOSsatdump"
+  binary "#{appdir}/SatDump.app/Contents/MacOS/satdump"
 
-  zap trash: "~LibrarySaved Application Statecom.altillimity.satdump.savedState"
+  zap trash: "~/Library/Saved Application State/com.altillimity.satdump.savedState"
 end

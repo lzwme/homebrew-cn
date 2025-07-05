@@ -1,10 +1,10 @@
 class Oha < Formula
-  desc "HTTP load generator, inspired by rakyllhey with tui animation"
-  homepage "https:github.comhatoooha"
-  url "https:github.comhatooohaarchiverefstagsv1.9.0.tar.gz"
+  desc "HTTP load generator, inspired by rakyll/hey with tui animation"
+  homepage "https://github.com/hatoo/oha/"
+  url "https://ghfast.top/https://github.com/hatoo/oha/archive/refs/tags/v1.9.0.tar.gz"
   sha256 "e40a3898df0229ebea413f24527558a83d75df5cba2b970ece5aa9fad8fb12dc"
   license "MIT"
-  head "https:github.comhatoooha.git", branch: "master"
+  head "https://github.com/hatoo/oha.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "0f2a59ce7ff583d75795933ae29d8b91efc42f8f7debbb21db0e581ce99247ce"
@@ -30,8 +30,8 @@ class Oha < Formula
 
   test do
     output = "[200] 1 responses"
-    assert_match output.to_s, shell_output("#{bin}oha -n 1 -c 1 --no-tui https:www.google.com")
+    assert_match output.to_s, shell_output("#{bin}/oha -n 1 -c 1 --no-tui https://www.google.com")
 
-    assert_match version.to_s, shell_output("#{bin}oha --version")
+    assert_match version.to_s, shell_output("#{bin}/oha --version")
   end
 end

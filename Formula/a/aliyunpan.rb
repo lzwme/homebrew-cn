@@ -1,10 +1,10 @@
 class Aliyunpan < Formula
   desc "Command-line client tool for Alibaba aDrive disk"
-  homepage "https:github.comtickstepaliyunpan"
-  url "https:github.comtickstepaliyunpanarchiverefstagsv0.3.7.tar.gz"
+  homepage "https://github.com/tickstep/aliyunpan"
+  url "https://ghfast.top/https://github.com/tickstep/aliyunpan/archive/refs/tags/v0.3.7.tar.gz"
   sha256 "65003e0925e5f64b20f47ea030aa01cb40972dc4cce67cc93a69282d88f254b0"
   license "Apache-2.0"
-  head "https:github.comtickstepaliyunpan.git", branch: "main"
+  head "https://github.com/tickstep/aliyunpan.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "f43f03044ff8db6b97fee26628dbe66343935e13e53aee6d973adfddf0924b97"
@@ -22,7 +22,7 @@ class Aliyunpan < Formula
   end
 
   test do
-    system bin"aliyunpan", "run", "touch", "output.txt"
-    assert_path_exists testpath"output.txt"
+    system bin/"aliyunpan", "run", "touch", "output.txt"
+    assert_path_exists testpath/"output.txt"
   end
 end

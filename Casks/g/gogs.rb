@@ -13,23 +13,23 @@ cask "gogs" do
          arm64_linux:  "c78c0d2a751cb956081bc0f06ed7df4e02f8417a765df90da25a21639c74c607",
          x86_64_linux: "cb146291e29bbf1e7a8dc13e71a23eb47b5ec55eec44680e8bd8777aa0bdaeb4"
 
-  url "https:github.comgogsgogsreleasesdownloadv#{version}gogs_#{version}_#{os}_#{arch}.zip",
-      verified: "github.comgogsgogs"
+  url "https://ghfast.top/https://github.com/gogs/gogs/releases/download/v#{version}/gogs_#{version}_#{os}_#{arch}.zip",
+      verified: "github.com/gogs/gogs/"
   name "Go Git Service"
   desc "Self-hosted Git service"
-  homepage "https:gogs.io"
+  homepage "https://gogs.io/"
 
   no_autobump! because: :requires_manual_review
 
-  # shim script (https:github.comHomebrewhomebrew-caskissues18809)
-  shimscript = "#{staged_path}gogs.wrapper.sh"
+  # shim script (https://github.com/Homebrew/homebrew-cask/issues/18809)
+  shimscript = "#{staged_path}/gogs.wrapper.sh"
 
   binary shimscript, target: "gogs"
 
   preflight do
     File.write shimscript, <<~EOS
-      #!binsh
-      cd '#{staged_path}gogs' && .gogs "$@"
+      #!/bin/sh
+      cd '#{staged_path}/gogs' && ./gogs "$@"
     EOS
   end
 

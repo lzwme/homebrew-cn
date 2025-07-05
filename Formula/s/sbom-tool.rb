@@ -1,10 +1,10 @@
 class SbomTool < Formula
   desc "Scalable and enterprise ready tool to create SBOMs for any variety of artifacts"
-  homepage "https:github.commicrosoftsbom-tool"
-  url "https:github.commicrosoftsbom-toolarchiverefstagsv4.0.3.tar.gz"
+  homepage "https://github.com/microsoft/sbom-tool"
+  url "https://ghfast.top/https://github.com/microsoft/sbom-tool/archive/refs/tags/v4.0.3.tar.gz"
   sha256 "5395100f4516eb7c02a7833fcb3683a2d14282ac4eaa4d04b59482d8717a82b8"
   license "MIT"
-  head "https:github.commicrosoftsbom-tool.git", branch: "main"
+  head "https://github.com/microsoft/sbom-tool.git", branch: "main"
 
   # There can be a notable gap between when a version is tagged and a
   # corresponding release is created, so we check the "latest" release instead
@@ -46,8 +46,8 @@ class SbomTool < Formula
       -p:DebugSymbols=false
     ]
 
-    system "dotnet", "publish", "srcMicrosoft.Sbom.ToolMicrosoft.Sbom.Tool.csproj", *args
-    (bin"sbom-tool").write_env_script libexec"Microsoft.Sbom.Tool", DOTNET_ROOT: dotnet.opt_libexec
+    system "dotnet", "publish", "src/Microsoft.Sbom.Tool/Microsoft.Sbom.Tool.csproj", *args
+    (bin/"sbom-tool").write_env_script libexec/"Microsoft.Sbom.Tool", DOTNET_ROOT: dotnet.opt_libexec
   end
 
   test do
@@ -57,12 +57,12 @@ class SbomTool < Formula
       -pn TestProject
       -pv 1.2.3
       -ps Homebrew
-      -nsb https:formulae.brew.sh
+      -nsb https://formulae.brew.sh
     ]
 
-    system bin"sbom-tool", "generate", *args
+    system bin/"sbom-tool", "generate", *args
 
-    json = JSON.parse((testpath"_manifestspdx_2.2manifest.spdx.json").read)
+    json = JSON.parse((testpath/"_manifest/spdx_2.2/manifest.spdx.json").read)
     assert_equal json["name"], "TestProject 1.2.3"
   end
 end

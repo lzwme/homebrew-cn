@@ -1,10 +1,10 @@
 class Sdl3Ttf < Formula
   desc "Library for using TrueType fonts in SDL applications"
-  homepage "https:github.comlibsdl-orgSDL_ttf"
-  url "https:github.comlibsdl-orgSDL_ttfreleasesdownloadrelease-3.2.2SDL3_ttf-3.2.2.tar.gz"
+  homepage "https://github.com/libsdl-org/SDL_ttf"
+  url "https://ghfast.top/https://github.com/libsdl-org/SDL_ttf/releases/download/release-3.2.2/SDL3_ttf-3.2.2.tar.gz"
   sha256 "63547d58d0185c833213885b635a2c0548201cc8f301e6587c0be1a67e1e045d"
   license "Zlib"
-  head "https:github.comlibsdl-orgSDL_ttf.git", branch: "main"
+  head "https://github.com/libsdl-org/SDL_ttf.git", branch: "main"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "472dbc6423662615b135349d3a51e7e71f8bcc143b8ce53e8cfff168680bdebe"
@@ -37,8 +37,8 @@ class Sdl3Ttf < Formula
   end
 
   test do
-    (testpath"test.c").write <<~C
-      #include <SDL3_ttfSDL_ttf.h>
+    (testpath/"test.c").write <<~C
+      #include <SDL3_ttf/SDL_ttf.h>
       #include <stdlib.h>
 
       int main() {
@@ -46,6 +46,6 @@ class Sdl3Ttf < Formula
       }
     C
     system ENV.cc, "test.c", "-I#{Formula["sdl3"].opt_include}", "-L#{lib}", "-lSDL3_ttf", "-o", "test"
-    system ".test"
+    system "./test"
   end
 end

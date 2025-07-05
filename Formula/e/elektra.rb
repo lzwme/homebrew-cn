@@ -1,10 +1,10 @@
 class Elektra < Formula
   desc "Framework to access config settings in a global key database"
-  homepage "https:www.libelektra.org"
-  url "https:www.libelektra.orgftpelektrareleaseselektra-0.11.0.tar.gz"
+  homepage "https://www.libelektra.org"
+  url "https://www.libelektra.org/ftp/elektra/releases/elektra-0.11.0.tar.gz"
   sha256 "4e1f7c986010555a1d30ef2d23c0636373e993bab88e5ec238cac18a469b5cc2"
   license "BSD-3-Clause"
-  head "https:github.comElektraInitiativelibelektra.git", branch: "master"
+  head "https://github.com/ElektraInitiative/libelektra.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -38,16 +38,16 @@ class Elektra < Formula
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 
-    bash_completion.install "scriptscompletionkdb-bash-completion" => "kdb"
-    fish_completion.install "scriptscompletionkdb.fish"
-    zsh_completion.install "scriptscompletionkdb_zsh_completion" => "_kdb"
+    bash_completion.install "scripts/completion/kdb-bash-completion" => "kdb"
+    fish_completion.install "scripts/completion/kdb.fish"
+    zsh_completion.install "scripts/completion/kdb_zsh_completion" => "_kdb"
   end
 
   test do
-    output = shell_output("#{bin}kdb get system:elektraversioninfoslicence")
+    output = shell_output("#{bin}/kdb get system:/elektra/version/infos/licence")
     assert_match "BSD", output
-    shell_output("#{bin}kdb plugin-list").split.each do |plugin|
-      system bin"kdb", "plugin-check", plugin
+    shell_output("#{bin}/kdb plugin-list").split.each do |plugin|
+      system bin/"kdb", "plugin-check", plugin
     end
   end
 end

@@ -2,10 +2,10 @@ cask "bluetility" do
   version "1.6.0"
   sha256 "6df16eb0f4912226a411bfcd1d8eb833e02dc7596026127fc6f2576152933584"
 
-  url "https:github.comjnrossBluetilityreleasesdownload#{version}Bluetility.app.zip"
+  url "https://ghfast.top/https://github.com/jnross/Bluetility/releases/download/#{version}/Bluetility.app.zip"
   name "Bluetility"
   desc "Bluetooth Low Energy browser"
-  homepage "https:github.comjnrossBluetility"
+  homepage "https://github.com/jnross/Bluetility"
 
   livecheck do
     url :url
@@ -19,7 +19,7 @@ cask "bluetility" do
   app "Bluetility.app"
 
   zap trash: [
-    "~LibraryPreferencescom.rossible.Bluetility.plist",
-    "~LibrarySaved Application Statecom.rossible.Bluetility.savedState",
+    "~/Library/Preferences/com.rossible.Bluetility.plist",
+    "~/Library/Saved Application State/com.rossible.Bluetility.savedState",
   ]
 end

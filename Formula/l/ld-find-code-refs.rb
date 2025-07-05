@@ -1,10 +1,10 @@
 class LdFindCodeRefs < Formula
   desc "Build tool for sending feature flag code references to LaunchDarkly"
-  homepage "https:github.comlaunchdarklyld-find-code-refs"
-  url "https:github.comlaunchdarklyld-find-code-refsarchiverefstagsv2.13.0.tar.gz"
+  homepage "https://github.com/launchdarkly/ld-find-code-refs"
+  url "https://ghfast.top/https://github.com/launchdarkly/ld-find-code-refs/archive/refs/tags/v2.13.0.tar.gz"
   sha256 "9367921a6ceb0e00b236f0e6bfc0e7815aa5588c78850abc38015dc9dfaf6091"
   license "Apache-2.0"
-  head "https:github.comlaunchdarklyld-find-code-refs.git", branch: "master"
+  head "https://github.com/launchdarkly/ld-find-code-refs.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "1a042bbee68be9ce54f73a66ab62347c5188b29da378751c69b36c754800859a"
@@ -18,20 +18,20 @@ class LdFindCodeRefs < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), ".cmdld-find-code-refs"
+    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/ld-find-code-refs"
 
-    generate_completions_from_executable(bin"ld-find-code-refs", "completion")
+    generate_completions_from_executable(bin/"ld-find-code-refs", "completion")
   end
 
   test do
     system "git", "init"
-    (testpath"README").write "Testing"
-    (testpath".gitignore").write "Library"
+    (testpath/"README").write "Testing"
+    (testpath/".gitignore").write "Library"
     system "git", "add", "README", ".gitignore"
     system "git", "commit", "-m", "Initial commit"
 
     assert_match "could not retrieve flag key",
-      shell_output(bin"ld-find-code-refs --dryRun " \
+      shell_output(bin/"ld-find-code-refs --dryRun " \
                        "--ignoreServiceErrors -t=xx -p=test -r=test -d=. 2>&1", 1)
   end
 end

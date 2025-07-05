@@ -1,45 +1,45 @@
 class Moc < Formula
   desc "Terminal-based music player"
-  homepage "https:moc.daper.net"
+  homepage "https://moc.daper.net/"
   license "GPL-2.0-or-later"
   revision 10
 
   stable do
-    url "https:ftp.daper.netpubsoftmocstablemoc-2.5.2.tar.bz2"
+    url "https://ftp.daper.net/pub/soft/moc/stable/moc-2.5.2.tar.bz2"
     sha256 "f3a68115602a4788b7cfa9bbe9397a9d5e24c68cb61a57695d1c2c3ecf49db08"
 
     # Remove for > 2.5.2; FFmpeg 4.0 compatibility
     # 01 to 05 below are backported from patches provided 26 Apr 2018 by
     # upstream's John Fitzgerald
     patch do
-      url "https:raw.githubusercontent.comHomebrewformula-patches514941cmoc01-codec-2.5.2.patch"
+      url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/514941c/moc/01-codec-2.5.2.patch"
       sha256 "c6144dbbd85e3b775e3f03e83b0f90457450926583d4511fe32b7d655fdaf4eb"
     end
 
     patch do
-      url "https:raw.githubusercontent.comHomebrewformula-patches514941cmoc02-codecpar-2.5.2.patch"
+      url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/514941c/moc/02-codecpar-2.5.2.patch"
       sha256 "5ee71f762500e68a6ccce84fb9b9a4876e89e7d234a851552290b42c4a35e930"
     end
 
     patch do
-      url "https:raw.githubusercontent.comHomebrewformula-patches514941cmoc03-defines-2.5.2.patch"
+      url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/514941c/moc/03-defines-2.5.2.patch"
       sha256 "2ecfb9afbbfef9bd6f235bf1693d3e94943cf1402c4350f3681195e1fbb3d661"
     end
 
     patch do
-      url "https:raw.githubusercontent.comHomebrewformula-patches514941cmoc04-lockmgr-2.5.2.patch"
+      url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/514941c/moc/04-lockmgr-2.5.2.patch"
       sha256 "9ccfad2f98abb6f974fe6dc4c95d0dc9a754a490c3a87d3bd81082fc5e5f42dc"
     end
 
     patch do
-      url "https:raw.githubusercontent.comHomebrewformula-patches514941cmoc05-audio4-2.5.2.patch"
+      url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/514941c/moc/05-audio4-2.5.2.patch"
       sha256 "9a75ac8479ed895d07725ac9b7d86ceb6c8a1a15ee942c35eb5365f4c3cc7075"
     end
   end
 
   livecheck do
-    url "https:moc.daper.netdownload"
-    regex(href=.*?moc[._-]v?(\d+(?:\.\d+)+)\.ti)
+    url "https://moc.daper.net/download"
+    regex(/href=.*?moc[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -55,7 +55,7 @@ class Moc < Formula
   end
 
   head do
-    url "svn:daper.netmoctrunk"
+    url "svn://daper.net/moc/trunk"
 
     depends_on "popt"
   end
@@ -66,7 +66,7 @@ class Moc < Formula
   depends_on "gettext" => :build
   depends_on "pkgconf" => :build
   depends_on "berkeley-db@5"
-  depends_on "ffmpeg@4" # FFmpeg 5 issue: https:moc.daper.netnode3644
+  depends_on "ffmpeg@4" # FFmpeg 5 issue: https://moc.daper.net/node/3644
   depends_on "flac"
   depends_on "jack"
   depends_on "libmodplug"
@@ -84,12 +84,12 @@ class Moc < Formula
 
   def install
     # macOS iconv implementation is slightly broken since Sonoma.
-    # upstream bug report: https:savannah.gnu.orgbugsindex.php?66541
+    # upstream bug report: https://savannah.gnu.org/bugs/index.php?66541
     ENV["am_cv_func_iconv_works"] = "yes" if OS.mac? && MacOS.version == :sequoia
 
     # Not needed for > 2.5.2
     system "autoreconf", "--force", "--install", "--verbose"
-    system ".configure", *std_configure_args
+    system "./configure", *std_configure_args
     system "make", "install"
   end
 
@@ -98,6 +98,6 @@ class Moc < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}mocp --version")
+    assert_match version.to_s, shell_output("#{bin}/mocp --version")
   end
 end

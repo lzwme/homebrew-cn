@@ -1,10 +1,10 @@
 class ManifestTool < Formula
-  desc "Command-line tool to create and query container image manifest listindexes"
-  homepage "https:github.comestespmanifest-tool"
-  url "https:github.comestespmanifest-toolarchiverefstagsv2.2.0.tar.gz"
+  desc "Command-line tool to create and query container image manifest list/indexes"
+  homepage "https://github.com/estesp/manifest-tool/"
+  url "https://ghfast.top/https://github.com/estesp/manifest-tool/archive/refs/tags/v2.2.0.tar.gz"
   sha256 "a3d770b7fde65d3146c0987e7e7b7be796a2a7a0556476c48b24bd237890cb06"
   license "Apache-2.0"
-  head "https:github.comestespmanifest-tool.git", branch: "main"
+  head "https://github.com/estesp/manifest-tool.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "8a037dc929dd0dfb5cad51397794e1a946d788a81bb54225498ecdb903271adb"
@@ -25,21 +25,21 @@ class ManifestTool < Formula
   test do
     package = "busybox:latest"
     stdout, stderr, = Open3.capture3(
-      bin"manifest-tool", "inspect",
+      bin/"manifest-tool", "inspect",
       package
     )
 
-    if stderr.lines.grep(429 Too Many Requests).first
+    if stderr.lines.grep(/429 Too Many Requests/).first
       print "Can't test against docker hub\n"
       print stderr.lines.join("\n")
     else
-      assert_match package, stdout.lines.grep(^Name:).first
-      assert_match "sha", stdout.lines.grep(Digest:).first
-      assert_match "Platform:", stdout.lines.grep(Platform:).first
-      assert_match "OS:", stdout.lines.grep(OS:\s*linux).first
-      assert_match "Arch:", stdout.lines.grep(Arch:\s*amd64).first
+      assert_match package, stdout.lines.grep(/^Name:/).first
+      assert_match "sha", stdout.lines.grep(/Digest:/).first
+      assert_match "Platform:", stdout.lines.grep(/Platform:/).first
+      assert_match "OS:", stdout.lines.grep(/OS:\s*linux/).first
+      assert_match "Arch:", stdout.lines.grep(/Arch:\s*amd64/).first
     end
 
-    assert_match version.to_s, shell_output("#{bin}manifest-tool --version")
+    assert_match version.to_s, shell_output("#{bin}/manifest-tool --version")
   end
 end

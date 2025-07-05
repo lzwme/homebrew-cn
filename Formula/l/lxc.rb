@@ -1,10 +1,10 @@
 class Lxc < Formula
   desc "CLI client for interacting with LXD"
-  homepage "https:ubuntu.comlxd"
-  url "https:github.comcanonicallxdreleasesdownloadlxd-6.4lxd-6.4.tar.gz"
+  homepage "https://ubuntu.com/lxd"
+  url "https://ghfast.top/https://github.com/canonical/lxd/releases/download/lxd-6.4/lxd-6.4.tar.gz"
   sha256 "69fb7aead2325c7a5eede6dcb1a943a0f6544892929e6ae394729582abdd9aa7"
   license "AGPL-3.0-only"
-  head "https:github.comcanonicallxd.git", branch: "main"
+  head "https://github.com/canonical/lxd.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "680831e50844065f167f9bda1224a8779bea2e5ea5f3c36ac8950ff241cc3a56"
@@ -19,15 +19,15 @@ class Lxc < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), ".lxc"
+    system "go", "build", *std_go_args(ldflags: "-s -w"), "./lxc"
 
-    generate_completions_from_executable(bin"lxc", "completion")
+    generate_completions_from_executable(bin/"lxc", "completion")
   end
 
   test do
-    output = JSON.parse(shell_output("#{bin}lxc remote list --format json"))
-    assert_equal "https:cloud-images.ubuntu.comreleases", output["ubuntu"]["Addr"]
+    output = JSON.parse(shell_output("#{bin}/lxc remote list --format json"))
+    assert_equal "https://cloud-images.ubuntu.com/releases/", output["ubuntu"]["Addr"]
 
-    assert_match version.to_s, shell_output("#{bin}lxc --version")
+    assert_match version.to_s, shell_output("#{bin}/lxc --version")
   end
 end

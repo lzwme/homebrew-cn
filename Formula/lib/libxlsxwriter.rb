@@ -1,10 +1,10 @@
 class Libxlsxwriter < Formula
   desc "C library for creating Excel XLSX files"
-  homepage "https:libxlsxwriter.github.io"
-  url "https:github.comjmcnamaralibxlsxwriterarchiverefstagsv1.2.3.tar.gz"
+  homepage "https://libxlsxwriter.github.io/"
+  url "https://ghfast.top/https://github.com/jmcnamara/libxlsxwriter/archive/refs/tags/v1.2.3.tar.gz"
   sha256 "63f070c19c97ce4d5dfcbc1fa8cc5237d4c9decf39341a31188dbdceef93b542"
   license "BSD-2-Clause"
-  head "https:github.comjmcnamaralibxlsxwriter.git", branch: "main"
+  head "https://github.com/jmcnamara/libxlsxwriter.git", branch: "main"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "4e27e0ca5fb832bede40cb674a8ee9ae926022f871b5e3326d8995f2cdfe0e45"
@@ -23,7 +23,7 @@ class Libxlsxwriter < Formula
   end
 
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include "xlsxwriter.h"
 
       int main() {
@@ -39,7 +39,7 @@ class Libxlsxwriter < Formula
     C
 
     system ENV.cc, "test.c", "-L#{lib}", "-I#{include}", "-lxlsxwriter", "-o", "test"
-    system ".test"
-    assert_path_exists testpath"myexcel.xlsx", "Failed to create xlsx file"
+    system "./test"
+    assert_path_exists testpath/"myexcel.xlsx", "Failed to create xlsx file"
   end
 end

@@ -1,7 +1,7 @@
 class Libxls < Formula
-  desc "Read binary Excel files from CC++"
-  homepage "https:github.comlibxlslibxls"
-  url "https:github.comlibxlslibxlsreleasesdownloadv1.6.3libxls-1.6.3.tar.gz"
+  desc "Read binary Excel files from C/C++"
+  homepage "https://github.com/libxls/libxls"
+  url "https://ghfast.top/https://github.com/libxls/libxls/releases/download/v1.6.3/libxls-1.6.3.tar.gz"
   sha256 "b2fb836ea0b5253a352fb5ca55742e29f06f94f9421c5b8eeccef2e5d43f622c"
   license "BSD-2-Clause"
 
@@ -18,13 +18,13 @@ class Libxls < Formula
   def install
     # Add program prefix `lib` to prevent conflict with another Unix tool `xls2csv`.
     # Arch and Fedora do the same.
-    system ".configure", "--disable-silent-rules", "--program-prefix=lib", *std_configure_args
+    system "./configure", "--disable-silent-rules", "--program-prefix=lib", *std_configure_args
     system "make", "install"
-    pkgshare.install "testfilestest2.xls"
+    pkgshare.install "test/files/test2.xls"
   end
 
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include <stdio.h>
       #include <stdlib.h>
       #include <string.h>
@@ -50,6 +50,6 @@ class Libxls < Formula
     C
 
     system ENV.cc, "test.c", "-L#{lib}", "-I#{include}", "-lxlsreader", "-o", "test"
-    system ".test", pkgshare"test2.xls"
+    system "./test", pkgshare/"test2.xls"
   end
 end

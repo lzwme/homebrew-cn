@@ -12,16 +12,16 @@ cask "openemu@experimental" do
     sha256 "57b6f2b6005119efecb566e8cf611e12f1d0171dcd1f96797a0e9b4c33d3cdb4"
 
     livecheck do
-      url "https:raw.github.comOpenEmuOpenEmu-Updatemasterappcast-experimental.xml"
+      url "https://raw.github.com/OpenEmu/OpenEmu-Update/master/appcast-experimental.xml"
       strategy :sparkle
     end
   end
 
-  url "https:github.comOpenEmuOpenEmureleasesdownloadv#{version}OpenEmu_#{version}-experimental.zip",
-      verified: "github.comOpenEmuOpenEmu"
+  url "https://ghfast.top/https://github.com/OpenEmu/OpenEmu/releases/download/v#{version}/OpenEmu_#{version}-experimental.zip",
+      verified: "github.com/OpenEmu/OpenEmu/"
   name "OpenEmu"
   desc "Retro video game emulation"
-  homepage "https:openemu.org"
+  homepage "https://openemu.org/"
 
   no_autobump! because: :requires_manual_review
 
@@ -33,15 +33,15 @@ cask "openemu@experimental" do
   app "OpenEmu.app"
 
   zap trash: [
-    "~LibraryApplication Supportcom.apple.sharedfilelistcom.apple.LSSharedFileList.ApplicationRecentDocumentsorg.openemu.openemu.sfl*",
-    "~LibraryApplication SupportOpenEmu",
-    "~LibraryApplication Supportorg.openemu.OEXPCCAgent.Agents",
-    "~LibraryCachesOpenEmu",
-    "~LibraryCachesorg.openemu.OpenEmu",
-    "~LibraryCookiesorg.openemu.OpenEmu.binarycookies",
-    "~LibraryHTTPStoragesorg.openemu.OpenEmu.binarycookies",
-    "~LibraryPreferencesorg.openemu.*.plist",
-    "~LibrarySaved Application Stateorg.openemu.OpenEmu.savedState",
+    "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/org.openemu.openemu.sfl*",
+    "~/Library/Application Support/OpenEmu",
+    "~/Library/Application Support/org.openemu.OEXPCCAgent.Agents",
+    "~/Library/Caches/OpenEmu",
+    "~/Library/Caches/org.openemu.OpenEmu",
+    "~/Library/Cookies/org.openemu.OpenEmu.binarycookies",
+    "~/Library/HTTPStorages/org.openemu.OpenEmu.binarycookies",
+    "~/Library/Preferences/org.openemu.*.plist",
+    "~/Library/Saved Application State/org.openemu.OpenEmu.savedState",
   ]
 
   caveats do

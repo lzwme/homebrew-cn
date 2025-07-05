@@ -1,14 +1,14 @@
 class Gopls < Formula
   desc "Language server for the Go language"
-  homepage "https:github.comgolangtoolstreemastergopls"
-  url "https:github.comgolangtoolsarchiverefstagsgoplsv0.19.1.tar.gz"
+  homepage "https://github.com/golang/tools/tree/master/gopls"
+  url "https://ghfast.top/https://github.com/golang/tools/archive/refs/tags/gopls/v0.19.1.tar.gz"
   sha256 "11fc066d0ad6627668ab4dc4d4a34e6e0b47de51bfcc86c3f58018a020e7a071"
   license "BSD-3-Clause"
-  head "https:github.comgolangtools.git", branch: "master"
+  head "https://github.com/golang/tools.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(%r{^(?:gopls)?v?(\d+(?:\.\d+)+)$}i)
+    regex(%r{^(?:gopls/)?v?(\d+(?:\.\d+)+)$}i)
     strategy :github_latest
   end
 
@@ -30,11 +30,11 @@ class Gopls < Formula
   end
 
   test do
-    output = shell_output("#{bin}gopls api-json")
+    output = shell_output("#{bin}/gopls api-json")
     output = JSON.parse(output)
 
     assert_equal "buildFlags", output["Options"]["User"][0]["Name"]
     assert_equal "Go", output["Lenses"][0]["FileType"]
-    assert_match version.to_s, shell_output("#{bin}gopls version")
+    assert_match version.to_s, shell_output("#{bin}/gopls version")
   end
 end

@@ -1,10 +1,10 @@
 class Kty < Formula
   desc "Terminal for Kubernetes"
-  homepage "https:kty.dev"
-  url "https:github.comgrampelbergktyarchiverefstagsv0.3.1.tar.gz"
+  homepage "https://kty.dev"
+  url "https://ghfast.top/https://github.com/grampelberg/kty/archive/refs/tags/v0.3.1.tar.gz"
   sha256 "050c8b0df88f65e1a06863bea99495b77bf2045829825e7e130756f1828c6aa6"
   license "Apache-2.0"
-  head "https:github.comgrampelbergkty.git", branch: "main"
+  head "https://github.com/grampelberg/kty.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "bb4ba6e5d3a1002a498075b31b9ffc694425ba048333ecf2ee662db7f08d1d64"
@@ -29,9 +29,9 @@ class Kty < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}kty -V")
+    assert_match version.to_s, shell_output("#{bin}/kty -V")
 
     assert_match "failed to read an incluster environment variable",
-                 shell_output("#{bin}kty users check brew 2>&1", 1)
+                 shell_output("#{bin}/kty users check brew 2>&1", 1)
   end
 end

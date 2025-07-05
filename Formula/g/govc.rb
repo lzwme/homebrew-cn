@@ -1,10 +1,10 @@
 class Govc < Formula
   desc "Command-line tool for VMware vSphere"
-  homepage "https:github.comvmwaregovmomitreemaingovc"
-  url "https:github.comvmwaregovmomiarchiverefstagsv0.51.0.tar.gz"
+  homepage "https://github.com/vmware/govmomi/tree/main/govc"
+  url "https://ghfast.top/https://github.com/vmware/govmomi/archive/refs/tags/v0.51.0.tar.gz"
   sha256 "cbe78d0ae765b99c32cae333316291a0a4d00d16cf82abc065427e86161ad374"
   license "Apache-2.0"
-  head "https:github.comvmwaregovmomi.git", branch: "main"
+  head "https://github.com/vmware/govmomi.git", branch: "main"
 
   # Upstream appears to use GitHub releases to indicate that a version is
   # released (and some tagged versions don't end up as a release), so it's
@@ -28,9 +28,9 @@ class Govc < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.comvmwaregovmomicliflags.BuildVersion=#{version}
-      -X github.comvmwaregovmomicliflags.BuildCommit=#{tap.user}
-      -X github.comvmwaregovmomicliflags.BuildDate=#{time.iso8601}
+      -X github.com/vmware/govmomi/cli/flags.BuildVersion=#{version}
+      -X github.com/vmware/govmomi/cli/flags.BuildCommit=#{tap.user}
+      -X github.com/vmware/govmomi/cli/flags.BuildDate=#{time.iso8601}
     ]
     cd "govc" do
       system "go", "build", *std_go_args(ldflags:)
@@ -38,7 +38,7 @@ class Govc < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}govc version")
-    assert_match "GOVC_URL=foo", shell_output("#{bin}govc env -u=foo")
+    assert_match version.to_s, shell_output("#{bin}/govc version")
+    assert_match "GOVC_URL=foo", shell_output("#{bin}/govc env -u=foo")
   end
 end

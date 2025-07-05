@@ -1,10 +1,10 @@
 class Texmath < Formula
   desc "Haskell library for converting LaTeX math to MathML"
-  homepage "https:johnmacfarlane.nettexmath.html"
-  url "https:hackage.haskell.orgpackagetexmath-0.12.10.3texmath-0.12.10.3.tar.gz"
+  homepage "https://johnmacfarlane.net/texmath.html"
+  url "https://hackage.haskell.org/package/texmath-0.12.10.3/texmath-0.12.10.3.tar.gz"
   sha256 "57e43a897c1864e1fae6b1d75c055de6cd7c9e3ca4d839d89cc2f6a8fa2ffb76"
   license "GPL-2.0-or-later"
-  head "https:github.comjgmtexmath.git", branch: "master"
+  head "https://github.com/jgm/texmath.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "fffd29d2900a439c18f683ce3ba237692c81d99324fc562f98cbecc8062cf281"
@@ -28,6 +28,6 @@ class Texmath < Formula
   end
 
   test do
-    assert_match "<mn>2<mn>", pipe_output(bin"texmath", "a^2 + b^2 = c^2", 0)
+    assert_match "<mn>2</mn>", pipe_output(bin/"texmath", "a^2 + b^2 = c^2", 0)
   end
 end

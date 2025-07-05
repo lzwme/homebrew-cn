@@ -1,10 +1,10 @@
 class Viu < Formula
   desc "Simple terminal image viewer written in Rust"
-  homepage "https:github.comatanunqviu"
-  url "https:github.comatanunqviuarchiverefstagsv1.5.1.tar.gz"
+  homepage "https://github.com/atanunq/viu"
+  url "https://ghfast.top/https://github.com/atanunq/viu/archive/refs/tags/v1.5.1.tar.gz"
   sha256 "bd1bc61367420dcbb1ab46df53a46fd7d35379960c9ab39bbccb7ace5afaeb62"
   license "MIT"
-  head "https:github.comatanunqviu.git", branch: "master"
+  head "https://github.com/atanunq/viu.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "298b762aae2f3d85767ff186854b274d75b684276c91bb9048a17142cb690e04"
@@ -24,7 +24,7 @@ class Viu < Formula
 
   test do
     expected_output = "\e[0m\e[38;5;202m▀\e[0m"
-    output = shell_output("#{bin}viu #{test_fixtures("test.jpg")}").chomp
+    output = shell_output("#{bin}/viu #{test_fixtures("test.jpg")}").chomp
     assert_equal expected_output, output
   end
 end

@@ -1,10 +1,10 @@
 class Mbelib < Formula
   desc "P25 Phase 1 and ProVoice vocoder"
-  homepage "https:github.comszechyjsmbelib"
-  url "https:github.comszechyjsmbelibarchiverefstagsv1.3.0.tar.gz"
+  homepage "https://github.com/szechyjs/mbelib"
+  url "https://ghfast.top/https://github.com/szechyjs/mbelib/archive/refs/tags/v1.3.0.tar.gz"
   sha256 "5a2d5ca37cef3b6deddd5ce8c73918f27936c50eb0e63b27e4b4fc493310518d"
   license "ISC"
-  head "https:github.comszechyjsmbelib.git", branch: "master"
+  head "https://github.com/szechyjs/mbelib.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -37,7 +37,7 @@ class Mbelib < Formula
   end
 
   test do
-    (testpath"mb.cpp").write <<~CPP
+    (testpath/"mb.cpp").write <<~CPP
       extern "C" {
       #include "mbelib.h"
       }
@@ -48,6 +48,6 @@ class Mbelib < Formula
       }
     CPP
     system ENV.cxx, "mb.cpp", "-o", "test", "-L#{lib}", "-lmbe"
-    system ".test"
+    system "./test"
   end
 end

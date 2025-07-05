@@ -1,14 +1,14 @@
 class Gitoxide < Formula
   desc "Idiomatic, lean, fast & safe pure Rust implementation of Git"
-  homepage "https:github.comGitoxideLabsgitoxide"
-  url "https:github.comGitoxideLabsgitoxidearchiverefstagsv0.44.0.tar.gz"
+  homepage "https://github.com/GitoxideLabs/gitoxide"
+  url "https://ghfast.top/https://github.com/GitoxideLabs/gitoxide/archive/refs/tags/v0.44.0.tar.gz"
   sha256 "1166627cd41daf68eb4e97591cd5daaccf94aa75bb454f657b93766a9bf70da9"
   license "Apache-2.0"
-  head "https:github.comGitoxideLabsgitoxide.git", branch: "main"
+  head "https://github.com/GitoxideLabs/gitoxide.git", branch: "main"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -29,22 +29,22 @@ class Gitoxide < Formula
   def install
     # Avoid requiring CMake or building a vendored zlib-ng.
     # Feature array corresponds to the default config (max) sans vendored zlib-ng.
-    # See: https:github.comGitoxideLabsgitoxideblobb8db2072bb6a5625f37debe9e58d08461ece67ddCargo.toml#L88-L89
-    features = %w[max-control gix-featureszlib-stock gitoxide-core-blocking-client http-client-curl]
+    # See: https://github.com/GitoxideLabs/gitoxide/blob/b8db2072bb6a5625f37debe9e58d08461ece67dd/Cargo.toml#L88-L89
+    features = %w[max-control gix-features/zlib-stock gitoxide-core-blocking-client http-client-curl]
     system "cargo", "install", "--no-default-features", "--features=#{features.join(",")}", *std_cargo_args
-    generate_completions_from_executable(bin"gix", "completions", "-s")
-    generate_completions_from_executable(bin"ein", "completions", "-s")
+    generate_completions_from_executable(bin/"gix", "completions", "-s")
+    generate_completions_from_executable(bin/"ein", "completions", "-s")
   end
 
   test do
-    assert_match "gix", shell_output("#{bin}gix --version")
+    assert_match "gix", shell_output("#{bin}/gix --version")
     system "git", "init", "test", "--quiet"
-    touch "testfile.txt"
+    touch "test/file.txt"
     system "git", "-C", "test", "add", "."
     system "git", "-C", "test", "commit", "--message", "initial commit", "--quiet"
     # the gix test output is to stderr so it's redirected to stderr to match
-    assert_match "OK", shell_output("#{bin}gix --repository test verify 2>&1")
-    assert_match "ein", shell_output("#{bin}ein --version")
-    assert_match ".test", shell_output("#{bin}ein tool find")
+    assert_match "OK", shell_output("#{bin}/gix --repository test verify 2>&1")
+    assert_match "ein", shell_output("#{bin}/ein --version")
+    assert_match "./test", shell_output("#{bin}/ein tool find")
   end
 end

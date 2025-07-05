@@ -1,7 +1,7 @@
 class Rome < Formula
   desc "Carthage cache for S3, Minio, Ceph, Google Storage, Artifactory and many others"
-  homepage "https:github.comtmspzzRome"
-  url "https:github.comtmspzzRomearchiverefstagsv0.24.0.65.tar.gz"
+  homepage "https://github.com/tmspzz/Rome"
+  url "https://ghfast.top/https://github.com/tmspzz/Rome/archive/refs/tags/v0.24.0.65.tar.gz"
   sha256 "7aee4de208a78208559d6a9ad17788d70f62cace4ff2435b3e817a3e03efdef6"
   license "MIT"
 
@@ -17,7 +17,7 @@ class Rome < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "2a60357d041aa0c5547afc0cd0ea6bc9d2933d0db3ce3bfaeb6607c9b664f0e4"
   end
 
-  # https:github.comtmspzzRomeissues262
+  # https://github.com/tmspzz/Rome/issues/262
   # Original deprecation date: 2023-10-01
   disable! date: "2024-07-26", because: :does_not_build
 
@@ -32,18 +32,18 @@ class Rome < Formula
   end
 
   test do
-    (testpath"Romefile").write <<~EOS
+    (testpath/"Romefile").write <<~EOS
       cache:
-        local: ~LibraryCachesRome
+        local: ~/Library/Caches/Rome
     EOS
     system "git", "init"
     system "git", "config", "user.name", "BrewTestBot"
     system "git", "config", "user.email", "BrewTestBot@test.com"
     system "git", "add", "Romefile"
     system "git", "commit", "-m", "test"
-    (testpath"Cartfile.resolved").write <<~EOS
-      github "realmrealm-swift" "v10.20.2"
+    (testpath/"Cartfile.resolved").write <<~EOS
+      github "realm/realm-swift" "v10.20.2"
     EOS
-    assert_match "realm-swift v10.20.2", shell_output("#{bin}rome list")
+    assert_match "realm-swift v10.20.2", shell_output("#{bin}/rome list")
   end
 end

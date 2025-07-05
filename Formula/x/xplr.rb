@@ -1,10 +1,10 @@
 class Xplr < Formula
   desc "Hackable, minimal, fast TUI file explorer"
-  homepage "https:github.comsayanarijitxplr"
-  url "https:github.comsayanarijitxplrarchiverefstagsv1.0.0.tar.gz"
+  homepage "https://github.com/sayanarijit/xplr"
+  url "https://ghfast.top/https://github.com/sayanarijit/xplr/archive/refs/tags/v1.0.0.tar.gz"
   sha256 "72e9b53552b4fce61805c32c739d8d7db4723f80b4586c9eb5e9921e1ae32ce0"
   license "MIT"
-  head "https:github.comsayanarijitxplr.git", branch: "main"
+  head "https://github.com/sayanarijit/xplr.git", branch: "main"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "d0e94ec68f4de399d20267cb847e859594ad550edceb378797fa005eda5fba5d"
@@ -25,22 +25,22 @@ class Xplr < Formula
   end
 
   test do
-    require "utilslinkage"
+    require "utils/linkage"
 
-    input, = Open3.popen2 "SHELL=binsh script -q output.txt"
+    input, = Open3.popen2 "SHELL=/bin/sh script -q output.txt"
     input.puts "stty rows 80 cols 130"
-    input.puts bin"xplr"
+    input.puts bin/"xplr"
     input.putc "q"
     input.puts "exit"
 
     sleep 5
-    File.open(testpath"output.txt", "r:ISO-8859-7") do |f|
+    File.open(testpath/"output.txt", "r:ISO-8859-7") do |f|
       contents = f.read
       assert_match testpath.to_s, contents
     end
 
-    assert Utils.binary_linked_to_library?(bin"xplr",
-                                Formula["luajit"].opt_libshared_library("libluajit")),
+    assert Utils.binary_linked_to_library?(bin/"xplr",
+                                Formula["luajit"].opt_lib/shared_library("libluajit")),
            "No linkage with libluajit! Cargo is likely using a vendored version."
   end
 end

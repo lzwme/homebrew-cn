@@ -1,7 +1,7 @@
 class Perceptualdiff < Formula
   desc "Perceptual image comparison tool"
-  homepage "https:pdiff.sourceforge.net"
-  url "https:github.commyintperceptualdiffarchiverefstagsv2.1.tar.gz"
+  homepage "https://pdiff.sourceforge.net/"
+  url "https://ghfast.top/https://github.com/myint/perceptualdiff/archive/refs/tags/v2.1.tar.gz"
   sha256 "0dea51046601e4d23dc45a3ec342f1a305baf3bf3328e9ccdae115fe1942f041"
   license "GPL-2.0-or-later"
 
@@ -30,10 +30,10 @@ class Perceptualdiff < Formula
     test_png = test_fixtures("test.png")
 
     # Comparing an image against itself should give no diff
-    identical = shell_output("#{bin}perceptualdiff #{test_tiff} #{test_tiff} 2>&1")
+    identical = shell_output("#{bin}/perceptualdiff #{test_tiff} #{test_tiff} 2>&1")
     assert_empty identical
 
-    different = shell_output("#{bin}perceptualdiff #{test_png} #{test_tiff} 2>&1", 1)
+    different = shell_output("#{bin}/perceptualdiff #{test_png} #{test_tiff} 2>&1", 1)
     assert_equal "FAIL: Image dimensions do not match", different.strip
   end
 end

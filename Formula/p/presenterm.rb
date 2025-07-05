@@ -1,10 +1,10 @@
 class Presenterm < Formula
   desc "Terminal slideshow tool"
-  homepage "https:github.commfontaninipresenterm"
-  url "https:github.commfontaninipresentermarchiverefstagsv0.14.0.tar.gz"
+  homepage "https://github.com/mfontanini/presenterm"
+  url "https://ghfast.top/https://github.com/mfontanini/presenterm/archive/refs/tags/v0.14.0.tar.gz"
   sha256 "18a50e61c1a90928f6e0ce9f72bcfb8a2be76b2d220663830cf9a607ecd68386"
   license "BSD-2-Clause"
-  head "https:github.commfontaninipresenterm.git", branch: "master"
+  head "https://github.com/mfontanini/presenterm.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "9428716f30ece91baa9dff6280be4c54f0eb8ceb8e08692ec0cd538df44968d3"
@@ -24,6 +24,6 @@ class Presenterm < Formula
 
   test do
     # presenterm is a TUI application
-    assert_match version.to_s, shell_output("#{bin}presenterm --version")
+    assert_match version.to_s, shell_output("#{bin}/presenterm --version")
   end
 end

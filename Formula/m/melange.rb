@@ -1,10 +1,10 @@
 class Melange < Formula
   desc "Build APKs from source code"
-  homepage "https:github.comchainguard-devmelange"
-  url "https:github.comchainguard-devmelangearchiverefstagsv0.29.0.tar.gz"
+  homepage "https://github.com/chainguard-dev/melange"
+  url "https://ghfast.top/https://github.com/chainguard-dev/melange/archive/refs/tags/v0.29.0.tar.gz"
   sha256 "5e976f5707ed7da3bae00fb726d96c1f6895cd944fb3b3f107de80e47b824bfe"
   license "Apache-2.0"
-  head "https:github.comchainguard-devmelange.git", branch: "main"
+  head "https://github.com/chainguard-dev/melange.git", branch: "main"
 
   livecheck do
     url :stable
@@ -25,18 +25,18 @@ class Melange < Formula
   def install
     ldflags = %W[
       -s -w
-      -X sigs.k8s.iorelease-utilsversion.gitVersion=#{version}
-      -X sigs.k8s.iorelease-utilsversion.gitCommit=brew
-      -X sigs.k8s.iorelease-utilsversion.gitTreeState=clean
-      -X sigs.k8s.iorelease-utilsversion.buildDate=#{time.iso8601}
+      -X sigs.k8s.io/release-utils/version.gitVersion=#{version}
+      -X sigs.k8s.io/release-utils/version.gitCommit=brew
+      -X sigs.k8s.io/release-utils/version.gitTreeState=clean
+      -X sigs.k8s.io/release-utils/version.buildDate=#{time.iso8601}
     ]
     system "go", "build", *std_go_args(ldflags:)
 
-    generate_completions_from_executable(bin"melange", "completion")
+    generate_completions_from_executable(bin/"melange", "completion")
   end
 
   test do
-    (testpath"test.yml").write <<~YAML
+    (testpath/"test.yml").write <<~YAML
       package:
         name: hello
         version: 2.12
@@ -56,7 +56,7 @@ class Melange < Formula
       environment:
         contents:
           repositories:
-            - https:dl-cdn.alpinelinux.orgalpineedgemain
+            - https://dl-cdn.alpinelinux.org/alpine/edge/main
           packages:
             - alpine-baselayout-data
             - busybox
@@ -68,19 +68,19 @@ class Melange < Formula
       pipeline:
         - uses: fetch
           with:
-            uri: https:ftp.gnu.orggnuhellohello-${{package.version}}.tar.gz
+            uri: https://ftp.gnu.org/gnu/hello/hello-${{package.version}}.tar.gz
             expected-sha256: cf04af86dc085268c5f4470fbae49b18afbc221b78096aab842d934a76bad0ab
-        - uses: autoconfconfigure
-        - uses: autoconfmake
-        - uses: autoconfmake-install
+        - uses: autoconf/configure
+        - uses: autoconf/make
+        - uses: autoconf/make-install
         - uses: strip
     YAML
 
-    assert_equal "hello-2.12-r0", shell_output("#{bin}melange package-version #{testpath}test.yml")
+    assert_equal "hello-2.12-r0", shell_output("#{bin}/melange package-version #{testpath}/test.yml")
 
-    system bin"melange", "keygen"
-    assert_path_exists testpath"melange.rsa"
+    system bin/"melange", "keygen"
+    assert_path_exists testpath/"melange.rsa"
 
-    assert_match version.to_s, shell_output(bin"melange version 2>&1")
+    assert_match version.to_s, shell_output(bin/"melange version 2>&1")
   end
 end

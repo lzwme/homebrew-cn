@@ -1,10 +1,10 @@
 class Bomber < Formula
   desc "Scans Software Bill of Materials for security vulnerabilities"
-  homepage "https:github.comdevops-kung-fubomber"
-  url "https:github.comdevops-kung-fubomberarchiverefstagsv0.5.1.tar.gz"
+  homepage "https://github.com/devops-kung-fu/bomber"
+  url "https://ghfast.top/https://github.com/devops-kung-fu/bomber/archive/refs/tags/v0.5.1.tar.gz"
   sha256 "f4d8165ea9d3be0e88fdb33d35870588df308f31a4c40f14f09f0b68570f6ae1"
   license "MPL-2.0"
-  head "https:github.comdevops-kung-fubomber.git", branch: "main"
+  head "https://github.com/devops-kung-fu/bomber.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "989ad14e281150f655296b8aa8ca9a3d24965bbd690d9ce8db45163e92429004"
@@ -20,16 +20,16 @@ class Bomber < Formula
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
 
-    generate_completions_from_executable(bin"bomber", "completion")
+    generate_completions_from_executable(bin/"bomber", "completion")
 
     pkgshare.install "_TESTDATA_"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}bomber --version")
+    assert_match version.to_s, shell_output("#{bin}/bomber --version")
 
-    cp pkgshare"_TESTDATA_sbombomber.spdx.json", testpath
-    output = shell_output("#{bin}bomber scan bomber.spdx.json")
+    cp pkgshare/"_TESTDATA_/sbom/bomber.spdx.json", testpath
+    output = shell_output("#{bin}/bomber scan bomber.spdx.json")
     assert_match "Total vulnerabilities found:", output
   end
 end

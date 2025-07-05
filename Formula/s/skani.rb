@@ -1,10 +1,10 @@
 class Skani < Formula
   desc "Fast, robust ANI and aligned fraction for (metagenomic) genomes and contigs"
-  homepage "https:github.combluenote-1577skani"
-  url "https:github.combluenote-1577skaniarchiverefstagsv0.2.2.tar.gz"
+  homepage "https://github.com/bluenote-1577/skani"
+  url "https://ghfast.top/https://github.com/bluenote-1577/skani/archive/refs/tags/v0.2.2.tar.gz"
   sha256 "e047d52b9f753625eff480fe90f1abb68f82cc6892d9d1910b18bfcedbfc0b9d"
   license "MIT"
-  head "https:github.combluenote-1577skani.git", branch: "main"
+  head "https://github.com/bluenote-1577/skani.git", branch: "main"
 
   no_autobump! because: :requires_manual_review
 
@@ -26,8 +26,8 @@ class Skani < Formula
   end
 
   test do
-    cp_r pkgshare"test_files.", testpath
-    output = shell_output("#{bin}skani dist e.coli-EC590.fasta e.coli-K12.fasta")
+    cp_r pkgshare/"test_files/.", testpath
+    output = shell_output("#{bin}/skani dist e.coli-EC590.fasta e.coli-K12.fasta")
     assert_match "complete sequence", output
   end
 end

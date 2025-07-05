@@ -1,7 +1,7 @@
 class AddonsLinter < Formula
   desc "Firefox Add-ons linter, written in JavaScript"
-  homepage "https:github.commozillaaddons-linter"
-  url "https:registry.npmjs.orgaddons-linter-addons-linter-7.16.0.tgz"
+  homepage "https://github.com/mozilla/addons-linter"
+  url "https://registry.npmjs.org/addons-linter/-/addons-linter-7.16.0.tgz"
   sha256 "0269ac4c5a282653c4320893f554a9351615cfe74943a42e2e0f735724270ca2"
   license "MPL-2.0"
 
@@ -19,13 +19,13 @@ class AddonsLinter < Formula
 
   def install
     system "npm", "install", *std_npm_args
-    bin.install_symlink Dir["#{libexec}bin*"]
+    bin.install_symlink Dir["#{libexec}/bin/*"]
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}addons-linter --version")
+    assert_match version.to_s, shell_output("#{bin}/addons-linter --version")
 
-    (testpath"manifest.json").write <<~JSON
+    (testpath/"manifest.json").write <<~JSON
       {
         "manifest_version": 2,
         "name": "Test Addon",
@@ -39,7 +39,7 @@ class AddonsLinter < Formula
       }
     JSON
 
-    output = shell_output("#{bin}addons-linter #{testpath}manifest.json 2>&1")
+    output = shell_output("#{bin}/addons-linter #{testpath}/manifest.json 2>&1")
     assert_match "BAD_ZIPFILE   Corrupt ZIP", output
   end
 end

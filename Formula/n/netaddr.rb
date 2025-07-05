@@ -2,11 +2,11 @@ class Netaddr < Formula
   include Language::Python::Virtualenv
 
   desc "Network address manipulation library"
-  homepage "https:netaddr.readthedocs.ioenlatest"
-  url "https:files.pythonhosted.orgpackages5490188b2a69654f27b221fba92fda7217778208532c962509e959a9cee5229dnetaddr-1.3.0.tar.gz"
+  homepage "https://netaddr.readthedocs.io/en/latest/"
+  url "https://files.pythonhosted.org/packages/54/90/188b2a69654f27b221fba92fda7217778208532c962509e959a9cee5229d/netaddr-1.3.0.tar.gz"
   sha256 "5c3c3d9895b551b763779ba7db7a03487dc1f8e3b385af819af341ae9ef6e48a"
   license "BSD-3-Clause"
-  head "https:github.comnetaddrnetaddr.git", branch: "master"
+  head "https://github.com/netaddr/netaddr.git", branch: "master"
 
   bottle do
     rebuild 2
@@ -20,7 +20,7 @@ class Netaddr < Formula
   end
 
   test do
-    output = shell_output(bin"netaddr info 10.0.0.016")
+    output = shell_output(bin/"netaddr info 10.0.0.0/16")
     assert_match "Usable addresses         65534", output
   end
 end

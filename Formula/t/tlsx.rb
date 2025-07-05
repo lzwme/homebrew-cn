@@ -1,10 +1,10 @@
 class Tlsx < Formula
   desc "Fast and configurable TLS grabber focused on TLS based data collection"
-  homepage "https:github.comprojectdiscoverytlsx"
-  url "https:github.comprojectdiscoverytlsxarchiverefstagsv1.1.9.tar.gz"
+  homepage "https://github.com/projectdiscovery/tlsx"
+  url "https://ghfast.top/https://github.com/projectdiscovery/tlsx/archive/refs/tags/v1.1.9.tar.gz"
   sha256 "96280c609d8e82258ec2da99487702d1696d6430bdd179cbc64ff035be8f92c9"
   license "MIT"
-  head "https:github.comprojectdiscoverytlsx.git", branch: "main"
+  head "https://github.com/projectdiscovery/tlsx.git", branch: "main"
 
   livecheck do
     url :stable
@@ -23,11 +23,11 @@ class Tlsx < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), ".cmdtlsx"
+    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/tlsx"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}tlsx -version 2>&1")
-    system bin"tlsx", "-u", "expired.badssl.com:443", "-expired"
+    assert_match version.to_s, shell_output("#{bin}/tlsx -version 2>&1")
+    system bin/"tlsx", "-u", "expired.badssl.com:443", "-expired"
   end
 end

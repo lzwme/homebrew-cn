@@ -1,10 +1,10 @@
 class TheSilverSearcher < Formula
   desc "Code-search similar to ack"
-  homepage "https:geoff.greer.fmag"
-  url "https:github.comggreerthe_silver_searcherarchiverefstags2.2.0.tar.gz"
+  homepage "https://geoff.greer.fm/ag/"
+  url "https://ghfast.top/https://github.com/ggreer/the_silver_searcher/archive/refs/tags/2.2.0.tar.gz"
   sha256 "6a0a19ca5e73b2bef9481c29a508d2413ca1a0a9a5a6b1bd9bbd695a7626cbf9"
   license "Apache-2.0"
-  head "https:github.comggreerthe_silver_searcher.git", branch: "master"
+  head "https://github.com/ggreer/the_silver_searcher.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -38,14 +38,14 @@ class TheSilverSearcher < Formula
   def install
     ENV.append_to_cflags "-fcommon" if ENV.compiler.to_s.start_with?("gcc")
     # Stable tarball does not include pre-generated configure script
-    system ".autogen.sh"
-    system ".configure", "--disable-silent-rules", *std_configure_args
+    system "./autogen.sh"
+    system "./configure", "--disable-silent-rules", *std_configure_args
     system "make"
     system "make", "install", "bashcompdir=#{bash_completion}"
   end
 
   test do
-    (testpath"Hello.txt").write("Hello World!")
-    system bin"ag", "Hello World!", testpath
+    (testpath/"Hello.txt").write("Hello World!")
+    system bin/"ag", "Hello World!", testpath
   end
 end

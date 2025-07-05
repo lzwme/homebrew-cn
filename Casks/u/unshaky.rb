@@ -2,13 +2,13 @@ cask "unshaky" do
   version "0.7.0"
   sha256 "722fdd718fe47e58f1ea9c60fbcaf81cb4bbd6173b9cf7a8c4a6425a977a9fd9"
 
-  url "https:github.comaahungUnshakyreleasesdownloadv#{version}Unshaky_v#{version}.zip"
+  url "https://ghfast.top/https://github.com/aahung/Unshaky/releases/download/v#{version}/Unshaky_v#{version}.zip"
   name "Unshaky"
   desc "Software fix for double key presses on Apple's butterfly keyboard"
-  homepage "https:github.comaahungUnshaky"
+  homepage "https://github.com/aahung/Unshaky"
 
   livecheck do
-    url "https:raw.githubusercontent.comaahungUnshakymasterappcast.xml"
+    url "https://ghfast.top/https://raw.githubusercontent.com/aahung/Unshaky/master/appcast.xml"
     strategy :sparkle, &:short_version
   end
 
@@ -20,7 +20,7 @@ cask "unshaky" do
   app "Unshaky.app"
 
   zap trash: [
-    "~LibraryCachescom.nestederror.Unshaky",
-    "~LibraryPreferencescom.nestederror.Unshaky.plist",
+    "~/Library/Caches/com.nestederror.Unshaky",
+    "~/Library/Preferences/com.nestederror.Unshaky.plist",
   ]
 end

@@ -1,7 +1,7 @@
 class Manticoresearch < Formula
   desc "Open source text search engine"
-  homepage "https:manticoresearch.com"
-  url "https:github.commanticoresoftwaremanticoresearcharchiverefstags10.1.4.tar.gz"
+  homepage "https://manticoresearch.com"
+  url "https://ghfast.top/https://github.com/manticoresoftware/manticoresearch/archive/refs/tags/10.1.4.tar.gz"
   sha256 "d655c8a51a87d2a673bd6c0ffdd0b545f1a404a6fb09eb65da764bd0c51b430f"
   license all_of: [
     "GPL-3.0-or-later",
@@ -10,7 +10,7 @@ class Manticoresearch < Formula
     { any_of: ["Unlicense", "MIT"] }, # uni-algo (our formula is too new)
   ]
   version_scheme 1
-  head "https:github.commanticoresoftwaremanticoresearch.git", branch: "master"
+  head "https://github.com/manticoresoftware/manticoresearch.git", branch: "master"
 
   # There can be a notable gap between when a version is tagged and a
   # corresponding release is created, so we check the "latest" release instead
@@ -18,7 +18,7 @@ class Manticoresearch < Formula
   # indicate stable versions.
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+\.\d*[02468])$i)
+    regex(/^v?(\d+(?:\.\d+)+\.\d*[02468])$/i)
     strategy :github_latest
   end
 
@@ -56,9 +56,9 @@ class Manticoresearch < Formula
 
   def install
     # Avoid statically linking to boost
-    inreplace "srcCMakeLists.txt", "set ( Boost_USE_STATIC_LIBS ON )", "set ( Boost_USE_STATIC_LIBS OFF )"
+    inreplace "src/CMakeLists.txt", "set ( Boost_USE_STATIC_LIBS ON )", "set ( Boost_USE_STATIC_LIBS OFF )"
 
-    ENV["ICU_ROOT"] = deps.find { |dep| dep.name.match?(^icu4c(@\d+)?$) }
+    ENV["ICU_ROOT"] = deps.find { |dep| dep.name.match?(/^icu4c(@\d+)?$/) }
                           .to_formula.opt_prefix.to_s
     ENV["OPENSSL_ROOT_DIR"] = Formula["openssl@3"].opt_prefix.to_s
     ENV["PostgreSQL_ROOT"] = Formula["libpq"].opt_prefix.to_s
@@ -73,8 +73,8 @@ class Manticoresearch < Formula
       -DCMAKE_REQUIRE_FIND_PACKAGE_re2=ON
       -DCMAKE_REQUIRE_FIND_PACKAGE_stemmer=ON
       -DCMAKE_REQUIRE_FIND_PACKAGE_xxHash=ON
-      -DMYSQL_CONFIG_EXECUTABLE=#{Formula["mariadb-connector-c"].opt_bin}mariadb_config
-      -DRE2_LIBRARY=#{Formula["re2"].opt_libshared_library("libre2")}
+      -DMYSQL_CONFIG_EXECUTABLE=#{Formula["mariadb-connector-c"].opt_bin}/mariadb_config
+      -DRE2_LIBRARY=#{Formula["re2"].opt_lib/shared_library("libre2")}
       -DWITH_ICU_FORCE_STATIC=OFF
       -DWITH_RE2_FORCE_STATIC=OFF
       -DWITH_STEMMER_FORCE_STATIC=OFF
@@ -86,28 +86,28 @@ class Manticoresearch < Formula
   end
 
   def post_install
-    (var"runmanticore").mkpath
-    (var"logmanticore").mkpath
-    (var"manticoredata").mkpath
+    (var/"run/manticore").mkpath
+    (var/"log/manticore").mkpath
+    (var/"manticore/data").mkpath
 
     # Fix old config path (actually it was always wrong and never worked; however let's check)
-    mv etc"manticoremanticore.conf", etc"manticoresearchmanticore.conf" if (etc"manticoremanticore.conf").exist?
+    mv etc/"manticore/manticore.conf", etc/"manticoresearch/manticore.conf" if (etc/"manticore/manticore.conf").exist?
   end
 
   service do
-    run [opt_bin"searchd", "--config", etc"manticoresearchmanticore.conf", "--nodetach"]
+    run [opt_bin/"searchd", "--config", etc/"manticoresearch/manticore.conf", "--nodetach"]
     keep_alive false
     working_dir HOMEBREW_PREFIX
   end
 
   test do
-    (testpath"manticore.conf").write <<~EOS
+    (testpath/"manticore.conf").write <<~EOS
       searchd {
         pid_file = searchd.pid
         binlog_path=#
       }
     EOS
-    pid = spawn(bin"searchd")
+    pid = spawn(bin/"searchd")
   ensure
     Process.kill(9, pid)
     Process.wait(pid)

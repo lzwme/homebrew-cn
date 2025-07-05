@@ -1,11 +1,11 @@
 class Vectorscan < Formula
   desc "High-performance regular expression matching library"
-  homepage "https:github.comVectorCampvectorscan"
-  url "https:github.comVectorCampvectorscanarchiverefstagsvectorscan5.4.11.tar.gz"
+  homepage "https://github.com/VectorCamp/vectorscan"
+  url "https://ghfast.top/https://github.com/VectorCamp/vectorscan/archive/refs/tags/vectorscan/5.4.11.tar.gz"
   sha256 "905f76ad1fa9e4ae0eb28232cac98afdb96c479666202c5a4c27871fb30a2711"
   license "BSD-3-Clause"
   revision 1
-  head "https:github.comVectorCampvectorscan.git", branch: "develop"
+  head "https://github.com/VectorCamp/vectorscan.git", branch: "develop"
 
   no_autobump! because: :requires_manual_review
 
@@ -23,13 +23,13 @@ class Vectorscan < Formula
 
   depends_on "boost" => :build
   depends_on "cmake" => :build
-  depends_on "pcre" => :build # PCRE2 issue: https:github.comVectorCampvectorscanissues320
+  depends_on "pcre" => :build # PCRE2 issue: https://github.com/VectorCamp/vectorscan/issues/320
   depends_on "pkgconf" => :build
   depends_on "ragel" => :build
 
   # fix SQLite requirement check; included in next release
   patch do
-    url "https:github.comVectorCampvectorscancommitd9ebb20010b3f90a7a5c7bf4a5edff2eb58f2a4f.patch?full_index=1"
+    url "https://github.com/VectorCamp/vectorscan/commit/d9ebb20010b3f90a7a5c7bf4a5edff2eb58f2a4f.patch?full_index=1"
     sha256 "e61de5f0321e9020871912883dadcdc1f49cd423dab37de67b6c1e8d07115162"
   end
 
@@ -45,9 +45,9 @@ class Vectorscan < Formula
   end
 
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include <stdio.h>
-      #include <hshs.h>
+      #include <hs/hs.h>
       int main()
       {
         printf("hyperscan v%s", hs_version());
@@ -55,6 +55,6 @@ class Vectorscan < Formula
       }
     C
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lhs", "-o", "test"
-    assert_match version.to_s, shell_output(".test")
+    assert_match version.to_s, shell_output("./test")
   end
 end

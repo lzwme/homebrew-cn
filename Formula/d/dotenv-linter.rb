@@ -1,10 +1,10 @@
 class DotenvLinter < Formula
   desc "Lightning-fast linter for .env files written in Rust"
-  homepage "https:dotenv-linter.github.io"
-  url "https:github.comdotenv-linterdotenv-linterarchiverefstagsv3.3.0.tar.gz"
+  homepage "https://dotenv-linter.github.io"
+  url "https://ghfast.top/https://github.com/dotenv-linter/dotenv-linter/archive/refs/tags/v3.3.0.tar.gz"
   sha256 "ffcd2f0d5bb40a19ea747ad7786fea796a7454f51e6da8f37fec572da8ae3c5f"
   license "MIT"
-  head "https:github.comdotenv-linterdotenv-linter.git", branch: "master"
+  head "https://github.com/dotenv-linter/dotenv-linter.git", branch: "master"
 
   bottle do
     rebuild 1
@@ -28,23 +28,23 @@ class DotenvLinter < Formula
   end
 
   test do
-    checks = shell_output("#{bin}dotenv-linter list").split("\n")
+    checks = shell_output("#{bin}/dotenv-linter list").split("\n")
     assert_includes checks, "DuplicatedKey"
     assert_includes checks, "UnorderedKey"
     assert_includes checks, "LeadingCharacter"
 
-    (testpath".env").write <<~EOS
+    (testpath/".env").write <<~EOS
       FOO=bar
       FOO=bar
       BAR=foo
     EOS
-    (testpath".env.test").write <<~EOS
+    (testpath/".env.test").write <<~EOS
       1FOO=bar
       _FOO=bar
     EOS
-    output = shell_output(bin"dotenv-linter", 1)
-    assert_match(\.env:2\s+DuplicatedKey, output)
-    assert_match(\.env:3\s+UnorderedKey, output)
-    assert_match(\.env.test:1\s+LeadingCharacter, output)
+    output = shell_output(bin/"dotenv-linter", 1)
+    assert_match(/\.env:2\s+DuplicatedKey/, output)
+    assert_match(/\.env:3\s+UnorderedKey/, output)
+    assert_match(/\.env.test:1\s+LeadingCharacter/, output)
   end
 end

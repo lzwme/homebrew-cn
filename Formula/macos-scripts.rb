@@ -1,7 +1,7 @@
 class MacosScripts < Formula
   desc "Various command-line utility scripts for macOS"
-  homepage "https:github.comnicerloopmacos-scripts"
-  url "https:github.comnicerloopmacos-scriptsarchiverefstagsv1.9.5.tar.gz"
+  homepage "https://github.com/nicerloop/macos-scripts"
+  url "https://ghfast.top/https://github.com/nicerloop/macos-scripts/archive/refs/tags/v1.9.5.tar.gz"
   sha256 "3a735ec00b808b0429a939065ebff1d0b306a2fad009d583d2575d40cd672fcc"
 
   def install

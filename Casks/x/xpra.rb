@@ -10,15 +10,15 @@ cask "xpra" do
     sha256 "0081002f2a867a2d5cf41a81d4b04b9bbc888d455c65b98cb1c3142e7bae7b78"
   end
 
-  url "https:xpra.orgdistsMacOS#{arch}Xpra-#{arch}-#{version.csv.first}-r#{version.csv.second}.dmg",
-      verified: "xpra.org"
+  url "https://xpra.org/dists/MacOS/#{arch}/Xpra-#{arch}-#{version.csv.first}-r#{version.csv.second}.dmg",
+      verified: "xpra.org/"
   name "Xpra"
   desc "Screen and application forwarding system"
-  homepage "https:github.comXpra-orgxpra"
+  homepage "https://github.com/Xpra-org/xpra/"
 
   livecheck do
-    url "https:xpra.orgdistsMacOS#{arch}"
-    regex(href=.*?Xpra-#{arch}[._-]v?(\d+(?:\.\d+)+)(?:[._-]r(\d+))?\.dmgi)
+    url "https://xpra.org/dists/MacOS/#{arch}/"
+    regex(/href=.*?Xpra-#{arch}[._-]v?(\d+(?:\.\d+)+)(?:[._-]r(\d+))?\.dmg/i)
     strategy :page_match do |page, regex|
       page.scan(regex).map do |match|
         match[1] ? "#{match[0]},#{match[1]}" : match[0]
@@ -29,11 +29,11 @@ cask "xpra" do
   depends_on macos: ">= :sierra"
 
   app "Xpra.app"
-  binary "#{appdir}Xpra.appContentsMacOSXpra", target: "xpra"
+  binary "#{appdir}/Xpra.app/Contents/MacOS/Xpra", target: "xpra"
 
-  zap delete: "LibraryApplication SupportXpra",
+  zap delete: "/Library/Application Support/Xpra",
       trash:  [
-        "~LibraryApplication SupportXpra",
-        "~LibrarySaved Application Stateorg.xpra.xpra.savedState",
+        "~/Library/Application Support/Xpra",
+        "~/Library/Saved Application State/org.xpra.xpra.savedState",
       ]
 end

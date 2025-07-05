@@ -1,7 +1,7 @@
 class Tlx < Formula
   desc "Collection of Sophisticated C++ Data Structures, Algorithms and Helpers"
-  homepage "https:tlx.github.io"
-  url "https:github.comtlxtlxarchiverefstagsv0.6.1.tar.gz"
+  homepage "https://tlx.github.io"
+  url "https://ghfast.top/https://github.com/tlx/tlx/archive/refs/tags/v0.6.1.tar.gz"
   sha256 "24dd1acf36dd43b8e0414420e3f9adc2e6bb0e75047e872a06167961aedad769"
   license "BSL-1.0"
 
@@ -30,8 +30,8 @@ class Tlx < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~CPP
-      #include <tlxmathaggregate.hpp>
+    (testpath/"test.cpp").write <<~CPP
+      #include <tlx/math/aggregate.hpp>
       int main()
       {
         tlx::Aggregate<int> agg;
@@ -42,6 +42,6 @@ class Tlx < Formula
       }
     CPP
     system ENV.cxx, "test.cpp", "-L#{lib}", "-ltlx", "-o", "test", "-std=c++17"
-    system ".test"
+    system "./test"
   end
 end

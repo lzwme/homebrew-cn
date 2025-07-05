@@ -1,10 +1,10 @@
 class Whois < Formula
   desc "Lookup tool for domain names and other internet resources"
-  homepage "https:github.comrfc1036whois"
-  url "https:github.comrfc1036whoisarchiverefstagsv5.6.2.tar.gz"
+  homepage "https://github.com/rfc1036/whois"
+  url "https://ghfast.top/https://github.com/rfc1036/whois/archive/refs/tags/v5.6.2.tar.gz"
   sha256 "0773cf51fc9a980af3954fb3859c7673f8bb7901c5be4041a12c926609edeb89"
   license "GPL-2.0-or-later"
-  head "https:github.comrfc1036whois.git", branch: "next"
+  head "https://github.com/rfc1036/whois.git", branch: "next"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "5c8577a0e2803e96e43e1f21b39754d031b8b6dbce1ceea190100c9ccc27a2f6"
@@ -22,7 +22,7 @@ class Whois < Formula
   depends_on "libidn2"
 
   def install
-    ENV.append "LDFLAGS", "-Lusrlib -liconv" if OS.mac?
+    ENV.append "LDFLAGS", "-L/usr/lib -liconv" if OS.mac?
 
     # Fix compile with newer Clang
     ENV.append_to_cflags "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1403
@@ -40,6 +40,6 @@ class Whois < Formula
   end
 
   test do
-    system bin"whois", "brew.sh"
+    system bin/"whois", "brew.sh"
   end
 end

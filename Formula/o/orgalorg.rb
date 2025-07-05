@@ -1,10 +1,10 @@
 class Orgalorg < Formula
   desc "Parallel SSH commands executioner and file synchronization tool"
-  homepage "https:github.comreconquestorgalorg"
-  url "https:github.comreconquestorgalorgarchiverefstags1.3.1.tar.gz"
+  homepage "https://github.com/reconquest/orgalorg"
+  url "https://ghfast.top/https://github.com/reconquest/orgalorg/archive/refs/tags/1.3.1.tar.gz"
   sha256 "b9292ac6af1c492c82e4c77a707a026ad9674139f02d3fa25b797f65e3d69a2c"
   license "MIT"
-  head "https:github.comreconquestorgalorg.git", branch: "master"
+  head "https://github.com/reconquest/orgalorg.git", branch: "master"
 
   livecheck do
     url :stable
@@ -29,13 +29,13 @@ class Orgalorg < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}orgalorg --version")
-    assert_match "orgalorg - files synchronization on many hosts.", shell_output("#{bin}orgalorg --help")
+    assert_match version.to_s, shell_output("#{bin}/orgalorg --version")
+    assert_match "orgalorg - files synchronization on many hosts.", shell_output("#{bin}/orgalorg --help")
 
     ENV.delete "SSH_AUTH_SOCK"
 
     port = free_port
-    output = shell_output("#{bin}orgalorg -u tester --key '' --host=127.0.0.1:#{port} -C uptime 2>&1", 1)
+    output = shell_output("#{bin}/orgalorg -u tester --key '' --host=127.0.0.1:#{port} -C uptime 2>&1", 1)
     assert_match "connecting to cluster failed", output
     assert_match "dial tcp 127.0.0.1:#{port}: connect: connection refused", output
     assert_match "can't connect to address: [tester@127.0.0.1:#{port}]", output

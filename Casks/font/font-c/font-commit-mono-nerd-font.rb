@@ -2,9 +2,9 @@ cask "font-commit-mono-nerd-font" do
   version "3.4.0"
   sha256 "fa658c4056a304398aea6459146700383a64a82d5bd6ece267e1375e7aa67f23"
 
-  url "https:github.comryanoasisnerd-fontsreleasesdownloadv#{version}CommitMono.zip"
+  url "https://ghfast.top/https://github.com/ryanoasis/nerd-fonts/releases/download/v#{version}/CommitMono.zip"
   name "CommitMono Nerd Font (Commit Mono)"
-  homepage "https:github.comryanoasisnerd-fonts"
+  homepage "https://github.com/ryanoasis/nerd-fonts"
 
   livecheck do
     url :url

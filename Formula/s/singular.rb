@@ -1,14 +1,14 @@
 class Singular < Formula
   desc "Computer algebra system for polynomial computations"
-  homepage "https:www.singular.uni-kl.de"
-  url "https:www.singular.uni-kl.deftppubMathSingularSOURCES4-4-1singular-4.4.1p2.tar.gz"
+  homepage "https://www.singular.uni-kl.de/"
+  url "https://www.singular.uni-kl.de/ftp/pub/Math/Singular/SOURCES/4-4-1/singular-4.4.1p2.tar.gz"
   version "4.4.1p2"
   sha256 "7096f9f8d7bcc8e43be4a9521fb54cf685abf4ec14bd0870aa6a820cbd4648aa"
   license "GPL-2.0-or-later"
 
   livecheck do
-    url "https:www.singular.uni-kl.deftppubMathSingularSOURCES"
-    regex(%r{href=["']?v?(\d+(?:[.-]\d+)+)?["' >]}i)
+    url "https://www.singular.uni-kl.de/ftp/pub/Math/Singular/SOURCES/"
+    regex(%r{href=["']?v?(\d+(?:[.-]\d+)+)/?["' >]}i)
     strategy :page_match do |page, regex|
       # Match versions from directories
       versions = page.scan(regex)
@@ -24,12 +24,12 @@ class Singular < Formula
 
       # Fetch the page for the newest version directory
       dir_page = Homebrew::Livecheck::Strategy.page_content(
-        URI.join(@url, "#{newest_version.to_s.tr(".", "-")}").to_s,
+        URI.join(@url, "#{newest_version.to_s.tr(".", "-")}/").to_s,
       )
       next versions if dir_page[:content].blank?
 
       # Identify versions from files in the version directory
-      dir_versions = dir_page[:content].scan(href=.*?singular[._-]v?(\d+(?:\.\d+)+(?:p\d+)?)\.ti).flatten
+      dir_versions = dir_page[:content].scan(/href=.*?singular[._-]v?(\d+(?:\.\d+)+(?:p\d+)?)\.t/i).flatten
 
       dir_versions || versions
     end
@@ -46,7 +46,7 @@ class Singular < Formula
   end
 
   head do
-    url "https:github.comSingularSingular.git", branch: "spielwiese"
+    url "https://github.com/Singular/Singular.git", branch: "spielwiese"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -61,8 +61,8 @@ class Singular < Formula
   depends_on "readline"
 
   def install
-    system ".autogen.sh" if build.head?
-    system ".configure", "--disable-silent-rules",
+    system "./autogen.sh" if build.head?
+    system "./configure", "--disable-silent-rules",
                           "--with-python=#{which("python3.13")}",
                           "CXXFLAGS=-std=c++11",
                           *std_configure_args
@@ -77,6 +77,6 @@ class Singular < Formula
       poly qq = z;
       p*q*qq;
     EOS
-    assert_match "xyz", pipe_output("#{bin}Singular", testinput, 0)
+    assert_match "xyz", pipe_output("#{bin}/Singular", testinput, 0)
   end
 end

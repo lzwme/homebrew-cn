@@ -1,13 +1,13 @@
 class Jasper < Formula
   desc "Library for manipulating JPEG-2000 images"
-  homepage "https:ece.engr.uvic.ca~frodojasper"
-  url "https:github.comjasper-softwarejasperreleasesdownloadversion-4.2.5jasper-4.2.5.tar.gz"
+  homepage "https://ece.engr.uvic.ca/~frodo/jasper/"
+  url "https://ghfast.top/https://github.com/jasper-software/jasper/releases/download/version-4.2.5/jasper-4.2.5.tar.gz"
   sha256 "6e49075b47204a9879600f85628a248cdb19abc1bb74d0b7a2177bcdb87c95eb"
   license "JasPer-2.0"
 
   livecheck do
     url :stable
-    regex(^version[._-]v?(\d+(?:\.\d+)+)$i)
+    regex(/^version[._-]v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -30,8 +30,8 @@ class Jasper < Formula
 
       if OS.mac?
         # Make sure macOS's GLUT.framework is used, not XQuartz or freeglut
-        # Reported to CMake upstream 4 Apr 2016 https:gitlab.kitware.comcmakecmakeissues16045
-        glut_lib = "#{MacOS.sdk_path}SystemLibraryFrameworksGLUT.framework"
+        # Reported to CMake upstream 4 Apr 2016 https://gitlab.kitware.com/cmake/cmake/issues/16045
+        glut_lib = "#{MacOS.sdk_path}/System/Library/Frameworks/GLUT.framework"
         args << "-DGLUT_glut_LIBRARY=#{glut_lib}"
       else
         args << "-DJAS_ENABLE_OPENGL=OFF"
@@ -49,16 +49,16 @@ class Jasper < Formula
         "-DJAS_ENABLE_SHARED=OFF",
         *args
       system "make"
-      lib.install "srclibjasperlibjasper.a"
+      lib.install "src/libjasper/libjasper.a"
     end
 
     # Avoid rebuilding dependents that hard-code the prefix.
-    inreplace lib"pkgconfigjasper.pc", prefix, opt_prefix
+    inreplace lib/"pkgconfig/jasper.pc", prefix, opt_prefix
   end
 
   test do
-    system bin"jasper", "--input", test_fixtures("test.jpg"),
+    system bin/"jasper", "--input", test_fixtures("test.jpg"),
                          "--output", "test.bmp"
-    assert_path_exists testpath"test.bmp"
+    assert_path_exists testpath/"test.bmp"
   end
 end

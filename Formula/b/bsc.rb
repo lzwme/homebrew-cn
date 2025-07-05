@@ -1,11 +1,11 @@
 class Bsc < Formula
   desc "Bluespec Compiler (BSC)"
-  homepage "https:github.comB-Lang-orgbsc"
-  url "https:github.comB-Lang-orgbsc.git",
+  homepage "https://github.com/B-Lang-org/bsc"
+  url "https://github.com/B-Lang-org/bsc.git",
     tag:      "2025.01.1",
     revision: "65e3a87a17f6b9cf38cbb7b6ad7a4473f025c098"
   license "BSD-3-Clause"
-  head "https:github.comB-Lang-orgbsc.git", branch: "main"
+  head "https://github.com/B-Lang-org/bsc.git", branch: "main"
 
   no_autobump! because: :requires_manual_review
 
@@ -46,7 +46,7 @@ class Bsc < Formula
 
     store_dir = Utils.safe_popen_read("cabal", "path", "--store-dir").chomp
     ghc_version = Utils.safe_popen_read("ghc", "--numeric-version").chomp
-    package_db = "#{store_dir}ghc-#{ghc_version}-inplacepackage.db"
+    package_db = "#{store_dir}/ghc-#{ghc_version}-inplace/package.db"
 
     with_env(
       PREFIX:           libexec,
@@ -57,28 +57,28 @@ class Bsc < Formula
       system "make", "install-src", "-j#{ENV.make_jobs}"
     end
 
-    bin.write_exec_script libexec"binbsc"
-    bin.write_exec_script libexec"binbluetcl"
-    lib.install_symlink Dir[libexec"libSAT"shared_library("*")]
-    lib.install_symlink libexec"libBluesimlibbskernel.a"
-    lib.install_symlink libexec"libBluesimlibbsprim.a"
-    include.install_symlink Dir[libexec"libBluesim*.h"]
+    bin.write_exec_script libexec/"bin/bsc"
+    bin.write_exec_script libexec/"bin/bluetcl"
+    lib.install_symlink Dir[libexec/"lib/SAT"/shared_library("*")]
+    lib.install_symlink libexec/"lib/Bluesim/libbskernel.a"
+    lib.install_symlink libexec/"lib/Bluesim/libbsprim.a"
+    include.install_symlink Dir[libexec/"lib/Bluesim/*.h"]
   end
 
   test do
-    (testpath"FibOne.bsv").write <<~BSV
+    (testpath/"FibOne.bsv").write <<~BSV
       (* synthesize *)
       module mkFibOne();
-         register containing the current Fibonacci value
-        Reg#(int) this_fib();               interface instantiation
-        mkReg#(0) this_fib_inst(this_fib);  module instantiation
-         register containing the next Fibonacci value
+        // register containing the current Fibonacci value
+        Reg#(int) this_fib();              // interface instantiation
+        mkReg#(0) this_fib_inst(this_fib); // module instantiation
+        // register containing the next Fibonacci value
         Reg#(int) next_fib();
         mkReg#(1) next_fib_inst(next_fib);
 
-        rule fib;   predicate condition always true, so omitted
+        rule fib;  // predicate condition always true, so omitted
             this_fib <= next_fib;
-            next_fib <= this_fib + next_fib;   note that this uses stale this_fib
+            next_fib <= this_fib + next_fib;  // note that this uses stale this_fib
             $display("%0d", this_fib);
             if ( this_fib > 50 ) $finish(0) ;
         endrule: fib
@@ -100,25 +100,25 @@ class Bsc < Formula
     EOS
 
     # Checking Verilog generation
-    system bin"bsc", "-verilog",
+    system bin/"bsc", "-verilog",
                       "FibOne.bsv"
 
     # Checking Verilog simulation
-    system bin"bsc", "-vsim", "iverilog",
+    system bin/"bsc", "-vsim", "iverilog",
                       "-e", "mkFibOne",
                       "-o", "mkFibOne.vexe",
                       "mkFibOne.v"
-    assert_equal expected_output, shell_output(".mkFibOne.vexe")
+    assert_equal expected_output, shell_output("./mkFibOne.vexe")
 
     # Checking Bluesim object generation
-    system bin"bsc", "-sim",
+    system bin/"bsc", "-sim",
                       "FibOne.bsv"
 
     # Checking Bluesim simulation
-    system bin"bsc", "-sim",
+    system bin/"bsc", "-sim",
                       "-e", "mkFibOne",
                       "-o", "mkFibOne.bexe",
                       "mkFibOne.ba"
-    assert_equal expected_output, shell_output(".mkFibOne.bexe")
+    assert_equal expected_output, shell_output("./mkFibOne.bexe")
   end
 end

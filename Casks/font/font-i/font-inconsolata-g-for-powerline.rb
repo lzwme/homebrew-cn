@@ -2,11 +2,11 @@ cask "font-inconsolata-g-for-powerline" do
   version :latest
   sha256 :no_check
 
-  url "https:github.compowerlinefonts.git",
+  url "https://github.com/powerline/fonts.git",
       branch:    "master",
       only_path: "Inconsolata-g"
   name "Inconsolata-g for Powerline"
-  homepage "https:github.compowerlinefontstreemasterInconsolata-g"
+  homepage "https://github.com/powerline/fonts/tree/master/Inconsolata-g"
 
   font "Inconsolata-g for Powerline.otf"
 

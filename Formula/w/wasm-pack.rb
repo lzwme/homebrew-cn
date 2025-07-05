@@ -1,10 +1,10 @@
 class WasmPack < Formula
   desc "Your favorite rust -> wasm workflow tool!"
-  homepage "https:rustwasm.github.iowasm-pack"
-  url "https:github.comrustwasmwasm-packarchiverefstagsv0.13.1.tar.gz"
+  homepage "https://rustwasm.github.io/wasm-pack/"
+  url "https://ghfast.top/https://github.com/rustwasm/wasm-pack/archive/refs/tags/v0.13.1.tar.gz"
   sha256 "3c28be53174fd12a6f3c3a018f14c8383b2eec6c6699c74751c1f3c51a2346c0"
   license any_of: ["Apache-2.0", "MIT"]
-  head "https:github.comrustwasmwasm-pack.git", branch: "master"
+  head "https://github.com/rustwasm/wasm-pack.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "747c2699cacc93a426a98bab721cf4fcf70d04f041b9f985c5c28351823a3179"
@@ -25,23 +25,23 @@ class WasmPack < Formula
     # The logic to use a global copy from PATH is broken[^1] and a PR[^2] to fix stalled.
     # There is another PR[^3] to provide an environment variable to bypass version check.
     #
-    # [^1]: https:github.comrustwasmwasm-packissues1457
-    # [^2]: https:github.comrustwasmwasm-packpull1330
-    # [^3]: https:github.comrustwasmwasm-packpull1482
-    inreplace "srcinstallmod.rs", '"0.18.2"', '"0.21.3"' if OS.linux? && Hardware::CPU.arm?
+    # [^1]: https://github.com/rustwasm/wasm-pack/issues/1457
+    # [^2]: https://github.com/rustwasm/wasm-pack/pull/1330
+    # [^3]: https://github.com/rustwasm/wasm-pack/pull/1482
+    inreplace "src/install/mod.rs", '"0.18.2"', '"0.21.3"' if OS.linux? && Hardware::CPU.arm?
 
     system "cargo", "install", *std_cargo_args
   end
 
   test do
-    assert_match "wasm-pack #{version}", shell_output("#{bin}wasm-pack --version")
+    assert_match "wasm-pack #{version}", shell_output("#{bin}/wasm-pack --version")
 
     ENV.prepend_path "PATH", Formula["rustup"].bin
     system "rustup", "set", "profile", "minimal"
     system "rustup", "default", "stable"
 
-    system bin"wasm-pack", "new", "hello-wasm"
-    system bin"wasm-pack", "build", "hello-wasm"
-    assert_path_exists testpath"hello-wasmpkghello_wasm_bg.wasm"
+    system bin/"wasm-pack", "new", "hello-wasm"
+    system bin/"wasm-pack", "build", "hello-wasm"
+    assert_path_exists testpath/"hello-wasm/pkg/hello_wasm_bg.wasm"
   end
 end

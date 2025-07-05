@@ -1,10 +1,10 @@
 class Threatcl < Formula
   desc "Documenting your Threat Models with HCL"
-  homepage "https:github.comthreatclthreatcl"
-  url "https:github.comthreatclthreatclarchiverefstagsv0.2.4.tar.gz"
+  homepage "https://github.com/threatcl/threatcl"
+  url "https://ghfast.top/https://github.com/threatcl/threatcl/archive/refs/tags/v0.2.4.tar.gz"
   sha256 "0f4b73b4ae878ba1be624c3089c51fcbb298548f160ab26f52412e1407d762c8"
   license "MIT"
-  head "https:github.comthreatclthreatcl.git", branch: "main"
+  head "https://github.com/threatcl/threatcl.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "0e497682ed959de11b926acb83dbae171570044a7e53fefd5a3d387c42e2155b"
@@ -19,18 +19,18 @@ class Threatcl < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), ".cmdthreatcl"
+    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/threatcl"
 
     pkgshare.install "examples"
   end
 
   test do
-    cp_r pkgshare"examples", testpath
-    system bin"threatcl", "list", "examples"
+    cp_r pkgshare/"examples", testpath
+    system bin/"threatcl", "list", "examples"
 
-    output = shell_output("#{bin}threatcl validate #{testpath}examples")
+    output = shell_output("#{bin}/threatcl validate #{testpath}/examples")
     assert_match "[threatmodel: Modelly model]", output
 
-    assert_match version.to_s, shell_output("#{bin}threatcl --version 2>&1")
+    assert_match version.to_s, shell_output("#{bin}/threatcl --version 2>&1")
   end
 end

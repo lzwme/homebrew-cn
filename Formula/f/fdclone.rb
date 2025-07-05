@@ -1,13 +1,13 @@
 class Fdclone < Formula
   desc "Console-based file manager"
-  homepage "https:hp.vector.co.jpauthorsVA012337softfd"
-  url "http:www.unixusers.netsrcfdcloneFD-3.01j.tar.gz"
+  homepage "https://hp.vector.co.jp/authors/VA012337/soft/fd/"
+  url "http://www.unixusers.net/src/fdclone/FD-3.01j.tar.gz"
   sha256 "fe5bb67eb670dcdb1f7368698641c928523e2269b9bee3d13b3b77565d22a121"
   license :cannot_represent
 
   livecheck do
     url :homepage
-    regex(%r{href=.*?\.FD[._-]v?(\d+(?:\.\d+)+[a-z]?)\.t}i)
+    regex(%r{href=.*?\./FD[._-]v?(\d+(?:\.\d+)+[a-z]?)\.t}i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -36,7 +36,7 @@ class Fdclone < Formula
   conflicts_with "fd", because: "both install `fd` binaries"
 
   patch do
-    url "https:raw.githubusercontent.comHomebrewformula-patches86107cffdclone3.01b.patch"
+    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/86107cf/fdclone/3.01b.patch"
     sha256 "c4159db3052d7e4abec57ca719ff37f5acff626654ab4c1b513d7879dcd1eb78"
   end
 
@@ -57,13 +57,13 @@ class Fdclone < Formula
   def caveats
     <<~EOS
       To install the initial config file:
-          install -c -m 0644 #{opt_pkgshare}fd2rc.dist ~.fd2rc
+          install -c -m 0644 #{opt_pkgshare}/fd2rc.dist ~/.fd2rc
       To set application messages to Japanese, edit your .fd2rc:
           MESSAGELANG="ja"
     EOS
   end
 
   test do
-    assert_match "Hello Homebrew", shell_output("#{bin}fdsh -c \"echo Hello Homebrew\"")
+    assert_match "Hello Homebrew", shell_output("#{bin}/fdsh -c \"echo Hello Homebrew\"")
   end
 end

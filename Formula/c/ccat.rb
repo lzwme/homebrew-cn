@@ -1,10 +1,10 @@
 class Ccat < Formula
   desc "Like cat but displays content with syntax highlighting"
-  homepage "https:github.comowentherealccat"
-  url "https:github.comowentherealccatarchiverefstagsv1.1.0.tar.gz"
+  homepage "https://github.com/owenthereal/ccat"
+  url "https://ghfast.top/https://github.com/owenthereal/ccat/archive/refs/tags/v1.1.0.tar.gz"
   sha256 "b02d2c8d573f5d73595657c7854c9019d3bd2d9e6361b66ce811937ffd2bfbe1"
   license "MIT"
-  head "https:github.comowentherealccat.git", branch: "master"
+  head "https://github.com/owenthereal/ccat.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -33,15 +33,15 @@ class Ccat < Formula
   def install
     ENV["GOPATH"] = buildpath
     ENV["GO111MODULE"] = "auto"
-    system ".scriptbuild"
+    system "./script/build"
     bin.install "ccat"
   end
 
   test do
-    (testpath"test.txt").write <<~EOS
+    (testpath/"test.txt").write <<~EOS
       I am a colourful cat
     EOS
 
-    assert_match(I am a colourful cat, shell_output("#{bin}ccat test.txt"))
+    assert_match(/I am a colourful cat/, shell_output("#{bin}/ccat test.txt"))
   end
 end

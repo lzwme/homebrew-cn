@@ -1,10 +1,10 @@
 class Flow < Formula
   desc "Static type checker for JavaScript"
-  homepage "https:flow.org"
-  url "https:github.comfacebookflowarchiverefstagsv0.274.2.tar.gz"
+  homepage "https://flow.org/"
+  url "https://ghfast.top/https://github.com/facebook/flow/archive/refs/tags/v0.274.2.tar.gz"
   sha256 "910c4c6069e6df41ea676027d4ea3336fbf9e8454c8decdc1ab7cbd204337bc0"
   license "MIT"
-  head "https:github.comfacebookflow.git", branch: "main"
+  head "https://github.com/facebook/flow.git", branch: "main"
 
   no_autobump! because: :bumped_by_upstream
 
@@ -30,19 +30,19 @@ class Flow < Formula
   def install
     system "make", "all-homebrew"
 
-    bin.install "binflow"
+    bin.install "bin/flow"
 
-    bash_completion.install "resourcesshellbash-completion" => "flow-completion.bash"
-    zsh_completion.install_symlink bash_completion"flow-completion.bash" => "_flow"
+    bash_completion.install "resources/shell/bash-completion" => "flow-completion.bash"
+    zsh_completion.install_symlink bash_completion/"flow-completion.bash" => "_flow"
   end
 
   test do
-    system bin"flow", "init", testpath
-    (testpath"test.js").write <<~JS
-      * @flow *
+    system bin/"flow", "init", testpath
+    (testpath/"test.js").write <<~JS
+      /* @flow */
       var x: string = 123;
     JS
-    expected = Found 1 error
-    assert_match expected, shell_output("#{bin}flow check #{testpath}", 2)
+    expected = /Found 1 error/
+    assert_match expected, shell_output("#{bin}/flow check #{testpath}", 2)
   end
 end

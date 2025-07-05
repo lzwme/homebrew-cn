@@ -1,10 +1,10 @@
 class Gobuster < Formula
-  desc "Directoryfile & DNS busting tool written in Go"
-  homepage "https:github.comOJgobuster"
-  url "https:github.comOJgobusterarchiverefstagsv3.7.0.tar.gz"
+  desc "Directory/file & DNS busting tool written in Go"
+  homepage "https://github.com/OJ/gobuster"
+  url "https://ghfast.top/https://github.com/OJ/gobuster/archive/refs/tags/v3.7.0.tar.gz"
   sha256 "893f1979b453d655880c19552e1f894110a661a4057a58e95a4d7505bf6d7fa8"
   license "Apache-2.0"
-  head "https:github.comOJgobuster.git", branch: "master"
+  head "https://github.com/OJ/gobuster.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "dbbbd89652ba67e6a47ac28283e6d01323510fcf2f8961fd3a1652f7bff114a0"
@@ -22,7 +22,7 @@ class Gobuster < Formula
   end
 
   test do
-    (testpath"words.txt").write <<~EOS
+    (testpath/"words.txt").write <<~EOS
       dog
       cat
       horse
@@ -30,9 +30,9 @@ class Gobuster < Formula
       ape
     EOS
 
-    output = shell_output("#{bin}gobuster dir -u https:buffered.io -w words.txt 2>&1")
+    output = shell_output("#{bin}/gobuster dir -u https://buffered.io -w words.txt 2>&1")
     assert_match "Finished", output
 
-    assert_match version.major_minor.to_s, shell_output(bin"gobuster --version")
+    assert_match version.major_minor.to_s, shell_output(bin/"gobuster --version")
   end
 end

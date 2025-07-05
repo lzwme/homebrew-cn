@@ -2,12 +2,12 @@ cask "font-scada" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefonts.git",
-      verified:  "github.comgooglefonts",
+  url "https://github.com/google/fonts.git",
+      verified:  "github.com/google/fonts",
       branch:    "main",
-      only_path: "oflscada"
+      only_path: "ofl/scada"
   name "Scada"
-  homepage "https:fonts.google.comspecimenScada"
+  homepage "https://fonts.google.com/specimen/Scada"
 
   font "Scada-Bold.ttf"
   font "Scada-BoldItalic.ttf"

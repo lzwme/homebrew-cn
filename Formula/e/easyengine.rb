@@ -1,7 +1,7 @@
 class Easyengine < Formula
   desc "Command-line control panel to manage WordPress sites"
-  homepage "https:easyengine.io"
-  url "https:github.comEasyEngineeasyenginereleasesdownloadv4.8.1easyengine.phar"
+  homepage "https://easyengine.io/"
+  url "https://ghfast.top/https://github.com/EasyEngine/easyengine/releases/download/v4.8.1/easyengine.phar"
   sha256 "81972cf29f232aa44f8a350de19c72305d9dc2483f5d5c136ee799de5acf00fa"
   license "MIT"
 
@@ -18,7 +18,7 @@ class Easyengine < Formula
   depends_on "dnsmasq"
   depends_on "php"
 
-  # Keg-relocation breaks the formula when it replaces `usrlocal` with a non-default prefix
+  # Keg-relocation breaks the formula when it replaces `/usr/local` with a non-default prefix
   on_macos do
     on_intel do
       pour_bottle? only_if: :default_prefix
@@ -32,11 +32,11 @@ class Easyengine < Formula
   test do
     return if OS.linux? # requires `sudo`
 
-    system bin"ee", "config", "set", "locale", "hi_IN"
-    output = shell_output("#{bin}ee config get locale")
+    system bin/"ee", "config", "set", "locale", "hi_IN"
+    output = shell_output("#{bin}/ee config get locale")
     assert_match "hi_IN", output
 
-    output = shell_output("#{bin}ee cli info")
+    output = shell_output("#{bin}/ee cli info")
     assert_match OS.kernel_name, output
   end
 end

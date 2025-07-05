@@ -1,11 +1,11 @@
 class Launchdns < Formula
   desc "Mini DNS server designed solely to route queries to localhost"
-  homepage "https:github.comjoshlaunchdns"
-  url "https:github.comjoshlaunchdnsarchiverefstagsv1.0.4.tar.gz"
+  homepage "https://github.com/josh/launchdns"
+  url "https://ghfast.top/https://github.com/josh/launchdns/archive/refs/tags/v1.0.4.tar.gz"
   sha256 "60f6010659407e3d148c021c88e1c1ce0924de320e99a5c58b21c8aece3888aa"
   license "MIT"
   revision 2
-  head "https:github.comjoshlaunchdns.git", branch: "master"
+  head "https://github.com/josh/launchdns.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -31,25 +31,25 @@ class Launchdns < Formula
 
   def install
     ENV["PREFIX"] = prefix
-    system ".configure", "--with-launch-h", "--with-launch-h-activate-socket"
+    system "./configure", "--with-launch-h", "--with-launch-h-activate-socket"
     system "make", "install"
 
-    (prefix"etcresolverlocalhost").write <<~EOS
+    (prefix/"etc/resolver/localhost").write <<~EOS
       nameserver 127.0.0.1
       port 55353
     EOS
   end
 
   service do
-    run [opt_bin"launchdns", "--socket=Listeners", "--timeout=30"]
-    error_log_path var"loglaunchdns.log"
-    log_path var"loglaunchdns.log"
-    sockets "tcp:127.0.0.1:55353"
+    run [opt_bin/"launchdns", "--socket=Listeners", "--timeout=30"]
+    error_log_path var/"log/launchdns.log"
+    log_path var/"log/launchdns.log"
+    sockets "tcp://127.0.0.1:55353"
   end
 
   test do
-    output = shell_output("#{bin}launchdns --version")
-    refute_match(without socket activation, output)
-    system bin"launchdns", "-p0", "-t1"
+    output = shell_output("#{bin}/launchdns --version")
+    refute_match(/without socket activation/, output)
+    system bin/"launchdns", "-p0", "-t1"
   end
 end

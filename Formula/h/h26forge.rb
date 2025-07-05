@@ -1,7 +1,7 @@
 class H26forge < Formula
   desc "Tool for making syntactically valid but semantically spec-noncompliant videos"
-  homepage "https:github.comh26forgeh26forge"
-  url "https:github.comh26forgeh26forgearchiverefstags2024-07-06.tar.gz"
+  homepage "https://github.com/h26forge/h26forge"
+  url "https://ghfast.top/https://github.com/h26forge/h26forge/archive/refs/tags/2024-07-06.tar.gz"
   sha256 "66e3bd1f63e6c70db334d103107ced2b2924aaee6472c71682ed34c8276203b0"
   license "MIT"
 
@@ -26,6 +26,6 @@ class H26forge < Formula
   end
 
   test do
-    system bin"h26forge", "generate", "-o", "out.h264", "--seed", "264", "--small"
+    system bin/"h26forge", "generate", "-o", "out.h264", "--seed", "264", "--small"
   end
 end

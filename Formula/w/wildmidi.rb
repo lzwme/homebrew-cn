@@ -1,7 +1,7 @@
 class Wildmidi < Formula
   desc "Simple software midi player"
-  homepage "https:github.comMindwerkswildmidi"
-  url "https:github.comMindwerkswildmidiarchiverefstagswildmidi-0.4.6.tar.gz"
+  homepage "https://github.com/Mindwerks/wildmidi"
+  url "https://ghfast.top/https://github.com/Mindwerks/wildmidi/archive/refs/tags/wildmidi-0.4.6.tar.gz"
   sha256 "051b8c51699af594ddd3e4e3b06bad3564e9499c3c6b9e6f880cb2f92bcfa9c8"
   license all_of: ["GPL-3.0-only", "LGPL-3.0-only"]
 
@@ -30,7 +30,7 @@ class Wildmidi < Formula
   end
 
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include <wildmidi_lib.h>
       #include <stdio.h>
       #include <assert.h>
@@ -42,6 +42,6 @@ class Wildmidi < Formula
     C
 
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lWildMidi"
-    system ".a.out"
+    system "./a.out"
   end
 end

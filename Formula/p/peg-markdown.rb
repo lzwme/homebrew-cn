@@ -1,11 +1,11 @@
 class PegMarkdown < Formula
   desc "Markdown implementation based on a PEG grammar"
-  homepage "https:github.comjgmpeg-markdown"
-  url "https:github.comjgmpeg-markdownarchiverefstags0.4.14.tar.gz"
+  homepage "https://github.com/jgm/peg-markdown"
+  url "https://ghfast.top/https://github.com/jgm/peg-markdown/archive/refs/tags/0.4.14.tar.gz"
   sha256 "111bc56058cfed11890af11bec7419e2f7ccec6b399bf05f8c55dae0a1712980"
   license any_of: ["GPL-2.0-or-later", "MIT"]
   revision 1
-  head "https:github.comjgmpeg-markdown.git", branch: "master"
+  head "https://github.com/jgm/peg-markdown.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -43,7 +43,7 @@ class PegMarkdown < Formula
   end
 
   test do
-    assert_equal "<p><strong>Homebrew<strong><p>",
-      pipe_output(bin"peg-markdown", "**Homebrew**", 0).chomp
+    assert_equal "<p><strong>Homebrew</strong></p>",
+      pipe_output(bin/"peg-markdown", "**Homebrew**", 0).chomp
   end
 end

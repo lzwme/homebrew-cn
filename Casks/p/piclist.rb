@@ -5,14 +5,14 @@ cask "piclist" do
   sha256 arm:   "42da8b0730679e5ab1f3ea44417a8275a7af60f21b818004eba6f9ba1616cb7c",
          intel: "73bdbdd4afebac99f8e060a1ac5c6e926737b478a0a708092079b7343cdb081a"
 
-  url "https:github.comKuingsmilePicListreleasesdownloadv#{version}PicList-#{version}-#{arch}.dmg",
-      verified: "github.comKuingsmilePicList"
+  url "https://ghfast.top/https://github.com/Kuingsmile/PicList/releases/download/v#{version}/PicList-#{version}-#{arch}.dmg",
+      verified: "github.com/Kuingsmile/PicList/"
   name "PicList"
   desc "Cloud storage manager tool"
-  homepage "https:piclist.cn"
+  homepage "https://piclist.cn/"
 
   livecheck do
-    url "https:release.piclist.cnlatestlatest-mac.yml"
+    url "https://release.piclist.cn/latest/latest-mac.yml"
     strategy :electron_builder
   end
 
@@ -22,8 +22,8 @@ cask "piclist" do
   app "PicList.app"
 
   zap trash: [
-    "~LibraryApplication Supportpiclist",
-    "~LibraryPreferencescom.kuingsmile.piclist.plist",
-    "~LibrarySaved Application Statecom.kuingsmile.piclist.savedState",
+    "~/Library/Application Support/piclist",
+    "~/Library/Preferences/com.kuingsmile.piclist.plist",
+    "~/Library/Saved Application State/com.kuingsmile.piclist.savedState",
   ]
 end

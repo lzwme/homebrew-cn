@@ -2,16 +2,16 @@ cask "steam-plus-plus" do
   version "3.0.0-rc.16"
   sha256 "fb25c8923c2f60b55ef680a7909de75841fdd2c525b0cd19f49d64121997df61"
 
-  url "https:github.comBeyondDimensionSteamToolsreleasesdownload#{version}Steam++_v#{version}_macos.dmg",
-      verified: "github.comBeyondDimensionSteamTools"
+  url "https://ghfast.top/https://github.com/BeyondDimension/SteamTools/releases/download/#{version}/Steam++_v#{version}_macos.dmg",
+      verified: "github.com/BeyondDimension/SteamTools/"
   name "Steam++"
   desc "Steam helper tools"
-  homepage "https:steampp.net"
+  homepage "https://steampp.net/"
 
   livecheck do
     url :url
     strategy :github_latest
-    regex(v?(\d+(?:\.\d+)+(?:-rc\.(\d+)?))i)
+    regex(/v?(\d+(?:\.\d+)+(?:-rc\.(\d+)?))/i)
   end
 
   depends_on macos: ">= :monterey"
@@ -19,9 +19,9 @@ cask "steam-plus-plus" do
   app "Steam++.app"
 
   zap trash: [
-    "~LibraryCachesSteam++",
-    "~LibraryPreferencesnet.steampp.app.plist",
-    "~LibrarySaved Application Statenet.steampp.app.savedState",
-    "~LibrarySteam++",
+    "~/Library/Caches/Steam++",
+    "~/Library/Preferences/net.steampp.app.plist",
+    "~/Library/Saved Application State/net.steampp.app.savedState",
+    "~/Library/Steam++",
   ]
 end

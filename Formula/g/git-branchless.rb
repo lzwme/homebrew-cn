@@ -1,15 +1,15 @@
 class GitBranchless < Formula
   desc "High-velocity, monorepo-scale workflow for Git"
-  homepage "https:github.comarxanasgit-branchless"
+  homepage "https://github.com/arxanas/git-branchless"
   license any_of: ["Apache-2.0", "MIT"]
   revision 2
-  head "https:github.comarxanasgit-branchless.git", branch: "master"
+  head "https://github.com/arxanas/git-branchless.git", branch: "master"
 
   stable do
-    url "https:github.comarxanasgit-branchlessarchiverefstagsv0.10.0.tar.gz"
+    url "https://ghfast.top/https://github.com/arxanas/git-branchless/archive/refs/tags/v0.10.0.tar.gz"
     sha256 "1eb8dbb85839c5b0d333e8c3f9011c3f725e0244bb92f4db918fce9d69851ff7"
 
-    # patch to use libgit2 1.9, upstream pr ref, https:github.comarxanasgit-branchlesspull1485
+    # patch to use libgit2 1.9, upstream pr ref, https://github.com/arxanas/git-branchless/pull/1485
     patch :DATA
   end
 
@@ -49,17 +49,17 @@ class GitBranchless < Formula
 
   test do
     system "git", "init"
-    %w[haunted house].each { |f| touch testpathf }
+    %w[haunted house].each { |f| touch testpath/f }
     system "git", "add", "haunted", "house"
     system "git", "commit", "-a", "-m", "Initial Commit"
 
     system "git", "branchless", "init"
     assert_match "Initial Commit", shell_output("git sl").strip
 
-    linkage_with_libgit2 = (bin"git-branchless").dynamically_linked_libraries.any? do |dll|
+    linkage_with_libgit2 = (bin/"git-branchless").dynamically_linked_libraries.any? do |dll|
       next false unless dll.start_with?(HOMEBREW_PREFIX.to_s)
 
-      File.realpath(dll) == (Formula["libgit2"].opt_libshared_library("libgit2")).realpath.to_s
+      File.realpath(dll) == (Formula["libgit2"].opt_lib/shared_library("libgit2")).realpath.to_s
     end
 
     assert linkage_with_libgit2, "No linkage with libgit2! Cargo is likely using a vendored version."
@@ -67,17 +67,17 @@ class GitBranchless < Formula
 end
 
 __END__
-diff --git aCargo.lock bCargo.lock
+diff --git a/Cargo.lock b/Cargo.lock
 index ecd3295..19168b5 100644
---- aCargo.lock
-+++ bCargo.lock
+--- a/Cargo.lock
++++ b/Cargo.lock
 @@ -1756,9 +1756,9 @@ dependencies = [
  
  [[package]]
  name = "git2"
 -version = "0.19.0"
 +version = "0.20.0"
- source = "registry+https:github.comrust-langcrates.io-index"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
 -checksum = "b903b73e45dc0c6c596f2d37eccece7c1c8bb6e4407b001096387c63d0d93724"
 +checksum = "3fda788993cc341f69012feba8bf45c0ba4f3291fcc08e214b4d5a7332d88aff"
  dependencies = [
@@ -89,16 +89,16 @@ index ecd3295..19168b5 100644
  name = "libgit2-sys"
 -version = "0.17.0+1.8.1"
 +version = "0.18.0+1.9.0"
- source = "registry+https:github.comrust-langcrates.io-index"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
 -checksum = "10472326a8a6477c3c20a64547b0059e4b0d086869eee31e6d7da728a8eb7224"
 +checksum = "e1a117465e7e1597e8febea8bb0c410f1c7fb93b1e1cddf34363f8390367ffec"
  dependencies = [
   "cc",
   "libc",
-diff --git aCargo.toml bCargo.toml
+diff --git a/Cargo.toml b/Cargo.toml
 index 1c806fa..fa0364a 100644
---- aCargo.toml
-+++ bCargo.toml
+--- a/Cargo.toml
++++ b/Cargo.toml
 @@ -69,7 +69,7 @@ git-branchless-smartlog = { version = "0.10.0", path = "git-branchless-smartlog"
  git-branchless-submit = { version = "0.10.0", path = "git-branchless-submit" }
  git-branchless-test = { version = "0.10.0", path = "git-branchless-test" }
@@ -108,10 +108,10 @@ index 1c806fa..fa0364a 100644
  glob = "0.3.0"
  indexmap = "2.2.6"
  indicatif = { version = "0.17.8", features = ["improved_unicode"] }
-diff --git agit-branchless-invokesrclib.rs bgit-branchless-invokesrclib.rs
+diff --git a/git-branchless-invoke/src/lib.rs b/git-branchless-invoke/src/lib.rs
 index eee43ff..a6cd973 100644
---- agit-branchless-invokesrclib.rs
-+++ bgit-branchless-invokesrclib.rs
+--- a/git-branchless-invoke/src/lib.rs
++++ b/git-branchless-invoke/src/lib.rs
 @@ -117,12 +117,12 @@ fn install_tracing(effects: Effects) -> eyre::Result<impl Drop> {
  
  #[instrument]

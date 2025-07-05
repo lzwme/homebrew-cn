@@ -1,7 +1,7 @@
 class Ludusavi < Formula
   desc "Backup tool for PC game saves"
-  homepage "https:github.commtkennerlyludusavi"
-  url "https:github.commtkennerlyludusaviarchiverefstagsv0.29.1.tar.gz"
+  homepage "https://github.com/mtkennerly/ludusavi"
+  url "https://ghfast.top/https://github.com/mtkennerly/ludusavi/archive/refs/tags/v0.29.1.tar.gz"
   sha256 "6f1ea88f2483a1179d6797239fc4a57339e8c870add807ceacaa50a239031f0c"
   license "MIT"
 
@@ -30,7 +30,7 @@ class Ludusavi < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}ludusavi -V")
-    assert_empty shell_output("#{bin}ludusavi backups").strip
+    assert_match version.to_s, shell_output("#{bin}/ludusavi -V")
+    assert_empty shell_output("#{bin}/ludusavi backups").strip
   end
 end

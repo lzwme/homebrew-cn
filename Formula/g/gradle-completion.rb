@@ -1,10 +1,10 @@
 class GradleCompletion < Formula
   desc "Bash and Zsh completion for Gradle"
-  homepage "https:gradle.org"
-  url "https:github.comgradlegradle-completionarchiverefstagsv1.4.1.tar.gz"
+  homepage "https://gradle.org/"
+  url "https://ghfast.top/https://github.com/gradle/gradle-completion/archive/refs/tags/v1.4.1.tar.gz"
   sha256 "5d77f0c739fe983cfa86078a615f43be9be0e3ce05a3a7b70cb813a1ebd1ceef"
   license "MIT"
-  head "https:github.comgradlegradle-completion.git", branch: "master"
+  head "https://github.com/gradle/gradle-completion.git", branch: "master"
 
   bottle do
     rebuild 1
@@ -18,6 +18,6 @@ class GradleCompletion < Formula
 
   test do
     assert_match "-F _gradle",
-      shell_output("bash -c 'source #{bash_completion}gradle && complete -p gradle'")
+      shell_output("bash -c 'source #{bash_completion}/gradle && complete -p gradle'")
   end
 end

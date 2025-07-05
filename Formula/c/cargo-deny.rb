@@ -1,10 +1,10 @@
 class CargoDeny < Formula
   desc "Cargo plugin for linting your dependencies"
-  homepage "https:github.comEmbarkStudioscargo-deny"
-  url "https:github.comEmbarkStudioscargo-denyarchiverefstags0.18.3.tar.gz"
+  homepage "https://github.com/EmbarkStudios/cargo-deny"
+  url "https://ghfast.top/https://github.com/EmbarkStudios/cargo-deny/archive/refs/tags/0.18.3.tar.gz"
   sha256 "4d15dbd7cc653fcb53a21e42b0adaab6b501693c939b76e4a7683c04a4a689ad"
   license any_of: ["Apache-2.0", "MIT"]
-  head "https:github.comEmbarkStudioscargo-deny.git", branch: "main"
+  head "https://github.com/EmbarkStudios/cargo-deny.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "9fa4e65cf3c2ccb59c3cd81a0a24c0fe5b5899ae8944eb8727da068a8c6fb656"
@@ -26,14 +26,14 @@ class CargoDeny < Formula
 
   test do
     # Show that we can use a different toolchain than the one provided by the `rust` formula.
-    # https:github.comHomebrewhomebrew-corepull134074#pullrequestreview-1484979359
+    # https://github.com/Homebrew/homebrew-core/pull/134074#pullrequestreview-1484979359
     ENV.prepend_path "PATH", Formula["rustup"].bin
     system "rustup", "set", "profile", "minimal"
     system "rustup", "default", "beta"
 
-    crate = testpath"demo-crate"
+    crate = testpath/"demo-crate"
     mkdir crate do
-      (crate"srcmain.rs").write <<~RUST
+      (crate/"src/main.rs").write <<~RUST
         #[cfg(test)]
         mod tests {
           #[test]
@@ -42,7 +42,7 @@ class CargoDeny < Formula
           }
         }
       RUST
-      (crate"Cargo.toml").write <<~TOML
+      (crate/"Cargo.toml").write <<~TOML
         [package]
         name = "demo-crate"
         version = "0.1.0"

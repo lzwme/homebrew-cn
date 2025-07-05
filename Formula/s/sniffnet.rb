@@ -1,10 +1,10 @@
 class Sniffnet < Formula
   desc "Cross-platform application to monitor your network traffic"
-  homepage "https:sniffnet.net"
-  url "https:github.comGyulyVGCsniffnetarchiverefstagsv1.4.0.tar.gz"
+  homepage "https://sniffnet.net/"
+  url "https://ghfast.top/https://github.com/GyulyVGC/sniffnet/archive/refs/tags/v1.4.0.tar.gz"
   sha256 "7f0789836b81ca0ce249d1ebb15493aab3941a5c4438ac1a70784470c0401550"
   license any_of: ["Apache-2.0", "MIT"]
-  head "https:github.comGyulyVGCsniffnet.git", branch: "main"
+  head "https://github.com/GyulyVGC/sniffnet.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "46fed06d4e0d8dd7262299c6b5b65d0021a5e49bcebb29730c015b483b376dfe"
@@ -33,7 +33,7 @@ class Sniffnet < Formula
 
   test do
     # sniffet is a GUI application
-    pid = spawn bin"sniffnet"
+    pid = spawn bin/"sniffnet"
     sleep 1
   ensure
     Process.kill("TERM", pid)

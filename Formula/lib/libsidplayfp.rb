@@ -1,7 +1,7 @@
 class Libsidplayfp < Formula
   desc "Library to play Commodore 64 music"
-  homepage "https:github.comlibsidplayfplibsidplayfp"
-  url "https:github.comlibsidplayfplibsidplayfpreleasesdownloadv2.15.0libsidplayfp-2.15.0.tar.gz"
+  homepage "https://github.com/libsidplayfp/libsidplayfp"
+  url "https://ghfast.top/https://github.com/libsidplayfp/libsidplayfp/releases/download/v2.15.0/libsidplayfp-2.15.0.tar.gz"
   sha256 "42c28b9ef57998ad66bbbb3dfab00c6684715c643d9ccc9ac8da4d7cf296dd00"
   license "GPL-2.0-or-later"
 
@@ -16,7 +16,7 @@ class Libsidplayfp < Formula
   end
 
   head do
-    url "https:github.comlibsidplayfplibsidplayfp.git", branch: "master"
+    url "https://github.com/libsidplayfp/libsidplayfp.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -30,14 +30,14 @@ class Libsidplayfp < Formula
 
   def install
     system "autoreconf", "--force", "--install", "--verbose" if build.head?
-    system ".configure", "--disable-silent-rules", *std_configure_args
+    system "./configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
   end
 
   test do
-    (testpath"test.cpp").write <<~CPP
+    (testpath/"test.cpp").write <<~CPP
       #include <iostream>
-      #include <sidplayfpsidplayfp.h>
+      #include <sidplayfp/sidplayfp.h>
 
       int main() {
           sidplayfp play;
@@ -48,6 +48,6 @@ class Libsidplayfp < Formula
       }
     CPP
     system ENV.cxx, "test.cpp", "-L#{lib}", "-I#{include}", "-lsidplayfp", "-o", "test"
-    assert_equal version.to_s, shell_output(".test")
+    assert_equal version.to_s, shell_output("./test")
   end
 end

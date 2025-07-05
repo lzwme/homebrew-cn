@@ -2,12 +2,12 @@ cask "font-gudea" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefonts.git",
-      verified:  "github.comgooglefonts",
+  url "https://github.com/google/fonts.git",
+      verified:  "github.com/google/fonts",
       branch:    "main",
-      only_path: "oflgudea"
+      only_path: "ofl/gudea"
   name "Gudea"
-  homepage "https:fonts.google.comspecimenGudea"
+  homepage "https://fonts.google.com/specimen/Gudea"
 
   font "Gudea-Bold.ttf"
   font "Gudea-Italic.ttf"

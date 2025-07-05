@@ -1,10 +1,10 @@
 class Pueue < Formula
   desc "Command-line tool for managing long-running shell commands"
-  homepage "https:github.comNukesorpueue"
-  url "https:github.comNukesorpueuearchiverefstagsv4.0.0.tar.gz"
+  homepage "https://github.com/Nukesor/pueue"
+  url "https://ghfast.top/https://github.com/Nukesor/pueue/archive/refs/tags/v4.0.0.tar.gz"
   sha256 "b7add2bdd6cdce683eea5b24932ed12534b76c29143d8183216c4afc60beef04"
   license "MIT"
-  head "https:github.comNukesorpueue.git", branch: "main"
+  head "https://github.com/Nukesor/pueue.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "170ca77ac6679b9328df9d5da9a8d3227161031ff17feec521b271fad097ed43"
@@ -21,40 +21,40 @@ class Pueue < Formula
   def install
     system "cargo", "install", *std_cargo_args(path: "pueue")
 
-    generate_completions_from_executable(bin"pueue", "completions")
+    generate_completions_from_executable(bin/"pueue", "completions")
   end
 
   service do
-    run [opt_bin"pueued", "--verbose"]
+    run [opt_bin/"pueued", "--verbose"]
     keep_alive false
     working_dir var
-    log_path var"logpueued.log"
-    error_log_path var"logpueued.log"
+    log_path var/"log/pueued.log"
+    error_log_path var/"log/pueued.log"
   end
 
   test do
     pid = fork do
-      exec bin"pueued"
+      exec bin/"pueued"
     end
     sleep 2
 
     begin
-      mkdir testpath"LibraryPreferences" # For macOS
-      mkdir testpath".config" # For Linux
+      mkdir testpath/"Library/Preferences" # For macOS
+      mkdir testpath/".config" # For Linux
 
-      output = shell_output("#{bin}pueue status")
+      output = shell_output("#{bin}/pueue status")
       assert_match "Task list is empty. Add tasks with `pueue add -- [cmd]`", output
 
-      output = shell_output("#{bin}pueue add x")
+      output = shell_output("#{bin}/pueue add x")
       assert_match "New task added (id 0).", output
 
-      output = shell_output("#{bin}pueue status")
+      output = shell_output("#{bin}/pueue status")
       assert_match "(1 parallel): running", output
     ensure
       Process.kill("TERM", pid)
     end
 
-    assert_match "pueued #{version}", shell_output("#{bin}pueued --version")
-    assert_match "pueue #{version}", shell_output("#{bin}pueue --version")
+    assert_match "pueued #{version}", shell_output("#{bin}/pueued --version")
+    assert_match "pueue #{version}", shell_output("#{bin}/pueue --version")
   end
 end

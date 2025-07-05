@@ -1,10 +1,10 @@
 class LeetcodeCli < Formula
   desc "May the code be with you"
-  homepage "https:github.comclearloopleetcode-cli"
-  url "https:github.comclearloopleetcode-cliarchiverefstagsv0.4.6.tar.gz"
+  homepage "https://github.com/clearloop/leetcode-cli"
+  url "https://ghfast.top/https://github.com/clearloop/leetcode-cli/archive/refs/tags/v0.4.6.tar.gz"
   sha256 "0b7af5782947a2ae5fab7233c8ca6dd59441287033e9116e332673ee6613a9e3"
   license "MIT"
-  head "https:github.comclearloopleetcode-cli.git", branch: "master"
+  head "https://github.com/clearloop/leetcode-cli.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "74e049034f26697cbb450932850add1cbfd9d9dccb52d61d2109184f04987f6d"
@@ -29,11 +29,11 @@ class LeetcodeCli < Formula
 
     system "cargo", "install", *std_cargo_args
 
-    generate_completions_from_executable(bin"leetcode", "completions")
+    generate_completions_from_executable(bin/"leetcode", "completions")
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}leetcode --version")
-    assert_match "[INFO  leetcode_cli::config] Generate root dir", shell_output("#{bin}leetcode list 2>&1", 101)
+    assert_match version.to_s, shell_output("#{bin}/leetcode --version")
+    assert_match "[INFO  leetcode_cli::config] Generate root dir", shell_output("#{bin}/leetcode list 2>&1", 101)
   end
 end

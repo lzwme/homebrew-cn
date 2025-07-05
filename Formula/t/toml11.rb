@@ -1,7 +1,7 @@
 class Toml11 < Formula
   desc "TOML for Modern C++"
-  homepage "https:toruniina.github.iotoml11"
-  url "https:github.comToruNiinatoml11archiverefstagsv4.4.0.tar.gz"
+  homepage "https://toruniina.github.io/toml11/"
+  url "https://ghfast.top/https://github.com/ToruNiina/toml11/archive/refs/tags/v4.4.0.tar.gz"
   sha256 "815bfe6792aa11a13a133b86e7f0f45edc5d71eb78f5fb6686c49c7f792b9049"
   license "MIT"
 
@@ -24,11 +24,11 @@ class Toml11 < Formula
   end
 
   test do
-    (testpath"test.toml").write <<~TOML
+    (testpath/"test.toml").write <<~TOML
       test_str = "a test string"
     TOML
 
-    (testpath"test.cpp").write <<~CPP
+    (testpath/"test.cpp").write <<~CPP
       #include "toml.hpp"
       #include <iostream>
 
@@ -41,6 +41,6 @@ class Toml11 < Formula
     CPP
 
     system ENV.cxx, "-std=c++11", "test.cpp", "-o", "test", "-I#{include}"
-    assert_equal "test_str = a test string\n", shell_output(".test")
+    assert_equal "test_str = a test string\n", shell_output("./test")
   end
 end

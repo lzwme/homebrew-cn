@@ -1,7 +1,7 @@
 class Primesieve < Formula
-  desc "Fast CC++ prime number generator"
-  homepage "https:github.comkimwalischprimesieve"
-  url "https:github.comkimwalischprimesievearchiverefstagsv12.9.tar.gz"
+  desc "Fast C/C++ prime number generator"
+  homepage "https://github.com/kimwalisch/primesieve"
+  url "https://ghfast.top/https://github.com/kimwalisch/primesieve/archive/refs/tags/v12.9.tar.gz"
   sha256 "0638f82a3dc35c0dc0b598857dfd1bc280b6de71e930724a40a35af60b440278"
   license "BSD-2-Clause"
 
@@ -24,6 +24,6 @@ class Primesieve < Formula
   end
 
   test do
-    system bin"primesieve", "100", "--count", "--print"
+    system bin/"primesieve", "100", "--count", "--print"
   end
 end

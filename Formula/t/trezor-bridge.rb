@@ -1,7 +1,7 @@
 class TrezorBridge < Formula
   desc "Trezor Communication Daemon"
-  homepage "https:github.comtrezortrezord-go"
-  url "https:github.comtrezortrezord-go.git",
+  homepage "https://github.com/trezor/trezord-go"
+  url "https://github.com/trezor/trezord-go.git",
       tag:      "v2.0.33",
       revision: "2680d5e6f7b02f06aefac1c2a9fef2c6052685de"
   license "LGPL-3.0-only"
@@ -23,24 +23,24 @@ class TrezorBridge < Formula
 
   depends_on "go" => :build
 
-  # upstream patch ref, https:github.comtrezortrezord-gopull300
+  # upstream patch ref, https://github.com/trezor/trezord-go/pull/300
   patch do
-    url "https:github.comtrezortrezord-gocommit318b01237604256b1a561b2fa57826aa0ebb218d.patch?full_index=1"
+    url "https://github.com/trezor/trezord-go/commit/318b01237604256b1a561b2fa57826aa0ebb218d.patch?full_index=1"
     sha256 "b48d0026281814f9a6a8cac48b701db741391d285867593b4ce272e70aff229a"
   end
 
   # Fix build with go 1.24
   patch do
-    url "https:github.comtrezortrezord-gocommit8ca9600d176bebf6cd2ad93ee9525a04059ee735.patch?full_index=1"
+    url "https://github.com/trezor/trezord-go/commit/8ca9600d176bebf6cd2ad93ee9525a04059ee735.patch?full_index=1"
     sha256 "3eaa5c4bcc09a931e2c07ca7a6183346ee07ca5cf98e75a0ee237677e3269a7d"
   end
 
   def install
-    system "go", "build", *std_go_args(output: bin"trezord-go", ldflags: "-s -w")
+    system "go", "build", *std_go_args(output: bin/"trezord-go", ldflags: "-s -w")
   end
 
   service do
-    run opt_bin"trezord-go"
+    run opt_bin/"trezord-go"
     keep_alive true
     require_root true
     working_dir HOMEBREW_PREFIX
@@ -48,14 +48,14 @@ class TrezorBridge < Formula
 
   test do
     # start the server with the USB disabled and enable UDP interface instead
-    server = IO.popen("#{bin}trezord-go -u=false -e 21324")
+    server = IO.popen("#{bin}/trezord-go -u=false -e 21324")
     sleep 1
 
-    output = shell_output("curl -s -X POST -H 'Origin: https:test.trezor.io' http:localhost:21325")
+    output = shell_output("curl -s -X POST -H 'Origin: https://test.trezor.io' http://localhost:21325/")
     assert_equal version.to_s, JSON.parse(output)["version"]
 
     assert_match "[]",
-        shell_output("curl -s -X POST -H 'Origin: https:test.trezor.io' http:localhost:21325enumerate")
+        shell_output("curl -s -X POST -H 'Origin: https://test.trezor.io' http://localhost:21325/enumerate")
   ensure
     Process.kill("SIGINT", server.pid)
     Process.wait(server.pid)

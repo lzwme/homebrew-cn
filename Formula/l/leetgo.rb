@@ -1,10 +1,10 @@
 class Leetgo < Formula
   desc "CLI tool for LeetCode"
-  homepage "https:github.comj178leetgo"
-  url "https:github.comj178leetgoarchiverefstagsv1.4.14.tar.gz"
+  homepage "https://github.com/j178/leetgo"
+  url "https://ghfast.top/https://github.com/j178/leetgo/archive/refs/tags/v1.4.14.tar.gz"
   sha256 "09fd101c71b8eb7c7b26d5815925be00eb1d228d00c1e67759585e4fed26ca82"
   license "MIT"
-  head "https:github.comj178leetgo.git", branch: "master"
+  head "https://github.com/j178/leetgo.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "831132b6b0456b336940c9dcd24cb407e622980d98ca9f61d59dae27bf8982ce"
@@ -20,17 +20,17 @@ class Leetgo < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.comj178leetgoconstants.Version=#{version}
-      -X github.comj178leetgoconstants.Commit=#{tap.user}
-      -X github.comj178leetgoconstants.BuildDate=#{time.iso8601}
+      -X github.com/j178/leetgo/constants.Version=#{version}
+      -X github.com/j178/leetgo/constants.Commit=#{tap.user}
+      -X github.com/j178/leetgo/constants.BuildDate=#{time.iso8601}
     ]
     system "go", "build", *std_go_args(ldflags:)
-    generate_completions_from_executable(bin"leetgo", "completion")
+    generate_completions_from_executable(bin/"leetgo", "completion")
   end
 
   test do
-    assert_match "leetgo version #{version}", shell_output("#{bin}leetgo --version")
-    system bin"leetgo", "init"
-    assert_path_exists testpath"leetgo.yaml"
+    assert_match "leetgo version #{version}", shell_output("#{bin}/leetgo --version")
+    system bin/"leetgo", "init"
+    assert_path_exists testpath/"leetgo.yaml"
   end
 end

@@ -1,14 +1,14 @@
 class Fastlane < Formula
   desc "Easiest way to build and release mobile apps"
-  homepage "https:fastlane.tools"
-  url "https:github.comfastlanefastlanearchiverefstags2.228.0.tar.gz"
+  homepage "https://fastlane.tools"
+  url "https://ghfast.top/https://github.com/fastlane/fastlane/archive/refs/tags/2.228.0.tar.gz"
   sha256 "c481eb8fda99ec15fdae7c1092b9bfb0ab974fcc48fe814b790704cd2d890e45"
   license "MIT"
-  head "https:github.comfastlanefastlane.git", branch: "master"
+  head "https://github.com/fastlane/fastlane.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -28,7 +28,7 @@ class Fastlane < Formula
   end
 
   def fastlane_gem_home
-    "${HOME}.localsharefastlane#{Formula["ruby"].version.major_minor}.0"
+    "${HOME}/.local/share/fastlane/#{Formula["ruby"].version.major_minor}.0"
   end
 
   def install
@@ -37,26 +37,26 @@ class Fastlane < Formula
     ENV["LANG"] = "en_US.UTF-8"
     ENV["LC_ALL"] = "en_US.UTF-8"
 
-    # `abbrev`, `mutex_m` gem no longer with ruby 3.4+, upstream patch pr, https:github.comfastlanefastlanepull29182
+    # `abbrev`, `mutex_m` gem no longer with ruby 3.4+, upstream patch pr, https://github.com/fastlane/fastlane/pull/29182
     system "gem", "install", "abbrev", "--no-document"
     system "gem", "install", "mutex_m", "--no-document"
 
     system "gem", "build", "fastlane.gemspec"
     system "gem", "install", "fastlane-#{version}.gem", "--no-document"
 
-    (bin"fastlane").write_env_script libexec"binfastlane",
-      PATH:                            "#{Formula["ruby"].opt_bin}:#{libexec}bin:#{fastlane_gem_home}bin:$PATH",
+    (bin/"fastlane").write_env_script libexec/"bin/fastlane",
+      PATH:                            "#{Formula["ruby"].opt_bin}:#{libexec}/bin:#{fastlane_gem_home}/bin:$PATH",
       FASTLANE_INSTALLED_VIA_HOMEBREW: "true",
       GEM_HOME:                        "${FASTLANE_GEM_HOME:-#{fastlane_gem_home}}",
       GEM_PATH:                        "${FASTLANE_GEM_HOME:-#{fastlane_gem_home}}:#{libexec}"
 
     # Remove vendored pre-built binary
-    terminal_notifier_dir = libexec.glob("gemsterminal-notifier-*vendorterminal-notifier").first
-    rm_r(terminal_notifier_dir"terminal-notifier.app")
+    terminal_notifier_dir = libexec.glob("gems/terminal-notifier-*/vendor/terminal-notifier").first
+    rm_r(terminal_notifier_dir/"terminal-notifier.app")
 
     if OS.mac?
       ln_sf(
-        (Formula["terminal-notifier"].opt_prefix"terminal-notifier.app").relative_path_from(terminal_notifier_dir),
+        (Formula["terminal-notifier"].opt_prefix/"terminal-notifier.app").relative_path_from(terminal_notifier_dir),
         terminal_notifier_dir,
       )
     end
@@ -70,9 +70,9 @@ class Fastlane < Formula
   end
 
   test do
-    assert_match "fastlane #{version}", shell_output("#{bin}fastlane --version")
+    assert_match "fastlane #{version}", shell_output("#{bin}/fastlane --version")
 
-    actions_output = shell_output("#{bin}fastlane actions")
+    actions_output = shell_output("#{bin}/fastlane actions")
     assert_match "gym", actions_output
     assert_match "pilot", actions_output
     assert_match "screengrab", actions_output

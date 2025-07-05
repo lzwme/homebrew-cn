@@ -1,10 +1,10 @@
 class PyenvPipMigrate < Formula
   desc "Migrate pip packages from one Python version to another"
-  homepage "https:github.compyenvpyenv-pip-migrate"
-  url "https:github.compyenvpyenv-pip-migratearchiverefstagsv20181205.tar.gz"
+  homepage "https://github.com/pyenv/pyenv-pip-migrate"
+  url "https://ghfast.top/https://github.com/pyenv/pyenv-pip-migrate/archive/refs/tags/v20181205.tar.gz"
   sha256 "c064c76b854fa905c40e71b5223699bacf18ca492547aad93cdde2b98ca4e58c"
   license "MIT"
-  head "https:github.compyenvpyenv-pip-migrate.git", branch: "master"
+  head "https://github.com/pyenv/pyenv-pip-migrate.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 

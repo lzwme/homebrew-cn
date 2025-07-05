@@ -1,17 +1,17 @@
 class Vgmstream < Formula
   desc "Library for playing streamed audio formats from video games"
-  homepage "https:vgmstream.org"
-  url "https:github.comvgmstreamvgmstream.git",
+  homepage "https://vgmstream.org"
+  url "https://github.com/vgmstream/vgmstream.git",
       tag:      "r2023",
       revision: "f96812ead1560b43ef56d1d388a5f01ed92a8cc0"
   version "r2023"
   license "ISC"
   version_scheme 1
-  head "https:github.comvgmstreamvgmstream.git", branch: "master"
+  head "https://github.com/vgmstream/vgmstream.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(([^"' >]+)i)
+    regex(/([^"' >]+)/i)
     strategy :github_latest
   end
 
@@ -43,18 +43,18 @@ class Vgmstream < Formula
   end
 
   def install
-    ENV["LIBRARY_PATH"] = HOMEBREW_PREFIX"lib"
+    ENV["LIBRARY_PATH"] = HOMEBREW_PREFIX/"lib"
     system "cmake", "-S", ".", "-B", "build",
                     "-DBUILD_AUDACIOUS:BOOL=OFF",
                     "-DUSE_CELT=OFF",
                     *std_cmake_args,
                     "-DFETCHCONTENT_FULLY_DISCONNECTED=OFF" # FIXME: Find a way to build without this.
     system "cmake", "--build", "build"
-    bin.install "buildclivgmstream-cli", "buildclivgmstream123"
-    lib.install "buildsrclibvgmstream.a"
+    bin.install "build/cli/vgmstream-cli", "build/cli/vgmstream123"
+    lib.install "build/src/libvgmstream.a"
   end
 
   test do
-    assert_match "decode", shell_output("#{bin}vgmstream-cli 2>&1", 1)
+    assert_match "decode", shell_output("#{bin}/vgmstream-cli 2>&1", 1)
   end
 end

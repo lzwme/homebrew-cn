@@ -2,12 +2,12 @@ cask "font-palanquin" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefonts.git",
-      verified:  "github.comgooglefonts",
+  url "https://github.com/google/fonts.git",
+      verified:  "github.com/google/fonts",
       branch:    "main",
-      only_path: "oflpalanquin"
+      only_path: "ofl/palanquin"
   name "Palanquin"
-  homepage "https:fonts.google.comspecimenPalanquin"
+  homepage "https://fonts.google.com/specimen/Palanquin"
 
   font "Palanquin-Bold.ttf"
   font "Palanquin-ExtraLight.ttf"

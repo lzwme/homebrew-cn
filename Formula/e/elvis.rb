@@ -1,10 +1,10 @@
 class Elvis < Formula
   desc "Erlang Style Reviewer"
-  homepage "https:github.cominakaelvis"
-  url "https:github.cominakaelvisarchiverefstags4.1.1.tar.gz"
+  homepage "https://github.com/inaka/elvis"
+  url "https://ghfast.top/https://github.com/inaka/elvis/archive/refs/tags/4.1.1.tar.gz"
   sha256 "82a42102734285d0e39a8b55bc2195752f44347b6f2ef0962834e49579d067c8"
   license "Apache-2.0"
-  head "https:github.cominakaelvis.git", branch: "master"
+  head "https://github.com/inaka/elvis.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "9bbbf2d22dc2579b2bf23653ca33921cf3c09c761553b48a20772e05467f00b0"
@@ -22,20 +22,20 @@ class Elvis < Formula
   def install
     system "rebar3", "escriptize"
 
-    bin.install "_builddefaultbinelvis"
+    bin.install "_build/default/bin/elvis"
 
-    bash_completion.install "privbash_completionelvis"
-    zsh_completion.install "privzsh_completion_elvis"
+    bash_completion.install "priv/bash_completion/elvis"
+    zsh_completion.install "priv/zsh_completion/_elvis"
   end
 
   test do
-    (testpath"srcexample.erl").write <<~EOS
+    (testpath/"src/example.erl").write <<~EOS
       -module(example).
 
       -define(bad_macro_name, "should be upper case").
     EOS
 
-    (testpath"elvis.config").write <<~EOS
+    (testpath/"elvis.config").write <<~EOS
       [{elvis, [
         {config, [
           \#{ dirs => ["src"], filter => "*.erl", ruleset => erl_files }
@@ -48,6 +48,6 @@ class Elvis < Formula
       The macro named "bad_macro_name" on line 3 does not respect the format defined by the regular expression
     EOS
 
-    assert_match expected, shell_output("#{bin}elvis rock", 1)
+    assert_match expected, shell_output("#{bin}/elvis rock", 1)
   end
 end

@@ -2,11 +2,11 @@ cask "eqmac" do
   version "1.8.11"
   sha256 "a9a845e31978dcd24fdd74e64b11bb820ea17fe3454283f1562d478039f87069"
 
-  url "https:github.combitgappeqMacreleasesdownloadv#{version}eqMac.dmg",
-      verified: "github.combitgappeqMac"
+  url "https://ghfast.top/https://github.com/bitgapp/eqMac/releases/download/v#{version}/eqMac.dmg",
+      verified: "github.com/bitgapp/eqMac/"
   name "eqMac"
   desc "System-wide audio equaliser"
-  homepage "https:eqmac.app"
+  homepage "https://eqmac.app/"
 
   livecheck do
     url :url
@@ -20,11 +20,11 @@ cask "eqmac" do
 
   app "eqMac.app"
 
-  uninstall delete: "LibraryAudioPlug-InsHALeqMac.driver"
+  uninstall delete: "/Library/Audio/Plug-Ins/HAL/eqMac.driver"
 
   zap trash: [
-    "~LibraryCachescom.bitgapp.eqmac",
-    "~LibraryPreferencescom.bitgapp.eqmac.plist",
-    "~LibraryWebKitcom.bitgapp.eqmac",
+    "~/Library/Caches/com.bitgapp.eqmac",
+    "~/Library/Preferences/com.bitgapp.eqmac.plist",
+    "~/Library/WebKit/com.bitgapp.eqmac",
   ]
 end

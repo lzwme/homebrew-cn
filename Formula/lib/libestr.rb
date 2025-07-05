@@ -1,13 +1,13 @@
 class Libestr < Formula
   desc "C library for string handling (and a bit more)"
-  homepage "https:libestr.adiscon.com"
-  url "https:libestr.adiscon.comfilesdownloadlibestr-0.1.11.tar.gz"
+  homepage "https://libestr.adiscon.com/"
+  url "https://libestr.adiscon.com/files/download/libestr-0.1.11.tar.gz"
   sha256 "46632b2785ff4a231dcf241eeb0dcb5fc0c7d4da8ee49cf5687722cdbe8b2024"
   license "LGPL-2.1-or-later"
 
   livecheck do
-    url "https:libestr.adiscon.comdownload"
-    regex(href=.*?libestr[._-]v?(\d+(?:\.\d+)+)\.ti)
+    url "https://libestr.adiscon.com/download/"
+    regex(/href=.*?libestr[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -34,18 +34,18 @@ class Libestr < Formula
 
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
-    url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-big_sur.diff"
+    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-big_sur.diff"
     sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
   end
 
   def install
-    system ".configure", *std_configure_args
+    system "./configure", *std_configure_args
     system "make"
     system "make", "install"
   end
 
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include "stdio.h"
       #include <libestr.h>
       int main() {
@@ -54,6 +54,6 @@ class Libestr < Formula
       }
     C
     system ENV.cc, "test.c", "-L#{lib}", "-lestr", "-o", "test"
-    system ".test"
+    system "./test"
   end
 end

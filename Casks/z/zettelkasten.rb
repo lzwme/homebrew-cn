@@ -2,11 +2,11 @@ cask "zettelkasten" do
   version "3.2022.8"
   sha256 "62917c18dfd2dd2d8acd7d2ce4db6a4b036fc92a03877da108e85f8c5efcaeea"
 
-  url "https:github.comZettelkasten-TeamZettelkastenreleasesdownloadv#{version}Package.dmg.zip",
-      verified: "github.comZettelkasten-TeamZettelkasten"
+  url "https://ghfast.top/https://github.com/Zettelkasten-Team/Zettelkasten/releases/download/v#{version}/Package.dmg.zip",
+      verified: "github.com/Zettelkasten-Team/Zettelkasten/"
   name "Zettelkasten"
   desc "Note box according to Luhmann"
-  homepage "http:zettelkasten.danielluedecke.de"
+  homepage "http://zettelkasten.danielluedecke.de/"
 
   livecheck do
     url :url
@@ -18,8 +18,8 @@ cask "zettelkasten" do
   app "Zettelkasten.app"
 
   zap trash: [
-    "~.Zettelkasten",
-    "~LibrarySaved Application Statede.danielluedecke.zettelkasten.ZettelkastenApp.savedState",
+    "~/.Zettelkasten",
+    "~/Library/Saved Application State/de.danielluedecke.zettelkasten.ZettelkastenApp.savedState",
   ]
 
   caveats do

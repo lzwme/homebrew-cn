@@ -1,10 +1,10 @@
 class Keystone < Formula
   desc "Assembler framework: Core + bindings"
-  homepage "https:www.keystone-engine.org"
-  url "https:github.comkeystone-enginekeystonearchiverefstags0.9.2.tar.gz"
+  homepage "https://www.keystone-engine.org/"
+  url "https://ghfast.top/https://github.com/keystone-engine/keystone/archive/refs/tags/0.9.2.tar.gz"
   sha256 "c9b3a343ed3e05ee168d29daf89820aff9effb2c74c6803c2d9e21d55b5b7c24"
   license "GPL-2.0-only"
-  head "https:github.comkeystone-enginekeystone.git", branch: "master"
+  head "https://github.com/keystone-engine/keystone.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -33,6 +33,6 @@ class Keystone < Formula
   end
 
   test do
-    assert_equal "nop = [ 90 ]", shell_output("#{bin}kstool x16 nop").strip
+    assert_equal "nop = [ 90 ]", shell_output("#{bin}/kstool x16 nop").strip
   end
 end

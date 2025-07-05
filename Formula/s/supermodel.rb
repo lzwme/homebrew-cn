@@ -1,19 +1,19 @@
 class Supermodel < Formula
   desc "Sega Model 3 arcade emulator"
-  homepage "https:www.supermodel3.com"
+  homepage "https://www.supermodel3.com/"
   license "GPL-3.0-or-later"
   revision 1
 
   stable do
-    url "https:www.supermodel3.comFilesSupermodel_0.2a_Src.zip"
+    url "https://www.supermodel3.com/Files/Supermodel_0.2a_Src.zip"
     sha256 "ecaf3e7fc466593e02cbf824b722587d295a7189654acb8206ce433dcff5497b"
 
     depends_on "sdl12-compat"
   end
 
   livecheck do
-    url "https:www.supermodel3.comDownload.html"
-    regex(href=.*?Supermodel[._-]v?(\d+(?:\.\d+)+[a-z]?)[._-]Src\.zipi)
+    url "https://www.supermodel3.com/Download.html"
+    regex(/href=.*?Supermodel[._-]v?(\d+(?:\.\d+)+[a-z]?)[._-]Src\.zip/i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -30,7 +30,7 @@ class Supermodel < Formula
   end
 
   head do
-    url "https:github.comtrzySupermodel.git", branch: "master"
+    url "https://github.com/trzy/Supermodel.git", branch: "master"
 
     depends_on "sdl2"
   end
@@ -44,28 +44,28 @@ class Supermodel < Formula
 
   def install
     os = OS.mac? ? "OSX" : "UNIX"
-    makefile_dir = build.head? ? "MakefilesMakefile.#{os}" : "MakefilesMakefile.SDL.#{os}.GCC"
+    makefile_dir = build.head? ? "Makefiles/Makefile.#{os}" : "Makefiles/Makefile.SDL.#{os}.GCC"
 
     if build.stable?
       inreplace makefile_dir do |s|
         if OS.mac?
           # Set up SDL library correctly
           s.gsub! "-framework SDL", "`sdl-config --libs`"
-          s.gsub!((\$\(COMPILER_FLAGS\)), "\\1 -I#{Formula["sdl12-compat"].opt_prefix}include")
+          s.gsub!(/(\$\(COMPILER_FLAGS\))/, "\\1 -I#{Formula["sdl12-compat"].opt_prefix}/include")
         end
         # Fix missing label issue for auto-generated code
-        s.gsub! %r{(\$\(OBJ_DIR\)m68k\w+)\.o: \1.c (.*)\n(\s*\$\(CC\)) \$<}, "\\1.o: \\2\n\\3 \\1.c"
+        s.gsub! %r{(\$\(OBJ_DIR\)/m68k\w+)\.o: \1.c (.*)\n(\s*\$\(CC\)) \$<}, "\\1.o: \\2\n\\3 \\1.c"
         # Add -std=c++14
         s.gsub! "$(CPPFLAGS)", "$(CPPFLAGS) -std=c++14" if OS.linux?
         # Fix compile with newer Clang.
         if DevelopmentTools.clang_build_version >= 1403
-          s.gsub!(^COMPILER_FLAGS = , "\\0 -Wno-implicit-function-declaration ")
+          s.gsub!(/^COMPILER_FLAGS = /, "\\0 -Wno-implicit-function-declaration ")
         end
       end
-      # Use usrlocalvarsupermodel for saving runtime files
-      inreplace "SrcOSDSDLMain.cpp" do |s|
-        s.gsub! %r{(Config|Saves|NVRAM)}, "#{var}supermodel\\1"
-        s.gsub!((\w+\.log), "#{var}supermodelLogs\\1")
+      # Use /usr/local/var/supermodel for saving runtime files
+      inreplace "Src/OSD/SDL/Main.cpp" do |s|
+        s.gsub! %r{(Config|Saves|NVRAM)/}, "#{var}/supermodel/\\1/"
+        s.gsub!(/(\w+\.log)/, "#{var}/supermodel/Logs/\\1")
       end
     else
       ENV.deparallelize
@@ -74,21 +74,21 @@ class Supermodel < Formula
     end
 
     system "make", "-f", makefile_dir
-    bin.install "binSupermodel" => "supermodel"
-    (var"supermodelConfig").install "ConfigSupermodel.ini"
-    (var"supermodelSaves").mkpath
-    (var"supermodelNVRAM").mkpath
-    (var"supermodelLogs").mkpath
+    bin.install "bin/Supermodel" => "supermodel"
+    (var/"supermodel/Config").install "Config/Supermodel.ini"
+    (var/"supermodel/Saves").mkpath
+    (var/"supermodel/NVRAM").mkpath
+    (var/"supermodel/Logs").mkpath
   end
 
   def caveats
     <<~EOS
       Config, Saves, and NVRAM are located in the following directory:
-        #{var}supermodel
+        #{var}/supermodel/
     EOS
   end
 
   test do
-    system bin"supermodel", "-print-games"
+    system bin/"supermodel", "-print-games"
   end
 end

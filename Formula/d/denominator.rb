@@ -1,13 +1,13 @@
 class Denominator < Formula
   desc "Portable Java library for manipulating DNS clouds"
-  homepage "https:github.comNetflixdenominatortreev4.7.1cli"
-  url "https:search.maven.orgremotecontent?filepath=comnetflixdenominatordenominator-cli4.7.1denominator-cli-4.7.1-fat.jar"
+  homepage "https://github.com/Netflix/denominator/tree/v4.7.1/cli"
+  url "https://search.maven.org/remotecontent?filepath=com/netflix/denominator/denominator-cli/4.7.1/denominator-cli-4.7.1-fat.jar"
   sha256 "f2d09aaebb63ccb348dcba3a5cc3e94a42b0eae49e90ac0ec2b0a14adfbe5254"
   license "Apache-2.0"
 
   livecheck do
-    url "https:search.maven.orgremotecontent?filepath=comnetflixdenominatordenominator-climaven-metadata.xml"
-    regex(%r{<version>v?(\d+(?:\.\d+)+)<version>}i)
+    url "https://search.maven.org/remotecontent?filepath=com/netflix/denominator/denominator-cli/maven-metadata.xml"
+    regex(%r{<version>v?(\d+(?:\.\d+)+)</version>}i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -20,11 +20,11 @@ class Denominator < Formula
   depends_on "openjdk"
 
   def install
-    (libexec"bin").install "denominator-cli-#{version}-fat.jar"
-    bin.write_jar_script libexec"bindenominator-cli-#{version}-fat.jar", "denominator"
+    (libexec/"bin").install "denominator-cli-#{version}-fat.jar"
+    bin.write_jar_script libexec/"bin/denominator-cli-#{version}-fat.jar", "denominator"
   end
 
   test do
-    system bin"denominator", "providers"
+    system bin/"denominator", "providers"
   end
 end

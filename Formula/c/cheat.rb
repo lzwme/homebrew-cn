@@ -1,10 +1,10 @@
 class Cheat < Formula
   desc "Create and view interactive cheat sheets for *nix commands"
-  homepage "https:github.comcheatcheat"
-  url "https:github.comcheatcheatarchiverefstags4.4.2.tar.gz"
+  homepage "https://github.com/cheat/cheat"
+  url "https://ghfast.top/https://github.com/cheat/cheat/archive/refs/tags/4.4.2.tar.gz"
   sha256 "6968ffdebb7c2a8390dea45f97884af3c623cda6c2d36c4c04443ed2454da431"
   license "MIT"
-  head "https:github.comcheatcheat.git", branch: "master"
+  head "https://github.com/cheat/cheat.git", branch: "master"
 
   bottle do
     rebuild 2
@@ -21,18 +21,18 @@ class Cheat < Formula
   conflicts_with "bash-snippets", because: "both install a `cheat` executable"
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), ".cmdcheat"
+    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/cheat"
 
-    bash_completion.install "scriptscheat.bash" => "cheat"
-    fish_completion.install "scriptscheat.fish"
-    zsh_completion.install "scriptscheat.zsh" => "_cheat"
-    man1.install "doccheat.1"
+    bash_completion.install "scripts/cheat.bash" => "cheat"
+    fish_completion.install "scripts/cheat.fish"
+    zsh_completion.install "scripts/cheat.zsh" => "_cheat"
+    man1.install "doc/cheat.1"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}cheat --version")
+    assert_match version.to_s, shell_output("#{bin}/cheat --version")
 
-    output = shell_output("#{bin}cheat --init 2>&1")
+    output = shell_output("#{bin}/cheat --init 2>&1")
     assert_match "editor: EDITOR_PATH", output
   end
 end

@@ -1,18 +1,18 @@
 class Cafeobj < Formula
   desc "New generation algebraic specification and programming language"
-  homepage "https:cafeobj.org"
-  url "https:github.comCafeOBJcafeobjarchiverefstagsv1.6.2.tar.gz"
+  homepage "https://cafeobj.org/"
+  url "https://ghfast.top/https://github.com/CafeOBJ/cafeobj/archive/refs/tags/v1.6.2.tar.gz"
   sha256 "b5ea4267b7b4ff3d85a970b6330f706b81ef872968230608005c9b3d168b0065"
   license all_of: [
     "BSD-2-Clause",
-    :public_domain, # comliblet-over-lambda.lisp
+    :public_domain, # comlib/let-over-lambda.lisp
     "MIT", # asdf.lisp
   ]
-  head "https:github.comCafeOBJcafeobj.git", branch: "master"
+  head "https://github.com/CafeOBJ/cafeobj.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -33,7 +33,7 @@ class Cafeobj < Formula
     # Exclude unrecognized options
     args = std_configure_args.reject { |s| s["--disable-debug"] || s["--disable-dependency-tracking"] }
 
-    system ".configure", "--with-lisp=sbcl", "--with-lispdir=#{share}emacssite-lispcafeobj", *args
+    system "./configure", "--with-lisp=sbcl", "--with-lispdir=#{share}/emacs/site-lisp/cafeobj", *args
     system "make", "install"
   end
 
@@ -41,6 +41,6 @@ class Cafeobj < Formula
     # Fails in Linux CI with "Can't find sbcl.core"
     return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
 
-    system bin"cafeobj", "-batch"
+    system bin/"cafeobj", "-batch"
   end
 end

@@ -1,14 +1,14 @@
 class JpegTurbo < Formula
   desc "JPEG image codec that aids compression and decompression"
-  homepage "https:www.libjpeg-turbo.org"
-  url "https:github.comlibjpeg-turbolibjpeg-turboreleasesdownload3.1.1libjpeg-turbo-3.1.1.tar.gz"
+  homepage "https://www.libjpeg-turbo.org/"
+  url "https://ghfast.top/https://github.com/libjpeg-turbo/libjpeg-turbo/releases/download/3.1.1/libjpeg-turbo-3.1.1.tar.gz"
   sha256 "aadc97ea91f6ef078b0ae3a62bba69e008d9a7db19b34e4ac973b19b71b4217c"
   license all_of: [
     "IJG", # libjpeg API library and programs
     "Zlib", # libjpeg-turbo SIMD source code
     "BSD-3-Clause", # TurboJPEG API library and programs
   ]
-  head "https:github.comlibjpeg-turbolibjpeg-turbo.git", branch: "main"
+  head "https://github.com/libjpeg-turbo/libjpeg-turbo.git", branch: "main"
 
   livecheck do
     url :stable
@@ -33,21 +33,21 @@ class JpegTurbo < Formula
   end
 
   # These conflict with `jpeg`, which is now keg-only.
-  link_overwrite "bincjpeg", "bindjpeg", "binjpegtran", "binrdjpgcom", "binwrjpgcom"
-  link_overwrite "includejconfig.h", "includejerror.h", "includejmorecfg.h", "includejpeglib.h"
-  link_overwrite "liblibjpeg.dylib", "liblibjpeg.so", "liblibjpeg.a", "libpkgconfiglibjpeg.pc"
-  link_overwrite "sharemanman1cjpeg.1", "sharemanman1djpeg.1", "sharemanman1jpegtran.1",
-                 "sharemanman1rdjpgcom.1", "sharemanman1wrjpgcom.1"
+  link_overwrite "bin/cjpeg", "bin/djpeg", "bin/jpegtran", "bin/rdjpgcom", "bin/wrjpgcom"
+  link_overwrite "include/jconfig.h", "include/jerror.h", "include/jmorecfg.h", "include/jpeglib.h"
+  link_overwrite "lib/libjpeg.dylib", "lib/libjpeg.so", "lib/libjpeg.a", "lib/pkgconfig/libjpeg.pc"
+  link_overwrite "share/man/man1/cjpeg.1", "share/man/man1/djpeg.1", "share/man/man1/jpegtran.1",
+                 "share/man/man1/rdjpgcom.1", "share/man/man1/wrjpgcom.1"
 
   def install
     args = ["-DWITH_JPEG8=1", "-DCMAKE_EXE_LINKER_FLAGS=-Wl,-rpath,#{rpath}"]
     if Hardware::CPU.arm? && OS.mac?
       if MacOS.version >= :ventura
-        # https:github.comlibjpeg-turbolibjpeg-turboissues709
+        # https://github.com/libjpeg-turbo/libjpeg-turbo/issues/709
         args += ["-DFLOATTEST8=fp-contract",
                  "-DFLOATTEST12=fp-contract"]
       elsif MacOS.version == :monterey
-        # https:github.comlibjpeg-turbolibjpeg-turboissues734
+        # https://github.com/libjpeg-turbo/libjpeg-turbo/issues/734
         args << "-DFLOATTEST12=no-fp-contract"
       end
     end
@@ -59,16 +59,16 @@ class JpegTurbo < Formula
     system "cmake", "--install", "build"
 
     # Avoid rebuilding dependents that hard-code the prefix.
-    inreplace [lib"pkgconfiglibjpeg.pc", lib"pkgconfiglibturbojpeg.pc"],
+    inreplace [lib/"pkgconfig/libjpeg.pc", lib/"pkgconfig/libturbojpeg.pc"],
               prefix, opt_prefix
   end
 
   test do
-    system bin"jpegtran", "-crop", "1x1",
+    system bin/"jpegtran", "-crop", "1x1",
                            "-transpose",
                            "-perfect",
                            "-outfile", "out.jpg",
                            test_fixtures("test.jpg")
-    assert_path_exists testpath"out.jpg"
+    assert_path_exists testpath/"out.jpg"
   end
 end

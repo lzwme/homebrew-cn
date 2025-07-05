@@ -2,12 +2,12 @@ cask "font-expletus-sans" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefonts.git",
-      verified:  "github.comgooglefonts",
+  url "https://github.com/google/fonts.git",
+      verified:  "github.com/google/fonts",
       branch:    "main",
-      only_path: "oflexpletussans"
+      only_path: "ofl/expletussans"
   name "Expletus Sans"
-  homepage "https:fonts.google.comspecimenExpletus+Sans"
+  homepage "https://fonts.google.com/specimen/Expletus+Sans"
 
   font "ExpletusSans-Italic[wght].ttf"
   font "ExpletusSans[wght].ttf"

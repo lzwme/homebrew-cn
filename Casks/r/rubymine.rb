@@ -5,13 +5,13 @@ cask "rubymine" do
   sha256 arm:   "06e9d70dd8f885526ff778df9c611e1e3b334a7cf313f769c7544936462056d1",
          intel: "e0487e51ce73cc6f24c77cde6c5ab5104f6528b3c14b90488fae1845023b822f"
 
-  url "https:download.jetbrains.comrubyRubyMine-#{version.csv.first}#{arch}.dmg"
+  url "https://download.jetbrains.com/ruby/RubyMine-#{version.csv.first}#{arch}.dmg"
   name "RubyMine"
   desc "Ruby on Rails IDE"
-  homepage "https:www.jetbrains.comruby"
+  homepage "https://www.jetbrains.com/ruby/"
 
   livecheck do
-    url "https:data.services.jetbrains.comproductsreleases?code=RM&latest=true&type=release"
+    url "https://data.services.jetbrains.com/products/releases?code=RM&latest=true&type=release"
     strategy :json do |json|
       json["RM"]&.map do |release|
         version = release["version"]
@@ -27,21 +27,21 @@ cask "rubymine" do
   depends_on macos: ">= :high_sierra"
 
   app "RubyMine.app"
-  # shim script (https:github.comHomebrewhomebrew-caskissues18809)
-  shimscript = "#{staged_path}rubymine.wrapper.sh"
+  # shim script (https://github.com/Homebrew/homebrew-cask/issues/18809)
+  shimscript = "#{staged_path}/rubymine.wrapper.sh"
   binary shimscript, target: "rubymine"
 
   preflight do
     File.write shimscript, <<~EOS
-      #!binsh
-      exec '#{appdir}RubyMine.appContentsMacOSrubymine' "$@"
+      #!/bin/sh
+      exec '#{appdir}/RubyMine.app/Contents/MacOS/rubymine' "$@"
     EOS
   end
 
   zap trash: [
-    "~LibraryApplication SupportRubyMine#{version.major_minor}",
-    "~LibraryCachesRubyMine#{version.major_minor}",
-    "~LibraryLogsRubyMine#{version.major_minor}",
-    "~LibraryPreferencesRubyMine#{version.major_minor}",
+    "~/Library/Application Support/RubyMine#{version.major_minor}",
+    "~/Library/Caches/RubyMine#{version.major_minor}",
+    "~/Library/Logs/RubyMine#{version.major_minor}",
+    "~/Library/Preferences/RubyMine#{version.major_minor}",
   ]
 end

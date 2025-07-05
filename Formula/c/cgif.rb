@@ -1,7 +1,7 @@
 class Cgif < Formula
   desc "GIF encoder written in C"
-  homepage "https:github.comdloeblcgif"
-  url "https:github.comdloeblcgifarchiverefstagsv0.5.0.tar.gz"
+  homepage "https://github.com/dloebl/cgif"
+  url "https://ghfast.top/https://github.com/dloebl/cgif/archive/refs/tags/v0.5.0.tar.gz"
   sha256 "d6cb312c7da2c6c9f310811aa3658120c0316ba130c48a012e7baf3698920fe9"
   license "MIT"
 
@@ -25,7 +25,7 @@ class Cgif < Formula
   end
 
   test do
-    (testpath"try.c").write <<~C
+    (testpath/"try.c").write <<~C
       #include <cgif.h>
       int main() {
         CGIF_Config config = {0};
@@ -37,6 +37,6 @@ class Cgif < Formula
       }
     C
     system ENV.cc, "try.c", "-L#{lib}", "-lcgif", "-o", "try"
-    system ".try"
+    system "./try"
   end
 end

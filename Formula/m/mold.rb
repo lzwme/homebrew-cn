@@ -1,10 +1,10 @@
 class Mold < Formula
   desc "Modern Linker"
-  homepage "https:github.comrui314mold"
-  url "https:github.comrui314moldarchiverefstagsv2.40.1.tar.gz"
+  homepage "https://github.com/rui314/mold"
+  url "https://ghfast.top/https://github.com/rui314/mold/archive/refs/tags/v2.40.1.tar.gz"
   sha256 "d1ce09a69941f8158604c3edcc96c7178231e7dba2da66b20f5ef6e112c443b7"
   license "MIT"
-  head "https:github.comrui314mold.git", branch: "main"
+  head "https://github.com/rui314/mold.git", branch: "main"
 
   # There can be a notable gap between when a version is tagged and a
   # corresponding release is created, so we check the "latest" release instead
@@ -53,9 +53,9 @@ class Mold < Formula
 
     # Avoid embedding libdir in the binary.
     # This helps make the bottle relocatable.
-    inreplace "libconfig.h.in", "@CMAKE_INSTALL_FULL_LIBDIR@", ""
+    inreplace "lib/config.h.in", "@CMAKE_INSTALL_FULL_LIBDIR@", ""
     # Ensure we're using Homebrew-provided versions of these dependencies.
-    %w[blake3 mimalloc tbb zlib zstd].each { |dir| rm_r(buildpath"third-party"dir) }
+    %w[blake3 mimalloc tbb zlib zstd].each { |dir| rm_r(buildpath/"third-party"/dir) }
     args = %w[
       -DMOLD_LTO=ON
       -DMOLD_USE_MIMALLOC=ON
@@ -78,13 +78,13 @@ class Mold < Formula
   end
 
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       int main(void) { return 0; }
     C
 
     linker_flag = case ENV.compiler
-    when ^gcc(-(\d|10|11))?$ then "-B#{libexec}mold"
-    when :clang, ^gcc-\d{2,}$ then "-fuse-ld=mold"
+    when /^gcc(-(\d|10|11))?$/ then "-B#{libexec}/mold"
+    when :clang, /^gcc-\d{2,}$/ then "-fuse-ld=mold"
     else odie "unexpected compiler"
     end
 
@@ -93,36 +93,36 @@ class Mold < Formula
 
     system ENV.cc, linker_flag, *extra_flags, "test.c"
     if OS.linux?
-      system ".a.out"
+      system "./a.out"
     else
       assert_match "ELF 64-bit LSB pie executable, x86-64", shell_output("file a.out")
     end
 
     return unless OS.linux?
 
-    cp_r pkgshare"test", testpath
+    cp_r pkgshare/"test", testpath
 
     # Remove non-native tests.
     arch = Hardware::CPU.arch.to_s
     arch = "aarch64" if arch == "arm64"
-    testpath.glob("testarch-*.sh")
-            .reject { |f| f.basename(".sh").to_s.match?(^arch-#{arch}-) }
+    testpath.glob("test/arch-*.sh")
+            .reject { |f| f.basename(".sh").to_s.match?(/^arch-#{arch}-/) }
             .each(&:unlink)
 
-    inreplace testpath.glob("test*.sh") do |s|
-      s.gsub!(%r{(\.|`pwd`)?mold-wrapper}, lib"moldmold-wrapper", audit_result: false)
-      s.gsub!(%r{(\.|`pwd`)mold}, bin"mold", audit_result: false)
-      s.gsub!(-B(\.|`pwd`), "-B#{libexec}mold", audit_result: false)
+    inreplace testpath.glob("test/*.sh") do |s|
+      s.gsub!(%r{(\./|`pwd`/)?mold-wrapper}, lib/"mold/mold-wrapper", audit_result: false)
+      s.gsub!(%r{(\.|`pwd`)/mold}, bin/"mold", audit_result: false)
+      s.gsub!(/-B(\.|`pwd`)/, "-B#{libexec}/mold", audit_result: false)
     end
 
     # The `inreplace` rules above do not work well on this test. To avoid adding
     # too much complexity to the regex rules, it is manually tested below
     # instead.
-    (testpath"testmold-wrapper2.sh").unlink
+    (testpath/"test/mold-wrapper2.sh").unlink
     assert_match "mold-wrapper.so",
-      shell_output("#{bin}mold -run bash -c 'echo $LD_PRELOAD'")
+      shell_output("#{bin}/mold -run bash -c 'echo $LD_PRELOAD'")
 
     # Run the remaining tests.
-    testpath.glob("test*.sh").each { |t| system "bash", t }
+    testpath.glob("test/*.sh").each { |t| system "bash", t }
   end
 end

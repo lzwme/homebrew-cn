@@ -1,7 +1,7 @@
 class Fpm < Formula
   desc "Package manager and build system for Fortran"
-  homepage "https:fpm.fortran-lang.org"
-  url "https:github.comfortran-langfpmreleasesdownloadv0.12.0fpm-0.12.0.F90"
+  homepage "https://fpm.fortran-lang.org"
+  url "https://ghfast.top/https://github.com/fortran-lang/fpm/releases/download/v0.12.0/fpm-0.12.0.F90"
   sha256 "61567ac810d8ea8f8fc91fdb13700d34b91bf36e193b35d744fc6352d21146ad"
   license "MIT"
 
@@ -18,13 +18,13 @@ class Fpm < Formula
   depends_on "gcc" # for gfortran
 
   def install
-    mkdir_p "buildbootstrap"
-    system "gfortran", "-J", "buildbootstrap", "-o", "buildbootstrapfpm", "fpm-#{version}.F90"
-    bin.install "buildbootstrapfpm"
+    mkdir_p "build/bootstrap"
+    system "gfortran", "-J", "build/bootstrap", "-o", "build/bootstrap/fpm", "fpm-#{version}.F90"
+    bin.install "build/bootstrap/fpm"
   end
 
   test do
-    system bin"fpm", "new", "hello"
-    assert_path_exists testpath"hello"
+    system bin/"fpm", "new", "hello"
+    assert_path_exists testpath/"hello"
   end
 end

@@ -2,12 +2,12 @@ cask "font-encode-sans-expanded" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefonts.git",
-      verified:  "github.comgooglefonts",
+  url "https://github.com/google/fonts.git",
+      verified:  "github.com/google/fonts",
       branch:    "main",
-      only_path: "oflencodesansexpanded"
+      only_path: "ofl/encodesansexpanded"
   name "Encode Sans Expanded"
-  homepage "https:fonts.google.comspecimenEncode+Sans+Expanded"
+  homepage "https://fonts.google.com/specimen/Encode+Sans+Expanded"
 
   font "EncodeSansExpanded-Black.ttf"
   font "EncodeSansExpanded-Bold.ttf"

@@ -1,7 +1,7 @@
 class NpmCheckUpdates < Formula
   desc "Find newer versions of dependencies than what your package.json allows"
-  homepage "https:github.comraineorshinenpm-check-updates"
-  url "https:registry.npmjs.orgnpm-check-updates-npm-check-updates-18.0.1.tgz"
+  homepage "https://github.com/raineorshine/npm-check-updates"
+  url "https://registry.npmjs.org/npm-check-updates/-/npm-check-updates-18.0.1.tgz"
   sha256 "78acf53174831af4e208f469a90242d277990bec0a356d408566cad182fa5f83"
   license "Apache-2.0"
 
@@ -19,11 +19,11 @@ class NpmCheckUpdates < Formula
 
   def install
     system "npm", "install", *std_npm_args
-    bin.install_symlink Dir["#{libexec}bin*"]
+    bin.install_symlink Dir["#{libexec}/bin/*"]
   end
 
   test do
-    test_package_json = testpath"package.json"
+    test_package_json = testpath/"package.json"
     test_package_json.write <<~JSON
       {
         "dependencies": {
@@ -33,7 +33,7 @@ class NpmCheckUpdates < Formula
       }
     JSON
 
-    system bin"ncu", "-u"
+    system bin/"ncu", "-u"
 
     # Read the updated package.json to get the new dependency versions
     updated_package_json = JSON.parse(test_package_json.read)

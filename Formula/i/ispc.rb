@@ -1,7 +1,7 @@
 class Ispc < Formula
   desc "Compiler for SIMD programming on the CPU"
-  homepage "https:ispc.github.io"
-  url "https:github.comispcispcarchiverefstagsv1.27.0.tar.gz"
+  homepage "https://ispc.github.io"
+  url "https://ghfast.top/https://github.com/ispc/ispc/archive/refs/tags/v1.27.0.tar.gz"
   sha256 "c41ae29e4f6b1d37154610e68e9b7a0eb225cd7c080242ab56fa0119e49dbd7a"
   license "BSD-3-Clause"
 
@@ -54,7 +54,7 @@ class Ispc < Formula
   end
 
   test do
-    (testpath"simple.ispc").write <<~EOS
+    (testpath/"simple.ispc").write <<~EOS
       export void simple(uniform float vin[], uniform float vout[], uniform int count) {
         foreach (index = 0 ... count) {
           float v = vin[index];
@@ -74,10 +74,10 @@ class Ispc < Formula
       arch = "x86-64"
       target = "sse2"
     end
-    system bin"ispc", "--arch=#{arch}", "--target=#{target}", testpath"simple.ispc",
+    system bin/"ispc", "--arch=#{arch}", "--target=#{target}", testpath/"simple.ispc",
                        "-o", "simple_ispc.o", "-h", "simple_ispc.h"
 
-    (testpath"simple.cpp").write <<~CPP
+    (testpath/"simple.cpp").write <<~CPP
       #include "simple_ispc.h"
       int main() {
         float vin[9], vout[9];
@@ -86,9 +86,9 @@ class Ispc < Formula
         return 0;
       }
     CPP
-    system ENV.cxx, "-I#{testpath}", "-c", "-o", testpath"simple.o", testpath"simple.cpp"
-    system ENV.cxx, "-o", testpath"simple", testpath"simple.o", testpath"simple_ispc.o"
+    system ENV.cxx, "-I#{testpath}", "-c", "-o", testpath/"simple.o", testpath/"simple.cpp"
+    system ENV.cxx, "-o", testpath/"simple", testpath/"simple.o", testpath/"simple_ispc.o"
 
-    system testpath"simple"
+    system testpath/"simple"
   end
 end

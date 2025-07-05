@@ -2,14 +2,14 @@ cask "pika" do
   version "1.0.2"
   sha256 "3535caa0a2ad73034ea4b3a67d734bc3183df989852b00d00cce557c2085f892"
 
-  url "https:github.comsuperhighfivespikareleasesdownload#{version}Pika-#{version}.dmg",
-      verified: "github.comsuperhighfivespika"
+  url "https://ghfast.top/https://github.com/superhighfives/pika/releases/download/#{version}/Pika-#{version}.dmg",
+      verified: "github.com/superhighfives/pika/"
   name "Pika"
   desc "Colour picker for colours onscreen"
-  homepage "https:superhighfives.compika"
+  homepage "https://superhighfives.com/pika"
 
   livecheck do
-    url "https:superhighfives.comreleasespika"
+    url "https://superhighfives.com/releases/pika"
     strategy :sparkle, &:short_version
   end
 
@@ -19,8 +19,8 @@ cask "pika" do
   app "Pika.app"
 
   zap trash: [
-    "~LibraryApplication Scriptscom.superhighfives.Pika-LaunchAtLoginHelper",
-    "~LibraryContainerscom.superhighfives.Pika-LaunchAtLoginHelper",
-    "~LibraryPreferencescom.superhighfives.Pika.plist",
+    "~/Library/Application Scripts/com.superhighfives.Pika-LaunchAtLoginHelper",
+    "~/Library/Containers/com.superhighfives.Pika-LaunchAtLoginHelper",
+    "~/Library/Preferences/com.superhighfives.Pika.plist",
   ]
 end

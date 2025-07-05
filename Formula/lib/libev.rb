@@ -1,14 +1,14 @@
 class Libev < Formula
   desc "Asynchronous event library"
-  homepage "https:software.schmorp.depkglibev.html"
-  url "https:dist.schmorp.delibevAtticlibev-4.33.tar.gz"
-  mirror "https:fossies.orglinuxmisclibev-4.33.tar.gz"
+  homepage "https://software.schmorp.de/pkg/libev.html"
+  url "https://dist.schmorp.de/libev/Attic/libev-4.33.tar.gz"
+  mirror "https://fossies.org/linux/misc/libev-4.33.tar.gz"
   sha256 "507eb7b8d1015fbec5b935f34ebed15bf346bed04a11ab82b8eee848c4205aea"
   license any_of: ["BSD-2-Clause", "GPL-2.0-or-later"]
 
   livecheck do
-    url "https:dist.schmorp.delibev"
-    regex(href=.*?libev[._-]v?(\d+(?:\.\d+)+)\.ti)
+    url "https://dist.schmorp.de/libev/"
+    regex(/href=.*?libev[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -32,21 +32,21 @@ class Libev < Formula
 
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
-    url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-big_sur.diff"
+    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-big_sur.diff"
     sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
   end
 
   def install
-    system ".configure", "--disable-silent-rules", *std_configure_args
+    system "./configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
 
     # Remove compatibility header to prevent conflict with libevent
-    (include"event.h").unlink
+    (include/"event.h").unlink
   end
 
   test do
-    (testpath"test.c").write <<~C
-      * Wait for stdin to become readable, then read and echo the first line. *
+    (testpath/"test.c").write <<~C
+      /* Wait for stdin to become readable, then read and echo the first line. */
 
       #include <stdio.h>
       #include <stdlib.h>
@@ -74,6 +74,6 @@ class Libev < Formula
     C
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lev", "-o", "test"
     input = "hello, world\n"
-    assert_equal input, pipe_output(".test", input, 0)
+    assert_equal input, pipe_output("./test", input, 0)
   end
 end

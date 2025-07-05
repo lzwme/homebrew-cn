@@ -1,14 +1,14 @@
 class Libsql < Formula
   desc "Fork of SQLite that is both Open Source, and Open Contributions"
-  homepage "https:turso.techlibsql"
-  url "https:github.comtursodatabaselibsqlreleasesdownloadlibsql-server-v0.24.32source.tar.gz"
+  homepage "https://turso.tech/libsql"
+  url "https://ghfast.top/https://github.com/tursodatabase/libsql/releases/download/libsql-server-v0.24.32/source.tar.gz"
   sha256 "51e2b4e99b4a713093d2cd6b69b155ba377d2b1d879744c6dab41f443f01fde8"
   license "MIT"
-  head "https:github.comtursodatabaselibsql.git", branch: "main"
+  head "https://github.com/tursodatabase/libsql.git", branch: "main"
 
   livecheck do
     url :stable
-    regex(^libsql-server-v?(\d+(?:\.\d+)+)$i)
+    regex(/^libsql-server-v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -29,12 +29,12 @@ class Libsql < Formula
   end
 
   test do
-    pid = spawn(bin"sqld")
+    pid = spawn(bin/"sqld")
     sleep 2
     sleep 3 if OS.mac? && Hardware::CPU.intel?
-    assert_path_exists testpath"data.sqld"
+    assert_path_exists testpath/"data.sqld"
 
-    assert_match version.to_s, shell_output("#{bin}sqld --version")
+    assert_match version.to_s, shell_output("#{bin}/sqld --version")
   ensure
     Process.kill("SIGINT", pid)
     Process.wait(pid)

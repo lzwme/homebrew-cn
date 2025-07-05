@@ -1,7 +1,7 @@
 class Dislocker < Formula
-  desc "FUSE driver to readwrite Windows' BitLocker-ed volumes"
-  homepage "https:github.comAorimndislocker"
-  url "https:github.comAorimndislockerarchiverefstagsv0.7.3.tar.gz"
+  desc "FUSE driver to read/write Windows' BitLocker-ed volumes"
+  homepage "https://github.com/Aorimn/dislocker"
+  url "https://ghfast.top/https://github.com/Aorimn/dislocker/archive/refs/tags/v0.7.3.tar.gz"
   sha256 "8d5275577c44f2bd87f6e05dd61971a71c0e56a9cbedf000bd38deadd8b6c1e6"
   license "GPL-2.0-only"
 
@@ -12,13 +12,13 @@ class Dislocker < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "libfuse@2" # FUSE 3 PR: https:github.comAorimndislockerpull340
+  depends_on "libfuse@2" # FUSE 3 PR: https://github.com/Aorimn/dislocker/pull/340
   depends_on :linux # on macOS, requires closed-source macFUSE
   depends_on "mbedtls"
 
   # Backport support for mbedtls 3.x
   patch do
-    url "https:github.comAorimndislockercommit2cfbba2c8cc07e529622ba134d0a6982815d2b30.patch?full_index=1"
+    url "https://github.com/Aorimn/dislocker/commit/2cfbba2c8cc07e529622ba134d0a6982815d2b30.patch?full_index=1"
     sha256 "07e0e3cac520a04a478f1f08d612340fc2743fd492b0835c7fb41cfdb5ef4244"
   end
 
@@ -29,6 +29,6 @@ class Dislocker < Formula
   end
 
   test do
-    system bin"dislocker", "-h"
+    system bin/"dislocker", "-h"
   end
 end

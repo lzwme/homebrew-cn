@@ -2,11 +2,11 @@ cask "do-not-disturb" do
   version "1.3.0"
   sha256 "000e3ce8f5abd1313bbb603c401a1be0b5cf4f11644d36f1d5d382745079fdc3"
 
-  url "https:github.comobjective-seeDoNotDisturbreleasesdownload#{version}DoNotDisturb_#{version}.zip",
-      verified: "github.comobjective-seeDoNotDisturb"
+  url "https://ghfast.top/https://github.com/objective-see/DoNotDisturb/releases/download/#{version}/DoNotDisturb_#{version}.zip",
+      verified: "github.com/objective-see/DoNotDisturb/"
   name "Do Not Disturb"
   desc "Open-source physical access (aka 'evil maid') attack detector"
-  homepage "https:objective-see.orgproductsdnd.html"
+  homepage "https://objective-see.org/products/dnd.html"
 
   no_autobump! because: :requires_manual_review
 
@@ -15,13 +15,13 @@ cask "do-not-disturb" do
   depends_on macos: ">= :sierra"
 
   installer script: {
-    executable: "#{staged_path}Do Not Disturb Installer.appContentsMacOSDo Not Disturb Installer",
+    executable: "#{staged_path}/Do Not Disturb Installer.app/Contents/MacOS/Do Not Disturb Installer",
     args:       ["-install"],
     sudo:       true,
   }
 
   uninstall script: {
-    executable: "#{staged_path}Do Not Disturb Installer.appContentsMacOSDo Not Disturb Installer",
+    executable: "#{staged_path}/Do Not Disturb Installer.app/Contents/MacOS/Do Not Disturb Installer",
     args:       ["-uninstall"],
     sudo:       true,
   }

@@ -1,7 +1,7 @@
 class Tabiew < Formula
   desc "TUI to view and query tabular files (CSV,TSV, Parquet, etc.)"
-  homepage "https:github.comshshemitabiew"
-  url "https:github.comshshemitabiewarchiverefstagsv0.10.0.tar.gz"
+  homepage "https://github.com/shshemi/tabiew"
+  url "https://ghfast.top/https://github.com/shshemi/tabiew/archive/refs/tags/v0.10.0.tar.gz"
   sha256 "48757f97eb0c02b0b5bf6244796da8b913b7fbd8602283865142add1cfc9f73d"
   license "MIT"
 
@@ -22,21 +22,21 @@ class Tabiew < Formula
   def install
     system "cargo", "install", *std_cargo_args
 
-    man1.install "targetmanualtabiew.1" => "tw.1"
-    bash_completion.install "targetcompletiontw.bash" => "tw"
-    zsh_completion.install "targetcompletion_tw"
-    fish_completion.install "targetcompletiontw.fish"
+    man1.install "target/manual/tabiew.1" => "tw.1"
+    bash_completion.install "target/completion/tw.bash" => "tw"
+    zsh_completion.install "target/completion/_tw"
+    fish_completion.install "target/completion/tw.fish"
   end
 
   test do
-    (testpath"test.csv").write <<~CSV
+    (testpath/"test.csv").write <<~CSV
       time,tide,wait
       1,42,"no man"
       7,11,"you think?"
     CSV
     input, = Open3.popen2 "script -q output.txt"
     input.puts "stty rows 80 cols 130"
-    input.puts bin"tw test.csv"
+    input.puts bin/"tw test.csv"
     input.puts ":F tide < 40"
     input.puts ":goto 1"
     sleep 1
@@ -45,6 +45,6 @@ class Tabiew < Formula
     input.close
     sleep 2
 
-    assert_match "you think?", (testpath"output.txt").read
+    assert_match "you think?", (testpath/"output.txt").read
   end
 end

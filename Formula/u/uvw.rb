@@ -1,14 +1,14 @@
 class Uvw < Formula
   desc "Header-only, event based, tiny and easy to use libuv wrapper in modern C++"
-  homepage "https:github.comskypjackuvw"
-  url "https:github.comskypjackuvwarchiverefstagsv3.4.0_libuv_v1.48.tar.gz"
+  homepage "https://github.com/skypjack/uvw"
+  url "https://ghfast.top/https://github.com/skypjack/uvw/archive/refs/tags/v3.4.0_libuv_v1.48.tar.gz"
   version "3.4.0"
   sha256 "c16600573871a5feeb524234b378ab832c8971b2a68d030c6bd0e3077d416ade"
   license "MIT"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)(?:[._-]libuv[._-]v?\d+(?:\.\d+)*)?$i)
+    regex(/^v?(\d+(?:\.\d+)+)(?:[._-]libuv[._-]v?\d+(?:\.\d+)*)?$/i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -40,7 +40,7 @@ class Uvw < Formula
   end
 
   test do
-    (testpath"CMakeLists.txt").write <<~CMAKE
+    (testpath/"CMakeLists.txt").write <<~CMAKE
       cmake_minimum_required(VERSION 4.0)
       project(test_uvw)
 
@@ -55,7 +55,7 @@ class Uvw < Formula
       target_link_libraries(test PRIVATE uvw::uvw uv)
     CMAKE
 
-    (testpath"main.cpp").write <<~CPP
+    (testpath/"main.cpp").write <<~CPP
       #include <iostream>
       #include <uvw.hpp>
 
@@ -76,6 +76,6 @@ class Uvw < Formula
 
     system "cmake", "-S", ".", "-B", "build"
     system "cmake", "--build", "build"
-    system ".buildtest"
+    system "./build/test"
   end
 end

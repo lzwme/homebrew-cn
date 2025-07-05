@@ -1,10 +1,10 @@
 class Envelope < Formula
   desc "Environment variables CLI tool"
-  homepage "https:github.commattrighettienvelope"
-  url "https:github.commattrighettienvelopearchiverefstags0.5.1.tar.gz"
+  homepage "https://github.com/mattrighetti/envelope"
+  url "https://ghfast.top/https://github.com/mattrighetti/envelope/archive/refs/tags/0.5.1.tar.gz"
   sha256 "e07fcc677e375311f3c9e7f0594020c2c8da64f8ea6c391c3ad00641543e5927"
   license any_of: ["MIT", "Unlicense"]
-  head "https:github.commattrighettienvelope.git", branch: "master"
+  head "https://github.com/mattrighetti/envelope.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "46bfe1fb3dd3f87b793d29c5b2321de5a3c2166d9990775c7c92428c05a92992"
@@ -27,21 +27,21 @@ class Envelope < Formula
       --standalone
       --to=man
     ]
-    system "pandoc", *args, "manenvelope.1.md", "-o", "envelope.1"
+    system "pandoc", *args, "man/envelope.1.md", "-o", "envelope.1"
     man1.install "envelope.1"
   end
 
   test do
-    assert_equal "envelope #{version}", shell_output("#{bin}envelope --version").strip
+    assert_equal "envelope #{version}", shell_output("#{bin}/envelope --version").strip
 
     assert_match "error: envelope is not initialized in current directory",
-      shell_output("#{bin}envelope list --sort date 2>&1", 1)
+      shell_output("#{bin}/envelope list --sort date 2>&1", 1)
 
-    system bin"envelope", "init"
-    system bin"envelope", "add", "dev", "var1", "test1"
-    system bin"envelope", "add", "dev", "var2", "test2"
-    system bin"envelope", "add", "prod", "var1", "test1"
-    system bin"envelope", "add", "prod", "var2", "test2"
-    assert_match "dev\nprod", shell_output("#{bin}envelope list --sort date")
+    system bin/"envelope", "init"
+    system bin/"envelope", "add", "dev", "var1", "test1"
+    system bin/"envelope", "add", "dev", "var2", "test2"
+    system bin/"envelope", "add", "prod", "var1", "test1"
+    system bin/"envelope", "add", "prod", "var2", "test2"
+    assert_match "dev\nprod", shell_output("#{bin}/envelope list --sort date")
   end
 end

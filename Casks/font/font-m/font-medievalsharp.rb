@@ -2,10 +2,10 @@ cask "font-medievalsharp" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefontsrawmainoflmedievalsharpMedievalSharp.ttf",
-      verified: "github.comgooglefonts"
+  url "https://github.com/google/fonts/raw/main/ofl/medievalsharp/MedievalSharp.ttf",
+      verified: "github.com/google/fonts/"
   name "MedievalSharp"
-  homepage "https:fonts.google.comspecimenMedievalSharp"
+  homepage "https://fonts.google.com/specimen/MedievalSharp"
 
   font "MedievalSharp.ttf"
 

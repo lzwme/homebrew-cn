@@ -2,12 +2,12 @@ cask "font-sura" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefonts.git",
-      verified:  "github.comgooglefonts",
+  url "https://github.com/google/fonts.git",
+      verified:  "github.com/google/fonts",
       branch:    "main",
-      only_path: "oflsura"
+      only_path: "ofl/sura"
   name "Sura"
-  homepage "https:fonts.google.comspecimenSura"
+  homepage "https://fonts.google.com/specimen/Sura"
 
   font "Sura-Bold.ttf"
   font "Sura-Regular.ttf"

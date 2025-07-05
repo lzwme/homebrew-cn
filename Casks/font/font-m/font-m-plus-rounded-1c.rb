@@ -2,12 +2,12 @@ cask "font-m-plus-rounded-1c" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefonts.git",
-      verified:  "github.comgooglefonts",
+  url "https://github.com/google/fonts.git",
+      verified:  "github.com/google/fonts",
       branch:    "main",
-      only_path: "oflmplusrounded1c"
+      only_path: "ofl/mplusrounded1c"
   name "M PLUS Rounded 1c"
-  homepage "https:fonts.google.comspecimenM+PLUS+Rounded+1c"
+  homepage "https://fonts.google.com/specimen/M+PLUS+Rounded+1c"
 
   font "MPLUSRounded1c-Black.ttf"
   font "MPLUSRounded1c-Bold.ttf"

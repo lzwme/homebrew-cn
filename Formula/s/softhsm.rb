@@ -1,16 +1,16 @@
 class Softhsm < Formula
   desc "Cryptographic store accessible through a PKCS#11 interface"
-  homepage "https:www.opendnssec.orgsofthsm"
-  url "https:dist.opendnssec.orgsourcesofthsm-2.6.1.tar.gz"
+  homepage "https://www.opendnssec.org/softhsm/"
+  url "https://dist.opendnssec.org/source/softhsm-2.6.1.tar.gz"
   sha256 "61249473054bcd1811519ef9a989a880a7bdcc36d317c9c25457fc614df475f2"
   license "BSD-2-Clause"
 
-  # We check the GitHub repo tags instead of https:dist.opendnssec.orgsource
+  # We check the GitHub repo tags instead of https://dist.opendnssec.org/source/
   # since the aforementioned first-party URL has a tendency to lead to an
   # `execution expired` error.
   livecheck do
     url :head
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -32,7 +32,7 @@ class Softhsm < Formula
   end
 
   head do
-    url "https:github.comopendnssecSoftHSMv2.git", branch: "develop"
+    url "https://github.com/opendnssec/SoftHSMv2.git", branch: "develop"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -43,9 +43,9 @@ class Softhsm < Formula
   depends_on "openssl@3"
 
   def install
-    system "sh", ".autogen.sh" if build.head?
-    system ".configure", "--disable-silent-rules",
-                          "--sysconfdir=#{etc}softhsm",
+    system "sh", "./autogen.sh" if build.head?
+    system "./configure", "--disable-silent-rules",
+                          "--sysconfdir=#{etc}/softhsm",
                           "--localstatedir=#{var}",
                           "--with-crypto-backend=openssl",
                           "--with-openssl=#{Formula["openssl@3"].opt_prefix}",
@@ -55,15 +55,15 @@ class Softhsm < Formula
   end
 
   def post_install
-    (var"libsofthsmtokens").mkpath
+    (var/"lib/softhsm/tokens").mkpath
   end
 
   test do
-    (testpath"softhsm2.conf").write("directories.tokendir = #{testpath}")
-    ENV["SOFTHSM2_CONF"] = "#{testpath}softhsm2.conf"
-    system bin"softhsm2-util", "--init-token", "--slot", "0",
+    (testpath/"softhsm2.conf").write("directories.tokendir = #{testpath}")
+    ENV["SOFTHSM2_CONF"] = "#{testpath}/softhsm2.conf"
+    system bin/"softhsm2-util", "--init-token", "--slot", "0",
                                 "--label", "testing", "--so-pin", "1234",
                                 "--pin", "1234"
-    system bin"softhsm2-util", "--show-slots"
+    system bin/"softhsm2-util", "--show-slots"
   end
 end

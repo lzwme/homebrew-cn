@@ -1,14 +1,14 @@
 class Lynx < Formula
   desc "Text-based web browser"
-  homepage "https:invisible-island.netlynx"
-  url "https:invisible-mirror.netarchiveslynxtarballslynx2.9.2.tar.bz2"
-  mirror "https:fossies.orglinuxwwwlynx2.9.2.tar.bz2"
+  homepage "https://invisible-island.net/lynx/"
+  url "https://invisible-mirror.net/archives/lynx/tarballs/lynx2.9.2.tar.bz2"
+  mirror "https://fossies.org/linux/www/lynx2.9.2.tar.bz2"
   sha256 "7374b89936d991669e101f4e97f2c9592036e1e8cdaa7bafc259a77ab6fb07ce"
   license "GPL-2.0-only"
 
   livecheck do
-    url "https:invisible-mirror.netarchiveslynxtarballs?C=M&O=D"
-    regex(href=.*?lynx[._-]?v?(\d+(?:\.\d+)+(?:rel\.?\d+)?)\.ti)
+    url "https://invisible-mirror.net/archives/lynx/tarballs/?C=M&O=D"
+    regex(/href=.*?lynx[._-]?v?(\d+(?:\.\d+)+(?:rel\.?\d+)?)\.t/i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -34,9 +34,9 @@ class Lynx < Formula
     ENV.append_to_cflags "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1403
 
     # Using --with-screen=ncurses to due to behaviour change in Big Sur
-    # https:github.comHomebrewhomebrew-corepull58019
+    # https://github.com/Homebrew/homebrew-core/pull/58019
 
-    system ".configure", *std_configure_args,
+    system "./configure", *std_configure_args,
                           "--mandir=#{man}",
                           "--disable-echo",
                           "--enable-default-colors",
@@ -52,6 +52,6 @@ class Lynx < Formula
   end
 
   test do
-    system bin"lynx", "-dump", "https:example.org"
+    system bin/"lynx", "-dump", "https://example.org/"
   end
 end

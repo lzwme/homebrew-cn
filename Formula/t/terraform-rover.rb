@@ -1,7 +1,7 @@
 class TerraformRover < Formula
   desc "Terraform Visualizer"
-  homepage "https:github.comim2nguyenrover"
-  url "https:github.comim2nguyenroverarchiverefstagsv0.3.3.tar.gz"
+  homepage "https://github.com/im2nguyen/rover"
+  url "https://ghfast.top/https://github.com/im2nguyen/rover/archive/refs/tags/v0.3.3.tar.gz"
   sha256 "491709df11c70c9756e55f4cd203321bf1c6b92793b8db91073012a1f13b42e5"
   license "MIT"
 
@@ -21,8 +21,8 @@ class TerraformRover < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "b078227fb4f38d09892b8ff73db1cb786940ef8dbb850e2f75c7c79d4688c882"
   end
 
-  # https:github.comim2nguyenroverissues125
-  # https:github.comim2nguyenroverissues133
+  # https://github.com/im2nguyen/rover/issues/125
+  # https://github.com/im2nguyen/rover/issues/133
   deprecate! date: "2024-02-22", because: "depends on soon-to-be-deprecated terraform"
   disable! date: "2025-02-24", because: "depends on terraform"
 
@@ -32,13 +32,13 @@ class TerraformRover < Formula
 
   # build patch for building with node 20 and go 1.21.0
   # fix `Error: error:0308010C:digital envelope routines::unsupported` error
-  # upstream patch PR, https:github.comim2nguyenroverpull128
+  # upstream patch PR, https://github.com/im2nguyen/rover/pull/128
   patch do
-    url "https:github.comim2nguyenrovercommit8f5c9ca2ca6294c6a0463199ace822335c780041.patch?full_index=1"
+    url "https://github.com/im2nguyen/rover/commit/8f5c9ca2ca6294c6a0463199ace822335c780041.patch?full_index=1"
     sha256 "c13464fe2de234ab670e58cd9f8999d23b088260927797708ce00bd5a11ce821"
   end
   patch do
-    url "https:github.comim2nguyenrovercommit989802276f74c57406a6b23a8d7ccc470fcdc975.patch?full_index=1"
+    url "https://github.com/im2nguyen/rover/commit/989802276f74c57406a6b23a8d7ccc470fcdc975.patch?full_index=1"
     sha256 "3550755a11358385000f1a6af96a305c3f49690949d079d8e4fd59b8d17a06f5"
   end
 
@@ -51,14 +51,14 @@ class TerraformRover < Formula
   end
 
   test do
-    (testpath"main.tf").write <<~HCL
+    (testpath/"main.tf").write <<~HCL
       output "hello_world" {
         value = "Hello, World!"
       }
     HCL
-    system bin"terraform-rover", "-standalone", "-tfPath", Formula["terraform"].bin"terraform"
-    assert_path_exists testpath"rover.zip"
+    system bin/"terraform-rover", "-standalone", "-tfPath", Formula["terraform"].bin/"terraform"
+    assert_path_exists testpath/"rover.zip"
 
-    assert_match version.to_s, shell_output("#{bin}terraform-rover --version")
+    assert_match version.to_s, shell_output("#{bin}/terraform-rover --version")
   end
 end

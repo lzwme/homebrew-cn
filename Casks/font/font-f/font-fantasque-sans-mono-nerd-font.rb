@@ -2,9 +2,9 @@ cask "font-fantasque-sans-mono-nerd-font" do
   version "3.4.0"
   sha256 "29c6fe2420a61fff58a78c689e27d8b984ccef2990d6ed9c1a7f3661136acd41"
 
-  url "https:github.comryanoasisnerd-fontsreleasesdownloadv#{version}FantasqueSansMono.zip"
+  url "https://ghfast.top/https://github.com/ryanoasis/nerd-fonts/releases/download/v#{version}/FantasqueSansMono.zip"
   name "FantasqueSansM Nerd Font (Fantasque Sans Mono)"
-  homepage "https:github.comryanoasisnerd-fonts"
+  homepage "https://github.com/ryanoasis/nerd-fonts"
 
   livecheck do
     url :url

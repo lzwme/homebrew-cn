@@ -1,7 +1,7 @@
 class HopscotchMap < Formula
   desc "C++ implementation of a fast hash map and hash set using hopscotch hashing"
-  homepage "https:github.comTessilhopscotch-map"
-  url "https:github.comTessilhopscotch-maparchiverefstagsv2.3.1.tar.gz"
+  homepage "https://github.com/Tessil/hopscotch-map"
+  url "https://ghfast.top/https://github.com/Tessil/hopscotch-map/archive/refs/tags/v2.3.1.tar.gz"
   sha256 "53dab49005cd5dc859f2546d0d3eef058ec7fb3b74fc3b19f4965a9a151e9b20"
   license "MIT"
 
@@ -21,8 +21,8 @@ class HopscotchMap < Formula
   end
 
   test do
-    (testpath"test.cc").write <<~CPP
-      #include <tslhopscotch_set.h>
+    (testpath/"test.cc").write <<~CPP
+      #include <tsl/hopscotch_set.h>
       #include <cassert>
 
       int main() {
@@ -33,6 +33,6 @@ class HopscotchMap < Formula
       }
     CPP
     system ENV.cxx, "-std=c++14", "test.cc", "-I#{include}", "-o", "test"
-    system ".test"
+    system "./test"
   end
 end

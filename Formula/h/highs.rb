@@ -1,7 +1,7 @@
 class Highs < Formula
   desc "Linear optimization software"
-  homepage "https:www.maths.ed.ac.ukhallHiGHS"
-  url "https:github.comERGO-CodeHiGHSarchiverefstagsv1.11.0.tar.gz"
+  homepage "https://www.maths.ed.ac.uk/hall/HiGHS/"
+  url "https://ghfast.top/https://github.com/ERGO-Code/HiGHS/archive/refs/tags/v1.11.0.tar.gz"
   sha256 "2b44b074cf41439325ce4d0bbdac2d51379f56faf17ba15320a410d3c1f07275"
   license "MIT"
 
@@ -38,11 +38,11 @@ class Highs < Formula
   end
 
   test do
-    output = shell_output("#{bin}highs #{pkgshare}checkinstancestest.mps")
+    output = shell_output("#{bin}/highs #{pkgshare}/check/instances/test.mps")
     assert_match "Optimal", output
 
-    cp pkgshare"examplescall_highs_from_cpp.cpp", testpath"test.cpp"
-    system ENV.cxx, "-std=c++11", "test.cpp", "-I#{include}highs", "-L#{lib}", "-lhighs", "-o", "test"
-    assert_match "Optimal", shell_output(".test")
+    cp pkgshare/"examples/call_highs_from_cpp.cpp", testpath/"test.cpp"
+    system ENV.cxx, "-std=c++11", "test.cpp", "-I#{include}/highs", "-L#{lib}", "-lhighs", "-o", "test"
+    assert_match "Optimal", shell_output("./test")
   end
 end

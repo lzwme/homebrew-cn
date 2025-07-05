@@ -1,14 +1,14 @@
 class Discount < Formula
   desc "C implementation of Markdown"
-  homepage "https:www.pell.portland.or.us~orcCodediscount"
-  url "https:www.pell.portland.or.us~orcCodediscountdiscount-2.2.7d.tar.bz2"
+  homepage "https://www.pell.portland.or.us/~orc/Code/discount/"
+  url "https://www.pell.portland.or.us/~orc/Code/discount/discount-2.2.7d.tar.bz2"
   sha256 "12a2041e96ae8cde17e08ff1a215d331580a5c58688daa5a18842b6bb5b77b52"
   license "BSD-3-Clause"
-  head "https:github.comOrcdiscount.git", branch: "main"
+  head "https://github.com/Orc/discount.git", branch: "main"
 
   livecheck do
     url :homepage
-    regex(href=.*?discount[._-]v?(\d+(?:\.\d+)+[a-z]?)\.ti)
+    regex(/href=.*?discount[._-]v?(\d+(?:\.\d+)+[a-z]?)\.t/i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -36,7 +36,7 @@ class Discount < Formula
 
     # Shared libraries are currently not built because they require
     # root access to build without patching.
-    # Issue reported upstream here: https:github.comOrcdiscountissues266.
+    # Issue reported upstream here: https://github.com/Orc/discount/issues/266.
     # Add --shared to args when this is resolved.
     args = %W[
       --prefix=#{prefix}
@@ -47,7 +47,7 @@ class Discount < Formula
       --enable-superscript
       --pkg-config
     ]
-    system ".configure.sh", *args
+    system "./configure.sh", *args
     bin.mkpath
     lib.mkpath
     include.mkpath
@@ -55,8 +55,8 @@ class Discount < Formula
   end
 
   test do
-    markdown = "[Homebrew](https:brew.sh)"
-    html = "<p><a href=\"https:brew.sh\">Homebrew<a><p>"
-    assert_equal html, pipe_output(bin"markdown", markdown, 0).chomp
+    markdown = "[Homebrew](https://brew.sh/)"
+    html = "<p><a href=\"https://brew.sh/\">Homebrew</a></p>"
+    assert_equal html, pipe_output(bin/"markdown", markdown, 0).chomp
   end
 end

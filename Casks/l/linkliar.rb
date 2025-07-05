@@ -8,10 +8,10 @@ cask "linkliar" do
     sha256 "36e62eab4ef8d2b004c6886182fc49830afdf56f4f14f9be07adfe552d7140d2"
   end
 
-  url "https:github.comhaloLinkLiarreleasesdownload#{version}LinkLiar.app.zip"
+  url "https://ghfast.top/https://github.com/halo/LinkLiar/releases/download/#{version}/LinkLiar.app.zip"
   name "LinkLiar"
   desc "Link-Layer MAC spoofing GUI for macOS"
-  homepage "https:github.comhaloLinkLiar"
+  homepage "https://github.com/halo/LinkLiar"
 
   livecheck do
     url :url
@@ -28,8 +28,8 @@ cask "linkliar" do
             ],
             quit:      "io.github.halo.LinkLiar",
             delete:    [
-              "LibraryApplication Supportio.github.halo.linkdaemon",
-              "LibraryApplication SupportLinkLiar",
+              "/Library/Application Support/io.github.halo.linkdaemon",
+              "/Library/Application Support/LinkLiar",
             ]
 
   # No zap stanza required

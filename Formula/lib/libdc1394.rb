@@ -1,7 +1,7 @@
 class Libdc1394 < Formula
   desc "Provides API for IEEE 1394 cameras"
-  homepage "https:damien.douxchamps.netieee1394libdc1394"
-  url "https:downloads.sourceforge.netprojectlibdc1394libdc1394-22.2.7libdc1394-2.2.7.tar.gz"
+  homepage "https://damien.douxchamps.net/ieee1394/libdc1394/"
+  url "https://downloads.sourceforge.net/project/libdc1394/libdc1394-2/2.2.7/libdc1394-2.2.7.tar.gz"
   sha256 "537ceb78dd3cef271a183f4a176191d1cecf85f025520e6bd3758b0e19e6609f"
   license "LGPL-2.1-or-later"
 
@@ -25,18 +25,18 @@ class Libdc1394 < Formula
 
   # fix issue due to bug in OSX Firewire stack
   patch do
-    url "https:raw.githubusercontent.comHomebrewformula-patchesb8275aa07flibdc1394capture.patch"
+    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/b8275aa07f/libdc1394/capture.patch"
     sha256 "6e3675b7fb1711c5d7634a76d723ff25e2f7ae73cd1fbf3c4e49ba8e5dcf6c39"
   end
 
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
-    url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-pre-0.4.2.418-big_sur.diff"
+    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-pre-0.4.2.418-big_sur.diff"
     sha256 "83af02f2aa2b746bb7225872cab29a253264be49db0ecebb12f841562d9a2923"
   end
 
   def install
-    system ".configure", *std_configure_args,
+    system "./configure", *std_configure_args,
                           "--disable-examples",
                           "--disable-sdltest"
     system "make", "install"

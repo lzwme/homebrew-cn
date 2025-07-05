@@ -2,14 +2,14 @@ cask "maestral" do
   version "1.9.4"
   sha256 "639ab2401d97fad7865ba17ce8cfa02fb418d3bb29cd411cf991cce91c51b1ea"
 
-  url "https:github.comSamSchottmaestralreleasesdownloadv#{version}Maestral-#{version}.dmg",
-      verified: "github.comSamSchottmaestral"
+  url "https://ghfast.top/https://github.com/SamSchott/maestral/releases/download/v#{version}/Maestral-#{version}.dmg",
+      verified: "github.com/SamSchott/maestral/"
   name "Maestral"
   desc "Open-source Dropbox client"
-  homepage "https:maestral.app"
+  homepage "https://maestral.app/"
 
   livecheck do
-    url "https:maestral.appappcast.xml"
+    url "https://maestral.app/appcast.xml"
     strategy :sparkle, &:short_version
   end
 
@@ -17,14 +17,14 @@ cask "maestral" do
   depends_on macos: ">= :big_sur"
 
   app "Maestral.app"
-  binary "#{appdir}Maestral.appContentsMacOSmaestral-cli", target: "maestral"
+  binary "#{appdir}/Maestral.app/Contents/MacOS/maestral-cli", target: "maestral"
 
   uninstall quit: "com.samschott.maestral"
 
   zap trash: [
-    "~LibraryApplication Supportmaestral",
-    "~LibraryLaunchAgentscom.samschott.maestral.maestral.plist",
-    "~LibraryLogsmaestral",
-    "~LibraryPreferencescom.samschott.maestral.plist",
+    "~/Library/Application Support/maestral",
+    "~/Library/LaunchAgents/com.samschott.maestral.maestral.plist",
+    "~/Library/Logs/maestral",
+    "~/Library/Preferences/com.samschott.maestral.plist",
   ]
 end

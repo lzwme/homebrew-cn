@@ -1,11 +1,11 @@
 class HaskellLanguageServer < Formula
   desc "Integration point for ghcide and haskell-ide-engine. One IDE to rule them all"
-  homepage "https:github.comhaskellhaskell-language-server"
-  url "https:github.comhaskellhaskell-language-serverreleasesdownload2.11.0.0haskell-language-server-2.11.0.0-src.tar.gz"
+  homepage "https://github.com/haskell/haskell-language-server"
+  url "https://ghfast.top/https://github.com/haskell/haskell-language-server/releases/download/2.11.0.0/haskell-language-server-2.11.0.0-src.tar.gz"
   sha256 "d6c7ce94786346ee9acb1ef9fff0780b8035c4392523f27d328ad018257d7f5f"
   license "Apache-2.0"
   revision 1
-  head "https:github.comhaskellhaskell-language-server.git", branch: "master"
+  head "https://github.com/haskell/haskell-language-server.git", branch: "master"
 
   # we need :github_latest here because otherwise
   # livecheck picks up spurious non-release tags
@@ -42,20 +42,20 @@ class HaskellLanguageServer < Formula
   def install
     # Cannot dynamically link when supporting multiple versions of GHC in single formula
     args = ["--disable-executable-dynamic", "--flags=-dynamic -test-exe"]
-    # Work around failure: ld: BBL out of range 204883708 (max +-128MB)
+    # Work around failure: ld: B/BL out of range 204883708 (max +/-128MB)
     args << "--ghc-option=-optl-ld_classic" if DevelopmentTools.clang_build_version == 1500 && Hardware::CPU.arm?
 
     system "cabal", "v2-update"
 
     ghcs.each do |ghc|
-      system "cabal", "v2-install", "--with-compiler=#{ghc.bin}ghc", *args, *std_cabal_v2_args
+      system "cabal", "v2-install", "--with-compiler=#{ghc.bin}/ghc", *args, *std_cabal_v2_args
 
       cmds = ["haskell-language-server", "ghcide-bench"]
       cmds.each do |cmd|
-        bin.install bincmd => "#{cmd}-#{ghc.version}"
+        bin.install bin/cmd => "#{cmd}-#{ghc.version}"
         bin.install_symlink "#{cmd}-#{ghc.version}" => "#{cmd}-#{ghc.version.major_minor}"
       end
-      (bin"haskell-language-server-wrapper").unlink if ghc != ghcs.last
+      (bin/"haskell-language-server-wrapper").unlink if ghc != ghcs.last
     end
   end
 
@@ -70,19 +70,19 @@ class HaskellLanguageServer < Formula
   end
 
   test do
-    (testpath"valid.hs").write <<~HASKELL
+    (testpath/"valid.hs").write <<~HASKELL
       f :: Int -> Int
       f x = x + 1
     HASKELL
 
-    (testpath"invalid.hs").write <<~HASKELL
+    (testpath/"invalid.hs").write <<~HASKELL
       f :: Int -> Int
     HASKELL
 
     ghcs.each do |ghc|
       with_env(PATH: "#{ghc.bin}:#{ENV["PATH"]}") do
-        hls = bin"haskell-language-server-#{ghc.version.major_minor}"
-        assert_match "Completed (1 file worked, 1 file failed)", shell_output("#{hls} #{testpath}*.hs 2>&1", 1)
+        hls = bin/"haskell-language-server-#{ghc.version.major_minor}"
+        assert_match "Completed (1 file worked, 1 file failed)", shell_output("#{hls} #{testpath}/*.hs 2>&1", 1)
       end
     end
   end

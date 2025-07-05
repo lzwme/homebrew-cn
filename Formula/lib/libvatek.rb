@@ -1,10 +1,10 @@
 class Libvatek < Formula
   desc "User library to control VATek chips"
-  homepage "https:github.comVisionAdvanceTechnologyIncvatek_sdk_2"
-  url "https:github.comVisionAdvanceTechnologyIncvatek_sdk_2archiverefstagsv3.12.1.tar.gz"
+  homepage "https://github.com/VisionAdvanceTechnologyInc/vatek_sdk_2"
+  url "https://ghfast.top/https://github.com/VisionAdvanceTechnologyInc/vatek_sdk_2/archive/refs/tags/v3.12.1.tar.gz"
   sha256 "293a9d8f271fe960c987b0c620bbc1daacaf1fba00374c3431cab990456ba516"
   license "BSD-2-Clause"
-  head "https:github.comVisionAdvanceTechnologyIncvatek_sdk_2.git", branch: "main"
+  head "https://github.com/VisionAdvanceTechnologyInc/vatek_sdk_2.git", branch: "main"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "1e231d20c397029d363b48b1d685a4ed1710ea69e1cf4408c7bcbd758418b425"
@@ -28,7 +28,7 @@ class Libvatek < Formula
   end
 
   test do
-    (testpath"vatek_test.c").write <<~C
+    (testpath/"vatek_test.c").write <<~C
       #include <vatek_sdk_device.h>
       #include <stdio.h>
       #include <stdlib.h>
@@ -47,7 +47,7 @@ class Libvatek < Formula
           }
       }
     C
-    system ENV.cc, "vatek_test.c", "-I#{include}vatek", "-L#{lib}", "-lvatek_core", "-o", "vatek_test"
-    assert_equal "passed", shell_output(".vatek_test").strip
+    system ENV.cc, "vatek_test.c", "-I#{include}/vatek", "-L#{lib}", "-lvatek_core", "-o", "vatek_test"
+    assert_equal "passed", shell_output("./vatek_test").strip
   end
 end

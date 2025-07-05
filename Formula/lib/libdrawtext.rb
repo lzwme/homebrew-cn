@@ -1,10 +1,10 @@
 class Libdrawtext < Formula
   desc "Library for anti-aliased text rendering in OpenGL"
-  homepage "http:nuclear.mutantstargoat.comswlibdrawtext"
-  url "https:github.comjtsiomblibdrawtextarchiverefstagsv0.6.tar.gz"
+  homepage "http://nuclear.mutantstargoat.com/sw/libdrawtext/"
+  url "https://ghfast.top/https://github.com/jtsiomb/libdrawtext/archive/refs/tags/v0.6.tar.gz"
   sha256 "714d94473622d756bfe7d70ad6340db3de7cc48f4f356a060e3cb48900c6da01"
   license "LGPL-3.0-or-later"
-  head "https:github.comjtsiomblibdrawtext.git", branch: "master"
+  head "https://github.com/jtsiomb/libdrawtext.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -31,29 +31,29 @@ class Libdrawtext < Formula
   end
 
   def install
-    system ".configure", "--disable-dbg", "--enable-opt", "--prefix=#{prefix}"
+    system "./configure", "--disable-dbg", "--enable-opt", "--prefix=#{prefix}"
 
     # Avoid errors with Xcode 15
     inreplace "Makefile", "CFLAGS =", "CFLAGS = -Wno-implicit-function-declaration"
 
     system "make", "install"
-    system "make", "-C", "toolsfont2glyphmap"
-    system "make", "-C", "toolsfont2glyphmap", "PREFIX=#{prefix}", "install"
+    system "make", "-C", "tools/font2glyphmap"
+    system "make", "-C", "tools/font2glyphmap", "PREFIX=#{prefix}", "install"
     pkgshare.install "examples"
   end
 
   test do
     ext = "ttf"
     font_name = "DejaVuSans"
-    font_path = "usrsharefontstruetypedejavu"
+    font_path = "/usr/share/fonts/truetype/dejavu"
     if OS.mac?
       ext = "otf" if MacOS.version >= :high_sierra
       font_name = "LastResort"
-      font_path = "SystemLibraryFonts"
+      font_path = "/System/Library/Fonts"
     end
 
-    cp "#{font_path}#{font_name}.#{ext}", testpath
-    system bin"font2glyphmap", "#{font_name}.#{ext}"
-    assert_match(P5\n512 (256|512)\n# size: 12, shell_output("head -3 #{font_name}_s12.glyphmap"))
+    cp "#{font_path}/#{font_name}.#{ext}", testpath
+    system bin/"font2glyphmap", "#{font_name}.#{ext}"
+    assert_match(/P5\n512 (256|512)\n# size: 12/, shell_output("head -3 #{font_name}_s12.glyphmap"))
   end
 end

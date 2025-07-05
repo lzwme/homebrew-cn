@@ -1,10 +1,10 @@
 class Libmonome < Formula
   desc "Library for easy interaction with monome devices"
-  homepage "https:monome.org"
-  url "https:github.commonomelibmonomearchiverefstagsv1.4.8.tar.gz"
+  homepage "https://monome.org/"
+  url "https://ghfast.top/https://github.com/monome/libmonome/archive/refs/tags/v1.4.8.tar.gz"
   sha256 "b98bce2a99481fc3aa8a29fc60310180d24473fce86f5edb55ddfe84d9e9dd69"
   license "ISC"
-  head "https:github.commonomelibmonome.git", branch: "main"
+  head "https://github.com/monome/libmonome.git", branch: "main"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "50321cfdaca220bccec61c6ec8e142784c3f02879656218b88eaeb660f2b8dba"
@@ -21,17 +21,17 @@ class Libmonome < Formula
   uses_from_macos "python" => :build
 
   def install
-    # Workaround for arm64 linux, issue ref: https:github.commonomelibmonomeissues82
+    # Workaround for arm64 linux, issue ref: https://github.com/monome/libmonome/issues/82
     ENV.append_to_cflags "-fsigned-char" if OS.linux? && Hardware::CPU.arm?
 
-    system "python3", ".waf", "configure", "--prefix=#{prefix}"
-    system "python3", ".waf", "build"
-    system "python3", ".waf", "install"
+    system "python3", "./waf", "configure", "--prefix=#{prefix}"
+    system "python3", "./waf", "build"
+    system "python3", "./waf", "install"
 
-    pkgshare.install Dir["examples*.c"]
+    pkgshare.install Dir["examples/*.c"]
   end
 
   test do
-    assert_match "failed to open", shell_output("#{bin}monomeserial", 1)
+    assert_match "failed to open", shell_output("#{bin}/monomeserial", 1)
   end
 end

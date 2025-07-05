@@ -1,11 +1,11 @@
 class Mfoc < Formula
   desc "Implementation of 'offline nested' attack by Nethemba"
-  homepage "https:github.comnfc-toolsmfoc"
-  url "https:github.comnfc-toolsmfocarchiverefstagsmfoc-0.10.7.tar.gz"
+  homepage "https://github.com/nfc-tools/mfoc"
+  url "https://ghfast.top/https://github.com/nfc-tools/mfoc/archive/refs/tags/mfoc-0.10.7.tar.gz"
   sha256 "2dfd8ffa4a8b357807680d190a91c8cf3db54b4211a781edc1108af401dbaad7"
   license "GPL-2.0-only"
   revision 2
-  head "https:github.comnfc-toolsmfoc.git"
+  head "https://github.com/nfc-tools/mfoc.git"
 
   no_autobump! because: :requires_manual_review
 
@@ -31,12 +31,12 @@ class Mfoc < Formula
 
   def install
     system "autoreconf", "--force", "--install", "--verbose"
-    system ".configure", *std_configure_args
+    system "./configure", *std_configure_args
     system "make"
     system "make", "install"
   end
 
   test do
-    assert_match "No NFC device found", shell_output("#{bin}mfoc -O devnull", 1)
+    assert_match "No NFC device found", shell_output("#{bin}/mfoc -O /dev/null", 1)
   end
 end

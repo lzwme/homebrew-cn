@@ -1,7 +1,7 @@
 class MultiGitStatus < Formula
   desc "Show uncommitted, untracked and unpushed changes for multiple Git repos"
-  homepage "https:github.comfboendermulti-git-status"
-  url "https:github.comfboendermulti-git-statusarchiverefstags2.3.tar.gz"
+  homepage "https://github.com/fboender/multi-git-status"
+  url "https://ghfast.top/https://github.com/fboender/multi-git-status/archive/refs/tags/2.3.tar.gz"
   sha256 "2634b4b8b3d69a397f5462ec1d72a77d5b395f363ed8e1aabfbf7e5e4172f93f"
   license "MIT"
 
@@ -20,6 +20,6 @@ class MultiGitStatus < Formula
     mkdir "test-repo" do
       system "git", "init"
     end
-    assert_match ".test-repo: Uncommitted changes", shell_output("#{bin}mgitstatus 2>&1")
+    assert_match "./test-repo: Uncommitted changes", shell_output("#{bin}/mgitstatus 2>&1")
   end
 end

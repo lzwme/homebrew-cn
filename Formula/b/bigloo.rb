@@ -1,14 +1,14 @@
 class Bigloo < Formula
   desc "Scheme implementation with object system, C, and Java interfaces"
-  homepage "https:www-sop.inria.frindesfpBigloo"
-  url "https:www-sop.inria.frindesfpBigloodownloadbigloo-4.6a.tar.gz"
+  homepage "https://www-sop.inria.fr/indes/fp/Bigloo/"
+  url "https://www-sop.inria.fr/indes/fp/Bigloo/download/bigloo-4.6a.tar.gz"
   sha256 "9705ec3de00cc1c51ee7699894841a3770c06a874215b45635b8844ae6daf0a6"
   license "GPL-2.0-or-later"
-  head "https:github.commanuel-serranobigloo.git", branch: "master"
+  head "https://github.com/manuel-serrano/bigloo.git", branch: "master"
 
   livecheck do
-    url "https:www-sop.inria.frindesfpBigloodownload.html"
-    regex(bigloo-latest\.t.+?\(([^)]+?)\)i)
+    url "https://www-sop.inria.fr/indes/fp/Bigloo/download.html"
+    regex(/bigloo-latest\.t.+?\(([^)]+?)\)/i)
   end
 
   bottle do
@@ -41,13 +41,13 @@ class Bigloo < Formula
 
   def install
     # Force bigloo not to use vendored libraries
-    inreplace "configure", (^\s+custom\w+)=yes$, "\\1=no"
+    inreplace "configure", /(^\s+custom\w+)=yes$/, "\\1=no"
 
     # configure doesn't respect --mandir or MANDIR
-    inreplace "configure", "$prefixmanman1", "$prefixsharemanman1"
+    inreplace "configure", "$prefix/man/man1", "$prefix/share/man/man1"
 
     # configure doesn't respect --infodir or INFODIR
-    inreplace "configure", "$prefixinfo", "$prefixshareinfo"
+    inreplace "configure", "$prefix/info", "$prefix/share/info"
 
     args = %w[
       --customgc=no
@@ -67,13 +67,13 @@ class Bigloo < Formula
       args << "--disable-libbacktrace"
     end
 
-    system ".configure", *args, *std_configure_args
+    system "./configure", *args, *std_configure_args
     system "make"
     system "make", "install"
 
     # Install the other manpages too
     manpages = %w[bgldepend bglmake bglpp bgltags bglafile bgljfile bglmco bglprof]
-    manpages.each { |m| man1.install "manuals#{m}.man" => "#{m}.1" }
+    manpages.each { |m| man1.install "manuals/#{m}.man" => "#{m}.1" }
   end
 
   test do
@@ -82,6 +82,6 @@ class Bigloo < Formula
       (newline)
       (exit)
     SCHEME
-    assert_match "Hello World!\n", pipe_output("#{bin}bigloo -i -", program, 0)
+    assert_match "Hello World!\n", pipe_output("#{bin}/bigloo -i -", program, 0)
   end
 end

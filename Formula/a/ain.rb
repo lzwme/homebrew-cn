@@ -1,10 +1,10 @@
 class Ain < Formula
   desc "HTTP API client for the terminal"
-  homepage "https:github.comjonasluain"
-  url "https:github.comjonasluainarchiverefstagsv1.6.0.tar.gz"
+  homepage "https://github.com/jonaslu/ain"
+  url "https://ghfast.top/https://github.com/jonaslu/ain/archive/refs/tags/v1.6.0.tar.gz"
   sha256 "a60ce846edc6f8e5429c3cf14faf57f170b757c6ab13d8f36d64235a1959e6c8"
   license "MIT"
-  head "https:github.comjonasluain.git", branch: "main"
+  head "https://github.com/jonaslu/ain.git", branch: "main"
 
   # Upstream creates releases that use a stable tag (e.g., `v1.2.3`) but are
   # labeled as "pre-release" on GitHub before the version is released, so it's
@@ -28,11 +28,11 @@ class Ain < Formula
 
   def install
     ldflags = "-s -w -X main.gitSha=#{version}"
-    system "go", "build", *std_go_args(ldflags:), ".cmdain"
+    system "go", "build", *std_go_args(ldflags:), "./cmd/ain"
   end
 
   test do
-    assert_match "http:localhost:${PORT}", shell_output("#{bin}ain -b")
-    assert_match version.to_s, shell_output("#{bin}ain -v")
+    assert_match "http://localhost:${PORT}", shell_output("#{bin}/ain -b")
+    assert_match version.to_s, shell_output("#{bin}/ain -v")
   end
 end

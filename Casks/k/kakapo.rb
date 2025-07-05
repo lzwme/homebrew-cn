@@ -2,10 +2,10 @@ cask "kakapo" do
   version "1.3.0"
   sha256 "4f89f2d651b88e7c13bce3cccefc4929e83a5f509dae102f071ecd80aab9d524"
 
-  url "https:github.combluedanielKakapo-appreleasesdownloadv#{version}Kakapo-#{version}-Mac.zip"
+  url "https://ghfast.top/https://github.com/bluedaniel/Kakapo-app/releases/download/v#{version}/Kakapo-#{version}-Mac.zip"
   name "Kakapo"
   desc "Open-source ambient sound mixer"
-  homepage "https:github.combluedanielKakapo-app"
+  homepage "https://github.com/bluedaniel/Kakapo-app"
 
   no_autobump! because: :requires_manual_review
 

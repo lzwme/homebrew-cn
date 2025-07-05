@@ -1,10 +1,10 @@
 class Gdrive < Formula
   desc "Google Drive CLI Client"
-  homepage "https:github.comglotlabsgdrive"
-  url "https:github.comglotlabsgdrivearchiverefstags3.9.1.tar.gz"
+  homepage "https://github.com/glotlabs/gdrive"
+  url "https://ghfast.top/https://github.com/glotlabs/gdrive/archive/refs/tags/3.9.1.tar.gz"
   sha256 "9aadb1b9a23d83f5aaa785960973bef1c63b85346de6be01a36e0630f2ddec1c"
   license "MIT"
-  head "https:github.comglotlabsgdrive.git", branch: "main"
+  head "https://github.com/glotlabs/gdrive.git", branch: "main"
 
   no_autobump! because: :requires_manual_review
 
@@ -28,8 +28,8 @@ class Gdrive < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}gdrive version")
-    assert_match "Usage: gdrive <COMMAND>", shell_output("#{bin}gdrive 2>&1", 2)
-    assert_match "Error: No accounts found", shell_output("#{bin}gdrive account list 2>&1", 1)
+    assert_match version.to_s, shell_output("#{bin}/gdrive version")
+    assert_match "Usage: gdrive <COMMAND>", shell_output("#{bin}/gdrive 2>&1", 2)
+    assert_match "Error: No accounts found", shell_output("#{bin}/gdrive account list 2>&1", 1)
   end
 end

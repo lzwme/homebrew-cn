@@ -1,14 +1,14 @@
 class Mt32emu < Formula
   desc "Multi-platform software synthesiser"
-  homepage "https:github.communtmunt"
-  url "https:github.communtmuntarchiverefstagslibmt32emu_2_7_2.tar.gz"
+  homepage "https://github.com/munt/munt"
+  url "https://ghfast.top/https://github.com/munt/munt/archive/refs/tags/libmt32emu_2_7_2.tar.gz"
   sha256 "3b0beff64e83d2b4879baba2326eed1300edc9663b3dc52621fc74d196ca9a80"
   license "LGPL-2.1-or-later"
-  head "https:github.communtmunt.git", branch: "master"
+  head "https://github.com/munt/munt.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(^libmt32emu[._-]v?(\d+(?:[._-]\d+)+)$i)
+    regex(/^libmt32emu[._-]v?(\d+(?:[._-]\d+)+)$/i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -34,7 +34,7 @@ class Mt32emu < Formula
   end
 
   test do
-    (testpath"mt32emu-test.c").write <<~C
+    (testpath/"mt32emu-test.c").write <<~C
       #include "mt32emu.h"
       #include <stdio.h>
       int main() {
@@ -43,6 +43,6 @@ class Mt32emu < Formula
     C
 
     system ENV.cc, "mt32emu-test.c", "-I#{include}", "-L#{lib}", "-lmt32emu", "-o", "mt32emu-test"
-    assert_match version.to_s, shell_output(".mt32emu-test")
+    assert_match version.to_s, shell_output("./mt32emu-test")
   end
 end

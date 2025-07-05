@@ -1,10 +1,10 @@
 class Ki < Formula
   desc "Kotlin Language Interactive Shell"
-  homepage "https:github.comKotlinkotlin-interactive-shell"
-  url "https:github.comKotlinkotlin-interactive-shellarchiverefstagsv0.5.2.tar.gz"
+  homepage "https://github.com/Kotlin/kotlin-interactive-shell"
+  url "https://ghfast.top/https://github.com/Kotlin/kotlin-interactive-shell/archive/refs/tags/v0.5.2.tar.gz"
   sha256 "5b65d784a66b6e7aa7e6bc427e2886435747cb9b2969f239d3be1f2190929fe7"
   license "Apache-2.0"
-  head "https:github.comKotlinkotlin-interactive-shell.git", branch: "main"
+  head "https://github.com/Kotlin/kotlin-interactive-shell.git", branch: "main"
 
   bottle do
     rebuild 1
@@ -24,12 +24,12 @@ class Ki < Formula
     ENV["JAVA_HOME"] = Language::Java.java_home
 
     system "mvn", "-DskipTests", "package"
-    libexec.install "libki-shell.jar"
-    bin.write_jar_script libexec"ki-shell.jar", "ki"
+    libexec.install "lib/ki-shell.jar"
+    bin.write_jar_script libexec/"ki-shell.jar", "ki"
   end
 
   test do
-    output = pipe_output(bin"ki", ":q")
+    output = pipe_output(bin/"ki", ":q")
     assert_match "ki-shell", output
     assert_match "Bye!", output
   end

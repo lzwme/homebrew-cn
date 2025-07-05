@@ -1,7 +1,7 @@
 class Vcsh < Formula
   desc "Config manager based on git"
-  homepage "https:github.comRichiHvcsh"
-  url "https:github.comRichiHvcshreleasesdownloadv2.0.10vcsh-2.0.10.tar.zst"
+  homepage "https://github.com/RichiH/vcsh"
+  url "https://ghfast.top/https://github.com/RichiH/vcsh/releases/download/v2.0.10/vcsh-2.0.10.tar.zst"
   sha256 "6ed8f4eee683f2cc8f885b31196fdc3b333f86ebc3110ecd1bcd60dfac64c0b4"
   license "GPL-2.0-or-later"
 
@@ -21,19 +21,19 @@ class Vcsh < Formula
     # hardcoding shim references and absolute paths.
     # We set this even where we have no shims because
     # the hardcoded absolute path might not be portable.
-    system ".configure", "--without-zsh-completion-dir",
+    system "./configure", "--without-zsh-completion-dir",
                           "--without-bash-completion-dir",
                           "GIT=git", "SED=sed", "GREP=grep",
                           *std_configure_args
     system "make", "install"
 
     # Make the shebang uniform across macOS and Linux
-    inreplace bin"vcsh", %r{^#!bin(ba)?sh$}, "#!usrbinenv bash"
-    bash_completion.install "completionsvcsh.bash" => "vcsh"
-    zsh_completion.install "completionsvcsh.zsh" => "_vcsh"
+    inreplace bin/"vcsh", %r{^#!/bin/(ba)?sh$}, "#!/usr/bin/env bash"
+    bash_completion.install "completions/vcsh.bash" => "vcsh"
+    zsh_completion.install "completions/vcsh.zsh" => "_vcsh"
   end
 
   test do
-    assert_match "Initialized empty", shell_output("#{bin}vcsh init test").strip
+    assert_match "Initialized empty", shell_output("#{bin}/vcsh init test").strip
   end
 end

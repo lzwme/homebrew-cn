@@ -1,7 +1,7 @@
 class Libucl < Formula
   desc "Universal configuration library parser"
-  homepage "https:github.comvstakhovlibucl"
-  url "https:github.comvstakhovlibuclarchiverefstags0.9.2.tar.gz"
+  homepage "https://github.com/vstakhov/libucl"
+  url "https://ghfast.top/https://github.com/vstakhov/libucl/archive/refs/tags/0.9.2.tar.gz"
   sha256 "f63ddee1d7f5217cac4f9cdf72b9c5e8fe43cfe5725db13f1414b0d8a369bbe0"
   license "BSD-2-Clause"
 
@@ -23,19 +23,19 @@ class Libucl < Formula
   depends_on "pkgconf" => :build
 
   def install
-    system ".autogen.sh"
+    system "./autogen.sh"
 
     args = %w[
       --disable-silent-rules
       --enable-utils
     ]
 
-    system ".configure", *args, *std_configure_args
+    system "./configure", *args, *std_configure_args
     system "make", "install"
   end
 
   test do
-    (testpath"test.cpp").write <<~CPP
+    (testpath/"test.cpp").write <<~CPP
       #include <ucl++.h>
       #include <string>
       #include <cassert>
@@ -50,6 +50,6 @@ class Libucl < Formula
       }
     CPP
     system ENV.cxx, "-std=c++11", "test.cpp", "-L#{lib}", "-lucl", "-o", "test"
-    system ".test"
+    system "./test"
   end
 end

@@ -1,27 +1,27 @@
 class Rtags < Formula
   desc "Source code cross-referencer like ctags with a clang frontend"
-  homepage "https:github.comAndersbakkenrtags"
+  homepage "https://github.com/Andersbakken/rtags"
   license "GPL-3.0-or-later"
-  head "https:github.comAndersbakkenrtags.git", branch: "master"
+  head "https://github.com/Andersbakken/rtags.git", branch: "master"
 
   stable do
-    url "https:github.comAndersbakkenrtags.git",
+    url "https://github.com/Andersbakken/rtags.git",
         tag:      "v2.41",
         revision: "39339388256df662d0084b4a094d03e52748f9e8"
 
     # fix lisp files, remove on release 2.42
     patch do
-      url "https:github.comAndersbakkenrtagscommit63f18acb21e664fd92fbc19465f0b5df085b5e93.patch?full_index=1"
+      url "https://github.com/Andersbakken/rtags/commit/63f18acb21e664fd92fbc19465f0b5df085b5e93.patch?full_index=1"
       sha256 "3229b2598211b2014a93a2d1e906cccf05b6a8a708234cc54f21803e6e31ef2a"
     end
   end
 
-  # The `strategy` code below can be removed ifwhen this software exceeds
+  # The `strategy` code below can be removed if/when this software exceeds
   # version 3.23. Until then, it's used to omit a malformed tag that would
   # always be treated as newest.
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
     strategy :git do |tags, regex|
       malformed_tags = ["v3.23"].freeze
       tags.map do |tag|
@@ -52,22 +52,22 @@ class Rtags < Formula
   def install
     # Fix to add backward compatibility for CMake version 4
     # `master` and `v2.41` are differ too much and so patch is not working
-    # PR ref: https:github.comAndersbakkenrtagspull1443
+    # PR ref: https://github.com/Andersbakken/rtags/pull/1443
     system "cmake", "-S", ".", "-B", "build", "-DCMAKE_POLICY_VERSION_MINIMUM=3.5", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end
 
   service do
-    run [opt_bin"rdm", "--verbose", "--inactivity-timeout=300"]
+    run [opt_bin/"rdm", "--verbose", "--inactivity-timeout=300"]
     keep_alive true
-    log_path var"logrtags.log"
-    error_log_path var"logrtags.log"
+    log_path var/"log/rtags.log"
+    error_log_path var/"log/rtags.log"
   end
 
   test do
-    mkpath testpath"src"
-    (testpath"srcfoo.c").write <<~C
+    mkpath testpath/"src"
+    (testpath/"src/foo.c").write <<~C
       void zaphod() {
       }
 
@@ -75,22 +75,22 @@ class Rtags < Formula
         zaphod();
       }
     C
-    (testpath"srcREADME").write <<~EOS
+    (testpath/"src/README").write <<~EOS
       42
     EOS
 
     rdm = fork do
       $stdout.reopen(File::NULL)
       $stderr.reopen(File::NULL)
-      exec "#{bin}rdm", "--exclude-filter=\"\"", "-L", "log"
+      exec "#{bin}/rdm", "--exclude-filter=\"\"", "-L", "log"
     end
 
     begin
       sleep 5
-      pipe_output("#{bin}rc -c", "clang -c #{testpath}srcfoo.c", 0)
+      pipe_output("#{bin}/rc -c", "clang -c #{testpath}/src/foo.c", 0)
       sleep 5
-      assert_match "foo.c:1:6", shell_output("#{bin}rc -f #{testpath}srcfoo.c:5:3")
-      system bin"rc", "-q"
+      assert_match "foo.c:1:6", shell_output("#{bin}/rc -f #{testpath}/src/foo.c:5:3")
+      system bin/"rc", "-q"
     ensure
       Process.kill 9, rdm
       Process.wait rdm

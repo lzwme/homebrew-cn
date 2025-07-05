@@ -1,10 +1,10 @@
 class Kiota < Formula
   desc "OpenAPI based HTTP Client code generator"
-  homepage "https:aka.mskiotadocs"
-  url "https:github.commicrosoftkiotaarchiverefstagsv1.27.0.tar.gz"
+  homepage "https://aka.ms/kiota/docs"
+  url "https://ghfast.top/https://github.com/microsoft/kiota/archive/refs/tags/v1.27.0.tar.gz"
   sha256 "cbd29d5ac7a581ad845fac6eb19591bdcf4306b698fc399b5ff4e2e4083699b4"
   license "MIT"
-  head "https:github.commicrosoftkiota.git", branch: "main"
+  head "https://github.com/microsoft/kiota.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "794871f9fda5727c8e04aefc1c2fef80ddf7df0ebf263bb2b7dd77a45ba537d3"
@@ -31,18 +31,18 @@ class Kiota < Formula
     ]
     args << "-p:Version=#{version}" if build.stable?
 
-    system "dotnet", "publish", "srckiotakiota.csproj", *args
-    (bin"kiota").write_env_script libexec"kiota", DOTNET_ROOT: dotnet.opt_libexec
+    system "dotnet", "publish", "src/kiota/kiota.csproj", *args
+    (bin/"kiota").write_env_script libexec/"kiota", DOTNET_ROOT: dotnet.opt_libexec
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}kiota --version")
+    assert_match version.to_s, shell_output("#{bin}/kiota --version")
 
-    info_output = shell_output("#{bin}kiota info")
+    info_output = shell_output("#{bin}/kiota info")
     assert_match "Go          Stable", info_output
     assert_match "Python      Stable", info_output
 
-    search_output = shell_output("#{bin}kiota search github")
+    search_output = shell_output("#{bin}/kiota search github")
     assert_match "apisguru::github.com                            GitHub v3 REST API", search_output
   end
 end

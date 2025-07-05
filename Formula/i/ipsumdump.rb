@@ -1,14 +1,14 @@
 class Ipsumdump < Formula
-  desc "Summarizes TCPIP dump files into a self-describing ASCII format"
-  homepage "https:read.seas.harvard.edu~kohleripsumdump"
-  url "https:read.seas.harvard.edu~kohleripsumdumpipsumdump-1.86.tar.gz"
+  desc "Summarizes TCP/IP dump files into a self-describing ASCII format"
+  homepage "https://read.seas.harvard.edu/~kohler/ipsumdump/"
+  url "https://read.seas.harvard.edu/~kohler/ipsumdump/ipsumdump-1.86.tar.gz"
   sha256 "e114cd01b04238b42cd1d0dc6cfb8086a6b0a50672a866f3d0d1888d565e3b9c"
   license "MIT"
-  head "https:github.comkohleripsumdump.git", branch: "master"
+  head "https://github.com/kohler/ipsumdump.git", branch: "master"
 
   livecheck do
     url :homepage
-    regex(href=.*?ipsumdump[._-]v?(\d+(?:\.\d+)+)\.ti)
+    regex(/href=.*?ipsumdump[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -40,25 +40,25 @@ class Ipsumdump < Formula
     # Help old config scripts identify arm64 linux
     args << "--build=aarch64-unknown-linux-gnu" if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
 
-    system ".configure", *args, *std_configure_args
+    system "./configure", *args, *std_configure_args
     system "make", "install"
   end
 
   test do
-    output = shell_output("#{bin}ipsumdump -c -r #{test_fixtures("test.pcap")}")
+    output = shell_output("#{bin}/ipsumdump -c -r #{test_fixtures("test.pcap")}")
     assert_match "!host #{Socket.gethostname}", output
     assert_match "!data count\n" + ("1\n" * 12), output
   end
 end
 
 __END__
-diff --git asrcfromdevice.cc bsrcfromdevice.cc
+diff --git a/src/fromdevice.cc b/src/fromdevice.cc
 index 76e2b12..f59d7bd 100644
---- asrcfromdevice.cc
-+++ bsrcfromdevice.cc
+--- a/src/fromdevice.cc
++++ b/src/fromdevice.cc
 @@ -28,6 +28,11 @@
  #else
- # include <sysioccom.h>
+ # include <sys/ioccom.h>
  #endif
 +
 +#ifndef SIOCGSTAMP
@@ -66,5 +66,5 @@ index 76e2b12..f59d7bd 100644
 +#endif
 +
  #if HAVE_NET_BPF_H
- # include <netbpf.h>
+ # include <net/bpf.h>
  # define PCAP_DONT_INCLUDE_PCAP_BPF_H 1

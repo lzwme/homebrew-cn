@@ -1,10 +1,10 @@
 class Pacparser < Formula
   desc "Library to parse proxy auto-config (PAC) files"
-  homepage "https:github.commanugargpacparser"
-  url "https:github.commanugargpacparserarchiverefstagsv1.4.5.tar.gz"
+  homepage "https://github.com/manugarg/pacparser"
+  url "https://ghfast.top/https://github.com/manugarg/pacparser/archive/refs/tags/v1.4.5.tar.gz"
   sha256 "fac205f41d000e245519244dc3e730e649a0ac1c61b5f2d1d0660056e1680b2d"
   license "LGPL-3.0-or-later"
-  head "https:github.commanugargpacparser.git", branch: "master"
+  head "https://github.com/manugarg/pacparser.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "270415ce44db451091e58c371dae0db097c42b98970153c67e55a7d63eef399d"
@@ -20,7 +20,7 @@ class Pacparser < Formula
 
   def install
     # Disable parallel build due to upstream concurrency issue.
-    # https:github.commanugargpacparserissues27
+    # https://github.com/manugarg/pacparser/issues/27
     ENV.deparallelize
     ENV["VERSION"] = version
     Dir.chdir "src"
@@ -29,36 +29,36 @@ class Pacparser < Formula
 
   test do
     # example pacfile taken from upstream sources
-    (testpath"test.pac").write <<~'EOS'
+    (testpath/"test.pac").write <<~'EOS'
       function FindProxyForURL(url, host) {
 
         if ((isPlainHostName(host) ||
             dnsDomainIs(host, ".example.edu")) &&
             !localHostOrDomainIs(host, "www.example.edu"))
-          return "plainhost.example.edu";
+          return "plainhost/.example.edu";
 
-         Return externaldomain if host matches .*\.externaldomain\.example
-        if (.*\.externaldomain\.example.test(host))
+        // Return externaldomain if host matches .*\.externaldomain\.example
+        if (/.*\.externaldomain\.example/.test(host))
           return "externaldomain";
 
-         Test if DNS resolving is working as intended
+        // Test if DNS resolving is working as intended
         if (dnsDomainIs(host, ".google.com") &&
             isResolvable(host))
           return "isResolvable";
 
-         Test if DNS resolving is working as intended
+        // Test if DNS resolving is working as intended
         if (dnsDomainIs(host, ".notresolvabledomain.invalid") &&
             !isResolvable(host))
           return "isNotResolvable";
 
-        if (^https:\\.*$.test(url))
+        if (/^https:\/\/.*$/.test(url))
           return "secureUrl";
 
         if (isInNet(myIpAddress(), '10.10.0.0', '255.255.0.0'))
           return '10.10.0.0';
 
         if ((typeof(myIpAddressEx) == "function") &&
-            isInNetEx(myIpAddressEx(), '3ffe:8311:ffff48'))
+            isInNetEx(myIpAddressEx(), '3ffe:8311:ffff/48'))
           return '3ffe:8311:ffff';
 
         else
@@ -68,46 +68,46 @@ class Pacparser < Formula
     # Functional tests from upstream sources
     test_sets = [
       {
-        "cmd" => "-c 3ffe:8311:ffff:1:0:0:0:0 -u http:www.example.com",
+        "cmd" => "-c 3ffe:8311:ffff:1:0:0:0:0 -u http://www.example.com",
         "res" => "3ffe:8311:ffff",
       },
       {
-        "cmd" => "-c 0.0.0.0 -u http:www.example.com",
+        "cmd" => "-c 0.0.0.0 -u http://www.example.com",
         "res" => "END-OF-SCRIPT",
       },
       {
-        "cmd" => "-u http:host1",
-        "res" => "plainhost.example.edu",
+        "cmd" => "-u http://host1",
+        "res" => "plainhost/.example.edu",
       },
       {
-        "cmd" => "-u http:www1.example.edu",
-        "res" => "plainhost.example.edu",
+        "cmd" => "-u http://www1.example.edu",
+        "res" => "plainhost/.example.edu",
       },
       {
-        "cmd" => "-u http:manugarg.externaldomain.example",
+        "cmd" => "-u http://manugarg.externaldomain.example",
         "res" => "externaldomain",
       },
       {
-        "cmd" => "-u https:www.google.com",  ## internet
+        "cmd" => "-u https://www.google.com",  ## internet
         "res" => "isResolvable",               ## required
       },
       {
-        "cmd" => "-u https:www.notresolvabledomain.invalid",
+        "cmd" => "-u https://www.notresolvabledomain.invalid",
         "res" => "isNotResolvable",
       },
       {
-        "cmd" => "-u https:www.example.com",
+        "cmd" => "-u https://www.example.com",
         "res" => "secureUrl",
       },
       {
-        "cmd" => "-c 10.10.100.112 -u http:www.example.com",
+        "cmd" => "-c 10.10.100.112 -u http://www.example.com",
         "res" => "10.10.0.0",
       },
     ]
     # Loop and execute tests
     test_sets.each do |t|
       assert_equal t["res"],
-        shell_output("#{bin}pactester -p #{testpath}test.pac " +
+        shell_output("#{bin}/pactester -p #{testpath}/test.pac " +
           t["cmd"]).strip
     end
   end

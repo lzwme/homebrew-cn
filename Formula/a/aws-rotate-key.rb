@@ -1,10 +1,10 @@
 class AwsRotateKey < Formula
   desc "Easily rotate your AWS access key"
-  homepage "https:github.comstefansundinaws-rotate-key"
-  url "https:github.comstefansundinaws-rotate-keyarchiverefstagsv1.2.0.tar.gz"
+  homepage "https://github.com/stefansundin/aws-rotate-key"
+  url "https://ghfast.top/https://github.com/stefansundin/aws-rotate-key/archive/refs/tags/v1.2.0.tar.gz"
   sha256 "91568ad7aeb849454ac066c44303e2b97e158dc094a90af43c8c9b3dc5cc4ed7"
   license "MIT"
-  head "https:github.comstefansundinaws-rotate-key.git", branch: "master"
+  head "https://github.com/stefansundin/aws-rotate-key.git", branch: "master"
 
   bottle do
     rebuild 1
@@ -23,12 +23,12 @@ class AwsRotateKey < Formula
   end
 
   test do
-    (testpath"credentials").write <<~EOF
+    (testpath/"credentials").write <<~EOF
       [default]
       aws_access_key_id=AKIA123
       aws_secret_access_key=abc
     EOF
-    output = shell_output("AWS_SHARED_CREDENTIALS_FILE=#{testpath}credentials #{bin}aws-rotate-key -y 2>&1", 1)
+    output = shell_output("AWS_SHARED_CREDENTIALS_FILE=#{testpath}/credentials #{bin}/aws-rotate-key -y 2>&1", 1)
     assert_match "InvalidClientTokenId: The security token included in the request is invalid", output
   end
 end

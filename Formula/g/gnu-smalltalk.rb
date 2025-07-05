@@ -1,17 +1,17 @@
 class GnuSmalltalk < Formula
   desc "Implementation of the Smalltalk language"
-  homepage "https:www.gnu.orgsoftwaresmalltalk"
+  homepage "https://www.gnu.org/software/smalltalk/"
   license "GPL-2.0-or-later"
   revision 10
 
   stable do
-    url "https:ftp.gnu.orggnusmalltalksmalltalk-3.2.5.tar.xz"
-    mirror "https:ftpmirror.gnu.orgsmalltalksmalltalk-3.2.5.tar.xz"
+    url "https://ftp.gnu.org/gnu/smalltalk/smalltalk-3.2.5.tar.xz"
+    mirror "https://ftpmirror.gnu.org/smalltalk/smalltalk-3.2.5.tar.xz"
     sha256 "819a15f7ba8a1b55f5f60b9c9a58badd6f6153b3f987b70e7b167e7755d65acc"
 
     # Backport fix to support ARM macOS and fix build with Xcode 15+
-    # Ref: https:github.comgnu-smalltalksmalltalkcommitbf3fd4b501c71efa86d7f91d5127cab621245a8d
-    # Ref: https:github.comgnu-smalltalksmalltalkcommit7456c7a4fe34210ad3d34b6a596dc992045d3830
+    # Ref: https://github.com/gnu-smalltalk/smalltalk/commit/bf3fd4b501c71efa86d7f91d5127cab621245a8d
+    # Ref: https://github.com/gnu-smalltalk/smalltalk/commit/7456c7a4fe34210ad3d34b6a596dc992045d3830
     on_macos do
       patch :DATA
     end
@@ -31,7 +31,7 @@ class GnuSmalltalk < Formula
   end
 
   head do
-    url "https:github.comgnu-smalltalksmalltalk.git", branch: "master"
+    url "https://github.com/gnu-smalltalk/smalltalk.git", branch: "master"
 
     on_system :linux, macos: :ventura_or_newer do
       depends_on "texinfo" => :build
@@ -71,23 +71,23 @@ class GnuSmalltalk < Formula
     ]
 
     system "autoreconf", "--force", "--install", "--verbose"
-    system ".configure", *args, *std_configure_args
+    system "./configure", *args, *std_configure_args
     ENV.deparallelize if build.head?
     system "make"
     system "make", "install"
   end
 
   test do
-    path = testpath"test.gst"
+    path = testpath/"test.gst"
     path.write "0 to: 9 do: [ :n | n display ]\n"
 
-    assert_match "0123456789", shell_output("#{bin}gst #{path}")
+    assert_match "0123456789", shell_output("#{bin}/gst #{path}")
   end
 end
 
 __END__
---- alibgstsysdepposixmem.c
-+++ blibgstsysdepposixmem.c
+--- a/libgst/sysdep/posix/mem.c
++++ b/libgst/sysdep/posix/mem.c
 @@ -225,7 +225,7 @@ PTR
  anon_mmap_commit (PTR base, size_t size)
  {
@@ -97,12 +97,12 @@ __END__
  		     MAP_ANON | MAP_PRIVATE | MAP_FIXED, -1, 0);
 
    return UNCOMMON (result == MAP_FAILED) ? NULL : result;
---- aMakefile.am
-+++ bMakefile.am
+--- a/Makefile.am
++++ b/Makefile.am
 @@ -110,7 +110,7 @@ bin_PROGRAMS = gst
  gst_SOURCES = main.c
- gst_LDADD = libgstlibgst.la lib-srclibrary.la @ICON@
- gst_DEPENDENCIES = libgstlibgst.la lib-srclibrary.la @ICON@
+ gst_LDADD = libgst/libgst.la lib-src/library.la @ICON@
+ gst_DEPENDENCIES = libgst/libgst.la lib-src/library.la @ICON@
 -gst_LDFLAGS = -export-dynamic $(RELOC_LDFLAGS) $(LIBFFI_EXECUTABLE_LDFLAGS)
 +gst_LDFLAGS = -export-dynamic $(RELOC_LDFLAGS)
  
@@ -110,8 +110,8 @@ __END__
  # we use noinst here.
 @@ -118,7 +118,7 @@ noinst_PROGRAMS = gst-tool
  gst_tool_SOURCES = gst-tool.c
- gst_tool_LDADD = libgstlibgst.la lib-srclibrary.la @ICON@
- gst_tool_DEPENDENCIES = libgstlibgst.la lib-srclibrary.la @ICON@
+ gst_tool_LDADD = libgst/libgst.la lib-src/library.la @ICON@
+ gst_tool_DEPENDENCIES = libgst/libgst.la lib-src/library.la @ICON@
 -gst_tool_LDFLAGS = -export-dynamic $(RELOC_LDFLAGS) $(LIBFFI_EXECUTABLE_LDFLAGS)
 +gst_tool_LDFLAGS = -export-dynamic $(RELOC_LDFLAGS)
  

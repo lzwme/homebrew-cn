@@ -1,7 +1,7 @@
 class Woff2 < Formula
   desc "Utilities to create and convert Web Open Font File (WOFF) files"
-  homepage "https:github.comgooglewoff2"
-  url "https:github.comgooglewoff2archiverefstagsv1.0.2.tar.gz"
+  homepage "https://github.com/google/woff2"
+  url "https://ghfast.top/https://github.com/google/woff2/archive/refs/tags/v1.0.2.tar.gz"
   sha256 "add272bb09e6384a4833ffca4896350fdb16e0ca22df68c0384773c67a175594"
   license "MIT"
 
@@ -41,30 +41,30 @@ class Woff2 < Formula
     system "cmake", "--install", "build"
 
     # Manually install binaries not handled by `make install`
-    bin.install "buildwoff2_info", "buildwoff2_decompress", "buildwoff2_compress"
+    bin.install "build/woff2_info", "build/woff2_decompress", "build/woff2_compress"
   end
 
   test do
     resource "homebrew-roboto_1" do
-      url "https:fonts.gstatic.comsrobotov18KFOmCnqEu92Fr1Mu4mxP.ttf"
+      url "https://fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu4mxP.ttf"
       sha256 "466989fd178ca6ed13641893b7003e5d6ec36e42c2a816dee71f87b775ea097f"
     end
 
     resource "homebrew-roboto_2" do
-      url "https:fonts.gstatic.comsrobotov18KFOmCnqEu92Fr1Mu72xKKTU1Kvnz.woff2"
+      url "https://fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu72xKKTU1Kvnz.woff2"
       sha256 "90a0ad0b48861588a6e33a5905b17e1219ea87ab6f07ccc41e7c2cddf38967a8"
     end
 
     # Convert a TTF to WOFF2
     resource("homebrew-roboto_1").stage testpath
-    system bin"woff2_compress", "KFOmCnqEu92Fr1Mu4mxP.ttf"
-    output = shell_output("#{bin}woff2_info KFOmCnqEu92Fr1Mu4mxP.woff2")
+    system bin/"woff2_compress", "KFOmCnqEu92Fr1Mu4mxP.ttf"
+    output = shell_output("#{bin}/woff2_info KFOmCnqEu92Fr1Mu4mxP.woff2")
     assert_match "WOFF2Header", output
 
     # Convert a WOFF2 to TTF
     resource("homebrew-roboto_2").stage testpath
-    system bin"woff2_decompress", "KFOmCnqEu92Fr1Mu72xKKTU1Kvnz.woff2"
+    system bin/"woff2_decompress", "KFOmCnqEu92Fr1Mu72xKKTU1Kvnz.woff2"
     output = shell_output("file --brief KFOmCnqEu92Fr1Mu72xKKTU1Kvnz.ttf")
-    assert_match(TrueType font datai, output)
+    assert_match(/TrueType font data/i, output)
   end
 end

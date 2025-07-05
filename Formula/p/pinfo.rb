@@ -1,7 +1,7 @@
 class Pinfo < Formula
   desc "User-friendly, console-based viewer for Info documents"
-  homepage "https:packages.debian.orgsidpinfo"
-  url "https:github.combaszoetekouwpinfoarchiverefstagsv0.6.13.tar.gz"
+  homepage "https://packages.debian.org/sid/pinfo"
+  url "https://ghfast.top/https://github.com/baszoetekouw/pinfo/archive/refs/tags/v0.6.13.tar.gz"
   sha256 "9dc5e848a7a86cb665a885bc5f0fdf6d09ad60e814d75e78019ae3accb42c217"
   license "GPL-2.0-only"
   revision 1
@@ -43,7 +43,7 @@ class Pinfo < Formula
     ENV.append_to_cflags "-fcommon" if OS.linux?
 
     system "autoreconf", "--force", "--install"
-    system ".configure", "--disable-debug",
+    system "./configure", "--disable-debug",
                           "--disable-dependency-tracking",
                           "--disable-silent-rules",
                           "--prefix=#{prefix}"
@@ -51,6 +51,6 @@ class Pinfo < Formula
   end
 
   test do
-    system bin"pinfo", "-h"
+    system bin/"pinfo", "-h"
   end
 end

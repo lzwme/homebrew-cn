@@ -1,13 +1,13 @@
 class Netdata < Formula
   desc "Diagnose infrastructure problems with metrics, visualizations & alarms"
-  homepage "https:www.netdata.cloud"
-  url "https:github.comnetdatanetdatareleasesdownloadv2.5.4netdata-v2.5.4.tar.gz"
+  homepage "https://www.netdata.cloud/"
+  url "https://ghfast.top/https://github.com/netdata/netdata/releases/download/v2.5.4/netdata-v2.5.4.tar.gz"
   sha256 "acfbda16c7c5786f4b0feb1c8e195d6489c727010739797a04cc5f71d5ede041"
   license "GPL-3.0-or-later"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
     strategy :github_latest
   end
 
@@ -53,13 +53,13 @@ class Netdata < Formula
 
   def install
     # Install files using Homebrew's directory layout rather than relative to root.
-    inreplace "packagingcmakeModulesNetdataEBPFLegacy.cmake", "DESTINATION usr", "DESTINATION "
+    inreplace "packaging/cmake/Modules/NetdataEBPFLegacy.cmake", "DESTINATION usr/", "DESTINATION "
     inreplace "CMakeLists.txt" do |s|
-      s.gsub! %r{(\s"?(?:\$\{NETDATA_RUNTIME_PREFIX\})?)usr}, "\\1"
-      s.gsub! %r{(\s"?)(?:\$\{NETDATA_RUNTIME_PREFIX\})?etc}, "\\1#{etc}"
-      s.gsub! %r{(\s"?)(?:\$\{NETDATA_RUNTIME_PREFIX\})?var}, "\\1#{var}"
+      s.gsub! %r{(\s"?(?:\$\{NETDATA_RUNTIME_PREFIX\}/)?)usr/}, "\\1"
+      s.gsub! %r{(\s"?)(?:\$\{NETDATA_RUNTIME_PREFIX\}/)?etc/}, "\\1#{etc}/"
+      s.gsub! %r{(\s"?)(?:\$\{NETDATA_RUNTIME_PREFIX\}/)?var/}, "\\1#{var}/"
       # Fix not to use `fetchContent` for `dlib` library
-      # Issue ref: https:github.comnetdatanetdataissues20147
+      # Issue ref: https://github.com/netdata/netdata/issues/20147
       s.gsub! "netdata_bundle_dlib()", "find_package(dlib REQUIRED)"
       s.gsub! "netdata_add_dlib_to_target(netdata)", ""
     end
@@ -74,15 +74,15 @@ class Netdata < Formula
   end
 
   def post_install
-    (var"cachenetdataunittest-dbenginedbengine").mkpath
-    (var"libnetdataregistry").mkpath
-    (var"libnetdatalock").mkpath
-    (var"lognetdata").mkpath
-    (var"netdata").mkpath
+    (var/"cache/netdata/unittest-dbengine/dbengine").mkpath
+    (var/"lib/netdata/registry").mkpath
+    (var/"lib/netdata/lock").mkpath
+    (var/"log/netdata").mkpath
+    (var/"netdata").mkpath
   end
 
   service do
-    run [opt_sbin"netdata", "-D"]
+    run [opt_sbin/"netdata", "-D"]
     working_dir var
   end
 
@@ -90,9 +90,9 @@ class Netdata < Formula
     directories = prefix.children(false).map(&:to_s)
     %w[usr var etc].each { |dir| refute_includes directories, dir }
 
-    system sbin"netdata", "-W", "set", "registry", "netdata unique id file",
-                           "#{testpath}netdata.unittest.unique.id",
+    system sbin/"netdata", "-W", "set", "registry", "netdata unique id file",
+                           "#{testpath}/netdata.unittest.unique.id",
                            "-W", "set", "registry", "netdata management api key file",
-                           "#{testpath}netdata.api.key"
+                           "#{testpath}/netdata.api.key"
   end
 end

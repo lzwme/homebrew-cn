@@ -1,10 +1,10 @@
 class Binwalk < Formula
   desc "Searches a binary image for embedded files and executable code"
-  homepage "https:github.comReFirmLabsbinwalk"
-  url "https:github.comReFirmLabsbinwalkarchiverefstagsv3.1.0.tar.gz"
+  homepage "https://github.com/ReFirmLabs/binwalk"
+  url "https://ghfast.top/https://github.com/ReFirmLabs/binwalk/archive/refs/tags/v3.1.0.tar.gz"
   sha256 "06f595719417b70a592580258ed980237892eadc198e02363201abe6ca59e49a"
   license "MIT"
-  head "https:github.comReFirmLabsbinwalk.git", branch: "master"
+  head "https://github.com/ReFirmLabs/binwalk.git", branch: "master"
 
   livecheck do
     url :stable
@@ -41,6 +41,6 @@ class Binwalk < Formula
 
   test do
     touch "binwalk.test"
-    system bin"binwalk", "binwalk.test"
+    system bin/"binwalk", "binwalk.test"
   end
 end

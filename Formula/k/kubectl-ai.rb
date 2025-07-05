@@ -1,7 +1,7 @@
 class KubectlAi < Formula
   desc "AI powered Kubernetes Assistant"
-  homepage "https:github.comGoogleCloudPlatformkubectl-ai"
-  url "https:github.comGoogleCloudPlatformkubectl-aiarchiverefstagsv0.0.14.tar.gz"
+  homepage "https://github.com/GoogleCloudPlatform/kubectl-ai"
+  url "https://ghfast.top/https://github.com/GoogleCloudPlatform/kubectl-ai/archive/refs/tags/v0.0.14.tar.gz"
   sha256 "e84e7f7d569f2119d359e2cef923a05c7dc4265fb9d7dda8122fe552ff289978"
   license "Apache-2.0"
 
@@ -23,16 +23,16 @@ class KubectlAi < Formula
 
   def install
     ldflags = "-s -w -X main.version=#{version} -X main.commit=#{tap.user} -X main.date=#{time.iso8601}"
-    system "go", "build", *std_go_args(ldflags:), ".cmd"
+    system "go", "build", *std_go_args(ldflags:), "./cmd"
 
-    generate_completions_from_executable(bin"kubectl-ai", "completion", shells: [:bash, :zsh, :fish, :pwsh])
+    generate_completions_from_executable(bin/"kubectl-ai", "completion", shells: [:bash, :zsh, :fish, :pwsh])
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}kubectl-ai version")
+    assert_match version.to_s, shell_output("#{bin}/kubectl-ai version")
 
     ENV["GEMINI_API_KEY"] = "test"
-    PTY.spawn(bin"kubectl-ai", "--llm-provider", "gemini") do |r, w, pid|
+    PTY.spawn(bin/"kubectl-ai", "--llm-provider", "gemini") do |r, w, pid|
       sleep 1
       w.puts "test"
       sleep 1

@@ -2,11 +2,11 @@ cask "deskreen" do
   version "2.0.4"
   sha256 "43b9a49d0ff70211a88cfd23bf660dac9f3609063dde3ccf6d07f5307050e443"
 
-  url "https:github.compavlobudeskreenreleasesdownloadv#{version}Deskreen-#{version}.dmg",
-      verified: "github.compavlobudeskreen"
+  url "https://ghfast.top/https://github.com/pavlobu/deskreen/releases/download/v#{version}/Deskreen-#{version}.dmg",
+      verified: "github.com/pavlobu/deskreen/"
   name "Deskreen"
   desc "Turns any device with a web browser into a secondary screen"
-  homepage "https:deskreen.com"
+  homepage "https://deskreen.com/"
 
   livecheck do
     url :url
@@ -18,10 +18,10 @@ cask "deskreen" do
   app "Deskreen.app"
 
   zap trash: [
-    "~LibraryApplication SupportDeskreen",
-    "~LibraryLogsDeskreen",
-    "~LibraryPreferencescom.pavlobu.Deskreen.plist",
-    "~LibrarySaved Application Statecom.pavlobu.Deskreen.savedState",
+    "~/Library/Application Support/Deskreen",
+    "~/Library/Logs/Deskreen",
+    "~/Library/Preferences/com.pavlobu.Deskreen.plist",
+    "~/Library/Saved Application State/com.pavlobu.Deskreen.savedState",
   ]
 
   caveats do

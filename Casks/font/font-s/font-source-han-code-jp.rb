@@ -2,26 +2,26 @@ cask "font-source-han-code-jp" do
   version "2.012R"
   sha256 "678a3bf747269c7df6fa892ed9eb050139af77f2d50ec9408d99027da88f3b4b"
 
-  url "https:github.comadobe-fontssource-han-code-jparchiverefstags#{version}.tar.gz"
+  url "https://ghfast.top/https://github.com/adobe-fonts/source-han-code-jp/archive/refs/tags/#{version}.tar.gz"
   name "Source Han Code JP"
-  homepage "https:github.comadobe-fontssource-han-code-jp"
+  homepage "https://github.com/adobe-fonts/source-han-code-jp"
 
   no_autobump! because: :requires_manual_review
 
-  font "source-han-code-jp-#{version}OTFSourceHanCodeJP-Bold.otf"
-  font "source-han-code-jp-#{version}OTFSourceHanCodeJP-BoldIt.otf"
-  font "source-han-code-jp-#{version}OTFSourceHanCodeJP-ExtraLight.otf"
-  font "source-han-code-jp-#{version}OTFSourceHanCodeJP-ExtraLightIt.otf"
-  font "source-han-code-jp-#{version}OTFSourceHanCodeJP-Heavy.otf"
-  font "source-han-code-jp-#{version}OTFSourceHanCodeJP-HeavyIt.otf"
-  font "source-han-code-jp-#{version}OTFSourceHanCodeJP-Light.otf"
-  font "source-han-code-jp-#{version}OTFSourceHanCodeJP-LightIt.otf"
-  font "source-han-code-jp-#{version}OTFSourceHanCodeJP-Medium.otf"
-  font "source-han-code-jp-#{version}OTFSourceHanCodeJP-MediumIt.otf"
-  font "source-han-code-jp-#{version}OTFSourceHanCodeJP-Normal.otf"
-  font "source-han-code-jp-#{version}OTFSourceHanCodeJP-NormalIt.otf"
-  font "source-han-code-jp-#{version}OTFSourceHanCodeJP-Regular.otf"
-  font "source-han-code-jp-#{version}OTFSourceHanCodeJP-RegularIt.otf"
+  font "source-han-code-jp-#{version}/OTF/SourceHanCodeJP-Bold.otf"
+  font "source-han-code-jp-#{version}/OTF/SourceHanCodeJP-BoldIt.otf"
+  font "source-han-code-jp-#{version}/OTF/SourceHanCodeJP-ExtraLight.otf"
+  font "source-han-code-jp-#{version}/OTF/SourceHanCodeJP-ExtraLightIt.otf"
+  font "source-han-code-jp-#{version}/OTF/SourceHanCodeJP-Heavy.otf"
+  font "source-han-code-jp-#{version}/OTF/SourceHanCodeJP-HeavyIt.otf"
+  font "source-han-code-jp-#{version}/OTF/SourceHanCodeJP-Light.otf"
+  font "source-han-code-jp-#{version}/OTF/SourceHanCodeJP-LightIt.otf"
+  font "source-han-code-jp-#{version}/OTF/SourceHanCodeJP-Medium.otf"
+  font "source-han-code-jp-#{version}/OTF/SourceHanCodeJP-MediumIt.otf"
+  font "source-han-code-jp-#{version}/OTF/SourceHanCodeJP-Normal.otf"
+  font "source-han-code-jp-#{version}/OTF/SourceHanCodeJP-NormalIt.otf"
+  font "source-han-code-jp-#{version}/OTF/SourceHanCodeJP-Regular.otf"
+  font "source-han-code-jp-#{version}/OTF/SourceHanCodeJP-RegularIt.otf"
 
   # No zap stanza required
 end

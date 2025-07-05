@@ -12,19 +12,19 @@ cask "monolingual" do
     sha256 "d4acf912fa132d7615c88940f5a997505e1880a8d6f9af47f0da427d9e0cd13f"
   end
 
-  url "https:github.comIngmarSteinMonolingualreleasesdownloadv#{version}Monolingual-#{version}.dmg",
-      verified: "github.comIngmarSteinMonolingual"
+  url "https://ghfast.top/https://github.com/IngmarStein/Monolingual/releases/download/v#{version}/Monolingual-#{version}.dmg",
+      verified: "github.com/IngmarStein/Monolingual/"
   name "Monolingual"
   desc "Utility to remove unnecessary language resources from the system"
-  homepage "https:ingmarstein.github.ioMonolingual"
+  homepage "https://ingmarstein.github.io/Monolingual/"
 
   no_autobump! because: :requires_manual_review
 
   app "Monolingual.app"
 
   zap trash: [
-    "~LibraryApplication Scriptscom.github.IngmarStein.Monolingual",
-    "~LibraryContainerscom.github.IngmarStein.Monolingual",
+    "~/Library/Application Scripts/com.github.IngmarStein.Monolingual",
+    "~/Library/Containers/com.github.IngmarStein.Monolingual",
   ]
 
   caveats do

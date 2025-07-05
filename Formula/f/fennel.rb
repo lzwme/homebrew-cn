@@ -1,7 +1,7 @@
 class Fennel < Formula
   desc "Lua Lisp Language"
-  homepage "https:fennel-lang.org"
-  url "https:github.combakpakinFennelarchiverefstags1.5.3.tar.gz"
+  homepage "https://fennel-lang.org"
+  url "https://ghfast.top/https://github.com/bakpakin/Fennel/archive/refs/tags/1.5.3.tar.gz"
   sha256 "6fccadb7942dcbebf7325d1427d2ef0c7fa0e9f871b9ef81e48320f193235549"
   license "MIT"
 
@@ -19,7 +19,7 @@ class Fennel < Formula
   end
 
   test do
-    assert_match "hello, world!", shell_output("#{bin}fennel -e '(print \"hello, world!\")'")
+    assert_match "hello, world!", shell_output("#{bin}/fennel -e '(print \"hello, world!\")'")
     system "lua", "-e", "require 'fennel'"
     system "luajit", "-e", "require 'fennel'"
   end

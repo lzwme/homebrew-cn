@@ -1,13 +1,13 @@
 class Libdaemon < Formula
   desc "C library that eases writing UNIX daemons"
-  homepage "https:0pointer.delennartprojectslibdaemon"
-  url "https:0pointer.delennartprojectslibdaemonlibdaemon-0.14.tar.gz"
+  homepage "https://0pointer.de/lennart/projects/libdaemon/"
+  url "https://0pointer.de/lennart/projects/libdaemon/libdaemon-0.14.tar.gz"
   sha256 "fd23eb5f6f986dcc7e708307355ba3289abe03cc381fc47a80bca4a50aa6b834"
   license "LGPL-2.1-or-later"
 
   livecheck do
     url :homepage
-    regex(href=.*?libdaemon[._-]v?(\d+(?:\.\d+)+)\.ti)
+    regex(/href=.*?libdaemon[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -32,7 +32,7 @@ class Libdaemon < Formula
 
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
-    url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-pre-0.4.2.418-big_sur.diff"
+    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-pre-0.4.2.418-big_sur.diff"
     sha256 "83af02f2aa2b746bb7225872cab29a253264be49db0ecebb12f841562d9a2923"
   end
 
@@ -41,7 +41,7 @@ class Libdaemon < Formula
     # Help old config scripts identify arm64 linux
     args << "--build=aarch64-unknown-linux-gnu" if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
 
-    system ".configure", *std_configure_args, *args
+    system "./configure", *std_configure_args, *args
     system "make", "install"
   end
 end

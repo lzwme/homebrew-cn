@@ -1,10 +1,10 @@
 class Hk < Formula
   desc "Git hook and pre-commit lint manager"
-  homepage "https:hk.jdx.dev"
-  url "https:github.comjdxhkarchiverefstagsv1.2.0.tar.gz"
+  homepage "https://hk.jdx.dev"
+  url "https://ghfast.top/https://github.com/jdx/hk/archive/refs/tags/v1.2.0.tar.gz"
   sha256 "0fbc71300694873951ea2fd12919f54778325b9f1c8aa222df324e4fabe1044f"
   license "MIT"
-  head "https:github.comjdxhk.git", branch: "main"
+  head "https://github.com/jdx/hk.git", branch: "main"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "5f8f72b9778698515f9d35adbea146ed1dadc051d639053aa2023277d6f43e5f"
@@ -31,17 +31,17 @@ class Hk < Formula
 
     system "cargo", "install", *std_cargo_args
 
-    generate_completions_from_executable(bin"hk", "completion")
+    generate_completions_from_executable(bin/"hk", "completion")
 
     pkgshare.install "pkl"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}hk --version")
+    assert_match version.to_s, shell_output("#{bin}/hk --version")
 
-    (testpath"hk.pkl").write <<~PKL
-      amends "#{pkgshare}pklConfig.pkl"
-      import "#{pkgshare}pklBuiltins.pkl"
+    (testpath/"hk.pkl").write <<~PKL
+      amends "#{pkgshare}/pkl/Config.pkl"
+      import "#{pkgshare}/pkl/Builtins.pkl"
 
       hooks {
         ["pre-commit"] {
@@ -54,7 +54,7 @@ class Hk < Formula
     system "git", "add", "--all"
     system "git", "commit", "-m", "Initial commit"
 
-    output = shell_output("#{bin}hk run pre-commit --all 2>&1")
+    output = shell_output("#{bin}/hk run pre-commit --all 2>&1")
     assert_match "cargo-clippy", output
   end
 end

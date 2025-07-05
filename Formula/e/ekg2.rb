@@ -1,31 +1,31 @@
 class Ekg2 < Formula
   desc "Multiplatform, multiprotocol, plugin-based instant messenger"
-  homepage "https:github.comekg2ekg2"
+  homepage "https://github.com/ekg2/ekg2"
   license "GPL-2.0-only"
   revision 4
 
   stable do
-    url "https:src.fedoraproject.orglookasideextrasekg2ekg2-0.3.1.tar.gz68fc05b432c34622df6561eaabef5a40ekg2-0.3.1.tar.gz"
-    mirror "https:web.archive.orgweb20161227025528pl.ekg2.orgekg2-0.3.1.tar.gz"
+    url "https://src.fedoraproject.org/lookaside/extras/ekg2/ekg2-0.3.1.tar.gz/68fc05b432c34622df6561eaabef5a40/ekg2-0.3.1.tar.gz"
+    mirror "https://web.archive.org/web/20161227025528/pl.ekg2.org/ekg2-0.3.1.tar.gz"
     sha256 "6ad360f8ca788d4f5baff226200f56922031ceda1ce0814e650fa4d877099c63"
 
     # Fix the build on OS X 10.9+
-    # bugs.ekg2.orgissues152 [LOST LINK]
+    # bugs.ekg2.org/issues/152 [LOST LINK]
     patch do
-      url "https:raw.githubusercontent.comHomebrewformula-patches85fa66a9ekg20.3.1.patch"
+      url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/85fa66a9/ekg2/0.3.1.patch"
       sha256 "6efbb25e57581c56fe52cf7b70dbb9c91c9217525b402f0647db820df9a14daa"
     end
 
     # Upstream commit, fix build against OpenSSL 1.1
     patch do
-      url "https:github.comekg2ekg2commitf05815.patch?full_index=1"
+      url "https://github.com/ekg2/ekg2/commit/f05815.patch?full_index=1"
       sha256 "207639edc5e6576c8a67301c63f0b28814d9885f0d4fca5d9d9fc465f4427cd7"
     end
   end
 
   livecheck do
     url :homepage
-    regex(^ekg2[._-]v?(\d+(?:\.\d+)+)$i)
+    regex(/^ekg2[._-]v?(\d+(?:\.\d+)+)$/i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -46,7 +46,7 @@ class Ekg2 < Formula
   end
 
   head do
-    url "https:github.comekg2ekg2.git", branch: "master"
+    url "https://github.com/ekg2/ekg2.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -85,12 +85,12 @@ class Ekg2 < Formula
       args << "--build=aarch64-unknown-linux-gnu" if Hardware::CPU.arm? && Hardware::CPU.is_64_bit? && build.stable?
     end
 
-    configure = build.head? ? ".autogen.sh" : ".configure"
+    configure = build.head? ? "./autogen.sh" : "./configure"
     system configure, *args, *std_configure_args
     system "make", "install"
   end
 
   test do
-    system bin"ekg2", "--help"
+    system bin/"ekg2", "--help"
   end
 end

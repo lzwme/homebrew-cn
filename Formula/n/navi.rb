@@ -1,7 +1,7 @@
 class Navi < Formula
   desc "Interactive cheatsheet tool for the command-line"
-  homepage "https:github.comdenisidoronavi"
-  url "https:github.comdenisidoronaviarchiverefstagsv2.24.0.tar.gz"
+  homepage "https://github.com/denisidoro/navi"
+  url "https://ghfast.top/https://github.com/denisidoro/navi/archive/refs/tags/v2.24.0.tar.gz"
   sha256 "4c10f47c306826255b07483b7e94eed8ffc1401555c52434a56246295d3f2728"
   license "Apache-2.0"
 
@@ -24,9 +24,9 @@ class Navi < Formula
   end
 
   test do
-    assert_match "navi " + version, shell_output("#{bin}navi --version")
-    (testpath"cheatstest.cheat").write "% test\n\n# foo\necho bar\n\n# lorem\necho ipsum\n"
+    assert_match "navi " + version, shell_output("#{bin}/navi --version")
+    (testpath/"cheats/test.cheat").write "% test\n\n# foo\necho bar\n\n# lorem\necho ipsum\n"
     assert_match "bar",
-        shell_output("export RUST_BACKTRACE=1; #{bin}navi --path #{testpath}cheats --query foo --best-match")
+        shell_output("export RUST_BACKTRACE=1; #{bin}/navi --path #{testpath}/cheats --query foo --best-match")
   end
 end

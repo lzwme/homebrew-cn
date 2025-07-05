@@ -1,15 +1,15 @@
 class Doxygen < Formula
   desc "Generate documentation for several programming languages"
-  homepage "https:www.doxygen.nl"
-  url "https:doxygen.nlfilesdoxygen-1.14.0.src.tar.gz"
-  mirror "https:downloads.sourceforge.netprojectdoxygenrel-1.14.0doxygen-1.14.0.src.tar.gz"
+  homepage "https://www.doxygen.nl/"
+  url "https://doxygen.nl/files/doxygen-1.14.0.src.tar.gz"
+  mirror "https://downloads.sourceforge.net/project/doxygen/rel-1.14.0/doxygen-1.14.0.src.tar.gz"
   sha256 "d4536d11ab13037327d8d026b75f5a86b7ccb2093e2f546235faf61fd86e6b5d"
   license "GPL-2.0-only"
-  head "https:github.comdoxygendoxygen.git", branch: "master"
+  head "https://github.com/doxygen/doxygen.git", branch: "master"
 
   livecheck do
-    url "https:www.doxygen.nldownload.html"
-    regex(href=.*?doxygen[._-]v?(\d+(?:\.\d+)+)[._-]src\.ti)
+    url "https://www.doxygen.nl/download.html"
+    regex(/href=.*?doxygen[._-]v?(\d+(?:\.\d+)+)[._-]src\.t/i)
   end
 
   bottle do
@@ -31,7 +31,7 @@ class Doxygen < Formula
   fails_with :clang do
     build 1000
     cause <<~EOS
-      doxygen-1.11.0srcdatetime.cpp:100:19: error: no viable constructor or deduction guide for deduction of template arguments of 'array'
+      doxygen-1.11.0/src/datetime.cpp:100:19: error: no viable constructor or deduction guide for deduction of template arguments of 'array'
       static std::array g_specFormats
                         ^
     EOS
@@ -45,11 +45,11 @@ class Doxygen < Formula
     system "cmake", "--install", "build"
 
     system "cmake", "-S", ".", "-B", "build", "-Dbuild_doc=1", *std_cmake_args
-    man1.install buildpath.glob("buildman*.1")
+    man1.install buildpath.glob("build/man/*.1")
   end
 
   test do
-    system bin"doxygen", "-g"
-    system bin"doxygen", "Doxyfile"
+    system bin/"doxygen", "-g"
+    system bin/"doxygen", "Doxyfile"
   end
 end

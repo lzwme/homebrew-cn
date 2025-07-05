@@ -1,10 +1,10 @@
 class CargoAbout < Formula
   desc "Cargo plugin to generate list of all licenses for a crate"
-  homepage "https:github.comEmbarkStudioscargo-about"
-  url "https:github.comEmbarkStudioscargo-aboutarchiverefstags0.7.1.tar.gz"
+  homepage "https://github.com/EmbarkStudios/cargo-about"
+  url "https://ghfast.top/https://github.com/EmbarkStudios/cargo-about/archive/refs/tags/0.7.1.tar.gz"
   sha256 "5b090871bda2c2cf645de826c219b41486c36ffe0b474ad9f6ecba7e21d279a0"
   license any_of: ["Apache-2.0", "MIT"]
-  head "https:github.comEmbarkStudioscargo-about.git", branch: "main"
+  head "https://github.com/EmbarkStudios/cargo-about.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "8755083c1b4ab12dd0334783541f0e9b7fff6e2b9edb2017a49dd4c6af18d7d0"
@@ -25,14 +25,14 @@ class CargoAbout < Formula
 
   test do
     # Show that we can use a different toolchain than the one provided by the `rust` formula.
-    # https:github.comHomebrewhomebrew-corepull134074#pullrequestreview-1484979359
+    # https://github.com/Homebrew/homebrew-core/pull/134074#pullrequestreview-1484979359
     ENV.prepend_path "PATH", Formula["rustup"].bin
     system "rustup", "set", "profile", "minimal"
     system "rustup", "default", "beta"
 
-    crate = testpath"demo-crate"
+    crate = testpath/"demo-crate"
     mkdir crate do
-      (crate"srcmain.rs").write <<~RUST
+      (crate/"src/main.rs").write <<~RUST
         #[cfg(test)]
         mod tests {
           #[test]
@@ -41,15 +41,15 @@ class CargoAbout < Formula
           }
         }
       RUST
-      (crate"Cargo.toml").write <<~TOML
+      (crate/"Cargo.toml").write <<~TOML
         [package]
         name = "demo-crate"
         version = "0.1.0"
         license = "MIT"
       TOML
 
-      system bin"cargo-about", "init"
-      assert_path_exists crate"about.hbs"
+      system bin/"cargo-about", "init"
+      assert_path_exists crate/"about.hbs"
 
       expected = <<~EOS
         accepted = [
@@ -57,7 +57,7 @@ class CargoAbout < Formula
             "MIT",
         ]
       EOS
-      assert_equal expected, (crate"about.toml").read
+      assert_equal expected, (crate/"about.toml").read
 
       output = shell_output("cargo about generate about.hbs")
       assert_match "The above copyright notice and this permission notice", output

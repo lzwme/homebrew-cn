@@ -2,11 +2,11 @@ class Libjcat < Formula
   include Language::Python::Shebang
 
   desc "Library for reading Jcat files"
-  homepage "https:github.comhughsielibjcat"
-  url "https:github.comhughsielibjcatreleasesdownload0.2.3libjcat-0.2.3.tar.xz"
+  homepage "https://github.com/hughsie/libjcat"
+  url "https://ghfast.top/https://github.com/hughsie/libjcat/releases/download/0.2.3/libjcat-0.2.3.tar.xz"
   sha256 "f2f115aad8a8f16b8dde1ed55de7abacb91d0878539aa29b2b60854b499db639"
   license "LGPL-2.1-or-later"
-  head "https:github.comhughsielibjcat.git", branch: "main"
+  head "https://github.com/hughsie/libjcat.git", branch: "main"
 
   bottle do
     sha256 cellar: :any, arm64_sequoia: "f81dac6097133f01ba6dc2890ea638bc19157b5532262f651523c5daf3a36ade"
@@ -37,8 +37,8 @@ class Libjcat < Formula
   end
 
   def install
-    rewrite_shebang detected_python_shebang(use_python_from_path: true), "contribgenerate-version-script.py"
-    rewrite_shebang detected_python_shebang(use_python_from_path: true), "contribbuild-certs.py"
+    rewrite_shebang detected_python_shebang(use_python_from_path: true), "contrib/generate-version-script.py"
+    rewrite_shebang detected_python_shebang(use_python_from_path: true), "contrib/build-certs.py"
 
     system "meson", "setup", "build",
                     "-Dgpg=false",
@@ -49,8 +49,8 @@ class Libjcat < Formula
   end
 
   test do
-    system bin"jcat-tool", "-h"
-    (testpath"test.c").write <<~C
+    system bin/"jcat-tool", "-h"
+    (testpath/"test.c").write <<~C
       #include <jcat.h>
       int main(int argc, char *argv[]) {
         JcatContext *ctx = jcat_context_new();
@@ -61,6 +61,6 @@ class Libjcat < Formula
 
     flags = shell_output("pkgconf --cflags --libs jcat").chomp.split
     system ENV.cc, "test.c", "-o", "test", *flags
-    system ".test"
+    system "./test"
   end
 end

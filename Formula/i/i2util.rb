@@ -1,13 +1,13 @@
 class I2util < Formula
   desc "Internet2 utility tools"
-  homepage "https:github.comperfsonari2util"
-  url "https:github.comperfsonari2utilarchiverefstagsv5.2.1.tar.gz"
+  homepage "https://github.com/perfsonar/i2util"
+  url "https://ghfast.top/https://github.com/perfsonar/i2util/archive/refs/tags/v5.2.1.tar.gz"
   sha256 "8ef7fa11be1c8f753b4cf9a365520a35e632ac8c5a5815e0fae38fce698caa5f"
   license "Apache-2.0"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -24,16 +24,16 @@ class I2util < Formula
   depends_on "automake" => :build
 
   def install
-    cd "I2utilI2util" do
-      system ".bootstrap"
-      system ".configure", "--disable-silent-rules", *std_configure_args
+    cd "I2util/I2util" do
+      system "./bootstrap"
+      system "./configure", "--disable-silent-rules", *std_configure_args
       system "make", "install"
     end
   end
 
   test do
-    (testpath"test.c").write <<~C
-      #include <I2utilutil.h>
+    (testpath/"test.c").write <<~C
+      #include <I2util/util.h>
       #include <string.h>
 
       int main() {
@@ -44,6 +44,6 @@ class I2util < Formula
       }
     C
     system ENV.cc, "test.c", "-L#{lib}", "-lI2util", "-o", "test"
-    system ".test"
+    system "./test"
   end
 end

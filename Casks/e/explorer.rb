@@ -2,10 +2,10 @@ cask "explorer" do
   version "1.104"
   sha256 "fcf3ec43ab2dff7f9e734192d3d327eebce80240007c4848b433f5d0f6ae8605"
 
-  url "https:github.comjfbouzereauexplorerreleasesdownload#{version}Explorer-darwin-x64.zip"
+  url "https://ghfast.top/https://github.com/jfbouzereau/explorer/releases/download/#{version}/Explorer-darwin-x64.zip"
   name "Explorer"
   desc "Data Explorer"
-  homepage "https:github.comjfbouzereauexplorer"
+  homepage "https://github.com/jfbouzereau/explorer"
 
   no_autobump! because: :requires_manual_review
 
@@ -14,8 +14,8 @@ cask "explorer" do
   app "Explorer-darwin-x64.app"
 
   zap trash: [
-    "~LibraryApplication SupportExplorer",
-    "~LibraryCachesExplorer",
+    "~/Library/Application Support/Explorer",
+    "~/Library/Caches/Explorer",
   ]
 
   caveats do

@@ -2,10 +2,10 @@ cask "font-jim-nightshade" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefontsrawmainofljimnightshadeJimNightshade-Regular.ttf",
-      verified: "github.comgooglefonts"
+  url "https://github.com/google/fonts/raw/main/ofl/jimnightshade/JimNightshade-Regular.ttf",
+      verified: "github.com/google/fonts/"
   name "Jim Nightshade"
-  homepage "https:fonts.google.comspecimenJim+Nightshade"
+  homepage "https://fonts.google.com/specimen/Jim+Nightshade"
 
   font "JimNightshade-Regular.ttf"
 

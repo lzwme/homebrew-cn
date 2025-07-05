@@ -1,15 +1,15 @@
 class Docker < Formula
   desc "Pack, ship and run any application as a lightweight container"
-  homepage "https:www.docker.com"
-  url "https:github.comdockercli.git",
+  homepage "https://www.docker.com/"
+  url "https://github.com/docker/cli.git",
       tag:      "v28.3.0",
       revision: "38b7060a218775811da953650d8df7d492653f8f"
   license "Apache-2.0"
-  head "https:github.comdockercli.git", branch: "master"
+  head "https://github.com/docker/cli.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)(?:[._-]ce)?$i)
+    regex(/^v?(\d+(?:\.\d+)+)(?:[._-]ce)?$/i)
   end
 
   bottle do
@@ -28,32 +28,32 @@ class Docker < Formula
   conflicts_with cask: "docker-desktop"
 
   def install
-    # TODO: Drop GOPATH when mergedreleased: https:github.comdockerclipull4116
+    # TODO: Drop GOPATH when merged/released: https://github.com/docker/cli/pull/4116
     ENV["GOPATH"] = buildpath
     ENV["GO111MODULE"] = "auto"
-    (buildpath"srcgithub.comdocker").install_symlink buildpath => "cli"
+    (buildpath/"src/github.com/docker").install_symlink buildpath => "cli"
 
     ldflags = %W[
       -s -w
-      -X github.comdockerclicliversion.BuildTime=#{time.iso8601}
-      -X github.comdockerclicliversion.GitCommit=#{Utils.git_short_head}
-      -X github.comdockerclicliversion.Version=#{version}
-      -X "github.comdockerclicliversion.PlatformName=Docker Engine - Community"
+      -X github.com/docker/cli/cli/version.BuildTime=#{time.iso8601}
+      -X github.com/docker/cli/cli/version.GitCommit=#{Utils.git_short_head}
+      -X github.com/docker/cli/cli/version.Version=#{version}
+      -X "github.com/docker/cli/cli/version.PlatformName=Docker Engine - Community"
     ]
 
-    system "go", "build", *std_go_args(ldflags:), "github.comdockerclicmddocker"
+    system "go", "build", *std_go_args(ldflags:), "github.com/docker/cli/cmd/docker"
 
-    Pathname.glob("man*.[1-8].md") do |md|
-      section = md.to_s[\.(\d+)\.md\Z, 1]
-      (man"man#{section}").mkpath
-      system "go-md2man", "-in=#{md}", "-out=#{man}man#{section}#{md.stem}"
+    Pathname.glob("man/*.[1-8].md") do |md|
+      section = md.to_s[/\.(\d+)\.md\Z/, 1]
+      (man/"man#{section}").mkpath
+      system "go-md2man", "-in=#{md}", "-out=#{man}/man#{section}/#{md.stem}"
     end
   end
 
   test do
-    assert_match "Docker version #{version}", shell_output("#{bin}docker --version")
+    assert_match "Docker version #{version}", shell_output("#{bin}/docker --version")
 
     expected = "Client: Docker Engine - Community\n Version:    #{version}\n Context:    default\n Debug Mode: false\n\nServer:"
-    assert_match expected, shell_output("#{bin}docker info", 1)
+    assert_match expected, shell_output("#{bin}/docker info", 1)
   end
 end

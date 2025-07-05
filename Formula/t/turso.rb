@@ -1,14 +1,14 @@
 class Turso < Formula
   desc "Interactive SQL shell for Turso"
-  homepage "https:github.comtursodatabaseturso"
-  url "https:github.comtursodatabasetursoarchiverefstagsv0.1.1.tar.gz"
+  homepage "https://github.com/tursodatabase/turso"
+  url "https://ghfast.top/https://github.com/tursodatabase/turso/archive/refs/tags/v0.1.1.tar.gz"
   sha256 "04ea555053f6d2a85cbf07e9f8eccd4dcbdeeb0e0c914941783db59513ec1ded"
   license "MIT"
-  head "https:github.comtursodatabaseturso.git", branch: "main"
+  head "https://github.com/tursodatabase/turso.git", branch: "main"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -28,9 +28,9 @@ class Turso < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}tursodb --version")
+    assert_match version.to_s, shell_output("#{bin}/tursodb --version")
 
-    # Fails in Linux CI with "Error: IO error: Operation not permitted (os error 1)"
+    # Fails in Linux CI with "Error: I/O error: Operation not permitted (os error 1)"
     return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
 
     data = %w[Bob 14 Sue 12 Tim 13]
@@ -41,8 +41,8 @@ class Turso < Formula
     pipe_output("sqlite3 school.sqlite", create, 0)
 
     begin
-      output_log = testpath"output.log"
-      pid = spawn bin"tursodb", "school.sqlite", [:out, :err] => output_log.to_s
+      output_log = testpath/"output.log"
+      pid = spawn bin/"tursodb", "school.sqlite", [:out, :err] => output_log.to_s
       sleep 2
       assert_match "\".help\" for usage hints.", output_log.read
     ensure

@@ -1,14 +1,14 @@
 class Libmatroska < Formula
-  desc "Extensible, open standard container format for audiovideo"
-  homepage "https:www.matroska.org"
-  url "https:dl.matroska.orgdownloadslibmatroskalibmatroska-1.7.1.tar.xz"
+  desc "Extensible, open standard container format for audio/video"
+  homepage "https://www.matroska.org/"
+  url "https://dl.matroska.org/downloads/libmatroska/libmatroska-1.7.1.tar.xz"
   sha256 "572a3033b8d93d48a6a858e514abce4b2f7a946fe1f02cbfeca39bfd703018b3"
   license "LGPL-2.1-or-later"
-  head "https:github.comMatroska-Orglibmatroska.git", branch: "master"
+  head "https://github.com/Matroska-Org/libmatroska.git", branch: "master"
 
   livecheck do
-    url "https:dl.matroska.orgdownloadslibmatroska"
-    regex(href=.*?libmatroska[._-]v?(\d+(?:\.\d+)+)\.ti)
+    url "https://dl.matroska.org/downloads/libmatroska/"
+    regex(/href=.*?libmatroska[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -38,8 +38,8 @@ class Libmatroska < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~CPP
-      #include <matroskaKaxVersion.h>
+    (testpath/"test.cpp").write <<~CPP
+      #include <matroska/KaxVersion.h>
       #include <iostream>
 
       int main() {
@@ -49,6 +49,6 @@ class Libmatroska < Formula
     CPP
 
     system ENV.cxx, "-std=c++11", "test.cpp", "-o", "test", "-I#{include}", "-L#{lib}", "-lmatroska"
-    assert_match version.to_s, shell_output(".test")
+    assert_match version.to_s, shell_output("./test")
   end
 end

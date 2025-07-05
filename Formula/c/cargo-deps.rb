@@ -1,7 +1,7 @@
 class CargoDeps < Formula
   desc "Cargo subcommand to building dependency graphs of Rust projects"
-  homepage "https:crates.iocratescargo-deps"
-  url "https:static.crates.iocratescargo-depscargo-deps-1.5.1.crate"
+  homepage "https://crates.io/crates/cargo-deps"
+  url "https://static.crates.io/crates/cargo-deps/cargo-deps-1.5.1.crate"
   sha256 "958e78d8463edf62018d7d5e6f1c5866d59084a4f224c3be01f6eca8a2d3df47"
   license "BSD-3-Clause"
 
@@ -31,19 +31,19 @@ class CargoDeps < Formula
 
   test do
     # Show that we can use a different toolchain than the one provided by the `rust` formula.
-    # https:github.comHomebrewhomebrew-corepull134074#pullrequestreview-1484979359
+    # https://github.com/Homebrew/homebrew-core/pull/134074#pullrequestreview-1484979359
     ENV.prepend_path "PATH", Formula["rustup"].bin
     system "rustup", "set", "profile", "minimal"
     system "rustup", "default", "beta"
 
-    crate = testpath"demo-crate"
+    crate = testpath/"demo-crate"
     mkdir crate do
-      (crate"srcmain.rs").write <<~RUST
+      (crate/"src/main.rs").write <<~RUST
         fn main() {
           println!("Hello BrewTestBot!");
         }
       RUST
-      (crate"Cargo.toml").write <<~TOML
+      (crate/"Cargo.toml").write <<~TOML
         [package]
         name = "demo-crate"
         version = "0.1.0"
@@ -55,7 +55,7 @@ class CargoDeps < Formula
       output = shell_output("cargo deps")
       assert_match "digraph dependencies", output
 
-      output = shell_output("#{bin}cargo-deps --version")
+      output = shell_output("#{bin}/cargo-deps --version")
       assert_match "cargo-deps #{version}", output
     end
   end

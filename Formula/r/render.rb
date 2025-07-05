@@ -1,10 +1,10 @@
 class Render < Formula
   desc "Command-line interface for Render"
-  homepage "https:render.comdocscli"
-  url "https:github.comrender-osscliarchiverefstagsv2.1.4.tar.gz"
+  homepage "https://render.com/docs/cli"
+  url "https://ghfast.top/https://github.com/render-oss/cli/archive/refs/tags/v2.1.4.tar.gz"
   sha256 "337e0c786ae796626ffe51699d67e2a875abb65e61f55489a19e2e120bd2568e"
   license "Apache-2.0"
-  head "https:github.comrender-osscli.git", branch: "main"
+  head "https://github.com/render-oss/cli.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "e8ef690c5923b9ecbd29e6162dd9f7964f7f20dfaf33e04f51772f78940952af"
@@ -20,13 +20,13 @@ class Render < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.comrender-ossclipkgcfg.Version=#{version}
+      -X github.com/render-oss/cli/pkg/cfg.Version=#{version}
     ]
     system "go", "build", *std_go_args(ldflags:)
   end
 
   test do
     error_msg = "Error: run `render login` to authenticate"
-    assert_match error_msg, shell_output("#{bin}render services -o json 2>&1", 1)
+    assert_match error_msg, shell_output("#{bin}/render services -o json 2>&1", 1)
   end
 end

@@ -1,13 +1,13 @@
 class Tmux < Formula
   desc "Terminal multiplexer"
-  homepage "https:tmux.github.io"
-  url "https:github.comtmuxtmuxreleasesdownload3.5atmux-3.5a.tar.gz"
+  homepage "https://tmux.github.io/"
+  url "https://ghfast.top/https://github.com/tmux/tmux/releases/download/3.5a/tmux-3.5a.tar.gz"
   sha256 "16216bd0877170dfcc64157085ba9013610b12b082548c7c9542cc0103198951"
   license "ISC"
 
   livecheck do
     url :stable
-    regex(v?(\d+(?:\.\d+)+[a-z]?)i)
+    regex(/v?(\d+(?:\.\d+)+[a-z]?)/i)
     strategy :github_latest
   end
 
@@ -24,7 +24,7 @@ class Tmux < Formula
   end
 
   head do
-    url "https:github.comtmuxtmux.git", branch: "master"
+    url "https://github.com/tmux/tmux.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -38,13 +38,13 @@ class Tmux < Formula
   uses_from_macos "bison" => :build # for yacc
 
   # Old versions of macOS libc disagree with utf8proc character widths.
-  # https:github.comtmuxtmuxissues2223
+  # https://github.com/tmux/tmux/issues/2223
   on_system :linux, macos: :sierra_or_newer do
     depends_on "utf8proc"
   end
 
   resource "completion" do
-    url "https:raw.githubusercontent.comimomalievtmux-bash-completion8da7f797245970659b259b85e5409f197b8afdddcompletionstmux"
+    url "https://ghfast.top/https://raw.githubusercontent.com/imomaliev/tmux-bash-completion/8da7f797245970659b259b85e5409f197b8afddd/completions/tmux"
     sha256 "4e2179053376f4194b342249d75c243c1573c82c185bfbea008be1739048e709"
   end
 
@@ -59,12 +59,12 @@ class Tmux < Formula
     # tmux finds the `tmux-256color` terminfo provided by our ncurses
     # and uses that as the default `TERM`, but this causes issues for
     # tools that link with the very old ncurses provided by macOS.
-    # https:github.comHomebrewhomebrew-coreissues102748
+    # https://github.com/Homebrew/homebrew-core/issues/102748
     args << "--with-TERM=screen-256color" if OS.mac? && MacOS.version < :sonoma
     args << "--enable-utf8proc" if OS.linux? || MacOS.version >= :high_sierra
 
     ENV.append "LDFLAGS", "-lresolv"
-    system ".configure", *args, *std_configure_args
+    system "./configure", *args, *std_configure_args
 
     system "make", "install"
 
@@ -80,16 +80,16 @@ class Tmux < Formula
   end
 
   test do
-    system bin"tmux", "-V"
+    system bin/"tmux", "-V"
 
     require "pty"
 
-    socket = testpathtap.user
-    PTY.spawn bin"tmux", "-S", socket, "-f", File::NULL
+    socket = testpath/tap.user
+    PTY.spawn bin/"tmux", "-S", socket, "-f", File::NULL
     sleep 10
 
     assert_path_exists socket
     assert_predicate socket, :socket?
-    assert_equal "no server running on #{socket}", shell_output("#{bin}tmux -S#{socket} list-sessions 2>&1", 1).chomp
+    assert_equal "no server running on #{socket}", shell_output("#{bin}/tmux -S#{socket} list-sessions 2>&1", 1).chomp
   end
 end

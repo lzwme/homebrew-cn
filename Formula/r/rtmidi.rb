@@ -1,13 +1,13 @@
 class Rtmidi < Formula
-  desc "API for realtime MIDI inputoutput"
-  homepage "https:www.music.mcgill.ca~garyrtmidi"
-  url "https:www.music.mcgill.ca~garyrtmidireleasertmidi-6.0.0.tar.gz"
+  desc "API for realtime MIDI input/output"
+  homepage "https://www.music.mcgill.ca/~gary/rtmidi/"
+  url "https://www.music.mcgill.ca/~gary/rtmidi/release/rtmidi-6.0.0.tar.gz"
   sha256 "5960ccf64b42c23400720ccc880e2f205677ce9457f747ef758b598acd64db5b"
   license "MIT"
 
   livecheck do
     url :homepage
-    regex(href=.*?rtmidi[._-]v?(\d+(?:\.\d+)+)\.ti)
+    regex(/href=.*?rtmidi[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -26,7 +26,7 @@ class Rtmidi < Formula
   end
 
   head do
-    url "https:github.comthestkrtmidi.git", branch: "master"
+    url "https://github.com/thestk/rtmidi.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -40,14 +40,14 @@ class Rtmidi < Formula
 
   def install
     ENV.cxx11
-    system ".autogen.sh", "--no-configure" if build.head?
-    system ".configure", *std_configure_args
+    system "./autogen.sh", "--no-configure" if build.head?
+    system "./configure", *std_configure_args
     system "make", "install"
-    doc.install %w[docrelease.txt dochtml docimages] if build.stable?
+    doc.install %w[doc/release.txt doc/html doc/images] if build.stable?
   end
 
   test do
-    (testpath"test.cpp").write <<~CPP
+    (testpath/"test.cpp").write <<~CPP
       #include "RtMidi.h"
       int main(int argc, char **argv, char **env) {
         RtMidiIn midiin;
@@ -56,9 +56,9 @@ class Rtmidi < Formula
                   << "Output ports: " << midiout.getPortCount() << "\\n";
       }
     CPP
-    system ENV.cxx, "test.cpp", "-o", "test", "-std=c++11", "-I#{include}rtmidi", "-L#{lib}", "-lrtmidi"
+    system ENV.cxx, "test.cpp", "-o", "test", "-std=c++11", "-I#{include}/rtmidi", "-L#{lib}", "-lrtmidi"
     # Only run the test on macOS since ALSA initialization errors on Linux CI.
-    # ALSA lib seq_hw.c:466:(snd_seq_hw_open) open devsndseq failed: No such file or directory
-    system ".test" if OS.mac?
+    # ALSA lib seq_hw.c:466:(snd_seq_hw_open) open /dev/snd/seq failed: No such file or directory
+    system "./test" if OS.mac?
   end
 end

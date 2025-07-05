@@ -2,11 +2,11 @@ cask "buttercup" do
   version "2.28.1"
   sha256 "b2399d44f23dd39b851989e5aee2651fe1b1bdb37a525b7553a7ae8630a1b8e6"
 
-  url "https:github.combuttercupbuttercup-desktopreleasesdownloadv#{version}Buttercup-mac-x64-#{version}.dmg",
-      verified: "github.combuttercupbuttercup-desktop"
+  url "https://ghfast.top/https://github.com/buttercup/buttercup-desktop/releases/download/v#{version}/Buttercup-mac-x64-#{version}.dmg",
+      verified: "github.com/buttercup/buttercup-desktop/"
   name "Buttercup"
   desc "Javascript Secrets Vault - Multi-Platform Desktop Application"
-  homepage "https:buttercup.pw"
+  homepage "https://buttercup.pw/"
 
   livecheck do
     url :url
@@ -19,12 +19,12 @@ cask "buttercup" do
   app "Buttercup.app"
 
   zap trash: [
-    "~LibraryApplication SupportButtercup",
-    "~LibraryApplication SupportButtercup-nodejs",
-    "~LibraryLogsButtercup-nodejs",
-    "~LibraryPreferencesButtercup-nodejs",
-    "~LibraryPreferencespw.buttercup.desktop.plist",
-    "~LibrarySaved Application Statepw.buttercup.desktop.savedState",
+    "~/Library/Application Support/Buttercup",
+    "~/Library/Application Support/Buttercup-nodejs",
+    "~/Library/Logs/Buttercup-nodejs",
+    "~/Library/Preferences/Buttercup-nodejs",
+    "~/Library/Preferences/pw.buttercup.desktop.plist",
+    "~/Library/Saved Application State/pw.buttercup.desktop.savedState",
   ]
 
   caveats do

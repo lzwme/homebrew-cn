@@ -1,7 +1,7 @@
 class Templ < Formula
   desc "Language for writing HTML user interfaces in Go"
-  homepage "https:templ.guide"
-  url "https:github.coma-htemplarchiverefstagsv0.3.906.tar.gz"
+  homepage "https://templ.guide"
+  url "https://ghfast.top/https://github.com/a-h/templ/archive/refs/tags/v0.3.906.tar.gz"
   sha256 "0a31891f20448209a232beb35edb30892fdd49b43efb119eddd4488b71d5731f"
   license "MIT"
 
@@ -17,21 +17,21 @@ class Templ < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), ".cmdtempl"
+    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/templ"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}templ version")
+    assert_match version.to_s, shell_output("#{bin}/templ version")
 
-    (testpath"test.templ").write <<~TEMPL
+    (testpath/"test.templ").write <<~TEMPL
       package main
 
       templ Test() {
-        <p class="testing">Hello, World<p>
+        <p class="testing">Hello, World</p>
       }
     TEMPL
 
-    output = shell_output("#{bin}templ generate -stdout -f #{testpath}test.templ")
+    output = shell_output("#{bin}/templ generate -stdout -f #{testpath}/test.templ")
     assert_match "func Test() templ.Component {", output
   end
 end

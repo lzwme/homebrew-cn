@@ -1,10 +1,10 @@
 class Cpufetch < Formula
   desc "CPU architecture fetching tool"
-  homepage "https:github.comDr-Noobcpufetch"
-  url "https:github.comDr-Noobcpufetcharchiverefstagsv1.06.tar.gz"
+  homepage "https://github.com/Dr-Noob/cpufetch"
+  url "https://ghfast.top/https://github.com/Dr-Noob/cpufetch/archive/refs/tags/v1.06.tar.gz"
   sha256 "b8ec1339cf3a3bb9325cde7fb0748dd609043e8d2938c292956da7e457bdb7d9"
   license "GPL-2.0-only"
-  head "https:github.comDr-Noobcpufetch.git", branch: "master"
+  head "https://github.com/Dr-Noob/cpufetch.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "5ab3dcf28e559af53759e191e76639f453a84a1707c615d5238a2e575b5eb7cc"
@@ -39,10 +39,10 @@ class Cpufetch < Formula
     else
       [0, 0]
     end
-    actual = shell_output("#{bin}cpufetch --debug 2>&1", expected_result).lines[line].strip
+    actual = shell_output("#{bin}/cpufetch --debug 2>&1", expected_result).lines[line].strip
 
     system_name = OS.mac? ? "macOS" : OS.kernel_name
-    arch = (OS.mac? && Hardware::CPU.arm?) ? "ARM" : "x86  x86_64"
+    arch = (OS.mac? && Hardware::CPU.arm?) ? "ARM" : "x86 / x86_64"
     expected = "cpufetch v#{version} (#{system_name} #{arch} build)"
 
     assert_match expected, actual

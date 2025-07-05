@@ -1,7 +1,7 @@
 class OsxCpuTemp < Formula
   desc "Outputs current CPU temperature for OSX"
-  homepage "https:github.comlavoieslosx-cpu-temp"
-  url "https:github.comlavoieslosx-cpu-temparchiverefstags1.1.0.tar.gz"
+  homepage "https://github.com/lavoiesl/osx-cpu-temp"
+  url "https://ghfast.top/https://github.com/lavoiesl/osx-cpu-temp/archive/refs/tags/1.1.0.tar.gz"
   sha256 "94b90ce9a1c7a428855453408708a5557bfdb76fa45eef2b8ded4686a1558363"
   license "GPL-2.0-or-later"
 
@@ -31,6 +31,6 @@ class OsxCpuTemp < Formula
   end
 
   test do
-    assert_match "°C", shell_output("#{bin}osx-cpu-temp -C")
+    assert_match "°C", shell_output("#{bin}/osx-cpu-temp -C")
   end
 end

@@ -1,10 +1,10 @@
 class ProtocGenDoc < Formula
   desc "Documentation generator plugin for Google Protocol Buffers"
-  homepage "https:github.compseudomutoprotoc-gen-doc"
-  url "https:github.compseudomutoprotoc-gen-docarchiverefstagsv1.5.1.tar.gz"
+  homepage "https://github.com/pseudomuto/protoc-gen-doc"
+  url "https://ghfast.top/https://github.com/pseudomuto/protoc-gen-doc/archive/refs/tags/v1.5.1.tar.gz"
   sha256 "75667f5e4f9b4fecf5c38f85a046180745fc73f518d85422d9c71cb845cd3d43"
   license "MIT"
-  head "https:github.compseudomutoprotoc-gen-doc.git", branch: "master"
+  head "https://github.com/pseudomuto/protoc-gen-doc.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "8f0234e290bc9f5d0d09bf239cc5c413588bc49e01d101ca7dc5ea26e4dfd2fa"
@@ -19,13 +19,13 @@ class ProtocGenDoc < Formula
   depends_on "protobuf"
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), ".cmdprotoc-gen-doc"
+    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/protoc-gen-doc"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}protoc-gen-doc -version")
+    assert_match version.to_s, shell_output("#{bin}/protoc-gen-doc -version")
 
-    protofile = testpath"proto3.proto"
+    protofile = testpath/"proto3.proto"
     protofile.write <<~EOS
       syntax = "proto3";
       package proto3;
@@ -37,7 +37,7 @@ class ProtocGenDoc < Formula
     EOS
 
     system "protoc", "--doc_out=.", "--doc_opt=html,index.html", "proto3.proto"
-    assert_path_exists testpath"index.html"
-    refute_predicate (testpath"index.html").size, :zero?
+    assert_path_exists testpath/"index.html"
+    refute_predicate (testpath/"index.html").size, :zero?
   end
 end

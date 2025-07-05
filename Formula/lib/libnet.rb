@@ -1,7 +1,7 @@
 class Libnet < Formula
   desc "C library for creating IP packets"
-  homepage "https:github.comlibnetlibnet"
-  url "https:github.comlibnetlibnetreleasesdownloadv1.3libnet-1.3.tar.gz"
+  homepage "https://github.com/libnet/libnet"
+  url "https://ghfast.top/https://github.com/libnet/libnet/releases/download/v1.3/libnet-1.3.tar.gz"
   sha256 "ad1e2dd9b500c58ee462acd839d0a0ea9a2b9248a1287840bc601e774fb6b28f"
   license "BSD-2-Clause"
 
@@ -23,12 +23,12 @@ class Libnet < Formula
   depends_on "pkgconf" => :test
 
   def install
-    system ".configure", *std_configure_args
+    system "./configure", *std_configure_args
     system "make", "install"
   end
 
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include <stdio.h>
       #include <stdint.h>
       #include <libnet.h>
@@ -42,6 +42,6 @@ class Libnet < Formula
 
     flags = shell_output("pkgconf --libs --cflags libnet").chomp.split
     system ENV.cc, "test.c", "-o", "test", *flags
-    assert_match version.to_s, shell_output(".test")
+    assert_match version.to_s, shell_output("./test")
   end
 end

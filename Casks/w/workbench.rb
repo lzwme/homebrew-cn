@@ -2,10 +2,10 @@ cask "workbench" do
   version "1.0.9"
   sha256 "7fec7bf1fb93854ed87cbaf4d9e21ef964adfc064d731b82a84a499f5b911e1f"
 
-  url "https:github.commxclWorkbenchreleasesdownload#{version}Workbench-#{version}.zip"
+  url "https://ghfast.top/https://github.com/mxcl/Workbench/releases/download/#{version}/Workbench-#{version}.zip"
   name "Workbench"
   desc "Seamless, automatic, “dotfile” sync to iCloud"
-  homepage "https:github.commxclWorkbench"
+  homepage "https://github.com/mxcl/Workbench"
 
   no_autobump! because: :requires_manual_review
 
@@ -14,7 +14,7 @@ cask "workbench" do
 
   app "Workbench.app"
 
-  zap trash: "~LibraryPreferencescom.codebasesaga.macOS.Workbench.plist"
+  zap trash: "~/Library/Preferences/com.codebasesaga.macOS.Workbench.plist"
 
   caveats do
     requires_rosetta

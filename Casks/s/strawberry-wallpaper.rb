@@ -2,15 +2,15 @@ cask "strawberry-wallpaper" do
   version "1.4.2"
   sha256 "733632a104fec8efc5024677332978d92d3375b00f877b50a95d0f450184f8e9"
 
-  url "https:github.comaitexiaoyStrawberry-Wallpaperreleasesdownload#{version}Strawberry.Wallpaper-mac.dmg",
-      verified: "github.comaitexiaoyStrawberry-Wallpaper"
+  url "https://ghfast.top/https://github.com/aitexiaoy/Strawberry-Wallpaper/releases/download/#{version}/Strawberry.Wallpaper-mac.dmg",
+      verified: "github.com/aitexiaoy/Strawberry-Wallpaper/"
   name "Strawberry Wallpaper"
   desc "Automatically update wallpapers of major galleries"
-  homepage "https:aitexiaoy.github.ioStrawberry-Wallpaper"
+  homepage "https://aitexiaoy.github.io/Strawberry-Wallpaper/"
 
   livecheck do
     url :url
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   no_autobump! because: :requires_manual_review

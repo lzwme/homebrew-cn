@@ -1,10 +1,10 @@
 class Gosec < Formula
   desc "Golang security checker"
-  homepage "https:securego.io"
-  url "https:github.comsecuregogosecarchiverefstagsv2.22.5.tar.gz"
+  homepage "https://securego.io/"
+  url "https://ghfast.top/https://github.com/securego/gosec/archive/refs/tags/v2.22.5.tar.gz"
   sha256 "a0cfe91b35e36c46214f1a761a149d938a9c2bcf8be3b14be335f53cc24cc1cd"
   license "Apache-2.0"
-  head "https:github.comsecuregogosec.git", branch: "master"
+  head "https://github.com/securego/gosec.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "03b4374b3d02737e48732b1f2bcbd606462531be504772a17bad2d7193d35e57"
@@ -19,13 +19,13 @@ class Gosec < Formula
 
   def install
     ldflags = "-s -w -X main.Version=#{version} -X main.GitTag= -X main.BuildDate=#{time.iso8601}"
-    system "go", "build", *std_go_args(ldflags:), ".cmdgosec"
+    system "go", "build", *std_go_args(ldflags:), "./cmd/gosec"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}gosec --version")
+    assert_match version.to_s, shell_output("#{bin}/gosec --version")
 
-    (testpath"test.go").write <<~GO
+    (testpath/"test.go").write <<~GO
       package main
 
       import "fmt"
@@ -38,7 +38,7 @@ class Gosec < Formula
       }
     GO
 
-    output = shell_output("#{bin}gosec ....", 1)
+    output = shell_output("#{bin}/gosec ./...", 1)
     assert_match "G101 (CWE-798)", output
     assert_match "Issues : \e[1;31m1\e[0m", output
   end

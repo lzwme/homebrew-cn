@@ -1,10 +1,10 @@
 class Darklua < Formula
   desc "Command-line tool that transforms Lua code"
-  homepage "https:darklua.com"
-  url "https:github.comseaofvoicesdarkluaarchiverefstagsv0.16.0.tar.gz"
+  homepage "https://darklua.com/"
+  url "https://ghfast.top/https://github.com/seaofvoices/darklua/archive/refs/tags/v0.16.0.tar.gz"
   sha256 "133baa4e584f7566dfe38bec3b1fcffe43e795cc28af0465ab792acf31fa2264"
   license "MIT"
-  head "https:github.comseaofvoicesdarklua.git", branch: "main"
+  head "https://github.com/seaofvoices/darklua.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "65353fe3b327985d26b88e45acc7d2448458850a15c70acd9e310dece10b5140"
@@ -23,7 +23,7 @@ class Darklua < Formula
   end
 
   test do
-    (testpath".darklua.json").write <<~JSON
+    (testpath/".darklua.json").write <<~JSON
       {
         rules: [
           'remove_spaces',
@@ -43,7 +43,7 @@ class Darklua < Formula
       }
     JSON
 
-    (testpath"test.lua").write <<~LUA
+    (testpath/"test.lua").write <<~LUA
       -- paste code here to preview the darklua transform
       local foo = 1
       local redundant_variable = ""
@@ -56,7 +56,7 @@ class Darklua < Formula
       end
     LUA
 
-    (testpath"expected.lua").write <<~LUA
+    (testpath/"expected.lua").write <<~LUA
 
       local a=1
 
@@ -69,9 +69,9 @@ class Darklua < Formula
       end
     LUA
 
-    system bin"darklua", "process", testpath"test.lua", testpath"output.lua"
-    assert_path_exists testpath"output.lua"
+    system bin/"darklua", "process", testpath/"test.lua", testpath/"output.lua"
+    assert_path_exists testpath/"output.lua"
     # remove `\n` from `expected.lua` file
-    assert_equal (testpath"output.lua").read, (testpath"expected.lua").read.chomp
+    assert_equal (testpath/"output.lua").read, (testpath/"expected.lua").read.chomp
   end
 end

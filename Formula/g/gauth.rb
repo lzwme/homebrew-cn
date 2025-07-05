@@ -1,10 +1,10 @@
 class Gauth < Formula
   desc "Google Authenticator in your terminal"
-  homepage "https:github.compcarriergauth"
-  url "https:github.compcarriergautharchiverefstagsv1.5.0.tar.gz"
+  homepage "https://github.com/pcarrier/gauth"
+  url "https://ghfast.top/https://github.com/pcarrier/gauth/archive/refs/tags/v1.5.0.tar.gz"
   sha256 "5c98287f5c209b9f02ec62ede4abd4117aa3ca738fbcb4153a6ec1e966f492a8"
   license "ISC"
-  head "https:github.compcarriergauth.git", branch: "main"
+  head "https://github.com/pcarrier/gauth.git", branch: "main"
 
   no_autobump! because: :requires_manual_review
 
@@ -25,7 +25,7 @@ class Gauth < Formula
   end
 
   test do
-    refute_empty pipe_output "#{bin}gauth demo --add", "JBSWY3DPEHPK3PXP"
-    assert_match(demo(\s+\d{6}){3}, shell_output(bin"gauth"))
+    refute_empty pipe_output "#{bin}/gauth demo --add", "JBSWY3DPEHPK3PXP"
+    assert_match(/demo(\s+\d{6}){3}/, shell_output(bin/"gauth"))
   end
 end

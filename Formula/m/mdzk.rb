@@ -1,10 +1,10 @@
 class Mdzk < Formula
   desc "Plain text Zettelkasten based on mdBook"
-  homepage "https:mdzk.app"
-  url "https:github.commdzk-rsmdzkarchiverefstags0.5.2.tar.gz"
+  homepage "https://mdzk.app/"
+  url "https://ghfast.top/https://github.com/mdzk-rs/mdzk/archive/refs/tags/0.5.2.tar.gz"
   sha256 "292a0ae7b91d535ffa1cfd3649d903b75a1bb1604abc7d98202f3e13e97de702"
   license "MPL-2.0"
-  head "https:github.commdzk-rsmdzk.git", branch: "main"
+  head "https://github.com/mdzk-rs/mdzk.git", branch: "main"
 
   livecheck do
     url :stable
@@ -32,7 +32,7 @@ class Mdzk < Formula
   # Fix compile with newer Rust.
   # Remove with the next release.
   patch do
-    url "https:raw.githubusercontent.comNixOSnixpkgsea76cad34d64ce213de5992154031bf0c9b75acepkgsapplicationsmiscmdzkupdate-mdbook-for-rust-1.64.patch"
+    url "https://ghfast.top/https://raw.githubusercontent.com/NixOS/nixpkgs/ea76cad34d64ce213de5992154031bf0c9b75ace/pkgs/applications/misc/mdzk/update-mdbook-for-rust-1.64.patch"
     sha256 "953f1d75d586acba6786d9c578f5c07fc2a52fc5ef5c743576a613a7491fbb50"
   end
 
@@ -41,7 +41,7 @@ class Mdzk < Formula
   end
 
   test do
-    system bin"mdzk", "init", "test_mdzk"
-    assert_path_exists testpath"test_mdzk"
+    system bin/"mdzk", "init", "test_mdzk"
+    assert_path_exists testpath/"test_mdzk"
   end
 end

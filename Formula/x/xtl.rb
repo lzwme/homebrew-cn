@@ -1,7 +1,7 @@
 class Xtl < Formula
   desc "X template library"
-  homepage "https:github.comxtensor-stackxtl"
-  url "https:github.comxtensor-stackxtlarchiverefstags0.8.0.tar.gz"
+  homepage "https://github.com/xtensor-stack/xtl"
+  url "https://ghfast.top/https://github.com/xtensor-stack/xtl/archive/refs/tags/0.8.0.tar.gz"
   sha256 "ee38153b7dd0ec84cee3361f5488a4e7e6ddd26392612ac8821cbc76e740273a"
   license "BSD-3-Clause"
 
@@ -22,9 +22,9 @@ class Xtl < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~CPP
+    (testpath/"test.cpp").write <<~CPP
       #include <iostream>
-      #include "xtlxcomplex.hpp"
+      #include "xtl/xcomplex.hpp"
 
       using complex_type = xtl::xcomplex<double>;
 
@@ -37,6 +37,6 @@ class Xtl < Formula
       }
     CPP
     system ENV.cxx, "-std=c++17", "test.cpp", "-o", "test", "-I#{include}"
-    assert_equal "-6,8", shell_output(".test").strip
+    assert_equal "-6,8", shell_output("./test").strip
   end
 end

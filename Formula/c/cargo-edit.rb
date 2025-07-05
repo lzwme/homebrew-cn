@@ -1,7 +1,7 @@
 class CargoEdit < Formula
   desc "Utility for managing cargo dependencies from the command-line"
-  homepage "https:killercup.github.iocargo-edit"
-  url "https:github.comkillercupcargo-editarchiverefstagsv0.13.6.tar.gz"
+  homepage "https://killercup.github.io/cargo-edit/"
+  url "https://ghfast.top/https://github.com/killercup/cargo-edit/archive/refs/tags/v0.13.6.tar.gz"
   sha256 "325975345522decc9089635bb19b61c30942254a34b570925049fb56672d400d"
   license "MIT"
 
@@ -25,15 +25,15 @@ class CargoEdit < Formula
 
   test do
     # Show that we can use a different toolchain than the one provided by the `rust` formula.
-    # https:github.comHomebrewhomebrew-corepull134074#pullrequestreview-1484979359
+    # https://github.com/Homebrew/homebrew-core/pull/134074#pullrequestreview-1484979359
     ENV.prepend_path "PATH", Formula["rustup"].bin
     system "rustup", "set", "profile", "minimal"
     system "rustup", "default", "beta"
 
-    crate = testpath"demo-crate"
+    crate = testpath/"demo-crate"
     mkdir crate do
-      (crate"srcmain.rs").write " Dummy file"
-      (crate"Cargo.toml").write <<~TOML
+      (crate/"src/main.rs").write "// Dummy file"
+      (crate/"Cargo.toml").write <<~TOML
         [package]
         name = "demo-crate"
         version = "0.1.0"
@@ -42,11 +42,11 @@ class CargoEdit < Formula
         clap = "2"
       TOML
 
-      system bin"cargo-set-version", "set-version", "0.2.0"
-      assert_match 'version = "0.2.0"', (crate"Cargo.toml").read
+      system bin/"cargo-set-version", "set-version", "0.2.0"
+      assert_match 'version = "0.2.0"', (crate/"Cargo.toml").read
 
       system "cargo", "rm", "clap"
-      refute_match("clap", (crate"Cargo.toml").read)
+      refute_match("clap", (crate/"Cargo.toml").read)
     end
   end
 end

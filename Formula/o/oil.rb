@@ -1,13 +1,13 @@
 class Oil < Formula
   desc "Bash-compatible Unix shell with more consistent syntax and semantics"
-  homepage "https:oils.pub"
-  url "https:oils.pubdownloadoil-0.28.0.tar.gz"
+  homepage "https://oils.pub/"
+  url "https://oils.pub/download/oil-0.28.0.tar.gz"
   sha256 "7fbbad0b5a3f91ccc89aa4b124da2d7b86be09c784a18290b9a76ede043631f3"
   license "Apache-2.0"
 
   livecheck do
-    url "https:oils.pubreleases.html"
-    regex(href=.*?oil[._-]v?(\d+(?:\.\d+)+)\.ti)
+    url "https://oils.pub/releases.html"
+    regex(/href=.*?oil[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   bottle do
@@ -26,34 +26,34 @@ class Oil < Formula
   conflicts_with "etsh", "omake", because: "both install 'osh' binaries"
 
   def install
-    # Workaround for newer ClangGCC
+    # Workaround for newer Clang/GCC
     ENV.append_to_cflags "-Wno-implicit-function-declaration"
 
-    system ".configure", "--prefix=#{prefix}",
+    system "./configure", "--prefix=#{prefix}",
                           "--datarootdir=#{share}",
                           "--with-readline=#{Formula["readline"].opt_prefix}"
     system "make"
-    system ".install"
+    system "./install"
 
     # patchelf.rb cannot handle ELF with appended zip data so keep the original files
-    # used at https:github.comoils-for-unixoilsblobmasterMakefile#L189-L190
-    libexec.install "_buildoilovm-opt.stripped", "_buildoilbytecode-opy.zip" if build.bottle? && OS.linux?
+    # used at https://github.com/oils-for-unix/oils/blob/master/Makefile#L189-L190
+    libexec.install "_build/oil/ovm-opt.stripped", "_build/oil/bytecode-opy.zip" if build.bottle? && OS.linux?
   end
 
   def post_install
     if libexec.exist?
-      bin.install libexec"ovm-opt.stripped" => "oil.ovm"
-      (bin"oil.ovm").binwrite((libexec"bytecode-opy.zip").binread, mode: "a")
-      (bin"oil.ovm").chmod(0555)
+      bin.install libexec/"ovm-opt.stripped" => "oil.ovm"
+      (bin/"oil.ovm").binwrite((libexec/"bytecode-opy.zip").binread, mode: "a")
+      (bin/"oil.ovm").chmod(0555)
       rm_r(libexec)
     end
   end
 
   test do
-    system bin"osh", "-c", "shopt -q parse_backticks"
-    assert_equal testpath.to_s, shell_output("#{bin}osh -c 'echo `pwd -P`'").strip
+    system bin/"osh", "-c", "shopt -q parse_backticks"
+    assert_equal testpath.to_s, shell_output("#{bin}/osh -c 'echo `pwd -P`'").strip
 
-    system bin"oil", "-c", "shopt -u parse_equals"
-    assert_equal "bar", shell_output("#{bin}oil -c 'var foo = \"bar\"; write $foo'").strip
+    system bin/"oil", "-c", "shopt -u parse_equals"
+    assert_equal "bar", shell_output("#{bin}/oil -c 'var foo = \"bar\"; write $foo'").strip
   end
 end

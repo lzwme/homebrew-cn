@@ -1,14 +1,14 @@
 class VulkanVolk < Formula
   desc "Meta loader for Vulkan API"
-  homepage "https:github.comzeuxvolk"
-  url "https:github.comzeuxvolkarchiverefstagsvulkan-sdk-1.4.313.0.tar.gz"
+  homepage "https://github.com/zeux/volk"
+  url "https://ghfast.top/https://github.com/zeux/volk/archive/refs/tags/vulkan-sdk-1.4.313.0.tar.gz"
   sha256 "d86bcf1aff499f41a3e445b55df5e393a5ce49b1bda689eb7335b0a0a54a3c0b"
   license "MIT"
-  head "https:github.comzeuxvolk.git", branch: "master"
+  head "https://github.com/zeux/volk.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(^(?:vulkan[._-])?sdk[._-]v?(\d+(?:\.\d+)+)$i)
+    regex(/^(?:vulkan[._-])?sdk[._-]v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -50,7 +50,7 @@ class VulkanVolk < Formula
   end
 
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include <stdio.h>
       #include "volk.h"
 
@@ -65,12 +65,12 @@ class VulkanVolk < Formula
         }
       }
     C
-    system ENV.cc, testpath"test.c",
+    system ENV.cc, testpath/"test.c",
            "-I#{include}", "-L#{lib}",
            "-I#{Formula["vulkan-headers"].include}",
            "-lvolk", "-D#{volk_static_defines}",
            "-Wl,-rpath,#{Formula["vulkan-loader"].opt_lib}",
-           "-o", testpath"test"
-    system testpath"test"
+           "-o", testpath/"test"
+    system testpath/"test"
   end
 end

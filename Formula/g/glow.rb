@@ -1,7 +1,7 @@
 class Glow < Formula
   desc "Render markdown on the CLI"
-  homepage "https:github.comcharmbraceletglow"
-  url "https:github.comcharmbraceletglowarchiverefstagsv2.1.1.tar.gz"
+  homepage "https://github.com/charmbracelet/glow"
+  url "https://ghfast.top/https://github.com/charmbracelet/glow/archive/refs/tags/v2.1.1.tar.gz"
   sha256 "f13e1d6be1ab4baf725a7fedc4cd240fc7e5c7276af2d92f199e590e1ef33967"
   license "MIT"
 
@@ -19,11 +19,11 @@ class Glow < Formula
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w -X main.Version=#{version}")
 
-    generate_completions_from_executable(bin"glow", "completion")
+    generate_completions_from_executable(bin/"glow", "completion")
   end
 
   test do
-    test_file = testpath"test.md"
+    test_file = testpath/"test.md"
     test_file.write <<~EOS
       # header
 
@@ -35,11 +35,11 @@ class Glow < Formula
     EOS
 
     # failed with Linux CI run, but works with local run
-    # https:github.comcharmbraceletglowissues454
+    # https://github.com/charmbracelet/glow/issues/454
     if OS.linux?
-      system bin"glow", test_file
+      system bin/"glow", test_file
     else
-      assert_match "# header", shell_output("#{bin}glow #{test_file}")
+      assert_match "# header", shell_output("#{bin}/glow #{test_file}")
     end
   end
 end

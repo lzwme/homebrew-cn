@@ -1,10 +1,10 @@
 class Topgrade < Formula
   desc "Upgrade all the things"
-  homepage "https:github.comtopgrade-rstopgrade"
-  url "https:github.comtopgrade-rstopgradearchiverefstagsv16.0.4.tar.gz"
+  homepage "https://github.com/topgrade-rs/topgrade"
+  url "https://ghfast.top/https://github.com/topgrade-rs/topgrade/archive/refs/tags/v16.0.4.tar.gz"
   sha256 "62cfb4eacfe96ba74d510159812fb87076a31c595efd43eb44cb610ca11f5c9d"
   license "GPL-3.0-or-later"
-  head "https:github.comtopgrade-rstopgrade.git", branch: "main"
+  head "https://github.com/topgrade-rs/topgrade.git", branch: "main"
 
   livecheck do
     url :stable
@@ -26,16 +26,16 @@ class Topgrade < Formula
   def install
     system "cargo", "install", *std_cargo_args
 
-    generate_completions_from_executable(bin"topgrade", "--gen-completion")
-    (man1"topgrade.1").write Utils.safe_popen_read(bin"topgrade", "--gen-manpage")
+    generate_completions_from_executable(bin/"topgrade", "--gen-completion")
+    (man1/"topgrade.1").write Utils.safe_popen_read(bin/"topgrade", "--gen-manpage")
   end
 
   test do
     ENV["TOPGRADE_SKIP_BRKC_NOTIFY"] = "true"
-    assert_match version.to_s, shell_output("#{bin}topgrade --version")
+    assert_match version.to_s, shell_output("#{bin}/topgrade --version")
 
-    output = shell_output("#{bin}topgrade -n --only brew_formula")
-    assert_match %r{Dry running: (?:#{HOMEBREW_PREFIX}bin)?brew upgrade}o, output
-    refute_match(\sSelf update\s, output)
+    output = shell_output("#{bin}/topgrade -n --only brew_formula")
+    assert_match %r{Dry running: (?:#{HOMEBREW_PREFIX}/bin/)?brew upgrade}o, output
+    refute_match(/\sSelf update\s/, output)
   end
 end

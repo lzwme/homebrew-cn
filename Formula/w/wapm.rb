@@ -1,10 +1,10 @@
 class Wapm < Formula
   desc "WebAssembly Package Manager (CLI)"
-  homepage "https:wapm.io"
-  url "https:github.comwasmeriowapm-cliarchiverefstagsv0.5.9.tar.gz"
+  homepage "https://wapm.io/"
+  url "https://ghfast.top/https://github.com/wasmerio/wapm-cli/archive/refs/tags/v0.5.9.tar.gz"
   sha256 "67f98e7e584ee05b53a70e19624ca73538aef28f46e1bb31c49262ba0e00a2ec"
   license "MIT"
-  head "https:github.comwasmeriowapm-cli.git", branch: "master"
+  head "https://github.com/wasmerio/wapm-cli.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -40,11 +40,11 @@ class Wapm < Formula
 
   test do
     ENV["WASMER_DIR"] = ".wasmer"
-    ENV["WASMER_CACHE_DIR"] = "#{ENV["WASMER_DIR"]}cache"
+    ENV["WASMER_CACHE_DIR"] = "#{ENV["WASMER_DIR"]}/cache"
     Dir.mkdir ENV["WASMER_DIR"]
     Dir.mkdir ENV["WASMER_CACHE_DIR"]
 
-    system bin"wapm", "install", "cowsay"
+    system bin/"wapm", "install", "cowsay"
 
     expected_output = <<~'EOF'
        _____________
@@ -52,12 +52,12 @@ class Wapm < Formula
        -------------
               \   ^__^
                \  (oo)\_______
-                  (__)\       )\\
+                  (__)\       )\/\
                      ||----w |
                       ||     ||
     EOF
-    assert_equal expected_output, shell_output("#{bin}wapm run cowsay hello wapm!")
+    assert_equal expected_output, shell_output("#{bin}/wapm run cowsay hello wapm!")
 
-    system bin"wapm", "uninstall", "cowsay"
+    system bin/"wapm", "uninstall", "cowsay"
   end
 end

@@ -1,10 +1,10 @@
 class Hyperfine < Formula
   desc "Command-line benchmarking tool"
-  homepage "https:github.comsharkdphyperfine"
-  url "https:github.comsharkdphyperfinearchiverefstagsv1.19.0.tar.gz"
+  homepage "https://github.com/sharkdp/hyperfine"
+  url "https://ghfast.top/https://github.com/sharkdp/hyperfine/archive/refs/tags/v1.19.0.tar.gz"
   sha256 "d1c782a54b9ebcdc1dedf8356a25ee11e11099a664a7d9413fdd3742138fa140"
   license any_of: ["Apache-2.0", "MIT"]
-  head "https:github.comsharkdphyperfine.git", branch: "master"
+  head "https://github.com/sharkdp/hyperfine.git", branch: "master"
 
   bottle do
     rebuild 1
@@ -27,11 +27,11 @@ class Hyperfine < Formula
     bash_completion.install "hyperfine.bash" => "hyperfine"
     fish_completion.install "hyperfine.fish"
     zsh_completion.install "_hyperfine"
-    man1.install "dochyperfine.1"
+    man1.install "doc/hyperfine.1"
   end
 
   test do
-    output = shell_output("#{bin}hyperfine 'sleep 0.3'")
+    output = shell_output("#{bin}/hyperfine 'sleep 0.3'")
     assert_match "Benchmark 1: sleep", output
   end
 end

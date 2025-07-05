@@ -1,14 +1,14 @@
 class Nmap < Formula
   desc "Port scanning utility for large networks"
-  homepage "https:nmap.org"
-  url "https:nmap.orgdistnmap-7.97.tar.bz2"
+  homepage "https://nmap.org/"
+  url "https://nmap.org/dist/nmap-7.97.tar.bz2"
   sha256 "af98f27925c670c257dd96a9ddf2724e06cb79b2fd1e0d08c9206316be1645c0"
   license :cannot_represent
-  head "https:svn.nmap.orgnmap"
+  head "https://svn.nmap.org/nmap/"
 
   livecheck do
-    url "https:nmap.orgdownload"
-    regex(href=.*?nmap[._-]v?(\d+(?:\.\d+)+)\.ti)
+    url "https://nmap.org/download"
+    regex(/href=.*?nmap[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   bottle do
@@ -23,7 +23,7 @@ class Nmap < Formula
 
   depends_on "liblinear"
   depends_on "libssh2"
-  # Check supported Lua version at https:github.comnmapnmaptreemasterliblua.
+  # Check supported Lua version at https://github.com/nmap/nmap/tree/master/liblua.
   depends_on "lua"
   depends_on "openssl@3"
   depends_on "pcre2"
@@ -39,13 +39,13 @@ class Nmap < Formula
 
   def install
     # Fix to missing VERSION file
-    # https:github.comnmapnmappull3111
-    mv "libpcapVERSION.txt", "libpcapVERSION"
+    # https://github.com/nmap/nmap/pull/3111
+    mv "libpcap/VERSION.txt", "libpcap/VERSION"
 
     ENV.deparallelize
 
     libpcap_path = if OS.mac?
-      MacOS.sdk_path"usr"
+      MacOS.sdk_path/"usr/"
     else
       Formula["libpcap"].opt_prefix
     end
@@ -61,7 +61,7 @@ class Nmap < Formula
       --without-ndiff
     ]
 
-    system ".configure", *args, *std_configure_args
+    system "./configure", *args, *std_configure_args
     system "make" # separate steps required otherwise the build fails
     system "make", "install"
 
@@ -78,6 +78,6 @@ class Nmap < Formula
   end
 
   test do
-    system bin"nmap", "-p80,443", "google.com"
+    system bin/"nmap", "-p80,443", "google.com"
   end
 end

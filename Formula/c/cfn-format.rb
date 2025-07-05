@@ -1,10 +1,10 @@
 class CfnFormat < Formula
   desc "Command-line tool for formatting AWS CloudFormation templates"
-  homepage "https:github.comaws-cloudformationrain"
-  url "https:github.comaws-cloudformationrainarchiverefstagsv1.23.0.tar.gz"
+  homepage "https://github.com/aws-cloudformation/rain"
+  url "https://ghfast.top/https://github.com/aws-cloudformation/rain/archive/refs/tags/v1.23.0.tar.gz"
   sha256 "820724a0cde1066345982b81b42921af86906966d0e51151ed24a6e3c1f08740"
   license "Apache-2.0"
-  head "https:github.comaws-cloudformationrain.git", branch: "main"
+  head "https://github.com/aws-cloudformation/rain.git", branch: "main"
 
   livecheck do
     formula "rain"
@@ -22,15 +22,15 @@ class CfnFormat < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), ".cmdcfn-format"
+    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/cfn-format"
   end
 
   test do
-    (testpath"test.template").write <<~YAML
+    (testpath/"test.template").write <<~YAML
       Resources:
         Bucket:
           Type: AWS::S3::Bucket
     YAML
-    assert_equal "test.template: formatted OK", shell_output("#{bin}cfn-format -v test.template").strip
+    assert_equal "test.template: formatted OK", shell_output("#{bin}/cfn-format -v test.template").strip
   end
 end

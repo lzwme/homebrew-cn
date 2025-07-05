@@ -1,14 +1,14 @@
 class LandoCli < Formula
   desc "Cli part of Lando"
-  homepage "https:docs.lando.devcli"
-  url "https:github.comlandocorearchiverefstagsv3.24.3.tar.gz"
+  homepage "https://docs.lando.dev/cli"
+  url "https://ghfast.top/https://github.com/lando/core/archive/refs/tags/v3.24.3.tar.gz"
   sha256 "f40c9613fd6c6317bcbe335d24008b4fb07772a926d68e0d2b9de129781e5b6f"
   license "GPL-3.0-or-later"
-  head "https:github.comlandocore.git", branch: "main"
+  head "https://github.com/lando/core.git", branch: "main"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -25,8 +25,8 @@ class LandoCli < Formula
 
   def install
     system "npm", "install", *std_npm_args
-    bin.install libexec.glob("bin*")
-    bin.env_script_all_files libexec"bin", LANDO_CHANNEL: "none"
+    bin.install libexec.glob("bin/*")
+    bin.env_script_all_files libexec/"bin", LANDO_CHANNEL: "none"
   end
 
   def caveats
@@ -37,7 +37,7 @@ class LandoCli < Formula
   end
 
   test do
-    assert_match "none", shell_output("#{bin}lando config --path channel")
-    assert_match "127.0.0.1", shell_output("#{bin}lando config --path proxyIp")
+    assert_match "none", shell_output("#{bin}/lando config --path channel")
+    assert_match "127.0.0.1", shell_output("#{bin}/lando config --path proxyIp")
   end
 end

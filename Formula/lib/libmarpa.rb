@@ -1,10 +1,10 @@
 class Libmarpa < Formula
   desc "Marpa parse engine C library -- STABLE"
-  homepage "https:jeffreykegler.github.ioMarpa-web-sitelibmarpa.html"
-  url "https:github.comjeffreykeglerlibmarpaarchiverefstagsv11.0.13.tar.gz"
+  homepage "https://jeffreykegler.github.io/Marpa-web-site/libmarpa.html"
+  url "https://ghfast.top/https://github.com/jeffreykegler/libmarpa/archive/refs/tags/v11.0.13.tar.gz"
   sha256 "cb3c7f47d9ee95de967838ea0ecc380ffacfdfd8ec2c3d7cc2a6acaa4cc9597b"
   license "MIT"
-  head "https:github.comjeffreykeglerlibmarpa.git", branch: "tested"
+  head "https://github.com/jeffreykegler/libmarpa.git", branch: "tested"
 
   no_autobump! because: :requires_manual_review
 
@@ -29,18 +29,18 @@ class Libmarpa < Formula
 
   def install
     ENV.deparallelize
-    inreplace "worketclibmarpa.pc.in", "prefix=\".\"", "prefix=\"#{prefix}\""
-    inreplace "workacMakefile.am", "git log -n 5", "## git log -n 5"
+    inreplace "work/etc/libmarpa.pc.in", "prefix=\".\"", "prefix=\"#{prefix}\""
+    inreplace "work/ac/Makefile.am", "git log -n 5", "## git log -n 5"
     system "make", "ac_dist"
     mkdir "build" do
-      system "..ac_distconfigure", *std_configure_args, "--disable-silent-rules"
+      system "../ac_dist/configure", *std_configure_args, "--disable-silent-rules"
       system "make", "install"
-      (lib"pkgconfig").install "libmarpa.pc"
+      (lib/"pkgconfig").install "libmarpa.pc"
     end
   end
 
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include <marpa.h>
       int main(void)
       {
@@ -51,6 +51,6 @@ class Libmarpa < Formula
       }
     C
     system ENV.cc, "test.c", "-L#{lib}", "-lmarpa", "-o", "test"
-    system ".test"
+    system "./test"
   end
 end

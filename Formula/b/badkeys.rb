@@ -2,11 +2,11 @@ class Badkeys < Formula
   include Language::Python::Virtualenv
 
   desc "Tool to find common vulnerabilities in cryptographic public keys"
-  homepage "https:badkeys.info"
-  url "https:files.pythonhosted.orgpackages8bfe01e4617b44bbb352023bc1ee7e2eef4358d59d0bab9677f52698dbff44b1badkeys-0.0.13.tar.gz"
+  homepage "https://badkeys.info"
+  url "https://files.pythonhosted.org/packages/8b/fe/01e4617b44bbb352023bc1ee7e2eef4358d59d0bab9677f52698dbff44b1/badkeys-0.0.13.tar.gz"
   sha256 "6013a2496221993d726ab624170108b82ed188bf2b03eb032cfaaee17354530e"
   license "MIT"
-  head "https:github.combadkeysbadkeys.git", branch: "main"
+  head "https://github.com/badkeys/badkeys.git", branch: "main"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "091903ae93eaf73bcd25d6af039458e5df16e2802638fdf8d40179f0b993a4ff"
@@ -25,7 +25,7 @@ class Badkeys < Formula
   depends_on "python@3.13"
 
   resource "gmpy2" do
-    url "https:files.pythonhosted.orgpackages07bdc6c154ce734a3e6187871b323297d8e5f3bdf9feaafc5212381538bc19e4gmpy2-2.2.1.tar.gz"
+    url "https://files.pythonhosted.org/packages/07/bd/c6c154ce734a3e6187871b323297d8e5f3bdf9feaafc5212381538bc19e4/gmpy2-2.2.1.tar.gz"
     sha256 "e83e07567441b78cb87544910cb3cc4fe94e7da987e93ef7622e76fb96650432"
   end
 
@@ -34,22 +34,22 @@ class Badkeys < Formula
   end
 
   test do
-    output = shell_output("#{bin}badkeys --update-bl")
+    output = shell_output("#{bin}/badkeys --update-bl")
     assert_match "Writing new badkeysdata.json...", output
 
-    # taken from https:raw.githubusercontent.combadkeysbadkeysmaintestsdatarsa-debianweak.key
-    (testpath"rsa-debianweak.key").write <<~EOS
+    # taken from https://ghfast.top/https://raw.githubusercontent.com/badkeys/badkeys/main/tests/data/rsa-debianweak.key
+    (testpath/"rsa-debianweak.key").write <<~EOS
       -----BEGIN RSA PUBLIC KEY-----
-      MIIBCgKCAQEAwJZTDExKNDDiP+LbhTIi2F0hZZt0PdX897LLwPf3+b1GOCUj1OH
-      BZvVqhJPJtOPE53W68I0NgVhaJdY6bFOAcUUIFnN0yZOJOJsPNle1aXQTjxAS+
-      FXu4CQ6a2pzcU+9+gGwed7XxAkIVCiTprfmRCI2vIKdb61S8kf5D3YdVRHTq977
+      MIIBCgKCAQEAwJZTDExKND/DiP+LbhTIi2F0hZZt0PdX897LLwPf3+b1GOCUj1OH
+      BZvVqhJPJtOPE53W68I0NgVhaJdY6bFOA/cUUIFnN0y/ZOJOJsPNle1aXQTjxAS+
+      FXu4CQ6a2pzcU+9+gGwed7XxAkIVCiTprfmRCI2vIKdb61S8kf5D3YdVRH/Tq977
       nxyYeosEGYJFBOIT+N0mqca37S8hA9hCJyD3p0AM40dD5M5ARAxpAT7+oqOXkPzf
-      zLtCTaHYJK3+WAce121Br4NuQJPqYPVxniUPohT4YxFTqB7vwX2C4gZ2ldpHtlg
+      zLtCTaHYJK3+WAce121Br4NuQJPqYPVxniUPohT4YxFTqB7vwX2C4/gZ2ldpHtlg
       JVAHT96nOsnlz+EPa5GtwxtALD43CwOlWQIDAQAB
       -----END RSA PUBLIC KEY-----
     EOS
 
-    output = shell_output("#{bin}badkeys #{testpath}rsa-debianweak.key")
-    assert_match "blocklistdebianssl vulnerability, rsa[2048], #{testpath}rsa-debianweak.key", output
+    output = shell_output("#{bin}/badkeys #{testpath}/rsa-debianweak.key")
+    assert_match "blocklist/debianssl vulnerability, rsa[2048], #{testpath}/rsa-debianweak.key", output
   end
 end

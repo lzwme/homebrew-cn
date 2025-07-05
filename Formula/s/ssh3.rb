@@ -1,10 +1,10 @@
 class Ssh3 < Formula
-  desc "Faster and richer secure shell using HTTP3"
-  homepage "https:github.comfrancoismichelssh3"
-  url "https:github.comfrancoismichelssh3archiverefstagsv0.1.7.tar.gz"
+  desc "Faster and richer secure shell using HTTP/3"
+  homepage "https://github.com/francoismichel/ssh3"
+  url "https://ghfast.top/https://github.com/francoismichel/ssh3/archive/refs/tags/v0.1.7.tar.gz"
   sha256 "23a88d0d7f54f80d752c22ee5f879fa1daf8c320ece364287209c58b3e98b6b5"
   license "Apache-2.0"
-  head "https:github.comfrancoismichelssh3.git", branch: "main"
+  head "https://github.com/francoismichel/ssh3.git", branch: "main"
 
   no_autobump! because: :requires_manual_review
 
@@ -25,16 +25,16 @@ class Ssh3 < Formula
 
   def install
     ldflags = "-s -w"
-    system "go", "build", *std_go_args(ldflags:, output: bin"ssh3"), ".cmdssh3"
-    system "go", "build", *std_go_args(ldflags:, output: bin"ssh3-server"), ".cmdssh3-server"
+    system "go", "build", *std_go_args(ldflags:, output: bin/"ssh3"), "./cmd/ssh3"
+    system "go", "build", *std_go_args(ldflags:, output: bin/"ssh3-server"), "./cmd/ssh3-server"
   end
 
   test do
-    system bin"ssh3-server",
+    system bin/"ssh3-server",
            "-generate-selfsigned-cert",
            "-key", "test.key",
            "-cert", "test.pem"
-    assert_path_exists testpath"test.key"
-    assert_path_exists testpath"test.pem"
+    assert_path_exists testpath/"test.key"
+    assert_path_exists testpath/"test.pem"
   end
 end

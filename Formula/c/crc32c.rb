@@ -1,10 +1,10 @@
 class Crc32c < Formula
   desc "Implementation of CRC32C with CPU-specific acceleration"
-  homepage "https:github.comgooglecrc32c"
-  url "https:github.comgooglecrc32carchiverefstags1.1.2.tar.gz"
+  homepage "https://github.com/google/crc32c"
+  url "https://ghfast.top/https://github.com/google/crc32c/archive/refs/tags/1.1.2.tar.gz"
   sha256 "ac07840513072b7fcebda6e821068aa04889018f24e10e46181068fb214d7e56"
   license "BSD-3-Clause"
-  head "https:github.comgooglecrc32c.git", branch: "main"
+  head "https://github.com/google/crc32c.git", branch: "main"
 
   no_autobump! because: :requires_manual_review
 
@@ -43,9 +43,9 @@ class Crc32c < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~CPP
+    (testpath/"test.cpp").write <<~CPP
       #include <cassert>
-      #include <crc32ccrc32c.h>
+      #include <crc32c/crc32c.h>
       #include <cstdint>
       #include <string>
 
@@ -59,6 +59,6 @@ class Crc32c < Formula
     CPP
 
     system ENV.cxx, "test.cpp", "-I#{include}", "-L#{lib}", "-lcrc32c", "-std=c++11", "-o", "test"
-    system ".test"
+    system "./test"
   end
 end

@@ -1,14 +1,14 @@
 class Vsftpd < Formula
   desc "Secure FTP server for UNIX"
-  homepage "https:security.appspot.comvsftpd.html"
-  url "https:security.appspot.comdownloadsvsftpd-3.0.5.tar.gz"
-  mirror "https:fossies.orglinuxmiscvsftpd-3.0.5.tar.gz"
+  homepage "https://security.appspot.com/vsftpd.html"
+  url "https://security.appspot.com/downloads/vsftpd-3.0.5.tar.gz"
+  mirror "https://fossies.org/linux/misc/vsftpd-3.0.5.tar.gz"
   sha256 "26b602ae454b0ba6d99ef44a09b6b9e0dfa7f67228106736df1f278c70bc91d3"
   license "GPL-2.0-only"
 
   livecheck do
     url :homepage
-    regex(href=.*?vsftpd[._-]v?(\d+(?:\.\d+)+)\.ti)
+    regex(/href=.*?vsftpd[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -34,7 +34,7 @@ class Vsftpd < Formula
   # Patch to remove UTMPX dependency, locate macOS's PAM library, and
   # remove incompatible LDFLAGS. (reported to developer via email)
   patch do
-    url "https:raw.githubusercontent.comHomebrewformula-patches5fbea7b01a521f840f51be6ffec29f612a37eed3vsftpd3.0.3.patch"
+    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/5fbea7b01a521f840f51be6ffec29f612a37eed3/vsftpd/3.0.3.patch"
     sha256 "c158fac428e06e16219e332c3897c3f730586e55d0ef3a670ed3c716e3de5371"
   end
 
@@ -42,14 +42,14 @@ class Vsftpd < Formula
   # Monterey does not support this syscall. (reported to developer via
   # GitHub)
   patch do
-    url "https:raw.githubusercontent.comHomebrewformula-patchese4dd5d67152bb2541c5e38e8bb834ed5b165fcaavsftpd3.0.5.patch"
+    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/e4dd5d67152bb2541c5e38e8bb834ed5b165fcaa/vsftpd/3.0.5.patch"
     sha256 "95afc3bc00dd6cc37a2c64b19b1e7e30951ec022f839dbab1773b7716966b9cf"
   end
 
   def install
-    inreplace "defs.h", "etcvsftpd.conf", "#{etc}vsftpd.conf"
-    inreplace "tunables.c", "etc", etc
-    inreplace "tunables.c", "var", var
+    inreplace "defs.h", "/etc/vsftpd.conf", "#{etc}/vsftpd.conf"
+    inreplace "tunables.c", "/etc", etc
+    inreplace "tunables.c", "/var", var
 
     args = OS.linux? ? ["LIBS=-lcap -lpam"] : []
     system "make", *args
@@ -68,16 +68,16 @@ class Vsftpd < Formula
       You should be certain that you trust any software you grant root privileges.
 
       The vsftpd.conf file must be owned by root or vsftpd will refuse to start:
-        sudo chown root #{HOMEBREW_PREFIX}etcvsftpd.conf
+        sudo chown root #{HOMEBREW_PREFIX}/etc/vsftpd.conf
     EOS
   end
 
   service do
-    run [opt_sbin"vsftpd", etc"vsftpd.conf"]
+    run [opt_sbin/"vsftpd", etc/"vsftpd.conf"]
     require_root true
   end
 
   test do
-    assert_match version.to_s, shell_output("#{sbin}vsftpd -v 0>&1")
+    assert_match version.to_s, shell_output("#{sbin}/vsftpd -v 0>&1")
   end
 end

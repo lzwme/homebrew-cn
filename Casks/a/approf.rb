@@ -2,10 +2,10 @@ cask "approf" do
   version "14.1.3"
   sha256 "cc6317df3877668b94d88643ae57b974e30c713ff2593e4f8d7755c9f58f28c2"
 
-  url "https:github.commoderato-appapprofreleasesdownloadv#{version}approf-#{version}.app.zip"
+  url "https://ghfast.top/https://github.com/moderato-app/approf/releases/download/v#{version}/approf-#{version}.app.zip"
   name "approf"
   desc "Native app for pprof"
-  homepage "https:github.commoderato-appapprof"
+  homepage "https://github.com/moderato-app/approf"
 
   no_autobump! because: :requires_manual_review
 
@@ -17,11 +17,11 @@ cask "approf" do
   uninstall quit: "the.future.app.approf.approf"
 
   zap trash: [
-    "~LibraryApplication Supportthe.future.app.approf.approf.plist",
-    "~LibraryCachesthe.future.app.approf.approf",
-    "~LibraryCookiesthe.future.app.approf.approf.binarycookies",
-    "~LibraryHTTPStoragesthe.future.app.approf.approf",
-    "~LibraryLaunchAgentsthe.future.app.approf.approf.plist",
-    "~LibraryPreferencesthe.future.app.approf.approf.plist",
+    "~/Library/Application Support/the.future.app.approf.approf.plist",
+    "~/Library/Caches/the.future.app.approf.approf",
+    "~/Library/Cookies/the.future.app.approf.approf.binarycookies",
+    "~/Library/HTTPStorages/the.future.app.approf.approf",
+    "~/Library/LaunchAgents/the.future.app.approf.approf.plist",
+    "~/Library/Preferences/the.future.app.approf.approf.plist",
   ]
 end

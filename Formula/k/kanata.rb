@@ -1,10 +1,10 @@
 class Kanata < Formula
   desc "Cross-platform software keyboard remapper for Linux, macOS and Windows"
-  homepage "https:github.comjtrookanata"
-  url "https:github.comjtrookanataarchiverefstagsv1.9.0.tar.gz"
+  homepage "https://github.com/jtroo/kanata"
+  url "https://ghfast.top/https://github.com/jtroo/kanata/archive/refs/tags/v1.9.0.tar.gz"
   sha256 "754bed4c7317ae14c228288f3a24d23ab6c245e067f996336fc03b58f71c34b6"
   license "LGPL-3.0-only"
-  head "https:github.comjtrookanata.git", branch: "main"
+  head "https://github.com/jtroo/kanata.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "97999cf53908cca6912d7da27f13b4188abc387f141bd0ef97753e98b674ea60"
@@ -23,7 +23,7 @@ class Kanata < Formula
   end
 
   test do
-    (testpath"kanata.kbd").write <<~LISP
+    (testpath/"kanata.kbd").write <<~LISP
       (defsrc
         caps grv         i
                     j    k    l
@@ -48,6 +48,6 @@ class Kanata < Formula
       )
     LISP
 
-    system bin"kanata", "--check"
+    system bin/"kanata", "--check"
   end
 end

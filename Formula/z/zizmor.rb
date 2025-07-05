@@ -1,10 +1,10 @@
 class Zizmor < Formula
   desc "Find security issues in GitHub Actions setups"
-  homepage "https:docs.zizmor.sh"
-  url "https:github.comzizmorcorezizmorarchiverefstagsv1.11.0.tar.gz"
+  homepage "https://docs.zizmor.sh/"
+  url "https://ghfast.top/https://github.com/zizmorcore/zizmor/archive/refs/tags/v1.11.0.tar.gz"
   sha256 "e60c8c280bee3b3a7eba32a961f6aa23d229f7a9db754715b7c98362a7c6dc7f"
   license "MIT"
-  head "https:github.comzizmorcorezizmor.git", branch: "main"
+  head "https://github.com/zizmorcore/zizmor.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "7333ece7f00e1dd057379fa4787fde98ef5d2182fe146ff531cf41d15d7d6dda"
@@ -20,23 +20,23 @@ class Zizmor < Formula
   depends_on "rust" => :build
 
   def install
-    system "cargo", "install", *std_cargo_args(path: "crateszizmor")
+    system "cargo", "install", *std_cargo_args(path: "crates/zizmor")
 
-    generate_completions_from_executable(bin"zizmor", shell_parameter_format: "--completions=")
+    generate_completions_from_executable(bin/"zizmor", shell_parameter_format: "--completions=")
   end
 
   test do
-    (testpath"workflow.yaml").write <<~YAML
+    (testpath/"workflow.yaml").write <<~YAML
       on: push
       jobs:
         vulnerable:
           runs-on: ubuntu-latest
           steps:
             - name: Checkout
-              uses: actionscheckout@v4
+              uses: actions/checkout@v4
     YAML
 
-    output = shell_output("#{bin}zizmor --format plain #{testpath}workflow.yaml", 13)
+    output = shell_output("#{bin}/zizmor --format plain #{testpath}/workflow.yaml", 13)
     assert_match "does not set persist-credentials: false", output
   end
 end

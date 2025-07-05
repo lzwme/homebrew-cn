@@ -1,14 +1,14 @@
 class Libevent < Formula
   desc "Asynchronous event library"
-  homepage "https:libevent.org"
-  url "https:github.comlibeventlibeventarchiverefstagsrelease-2.1.12-stable.tar.gz"
+  homepage "https://libevent.org/"
+  url "https://ghfast.top/https://github.com/libevent/libevent/archive/refs/tags/release-2.1.12-stable.tar.gz"
   sha256 "7180a979aaa7000e1264da484f712d403fcf7679b1e9212c4e3d09f5c93efc24"
   license "BSD-3-Clause"
   revision 1
 
   livecheck do
     url :homepage
-    regex(libevent[._-]v?(\d+(?:\.\d+)+)-stablei)
+    regex(/libevent[._-]v?(\d+(?:\.\d+)+)-stable/i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -34,15 +34,15 @@ class Libevent < Formula
   depends_on "openssl@3"
 
   def install
-    system ".autogen.sh"
-    system ".configure", "--disable-debug-mode", *std_configure_args
+    system "./autogen.sh"
+    system "./configure", "--disable-debug-mode", *std_configure_args
     system "make"
     system "make", "install"
   end
 
   test do
-    (testpath"test.c").write <<~C
-      #include <event2event.h>
+    (testpath/"test.c").write <<~C
+      #include <event2/event.h>
 
       int main()
       {
@@ -53,6 +53,6 @@ class Libevent < Formula
       }
     C
     system ENV.cc, "test.c", "-L#{lib}", "-levent", "-o", "test"
-    system ".test"
+    system "./test"
   end
 end

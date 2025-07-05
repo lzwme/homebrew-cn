@@ -2,10 +2,10 @@ cask "font-gajraj-one" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefontsrawmainoflgajrajoneGajrajOne-Regular.ttf",
-      verified: "github.comgooglefonts"
+  url "https://github.com/google/fonts/raw/main/ofl/gajrajone/GajrajOne-Regular.ttf",
+      verified: "github.com/google/fonts/"
   name "Gajraj One"
-  homepage "https:fonts.google.comspecimenGajraj+One"
+  homepage "https://fonts.google.com/specimen/Gajraj+One"
 
   font "GajrajOne-Regular.ttf"
 

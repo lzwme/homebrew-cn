@@ -1,10 +1,10 @@
 class Afsctool < Formula
   desc "Utility for manipulating APFS and ZFS compressed files"
-  homepage "https:brkirch.wordpress.comafsctool"
-  url "https:github.comRJVBafsctoolarchiverefstagsv1.7.3.tar.gz"
+  homepage "https://brkirch.wordpress.com/afsctool/"
+  url "https://ghfast.top/https://github.com/RJVB/afsctool/archive/refs/tags/v1.7.3.tar.gz"
   sha256 "5776ff5aaf05c513bead107536d9e98e6037019a0de8a1435cc9da89ea8d49b8"
   license all_of: ["GPL-3.0-only", "BSL-1.0"]
-  head "https:github.comRJVBafsctool.git"
+  head "https://github.com/RJVB/afsctool.git"
 
   no_autobump! because: :requires_manual_review
 
@@ -25,30 +25,30 @@ class Afsctool < Formula
   depends_on :macos
 
   resource "lzfse" do
-    url "https:github.comlzfselzfse.git",
+    url "https://github.com/lzfse/lzfse.git",
         revision: "e634ca58b4821d9f3d560cdc6df5dec02ffc93fd"
   end
 
   def install
-    (buildpath"srcprivatelzfse").install resource("lzfse")
+    (buildpath/"src/private/lzfse").install resource("lzfse")
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"
-    bin.install "buildafsctool", "buildzfsctool"
+    bin.install "build/afsctool", "build/zfsctool"
   end
 
   test do
-    path = testpath"foo"
+    path = testpath/"foo"
     sample = "A"*1024*1024
     path.write sample
     original_size = File.stat(path).blocks
 
     test_options = [[], ["-T", "LZFSE"]]
     test_options.each do |x|
-      system bin"afsctool", "-c", *x, path
-      system bin"afsctool", "-v", path
+      system bin/"afsctool", "-c", *x, path
+      system bin/"afsctool", "-v", path
       raise "Did not compress" unless File.stat(path).blocks.between?(1, 10)
 
-      system bin"afsctool", "-d", path
+      system bin/"afsctool", "-d", path
       raise "Did not decompress" if File.stat(path).blocks != original_size
       raise "Data corruption" if path.read != sample
     end

@@ -1,10 +1,10 @@
 class Lhasa < Formula
   desc "LHA implementation to decompress .lzh and .lzs archives"
-  homepage "https:fragglet.github.iolhasa"
-  url "https:github.comfraggletlhasaarchiverefstagsv0.4.0.tar.gz"
+  homepage "https://fragglet.github.io/lhasa/"
+  url "https://ghfast.top/https://github.com/fragglet/lhasa/archive/refs/tags/v0.4.0.tar.gz"
   sha256 "b0ef13e6511044ecb50483b06e630eaa7867473ec563204fe0098c00beeca4f8"
   license "ISC"
-  head "https:github.comfraggletlhasa.git", branch: "master"
+  head "https://github.com/fragglet/lhasa.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -28,7 +28,7 @@ class Lhasa < Formula
   depends_on "pkgconf" => :build
 
   def install
-    system ".autogen.sh", "--prefix=#{prefix}"
+    system "./autogen.sh", "--prefix=#{prefix}"
     system "make", "install"
   end
 
@@ -40,7 +40,7 @@ class Lhasa < Formula
       ].join,
     ].pack("H*")
 
-    pipe_output("#{bin}lha x -", data)
-    assert_equal "foo\n", (testpath"foo").read
+    pipe_output("#{bin}/lha x -", data)
+    assert_equal "foo\n", (testpath/"foo").read
   end
 end

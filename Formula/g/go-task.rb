@@ -1,10 +1,10 @@
 class GoTask < Formula
-  desc "Task is a task runnerbuild tool that aims to be simpler and easier to use"
-  homepage "https:taskfile.dev"
-  url "https:github.comgo-tasktaskarchiverefstagsv3.44.0.tar.gz"
+  desc "Task is a task runner/build tool that aims to be simpler and easier to use"
+  homepage "https://taskfile.dev/"
+  url "https://ghfast.top/https://github.com/go-task/task/archive/refs/tags/v3.44.0.tar.gz"
   sha256 "9a4d91baf8fb3bfa018557f60f8516d8f8b9ee2012eaf5c1eb5d9484db429a06"
   license "MIT"
-  head "https:github.comgo-tasktask.git", branch: "main"
+  head "https://github.com/go-task/task.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "3832db54f9d84ffb0b03edfa1fa16348161e399caae10987da0d7a899a8e1b5a"
@@ -22,19 +22,19 @@ class GoTask < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.comgo-tasktaskv3internalversion.version=#{version}
-      -X github.comgo-tasktaskv3internalversion.sum=#{tap.user}
+      -X github.com/go-task/task/v3/internal/version.version=#{version}
+      -X github.com/go-task/task/v3/internal/version.sum=#{tap.user}
     ]
-    system "go", "build", *std_go_args(ldflags:, output: bin"task"), ".cmdtask"
-    bash_completion.install "completionbashtask.bash" => "task"
-    zsh_completion.install "completionzsh_task" => "_task"
-    fish_completion.install "completionfishtask.fish"
+    system "go", "build", *std_go_args(ldflags:, output: bin/"task"), "./cmd/task"
+    bash_completion.install "completion/bash/task.bash" => "task"
+    zsh_completion.install "completion/zsh/_task" => "_task"
+    fish_completion.install "completion/fish/task.fish"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}task --version")
+    assert_match version.to_s, shell_output("#{bin}/task --version")
 
-    (testpath"Taskfile.yml").write <<~YAML
+    (testpath/"Taskfile.yml").write <<~YAML
       version: '3'
 
       tasks:
@@ -43,7 +43,7 @@ class GoTask < Formula
             - echo 'Testing Taskfile'
     YAML
 
-    output = shell_output("#{bin}task --silent test")
+    output = shell_output("#{bin}/task --silent test")
     assert_match "Testing Taskfile", output
   end
 end

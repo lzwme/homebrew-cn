@@ -1,7 +1,7 @@
 class PythonFreethreading < Formula
   desc "Interpreted, interactive, object-oriented programming language"
-  homepage "https:www.python.org"
-  url "https:www.python.orgftppython3.13.5Python-3.13.5.tgz"
+  homepage "https://www.python.org/"
+  url "https://www.python.org/ftp/python/3.13.5/Python-3.13.5.tgz"
   sha256 "e6190f52699b534ee203d9f417bdbca05a92f23e35c19c691a50ed2942835385"
   license "Python-2.0"
 
@@ -45,58 +45,58 @@ class PythonFreethreading < Formula
     depends_on "libtirpc"
   end
 
-  link_overwrite "libpython3.13tsite-packagespip*"
-  link_overwrite "libpython3.13tsite-packageswheel*"
+  link_overwrite "lib/python3.13t/site-packages/pip*"
+  link_overwrite "lib/python3.13t/site-packages/wheel*"
 
   # Always update to latest release
   resource "flit-core" do
-    url "https:files.pythonhosted.orgpackages6959b6fc2188dfc7ea4f936cd12b49d707f66a1cb7a1d2c16172963534db741bflit_core-3.12.0.tar.gz"
+    url "https://files.pythonhosted.org/packages/69/59/b6fc2188dfc7ea4f936cd12b49d707f66a1cb7a1d2c16172963534db741b/flit_core-3.12.0.tar.gz"
     sha256 "18f63100d6f94385c6ed57a72073443e1a71a4acb4339491615d0f16d6ff01b2"
   end
 
   resource "pip" do
-    url "https:files.pythonhosted.orgpackages59de241caa0ca606f2ec5fe0c1f4261b0465df78d786a38da693864a116c37f4pip-25.1.1.tar.gz"
+    url "https://files.pythonhosted.org/packages/59/de/241caa0ca606f2ec5fe0c1f4261b0465df78d786a38da693864a116c37f4/pip-25.1.1.tar.gz"
     sha256 "3de45d411d308d5054c2168185d8da7f9a2cd753dbac8acbfa88a8909ecd9077"
   end
 
   resource "setuptools" do
-    url "https:files.pythonhosted.orgpackages9e8bdc1773e8e5d07fd27c1632c45c1de856ac3dbf09c0147f782ca6d990cf15setuptools-80.7.1.tar.gz"
+    url "https://files.pythonhosted.org/packages/9e/8b/dc1773e8e5d07fd27c1632c45c1de856ac3dbf09c0147f782ca6d990cf15/setuptools-80.7.1.tar.gz"
     sha256 "f6ffc5f0142b1bd8d0ca94ee91b30c0ca862ffd50826da1ea85258a06fd94552"
   end
 
   resource "wheel" do
-    url "https:files.pythonhosted.orgpackages8a982d9906746cdc6a6ef809ae6338005b3f21bb568bea3165cfc6a243fdc25cwheel-0.45.1.tar.gz"
+    url "https://files.pythonhosted.org/packages/8a/98/2d9906746cdc6a6ef809ae6338005b3f21bb568bea3165cfc6a243fdc25c/wheel-0.45.1.tar.gz"
     sha256 "661e1abd9198507b1409a20c02106d9670b2576e916d58f520316666abca6729"
   end
 
   # Modify default sysconfig to match the brew install layout.
-  # Remove when a non-patching mechanism is added (https:bugs.python.orgissue43976).
+  # Remove when a non-patching mechanism is added (https://bugs.python.org/issue43976).
   # We (ab)use osx_framework_library to exploit pip behaviour to allow --prefix to still work.
   patch do
-    url "https:raw.githubusercontent.comHomebrewformula-patches22f07354b9778579dd3297bbce0ed3d3244dd982python3.13-sysconfig.diff"
+    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/22f07354b9778579dd3297bbce0ed3d3244dd982/python/3.13-sysconfig.diff"
     sha256 "9f2eae1d08720b06ac3d9ef1999c09388b9db39dfb52687fc261ff820bff20c3"
   end
 
   def lib_cellar
     on_macos do
-      return frameworks"PythonT.frameworkVersions"version.major_minor"libpython#{version.major_minor}t"
+      return frameworks/"PythonT.framework/Versions"/version.major_minor/"lib/python#{version.major_minor}t"
     end
     on_linux do
-      return lib"python#{version.major_minor}t"
+      return lib/"python#{version.major_minor}t"
     end
   end
 
   def site_packages_cellar
-    lib_cellar"site-packages"
+    lib_cellar/"site-packages"
   end
 
   # The HOMEBREW_PREFIX location of site-packages.
   def site_packages
-    HOMEBREW_PREFIX"libpython#{version.major_minor}tsite-packages"
+    HOMEBREW_PREFIX/"lib/python#{version.major_minor}t/site-packages"
   end
 
   def python3
-    bin"python#{version.major_minor}t"
+    bin/"python#{version.major_minor}t"
   end
 
   def install
@@ -106,7 +106,7 @@ class PythonFreethreading < Formula
     ENV["PYTHONPATH"] = nil
 
     # Override the auto-detection of libmpdec, which assumes a universal build.
-    # This is currently an inreplace due to https:github.compythoncpythonissues98557.
+    # This is currently an inreplace due to https://github.com/python/cpython/issues/98557.
     if OS.mac?
       inreplace "configure", "libmpdec_machine=universal",
                 "libmpdec_machine=#{ENV["PYTHON_DECIMAL_WITH_MACHINE"] = Hardware::CPU.arm? ? "uint128" : "x64"}"
@@ -138,22 +138,22 @@ class PythonFreethreading < Formula
     # Note: Changing CPPFLAGS causes issues with dbm, so we
     # leave it as-is.
     cflags         = []
-    cflags_nodist  = ["-I#{HOMEBREW_PREFIX}include"]
+    cflags_nodist  = ["-I#{HOMEBREW_PREFIX}/include"]
     ldflags        = []
-    ldflags_nodist = ["-L#{HOMEBREW_PREFIX}lib", "-Wl,-rpath,#{HOMEBREW_PREFIX}lib"]
-    cppflags       = ["-I#{HOMEBREW_PREFIX}include"]
+    ldflags_nodist = ["-L#{HOMEBREW_PREFIX}/lib", "-Wl,-rpath,#{HOMEBREW_PREFIX}/lib"]
+    cppflags       = ["-I#{HOMEBREW_PREFIX}/include"]
 
     if OS.mac?
       # Enabling LTO on Linux makes libpython3.*.a unusable for anyone whose GCC
       # install does not match the one in CI _exactly_ (major and minor version).
-      # https:github.comorgsHomebrewdiscussions3734
+      # https://github.com/orgs/Homebrew/discussions/3734
       args << "--with-lto"
       args << "--enable-framework=#{frameworks}"
       args << "--with-framework-name=PythonT"
       args << "--with-dtrace"
       args << "--with-dbmliborder=ndbm"
 
-      # Avoid linking to libgcc https:mail.python.orgpipermailpython-dev2012-February116205.html
+      # Avoid linking to libgcc https://mail.python.org/pipermail/python-dev/2012-February/116205.html
       args << "MACOSX_DEPLOYMENT_TARGET=#{MacOS.version}"
     else
       args << "--enable-shared"
@@ -161,12 +161,12 @@ class PythonFreethreading < Formula
     end
 
     # Allow python modules to use ctypes.find_library to find homebrew's stuff
-    # even if homebrew is not a usrlocallib. Try this with:
+    # even if homebrew is not a /usr/local/lib. Try this with:
     # `brew install enchant && pip install pyenchant`
-    inreplace ".Libctypesmacholibdyld.py" do |f|
+    inreplace "./Lib/ctypes/macholib/dyld.py" do |f|
       f.gsub! "DEFAULT_LIBRARY_FALLBACK = [",
-              "DEFAULT_LIBRARY_FALLBACK = [ '#{HOMEBREW_PREFIX}lib', '#{Formula["openssl@3"].opt_lib}',"
-      f.gsub! "DEFAULT_FRAMEWORK_FALLBACK = [", "DEFAULT_FRAMEWORK_FALLBACK = [ '#{HOMEBREW_PREFIX}Frameworks',"
+              "DEFAULT_LIBRARY_FALLBACK = [ '#{HOMEBREW_PREFIX}/lib', '#{Formula["openssl@3"].opt_lib}',"
+      f.gsub! "DEFAULT_FRAMEWORK_FALLBACK = [", "DEFAULT_FRAMEWORK_FALLBACK = [ '#{HOMEBREW_PREFIX}/Frameworks',"
     end
 
     args << "CFLAGS=#{cflags.join(" ")}" unless cflags.empty?
@@ -180,52 +180,52 @@ class PythonFreethreading < Formula
       py_cv_module__tkinter=disabled
     ]
 
-    system ".configure", *args
+    system "./configure", *args
     system "make"
 
     ENV.deparallelize do
-      # Tell Python not to install into Applications (default for framework builds)
+      # Tell Python not to install into /Applications (default for framework builds)
       system "make", "install", "PYTHONAPPSDIR=#{prefix}"
       system "make", "frameworkinstallextras", "PYTHONAPPSDIR=#{pkgshare}" if OS.mac?
     end
 
     if OS.mac?
       # Any .app get a " 3" attached, so it does not conflict with python 2.x.
-      prefix.glob("*.app") { |app| mv app, app.to_s.sub(\.app$, " 3.app") }
+      prefix.glob("*.app") { |app| mv app, app.to_s.sub(/\.app$/, " 3.app") }
 
-      pc_dir = lib_cellar.parent"pkgconfig"
+      pc_dir = lib_cellar.parent/"pkgconfig"
 
       # Symlink the pkgconfig files into HOMEBREW_PREFIX so they're accessible.
-      (lib"pkgconfig").install_symlink pc_dir.glob("*#{version.major_minor}t*")
+      (lib/"pkgconfig").install_symlink pc_dir.glob("*#{version.major_minor}t*")
 
       # Prevent third-party packages from building against fragile Cellar paths
       bad_cellar_path_files = [
-        lib_cellar"_sysconfigdata_t_darwin_darwin.py",
-        lib_cellar"config-#{version.major_minor}t-darwinMakefile",
-        pc_dir"python-#{version.major_minor}t.pc",
-        pc_dir"python-#{version.major_minor}t-embed.pc",
+        lib_cellar/"_sysconfigdata_t_darwin_darwin.py",
+        lib_cellar/"config-#{version.major_minor}t-darwin/Makefile",
+        pc_dir/"python-#{version.major_minor}t.pc",
+        pc_dir/"python-#{version.major_minor}t-embed.pc",
       ]
       inreplace bad_cellar_path_files, prefix, opt_prefix
 
       # Help third-party packages find the Python framework
-      inreplace lib_cellar"config-#{version.major_minor}t-darwinMakefile",
-                ^LINKFORSHARED=(.*)PYTHONFRAMEWORKDIR(.*),
+      inreplace lib_cellar/"config-#{version.major_minor}t-darwin/Makefile",
+                /^LINKFORSHARED=(.*)PYTHONFRAMEWORKDIR(.*)/,
                 "LINKFORSHARED=\\1PYTHONFRAMEWORKINSTALLDIR\\2"
 
-      # Fix for https:github.comHomebrewhomebrew-coreissues21212
-      inreplace lib_cellar"_sysconfigdata_t_darwin_darwin.py",
-                %r{('LINKFORSHARED': .*?) (PythonT.frameworkVersions3.\d+PythonT)'}m,
-                "\\1 #{opt_prefix}Frameworks\\2'"
+      # Fix for https://github.com/Homebrew/homebrew-core/issues/21212
+      inreplace lib_cellar/"_sysconfigdata_t_darwin_darwin.py",
+                %r{('LINKFORSHARED': .*?) (PythonT.framework/Versions/3.\d+/PythonT)'}m,
+                "\\1 #{opt_prefix}/Frameworks/\\2'"
 
     else
       # Prevent third-party packages from building against fragile Cellar paths
-      inreplace Dir[lib_cellar"**_sysconfigdata_t_*linux_x86_64-*.py",
-                    lib_cellar"config*Makefile",
-                    bin"python#{version.major_minor}t-config",
-                    lib"pkgconfigpython-3*.pc"],
+      inreplace Dir[lib_cellar/"**/_sysconfigdata_t_*linux_x86_64-*.py",
+                    lib_cellar/"config*/Makefile",
+                    bin/"python#{version.major_minor}t-config",
+                    lib/"pkgconfig/python-3*.pc"],
                 prefix, opt_prefix
 
-      inreplace bin"python#{version.major_minor}t-config",
+      inreplace bin/"python#{version.major_minor}t-config",
                 'prefix_real=$(installed_prefix "$0")',
                 "prefix_real=#{opt_prefix}"
     end
@@ -241,39 +241,39 @@ class PythonFreethreading < Formula
       --no-index
       --no-build-isolation
     ]
-    whl_build = buildpath"whl_build"
+    whl_build = buildpath/"whl_build"
     system python3, "-m", "venv", whl_build
     %w[flit-core wheel setuptools].each do |r|
       resource(r).stage do
-        system whl_build"binpip3", "install", *common_pip_args, "."
+        system whl_build/"bin/pip3", "install", *common_pip_args, "."
       end
     end
     resource("wheel").stage do
-      system whl_build"binpip3", "wheel", *common_pip_args,
+      system whl_build/"bin/pip3", "wheel", *common_pip_args,
                                             "--wheel-dir=#{libexec}",
                                             "."
     end
 
     # Replace bundled pip with our own.
-    rm lib_cellar.glob("ensurepip_bundledpip-*.whl")
+    rm lib_cellar.glob("ensurepip/_bundled/pip-*.whl")
     resource("pip").stage do
-      system whl_build"binpip3", "wheel", *common_pip_args,
-                                            "--wheel-dir=#{lib_cellar}ensurepip_bundled",
+      system whl_build/"bin/pip3", "wheel", *common_pip_args,
+                                            "--wheel-dir=#{lib_cellar}/ensurepip/_bundled",
                                             "."
     end
 
     # Patch ensurepip to bootstrap our updated version of pip
-    inreplace lib_cellar"ensurepip__init__.py" do |s|
-      s.gsub!(_PIP_VERSION = .*, "_PIP_VERSION = \"#{resource("pip").version}\"")
+    inreplace lib_cellar/"ensurepip/__init__.py" do |s|
+      s.gsub!(/_PIP_VERSION = .*/, "_PIP_VERSION = \"#{resource("pip").version}\"")
     end
 
     # Rename idle, pydoc to t variants
-    mv bin"idle#{version.major_minor}", bin"idle#{version.major_minor}t"
-    mv bin"pydoc#{version.major_minor}", bin"pydoc#{version.major_minor}t"
+    mv bin/"idle#{version.major_minor}", bin/"idle#{version.major_minor}t"
+    mv bin/"pydoc#{version.major_minor}", bin/"pydoc#{version.major_minor}t"
 
     # Remove files that conflict with the main python3 formula
     bin.glob("{idle,pydoc}3").map(&:unlink)
-    [bin, lib, lib"pkgconfig", include].each do |directory|
+    [bin, lib, lib/"pkgconfig", include].each do |directory|
       (directory.glob("*python*") - directory.glob("*#{version.major_minor}t*")).map(&:unlink)
     end
     rm_r share
@@ -286,25 +286,25 @@ class PythonFreethreading < Formula
     # Note that while we replaced the ensurepip wheels, there's no guarantee
     # ensurepip actually used them, since other existing installations could
     # have been picked up (and we can't pass --ignore-installed).
-    root_site_packages = lib"python#{version.major_minor}tsite-packages"
-    bundled = lib_cellar"ensurepip_bundled"
+    root_site_packages = lib/"python#{version.major_minor}t/site-packages"
+    bundled = lib_cellar/"ensurepip/_bundled"
     system python3, "-Im", "pip", "install", "-v",
            "--no-deps",
            "--no-index",
            "--upgrade",
            "--isolated",
            "--target=#{root_site_packages}",
-           bundled"pip-#{resource("pip").version}-py3-none-any.whl",
-           libexec"wheel-#{resource("wheel").version}-py3-none-any.whl"
+           bundled/"pip-#{resource("pip").version}-py3-none-any.whl",
+           libexec/"wheel-#{resource("wheel").version}-py3-none-any.whl"
 
     # pip install with --target flag will just place the bin folder into the
     # target, so move its contents into the appropriate location
-    mv (root_site_packages"bin").children, bin
-    rmdir root_site_packages"bin"
+    mv (root_site_packages/"bin").children, bin
+    rmdir root_site_packages/"bin"
 
-    rm [bin"pip", bin"pip3"]
-    mv bin"wheel", bin"wheel#{version.major_minor}t"
-    mv bin"pip#{version.major_minor}", bin"pip#{version.major_minor}t"
+    rm [bin/"pip", bin/"pip3"]
+    mv bin/"wheel", bin/"wheel#{version.major_minor}t"
+    mv bin/"pip#{version.major_minor}", bin/"pip#{version.major_minor}t"
 
     if OS.mac?
       # Replace framework site-packages with a symlink to the real one.
@@ -313,12 +313,12 @@ class PythonFreethreading < Formula
     end
 
     # Write out sitecustomize.py
-    (lib_cellar"sitecustomize.py").atomic_write(sitecustomize)
+    (lib_cellar/"sitecustomize.py").atomic_write(sitecustomize)
 
-    # Mark Homebrew python as externally managed: https:peps.python.orgpep-0668#marking-an-interpreter-as-using-an-external-package-manager
+    # Mark Homebrew python as externally managed: https://peps.python.org/pep-0668/#marking-an-interpreter-as-using-an-external-package-manager
     # Placed after ensurepip since it invokes pip in isolated mode, meaning
     # we can't pass --break-system-packages.
-    (lib_cellar"EXTERNALLY-MANAGED").write <<~INI
+    (lib_cellar/"EXTERNALLY-MANAGED").write <<~INI
       [externally-managed]
       Error=To install Python packages system-wide, try brew install
        xyz, where xyz is the package you are trying to
@@ -327,8 +327,8 @@ class PythonFreethreading < Formula
        If you wish to install a Python library that isn't in Homebrew,
        use a virtual environment:
 
-         #{python3.basename} -m venv pathtovenv
-         source pathtovenvbinactivate
+         #{python3.basename} -m venv path/to/venv
+         source path/to/venv/bin/activate
          #{python3.basename} -m pip install xyz
 
        If you wish to install a Python application that isn't in Homebrew,
@@ -346,7 +346,7 @@ class PythonFreethreading < Formula
        pass the '--user' flag to pip, or set 'user = true' in your pip.conf
        file. Failure to do this can result in a broken Homebrew installation.
 
-       Read more about this behavior here: <https:peps.python.orgpep-0668>
+       Read more about this behavior here: <https://peps.python.org/pep-0668/>
     INI
   end
 
@@ -354,7 +354,7 @@ class PythonFreethreading < Formula
     <<~PYTHON
       # This file is created by Homebrew and is executed on each python startup.
       # Don't print from here, or else python command line scripts may fail!
-      # <https:docs.brew.shHomebrew-and-Python>
+      # <https://docs.brew.sh/Homebrew-and-Python>
       import re
       import os
       import site
@@ -371,30 +371,30 @@ class PythonFreethreading < Formula
                f'     You should `unset PYTHONPATH` to fix this.')
       # Only do this for a brewed python:
       if os.path.realpath(sys.executable).startswith('#{rack}'):
-          # Shuffle Library site-packages to the end of sys.path
-          library_site = 'LibraryPython#{version.major_minor}tsite-packages'
+          # Shuffle /Library site-packages to the end of sys.path
+          library_site = '/Library/Python/#{version.major_minor}t/site-packages'
           library_packages = [p for p in sys.path if p.startswith(library_site)]
           sys.path = [p for p in sys.path if not p.startswith(library_site)]
           # .pth files have already been processed so don't use addsitedir
           sys.path.extend(library_packages)
           # the Cellar site-packages is a symlink to the HOMEBREW_PREFIX
           # site_packages; prefer the shorter paths
-          long_prefix = re.compile(r'#{rack}(?:[0-9\\._abrc]+FrameworksPythonT\\.frameworkVersions#{version.major_minor})?libpython#{version.major_minor}tsite-packages')
+          long_prefix = re.compile(r'#{rack}/(?:[0-9\\._abrc]+/Frameworks/PythonT\\.framework/Versions/#{version.major_minor}/)?lib/python#{version.major_minor}t/site-packages')
           sys.path = [long_prefix.sub('#{site_packages}', p) for p in sys.path]
           # Set the sys.executable to use the opt_prefix. Only do this if PYTHONEXECUTABLE is not
           # explicitly set and we are not in a virtualenv:
           if 'PYTHONEXECUTABLE' not in os.environ and sys.prefix == sys.base_prefix:
-              sys.executable = sys._base_executable = '#{opt_bin}python#{version.major_minor}t'
+              sys.executable = sys._base_executable = '#{opt_bin}/python#{version.major_minor}t'
       if 'PYTHONHOME' not in os.environ:
-          cellar_prefix = re.compile(r'#{rack}[0-9\\._abrc]+')
+          cellar_prefix = re.compile(r'#{rack}/[0-9\\._abrc]+/')
           if os.path.realpath(sys.base_prefix).startswith('#{rack}'):
-              new_prefix = cellar_prefix.sub('#{opt_prefix}', sys.base_prefix)
+              new_prefix = cellar_prefix.sub('#{opt_prefix}/', sys.base_prefix)
               site.PREFIXES[:] = [new_prefix if x == sys.base_prefix else x for x in site.PREFIXES]
               if sys.prefix == sys.base_prefix:
                   sys.prefix = new_prefix
               sys.base_prefix = new_prefix
           if os.path.realpath(sys.base_exec_prefix).startswith('#{rack}'):
-              new_exec_prefix = cellar_prefix.sub('#{opt_prefix}', sys.base_exec_prefix)
+              new_exec_prefix = cellar_prefix.sub('#{opt_prefix}/', sys.base_exec_prefix)
               site.PREFIXES[:] = [new_exec_prefix if x == sys.base_exec_prefix else x for x in site.PREFIXES]
               if sys.exec_prefix == sys.base_exec_prefix:
                   sys.exec_prefix = new_exec_prefix
@@ -410,9 +410,9 @@ class PythonFreethreading < Formula
   def caveats
     <<~EOS
       Python has been installed as
-        #{HOMEBREW_PREFIX}bin#{python3.basename}
+        #{HOMEBREW_PREFIX}/bin/#{python3.basename}
 
-      See: https:docs.brew.shHomebrew-and-Python
+      See: https://docs.brew.sh/Homebrew-and-Python
     EOS
   end
 
@@ -422,7 +422,7 @@ class PythonFreethreading < Formula
     system python3, "-c", "import sqlite3"
 
     # check to see if we can create a venv
-    system python3, "-m", "venv", testpath"myvenv"
+    system python3, "-m", "venv", testpath/"myvenv"
 
     # Check if some other modules import. Then the linked libs are working.
     system python3, "-c", "import _ctypes"
@@ -442,7 +442,7 @@ class PythonFreethreading < Formula
                  shell_output("#{python3} -Sc 'import dbm.gnu' 2>&1", 1)
 
     # Verify that the selected DBM interface works
-    (testpath"dbm_test.py").write <<~PYTHON
+    (testpath/"dbm_test.py").write <<~PYTHON
       import dbm
 
       with dbm.ndbm.open("test", "c") as db:
@@ -454,7 +454,7 @@ class PythonFreethreading < Formula
     PYTHON
     system python3, "dbm_test.py"
 
-    system bin"pip#{version.major_minor}t", "list", "--format=columns"
+    system bin/"pip#{version.major_minor}t", "list", "--format=columns"
 
     # Verify our sysconfig patches
     sysconfig_path = "import sysconfig; print(sysconfig.get_paths(\"osx_framework_library\")[\"data\"])"

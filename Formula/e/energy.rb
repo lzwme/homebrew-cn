@@ -1,10 +1,10 @@
 class Energy < Formula
   desc "CLI is used to initialize the Energy development environment tools"
-  homepage "https:energye.github.io"
-  url "https:github.comenergyeenergyarchiverefstagsv2.5.6.tar.gz"
+  homepage "https://energye.github.io"
+  url "https://ghfast.top/https://github.com/energye/energy/archive/refs/tags/v2.5.6.tar.gz"
   sha256 "7dcc439e32a6b1723b7809175eb43856b7817899350bbf47f794b1103dfec69e"
   license "Apache-2.0"
-  head "https:github.comenergyeenergy.git", branch: "main"
+  head "https://github.com/energye/energy.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "7694c978d9ff392a86dad2767ab0b69516522c03797e04b995268b51b1d772a6"
@@ -18,14 +18,14 @@ class Energy < Formula
   depends_on "go" => :build
 
   def install
-    cd "cmdenergy" do
+    cd "cmd/energy" do
       system "go", "build", *std_go_args(ldflags: "-s -w")
     end
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}energy cli -v")
+    assert_match version.to_s, shell_output("#{bin}/energy cli -v")
 
-    assert_match "https:energy.yanghy.cn", shell_output("#{bin}energy env")
+    assert_match "https://energy.yanghy.cn", shell_output("#{bin}/energy env")
   end
 end

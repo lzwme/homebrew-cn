@@ -1,10 +1,10 @@
 class Bcoin < Formula
   desc "Javascript bitcoin library for node.js and browsers"
-  homepage "https:bcoin.io"
-  url "https:github.combcoin-orgbcoinarchiverefstagsv2.2.0.tar.gz"
+  homepage "https://bcoin.io"
+  url "https://ghfast.top/https://github.com/bcoin-org/bcoin/archive/refs/tags/v2.2.0.tar.gz"
   sha256 "fa1a78a73bef5837b7ff10d18ffdb47c0e42ad068512987037a01e8fad980432"
   license "MIT"
-  head "https:github.combcoin-orgbcoin.git", branch: "master"
+  head "https://github.com/bcoin-org/bcoin.git", branch: "master"
 
   bottle do
     rebuild 3
@@ -26,29 +26,29 @@ class Bcoin < Formula
   def node
     deps.reject(&:build?)
         .map(&:to_formula)
-        .find { |f| f.name.match?(^node(@\d+(\.\d+)*)?$) }
+        .find { |f| f.name.match?(/^node(@\d+(\.\d+)*)?$/) }
   end
 
   def install
     system "npm", "install", *std_npm_args
-    bin.install_symlink Dir["#{libexec}bin*"]
+    bin.install_symlink Dir["#{libexec}/bin/*"]
   end
 
   test do
-    (testpath"script.js").write <<~JS
+    (testpath/"script.js").write <<~JS
       const assert = require('assert');
-      const bcoin = require('#{libexec}libnode_modulesbcoin');
+      const bcoin = require('#{libexec}/lib/node_modules/bcoin');
       assert(bcoin);
 
       const node = new bcoin.FullNode({
-        prefix: '#{testpath}.bcoin',
+        prefix: '#{testpath}/.bcoin',
         memory: false
       });
       (async () => {
         await node.ensure();
       })();
     JS
-    system "#{node.opt_bin}node", testpath"script.js"
-    assert File.directory?("#{testpath}.bcoin")
+    system "#{node.opt_bin}/node", testpath/"script.js"
+    assert File.directory?("#{testpath}/.bcoin")
   end
 end

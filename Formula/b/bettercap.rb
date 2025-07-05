@@ -1,10 +1,10 @@
 class Bettercap < Formula
   desc "Swiss army knife for network attacks and monitoring"
-  homepage "https:www.bettercap.org"
-  url "https:github.combettercapbettercaparchiverefstagsv2.41.0.tar.gz"
+  homepage "https://www.bettercap.org/"
+  url "https://ghfast.top/https://github.com/bettercap/bettercap/archive/refs/tags/v2.41.0.tar.gz"
   sha256 "6c2161acb85599a066bea2d28805f72cde68c13fefb8e67c5c72f3c31c3372c1"
   license "GPL-3.0-only"
-  head "https:github.combettercapbettercap.git", branch: "master"
+  head "https://github.com/bettercap/bettercap.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "601b640cb814873f4bc494568d8e6bac3e0437d7e0f9b2dcae10050428c28285"
@@ -27,12 +27,12 @@ class Bettercap < Formula
   end
 
   resource "ui" do
-    url "https:github.combettercapui.git",
+    url "https://github.com/bettercap/ui.git",
         revision: "6e126c470e97542d724927ba975011244127dbb1"
   end
 
   def install
-    (buildpath"modulesuiui").install resource("ui")
+    (buildpath/"modules/ui/ui").install resource("ui")
     system "make", "build"
     bin.install "bettercap"
   end
@@ -50,6 +50,6 @@ class Bettercap < Formula
     else
       "Permission Denied"
     end
-    assert_match expected, shell_output(bin"bettercap 2>&1", 1)
+    assert_match expected, shell_output(bin/"bettercap 2>&1", 1)
   end
 end

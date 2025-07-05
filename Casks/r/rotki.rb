@@ -5,11 +5,11 @@ cask "rotki" do
   sha256 arm:   "dd2b55c0d21bcfb670cd28f3e644a49ebcbe28d5a6d683d7abb5e1f71b56e397",
          intel: "51005372058ad3575ef965394039075899b9841cfbe03e836c38bc8f5c405869"
 
-  url "https:github.comrotkirotkireleasesdownloadv#{version}rotki-darwin_#{arch}-v#{version}.dmg",
-      verified: "github.comrotkirotki"
+  url "https://ghfast.top/https://github.com/rotki/rotki/releases/download/v#{version}/rotki-darwin_#{arch}-v#{version}.dmg",
+      verified: "github.com/rotki/rotki/"
   name "Rotki"
   desc "Portfolio tracking and accounting tool"
-  homepage "https:rotki.com"
+  homepage "https://rotki.com/"
 
   livecheck do
     url :url
@@ -21,8 +21,8 @@ cask "rotki" do
   app "rotki.app"
 
   zap trash: [
-    "~LibraryApplication Supportrotki",
-    "~LibraryPreferencescom.rotki.app.plist",
-    "~LibrarySaved Application Statecom.rotki.app.savedState",
+    "~/Library/Application Support/rotki",
+    "~/Library/Preferences/com.rotki.app.plist",
+    "~/Library/Saved Application State/com.rotki.app.savedState",
   ]
 end

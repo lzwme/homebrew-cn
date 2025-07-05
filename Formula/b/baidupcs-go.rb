@@ -1,10 +1,10 @@
 class BaidupcsGo < Formula
   desc "Terminal utility for Baidu Network Disk"
-  homepage "https:github.comqjfoidnhBaiduPCS-Go"
-  url "https:github.comqjfoidnhBaiduPCS-Goarchiverefstagsv3.9.7.tar.gz"
+  homepage "https://github.com/qjfoidnh/BaiduPCS-Go"
+  url "https://ghfast.top/https://github.com/qjfoidnh/BaiduPCS-Go/archive/refs/tags/v3.9.7.tar.gz"
   sha256 "a2dc89951ffb4421eacc992e248ae84e8ba9a971989b47707ed9faf53cc7a519"
   license "Apache-2.0"
-  head "https:github.comqjfoidnhBaiduPCS-Go.git", branch: "main"
+  head "https://github.com/qjfoidnh/BaiduPCS-Go.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "e16c4c3187374f9874bf0fc7c67363e62d21710665d4724dd7397a9ca9360ed9"
@@ -22,7 +22,7 @@ class BaidupcsGo < Formula
   end
 
   test do
-    system bin"baidupcs-go", "run", "touch", "test.txt"
-    assert_path_exists testpath"test.txt"
+    system bin/"baidupcs-go", "run", "touch", "test.txt"
+    assert_path_exists testpath/"test.txt"
   end
 end

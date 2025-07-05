@@ -2,14 +2,14 @@ cask "captin" do
   version "1.3.1"
   sha256 :no_check
 
-  url "https:raw.githubusercontent.comcool8jaypublicmastercaptinCaptin.zip",
-      verified: "raw.githubusercontent.comcool8jaypublicmastercaptin"
+  url "https://ghfast.top/https://raw.githubusercontent.com/cool8jay/public/master/captin/Captin.zip",
+      verified: "raw.githubusercontent.com/cool8jay/public/master/captin/"
   name "Captin"
   desc "Tool to show caps lock status"
-  homepage "https:captin.mystrikingly.com"
+  homepage "https://captin.mystrikingly.com/"
 
   livecheck do
-    url "https:raw.githubusercontent.comcool8jaypublicmastercaptinappcast.xml"
+    url "https://ghfast.top/https://raw.githubusercontent.com/cool8jay/public/master/captin/appcast.xml"
     strategy :sparkle, &:short_version
   end
 
@@ -22,7 +22,7 @@ cask "captin" do
   uninstall quit: "com.100hps.captin"
 
   zap trash: [
-    "~LibraryCachescom.100hps.captin",
-    "~LibraryPreferencescom.100hps.captin.plist",
+    "~/Library/Caches/com.100hps.captin",
+    "~/Library/Preferences/com.100hps.captin.plist",
   ]
 end

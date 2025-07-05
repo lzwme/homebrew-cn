@@ -1,14 +1,14 @@
 class Memcached < Formula
   desc "High performance, distributed memory object caching system"
-  homepage "https:memcached.org"
-  url "https:www.memcached.orgfilesmemcached-1.6.38.tar.gz"
+  homepage "https://memcached.org/"
+  url "https://www.memcached.org/files/memcached-1.6.38.tar.gz"
   sha256 "334d792294e37738796b5b03375c47bb6db283b1152e2ea4ccb720152dd17c66"
   license "BSD-3-Clause"
-  head "https:github.commemcachedmemcached.git", branch: "master"
+  head "https://github.com/memcached/memcached.git", branch: "master"
 
   livecheck do
     url :homepage
-    regex(href=.*?memcached[._-]v?(\d+(?:\.\d+){2,})\.i)
+    regex(/href=.*?memcached[._-]v?(\d+(?:\.\d+){2,})\./i)
   end
 
   bottle do
@@ -25,19 +25,19 @@ class Memcached < Formula
   depends_on "openssl@3"
 
   def install
-    system ".configure", "--prefix=#{prefix}", "--disable-coverage", "--enable-tls"
+    system "./configure", "--prefix=#{prefix}", "--disable-coverage", "--enable-tls"
     system "make", "install"
   end
 
   service do
-    run [opt_bin"memcached", "-l", "localhost"]
+    run [opt_bin/"memcached", "-l", "localhost"]
     working_dir HOMEBREW_PREFIX
     keep_alive true
     run_type :immediate
   end
 
   test do
-    pidfile = testpath"memcached.pid"
+    pidfile = testpath/"memcached.pid"
     port = free_port
     args = %W[
       --listen=127.0.0.1
@@ -46,10 +46,10 @@ class Memcached < Formula
       --pidfile=#{pidfile}
     ]
     args << "--user=#{ENV["USER"]}" if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
-    system bin"memcached", *args
+    system bin/"memcached", *args
     sleep 1
     assert_path_exists pidfile, "Failed to start memcached daemon"
-    pid = (testpath"memcached.pid").read.chomp.to_i
+    pid = (testpath/"memcached.pid").read.chomp.to_i
     Process.kill "TERM", pid
   end
 end

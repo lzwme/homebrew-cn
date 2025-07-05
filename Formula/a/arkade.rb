@@ -1,10 +1,10 @@
 class Arkade < Formula
   desc "Open Source Kubernetes Marketplace"
-  homepage "https:blog.alexellis.iokubernetes-marketplace-two-year-update"
-  url "https:github.comalexellisarkadearchiverefstags0.11.39.tar.gz"
+  homepage "https://blog.alexellis.io/kubernetes-marketplace-two-year-update/"
+  url "https://ghfast.top/https://github.com/alexellis/arkade/archive/refs/tags/0.11.39.tar.gz"
   sha256 "d946f8cb065ad7afbfed1e1bb37120bb767cbed7b8088bfdc474689edc2189e4"
   license "MIT"
-  head "https:github.comalexellisarkade.git", branch: "master"
+  head "https://github.com/alexellis/arkade.git", branch: "master"
 
   livecheck do
     url :stable
@@ -25,20 +25,20 @@ class Arkade < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.comalexellisarkadepkg.Version=#{version}
-      -X github.comalexellisarkadepkg.GitCommit=#{tap.user}
+      -X github.com/alexellis/arkade/pkg.Version=#{version}
+      -X github.com/alexellis/arkade/pkg.GitCommit=#{tap.user}
     ]
     system "go", "build", *std_go_args(ldflags:)
 
     bin.install_symlink "arkade" => "ark"
 
-    generate_completions_from_executable(bin"arkade", "completion")
+    generate_completions_from_executable(bin/"arkade", "completion")
     # make zsh completion also work for `ark` symlink
-    inreplace zsh_completion"_arkade", "#compdef arkade", "#compdef arkade ark=arkade"
+    inreplace zsh_completion/"_arkade", "#compdef arkade", "#compdef arkade ark=arkade"
   end
 
   test do
-    assert_match "Version: #{version}", shell_output(bin"arkade version")
-    assert_match "Info for app: openfaas", shell_output(bin"arkade info openfaas")
+    assert_match "Version: #{version}", shell_output(bin/"arkade version")
+    assert_match "Info for app: openfaas", shell_output(bin/"arkade info openfaas")
   end
 end

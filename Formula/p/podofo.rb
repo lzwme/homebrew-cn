@@ -1,14 +1,14 @@
 class Podofo < Formula
   desc "Library to work with the PDF file format"
-  homepage "https:github.compodofopodofo"
-  url "https:github.compodofopodofoarchiverefstags1.0.1.tar.gz"
+  homepage "https://github.com/podofo/podofo"
+  url "https://ghfast.top/https://github.com/podofo/podofo/archive/refs/tags/1.0.1.tar.gz"
   sha256 "951ba6d2f5083650b8ebc959d66a232e15ea43b7c737230cedf23ed163f5051f"
   license all_of: ["LGPL-2.0-only", "GPL-2.0-only"]
-  head "https:github.compodofopodofo.git", branch: "master"
+  head "https://github.com/podofo/podofo.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -48,9 +48,9 @@ class Podofo < Formula
       ENV.llvm_clang
       # When using Homebrew's superenv shims, we need to use HOMEBREW_LIBRARY_PATHS
       # rather than LDFLAGS for libc++ in order to correctly link to LLVM's libc++.
-      ENV.prepend_path "HOMEBREW_LIBRARY_PATHS", Formula["llvm"].opt_lib"c++"
+      ENV.prepend_path "HOMEBREW_LIBRARY_PATHS", Formula["llvm"].opt_lib/"c++"
       # Workaround for error: call to 'from_chars' is ambiguous
-      inreplace "srcpodofoprivatecharconv_compat.h", "#define WANT_FROM_CHARS", ""
+      inreplace "src/podofo/private/charconv_compat.h", "#define WANT_FROM_CHARS", ""
     end
 
     args = %W[
@@ -65,6 +65,6 @@ class Podofo < Formula
 
   test do
     cp test_fixtures("test.pdf"), testpath
-    assert_match "500 x 800 pts", shell_output("#{bin}podofopdfinfo test.pdf")
+    assert_match "500 x 800 pts", shell_output("#{bin}/podofopdfinfo test.pdf")
   end
 end

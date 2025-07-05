@@ -1,14 +1,14 @@
 class Botan < Formula
   desc "Cryptographic algorithms and formats library in C++"
-  homepage "https:botan.randombit.net"
-  url "https:botan.randombit.netreleasesBotan-3.8.1.tar.xz"
+  homepage "https://botan.randombit.net/"
+  url "https://botan.randombit.net/releases/Botan-3.8.1.tar.xz"
   sha256 "b039681d4b861a2f5853746d8ba806f553e23869ed72d89edbfa3c3dbfa17e68"
   license "BSD-2-Clause"
-  head "https:github.comrandombitbotan.git", branch: "master"
+  head "https://github.com/randombit/botan.git", branch: "master"
 
   livecheck do
     url :homepage
-    regex(href=.*?Botan[._-]v?(\d+(?:\.\d+)+)\.ti)
+    regex(/href=.*?Botan[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   bottle do
@@ -48,18 +48,18 @@ class Botan < Formula
 
     args = %W[
       --prefix=#{prefix}
-      --docdir=sharedoc
+      --docdir=share/doc
       --with-zlib
       --with-bzip2
       --with-sqlite3
-      --system-cert-bundle=#{Formula["ca-certificates"].pkgetc}cert.pem
+      --system-cert-bundle=#{Formula["ca-certificates"].pkgetc}/cert.pem
     ]
     args << "--with-commoncrypto" if OS.mac?
 
     if OS.mac? && DevelopmentTools.clang_build_version <= 1400
       ENV.llvm_clang
 
-      ldflags = %W[-L#{Formula["llvm"].opt_lib}c++ -L#{Formula["llvm"].opt_lib}unwind -lunwind]
+      ldflags = %W[-L#{Formula["llvm"].opt_lib}/c++ -L#{Formula["llvm"].opt_lib}/unwind -lunwind]
       args << "--ldflags=#{ldflags.join(" ")}"
     end
 
@@ -68,8 +68,8 @@ class Botan < Formula
   end
 
   test do
-    (testpath"test.txt").write "Homebrew"
-    (testpath"testout.txt").write shell_output("#{bin}botan base64_enc test.txt")
-    assert_match "Homebrew", shell_output("#{bin}botan base64_dec testout.txt")
+    (testpath/"test.txt").write "Homebrew"
+    (testpath/"testout.txt").write shell_output("#{bin}/botan base64_enc test.txt")
+    assert_match "Homebrew", shell_output("#{bin}/botan base64_dec testout.txt")
   end
 end

@@ -1,10 +1,10 @@
 class Draft < Formula
   desc "Day 0 tool for getting your app on Kubernetes fast"
-  homepage "https:github.comAzuredraft"
-  url "https:github.comAzuredraftarchiverefstagsv0.17.12.tar.gz"
+  homepage "https://github.com/Azure/draft"
+  url "https://ghfast.top/https://github.com/Azure/draft/archive/refs/tags/v0.17.12.tar.gz"
   sha256 "3e117e99c479274f8b893b1e1edc359de0b13fc57eb99314c27d9f2d4c67fbb2"
   license "MIT"
-  head "https:github.comAzuredraft.git", branch: "main"
+  head "https://github.com/Azure/draft.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "cee57fe1d7b7a4a28de43b494526bd95dbcb234c1debe88492a1d7fb930255f4"
@@ -19,16 +19,16 @@ class Draft < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = "-s -w -X github.comAzuredraftcmd.VERSION=#{version}"
+    ldflags = "-s -w -X github.com/Azure/draft/cmd.VERSION=#{version}"
     system "go", "build", *std_go_args(ldflags:)
 
-    generate_completions_from_executable(bin"draft", "completion")
+    generate_completions_from_executable(bin/"draft", "completion")
   end
 
   test do
-    supported_deployment_types = JSON.parse(shell_output("#{bin}draft info"))["supportedDeploymentTypes"]
+    supported_deployment_types = JSON.parse(shell_output("#{bin}/draft info"))["supportedDeploymentTypes"]
     assert_equal ["helm", "kustomize", "manifests"], supported_deployment_types
 
-    assert_match version.to_s, shell_output("#{bin}draft version")
+    assert_match version.to_s, shell_output("#{bin}/draft version")
   end
 end

@@ -1,10 +1,10 @@
 class Feluda < Formula
   desc "Detect license usage restrictions in your project"
-  homepage "https:github.comanistarkfeluda"
-  url "https:github.comanistarkfeludaarchiverefstags1.8.5.tar.gz"
+  homepage "https://github.com/anistark/feluda"
+  url "https://ghfast.top/https://github.com/anistark/feluda/archive/refs/tags/1.8.5.tar.gz"
   sha256 "9e86ac73fe7aaada534992523b4f0a2ea7bbe44d5e89d0eec9dd898f77101bb4"
   license "MIT"
-  head "https:github.comanistarkfeluda.git", branch: "main"
+  head "https://github.com/anistark/feluda.git", branch: "main"
 
   # Upstream creates releases that use a stable tag (e.g., `v1.2.3`) but are
   # labeled as "pre-release" on GitHub before the version is released, so it's
@@ -35,9 +35,9 @@ class Feluda < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}feluda --version")
+    assert_match version.to_s, shell_output("#{bin}/feluda --version")
 
-    output = shell_output("#{bin}feluda --path #{testpath}")
+    output = shell_output("#{bin}/feluda --path #{testpath}")
     assert_match " All dependencies passed the license check!", output
   end
 end

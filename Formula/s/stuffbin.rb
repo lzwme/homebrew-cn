@@ -1,10 +1,10 @@
 class Stuffbin < Formula
   desc "Compress and embed static files and assets into Go binaries"
-  homepage "https:github.comknadhstuffbin"
-  url "https:github.comknadhstuffbinarchiverefstagsv1.3.0.tar.gz"
+  homepage "https://github.com/knadh/stuffbin"
+  url "https://ghfast.top/https://github.com/knadh/stuffbin/archive/refs/tags/v1.3.0.tar.gz"
   sha256 "10de8bdec2997299beaff857cd5a4c74b3951c9e4dab97b68f7b97af8d564ac3"
   license "MIT"
-  head "https:github.comknadhstuffbin.git", branch: "master"
+  head "https://github.com/knadh/stuffbin.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -22,23 +22,23 @@ class Stuffbin < Formula
   depends_on "go" => [:build, :test]
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), ".stuffbin"
+    system "go", "build", *std_go_args(ldflags: "-s -w"), "./stuffbin"
   end
 
   test do
     mkdir "brewtest" do
       system "go", "mod", "init", "brewtest"
-      system "go", "get", "github.comknadhstuffbin"
+      system "go", "get", "github.com/knadh/stuffbin"
 
-      (testpath"brewtestfoo.txt").write "brewfoo"
-      (testpath"brewtestmain.go").write <<~GO
+      (testpath/"brewtest/foo.txt").write "brewfoo"
+      (testpath/"brewtest/main.go").write <<~GO
         package main
 
         import (
           "log"
           "os"
 
-          "github.comknadhstuffbin"
+          "github.com/knadh/stuffbin"
         )
 
         func main() {
@@ -50,13 +50,13 @@ class Stuffbin < Formula
       GO
 
       system "go", "build", "."
-      output = shell_output("#{bin}stuffbin -a stuff -in brewtest -out brewtest2 foo.txt")
+      output = shell_output("#{bin}/stuffbin -a stuff -in brewtest -out brewtest2 foo.txt")
       assert_match "stuffing complete.", output
-      assert_match "foo.txt = brewfoo", shell_output("#{testpath}brewtestbrewtest2 2>&1")
+      assert_match "foo.txt = brewfoo", shell_output("#{testpath}/brewtest/brewtest2 2>&1")
 
-      output = shell_output("#{bin}stuffbin -a id -in brewtest2")
+      output = shell_output("#{bin}/stuffbin -a id -in brewtest2")
       assert_match "brewtest2: stuffbin", output
-      assert_match "foo.txt", output
+      assert_match "/foo.txt", output
     end
   end
 end

@@ -1,10 +1,10 @@
 class Rustywind < Formula
   desc "CLI for organizing Tailwind CSS classes"
-  homepage "https:github.comavencerarustywind"
-  url "https:github.comavencerarustywindarchiverefstagsv0.24.0.tar.gz"
+  homepage "https://github.com/avencera/rustywind"
+  url "https://ghfast.top/https://github.com/avencera/rustywind/archive/refs/tags/v0.24.0.tar.gz"
   sha256 "90559cb75c9b28bfafd04a1e800b482e374eadcfc21a6be1ed369651d066ac4d"
   license "Apache-2.0"
-  head "https:github.comavencerarustywind.git", branch: "master"
+  head "https://github.com/avencera/rustywind.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "fa6fc45b7eb5a94e38d0e14501733e4830ad1651d7fc1b4bb99540d4a79a06c4"
@@ -23,22 +23,22 @@ class Rustywind < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}rustywind --version")
+    assert_match version.to_s, shell_output("#{bin}/rustywind --version")
 
-    (testpath"test.html").write <<~HTML
+    (testpath/"test.html").write <<~HTML
       <div class="text-center bg-red-500 text-white p-4">
-        <p class="text-lg font-bold">Hello, World!<p>
-      <div>
+        <p class="text-lg font-bold">Hello, World!</p>
+      </div>
     HTML
 
-    system bin"rustywind", "--write", "test.html"
+    system bin/"rustywind", "--write", "test.html"
 
     expected_content = <<~HTML
       <div class="p-4 text-center text-white bg-red-500">
-        <p class="text-lg font-bold">Hello, World!<p>
-      <div>
+        <p class="text-lg font-bold">Hello, World!</p>
+      </div>
     HTML
 
-    assert_equal expected_content, (testpath"test.html").read
+    assert_equal expected_content, (testpath/"test.html").read
   end
 end

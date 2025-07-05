@@ -1,10 +1,10 @@
 class Coder < Formula
   desc "Tool for provisioning self-hosted development environments with Terraform"
-  homepage "https:coder.com"
-  url "https:github.comcodercoderarchiverefstagsv2.23.2.tar.gz"
+  homepage "https://coder.com"
+  url "https://ghfast.top/https://github.com/coder/coder/archive/refs/tags/v2.23.2.tar.gz"
   sha256 "d9b46c54e06d493073f16676f66ee81ad1cc0fabf76f2752e57ae76d81fd470e"
   license "AGPL-3.0-only"
-  head "https:github.comcodercoder.git", branch: "main"
+  head "https://github.com/coder/coder.git", branch: "main"
 
   # There can be a notable gap between when a version is tagged and a
   # corresponding release is created, so we check the "latest" release instead
@@ -26,27 +26,27 @@ class Coder < Formula
 
   depends_on "go" => :build
 
-  # purego build patch, upstream pr ref, https:github.comcodercoderpull18021
+  # purego build patch, upstream pr ref, https://github.com/coder/coder/pull/18021
   patch do
-    url "https:github.comcodercodercommite3915cb199a05a21a6dd17b525068a6cb5949d65.patch?full_index=1"
+    url "https://github.com/coder/coder/commit/e3915cb199a05a21a6dd17b525068a6cb5949d65.patch?full_index=1"
     sha256 "ec0f27618f69d867ecc04c8eae648eca188e4db5b1d27e1d6bcc1bde64383cdf"
   end
 
   def install
     ldflags = %W[
       -s -w
-      -X github.comcodercoderv2buildinfo.tag=#{version}
-      -X github.comcodercoderv2buildinfo.agpl=true
+      -X github.com/coder/coder/v2/buildinfo.tag=#{version}
+      -X github.com/coder/coder/v2/buildinfo.agpl=true
     ]
-    system "go", "build", *std_go_args(ldflags:, tags: "slim"), ".cmdcoder"
+    system "go", "build", *std_go_args(ldflags:, tags: "slim"), "./cmd/coder"
   end
 
   test do
-    version_output = shell_output("#{bin}coder version")
+    version_output = shell_output("#{bin}/coder version")
     assert_match version.to_s, version_output
     assert_match "AGPL", version_output
     assert_match "Slim build", version_output
 
-    assert_match "You are not logged in", shell_output("#{bin}coder netcheck 2>&1", 1)
+    assert_match "You are not logged in", shell_output("#{bin}/coder netcheck 2>&1", 1)
   end
 end

@@ -1,10 +1,10 @@
 class Snag < Formula
   desc "Automatic build tool for all your needs"
-  homepage "https:github.comTonkpilssnag"
-  url "https:github.comTonkpilssnagarchiverefstagsv1.2.0.tar.gz"
+  homepage "https://github.com/Tonkpils/snag"
+  url "https://ghfast.top/https://github.com/Tonkpils/snag/archive/refs/tags/v1.2.0.tar.gz"
   sha256 "37bf661436edf4526adf5428ac5ff948871c613ff4f9b61fbbdfe1fb95f58b37"
   license "MIT"
-  head "https:github.comTonkpilssnag.git", branch: "master"
+  head "https://github.com/Tonkpils/snag.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -26,7 +26,7 @@ class Snag < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "7096008e3aab8b00c45a600edab938bd16918a92543423662f3a6015e5a14edb"
   end
 
-  # https:github.comTonkpilssnagissues66
+  # https://github.com/Tonkpils/snag/issues/66
   deprecate! date: "2024-02-24", because: :unmaintained
   disable! date: "2025-02-24", because: :unmaintained
 
@@ -36,27 +36,27 @@ class Snag < Formula
     ENV["GOPATH"] = buildpath
     ENV["GO111MODULE"] = "auto"
 
-    (buildpath"srcgithub.comTonkpils").mkpath
-    ln_s buildpath, buildpath"srcgithub.comTonkpilssnag"
+    (buildpath/"src/github.com/Tonkpils/").mkpath
+    ln_s buildpath, buildpath/"src/github.com/Tonkpils/snag"
 
-    system "go", "build", "-o", bin"snag", ".srcgithub.comTonkpilssnag"
+    system "go", "build", "-o", bin/"snag", "./src/github.com/Tonkpils/snag"
   end
 
   test do
-    (testpath".snag.yml").write <<~YAML
+    (testpath/".snag.yml").write <<~YAML
       build:
-        - touch #{testpath}snagged
+        - touch #{testpath}/snagged
       verbose: true
     YAML
     begin
       pid = fork do
-        exec bin"snag"
+        exec bin/"snag"
       end
       sleep 0.5
     ensure
       Process.kill "TERM", pid
       Process.wait pid
     end
-    assert_path_exists testpath"snagged"
+    assert_path_exists testpath/"snagged"
   end
 end

@@ -1,7 +1,7 @@
 class Sngrep < Formula
   desc "Command-line tool for displaying SIP calls message flows"
-  homepage "https:github.comirontecsngrep"
-  url "https:github.comirontecsngreparchiverefstagsv1.8.2.tar.gz"
+  homepage "https://github.com/irontec/sngrep"
+  url "https://ghfast.top/https://github.com/irontec/sngrep/archive/refs/tags/v1.8.2.tar.gz"
   sha256 "1cd05bddd531b353e3069c5243e7076b60a3ee907dbbc3c9c2834676ed8c4bac"
   license "GPL-3.0-or-later" => { with: "openvpn-openssl-exception" }
 
@@ -26,16 +26,16 @@ class Sngrep < Formula
   uses_from_macos "ncurses"
 
   def install
-    ENV.append_to_cflags "-I#{Formula["ncurses"].opt_include}ncursesw" if OS.linux?
+    ENV.append_to_cflags "-I#{Formula["ncurses"].opt_include}/ncursesw" if OS.linux?
 
-    system ".bootstrap.sh"
-    system ".configure", *std_configure_args,
+    system "./bootstrap.sh"
+    system "./configure", *std_configure_args,
                           "--disable-silent-rules",
                           "--with-openssl"
     system "make", "install"
   end
 
   test do
-    system bin"sngrep", "-NI", test_fixtures("test.pcap")
+    system bin/"sngrep", "-NI", test_fixtures("test.pcap")
   end
 end

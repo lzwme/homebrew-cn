@@ -1,10 +1,10 @@
 class Sleef < Formula
   desc "SIMD library for evaluating elementary functions"
-  homepage "https:sleef.org"
-  url "https:github.comshibatchsleefarchiverefstags3.9.0.tar.gz"
+  homepage "https://sleef.org"
+  url "https://ghfast.top/https://github.com/shibatch/sleef/archive/refs/tags/3.9.0.tar.gz"
   sha256 "af60856abac08a3b5e72a8d156dd71fec1f7ac23de8ee67793f45f9edcdf0908"
   license "BSL-1.0"
-  head "https:github.comshibatchsleef.git", branch: "master"
+  head "https://github.com/shibatch/sleef.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "10bd5e568d4abc431b8a8b604c5c3745106ba980dc71e1d22b607587e336bbf9"
@@ -30,17 +30,17 @@ class Sleef < Formula
   end
 
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include <stdio.h>
       #include <math.h>
       #include <sleef.h>
 
       int main() {
-          double a = M_PI  6;
+          double a = M_PI / 6;
           printf("%.3f\\n", Sleef_sin_u10(a));
       }
     C
     system ENV.cc, "test.c", "-o", "test", "-I#{include}", "-L#{lib}", "-lsleef"
-    assert_equal "0.500\n", shell_output(".test")
+    assert_equal "0.500\n", shell_output("./test")
   end
 end

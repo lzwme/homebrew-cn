@@ -2,9 +2,9 @@ cask "font-recursive-mono-nerd-font" do
   version "3.4.0"
   sha256 "0bd832ed9de2b5955208494808e69528cfc471cc03eea850ecfbf8e3b1ed702f"
 
-  url "https:github.comryanoasisnerd-fontsreleasesdownloadv#{version}Recursive.zip"
+  url "https://ghfast.top/https://github.com/ryanoasis/nerd-fonts/releases/download/v#{version}/Recursive.zip"
   name "RecMono Nerd Font families (Recursive Mono)"
-  homepage "https:github.comryanoasisnerd-fonts"
+  homepage "https://github.com/ryanoasis/nerd-fonts"
 
   livecheck do
     url :url

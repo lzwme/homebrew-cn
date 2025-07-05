@@ -1,7 +1,7 @@
 class Lizard < Formula
   desc "Efficient compressor with very fast decompression"
-  homepage "https:github.cominikeplizard"
-  url "https:github.cominikeplizardarchiverefstagsv2.1.tar.gz"
+  homepage "https://github.com/inikep/lizard"
+  url "https://ghfast.top/https://github.com/inikep/lizard/archive/refs/tags/v2.1.tar.gz"
   sha256 "0c1a7efceeb8ae66bfa2b7b659f01dec120925d846b01ce4dfc6960ba8cd61e5"
   license all_of: ["BSD-2-Clause", "GPL-2.0-or-later"]
   version_scheme 1
@@ -27,12 +27,12 @@ class Lizard < Formula
     system "make", "PREFIX=#{prefix}", "install"
     cd "examples" do
       system "make"
-      (pkgshare"tests").install "ringBufferHC", "ringBuffer", "lineCompress", "doubleBuffer"
+      (pkgshare/"tests").install "ringBufferHC", "ringBuffer", "lineCompress", "doubleBuffer"
     end
   end
 
   test do
-    (testpath"teststest.txt").write <<~EOS
+    (testpath/"tests/test.txt").write <<~EOS
       Homebrew is a free and open-source software package management system that simplifies the installation
       of software on Apple's macOS operating system and Linux. The name means building software on your Mac
       depending on taste. Originally written by Max Howell, the package manager has gained popularity in the
@@ -41,12 +41,12 @@ class Lizard < Formula
       of the Software Freedom Conservancy, and is run entirely by unpaid volunteers.
     EOS
 
-    cp_r pkgshare"tests", testpath
+    cp_r pkgshare/"tests", testpath
     cd "tests" do
-      system ".ringBufferHC", ".test.txt"
-      system ".ringBuffer", ".test.txt"
-      system ".lineCompress", ".test.txt"
-      system ".doubleBuffer", ".test.txt"
+      system "./ringBufferHC", "./test.txt"
+      system "./ringBuffer", "./test.txt"
+      system "./lineCompress", "./test.txt"
+      system "./doubleBuffer", "./test.txt"
     end
   end
 end

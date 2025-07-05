@@ -1,10 +1,10 @@
 class Fastbit < Formula
   desc "Open-source data processing library in NoSQL spirit"
-  homepage "https:sdm.lbl.govfastbit"
+  homepage "https://sdm.lbl.gov/fastbit/"
   # Upstream download url is blocking access: Cloudflare Error 1006: IP Address Restriction
   # Use an archived copy from archive.org until upstream url is restored
-  url "https:web.archive.orgweb20210319090732code.lbl.govfrsdownload.phpfile426fastbit-2.0.3.tar.gz"
-  mirror "https:code.lbl.govfrsdownload.phpfile426fastbit-2.0.3.tar.gz"
+  url "https://web.archive.org/web/20210319090732/code.lbl.gov/frs/download.php/file/426/fastbit-2.0.3.tar.gz"
+  mirror "https://code.lbl.gov/frs/download.php/file/426/fastbit-2.0.3.tar.gz"
   sha256 "1ddb16d33d869894f8d8cd745cd3198974aabebca68fa2b83eb44d22339466ec"
   license "BSD-3-Clause"
   revision 1
@@ -33,17 +33,17 @@ class Fastbit < Formula
 
   depends_on "openjdk"
 
-  conflicts_with "iniparser", because: "both install `includedictionary.h`"
+  conflicts_with "iniparser", because: "both install `include/dictionary.h`"
 
   # Fix compilation with Xcode 9, reported by email on 2018-03-13
   patch do
-    url "https:raw.githubusercontent.comHomebrewformula-patchesfe9d4e5fastbitxcode9.patch"
+    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/fe9d4e5/fastbit/xcode9.patch"
     sha256 "e1198caf262a125d2216d70cfec80ebe98d122760ffa5d99d34fc33646445390"
   end
 
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
-    url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-pre-0.4.2.418-big_sur.diff"
+    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-pre-0.4.2.418-big_sur.diff"
     sha256 "83af02f2aa2b746bb7225872cab29a253264be49db0ecebb12f841562d9a2923"
   end
 
@@ -53,19 +53,19 @@ class Fastbit < Formula
     # Help old config scripts identify arm64 linux
     args << "--build=aarch64-unknown-linux-gnu" if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
 
-    system ".configure", *args, *std_configure_args
+    system "./configure", *args, *std_configure_args
     system "make", "install"
-    libexec.install lib"fastbitjni.jar"
-    bin.write_jar_script libexec"fastbitjni.jar", "fastbitjni"
+    libexec.install lib/"fastbitjni.jar"
+    bin.write_jar_script libexec/"fastbitjni.jar", "fastbitjni"
   end
 
   test do
-    assert_equal prefix.to_s, shell_output("#{bin}fastbit-config --prefix").chomp
-    (testpath"test.csv").write <<~CSV
+    assert_equal prefix.to_s, shell_output("#{bin}/fastbit-config --prefix").chomp
+    (testpath/"test.csv").write <<~CSV
       Potter,Harry
       Granger,Hermione
       Weasley,Ron
     CSV
-    system bin"ardea", "-d", testpath, "-m", "a:t,b:t", "-t", testpath"test.csv"
+    system bin/"ardea", "-d", testpath, "-m", "a:t,b:t", "-t", testpath/"test.csv"
   end
 end

@@ -1,7 +1,7 @@
 class Darkhttpd < Formula
   desc "Small static webserver without CGI"
-  homepage "https:unix4lyfe.orgdarkhttpd"
-  url "https:github.comemikulicdarkhttpdarchiverefstagsv1.16.tar.gz"
+  homepage "https://unix4lyfe.org/darkhttpd/"
+  url "https://ghfast.top/https://github.com/emikulic/darkhttpd/archive/refs/tags/v1.16.tar.gz"
   sha256 "ab97ea3404654af765f78282aa09cfe4226cb007d2fcc59fe1a475ba0fef1981"
   license "ISC"
 
@@ -23,6 +23,6 @@ class Darkhttpd < Formula
   end
 
   test do
-    system bin"darkhttpd", "--help"
+    system bin/"darkhttpd", "--help"
   end
 end

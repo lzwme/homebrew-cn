@@ -1,7 +1,7 @@
 class Colortail < Formula
   desc "Like tail(1), but with various colors for specified output"
-  homepage "https:github.comjoakim666colortail"
-  url "https:github.comjoakim666colortailreleasesdownload0.3.5colortail-0.3.5.tar.gz"
+  homepage "https://github.com/joakim666/colortail"
+  url "https://ghfast.top/https://github.com/joakim666/colortail/releases/download/0.3.5/colortail-0.3.5.tar.gz"
   sha256 "8d259560c6f4a4aaf1f4bbdb2b62d3e1053e7e19fefad7de322131b7e80e294d"
   license "GPL-2.0-or-later"
 
@@ -18,12 +18,12 @@ class Colortail < Formula
   end
 
   def install
-    system ".configure", *std_configure_args
+    system "./configure", *std_configure_args
     system "make", "install"
   end
 
   test do
-    (testpath"test.txt").write "Hello\nWorld!\n"
-    assert_match(World!, shell_output("#{bin}colortail -n 1 test.txt"))
+    (testpath/"test.txt").write "Hello\nWorld!\n"
+    assert_match(/World!/, shell_output("#{bin}/colortail -n 1 test.txt"))
   end
 end

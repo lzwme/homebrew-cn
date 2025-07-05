@@ -1,10 +1,10 @@
 class Gismo < Formula
   desc "C++ library for isogeometric analysis (IGA)"
-  homepage "https:gismo.github.io"
-  url "https:github.comgismogismoarchiverefstagsv25.01.0.tar.gz"
+  homepage "https://gismo.github.io"
+  url "https://ghfast.top/https://github.com/gismo/gismo/archive/refs/tags/v25.01.0.tar.gz"
   sha256 "d1250b3d3a37c9d7d3f9cb63e4a36ae07b76aa47335847008be7516cc390c61e"
   license "MPL-2.0"
-  head "https:github.comgismogismo.git", branch: "stable"
+  head "https://github.com/gismo/gismo.git", branch: "stable"
 
   # There can be a notable gap between when a version is tagged and a
   # corresponding release is created, so we check the "latest" release instead
@@ -56,7 +56,7 @@ class Gismo < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~CPP
+    (testpath/"test.cpp").write <<~CPP
       #include <gismo.h>
       using namespace gismo;
       int main()
@@ -69,7 +69,7 @@ class Gismo < Formula
         gsInfo << M*v << std::endl;
       }
     CPP
-    system ENV.cxx, "test.cpp", "-I#{include}gismo", "-std=c++14", "-o", "test"
-    assert_equal %w[4 4], shell_output(".test").split
+    system ENV.cxx, "test.cpp", "-I#{include}/gismo", "-std=c++14", "-o", "test"
+    assert_equal %w[4 4], shell_output("./test").split
   end
 end

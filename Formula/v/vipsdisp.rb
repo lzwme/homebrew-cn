@@ -1,7 +1,7 @@
 class Vipsdisp < Formula
   desc "Viewer for large images"
-  homepage "https:github.comjcupittvipsdisp"
-  url "https:github.comjcupittvipsdispreleasesdownloadv4.0.0vipsdisp-4.0.0.tar.xz"
+  homepage "https://github.com/jcupitt/vipsdisp"
+  url "https://ghfast.top/https://github.com/jcupitt/vipsdisp/releases/download/v4.0.0/vipsdisp-4.0.0.tar.xz"
   sha256 "7bbb6740b13d0b211af2efab83d3a0d6e4646b15f57a038ac44ad67f446c5b64"
   license "MIT"
 
@@ -35,7 +35,7 @@ class Vipsdisp < Formula
 
   def install
     # ensure that we don't run the meson post install script
-    ENV["DESTDIR"] = ""
+    ENV["DESTDIR"] = "/"
 
     system "meson", "setup", "build", *std_meson_args
     system "meson", "compile", "-C", "build", "--verbose"
@@ -43,11 +43,11 @@ class Vipsdisp < Formula
   end
 
   def post_install
-    system "#{Formula["glib"].opt_bin}glib-compile-schemas", "#{HOMEBREW_PREFIX}shareglib-2.0schemas"
-    system "#{Formula["gtk4"].opt_bin}gtk4-update-icon-cache", "-f", "-t", "#{HOMEBREW_PREFIX}shareiconshicolor"
+    system "#{Formula["glib"].opt_bin}/glib-compile-schemas", "#{HOMEBREW_PREFIX}/share/glib-2.0/schemas"
+    system "#{Formula["gtk4"].opt_bin}/gtk4-update-icon-cache", "-f", "-t", "#{HOMEBREW_PREFIX}/share/icons/hicolor"
   end
 
   test do
-    system bin"vipsdisp", "--help"
+    system bin/"vipsdisp", "--help"
   end
 end

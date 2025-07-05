@@ -1,10 +1,10 @@
 class Goproxy < Formula
   desc "Global proxy for Go modules"
-  homepage "https:goproxy.io"
-  url "https:github.comgoproxyiogoproxyarchiverefstagsv2.0.7.tar.gz"
+  homepage "https://goproxy.io/"
+  url "https://ghfast.top/https://github.com/goproxyio/goproxy/archive/refs/tags/v2.0.7.tar.gz"
   sha256 "d87f3928467520f8d6b0ba8adcbf5957dc6eb2dc9936249edd6568ceb01a71ca"
   license "MIT"
-  head "https:github.comgoproxyiogoproxy.git", branch: "master"
+  head "https://github.com/goproxyio/goproxy.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -33,13 +33,13 @@ class Goproxy < Formula
     ENV["GOPATH"] = testpath.to_s
     bind_address = "127.0.0.1:#{free_port}"
     begin
-      server = IO.popen("#{bin}goproxy -proxy=https:goproxy.io -listen=#{bind_address}", err: [:child, :out])
+      server = IO.popen("#{bin}/goproxy -proxy=https://goproxy.io -listen=#{bind_address}", err: [:child, :out])
       sleep 1
-      ENV["GOPROXY"] = "http:#{bind_address}"
-      system "go", "install", "golang.orgxtoolscmdguru@latest"
+      ENV["GOPROXY"] = "http://#{bind_address}"
+      system "go", "install", "golang.org/x/tools/cmd/guru@latest"
     ensure
       Process.kill("SIGINT", server.pid)
     end
-    assert_match "200 golang.orgxtools", server.read
+    assert_match "200 /golang.org/x/tools/", server.read
   end
 end

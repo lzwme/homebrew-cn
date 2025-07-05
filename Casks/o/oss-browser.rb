@@ -2,10 +2,10 @@ cask "oss-browser" do
   version "1.18.0"
   sha256 "046e7aa50a76318b8ec8f5171ddb0cfcb8d80b6ad8134762331b874f80d685fb"
 
-  url "https:github.comaliyunoss-browserreleasesdownloadv#{version}oss-browser-darwin-x64.zip"
+  url "https://ghfast.top/https://github.com/aliyun/oss-browser/releases/download/v#{version}/oss-browser-darwin-x64.zip"
   name "OSS Browser"
   desc "Graphical management tool for OSS (Object Storage Service)"
-  homepage "https:github.comaliyunoss-browser"
+  homepage "https://github.com/aliyun/oss-browser/"
 
   livecheck do
     url :url
@@ -14,15 +14,15 @@ cask "oss-browser" do
 
   no_autobump! because: :requires_manual_review
 
-  app "oss-browser-darwin-x64oss-browser.app"
+  app "oss-browser-darwin-x64/oss-browser.app"
 
   zap trash: [
-    "~.oss-browser",
-    "~LibraryApplication Supportoss-browser",
-    "~LibraryLogsoss-browser",
-    "~LibraryPreferencescom.electron.oss-browser.helper.plist",
-    "~LibraryPreferencescom.electron.oss-browser.plist",
-    "~LibrarySaved Application Statecom.electron.oss-browser.savedState",
+    "~/.oss-browser",
+    "~/Library/Application Support/oss-browser",
+    "~/Library/Logs/oss-browser",
+    "~/Library/Preferences/com.electron.oss-browser.helper.plist",
+    "~/Library/Preferences/com.electron.oss-browser.plist",
+    "~/Library/Saved Application State/com.electron.oss-browser.savedState",
   ]
 
   caveats do

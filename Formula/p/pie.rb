@@ -1,7 +1,7 @@
 class Pie < Formula
   desc "PHP Installer for Extensions"
-  homepage "https:github.comphppie"
-  url "https:github.comphppiereleasesdownload1.0.0pie.phar"
+  homepage "https://github.com/php/pie"
+  url "https://ghfast.top/https://github.com/php/pie/releases/download/1.0.0/pie.phar"
   sha256 "6fc822f6a779865fd1ba297b2dac920a41b81dffeb829de8162e11c9989add8a"
   license "BSD-3-Clause"
 
@@ -19,10 +19,10 @@ class Pie < Formula
 
   def install
     bin.install "pie.phar" => "pie"
-    generate_completions_from_executable("php", bin"pie", "completion")
+    generate_completions_from_executable("php", bin/"pie", "completion")
   end
 
   test do
-    system bin"pie", "build", "apcuapcu"
+    system bin/"pie", "build", "apcu/apcu"
   end
 end

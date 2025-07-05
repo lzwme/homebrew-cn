@@ -1,11 +1,11 @@
 class Convox < Formula
   desc "Command-line interface for the Convox PaaS"
-  homepage "https:convox.com"
-  url "https:github.comconvoxconvoxarchiverefstags3.21.4.tar.gz"
+  homepage "https://convox.com/"
+  url "https://ghfast.top/https://github.com/convox/convox/archive/refs/tags/3.21.4.tar.gz"
   sha256 "e37b17f128714f2e87a62bcd988c8e1badc684589e0cdf606317fdfca434bed8"
   license "Apache-2.0"
   version_scheme 1
-  head "https:github.comconvoxconvox.git", branch: "master"
+  head "https://github.com/convox/convox.git", branch: "master"
 
   livecheck do
     url :stable
@@ -31,11 +31,11 @@ class Convox < Formula
 
   def install
     ldflags = "-s -w -X main.version=#{version}"
-    system "go", "build", "-mod=readonly", *std_go_args(ldflags:), ".cmdconvox"
+    system "go", "build", "-mod=readonly", *std_go_args(ldflags:), "./cmd/convox"
   end
 
   test do
     assert_equal "Authenticating with localhost... ERROR: invalid login\n",
-      shell_output("#{bin}convox login -t invalid localhost 2>&1", 1)
+      shell_output("#{bin}/convox login -t invalid localhost 2>&1", 1)
   end
 end

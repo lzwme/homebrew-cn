@@ -1,7 +1,7 @@
 class OcamlNum < Formula
   desc "OCaml legacy Num library for arbitrary-precision arithmetic"
-  homepage "https:github.comocamlnum"
-  url "https:github.comocamlnumarchiverefstagsv1.5.tar.gz"
+  homepage "https://github.com/ocaml/num"
+  url "https://ghfast.top/https://github.com/ocaml/num/archive/refs/tags/v1.5.tar.gz"
   sha256 "7ae07c8f5601e2dfc5008a62dcaf2719912ae596a19365c5d7bdf2230515959a"
   license "LGPL-2.1-only" => { with: "OCaml-LGPL-linking-exception" }
   revision 2
@@ -22,36 +22,36 @@ class OcamlNum < Formula
   depends_on "ocaml"
 
   def install
-    # Work around for https:github.comHomebrewhomebrew-test-botissues805
-    if ENV["HOMEBREW_GITHUB_ACTIONS"] && !(Formula["ocaml-findlib"].etc"findlib.conf").exist?
-      ENV["OCAMLFIND_CONF"] = Formula["ocaml-findlib"].opt_libexec"findlib.conf"
+    # Work around for https://github.com/Homebrew/homebrew-test-bot/issues/805
+    if ENV["HOMEBREW_GITHUB_ACTIONS"] && !(Formula["ocaml-findlib"].etc/"findlib.conf").exist?
+      ENV["OCAMLFIND_CONF"] = Formula["ocaml-findlib"].opt_libexec/"findlib.conf"
     end
 
-    ENV["OCAMLFIND_DESTDIR"] = lib"ocaml"
+    ENV["OCAMLFIND_DESTDIR"] = lib/"ocaml"
 
-    (lib"ocaml").mkpath
-    cp Formula["ocaml"].opt_lib"ocamlMakefile.config", lib"ocaml"
+    (lib/"ocaml").mkpath
+    cp Formula["ocaml"].opt_lib/"ocaml/Makefile.config", lib/"ocaml"
 
-    # install in #{lib}ocaml not #{HOMEBREW_PREFIX}libocaml
-    inreplace lib"ocamlMakefile.config" do |s|
+    # install in #{lib}/ocaml not #{HOMEBREW_PREFIX}/lib/ocaml
+    inreplace lib/"ocaml/Makefile.config" do |s|
       s.change_make_var! "prefix", prefix
     end
 
     ENV.deparallelize { system "make" }
-    (lib"ocamlstublibs").mkpath # `make install` assumes this directory exists
-    system "make", "install", "STDLIBDIR=#{lib}ocaml"
+    (lib/"ocaml/stublibs").mkpath # `make install` assumes this directory exists
+    system "make", "install", "STDLIBDIR=#{lib}/ocaml"
 
     pkgshare.install "test"
 
-    rm lib"ocamlMakefile.config" # avoid conflict with ocaml
+    rm lib/"ocaml/Makefile.config" # avoid conflict with ocaml
   end
 
   test do
-    cp_r pkgshare"test.", "."
-    system Formula["ocaml"].opt_bin"ocamlopt", "-I", lib"ocaml", "-I",
-           Formula["ocaml"].opt_lib"ocaml", "-o", "test", "nums.cmxa",
+    cp_r pkgshare/"test/.", "."
+    system Formula["ocaml"].opt_bin/"ocamlopt", "-I", lib/"ocaml", "-I",
+           Formula["ocaml"].opt_lib/"ocaml", "-o", "test", "nums.cmxa",
            "test.ml", "test_nats.ml", "test_big_ints.ml", "test_ratios.ml",
            "test_nums.ml", "test_io.ml", "end_test.ml"
-    assert_match "1... 2... 3", shell_output(".test")
+    assert_match "1... 2... 3", shell_output("./test")
   end
 end

@@ -1,11 +1,11 @@
 class Libusrsctp < Formula
   desc "Portable SCTP userland stack"
-  homepage "https:github.comsctplabusrsctp"
-  url "https:github.comsctplabusrsctparchiverefstags0.9.5.0.tar.gz"
+  homepage "https://github.com/sctplab/usrsctp"
+  url "https://ghfast.top/https://github.com/sctplab/usrsctp/archive/refs/tags/0.9.5.0.tar.gz"
   sha256 "260107caf318650a57a8caa593550e39bca6943e93f970c80d6c17e59d62cd92"
   license "BSD-3-Clause"
   revision 1
-  head "https:github.comsctplabusrsctp.git", branch: "master"
+  head "https://github.com/sctplab/usrsctp.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -32,7 +32,7 @@ class Libusrsctp < Formula
   end
 
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include <unistd.h>
       #include <usrsctp.h>
       int main() {
@@ -41,6 +41,6 @@ class Libusrsctp < Formula
       }
     C
     system ENV.cc, "test.c", "-L#{lib}", "-lusrsctp", "-lpthread", "-o", "test"
-    system ".test"
+    system "./test"
   end
 end

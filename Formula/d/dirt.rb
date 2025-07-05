@@ -1,11 +1,11 @@
 class Dirt < Formula
   desc "Experimental sample playback"
-  homepage "https:github.comtidalcyclesDirt"
-  url "https:github.comtidalcyclesDirtarchiverefstags1.1.tar.gz"
+  homepage "https://github.com/tidalcycles/Dirt"
+  url "https://ghfast.top/https://github.com/tidalcycles/Dirt/archive/refs/tags/1.1.tar.gz"
   sha256 "bb1ae52311813d0ea3089bf3837592b885562518b4b44967ce88a24bc10802b6"
   license "GPL-3.0-or-later"
   revision 1
-  head "https:github.comtidalcyclesDirt.git", branch: "master"
+  head "https://github.com/tidalcycles/Dirt.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -31,7 +31,7 @@ class Dirt < Formula
 
   def install
     # Work-around for newer clang
-    # upstream bug report, https:github.comtidalcyclesDirtissues66
+    # upstream bug report, https://github.com/tidalcycles/Dirt/issues/66
     ENV.append_to_cflags "-Wno-incompatible-function-pointer-types" if DevelopmentTools.clang_build_version >= 1500
 
     # Work around failure from GCC 10+ using default of `-fno-common`
@@ -44,6 +44,6 @@ class Dirt < Formula
   end
 
   test do
-    assert_match "Usage", shell_output("#{bin}dirt --help; :")
+    assert_match "Usage", shell_output("#{bin}/dirt --help; :")
   end
 end

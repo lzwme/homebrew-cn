@@ -2,10 +2,10 @@ cask "shadowsocksx" do
   version "2.6.3"
   sha256 "f0e263dd1d74b0b6977389f2b8b28c524bceccbc5ad24ca8a8164b92ede1c45a"
 
-  url "https:github.comshadowsocksshadowsocks-iOSreleasesdownload#{version}ShadowsocksX-#{version}.dmg"
+  url "https://ghfast.top/https://github.com/shadowsocks/shadowsocks-iOS/releases/download/#{version}/ShadowsocksX-#{version}.dmg"
   name "ShadowsocksX"
   desc "Removed according to regulations"
-  homepage "https:github.comshadowsocksshadowsocks-iOSwikiShadowsocks-for-OSX-Help"
+  homepage "https://github.com/shadowsocks/shadowsocks-iOS/wiki/Shadowsocks-for-OSX-Help"
 
   no_autobump! because: :requires_manual_review
 

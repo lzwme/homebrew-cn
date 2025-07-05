@@ -1,7 +1,7 @@
 class Serpl < Formula
   desc "Simple terminal UI for search and replace"
-  homepage "https:github.comyassinebridiserpl"
-  url "https:github.comyassinebridiserplarchiverefstags0.3.4.tar.gz"
+  homepage "https://github.com/yassinebridi/serpl"
+  url "https://ghfast.top/https://github.com/yassinebridi/serpl/archive/refs/tags/0.3.4.tar.gz"
   sha256 "d3765e273f54bf2e268f9696eef5e5459ffe46310af8ae48eb6ebe4c279deb62"
   license "MIT"
 
@@ -23,9 +23,9 @@ class Serpl < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output(bin"serpl --version")
+    assert_match version.to_s, shell_output(bin/"serpl --version")
 
     assert_match "a value is required for '--project-root <PATH>' but none was supplied",
-      shell_output("#{bin}serpl --project-root 2>&1", 2)
+      shell_output("#{bin}/serpl --project-root 2>&1", 2)
   end
 end

@@ -1,7 +1,7 @@
 class Nethogs < Formula
   desc "Net top tool grouping bandwidth per process"
-  homepage "https:raboof.github.ionethogs"
-  url "https:github.comraboofnethogsarchiverefstagsv0.8.8.tar.gz"
+  homepage "https://raboof.github.io/nethogs/"
+  url "https://ghfast.top/https://github.com/raboof/nethogs/archive/refs/tags/v0.8.8.tar.gz"
   sha256 "111ade20cc545e8dfd7ce4e293bd6b31cd1678a989b6a730bd2fa2acc6254818"
   license "GPL-2.0-or-later"
 
@@ -25,6 +25,6 @@ class Nethogs < Formula
 
   test do
     # Using -V because other nethogs commands need to be run as root
-    system sbin"nethogs", "-V"
+    system sbin/"nethogs", "-V"
   end
 end

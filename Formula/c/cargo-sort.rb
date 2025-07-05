@@ -1,10 +1,10 @@
 class CargoSort < Formula
   desc "Tool to check that your Cargo.toml dependencies are sorted alphabetically"
-  homepage "https:github.comdevinr528cargo-sort"
-  url "https:github.comDevinR528cargo-sortarchiverefstagsv2.0.1.tar.gz"
+  homepage "https://github.com/devinr528/cargo-sort"
+  url "https://ghfast.top/https://github.com/DevinR528/cargo-sort/archive/refs/tags/v2.0.1.tar.gz"
   sha256 "1e345b7ce5e88b347895e602757c344f8a996700a34dd367d8ad35728ebb846b"
   license any_of: ["Apache-2.0", "MIT"]
-  head "https:github.comdevinr528cargo-sort.git", branch: "main"
+  head "https://github.com/devinr528/cargo-sort.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "62b987eaf83d9abfa459ad7b89b3bf3fd622b99b179f0ba472b9708543a4c938"
@@ -25,15 +25,15 @@ class CargoSort < Formula
 
   test do
     # Show that we can use a different toolchain than the one provided by the `rust` formula.
-    # https:github.comHomebrewhomebrew-corepull134074#pullrequestreview-1484979359
+    # https://github.com/Homebrew/homebrew-core/pull/134074#pullrequestreview-1484979359
     ENV.prepend_path "PATH", Formula["rustup"].bin
     system "rustup", "set", "profile", "minimal"
     system "rustup", "default", "beta"
 
-    assert_match version.to_s, shell_output("#{bin}cargo-sort --version")
+    assert_match version.to_s, shell_output("#{bin}/cargo-sort --version")
 
     mkdir "brewtest" do
-      (testpath"brewtestCargo.toml").write <<~TOML
+      (testpath/"brewtest/Cargo.toml").write <<~TOML
         [package]
         name = "test"
         version = "0.1.0"
@@ -45,7 +45,7 @@ class CargoSort < Formula
         b = "0.6.0"
       TOML
 
-      output = shell_output("#{bin}cargo-sort --check 2>&1", 1)
+      output = shell_output("#{bin}/cargo-sort --check 2>&1", 1)
       assert_match "Dependencies for brewtest are not sorted", output
     end
   end

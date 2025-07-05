@@ -2,12 +2,12 @@ cask "font-coustard" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefonts.git",
-      verified:  "github.comgooglefonts",
+  url "https://github.com/google/fonts.git",
+      verified:  "github.com/google/fonts",
       branch:    "main",
-      only_path: "oflcoustard"
+      only_path: "ofl/coustard"
   name "Coustard"
-  homepage "https:fonts.google.comspecimenCoustard"
+  homepage "https://fonts.google.com/specimen/Coustard"
 
   font "Coustard-Black.ttf"
   font "Coustard-Regular.ttf"

@@ -1,14 +1,14 @@
 class Aubio < Formula
   desc "Extract annotations from audio signals"
-  homepage "https:github.comaubioaubio"
-  url "https:sources.buildroot.netaubioaubio-0.4.9.tar.bz2"
+  homepage "https://github.com/aubio/aubio"
+  url "https://sources.buildroot.net/aubio/aubio-0.4.9.tar.bz2"
   sha256 "d48282ae4dab83b3dc94c16cf011bcb63835c1c02b515490e1883049c3d1f3da"
   license "GPL-3.0-or-later"
   revision 4
 
   livecheck do
-    url "https:aubio.orgpub"
-    regex(href=.*?aubio[._-]v?(\d+(?:\.\d+)+)\.ti)
+    url "https://aubio.org/pub/"
+    regex(/href=.*?aubio[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -34,11 +34,11 @@ class Aubio < Formula
   # Fix build with Python 3.12 using Fedora patch. Failure is due to old waf 2.0.14.
   # Remove on next release as HEAD has newer waf.
   patch do
-    url "https:src.fedoraproject.orgrpmsaubioraw29fb7e383b5465f4704b1cdc7db27df716e1b45cfaubio-python39.patch"
+    url "https://src.fedoraproject.org/rpms/aubio/raw/29fb7e383b5465f4704b1cdc7db27df716e1b45c/f/aubio-python39.patch"
     sha256 "2f9cb8913b1c4840588df2f437f702c329b4de4e46eff4dcf68aff4b5024a358"
   end
   patch do
-    url "https:src.fedoraproject.orgrpmsaubioraw454ac411d2af0ebcf63cdb1bacd8f229817c27c9faubio-imp-removed.patch"
+    url "https://src.fedoraproject.org/rpms/aubio/raw/454ac411d2af0ebcf63cdb1bacd8f229817c27c9/f/aubio-imp-removed.patch"
     sha256 "0ff5cbb3cdcebbced7432366c3eb0f742db48e864b48bf845c0d3240136c5cdb"
   end
 
@@ -47,29 +47,29 @@ class Aubio < Formula
   end
 
   def install
-    # Work-around for build issue with Xcode 15.3: https:github.comaubioaubioissues402
+    # Work-around for build issue with Xcode 15.3: https://github.com/aubio/aubio/issues/402
     ENV.append_to_cflags "-Wno-incompatible-function-pointer-types" if DevelopmentTools.clang_build_version >= 1500
 
-    system python3, ".waf", "configure", "--prefix=#{prefix}"
-    system python3, ".waf", "build"
-    system python3, ".waf", "install"
+    system python3, "./waf", "configure", "--prefix=#{prefix}"
+    system python3, "./waf", "build"
+    system python3, "./waf", "install"
 
     system python3, "-m", "pip", "install", *std_pip_args, "."
   end
 
   test do
     resource "homebrew-aiff" do
-      url "https:archive.orgdownloadTestAifAiffFile02DayIsDone.aif"
+      url "https://archive.org/download/TestAifAiffFile/02DayIsDone.aif"
       sha256 "bca81e8d13f3f6526cd54110ec1196afd5bda6c93b16a7ba5023e474901e050d"
     end
 
     testpath.install resource("homebrew-aiff")
-    system bin"aubiocut", "--verbose", "02DayIsDone.aif"
-    system bin"aubioonset", "--verbose", "02DayIsDone.aif"
+    system bin/"aubiocut", "--verbose", "02DayIsDone.aif"
+    system bin/"aubioonset", "--verbose", "02DayIsDone.aif"
 
-    (testpath"test.py").write <<~PYTHON
+    (testpath/"test.py").write <<~PYTHON
       import aubio
-      src = aubio.source('#{testpath}02DayIsDone.aif')
+      src = aubio.source('#{testpath}/02DayIsDone.aif')
       total_frames = 0
       while True:
         samples, read = src()

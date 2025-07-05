@@ -1,10 +1,10 @@
 class Mdp < Formula
   desc "Command-line based markdown presentation tool"
-  homepage "https:github.comvisit1985mdp"
-  url "https:github.comvisit1985mdparchiverefstags1.0.15.tar.gz"
+  homepage "https://github.com/visit1985/mdp"
+  url "https://ghfast.top/https://github.com/visit1985/mdp/archive/refs/tags/1.0.15.tar.gz"
   sha256 "3edc8ea1551fdf290d6bba721105e2e2c23964070ac18c13b4b8d959cdf6116f"
   license "GPL-3.0-or-later"
-  head "https:github.comvisit1985mdp.git", branch: "master"
+  head "https://github.com/visit1985/mdp.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -35,6 +35,6 @@ class Mdp < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}mdp -v")
+    assert_match version.to_s, shell_output("#{bin}/mdp -v")
   end
 end

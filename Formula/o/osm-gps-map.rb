@@ -1,17 +1,17 @@
 class OsmGpsMap < Formula
   desc "GTK+ library to embed OpenStreetMap maps"
-  homepage "https:github.comnzjrsosm-gps-map"
+  homepage "https://github.com/nzjrs/osm-gps-map"
   license "GPL-2.0-or-later"
   revision 2
 
   stable do
-    url "https:github.comnzjrsosm-gps-mapreleasesdownload1.2.0osm-gps-map-1.2.0.tar.gz"
+    url "https://ghfast.top/https://github.com/nzjrs/osm-gps-map/releases/download/1.2.0/osm-gps-map-1.2.0.tar.gz"
     sha256 "ddec11449f37b5dffb4bca134d024623897c6140af1f9981a8acc512dbf6a7a5"
 
     depends_on "libsoup@2"
 
     patch do
-      url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-big_sur.diff"
+      url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-big_sur.diff"
       sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
     end
   end
@@ -31,7 +31,7 @@ class OsmGpsMap < Formula
   end
 
   head do
-    url "https:github.comnzjrsosm-gps-map.git", branch: "master"
+    url "https://github.com/nzjrs/osm-gps-map.git", branch: "master"
     depends_on "autoconf" => :build
     depends_on "autoconf-archive" => :build
     depends_on "automake" => :build
@@ -56,13 +56,13 @@ class OsmGpsMap < Formula
   end
 
   def install
-    configure = build.head? ? ".autogen.sh" : ".configure"
+    configure = build.head? ? "./autogen.sh" : "./configure"
     system configure, "--disable-silent-rules", "--enable-introspection", *std_configure_args
     system "make", "install"
   end
 
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include <osm-gps-map.h>
 
       int main(int argc, char *argv[]) {
@@ -73,13 +73,13 @@ class OsmGpsMap < Formula
       }
     C
 
-    ENV.prepend_path "PKG_CONFIG_PATH", Formula["libsoup@2"].opt_lib"pkgconfig"
+    ENV.prepend_path "PKG_CONFIG_PATH", Formula["libsoup@2"].opt_lib/"pkgconfig"
     flags = shell_output("pkgconf --cflags --libs osmgpsmap-1.0").chomp.split
     system ENV.cc, "test.c", "-o", "test", *flags
 
     # (test:40601): Gtk-WARNING **: 23:06:24.466: cannot open display
     return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
 
-    system ".test"
+    system "./test"
   end
 end

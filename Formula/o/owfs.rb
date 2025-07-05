@@ -1,7 +1,7 @@
 class Owfs < Formula
-  desc "Monitor and control physical environment using DallasMaxim 1-wire system"
-  homepage "https:owfs.org"
-  url "https:github.comowfsowfsreleasesdownloadv3.2p4owfs-3.2p4.tar.gz"
+  desc "Monitor and control physical environment using Dallas/Maxim 1-wire system"
+  homepage "https://owfs.org/"
+  url "https://ghfast.top/https://github.com/owfs/owfs/releases/download/v3.2p4/owfs-3.2p4.tar.gz"
   version "3.2p4"
   sha256 "af0a5035f3f3df876ca15aea13486bfed6b3ef5409dee016db0be67755c35fcc"
   license "GPL-2.0-only"
@@ -31,14 +31,14 @@ class Owfs < Formula
 
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
-    url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-big_sur.diff"
+    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-big_sur.diff"
     sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
   end
 
   def install
     ENV.append_to_cflags "-D_DARWIN_C_SOURCE" if OS.mac? && MacOS.version >= :sequoia
 
-    system ".configure", "--disable-swig",
+    system "./configure", "--disable-swig",
                           "--disable-owtcl",
                           "--disable-zero",
                           "--disable-owpython",
@@ -51,6 +51,6 @@ class Owfs < Formula
   end
 
   test do
-    system bin"owserver", "--version"
+    system bin/"owserver", "--version"
   end
 end

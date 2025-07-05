@@ -1,7 +1,7 @@
 class Jansson < Formula
   desc "C library for encoding, decoding, and manipulating JSON"
-  homepage "https:digip.orgjansson"
-  url "https:github.comakheronjanssonreleasesdownloadv2.14.1jansson-2.14.1.tar.gz"
+  homepage "https://digip.org/jansson/"
+  url "https://ghfast.top/https://github.com/akheron/jansson/releases/download/v2.14.1/jansson-2.14.1.tar.gz"
   sha256 "2521cd51a9641d7a4e457f7215a4cd5bb176f690bc11715ddeec483e85d9e2b3"
   license "MIT"
 
@@ -18,12 +18,12 @@ class Jansson < Formula
   end
 
   def install
-    system ".configure", *std_configure_args
+    system "./configure", *std_configure_args
     system "make", "install"
   end
 
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include <jansson.h>
       #include <assert.h>
 
@@ -38,6 +38,6 @@ class Jansson < Formula
       }
     C
     system ENV.cc, "test.c", "-L#{lib}", "-ljansson", "-o", "test"
-    system ".test"
+    system "./test"
   end
 end

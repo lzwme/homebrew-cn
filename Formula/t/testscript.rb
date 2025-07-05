@@ -1,7 +1,7 @@
 class Testscript < Formula
   desc "Integration tests for command-line applications in .txtar format"
-  homepage "https:github.comrogpeppego-internaltreemastercmdtestscript"
-  url "https:github.comrogpeppego-internalarchiverefstagsv1.14.1.tar.gz"
+  homepage "https://github.com/rogpeppe/go-internal/tree/master/cmd/testscript"
+  url "https://ghfast.top/https://github.com/rogpeppe/go-internal/archive/refs/tags/v1.14.1.tar.gz"
   sha256 "7e54f6d0f002a4904f150e29417515b286ff3b0bbde8e1a01082cbb5178132cb"
   license "BSD-3-Clause"
 
@@ -17,12 +17,12 @@ class Testscript < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), ".cmdtestscript"
+    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/testscript"
   end
 
   test do
-    (testpath"hello.txtar").write("exec echo hello!\nstdout hello!")
+    (testpath/"hello.txtar").write("exec echo hello!\nstdout hello!")
 
-    assert_equal "PASS\n", shell_output("#{bin}testscript hello.txtar")
+    assert_equal "PASS\n", shell_output("#{bin}/testscript hello.txtar")
   end
 end

@@ -1,10 +1,10 @@
 class Zf < Formula
   desc "Command-line fuzzy finder that prioritizes matches on filenames"
-  homepage "https:github.comnatecraddockzf"
-  url "https:github.comnatecraddockzfarchiverefstags0.10.2.tar.gz"
+  homepage "https://github.com/natecraddock/zf"
+  url "https://ghfast.top/https://github.com/natecraddock/zf/archive/refs/tags/0.10.2.tar.gz"
   sha256 "b8e41f942c7033536fd64f9edea467a7ff4f45d52885d585f0adafb7803ac0ed"
   license "MIT"
-  head "https:github.comnatecraddockzf.git", branch: "main"
+  head "https://github.com/natecraddock/zf.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "ca18e30ed084337c77376f0af8b97d3f10bc3ccb20660f7d74c15644fbcae1e7"
@@ -20,13 +20,13 @@ class Zf < Formula
   def install
     system "zig", "build", *std_zig_args
 
-    man1.install "doczf.1"
-    bash_completion.install "completezf"
-    fish_completion.install "completezf.fish"
-    zsh_completion.install "complete_zf"
+    man1.install "doc/zf.1"
+    bash_completion.install "complete/zf"
+    fish_completion.install "complete/zf.fish"
+    zsh_completion.install "complete/_zf"
   end
 
   test do
-    assert_equal "zig", pipe_output("#{bin}zf -f zg", "take\off\every\nzig").chomp
+    assert_equal "zig", pipe_output("#{bin}/zf -f zg", "take\off\every\nzig").chomp
   end
 end

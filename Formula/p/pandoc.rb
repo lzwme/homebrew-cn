@@ -1,10 +1,10 @@
 class Pandoc < Formula
   desc "Swiss-army knife of markup format conversion"
-  homepage "https:pandoc.org"
-  url "https:github.comjgmpandocarchiverefstags3.7.0.2.tar.gz"
+  homepage "https://pandoc.org/"
+  url "https://ghfast.top/https://github.com/jgm/pandoc/archive/refs/tags/3.7.0.2.tar.gz"
   sha256 "a098c1dc8051844e3992f8396c6c947dccbc57b6ca3df2f2c47b9f7fa9f11246"
   license "GPL-2.0-or-later"
-  head "https:github.comjgmpandoc.git", branch: "main"
+  head "https://github.com/jgm/pandoc.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "c1a49a901b2ced92b8a50547723d4f7452772b8a1b2da9bce66639e129afda0e"
@@ -25,9 +25,9 @@ class Pandoc < Formula
   def install
     system "cabal", "v2-update"
     system "cabal", "v2-install", *std_cabal_v2_args, "pandoc-cli"
-    generate_completions_from_executable(bin"pandoc", "--bash-completion",
+    generate_completions_from_executable(bin/"pandoc", "--bash-completion",
                                          shells: [:bash], shell_parameter_format: :none)
-    man1.install "pandoc-climanpandoc.1"
+    man1.install "pandoc-cli/man/pandoc.1"
   end
 
   test do
@@ -37,10 +37,10 @@ class Pandoc < Formula
       A package manager for humans. Cats should take a look at Tigerbrew.
     MARKDOWN
     expected_html = <<~HTML
-      <h1 id="homebrew">Homebrew<h1>
+      <h1 id="homebrew">Homebrew</h1>
       <p>A package manager for humans. Cats should take a look at
-      Tigerbrew.<p>
+      Tigerbrew.</p>
     HTML
-    assert_equal expected_html, pipe_output("#{bin}pandoc -f markdown -t html5", input_markdown, 0)
+    assert_equal expected_html, pipe_output("#{bin}/pandoc -f markdown -t html5", input_markdown, 0)
   end
 end

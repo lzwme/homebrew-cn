@@ -1,10 +1,10 @@
 class WpebackendFdo < Formula
   desc "Freedesktop.org backend for WPE WebKit"
-  homepage "https:wpewebkit.org"
-  url "https:github.comIgaliaWPEBackend-fdoreleasesdownload1.16.0wpebackend-fdo-1.16.0.tar.xz"
+  homepage "https://wpewebkit.org/"
+  url "https://ghfast.top/https://github.com/Igalia/WPEBackend-fdo/releases/download/1.16.0/wpebackend-fdo-1.16.0.tar.xz"
   sha256 "beddf321232d5bd08106c179dbc600f8ce88eb3620b4a59a6329063b78f64635"
   license "BSD-2-Clause"
-  head "https:github.comIgaliaWPEBackend-fdo.git", branch: "master"
+  head "https://github.com/Igalia/WPEBackend-fdo.git", branch: "master"
 
   livecheck do
     url :stable
@@ -33,17 +33,17 @@ class WpebackendFdo < Formula
   end
 
   test do
-    (testpath"wpe-fdo-test.c").write <<~C
-      #include "wpefdo.h"
+    (testpath/"wpe-fdo-test.c").write <<~C
+      #include "wpe/fdo.h"
       #include <stdio.h>
       int main() {
         printf("%u.%u.%u", wpe_fdo_get_major_version(), wpe_fdo_get_minor_version(), wpe_fdo_get_micro_version());
       }
     C
-    ENV.append_to_cflags "-I#{include}wpe-fdo-1.0 -I#{Formula["libwpe"].opt_include}wpe-1.0"
+    ENV.append_to_cflags "-I#{include}/wpe-fdo-1.0 -I#{Formula["libwpe"].opt_include}/wpe-1.0"
     ENV.append "LDFLAGS", "-L#{lib}"
     ENV.append "LDLIBS", "-lWPEBackend-fdo-1.0"
     system "make", "wpe-fdo-test"
-    assert_equal version.to_s, shell_output(".wpe-fdo-test")
+    assert_equal version.to_s, shell_output("./wpe-fdo-test")
   end
 end

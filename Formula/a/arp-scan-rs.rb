@@ -1,10 +1,10 @@
 class ArpScanRs < Formula
   desc "ARP scan tool written in Rust for fast local network scans"
-  homepage "https:github.comkongbytesarp-scan-rs"
-  url "https:github.comkongbytesarp-scan-rsarchiverefstagsv0.14.0.tar.gz"
+  homepage "https://github.com/kongbytes/arp-scan-rs"
+  url "https://ghfast.top/https://github.com/kongbytes/arp-scan-rs/archive/refs/tags/v0.14.0.tar.gz"
   sha256 "9cd8ae882d47aef59f79ceedc797a9697b0f1b81916488a43a84b0a807b482fa"
   license "AGPL-3.0-or-later"
-  head "https:github.comkongbytesarp-scan-rs.git", branch: "master"
+  head "https://github.com/kongbytes/arp-scan-rs.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "dcd5eb8d1a5225c52e76fdeabc79fdff7d97ecf88ae25671a7c647cfb3867c31"
@@ -23,7 +23,7 @@ class ArpScanRs < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}arp-scan --version")
-    assert_match "Default network interface", shell_output("#{bin}arp-scan -l")
+    assert_match version.to_s, shell_output("#{bin}/arp-scan --version")
+    assert_match "Default network interface", shell_output("#{bin}/arp-scan -l")
   end
 end

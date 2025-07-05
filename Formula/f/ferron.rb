@@ -1,10 +1,10 @@
 class Ferron < Formula
   desc "Fast, memory-safe web server written in Rust"
-  homepage "https:www.ferronweb.org"
-  url "https:github.comferronwebferronarchiverefstags1.3.3.tar.gz"
+  homepage "https://www.ferronweb.org/"
+  url "https://ghfast.top/https://github.com/ferronweb/ferron/archive/refs/tags/1.3.3.tar.gz"
   sha256 "9b35497a457a205252d16e27611cae919c19871b2edf5a4d61928a2eb216baaf"
   license "MIT"
-  head "https:github.comferronwebferron.git", branch: "develop"
+  head "https://github.com/ferronweb/ferron.git", branch: "develop"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "07f3a92c4ed0ad8e5e0bab77af454863a27a1c657fe7fe87816c2839208fc1f3"
@@ -25,24 +25,24 @@ class Ferron < Formula
   test do
     port = free_port
 
-    (testpath"ferron.yaml").write "global: {\"port\":#{port}}"
+    (testpath/"ferron.yaml").write "global: {\"port\":#{port}}"
     expected_output = <<~HTML.chomp
       <!DOCTYPE html>
       <html lang="en">
       <head>
           <meta charset="UTF-8">
           <meta name="viewport" content="width=device-width, initial-scale=1.0">
-          <title>404 Not Found<title>
-      <head>
+          <title>404 Not Found</title>
+      </head>
       <body>
-          <h1>404 Not Found<h1>
-          <p>The requested resource wasn't found. Double-check the URL if entered manually.<p>
-      <body>
-      <html>
+          <h1>404 Not Found</h1>
+          <p>The requested resource wasn't found. Double-check the URL if entered manually.</p>
+      </body>
+      </html>
     HTML
 
     begin
-      pid = spawn bin"ferron", "-c", testpath"ferron.yaml"
+      pid = spawn bin/"ferron", "-c", testpath/"ferron.yaml"
       sleep 3
       assert_match expected_output, shell_output("curl -s 127.0.0.1:#{port}")
     ensure

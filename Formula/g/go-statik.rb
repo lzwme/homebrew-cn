@@ -1,10 +1,10 @@
 class GoStatik < Formula
   desc "Embed files into a Go executable"
-  homepage "https:github.comrakyllstatik"
-  url "https:github.comrakyllstatikarchiverefstagsv0.1.7.tar.gz"
+  homepage "https://github.com/rakyll/statik"
+  url "https://ghfast.top/https://github.com/rakyll/statik/archive/refs/tags/v0.1.7.tar.gz"
   sha256 "cd05f409e63674f29cff0e496bd33eee70229985243cce486107085fab747082"
   license "Apache-2.0"
-  head "https:github.comrakyllstatik.git", branch: "master"
+  head "https://github.com/rakyll/statik.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -27,18 +27,18 @@ class GoStatik < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(output: bin"statik", ldflags: "-s -w")
+    system "go", "build", *std_go_args(output: bin/"statik", ldflags: "-s -w")
   end
 
   test do
     font_path = if OS.mac?
       font_name = (MacOS.version >= :catalina) ? "Arial Unicode.ttf" : "Arial.ttf"
-      "LibraryFonts#{font_name}"
+      "/Library/Fonts/#{font_name}"
     else
-      "usrsharefontstruetypedejavuDejaVuSans.ttf"
+      "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"
     end
-    system bin"statik", "-src", font_path
-    assert_path_exists testpath"statikstatik.go"
-    refute_predicate (testpath"statikstatik.go").size, :zero?
+    system bin/"statik", "-src", font_path
+    assert_path_exists testpath/"statik/statik.go"
+    refute_predicate (testpath/"statik/statik.go").size, :zero?
   end
 end

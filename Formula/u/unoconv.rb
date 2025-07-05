@@ -2,12 +2,12 @@ class Unoconv < Formula
   include Language::Python::Virtualenv
 
   desc "Convert between any document format supported by OpenOffice"
-  homepage "https:github.comunoconvunoconv"
-  url "https:files.pythonhosted.orgpackagesab40b4cab1140087f3f07b2f6d7cb9ca1c14b9bdbb525d2d83a3b29c924fe9aeunoconv-0.9.0.tar.gz"
+  homepage "https://github.com/unoconv/unoconv"
+  url "https://files.pythonhosted.org/packages/ab/40/b4cab1140087f3f07b2f6d7cb9ca1c14b9bdbb525d2d83a3b29c924fe9ae/unoconv-0.9.0.tar.gz"
   sha256 "308ebfd98e67d898834876348b27caf41470cd853fbe2681cc7dacd8fd5e6031"
   license "GPL-2.0-only"
   revision 4
-  head "https:github.comunoconvunoconv.git", branch: "master"
+  head "https://github.com/unoconv/unoconv.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -27,13 +27,13 @@ class Unoconv < Formula
   depends_on "python@3.13"
 
   resource "setuptools" do
-    url "https:files.pythonhosted.orgpackages27b8f21073fde99492b33ca357876430822e4800cdf522011f18041351dfa74bsetuptools-75.1.0.tar.gz"
+    url "https://files.pythonhosted.org/packages/27/b8/f21073fde99492b33ca357876430822e4800cdf522011f18041351dfa74b/setuptools-75.1.0.tar.gz"
     sha256 "d59a21b17a275fb872a9c3dae73963160ae079f1049ed956880cd7c09b120538"
   end
 
   def install
     virtualenv_install_with_resources
-    man1.install "docunoconv.1"
+    man1.install "doc/unoconv.1"
   end
 
   def caveats
@@ -43,6 +43,6 @@ class Unoconv < Formula
   end
 
   test do
-    assert_match "office installation", pipe_output("#{bin}unoconv 2>&1")
+    assert_match "office installation", pipe_output("#{bin}/unoconv 2>&1")
   end
 end

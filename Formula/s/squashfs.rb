@@ -1,16 +1,16 @@
 class Squashfs < Formula
   desc "Compressed read-only file system for Linux"
-  homepage "https:github.comploughersquashfs-tools"
+  homepage "https://github.com/plougher/squashfs-tools"
   license "GPL-2.0-or-later"
-  head "https:github.comploughersquashfs-tools.git", branch: "master"
+  head "https://github.com/plougher/squashfs-tools.git", branch: "master"
 
   stable do
-    url "https:github.comploughersquashfs-toolsarchiverefstags4.7.tar.gz"
+    url "https://ghfast.top/https://github.com/plougher/squashfs-tools/archive/refs/tags/4.7.tar.gz"
     sha256 "f1605ef720aa0b23939a49ef4491f6e734333ccc4bda4324d330da647e105328"
 
-    # add the missing pthread.h header, upstream pr ref, https:github.comploughersquashfs-toolspull312
+    # add the missing pthread.h header, upstream pr ref, https://github.com/plougher/squashfs-tools/pull/312
     patch do
-      url "https:github.comploughersquashfs-toolscommit8b9288365fa0a0d80d8be82a3a6b42ea1c12629a.patch?full_index=1"
+      url "https://github.com/plougher/squashfs-tools/commit/8b9288365fa0a0d80d8be82a3a6b42ea1c12629a.patch?full_index=1"
       sha256 "cc3007de92a90c8caefb378b8405cde29c7acf570646d0bbc2bd0dcac1113a24"
     end
   end
@@ -18,7 +18,7 @@ class Squashfs < Formula
   # Tags like `4.4-git.1` are not release versions and the regex omits these
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -63,38 +63,38 @@ class Squashfs < Formula
       bin.install commands
     end
 
-    ENV.prepend_path "PATH", Formula["gnu-sed"].opt_libexec"gnubin"
+    ENV.prepend_path "PATH", Formula["gnu-sed"].opt_libexec/"gnubin"
     mkdir_p man1
-    cd "squashfs-toolsgenerate-manpages" do
+    cd "squashfs-tools/generate-manpages" do
       commands.each do |command|
-        system ".#{command}-manpage.sh", bin, man1"#{command}.1"
+        system "./#{command}-manpage.sh", bin, man1/"#{command}.1"
       end
     end
 
-    doc.install Dir["Documentation#{version.major_minor}*"]
+    doc.install Dir["Documentation/#{version.major_minor}/*"]
   end
 
   test do
     # Check binaries execute
-    assert_match version.to_s, shell_output("#{bin}mksquashfs -version")
-    assert_match version.to_s, shell_output("#{bin}unsquashfs -v", 1)
+    assert_match version.to_s, shell_output("#{bin}/mksquashfs -version")
+    assert_match version.to_s, shell_output("#{bin}/unsquashfs -v", 1)
 
-    (testpath"intest1").write "G'day!"
-    (testpath"intest2").write "Bonjour!"
-    (testpath"intest3").write "Moien!"
+    (testpath/"in/test1").write "G'day!"
+    (testpath/"in/test2").write "Bonjour!"
+    (testpath/"in/test3").write "Moien!"
 
     # Test mksquashfs can make a valid squashimg.
     #   (Also tests that `xz` support is properly linked.)
-    system bin"mksquashfs", "intest1", "intest2", "intest3", "test.xz.sqsh", "-quiet", "-comp", "xz"
-    assert_path_exists testpath"test.xz.sqsh"
+    system bin/"mksquashfs", "in/test1", "in/test2", "in/test3", "test.xz.sqsh", "-quiet", "-comp", "xz"
+    assert_path_exists testpath/"test.xz.sqsh"
     assert_match "Found a valid SQUASHFS 4:0 superblock on test.xz.sqsh.",
-      shell_output("#{bin}unsquashfs -s test.xz.sqsh")
+      shell_output("#{bin}/unsquashfs -s test.xz.sqsh")
 
     # Test unsquashfs can extract files verbatim.
-    system bin"unsquashfs", "-d", "out", "test.xz.sqsh"
-    assert_path_exists testpath"outtest1"
-    assert_path_exists testpath"outtest2"
-    assert_path_exists testpath"outtest3"
-    assert shell_output("diff -r in out")
+    system bin/"unsquashfs", "-d", "out", "test.xz.sqsh"
+    assert_path_exists testpath/"out/test1"
+    assert_path_exists testpath/"out/test2"
+    assert_path_exists testpath/"out/test3"
+    assert shell_output("diff -r in/ out/")
   end
 end

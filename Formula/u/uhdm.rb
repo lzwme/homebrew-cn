@@ -2,12 +2,12 @@ class Uhdm < Formula
   include Language::Python::Virtualenv
 
   desc "Universal Hardware Data Model, modeling of the SystemVerilog Object Model"
-  homepage "https:github.comchipsallianceUHDM"
-  url "https:github.comchipsallianceUHDMarchiverefstagsv1.84.tar.gz"
+  homepage "https://github.com/chipsalliance/UHDM"
+  url "https://ghfast.top/https://github.com/chipsalliance/UHDM/archive/refs/tags/v1.84.tar.gz"
   sha256 "bb2acbdd294dd05660c78ba34704440032935b8bc77cae352c853533b5a7c583"
   license "Apache-2.0"
   revision 2
-  head "https:github.comchipsallianceUHDM.git", branch: "master"
+  head "https://github.com/chipsalliance/UHDM.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -27,12 +27,12 @@ class Uhdm < Formula
   depends_on "capnp"
 
   resource "orderedmultidict" do
-    url "https:files.pythonhosted.orgpackages534e3823a27d764bb8388711f4cb6f24e58453e92d6928f4163fdb01e3a3789forderedmultidict-1.0.1.tar.gz"
+    url "https://files.pythonhosted.org/packages/53/4e/3823a27d764bb8388711f4cb6f24e58453e92d6928f4163fdb01e3a3789f/orderedmultidict-1.0.1.tar.gz"
     sha256 "04070bbb5e87291cc9bfa51df413677faf2141c73c61d2a5f7b26bea3cd882ad"
   end
 
   resource "six" do
-    url "https:files.pythonhosted.orgpackages7139171f1c67cd00715f190ba0b100d606d440a28c93c7714febeca8b79af85esix-1.16.0.tar.gz"
+    url "https://files.pythonhosted.org/packages/71/39/171f1c67cd00715f190ba0b100d606d440a28c93c7714febeca8b79af85e/six-1.16.0.tar.gz"
     sha256 "1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926"
   end
 
@@ -41,7 +41,7 @@ class Uhdm < Formula
   end
 
   def install
-    venv = virtualenv_create(buildpath"venv", python3)
+    venv = virtualenv_create(buildpath/"venv", python3)
     venv.pip_install resources
 
     system "cmake", "-S", ".", "-B", "build_shared",
@@ -50,7 +50,7 @@ class Uhdm < Formula
                     "-DUHDM_USE_HOST_GTEST=ON",
                     "-DUHDM_USE_HOST_CAPNP=ON",
                     "-DCMAKE_INSTALL_RPATH=#{rpath}",
-                    "-DPython3_EXECUTABLE=#{buildpath}venvbinpython",
+                    "-DPython3_EXECUTABLE=#{buildpath}/venv/bin/python",
                     *std_cmake_args
     system "cmake", "--build", "build_shared"
     system "cmake", "--install", "build_shared"
@@ -58,14 +58,14 @@ class Uhdm < Formula
 
   test do
     # Create a minimal .uhdm file and ensure executables work
-    (testpath"test.cpp").write <<~CPP
+    (testpath/"test.cpp").write <<~CPP
       #include <cassert>
       #include <stdlib.h>
-      #include "uhdmconstant.h"
-      #include "uhdmuhdm.h"
-      #include "uhdmuhdm_types.h"   for uhdmconstant
-      #include "uhdmvhpi_user.h"    vpi_user functions.
-      #include "uhdmvpi_uhdm.h"     struct uhdm_handle
+      #include "uhdm/constant.h"
+      #include "uhdm/uhdm.h"
+      #include "uhdm/uhdm_types.h"  // for uhdmconstant
+      #include "uhdm/vhpi_user.h"   // vpi_user functions.
+      #include "uhdm/vpi_uhdm.h"    // struct uhdm_handle
       int main() {
         UHDM::Serializer serializer;
         UHDM::constant *value = serializer.MakeConstant();
@@ -84,6 +84,6 @@ class Uhdm < Formula
 
     flags = shell_output("pkg-config --cflags --libs UHDM").chomp.split
     system ENV.cxx, "test.cpp", "-o", "test", "-fPIC", "-std=c++17", *flags
-    system testpath"test"
+    system testpath/"test"
   end
 end

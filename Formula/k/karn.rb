@@ -1,10 +1,10 @@
 class Karn < Formula
   desc "Manage multiple Git identities"
-  homepage "https:github.comprydoniuskarn"
-  url "https:github.comprydoniuskarnarchiverefstagsv0.1.0.tar.gz"
+  homepage "https://github.com/prydonius/karn"
+  url "https://ghfast.top/https://github.com/prydonius/karn/archive/refs/tags/v0.1.0.tar.gz"
   sha256 "96f10ff263468b9f91244edf16d8ea548c9d281cba9b2597eaf5270f9e6127e3"
   license "MIT"
-  head "https:github.comprydoniuskarn.git", branch: "master"
+  head "https://github.com/prydonius/karn.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -25,11 +25,11 @@ class Karn < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), ".cmdkarnkarn.go"
+    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/karn/karn.go"
   end
 
   test do
-    (testpath".karn.yml").write <<~YAML
+    (testpath/".karn.yml").write <<~YAML
       ---
       #{testpath}:
         name: Homebrew Test
@@ -39,6 +39,6 @@ class Karn < Formula
     system "git", "config", "--global", "user.name", "Test"
     system "git", "config", "--global", "user.email", "test@test.com"
     system "git", "config", "--global", "user.signingkey", "test"
-    system bin"karn", "update"
+    system bin/"karn", "update"
   end
 end

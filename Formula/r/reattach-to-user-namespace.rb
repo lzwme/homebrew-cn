@@ -1,10 +1,10 @@
 class ReattachToUserNamespace < Formula
   desc "Reattach process (e.g., tmux) to background"
-  homepage "https:github.comChrisJohnsentmux-MacOSX-pasteboard"
-  url "https:github.comChrisJohnsentmux-MacOSX-pasteboardarchiverefstagsv2.9.tar.gz"
+  homepage "https://github.com/ChrisJohnsen/tmux-MacOSX-pasteboard"
+  url "https://ghfast.top/https://github.com/ChrisJohnsen/tmux-MacOSX-pasteboard/archive/refs/tags/v2.9.tar.gz"
   sha256 "e4df00ead6b267a027a4ea35032bcfa114d91e709b1986ec0cbaee6825cec436"
   license "BSD-2-Clause"
-  head "https:github.comChrisJohnsentmux-MacOSX-pasteboard.git", branch: "master"
+  head "https://github.com/ChrisJohnsen/tmux-MacOSX-pasteboard.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -31,6 +31,6 @@ class ReattachToUserNamespace < Formula
   end
 
   test do
-    system bin"reattach-to-user-namespace", "-l", "bash", "-c", "echo Hello World!"
+    system bin/"reattach-to-user-namespace", "-l", "bash", "-c", "echo Hello World!"
   end
 end

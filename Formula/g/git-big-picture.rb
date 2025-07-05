@@ -2,8 +2,8 @@ class GitBigPicture < Formula
   include Language::Python::Virtualenv
 
   desc "Visualization tool for Git repositories"
-  homepage "https:github.comgit-big-picturegit-big-picture"
-  url "https:github.comgit-big-picturegit-big-picturearchiverefstagsv1.3.0.tar.gz"
+  homepage "https://github.com/git-big-picture/git-big-picture"
+  url "https://ghfast.top/https://github.com/git-big-picture/git-big-picture/archive/refs/tags/v1.3.0.tar.gz"
   sha256 "cccbd3e35dfe6d0ce86d06079e80cf9219cb25f887c7a782e2808e740dc23c3a"
   license "GPL-3.0-or-later"
 
@@ -31,6 +31,6 @@ class GitBigPicture < Formula
     system "git", "init"
     system "git", "commit", "--allow-empty", "-m", "Empty commit"
     system "git", "big-picture", "-f", "svg", "-o", "output.svg"
-    assert_path_exists testpath"output.svg"
+    assert_path_exists testpath/"output.svg"
   end
 end

@@ -1,7 +1,7 @@
 class Symengine < Formula
   desc "Fast symbolic manipulation library written in C++"
-  homepage "https:www.sympy.orgenindex.html"
-  url "https:github.comsymenginesymenginearchiverefstagsv0.14.0.tar.gz"
+  homepage "https://www.sympy.org/en/index.html"
+  url "https://ghfast.top/https://github.com/symengine/symengine/archive/refs/tags/v0.14.0.tar.gz"
   sha256 "11c5f64e9eec998152437f288b8429ec001168277d55f3f5f1df78e3cf129707"
   license "MIT"
   revision 3
@@ -33,7 +33,7 @@ class Symengine < Formula
   end
 
   def install
-    llvm = deps.map(&:to_formula).find { |f| f.name.match?(^llvm(@\d+)?$) }
+    llvm = deps.map(&:to_formula).find { |f| f.name.match?(/^llvm(@\d+)?$/) }
     system "cmake", "-S", ".", "-B", "build",
                     "-DBUILD_SHARED_LIBS=ON",
                     "-DWITH_GMP=ON",
@@ -42,7 +42,7 @@ class Symengine < Formula
                     "-DINTEGER_CLASS=flint",
                     "-DWITH_LLVM=ON",
                     "-DWITH_COTIRE=OFF",
-                    "-DLLVM_DIR=#{llvm.opt_lib}cmakellvm",
+                    "-DLLVM_DIR=#{llvm.opt_lib}/cmake/llvm",
                     "-DWITH_SYMENGINE_THREAD_SAFE=ON",
                     "-DWITH_SYSTEM_CEREAL=ON",
                     *std_cmake_args
@@ -52,8 +52,8 @@ class Symengine < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~CPP
-      #include <symengineexpression.h>
+    (testpath/"test.cpp").write <<~CPP
+      #include <symengine/expression.h>
       using SymEngine::Expression;
       int main() {
         auto x=Expression('x');
@@ -69,6 +69,6 @@ class Symengine < Formula
     ]
     system ENV.cxx, "test.cpp", "-std=c++11", "-L#{lib}", "-lsymengine", *lib_flags, "-o", "test"
 
-    system ".test"
+    system "./test"
   end
 end

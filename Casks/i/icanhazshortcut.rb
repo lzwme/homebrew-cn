@@ -2,10 +2,10 @@ cask "icanhazshortcut" do
   version "1.3.0"
   sha256 "f2b8a8b2eb7c099f4a5df31613d9828ff25fa200bcef4e39b41074736511186b"
 
-  url "https:github.comdesevenicanhazshortcutreleasesdownload#{version}ichs.dmg"
+  url "https://ghfast.top/https://github.com/deseven/icanhazshortcut/releases/download/#{version}/ichs.dmg"
   name "iCanHazShortcut"
   desc "Shortcut manager"
-  homepage "https:github.comdesevenicanhazshortcut"
+  homepage "https://github.com/deseven/icanhazshortcut/"
 
   no_autobump! because: :requires_manual_review
 
@@ -13,7 +13,7 @@ cask "icanhazshortcut" do
 
   uninstall quit: "info.deseven.icanhazshortcut"
 
-  zap trash: "~LibraryPreferenceinfo.deseven.icanhazshortcut"
+  zap trash: "~/Library/Preference/info.deseven.icanhazshortcut"
 
   caveats do
     requires_rosetta

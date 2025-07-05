@@ -1,10 +1,10 @@
 class CdogsSdl < Formula
   desc "Classic overhead run-and-gun game"
-  homepage "https:cxong.github.iocdogs-sdl"
-  url "https:github.comcxongcdogs-sdlarchiverefstags2.3.0.tar.gz"
+  homepage "https://cxong.github.io/cdogs-sdl/"
+  url "https://ghfast.top/https://github.com/cxong/cdogs-sdl/archive/refs/tags/2.3.0.tar.gz"
   sha256 "6ea66e058503a5c160dbeccc25072061c87e190ced6876ae5b63a3e4d1ed0044"
   license "GPL-2.0-or-later"
-  head "https:github.comcxongcdogs-sdl.git", branch: "master"
+  head "https://github.com/cxong/cdogs-sdl.git", branch: "master"
 
   livecheck do
     url :stable
@@ -37,24 +37,24 @@ class CdogsSdl < Formula
 
   def install
     system "cmake", "-S", ".", "-B", "build",
-                    "-DCDOGS_DATA_DIR=#{pkgshare}",
+                    "-DCDOGS_DATA_DIR=#{pkgshare}/",
                     "-DCMAKE_POLICY_VERSION_MINIMUM=3.5",
                     *std_cmake_args
     system "cmake", "--build", "build"
 
-    bin.install %w[buildsrccdogs-sdl buildsrccdogs-sdl-editor]
+    bin.install %w[build/src/cdogs-sdl build/src/cdogs-sdl-editor]
     pkgshare.install %w[data dogfights graphics missions music sounds]
-    doc.install Dir["doc*"]
+    doc.install Dir["doc/*"]
   end
 
   test do
-    pid = spawn bin"cdogs-sdl"
+    pid = spawn bin/"cdogs-sdl"
 
     max_sleep_time = 90
     time_slept = 0
-    time_slept += sleep(5) while !(testpath".configcdogs-sdl").exist? && time_slept < max_sleep_time
+    time_slept += sleep(5) while !(testpath/".config/cdogs-sdl").exist? && time_slept < max_sleep_time
 
-    assert_path_exists testpath".configcdogs-sdl"
+    assert_path_exists testpath/".config/cdogs-sdl"
   ensure
     Process.kill("TERM", pid)
   end

@@ -1,7 +1,7 @@
 class Md4c < Formula
   desc "C Markdown parser. Fast. SAX-like interface"
-  homepage "https:github.commitymd4c"
-  url "https:github.commitymd4carchiverefstagsrelease-0.5.2.tar.gz"
+  homepage "https://github.com/mity/md4c"
+  url "https://ghfast.top/https://github.com/mity/md4c/archive/refs/tags/release-0.5.2.tar.gz"
   sha256 "55d0111d48fb11883aaee91465e642b8b640775a4d6993c2d0e7a8092758ef21"
   license "MIT"
 
@@ -27,14 +27,14 @@ class Md4c < Formula
 
   test do
     # test md2html
-    (testpath"test_md.md").write <<~MARKDOWN
+    (testpath/"test_md.md").write <<~MARKDOWN
       # Title
       some text
     MARKDOWN
-    system bin"md2html", ".test_md.md"
+    system bin/"md2html", "./test_md.md"
 
     # test libmd4c
-    (testpath"test_program.c").write <<~C
+    (testpath/"test_program.c").write <<~C
       #include <stddef.h>
       #include <md4c.h>
 
@@ -56,6 +56,6 @@ class Md4c < Formula
       }
     C
     system ENV.cc, "test_program.c", "-L#{lib}", "-lmd4c", "-o", "test_program"
-    system ".test_program"
+    system "./test_program"
   end
 end

@@ -1,10 +1,10 @@
 class JsonFortran < Formula
   desc "Fortran 2008 JSON API"
-  homepage "https:github.comjacobwilliamsjson-fortran"
-  url "https:github.comjacobwilliamsjson-fortranarchiverefstags9.0.3.tar.gz"
+  homepage "https://github.com/jacobwilliams/json-fortran"
+  url "https://ghfast.top/https://github.com/jacobwilliams/json-fortran/archive/refs/tags/9.0.3.tar.gz"
   sha256 "ea6e02ab4873d43e2059d51d8392422d6f746a7a9ea0fb18ab28a3beb4fef13c"
   license "BSD-3-Clause"
-  head "https:github.comjacobwilliamsjson-fortran.git", branch: "master"
+  head "https://github.com/jacobwilliams/json-fortran.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "431800da5e3125fabc45e0694e5f038427c5730e7819c8172979aa30208f03ee"
@@ -32,7 +32,7 @@ class JsonFortran < Formula
   end
 
   test do
-    (testpath"json_test.f90").write <<~FORTRAN
+    (testpath/"json_test.f90").write <<~FORTRAN
       program example
       use json_module, RK => json_RK
       use iso_fortran_env, only: stdout => output_unit
@@ -51,6 +51,6 @@ class JsonFortran < Formula
     FORTRAN
     system "gfortran", "-o", "test", "json_test.f90", "-I#{include}",
                        "-L#{lib}", "-ljsonfortran"
-    system ".test"
+    system "./test"
   end
 end

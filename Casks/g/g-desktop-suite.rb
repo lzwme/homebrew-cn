@@ -2,9 +2,9 @@ cask "g-desktop-suite" do
   version "0.3.1"
   sha256 "461c5d19149a088981f8f7a87148cda1762458b7c64d59e1ec5062106eb8ad90"
 
-  url "https:github.comalexkim205g-desktop-suitereleaseslatestdownloadG-Desktop-Suite-#{version}.dmg"
+  url "https://github.com/alexkim205/g-desktop-suite/releases/latest/download/G-Desktop-Suite-#{version}.dmg"
   name "G Desktop Suite"
-  homepage "https:github.comalexkim205g-desktop-suite"
+  homepage "https://github.com/alexkim205/g-desktop-suite"
 
   no_autobump! because: :requires_manual_review
 

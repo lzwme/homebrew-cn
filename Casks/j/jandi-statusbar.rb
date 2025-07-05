@@ -2,10 +2,10 @@ cask "jandi-statusbar" do
   version "1.15"
   sha256 "b2bf4a52247f171d19412b23e5d8a7f461b3d54c2cf3fc7b13bde5afe5457895"
 
-  url "https:github.comtechinparkJandireleasesdownloadv#{version}jandi.dmg"
+  url "https://ghfast.top/https://github.com/techinpark/Jandi/releases/download/v#{version}/jandi.dmg"
   name "jandi"
   desc "GitHub contributions in your status bar"
-  homepage "https:github.comtechinparkJandi"
+  homepage "https://github.com/techinpark/Jandi"
 
   no_autobump! because: :requires_manual_review
 
@@ -14,7 +14,7 @@ cask "jandi-statusbar" do
   app "jandi.app"
 
   zap trash: [
-    "~LibraryCachescom.tmsae.jandi",
-    "~LibraryPreferencescom.tmsae.jandi.plist",
+    "~/Library/Caches/com.tmsae.jandi",
+    "~/Library/Preferences/com.tmsae.jandi.plist",
   ]
 end

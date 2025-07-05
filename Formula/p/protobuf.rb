@@ -1,7 +1,7 @@
 class Protobuf < Formula
   desc "Protocol buffers (Google's data interchange format)"
-  homepage "https:protobuf.dev"
-  url "https:github.comprotocolbuffersprotobufreleasesdownloadv29.3protobuf-29.3.tar.gz"
+  homepage "https://protobuf.dev/"
+  url "https://ghfast.top/https://github.com/protocolbuffers/protobuf/releases/download/v29.3/protobuf-29.3.tar.gz"
   sha256 "008a11cc56f9b96679b4c285fd05f46d317d685be3ab524b2a310be0fbad987e"
   license "BSD-3-Clause"
 
@@ -33,7 +33,7 @@ class Protobuf < Formula
 
   # Backport to expose java-related symbols
   patch do
-    url "https:github.comprotocolbuffersprotobufcommit9dc5aaa1e99f16065e25be4b9aab0a19bfb65ea2.patch?full_index=1"
+    url "https://github.com/protocolbuffers/protobuf/commit/9dc5aaa1e99f16065e25be4b9aab0a19bfb65ea2.patch?full_index=1"
     sha256 "edc1befbc3d7f7eded6b7516b3b21e1aa339aee70e17c96ab337f22e60e154d7"
   end
 
@@ -57,12 +57,12 @@ class Protobuf < Formula
     system "ctest", "--test-dir", "build", "--verbose" if OS.mac?
     system "cmake", "--install", "build"
 
-    (share"vimvimfilessyntax").install "editorsproto.vim"
-    elisp.install "editorsprotobuf-mode.el"
+    (share/"vim/vimfiles/syntax").install "editors/proto.vim"
+    elisp.install "editors/protobuf-mode.el"
   end
 
   test do
-    (testpath"test.proto").write <<~PROTO
+    (testpath/"test.proto").write <<~PROTO
       syntax = "proto3";
       package test;
       message TestCase {
@@ -72,6 +72,6 @@ class Protobuf < Formula
         repeated TestCase case = 1;
       }
     PROTO
-    system bin"protoc", "test.proto", "--cpp_out=."
+    system bin/"protoc", "test.proto", "--cpp_out=."
   end
 end

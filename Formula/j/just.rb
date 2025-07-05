@@ -1,14 +1,14 @@
 class Just < Formula
   desc "Handy way to save and run project-specific commands"
-  homepage "https:github.comcaseyjust"
-  url "https:github.comcaseyjustarchiverefstags1.41.0.tar.gz"
+  homepage "https://github.com/casey/just"
+  url "https://ghfast.top/https://github.com/casey/just/archive/refs/tags/1.41.0.tar.gz"
   sha256 "4ab64ebeaf7d6cf90d2824fddb91f7a3a4cfbb5d016e99cc5039ded475c8a244"
   license "CC0-1.0"
-  head "https:github.comcaseyjust.git", branch: "master"
+  head "https://github.com/casey/just.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -26,18 +26,18 @@ class Just < Formula
   def install
     system "cargo", "install", *std_cargo_args
 
-    generate_completions_from_executable(bin"just", "--completions")
-    (man1"just.1").write Utils.safe_popen_read(bin"just", "--man")
+    generate_completions_from_executable(bin/"just", "--completions")
+    (man1/"just.1").write Utils.safe_popen_read(bin/"just", "--man")
   end
 
   test do
-    (testpath"justfile").write <<~EOS
+    (testpath/"justfile").write <<~EOS
       default:
         touch it-worked
     EOS
-    system bin"just"
-    assert_path_exists testpath"it-worked"
+    system bin/"just"
+    assert_path_exists testpath/"it-worked"
 
-    assert_match version.to_s, shell_output("#{bin}just --version")
+    assert_match version.to_s, shell_output("#{bin}/just --version")
   end
 end

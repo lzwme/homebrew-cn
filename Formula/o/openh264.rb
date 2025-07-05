@@ -1,10 +1,10 @@
 class Openh264 < Formula
   desc "H.264 codec from Cisco"
-  homepage "https:www.openh264.org"
-  url "https:github.comciscoopenh264archiverefstagsv2.6.0.tar.gz"
+  homepage "https://www.openh264.org/"
+  url "https://ghfast.top/https://github.com/cisco/openh264/archive/refs/tags/v2.6.0.tar.gz"
   sha256 "558544ad358283a7ab2930d69a9ceddf913f4a51ee9bf1bfb9e377322af81a69"
   license "BSD-2-Clause"
-  head "https:github.comciscoopenh264.git", branch: "master"
+  head "https://github.com/cisco/openh264.git", branch: "master"
 
   # Upstream creates releases that use a stable tag (e.g., `v1.2.3`) but are
   # labeled as "pre-release" on GitHub before the version is released, so it's
@@ -31,8 +31,8 @@ class Openh264 < Formula
   end
 
   test do
-    (testpath"test.c").write <<~C
-      #include <welscodec_api.h>
+    (testpath/"test.c").write <<~C
+      #include <wels/codec_api.h>
       int main() {
         ISVCDecoder *dec;
         WelsCreateDecoder (&dec);
@@ -41,6 +41,6 @@ class Openh264 < Formula
       }
     C
     system ENV.cc, "test.c", "-L#{lib}", "-lopenh264", "-o", "test"
-    system ".test"
+    system "./test"
   end
 end

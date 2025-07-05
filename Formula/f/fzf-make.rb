@@ -1,10 +1,10 @@
 class FzfMake < Formula
   desc "Fuzzy finder with preview window for make, pnpm, yarn & just"
-  homepage "https:github.comkyu08fzf-make"
-  url "https:github.comkyu08fzf-makearchiverefstagsv0.59.0.tar.gz"
+  homepage "https://github.com/kyu08/fzf-make"
+  url "https://ghfast.top/https://github.com/kyu08/fzf-make/archive/refs/tags/v0.59.0.tar.gz"
   sha256 "9180cd307891aa36647d64c2eaaa492850e15c4af035086c7465cfcf0a1fa362"
   license "MIT"
-  head "https:github.comkyu08fzf-make.git", branch: "main"
+  head "https://github.com/kyu08/fzf-make.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "3850f3f10ed072ca5a32632d8ff30facca0a1451fa7985b0d1457a62ecb26a12"
@@ -23,18 +23,18 @@ class FzfMake < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}fzf-make -v")
+    assert_match version.to_s, shell_output("#{bin}/fzf-make -v")
 
     return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
 
-    (testpath"Makefile").write <<~MAKE
+    (testpath/"Makefile").write <<~MAKE
       brew:
         cc test.c -o test
     MAKE
 
     begin
-      output_log = testpath"output.log"
-      pid = spawn bin"fzf-make", [:out, :err] => output_log.to_s
+      output_log = testpath/"output.log"
+      pid = spawn bin/"fzf-make", [:out, :err] => output_log.to_s
       sleep 5
       sleep 5 if OS.mac? && Hardware::CPU.intel?
       assert_match "make brew", output_log.read

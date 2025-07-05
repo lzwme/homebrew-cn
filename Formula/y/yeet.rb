@@ -1,10 +1,10 @@
 class Yeet < Formula
   desc "Packaging tool that lets you declare build instructions in JavaScript"
-  homepage "https:github.comTecharoHQyeet"
-  url "https:github.comTecharoHQyeetarchiverefstagsv0.6.2.tar.gz"
+  homepage "https://github.com/TecharoHQ/yeet"
+  url "https://ghfast.top/https://github.com/TecharoHQ/yeet/archive/refs/tags/v0.6.2.tar.gz"
   sha256 "2ea7d2bb1a37dbb401fdee0b304228b5165caad65e100423504de21aaaece15d"
   license "MIT"
-  head "https:github.comTecharoHQyeet.git", branch: "main"
+  head "https://github.com/TecharoHQ/yeet.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "1a73b809122ba4331e99f81aa0276ce757ef59f83734c5a9a6c1c8e0e75e6a0b"
@@ -20,15 +20,15 @@ class Yeet < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.comTecharoHQyeet.Version=#{version}
+      -X github.com/TecharoHQ/yeet.Version=#{version}
     ]
-    system "go", "build", *std_go_args(ldflags:), ".cmdyeet"
+    system "go", "build", *std_go_args(ldflags:), "./cmd/yeet"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}yeet -version")
+    assert_match version.to_s, shell_output("#{bin}/yeet -version")
 
     output = "open yeetfile.js: no such file or directory"
-    assert_match output, shell_output("#{bin}yeet 2>&1", 1)
+    assert_match output, shell_output("#{bin}/yeet 2>&1", 1)
   end
 end

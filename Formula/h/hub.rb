@@ -1,10 +1,10 @@
 class Hub < Formula
   desc "Add GitHub support to git on the command-line"
-  homepage "https:hub.github.com"
-  url "https:github.commislavhubarchiverefstagsv2.14.2.tar.gz"
+  homepage "https://hub.github.com/"
+  url "https://ghfast.top/https://github.com/mislav/hub/archive/refs/tags/v2.14.2.tar.gz"
   sha256 "e19e0fdfd1c69c401e1c24dd2d4ecf3fd9044aa4bd3f8d6fd942ed1b2b2ad21a"
   license "MIT"
-  head "https:github.commislavhub.git", branch: "master"
+  head "https://github.com/mislav/hub.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -39,16 +39,16 @@ class Hub < Formula
   def install
     system "make", "install", "prefix=#{prefix}"
 
-    bash_completion.install "etchub.bash_completion.sh"
-    zsh_completion.install "etchub.zsh_completion" => "_hub"
-    fish_completion.install "etchub.fish_completion" => "hub.fish"
+    bash_completion.install "etc/hub.bash_completion.sh"
+    zsh_completion.install "etc/hub.zsh_completion" => "_hub"
+    fish_completion.install "etc/hub.fish_completion" => "hub.fish"
   end
 
   test do
     system "git", "init"
-    %w[haunted house].each { |f| touch testpathf }
+    %w[haunted house].each { |f| touch testpath/f }
     system "git", "add", "haunted", "house"
     system "git", "commit", "-a", "-m", "Initial Commit"
-    assert_equal "haunted\nhouse", shell_output("#{bin}hub ls-files").strip
+    assert_equal "haunted\nhouse", shell_output("#{bin}/hub ls-files").strip
   end
 end

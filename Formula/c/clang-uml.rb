@@ -1,10 +1,10 @@
 class ClangUml < Formula
   desc "Customizable automatic UML diagram generator for C++ based on Clang"
-  homepage "https:github.combkryzaclang-uml"
-  url "https:github.combkryzaclang-umlarchiverefstags0.6.2.tar.gz"
+  homepage "https://github.com/bkryza/clang-uml"
+  url "https://ghfast.top/https://github.com/bkryza/clang-uml/archive/refs/tags/0.6.2.tar.gz"
   sha256 "004540c328699f81abebceb33a4661b548ab3a5f74096da2c025b9971b2b17ff"
   license "Apache-2.0"
-  head "https:github.combkryzaclang-uml.git", branch: "master"
+  head "https://github.com/bkryza/clang-uml.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "bffe298a11ff65c80dec6b020142fc8b6bc902339316ab07dc40d0702008cb5b"
@@ -23,7 +23,7 @@ class ClangUml < Formula
 
   def llvm
     deps.map(&:to_formula)
-        .find { |f| f.name.match?(^llvm(@\d+)?$) }
+        .find { |f| f.name.match?(/^llvm(@\d+)?$/) }
   end
 
   def install
@@ -40,25 +40,25 @@ class ClangUml < Formula
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 
-    bash_completion.install "packagingautocompleteclang-uml"
-    zsh_completion.install "packagingautocomplete_clang-uml"
+    bash_completion.install "packaging/autocomplete/clang-uml"
+    zsh_completion.install "packaging/autocomplete/_clang-uml"
   end
 
   test do
     # Check if clang-uml is linked properly
-    system bin"clang-uml", "--version"
-    system bin"clang-uml", "--help"
+    system bin/"clang-uml", "--version"
+    system bin/"clang-uml", "--help"
 
     # Initialize a minimal C++ CMake project and try to generate a
     # PlantUML diagram from it
-    (testpath"test.cc").write <<~CPP
+    (testpath/"test.cc").write <<~CPP
       #include <stddef.h>
       namespace A {
         struct AA { size_t s; };
       }
       int main(int argc, char** argv) { A::AA a; return 0; }
     CPP
-    (testpath".clang-uml").write <<~YAML
+    (testpath/".clang-uml").write <<~YAML
       compilation_database_dir: build
       output_directory: diagrams
       diagrams:
@@ -68,7 +68,7 @@ class ClangUml < Formula
             namespaces:
               - A
     YAML
-    (testpath"CMakeLists.txt").write <<~CMAKE
+    (testpath/"CMakeLists.txt").write <<~CMAKE
       cmake_minimum_required(VERSION 3.15)
 
       project(clang-uml-test CXX)
@@ -80,7 +80,7 @@ class ClangUml < Formula
 
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
 
-    system bin"clang-uml", "--no-metadata", "--query-driver", "."
+    system bin/"clang-uml", "--no-metadata", "--query-driver", "."
 
     expected_output = Regexp.new(<<~EOS, Regexp::MULTILINE)
       @startuml
@@ -92,8 +92,8 @@ class ClangUml < Formula
       @enduml
     EOS
 
-    assert_path_exists testpath"diagrams""test_class.puml"
+    assert_path_exists testpath/"diagrams"/"test_class.puml"
 
-    assert_match expected_output, (testpath"diagramstest_class.puml").read
+    assert_match expected_output, (testpath/"diagrams/test_class.puml").read
   end
 end

@@ -1,14 +1,14 @@
 class Orbuculum < Formula
-  desc "Arm Cortex-M SWOSWV Demux and Postprocess"
-  homepage "https:github.comorbcodeorbuculum"
-  url "https:github.comorbcodeorbuculumarchiverefstagsV2.2.0.tar.gz"
+  desc "Arm Cortex-M SWO/SWV Demux and Postprocess"
+  homepage "https://github.com/orbcode/orbuculum"
+  url "https://ghfast.top/https://github.com/orbcode/orbuculum/archive/refs/tags/V2.2.0.tar.gz"
   sha256 "6614fba7044aa62e486b29ff4a81d0408d6e88499249bf2b839ccadfc54eec83"
   license "BSD-3-Clause"
   revision 1
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -50,17 +50,17 @@ class Orbuculum < Formula
   end
 
   test do
-    assert_match "orbuculum version #{version}", shell_output("#{bin}orbuculum --version 2>&1", 255)
-    assert_match "orbcat version #{version}", shell_output("#{bin}orbcat --version 2>&1", 255)
-    assert_match "orbdump version #{version}", shell_output("#{bin}orbdump --version 2>&1", 255)
-    assert_match "orbfifo version #{version}", shell_output("#{bin}orbfifo --version 2>&1", 255)
-    assert_match "orblcd version #{version}", shell_output("#{bin}orblcd --version 2>&1", 255)
-    assert_match "Elf File not specified", shell_output("#{bin}orbmortem 2>&1")
+    assert_match "orbuculum version #{version}", shell_output("#{bin}/orbuculum --version 2>&1", 255)
+    assert_match "orbcat version #{version}", shell_output("#{bin}/orbcat --version 2>&1", 255)
+    assert_match "orbdump version #{version}", shell_output("#{bin}/orbdump --version 2>&1", 255)
+    assert_match "orbfifo version #{version}", shell_output("#{bin}/orbfifo --version 2>&1", 255)
+    assert_match "orblcd version #{version}", shell_output("#{bin}/orblcd --version 2>&1", 255)
+    assert_match "Elf File not specified", shell_output("#{bin}/orbmortem 2>&1")
     assert_match "This utility is in development. Use at your own risk!!\nElf File not specified",
-                 shell_output("#{bin}orbprofile 2>&1", 254).sub("\r", "")
-    assert_match "Elf File not specified", shell_output("#{bin}orbstat 2>&1", 254)
-    assert_match "Elf File not specified", shell_output("#{bin}orbtop 2>&1", 247)
-    assert_match "No devices found", shell_output("#{bin}orbtrace 2>&1")
-    assert_match "orbcat version #{version}", shell_output("#{bin}orbzmq --version 2>&1", 255)
+                 shell_output("#{bin}/orbprofile 2>&1", 254).sub("\r", "")
+    assert_match "Elf File not specified", shell_output("#{bin}/orbstat 2>&1", 254)
+    assert_match "Elf File not specified", shell_output("#{bin}/orbtop 2>&1", 247)
+    assert_match "No devices found", shell_output("#{bin}/orbtrace 2>&1")
+    assert_match "orbcat version #{version}", shell_output("#{bin}/orbzmq --version 2>&1", 255)
   end
 end

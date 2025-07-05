@@ -2,14 +2,14 @@ cask "voiceink" do
   version "1.38"
   sha256 "c3db0d3b5edb8b6313f168e845e9abf591a0f3dfb32e3e946674428d4196d85c"
 
-  url "https:github.comBeingpaxVoiceInkreleasesdownloadv#{version}VoiceInk.dmg",
-      verified: "github.comBeingpaxVoiceInk"
+  url "https://ghfast.top/https://github.com/Beingpax/VoiceInk/releases/download/v#{version}/VoiceInk.dmg",
+      verified: "github.com/Beingpax/VoiceInk/"
   name "VoiceInk"
   desc "Voice to text app"
-  homepage "https:tryvoiceink.com"
+  homepage "https://tryvoiceink.com/"
 
   livecheck do
-    url "https:beingpax.github.ioVoiceInkappcast.xml"
+    url "https://beingpax.github.io/VoiceInk/appcast.xml"
     strategy :sparkle, &:short_version
   end
 
@@ -19,11 +19,11 @@ cask "voiceink" do
   app "VoiceInk.app"
 
   zap trash: [
-    "~LibraryApplication Supportcom.prakashjoshipax.VoiceInk",
-    "~LibraryApplication SupportVoiceInk",
-    "~LibraryCachescom.prakashjoshipax.VoiceInk",
-    "~LibraryHTTPStoragescom.prakashjoshipax.VoiceInk",
-    "~LibraryPreferencescom.prakashjoshipax.VoiceInk.plist",
-    "~LibrarySaved Application Statecom.prakashjoshipax.VoiceInk.savedState",
+    "~/Library/Application Support/com.prakashjoshipax.VoiceInk",
+    "~/Library/Application Support/VoiceInk",
+    "~/Library/Caches/com.prakashjoshipax.VoiceInk",
+    "~/Library/HTTPStorages/com.prakashjoshipax.VoiceInk",
+    "~/Library/Preferences/com.prakashjoshipax.VoiceInk.plist",
+    "~/Library/Saved Application State/com.prakashjoshipax.VoiceInk.savedState",
   ]
 end

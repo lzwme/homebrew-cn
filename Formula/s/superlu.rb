@@ -1,13 +1,13 @@
 class Superlu < Formula
   desc "Solve large, sparse nonsymmetric systems of equations"
-  homepage "https:portal.nersc.govprojectsparsesuperlu"
-  url "https:github.comxiaoyelisuperluarchiverefstagsv7.0.0.tar.gz"
+  homepage "https://portal.nersc.gov/project/sparse/superlu/"
+  url "https://ghfast.top/https://github.com/xiaoyeli/superlu/archive/refs/tags/v7.0.0.tar.gz"
   sha256 "d7b91d4e0bb52644ca74c1a4dd466a694ddf1244a7bbf93cb453e8ca1f6527eb"
   license "BSD-3-Clause-LBNL"
 
   livecheck do
     url :homepage
-    regex(>SuperLU Version v?(\d+(?:\.\d+)+)i)
+    regex(/>SuperLU Version v?(\d+(?:\.\d+)+)/i)
   end
 
   bottle do
@@ -30,7 +30,7 @@ class Superlu < Formula
   def install
     args = %W[
       -Denable_internal_blaslib=NO
-      -DTPL_BLAS_LIBRARIES=#{Formula["openblas"].opt_lib}#{shared_library("libopenblas")}
+      -DTPL_BLAS_LIBRARIES=#{Formula["openblas"].opt_lib}/#{shared_library("libopenblas")}
       -DBUILD_SHARED_LIBS=YES
     ]
 
@@ -39,14 +39,14 @@ class Superlu < Formula
     system "cmake", "--install", "build"
 
     # Source and data for test
-    pkgshare.install "EXAMPLEdlinsol.c"
-    pkgshare.install "EXAMPLEg20.rua"
+    pkgshare.install "EXAMPLE/dlinsol.c"
+    pkgshare.install "EXAMPLE/g20.rua"
   end
 
   test do
     pkgconf_cflags = shell_output("pkgconf --cflags --libs superlu").chomp.split
-    system ENV.cc, pkgshare"dlinsol.c", *pkgconf_cflags, "-o", "test"
+    system ENV.cc, pkgshare/"dlinsol.c", *pkgconf_cflags, "-o", "test"
     assert_match "No of nonzeros in L+U = 11886",
-                 shell_output(".test < #{pkgshare}g20.rua")
+                 shell_output("./test < #{pkgshare}/g20.rua")
   end
 end

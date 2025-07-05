@@ -5,11 +5,11 @@ cask "aigcpanel" do
   sha256 arm:   "402739f7357f73b99d4a722d40934b3ad10b6361014ca30b5cef74b78f8be1b8",
          intel: "b45fdc6907d48257b98e9845d3749ebe70daa09d2ffab78670ff2bc897b6ef23"
 
-  url "https:github.commodstart-libaigcpanelreleasesdownloadv#{version}AigcPanel-#{version}-mac-#{arch}.dmg",
-      verified: "github.commodstart-libaigcpanel"
+  url "https://ghfast.top/https://github.com/modstart-lib/aigcpanel/releases/download/v#{version}/AigcPanel-#{version}-mac-#{arch}.dmg",
+      verified: "github.com/modstart-lib/aigcpanel/"
   name "AigcPanel"
   desc "AI video, audio and broadcast generator"
-  homepage "https:aigcpanel.com"
+  homepage "https://aigcpanel.com/"
 
   livecheck do
     url :url
@@ -21,8 +21,8 @@ cask "aigcpanel" do
   app "AigcPanel.app"
 
   zap trash: [
-    "~LibraryApplication Supportaigcpanel",
-    "~LibraryPreferencesAigcPanel.plist",
-    "~LibrarySaved Application StateAigcPanel.savedState",
+    "~/Library/Application Support/aigcpanel",
+    "~/Library/Preferences/AigcPanel.plist",
+    "~/Library/Saved Application State/AigcPanel.savedState",
   ]
 end

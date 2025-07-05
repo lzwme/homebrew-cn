@@ -1,10 +1,10 @@
 class Codesnap < Formula
   desc "Generates code snapshots in various formats"
-  homepage "https:github.comcodesnap-rscodesnap"
-  url "https:github.comcodesnap-rscodesnaparchiverefstagsv0.12.9.tar.gz"
+  homepage "https://github.com/codesnap-rs/codesnap"
+  url "https://ghfast.top/https://github.com/codesnap-rs/codesnap/archive/refs/tags/v0.12.9.tar.gz"
   sha256 "365d64b0a752396b55d400c08e287c1b09556a8eaca4242cab55d17da8a7af48"
   license "MIT"
-  head "https:github.comcodesnap-rscodesnap.git", branch: "main"
+  head "https://github.com/codesnap-rs/codesnap.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "b652969b9ad9931a999c2b3b78ac75371349949d491e8cd758838746b77c5cf7"
@@ -26,15 +26,15 @@ class Codesnap < Formula
   def install
     system "cargo", "install", *std_cargo_args(path: "cli")
 
-    pkgshare.install "cliexamples"
+    pkgshare.install "cli/examples"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}codesnap --version")
+    assert_match version.to_s, shell_output("#{bin}/codesnap --version")
 
     # Fails in Linux CI with "no default font found"
     return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
 
-    assert_match "SUCCESS", shell_output("#{bin}codesnap -f #{pkgshare}examplescli.sh -o cli.png")
+    assert_match "SUCCESS", shell_output("#{bin}/codesnap -f #{pkgshare}/examples/cli.sh -o cli.png")
   end
 end

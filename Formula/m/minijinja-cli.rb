@@ -1,10 +1,10 @@
 class MinijinjaCli < Formula
   desc "Render Jinja2 templates directly from the command-line to stdout"
-  homepage "https:docs.rsminijinjalatestminijinja"
-  url "https:github.commitsuhikominijinjaarchiverefstags2.11.0.tar.gz"
+  homepage "https://docs.rs/minijinja/latest/minijinja/"
+  url "https://ghfast.top/https://github.com/mitsuhiko/minijinja/archive/refs/tags/2.11.0.tar.gz"
   sha256 "08f9f73be493b0b1ebc6e8e69e38594e6531d99e416b0cbffe4169852443552b"
   license "Apache-2.0"
-  head "https:github.commitsuhikominijinja.git", branch: "main"
+  head "https://github.com/mitsuhiko/minijinja.git", branch: "main"
 
   livecheck do
     url :stable
@@ -25,14 +25,14 @@ class MinijinjaCli < Formula
   def install
     system "cargo", "install", *std_cargo_args(path: "minijinja-cli")
 
-    generate_completions_from_executable(bin"minijinja-cli", "--generate-completion")
+    generate_completions_from_executable(bin/"minijinja-cli", "--generate-completion")
   end
 
   test do
-    (testpath"test.jinja").write <<~EOS
+    (testpath/"test.jinja").write <<~EOS
       Hello {{ name }}
     EOS
 
-    assert_equal "Hello Homebrew\n", shell_output("#{bin}minijinja-cli test.jinja --define name=Homebrew")
+    assert_equal "Hello Homebrew\n", shell_output("#{bin}/minijinja-cli test.jinja --define name=Homebrew")
   end
 end

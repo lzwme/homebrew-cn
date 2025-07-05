@@ -1,11 +1,11 @@
 class JsonnetBundler < Formula
   desc "Package manager for Jsonnet"
-  homepage "https:github.comjsonnet-bundlerjsonnet-bundler"
-  url "https:github.comjsonnet-bundlerjsonnet-bundler.git",
+  homepage "https://github.com/jsonnet-bundler/jsonnet-bundler"
+  url "https://github.com/jsonnet-bundler/jsonnet-bundler.git",
       tag:      "v0.6.0",
       revision: "ddded59c7066658f3d5abc7fcfc6be2220c92cad"
   license "Apache-2.0"
-  head "https:github.comjsonnet-bundlerjsonnet-bundler.git", branch: "master"
+  head "https://github.com/jsonnet-bundler/jsonnet-bundler.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "68bb147a2c42552de0ad48ba06125c83402858c56650e29f266443cf9974e11a"
@@ -23,17 +23,17 @@ class JsonnetBundler < Formula
 
   def install
     ENV["CGO_ENABLED"] = "0"
-    system "go", "build", *std_go_args(ldflags: "-s -w -X main.Version=#{version}", output: bin"jb"), ".cmdjb"
+    system "go", "build", *std_go_args(ldflags: "-s -w -X main.Version=#{version}", output: bin/"jb"), "./cmd/jb"
   end
 
   test do
-    assert_match "A jsonnet package manager", shell_output("#{bin}jb 2>&1")
+    assert_match "A jsonnet package manager", shell_output("#{bin}/jb 2>&1")
 
-    system bin"jb", "init"
-    assert_path_exists testpath"jsonnetfile.json"
+    system bin/"jb", "init"
+    assert_path_exists testpath/"jsonnetfile.json"
 
-    system bin"jb", "install", "https:github.comgrafanagrafonnet-lib"
-    assert_predicate testpath"vendor", :directory?
-    assert_path_exists testpath"jsonnetfile.lock.json"
+    system bin/"jb", "install", "https://github.com/grafana/grafonnet-lib"
+    assert_predicate testpath/"vendor", :directory?
+    assert_path_exists testpath/"jsonnetfile.lock.json"
   end
 end

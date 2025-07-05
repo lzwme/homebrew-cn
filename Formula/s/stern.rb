@@ -1,10 +1,10 @@
 class Stern < Formula
   desc "Tail multiple Kubernetes pods & their containers"
-  homepage "https:github.comsternstern"
-  url "https:github.comsternsternarchiverefstagsv1.32.0.tar.gz"
+  homepage "https://github.com/stern/stern"
+  url "https://ghfast.top/https://github.com/stern/stern/archive/refs/tags/v1.32.0.tar.gz"
   sha256 "a597449d4a4443a45206eb5054676545f74a5cc279a6c48e298e01429e471017"
   license "Apache-2.0"
-  head "https:github.comsternstern.git", branch: "master"
+  head "https://github.com/stern/stern.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "c65bf6ff2ee1634f392e630a76b6953f4674c750b125a9df9dbe0a06637d6e5c"
@@ -19,13 +19,13 @@ class Stern < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w -X github.comsternsterncmd.version=#{version}")
+    system "go", "build", *std_go_args(ldflags: "-s -w -X github.com/stern/stern/cmd.version=#{version}")
 
     # Install shell completion
-    generate_completions_from_executable(bin"stern", "--completion")
+    generate_completions_from_executable(bin/"stern", "--completion")
   end
 
   test do
-    assert_match "version: #{version}", shell_output("#{bin}stern --version")
+    assert_match "version: #{version}", shell_output("#{bin}/stern --version")
   end
 end

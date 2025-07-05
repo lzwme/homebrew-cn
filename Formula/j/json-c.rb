@@ -1,15 +1,15 @@
 class JsonC < Formula
   desc "JSON parser for C"
-  homepage "https:github.comjson-cjson-cwiki"
-  url "https:github.comjson-cjson-carchiverefstagsjson-c-0.18-20240915.tar.gz"
+  homepage "https://github.com/json-c/json-c/wiki"
+  url "https://ghfast.top/https://github.com/json-c/json-c/archive/refs/tags/json-c-0.18-20240915.tar.gz"
   version "0.18"
   sha256 "3112c1f25d39eca661fe3fc663431e130cc6e2f900c081738317fba49d29e298"
   license "MIT"
-  head "https:github.comjson-cjson-c.git", branch: "master"
+  head "https://github.com/json-c/json-c.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(^json-c[._-](\d+(?:\.\d+)+)(?:[._-]\d{6,8})?$i)
+    regex(/^json-c[._-](\d+(?:\.\d+)+)(?:[._-]\d{6,8})?$/i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -28,16 +28,16 @@ class JsonC < Formula
 
   def install
     # We pass `BUILD_APPS=OFF` since any built apps are never installed. See:
-    #   https:github.comjson-cjson-cblobmasterappsCMakeLists.txt#L119-L121
+    #   https://github.com/json-c/json-c/blob/master/apps/CMakeLists.txt#L119-L121
     system "cmake", "-S", ".", "-B", "build", "-DBUILD_APPS=OFF", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end
 
   test do
-    (testpath"test.c").write <<~'EOS'
+    (testpath/"test.c").write <<~'EOS'
       #include <stdio.h>
-      #include <json-cjson.h>
+      #include <json-c/json.h>
 
       int main() {
         json_object *obj = json_object_new_object();
@@ -49,6 +49,6 @@ class JsonC < Formula
     EOS
 
     system ENV.cc, "-I#{include}", "test.c", "-L#{lib}", "-ljson-c", "-o", "test"
-    assert_equal '{ "key": "value" }', shell_output(".test").chomp
+    assert_equal '{ "key": "value" }', shell_output("./test").chomp
   end
 end

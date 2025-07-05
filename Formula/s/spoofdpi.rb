@@ -1,10 +1,10 @@
 class Spoofdpi < Formula
   desc "Simple and fast anti-censorship tool written in Go"
-  homepage "https:github.comxvzcSpoofDPI"
-  url "https:github.comxvzcSpoofDPIarchiverefstagsv0.12.0.tar.gz"
+  homepage "https://github.com/xvzc/SpoofDPI"
+  url "https://ghfast.top/https://github.com/xvzc/SpoofDPI/archive/refs/tags/v0.12.0.tar.gz"
   sha256 "8350cacb0a5cc7b3c1d9aa7cbd2e519dfb61e7d59d49475de11387f8229a01c0"
   license "Apache-2.0"
-  head "https:github.comxvzcSpoofDPI.git", branch: "main"
+  head "https://github.com/xvzc/SpoofDPI.git", branch: "main"
 
   # Upstream creates releases that use a stable tag (e.g., `v1.2.3`) but are
   # labeled as "pre-release" on GitHub before the version is released, so it's
@@ -28,25 +28,25 @@ class Spoofdpi < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), ".cmdspoofdpi"
+    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/spoofdpi"
   end
 
   service do
-    run opt_bin"spoofdpi"
+    run opt_bin/"spoofdpi"
     keep_alive successful_exit: false
-    log_path var"logspoofdpioutput.log"
-    error_log_path var"logspoofdpierror.log"
+    log_path var/"log/spoofdpi/output.log"
+    error_log_path var/"log/spoofdpi/error.log"
   end
 
   test do
     port = free_port
-    pid = spawn bin"spoofdpi", "-system-proxy=false", "-port", port.to_s
+    pid = spawn bin/"spoofdpi", "-system-proxy=false", "-port", port.to_s
     begin
       sleep 3
       # "nothing" is an invalid option, but curl will process it
       # only after it succeeds at establishing a connection,
       # then it will close it, due to the option, and return exit code 49.
-      shell_output("curl -s --connect-timeout 1 --telnet-option nothing 'telnet:127.0.0.1:#{port}'", 49)
+      shell_output("curl -s --connect-timeout 1 --telnet-option nothing 'telnet://127.0.0.1:#{port}'", 49)
     ensure
       Process.kill("SIGTERM", pid)
     end

@@ -1,7 +1,7 @@
 class Openfast < Formula
   desc "NREL-supported OpenFAST whole-turbine simulation code"
-  homepage "https:openfast.readthedocs.io"
-  url "https:github.comopenfastopenfast.git",
+  homepage "https://openfast.readthedocs.io"
+  url "https://github.com/openfast/openfast.git",
       tag:      "v4.1.0",
       revision: "8d2470b876a5229f9e4adf0391bda32096ed43b2"
   license "Apache-2.0"
@@ -29,10 +29,10 @@ class Openfast < Formula
 
     system "cmake", "-S", ".", "-B", ".", *args, *std_cmake_args
     system "cmake", "--build", ".", "--target", "openfast"
-    bin.install "glue-codesopenfastopenfast"
+    bin.install "glue-codes/openfast/openfast"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}openfast -h")
+    assert_match version.to_s, shell_output("#{bin}/openfast -h")
   end
 end

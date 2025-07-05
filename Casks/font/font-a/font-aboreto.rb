@@ -2,10 +2,10 @@ cask "font-aboreto" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefontsrawmainoflaboretoAboreto-Regular.ttf",
-      verified: "github.comgooglefonts"
+  url "https://github.com/google/fonts/raw/main/ofl/aboreto/Aboreto-Regular.ttf",
+      verified: "github.com/google/fonts/"
   name "Aboreto"
-  homepage "https:fonts.google.comspecimenAboreto"
+  homepage "https://fonts.google.com/specimen/Aboreto"
 
   font "Aboreto-Regular.ttf"
 

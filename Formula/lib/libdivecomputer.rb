@@ -1,14 +1,14 @@
 class Libdivecomputer < Formula
   desc "Library for communication with various dive computers"
-  homepage "https:www.libdivecomputer.org"
-  url "https:www.libdivecomputer.orgreleaseslibdivecomputer-0.9.0.tar.gz"
+  homepage "https://www.libdivecomputer.org/"
+  url "https://www.libdivecomputer.org/releases/libdivecomputer-0.9.0.tar.gz"
   sha256 "a7b80b9083a2113a43280ee7b51d48d66ea5a779fc3fee57df7c451da0251c65"
   license "LGPL-2.1-or-later"
-  head "https:github.comlibdivecomputerlibdivecomputer.git", branch: "master"
+  head "https://github.com/libdivecomputer/libdivecomputer.git", branch: "master"
 
   livecheck do
-    url "https:www.libdivecomputer.orgreleases"
-    regex(href=.*?libdivecomputer[._-]v?(\d+(?:\.\d+)+)\.ti)
+    url "https://www.libdivecomputer.org/releases/"
+    regex(/href=.*?libdivecomputer[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   bottle do
@@ -29,16 +29,16 @@ class Libdivecomputer < Formula
 
   def install
     system "autoreconf", "--force", "--install", "--verbose" if build.head?
-    system ".configure", *std_configure_args
+    system "./configure", *std_configure_args
     system "make", "install"
   end
 
   test do
-    (testpath"test.c").write <<~C
-      #include <stdio.h>  for NULL macro
-      #include <libdivecomputercontext.h>
-      #include <libdivecomputerdescriptor.h>
-      #include <libdivecomputeriterator.h>
+    (testpath/"test.c").write <<~C
+      #include <stdio.h> // for NULL macro
+      #include <libdivecomputer/context.h>
+      #include <libdivecomputer/descriptor.h>
+      #include <libdivecomputer/iterator.h>
       int main(int argc, char *argv[]) {
         dc_iterator_t *iterator;
         dc_descriptor_t *descriptor;
@@ -57,6 +57,6 @@ class Libdivecomputer < Formula
       -ldivecomputer
     ]
     system ENV.cc, "-v", "test.c", "-o", "test", *flags
-    system ".test"
+    system "./test"
   end
 end

@@ -1,22 +1,22 @@
 class Influxdb < Formula
   desc "Time series, events, and metrics database"
-  homepage "https:influxdata.comtime-series-platforminfluxdb"
+  homepage "https://influxdata.com/time-series-platform/influxdb/"
   # When bumping to 3.x, update license stanza to `license any_of: ["Apache-2.0", "MIT"]`
-  # Ref: https:github.cominfluxdatainfluxdbblobmainCargo.toml#L124
-  url "https:github.cominfluxdatainfluxdb.git",
+  # Ref: https://github.com/influxdata/influxdb/blob/main/Cargo.toml#L124
+  url "https://github.com/influxdata/influxdb.git",
       tag:      "v2.7.11",
       revision: "fbf5d4ab5e65d3a3661aa52e1d05259d19a6a81b"
   license "MIT"
-  head "https:github.cominfluxdatainfluxdb.git", branch: "main-2.x"
+  head "https://github.com/influxdata/influxdb.git", branch: "main-2.x"
 
   # There can be a notable gap between when a version is tagged and a
   # corresponding release is created, so we check releases instead of the Git
-  # tags. Upstream maintains multiple majorminor versions and the "latest"
+  # tags. Upstream maintains multiple major/minor versions and the "latest"
   # release may be for an older version, so we have to check multiple releases
   # to identify the highest version.
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
     strategy :github_releases
   end
 
@@ -38,30 +38,30 @@ class Influxdb < Formula
   # NOTE: The version here is specified in the go.mod of influxdb.
   # If you're upgrading to a newer influxdb version, check to see if this needs upgraded too.
   resource "pkg-config-wrapper" do
-    url "https:github.cominfluxdatapkg-configarchiverefstagsv0.2.11.tar.gz"
+    url "https://ghfast.top/https://github.com/influxdata/pkg-config/archive/refs/tags/v0.2.11.tar.gz"
     sha256 "52b22c151163dfb051fd44e7d103fc4cde6ae8ff852ffc13adeef19d21c36682"
 
     livecheck do
-      url "https:raw.githubusercontent.cominfluxdatainfluxdbv#{LATEST_VERSION}go.mod"
-      regex(pkg-config\s+v?(\d+(?:\.\d+)+)i)
+      url "https://ghfast.top/https://raw.githubusercontent.com/influxdata/influxdb/v#{LATEST_VERSION}/go.mod"
+      regex(/pkg-config\s+v?(\d+(?:\.\d+)+)/i)
     end
   end
 
-  # NOTE: The versionURL here is specified in scriptsfetch-ui-assets.sh in influxdb.
+  # NOTE: The version/URL here is specified in scripts/fetch-ui-assets.sh in influxdb.
   # If you're upgrading to a newer influxdb version, check to see if this needs upgraded too.
   resource "ui-assets" do
-    url "https:github.cominfluxdatauireleasesdownloadOSS-2.7.8build.tar.gz"
+    url "https://ghfast.top/https://github.com/influxdata/ui/releases/download/OSS-2.7.8/build.tar.gz"
     sha256 "28ace1df37b7860b011e5c1b8c74830b0ec584d2f86c24e58a7c855c168f58a8"
 
     livecheck do
-      url "https:raw.githubusercontent.cominfluxdatainfluxdbv#{LATEST_VERSION}scriptsfetch-ui-assets.sh"
-      regex(UI_RELEASE=["']?OSS[._-]v?(\d+(?:\.\d+)+)["']?$i)
+      url "https://ghfast.top/https://raw.githubusercontent.com/influxdata/influxdb/v#{LATEST_VERSION}/scripts/fetch-ui-assets.sh"
+      regex(/UI_RELEASE=["']?OSS[._-]v?(\d+(?:\.\d+)+)["']?$/i)
     end
   end
 
-  # rust 1.83 build patch, upstream pr ref, https:github.cominfluxdatafluxpull5516
+  # rust 1.83 build patch, upstream pr ref, https://github.com/influxdata/flux/pull/5516
   patch do
-    url "https:raw.githubusercontent.comHomebrewformula-patchesa188defd190459f5d1faa8c8f9e253e8f83ca161influxdb2.7.11-rust-1.83.patch"
+    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/a188defd190459f5d1faa8c8f9e253e8f83ca161/influxdb/2.7.11-rust-1.83.patch"
     sha256 "15fa09ae18389b21b8d93792934abcf85855a666ddd8faeaeca6890452fd5bd4"
   end
 
@@ -69,12 +69,12 @@ class Influxdb < Formula
     # Set up the influxdata pkg-config wrapper to enable just-in-time compilation & linking
     # of the Rust components in the server.
     resource("pkg-config-wrapper").stage do
-      system "go", "build", *std_go_args(output: buildpath"bootstrappkg-config")
+      system "go", "build", *std_go_args(output: buildpath/"bootstrap/pkg-config")
     end
-    ENV.prepend_path "PATH", buildpath"bootstrap"
+    ENV.prepend_path "PATH", buildpath/"bootstrap"
 
     # Extract pre-build UI resources to the location expected by go-bindata.
-    resource("ui-assets").stage(buildpath"staticdatabuild")
+    resource("ui-assets").stage(buildpath/"static/data/build")
     # Embed UI files into the Go source code.
     system "make", "generate-web-assets"
 
@@ -91,20 +91,20 @@ class Influxdb < Formula
       sqlite_json
     ]
 
-    system "go", "build", *std_go_args(output: bin"influxd", ldflags:, tags:), ".cmdinfluxd"
+    system "go", "build", *std_go_args(output: bin/"influxd", ldflags:, tags:), "./cmd/influxd"
 
-    data = var"libinfluxdb2"
+    data = var/"lib/influxdb2"
     data.mkpath
 
     # Generate default config file.
-    config = buildpath"config.yml"
-    config.write Utils.safe_popen_read(bin"influxd", "print-config",
-                                       "--bolt-path=#{data}influxdb.bolt",
-                                       "--engine-path=#{data}engine")
-    (etc"influxdb2").install config
+    config = buildpath/"config.yml"
+    config.write Utils.safe_popen_read(bin/"influxd", "print-config",
+                                       "--bolt-path=#{data}/influxdb.bolt",
+                                       "--engine-path=#{data}/engine")
+    (etc/"influxdb2").install config
 
     # Create directory for DB stdout+stderr logs.
-    (var"loginfluxdb2").mkpath
+    (var/"log/influxdb2").mkpath
   end
 
   def caveats
@@ -115,22 +115,22 @@ class Influxdb < Formula
   end
 
   service do
-    run opt_bin"influxd"
+    run opt_bin/"influxd"
     keep_alive true
     working_dir HOMEBREW_PREFIX
-    log_path var"loginfluxdb2influxd_output.log"
-    error_log_path var"loginfluxdb2influxd_output.log"
-    environment_variables INFLUXD_CONFIG_PATH: etc"influxdb2config.yml"
+    log_path var/"log/influxdb2/influxd_output.log"
+    error_log_path var/"log/influxdb2/influxd_output.log"
+    environment_variables INFLUXD_CONFIG_PATH: etc/"influxdb2/config.yml"
   end
 
   test do
     influxd_port = free_port
-    influx_host = "http:localhost:#{influxd_port}"
+    influx_host = "http://localhost:#{influxd_port}"
     ENV["INFLUX_HOST"] = influx_host
 
     influxd = fork do
-      exec "#{bin}influxd", "--bolt-path=#{testpath}influxd.bolt",
-                             "--engine-path=#{testpath}engine",
+      exec "#{bin}/influxd", "--bolt-path=#{testpath}/influxd.bolt",
+                             "--engine-path=#{testpath}/engine",
                              "--http-bind-address=:#{influxd_port}",
                              "--log-level=error"
     end
@@ -139,7 +139,7 @@ class Influxdb < Formula
     # Check that the server has properly bundled UI assets and serves them as HTML.
     curl_output = shell_output("curl --silent --head #{influx_host}")
     assert_match "200 OK", curl_output
-    assert_match "texthtml", curl_output
+    assert_match "text/html", curl_output
   ensure
     Process.kill("TERM", influxd)
     Process.wait influxd

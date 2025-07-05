@@ -1,8 +1,8 @@
 class Carrot2 < Formula
   desc "Search results clustering engine"
-  homepage "https:search.carrot2.org"
-  url "https:github.comcarrot2carrot2.git",
-      tag:      "release4.7.0",
+  homepage "https://search.carrot2.org/"
+  url "https://github.com/carrot2/carrot2.git",
+      tag:      "release/4.7.0",
       revision: "fd0b5a95214679f919746ab5abd710bc900d38ec"
   license "Apache-2.0"
 
@@ -29,12 +29,12 @@ class Carrot2 < Formula
 
   def install
     # Make possible to build the formula with the latest available in Homebrew gradle
-    inreplace "gradlevalidationcheck-environment.gradle",
-      expectedGradleVersion = '[^']+',
+    inreplace "gradle/validation/check-environment.gradle",
+      /expectedGradleVersion = '[^']+'/,
       "expectedGradleVersion = '#{Formula["gradle"].version}'"
 
     # Use yarn and node from Homebrew
-    inreplace "gradlenodeyarn-projects.gradle", "download = true", "download = false"
+    inreplace "gradle/node/yarn-projects.gradle", "download = true", "download = false"
     inreplace "versions.toml" do |s|
       s.gsub! "node = \"18.18.2\"", "node = \"#{Formula["node@22"].version}\""
       s.gsub! "yarn = \"1.22.19\"", "yarn = \"#{Formula["yarn"].version}\""
@@ -42,25 +42,25 @@ class Carrot2 < Formula
 
     system "gradle", "assemble", "--no-daemon"
 
-    cd "distributionbuilddist" do
-      inreplace "dcsconfloggingappender-file.xml", "${dcs:home}logs", var"logcarrot2"
+    cd "distribution/build/dist" do
+      inreplace "dcs/conf/logging/appender-file.xml", "${dcs:home}/logs", var/"log/carrot2"
       libexec.install Dir["*"]
     end
 
-    (bin"carrot2").write_env_script "#{libexec}dcsdcs",
-      JAVA_CMD:    "exec '#{Formula["openjdk@21"].opt_bin}java'",
-      SCRIPT_HOME: libexec"dcs"
+    (bin/"carrot2").write_env_script "#{libexec}/dcs/dcs",
+      JAVA_CMD:    "exec '#{Formula["openjdk@21"].opt_bin}/java'",
+      SCRIPT_HOME: libexec/"dcs"
   end
 
   service do
-    run opt_bin"carrot2"
+    run opt_bin/"carrot2"
     working_dir opt_libexec
   end
 
   test do
     port = free_port
-    fork { exec bin"carrot2", "--port", port.to_s }
+    fork { exec bin/"carrot2", "--port", port.to_s }
     sleep 20
-    assert_match "Lingo", shell_output("curl -s localhost:#{port}servicelist")
+    assert_match "Lingo", shell_output("curl -s localhost:#{port}/service/list")
   end
 end

@@ -2,12 +2,12 @@ cask "font-athiti" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefonts.git",
-      verified:  "github.comgooglefonts",
+  url "https://github.com/google/fonts.git",
+      verified:  "github.com/google/fonts",
       branch:    "main",
-      only_path: "oflathiti"
+      only_path: "ofl/athiti"
   name "Athiti"
-  homepage "https:fonts.google.comspecimenAthiti"
+  homepage "https://fonts.google.com/specimen/Athiti"
 
   font "Athiti-Bold.ttf"
   font "Athiti-ExtraLight.ttf"

@@ -1,7 +1,7 @@
 class Pickle < Formula
   desc "PHP Extension installer"
-  homepage "https:github.comFriendsOfPHPpickle"
-  url "https:github.comFriendsOfPHPpicklereleasesdownloadv0.7.11pickle.phar"
+  homepage "https://github.com/FriendsOfPHP/pickle"
+  url "https://ghfast.top/https://github.com/FriendsOfPHP/pickle/releases/download/v0.7.11/pickle.phar"
   sha256 "fe68430bbaf01b45c7bf46fa3fd2ab51f8d3ab41e6f5620644d245a29d56cfd6"
   license "BSD-3-Clause"
 
@@ -20,7 +20,7 @@ class Pickle < Formula
 
   depends_on "php"
 
-  # Keg-relocation breaks the formula when it replaces `usrlocal` with a non-default prefix
+  # Keg-relocation breaks the formula when it replaces `/usr/local` with a non-default prefix
   on_macos do
     on_intel do
       pour_bottle? only_if: :default_prefix
@@ -32,6 +32,6 @@ class Pickle < Formula
   end
 
   test do
-    assert_match(Package name[ |]+apcu, shell_output("#{bin}pickle info apcu"))
+    assert_match(/Package name[ |]+apcu/, shell_output("#{bin}/pickle info apcu"))
   end
 end

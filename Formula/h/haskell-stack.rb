@@ -1,10 +1,10 @@
 class HaskellStack < Formula
   desc "Cross-platform program for developing Haskell projects"
-  homepage "https:haskellstack.org"
-  url "https:github.comcommercialhaskellstackarchiverefstagsv3.7.1.tar.gz"
+  homepage "https://haskellstack.org/"
+  url "https://ghfast.top/https://github.com/commercialhaskell/stack/archive/refs/tags/v3.7.1.tar.gz"
   sha256 "e2ce0d053566634a426ba1916592dfcefe48bdebbfe6a0da07e23a79c0ed7759"
   license "BSD-3-Clause"
-  head "https:github.comcommercialhaskellstack.git", branch: "master"
+  head "https://github.com/commercialhaskell/stack.git", branch: "master"
 
   livecheck do
     url :stable
@@ -22,8 +22,8 @@ class HaskellStack < Formula
   end
 
   depends_on "cabal-install" => :build
-  # https:github.comcommercialhaskellstackissues6625#issuecomment-2228087359
-  # https:github.comcommercialhaskellstackblobmasterstack-ghc-9.10.1.yaml#L4-L5
+  # https://github.com/commercialhaskell/stack/issues/6625#issuecomment-2228087359
+  # https://github.com/commercialhaskell/stack/blob/master/stack-ghc-9.10.1.yaml#L4-L5
   depends_on "ghc@9.8" => :build # GHC 9.10+ blocked by Cabal 3.12+ API changes
 
   uses_from_macos "zlib"
@@ -31,8 +31,8 @@ class HaskellStack < Formula
   def install
     # Remove locked dependencies which only work with a single patch version of GHC.
     # If there are issues resolving dependencies, then can consider bootstrapping with stack instead.
-    (buildpath"cabal.project").unlink
-    (buildpath"cabal.project").write <<~EOS
+    (buildpath/"cabal.project").unlink
+    (buildpath/"cabal.project").write <<~EOS
       packages: .
     EOS
 
@@ -40,14 +40,14 @@ class HaskellStack < Formula
     system "cabal", "v2-install", *std_cabal_v2_args
 
     [:bash, :fish, :zsh].each do |shell|
-      generate_completions_from_executable(bin"stack", "--#{shell}-completion-script", bin"stack",
+      generate_completions_from_executable(bin/"stack", "--#{shell}-completion-script", bin/"stack",
                                            shells: [shell], shell_parameter_format: :none)
     end
   end
 
   test do
-    system bin"stack", "new", "test"
-    assert_path_exists testpath"test"
-    assert_match "# test", (testpath"testREADME.md").read
+    system bin/"stack", "new", "test"
+    assert_path_exists testpath/"test"
+    assert_match "# test", (testpath/"test/README.md").read
   end
 end

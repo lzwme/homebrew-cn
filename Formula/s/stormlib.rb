@@ -1,10 +1,10 @@
 class Stormlib < Formula
   desc "Library for handling Blizzard MPQ archives"
-  homepage "http:www.zezula.netenmpqstormlib.html"
-  url "https:github.comladislav-zezulaStormLibarchiverefstagsv9.30.tar.gz"
+  homepage "http://www.zezula.net/en/mpq/stormlib.html"
+  url "https://ghfast.top/https://github.com/ladislav-zezula/StormLib/archive/refs/tags/v9.30.tar.gz"
   sha256 "a709a6b034d206404f5297d85e474371203ff5483639955195d99b737bbf7dfe"
   license "MIT"
-  head "https:github.comladislav-zezulaStormLib.git", branch: "master"
+  head "https://github.com/ladislav-zezula/StormLib.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "8b6795782ad6b2795e25bdc5a551043daaa07350632a4832bb6cc1405f4fedf2"
@@ -21,21 +21,21 @@ class Stormlib < Formula
   uses_from_macos "bzip2"
   uses_from_macos "zlib"
 
-  # prevents cmake from trying to write to LibraryFrameworks
+  # prevents cmake from trying to write to /Library/Frameworks/
   patch :DATA
 
   def install
-    system "cmake", "-S", ".", "-B", "buildstatic", *std_cmake_args
-    system "cmake", "--build", "buildstatic"
-    system "cmake", "--install", "buildstatic"
+    system "cmake", "-S", ".", "-B", "build/static", *std_cmake_args
+    system "cmake", "--build", "build/static"
+    system "cmake", "--install", "build/static"
 
-    system "cmake", "-S", ".", "-B", "buildshared", "-DBUILD_SHARED_LIBS=ON", *std_cmake_args
-    system "cmake", "--build", "buildshared"
-    system "cmake", "--install", "buildshared"
+    system "cmake", "-S", ".", "-B", "build/shared", "-DBUILD_SHARED_LIBS=ON", *std_cmake_args
+    system "cmake", "--build", "build/shared"
+    system "cmake", "--install", "build/shared"
   end
 
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include <stdio.h>
       #include <StormLib.h>
 
@@ -45,15 +45,15 @@ class Stormlib < Formula
       }
     C
     system ENV.cc, "-o", "test", "test.c"
-    assert_equal version.to_s, shell_output(".test")
+    assert_equal version.to_s, shell_output("./test")
   end
 end
 
 __END__
-diff --git aCMakeLists.txt bCMakeLists.txt
+diff --git a/CMakeLists.txt b/CMakeLists.txt
 index 9cf1050..b33e544 100644
---- aCMakeLists.txt
-+++ bCMakeLists.txt
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
 @@ -340,7 +340,6 @@ if(BUILD_SHARED_LIBS)
      message(STATUS "Linking against dependent libraries dynamically")
 

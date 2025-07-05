@@ -1,7 +1,7 @@
 class Kopia < Formula
   desc "Fast and secure open-source backup"
-  homepage "https:kopia.io"
-  url "https:github.comkopiakopia.git",
+  homepage "https://kopia.io"
+  url "https://github.com/kopia/kopia.git",
       tag:      "v0.20.1",
       revision: "1ee24977ceb09c02329eaebac718ec5a950c5d83"
   license "Apache-2.0"
@@ -20,38 +20,38 @@ class Kopia < Formula
   depends_on "go" => :build
 
   def install
-    # removed github.comkopiakopiarepo.BuildGitHubRepo to disable
+    # removed github.com/kopia/kopia/repo.BuildGitHubRepo to disable
     # update notifications
     ldflags = %W[
       -s -w
-      -X github.comkopiakopiarepo.BuildInfo=#{Utils.git_head}
-      -X github.comkopiakopiarepo.BuildVersion=#{version}
+      -X github.com/kopia/kopia/repo.BuildInfo=#{Utils.git_head}
+      -X github.com/kopia/kopia/repo.BuildVersion=#{version}
     ]
 
     system "go", "build", *std_go_args(ldflags:)
 
-    generate_completions_from_executable(bin"kopia", shells:                 [:bash, :zsh],
+    generate_completions_from_executable(bin/"kopia", shells:                 [:bash, :zsh],
                                                       shell_parameter_format: "--completion-script-")
 
-    output = Utils.safe_popen_read(bin"kopia", "--help-man")
-    (man1"kopia.1").write output
+    output = Utils.safe_popen_read(bin/"kopia", "--help-man")
+    (man1/"kopia.1").write output
   end
 
   test do
-    mkdir testpath"repo"
-    (testpath"testdirtestfile").write("This is a test.")
+    mkdir testpath/"repo"
+    (testpath/"testdir/testfile").write("This is a test.")
 
     ENV["KOPIA_PASSWORD"] = "dummy"
 
-    output = shell_output("#{bin}kopia --version").strip
+    output = shell_output("#{bin}/kopia --version").strip
 
     # verify version output, note we're unable to verify the git hash in tests
     assert_match(%r{#{version} build: .* from:}, output)
 
-    system bin"kopia", "repository", "create", "filesystem", "--path", testpath"repo", "--no-persist-credentials"
-    assert_path_exists testpath"repokopia.repository.f"
-    system bin"kopia", "snapshot", "create", testpath"testdir"
-    system bin"kopia", "snapshot", "list"
-    system bin"kopia", "repository", "disconnect"
+    system bin/"kopia", "repository", "create", "filesystem", "--path", testpath/"repo", "--no-persist-credentials"
+    assert_path_exists testpath/"repo/kopia.repository.f"
+    system bin/"kopia", "snapshot", "create", testpath/"testdir"
+    system bin/"kopia", "snapshot", "list"
+    system bin/"kopia", "repository", "disconnect"
   end
 end

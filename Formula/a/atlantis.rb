@@ -1,14 +1,14 @@
 class Atlantis < Formula
   desc "Terraform Pull Request Automation tool"
-  homepage "https:www.runatlantis.io"
-  url "https:github.comrunatlantisatlantisarchiverefstagsv0.35.0.tar.gz"
+  homepage "https://www.runatlantis.io/"
+  url "https://ghfast.top/https://github.com/runatlantis/atlantis/archive/refs/tags/v0.35.0.tar.gz"
   sha256 "fa1c94f5d8abb19f71d80aac701fa206fc05341827f052fd009ec8807211e490"
   license "Apache-2.0"
-  head "https:github.comrunatlantisatlantis.git", branch: "main"
+  head "https://github.com/runatlantis/atlantis.git", branch: "main"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -34,11 +34,11 @@ class Atlantis < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}atlantis version")
+    assert_match version.to_s, shell_output("#{bin}/atlantis version")
 
     port = free_port
     args = %W[
-      --atlantis-url http:invalid
+      --atlantis-url http://invalid/
       --port #{port}
       --gh-user INVALID
       --gh-token INVALID
@@ -48,10 +48,10 @@ class Atlantis < Formula
       --default-tf-distribution opentofu
       --default-tf-version #{Formula["opentofu"].version}
     ]
-    pid = spawn(bin"atlantis", "server", *args)
+    pid = spawn(bin/"atlantis", "server", *args)
     sleep 5
-    output = shell_output("curl -vk# 'http:localhost:#{port}' 2>&1")
-    assert_match %r{HTTP1.1 200 OK}m, output
+    output = shell_output("curl -vk# 'http://localhost:#{port}/' 2>&1")
+    assert_match %r{HTTP/1.1 200 OK}m, output
     assert_match "atlantis", output
   ensure
     Process.kill("TERM", pid)

@@ -1,14 +1,14 @@
 class Asymptote < Formula
   desc "Powerful descriptive vector graphics language"
-  homepage "https:asymptote.sourceforge.io"
+  homepage "https://asymptote.sourceforge.io"
   # Keep version in sync with manual below
-  url "https:downloads.sourceforge.netprojectasymptote3.05asymptote-3.05.src.tgz"
+  url "https://downloads.sourceforge.net/project/asymptote/3.05/asymptote-3.05.src.tgz"
   sha256 "35c16d0a3bdd869a56e4efff4638f81c3a88b2f6b664d196471015dbf4c69a87"
   license "LGPL-3.0-only"
 
   livecheck do
     url :stable
-    regex(%r{url=.*?asymptote[._-]v?(\d+(?:\.\d+)+)\.src\.t}i)
+    regex(%r{url=.*?/asymptote[._-]v?(\d+(?:\.\d+)+)\.src\.t}i)
   end
 
   bottle do
@@ -42,7 +42,7 @@ class Asymptote < Formula
   end
 
   resource "manual" do
-    url "https:downloads.sourceforge.netprojectasymptote3.05asymptote.pdf"
+    url "https://downloads.sourceforge.net/project/asymptote/3.05/asymptote.pdf"
     sha256 "0c1237603f9eb898fd76d0976c4f091fd77085aa1b414bf4bc8d8344adb10862"
 
     livecheck do
@@ -53,25 +53,25 @@ class Asymptote < Formula
   def install
     odie "manual resource needs to be updated" if version != resource("manual").version
 
-    system ".configure", *std_configure_args
+    system "./configure", *std_configure_args
 
     # Avoid use of LaTeX with these commands (instead of `make all && make install`)
     # Also workaround to override bundled bdw-gc. Upstream is not willing to add configure option.
-    # Ref: https:github.comvectorgraphicsasymptoteissues521#issuecomment-2644549764
-    system "make", "install-asy", "GCLIB=#{Formula["bdw-gc"].opt_libshared_library("libgc")}"
+    # Ref: https://github.com/vectorgraphics/asymptote/issues/521#issuecomment-2644549764
+    system "make", "install-asy", "GCLIB=#{Formula["bdw-gc"].opt_lib/shared_library("libgc")}"
 
     doc.install resource("manual")
     elisp.install_symlink pkgshare.glob("*.el")
   end
 
   test do
-    (testpath"line.asy").write <<~EOF
+    (testpath/"line.asy").write <<~EOF
       settings.outformat = "pdf";
       size(200,0);
       draw((0,0)--(100,50),N,red);
     EOF
 
-    system bin"asy", testpath"line.asy"
-    assert_path_exists testpath"line.pdf"
+    system bin/"asy", testpath/"line.asy"
+    assert_path_exists testpath/"line.pdf"
   end
 end

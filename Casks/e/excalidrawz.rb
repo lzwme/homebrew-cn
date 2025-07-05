@@ -1,12 +1,12 @@
 cask "excalidrawz" do
-  version "1.5.0"
-  sha256 "ba36e1cae083d2cf085223b270d5ad7cb75fb0c42750009697d757b9feab534a"
+  version "1.5.1"
+  sha256 "d500f0a09ff04fa512c09df2bff68eeb89f71f6208eaa33e4317e11545f48b2e"
 
-  url "https:github.comchocofordExcalidrawZreleasesdownloadv#{version}ExcalidrawZ.#{version}.dmg",
-      verified: "github.comchocofordExcalidrawZreleasesdownload"
+  url "https://ghfast.top/https://github.com/chocoford/ExcalidrawZ/releases/download/v#{version}/ExcalidrawZ.#{version}.dmg",
+      verified: "github.com/chocoford/ExcalidrawZ/releases/download/"
   name "ExcalidrawZ"
   desc "Excalidraw client"
-  homepage "https:excalidrawz.chocoford.com"
+  homepage "https://excalidrawz.chocoford.com/"
 
   livecheck do
     url :url
@@ -18,7 +18,7 @@ cask "excalidrawz" do
   app "ExcalidrawZ.app"
 
   zap trash: [
-    "~LibraryApplication Scriptscom.chocoford.excalidraw",
-    "~LibraryContainerscom.chocoford.excalidraw",
+    "~/Library/Application Scripts/com.chocoford.excalidraw",
+    "~/Library/Containers/com.chocoford.excalidraw",
   ]
 end

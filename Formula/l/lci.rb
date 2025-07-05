@@ -1,7 +1,7 @@
 class Lci < Formula
   desc "Interpreter for the lambda calculus"
-  homepage "https:www.chatzi.orglci"
-  url "https:github.comchatzikolcireleasesdownloadv1.1lci-v1.1.tar.gz"
+  homepage "https://www.chatzi.org/lci/"
+  url "https://ghfast.top/https://github.com/chatziko/lci/releases/download/v1.1/lci-v1.1.tar.gz"
   sha256 "51725e33a7066100757b7da84b2290a651a5f47b985eb3e3647acd871964cd58"
   license "GPL-2.0-or-later"
 
@@ -28,6 +28,6 @@ class Lci < Formula
   end
 
   test do
-    assert_match "[I, 2]", pipe_output(bin"lci", "Append [1] [2]\n")
+    assert_match "[I, 2]", pipe_output(bin/"lci", "Append [1] [2]\n")
   end
 end

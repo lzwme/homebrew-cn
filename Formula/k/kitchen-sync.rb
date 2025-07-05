@@ -1,14 +1,14 @@
 class KitchenSync < Formula
   desc "Fast efficiently sync database without dumping & reloading"
-  homepage "https:github.comwillbryantkitchen_sync"
-  url "https:github.comwillbryantkitchen_syncarchiverefstagsv2.21.tar.gz"
+  homepage "https://github.com/willbryant/kitchen_sync"
+  url "https://ghfast.top/https://github.com/willbryant/kitchen_sync/archive/refs/tags/v2.21.tar.gz"
   sha256 "0a2c25001069c90135a91b1cc70c1b9096c3c6e127f6a14f1b45cdbb0c209f09"
   license "MIT"
-  head "https:github.comwillbryantkitchen_sync.git", branch: "main"
+  head "https://github.com/willbryant/kitchen_sync.git", branch: "main"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -27,7 +27,7 @@ class KitchenSync < Formula
 
   def install
     system "cmake", "-S", ".", "-B", "build",
-                    "-DMySQL_INCLUDE_DIR=#{Formula["mariadb-connector-c"].opt_include}mariadb",
+                    "-DMySQL_INCLUDE_DIR=#{Formula["mariadb-connector-c"].opt_include}/mariadb",
                     "-DMySQL_LIBRARY_DIR=#{Formula["mariadb-connector-c"].opt_lib}",
                     "-DPostgreSQL_INCLUDE_DIR=#{Formula["libpq"].opt_include}",
                     "-DPostgreSQL_LIBRARY_DIR=#{Formula["libpq"].opt_lib}",
@@ -37,7 +37,7 @@ class KitchenSync < Formula
   end
 
   test do
-    output = shell_output("#{bin}ks --from mysql:b --to mysql:d 2>&1", 1)
+    output = shell_output("#{bin}/ks --from mysql://b/ --to mysql://d/ 2>&1", 1)
 
     assert_match "Unknown server host", output
     assert_match "Kitchen Syncing failed.", output

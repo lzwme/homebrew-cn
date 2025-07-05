@@ -2,21 +2,21 @@ cask "lepton" do
   version "1.10.0"
   sha256 "060071b6b2c3e52e0be04e6f118d77fbcc7afdae50895545bfda0b04b9cc1c12"
 
-  url "https:github.comhackjutsuLeptonreleasesdownloadv#{version}Lepton-#{version}.dmg",
-      verified: "github.comhackjutsuLepton"
+  url "https://ghfast.top/https://github.com/hackjutsu/Lepton/releases/download/v#{version}/Lepton-#{version}.dmg",
+      verified: "github.com/hackjutsu/Lepton/"
   name "Lepton"
   desc "Snippet management app"
-  homepage "https:hackjutsu.comLepton"
+  homepage "https://hackjutsu.com/Lepton/"
 
   no_autobump! because: :requires_manual_review
 
   app "Lepton.app"
 
   zap trash: [
-    "~LibraryApplication SupportLepton",
-    "~LibraryPreferencescom.cosmox.lepton.helper.plist",
-    "~LibraryPreferencescom.cosmox.lepton.plist",
-    "~LibrarySaved Application Statecom.cosmox.lepton.savedState",
+    "~/Library/Application Support/Lepton",
+    "~/Library/Preferences/com.cosmox.lepton.helper.plist",
+    "~/Library/Preferences/com.cosmox.lepton.plist",
+    "~/Library/Saved Application State/com.cosmox.lepton.savedState",
   ]
 
   caveats do

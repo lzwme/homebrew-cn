@@ -1,10 +1,10 @@
 class SfPwgen < Formula
   desc "Generate passwords using SecurityFoundation framework"
-  homepage "https:github.comanderspwgen"
-  url "https:github.comanderspwgenarchiverefstags1.5.tar.gz"
+  homepage "https://github.com/anders/pwgen/"
+  url "https://ghfast.top/https://github.com/anders/pwgen/archive/refs/tags/1.5.tar.gz"
   sha256 "e1f1d575638f216c82c2d1e9b52181d1d43fd05e7169db1d6f9f5d8a2247b475"
   license "Zlib"
-  head "https:github.comanderspwgen.git", branch: "master"
+  head "https://github.com/anders/pwgen.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -32,6 +32,6 @@ class SfPwgen < Formula
   end
 
   test do
-    assert_equal 20, shell_output("#{bin}sf-pwgen -a memorable -c 1 -l 20").chomp.length
+    assert_equal 20, shell_output("#{bin}/sf-pwgen -a memorable -c 1 -l 20").chomp.length
   end
 end

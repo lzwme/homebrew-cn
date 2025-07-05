@@ -1,7 +1,7 @@
 class Autopsy < Formula
   desc "Graphical interface to Sleuth Kit investigation tools"
-  homepage "https:www.sleuthkit.orgautopsyindex.php"
-  url "https:downloads.sourceforge.netprojectautopsyautopsy2.24autopsy-2.24.tar.gz"
+  homepage "https://www.sleuthkit.org/autopsy/index.php"
+  url "https://downloads.sourceforge.net/project/autopsy/autopsy/2.24/autopsy-2.24.tar.gz"
   sha256 "ab787f519942783d43a561d12be0554587f11f22bc55ab79d34d8da703edc09e"
   license "GPL-2.0-or-later"
 
@@ -22,7 +22,7 @@ class Autopsy < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "5e1ce8b5147639d7737a4013030ee2a059d1b8dd4657554e08e9423a9a6b2f66"
   end
 
-  # Installs prebuilt binaries, broken on arm: https:github.comHomebrewhomebrew-coreissues175053
+  # Installs prebuilt binaries, broken on arm: https://github.com/Homebrew/homebrew-core/issues/175053
   deprecate! date: "2024-06-22", because: :does_not_build
   disable! date: "2025-06-23", because: :does_not_build
 
@@ -43,16 +43,16 @@ class Autopsy < Formula
     # Although these binaries are usually available on Linux, they can be in different locations
     # so we use the brewed versions instead.
 
-    grep = "usrbingrep"
-    file = "usrbinfile"
-    md5 = "sbinmd5"
-    sha1 = "usrbinshasum"
+    grep = "/usr/bin/grep"
+    file = "/usr/bin/file"
+    md5 = "/sbin/md5"
+    sha1 = "/usr/bin/shasum"
 
     on_linux do
-      grep = Formula["grep"].opt_bin"grep"
-      file = Formula["file"].opt_bin"file"
-      md5 = Formula["md5sha1sum"].opt_bin"md5sum"
-      sha1 = Formula["md5sha1sum"].opt_bin"sha1sum"
+      grep = Formula["grep"].opt_bin/"grep"
+      file = Formula["file"].opt_bin/"file"
+      md5 = Formula["md5sha1sum"].opt_bin/"md5sum"
+      sha1 = Formula["md5sha1sum"].opt_bin/"sha1sum"
     end
 
     <<~EOS
@@ -86,45 +86,45 @@ class Autopsy < Formula
       $NSRLDB = '';
 
       # Evidence locker location
-      $LOCKDIR = '#{var}libautopsy';
+      $LOCKDIR = '#{var}/lib/autopsy';
     EOS
   end
 
   def install
-    (var+"libautopsy").mkpath
+    (var+"lib/autopsy").mkpath
     mv "lib", "libexec"
     prefix.install %w[global.css help libexec pict]
     prefix.install Dir["*.txt"]
     (prefix+"conf.pl").write autcfg
-    inreplace "baseautopsy.base", "tmpautopsy", prefix
-    inreplace "baseautopsy.base", "libdefine.pl", "#{libexec}define.pl"
-    bin.install "baseautopsy.base" => "autopsy"
+    inreplace "base/autopsy.base", "/tmp/autopsy", prefix
+    inreplace "base/autopsy.base", "lib/define.pl", "#{libexec}/define.pl"
+    bin.install "base/autopsy.base" => "autopsy"
   end
 
   def caveats
     <<~EOS
       By default, the evidence locker is in:
-        #{var}libautopsy
+        #{var}/lib/autopsy
     EOS
   end
 
   test do
     # Launch autopsy inside a PTY and use Ctrl-C to exit it.
-    PTY.spawn(bin"autopsy") do |_r, w, _pid|
+    PTY.spawn(bin/"autopsy") do |_r, w, _pid|
       w.write "\cC"
     end
   end
 end
 
 __END__
-diff --git abaseautopsy.base bbaseautopsy.base
+diff --git a/base/autopsy.base b/base/autopsy.base
 index 3b3bbdc..a0d2632 100644
---- abaseautopsy.base
-+++ bbaseautopsy.base
+--- a/base/autopsy.base
++++ b/base/autopsy.base
 @@ -1,3 +1,6 @@
-+#!usrbinperl -wT
-+use lib 'tmpautopsy';
-+use lib 'tmpautopsylibexec';
++#!/usr/bin/perl -wT
++use lib '/tmp/autopsy/';
++use lib '/tmp/autopsy/libexec/';
  #
  # autopsy gui server
  # Autopsy Forensic Browser

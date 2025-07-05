@@ -1,10 +1,10 @@
 class Wtfutil < Formula
   desc "Personal information dashboard for your terminal"
-  homepage "https:wtfutil.com"
-  url "https:github.comwtfutilwtfarchiverefstagsv0.44.1.tar.gz"
+  homepage "https://wtfutil.com"
+  url "https://ghfast.top/https://github.com/wtfutil/wtf/archive/refs/tags/v0.44.1.tar.gz"
   sha256 "7cab807c714fc765b85ab62496f5d96770f3bb89117cb34dde3ea668d943314e"
   license "MPL-2.0"
-  head "https:github.comwtfutilwtf.git", branch: "master"
+  head "https://github.com/wtfutil/wtf.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "39aee9c5e14cfd87419a390a215a43133b884928307679d1847a94659fe4f850"
@@ -24,7 +24,7 @@ class Wtfutil < Formula
   end
 
   test do
-    testconfig = testpath"config.yml"
+    testconfig = testpath/"config.yml"
     testconfig.write <<~YAML
       wtf:
         colors:
@@ -62,7 +62,7 @@ class Wtfutil < Formula
 
     begin
       pid = fork do
-        exec bin"wtfutil", "--config=#{testconfig}"
+        exec bin/"wtfutil", "--config=#{testconfig}"
       end
     ensure
       Process.kill("HUP", pid)

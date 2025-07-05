@@ -1,7 +1,7 @@
 class GitAnnexRemoteRclone < Formula
   desc "Use rclone supported cloud storage with git-annex"
-  homepage "https:github.comgit-annex-remote-rclonegit-annex-remote-rclone"
-  url "https:github.comgit-annex-remote-rclonegit-annex-remote-rclonearchiverefstagsv0.8.tar.gz"
+  homepage "https://github.com/git-annex-remote-rclone/git-annex-remote-rclone"
+  url "https://ghfast.top/https://github.com/git-annex-remote-rclone/git-annex-remote-rclone/archive/refs/tags/v0.8.tar.gz"
   sha256 "6da12f46d46613cc5a539057052be7d8aa5259bd973ddff2d6ee460d34cd096c"
   license "GPL-3.0-only"
 
@@ -29,9 +29,9 @@ class GitAnnexRemoteRclone < Formula
     system "git", "init"
     system "git", "annex", "init"
 
-    (testpath"Hello.txt").write "Hello!"
+    (testpath/"Hello.txt").write "Hello!"
     assert !File.symlink?("Hello.txt")
-    assert_match(^add Hello.txt.*ok.*\(recording state in git\.\.\.\)m, shell_output("git annex add ."))
+    assert_match(/^add Hello.txt.*ok.*\(recording state in git\.\.\.\)/m, shell_output("git annex add ."))
     system "git", "commit", "-a", "-m", "Initial Commit"
     assert File.symlink?("Hello.txt")
 

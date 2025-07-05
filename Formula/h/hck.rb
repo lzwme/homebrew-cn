@@ -1,14 +1,14 @@
 class Hck < Formula
   desc "Sharp cut(1) clone"
-  homepage "https:github.comsstadickhck"
-  url "https:github.comsstadickhckarchiverefstagsv0.11.4.tar.gz"
+  homepage "https://github.com/sstadick/hck"
+  url "https://ghfast.top/https://github.com/sstadick/hck/archive/refs/tags/v0.11.4.tar.gz"
   sha256 "f6c87edfeabf33c12b08c4c585d7fece3a618a56dbd87c695ca18629ca599457"
   license any_of: ["MIT", "Unlicense"]
-  head "https:github.comsstadickhck.git", branch: "master"
+  head "https://github.com/sstadick/hck.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -31,13 +31,13 @@ class Hck < Formula
   end
 
   test do
-    output = pipe_output("#{bin}hck -d, -D: -f3 -F 'a'", "a,b,c,d,e\n1,2,3,4,5\n")
+    output = pipe_output("#{bin}/hck -d, -D: -f3 -F 'a'", "a,b,c,d,e\n1,2,3,4,5\n")
     expected = <<~EOS
       a:c
       1:3
     EOS
     assert_equal expected, output
 
-    assert_match version.to_s, shell_output("#{bin}hck --version")
+    assert_match version.to_s, shell_output("#{bin}/hck --version")
   end
 end

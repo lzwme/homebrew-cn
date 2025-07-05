@@ -1,7 +1,7 @@
 class Lsof < Formula
   desc "Utility to list open files"
-  homepage "https:github.comlsof-orglsof"
-  url "https:github.comlsof-orglsofarchiverefstags4.99.5.tar.gz"
+  homepage "https://github.com/lsof-org/lsof"
+  url "https://ghfast.top/https://github.com/lsof-org/lsof/archive/refs/tags/4.99.5.tar.gz"
   sha256 "3c591556c665196e0aada5982ff43c75e248187bad78bb1368d8fb9c1c527e6e"
   license "lsof"
 
@@ -23,19 +23,19 @@ class Lsof < Formula
 
   def install
     if OS.mac?
-      ENV["LSOF_INCLUDE"] = MacOS.sdk_path"usrinclude"
+      ENV["LSOF_INCLUDE"] = MacOS.sdk_path/"usr/include"
 
-      # Source hardcodes full header paths at usrinclude
-      inreplace "libdialectsdarwinmachine.h", "usrinclude", MacOS.sdk_path"usrinclude"
+      # Source hardcodes full header paths at /usr/include
+      inreplace "lib/dialects/darwin/machine.h", "/usr/include", MacOS.sdk_path/"usr/include"
     else
-      ENV["LSOF_INCLUDE"] = HOMEBREW_PREFIX"include"
+      ENV["LSOF_INCLUDE"] = HOMEBREW_PREFIX/"include"
     end
 
     ENV["LSOF_CC"] = ENV.cc
     ENV["LSOF_CCV"] = ENV.cxx
 
     mv "00README", "README"
-    system ".Configure", "-n", OS.kernel_name.downcase
+    system "./Configure", "-n", OS.kernel_name.downcase
 
     system "make"
     bin.install "lsof"
@@ -43,8 +43,8 @@ class Lsof < Formula
   end
 
   test do
-    (testpath"test").open("w") do
-      system bin"lsof", testpath"test"
+    (testpath/"test").open("w") do
+      system bin/"lsof", testpath/"test"
     end
   end
 end

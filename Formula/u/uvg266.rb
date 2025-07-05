@@ -1,10 +1,10 @@
 class Uvg266 < Formula
-  desc "Open-source VVCH.266 encoder"
-  homepage "https:github.comultravideouvg266"
-  url "https:github.comultravideouvg266archiverefstagsv0.8.1.tar.gz"
+  desc "Open-source VVC/H.266 encoder"
+  homepage "https://github.com/ultravideo/uvg266"
+  url "https://ghfast.top/https://github.com/ultravideo/uvg266/archive/refs/tags/v0.8.1.tar.gz"
   sha256 "9a2c68f94a1105058d1e654191036423d0a0fcf33b7e790dd63801997540b6ec"
   license "BSD-3-Clause"
-  head "https:github.comultravideouvg266.git", branch: "master"
+  head "https://github.com/ultravideo/uvg266.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "8aad1b0d383ca8ecbc1ff05759906c85de0bbcbdf8dca93529e92a6d81cd5c54"
@@ -28,12 +28,12 @@ class Uvg266 < Formula
 
   test do
     resource "homebrew-videosample" do
-      url "https:samples.mplayerhq.huV-codecslm20.avi"
+      url "https://samples.mplayerhq.hu/V-codecs/lm20.avi"
       sha256 "a0ab512c66d276fd3932aacdd6073f9734c7e246c8747c48bf5d9dd34ac8b392"
     end
     testpath.install resource("homebrew-videosample")
 
-    system bin"uvg266", "-i", "lm20.avi", "--input-res", "16x16", "-o", "lm20.vvc"
-    assert_path_exists testpath"lm20.vvc"
+    system bin/"uvg266", "-i", "lm20.avi", "--input-res", "16x16", "-o", "lm20.vvc"
+    assert_path_exists testpath/"lm20.vvc"
   end
 end

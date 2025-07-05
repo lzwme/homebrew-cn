@@ -1,10 +1,10 @@
 class Ad < Formula
   desc "Adaptable text editor inspired by vi, kakoune, and acme"
-  homepage "https:github.comsminezad"
-  url "https:github.comsminezadarchiverefstags0.3.1.tar.gz"
+  homepage "https://github.com/sminez/ad"
+  url "https://ghfast.top/https://github.com/sminez/ad/archive/refs/tags/0.3.1.tar.gz"
   sha256 "809cd09550daf38b1c4b7d19b975e6dbeb85f424f8942f20fc9cd7808c1ef196"
   license "MIT"
-  head "https:github.comsminezad.git", branch: "develop"
+  head "https://github.com/sminez/ad.git", branch: "develop"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "4874d80cf8ec7d9a713ac0403e759fb024deea5a0aa9b0baaf77bb75da6dc379"
@@ -22,27 +22,27 @@ class Ad < Formula
 
   def install
     system "cargo", "install", *std_cargo_args
-    man.install buildpath"docsmanad.1"
+    man.install buildpath/"docs/man/ad.1"
   end
 
   test do
     # ad is a gui application
-    assert_match "ad v#{version}", shell_output("#{bin}ad --version").strip
+    assert_match "ad v#{version}", shell_output("#{bin}/ad --version").strip
 
     # test scripts
-    (testpath"test.txt").write <<~TXT
+    (testpath/"test.txt").write <<~TXT
       Hello, World!
       Goodbye, World!
       hello, John!
       Hi, Alex!
     TXT
 
-    (testpath"hello.ad").write <<~AD
+    (testpath/"hello.ad").write <<~AD
       ,
-      x[Hh]ello, (.*)!
-      p$1\n
+      x/[Hh]ello, (.*)!/
+      p/$1\n/
     AD
 
-    assert_match "World\nJohn\n", shell_output("#{bin}ad -f #{testpath}hello.ad #{testpath}test.txt")
+    assert_match "World\nJohn\n", shell_output("#{bin}/ad -f #{testpath}/hello.ad #{testpath}/test.txt")
   end
 end

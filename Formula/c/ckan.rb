@@ -1,7 +1,7 @@
 class Ckan < Formula
   desc "Comprehensive Kerbal Archive Network"
-  homepage "https:github.comKSP-CKANCKAN"
-  url "https:github.comKSP-CKANCKANreleasesdownloadv1.36.0ckan.exe"
+  homepage "https://github.com/KSP-CKAN/CKAN/"
+  url "https://ghfast.top/https://github.com/KSP-CKAN/CKAN/releases/download/v1.36.0/ckan.exe"
   sha256 "4f0f2cf3a16d073ffddaeab68a61599b89fcf0d082a5e3d3a7276802862c1375"
   license "MIT"
 
@@ -17,10 +17,10 @@ class Ckan < Formula
   depends_on "mono"
 
   def install
-    (libexec"bin").install "ckan.exe"
-    (bin"ckan").write <<~SHELL
-      #!binsh
-      exec mono "#{libexec}binckan.exe" "$@"
+    (libexec/"bin").install "ckan.exe"
+    (bin/"ckan").write <<~SHELL
+      #!/bin/sh
+      exec mono "#{libexec}/bin/ckan.exe" "$@"
     SHELL
   end
 
@@ -31,9 +31,9 @@ class Ckan < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output(bin"ckan version")
+    assert_match version.to_s, shell_output(bin/"ckan version")
 
-    output = shell_output(bin"ckan update", 1)
+    output = shell_output(bin/"ckan update", 1)
     assert_match "I don't know where a game instance is installed", output
   end
 end

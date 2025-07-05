@@ -1,10 +1,10 @@
 class Pivy < Formula
   desc "Python bindings to coin3d"
-  homepage "https:github.comcoin3dpivy"
-  url "https:github.comcoin3dpivyarchiverefstags0.6.10.tar.gz"
+  homepage "https://github.com/coin3d/pivy"
+  url "https://ghfast.top/https://github.com/coin3d/pivy/archive/refs/tags/0.6.10.tar.gz"
   sha256 "7b409816c9fad84cf94f93659281f9dd2501d285eb2fc609e9401a3d004ce723"
   license "ISC"
-  head "https:github.comcoin3dpivy.git", branch: "master"
+  head "https://github.com/coin3d/pivy.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:  "8b87dac25665d8517854cb34f96c4e9237495781555a4eb8c8de59a1c6476037"
@@ -26,8 +26,8 @@ class Pivy < Formula
   end
 
   def install
-    site_packages = prefixLanguage::Python.site_packages(python3)
-    rpaths = [rpath(source: site_packages"pivy"), rpath(source: site_packages"pivygui")]
+    site_packages = prefix/Language::Python.site_packages(python3)
+    rpaths = [rpath(source: site_packages/"pivy"), rpath(source: site_packages/"pivy/gui")]
 
     system "cmake", "-S", ".", "-B", "build",
                     "-DCMAKE_INSTALL_RPATH=#{rpaths.join(";")}",

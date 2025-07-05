@@ -1,10 +1,10 @@
 class Openfortivpn < Formula
   desc "Open Fortinet client for PPP+TLS VPN tunnel services"
-  homepage "https:github.comadrienvergeopenfortivpn"
-  url "https:github.comadrienvergeopenfortivpnarchiverefstagsv1.23.1.tar.gz"
+  homepage "https://github.com/adrienverge/openfortivpn"
+  url "https://ghfast.top/https://github.com/adrienverge/openfortivpn/archive/refs/tags/v1.23.1.tar.gz"
   sha256 "ecacfc7f18d87f4ff503198177e51a83316b59b4646f31caa8140fdbfaa40389"
   license "GPL-3.0-or-later" => { with: "openvpn-openssl-exception" }
-  head "https:github.comadrienvergeopenfortivpn.git", branch: "master"
+  head "https://github.com/adrienverge/openfortivpn.git", branch: "master"
 
   bottle do
     sha256 arm64_sequoia: "1ae366135c78e77a61e53bc6c8c05b5517f715f64b580ee20c7f380e4772b483"
@@ -25,23 +25,23 @@ class Openfortivpn < Formula
   # uses_from_macos "pppd"
 
   def install
-    system ".autogen.sh"
-    system ".configure", "--disable-silent-rules",
+    system "./autogen.sh"
+    system "./configure", "--disable-silent-rules",
                           "--enable-legacy-pppd", # only for pppd < 2.5.0
-                          "--sysconfdir=#{etc}openfortivpn",
+                          "--sysconfdir=#{etc}/openfortivpn",
                           *std_configure_args
     system "make", "install"
   end
 
   service do
-    run [opt_bin"openfortivpn", "-c", etc"openfortivpnopenfortivpnconfig"]
+    run [opt_bin/"openfortivpn", "-c", etc/"openfortivpn/openfortivpn/config"]
     keep_alive true
     require_root true
-    log_path var"logopenfortivpn.log"
-    error_log_path var"logopenfortivpn.log"
+    log_path var/"log/openfortivpn.log"
+    error_log_path var/"log/openfortivpn.log"
   end
 
   test do
-    system bin"openfortivpn", "--version"
+    system bin/"openfortivpn", "--version"
   end
 end

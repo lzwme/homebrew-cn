@@ -1,7 +1,7 @@
 class Lsix < Formula
   desc "Shows thumbnails in terminal using sixel graphics"
-  homepage "https:github.comhackerb9lsix"
-  url "https:github.comhackerb9lsixarchiverefstags1.9.1.tar.gz"
+  homepage "https://github.com/hackerb9/lsix"
+  url "https://ghfast.top/https://github.com/hackerb9/lsix/archive/refs/tags/1.9.1.tar.gz"
   sha256 "310e25389da13c19a0793adcea87f7bc9aa8acc92d9534407c8fbd5227a0e05d"
   license "GPL-3.0-only"
 
@@ -18,7 +18,7 @@ class Lsix < Formula
   end
 
   test do
-    output = shell_output "#{bin}lsix 2>&1"
+    output = shell_output "#{bin}/lsix 2>&1"
     assert_match "Error: Your terminal does not report having sixel graphics support.", output
   end
 end

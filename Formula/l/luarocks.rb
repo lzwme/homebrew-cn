@@ -1,14 +1,14 @@
 class Luarocks < Formula
   desc "Package manager for the Lua programming language"
-  homepage "https:luarocks.org"
-  url "https:luarocks.orgreleasesluarocks-3.12.2.tar.gz"
+  homepage "https://luarocks.org/"
+  url "https://luarocks.org/releases/luarocks-3.12.2.tar.gz"
   sha256 "b0e0c85205841ddd7be485f53d6125766d18a81d226588d2366931e9a1484492"
   license "MIT"
-  head "https:github.comluarocksluarocks.git", branch: "master"
+  head "https://github.com/luarocks/luarocks.git", branch: "master"
 
   livecheck do
     url :homepage
-    regex(%r{luarocks[._-]v?(\d+(?:\.\d+)+)\.t}i)
+    regex(%r{/luarocks[._-]v?(\d+(?:\.\d+)+)\.t}i)
   end
 
   bottle do
@@ -24,21 +24,21 @@ class Luarocks < Formula
     # Fix the lua config file missing issue for luarocks-admin build
     ENV.deparallelize
 
-    system ".configure", "--prefix=#{prefix}",
+    system "./configure", "--prefix=#{prefix}",
                           "--sysconfdir=#{etc}",
                           "--rocks-tree=#{HOMEBREW_PREFIX}"
     system "make", "install"
-    generate_completions_from_executable(bin"luarocks", "completion")
+    generate_completions_from_executable(bin/"luarocks", "completion")
 
     # Make bottles uniform to make an `:all` bottle
     luaversion = Formula["lua"].version.major_minor
     inreplace_files = %w[
-      cmdconfig
-      cmdwhich
-      corecfg
+      cmd/config
+      cmd/which
+      core/cfg
       deps
-    ].map { |file| share"lua"luaversion"luarocks#{file}.lua" }
-    inreplace inreplace_files, "usrlocal", HOMEBREW_PREFIX
+    ].map { |file| share/"lua"/luaversion/"luarocks/#{file}.lua" }
+    inreplace inreplace_files, "/usr/local", HOMEBREW_PREFIX
   end
 
   test do
@@ -49,14 +49,14 @@ class Luarocks < Formula
 
     luas.each do |lua|
       luaversion, luaexec = case lua.name
-      when "luajit" then ["5.1", lua.opt_bin"luajit"]
-      else [lua.version.major_minor, lua.opt_bin"lua-#{lua.version.major_minor}"]
+      when "luajit" then ["5.1", lua.opt_bin/"luajit"]
+      else [lua.version.major_minor, lua.opt_bin/"lua-#{lua.version.major_minor}"]
       end
 
-      ENV["LUA_PATH"] = "#{testpath}sharelua#{luaversion}?.lua"
-      ENV["LUA_CPATH"] = "#{testpath}liblua#{luaversion}?.so"
+      ENV["LUA_PATH"] = "#{testpath}/share/lua/#{luaversion}/?.lua"
+      ENV["LUA_CPATH"] = "#{testpath}/lib/lua/#{luaversion}/?.so"
 
-      system bin"luarocks", "install",
+      system bin/"luarocks", "install",
                                 "luafilesystem",
                                 "--tree=#{testpath}",
                                 "--lua-dir=#{lua.opt_prefix}"
@@ -65,16 +65,16 @@ class Luarocks < Formula
 
       case luaversion
       when "5.1"
-        (testpath"lfs_#{luaversion}test.lua").write <<~LUA
+        (testpath/"lfs_#{luaversion}test.lua").write <<~LUA
           require("lfs")
           lfs.mkdir("blank_space")
         LUA
 
         system luaexec, "lfs_#{luaversion}test.lua"
-        assert_predicate testpath"blank_space", :directory?,
+        assert_predicate testpath/"blank_space", :directory?,
           "Luafilesystem failed to create the expected directory"
       else
-        (testpath"lfs_#{luaversion}test.lua").write <<~LUA
+        (testpath/"lfs_#{luaversion}test.lua").write <<~LUA
           require("lfs")
           print(lfs.currentdir())
         LUA

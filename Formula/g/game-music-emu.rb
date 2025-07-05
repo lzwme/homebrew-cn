@@ -1,10 +1,10 @@
 class GameMusicEmu < Formula
   desc "Videogame music file emulator collection"
-  homepage "https:github.comlibgmegame-music-emu"
-  url "https:github.comlibgmegame-music-emuarchiverefstags0.6.4.tar.gz"
+  homepage "https://github.com/libgme/game-music-emu"
+  url "https://ghfast.top/https://github.com/libgme/game-music-emu/archive/refs/tags/0.6.4.tar.gz"
   sha256 "f2360feb5a32ace226c583df4faf6eff74145c81264aaea11e17a1af2f6f101a"
   license one_of: ["LGPL-2.1-or-later", "GPL-2.0-or-later"]
-  head "https:github.comlibgmegame-music-emu.git", branch: "master"
+  head "https://github.com/libgme/game-music-emu.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "660ece50d8af5ffbff406371638895522a4ea69d411b1258eb8fdba0a4196adb"
@@ -27,8 +27,8 @@ class GameMusicEmu < Formula
   end
 
   test do
-    (testpath"test.c").write <<~C
-      #include <gmegme.h>
+    (testpath/"test.c").write <<~C
+      #include <gme/gme.h>
       int main(void)
       {
         Music_Emu* emu;
@@ -45,12 +45,12 @@ class GameMusicEmu < Formula
     C
 
     if OS.mac?
-      ubsan_libdir = Dir["#{MacOS::CLT::PKG_PATH}usrlibclang*libdarwin"].first
+      ubsan_libdir = Dir["#{MacOS::CLT::PKG_PATH}/usr/lib/clang/*/lib/darwin"].first
       rpath = "-Wl,-rpath,#{ubsan_libdir}"
     end
 
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", *(rpath if OS.mac?),
                    "-lgme", "-o", "test", *ENV.cflags.to_s.split
-    system ".test"
+    system "./test"
   end
 end

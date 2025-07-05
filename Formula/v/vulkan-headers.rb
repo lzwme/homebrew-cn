@@ -1,14 +1,14 @@
 class VulkanHeaders < Formula
   desc "Vulkan Header files and API registry"
-  homepage "https:github.comKhronosGroupVulkan-Headers"
-  url "https:github.comKhronosGroupVulkan-Headersarchiverefstagsv1.4.320.tar.gz"
+  homepage "https://github.com/KhronosGroup/Vulkan-Headers"
+  url "https://ghfast.top/https://github.com/KhronosGroup/Vulkan-Headers/archive/refs/tags/v1.4.320.tar.gz"
   sha256 "26bf2befead6bf397263a74885dac3e68d133af76062321c2a5ce81de47b8429"
   license "Apache-2.0"
-  head "https:github.comKhronosGroupVulkan-Headers.git", branch: "main"
+  head "https://github.com/KhronosGroup/Vulkan-Headers.git", branch: "main"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -19,8 +19,8 @@ class VulkanHeaders < Formula
 
   def install
     # Ensure bottles are uniform.
-    inreplace "includevulkanvulkan.hpp" do |s|
-      s.gsub! "usrlocal", HOMEBREW_PREFIX
+    inreplace "include/vulkan/vulkan.hpp" do |s|
+      s.gsub! "/usr/local", HOMEBREW_PREFIX
     end
 
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
@@ -28,9 +28,9 @@ class VulkanHeaders < Formula
   end
 
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include <stdio.h>
-      #include <vulkanvulkan_core.h>
+      #include <vulkan/vulkan_core.h>
 
       int main() {
         printf("vulkan version %d", VK_VERSION_1_0);
@@ -38,6 +38,6 @@ class VulkanHeaders < Formula
       }
     C
     system ENV.cc, "test.c", "-o", "test"
-    system ".test"
+    system "./test"
   end
 end

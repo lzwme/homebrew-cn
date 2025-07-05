@@ -1,7 +1,7 @@
 class Curlcpp < Formula
   desc "Object oriented C++ wrapper for CURL (libcurl)"
-  homepage "https:josephp91.github.iocurlcpp"
-  url "https:github.comJosephP91curlcpparchiverefstags3.1.tar.gz"
+  homepage "https://josephp91.github.io/curlcpp"
+  url "https://ghfast.top/https://github.com/JosephP91/curlcpp/archive/refs/tags/3.1.tar.gz"
   sha256 "ba7aeed9fde9e5081936fbe08f7a584e452f9ac1199e5fabffbb3cfc95e85f4b"
   license "MIT"
   revision 1
@@ -22,10 +22,10 @@ class Curlcpp < Formula
 
   uses_from_macos "curl"
 
-  # remove use of CURLOPT_CLOSEPOLICY (removed since curl 8.10+), upstream pr ref, https:github.comJosephP91curlcpppull159
+  # remove use of CURLOPT_CLOSEPOLICY (removed since curl 8.10+), upstream pr ref, https://github.com/JosephP91/curlcpp/pull/159
   patch do
     on_linux do
-      url "https:github.comJosephP91curlcppcommitbc3800510f30ed74c90227b166d134cd13fd63cf.patch?full_index=1"
+      url "https://github.com/JosephP91/curlcpp/commit/bc3800510f30ed74c90227b166d134cd13fd63cf.patch?full_index=1"
       sha256 "0954b32d0304ad9b4acecf3f647242b2c5736f4c6576a390e665e57883dcf10f"
     end
   end
@@ -37,14 +37,14 @@ class Curlcpp < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~CPP
+    (testpath/"test.cpp").write <<~CPP
       #include <iostream>
       #include <ostream>
 
-      #include "curlcppcurl_easy.h"
-      #include "curlcppcurl_form.h"
-      #include "curlcppcurl_ios.h"
-      #include "curlcppcurl_exception.h"
+      #include "curlcpp/curl_easy.h"
+      #include "curlcpp/curl_form.h"
+      #include "curlcpp/curl_ios.h"
+      #include "curlcpp/curl_exception.h"
 
       using std::cout;
       using std::endl;
@@ -56,23 +56,23 @@ class Curlcpp < Formula
       using curl::curlcpp_traceback;
 
       int main() {
-           Create a stringstream object
+          // Create a stringstream object
           ostringstream str;
-           Create a curl_ios object, passing the stream object.
+          // Create a curl_ios object, passing the stream object.
           curl_ios<ostringstream> writer(str);
 
-           Pass the writer to the easy constructor and watch the content returned in that variable!
+          // Pass the writer to the easy constructor and watch the content returned in that variable!
           curl_easy easy(writer);
-          easy.add<CURLOPT_URL>("https:google.com");
+          easy.add<CURLOPT_URL>("https://google.com");
           easy.add<CURLOPT_FOLLOWLOCATION>(1L);
 
           try {
               easy.perform();
           } catch (curl_easy_exception &error) {
-               If you want to print the last error.
+              // If you want to print the last error.
               std::cerr<<error.what()<<std::endl;
 
-               If you want to print the entire error stack you can do
+              // If you want to print the entire error stack you can do
               error.print_traceback();
           }
           return 0;
@@ -80,6 +80,6 @@ class Curlcpp < Formula
     CPP
 
     system ENV.cxx, "-std=c++11", "test.cpp", "-L#{lib}", "-lcurlcpp", "-lcurl", "-o", "test"
-    system ".test"
+    system "./test"
   end
 end

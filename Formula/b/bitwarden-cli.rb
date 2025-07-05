@@ -1,14 +1,14 @@
 class BitwardenCli < Formula
   desc "Secure and free password manager for all of your devices"
-  homepage "https:bitwarden.com"
-  url "https:github.combitwardenclientsarchiverefstagscli-v2025.6.1.tar.gz"
+  homepage "https://bitwarden.com/"
+  url "https://ghfast.top/https://github.com/bitwarden/clients/archive/refs/tags/cli-v2025.6.1.tar.gz"
   sha256 "73d620b95e3554ed980a582f36e5f8a62d7a5839841179281470bc2b973ad96c"
   license "GPL-3.0-only"
-  head "https:github.combitwardenclients.git", branch: "main"
+  head "https://github.com/bitwarden/clients.git", branch: "main"
 
   livecheck do
     url :stable
-    regex(^cli[._-]v?(\d+(?:\.\d+)+)$i)
+    regex(/^cli[._-]v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -27,32 +27,32 @@ class BitwardenCli < Formula
   def install
     # Fix to build error with xcode 16.3 for `argon2`
     # Issue ref:
-    # - https:github.combitwardenclientsissues15000
-    # - https:github.comranisaltnode-argon2issues448
-    inreplace ["package.json", "appsclipackage.json"], '"argon2": "0.41.1"', '"argon2": "0.43.0"'
+    # - https://github.com/bitwarden/clients/issues/15000
+    # - https://github.com/ranisalt/node-argon2/issues/448
+    inreplace ["package.json", "apps/cli/package.json"], '"argon2": "0.41.1"', '"argon2": "0.43.0"'
 
     system "npm", "install", *std_npm_args(prefix: false), "--ignore-scripts"
-    cd buildpath"appscli" do
+    cd buildpath/"apps/cli" do
       # The `oss` build of Bitwarden is a GPL backed build
       system "npm", "run", "build:oss:prod", "--ignore-scripts"
       system "npm", "install", *std_npm_args
     end
-    bin.install_symlink libexec.glob("bin*")
+    bin.install_symlink libexec.glob("bin/*")
 
     # Remove incompatible pre-built `argon2` binaries
     os = OS.kernel_name.downcase
     arch = Hardware::CPU.intel? ? "x64" : Hardware::CPU.arch.to_s
-    node_modules = libexec"libnode_modules@bitwardenclinode_modules"
-    node_modules.glob("argon2prebuildslinux-*argon2*.musl.node").map(&:unlink)
-    (node_modules"argon2prebuilds").each_child { |dir| rm_r(dir) if dir.basename.to_s != "#{os}-#{arch}" }
+    node_modules = libexec/"lib/node_modules/@bitwarden/cli/node_modules"
+    node_modules.glob("argon2/prebuilds/linux-*/argon2*.musl.node").map(&:unlink)
+    (node_modules/"argon2/prebuilds").each_child { |dir| rm_r(dir) if dir.basename.to_s != "#{os}-#{arch}" }
 
-    generate_completions_from_executable(bin"bw", "completion", "--shell", shells: [:zsh])
+    generate_completions_from_executable(bin/"bw", "completion", "--shell", shells: [:zsh])
   end
 
   test do
-    assert_equal 10, shell_output("#{bin}bw generate --length 10").chomp.length
+    assert_equal 10, shell_output("#{bin}/bw generate --length 10").chomp.length
 
-    output = pipe_output("#{bin}bw encode", "Testing", 0)
+    output = pipe_output("#{bin}/bw encode", "Testing", 0)
     assert_equal "VGVzdGluZw==", output.chomp
   end
 end

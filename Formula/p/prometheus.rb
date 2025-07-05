@@ -1,7 +1,7 @@
 class Prometheus < Formula
   desc "Service monitoring system and time series database"
-  homepage "https:prometheus.io"
-  url "https:github.comprometheusprometheusarchiverefstagsv3.4.2.tar.gz"
+  homepage "https://prometheus.io/"
+  url "https://ghfast.top/https://github.com/prometheus/prometheus/archive/refs/tags/v3.4.2.tar.gz"
   sha256 "242fa5c91f41edf6cd68fea1c6cd896f0bf3ae577a45c33ea9af3643dcc71766"
   license "Apache-2.0"
 
@@ -30,27 +30,27 @@ class Prometheus < Formula
 
   def install
     ENV.deparallelize
-    ENV.prepend_path "PATH", Formula["gnu-tar"].opt_libexec"gnubin"
-    ENV.prepend_path "PATH", Formula["node"].opt_libexec"bin"
-    mkdir_p buildpath"srcgithub.comprometheus"
-    ln_sf buildpath, buildpath"srcgithub.comprometheusprometheus"
+    ENV.prepend_path "PATH", Formula["gnu-tar"].opt_libexec/"gnubin"
+    ENV.prepend_path "PATH", Formula["node"].opt_libexec/"bin"
+    mkdir_p buildpath/"src/github.com/prometheus"
+    ln_sf buildpath, buildpath/"src/github.com/prometheus/prometheus"
 
     system "make", "assets"
     system "make", "build"
     bin.install %w[promtool prometheus]
 
-    (bin"prometheus_brew_services").write <<~EOS
-      #!binbash
-      exec #{bin}prometheus $(<#{etc}prometheus.args)
+    (bin/"prometheus_brew_services").write <<~EOS
+      #!/bin/bash
+      exec #{bin}/prometheus $(<#{etc}/prometheus.args)
     EOS
 
-    (buildpath"prometheus.args").write <<~EOS
-      --config.file #{etc}prometheus.yml
+    (buildpath/"prometheus.args").write <<~EOS
+      --config.file #{etc}/prometheus.yml
       --web.listen-address=127.0.0.1:9090
-      --storage.tsdb.path #{var}prometheus
+      --storage.tsdb.path #{var}/prometheus
     EOS
 
-    (buildpath"prometheus.yml").write <<~YAML
+    (buildpath/"prometheus.yml").write <<~YAML
       global:
         scrape_interval: 15s
 
@@ -66,19 +66,19 @@ class Prometheus < Formula
     <<~EOS
       When run from `brew services`, `prometheus` is run from
       `prometheus_brew_services` and uses the flags in:
-         #{etc}prometheus.args
+         #{etc}/prometheus.args
     EOS
   end
 
   service do
-    run [opt_bin"prometheus_brew_services"]
+    run [opt_bin/"prometheus_brew_services"]
     keep_alive false
-    log_path var"logprometheus.log"
-    error_log_path var"logprometheus.err.log"
+    log_path var/"log/prometheus.log"
+    error_log_path var/"log/prometheus.err.log"
   end
 
   test do
-    (testpath"rules.example").write <<~YAML
+    (testpath/"rules.example").write <<~YAML
       groups:
       - name: http
         rules:
@@ -86,6 +86,6 @@ class Prometheus < Formula
           expr: sum(http_inprogress_requests) by (job)
     YAML
 
-    system bin"promtool", "check", "rules", testpath"rules.example"
+    system bin/"promtool", "check", "rules", testpath/"rules.example"
   end
 end

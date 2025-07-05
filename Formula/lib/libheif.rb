@@ -1,7 +1,7 @@
 class Libheif < Formula
-  desc "ISOIEC 23008-12:2017 HEIF file format decoder and encoder"
-  homepage "https:www.libde265.org"
-  url "https:github.comstrukturaglibheifreleasesdownloadv1.20.1libheif-1.20.1.tar.gz"
+  desc "ISO/IEC 23008-12:2017 HEIF file format decoder and encoder"
+  homepage "https://www.libde265.org/"
+  url "https://ghfast.top/https://github.com/strukturag/libheif/releases/download/v1.20.1/libheif-1.20.1.tar.gz"
   sha256 "55cc76b77c533151fc78ba58ef5ad18562e84da403ed749c3ae017abaf1e2090"
   license "LGPL-3.0-only"
 
@@ -39,35 +39,35 @@ class Libheif < Formula
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
-    pkgshare.install "examplesexample.heic"
-    pkgshare.install "examplesexample.avif"
+    pkgshare.install "examples/example.heic"
+    pkgshare.install "examples/example.avif"
 
     system "cmake", "-S", ".", "-B", "static", *args, *std_cmake_args, "-DBUILD_SHARED_LIBS=OFF"
     system "cmake", "--build", "static"
-    lib.install "staticlibheiflibheif.a"
+    lib.install "static/libheif/libheif.a"
 
     # Avoid rebuilding dependents that hard-code the prefix.
-    inreplace lib"pkgconfiglibheif.pc", prefix, opt_prefix
+    inreplace lib/"pkgconfig/libheif.pc", prefix, opt_prefix
   end
 
   def post_install
-    system Formula["shared-mime-info"].opt_bin"update-mime-database", "#{HOMEBREW_PREFIX}sharemime"
+    system Formula["shared-mime-info"].opt_bin/"update-mime-database", "#{HOMEBREW_PREFIX}/share/mime"
   end
 
   test do
     output = "File contains 2 images"
-    example = pkgshare"example.heic"
-    exout = testpath"exampleheic.jpg"
+    example = pkgshare/"example.heic"
+    exout = testpath/"exampleheic.jpg"
 
-    assert_match output, shell_output("#{bin}heif-convert #{example} #{exout}")
-    assert_path_exists testpath"exampleheic-1.jpg"
-    assert_path_exists testpath"exampleheic-2.jpg"
+    assert_match output, shell_output("#{bin}/heif-convert #{example} #{exout}")
+    assert_path_exists testpath/"exampleheic-1.jpg"
+    assert_path_exists testpath/"exampleheic-2.jpg"
 
     output = "File contains 1 image"
-    example = pkgshare"example.avif"
-    exout = testpath"exampleavif.jpg"
+    example = pkgshare/"example.avif"
+    exout = testpath/"exampleavif.jpg"
 
-    assert_match output, shell_output("#{bin}heif-convert #{example} #{exout}")
-    assert_path_exists testpath"exampleavif.jpg"
+    assert_match output, shell_output("#{bin}/heif-convert #{example} #{exout}")
+    assert_path_exists testpath/"exampleavif.jpg"
   end
 end

@@ -1,7 +1,7 @@
 class Gearman < Formula
   desc "Application framework to farm out work to other machines or processes"
-  homepage "https:gearman.org"
-  url "https:github.comgearmangearmandreleasesdownload1.1.21gearmand-1.1.21.tar.gz"
+  homepage "https://gearman.org/"
+  url "https://ghfast.top/https://github.com/gearman/gearmand/releases/download/1.1.21/gearmand-1.1.21.tar.gz"
   sha256 "2688b83e48f26fdcd4fbaef2413ff1a76c9ecb067d1621d0e0986196efecd308"
   license "BSD-3-Clause"
   revision 5
@@ -39,8 +39,8 @@ class Gearman < Formula
       ENV.delete("SDKROOT")
     end
 
-    # https:bugs.launchpad.netgearmand+bug1368926
-    Dir["tests***.cc", "libtestmain.cc"].each do |test_file|
+    # https://bugs.launchpad.net/gearmand/+bug/1368926
+    Dir["tests/**/*.cc", "libtest/main.cc"].each do |test_file|
       next unless File.read(test_file).include?("std::unique_ptr")
 
       inreplace test_file, "std::unique_ptr", "std::auto_ptr"
@@ -59,7 +59,7 @@ class Gearman < Formula
       --disable-ssl
       --enable-libmemcached
       --with-boost=#{Formula["boost"].opt_prefix}
-      --with-memcached=#{Formula["memcached"].opt_bin}memcached
+      --with-memcached=#{Formula["memcached"].opt_bin}/memcached
       --with-sqlite3
       --without-mysql
       --without-postgresql
@@ -68,16 +68,16 @@ class Gearman < Formula
     ENV.append_to_cflags "-DHAVE_HTONLL"
     ENV.append "CXXFLAGS", "-std=c++14"
 
-    (var"log").mkpath
-    system ".configure", *args
+    (var/"log").mkpath
+    system "./configure", *args
     system "make", "install"
   end
 
   service do
-    run opt_sbin"gearmand"
+    run opt_sbin/"gearmand"
   end
 
   test do
-    assert_match(gearman\s*Error in usage, shell_output("#{bin}gearman --version 2>&1", 1))
+    assert_match(/gearman\s*Error in usage/, shell_output("#{bin}/gearman --version 2>&1", 1))
   end
 end

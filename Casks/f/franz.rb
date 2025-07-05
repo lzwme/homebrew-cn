@@ -5,11 +5,11 @@ cask "franz" do
   sha256 arm:   "3390a32cab5510b34e2237f2215fc82086d1203cd621cdb8b5bd2f809db2297f",
          intel: "ca1ac6fb5c51af0dfd63d89490bb557fe648eeb7f40e9af2f186d108210977b6"
 
-  url "https:github.commeetfranzfranzreleasesdownloadv#{version}franz-#{version}#{arch}.dmg",
-      verified: "github.commeetfranzfranz"
+  url "https://ghfast.top/https://github.com/meetfranz/franz/releases/download/v#{version}/franz-#{version}#{arch}.dmg",
+      verified: "github.com/meetfranz/franz/"
   name "Franz"
   desc "Messaging app for WhatsApp, Facebook Messenger, Slack, Telegram and more"
-  homepage "https:meetfranz.com"
+  homepage "https://meetfranz.com/"
 
   no_autobump! because: :requires_manual_review
 
@@ -19,18 +19,18 @@ cask "franz" do
   app "Franz.app"
 
   uninstall signal: ["QUIT", "com.meetfranz.franz"],
-            delete: "LibraryLogsDiagnosticReportsFranz Helper_.*wakeups_resource.diag"
+            delete: "/Library/Logs/DiagnosticReports/Franz Helper_.*wakeups_resource.diag"
 
   zap trash: [
-    "~LibraryApplication SupportCachesfranz-updater",
-    "~LibraryApplication SupportFranz",
-    "~LibraryCachescom.meetfranz.franz",
-    "~LibraryCachescom.meetfranz.franz.ShipIt",
-    "~LibraryLogsFranz",
-    "~LibraryPreferencesByHostcom.meetfranz.franz.ShipIt.*.plist",
-    "~LibraryPreferencescom.electron.franz.helper.plist",
-    "~LibraryPreferencescom.electron.franz.plist",
-    "~LibraryPreferencescom.meetfranz.franz.plist",
-    "~LibrarySaved Application Statecom.electron.franz.savedState",
+    "~/Library/Application Support/Caches/franz-updater",
+    "~/Library/Application Support/Franz",
+    "~/Library/Caches/com.meetfranz.franz",
+    "~/Library/Caches/com.meetfranz.franz.ShipIt",
+    "~/Library/Logs/Franz",
+    "~/Library/Preferences/ByHost/com.meetfranz.franz.ShipIt.*.plist",
+    "~/Library/Preferences/com.electron.franz.helper.plist",
+    "~/Library/Preferences/com.electron.franz.plist",
+    "~/Library/Preferences/com.meetfranz.franz.plist",
+    "~/Library/Saved Application State/com.electron.franz.savedState",
   ]
 end

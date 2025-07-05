@@ -1,7 +1,7 @@
 class ConsoleBridge < Formula
   desc "Robot Operating System-independent package for logging"
-  homepage "https:wiki.ros.orgconsole_bridge"
-  url "https:github.comrosconsole_bridgearchiverefstags1.0.2.tar.gz"
+  homepage "https://wiki.ros.org/console_bridge/"
+  url "https://ghfast.top/https://github.com/ros/console_bridge/archive/refs/tags/1.0.2.tar.gz"
   sha256 "303a619c01a9e14a3c82eb9762b8a428ef5311a6d46353872ab9a904358be4a4"
   license "BSD-3-Clause"
 
@@ -32,8 +32,8 @@ class ConsoleBridge < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~CPP
-      #include <console_bridgeconsole.h>
+    (testpath/"test.cpp").write <<~CPP
+      #include <console_bridge/console.h>
 
       int main() {
         CONSOLE_BRIDGE_logDebug("Testing Log");
@@ -43,6 +43,6 @@ class ConsoleBridge < Formula
 
     flags = shell_output("pkgconf --cflags --libs console_bridge").chomp.split
     system ENV.cxx, "test.cpp", "-o", "test", *flags
-    system ".test"
+    system "./test"
   end
 end

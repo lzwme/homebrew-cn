@@ -2,10 +2,10 @@ cask "font-angkor" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefontsrawmainoflangkorAngkor-Regular.ttf",
-      verified: "github.comgooglefonts"
+  url "https://github.com/google/fonts/raw/main/ofl/angkor/Angkor-Regular.ttf",
+      verified: "github.com/google/fonts/"
   name "Angkor"
-  homepage "https:fonts.google.comspecimenAngkor"
+  homepage "https://fonts.google.com/specimen/Angkor"
 
   font "Angkor-Regular.ttf"
 

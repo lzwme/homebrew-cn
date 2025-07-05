@@ -5,11 +5,11 @@ cask "timescribe" do
   sha256 arm:   "8cf5655a0c89acf374387d68669f392b35e68ccf7a5e5675d2a0a7f512acaf1c",
          intel: "2e24428b0dec5d5f8c8f7fb4d1f54dbc310057fab90a502f5dd4bf0b9bb73317"
 
-  url "https:github.comWINBIGFOXTimeScribereleasesdownloadv#{version}TimeScribe-#{version}-#{arch}.zip",
-      verified: "github.comWINBIGFOXTimeScribe"
+  url "https://ghfast.top/https://github.com/WINBIGFOX/TimeScribe/releases/download/v#{version}/TimeScribe-#{version}-#{arch}.zip",
+      verified: "github.com/WINBIGFOX/TimeScribe/"
   name "TimeScribe"
   desc "Working time tracker"
-  homepage "https:timescribe.app"
+  homepage "https://timescribe.app/"
 
   livecheck do
     url :url
@@ -23,5 +23,5 @@ cask "timescribe" do
 
   app "TimeScribe.app"
 
-  zap trash: "~LibraryApplication Supporttimescribe"
+  zap trash: "~/Library/Application Support/timescribe"
 end

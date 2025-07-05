@@ -5,11 +5,11 @@ cask "stashpad" do
   sha256 arm:   "38631d69db2316ca513a4f7331fa3e15248720ea252e596a81e91842791ddd8b",
          intel: "2139046350c14907030700c548b2e6899553baba20fa4cb8c995c717eeb6c068"
 
-  url "https:github.comstashpadsp-desktop-releasereleasesdownloadv#{version}Stashpad-#{version}#{arch}.dmg",
-      verified: "github.comstashpadsp-desktop-release"
+  url "https://ghfast.top/https://github.com/stashpad/sp-desktop-release/releases/download/v#{version}/Stashpad-#{version}#{arch}.dmg",
+      verified: "github.com/stashpad/sp-desktop-release/"
   name "Stashpad"
   desc "Notes app for collaborative work"
-  homepage "https:www.stashpad.com"
+  homepage "https://www.stashpad.com/"
 
   no_autobump! because: :requires_manual_review
 
@@ -18,11 +18,11 @@ cask "stashpad" do
   app "Stashpad.app"
 
   zap trash: [
-    "~LibraryApplication Supportcom.apple.sharedfilelistcom.apple.LSSharedFileList.ApplicationRecentDocumentscom.stashpad.app.sfl*",
-    "~LibraryApplication SupportStashpad",
-    "~LibraryCachesStashpad",
-    "~LibraryLogsStashpad",
-    "~LibraryPreferencescom.stashpad.app.plist",
-    "~LibrarySaved Application Statecom.stashpad.app.savedState",
+    "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.stashpad.app.sfl*",
+    "~/Library/Application Support/Stashpad",
+    "~/Library/Caches/Stashpad",
+    "~/Library/Logs/Stashpad",
+    "~/Library/Preferences/com.stashpad.app.plist",
+    "~/Library/Saved Application State/com.stashpad.app.savedState",
   ]
 end

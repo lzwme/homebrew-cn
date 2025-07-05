@@ -1,13 +1,13 @@
 class DitaOt < Formula
   desc "DITA Open Toolkit is an implementation of the OASIS DITA specification"
-  homepage "https:www.dita-ot.org"
-  url "https:github.comdita-otdita-otreleasesdownload4.3.3dita-ot-4.3.3.zip"
+  homepage "https://www.dita-ot.org/"
+  url "https://ghfast.top/https://github.com/dita-ot/dita-ot/releases/download/4.3.3/dita-ot-4.3.3.zip"
   sha256 "1248908ffa2ec4dfee24c87a87cb57a737e51976f619c766073ed6e62bdf2286"
   license "Apache-2.0"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -25,14 +25,14 @@ class DitaOt < Formula
   depends_on "openjdk"
 
   def install
-    rm(Dir["bin*.bat", "configenv.bat", "startcmd.*"])
+    rm(Dir["bin/*.bat", "config/env.bat", "startcmd.*"])
     libexec.install Dir["*"]
-    (bin"dita").write_env_script libexec"bindita", JAVA_HOME: Formula["openjdk"].opt_prefix
+    (bin/"dita").write_env_script libexec/"bin/dita", JAVA_HOME: Formula["openjdk"].opt_prefix
   end
 
   test do
-    system bin"dita", "--input=#{libexec}docsrcsite.ditamap",
-           "--format=html5", "--output=#{testpath}out"
-    assert_path_exists testpath"outindex.html"
+    system bin/"dita", "--input=#{libexec}/docsrc/site.ditamap",
+           "--format=html5", "--output=#{testpath}/out"
+    assert_path_exists testpath/"out/index.html"
   end
 end

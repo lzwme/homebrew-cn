@@ -1,7 +1,7 @@
 class Enkits < Formula
   desc "C and C++ Task Scheduler for creating parallel programs"
-  homepage "https:github.comdougbinksenkiTS"
-  url "https:github.comdougbinksenkiTSarchiverefstagsv1.11.tar.gz"
+  homepage "https://github.com/dougbinks/enkiTS"
+  url "https://ghfast.top/https://github.com/dougbinks/enkiTS/archive/refs/tags/v1.11.tar.gz"
   sha256 "b57a782a6a68146169d29d180d3553bfecb9f1a0e87a5159082331920e7d297e"
   license "Zlib"
 
@@ -33,15 +33,15 @@ class Enkits < Formula
     system "cmake", "-S", ".", "-B", "build", *args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
-    lib.install_symlink "#{lib}enkiTS#{shared_library("libenkiTS")}"
+    lib.install_symlink "#{lib}/enkiTS/#{shared_library("libenkiTS")}"
     pkgshare.install "example"
   end
 
   test do
-    system ENV.cxx, pkgshare"examplePinnedTask.cpp",
-      "-std=c++11", "-I#{include}enkiTS", "-L#{lib}", "-lenkiTS", "-o", "example"
-    output = shell_output(".example")
+    system ENV.cxx, pkgshare/"example/PinnedTask.cpp",
+      "-std=c++11", "-I#{include}/enkiTS", "-L#{lib}", "-lenkiTS", "-o", "example"
+    output = shell_output("./example")
     assert_match("This will run on the main thread", output)
-    assert_match(This could run on any thread, currently thread \d, output)
+    assert_match(/This could run on any thread, currently thread \d/, output)
   end
 end

@@ -1,14 +1,14 @@
 class Glslang < Formula
   desc "OpenGL and OpenGL ES reference compiler for shading languages"
-  homepage "https:www.khronos.orgopenglessdktoolsReference-Compiler"
-  url "https:github.comKhronosGroupglslangarchiverefstags15.4.0.tar.gz"
+  homepage "https://www.khronos.org/opengles/sdk/tools/Reference-Compiler/"
+  url "https://ghfast.top/https://github.com/KhronosGroup/glslang/archive/refs/tags/15.4.0.tar.gz"
   sha256 "b16c78e7604b9be9f546ee35ad8b6db6f39bbbbfb19e8d038b6fe2ea5bba4ff4"
   license all_of: ["BSD-3-Clause", "GPL-3.0-or-later", "MIT", "Apache-2.0"]
-  head "https:github.comKhronosGroupglslang.git", branch: "main"
+  head "https://github.com/KhronosGroup/glslang.git", branch: "main"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -43,20 +43,20 @@ class Glslang < Formula
   end
 
   test do
-    (testpath"test.frag").write <<~EOS
+    (testpath/"test.frag").write <<~EOS
       #version 110
       void main() {
         gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0);
       }
     EOS
 
-    (testpath"test.vert").write <<~EOS
+    (testpath/"test.vert").write <<~EOS
       #version 110
       void main() {
           gl_Position = gl_ModelViewProjectionMatrix * gl_Vertex;
       }
     EOS
 
-    system bin"glslangValidator", "-i", testpath"test.vert", testpath"test.frag"
+    system bin/"glslangValidator", "-i", testpath/"test.vert", testpath/"test.frag"
   end
 end

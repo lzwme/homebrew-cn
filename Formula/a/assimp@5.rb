@@ -1,21 +1,21 @@
 class AssimpAT5 < Formula
   desc "Portable library for importing many well-known 3D model formats"
-  homepage "https:www.assimp.org"
-  url "https:github.comassimpassimparchiverefstagsv5.4.3.tar.gz"
+  homepage "https://www.assimp.org/"
+  url "https://ghfast.top/https://github.com/assimp/assimp/archive/refs/tags/v5.4.3.tar.gz"
   sha256 "66dfbaee288f2bc43172440a55d0235dfc7bf885dda6435c038e8000e79582cb"
-  # NOTE: BSD-2-Clause is omitted as contribOpen3DGCo3dgcArithmeticCodec.c is not used
+  # NOTE: BSD-2-Clause is omitted as contrib/Open3DGC/o3dgcArithmeticCodec.c is not used
   license all_of: [
     "BSD-3-Clause",
-    "CC-PDDC",   # codeAssetLibAssjsoncencode.* (code from libb64)
-    "MIT",       # codeAssetLibM3Dm3d.h, contrib{openddlparser,pugixml,rapidjson}
-    "BSL-1.0",   # contrib{clipper,utf8cpp}
-    "Unlicense", # contribzip
-    "Zlib",      # contribunzip
+    "CC-PDDC",   # code/AssetLib/Assjson/cencode.* (code from libb64)
+    "MIT",       # code/AssetLib/M3D/m3d.h, contrib/{openddlparser,pugixml,rapidjson}
+    "BSL-1.0",   # contrib/{clipper,utf8cpp}
+    "Unlicense", # contrib/zip
+    "Zlib",      # contrib/unzip
   ]
 
   livecheck do
     url :stable
-    regex(^v?(5(?:\.\d+)+)$i)
+    regex(/^v?(5(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -49,18 +49,18 @@ class AssimpAT5 < Formula
 
   test do
     # Library test.
-    (testpath"test.cpp").write <<~CPP
-      #include <assimpImporter.hpp>
+    (testpath/"test.cpp").write <<~CPP
+      #include <assimp/Importer.hpp>
       int main() {
         Assimp::Importer importer;
         return 0;
       }
     CPP
     system ENV.cc, "-std=c++11", "test.cpp", "-L#{lib}", "-lassimp", "-o", "test"
-    system ".test"
+    system "./test"
 
     # Application test.
-    (testpath"test.obj").write <<~EOS
+    (testpath/"test.obj").write <<~EOS
       # WaveFront .obj file - a single square based pyramid
 
       # Start a new group:
@@ -90,6 +90,6 @@ class AssimpAT5 < Formula
       # Triangle on right side
       f 2 3 5
     EOS
-    system bin"assimp", "export", "test.obj", "test.ply"
+    system bin/"assimp", "export", "test.obj", "test.ply"
   end
 end

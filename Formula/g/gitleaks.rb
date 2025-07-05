@@ -1,10 +1,10 @@
 class Gitleaks < Formula
   desc "Audit git repos for secrets"
-  homepage "https:gitleaks.io"
-  url "https:github.comgitleaksgitleaksarchiverefstagsv8.27.2.tar.gz"
+  homepage "https://gitleaks.io/"
+  url "https://ghfast.top/https://github.com/gitleaks/gitleaks/archive/refs/tags/v8.27.2.tar.gz"
   sha256 "6f1715cbd9f4fd0d96d6a7dfbc26c3a46d5e5627f13cb8ec18cedf966bdf653a"
   license "MIT"
-  head "https:github.comgitleaksgitleaks.git", branch: "master"
+  head "https://github.com/gitleaks/gitleaks.git", branch: "master"
 
   # Upstream creates releases that use a stable tag (e.g., `v1.2.3`) but are
   # labeled as "pre-release" on GitHub before the version is released, so it's
@@ -26,18 +26,18 @@ class Gitleaks < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = "-s -w -X github.comzricethezavgitleaksv#{version.major}cmd.Version=#{version}"
+    ldflags = "-s -w -X github.com/zricethezav/gitleaks/v#{version.major}/cmd.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:)
 
-    generate_completions_from_executable(bin"gitleaks", "completion")
+    generate_completions_from_executable(bin/"gitleaks", "completion")
   end
 
   test do
-    (testpath"README").write "ghp_deadbeef61dc214e36cbc4cee5eb6418e38d"
+    (testpath/"README").write "ghp_deadbeef61dc214e36cbc4cee5eb6418e38d"
     system "git", "init"
     system "git", "add", "README"
     system "git", "commit", "-m", "Initial commit"
-    assert_match(WRN.*leaks found: [1-9], shell_output("#{bin}gitleaks detect 2>&1", 1))
-    assert_equal version.to_s, shell_output("#{bin}gitleaks version").strip
+    assert_match(/WRN.*leaks found: [1-9]/, shell_output("#{bin}/gitleaks detect 2>&1", 1))
+    assert_equal version.to_s, shell_output("#{bin}/gitleaks version").strip
   end
 end

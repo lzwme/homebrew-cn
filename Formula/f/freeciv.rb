@@ -1,13 +1,13 @@
 class Freeciv < Formula
   desc "Free and Open Source empire-building strategy game"
-  homepage "https:freeciv.org"
-  url "https:downloads.sourceforge.netprojectfreecivFreeciv%203.13.1.5freeciv-3.1.5.tar.xz"
+  homepage "https://freeciv.org/"
+  url "https://downloads.sourceforge.net/project/freeciv/Freeciv%203.1/3.1.5/freeciv-3.1.5.tar.xz"
   sha256 "0d9f687ff950a77a9fa0af66108a7f67da717fd40c3a0ca4c0a4f4a3f0214b33"
   license "GPL-2.0-or-later"
 
   livecheck do
     url :stable
-    regex(%r{url=.*?freeciv[._-]v?(\d+(?:\.\d+)+)\.(?:t|zip)}i)
+    regex(%r{url=.*?/freeciv[._-]v?(\d+(?:\.\d+)+)\.(?:t|zip)/}i)
   end
 
   bottle do
@@ -21,7 +21,7 @@ class Freeciv < Formula
   end
 
   head do
-    url "https:github.comfreecivfreeciv.git", branch: "main"
+    url "https://github.com/freeciv/freeciv.git", branch: "main"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -68,17 +68,17 @@ class Freeciv < Formula
     ]
 
     if build.head?
-      inreplace ".autogen.sh", "libtoolize", "glibtoolize"
-      system ".autogen.sh", *args, *std_configure_args
+      inreplace "./autogen.sh", "libtoolize", "glibtoolize"
+      system "./autogen.sh", *args, *std_configure_args
     else
-      system ".configure", *args, *std_configure_args
+      system "./configure", *args, *std_configure_args
     end
 
     system "make", "install"
   end
 
   test do
-    system bin"freeciv-manual"
+    system bin/"freeciv-manual"
     %w[
       civ2civ31.html
       civ2civ32.html
@@ -89,11 +89,11 @@ class Freeciv < Formula
       civ2civ37.html
       civ2civ38.html
     ].each do |file|
-      assert_path_exists testpathfile
+      assert_path_exists testpath/file
     end
 
-    spawn bin"freeciv-server", "-l", testpath"test.log"
+    spawn bin/"freeciv-server", "-l", testpath/"test.log"
     sleep 5
-    assert_path_exists testpath"test.log"
+    assert_path_exists testpath/"test.log"
   end
 end

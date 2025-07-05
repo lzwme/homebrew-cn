@@ -1,7 +1,7 @@
 class Gecode < Formula
   desc "Toolkit for developing constraint-based systems and applications"
-  homepage "https:www.gecode.org"
-  url "https:github.comGecodegecodearchiverefstagsrelease-6.2.0.tar.gz"
+  homepage "https://www.gecode.org/"
+  url "https://ghfast.top/https://github.com/Gecode/gecode/archive/refs/tags/release-6.2.0.tar.gz"
   sha256 "27d91721a690db1e96fa9bb97cec0d73a937e9dc8062c3327f8a4ccb08e951fd"
   license "MIT"
   revision 1
@@ -20,18 +20,18 @@ class Gecode < Formula
   depends_on "pkgconf" => :test
   depends_on "qt"
 
-  # Backport support for Qt6 from release6.3.0 branch
+  # Backport support for Qt6 from release/6.3.0 branch
   patch do
-    url "https:github.comGecodegecodecommitc0ca0e5f4406099be22f87236ea8547c2f31ded3.patch?full_index=1"
+    url "https://github.com/Gecode/gecode/commit/c0ca0e5f4406099be22f87236ea8547c2f31ded3.patch?full_index=1"
     sha256 "233b266a943c0619b027b4cb19912e2a8c9d1f8e4323a3627765cb32b47c59fe"
   end
 
   def install
     # Backport parts of upstream commit[^1] and add workarounds to allow configure to build with Qt6
     #
-    # [^1]: https:github.comGecodegecodecommit19b9ec3b938f52f5ef5feef15c6be417b5b27e36
+    # [^1]: https://github.com/Gecode/gecode/commit/19b9ec3b938f52f5ef5feef15c6be417b5b27e36
     inreplace "configure", "if test ${ac_gecode_qt_major} -eq 5;", "if test ${ac_gecode_qt_major} -ge 5;"
-    ENV["MOC"] = Formula["qt"].opt_pkgshare"libexecmoc"
+    ENV["MOC"] = Formula["qt"].opt_pkgshare/"libexec/moc"
     ENV.append "CXXFLAGS", "-std=c++17"
 
     args = %W[
@@ -40,15 +40,15 @@ class Gecode < Formula
       --disable-mpfr
       --enable-qt
     ]
-    system ".configure", *args
+    system "./configure", *args
     system "make", "install"
   end
 
   test do
-    (testpath"test.cpp").write <<~CPP
-      #include <gecodedriver.hh>
-      #include <gecodeint.hh>
-      #include <QtWidgetsQtWidgets>
+    (testpath/"test.cpp").write <<~CPP
+      #include <gecode/driver.hh>
+      #include <gecode/int.hh>
+      #include <QtWidgets/QtWidgets>
       using namespace Gecode;
       class Test : public Script {
       public:
@@ -92,6 +92,6 @@ class Gecode < Formula
     flags += shell_output("pkgconf --cflags --libs Qt6Widgets").chomp.split
 
     system ENV.cxx, "-std=c++17", "test.cpp", "-o", "test", *flags
-    assert_match "{0, 1, 2, 3, 4, 5, 6, 7, 8, 9}", shell_output(".test")
+    assert_match "{0, 1, 2, 3, 4, 5, 6, 7, 8, 9}", shell_output("./test")
   end
 end

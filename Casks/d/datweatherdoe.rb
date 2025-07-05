@@ -23,14 +23,14 @@ cask "datweatherdoe" do
     end
   end
 
-  url "https:github.cominderdhirDatWeatherDoereleasesdownload#{version}DatWeatherDoe-#{version}.dmg"
+  url "https://ghfast.top/https://github.com/inderdhir/DatWeatherDoe/releases/download/#{version}/DatWeatherDoe-#{version}.dmg"
   name "DatWeatherDoe"
   desc "Menu bar weather app"
-  homepage "https:github.cominderdhirDatWeatherDoe"
+  homepage "https://github.com/inderdhir/DatWeatherDoe"
 
   no_autobump! because: :requires_manual_review
 
   app "DatWeatherDoe.app"
 
-  zap trash: "~LibraryPreferencescom.inderdhir.DatWeatherDoe.plist"
+  zap trash: "~/Library/Preferences/com.inderdhir.DatWeatherDoe.plist"
 end

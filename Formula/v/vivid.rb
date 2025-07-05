@@ -1,7 +1,7 @@
 class Vivid < Formula
   desc "Generator for LS_COLORS with support for multiple color themes"
-  homepage "https:github.comsharkdpvivid"
-  url "https:github.comsharkdpvividarchiverefstagsv0.10.1.tar.gz"
+  homepage "https://github.com/sharkdp/vivid"
+  url "https://ghfast.top/https://github.com/sharkdp/vivid/archive/refs/tags/v0.10.1.tar.gz"
   sha256 "88db6158dad60aba66ae16f2cd1b09f515625940a33bada65da5562a03538e49"
   license any_of: ["MIT", "Apache-2.0"]
 
@@ -24,6 +24,6 @@ class Vivid < Formula
   end
 
   test do
-    assert_includes shell_output("#{bin}vivid preview molokai"), "archives.images: \e[4;38;2;249;38;114m*.bin\e[0m\n"
+    assert_includes shell_output("#{bin}/vivid preview molokai"), "archives.images: \e[4;38;2;249;38;114m*.bin\e[0m\n"
   end
 end

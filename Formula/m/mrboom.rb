@@ -1,7 +1,7 @@
 class Mrboom < Formula
   desc "Eight player Bomberman clone"
-  homepage "http:mrboom.mumblecore.org"
-  url "https:github.comJavanaisemrboom-libretroreleasesdownload5.5MrBoom-src-5.5.tar.gz"
+  homepage "http://mrboom.mumblecore.org/"
+  url "https://ghfast.top/https://github.com/Javanaise/mrboom-libretro/releases/download/5.5/MrBoom-src-5.5.tar.gz"
   sha256 "c37c09c30662b17f1c7da337da1475f534674686ce78c7e15b603eeadc4498f0"
   license "MIT"
 
@@ -25,11 +25,11 @@ class Mrboom < Formula
 
   def install
     system "make", "mrboom", "LIBSDL2=1"
-    system "make", "install", "PREFIX=#{prefix}", "MANDIR=sharemanman6"
+    system "make", "install", "PREFIX=#{prefix}", "MANDIR=share/man/man6"
   end
 
   test do
     # mrboom is a GUI application
-    assert_match version.to_s, shell_output("#{bin}mrboom --version")
+    assert_match version.to_s, shell_output("#{bin}/mrboom --version")
   end
 end

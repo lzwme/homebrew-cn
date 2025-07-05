@@ -1,7 +1,7 @@
 class GitCliff < Formula
   desc "Highly customizable changelog generator"
-  homepage "https:git-cliff.org"
-  url "https:github.comorhungit-cliffarchiverefstagsv2.9.1.tar.gz"
+  homepage "https://git-cliff.org/"
+  url "https://ghfast.top/https://github.com/orhun/git-cliff/archive/refs/tags/v2.9.1.tar.gz"
   sha256 "dd5a707fba4549ab4ea5e9e95ea7ed302852eb1916b93a1a369019f005ad4cc4"
   license all_of: ["Apache-2.0", "MIT"]
 
@@ -28,22 +28,22 @@ class GitCliff < Formula
     ENV["OUT_DIR"] = buildpath
 
     # Generate completions
-    system bin"git-cliff-completions"
+    system bin/"git-cliff-completions"
     bash_completion.install "git-cliff.bash" => "git-cliff"
     fish_completion.install "git-cliff.fish"
     zsh_completion.install "_git-cliff"
 
     # generate manpage
-    system bin"git-cliff-mangen"
+    system bin/"git-cliff-mangen"
     man1.install "git-cliff.1"
 
     # no need to ship `git-cliff-completions` and `git-cliff-mangen` binaries
-    rm [bin"git-cliff-completions", bin"git-cliff-mangen"]
+    rm [bin/"git-cliff-completions", bin/"git-cliff-mangen"]
   end
 
   test do
     system "git", "cliff", "--init"
-    assert_path_exists testpath"cliff.toml"
+    assert_path_exists testpath/"cliff.toml"
 
     system "git", "init"
     system "git", "add", "cliff.toml"
@@ -59,10 +59,10 @@ class GitCliff < Formula
       - Initial commit
     EOS
 
-    linkage_with_libgit2 = (bin"git-cliff").dynamically_linked_libraries.any? do |dll|
+    linkage_with_libgit2 = (bin/"git-cliff").dynamically_linked_libraries.any? do |dll|
       next false unless dll.start_with?(HOMEBREW_PREFIX.to_s)
 
-      File.realpath(dll) == (Formula["libgit2"].opt_libshared_library("libgit2")).realpath.to_s
+      File.realpath(dll) == (Formula["libgit2"].opt_lib/shared_library("libgit2")).realpath.to_s
     end
 
     assert linkage_with_libgit2, "No linkage with libgit2! Cargo is likely using a vendored version."

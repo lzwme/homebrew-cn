@@ -1,10 +1,10 @@
 class Bgrep < Formula
   desc "Like grep but for binary strings"
-  homepage "https:github.comtmbincbgrep"
-  url "https:github.comtmbincbgreparchiverefstagsbgrep-0.2.tar.gz"
+  homepage "https://github.com/tmbinc/bgrep"
+  url "https://ghfast.top/https://github.com/tmbinc/bgrep/archive/refs/tags/bgrep-0.2.tar.gz"
   sha256 "24c02393fb436d7a2eb02c6042ec140f9502667500b13a59795388c1af91f9ba"
   license "BSD-2-Clause"
-  head "https:github.comtmbincbgrep.git", branch: "master"
+  head "https://github.com/tmbinc/bgrep.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -35,11 +35,11 @@ class Bgrep < Formula
   end
 
   test do
-    path = testpath"hi.prg"
+    path = testpath/"hi.prg"
     path.binwrite [0x00, 0xc0, 0xa9, 0x48, 0x20, 0xd2, 0xff,
                    0xa9, 0x49, 0x20, 0xd2, 0xff, 0x60].pack("C*")
 
     assert_equal "#{path}: 00000004\n#{path}: 00000009\n",
-                 shell_output("#{bin}bgrep 20d2ff #{path}")
+                 shell_output("#{bin}/bgrep 20d2ff #{path}")
   end
 end

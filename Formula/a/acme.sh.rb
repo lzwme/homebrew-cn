@@ -1,7 +1,7 @@
 class AcmeSh < Formula
   desc "ACME client"
-  homepage "https:github.comacmesh-officialacme.sh"
-  url "https:github.comacmesh-officialacme.sharchiverefstags3.1.1.tar.gz"
+  homepage "https://github.com/acmesh-official/acme.sh"
+  url "https://ghfast.top/https://github.com/acmesh-official/acme.sh/archive/refs/tags/3.1.1.tar.gz"
   sha256 "c5d623ac0af400e83cd676aefaf045228f60e9fc597fea5db4c3a5bd7f6bfcf4"
   license "GPL-3.0-only"
 
@@ -23,17 +23,17 @@ class AcmeSh < Formula
       "notify",
     ]
 
-    bin.install_symlink libexec"acme.sh"
+    bin.install_symlink libexec/"acme.sh"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}acme.sh --version")
+    assert_match version.to_s, shell_output("#{bin}/acme.sh --version")
 
     expected = if OS.mac?
       "Main_Domain  KeyLength  SAN_Domains  CA  Created  Renew\n"
     else
       "Main_Domain\tKeyLength\tSAN_Domains\tCA\tCreated\tRenew\n"
     end
-    assert_match expected, shell_output("#{bin}acme.sh --list")
+    assert_match expected, shell_output("#{bin}/acme.sh --list")
   end
 end

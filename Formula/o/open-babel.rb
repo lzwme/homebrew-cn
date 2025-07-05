@@ -1,17 +1,17 @@
 class OpenBabel < Formula
   desc "Chemical toolbox"
-  homepage "https:github.comopenbabelopenbabel"
+  homepage "https://github.com/openbabel/openbabel"
   license "GPL-2.0-only"
   revision 2
-  head "https:github.comopenbabelopenbabel.git", branch: "master"
+  head "https://github.com/openbabel/openbabel.git", branch: "master"
 
   stable do
-    url "https:github.comopenbabelopenbabelreleasesdownloadopenbabel-3-1-1openbabel-3.1.1-source.tar.bz2"
+    url "https://ghfast.top/https://github.com/openbabel/openbabel/releases/download/openbabel-3-1-1/openbabel-3.1.1-source.tar.bz2"
     sha256 "a6ec8381d59ea32a4b241c8b1fbd799acb52be94ab64cdbd72506fb4e2270e68"
 
     # Backport support for configuring PYTHON_INSTDIR to avoid Setuptools
     patch do
-      url "https:github.comopenbabelopenbabelcommitf7910915c904a18ac1bdc209b2dc9deeb92f7db3.patch?full_index=1"
+      url "https://github.com/openbabel/openbabel/commit/f7910915c904a18ac1bdc209b2dc9deeb92f7db3.patch?full_index=1"
       sha256 "f100bb9bffb82b318624933ddc0027eeee8546bf4d6deda5067ecbd1ebd138ea"
     end
   end
@@ -50,19 +50,19 @@ class OpenBabel < Formula
 
   def install
     system "cmake", "-S", ".", "-B", "build",
-                    "-DINCHI_INCLUDE_DIR=#{Formula["inchi"].opt_include}inchi",
+                    "-DINCHI_INCLUDE_DIR=#{Formula["inchi"].opt_include}/inchi",
                     "-DOPENBABEL_USE_SYSTEM_INCHI=ON",
                     "-DRUN_SWIG=ON",
                     "-DPYTHON_BINDINGS=ON",
                     "-DPYTHON_EXECUTABLE=#{which(python3)}",
-                    "-DPYTHON_INSTDIR=#{prefixLanguage::Python.site_packages(python3)}",
+                    "-DPYTHON_INSTDIR=#{prefix/Language::Python.site_packages(python3)}",
                     *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end
 
   test do
-    assert_match <<~EOS, shell_output("#{bin}obabel -:'C1=CC=CC=C1Br' -omol")
+    assert_match <<~EOS, shell_output("#{bin}/obabel -:'C1=CC=CC=C1Br' -omol")
 
         7  7  0  0  0  0  0  0  0  0999 V2000
           0.0000    0.0000    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0

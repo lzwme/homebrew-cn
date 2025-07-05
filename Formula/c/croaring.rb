@@ -1,10 +1,10 @@
 class Croaring < Formula
   desc "Roaring bitmaps in C (and C++)"
-  homepage "https:roaringbitmap.org"
-  url "https:github.comRoaringBitmapCRoaringarchiverefstagsv4.3.5.tar.gz"
+  homepage "https://roaringbitmap.org"
+  url "https://ghfast.top/https://github.com/RoaringBitmap/CRoaring/archive/refs/tags/v4.3.5.tar.gz"
   sha256 "fd5afacb174322ce45bea333076440e615fb8cc2751b537c8051ac2d39f52b1e"
   license "Apache-2.0"
-  head "https:github.comRoaringBitmapCRoaring.git", branch: "master"
+  head "https://github.com/RoaringBitmap/CRoaring.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "d142c4656993fb4a06e3a44a187777b058c91b5e65e2e69f733d49f14ec1ba3d"
@@ -30,9 +30,9 @@ class Croaring < Formula
   end
 
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include <stdio.h>
-      #include <roaringroaring.h>
+      #include <roaring/roaring.h>
       int main() {
           roaring_bitmap_t *r1 = roaring_bitmap_create();
           for (uint32_t i = 100; i < 1000; i++) roaring_bitmap_add(r1, i);
@@ -42,6 +42,6 @@ class Croaring < Formula
       }
     C
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lroaring", "-o", "test"
-    assert_equal "cardinality = 900\n", shell_output(".test")
+    assert_equal "cardinality = 900\n", shell_output("./test")
   end
 end

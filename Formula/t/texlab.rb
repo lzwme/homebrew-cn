@@ -1,10 +1,10 @@
 class Texlab < Formula
   desc "Implementation of the Language Server Protocol for LaTeX"
-  homepage "https:github.comlatex-lsptexlab"
-  url "https:github.comlatex-lsptexlabarchiverefstagsv5.23.1.tar.gz"
+  homepage "https://github.com/latex-lsp/texlab/"
+  url "https://ghfast.top/https://github.com/latex-lsp/texlab/archive/refs/tags/v5.23.1.tar.gz"
   sha256 "32620d4a186222cef1140250c9c43b83ed873a4710d05a0075c7d8f6d1d4e1ec"
   license "GPL-3.0-only"
-  head "https:github.comlatex-lsptexlab.git", branch: "master"
+  head "https://github.com/latex-lsp/texlab.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "1fee556e6a2c725957c32b65a59500bd7adb03cb57319eaa15666158c8b2605b"
@@ -19,7 +19,7 @@ class Texlab < Formula
   depends_on "rust" => :build
 
   def install
-    system "cargo", "install", *std_cargo_args(path: "cratestexlab")
+    system "cargo", "install", *std_cargo_args(path: "crates/texlab")
   end
 
   def rpc(json)
@@ -33,7 +33,7 @@ class Texlab < Formula
         "id":1,
         "method":"initialize",
         "params": {
-          "rootUri": "file:devnull",
+          "rootUri": "file:/dev/null",
           "capabilities": {}
         }
       }
@@ -64,8 +64,8 @@ class Texlab < Formula
       }
     JSON
 
-    output = Content-Length: \d+\r\n\r\n
+    output = /Content-Length: \d+\r\n\r\n/
 
-    assert_match output, pipe_output(bin"texlab", input, 0)
+    assert_match output, pipe_output(bin/"texlab", input, 0)
   end
 end

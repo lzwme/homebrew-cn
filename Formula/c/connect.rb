@@ -1,14 +1,14 @@
 class Connect < Formula
   desc "Provides SOCKS and HTTPS proxy support to SSH"
-  homepage "https:github.comgotohssh-connect"
-  url "https:github.comgotohssh-connectarchiverefstags1.105.tar.gz"
+  homepage "https://github.com/gotoh/ssh-connect"
+  url "https://ghfast.top/https://github.com/gotoh/ssh-connect/archive/refs/tags/1.105.tar.gz"
   sha256 "96c50fefe7ecf015cf64ba6cec9e421ffd3b18fef809f59961ef9229df528f3e"
   license "GPL-2.0-or-later"
-  head "https:github.comgotohssh-connect.git", branch: "master"
+  head "https://github.com/gotoh/ssh-connect.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -36,6 +36,6 @@ class Connect < Formula
   end
 
   test do
-    system bin"connect"
+    system bin/"connect"
   end
 end

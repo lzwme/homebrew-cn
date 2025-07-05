@@ -1,11 +1,11 @@
 class Zopfli < Formula
   desc "New zlib (gzip, deflate) compatible compressor"
-  homepage "https:github.comgooglezopfli"
-  url "https:github.comgooglezopfliarchiverefstagszopfli-1.0.3.tar.gz"
+  homepage "https://github.com/google/zopfli"
+  url "https://ghfast.top/https://github.com/google/zopfli/archive/refs/tags/zopfli-1.0.3.tar.gz"
   sha256 "e955a7739f71af37ef3349c4fa141c648e8775bceb2195be07e86f8e638814bd"
   license "Apache-2.0"
   revision 1
-  head "https:github.comgooglezopfli.git", branch: "master"
+  head "https://github.com/google/zopfli.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -33,8 +33,8 @@ class Zopfli < Formula
   end
 
   test do
-    system bin"zopfli"
-    system bin"zopflipng", test_fixtures("test.png"), "#{testpath}out.png"
-    assert_path_exists testpath"out.png"
+    system bin/"zopfli"
+    system bin/"zopflipng", test_fixtures("test.png"), "#{testpath}/out.png"
+    assert_path_exists testpath/"out.png"
   end
 end

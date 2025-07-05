@@ -1,10 +1,10 @@
 class Mmark < Formula
   desc "Powerful markdown processor in Go geared towards the IETF"
-  homepage "https:mmark.miek.nl"
-  url "https:github.commmarkdownmmarkarchiverefstagsv2.2.47.tar.gz"
+  homepage "https://mmark.miek.nl/"
+  url "https://ghfast.top/https://github.com/mmarkdown/mmark/archive/refs/tags/v2.2.47.tar.gz"
   sha256 "131d618c98050fc2991147a0c4d653b33d88e26a0ef888701c1432fd3c7fd1b8"
   license "BSD-2-Clause"
-  head "https:github.commmarkdownmmark.git", branch: "master"
+  head "https://github.com/mmarkdown/mmark.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "9c947b781f68435614d54d3d32ffeafb54652799a7dfe229aeceeac09a15c9de"
@@ -25,12 +25,12 @@ class Mmark < Formula
 
   test do
     resource "homebrew-test" do
-      url "https:raw.githubusercontent.commmarkdownmmarkv2.2.19rfc2100.md"
+      url "https://ghfast.top/https://raw.githubusercontent.com/mmarkdown/mmark/v2.2.19/rfc/2100.md"
       sha256 "0e12576b4506addc5aa9589b459bcc02ed92b936ff58f87129385d661b400c41"
     end
 
     resource("homebrew-test").stage do
-      assert_match "The Naming of Hosts", shell_output("#{bin}mmark -ast 2100.md")
+      assert_match "The Naming of Hosts", shell_output("#{bin}/mmark -ast 2100.md")
     end
   end
 end

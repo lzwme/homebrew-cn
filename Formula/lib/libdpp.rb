@@ -1,7 +1,7 @@
 class Libdpp < Formula
   desc "C++ Discord API Bot Library"
-  homepage "https:github.combrainboxdotccDPP"
-  url "https:github.combrainboxdotccDPPreleasesdownloadv10.1.2DPP-10.1.2.tar.gz"
+  homepage "https://github.com/brainboxdotcc/DPP"
+  url "https://ghfast.top/https://github.com/brainboxdotcc/DPP/releases/download/v10.1.2/DPP-10.1.2.tar.gz"
   sha256 "587ef044775e6bdd560ec17afc302c1048ebb3454455116d7241431fbb16a823"
   license "Apache-2.0"
 
@@ -36,9 +36,9 @@ class Libdpp < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~CPP
-      #include <dppdpp.h>
-      #include <unistd.h>  for alarm
+    (testpath/"test.cpp").write <<~CPP
+      #include <dpp/dpp.h>
+      #include <unistd.h> // for alarm
 
       void timeout_handler(int signum) {
           std::cerr << "Connection error: timed out" << std::endl;
@@ -68,6 +68,6 @@ class Libdpp < Formula
       }
     CPP
     system ENV.cxx, "-std=c++20", "-L#{lib}", "-I#{include}", "test.cpp", "-o", "test", "-ldpp"
-    assert_match "Connection error", shell_output(".test 2>&1", 1)
+    assert_match "Connection error", shell_output("./test 2>&1", 1)
   end
 end

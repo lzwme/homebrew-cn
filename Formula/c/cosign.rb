@@ -1,11 +1,11 @@
 class Cosign < Formula
   desc "Container Signing"
-  homepage "https:github.comsigstorecosign"
-  url "https:github.comsigstorecosign.git",
+  homepage "https://github.com/sigstore/cosign"
+  url "https://github.com/sigstore/cosign.git",
       tag:      "v2.5.2",
       revision: "af5a988bb15a03919ccaac7a2ddcad7a9d006f38"
   license "Apache-2.0"
-  head "https:github.comsigstorecosign.git", branch: "main"
+  head "https://github.com/sigstore/cosign.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "988359d45c8ad533a3e6c9f7c00b7856b704c96d7f38b16ce83d6b364de360ba"
@@ -19,7 +19,7 @@ class Cosign < Formula
   depends_on "go" => :build
 
   def install
-    pkg = "sigs.k8s.iorelease-utilsversion"
+    pkg = "sigs.k8s.io/release-utils/version"
     ldflags = %W[
       -s -w
       -X #{pkg}.gitVersion=#{version}
@@ -28,16 +28,16 @@ class Cosign < Formula
       -X #{pkg}.buildDate=#{time.iso8601}
     ]
 
-    system "go", "build", *std_go_args(ldflags:), ".cmdcosign"
+    system "go", "build", *std_go_args(ldflags:), "./cmd/cosign"
 
-    generate_completions_from_executable(bin"cosign", "completion")
+    generate_completions_from_executable(bin/"cosign", "completion")
   end
 
   test do
     assert_match "Private key written to cosign.key",
-      pipe_output("#{bin}cosign generate-key-pair 2>&1", "foo\nfoo\n")
-    assert_path_exists testpath"cosign.pub"
+      pipe_output("#{bin}/cosign generate-key-pair 2>&1", "foo\nfoo\n")
+    assert_path_exists testpath/"cosign.pub"
 
-    assert_match version.to_s, shell_output(bin"cosign version 2>&1")
+    assert_match version.to_s, shell_output(bin/"cosign version 2>&1")
   end
 end

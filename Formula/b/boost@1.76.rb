@@ -1,7 +1,7 @@
 class BoostAT176 < Formula
   desc "Collection of portable C++ source libraries"
-  homepage "https:www.boost.org"
-  url "https:boostorg.jfrog.ioartifactorymainrelease1.76.0sourceboost_1_76_0.tar.bz2"
+  homepage "https://www.boost.org/"
+  url "https://boostorg.jfrog.io/artifactory/main/release/1.76.0/source/boost_1_76_0.tar.bz2"
   sha256 "f0397ba6e982c4450f27bf32a2a83292aba035b827a5623a14636ea583318c41"
   license "BSL-1.0"
   revision 6
@@ -28,11 +28,11 @@ class BoostAT176 < Formula
 
   # Backport fixes for newer Clang
   patch :p2 do
-    url "https:github.comboostorgnumeric_conversioncommit50a1eae942effb0a9b90724323ef8f2a67e7984a.patch?full_index=1"
+    url "https://github.com/boostorg/numeric_conversion/commit/50a1eae942effb0a9b90724323ef8f2a67e7984a.patch?full_index=1"
     sha256 "d96761257f7efc2edc8414f1a2522fc07a3d7d56bb55a51d14af9abd39e389c8"
   end
   patch :p2 do
-    url "https:github.comboostorgmplcommitb37b709cbdb6b2c285fb808dab985aa005786351.patch?full_index=1"
+    url "https://github.com/boostorg/mpl/commit/b37b709cbdb6b2c285fb808dab985aa005786351.patch?full_index=1"
     sha256 "b8013ad3e6b63698158319f5efc2fe1558a00c1d2e32193086f741e774acc3e4"
   end
 
@@ -83,14 +83,14 @@ class BoostAT176 < Formula
     args << "cxxflags=-std=c++14"
     args << "cxxflags=-stdlib=libc++" << "linkflags=-stdlib=libc++" if ENV.compiler == :clang
 
-    system ".bootstrap.sh", *bootstrap_args
-    system ".b2", "headers"
-    system ".b2", *args
+    system "./bootstrap.sh", *bootstrap_args
+    system "./b2", "headers"
+    system "./b2", *args
   end
 
   test do
-    (testpath"test.cpp").write <<~CPP
-      #include <boostalgorithmstring.hpp>
+    (testpath/"test.cpp").write <<~CPP
+      #include <boost/algorithm/string.hpp>
       #include <string>
       #include <vector>
       #include <assert.h>
@@ -109,6 +109,6 @@ class BoostAT176 < Formula
       }
     CPP
     system ENV.cxx, "-I#{Formula["boost@1.76"].opt_include}", "test.cpp", "-std=c++14", "-o", "test"
-    system ".test"
+    system "./test"
   end
 end

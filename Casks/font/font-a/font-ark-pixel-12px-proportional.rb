@@ -2,9 +2,9 @@ cask "font-ark-pixel-12px-proportional" do
   version "2025.03.14"
   sha256 "642af42ee5f932c0a781da2359f1a1108fbe51d6426e75a4886ec82af5510b8f"
 
-  url "https:github.comTakWolfark-pixel-fontreleasesdownload#{version}ark-pixel-font-12px-proportional-otf-v#{version}.zip"
+  url "https://ghfast.top/https://github.com/TakWolf/ark-pixel-font/releases/download/#{version}/ark-pixel-font-12px-proportional-otf-v#{version}.zip"
   name "Ark Pixel 12px Proportional"
-  homepage "https:github.comTakWolfark-pixel-font"
+  homepage "https://github.com/TakWolf/ark-pixel-font"
 
   no_autobump! because: :requires_manual_review
 

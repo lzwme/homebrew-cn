@@ -1,10 +1,10 @@
 class Postgrest < Formula
   desc "Serves a fully RESTful API from any existing PostgreSQL database"
-  homepage "https:github.comPostgRESTpostgrest"
-  url "https:github.comPostgRESTpostgrestarchiverefstagsv13.0.4.tar.gz"
+  homepage "https://github.com/PostgREST/postgrest"
+  url "https://ghfast.top/https://github.com/PostgREST/postgrest/archive/refs/tags/v13.0.4.tar.gz"
   sha256 "515ea77c049ef69f4553940ef0f13018dc2b72792195ec11a2020fe8914ceab9"
   license "MIT"
-  head "https:github.comPostgRESTpostgrest.git", branch: "main"
+  head "https://github.com/PostgREST/postgrest.git", branch: "main"
 
   livecheck do
     url :stable
@@ -22,7 +22,7 @@ class Postgrest < Formula
   end
 
   depends_on "cabal-install" => :build
-  depends_on "ghc@9.8" => :build # GHC 9.10 blocked by deps, e.g. https:github.comprotoludeprotoludeissues149
+  depends_on "ghc@9.8" => :build # GHC 9.10 blocked by deps, e.g. https://github.com/protolude/protolude/issues/149
   depends_on "libpq"
 
   uses_from_macos "zlib"
@@ -33,10 +33,10 @@ class Postgrest < Formula
   end
 
   test do
-    output = shell_output("#{bin}postgrest --dump-config 2>&1")
+    output = shell_output("#{bin}/postgrest --dump-config 2>&1")
     assert_match "db-anon-role", output
     assert_match "Failed to query database settings for the config parameters", output
 
-    assert_match version.to_s, shell_output("#{bin}postgrest --version")
+    assert_match version.to_s, shell_output("#{bin}/postgrest --version")
   end
 end

@@ -2,11 +2,11 @@ cask "waterfox-classic" do
   version "2022.11"
   sha256 "507151508846e9ea09e695322b9d70ca48dc23d120ab9ac75b899596c1863ff2"
 
-  url "https:github.comWaterfoxCoWaterfox-Classicreleasesdownload#{version}-classicWaterfox.Classic.#{version}.Setup.dmg",
-      verified: "github.comWaterfoxCoWaterfox-Classic"
+  url "https://ghfast.top/https://github.com/WaterfoxCo/Waterfox-Classic/releases/download/#{version}-classic/Waterfox.Classic.#{version}.Setup.dmg",
+      verified: "github.com/WaterfoxCo/Waterfox-Classic/"
   name "Waterfox Classic"
   desc "Web browser"
-  homepage "https:classic.waterfox.net"
+  homepage "https://classic.waterfox.net/"
 
   no_autobump! because: :requires_manual_review
 
@@ -15,10 +15,10 @@ cask "waterfox-classic" do
   app "Waterfox Classic.app"
 
   zap trash: [
-    "~LibraryApplication Supportcom.apple.sharedfilelistcom.apple.LSSharedFileList.ApplicationRecentDocumentsorg.mozilla.waterfox.sfl*",
-    "~LibraryApplication SupportWaterfox",
-    "~LibraryCachesWaterfox",
-    "~LibraryPreferencesorg.waterfoxproject.waterfox.plist",
+    "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/org.mozilla.waterfox.sfl*",
+    "~/Library/Application Support/Waterfox",
+    "~/Library/Caches/Waterfox",
+    "~/Library/Preferences/org.waterfoxproject.waterfox.plist",
   ]
 
   caveats do

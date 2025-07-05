@@ -1,11 +1,11 @@
 class Huexpress < Formula
   desc "PC Engine emulator"
-  homepage "https:github.comkallisti5huexpress"
-  url "https:github.comkallisti5huexpressarchiverefstags3.0.4.tar.gz"
+  homepage "https://github.com/kallisti5/huexpress"
+  url "https://ghfast.top/https://github.com/kallisti5/huexpress/archive/refs/tags/3.0.4.tar.gz"
   sha256 "76589f02d1640fc5063d48a47f017077c6b7557431221defe9e38679d86d4db8"
   license "GPL-2.0-or-later"
   revision 2
-  head "https:github.comkallisti5huexpress.git", branch: "master"
+  head "https://github.com/kallisti5/huexpress.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -42,31 +42,31 @@ class Huexpress < Formula
   end
 
   # Workaround for newer Clang
-  # upstream bug report, https:github.comkallisti5huexpressissues19
+  # upstream bug report, https://github.com/kallisti5/huexpress/issues/19
   patch :DATA
 
   def install
     # Work around failure from GCC 10+ using default of `-fno-common`
-    # multiple definition of `XBuf'; srcosd_sdl_machine.o:..srcosd_sdl_machine.c:13: first defined here
-    # upstream bug report, https:github.comkallisti5huexpressissues18
+    # multiple definition of `XBuf'; src/osd_sdl_machine.o:../src/osd_sdl_machine.c:13: first defined here
+    # upstream bug report, https://github.com/kallisti5/huexpress/issues/18
     ENV.append "CC", "-fcommon" if OS.linux?
 
     # Don't statically link to libzip.
-    inreplace "srcSConscript", "pkg-config --cflags --libs --static libzip", "pkg-config --cflags --libs libzip"
+    inreplace "src/SConscript", "pkg-config --cflags --libs --static libzip", "pkg-config --cflags --libs libzip"
     system "scons"
-    bin.install ["srchuexpress", "srchucrc"]
+    bin.install ["src/huexpress", "src/hucrc"]
   end
 
   test do
-    assert_match(Version #{version}$, shell_output("#{bin}huexpress -h", 1))
+    assert_match(/Version #{version}$/, shell_output("#{bin}/huexpress -h", 1))
   end
 end
 
 __END__
-diff --git aSConstruct bSConstruct
+diff --git a/SConstruct b/SConstruct
 index 096a1ef..98216b9 100644
---- aSConstruct
-+++ bSConstruct
+--- a/SConstruct
++++ b/SConstruct
 @@ -40,5 +40,12 @@ env.Append(CPPDEFINES={'VERSION_MAJOR' : '3'})
  env.Append(CPPDEFINES={'VERSION_MINOR' : '0'})
  env.Append(CPPDEFINES={'VERSION_UPDATE' : '4'})
@@ -79,4 +79,4 @@ index 096a1ef..98216b9 100644
 +        env.Append(CFLAGS=['-Wno-incompatible-function-pointer-types', '-Wno-int-conversion'])  # Pass as separate flags
 +
  Export("env")
- SConscript('srcSConscript')
+ SConscript('src/SConscript')

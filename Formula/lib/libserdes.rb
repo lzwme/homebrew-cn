@@ -1,11 +1,11 @@
 class Libserdes < Formula
-  desc "Schema serdeserializer lib for Avro + Confluent Schema Registry"
-  homepage "https:github.comconfluentinclibserdes"
-  url "https:github.comconfluentinclibserdes.git",
+  desc "Schema ser/deserializer lib for Avro + Confluent Schema Registry"
+  homepage "https://github.com/confluentinc/libserdes"
+  url "https://github.com/confluentinc/libserdes.git",
       tag:      "v8.0.0",
       revision: "152fad7ddec001e886452726e71f3b6a5c8e8c65"
   license "Apache-2.0"
-  head "https:github.comconfluentinclibserdes.git", branch: "master"
+  head "https://github.com/confluentinc/libserdes.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -30,17 +30,17 @@ class Libserdes < Formula
   uses_from_macos "curl"
 
   def install
-    system ".configure", "--prefix=#{prefix}"
+    system "./configure", "--prefix=#{prefix}"
     system "make"
     system "make", "install"
   end
 
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include <err.h>
       #include <stddef.h>
-      #include <systypes.h>
-      #include <libserdesserdes.h>
+      #include <sys/types.h>
+      #include <libserdes/serdes.h>
 
       int main()
       {
@@ -55,6 +55,6 @@ class Libserdes < Formula
       }
     C
     system ENV.cc, "test.c", "-L#{lib}", "-lserdes", "-o", "test"
-    system ".test"
+    system "./test"
   end
 end

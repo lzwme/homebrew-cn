@@ -1,10 +1,10 @@
 class CiliumCli < Formula
   desc "CLI to install, manage & troubleshoot Kubernetes clusters running Cilium"
-  homepage "https:cilium.io"
-  url "https:github.comciliumcilium-cliarchiverefstagsv0.18.5.tar.gz"
+  homepage "https://cilium.io"
+  url "https://ghfast.top/https://github.com/cilium/cilium-cli/archive/refs/tags/v0.18.5.tar.gz"
   sha256 "87a2d8c67c6349c5395550723158074750e33bce08391e30b47625457ec92278"
   license "Apache-2.0"
-  head "https:github.comciliumcilium-cli.git", branch: "main"
+  head "https://github.com/cilium/cilium-cli.git", branch: "main"
 
   # Upstream uses GitHub releases to indicate that a version is released
   # (there's also sometimes a notable gap between when a version is tagged and
@@ -27,22 +27,22 @@ class CiliumCli < Formula
   depends_on "go" => :build
 
   def install
-    cilium_version_url = "https:raw.githubusercontent.comciliumciliummainstable.txt"
+    cilium_version_url = "https://ghfast.top/https://raw.githubusercontent.com/cilium/cilium/main/stable.txt"
     cilium_version = Utils.safe_popen_read("curl", cilium_version_url).strip
 
     ldflags = %W[
       -s -w
-      -X github.comciliumciliumcilium-clidefaults.CLIVersion=v#{version}
-      -X github.comciliumciliumcilium-clidefaults.Version=#{cilium_version}
+      -X github.com/cilium/cilium/cilium-cli/defaults.CLIVersion=v#{version}
+      -X github.com/cilium/cilium/cilium-cli/defaults.Version=#{cilium_version}
     ]
-    system "go", "build", *std_go_args(ldflags:, output: bin"cilium"), ".cmdcilium"
+    system "go", "build", *std_go_args(ldflags:, output: bin/"cilium"), "./cmd/cilium"
 
-    generate_completions_from_executable(bin"cilium", "completion")
+    generate_completions_from_executable(bin/"cilium", "completion")
   end
 
   test do
-    assert_match("cilium-cli: v#{version}", shell_output("#{bin}cilium version"))
-    assert_match("Kubernetes cluster unreachable", shell_output("#{bin}cilium install 2>&1", 1))
-    assert_match("Error: Unable to enable Hubble", shell_output("#{bin}cilium hubble enable 2>&1", 1))
+    assert_match("cilium-cli: v#{version}", shell_output("#{bin}/cilium version"))
+    assert_match("Kubernetes cluster unreachable", shell_output("#{bin}/cilium install 2>&1", 1))
+    assert_match("Error: Unable to enable Hubble", shell_output("#{bin}/cilium hubble enable 2>&1", 1))
   end
 end

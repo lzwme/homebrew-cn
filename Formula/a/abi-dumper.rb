@@ -1,10 +1,10 @@
 class AbiDumper < Formula
   desc "Dump ABI of an ELF object containing DWARF debug info"
-  homepage "https:github.comlvcabi-dumper"
-  url "https:github.comlvcabi-dumperarchiverefstags1.2.tar.gz"
+  homepage "https://github.com/lvc/abi-dumper"
+  url "https://ghfast.top/https://github.com/lvc/abi-dumper/archive/refs/tags/1.2.tar.gz"
   sha256 "8a9858c91b4e9222c89b676d59422053ad560fa005a39443053568049bd4d27e"
   license "LGPL-2.1-or-later"
-  head "https:github.comlvcabi-dumper.git", branch: "master"
+  head "https://github.com/lvc/abi-dumper.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -29,10 +29,10 @@ class AbiDumper < Formula
   end
 
   test do
-    testlib = testpathshared_library("libtest")
-    (testpath"test.c").write "int foo() { return 0; }"
+    testlib = testpath/shared_library("libtest")
+    (testpath/"test.c").write "int foo() { return 0; }"
     system ENV.cc, "-g", "-Og", "-shared", "test.c", "-o", testlib
-    system bin"abi-dumper", testlib, "-o", "test.dump"
-    assert_path_exists testpath"test.dump"
+    system bin/"abi-dumper", testlib, "-o", "test.dump"
+    assert_path_exists testpath/"test.dump"
   end
 end

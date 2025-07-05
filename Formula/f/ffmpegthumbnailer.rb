@@ -1,10 +1,10 @@
 class Ffmpegthumbnailer < Formula
   desc "Create thumbnails for your video files"
-  homepage "https:github.comdirkvdbffmpegthumbnailer"
-  url "https:github.comdirkvdbffmpegthumbnailerarchiverefstags2.2.3.tar.gz"
+  homepage "https://github.com/dirkvdb/ffmpegthumbnailer"
+  url "https://ghfast.top/https://github.com/dirkvdb/ffmpegthumbnailer/archive/refs/tags/2.2.3.tar.gz"
   sha256 "8c9b9057c6cc8bce9d11701af224c8139c940f734c439a595525e073b09d19b8"
   license "GPL-2.0-or-later"
-  head "https:github.comdirkvdbffmpegthumbnailer.git", branch: "master"
+  head "https://github.com/dirkvdb/ffmpegthumbnailer.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "a5efa6fb1477d7b41d258ca928b653f1418a84dd85970750105f052a2414afbb"
@@ -34,12 +34,12 @@ class Ffmpegthumbnailer < Formula
   end
 
   test do
-    f = Formula["ffmpeg"].opt_bin"ffmpeg"
+    f = Formula["ffmpeg"].opt_bin/"ffmpeg"
     png = test_fixtures("test.png")
     system f.to_s, "-loop", "1", "-i", png.to_s, "-c:v", "libx264", "-t", "30",
                    "-pix_fmt", "yuv420p", "v.mp4"
-    assert_path_exists testpath"v.mp4", "Failed to generate source video!"
-    system bin"ffmpegthumbnailer", "-i", "v.mp4", "-o", "out.jpg"
-    assert_path_exists testpath"out.jpg", "Failed to create thumbnail!"
+    assert_path_exists testpath/"v.mp4", "Failed to generate source video!"
+    system bin/"ffmpegthumbnailer", "-i", "v.mp4", "-o", "out.jpg"
+    assert_path_exists testpath/"out.jpg", "Failed to create thumbnail!"
   end
 end

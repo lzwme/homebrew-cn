@@ -1,13 +1,13 @@
 class SyslogNg < Formula
   include Language::Python::Virtualenv
 
-  desc "Log daemon with advanced processing pipeline and a wide range of IO methods"
-  homepage "https:www.syslog-ng.com"
-  url "https:github.comsyslog-ngsyslog-ngreleasesdownloadsyslog-ng-4.8.3syslog-ng-4.8.3.tar.gz"
+  desc "Log daemon with advanced processing pipeline and a wide range of I/O methods"
+  homepage "https://www.syslog-ng.com"
+  url "https://ghfast.top/https://github.com/syslog-ng/syslog-ng/releases/download/syslog-ng-4.8.3/syslog-ng-4.8.3.tar.gz"
   sha256 "f82732a8e639373037d2b69c0e6d5d6594290f0350350f7a146af4cd8ab9e2c7"
   license all_of: ["LGPL-2.1-or-later", "GPL-2.0-or-later"]
   revision 2
-  head "https:github.comsyslog-ngsyslog-ng.git", branch: "master"
+  head "https://github.com/syslog-ng/syslog-ng.git", branch: "master"
 
   livecheck do
     url :stable
@@ -58,17 +58,17 @@ class SyslogNg < Formula
     python3 = "python3.12"
     venv = virtualenv_create(libexec, python3)
     # FIXME: we should use resource blocks but there is no upstream pip support besides this requirements.txt
-    # https:github.comsyslog-ngsyslog-ngblobmasterrequirements.txt
+    # https://github.com/syslog-ng/syslog-ng/blob/master/requirements.txt
     args = std_pip_args(prefix: false, build_isolation: true).reject { |s| s["--no-deps"] }
-    system python3, "-m", "pip", "--python=#{venv.root}binpython",
-                          "install", *args, "--requirement=#{buildpath}requirements.txt"
+    system python3, "-m", "pip", "--python=#{venv.root}/bin/python",
+                          "install", *args, "--requirement=#{buildpath}/requirements.txt"
 
-    system ".configure", *std_configure_args,
+    system "./configure", *std_configure_args,
                           "CXXFLAGS=-std=c++17",
                           "--disable-silent-rules",
                           "--enable-all-modules",
                           "--sysconfdir=#{pkgetc}",
-                          "--localstatedir=#{varname}",
+                          "--localstatedir=#{var/name}",
                           "--with-ivykis=system",
                           "--with-python=#{Language::Python.major_minor_version python3}",
                           "--with-python-venv-dir=#{venv.root}",
@@ -80,8 +80,8 @@ class SyslogNg < Formula
   end
 
   test do
-    output = shell_output("#{sbin}syslog-ng --version")
+    output = shell_output("#{sbin}/syslog-ng --version")
     assert_equal "syslog-ng #{version.major} (#{version})", output.lines.first.chomp
-    system sbin"syslog-ng", "--cfgfile=#{pkgetc}syslog-ng.conf", "--syntax-only"
+    system sbin/"syslog-ng", "--cfgfile=#{pkgetc}/syslog-ng.conf", "--syntax-only"
   end
 end

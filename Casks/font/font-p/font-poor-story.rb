@@ -2,10 +2,10 @@ cask "font-poor-story" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefontsrawmainoflpoorstoryPoorStory-Regular.ttf",
-      verified: "github.comgooglefonts"
+  url "https://github.com/google/fonts/raw/main/ofl/poorstory/PoorStory-Regular.ttf",
+      verified: "github.com/google/fonts/"
   name "Poor Story"
-  homepage "https:fonts.google.comspecimenPoor+Story"
+  homepage "https://fonts.google.com/specimen/Poor+Story"
 
   font "PoorStory-Regular.ttf"
 

@@ -1,10 +1,10 @@
 class Fdroidcl < Formula
   desc "F-Droid desktop client"
-  homepage "https:github.comHoverthfdroidcl"
-  url "https:github.comHoverthfdroidclarchiverefstagsv0.8.1.tar.gz"
+  homepage "https://github.com/Hoverth/fdroidcl"
+  url "https://ghfast.top/https://github.com/Hoverth/fdroidcl/archive/refs/tags/v0.8.1.tar.gz"
   sha256 "934881b18ce13a7deb246321678eabd3f81284cae61ff4d18bde6c7c4217584a"
   license "BSD-3-Clause"
-  head "https:github.comHoverthfdroidcl.git", branch: "master"
+  head "https://github.com/Hoverth/fdroidcl.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "a59042086a507fe60f17c0460f85ac81bc0e9ad650738e0b8c4c12879dcdd5a6"
@@ -22,7 +22,7 @@ class Fdroidcl < Formula
   end
 
   test do
-    assert_match "f-droid.orgrepo", shell_output("#{bin}fdroidcl update")
+    assert_match "f-droid.org/repo", shell_output("#{bin}/fdroidcl update")
 
     list = <<~EOS
       App Store & Updater
@@ -63,7 +63,7 @@ class Fdroidcl < Formula
       Weather
       Writing
     EOS
-    assert_equal list, shell_output("#{bin}fdroidcl list categories")
-    assert_match version.to_s, shell_output("#{bin}fdroidcl version")
+    assert_equal list, shell_output("#{bin}/fdroidcl list categories")
+    assert_match version.to_s, shell_output("#{bin}/fdroidcl version")
   end
 end

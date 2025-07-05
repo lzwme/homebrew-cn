@@ -1,7 +1,7 @@
 class Libebur128 < Formula
   desc "Library implementing the EBU R128 loudness standard"
-  homepage "https:github.comjiixyjlibebur128"
-  url "https:github.comjiixyjlibebur128archiverefstagsv1.2.6.tar.gz"
+  homepage "https://github.com/jiixyj/libebur128"
+  url "https://ghfast.top/https://github.com/jiixyj/libebur128/archive/refs/tags/v1.2.6.tar.gz"
   sha256 "baa7fc293a3d4651e244d8022ad03ab797ca3c2ad8442c43199afe8059faa613"
   license "MIT"
 
@@ -34,7 +34,7 @@ class Libebur128 < Formula
   end
 
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include <ebur128.h>
       int main() {
         ebur128_init(5, 44100, EBUR128_MODE_I);
@@ -43,6 +43,6 @@ class Libebur128 < Formula
     C
 
     system ENV.cc, "test.c", "-L#{lib}", "-lebur128", "-o", "test"
-    system ".test"
+    system "./test"
   end
 end

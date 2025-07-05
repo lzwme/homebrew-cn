@@ -1,10 +1,10 @@
 class Cxxopts < Formula
   desc "Lightweight C++ command-line option parser"
-  homepage "https:github.comjarro2783cxxopts"
-  url "https:github.comjarro2783cxxoptsarchiverefstagsv3.3.1.tar.gz"
+  homepage "https://github.com/jarro2783/cxxopts"
+  url "https://ghfast.top/https://github.com/jarro2783/cxxopts/archive/refs/tags/v3.3.1.tar.gz"
   sha256 "3bfc70542c521d4b55a46429d808178916a579b28d048bd8c727ee76c39e2072"
   license "MIT"
-  head "https:github.comjarro2783cxxopts.git", branch: "master"
+  head "https://github.com/jarro2783/cxxopts.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "24dcb23b8d9c163a1db1ebdb1876bb1158e2116bd1f8e10bb779f5c3644cc222"
@@ -30,7 +30,7 @@ class Cxxopts < Formula
   end
 
   test do
-    (testpath"test.cc").write <<~CPP
+    (testpath/"test.cc").write <<~CPP
       #include <iostream>
       #include <cstdlib>
       #include <cxxopts.hpp>
@@ -57,7 +57,7 @@ class Cxxopts < Formula
     CPP
 
     system ENV.cxx, "-std=c++11", "test.cc", "-I#{include}", "-o", "test"
-    assert_equal "echo string", shell_output(".test -e 'echo string'").strip
-    assert_equal "echo string", shell_output(".test --echo='echo string'").strip
+    assert_equal "echo string", shell_output("./test -e 'echo string'").strip
+    assert_equal "echo string", shell_output("./test --echo='echo string'").strip
   end
 end

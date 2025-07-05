@@ -2,10 +2,10 @@ cask "font-imperial-script" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefontsrawmainoflimperialscriptImperialScript-Regular.ttf",
-      verified: "github.comgooglefonts"
+  url "https://github.com/google/fonts/raw/main/ofl/imperialscript/ImperialScript-Regular.ttf",
+      verified: "github.com/google/fonts/"
   name "Imperial Script"
-  homepage "https:fonts.google.comspecimenImperial+Script"
+  homepage "https://fonts.google.com/specimen/Imperial+Script"
 
   font "ImperialScript-Regular.ttf"
 

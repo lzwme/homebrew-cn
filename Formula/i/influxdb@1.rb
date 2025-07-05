@@ -1,14 +1,14 @@
 class InfluxdbAT1 < Formula
   desc "Time series, events, and metrics database"
-  homepage "https:influxdata.comtime-series-platforminfluxdb"
-  url "https:github.cominfluxdatainfluxdbarchiverefstagsv1.12.1.tar.gz"
+  homepage "https://influxdata.com/time-series-platform/influxdb/"
+  url "https://ghfast.top/https://github.com/influxdata/influxdb/archive/refs/tags/v1.12.1.tar.gz"
   sha256 "db73b4c64673713673e420ff8518c3ddfbefdfe245a1bb60f06b6ed2e13cc170"
-  # 1.x is using MIT license while 1.x and 3.x is using dual license (Apache-2.0MIT)
+  # 1.x is using MIT license while 1.x and 3.x is using dual license (Apache-2.0/MIT)
   license "MIT"
 
   livecheck do
     url :stable
-    regex(^v?(1(?:\.\d+)+)$i)
+    regex(/^v?(1(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -30,55 +30,55 @@ class InfluxdbAT1 < Formula
   # If you're upgrading to a newer influxdb version, check to see if this needs
   # to be upgraded too.
   resource "pkg-config-wrapper" do
-    url "https:github.cominfluxdatapkg-configarchiverefstagsv0.2.14.tar.gz"
+    url "https://ghfast.top/https://github.com/influxdata/pkg-config/archive/refs/tags/v0.2.14.tar.gz"
     sha256 "465d2fb3fc6dab9aca60e3ee3ca623ea346f3544d53082505645f81a7c4cd6d3"
   end
 
   def install
     # Set up the influxdata pkg-config wrapper
     resource("pkg-config-wrapper").stage do
-      system "go", "build", *std_go_args(output: buildpath"bootstrappkg-config")
+      system "go", "build", *std_go_args(output: buildpath/"bootstrap/pkg-config")
     end
-    ENV.prepend_path "PATH", buildpath"bootstrap"
+    ENV.prepend_path "PATH", buildpath/"bootstrap"
 
     ldflags = "-s -w -X main.version=#{version}"
 
     %w[influxd influx influx_tools influx_inspect].each do |f|
-      system "go", "build", *std_go_args(output: binf, ldflags:), ".cmd#{f}"
+      system "go", "build", *std_go_args(output: bin/f, ldflags:), "./cmd/#{f}"
     end
 
-    etc.install "etcconfig.sample.toml" => "influxdb.conf"
-    inreplace etc"influxdb.conf" do |s|
-      s.gsub! "varlibinfluxdbdata", "#{var}influxdbdata"
-      s.gsub! "varlibinfluxdbmeta", "#{var}influxdbmeta"
-      s.gsub! "varlibinfluxdbwal", "#{var}influxdbwal"
+    etc.install "etc/config.sample.toml" => "influxdb.conf"
+    inreplace etc/"influxdb.conf" do |s|
+      s.gsub! "/var/lib/influxdb/data", "#{var}/influxdb/data"
+      s.gsub! "/var/lib/influxdb/meta", "#{var}/influxdb/meta"
+      s.gsub! "/var/lib/influxdb/wal", "#{var}/influxdb/wal"
     end
 
-    (var"influxdbdata").mkpath
-    (var"influxdbmeta").mkpath
-    (var"influxdbwal").mkpath
+    (var/"influxdb/data").mkpath
+    (var/"influxdb/meta").mkpath
+    (var/"influxdb/wal").mkpath
   end
 
   service do
-    run [opt_bin"influxd", "-config", HOMEBREW_PREFIX"etcinfluxdb.conf"]
+    run [opt_bin/"influxd", "-config", HOMEBREW_PREFIX/"etc/influxdb.conf"]
     keep_alive true
     working_dir var
-    log_path var"loginfluxdb.log"
-    error_log_path var"loginfluxdb.log"
+    log_path var/"log/influxdb.log"
+    error_log_path var/"log/influxdb.log"
   end
 
   test do
-    (testpath"config.toml").write shell_output("#{bin}influxd config")
-    inreplace testpath"config.toml" do |s|
-      s.gsub! %r{.*.influxdbdata}, "#{testpath}influxdbdata"
-      s.gsub! %r{.*.influxdbmeta}, "#{testpath}influxdbmeta"
-      s.gsub! %r{.*.influxdbwal}, "#{testpath}influxdbwal"
+    (testpath/"config.toml").write shell_output("#{bin}/influxd config")
+    inreplace testpath/"config.toml" do |s|
+      s.gsub! %r{/.*/.influxdb/data}, "#{testpath}/influxdb/data"
+      s.gsub! %r{/.*/.influxdb/meta}, "#{testpath}/influxdb/meta"
+      s.gsub! %r{/.*/.influxdb/wal}, "#{testpath}/influxdb/wal"
     end
 
     begin
-      pid = spawn "#{bin}influxd -config #{testpath}config.toml"
+      pid = spawn "#{bin}/influxd -config #{testpath}/config.toml"
       sleep 6
-      output = shell_output("curl -Is localhost:8086ping")
+      output = shell_output("curl -Is localhost:8086/ping")
       assert_match "X-Influxdb-Version:", output
     ensure
       Process.kill("SIGTERM", pid)

@@ -1,7 +1,7 @@
 class Dungeon < Formula
   desc "Classic text adventure game"
-  homepage "https:github.comGOFAIdungeon"
-  url "https:github.comGOFAIdungeonarchiverefstags4.1.tar.gz"
+  homepage "https://github.com/GOFAI/dungeon"
+  url "https://ghfast.top/https://github.com/GOFAI/dungeon/archive/refs/tags/4.1.tar.gz"
   sha256 "b88c49ef60e908e8611257fbb5a6a41860e1058760df2dfcb7eb141eb34e198b"
   license "HPND"
   revision 3
@@ -29,10 +29,10 @@ class Dungeon < Formula
     chdir "src" do
       # look for game files where homebrew installed them, not pwd
       inreplace "game.f" do |s|
-        s.gsub! "FILE='dindx',STATUS='OLD',", "FILE='#{opt_pkgshare}dindx',"
+        s.gsub! "FILE='dindx',STATUS='OLD',", "FILE='#{opt_pkgshare}/dindx',"
         s.gsub! "1\tFORM='FORMATTED',ACCESS='SEQUENTIAL',ERR=1900)", "1\tSTATUS='OLD',FORM='FORMATTED'," \
                                                                      "\n\t2\tACCESS='SEQUENTIAL',ERR=1900)"
-        s.gsub! "FILE='dtext',STATUS='OLD',", "FILE='#{opt_pkgshare}dtext',"
+        s.gsub! "FILE='dtext',STATUS='OLD',", "FILE='#{opt_pkgshare}/dtext',"
         s.gsub! "1\tFORM='UNFORMATTED',ACCESS='DIRECT',", "1\tSTATUS='OLD',FORM='UNFORMATTED',ACCESS='DIRECT',"
       end
       inreplace "Makefile" do |s|
@@ -49,7 +49,7 @@ class Dungeon < Formula
 
   test do
     require "open3"
-    Open3.popen3(bin"dungeon") do |stdin, stdout, _|
+    Open3.popen3(bin/"dungeon") do |stdin, stdout, _|
       stdin.close
       assert_match " Welcome to Dungeon.\t\t\t", stdout.read
     end

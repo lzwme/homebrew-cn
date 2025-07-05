@@ -1,7 +1,7 @@
 class Celero < Formula
-  desc "C++ Benchmark Authoring LibraryFramework"
-  homepage "https:github.comDigitalInBlueCelero"
-  url "https:github.comDigitalInBlueCeleroarchiverefstagsv2.9.1.tar.gz"
+  desc "C++ Benchmark Authoring Library/Framework"
+  homepage "https://github.com/DigitalInBlue/Celero"
+  url "https://ghfast.top/https://github.com/DigitalInBlue/Celero/archive/refs/tags/v2.9.1.tar.gz"
   sha256 "c857d1fa7b20943bcec78ae043686cf77c9447d72537d8d2ba142531bfdc8fad"
   license "Apache-2.0"
 
@@ -30,8 +30,8 @@ class Celero < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~CPP
-      #include <celeroCelero.h>
+    (testpath/"test.cpp").write <<~CPP
+      #include <celero/Celero.h>
       #include <chrono>
       #include <thread>
 
@@ -48,6 +48,6 @@ class Celero < Formula
       }
     CPP
     system ENV.cxx, "-std=c++14", "test.cpp", "-L#{lib}", "-lcelero", "-o", "test"
-    system ".test"
+    system "./test"
   end
 end

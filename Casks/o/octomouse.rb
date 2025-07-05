@@ -2,9 +2,9 @@ cask "octomouse" do
   version "1.7"
   sha256 "b47639b8b4504834caee65a61c0cbe3a42e798cf4901472241f9ce3ab72793e9"
 
-  url "https:github.comKonsomeJonaOctoMousereleasesdownloadv#{version}OctoMouse.app.zip"
+  url "https://ghfast.top/https://github.com/KonsomeJona/OctoMouse/releases/download/v#{version}/OctoMouse.app.zip"
   name "OctoMouse"
-  homepage "https:github.comKonsomeJonaOctoMouse"
+  homepage "https://github.com/KonsomeJona/OctoMouse"
 
   no_autobump! because: :requires_manual_review
 

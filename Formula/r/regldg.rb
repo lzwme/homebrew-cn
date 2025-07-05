@@ -1,7 +1,7 @@
 class Regldg < Formula
   desc "Regular expression grammar language dictionary generator"
-  homepage "https:regldg.com"
-  url "https:github.comPatrickCroninregldgreleasesdownloadv1.0.1regldg-1.0.1.tar.gz"
+  homepage "https://regldg.com/"
+  url "https://ghfast.top/https://github.com/PatrickCronin/regldg/releases/download/v1.0.1/regldg-1.0.1.tar.gz"
   sha256 "f5f401c645a94d4c737cefa2bbcb62f23407d25868327902b9c93b501335dc99"
   license "MIT"
 
@@ -34,15 +34,15 @@ class Regldg < Formula
   end
 
   test do
-    system bin"regldg", "test"
+    system bin/"regldg", "test"
   end
 end
 
 __END__
-diff --git aMakefile bMakefile
+diff --git a/Makefile b/Makefile
 index 5e18193..6dee9ae 100755
---- aMakefile
-+++ bMakefile
+--- a/Makefile
++++ b/Makefile
 @@ -1,7 +1,7 @@
  # Makefile
  # Project building instructions.

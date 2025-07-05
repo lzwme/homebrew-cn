@@ -1,13 +1,13 @@
 class BatExtras < Formula
   desc "Bash scripts that integrate bat with various command-line tools"
-  homepage "https:github.cometh-pbat-extras"
-  url "https:github.cometh-pbat-extrasarchiverefstagsv2024.08.24.tar.gz"
+  homepage "https://github.com/eth-p/bat-extras"
+  url "https://ghfast.top/https://github.com/eth-p/bat-extras/archive/refs/tags/v2024.08.24.tar.gz"
   sha256 "2ff1b9104134f10721ef36580150365e94546e5b41b9a2a6eaa4851c5959b487"
   license "MIT"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -27,11 +27,11 @@ class BatExtras < Formula
   depends_on "ripgrep" => :test
 
   def install
-    system ".build.sh", "--prefix=#{prefix}", "--minify", "all", "--install"
+    system "./build.sh", "--prefix=#{prefix}", "--minify", "all", "--install"
   end
 
   test do
-    system bin"prettybat < devnull"
-    system bin"batgrep", "usrbinenv", bin
+    system bin/"prettybat < /dev/null"
+    system bin/"batgrep", "/usr/bin/env", bin
   end
 end

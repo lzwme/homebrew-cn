@@ -1,10 +1,10 @@
 class Eg < Formula
-  desc "Expert Guide. Norton Guide Reader For GNULinux"
-  homepage "https:github.comdavepeg"
-  url "https:github.comdavepegarchiverefstagsv1.02.tar.gz"
+  desc "Expert Guide. Norton Guide Reader For GNU/Linux"
+  homepage "https://github.com/davep/eg"
+  url "https://ghfast.top/https://github.com/davep/eg/archive/refs/tags/v1.02.tar.gz"
   sha256 "6b73fff51b5cf82e94cdd60f295a8f80e7bbb059891d4c75d5b1a6f0c5cc7003"
   license "GPL-2.0-or-later"
-  head "https:github.comdavepeg.git", branch: "master"
+  head "https://github.com/davep/eg.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -36,11 +36,11 @@ class Eg < Formula
   patch :DATA
 
   def install
-    inreplace "eglib.c", "usrshare", "#{etc}"
+    inreplace "eglib.c", "/usr/share/", "#{etc}/"
     bin.mkpath
     man1.mkpath
     system "make"
-    system "make", "install", "BINDIR=#{bin}", "MANDIR=#{man}", "NGDIR=#{etc}norton-guides"
+    system "make", "install", "BINDIR=#{bin}", "MANDIR=#{man}", "NGDIR=#{etc}/norton-guides"
   end
 
   test do
@@ -48,18 +48,18 @@ class Eg < Formula
     # except a filename, but will return success if the file doesn't
     # exist, without popping into the UI - we're exploiting this here.
     ENV["TERM"] = "xterm"
-    system bin"eg", "not_here.ng"
+    system bin/"eg", "not_here.ng"
   end
 end
 
 __END__
-diff --git aegscreen.c begscreen.c
+diff --git a/egscreen.c b/egscreen.c
 index d3c7e66..31bbca3 100644
---- aegscreen.c
-+++ begscreen.c
+--- a/egscreen.c
++++ b/egscreen.c
 @@ -211,7 +211,7 @@ void DisplayMessage( char *pszMsg, int iRefresh )
- *
-  *
+ /*
+  */
 
 -void ShowStdMsg( iRefresh )
 +void ShowStdMsg( int iRefresh )

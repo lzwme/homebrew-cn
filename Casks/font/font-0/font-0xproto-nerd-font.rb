@@ -2,9 +2,9 @@ cask "font-0xproto-nerd-font" do
   version "3.4.0"
   sha256 "e50e7fec9efbe1eb986b65f01e210098e122a3f495db24e6624bdcbca52da11d"
 
-  url "https:github.comryanoasisnerd-fontsreleasesdownloadv#{version}0xProto.zip"
+  url "https://ghfast.top/https://github.com/ryanoasis/nerd-fonts/releases/download/v#{version}/0xProto.zip"
   name "0xProto Nerd Font (0xProto)"
-  homepage "https:github.comryanoasisnerd-fonts"
+  homepage "https://github.com/ryanoasis/nerd-fonts"
 
   livecheck do
     url :url

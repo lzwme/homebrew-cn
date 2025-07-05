@@ -1,7 +1,7 @@
 class Makensis < Formula
   desc "System to create Windows installers"
-  homepage "https:nsis.sourceforge.net"
-  url "https:downloads.sourceforge.netprojectnsisNSIS%2033.11nsis-3.11-src.tar.bz2"
+  homepage "https://nsis.sourceforge.net/"
+  url "https://downloads.sourceforge.net/project/nsis/NSIS%203/3.11/nsis-3.11-src.tar.bz2"
   sha256 "19e72062676ebdc67c11dc032ba80b979cdbffd3886c60b04bb442cdd401ff4b"
   license "Zlib"
 
@@ -21,7 +21,7 @@ class Makensis < Formula
   uses_from_macos "zlib"
 
   resource "nsis" do
-    url "https:downloads.sourceforge.netprojectnsisNSIS%2033.11nsis-3.11.zip"
+    url "https://downloads.sourceforge.net/project/nsis/NSIS%203/3.11/nsis-3.11.zip"
     sha256 "c7d27f780ddb6cffb4730138cd1591e841f4b7edb155856901cdf5f214394fa1"
 
     livecheck do
@@ -39,9 +39,9 @@ class Makensis < Formula
       "CC=#{ENV.cc}",
       "CXX=#{ENV.cxx}",
       "PREFIX=#{prefix}",
-      "PREFIX_DOC=#{share}nsisDocs",
+      "PREFIX_DOC=#{share}/nsis/Docs",
       "SKIPUTILS=Makensisw,NSIS Menu,zip2exe",
-      # Don't strip, see https:github.comHomebrewhomebrewissues28718
+      # Don't strip, see https://github.com/Homebrew/homebrew/issues/28718
       "STRIP=0",
       "VERSION=#{version}",
       # Scons dependency disables superenv in brew
@@ -50,18 +50,18 @@ class Makensis < Formula
     ]
 
     system "scons", "makensis", *args
-    bin.install "buildureleasemakensismakensis"
-    (share"nsis").install resource("nsis")
+    bin.install "build/urelease/makensis/makensis"
+    (share/"nsis").install resource("nsis")
   end
 
   test do
-    # Workaround for https:sourceforge.netpnsisbugs1165
+    # Workaround for https://sourceforge.net/p/nsis/bugs/1165/
     ENV["LANG"] = "en_GB.UTF-8"
     %w[COLLATE CTYPE MESSAGES MONETARY NUMERIC TIME].each do |lc_var|
       ENV["LC_#{lc_var}"] = "en_GB.UTF-8"
     end
 
-    system bin"makensis", "-VERSION"
-    system bin"makensis", "#{share}nsisExamplesbigtest.nsi", "-XOutfile devnull"
+    system bin/"makensis", "-VERSION"
+    system bin/"makensis", "#{share}/nsis/Examples/bigtest.nsi", "-XOutfile /dev/null"
   end
 end

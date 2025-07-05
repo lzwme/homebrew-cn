@@ -1,16 +1,16 @@
 class Fastd < Formula
   desc "Fast and Secure Tunnelling Daemon"
-  homepage "https:github.comneocturnefastd"
+  homepage "https://github.com/neocturne/fastd"
   license "BSD-2-Clause"
-  head "https:github.comneocturnefastd.git", branch: "main"
+  head "https://github.com/neocturne/fastd.git", branch: "main"
 
   stable do
-    url "https:github.comneocturnefastdreleasesdownloadv23fastd-23.tar.xz"
+    url "https://ghfast.top/https://github.com/neocturne/fastd/releases/download/v23/fastd-23.tar.xz"
     sha256 "dcab54485c79dda22ce6308a2a48764d53977a518952facd1204ba21af1c86e0"
 
     # remove in next release
     patch do
-      url "https:github.comneocturnefastdcommit89abc48e60e182f8d57e924df16acf33c6670a9b.patch?full_index=1"
+      url "https://github.com/neocturne/fastd/commit/89abc48e60e182f8d57e924df16acf33c6670a9b.patch?full_index=1"
       sha256 "7bcac7dc288961a34830ef0552e1f9985f1b818aa37978b281f542a26fb059b9"
     end
   end
@@ -46,6 +46,6 @@ class Fastd < Formula
   end
 
   test do
-    system bin"fastd", "--generate-key"
+    system bin/"fastd", "--generate-key"
   end
 end

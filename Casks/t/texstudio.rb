@@ -15,19 +15,19 @@ cask "texstudio" do
            intel: "4f325c3bf10e0f63e8b4fb46d5c2a7362060dbfbae63148af49ae337b780f752"
   end
 
-  url "https:github.comtexstudio-orgtexstudioreleasesdownload#{version}texstudio-#{version}-osx#{arch}.zip",
-      verified: "github.comtexstudio-orgtexstudio"
+  url "https://ghfast.top/https://github.com/texstudio-org/texstudio/releases/download/#{version}/texstudio-#{version}-osx#{arch}.zip",
+      verified: "github.com/texstudio-org/texstudio/"
   name "TeXstudio"
   desc "LaTeX editor"
-  homepage "https:texstudio.org"
+  homepage "https://texstudio.org/"
 
   depends_on macos: ">= :big_sur"
 
   app "texstudio-#{version}-osx#{arch}.app"
 
   zap trash: [
-    "~LibraryApplication Supportcom.apple.sharedfilelistcom.apple.LSSharedFileList.ApplicationRecentDocumentstexstudio.sfl*",
-    "~LibraryPreferencestexstudio.plist",
-    "~LibrarySaved Application Statetexstudio.savedState",
+    "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/texstudio.sfl*",
+    "~/Library/Preferences/texstudio.plist",
+    "~/Library/Saved Application State/texstudio.savedState",
   ]
 end

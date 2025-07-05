@@ -1,10 +1,10 @@
 class Cjdns < Formula
   desc "Advanced mesh routing system with cryptographic addressing"
-  homepage "https:github.comcjdelislecjdns"
-  url "https:github.comcjdelislecjdnsarchiverefstagscjdns-v22.1.tar.gz"
+  homepage "https://github.com/cjdelisle/cjdns/"
+  url "https://ghfast.top/https://github.com/cjdelisle/cjdns/archive/refs/tags/cjdns-v22.1.tar.gz"
   sha256 "3fcd4dcbfbf8d34457c6b22c1024edb8be4a771eea34391a7e7437af72f52083"
   license all_of: ["GPL-3.0-or-later", "GPL-2.0-or-later", "BSD-3-Clause", "MIT"]
-  head "https:github.comcjdelislecjdns.git", branch: "master"
+  head "https://github.com/cjdelisle/cjdns.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -22,19 +22,19 @@ class Cjdns < Formula
   depends_on "rust" => :build
 
   def install
-    system ".do"
+    system "./do"
     bin.install "cjdroute"
     bin.install "cjdnstool"
 
-    man1.install "docmancjdroute.1"
-    man5.install "docmancjdroute.conf.5"
+    man1.install "doc/man/cjdroute.1"
+    man5.install "doc/man/cjdroute.conf.5"
   end
 
   test do
-    sample_conf = JSON.parse(shell_output("#{bin}cjdroute --genconf"))
+    sample_conf = JSON.parse(shell_output("#{bin}/cjdroute --genconf"))
     assert_equal "NONE", sample_conf["admin"]["password"]
 
-    help_output = shell_output("#{bin}cjdnstool --help")
+    help_output = shell_output("#{bin}/cjdnstool --help")
     assert_match "cexec", help_output
   end
 end

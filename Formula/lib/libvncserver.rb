@@ -1,14 +1,14 @@
 class Libvncserver < Formula
   desc "VNC server and client libraries"
-  homepage "https:libvnc.github.io"
-  url "https:github.comLibVNClibvncserverarchiverefstagsLibVNCServer-0.9.15.tar.gz"
+  homepage "https://libvnc.github.io"
+  url "https://ghfast.top/https://github.com/LibVNC/libvncserver/archive/refs/tags/LibVNCServer-0.9.15.tar.gz"
   sha256 "62352c7795e231dfce044beb96156065a05a05c974e5de9e023d688d8ff675d7"
   license "GPL-2.0-or-later"
-  head "https:github.comLibVNClibvncserver.git", branch: "master"
+  head "https://github.com/LibVNC/libvncserver.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(^LibVNCServer[._-]v?(\d+(?:\.\d+)+)$i)
+    regex(/^LibVNCServer[._-]v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -30,7 +30,7 @@ class Libvncserver < Formula
   def install
     system "cmake", "-S", ".", "-B", "build",
                     "-DJPEG_INCLUDE_DIR=#{Formula["jpeg-turbo"].opt_include}",
-                    "-DJPEG_LIBRARY=#{Formula["jpeg-turbo"].opt_libshared_library("libjpeg")}",
+                    "-DJPEG_LIBRARY=#{Formula["jpeg-turbo"].opt_lib/shared_library("libjpeg")}",
                     "-DOPENSSL_ROOT_DIR=#{Formula["openssl@3"].opt_prefix}",
                     "-DWITH_EXAMPLES=OFF",
                     *std_cmake_args
@@ -40,8 +40,8 @@ class Libvncserver < Formula
   end
 
   test do
-    (testpath"server.cpp").write <<~CPP
-      #include <rfbrfb.h>
+    (testpath/"server.cpp").write <<~CPP
+      #include <rfb/rfb.h>
       int main(int argc,char** argv) {
         rfbScreenInfoPtr server=rfbGetScreen(&argc,argv,400,300,8,3,4);
         server->frameBuffer=(char*)malloc(400*300*4);
@@ -52,6 +52,6 @@ class Libvncserver < Formula
 
     system ENV.cc, "server.cpp", "-I#{include}", "-L#{lib}",
                    "-lvncserver", "-o", "server"
-    system ".server"
+    system "./server"
   end
 end

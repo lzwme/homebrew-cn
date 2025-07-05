@@ -1,14 +1,14 @@
 class Redress < Formula
   desc "Tool for analyzing stripped Go binaries compiled with the Go compiler"
-  homepage "https:github.comgoretkredress"
-  url "https:github.comgoretkredressarchiverefstagsv1.2.30.tar.gz"
+  homepage "https://github.com/goretk/redress"
+  url "https://ghfast.top/https://github.com/goretk/redress/archive/refs/tags/v1.2.30.tar.gz"
   sha256 "b47ecbe9f369bc2d6d3156542e1b4fa5fdb05e1d4aa239ce48d639a23d3440eb"
   license "AGPL-3.0-only"
-  head "https:github.comgoretkredress.git", branch: "develop"
+  head "https://github.com/goretk/redress.git", branch: "develop"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -23,8 +23,8 @@ class Redress < Formula
   depends_on "go" => :build
 
   def install
-    # https:github.comgoretkredressblobdevelopMakefile#L11-L14
-    gore_version = File.read(buildpath"go.mod").scan(%r{goretkgore v(\S+)}).flatten.first
+    # https://github.com/goretk/redress/blob/develop/Makefile#L11-L14
+    gore_version = File.read(buildpath/"go.mod").scan(%r{goretk/gore v(\S+)}).flatten.first
 
     ldflags = %W[
       -s -w
@@ -35,16 +35,16 @@ class Redress < Formula
 
     system "go", "build", *std_go_args(ldflags:)
 
-    generate_completions_from_executable(bin"redress", "completion")
+    generate_completions_from_executable(bin/"redress", "completion")
   end
 
   test do
-    assert_match "Version:  #{version}", shell_output("#{bin}redress version")
+    assert_match "Version:  #{version}", shell_output("#{bin}/redress version")
 
-    test_module_root = "github.comgoretkredress"
-    test_bin_path = bin"redress"
+    test_module_root = "github.com/goretk/redress"
+    test_bin_path = bin/"redress"
 
-    output = shell_output("#{bin}redress info '#{test_bin_path}'")
-    assert_match(Main root\s+#{Regexp.escape(test_module_root)}, output)
+    output = shell_output("#{bin}/redress info '#{test_bin_path}'")
+    assert_match(/Main root\s+#{Regexp.escape(test_module_root)}/, output)
   end
 end

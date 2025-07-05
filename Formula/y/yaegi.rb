@@ -1,10 +1,10 @@
 class Yaegi < Formula
   desc "Yet another elegant Go interpreter"
-  homepage "https:github.comtraefikyaegi"
-  url "https:github.comtraefikyaegiarchiverefstagsv0.16.1.tar.gz"
+  homepage "https://github.com/traefik/yaegi"
+  url "https://ghfast.top/https://github.com/traefik/yaegi/archive/refs/tags/v0.16.1.tar.gz"
   sha256 "872ceac063a8abfa71ecdeb56b1b960ca02abd5e9b6c926ae1bd3eb097cad44b"
   license "Apache-2.0"
-  head "https:github.comtraefikyaegi.git", branch: "master"
+  head "https://github.com/traefik/yaegi.git", branch: "master"
 
   bottle do
     rebuild 1
@@ -19,10 +19,10 @@ class Yaegi < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w -X=main.version=#{version}"), ".cmdyaegi"
+    system "go", "build", *std_go_args(ldflags: "-s -w -X=main.version=#{version}"), "./cmd/yaegi"
   end
 
   test do
-    assert_match "4", pipe_output(bin"yaegi", "println(3 + 1)", 0)
+    assert_match "4", pipe_output(bin/"yaegi", "println(3 + 1)", 0)
   end
 end

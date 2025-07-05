@@ -1,7 +1,7 @@
 class YamlLanguageServer < Formula
   desc "Language Server for Yaml Files"
-  homepage "https:github.comredhat-developeryaml-language-server"
-  url "https:registry.npmjs.orgyaml-language-server-yaml-language-server-1.18.0.tgz"
+  homepage "https://github.com/redhat-developer/yaml-language-server"
+  url "https://registry.npmjs.org/yaml-language-server/-/yaml-language-server-1.18.0.tgz"
   sha256 "079322c49fa5429f6c7c9edf893236dba70f6a11aaad841623f31c50fd0deaa4"
   license "MIT"
 
@@ -13,7 +13,7 @@ class YamlLanguageServer < Formula
 
   def install
     system "npm", "install", *std_npm_args
-    bin.install_symlink Dir["#{libexec}bin*"]
+    bin.install_symlink Dir["#{libexec}/bin/*"]
   end
 
   test do
@@ -31,10 +31,10 @@ class YamlLanguageServer < Formula
       }
     JSON
 
-    Open3.popen3(bin"yaml-language-server", "--stdio") do |stdin, stdout|
+    Open3.popen3(bin/"yaml-language-server", "--stdio") do |stdin, stdout|
       stdin.write "Content-Length: #{json.size}\r\n\r\n#{json}"
       sleep 3
-      assert_match(^Content-Length: \d+i, stdout.readline)
+      assert_match(/^Content-Length: \d+/i, stdout.readline)
     end
   end
 end

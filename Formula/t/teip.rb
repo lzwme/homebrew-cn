@@ -1,10 +1,10 @@
 class Teip < Formula
   desc 'Masking tape to help commands "do one thing well"'
-  homepage "https:github.comgreymdteip"
-  url "https:github.comgreymdteiparchiverefstagsv2.3.2.tar.gz"
+  homepage "https://github.com/greymd/teip"
+  url "https://ghfast.top/https://github.com/greymd/teip/archive/refs/tags/v2.3.2.tar.gz"
   sha256 "c9e45d9f5fb263a67c42907d05d8a20dd62b910175270a59decc475e66ea6031"
   license "MIT"
-  head "https:github.comgreymdteip.git", branch: "main"
+  head "https://github.com/greymd/teip.git", branch: "main"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "dc593ddc6816e59c32a3c28434566875dd30036937ed24fb6fbaf0b11c813f21"
@@ -28,22 +28,22 @@ class Teip < Formula
     ENV["RUSTONIG_DYNAMIC_LIBONIG"] = "1"
     ENV["RUSTONIG_SYSTEM_LIBONIG"] = "1"
     system "cargo", "install", "--features", "oniguruma", *std_cargo_args
-    man1.install "manteip.1"
-    zsh_completion.install "completionzsh_teip"
-    fish_completion.install "completionfishteip.fish"
-    bash_completion.install "completionbashteip"
+    man1.install "man/teip.1"
+    zsh_completion.install "completion/zsh/_teip"
+    fish_completion.install "completion/fish/teip.fish"
+    bash_completion.install "completion/bash/teip"
   end
 
   test do
-    require "utilslinkage"
+    require "utils/linkage"
 
     ENV["TEIP_HIGHLIGHT"] = "<{}>"
-    assert_match "<1>23", pipe_output("#{bin}teip -c 1", "123", 0)
+    assert_match "<1>23", pipe_output("#{bin}/teip -c 1", "123", 0)
 
     [
-      Formula["oniguruma"].opt_libshared_library("libonig"),
+      Formula["oniguruma"].opt_lib/shared_library("libonig"),
     ].each do |library|
-      assert Utils.binary_linked_to_library?(bin"teip", library),
+      assert Utils.binary_linked_to_library?(bin/"teip", library),
              "No linkage with #{library.basename}! Cargo is likely using a vendored version."
     end
   end

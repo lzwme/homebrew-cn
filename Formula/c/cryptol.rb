@@ -1,10 +1,10 @@
 class Cryptol < Formula
   desc "Domain-specific language for specifying cryptographic algorithms"
-  homepage "https:www.cryptol.net"
-  url "https:hackage.haskell.orgpackagecryptol-3.3.0cryptol-3.3.0.tar.gz"
+  homepage "https://www.cryptol.net/"
+  url "https://hackage.haskell.org/package/cryptol-3.3.0/cryptol-3.3.0.tar.gz"
   sha256 "3ba3d1083c3aacd6c5ad5bbe4fddb9d9519717af4d3c6fe05d9c0c698fb737b0"
   license "BSD-3-Clause"
-  head "https:github.comGaloisInccryptol.git", branch: "master"
+  head "https://github.com/GaloisInc/cryptol.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "036f1699ef23e07d214b12ecd13e2a3f874e8546150628e03ab09d1cc4cdecfe"
@@ -29,11 +29,11 @@ class Cryptol < Formula
   end
 
   test do
-    (testpath"helloworld.icry").write <<~EOS
+    (testpath/"helloworld.icry").write <<~EOS
       :prove \\(x : [8]) -> x == x
       :prove \\(x : [32]) -> x + zero == x
     EOS
-    expected = Q\.E\.D\..*Q\.E\.Dm
-    assert_match expected, shell_output("#{bin}cryptol -b helloworld.icry")
+    expected = /Q\.E\.D\..*Q\.E\.D/m
+    assert_match expected, shell_output("#{bin}/cryptol -b helloworld.icry")
   end
 end

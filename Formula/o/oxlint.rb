@@ -1,14 +1,14 @@
 class Oxlint < Formula
   desc "Suite of high-performance tools for JavaScript and TypeScript written in Rust"
-  homepage "https:oxc.rs"
-  url "https:github.comoxc-projectoxcarchiverefstagsoxlint_v1.5.0.tar.gz"
+  homepage "https://oxc.rs/"
+  url "https://ghfast.top/https://github.com/oxc-project/oxc/archive/refs/tags/oxlint_v1.5.0.tar.gz"
   sha256 "a1a8d0910ff0ad51e505c6c3f2b85e23a868b311a6f90bd3116b7be860d284f0"
   license "MIT"
-  head "https:github.comoxc-projectoxc.git", branch: "main"
+  head "https://github.com/oxc-project/oxc.git", branch: "main"
 
   livecheck do
     url :stable
-    regex(^oxlint[._-]v?(\d+(?:\.\d+)+)$i)
+    regex(/^oxlint[._-]v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -25,14 +25,14 @@ class Oxlint < Formula
 
   def install
     ENV["OXC_VERSION"] = version.to_s
-    system "cargo", "install", *std_cargo_args(path: "appsoxlint")
+    system "cargo", "install", *std_cargo_args(path: "apps/oxlint")
   end
 
   test do
-    (testpath"test.js").write "const x = 1;"
-    output = shell_output("#{bin}oxlint test.js 2>&1")
+    (testpath/"test.js").write "const x = 1;"
+    output = shell_output("#{bin}/oxlint test.js 2>&1")
     assert_match "eslint(no-unused-vars): Variable 'x' is declared but never used", output
 
-    assert_match version.to_s, shell_output("#{bin}oxlint --version")
+    assert_match version.to_s, shell_output("#{bin}/oxlint --version")
   end
 end

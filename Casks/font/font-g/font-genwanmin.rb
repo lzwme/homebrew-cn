@@ -2,9 +2,9 @@ cask "font-genwanmin" do
   version "2.100"
   sha256 "b2e987aa451057776fbf914b05a3646433c3b81f5dad01b622fa1c0b84dfdddd"
 
-  url "https:github.comButTaiwangenwan-fontreleasesdownloadv#{version}GenWanMin#{version.major}-ttc.zip"
+  url "https://ghfast.top/https://github.com/ButTaiwan/genwan-font/releases/download/v#{version}/GenWanMin#{version.major}-ttc.zip"
   name "GenWanMin"
-  homepage "https:github.comButTaiwangenwan-font"
+  homepage "https://github.com/ButTaiwan/genwan-font"
 
   no_autobump! because: :requires_manual_review
 

@@ -1,10 +1,10 @@
 class Treefmt < Formula
   desc "One CLI to format the code tree"
-  homepage "https:treefmt.comlatest"
-  url "https:github.comnumtidetreefmtarchiverefstagsv2.3.1.tar.gz"
+  homepage "https://treefmt.com/latest/"
+  url "https://ghfast.top/https://github.com/numtide/treefmt/archive/refs/tags/v2.3.1.tar.gz"
   sha256 "02d29561b92110e83596ec93e19c8787b31f4b3211bd0a9d2c384d1b09f74c94"
   license "MIT"
-  head "https:github.comnumtidetreefmt.git", branch: "main"
+  head "https://github.com/numtide/treefmt.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "a136ef60c859adba5e9126d4e30e20270fea4489c9411d190e42008b4f464905"
@@ -18,13 +18,13 @@ class Treefmt < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = "-s -w -X github.comnumtidetreefmtv2build.Version=#{version}"
+    ldflags = "-s -w -X github.com/numtide/treefmt/v2/build.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:)
   end
 
   test do
-    output = shell_output("#{bin}treefmt 2>&1", 1)
+    output = shell_output("#{bin}/treefmt 2>&1", 1)
     assert_match "failed to find treefmt config file: could not find [treefmt.toml .treefmt.toml]", output
-    assert_match version.to_s, shell_output("#{bin}treefmt --version")
+    assert_match version.to_s, shell_output("#{bin}/treefmt --version")
   end
 end

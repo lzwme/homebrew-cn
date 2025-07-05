@@ -2,15 +2,15 @@ cask "psychopy" do
   version "2025.1.1"
   sha256 "9e791fb5323b2ae56f470a37f2a47738282bf2e853b653f44ff793094f3402fc"
 
-  url "https:github.compsychopypsychopyreleasesdownload#{version.csv.first.major_minor_patch}StandalonePsychoPy-#{version.csv.first}-macOS#{"_#{version.csv.second}" if version.csv.second}-py3.10.dmg",
-      verified: "github.compsychopypsychopy"
+  url "https://ghfast.top/https://github.com/psychopy/psychopy/releases/download/#{version.csv.first.major_minor_patch}/StandalonePsychoPy-#{version.csv.first}-macOS#{"_#{version.csv.second}" if version.csv.second}-py3.10.dmg",
+      verified: "github.com/psychopy/psychopy/"
   name "PsychoPy"
   desc "Create experiments in behavioral science"
-  homepage "https:www.psychopy.org"
+  homepage "https://www.psychopy.org/"
 
   livecheck do
     url :url
-    regex(StandalonePsychoPy[._-]v?(\d+(?:\.\d+)+)[._-]macOS[._-]?(\d+(?:[._-]\d+)+)?[._-](?:py)?3\.10\.dmgi)
+    regex(/StandalonePsychoPy[._-]v?(\d+(?:\.\d+)+)[._-]macOS[._-]?(\d+(?:[._-]\d+)+)?[._-](?:py)?3\.10\.dmg/i)
     strategy :github_releases do |json, regex|
       json.map do |release|
         next if release["draft"] || release["prerelease"]
@@ -28,9 +28,9 @@ cask "psychopy" do
   app "PsychoPy.app"
 
   zap trash: [
-    "~.psychopy3",
-    "~LibraryPreferencesorg.opensciencetools.psychopy.plist",
-    "~LibrarySaved Application Stateorg.opensciencetools.psychopy.savedState",
+    "~/.psychopy3",
+    "~/Library/Preferences/org.opensciencetools.psychopy.plist",
+    "~/Library/Saved Application State/org.opensciencetools.psychopy.savedState",
   ]
 
   caveats do

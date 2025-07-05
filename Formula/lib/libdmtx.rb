@@ -1,7 +1,7 @@
 class Libdmtx < Formula
   desc "Data Matrix library"
-  homepage "https:libdmtx.sourceforge.net"
-  url "https:github.comdmtxlibdmtxarchiverefstagsv0.7.8.tar.gz"
+  homepage "https://libdmtx.sourceforge.net/"
+  url "https://ghfast.top/https://github.com/dmtx/libdmtx/archive/refs/tags/v0.7.8.tar.gz"
   sha256 "2394bf1d1d693a5a4ca3cfcc1bb28a4d878bdb831ea9ca8f3d5c995d274bdc39"
   license "BSD-2-Clause"
 
@@ -21,7 +21,7 @@ class Libdmtx < Formula
 
   def install
     system "autoreconf", "--force", "--install", "--verbose"
-    system ".configure", *std_configure_args
+    system "./configure", *std_configure_args
     system "make"
     system "make", "install"
   end

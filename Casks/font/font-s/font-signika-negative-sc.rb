@@ -2,12 +2,12 @@ cask "font-signika-negative-sc" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefonts.git",
-      verified:  "github.comgooglefonts",
+  url "https://github.com/google/fonts.git",
+      verified:  "github.com/google/fonts",
       branch:    "main",
-      only_path: "oflsignikanegativesc"
+      only_path: "ofl/signikanegativesc"
   name "Signika Negative SC"
-  homepage "https:fonts.google.comspecimenSignika+Negative"
+  homepage "https://fonts.google.com/specimen/Signika+Negative"
 
   font "SignikaNegativeSC-Bold.ttf"
   font "SignikaNegativeSC-Light.ttf"

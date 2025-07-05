@@ -1,10 +1,10 @@
 class Asak < Formula
-  desc "Cross-platform audio recordingplayback CLI tool with TUI"
-  homepage "https:github.comchaosprintasak"
-  url "https:github.comchaosprintasakarchiverefstagsv0.3.5.tar.gz"
+  desc "Cross-platform audio recording/playback CLI tool with TUI"
+  homepage "https://github.com/chaosprint/asak"
+  url "https://ghfast.top/https://github.com/chaosprint/asak/archive/refs/tags/v0.3.5.tar.gz"
   sha256 "da90a31924a6ac7ed06fa54d5060290535afdfe1a6fc3e69ad1ed5bc82757e92"
   license "MIT"
-  head "https:github.comchaosprintasak.git", branch: "main"
+  head "https://github.com/chaosprint/asak.git", branch: "main"
 
   bottle do
     rebuild 2
@@ -28,16 +28,16 @@ class Asak < Formula
   def install
     system "cargo", "install", *std_cargo_args
 
-    bash_completion.install "targetcompletionsasak.bash" => "asak"
-    fish_completion.install "targetcompletionsasak.fish"
-    zsh_completion.install "targetcompletions_asak" => "_asak"
-    man1.install "targetmanasak.1"
+    bash_completion.install "target/completions/asak.bash" => "asak"
+    fish_completion.install "target/completions/asak.fish"
+    zsh_completion.install "target/completions/_asak" => "_asak"
+    man1.install "target/man/asak.1"
   end
 
   test do
-    output = shell_output("#{bin}asak play")
+    output = shell_output("#{bin}/asak play")
     assert_match "No wav files found in current directory", output
 
-    assert_match version.to_s, shell_output("#{bin}asak --version")
+    assert_match version.to_s, shell_output("#{bin}/asak --version")
   end
 end

@@ -2,10 +2,10 @@ cask "font-fairfax" do
   version "2025-03-20"
   sha256 "3060579c3853acd08d781c2c1c5479908d32652bb84646e10edd6435bc88628e"
 
-  url "https:github.comkreativekorpopen-relayreleasesdownload#{version}Fairfax.zip",
-      verified: "github.comkreativekorpopen-relay"
+  url "https://ghfast.top/https://github.com/kreativekorp/open-relay/releases/download/#{version}/Fairfax.zip",
+      verified: "github.com/kreativekorp/open-relay/"
   name "Fairfax"
-  homepage "https:www.kreativekorp.comsoftwarefontsfairfax"
+  homepage "https://www.kreativekorp.com/software/fonts/fairfax/"
 
   no_autobump! because: :requires_manual_review
 

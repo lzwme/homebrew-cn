@@ -1,7 +1,7 @@
 class Libsamplerate < Formula
   desc "Library for sample rate conversion of audio data"
-  homepage "https:github.comlibsndfilelibsamplerate"
-  url "https:github.comlibsndfilelibsampleratearchiverefstags0.2.2.tar.gz"
+  homepage "https://github.com/libsndfile/libsamplerate"
+  url "https://ghfast.top/https://github.com/libsndfile/libsamplerate/archive/refs/tags/0.2.2.tar.gz"
   sha256 "16e881487f184250deb4fcb60432d7556ab12cb58caea71ef23960aec6c0405a"
   license "BSD-2-Clause"
 
@@ -22,15 +22,15 @@ class Libsamplerate < Formula
   depends_on "pkgconf" => :build
 
   # Fix CMake deprecation warning CMP0091 (prereq for cmake 4 compatibility fix below)
-  # PR ref: https:github.comlibsndfilelibsampleratepull180
+  # PR ref: https://github.com/libsndfile/libsamplerate/pull/180
   patch do
-    url "https:github.comlibsndfilelibsampleratecommite4a0ab46887029e0f65f145ba3987cc592f18200.patch?full_index=1"
+    url "https://github.com/libsndfile/libsamplerate/commit/e4a0ab46887029e0f65f145ba3987cc592f18200.patch?full_index=1"
     sha256 "0826fb59d733188645f3dc207c938580970700381b9bc87058b137723cb30bba"
   end
   # Fix to cmake 4 compatibility
-  # PR ref: https:github.comlibsndfilelibsampleratepull225
+  # PR ref: https://github.com/libsndfile/libsamplerate/pull/225
   patch do
-    url "https:github.comlibsndfilelibsampleratecommit1abc639420b2df8b9ff2e0bdcc28cf6613c7c0d0.patch?full_index=1"
+    url "https://github.com/libsndfile/libsamplerate/commit/1abc639420b2df8b9ff2e0bdcc28cf6613c7c0d0.patch?full_index=1"
     sha256 "b6fb61c763a0f072ef2ebb3a311037d2429a5e294141f6d5e552ccd25efabdc0"
   end
 
@@ -43,11 +43,11 @@ class Libsamplerate < Formula
 
     system "cmake", "-S", ".", "-B", "build_static", "-DBUILD_SHARED_LIBS=OFF", *args, *std_cmake_args
     system "cmake", "--build", "build_static"
-    lib.install "build_staticsrclibsamplerate.a"
+    lib.install "build_static/src/libsamplerate.a"
   end
 
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include <assert.h>
       #include <samplerate.h>
       int main() {
@@ -65,6 +65,6 @@ class Libsamplerate < Formula
       }
     C
     system ENV.cc, "test.c", "-I#{include}", "-L#{opt_lib}", "-lsamplerate", "-o", "test"
-    system ".test"
+    system "./test"
   end
 end

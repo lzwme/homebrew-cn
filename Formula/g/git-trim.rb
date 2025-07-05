@@ -1,7 +1,7 @@
 class GitTrim < Formula
   desc "Trim your git remote tracking branches that are merged or gone"
-  homepage "https:github.comforiequal0git-trim"
-  url "https:github.comforiequal0git-trim.git",
+  homepage "https://github.com/foriequal0/git-trim"
+  url "https://github.com/foriequal0/git-trim.git",
       tag:      "v0.4.4",
       revision: "1f39d85ddb242e9933fba9faaecd6f423f2b6a5b"
   license "MIT"
@@ -30,11 +30,11 @@ class GitTrim < Formula
 
   def install
     system "cargo", "install", *std_cargo_args
-    man1.install "docsgit-trim.man" => "git-trim.1"
+    man1.install "docs/git-trim.man" => "git-trim.1"
   end
 
   test do
-    system "git", "clone", "https:github.comforiequal0git-trim"
+    system "git", "clone", "https://github.com/foriequal0/git-trim"
     Dir.chdir("git-trim")
     system "git", "branch", "brew-test"
     assert_match "brew-test", shell_output("git trim")

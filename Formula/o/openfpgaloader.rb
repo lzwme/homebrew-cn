@@ -1,10 +1,10 @@
 class Openfpgaloader < Formula
   desc "Universal utility for programming FPGA"
-  homepage "https:github.comtrabucayreopenFPGALoader"
-  url "https:github.comtrabucayreopenFPGALoaderarchiverefstagsv0.13.1.tar.gz"
+  homepage "https://github.com/trabucayre/openFPGALoader"
+  url "https://ghfast.top/https://github.com/trabucayre/openFPGALoader/archive/refs/tags/v0.13.1.tar.gz"
   sha256 "372f1942dec8a088bc7475f94ccf5a86264cb74e9154d8a162b8d4d26d3971e3"
   license "Apache-2.0"
-  head "https:github.comtrabucayreopenFPGALoader.git", branch: "master"
+  head "https://github.com/trabucayre/openFPGALoader.git", branch: "master"
 
   bottle do
     sha256 arm64_sequoia: "3d2834dbd959beb410e957fe036b89061ed6c3917f5bc95aa095263a7fde0441"
@@ -34,10 +34,10 @@ class Openfpgaloader < Formula
   end
 
   test do
-    version_output = shell_output("#{bin}openFPGALoader -V 2>&1")
+    version_output = shell_output("#{bin}/openFPGALoader -V 2>&1")
     assert_match "openFPGALoader v#{version}", version_output
 
-    error_output = shell_output("#{bin}openFPGALoader --detect 2>&1 >devnull", 1)
+    error_output = shell_output("#{bin}/openFPGALoader --detect 2>&1 >/dev/null", 1)
     assert_includes error_output, "JTAG init failed"
   end
 end

@@ -1,10 +1,10 @@
 class Goread < Formula
-  desc "RSSAtom feeds in the terminal"
-  homepage "https:github.comTypicalAMgoread"
-  url "https:github.comTypicalAMgoreadarchiverefstagsv1.7.3.tar.gz"
+  desc "RSS/Atom feeds in the terminal"
+  homepage "https://github.com/TypicalAM/goread"
+  url "https://ghfast.top/https://github.com/TypicalAM/goread/archive/refs/tags/v1.7.3.tar.gz"
   sha256 "9b08cae05593034711c599b6b17605194a11bbfae769b4e7e0076a01ec197c37"
   license "GPL-3.0-or-later"
-  head "https:github.comTypicalAMgoread.git", branch: "main"
+  head "https://github.com/TypicalAM/goread.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "f54a965d898329bdd7071bcb6b5d3d3fa76e21ec181c48209943ad9a4e424ab3"
@@ -22,9 +22,9 @@ class Goread < Formula
   end
 
   test do
-    output = shell_output("#{bin}goread --test_colors")
+    output = shell_output("#{bin}/goread --test_colors")
     assert_match "A table of all the colors", output
 
-    assert_match version.to_s, shell_output("#{bin}goread --version")
+    assert_match version.to_s, shell_output("#{bin}/goread --version")
   end
 end

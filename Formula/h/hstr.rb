@@ -1,7 +1,7 @@
 class Hstr < Formula
   desc "Bash and zsh history suggest box"
-  homepage "https:github.comdvorkahstr"
-  url "https:github.comdvorkahstrarchiverefstags3.1.tar.gz"
+  homepage "https://github.com/dvorka/hstr"
+  url "https://ghfast.top/https://github.com/dvorka/hstr/archive/refs/tags/3.1.tar.gz"
   sha256 "e5293d4fe2502662f19c793bef416e05ac020490218e71c75a5e92919c466071"
   license "Apache-2.0"
 
@@ -31,13 +31,13 @@ class Hstr < Formula
 
   def install
     system "autoreconf", "--force", "--install", "--verbose"
-    system ".configure", *std_configure_args
+    system "./configure", *std_configure_args
     system "make", "install"
   end
 
   test do
-    ENV["HISTFILE"] = testpath".hh_test"
-    (testpath".hh_test").write("test\n")
-    assert_match "test", shell_output("#{bin}hh -n").chomp
+    ENV["HISTFILE"] = testpath/".hh_test"
+    (testpath/".hh_test").write("test\n")
+    assert_match "test", shell_output("#{bin}/hh -n").chomp
   end
 end

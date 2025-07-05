@@ -1,7 +1,7 @@
 class Mosml < Formula
   desc "Moscow ML"
-  homepage "https:mosml.org"
-  url "https:github.comkflmosmlarchiverefstagsver-2.10.1.tar.gz"
+  homepage "https://mosml.org/"
+  url "https://ghfast.top/https://github.com/kfl/mosml/archive/refs/tags/ver-2.10.1.tar.gz"
   sha256 "fed5393668b88d69475b070999b1fd34e902591345de7f09b236824b92e4a78f"
   license "GPL-2.0-or-later"
 
@@ -30,7 +30,7 @@ class Mosml < Formula
 
   # Backport missing headers to fix build
   patch do
-    url "https:github.comkflmosmlcommit52b00ca99dcd77d64dac5a7600fe64a76ed1ac3a.patch?full_index=1"
+    url "https://github.com/kfl/mosml/commit/52b00ca99dcd77d64dac5a7600fe64a76ed1ac3a.patch?full_index=1"
     sha256 "e0db36e944b5d60e0e98afd3f3e9463d193ae89b7aa66d2cc7c452c6c6ed8632"
   end
 
@@ -45,9 +45,9 @@ class Mosml < Formula
   test do
     require "pty"
 
-    _, w, = PTY.spawn bin"mosml"
+    _, w, = PTY.spawn bin/"mosml"
     w.write "quit();\n"
 
-    assert_equal "I don't know what to do with file \"foo\", ignored", shell_output("#{bin}mosmlc foo 2>&1").strip
+    assert_equal "I don't know what to do with file \"foo\", ignored", shell_output("#{bin}/mosmlc foo 2>&1").strip
   end
 end

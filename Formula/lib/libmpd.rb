@@ -1,14 +1,14 @@
 class Libmpd < Formula
   desc "Higher level access to MPD functions"
-  homepage "https:gmpc.fandom.comwikiGnome_Music_Player_Client"
-  url "https:www.musicpd.orgdownloadlibmpd11.8.17libmpd-11.8.17.tar.gz"
+  homepage "https://gmpc.fandom.com/wiki/Gnome_Music_Player_Client"
+  url "https://www.musicpd.org/download/libmpd/11.8.17/libmpd-11.8.17.tar.gz"
   sha256 "fe20326b0d10641f71c4673fae637bf9222a96e1712f71f170fca2fc34bf7a83"
   license "GPL-2.0-or-later"
   revision 1
 
   livecheck do
-    url "https:www.musicpd.orgdownloadlibmpd"
-    regex(%r{href=["']?v?(\d+(?:\.\d+)+)?["' >]}i)
+    url "https://www.musicpd.org/download/libmpd/"
+    regex(%r{href=["']?v?(\d+(?:\.\d+)+)/?["' >]}i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -37,7 +37,7 @@ class Libmpd < Formula
 
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
-    url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-pre-0.4.2.418-big_sur.diff"
+    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-pre-0.4.2.418-big_sur.diff"
     sha256 "83af02f2aa2b746bb7225872cab29a253264be49db0ecebb12f841562d9a2923"
   end
 
@@ -51,15 +51,15 @@ class Libmpd < Formula
     # Help old config scripts identify arm64 linux
     args << "--build=aarch64-unknown-linux-gnu" if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
 
-    system ".configure", *args, *std_configure_args
+    system "./configure", *args, *std_configure_args
     system "make", "install"
   end
 
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include <stdio.h>
       #include <stdlib.h>
-      #include <libmpdlibmpd.h>
+      #include <libmpd/libmpd.h>
 
       int main() {
           MpdObj *mpd;
@@ -73,7 +73,7 @@ class Libmpd < Formula
           return 0;
       }
     C
-    system ENV.cc, "test.c", "-o", "test", "-I#{include}libmpd-1.0", "-L#{lib}", "-lmpd"
-    system ".test"
+    system ENV.cc, "test.c", "-o", "test", "-I#{include}/libmpd-1.0", "-L#{lib}", "-lmpd"
+    system "./test"
   end
 end

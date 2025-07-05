@@ -5,11 +5,11 @@ cask "triliumnext-notes" do
   sha256 arm:   "4b1d7e166c61fe6604374ea8eb105a0c257c861a7124d1c2d5195f8ed1aaf205",
          intel: "1521606e94ad11eb642cd04d49c5baccd7ed09fd1468e7fb7def14e08f20629f"
 
-  url "https:github.comTriliumNextNotesreleasesdownloadv#{version}TriliumNextNotes-v#{version}-macos-#{arch}.dmg",
-      verified: "github.comTriliumNextNotes"
+  url "https://ghfast.top/https://github.com/TriliumNext/Notes/releases/download/v#{version}/TriliumNextNotes-v#{version}-macos-#{arch}.dmg",
+      verified: "github.com/TriliumNext/Notes/"
   name "TriliumNext Notes"
   desc "Hierarchical note taking application"
-  homepage "https:triliumnext.github.ioDocs"
+  homepage "https://triliumnext.github.io/Docs/"
 
   livecheck do
     url :url
@@ -21,9 +21,9 @@ cask "triliumnext-notes" do
   app "TriliumNext Notes.app"
 
   zap trash: [
-    "~LibraryApplication Supporttrilium-data",
-    "~LibraryApplication SupportTriliumNext Notes",
-    "~LibraryPreferencescom.electron.triliumnext-notes.plist",
-    "~LibrarySaved Application Statecom.electron.triliumnext-notes.savedState",
+    "~/Library/Application Support/trilium-data",
+    "~/Library/Application Support/TriliumNext Notes",
+    "~/Library/Preferences/com.electron.triliumnext-notes.plist",
+    "~/Library/Saved Application State/com.electron.triliumnext-notes.savedState",
   ]
 end

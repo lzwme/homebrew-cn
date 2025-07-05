@@ -1,10 +1,10 @@
 class CoreosCt < Formula
   desc "Convert a Container Linux Config into Ignition"
-  homepage "https:flatcar-linux.orgdocslatestprovisioningconfig-transpiler"
-  url "https:github.comflatcarcontainer-linux-config-transpilerarchiverefstagsv0.9.4.tar.gz"
+  homepage "https://flatcar-linux.org/docs/latest/provisioning/config-transpiler/"
+  url "https://ghfast.top/https://github.com/flatcar/container-linux-config-transpiler/archive/refs/tags/v0.9.4.tar.gz"
   sha256 "c173ced842a6d178000f9bf01b26e9a8c296b1256ab713834f18d3f0883c4263"
   license "Apache-2.0"
-  head "https:github.comflatcarcontainer-linux-config-transpiler.git", branch: "flatcar-master"
+  head "https://github.com/flatcar/container-linux-config-transpiler.git", branch: "flatcar-master"
 
   no_autobump! because: :requires_manual_review
 
@@ -29,18 +29,18 @@ class CoreosCt < Formula
 
   def install
     system "make", "all", "VERSION=v#{version}"
-    bin.install ".binct"
+    bin.install "./bin/ct"
   end
 
   test do
-    (testpath"input").write <<~EOS
+    (testpath/"input").write <<~EOS
       passwd:
         users:
           - name: core
             ssh_authorized_keys:
               - ssh-rsa mykey
     EOS
-    output = shell_output("#{bin}ct -pretty -in-file #{testpath}input").lines.map(&:strip).join
-    assert_match(.*"sshAuthorizedKeys":\s*\["ssh-rsa mykey"\s*\].*m, output.strip)
+    output = shell_output("#{bin}/ct -pretty -in-file #{testpath}/input").lines.map(&:strip).join
+    assert_match(/.*"sshAuthorizedKeys":\s*\["ssh-rsa mykey"\s*\].*/m, output.strip)
   end
 end

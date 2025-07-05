@@ -1,10 +1,10 @@
 class Pdsh < Formula
   desc "Efficient rsh-like utility, for using hosts in parallel"
-  homepage "https:github.comchaospdsh"
-  url "https:github.comchaospdshreleasesdownloadpdsh-2.35pdsh-2.35.tar.gz"
+  homepage "https://github.com/chaos/pdsh"
+  url "https://ghfast.top/https://github.com/chaos/pdsh/releases/download/pdsh-2.35/pdsh-2.35.tar.gz"
   sha256 "75ef15347848fff43f8d6ff9c4424fe05c7dd2cdba029139901f861a05093cfe"
   license "GPL-2.0-or-later"
-  head "https:github.comchaospdsh.git", branch: "master"
+  head "https://github.com/chaos/pdsh.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -36,11 +36,11 @@ class Pdsh < Formula
       --without-xcpu
     ]
 
-    system ".configure", *args
+    system "./configure", *args
     system "make", "install"
   end
 
   test do
-    system bin"pdsh", "-V"
+    system bin/"pdsh", "-V"
   end
 end

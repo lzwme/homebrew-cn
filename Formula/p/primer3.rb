@@ -1,7 +1,7 @@
 class Primer3 < Formula
   desc "Program for designing PCR primers"
-  homepage "https:primer3.org"
-  url "https:github.comprimer3-orgprimer3archiverefstagsv2.6.1.tar.gz"
+  homepage "https://primer3.org/"
+  url "https://ghfast.top/https://github.com/primer3-org/primer3/archive/refs/tags/v2.6.1.tar.gz"
   sha256 "805cef7ef39607cd40f0f5bb8b32e35e20007153a0a55131dd430ce644c8fb9e"
   license all_of: [
     "GPL-2.0-or-later",
@@ -10,7 +10,7 @@ class Primer3 < Formula
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -27,12 +27,12 @@ class Primer3 < Formula
 
   def install
     system "make", "-C", "src", "install", "PREFIX=#{prefix}"
-    pkgshare.install "srcprimer3_config"
-    prefix.install "srcLICENSE_GPL3_for_Amplicon3"
+    pkgshare.install "src/primer3_config"
+    prefix.install "src/LICENSE_GPL3_for_Amplicon3"
   end
 
   test do
-    output = shell_output("#{bin}long_seq_tm_test AAAAGGGCCCCCCCCTTTTTTTTTTT 3 20")
+    output = shell_output("#{bin}/long_seq_tm_test AAAAGGGCCCCCCCCTTTTTTTTTTT 3 20")
     assert_match "tm = 52.452902", output.lines.last
   end
 end

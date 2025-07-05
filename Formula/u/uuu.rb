@@ -1,15 +1,15 @@
 class Uuu < Formula
   desc "Universal Update Utility, mfgtools 3.0. NXP I.MX Chip image deploy tools"
-  homepage "https:github.comnxp-imxmfgtools"
-  url "https:github.comnxp-imxmfgtoolsreleasesdownloaduuu_1.5.201uuu_source-uuu_1.5.201.tar.gz"
+  homepage "https://github.com/nxp-imx/mfgtools"
+  url "https://ghfast.top/https://github.com/nxp-imx/mfgtools/releases/download/uuu_1.5.201/uuu_source-uuu_1.5.201.tar.gz"
   sha256 "c763b87ffdf10ac5499a0c319463759caa336bc6567b56d6d0ef448590c1a76d"
   license "BSD-3-Clause"
   revision 1
-  head "https:github.comnxp-imxmfgtools.git", branch: "master"
+  head "https://github.com/nxp-imx/mfgtools.git", branch: "master"
 
   livecheck do
     url :stable
-    regex((?:uuu[._-])?v?(\d+(?:\.\d+)+)i)
+    regex(/(?:uuu[._-])?v?(\d+(?:\.\d+)+)/i)
     strategy :github_latest
   end
 
@@ -35,9 +35,9 @@ class Uuu < Formula
   uses_from_macos "bzip2"
   uses_from_macos "zlib"
 
-  # cmake 4.0 build patch, upstream pr ref, https:github.comnxp-imxmfgtoolspull467
+  # cmake 4.0 build patch, upstream pr ref, https://github.com/nxp-imx/mfgtools/pull/467
   patch do
-    url "https:github.comnxp-imxmfgtoolscommit2c712cb86478a3527145272f0cc96533f9386b7a.patch?full_index=1"
+    url "https://github.com/nxp-imx/mfgtools/commit/2c712cb86478a3527145272f0cc96533f9386b7a.patch?full_index=1"
     sha256 "220fd4a7d9f1abe957e621da486eabe6c8a35e61d4c3e6c5f54bcedcf0e13ed0"
   end
 
@@ -48,9 +48,9 @@ class Uuu < Formula
   end
 
   test do
-    assert_match "Universal Update Utility", shell_output("#{bin}uuu -h")
+    assert_match "Universal Update Utility", shell_output("#{bin}/uuu -h")
 
-    cmd_result = shell_output("#{bin}uuu -dry FB: ucmd setenv fastboot_buffer ${loadaddr}")
+    cmd_result = shell_output("#{bin}/uuu -dry FB: ucmd setenv fastboot_buffer ${loadaddr}")
     assert_match "Wait for Known USB Device Appear", cmd_result
     assert_match "Start Cmd:FB: ucmd setenv fastboot_buffer", cmd_result
     assert_match "Okay", cmd_result

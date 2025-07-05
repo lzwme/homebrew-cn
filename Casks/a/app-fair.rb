@@ -2,11 +2,11 @@ cask "app-fair" do
   version "0.8.137"
   sha256 "c4a99410058cef2a3c7ac6bb073cf4cac06fb64f7c597140cbf0958e37fe2480"
 
-  url "https:github.comApp-FairAppreleasesdownload#{version}App-Fair-macOS.zip",
-      verified: "github.comApp-FairApp"
+  url "https://ghfast.top/https://github.com/App-Fair/App/releases/download/#{version}/App-Fair-macOS.zip",
+      verified: "github.com/App-Fair/App/"
   name "App Fair"
   desc "Catalogue of free and commercial native desktop applications"
-  homepage "https:appfair.app"
+  homepage "https://appfair.app/"
 
   livecheck do
     url :url
@@ -18,17 +18,17 @@ cask "app-fair" do
   depends_on macos: ">= :monterey"
 
   app "App Fair.app"
-  binary "#{appdir}App Fair.appContentsMacOSApp Fair", target: "app-fair"
+  binary "#{appdir}/App Fair.app/Contents/MacOS/App Fair", target: "app-fair"
 
   zap trash: [
-        "~LibraryApplication Scriptsapp.App-Fair",
-        "~LibraryApplication Supportapp.App-Fair",
-        "~LibraryCachesapp.App-Fair",
-        "~LibraryContainersapp.App-Fair",
-        "~LibraryHTTPStoragesapp.App-Fair",
-        "~LibraryHTTPStoragesapp.App-Fair.binarycookies",
-        "~LibraryPreferencesapp.App-Fair.plist",
-        "~LibrarySaved Application Stateapp.App-Fair.savedState",
+        "~/Library/Application Scripts/app.App-Fair",
+        "~/Library/Application Support/app.App-Fair",
+        "~/Library/Caches/app.App-Fair",
+        "~/Library/Containers/app.App-Fair",
+        "~/Library/HTTPStorages/app.App-Fair",
+        "~/Library/HTTPStorages/app.App-Fair.binarycookies",
+        "~/Library/Preferences/app.App-Fair.plist",
+        "~/Library/Saved Application State/app.App-Fair.savedState",
       ],
-      rmdir: "ApplicationsApp Fair"
+      rmdir: "/Applications/App Fair"
 end

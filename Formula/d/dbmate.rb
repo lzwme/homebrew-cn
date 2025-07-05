@@ -1,10 +1,10 @@
 class Dbmate < Formula
   desc "Lightweight, framework-agnostic database migration tool"
-  homepage "https:github.comamacneildbmate"
-  url "https:github.comamacneildbmatearchiverefstagsv2.27.0.tar.gz"
+  homepage "https://github.com/amacneil/dbmate"
+  url "https://ghfast.top/https://github.com/amacneil/dbmate/archive/refs/tags/v2.27.0.tar.gz"
   sha256 "d45c3706b46e3a34f229329258eed09724ddb20da685eb3d62565b9c5fa0be3d"
   license "MIT"
-  head "https:github.comamacneildbmate.git", branch: "main"
+  head "https://github.com/amacneil/dbmate.git", branch: "main"
 
   no_autobump! because: :requires_manual_review
 
@@ -28,8 +28,8 @@ class Dbmate < Formula
   end
 
   test do
-    (testpath".env").write("DATABASE_URL=sqlite3:test.sqlite3")
-    system bin"dbmate", "create"
-    assert_path_exists testpath"test.sqlite3", "failed to create test.sqlite3"
+    (testpath/".env").write("DATABASE_URL=sqlite3:test.sqlite3")
+    system bin/"dbmate", "create"
+    assert_path_exists testpath/"test.sqlite3", "failed to create test.sqlite3"
   end
 end

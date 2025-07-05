@@ -5,13 +5,13 @@ cask "vorta" do
   sha256 arm:   "78960fd229074fc0d76c4d8d22b078e6b8b6d947a00491ec9880f9abc8f17bb7",
          intel: "b903ea4f122aa04d62c5e6185c4a1f8a414b6c6e97296843bcdeeee6274d04f0"
 
-  url "https:github.comborgbasevortareleasesdownloadv#{version}Vorta-v#{version}-#{arch}.dmg"
+  url "https://ghfast.top/https://github.com/borgbase/vorta/releases/download/v#{version}/Vorta-v#{version}-#{arch}.dmg"
   name "Vorta"
   desc "Desktop Backup Client for Borg"
-  homepage "https:github.comborgbasevorta"
+  homepage "https://github.com/borgbase/vorta"
 
   livecheck do
-    url "https:borgbase.github.iovortaappcast.xml"
+    url "https://borgbase.github.io/vorta/appcast.xml"
     strategy :sparkle
   end
 
@@ -22,7 +22,7 @@ cask "vorta" do
 
   app "Vorta.app"
 
-  zap trash: "~LibraryApplication SupportVorta"
+  zap trash: "~/Library/Application Support/Vorta"
 
   caveats <<~EOS
     #{token} requires BorgBackup to run. If you do not need mount support, use
@@ -34,6 +34,6 @@ cask "vorta" do
     maintained by the Borg team:
 
       brew install --cask macfuse
-      brew install borgbackuptapborgbackup-fuse
+      brew install borgbackup/tap/borgbackup-fuse
   EOS
 end

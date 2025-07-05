@@ -1,14 +1,14 @@
 class Mednafen < Formula
   desc "Multi-system emulator"
-  homepage "https:mednafen.github.io"
-  url "https:mednafen.github.ioreleasesfilesmednafen-1.32.1.tar.xz"
+  homepage "https://mednafen.github.io/"
+  url "https://mednafen.github.io/releases/files/mednafen-1.32.1.tar.xz"
   sha256 "de7eb94ab66212ae7758376524368a8ab208234b33796625ca630547dbc83832"
   license "GPL-2.0-or-later"
   revision 1
 
   livecheck do
-    url "https:mednafen.github.ioreleases"
-    regex(href=.*?mednafen[._-]v?(\d+(?:\.\d+)+)\.ti)
+    url "https://mednafen.github.io/releases/"
+    regex(/href=.*?mednafen[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   bottle do
@@ -36,7 +36,7 @@ class Mednafen < Formula
   on_macos do
     depends_on "gettext"
     # musepack is not bottled on Linux
-    # https:github.comHomebrewhomebrew-corepull92041
+    # https://github.com/Homebrew/homebrew-core/pull/92041
     depends_on "musepack"
   end
 
@@ -53,7 +53,7 @@ class Mednafen < Formula
     ]
     args << "--with-external-mpcdec" if OS.mac? # musepack
 
-    system ".configure", *args, *std_configure_args
+    system "./configure", *args, *std_configure_args
     system "make", "install"
   end
 
@@ -61,6 +61,6 @@ class Mednafen < Formula
     # Test fails on headless CI: Could not initialize SDL: No available video device
     return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
 
-    assert_match version.to_s, shell_output("#{bin}mednafen", 255)
+    assert_match version.to_s, shell_output("#{bin}/mednafen", 255)
   end
 end

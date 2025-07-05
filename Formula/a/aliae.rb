@@ -1,10 +1,10 @@
 class Aliae < Formula
   desc "Cross shell and platform alias management"
-  homepage "https:aliae.dev"
-  url "https:github.comjandedobbeleeraliaearchiverefstagsv0.26.5.tar.gz"
+  homepage "https://aliae.dev"
+  url "https://ghfast.top/https://github.com/jandedobbeleer/aliae/archive/refs/tags/v0.26.5.tar.gz"
   sha256 "fae24264ba59214a657f0e4022e527ecd9459e66eb7bf3fdab1484a2fef78276"
   license "MIT"
-  head "https:github.comjandedobbeleeraliae.git", branch: "main"
+  head "https://github.com/jandedobbeleer/aliae.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "893962f0bc61841a44fb822e3c73b61579b7547f99d5ddd957ac65cad761bb85"
@@ -23,11 +23,11 @@ class Aliae < Formula
       system "go", "build", *std_go_args(ldflags:)
     end
 
-    generate_completions_from_executable(bin"aliae", "completion")
+    generate_completions_from_executable(bin/"aliae", "completion")
   end
 
   test do
-    (testpath".aliae.yaml").write <<~YAML
+    (testpath/".aliae.yaml").write <<~YAML
       alias:
         - name: a
           value: aliae
@@ -36,7 +36,7 @@ class Aliae < Formula
           type: function
     YAML
 
-    output = shell_output("#{bin}aliae init bash")
+    output = shell_output("#{bin}/aliae init bash")
     assert_equal <<~SHELL.chomp, output
       alias a="aliae"
       hello-world() {
@@ -44,6 +44,6 @@ class Aliae < Formula
       }
     SHELL
 
-    assert_match version.to_s, shell_output("#{bin}aliae --version")
+    assert_match version.to_s, shell_output("#{bin}/aliae --version")
   end
 end

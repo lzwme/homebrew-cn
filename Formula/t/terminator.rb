@@ -2,8 +2,8 @@ class Terminator < Formula
   include Language::Python::Virtualenv
 
   desc "Multiple GNOME terminals in one window"
-  homepage "https:gnome-terminator.org"
-  url "https:github.comgnome-terminatorterminatorarchiverefstagsv2.1.5.tar.gz"
+  homepage "https://gnome-terminator.org"
+  url "https://ghfast.top/https://github.com/gnome-terminator/terminator/archive/refs/tags/v2.1.5.tar.gz"
   sha256 "df46cb8fbf4bc80289cabbf59e22a03948a65278c637573db3bc5e7acfd1966b"
   license "GPL-2.0-only"
 
@@ -26,22 +26,22 @@ class Terminator < Formula
   end
 
   resource "configobj" do
-    url "https:files.pythonhosted.orgpackagesf5c4c7f9e41bc2e5f8eeae4a08a01c91b2aea3dfab40a3e14b25e87e7db8d501configobj-5.0.9.tar.gz"
+    url "https://files.pythonhosted.org/packages/f5/c4/c7f9e41bc2e5f8eeae4a08a01c91b2aea3dfab40a3e14b25e87e7db8d501/configobj-5.0.9.tar.gz"
     sha256 "03c881bbf23aa07bccf1b837005975993c4ab4427ba57f959afdd9d1a2386848"
   end
 
   resource "psutil" do
-    url "https:files.pythonhosted.orgpackages2a80336820c1ad9286a4ded7e845b2eccfcb27851ab8ac6abece774a6ff4d3depsutil-7.0.0.tar.gz"
+    url "https://files.pythonhosted.org/packages/2a/80/336820c1ad9286a4ded7e845b2eccfcb27851ab8ac6abece774a6ff4d3de/psutil-7.0.0.tar.gz"
     sha256 "7be9c3eba38beccb6495ea33afd982a44074b78f28c434a1f51cc07fd315c456"
   end
 
   resource "setuptools" do
-    url "https:files.pythonhosted.orgpackages8dd2ec1acaaff45caed5c2dedb33b67055ba9d4e96b091094df90762e60135fesetuptools-80.8.0.tar.gz"
+    url "https://files.pythonhosted.org/packages/8d/d2/ec1acaaff45caed5c2dedb33b67055ba9d4e96b091094df90762e60135fe/setuptools-80.8.0.tar.gz"
     sha256 "49f7af965996f26d43c8ae34539c8d99c5042fbff34302ea151eaa9c207cd257"
   end
 
   resource "six" do
-    url "https:files.pythonhosted.orgpackages94e7b2c673351809dca68a0e064b6af791aa332cf192da575fd474ed7d6f16a2six-1.17.0.tar.gz"
+    url "https://files.pythonhosted.org/packages/94/e7/b2c673351809dca68a0e064b6af791aa332cf192da575fd474ed7d6f16a2/six-1.17.0.tar.gz"
     sha256 "ff70335d468e7eb6ec65b95b99d3a2836546063f63acc5171de367e834932a81"
   end
 
@@ -50,7 +50,7 @@ class Terminator < Formula
   end
 
   test do
-    pid = Process.spawn bin"terminator", "-d", [:out, :err] => "#{testpath}output"
+    pid = Process.spawn bin/"terminator", "-d", [:out, :err] => "#{testpath}/output"
     sleep 30
     Process.kill "TERM", pid
     output = if OS.mac?
@@ -58,7 +58,7 @@ class Terminator < Formula
     else
       "You need to run terminator in an X environment. Make sure $DISPLAY is properly set"
     end
-    assert_match output, File.read("#{testpath}output")
+    assert_match output, File.read("#{testpath}/output")
   ensure
     Process.kill "KILL", pid
   end

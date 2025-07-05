@@ -1,10 +1,10 @@
 class Wthrr < Formula
   desc "Weather Companion for the Terminal"
-  homepage "https:github.comttytmwthrr-the-weathercrab"
-  url "https:github.comttytmwthrr-the-weathercrabarchiverefstagsv1.2.1.tar.gz"
+  homepage "https://github.com/ttytm/wthrr-the-weathercrab"
+  url "https://ghfast.top/https://github.com/ttytm/wthrr-the-weathercrab/archive/refs/tags/v1.2.1.tar.gz"
   sha256 "ff5b47f2046ebefa9ff28cb52ece49a06f7b89230578801c338c77802aa721e0"
   license "MIT"
-  head "https:github.comttytmwthrr-the-weathercrab.git", branch: "main"
+  head "https://github.com/ttytm/wthrr-the-weathercrab.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "762cc039b08678cc91207e5aba373a9926b4d7f6bd14b154080ec4c9f0144778"
@@ -28,12 +28,12 @@ class Wthrr < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}wthrr --version")
-    system bin"wthrr", "-h"
+    assert_match version.to_s, shell_output("#{bin}/wthrr --version")
+    system bin/"wthrr", "-h"
 
     require "pty"
 
-    PTY.spawn(bin"wthrr", "-l", "en_US", "Kyoto") do |r, _w, pid|
+    PTY.spawn(bin/"wthrr", "-l", "en_US", "Kyoto") do |r, _w, pid|
       output = r.gets
       assert_match "Hey friend. I'm glad you are asking.", output
     ensure

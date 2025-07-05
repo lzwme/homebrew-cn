@@ -1,7 +1,7 @@
 class Pedump < Formula
   desc "Dump Windows PE files using Ruby"
-  homepage "https:pedump.me"
-  url "https:github.comzed-0xffpedumparchiverefstagsv0.6.10.tar.gz"
+  homepage "https://pedump.me"
+  url "https://ghfast.top/https://github.com/zed-0xff/pedump/archive/refs/tags/v0.6.10.tar.gz"
   sha256 "fd31800d4e1e6d3cf0116b9b1a5565cde4bfc684bea3bab5a39b58745b44c3f6"
   license "MIT"
 
@@ -16,7 +16,7 @@ class Pedump < Formula
 
   # Backport Gemfile.lock update to fix build on newer Ruby
   patch do
-    url "https:github.comzed-0xffpedumpcommit55072547f30bc4377add1c47a8f0022183b7292d.patch?full_index=1"
+    url "https://github.com/zed-0xff/pedump/commit/55072547f30bc4377add1c47a8f0022183b7292d.patch?full_index=1"
     sha256 "fdb5e6dc525c55b449afbb3082c72270f7512bdfc8e78ae08c99fb169a067efd"
   end
 
@@ -29,19 +29,19 @@ class Pedump < Formula
     system "gem", "build", "#{name}.gemspec"
     system "gem", "install", "#{name}-#{version}.gem"
 
-    bin.install libexec"bin#{name}"
-    bin.env_script_all_files(libexec"bin", GEM_HOME: ENV["GEM_HOME"])
+    bin.install libexec/"bin/#{name}"
+    bin.env_script_all_files(libexec/"bin", GEM_HOME: ENV["GEM_HOME"])
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}pedump --version")
+    assert_match version.to_s, shell_output("#{bin}/pedump --version")
 
     resource "notepad.exe" do
-      url "https:github.comzed-0xffpedumprawmastersamplesnotepad.exe"
+      url "https://github.com/zed-0xff/pedump/raw/master/samples/notepad.exe"
       sha256 "e4dce694ba74eaa2a781f7696c44dcb54fed5aad337dac473ac8a6b77291d977"
     end
 
     resource("notepad.exe").stage testpath
-    assert_match "2008-04-13 18:35:51", shell_output("#{bin}pedump --pe notepad.exe")
+    assert_match "2008-04-13 18:35:51", shell_output("#{bin}/pedump --pe notepad.exe")
   end
 end

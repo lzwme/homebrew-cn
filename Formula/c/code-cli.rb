@@ -1,10 +1,10 @@
 class CodeCli < Formula
   desc "Command-line interface built-in Visual Studio Code"
-  homepage "https:github.commicrosoftvscode"
-  url "https:github.commicrosoftvscodearchiverefstags1.101.2.tar.gz"
+  homepage "https://github.com/microsoft/vscode"
+  url "https://ghfast.top/https://github.com/microsoft/vscode/archive/refs/tags/1.101.2.tar.gz"
   sha256 "d65d04e68ae04a372b1c6b13d0e8a72e2c919e491d4c3b2dcf997b22fc25a509"
   license "MIT"
-  head "https:github.commicrosoftvscode.git", branch: "main"
+  head "https://github.com/microsoft/vscode.git", branch: "main"
 
   livecheck do
     url :stable
@@ -31,7 +31,7 @@ class CodeCli < Formula
 
   def install
     # Ensure that the `openssl` crate picks up the intended library.
-    # https:crates.iocratesopenssl#manual-configuration
+    # https://crates.io/crates/openssl#manual-configuration
     ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
     ENV["OPENSSL_NO_VENDOR"] = "1"
 
@@ -44,19 +44,19 @@ class CodeCli < Formula
   end
 
   test do
-    require "utilslinkage"
+    require "utils/linkage"
 
     assert_match "Successfully removed all unused servers",
-      shell_output("#{bin}code tunnel prune")
-    assert_match version.to_s, shell_output("#{bin}code --version")
+      shell_output("#{bin}/code tunnel prune")
+    assert_match version.to_s, shell_output("#{bin}/code --version")
 
     linked_libraries = [
-      Formula["openssl@3"].opt_libshared_library("libssl"),
-      Formula["openssl@3"].opt_libshared_library("libcrypto"),
+      Formula["openssl@3"].opt_lib/shared_library("libssl"),
+      Formula["openssl@3"].opt_lib/shared_library("libcrypto"),
     ]
 
     linked_libraries.each do |library|
-      assert Utils.binary_linked_to_library?(bin"code", library),
+      assert Utils.binary_linked_to_library?(bin/"code", library),
              "No linkage with #{library.basename}! Cargo is likely using a vendored version."
     end
   end

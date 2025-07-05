@@ -1,11 +1,11 @@
 class Dfc < Formula
-  desc "Display graphs and colors of file system spaceusage"
-  homepage "https:github.comRolinhdfc"
-  url "https:github.comRolinhdfcreleasesdownloadv3.1.1dfc-3.1.1.tar.gz"
+  desc "Display graphs and colors of file system space/usage"
+  homepage "https://github.com/Rolinh/dfc"
+  url "https://ghfast.top/https://github.com/Rolinh/dfc/releases/download/v3.1.1/dfc-3.1.1.tar.gz"
   sha256 "962466e77407dd5be715a41ffc50a54fce758a78831546f03a6bb282e8692e54"
   license "BSD-3-Clause"
   revision 1
-  head "https:github.comRolinhdfc.git", branch: "master"
+  head "https://github.com/Rolinh/dfc.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -40,7 +40,7 @@ class Dfc < Formula
   end
 
   test do
-    system bin"dfc", "-T"
-    assert_match ",%USED,", shell_output("#{bin}dfc -e csv")
+    system bin/"dfc", "-T"
+    assert_match ",%USED,", shell_output("#{bin}/dfc -e csv")
   end
 end

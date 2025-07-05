@@ -1,10 +1,10 @@
 class Moar < Formula
   desc "Nice to use pager for humans"
-  homepage "https:github.comwallesmoar"
-  url "https:github.comwallesmoararchiverefstagsv1.32.2.tar.gz"
+  homepage "https://github.com/walles/moar"
+  url "https://ghfast.top/https://github.com/walles/moar/archive/refs/tags/v1.32.2.tar.gz"
   sha256 "50f485235ff1d7d3dc8fdb3042624dbb1ccdedc0e6bc825cdcd9aed045352801"
   license "BSD-2-Clause"
-  head "https:github.comwallesmoar.git", branch: "master"
+  head "https://github.com/walles/moar.git", branch: "master"
 
   no_autobump! because: :bumped_by_upstream
 
@@ -30,9 +30,9 @@ class Moar < Formula
 
   test do
     # Test piping text through moar
-    (testpath"test.txt").write <<~EOS
+    (testpath/"test.txt").write <<~EOS
       tyre kicking
     EOS
-    assert_equal "tyre kicking", shell_output("#{bin}moar test.txt").strip
+    assert_equal "tyre kicking", shell_output("#{bin}/moar test.txt").strip
   end
 end

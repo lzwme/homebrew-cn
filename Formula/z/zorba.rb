@@ -1,7 +1,7 @@
 class Zorba < Formula
   desc "NoSQL query processor"
-  homepage "http:www.zorba.io"
-  url "https:github.com28mseczorbaarchiverefstags3.1.tar.gz"
+  homepage "http://www.zorba.io/"
+  url "https://ghfast.top/https://github.com/28msec/zorba/archive/refs/tags/3.1.tar.gz"
   sha256 "05eed935c0ff3626934a5a70724a42410fd93bc96aba1fa4821736210c7f1dd8"
   license "Apache-2.0"
   revision 20
@@ -16,8 +16,8 @@ class Zorba < Formula
     sha256 ventura:       "7b79034310f8f4f18b21d777540d03279dd7de8ba6e9950f722ca2b93439992e"
   end
 
-  # https:github.com28mseczorbaissues232
-  # no longer build due to `'boostfilesystemconvenience.hpp' file not found`
+  # https://github.com/28msec/zorba/issues/232
+  # no longer build due to `'boost/filesystem/convenience.hpp' file not found`
   disable! date: "2025-05-01", because: :does_not_build
 
   depends_on "cmake" => :build
@@ -31,9 +31,9 @@ class Zorba < Formula
   conflicts_with "xqilla", because: "both supply `xqc.h`"
 
   # Fixes for missing headers and namespaces from open PR in GitHub repo linked via homepage
-  # PR ref: https:github.comzorba-processorzorbapull19
+  # PR ref: https://github.com/zorba-processor/zorba/pull/19
   patch do
-    url "https:github.comzorba-processorzorbacommite2fddf7bd618dad9dc1e684a2c1ad61103b6e8d2.patch?full_index=1"
+    url "https://github.com/zorba-processor/zorba/commit/e2fddf7bd618dad9dc1e684a2c1ad61103b6e8d2.patch?full_index=1"
     sha256 "2c4f0ade4f83ca2fd1ee8344682326d7e0ab3037d0de89941281c90875fcd914"
   end
 
@@ -50,6 +50,6 @@ class Zorba < Formula
   end
 
   test do
-    assert_equal "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n2", shell_output("#{bin}zorba -q 1+1").strip
+    assert_equal "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n2", shell_output("#{bin}/zorba -q 1+1").strip
   end
 end

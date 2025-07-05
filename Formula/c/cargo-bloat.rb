@@ -1,10 +1,10 @@
 class CargoBloat < Formula
   desc "Find out what takes most of the space in your executable"
-  homepage "https:github.comRazrFalconcargo-bloat"
-  url "https:github.comRazrFalconcargo-bloatarchiverefstagsv0.12.1.tar.gz"
+  homepage "https://github.com/RazrFalcon/cargo-bloat"
+  url "https://ghfast.top/https://github.com/RazrFalcon/cargo-bloat/archive/refs/tags/v0.12.1.tar.gz"
   sha256 "8195cebb94a740cd3b89611ae79d7d3e2d8fd8ec297f5a0f07efa7069ef05be7"
   license "MIT"
-  head "https:github.comRazrFalconcargo-bloat.git", branch: "master"
+  head "https://github.com/RazrFalcon/cargo-bloat.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "330a8ee78cfb647dd2d262e2a9e61bf5147e1329082864f71ab2162ad7a54c88"
@@ -27,17 +27,17 @@ class CargoBloat < Formula
 
   test do
     # Show that we can use a different toolchain than the one provided by the `rust` formula.
-    # https:github.comHomebrewhomebrew-corepull134074#pullrequestreview-1484979359
+    # https://github.com/Homebrew/homebrew-core/pull/134074#pullrequestreview-1484979359
     ENV.prepend_path "PATH", Formula["rustup"].bin
     system "rustup", "set", "profile", "minimal"
     system "rustup", "default", "beta"
 
     system "cargo", "new", "hello_world", "--bin"
     cd "hello_world" do
-      output = shell_output("#{bin}cargo-bloat --release -n 10 2>&1", 1)
+      output = shell_output("#{bin}/cargo-bloat --release -n 10 2>&1", 1)
       assert_match "Error: can be run only via `cargo bloat`", output
       output = shell_output("cargo bloat --release -n 10 2>&1")
-      assert_match "Analyzing targetreleasehello_world", output
+      assert_match "Analyzing target/release/hello_world", output
     end
   end
 end

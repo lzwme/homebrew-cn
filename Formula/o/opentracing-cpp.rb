@@ -1,7 +1,7 @@
 class OpentracingCpp < Formula
   desc "OpenTracing API for C++"
-  homepage "https:opentracing.io"
-  url "https:github.comopentracingopentracing-cpparchiverefstagsv1.6.0.tar.gz"
+  homepage "https://opentracing.io/"
+  url "https://ghfast.top/https://github.com/opentracing/opentracing-cpp/archive/refs/tags/v1.6.0.tar.gz"
   sha256 "5b170042da4d1c4c231df6594da120875429d5231e9baa5179822ee8d1054ac3"
   license "Apache-2.0"
 
@@ -33,13 +33,13 @@ class OpentracingCpp < Formula
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 
-    pkgshare.install "exampletutorialtutorial-example.cpp"
-    pkgshare.install "exampletutorialtext_map_carrier.h"
+    pkgshare.install "example/tutorial/tutorial-example.cpp"
+    pkgshare.install "example/tutorial/text_map_carrier.h"
   end
 
   test do
-    system ENV.cxx, "#{pkgshare}tutorial-example.cpp", "-std=c++11", "-L#{lib}", "-I#{include}",
+    system ENV.cxx, "#{pkgshare}/tutorial-example.cpp", "-std=c++11", "-L#{lib}", "-I#{include}",
                     "-lopentracing", "-lopentracing_mocktracer", "-o", "tutorial-example"
-    system ".tutorial-example"
+    system "./tutorial-example"
   end
 end

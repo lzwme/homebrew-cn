@@ -5,14 +5,14 @@ cask "gearsystem" do
   sha256 arm:   "56113a22431608a5afbcb4d00543a6ad501b9b1f500cc6175f7810a13533abf6",
          intel: "8ea0fe8b74cf4cefc110aec73068f90c4cd7a4e0da062c6eed7df057a884692a"
 
-  url "https:github.comdrheliusGearsystemreleasesdownload#{version}Gearsystem-#{version}-macos-#{arch}.zip"
+  url "https://ghfast.top/https://github.com/drhelius/Gearsystem/releases/download/#{version}/Gearsystem-#{version}-macos-#{arch}.zip"
   name "Gearsystem"
   desc "Sega Master System, Game Gear and SG-1000 emulator"
-  homepage "https:github.comdrheliusGearsystem"
+  homepage "https://github.com/drhelius/Gearsystem"
 
   container nested: "Gearsystem.app.zip"
 
   app "Gearsystem.app"
 
-  zap trash: "~LibrarySaved Application Stateme.ignaciosanchez.Gearsystem.savedState"
+  zap trash: "~/Library/Saved Application State/me.ignaciosanchez.Gearsystem.savedState"
 end

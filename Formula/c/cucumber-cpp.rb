@@ -1,7 +1,7 @@
 class CucumberCpp < Formula
   desc "Support for writing Cucumber step definitions in C++"
-  homepage "https:cucumber.io"
-  url "https:github.comcucumbercucumber-cpp.git",
+  homepage "https://cucumber.io"
+  url "https://github.com/cucumber/cucumber-cpp.git",
       tag:      "v0.7.0",
       revision: "ceb025fb720f59b3c8d98ab0de02925e7eab225c"
   license "MIT"
@@ -48,22 +48,22 @@ class CucumberCpp < Formula
 
     system "gem", "install", "cucumber:9.2.1", "cucumber-wire:7.0.0", "--no-document"
 
-    (testpath"featurestest.feature").write <<~CUCUMBER
+    (testpath/"features/test.feature").write <<~CUCUMBER
       Feature: Test
         Scenario: Just for test
           Given A given statement
           When A when statement
           Then A then statement
     CUCUMBER
-    (testpath"featuresstep_definitionscucumber.wire").write <<~EOS
+    (testpath/"features/step_definitions/cucumber.wire").write <<~EOS
       host: localhost
       port: 3902
     EOS
-    (testpath"featuressupportwire.rb").write <<~RUBY
-      require 'cucumberwire'
+    (testpath/"features/support/wire.rb").write <<~RUBY
+      require 'cucumber/wire'
     RUBY
-    (testpath"test.cpp").write <<~CPP
-      #include <cucumber-cppgeneric.hpp>
+    (testpath/"test.cpp").write <<~CPP
+      #include <cucumber-cpp/generic.hpp>
       GIVEN("^A given statement$") {
       }
       WHEN("^A when statement$") {
@@ -75,7 +75,7 @@ class CucumberCpp < Formula
     system ENV.cxx, "-std=c++17", "test.cpp", "-o", "test", "-I#{include}", "-L#{lib}", "-lcucumber-cpp", "-pthread"
 
     begin
-      pid = spawn ".test"
+      pid = spawn "./test"
       sleep 1
       expected = <<~EOS
         Feature: Test
@@ -88,7 +88,7 @@ class CucumberCpp < Formula
         1 scenario (1 passed)
         3 steps (3 passed)
       EOS
-      assert_match expected, shell_output("#{testpath}bincucumber --quiet")
+      assert_match expected, shell_output("#{testpath}/bin/cucumber --quiet")
     ensure
       Process.kill("SIGINT", pid)
       Process.wait(pid)

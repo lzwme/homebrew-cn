@@ -1,10 +1,10 @@
 class XcodeKotlin < Formula
   desc "Kotlin Native Xcode Plugin"
-  homepage "https:github.comtouchlabxcode-kotlin"
-  url "https:github.comtouchlabxcode-kotlinarchiverefstags2.2.1.tar.gz"
+  homepage "https://github.com/touchlab/xcode-kotlin"
+  url "https://ghfast.top/https://github.com/touchlab/xcode-kotlin/archive/refs/tags/2.2.1.tar.gz"
   sha256 "3789d886022509cb232616679835a7dd67e4adb4983a24f1ce268aa244978aa8"
   license "Apache-2.0"
-  head "https:github.comtouchlabxcode-kotlin.git", branch: "main"
+  head "https://github.com/touchlab/xcode-kotlin.git", branch: "main"
 
   no_autobump! because: :requires_manual_review
 
@@ -23,16 +23,16 @@ class XcodeKotlin < Formula
   def install
     suffix = Hardware::CPU.intel? ? "X64" : "Arm64"
     system "gradle", "--no-daemon", "linkReleaseExecutableMacos#{suffix}", "preparePlugin"
-    bin.install "buildbinmacos#{suffix}releaseExecutablexcode-kotlin.kexe" => "xcode-kotlin"
-    share.install Dir["buildshare*"]
+    bin.install "build/bin/macos#{suffix}/releaseExecutable/xcode-kotlin.kexe" => "xcode-kotlin"
+    share.install Dir["build/share/*"]
   end
 
   test do
-    output = shell_output(bin"xcode-kotlin info --only")
-    assert_match(Bundled plugin version:\s*#{version}, output)
-    assert_match(Installed plugin version:\s*(?:(?:\d+)\.(?:\d+)\.(?:\d+)|none), output)
-    assert_match(Language spec installed:\s*(?:Yes|No), output)
-    assert_match(LLDB init installed:\s*(?:Yes|No), output)
-    assert_match(LLDB Xcode init sources main LLDB init:\s*(?:Yes|No), output)
+    output = shell_output(bin/"xcode-kotlin info --only")
+    assert_match(/Bundled plugin version:\s*#{version}/, output)
+    assert_match(/Installed plugin version:\s*(?:(?:\d+)\.(?:\d+)\.(?:\d+)|none)/, output)
+    assert_match(/Language spec installed:\s*(?:Yes|No)/, output)
+    assert_match(/LLDB init installed:\s*(?:Yes|No)/, output)
+    assert_match(/LLDB Xcode init sources main LLDB init:\s*(?:Yes|No)/, output)
   end
 end

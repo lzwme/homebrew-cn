@@ -2,10 +2,10 @@ cask "opensc-app" do
   version "0.26.1"
   sha256 "7b66e256cefc7fdf6d9267383ac9e4763e299339aa52c99973f414b8a6a2ee05"
 
-  url "https:github.comOpenSCOpenSCreleasesdownload#{version}OpenSC-#{version}.dmg"
+  url "https://ghfast.top/https://github.com/OpenSC/OpenSC/releases/download/#{version}/OpenSC-#{version}.dmg"
   name "OpenSC"
   desc "Smart card libraries and utilities"
-  homepage "https:github.comOpenSCOpenSCwiki"
+  homepage "https://github.com/OpenSC/OpenSC/wiki"
 
   no_autobump! because: :requires_manual_review
 
@@ -16,7 +16,7 @@ cask "opensc-app" do
               "org.opensc-project.mac.pkcs11-register",
             ],
             script:    {
-              executable: "usrlocalbinopensc-uninstall",
+              executable: "/usr/local/bin/opensc-uninstall",
               sudo:       true,
             },
             pkgutil:   [
@@ -24,5 +24,5 @@ cask "opensc-app" do
               "org.opensc-project.startup",
             ]
 
-  zap trash: "~LibrarySaved Application Stateorg.opensc-project.mac.opensctoken.OpenSCTokenApp.savedState"
+  zap trash: "~/Library/Saved Application State/org.opensc-project.mac.opensctoken.OpenSCTokenApp.savedState"
 end

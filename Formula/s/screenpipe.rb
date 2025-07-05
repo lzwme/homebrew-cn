@@ -1,7 +1,7 @@
 class Screenpipe < Formula
   desc "Library to build personalized AI powered by what you've seen, said, or heard"
-  homepage "https:github.commediar-aiscreenpipe"
-  url "https:github.commediar-aiscreenpipearchiverefstagsv0.2.13.tar.gz"
+  homepage "https://github.com/mediar-ai/screenpipe"
+  url "https://ghfast.top/https://github.com/mediar-ai/screenpipe/archive/refs/tags/v0.2.13.tar.gz"
   sha256 "eb3599daabc1312b5c1a7799c1ec8ab715aa02d9216a6aa42d930039c84a70c9"
   license "MIT"
 
@@ -34,18 +34,18 @@ class Screenpipe < Formula
   def install
     features = ["--features", "metal,pipes"] if OS.mac? && Hardware::CPU.arm?
     system "cargo", "install", *features, *std_cargo_args(path: "screenpipe-server")
-    lib.install "screenpipe-visionliblibscreenpipe_#{Hardware::CPU.arch}.dylib" if OS.mac?
+    lib.install "screenpipe-vision/lib/libscreenpipe_#{Hardware::CPU.arch}.dylib" if OS.mac?
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}screenpipe -V")
+    assert_match version.to_s, shell_output("#{bin}/screenpipe -V")
 
-    log_file = testpath".screenpipescreenpipe.#{time.strftime("%Y-%m-%d")}.log"
-    pid = spawn bin"screenpipe", "--disable-vision", "--disable-audio", "--disable-telemetry"
+    log_file = testpath/".screenpipe/screenpipe.#{time.strftime("%Y-%m-%d")}.log"
+    pid = spawn bin/"screenpipe", "--disable-vision", "--disable-audio", "--disable-telemetry"
     sleep 200
 
     assert_path_exists log_file
-    assert_match(INFO.*screenpipe, File.read(log_file))
+    assert_match(/INFO.*screenpipe/, File.read(log_file))
   ensure
     Process.kill("TERM", pid)
     Process.wait(pid)

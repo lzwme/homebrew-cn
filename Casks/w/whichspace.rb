@@ -2,10 +2,10 @@ cask "whichspace" do
   version "0.3.2"
   sha256 "8a59e12862af491de4c42413c839426c28dcb2f29138bfa2f45529c079119ce8"
 
-  url "https:github.comgechrWhichSpacereleasesdownloadv#{version}WhichSpace.zip"
+  url "https://ghfast.top/https://github.com/gechr/WhichSpace/releases/download/v#{version}/WhichSpace.zip"
   name "WhichSpace"
   desc "Active space menu bar icon"
-  homepage "https:github.comgechrWhichSpace"
+  homepage "https://github.com/gechr/WhichSpace"
 
   no_autobump! because: :requires_manual_review
 
@@ -17,10 +17,10 @@ cask "whichspace" do
   uninstall quit: "io.gechr.WhichSpace"
 
   zap trash: [
-    "~LibraryCachesio.gechr.WhichSpace",
-    "~LibraryCookiesio.gechr.WhichSpace.binarycookies",
-    "~LibraryPreferencesio.gechr.WhichSpace.plist",
-    "~LibrarySaved Application Stateio.gechr.WhichSpace.savedState",
+    "~/Library/Caches/io.gechr.WhichSpace",
+    "~/Library/Cookies/io.gechr.WhichSpace.binarycookies",
+    "~/Library/Preferences/io.gechr.WhichSpace.plist",
+    "~/Library/Saved Application State/io.gechr.WhichSpace.savedState",
   ]
 
   caveats do

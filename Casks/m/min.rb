@@ -5,14 +5,14 @@ cask "min" do
   sha256 arm:   "18cc5299be51b4038f1969a09a2bb1a4aaf7ac4868c5439835a6ff6563f7fb0f",
          intel: "25316857990ca26b1b2701fd26a0774e5160cd47731b4a8314dda4f46b80fd7f"
 
-  url "https:github.comminbrowserminreleasesdownloadv#{version}min-v#{version}-mac-#{arch}.zip",
-      verified: "github.comminbrowsermin"
+  url "https://ghfast.top/https://github.com/minbrowser/min/releases/download/v#{version}/min-v#{version}-mac-#{arch}.zip",
+      verified: "github.com/minbrowser/min/"
   name "Min"
   desc "Minimal browser that protects privacy"
-  homepage "https:minbrowser.org"
+  homepage "https://minbrowser.org/"
 
   livecheck do
-    url "https:minbrowser.orgminupdateslatestVersion.json"
+    url "https://minbrowser.org/min/updates/latestVersion.json"
     strategy :json do |json|
       json["version"]
     end
@@ -26,8 +26,8 @@ cask "min" do
   app "Min.app"
 
   zap trash: [
-    "~LibraryApplication SupportMin",
-    "~LibraryCachesMin",
-    "~LibrarySaved Application Statecom.electron.min.savedState",
+    "~/Library/Application Support/Min",
+    "~/Library/Caches/Min",
+    "~/Library/Saved Application State/com.electron.min.savedState",
   ]
 end

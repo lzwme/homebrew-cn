@@ -1,10 +1,10 @@
 class ThePlatinumSearcher < Formula
   desc "Multi-platform code-search similar to ack and ag"
-  homepage "https:github.commonochromeganethe_platinum_searcher"
-  url "https:github.commonochromeganethe_platinum_searcherarchiverefstagsv2.2.0.tar.gz"
+  homepage "https://github.com/monochromegane/the_platinum_searcher"
+  url "https://ghfast.top/https://github.com/monochromegane/the_platinum_searcher/archive/refs/tags/v2.2.0.tar.gz"
   sha256 "3d5412208644b13723b2b7ca4af0870d25c654e3a76feee846164c51b88240b0"
   license "MIT"
-  head "https:github.commonochromeganethe_platinum_searcher.git", branch: "master"
+  head "https://github.com/monochromegane/the_platinum_searcher.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -29,21 +29,21 @@ class ThePlatinumSearcher < Formula
   conflicts_with "tcl-tk", because: "both install `pt` binaries"
 
   # Patch to remove godep dependency. Remove when this is merged into release:
-  # https:github.commonochromeganethe_platinum_searcherpull211
+  # https://github.com/monochromegane/the_platinum_searcher/pull/211
   patch do
-    url "https:github.commonochromeganethe_platinum_searchercommit763f368fe26fa44a12e1a37598185322aa30ba8f.patch?full_index=1"
+    url "https://github.com/monochromegane/the_platinum_searcher/commit/763f368fe26fa44a12e1a37598185322aa30ba8f.patch?full_index=1"
     sha256 "2ee0f53065663f22f3c44b30c5804e37b8cb49200a30c4513b9ef668441dd543"
   end
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w", output: bin"pt"), ".cmdpt"
+    system "go", "build", *std_go_args(ldflags: "-s -w", output: bin/"pt"), "./cmd/pt"
   end
 
   test do
-    path = testpath"hello_world.txt"
+    path = testpath/"hello_world.txt"
     path.write "Hello World!"
 
-    lines = shell_output("#{bin}pt 'Hello World!' #{path}").strip.split(":")
+    lines = shell_output("#{bin}/pt 'Hello World!' #{path}").strip.split(":")
     assert_equal "Hello World!", lines[2]
   end
 end

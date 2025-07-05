@@ -1,7 +1,7 @@
 class Libpaper < Formula
   desc "Library for handling paper characteristics"
-  homepage "https:github.comrrthomaslibpaper"
-  url "https:github.comrrthomaslibpaperreleasesdownloadv2.2.6libpaper-2.2.6.tar.gz"
+  homepage "https://github.com/rrthomas/libpaper"
+  url "https://ghfast.top/https://github.com/rrthomas/libpaper/releases/download/v2.2.6/libpaper-2.2.6.tar.gz"
   sha256 "500d39dc58768ee09688738c8b5bfe07640ba2fd6c25a6dc78810eb69c719e93"
   license "LGPL-2.1-or-later"
 
@@ -18,15 +18,15 @@ class Libpaper < Formula
   depends_on "help2man" => :build
 
   def install
-    system ".configure", *std_configure_args, "--sysconfdir=#{etc}"
+    system "./configure", *std_configure_args, "--sysconfdir=#{etc}"
     system "make", "install"
   end
 
   test do
-    assert_match "A4: 210x297 mm", shell_output("#{bin}paper --all")
-    assert_match "paper #{version}", shell_output("#{bin}paper --version")
+    assert_match "A4: 210x297 mm", shell_output("#{bin}/paper --all")
+    assert_match "paper #{version}", shell_output("#{bin}/paper --version")
 
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include <paper.h>
       int main()
       {
@@ -36,6 +36,6 @@ class Libpaper < Formula
       }
     C
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lpaper", "-o", "test"
-    system ".test"
+    system "./test"
   end
 end

@@ -1,11 +1,11 @@
 class Pcl < Formula
-  desc "Library for 2D3D image and point cloud processing"
-  homepage "https:pointclouds.org"
-  url "https:github.comPointCloudLibrarypclarchiverefstagspcl-1.15.0.tar.gz"
+  desc "Library for 2D/3D image and point cloud processing"
+  homepage "https://pointclouds.org/"
+  url "https://ghfast.top/https://github.com/PointCloudLibrary/pcl/archive/refs/tags/pcl-1.15.0.tar.gz"
   sha256 "e90c981c21e89c45201c5083db8308e099f34c1782f92fd65a0a4eb0b72c6fbf"
   license "BSD-3-Clause"
   revision 1
-  head "https:github.comPointCloudLibrarypcl.git", branch: "master"
+  head "https://github.com/PointCloudLibrary/pcl.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:  "03fde7c94634272d2b7b00d03942edbfd0a522be1dccb79d6cc7c5bbc8a31f42"
@@ -77,9 +77,9 @@ class Pcl < Formula
   end
 
   test do
-    assert_match "tiff files", shell_output("#{bin}pcl_tiff2pcd -h", 255)
-    # inspired by https:pointclouds.orgdocumentationtutorialswriting_pcd.html
-    (testpath"CMakeLists.txt").write <<~CMAKE
+    assert_match "tiff files", shell_output("#{bin}/pcl_tiff2pcd -h", 255)
+    # inspired by https://pointclouds.org/documentation/tutorials/writing_pcd.html
+    (testpath/"CMakeLists.txt").write <<~CMAKE
       cmake_minimum_required(VERSION 4.0 FATAL_ERROR)
       project(pcd_write)
       find_package(PCL 1.2 REQUIRED)
@@ -89,16 +89,16 @@ class Pcl < Formula
       add_executable (pcd_write pcd_write.cpp)
       target_link_libraries (pcd_write ${PCL_LIBRARIES})
     CMAKE
-    (testpath"pcd_write.cpp").write <<~CPP
+    (testpath/"pcd_write.cpp").write <<~CPP
       #include <iostream>
-      #include <pcliopcd_io.h>
-      #include <pclpoint_types.h>
+      #include <pcl/io/pcd_io.h>
+      #include <pcl/point_types.h>
 
       int main (int argc, char** argv)
       {
         pcl::PointCloud<pcl::PointXYZ> cloud;
 
-         Fill in the cloud data
+        // Fill in the cloud data
         cloud.width    = 2;
         cloud.height   = 1;
         cloud.is_dense = false;
@@ -116,9 +116,9 @@ class Pcl < Formula
       }
     CPP
     # the following line is needed to workaround a bug in test-bot
-    # (Homebrewhomebrew-test-bot#544) when bumping the boost
+    # (Homebrew/homebrew-test-bot#544) when bumping the boost
     # revision without bumping this formula's revision as well
-    ENV.prepend_path "PKG_CONFIG_PATH", Formula["eigen"].opt_share"pkgconfig"
+    ENV.prepend_path "PKG_CONFIG_PATH", Formula["eigen"].opt_share/"pkgconfig"
 
     ENV.delete "CPATH" # `error: no member named 'signbit' in the global namespace`
 
@@ -126,8 +126,8 @@ class Pcl < Formula
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
-    system ".buildpcd_write"
-    assert_path_exists testpath"test_pcd.pcd"
+    system "./build/pcd_write"
+    assert_path_exists testpath/"test_pcd.pcd"
     output = File.read("test_pcd.pcd")
     assert_match "POINTS 2", output
     assert_match "1 2 3", output

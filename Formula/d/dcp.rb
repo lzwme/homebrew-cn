@@ -1,10 +1,10 @@
 class Dcp < Formula
   desc "Docker cp made easy"
-  homepage "https:github.comexdxdcp"
-  url "https:github.comexdxdcparchiverefstagsv0.4.1.tar.gz"
+  homepage "https://github.com/exdx/dcp"
+  url "https://ghfast.top/https://github.com/exdx/dcp/archive/refs/tags/v0.4.1.tar.gz"
   sha256 "7d9caa94c6a099762f367901cb0ccbe63130026f903e5477f4403d0cfff98b53"
   license "MIT"
-  head "https:github.comexdxdcp.git", branch: "main"
+  head "https://github.com/exdx/dcp.git", branch: "main"
 
   no_autobump! because: :requires_manual_review
 
@@ -27,9 +27,9 @@ class Dcp < Formula
   end
 
   test do
-    output = shell_output("#{bin}dcp busybox 2>&1", 1)
+    output = shell_output("#{bin}/dcp busybox 2>&1", 1)
     assert_match "docker socket not found: falling back to podman configuration", output
 
-    assert_match version.to_s, shell_output("#{bin}dcp --version")
+    assert_match version.to_s, shell_output("#{bin}/dcp --version")
   end
 end

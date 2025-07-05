@@ -1,7 +1,7 @@
 class Odpi < Formula
   desc "Oracle Database Programming Interface for Drivers and Applications"
-  homepage "https:oracle.github.ioodpi"
-  url "https:github.comoracleodpiarchiverefstagsv5.6.0.tar.gz"
+  homepage "https://oracle.github.io/odpi/"
+  url "https://ghfast.top/https://github.com/oracle/odpi/archive/refs/tags/v5.6.0.tar.gz"
   sha256 "cccb2a6c2e6e5510095a33a3329929aa4a74477a3816b3e7327a3e71ceff9118"
   license any_of: ["Apache-2.0", "UPL-1.0"]
 
@@ -21,7 +21,7 @@ class Odpi < Formula
   end
 
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include <stdio.h>
       #include <dpi.h>
 
@@ -37,6 +37,6 @@ class Odpi < Formula
     C
 
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lodpic", "-o", "test"
-    system ".test"
+    system "./test"
   end
 end

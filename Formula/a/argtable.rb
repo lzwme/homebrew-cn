@@ -1,7 +1,7 @@
 class Argtable < Formula
   desc "ANSI C library for parsing GNU-style command-line options"
-  homepage "https:argtable.sourceforge.io"
-  url "https:downloads.sourceforge.netprojectargtableargtableargtable-2.13argtable2-13.tar.gz"
+  homepage "https://argtable.sourceforge.io"
+  url "https://downloads.sourceforge.net/project/argtable/argtable/argtable-2.13/argtable2-13.tar.gz"
   version "2.13"
   sha256 "8f77e8a7ced5301af6e22f47302fdbc3b1ff41f2b83c43c77ae5ca041771ddbf"
   license "LGPL-2.0-or-later"
@@ -29,7 +29,7 @@ class Argtable < Formula
 
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
-    url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-pre-0.4.2.418-big_sur.diff"
+    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-pre-0.4.2.418-big_sur.diff"
     sha256 "83af02f2aa2b746bb7225872cab29a253264be49db0ecebb12f841562d9a2923"
   end
 
@@ -41,12 +41,12 @@ class Argtable < Formula
     # Help old config scripts identify arm64 linux
     args << "--build=aarch64-unknown-linux-gnu" if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
 
-    system ".configure", *args, *std_configure_args
+    system "./configure", *args, *std_configure_args
     system "make", "install"
   end
 
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include "argtable2.h"
       #include <assert.h>
       #include <stdio.h>
@@ -66,8 +66,8 @@ class Argtable < Formula
     C
     system ENV.cc, "test.c", "-L#{lib}", "-I#{include}", "-largtable2",
                    "-o", "test"
-    assert_match "Received option", shell_output(".test -a")
-    assert_match "Received option", shell_output(".test --all")
-    assert_match "Invalid option", shell_output(".test -t")
+    assert_match "Received option", shell_output("./test -a")
+    assert_match "Received option", shell_output("./test --all")
+    assert_match "Invalid option", shell_output("./test -t")
   end
 end

@@ -1,7 +1,7 @@
 class Pgformatter < Formula
   desc "PostgreSQL syntax beautifier"
-  homepage "https:sqlformat.darold.net"
-  url "https:github.comdaroldpgFormatterarchiverefstagsv5.6.tar.gz"
+  homepage "https://sqlformat.darold.net/"
+  url "https://ghfast.top/https://github.com/darold/pgFormatter/archive/refs/tags/v5.6.tar.gz"
   sha256 "21a7f958cd3fe5d9c7851a882948278440bc9fd609e1a79ed5b8cf613d267fab"
   license "PostgreSQL"
 
@@ -21,19 +21,19 @@ class Pgformatter < Formula
 
     if OS.linux?
       # Move man pages to share directory so they will be linked correctly on Linux
-      mkdir "usrlocalshare"
-      mv "usrlocalman", "usrlocalshare"
+      mkdir "usr/local/share"
+      mv "usr/local/man", "usr/local/share"
     end
 
-    prefix.install (buildpath"usrlocal").children
-    (libexec"lib").install "bliblibpgFormatter"
-    libexec.install bin"pg_format"
-    bin.install_symlink libexec"pg_format"
+    prefix.install (buildpath/"usr/local").children
+    (libexec/"lib").install "blib/lib/pgFormatter"
+    libexec.install bin/"pg_format"
+    bin.install_symlink libexec/"pg_format"
   end
 
   test do
-    test_file = (testpath"test.sql")
+    test_file = (testpath/"test.sql")
     test_file.write("SELECT * FROM foo")
-    system bin"pg_format", test_file
+    system bin/"pg_format", test_file
   end
 end

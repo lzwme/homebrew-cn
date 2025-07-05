@@ -1,7 +1,7 @@
 class Cmark < Formula
   desc "Strongly specified, highly compatible implementation of Markdown"
-  homepage "https:commonmark.org"
-  url "https:github.comcommonmarkcmarkarchiverefstags0.31.1.tar.gz"
+  homepage "https://commonmark.org/"
+  url "https://ghfast.top/https://github.com/commonmark/cmark/archive/refs/tags/0.31.1.tar.gz"
   sha256 "3da93db5469c30588cfeb283d9d62edfc6ded9eb0edc10a4f5bbfb7d722ea802"
   license "BSD-2-Clause"
   revision 1
@@ -26,7 +26,7 @@ class Cmark < Formula
   end
 
   test do
-    output = pipe_output(bin"cmark", "*hello, world*")
-    assert_equal "<p><em>hello, world<em><p>", output.chomp
+    output = pipe_output(bin/"cmark", "*hello, world*")
+    assert_equal "<p><em>hello, world</em></p>", output.chomp
   end
 end

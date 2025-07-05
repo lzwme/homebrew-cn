@@ -1,10 +1,10 @@
 class DockerCompose < Formula
   desc "Isolated development environments using Docker"
-  homepage "https:docs.docker.comcompose"
-  url "https:github.comdockercomposearchiverefstagsv2.38.1.tar.gz"
+  homepage "https://docs.docker.com/compose/"
+  url "https://ghfast.top/https://github.com/docker/compose/archive/refs/tags/v2.38.1.tar.gz"
   sha256 "874fda5c816726c442eadebcbc9c08af6b1f980a949d92ac42a16bd9bd2d3d24"
   license "Apache-2.0"
-  head "https:github.comdockercompose.git", branch: "main"
+  head "https://github.com/docker/compose.git", branch: "main"
 
   # Upstream creates releases that use a stable tag (e.g., `v1.2.3`) but are
   # labeled as "pre-release" on GitHub before the version is released, so it's
@@ -30,24 +30,24 @@ class DockerCompose < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.comdockercomposev2internal.Version=#{version}
+      -X github.com/docker/compose/v2/internal.Version=#{version}
     ]
-    system "go", "build", *std_go_args(ldflags:), ".cmd"
+    system "go", "build", *std_go_args(ldflags:), "./cmd"
 
-    (lib"dockercli-plugins").install_symlink bin"docker-compose"
+    (lib/"docker/cli-plugins").install_symlink bin/"docker-compose"
   end
 
   def caveats
     <<~EOS
-      Compose is a Docker plugin. For Docker to find the plugin, add "cliPluginsExtraDirs" to ~.dockerconfig.json:
+      Compose is a Docker plugin. For Docker to find the plugin, add "cliPluginsExtraDirs" to ~/.docker/config.json:
         "cliPluginsExtraDirs": [
-            "#{HOMEBREW_PREFIX}libdockercli-plugins"
+            "#{HOMEBREW_PREFIX}/lib/docker/cli-plugins"
         ]
     EOS
   end
 
   test do
-    output = shell_output(bin"docker-compose up 2>&1", 1)
+    output = shell_output(bin/"docker-compose up 2>&1", 1)
     assert_match "no configuration file provided", output
   end
 end

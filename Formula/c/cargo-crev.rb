@@ -1,13 +1,13 @@
 class CargoCrev < Formula
   desc "Code review system for the cargo package manager"
-  homepage "https:github.comcrev-devcargo-crev"
-  url "https:github.comcrev-devcargo-crevarchiverefstagsv0.26.4.tar.gz"
+  homepage "https://github.com/crev-dev/cargo-crev"
+  url "https://ghfast.top/https://github.com/crev-dev/cargo-crev/archive/refs/tags/v0.26.4.tar.gz"
   sha256 "f8413baf3dc420d7cd217f8330dc6665e3e8ed87312c1d75fde3e6afbe84b6a3"
   license "Apache-2.0"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -29,14 +29,14 @@ class CargoCrev < Formula
   def install
     ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
     ENV["OPENSSL_NO_VENDOR"] = "1"
-    system "cargo", "install", "--no-default-features", *std_cargo_args(path: ".cargo-crev")
+    system "cargo", "install", "--no-default-features", *std_cargo_args(path: "./cargo-crev")
   end
 
   test do
-    require "utilslinkage"
+    require "utils/linkage"
 
     # Show that we can use a different toolchain than the one provided by the `rust` formula.
-    # https:github.comHomebrewhomebrew-corepull134074#pullrequestreview-1484979359
+    # https://github.com/Homebrew/homebrew-core/pull/134074#pullrequestreview-1484979359
     ENV.prepend_path "PATH", Formula["rustup"].bin
     system "rustup", "set", "profile", "minimal"
     system "rustup", "default", "beta"
@@ -44,10 +44,10 @@ class CargoCrev < Formula
     system "cargo", "crev", "config", "dir"
 
     [
-      Formula["openssl@3"].opt_libshared_library("libssl"),
-      Formula["openssl@3"].opt_libshared_library("libcrypto"),
+      Formula["openssl@3"].opt_lib/shared_library("libssl"),
+      Formula["openssl@3"].opt_lib/shared_library("libcrypto"),
     ].each do |library|
-      assert Utils.binary_linked_to_library?(bin"cargo-crev", library),
+      assert Utils.binary_linked_to_library?(bin/"cargo-crev", library),
              "No linkage with #{library.basename}! Cargo is likely using a vendored version."
     end
   end

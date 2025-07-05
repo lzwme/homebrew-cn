@@ -1,7 +1,7 @@
 class Apachetop < Formula
   desc "Top-like display of Apache log"
-  homepage "https:github.comtessusapachetop"
-  url "https:github.comtessusapachetopreleasesdownload0.23.2apachetop-0.23.2.tar.gz"
+  homepage "https://github.com/tessus/apachetop"
+  url "https://ghfast.top/https://github.com/tessus/apachetop/releases/download/0.23.2/apachetop-0.23.2.tar.gz"
   sha256 "f94a34180808c3edb24c1779f72363246dd4143a89f579ef2ac168a45b04443f"
   license "BSD-3-Clause"
 
@@ -33,8 +33,8 @@ class Apachetop < Formula
   def install
     ENV.append "CXX", "-std=gnu++17"
 
-    system ".configure", "--mandir=#{man}",
-                          "--with-logfile=#{var}logapache2access_log",
+    system "./configure", "--mandir=#{man}",
+                          "--with-logfile=#{var}/log/apache2/access_log",
                           "--with-adns=#{Formula["adns"].opt_prefix}",
                           "--with-pcre2=#{Formula["pcre2"].opt_prefix}",
                           *std_configure_args
@@ -42,7 +42,7 @@ class Apachetop < Formula
   end
 
   test do
-    output = shell_output("#{bin}apachetop -h 2>&1", 1)
+    output = shell_output("#{bin}/apachetop -h 2>&1", 1)
     assert_match "ApacheTop v#{version}", output
   end
 end

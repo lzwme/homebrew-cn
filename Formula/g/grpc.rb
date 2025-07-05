@@ -1,20 +1,20 @@
 class Grpc < Formula
   desc "Next generation open source RPC library and framework"
-  homepage "https:grpc.io"
-  url "https:github.comgrpcgrpc.git",
+  homepage "https://grpc.io/"
+  url "https://github.com/grpc/grpc.git",
       tag:      "v1.73.1",
       revision: "6eae42baf0dc7950a8c25d227575a0d24c9aa286"
   license "Apache-2.0"
-  head "https:github.comgrpcgrpc.git", branch: "master"
+  head "https://github.com/grpc/grpc.git", branch: "master"
 
   # There can be a notable gap between when a version is tagged and a
   # corresponding release is created, so we check releases instead of the Git
-  # tags. Upstream maintains multiple majorminor versions and the "latest"
+  # tags. Upstream maintains multiple major/minor versions and the "latest"
   # release may be for an older version, so we have to check multiple releases
   # to identify the highest version.
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
     strategy :github_releases
   end
 
@@ -75,7 +75,7 @@ class Grpc < Formula
 
     # The following are installed manually, so need to use CMAKE_*_LINKER_FLAGS
     # TODO: `grpc_cli` is a huge pain to install. Consider removing it.
-    linker_flags += %W[-rpath #{rpath} -rpath #{rpath(target: HOMEBREW_PREFIX"lib")}]
+    linker_flags += %W[-rpath #{rpath} -rpath #{rpath(target: HOMEBREW_PREFIX/"lib")}]
     args = %W[
       -DCMAKE_EXE_LINKER_FLAGS=-Wl,#{linker_flags.join(",")}
       -DCMAKE_SHARED_LINKER_FLAGS=-Wl,#{linker_flags.join(",")}
@@ -90,25 +90,25 @@ class Grpc < Formula
     ]
     system "cmake", "-S", ".", "-B", "_build-grpc_cli", *args, *std_cmake_args
     system "cmake", "--build", "_build-grpc_cli", "--target", "grpc_cli"
-    bin.install "_build-grpc_cligrpc_cli"
-    lib.install (buildpath"_build-grpc_cli").glob(shared_library("libgrpc++_test_config", "*"))
+    bin.install "_build-grpc_cli/grpc_cli"
+    lib.install (buildpath/"_build-grpc_cli").glob(shared_library("libgrpc++_test_config", "*"))
   end
 
   test do
-    (testpath"test.cpp").write <<~CPP
-      #include <grpcgrpc.h>
+    (testpath/"test.cpp").write <<~CPP
+      #include <grpc/grpc.h>
       int main() {
         grpc_init();
         grpc_shutdown();
         return GRPC_STATUS_OK;
       }
     CPP
-    ENV.prepend_path "PKG_CONFIG_PATH", Formula["openssl@3"].opt_lib"pkgconfig"
+    ENV.prepend_path "PKG_CONFIG_PATH", Formula["openssl@3"].opt_lib/"pkgconfig"
     flags = shell_output("pkgconf --cflags --libs libcares protobuf re2 grpc++").chomp.split
     system ENV.cc, "test.cpp", "-L#{Formula["abseil"].opt_lib}", *flags, "-o", "test"
-    system ".test"
+    system "./test"
 
-    output = shell_output("#{bin}grpc_cli ls localhost:#{free_port} 2>&1", 1)
+    output = shell_output("#{bin}/grpc_cli ls localhost:#{free_port} 2>&1", 1)
     assert_match "Received an error when querying services endpoint.", output
   end
 end

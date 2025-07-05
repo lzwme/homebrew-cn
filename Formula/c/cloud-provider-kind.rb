@@ -1,10 +1,10 @@
 class CloudProviderKind < Formula
   desc "Cloud provider for KIND clusters"
-  homepage "https:github.comkubernetes-sigscloud-provider-kind"
-  url "https:github.comkubernetes-sigscloud-provider-kindarchiverefstagsv0.6.0.tar.gz"
+  homepage "https://github.com/kubernetes-sigs/cloud-provider-kind"
+  url "https://ghfast.top/https://github.com/kubernetes-sigs/cloud-provider-kind/archive/refs/tags/v0.6.0.tar.gz"
   sha256 "61f7efdd17f2b1100f153c162494eba240f4bace459ec3d76fc5348d829e5f78"
   license "Apache-2.0"
-  head "https:github.comkubernetes-sigscloud-provider-kind.git", branch: "main"
+  head "https://github.com/kubernetes-sigs/cloud-provider-kind.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "596d1ff6c56251c8fb41e89ad8220dd476808b04e7e87fc7c98eeb6f278a4757"
@@ -22,8 +22,8 @@ class CloudProviderKind < Formula
   end
 
   test do
-    ENV["DOCKER_HOST"] = "unix:#{testpath}invalid.sock"
-    status_output = shell_output("#{bin}cloud-provider-kind 2>&1", 255)
+    ENV["DOCKER_HOST"] = "unix://#{testpath}/invalid.sock"
+    status_output = shell_output("#{bin}/cloud-provider-kind 2>&1", 255)
     if OS.mac?
       # Should error out as requires root on Mac
       assert_match "Please run this again with `sudo`", status_output

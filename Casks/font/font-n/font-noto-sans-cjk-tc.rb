@@ -2,9 +2,9 @@ cask "font-noto-sans-cjk-tc" do
   version "2.004"
   sha256 "8ea0d6feb8e092c250710cdc75c138090832ddaa98d8ccb37cd89b03b72c331b"
 
-  url "https:github.comnotofontsnoto-cjkreleasesdownloadSans#{version}09_NotoSansCJKtc.zip"
+  url "https://ghfast.top/https://github.com/notofonts/noto-cjk/releases/download/Sans#{version}/09_NotoSansCJKtc.zip"
   name "Noto Sans CJK TC"
-  homepage "https:github.comnotofontsnoto-cjktreemainSans"
+  homepage "https://github.com/notofonts/noto-cjk/tree/main/Sans"
 
   livecheck do
     cask "font-noto-sans-cjk"

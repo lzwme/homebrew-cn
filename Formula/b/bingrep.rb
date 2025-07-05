@@ -1,7 +1,7 @@
 class Bingrep < Formula
   desc "Greps through binaries from various OSs and architectures"
-  homepage "https:github.comm4bbingrep"
-  url "https:github.comm4bbingreparchiverefstagsv0.11.0.tar.gz"
+  homepage "https://github.com/m4b/bingrep"
+  url "https://ghfast.top/https://github.com/m4b/bingrep/archive/refs/tags/v0.11.0.tar.gz"
   sha256 "3012aef73b3ef5e8b100824af0db2131f81771338fec5f9fe47dc71bf3782506"
   license "MIT"
 
@@ -26,7 +26,7 @@ class Bingrep < Formula
   end
 
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       int homebrew_test() {
         return 0;
       }
@@ -34,7 +34,7 @@ class Bingrep < Formula
         return homebrew_test();
       }
     C
-    system ENV.cc, testpath"test.c"
-    assert_match "homebrew_test", shell_output("#{bin}bingrep a.out")
+    system ENV.cc, testpath/"test.c"
+    assert_match "homebrew_test", shell_output("#{bin}/bingrep a.out")
   end
 end

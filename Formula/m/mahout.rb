@@ -1,8 +1,8 @@
 class Mahout < Formula
   desc "Library to help build scalable machine learning libraries"
-  homepage "https:mahout.apache.org"
-  url "https:www.apache.orgdyncloser.lua?path=mahout0.13.0apache-mahout-distribution-0.13.0.tar.gz"
-  mirror "https:archive.apache.orgdistmahout0.13.0apache-mahout-distribution-0.13.0.tar.gz"
+  homepage "https://mahout.apache.org/"
+  url "https://www.apache.org/dyn/closer.lua?path=mahout/0.13.0/apache-mahout-distribution-0.13.0.tar.gz"
+  mirror "https://archive.apache.org/dist/mahout/0.13.0/apache-mahout-distribution-0.13.0.tar.gz"
   sha256 "87bdc86e16b5817d6b5a810b94d7389604887f7de9c680f34faaf0cbb8dabf6f"
   license "Apache-2.0"
   revision 1
@@ -15,12 +15,12 @@ class Mahout < Formula
   end
 
   head do
-    url "https:github.comapachemahout.git", branch: "trunk"
+    url "https://github.com/apache/mahout.git", branch: "trunk"
     depends_on "maven" => :build
   end
 
-  # see https:github.comHomebrewhomebrew-corepull158322
-  # https:github.comHomebrewhomebrew-corepull138608
+  # see https://github.com/Homebrew/homebrew-core/pull/158322
+  # https://github.com/Homebrew/homebrew-core/pull/138608
   deprecate! date: "2024-08-03", because: "does not build with 14.1"
 
   depends_on "hadoop"
@@ -30,31 +30,31 @@ class Mahout < Formula
     ENV["JAVA_HOME"] = Language::Java.java_home("11")
 
     if build.head?
-      chmod 755, ".bin"
+      chmod 755, "./bin"
       system "mvn", "-DskipTests", "clean", "install"
     end
 
     libexec.install "bin"
 
     if build.head?
-      libexec.install Dir["buildtoolstarget*.jar"]
-      libexec.install Dir["coretarget*.jar"]
-      libexec.install Dir["examplestarget*.jar"]
-      libexec.install Dir["mathtarget*.jar"]
+      libexec.install Dir["buildtools/target/*.jar"]
+      libexec.install Dir["core/target/*.jar"]
+      libexec.install Dir["examples/target/*.jar"]
+      libexec.install Dir["math/target/*.jar"]
     else
       libexec.install Dir["*.jar"]
     end
 
-    bin.install Dir["#{libexec}bin*"]
-    bin.env_script_all_files libexec"bin", JAVA_HOME: ENV["JAVA_HOME"]
+    bin.install Dir["#{libexec}/bin/*"]
+    bin.env_script_all_files libexec/"bin", JAVA_HOME: ENV["JAVA_HOME"]
   end
 
   test do
-    (testpath"test.csv").write <<~CSV
+    (testpath/"test.csv").write <<~CSV
       "x","y"
       0.1234567,0.101201201
     CSV
 
-    assert_match "0.101201201", pipe_output("#{bin}mahout cat #{testpath}test.csv")
+    assert_match "0.101201201", pipe_output("#{bin}/mahout cat #{testpath}/test.csv")
   end
 end

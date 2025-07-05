@@ -1,7 +1,7 @@
 class CouchdbLucene < Formula
   desc "Full-text search of CouchDB documents using Lucene"
-  homepage "https:github.comrnewsoncouchdb-lucene"
-  url "https:github.comrnewsoncouchdb-lucenearchiverefstagsv2.1.0.tar.gz"
+  homepage "https://github.com/rnewson/couchdb-lucene"
+  url "https://ghfast.top/https://github.com/rnewson/couchdb-lucene/archive/refs/tags/v2.1.0.tar.gz"
   sha256 "8297f786ab9ddd86239565702eb7ae8e117236781144529ed7b72a967224b700"
   license "Apache-2.0"
   revision 2
@@ -31,31 +31,31 @@ class CouchdbLucene < Formula
 
   def install
     system "mvn"
-    system "tar", "-xzf", "targetcouchdb-lucene-#{version}-dist.tar.gz", "--strip", "1"
+    system "tar", "-xzf", "target/couchdb-lucene-#{version}-dist.tar.gz", "--strip", "1"
 
-    rm_r(Dir["bin*.bat"])
+    rm_r(Dir["bin/*.bat"])
     libexec.install Dir["*"]
 
     env = Language::Java.overridable_java_home_env
-    env["CL_BASEDIR"] = libexec"bin"
-    Dir.glob("#{libexec}bin*") do |path|
+    env["CL_BASEDIR"] = libexec/"bin"
+    Dir.glob("#{libexec}/bin/*") do |path|
       bin_name = File.basename(path)
       cmd = "cl_#{bin_name}"
-      (bincmd).write_env_script libexec"bin#{bin_name}", env
-      (libexec"clbin").install_symlink bincmd => bin_name
+      (bin/cmd).write_env_script libexec/"bin/#{bin_name}", env
+      (libexec/"clbin").install_symlink bin/cmd => bin_name
     end
 
     ini_path.write(ini_file) unless ini_path.exist?
   end
 
   def ini_path
-    etc"couchdblocal.dcouchdb-lucene.ini"
+    etc/"couchdb/local.d/couchdb-lucene.ini"
   end
 
   def ini_file
     <<~EOS
       [httpd_global_handlers]
-      _fti = {couch_httpd_proxy, handle_proxy_req, <<"http:127.0.0.1:5985">>}
+      _fti = {couch_httpd_proxy, handle_proxy_req, <<"http://127.0.0.1:5985">>}
     EOS
   end
 
@@ -66,12 +66,12 @@ class CouchdbLucene < Formula
       If you really need to use these commands with their normal names, you
       can add a "clbin" directory to your PATH from your bashrc like:
 
-          PATH="#{opt_libexec}clbin:$PATH"
+          PATH="#{opt_libexec}/clbin:$PATH"
     EOS
   end
 
   service do
-    run opt_bin"cl_run"
+    run opt_bin/"cl_run"
     environment_variables HOME: "~"
     run_type :immediate
     keep_alive true
@@ -80,14 +80,14 @@ class CouchdbLucene < Formula
   test do
     # This seems to be the easiest way to make the test play nicely in our
     # sandbox. If it works here, it'll work in the normal location though.
-    cp_r Dir[opt_prefix"*"], testpath
-    inreplace "bincl_run", "CL_BASEDIR=\"#{libexec}bin\"",
-                            "CL_BASEDIR=\"#{testpath}libexecbin\""
+    cp_r Dir[opt_prefix/"*"], testpath
+    inreplace "bin/cl_run", "CL_BASEDIR=\"#{libexec}/bin\"",
+                            "CL_BASEDIR=\"#{testpath}/libexec/bin\""
     port = free_port
-    inreplace "libexecconfcouchdb-lucene.ini", "port=5985", "port=#{port}"
+    inreplace "libexec/conf/couchdb-lucene.ini", "port=5985", "port=#{port}"
 
     fork do
-      exec "#{testpath}bincl_run"
+      exec "#{testpath}/bin/cl_run"
     end
     sleep 5
 

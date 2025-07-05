@@ -1,7 +1,7 @@
 class Sn0int < Formula
   desc "Semi-automatic OSINT framework and package manager"
-  homepage "https:sn0int.readthedocs.ioenstable"
-  url "https:github.comkpcyrdsn0intarchiverefstagsv0.26.1.tar.gz"
+  homepage "https://sn0int.readthedocs.io/en/stable/"
+  url "https://ghfast.top/https://github.com/kpcyrd/sn0int/archive/refs/tags/v0.26.1.tar.gz"
   sha256 "cf10bff93098586ba7dd885bf56af489ce0177bd1889a13b004fc38f026e71ea"
   license "GPL-3.0-or-later"
 
@@ -29,14 +29,14 @@ class Sn0int < Formula
   def install
     system "cargo", "install", *std_cargo_args
 
-    generate_completions_from_executable(bin"sn0int", "completions")
+    generate_completions_from_executable(bin/"sn0int", "completions")
 
     system "make", "-C", "docs", "man"
-    man1.install "docs_buildmansn0int.1"
+    man1.install "docs/_build/man/sn0int.1"
   end
 
   test do
-    (testpath"true.lua").write <<~LUA
+    (testpath/"true.lua").write <<~LUA
       -- Description: basic selftest
       -- Version: 0.1.0
       -- License: GPL-3.0
@@ -45,6 +45,6 @@ class Sn0int < Formula
           -- nothing to do here
       end
     LUA
-    system bin"sn0int", "run", "-vvxf", testpath"true.lua"
+    system bin/"sn0int", "run", "-vvxf", testpath/"true.lua"
   end
 end

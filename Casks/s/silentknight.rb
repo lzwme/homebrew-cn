@@ -12,10 +12,10 @@ cask "silentknight" do
     sha256 "84eb2feb1e4d0ac26f28f963bf809e6d6206b5d345d9d9c428bdbc583b249f76"
 
     livecheck do
-      url "https:raw.githubusercontent.comhoakleyelcupdatesmastereclecticapps.plist"
-      regex(%r{(\d+)(\d+)[^]+?$}i)
+      url "https://ghfast.top/https://raw.githubusercontent.com/hoakleyelc/updates/master/eclecticapps.plist"
+      regex(%r{/(\d+)/(\d+)/[^/]+?$}i)
       strategy :xml do |xml, regex|
-        item = xml.elements["dict[key[text()='AppName']following-sibling::*[1][text()='SilentKnight#{version.major}']]"]
+        item = xml.elements["//dict[key[text()='AppName']/following-sibling::*[1][text()='SilentKnight#{version.major}']]"]
         next unless item
 
         version = item.elements["key[text()='Version']"]&.next_element&.text
@@ -36,20 +36,20 @@ cask "silentknight" do
     (i < 1 || n.length > 1) ? n : n.rjust(2, "0")
   end.join
 
-  url "https:eclecticlight.cowp-contentuploads#{version.csv.second.major}#{version.csv.second.minor}silentknight#{no_dot_version}.zip"
+  url "https://eclecticlight.co/wp-content/uploads/#{version.csv.second.major}/#{version.csv.second.minor}/silentknight#{no_dot_version}.zip"
   name "SilentKnight"
   desc "Automatically checks computer's security"
-  homepage "https:eclecticlight.colockrattler-systhist"
+  homepage "https://eclecticlight.co/lockrattler-systhist/"
 
   no_autobump! because: :requires_manual_review
 
-  app "silentknight#{no_dot_version}SilentKnight.app"
+  app "silentknight#{no_dot_version}/SilentKnight.app"
 
   zap trash: [
-    "~LibraryApplication Supportcom.apple.sharedfilelistcom.apple.LSSharedFileList.ApplicationRecentDocumentsco.eclecticlight.silentknight.sfl*",
-    "~LibraryCachesco.eclecticlight.SilentKnight",
-    "~LibraryHTTPStoragesco.eclecticlight.SilentKnight",
-    "~LibraryPreferencesco.eclecticlight.SilentKnight.plist",
-    "~LibrarySaved Application Stateco.eclecticlight.SilentKnight.savedState",
+    "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/co.eclecticlight.silentknight.sfl*",
+    "~/Library/Caches/co.eclecticlight.SilentKnight",
+    "~/Library/HTTPStorages/co.eclecticlight.SilentKnight",
+    "~/Library/Preferences/co.eclecticlight.SilentKnight.plist",
+    "~/Library/Saved Application State/co.eclecticlight.SilentKnight.savedState",
   ]
 end

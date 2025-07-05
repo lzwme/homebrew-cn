@@ -2,10 +2,10 @@ cask "vagrant-manager" do
   version "2.7.1"
   sha256 "ad10795f36a2c0977ec8e278082f1f66624cc3b16f837dc72c0f1c063fefb4de"
 
-  url "https:github.comlanayotechvagrant-managerreleasesdownload#{version}vagrant-manager-#{version}.dmg",
-      verified: "github.comlanayotechvagrant-manager"
+  url "https://ghfast.top/https://github.com/lanayotech/vagrant-manager/releases/download/#{version}/vagrant-manager-#{version}.dmg",
+      verified: "github.com/lanayotech/vagrant-manager/"
   name "Vagrant Manager"
-  homepage "https:www.vagrantmanager.com"
+  homepage "https://www.vagrantmanager.com/"
 
   no_autobump! because: :requires_manual_review
 
@@ -14,8 +14,8 @@ cask "vagrant-manager" do
   uninstall quit: "lanayo.Vagrant-Manager"
 
   zap trash: [
-    "~LibraryCacheslanayo.Vagrant-Manager",
-    "~LibraryPreferenceslanayo.Vagrant-Manager.plist",
+    "~/Library/Caches/lanayo.Vagrant-Manager",
+    "~/Library/Preferences/lanayo.Vagrant-Manager.plist",
   ]
 
   caveats do

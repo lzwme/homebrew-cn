@@ -1,10 +1,10 @@
 class GitBug < Formula
   desc "Distributed, offline-first bug tracker embedded in git, with bridges"
-  homepage "https:github.comgit-buggit-bug"
-  url "https:github.comgit-buggit-bugarchiverefstagsv0.10.1.tar.gz"
+  homepage "https://github.com/git-bug/git-bug"
+  url "https://ghfast.top/https://github.com/git-bug/git-bug/archive/refs/tags/v0.10.1.tar.gz"
   sha256 "1b5cafa3d9918ce18c4674c93b83359e211def83e716d5841fa93c77b457e6c2"
   license "GPL-3.0-or-later"
-  head "https:github.comgit-buggit-bug.git", branch: "master"
+  head "https://github.com/git-bug/git-bug.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "46a716e687114907ed936a8c22b5fa1ca9658eecb26a0537ec894f97ae2c4ca9"
@@ -21,32 +21,32 @@ class GitBug < Formula
     ENV["GOBIN"] = bin
     ldflags = %W[
       -s -w
-      -X github.comgit-buggit-bugcommands.GitCommit="v#{tap.user}"
-      -X github.comgit-buggit-bugcommands.GitLastTag="v#{version}"
-      -X github.comgit-buggit-bugcommands.GitExactTag="v#{version}"
+      -X github.com/git-bug/git-bug/commands.GitCommit="v#{tap.user}"
+      -X github.com/git-bug/git-bug/commands.GitLastTag="v#{version}"
+      -X github.com/git-bug/git-bug/commands.GitExactTag="v#{version}"
     ]
     system "go", "generate"
     system "go", "build", *std_go_args(ldflags:)
 
-    man1.install Dir["docman*.1"]
-    doc.install Dir["docmd*.md"]
+    man1.install Dir["doc/man/*.1"]
+    doc.install Dir["doc/md/*.md"]
 
-    bash_completion.install "misccompletionbashgit-bug"
-    zsh_completion.install "misccompletionzshgit-bug" => "_git-bug"
-    fish_completion.install "misccompletionfishgit-bug" => "git-bug.fish"
+    bash_completion.install "misc/completion/bash/git-bug"
+    zsh_completion.install "misc/completion/zsh/git-bug" => "_git-bug"
+    fish_completion.install "misc/completion/fish/git-bug" => "git-bug.fish"
   end
 
   test do
     # Version
-    assert_match version.to_s, shell_output("#{bin}git-bug version")
+    assert_match version.to_s, shell_output("#{bin}/git-bug version")
     # Version through git
     assert_match version.to_s, shell_output("git bug version")
 
-    mkdir testpath"git-repo" do
+    mkdir testpath/"git-repo" do
       system "git", "init", "--initial-branch=main"
       system "git", "config", "user.name", "homebrew"
       system "git", "config", "user.email", "a@a.com"
-      system "yes 'a b http:wwwwww' | git bug user new"
+      system "yes 'a b http://www/www' | git bug user new"
       system "git", "bug", "bug", "new", "-t", "Issue 1", "-m", "Issue body"
       system "git", "bug", "bug", "new", "-t", "Issue 2", "-m", "Issue body"
       system "git", "bug", "bug", "new", "-t", "Issue 3", "-m", "Issue body"

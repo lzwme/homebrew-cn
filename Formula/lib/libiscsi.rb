@@ -1,10 +1,10 @@
 class Libiscsi < Formula
   desc "Client library and utilities for iscsi"
-  homepage "https:github.comsahlberglibiscsi"
-  url "https:github.comsahlberglibiscsiarchiverefstags1.20.2.tar.gz"
+  homepage "https://github.com/sahlberg/libiscsi"
+  url "https://ghfast.top/https://github.com/sahlberg/libiscsi/archive/refs/tags/1.20.2.tar.gz"
   sha256 "2b2a773ea0d3a708c1cafe61bbee780325fb1aafec6477f17d3f403e8732c9bf"
   license all_of: [:public_domain, "LGPL-2.1-or-later", "GPL-2.0-or-later"]
-  head "https:github.comsahlberglibiscsi.git", branch: "master"
+  head "https://github.com/sahlberg/libiscsi.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -24,14 +24,14 @@ class Libiscsi < Formula
   depends_on "cunit"
 
   def install
-    system ".autogen.sh"
-    system ".configure", "--disable-dependency-tracking",
+    system "./autogen.sh"
+    system "./configure", "--disable-dependency-tracking",
                           "--prefix=#{prefix}"
     system "make", "install"
   end
 
   test do
-    system bin"iscsi-ls", "--help"
-    system bin"iscsi-test-cu", "--list"
+    system bin/"iscsi-ls", "--help"
+    system bin/"iscsi-test-cu", "--list"
   end
 end

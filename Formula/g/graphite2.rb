@@ -1,10 +1,10 @@
 class Graphite2 < Formula
   desc "Smart font renderer for non-Roman scripts"
-  homepage "https:graphite.sil.org"
-  url "https:github.comsilnrsigraphitereleasesdownload1.3.14graphite2-1.3.14.tgz"
+  homepage "https://graphite.sil.org/"
+  url "https://ghfast.top/https://github.com/silnrsi/graphite/releases/download/1.3.14/graphite2-1.3.14.tgz"
   sha256 "f99d1c13aa5fa296898a181dff9b82fb25f6cc0933dbaa7a475d8109bd54209d"
   license any_of: ["GPL-2.0-or-later", "LGPL-2.1-or-later", "MPL-1.1+"]
-  head "https:github.comsilnrsigraphite.git", branch: "master"
+  head "https://github.com/silnrsi/graphite.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -39,13 +39,13 @@ class Graphite2 < Formula
 
   test do
     resource "testfont" do
-      url "https:scripts.sil.orgpubwofffontsSimple-Graphite-Font.ttf"
+      url "https://scripts.sil.org/pub/woff/fonts/Simple-Graphite-Font.ttf"
       sha256 "7e573896bbb40088b3a8490f83d6828fb0fd0920ac4ccdfdd7edb804e852186a"
     end
 
     resource("testfont").stage do
-      shape = shell_output("#{bin}gr2fonttest Simple-Graphite-Font.ttf 'abcde'")
-      assert_match(67.*36.*37.*38.*71m, shape)
+      shape = shell_output("#{bin}/gr2fonttest Simple-Graphite-Font.ttf 'abcde'")
+      assert_match(/67.*36.*37.*38.*71/m, shape)
     end
   end
 end

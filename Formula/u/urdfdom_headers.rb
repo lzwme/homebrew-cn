@@ -1,16 +1,16 @@
 class UrdfdomHeaders < Formula
   desc "Headers for Unified Robot Description Format (URDF) parsers"
-  homepage "https:wiki.ros.orgurdfdom_headers"
-  url "https:github.comrosurdfdom_headersarchiverefstags2.0.0.tar.gz"
+  homepage "https://wiki.ros.org/urdfdom_headers/"
+  url "https://ghfast.top/https://github.com/ros/urdfdom_headers/archive/refs/tags/2.0.0.tar.gz"
   sha256 "e12db588ccce52958264f6e4363ca642ab86c328c372e925681a12f7c39d963a"
   license "BSD-3-Clause"
 
   # Upstream uses Git tags (e.g. `1.0.0`) to indicate a new version. They
   # created a few releases on GitHub in the past but now they simply use tags.
-  # See: https:github.comHomebrewhomebrew-corepull158963#issuecomment-1879185279
+  # See: https://github.com/Homebrew/homebrew-core/pull/158963#issuecomment-1879185279
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -27,8 +27,8 @@ class UrdfdomHeaders < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~CPP
-      #include <urdf_modelpose.h>
+    (testpath/"test.cpp").write <<~CPP
+      #include <urdf_model/pose.h>
       int main() {
         double quat[4];
         urdf::Rotation rot;
@@ -38,6 +38,6 @@ class UrdfdomHeaders < Formula
     CPP
 
     system ENV.cxx, shell_output("pkg-config --cflags urdfdom_headers").chomp, "test.cpp", "-std=c++11", "-o", "test"
-    system ".test"
+    system "./test"
   end
 end

@@ -1,10 +1,10 @@
 class KubeBench < Formula
   desc "Checks Kubernetes deployment against security best practices (CIS Benchmark)"
-  homepage "https:github.comaquasecuritykube-bench"
-  url "https:github.comaquasecuritykube-bencharchiverefstagsv0.11.1.tar.gz"
+  homepage "https://github.com/aquasecurity/kube-bench"
+  url "https://ghfast.top/https://github.com/aquasecurity/kube-bench/archive/refs/tags/v0.11.1.tar.gz"
   sha256 "7e37ae9a0a6d08851ab02a72bd42f212d9f2f2128b4d379cea2dfca64dbffab5"
   license "Apache-2.0"
-  head "https:github.comaquasecuritykube-bench.git", branch: "main"
+  head "https://github.com/aquasecurity/kube-bench.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "cf918e555371d129c48cbe90f0535cae1c0f5b270a14ccac02e207146dc018f7"
@@ -18,15 +18,15 @@ class KubeBench < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w -X github.comaquasecuritykube-benchcmd.KubeBenchVersion=#{version}")
+    system "go", "build", *std_go_args(ldflags: "-s -w -X github.com/aquasecurity/kube-bench/cmd.KubeBenchVersion=#{version}")
 
-    generate_completions_from_executable(bin"kube-bench", "completion")
+    generate_completions_from_executable(bin/"kube-bench", "completion")
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}kube-bench version")
+    assert_match version.to_s, shell_output("#{bin}/kube-bench version")
 
-    output = shell_output("#{bin}kube-bench run 2>&1", 1)
+    output = shell_output("#{bin}/kube-bench run 2>&1", 1)
     assert_match "error: config file is missing 'version_mapping' section", output
   end
 end

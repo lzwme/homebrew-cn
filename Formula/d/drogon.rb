@@ -1,12 +1,12 @@
 class Drogon < Formula
   desc "Modern C++ web application framework"
-  homepage "https:drogon.org"
+  homepage "https://drogon.org"
   # pull from git tag to get submodules
-  url "https:github.comdrogonframeworkdrogon.git",
+  url "https://github.com/drogonframework/drogon.git",
       tag:      "v1.9.11",
       revision: "a22956b82b6b221ceeff83913c3014ce0d048555"
   license "MIT"
-  head "https:github.comdrogonframeworkdrogon.git", branch: "master"
+  head "https://github.com/drogonframework/drogon.git", branch: "master"
 
   bottle do
     sha256                               arm64_sequoia: "59b637806180b7e5a9443091cbd70e98254b2372aa144ac1264c7e699a502919"
@@ -41,7 +41,7 @@ class Drogon < Formula
   end
 
   test do
-    system bin"dg_ctl", "create", "project", "hello"
+    system bin/"dg_ctl", "create", "project", "hello"
     cd "hello" do
       port = free_port
       inreplace "main.cc", "5555", port.to_s
@@ -50,7 +50,7 @@ class Drogon < Formula
       system "cmake", "--build", "build"
 
       begin
-        pid = spawn("buildhello")
+        pid = spawn("build/hello")
         sleep 1
         result = shell_output("curl -s 127.0.0.1:#{port}")
         assert_match "<hr><center>drogon", result

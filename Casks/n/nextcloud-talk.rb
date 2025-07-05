@@ -2,11 +2,11 @@ cask "nextcloud-talk" do
   version "1.2.3"
   sha256 "c32d474a86163098efe08506e54da90b4d5f1bf2ea926239ebac771b720aad42"
 
-  url "https:github.comnextcloud-releasestalk-desktopreleasesdownloadv#{version}Nextcloud.Talk-macos-universal.dmg",
-      verified: "github.comnextcloud-releasestalk-desktopreleasesdownload"
+  url "https://ghfast.top/https://github.com/nextcloud-releases/talk-desktop/releases/download/v#{version}/Nextcloud.Talk-macos-universal.dmg",
+      verified: "github.com/nextcloud-releases/talk-desktop/releases/download/"
   name "Nextcloud Talk Desktop"
   desc "Official Nextcloud Talk Desktop client"
-  homepage "https:nextcloud.comtalk"
+  homepage "https://nextcloud.com/talk/"
 
   livecheck do
     url :url
@@ -20,7 +20,7 @@ cask "nextcloud-talk" do
   app "Nextcloud Talk.app"
 
   zap trash: [
-    "~LibraryApplication SupportNextcloud Talk",
-    "~LibraryPreferencescom.nextcloud.talk.mac.plist",
+    "~/Library/Application Support/Nextcloud Talk",
+    "~/Library/Preferences/com.nextcloud.talk.mac.plist",
   ]
 end

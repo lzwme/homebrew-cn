@@ -1,15 +1,15 @@
 class Nauty < Formula
   desc "Automorphism groups of graphs and digraphs"
-  homepage "https:pallini.di.uniroma1.it"
-  url "https:pallini.di.uniroma1.itnauty2_8_9.tar.gz"
-  mirror "https:users.cecs.anu.edu.au~bdmnautynauty2_8_9.tar.gz"
+  homepage "https://pallini.di.uniroma1.it/"
+  url "https://pallini.di.uniroma1.it/nauty2_8_9.tar.gz"
+  mirror "https://users.cecs.anu.edu.au/~bdm/nauty/nauty2_8_9.tar.gz"
   sha256 "c97ab42bf48796a86a598bce3e9269047ca2b32c14fc23e07208a244fe52c4ee"
   license "Apache-2.0"
   version_scheme 1
 
   livecheck do
     url :homepage
-    regex(Current\s+?version:\s*?v?(\d+(?:[._]\d+)+(?:r\d+)?)i)
+    regex(/Current\s+?version:\s*?v?(\d+(?:[._]\d+)+(?:r\d+)?)/i)
     strategy :page_match do |page, regex|
       page.scan(regex).map { |match| match.first.tr("_R", ".r") }
     end
@@ -31,12 +31,12 @@ class Nauty < Formula
 
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
-    url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-big_sur.diff"
+    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-big_sur.diff"
     sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
   end
 
   def install
-    system ".configure", "--enable-tls", "--includedir=#{include}nauty", *std_configure_args
+    system "./configure", "--enable-tls", "--includedir=#{include}/nauty", *std_configure_args
     system "make", "all", "TLSlibs"
     system "make", "install", "TLSinstall"
 
@@ -47,17 +47,17 @@ class Nauty < Formula
   end
 
   test do
-    # from .runalltests
-    out1 = shell_output("#{bin}geng -ud1D7t 11 2>&1")
-    out2 = pipe_output("#{bin}countg --nedDr -q", shell_output("#{bin}genrang -r3 114 100"))
+    # from ./runalltests
+    out1 = shell_output("#{bin}/geng -ud1D7t 11 2>&1")
+    out2 = pipe_output("#{bin}/countg --nedDr -q", shell_output("#{bin}/genrang -r3 114 100"))
 
     assert_match "92779 graphs generated", out1
     assert_match "100 graphs : n=114; e=171; mindeg=3; maxdeg=3; regular", out2
 
     # test that the library is installed and linkable-against
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #define MAXN 1000
-      #include <nautynauty.h>
+      #include <nauty/nauty.h>
 
       int main()
       {
@@ -67,7 +67,7 @@ class Nauty < Formula
         return 0;
       }
     C
-    system ENV.cc, "test.c", "-I#{include}nauty", "-L#{lib}", "-lnauty", "-o", "test"
-    system ".test"
+    system ENV.cc, "test.c", "-I#{include}/nauty", "-L#{lib}", "-lnauty", "-o", "test"
+    system "./test"
   end
 end

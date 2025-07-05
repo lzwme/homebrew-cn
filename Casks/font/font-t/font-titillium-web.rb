@@ -2,12 +2,12 @@ cask "font-titillium-web" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefonts.git",
-      verified:  "github.comgooglefonts",
+  url "https://github.com/google/fonts.git",
+      verified:  "github.com/google/fonts",
       branch:    "main",
-      only_path: "ofltitilliumweb"
+      only_path: "ofl/titilliumweb"
   name "Titillium Web"
-  homepage "https:fonts.google.comspecimenTitillium+Web"
+  homepage "https://fonts.google.com/specimen/Titillium+Web"
 
   font "TitilliumWeb-Black.ttf"
   font "TitilliumWeb-Bold.ttf"

@@ -1,7 +1,7 @@
 class Pciutils < Formula
   desc "PCI utilities"
-  homepage "https:github.compciutilspciutils"
-  url "https:github.compciutilspciutilsarchiverefstagsv3.14.0.tar.gz"
+  homepage "https://github.com/pciutils/pciutils"
+  url "https://ghfast.top/https://github.com/pciutils/pciutils/archive/refs/tags/v3.14.0.tar.gz"
   sha256 "9f99bb89876510435fbfc47bbc8653bc57e736a21915ec0404e0610460756cb8"
   license "GPL-2.0-or-later"
 
@@ -21,7 +21,7 @@ class Pciutils < Formula
   end
 
   test do
-    assert_match "lspci version", shell_output("#{bin}lspci --version")
-    assert_match(Host bridge:|controller:, shell_output("#{bin}lspci"))
+    assert_match "lspci version", shell_output("#{bin}/lspci --version")
+    assert_match(/Host bridge:|controller:/, shell_output("#{bin}/lspci"))
   end
 end

@@ -2,9 +2,9 @@ cask "openbazaar" do
   version "2.4.10"
   sha256 "ba5632071b75ce80c7b1151d0a2e6775d3576e67ea77e36455895e56dc805cad"
 
-  url "https:github.comOpenBazaaropenbazaar-desktopreleasesdownloadv#{version}OpenBazaar#{version.major}-#{version}.dmg"
+  url "https://ghfast.top/https://github.com/OpenBazaar/openbazaar-desktop/releases/download/v#{version}/OpenBazaar#{version.major}-#{version}.dmg"
   name "OpenBazaar"
-  homepage "https:github.comOpenBazaaropenbazaar-desktop"
+  homepage "https://github.com/OpenBazaar/openbazaar-desktop/"
 
   no_autobump! because: :requires_manual_review
 
@@ -14,11 +14,11 @@ cask "openbazaar" do
   app "OpenBazaar#{version.major}.app"
 
   zap trash: [
-    "~LibraryApplication SupportOpenBazaar#{version.major_minor}",
-    "~LibraryCachescom.electron.openbazaar",
-    "~LibraryCachescom.electron.openbazaar#{version.major}",
-    "~LibraryCachescom.electron.openbazaar#{version.major}.ShipIt",
-    "~LibraryPreferencescom.electron.openbazaar#{version.major}.helper.plist",
-    "~LibraryPreferencescom.electron.openbazaar.plist",
+    "~/Library/Application Support/OpenBazaar#{version.major_minor}",
+    "~/Library/Caches/com.electron.openbazaar",
+    "~/Library/Caches/com.electron.openbazaar#{version.major}",
+    "~/Library/Caches/com.electron.openbazaar#{version.major}.ShipIt",
+    "~/Library/Preferences/com.electron.openbazaar#{version.major}.helper.plist",
+    "~/Library/Preferences/com.electron.openbazaar.plist",
   ]
 end

@@ -1,13 +1,13 @@
 class Aview < Formula
   desc "ASCII-art image browser and animation viewer"
-  homepage "https:aa-project.sourceforge.net"
-  url "https:downloads.sourceforge.netprojectaa-projectaview1.3.0rc1aview-1.3.0rc1.tar.gz"
+  homepage "https://aa-project.sourceforge.net/"
+  url "https://downloads.sourceforge.net/project/aa-project/aview/1.3.0rc1/aview-1.3.0rc1.tar.gz"
   sha256 "42d61c4194e8b9b69a881fdde698c83cb27d7eda59e08b300e73aaa34474ec99"
   license "GPL-2.0-only"
 
   livecheck do
     url :stable
-    regex(%r{url=.*?aview[._-]v?(\d+(?:\.\d+)+(?:[a-z]+\d*)?)\.t}i)
+    regex(%r{url=.*?/aview[._-]v?(\d+(?:\.\d+)+(?:[a-z]+\d*)?)\.t}i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -34,7 +34,7 @@ class Aview < Formula
   depends_on "aalib"
 
   patch do
-    url "https:raw.githubusercontent.comHomebrewformula-patches85fa66a9aview1.3.0rc1.patch"
+    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/85fa66a9/aview/1.3.0rc1.patch"
     sha256 "72a979eff325056f709cee49f5836a425635bd72078515a5949a812aa68741aa"
   end
 
@@ -44,7 +44,7 @@ class Aview < Formula
       ENV.append_to_cflags "-Wno-implicit-function-declaration -Wno-implicit-int"
     end
 
-    system ".configure", "--disable-debug",
+    system "./configure", "--disable-debug",
                           "--disable-dependency-tracking",
                           "--prefix=#{prefix}",
                           "--mandir=#{man}"
@@ -52,6 +52,6 @@ class Aview < Formula
   end
 
   test do
-    system bin"aview", "--version"
+    system bin/"aview", "--version"
   end
 end

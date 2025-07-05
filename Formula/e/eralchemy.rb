@@ -2,8 +2,8 @@ class Eralchemy < Formula
   include Language::Python::Virtualenv
 
   desc "Simple entity relation (ER) diagrams generation"
-  homepage "https:github.comeralchemyeralchemy"
-  url "https:files.pythonhosted.orgpackages19055f69930e83a02360d9ed16660bdd58d9d501bffabd43d7dbbe8c14269143eralchemy-1.5.0.tar.gz"
+  homepage "https://github.com/eralchemy/eralchemy"
+  url "https://files.pythonhosted.org/packages/19/05/5f69930e83a02360d9ed16660bdd58d9d501bffabd43d7dbbe8c14269143/eralchemy-1.5.0.tar.gz"
   sha256 "fa66a3cd324abd27ad8e65908d7af48d8198c0c185aeb22189cf40516de25941"
   license "Apache-2.0"
   revision 1
@@ -25,17 +25,17 @@ class Eralchemy < Formula
   depends_on "python@3.13"
 
   resource "pygraphviz" do
-    url "https:files.pythonhosted.orgpackages66ca823d5c74a73d6b8b08e1f5aea12468ef334f0732c65cbb18df2a7f285c87pygraphviz-1.14.tar.gz"
+    url "https://files.pythonhosted.org/packages/66/ca/823d5c74a73d6b8b08e1f5aea12468ef334f0732c65cbb18df2a7f285c87/pygraphviz-1.14.tar.gz"
     sha256 "c10df02377f4e39b00ae17c862f4ee7e5767317f1c6b2dfd04cea6acc7fc2bea"
   end
 
   resource "sqlalchemy" do
-    url "https:files.pythonhosted.orgpackages36484f190a83525f5cefefa44f6adc9e6386c4de5218d686c27eda92eb1f5424sqlalchemy-2.0.35.tar.gz"
+    url "https://files.pythonhosted.org/packages/36/48/4f190a83525f5cefefa44f6adc9e6386c4de5218d686c27eda92eb1f5424/sqlalchemy-2.0.35.tar.gz"
     sha256 "e11d7ea4d24f0a262bccf9a7cd6284c976c5369dac21db237cff59586045ab9f"
   end
 
   resource "typing-extensions" do
-    url "https:files.pythonhosted.orgpackagesdfdbf35a00659bc03fec321ba8bce9420de607a1d37f8342eee1863174c69557typing_extensions-4.12.2.tar.gz"
+    url "https://files.pythonhosted.org/packages/df/db/f35a00659bc03fec321ba8bce9420de607a1d37f8342eee1863174c69557/typing_extensions-4.12.2.tar.gz"
     sha256 "1a7ead55c7e559dd4dee8856e3a88b41225abfe1ce8df57b7c13915fe121ffb8"
   end
 
@@ -45,14 +45,14 @@ class Eralchemy < Formula
 
   test do
     resource "er_example" do
-      url "https:raw.githubusercontent.comAlexis-benoisteralchemyv1.1.0examplenewsmeme.er"
+      url "https://ghfast.top/https://raw.githubusercontent.com/Alexis-benoist/eralchemy/v1.1.0/example/newsmeme.er"
       sha256 "5c475bacd91a63490e1cbbd1741dc70a3435e98161b5b9458d195ee97f40a3fa"
     end
 
-    system bin"eralchemy", "-v"
+    system bin/"eralchemy", "-v"
     resource("er_example").stage do
-      system bin"eralchemy", "-i", "newsmeme.er", "-o", "test_eralchemy.pdf"
-      assert_path_exists Pathname.pwd"test_eralchemy.pdf"
+      system bin/"eralchemy", "-i", "newsmeme.er", "-o", "test_eralchemy.pdf"
+      assert_path_exists Pathname.pwd/"test_eralchemy.pdf"
     end
   end
 end

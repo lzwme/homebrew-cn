@@ -20,10 +20,10 @@ cask "monitorcontrol" do
     sha256 "9b2c7769da14dc5618aece8b1514a25edc12b286ae8e343f3d880017f5ee9368"
   end
 
-  url "https:github.comMonitorControlMonitorControlreleasesdownloadv#{version}MonitorControl.#{version}.dmg"
+  url "https://ghfast.top/https://github.com/MonitorControl/MonitorControl/releases/download/v#{version}/MonitorControl.#{version}.dmg"
   name "MonitorControl"
   desc "Tool to control external monitor brightness & volume"
-  homepage "https:github.comMonitorControlMonitorControl"
+  homepage "https://github.com/MonitorControl/MonitorControl"
 
   no_autobump! because: :requires_manual_review
 
@@ -33,8 +33,8 @@ cask "monitorcontrol" do
   app "MonitorControl.app"
 
   zap trash: [
-    "~LibraryApplication Scriptsme.guillaumeb.MonitorControlHelper",
-    "~LibraryContainersme.guillaumeb.MonitorControlHelper",
-    "~LibraryPreferencesme.guillaumeb.MonitorControl.plist",
+    "~/Library/Application Scripts/me.guillaumeb.MonitorControlHelper",
+    "~/Library/Containers/me.guillaumeb.MonitorControlHelper",
+    "~/Library/Preferences/me.guillaumeb.MonitorControl.plist",
   ]
 end

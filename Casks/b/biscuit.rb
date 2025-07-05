@@ -5,11 +5,11 @@ cask "biscuit" do
   sha256 arm:   "0545a92dce24a2a5758250ddd3b8e58a26b1219ca61fd316872adbc154eb27bf",
          intel: "c3ab3a00589046167bce909eb7fc9d080c6a2205e312890b36ba568f0358881d"
 
-  url "https:github.comagatadl.biscuitreleasesdownloadv#{version}Biscuit-#{version}#{arch}.dmg",
-      verified: "github.comagatadl.biscuit"
+  url "https://ghfast.top/https://github.com/agata/dl.biscuit/releases/download/v#{version}/Biscuit-#{version}#{arch}.dmg",
+      verified: "github.com/agata/dl.biscuit/"
   name "Biscuit"
   desc "Browser to organise apps"
-  homepage "https:eatbiscuit.com"
+  homepage "https://eatbiscuit.com/"
 
   no_autobump! because: :requires_manual_review
 
@@ -19,9 +19,9 @@ cask "biscuit" do
   app "Biscuit.app"
 
   zap trash: [
-    "~LibraryApplication Supportbiscuit",
-    "~LibraryLogsBiscuit",
-    "~LibraryPreferencescom.eatbiscuit.biscuit.plist",
-    "~LibrarySaved Application Statecom.eatbiscult.biscult.savedState",
+    "~/Library/Application Support/biscuit",
+    "~/Library/Logs/Biscuit",
+    "~/Library/Preferences/com.eatbiscuit.biscuit.plist",
+    "~/Library/Saved Application State/com.eatbiscult.biscult.savedState",
   ]
 end

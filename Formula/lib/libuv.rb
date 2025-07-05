@@ -1,14 +1,14 @@
 class Libuv < Formula
-  desc "Multi-platform support library with a focus on asynchronous IO"
-  homepage "https:libuv.org"
-  url "https:github.comlibuvlibuvarchiverefstagsv1.51.0.tar.gz"
+  desc "Multi-platform support library with a focus on asynchronous I/O"
+  homepage "https://libuv.org"
+  url "https://ghfast.top/https://github.com/libuv/libuv/archive/refs/tags/v1.51.0.tar.gz"
   sha256 "27e55cf7083913bfb6826ca78cde9de7647cded648d35f24163f2d31bb9f51cd"
   license "MIT"
-  head "https:github.comlibuvlibuv.git", branch: "v1.x"
+  head "https://github.com/libuv/libuv.git", branch: "v1.x"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -31,17 +31,17 @@ class Libuv < Formula
     # This isn't yet handled by the make install process sadly.
     cd "docs" do
       system "make", "man"
-      man1.install "buildmanlibuv.1"
+      man1.install "build/man/libuv.1"
     end
 
-    system ".autogen.sh"
-    system ".configure", "--disable-silent-rules", *std_configure_args
+    system "./autogen.sh"
+    system "./configure", "--disable-silent-rules", *std_configure_args
     system "make"
     system "make", "install"
   end
 
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include <uv.h>
       #include <stdlib.h>
 
@@ -55,6 +55,6 @@ class Libuv < Formula
       }
     C
     system ENV.cc, "test.c", "-L#{lib}", "-luv", "-o", "test"
-    system ".test"
+    system "./test"
   end
 end

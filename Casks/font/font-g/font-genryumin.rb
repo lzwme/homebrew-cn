@@ -2,9 +2,9 @@ cask "font-genryumin" do
   version "2.100"
   sha256 "6416430281c5d4f2b9c992cb560da608d18ed2b9007b8f558c8c3b91eeb5e65d"
 
-  url "https:github.comButTaiwangenryu-fontreleasesdownloadv#{version}GenRyuMin#{version.major}-ttc.zip"
+  url "https://ghfast.top/https://github.com/ButTaiwan/genryu-font/releases/download/v#{version}/GenRyuMin#{version.major}-ttc.zip"
   name "GenRyuMin"
-  homepage "https:github.comButTaiwangenryu-font"
+  homepage "https://github.com/ButTaiwan/genryu-font"
 
   no_autobump! because: :requires_manual_review
 

@@ -1,11 +1,11 @@
 class Unpaper < Formula
-  desc "Post-processing for scannedphotocopied books"
-  homepage "https:www.flameeyes.comprojectsunpaper"
-  url "https:www.flameeyes.comfilesunpaper-7.0.0.tar.xz"
+  desc "Post-processing for scanned/photocopied books"
+  homepage "https://www.flameeyes.com/projects/unpaper"
+  url "https://www.flameeyes.com/files/unpaper-7.0.0.tar.xz"
   sha256 "2575fbbf26c22719d1cb882b59602c9900c7f747118ac130883f63419be46a80"
   license "GPL-2.0-or-later"
   revision 2
-  head "https:github.comunpaperunpaper.git", branch: "main"
+  head "https://github.com/unpaper/unpaper.git", branch: "main"
 
   no_autobump! because: :requires_manual_review
 
@@ -34,7 +34,7 @@ class Unpaper < Formula
   end
 
   test do
-    (testpath"test.pbm").write <<~EOS
+    (testpath/"test.pbm").write <<~EOS
       P1
       6 10
       0 0 0 0 1 0
@@ -48,7 +48,7 @@ class Unpaper < Formula
       0 0 0 0 0 0
       0 0 0 0 0 0
     EOS
-    system bin"unpaper", testpath"test.pbm", testpath"out.pbm"
-    assert_path_exists testpath"out.pbm"
+    system bin/"unpaper", testpath/"test.pbm", testpath/"out.pbm"
+    assert_path_exists testpath/"out.pbm"
   end
 end

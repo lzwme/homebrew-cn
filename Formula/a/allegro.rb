@@ -1,15 +1,15 @@
 class Allegro < Formula
-  desc "CC++ multimedia library for cross-platform game development"
-  homepage "https:liballeg.org"
-  url "https:github.comliballegallegro5releasesdownload5.2.10.1allegro-5.2.10.1.tar.gz"
+  desc "C/C++ multimedia library for cross-platform game development"
+  homepage "https://liballeg.org/"
+  url "https://ghfast.top/https://github.com/liballeg/allegro5/releases/download/5.2.10.1/allegro-5.2.10.1.tar.gz"
   sha256 "2ef9f77f0b19459ea2c7645cc4762fc35c74d3d297bfc38d8592307757166f05"
   license "Zlib"
   revision 1
-  head "https:github.comliballegallegro5.git", branch: "master"
+  head "https://github.com/liballeg/allegro5.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -65,9 +65,9 @@ class Allegro < Formula
   end
 
   test do
-    (testpath"allegro_test.cpp").write <<~CPP
+    (testpath/"allegro_test.cpp").write <<~CPP
       #include <assert.h>
-      #include <allegro5allegro5.h>
+      #include <allegro5/allegro5.h>
 
       int main(int n, char** c) {
         if (!al_init()) {
@@ -79,6 +79,6 @@ class Allegro < Formula
 
     system ENV.cxx, "allegro_test.cpp", "-I#{include}", "-L#{lib}",
                     "-lallegro", "-lallegro_main", "-o", "allegro_test"
-    system ".allegro_test"
+    system "./allegro_test"
   end
 end

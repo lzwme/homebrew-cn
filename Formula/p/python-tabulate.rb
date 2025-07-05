@@ -2,8 +2,8 @@ class PythonTabulate < Formula
   include Language::Python::Virtualenv
 
   desc "Pretty-print tabular data in Python"
-  homepage "https:github.comastaninpython-tabulate"
-  url "https:files.pythonhosted.orgpackagesecfe802052aecb21e3797b8f7902564ab6ea0d60ff8ca23952079064155d1ae1tabulate-0.9.0.tar.gz"
+  homepage "https://github.com/astanin/python-tabulate"
+  url "https://files.pythonhosted.org/packages/ec/fe/802052aecb21e3797b8f7902564ab6ea0d60ff8ca23952079064155d1ae1/tabulate-0.9.0.tar.gz"
   sha256 "0095b12bf5966de529c0feb1fa08671671b3368eec77d7ef7ab114be2c068b3c"
   license "MIT"
   revision 1
@@ -22,13 +22,13 @@ class PythonTabulate < Formula
   end
 
   test do
-    (testpath"in.txt").write <<~EOS
+    (testpath/"in.txt").write <<~EOS
       name qty
       eggs 451
       spam 42
     EOS
 
-    (testpath"out.txt").write <<~EOS
+    (testpath/"out.txt").write <<~EOS
       +------+-----+
       | name | qty |
       +------+-----+
@@ -38,6 +38,6 @@ class PythonTabulate < Formula
       +------+-----+
     EOS
 
-    assert_equal (testpath"out.txt").read, shell_output("#{bin}tabulate -f grid #{testpath}in.txt")
+    assert_equal (testpath/"out.txt").read, shell_output("#{bin}/tabulate -f grid #{testpath}/in.txt")
   end
 end

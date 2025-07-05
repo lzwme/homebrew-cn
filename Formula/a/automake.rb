@@ -1,8 +1,8 @@
 class Automake < Formula
   desc "Tool for generating GNU Standards-compliant Makefiles"
-  homepage "https:www.gnu.orgsoftwareautomake"
-  url "https:ftp.gnu.orggnuautomakeautomake-1.18.1.tar.xz"
-  mirror "https:ftpmirror.gnu.orgautomakeautomake-1.18.1.tar.xz"
+  homepage "https://www.gnu.org/software/automake/"
+  url "https://ftp.gnu.org/gnu/automake/automake-1.18.1.tar.xz"
+  mirror "https://ftpmirror.gnu.org/automake/automake-1.18.1.tar.xz"
   sha256 "168aa363278351b89af56684448f525a5bce5079d0b6842bd910fdd3f1646887"
   license "GPL-2.0-or-later"
 
@@ -20,39 +20,39 @@ class Automake < Formula
   depends_on "autoconf"
 
   def install
-    ENV["PERL"] = "usrbinperl" if OS.mac?
+    ENV["PERL"] = "/usr/bin/perl" if OS.mac?
 
-    system ".configure", "--prefix=#{prefix}"
+    system "./configure", "--prefix=#{prefix}"
     system "make", "install"
 
     # Our aclocal must go first. See:
-    # https:github.comHomebrewhomebrewissues10618
-    (share"aclocaldirlist").write <<~EOS
-      #{HOMEBREW_PREFIX}shareaclocal
-      usrshareaclocal
+    # https://github.com/Homebrew/homebrew/issues/10618
+    (share/"aclocal/dirlist").write <<~EOS
+      #{HOMEBREW_PREFIX}/share/aclocal
+      /usr/share/aclocal
     EOS
   end
 
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       int main() { return 0; }
     C
-    (testpath"configure.ac").write <<~EOS
+    (testpath/"configure.ac").write <<~EOS
       AC_INIT(test, 1.0)
       AM_INIT_AUTOMAKE
       AC_PROG_CC
       AC_CONFIG_FILES(Makefile)
       AC_OUTPUT
     EOS
-    (testpath"Makefile.am").write <<~EOS
+    (testpath/"Makefile.am").write <<~EOS
       bin_PROGRAMS = test
       test_SOURCES = test.c
     EOS
-    system bin"aclocal"
-    system bin"automake", "--add-missing", "--foreign"
+    system bin/"aclocal"
+    system bin/"automake", "--add-missing", "--foreign"
     system "autoconf"
-    system ".configure"
+    system "./configure"
     system "make"
-    system ".test"
+    system "./test"
   end
 end

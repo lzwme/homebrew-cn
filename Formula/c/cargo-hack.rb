@@ -1,10 +1,10 @@
 class CargoHack < Formula
   desc "Cargo subcommand to provide options for testing and continuous integration"
-  homepage "https:github.comtaiki-ecargo-hack"
-  url "https:github.comtaiki-ecargo-hackarchiverefstagsv0.6.36.tar.gz"
+  homepage "https://github.com/taiki-e/cargo-hack"
+  url "https://ghfast.top/https://github.com/taiki-e/cargo-hack/archive/refs/tags/v0.6.36.tar.gz"
   sha256 "c3784af50b23a663bc3ac9afe65171125fce9d4931e69fd5ba10baf76fa49068"
   license any_of: ["Apache-2.0", "MIT"]
-  head "https:github.comtaiki-ecargo-hack.git", branch: "main"
+  head "https://github.com/taiki-e/cargo-hack.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "e4bd553ea805fb772f3aa506811760f5a15e7acf5b87a9cd39d1fdf8c56c34fa"
@@ -25,7 +25,7 @@ class CargoHack < Formula
 
   test do
     # Show that we can use a different toolchain than the one provided by the `rust` formula.
-    # https:github.comHomebrewhomebrew-corepull134074#pullrequestreview-1484979359
+    # https://github.com/Homebrew/homebrew-core/pull/134074#pullrequestreview-1484979359
     ENV.prepend_path "PATH", Formula["rustup"].bin
     system "rustup", "set", "profile", "minimal"
     system "rustup", "default", "beta"

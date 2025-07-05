@@ -1,10 +1,10 @@
 class Alpscore < Formula
   desc "Applications and libraries for physics simulations"
-  homepage "https:alpscore.org"
-  url "https:github.comALPSCoreALPSCorearchiverefstagsv2.3.2.tar.gz"
+  homepage "https://alpscore.org"
+  url "https://ghfast.top/https://github.com/ALPSCore/ALPSCore/archive/refs/tags/v2.3.2.tar.gz"
   sha256 "bd9b5af0a33acc825ffedfaa0bf794a420ab2b9b50f6a4e634ecbde43ae9cc24"
   license "GPL-2.0-only"
-  head "https:github.comALPSCoreALPSCore.git", branch: "master"
+  head "https://github.com/ALPSCore/ALPSCore.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "d32af432da55d533b24bd30a60f8e2845ae2bfe97a3b00d5f53e0d58282eeafe"
@@ -24,7 +24,7 @@ class Alpscore < Formula
 
   def install
     # Work around different behavior in CMake-built HDF5
-    inreplace "commoncmakeALPSCommonModuleDefinitions.cmake" do |s|
+    inreplace "common/cmake/ALPSCommonModuleDefinitions.cmake" do |s|
       s.sub! "set(HDF5_NO_FIND_PACKAGE_CONFIG_FILE TRUE)", ""
       s.sub! "find_package (HDF5 1.10.2 ", "find_package (HDF5 "
     end
@@ -32,7 +32,7 @@ class Alpscore < Formula
     args = %W[
       -DALPS_BUILD_SHARED=ON
       -DALPS_CXX_STD=c++14
-      -DEIGEN3_INCLUDE_DIR=#{Formula["eigen"].opt_include}eigen3
+      -DEIGEN3_INCLUDE_DIR=#{Formula["eigen"].opt_include}/eigen3
       -DENABLE_MPI=ON
       -DTesting=OFF
     ]
@@ -43,13 +43,13 @@ class Alpscore < Formula
 
     # Fix Cellar references
     files_with_cellar_references = [
-      share"alps-utilitiesalps-utilities.cmake",
-      share"alps-aleaalps-alea.cmake",
-      share"alps-gfalps-gf.cmake",
-      share"alps-accumulatorsalps-accumulators.cmake",
-      share"alps-mcalps-mc.cmake",
-      share"alps-paramsalps-params.cmake",
-      share"alps-hdf5alps-hdf5.cmake",
+      share/"alps-utilities/alps-utilities.cmake",
+      share/"alps-alea/alps-alea.cmake",
+      share/"alps-gf/alps-gf.cmake",
+      share/"alps-accumulators/alps-accumulators.cmake",
+      share/"alps-mc/alps-mc.cmake",
+      share/"alps-params/alps-params.cmake",
+      share/"alps-hdf5/alps-hdf5.cmake",
     ]
 
     inreplace files_with_cellar_references do |s|
@@ -59,11 +59,11 @@ class Alpscore < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~CPP
-      #include <alpsmcapi.hpp>
-      #include <alpsmcmcbase.hpp>
-      #include <alpsaccumulators.hpp>
-      #include <alpsparams.hpp>
+    (testpath/"test.cpp").write <<~CPP
+      #include <alps/mc/api.hpp>
+      #include <alps/mc/mcbase.hpp>
+      #include <alps/accumulators.hpp>
+      #include <alps/params.hpp>
       using namespace std;
       int main()
       {
@@ -76,7 +76,7 @@ class Alpscore < Formula
       }
     CPP
 
-    (testpath"CMakeLists.txt").write <<~CMAKE
+    (testpath/"CMakeLists.txt").write <<~CMAKE
       cmake_minimum_required(VERSION 3.10)
       project(test)
       set(CMAKE_CXX_STANDARD 14)
@@ -89,6 +89,6 @@ class Alpscore < Formula
 
     system "cmake", "."
     system "cmake", "--build", "."
-    assert_equal "3 #2\n1 (type: double) (name='myparam')\n", shell_output(".test")
+    assert_equal "3 #2\n1 (type: double) (name='myparam')\n", shell_output("./test")
   end
 end

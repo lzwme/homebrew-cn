@@ -1,10 +1,10 @@
 class Opencolorio < Formula
   desc "Color management solution geared towards motion picture production"
-  homepage "https:opencolorio.org"
-  url "https:github.comAcademySoftwareFoundationOpenColorIOarchiverefstagsv2.4.2.tar.gz"
+  homepage "https://opencolorio.org/"
+  url "https://ghfast.top/https://github.com/AcademySoftwareFoundation/OpenColorIO/archive/refs/tags/v2.4.2.tar.gz"
   sha256 "2d8f2c47c40476d6e8cea9d878f6601d04f6d5642b47018eaafa9e9f833f3690"
   license "BSD-3-Clause"
-  head "https:github.comAcademySoftwareFoundationOpenColorIO.git", branch: "master"
+  head "https://github.com/AcademySoftwareFoundation/OpenColorIO.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "fd4ce40466893d4cfb51455109afc4b3f69024d6a4fdd008f87cc61658e4fd37"
@@ -56,19 +56,19 @@ class Opencolorio < Formula
     <<~EOS
       OpenColorIO requires several environment variables to be set.
       You can source the following script in your shell-startup to do that:
-        #{HOMEBREW_PREFIX}shareociosetup_ocio.sh
+        #{HOMEBREW_PREFIX}/share/ocio/setup_ocio.sh
 
       Alternatively the documentation describes what env-variables need set:
-        https:opencolorio.orginstallation.html#environment-variables
+        https://opencolorio.org/installation.html#environment-variables
 
       You will require a config for OCIO to be useful. Sample configuration files
       and reference images can be found at:
-        https:opencolorio.orgdownloads.html
+        https://opencolorio.org/downloads.html
     EOS
   end
 
   test do
-    assert_match "validate", shell_output("#{bin}ociocheck --help", 1)
+    assert_match "validate", shell_output("#{bin}/ociocheck --help", 1)
     system python3, "-c", "import PyOpenColorIO as OCIO; print(OCIO.GetCurrentConfig())"
   end
 end

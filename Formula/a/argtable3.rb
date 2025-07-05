@@ -1,17 +1,17 @@
 class Argtable3 < Formula
   desc "ANSI C library for parsing GNU-style command-line options"
-  homepage "https:www.argtable.org"
-  url "https:github.comargtableargtable3archiverefstagsv3.3.1.tar.gz"
+  homepage "https://www.argtable.org"
+  url "https://ghfast.top/https://github.com/argtable/argtable3/archive/refs/tags/v3.3.1.tar.gz"
   sha256 "8b28a4fb2cd621d8d16f34e30e1956aa488077f6a6b902e7fc9f07883e1519c1"
   license "BSD-3-Clause"
-  head "https:github.comargtableargtable3.git", branch: "master"
+  head "https://github.com/argtable/argtable3.git", branch: "master"
 
   # Upstream uses a tag format including a version and hash (e.g.
   # `v3.2.2.f25c624`) and we only use the version part in the formula, so this
   # omits the hash part to match.
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)(?:\.\h+)?$i)
+    regex(/^v?(\d+(?:\.\d+)+)(?:\.\h+)?$/i)
   end
 
   no_autobump! because: :incompatible_version_format
@@ -35,7 +35,7 @@ class Argtable3 < Formula
   end
 
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include "argtable3.h"
       #include <assert.h>
       #include <stdio.h>
@@ -56,8 +56,8 @@ class Argtable3 < Formula
 
     system ENV.cc, "test.c", "-L#{lib}", "-I#{include}", "-largtable3",
                    "-o", "test"
-    assert_match "Received option", shell_output(".test -a")
-    assert_match "Received option", shell_output(".test --all")
-    assert_match "Invalid option", shell_output(".test -t")
+    assert_match "Received option", shell_output("./test -a")
+    assert_match "Received option", shell_output("./test --all")
+    assert_match "Invalid option", shell_output("./test -t")
   end
 end

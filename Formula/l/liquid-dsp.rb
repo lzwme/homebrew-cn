@@ -1,7 +1,7 @@
 class LiquidDsp < Formula
   desc "Digital signal processing library for software-defined radios"
-  homepage "https:liquidsdr.org"
-  url "https:github.comjgaeddertliquid-dsparchiverefstagsv1.7.0.tar.gz"
+  homepage "https://liquidsdr.org/"
+  url "https://ghfast.top/https://github.com/jgaeddert/liquid-dsp/archive/refs/tags/v1.7.0.tar.gz"
   sha256 "33c42ebc2e6088570421e282c6332e899705d42b4f73ebd1212e6a11da714dd4"
   license "MIT"
 
@@ -21,19 +21,19 @@ class LiquidDsp < Formula
 
   # Backport fix for ARM64 Linux
   patch do
-    url "https:github.comjgaeddertliquid-dspcommit3a5e1f578ad5e73d7665e71781e764765608c2a2.patch?full_index=1"
+    url "https://github.com/jgaeddert/liquid-dsp/commit/3a5e1f578ad5e73d7665e71781e764765608c2a2.patch?full_index=1"
     sha256 "8dcece1e5e612b5dad77030dfd453f0f47755fdb41e6201c0c8b6b7123f053b9"
   end
 
   def install
-    system ".bootstrap.sh"
-    system ".configure", "--prefix=#{prefix}"
+    system "./bootstrap.sh"
+    system "./configure", "--prefix=#{prefix}"
     system "make", "install"
   end
 
   test do
-    (testpath"test.c").write <<~C
-      #include <liquidliquid.h>
+    (testpath/"test.c").write <<~C
+      #include <liquid/liquid.h>
       int main() {
         if (!liquid_is_prime(3))
           return 1;
@@ -41,6 +41,6 @@ class LiquidDsp < Formula
       }
     C
     system ENV.cc, "test.c", "-o", "test", "-L#{lib}", "-lliquid"
-    system ".test"
+    system "./test"
   end
 end

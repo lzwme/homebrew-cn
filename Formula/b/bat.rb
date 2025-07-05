@@ -1,17 +1,17 @@
 class Bat < Formula
   desc "Clone of cat(1) with syntax highlighting and Git integration"
-  homepage "https:github.comsharkdpbat"
+  homepage "https://github.com/sharkdp/bat"
   license any_of: ["Apache-2.0", "MIT"]
   revision 1
-  head "https:github.comsharkdpbat.git", branch: "master"
+  head "https://github.com/sharkdp/bat.git", branch: "master"
 
   stable do
-    url "https:github.comsharkdpbatarchiverefstagsv0.25.0.tar.gz"
+    url "https://ghfast.top/https://github.com/sharkdp/bat/archive/refs/tags/v0.25.0.tar.gz"
     sha256 "4433403785ebb61d1e5d4940a8196d020019ce11a6f7d4553ea1d324331d8924"
 
-    # git2 bump to use libgit2 1.9, upstream pr ref, https:github.comsharkdpbatpull3169
+    # git2 bump to use libgit2 1.9, upstream pr ref, https://github.com/sharkdp/bat/pull/3169
     patch do
-      url "https:github.comsharkdpbatcommit01680e444ba4273b17d2d6d85a19f7a5e7046820.patch?full_index=1"
+      url "https://github.com/sharkdp/bat/commit/01680e444ba4273b17d2d6d85a19f7a5e7046820.patch?full_index=1"
       sha256 "ad450b12f6a4a8332bf1e249a239518c7edfe94ccc6abbbeb705cf22620c5619"
     end
   end
@@ -38,23 +38,23 @@ class Bat < Formula
 
     system "cargo", "install", *std_cargo_args
 
-    assets = buildpath.glob("targetreleasebuildbat-*outassets").first
-    man1.install assets"manualbat.1"
-    generate_completions_from_executable(bin"bat", "--completion")
+    assets = buildpath.glob("target/release/build/bat-*/out/assets").first
+    man1.install assets/"manual/bat.1"
+    generate_completions_from_executable(bin/"bat", "--completion")
   end
 
   test do
-    require "utilslinkage"
+    require "utils/linkage"
 
     pdf = test_fixtures("test.pdf")
-    output = shell_output("#{bin}bat #{pdf} --color=never")
+    output = shell_output("#{bin}/bat #{pdf} --color=never")
     assert_match "Homebrew test", output
 
     [
-      Formula["libgit2"].opt_libshared_library("libgit2"),
-      Formula["oniguruma"].opt_libshared_library("libonig"),
+      Formula["libgit2"].opt_lib/shared_library("libgit2"),
+      Formula["oniguruma"].opt_lib/shared_library("libonig"),
     ].each do |library|
-      assert Utils.binary_linked_to_library?(bin"bat", library),
+      assert Utils.binary_linked_to_library?(bin/"bat", library),
              "No linkage with #{library.basename}! Cargo is likely using a vendored version."
     end
   end

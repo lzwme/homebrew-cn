@@ -1,14 +1,14 @@
 class Bash < Formula
   desc "Bourne-Again SHell, a UNIX command interpreter"
-  homepage "https:www.gnu.orgsoftwarebash"
+  homepage "https://www.gnu.org/software/bash/"
   license "GPL-3.0-or-later"
-  head "https:git.savannah.gnu.orggitbash.git", branch: "master"
+  head "https://git.savannah.gnu.org/git/bash.git", branch: "master"
 
   stable do
-    url "https:ftp.gnu.orggnubashbash-5.2.tar.gz"
-    mirror "https:ftpmirror.gnu.orgbashbash-5.2.tar.gz"
-    mirror "https:mirrors.kernel.orggnubashbash-5.2.tar.gz"
-    mirror "https:mirrors.ocf.berkeley.edugnubashbash-5.2.tar.gz"
+    url "https://ftp.gnu.org/gnu/bash/bash-5.2.tar.gz"
+    mirror "https://ftpmirror.gnu.org/bash/bash-5.2.tar.gz"
+    mirror "https://mirrors.kernel.org/gnu/bash/bash-5.2.tar.gz"
+    mirror "https://mirrors.ocf.berkeley.edu/gnu/bash/bash-5.2.tar.gz"
     sha256 "a139c166df7ff4471c5e0733051642ee5556c1cc8a4a78f145583c5c81ab32fb"
     version "5.2.37"
 
@@ -52,10 +52,10 @@ class Bash < Formula
       037 8a2c1c3b5125d9ae5b47882f7d2ddf9648805f8c67c13aa5ea7efeac475cda94
     ].each_slice(2) do |p, checksum|
       patch :p0 do
-        url "https:ftp.gnu.orggnubashbash-5.2-patchesbash52-#{p}"
-        mirror "https:ftpmirror.gnu.orgbashbash-5.2-patchesbash52-#{p}"
-        mirror "https:mirrors.kernel.orggnubashbash-5.2-patchesbash52-#{p}"
-        mirror "https:mirrors.ocf.berkeley.edugnubashbash-5.2-patchesbash52-#{p}"
+        url "https://ftp.gnu.org/gnu/bash/bash-5.2-patches/bash52-#{p}"
+        mirror "https://ftpmirror.gnu.org/bash/bash-5.2-patches/bash52-#{p}"
+        mirror "https://mirrors.kernel.org/gnu/bash/bash-5.2-patches/bash52-#{p}"
+        mirror "https://mirrors.ocf.berkeley.edu/gnu/bash/bash-5.2-patches/bash52-#{p}"
         sha256 checksum
       end
     end
@@ -64,8 +64,8 @@ class Bash < Formula
   # We're not using `url :stable` here because we need `url` to be a string
   # when we use it in the `strategy` block.
   livecheck do
-    url "https:ftp.gnu.orggnubash?C=M&O=D"
-    regex(href=.*?bash[._-]v?(\d+(?:\.\d+)+)\.ti)
+    url "https://ftp.gnu.org/gnu/bash/?C=M&O=D"
+    regex(/href=.*?bash[._-]v?(\d+(?:\.\d+)+)\.t/i)
     strategy :gnu do |page, regex|
       # Match versions from files
       versions = page.scan(regex)
@@ -80,7 +80,7 @@ class Bash < Formula
 
       # Simply return the found versions if there isn't a patches directory
       # for the "newest" version
-      patches_directory = page.match(%r{href=.*?(bash[._-]v?#{newest_version.major_minor}[._-]patches?)["' >]}i)
+      patches_directory = page.match(%r{href=.*?(bash[._-]v?#{newest_version.major_minor}[._-]patches/?)["' >]}i)
       next versions if patches_directory.blank?
 
       # Fetch the page for the patches directory
@@ -89,7 +89,7 @@ class Bash < Formula
 
       # Generate additional major.minor.patch versions from the patch files in
       # the directory and add those to the versions array
-      patches_page[:content].scan(href=.*?bash[._-]?v?\d+(?:\.\d+)*[._-]0*(\d+)["' >]i).each do |match|
+      patches_page[:content].scan(/href=.*?bash[._-]?v?\d+(?:\.\d+)*[._-]0*(\d+)["' >]/i).each do |match|
         versions << "#{newest_version.major_minor}.#{match[0]}"
       end
 
@@ -111,32 +111,32 @@ class Bash < Formula
   end
 
   # System ncurses lacks functionality
-  # https:github.comHomebrewhomebrew-coreissues158667
+  # https://github.com/Homebrew/homebrew-core/issues/158667
   depends_on "ncurses"
 
   def install
-    # When built with SSH_SOURCE_BASHRC, bash will source ~.bashrc when
+    # When built with SSH_SOURCE_BASHRC, bash will source ~/.bashrc when
     # it's non-interactively from sshd.  This allows the user to set
     # environment variables prior to running the command (e.g. PATH).  The
-    # binbash that ships with macOS defines this, and without it, some
+    # /bin/bash that ships with macOS defines this, and without it, some
     # things (e.g. git+ssh) will break if the user sets their default shell to
-    # Homebrew's bash instead of binbash.
+    # Homebrew's bash instead of /bin/bash.
     ENV.append_to_cflags "-DSSH_SOURCE_BASHRC"
 
-    # Allow bash to find loadable modules in libbash.
-    ENV.append "LDFLAGS", "-Wl,-rpath,#{rpath(target: lib"bash")}"
+    # Allow bash to find loadable modules in lib/bash.
+    ENV.append "LDFLAGS", "-Wl,-rpath,#{rpath(target: lib/"bash")}"
     # FIXME: Setting `-rpath` flags don't seem to work on Linux.
-    ENV.prepend_path "HOMEBREW_RPATH_PATHS", rpath(target: lib"bash") if OS.linux?
+    ENV.prepend_path "HOMEBREW_RPATH_PATHS", rpath(target: lib/"bash") if OS.linux?
 
-    system ".configure", "--prefix=#{prefix}", "--with-curses"
+    system "./configure", "--prefix=#{prefix}", "--with-curses"
     system "make", "install"
 
-    (include"bashbuiltins").install lib"bashloadables.h"
-    pkgshare.install lib.glob("bashMakefile*")
+    (include/"bash/builtins").install lib/"bash/loadables.h"
+    pkgshare.install lib.glob("bash/Makefile*")
   end
 
   test do
-    assert_equal "hello", shell_output("#{bin}bash -c 'echo -n hello'")
-    assert_equal "csv is a shell builtin\n", shell_output("#{bin}bash -c 'enable csv; type csv'")
+    assert_equal "hello", shell_output("#{bin}/bash -c 'echo -n hello'")
+    assert_equal "csv is a shell builtin\n", shell_output("#{bin}/bash -c 'enable csv; type csv'")
   end
 end

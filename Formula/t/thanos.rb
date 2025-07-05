@@ -1,7 +1,7 @@
 class Thanos < Formula
   desc "Highly available Prometheus setup with long term storage capabilities"
-  homepage "https:thanos.io"
-  url "https:github.comthanos-iothanosarchiverefstagsv0.39.1.tar.gz"
+  homepage "https://thanos.io"
+  url "https://ghfast.top/https://github.com/thanos-io/thanos/archive/refs/tags/v0.39.1.tar.gz"
   sha256 "834c66b23007bac3233b5cf769df454bf59f1a04fd0734cd11f6c15e864c3a18"
   license "Apache-2.0"
 
@@ -17,17 +17,17 @@ class Thanos < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), ".cmdthanos"
+    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/thanos"
   end
 
   test do
-    (testpath"bucket_config.yaml").write <<~YAML
+    (testpath/"bucket_config.yaml").write <<~YAML
       type: FILESYSTEM
       config:
         directory: #{testpath}
     YAML
 
-    output = shell_output("#{bin}thanos tools bucket inspect --objstore.config-file bucket_config.yaml")
+    output = shell_output("#{bin}/thanos tools bucket inspect --objstore.config-file bucket_config.yaml")
     assert_match "| ULID |", output
   end
 end

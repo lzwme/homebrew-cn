@@ -1,7 +1,7 @@
 class Jless < Formula
   desc "Command-line pager for JSON data"
-  homepage "https:jless.io"
-  url "https:github.comPaulJuliusMartinezjlessarchiverefstagsv0.9.0.tar.gz"
+  homepage "https://jless.io/"
+  url "https://ghfast.top/https://github.com/PaulJuliusMartinez/jless/archive/refs/tags/v0.9.0.tar.gz"
   sha256 "43527a78ba2e5e43a7ebd8d0da8b5af17a72455c5f88b4d1134f34908a594239"
   license "MIT"
 
@@ -34,8 +34,8 @@ class Jless < Formula
   end
 
   test do
-    (testpath"example.json").write('{"hello": "world"}')
-    res, process = Open3.capture2("#{bin}jless example.json")
+    (testpath/"example.json").write('{"hello": "world"}')
+    res, process = Open3.capture2("#{bin}/jless example.json")
     assert_equal("world", JSON.parse(res)["hello"])
     assert_equal(process.exitstatus, 0)
   end

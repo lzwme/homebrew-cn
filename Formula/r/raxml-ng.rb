@@ -1,7 +1,7 @@
 class RaxmlNg < Formula
   desc "RAxML Next Generation: faster, easier-to-use and more flexible"
-  homepage "https:cme.h-its.orgexelixiswebsoftwareraxml"
-  url "https:github.comamkozlovraxml-ng.git",
+  homepage "https://cme.h-its.org/exelixis/web/software/raxml/"
+  url "https://github.com/amkozlov/raxml-ng.git",
       tag:      "1.2.2",
       revision: "805318cef87bd5d67064efa299b5d1cf948367fd"
   license "AGPL-3.0-or-later"
@@ -46,11 +46,11 @@ class RaxmlNg < Formula
 
   test do
     resource "homebrew-example" do
-      url "https:cme.h-its.orgexelixisresourcedownloadhands-ondna.phy"
+      url "https://cme.h-its.org/exelixis/resource/download/hands-on/dna.phy"
       sha256 "c2adc42823313831b97af76b3b1503b84573f10d9d0d563be5815cde0effe0c2"
     end
 
     testpath.install resource("homebrew-example")
-    system bin"raxml-ng", "--msa", "dna.phy", "--start", "--model", "GTR"
+    system bin/"raxml-ng", "--msa", "dna.phy", "--start", "--model", "GTR"
   end
 end

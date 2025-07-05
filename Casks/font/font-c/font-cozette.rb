@@ -2,9 +2,9 @@ cask "font-cozette" do
   version "1.29.0"
   sha256 "1c7eb7c0117b6ac4955e1a2465bb6f94e08445509f4f595b2651ebdabca0c778"
 
-  url "https:github.comslavfoxCozettereleasesdownloadv.#{version}CozetteFonts-v-#{version.dots_to_hyphens}.zip"
+  url "https://ghfast.top/https://github.com/slavfox/Cozette/releases/download/v.#{version}/CozetteFonts-v-#{version.dots_to_hyphens}.zip"
   name "Cozette"
-  homepage "https:github.comslavfoxCozette"
+  homepage "https://github.com/slavfox/Cozette"
 
   livecheck do
     url :url
@@ -13,12 +13,12 @@ cask "font-cozette" do
 
   no_autobump! because: :requires_manual_review
 
-  font "CozetteFontscozette.dfont"
-  font "CozetteFontscozette_hidpi.dfont"
-  font "CozetteFontsCozetteCrossedSevenVector.otf"
-  font "CozetteFontsCozetteCrossedSevenVectorBold.otf"
-  font "CozetteFontsCozetteVector.otf"
-  font "CozetteFontsCozetteVectorBold.otf"
+  font "CozetteFonts/cozette.dfont"
+  font "CozetteFonts/cozette_hidpi.dfont"
+  font "CozetteFonts/CozetteCrossedSevenVector.otf"
+  font "CozetteFonts/CozetteCrossedSevenVectorBold.otf"
+  font "CozetteFonts/CozetteVector.otf"
+  font "CozetteFonts/CozetteVectorBold.otf"
 
   # No zap stanza required
 end

@@ -6,27 +6,24 @@ class Glances < Formula
   url "https://files.pythonhosted.org/packages/e0/df/96cd0ff650bd491a73815171131304d9c0d15d90ef44fed26324558aabf0/glances-4.3.1.tar.gz"
   sha256 "952c4985b9c1ff9d9ebd23760a2dd124fa2315cf02acfa68f3b7e1c51e087c8c"
   license "LGPL-3.0-or-later"
-  revision 4
+  revision 5
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "ce57cbf56f260c30e3254a2226c7fba443495d05ff1ea84249977f7fdd53e7c4"
-    sha256 cellar: :any,                 arm64_sonoma:  "740e906e8842eed363fff78e6963754f3c7bdecbc6a82647ddaa732c68e84d79"
-    sha256 cellar: :any,                 arm64_ventura: "f646b48968b54d10b96c8c167aad39d326a64ca57a40bca29c27513cd7f745bd"
-    sha256 cellar: :any,                 sonoma:        "9bc854ecab8456cf671cc64c7b0818a9503b5a6795d73d7227a63324f8ae3173"
-    sha256 cellar: :any,                 ventura:       "b200be9047565c161846c16d91d4bdde61d2bd4ac791ca8712a8ba494dc1f4b0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fdeca40836e9d315bdf4875db9df188d1ea7b223f56090139baf1fa0023129d2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "da8113201c35e362603863a488d626ac7fc353da37567809eb94792a5bdebd19"
+    sha256 cellar: :any,                 arm64_sequoia: "894dd7cb770ddaa089c165c47435012f89994cb5bfe02a7f166775c2435be659"
+    sha256 cellar: :any,                 arm64_sonoma:  "eaf4f89fe1a05a43608137cf7ff74ead5d126fbf9c3908ecab147424550e5838"
+    sha256 cellar: :any,                 arm64_ventura: "4229127849b934862ef02e4ae88c2be8c9152123416f619f4154c285f035fc20"
+    sha256 cellar: :any,                 sonoma:        "76dc3b9aef89a91de4d0899bea9a43f8e28efa187bc7c357d4a1772fbdc519c2"
+    sha256 cellar: :any,                 ventura:       "a452242056001fa6c13b150970d7976665fe81db56841a27399c4edb4efca57e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "31d47b51b206b1faa160f8ecbbf462b371b037f55463896edc10afece0da0698"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dda017d665b0aad257237117d04b17dc5e00d86faec29d363800a0e73e834f09"
   end
 
   depends_on "cmake" => :build # for pyzmq
   depends_on "rust" => :build # for orjson
 
   depends_on "certifi"
-  depends_on "cffi"
   depends_on "cryptography"
-  depends_on "pycparser"
   depends_on "python@3.13"
-  depends_on "six"
   depends_on "zeromq"
 
   resource "annotated-types" do
@@ -90,8 +87,8 @@ class Glances < Formula
   end
 
   resource "fastapi" do
-    url "https://files.pythonhosted.org/packages/20/64/ec0788201b5554e2a87c49af26b77a4d132f807a0fa9675257ac92c6aa0e/fastapi-0.115.13.tar.gz"
-    sha256 "55d1d25c2e1e0a0a50aceb1c8705cd932def273c102bff0b1c1da88b3c6eb307"
+    url "https://files.pythonhosted.org/packages/ca/53/8c38a874844a8b0fa10dd8adf3836ac154082cf88d3f22b544e9ceea0a15/fastapi-0.115.14.tar.gz"
+    sha256 "b1de15cdc1c499a4da47914db35d0e4ef8f1ce62b624e94e0e5824421df99739"
   end
 
   resource "geomet" do
@@ -150,8 +147,8 @@ class Glances < Formula
   end
 
   resource "kafka-python" do
-    url "https://files.pythonhosted.org/packages/1e/26/bec496da574bbacf53b8a5a6048f76b6f76d89e932369bd974573af20971/kafka_python-2.2.12.tar.gz"
-    sha256 "bf73f7a74b596a34cfe4d22ffa53352fff0bd2b61acfa409235ed5da72a98bc1"
+    url "https://files.pythonhosted.org/packages/da/67/1434436f3cb409443f72a4843b877ac2d9bf586a31a0e966cf1dc4dc9a94/kafka_python-2.2.15.tar.gz"
+    sha256 "e0f480a45f3814cb0eb705b8b4f61069e1be61dae0d8c69d0f1f2da33eea1bd5"
   end
 
   resource "markupsafe" do
@@ -309,14 +306,19 @@ class Glances < Formula
     sha256 "f36b47402ecde768dbfafc46e8e4207b4360c654f1f3bb84475f0a28628fb19c"
   end
 
+  resource "six" do
+    url "https://files.pythonhosted.org/packages/94/e7/b2c673351809dca68a0e064b6af791aa332cf192da575fd474ed7d6f16a2/six-1.17.0.tar.gz"
+    sha256 "ff70335d468e7eb6ec65b95b99d3a2836546063f63acc5171de367e834932a81"
+  end
+
   resource "sniffio" do
     url "https://files.pythonhosted.org/packages/a2/87/a6771e1546d97e7e041b6ae58d80074f81b7d5121207425c964ddf5cfdbd/sniffio-1.3.1.tar.gz"
     sha256 "f4324edc670a0f49750a81b895f35c3adb843cca46f0530f79fc1babb23789dc"
   end
 
   resource "sparklines" do
-    url "https://files.pythonhosted.org/packages/42/10/a55ffb7b5ae130804ebcb53ecbb711a902403fe7efe67739aceeb4daf8f5/sparklines-0.5.0.tar.gz"
-    sha256 "069e48633fc1af354e9bbdfd0a644c1279d6632a572446aa9d741105f1177000"
+    url "https://files.pythonhosted.org/packages/1d/28/ef17c14c68e85b1f987d9ad64aa24f62592154f100206a097ffc545e4510/sparklines-0.7.0.tar.gz"
+    sha256 "efd2ff5126dac53ea4212c1e225f286beaf1907b35204465b65010db2eec4b2a"
   end
 
   resource "starlette" do
@@ -327,6 +329,11 @@ class Glances < Formula
   resource "statsd" do
     url "https://files.pythonhosted.org/packages/27/29/05e9f50946f4cf2ed182726c60d9c0ae523bb3f180588c574dd9746de557/statsd-4.0.1.tar.gz"
     sha256 "99763da81bfea8daf6b3d22d11aaccb01a8d0f52ea521daab37e758a4ca7d128"
+  end
+
+  resource "termcolor" do
+    url "https://files.pythonhosted.org/packages/ca/6c/3d75c196ac07ac8749600b60b03f4f6094d54e132c4d94ebac6ee0e0add0/termcolor-3.1.0.tar.gz"
+    sha256 "6a6dd7fbee581909eeec6a756cff1d7f7c376063b14e4a298dc4980309e55970"
   end
 
   resource "typing-extensions" do
@@ -345,8 +352,8 @@ class Glances < Formula
   end
 
   resource "uvicorn" do
-    url "https://files.pythonhosted.org/packages/de/ad/713be230bcda622eaa35c28f0d328c3675c371238470abdea52417f17a8e/uvicorn-0.34.3.tar.gz"
-    sha256 "35919a9a979d7a59334b6b10e05d77c1d0d574c50e0fc98b8b1a0f165708b55a"
+    url "https://files.pythonhosted.org/packages/5e/42/e0e305207bb88c6b8d3061399c6a961ffe5fbb7e2aa63c9234df7259e9cd/uvicorn-0.35.0.tar.gz"
+    sha256 "bc662f087f7cf2ce11a1d7fd70b90c9f98ef2e2831556dd078d131b96cc94a01"
   end
 
   resource "wifi" do
@@ -366,8 +373,9 @@ class Glances < Formula
 
   def install
     virtualenv_install_with_resources
-
-    prefix.install libexec/"share"
+    # Workaround limited netifaces2 functionality on macOS
+    # https://github.com/nicolargo/glances/issues/3219
+    inreplace libexec/"share/doc/glances/glances.conf", /(port_default_gateway)=True/, "\\1=False" if OS.mac?
   end
 
   test do

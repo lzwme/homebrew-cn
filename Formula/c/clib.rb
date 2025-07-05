@@ -1,14 +1,14 @@
 class Clib < Formula
   desc "Package manager for C programming"
-  homepage "https:github.comclibsclib"
-  url "https:github.comclibsclibarchiverefstags2.8.7.tar.gz"
+  homepage "https://github.com/clibs/clib"
+  url "https://ghfast.top/https://github.com/clibs/clib/archive/refs/tags/2.8.7.tar.gz"
   sha256 "83d5767e363c3ed4b4271000b9ce63b6e11b6c4740df910e0074f844fb34258e"
   license "MIT"
-  head "https:github.comclibsclib.git", branch: "master"
+  head "https://github.com/clibs/clib.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -30,9 +30,9 @@ class Clib < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}clib --version")
+    assert_match version.to_s, shell_output("#{bin}/clib --version")
 
-    pipe_output("#{bin}clib init", "brewtest\n0.0.1\n", 0)
-    assert_match "brewtest", (testpath"clib.json").read
+    pipe_output("#{bin}/clib init", "brewtest\n0.0.1\n", 0)
+    assert_match "brewtest", (testpath/"clib.json").read
   end
 end

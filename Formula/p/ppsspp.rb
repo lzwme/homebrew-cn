@@ -1,14 +1,14 @@
 class Ppsspp < Formula
   desc "PlayStation Portable emulator"
-  homepage "https:ppsspp.org"
+  homepage "https://ppsspp.org/"
   license all_of: ["GPL-2.0-or-later", "BSD-3-Clause"]
   revision 4
-  head "https:github.comhrydgardppsspp.git", branch: "master"
+  head "https://github.com/hrydgard/ppsspp.git", branch: "master"
 
   # TODO: Can remove CMAKE_POLICY_VERSION_MINIMUM when bumping version to 1.18+
-  # https:github.comhrydgardppssppcommitfe91f246b2d22a25fcd52deb57211f1e86717c35
+  # https://github.com/hrydgard/ppsspp/commit/fe91f246b2d22a25fcd52deb57211f1e86717c35
   stable do
-    url "https:github.comhrydgardppssppreleasesdownloadv1.17.1ppsspp-1.17.1.tar.xz"
+    url "https://ghfast.top/https://github.com/hrydgard/ppsspp/releases/download/v1.17.1/ppsspp-1.17.1.tar.xz"
     sha256 "23e0b8649cc8124b0c22a62d4d41b592b6bd4064bce8c09b0d4abce895e132ae"
 
     # miniupnpc 2.2.8 compatibility patch
@@ -59,21 +59,21 @@ class Ppsspp < Formula
     # Build PPSSPP-bundled ffmpeg from source. Changes in more recent
     # versions in ffmpeg make it unsuitable for use with PPSSPP, so
     # upstream ships a modified version of ffmpeg 3.
-    # See https:github.comHomebrewhomebrew-coreissues84737.
+    # See https://github.com/Homebrew/homebrew-core/issues/84737.
     cd "ffmpeg" do
       if OS.mac?
         rm_r("macosx")
-        system ".mac-build.sh"
+        system "./mac-build.sh"
       else
         rm_r("linux")
         arch = Hardware::CPU.intel? ? "x86-64" : Hardware::CPU.arch
-        system ".linux_#{arch}.sh"
+        system "./linux_#{arch}.sh"
       end
     end
 
     # Replace bundled MoltenVK dylib with symlink to Homebrew-managed dylib
-    vulkan_frameworks = buildpath"extvulkanmacOSFrameworks"
-    vulkan_frameworks.install_symlink Formula["molten-vk"].opt_lib"libMoltenVK.dylib"
+    vulkan_frameworks = buildpath/"ext/vulkan/macOS/Frameworks"
+    vulkan_frameworks.install_symlink Formula["molten-vk"].opt_lib/"libMoltenVK.dylib"
 
     args = %w[
       -DCMAKE_POLICY_VERSION_MINIMUM=3.5
@@ -90,12 +90,12 @@ class Ppsspp < Formula
     system "cmake", "--build", "build"
 
     if OS.mac?
-      prefix.install "buildPPSSPPSDL.app"
-      bin.write_exec_script prefix"PPSSPPSDL.appContentsMacOSPPSSPPSDL"
+      prefix.install "build/PPSSPPSDL.app"
+      bin.write_exec_script prefix/"PPSSPPSDL.app/Contents/MacOS/PPSSPPSDL"
 
       # Replace app bundles with symlinks to allow dependencies to be updated
-      app_frameworks = prefix"PPSSPPSDL.appContentsFrameworks"
-      ln_sf (Formula["molten-vk"].opt_lib"libMoltenVK.dylib").relative_path_from(app_frameworks), app_frameworks
+      app_frameworks = prefix/"PPSSPPSDL.app/Contents/Frameworks"
+      ln_sf (Formula["molten-vk"].opt_lib/"libMoltenVK.dylib").relative_path_from(app_frameworks), app_frameworks
     else
       system "cmake", "--install", "build"
     end
@@ -104,19 +104,19 @@ class Ppsspp < Formula
   end
 
   test do
-    system bin"ppsspp", "--version"
+    system bin/"ppsspp", "--version"
     if OS.mac?
-      app_frameworks = prefix"PPSSPPSDL.appContentsFrameworks"
-      assert_path_exists app_frameworks"libMoltenVK.dylib", "Broken linkage with `molten-vk`"
+      app_frameworks = prefix/"PPSSPPSDL.app/Contents/Frameworks"
+      assert_path_exists app_frameworks/"libMoltenVK.dylib", "Broken linkage with `molten-vk`"
     end
   end
 end
 
 __END__
-diff --git aCoreUtilPortManager.cpp bCoreUtilPortManager.cpp
+diff --git a/Core/Util/PortManager.cpp b/Core/Util/PortManager.cpp
 index cfb81e9dbd..dfd6a8e583 100644
---- aCoreUtilPortManager.cpp
-+++ bCoreUtilPortManager.cpp
+--- a/Core/Util/PortManager.cpp
++++ b/Core/Util/PortManager.cpp
 @@ -48,7 +48,7 @@ std::thread upnpServiceThread;
  std::recursive_mutex upnpLock;
  std::deque<UPnPArgs> upnpReqs;
@@ -127,8 +127,8 @@ index cfb81e9dbd..dfd6a8e583 100644
  	m_LocalPort(UPNP_LOCAL_PORT_ANY),
  	m_leaseDuration("43200") {
 @@ -99,7 +99,7 @@ bool PortManager::Initialize(const unsigned int timeout) {
- 	int ipv6 = 0;  0 = IPv4, 1 = IPv6
- 	unsigned char ttl = 2;  defaulting to 2
+ 	int ipv6 = 0; // 0 = IPv4, 1 = IPv6
+ 	unsigned char ttl = 2; // defaulting to 2
  	int error = 0;
 -	
 +
@@ -137,17 +137,17 @@ index cfb81e9dbd..dfd6a8e583 100644
  		ERROR_LOG(SCENET, "PortManager::Initialize - UPnP is Disabled on Networking Settings");
 @@ -161,9 +161,21 @@ bool PortManager::Initialize(const unsigned int timeout) {
  
- 		 Get LAN IP address that connects to the router
+ 		// Get LAN IP address that connects to the router
  		char lanaddr[64] = "unset";
--		int status = UPNP_GetValidIGD(devlist, urls, datas, lanaddr, sizeof(lanaddr)); possible "status" values, 0 = NO IGD found, 1 = A valid connected IGD has been found, 2 = A valid IGD has been found but it reported as not connected, 3 = an UPnP device has been found but was not recognized as an IGD
+-		int status = UPNP_GetValidIGD(devlist, urls, datas, lanaddr, sizeof(lanaddr)); //possible "status" values, 0 = NO IGD found, 1 = A valid connected IGD has been found, 2 = A valid IGD has been found but it reported as not connected, 3 = an UPnP device has been found but was not recognized as an IGD
 +
-+		 possible "status" values:
-+		 -1 = Internal error
-+		  0 = NO IGD found
-+		  1 = A valid connected IGD has been found
-+		  2 = A valid connected IGD has been found but its IP address is reserved (non routable)
-+		  3 = A valid IGD has been found but it reported as not connected
-+		  4 = an UPnP device has been found but was not recognized as an IGD
++		// possible "status" values:
++		// -1 = Internal error
++		//  0 = NO IGD found
++		//  1 = A valid connected IGD has been found
++		//  2 = A valid connected IGD has been found but its IP address is reserved (non routable)
++		//  3 = A valid IGD has been found but it reported as not connected
++		//  4 = an UPnP device has been found but was not recognized as an IGD
 +#if (MINIUPNPC_API_VERSION >= 18)
 +		int status = UPNP_GetValidIGD(devlist, urls, datas, lanaddr, sizeof(lanaddr), nullptr, 0);
 +#else
@@ -157,7 +157,7 @@ index cfb81e9dbd..dfd6a8e583 100644
 -		INFO_LOG(SCENET, "PortManager - Detected LAN IP: %s", m_lanip.c_str());
 +		INFO_LOG(SCENET, "PortManager - Detected LAN IP: %s (status=%d)", m_lanip.c_str(), status);
  
- 		 Additional Info
+ 		// Additional Info
  		char connectionType[64] = "";
 @@ -206,7 +218,7 @@ bool PortManager::Add(const char* protocol, unsigned short port, unsigned short
  	char intport_str[16];
@@ -171,7 +171,7 @@ index cfb81e9dbd..dfd6a8e583 100644
 @@ -325,7 +337,7 @@ bool PortManager::Restore() {
  				}
  			}
- 			 Add the original owner back
+ 			// Add the original owner back
 -			r = UPNP_AddPortMapping(urls->controlURL, datas->first.servicetype, 
 +			r = UPNP_AddPortMapping(urls->controlURL, datas->first.servicetype,
  				it->extPort_str.c_str(), it->intPort_str.c_str(), it->lanip.c_str(), it->desc.c_str(), it->protocol.c_str(), it->remoteHost.c_str(), it->duration.c_str());
@@ -180,7 +180,7 @@ index cfb81e9dbd..dfd6a8e583 100644
 @@ -334,7 +346,7 @@ bool PortManager::Restore() {
  				ERROR_LOG(SCENET, "PortManager::Restore - AddPortMapping failed (error: %i)", r);
  				if (r == UPNPCOMMAND_HTTP_ERROR)
- 					return false;  Might be better not to exit here, but exiting a loop will avoid long timeouts in the case the router is no longer reachable
+ 					return false; // Might be better not to exit here, but exiting a loop will avoid long timeouts in the case the router is no longer reachable
 -			}		
 +			}
  		}

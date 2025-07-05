@@ -1,10 +1,10 @@
 class DockerCompletion < Formula
   desc "Bash, Zsh and Fish completion for Docker"
-  homepage "https:www.docker.com"
-  url "https:github.comdockercliarchiverefstagsv28.3.0.tar.gz"
+  homepage "https://www.docker.com/"
+  url "https://ghfast.top/https://github.com/docker/cli/archive/refs/tags/v28.3.0.tar.gz"
   sha256 "0ac18927138cd2582e02277d365174a118b962f10084a6bef500a58de705e094"
   license "Apache-2.0"
-  head "https:github.comdockercli.git", branch: "master"
+  head "https://github.com/docker/cli.git", branch: "master"
 
   livecheck do
     formula "docker"
@@ -17,18 +17,18 @@ class DockerCompletion < Formula
   conflicts_with cask: "docker-desktop"
 
   # These used to also be provided by the `docker` formula.
-  link_overwrite "etcbash_completion.ddocker"
-  link_overwrite "sharefishvendor_completions.ddocker.fish"
-  link_overwrite "sharezshsite-functions_docker"
+  link_overwrite "etc/bash_completion.d/docker"
+  link_overwrite "share/fish/vendor_completions.d/docker.fish"
+  link_overwrite "share/zsh/site-functions/_docker"
 
   def install
-    bash_completion.install "contribcompletionbashdocker"
-    fish_completion.install "contribcompletionfishdocker.fish"
-    zsh_completion.install "contribcompletionzsh_docker"
+    bash_completion.install "contrib/completion/bash/docker"
+    fish_completion.install "contrib/completion/fish/docker.fish"
+    zsh_completion.install "contrib/completion/zsh/_docker"
   end
 
   test do
     assert_match "-F _docker",
-      shell_output("bash -c 'source #{bash_completion}docker && complete -p docker'")
+      shell_output("bash -c 'source #{bash_completion}/docker && complete -p docker'")
   end
 end

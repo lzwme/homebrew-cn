@@ -1,14 +1,14 @@
 class Goimports < Formula
   desc "Go formatter that additionally inserts import statements"
-  homepage "https:pkg.go.devgolang.orgxtoolscmdgoimports"
-  url "https:github.comgolangtoolsarchiverefstagsv0.34.0.tar.gz"
+  homepage "https://pkg.go.dev/golang.org/x/tools/cmd/goimports"
+  url "https://ghfast.top/https://github.com/golang/tools/archive/refs/tags/v0.34.0.tar.gz"
   sha256 "ed3063f864a4c3e12f02dc4553d087b22b3b5f09f881e977613772e3f2324ab9"
   license "BSD-3-Clause"
-  head "https:github.comgolangtools.git", branch: "master"
+  head "https://github.com/golang/tools.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -24,13 +24,13 @@ class Goimports < Formula
   depends_on "go"
 
   def install
-    chdir "cmdgoimports" do
+    chdir "cmd/goimports" do
       system "go", "build", *std_go_args
     end
   end
 
   test do
-    (testpath"main.go").write <<~GO
+    (testpath/"main.go").write <<~GO
       package main
 
       func main() {
@@ -38,6 +38,6 @@ class Goimports < Formula
       }
     GO
 
-    assert_match(\+import "fmt", shell_output("#{bin}goimports -d #{testpath}main.go"))
+    assert_match(/\+import "fmt"/, shell_output("#{bin}/goimports -d #{testpath}/main.go"))
   end
 end

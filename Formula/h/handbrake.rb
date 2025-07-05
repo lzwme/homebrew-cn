@@ -1,10 +1,10 @@
 class Handbrake < Formula
   desc "Open-source video transcoder available for Linux, Mac, and Windows"
-  homepage "https:handbrake.fr"
-  url "https:github.comHandBrakeHandBrakereleasesdownload1.9.2HandBrake-1.9.2-source.tar.bz2"
+  homepage "https://handbrake.fr/"
+  url "https://ghfast.top/https://github.com/HandBrake/HandBrake/releases/download/1.9.2/HandBrake-1.9.2-source.tar.bz2"
   sha256 "f56696b9863a6c926c0eabdcb980cece9aa222c650278d455ac6873d3220ce49"
   license "GPL-2.0-only"
-  head "https:github.comHandBrakeHandBrake.git", branch: "master"
+  head "https://github.com/HandBrake/HandBrake.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -54,11 +54,11 @@ class Handbrake < Formula
     # of supported CPU features in the compiler via -march flags.
     ENV.runtime_cpu_detection
 
-    inreplace "contribffmpegmodule.defs", "$(FFMPEG.GCC.gcc)", "cc"
+    inreplace "contrib/ffmpeg/module.defs", "$(FFMPEG.GCC.gcc)", "cc"
 
-    ENV.append "CFLAGS", "-I#{Formula["libxml2"].opt_include}libxml2" if OS.linux?
+    ENV.append "CFLAGS", "-I#{Formula["libxml2"].opt_include}/libxml2" if OS.linux?
 
-    system ".configure", "--prefix=#{prefix}",
+    system "./configure", "--prefix=#{prefix}",
                           "--disable-xcode",
                           "--disable-gtk"
     system "make", "-C", "build"
@@ -66,6 +66,6 @@ class Handbrake < Formula
   end
 
   test do
-    system bin"HandBrakeCLI", "--help"
+    system bin/"HandBrakeCLI", "--help"
   end
 end

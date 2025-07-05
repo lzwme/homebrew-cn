@@ -1,7 +1,7 @@
 class Nift < Formula
   desc "Cross-platform open source framework for managing and generating websites"
-  homepage "https:nift.dev"
-  url "https:github.comnifty-site-managernsmarchiverefstagsv3.0.3.tar.gz"
+  homepage "https://nift.dev/"
+  url "https://ghfast.top/https://github.com/nifty-site-manager/nsm/archive/refs/tags/v3.0.3.tar.gz"
   sha256 "4900247b92e0ae0d124391ec710a38b322ae83170e2c39191f8ad497090ffd24"
   license "MIT"
 
@@ -21,24 +21,24 @@ class Nift < Formula
 
   depends_on "luajit"
 
-  # Fix build on Apple Silicon by removing -pagezero_size-image_base flags.
+  # Fix build on Apple Silicon by removing -pagezero_size/-image_base flags.
   # TODO: Remove if upstream PR is merged and included in release.
-  # PR ref: https:github.comnifty-site-managernsmpull33
+  # PR ref: https://github.com/nifty-site-manager/nsm/pull/33
   patch do
-    url "https:github.comnifty-site-managernsmcommit00b3ef1ea5ffe2dedc501f0603d16a9a4d57d395.patch?full_index=1"
+    url "https://github.com/nifty-site-manager/nsm/commit/00b3ef1ea5ffe2dedc501f0603d16a9a4d57d395.patch?full_index=1"
     sha256 "c05f0381feef577c493d3b160fc964cee6aeb3a444bc6bde70fda4abc96be8bf"
   end
 
   def install
-    inreplace "Lua.h", "usrlocalinclude", Formula["luajit"].opt_include
+    inreplace "Lua.h", "/usr/local/include", Formula["luajit"].opt_include
     system "make", "BUNDLED=0", "LUAJIT_VERSION=2.1"
     system "make", "install", "PREFIX=#{prefix}"
   end
 
   test do
     mkdir "empty" do
-      system bin"nsm", "init", ".html"
-      assert_path_exists testpath"emptyoutputindex.html"
+      system bin/"nsm", "init", ".html"
+      assert_path_exists testpath/"empty/output/index.html"
     end
   end
 end

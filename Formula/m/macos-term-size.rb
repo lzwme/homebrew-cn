@@ -1,10 +1,10 @@
 class MacosTermSize < Formula
   desc "Get the terminal window size on macOS"
-  homepage "https:github.comsindresorhusmacos-terminal-size"
-  url "https:github.comsindresorhusmacos-terminal-sizearchiverefstagsv1.0.0.tar.gz"
+  homepage "https://github.com/sindresorhus/macos-terminal-size"
+  url "https://ghfast.top/https://github.com/sindresorhus/macos-terminal-size/archive/refs/tags/v1.0.0.tar.gz"
   sha256 "f8e4476549ef4446d979875e87a77365fcfecfe58df7e62a653a402e29c8a0dd"
   license "MIT"
-  head "https:github.comsindresorhusmacos-terminal-size.git", branch: "main"
+  head "https://github.com/sindresorhus/macos-terminal-size.git", branch: "main"
 
   no_autobump! because: :requires_manual_review
 
@@ -20,14 +20,14 @@ class MacosTermSize < Formula
   depends_on :macos
 
   def install
-    # https:github.comsindresorhusmacos-terminal-sizeblobmainbuild#L6
+    # https://github.com/sindresorhus/macos-terminal-size/blob/main/build#L6
     system ENV.cc, "-std=c99", "term-size.c", "-o", "term-size"
     bin.install "term-size"
   end
 
   test do
     require "pty"
-    out, = PTY.spawn(bin"term-size")
-    assert_match(\d+\s+\d+, out.read.chomp)
+    out, = PTY.spawn(bin/"term-size")
+    assert_match(/\d+\s+\d+/, out.read.chomp)
   end
 end

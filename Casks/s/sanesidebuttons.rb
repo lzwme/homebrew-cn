@@ -17,11 +17,11 @@ cask "sanesidebuttons" do
     end
   end
 
-  url "https:github.comthealpaSaneSideButtonsreleasesdownload#{version}SaneSideButtons.dmg",
-      verified: "github.comthealpaSaneSideButtons"
+  url "https://ghfast.top/https://github.com/thealpa/SaneSideButtons/releases/download/#{version}/SaneSideButtons.dmg",
+      verified: "github.com/thealpa/SaneSideButtons/"
   name "SaneSideButtons"
   desc "Menu bar app that enables system-wide navigation using side mouse buttons"
-  homepage "https:janhuelsmann.comsanesidebuttons"
+  homepage "https://janhuelsmann.com/sanesidebuttons"
 
   no_autobump! because: :requires_manual_review
 
@@ -30,8 +30,8 @@ cask "sanesidebuttons" do
   app "SaneSideButtons.app"
 
   zap trash: [
-    "~LibraryApplication Scriptscom.janhuelsmann.SaneSideButtons",
-    "~LibraryContainerscom.janhuelsmann.SaneSideButtons",
-    "~LibraryPreferencescom.janhuelsmann.sanesidebuttons.plist",
+    "~/Library/Application Scripts/com.janhuelsmann.SaneSideButtons",
+    "~/Library/Containers/com.janhuelsmann.SaneSideButtons",
+    "~/Library/Preferences/com.janhuelsmann.sanesidebuttons.plist",
   ]
 end

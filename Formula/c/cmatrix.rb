@@ -1,7 +1,7 @@
 class Cmatrix < Formula
   desc "Console Matrix"
-  homepage "https:github.comabishekvashokcmatrix"
-  url "https:github.comabishekvashokcmatrixarchiverefstagsv2.0.tar.gz"
+  homepage "https://github.com/abishekvashok/cmatrix/"
+  url "https://ghfast.top/https://github.com/abishekvashok/cmatrix/archive/refs/tags/v2.0.tar.gz"
   sha256 "ad93ba39acd383696ab6a9ebbed1259ecf2d3cf9f49d6b97038c66f80749e99a"
   license "GPL-3.0-or-later"
 
@@ -31,12 +31,12 @@ class Cmatrix < Formula
 
   def install
     system "autoreconf", "-i"
-    system ".configure", "--prefix=#{prefix}", "--mandir=#{man}"
+    system "./configure", "--prefix=#{prefix}", "--mandir=#{man}"
     system "make"
     system "make", "install"
   end
 
   test do
-    system bin"cmatrix", "-V"
+    system bin/"cmatrix", "-V"
   end
 end

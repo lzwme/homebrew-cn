@@ -1,7 +1,7 @@
 class Wgo < Formula
   desc "Watch arbitrary files and respond with arbitrary commands"
-  homepage "https:github.combokwoon95wgo"
-  url "https:github.combokwoon95wgoarchiverefstagsv0.5.13.tar.gz"
+  homepage "https://github.com/bokwoon95/wgo"
+  url "https://ghfast.top/https://github.com/bokwoon95/wgo/archive/refs/tags/v0.5.13.tar.gz"
   sha256 "df4066625be131c5c03bce9ffbf9a12760fab192ca7863671a01fcf7c1d9ddbd"
   license "MIT"
 
@@ -22,7 +22,7 @@ class Wgo < Formula
   end
 
   test do
-    output = shell_output("#{bin}wgo -exit echo testing")
+    output = shell_output("#{bin}/wgo -exit echo testing")
     assert_match "testing", output
   end
 end

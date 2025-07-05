@@ -1,10 +1,10 @@
 class Svlint < Formula
   desc "SystemVerilog linter"
-  homepage "https:github.comdalancesvlint"
-  url "https:github.comdalancesvlintarchiverefstagsv0.9.3.tar.gz"
+  homepage "https://github.com/dalance/svlint"
+  url "https://ghfast.top/https://github.com/dalance/svlint/archive/refs/tags/v0.9.3.tar.gz"
   sha256 "ed07d77dd72fe49c086df407ed74e321d210eb19dc0dc353ebcf23414116ccfd"
   license "MIT"
-  head "https:github.comdalancesvlint.git", branch: "master"
+  head "https://github.com/dalance/svlint.git", branch: "master"
 
   bottle do
     rebuild 1
@@ -23,18 +23,18 @@ class Svlint < Formula
     system "cargo", "install", *std_cargo_args
 
     # installation produces two binaries, `mdgen` and `svlint`, however, `mdgen` is for dev pipeline
-    # see https:github.comdalancesvlintblob729159751f330c4c3f7adaa25b826f809f0e5f44README.md?plain=1#L26
-    rm bin"mdgen"
+    # see https://github.com/dalance/svlint/blob/729159751f330c4c3f7adaa25b826f809f0e5f44/README.md?plain=1#L26
+    rm bin/"mdgen"
 
-    generate_completions_from_executable(bin"svlint", "--shell-completion")
+    generate_completions_from_executable(bin/"svlint", "--shell-completion")
   end
 
   test do
-    (testpath"test.sv").write <<~EOS
+    (testpath/"test.sv").write <<~EOS
       module M;
       endmodule
     EOS
 
-    assert_match(hint\s+:\s+Begin `module` name with lowerCamelCase., shell_output("#{bin}svlint test.sv", 1))
+    assert_match(/hint\s+:\s+Begin `module` name with lowerCamelCase./, shell_output("#{bin}/svlint test.sv", 1))
   end
 end

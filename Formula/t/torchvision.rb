@@ -2,15 +2,15 @@ class Torchvision < Formula
   include Language::Python::Virtualenv
 
   desc "Datasets, transforms, and models for computer vision"
-  homepage "https:pytorch.orgvisionstableindex.html"
-  url "https:github.compytorchvisionarchiverefstagsv0.20.1.tar.gz"
+  homepage "https://pytorch.org/vision/stable/index.html"
+  url "https://ghfast.top/https://github.com/pytorch/vision/archive/refs/tags/v0.20.1.tar.gz"
   sha256 "7e08c7f56e2c89859310e53d898f72bccc4987cd83e08cfd6303513da15a9e71"
   license "BSD-3-Clause"
   revision 3
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -55,8 +55,8 @@ class Torchvision < Formula
     # This needs to happen _before_ we try to install torchvision.
     # NOTE: This is an exception to our usual policy as building `pytorch` is complicated
     site_packages = Language::Python.site_packages(python3)
-    pth_contents = "import site; site.addsitedir('#{Formula["pytorch"].opt_libexecsite_packages}')\n"
-    (venv.site_packages"homebrew-pytorch.pth").write pth_contents
+    pth_contents = "import site; site.addsitedir('#{Formula["pytorch"].opt_libexec/site_packages}')\n"
+    (venv.site_packages/"homebrew-pytorch.pth").write pth_contents
 
     venv.pip_install_and_link(buildpath, build_isolation: false)
 
@@ -65,13 +65,13 @@ class Torchvision < Formula
 
   test do
     # test that C++ libraries are available
-    # See also https:github.compytorchvisionissues2134#issuecomment-1793846900
-    (testpath"test.cpp").write <<~CPP
+    # See also https://github.com/pytorch/vision/issues/2134#issuecomment-1793846900
+    (testpath/"test.cpp").write <<~CPP
       #include <assert.h>
-      #include <torchscript.h>
-      #include <torchtorch.h>
-      #include <torchvisionvision.h>
-      #include <torchvisionopsnms.h>
+      #include <torch/script.h>
+      #include <torch/torch.h>
+      #include <torchvision/vision.h>
+      #include <torchvision/ops/nms.h>
 
       int main() {
         auto& ops = torch::jit::getAllOperatorsFor(torch::jit::Symbol::fromQualString("torchvision::nms"));
@@ -91,15 +91,15 @@ class Torchvision < Formula
     end
     system ENV.cxx, "-std=c++17", "test.cpp", "-o", "test", *openmp_flags,
                     "-I#{pytorch.opt_include}",
-                    "-I#{pytorch.opt_include}torchcsrcapiinclude",
+                    "-I#{pytorch.opt_include}/torch/csrc/api/include",
                     "-L#{pytorch.opt_lib}", "-ltorch", "-ltorch_cpu", "-lc10",
                     "-L#{lib}", *("-Wl,--no-as-needed" if OS.linux?), "-ltorchvision"
 
-    system ".test"
+    system "./test"
 
     # test that the `torchvision` Python module is available
     cp test_fixtures("test.png"), "test.png"
-    system libexec"binpython", "-c", <<~PYTHON
+    system libexec/"bin/python", "-c", <<~PYTHON
       import torch
       import torchvision
       t = torchvision.io.read_image("test.png")

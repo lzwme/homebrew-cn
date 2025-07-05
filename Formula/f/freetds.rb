@@ -1,13 +1,13 @@
 class Freetds < Formula
   desc "Libraries to talk to Microsoft SQL Server and Sybase databases"
-  homepage "https:www.freetds.org"
-  url "https:www.freetds.orgfilesstablefreetds-1.5.4.tar.bz2"
+  homepage "https://www.freetds.org/"
+  url "https://www.freetds.org/files/stable/freetds-1.5.4.tar.bz2"
   sha256 "1d024ef418d74a3a8f2cca82f10f1561f1dde28dc3d6f65c815f07764d4f7ea8"
   license "GPL-2.0-or-later"
 
   livecheck do
-    url "https:www.freetds.orgfilesstable"
-    regex(href=.*?freetds[._-]v?(\d+(?:\.\d+)+)\.ti)
+    url "https://www.freetds.org/files/stable/"
+    regex(/href=.*?freetds[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   bottle do
@@ -21,7 +21,7 @@ class Freetds < Formula
   end
 
   head do
-    url "https:github.comFreeTDSfreetds.git", branch: "master"
+    url "https://github.com/FreeTDS/freetds.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -52,7 +52,7 @@ class Freetds < Formula
       --enable-odbc-wide
     ]
 
-    configure = build.head? ? ".autogen.sh" : ".configure"
+    configure = build.head? ? "./autogen.sh" : "./configure"
     system configure, *args
     system "make"
     ENV.deparallelize # Or fails to install on multi-core machines
@@ -60,6 +60,6 @@ class Freetds < Formula
   end
 
   test do
-    system bin"tsql", "-C"
+    system bin/"tsql", "-C"
   end
 end

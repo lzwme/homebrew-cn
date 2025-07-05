@@ -1,10 +1,10 @@
 class Wellington < Formula
   desc "Project-focused tool to manage Sass and spriting"
-  homepage "https:github.comwellingtonwellington"
-  url "https:github.comwellingtonwellingtonarchiverefstagsv1.0.5.tar.gz"
+  homepage "https://github.com/wellington/wellington"
+  url "https://ghfast.top/https://github.com/wellington/wellington/archive/refs/tags/v1.0.5.tar.gz"
   sha256 "e2379722849cdd8e5f094849290aacba4b789d4d65c733dec859565c728e7205"
   license "Apache-2.0"
-  head "https:github.comwellingtonwellington.git", branch: "master"
+  head "https://github.com/wellington/wellington.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -23,24 +23,24 @@ class Wellington < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "1efe7a942728970650560a933ba9344e79cf5a63e96c18553cef995ab77445ef"
   end
 
-  # upstream go1.20 support report, https:github.comwellingtonwellingtonissues223
+  # upstream go1.20 support report, https://github.com/wellington/wellington/issues/223
   disable! date: "2024-08-24", because: :unmaintained
 
   # Bump to 1.20 on the next release, if possible.
   depends_on "go@1.19" => :build
 
   def install
-    ldflags = "-X github.comwellingtonwellingtonversion.Version=#{version}"
-    system "go", "build", *std_go_args(output: bin"wt", ldflags:), "wtmain.go"
+    ldflags = "-X github.com/wellington/wellington/version.Version=#{version}"
+    system "go", "build", *std_go_args(output: bin/"wt", ldflags:), "wt/main.go"
   end
 
   test do
     s = "div { p { color: red; } }"
     expected = <<~EOS
-      * line 1, stdin *
+      /* line 1, stdin */
       div p {
         color: red; }
     EOS
-    assert_equal expected, pipe_output("#{bin}wt --comment", s, 0)
+    assert_equal expected, pipe_output("#{bin}/wt --comment", s, 0)
   end
 end

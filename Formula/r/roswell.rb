@@ -1,10 +1,10 @@
 class Roswell < Formula
   desc "Lisp installer and launcher for major environments"
-  homepage "https:github.comroswellroswell"
-  url "https:github.comroswellroswellarchiverefstagsv24.10.115.tar.gz"
+  homepage "https://github.com/roswell/roswell"
+  url "https://ghfast.top/https://github.com/roswell/roswell/archive/refs/tags/v24.10.115.tar.gz"
   sha256 "9c23cb263d4645caaae21cda8f1f5793b0f08ee5c5338aab5974cb4f473d1c4b"
   license "MIT"
-  head "https:github.comroswellroswell.git", branch: "master"
+  head "https://github.com/roswell/roswell.git", branch: "master"
 
   bottle do
     sha256 arm64_sequoia: "aba14ed969bb0a51b5a0e6d2e88e38e7fab528d5f97cc2e5eef13685287f7a35"
@@ -22,8 +22,8 @@ class Roswell < Formula
   uses_from_macos "curl"
 
   def install
-    system ".bootstrap"
-    system ".configure", "--disable-dependency-tracking",
+    system "./bootstrap"
+    system "./configure", "--disable-dependency-tracking",
                           "--disable-silent-rules",
                           "--prefix=#{prefix}"
     system "make", "install"
@@ -31,7 +31,7 @@ class Roswell < Formula
 
   test do
     ENV["ROSWELL_HOME"] = testpath
-    system bin"ros", "init"
-    assert_path_exists testpath"config"
+    system bin/"ros", "init"
+    assert_path_exists testpath/"config"
   end
 end

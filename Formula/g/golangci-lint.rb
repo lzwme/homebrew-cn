@@ -1,11 +1,11 @@
 class GolangciLint < Formula
   desc "Fast linters runner for Go"
-  homepage "https:golangci-lint.run"
-  url "https:github.comgolangcigolangci-lint.git",
+  homepage "https://golangci-lint.run/"
+  url "https://github.com/golangci/golangci-lint.git",
       tag:      "v2.2.1",
       revision: "66496a99757549ab02ffbadeea72d9eb9d387fc5"
   license "GPL-3.0-only"
-  head "https:github.comgolangcigolangci-lint.git", branch: "master"
+  head "https://github.com/golangci/golangci-lint.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "8b621e224952ead9d989f281ab67a1438de4a0ff44f490ae3c0f9704d3c2297d"
@@ -27,22 +27,22 @@ class GolangciLint < Formula
       -X main.date=#{time.iso8601}
     ]
 
-    system "go", "build", *std_go_args(ldflags:), ".cmdgolangci-lint"
+    system "go", "build", *std_go_args(ldflags:), "./cmd/golangci-lint"
 
-    generate_completions_from_executable(bin"golangci-lint", "completion")
+    generate_completions_from_executable(bin/"golangci-lint", "completion")
   end
 
   test do
-    str_version = shell_output("#{bin}golangci-lint --version")
-    assert_match(golangci-lint has version #{version} built with go(.*) from, str_version)
+    str_version = shell_output("#{bin}/golangci-lint --version")
+    assert_match(/golangci-lint has version #{version} built with go(.*) from/, str_version)
 
-    str_help = shell_output("#{bin}golangci-lint --help")
-    str_default = shell_output(bin"golangci-lint")
+    str_help = shell_output("#{bin}/golangci-lint --help")
+    str_default = shell_output(bin/"golangci-lint")
     assert_equal str_default, str_help
     assert_match "Usage:", str_help
     assert_match "Available Commands:", str_help
 
-    (testpath"try.go").write <<~GO
+    (testpath/"try.go").write <<~GO
       package try
 
       func add(nums ...int) (res int) {
@@ -62,7 +62,7 @@ class GolangciLint < Formula
       --enable=unused
     ].join(" ")
 
-    ok_test = shell_output("#{bin}golangci-lint run #{args} #{testpath}try.go")
+    ok_test = shell_output("#{bin}/golangci-lint run #{args} #{testpath}/try.go")
     expected_message = "try.go:3:6: func add is unused (unused)"
     assert_match expected_message, ok_test
   end

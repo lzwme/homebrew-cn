@@ -1,10 +1,10 @@
 class Lbfgspp < Formula
   desc "Header-only C++ library for L-BFGS and L-BFGS-B algorithms"
-  homepage "https:lbfgspp.statr.me"
-  url "https:github.comyixuanLBFGSpparchiverefstagsv0.4.0.tar.gz"
+  homepage "https://lbfgspp.statr.me/"
+  url "https://ghfast.top/https://github.com/yixuan/LBFGSpp/archive/refs/tags/v0.4.0.tar.gz"
   sha256 "39c4aaebd8b94ccdc98191d51913a31cddd618cc0869d99f07a4b6da83ca6254"
   license "MIT"
-  head "https:github.comyixuanLBFGSpp.git", branch: "master"
+  head "https://github.com/yixuan/LBFGSpp.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -22,8 +22,8 @@ class Lbfgspp < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~CPP
-      #include <EigenCore>
+    (testpath/"test.cpp").write <<~CPP
+      #include <Eigen/Core>
       #include <iostream>
       #include <LBFGS.h>
 
@@ -62,9 +62,9 @@ class Lbfgspp < Formula
           return 0;
       }
     CPP
-    system ENV.cxx, testpath"test.cpp", "-std=c++11",
-           "-I#{include}", "-I#{Formula["eigen"].opt_include}eigen3",
+    system ENV.cxx, testpath/"test.cpp", "-std=c++11",
+           "-I#{include}", "-I#{Formula["eigen"].opt_include}/eigen3",
            "-o", "test"
-    assert_equal "1 1 1 1 1 1 1 1 1 1", shell_output(testpath"test").chomp
+    assert_equal "1 1 1 1 1 1 1 1 1 1", shell_output(testpath/"test").chomp
   end
 end

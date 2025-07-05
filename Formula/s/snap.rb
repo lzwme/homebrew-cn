@@ -1,7 +1,7 @@
 class Snap < Formula
   desc "Tool to work with .snap files"
-  homepage "https:snapcraft.io"
-  url "https:github.comcanonicalsnapdreleasesdownload2.69snapd_2.69.vendor.tar.xz"
+  homepage "https://snapcraft.io/"
+  url "https://ghfast.top/https://github.com/canonical/snapd/releases/download/2.69/snapd_2.69.vendor.tar.xz"
   version "2.69"
   sha256 "e887f14d4dcd332e7dae65111932cbdd62a31d229f1527be38e660883e35e59f"
   license "GPL-3.0-only"
@@ -24,25 +24,25 @@ class Snap < Formula
   depends_on "squashfs"
 
   def install
-    system ".mkversion.sh", version.to_s
+    system "./mkversion.sh", version.to_s
     tags = OS.mac? ? ["-tags=nosecboot"] : []
-    system "go", "build", *std_go_args(ldflags: "-s -w"), *tags, ".cmdsnap"
+    system "go", "build", *std_go_args(ldflags: "-s -w"), *tags, "./cmd/snap"
 
-    bash_completion.install "datacompletionbashsnap"
-    zsh_completion.install "datacompletionzsh_snap"
+    bash_completion.install "data/completion/bash/snap"
+    zsh_completion.install "data/completion/zsh/_snap"
 
-    (man8"snap.8").write Utils.safe_popen_read(bin"snap", "help", "--man")
+    (man8/"snap.8").write Utils.safe_popen_read(bin/"snap", "help", "--man")
   end
 
   test do
-    (testpath"pkgmeta").mkpath
-    (testpath"pkgmetasnap.yaml").write <<~YAML
+    (testpath/"pkg/meta").mkpath
+    (testpath/"pkg/meta/snap.yaml").write <<~YAML
       name: test-snap
       version: 1.0.0
       summary: simple summary
       description: short description
     YAML
-    system bin"snap", "pack", "pkg"
-    system bin"snap", "version"
+    system bin/"snap", "pack", "pkg"
+    system bin/"snap", "version"
   end
 end

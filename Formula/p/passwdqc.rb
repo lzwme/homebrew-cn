@@ -1,13 +1,13 @@
 class Passwdqc < Formula
-  desc "Passwordpassphrase strength checking and enforcement toolset"
-  homepage "https:www.openwall.compasswdqc"
-  url "https:www.openwall.compasswdqcpasswdqc-2.0.3.tar.gz"
+  desc "Password/passphrase strength checking and enforcement toolset"
+  homepage "https://www.openwall.com/passwdqc/"
+  url "https://www.openwall.com/passwdqc/passwdqc-2.0.3.tar.gz"
   sha256 "53b0f4bc49369f06195e9e13abb6cff352d5acb79e861004ec95973896488cf4"
   license "0BSD"
 
   livecheck do
     url :homepage
-    regex(href=["']?passwdqc[._-]v?(\d+(?:\.\d+)+)\.ti)
+    regex(/href=["']?passwdqc[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -33,8 +33,8 @@ class Passwdqc < Formula
   end
 
   def install
-    # https:github.comopenwallpasswdqcissues15
-    inreplace "passwdqc_filter.h", "<endian.h>", "<machineendian.h>" if OS.mac?
+    # https://github.com/openwall/passwdqc/issues/15
+    inreplace "passwdqc_filter.h", "<endian.h>", "<machine/endian.h>" if OS.mac?
 
     args = %W[
       BINDIR=#{bin}
@@ -48,9 +48,9 @@ class Passwdqc < Formula
     ]
 
     args << if OS.mac?
-      "SECUREDIR_DARWIN=#{prefix}pam"
+      "SECUREDIR_DARWIN=#{prefix}/pam"
     else
-      "SECUREDIR=#{prefix}pam"
+      "SECUREDIR=#{prefix}/pam"
     end
 
     # Fix compile with newer Clang
@@ -63,6 +63,6 @@ class Passwdqc < Formula
   end
 
   test do
-    pipe_output("#{bin}pwqcheck -1", shell_output("#{bin}pwqgen"))
+    pipe_output("#{bin}/pwqcheck -1", shell_output("#{bin}/pwqgen"))
   end
 end

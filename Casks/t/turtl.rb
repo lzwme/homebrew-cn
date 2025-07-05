@@ -2,11 +2,11 @@ cask "turtl" do
   version "0.7.2.6-sqlite-fix"
   sha256 "90085ffb3b97a3c5e6d01313fda6df4f74c7fe1b61b7c1388e54554db79c9a1a"
 
-  url "https:github.comturtldesktopreleasesdownloadv#{version}turtl-osx.zip",
-      verified: "github.comturtldesktop"
+  url "https://ghfast.top/https://github.com/turtl/desktop/releases/download/v#{version}/turtl-osx.zip",
+      verified: "github.com/turtl/desktop/"
   name "turtl"
   desc "Secure collaborative notebook"
-  homepage "https:turtlapp.com"
+  homepage "https://turtlapp.com/"
 
   # A tag using the stable version format is sometimes marked as "Pre-release"
   # on the GitHub releases page, so we have to use the `GithubLatest` strategy.
@@ -15,7 +15,7 @@ cask "turtl" do
   # newer version may wrongly appear to be older).
   livecheck do
     url :url
-    regex(^\D*?(\d+(?:\.\d+)+.*)$i)
+    regex(/^\D*?(\d+(?:\.\d+)+.*)$/i)
     strategy :github_latest
   end
 
@@ -24,11 +24,11 @@ cask "turtl" do
   app "Turtl.app"
 
   zap trash: [
-    "~LibraryApplication SupportTurtl",
-    "~LibraryLogsTurtl",
-    "~LibraryPreferemcescom.electron.turtl.helper.plist",
-    "~LibraryPreferencescom.electron.turtl.plist",
-    "~LibrarySaved Application Statecom.electron.turtl.savedState",
+    "~/Library/Application Support/Turtl",
+    "~/Library/Logs/Turtl",
+    "~/Library/Preferemces/com.electron.turtl.helper.plist",
+    "~/Library/Preferences/com.electron.turtl.plist",
+    "~/Library/Saved Application State/com.electron.turtl.savedState",
   ]
 
   caveats do

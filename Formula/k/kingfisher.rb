@@ -1,7 +1,7 @@
 class Kingfisher < Formula
   desc "MongoDB's blazingly fast secret scanning and validation tool"
-  homepage "https:github.commongodbkingfisher"
-  url "https:github.commongodbkingfisherarchiverefstagsv1.19.0.tar.gz"
+  homepage "https://github.com/mongodb/kingfisher"
+  url "https://ghfast.top/https://github.com/mongodb/kingfisher/archive/refs/tags/v1.19.0.tar.gz"
   sha256 "0271eb3b933fdec85fffd7a376f0d6a876fb5d7b87c0901170cdd7bdc1b7ba25"
   license "Apache-2.0"
 
@@ -25,7 +25,7 @@ class Kingfisher < Formula
   end
 
   test do
-    output = shell_output(bin"kingfisher scan --git-url https:github.comhomebrew.github")
+    output = shell_output(bin/"kingfisher scan --git-url https://github.com/homebrew/.github")
     assert_match "|Findings....................: 0", output
   end
 end

@@ -1,10 +1,10 @@
 class Tealdeer < Formula
   desc "Very fast implementation of tldr in Rust"
-  homepage "https:tealdeer-rs.github.iotealdeer"
-  url "https:github.comtealdeer-rstealdeerarchiverefstagsv1.7.2.tar.gz"
+  homepage "https://tealdeer-rs.github.io/tealdeer/"
+  url "https://ghfast.top/https://github.com/tealdeer-rs/tealdeer/archive/refs/tags/v1.7.2.tar.gz"
   sha256 "d0675b9aa48c00e78abafc318b9bfbcb7ea3cce63e58a42c1f9e2395abcfe0e8"
   license any_of: ["Apache-2.0", "MIT"]
-  head "https:github.comtealdeer-rstealdeer.git", branch: "main"
+  head "https://github.com/tealdeer-rs/tealdeer.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "762b6cf9ec14e22cdd155410a249c1d1c06132350e3574c9c372a88860249833"
@@ -23,12 +23,12 @@ class Tealdeer < Formula
 
   def install
     system "cargo", "install", *std_cargo_args
-    bash_completion.install "completionbash_tealdeer" => "tldr"
-    zsh_completion.install "completionzsh_tealdeer" => "_tldr"
-    fish_completion.install "completionfish_tealdeer" => "tldr.fish"
+    bash_completion.install "completion/bash_tealdeer" => "tldr"
+    zsh_completion.install "completion/zsh_tealdeer" => "_tldr"
+    fish_completion.install "completion/fish_tealdeer" => "tldr.fish"
   end
 
   test do
-    assert_match "brew", shell_output("#{bin}tldr -u && #{bin}tldr brew")
+    assert_match "brew", shell_output("#{bin}/tldr -u && #{bin}/tldr brew")
   end
 end

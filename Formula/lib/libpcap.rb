@@ -1,14 +1,14 @@
 class Libpcap < Formula
   desc "Portable library for network traffic capture"
-  homepage "https:www.tcpdump.org"
-  url "https:www.tcpdump.orgreleaselibpcap-1.10.5.tar.gz"
+  homepage "https://www.tcpdump.org/"
+  url "https://www.tcpdump.org/release/libpcap-1.10.5.tar.gz"
   sha256 "37ced90a19a302a7f32e458224a00c365c117905c2cd35ac544b6880a81488f0"
   license "BSD-3-Clause"
-  head "https:github.comthe-tcpdump-grouplibpcap.git", branch: "master"
+  head "https://github.com/the-tcpdump-group/libpcap.git", branch: "master"
 
   livecheck do
-    url "https:www.tcpdump.orgrelease"
-    regex(href=.*?libpcap[._-]v?(\d+(?:\.\d+)+)\.ti)
+    url "https://www.tcpdump.org/release/"
+    regex(/href=.*?libpcap[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   bottle do
@@ -31,11 +31,11 @@ class Libpcap < Formula
   def install
     # Exclude unrecognized options
     std_args = std_configure_args.reject { |s| s["--disable-debug"] || s["--disable-dependency-tracking"] }
-    system ".configure", "--enable-ipv6", "--disable-universal", *std_args
+    system "./configure", "--enable-ipv6", "--disable-universal", *std_args
     system "make", "install"
   end
 
   test do
-    assert_match "lpcap", shell_output("#{bin}pcap-config --libs")
+    assert_match "lpcap", shell_output("#{bin}/pcap-config --libs")
   end
 end

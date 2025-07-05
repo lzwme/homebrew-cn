@@ -1,7 +1,7 @@
 class Topiary < Formula
   desc "Uniform formatter for simple languages, as part of the Tree-sitter ecosystem"
-  homepage "https:topiary.tweag.io"
-  url "https:github.comtweagtopiaryarchiverefstagsv0.6.1.tar.gz"
+  homepage "https://topiary.tweag.io/"
+  url "https://ghfast.top/https://github.com/tweag/topiary/archive/refs/tags/v0.6.1.tar.gz"
   sha256 "e2bbac9cb46a3743cc41ca55245026580308722242c9df84bc0ef3cbb989aa81"
   license "MIT"
 
@@ -20,27 +20,27 @@ class Topiary < Formula
   def install
     system "cargo", "install", *std_cargo_args(path: "topiary-cli")
 
-    generate_completions_from_executable(bin"topiary", "completion")
-    share.install "topiary-queriesqueries"
+    generate_completions_from_executable(bin/"topiary", "completion")
+    share.install "topiary-queries/queries"
   end
 
   test do
-    ENV["TOPIARY_LANGUAGE_DIR"] = share"queries"
+    ENV["TOPIARY_LANGUAGE_DIR"] = share/"queries"
 
-    (testpath"test.rs").write <<~RUST
+    (testpath/"test.rs").write <<~RUST
       fn main() {
         println!("Hello, world!");
       }
     RUST
 
-    system bin"topiary", "format", testpath"test.rs"
+    system bin/"topiary", "format", testpath/"test.rs"
 
-    assert_match <<~RUST, File.read("#{testpath}test.rs")
+    assert_match <<~RUST, File.read("#{testpath}/test.rs")
       fn main() {
           println!("Hello, world!");
       }
     RUST
 
-    assert_match version.to_s, shell_output("#{bin}topiary --version")
+    assert_match version.to_s, shell_output("#{bin}/topiary --version")
   end
 end

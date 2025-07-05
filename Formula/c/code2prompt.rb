@@ -1,10 +1,10 @@
 class Code2prompt < Formula
   desc "CLI tool to convert your codebase into a single LLM prompt"
-  homepage "https:code2prompt.dev"
-  url "https:github.commufeedvhcode2promptarchiverefstagsv3.0.2.tar.gz"
+  homepage "https://code2prompt.dev/"
+  url "https://ghfast.top/https://github.com/mufeedvh/code2prompt/archive/refs/tags/v3.0.2.tar.gz"
   sha256 "08e45407b71bf5e5fb89930043b085cf8965a008dc5004d4aa4ac64db0e447e0"
   license "MIT"
-  head "https:github.commufeedvhcode2prompt.git", branch: "main"
+  head "https://github.com/mufeedvh/code2prompt.git", branch: "main"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "ffb0a37cd1c18cfce0671d5f12893bf3e76861adeed8aebd0877bb0e297722aa"
@@ -27,28 +27,28 @@ class Code2prompt < Formula
     ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
     ENV["OPENSSL_NO_VENDOR"] = "1"
 
-    system "cargo", "install", *std_cargo_args(path: "cratescode2prompt")
+    system "cargo", "install", *std_cargo_args(path: "crates/code2prompt")
   end
 
   test do
-    require "utilslinkage"
+    require "utils/linkage"
 
-    assert_match version.to_s, shell_output("#{bin}code2prompt --version")
+    assert_match version.to_s, shell_output("#{bin}/code2prompt --version")
 
-    (testpath"test.py").write <<~PYTHON
+    (testpath/"test.py").write <<~PYTHON
       def hello_world():
           print("Hello, world!")
     PYTHON
 
-    system bin"code2prompt", "--no-clipboard", "--output-file", "test.json", "--output-format", "json", "test.py"
-    json_output = (testpath"test.json").read
+    system bin/"code2prompt", "--no-clipboard", "--output-file", "test.json", "--output-format", "json", "test.py"
+    json_output = (testpath/"test.json").read
     assert_match "ChatGPT models, text-embedding-ada-002", JSON.parse(json_output)["model_info"]
 
     [
-      Formula["openssl@3"].opt_libshared_library("libssl"),
-      Formula["openssl@3"].opt_libshared_library("libcrypto"),
+      Formula["openssl@3"].opt_lib/shared_library("libssl"),
+      Formula["openssl@3"].opt_lib/shared_library("libcrypto"),
     ].each do |library|
-      assert Utils.binary_linked_to_library?(bin"code2prompt", library),
+      assert Utils.binary_linked_to_library?(bin/"code2prompt", library),
              "No linkage with #{library.basename}! Cargo is likely using a vendored version."
     end
   end

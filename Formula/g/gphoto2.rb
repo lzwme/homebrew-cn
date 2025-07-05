@@ -1,14 +1,14 @@
 class Gphoto2 < Formula
   desc "Command-line interface to libgphoto2"
-  homepage "http:www.gphoto.org"
-  url "https:downloads.sourceforge.netprojectgphotogphoto2.5.28gphoto2-2.5.28.tar.bz2"
+  homepage "http://www.gphoto.org/"
+  url "https://downloads.sourceforge.net/project/gphoto/gphoto/2.5.28/gphoto2-2.5.28.tar.bz2"
   sha256 "2a648dcdf12da19e208255df4ebed3e7d2a02f905be4165f2443c984cf887375"
   license "GPL-2.0-or-later"
   revision 1
 
   livecheck do
     url :stable
-    regex(%r{url=.*?gphoto2[._-]v?(\d+(?:\.\d+)+)\.t}i)
+    regex(%r{url=.*?/gphoto2[._-]v?(\d+(?:\.\d+)+)\.t}i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -41,24 +41,24 @@ class Gphoto2 < Formula
   end
 
   # fix incompatible pointer type issue
-  # upstream patch PR ref, https:github.comgphotogphoto2pull569
+  # upstream patch PR ref, https://github.com/gphoto/gphoto2/pull/569
   patch :DATA
 
   def install
-    system ".configure", *std_configure_args
+    system "./configure", *std_configure_args
     system "make", "install"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}gphoto2 -v")
+    assert_match version.to_s, shell_output("#{bin}/gphoto2 -v")
   end
 end
 
 __END__
-diff --git agphoto2main.c bgphoto2main.c
+diff --git a/gphoto2/main.c b/gphoto2/main.c
 index 2bf5964..cd84467 100644
---- agphoto2main.c
-+++ bgphoto2main.c
+--- a/gphoto2/main.c
++++ b/gphoto2/main.c
 @@ -1215,14 +1215,14 @@ start_timeout_func (Camera *camera, unsigned int timeout,
  
  	pthread_create (&tid, NULL, thread_func, td);

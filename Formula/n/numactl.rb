@@ -1,7 +1,7 @@
 class Numactl < Formula
   desc "NUMA support for Linux"
-  homepage "https:github.comnumactlnumactl"
-  url "https:github.comnumactlnumactlreleasesdownloadv2.0.19numactl-2.0.19.tar.gz"
+  homepage "https://github.com/numactl/numactl"
+  url "https://ghfast.top/https://github.com/numactl/numactl/releases/download/v2.0.19/numactl-2.0.19.tar.gz"
   sha256 "f2672a0381cb59196e9c246bf8bcc43d5568bc457700a697f1a1df762b9af884"
   license all_of: ["GPL-2.0-only", "LGPL-2.1-only", :public_domain, :cannot_represent]
 
@@ -13,12 +13,12 @@ class Numactl < Formula
   depends_on :linux
 
   def install
-    system ".configure", *std_configure_args, "--disable-silent-rules"
+    system "./configure", *std_configure_args, "--disable-silent-rules"
     system "make", "install"
   end
 
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include <numa.h>
       int main() {
         if (numa_available() >= 0) {
@@ -29,6 +29,6 @@ class Numactl < Formula
       }
     C
     system ENV.cc, "-I#{include}", "test.c", "-L#{lib}", "-lnuma", "-o", "test"
-    system ".test"
+    system "./test"
   end
 end

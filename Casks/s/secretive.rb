@@ -25,10 +25,10 @@ cask "secretive" do
     end
   end
 
-  url "https:github.commaxgoedjensecretivereleasesdownloadv#{version}Secretive.zip"
+  url "https://ghfast.top/https://github.com/maxgoedjen/secretive/releases/download/v#{version}/Secretive.zip"
   name "Secretive"
   desc "Store SSH keys in the Secure Enclave"
-  homepage "https:github.commaxgoedjensecretive"
+  homepage "https://github.com/maxgoedjen/secretive"
 
   no_autobump! because: :requires_manual_review
 
@@ -37,9 +37,9 @@ cask "secretive" do
   app "Secretive.app"
 
   zap trash: [
-    "~LibraryApplication Scriptscom.maxgoedjen.Secretive.Host",
-    "~LibraryApplication Scriptscom.maxgoedjen.Secretive.SecretAgent",
-    "~LibraryContainerscom.maxgoedjen.Secretive.Host",
-    "~LibraryContainerscom.maxgoedjen.Secretive.SecretAgent",
+    "~/Library/Application Scripts/com.maxgoedjen.Secretive.Host",
+    "~/Library/Application Scripts/com.maxgoedjen.Secretive.SecretAgent",
+    "~/Library/Containers/com.maxgoedjen.Secretive.Host",
+    "~/Library/Containers/com.maxgoedjen.Secretive.SecretAgent",
   ]
 end

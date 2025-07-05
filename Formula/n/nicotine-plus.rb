@@ -2,11 +2,11 @@ class NicotinePlus < Formula
   include Language::Python::Virtualenv
 
   desc "Graphical client for the Soulseek peer-to-peer network"
-  homepage "https:nicotine-plus.org"
-  url "https:files.pythonhosted.orgpackagesbb91b7d2f353828d1bc57bb43cfe9006b0fde4d6ffe1458d5045c58f567ed33anicotine_plus-3.3.10.tar.gz"
+  homepage "https://nicotine-plus.org"
+  url "https://files.pythonhosted.org/packages/bb/91/b7d2f353828d1bc57bb43cfe9006b0fde4d6ffe1458d5045c58f567ed33a/nicotine_plus-3.3.10.tar.gz"
   sha256 "a4f4cbfade9cf48af10ecb7bde1eac8b5c1b0194f9cd01c814349ddba453dd12"
   license "GPL-3.0-or-later"
-  head "https:github.comnicotine-plusnicotine-plus.git", branch: "master"
+  head "https://github.com/nicotine-plus/nicotine-plus.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -33,6 +33,6 @@ class NicotinePlus < Formula
 
   test do
     # nicotine is a GUI app
-    assert_match version.to_s, shell_output("#{bin}nicotine --version")
+    assert_match version.to_s, shell_output("#{bin}/nicotine --version")
   end
 end

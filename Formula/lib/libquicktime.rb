@@ -1,7 +1,7 @@
 class Libquicktime < Formula
   desc "Library for reading and writing quicktime files"
-  homepage "https:libquicktime.sourceforge.net"
-  url "https:downloads.sourceforge.netprojectlibquicktimelibquicktime1.2.4libquicktime-1.2.4.tar.gz"
+  homepage "https://libquicktime.sourceforge.net/"
+  url "https://downloads.sourceforge.net/project/libquicktime/libquicktime/1.2.4/libquicktime-1.2.4.tar.gz"
   sha256 "1c53359c33b31347b4d7b00d3611463fe5e942cae3ec0fefe0d2fd413fd47368"
   license "LGPL-2.1-or-later"
   revision 5
@@ -38,15 +38,15 @@ class Libquicktime < Formula
   # Also, fixes from upstream for CVE-2017-9122 through CVE-2017-9128, applied
   # by Debian since 30 Jun 2017.
   patch do
-    url "https:deb.debian.orgdebianpoolmainlibqlibquicktimelibquicktime_1.2.4-12.debian.tar.xz"
+    url "https://deb.debian.org/debian/pool/main/libq/libquicktime/libquicktime_1.2.4-12.debian.tar.xz"
     sha256 "e5b5fa3ec8391b92554d04528568d04ea9eb5145835e0c246eac7961c891a91a"
-    apply "patchesCVE-2016-2399.patch"
-    apply "patchesCVE-2017-9122_et_al.patch"
+    apply "patches/CVE-2016-2399.patch"
+    apply "patches/CVE-2017-9122_et_al.patch"
   end
 
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
-    url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-pre-0.4.2.418-big_sur.diff"
+    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-pre-0.4.2.418-big_sur.diff"
     sha256 "83af02f2aa2b746bb7225872cab29a253264be49db0ecebb12f841562d9a2923"
   end
 
@@ -55,7 +55,7 @@ class Libquicktime < Formula
     # Help old config scripts identify arm64 linux
     args << "--build=aarch64-unknown-linux-gnu" if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
 
-    system ".configure", "--enable-gpl",
+    system "./configure", "--enable-gpl",
                           "--without-doxygen",
                           "--without-gtk",
                           "--without-x",
@@ -66,8 +66,8 @@ class Libquicktime < Formula
 
   test do
     fixture = test_fixtures("test.m4a")
-    output = shell_output("#{bin}qtinfo #{fixture} 2>&1")
+    output = shell_output("#{bin}/qtinfo #{fixture} 2>&1")
     assert_match "length 1536 samples, compressor mp4a", output
-    assert_path_exists testpath".libquicktime_codecs"
+    assert_path_exists testpath/".libquicktime_codecs"
   end
 end

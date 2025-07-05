@@ -1,10 +1,10 @@
 class Peco < Formula
   desc "Simplistic interactive filtering tool"
-  homepage "https:github.compecopeco"
-  url "https:github.compecopecoarchiverefstagsv0.5.11.tar.gz"
+  homepage "https://github.com/peco/peco"
+  url "https://ghfast.top/https://github.com/peco/peco/archive/refs/tags/v0.5.11.tar.gz"
   sha256 "8e32c8af533e03795f27feb4ee134960611d2fc0266528b1c512a6f1f065b164"
   license "MIT"
-  head "https:github.compecopeco.git", branch: "master"
+  head "https://github.com/peco/peco.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -26,10 +26,10 @@ class Peco < Formula
 
   def install
     system "make", "build"
-    system "go", "build", *std_go_args, "cmdpecopeco.go"
+    system "go", "build", *std_go_args, "cmd/peco/peco.go"
   end
 
   test do
-    system bin"peco", "--version"
+    system bin/"peco", "--version"
   end
 end

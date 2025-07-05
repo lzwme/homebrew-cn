@@ -1,10 +1,10 @@
 class Threemux < Formula
   desc "Terminal multiplexer inspired by i3"
-  homepage "https:github.comaaronjanse3mux"
-  url "https:github.comaaronjanse3muxarchiverefstagsv1.1.0.tar.gz"
+  homepage "https://github.com/aaronjanse/3mux"
+  url "https://ghfast.top/https://github.com/aaronjanse/3mux/archive/refs/tags/v1.1.0.tar.gz"
   sha256 "0f4dae181914c73eaa91bdb21ee0875f21b5da64c7c9d478f6d52a2d0aa2c0ea"
   license "MIT"
-  head "https:github.comaaronjanse3mux.git", branch: "master"
+  head "https://github.com/aaronjanse/3mux.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -26,17 +26,17 @@ class Threemux < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w", output: bin"3mux")
+    system "go", "build", *std_go_args(ldflags: "-s -w", output: bin/"3mux")
   end
 
   test do
     require "open3"
 
-    Open3.popen2e(bin"3mux") do |stdin, _, _|
+    Open3.popen2e(bin/"3mux") do |stdin, _, _|
       stdin.write "brew\n"
       stdin.write "3mux detach\n"
     end
 
-    assert_match "Sessions:", pipe_output("#{bin}3mux ls")
+    assert_match "Sessions:", pipe_output("#{bin}/3mux ls")
   end
 end

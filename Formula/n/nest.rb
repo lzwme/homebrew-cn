@@ -1,7 +1,7 @@
 class Nest < Formula
   desc "Neural Simulation Tool (NEST) with Python3 bindings (PyNEST)"
-  homepage "https:www.nest-simulator.org"
-  url "https:github.comnestnest-simulatorarchiverefstagsv3.8.tar.gz"
+  homepage "https://www.nest-simulator.org/"
+  url "https://ghfast.top/https://github.com/nest/nest-simulator/archive/refs/tags/v3.8.tar.gz"
   sha256 "eb255f8828be001abea0cddad2f14d78b70857fc82bece724551f27c698318c8"
   license "GPL-2.0-or-later"
 
@@ -39,7 +39,7 @@ class Nest < Formula
     # Help FindReadline find macOS system ncurses library
 
     args = if OS.mac? && (sdk = MacOS.sdk_path_if_needed)
-      ["-DNCURSES_LIBRARY=#{sdk}usrliblibncurses.tbd"]
+      ["-DNCURSES_LIBRARY=#{sdk}/usr/lib/libncurses.tbd"]
     else
       []
     end
@@ -50,7 +50,7 @@ class Nest < Formula
 
     # Replace internally accessible gcc with externally accessible version
     # in nest-config if required
-    inreplace bin"nest-config", Superenv.shims_pathENV.cxx, ENV.cxx
+    inreplace bin/"nest-config", Superenv.shims_path/ENV.cxx, ENV.cxx
   end
 
   def caveats
@@ -66,9 +66,9 @@ class Nest < Formula
 
   test do
     # check whether NEST was compiled & linked
-    system bin"nest", "--version"
+    system bin/"nest", "--version"
 
     # check whether NEST is importable form python
-    system Formula["python@3.13"].bin"python3.13", "-c", "'import nest'"
+    system Formula["python@3.13"].bin/"python3.13", "-c", "'import nest'"
   end
 end

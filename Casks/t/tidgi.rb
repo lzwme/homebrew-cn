@@ -5,14 +5,14 @@ cask "tidgi" do
   sha256 arm:   "fdf70c092ee4d8b4f410b72b14fa6243f58d26dc5a26860e2cb8513874e021d6",
          intel: "5d9adaa2d7fa7b0b2b6f62c16d94d344cad3f81e7634d5ac658fd0c63bbc84dc"
 
-  url "https:github.comtiddly-gittlyTidGi-Desktopreleasesdownloadv#{version}TidGi-darwin-#{arch}-#{version.split("-").first}.zip"
+  url "https://ghfast.top/https://github.com/tiddly-gittly/TidGi-Desktop/releases/download/v#{version}/TidGi-darwin-#{arch}-#{version.split("-").first}.zip"
   name "TidGi"
   desc "Personal knowledge-base app"
-  homepage "https:github.comtiddly-gittlyTidGi-Desktop"
+  homepage "https://github.com/tiddly-gittly/TidGi-Desktop"
 
   livecheck do
     url :url
-    regex(^\D*?(\d+(?:\.\d+)+.*)$i)
+    regex(/^\D*?(\d+(?:\.\d+)+.*)$/i)
     strategy :github_latest
   end
 
@@ -21,11 +21,11 @@ cask "tidgi" do
   app "TidGi.app"
 
   zap trash: [
-    "~LibraryApplication SupportTidGi",
-    "~LibraryCachescom.tidgi.app",
-    "~LibraryCachescom.tidgi.app.ShipIt",
-    "~LibraryPreferencescom.tidgi.app.plist",
-    "~LibraryPreferencescom.tidgi.plist",
-    "~LibrarySaved Application Statecom.microsoft.VSCode.savedState",
+    "~/Library/Application Support/TidGi",
+    "~/Library/Caches/com.tidgi.app",
+    "~/Library/Caches/com.tidgi.app.ShipIt",
+    "~/Library/Preferences/com.tidgi.app.plist",
+    "~/Library/Preferences/com.tidgi.plist",
+    "~/Library/Saved Application State/com.microsoft.VSCode.savedState",
   ]
 end

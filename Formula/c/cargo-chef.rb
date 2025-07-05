@@ -1,7 +1,7 @@
 class CargoChef < Formula
   desc "Cargo subcommand to speed up Rust Docker builds using Docker layer caching"
-  homepage "https:github.comLukeMathWalkercargo-chef"
-  url "https:github.comLukeMathWalkercargo-chefarchiverefstagsv0.1.72.tar.gz"
+  homepage "https://github.com/LukeMathWalker/cargo-chef"
+  url "https://ghfast.top/https://github.com/LukeMathWalker/cargo-chef/archive/refs/tags/v0.1.72.tar.gz"
   sha256 "62ab1457826bd5d48fd89a505519f499c3a2283c456def1000d460c99bf9f9c7"
   license any_of: ["Apache-2.0", "MIT"]
 
@@ -24,28 +24,28 @@ class CargoChef < Formula
 
   test do
     # Show that we can use a different toolchain than the one provided by the `rust` formula.
-    # https:github.comHomebrewhomebrew-corepull134074#pullrequestreview-1484979359
+    # https://github.com/Homebrew/homebrew-core/pull/134074#pullrequestreview-1484979359
     ENV.prepend_path "PATH", Formula["rustup"].bin
     system "rustup", "set", "profile", "minimal"
     system "rustup", "default", "beta"
 
-    (testpath"Cargo.toml").write <<~TOML
+    (testpath/"Cargo.toml").write <<~TOML
       [package]
       name = "test_project"
       version = "0.1.0"
       edition = "2021"
     TOML
 
-    (testpath"srcmain.rs").write <<~RUST
+    (testpath/"src/main.rs").write <<~RUST
       fn main() {
         println!("Hello BrewTestBot!");
       }
     RUST
 
-    recipe_file = testpath"recipe.json"
-    system bin"cargo-chef", "chef", "prepare", "--recipe-path", recipe_file
+    recipe_file = testpath/"recipe.json"
+    system bin/"cargo-chef", "chef", "prepare", "--recipe-path", recipe_file
     assert_equal "Cargo.toml", JSON.parse(recipe_file.read)["skeleton"]["manifests"].first["relative_path"]
 
-    assert_match "cargo-chef #{version}", shell_output("#{bin}cargo-chef --version")
+    assert_match "cargo-chef #{version}", shell_output("#{bin}/cargo-chef --version")
   end
 end

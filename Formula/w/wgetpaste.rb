@@ -1,7 +1,7 @@
 class Wgetpaste < Formula
   desc "Automate pasting to a number of pastebin services"
-  homepage "https:wgetpaste.zlin.dk"
-  url "https:github.comzlinwgetpastereleasesdownload2.34wgetpaste-2.34.tar.xz"
+  homepage "https://wgetpaste.zlin.dk/"
+  url "https://ghfast.top/https://github.com/zlin/wgetpaste/releases/download/2.34/wgetpaste-2.34.tar.xz"
   sha256 "bd6d06ed901a3d63c9c8c57126084ff0994f09901bfb1638b87953eac1e9433f"
   license "MIT"
 
@@ -19,6 +19,6 @@ class Wgetpaste < Formula
   end
 
   test do
-    system bin"wgetpaste", "-S"
+    system bin/"wgetpaste", "-S"
   end
 end

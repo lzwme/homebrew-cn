@@ -1,10 +1,10 @@
 class Termscp < Formula
   desc "Feature rich terminal file transfer and explorer"
-  homepage "https:termscp.veeso.dev"
-  url "https:github.comveesotermscparchiverefstagsv0.18.0.tar.gz"
+  homepage "https://termscp.veeso.dev/"
+  url "https://ghfast.top/https://github.com/veeso/termscp/archive/refs/tags/v0.18.0.tar.gz"
   sha256 "3791b4c4b63dd4ea31b6e4d7be754edf9441c5a84c9e7be878463411c4337588"
   license "MIT"
-  head "https:github.comveesotermscp.git", branch: "main"
+  head "https://github.com/veeso/termscp.git", branch: "main"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "9b0ebfc7d1e98d38f9a60557b4c17746b24c62634beb0117d7fa033549d20b67"
@@ -37,7 +37,7 @@ class Termscp < Formula
 
   test do
     require "pty"
-    PTY.spawn(bin"termscp", "config") do |_r, _w, pid|
+    PTY.spawn(bin/"termscp", "config") do |_r, _w, pid|
       sleep 10
       Process.kill 9, pid
     end

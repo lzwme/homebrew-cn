@@ -1,7 +1,7 @@
 class Libtpms < Formula
   desc "Library for software emulation of a Trusted Platform Module"
-  homepage "https:github.comstefanbergerlibtpms"
-  url "https:github.comstefanbergerlibtpmsarchiverefstagsv0.10.1.tar.gz"
+  homepage "https://github.com/stefanberger/libtpms"
+  url "https://ghfast.top/https://github.com/stefanberger/libtpms/archive/refs/tags/v0.10.1.tar.gz"
   sha256 "ebc24f3191d90f6cf0b4d4200cd876db4bd224b3c565708bbea0a82ee275e0fb"
   license "BSD-2-Clause"
 
@@ -22,14 +22,14 @@ class Libtpms < Formula
   depends_on "openssl@3"
 
   def install
-    system ".autogen.sh", "--with-openssl", "--with-tpm2", *std_configure_args
+    system "./autogen.sh", "--with-openssl", "--with-tpm2", *std_configure_args
     system "make"
     system "make", "install"
   end
 
   test do
-    (testpath"test.c").write <<~C
-      #include <libtpmstpm_library.h>
+    (testpath/"test.c").write <<~C
+      #include <libtpms/tpm_library.h>
 
       int main()
       {
@@ -42,6 +42,6 @@ class Libtpms < Formula
       }
     C
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-ltpms", "-o", "test"
-    system ".test"
+    system "./test"
   end
 end

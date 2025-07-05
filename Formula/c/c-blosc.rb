@@ -1,7 +1,7 @@
 class CBlosc < Formula
   desc "Blocking, shuffling and loss-less compression library"
-  homepage "https:www.blosc.org"
-  url "https:github.comBloscc-bloscarchiverefstagsv1.21.6.tar.gz"
+  homepage "https://www.blosc.org/"
+  url "https://ghfast.top/https://github.com/Blosc/c-blosc/archive/refs/tags/v1.21.6.tar.gz"
   sha256 "9fcd60301aae28f97f1301b735f966cc19e7c49b6b4321b839b4579a0c156f38"
   license "BSD-3-Clause"
 
@@ -26,7 +26,7 @@ class CBlosc < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~CPP
+    (testpath/"test.cpp").write <<~CPP
       #include <blosc.h>
       int main() {
         blosc_init();
@@ -34,6 +34,6 @@ class CBlosc < Formula
       }
     CPP
     system ENV.cc, "test.cpp", "-I#{include}", "-L#{lib}", "-lblosc", "-o", "test"
-    system ".test"
+    system "./test"
   end
 end

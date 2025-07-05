@@ -1,10 +1,10 @@
 class Confd < Formula
   desc "Manage local application configuration files using templates"
-  homepage "https:github.comkelseyhightowerconfd"
-  url "https:github.comkelseyhightowerconfdarchiverefstagsv0.16.0.tar.gz"
+  homepage "https://github.com/kelseyhightower/confd"
+  url "https://ghfast.top/https://github.com/kelseyhightower/confd/archive/refs/tags/v0.16.0.tar.gz"
   sha256 "4a6c4d87fab77aa9827370541024a365aa6b4c8c25a3a9cab52f95ba6b9a97ea"
   license "MIT"
-  head "https:github.comkelseyhightowerconfd.git", branch: "master"
+  head "https://github.com/kelseyhightower/confd.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -29,37 +29,37 @@ class Confd < Formula
   def install
     ENV["GOPATH"] = buildpath
     ENV["GO111MODULE"] = "auto"
-    (buildpath"srcgithub.comkelseyhightowerconfd").install buildpath.children
-    cd "srcgithub.comkelseyhightowerconfd" do
-      system "go", "install", "github.comkelseyhightowerconfd"
-      bin.install buildpath"binconfd"
+    (buildpath/"src/github.com/kelseyhightower/confd").install buildpath.children
+    cd "src/github.com/kelseyhightower/confd" do
+      system "go", "install", "github.com/kelseyhightower/confd"
+      bin.install buildpath/"bin/confd"
     end
   end
 
   test do
-    templatefile = testpath"templatestest.tmpl"
+    templatefile = testpath/"templates/test.tmpl"
     templatefile.write <<~EOS
-      version = {{getv "version"}}
+      version = {{getv "/version"}}
     EOS
 
-    conffile = testpath"conf.dconf.toml"
+    conffile = testpath/"conf.d/conf.toml"
     conffile.write <<~TOML
       [template]
-      prefix = ""
+      prefix = "/"
       src = "test.tmpl"
-      dest = ".test.conf"
+      dest = "./test.conf"
       keys = [
-          "version"
+          "/version"
       ]
     TOML
 
-    keysfile = testpath"keys.yaml"
+    keysfile = testpath/"keys.yaml"
     keysfile.write <<~YAML
       version: v1
     YAML
 
-    system bin"confd", "-backend", "file", "-file", "keys.yaml", "-onetime", "-confdir=."
-    assert_path_exists testpath"test.conf"
-    refute_predicate (testpath"test.conf").size, :zero?
+    system bin/"confd", "-backend", "file", "-file", "keys.yaml", "-onetime", "-confdir=."
+    assert_path_exists testpath/"test.conf"
+    refute_predicate (testpath/"test.conf").size, :zero?
   end
 end

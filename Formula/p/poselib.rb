@@ -1,7 +1,7 @@
 class Poselib < Formula
   desc "Minimal solvers for calibrated camera pose estimation"
-  homepage "https:github.comPoseLibPoseLib"
-  url "https:github.comPoseLibPoseLibarchiverefstagsv2.0.4.tar.gz"
+  homepage "https://github.com/PoseLib/PoseLib/"
+  url "https://ghfast.top/https://github.com/PoseLib/PoseLib/archive/refs/tags/v2.0.4.tar.gz"
   sha256 "caa0c1c9b882f6e36b5ced6f781406ed97d4c1f0f61aa31345ebe54633d67c16"
   license "BSD-3-Clause"
 
@@ -25,12 +25,12 @@ class Poselib < Formula
 
     system "cmake", "-S", ".", "-B", "static", "-DBUILD_SHARED_LIBS=OFF", *std_cmake_args
     system "cmake", "--build", "static"
-    lib.install Dir["staticPoseLib*.a"]
+    lib.install Dir["static/PoseLib/*.a"]
   end
 
   test do
-    (testpath"test.cpp").write <<~CPP
-      #include "PoseLibposelib.h"
+    (testpath/"test.cpp").write <<~CPP
+      #include "PoseLib/poselib.h"
       #include <iostream>
 
       int main(int argc, char *argv[])
@@ -68,7 +68,7 @@ class Poselib < Formula
       }
     CPP
     system ENV.cxx, "test.cpp", "-std=c++17",
-                    "-I#{Formula["eigen"].opt_include}eigen3",
+                    "-I#{Formula["eigen"].opt_include}/eigen3",
                     "-L#{lib}", "-lPoseLib", "-o", "test"
 
     expected_output = <<~EOS
@@ -76,6 +76,6 @@ class Poselib < Formula
       \s-0.165184   -0.91311  -0.372753
       \s-0.316605   0.407035  -0.856787
     EOS
-    assert_equal expected_output, shell_output(".test")
+    assert_equal expected_output, shell_output("./test")
   end
 end

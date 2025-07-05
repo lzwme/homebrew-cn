@@ -1,10 +1,10 @@
 class Luacheck < Formula
   desc "Tool for linting and static analysis of Lua code"
-  homepage "https:luacheck.readthedocs.io"
-  url "https:github.comlunarmodulesluacheckarchiverefstagsv1.2.0.tar.gz"
+  homepage "https://luacheck.readthedocs.io/"
+  url "https://ghfast.top/https://github.com/lunarmodules/luacheck/archive/refs/tags/v1.2.0.tar.gz"
   sha256 "8efe62a7da4fdb32c0c22ec1f7c9306cbc397d7d40493c29988221a059636e25"
   license "MIT"
-  head "https:github.comlunarmodulesluacheck.git", branch: "master"
+  head "https://github.com/lunarmodules/luacheck.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "a169aee2121f7c2ed0b06c929b7d7af23ffc3307bdbf0422d55320eb28c4ada7"
@@ -25,27 +25,27 @@ class Luacheck < Formula
 
   def install
     system "luarocks", "make", "--tree=#{libexec}", "--local", "--lua-dir=#{Formula["lua"].opt_prefix}"
-    bin.install_symlink Dir["#{libexec}bin*"]
+    bin.install_symlink Dir["#{libexec}/bin/*"]
   end
 
   test do
-    test_foo = testpath"foo.lua"
+    test_foo = testpath/"foo.lua"
     test_foo.write <<~EOS
       local a = 1
       local b = 2
       local c = a + b
     EOS
     assert_match "unused variable \e[0m\e[1mc\e[0m\n\n",
-      shell_output("#{bin}luacheck #{test_foo}", 1)
+      shell_output("#{bin}/luacheck #{test_foo}", 1)
 
-    test_bar = testpath"bar.lua"
+    test_bar = testpath/"bar.lua"
     test_bar.write <<~EOS
       local a = 1
       print("a is", a)
     EOS
     assert_match "\e[0m\e[0m\e[1m0\e[0m errors in 1 file",
-      shell_output("#{bin}luacheck #{test_bar}")
+      shell_output("#{bin}/luacheck #{test_bar}")
 
-    assert_match version.to_s, shell_output("#{bin}luacheck --version")
+    assert_match version.to_s, shell_output("#{bin}/luacheck --version")
   end
 end

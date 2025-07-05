@@ -1,13 +1,13 @@
 class ProtobufAT29 < Formula
   desc "Protocol buffers (Google's data interchange format)"
-  homepage "https:protobuf.dev"
-  url "https:github.comprotocolbuffersprotobufreleasesdownloadv29.4protobuf-29.4.tar.gz"
+  homepage "https://protobuf.dev/"
+  url "https://ghfast.top/https://github.com/protocolbuffers/protobuf/releases/download/v29.4/protobuf-29.4.tar.gz"
   sha256 "6bd9dcc91b17ef25c26adf86db71c67ec02431dc92e9589eaf82e22889230496"
   license "BSD-3-Clause"
 
   livecheck do
     url :stable
-    regex(^v?(29(?:\.\d+)+)$i)
+    regex(/^v?(29(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -23,7 +23,7 @@ class ProtobufAT29 < Formula
   keg_only :versioned_formula
 
   # Support for protoc 29.x (protobuf C++ 5.29.x) will end on 2026-03-31
-  # Ref: https:protobuf.devsupportversion-support#cpp
+  # Ref: https://protobuf.dev/support/version-support/#cpp
   deprecate! date: "2026-03-31", because: :versioned_formula
 
   depends_on "cmake" => :build
@@ -38,7 +38,7 @@ class ProtobufAT29 < Formula
 
   # Backport to expose java-related symbols
   patch do
-    url "https:github.comprotocolbuffersprotobufcommit9dc5aaa1e99f16065e25be4b9aab0a19bfb65ea2.patch?full_index=1"
+    url "https://github.com/protocolbuffers/protobuf/commit/9dc5aaa1e99f16065e25be4b9aab0a19bfb65ea2.patch?full_index=1"
     sha256 "edc1befbc3d7f7eded6b7516b3b21e1aa339aee70e17c96ab337f22e60e154d7"
   end
 
@@ -62,12 +62,12 @@ class ProtobufAT29 < Formula
     system "ctest", "--test-dir", "build", "--verbose" if OS.mac?
     system "cmake", "--install", "build"
 
-    (share"vimvimfilessyntax").install "editorsproto.vim"
-    elisp.install "editorsprotobuf-mode.el"
+    (share/"vim/vimfiles/syntax").install "editors/proto.vim"
+    elisp.install "editors/protobuf-mode.el"
   end
 
   test do
-    (testpath"test.proto").write <<~PROTO
+    (testpath/"test.proto").write <<~PROTO
       syntax = "proto3";
       package test;
       message TestCase {
@@ -77,6 +77,6 @@ class ProtobufAT29 < Formula
         repeated TestCase case = 1;
       }
     PROTO
-    system bin"protoc", "test.proto", "--cpp_out=."
+    system bin/"protoc", "test.proto", "--cpp_out=."
   end
 end

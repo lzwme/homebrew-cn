@@ -1,10 +1,10 @@
 class OtelCli < Formula
   desc "Tool for sending events from shell scripts & similar environments"
-  homepage "https:github.comequinix-labsotel-cli"
-  url "https:github.comequinix-labsotel-cliarchiverefstagsv0.4.5.tar.gz"
+  homepage "https://github.com/equinix-labs/otel-cli"
+  url "https://ghfast.top/https://github.com/equinix-labs/otel-cli/archive/refs/tags/v0.4.5.tar.gz"
   sha256 "331a76783974318a31d9ab06e3f05af488e0ede3cce989f8d1b634450a345536"
   license "Apache-2.0"
-  head "https:github.comequinix-labsotel-cli.git", branch: "main"
+  head "https://github.com/equinix-labs/otel-cli.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "9ae87c2f9fafe21f6f99739e0d86b3e0f1d70bb75c355e434f911d58150e1f01"
@@ -21,11 +21,11 @@ class OtelCli < Formula
     ldflags = "-s -w -X main.version=#{version} -X main.commit=#{tap.user} -X main.date=#{time.iso8601}"
     system "go", "build", *std_go_args(ldflags:)
 
-    generate_completions_from_executable(bin"otel-cli", "completion")
+    generate_completions_from_executable(bin/"otel-cli", "completion")
   end
 
   test do
-    output = shell_output("#{bin}otel-cli status")
+    output = shell_output("#{bin}/otel-cli status")
     assert_equal "otel-cli", JSON.parse(output)["config"]["service_name"]
   end
 end

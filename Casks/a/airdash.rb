@@ -2,11 +2,11 @@ cask "airdash" do
   version "2.0.158"
   sha256 "990a683d6200fe595da3963bbcb0ec806d7f4d755a1ec73bd1ae21e50a5079fd"
 
-  url "https:github.comsimonbengtssonairdashreleasesdownloadv#{version}airdash.dmg",
-      verified: "github.comsimonbengtssonairdash"
+  url "https://ghfast.top/https://github.com/simonbengtsson/airdash/releases/download/v#{version}/airdash.dmg",
+      verified: "github.com/simonbengtsson/airdash/"
   name "AirDash"
   desc "Transfer photos and files to any device"
-  homepage "https:airdash-project.web.app"
+  homepage "https://airdash-project.web.app/"
 
   livecheck do
     url :url
@@ -20,7 +20,7 @@ cask "airdash" do
   app "AirDash#{version.patch}.app"
 
   zap trash: [
-    "~LibraryApplication Scriptsio.flown.airdashn",
-    "~LibraryContainersio.flown.airdashn",
+    "~/Library/Application Scripts/io.flown.airdashn",
+    "~/Library/Containers/io.flown.airdashn",
   ]
 end

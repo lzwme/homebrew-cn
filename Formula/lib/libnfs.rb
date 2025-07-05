@@ -1,7 +1,7 @@
 class Libnfs < Formula
   desc "C client library for NFS"
-  homepage "https:github.comsahlberglibnfs"
-  url "https:github.comsahlberglibnfsarchiverefstagslibnfs-6.0.2.tar.gz"
+  homepage "https://github.com/sahlberg/libnfs"
+  url "https://ghfast.top/https://github.com/sahlberg/libnfs/archive/refs/tags/libnfs-6.0.2.tar.gz"
   sha256 "4e5459cc3e0242447879004e9ad28286d4d27daa42cbdcde423248fad911e747"
   license "LGPL-2.1-or-later"
 
@@ -20,7 +20,7 @@ class Libnfs < Formula
   depends_on "docbook-xsl" => :build
 
   def install
-    ENV["XML_CATALOG_FILES"] = "#{etc}xmlcatalog"
+    ENV["XML_CATALOG_FILES"] = "#{etc}/xml/catalog"
 
     system "cmake", "-S", ".", "-B", "build", "-DENABLE_DOCUMENTATION=ON", "-DENABLE_UTILS=ON", *std_cmake_args
     system "cmake", "--build", "build"
@@ -28,14 +28,14 @@ class Libnfs < Formula
   end
 
   test do
-    assert_match "No URL specified", shell_output("#{bin}nfs-ls 2>&1", 1)
+    assert_match "No URL specified", shell_output("#{bin}/nfs-ls 2>&1", 1)
 
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #if defined(__linux__)
-      # include <systime.h>
+      # include <sys/time.h>
       #endif
       #include <stddef.h>
-      #include <nfsclibnfs.h>
+      #include <nfsc/libnfs.h>
 
       int main(void)
       {
@@ -52,6 +52,6 @@ class Libnfs < Formula
       }
     C
     system ENV.cc, "test.c", "-L#{lib}", "-lnfs", "-o", "test"
-    system ".test"
+    system "./test"
   end
 end

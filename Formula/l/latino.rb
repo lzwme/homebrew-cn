@@ -1,11 +1,11 @@
 class Latino < Formula
   desc "Open source programming language for Latinos and Hispanic speakers"
-  homepage "https:www.lenguajelatino.org"
-  url "https:github.comlenguaje-latinolatino.git",
+  homepage "https://www.lenguajelatino.org/"
+  url "https://github.com/lenguaje-latino/latino.git",
       tag:      "v1.4.4",
       revision: "4d8ed2e690dd1efcc47a9f8f790b8a9aeba4b808"
   license "MIT"
-  head "https:github.comlenguaje-latinolatino.git", branch: "master"
+  head "https://github.com/lenguaje-latino/latino.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:  "3f71439866df37de2cbe8fb5c711b770d70186e57a2e3a586dfddd95264aa3df"
@@ -29,15 +29,15 @@ class Latino < Formula
   end
 
   test do
-    (testpath"test1.lat").write "poner('hola mundo')"
-    (testpath"test2.lat").write <<~EOS
+    (testpath/"test1.lat").write "poner('hola mundo')"
+    (testpath/"test2.lat").write <<~EOS
       desde (i = 0; i <= 10; i++)
         escribir(i)
       fin
     EOS
-    output = shell_output("#{bin}latino test1.lat")
+    output = shell_output("#{bin}/latino test1.lat")
     assert_equal "hola mundo", output.chomp
-    output2 = shell_output("#{bin}latino test2.lat")
+    output2 = shell_output("#{bin}/latino test2.lat")
     assert_equal "0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10", output2.chomp
   end
 end

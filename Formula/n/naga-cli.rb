@@ -1,10 +1,10 @@
 class NagaCli < Formula
   desc "Shader translation command-line tool"
-  homepage "https:wgpu.rs"
-  url "https:static.crates.iocratesnaga-clinaga-cli-25.0.0.crate"
+  homepage "https://wgpu.rs/"
+  url "https://static.crates.io/crates/naga-cli/naga-cli-25.0.0.crate"
   sha256 "ede66d4c10828909e20b14811b0e70b1d4ae8ff03945e0ec91eb4d75842a2309"
   license any_of: ["Apache-2.0", "MIT"]
-  head "https:github.comgfx-rswgpu.git", branch: "trunk"
+  head "https://github.com/gfx-rs/wgpu.git", branch: "trunk"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "9f381df3f1f5551ef09d6f5a1db7c785ec7e1988cda561a593f94a32225c8993"
@@ -26,7 +26,7 @@ class NagaCli < Formula
 
   test do
     # sample taken from the Naga test suite
-    test_wgsl = testpath"test.wgsl"
+    test_wgsl = testpath/"test.wgsl"
     test_wgsl.write <<~WGSL
       @fragment
       fn derivatives(@builtin(position) foo: vec4<f32>) -> @location(0) vec4<f32> {
@@ -36,13 +36,13 @@ class NagaCli < Formula
           return (x + y) * z;
       }
     WGSL
-    assert_equal "Validation successful", shell_output("#{bin}naga #{test_wgsl}").strip
-    test_out_wgsl = testpath"test_out.wgsl"
-    test_out_frag = testpath"test_out.frag"
-    test_out_metal = testpath"test_out.metal"
-    test_out_hlsl = testpath"test_out.hlsl"
-    test_out_dot = testpath"test_out.dot"
-    system bin"naga", test_wgsl, test_out_wgsl, test_out_frag, test_out_metal, test_out_hlsl, test_out_dot,
+    assert_equal "Validation successful", shell_output("#{bin}/naga #{test_wgsl}").strip
+    test_out_wgsl = testpath/"test_out.wgsl"
+    test_out_frag = testpath/"test_out.frag"
+    test_out_metal = testpath/"test_out.metal"
+    test_out_hlsl = testpath/"test_out.hlsl"
+    test_out_dot = testpath/"test_out.dot"
+    system bin/"naga", test_wgsl, test_out_wgsl, test_out_frag, test_out_metal, test_out_hlsl, test_out_dot,
            "--profile", "es310", "--entry-point", "derivatives"
     assert_equal <<~WGSL, test_out_wgsl.read
       @fragment#{" "}
@@ -72,9 +72,9 @@ class NagaCli < Formula
 
     GLSL
     assert_equal <<~CPP, test_out_metal.read
-       language: metal1.0
+      // language: metal1.0
       #include <metal_stdlib>
-      #include <simdsimd.h>
+      #include <simd/simd.h>
 
       using metal::uint;
 
@@ -113,7 +113,7 @@ class NagaCli < Formula
       		label="Globals"
       	}
       	subgraph cluster_ep0 {
-      		label="Fragment'derivatives'"
+      		label="Fragment/'derivatives'"
       		node [ style=filled ]
       		ep0_e0 [ color="#8dd3c7" label="[0] Argument[0]" ]
       		ep0_e1 [ color="#fccde5" label="[1] dXNone" ]

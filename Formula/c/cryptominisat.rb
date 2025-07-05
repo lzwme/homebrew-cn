@@ -1,15 +1,15 @@
 class Cryptominisat < Formula
   desc "Advanced SAT solver"
-  homepage "https:www.msoos.orgcryptominisat5"
-  url "https:github.commsooscryptominisatarchiverefstags5.12.1.tar.gz"
+  homepage "https://www.msoos.org/cryptominisat5/"
+  url "https://ghfast.top/https://github.com/msoos/cryptominisat/archive/refs/tags/5.12.1.tar.gz"
   sha256 "fa504ae5846c80a3650fda620383def7f3d1d9d5d08824b57e13c4d41e881d89"
-  # Everything that's needed to runbuildinstalllink the system is MIT licensed. This allows
+  # Everything that's needed to run/build/install/link the system is MIT licensed. This allows
   # easy distribution and running of the system everywhere.
   license "MIT"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -29,28 +29,28 @@ class Cryptominisat < Formula
   uses_from_macos "zlib"
 
   # Currently using latest commit from `mate-only-libraries-1.8.0` branch.
-  # Check cryptominisat README.markdown andor CI workflow to see if branch has changed.
+  # Check cryptominisat README.markdown and/or CI workflow to see if branch has changed.
   resource "cadical" do
-    url "https:github.commeelgroupcadicalarchivec90592eab35a4a26ad901367db3cd727c5ab79c5.tar.gz"
+    url "https://ghfast.top/https://github.com/meelgroup/cadical/archive/c90592eab35a4a26ad901367db3cd727c5ab79c5.tar.gz"
     sha256 "ac54f000b26083c44873e0ce581dac1cb56f91a8835082287b391af089547c3d"
   end
 
   # Currently using a git checkout of `mate` branch as the generate script runs `git show`.
-  # Check cryptominisat README.markdown andor CI workflow to see if branch has changed.
+  # Check cryptominisat README.markdown and/or CI workflow to see if branch has changed.
   resource "cadiback" do
-    url "https:github.commeelgroupcadiback.git",
+    url "https://github.com/meelgroup/cadiback.git",
         revision: "ea65a9442fc2604ee5f4ffd0f0fdd0bf481d5b42"
   end
 
   # Apply Arch Linux patch to avoid rebuilding C++ library for Python bindings
   patch do
-    url "https:gitlab.archlinux.orgarchlinuxpackagingpackagescryptominisat-raw20200db986b018b724363352954cfef8006da079python-system-libs.patch"
+    url "https://gitlab.archlinux.org/archlinux/packaging/packages/cryptominisat/-/raw/20200db986b018b724363352954cfef8006da079/python-system-libs.patch"
     sha256 "0fb932fbf83c351568f54fc238827709e6cc2646d124af751050cfde0c255254"
   end
 
   # Apply Arch Linux patch to avoid paths to non-installed static libraries in CMake config file
   patch do
-    url "https:gitlab.archlinux.orgarchlinuxpackagingpackagescryptominisat-rawf8e0e60b7d4fd9aa185a1a1a55dcd2b7ea123d58link-private.patch"
+    url "https://gitlab.archlinux.org/archlinux/packaging/packages/cryptominisat/-/raw/f8e0e60b7d4fd9aa185a1a1a55dcd2b7ea123d58/link-private.patch"
     sha256 "a5006f49e8adf1474725d2a3e4205cdd65beb2f100f5538b2f89e14de0613e0f"
   end
 
@@ -59,20 +59,20 @@ class Cryptominisat < Formula
   end
 
   def install
-    # fix audit failure with `liblibcryptominisat5.5.7.dylib`
-    inreplace "srcGitSHA1.cpp.in", "@CMAKE_CXX_COMPILER@", ENV.cxx
+    # fix audit failure with `lib/libcryptominisat5.5.7.dylib`
+    inreplace "src/GitSHA1.cpp.in", "@CMAKE_CXX_COMPILER@", ENV.cxx
 
-    (buildpathname).install buildpath.children
-    (buildpath"cadical").install resource("cadical")
-    (buildpath"cadiback").install resource("cadiback")
+    (buildpath/name).install buildpath.children
+    (buildpath/"cadical").install resource("cadical")
+    (buildpath/"cadiback").install resource("cadiback")
 
     cd "cadical" do
-      system ".configure"
+      system "./configure"
       system "make", "-C", "build", "libcadical.a"
     end
 
     cd "cadiback" do
-      system ".configure"
+      system "./configure"
       system "make", "libcadiback.a"
     end
 
@@ -80,22 +80,22 @@ class Cryptominisat < Formula
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 
-    ENV.append "LDFLAGS", "-Wl,-rpath,#{rpath(source: prefixLanguage::Python.site_packages(python3))}"
-    system python3, "-m", "pip", "install", *std_pip_args(build_isolation: true), ".#{name}"
+    ENV.append "LDFLAGS", "-Wl,-rpath,#{rpath(source: prefix/Language::Python.site_packages(python3))}"
+    system python3, "-m", "pip", "install", *std_pip_args(build_isolation: true), "./#{name}"
   end
 
   test do
-    (testpath"simple.cnf").write <<~EOS
+    (testpath/"simple.cnf").write <<~EOS
       p cnf 3 4
       1 0
       -2 0
       -3 0
       -1 2 3 0
     EOS
-    result = shell_output("#{bin}cryptominisat5 simple.cnf", 20)
+    result = shell_output("#{bin}/cryptominisat5 simple.cnf", 20)
     assert_match "s UNSATISFIABLE", result
 
-    (testpath"test.py").write <<~PYTHON
+    (testpath/"test.py").write <<~PYTHON
       import pycryptosat
       solver = pycryptosat.Solver()
       solver.add_clause([1])

@@ -1,7 +1,7 @@
 class Iccmax < Formula
   desc "Demonstration Implementation for iccMAX color profiles"
-  homepage "https:github.comInternationalColorConsortiumDemoIccMAX"
-  url "https:github.comInternationalColorConsortiumDemoIccMAXarchiverefstagsv2.1.26.tar.gz"
+  homepage "https://github.com/InternationalColorConsortium/DemoIccMAX"
+  url "https://ghfast.top/https://github.com/InternationalColorConsortium/DemoIccMAX/archive/refs/tags/v2.1.26.tar.gz"
   sha256 "e3bff2e0e7876faebe4a2097eefa2a190325bcc04c152ef470449f0c01b41fa7"
   license "MIT"
 
@@ -35,18 +35,18 @@ class Iccmax < Formula
       -DENABLE_ICCXML=ON
     ]
 
-    system "cmake", "-S", "BuildCmake", "-B", "build", *args, *std_cmake_args
+    system "cmake", "-S", "Build/Cmake", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 
-    pkgshare.install "TestingCalcCameraModel.xml"
+    pkgshare.install "Testing/Calc/CameraModel.xml"
   end
 
   test do
-    system bin"iccFromXml", pkgshare"CameraModel.xml", "output.icc"
-    assert_path_exists testpath"output.icc"
+    system bin/"iccFromXml", pkgshare/"CameraModel.xml", "output.icc"
+    assert_path_exists testpath/"output.icc"
 
-    system bin"iccToXml", "output.icc", "output.xml"
-    assert_path_exists testpath"output.xml"
+    system bin/"iccToXml", "output.icc", "output.xml"
+    assert_path_exists testpath/"output.xml"
   end
 end

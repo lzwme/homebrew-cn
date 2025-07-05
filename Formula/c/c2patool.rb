@@ -1,14 +1,14 @@
 class C2patool < Formula
   desc "CLI for working with C2PA manifests and media assets"
-  homepage "https:contentauthenticity.org"
-  url "https:github.comcontentauthc2pa-rsarchiverefstagsc2patool-v0.19.0.tar.gz"
+  homepage "https://contentauthenticity.org"
+  url "https://ghfast.top/https://github.com/contentauth/c2pa-rs/archive/refs/tags/c2patool-v0.19.0.tar.gz"
   sha256 "4a4d4c45cb049069f00ef6cecac341881d80ef6430547050a3739ef7108f1681"
   license any_of: ["Apache-2.0", "MIT"]
-  head "https:github.comcontentauthc2pa-rs.git", branch: "main"
+  head "https://github.com/contentauth/c2pa-rs.git", branch: "main"
 
   livecheck do
     url :stable
-    regex(^c2patool[._-]v?(\d+(?:\.\d+)+)$i)
+    regex(/^c2patool[._-]v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -31,9 +31,9 @@ class C2patool < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}c2patool -V").strip
+    assert_match version.to_s, shell_output("#{bin}/c2patool -V").strip
 
-    (testpath"test.json").write <<~JSON
+    (testpath/"test.json").write <<~JSON
       {
         "assertions": [
           {
@@ -46,9 +46,9 @@ class C2patool < Formula
       }
     JSON
 
-    system bin"c2patool", test_fixtures("test.png"), "-m", "test.json", "-o", "signed.png", "--force"
+    system bin/"c2patool", test_fixtures("test.png"), "-m", "test.json", "-o", "signed.png", "--force"
 
-    output = shell_output("#{bin}c2patool signed.png")
+    output = shell_output("#{bin}/c2patool signed.png")
     assert_match "\"issuer\": \"C2PA Test Signing Cert\"", output
   end
 end

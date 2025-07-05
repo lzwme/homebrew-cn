@@ -1,13 +1,13 @@
 class Forge < Formula
   desc "High Performance Visualization"
-  homepage "https:github.comarrayfireforge"
-  url "https:github.comarrayfireforgearchiverefstagsv1.0.8.tar.gz"
+  homepage "https://github.com/arrayfire/forge"
+  url "https://ghfast.top/https://github.com/arrayfire/forge/archive/refs/tags/v1.0.8.tar.gz"
   sha256 "77d2581414d6392aa51748454b505a747cd63404f63d3e1ddeafae6a0664419c"
   license "BSD-3-Clause"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -52,7 +52,7 @@ class Forge < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~CPP
+    (testpath/"test.cpp").write <<~CPP
       #include <forge.h>
       #include <iostream>
 
@@ -62,6 +62,6 @@ class Forge < Formula
       }
     CPP
     system ENV.cxx, "-std=c++11", "test.cpp", "-L#{lib}", "-lforge", "-o", "test"
-    assert_match "Success", shell_output(".test")
+    assert_match "Success", shell_output("./test")
   end
 end

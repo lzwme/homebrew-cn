@@ -1,10 +1,10 @@
 class Television < Formula
   desc "General purpose fuzzy finder TUI"
-  homepage "https:github.comalexpasmantiertelevision"
-  url "https:github.comalexpasmantiertelevisionarchiverefstags0.11.9.tar.gz"
+  homepage "https://github.com/alexpasmantier/television"
+  url "https://ghfast.top/https://github.com/alexpasmantier/television/archive/refs/tags/0.11.9.tar.gz"
   sha256 "be58e6011ce1228afa1c6ba15f33023484b1bc8673c466f186ac2a130bb25bdb"
   license "MIT"
-  head "https:github.comalexpasmantiertelevision.git", branch: "main"
+  head "https://github.com/alexpasmantier/television.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "1428b66b3f3d2c99f53e4bec1e48c00af41e16e5fe664692a48cd70e4ceb73f5"
@@ -22,13 +22,13 @@ class Television < Formula
 
   def install
     system "cargo", "install", *std_cargo_args
-    man1.install "mantv.1"
+    man1.install "man/tv.1"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}tv -V")
+    assert_match version.to_s, shell_output("#{bin}/tv -V")
 
-    output = shell_output("#{bin}tv list-channels")
+    output = shell_output("#{bin}/tv list-channels")
     assert_match "Builtin channels", output
   end
 end

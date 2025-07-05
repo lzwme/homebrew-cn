@@ -1,7 +1,7 @@
 class Cglm < Formula
-  desc "Optimized OpenGLGraphics Math (glm) for C"
-  homepage "https:github.comrecpcglm"
-  url "https:github.comrecpcglmarchiverefstagsv0.9.6.tar.gz"
+  desc "Optimized OpenGL/Graphics Math (glm) for C"
+  homepage "https://github.com/recp/cglm"
+  url "https://ghfast.top/https://github.com/recp/cglm/archive/refs/tags/v0.9.6.tar.gz"
   sha256 "be5e7d384561eb0fca59724a92b7fb44bf03e588a7eae5123a7d796002928184"
   license "MIT"
 
@@ -21,13 +21,13 @@ class Cglm < Formula
 
   def install
     system "autoreconf", "--force", "--install", "--verbose"
-    system ".configure", *std_configure_args, "--disable-silent-rules"
+    system "./configure", *std_configure_args, "--disable-silent-rules"
     system "make", "install"
   end
 
   test do
-    (testpath"test.c").write <<~C
-      #include <cglmcglm.h>
+    (testpath/"test.c").write <<~C
+      #include <cglm/cglm.h>
       #include <assert.h>
 
       int main() {
@@ -41,7 +41,7 @@ class Cglm < Formula
         return 0;
       }
     C
-    system ENV.cc, "-I#{include}", testpath"test.c", "-o", "test"
-    system ".test"
+    system ENV.cc, "-I#{include}", testpath/"test.c", "-o", "test"
+    system "./test"
   end
 end

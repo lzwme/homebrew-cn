@@ -1,10 +1,10 @@
 class Stlink < Formula
   desc "STM32 discovery line Linux programmer"
-  homepage "https:github.comstlink-orgstlink"
-  url "https:github.comstlink-orgstlinkarchiverefstagsv1.8.0.tar.gz"
+  homepage "https://github.com/stlink-org/stlink"
+  url "https://ghfast.top/https://github.com/stlink-org/stlink/archive/refs/tags/v1.8.0.tar.gz"
   sha256 "cff760b5c212c2cc480f705b9ca7f3828d6b9c267950c6a547002cd0a1f5f6ac"
   license "BSD-3-Clause"
-  head "https:github.comstlink-orgstlink.git", branch: "develop"
+  head "https://github.com/stlink-org/stlink.git", branch: "develop"
 
   no_autobump! because: :requires_manual_review
 
@@ -24,13 +24,13 @@ class Stlink < Formula
   depends_on "pkgconf" => :build
   depends_on "libusb"
 
-  # upstream PR ref, https:github.comstlink-orgstlinkpull1373
+  # upstream PR ref, https://github.com/stlink-org/stlink/pull/1373
   patch do
-    url "https:github.comstlink-orgstlinkcommit4eafbb29d106b32221c8d3b375b31d78f07de182.patch?full_index=1"
+    url "https://github.com/stlink-org/stlink/commit/4eafbb29d106b32221c8d3b375b31d78f07de182.patch?full_index=1"
     sha256 "a745b3f10eb9c831838afc53e94038f61b29cdbe70970d3417d15f0db5301791"
   end
   patch do
-    url "https:github.comstlink-orgstlinkcommitd742e752d896c0f8d4a61b282457401f7a681b16.patch?full_index=1"
+    url "https://github.com/stlink-org/stlink/commit/d742e752d896c0f8d4a61b282457401f7a681b16.patch?full_index=1"
     sha256 "1f86ccdcb6bbf2d8cf53d6c96e76c1f11aef83c9de0e8dbe9b8d5cafab02c28d"
   end
 
@@ -38,12 +38,12 @@ class Stlink < Formula
     libusb = Formula["libusb"]
     args = %W[
       -DCMAKE_INSTALL_RPATH=#{rpath}
-      -DLIBUSB_INCLUDE_DIR=#{libusb.opt_include}libusb-#{libusb.version.major_minor}
-      -DLIBUSB_LIBRARY=#{libusb.opt_libshared_library("libusb-#{libusb.version.major_minor}")}
+      -DLIBUSB_INCLUDE_DIR=#{libusb.opt_include}/libusb-#{libusb.version.major_minor}
+      -DLIBUSB_LIBRARY=#{libusb.opt_lib/shared_library("libusb-#{libusb.version.major_minor}")}
     ]
     if OS.linux?
-      args << "-DSTLINK_MODPROBED_DIR=#{lib}modprobe.d"
-      args << "-DSTLINK_UDEV_RULES_DIR=#{lib}udevrules.d"
+      args << "-DSTLINK_MODPROBED_DIR=#{lib}/modprobe.d"
+      args << "-DSTLINK_UDEV_RULES_DIR=#{lib}/udev/rules.d"
     end
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
@@ -52,6 +52,6 @@ class Stlink < Formula
   end
 
   test do
-    assert_match "st-flash #{version}", shell_output("#{bin}st-flash --debug reset 2>&1", 255)
+    assert_match "st-flash #{version}", shell_output("#{bin}/st-flash --debug reset 2>&1", 255)
   end
 end

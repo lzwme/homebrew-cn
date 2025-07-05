@@ -1,10 +1,10 @@
 class Willgit < Formula
   desc "William's miscellaneous git tools"
-  homepage "https:github.comDanielVartanovwillgit"
-  url "https:github.comDanielVartanovwillgitarchiverefstags1.0.0.tar.gz"
+  homepage "https://github.com/DanielVartanov/willgit"
+  url "https://ghfast.top/https://github.com/DanielVartanov/willgit/archive/refs/tags/1.0.0.tar.gz"
   sha256 "3bb99d6ec2614a90f40962311daf51f393b3d0abfdb0f9e0a14ba7340b33a2c8"
   license "MIT"
-  head "https:github.comDanielVartanovwillgit.git", branch: "master"
+  head "https://github.com/DanielVartanov/willgit.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -21,7 +21,7 @@ class Willgit < Formula
 
   test do
     system "git", "init", "--initial-branch=main"
-    (testpath"README.md").write "# BrewTest"
+    (testpath/"README.md").write "# BrewTest"
     system "git", "add", "README.md"
     system "git", "commit", "-m", "init"
     assert_equal "Local branch: main", shell_output("git wtf").chomp

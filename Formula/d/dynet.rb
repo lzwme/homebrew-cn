@@ -1,7 +1,7 @@
 class Dynet < Formula
   desc "Dynamic Neural Network Toolkit"
-  homepage "https:github.comclabdynet"
-  url "https:github.comclabdynetarchiverefstags2.1.2.tar.gz"
+  homepage "https://github.com/clab/dynet"
+  url "https://ghfast.top/https://github.com/clab/dynet/archive/refs/tags/2.1.2.tar.gz"
   sha256 "014505dc3da2001db54f4b8f3a7a6e7a1bb9f33a18b6081b2a4044e082dab9c8"
   license "Apache-2.0"
 
@@ -32,7 +32,7 @@ class Dynet < Formula
       depends_on "llvm" => :build
 
       fails_with :gcc do
-        cause "https:github.comclabdynetissues266"
+        cause "https://github.com/clab/dynet/issues/266"
       end
     end
   end
@@ -40,7 +40,7 @@ class Dynet < Formula
   def install
     args = %W[
       -DCMAKE_POLICY_VERSION_MINIMUM=3.5
-      -DEIGEN3_INCLUDE_DIR=#{Formula["eigen"].opt_include}eigen3
+      -DEIGEN3_INCLUDE_DIR=#{Formula["eigen"].opt_include}/eigen3
     ]
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
@@ -50,10 +50,10 @@ class Dynet < Formula
   end
 
   test do
-    cp pkgshare"examplesxortrain_xor.cc", testpath
+    cp pkgshare/"examples/xor/train_xor.cc", testpath
 
     system ENV.cxx, "-std=c++11", "train_xor.cc", "-I#{include}",
                     "-L#{lib}", "-ldynet", "-o", "train_xor"
-    assert_match "memory allocation done", shell_output(".train_xor 2>&1")
+    assert_match "memory allocation done", shell_output("./train_xor 2>&1")
   end
 end

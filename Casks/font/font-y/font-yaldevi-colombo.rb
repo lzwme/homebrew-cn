@@ -2,12 +2,12 @@ cask "font-yaldevi-colombo" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefonts.git",
-      verified:  "github.comgooglefonts",
+  url "https://github.com/google/fonts.git",
+      verified:  "github.com/google/fonts",
       branch:    "main",
-      only_path: "oflyaldevicolombo"
+      only_path: "ofl/yaldevicolombo"
   name "Yaldevi Colombo"
-  homepage "https:fonts.google.comspecimenYaldevi"
+  homepage "https://fonts.google.com/specimen/Yaldevi"
 
   font "YaldeviColombo-Bold.ttf"
   font "YaldeviColombo-ExtraLight.ttf"

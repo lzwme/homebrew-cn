@@ -1,10 +1,10 @@
 class Hjson < Formula
   desc "Convert JSON to HJSON and vice versa"
-  homepage "https:hjson.github.io"
-  url "https:github.comhjsonhjson-goarchiverefstagsv4.5.0.tar.gz"
+  homepage "https://hjson.github.io/"
+  url "https://ghfast.top/https://github.com/hjson/hjson-go/archive/refs/tags/v4.5.0.tar.gz"
   sha256 "bd73ffdee391a51137544ca3fc0550a6d1e839d20088fe27bc20b2a79f7910b4"
   license "MIT"
-  head "https:github.comhjsonhjson-go.git", branch: "master"
+  head "https://github.com/hjson/hjson-go.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "56b3481c44007e1c2bbe12d642ec95d55ecf79525580ce026ef1c26e9ad16fc2"
@@ -19,19 +19,19 @@ class Hjson < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w -X main.Version=#{version}"), ".hjson-cli"
+    system "go", "build", *std_go_args(ldflags: "-s -w -X main.Version=#{version}"), "./hjson-cli"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}hjson -v")
+    assert_match version.to_s, shell_output("#{bin}/hjson -v")
 
-    (testpath"test.hjson").write <<~HJSON
+    (testpath/"test.hjson").write <<~HJSON
       {
         # comment
-         a comment too
-        *
+        // a comment too
+        /*
         * multiline comments
-        *
+        */
         rate: 1000
         key: value
         text: look ma, no quotes!
@@ -62,7 +62,7 @@ class Hjson < Formula
       }
     HJSON
 
-    (testpath"expected.json").write <<~JSON
+    (testpath/"expected.json").write <<~JSON
       {
         commas:
         {
@@ -94,6 +94,6 @@ class Hjson < Formula
       }
     JSON
 
-    assert_equal (testpath"expected.json").read, shell_output("#{bin}hjson #{testpath}test.hjson")
+    assert_equal (testpath/"expected.json").read, shell_output("#{bin}/hjson #{testpath}/test.hjson")
   end
 end

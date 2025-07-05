@@ -1,7 +1,7 @@
 class Genact < Formula
   desc "Nonsense activity generator"
-  homepage "https:github.comsvenstarogenact"
-  url "https:github.comsvenstarogenactarchiverefstagsv1.4.2.tar.gz"
+  homepage "https://github.com/svenstaro/genact"
+  url "https://ghfast.top/https://github.com/svenstaro/genact/archive/refs/tags/v1.4.2.tar.gz"
   sha256 "c7e7c4b215d9d1376c22f4183147debd0ef24aacd772df7311a33678f2119e33"
   license "MIT"
 
@@ -21,10 +21,10 @@ class Genact < Formula
 
   def install
     system "cargo", "install", *std_cargo_args
-    generate_completions_from_executable(bin"genact", "--print-completions")
+    generate_completions_from_executable(bin/"genact", "--print-completions")
   end
 
   test do
-    assert_match "Available modules:", shell_output("#{bin}genact --list-modules")
+    assert_match "Available modules:", shell_output("#{bin}/genact --list-modules")
   end
 end

@@ -1,10 +1,10 @@
 class Doggo < Formula
   desc "Command-line DNS Client for Humans"
-  homepage "https:doggo.mrkaran.dev"
-  url "https:github.commr-karandoggoarchiverefstagsv1.0.5.tar.gz"
+  homepage "https://doggo.mrkaran.dev/"
+  url "https://ghfast.top/https://github.com/mr-karan/doggo/archive/refs/tags/v1.0.5.tar.gz"
   sha256 "92a34f5510a48ab657a980c39edf907c17e96e88a476187d5b57a8cef3becd5b"
   license "GPL-3.0-or-later"
-  head "https:github.commr-karandoggo.git", branch: "main"
+  head "https://github.com/mr-karan/doggo.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "659e186849f180769977ef2af67b9880c454b72d32853222ab69f396e51094f7"
@@ -19,15 +19,15 @@ class Doggo < Formula
 
   def install
     ldflags = "-s -w -X main.buildVersion=#{version} -X main.buildDate=#{time.iso8601}"
-    system "go", "build", *std_go_args(ldflags:), ".cmddoggo"
+    system "go", "build", *std_go_args(ldflags:), "./cmd/doggo"
 
-    generate_completions_from_executable(bin"doggo", "completions")
+    generate_completions_from_executable(bin/"doggo", "completions")
   end
 
   test do
-    answer = shell_output("#{bin}doggo --short example.com NS @1.1.1.1")
+    answer = shell_output("#{bin}/doggo --short example.com NS @1.1.1.1")
     assert_equal "a.iana-servers.net.\nb.iana-servers.net.\n", answer
 
-    assert_match version.to_s, shell_output("#{bin}doggo --version")
+    assert_match version.to_s, shell_output("#{bin}/doggo --version")
   end
 end

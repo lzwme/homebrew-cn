@@ -1,13 +1,13 @@
 class Nomad < Formula
   desc "Distributed, Highly Available, Datacenter-Aware Scheduler"
-  homepage "https:www.nomadproject.io"
+  homepage "https://www.nomadproject.io"
   # NOTE: Do not bump to v1.7.0+ as license changed to BUSL-1.1
-  # https:github.comhashicorpnomadpull18187
-  # https:github.comhashicorpnomadpull18218
-  url "https:github.comhashicorpnomadarchiverefstagsv1.6.2.tar.gz"
+  # https://github.com/hashicorp/nomad/pull/18187
+  # https://github.com/hashicorp/nomad/pull/18218
+  url "https://ghfast.top/https://github.com/hashicorp/nomad/archive/refs/tags/v1.6.2.tar.gz"
   sha256 "8f6f0c2759654b10f64a185ee35c33f221fe662a6a2ba800f7339d955bbec8e5"
   license "MPL-2.0"
-  head "https:github.comhashicorpnomad.git", branch: "main"
+  head "https://github.com/hashicorp/nomad.git", branch: "main"
 
   no_autobump! because: :requires_manual_review
 
@@ -24,7 +24,7 @@ class Nomad < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "23763707912294f817844f4442751351ff8a294748f8d46ca81f29d7187e926d"
   end
 
-  # https:www.hashicorp.combloghashicorp-adopts-business-source-license
+  # https://www.hashicorp.com/blog/hashicorp-adopts-business-source-license
   disable! date: "2024-09-27", because: "will change its license to BUSL on the next release"
 
   depends_on "go" => :build
@@ -35,29 +35,29 @@ class Nomad < Formula
 
   def caveats
     <<~EOS
-      We will not accept any new nomad releases in homebrewcore (with the BUSL license).
+      We will not accept any new nomad releases in homebrew/core (with the BUSL license).
       The next release will change to a non-open-source license:
-      https:www.hashicorp.combloghashicorp-adopts-business-source-license
+      https://www.hashicorp.com/blog/hashicorp-adopts-business-source-license
       See our documentation for acceptable licences:
-        https:docs.brew.shLicense-Guidelines
+        https://docs.brew.sh/License-Guidelines
     EOS
   end
 
   service do
-    run [opt_bin"nomad", "agent", "-dev"]
+    run [opt_bin/"nomad", "agent", "-dev"]
     keep_alive true
     working_dir var
-    log_path var"lognomad.log"
-    error_log_path var"lognomad.log"
+    log_path var/"log/nomad.log"
+    error_log_path var/"log/nomad.log"
   end
 
   test do
     pid = fork do
-      exec bin"nomad", "agent", "-dev"
+      exec bin/"nomad", "agent", "-dev"
     end
     sleep 10
-    ENV.append "NOMAD_ADDR", "http:127.0.0.1:4646"
-    system bin"nomad", "node-status"
+    ENV.append "NOMAD_ADDR", "http://127.0.0.1:4646"
+    system bin/"nomad", "node-status"
   ensure
     Process.kill("TERM", pid)
   end

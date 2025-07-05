@@ -2,12 +2,12 @@ cask "font-quattrocento-sans" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefonts.git",
-      verified:  "github.comgooglefonts",
+  url "https://github.com/google/fonts.git",
+      verified:  "github.com/google/fonts",
       branch:    "main",
-      only_path: "oflquattrocentosans"
+      only_path: "ofl/quattrocentosans"
   name "Quattrocento Sans"
-  homepage "https:fonts.google.comspecimenQuattrocento+Sans"
+  homepage "https://fonts.google.com/specimen/Quattrocento+Sans"
 
   font "QuattrocentoSans-Bold.ttf"
   font "QuattrocentoSans-BoldItalic.ttf"

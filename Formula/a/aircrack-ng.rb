@@ -1,11 +1,11 @@
 class AircrackNg < Formula
   desc "Next-generation aircrack with lots of new features"
-  homepage "https:aircrack-ng.org"
+  homepage "https://aircrack-ng.org/"
   # TODO: Migrate to PCRE2 in the next release
-  url "https:download.aircrack-ng.orgaircrack-ng-1.7.tar.gz"
+  url "https://download.aircrack-ng.org/aircrack-ng-1.7.tar.gz"
   sha256 "05a704e3c8f7792a17315080a21214a4448fd2452c1b0dd5226a3a55f90b58c3"
   license all_of: [
-    "BSD-3-Clause", # includeaircrack-ngthird-party{if_arp.h,if_llc.h}
+    "BSD-3-Clause", # include/aircrack-ng/third-party/{if_arp.h,if_llc.h}
     "GPL-2.0-or-later",
     "GPL-2.0-or-later" => { with: "cryptsetup-OpenSSL-exception" },
   ]
@@ -13,7 +13,7 @@ class AircrackNg < Formula
 
   livecheck do
     url :homepage
-    regex(href=.*?aircrack-ng[._-]v?(\d+(?:\.\d+)+)\.ti)
+    regex(/href=.*?aircrack-ng[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -45,16 +45,16 @@ class AircrackNg < Formula
   uses_from_macos "zlib"
 
   # Remove root requirement from OUI update script. See:
-  # https:github.comHomebrewhomebrewpull12755
+  # https://github.com/Homebrew/homebrew/pull/12755
   patch :DATA
 
   def install
-    system ".autogen.sh", "--disable-silent-rules",
+    system "./autogen.sh", "--disable-silent-rules",
                            "--sysconfdir=#{etc}",
                            "--with-experimental",
                            *std_configure_args
     system "make", "install"
-    inreplace sbin"airodump-ng-oui-update", "usrlocal", HOMEBREW_PREFIX
+    inreplace sbin/"airodump-ng-oui-update", "/usr/local", HOMEBREW_PREFIX
   end
 
   def post_install
@@ -68,27 +68,27 @@ class AircrackNg < Formula
   end
 
   test do
-    assert_match "usage: aircrack-ng", shell_output("#{bin}aircrack-ng --help")
-    assert_match "Logical CPUs", shell_output("#{bin}aircrack-ng -u")
+    assert_match "usage: aircrack-ng", shell_output("#{bin}/aircrack-ng --help")
+    assert_match "Logical CPUs", shell_output("#{bin}/aircrack-ng -u")
     expected_simd = Hardware::CPU.arm? ? "neon" : "sse2"
-    assert_match expected_simd, shell_output("#{bin}aircrack-ng --simd-list")
+    assert_match expected_simd, shell_output("#{bin}/aircrack-ng --simd-list")
   end
 end
 
 __END__
---- ascriptsairodump-ng-oui-update
-+++ bscriptsairodump-ng-oui-update
+--- a/scripts/airodump-ng-oui-update
++++ b/scripts/airodump-ng-oui-update
 @@ -20,25 +20,6 @@ fi
 
- AIRODUMP_NG_OUI="${OUI_PATH}airodump-ng-oui.txt"
- OUI_IEEE="${OUI_PATH}oui.txt"
+ AIRODUMP_NG_OUI="${OUI_PATH}/airodump-ng-oui.txt"
+ OUI_IEEE="${OUI_PATH}/oui.txt"
 -USERID=""
 -
 -
 -# Make sure the user is root
--if [ x"`which id 2> devnull`" != "x" ]
+-if [ x"`which id 2> /dev/null`" != "x" ]
 -then
--	USERID="`id -u 2> devnull`"
+-	USERID="`id -u 2> /dev/null`"
 -fi
 -
 -if [ x$USERID = "x" -a x$(id -ru) != "x" ]

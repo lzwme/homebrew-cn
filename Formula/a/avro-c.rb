@@ -1,10 +1,10 @@
 class AvroC < Formula
   desc "Data serialization system"
-  homepage "https:avro.apache.org"
+  homepage "https://avro.apache.org/"
   # Upstreams tar.gz can't be opened by bsdtar on macOS
-  # https:github.comHomebrewhomebrew-corepull146296#issuecomment-1737945877
-  # https:apple.stackexchange.comquestions197839why-is-extracting-this-tgz-throwing-an-error-on-my-mac-but-not-on-linux
-  url "https:github.comapacheavro.git",
+  # https://github.com/Homebrew/homebrew-core/pull/146296#issuecomment-1737945877
+  # https://apple.stackexchange.com/questions/197839/why-is-extracting-this-tgz-throwing-an-error-on-my-mac-but-not-on-linux
+  url "https://github.com/apache/avro.git",
       tag:      "release-1.11.3",
       revision: "35ff8b997738e4d983871902d47bfb67b3250734"
   license "Apache-2.0"
@@ -30,19 +30,19 @@ class AvroC < Formula
   uses_from_macos "zlib"
 
   def install
-    system "cmake", "-S", "langc", "-B", "build", *std_cmake_args
+    system "cmake", "-S", "lang/c", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end
 
   test do
     resource "homebrew-example" do
-      url "https:raw.githubusercontent.comapacheavro88538e9f1d6be236ce69ea2e0bdd6eed352c503elangcexamplesquickstop.c"
+      url "https://ghfast.top/https://raw.githubusercontent.com/apache/avro/88538e9f1d6be236ce69ea2e0bdd6eed352c503e/lang/c/examples/quickstop.c"
       sha256 "8108fda370afb0e7be4e213d4e339bd2aabc1801dcd0b600380d81c09e5ff94f"
     end
 
     testpath.install resource("homebrew-example")
     system ENV.cc, "quickstop.c", "-o", "test", "-I#{include}", "-L#{lib}", "-lavro"
-    system ".test", ">> devnull"
+    system "./test", ">> /dev/null"
   end
 end

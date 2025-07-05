@@ -1,13 +1,13 @@
 class Fish < Formula
   desc "User-friendly command-line shell for UNIX-like operating systems"
-  homepage "https:fishshell.com"
-  url "https:github.comfish-shellfish-shellreleasesdownload4.0.2fish-4.0.2.tar.xz"
+  homepage "https://fishshell.com"
+  url "https://ghfast.top/https://github.com/fish-shell/fish-shell/releases/download/4.0.2/fish-4.0.2.tar.xz"
   sha256 "6e1ecdb164285fc057b2f35acbdc20815c1623099e7bb47bbfc011120adf7e83"
   license "GPL-2.0-only"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -25,7 +25,7 @@ class Fish < Formula
   end
 
   head do
-    url "https:github.comfish-shellfish-shell.git", branch: "master"
+    url "https://github.com/fish-shell/fish-shell.git", branch: "master"
 
     depends_on "sphinx-doc" => :build
   end
@@ -41,20 +41,20 @@ class Fish < Formula
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args,
                     "-DCMAKE_INSTALL_SYSCONFDIR=#{etc}",
-                    "-Dextra_functionsdir=#{HOMEBREW_PREFIX}sharefishvendor_functions.d",
-                    "-Dextra_completionsdir=#{HOMEBREW_PREFIX}sharefishvendor_completions.d",
-                    "-Dextra_confdir=#{HOMEBREW_PREFIX}sharefishvendor_conf.d"
+                    "-Dextra_functionsdir=#{HOMEBREW_PREFIX}/share/fish/vendor_functions.d",
+                    "-Dextra_completionsdir=#{HOMEBREW_PREFIX}/share/fish/vendor_completions.d",
+                    "-Dextra_confdir=#{HOMEBREW_PREFIX}/share/fish/vendor_conf.d"
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end
 
   def post_install
-    (pkgshare"vendor_functions.d").mkpath
-    (pkgshare"vendor_completions.d").mkpath
-    (pkgshare"vendor_conf.d").mkpath
+    (pkgshare/"vendor_functions.d").mkpath
+    (pkgshare/"vendor_completions.d").mkpath
+    (pkgshare/"vendor_conf.d").mkpath
   end
 
   test do
-    system bin"fish", "-c", "echo"
+    system bin/"fish", "-c", "echo"
   end
 end

@@ -2,10 +2,10 @@ cask "middleclick" do
   version "3.1.0"
   sha256 "ed933a932164b16e0f9c5c06b17b8ae05c759b3e442513be509deb672097e4d5"
 
-  url "https:github.comartginzburgMiddleClickreleasesdownload#{version}MiddleClick.zip"
+  url "https://ghfast.top/https://github.com/artginzburg/MiddleClick/releases/download/#{version}/MiddleClick.zip"
   name "MiddleClick"
   desc "Utility to extend trackpad functionality"
-  homepage "https:github.comartginzburgMiddleClick"
+  homepage "https://github.com/artginzburg/MiddleClick"
 
   livecheck do
     url :url
@@ -21,5 +21,5 @@ cask "middleclick" do
   uninstall quit:       "art.ginzburg.MiddleClick",
             login_item: "MiddleClick"
 
-  zap trash: "~LibraryPreferencesart.ginzburg.MiddleClick.plist"
+  zap trash: "~/Library/Preferences/art.ginzburg.MiddleClick.plist"
 end

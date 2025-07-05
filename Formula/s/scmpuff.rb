@@ -1,7 +1,7 @@
 class Scmpuff < Formula
   desc "Adds numbered shortcuts for common git commands"
-  homepage "https:mroth.github.ioscmpuff"
-  url "https:github.commrothscmpuffarchiverefstagsv0.5.0.tar.gz"
+  homepage "https://mroth.github.io/scmpuff/"
+  url "https://ghfast.top/https://github.com/mroth/scmpuff/archive/refs/tags/v0.5.0.tar.gz"
   sha256 "e07634c7207dc51479d39895e546dd0107a50566faf5c2067f61a3b92c824fbf"
   license "MIT"
 
@@ -30,6 +30,6 @@ class Scmpuff < Formula
 
   test do
     ENV["e1"] = "abc"
-    assert_equal "abc", shell_output("#{bin}scmpuff expand 1").strip
+    assert_equal "abc", shell_output("#{bin}/scmpuff expand 1").strip
   end
 end

@@ -1,10 +1,10 @@
 class Katana < Formula
   desc "Crawling and spidering framework"
-  homepage "https:github.comprojectdiscoverykatana"
-  url "https:github.comprojectdiscoverykatanaarchiverefstagsv1.1.3.tar.gz"
+  homepage "https://github.com/projectdiscovery/katana"
+  url "https://ghfast.top/https://github.com/projectdiscovery/katana/archive/refs/tags/v1.1.3.tar.gz"
   sha256 "94d72b9132b536b1125f51c6ee4ddf6b11bf55013a88172fe0fed979799410fc"
   license "MIT"
-  head "https:github.comprojectdiscoverykatana.git", branch: "main"
+  head "https://github.com/projectdiscovery/katana.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "6c758ca0022728b3168f6331fb5579737afc480b0b76a5cf894a58bcc5f7b037"
@@ -19,11 +19,11 @@ class Katana < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), ".cmdkatana"
+    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/katana"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}katana -version 2>&1")
-    assert_match "Started standard crawling", shell_output("#{bin}katana -u 127.0.0.1 2>&1")
+    assert_match version.to_s, shell_output("#{bin}/katana -version 2>&1")
+    assert_match "Started standard crawling", shell_output("#{bin}/katana -u 127.0.0.1 2>&1")
   end
 end

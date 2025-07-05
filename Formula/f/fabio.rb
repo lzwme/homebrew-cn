@@ -1,10 +1,10 @@
 class Fabio < Formula
   desc "Zero-conf load balancing HTTP(S) router"
-  homepage "https:github.comfabiolbfabio"
-  url "https:github.comfabiolbfabioarchiverefstagsv1.6.7.tar.gz"
+  homepage "https://github.com/fabiolb/fabio"
+  url "https://ghfast.top/https://github.com/fabiolb/fabio/archive/refs/tags/v1.6.7.tar.gz"
   sha256 "846ac67c68b41428586f28183f772b5a3d5a9003b21625bc6f0f0ed361c8a890"
   license "MIT"
-  head "https:github.comfabiolbfabio.git", branch: "master"
+  head "https://github.com/fabiolb/fabio.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "31bc78f40b86f6687211aece737253a395f1f052d9b489b5d1bb5dcb2b434b5e"
@@ -38,22 +38,22 @@ class Fabio < Formula
     fabio_default_port = 9999
     localhost_ip = "127.0.0.1".freeze
 
-    pid_etcd = spawn "etcd", "--advertise-client-urls", "http:127.0.0.1:2379",
-                             "--listen-client-urls", "http:127.0.0.1:2379"
+    pid_etcd = spawn "etcd", "--advertise-client-urls", "http://127.0.0.1:2379",
+                             "--listen-client-urls", "http://127.0.0.1:2379"
     sleep 10
 
-    system "etcdctl", "--endpoints=http:127.0.0.1:2379", "put", "fabioconfig", ""
+    system "etcdctl", "--endpoints=http://127.0.0.1:2379", "put", "/fabio/config", ""
 
-    (testpath"fabio.properties").write <<~EOS
+    (testpath/"fabio.properties").write <<~EOS
       registry.backend=custom
       registry.custom.host=127.0.0.1:2379
       registry.custom.scheme=http
-      registry.custom.path=fabioconfig
+      registry.custom.path=/fabio/config
       registry.custom.timeout=5s
       registry.custom.pollinterval=10s
     EOS
 
-    pid_fabio = spawn bin"fabio", "-cfg", testpath"fabio.properties"
+    pid_fabio = spawn bin/"fabio", "-cfg", testpath/"fabio.properties"
     sleep 10
 
     assert_equal true, port_open?(localhost_ip, fabio_default_port)

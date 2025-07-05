@@ -1,10 +1,10 @@
 class Noseyparker < Formula
   desc "Finds secrets and sensitive information in textual data and Git history"
-  homepage "https:github.compraetorian-incnoseyparker"
-  url "https:github.compraetorian-incnoseyparkerarchiverefstagsv0.24.0.tar.gz"
+  homepage "https://github.com/praetorian-inc/noseyparker"
+  url "https://ghfast.top/https://github.com/praetorian-inc/noseyparker/archive/refs/tags/v0.24.0.tar.gz"
   sha256 "df31128ec64c0bdb7e8c6917ad68a0c69fe4fe1bd4355332b94938ed08edc2ce"
   license "Apache-2.0"
-  head "https:github.compraetorian-incnoseyparker.git", branch: "main"
+  head "https://github.com/praetorian-inc/noseyparker.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "b3d50cf968e60eff8c5e51bf937bfd8528a7d7cb89d5df6ad8467b50b6cc7893"
@@ -29,16 +29,16 @@ class Noseyparker < Formula
     ENV["VERGEN_GIT_BRANCH"] = "main"
     ENV["VERGEN_GIT_COMMIT_TIMESTAMP"] = time.iso8601
     ENV["VERGEN_GIT_SHA"] = tap.user
-    system "cargo", "install", "--features", "release", *std_cargo_args(path: "cratesnoseyparker-cli")
-    mv bin"noseyparker-cli", bin"noseyparker"
+    system "cargo", "install", "--features", "release", *std_cargo_args(path: "crates/noseyparker-cli")
+    mv bin/"noseyparker-cli", bin/"noseyparker"
 
-    generate_completions_from_executable(bin"noseyparker", "generate", "shell-completions", "--shell")
+    generate_completions_from_executable(bin/"noseyparker", "generate", "shell-completions", "--shell")
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}noseyparker -V")
+    assert_match version.to_s, shell_output("#{bin}/noseyparker -V")
 
-    output = shell_output(bin"noseyparker scan --git-url https:github.comhomebrew.github")
-    assert_match "00 new matches", output
+    output = shell_output(bin/"noseyparker scan --git-url https://github.com/homebrew/.github")
+    assert_match "0/0 new matches", output
   end
 end

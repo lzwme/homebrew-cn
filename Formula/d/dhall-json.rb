@@ -1,10 +1,10 @@
 class DhallJson < Formula
   desc "Dhall to JSON compiler and a Dhall to YAML compiler"
-  homepage "https:github.comdhall-langdhall-haskelltreemasterdhall-json"
-  url "https:hackage.haskell.orgpackagedhall-json-1.7.12dhall-json-1.7.12.tar.gz"
+  homepage "https://github.com/dhall-lang/dhall-haskell/tree/master/dhall-json"
+  url "https://hackage.haskell.org/package/dhall-json-1.7.12/dhall-json-1.7.12.tar.gz"
   sha256 "ca48cd434380cbd979dbb12889f90da8fdc1ea90bc266cab14f061c60e19d5fa"
   license "BSD-3-Clause"
-  head "https:github.comdhall-langdhall-haskell.git", branch: "main"
+  head "https://github.com/dhall-lang/dhall-haskell.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "aa28d7105b92415f10bdf28679bc631644527208492877b239ec7dca49a4576b"
@@ -28,10 +28,10 @@ class DhallJson < Formula
     if build.stable?
       # Backport support for GHC 9.10
       inreplace "#{name}.cabal" do |s|
-        # https:github.comdhall-langdhall-haskellcommit28d346f00d12fa134b4c315974f76cc5557f1330
+        # https://github.com/dhall-lang/dhall-haskell/commit/28d346f00d12fa134b4c315974f76cc5557f1330
         s.gsub! "aeson                     >= 1.4.6.0   && < 2.2 ,",
                 "aeson                     >= 1.4.6.0   && < 2.3 ,"
-        # https:github.comdhall-langdhall-haskellcommit277d8b1b3637ba2ce125783cc1936dc9591e67a7
+        # https://github.com/dhall-lang/dhall-haskell/commit/277d8b1b3637ba2ce125783cc1936dc9591e67a7
         s.gsub! "text                      >= 0.11.1.0  && < 2.1 ,",
                 "text                      >= 0.11.1.0  && < 2.2 ,"
       end
@@ -43,6 +43,6 @@ class DhallJson < Formula
   end
 
   test do
-    assert_match "1", pipe_output("#{bin}dhall-to-json", "1", 0)
+    assert_match "1", pipe_output("#{bin}/dhall-to-json", "1", 0)
   end
 end

@@ -1,10 +1,10 @@
 class Functionalplus < Formula
   desc "Functional Programming Library for C++"
-  homepage "https:github.comDobiasdFunctionalPlus"
-  url "https:github.comDobiasdFunctionalPlusarchiverefstagsv0.2.25.tar.gz"
+  homepage "https://github.com/Dobiasd/FunctionalPlus"
+  url "https://ghfast.top/https://github.com/Dobiasd/FunctionalPlus/archive/refs/tags/v0.2.25.tar.gz"
   sha256 "9b5e24bbc92f43b977dc83efbc173bcf07dbe07f8718fc2670093655b56fcee3"
   license "BSL-1.0"
-  head "https:github.comDobiasdFunctionalPlus.git", branch: "master"
+  head "https://github.com/Dobiasd/FunctionalPlus.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, all: "d1cce120e30fc11e42e2f92b7ea21b058a618b40e13802d4e1b72e0026024d5a"
@@ -19,8 +19,8 @@ class Functionalplus < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~CPP
-      #include <fplusfplus.hpp>
+    (testpath/"test.cpp").write <<~CPP
+      #include <fplus/fplus.hpp>
       #include <iostream>
       int main() {
         std::list<std::string> things = {"same old", "same old"};
@@ -29,6 +29,6 @@ class Functionalplus < Formula
       }
     CPP
     system ENV.cxx, "-std=c++14", "test.cpp", "-I#{include}", "-o", "test"
-    assert_match "All things being equal.", shell_output(".test")
+    assert_match "All things being equal.", shell_output("./test")
   end
 end

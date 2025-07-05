@@ -5,11 +5,11 @@ cask "amiberry" do
   sha256 arm:   "3c897c8b68fa8681eecc66968bfb28547f13ce2264c04315277716a5e6a2d994",
          intel: "166ffaaf324e14567aed0a13f850bae81c73f11d74722a906b61b185c145ee5f"
 
-  url "https:github.comBlitterStudioamiberryreleasesdownloadv#{version}Amiberry-v#{version}-macOS-#{arch}.zip",
-      verified: "github.comBlitterStudioamiberry"
+  url "https://ghfast.top/https://github.com/BlitterStudio/amiberry/releases/download/v#{version}/Amiberry-v#{version}-macOS-#{arch}.zip",
+      verified: "github.com/BlitterStudio/amiberry/"
   name "Amiberry"
   desc "Amiga emulator"
-  homepage "https:amiberry.com"
+  homepage "https://amiberry.com/"
 
   livecheck do
     url :url
@@ -18,5 +18,5 @@ cask "amiberry" do
 
   app "Amiberry.app"
 
-  zap trash: "~LibraryApplication SupportAmiberry"
+  zap trash: "~/Library/Application Support/Amiberry"
 end

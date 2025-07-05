@@ -1,10 +1,10 @@
 class Cxgo < Formula
   desc "Transpiling C to Go"
-  homepage "https:github.comgotranspilecxgo"
-  url "https:github.comgotranspilecxgoarchiverefstagsv0.5.2.tar.gz"
+  homepage "https://github.com/gotranspile/cxgo"
+  url "https://ghfast.top/https://github.com/gotranspile/cxgo/archive/refs/tags/v0.5.2.tar.gz"
   sha256 "942393dc381dcf47724c93b5d6c4cd7695c0000628ecb7f30c5b99be4676ae83"
   license "MIT"
-  head "https:github.comgotranspilecxgo.git", branch: "main"
+  head "https://github.com/gotranspile/cxgo.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "ebcf34c360a23231c3a1a78a54ad1904ba3cbd3e7f2938844247bf0324b02639"
@@ -25,11 +25,11 @@ class Cxgo < Formula
       -X main.date=#{time.iso8601}
     ]
 
-    system "go", "build", *std_go_args(ldflags:), ".cmdcxgo"
+    system "go", "build", *std_go_args(ldflags:), "./cmd/cxgo"
   end
 
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include <stdio.h>
       int main() {
         printf("Hello, World!");
@@ -41,7 +41,7 @@ class Cxgo < Formula
       package main
 
       import (
-      \t"github.comgotranspilecxgoruntimestdio"
+      \t"github.com/gotranspile/cxgo/runtime/stdio"
       \t"os"
       )
 
@@ -51,9 +51,9 @@ class Cxgo < Formula
       }
     GO
 
-    system bin"cxgo", "file", testpath"test.c"
-    assert_equal expected, (testpath"test.go").read
+    system bin/"cxgo", "file", testpath/"test.c"
+    assert_equal expected, (testpath/"test.go").read
 
-    assert_match version.to_s, shell_output("#{bin}cxgo version")
+    assert_match version.to_s, shell_output("#{bin}/cxgo version")
   end
 end

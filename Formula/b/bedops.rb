@@ -1,7 +1,7 @@
 class Bedops < Formula
   desc "Set and statistical operations on genomic data of arbitrary scale"
-  homepage "https:github.combedopsbedops"
-  url "https:github.combedopsbedopsarchiverefstagsv2.4.42.tar.gz"
+  homepage "https://github.com/bedops/bedops"
+  url "https://ghfast.top/https://github.com/bedops/bedops/archive/refs/tags/v2.4.42.tar.gz"
   sha256 "9daa0c098e37490a07f84664d2c61ff8909689995cf7e1673d259ccd4f1c453c"
   license "GPL-2.0-or-later"
 
@@ -20,9 +20,9 @@ class Bedops < Formula
   uses_from_macos "bzip2"
   uses_from_macos "zlib"
 
-  # Apply Debian patch to allow using systembrew libraries
+  # Apply Debian patch to allow using system/brew libraries
   patch do
-    url "https:raw.githubusercontent.comHomebrewformula-patches1d12e712a16527def49be17286f95fd501d00285bedops2.4.42-debian.patch"
+    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/1d12e712a16527def49be17286f95fd501d00285/bedops/2.4.42-debian.patch"
     sha256 "7d88db7624500521988d5260ec290578db74e85ad4b0cf0e1552e548691c3a21"
   end
 
@@ -31,7 +31,7 @@ class Bedops < Formula
 
     # Avoid running `support` target which builds third-party libraries.
     # On Linux, this is already handled by the Debian patch.
-    inreplace "system.mkMakefile.darwin", ^default: support$, "default: mkdirs"
+    inreplace "system.mk/Makefile.darwin", /^default: support$/, "default: mkdirs"
 
     args = %W[
       BUILD_ARCH=#{Hardware::CPU.arch}
@@ -47,13 +47,13 @@ class Bedops < Formula
   end
 
   test do
-    (testpath"first.bed").write <<~EOS
+    (testpath/"first.bed").write <<~EOS
       chr1\t100\t200
     EOS
-    (testpath"second.bed").write <<~EOS
+    (testpath/"second.bed").write <<~EOS
       chr1\t300\t400
     EOS
-    output = shell_output("#{bin}bedops --complement first.bed second.bed")
+    output = shell_output("#{bin}/bedops --complement first.bed second.bed")
     assert_match "chr1\t200\t300", output
   end
 end

@@ -2,8 +2,8 @@ class PodmanCompose < Formula
   include Language::Python::Virtualenv
 
   desc "Alternative to docker-compose using podman"
-  homepage "https:github.comcontainerspodman-compose"
-  url "https:files.pythonhosted.orgpackages14857f9ea7574a35226cb20022f5f206380d61cec9014be86df3cac0aa6a8899podman_compose-1.4.0.tar.gz"
+  homepage "https://github.com/containers/podman-compose"
+  url "https://files.pythonhosted.org/packages/14/85/7f9ea7574a35226cb20022f5f206380d61cec9014be86df3cac0aa6a8899/podman_compose-1.4.0.tar.gz"
   sha256 "c2d63410ef56af481d62c7264cf0653e1d0fefefdcee89c858a916f0f2e5f51f"
   license "GPL-2.0-only"
 
@@ -21,12 +21,12 @@ class PodmanCompose < Formula
   depends_on "python@3.13"
 
   resource "python-dotenv" do
-    url "https:files.pythonhosted.orgpackages882c7bb1416c5620485aa793f2de31d3df393d3686aa8a8506d11e10e13c5bafpython_dotenv-1.1.0.tar.gz"
+    url "https://files.pythonhosted.org/packages/88/2c/7bb1416c5620485aa793f2de31d3df393d3686aa8a8506d11e10e13c5baf/python_dotenv-1.1.0.tar.gz"
     sha256 "41f90bc6f5f177fb41f53e87666db362025010eb28f60a01c9143bfa33a2b2d5"
   end
 
   resource "pyyaml" do
-    url "https:files.pythonhosted.orgpackages54ed79a089b6be93607fa5cdaedf301d7dfb23af5f25c398d5ead2525b063e17pyyaml-6.0.2.tar.gz"
+    url "https://files.pythonhosted.org/packages/54/ed/79a089b6be93607fa5cdaedf301d7dfb23af5f25c398d5ead2525b063e17/pyyaml-6.0.2.tar.gz"
     sha256 "d584d9ec91ad65861cc08d42e834324ef890a082e591037abe114850ff7bbc3e"
   end
 
@@ -39,7 +39,7 @@ class PodmanCompose < Formula
 
     port = free_port
 
-    (testpath"compose.yml").write <<~YAML
+    (testpath/"compose.yml").write <<~YAML
       version: "3"
       services:
         test:
@@ -51,10 +51,10 @@ class PodmanCompose < Formula
     YAML
 
     assert_match "podman ps --filter label=io.podman.compose.project=brewtest",
-      shell_output("#{bin}podman-compose up -d 2>&1", 1)
+      shell_output("#{bin}/podman-compose up -d 2>&1", 1)
     # If it's trying to connect to Podman, we know it at least found the
-    # compose.yml file and parsedvalidated the contents
+    # compose.yml file and parsed/validated the contents
     expected = OS.linux? ? "Error: cannot re-exec process" : "Cannot connect to Podman"
-    assert_match expected, shell_output("#{bin}podman-compose down 2>&1", 1)
+    assert_match expected, shell_output("#{bin}/podman-compose down 2>&1", 1)
   end
 end

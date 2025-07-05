@@ -1,7 +1,7 @@
 class DyldHeaders < Formula
   desc "Header files for the dynamic linker"
-  homepage "https:opensource.apple.com"
-  url "https:github.comapple-oss-distributionsdyldarchiverefstagsdyld-1285.19.tar.gz"
+  homepage "https://opensource.apple.com/"
+  url "https://ghfast.top/https://github.com/apple-oss-distributions/dyld/archive/refs/tags/dyld-1285.19.tar.gz"
   sha256 "6f8671e2bdeed7545b454909b97dafcb5b5bc3f5bf0e715d9bdee79d9adabdcb"
   license "APSL-2.0"
 
@@ -12,6 +12,6 @@ class DyldHeaders < Formula
   keg_only :provided_by_macos
 
   def install
-    include.install Dir["include*"]
+    include.install Dir["include/*"]
   end
 end

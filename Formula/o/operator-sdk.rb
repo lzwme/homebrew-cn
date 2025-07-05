@@ -1,15 +1,15 @@
 class OperatorSdk < Formula
   desc "SDK for building Kubernetes applications"
-  homepage "https:sdk.operatorframework.io"
-  url "https:github.comoperator-frameworkoperator-sdk.git",
+  homepage "https://sdk.operatorframework.io/"
+  url "https://github.com/operator-framework/operator-sdk.git",
       tag:      "v1.40.0",
       revision: "c975e3a03ef8e3d589806b679638f55036b56212"
   license "Apache-2.0"
-  head "https:github.comoperator-frameworkoperator-sdk.git", branch: "master"
+  head "https://github.com/operator-framework/operator-sdk.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -32,21 +32,21 @@ class OperatorSdk < Formula
     ENV["GOBIN"] = bin
     system "make", "install", "CGO_ENABLED=1"
 
-    generate_completions_from_executable(bin"operator-sdk", "completion")
+    generate_completions_from_executable(bin/"operator-sdk", "completion")
   end
 
   test do
-    output = shell_output("#{bin}operator-sdk version")
+    output = shell_output("#{bin}/operator-sdk version")
     assert_match "version: \"v#{version}\"", output
     assert_match stable.specs[:revision], output
 
     mkdir "brewtest" do
       system "go", "mod", "init", "brewtest"
 
-      output = shell_output("#{bin}operator-sdk init --domain=example.com --repo=github.comexamplememcached")
+      output = shell_output("#{bin}/operator-sdk init --domain=example.com --repo=github.com/example/memcached")
       assert_match "$ operator-sdk create api", output
 
-      output = shell_output("#{bin}operator-sdk create api --group c --version v1 --kind M --resource --controller")
+      output = shell_output("#{bin}/operator-sdk create api --group c --version v1 --kind M --resource --controller")
       assert_match "$ make manifests", output
     end
   end

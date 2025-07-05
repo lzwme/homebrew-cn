@@ -1,15 +1,15 @@
 class Fwknop < Formula
   desc "Single Packet Authorization and Port Knocking"
-  homepage "https:www.cipherdyne.orgfwknop"
-  url "https:www.cipherdyne.orgfwknopdownloadfwknop-2.6.11.tar.gz"
-  mirror "https:github.commrashfwknopreleasesdownload2.6.11fwknop-2.6.11.tar.gz"
+  homepage "https://www.cipherdyne.org/fwknop/"
+  url "https://www.cipherdyne.org/fwknop/download/fwknop-2.6.11.tar.gz"
+  mirror "https://ghfast.top/https://github.com/mrash/fwknop/releases/download/2.6.11/fwknop-2.6.11.tar.gz"
   sha256 "bcb4e0e2eb5fcece5083d506da8471f68e33fb6b17d9379c71427a95f9ca1ec8"
   license "GPL-2.0-or-later"
-  head "https:github.commrashfwknop.git", branch: "master"
+  head "https://github.com/mrash/fwknop.git", branch: "master"
 
   livecheck do
-    url "https:www.cipherdyne.orgfwknopdownload"
-    regex(href=.*?fwknop[._-]v?(\d+(?:\.\d+)+)\.ti)
+    url "https://www.cipherdyne.org/fwknop/download/"
+    regex(/href=.*?fwknop[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -48,15 +48,15 @@ class Fwknop < Formula
       --disable-silent-rules
       --sysconfdir=#{etc}
       --with-gpgme
-      --with-gpg=#{Formula["gnupg"].opt_bin}gpg
+      --with-gpg=#{Formula["gnupg"].opt_bin}/gpg
     ]
     args << "--with-iptables=#{Formula["iptables"].opt_prefix}" unless OS.mac?
-    system ".configure", *std_configure_args, *args
+    system "./configure", *std_configure_args, *args
     system "make", "install"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}fwknop --version")
-    assert_match(KEY_BASE64:\s*.+, shell_output("#{bin}fwknop --key-gen"))
+    assert_match version.to_s, shell_output("#{bin}/fwknop --version")
+    assert_match(/KEY_BASE64:\s*.+/, shell_output("#{bin}/fwknop --key-gen"))
   end
 end

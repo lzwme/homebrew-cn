@@ -1,10 +1,10 @@
 class Nanorc < Formula
   desc "Improved Nano Syntax Highlighting Files"
-  homepage "https:github.comscopatznanorc"
-  url "https:github.comscopatznanorcreleasesdownload2020.10.10nanorc-2020.10.10.tar.gz"
+  homepage "https://github.com/scopatz/nanorc"
+  url "https://ghfast.top/https://github.com/scopatz/nanorc/releases/download/2020.10.10/nanorc-2020.10.10.tar.gz"
   sha256 "cd674e9eb230e4ba306b418c22d1891d93a3d2ffdf22234748d3398da50dfe64"
   license "GPL-3.0-or-later"
-  head "https:github.comscopatznanorc.git", branch: "master"
+  head "https://github.com/scopatz/nanorc.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -19,7 +19,7 @@ class Nanorc < Formula
 
   test do
     require "pty"
-    PTY.spawn("nano", "--rcfile=#{pkgshare}c.nanorc") do |_stdout, _stdin, pid|
+    PTY.spawn("nano", "--rcfile=#{pkgshare}/c.nanorc") do |_stdout, _stdin, pid|
       sleep 3
       Process.kill "TERM", pid
     end

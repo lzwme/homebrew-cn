@@ -1,7 +1,7 @@
 class Tig < Formula
   desc "Text interface for Git repositories"
-  homepage "https:jonas.github.iotig"
-  url "https:github.comjonastigreleasesdownloadtig-2.5.12tig-2.5.12.tar.gz"
+  homepage "https://jonas.github.io/tig/"
+  url "https://ghfast.top/https://github.com/jonas/tig/releases/download/tig-2.5.12/tig-2.5.12.tar.gz"
   sha256 "5dda8a098810bb499096e17fc9f69c0a5915a23f46be27209fc8195d7a792108"
   license "GPL-2.0-or-later"
 
@@ -16,7 +16,7 @@ class Tig < Formula
   end
 
   head do
-    url "https:github.comjonastig.git", branch: "master"
+    url "https://github.com/jonas/tig.git", branch: "master"
 
     depends_on "asciidoc" => :build
     depends_on "autoconf" => :build
@@ -25,34 +25,34 @@ class Tig < Formula
   end
 
   depends_on "pkgconf" => :build
-  # https:github.comjonastigissues1210
+  # https://github.com/jonas/tig/issues/1210
   depends_on "ncurses"
   depends_on "pcre2"
   depends_on "readline"
 
   def install
-    system ".autogen.sh" if build.head?
-    system ".configure", "--prefix=#{prefix}", "--sysconfdir=#{etc}"
+    system "./autogen.sh" if build.head?
+    system "./configure", "--prefix=#{prefix}", "--sysconfdir=#{etc}"
     system "make"
     # Ensure the configured `sysconfdir` is used during runtime by
     # installing in a separate step.
-    system "make", "install", "sysconfdir=#{pkgshare}examples"
+    system "make", "install", "sysconfdir=#{pkgshare}/examples"
     system "make", "install-doc-man"
-    bash_completion.install "contribtig-completion.bash"
-    zsh_completion.install "contribtig-completion.zsh" => "_tig"
-    cp "#{bash_completion}tig-completion.bash", zsh_completion
+    bash_completion.install "contrib/tig-completion.bash"
+    zsh_completion.install "contrib/tig-completion.zsh" => "_tig"
+    cp "#{bash_completion}/tig-completion.bash", zsh_completion
   end
 
   def caveats
     <<~EOS
       A sample of the default configuration has been installed to:
-        #{opt_pkgshare}examplestigrc
+        #{opt_pkgshare}/examples/tigrc
       to override the system-wide default configuration, copy the sample to:
-        #{etc}tigrc
+        #{etc}/tigrc
     EOS
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}tig -v")
+    assert_match version.to_s, shell_output("#{bin}/tig -v")
   end
 end

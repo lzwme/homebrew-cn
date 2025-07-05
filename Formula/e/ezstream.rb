@@ -1,15 +1,15 @@
 class Ezstream < Formula
   desc "Client for Icecast streaming servers"
-  homepage "https:icecast.orgezstream"
-  url "https:ftp.osuosl.orgpubxiphreleasesezstreamezstream-1.0.2.tar.gz"
-  mirror "https:mirror.csclub.uwaterloo.caxiphreleasesezstreamezstream-1.0.2.tar.gz"
+  homepage "https://icecast.org/ezstream/"
+  url "https://ftp.osuosl.org/pub/xiph/releases/ezstream/ezstream-1.0.2.tar.gz"
+  mirror "https://mirror.csclub.uwaterloo.ca/xiph/releases/ezstream/ezstream-1.0.2.tar.gz"
   sha256 "11de897f455a95ba58546bdcd40a95d3bda69866ec5f7879a83b024126c54c2a"
   license "GPL-2.0-only"
   revision 1
 
   livecheck do
-    url "https:ftp.osuosl.orgpubxiphreleasesezstream?C=M&O=D"
-    regex(%r{href=(?:["']?|.*?)ezstream[._-]v?(\d+(?:\.\d+)+)\.t}i)
+    url "https://ftp.osuosl.org/pub/xiph/releases/ezstream/?C=M&O=D"
+    regex(%r{href=(?:["']?|.*?/)ezstream[._-]v?(\d+(?:\.\d+)+)\.t}i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -25,7 +25,7 @@ class Ezstream < Formula
   end
 
   head do
-    url "https:gitlab.xiph.orgxiphezstream.git", branch: "develop"
+    url "https://gitlab.xiph.org/xiph/ezstream.git", branch: "develop"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -40,21 +40,21 @@ class Ezstream < Formula
 
   uses_from_macos "libxml2"
 
-  # Work around issue with <sysrandom.h> not including its dependencies
-  # https:gitlab.xiph.orgxiphezstream-issues2270
+  # Work around issue with <sys/random.h> not including its dependencies
+  # https://gitlab.xiph.org/xiph/ezstream/-/issues/2270
   patch :p0 do
-    url "https:raw.githubusercontent.commacportsmacports-portsfa368818e58ecee010bd43f3c08e51c523ee8cf6audioezstreamfilessys-types.patch"
+    url "https://ghfast.top/https://raw.githubusercontent.com/macports/macports-ports/fa368818e58ecee010bd43f3c08e51c523ee8cf6/audio/ezstream/files/sys-types.patch"
     sha256 "a5c39de970e1d43dc2dac84f4a0a82335112da6b86f9ea09be73d6e95ce4716c"
   end
 
   def install
     system "autoreconf", "--verbose", "--install", "--force" if build.head?
-    system ".configure", *std_configure_args
+    system "./configure", *std_configure_args
     system "make", "install"
   end
 
   test do
-    (testpath"test.m3u").write test_fixtures("test.mp3").to_s
-    system bin"ezstream", "-s", testpath"test.m3u"
+    (testpath/"test.m3u").write test_fixtures("test.mp3").to_s
+    system bin/"ezstream", "-s", testpath/"test.m3u"
   end
 end

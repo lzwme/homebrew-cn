@@ -1,7 +1,7 @@
 class Crun < Formula
   desc "Fast and lightweight fully featured OCI runtime and C library"
-  homepage "https:github.comcontainerscrun"
-  url "https:github.comcontainerscrunreleasesdownload1.21crun-1.21.tar.zst"
+  homepage "https://github.com/containers/crun"
+  url "https://ghfast.top/https://github.com/containers/crun/releases/download/1.21/crun-1.21.tar.zst"
   sha256 "d3a4ce8af89125851b2bbfe2375f4050c7eca837021043c5628172feacdb88a4"
   license any_of: ["GPL-2.0-or-later", "LGPL-2.1-or-later"]
 
@@ -24,13 +24,13 @@ class Crun < Formula
   depends_on "yajl"
 
   def install
-    system ".autogen.sh"
-    system ".configure", "--prefix=#{prefix}"
+    system "./autogen.sh"
+    system "./configure", "--prefix=#{prefix}"
     system "make"
     system "make", "install"
   end
 
   test do
-    assert_empty shell_output("#{bin}crun --rootless=true list -q").strip
+    assert_empty shell_output("#{bin}/crun --rootless=true list -q").strip
   end
 end

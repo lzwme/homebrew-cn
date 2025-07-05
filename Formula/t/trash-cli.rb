@@ -2,11 +2,11 @@ class TrashCli < Formula
   include Language::Python::Virtualenv
 
   desc "Command-line interface to the freedesktop.org trashcan"
-  homepage "https:github.comandreafranciatrash-cli"
-  url "https:files.pythonhosted.orgpackagesf76cd51b36377c35e4f9e69af4d8b61a920f26251483cdc0165f5513da7aefebtrash_cli-0.24.5.26.tar.gz"
+  homepage "https://github.com/andreafrancia/trash-cli"
+  url "https://files.pythonhosted.org/packages/f7/6c/d51b36377c35e4f9e69af4d8b61a920f26251483cdc0165f5513da7aefeb/trash_cli-0.24.5.26.tar.gz"
   sha256 "c721628e82c4be110b710d72b9d85c9595d8b524f4da241ad851a7479d0bdceb"
   license "GPL-2.0-or-later"
-  head "https:github.comandreafranciatrash-cli.git", branch: "master"
+  head "https://github.com/andreafrancia/trash-cli.git", branch: "master"
 
   bottle do
     rebuild 1
@@ -28,12 +28,12 @@ class TrashCli < Formula
   conflicts_with "trash", because: "both install a `trash` binary"
 
   resource "psutil" do
-    url "https:files.pythonhosted.orgpackages18c78c6872f7372eb6a6b2e4708b88419fb46b857f7a2e1892966b851cc79fc9psutil-6.0.0.tar.gz"
+    url "https://files.pythonhosted.org/packages/18/c7/8c6872f7372eb6a6b2e4708b88419fb46b857f7a2e1892966b851cc79fc9/psutil-6.0.0.tar.gz"
     sha256 "8faae4f310b6d969fa26ca0545338b21f73c6b15db7c4a8d934a5482faa818f2"
   end
 
   resource "six" do
-    url "https:files.pythonhosted.orgpackages7139171f1c67cd00715f190ba0b100d606d440a28c93c7714febeca8b79af85esix-1.16.0.tar.gz"
+    url "https://files.pythonhosted.org/packages/71/39/171f1c67cd00715f190ba0b100d606d440a28c93c7714febeca8b79af85e/six-1.16.0.tar.gz"
     sha256 "1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926"
   end
 
@@ -43,8 +43,8 @@ class TrashCli < Formula
 
   test do
     touch "testfile"
-    assert_path_exists testpath"testfile"
-    system bin"trash-put", "testfile"
-    refute_path_exists testpath"testfile"
+    assert_path_exists testpath/"testfile"
+    system bin/"trash-put", "testfile"
+    refute_path_exists testpath/"testfile"
   end
 end

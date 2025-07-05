@@ -1,15 +1,15 @@
 class Geomview < Formula
   desc "Interactive 3D viewing program"
-  homepage "http:www.geomview.org"
-  url "https:deb.debian.orgdebianpoolmainggeomviewgeomview_1.9.5.orig.tar.gz"
-  mirror "https:downloads.sourceforge.netprojectgeomviewgeomview1.9.5geomview-1.9.5.tar.gz"
+  homepage "http://www.geomview.org"
+  url "https://deb.debian.org/debian/pool/main/g/geomview/geomview_1.9.5.orig.tar.gz"
+  mirror "https://downloads.sourceforge.net/project/geomview/geomview/1.9.5/geomview-1.9.5.tar.gz"
   sha256 "67edb3005a22ed2bf06f0790303ee3f523011ba069c10db8aef263ac1a1b02c0"
   license "LGPL-2.1-only"
   revision 2
 
   livecheck do
-    url "https:deb.debian.orgdebianpoolmainggeomview"
-    regex(href=.*?geomview[._-]v?(\d+(?:\.\d+)+)(?:\.orig)?\.ti)
+    url "https://deb.debian.org/debian/pool/main/g/geomview/"
+    regex(/href=.*?geomview[._-]v?(\d+(?:\.\d+)+)(?:\.orig)?\.t/i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -39,24 +39,24 @@ class Geomview < Formula
   uses_from_macos "zlib"
 
   on_macos do
-    depends_on arch: :x86_64 # https:github.comorgsHomebrewdiscussions6025
+    depends_on arch: :x86_64 # https://github.com/orgs/Homebrew/discussions/6025
   end
 
   conflicts_with "clip", because: "both install `clip` binaries"
 
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
-    url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-pre-0.4.2.418-big_sur.diff"
+    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-pre-0.4.2.418-big_sur.diff"
     sha256 "83af02f2aa2b746bb7225872cab29a253264be49db0ecebb12f841562d9a2923"
   end
 
   def install
-    system ".configure", "--disable-silent-rules", *std_configure_args
+    system "./configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
-    (bin"hvectext").unlink
+    (bin/"hvectext").unlink
   end
 
   test do
-    assert_match "Error: Can't open display:", shell_output("DISPLAY= #{bin}geomview 2>&1", 1)
+    assert_match "Error: Can't open display:", shell_output("DISPLAY= #{bin}/geomview 2>&1", 1)
   end
 end

@@ -1,7 +1,7 @@
 class Darkice < Formula
   desc "Live audio streamer"
-  homepage "http:www.darkice.org"
-  url "https:github.comrafael2kdarkicereleasesdownloadv1.5darkice-1.5.tar.gz"
+  homepage "http://www.darkice.org/"
+  url "https://ghfast.top/https://github.com/rafael2k/darkice/releases/download/v1.5/darkice-1.5.tar.gz"
   sha256 "18b4c4573a7ccfe09c1094eb5798159e2a9892106ea62d753933f6f2a746058e"
   license "GPL-3.0-or-later"
 
@@ -38,7 +38,7 @@ class Darkice < Formula
 
   def install
     ENV.cxx11
-    system ".configure", "--sysconfdir=#{etc}",
+    system "./configure", "--sysconfdir=#{etc}",
                           "--with-lame-prefix=#{Formula["lame"].opt_prefix}",
                           "--with-faac-prefix=#{Formula["faac"].opt_prefix}",
                           "--with-twolame",
@@ -51,6 +51,6 @@ class Darkice < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}darkice -h", 1)
+    assert_match version.to_s, shell_output("#{bin}/darkice -h", 1)
   end
 end

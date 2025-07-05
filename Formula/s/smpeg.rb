@@ -1,16 +1,16 @@
 class Smpeg < Formula
   desc "SDL MPEG Player Library"
-  homepage "https:icculus.orgsmpeg"
-  url "https:github.comicculussmpegarchiverefstagsrelease_0_4_5.tar.gz"
+  homepage "https://icculus.org/smpeg/"
+  url "https://ghfast.top/https://github.com/icculus/smpeg/archive/refs/tags/release_0_4_5.tar.gz"
   sha256 "e2e53bfd2e6401e2c29e5eb3929be0e8698bc9e4c9d731751f67e77b408f1f74"
   # license change was done in 2021 Aug, which is 8 years after 0.4.5 release
-  # commit ref, https:github.comicculussmpegcommitffa0d54
+  # commit ref, https://github.com/icculus/smpeg/commit/ffa0d54
   license "LGPL-2.0-or-later"
   revision 1
 
   livecheck do
     url :stable
-    regex(^release[._-]v?([01](?:[._]\d+)+)$i)
+    regex(/^release[._-]v?([01](?:[._]\d+)+)$/i)
     strategy :git do |tags, regex|
       tags.map { |tag| tag[regex, 1]&.tr("_", ".") }
     end
@@ -56,27 +56,27 @@ class Smpeg < Formula
     # Help old config scripts identify arm64 linux
     args << "--build=aarch64-unknown-linux-gnu" if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
 
-    system ".autogen.sh"
-    system ".configure", *args, *std_configure_args
+    system "./autogen.sh"
+    system "./configure", *args, *std_configure_args
     system "make"
     # Install script is not +x by default for some reason
-    chmod 0755, ".install-sh"
+    chmod 0755, "./install-sh"
     system "make", "install"
 
     # Not present since we do not build with gtk+
-    rm(man1"gtv.1")
+    rm(man1/"gtv.1")
   end
 
   test do
-    system bin"plaympeg", "--version"
+    system bin/"plaympeg", "--version"
   end
 end
 
 __END__
-diff --git aacincludelibtool.m4 bacincludelibtool.m4
+diff --git a/acinclude/libtool.m4 b/acinclude/libtool.m4
 index 6894db8..1aea405 100644
---- aacincludelibtool.m4
-+++ bacincludelibtool.m4
+--- a/acinclude/libtool.m4
++++ b/acinclude/libtool.m4
 @@ -947,18 +947,13 @@ m4_defun_once([_LT_REQUIRED_DARWIN_CHECKS],[
        _lt_dar_allow_undefined='${wl}-undefined ${wl}suppress' ;;
      darwin1.*)

@@ -1,10 +1,10 @@
 class Mplayershell < Formula
   desc "Improved visual experience for MPlayer on macOS"
-  homepage "https:github.comlisameltonMPlayerShell"
-  url "https:github.comlisameltonMPlayerShellarchiverefstags0.9.3.tar.gz"
+  homepage "https://github.com/lisamelton/MPlayerShell"
+  url "https://ghfast.top/https://github.com/lisamelton/MPlayerShell/archive/refs/tags/0.9.3.tar.gz"
   sha256 "a1751207de9d79d7f6caa563a3ccbf9ea9b3c15a42478ff24f5d1e9ff7d7226a"
   license "MIT"
-  head "https:github.comlisameltonMPlayerShell.git", branch: "master"
+  head "https://github.com/lisamelton/MPlayerShell.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -38,11 +38,11 @@ class Mplayershell < Formula
                "SYMROOT=build",
                "MACOSX_DEPLOYMENT_TARGET=#{MacOS.version}",
                "DSTROOT=build"
-    bin.install "buildReleasemps"
-    man1.install "Sourcemps.1"
+    bin.install "build/Release/mps"
+    man1.install "Source/mps.1"
   end
 
   test do
-    system bin"mps"
+    system bin/"mps"
   end
 end

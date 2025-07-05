@@ -1,7 +1,7 @@
 class Debugbreak < Formula
   desc "Break into the debugger programmatically"
-  homepage "https:github.comscotttdebugbreak"
-  url "https:github.comscotttdebugbreakarchiverefstagsv1.0.tar.gz"
+  homepage "https://github.com/scottt/debugbreak"
+  url "https://ghfast.top/https://github.com/scottt/debugbreak/archive/refs/tags/v1.0.tar.gz"
   sha256 "62089680cc1cd0857519e2865b274ed7534bfa7ddfce19d72ffee41d4921ae2f"
   license "BSD-2-Clause"
 
@@ -18,15 +18,15 @@ class Debugbreak < Formula
   end
 
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include <debugbreak.h>
       int main() {
-        debug_break(); * will break into debugger *
+        debug_break(); /* will break into debugger */
         return 0;
       }
     C
     system ENV.cc, "-I#{include}", "test.c", "-o", "test"
-    pid = Process.spawn(".test")
+    pid = Process.spawn("./test")
     assert_equal Signal.list.fetch("TRAP"), Process::Status.wait(pid).termsig
   end
 end

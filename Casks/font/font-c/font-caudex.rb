@@ -2,12 +2,12 @@ cask "font-caudex" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefonts.git",
-      verified:  "github.comgooglefonts",
+  url "https://github.com/google/fonts.git",
+      verified:  "github.com/google/fonts",
       branch:    "main",
-      only_path: "oflcaudex"
+      only_path: "ofl/caudex"
   name "Caudex"
-  homepage "https:fonts.google.comspecimenCaudex"
+  homepage "https://fonts.google.com/specimen/Caudex"
 
   font "Caudex-Bold.ttf"
   font "Caudex-BoldItalic.ttf"

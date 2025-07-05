@@ -2,11 +2,11 @@ class XcodeBuildServer < Formula
   include Language::Python::Shebang
 
   desc "Build server protocol implementation for integrating Xcode with sourcekit-lsp"
-  homepage "https:github.comSolaWingxcode-build-server"
-  url "https:github.comSolaWingxcode-build-serverarchiverefstagsv1.2.0.tar.gz"
+  homepage "https://github.com/SolaWing/xcode-build-server"
+  url "https://ghfast.top/https://github.com/SolaWing/xcode-build-server/archive/refs/tags/v1.2.0.tar.gz"
   sha256 "dc2a7019e00ff0d2b0d8c2761900395b39fb69543b9278285d2e85bd57382531"
   license "MIT"
-  head "https:github.comSolaWingxcode-build-server.git", branch: "master"
+  head "https://github.com/SolaWing/xcode-build-server.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -22,11 +22,11 @@ class XcodeBuildServer < Formula
   def install
     libexec.install Dir["*"]
 
-    rewrite_shebang detected_python_shebang(use_python_from_path: true), libexec"xcode-build-server"
-    bin.install_symlink libexec"xcode-build-server"
+    rewrite_shebang detected_python_shebang(use_python_from_path: true), libexec/"xcode-build-server"
+    bin.install_symlink libexec/"xcode-build-server"
   end
 
   test do
-    system bin"xcode-build-server", "--help"
+    system bin/"xcode-build-server", "--help"
   end
 end

@@ -1,10 +1,10 @@
 class Viddy < Formula
   desc "Modern watch command"
-  homepage "https:github.comsachaosviddy"
-  url "https:github.comsachaosviddyarchiverefstagsv1.3.0.tar.gz"
+  homepage "https://github.com/sachaos/viddy"
+  url "https://ghfast.top/https://github.com/sachaos/viddy/archive/refs/tags/v1.3.0.tar.gz"
   sha256 "59d5be862cf6b522ed069e276c28f927e5d2cea13525513959e1577a5ad6afd5"
   license "MIT"
-  head "https:github.comsachaosviddy.git", branch: "master"
+  head "https://github.com/sachaos/viddy.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "618af16f6d99f7f2309e65cc33b60eea874f15ae8a0965b873c1a8ef1f9bda41"
@@ -23,18 +23,18 @@ class Viddy < Formula
   end
 
   test do
-    # Errno::EIO: Inputoutput error @ io_fread - devpts0
+    # Errno::EIO: Input/output error @ io_fread - /dev/pts/0
     return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
 
     begin
       pid = fork do
-        system bin"viddy", "--interval", "1", "date"
+        system bin/"viddy", "--interval", "1", "date"
       end
       sleep 2
     ensure
       Process.kill("TERM", pid)
     end
 
-    assert_match "viddy #{version}", shell_output("#{bin}viddy --version")
+    assert_match "viddy #{version}", shell_output("#{bin}/viddy --version")
   end
 end

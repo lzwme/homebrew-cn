@@ -2,10 +2,10 @@ cask "orangedrangon-android-messages" do
   version "5.7.1"
   sha256 "7680578ba10c6d254c43180eee3d2f0c1302a8ec4553d46d692ad265098d2c6d"
 
-  url "https:github.comOrangeDrangonandroid-messages-desktopreleasesdownloadv#{version}Android-Messages-v#{version}-mac-universal.zip"
+  url "https://ghfast.top/https://github.com/OrangeDrangon/android-messages-desktop/releases/download/v#{version}/Android-Messages-v#{version}-mac-universal.zip"
   name "Android Messages Desktop"
   desc "Desktop client for Android Messages"
-  homepage "https:github.comOrangeDrangonandroid-messages-desktop"
+  homepage "https://github.com/OrangeDrangon/android-messages-desktop"
 
   livecheck do
     url :url
@@ -17,5 +17,5 @@ cask "orangedrangon-android-messages" do
 
   app "Android Messages.app"
 
-  zap trash: "~LibraryApplication Supportandroid-messages-desktop"
+  zap trash: "~/Library/Application Support/android-messages-desktop"
 end

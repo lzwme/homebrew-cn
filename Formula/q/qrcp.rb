@@ -1,7 +1,7 @@
 class Qrcp < Formula
   desc "Transfer files to and from your computer by scanning a QR code"
-  homepage "https:qrcp.sh"
-  url "https:github.comclaudiodangelisqrcparchiverefstagsv0.11.6.tar.gz"
+  homepage "https://qrcp.sh"
+  url "https://ghfast.top/https://github.com/claudiodangelis/qrcp/archive/refs/tags/v0.11.6.tar.gz"
   sha256 "a3eff505f366713fcb7694e0e292ff2da05e270f9539b6a8561c4cf267ec23c8"
   license "MIT"
 
@@ -24,25 +24,25 @@ class Qrcp < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.comclaudiodangelisqrcpversion.version=#{version}
-      -X github.comclaudiodangelisqrcpversion.date=#{time.iso8601}
+      -X github.com/claudiodangelis/qrcp/version.version=#{version}
+      -X github.com/claudiodangelis/qrcp/version.date=#{time.iso8601}
     ]
     system "go", "build", *std_go_args(ldflags:)
 
-    generate_completions_from_executable(bin"qrcp", "completion")
+    generate_completions_from_executable(bin/"qrcp", "completion")
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}qrcp version")
+    assert_match version.to_s, shell_output("#{bin}/qrcp version")
 
-    (testpath"test_data.txt").write <<~EOS
+    (testpath/"test_data.txt").write <<~EOS
       Hello there, big world
     EOS
 
     port = free_port
-    server_url = "http:localhost:#{port}sendtesting"
+    server_url = "http://localhost:#{port}/send/testing"
 
-    (testpath"config.json").write <<~JSON
+    (testpath/"config.json").write <<~JSON
       {
         "interface": "any",
         "fqdn": "localhost",
@@ -51,7 +51,7 @@ class Qrcp < Formula
     JSON
 
     fork do
-      exec bin"qrcp", "-c", testpath"config.json", "--path", "testing", testpath"test_data.txt"
+      exec bin/"qrcp", "-c", testpath/"config.json", "--path", "testing", testpath/"test_data.txt"
     end
     sleep 1
 

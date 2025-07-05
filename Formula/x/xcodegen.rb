@@ -1,10 +1,10 @@
 class Xcodegen < Formula
   desc "Generate your Xcode project from a spec file and your folder structure"
-  homepage "https:github.comyonaskolbXcodeGen"
-  url "https:github.comyonaskolbXcodeGenarchiverefstags2.43.0.tar.gz"
+  homepage "https://github.com/yonaskolb/XcodeGen"
+  url "https://ghfast.top/https://github.com/yonaskolb/XcodeGen/archive/refs/tags/2.43.0.tar.gz"
   sha256 "d79a89ea056ccc3cf84b736ee52c7b5184a560e54808e51f418f34d292869d66"
   license "MIT"
-  head "https:github.comyonaskolbXcodeGen.git", branch: "master"
+  head "https://github.com/yonaskolb/XcodeGen.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "1d08e16ea70ce5f323dd53197ed1204c6a78be04e629bb8e8cd11329b5d13c5d"
@@ -21,12 +21,12 @@ class Xcodegen < Formula
 
   def install
     system "swift", "build", "--disable-sandbox", "-c", "release"
-    bin.install ".buildrelease#{name}"
+    bin.install ".build/release/#{name}"
     pkgshare.install "SettingPresets"
   end
 
   test do
-    (testpath"xcodegen.yml").write <<~YAML
+    (testpath/"xcodegen.yml").write <<~YAML
       name: GeneratedProject
       options:
         bundleIdPrefix: com.project
@@ -36,11 +36,11 @@ class Xcodegen < Formula
           platform: iOS
           sources: TestProject
     YAML
-    (testpath"TestProject").mkpath
-    system bin"xcodegen", "--spec", testpath"xcodegen.yml"
-    assert_path_exists testpath"GeneratedProject.xcodeproj"
-    assert_path_exists testpath"GeneratedProject.xcodeprojproject.pbxproj"
-    output = (testpath"GeneratedProject.xcodeprojproject.pbxproj").read
+    (testpath/"TestProject").mkpath
+    system bin/"xcodegen", "--spec", testpath/"xcodegen.yml"
+    assert_path_exists testpath/"GeneratedProject.xcodeproj"
+    assert_path_exists testpath/"GeneratedProject.xcodeproj/project.pbxproj"
+    output = (testpath/"GeneratedProject.xcodeproj/project.pbxproj").read
     assert_match "name = TestProject", output
     assert_match "isa = PBXNativeTarget", output
   end

@@ -1,7 +1,7 @@
 class Wiggle < Formula
   desc "Program for applying patches with conflicting changes"
-  homepage "https:github.comneilbrownwiggle"
-  url "https:github.comneilbrownwigglearchiverefstagsv1.3.tar.gz"
+  homepage "https://github.com/neilbrown/wiggle"
+  url "https://ghfast.top/https://github.com/neilbrown/wiggle/archive/refs/tags/v1.3.tar.gz"
   sha256 "ff92cf0133c1f4dce33563e263cb30e7ddb6f4abdf86d427b1ec1490bec25afa"
   license "GPL-2.0-or-later"
 
@@ -29,6 +29,6 @@ class Wiggle < Formula
   end
 
   test do
-    system bin"wiggle", "--version"
+    system bin/"wiggle", "--version"
   end
 end

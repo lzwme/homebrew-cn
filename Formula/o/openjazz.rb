@@ -1,10 +1,10 @@
 class Openjazz < Formula
   desc "Open source Jazz Jackrabit engine"
-  homepage "https:www.alister.eujazzoj"
-  url "https:github.comAlisterTopenjazzarchiverefstags20240919.tar.gz"
+  homepage "https://www.alister.eu/jazz/oj/"
+  url "https://ghfast.top/https://github.com/AlisterT/openjazz/archive/refs/tags/20240919.tar.gz"
   sha256 "c50193b630c375840026d729bb9dda6c7210b1523e62d7ae019ce2e37f806627"
   license "GPL-2.0-only"
-  head "https:github.comAlisterTopenjazz.git", branch: "master"
+  head "https://github.com/AlisterT/openjazz.git", branch: "master"
 
   bottle do
     sha256 arm64_sequoia: "a7187b8961dddc281206ef88cda1c3f4a58814d0f55b3d6f526ceb8d3c9db01e"
@@ -27,7 +27,7 @@ class Openjazz < Formula
   # services to distribute this game by modem as long as no files are altered
   # or removed."
   resource "shareware" do
-    url "https:image.dosgamesarchive.comgamesjazz.zip"
+    url "https://image.dosgamesarchive.com/games/jazz.zip"
     sha256 "ed025415c0bc5ebc3a41e7a070551bdfdfb0b65b5314241152d8bd31f87c22da"
   end
 
@@ -50,7 +50,7 @@ class Openjazz < Formula
   end
 
   test do
-    system bin"OpenJazz", "--version"
-    assert_path_exists testpath"openjazz.log"
+    system bin/"OpenJazz", "--version"
+    assert_path_exists testpath/"openjazz.log"
   end
 end

@@ -1,14 +1,14 @@
 class Azcopy < Formula
   desc "Azure Storage data transfer utility"
-  homepage "https:github.comAzureazure-storage-azcopy"
-  url "https:github.comAzureazure-storage-azcopyarchiverefstagsv10.29.1.tar.gz"
+  homepage "https://github.com/Azure/azure-storage-azcopy"
+  url "https://ghfast.top/https://github.com/Azure/azure-storage-azcopy/archive/refs/tags/v10.29.1.tar.gz"
   sha256 "b965c482f19e18d692392b8c622b5fc4041da7eb37c025ae8eb5083791c75006"
   license "MIT"
-  head "https:github.comAzureazure-storage-azcopy.git", branch: "main"
+  head "https://github.com/Azure/azure-storage-azcopy.git", branch: "main"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -26,11 +26,11 @@ class Azcopy < Formula
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
 
-    generate_completions_from_executable(bin"azcopy", "completion")
+    generate_completions_from_executable(bin/"azcopy", "completion")
   end
 
   test do
-    assert_match "Existing Jobs", shell_output("#{bin}azcopy jobs list")
-    assert_match version.to_s, shell_output("#{bin}azcopy --version")
+    assert_match "Existing Jobs", shell_output("#{bin}/azcopy jobs list")
+    assert_match version.to_s, shell_output("#{bin}/azcopy --version")
   end
 end

@@ -1,10 +1,10 @@
 class Chaoskube < Formula
   desc "Periodically kills random pods in your Kubernetes cluster"
-  homepage "https:github.comlinkichaoskube"
-  url "https:github.comlinkichaoskubearchiverefstagsv0.35.0.tar.gz"
+  homepage "https://github.com/linki/chaoskube"
+  url "https://ghfast.top/https://github.com/linki/chaoskube/archive/refs/tags/v0.35.0.tar.gz"
   sha256 "bc032ac1ce1abfe75f4cea17f23f15a1ac36b6669c99f123e7c1d4fbb6709921"
   license "MIT"
-  head "https:github.comlinkichaoskube.git", branch: "master"
+  head "https://github.com/linki/chaoskube.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "175ff90eee624e0fe6bb640a4645133925935cda6f0de21380af7c91bc5153e1"
@@ -23,10 +23,10 @@ class Chaoskube < Formula
   end
 
   test do
-    output = shell_output("#{bin}chaoskube --labels 'env!=prod' 2>&1", 1)
+    output = shell_output("#{bin}/chaoskube --labels 'env!=prod' 2>&1", 1)
     assert_match "dryRun=true interval=10m0s maxRuntime=-1s", output
     assert_match "Neither --kubeconfig nor --master was specified.  Using the inClusterConfig.", output
 
-    assert_match version.to_s, shell_output("#{bin}chaoskube --version 2>&1")
+    assert_match version.to_s, shell_output("#{bin}/chaoskube --version 2>&1")
   end
 end

@@ -1,10 +1,10 @@
 class Vapor < Formula
   desc "Command-line tool for Vapor (Server-side Swift web framework)"
-  homepage "https:vapor.codes"
-  url "https:github.comvaportoolboxarchiverefstags19.2.0.tar.gz"
+  homepage "https://vapor.codes"
+  url "https://ghfast.top/https://github.com/vapor/toolbox/archive/refs/tags/19.2.0.tar.gz"
   sha256 "c2970459166469afe8614ecdca33dae556a5e2fb386b92eeba2498af9014fc60"
   license "MIT"
-  head "https:github.comvaportoolbox.git", branch: "main"
+  head "https://github.com/vapor/toolbox.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "0f2c6943fa3c7ce08edf4fe755bc457fd5182b5cbefbb8d72c529c9c725b7a29"
@@ -25,11 +25,11 @@ class Vapor < Formula
       ["--static-swift-stdlib"]
     end
     system "swift", "build", *args, "-c", "release", "-Xswiftc", "-cross-module-optimization"
-    bin.install ".buildreleasevapor"
+    bin.install ".build/release/vapor"
   end
 
   test do
-    system bin"vapor", "new", "hello-world", "-n"
-    assert_path_exists testpath"hello-worldPackage.swift"
+    system bin/"vapor", "new", "hello-world", "-n"
+    assert_path_exists testpath/"hello-world/Package.swift"
   end
 end

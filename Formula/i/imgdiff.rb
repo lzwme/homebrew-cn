@@ -1,10 +1,10 @@
 class Imgdiff < Formula
   desc "Pixel-by-pixel image difference tool"
-  homepage "https:github.comn7olkachevimgdiff"
-  url "https:github.comn7olkachevimgdiffarchiverefstagsv1.0.2.tar.gz"
+  homepage "https://github.com/n7olkachev/imgdiff"
+  url "https://ghfast.top/https://github.com/n7olkachev/imgdiff/archive/refs/tags/v1.0.2.tar.gz"
   sha256 "e057fffbf9960caf90d69387d6bc52e4c59637d75b6ee19cbc40d8a3238877e4"
   license "MIT"
-  head "https:github.comn7olkachevimgdiff.git", branch: "master"
+  head "https://github.com/n7olkachev/imgdiff.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -24,12 +24,12 @@ class Imgdiff < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), ".cmd"
+    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd"
   end
 
   test do
     test_image = test_fixtures("test.png")
-    output = shell_output("#{bin}imgdiff #{test_image} #{test_image}")
+    output = shell_output("#{bin}/imgdiff #{test_image} #{test_image}")
     assert_match "Images are equal", output
   end
 end

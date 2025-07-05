@@ -1,7 +1,7 @@
 class Libxcrypt < Formula
   desc "Extended crypt library for descrypt, md5crypt, bcrypt, and others"
-  homepage "https:github.combesser82libxcrypt"
-  url "https:github.combesser82libxcryptreleasesdownloadv4.4.38libxcrypt-4.4.38.tar.xz"
+  homepage "https://github.com/besser82/libxcrypt"
+  url "https://ghfast.top/https://github.com/besser82/libxcrypt/releases/download/v4.4.38/libxcrypt-4.4.38.tar.xz"
   sha256 "80304b9c306ea799327f01d9a7549bdb28317789182631f1b54f4511b4206dd6"
   license "LGPL-2.1-or-later"
 
@@ -24,11 +24,11 @@ class Libxcrypt < Formula
 
   depends_on "pkgconf" => :build
 
-  link_overwrite "includecrypt.h"
-  link_overwrite "liblibcrypt.so"
+  link_overwrite "include/crypt.h"
+  link_overwrite "lib/libcrypt.so"
 
   def install
-    system ".configure", "--disable-static",
+    system "./configure", "--disable-static",
                           "--disable-obsolete-api",
                           "--disable-xcrypt-compat-files",
                           "--disable-failure-tokens",
@@ -38,7 +38,7 @@ class Libxcrypt < Formula
   end
 
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include <crypt.h>
       #include <errno.h>
       #include <stdio.h>
@@ -56,7 +56,7 @@ class Libxcrypt < Formula
           fprintf(stderr, "Hash is NULL");
           return -1;
         }
-        if (strcmp(hash, "$2b$05$abcdefghijklmnopqrstuuRWUgMyyCUnsDr8evYotXg5ZXVFHhzS")) {
+        if (strcmp(hash, "$2b$05$abcdefghijklmnopqrstuuRWUgMyyCUnsDr8evYotXg5ZXVF/HhzS")) {
           fprintf(stderr, "Unexpected hash output");
           return -1;
         }
@@ -65,6 +65,6 @@ class Libxcrypt < Formula
       }
     C
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lcrypt", "-o", "test"
-    system ".test"
+    system "./test"
   end
 end

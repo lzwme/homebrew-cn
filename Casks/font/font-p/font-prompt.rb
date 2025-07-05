@@ -2,12 +2,12 @@ cask "font-prompt" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefonts.git",
-      verified:  "github.comgooglefonts",
+  url "https://github.com/google/fonts.git",
+      verified:  "github.com/google/fonts",
       branch:    "main",
-      only_path: "oflprompt"
+      only_path: "ofl/prompt"
   name "Prompt"
-  homepage "https:fonts.google.comspecimenPrompt"
+  homepage "https://fonts.google.com/specimen/Prompt"
 
   font "Prompt-Black.ttf"
   font "Prompt-BlackItalic.ttf"

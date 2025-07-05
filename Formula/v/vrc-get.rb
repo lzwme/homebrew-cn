@@ -1,14 +1,14 @@
 class VrcGet < Formula
   desc "Open Source alternative of Command-line client of VRChat Package Manager"
-  homepage "https:github.comvrc-getvrc-get"
-  url "https:github.comvrc-getvrc-getarchiverefstagsv1.9.0.tar.gz"
+  homepage "https://github.com/vrc-get/vrc-get"
+  url "https://ghfast.top/https://github.com/vrc-get/vrc-get/archive/refs/tags/v1.9.0.tar.gz"
   sha256 "4d3821eb4047f7ee83a07a589e97a63608680a71200046d571f9db3320bf8d65"
   license "MIT"
-  head "https:github.comvrc-getvrc-get.git", branch: "master"
+  head "https://github.com/vrc-get/vrc-get.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -28,8 +28,8 @@ class VrcGet < Formula
   end
 
   test do
-    ENV["XDG_DATA_HOME"] = testpath"data-home"
-    system bin"vrc-get", "update"
-    assert_path_exists testpath"data-homeVRChatCreatorCompanionReposvrc-official.json"
+    ENV["XDG_DATA_HOME"] = testpath/"data-home"
+    system bin/"vrc-get", "update"
+    assert_path_exists testpath/"data-home/VRChatCreatorCompanion/Repos/vrc-official.json"
   end
 end

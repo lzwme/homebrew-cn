@@ -1,10 +1,10 @@
 class Rswift < Formula
   desc "Get strong typed, autocompleted resources like images, fonts and segues"
-  homepage "https:github.commac-cain13R.swift"
-  url "https:github.commac-cain13R.swiftreleasesdownload7.8.0rswift-7.8.0-source.tar.gz"
+  homepage "https://github.com/mac-cain13/R.swift"
+  url "https://ghfast.top/https://github.com/mac-cain13/R.swift/releases/download/7.8.0/rswift-7.8.0-source.tar.gz"
   sha256 "6288a8e12aa6de24d8689c3483400bb0cde85f932c130459405f0c3be4886794"
   license "MIT"
-  head "https:github.commac-cain13R.swift.git", branch: "master"
+  head "https://github.com/mac-cain13/R.swift.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "88a2e680ddf7ee98e93c7f65b45cf5cb57d75a98bfda53da1532a93d75593091"
@@ -19,12 +19,12 @@ class Rswift < Formula
 
   def install
     system "swift", "build", "--disable-sandbox", "-c", "release"
-    bin.install ".buildreleaserswift"
+    bin.install ".build/release/rswift"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}rswift --version")
+    assert_match version.to_s, shell_output("#{bin}/rswift --version")
     expected_output="Error: Missing argument PROJECT_FILE_PATH"
-    assert_match expected_output, shell_output("#{bin}rswift generate #{testpath} 2>&1", 64)
+    assert_match expected_output, shell_output("#{bin}/rswift generate #{testpath} 2>&1", 64)
   end
 end

@@ -2,12 +2,12 @@ cask "font-battambang" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefonts.git",
-      verified:  "github.comgooglefonts",
+  url "https://github.com/google/fonts.git",
+      verified:  "github.com/google/fonts",
       branch:    "main",
-      only_path: "oflbattambang"
+      only_path: "ofl/battambang"
   name "Battambang"
-  homepage "https:fonts.google.comspecimenBattambang"
+  homepage "https://fonts.google.com/specimen/Battambang"
 
   font "Battambang-Black.ttf"
   font "Battambang-Bold.ttf"

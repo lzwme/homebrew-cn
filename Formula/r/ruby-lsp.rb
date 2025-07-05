@@ -1,10 +1,10 @@
 class RubyLsp < Formula
   desc "Opinionated language server for Ruby"
-  homepage "https:shopify.github.ioruby-lsp"
-  url "https:github.comShopifyruby-lsparchiverefstagsv0.24.2.tar.gz"
+  homepage "https://shopify.github.io/ruby-lsp"
+  url "https://ghfast.top/https://github.com/Shopify/ruby-lsp/archive/refs/tags/v0.24.2.tar.gz"
   sha256 "e764f4ce0d4f3fc603ff24121d85a025934dbb615b8d53950003b26054b13dc4"
   license "MIT"
-  head "https:github.comShopifyruby-lsp.git", branch: "main"
+  head "https://github.com/Shopify/ruby-lsp.git", branch: "main"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "ea962993b359c1df58a52c330e38e6fbffbb2030dec7a744d119afe7e3dcfd46"
@@ -27,8 +27,8 @@ class RubyLsp < Formula
     system "gem", "build", "#{name}.gemspec"
     system "gem", "install", "#{name}-#{version}.gem"
 
-    bin.install libexec"bin#{name}"
-    bin.env_script_all_files libexec"bin",
+    bin.install libexec/"bin/#{name}"
+    bin.env_script_all_files libexec/"bin",
       PATH:     "#{Formula["ruby"].opt_bin}:$PATH",
       GEM_HOME: ENV["GEM_HOME"]
   end
@@ -46,7 +46,7 @@ class RubyLsp < Formula
       }
     JSON
     input = "Content-Length: #{json.size}\r\n\r\n#{json}"
-    output = pipe_output("#{bin}ruby-lsp 2>&1", input, 0)
-    assert_match(^Content-Length: \d+i, output)
+    output = pipe_output("#{bin}/ruby-lsp 2>&1", input, 0)
+    assert_match(/^Content-Length: \d+/i, output)
   end
 end

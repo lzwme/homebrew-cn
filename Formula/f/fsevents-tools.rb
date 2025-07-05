@@ -1,13 +1,13 @@
 class FseventsTools < Formula
   desc "Command-line utilities for the FSEvents API"
-  homepage "https:geoff.greer.fmfsevents"
-  url "https:geoff.greer.fmfseventsreleasesfsevents-tools-1.0.0.tar.gz"
+  homepage "https://geoff.greer.fm/fsevents/"
+  url "https://geoff.greer.fm/fsevents/releases/fsevents-tools-1.0.0.tar.gz"
   sha256 "498528e1794fa2b0cf920bd96abaf7ced15df31c104d1a3650e06fa3f95ec628"
   license "Apache-2.0"
 
   livecheck do
     url :homepage
-    regex(href=.*?fsevents-tools[._-]v?(\d+(?:\.\d+)+)\.ti)
+    regex(/href=.*?fsevents-tools[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -30,7 +30,7 @@ class FseventsTools < Formula
   end
 
   head do
-    url "https:github.comggreerfsevents-tools.git", branch: "master"
+    url "https://github.com/ggreer/fsevents-tools.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -40,8 +40,8 @@ class FseventsTools < Formula
   depends_on :macos
 
   def install
-    system ".autogen.sh" if build.head?
-    system ".configure", "--disable-silent-rules", *std_configure_args
+    system "./autogen.sh" if build.head?
+    system "./configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
   end
 
@@ -50,6 +50,6 @@ class FseventsTools < Formula
       sleep 2
       touch "testfile"
     end
-    assert_match "notifying", shell_output("#{bin}notifywait testfile")
+    assert_match "notifying", shell_output("#{bin}/notifywait testfile")
   end
 end

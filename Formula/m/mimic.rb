@@ -1,11 +1,11 @@
 class Mimic < Formula
   desc "Lightweight text-to-speech engine based on CMU Flite"
-  homepage "https:github.comMycroftAImimic1"
-  url "https:github.comMycroftAImimic1archiverefstags1.3.0.1.tar.gz"
+  homepage "https://github.com/MycroftAI/mimic1"
+  url "https://ghfast.top/https://github.com/MycroftAI/mimic1/archive/refs/tags/1.3.0.1.tar.gz"
   sha256 "9041f5c7d3720899c90c890ada179c92c3b542b90bb655c247e4a4835df79249"
   # The `:cannot_represent` is for:
-  # * Sun Microsystems, Inc. license (e.g. srcspeechg72x.c)
-  # * BSD license with 2 clauses but not matching BSD-2-Clause (e.g. srcspeechrateconv.c)
+  # * Sun Microsystems, Inc. license (e.g. src/speech/g72x.c)
+  # * BSD license with 2 clauses but not matching BSD-2-Clause (e.g. src/speech/rateconv.c)
   license all_of: ["MIT-Festival", "BSD-2-Clause", "BSD-3-Clause", "Spencer-86", "Apache-2.0", :cannot_represent]
 
   no_autobump! because: :requires_manual_review
@@ -42,15 +42,15 @@ class Mimic < Formula
   end
 
   def install
-    system ".autogen.sh"
-    system ".configure", "--enable-shared",
+    system "./autogen.sh"
+    system "./configure", "--enable-shared",
                           "--enable-static",
                           *std_configure_args
     system "make", "install"
   end
 
   test do
-    system bin"mimic", "-t", "Hello, Homebrew!", "test.wav"
-    assert_path_exists testpath"test.wav"
+    system bin/"mimic", "-t", "Hello, Homebrew!", "test.wav"
+    assert_path_exists testpath/"test.wav"
   end
 end

@@ -1,14 +1,14 @@
 class Dlib < Formula
   desc "C++ library for machine learning"
-  homepage "https:dlib.net"
-  url "https:github.comdaviskingdlibarchiverefstagsv20.0.tar.gz"
+  homepage "https://dlib.net/"
+  url "https://ghfast.top/https://github.com/davisking/dlib/archive/refs/tags/v20.0.tar.gz"
   sha256 "705749801c7896f5c19c253b6be639f4cef2c1831a9606955f01b600b3d86d80"
   license "BSL-1.0"
-  head "https:github.comdaviskingdlib.git", branch: "master"
+  head "https://github.com/davisking/dlib.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -30,8 +30,8 @@ class Dlib < Formula
     args = %W[
       -DDLIB_USE_BLAS=ON
       -DDLIB_USE_LAPACK=ON
-      -Dcblas_lib=#{Formula["openblas"].opt_libshared_library("libopenblas")}
-      -Dlapack_lib=#{Formula["openblas"].opt_libshared_library("libopenblas")}
+      -Dcblas_lib=#{Formula["openblas"].opt_lib/shared_library("libopenblas")}
+      -Dlapack_lib=#{Formula["openblas"].opt_lib/shared_library("libopenblas")}
       -DDLIB_NO_GUI_SUPPORT=ON
       -DDLIB_LINK_WITH_SQLITE3=OFF
       -DBUILD_SHARED_LIBS=ON
@@ -48,8 +48,8 @@ class Dlib < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~CPP
-      #include <dliblogger.h>
+    (testpath/"test.cpp").write <<~CPP
+      #include <dlib/logger.h>
       dlib::logger dlog("example");
       int main() {
         dlog.set_level(dlib::LALL);
@@ -58,6 +58,6 @@ class Dlib < Formula
     CPP
     system ENV.cxx, "-pthread", "-std=c++14", "test.cpp", "-o", "test", "-I#{include}",
                     "-L#{lib}", "-ldlib"
-    assert_match(INFO.*example: The answer is 42, shell_output(".test"))
+    assert_match(/INFO.*example: The answer is 42/, shell_output("./test"))
   end
 end

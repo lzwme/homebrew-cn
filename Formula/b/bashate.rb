@@ -2,8 +2,8 @@ class Bashate < Formula
   include Language::Python::Virtualenv
 
   desc "Code style enforcement for bash programs"
-  homepage "https:github.comopenstackbashate"
-  url "https:files.pythonhosted.orgpackages4d0c35b92b742cc9da7788db16cfafda2f38505e19045ae1ee204ec238ece93fbashate-2.1.1.tar.gz"
+  homepage "https://github.com/openstack/bashate"
+  url "https://files.pythonhosted.org/packages/4d/0c/35b92b742cc9da7788db16cfafda2f38505e19045ae1ee204ec238ece93f/bashate-2.1.1.tar.gz"
   sha256 "4bab6e977f8305a720535f8f93f1fb42c521fcbc4a6c2b3d3d7671f42f221f4c"
   license "Apache-2.0"
   revision 1
@@ -24,7 +24,7 @@ class Bashate < Formula
   depends_on "python@3.13"
 
   resource "pbr" do
-    url "https:files.pythonhosted.orgpackagesb23580cf8f6a4f34017a7fe28242dc45161a1baa55c41563c354d8147e8358b2pbr-6.1.0.tar.gz"
+    url "https://files.pythonhosted.org/packages/b2/35/80cf8f6a4f34017a7fe28242dc45161a1baa55c41563c354d8147e8358b2/pbr-6.1.0.tar.gz"
     sha256 "788183e382e3d1d7707db08978239965e8b9e4e5ed42669bf4758186734d5f24"
   end
 
@@ -33,14 +33,14 @@ class Bashate < Formula
   end
 
   test do
-    (testpath"test.sh").write <<~SHELL
-      #!binbash
+    (testpath/"test.sh").write <<~SHELL
+      #!/bin/bash
         echo "Testing Bashate"
     SHELL
 
-    assert_match "E003 Indent not multiple of 4", shell_output("#{bin}bashate #{testpath}test.sh", 1)
-    assert_empty shell_output("#{bin}bashate -i E003 #{testpath}test.sh")
+    assert_match "E003 Indent not multiple of 4", shell_output("#{bin}/bashate #{testpath}/test.sh", 1)
+    assert_empty shell_output("#{bin}/bashate -i E003 #{testpath}/test.sh")
 
-    assert_match version.to_s, shell_output("#{bin}bashate --version")
+    assert_match version.to_s, shell_output("#{bin}/bashate --version")
   end
 end

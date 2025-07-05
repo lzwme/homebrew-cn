@@ -2,10 +2,10 @@ cask "epichrome" do
   version "2.4.26"
   sha256 "690df70b5c8fc7104ad44965dfc509e61f5c2238638d793befdae19c1210a8d3"
 
-  url "https:github.comdmarmorepichromereleasesdownloadv#{version}epichrome-#{version}.pkg"
+  url "https://ghfast.top/https://github.com/dmarmor/epichrome/releases/download/v#{version}/epichrome-#{version}.pkg"
   name "Epichrome"
   desc "Tool to create web-based applications that work like standalone apps"
-  homepage "https:github.comdmarmorepichrome"
+  homepage "https://github.com/dmarmor/epichrome"
 
   no_autobump! because: :requires_manual_review
 

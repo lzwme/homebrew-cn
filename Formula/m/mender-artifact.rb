@@ -1,14 +1,14 @@
 class MenderArtifact < Formula
   desc "CLI tool for managing Mender artifact files"
-  homepage "https:mender.io"
-  url "https:github.commendersoftwaremender-artifactarchiverefstags4.1.0.tar.gz"
+  homepage "https://mender.io"
+  url "https://ghfast.top/https://github.com/mendersoftware/mender-artifact/archive/refs/tags/4.1.0.tar.gz"
   sha256 "d82cd2f802033d53f2e947ed8d9d6cdd7a036fadbd92a2696b72122bd2070039"
   license "Apache-2.0"
 
   # exclude tags like `3.4.0b1` and `internal-v2020.02`
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -31,29 +31,29 @@ class MenderArtifact < Formula
   depends_on "openssl@3"
 
   def install
-    ldflags = "-s -w -X github.commendersoftwaremender-artifactcli.Version=#{version}"
+    ldflags = "-s -w -X github.com/mendersoftware/mender-artifact/cli.Version=#{version}"
     system "go", "build", *std_go_args(ldflags: ldflags)
 
     # mender-artifact doesn't support autocomplete generation so we have to
     # install the individual files instead of using
     # generate_completions_from_executable()
-    zsh_completion.install "autocompletezsh_autocomplete" => "_mender-artifact"
-    bash_completion.install "autocompletebash_autocomplete" => "mender-artifact"
+    zsh_completion.install "autocomplete/zsh_autocomplete" => "_mender-artifact"
+    bash_completion.install "autocomplete/bash_autocomplete" => "mender-artifact"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}mender-artifact --version")
+    assert_match version.to_s, shell_output("#{bin}/mender-artifact --version")
 
     # Create a test artifact
-    (testpath"rootfs.ext4").write("")
+    (testpath/"rootfs.ext4").write("")
 
-    output = shell_output("#{bin}mender-artifact write rootfs-image " \
+    output = shell_output("#{bin}/mender-artifact write rootfs-image " \
                           "-t beaglebone -n release-1 -f rootfs.ext4 -o artifact.mender 2>&1")
     assert_match "Writing Artifact...", output
-    assert_path_exists testpath"artifact.mender"
+    assert_path_exists testpath/"artifact.mender"
 
     # Verify the artifact contents
-    output = shell_output("#{bin}mender-artifact read artifact.mender")
+    output = shell_output("#{bin}/mender-artifact read artifact.mender")
     assert_match <<~EOS, output
       Mender Artifact:
         Name: release-1

@@ -1,10 +1,10 @@
 class Oak < Formula
   desc "Expressive, simple, dynamic programming language"
-  homepage "https:oaklang.org"
-  url "https:github.comthesephistoakarchiverefstagsv0.3.tar.gz"
+  homepage "https://oaklang.org/"
+  url "https://ghfast.top/https://github.com/thesephist/oak/archive/refs/tags/v0.3.tar.gz"
   sha256 "05bc1c09da8f8d199d169e5a5c5ab2f2923bad6fac624f497f5ea365f378e38a"
   license "MIT"
-  head "https:github.comthesephistoak.git", branch: "main"
+  head "https://github.com/thesephist/oak.git", branch: "main"
 
   no_autobump! because: :requires_manual_review
 
@@ -31,6 +31,6 @@ class Oak < Formula
   end
 
   test do
-    assert_equal "Hello, World!\n14\n", shell_output("#{bin}oak eval \"std.println('Hello, World!')\"")
+    assert_equal "Hello, World!\n14\n", shell_output("#{bin}/oak eval \"std.println('Hello, World!')\"")
   end
 end

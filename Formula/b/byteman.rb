@@ -1,14 +1,14 @@
 class Byteman < Formula
   desc "Java bytecode manipulation tool for testing, monitoring and tracing"
-  homepage "https:byteman.jboss.org"
-  url "https:downloads.jboss.orgbyteman4.0.25byteman-download-4.0.25-bin.zip"
+  homepage "https://byteman.jboss.org/"
+  url "https://downloads.jboss.org/byteman/4.0.25/byteman-download-4.0.25-bin.zip"
   sha256 "9c76a2f7024c6be951a5d3ec2856171cbefa63310a295309b2e8332e3d5b595f"
   license "LGPL-2.1-or-later"
-  head "https:github.combytemanprojectbyteman.git", branch: "main"
+  head "https://github.com/bytemanproject/byteman.git", branch: "main"
 
   livecheck do
-    url "https:byteman.jboss.orgdownloads.html"
-    regex(href=.*?byteman-download[._-]v?(\d+(?:\.\d+)+)-bin\.zipi)
+    url "https://byteman.jboss.org/downloads.html"
+    regex(/href=.*?byteman-download[._-]v?(\d+(?:\.\d+)+)-bin\.zip/i)
   end
 
   bottle do
@@ -18,21 +18,21 @@ class Byteman < Formula
   depends_on "openjdk"
 
   def install
-    rm_r(Dir["bin*.bat"])
-    doc.install Dir["docs*"], "README"
+    rm_r(Dir["bin/*.bat"])
+    doc.install Dir["docs/*"], "README"
     libexec.install ["bin", "lib", "contrib"]
     pkgshare.install ["sample"]
 
     env = { JAVA_HOME: "${JAVA_HOME:-#{Formula["openjdk"].opt_prefix}}", BYTEMAN_HOME: libexec }
-    Pathname.glob("#{libexec}bin*") do |file|
-      target = binFile.basename(file, File.extname(file))
+    Pathname.glob("#{libexec}/bin/*") do |file|
+      target = bin/File.basename(file, File.extname(file))
       # Drop the .sh from the scripts
-      target.write_env_script(libexec"bin#{File.basename(file)}", env)
+      target.write_env_script(libexec/"bin/#{File.basename(file)}", env)
     end
   end
 
   test do
-    (testpath"srcmainjavaBytemanHello.java").write <<~JAVA
+    (testpath/"src/main/java/BytemanHello.java").write <<~JAVA
       class BytemanHello {
         public static void main(String... args) {
           System.out.println("Hello, Brew!");
@@ -40,7 +40,7 @@ class Byteman < Formula
       }
     JAVA
 
-    (testpath"brew.btm").write <<~BTM
+    (testpath/"brew.btm").write <<~BTM
       RULE trace main entry
       CLASS BytemanHello
       METHOD main
@@ -58,9 +58,9 @@ class Byteman < Formula
       ENDRULE
     BTM
 
-    system "#{Formula["openjdk"].bin}javac", "srcmainjavaBytemanHello.java"
+    system "#{Formula["openjdk"].bin}/javac", "src/main/java/BytemanHello.java"
 
-    actual = shell_output("#{bin}bmjava -l brew.btm -cp srcmainjava BytemanHello")
+    actual = shell_output("#{bin}/bmjava -l brew.btm -cp src/main/java BytemanHello")
     assert_match("Hello, Brew!", actual)
   end
 end

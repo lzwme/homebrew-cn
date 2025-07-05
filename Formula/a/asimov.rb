@@ -1,10 +1,10 @@
 class Asimov < Formula
   desc "Automatically exclude development dependencies from Time Machine backups"
-  homepage "https:github.comstevegrunwellasimov"
-  url "https:github.comstevegrunwellasimovarchiverefstagsv0.3.0.tar.gz"
+  homepage "https://github.com/stevegrunwell/asimov"
+  url "https://ghfast.top/https://github.com/stevegrunwell/asimov/archive/refs/tags/v0.3.0.tar.gz"
   sha256 "77a0ef09c86d9d6ff146547902c749c43bc054f331a12ecb9992db9673469fab"
   license "MIT"
-  head "https:github.comstevegrunwellasimov.git", branch: "develop"
+  head "https://github.com/stevegrunwell/asimov.git", branch: "develop"
 
   no_autobump! because: :requires_manual_review
 
@@ -14,12 +14,12 @@ class Asimov < Formula
   end
 
   def install
-    bin.install buildpath"asimov"
+    bin.install buildpath/"asimov"
   end
 
   # Asimov will run in the background on a daily basis
   service do
-    run opt_bin"asimov"
+    run opt_bin/"asimov"
     run_type :interval
     require_root true
     interval 86400 # 24 hours = 60 * 60 * 24
@@ -27,6 +27,6 @@ class Asimov < Formula
 
   test do
     assert_match "Finding dependency directories with corresponding definition files…",
-                 shell_output(bin"asimov")
+                 shell_output(bin/"asimov")
   end
 end

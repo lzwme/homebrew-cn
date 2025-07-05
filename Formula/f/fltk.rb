@@ -1,13 +1,13 @@
 class Fltk < Formula
   desc "Cross-platform C++ GUI toolkit"
-  homepage "https:www.fltk.org"
-  url "https:github.comfltkfltkreleasesdownloadrelease-1.4.3fltk-1.4.3-source.tar.bz2"
+  homepage "https://www.fltk.org/"
+  url "https://ghfast.top/https://github.com/fltk/fltk/releases/download/release-1.4.3/fltk-1.4.3-source.tar.bz2"
   sha256 "76ecc922b6d708f75ab29abe2810494575b66b00735e692cff6d96686ed0fc4a"
   license "LGPL-2.0-only" => { with: "FLTK-exception" }
 
   livecheck do
-    url "https:www.fltk.orgsoftware.php"
-    regex(href=.*?fltk[._-]v?(\d+(?:\.\d+)+(?:-\d+)?)-source\.ti)
+    url "https://www.fltk.org/software.php"
+    regex(/href=.*?fltk[._-]v?(\d+(?:\.\d+)+(?:-\d+)?)-source\.t/i)
   end
 
   bottle do
@@ -21,7 +21,7 @@ class Fltk < Formula
   end
 
   head do
-    url "https:github.comfltkfltk.git", branch: "master"
+    url "https://github.com/fltk/fltk.git", branch: "master"
     depends_on "cmake" => :build
   end
 
@@ -45,7 +45,7 @@ class Fltk < Formula
   def install
     if build.head?
       args = [
-        # Don't build docs  require doxygen
+        # Don't build docs / require doxygen
         "-DFLTK_BUILD_HTML_DOCS=OFF",
         "-DFLTK_BUILD_PDF_DOCS=OFF",
         # Don't build tests
@@ -61,16 +61,16 @@ class Fltk < Formula
         --enable-threads
         --enable-shared
       ]
-      system ".configure", *args, *std_configure_args
+      system "./configure", *args, *std_configure_args
       system "make", "install"
     end
   end
 
   test do
-    (testpath"test.cpp").write <<~CPP
-      #include <FLFl.H>
-      #include <FLFl_Window.H>
-      #include <FLFl_Box.H>
+    (testpath/"test.cpp").write <<~CPP
+      #include <FL/Fl.H>
+      #include <FL/Fl_Window.H>
+      #include <FL/Fl_Box.H>
       int main(int argc, char **argv) {
         Fl_Window *window = new Fl_Window(340,180);
         Fl_Box *box = new Fl_Box(20,40,300,100,"Hello, World!");
@@ -83,6 +83,6 @@ class Fltk < Formula
       }
     CPP
     system ENV.cxx, "test.cpp", "-L#{lib}", "-lfltk", "-o", "test"
-    system ".test"
+    system "./test"
   end
 end

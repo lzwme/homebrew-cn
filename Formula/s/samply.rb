@@ -1,14 +1,14 @@
 class Samply < Formula
   desc "CLI sampling profiler"
-  homepage "https:github.commstangesamply"
-  url "https:github.commstangesamplyarchiverefstagssamply-v0.13.1.tar.gz"
+  homepage "https://github.com/mstange/samply"
+  url "https://ghfast.top/https://github.com/mstange/samply/archive/refs/tags/samply-v0.13.1.tar.gz"
   sha256 "7002789471f8ef3a36f4d4db7be98f2847724e2b81a53c5e23d5cae022fb704b"
   license any_of: ["Apache-2.0", "MIT"]
-  head "https:github.commstangesamply.git", branch: "main"
+  head "https://github.com/mstange/samply.git", branch: "main"
 
   livecheck do
     url :stable
-    regex(^samply[._-]v?(\d+(?:\.\d+)+)$i)
+    regex(/^samply[._-]v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -28,12 +28,12 @@ class Samply < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}samply --version")
+    assert_match version.to_s, shell_output("#{bin}/samply --version")
 
-    test_perf_json = testpath"test_perf.json"
+    test_perf_json = testpath/"test_perf.json"
     test_perf_json.write ""
 
-    output = shell_output("#{bin}samply import --no-open #{test_perf_json} 2>&1", 1)
+    output = shell_output("#{bin}/samply import --no-open #{test_perf_json} 2>&1", 1)
     assert_match "Error importing perf.data file", output
   end
 end

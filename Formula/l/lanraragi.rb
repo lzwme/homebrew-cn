@@ -1,10 +1,10 @@
 class Lanraragi < Formula
-  desc "Web application for archival and reading of mangadoujinshi"
-  homepage "https:github.comDifegueLANraragi"
-  url "https:github.comDifegueLANraragiarchiverefstagsv.0.9.41.tar.gz"
+  desc "Web application for archival and reading of manga/doujinshi"
+  homepage "https://github.com/Difegue/LANraragi"
+  url "https://ghfast.top/https://github.com/Difegue/LANraragi/archive/refs/tags/v.0.9.41.tar.gz"
   sha256 "390d198690e26703bf1a52b634e63b3e92c432a7157501832069d39199adcf54"
   license "MIT"
-  head "https:github.comDifegueLANraragi.git", branch: "dev"
+  head "https://github.com/Difegue/LANraragi.git", branch: "dev"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "ee4f5a14314f40f1b206b523a16336ce8a686825297ab796342bb281d0a5389d"
@@ -31,21 +31,21 @@ class Lanraragi < Formula
   uses_from_macos "libffi"
 
   resource "Image::Magick" do
-    url "https:cpan.metacpan.orgauthorsidJJCJCRISTYImage-Magick-7.1.1-28.tar.gz"
+    url "https://cpan.metacpan.org/authors/id/J/JC/JCRISTY/Image-Magick-7.1.1-28.tar.gz"
     sha256 "bc54137346c1d45626e7075015f7d1dae813394af885457499f54878cfc19e0b"
   end
 
   def install
-    ENV.prepend_create_path "PERL5LIB", libexec"libperl5"
+    ENV.prepend_create_path "PERL5LIB", libexec/"lib/perl5"
     ENV["OPENSSL_PREFIX"] = Formula["openssl@3"].opt_prefix
-    ENV["ARCHIVE_LIBARCHIVE_LIB_DLL"] = Formula["libarchive"].opt_libshared_library("libarchive")
+    ENV["ARCHIVE_LIBARCHIVE_LIB_DLL"] = Formula["libarchive"].opt_lib/shared_library("libarchive")
     ENV["ALIEN_INSTALL_TYPE"] = "system"
 
     imagemagick = Formula["imagemagick"]
     resource("Image::Magick").stage do
       inreplace "Makefile.PL",
-                "usrlocalincludeImageMagick-#{imagemagick.version.major}",
-                "#{imagemagick.opt_include}ImageMagick-#{imagemagick.version.major}"
+                "/usr/local/include/ImageMagick-#{imagemagick.version.major}",
+                "#{imagemagick.opt_include}/ImageMagick-#{imagemagick.version.major}"
 
       system "perl", "Makefile.PL", "INSTALL_BASE=#{libexec}"
       system "make"
@@ -54,19 +54,19 @@ class Lanraragi < Formula
 
     system "cpanm", "Config::AutoConf", "--notest", "-l", libexec
     system "npm", "install", *std_npm_args(prefix: false)
-    system "perl", ".toolsinstall.pl", "install-full"
+    system "perl", "./tools/install.pl", "install-full"
 
     # Modify Archive::Libarchive to help find brew `libarchive`. Although environment
     # variables like `ARCHIVE_LIBARCHIVE_LIB_DLL` and `FFI_CHECKLIB_PATH` exist,
     # it is difficult to guarantee every way of running (like `npm start`) uses them.
-    inreplace libexec"libperl5ArchiveLibarchiveLib.pm",
+    inreplace libexec/"lib/perl5/Archive/Libarchive/Lib.pm",
               "$ENV{ARCHIVE_LIBARCHIVE_LIB_DLL}",
               "'#{ENV["ARCHIVE_LIBARCHIVE_LIB_DLL"]}'"
 
-    (libexec"lib").install Dir["lib*"]
+    (libexec/"lib").install Dir["lib/*"]
     libexec.install "script", "package.json", "public", "locales", "templates", "tests", "lrr.conf"
-    libexec.install "toolsbuildhomebrewredis.conf"
-    bin.install "toolsbuildhomebrewlanraragi"
+    libexec.install "tools/build/homebrew/redis.conf"
+    bin.install "tools/build/homebrew/lanraragi"
   end
 
   test do
@@ -75,7 +75,7 @@ class Lanraragi < Formula
     %w[server.pid shinobu.pid minion.pid].each { |file| touch file }
 
     # Set PERL5LIB as we're not calling the launcher script
-    ENV["PERL5LIB"] = libexec"libperl5"
+    ENV["PERL5LIB"] = libexec/"lib/perl5"
 
     # This can't have its _user-facing_ functionality tested in the `brew test`
     # environment because it needs Redis. It fails spectacularly tho with some

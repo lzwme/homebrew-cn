@@ -1,13 +1,13 @@
 class Erg < Formula
   desc "Statically typed language that can deeply improve the Python ecosystem"
-  homepage "https:github.comerg-langerg"
-  url "https:github.comerg-langergarchiverefstagsv0.6.52.tar.gz"
+  homepage "https://github.com/erg-lang/erg"
+  url "https://ghfast.top/https://github.com/erg-lang/erg/archive/refs/tags/v0.6.52.tar.gz"
   sha256 "60044c36bbb796d3638fe24fec0a9df0780a3d61f00186596055234b4c244817"
   license any_of: ["Apache-2.0", "MIT"]
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -26,23 +26,23 @@ class Erg < Formula
 
   def install
     feature_args = "els,full-repl,unicode,backtrace"
-    ENV["HOME"] = buildpath # The build will write to HOME.erg
+    ENV["HOME"] = buildpath # The build will write to HOME/.erg
     system "cargo", "install", "--features", *feature_args, *std_cargo_args(root: libexec)
-    pkgshare.install buildpath.glob(".erg*")
-    (bin"erg").write_env_script(libexec"bin""erg", ERG_PATH: pkgshare)
+    pkgshare.install buildpath.glob(".erg/*")
+    (bin/"erg").write_env_script(libexec/"bin"/"erg", ERG_PATH: pkgshare)
   end
 
   test do
-    (testpath"test.er").write <<~EOS
+    (testpath/"test.er").write <<~EOS
       print! "hello"
     EOS
 
-    output = shell_output("#{bin}erg lex #{testpath}test.er")
+    output = shell_output("#{bin}/erg lex #{testpath}/test.er")
     assert_equal "[Symbol print!, StrLit \"hello\", Newline \\n, EOF \u0000]\n", output
 
-    output = shell_output("#{bin}erg check #{testpath}test.er")
+    output = shell_output("#{bin}/erg check #{testpath}/test.er")
     assert_match "\"hello\" (: {\"hello\"})", output
 
-    assert_match version.to_s, shell_output("#{bin}erg --version")
+    assert_match version.to_s, shell_output("#{bin}/erg --version")
   end
 end

@@ -1,7 +1,7 @@
 class Stackql < Formula
   desc "SQL interface for arbitrary resources with full CRUD support"
-  homepage "https:stackql.io"
-  url "https:github.comstackqlstackqlarchiverefstagsv0.8.141.tar.gz"
+  homepage "https://stackql.io/"
+  url "https://ghfast.top/https://github.com/stackql/stackql/archive/refs/tags/v0.8.141.tar.gz"
   sha256 "2768bcba103d3888cd945e832f9ea3e643083ce6ef431b1476c36c8bd93638a4"
   license "MIT"
 
@@ -25,24 +25,24 @@ class Stackql < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.comstackqlstackqlinternalstackqlcmd.BuildMajorVersion=#{version.major}
-      -X github.comstackqlstackqlinternalstackqlcmd.BuildMinorVersion=#{version.minor}
-      -X github.comstackqlstackqlinternalstackqlcmd.BuildPatchVersion=#{version.patch}
-      -X github.comstackqlstackqlinternalstackqlcmd.BuildCommitSHA=#{tap.user}
-      -X github.comstackqlstackqlinternalstackqlcmd.BuildShortCommitSHA=#{tap.user}
-      -X github.comstackqlstackqlinternalstackqlcmd.BuildDate=#{time.iso8601}
-      -X stackqlinternalstackqlplanbuilder.PlanCacheEnabled=true
+      -X github.com/stackql/stackql/internal/stackql/cmd.BuildMajorVersion=#{version.major}
+      -X github.com/stackql/stackql/internal/stackql/cmd.BuildMinorVersion=#{version.minor}
+      -X github.com/stackql/stackql/internal/stackql/cmd.BuildPatchVersion=#{version.patch}
+      -X github.com/stackql/stackql/internal/stackql/cmd.BuildCommitSHA=#{tap.user}
+      -X github.com/stackql/stackql/internal/stackql/cmd.BuildShortCommitSHA=#{tap.user}
+      -X github.com/stackql/stackql/internal/stackql/cmd.BuildDate=#{time.iso8601}
+      -X stackql/internal/stackql/planbuilder.PlanCacheEnabled=true
     ]
     tags = %w[
       json1
       sqleanall
     ]
 
-    system "go", "build", *std_go_args(ldflags:, tags:), ".stackql"
+    system "go", "build", *std_go_args(ldflags:, tags:), "./stackql"
   end
 
   test do
-    assert_match "stackql v#{version}", shell_output("#{bin}stackql --version")
-    assert_includes shell_output("#{bin}stackql exec 'show providers;'"), "name"
+    assert_match "stackql v#{version}", shell_output("#{bin}/stackql --version")
+    assert_includes shell_output("#{bin}/stackql exec 'show providers;'"), "name"
   end
 end

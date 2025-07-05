@@ -1,7 +1,7 @@
 class FfmpegAT5 < Formula
   desc "Play, record, convert, and stream audio and video"
-  homepage "https:ffmpeg.org"
-  url "https:ffmpeg.orgreleasesffmpeg-5.1.6.tar.xz"
+  homepage "https://ffmpeg.org/"
+  url "https://ffmpeg.org/releases/ffmpeg-5.1.6.tar.xz"
   sha256 "f4fa066278f7a47feab316fef905f4db0d5e9b589451949740f83972b30901bd"
   # None of these parts are used by default, you have to explicitly pass `--enable-gpl`
   # to configure to activate them. In this case, FFmpeg's license changes to GPL v2+.
@@ -9,8 +9,8 @@ class FfmpegAT5 < Formula
   revision 7
 
   livecheck do
-    url "https:ffmpeg.orgdownload.html"
-    regex(href=.*?ffmpeg[._-]v?(5(?:\.\d+)+)\.ti)
+    url "https://ffmpeg.org/download.html"
+    regex(/href=.*?ffmpeg[._-]v?(5(?:\.\d+)+)\.t/i)
   end
 
   bottle do
@@ -86,17 +86,17 @@ class FfmpegAT5 < Formula
 
   # Backport support for recent svt-av1 (3.0.0)
   patch do
-    url "https:github.comFFmpegFFmpegcommitd1ed5c06e3edc5f2b5f3664c80121fa55b0baa95.patch?full_index=1"
+    url "https://github.com/FFmpeg/FFmpeg/commit/d1ed5c06e3edc5f2b5f3664c80121fa55b0baa95.patch?full_index=1"
     sha256 "0eb23ab90c0e5904590731dd3b81c86a4127785bc2b367267d77723990fb94a2"
   end
 
   def install
-    # The new linker leads to duplicate symbol issue https:github.comhomebrew-ffmpeghomebrew-ffmpegissues140
+    # The new linker leads to duplicate symbol issue https://github.com/homebrew-ffmpeg/homebrew-ffmpeg/issues/140
     ENV.append "LDFLAGS", "-Wl,-ld_classic" if DevelopmentTools.clang_build_version >= 1500
 
     args = %W[
       --prefix=#{prefix}
-      --datadir=#{share}ffmpeg
+      --datadir=#{share}/ffmpeg
       --enable-shared
       --enable-pthreads
       --enable-version3
@@ -149,19 +149,19 @@ class FfmpegAT5 < Formula
     args << "--enable-videotoolbox" if OS.mac?
     args << "--enable-neon" if Hardware::CPU.arm?
 
-    system ".configure", *args
+    system "./configure", *args
     system "make", "install"
 
     # Build and install additional FFmpeg tools
     system "make", "alltools"
-    bin.install (buildpath"tools").children.select { |f| f.file? && f.executable? }
-    (share"ffmpeg").install buildpath"toolspython"
+    bin.install (buildpath/"tools").children.select { |f| f.file? && f.executable? }
+    (share/"ffmpeg").install buildpath/"tools/python"
   end
 
   test do
     # Create an example mp4 file
-    mp4out = testpath"video.mp4"
-    system bin"ffmpeg", "-filter_complex", "testsrc=rate=1:duration=1", mp4out
+    mp4out = testpath/"video.mp4"
+    system bin/"ffmpeg", "-filter_complex", "testsrc=rate=1:duration=1", mp4out
     assert_path_exists mp4out
   end
 end

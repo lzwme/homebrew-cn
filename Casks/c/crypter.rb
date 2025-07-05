@@ -2,10 +2,10 @@ cask "crypter" do
   version "5.0.0"
   sha256 "ed136dbfacae87d52493e56e0e225d13203de997c54e7ac5f159feeadfcd4b7a"
 
-  url "https:github.comHRCrypterreleasesdownloadv#{version}Crypter-#{version}.dmg"
+  url "https://ghfast.top/https://github.com/HR/Crypter/releases/download/v#{version}/Crypter-#{version}.dmg"
   name "Crypter"
   desc "Encryption software"
-  homepage "https:github.comHRCrypter"
+  homepage "https://github.com/HR/Crypter"
 
   no_autobump! because: :requires_manual_review
 
@@ -14,10 +14,10 @@ cask "crypter" do
   app "Crypter.app"
 
   zap trash: [
-    "~LibraryApplication SupportCrypter",
-    "~LibraryLogsCrypter",
-    "~LibraryPreferencescom.github.hr.crypter.plist",
-    "~LibrarySaved Application Statecom.github.hr.crypter.savedState",
+    "~/Library/Application Support/Crypter",
+    "~/Library/Logs/Crypter",
+    "~/Library/Preferences/com.github.hr.crypter.plist",
+    "~/Library/Saved Application State/com.github.hr.crypter.savedState",
   ]
 
   caveats do

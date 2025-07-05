@@ -1,13 +1,13 @@
 class Ipfs < Formula
   desc "Peer-to-peer hypermedia protocol"
-  homepage "https:docs.ipfs.techhow-tocommand-line-quick-start"
-  url "https:github.comipfskuboarchiverefstagsv0.35.0.tar.gz"
+  homepage "https://docs.ipfs.tech/how-to/command-line-quick-start/"
+  url "https://ghfast.top/https://github.com/ipfs/kubo/archive/refs/tags/v0.35.0.tar.gz"
   sha256 "973ff52e34903174c886494af755a393a456b13379883796ea268e9485fa9324"
   license all_of: [
     "MIT",
     any_of: ["MIT", "Apache-2.0"],
   ]
-  head "https:github.comipfskubo.git", branch: "master"
+  head "https://github.com/ipfs/kubo.git", branch: "master"
 
   livecheck do
     url :stable
@@ -29,18 +29,18 @@ class Ipfs < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.comipfskubo.CurrentCommit=#{tap.user}
+      -X github.com/ipfs/kubo.CurrentCommit=#{tap.user}
     ]
-    system "go", "build", *std_go_args(ldflags:), ".cmdipfs"
+    system "go", "build", *std_go_args(ldflags:), "./cmd/ipfs"
 
-    generate_completions_from_executable(bin"ipfs", "commands", "completion")
+    generate_completions_from_executable(bin/"ipfs", "commands", "completion")
   end
 
   service do
-    run [opt_bin"ipfs", "daemon"]
+    run [opt_bin/"ipfs", "daemon"]
   end
 
   test do
-    assert_match "initializing IPFS node", shell_output("#{bin}ipfs init")
+    assert_match "initializing IPFS node", shell_output("#{bin}/ipfs init")
   end
 end

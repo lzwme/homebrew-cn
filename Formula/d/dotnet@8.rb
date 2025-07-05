@@ -1,14 +1,14 @@
 class DotnetAT8 < Formula
   desc ".NET Core"
-  homepage "https:dotnet.microsoft.com"
-  # Source-build tag announced at https:github.comdotnetsource-builddiscussions
-  url "https:github.comdotnetdotnetarchiverefstagsv8.0.17.tar.gz"
+  homepage "https://dotnet.microsoft.com/"
+  # Source-build tag announced at https://github.com/dotnet/source-build/discussions
+  url "https://ghfast.top/https://github.com/dotnet/dotnet/archive/refs/tags/v8.0.17.tar.gz"
   sha256 "17d82982a74e2f255ad6d171b72b317471095704c27be58db95a0cb67d237c12"
   license "MIT"
 
   livecheck do
     url :stable
-    regex(^v?(8(?:\.\d+)+)$i)
+    regex(/^v?(8(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -22,7 +22,7 @@ class DotnetAT8 < Formula
 
   keg_only :versioned_formula
 
-  # https:dotnet.microsoft.comen-usplatformsupportpolicydotnet-core#lifecycle
+  # https://dotnet.microsoft.com/en-us/platform/support/policy/dotnet-core#lifecycle
   deprecate! date: "2026-11-10", because: :unsupported
 
   depends_on "cmake" => :build
@@ -44,7 +44,7 @@ class DotnetAT8 < Formula
   end
 
   resource "release.json" do
-    url "https:github.comdotnetdotnetreleasesdownloadv8.0.17release.json"
+    url "https://ghfast.top/https://github.com/dotnet/dotnet/releases/download/v8.0.17/release.json"
     sha256 "c6d6b300136c07d45ae28369f967ebc45f02fe6bbd2c76bac42205e6f88f76c7"
 
     livecheck do
@@ -58,7 +58,7 @@ class DotnetAT8 < Formula
 
     if OS.mac?
       # Need GNU grep (Perl regexp support) to use release manifest rather than git repo
-      ENV.prepend_path "PATH", Formula["grep"].libexec"gnubin"
+      ENV.prepend_path "PATH", Formula["grep"].libexec/"gnubin"
 
       # Avoid mixing CLT and Xcode.app when building CoreCLR component which can
       # cause undefined symbols, e.g. __swift_FORCE_LOAD_$_swift_Builtin_float
@@ -67,49 +67,49 @@ class DotnetAT8 < Formula
       # Deparallelize to reduce chances of missing PDBs
       ENV.deparallelize
       # Avoid failing on missing PDBs as unable to build bottle on all runners in current state
-      # Issue ref: https:github.comdotnetsource-buildissues4150
-      inreplace "build.proj", \bFailOnMissingPDBs="true", 'FailOnMissingPDBs="false"'
+      # Issue ref: https://github.com/dotnet/source-build/issues/4150
+      inreplace "build.proj", /\bFailOnMissingPDBs="true"/, 'FailOnMissingPDBs="false"'
 
       # Disable crossgen2 optimization in ASP.NET Core to work around build failure trying to find tool.
-      # Microsoft.AspNetCore.App.Runtime.csproj(445,5): error : Could not find crossgen2 toolscrossgen2
-      inreplace "srcaspnetcoresrcFrameworkApp.RuntimesrcMicrosoft.AspNetCore.App.Runtime.csproj",
+      # Microsoft.AspNetCore.App.Runtime.csproj(445,5): error : Could not find crossgen2 tools/crossgen2
+      inreplace "src/aspnetcore/src/Framework/App.Runtime/src/Microsoft.AspNetCore.App.Runtime.csproj",
                 "<CrossgenOutput Condition=\" '$(TargetArchitecture)' == 's390x'",
                 "<CrossgenOutput Condition=\" '$(TargetOsName)' == 'osx'"
     else
-      icu4c_dep = deps.find { |dep| dep.name.match?(^icu4c(@\d+)?$) }
+      icu4c_dep = deps.find { |dep| dep.name.match?(/^icu4c(@\d+)?$/) }
       ENV.append_path "LD_LIBRARY_PATH", icu4c_dep.to_formula.opt_lib
 
       # Use our libunwind rather than the bundled one.
-      inreplace "srcruntimeengSourceBuild.props",
+      inreplace "src/runtime/eng/SourceBuild.props",
                 "--outputrid $(TargetRid)",
                 "\\0 --cmakeargs -DCLR_CMAKE_USE_SYSTEM_LIBUNWIND=ON"
 
       # Work around build script getting stuck when running shutdown command on Linux
-      # Ref: https:github.comdotnetsource-builddiscussions3105#discussioncomment-4373142
-      inreplace "build.sh", '"$CLI_ROOTdotnet" build-server shutdown', ""
-      inreplace "repo-projectsDirectory.Build.targets",
-                '<Exec Command="$(DotnetToolCommand) build-server shutdown" >',
+      # Ref: https://github.com/dotnet/source-build/discussions/3105#discussioncomment-4373142
+      inreplace "build.sh", '"$CLI_ROOT/dotnet" build-server shutdown', ""
+      inreplace "repo-projects/Directory.Build.targets",
+                '<Exec Command="$(DotnetToolCommand) build-server shutdown" />',
                 ""
     end
 
-    system ".prep.sh"
+    system "./prep.sh"
     # We unset "CI" environment variable to work around aspire build failure
     # error MSB4057: The target "GitInfo" does not exist in the project.
-    # Ref: https:github.comHomebrewhomebrew-corepull154584#issuecomment-1815575483
+    # Ref: https://github.com/Homebrew/homebrew-core/pull/154584#issuecomment-1815575483
     with_env(CI: nil) do
-      system ".build.sh", "--clean-while-building", "--online", "--release-manifest", "release.json"
+      system "./build.sh", "--clean-while-building", "--online", "--release-manifest", "release.json"
     end
 
     libexec.mkpath
-    tarball = buildpath.glob("artifacts*Releasedotnet-sdk-*.tar.gz").first
+    tarball = buildpath.glob("artifacts/*/Release/dotnet-sdk-*.tar.gz").first
     system "tar", "--extract", "--file", tarball, "--directory", libexec
     doc.install libexec.glob("*.txt")
-    (bin"dotnet").write_env_script libexec"dotnet", DOTNET_ROOT: libexec
+    (bin/"dotnet").write_env_script libexec/"dotnet", DOTNET_ROOT: libexec
 
-    bash_completion.install "srcsdkscriptsregister-completions.bash" => "dotnet"
-    zsh_completion.install "srcsdkscriptsregister-completions.zsh" => "_dotnet"
-    man1.install Utils::Gzip.compress(*buildpath.glob("srcsdkdocumentationmanpagessdk*.1"))
-    man7.install Utils::Gzip.compress(*buildpath.glob("srcsdkdocumentationmanpagessdk*.7"))
+    bash_completion.install "src/sdk/scripts/register-completions.bash" => "dotnet"
+    zsh_completion.install "src/sdk/scripts/register-completions.zsh" => "_dotnet"
+    man1.install Utils::Gzip.compress(*buildpath.glob("src/sdk/documentation/manpages/sdk/*.1"))
+    man7.install Utils::Gzip.compress(*buildpath.glob("src/sdk/documentation/manpages/sdk/*.7"))
   end
 
   def caveats
@@ -122,7 +122,7 @@ class DotnetAT8 < Formula
   test do
     target_framework = "net#{version.major_minor}"
 
-    (testpath"test.cs").write <<~CSHARP
+    (testpath/"test.cs").write <<~CSHARP
       using System;
 
       namespace Homebrew
@@ -138,36 +138,36 @@ class DotnetAT8 < Formula
       }
     CSHARP
 
-    (testpath"test.csproj").write <<~XML
+    (testpath/"test.csproj").write <<~XML
       <Project Sdk="Microsoft.NET.Sdk">
         <PropertyGroup>
-          <OutputType>Exe<OutputType>
-          <TargetFrameworks>#{target_framework}<TargetFrameworks>
-          <PlatformTarget>AnyCPU<PlatformTarget>
-          <RootNamespace>Homebrew<RootNamespace>
-          <PackageId>Homebrew.Dotnet<PackageId>
-          <Title>Homebrew.Dotnet<Title>
-          <Product>$(AssemblyName)<Product>
-          <EnableDefaultCompileItems>false<EnableDefaultCompileItems>
-        <PropertyGroup>
+          <OutputType>Exe</OutputType>
+          <TargetFrameworks>#{target_framework}</TargetFrameworks>
+          <PlatformTarget>AnyCPU</PlatformTarget>
+          <RootNamespace>Homebrew</RootNamespace>
+          <PackageId>Homebrew.Dotnet</PackageId>
+          <Title>Homebrew.Dotnet</Title>
+          <Product>$(AssemblyName)</Product>
+          <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+        </PropertyGroup>
         <ItemGroup>
-          <Compile Include="test.cs" >
-        <ItemGroup>
-      <Project>
+          <Compile Include="test.cs" />
+        </ItemGroup>
+      </Project>
     XML
 
-    system bin"dotnet", "build", "--framework", target_framework, "--output", testpath, testpath"test.csproj"
-    output = shell_output("#{bin}dotnet run --framework #{target_framework} #{testpath}test.dll a b c")
-    assert_equal "#{testpath}test.dll,a,b,c\n", output
+    system bin/"dotnet", "build", "--framework", target_framework, "--output", testpath, testpath/"test.csproj"
+    output = shell_output("#{bin}/dotnet run --framework #{target_framework} #{testpath}/test.dll a b c")
+    assert_equal "#{testpath}/test.dll,a,b,c\n", output
 
     # Test to avoid uploading broken Intel Sonoma bottle which has stack overflow on restore.
-    # See https:github.comHomebrewhomebrew-coreissues197546
+    # See https://github.com/Homebrew/homebrew-core/issues/197546
     resource "sbom-tool" do
-      url "https:github.commicrosoftsbom-toolarchiverefstagsv3.0.1.tar.gz"
+      url "https://ghfast.top/https://github.com/microsoft/sbom-tool/archive/refs/tags/v3.0.1.tar.gz"
       sha256 "90085ab1f134f83d43767e46d6952be42a62dbb0f5368e293437620a96458867"
     end
     resource("sbom-tool").stage do
-      system bin"dotnet", "restore", "srcMicrosoft.Sbom.Tool", "--disable-build-servers", "--no-cache"
+      system bin/"dotnet", "restore", "src/Microsoft.Sbom.Tool", "--disable-build-servers", "--no-cache"
     end
   end
 end

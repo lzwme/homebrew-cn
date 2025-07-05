@@ -1,10 +1,10 @@
 class Gost < Formula
   desc "GO Simple Tunnel - a simple tunnel written in golang"
-  homepage "https:github.comginuerzhgost"
-  url "https:github.comginuerzhgostarchiverefstagsv2.12.0.tar.gz"
+  homepage "https://github.com/ginuerzh/gost"
+  url "https://ghfast.top/https://github.com/ginuerzh/gost/archive/refs/tags/v2.12.0.tar.gz"
   sha256 "ed575807b0490411670556d4471338f418c326bb1ffe25f52977735012851765"
   license "MIT"
-  head "https:github.comginuerzhgost.git", branch: "master"
+  head "https://github.com/ginuerzh/gost.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -22,19 +22,19 @@ class Gost < Formula
   conflicts_with "vulsio-gost", because: "both install `gost` binaries"
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), ".cmdgost"
+    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/gost"
     prefix.install "README_en.md"
   end
 
   test do
     bind_address = "127.0.0.1:#{free_port}"
     fork do
-      exec bin"gost", "-L", bind_address
+      exec bin/"gost", "-L", bind_address
     end
     sleep 2
-    output = shell_output("curl -I -x #{bind_address} https:github.com")
-    assert_match %r{HTTP\d+(?:\.\d+)? 200}, output
-    assert_match %r{Proxy-Agent: gost#{version}}i, output
-    assert_match(Server: GitHub.comi, output)
+    output = shell_output("curl -I -x #{bind_address} https://github.com")
+    assert_match %r{HTTP/\d+(?:\.\d+)? 200}, output
+    assert_match %r{Proxy-Agent: gost/#{version}}i, output
+    assert_match(/Server: GitHub.com/i, output)
   end
 end

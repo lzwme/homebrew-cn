@@ -1,10 +1,10 @@
 class Libmxml < Formula
   desc "Mini-XML library"
-  homepage "https:michaelrsweet.github.iomxml"
-  url "https:github.commichaelrsweetmxmlreleasesdownloadv4.0.4mxml-4.0.4.tar.gz"
+  homepage "https://michaelrsweet.github.io/mxml/"
+  url "https://ghfast.top/https://github.com/michaelrsweet/mxml/releases/download/v4.0.4/mxml-4.0.4.tar.gz"
   sha256 "c8d1728d6ccf71a862a1538bd5e132daa2181bb42fe14b078baa2ec1510c0150"
   license "Apache-2.0"
-  head "https:github.commichaelrsweetmxml.git", branch: "master"
+  head "https://github.com/michaelrsweet/mxml.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "82e19bced76d7f6c051d518d66986e09141eb0e469b96c1a07f846a8a76b38ae"
@@ -19,13 +19,13 @@ class Libmxml < Formula
   depends_on "pkgconf" => :test
 
   def install
-    system ".configure", "--enable-shared", *std_configure_args
+    system "./configure", "--enable-shared", *std_configure_args
     system "make"
     system "make", "install"
   end
 
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include <mxml.h>
 
       int main()
@@ -39,15 +39,15 @@ class Libmxml < Formula
       }
     C
 
-    (testpath"test.xml").write <<~XML
+    (testpath/"test.xml").write <<~XML
       <?xml version="1.0" encoding="UTF-8"?>
       <test>
-        <text>I'm an XML document.<text>
-      <test>
+        <text>I'm an XML document.</text>
+      </test>
     XML
 
     flags = shell_output("pkgconf --cflags --libs mxml4").chomp.split
     system ENV.cc, "test.c", "-o", "test", *flags
-    system ".test"
+    system "./test"
   end
 end

@@ -2,13 +2,13 @@ cask "font-departure-mono" do
   version "1.500"
   sha256 "bf3e48059aeef4617ec585bdea81dcc3491c576b3e7a472f52faf40e09ee5c3a"
 
-  url "https:github.comrektdeckarddeparture-monoreleasesdownloadv#{version}DepartureMono-#{version}.zip"
+  url "https://ghfast.top/https://github.com/rektdeckard/departure-mono/releases/download/v#{version}/DepartureMono-#{version}.zip"
   name "Departure Mono"
-  homepage "https:github.comrektdeckarddeparture-mono"
+  homepage "https://github.com/rektdeckard/departure-mono"
 
   no_autobump! because: :requires_manual_review
 
-  font "DepartureMono-#{version}DepartureMono-Regular.otf"
+  font "DepartureMono-#{version}/DepartureMono-Regular.otf"
 
   # No zap stanza required
 end

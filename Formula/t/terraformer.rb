@@ -1,10 +1,10 @@
 class Terraformer < Formula
   desc "CLI tool to generate terraform files from existing infrastructure"
-  homepage "https:github.comGoogleCloudPlatformterraformer"
-  url "https:github.comGoogleCloudPlatformterraformerarchiverefstags0.8.30.tar.gz"
+  homepage "https://github.com/GoogleCloudPlatform/terraformer"
+  url "https://ghfast.top/https://github.com/GoogleCloudPlatform/terraformer/archive/refs/tags/0.8.30.tar.gz"
   sha256 "9e4738fadae011e458fa6fee168f47166cd3a9f5d7a9378018116345b0d6b4e6"
   license "Apache-2.0"
-  head "https:github.comGoogleCloudPlatformterraformer.git", branch: "master"
+  head "https://github.com/GoogleCloudPlatform/terraformer.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "76897a56f9ca4e794bfda1657619693478002f030986002ae0488f375f24eaba"
@@ -20,7 +20,7 @@ class Terraformer < Formula
 
   def install
     ldflags = %w[-s -w]
-    # Work around failure: ld: BBL out of range -162045188 (max +-128MB)
+    # Work around failure: ld: B/BL out of range -162045188 (max +/-128MB)
     ldflags << "-extldflags=-ld_classic" if DevelopmentTools.clang_build_version == 1500 && Hardware::CPU.arm?
 
     system "go", "build", *std_go_args(ldflags:)
@@ -28,12 +28,12 @@ class Terraformer < Formula
 
   test do
     assert_match version.to_s,
-      shell_output("#{bin}terraformer version")
+      shell_output("#{bin}/terraformer version")
 
     assert_match "Available Commands",
-      shell_output("#{bin}terraformer -h")
+      shell_output("#{bin}/terraformer -h")
 
     assert_match "aaa",
-      shell_output("#{bin}terraformer import google --resources=gcs --projects=aaa 2>&1", 1)
+      shell_output("#{bin}/terraformer import google --resources=gcs --projects=aaa 2>&1", 1)
   end
 end

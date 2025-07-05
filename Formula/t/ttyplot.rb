@@ -1,7 +1,7 @@
 class Ttyplot < Formula
   desc "Realtime plotting utility for terminal with data input from stdin"
-  homepage "https:github.comtenox7ttyplot"
-  url "https:github.comtenox7ttyplotarchiverefstags1.7.1.tar.gz"
+  homepage "https://github.com/tenox7/ttyplot"
+  url "https://ghfast.top/https://github.com/tenox7/ttyplot/archive/refs/tags/1.7.1.tar.gz"
   sha256 "d1624eea52abec5538c9b19bae00f81642c2d2886cd7755988466b74424ce9ca"
   license "Apache-2.0"
 
@@ -30,6 +30,6 @@ class Ttyplot < Formula
 
   test do
     # `ttyplot` writes directly to the TTY, and doesn't stop even when stdin is closed.
-    assert_match "unit displayed beside vertical bar", shell_output("#{bin}ttyplot -h")
+    assert_match "unit displayed beside vertical bar", shell_output("#{bin}/ttyplot -h")
   end
 end

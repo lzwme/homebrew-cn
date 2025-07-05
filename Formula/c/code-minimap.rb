@@ -1,7 +1,7 @@
 class CodeMinimap < Formula
   desc "High performance code minimap generator"
-  homepage "https:github.comwfxrcode-minimap"
-  url "https:github.comwfxrcode-minimaparchiverefstagsv0.6.8.tar.gz"
+  homepage "https://github.com/wfxr/code-minimap"
+  url "https://ghfast.top/https://github.com/wfxr/code-minimap/archive/refs/tags/v0.6.8.tar.gz"
   sha256 "c68d4387bd0b86684a1b7c643d6281b79e018da318657254f2502ad032d52355"
   license any_of: ["Apache-2.0", "MIT"]
 
@@ -21,13 +21,13 @@ class CodeMinimap < Formula
   def install
     system "cargo", "install", *std_cargo_args
 
-    bash_completion.install "completionsbashcode-minimap.bash" => "code-minimap"
-    fish_completion.install "completionsfishcode-minimap.fish"
-    zsh_completion.install  "completionszsh_code-minimap"
+    bash_completion.install "completions/bash/code-minimap.bash" => "code-minimap"
+    fish_completion.install "completions/fish/code-minimap.fish"
+    zsh_completion.install  "completions/zsh/_code-minimap"
   end
 
   test do
-    (testpath"test.txt").write("hello world")
-    assert_equal "⠉⠉⠉⠉⠉⠁\n", shell_output("#{bin}code-minimap #{testpath}test.txt")
+    (testpath/"test.txt").write("hello world")
+    assert_equal "⠉⠉⠉⠉⠉⠁\n", shell_output("#{bin}/code-minimap #{testpath}/test.txt")
   end
 end

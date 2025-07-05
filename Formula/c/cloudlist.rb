@@ -1,10 +1,10 @@
 class Cloudlist < Formula
   desc "Tool for listing assets from multiple cloud providers"
-  homepage "https:github.comprojectdiscoverycloudlist"
-  url "https:github.comprojectdiscoverycloudlistarchiverefstagsv1.2.2.tar.gz"
+  homepage "https://github.com/projectdiscovery/cloudlist"
+  url "https://ghfast.top/https://github.com/projectdiscovery/cloudlist/archive/refs/tags/v1.2.2.tar.gz"
   sha256 "53efb4bff46b533fab0bbb0003c3fddb5874e64cde8beda977856af3e8fdb064"
   license "MIT"
-  head "https:github.comprojectdiscoverycloudlist.git", branch: "main"
+  head "https://github.com/projectdiscovery/cloudlist.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "f3eeeff6d7b3312e6bd66a20976b56b8d6ce218432349e0b5c033bef25917bb9"
@@ -18,13 +18,13 @@ class Cloudlist < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), ".cmdcloudlist"
+    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/cloudlist"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}cloudlist -version 2>&1")
+    assert_match version.to_s, shell_output("#{bin}/cloudlist -version 2>&1")
 
-    output = shell_output bin"cloudlist", 1
+    output = shell_output bin/"cloudlist", 1
     assert_match output, "invalid provider configuration file provided"
   end
 end

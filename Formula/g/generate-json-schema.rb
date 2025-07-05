@@ -1,10 +1,10 @@
 class GenerateJsonSchema < Formula
   desc "Generate a JSON Schema from Sample JSON"
-  homepage "https:github.comNijikokungenerate-schema"
-  url "https:registry.npmjs.orggenerate-schema-generate-schema-2.6.0.tgz"
+  homepage "https://github.com/Nijikokun/generate-schema"
+  url "https://registry.npmjs.org/generate-schema/-/generate-schema-2.6.0.tgz"
   sha256 "1ddbf91aab2d649108308d1de7af782d9270a086919edb706f48d0216d51374a"
   license "MIT"
-  head "https:github.comNijikokungenerate-schema.git", branch: "master"
+  head "https://github.com/Nijikokun/generate-schema.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -17,11 +17,11 @@ class GenerateJsonSchema < Formula
 
   def install
     system "npm", "install", *std_npm_args
-    bin.install_symlink Dir["#{libexec}bin*"]
+    bin.install_symlink Dir["#{libexec}/bin/*"]
   end
 
   test do
-    (testpath"test.json").write <<~JSON
+    (testpath/"test.json").write <<~JSON
       {
           "id": 2,
           "name": "An ice sculpture",
@@ -38,6 +38,6 @@ class GenerateJsonSchema < Formula
           }
       }
     JSON
-    assert_match "schema.org", shell_output("#{bin}generate-schema test.json", 1)
+    assert_match "schema.org", shell_output("#{bin}/generate-schema test.json", 1)
   end
 end

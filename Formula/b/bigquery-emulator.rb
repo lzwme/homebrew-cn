@@ -1,10 +1,10 @@
 class BigqueryEmulator < Formula
   desc "Emulate a GCP BigQuery server on your local machine"
-  homepage "https:github.comgoccybigquery-emulator"
-  url "https:github.comgoccybigquery-emulatorarchiverefstagsv0.6.6.tar.gz"
+  homepage "https://github.com/goccy/bigquery-emulator"
+  url "https://ghfast.top/https://github.com/goccy/bigquery-emulator/archive/refs/tags/v0.6.6.tar.gz"
   sha256 "a4055b66ad28f972b43b3fe0c7d54a08c57bf91bb4163a39204e152055d54440"
   license "MIT"
-  head "https:github.comgoccybigquery-emulator.git", branch: "main"
+  head "https://github.com/goccy/bigquery-emulator.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "09a97a4d0d2da38a73e8b6bea3fd5957a9e5c2fcf5902845082253969f0b77a8"
@@ -25,12 +25,12 @@ class BigqueryEmulator < Formula
     ENV["CGO_ENABLED"] = "1"
 
     ldflags = "-s -w -X main.version=#{version} -X main.revision=#{tap.user}"
-    system "go", "build", *std_go_args(ldflags:), ".cmdbigquery-emulator"
+    system "go", "build", *std_go_args(ldflags:), "./cmd/bigquery-emulator"
   end
 
   test do
-    # https:github.comgoccybigquery-emulatorblobmain_examplespythondata.yaml
-    (testpath"data.yaml").write <<~YAML
+    # https://github.com/goccy/bigquery-emulator/blob/main/_examples/python/data.yaml
+    (testpath/"data.yaml").write <<~YAML
       projects:
       - id: test
         datasets:
@@ -55,18 +55,18 @@ class BigqueryEmulator < Formula
 
     port = free_port
     grpc_port = free_port
-    pid = spawn bin"bigquery-emulator", "--project=test",
-                                         "--data-from-yaml=.data.yaml",
+    pid = spawn bin/"bigquery-emulator", "--project=test",
+                                         "--data-from-yaml=./data.yaml",
                                          "--port=#{port}",
                                          "--grpc-port=#{grpc_port}"
     sleep 5
 
     query = '{"query": "SELECT name FROM dataset1.table_a WHERE id = 2"}'
-    query_url = "http:localhost:#{port}bigqueryv2projectstestqueries"
+    query_url = "http://localhost:#{port}/bigquery/v2/projects/test/queries"
     response = JSON.parse(shell_output("curl -s -X POST -d '#{query}' #{query_url}"))
     assert_equal [{ "f" => [{ "v" => "bob" }] }], response["rows"]
 
-    assert_match "version: #{version} (Homebrew)", shell_output("#{bin}bigquery-emulator --version")
+    assert_match "version: #{version} (Homebrew)", shell_output("#{bin}/bigquery-emulator --version")
   ensure
     Process.kill "TERM", pid
     Process.wait pid

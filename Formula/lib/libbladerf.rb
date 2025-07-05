@@ -1,12 +1,12 @@
 class Libbladerf < Formula
   desc "USB 3.0 Superspeed Software Defined Radio Source"
-  homepage "https:nuand.com"
-  url "https:github.comNuandbladeRF.git",
+  homepage "https://nuand.com/"
+  url "https://github.com/Nuand/bladeRF.git",
       tag:      "2023.02",
       revision: "41ef63460956e833c9b321252245257ab3946055"
   license all_of: ["GPL-2.0-or-later", "LGPL-2.1-or-later", "MIT"]
   revision 1
-  head "https:github.comNuandbladeRF.git", branch: "master"
+  head "https://github.com/Nuand/bladeRF.git", branch: "master"
 
   # Upstream uses GitHub releases to indicate that a version is released
   # and they may retag a stable version before release, so the `GithubLatest`
@@ -39,13 +39,13 @@ class Libbladerf < Formula
   uses_from_macos "libedit"
 
   def install
-    ENV.prepend "CFLAGS", "-I#{MacOS.sdk_path}usrincludemalloc" if OS.mac?
-    system "cmake", "-S", "host", "-B", "build", "-DUDEV_RULES_PATH=#{lib}udevrules.d", *std_cmake_args
+    ENV.prepend "CFLAGS", "-I#{MacOS.sdk_path}/usr/include/malloc" if OS.mac?
+    system "cmake", "-S", "host", "-B", "build", "-DUDEV_RULES_PATH=#{lib}/udev/rules.d", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end
 
   test do
-    system bin"bladeRF-cli", "--version"
+    system bin/"bladeRF-cli", "--version"
   end
 end

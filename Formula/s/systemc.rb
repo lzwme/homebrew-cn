@@ -1,13 +1,13 @@
 class Systemc < Formula
   desc "Core SystemC language and examples"
-  homepage "https:systemc.orgoverviewsystemc"
-  url "https:github.comaccellera-officialsystemcarchiverefstags3.0.1.tar.gz"
+  homepage "https://systemc.org/overview/systemc/"
+  url "https://ghfast.top/https://github.com/accellera-official/systemc/archive/refs/tags/3.0.1.tar.gz"
   sha256 "d07765d0d2ffd6c01767880d0c6aaf53cd9487975f898c593ffffd713258fcbb"
   license "Apache-2.0"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -28,21 +28,21 @@ class Systemc < Formula
   depends_on "libtool" => :build
 
   # Workaround "No rule to make target 'DEVELOPMENT.md', needed by 'all-am'":
-  # Ref: https:forums.accellera.orgtopic8068-no-rule-to-make-target-developmentmd-needed-by-all-am
+  # Ref: https://forums.accellera.org/topic/8068-no-rule-to-make-target-developmentmd-needed-by-all-am/
   patch do
-    url "https:sources.debian.orgdatamainssystemc3.0.1-1debianpatchesdoc-targets.patch"
+    url "https://sources.debian.org/data/main/s/systemc/3.0.1-1/debian/patches/doc-targets.patch"
     sha256 "3c4c79453599fed2a0082b9564e6a2dd845615afcc173d0e235933b2d2b18bf4"
   end
 
   def install
     ENV.append "CXXFLAGS", "-std=gnu++17"
     system "autoreconf", "--force", "--install", "--verbose"
-    system ".configure", "--with-unix-layout", *std_configure_args
+    system "./configure", "--with-unix-layout", *std_configure_args
     system "make", "install"
   end
 
   test do
-    (testpath"test.cpp").write <<~CPP
+    (testpath/"test.cpp").write <<~CPP
       #include "systemc.h"
 
       int sc_main(int argc, char *argv[]) {
@@ -50,6 +50,6 @@ class Systemc < Formula
       }
     CPP
     system ENV.cxx, "-std=gnu++17", "-L#{lib}", "-lsystemc", "test.cpp"
-    system ".a.out"
+    system "./a.out"
   end
 end

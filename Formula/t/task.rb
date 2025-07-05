@@ -1,14 +1,14 @@
 class Task < Formula
   desc "Feature-rich console based todo list manager"
-  homepage "https:taskwarrior.org"
-  url "https:github.comGothenburgBitFactorytaskwarriorreleasesdownloadv3.4.1task-3.4.1.tar.gz"
+  homepage "https://taskwarrior.org/"
+  url "https://ghfast.top/https://github.com/GothenburgBitFactory/taskwarrior/releases/download/v3.4.1/task-3.4.1.tar.gz"
   sha256 "23eb60f73e42f16111cc3912b44ee12be6768860a2db2a9c6a47f8ac4786bac3"
   license "MIT"
-  head "https:github.comGothenburgBitFactorytaskwarrior.git", branch: "develop"
+  head "https://github.com/GothenburgBitFactory/taskwarrior.git", branch: "develop"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -37,14 +37,14 @@ class Task < Formula
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
-    bash_completion.install "scriptsbashtask.sh"
-    zsh_completion.install "scriptszsh_task"
-    fish_completion.install "scriptsfishtask.fish"
+    bash_completion.install "scripts/bash/task.sh"
+    zsh_completion.install "scripts/zsh/_task"
+    fish_completion.install "scripts/fish/task.fish"
   end
 
   test do
-    touch testpath".taskrc"
-    system bin"task", "add", "Write", "a", "test"
-    assert_match "Write a test", shell_output("#{bin}task list")
+    touch testpath/".taskrc"
+    system bin/"task", "add", "Write", "a", "test"
+    assert_match "Write a test", shell_output("#{bin}/task list")
   end
 end

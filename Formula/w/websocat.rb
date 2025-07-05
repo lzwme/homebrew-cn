@@ -1,13 +1,13 @@
 class Websocat < Formula
   desc "Command-line client for WebSockets"
-  homepage "https:github.comviwebsocat"
-  url "https:github.comviwebsocatarchiverefstagsv1.14.0.tar.gz"
+  homepage "https://github.com/vi/websocat"
+  url "https://ghfast.top/https://github.com/vi/websocat/archive/refs/tags/v1.14.0.tar.gz"
   sha256 "919ee83c961074c176a129874a77c02889401f3548c2536a84c4427f97cfeb26"
   license "MIT"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -29,7 +29,7 @@ class Websocat < Formula
 
   # bump traitobject to build against rust 1.87
   patch do
-    url "https:github.comviwebsocatcommitd4455623e777231d69b029d69d7a17c0de2bafe7.patch?full_index=1"
+    url "https://github.com/vi/websocat/commit/d4455623e777231d69b029d69d7a17c0de2bafe7.patch?full_index=1"
     sha256 "505f8fa7311ef11c60f9e665aa1479fbdf4b666e9eae01db56567a3f25866c05"
   end
 
@@ -38,6 +38,6 @@ class Websocat < Formula
   end
 
   test do
-    system bin"websocat", "-t", "literal:qwe", "assert:qwe"
+    system bin/"websocat", "-t", "literal:qwe", "assert:qwe"
   end
 end

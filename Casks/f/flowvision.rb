@@ -2,11 +2,11 @@ cask "flowvision" do
   version "1.6.5"
   sha256 "54f2b72900a8d240ccc2486e1d61d8eac3af705c32d83e157407c8f9425d4039"
 
-  url "https:github.comnetdcyFlowVisionreleasesdownload#{version}FlowVision.#{version}.zip",
-      verified: "github.comnetdcyFlowVision"
+  url "https://ghfast.top/https://github.com/netdcy/FlowVision/releases/download/#{version}/FlowVision.#{version}.zip",
+      verified: "github.com/netdcy/FlowVision/"
   name "FlowVision"
   desc "Waterfall-style image viewer"
-  homepage "https:flowvision.app"
+  homepage "https://flowvision.app/"
 
   livecheck do
     url :url
@@ -20,8 +20,8 @@ cask "flowvision" do
   app "FlowVision.app"
 
   zap trash: [
-    "~LibraryApplication SupportFlowVision",
-    "~LibraryPreferencesnetdcy.FlowVision.plist",
-    "~LibrarySaved Application Statenetdcy.FlowVision.savedState",
+    "~/Library/Application Support/FlowVision",
+    "~/Library/Preferences/netdcy.FlowVision.plist",
+    "~/Library/Saved Application State/netdcy.FlowVision.savedState",
   ]
 end

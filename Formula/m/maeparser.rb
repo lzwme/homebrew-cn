@@ -1,10 +1,10 @@
 class Maeparser < Formula
   desc "Maestro file parser"
-  homepage "https:github.comschrodingermaeparser"
-  url "https:github.comschrodingermaeparserarchiverefstagsv1.3.3.tar.gz"
+  homepage "https://github.com/schrodinger/maeparser"
+  url "https://ghfast.top/https://github.com/schrodinger/maeparser/archive/refs/tags/v1.3.3.tar.gz"
   sha256 "78e7571a779ea4952e752ecef57c62fb26463947e29ef7f4b31b11988d88ca07"
   license "MIT"
-  head "https:github.comschrodingermaeparser.git", branch: "master"
+  head "https://github.com/schrodinger/maeparser.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "fbcc6b87403bf3ee4ceae13512659743cc3393caececa0f7837a6848e60237b3"
@@ -23,15 +23,15 @@ class Maeparser < Formula
     system "cmake", "-S", ".", "-B", "build", "-DMAEPARSER_BUILD_TESTS=OFF", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
-    pkgshare.install "testMainTestSuite.cpp", "testUsageDemo.cpp", "testtest2.maegz"
+    pkgshare.install "test/MainTestSuite.cpp", "test/UsageDemo.cpp", "test/test2.maegz"
   end
 
   test do
     cp pkgshare.children, testpath
     system ENV.cxx, "-std=c++11", "MainTestSuite.cpp", "UsageDemo.cpp", "-o", "test",
                     "-DTEST_SAMPLES_PATH=\"#{testpath}\"", "-DBOOST_ALL_DYN_LINK",
-                    "-I#{include}maeparser", "-L#{lib}", "-lmaeparser",
+                    "-I#{include}/maeparser", "-L#{lib}", "-lmaeparser",
                     "-L#{Formula["boost"].opt_lib}", "-lboost_filesystem", "-lboost_unit_test_framework"
-    system ".test"
+    system "./test"
   end
 end

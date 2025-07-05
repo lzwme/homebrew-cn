@@ -1,10 +1,10 @@
 class Falcoctl < Formula
   desc "CLI tool for working with Falco and its ecosystem components"
-  homepage "https:github.comfalcosecurityfalcoctl"
-  url "https:github.comfalcosecurityfalcoctlarchiverefstagsv0.11.2.tar.gz"
+  homepage "https://github.com/falcosecurity/falcoctl"
+  url "https://ghfast.top/https://github.com/falcosecurity/falcoctl/archive/refs/tags/v0.11.2.tar.gz"
   sha256 "078f256a7f97beb74a2936a39762185f573fef7f3daf12e390eb5882a45347d6"
   license "Apache-2.0"
-  head "https:github.comfalcosecurityfalcoctl.git", branch: "main"
+  head "https://github.com/falcosecurity/falcoctl.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "4895aa77c0f03fe73f34d08338aeb59458a5d8e554430f3f52917f1d0e6ceef7"
@@ -19,7 +19,7 @@ class Falcoctl < Formula
   depends_on "go" => :build
 
   def install
-    pkg = "github.comfalcosecurityfalcoctlcmdversion"
+    pkg = "github.com/falcosecurity/falcoctl/cmd/version"
     ldflags = %W[
       -s -w
       -X #{pkg}.buildDate=#{time.iso8601}
@@ -29,14 +29,14 @@ class Falcoctl < Formula
 
     system "go", "build", *std_go_args(ldflags:), "."
 
-    generate_completions_from_executable(bin"falcoctl", "completion")
+    generate_completions_from_executable(bin/"falcoctl", "completion")
   end
 
   test do
-    system bin"falcoctl", "tls", "install"
-    assert_path_exists testpath"ca.crt"
-    assert_path_exists testpath"client.crt"
+    system bin/"falcoctl", "tls", "install"
+    assert_path_exists testpath/"ca.crt"
+    assert_path_exists testpath/"client.crt"
 
-    assert_match version.to_s, shell_output(bin"falcoctl version")
+    assert_match version.to_s, shell_output(bin/"falcoctl version")
   end
 end

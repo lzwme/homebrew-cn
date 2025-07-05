@@ -1,10 +1,10 @@
 class Kustomizer < Formula
   desc "Package manager for distributing Kubernetes configuration as OCI artifacts"
-  homepage "https:github.comstefanprodankustomizer"
-  url "https:github.comstefanprodankustomizerarchiverefstagsv2.2.1.tar.gz"
+  homepage "https://github.com/stefanprodan/kustomizer"
+  url "https://ghfast.top/https://github.com/stefanprodan/kustomizer/archive/refs/tags/v2.2.1.tar.gz"
   sha256 "bba48e2eed5b84111c39b34d9892ffc9f0575b6f6470d50f832f47ff6417bf03"
   license "Apache-2.0"
-  head "https:github.comstefanprodankustomizer.git", branch: "main"
+  head "https://github.com/stefanprodan/kustomizer.git", branch: "main"
 
   no_autobump! because: :requires_manual_review
 
@@ -26,16 +26,16 @@ class Kustomizer < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w -X main.VERSION=#{version}"), ".cmdkustomizer"
+    system "go", "build", *std_go_args(ldflags: "-s -w -X main.VERSION=#{version}"), "./cmd/kustomizer"
 
-    generate_completions_from_executable(bin"kustomizer", "completion")
+    generate_completions_from_executable(bin/"kustomizer", "completion")
   end
 
   test do
-    system bin"kustomizer", "config", "init"
-    assert_match "apiVersion: kustomizer.devv1", (testpath".kustomizerconfig").read
+    system bin/"kustomizer", "config", "init"
+    assert_match "apiVersion: kustomizer.dev/v1", (testpath/".kustomizer/config").read
 
-    output = shell_output("#{bin}kustomizer list artifact 2>&1", 1)
-    assert_match "you must specify an artifact repository e.g. 'oci:docker.iouserrepo'", output
+    output = shell_output("#{bin}/kustomizer list artifact 2>&1", 1)
+    assert_match "you must specify an artifact repository e.g. 'oci://docker.io/user/repo'", output
   end
 end

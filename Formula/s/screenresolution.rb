@@ -1,10 +1,10 @@
 class Screenresolution < Formula
   desc "Get, set, and list display resolution"
-  homepage "https:github.comjhfordscreenresolution"
-  url "https:github.comjhfordscreenresolutionarchiverefstagsv1.6.tar.gz"
+  homepage "https://github.com/jhford/screenresolution"
+  url "https://ghfast.top/https://github.com/jhford/screenresolution/archive/refs/tags/v1.6.tar.gz"
   sha256 "d3761663eaf585b014391a30a77c9494a6404e78e8a4863383e12c59b0f539eb"
   license "GPL-2.0-only"
-  head "https:github.comjhfordscreenresolution.git", branch: "master"
+  head "https://github.com/jhford/screenresolution.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -33,6 +33,6 @@ class Screenresolution < Formula
   end
 
   test do
-    system bin"screenresolution", "get"
+    system bin/"screenresolution", "get"
   end
 end

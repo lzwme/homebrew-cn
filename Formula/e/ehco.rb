@@ -1,14 +1,14 @@
 class Ehco < Formula
   desc "Network relay tool and a typo :)"
-  homepage "https:github.comEhco1996ehco"
-  url "https:github.comEhco1996ehcoarchiverefstagsv1.1.5.tar.gz"
+  homepage "https://github.com/Ehco1996/ehco"
+  url "https://ghfast.top/https://github.com/Ehco1996/ehco/archive/refs/tags/v1.1.5.tar.gz"
   sha256 "d6883b1ecdf4551f0b8fcbc8863089de0c5971944d0d2fa778835fd2ec76cfe8"
   license "GPL-3.0-only"
-  head "https:github.comEhco1996ehco.git", branch: "master"
+  head "https://github.com/Ehco1996/ehco.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -27,18 +27,18 @@ class Ehco < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.comEhco1996ehcointernalconstant.GitBranch=master
-      -X github.comEhco1996ehcointernalconstant.GitRevision=#{tap.user}
-      -X github.comEhco1996ehcointernalconstant.BuildTime=#{time.iso8601}
+      -X github.com/Ehco1996/ehco/internal/constant.GitBranch=master
+      -X github.com/Ehco1996/ehco/internal/constant.GitRevision=#{tap.user}
+      -X github.com/Ehco1996/ehco/internal/constant.BuildTime=#{time.iso8601}
     ]
-    # -tags added here are via upstream's MakefileCI builds
+    # -tags added here are via upstream's Makefile/CI builds
     tags = "nofibrechannel,nomountstats"
 
-    system "go", "build", *std_go_args(ldflags:, tags:), "cmdehcomain.go"
+    system "go", "build", *std_go_args(ldflags:, tags:), "cmd/ehco/main.go"
   end
 
   test do
-    version_info = shell_output("#{bin}ehco -v 2>&1")
+    version_info = shell_output("#{bin}/ehco -v 2>&1")
     assert_match "Version=#{version}", version_info
 
     # run tcp server
@@ -53,7 +53,7 @@ class Ehco < Formula
 
     # run ehco server
     listen_port = free_port
-    ehco_pid = spawn bin"ehco", "-l", "localhost:#{listen_port}", "-r", "localhost:#{server_port}"
+    ehco_pid = spawn bin/"ehco", "-l", "localhost:#{listen_port}", "-r", "localhost:#{server_port}"
     sleep 1
 
     TCPSocket.open("localhost", listen_port) do |sock|

@@ -1,14 +1,14 @@
 class Envoy < Formula
-  desc "Cloud-native high-performance edgemiddleservice proxy"
-  homepage "https:www.envoyproxy.ioindex.html"
-  url "https:github.comenvoyproxyenvoyarchiverefstagsv1.33.2.tar.gz"
+  desc "Cloud-native high-performance edge/middle/service proxy"
+  homepage "https://www.envoyproxy.io/index.html"
+  url "https://ghfast.top/https://github.com/envoyproxy/envoy/archive/refs/tags/v1.33.2.tar.gz"
   sha256 "e54d444a8d4197c1dca56e7f6e7bc3b7d83c1695197f5699f62e250ecbece169"
   license "Apache-2.0"
-  head "https:github.comenvoyproxyenvoy.git", branch: "main"
+  head "https://github.com/envoyproxy/envoy.git", branch: "main"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -26,7 +26,7 @@ class Envoy < Formula
   depends_on "libtool" => :build
   depends_on "ninja" => :build
   # Starting with 1.21, envoy requires a full Xcode installation, not just
-  # command-line tools. See envoyproxyenvoy#16482
+  # command-line tools. See envoyproxy/envoy#16482
   depends_on xcode: :build
   depends_on macos: :catalina
 
@@ -41,12 +41,12 @@ class Envoy < Formula
     depends_on "lld" => :build
   end
 
-  # https:github.comenvoyproxyenvoytreemainbazel#supported-compiler-versions
-  # GCCld.gold had some issues while building envoy 1.29 so use clanglld instead
+  # https://github.com/envoyproxy/envoy/tree/main/bazel#supported-compiler-versions
+  # GCC/ld.gold had some issues while building envoy 1.29 so use clang/lld instead
   fails_with :gcc
 
   def install
-    env_path = "#{HOMEBREW_PREFIX}bin:usrbin:bin"
+    env_path = "#{HOMEBREW_PREFIX}/bin:/usr/bin:/bin"
     args = %W[
       --compilation_mode=opt
       --curses=no
@@ -57,43 +57,43 @@ class Envoy < Formula
     ]
 
     if OS.linux?
-      # GCCld.gold had some issues while building envoy so use clanglld instead
+      # GCC/ld.gold had some issues while building envoy so use clang/lld instead
       args << "--config=clang"
 
       # clang 18 introduced stricter thread safety analysis. Remove once release that supports clang 18
-      # https:github.comenvoyproxyenvoyissues37911
+      # https://github.com/envoyproxy/envoy/issues/37911
       args << "--copt=-Wno-thread-safety-reference-return"
 
       # Workaround to build with Clang 19 until envoy uses newer tcmalloc
-      # https:github.comgoogletcmalloccommita37da0243b83bd2a7b1b53c187efd4fbf46e6e38
+      # https://github.com/google/tcmalloc/commit/a37da0243b83bd2a7b1b53c187efd4fbf46e6e38
       args << "--copt=-Wno-unused-but-set-variable"
 
       # Workaround to build with Clang 19 until envoy uses newer grpc
-      # https:github.comgrpcgrpccommite55f69cedd0ef7344e0bcb64b5ec9205e6aa4f04
+      # https://github.com/grpc/grpc/commit/e55f69cedd0ef7344e0bcb64b5ec9205e6aa4f04
       args << "--copt=-Wno-missing-template-arg-list-after-template-kw"
     end
 
     # Write the current version SOURCE_VERSION.
-    system "python3", "toolsgithubwrite_current_source_version.py", "--skip_error_in_git"
+    system "python3", "tools/github/write_current_source_version.py", "--skip_error_in_git"
 
-    system Formula["bazelisk"].opt_bin"bazelisk", "build", *args, "sourceexe:envoy-static.stripped"
-    bin.install "bazel-binsourceexeenvoy-static.stripped" => "envoy"
+    system Formula["bazelisk"].opt_bin/"bazelisk", "build", *args, "//source/exe:envoy-static.stripped"
+    bin.install "bazel-bin/source/exe/envoy-static.stripped" => "envoy"
     pkgshare.install "configs"
   end
 
   test do
     port = free_port
 
-    cp pkgshare"configsenvoyproxy_io_proxy.yaml", testpath"envoy.yaml"
+    cp pkgshare/"configs/envoyproxy_io_proxy.yaml", testpath/"envoy.yaml"
     inreplace "envoy.yaml" do |s|
       s.gsub! "port_value: 9901", "port_value: #{port}"
       s.gsub! "port_value: 10000", "port_value: #{free_port}"
     end
 
     fork do
-      exec bin"envoy", "-c", "envoy.yaml"
+      exec bin/"envoy", "-c", "envoy.yaml"
     end
     sleep 10
-    assert_match "HEALTHY", shell_output("curl -s 127.0.0.1:#{port}clusters?format=json")
+    assert_match "HEALTHY", shell_output("curl -s 127.0.0.1:#{port}/clusters?format=json")
   end
 end

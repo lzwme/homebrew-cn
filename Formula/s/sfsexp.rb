@@ -1,7 +1,7 @@
 class Sfsexp < Formula
   desc "Small Fast S-Expression Library"
-  homepage "https:github.commjsottilesfsexp"
-  url "https:github.commjsottilesfsexpreleasesdownloadv1.4.1sfsexp-1.4.1.tar.gz"
+  homepage "https://github.com/mjsottile/sfsexp"
+  url "https://ghfast.top/https://github.com/mjsottile/sfsexp/releases/download/v1.4.1/sfsexp-1.4.1.tar.gz"
   sha256 "15e9a18bb0d5c3c5093444a9003471c2d25ab611b4219ef1064f598668723681"
   license "LGPL-2.1-or-later"
 
@@ -23,13 +23,13 @@ class Sfsexp < Formula
   uses_from_macos "m4" => :build
 
   def install
-    system ".configure", "--disable-silent-rules", *std_configure_args
+    system "./configure", "--disable-silent-rules", *std_configure_args
     system "make"
     system "make", "install"
   end
 
   test do
-    (testpath"test.c").write <<~'EOS'
+    (testpath/"test.c").write <<~'EOS'
       #include <stdio.h>
       #include <string.h>
       #include <sexp.h>
@@ -52,13 +52,13 @@ class Sfsexp < Formula
           return 1;
         }
 
-         Success if we got here
+        // Success if we got here
         destroy_sexp(sx);
         printf("S-expression test passed\n");
         return 0;
       }
     EOS
-    system ENV.cc, "-I#{include}sfsexp", "-L#{lib}", "-o", "test", "test.c", "-lsexp"
-    system ".test"
+    system ENV.cc, "-I#{include}/sfsexp", "-L#{lib}", "-o", "test", "test.c", "-lsexp"
+    system "./test"
   end
 end

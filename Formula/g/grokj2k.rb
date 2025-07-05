@@ -1,16 +1,16 @@
 class Grokj2k < Formula
   desc "JPEG 2000 Library"
-  homepage "https:github.comGrokImageCompressiongrok"
+  homepage "https://github.com/GrokImageCompression/grok"
   # pull from git tag to get submodules
-  url "https:github.comGrokImageCompressiongrok.git",
+  url "https://github.com/GrokImageCompression/grok.git",
       tag:      "v15.1.0",
       revision: "8d516f767a9d511372f0a25a15edeff7f0908b80"
   license "AGPL-3.0-or-later"
-  head "https:github.comGrokImageCompressiongrok.git", branch: "master"
+  head "https://github.com/GrokImageCompression/grok.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -47,7 +47,7 @@ class Grokj2k < Formula
     cause "Requires C++20"
   end
 
-  # https:github.comGrokImageCompressiongrokblobmasterINSTALL.md#compilers
+  # https://github.com/GrokImageCompression/grok/blob/master/INSTALL.md#compilers
   fails_with :gcc do
     version "9"
     cause "GNU compiler version must be at least 10.0"
@@ -57,10 +57,10 @@ class Grokj2k < Formula
     ENV.llvm_clang if OS.mac? && (DevelopmentTools.clang_build_version <= 1200)
 
     # Fix: ExifTool Perl module not found
-    ENV.prepend_path "PERL5LIB", Formula["exiftool"].opt_libexec"libperl5"
+    ENV.prepend_path "PERL5LIB", Formula["exiftool"].opt_libexec/"lib/perl5"
 
     # Ensure we use Homebrew libraries
-    %w[liblcms2 libpng libtiff libz].each { |l| rm_r(buildpath"thirdparty"l) }
+    %w[liblcms2 libpng libtiff libz].each { |l| rm_r(buildpath/"thirdparty"/l) }
 
     perl = DevelopmentTools.locate("perl")
     perl_archlib = Utils.safe_popen_read(perl.to_s, "-MConfig", "-e", "print $Config{archlib}")
@@ -78,10 +78,10 @@ class Grokj2k < Formula
       ENV.append "CXXFLAGS", "-Wno-reserved-user-defined-literal" if MacOS.version <= :catalina
       # Help CMake find Perl libraries, which are needed to enable ExifTool feature.
       # Without this, CMake outputs: Could NOT find PerlLibs (missing: PERL_INCLUDE_PATH)
-      args << "-DPERL_INCLUDE_PATH=#{MacOS.sdk_path_if_needed}#{perl_archlib}CORE"
+      args << "-DPERL_INCLUDE_PATH=#{MacOS.sdk_path_if_needed}/#{perl_archlib}/CORE"
     else
       # Fix linkage error due to RPATH missing directory with libperl.so
-      ENV.append "LDFLAGS", "-Wl,-rpath,#{perl_archlib}CORE"
+      ENV.append "LDFLAGS", "-Wl,-rpath,#{perl_archlib}/CORE"
     end
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
@@ -94,12 +94,12 @@ class Grokj2k < Formula
 
   test do
     resource "homebrew-test_image" do
-      url "https:github.comGrokImageCompressiongrok-test-dataraw43ce4cbinputnonregressionbasn6a08.tif"
+      url "https://github.com/GrokImageCompression/grok-test-data/raw/43ce4cb/input/nonregression/basn6a08.tif"
       sha256 "d0b9715d79b10b088333350855f9721e3557b38465b1354b0fa67f230f5679f3"
     end
 
-    (testpath"test.c").write <<~C
-      #include <grokgrok.h>
+    (testpath/"test.c").write <<~C
+      #include <grok/grok.h>
 
       int main () {
         grk_image_comp cmptparm;
@@ -113,14 +113,14 @@ class Grokj2k < Formula
       }
     C
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lgrokj2k", "-o", "test"
-    system ".test"
+    system "./test"
 
     # Test Exif metadata retrieval
     testpath.install resource("homebrew-test_image")
-    system bin"grk_compress", "--in-file", "basn6a08.tif",
+    system bin/"grk_compress", "--in-file", "basn6a08.tif",
                                "--out-file", "test.jp2", "--out-fmt", "jp2",
                                "--transfer-exif-tags"
-    output = shell_output("#{Formula["exiftool"].bin}exiftool test.jp2")
+    output = shell_output("#{Formula["exiftool"].bin}/exiftool test.jp2")
 
     expected_fields = [
       "Exif Byte Order                 : Big-endian (Motorola, MM)",

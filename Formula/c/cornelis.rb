@@ -1,10 +1,10 @@
 class Cornelis < Formula
   desc "Neovim support for Agda"
-  homepage "https:github.comagdacornelis"
-  url "https:github.comagdacornelisarchiverefstagsv2.7.1.tar.gz"
+  homepage "https://github.com/agda/cornelis"
+  url "https://ghfast.top/https://github.com/agda/cornelis/archive/refs/tags/v2.7.1.tar.gz"
   sha256 "b75d20ecf50b7a87108d9a9e343c863c2cf6fbf51323954827738ddc0081eff3"
   license "BSD-3-Clause"
-  head "https:github.comagdacornelis.git", branch: "master"
+  head "https://github.com/agda/cornelis.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -34,7 +34,7 @@ class Cornelis < Formula
 
   test do
     expected = "\x94\x00\x01\xC4\x15nvim_create_namespace\x91\xC4\bcornelis"
-    actual = pipe_output("#{bin}cornelis NAME", nil, 0)
+    actual = pipe_output("#{bin}/cornelis NAME", nil, 0)
     assert_equal expected, actual
   end
 end

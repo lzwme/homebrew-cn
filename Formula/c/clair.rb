@@ -1,14 +1,14 @@
 class Clair < Formula
   desc "Vulnerability Static Analysis for Containers"
-  homepage "https:github.comquayclair"
-  url "https:github.comquayclairarchiverefstagsv4.8.0.tar.gz"
+  homepage "https://github.com/quay/clair"
+  url "https://ghfast.top/https://github.com/quay/clair/archive/refs/tags/v4.8.0.tar.gz"
   sha256 "354cfddb1e4594fd5982fdf55096f8b0e19649bcc5024156170a409aabcf3081"
   license "Apache-2.0"
-  head "https:github.comquayclair.git", branch: "main"
+  head "https://github.com/quay/clair.git", branch: "main"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -24,14 +24,14 @@ class Clair < Formula
 
   def install
     ldflags = "-s -w -X main.Version=#{version}"
-    system "go", "build", *std_go_args(ldflags:), ".cmdclair"
-    (etc"clair").install "config.yaml.sample"
+    system "go", "build", *std_go_args(ldflags:), "./cmd/clair"
+    (etc/"clair").install "config.yaml.sample"
   end
 
   test do
     http_port = free_port
     db_port = free_port
-    (testpath"config.yaml").write <<~YAML
+    (testpath/"config.yaml").write <<~YAML
       ---
       introspection_addr: "localhost:#{free_port}"
       http_listen_addr: "localhost:#{http_port}"
@@ -46,7 +46,7 @@ class Clair < Formula
         connstring: host=localhost port=#{db_port} user=clair dbname=clair sslmode=disable
     YAML
 
-    output = shell_output("#{bin}clair -conf #{testpath}config.yaml -mode combo 2>&1", 1)
+    output = shell_output("#{bin}/clair -conf #{testpath}/config.yaml -mode combo 2>&1", 1)
     # requires a Postgres database
     assert_match "service initialization failed: failed to initialize indexer: failed to create ConnPool", output
   end

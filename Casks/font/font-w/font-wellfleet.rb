@@ -2,10 +2,10 @@ cask "font-wellfleet" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefontsrawmainoflwellfleetWellfleet-Regular.ttf",
-      verified: "github.comgooglefonts"
+  url "https://github.com/google/fonts/raw/main/ofl/wellfleet/Wellfleet-Regular.ttf",
+      verified: "github.com/google/fonts/"
   name "Wellfleet"
-  homepage "https:fonts.google.comspecimenWellfleet"
+  homepage "https://fonts.google.com/specimen/Wellfleet"
 
   font "Wellfleet-Regular.ttf"
 

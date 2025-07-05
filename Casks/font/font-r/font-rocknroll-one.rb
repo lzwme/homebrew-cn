@@ -2,10 +2,10 @@ cask "font-rocknroll-one" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefontsrawmainoflrocknrolloneRocknRollOne-Regular.ttf",
-      verified: "github.comgooglefonts"
+  url "https://github.com/google/fonts/raw/main/ofl/rocknrollone/RocknRollOne-Regular.ttf",
+      verified: "github.com/google/fonts/"
   name "RocknRoll One"
-  homepage "https:fonts.google.comspecimenRocknRoll+One"
+  homepage "https://fonts.google.com/specimen/RocknRoll+One"
 
   font "RocknRollOne-Regular.ttf"
 

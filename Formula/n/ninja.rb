@@ -1,14 +1,14 @@
 class Ninja < Formula
   desc "Small build system for use with gyp or CMake"
-  homepage "https:ninja-build.org"
-  url "https:github.comninja-buildninjaarchiverefstagsv1.13.0.tar.gz"
+  homepage "https://ninja-build.org/"
+  url "https://ghfast.top/https://github.com/ninja-build/ninja/archive/refs/tags/v1.13.0.tar.gz"
   sha256 "f08641d00099a9e40d44ec0146f841c472ae58b7e6dd517bee3945cfd923cedf"
   license "Apache-2.0"
-  head "https:github.comninja-buildninja.git", branch: "master"
+  head "https://github.com/ninja-build/ninja.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -27,14 +27,14 @@ class Ninja < Formula
     system "python3", "configure.py", "--bootstrap", "--verbose", "--with-python=python3"
 
     bin.install "ninja"
-    bash_completion.install "miscbash-completion" => "ninja"
-    zsh_completion.install "misczsh-completion" => "_ninja"
-    doc.install "docmanual.asciidoc"
-    (share"vimvimfilessyntax").install "miscninja.vim"
+    bash_completion.install "misc/bash-completion" => "ninja"
+    zsh_completion.install "misc/zsh-completion" => "_ninja"
+    doc.install "doc/manual.asciidoc"
+    (share/"vim/vimfiles/syntax").install "misc/ninja.vim"
   end
 
   test do
-    (testpath"build.ninja").write <<~NINJA
+    (testpath/"build.ninja").write <<~NINJA
       cflags = -Wall
 
       rule cc
@@ -42,12 +42,12 @@ class Ninja < Formula
 
       build foo.o: cc foo.c
     NINJA
-    system bin"ninja", "-t", "targets"
+    system bin/"ninja", "-t", "targets"
     port = free_port
     fork do
-      exec bin"ninja", "-t", "browse", "--port=#{port}", "--hostname=127.0.0.1", "--no-browser", "foo.o"
+      exec bin/"ninja", "-t", "browse", "--port=#{port}", "--hostname=127.0.0.1", "--no-browser", "foo.o"
     end
     sleep 15
-    assert_match "foo.c", shell_output("curl -s http:127.0.0.1:#{port}?foo.o")
+    assert_match "foo.c", shell_output("curl -s http://127.0.0.1:#{port}?foo.o")
   end
 end

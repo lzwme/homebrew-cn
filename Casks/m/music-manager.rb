@@ -2,25 +2,25 @@ cask "music-manager" do
   version "1.0.635.372"
   sha256 :no_check
 
-  url "https:dl.google.comdlandroidjumpermac6350372musicmanager.dmg"
+  url "https://dl.google.com/dl/androidjumper/mac/6350372/musicmanager.dmg"
   name "Google Play Music Manager"
   desc "Upload music to the Google Music library"
-  homepage "https:play.google.commusiclisten"
+  homepage "https://play.google.com/music/listen"
 
   no_autobump! because: :requires_manual_review
 
   disable! date: "2024-07-06", because: :no_longer_available
 
   # Renamed for consistency: app name is different in the Finder and in a shell.
-  # Original discussion: https:github.comHomebrewhomebrew-caskpull4282
+  # Original discussion: https://github.com/Homebrew/homebrew-cask/pull/4282
   app "MusicManager.app", target: "Music Manager.app"
 
   uninstall quit:   "com.google.musicmanager",
-            delete: "~LibraryPreferencePanesMusicManager.prefPane"
+            delete: "~/Library/PreferencePanes/MusicManager.prefPane"
 
   zap trash: [
-    "~LibraryApplication SupportGoogleMusicManager",
-    "~LibraryLogsMusicManager",
-    "~LibraryPreferencescom.google.musicmanager.plist",
+    "~/Library/Application Support/Google/MusicManager",
+    "~/Library/Logs/MusicManager",
+    "~/Library/Preferences/com.google.musicmanager.plist",
   ]
 end

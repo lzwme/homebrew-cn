@@ -1,20 +1,20 @@
 class Re2 < Formula
   desc "Alternative to backtracking PCRE-style regular expression engines"
-  homepage "https:github.comgooglere2"
-  url "https:github.comgooglere2archiverefstags2025-06-26.tar.gz"
+  homepage "https://github.com/google/re2"
+  url "https://ghfast.top/https://github.com/google/re2/archive/refs/tags/2025-06-26.tar.gz"
   version "20250626"
   sha256 "6090fc23a189e1a04a0e751b4f285922a794a39b6ecc6670b6141af74c82fe08"
   license "BSD-3-Clause"
-  head "https:github.comgooglere2.git", branch: "main"
+  head "https://github.com/google/re2.git", branch: "main"
 
   # The `strategy` block below is used to massage upstream tags into the
   # YYYYMMDD format used in the `version`. This is necessary for livecheck
   # to be able to do proper `Version` comparison.
   livecheck do
     url :stable
-    regex(^(\d{2,4}-\d{2}-\d{2})$i)
+    regex(/^(\d{2,4}-\d{2}-\d{2})$/i)
     strategy :git do |tags, regex|
-      tags.filter_map { |tag| tag[regex, 1]&.gsub(\D, "") }
+      tags.filter_map { |tag| tag[regex, 1]&.gsub(/\D/, "") }
     end
   end
 
@@ -51,8 +51,8 @@ class Re2 < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~CPP
-      #include <re2re2.h>
+    (testpath/"test.cpp").write <<~CPP
+      #include <re2/re2.h>
       #include <assert.h>
       int main() {
         assert(!RE2::FullMatch("hello", "e"));
@@ -62,6 +62,6 @@ class Re2 < Formula
     CPP
     system ENV.cxx, "-std=c++17", "test.cpp", "-o", "test",
                     "-I#{include}", "-L#{lib}", "-lre2"
-    system ".test"
+    system "./test"
   end
 end

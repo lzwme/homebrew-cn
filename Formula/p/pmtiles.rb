@@ -1,7 +1,7 @@
 class Pmtiles < Formula
   desc "Single-file executable tool for creating, reading and uploading PMTiles archives"
-  homepage "https:protomaps.comdocspmtiles"
-  url "https:github.comprotomapsgo-pmtilesarchiverefstagsv1.28.0.tar.gz"
+  homepage "https://protomaps.com/docs/pmtiles"
+  url "https://ghfast.top/https://github.com/protomaps/go-pmtiles/archive/refs/tags/v1.28.0.tar.gz"
   sha256 "fcfdfa4224e2186a1672abd19bbeaa34d72df336df0cb83e8c5934c2de8ec8a8"
   license "BSD-3-Clause"
 
@@ -29,11 +29,11 @@ class Pmtiles < Formula
     port = free_port
 
     pid = fork do
-      exec bin"pmtiles", "serve", ".", "--port", port.to_s
+      exec bin/"pmtiles", "serve", ".", "--port", port.to_s
     end
     sleep 3
-    output = shell_output("curl -sI http:localhost:#{port}")
-    assert_match "HTTP1.1 204 No Content", output
+    output = shell_output("curl -sI http://localhost:#{port}")
+    assert_match "HTTP/1.1 204 No Content", output
   ensure
     Process.kill("HUP", pid)
   end

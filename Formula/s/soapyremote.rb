@@ -1,7 +1,7 @@
 class Soapyremote < Formula
   desc "Use any Soapy SDR remotely"
-  homepage "https:github.compothoswareSoapyRemotewiki"
-  url "https:github.compothoswareSoapyRemotearchiverefstagssoapy-remote-0.5.2.tar.gz"
+  homepage "https://github.com/pothosware/SoapyRemote/wiki"
+  url "https://ghfast.top/https://github.com/pothosware/SoapyRemote/archive/refs/tags/soapy-remote-0.5.2.tar.gz"
   sha256 "66a372d85c984e7279b4fdc0a7f5b0d7ba340e390bc4b8bd626a6523cd3c3c76"
   license "BSL-1.0"
 
@@ -27,7 +27,7 @@ class Soapyremote < Formula
   end
 
   test do
-    output = shell_output("#{Formula["soapysdr"].bin}SoapySDRUtil --check=remote")
+    output = shell_output("#{Formula["soapysdr"].bin}/SoapySDRUtil --check=remote")
     assert_match "Checking driver 'remote'... PRESENT", output
   end
 end

@@ -1,10 +1,10 @@
 class JiraCli < Formula
   desc "Feature-rich interactive Jira CLI"
-  homepage "https:github.comankitpokhreljira-cli"
-  url "https:github.comankitpokhreljira-cliarchiverefstagsv1.6.0.tar.gz"
+  homepage "https://github.com/ankitpokhrel/jira-cli"
+  url "https://ghfast.top/https://github.com/ankitpokhrel/jira-cli/archive/refs/tags/v1.6.0.tar.gz"
   sha256 "89989534ae3f254be7a13dde51bfcf1c58f36cbf26ad3de9e333ead36579c007"
   license "MIT"
-  head "https:github.comankitpokhreljira-cli.git", branch: "main"
+  head "https://github.com/ankitpokhrel/jira-cli.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "8250d45b6be6e7f897d704248a10ce708fc0987b499f634b483452046ad4074a"
@@ -22,20 +22,20 @@ class JiraCli < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.comankitpokhreljira-cliinternalversion.Version=#{version}
-      -X github.comankitpokhreljira-cliinternalversion.GitCommit=#{tap.user}
-      -X github.comankitpokhreljira-cliinternalversion.SourceDateEpoch=#{time.to_i}
+      -X github.com/ankitpokhrel/jira-cli/internal/version.Version=#{version}
+      -X github.com/ankitpokhrel/jira-cli/internal/version.GitCommit=#{tap.user}
+      -X github.com/ankitpokhrel/jira-cli/internal/version.SourceDateEpoch=#{time.to_i}
     ]
-    system "go", "build", *std_go_args(ldflags:, output: bin"jira"), ".cmdjira"
+    system "go", "build", *std_go_args(ldflags:, output: bin/"jira"), "./cmd/jira"
 
-    generate_completions_from_executable(bin"jira", "completion")
-    (man7"jira.7").write Utils.safe_popen_read(bin"jira", "man")
+    generate_completions_from_executable(bin/"jira", "completion")
+    (man7/"jira.7").write Utils.safe_popen_read(bin/"jira", "man")
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}jira version")
+    assert_match version.to_s, shell_output("#{bin}/jira version")
 
-    output = shell_output("#{bin}jira serverinfo 2>&1", 1)
+    output = shell_output("#{bin}/jira serverinfo 2>&1", 1)
     assert_match "The tool needs a Jira API token to function", output
   end
 end

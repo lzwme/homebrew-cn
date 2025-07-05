@@ -5,14 +5,14 @@ cask "jet-pilot" do
   sha256 arm:   "1c02e47d3ccade9abfa7851a53c7f4a1c279bb190144e5a9d1630c9244224530",
          intel: "a12d15baddf6000d6f3e70817598cca219ce2ac31fc44dcbb3422229b27645ef"
 
-  url "https:github.comunxsistjet-pilotreleasesdownloadv#{version}JET.Pilot_#{version}_#{arch}.dmg",
-      verified: "github.comunxsistjet-pilot"
+  url "https://ghfast.top/https://github.com/unxsist/jet-pilot/releases/download/v#{version}/JET.Pilot_#{version}_#{arch}.dmg",
+      verified: "github.com/unxsist/jet-pilot/"
   name "JET Pilot"
   desc "Kubernetes desktop client"
-  homepage "https:www.jet-pilot.app"
+  homepage "https://www.jet-pilot.app/"
 
   livecheck do
-    url "https:updates.jet-pilot.applatest.json"
+    url "https://updates.jet-pilot.app/latest.json"
     strategy :json do |json|
       json["version"]
     end
@@ -23,5 +23,5 @@ cask "jet-pilot" do
 
   app "JET Pilot.app"
 
-  zap trash: "~LibraryApplication Supportcom.unxsist.jetpilot"
+  zap trash: "~/Library/Application Support/com.unxsist.jetpilot"
 end

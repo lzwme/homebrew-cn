@@ -1,10 +1,10 @@
 class CargoBinstall < Formula
   desc "Binary installation for rust projects"
-  homepage "https:github.comcargo-binscargo-binstall"
-  url "https:github.comcargo-binscargo-binstallarchiverefstagsv1.14.1.tar.gz"
+  homepage "https://github.com/cargo-bins/cargo-binstall"
+  url "https://ghfast.top/https://github.com/cargo-bins/cargo-binstall/archive/refs/tags/v1.14.1.tar.gz"
   sha256 "c0b8a16f8e1efc3b52ea8fdf41061384311a329919120e0d4c6fe37de70fa427"
   license "GPL-3.0-only"
-  head "https:github.comcargo-binscargo-binstall.git", branch: "main"
+  head "https://github.com/cargo-bins/cargo-binstall.git", branch: "main"
 
   # Upstream creates releases that use a stable tag (e.g., `v1.2.3`) but are
   # labeled as "pre-release" on GitHub before the version is released, so it's
@@ -27,13 +27,13 @@ class CargoBinstall < Formula
   depends_on "rust" => :build
 
   def install
-    system "cargo", "install", *std_cargo_args(path: "cratesbin")
+    system "cargo", "install", *std_cargo_args(path: "crates/bin")
   end
 
   test do
-    output = shell_output("#{bin}cargo-binstall --dry-run radio-sx128x")
+    output = shell_output("#{bin}/cargo-binstall --dry-run radio-sx128x")
     assert_match "resolve: Resolving package: 'radio-sx128x'", output
 
-    assert_equal version.to_s, shell_output("#{bin}cargo-binstall -V").chomp
+    assert_equal version.to_s, shell_output("#{bin}/cargo-binstall -V").chomp
   end
 end

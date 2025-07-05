@@ -1,13 +1,13 @@
 class Unifdef < Formula
   desc "Selectively process conditional C preprocessor directives"
-  homepage "https:dotat.atprogunifdef"
-  url "https:dotat.atprogunifdefunifdef-2.12.tar.gz"
+  homepage "https://dotat.at/prog/unifdef/"
+  url "https://dotat.at/prog/unifdef/unifdef-2.12.tar.gz"
   sha256 "fba564a24db7b97ebe9329713ac970627b902e5e9e8b14e19e024eb6e278d10b"
   license all_of: [
     "BSD-2-Clause",
     "BSD-3-Clause", # only for `unifdef.1`
   ]
-  head "https:github.comfanf2unifdef.git", branch: "master"
+  head "https://github.com/fanf2/unifdef.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -35,6 +35,6 @@ class Unifdef < Formula
   end
 
   test do
-    pipe_output(bin"unifdef", "echo ''")
+    pipe_output(bin/"unifdef", "echo ''")
   end
 end

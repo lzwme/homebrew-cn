@@ -1,14 +1,14 @@
 class GitInteractiveRebaseTool < Formula
   desc "Native sequence editor for Git interactive rebase"
-  homepage "https:gitrebasetool.mitmaro.ca"
-  url "https:github.comMitMarogit-interactive-rebase-toolarchiverefstags2.4.1.tar.gz"
+  homepage "https://gitrebasetool.mitmaro.ca/"
+  url "https://ghfast.top/https://github.com/MitMaro/git-interactive-rebase-tool/archive/refs/tags/2.4.1.tar.gz"
   sha256 "0b1ba68a1ba1548f44209ce1228d17d6d5768d72ffa991909771df8e9d42d70d"
   license "GPL-3.0-or-later"
   revision 4
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -27,9 +27,9 @@ class GitInteractiveRebaseTool < Formula
 
   uses_from_macos "zlib"
 
-  # support libgit2 1.9, upstream pr ref, https:github.comMitMarogit-interactive-rebase-toolpull948
+  # support libgit2 1.9, upstream pr ref, https://github.com/MitMaro/git-interactive-rebase-tool/pull/948
   patch do
-    url "https:github.comMitMarogit-interactive-rebase-toolcommitf3193b3faae665605d6bac4c1bafa798d3d241ae.patch?full_index=1"
+    url "https://github.com/MitMaro/git-interactive-rebase-tool/commit/f3193b3faae665605d6bac4c1bafa798d3d241ae.patch?full_index=1"
     sha256 "32c6cc976407c0d2f41e434e35274f86d64b8b396ed18927c833af656551ebd3"
   end
 
@@ -41,14 +41,14 @@ class GitInteractiveRebaseTool < Formula
 
   test do
     require "pty"
-    require "ioconsole"
-    require "utilslinkage"
+    require "io/console"
+    require "utils/linkage"
 
-    mkdir testpath"repo" do
+    mkdir testpath/"repo" do
       system "git", "init"
     end
 
-    (testpath"repo.gitrebase-mergegit-rebase-todo").write <<~EOS
+    (testpath/"repo/.git/rebase-merge/git-rebase-todo").write <<~EOS
       noop
     EOS
 
@@ -56,9 +56,9 @@ class GitInteractiveRebaseTool < Formula
       noop
     EOS
 
-    env = { "GIT_DIR" => testpath"repo.git" }
-    executable = bin"interactive-rebase-tool"
-    todo_file = testpath"repo.gitrebase-mergegit-rebase-todo"
+    env = { "GIT_DIR" => testpath/"repo/.git/" }
+    executable = bin/"interactive-rebase-tool"
+    todo_file = testpath/"repo/.git/rebase-merge/git-rebase-todo"
 
     _, _, pid = PTY.spawn(env, executable, todo_file)
     Process.wait(pid)
@@ -67,9 +67,9 @@ class GitInteractiveRebaseTool < Formula
     assert_equal expected_git_rebase_todo, todo_file.read
 
     [
-      Formula["libgit2"].opt_libshared_library("libgit2"),
+      Formula["libgit2"].opt_lib/shared_library("libgit2"),
     ].each do |library|
-      assert Utils.binary_linked_to_library?(bin"interactive-rebase-tool", library),
+      assert Utils.binary_linked_to_library?(bin/"interactive-rebase-tool", library),
              "No linkage with #{library.basename}! Cargo is likely using a vendored version."
     end
   end

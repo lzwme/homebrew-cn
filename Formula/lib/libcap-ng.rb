@@ -1,13 +1,13 @@
 class LibcapNg < Formula
   desc "Library for Linux that makes using posix capabilities easy"
-  homepage "https:people.redhat.comsgrubblibcap-ng"
-  url "https:people.redhat.comsgrubblibcap-nglibcap-ng-0.8.5.tar.gz"
+  homepage "https://people.redhat.com/sgrubb/libcap-ng/"
+  url "https://people.redhat.com/sgrubb/libcap-ng/libcap-ng-0.8.5.tar.gz"
   sha256 "3ba5294d1cbdfa98afaacfbc00b6af9ed2b83e8a21817185dfd844cc8c7ac6ff"
   license all_of: ["LGPL-2.1-or-later", "GPL-2.0-or-later"]
 
   livecheck do
     url :homepage
-    regex(href=.*?libcap-ng[._-]v?(\d+(?:\.\d+)+)\.ti)
+    regex(/href=.*?libcap-ng[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   bottle do
@@ -17,7 +17,7 @@ class LibcapNg < Formula
   end
 
   head do
-    url "https:github.comstevegrubblibcap-ng.git", branch: "master"
+    url "https://github.com/stevegrubb/libcap-ng.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -35,15 +35,15 @@ class LibcapNg < Formula
   end
 
   def install
-    system ".autogen.sh" if build.head?
-    system ".configure", *std_configure_args,
+    system "./autogen.sh" if build.head?
+    system "./configure", *std_configure_args,
                           "--disable-silent-rules",
                           "--with-python3"
-    system "make", "install", "py3execdir=#{prefixLanguage::Python.site_packages(python3)}"
+    system "make", "install", "py3execdir=#{prefix/Language::Python.site_packages(python3)}"
   end
 
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include <stdio.h>
       #include <cap-ng.h>
 
@@ -54,7 +54,7 @@ class LibcapNg < Formula
       }
     C
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lcap-ng", "-o", "test"
-    assert_equal "ok", `.test`
+    assert_equal "ok", `./test`
     system python3, "-c", "import capng"
   end
 end

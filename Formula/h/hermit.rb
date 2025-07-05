@@ -1,10 +1,10 @@
 class Hermit < Formula
   desc "Manages isolated, self-bootstrapping sets of tools in software projects"
-  homepage "https:cashapp.github.iohermit"
-  url "https:github.comcashapphermitarchiverefstagsv0.44.10.tar.gz"
+  homepage "https://cashapp.github.io/hermit"
+  url "https://ghfast.top/https://github.com/cashapp/hermit/archive/refs/tags/v0.44.10.tar.gz"
   sha256 "45b5c9d9baa945a368dcbd996736f41207fb2daa7a348edecbff8856022b1595"
   license "Apache-2.0"
-  head "https:github.comcashapphermit.git", branch: "master"
+  head "https://github.com/cashapp/hermit.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "b61a536b6cdd96d6c6d19a0978b77d3d9b94944403e4f12e6f11a7ebe2a2d40b"
@@ -24,7 +24,7 @@ class Hermit < Formula
       -X main.version=#{version}
       -X main.channel=stable
     ]
-    system "go", "build", *std_go_args(ldflags:), ".cmdhermit"
+    system "go", "build", *std_go_args(ldflags:), "./cmd/hermit"
   end
 
   def caveats
@@ -32,16 +32,16 @@ class Hermit < Formula
       For shell integration hooks, add the following to your shell configuration:
 
       For bash, add the following command to your .bashrc:
-        eval "$(test -x $(brew --prefix)binhermit && $(brew --prefix)binhermit shell-hooks --print --bash)"
+        eval "$(test -x $(brew --prefix)/bin/hermit && $(brew --prefix)/bin/hermit shell-hooks --print --bash)"
 
       For zsh, add the following command to your .zshrc:
-        eval "$(test -x $(brew --prefix)binhermit && $(brew --prefix)binhermit shell-hooks --print --zsh)"
+        eval "$(test -x $(brew --prefix)/bin/hermit && $(brew --prefix)/bin/hermit shell-hooks --print --zsh)"
     EOS
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}hermit version")
-    system bin"hermit", "init", "."
-    assert_path_exists testpath"binhermit.hcl"
+    assert_match version.to_s, shell_output("#{bin}/hermit version")
+    system bin/"hermit", "init", "."
+    assert_path_exists testpath/"bin/hermit.hcl"
   end
 end

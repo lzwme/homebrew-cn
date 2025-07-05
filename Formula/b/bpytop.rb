@@ -2,9 +2,9 @@ class Bpytop < Formula
   include Language::Python::Virtualenv
   include Language::Python::Shebang
 
-  desc "LinuxOSXFreeBSD resource monitor"
-  homepage "https:github.comaristocratosbpytop"
-  url "https:github.comaristocratosbpytoparchiverefstagsv1.0.68.tar.gz"
+  desc "Linux/OSX/FreeBSD resource monitor"
+  homepage "https://github.com/aristocratos/bpytop"
+  url "https://ghfast.top/https://github.com/aristocratos/bpytop/archive/refs/tags/v1.0.68.tar.gz"
   sha256 "3a936f8899efb66246e82bbcab33249bf94aabcefbe410e56f045a1ce3c9949f"
   license "Apache-2.0"
 
@@ -28,14 +28,14 @@ class Bpytop < Formula
   end
 
   resource "psutil" do
-    url "https:files.pythonhosted.orgpackages90c76dc0a455d111f68ee43f27793971cf03fe29b6ef972042549db29eec39a2psutil-5.9.8.tar.gz"
+    url "https://files.pythonhosted.org/packages/90/c7/6dc0a455d111f68ee43f27793971cf03fe29b6ef972042549db29eec39a2/psutil-5.9.8.tar.gz"
     sha256 "6be126e3225486dff286a8fb9a06246a5253f4c7c53b475ea5f5ac934e64194c"
   end
 
   # Tolerate SMC error from osx-cpu-temp
-  # https:github.comaristocratosbpytoppull405
+  # https://github.com/aristocratos/bpytop/pull/405
   patch do
-    url "https:github.comaristocratosbpytopcommit5634526721b1bc98dc7a7003801cdf99686419ed.patch?full_index=1"
+    url "https://github.com/aristocratos/bpytop/commit/5634526721b1bc98dc7a7003801cdf99686419ed.patch?full_index=1"
     sha256 "0158252936cfd1adcbe5e664f641a0c2bb6093270bedf4282cf5c7ff49a7d238"
   end
 
@@ -46,15 +46,15 @@ class Bpytop < Formula
     pkgshare.install "themes"
 
     # Replace shebang with virtualenv python
-    rw_info = python_shebang_rewrite_info("#{libexec}binpython")
-    rewrite_shebang rw_info, bin"bpytop"
+    rw_info = python_shebang_rewrite_info("#{libexec}/bin/python")
+    rewrite_shebang rw_info, bin/"bpytop"
   end
 
   test do
-    config = (testpath".configbpytop")
-    mkdir config"themes"
-    # Disable cpu_freq on arm due to missing support: https:github.comgiampaolopsutilissues1892
-    (config"bpytop.conf").write <<~EOS
+    config = (testpath/".config/bpytop")
+    mkdir config/"themes"
+    # Disable cpu_freq on arm due to missing support: https://github.com/giampaolo/psutil/issues/1892
+    (config/"bpytop.conf").write <<~EOS
       #? Config file for bpytop v. #{version}
 
       update_ms=2000
@@ -63,16 +63,16 @@ class Bpytop < Formula
     EOS
 
     require "pty"
-    require "ioconsole"
+    require "io/console"
 
-    r, w, pid = PTY.spawn(bin"bpytop")
+    r, w, pid = PTY.spawn(bin/"bpytop")
     r.winsize = [80, 130]
     sleep 5
     w.write "\cC"
 
-    log = (config"error.log").read
+    log = (config/"error.log").read
     assert_match "bpytop version #{version} started with pid #{pid}", log
-    refute_match(ERROR:, log)
+    refute_match(/ERROR:/, log)
   ensure
     Process.kill("TERM", pid)
   end

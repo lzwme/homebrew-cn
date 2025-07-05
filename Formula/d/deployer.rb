@@ -1,7 +1,7 @@
 class Deployer < Formula
   desc "Deployment tool written in PHP with support for popular frameworks"
-  homepage "https:deployer.org"
-  url "https:github.comdeployphpdeployerreleasesdownloadv7.5.12deployer.phar"
+  homepage "https://deployer.org/"
+  url "https://ghfast.top/https://github.com/deployphp/deployer/releases/download/v7.5.12/deployer.phar"
   sha256 "b55c6609653e888c672d327c407f8bba6324b9c9cc24f9dcfb3f4b3922760632"
   license "MIT"
 
@@ -16,7 +16,7 @@ class Deployer < Formula
   end
 
   test do
-    system bin"dep", "init", "--no-interaction"
-    assert_path_exists testpath"deploy.php"
+    system bin/"dep", "init", "--no-interaction"
+    assert_path_exists testpath/"deploy.php"
   end
 end

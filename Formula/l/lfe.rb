@@ -1,10 +1,10 @@
 class Lfe < Formula
   desc "Concurrent Lisp for the Erlang VM"
-  homepage "https:lfe.io"
-  url "https:github.comlfelfearchiverefstagsv2.2.0.tar.gz"
+  homepage "https://lfe.io/"
+  url "https://ghfast.top/https://github.com/lfe/lfe/archive/refs/tags/v2.2.0.tar.gz"
   sha256 "5c9de979c64de245ac3ae2f9694559a116b538ca7d18bb3ef07716e0e3a696f3"
   license "Apache-2.0"
-  head "https:github.comlfelfe.git", branch: "develop"
+  head "https://github.com/lfe/lfe.git", branch: "develop"
 
   bottle do
     rebuild 1
@@ -26,13 +26,13 @@ class Lfe < Formula
     system "make", "emacs"
 
     libexec.install "bin", "ebin"
-    bin.install_symlink (libexec"bin").children
+    bin.install_symlink (libexec/"bin").children
     pkgshare.install "dev", "examples", "test"
-    doc.install Pathname.glob("doc*.txt")
-    elisp.install Pathname.glob("emacs*.elc")
+    doc.install Pathname.glob("doc/*.txt")
+    elisp.install Pathname.glob("emacs/*.elc")
   end
 
   test do
-    system bin"lfe", "-eval", '"(io:format \"~p\" (list (* 2 (lists:foldl #\'+2 0 (lists:seq 1 6)))))"'
+    system bin/"lfe", "-eval", '"(io:format \"~p\" (list (* 2 (lists:foldl #\'+/2 0 (lists:seq 1 6)))))"'
   end
 end

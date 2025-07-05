@@ -1,14 +1,14 @@
 class Fnm < Formula
   desc "Fast and simple Node.js version manager"
-  homepage "https:github.comSchnizfnm"
-  url "https:github.comSchnizfnmarchiverefstagsv1.38.1.tar.gz"
+  homepage "https://github.com/Schniz/fnm"
+  url "https://ghfast.top/https://github.com/Schniz/fnm/archive/refs/tags/v1.38.1.tar.gz"
   sha256 "c24e4c26183a4d88a33e343902ed2d45da23e78c66b2a696a7420eb86deddda9"
   license "GPL-3.0-only"
-  head "https:github.comSchnizfnm.git", branch: "master"
+  head "https://github.com/Schniz/fnm.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -28,11 +28,11 @@ class Fnm < Formula
   def install
     system "cargo", "install", *std_cargo_args
 
-    generate_completions_from_executable(bin"fnm", "completions", "--shell")
+    generate_completions_from_executable(bin/"fnm", "completions", "--shell")
   end
 
   test do
-    system bin"fnm", "install", "19.0.1"
-    assert_match "v19.0.1", shell_output("#{bin}fnm exec --using=19.0.1 -- node --version")
+    system bin/"fnm", "install", "19.0.1"
+    assert_match "v19.0.1", shell_output("#{bin}/fnm exec --using=19.0.1 -- node --version")
   end
 end

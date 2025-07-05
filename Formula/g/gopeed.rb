@@ -1,10 +1,10 @@
 class Gopeed < Formula
   desc "Modern download manager that supports all platform"
-  homepage "https:gopeed.com"
-  url "https:github.comGopeedLabgopeedarchiverefstagsv1.7.0.tar.gz"
+  homepage "https://gopeed.com"
+  url "https://ghfast.top/https://github.com/GopeedLab/gopeed/archive/refs/tags/v1.7.0.tar.gz"
   sha256 "f7e0655bca4e414d1da26120b95ef2239556e9f23494fd76d23671264185cd03"
   license "GPL-3.0-or-later"
-  head "https:github.comGopeedLabgopeed.git", branch: "main"
+  head "https://github.com/GopeedLab/gopeed.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "4d7814d33cb904f6c66f1ae69da92e1313b3e96d219d826331cf216ea19aba66"
@@ -19,12 +19,12 @@ class Gopeed < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), ".cmdgopeed"
+    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/gopeed"
   end
 
   test do
-    output = shell_output("#{bin}gopeed https:example.com")
+    output = shell_output("#{bin}/gopeed https://example.com/")
     assert_match "saving path: #{testpath}", output
-    assert_match "Example Domain", (testpath"example.com").read
+    assert_match "Example Domain", (testpath/"example.com").read
   end
 end

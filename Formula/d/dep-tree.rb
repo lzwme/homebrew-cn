@@ -1,10 +1,10 @@
 class DepTree < Formula
   desc "Tool for visualizing dependencies between files and enforcing dependency rules"
-  homepage "https:github.comgabotechsdep-tree"
-  url "https:github.comgabotechsdep-treearchiverefstagsv0.23.4.tar.gz"
+  homepage "https://github.com/gabotechs/dep-tree"
+  url "https://ghfast.top/https://github.com/gabotechs/dep-tree/archive/refs/tags/v0.23.4.tar.gz"
   sha256 "84f303594bce854527fe85208867a5060314ff3b24990d7c0f2846d364d81d4a"
   license "MIT"
-  head "https:github.comgabotechsdep-tree.git", branch: "main"
+  head "https://github.com/gabotechs/dep-tree.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "277fe984bf29633301f181b12e8d447023ed0424dea708b6e32f48b32debce3b"
@@ -22,13 +22,13 @@ class DepTree < Formula
   end
 
   test do
-    (testpath"foo.js").write <<~JS
-      import { bar } from '.bar'
+    (testpath/"foo.js").write <<~JS
+      import { bar } from './bar'
     JS
-    (testpath"bar.js").write <<~JS
+    (testpath/"bar.js").write <<~JS
       export const bar = 'bar'
     JS
-    (testpath"package.json").write <<~JSON
+    (testpath/"package.json").write <<~JSON
       { "name": "foo" }
     JSON
     expected = <<~JSON
@@ -43,6 +43,6 @@ class DepTree < Formula
       }
     JSON
 
-    assert_equal expected, shell_output("#{bin}dep-tree tree --json #{testpath}foo.js")
+    assert_equal expected, shell_output("#{bin}/dep-tree tree --json #{testpath}/foo.js")
   end
 end

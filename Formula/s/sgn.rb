@@ -1,10 +1,10 @@
 class Sgn < Formula
   desc "Shikata ga nai (仕方がない) encoder ported into go with several improvements"
-  homepage "https:github.comEgeBalcisgn"
-  url "https:github.comEgeBalcisgnarchiverefstagsv2.0.1.tar.gz"
+  homepage "https://github.com/EgeBalci/sgn"
+  url "https://ghfast.top/https://github.com/EgeBalci/sgn/archive/refs/tags/v2.0.1.tar.gz"
   sha256 "a4ae48aa14dcf27ac8ed6850fb87fa97049062aa3152065c50a20effc0b98234"
   license "MIT"
-  head "https:github.comEgeBalcisgn.git", branch: "master"
+  head "https://github.com/EgeBalci/sgn.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -27,7 +27,7 @@ class Sgn < Formula
   end
 
   test do
-    output = shell_output("#{bin}sgn -i #{test_fixtures("macha.out")} -o #{testpath}sgn.out")
+    output = shell_output("#{bin}/sgn -i #{test_fixtures("mach/a.out")} -o #{testpath}/sgn.out")
     assert_match "All done ＼(＾O＾)／", output
   end
 end

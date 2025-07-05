@@ -1,10 +1,10 @@
 class Ryelang < Formula
   desc "Rye is a homoiconic programming language focused on fluid expressions"
-  homepage "https:ryelang.org"
-  url "https:github.comrefaktorryearchiverefstagsv0.0.81.tar.gz"
+  homepage "https://ryelang.org/"
+  url "https://ghfast.top/https://github.com/refaktor/rye/archive/refs/tags/v0.0.81.tar.gz"
   sha256 "95e0d9b747f44c216cd084574e1d7ab83428e6d84c3baba3aee0133a5988e8a7"
   license "BSD-3-Clause"
-  head "https:github.comrefaktorrye.git", branch: "main"
+  head "https://github.com/refaktor/rye.git", branch: "main"
 
   livecheck do
     url :stable
@@ -31,22 +31,22 @@ class Ryelang < Formula
 
     ldflags = %W[
       -s -w
-      -X github.comrefaktorryerunner.Version=#{version}
+      -X github.com/refaktor/rye/runner.Version=#{version}
     ]
 
-    system "go", "build", *std_go_args(ldflags:, output: bin"rye")
+    system "go", "build", *std_go_args(ldflags:, output: bin/"rye")
     bin.install_symlink "rye" => "ryelang" # for backward compatibility
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}rye --version")
+    assert_match version.to_s, shell_output("#{bin}/rye --version")
 
-    (testpath"hello.rye").write <<~EOS
+    (testpath/"hello.rye").write <<~EOS
       "Hello World" .replace "World" "Mars" |print
       "12 8 12 16 8 6" .load .unique .sum |print
     EOS
-    assert_path_exists testpath"hello.rye"
-    output = shell_output("#{bin}rye hello.rye 2>&1")
+    assert_path_exists testpath/"hello.rye"
+    output = shell_output("#{bin}/rye hello.rye 2>&1")
     assert_equal "Hello Mars\n42", output.strip
   end
 end

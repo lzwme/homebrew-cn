@@ -1,9 +1,9 @@
 class Jove < Formula
   desc "Emacs-style editor with vi-like memory, CPU, and size requirements"
-  homepage "https:directory.fsf.orgwikiJove"
-  url "https:github.comjonmacsjovearchiverefstags4.17.5.5.tar.gz"
+  homepage "https://directory.fsf.org/wiki/Jove"
+  url "https://ghfast.top/https://github.com/jonmacs/jove/archive/refs/tags/4.17.5.5.tar.gz"
   sha256 "4261d7cab02816eb03f3f356a0a2869d7f6168fce53478ede8e5fdd06a9ecfb9"
-  # license ref, https:github.comjonmacsjoveblob4_17LICENSE
+  # license ref, https://github.com/jonmacs/jove/blob/4_17/LICENSE
   license :cannot_represent
 
   bottle do
@@ -25,12 +25,12 @@ class Jove < Formula
   def install
     bin.mkpath
     man1.mkpath
-    (lib"jove").mkpath
+    (lib/"jove").mkpath
 
     system "make", "install", "JOVEHOME=#{prefix}", "DMANDIR=#{man1}"
   end
 
   test do
-    assert_match "There's nothing to recover.", shell_output("#{lib}joverecover")
+    assert_match "There's nothing to recover.", shell_output("#{lib}/jove/recover")
   end
 end

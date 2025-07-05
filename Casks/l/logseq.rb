@@ -5,10 +5,10 @@ cask "logseq" do
   sha256 arm:   "d1a7bbbfd9197917b5bc645d58cb57905937eb4c1e4cdd293e538ba5e4135ac3",
          intel: "f2bf1a81139d547918443a4745095b886df77a9137297670df9c96d409f27687"
 
-  url "https:github.comlogseqlogseqreleasesdownload#{version}logseq-darwin-#{arch}-#{version}.dmg"
+  url "https://ghfast.top/https://github.com/logseq/logseq/releases/download/#{version}/logseq-darwin-#{arch}-#{version}.dmg"
   name "Logseq"
   desc "Privacy-first, open-source platform for knowledge sharing and management"
-  homepage "https:github.comlogseqlogseq"
+  homepage "https://github.com/logseq/logseq"
 
   livecheck do
     url :url
@@ -21,9 +21,9 @@ cask "logseq" do
   app "Logseq.app"
 
   zap trash: [
-    "~LibraryApplication SupportLogseq",
-    "~LibraryLogsLogseq",
-    "~LibraryPreferencescom.electron.logseq.plist",
-    "~LibrarySaved Application Statecom.electron.logseq.savedState",
+    "~/Library/Application Support/Logseq",
+    "~/Library/Logs/Logseq",
+    "~/Library/Preferences/com.electron.logseq.plist",
+    "~/Library/Saved Application State/com.electron.logseq.savedState",
   ]
 end

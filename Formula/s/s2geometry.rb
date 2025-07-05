@@ -1,13 +1,13 @@
 class S2geometry < Formula
   desc "Computational geometry and spatial indexing on the sphere"
-  homepage "https:github.comgoogles2geometry"
-  url "https:github.comgoogles2geometryarchiverefstagsv0.12.0.tar.gz"
+  homepage "https://github.com/google/s2geometry"
+  url "https://ghfast.top/https://github.com/google/s2geometry/archive/refs/tags/v0.12.0.tar.gz"
   sha256 "c09ec751c3043965a0d441e046a73c456c995e6063439a72290f661c1054d611"
   license "Apache-2.0"
 
   livecheck do
     url :homepage
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -35,36 +35,36 @@ class S2geometry < Formula
       -DCMAKE_CXX_STANDARD_REQUIRED=TRUE
     ]
 
-    system "cmake", "-S", ".", "-B", "buildshared", *args, *std_cmake_args
-    system "cmake", "--build", "buildshared"
-    system "cmake", "--install", "buildshared"
+    system "cmake", "-S", ".", "-B", "build/shared", *args, *std_cmake_args
+    system "cmake", "--build", "build/shared"
+    system "cmake", "--install", "build/shared"
 
-    system "cmake", "-S", ".", "-B", "buildstatic", *args,
+    system "cmake", "-S", ".", "-B", "build/static", *args,
                     "-DBUILD_SHARED_LIBS=OFF",
                     "-DOPENSSL_USE_STATIC_LIBS=TRUE",
                     *std_cmake_args
-    system "cmake", "--build", "buildstatic"
-    lib.install "buildstaticlibs2.a"
+    system "cmake", "--build", "build/static"
+    lib.install "build/static/libs2.a"
   end
 
   test do
-    (testpath"test.cpp").write <<~CPP
-      #include "s2s2loop.h"
-      #include "s2s2polygon.h"
-      #include "s2s2latlng.h"
+    (testpath/"test.cpp").write <<~CPP
+      #include "s2/s2loop.h"
+      #include "s2/s2polygon.h"
+      #include "s2/s2latlng.h"
 
       #include <vector>
       #include <iostream>
 
       int main() {
-           Define the vertices of a polygon around a block near the Googleplex.
+          // Define the vertices of a polygon around a block near the Googleplex.
           std::vector<S2LatLng> lat_lngs = {
               S2LatLng::FromDegrees(37.422076, -122.084518),
               S2LatLng::FromDegrees(37.422003, -122.083984),
               S2LatLng::FromDegrees(37.421964, -122.084028),
               S2LatLng::FromDegrees(37.421847, -122.083171),
               S2LatLng::FromDegrees(37.422140, -122.083167),
-              S2LatLng::FromDegrees(37.422076, -122.084518)  Last point equals the first one
+              S2LatLng::FromDegrees(37.422076, -122.084518) // Last point equals the first one
           };
 
           std::vector<S2Point> points;
@@ -88,6 +88,6 @@ class S2geometry < Formula
 
     system ENV.cxx, "-std=c++17", "test.cpp", "-o", "test",
       "-L#{lib}", "-ls2", "-L#{Formula["abseil"].lib}", "-labsl_log_internal_message"
-    system ".test"
+    system "./test"
   end
 end

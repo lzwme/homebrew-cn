@@ -1,10 +1,10 @@
 class AstGrep < Formula
   desc "Code searching, linting, rewriting"
-  homepage "https:github.comast-grepast-grep"
-  url "https:github.comast-grepast-greparchiverefstags0.38.6.tar.gz"
+  homepage "https://github.com/ast-grep/ast-grep"
+  url "https://ghfast.top/https://github.com/ast-grep/ast-grep/archive/refs/tags/0.38.6.tar.gz"
   sha256 "57191fc73ffff106edbd5bd47762042227c3544d08f31e033a4b93cdc08f4844"
   license "MIT"
-  head "https:github.comast-grepast-grep.git", branch: "main"
+  head "https://github.com/ast-grep/ast-grep.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "d65c157159c6bf541c221e0e920099730bb3a68c38f3f6dd29f4e3a38c7cd165"
@@ -19,15 +19,15 @@ class AstGrep < Formula
   depends_on "rust" => :build
 
   def install
-    system "cargo", "install", *std_cargo_args(path: "cratescli")
+    system "cargo", "install", *std_cargo_args(path: "crates/cli")
 
-    generate_completions_from_executable(bin"ast-grep", "completions")
+    generate_completions_from_executable(bin/"ast-grep", "completions")
   end
 
   test do
-    (testpath"hi.js").write("console.log('it is me')")
-    system bin"ast-grep", "run", "-l", "js", "-p console.log", (testpath"hi.js")
+    (testpath/"hi.js").write("console.log('it is me')")
+    system bin/"ast-grep", "run", "-l", "js", "-p console.log", (testpath/"hi.js")
 
-    assert_match version.to_s, shell_output("#{bin}ast-grep --version")
+    assert_match version.to_s, shell_output("#{bin}/ast-grep --version")
   end
 end

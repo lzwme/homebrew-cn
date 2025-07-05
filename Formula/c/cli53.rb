@@ -1,10 +1,10 @@
 class Cli53 < Formula
   desc "Command-line tool for Amazon Route 53"
-  homepage "https:github.combarnybugcli53"
-  url "https:github.combarnybugcli53archiverefstagsv0.8.25.tar.gz"
+  homepage "https://github.com/barnybug/cli53"
+  url "https://ghfast.top/https://github.com/barnybug/cli53/archive/refs/tags/v0.8.25.tar.gz"
   sha256 "7fc01388af416b88f164244e1c7269a122b8203485313970196913982b80e56d"
   license "MIT"
-  head "https:github.combarnybugcli53.git", branch: "main"
+  head "https://github.com/barnybug/cli53.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "e4b9ffd175d7e981bdd4c7c2356e6268b94c6b5347a2d50d5781318a9ac53136"
@@ -18,10 +18,10 @@ class Cli53 < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), ".cmdcli53"
+    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/cli53"
   end
 
   test do
-    assert_match "list domains", shell_output("#{bin}cli53 help list")
+    assert_match "list domains", shell_output("#{bin}/cli53 help list")
   end
 end

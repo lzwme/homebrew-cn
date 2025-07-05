@@ -1,10 +1,10 @@
 class Fend < Formula
   desc "Arbitrary-precision unit-aware calculator"
-  homepage "https:printfn.github.iofend"
-  url "https:github.comprintfnfendarchiverefstagsv1.5.6.tar.gz"
+  homepage "https://printfn.github.io/fend"
+  url "https://ghfast.top/https://github.com/printfn/fend/archive/refs/tags/v1.5.6.tar.gz"
   sha256 "59073829d4963ce7c893bf805ec35986d10b90674dcfd67e2e74ebc043212594"
   license "MIT"
-  head "https:github.comprintfnfend.git", branch: "main"
+  head "https://github.com/printfn/fend.git", branch: "main"
 
   livecheck do
     url :stable
@@ -35,11 +35,11 @@ class Fend < Formula
     ENV["OPENSSL_NO_VENDOR"] = "1"
 
     system "cargo", "install", *std_cargo_args(path: "cli")
-    system ".documentationbuild.sh"
-    man1.install "documentationfend.1"
+    system "./documentation/build.sh"
+    man1.install "documentation/fend.1"
   end
 
   test do
-    assert_equal "1000 m", shell_output("#{bin}fend 1 km to m").strip
+    assert_equal "1000 m", shell_output("#{bin}/fend 1 km to m").strip
   end
 end

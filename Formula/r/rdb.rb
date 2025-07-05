@@ -1,7 +1,7 @@
 class Rdb < Formula
   desc "Redis RDB parser"
-  homepage "https:github.comHDT3213rdb"
-  url "https:github.comHDT3213rdbarchiverefstagsv1.1.1.tar.gz"
+  homepage "https://github.com/HDT3213/rdb/"
+  url "https://ghfast.top/https://github.com/HDT3213/rdb/archive/refs/tags/v1.1.1.tar.gz"
   sha256 "ee08a3ce6e51e8118b8d1a57b58a31c0d32bdbbe2f1819811be1611b3a6ee7bd"
   license "Apache-2.0"
 
@@ -22,8 +22,8 @@ class Rdb < Formula
   end
 
   test do
-    cp_r pkgshare"cases", testpath
-    system bin"rdb", "-c", "memory", "-o", testpath"mem1.csv", testpath"casesmemory.rdb"
-    assert_match "0,hash,hash,131,131B,2,ziplist,", (testpath"mem1.csv").read
+    cp_r pkgshare/"cases", testpath
+    system bin/"rdb", "-c", "memory", "-o", testpath/"mem1.csv", testpath/"cases/memory.rdb"
+    assert_match "0,hash,hash,131,131B,2,ziplist,", (testpath/"mem1.csv").read
   end
 end

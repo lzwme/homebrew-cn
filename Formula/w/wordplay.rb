@@ -1,7 +1,7 @@
 class Wordplay < Formula
   desc "Anagram generator"
-  homepage "http:hsvmovies.comstatic_subpagespersonal_origwordplay"
-  url "http:hsvmovies.comstatic_subpagespersonal_origwordplaywordplay722.tar.Z"
+  homepage "http://hsvmovies.com/static_subpages/personal_orig/wordplay/"
+  url "http://hsvmovies.com/static_subpages/personal_orig/wordplay/wordplay722.tar.Z"
   version "7.22"
   sha256 "9436a8c801144ab32e38b1e168130ef43e7494f4b4939fcd510c7c5bf7f4eb6d"
   # From readme:
@@ -14,10 +14,10 @@ class Wordplay < Formula
 
   livecheck do
     url :homepage
-    regex(href=.*?wordplay[._-]?v?(\d+(?:\.\d+)*)\.ti)
+    regex(/href=.*?wordplay[._-]?v?(\d+(?:\.\d+)*)\.t/i)
     strategy :page_match do |page, regex|
       # Naively convert a version string like `722` to `7.22`
-      page.scan(regex).map { |match| match.first.sub(^(\d)(\d+)$, '\1.\2') }
+      page.scan(regex).map { |match| match.first.sub(/^(\d)(\d+)$/, '\1.\2') }
     end
   end
 
@@ -45,7 +45,7 @@ class Wordplay < Formula
   # Fixes compiler warnings on Darwin, via MacPorts.
   # Point to words file in share.
   patch :p0 do
-    url "https:raw.githubusercontent.comHomebrewformula-patches5de9072wordplaypatch-wordplay.c"
+    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/5de9072/wordplay/patch-wordplay.c"
     sha256 "45d356c4908e0c69b9a7ac666c85f3de46a8a83aee028c8567eeea74d364ff89"
   end
 
@@ -57,6 +57,6 @@ class Wordplay < Formula
   end
 
   test do
-    assert_equal "BREW", shell_output("#{bin}wordplay -s ERWB").strip
+    assert_equal "BREW", shell_output("#{bin}/wordplay -s ERWB").strip
   end
 end

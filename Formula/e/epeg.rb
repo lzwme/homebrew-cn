@@ -1,10 +1,10 @@
 class Epeg < Formula
-  desc "JPEGJPG thumbnail scaling"
-  homepage "https:github.commattesepeg"
-  url "https:github.commattesepegarchiverefstagsv0.9.3.tar.gz"
+  desc "JPEG/JPG thumbnail scaling"
+  homepage "https://github.com/mattes/epeg"
+  url "https://ghfast.top/https://github.com/mattes/epeg/archive/refs/tags/v0.9.3.tar.gz"
   sha256 "efcd7e72c530c3ff46f9efd86ec1dbb042e4a55fc5a7ea75e6ade9f83cf77ba3"
   license "MIT-enna"
-  head "https:github.commattesepeg.git", branch: "master"
+  head "https://github.com/mattes/epeg.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -29,12 +29,12 @@ class Epeg < Formula
   depends_on "libexif"
 
   def install
-    system ".autogen.sh", *std_configure_args, "--disable-silent-rules"
+    system "./autogen.sh", *std_configure_args, "--disable-silent-rules"
     system "make", "install"
   end
 
   test do
-    system bin"epeg", "--width=1", "--height=1", test_fixtures("test.jpg"), "out.jpg"
-    assert_path_exists testpath"out.jpg"
+    system bin/"epeg", "--width=1", "--height=1", test_fixtures("test.jpg"), "out.jpg"
+    assert_path_exists testpath/"out.jpg"
   end
 end

@@ -1,7 +1,7 @@
 class PurescriptLanguageServer < Formula
   desc "Language Server Protocol server for PureScript"
-  homepage "https:github.comnwolversonpurescript-language-server"
-  url "https:registry.npmjs.orgpurescript-language-server-purescript-language-server-0.18.5.tgz"
+  homepage "https://github.com/nwolverson/purescript-language-server"
+  url "https://registry.npmjs.org/purescript-language-server/-/purescript-language-server-0.18.5.tgz"
   sha256 "2b4a55ab4ee71dda3f9feb290437dcf2b8b083344cab8490089d6caab123341d"
   license "MIT"
 
@@ -14,7 +14,7 @@ class PurescriptLanguageServer < Formula
 
   def install
     system "npm", "install", *std_npm_args
-    bin.install_symlink Dir["#{libexec}bin*"]
+    bin.install_symlink Dir["#{libexec}/bin/*"]
   end
 
   test do
@@ -32,9 +32,9 @@ class PurescriptLanguageServer < Formula
       }
     JSON
 
-    Open3.popen3(bin"purescript-language-server", "--stdio") do |stdin, stdout|
+    Open3.popen3(bin/"purescript-language-server", "--stdio") do |stdin, stdout|
       stdin.write "Content-Length: #{json.size}\r\n\r\n#{json}"
-      assert_match(^Content-Length: \d+i, stdout.readline)
+      assert_match(/^Content-Length: \d+/i, stdout.readline)
     end
   end
 end

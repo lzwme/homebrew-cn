@@ -1,7 +1,7 @@
 class Pugixml < Formula
   desc "Light-weight C++ XML processing library"
-  homepage "https:pugixml.org"
-  url "https:github.comzeuxpugixmlreleasesdownloadv1.15pugixml-1.15.tar.gz"
+  homepage "https://pugixml.org/"
+  url "https://ghfast.top/https://github.com/zeux/pugixml/releases/download/v1.15/pugixml-1.15.tar.gz"
   sha256 "655ade57fa703fb421c2eb9a0113b5064bddb145d415dd1f88c79353d90d511a"
   license "MIT"
 
@@ -34,7 +34,7 @@ class Pugixml < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~CPP
+    (testpath/"test.cpp").write <<~CPP
       #include <pugixml.hpp>
       #include <cassert>
       #include <cstring>
@@ -48,11 +48,11 @@ class Pugixml < Formula
       }
     CPP
 
-    (testpath"test.xml").write <<~XML
-      <root>Hello world!<root>
+    (testpath/"test.xml").write <<~XML
+      <root>Hello world!</root>
     XML
 
     system ENV.cxx, "test.cpp", "-o", "test", "-I#{include}", "-L#{lib}", "-lpugixml"
-    system ".test"
+    system "./test"
   end
 end

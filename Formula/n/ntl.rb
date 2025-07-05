@@ -1,13 +1,13 @@
 class Ntl < Formula
   desc "C++ number theory library"
-  homepage "https:libntl.org"
-  url "https:libntl.orgntl-11.5.1.tar.gz"
+  homepage "https://libntl.org"
+  url "https://libntl.org/ntl-11.5.1.tar.gz"
   sha256 "210d06c31306cbc6eaf6814453c56c776d9d8e8df36d74eb306f6a523d1c6a8a"
   license "LGPL-2.1-or-later"
 
   livecheck do
-    url "https:libntl.orgdownload.html"
-    regex(href=.*?ntl[._-]v?(\d+(?:\.\d+)+)\.ti)
+    url "https://libntl.org/download.html"
+    regex(/href=.*?ntl[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -32,25 +32,25 @@ class Ntl < Formula
 
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
-    url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-pre-0.4.2.418-big_sur.diff"
+    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-pre-0.4.2.418-big_sur.diff"
     sha256 "83af02f2aa2b746bb7225872cab29a253264be49db0ecebb12f841562d9a2923"
-    directory "srclibtool-origin"
+    directory "src/libtool-origin"
   end
 
   def install
     args = ["PREFIX=#{prefix}", "SHARED=on"]
 
     cd "src" do
-      system ".configure", *args
+      system "./configure", *args
       system "make"
       system "make", "install"
     end
   end
 
   test do
-    (testpath"square.cc").write <<~CPP
+    (testpath/"square.cc").write <<~CPP
       #include <iostream>
-      #include <NTLZZ.h>
+      #include <NTL/ZZ.h>
 
       int main()
       {
@@ -71,6 +71,6 @@ class Ntl < Formula
       -lpthread
     ]
     system ENV.cxx, "square.cc", "-o", "square", *flags
-    assert_equal "4611686018427387904", pipe_output(".square", "2147483648")
+    assert_equal "4611686018427387904", pipe_output("./square", "2147483648")
   end
 end

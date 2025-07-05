@@ -1,10 +1,10 @@
 class Rip2 < Formula
   desc "Safe and ergonomic alternative to rm"
-  homepage "https:github.comMilesCranmerrip2"
-  url "https:github.comMilesCranmerrip2archiverefstagsv0.9.4.tar.gz"
+  homepage "https://github.com/MilesCranmer/rip2"
+  url "https://ghfast.top/https://github.com/MilesCranmer/rip2/archive/refs/tags/v0.9.4.tar.gz"
   sha256 "e6d3143958b838ebbf421fb933d8e46ecc28c8298f435bdf09f647b4def452f6"
   license "GPL-3.0-or-later"
-  head "https:github.comMilesCranmerrip2.git", branch: "master"
+  head "https://github.com/MilesCranmer/rip2.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "9ae3f478f94cdd1f8ee89a203e7512d8d3aa905ed3f3269d601c928043830386"
@@ -23,18 +23,18 @@ class Rip2 < Formula
   def install
     system "cargo", "install", *std_cargo_args
 
-    generate_completions_from_executable(bin"rip", "completions")
-    (share"elvishlibrip.elv").write Utils.safe_popen_read(bin"rip", "completions", "elvish")
-    (share"powershellcompletions_rip.ps1").write Utils.safe_popen_read(bin"rip", "completions", "powershell")
-    (share"nucompletionsrip.nu").write Utils.safe_popen_read(bin"rip", "completions", "nushell")
+    generate_completions_from_executable(bin/"rip", "completions")
+    (share/"elvish/lib/rip.elv").write Utils.safe_popen_read(bin/"rip", "completions", "elvish")
+    (share/"powershell/completions/_rip.ps1").write Utils.safe_popen_read(bin/"rip", "completions", "powershell")
+    (share/"nu/completions/rip.nu").write Utils.safe_popen_read(bin/"rip", "completions", "nushell")
   end
 
   test do
     # Create a test file and verify rip can delete it
-    test_file = testpath"test.txt"
+    test_file = testpath/"test.txt"
     touch test_file
-    system bin"rip", "--graveyard", testpath"graveyard", test_file.to_s
-    assert_path_exists testpath"graveyard"
+    system bin/"rip", "--graveyard", testpath/"graveyard", test_file.to_s
+    assert_path_exists testpath/"graveyard"
     refute_path_exists test_file
   end
 end

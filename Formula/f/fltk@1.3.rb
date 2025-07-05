@@ -1,13 +1,13 @@
 class FltkAT13 < Formula
   desc "Cross-platform C++ GUI toolkit"
-  homepage "https:www.fltk.org"
-  url "https:github.comfltkfltkreleasesdownloadrelease-1.3.11fltk-1.3.11-source.tar.bz2"
+  homepage "https://www.fltk.org/"
+  url "https://ghfast.top/https://github.com/fltk/fltk/releases/download/release-1.3.11/fltk-1.3.11-source.tar.bz2"
   sha256 "ca2e144e5f89173cd094cc273940d56230b1bf613083a0792e6406dc191cd99f"
   license "LGPL-2.0-only" => { with: "FLTK-exception" }
 
   livecheck do
-    url "https:www.fltk.orgsoftware.php"
-    regex(href=.*?fltk[._-]v?(1\.3(?:\.\d+)*(?:-\d+)?)-source\.ti)
+    url "https://www.fltk.org/software.php"
+    regex(/href=.*?fltk[._-]v?(1\.3(?:\.\d+)*(?:-\d+)?)-source\.t/i)
   end
 
   bottle do
@@ -43,15 +43,15 @@ class FltkAT13 < Formula
       --enable-threads
       --enable-shared
     ]
-    system ".configure", *args, *std_configure_args
+    system "./configure", *args, *std_configure_args
     system "make", "install"
   end
 
   test do
-    (testpath"test.cpp").write <<~CPP
-      #include <FLFl.H>
-      #include <FLFl_Window.H>
-      #include <FLFl_Box.H>
+    (testpath/"test.cpp").write <<~CPP
+      #include <FL/Fl.H>
+      #include <FL/Fl_Window.H>
+      #include <FL/Fl_Box.H>
       int main(int argc, char **argv) {
         Fl_Window *window = new Fl_Window(340,180);
         Fl_Box *box = new Fl_Box(20,40,300,100,"Hello, World!");
@@ -64,6 +64,6 @@ class FltkAT13 < Formula
       }
     CPP
     system ENV.cxx, "test.cpp", "-I#{include}", "-L#{lib}", "-lfltk", "-o", "test"
-    system ".test"
+    system "./test"
   end
 end

@@ -1,10 +1,10 @@
 class Overdrive < Formula
   desc "Bash script to download mp3s from the OverDrive audiobook service"
-  homepage "https:github.comchbrownoverdrive"
-  url "https:github.comchbrownoverdrivearchiverefstags2.4.1.tar.gz"
+  homepage "https://github.com/chbrown/overdrive"
+  url "https://ghfast.top/https://github.com/chbrown/overdrive/archive/refs/tags/2.4.1.tar.gz"
   sha256 "accc3ec4dab889f6bc003970be102ca7c85290b6516f71c8394e61946fb28860"
   license "MIT"
-  head "https:github.comchbrownoverdrive.git", branch: "master"
+  head "https://github.com/chbrown/overdrive.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, all: "2ea3e686b4157fced49eab3f6bbf5b467140e7d07f130a810902a5bf940aca0e"
@@ -25,6 +25,6 @@ class Overdrive < Formula
   test do
     # A full run would require an authentic file, which can only be used once
     assert_match "Specified media file does not exist",
-      shell_output("#{bin}overdrive download fake_file.odm 2>&1", 2)
+      shell_output("#{bin}/overdrive download fake_file.odm 2>&1", 2)
   end
 end

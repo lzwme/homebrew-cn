@@ -1,7 +1,7 @@
 class Nrpe < Formula
   desc "Nagios remote plugin executor"
-  homepage "https:www.nagios.org"
-  url "https:github.comNagiosEnterprisesnrpereleasesdownloadnrpe-4.1.3nrpe-4.1.3.tar.gz"
+  homepage "https://www.nagios.org/"
+  url "https://ghfast.top/https://github.com/NagiosEnterprises/nrpe/releases/download/nrpe-4.1.3/nrpe-4.1.3.tar.gz"
   sha256 "5a86dfde6b9732681abcd6ea618984f69781c294b8862a45dfc18afaca99a27a"
   license "GPL-2.0-or-later"
 
@@ -23,27 +23,27 @@ class Nrpe < Formula
     group = `id -gn`.chomp
 
     if OS.linux?
-      ENV["tmpfilesd"] = etc"tmpfiles.d"
-      (etc"tmpfiles.d").mkpath
+      ENV["tmpfilesd"] = etc/"tmpfiles.d"
+      (etc/"tmpfiles.d").mkpath
     end
 
-    system ".configure", "--prefix=#{prefix}",
-                          "--libexecdir=#{HOMEBREW_PREFIX}sbin",
-                          "--with-piddir=#{var}run",
+    system "./configure", "--prefix=#{prefix}",
+                          "--libexecdir=#{HOMEBREW_PREFIX}/sbin",
+                          "--with-piddir=#{var}/run",
                           "--sysconfdir=#{etc}",
                           "--with-nrpe-user=#{user}",
                           "--with-nrpe-group=#{group}",
                           "--with-nagios-user=#{user}",
                           "--with-nagios-group=#{group}",
                           "--with-ssl=#{Formula["openssl@3"].opt_prefix}",
-                          # Set both or it still looks for usrlib
+                          # Set both or it still looks for /usr/lib
                           "--with-ssl-lib=#{Formula["openssl@3"].opt_lib}",
                           "--enable-ssl",
                           "--enable-command-args"
 
-    inreplace "srcMakefile" do |s|
+    inreplace "src/Makefile" do |s|
       s.gsub! "$(LIBEXECDIR)", "$(SBINDIR)"
-      s.gsub! "$(DESTDIR)#{HOMEBREW_PREFIX}sbin", "$(SBINDIR)"
+      s.gsub! "$(DESTDIR)#{HOMEBREW_PREFIX}/sbin", "$(SBINDIR)"
     end
 
     system "make", "all"
@@ -51,11 +51,11 @@ class Nrpe < Formula
   end
 
   def post_install
-    (var"run").mkpath
+    (var/"run").mkpath
   end
 
   service do
-    run [opt_bin"nrpe", "-c", etc"nrpe.cfg", "-d"]
+    run [opt_bin/"nrpe", "-c", etc/"nrpe.cfg", "-d"]
   end
 
   def port_open?(ip_address, port, seconds = 1)
@@ -69,10 +69,10 @@ class Nrpe < Formula
 
   test do
     port = free_port
-    cp etc"nrpe.cfg", testpath
-    inreplace "nrpe.cfg", ^server_port=5666$, "server_port=#{port}"
+    cp etc/"nrpe.cfg", testpath
+    inreplace "nrpe.cfg", /^server_port=5666$/, "server_port=#{port}"
 
-    pid = spawn bin"nrpe", "-n", "-c", "#{testpath}nrpe.cfg", "-d"
+    pid = spawn bin/"nrpe", "-n", "-c", "#{testpath}/nrpe.cfg", "-d"
     sleep 2
     sleep 10 if Hardware::CPU.intel?
 

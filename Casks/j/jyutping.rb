@@ -2,14 +2,14 @@ cask "jyutping" do
   version "0.58.0"
   sha256 "63a13a98f075e628c9df3fc2ee9eff1f03ee8f36b2b952a919e8ea9ffe257618"
 
-  url "https:github.comyuetyamjyutpingreleasesdownload#{version}Jyutping-v#{version}-Mac.pkg",
-      verified: "github.comyuetyamjyutping"
+  url "https://ghfast.top/https://github.com/yuetyam/jyutping/releases/download/#{version}/Jyutping-v#{version}-Mac.pkg",
+      verified: "github.com/yuetyam/jyutping/"
   name "Jyutping"
   desc "Cantonese Jyutping Input Method"
-  homepage "https:jyutping.app"
+  homepage "https://jyutping.app/"
 
   livecheck do
-    url "https:jyutping.appappcast.xml"
+    url "https://jyutping.app/appcast.xml"
     strategy :sparkle, &:short_version
   end
 
@@ -20,11 +20,11 @@ cask "jyutping" do
 
   uninstall quit:    "org.jyutping.inputmethod.Jyutping",
             pkgutil: "org.jyutping.inputmethod.Jyutping",
-            delete:  "LibraryInput MethodsJyutping.app"
+            delete:  "/Library/Input Methods/Jyutping.app"
 
   zap trash: [
-    "~LibraryApplication Scriptsorg.jyutping.inputmethod.Jyutping",
-    "~LibraryCachesorg.jyutping.inputmethod.Jyutping",
-    "~LibraryContainersorg.jyutping.inputmethod.Jyutping",
+    "~/Library/Application Scripts/org.jyutping.inputmethod.Jyutping",
+    "~/Library/Caches/org.jyutping.inputmethod.Jyutping",
+    "~/Library/Containers/org.jyutping.inputmethod.Jyutping",
   ]
 end

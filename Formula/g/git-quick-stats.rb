@@ -1,7 +1,7 @@
 class GitQuickStats < Formula
   desc "Simple and efficient way to access statistics in git"
-  homepage "https:git-quick-stats.sh"
-  url "https:github.comgit-quick-statsgit-quick-statsarchiverefstags2.7.0.tar.gz"
+  homepage "https://git-quick-stats.sh/"
+  url "https://ghfast.top/https://github.com/git-quick-stats/git-quick-stats/archive/refs/tags/2.7.0.tar.gz"
   sha256 "5392afeceea9dadf7f8fccd05244a6e8c6a27940d6abd1a97f65533c27e56379"
   license "MIT"
 
@@ -25,13 +25,13 @@ class GitQuickStats < Formula
   test do
     ENV["TERM"] = "xterm"
 
-    ENV.prepend_path "PATH", Formula["coreutils"].libexec"gnubin" if OS.mac?
+    ENV.prepend_path "PATH", Formula["coreutils"].libexec/"gnubin" if OS.mac?
 
     system "git", "init", "--initial-branch=main"
     system "git", "commit", "--allow-empty", "-m", "initial commit", "--quiet"
 
     assert_match "All branches (sorted by most recent commit)",
-      shell_output("#{bin}git-quick-stats --branches-by-date")
-    assert_match(^Invalid argument, shell_output("#{bin}git-quick-stats command", 1))
+      shell_output("#{bin}/git-quick-stats --branches-by-date")
+    assert_match(/^Invalid argument/, shell_output("#{bin}/git-quick-stats command", 1))
   end
 end

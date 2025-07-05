@@ -1,11 +1,11 @@
 class Bartycrouch < Formula
-  desc "Incrementally updatetranslate your Strings files"
-  homepage "https:github.comFlineDevBartyCrouch"
-  url "https:github.comFlineDevBartyCrouch.git",
+  desc "Incrementally update/translate your Strings files"
+  homepage "https://github.com/FlineDev/BartyCrouch"
+  url "https://github.com/FlineDev/BartyCrouch.git",
       tag:      "4.15.1",
       revision: "fe88110ab0af3d1281138b63159e20a7450383fa"
   license "MIT"
-  head "https:github.comFlineDevBartyCrouch.git", branch: "main"
+  head "https://github.com/FlineDev/BartyCrouch.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "e1c38b26cfa121cc550ed3a82c6ec5838855f86afa694b31ae6ad33463857880"
@@ -25,7 +25,7 @@ class Bartycrouch < Formula
   end
 
   test do
-    (testpath"Test.swift").write <<~SWIFT
+    (testpath/"Test.swift").write <<~SWIFT
       import Foundation
 
       class Test {
@@ -35,13 +35,13 @@ class Bartycrouch < Formula
       }
     SWIFT
 
-    (testpath"en.lprojLocalizable.strings").write <<~EOS
-      * No comment provided by engineer. *
+    (testpath/"en.lproj/Localizable.strings").write <<~EOS
+      /* No comment provided by engineer. */
       "oldKey" = "Some translation";
     EOS
 
-    system bin"bartycrouch", "update"
-    assert_match '"oldKey" = "', File.read("en.lprojLocalizable.strings")
-    assert_match '"test" = "', File.read("en.lprojLocalizable.strings")
+    system bin/"bartycrouch", "update"
+    assert_match '"oldKey" = "', File.read("en.lproj/Localizable.strings")
+    assert_match '"test" = "', File.read("en.lproj/Localizable.strings")
   end
 end

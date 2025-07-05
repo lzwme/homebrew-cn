@@ -1,7 +1,7 @@
 class Cf4ocl < Formula
   desc "C Framework for OpenCL"
-  homepage "https:nunofachada.github.iocf4ocl"
-  url "https:github.comnunofachadacf4oclarchiverefstagsv2.1.0.tar.gz"
+  homepage "https://nunofachada.github.io/cf4ocl/"
+  url "https://ghfast.top/https://github.com/nunofachada/cf4ocl/archive/refs/tags/v2.1.0.tar.gz"
   sha256 "662c2cc4e035da3e0663be54efaab1c7fedc637955a563a85c332ac195d72cfa"
   license all_of: ["LGPL-3.0-or-later", "GPL-3.0-or-later"]
   revision 2
@@ -37,7 +37,7 @@ class Cf4ocl < Formula
   end
 
   # Fix build failure on Linux caused by undefined Windows-only constants.
-  # Upstreamed here: https:github.comnunofachadacf4oclpull40
+  # Upstreamed here: https://github.com/nunofachada/cf4ocl/pull/40
   patch :DATA
 
   def install
@@ -50,15 +50,15 @@ class Cf4ocl < Formula
     # OpenCL is not supported on virtualized arm64 macOS so will return error code
     result = (OS.mac? && Hardware::CPU.arm? && Hardware::CPU.virtualized?) ? 15 : 0
 
-    assert_match "Platform #0:", shell_output("#{bin}ccl_devinfo 2>&1", result)
+    assert_match "Platform #0:", shell_output("#{bin}/ccl_devinfo 2>&1", result)
   end
 end
 
 __END__
-diff --git asrclibccl_event_wrapper.c bsrclibccl_event_wrapper.c
+diff --git a/src/lib/ccl_event_wrapper.c b/src/lib/ccl_event_wrapper.c
 index 0bfbf8a..0ba8bf9 100644
---- asrclibccl_event_wrapper.c
-+++ bsrclibccl_event_wrapper.c
+--- a/src/lib/ccl_event_wrapper.c
++++ b/src/lib/ccl_event_wrapper.c
 @@ -282,6 +282,7 @@ const char* ccl_event_get_final_name(CCLEvent* evt) {
  			case CL_COMMAND_GL_FENCE_SYNC_OBJECT_KHR:
  				final_name = "GL_FENCE_SYNC_OBJECT_KHR";
@@ -75,16 +75,16 @@ index 0bfbf8a..0ba8bf9 100644
  			case CL_COMMAND_ACQUIRE_EGL_OBJECTS_KHR:
  				final_name = "ACQUIRE_EGL_OBJECTS_KHR";
  				break;
-diff --git asrclibccl_oclversions.h bsrclibccl_oclversions.h
+diff --git a/src/lib/ccl_oclversions.h b/src/lib/ccl_oclversions.h
 index 4e82c9f..598a7e6 100644
---- asrclibccl_oclversions.h
-+++ bsrclibccl_oclversions.h
+--- a/src/lib/ccl_oclversions.h
++++ b/src/lib/ccl_oclversions.h
 @@ -33,7 +33,7 @@
- 	#include <OpenCLopencl.h>
+ 	#include <OpenCL/opencl.h>
  #else
- 	#include <CLopencl.h>
+ 	#include <CL/opencl.h>
 -	#ifdef CL_VERSION_1_2
 +	#if defined(CL_VERSION_1_2) && defined(__MSC_VER)
- 		#include <CLcl_dx9_media_sharing.h>
+ 		#include <CL/cl_dx9_media_sharing.h>
  	#endif
  #endif

@@ -1,7 +1,7 @@
 class Pixd < Formula
   desc "Visual binary data using a colour palette"
-  homepage "https:github.comFireyFlypixd"
-  url "https:github.comFireyFlypixdarchiverefstagsv1.0.0.tar.gz"
+  homepage "https://github.com/FireyFly/pixd"
+  url "https://ghfast.top/https://github.com/FireyFly/pixd/archive/refs/tags/v1.0.0.tar.gz"
   sha256 "011440a8d191e40a572910b0ce7a094e9b4ee75cf972abc6d30674348edf4158"
   license "MIT"
 
@@ -29,10 +29,10 @@ class Pixd < Formula
   end
 
   test do
-    (testpath"test.txt").write "H"
+    (testpath/"test.txt").write "H"
 
     assert_match \
       "0000 \e[0m\e[38;2;147;221;0m▀\e[m",
-      shell_output("#{bin}pixd test.txt")
+      shell_output("#{bin}/pixd test.txt")
   end
 end

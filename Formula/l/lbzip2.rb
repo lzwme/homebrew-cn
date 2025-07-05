@@ -1,8 +1,8 @@
 class Lbzip2 < Formula
   desc "Parallel bzip2 utility"
-  homepage "https:github.comkjnlbzip2"
-  url "https:web.archive.orgweb20170304050514archive.lbzip2.orglbzip2-2.5.tar.bz2"
-  mirror "https:fossies.orglinuxprivatlbzip2-2.5.tar.bz2"
+  homepage "https://github.com/kjn/lbzip2"
+  url "https://web.archive.org/web/20170304050514/archive.lbzip2.org/lbzip2-2.5.tar.bz2"
+  mirror "https://fossies.org/linux/privat/lbzip2-2.5.tar.bz2"
   sha256 "eec4ff08376090494fa3710649b73e5412c3687b4b9b758c93f73aa7be27555b"
   license "GPL-3.0-or-later"
   revision 1
@@ -30,24 +30,24 @@ class Lbzip2 < Formula
 
   # Fix crash on macOS >= 10.13.
   patch :p0 do
-    url "https:raw.githubusercontent.comHomebrewformula-patches6b276429dbe68323349e1eda09b7e5d5a1082671lbzip2gnulib-vasnprintf-port-to-macOS-10-13.diff"
+    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/6b276429dbe68323349e1eda09b7e5d5a1082671/lbzip2/gnulib-vasnprintf-port-to-macOS-10-13.diff"
     sha256 "5b931e071e511a9c56e529278c249d7b2c82bbc3deda3dd9b739b3bd67d3d969"
   end
 
   # Apply Arch Linux fix for newer glibc
   patch do
-    url "https:gitlab.archlinux.orgarchlinuxpackagingpackageslbzip2-rawe707d24e8b5681f9d824e1141e41323ccd0a714dlbzip2-gnulib-build-fix.patch"
+    url "https://gitlab.archlinux.org/archlinux/packaging/packages/lbzip2/-/raw/e707d24e8b5681f9d824e1141e41323ccd0a714d/lbzip2-gnulib-build-fix.patch"
     sha256 "5eca4665b147655ce99f9ae5eff50e7db2714ba957e41e20b50d80533aeb6bef"
   end
 
   def install
-    system ".configure", *std_configure_args
+    system "./configure", *std_configure_args
     system "make", "install"
   end
 
   test do
     touch "fish"
-    system bin"lbzip2", "fish"
-    system bin"lbunzip2", "fish.bz2"
+    system bin/"lbzip2", "fish"
+    system bin/"lbunzip2", "fish.bz2"
   end
 end

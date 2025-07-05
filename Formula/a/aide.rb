@@ -1,16 +1,16 @@
 class Aide < Formula
   desc "File and directory integrity checker"
-  homepage "https:aide.github.io"
+  homepage "https://aide.github.io/"
   license "GPL-2.0-or-later"
 
   stable do
-    url "https:github.comaideaidereleasesdownloadv0.19aide-0.19.tar.gz"
+    url "https://ghfast.top/https://github.com/aide/aide/releases/download/v0.19/aide-0.19.tar.gz"
     sha256 "e7fba0214be01299d76359bff2975233ed241332e4cfcfff59cd1b6a89aba5e4"
 
     # Fix to missing MAGIC Constants for linux, remove in next release
-    # Issue ref: https:github.comaideaideissues192
+    # Issue ref: https://github.com/aide/aide/issues/192
     patch do
-      url "https:github.comaideaidecommit3a218b2a3affe034bb51506fd0b770eab723ca95.patch?full_index=1"
+      url "https://github.com/aide/aide/commit/3a218b2a3affe034bb51506fd0b770eab723ca95.patch?full_index=1"
       sha256 "6136c77d4242664a9df9ae9daa62a96809aadb21875655b705b4f2ea1e6cead8"
     end
   end
@@ -26,7 +26,7 @@ class Aide < Formula
   end
 
   head do
-    url "https:github.comaideaide.git", branch: "master"
+    url "https://github.com/aide/aide.git", branch: "master"
     depends_on "autoconf" => :build
     depends_on "autoconf-archive" => :build
     depends_on "automake" => :build
@@ -50,7 +50,7 @@ class Aide < Formula
     # use sdk's strnstr instead
     ENV.append_to_cflags "-DHAVE_STRNSTR"
 
-    system "sh", ".autogen.sh" if build.head?
+    system "sh", "./autogen.sh" if build.head?
 
     args = %W[
       --disable-static
@@ -64,22 +64,22 @@ class Aide < Formula
       "--with-curl=#{Formula["curl"].prefix}"
     end
 
-    system ".configure", *args, *std_configure_args
+    system "./configure", *args, *std_configure_args
     system "make", "install"
   end
 
   test do
-    (testpath"aide.conf").write <<~EOS
-      database_in = file:varlibaideaide.db
-      database_out = file:varlibaideaide.db.new
-      database_new = file:varlibaideaide.db.new
+    (testpath/"aide.conf").write <<~EOS
+      database_in = file:/var/lib/aide/aide.db
+      database_out = file:/var/lib/aide/aide.db.new
+      database_new = file:/var/lib/aide/aide.db.new
       gzip_dbout = yes
       report_summarize_changes = yes
       report_grouped = yes
       log_level = info
       database_attrs = sha256
-      etc p+i+u+g+sha256
+      /etc p+i+u+g+sha256
     EOS
-    system bin"aide", "--config-check", "-c", "aide.conf"
+    system bin/"aide", "--config-check", "-c", "aide.conf"
   end
 end

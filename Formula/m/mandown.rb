@@ -1,7 +1,7 @@
 class Mandown < Formula
   desc "Man-page inspired Markdown viewer"
-  homepage "https:github.comTitor8115mandown"
-  url "https:github.comTitor8115mandownarchiverefstagsv1.0.5.2.tar.gz"
+  homepage "https://github.com/Titor8115/mandown"
+  url "https://ghfast.top/https://github.com/Titor8115/mandown/archive/refs/tags/v1.0.5.2.tar.gz"
   sha256 "9903203fb95364a8b2774fe4eb4260daa725873d8f9a6e079d4c2ace81bede92"
   license "GPL-3.0-or-later"
   revision 1
@@ -26,19 +26,19 @@ class Mandown < Formula
   end
 
   test do
-    (testpath".configmdn").mkpath # `mdn` may misbehave when its config directory is missing.
-    (testpath"test.md").write <<~MARKDOWN
+    (testpath/".config/mdn").mkpath # `mdn` may misbehave when its config directory is missing.
+    (testpath/"test.md").write <<~MARKDOWN
       # Hi from readme file!
     MARKDOWN
     expected_output = <<~HTML
-      <html><head><title>test.md(7)<title><head><body><h1>Hi from readme file!<h1>
-      <body><html>
+      <html><head><title>test.md(7)</title></head><body><h1>Hi from readme file!</h1>
+      </body></html>
     HTML
     if OS.mac?
-      system bin"mdn", "-f", "test.md", "-o", "test"
+      system bin/"mdn", "-f", "test.md", "-o", "test"
     else
       require "pty"
-      _, _, pid = PTY.spawn(bin"mdn", "-f", "test.md", "-o", "test")
+      _, _, pid = PTY.spawn(bin/"mdn", "-f", "test.md", "-o", "test")
       Process.wait(pid)
     end
     assert_equal expected_output, File.read("test")

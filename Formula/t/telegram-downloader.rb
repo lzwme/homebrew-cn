@@ -1,10 +1,10 @@
 class TelegramDownloader < Formula
-  desc "Telegram Messenger downloadertools written in Golang"
-  homepage "https:docs.iyear.metdl"
-  url "https:github.comiyeartdlarchiverefstagsv0.19.0.tar.gz"
+  desc "Telegram Messenger downloader/tools written in Golang"
+  homepage "https://docs.iyear.me/tdl/"
+  url "https://ghfast.top/https://github.com/iyear/tdl/archive/refs/tags/v0.19.0.tar.gz"
   sha256 "228899c6ac2c4e3317e35b56751b366c658746a15f670567022aa6a950608bc1"
   license "AGPL-3.0-only"
-  head "https:github.comiyeartdl.git", branch: "master"
+  head "https://github.com/iyear/tdl.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -22,18 +22,18 @@ class TelegramDownloader < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.comiyeartdlpkgconsts.Version=#{version}
-      -X github.comiyeartdlpkgconsts.Commit=#{tap.user}
-      -X github.comiyeartdlpkgconsts.CommitDate=#{time.iso8601}
+      -X github.com/iyear/tdl/pkg/consts.Version=#{version}
+      -X github.com/iyear/tdl/pkg/consts.Commit=#{tap.user}
+      -X github.com/iyear/tdl/pkg/consts.CommitDate=#{time.iso8601}
     ]
-    system "go", "build", *std_go_args(ldflags:, output: bin"tdl")
+    system "go", "build", *std_go_args(ldflags:, output: bin/"tdl")
 
-    generate_completions_from_executable(bin"tdl", "completion")
+    generate_completions_from_executable(bin/"tdl", "completion")
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}tdl version")
+    assert_match version.to_s, shell_output("#{bin}/tdl version")
 
-    assert_match "not authorized. please login first", shell_output("#{bin}tdl chat ls -n _test", 1)
+    assert_match "not authorized. please login first", shell_output("#{bin}/tdl chat ls -n _test", 1)
   end
 end

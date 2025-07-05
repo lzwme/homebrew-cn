@@ -1,10 +1,10 @@
 class BazelRemote < Formula
   desc "Remote cache for Bazel"
-  homepage "https:github.combuchgrbazel-remote"
-  url "https:github.combuchgrbazel-remotearchiverefstagsv2.5.1.tar.gz"
+  homepage "https://github.com/buchgr/bazel-remote/"
+  url "https://ghfast.top/https://github.com/buchgr/bazel-remote/archive/refs/tags/v2.5.1.tar.gz"
   sha256 "ec2d5fa65fa15e571347627cbd0a104a95ff66479e694e534257e703fa580d66"
   license "Apache-2.0"
-  head "https:github.combuchgrbazel-remote.git", branch: "master"
+  head "https://github.com/buchgr/bazel-remote.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "7e42f5b3e1d951c49b40b8b60ce2df83ce1cf6a21e8ecfecf8cc5e2cfd7d087a"
@@ -28,9 +28,9 @@ class BazelRemote < Formula
     ENV["BAZEL_REMOTE_MAX_SIZE"] = "10"
 
     begin
-      pid = fork { exec bin"bazel-remote" }
+      pid = fork { exec bin/"bazel-remote" }
       sleep 2
-      assert_path_exists testpath"test", "Failed to create test directory"
+      assert_path_exists testpath/"test", "Failed to create test directory"
     ensure
       Process.kill("SIGINT", pid)
       Process.wait(pid)

@@ -2,10 +2,10 @@ cask "micro-sniff" do
   version "1.2.0"
   sha256 "92dbcad769340ab0df851483942003eaa6eaab388773408ef3191edce19b5bbe"
 
-  url "https:github.comdwarvesfmicro-sniffreleasesdownloadv#{version}Micro.Sniff.#{version}.dmg"
+  url "https://ghfast.top/https://github.com/dwarvesf/micro-sniff/releases/download/v#{version}/Micro.Sniff.#{version}.dmg"
   name "Micro Sniff"
   desc "Monitor microphone activity"
-  homepage "https:github.comdwarvesfmicro-sniff"
+  homepage "https://github.com/dwarvesf/micro-sniff"
 
   no_autobump! because: :requires_manual_review
 
@@ -14,9 +14,9 @@ cask "micro-sniff" do
   app "Micro Sniff.app"
 
   zap trash: [
-    "~LibraryApplication Scriptsfoundation.dwarves.microsniff",
-    "~LibraryApplication Scriptsfoundation.dwarves.microsnifflauncher",
-    "~LibraryContainersfoundation.dwarves.microsniff",
-    "~LibraryContainersfoundation.dwarves.microsnifflauncher",
+    "~/Library/Application Scripts/foundation.dwarves.microsniff",
+    "~/Library/Application Scripts/foundation.dwarves.microsnifflauncher",
+    "~/Library/Containers/foundation.dwarves.microsniff",
+    "~/Library/Containers/foundation.dwarves.microsnifflauncher",
   ]
 end

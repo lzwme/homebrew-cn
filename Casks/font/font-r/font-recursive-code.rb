@@ -2,29 +2,29 @@ cask "font-recursive-code" do
   version "1.085"
   sha256 "cbcbdf7a0e181d284a9235e09ed5f3873e527bc5dd1d977df71cdc1ff937da02"
 
-  url "https:github.comarrowtyperecursivereleasesdownloadv#{version}ArrowType-Recursive-#{version}.zip",
-      verified: "github.comarrowtyperecursive"
+  url "https://ghfast.top/https://github.com/arrowtype/recursive/releases/download/v#{version}/ArrowType-Recursive-#{version}.zip",
+      verified: "github.com/arrowtype/recursive/"
   name "Recursive Code"
-  homepage "https:www.recursive.design"
+  homepage "https://www.recursive.design/"
 
   no_autobump! because: :requires_manual_review
 
-  font "ArrowType-Recursive-#{version}Recursive_CodeRecMonoSemicasualRecMonoSemicasual-BoldItalic-#{version}.ttf"
-  font "ArrowType-Recursive-#{version}Recursive_CodeRecMonoSemicasualRecMonoSemicasual-Bold-#{version}.ttf"
-  font "ArrowType-Recursive-#{version}Recursive_CodeRecMonoSemicasualRecMonoSemicasual-Italic-#{version}.ttf"
-  font "ArrowType-Recursive-#{version}Recursive_CodeRecMonoSemicasualRecMonoSemicasual-Regular-#{version}.ttf"
-  font "ArrowType-Recursive-#{version}Recursive_CodeRecMonoDuotoneRecMonoDuotone-BoldItalic-#{version}.ttf"
-  font "ArrowType-Recursive-#{version}Recursive_CodeRecMonoDuotoneRecMonoDuotone-Bold-#{version}.ttf"
-  font "ArrowType-Recursive-#{version}Recursive_CodeRecMonoDuotoneRecMonoDuotone-Italic-#{version}.ttf"
-  font "ArrowType-Recursive-#{version}Recursive_CodeRecMonoDuotoneRecMonoDuotone-Regular-#{version}.ttf"
-  font "ArrowType-Recursive-#{version}Recursive_CodeRecMonoCasualRecMonoCasual-BoldItalic-#{version}.ttf"
-  font "ArrowType-Recursive-#{version}Recursive_CodeRecMonoCasualRecMonoCasual-Bold-#{version}.ttf"
-  font "ArrowType-Recursive-#{version}Recursive_CodeRecMonoCasualRecMonoCasual-Italic-#{version}.ttf"
-  font "ArrowType-Recursive-#{version}Recursive_CodeRecMonoCasualRecMonoCasual-Regular-#{version}.ttf"
-  font "ArrowType-Recursive-#{version}Recursive_CodeRecMonoLinearRecMonoLinear-BoldItalic-#{version}.ttf"
-  font "ArrowType-Recursive-#{version}Recursive_CodeRecMonoLinearRecMonoLinear-Bold-#{version}.ttf"
-  font "ArrowType-Recursive-#{version}Recursive_CodeRecMonoLinearRecMonoLinear-Italic-#{version}.ttf"
-  font "ArrowType-Recursive-#{version}Recursive_CodeRecMonoLinearRecMonoLinear-Regular-#{version}.ttf"
+  font "ArrowType-Recursive-#{version}/Recursive_Code/RecMonoSemicasual/RecMonoSemicasual-BoldItalic-#{version}.ttf"
+  font "ArrowType-Recursive-#{version}/Recursive_Code/RecMonoSemicasual/RecMonoSemicasual-Bold-#{version}.ttf"
+  font "ArrowType-Recursive-#{version}/Recursive_Code/RecMonoSemicasual/RecMonoSemicasual-Italic-#{version}.ttf"
+  font "ArrowType-Recursive-#{version}/Recursive_Code/RecMonoSemicasual/RecMonoSemicasual-Regular-#{version}.ttf"
+  font "ArrowType-Recursive-#{version}/Recursive_Code/RecMonoDuotone/RecMonoDuotone-BoldItalic-#{version}.ttf"
+  font "ArrowType-Recursive-#{version}/Recursive_Code/RecMonoDuotone/RecMonoDuotone-Bold-#{version}.ttf"
+  font "ArrowType-Recursive-#{version}/Recursive_Code/RecMonoDuotone/RecMonoDuotone-Italic-#{version}.ttf"
+  font "ArrowType-Recursive-#{version}/Recursive_Code/RecMonoDuotone/RecMonoDuotone-Regular-#{version}.ttf"
+  font "ArrowType-Recursive-#{version}/Recursive_Code/RecMonoCasual/RecMonoCasual-BoldItalic-#{version}.ttf"
+  font "ArrowType-Recursive-#{version}/Recursive_Code/RecMonoCasual/RecMonoCasual-Bold-#{version}.ttf"
+  font "ArrowType-Recursive-#{version}/Recursive_Code/RecMonoCasual/RecMonoCasual-Italic-#{version}.ttf"
+  font "ArrowType-Recursive-#{version}/Recursive_Code/RecMonoCasual/RecMonoCasual-Regular-#{version}.ttf"
+  font "ArrowType-Recursive-#{version}/Recursive_Code/RecMonoLinear/RecMonoLinear-BoldItalic-#{version}.ttf"
+  font "ArrowType-Recursive-#{version}/Recursive_Code/RecMonoLinear/RecMonoLinear-Bold-#{version}.ttf"
+  font "ArrowType-Recursive-#{version}/Recursive_Code/RecMonoLinear/RecMonoLinear-Italic-#{version}.ttf"
+  font "ArrowType-Recursive-#{version}/Recursive_Code/RecMonoLinear/RecMonoLinear-Regular-#{version}.ttf"
 
   # No zap stanza required
 end

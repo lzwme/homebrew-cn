@@ -2,11 +2,11 @@ class FortranLanguageServer < Formula
   include Language::Python::Virtualenv
 
   desc "Language Server for Fortran"
-  homepage "https:github.comhansecfortran-language-server"
-  url "https:files.pythonhosted.orgpackages7246eb2c733e920a33409906aa145bde93b015f7f77c9bb8bdf65faa8c823998fortran-language-server-1.12.0.tar.gz"
+  homepage "https://github.com/hansec/fortran-language-server"
+  url "https://files.pythonhosted.org/packages/72/46/eb2c733e920a33409906aa145bde93b015f7f77c9bb8bdf65faa8c823998/fortran-language-server-1.12.0.tar.gz"
   sha256 "ec3921ef23d7e2b50b9337c9171838ed8c6b09ac6e1e4fa4dd33883474bd4f90"
   license "MIT"
-  head "https:github.comhansecfortran-language-server.git", branch: "master"
+  head "https://github.com/hansec/fortran-language-server.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -24,9 +24,9 @@ class FortranLanguageServer < Formula
   end
 
   test do
-    assert_equal version.to_s, shell_output("#{bin}fortls --version").strip
+    assert_equal version.to_s, shell_output("#{bin}/fortls --version").strip
     # test file taken from main repository
-    (testpath"test.f90").write <<~FORTRAN
+    (testpath/"test.f90").write <<~FORTRAN
       PROGRAM myprog
       USE test_free, ONLY: scaled_vector
       TYPE(scaled_vector) :: myvec
@@ -35,7 +35,7 @@ class FortranLanguageServer < Formula
     FORTRAN
     expected_output = <<~EOS
       Testing parser
-        File = "#{testpath}test.f90"
+        File = "#{testpath}/test.f90"
         Detected format: free
 
       =========
@@ -62,9 +62,9 @@ class FortranLanguageServer < Formula
 
       1: myprog
     EOS
-    test_cmd = "#{bin}fortls"
+    test_cmd = "#{bin}/fortls"
     test_cmd << " --debug_parser --debug_diagnostics --debug_symbols"
-    test_cmd << " --debug_filepath #{testpath}test.f90"
+    test_cmd << " --debug_filepath #{testpath}/test.f90"
     assert_equal expected_output.strip, shell_output(test_cmd).strip
   end
 end

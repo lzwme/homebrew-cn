@@ -2,12 +2,12 @@ cask "font-shippori-mincho-b1" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefonts.git",
-      verified:  "github.comgooglefonts",
+  url "https://github.com/google/fonts.git",
+      verified:  "github.com/google/fonts",
       branch:    "main",
-      only_path: "oflshipporiminchob1"
+      only_path: "ofl/shipporiminchob1"
   name "Shippori Mincho B1"
-  homepage "https:fonts.google.comspecimenShippori+Mincho+B1"
+  homepage "https://fonts.google.com/specimen/Shippori+Mincho+B1"
 
   font "ShipporiMinchoB1-Bold.ttf"
   font "ShipporiMinchoB1-ExtraBold.ttf"

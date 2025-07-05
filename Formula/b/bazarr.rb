@@ -2,11 +2,11 @@ class Bazarr < Formula
   include Language::Python::Virtualenv
 
   desc "Companion to Sonarr and Radarr for managing and downloading subtitles"
-  homepage "https:www.bazarr.media"
-  url "https:github.commorpheus65535bazarrreleasesdownloadv1.5.2bazarr.zip"
+  homepage "https://www.bazarr.media"
+  url "https://ghfast.top/https://github.com/morpheus65535/bazarr/releases/download/v1.5.2/bazarr.zip"
   sha256 "63519d9855e5b84c947b18d72fa36dfa9341a040879d1079bfde2fabfe8ab30e"
   license "GPL-3.0-or-later"
-  head "https:github.commorpheus65535bazarr.git", branch: "development"
+  head "https://github.com/morpheus65535/bazarr.git", branch: "development"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "8a970f6f5dc0730e20ca59176874c7ec1abe7a8433a897bd0e642eba8a951c00"
@@ -23,7 +23,7 @@ class Bazarr < Formula
   depends_on "gcc"
   depends_on "numpy"
   depends_on "pillow"
-  depends_on "python@3.12" # Python 3.13 issue (closed wo fix): https:github.commorpheus65535bazarrissues2803
+  depends_on "python@3.12" # Python 3.13 issue (closed w/o fix): https://github.com/morpheus65535/bazarr/issues/2803
   depends_on "unar"
 
   uses_from_macos "libxml2", since: :ventura
@@ -31,17 +31,17 @@ class Bazarr < Formula
   uses_from_macos "zlib"
 
   resource "lxml" do
-    url "https:files.pythonhosted.orgpackages763d14e82fc7c8fb1b7761f7e748fd47e2ec8276d137b6acfe5a4bb73853e08flxml-5.4.0.tar.gz"
+    url "https://files.pythonhosted.org/packages/76/3d/14e82fc7c8fb1b7761f7e748fd47e2ec8276d137b6acfe5a4bb73853e08f/lxml-5.4.0.tar.gz"
     sha256 "d12832e1dbea4be280b22fd0ea7c9b87f0d8fc51ba06e92dc62d52f804f78ebd"
   end
 
   resource "setuptools" do
-    url "https:files.pythonhosted.orgpackages95320cc40fe41fd2adb80a2f388987f4f8db3c866c69e33e0b4c8b093fdf700esetuptools-80.4.0.tar.gz"
+    url "https://files.pythonhosted.org/packages/95/32/0cc40fe41fd2adb80a2f388987f4f8db3c866c69e33e0b4c8b093fdf700e/setuptools-80.4.0.tar.gz"
     sha256 "5a78f61820bc088c8e4add52932ae6b8cf423da2aff268c23f813cfbb13b4006"
   end
 
   resource "webrtcvad-wheels" do
-    url "https:files.pythonhosted.orgpackages28ba3a8ce2cff3eee72a39ed190e5f9dac792da1526909c97a11589590b21739webrtcvad_wheels-2.0.14.tar.gz"
+    url "https://files.pythonhosted.org/packages/28/ba/3a8ce2cff3eee72a39ed190e5f9dac792da1526909c97a11589590b21739/webrtcvad_wheels-2.0.14.tar.gz"
     sha256 "5f59c8e291c6ef102d9f39532982fbf26a52ce2de6328382e2654b0960fea397"
   end
 
@@ -51,14 +51,14 @@ class Bazarr < Formula
 
     if build.head?
       # Build front-end.
-      cd buildpath"frontend" do
+      cd buildpath/"frontend" do
         system "npm", "install", *std_npm_args(prefix: false)
         system "npm", "run", "build"
       end
     end
 
     # Stop program from automatically downloading its own binaries.
-    binaries_file = buildpath"bazarrutilitiesbinaries.json"
+    binaries_file = buildpath/"bazarr/utilities/binaries.json"
     binaries_file.unlink
     binaries_file.write "[]"
 
@@ -67,68 +67,68 @@ class Bazarr < Formula
     inreplace "bazarr.py", "def get_python_path():", "def get_python_path():\n    return sys.executable"
 
     libexec.install Dir["*"]
-    (bin"bazarr").write_env_script venv.root"binpython", libexec"bazarr.py",
+    (bin/"bazarr").write_env_script venv.root/"bin/python", libexec/"bazarr.py",
       NO_UPDATE:  "1",
-      PATH:       "#{Formula["ffmpeg"].opt_bin}:#{HOMEBREW_PREFIX"bin"}:$PATH",
+      PATH:       "#{Formula["ffmpeg"].opt_bin}:#{HOMEBREW_PREFIX/"bin"}:$PATH",
       PYTHONPATH: venv.site_packages
 
-    pkgvar = var"bazarr"
+    pkgvar = var/"bazarr"
     pkgvar.mkpath
     pkgvar.install_symlink pkgetc => "config"
 
     pkgetc.mkpath
-    cp Dir[libexec"dataconfig*"], pkgetc
+    cp Dir[libexec/"data/config/*"], pkgetc
 
     libexec.install_symlink pkgvar => "data"
   end
 
   def post_install
-    pkgvar = var"bazarr"
+    pkgvar = var/"bazarr"
 
-    config_file = pkgetc"config.ini"
+    config_file = pkgetc/"config.ini"
     unless config_file.exist?
       config_file.write <<~INI
         [backup]
-        folder = #{pkgvar}backup
+        folder = #{pkgvar}/backup
       INI
     end
   end
 
   service do
-    run opt_bin"bazarr"
+    run opt_bin/"bazarr"
     keep_alive true
     require_root true
-    log_path var"logbazarr.log"
-    error_log_path var"logbazarr.log"
+    log_path var/"log/bazarr.log"
+    error_log_path var/"log/bazarr.log"
   end
 
   test do
     require "open3"
     require "timeout"
 
-    system bin"bazarr", "--help"
+    system bin/"bazarr", "--help"
 
-    (testpath"configconfig.ini").write <<~INI
+    (testpath/"config/config.ini").write <<~INI
       [backup]
-      folder = #{testpath}custom_backup
+      folder = #{testpath}/custom_backup
     INI
 
     port = free_port
 
-    Open3.popen3(bin"bazarr", "--no-update", "--config", testpath, "--port", port.to_s) do |_, _, stderr, wait_thr|
+    Open3.popen3(bin/"bazarr", "--no-update", "--config", testpath, "--port", port.to_s) do |_, _, stderr, wait_thr|
       Timeout.timeout(45) do
         stderr.each do |line|
           refute_match "ERROR", line unless line.match? "Error trying to get releases from Github"
-          break if line.include? "BAZARR is started and waiting for requests on: http:0.0.0.0:#{port}"
+          break if line.include? "BAZARR is started and waiting for requests on: http://0.0.0.0:#{port}"
         end
-        assert_match "<title>Bazarr<title>", shell_output("curl --silent http:localhost:#{port}")
+        assert_match "<title>Bazarr</title>", shell_output("curl --silent http://localhost:#{port}")
       end
     ensure
       Process.kill "TERM", wait_thr.pid
     end
 
-    assert_path_exists (testpath"configconfig.ini.old")
-    assert_includes (testpath"configconfig.yaml").read, "#{testpath}custom_backup"
-    assert_match "BAZARR is started and waiting for request", (testpath"logbazarr.log").read
+    assert_path_exists (testpath/"config/config.ini.old")
+    assert_includes (testpath/"config/config.yaml").read, "#{testpath}/custom_backup"
+    assert_match "BAZARR is started and waiting for request", (testpath/"log/bazarr.log").read
   end
 end

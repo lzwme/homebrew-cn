@@ -20,17 +20,17 @@ cask "x-moto" do
     end
   end
 
-  url "https:github.comxmotoxmotoreleasesdownloadv#{version}xmoto-#{version}#{arch}-macos.dmg",
-      verified: "github.comxmotoxmoto"
+  url "https://ghfast.top/https://github.com/xmoto/xmoto/releases/download/v#{version}/xmoto-#{version}#{arch}-macos.dmg",
+      verified: "github.com/xmoto/xmoto/"
   name "X-Moto"
   desc "2D motocross platform game"
-  homepage "https:xmoto.tuxfamily.org"
+  homepage "https://xmoto.tuxfamily.org/"
 
   # Not every release suppports both architectures, so we need to check the
   # release artifacts to find the latest version for the current architecture.
   livecheck do
     url :url
-    regex(^xmoto[._-]v?(\d+(?:\.\d+)+)#{arch}[._-]macos\.dmg$i)
+    regex(/^xmoto[._-]v?(\d+(?:\.\d+)+)#{arch}[._-]macos\.dmg$/i)
     strategy :github_releases do |json, regex|
       json.map do |release|
         next if release["draft"] || release["prerelease"]
@@ -51,5 +51,5 @@ cask "x-moto" do
 
   app "X-Moto.app"
 
-  zap trash: "~LibrarySaved Application Statenet.sourceforge.xmoto.savedState"
+  zap trash: "~/Library/Saved Application State/net.sourceforge.xmoto.savedState"
 end

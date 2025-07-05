@@ -2,10 +2,10 @@ cask "font-mononoki" do
   version "1.6"
   sha256 "86549faebfd9231c3bd0942038cb1f717f5186729c9a54d0045e36b996c1a355"
 
-  url "https:github.commadmalikmononokireleasesdownload#{version}mononoki.zip",
-      verified: "github.commadmalikmononoki"
+  url "https://ghfast.top/https://github.com/madmalik/mononoki/releases/download/#{version}/mononoki.zip",
+      verified: "github.com/madmalik/mononoki/"
   name "Mononoki"
-  homepage "https:madmalik.github.iomononoki"
+  homepage "https://madmalik.github.io/mononoki/"
 
   no_autobump! because: :requires_manual_review
 

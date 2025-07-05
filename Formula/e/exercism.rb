@@ -1,10 +1,10 @@
 class Exercism < Formula
   desc "Command-line tool to interact with exercism.io"
-  homepage "https:exercism.iocli"
-  url "https:github.comexercismcliarchiverefstagsv3.5.5.tar.gz"
+  homepage "https://exercism.io/cli/"
+  url "https://ghfast.top/https://github.com/exercism/cli/archive/refs/tags/v3.5.5.tar.gz"
   sha256 "7e01a838877d6fc9faea5a6ad3834351b8e485acc9053bbdf59ce3ab3ce0d3b8"
   license "MIT"
-  head "https:github.comexercismcli.git", branch: "main"
+  head "https://github.com/exercism/cli.git", branch: "main"
 
   livecheck do
     url :stable
@@ -23,14 +23,14 @@ class Exercism < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "exercismmain.go"
+    system "go", "build", *std_go_args(ldflags: "-s -w"), "exercism/main.go"
 
-    bash_completion.install "shellexercism_completion.bash" => "exercism"
-    zsh_completion.install "shellexercism_completion.zsh" => "_exercism"
-    fish_completion.install "shellexercism.fish"
+    bash_completion.install "shell/exercism_completion.bash" => "exercism"
+    zsh_completion.install "shell/exercism_completion.zsh" => "_exercism"
+    fish_completion.install "shell/exercism.fish"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}exercism version")
+    assert_match version.to_s, shell_output("#{bin}/exercism version")
   end
 end

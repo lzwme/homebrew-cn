@@ -1,7 +1,7 @@
 class Bento < Formula
   desc "Fancy stream processing made operationally mundane"
-  homepage "https:warpstreamlabs.github.iobento"
-  url "https:github.comwarpstreamlabsbentoarchiverefstagsv1.8.2.tar.gz"
+  homepage "https://warpstreamlabs.github.io/bento/"
+  url "https://ghfast.top/https://github.com/warpstreamlabs/bento/archive/refs/tags/v1.8.2.tar.gz"
   sha256 "55447f8726afa5ee7574ee641a0f42d6eb0c9d6e92a340d0641a085bb79ad15f"
   license "MIT"
 
@@ -17,14 +17,14 @@ class Bento < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = "-s -w  -X github.comwarpstreamlabsbentointernalcli.Version=#{version} -X main.Version=#{version}"
-    system "go", "build", *std_go_args(ldflags:), ".cmdbento"
+    ldflags = "-s -w  -X github.com/warpstreamlabs/bento/internal/cli.Version=#{version} -X main.Version=#{version}"
+    system "go", "build", *std_go_args(ldflags:), "./cmd/bento"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}bento --version")
+    assert_match version.to_s, shell_output("#{bin}/bento --version")
 
-    (testpath"config.yaml").write <<~YAML
+    (testpath/"config.yaml").write <<~YAML
       input:
         stdin: {}#{" "}
 
@@ -36,7 +36,7 @@ class Bento < Formula
         stdout: {}
     YAML
 
-    output = shell_output("echo foobar | bento -c #{testpath}config.yaml")
+    output = shell_output("echo foobar | bento -c #{testpath}/config.yaml")
     assert_match "FOOBAR", output
   end
 end

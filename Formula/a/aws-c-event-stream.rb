@@ -1,7 +1,7 @@
 class AwsCEventStream < Formula
   desc "C99 implementation of the vnd.amazon.eventstream content-type"
-  homepage "https:github.comawslabsaws-c-event-stream"
-  url "https:github.comawslabsaws-c-event-streamarchiverefstagsv0.5.5.tar.gz"
+  homepage "https://github.com/awslabs/aws-c-event-stream"
+  url "https://ghfast.top/https://github.com/awslabs/aws-c-event-stream/archive/refs/tags/v0.5.5.tar.gz"
   sha256 "f6e55c8fd6afd7f904e08d36c3210e199ece5dc838f0f8457b43b72ec4d818e9"
   license "Apache-2.0"
 
@@ -31,9 +31,9 @@ class AwsCEventStream < Formula
   end
 
   test do
-    (testpath"test.c").write <<~C
-      #include <awsevent-streamevent_stream.h>
-      #include <awscommonallocator.h>
+    (testpath/"test.c").write <<~C
+      #include <aws/event-stream/event_stream.h>
+      #include <aws/common/allocator.h>
       #include <assert.h>
 
       int main(void) {
@@ -56,6 +56,6 @@ class AwsCEventStream < Formula
     C
     system ENV.cc, "test.c", "-o", "test", "-L#{lib}", "-laws-c-event-stream",
                    "-L#{Formula["aws-c-common"].opt_lib}", "-laws-c-common"
-    system ".test"
+    system "./test"
   end
 end

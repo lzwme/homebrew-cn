@@ -1,10 +1,10 @@
 class Buffrs < Formula
   desc "Modern protobuf package management"
-  homepage "https:github.comhelsing-aibuffrs"
-  url "https:github.comhelsing-aibuffrsarchiverefstagsv0.11.0.tar.gz"
+  homepage "https://github.com/helsing-ai/buffrs"
+  url "https://ghfast.top/https://github.com/helsing-ai/buffrs/archive/refs/tags/v0.11.0.tar.gz"
   sha256 "c52b04ef9d7919d19d9c3fd6312091f0000a65097e55c45c6f9f3ab5d2d3369c"
   license "Apache-2.0"
-  head "https:github.comhelsing-aibuffrs.git", branch: "main"
+  head "https://github.com/helsing-ai/buffrs.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "b48db1d0f92f5ea602daa0ee3f1144ec731b5b698f796d14e3b6c1e3713d07eb"
@@ -23,11 +23,11 @@ class Buffrs < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}buffrs --version")
+    assert_match version.to_s, shell_output("#{bin}/buffrs --version")
 
-    system bin"buffrs", "init"
-    assert_match "edition = \"#{version.major_minor}\"", (testpath"Proto.toml").read
+    system bin/"buffrs", "init"
+    assert_match "edition = \"#{version.major_minor}\"", (testpath/"Proto.toml").read
 
-    assert_empty shell_output("#{bin}buffrs list")
+    assert_empty shell_output("#{bin}/buffrs list")
   end
 end

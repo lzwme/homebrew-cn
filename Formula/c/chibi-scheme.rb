@@ -1,11 +1,11 @@
 class ChibiScheme < Formula
   desc "Small footprint Scheme for use as a C Extension Language"
-  homepage "https:github.comashinnchibi-scheme"
-  url "https:github.comashinnchibi-schemereleasesdownload0.11chibi-scheme-0.11.0.tgz"
+  homepage "https://github.com/ashinn/chibi-scheme"
+  url "https://ghfast.top/https://github.com/ashinn/chibi-scheme/releases/download/0.11/chibi-scheme-0.11.0.tgz"
   version "0.11"
   sha256 "74d4edd9a904e30da7b4defe4c0d7aac63c5254e64869935f5de86acf59db6b2"
   license "BSD-3-Clause"
-  head "https:github.comashinnchibi-scheme.git", branch: "master"
+  head "https://github.com/ashinn/chibi-scheme.git", branch: "master"
 
   bottle do
     sha256 arm64_sequoia:  "91aa4dee44f150abda4aed2001a7ed4a78abc923a0a550ea863b69d79d53998c"
@@ -28,7 +28,7 @@ class ChibiScheme < Formula
   end
 
   test do
-    output = shell_output("#{bin}chibi-scheme -mchibi -e \"(for-each write '(0 1 2 3 4 5 6 7 8 9))\"")
+    output = shell_output("#{bin}/chibi-scheme -mchibi -e \"(for-each write '(0 1 2 3 4 5 6 7 8 9))\"")
     assert_equal "0123456789", output
   end
 end

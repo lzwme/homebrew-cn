@@ -1,14 +1,14 @@
 class KosliCli < Formula
   desc "CLI for managing Kosli"
-  homepage "https:docs.kosli.comclient_reference"
-  url "https:github.comkosli-devcliarchiverefstagsv2.11.16.tar.gz"
+  homepage "https://docs.kosli.com/client_reference/"
+  url "https://ghfast.top/https://github.com/kosli-dev/cli/archive/refs/tags/v2.11.16.tar.gz"
   sha256 "e5d1fffc37feb9243c6d29fa2e9c9d910522c0d546d52204773cb27ee5d5115c"
   license "MIT"
-  head "https:github.comkosli-devcli.git", branch: "main"
+  head "https://github.com/kosli-dev/cli.git", branch: "main"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -26,18 +26,18 @@ class KosliCli < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.comkosli-devcliinternalversion.version=#{version}
-      -X github.comkosli-devcliinternalversion.gitCommit=#{tap.user}
-      -X github.comkosli-devcliinternalversion.gitTreeState=clean
+      -X github.com/kosli-dev/cli/internal/version.version=#{version}
+      -X github.com/kosli-dev/cli/internal/version.gitCommit=#{tap.user}
+      -X github.com/kosli-dev/cli/internal/version.gitTreeState=clean
     ]
-    system "go", "build", *std_go_args(output: bin"kosli", ldflags:), ".cmdkosli"
+    system "go", "build", *std_go_args(output: bin/"kosli", ldflags:), "./cmd/kosli"
 
-    generate_completions_from_executable(bin"kosli", "completion")
+    generate_completions_from_executable(bin/"kosli", "completion")
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}kosli version")
+    assert_match version.to_s, shell_output("#{bin}/kosli version")
 
-    assert_match "OK", shell_output("#{bin}kosli status")
+    assert_match "OK", shell_output("#{bin}/kosli status")
   end
 end

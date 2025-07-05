@@ -1,14 +1,14 @@
 class Onedpl < Formula
   desc "C++ standard library algorithms with support for execution policies"
-  homepage "https:github.comuxlfoundationoneDPL"
-  url "https:github.comuxlfoundationoneDPLarchiverefstagsoneDPL-2022.9.0-release.tar.gz"
+  homepage "https://github.com/uxlfoundation/oneDPL"
+  url "https://ghfast.top/https://github.com/uxlfoundation/oneDPL/archive/refs/tags/oneDPL-2022.9.0-release.tar.gz"
   sha256 "b38844878af9ecee07ca719426b90fec77f79a35c7bc55154422cb0d7f654343"
   # Apache License Version 2.0 with LLVM exceptions
   license "Apache-2.0" => { with: "LLVM-exception" }
 
   livecheck do
     url :stable
-    regex(^oneDPL[._-](\d+(?:\.\d+)+)(?:[._-]release)?$i)
+    regex(/^oneDPL[._-](\d+(?:\.\d+)+)(?:[._-]release)?$/i)
   end
 
   bottle do
@@ -27,9 +27,9 @@ class Onedpl < Formula
   test do
     tbb = Formula["tbb"]
 
-    (testpath"test.cpp").write <<~CPP
-      #include <oneapidplexecution>
-      #include <oneapidplalgorithm>
+    (testpath/"test.cpp").write <<~CPP
+      #include <oneapi/dpl/execution>
+      #include <oneapi/dpl/algorithm>
       #include <array>
       #include <assert.h>
 
@@ -42,7 +42,7 @@ class Onedpl < Formula
       }
     CPP
     system ENV.cxx, "test.cpp", "-std=c++17", "-L#{tbb.opt_lib}", "-ltbb", "-I#{tbb.opt_include}",
-                    "-I#{prefix}stdlib", "-I#{include}", "-o", "test"
-    system ".test"
+                    "-I#{prefix}/stdlib", "-I#{include}", "-o", "test"
+    system "./test"
   end
 end

@@ -1,15 +1,15 @@
 class Seaweedfs < Formula
   desc "Fast distributed storage system"
-  homepage "https:github.comseaweedfsseaweedfs"
-  url "https:github.comseaweedfsseaweedfs.git",
+  homepage "https://github.com/seaweedfs/seaweedfs"
+  url "https://github.com/seaweedfs/seaweedfs.git",
       tag:      "3.92",
       revision: "7324cb71717f87cd0cc957d983d2ad2e0ca82695"
   license "Apache-2.0"
-  head "https:github.comseaweedfsseaweedfs.git", branch: "master"
+  head "https://github.com/seaweedfs/seaweedfs.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -26,44 +26,44 @@ class Seaweedfs < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.comseaweedfsseaweedfsweedutil.COMMIT=#{Utils.git_head}
+      -X github.com/seaweedfs/seaweedfs/weed/util.COMMIT=#{Utils.git_head}
     ]
-    system "go", "build", *std_go_args(ldflags:, output: bin"weed"), ".weed"
+    system "go", "build", *std_go_args(ldflags:, output: bin/"weed"), "./weed"
   end
 
   def post_install
-    (var"seaweedfs").mkpath
+    (var/"seaweedfs").mkpath
   end
 
   service do
-    run [opt_bin"weed", "server", "-dir=#{var}seaweedfs", "-s3"]
+    run [opt_bin/"weed", "server", "-dir=#{var}/seaweedfs", "-s3"]
     keep_alive true
-    error_log_path var"logseaweedfs.log"
-    log_path var"logseaweedfs.log"
+    error_log_path var/"log/seaweedfs.log"
+    log_path var/"log/seaweedfs.log"
     working_dir var
   end
 
   test do
-    # Start SeaweedFS master servervolume server
+    # Start SeaweedFS master server/volume server
     master_port = free_port
     volume_port = free_port
     master_grpc_port = free_port
     volume_grpc_port = free_port
 
     fork do
-      exec bin"weed", "server", "-dir=#{testpath}", "-ip.bind=0.0.0.0",
+      exec bin/"weed", "server", "-dir=#{testpath}", "-ip.bind=0.0.0.0",
            "-master.port=#{master_port}", "-volume.port=#{volume_port}",
            "-master.port.grpc=#{master_grpc_port}", "-volume.port.grpc=#{volume_grpc_port}"
     end
     sleep 30
 
     # Upload a test file
-    fid = JSON.parse(shell_output("curl http:localhost:#{master_port}dirassign"))["fid"]
-    system "curl", "-F", "file=@#{test_fixtures("test.png")}", "http:localhost:#{volume_port}#{fid}"
+    fid = JSON.parse(shell_output("curl http://localhost:#{master_port}/dir/assign"))["fid"]
+    system "curl", "-F", "file=@#{test_fixtures("test.png")}", "http://localhost:#{volume_port}/#{fid}"
 
     # Download and validate uploaded test file against the original
     expected_sum = Digest::SHA256.hexdigest(File.read(test_fixtures("test.png")))
-    actual_sum = Digest::SHA256.hexdigest(shell_output("curl http:localhost:#{volume_port}#{fid}"))
+    actual_sum = Digest::SHA256.hexdigest(shell_output("curl http://localhost:#{volume_port}/#{fid}"))
     assert_equal expected_sum, actual_sum
   end
 end

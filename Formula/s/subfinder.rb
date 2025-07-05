@@ -1,10 +1,10 @@
 class Subfinder < Formula
   desc "Subdomain discovery tool"
-  homepage "https:github.comprojectdiscoverysubfinder"
-  url "https:github.comprojectdiscoverysubfinderarchiverefstagsv2.8.0.tar.gz"
+  homepage "https://github.com/projectdiscovery/subfinder"
+  url "https://ghfast.top/https://github.com/projectdiscovery/subfinder/archive/refs/tags/v2.8.0.tar.gz"
   sha256 "d4273408c6eeeb9e69fe04e5d7400247502575841c79371dc680fc6b2e3aaaa8"
   license "MIT"
-  head "https:github.comprojectdiscoverysubfinder.git", branch: "master"
+  head "https://github.com/projectdiscovery/subfinder.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "e4bb33f0b28d7c5a0582927b1fbb47543dfc495af2f8ca6b8ac36585e6a061b7"
@@ -19,22 +19,22 @@ class Subfinder < Formula
 
   def install
     cd "v2" do
-      system "go", "build", *std_go_args(ldflags: "-s -w"), ".cmdsubfinder"
+      system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/subfinder"
     end
   end
 
   test do
-    assert_match "docs.brew.sh", shell_output("#{bin}subfinder -d brew.sh")
+    assert_match "docs.brew.sh", shell_output("#{bin}/subfinder -d brew.sh")
 
-    # upstream issue, https:github.comprojectdiscoverysubfinderissues1124
+    # upstream issue, https://github.com/projectdiscovery/subfinder/issues/1124
     if OS.mac?
-      assert_path_exists testpath"LibraryApplication Supportsubfinderconfig.yaml"
-      assert_path_exists testpath"LibraryApplication Supportsubfinderprovider-config.yaml"
+      assert_path_exists testpath/"Library/Application Support/subfinder/config.yaml"
+      assert_path_exists testpath/"Library/Application Support/subfinder/provider-config.yaml"
     else
-      assert_path_exists testpath".configsubfinderconfig.yaml"
-      assert_path_exists testpath".configsubfinderprovider-config.yaml"
+      assert_path_exists testpath/".config/subfinder/config.yaml"
+      assert_path_exists testpath/".config/subfinder/provider-config.yaml"
     end
 
-    assert_match version.to_s, shell_output("#{bin}subfinder -version 2>&1")
+    assert_match version.to_s, shell_output("#{bin}/subfinder -version 2>&1")
   end
 end

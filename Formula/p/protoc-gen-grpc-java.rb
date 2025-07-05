@@ -1,7 +1,7 @@
 class ProtocGenGrpcJava < Formula
   desc "Protoc plugin for gRPC Java"
-  homepage "https:grpc.iodocslanguagesjava"
-  url "https:github.comgrpcgrpc-javaarchiverefstagsv1.73.0.tar.gz"
+  homepage "https://grpc.io/docs/languages/java/"
+  url "https://ghfast.top/https://github.com/grpc/grpc-java/archive/refs/tags/v1.73.0.tar.gz"
   sha256 "eca44a9f3eb341daf7a01482b96016dfa7d91baee495a697746c4724868a06db"
   license "Apache-2.0"
 
@@ -23,12 +23,12 @@ class ProtocGenGrpcJava < Formula
 
   def install
     # Workaround for newer Protobuf to link to Abseil libraries
-    # Ref: https:github.comgrpcgrpc-javaissues11475
+    # Ref: https://github.com/grpc/grpc-java/issues/11475
     ENV.append "CXXFLAGS", "-std=c++17"
     ENV.append "CXXFLAGS", Utils.safe_popen_read("pkgconf", "--cflags", "protobuf").chomp
     ENV.append "LDFLAGS", Utils.safe_popen_read("pkgconf", "--libs", "protobuf").chomp
 
-    inreplace "compilerbuild.gradle" do |s|
+    inreplace "compiler/build.gradle" do |s|
       # Avoid build errors on ARM macOS from old minimum macOS deployment
       s.gsub! '"-mmacosx-version-min=10.7",', ""
       # Avoid static linkage on Linux
@@ -37,14 +37,14 @@ class ProtocGenGrpcJava < Formula
     end
 
     system "gradle", "--no-daemon", "--project-dir=compiler", "-PskipAndroid=true", "java_pluginExecutable"
-    bin.install "compilerbuildexejava_pluginprotoc-gen-grpc-java"
+    bin.install "compiler/build/exe/java_plugin/protoc-gen-grpc-java"
 
-    pkgshare.install "examplessrcmainprotohelloworld.proto"
+    pkgshare.install "examples/src/main/proto/helloworld.proto"
   end
 
   test do
-    system Formula["protobuf"].bin"protoc", "--grpc-java_out=.", "--proto_path=#{pkgshare}", "helloworld.proto"
-    output_file = testpath"iogrpcexampleshelloworldGreeterGrpc.java"
+    system Formula["protobuf"].bin/"protoc", "--grpc-java_out=.", "--proto_path=#{pkgshare}", "helloworld.proto"
+    output_file = testpath/"io/grpc/examples/helloworld/GreeterGrpc.java"
     assert_path_exists output_file
     assert_match "public io.grpc.examples.helloworld.HelloReply sayHello(", output_file.read
   end

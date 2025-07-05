@@ -1,10 +1,10 @@
 class TexFmt < Formula
   desc "Extremely fast LaTeX formatter written in Rust"
-  homepage "https:wgunderwood.github.iotex-fmt"
-  url "https:github.comWGUNDERWOODtex-fmtarchiverefstagsv0.5.4.tar.gz"
+  homepage "https://wgunderwood.github.io/tex-fmt/"
+  url "https://ghfast.top/https://github.com/WGUNDERWOOD/tex-fmt/archive/refs/tags/v0.5.4.tar.gz"
   sha256 "1a1bc787edb6b8f58feb6f0f5f33a6cac04ea583763f6807c6e319d6171b5d4b"
   license "MIT"
-  head "https:github.comWGUNDERWOODtex-fmt.git", branch: "main"
+  head "https://github.com/WGUNDERWOOD/tex-fmt.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "8ba4991136e1b9c8cda2a7b6f32a0d4bd48e87b539b1d1cedefc5c48c7789b9f"
@@ -21,12 +21,12 @@ class TexFmt < Formula
   def install
     system "cargo", "install", *std_cargo_args
 
-    generate_completions_from_executable(bin"tex-fmt", "--completion")
-    man1.install "mantex-fmt.1"
+    generate_completions_from_executable(bin/"tex-fmt", "--completion")
+    man1.install "man/tex-fmt.1"
   end
 
   test do
-    (testpath"test.tex").write <<~'TEX'
+    (testpath/"test.tex").write <<~'TEX'
       \documentclass{article}
       \title{tex-fmt Homebrew Test}
       \begin{document}
@@ -38,7 +38,7 @@ class TexFmt < Formula
       \end{document}
     TEX
 
-    assert_equal <<~'TEX', shell_output("#{bin}tex-fmt --print #{testpath}test.tex")
+    assert_equal <<~'TEX', shell_output("#{bin}/tex-fmt --print #{testpath}/test.tex")
       \documentclass{article}
       \title{tex-fmt Homebrew Test}
       \begin{document}
@@ -50,6 +50,6 @@ class TexFmt < Formula
       \end{document}
     TEX
 
-    assert_match version.to_s, shell_output("#{bin}tex-fmt --version")
+    assert_match version.to_s, shell_output("#{bin}/tex-fmt --version")
   end
 end

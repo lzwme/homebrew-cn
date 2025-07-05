@@ -1,14 +1,14 @@
 class Pjproject < Formula
   desc "C library for multimedia protocols such as SIP, SDP, RTP and more"
-  homepage "https:www.pjsip.org"
-  url "https:github.compjsippjprojectarchiverefstags2.15.1.tar.gz"
+  homepage "https://www.pjsip.org/"
+  url "https://ghfast.top/https://github.com/pjsip/pjproject/archive/refs/tags/2.15.1.tar.gz"
   sha256 "8f3bd99caf003f96ed8038b8a36031eb9d8cd9eaea1eaff7e01c2eef6bd55706"
   license "GPL-2.0-or-later"
-  head "https:github.compjsippjproject.git", branch: "master"
+  head "https://github.com/pjsip/pjproject.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -25,7 +25,7 @@ class Pjproject < Formula
   depends_on "openssl@3"
 
   def install
-    system ".configure", "--prefix=#{prefix}"
+    system "./configure", "--prefix=#{prefix}"
     ENV.deparallelize
     system "make", "dep"
     system "make"
@@ -40,10 +40,10 @@ class Pjproject < Formula
     end
     target = OS.mac? ? "apple-darwin#{OS.kernel_version}" : "unknown-linux-gnu"
 
-    bin.install "pjsip-appsbinpjsua-#{arch}-#{target}" => "pjsua"
+    bin.install "pjsip-apps/bin/pjsua-#{arch}-#{target}" => "pjsua"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}pjsua --version 2>&1")
+    assert_match version.to_s, shell_output("#{bin}/pjsua --version 2>&1")
   end
 end

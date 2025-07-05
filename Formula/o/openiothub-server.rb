@@ -1,11 +1,11 @@
 class OpeniothubServer < Formula
   desc "Server for OpenIoTHub"
-  homepage "https:github.comOpenIoTHubserver-go"
-  url "https:github.comOpenIoTHubserver-go.git",
+  homepage "https://github.com/OpenIoTHub/server-go"
+  url "https://github.com/OpenIoTHub/server-go.git",
       tag:      "v1.2.10",
       revision: "f7310370514b5b8af3deb750636cb526532488e5"
   license "MIT"
-  head "https:github.comOpenIoTHubserver-go.git", branch: "master"
+  head "https://github.com/OpenIoTHub/server-go.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "ff60cb2080f4e92c45ee271102c92674ebee6deb262719f7edc4b7120c8d4feb"
@@ -29,22 +29,22 @@ class OpeniothubServer < Formula
       -X main.builtBy=#{tap.user}
     ]
 
-    (etc"server-go").mkpath
+    (etc/"server-go").mkpath
     system "go", "build", "-mod=vendor", *std_go_args(ldflags:)
-    bin.install_symlink bin"openiothub-server" => "server-go"
-    etc.install "server-go.yaml" => "server-goserver-go.yaml"
+    bin.install_symlink bin/"openiothub-server" => "server-go"
+    etc.install "server-go.yaml" => "server-go/server-go.yaml"
   end
 
   service do
-    run [opt_bin"openiothub-server", "-c", etc"server-go.yaml"]
+    run [opt_bin/"openiothub-server", "-c", etc/"server-go.yaml"]
     keep_alive true
-    log_path var"logopeniothub-server.log"
-    error_log_path var"logopeniothub-server.log"
+    log_path var/"log/openiothub-server.log"
+    error_log_path var/"log/openiothub-server.log"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}openiothub-server -v 2>&1")
-    assert_match "config created", shell_output("#{bin}openiothub-server init --config=server.yml 2>&1")
-    assert_path_exists testpath"server.yml"
+    assert_match version.to_s, shell_output("#{bin}/openiothub-server -v 2>&1")
+    assert_match "config created", shell_output("#{bin}/openiothub-server init --config=server.yml 2>&1")
+    assert_path_exists testpath/"server.yml"
   end
 end

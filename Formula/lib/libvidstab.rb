@@ -1,7 +1,7 @@
 class Libvidstab < Formula
   desc "Transcode video stabilization plugin"
-  homepage "http:public.hronopik.devid.stab"
-  url "https:github.comgeorgmartiusvid.stabarchiverefstagsv1.1.1.tar.gz"
+  homepage "http://public.hronopik.de/vid.stab/"
+  url "https://ghfast.top/https://github.com/georgmartius/vid.stab/archive/refs/tags/v1.1.1.tar.gz"
   sha256 "9001b6df73933555e56deac19a0f225aae152abbc0e97dc70034814a1943f3d4"
   license "GPL-2.0-or-later"
 
@@ -31,8 +31,8 @@ class Libvidstab < Formula
   end
 
   test do
-    (testpath"test.c").write <<~C
-      #include <vid.stablibvidstab.h>
+    (testpath/"test.c").write <<~C
+      #include <vid.stab/libvidstab.h>
       #include <stdio.h>
       int main() {
         printf("libvidstab version: %s\\n", LIBVIDSTAB_VERSION);
@@ -42,6 +42,6 @@ class Libvidstab < Formula
 
     flags = shell_output("pkgconf --cflags --libs vidstab").chomp.split
     system ENV.cc, "test.c", "-o", "test", *flags
-    system ".test"
+    system "./test"
   end
 end

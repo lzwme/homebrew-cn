@@ -1,11 +1,11 @@
 class DockerMachineParallels < Formula
   desc "Parallels Driver for Docker Machine"
-  homepage "https:github.comParallelsdocker-machine-parallels"
-  url "https:github.comParallelsdocker-machine-parallels.git",
+  homepage "https://github.com/Parallels/docker-machine-parallels"
+  url "https://github.com/Parallels/docker-machine-parallels.git",
       tag:      "v2.0.1",
       revision: "a1c3d495487413bdd24a562c0edee1af1cfc2f0f"
   license "MIT"
-  head "https:github.comParallelsdocker-machine-parallels.git", branch: "master"
+  head "https://github.com/Parallels/docker-machine-parallels.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -22,7 +22,7 @@ class DockerMachineParallels < Formula
     sha256 cellar: :any_skip_relocation, big_sur:        "29b70e96c49252d2d127098796fa366aec2d66347450144af0b50afd413f8ef8"
   end
 
-  # https:github.comParallelsdocker-machine-parallelsissues111
+  # https://github.com/Parallels/docker-machine-parallels/issues/111
   disable! date: "2024-09-23", because: :unmaintained
 
   depends_on "go" => :build
@@ -30,15 +30,15 @@ class DockerMachineParallels < Formula
   depends_on :macos
 
   # Fix build on Go >= 1.20 by removing obsolete build flag:
-  # https:github.comParallelsdocker-machine-parallelspull113
+  # https://github.com/Parallels/docker-machine-parallels/pull/113
   patch do
-    url "https:github.comParallelsdocker-machine-parallelscommit154f1906924900c948ea8759c711ba43cd236656.patch?full_index=1"
+    url "https://github.com/Parallels/docker-machine-parallels/commit/154f1906924900c948ea8759c711ba43cd236656.patch?full_index=1"
     sha256 "ea6eb1a1f713f6e30bafbae19995915327c8400901e3350c60e40b50d43dd2a8"
   end
 
   def install
     system "make", "build"
-    bin.install "bindocker-machine-driver-parallels"
+    bin.install "bin/docker-machine-driver-parallels"
   end
 
   test do

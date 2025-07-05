@@ -1,13 +1,13 @@
 class Terraform < Formula
   desc "Tool to build, change, and version infrastructure"
-  homepage "https:www.terraform.io"
+  homepage "https://www.terraform.io/"
   # NOTE: Do not bump to v1.6.0+ as license changed to BUSL-1.1
-  # https:github.comhashicorpterraformpull33661
-  # https:github.comhashicorpterraformpull33697
-  url "https:github.comhashicorpterraformarchiverefstagsv1.5.7.tar.gz"
+  # https://github.com/hashicorp/terraform/pull/33661
+  # https://github.com/hashicorp/terraform/pull/33697
+  url "https://ghfast.top/https://github.com/hashicorp/terraform/archive/refs/tags/v1.5.7.tar.gz"
   sha256 "6742fc87cba5e064455393cda12f0e0241c85a7cb2a3558d13289380bb5f26f5"
   license "MPL-2.0"
-  head "https:github.comhashicorpterraform.git", branch: "main"
+  head "https://github.com/hashicorp/terraform.git", branch: "main"
 
   no_autobump! because: :requires_manual_review
 
@@ -23,7 +23,7 @@ class Terraform < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "390afc2492fa4ea2fc7dce55efa25b9ae09e060639e1dc3d9c160718893881b3"
   end
 
-  # https:www.hashicorp.combloghashicorp-adopts-business-source-license
+  # https://www.hashicorp.com/blog/hashicorp-adopts-business-source-license
   deprecate! date: "2024-04-04", because: "changed its license to BUSL on the next release"
   disable! date: "2025-04-12", because: "changed its license to BUSL on the next release"
 
@@ -38,16 +38,16 @@ class Terraform < Formula
 
   def caveats
     <<~EOS
-      We will not accept any new Terraform releases in homebrewcore (with the BUSL license).
+      We will not accept any new Terraform releases in homebrew/core (with the BUSL license).
       The next release changed to a non-open-source license:
-      https:www.hashicorp.combloghashicorp-adopts-business-source-license
+      https://www.hashicorp.com/blog/hashicorp-adopts-business-source-license
       See our documentation for acceptable licences:
-        https:docs.brew.shLicense-Guidelines
+        https://docs.brew.sh/License-Guidelines
     EOS
   end
 
   test do
-    minimal = testpath"minimal.tf"
+    minimal = testpath/"minimal.tf"
     minimal.write <<~HCL
       variable "aws_region" {
         default = "us-west-2"
@@ -75,7 +75,7 @@ class Terraform < Formula
         count         = 4
       }
     HCL
-    system bin"terraform", "init"
-    system bin"terraform", "graph"
+    system bin/"terraform", "init"
+    system bin/"terraform", "graph"
   end
 end

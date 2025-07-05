@@ -1,7 +1,7 @@
 class Ghostscript < Formula
   desc "Interpreter for PostScript and PDF"
-  homepage "https:www.ghostscript.com"
-  url "https:github.comArtifexSoftwareghostpdl-downloadsreleasesdownloadgs10051ghostpdl-10.05.1.tar.xz"
+  homepage "https://www.ghostscript.com/"
+  url "https://ghfast.top/https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10051/ghostpdl-10.05.1.tar.xz"
   sha256 "320d97f46f2f1f0e770a97d2a9ed8699c8770e46987e3a3de127855856696eb9"
   license "AGPL-3.0-or-later"
 
@@ -10,7 +10,7 @@ class Ghostscript < Formula
   # version may be tagged before the release is available on GitHub, so we
   # check the version from the first-party website instead.
   livecheck do
-    url "https:www.ghostscript.comjsonsettings.json"
+    url "https://www.ghostscript.com/json/settings.json"
     strategy :json do |json|
       json["GS_VER"]
     end
@@ -29,7 +29,7 @@ class Ghostscript < Formula
   end
 
   head do
-    url "https:git.ghostscript.comghostpdl.git", branch: "master"
+    url "https://git.ghostscript.com/ghostpdl.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -56,18 +56,18 @@ class Ghostscript < Formula
   conflicts_with "gambit-scheme", because: "both install `gsc` binary"
   conflicts_with "git-spice", because: "both install `gs` binary"
 
-  # https:sourceforge.netprojectsgs-fonts
+  # https://sourceforge.net/projects/gs-fonts/
   resource "fonts" do
-    url "https:downloads.sourceforge.netprojectgs-fontsgs-fonts8.11%20%28base%2035%2C%20GPL%29ghostscript-fonts-std-8.11.tar.gz"
+    url "https://downloads.sourceforge.net/project/gs-fonts/gs-fonts/8.11%20%28base%2035%2C%20GPL%29/ghostscript-fonts-std-8.11.tar.gz"
     sha256 "0eb6f356119f2e49b2563210852e17f57f9dcc5755f350a69a46a0d641a0c401"
   end
 
   def install
     # Delete local vendored sources so build uses system dependencies
     libs = %w[expat freetype jbig2dec jpeg lcms2mt leptonica libpng openjpeg tesseract tiff zlib]
-    libs.each { |l| rm_r(buildpathl) }
+    libs.each { |l| rm_r(buildpath/l) }
 
-    configure = build.head? ? ".autogen.sh" : ".configure"
+    configure = build.head? ? "./autogen.sh" : "./configure"
 
     args = %w[--disable-compile-inits
               --disable-cups
@@ -77,14 +77,14 @@ class Ghostscript < Formula
               --without-x]
 
     # Set the correct library install names so that `brew` doesn't need to fix them up later.
-    ENV["DARWIN_LDFLAGS_SO_PREFIX"] = "#{opt_lib}"
+    ENV["DARWIN_LDFLAGS_SO_PREFIX"] = "#{opt_lib}/"
     system configure, *args, *std_configure_args
 
     # Install binaries and libraries
     system "make", "install"
     ENV.deparallelize { system "make", "install-so" }
 
-    (pkgshare"fonts").install resource("fonts")
+    (pkgshare/"fonts").install resource("fonts")
 
     # Temporary backwards compatibility symlinks
     if build.stable?
@@ -103,6 +103,6 @@ class Ghostscript < Formula
 
   test do
     ps = test_fixtures("test.ps")
-    assert_match "Hello World!", shell_output("#{bin}ps2ascii #{ps}")
+    assert_match "Hello World!", shell_output("#{bin}/ps2ascii #{ps}")
   end
 end

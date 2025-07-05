@@ -1,10 +1,10 @@
 class Frizbee < Formula
   desc "Throw a tag at and it comes back with a checksum"
-  homepage "https:github.comstacklokfrizbee"
-  url "https:github.comstacklokfrizbeearchiverefstagsv0.1.7.tar.gz"
+  homepage "https://github.com/stacklok/frizbee"
+  url "https://ghfast.top/https://github.com/stacklok/frizbee/archive/refs/tags/v0.1.7.tar.gz"
   sha256 "71ad0532b478c942b74c53e5ddec45df4b737d4db05192bc899d2ba7ff0a2196"
   license "Apache-2.0"
-  head "https:github.comstacklokfrizbee.git", branch: "main"
+  head "https://github.com/stacklok/frizbee.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "f3cccb25cf914098b92d2d170231b8ea4ae65a7e2ab325aaa2c834e027c026f5"
@@ -18,16 +18,16 @@ class Frizbee < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = "-s -w -X github.comstacklokfrizbeeinternalcli.CLIVersion=#{version}"
+    ldflags = "-s -w -X github.com/stacklok/frizbee/internal/cli.CLIVersion=#{version}"
     system "go", "build", *std_go_args(ldflags:)
 
-    generate_completions_from_executable(bin"frizbee", "completion")
+    generate_completions_from_executable(bin/"frizbee", "completion")
   end
 
   test do
-    assert_match version.to_s, shell_output(bin"frizbee version 2>&1")
+    assert_match version.to_s, shell_output(bin/"frizbee version 2>&1")
 
-    output = shell_output(bin"frizbee actions $(brew --repository).githubworkflowstests.yml 2>&1")
+    output = shell_output(bin/"frizbee actions $(brew --repository)/.github/workflows/tests.yml 2>&1")
     assert_match "Processed: tests.yml", output
   end
 end

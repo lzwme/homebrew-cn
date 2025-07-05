@@ -1,12 +1,12 @@
 class Rojo < Formula
   desc "Professional grade Roblox development tools"
-  homepage "https:rojo.space"
+  homepage "https://rojo.space/"
   # pull from git tag to get submodules
-  url "https:github.comrojo-rbxrojo.git",
+  url "https://github.com/rojo-rbx/rojo.git",
       tag:      "v7.5.1",
       revision: "b2c4f550ee73985df05e5cca2595ff3d285d37ea"
   license "MPL-2.0"
-  head "https:github.comrojo-rbxrojo.git", branch: "master"
+  head "https://github.com/rojo-rbx/rojo.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "037768a1eca693218a58a335c29ec37d422b2b6b93d937cbec8e4beae26b5427"
@@ -31,9 +31,9 @@ class Rojo < Formula
   end
 
   test do
-    system bin"rojo", "init"
-    assert_path_exists testpath"default.project.json"
+    system bin/"rojo", "init"
+    assert_path_exists testpath/"default.project.json"
 
-    assert_match version.to_s, shell_output(bin"rojo --version")
+    assert_match version.to_s, shell_output(bin/"rojo --version")
   end
 end

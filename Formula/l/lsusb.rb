@@ -1,7 +1,7 @@
 class Lsusb < Formula
   desc "List USB devices, just like the Linux lsusb command"
-  homepage "https:github.comjlhonoralsusb"
-  url "https:github.comjlhonoralsusbreleasesdownload1.0lsusb-1.0.tar.gz"
+  homepage "https://github.com/jlhonora/lsusb"
+  url "https://ghfast.top/https://github.com/jlhonora/lsusb/releases/download/1.0/lsusb-1.0.tar.gz"
   sha256 "68cfa4a820360ecf3bbd2a24a58f287d41f66c62ada99468c36d5bf33f9a3b94"
   license "MIT"
 
@@ -18,11 +18,11 @@ class Lsusb < Formula
 
   def install
     bin.install "lsusb"
-    man8.install "manlsusb.8"
+    man8.install "man/lsusb.8"
   end
 
   test do
-    output = shell_output(bin"lsusb")
-    assert_match(^Bus [0-9]+ Device [0-9]+:, output)
+    output = shell_output(bin/"lsusb")
+    assert_match(/^Bus [0-9]+ Device [0-9]+:/, output)
   end
 end

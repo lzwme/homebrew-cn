@@ -1,14 +1,14 @@
 class Clinfo < Formula
   desc "Print information about OpenCL platforms and devices"
-  homepage "https:github.comOblomovclinfo"
-  url "https:github.comOblomovclinfoarchiverefstags3.0.25.02.14.tar.gz"
+  homepage "https://github.com/Oblomov/clinfo"
+  url "https://ghfast.top/https://github.com/Oblomov/clinfo/archive/refs/tags/3.0.25.02.14.tar.gz"
   sha256 "48b77dc33315e6f760791a2984f98ea4bff28504ff37d460d8291585f49fcd3a"
   license "CC0-1.0"
-  head "https:github.comOblomovclinfo.git", branch: "master"
+  head "https://github.com/Oblomov/clinfo.git", branch: "master"
 
   livecheck do
     url :homepage
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -34,9 +34,9 @@ class Clinfo < Formula
   test do
     # OpenCL does not work on virtualized arm64 macOS.
     if Hardware::CPU.virtualized? && Hardware::CPU.arm? && OS.mac?
-      assert_match "number of devices : error -30", shell_output(bin"clinfo 2>&1", 1)
+      assert_match "number of devices : error -30", shell_output(bin/"clinfo 2>&1", 1)
     else
-      assert_match(Device Type +[CG]PU, shell_output(bin"clinfo"))
+      assert_match(/Device Type +[CG]PU/, shell_output(bin/"clinfo"))
     end
   end
 end

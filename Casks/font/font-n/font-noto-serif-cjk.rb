@@ -2,13 +2,13 @@ cask "font-noto-serif-cjk" do
   version "2.003"
   sha256 "5009285197f068fe9a58f2cf8d6d312f4bf185887305751aae2608db4e02e48f"
 
-  url "https:github.comnotofontsnoto-cjkreleasesdownloadSerif#{version}01_NotoSerifCJK.ttc.zip"
+  url "https://ghfast.top/https://github.com/notofonts/noto-cjk/releases/download/Serif#{version}/01_NotoSerifCJK.ttc.zip"
   name "Noto Serif CJK"
-  homepage "https:github.comnotofontsnoto-cjktreemainSerif"
+  homepage "https://github.com/notofonts/noto-cjk/tree/main/Serif"
 
   livecheck do
     url :url
-    regex(^Serif[._-]?v?(\d+(?:\.\d+)+)$i)
+    regex(/^Serif[._-]?v?(\d+(?:\.\d+)+)$/i)
     strategy :github_releases
   end
 

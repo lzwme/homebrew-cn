@@ -1,13 +1,13 @@
 class Libdnet < Formula
   desc "Portable low-level networking library"
-  homepage "https:github.comofalklibdnet"
-  url "https:github.comofalklibdnetarchiverefstagslibdnet-1.18.0.tar.gz"
+  homepage "https://github.com/ofalk/libdnet"
+  url "https://ghfast.top/https://github.com/ofalk/libdnet/archive/refs/tags/libdnet-1.18.0.tar.gz"
   sha256 "a4a82275c7d83b85b1daac6ebac9461352731922161f1dcdcccd46c318f583c9"
   license "BSD-3-Clause"
 
   livecheck do
     url :homepage
-    regex(^libdnet[._-]v?(\d+(?:\.\d+)+)$i)
+    regex(/^libdnet[._-]v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -32,11 +32,11 @@ class Libdnet < Formula
     ENV.append_path "ACLOCAL_PATH", "config"
     system "autoreconf", "--force", "--install", "--verbose"
 
-    system ".configure", "--mandir=#{man}", "--disable-check", *std_configure_args
+    system "./configure", "--mandir=#{man}", "--disable-check", *std_configure_args
     system "make", "install"
   end
 
   test do
-    system bin"dnet-config", "--version"
+    system bin/"dnet-config", "--version"
   end
 end

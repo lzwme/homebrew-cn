@@ -1,14 +1,14 @@
 class ElanInit < Formula
   desc "Lean Theorem Prover installer and version manager"
-  homepage "https:github.comleanproverelan"
-  url "https:github.comleanproverelanarchiverefstagsv4.1.2.tar.gz"
+  homepage "https://github.com/leanprover/elan"
+  url "https://ghfast.top/https://github.com/leanprover/elan/archive/refs/tags/v4.1.2.tar.gz"
   sha256 "7d31b3d1d69857b11611363bd94bfdc4f0525a85077f20f823abf65b39ccc350"
   license any_of: ["Apache-2.0", "MIT"]
-  head "https:github.comleanproverelan.git", branch: "master"
+  head "https://github.com/leanprover/elan.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -41,14 +41,14 @@ class ElanInit < Formula
       bin.install_symlink "elan-init" => link
     end
 
-    generate_completions_from_executable(bin"elan", "completions")
+    generate_completions_from_executable(bin/"elan", "completions")
   end
 
   test do
-    ENV["ELAN_HOME"] = testpath".elan"
+    ENV["ELAN_HOME"] = testpath/".elan"
 
-    system bin"elan-init", "-y", "--default-toolchain=leanproverlean4:stable"
-    (testpath"hello.lean").write <<~EOS
+    system bin/"elan-init", "-y", "--default-toolchain=leanprover/lean4:stable"
+    (testpath/"hello.lean").write <<~EOS
       def id' {α : Type} (x : α) : α := x
 
       inductive tree {α : Type} : Type
@@ -58,7 +58,7 @@ class ElanInit < Formula
           intro h; cases h with
           | intro ha hb => constructor; exact hb; exact ha
     EOS
-    system bin"lean", testpath"hello.lean"
-    system bin"lake", "help"
+    system bin/"lean", testpath/"hello.lean"
+    system bin/"lake", "help"
   end
 end

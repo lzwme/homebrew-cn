@@ -1,11 +1,11 @@
 class GitCal < Formula
   desc "GitHub-like contributions calendar but on the command-line"
-  homepage "https:github.comk4rthikgit-cal"
-  url "https:github.comk4rthikgit-calarchiverefstagsv0.9.1.tar.gz"
+  homepage "https://github.com/k4rthik/git-cal"
+  url "https://ghfast.top/https://github.com/k4rthik/git-cal/archive/refs/tags/v0.9.1.tar.gz"
   sha256 "783fa73197b349a51d90670480a750b063c97e5779a5231fe046315af0a946cd"
   license "MIT"
   revision 1
-  head "https:github.comk4rthikgit-cal.git", branch: "master"
+  head "https://github.com/k4rthik/git-cal.git", branch: "master"
 
   livecheck do
     url :stable
@@ -38,9 +38,9 @@ class GitCal < Formula
 
   test do
     system "git", "init"
-    (testpath"Hello").write "Hello World!"
+    (testpath/"Hello").write "Hello World!"
     system "git", "add", "Hello"
     system "git", "commit", "-a", "-m", "Initial Commit"
-    system bin"git-cal"
+    system bin/"git-cal"
   end
 end

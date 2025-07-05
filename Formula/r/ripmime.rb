@@ -1,7 +1,7 @@
 class Ripmime < Formula
   desc "Extract attachments out of MIME encoded email packages"
-  homepage "https:pldaniels.comripmime"
-  url "https:github.cominflexripMIMEarchiverefstags1.4.1.0.tar.gz"
+  homepage "https://pldaniels.com/ripmime/"
+  url "https://ghfast.top/https://github.com/inflex/ripMIME/archive/refs/tags/1.4.1.0.tar.gz"
   sha256 "6d551d6b65b4da6c6b8dfd05be8141026cc760ca1fb8a707b7bf96c199c9f52d"
   license "BSD-3-Clause"
 
@@ -28,15 +28,15 @@ class Ripmime < Formula
   end
 
   test do
-    (testpath"message.eml").write <<~EOS
+    (testpath/"message.eml").write <<~EOS
       MIME-Version: 1.0
       Subject: Test email
       To: example@example.org
-      Content-Type: multipartmixed;
+      Content-Type: multipart/mixed;
             boundary="XXXXboundary text"
 
       --XXXXboundary text
-      Content-Type: textplain;
+      Content-Type: text/plain;
       name="attachment.txt"
       Content-Disposition: attachment;
       filename="attachment.txt"
@@ -47,7 +47,7 @@ class Ripmime < Formula
       --XXXXboundary text--
     EOS
 
-    system bin"ripmime", "-i", "message.eml"
-    assert_equal "Hello from Homebrew!\n", (testpath"attachment.txt").read
+    system bin/"ripmime", "-i", "message.eml"
+    assert_equal "Hello from Homebrew!\n", (testpath/"attachment.txt").read
   end
 end

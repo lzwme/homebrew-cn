@@ -5,11 +5,11 @@ cask "gama-platform" do
   sha256 arm:   "2778f3434d26b4035737026cd4077e81c18aae3773119480e907f9fd714d66f7",
          intel: "b0e732958030cdac0942dd4a105befc08ec1fc353f66c076d5e78d8212765917"
 
-  url "https:github.comgama-platformgamareleasesdownload#{version}GAMA_#{version}_MacOS#{arch}.dmg",
-      verified: "github.comgama-platformgama"
+  url "https://ghfast.top/https://github.com/gama-platform/gama/releases/download/#{version}/GAMA_#{version}_MacOS#{arch}.dmg",
+      verified: "github.com/gama-platform/gama/"
   name "GAMA Platform"
   desc "IDE for building spatially explicit agent-based simulations"
-  homepage "https:gama-platform.org"
+  homepage "https://gama-platform.org/"
 
   # Using :github_latest as repo contains pre-release tags
   livecheck do
@@ -24,11 +24,11 @@ cask "gama-platform" do
   app "Gama.app"
 
   zap trash: [
-    "~Gama_Workspace",
-    "~LibraryPreferencesGama.plist",
+    "~/Gama_Workspace",
+    "~/Library/Preferences/Gama.plist",
   ]
 
   caveats do
-    depends_on_java "17"
+    depends_on_java "21"
   end
 end

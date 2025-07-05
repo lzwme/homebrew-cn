@@ -1,7 +1,7 @@
 class Nvtop < Formula
   desc "Interactive GPU process monitor"
-  homepage "https:github.comSyllonvtop"
-  url "https:github.comSyllonvtoparchiverefstags3.2.0.tar.gz"
+  homepage "https://github.com/Syllo/nvtop"
+  url "https://ghfast.top/https://github.com/Syllo/nvtop/archive/refs/tags/3.2.0.tar.gz"
   sha256 "d26df685455023cedc4dda033862dcddb67402fbdb685da70da78492f73c41d0"
   license "GPL-3.0-or-later"
 
@@ -31,6 +31,6 @@ class Nvtop < Formula
 
   test do
     # nvtop is a TUI application
-    assert_match version.to_s, shell_output("#{bin}nvtop --version")
+    assert_match version.to_s, shell_output("#{bin}/nvtop --version")
   end
 end

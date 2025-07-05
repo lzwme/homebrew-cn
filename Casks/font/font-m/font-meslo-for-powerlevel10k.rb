@@ -2,9 +2,9 @@ cask "font-meslo-for-powerlevel10k" do
   version "2.3.3"
   sha256 "4b0bb4fc457df96d17aa85cfeda4fa92268dbb0651189f2923c68342ebb67cc7"
 
-  url "https:github.comromkatvpowerlevel10k-mediareleasesdownloadv#{version}meslo-lgs-nf.tar.gz"
+  url "https://ghfast.top/https://github.com/romkatv/powerlevel10k-media/releases/download/v#{version}/meslo-lgs-nf.tar.gz"
   name "Meslo Nerd Font for Powerlevel10k"
-  homepage "https:github.comromkatvpowerlevel10k-media"
+  homepage "https://github.com/romkatv/powerlevel10k-media"
 
   no_autobump! because: :requires_manual_review
 

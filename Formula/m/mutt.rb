@@ -5,12 +5,12 @@
 #
 # To reduce Homebrew's maintenance burden, patches are not accepted
 # for this formula. The NeoMutt project has a Homebrew tap for their
-# patched version of Mutt: https:github.comneomutthomebrew-neomutt
+# patched version of Mutt: https://github.com/neomutt/homebrew-neomutt
 
 class Mutt < Formula
   desc "Mongrel of mail user agents (part elm, pine, mush, mh, etc.)"
-  homepage "http:www.mutt.org"
-  url "https:bitbucket.orgmuttmuttdownloadsmutt-2.2.14.tar.gz"
+  homepage "http://www.mutt.org/"
+  url "https://bitbucket.org/mutt/mutt/downloads/mutt-2.2.14.tar.gz"
   sha256 "d162fb6d491e3af43d6f62f949b7e687bb0c7c2584da52c99a99354a25de14ef"
   license "GPL-2.0-or-later"
 
@@ -19,8 +19,8 @@ class Mutt < Formula
   #
   # BitBucket strategy doesn't work for some reason.
   livecheck do
-    url "https:gitlab.commuttmuamutt.git"
-    regex(^mutt[._-]v?(\d+(?:-\d+)+)-rel$i)
+    url "https://gitlab.com/muttmua/mutt.git"
+    regex(/^mutt[._-]v?(\d+(?:-\d+)+)-rel$/i)
   end
 
   bottle do
@@ -34,10 +34,10 @@ class Mutt < Formula
   end
 
   head do
-    url "https:gitlab.commuttmuamutt.git", branch: "master"
+    url "https://gitlab.com/muttmua/mutt.git", branch: "master"
 
     resource "html" do
-      url "https:muttmua.gitlab.iomuttmanual-dev.html"
+      url "https://muttmua.gitlab.io/mutt/manual-dev.html"
     end
   end
 
@@ -82,13 +82,13 @@ class Mutt < Formula
       --with-tokyocabinet
     ]
 
-    system ".prepare", *args, *std_configure_args
+    system "./prepare", *args, *std_configure_args
     system "make"
 
     # This permits the `mutt_dotlock` file to be installed under a group
     # that isn't `mail`.
-    # https:github.comHomebrewhomebrewissues45400
-    inreplace "Makefile", ^DOTLOCK_GROUP =.*$, "DOTLOCK_GROUP = #{effective_group}" unless user_in_mail_group
+    # https://github.com/Homebrew/homebrew/issues/45400
+    inreplace "Makefile", /^DOTLOCK_GROUP =.*$/, "DOTLOCK_GROUP = #{effective_group}" unless user_in_mail_group
 
     system "make", "install"
     doc.install resource("html") if build.head?
@@ -97,10 +97,10 @@ class Mutt < Formula
   def caveats
     <<~EOS
       mutt_dotlock(1) has been installed, but does not have the permissions to lock
-      spool files in varmail. To grant the necessary permissions, run
+      spool files in /var/mail. To grant the necessary permissions, run
 
-        sudo chgrp mail #{bin}mutt_dotlock
-        sudo chmod g+s #{bin}mutt_dotlock
+        sudo chgrp mail #{bin}/mutt_dotlock
+        sudo chmod g+s #{bin}/mutt_dotlock
 
       Alternatively, you may configure `spoolfile` in your .muttrc to a file inside
       your home directory.
@@ -108,9 +108,9 @@ class Mutt < Formula
   end
 
   test do
-    system bin"mutt", "-D"
+    system bin/"mutt", "-D"
     touch "foo"
-    system bin"mutt_dotlock", "foo"
-    system bin"mutt_dotlock", "-u", "foo"
+    system bin/"mutt_dotlock", "foo"
+    system bin/"mutt_dotlock", "-u", "foo"
   end
 end

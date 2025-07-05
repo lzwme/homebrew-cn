@@ -1,7 +1,7 @@
 class Cbmc < Formula
   desc "C Bounded Model Checker"
-  homepage "https:www.cprover.orgcbmc"
-  url "https:github.comdiffbluecbmc.git",
+  homepage "https://www.cprover.org/cbmc/"
+  url "https://github.com/diffblue/cbmc.git",
       tag:      "cbmc-6.7.0",
       revision: "5d1438a883201a8983b1449eb2485df0821c819d"
   license "BSD-4-Clause"
@@ -27,8 +27,8 @@ class Cbmc < Formula
   uses_from_macos "flex" => :build
 
   def install
-    # Fixes: *** No rule to make target 'bingoto-gcc',
-    # needed by 'tmpcbmc-20240525-215493-ru4krxregressiongoto-gccarchiveslibour_archive.a'.  Stop.
+    # Fixes: *** No rule to make target 'bin/goto-gcc',
+    # needed by '/tmp/cbmc-20240525-215493-ru4krx/regression/goto-gcc/archives/libour_archive.a'.  Stop.
     ENV.deparallelize
     ENV["JAVA_HOME"] = Formula["openjdk@21"].opt_prefix
 
@@ -42,7 +42,7 @@ class Cbmc < Formula
 
   test do
     # Find a pointer out of bounds error
-    (testpath"main.c").write <<~C
+    (testpath/"main.c").write <<~C
       #include <stdlib.h>
       int main() {
         char *ptr = malloc(10);
@@ -50,6 +50,6 @@ class Cbmc < Formula
       }
     C
     assert_match "VERIFICATION FAILED",
-                 shell_output("#{bin}cbmc --pointer-check main.c", 10)
+                 shell_output("#{bin}/cbmc --pointer-check main.c", 10)
   end
 end

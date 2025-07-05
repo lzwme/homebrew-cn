@@ -1,10 +1,10 @@
 class Jpegoptim < Formula
   desc "Utility to optimize JPEG files"
-  homepage "https:github.comtjkojpegoptim"
-  url "https:github.comtjkojpegoptimarchiverefstagsv1.5.5.tar.gz"
+  homepage "https://github.com/tjko/jpegoptim"
+  url "https://ghfast.top/https://github.com/tjko/jpegoptim/archive/refs/tags/v1.5.5.tar.gz"
   sha256 "90a309d1c092de358bb411d702281ac3039b489d03adb0bc3c4ef04cf0067d38"
   license "GPL-3.0-or-later"
-  head "https:github.comtjkojpegoptim.git", branch: "master"
+  head "https://github.com/tjko/jpegoptim.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -25,13 +25,13 @@ class Jpegoptim < Formula
   depends_on "jpeg-turbo"
 
   def install
-    system ".configure", *std_configure_args
+    system "./configure", *std_configure_args
     ENV.deparallelize # Install is not parallel-safe
     system "make", "install"
   end
 
   test do
     source = test_fixtures("test.jpg")
-    assert_match "OK", shell_output("#{bin}jpegoptim --noaction #{source}")
+    assert_match "OK", shell_output("#{bin}/jpegoptim --noaction #{source}")
   end
 end

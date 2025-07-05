@@ -2,11 +2,11 @@ cask "pb" do
   version "11.0.2"
   sha256 "fdf0f2e7b820e5efbc9b0c7e69dfdcb4ac3caa3012ed7086d59a62c190f7c3e2"
 
-  url "https:github.comsidneyspb-for-desktopreleasesdownloadv#{version}pb-for-desktop-#{version}-mac.zip",
-      verified: "github.comsidneyspb-for-desktop"
+  url "https://ghfast.top/https://github.com/sidneys/pb-for-desktop/releases/download/v#{version}/pb-for-desktop-#{version}-mac.zip",
+      verified: "github.com/sidneys/pb-for-desktop/"
   name "PB for Desktop"
   desc "Unofficial Pushbullet desktop app to get push notifications"
-  homepage "https:sidneys.github.iopb-for-desktop"
+  homepage "https://sidneys.github.io/pb-for-desktop"
 
   no_autobump! because: :requires_manual_review
 
@@ -24,19 +24,19 @@ cask "pb" do
             ]
 
   zap trash: [
-    "~LibraryApplication Supportcom.apple.sharedfilelistcom.apple.LSSharedFileList.ApplicationRecentDocumentsde.sidneys.pb-for-desktop.sfl*",
-    "~LibraryApplication Supportde.sidneys.pb-for-desktop.ShipIt",
-    "~LibraryApplication SupportPB for Desktop",
-    "~LibraryApplication SupportShipIt_stderr.log",
-    "~LibraryApplication SupportShipIt_stdout.log",
-    "~LibraryCachesde.sidneys.pb-for-desktop",
-    "~LibraryCachesde.sidneys.pb-for-desktop.ShipIt",
-    "~LibraryLogsPB for Desktop",
-    "~LibraryPreferencesByHostde.sidneys.pb-for-desktop.ShipIt.*.plist",
-    "~LibraryPreferencesde.sidneys.pb-for-desktop.helper.plist",
-    "~LibraryPreferencesde.sidneys.pb-for-desktop.plist",
-    "~LibrarySaved Application Statede.sidneys.pb-for-desktop.savedState",
-    "~LibraryWebKitde.sidneys.pb-for-desktop",
+    "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/de.sidneys.pb-for-desktop.sfl*",
+    "~/Library/Application Support/de.sidneys.pb-for-desktop.ShipIt",
+    "~/Library/Application Support/PB for Desktop",
+    "~/Library/Application Support/ShipIt_stderr.log",
+    "~/Library/Application Support/ShipIt_stdout.log",
+    "~/Library/Caches/de.sidneys.pb-for-desktop",
+    "~/Library/Caches/de.sidneys.pb-for-desktop.ShipIt",
+    "~/Library/Logs/PB for Desktop",
+    "~/Library/Preferences/ByHost/de.sidneys.pb-for-desktop.ShipIt.*.plist",
+    "~/Library/Preferences/de.sidneys.pb-for-desktop.helper.plist",
+    "~/Library/Preferences/de.sidneys.pb-for-desktop.plist",
+    "~/Library/Saved Application State/de.sidneys.pb-for-desktop.savedState",
+    "~/Library/WebKit/de.sidneys.pb-for-desktop",
   ]
 
   caveats do

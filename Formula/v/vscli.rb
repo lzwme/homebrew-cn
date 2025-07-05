@@ -1,10 +1,10 @@
 class Vscli < Formula
-  desc "CLITUI that launches VSCode projects, with a focus on dev containers"
-  homepage "https:github.commichidkvscli"
-  url "https:github.commichidkvscliarchiverefstagsv1.3.0.tar.gz"
+  desc "CLI/TUI that launches VSCode projects, with a focus on dev containers"
+  homepage "https://github.com/michidk/vscli"
+  url "https://ghfast.top/https://github.com/michidk/vscli/archive/refs/tags/v1.3.0.tar.gz"
   sha256 "91384db69cf5b32af96178df79634d5707eaffaf3517a567e965d3c5a32f81fb"
   license "MIT"
-  head "https:github.commichidkvscli.git", branch: "main"
+  head "https://github.com/michidk/vscli.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "7ccb604795d27bcc966a4aa2a33100b1162c808d2ec875a6e1420e8f879e1416"
@@ -23,9 +23,9 @@ class Vscli < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}vscli --version")
+    assert_match version.to_s, shell_output("#{bin}/vscli --version")
 
-    output = shell_output("#{bin}vscli open --dry-run 2>&1", 1)
+    output = shell_output("#{bin}/vscli open --dry-run 2>&1", 1)
     assert_match "No dev container found, opening on host system with Visual Studio Code...", output
   end
 end

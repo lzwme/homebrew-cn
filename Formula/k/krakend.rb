@@ -1,10 +1,10 @@
 class Krakend < Formula
   desc "Ultra-High performance API Gateway built in Go"
-  homepage "https:www.krakend.io"
-  url "https:github.comkrakendkrakend-cearchiverefstagsv2.10.1.tar.gz"
+  homepage "https://www.krakend.io/"
+  url "https://ghfast.top/https://github.com/krakend/krakend-ce/archive/refs/tags/v2.10.1.tar.gz"
   sha256 "1fa65d8bc41aefba3264762acffabbc6f06d1ca1228c2ad71d3fc2118af8bec2"
   license "Apache-2.0"
-  head "https:github.comkrakendkrakend-ce.git", branch: "master"
+  head "https://github.com/krakend/krakend-ce.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "2244be62e6e2879367218e39e29ee83c8428fe2a3fda096a65205be1974429ab"
@@ -21,19 +21,19 @@ class Krakend < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.comkrakendiokrakend-cev2pkg.Version=#{version}
-      -X github.comluraprojectlurav2core.KrakendVersion=#{version}
+      -X github.com/krakendio/krakend-ce/v2/pkg.Version=#{version}
+      -X github.com/luraproject/lura/v2/core.KrakendVersion=#{version}
     ]
 
-    system "go", "build", *std_go_args(ldflags:), ".cmdkrakend-ce"
+    system "go", "build", *std_go_args(ldflags:), "./cmd/krakend-ce"
   end
 
   test do
-    (testpath"krakend_unsupported_version.json").write <<~JSON
+    (testpath/"krakend_unsupported_version.json").write <<~JSON
       {
         "version": 2,
         "extra_config": {
-          "github_comdevopsfaithkrakend-gologging": {
+          "github_com/devopsfaith/krakend-gologging": {
             "level": "WARNING",
             "prefix": "[KRAKEND]",
             "syslog": false,
@@ -43,22 +43,22 @@ class Krakend < Formula
       }
     JSON
     assert_match "unsupported version",
-      shell_output("#{bin}krakend check -c krakend_unsupported_version.json 2>&1", 1)
+      shell_output("#{bin}/krakend check -c krakend_unsupported_version.json 2>&1", 1)
 
-    (testpath"krakend_bad_file.json").write <<~JSON
+    (testpath/"krakend_bad_file.json").write <<~JSON
       {
         "version": 3,
         "bad": file
       }
     JSON
     assert_match "ERROR",
-      shell_output("#{bin}krakend check -c krakend_bad_file.json 2>&1", 1)
+      shell_output("#{bin}/krakend check -c krakend_bad_file.json 2>&1", 1)
 
-    (testpath"krakend.json").write <<~JSON
+    (testpath/"krakend.json").write <<~JSON
       {
         "version": 3,
         "extra_config": {
-          "telemetrylogging": {
+          "telemetry/logging": {
             "level": "WARNING",
             "prefix": "[KRAKEND]",
             "syslog": false,
@@ -67,12 +67,12 @@ class Krakend < Formula
         },
         "endpoints": [
           {
-            "endpoint": "test",
+            "endpoint": "/test",
             "backend": [
               {
-                "url_pattern": "backend",
+                "url_pattern": "/backend",
                 "host": [
-                  "http:some-host"
+                  "http://some-host"
                 ]
               }
             ]
@@ -81,6 +81,6 @@ class Krakend < Formula
       }
     JSON
     assert_match "Syntax OK",
-      shell_output("#{bin}krakend check -c krakend.json 2>&1")
+      shell_output("#{bin}/krakend check -c krakend.json 2>&1")
   end
 end

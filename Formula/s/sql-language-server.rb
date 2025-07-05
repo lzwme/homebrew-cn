@@ -1,7 +1,7 @@
 class SqlLanguageServer < Formula
   desc "Language Server for SQL"
-  homepage "https:github.comjoe-resql-language-server"
-  url "https:registry.npmjs.orgsql-language-server-sql-language-server-1.7.1.tgz"
+  homepage "https://github.com/joe-re/sql-language-server"
+  url "https://registry.npmjs.org/sql-language-server/-/sql-language-server-1.7.1.tgz"
   sha256 "c92fe8ae8756f86bc893ec3dff6d85653de242eb671af0430807064db79d9cd6"
   license "MIT"
 
@@ -31,18 +31,18 @@ class SqlLanguageServer < Formula
 
   def install
     system "npm", "install", *std_npm_args
-    bin.install_symlink libexec.glob("bin*")
+    bin.install_symlink libexec.glob("bin/*")
 
     # Remove vendored pre-built binary `terminal-notifier`
-    node_notifier_vendor_dir = libexec"libnode_modulessql-language-servernode_modulesnode-notifiervendor"
+    node_notifier_vendor_dir = libexec/"lib/node_modules/sql-language-server/node_modules/node-notifier/vendor"
     rm_r(node_notifier_vendor_dir) # remove vendored pre-built binaries
 
     if OS.mac?
-      terminal_notifier_dir = node_notifier_vendor_dir"mac.noindex"
+      terminal_notifier_dir = node_notifier_vendor_dir/"mac.noindex"
       terminal_notifier_dir.mkpath
 
       # replace vendored `terminal-notifier` with our own
-      terminal_notifier_app = Formula["terminal-notifier"].opt_prefix"terminal-notifier.app"
+      terminal_notifier_app = Formula["terminal-notifier"].opt_prefix/"terminal-notifier.app"
       ln_sf terminal_notifier_app.relative_path_from(terminal_notifier_dir), terminal_notifier_dir
     end
   end
@@ -62,9 +62,9 @@ class SqlLanguageServer < Formula
       }
     JSON
 
-    Open3.popen3(bin"sql-language-server", "up", "--method", "stdio") do |stdin, stdout|
+    Open3.popen3(bin/"sql-language-server", "up", "--method", "stdio") do |stdin, stdout|
       stdin.write "Content-Length: #{json.size}\r\n\r\n#{json}"
-      assert_match(^Content-Length: \d+i, stdout.readline)
+      assert_match(/^Content-Length: \d+/i, stdout.readline)
     end
   end
 end

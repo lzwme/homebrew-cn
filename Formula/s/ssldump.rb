@@ -1,7 +1,7 @@
 class Ssldump < Formula
-  desc "SSLv3TLS network protocol analyzer"
-  homepage "https:adulau.github.iossldump"
-  url "https:github.comadulaussldumparchiverefstagsv1.9.tar.gz"
+  desc "SSLv3/TLS network protocol analyzer"
+  homepage "https://adulau.github.io/ssldump/"
+  url "https://ghfast.top/https://github.com/adulau/ssldump/archive/refs/tags/v1.9.tar.gz"
   sha256 "c81ce58d79b6e6edb8d89822a85471ef51cfa7d63ad812df6f470b5d14ff6e48"
   license "BSD-4-Clause"
 
@@ -28,6 +28,6 @@ class Ssldump < Formula
   end
 
   test do
-    system bin"ssldump", "-v"
+    system bin/"ssldump", "-v"
   end
 end

@@ -1,11 +1,11 @@
 class Wasmtime < Formula
   desc "Standalone JIT-style runtime for WebAssembly, using Cranelift"
-  homepage "https:wasmtime.dev"
-  url "https:github.combytecodealliancewasmtime.git",
+  homepage "https://wasmtime.dev/"
+  url "https://github.com/bytecodealliance/wasmtime.git",
       tag:      "v34.0.1",
       revision: "ebdadc4e0d80c0692fe1d4baf628f081a34afefa"
   license "Apache-2.0" => { with: "LLVM-exception" }
-  head "https:github.combytecodealliancewasmtime.git", branch: "main"
+  head "https://github.com/bytecodealliance/wasmtime.git", branch: "main"
 
   # Upstream maintains multiple major versions and the "latest" release may be
   # for a lower version, so we have to check multiple releases to identify the
@@ -31,29 +31,29 @@ class Wasmtime < Formula
   def install
     system "cargo", "install", *std_cargo_args, "--profile=fastest-runtime"
 
-    system "cmake", "-S", "cratesc-api", "-B", "build", "-DWASMTIME_FASTEST_RUNTIME=ON", *std_cmake_args
+    system "cmake", "-S", "crates/c-api", "-B", "build", "-DWASMTIME_FASTEST_RUNTIME=ON", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 
-    generate_completions_from_executable(bin"wasmtime", "completion")
+    generate_completions_from_executable(bin/"wasmtime", "completion")
   end
 
   test do
     wasm = ["0061736d0100000001070160027f7f017f030201000707010373756d00000a09010700200020016a0b"].pack("H*")
-    (testpath"sum.wasm").write(wasm)
+    (testpath/"sum.wasm").write(wasm)
     assert_equal "3\n",
-      shell_output("#{bin}wasmtime --invoke sum #{testpath"sum.wasm"} 1 2")
+      shell_output("#{bin}/wasmtime --invoke sum #{testpath/"sum.wasm"} 1 2")
 
-    (testpath"hello.wat").write <<~EOS
+    (testpath/"hello.wat").write <<~EOS
       (module
         (func $hello (import "" "hello"))
         (func (export "run") (call $hello))
       )
     EOS
 
-    # Example from https:docs.wasmtime.devexamples-c-hello-world.html to test C library API,
+    # Example from https://docs.wasmtime.dev/examples-c-hello-world.html to test C library API,
     # with comments removed for brevity
-    (testpath"hello.c").write <<~C
+    (testpath/"hello.c").write <<~C
       #include <assert.h>
       #include <stdio.h>
       #include <stdlib.h>
@@ -85,7 +85,7 @@ class Wasmtime < Formula
         assert(store != NULL);
         wasmtime_context_t *context = wasmtime_store_context(store);
 
-        FILE* file = fopen(".hello.wat", "r");
+        FILE* file = fopen("./hello.wat", "r");
         assert(file != NULL);
         fseek(file, 0L, SEEK_END);
         size_t file_size = ftell(file);
@@ -171,6 +171,6 @@ class Wasmtime < Formula
       > Hello World!
       All finished!
     EOS
-    assert_equal expected, shell_output(".hello")
+    assert_equal expected, shell_output("./hello")
   end
 end

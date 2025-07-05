@@ -1,15 +1,15 @@
 class Libogg < Formula
   desc "Ogg Bitstream Library"
-  homepage "https:www.xiph.orgogg"
-  url "https:ftp.osuosl.orgpubxiphreleasesogglibogg-1.3.6.tar.gz"
-  mirror "https:github.comxiphoggreleasesdownloadv1.3.6libogg-1.3.6.tar.gz"
+  homepage "https://www.xiph.org/ogg/"
+  url "https://ftp.osuosl.org/pub/xiph/releases/ogg/libogg-1.3.6.tar.gz"
+  mirror "https://ghfast.top/https://github.com/xiph/ogg/releases/download/v1.3.6/libogg-1.3.6.tar.gz"
   sha256 "83e6704730683d004d20e21b8f7f55dcb3383cdf84c0daedf30bde175f774638"
   license "BSD-3-Clause"
-  head "https:gitlab.xiph.orgxiphogg.git", branch: "master"
+  head "https://gitlab.xiph.org/xiph/ogg.git", branch: "master"
 
   livecheck do
-    url "https:ftp.osuosl.orgpubxiphreleasesogg?C=M&O=D"
-    regex(%r{href=(?:["']?|.*?)libogg[._-]v?(\d+(?:\.\d+)+)\.t}i)
+    url "https://ftp.osuosl.org/pub/xiph/releases/ogg/?C=M&O=D"
+    regex(%r{href=(?:["']?|.*?/)libogg[._-]v?(\d+(?:\.\d+)+)\.t}i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -33,17 +33,17 @@ class Libogg < Formula
 
     system "cmake", "-S", ".", "-B", "build-static", "-DBUILD_SHARED_LIBS=FALSE", *std_cmake_args
     system "cmake", "--build", "build-static"
-    lib.install "build-staticlibogg.a"
+    lib.install "build-static/libogg.a"
   end
 
   test do
     resource "oggfile" do
-      url "https:upload.wikimedia.orgwikipediacommonscc8Example.ogg"
+      url "https://upload.wikimedia.org/wikipedia/commons/c/c8/Example.ogg"
       sha256 "f57b56d8aae4c847cf01224fb45293610d801cfdac43d932b5eeab1cd318182a"
     end
 
-    (testpath"test.c").write <<~C
-      #include <oggogg.h>
+    (testpath/"test.c").write <<~C
+      #include <ogg/ogg.h>
       #include <stdio.h>
 
       int main (void) {
@@ -56,7 +56,7 @@ class Libogg < Formula
 
         ogg_sync_init (&oy);
 
-         Read all available input to avoid broken pipe
+        // Read all available input to avoid broken pipe
         do {
           buffer = ogg_sync_buffer (&oy, 4096);
           bytes = fread(buffer, 1, 4096, stdin);
@@ -79,9 +79,9 @@ class Libogg < Formula
                    "-o", "test"
 
     # Should work on an OGG file
-    pipe_output(".test", (testpath"Example.ogg").read, 0)
+    pipe_output("./test", (testpath/"Example.ogg").read, 0)
 
     # Expected to fail on a non-OGG file
-    pipe_output(".test", test_fixtures("test.wav").read, 1)
+    pipe_output("./test", test_fixtures("test.wav").read, 1)
   end
 end

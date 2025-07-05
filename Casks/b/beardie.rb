@@ -2,10 +2,10 @@ cask "beardie" do
   version "3.0.24.84.Release"
   sha256 "d4361bc06beab9e868b746695506656603febe02c32539ffc15a5a7b642425dd"
 
-  url "https:github.comStillness-2beardiereleasesdownloadv#{version}Beardie.app.zip"
+  url "https://ghfast.top/https://github.com/Stillness-2/beardie/releases/download/v#{version}/Beardie.app.zip"
   name "Beardie"
   desc "Control various media players with your keyboard"
-  homepage "https:github.comStillness-2beardie"
+  homepage "https://github.com/Stillness-2/beardie"
 
   no_autobump! because: :requires_manual_review
 
@@ -15,7 +15,7 @@ cask "beardie" do
   app "Beardie.app"
 
   zap trash: [
-    "~LibraryCachescom.calm-apps.mac.beardie",
-    "~LibraryPreferencescom.calm-apps.mac.beardie.plist",
+    "~/Library/Caches/com.calm-apps.mac.beardie",
+    "~/Library/Preferences/com.calm-apps.mac.beardie.plist",
   ]
 end

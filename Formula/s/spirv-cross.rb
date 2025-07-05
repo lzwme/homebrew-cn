@@ -1,7 +1,7 @@
 class SpirvCross < Formula
   desc "Performing reflection and disassembling SPIR-V"
-  homepage "https:github.comKhronosGroupSPIRV-Cross"
-  url "https:github.comKhronosGroupSPIRV-Crossarchiverefstagsvulkan-sdk-1.4.313.0.tar.gz"
+  homepage "https://github.com/KhronosGroup/SPIRV-Cross"
+  url "https://ghfast.top/https://github.com/KhronosGroup/SPIRV-Cross/archive/refs/tags/vulkan-sdk-1.4.313.0.tar.gz"
   sha256 "7d1de24918bea9897753f7561d4d154f68ec89c36bb70c13598222b8039d4212"
   license all_of: [
     "Apache-2.0",
@@ -10,11 +10,11 @@ class SpirvCross < Formula
     "MIT-Khronos-old",
   ]
   version_scheme 1
-  head "https:github.comKhronosGroupSPIRV-Cross.git", branch: "main"
+  head "https://github.com/KhronosGroup/SPIRV-Cross.git", branch: "main"
 
   livecheck do
     url :stable
-    regex(^(?:vulkan[._-])?sdk[._-]v?(\d+(?:\.\d+)+)$i)
+    regex(/^(?:vulkan[._-])?sdk[._-]v?(\d+(?:\.\d+)+)$/i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -40,29 +40,29 @@ class SpirvCross < Formula
 
     # required for tests
     prefix.install "samples"
-    (include"spirv_cross").install Dir["includespirv_cross*"]
+    (include/"spirv_cross").install Dir["include/spirv_cross/*"]
   end
 
   test do
-    cp_r Dir[prefix"samplescpp*"], testpath
+    cp_r Dir[prefix/"samples/cpp/*"], testpath
 
-    inreplace "Makefile", "-I....include", "-I#{include}"
-    inreplace "Makefile", "....spirv-cross", bin"spirv-cross"
-    inreplace "Makefile", "glslangValidator", Formula["glslang"].bin"glslangValidator"
+    inreplace "Makefile", "-I../../include", "-I#{include}"
+    inreplace "Makefile", "../../spirv-cross", bin/"spirv-cross"
+    inreplace "Makefile", "glslangValidator", Formula["glslang"].bin/"glslangValidator"
 
     # fix technically invalid shader code (#version should be first)
     # allows test to pass with newer glslangValidator
     before = <<~EOS
-       Copyright 2016-2021 The Khronos Group Inc.
-       SPDX-License-Identifier: Apache-2.0
+      // Copyright 2016-2021 The Khronos Group Inc.
+      // SPDX-License-Identifier: Apache-2.0
 
       #version 310 es
     EOS
 
     after = <<~EOS
       #version 310 es
-       Copyright 2016-2021 The Khronos Group Inc.
-       SPDX-License-Identifier: Apache-2.0
+      // Copyright 2016-2021 The Khronos Group Inc.
+      // SPDX-License-Identifier: Apache-2.0
 
     EOS
 

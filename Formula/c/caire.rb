@@ -1,10 +1,10 @@
 class Caire < Formula
   desc "Content aware image resize tool"
-  homepage "https:github.comesimovcaire"
-  url "https:github.comesimovcairearchiverefstagsv1.5.0.tar.gz"
+  homepage "https://github.com/esimov/caire"
+  url "https://ghfast.top/https://github.com/esimov/caire/archive/refs/tags/v1.5.0.tar.gz"
   sha256 "d63c5edff4f12bc14e787c0a8f3acb456119e1a03d4bd8bfcf70114abd44f941"
   license "MIT"
-  head "https:github.comesimovcaire.git", branch: "master"
+  head "https://github.com/esimov/caire.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "3aa63b8d899dde73b2137eb9bf77b51e970eaf124523887bb6db25a40fb8c6ce"
@@ -29,17 +29,17 @@ class Caire < Formula
   end
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w -X main.Version=#{version}"), ".cmdcaire"
+    system "go", "build", *std_go_args(ldflags: "-s -w -X main.Version=#{version}"), "./cmd/caire"
   end
 
   test do
     pid = fork do
-      system bin"caire", "-in", test_fixtures("test.png"), "-out", testpath"test_out.png",
+      system bin/"caire", "-in", test_fixtures("test.png"), "-out", testpath/"test_out.png",
             "-width=1", "-height=1", "-perc=1"
-      assert_path_exists testpath"test_out.png"
+      assert_path_exists testpath/"test_out.png"
     end
 
-    assert_match version.to_s, shell_output("#{bin}caire -help 2>&1")
+    assert_match version.to_s, shell_output("#{bin}/caire -help 2>&1")
   ensure
     Process.kill("HUP", pid)
   end

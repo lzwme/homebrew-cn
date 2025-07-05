@@ -1,13 +1,13 @@
 class Libexif < Formula
   desc "EXIF parsing library"
-  homepage "https:libexif.github.io"
-  url "https:github.comlibexiflibexifreleasesdownloadv0.6.25libexif-0.6.25.tar.bz2"
+  homepage "https://libexif.github.io/"
+  url "https://ghfast.top/https://github.com/libexif/libexif/releases/download/v0.6.25/libexif-0.6.25.tar.bz2"
   sha256 "7c9eba99aed3e6594d8c3e85861f1c6aaf450c218621528bc989d3b3e7a26307"
   license all_of: ["LGPL-2.1-or-later", "LGPL-2.0-or-later"]
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -21,7 +21,7 @@ class Libexif < Formula
   end
 
   head do
-    url "https:github.comlibexiflibexif.git", branch: "master"
+    url "https://github.com/libexif/libexif.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -35,14 +35,14 @@ class Libexif < Formula
 
   def install
     system "autoreconf", "--force", "--install", "--verbose" if build.head?
-    system ".configure", "--disable-silent-rules", *std_configure_args
+    system "./configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
   end
 
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include <stdio.h>
-      #include <libexifexif-loader.h>
+      #include <libexif/exif-loader.h>
 
       int main(int argc, char **argv) {
         ExifLoader *loader = exif_loader_new();
@@ -61,6 +61,6 @@ class Libexif < Formula
     ]
     system ENV.cc, "test.c", "-o", "test", *flags
     test_image = test_fixtures("test.jpg")
-    assert_equal "No Exif data", shell_output(".test #{test_image}")
+    assert_equal "No Exif data", shell_output("./test #{test_image}")
   end
 end

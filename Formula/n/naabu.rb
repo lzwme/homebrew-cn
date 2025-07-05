@@ -1,10 +1,10 @@
 class Naabu < Formula
   desc "Fast port scanner"
-  homepage "https:docs.projectdiscovery.iotoolsnaabuoverview"
-  url "https:github.comprojectdiscoverynaabuarchiverefstagsv2.3.4.tar.gz"
+  homepage "https://docs.projectdiscovery.io/tools/naabu/overview"
+  url "https://ghfast.top/https://github.com/projectdiscovery/naabu/archive/refs/tags/v2.3.4.tar.gz"
   sha256 "51f2bb5d00b5951798973b578eec3a2e353c76da22a29844dab27d7f01baabd8"
   license "MIT"
-  head "https:github.comprojectdiscoverynaabu.git", branch: "master"
+  head "https://github.com/projectdiscovery/naabu.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "afe496cdde964c4e1af352070b5dd5c39d5be1472f5c0eb6a0285195740ea745"
@@ -21,12 +21,12 @@ class Naabu < Formula
   uses_from_macos "libpcap"
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), ".cmdnaabu"
+    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/naabu"
   end
 
   test do
-    assert_match "brew.sh:443", shell_output("#{bin}naabu -host brew.sh -p 443")
+    assert_match "brew.sh:443", shell_output("#{bin}/naabu -host brew.sh -p 443")
 
-    assert_match version.to_s, shell_output("#{bin}naabu --version 2>&1")
+    assert_match version.to_s, shell_output("#{bin}/naabu --version 2>&1")
   end
 end

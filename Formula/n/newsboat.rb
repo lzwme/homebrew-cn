@@ -1,10 +1,10 @@
 class Newsboat < Formula
-  desc "RSSAtom feed reader for text terminals"
-  homepage "https:newsboat.org"
-  url "https:newsboat.orgreleases2.40newsboat-2.40.tar.xz"
+  desc "RSS/Atom feed reader for text terminals"
+  homepage "https://newsboat.org/"
+  url "https://newsboat.org/releases/2.40/newsboat-2.40.tar.xz"
   sha256 "1e656636009ffad3aeb87f8d0e4c36d2e913eac155b5f3ec85d00e8287b477c2"
   license "MIT"
-  head "https:github.comnewsboatnewsboat.git", branch: "master"
+  head "https://github.com/newsboat/newsboat.git", branch: "master"
 
   bottle do
     sha256 arm64_sequoia: "62beb795654ad0e034cae9415b3d9762037dd5b7a6b084195338d66dfe12e5d4"
@@ -34,12 +34,12 @@ class Newsboat < Formula
   end
 
   # Newsboat have their own libstfl fork. Upstream libsftl is gone:
-  # https:github.comHomebrewhomebrew-corepull89981
+  # https://github.com/Homebrew/homebrew-core/pull/89981
   # They do not want to be the new upstream, but use that fork as a temporary
   # workaround until they migrate to some rust crate
-  # https:github.comnewsboatnewsboatissues232
+  # https://github.com/newsboat/newsboat/issues/232
   resource("libstfl") do
-    url "https:github.comnewsboatstfl.git",
+    url "https://github.com/newsboat/stfl.git",
         revision: "bbb2404580e845df2556560112c8aefa27494d66"
   end
 
@@ -49,8 +49,8 @@ class Newsboat < Formula
         ENV.append "LDLIBS", "-liconv"
         ENV.append "LIBS", "-lncurses -lruby -liconv"
 
-        inreplace "stfl_internals.h", "ncurseswncurses.h", "ncurses.h"
-        inreplace %w[stfl.pc.in rubyMakefile.snippet], "ncursesw", "ncurses"
+        inreplace "stfl_internals.h", "ncursesw/ncurses.h", "ncurses.h"
+        inreplace %w[stfl.pc.in ruby/Makefile.snippet], "ncursesw", "ncurses"
 
         inreplace "Makefile" do |s|
           s.gsub! "ncursesw", "ncurses"
@@ -60,7 +60,7 @@ class Newsboat < Formula
         end
 
         # Fix ncurses linkage for Perl bundle
-        inreplace "perl5Makefile.PL", "-lncursesw", "-L#{MacOS.sdk_path}usrlib -lncurses"
+        inreplace "perl5/Makefile.PL", "-lncursesw", "-L#{MacOS.sdk_path}/usr/lib -lncurses"
       else
         ENV.append "LIBS", "-lncursesw -lruby"
         inreplace "Makefile", "$(LDLIBS) $^", "$^ $(LDLIBS)"
@@ -71,13 +71,13 @@ class Newsboat < Formula
 
       # Fails race condition of test:
       #   ImportError: dynamic module does not define init function (init_stfl)
-      #   make: *** [python_stfl.so] Error 1
+      #   make: *** [python/_stfl.so] Error 1
       ENV.deparallelize do
         system "make"
         system "make", "install", "prefix=#{libexec}"
       end
 
-      cp (libexec"liblibstfl.so"), (libexec"liblibstfl.so.0") if OS.linux?
+      cp (libexec/"lib/libstfl.so"), (libexec/"lib/libstfl.so.0") if OS.linux?
     end
 
     gettext = Formula["gettext"]
@@ -85,11 +85,11 @@ class Newsboat < Formula
     ENV["GETTEXT_BIN_DIR"] = gettext.opt_bin.to_s
     ENV["GETTEXT_LIB_DIR"] = gettext.lib.to_s
     ENV["GETTEXT_INCLUDE_DIR"] = gettext.include.to_s
-    ENV["XML_CATALOG_FILES"] = etc"xmlcatalog"
+    ENV["XML_CATALOG_FILES"] = etc/"xml/catalog"
 
     # Remove once libsftl is not used anymore
-    ENV.prepend_path "PKG_CONFIG_PATH", libexec"libpkgconfig"
-    ENV.append "LDFLAGS", "-Wl,-rpath,#{libexec}lib"
+    ENV.prepend_path "PKG_CONFIG_PATH", libexec/"lib/pkgconfig"
+    ENV.append "LDFLAGS", "-Wl,-rpath,#{libexec}/lib"
 
     # Work around Apple's ncurses5.4-config outputting -lncursesw
     if OS.mac? && MacOS.version >= :sonoma
@@ -102,7 +102,7 @@ class Newsboat < Formula
   end
 
   test do
-    (testpath"urls.txt").write "https:github.blogsubscribe"
-    assert_match "Newsboat - Exported Feeds", shell_output("LC_ALL=C #{bin}newsboat -e -u urls.txt")
+    (testpath/"urls.txt").write "https://github.blog/subscribe/"
+    assert_match "Newsboat - Exported Feeds", shell_output("LC_ALL=C #{bin}/newsboat -e -u urls.txt")
   end
 end

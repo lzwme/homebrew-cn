@@ -1,14 +1,14 @@
 class Kitex < Formula
   desc "Golang RPC framework for microservices"
-  homepage "https:github.comcloudwegokitex"
-  url "https:github.comcloudwegokitexarchiverefstagsv0.14.1.tar.gz"
+  homepage "https://github.com/cloudwego/kitex"
+  url "https://ghfast.top/https://github.com/cloudwego/kitex/archive/refs/tags/v0.14.1.tar.gz"
   sha256 "a860e6ad8ff5207d9516299d3eec055042b2bd99a3df83bf3c32064c79976a46"
   license "Apache-2.0"
-  head "https:github.comcloudwegokitex.git", branch: "develop"
+  head "https://github.com/cloudwego/kitex.git", branch: "develop"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -24,14 +24,14 @@ class Kitex < Formula
   depends_on "thriftgo" => :test
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), ".toolcmdkitex"
+    system "go", "build", *std_go_args(ldflags: "-s -w"), "./tool/cmd/kitex"
   end
 
   test do
-    output = shell_output("#{bin}kitex --version 2>&1")
+    output = shell_output("#{bin}/kitex --version 2>&1")
     assert_match "v#{version}", output
 
-    thriftfile = testpath"test.thrift"
+    thriftfile = testpath/"test.thrift"
     thriftfile.write <<~EOS
       namespace go api
       struct Request {
@@ -44,10 +44,10 @@ class Kitex < Formula
           Response echo(1: Request req)
       }
     EOS
-    system bin"kitex", "-module", "test", "test.thrift"
-    assert_path_exists testpath"go.mod"
-    refute_predicate (testpath"go.mod").size, :zero?
-    assert_path_exists testpath"kitex_gen""api""test.go"
-    refute_predicate (testpath"kitex_gen""api""test.go").size, :zero?
+    system bin/"kitex", "-module", "test", "test.thrift"
+    assert_path_exists testpath/"go.mod"
+    refute_predicate (testpath/"go.mod").size, :zero?
+    assert_path_exists testpath/"kitex_gen"/"api"/"test.go"
+    refute_predicate (testpath/"kitex_gen"/"api"/"test.go").size, :zero?
   end
 end

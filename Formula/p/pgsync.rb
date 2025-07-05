@@ -1,7 +1,7 @@
 class Pgsync < Formula
   desc "Sync Postgres data between databases"
-  homepage "https:github.comankanepgsync"
-  url "https:github.comankanepgsyncarchiverefstagsv0.8.0.tar.gz"
+  homepage "https://github.com/ankane/pgsync"
+  url "https://ghfast.top/https://github.com/ankane/pgsync/archive/refs/tags/v0.8.0.tar.gz"
   sha256 "385aa0be8683ae4877fc6b39a3a4a0664680ed1631559fadd7b5113d7724ecea"
   license "MIT"
   revision 1
@@ -22,33 +22,33 @@ class Pgsync < Formula
   depends_on "ruby"
 
   resource "parallel" do
-    url "https:rubygems.orggemsparallel-1.25.1.gem"
+    url "https://rubygems.org/gems/parallel-1.25.1.gem"
     sha256 "12e089b9aa36ea2343f6e93f18cfcebd031798253db8260590d26a7f70b1ab90"
   end
 
   resource "pg" do
-    url "https:rubygems.orggemspg-1.5.6.gem"
+    url "https://rubygems.org/gems/pg-1.5.6.gem"
     sha256 "4bc3ad2438825eea68457373555e3fd4ea1a82027b8a6be98ef57c0d57292b1c"
   end
 
   resource "slop" do
-    url "https:rubygems.orggemsslop-4.10.1.gem"
+    url "https://rubygems.org/gems/slop-4.10.1.gem"
     sha256 "844322b5ffcf17ed4815fdb173b04a20dd82b4fd93e3744c88c8fafea696d9c7"
   end
 
   resource "tty-cursor" do
-    url "https:rubygems.orggemstty-cursor-0.7.1.gem"
+    url "https://rubygems.org/gems/tty-cursor-0.7.1.gem"
     sha256 "79534185e6a777888d88628b14b6a1fdf5154a603f285f80b1753e1908e0bf48"
   end
 
   resource "tty-spinner" do
-    url "https:rubygems.orggemstty-spinner-0.9.3.gem"
+    url "https://rubygems.org/gems/tty-spinner-0.9.3.gem"
     sha256 "0e036f047b4ffb61f2aa45f5a770ec00b4d04130531558a94bfc5b192b570542"
   end
 
   def install
     ENV["GEM_HOME"] = libexec
-    ENV["PG_CONFIG"] = Formula["libpq"].opt_bin"pg_config"
+    ENV["PG_CONFIG"] = Formula["libpq"].opt_bin/"pg_config"
 
     resources.each do |r|
       r.fetch
@@ -59,12 +59,12 @@ class Pgsync < Formula
     system "gem", "build", "pgsync.gemspec"
     system "gem", "install", "--ignore-dependencies", "pgsync-#{version}.gem"
 
-    bin.install libexec"binpgsync"
-    bin.env_script_all_files(libexec"bin", GEM_HOME: ENV["GEM_HOME"])
+    bin.install libexec/"bin/pgsync"
+    bin.env_script_all_files(libexec/"bin", GEM_HOME: ENV["GEM_HOME"])
   end
 
   test do
-    system bin"pgsync", "--init"
-    assert_path_exists testpath".pgsync.yml"
+    system bin/"pgsync", "--init"
+    assert_path_exists testpath/".pgsync.yml"
   end
 end

@@ -1,7 +1,7 @@
 class Libcec < Formula
   desc "Control devices with TV remote control and HDMI cabling"
-  homepage "https:libcec.pulse-eight.com"
-  url "https:github.comPulse-Eightlibcecarchiverefstagslibcec-7.1.1.tar.gz"
+  homepage "https://libcec.pulse-eight.com/"
+  url "https://ghfast.top/https://github.com/Pulse-Eight/libcec/archive/refs/tags/libcec-7.1.1.tar.gz"
   sha256 "7f7da95a4c1e7160d42ca37a3ac80cf6f389b317e14816949e0fa5e2edf4cc64"
   license "GPL-2.0-or-later"
 
@@ -20,12 +20,12 @@ class Libcec < Formula
   uses_from_macos "ncurses"
 
   resource "p8-platform" do
-    url "https:github.comPulse-Eightplatformarchiverefstagsp8-platform-2.1.0.1.tar.gz"
+    url "https://ghfast.top/https://github.com/Pulse-Eight/platform/archive/refs/tags/p8-platform-2.1.0.1.tar.gz"
     sha256 "064f8d2c358895c7e0bea9ae956f8d46f3f057772cb97f2743a11d478a0f68a0"
 
     livecheck do
-      url "https:github.comPulse-Eightplatform.git"
-      regex(^p8-platform[._-]v?(\d+(?:\.\d+)+)$i)
+      url "https://github.com/Pulse-Eight/platform.git"
+      regex(/^p8-platform[._-]v?(\d+(?:\.\d+)+)$/i)
     end
   end
 
@@ -42,7 +42,7 @@ class Libcec < Formula
     end
 
     resource("p8-platform").stage do
-      # upstream commit, https:github.comPulse-Eightplatformcommitd7faed1c696b1a6a67f114a63a0f4c085f0f9195
+      # upstream commit, https://github.com/Pulse-Eight/platform/commit/d7faed1c696b1a6a67f114a63a0f4c085f0f9195
       ENV["CMAKE_POLICY_VERSION_MINIMUM"] = "3.5"
       odie "remove CMAKE_POLICY_VERSION_MINIMUM env" if resource("p8-platform").version > "2.1.0.1"
 
@@ -57,6 +57,6 @@ class Libcec < Formula
   end
 
   test do
-    assert_match "libCEC version: #{version}", shell_output("#{bin}cec-client --list-devices")
+    assert_match "libCEC version: #{version}", shell_output("#{bin}/cec-client --list-devices")
   end
 end

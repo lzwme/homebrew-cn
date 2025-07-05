@@ -1,7 +1,7 @@
 class Llnode < Formula
-  desc "LLDB plugin for livepost-mortem debugging of node.js apps"
-  homepage "https:github.comnodejsllnode"
-  url "https:github.comnodejsllnodearchiverefstagsv4.0.0.tar.gz"
+  desc "LLDB plugin for live/post-mortem debugging of node.js apps"
+  homepage "https://github.com/nodejs/llnode"
+  url "https://ghfast.top/https://github.com/nodejs/llnode/archive/refs/tags/v4.0.0.tar.gz"
   sha256 "abc295c077443f823444faffb165ada4c6ca377f2b1af4c002e8a9eea0f30135"
   license "MIT"
 
@@ -28,11 +28,11 @@ class Llnode < Formula
   uses_from_macos "llvm"
 
   def llnode_so(root = lib)
-    root"llnode"shared_library("llnode")
+    root/"llnode"/shared_library("llnode")
   end
 
   def install
-    ENV.append_path "PATH", Formula["node"].libexec"libnode_modulesnpmnode_modulesnode-gypbin"
+    ENV.append_path "PATH", Formula["node"].libexec/"lib/node_modules/npm/node_modules/node-gyp/bin"
     inreplace "Makefile", "node-gyp", "node-gyp.js"
 
     ENV["LLNODE_LLDB_INCLUDE_DIR"] = Formula["llvm"].opt_include
@@ -41,7 +41,7 @@ class Llnode < Formula
     llnode_so.dirname.install shared_library("llnode")
 
     # Needed by the `llnode` script.
-    (lib"node_modulesllnode").install_symlink llnode_so
+    (lib/"node_modules/llnode").install_symlink llnode_so
   end
 
   def caveats
@@ -54,8 +54,8 @@ class Llnode < Formula
       * Type `plugin load #{llnode}` on each run of lldb
       * Install plugin into PlugIns dir manually (macOS only):
 
-          mkdir -p "$HOMELibraryApplication SupportLLDBPlugIns"
-          ln -sf '#{llnode}' "$HOMELibraryApplication SupportLLDBPlugIns"
+          mkdir -p "$HOME/Library/Application Support/LLDB/PlugIns"
+          ln -sf '#{llnode}' "$HOME/Library/Application Support/LLDB/PlugIns/"
     EOS
   end
 
@@ -68,7 +68,7 @@ class Llnode < Formula
     EOS
     assert_match "v8 bt", lldb_out
 
-    llnode_out = pipe_output bin"llnode", <<~EOS
+    llnode_out = pipe_output bin/"llnode", <<~EOS
       help v8
       quit
     EOS

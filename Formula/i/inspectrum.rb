@@ -1,10 +1,10 @@
 class Inspectrum < Formula
   desc "Offline radio signal analyser"
-  homepage "https:github.commiekinspectrum"
-  url "https:github.commiekinspectrumarchiverefstagsv0.3.1.tar.gz"
+  homepage "https://github.com/miek/inspectrum"
+  url "https://ghfast.top/https://github.com/miek/inspectrum/archive/refs/tags/v0.3.1.tar.gz"
   sha256 "94e42333aceb06c15fb6fc10d186d61112975fdcf9539357a279e886e9edf35e"
   license "GPL-3.0-or-later"
-  head "https:github.commiekinspectrum.git", branch: "main"
+  head "https://github.com/miek/inspectrum.git", branch: "main"
 
   no_autobump! because: :requires_manual_review
 
@@ -36,6 +36,6 @@ class Inspectrum < Formula
     return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
 
     # inspectrum is a GUI application
-    assert_match "-r, --rate <Hz>     Set sample rate.", shell_output("#{bin}inspectrum -h").strip
+    assert_match "-r, --rate <Hz>     Set sample rate.", shell_output("#{bin}/inspectrum -h").strip
   end
 end

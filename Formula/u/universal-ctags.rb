@@ -1,15 +1,15 @@
 class UniversalCtags < Formula
   desc "Maintained ctags implementation"
-  homepage "https:ctags.io"
-  url "https:github.comuniversal-ctagsctagsarchiverefstagsp6.2.20250615.0.tar.gz"
+  homepage "https://ctags.io/"
+  url "https://ghfast.top/https://github.com/universal-ctags/ctags/archive/refs/tags/p6.2.20250615.0.tar.gz"
   version "p6.2.20250615.0"
   sha256 "34a5ab1a05353de2712dd8479d959cd4ec21b0f39c400731e53ecd192d2770fc"
   license "GPL-2.0-only"
-  head "https:github.comuniversal-ctagsctags.git", branch: "master"
+  head "https://github.com/universal-ctags/ctags.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(^(p\d+(?:\.\d+)+)$i)
+    regex(/^(p\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -36,14 +36,14 @@ class UniversalCtags < Formula
   conflicts_with "ctags", because: "this formula installs the same executable as the ctags formula"
 
   def install
-    system ".autogen.sh"
-    system ".configure", *std_configure_args
+    system "./autogen.sh"
+    system "./configure", *std_configure_args
     system "make"
     system "make", "install"
   end
 
   test do
-    (testpath"test.c").write <<~C
+    (testpath/"test.c").write <<~C
       #include <stdio.h>
       #include <stdlib.h>
 
@@ -58,7 +58,7 @@ class UniversalCtags < Formula
         return 0;
       }
     C
-    system bin"ctags", "-R", "."
-    assert_match(func.*test\.c, File.read("tags"))
+    system bin/"ctags", "-R", "."
+    assert_match(/func.*test\.c/, File.read("tags"))
   end
 end

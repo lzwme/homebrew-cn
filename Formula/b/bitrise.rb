@@ -1,10 +1,10 @@
 class Bitrise < Formula
   desc "Command-line automation tool"
-  homepage "https:github.combitrise-iobitrise"
-  url "https:github.combitrise-iobitrisearchiverefstagsv2.31.3.tar.gz"
+  homepage "https://github.com/bitrise-io/bitrise"
+  url "https://ghfast.top/https://github.com/bitrise-io/bitrise/archive/refs/tags/v2.31.3.tar.gz"
   sha256 "bf97c16707897cab16b14719ed0fab6243925d2e66bf1a1878f1f12e16b30868"
   license "MIT"
-  head "https:github.combitrise-iobitrise.git", branch: "master"
+  head "https://github.com/bitrise-io/bitrise.git", branch: "master"
 
   livecheck do
     url :stable
@@ -27,17 +27,17 @@ class Bitrise < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.combitrise-iobitriseversion.VERSION=#{version}
-      -X github.combitrise-iobitriseversion.Commit=#{tap.user}
+      -X github.com/bitrise-io/bitrise/version.VERSION=#{version}
+      -X github.com/bitrise-io/bitrise/version.Commit=#{tap.user}
     ]
 
     system "go", "build", *std_go_args(ldflags: ldflags)
   end
 
   test do
-    (testpath"bitrise.yml").write <<~YAML
+    (testpath/"bitrise.yml").write <<~YAML
       format_version: 1.3.1
-      default_step_lib_source: https:github.combitrise-iobitrise-steplib.git
+      default_step_lib_source: https://github.com/bitrise-io/bitrise-steplib.git
       workflows:
         test_wf:
           steps:
@@ -46,8 +46,8 @@ class Bitrise < Formula
               - content: printf 'Test - OK' > brew.test.file
     YAML
 
-    system bin"bitrise", "setup"
-    system bin"bitrise", "run", "test_wf"
-    assert_equal "Test - OK", (testpath"brew.test.file").read.chomp
+    system bin/"bitrise", "setup"
+    system bin/"bitrise", "run", "test_wf"
+    assert_equal "Test - OK", (testpath/"brew.test.file").read.chomp
   end
 end

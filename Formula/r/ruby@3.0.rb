@@ -1,7 +1,7 @@
 class RubyAT30 < Formula
   desc "Powerful, clean, object-oriented scripting language"
-  homepage "https:www.ruby-lang.org"
-  url "https:cache.ruby-lang.orgpubruby3.0ruby-3.0.7.tar.xz"
+  homepage "https://www.ruby-lang.org/"
+  url "https://cache.ruby-lang.org/pub/ruby/3.0/ruby-3.0.7.tar.xz"
   sha256 "1748338373c4fad80129921080d904aca326e41bd9589b498aa5ee09fd575bab"
   license "Ruby"
 
@@ -34,19 +34,19 @@ class RubyAT30 < Formula
   # The exception is Rubygem security fixes, which mandate updating this
   # formula & the versioned equivalents and bumping the revisions.
   resource "rubygems" do
-    url "https:rubygems.orgrubygemsrubygems-3.5.9.tgz"
+    url "https://rubygems.org/rubygems/rubygems-3.5.9.tgz"
     sha256 "2b203642191e6bb9ece19075f62275a88526319b124684c46667415dca4363f1"
   end
 
   # Update the bundled openssl gem for compatibility with OpenSSL 3.
   resource "openssl" do
-    url "https:github.comrubyopensslarchiverefstagsv3.2.0.tar.gz"
+    url "https://ghfast.top/https://github.com/ruby/openssl/archive/refs/tags/v3.2.0.tar.gz"
     sha256 "993534b105f5405c2db482ca26bb424d9e47f0ffe7e4b3259a15d95739ff92f9"
   end
 
   # Fix compile error in newer compilers.
   patch do
-    url "https:github.comrubybigdecimalcommit6d510e47bce2ba4dbff4c48c26ee8d5cd8de1758.patch?full_index=1"
+    url "https://github.com/ruby/bigdecimal/commit/6d510e47bce2ba4dbff4c48c26ee8d5cd8de1758.patch?full_index=1"
     sha256 "8ad16dd450031adea22f433c84a61ea4780c99bec6f0f40b1a88e50a597bf54f"
   end
 
@@ -55,7 +55,7 @@ class RubyAT30 < Formula
   end
 
   def rubygems_bindir
-    HOMEBREW_PREFIX"librubygems#{api_version}bin"
+    HOMEBREW_PREFIX/"lib/ruby/gems/#{api_version}/bin"
   end
 
   def install
@@ -63,10 +63,10 @@ class RubyAT30 < Formula
     ENV.delete("SDKROOT")
 
     resource("openssl").stage do
-      %w[extopenssl testopenssl].map { |path| rm_r(buildpathpath) }
-      (buildpath"ext").install "extopenssl"
-      (buildpath"extopenssl").install "lib", "History.md", "openssl.gemspec"
-      (buildpath"test").install "testopenssl"
+      %w[ext/openssl test/openssl].map { |path| rm_r(buildpath/path) }
+      (buildpath/"ext").install "ext/openssl"
+      (buildpath/"ext/openssl").install "lib", "History.md", "openssl.gemspec"
+      (buildpath/"test").install "test/openssl"
     end
 
     paths = %w[libyaml openssl@3 readline].map { |f| Formula[f].opt_prefix }
@@ -74,17 +74,17 @@ class RubyAT30 < Formula
       --prefix=#{prefix}
       --enable-shared
       --disable-silent-rules
-      --with-sitedir=#{HOMEBREW_PREFIX}librubysite_ruby
-      --with-vendordir=#{HOMEBREW_PREFIX}librubyvendor_ruby
+      --with-sitedir=#{HOMEBREW_PREFIX}/lib/ruby/site_ruby
+      --with-vendordir=#{HOMEBREW_PREFIX}/lib/ruby/vendor_ruby
       --with-opt-dir=#{paths.join(":")}
       --without-gmp
     ]
     args << "--disable-dtrace" if OS.mac? && !MacOS::CLT.installed?
 
     # Correct MJIT_CC to not use superenv shim
-    args << "MJIT_CC=usrbin#{DevelopmentTools.default_compiler}"
+    args << "MJIT_CC=/usr/bin/#{DevelopmentTools.default_compiler}"
 
-    system ".configure", *args
+    system "./configure", *args
 
     # Ruby has been configured to look in the HOMEBREW_PREFIX for the
     # sitedir and vendordir directories; however we don't actually want to create
@@ -92,7 +92,7 @@ class RubyAT30 < Formula
     #
     # These directories are empty on install; sitedir is used for non-rubygems
     # third party libraries, and vendordir is used for packager-provided libraries.
-    inreplace "toolrbinstall.rb" do |s|
+    inreplace "tool/rbinstall.rb" do |s|
       s.gsub! 'prepare "extension scripts", sitelibdir', ""
       s.gsub! 'prepare "extension scripts", vendorlibdir', ""
       s.gsub! 'prepare "extension objects", sitearchlibdir', ""
@@ -103,50 +103,50 @@ class RubyAT30 < Formula
     system "make", "install"
 
     # A newer version of ruby-mode.el is shipped with Emacs
-    elisp.install Dir["misc*.el"].reject { |f| f == "miscruby-mode.el" }
+    elisp.install Dir["misc/*.el"].reject { |f| f == "misc/ruby-mode.el" }
 
     # This is easier than trying to keep both current & versioned Ruby
     # formulae repeatedly updated with Rubygem patches.
     resource("rubygems").stage do
       ENV.prepend_path "PATH", bin
 
-      system bin"ruby", "setup.rb", "--prefix=#{buildpath}vendor_gem"
-      rg_in = lib"ruby#{api_version}"
-      rg_gems_in = lib"rubygems#{api_version}"
+      system bin/"ruby", "setup.rb", "--prefix=#{buildpath}/vendor_gem"
+      rg_in = lib/"ruby/#{api_version}"
+      rg_gems_in = lib/"ruby/gems/#{api_version}"
 
       # Remove bundled Rubygem and Bundler
-      rm_r rg_in"bundler"
-      rm rg_in"bundler.rb"
-      rm_r Dir[rg_gems_in"gemsbundler-*"]
-      rm Dir[rg_gems_in"specificationsdefaultbundler-*.gemspec"]
-      rm_r rg_in"rubygems"
-      rm rg_in"rubygems.rb"
-      rm bin"gem"
+      rm_r rg_in/"bundler"
+      rm rg_in/"bundler.rb"
+      rm_r Dir[rg_gems_in/"gems/bundler-*"]
+      rm Dir[rg_gems_in/"specifications/default/bundler-*.gemspec"]
+      rm_r rg_in/"rubygems"
+      rm rg_in/"rubygems.rb"
+      rm bin/"gem"
 
       # Drop in the new version.
-      rg_in.install Dir[buildpath"vendor_gemlib*"]
-      (rg_gems_in"gems").install Dir[buildpath"vendor_gemgems*"]
-      (rg_gems_in"specificationsdefault").install Dir[buildpath"vendor_gemspecificationsdefault*"]
-      bin.install buildpath"vendor_gembingem" => "gem"
-      bin.install buildpath"vendor_gembinbundle" => "bundle"
-      bin.install buildpath"vendor_gembinbundler" => "bundler"
+      rg_in.install Dir[buildpath/"vendor_gem/lib/*"]
+      (rg_gems_in/"gems").install Dir[buildpath/"vendor_gem/gems/*"]
+      (rg_gems_in/"specifications/default").install Dir[buildpath/"vendor_gem/specifications/default/*"]
+      bin.install buildpath/"vendor_gem/bin/gem" => "gem"
+      bin.install buildpath/"vendor_gem/bin/bundle" => "bundle"
+      bin.install buildpath/"vendor_gem/bin/bundler" => "bundler"
     end
 
-    # Customize rubygems to lookinstall in the global gem directory
+    # Customize rubygems to look/install in the global gem directory
     # instead of in the Cellar, making gems last across reinstalls
-    config_file = lib"ruby#{api_version}rubygemsdefaultsoperating_system.rb"
+    config_file = lib/"ruby/#{api_version}/rubygems/defaults/operating_system.rb"
     config_file.write rubygems_config
   end
 
   def post_install
-    # Since Gem ships Bundle we want to provide that fullexpected installation
+    # Since Gem ships Bundle we want to provide that full/expected installation
     # but to do so we need to handle the case where someone has previously
     # installed bundle manually via `gem install`.
     rm(%W[
-      #{rubygems_bindir}bundle
-      #{rubygems_bindir}bundler
+      #{rubygems_bindir}/bundle
+      #{rubygems_bindir}/bundler
     ].select { |file| File.exist?(file) })
-    rm_r(Dir[HOMEBREW_PREFIX"librubygems#{api_version}gemsbundler-*"])
+    rm_r(Dir[HOMEBREW_PREFIX/"lib/ruby/gems/#{api_version}/gems/bundler-*"])
   end
 
   def rubygems_config
@@ -210,11 +210,11 @@ class RubyAT30 < Formula
         end
 
         def self.ruby
-          "#{opt_bin}ruby"
+          "#{opt_bin}/ruby"
         end
 
-        # https:github.comHomebrewhomebrew-coreissues40872#issuecomment-542092547
-        # https:github.comHomebrewhomebrew-corepull48329#issuecomment-584418161
+        # https://github.com/Homebrew/homebrew-core/issues/40872#issuecomment-542092547
+        # https://github.com/Homebrew/homebrew-core/pull/48329#issuecomment-584418161
         def self.default_specifications_dir
           File.join(Gem.old_default_dir, "specifications", "default")
         end
@@ -232,20 +232,20 @@ class RubyAT30 < Formula
   end
 
   test do
-    hello_text = shell_output("#{bin}ruby -e 'puts :hello'")
+    hello_text = shell_output("#{bin}/ruby -e 'puts :hello'")
     assert_equal "hello\n", hello_text
 
-    assert_equal api_version, shell_output("#{bin}ruby -e 'print Gem.ruby_api_version'")
+    assert_equal api_version, shell_output("#{bin}/ruby -e 'print Gem.ruby_api_version'")
 
     ENV["GEM_HOME"] = testpath
-    system bin"gem", "install", "json"
+    system bin/"gem", "install", "json"
 
-    (testpath"Gemfile").write <<~EOS
-      source 'https:rubygems.org'
+    (testpath/"Gemfile").write <<~EOS
+      source 'https://rubygems.org'
       gem 'github-markup'
     EOS
-    system bin"bundle", "exec", "ls" # https:github.comHomebrewhomebrew-coreissues53247
-    system bin"bundle", "install", "--binstubs=#{testpath}bin"
-    assert_path_exists testpath"bingithub-markup", "github-markup is not installed in #{testpath}bin"
+    system bin/"bundle", "exec", "ls" # https://github.com/Homebrew/homebrew-core/issues/53247
+    system bin/"bundle", "install", "--binstubs=#{testpath}/bin"
+    assert_path_exists testpath/"bin/github-markup", "github-markup is not installed in #{testpath}/bin"
   end
 end

@@ -1,14 +1,14 @@
 class Expect < Formula
   desc "Program that can automate interactive applications"
-  homepage "https:core.tcl-lang.orgexpectindex"
-  url "https:downloads.sourceforge.netprojectexpectExpect5.45.4expect5.45.4.tar.gz"
+  homepage "https://core.tcl-lang.org/expect/index"
+  url "https://downloads.sourceforge.net/project/expect/Expect/5.45.4/expect5.45.4.tar.gz"
   sha256 "49a7da83b0bdd9f46d04a04deec19c7767bb9a323e40c4781f89caf760b92c34"
   license :public_domain
   revision 3
 
   livecheck do
     url :stable
-    regex(%r{url=.*?expect-?v?(\d+(?:\.\d+)+)\.t}i)
+    regex(%r{url=.*?/expect-?v?(\d+(?:\.\d+)+)\.t}i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -34,18 +34,18 @@ class Expect < Formula
   conflicts_with "bash-snippets", because: "both install `weather` binaries"
 
   # Patch for configure scripts and various headers:
-  # https:core.tcl-lang.orgexpecttktview0d5b33c00e5b4bbedb835498b0360d7115e832a0
+  # https://core.tcl-lang.org/expect/tktview/0d5b33c00e5b4bbedb835498b0360d7115e832a0
   # Appears to fix a segfault on ARM Ventura:
-  # https:github.comHomebrewhomebrew-corepull123513
+  # https://github.com/Homebrew/homebrew-core/pull/123513
   patch do
-    url "https:raw.githubusercontent.comHomebrewformula-patches49c39ceebb547fc1965ae2c8d423fd8c082b52a7expectheaders.diff"
+    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/49c39ceebb547fc1965ae2c8d423fd8c082b52a7/expect/headers.diff"
     sha256 "7a4d5c958b3e51a08368cae850607066baf9c049026bec11548e8c04cec363ef"
   end
 
   # Fix a segfault in exp_getptymaster()
-  # Commit taken from Iain Sandoe's branch at https:github.comiainsdarwin-expect
+  # Commit taken from Iain Sandoe's branch at https://github.com/iains/darwin-expect
   patch do
-    url "https:github.comiainsdarwin-expectcommit2a98bd855e9bf2732ba6ddbd490b748d5668eeb0.patch?full_index=1"
+    url "https://github.com/iains/darwin-expect/commit/2a98bd855e9bf2732ba6ddbd490b748d5668eeb0.patch?full_index=1"
     sha256 "deb83cfa2475b532c4e63b0d67e640a4deac473300dd986daf650eba63c4b4c0"
   end
 
@@ -62,29 +62,29 @@ class Expect < Formula
 
     # Workaround for ancient config files not recognising aarch64 macos.
     am = Formula["automake"]
-    am_share = am.opt_share"automake-#{am.version.major_minor}"
+    am_share = am.opt_share/"automake-#{am.version.major_minor}"
     %w[config.guess config.sub].each do |fn|
-      cp am_sharefn, "tclconfig#{fn}"
+      cp am_share/fn, "tclconfig/#{fn}"
     end
 
     # Regenerate configure script. Remove after patch applied in newer
     # releases.
     system "autoreconf", "--force", "--install", "--verbose"
 
-    system ".configure", *args
+    system "./configure", *args
     system "make"
     system "make", "install"
-    lib.install_symlink Dir[lib"expect*libexpect*"]
-    bin.env_script_all_files libexec"bin",
+    lib.install_symlink Dir[lib/"expect*/libexpect*"]
+    bin.env_script_all_files libexec/"bin",
                              PATH:       "#{tcltk.opt_bin}:$PATH",
                              TCLLIBPATH: lib.to_s
     # "expect" is already linked to "tcl-tk", no shim required
-    bin.install libexec"binexpect"
+    bin.install libexec/"bin/expect"
   end
 
   test do
-    assert_match "works", shell_output("echo works | #{bin}timed-read 1")
-    assert_empty shell_output("{ sleep 3; echo fails; } | #{bin}timed-read 1 2>&1")
-    assert_match "Done", pipe_output(bin"expect", "exec true; puts Done")
+    assert_match "works", shell_output("echo works | #{bin}/timed-read 1")
+    assert_empty shell_output("{ sleep 3; echo fails; } | #{bin}/timed-read 1 2>&1")
+    assert_match "Done", pipe_output(bin/"expect", "exec true; puts Done")
   end
 end

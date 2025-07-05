@@ -1,7 +1,7 @@
 class AwsCHttp < Formula
-  desc "C99 implementation of the HTTP1.1 and HTTP2 specifications"
-  homepage "https:github.comawslabsaws-c-http"
-  url "https:github.comawslabsaws-c-httparchiverefstagsv0.10.2.tar.gz"
+  desc "C99 implementation of the HTTP/1.1 and HTTP/2 specifications"
+  homepage "https://github.com/awslabs/aws-c-http"
+  url "https://ghfast.top/https://github.com/awslabs/aws-c-http/archive/refs/tags/v0.10.2.tar.gz"
   sha256 "048d9d683459ade363fd7cc448c2b6329c78f67a2a0c0cb61c16de4634a2fc6b"
   license "Apache-2.0"
 
@@ -28,10 +28,10 @@ class AwsCHttp < Formula
   end
 
   test do
-    (testpath"test.c").write <<~C
-      #include <awscommonallocator.h>
-      #include <awscommonerror.h>
-      #include <awshttprequest_response.h>
+    (testpath/"test.c").write <<~C
+      #include <aws/common/allocator.h>
+      #include <aws/common/error.h>
+      #include <aws/http/request_response.h>
       #include <assert.h>
 
       int main(void) {
@@ -60,6 +60,6 @@ class AwsCHttp < Formula
     C
     system ENV.cc, "test.c", "-o", "test", "-L#{lib}", "-laws-c-http",
                    "-L#{Formula["aws-c-common"].opt_lib}", "-laws-c-common"
-    system ".test"
+    system "./test"
   end
 end

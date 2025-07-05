@@ -1,10 +1,10 @@
 class Tuc < Formula
   desc "Text manipulation and cutting tool"
-  homepage "https:github.comriquitotuc"
-  url "https:github.comriquitotucarchiverefstagsv1.2.0.tar.gz"
+  homepage "https://github.com/riquito/tuc"
+  url "https://ghfast.top/https://github.com/riquito/tuc/archive/refs/tags/v1.2.0.tar.gz"
   sha256 "bb6d16772ed0728f396d32066d391206420497a4f902071b0229790a8c844307"
   license "GPL-3.0-or-later"
-  head "https:github.comriquitotuc.git", branch: "master"
+  head "https://github.com/riquito/tuc.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -27,7 +27,7 @@ class Tuc < Formula
   end
 
   test do
-    output = pipe_output("#{bin}tuc -e '[, ]+' -f 1,3", "a,b, c")
+    output = pipe_output("#{bin}/tuc -e '[, ]+' -f 1,3", "a,b, c")
     assert_equal "ac\n", output
   end
 end

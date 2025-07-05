@@ -1,14 +1,14 @@
 class Libu2fServer < Formula
   desc "Server-side of the Universal 2nd Factor (U2F) protocol"
-  homepage "https:developers.yubico.comlibu2f-server"
-  url "https:developers.yubico.comlibu2f-serverReleaseslibu2f-server-1.1.0.tar.xz"
+  homepage "https://developers.yubico.com/libu2f-server/"
+  url "https://developers.yubico.com/libu2f-server/Releases/libu2f-server-1.1.0.tar.xz"
   sha256 "8dcd3caeacebef6e36a42462039fd035e45fa85653dcb2013f45e15aad49a277"
   license "BSD-2-Clause"
   revision 3
 
   livecheck do
-    url "https:developers.yubico.comlibu2f-serverReleases"
-    regex(href=.*?libu2f-server[._-]v?(\d+(?:\.\d+)+)\.ti)
+    url "https://developers.yubico.com/libu2f-server/Releases/"
+    regex(/href=.*?libu2f-server[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -38,22 +38,22 @@ class Libu2fServer < Formula
 
   # Compatibility with json-c 0.14. Remove with the next release.
   patch do
-    url "https:github.comYubicolibu2f-servercommitf7c4983b31909299c47bf9b2627c84b6bfe225de.patch?full_index=1"
+    url "https://github.com/Yubico/libu2f-server/commit/f7c4983b31909299c47bf9b2627c84b6bfe225de.patch?full_index=1"
     sha256 "012d1d759604ea80f6075b74dc9c7d8a864e4e5889fb82a222db93a6bd72cd1b"
   end
 
   def install
     ENV["LIBSSL_LIBS"] = "-lssl -lcrypto -lz"
     ENV["LIBCRYPTO_LIBS"] = "-lcrypto -lz"
-    ENV["PKG_CONFIG"] = "#{Formula["pkgconf"].opt_bin}pkg-config"
+    ENV["PKG_CONFIG"] = "#{Formula["pkgconf"].opt_bin}/pkg-config"
 
-    system ".configure", "--disable-silent-rules", *std_configure_args
+    system "./configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
   end
 
   test do
-    (testpath"test.c").write <<~C
-      #include <u2f-serveru2f-server.h>
+    (testpath/"test.c").write <<~C
+      #include <u2f-server/u2f-server.h>
       int main()
       {
         if (u2fs_global_init(U2FS_DEBUG) != U2FS_OK)
@@ -73,6 +73,6 @@ class Libu2fServer < Formula
       }
     C
     system ENV.cc, "test.c", "-o", "test", "-I#{include}", "-L#{lib}", "-lu2f-server"
-    system ".test"
+    system "./test"
   end
 end

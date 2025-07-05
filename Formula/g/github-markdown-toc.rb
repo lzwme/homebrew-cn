@@ -1,7 +1,7 @@
 class GithubMarkdownToc < Formula
   desc "Easy TOC creation for GitHub README.md (in go)"
-  homepage "https:github.comekaliningithub-markdown-toc.go"
-  url "https:github.comekaliningithub-markdown-toc.goarchiverefstagsv2.0.0.tar.gz"
+  homepage "https://github.com/ekalinin/github-markdown-toc.go"
+  url "https://ghfast.top/https://github.com/ekalinin/github-markdown-toc.go/archive/refs/tags/v2.0.0.tar.gz"
   sha256 "64416276c0c5fe0af4d5737a3248824d2a8f761d9655652d661b98a6f4c97d3f"
   license "MIT"
 
@@ -17,12 +17,12 @@ class GithubMarkdownToc < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w", output: bin"gh-md-toc"), ".cmdgh-md-toc"
+    system "go", "build", *std_go_args(ldflags: "-s -w", output: bin/"gh-md-toc"), "./cmd/gh-md-toc"
   end
 
   test do
-    (testpath"README.md").write("# Header")
-    assert_match version.to_s, shell_output("#{bin}gh-md-toc --version 2>&1")
-    assert_match "* [Header](#header)", shell_output("#{bin}gh-md-toc .README.md")
+    (testpath/"README.md").write("# Header")
+    assert_match version.to_s, shell_output("#{bin}/gh-md-toc --version 2>&1")
+    assert_match "* [Header](#header)", shell_output("#{bin}/gh-md-toc ./README.md")
   end
 end

@@ -1,11 +1,11 @@
 class Swiftly < Formula
   desc "Swift toolchain installer and manager"
-  homepage "https:github.comswiftlangswiftly"
-  url "https:github.comswiftlangswiftly.git",
+  homepage "https://github.com/swiftlang/swiftly"
+  url "https://github.com/swiftlang/swiftly.git",
       tag:      "1.0.1",
       revision: "c14ee6e9fc94988e04b164b457a3b4afa800f68c"
   license "Apache-2.0"
-  head "https:github.comswiftlangswiftly.git", branch: "main"
+  head "https://github.com/swiftlang/swiftly.git", branch: "main"
 
   livecheck do
     url :stable
@@ -41,22 +41,22 @@ class Swiftly < Formula
     if OS.linux?
       args += %W[
         --static-swift-stdlib
-        -Xswiftc -I#{HOMEBREW_PREFIX}include
-        -Xlinker -L#{HOMEBREW_PREFIX}lib
+        -Xswiftc -I#{HOMEBREW_PREFIX}/include
+        -Xlinker -L#{HOMEBREW_PREFIX}/lib
       ]
     end
     system "swift", "build", *args
 
-    bin.install ".buildreleaseswiftly"
+    bin.install ".build/release/swiftly"
   end
 
   test do
     # Test swiftly with a private installation
-    swiftly_bin = testpath"swiftly""bin"
+    swiftly_bin = testpath/"swiftly"/"bin"
     mkdir_p swiftly_bin
-    ENV["SWIFTLY_HOME_DIR"] = testpath"swiftly"
+    ENV["SWIFTLY_HOME_DIR"] = testpath/"swiftly"
     ENV["SWIFTLY_BIN_DIR"] = swiftly_bin
-    ENV["SWIFTLY_TOOLCHAINS_DIR"] = testpath"swiftly""toolchains"
-    system bin"swiftly", "init", "--assume-yes", "--no-modify-profile", "--skip-install"
+    ENV["SWIFTLY_TOOLCHAINS_DIR"] = testpath/"swiftly"/"toolchains"
+    system bin/"swiftly", "init", "--assume-yes", "--no-modify-profile", "--skip-install"
   end
 end

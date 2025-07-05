@@ -1,10 +1,10 @@
 class Groestlcoin < Formula
   desc "Decentralized, peer to peer payment network"
-  homepage "https:www.groestlcoin.orggroestlcoin-core-wallet"
-  url "https:github.comGroestlcoingroestlcoinreleasesdownloadv29.0groestlcoin-29.0.tar.gz"
+  homepage "https://www.groestlcoin.org/groestlcoin-core-wallet/"
+  url "https://ghfast.top/https://github.com/Groestlcoin/groestlcoin/releases/download/v29.0/groestlcoin-29.0.tar.gz"
   sha256 "48298150c83e38ca0b9b449c99fd1c18118849397e09261312a052517f504746"
   license "MIT"
-  head "https:github.comgroestlcoingroestlcoin.git", branch: "master"
+  head "https://github.com/groestlcoin/groestlcoin.git", branch: "master"
 
   bottle do
     sha256 cellar: :any, arm64_sequoia: "d92c1efe5b438c2356e7745b77ae3ebff9744f7ed1648e02d451f2461f40b1ab"
@@ -40,15 +40,15 @@ class Groestlcoin < Formula
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
-    pkgshare.install "sharerpcauth"
+    pkgshare.install "share/rpcauth"
   end
 
   service do
-    run opt_bin"groestlcoind"
+    run opt_bin/"groestlcoind"
   end
 
   test do
-    system bin"groestlcoin-tx", "-txid", "0100000001000000000000000000000000000000000000000000000000000" \
+    system bin/"groestlcoin-tx", "-txid", "0100000001000000000000000000000000000000000000000000000000000" \
                                           "0000000000000ffffffff0a510101062f503253482fffffffff0100002cd6" \
                                           "e2150000232103e26025c37d6d0d968c9dabcc53b029926c3a1f9709df97c" \
                                           "11a8be57d3fa0599cac00000000"

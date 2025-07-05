@@ -1,14 +1,14 @@
 class Echidna < Formula
   desc "Ethereum smart contract fuzzer"
-  homepage "https:github.comcryticechidna"
-  url "https:github.comcryticechidnaarchiverefstagsv2.2.6.tar.gz"
+  homepage "https://github.com/crytic/echidna"
+  url "https://ghfast.top/https://github.com/crytic/echidna/archive/refs/tags/v2.2.6.tar.gz"
   sha256 "699e6f6369e7bd35f0324767c60005ae10ad7c71dc3ac682dd3a3294cd34a8e9"
   license "AGPL-3.0-only"
-  head "https:github.comcryticechidna.git", branch: "master"
+  head "https://github.com/crytic/echidna.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -21,7 +21,7 @@ class Echidna < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "22c09f288e1586ba70df669311ec7ecb02acdd378970fbfd731a76033eacd751"
   end
 
-  depends_on "ghc@9.6" => :build # GHC 9.8 PR: https:github.comcryticechidnapull1334
+  depends_on "ghc@9.6" => :build # GHC 9.8 PR: https://github.com/crytic/echidna/pull/1334
   depends_on "haskell-stack" => :build
 
   depends_on "truffle" => :test
@@ -61,11 +61,11 @@ class Echidna < Formula
     system "truffle", "init"
 
     # echidna does not appear to work with 'shanghai' EVM targets yet, which became the
-    # default in solc 0.8.20  truffle 5.9.1
+    # default in solc 0.8.20 / truffle 5.9.1
     # Use an explicit 'paris' EVM target meanwhile, which was the previous default
-    inreplace "truffle-config.js", %r{\s*evmVersion:.*$}, "evmVersion: 'paris'"
+    inreplace "truffle-config.js", %r{//\s*evmVersion:.*$}, "evmVersion: 'paris'"
 
-    (testpath"contractstest.sol").write <<~SOLIDITY
+    (testpath/"contracts/test.sol").write <<~SOLIDITY
       pragma solidity ^0.8.0;
       contract True {
         function f() public returns (bool) {
@@ -78,6 +78,6 @@ class Echidna < Formula
     SOLIDITY
 
     assert_match("echidna_true: passing",
-                 shell_output("#{bin}echidna --format text --contract True #{testpath}"))
+                 shell_output("#{bin}/echidna --format text --contract True #{testpath}"))
   end
 end

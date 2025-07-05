@@ -1,7 +1,7 @@
 class ZshHistorySubstringSearch < Formula
   desc "Zsh port of Fish shell's history search"
-  homepage "https:github.comzsh-userszsh-history-substring-search"
-  url "https:github.comzsh-userszsh-history-substring-searcharchiverefstagsv1.1.0.tar.gz"
+  homepage "https://github.com/zsh-users/zsh-history-substring-search"
+  url "https://ghfast.top/https://github.com/zsh-users/zsh-history-substring-search/archive/refs/tags/v1.1.0.tar.gz"
   sha256 "9b52eca6c894dd98caa5f07160199f3f3179ff017575d5acc9fdc467b1ac70f8"
   license "BSD-3-Clause"
 
@@ -22,7 +22,7 @@ class ZshHistorySubstringSearch < Formula
     <<~EOS
       To activate the history search, add the following at the end of your .zshrc:
 
-        source #{HOMEBREW_PREFIX}sharezsh-history-substring-searchzsh-history-substring-search.zsh
+        source #{HOMEBREW_PREFIX}/share/zsh-history-substring-search/zsh-history-substring-search.zsh
 
       You will also need to restart your terminal for this change to take effect.
     EOS
@@ -30,7 +30,7 @@ class ZshHistorySubstringSearch < Formula
 
   test do
     assert_match "i",
-      shell_output("zsh -c '. #{pkgshare}zsh-history-substring-search.zsh && " \
+      shell_output("zsh -c '. #{pkgshare}/zsh-history-substring-search.zsh && " \
                    "echo $HISTORY_SUBSTRING_SEARCH_GLOBBING_FLAGS'")
   end
 end

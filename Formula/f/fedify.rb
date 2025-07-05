@@ -1,10 +1,10 @@
 class Fedify < Formula
   desc "CLI toolchain for Fedify"
-  homepage "https:fedify.devcli"
-  url "https:github.comfedify-devfedifyarchiverefstags1.7.2.tar.gz"
+  homepage "https://fedify.dev/cli"
+  url "https://ghfast.top/https://github.com/fedify-dev/fedify/archive/refs/tags/1.7.2.tar.gz"
   sha256 "2aa330c35073cc9641bd0453589d84aa8baadec63c1efa3c57187184aa301fc4"
   license "MIT"
-  head "https:github.comfedify-devfedify.git", branch: "main"
+  head "https://github.com/fedify-dev/fedify.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "05b62a8471a4950c7a5ffbbf151a3524d1bbcb7d38b22003ecb5333f71d32cdb"
@@ -20,8 +20,8 @@ class Fedify < Formula
 
   def install
     system "deno", "task", "codegen"
-    system "deno", "compile", "--allow-all", "--output=#{bin"fedify"}", "climod.ts"
-    generate_completions_from_executable(bin"fedify", "completions")
+    system "deno", "compile", "--allow-all", "--output=#{bin/"fedify"}", "cli/mod.ts"
+    generate_completions_from_executable(bin/"fedify", "completions")
   end
 
   test do
@@ -29,11 +29,11 @@ class Fedify < Formula
     # This test passes on macOS CI and all local environments (including Linux).
     return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
 
-    version_output = shell_output "NO_COLOR=1 #{bin}fedify --version"
+    version_output = shell_output "NO_COLOR=1 #{bin}/fedify --version"
     assert_equal "fedify #{version}", version_output.strip
 
-    json = shell_output "#{bin}fedify lookup -e @homebrew@fosstodon.org"
+    json = shell_output "#{bin}/fedify lookup -e @homebrew@fosstodon.org"
     actor = JSON.parse(json)
-    assert_equal "https:fosstodon.orgusershomebrew", actor.first["@id"]
+    assert_equal "https://fosstodon.org/users/homebrew", actor.first["@id"]
   end
 end

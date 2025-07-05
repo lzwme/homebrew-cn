@@ -1,10 +1,10 @@
 class Eva < Formula
   desc "Calculator REPL, similar to bc(1)"
-  homepage "https:github.comoppiliappaneva"
-  url "https:github.comoppiliappanevaarchiverefstagsv0.3.1.tar.gz"
+  homepage "https://github.com/oppiliappan/eva/"
+  url "https://ghfast.top/https://github.com/oppiliappan/eva/archive/refs/tags/v0.3.1.tar.gz"
   sha256 "d6a6eb8e0d46de1fea9bd00c361bd7955fcd7cc8f3310b786aad48c1dce7b3f7"
   license "MIT"
-  head "https:github.comoppiliappaneva.git", branch: "master"
+  head "https://github.com/oppiliappan/eva.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "7aab4759863c03125626a08fca970c20fd337228da45f2e77a6f39040306ca1e"
@@ -28,6 +28,6 @@ class Eva < Formula
   end
 
   test do
-    assert_equal "6.0000000000", shell_output("#{bin}eva '2 + abs(-4)'").strip
+    assert_equal "6.0000000000", shell_output("#{bin}/eva '2 + abs(-4)'").strip
   end
 end

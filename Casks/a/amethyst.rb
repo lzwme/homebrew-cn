@@ -3,7 +3,7 @@ cask "amethyst" do
     version "0.16.1"
     sha256 "52663893e6547d2dd85ba15b871ec222ce4f62dc7150e5ff20d592f9b85a47c5"
 
-    url "https:ianyh.comamethystversionsAmethyst-#{version}.zip"
+    url "https://ianyh.com/amethyst/versions/Amethyst-#{version}.zip"
 
     livecheck do
       skip "Legacy version"
@@ -13,8 +13,8 @@ cask "amethyst" do
     version "0.22.2"
     sha256 "43b16fadf9d349c5d3f5a406917f60e31d0ea65b1f9fc529b09292e906f75e50"
 
-    url "https:github.comianyhAmethystreleasesdownloadv#{version}Amethyst.zip",
-        verified: "github.comianyhAmethyst"
+    url "https://ghfast.top/https://github.com/ianyh/Amethyst/releases/download/v#{version}/Amethyst.zip",
+        verified: "github.com/ianyh/Amethyst/"
 
     livecheck do
       skip "Legacy version"
@@ -24,18 +24,18 @@ cask "amethyst" do
     version "0.24.0"
     sha256 "bde78f466a2a211741f28fbc329cb7f82b1133612d1f17befbee944cc703316b"
 
-    url "https:github.comianyhAmethystreleasesdownloadv#{version}Amethyst.zip",
-        verified: "github.comianyhAmethyst"
+    url "https://ghfast.top/https://github.com/ianyh/Amethyst/releases/download/v#{version}/Amethyst.zip",
+        verified: "github.com/ianyh/Amethyst/"
 
     livecheck do
-      url "https:ianyh.comamethystappcast.xml"
+      url "https://ianyh.com/amethyst/appcast.xml"
       strategy :sparkle, &:short_version
     end
   end
 
   name "Amethyst"
   desc "Automatic tiling window manager similar to xmonad"
-  homepage "https:ianyh.comamethyst"
+  homepage "https://ianyh.com/amethyst/"
 
   auto_updates true
   depends_on macos: ">= :sierra"
@@ -43,11 +43,11 @@ cask "amethyst" do
   app "Amethyst.app"
 
   zap trash: [
-    "~LibraryApplication SupportAmethyst",
-    "~LibraryApplication Supportcom.apple.sharedfilelistcom.apple.LSSharedFileList.ApplicationRecentDocumentscom.amethyst.amethyst.sfl*",
-    "~LibraryCachescom.amethyst.Amethyst",
-    "~LibraryCookiescom.amethyst.Amethyst.binarycookies",
-    "~LibraryHTTPStoragescom.amethyst.Amethyst",
-    "~LibraryPreferencescom.amethyst.Amethyst.plist",
+    "~/Library/Application Support/Amethyst",
+    "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.amethyst.amethyst.sfl*",
+    "~/Library/Caches/com.amethyst.Amethyst",
+    "~/Library/Cookies/com.amethyst.Amethyst.binarycookies",
+    "~/Library/HTTPStorages/com.amethyst.Amethyst",
+    "~/Library/Preferences/com.amethyst.Amethyst.plist",
   ]
 end

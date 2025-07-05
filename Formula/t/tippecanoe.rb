@@ -1,13 +1,13 @@
 class Tippecanoe < Formula
   desc "Build vector tilesets from collections of GeoJSON features"
-  homepage "https:github.comfelttippecanoe"
-  url "https:github.comfelttippecanoearchiverefstags2.78.0.tar.gz"
+  homepage "https://github.com/felt/tippecanoe"
+  url "https://ghfast.top/https://github.com/felt/tippecanoe/archive/refs/tags/2.78.0.tar.gz"
   sha256 "da628c5fa1aec3aba318f6096d2f60d8b4cc78043e1c25e18a4d0975c8262f00"
   license "BSD-2-Clause"
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -28,10 +28,10 @@ class Tippecanoe < Formula
   end
 
   test do
-    (testpath"test.json").write <<~JSON
+    (testpath/"test.json").write <<~JSON
       {"type":"Feature","properties":{},"geometry":{"type":"Point","coordinates":[0,0]}}
     JSON
-    safe_system bin"tippecanoe", "-o", "test.mbtiles", "test.json"
-    assert_path_exists testpath"test.mbtiles", "tippecanoe generated no output!"
+    safe_system bin/"tippecanoe", "-o", "test.mbtiles", "test.json"
+    assert_path_exists testpath/"test.mbtiles", "tippecanoe generated no output!"
   end
 end

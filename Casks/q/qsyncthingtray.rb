@@ -2,10 +2,10 @@ cask "qsyncthingtray" do
   version "0.5.8"
   sha256 "1a8bf6975d5f9b1952edf1a070e35338d2c0f6ff9939e3dcda742280baa645b1"
 
-  url "https:github.comsierenQSyncthingTrayreleasesdownload#{version}QSyncthingTray_#{version}_MAC.dmg"
+  url "https://ghfast.top/https://github.com/sieren/QSyncthingTray/releases/download/#{version}/QSyncthingTray_#{version}_MAC.dmg"
   name "QSyncthingTray"
   desc "Tray app for Syncthing"
-  homepage "https:github.comsierenQSyncthingTray"
+  homepage "https://github.com/sieren/QSyncthingTray"
 
   no_autobump! because: :requires_manual_review
 
@@ -13,7 +13,7 @@ cask "qsyncthingtray" do
 
   app "QSyncthingTray.app"
 
-  zap trash: "~LibraryPreferencescom.sieren.QSyncthingTray.plist"
+  zap trash: "~/Library/Preferences/com.sieren.QSyncthingTray.plist"
 
   caveats do
     requires_rosetta

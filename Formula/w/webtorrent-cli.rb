@@ -1,7 +1,7 @@
 class WebtorrentCli < Formula
   desc "Command-line streaming torrent client"
-  homepage "https:webtorrent.io"
-  url "https:registry.npmjs.orgwebtorrent-cli-webtorrent-cli-5.1.3.tgz"
+  homepage "https://webtorrent.io/"
+  url "https://registry.npmjs.org/webtorrent-cli/-/webtorrent-cli-5.1.3.tgz"
   sha256 "54a53ecdacbccf0f6855bd4ef18f4f154576f8346e3b7aef3792b66dd5aaaa1b"
   license "MIT"
 
@@ -18,8 +18,8 @@ class WebtorrentCli < Formula
 
   depends_on "cmake" => :build
   depends_on "ninja" => :build
-  # Using Node 20 due to issue with N-API 10 https:github.commurat-dogannode-datachannelissues333
-  # and unable to use newer node-datachannel https:github.comThaUnknownwebrtc-polyfillissues9
+  # Using Node 20 due to issue with N-API 10 https://github.com/murat-dogan/node-datachannel/issues/333
+  # and unable to use newer node-datachannel https://github.com/ThaUnknown/webrtc-polyfill/issues/9
   depends_on "node@20"
 
   def install
@@ -27,21 +27,21 @@ class WebtorrentCli < Formula
     ENV["CMAKE_POLICY_VERSION_MINIMUM"] = "3.5"
 
     system "npm", "install", *std_npm_args
-    bin.install_symlink Dir["#{libexec}bin*"]
+    bin.install_symlink Dir["#{libexec}/bin/*"]
 
-    nm = libexec"libnode_moduleswebtorrent-clinode_modules"
+    nm = libexec/"lib/node_modules/webtorrent-cli/node_modules"
 
     # Delete files that references to the Homebrew shims directory
-    sb = nm"node-datachannelbuild"
+    sb = nm/"node-datachannel/build"
     rm [
-      sb"CMakeFilesCMakeConfigureLog.yaml",
-      sb"CMakeFilesrules.ninja",
-      sb"CMakeFiles#{Formula["cmake"].version}CMakeCXXCompiler.cmake",
-      sb"CMakeFiles#{Formula["cmake"].version}CMakeCCompiler.cmake",
-      sb"_depslibdatachannel-subbuildCMakeLists.txt",
-      sb"_depslibdatachannel-subbuildlibdatachannel-populate-prefixtmplibdatachannel-populate-gitclone.cmake",
-      sb"_depslibdatachannel-subbuildlibdatachannel-populate-prefixtmplibdatachannel-populate-gitupdate.cmake",
-      sb"CMakeCache.txt",
+      sb/"CMakeFiles/CMakeConfigureLog.yaml",
+      sb/"CMakeFiles/rules.ninja",
+      sb/"CMakeFiles/#{Formula["cmake"].version}/CMakeCXXCompiler.cmake",
+      sb/"CMakeFiles/#{Formula["cmake"].version}/CMakeCCompiler.cmake",
+      sb/"_deps/libdatachannel-subbuild/CMakeLists.txt",
+      sb/"_deps/libdatachannel-subbuild/libdatachannel-populate-prefix/tmp/libdatachannel-populate-gitclone.cmake",
+      sb/"_deps/libdatachannel-subbuild/libdatachannel-populate-prefix/tmp/libdatachannel-populate-gitupdate.cmake",
+      sb/"CMakeCache.txt",
     ]
 
     # Remove incompatible pre-built binaries
@@ -49,8 +49,8 @@ class WebtorrentCli < Formula
     arch = Hardware::CPU.intel? ? "x64" : Hardware::CPU.arch.to_s
     platforms = ["#{os}-#{arch}"]
     platforms << "#{os}-x64+arm64" if OS.mac?
-    pb = nm"{bare-fs,bare-os,bare-url,bufferutil,fs-native-extensions,utp-native,utf-8-validate}"
-    libexec.glob(pb"prebuilds*").each do |dir|
+    pb = nm/"{bare-fs,bare-os,bare-url,bufferutil,fs-native-extensions,utp-native,utf-8-validate}"
+    libexec.glob(pb/"prebuilds/*").each do |dir|
       rm_r(dir) if platforms.exclude?(dir.basename.to_s)
       dir.glob("*.musl.node").map(&:unlink) if OS.linux?
     end
@@ -60,11 +60,11 @@ class WebtorrentCli < Formula
   end
 
   test do
-    magnet_uri = <<~EOS.gsub(\s+, "").strip
+    magnet_uri = <<~EOS.gsub(/\s+/, "").strip
       magnet:?xt=urn:btih:9eae210fe47a073f991c83561e75d439887be3f3
       &dn=archlinux-2017.02.01-x86_64.iso
-      &tr=udp:tracker.archlinux.org:6969
-      &tr=https:tracker.archlinux.org:443announce
+      &tr=udp://tracker.archlinux.org:6969
+      &tr=https://tracker.archlinux.org:443/announce
     EOS
 
     expected_output_raw = <<~JSON
@@ -72,20 +72,20 @@ class WebtorrentCli < Formula
         "xt": "urn:btih:9eae210fe47a073f991c83561e75d439887be3f3",
         "dn": "archlinux-2017.02.01-x86_64.iso",
         "tr": [
-          "https:tracker.archlinux.org:443announce",
-          "udp:tracker.archlinux.org:6969"
+          "https://tracker.archlinux.org:443/announce",
+          "udp://tracker.archlinux.org:6969"
         ],
         "infoHash": "9eae210fe47a073f991c83561e75d439887be3f3",
         "name": "archlinux-2017.02.01-x86_64.iso",
         "announce": [
-          "https:tracker.archlinux.org:443announce",
-          "udp:tracker.archlinux.org:6969"
+          "https://tracker.archlinux.org:443/announce",
+          "udp://tracker.archlinux.org:6969"
         ],
         "urlList": []
       }
     JSON
     expected_json = JSON.parse(expected_output_raw)
-    actual_output_raw = shell_output("#{bin}webtorrent info '#{magnet_uri}'")
+    actual_output_raw = shell_output("#{bin}/webtorrent info '#{magnet_uri}'")
     actual_json = JSON.parse(actual_output_raw)
     assert_equal expected_json["tr"].to_set, actual_json["tr"].to_set
     assert_equal expected_json["announce"].to_set, actual_json["announce"].to_set

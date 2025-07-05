@@ -2,11 +2,11 @@ cask "font-libertinus-serif" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefonts.git",
+  url "https://github.com/google/fonts.git",
       branch:    "main",
-      only_path: "ofllibertinusserif"
+      only_path: "ofl/libertinusserif"
   name "Libertinus Serif"
-  homepage "https:github.comgooglefontslibertinus"
+  homepage "https://github.com/googlefonts/libertinus"
 
   font "LibertinusSerif-Bold.ttf"
   font "LibertinusSerif-BoldItalic.ttf"

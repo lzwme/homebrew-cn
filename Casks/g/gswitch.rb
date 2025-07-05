@@ -2,11 +2,11 @@ cask "gswitch" do
   version "1.9.7"
   sha256 "5d212c1bd39f6bfae588797fa09b959051dc4eefd26ec05fbd26b798125b976a"
 
-  url "https:github.comCodySchrankgSwitchreleasesdownload#{version}gSwitch.zip",
-      verified: "github.comCodySchrankgSwitch"
+  url "https://ghfast.top/https://github.com/CodySchrank/gSwitch/releases/download/#{version}/gSwitch.zip",
+      verified: "github.com/CodySchrank/gSwitch/"
   name "gSwitch"
   desc "Set which graphics card to use"
-  homepage "https:codyschrank.github.iogSwitch"
+  homepage "https://codyschrank.github.io/gSwitch/"
 
   no_autobump! because: :requires_manual_review
 
@@ -15,8 +15,8 @@ cask "gswitch" do
   app "gSwitch.app"
 
   zap trash: [
-    "~LibraryCachesgSwitch",
-    "~LibraryPreferencescom.CodySchrank.gSwitch.plist",
+    "~/Library/Caches/gSwitch",
+    "~/Library/Preferences/com.CodySchrank.gSwitch.plist",
   ]
 
   caveats do

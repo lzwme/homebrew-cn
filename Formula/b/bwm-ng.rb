@@ -1,10 +1,10 @@
 class BwmNg < Formula
-  desc "Console-based live network and disk IO bandwidth monitor"
-  homepage "https:www.gropp.org?id=projects&sub=bwm-ng"
-  url "https:github.comvgroppbwm-ngarchiverefstagsv0.6.3.tar.gz"
+  desc "Console-based live network and disk I/O bandwidth monitor"
+  homepage "https://www.gropp.org/?id=projects&sub=bwm-ng"
+  url "https://ghfast.top/https://github.com/vgropp/bwm-ng/archive/refs/tags/v0.6.3.tar.gz"
   sha256 "c1a552b6ff48ea3e4e10110a7c188861abc4750befc67c6caaba8eb3ecf67f46"
   license "GPL-2.0-or-later"
-  head "https:github.comvgroppbwm-ng.git", branch: "master"
+  head "https://github.com/vgropp/bwm-ng.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -30,13 +30,13 @@ class BwmNg < Formula
   def install
     ENV.append "CFLAGS", "-std=gnu89"
 
-    system ".autogen.sh"
-    system ".configure", "--disable-debug", "--disable-dependency-tracking",
+    system "./autogen.sh"
+    system "./configure", "--disable-debug", "--disable-dependency-tracking",
                           "--prefix=#{prefix}"
     system "make", "install"
   end
 
   test do
-    assert_match "<div class=\"bwm-ng-header\">", shell_output("#{bin}bwm-ng -o html")
+    assert_match "<div class=\"bwm-ng-header\">", shell_output("#{bin}/bwm-ng -o html")
   end
 end

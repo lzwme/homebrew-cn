@@ -1,7 +1,7 @@
 class Iamb < Formula
   desc "Matrix client for Vim addicts"
-  homepage "https:iamb.chat"
-  url "https:github.comulyssaiambarchiverefstagsv0.0.10.tar.gz"
+  homepage "https://iamb.chat"
+  url "https://ghfast.top/https://github.com/ulyssa/iamb/archive/refs/tags/v0.0.10.tar.gz"
   sha256 "f628cfbd9eba9e8881902b970e9432fec815044ec9bea901a8562ea3ef8f4615"
   license "Apache-2.0"
 
@@ -33,6 +33,6 @@ class Iamb < Formula
   end
 
   test do
-    assert_match "Please create a configuration file", shell_output(bin"iamb", 2)
+    assert_match "Please create a configuration file", shell_output(bin/"iamb", 2)
   end
 end

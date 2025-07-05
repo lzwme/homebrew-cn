@@ -2,10 +2,10 @@ cask "font-playwrite-au-tas" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefontsrawmainoflplaywriteautasPlaywriteAUTAS%5Bwght%5D.ttf",
-      verified: "github.comgooglefonts"
+  url "https://github.com/google/fonts/raw/main/ofl/playwriteautas/PlaywriteAUTAS%5Bwght%5D.ttf",
+      verified: "github.com/google/fonts/"
   name "Playwrite AU TAS"
-  homepage "https:fonts.google.comspecimenPlaywrite+AU+TAS"
+  homepage "https://fonts.google.com/specimen/Playwrite+AU+TAS"
 
   font "PlaywriteAUTAS[wght].ttf"
 

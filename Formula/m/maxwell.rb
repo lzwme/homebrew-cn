@@ -1,7 +1,7 @@
 class Maxwell < Formula
   desc "Reads MySQL binlogs and writes row updates as JSON to Kafka"
-  homepage "https:maxwells-daemon.io"
-  url "https:github.comzendeskmaxwellreleasesdownloadv1.44.0maxwell-1.44.0.tar.gz"
+  homepage "https://maxwells-daemon.io/"
+  url "https://ghfast.top/https://github.com/zendesk/maxwell/releases/download/v1.44.0/maxwell-1.44.0.tar.gz"
   sha256 "fc0dcb98b701dc35b5190bd446d0eb9ec869e6c4d0b6945dbc3542e94e949a68"
   license "Apache-2.0"
 
@@ -20,21 +20,21 @@ class Maxwell < Formula
     libexec.install Dir["*"]
 
     %w[maxwell maxwell-bootstrap].each do |f|
-      bin.install libexec"bin#{f}"
+      bin.install libexec/"bin/#{f}"
     end
 
-    bin.env_script_all_files(libexec"bin", Language::Java.java_home_env)
+    bin.env_script_all_files(libexec/"bin", Language::Java.java_home_env)
   end
 
   test do
-    log = testpath"maxwell.log"
+    log = testpath/"maxwell.log"
 
     fork do
       $stdout.reopen(log)
       $stderr.reopen(log)
       # Tell Maxwell to connect to a bogus host name so we don't actually connect to a local instance
       # The '.invalid' TLD is reserved as never to be installed as a valid TLD.
-      exec "#{bin}maxwell --host not.real.invalid"
+      exec "#{bin}/maxwell --host not.real.invalid"
     end
     sleep 15
 

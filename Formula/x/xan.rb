@@ -1,10 +1,10 @@
 class Xan < Formula
   desc "CSV CLI magician written in Rust"
-  homepage "https:github.commedialabxan"
-  url "https:github.commedialabxanarchiverefstags0.51.0.tar.gz"
+  homepage "https://github.com/medialab/xan"
+  url "https://ghfast.top/https://github.com/medialab/xan/archive/refs/tags/0.51.0.tar.gz"
   sha256 "0013f2edbfde15d4217e041b5eb156ae372de9b7df8b16cefbe010ac0c816c96"
   license any_of: ["MIT", "Unlicense"]
-  head "https:github.commedialabxan.git", branch: "master"
+  head "https://github.com/medialab/xan.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "c3a4391f473ce2e471424eb38db57b57dc5aafb42cf603a9263fac1cac0a9da5"
@@ -23,8 +23,8 @@ class Xan < Formula
   end
 
   test do
-    (testpath"test.csv").write("first header,second header")
-    system bin"xan", "stats", "test.csv"
-    assert_match version.to_s, shell_output("#{bin}xan --version").chomp
+    (testpath/"test.csv").write("first header,second header")
+    system bin/"xan", "stats", "test.csv"
+    assert_match version.to_s, shell_output("#{bin}/xan --version").chomp
   end
 end

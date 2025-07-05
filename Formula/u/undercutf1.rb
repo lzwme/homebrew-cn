@@ -1,10 +1,10 @@
 class Undercutf1 < Formula
   desc "F1 Live Timing TUI for all F1 sessions with variable delay to sync to your TV"
-  homepage "https:github.comJustAman62undercut-f1"
-  url "https:github.comJustAman62undercut-f1archiverefstagsv3.1.96.tar.gz"
+  homepage "https://github.com/JustAman62/undercut-f1"
+  url "https://ghfast.top/https://github.com/JustAman62/undercut-f1/archive/refs/tags/v3.1.96.tar.gz"
   sha256 "ff377e4bf8403510dcbe29dfbe6a9b2056234ca762dd96094943eba47618b744"
   license "GPL-3.0-only"
-  head "https:github.comJustAman62undercut-f1.git", branch: "master"
+  head "https://github.com/JustAman62/undercut-f1.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "539fbd3440783df46b6619222491729137e8d3488094cd59ef7e0e35334011f7"
@@ -41,15 +41,15 @@ class Undercutf1 < Formula
     # Version override is not needed if cloning from HEAD
     args << "-p:OverridePackageVersion=#{version}" if build.stable?
 
-    system "dotnet", "publish", "UndercutF1.ConsoleUndercutF1.Console.csproj", *args
+    system "dotnet", "publish", "UndercutF1.Console/UndercutF1.Console.csproj", *args
 
-    (bin"undercutf1").write_env_script libexec"undercutf1", DOTNET_ROOT: "${DOTNET_ROOT:-#{dotnet.opt_libexec}}"
+    (bin/"undercutf1").write_env_script libexec/"undercutf1", DOTNET_ROOT: "${DOTNET_ROOT:-#{dotnet.opt_libexec}}"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}undercutf1 --version")
+    assert_match version.to_s, shell_output("#{bin}/undercutf1 --version")
 
-    output = shell_output("#{bin}undercutf1 import 2025")
+    output = shell_output("#{bin}/undercutf1 import 2025")
     assert_match "Available Meetings", output
   end
 end

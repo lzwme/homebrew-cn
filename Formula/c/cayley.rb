@@ -1,7 +1,7 @@
 class Cayley < Formula
   desc "Graph database inspired by Freebase and Knowledge Graph"
-  homepage "https:github.comcayleygraphcayley"
-  url "https:github.comcayleygraphcayley.git",
+  homepage "https://github.com/cayleygraph/cayley"
+  url "https://github.com/cayleygraph/cayley.git",
       tag:      "v0.7.7",
       revision: "dcf764fef381f19ee49fad186b4e00024709f148"
   license "Apache-2.0"
@@ -31,56 +31,56 @@ class Cayley < Formula
   depends_on "mercurial" => :build
 
   def install
-    dir = buildpath"srcgithub.comcayleygraphcayley"
+    dir = buildpath/"src/github.com/cayleygraph/cayley"
     dir.install buildpath.children
 
     cd dir do
       # Run packr to generate .go files that pack the static files into bytes that can be bundled into the Go binary.
-      system "go", "run", "github.comgobuffalopackrv2packr2"
+      system "go", "run", "github.com/gobuffalo/packr/v2/packr2"
 
       ldflags = %W[
         -s -w
-        -X github.comcayleygraphcayleyversion.Version=#{version}
-        -X github.comcayleygraphcayleyversion.GitHash=#{Utils.git_short_head}
+        -X github.com/cayleygraph/cayley/version.Version=#{version}
+        -X github.com/cayleygraph/cayley/version.GitHash=#{Utils.git_short_head}
       ]
 
-      system "go", "build", *std_go_args(ldflags:), ".cmdcayley"
+      system "go", "build", *std_go_args(ldflags:), "./cmd/cayley"
 
-      inreplace "cayley_example.yml", ".cayley.db", var"cayleycayley.db"
+      inreplace "cayley_example.yml", "./cayley.db", var/"cayley/cayley.db"
       etc.install "cayley_example.yml" => "cayley.yml"
 
       # Install samples
-      system "gzip", "-d", "data30kmoviedata.nq.gz"
-      (pkgshare"samples").install "datatestdata.nq", "data30kmoviedata.nq"
+      system "gzip", "-d", "data/30kmoviedata.nq.gz"
+      (pkgshare/"samples").install "data/testdata.nq", "data/30kmoviedata.nq"
     end
   end
 
   def post_install
-    unless File.exist? var"cayley"
-      (var"cayley").mkpath
+    unless File.exist? var/"cayley"
+      (var/"cayley").mkpath
 
       # Initialize the database
-      system bin"cayley", "init", "--config=#{etc}cayley.yml"
+      system bin/"cayley", "init", "--config=#{etc}/cayley.yml"
     end
   end
 
   service do
-    run [opt_bin"cayley", "http", "--config=#{etc}cayley.conf"]
+    run [opt_bin/"cayley", "http", "--config=#{etc}/cayley.conf"]
     keep_alive true
-    error_log_path var"logcayley.log"
-    log_path var"logcayley.log"
-    working_dir var"cayley"
+    error_log_path var/"log/cayley.log"
+    log_path var/"log/cayley.log"
+    working_dir var/"cayley"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}cayley version")
+    assert_match version.to_s, shell_output("#{bin}/cayley version")
 
     http_port = free_port
     fork do
-      exec bin"cayley", "http", "--host=127.0.0.1:#{http_port}"
+      exec bin/"cayley", "http", "--host=127.0.0.1:#{http_port}"
     end
     sleep 3
     response = shell_output("curl -s -i 127.0.0.1:#{http_port}")
-    assert_match "HTTP1.1 200 OK", response
+    assert_match "HTTP/1.1 200 OK", response
   end
 end

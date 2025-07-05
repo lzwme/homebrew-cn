@@ -2,11 +2,11 @@ cask "endless-sky" do
   version "0.10.14"
   sha256 "f3c5ebdc901d9daee142f7dc3a92c13a942bedd6c578fff77bf289e5dbe48686"
 
-  url "https:github.comendless-skyendless-skyreleasesdownloadv#{version}Endless-Sky-v#{version}.dmg",
-      verified: "github.comendless-skyendless-sky"
+  url "https://ghfast.top/https://github.com/endless-sky/endless-sky/releases/download/v#{version}/Endless-Sky-v#{version}.dmg",
+      verified: "github.com/endless-sky/endless-sky/"
   name "Endless Sky"
   desc "Space exploration, trading, and combat game"
-  homepage "https:endless-sky.github.io"
+  homepage "https://endless-sky.github.io/"
 
   livecheck do
     url :url
@@ -16,8 +16,8 @@ cask "endless-sky" do
   app "Endless Sky.app"
 
   zap trash: [
-    "~LibraryApplication Supportcom.apple.sharedfilelistcom.apple.LSSharedFileList.ApplicationRecentDocumentsendless-sky.sfl",
-    "~LibraryApplication Supportendless-sky",
-    "~LibrarySaved Application StateEndless-Sky.savedState",
+    "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/endless-sky.sfl",
+    "~/Library/Application Support/endless-sky",
+    "~/Library/Saved Application State/Endless-Sky.savedState",
   ]
 end

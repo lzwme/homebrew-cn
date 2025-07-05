@@ -1,7 +1,7 @@
 class Rlog < Formula
   desc "Flexible message logging facility for C++"
-  homepage "https:github.comvgoughrlog"
-  url "https:storage.googleapis.comgoogle-code-archive-downloadsv2code.google.comrlogrlog-1.4.tar.gz"
+  homepage "https://github.com/vgough/rlog"
+  url "https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/rlog/rlog-1.4.tar.gz"
   sha256 "a938eeedeb4d56f1343dc5561bc09ae70b24e8f70d07a6f8d4b6eed32e783f79"
   license "LGPL-2.1-or-later"
 
@@ -36,18 +36,18 @@ class Rlog < Formula
     # Help old config scripts identify arm64 linux
     args << "--build=aarch64-unknown-linux-gnu" if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
 
-    system ".configure", *args, *std_configure_args
+    system "./configure", *args, *std_configure_args
     system "make", "install"
   end
 
   test do
-    (testpath"test.cpp").write <<~CPP
+    (testpath/"test.cpp").write <<~CPP
       #include <stdio.h>
       #include <unistd.h>
-      #include <rlogrlog.h>
-      #include <rlogRLogChannel.h>
-      #include <rlogRLogNode.h>
-      #include <rlogStdioNode.h>
+      #include <rlog/rlog.h>
+      #include <rlog/RLogChannel.h>
+      #include <rlog/RLogNode.h>
+      #include <rlog/StdioNode.h>
       int main(int argc, char **argv)
       {
           rlog::RLogInit(argc, argv);
@@ -68,7 +68,7 @@ class Rlog < Formula
     ]
 
     system ENV.cxx, "-I#{include}", "-L#{lib}", "test.cpp", "-lrlog", "-o", "test"
-    output = shell_output(".test")
+    output = shell_output("./test")
     expected_outputs.each do |expected|
       assert_match expected, output
     end
@@ -76,10 +76,10 @@ class Rlog < Formula
 end
 
 # This patch solves an OSX build issue, should not be necessary for the next release according to
-# https:code.google.comprlogissuesdetail?id=7
+# https://code.google.com/p/rlog/issues/detail?id=7
 __END__
---- origrlogcommon.h.in	2008-06-14 20:10:13.000000000 -0700
-+++ newrlogcommon.h.in	2009-05-18 16:05:04.000000000 -0700
+--- orig/rlog/common.h.in	2008-06-14 20:10:13.000000000 -0700
++++ new/rlog/common.h.in	2009-05-18 16:05:04.000000000 -0700
 @@ -52,7 +52,12 @@
 
  # define PRINTF(FMT,X) __attribute__ (( __format__ ( __printf__, FMT, X)))

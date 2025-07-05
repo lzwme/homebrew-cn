@@ -1,7 +1,7 @@
 class Docfx < Formula
   desc "Tools for building and publishing API documentation for .NET projects"
-  homepage "https:dotnet.github.iodocfx"
-  url "https:github.comdotnetdocfxarchiverefstagsv2.78.3.tar.gz"
+  homepage "https://dotnet.github.io/docfx/"
+  url "https://ghfast.top/https://github.com/dotnet/docfx/archive/refs/tags/v2.78.3.tar.gz"
   sha256 "d97142ff71bd84e200e6d121f09f57d28379a0c9d12cb58f23badad22cc5c1b7"
   license "MIT"
 
@@ -26,7 +26,7 @@ class Docfx < Formula
     # specify the target framework to only target the currently used version of
     # .NET, otherwise additional frameworks will be added due to this running
     # inside of GitHub Actions, for details see:
-    # https:github.comdotnetdocfxblobmainDirectory.Build.props#L3-L5
+    # https://github.com/dotnet/docfx/blob/main/Directory.Build.props#L3-L5
     args = %W[
       --configuration Release
       --framework net#{dotnet.version.major_minor}
@@ -41,15 +41,15 @@ class Docfx < Formula
       system "npm", "install", *std_npm_args(prefix: false)
       system "npm", "run", "build"
     end
-    system "dotnet", "publish", "srcdocfx", *args
+    system "dotnet", "publish", "src/docfx", *args
 
-    (bin"docfx").write_env_script libexec"docfx",
+    (bin/"docfx").write_env_script libexec/"docfx",
       DOTNET_ROOT: "${DOTNET_ROOT:-#{dotnet.opt_libexec}}"
   end
 
   test do
-    system bin"docfx", "init", "--yes", "--output", testpath"docfx_project"
-    assert_path_exists testpath"docfx_projectdocfx.json", "Failed to generate project"
-    assert_match "modern", shell_output("#{bin}docfx template list")
+    system bin/"docfx", "init", "--yes", "--output", testpath/"docfx_project"
+    assert_path_exists testpath/"docfx_project/docfx.json", "Failed to generate project"
+    assert_match "modern", shell_output("#{bin}/docfx template list")
   end
 end

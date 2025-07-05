@@ -1,7 +1,7 @@
 class Cgal < Formula
   desc "Computational Geometry Algorithms Library"
-  homepage "https:www.cgal.org"
-  url "https:github.comCGALcgalreleasesdownloadv6.0.1CGAL-6.0.1.tar.xz"
+  homepage "https://www.cgal.org/"
+  url "https://ghfast.top/https://github.com/CGAL/cgal/releases/download/v6.0.1/CGAL-6.0.1.tar.xz"
   sha256 "0acdfbf317c556630dd526f3253780f29b6ec9713ee92903e81b5c93c0f59b7f"
   license "GPL-3.0-or-later"
 
@@ -37,21 +37,21 @@ class Cgal < Formula
       FindOSQP.cmake
       FindSuiteSparse.cmake
     ]
-    inreplace inreplace_files.map { |file| lib"cmakeCGAL"file }, "usrlocal", HOMEBREW_PREFIX
+    inreplace inreplace_files.map { |file| lib/"cmake/CGAL"/file }, "/usr/local", HOMEBREW_PREFIX
 
     # These cause different bottles to be built between macOS and Linux for some reason.
-    %w[README.md readme.md].each { |file| (buildpathfile).unlink if (buildpathfile).exist? }
+    %w[README.md readme.md].each { |file| (buildpath/file).unlink if (buildpath/file).exist? }
   end
 
   test do
-    # https:doc.cgal.orglatestTriangulation_2Triangulation_2_2draw_triangulation_2_8cpp-example.html and  https:doc.cgal.orglatestAlgebraic_foundationsAlgebraic_foundations_2interoperable_8cpp-example.html
-    (testpath"surprise.cpp").write <<~CPP
-      #include <CGALExact_predicates_inexact_constructions_kernel.h>
-      #include <CGALTriangulation_2.h>
-      #include <CGALdraw_triangulation_2.h>
-      #include <CGALbasic.h>
-      #include <CGALCoercion_traits.h>
-      #include <CGALIOio.h>
+    # https://doc.cgal.org/latest/Triangulation_2/Triangulation_2_2draw_triangulation_2_8cpp-example.html and  https://doc.cgal.org/latest/Algebraic_foundations/Algebraic_foundations_2interoperable_8cpp-example.html
+    (testpath/"surprise.cpp").write <<~CPP
+      #include <CGAL/Exact_predicates_inexact_constructions_kernel.h>
+      #include <CGAL/Triangulation_2.h>
+      #include <CGAL/draw_triangulation_2.h>
+      #include <CGAL/basic.h>
+      #include <CGAL/Coercion_traits.h>
+      #include <CGAL/IO/io.h>
       #include <fstream>
       typedef CGAL::Exact_predicates_inexact_constructions_kernel K;
       typedef CGAL::Triangulation_2<K>                            Triangulation;
@@ -68,17 +68,17 @@ class Cgal < Formula
       int main(int argc, char**) {
         std::cout<< binary_func(double(3), int(5)) << std::endl;
         std::cout<< binary_func(int(3), double(5)) << std::endl;
-        std::ifstream in("datatriangulation_prog1.cin");
+        std::ifstream in("data/triangulation_prog1.cin");
         std::istream_iterator<Point> begin(in);
         std::istream_iterator<Point> end;
         Triangulation t;
         t.insert(begin, end);
-        if(argc == 3)  do not test Qt6 at runtime
+        if(argc == 3) // do not test Qt6 at runtime
           CGAL::draw(t);
         return EXIT_SUCCESS;
        }
     CPP
-    (testpath"CMakeLists.txt").write <<~CMAKE
+    (testpath/"CMakeLists.txt").write <<~CMAKE
       cmake_minimum_required(VERSION 3.1...3.15)
       find_package(CGAL COMPONENTS Qt6)
       add_definitions(-DCGAL_USE_BASIC_VIEWER -DQT_NO_KEYWORDS)
@@ -87,10 +87,10 @@ class Cgal < Formula
       target_include_directories(surprise BEFORE PUBLIC #{Formula["qt"].opt_include})
       target_link_libraries(surprise PUBLIC CGAL::CGAL_Qt6)
     CMAKE
-    system "cmake", "-L", "-DQt6_DIR=#{Formula["qt"].opt_lib}cmakeQt6",
+    system "cmake", "-L", "-DQt6_DIR=#{Formula["qt"].opt_lib}/cmake/Qt6",
            "-DCMAKE_PREFIX_PATH=#{Formula["qt"].opt_lib}",
-           "-DCMAKE_BUILD_RPATH=#{HOMEBREW_PREFIX}lib", "-DCMAKE_PREFIX_PATH=#{prefix}", "."
+           "-DCMAKE_BUILD_RPATH=#{HOMEBREW_PREFIX}/lib", "-DCMAKE_PREFIX_PATH=#{prefix}", "."
     system "cmake", "--build", ".", "-v"
-    assert_equal "15\n15", shell_output(".surprise").chomp
+    assert_equal "15\n15", shell_output("./surprise").chomp
   end
 end

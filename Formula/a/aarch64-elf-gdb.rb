@@ -1,11 +1,11 @@
 class Aarch64ElfGdb < Formula
   desc "GNU debugger for aarch64-elf cross development"
-  homepage "https:www.gnu.orgsoftwaregdb"
-  url "https:ftp.gnu.orggnugdbgdb-16.3.tar.xz"
-  mirror "https:ftpmirror.gnu.orggdbgdb-16.3.tar.xz"
+  homepage "https://www.gnu.org/software/gdb/"
+  url "https://ftp.gnu.org/gnu/gdb/gdb-16.3.tar.xz"
+  mirror "https://ftpmirror.gnu.org/gdb/gdb-16.3.tar.xz"
   sha256 "bcfcd095528a987917acf9fff3f1672181694926cc18d609c99d0042c00224c5"
   license "GPL-3.0-or-later"
-  head "https:sourceware.orggitbinutils-gdb.git", branch: "master"
+  head "https://sourceware.org/git/binutils-gdb.git", branch: "master"
 
   livecheck do
     formula "gdb"
@@ -28,7 +28,7 @@ class Aarch64ElfGdb < Formula
   depends_on "aarch64-elf-gcc" => :test
   depends_on "gmp"
   depends_on "mpfr"
-  depends_on "ncurses" # https:github.comHomebrewhomebrew-coreissues224294
+  depends_on "ncurses" # https://github.com/Homebrew/homebrew-core/issues/224294
   depends_on "python@3.13"
   depends_on "readline"
   depends_on "xz" # required for lzma support
@@ -37,7 +37,7 @@ class Aarch64ElfGdb < Formula
   uses_from_macos "expat", since: :sequoia # minimum macOS due to python
   uses_from_macos "zlib"
 
-  # Workaround for https:github.comHomebrewbrewissues19315
+  # Workaround for https://github.com/Homebrew/brew/issues/19315
   on_sequoia :or_newer do
     on_intel do
       depends_on "expat"
@@ -52,9 +52,9 @@ class Aarch64ElfGdb < Formula
     target = "aarch64-elf"
     args = %W[
       --target=#{target}
-      --datarootdir=#{share}#{target}
-      --includedir=#{include}#{target}
-      --infodir=#{info}#{target}
+      --datarootdir=#{share}/#{target}
+      --includedir=#{include}/#{target}
+      --infodir=#{info}/#{target}
       --mandir=#{man}
       --disable-binutils
       --disable-nls
@@ -69,8 +69,8 @@ class Aarch64ElfGdb < Formula
     ]
 
     mkdir "build" do
-      system "..configure", *args, *std_configure_args
-      ENV.deparallelize # Error: commonversion.c-stamp.tmp: No such file or directory
+      system "../configure", *args, *std_configure_args
+      ENV.deparallelize # Error: common/version.c-stamp.tmp: No such file or directory
       system "make"
 
       # Don't install bfd or opcodes, as they are provided by binutils
@@ -79,9 +79,9 @@ class Aarch64ElfGdb < Formula
   end
 
   test do
-    (testpath"test.c").write "void _start(void) {}"
-    system "#{Formula["aarch64-elf-gcc"].bin}aarch64-elf-gcc", "-g", "-nostdlib", "test.c"
+    (testpath/"test.c").write "void _start(void) {}"
+    system "#{Formula["aarch64-elf-gcc"].bin}/aarch64-elf-gcc", "-g", "-nostdlib", "test.c"
     assert_match "Symbol \"_start\" is a function at address 0x",
-          shell_output("#{bin}aarch64-elf-gdb -batch -ex 'info address _start' a.out")
+          shell_output("#{bin}/aarch64-elf-gdb -batch -ex 'info address _start' a.out")
   end
 end

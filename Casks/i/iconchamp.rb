@@ -2,14 +2,14 @@ cask "iconchamp" do
   version "1.3.6"
   sha256 :no_check
 
-  url "https:github.comMacEnhanceappcastrawmasterIconChampIconChamp.zip",
-      verified: "github.comMacEnhanceappcast"
+  url "https://github.com/MacEnhance/appcast/raw/master/IconChamp/IconChamp.zip",
+      verified: "github.com/MacEnhance/appcast/"
   name "IconChamp"
   desc "Icon theming app for Big Sur and Monterey"
-  homepage "https:www.macenhance.comiconchamp"
+  homepage "https://www.macenhance.com/iconchamp"
 
   livecheck do
-    url "https:raw.githubusercontent.comMacEnhanceappcastmasterIconChampappcast.xml"
+    url "https://ghfast.top/https://raw.githubusercontent.com/MacEnhance/appcast/master/IconChamp/appcast.xml"
     strategy :sparkle, &:short_version
   end
 
@@ -22,18 +22,18 @@ cask "iconchamp" do
   uninstall launchctl: "com.macenhance.ICHelper",
             quit:      "com.macenhance.IconChamp",
             delete:    [
-              "LibraryLaunchDaemonscom.macenhance.ICHelper.plist",
-              "LibraryPrivilegedHelperToolscom.macenhance.ICHelper",
+              "/Library/LaunchDaemons/com.macenhance.ICHelper.plist",
+              "/Library/PrivilegedHelperTools/com.macenhance.ICHelper",
             ]
 
   zap trash: [
-    "UsersSharedIconChamp",
-    "~LibraryApplication Supportcom.macenhance.IconChamp",
-    "~LibraryApplication SupportIconChamp",
-    "~LibraryCachescom.macenhance.IconChamp",
-    "~LibraryHTTPStoragescom.macenhance.IconChamp",
-    "~LibraryHTTPStoragescom.macenhance.IconChamp.binarycookies",
-    "~LibraryPreferencescom.macenhance.IconChamp.plist",
-    "~LibrarySaved Application Statecom.macenhance.IconChamp.savedState",
+    "/Users/Shared/IconChamp",
+    "~/Library/Application Support/com.macenhance.IconChamp",
+    "~/Library/Application Support/IconChamp",
+    "~/Library/Caches/com.macenhance.IconChamp",
+    "~/Library/HTTPStorages/com.macenhance.IconChamp",
+    "~/Library/HTTPStorages/com.macenhance.IconChamp.binarycookies",
+    "~/Library/Preferences/com.macenhance.IconChamp.plist",
+    "~/Library/Saved Application State/com.macenhance.IconChamp.savedState",
   ]
 end

@@ -1,11 +1,11 @@
 class Clamav < Formula
   desc "Anti-virus software"
-  homepage "https:www.clamav.net"
-  url "https:github.comCisco-Talosclamavreleasesdownloadclamav-1.4.3clamav-1.4.3.tar.gz"
-  mirror "https:www.clamav.netdownloadsproductionclamav-1.4.3.tar.gz"
+  homepage "https://www.clamav.net/"
+  url "https://ghfast.top/https://github.com/Cisco-Talos/clamav/releases/download/clamav-1.4.3/clamav-1.4.3.tar.gz"
+  mirror "https://www.clamav.net/downloads/production/clamav-1.4.3.tar.gz"
   sha256 "d874cabf3d4765b35b518ef535658a1e6ec74802006a1d613f9f124aa1343210"
   license "GPL-2.0-or-later"
-  head "https:github.comCisco-Talosclamav.git", branch: "main"
+  head "https://github.com/Cisco-Talos/clamav.git", branch: "main"
 
   livecheck do
     url :stable
@@ -36,12 +36,12 @@ class Clamav < Formula
   uses_from_macos "ncurses"
   uses_from_macos "zlib"
 
-  skip_clean "shareclamav"
+  skip_clean "share/clamav"
 
   def install
     args = %W[
-      -DAPP_CONFIG_DIRECTORY=#{etc}clamav
-      -DDATABASE_DIRECTORY=#{var}libclamav
+      -DAPP_CONFIG_DIRECTORY=#{etc}/clamav
+      -DDATABASE_DIRECTORY=#{var}/lib/clamav
       -DENABLE_JSON_SHARED=ON
       -DENABLE_STATIC_LIB=ON
       -DENABLE_SHARED_LIB=ON
@@ -56,11 +56,11 @@ class Clamav < Formula
   end
 
   def post_install
-    (var"libclamav").mkpath
+    (var/"lib/clamav").mkpath
   end
 
   service do
-    run [opt_sbin"clamd", "--foreground"]
+    run [opt_sbin/"clamd", "--foreground"]
     keep_alive true
     require_root true
   end
@@ -68,19 +68,19 @@ class Clamav < Formula
   def caveats
     <<~EOS
       To finish installation & run clamav you will need to edit
-      the example conf files at #{etc}clamav
+      the example conf files at #{etc}/clamav/
     EOS
   end
 
   test do
-    assert_match "Database directory: #{var}libclamav", shell_output("#{bin}clamconf")
+    assert_match "Database directory: #{var}/lib/clamav", shell_output("#{bin}/clamconf")
 
-    (testpath"freshclam.conf").write <<~EOS
+    (testpath/"freshclam.conf").write <<~EOS
       DNSDatabaseInfo current.cvd.clamav.net
       DatabaseMirror database.clamav.net
     EOS
 
-    system bin"freshclam", "--datadir=#{testpath}", "--config-file=#{testpath}freshclam.conf"
-    system bin"clamscan", "--database=#{testpath}", testpath
+    system bin/"freshclam", "--datadir=#{testpath}", "--config-file=#{testpath}/freshclam.conf"
+    system bin/"clamscan", "--database=#{testpath}", testpath
   end
 end

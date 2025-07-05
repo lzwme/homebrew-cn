@@ -1,13 +1,13 @@
 class Abyss < Formula
   desc "Genome sequence assembler for short reads"
-  homepage "https:www.bcgsc.caresourcessoftwareabyss"
-  url "https:github.combcgscabyssreleasesdownload2.3.10abyss-2.3.10.tar.gz"
+  homepage "https://www.bcgsc.ca/resources/software/abyss"
+  url "https://ghfast.top/https://github.com/bcgsc/abyss/releases/download/2.3.10/abyss-2.3.10.tar.gz"
   sha256 "bbe42e00d1ebb53ec6afaad07779baaaee994aa5c65b9a38cf4ad2011bb93c65"
   license all_of: ["GPL-3.0-only", "LGPL-2.1-or-later", "MIT", "BSD-3-Clause"]
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "c4c97608ca2bb86304b77b4fddd3abee125f25971ba51495e95e6658b1ad5d1a"
@@ -20,7 +20,7 @@ class Abyss < Formula
   end
 
   head do
-    url "https:github.combcgscabyss.git", branch: "master"
+    url "https://github.com/bcgsc/abyss.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -41,24 +41,24 @@ class Abyss < Formula
   fails_with :clang # no OpenMP support
 
   resource "btllib" do
-    url "https:github.combcgscbtllibreleasesdownloadv1.7.3btllib-1.7.3.tar.gz"
+    url "https://ghfast.top/https://github.com/bcgsc/btllib/releases/download/v1.7.3/btllib-1.7.3.tar.gz"
     sha256 "31e7124e1cda9eea6f27b654258a7f8d3dea83c828f0b2e8e847faf1c5296aa3"
   end
 
   def install
     python3 = "python3.13"
 
-    (buildpath"btllib").install resource("btllib")
+    (buildpath/"btllib").install resource("btllib")
     cd "btllib" do
       inreplace "compile", '"python3-config"', "\"#{python3}-config\""
-      system ".compile"
+      system "./compile"
     end
 
-    system ".autogen.sh" if build.head?
-    system ".configure", "--disable-silent-rules",
+    system "./autogen.sh" if build.head?
+    system "./configure", "--disable-silent-rules",
                           "--enable-maxk=128",
                           "--with-boost=#{Formula["boost"].include}",
-                          "--with-btllib=#{buildpath}btllibinstall",
+                          "--with-btllib=#{buildpath}/btllib/install",
                           "--with-mpi=#{Formula["open-mpi"].prefix}",
                           "--with-sparsehash=#{Formula["google-sparsehash"].prefix}",
                           *std_configure_args
@@ -67,17 +67,17 @@ class Abyss < Formula
 
   test do
     resource "homebrew-testdata" do
-      url "https:www.bcgsc.casitesdefaultfilesbioinformaticssoftwareabyssreleases1.3.4test-data.tar.gz"
+      url "https://www.bcgsc.ca/sites/default/files/bioinformatics/software/abyss/releases/1.3.4/test-data.tar.gz"
       sha256 "28f8592203daf2d7c3b90887f9344ea54fda39451464a306ef0226224e5f4f0e"
     end
 
     testpath.install resource("homebrew-testdata")
     if which("column")
-      system bin"abyss-pe", "B=2G", "k=25", "name=ts", "in=reads1.fastq reads2.fastq"
+      system bin/"abyss-pe", "B=2G", "k=25", "name=ts", "in=reads1.fastq reads2.fastq"
     else
       # Fix error: abyss-tabtomd: column: not found
-      system bin"abyss-pe", "B=2G", "unitigs", "scaffolds", "k=25", "name=ts", "in=reads1.fastq reads2.fastq"
+      system bin/"abyss-pe", "B=2G", "unitigs", "scaffolds", "k=25", "name=ts", "in=reads1.fastq reads2.fastq"
     end
-    system bin"abyss-fac", "ts-unitigs.fa"
+    system bin/"abyss-fac", "ts-unitigs.fa"
   end
 end

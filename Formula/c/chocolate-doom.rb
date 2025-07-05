@@ -1,14 +1,14 @@
 class ChocolateDoom < Formula
   desc "Accurate source port of Doom"
-  homepage "https:www.chocolate-doom.org"
-  url "https:github.comchocolate-doomchocolate-doomarchiverefstagschocolate-doom-3.1.0.tar.gz"
+  homepage "https://www.chocolate-doom.org/"
+  url "https://ghfast.top/https://github.com/chocolate-doom/chocolate-doom/archive/refs/tags/chocolate-doom-3.1.0.tar.gz"
   sha256 "f2c64843dcec312032b180c3b2f34b4cb26c4dcdaa7375a1601a3b1df11ef84d"
   license "GPL-2.0-only"
-  head "https:github.comchocolate-doomchocolate-doom.git", branch: "master"
+  head "https://github.com/chocolate-doom/chocolate-doom.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(^chocolate-doom[._-]v?(\d+(?:\.\d+)+)$i)
+    regex(/^chocolate-doom[._-]v?(\d+(?:\.\d+)+)$/i)
   end
 
   no_autobump! because: :requires_manual_review
@@ -37,10 +37,10 @@ class ChocolateDoom < Formula
 
   def install
     system "autoreconf", "--force", "--install", "--verbose"
-    system ".configure", "--disable-silent-rules", *std_configure_args
+    system "./configure", "--disable-silent-rules", *std_configure_args
     system "make", "install", "execgamesdir=#{bin}"
-    rm_r(share"applications")
-    rm_r(share"icons")
+    rm_r(share/"applications")
+    rm_r(share/"icons")
   end
 
   def caveats
@@ -58,9 +58,9 @@ class ChocolateDoom < Formula
     testdata = <<~EOS
       Invalid IWAD file
     EOS
-    (testpath"test_invalid.wad").write testdata
+    (testpath/"test_invalid.wad").write testdata
 
     expected_output = "Wad file test_invalid.wad doesn't have IWAD or PWAD id"
-    assert_match expected_output, shell_output("#{bin}chocolate-doom -nogui -iwad test_invalid.wad 2>&1", 255)
+    assert_match expected_output, shell_output("#{bin}/chocolate-doom -nogui -iwad test_invalid.wad 2>&1", 255)
   end
 end

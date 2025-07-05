@@ -2,10 +2,10 @@ cask "streamlink-twitch-gui" do
   version "2.5.3"
   sha256 "164179e26ef07cc821e718a9a965ed58815de22be080d0fe32e90356a9b850fe"
 
-  url "https:github.comstreamlinkstreamlink-twitch-guireleasesdownloadv#{version}streamlink-twitch-gui-v#{version}-macOS.tar.gz"
+  url "https://ghfast.top/https://github.com/streamlink/streamlink-twitch-gui/releases/download/v#{version}/streamlink-twitch-gui-v#{version}-macOS.tar.gz"
   name "Streamlink Twitch GUI"
   desc "Multi platform Twitch.tv browser for Streamlink"
-  homepage "https:github.comstreamlinkstreamlink-twitch-gui"
+  homepage "https://github.com/streamlink/streamlink-twitch-gui/"
 
   no_autobump! because: :requires_manual_review
 
@@ -15,9 +15,9 @@ cask "streamlink-twitch-gui" do
   app "Streamlink Twitch GUI.app"
 
   zap trash: [
-    "~LibraryApplication Supportstreamlink-twitch-gui",
-    "~LibraryCachesstreamlink-twitch-gui",
-    "~LibraryLogsstreamlink-twitch-gui",
+    "~/Library/Application Support/streamlink-twitch-gui",
+    "~/Library/Caches/streamlink-twitch-gui",
+    "~/Library/Logs/streamlink-twitch-gui",
   ]
 
   caveats do

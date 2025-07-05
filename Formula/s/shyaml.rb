@@ -2,12 +2,12 @@ class Shyaml < Formula
   include Language::Python::Virtualenv
 
   desc "Command-line YAML parser"
-  homepage "https:github.com0kshyaml"
-  url "https:files.pythonhosted.orgpackagesb9597e6873fa73a476de053041d26d112b65d7e1e480b88a93b4baa77197bd04shyaml-0.6.2.tar.gz"
+  homepage "https://github.com/0k/shyaml"
+  url "https://files.pythonhosted.org/packages/b9/59/7e6873fa73a476de053041d26d112b65d7e1e480b88a93b4baa77197bd04/shyaml-0.6.2.tar.gz"
   sha256 "696e94f1c49d496efa58e09b49c099f5ebba7e24b5abe334f15e9759740b7fd0"
   license "BSD-2-Clause"
   revision 2
-  head "https:github.com0kshyaml.git", branch: "master"
+  head "https://github.com/0k/shyaml.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -26,12 +26,12 @@ class Shyaml < Formula
   depends_on "python@3.13"
 
   resource "pyyaml" do
-    url "https:files.pythonhosted.orgpackages54ed79a089b6be93607fa5cdaedf301d7dfb23af5f25c398d5ead2525b063e17pyyaml-6.0.2.tar.gz"
+    url "https://files.pythonhosted.org/packages/54/ed/79a089b6be93607fa5cdaedf301d7dfb23af5f25c398d5ead2525b063e17/pyyaml-6.0.2.tar.gz"
     sha256 "d584d9ec91ad65861cc08d42e834324ef890a082e591037abe114850ff7bbc3e"
   end
 
   def install
-    # Remove unneededbroken d2to1: https:github.com0kshyamlpull67
+    # Remove unneeded/broken d2to1: https://github.com/0k/shyaml/pull/67
     inreplace "setup.py", "setup_requires=['d2to1'],", "#setup_requires=['d2to1'],"
     inreplace "setup.cfg", "[entry_points]", "[options.entry_points]"
     virtualenv_install_with_resources
@@ -44,8 +44,8 @@ class Shyaml < Formula
         - 1st
         - 2nd
     YAML
-    assert_equal "val", pipe_output("#{bin}shyaml get-value key", yaml, 0)
-    assert_equal "1st", pipe_output("#{bin}shyaml get-value arr.0", yaml, 0)
-    assert_equal "2nd", pipe_output("#{bin}shyaml get-value arr.-1", yaml, 0)
+    assert_equal "val", pipe_output("#{bin}/shyaml get-value key", yaml, 0)
+    assert_equal "1st", pipe_output("#{bin}/shyaml get-value arr.0", yaml, 0)
+    assert_equal "2nd", pipe_output("#{bin}/shyaml get-value arr.-1", yaml, 0)
   end
 end

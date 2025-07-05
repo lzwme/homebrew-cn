@@ -1,7 +1,7 @@
 class OhdearCli < Formula
   desc "Tool to manage your Oh Dear sites"
-  homepage "https:github.comohdearappohdear-cli"
-  url "https:github.comohdearappohdear-clireleasesdownloadv4.4.0ohdear.phar"
+  homepage "https://github.com/ohdearapp/ohdear-cli"
+  url "https://ghfast.top/https://github.com/ohdearapp/ohdear-cli/releases/download/v4.4.0/ohdear.phar"
   sha256 "4d213baba1bc0275a8ec6f458915f9d5f6df5b1c8522476e82289b931360de13"
   license "MIT"
 
@@ -17,10 +17,10 @@ class OhdearCli < Formula
     bin.install "ohdear.phar" => "ohdear"
     # The cli tool was renamed (3.x -> 4.0.0)
     # Create a symlink to not break compatibility
-    bin.install_symlink bin"ohdear" => "ohdear-cli"
+    bin.install_symlink bin/"ohdear" => "ohdear-cli"
   end
 
   test do
-    assert_match "Unauthorised", shell_output("#{bin}ohdear me", 1)
+    assert_match "Unauthorised", shell_output("#{bin}/ohdear me", 1)
   end
 end

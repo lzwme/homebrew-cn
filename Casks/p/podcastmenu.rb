@@ -2,10 +2,10 @@ cask "podcastmenu" do
   version "1.3"
   sha256 "bff1a2b2b5f6c6eac37f567fdf917b696b1ef0b203f61725e44274461f957e31"
 
-  url "https:github.cominsideguiPodcastMenurawmasterReleasesPodcastMenu_v#{version}.zip"
+  url "https://github.com/insidegui/PodcastMenu/raw/master/Releases/PodcastMenu_v#{version}.zip"
   name "PodcastMenu"
   desc "Tool to display Overcast on the menu bar"
-  homepage "https:github.cominsideguiPodcastMenu"
+  homepage "https://github.com/insidegui/PodcastMenu"
 
   no_autobump! because: :requires_manual_review
 
@@ -17,9 +17,9 @@ cask "podcastmenu" do
   app "PodcastMenu.app"
 
   zap trash: [
-    "~LibraryApplication Supportbr.com.guilhermerambo.PodcastMenu",
-    "~LibraryCachesbr.com.guilhermerambo.PodcastMenu",
-    "~LibraryPreferencesbr.com.guilhermerambo.PodcastMenu.plist",
+    "~/Library/Application Support/br.com.guilhermerambo.PodcastMenu",
+    "~/Library/Caches/br.com.guilhermerambo.PodcastMenu",
+    "~/Library/Preferences/br.com.guilhermerambo.PodcastMenu.plist",
   ]
 
   caveats do

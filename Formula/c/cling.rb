@@ -1,7 +1,7 @@
 class Cling < Formula
   desc "C++ interpreter"
-  homepage "https:root.cerncling"
-  url "https:github.comroot-projectclingarchiverefstagsv1.2.tar.gz"
+  homepage "https://root.cern/cling/"
+  url "https://ghfast.top/https://github.com/root-project/cling/archive/refs/tags/v1.2.tar.gz"
   sha256 "beee8e461424d267ee2dec88b3de57326bc8e3470b4ceae2744de7d3d3aba1eb"
   license all_of: [
     { any_of: ["LGPL-2.1-only", "NCSA"] },
@@ -34,23 +34,23 @@ class Cling < Formula
   uses_from_macos "ncurses"
   uses_from_macos "zlib"
 
-  # https:github.comroot-projectcling?tab=readme-ov-file#building-from-source
-  # `git ls-remote --heads https:github.comroot-projectllvm-project.git cling-latest`
-  # grab the latest tag https:github.comroot-projectllvm-projectcommit<commit>
+  # https://github.com/root-project/cling?tab=readme-ov-file#building-from-source
+  # `git ls-remote --heads https://github.com/root-project/llvm-project.git cling-latest`
+  # grab the latest tag https://github.com/root-project/llvm-project/commit/<commit>
   resource "llvm" do
-    url "https:github.comroot-projectllvm-projectarchiverefstagscling-llvm18-20240821-01.tar.gz"
+    url "https://ghfast.top/https://github.com/root-project/llvm-project/archive/refs/tags/cling-llvm18-20240821-01.tar.gz"
     sha256 "47676c77bfa7c63cd6101bcea2611ac0cf363cb5ceb87955ea9e2b3e832ea887"
   end
 
   def install
     # Skip modification of CLING_OSX_SYSROOT to the unversioned SDK path
-    # Related: https:github.comHomebrewhomebrew-coreissues135714
-    # Related: https:github.comroot-projectclingissues457
-    inreplace "libInterpreterCMakeLists.txt", '"MacOSX[.0-9]+\.sdk"', '"SKIP"'
+    # Related: https://github.com/Homebrew/homebrew-core/issues/135714
+    # Related: https://github.com/root-project/cling/issues/457
+    inreplace "lib/Interpreter/CMakeLists.txt", '"MacOSX[.0-9]+\.sdk"', '"SKIP"'
 
-    (buildpath"llvm").install resource("llvm")
+    (buildpath/"llvm").install resource("llvm")
 
-    system "cmake", "-S", "llvmllvm", "-B", "build",
+    system "cmake", "-S", "llvm/llvm", "-B", "build",
                     "-DCLING_CXX_PATH=clang++",
                     "-DLLVM_BUILD_TOOLS=OFF",
                     "-DLLVM_ENABLE_PROJECTS=clang",
@@ -62,13 +62,13 @@ class Cling < Formula
     system "cmake", "--install", "build"
 
     # We use an exec script as a symlink causes issues finding headers
-    bin.write_exec_script libexec"bincling"
+    bin.write_exec_script libexec/"bin/cling"
   end
 
   test do
     test = <<~EOS
       '#include <stdio.h>' 'printf("Hello!")'
     EOS
-    assert_equal "Hello!(int) 6", shell_output("#{bin}cling #{test}").chomp
+    assert_equal "Hello!(int) 6", shell_output("#{bin}/cling #{test}").chomp
   end
 end

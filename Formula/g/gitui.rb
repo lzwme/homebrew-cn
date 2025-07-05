@@ -1,10 +1,10 @@
 class Gitui < Formula
   desc "Blazing fast terminal-ui for git written in rust"
-  homepage "https:github.comgitui-orggitui"
-  url "https:github.comgitui-orggituiarchiverefstagsv0.27.0.tar.gz"
+  homepage "https://github.com/gitui-org/gitui"
+  url "https://ghfast.top/https://github.com/gitui-org/gitui/archive/refs/tags/v0.27.0.tar.gz"
   sha256 "55a85f4a3ce97712b618575aa80f3c15ea4004d554e8899669910d7fb4ff6e4b"
   license "MIT"
-  head "https:github.comgitui-orggitui.git", branch: "master"
+  head "https://github.com/gitui-org/gitui.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -34,14 +34,14 @@ class Gitui < Formula
   end
 
   test do
-    require "utilslinkage"
+    require "utils/linkage"
 
-    system "git", "clone", "https:github.comgitui-orggitui.git"
-    (testpath"gitui").cd { system "git", "checkout", "v0.7.0" }
+    system "git", "clone", "https://github.com/gitui-org/gitui.git"
+    (testpath/"gitui").cd { system "git", "checkout", "v0.7.0" }
 
     input, _, wait_thr = Open3.popen2 "script -q screenlog.ansi"
     input.puts "stty rows 80 cols 130"
-    input.puts "env LC_CTYPE=en_US.UTF-8 LANG=en_US.UTF-8 TERM=xterm #{bin}gitui -d gitui"
+    input.puts "env LC_CTYPE=en_US.UTF-8 LANG=en_US.UTF-8 TERM=xterm #{bin}/gitui -d gitui"
     sleep 2
     # select log tab
     input.puts "2"
@@ -53,23 +53,23 @@ class Gitui < Formula
     sleep 2
     input.close
 
-    screenlog = (testpath"screenlog.ansi").read
+    screenlog = (testpath/"screenlog.ansi").read
     # remove ANSI colors
     screenlog.encode!("UTF-8", "binary",
       invalid: :replace,
       undef:   :replace,
       replace: "")
-    screenlog.gsub!(\e\[([;\d]+)?m, "")
+    screenlog.gsub!(/\e\[([;\d]+)?m/, "")
     assert_match "Author: Stephan Dilly", screenlog
     assert_match "Date: 2020-06-15", screenlog
     assert_match "Sha: 9c2a31846c417d8775a346ceaf38e77b710d3aab", screenlog
 
     linked_libraries = [
-      Formula["openssl@3"].opt_libshared_library("libcrypto"),
-      Formula["openssl@3"].opt_libshared_library("libssl"),
+      Formula["openssl@3"].opt_lib/shared_library("libcrypto"),
+      Formula["openssl@3"].opt_lib/shared_library("libssl"),
     ]
     linked_libraries.each do |library|
-      assert Utils.binary_linked_to_library?(bin"gitui", library),
+      assert Utils.binary_linked_to_library?(bin/"gitui", library),
              "No linkage with #{library.basename}! Cargo is likely using a vendored version."
     end
   ensure

@@ -1,10 +1,10 @@
 class Gama < Formula
   desc "Manage your GitHub Actions from Terminal with great UI"
-  homepage "https:github.comtermkitgama"
-  url "https:github.comtermkitgamaarchiverefstagsv1.2.1.tar.gz"
+  homepage "https://github.com/termkit/gama"
+  url "https://ghfast.top/https://github.com/termkit/gama/archive/refs/tags/v1.2.1.tar.gz"
   sha256 "d2fad1280142b0cc8cb311a5e328590feb0c5a1642c47e3f8e0aaf1b713f6c7b"
   license "GPL-3.0-only"
-  head "https:github.comtermkitgama.git", branch: "main"
+  head "https://github.com/termkit/gama.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "9078cd53e0763f843729a0ffda3321354a6b664ffb2bed87e372e700cd9faef1"
@@ -28,7 +28,7 @@ class Gama < Formula
     #
     # There's no any output to stdout (except for ncurses-like UI) or a file
     # `gama --version` or `gama --help` are not valid options either
-    pid = spawn bin"gama"
+    pid = spawn bin/"gama"
     sleep 2
   ensure
     Process.kill("TERM", pid)

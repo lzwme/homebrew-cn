@@ -5,15 +5,15 @@ cask "sage" do
   sha256 arm:   "bb6b23f91f805bd721de99e11e2f2d8acc4b8cc8a81051f0b17164fca29718ab",
          intel: "7d8367d2cd34c8b94e25db7fe5447de137153799a9cc280708cf3fc9352fc800"
 
-  url "https:github.com3-manifoldsSage_macOSreleasesdownloadv#{version.csv.second}SageMath-#{version.csv.first}_#{arch}.dmg",
-      verified: "github.com3-manifoldsSage_macOS"
+  url "https://ghfast.top/https://github.com/3-manifolds/Sage_macOS/releases/download/v#{version.csv.second}/SageMath-#{version.csv.first}_#{arch}.dmg",
+      verified: "github.com/3-manifolds/Sage_macOS/"
   name "Sage"
   desc "Mathematics software system"
-  homepage "https:www.sagemath.org"
+  homepage "https://www.sagemath.org/"
 
   livecheck do
     url :url
-    regex(%r{v?(\d+(?:\.\d+)+)SageMath[._-]v?(\d+(?:\.\d+)+)[._-].*?#{arch}\.dmg$}i)
+    regex(%r{/v?(\d+(?:\.\d+)+)/SageMath[._-]v?(\d+(?:\.\d+)+)[._-].*?#{arch}\.dmg$}i)
     strategy :github_latest do |json, regex|
       json["assets"]&.map do |asset|
         match = asset["browser_download_url"]&.match(regex)
@@ -44,8 +44,8 @@ cask "sage" do
             ]
 
   zap trash: [
-    "~.sage",
-    "~LibraryApplication SupportSageMath",
-    "~LibraryPreferencesSageMath.plist",
+    "~/.sage",
+    "~/Library/Application Support/SageMath",
+    "~/Library/Preferences/SageMath.plist",
   ]
 end

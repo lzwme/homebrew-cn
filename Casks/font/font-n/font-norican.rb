@@ -2,10 +2,10 @@ cask "font-norican" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefontsrawmainoflnoricanNorican-Regular.ttf",
-      verified: "github.comgooglefonts"
+  url "https://github.com/google/fonts/raw/main/ofl/norican/Norican-Regular.ttf",
+      verified: "github.com/google/fonts/"
   name "Norican"
-  homepage "https:fonts.google.comspecimenNorican"
+  homepage "https://fonts.google.com/specimen/Norican"
 
   font "Norican-Regular.ttf"
 

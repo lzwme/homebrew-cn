@@ -1,11 +1,11 @@
 class Dfmt < Formula
   desc "Formatter for D source code"
-  homepage "https:github.comdlang-communitydfmt"
-  url "https:github.comdlang-communitydfmt.git",
+  homepage "https://github.com/dlang-community/dfmt"
+  url "https://github.com/dlang-community/dfmt.git",
       tag:      "v0.15.2",
       revision: "d8e43e23eca0aa32f064fe7efe8e74a9efa8018e"
   license "BSL-1.0"
-  head "https:github.comdlang-communitydfmt.git", branch: "v0.x.x"
+  head "https://github.com/dlang-community/dfmt.git", branch: "v0.x.x"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "06ced6d9e20891ace270b9ae19b99e93ac117d5609ae2f8ec8f222561292ed58"
@@ -35,12 +35,12 @@ class Dfmt < Formula
       "dmd"
     end
     system "make", target
-    bin.install "bindfmt"
-    bash_completion.install "bash-completioncompletionsdfmt"
+    bin.install "bin/dfmt"
+    bash_completion.install "bash-completion/completions/dfmt"
   end
 
   test do
-    (testpath"test.d").write <<~D
+    (testpath/"test.d").write <<~D
       import std.stdio; void main() { writeln("Hello, world without explicit compilations!"); }
     D
 
@@ -53,8 +53,8 @@ class Dfmt < Formula
       }
     D
 
-    system bin"dfmt", "-i", "test.d"
+    system bin/"dfmt", "-i", "test.d"
 
-    assert_equal expected, (testpath"test.d").read
+    assert_equal expected, (testpath/"test.d").read
   end
 end

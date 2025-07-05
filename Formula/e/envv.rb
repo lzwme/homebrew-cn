@@ -1,7 +1,7 @@
 class Envv < Formula
   desc "Shell-independent handling of environment variables"
-  homepage "https:github.comjakewendtenvv"
-  url "https:github.comjakewendtenvvarchiverefstagsv1.7.tar.gz"
+  homepage "https://github.com/jakewendt/envv"
+  url "https://ghfast.top/https://github.com/jakewendt/envv/archive/refs/tags/v1.7.tar.gz"
   sha256 "1db05b46904e0cc4d777edf3ea14665f6157ade0567359e28663b5b00f6fa59a"
   license "MIT"
 
@@ -26,9 +26,9 @@ class Envv < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "9cb0c8481042567e17ff04b7d5dd3cc46fccbc0e321203770791588fc51d11b7"
   end
 
-  # Fix missing header includes, see https:github.comjakewendtenvvpull4
+  # Fix missing header includes, see https://github.com/jakewendt/envv/pull/4
   patch do
-    url "https:github.comjakewendtenvvcommit0445a7e4ada9067b3817d1b03edfb91ba59a8962.patch?full_index=1"
+    url "https://github.com/jakewendt/envv/commit/0445a7e4ada9067b3817d1b03edfb91ba59a8962.patch?full_index=1"
     sha256 "7c778b4ab19f53feefaef65003249e9dbd09ac80fb4a7c0828bb357422eb8683"
   end
 
@@ -41,16 +41,16 @@ class Envv < Formula
 
   test do
     ENV["mylist"] = "A:B:C"
-    assert_equal "mylist=A:C; export mylist", shell_output("#{bin}envv del mylist B").strip
-    assert_equal "mylist=B:C; export mylist", shell_output("#{bin}envv del mylist A").strip
-    assert_equal "mylist=A:B; export mylist", shell_output("#{bin}envv del mylist C").strip
+    assert_equal "mylist=A:C; export mylist", shell_output("#{bin}/envv del mylist B").strip
+    assert_equal "mylist=B:C; export mylist", shell_output("#{bin}/envv del mylist A").strip
+    assert_equal "mylist=A:B; export mylist", shell_output("#{bin}/envv del mylist C").strip
 
-    assert_empty shell_output("#{bin}envv add mylist B").strip
-    assert_equal "mylist=B:A:C; export mylist", shell_output("#{bin}envv add mylist B 1").strip
-    assert_equal "mylist=A:C:B; export mylist", shell_output("#{bin}envv add mylist B 99").strip
+    assert_empty shell_output("#{bin}/envv add mylist B").strip
+    assert_equal "mylist=B:A:C; export mylist", shell_output("#{bin}/envv add mylist B 1").strip
+    assert_equal "mylist=A:C:B; export mylist", shell_output("#{bin}/envv add mylist B 99").strip
 
-    assert_equal "mylist=A:B:C:D; export mylist", shell_output("#{bin}envv add mylist D").strip
-    assert_equal "mylist=D:A:B:C; export mylist", shell_output("#{bin}envv add mylist D 1").strip
-    assert_equal "mylist=A:B:D:C; export mylist", shell_output("#{bin}envv add mylist D 3").strip
+    assert_equal "mylist=A:B:C:D; export mylist", shell_output("#{bin}/envv add mylist D").strip
+    assert_equal "mylist=D:A:B:C; export mylist", shell_output("#{bin}/envv add mylist D 1").strip
+    assert_equal "mylist=A:B:D:C; export mylist", shell_output("#{bin}/envv add mylist D 3").strip
   end
 end

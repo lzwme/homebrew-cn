@@ -2,9 +2,9 @@ cask "font-monofur-nerd-font" do
   version "3.4.0"
   sha256 "3a1e6a3b85821a61c8d42d98bc42f181cf1fa7994cdba7068bcf3f6dec249995"
 
-  url "https:github.comryanoasisnerd-fontsreleasesdownloadv#{version}Monofur.zip"
+  url "https://ghfast.top/https://github.com/ryanoasis/nerd-fonts/releases/download/v#{version}/Monofur.zip"
   name "Monofur Nerd Font (Monofur)"
-  homepage "https:github.comryanoasisnerd-fonts"
+  homepage "https://github.com/ryanoasis/nerd-fonts"
 
   livecheck do
     url :url

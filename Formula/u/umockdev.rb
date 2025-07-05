@@ -1,10 +1,10 @@
 class Umockdev < Formula
   desc "Mock hardware devices for creating unit tests and bug reporting"
-  homepage "https:github.commartinpittumockdev"
-  url "https:github.commartinpittumockdevreleasesdownload0.19.1umockdev-0.19.1.tar.xz"
+  homepage "https://github.com/martinpitt/umockdev"
+  url "https://ghfast.top/https://github.com/martinpitt/umockdev/releases/download/0.19.1/umockdev-0.19.1.tar.xz"
   sha256 "2cece0e8e366b89b4070be74f3389c9f7fa21aca56d8a5357e96e30cd8d4f426"
   license "LGPL-2.1-or-later"
-  head "https:github.commartinpittumockdev.git", branch: "main"
+  head "https://github.com/martinpitt/umockdev.git", branch: "main"
 
   no_autobump! because: :requires_manual_review
 
@@ -31,8 +31,8 @@ class Umockdev < Formula
   end
 
   test do
-    # https:github.commartinpittumockdevblobmainteststest-umockdev.c
-    (testpath"test.c").write <<~C
+    # https://github.com/martinpitt/umockdev/blob/main/tests/test-umockdev.c
+    (testpath/"test.c").write <<~C
       #include <glib.h>
       #include <libudev.h>
       #include <umockdev.h>
@@ -56,7 +56,7 @@ class Umockdev < Formula
 
         g_autofree gchar *syspath = umockdev_testbed_add_devicev(testbed, "usb", "extkeyboard1",
                                                                  NULL, attributes, properties);
-        g_assert_cmpstr(syspath, ==, "sysdevicesextkeyboard1");
+        g_assert_cmpstr(syspath, ==, "/sys/devices/extkeyboard1");
 
         device = udev_monitor_receive_device(udev_mon);
         g_assert(device != NULL);
@@ -71,9 +71,9 @@ class Umockdev < Formula
       }
     C
 
-    ENV.append_path "PKG_CONFIG_PATH", Formula["systemd"].lib"pkgconfig" if OS.linux?
+    ENV.append_path "PKG_CONFIG_PATH", Formula["systemd"].lib/"pkgconfig" if OS.linux?
     flags = shell_output("pkgconf --cflags --libs umockdev-1.0 libudev").chomp.split
     system ENV.cc, "test.c", "-o", "test", *flags
-    system bin"umockdev-wrapper", testpath"test"
+    system bin/"umockdev-wrapper", testpath/"test"
   end
 end

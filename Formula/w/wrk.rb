@@ -1,7 +1,7 @@
 class Wrk < Formula
   desc "HTTP benchmarking tool"
-  homepage "https:github.comwgwrk"
-  url "https:github.comwgwrkarchiverefstags4.2.0.tar.gz"
+  homepage "https://github.com/wg/wrk"
+  url "https://ghfast.top/https://github.com/wg/wrk/archive/refs/tags/4.2.0.tar.gz"
   sha256 "e255f696bff6e329f5d19091da6b06164b8d59d62cb9e673625bdcd27fe7bdad"
   # License is modified Apache 2.0 with addition to Section 4 Redistribution:
   #
@@ -12,7 +12,7 @@ class Wrk < Formula
   #     in copyright, patent, trademark, and attribution notices.
   license :cannot_represent
   revision 1
-  head "https:github.comwgwrk.git", branch: "master"
+  head "https://github.com/wg/wrk.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
@@ -39,7 +39,7 @@ class Wrk < Formula
   def install
     ENV.deparallelize
     ENV["MACOSX_DEPLOYMENT_TARGET"] = MacOS.version.to_s if OS.mac?
-    ENV.append_to_cflags "-I#{Formula["luajit"].opt_include}luajit-2.1"
+    ENV.append_to_cflags "-I#{Formula["luajit"].opt_include}/luajit-2.1"
     args = %W[
       WITH_LUAJIT=#{Formula["luajit"].opt_prefix}
       WITH_OPENSSL=#{Formula["openssl@3"].opt_prefix}
@@ -50,6 +50,6 @@ class Wrk < Formula
   end
 
   test do
-    system bin"wrk", "-c", "1", "-t", "1", "-d", "1", "https:example.com"
+    system bin/"wrk", "-c", "1", "-t", "1", "-d", "1", "https://example.com/"
   end
 end
