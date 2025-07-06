@@ -9,8 +9,6 @@ class Trailscraper < Formula
   revision 2
   head "https://github.com/flosell/trailscraper.git", branch: "master"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "b4cb81dbd07d5b954c840c77d25d505eb5bbc0fab8a1ba9c46a29665122cf6b6"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b0f37017da786d814f17fc2b764664f0d2994c1b30fe3b256c3dd658b7250a26"

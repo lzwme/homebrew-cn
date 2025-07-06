@@ -12,15 +12,14 @@ class Zeromq < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "8898ce6776591ad282627fd7215f02ade8f5c5ec3d4dd457ce25aba12c3c1c18"
-    sha256 cellar: :any,                 arm64_sonoma:   "3bf8942ece99f0457125006cf729f24823e09a3f6bd2257e8be9873e5783a0a1"
-    sha256 cellar: :any,                 arm64_ventura:  "0f670cd22b752c640a01f1f3353f8cdf7a6bf31beefad511c17baf315ad848f4"
-    sha256 cellar: :any,                 arm64_monterey: "3a8bc264cb466f765f65f73b0db3c202899656efa11b2df37bd961a224589e20"
-    sha256 cellar: :any,                 sonoma:         "986910eab9519ca92f167b545cde5992124a963b56d1346f2f917368e9a7eb43"
-    sha256 cellar: :any,                 ventura:        "25344444cf8c0583f65b1f36fdf11edc40ce2fe637fa04e34fe28c730573dadc"
-    sha256 cellar: :any,                 monterey:       "c8c1cafdffdc020cf504bc59888d61a016df6cdfc12650d89a43a846edb77ef2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "1bec0b28dfb3b515f6095d00e4fdb0b4ec458e02b4fbecac8a53a0c18cf7ea01"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "904b3146ea9aab3b4fdb584c74be1fa762145d3435eef653becc38ce0600c1bc"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "4314df24dbc51fc3a550abae4669d5daee4d0d5f7345efb1a293dcb00b0dc658"
+    sha256 cellar: :any,                 arm64_sonoma:  "ad58b22edf3778517afe34abfe00228431091f78250584041ff8dea6cc272958"
+    sha256 cellar: :any,                 arm64_ventura: "871565b7664a22baccbd3f305c36080f89a40fcb1475db9154387f356f2485dd"
+    sha256 cellar: :any,                 sonoma:        "47a577cadb085e473b583c7d2eb13c10830c91ac96f03604867e7e841b89aeb5"
+    sha256 cellar: :any,                 ventura:       "984be44555789dde7ec0bdb1e6d2ba85d89325bf9905f34d2f194d167e06114c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e2d636949e159c733480d4fdb333eabb95ba00bbf9d1477a4145eaae8ed379a6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c660f6bb7620804f6143a739971b08a35a85bf60958151bac76bfdf8817b8ae7"
   end
 
   head do
@@ -50,7 +49,7 @@ class Zeromq < Formula
     # https://github.com/Homebrew/homebrew-core/pull/35940#issuecomment-454177261
 
     system "./autogen.sh" if build.head?
-    system "./configure", "--with-libsodium", *std_configure_args
+    system "./configure", "--with-libsodium", "--enable-drafts", *std_configure_args
     system "make"
     system "make", "install"
   end

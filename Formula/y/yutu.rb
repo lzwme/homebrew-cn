@@ -2,18 +2,18 @@ class Yutu < Formula
   desc "Fully functional CLI for YouTube"
   homepage "https://github.com/eat-pray-ai/yutu"
   url "https://github.com/eat-pray-ai/yutu.git",
-      tag:      "v0.9.9",
-      revision: "3bbf6c1312ec30663b6a45d23397ec06022d1c4e"
+      tag:      "v0.9.10",
+      revision: "a074d5564d4c7eb562dc11108b5ca06f842029bf"
   license "MIT"
   head "https://github.com/eat-pray-ai/yutu.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4781bde139db6547ea67f1fc217e47ce4f947873bb8f89ea6b4e80ad3c74dd43"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4781bde139db6547ea67f1fc217e47ce4f947873bb8f89ea6b4e80ad3c74dd43"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "4781bde139db6547ea67f1fc217e47ce4f947873bb8f89ea6b4e80ad3c74dd43"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e735997feac41cf87e25cd38df9005fff6f6215829024de798391b92cae11764"
-    sha256 cellar: :any_skip_relocation, ventura:       "e735997feac41cf87e25cd38df9005fff6f6215829024de798391b92cae11764"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a3f35d1b2e82f4bd842cdcd6e7d5f0687365761d23082c1c1ffddef38b132f8a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "06738845be37b5af38326ce2d5d589ca73f1a71dd0eb315ead52967b54094651"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "06738845be37b5af38326ce2d5d589ca73f1a71dd0eb315ead52967b54094651"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "06738845be37b5af38326ce2d5d589ca73f1a71dd0eb315ead52967b54094651"
+    sha256 cellar: :any_skip_relocation, sonoma:        "450807c5b5a1e0fa39df551a1677f23f4189b2fe13f425840f5b09d728378a5d"
+    sha256 cellar: :any_skip_relocation, ventura:       "450807c5b5a1e0fa39df551a1677f23f4189b2fe13f425840f5b09d728378a5d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bf4c6e6cde1cfa1e3e11da5e683d8e5b80c840baba1b5e223ea70b72448e3093"
   end
 
   depends_on "go" => :build

@@ -1,20 +1,20 @@
 class TelegramDownloader < Formula
   desc "Telegram Messenger downloader/tools written in Golang"
   homepage "https://docs.iyear.me/tdl/"
-  url "https://ghfast.top/https://github.com/iyear/tdl/archive/refs/tags/v0.19.0.tar.gz"
-  sha256 "228899c6ac2c4e3317e35b56751b366c658746a15f670567022aa6a950608bc1"
+  url "https://ghfast.top/https://github.com/iyear/tdl/archive/refs/tags/v0.19.1.tar.gz"
+  sha256 "73d94d344e213945f2907be2f2e9c7e10a6a76a2c084fdd23d4b5b2191cd9a49"
   license "AGPL-3.0-only"
   head "https://github.com/iyear/tdl.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "022a6a5206c4ccdca15699bc374989dcf429545a7e5333362ea3161d6f2ce8c8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a8ae4c69b62aa40bec840f1f4d96ee354b56cc1861589c5b16f71b514b215312"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "53cf6c013ef8190eb58c4b515d85b20f0f6fd605e2dff1a49b637a87b77a93a4"
-    sha256 cellar: :any_skip_relocation, sonoma:        "07e48be33404b5e1cafdeb682342a1dffbccba0de95ff50c2788865232aa7b2f"
-    sha256 cellar: :any_skip_relocation, ventura:       "ccf7c91930b9650dca23fa0561b0f11bea42ef0df48ea7d7ba93c69ffb319445"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2f046f4b6861bc8979504049492fac2e3ec473d54bb89ed4b4d70d58c855e9c2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b7ea231c234bbddcf524686219b25676d98c923930ed8511090e93ced14cca13"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "019db7aa2c9dc9a91fda57b2c04f07249f31c7bbbdabc7937c0c116523bb85ae"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "0901f760e4978713da8598c761f14ed6c793af99211254e67d12e62f3864844a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "24dc299a3d41adaaaa41bfe14e10055c0e0b41125d9e9f3bdeb26bb5f2096f6c"
+    sha256 cellar: :any_skip_relocation, ventura:       "1771773d1c578965491cb3f7feeee03dd2eb6eaf83d33049ccd3db471dfc7aeb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9184ee76388978d5bfb1cfe8a2ff6c6eca254d265d6bae5b053382b91b631e01"
   end
 
   depends_on "go" => :build

@@ -1,19 +1,19 @@
 class Bkmr < Formula
   desc "Unified CLI Tool for Bookmark, Snippet, and Knowledge Management"
   homepage "https://github.com/sysid/bkmr"
-  url "https://ghfast.top/https://github.com/sysid/bkmr/archive/refs/tags/v4.28.3.tar.gz"
-  sha256 "3be293b3efa2d738efddddccb675cfb6b82b08f11962285735d755f1fcc302fe"
+  url "https://ghfast.top/https://github.com/sysid/bkmr/archive/refs/tags/v4.28.4.tar.gz"
+  sha256 "572657db08b817db7a88900843bf42e01b5be8fe386df2d86229e754beaef1c0"
   license "BSD-3-Clause"
   head "https://github.com/sysid/bkmr.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "415d28c6d75e7d0dd775c0942f8612a4500a922ec50b5285e7836d8e90d6436d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5c4c213e396e5b6a21242b7c1ad2e831795c82e16ea9215d8fd8bebea170ec40"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "7bb2f4a4aaba745de4cd66a75749e5cbaa7937a0e37ac6532b1fd5aceed87bde"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4627e5cbf563bd420efddef29043956f8e66cd105866ae4970c6efa980733f83"
-    sha256 cellar: :any_skip_relocation, ventura:       "b91bd1476e4498403f04f57668ed2c56a532256a6e8f8cd1bb875d94619fb0ec"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cf74552dc339f288a1fd70c9386d8291a7e51055705e03c1019a6e5a5339414e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "56c342a25d16cf057e2cbd266c6f3522b65a9e79df5ded6a82123b473d3e378f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "170cc35dc15eec09751154a73e9dc3e97998f529d78273e6f9914db19db2eb65"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "29fde95505cbea02839f623628e5c45bb5d7542200155907fb0f326c96698694"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "df3e5c8520175bfb80e04db14468cf594875ff037a7a10958a9dd1590997a056"
+    sha256 cellar: :any_skip_relocation, sonoma:        "07e0e6929f02b110922654172ef76be85312226b41bc66d8f2316438f3d1e8e6"
+    sha256 cellar: :any_skip_relocation, ventura:       "e30fe265a6a0e39e8dcf664707f25fdcbfafc7b31832f91a2bcd36cae03381d6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "710e3349e995bda8fdaad10b843a277d7438b63f776f0382a2e200b53262ece9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ccb7ffbab0dd14d079b9c65fc68aa248a9730677a52e842bd643b869ba288eee"
   end
 
   depends_on "rust" => :build

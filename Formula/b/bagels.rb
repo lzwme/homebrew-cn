@@ -3,18 +3,18 @@ class Bagels < Formula
 
   desc "Powerful expense tracker that lives in your terminal"
   homepage "https://github.com/EnhancedJax/Bagels"
-  url "https://files.pythonhosted.org/packages/20/36/dee992cbb17ec0560f6c309f54cec3a1e0add44ded401c2618268212bcf2/bagels-0.3.10.tar.gz"
-  sha256 "1e6b99515965e410d9ebb99988e054816501d5b267c762a5a6bb68223ce9d9e3"
+  url "https://files.pythonhosted.org/packages/25/77/f1d0981d5432158fce0f8abde4af1360e5dc6abfc0e39dbe78082c51103e/bagels-0.3.11.tar.gz"
+  sha256 "98457622324e620f0dda9d4b8f9f8ed9e182a18d947949bbead711366343266f"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "f5dfce83466bb56be4115ca1d04d50b000b8e31259428dc3a421b8427c54a5a6"
-    sha256 cellar: :any,                 arm64_sonoma:  "03a06f962589e8a5f7c5450d1668f2890ca8b1f25723e9afd0c760b0a346802a"
-    sha256 cellar: :any,                 arm64_ventura: "1b320f861fd4c34f2a3017db4dcb9875e5a16a29488691e23cfae5441420ad49"
-    sha256 cellar: :any,                 sonoma:        "1547d1f6b00037996a7f1a78cb7ecabdb0adde6c425b0dc0e4c4afe08e93d7bb"
-    sha256 cellar: :any,                 ventura:       "2934ec9e1cdcb8db62f66a32fc6b13cbf3c1c89ef6d15f3466b2d78349eb93d2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "925daaee202213f2655da9ee847f6514959567a9d53aae3f42e46bc4550eb9f8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "df7577e47ce222d02f5ca8248e39eb646958992497cac7f4e3acbfb19f1fac3f"
+    sha256 cellar: :any,                 arm64_sequoia: "b83df89264dd08fbaab3f6b25453178166a1c844bfab641aa39f9cc3660837d0"
+    sha256 cellar: :any,                 arm64_sonoma:  "714f438252d2b6777d51f0905bcf5bd116d5d640fa74307a29a29fa6efd37e53"
+    sha256 cellar: :any,                 arm64_ventura: "6dcf8fafd377e46f6f3c4b601cba11795198758c80d49615c0f6c98903c2b352"
+    sha256 cellar: :any,                 sonoma:        "40893d276819d166e8a152022a513a660387473e6626521b5570c2840c23c0f6"
+    sha256 cellar: :any,                 ventura:       "560273ce6d0384f282739e3ec8396c474c4bced4162b9e470981309dfc8382bd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8ed8b9f9f8b1a287ffb6e374996fe5a23bd4fd085092a0da6124f452c87f3cf3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c008c2ff7cb44ea47dfe3dc2da35648fbbb6c4daf8b7284af4a6ee7124b22860"
   end
 
   depends_on "rust" => :build # for pydantic_core
@@ -38,8 +38,8 @@ class Bagels < Formula
   end
 
   resource "aiosignal" do
-    url "https://files.pythonhosted.org/packages/ba/b5/6d55e80f6d8a08ce22b982eafa278d823b541c925f11ee774b0b9c43473d/aiosignal-1.3.2.tar.gz"
-    sha256 "a8c255c66fafb1e499c9351d0bf32ff2d8a0321595ebac3b93713656d2436f54"
+    url "https://files.pythonhosted.org/packages/61/62/06741b579156360248d1ec624842ad0edf697050bbaf7c3e46394e106ad1/aiosignal-1.4.0.tar.gz"
+    sha256 "f47eecd9468083c2029cc99945502cb7708b082c232f9aca65da147157b251c7"
   end
 
   resource "annotated-types" do
@@ -133,8 +133,8 @@ class Bagels < Formula
   end
 
   resource "multidict" do
-    url "https://files.pythonhosted.org/packages/03/5d/d72502cd6dd64b0c5a5117b1701f05c38e94ffb4a1b4ab65ff0cd9b974e8/multidict-6.6.2.tar.gz"
-    sha256 "c1e8b8b0523c0361a78ce9b99d9850c51cf25e1fa3c5686030ce75df6fdf2918"
+    url "https://files.pythonhosted.org/packages/3d/2c/5dad12e82fbdf7470f29bff2171484bf07cb3b16ada60a6589af8f376440/multidict-6.6.3.tar.gz"
+    sha256 "798a9eb12dab0a6c2e29c1de6f3468af5cb2da6053a20dfa3344907eed0937cc"
   end
 
   resource "packaging" do
@@ -213,8 +213,8 @@ class Bagels < Formula
   end
 
   resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/d1/bc/51647cd02527e87d05cb083ccc402f93e441606ff1f01739a62c8ad09ba5/typing_extensions-4.14.0.tar.gz"
-    sha256 "8676b788e32f02ab42d9e7c61324048ae4c6d844a399eebace3d4979d75ceef4"
+    url "https://files.pythonhosted.org/packages/98/5a/da40306b885cc8c09109dc2e1abd358d5684b1425678151cdaed4731c822/typing_extensions-4.14.1.tar.gz"
+    sha256 "38b39f4aeeab64884ce9f74c94263ef78f3c22467c8724005483154c26648d36"
   end
 
   resource "typing-inspection" do

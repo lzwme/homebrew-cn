@@ -8,9 +8,9 @@ class Eiffelstudio < Formula
 
   livecheck do
     url "https://ftp.eiffel.com/pub/download/latest/pp/"
-    regex(/href=.*?PorterPackage[._-]std[._-]v?(\d+(?:[._-]\d+)+).t/i)
+    regex(/href=.*?PorterPackage[._-]v?(\d+(?:[._-]\d+|[._-]rev)+).t/i)
     strategy :page_match do |page, regex|
-      page.scan(regex).map { |match| match[0].tr("_-", ".") }
+      page.scan(regex).map { |match| match[0].gsub("_rev_", ".") }
     end
   end
 
