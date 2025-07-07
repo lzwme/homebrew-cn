@@ -1,19 +1,19 @@
 class Chdig < Formula
   desc "Dig into ClickHouse with TUI interface"
   homepage "https://github.com/azat/chdig"
-  url "https://ghfast.top/https://github.com/azat/chdig/archive/refs/tags/v25.6.1.tar.gz"
-  sha256 "e815466c2e16c50cd886f68a6e054c63b45389242f8e4967b5e76c44478beade"
+  url "https://ghfast.top/https://github.com/azat/chdig/archive/refs/tags/v25.6.2.tar.gz"
+  sha256 "252fca193d71ca26f00d9c10e6755a060e813168a6faf8067fb2366abcdd5e3c"
   license "MIT"
   head "https://github.com/azat/chdig.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "eb716fc06789ea84fcf2483c7536c206bf3c59c837dd7c4f2149f568b12c8b18"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1e68352fb52cef094c4c2b206635cd657a8fdcd83c79944fcf6be2ed5dd1917e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "0f90272896ed8a72e4ab715b2b20cce46ba0e1dfb0069ebccd23b523a19265dd"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f86384999cd9b25fc348bfc6d44d2f4966148029f011cea2ab14ea688869f3f8"
-    sha256 cellar: :any_skip_relocation, ventura:       "6eb60a77bc5a0bf09e5426ca17fd31dd9b66e26caf814a6b903fc43d12cad4e2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ab3ad815aa86776bf67615b80a4281975566dd25c5f8d86b2c899665700991f3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "898ef6312d233a82dca1dc3bc01010aa774c9dffd4d77944fe788a2b0250c7fd"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8d64866eff14e29e71aac9253e4bdb693c575af88050fd846c1561f4cdd7f809"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1cb005ca4570f029618123157c0a37ebda4cdf5fc3efe1c0c722e1f7b00a6adc"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "82d9a984546d5bc4603ad5c038f13168c29de1cd8557f751cccafc88a4f39b66"
+    sha256 cellar: :any_skip_relocation, sonoma:        "82dab0e7d493e406ee04b58d9d26a6e0a848c8e50ea6a5f9e83e8c6feed2076f"
+    sha256 cellar: :any_skip_relocation, ventura:       "b36a49220fc530cf0b139beb7e100933db25255504fe04c7d51487414be16267"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "512008a7e52db8d41b2f6cc7be9128fe638e88e297eafbe50d0d48069da07163"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "510551e8e4f0543b36ee36d143ac7c764e8862b21fe3787fb32a7c06de1ec235"
   end
 
   depends_on "rust" => :build

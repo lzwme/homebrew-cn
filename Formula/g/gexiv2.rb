@@ -3,18 +3,18 @@ class Gexiv2 < Formula
   homepage "https://wiki.gnome.org/Projects/gexiv2"
   # release info on the website might lag behind, refer to gitlab tags for latest release info
   # see discussions in https://gitlab.gnome.org/GNOME/gexiv2/-/issues/77
-  url "https://download.gnome.org/sources/gexiv2/0.14/gexiv2-0.14.5.tar.xz"
-  sha256 "0913c53daabab1f1ab586afd55bb55370796f2b8abcc6e37640ab7704ad99ce1"
+  url "https://download.gnome.org/sources/gexiv2/0.14/gexiv2-0.14.6.tar.xz"
+  sha256 "606c28aaae7b1f3ef5c8eabe5e7dffd7c5a1c866d25b7671fb847fe287a72b8b"
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 cellar: :any, arm64_sequoia: "e144b2db6f88e9d2e7c711935b0d5a953d926fcabf7b583ac5777d9d39e3c1e8"
-    sha256 cellar: :any, arm64_sonoma:  "fc1bf57619e3ca0b3354da1a412c06ff5ff8774082ec4d7eb53831d324d1ce35"
-    sha256 cellar: :any, arm64_ventura: "fc6939bf7c584ee6fa3c937a953ff893031846a6a74228428738dcbc76cf1869"
-    sha256 cellar: :any, sonoma:        "d942a0a277ee578fd37fcef24cb01889993677e5557f280111ab791c995a60bb"
-    sha256 cellar: :any, ventura:       "ee7209969f482ae2a0fd00e0a462a34ed1a8748c6ea845e4434b99ae97729780"
-    sha256               arm64_linux:   "6d937d19f494e9f914a9e7b9beb4aaf1cd59057532650b340b43228d7cda7f03"
-    sha256               x86_64_linux:  "22177519ec2e883557c1b91c4fcb8962ea8564f5cc00e38025da3195e6684221"
+    sha256 cellar: :any, arm64_sequoia: "b0be40f4352e5bac318259440594e2ca16a81b376348a800bfcfac353547b7c0"
+    sha256 cellar: :any, arm64_sonoma:  "d2a54167e5c765ff57d453313dd3b13517c9f92312af73cdf72be9329a6cea12"
+    sha256 cellar: :any, arm64_ventura: "7789b5180180ea16b5356d756c19b908271dec072c79a80565ba8963a6b2194a"
+    sha256 cellar: :any, sonoma:        "4a70e5aec83a5c3ea6b06cf1e78fa6328bb6ea839fb6d827061dde2d2ef72d10"
+    sha256 cellar: :any, ventura:       "8e378af8cb103ebf8fa406f4f0af5e3279e7df9c77b63c941d9c38cb43ae6dfc"
+    sha256               arm64_linux:   "cb683ac05d80a629b5b5dbbe828435f2782cbf5d2fdb7eac71f7d164fe3882fe"
+    sha256               x86_64_linux:  "e50cb89c508f33ab907a6e531ccb93727ad126509bb3098d9acce22002c79863"
   end
 
   depends_on "gobject-introspection" => :build

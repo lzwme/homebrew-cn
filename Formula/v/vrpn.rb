@@ -1,22 +1,20 @@
 class Vrpn < Formula
   desc "Virtual reality peripheral network"
   homepage "https://github.com/vrpn/vrpn/wiki"
-  url "https://ghfast.top/https://github.com/vrpn/vrpn/releases/download/version_07.35/vrpn_07.35.zip"
-  sha256 "06b74a40b0fb215d4238148517705d0075235823c0941154d14dd660ba25af19"
+  url "https://github.com/vrpn/vrpn.git",
+      tag:      "v07.36",
+      revision: "79deb000cc0b47ae49a80c92c78167c02d8a04d8"
   license "BSL-1.0"
   head "https://github.com/vrpn/vrpn.git", branch: "master"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "462a889a4d51338c58f99862c0812246a5277b9d2e234cfdf860d48c4be65220"
-    sha256 cellar: :any,                 arm64_sonoma:  "91159cd014e31a07bb587ef84b34fc15356a33f9530395556e1c53698ff67b17"
-    sha256 cellar: :any,                 arm64_ventura: "0966014087dbd6557936ebcd2c06a7ad2d93f82b8bf692efabf8f374f2d3706e"
-    sha256 cellar: :any,                 sonoma:        "4d230ea0614872eb9f765d5ad75cebfe4a940794b84306abf87bf77c48ce52b6"
-    sha256 cellar: :any,                 ventura:       "0b00fe78bd9847767966b12aadb1f66789edb318baa67b5a78fe1485fc2d01fb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "829af47c8c79baddc6660ec6cf85b79b1eea6cfeef3cd4245dcafdccfd4b89ed"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9e62daba2f3721ca392c8e47767987b5b865bd12d1100e63ca22baedcf037e73"
+    sha256 cellar: :any,                 arm64_sequoia: "6df76cd24b9715b3cd44fba0da667b8d6999759e2da6a00c8ac1e5aaf5cdc7cc"
+    sha256 cellar: :any,                 arm64_sonoma:  "96810647768b9f76928312becdbdf4566475faf3dfad67524d633e0f19456c35"
+    sha256 cellar: :any,                 arm64_ventura: "e4cadc44e87394fa280711cb00ecb7b0363a63e459a3bec2604cb66dea4707e9"
+    sha256 cellar: :any,                 sonoma:        "c07c530ba62053c232c91eaa9953b7ded4a7f874a88b57b591a9523afa4f43b7"
+    sha256 cellar: :any,                 ventura:       "85bf1f7e010c6298a774fc915b12a27efbec8c511ba8afefd4fc2027a60c9fe6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9973bb24a161a50bd8406bb48d97dfed0d9235c00b27d196b81e38841dd4d31d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "12b74a67ae4e340f4226650337b007bb94edbe27c751ccc83429120a4a91f37c"
   end
 
   depends_on "cmake" => :build

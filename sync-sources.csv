@@ -7252,7 +7252,7 @@ Homebrew-homebrew-core/Formula/v/vpn-slice.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/v/vramsteg.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vrc-get.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vroom.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/v/vrpn.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/v/vrpn.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/v/vsce.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/v/vscli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vscode-langservers-extracted.rb, Homebrew/homebrew-core, 0
@@ -11947,7 +11947,6 @@ Homebrew-homebrew-cask/Casks/g/gstreamer-runtime.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/gswitch.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/g/gtkwave.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/guijs.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/g/guild-wars2.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/guilded.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/guitar-pro.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/gulp.rb, Homebrew/homebrew-cask, 1
@@ -13002,7 +13001,6 @@ Homebrew-homebrew-cask/Casks/m/muse.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/museeks.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/musescore.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/music-decoy.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/m/music-manager.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/music-miniplayer.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/music-presence.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/music-remote.rb, Homebrew/homebrew-cask, 0
@@ -13452,7 +13450,6 @@ Homebrew-homebrew-cask/Casks/p/pester.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/pext.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/pflists.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/pg-commander.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/p/pgadmin3.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/pgadmin4.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/phantomjs.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/phd2.rb, Homebrew/homebrew-cask, 0
@@ -13496,7 +13493,6 @@ Homebrew-homebrew-cask/Casks/p/pinta.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/pinwheel.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/piphero.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/pitch.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/p/pitchperfect.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/pivy-app.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/pixel-check.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/pixel-picker.rb, Homebrew/homebrew-cask, 1
@@ -14069,7 +14065,6 @@ Homebrew-homebrew-cask/Casks/s/sequel-pro.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/sequential.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/serene.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/serial-studio.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/s/serial-tools.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/serial.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/serviio.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/servo.rb, Homebrew/homebrew-cask, 1
