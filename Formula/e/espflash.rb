@@ -1,18 +1,18 @@
 class Espflash < Formula
   desc "Serial flasher utility for Espressif SoCs and modules based on esptool.py"
   homepage "https://github.com/esp-rs/espflash"
-  url "https://ghfast.top/https://github.com/esp-rs/espflash/archive/refs/tags/v4.0.0.tar.gz"
-  sha256 "6aff44a3b8e8d551066dbf4de6114b4629c273f9684a22757fa37b965195b67c"
+  url "https://ghfast.top/https://github.com/esp-rs/espflash/archive/refs/tags/v4.0.1.tar.gz"
+  sha256 "f4eb66af5ca11a396b238878d339ca38d9ddcb7c619b47ed5fc91b7f7b4e54ac"
   license any_of: ["MIT", "Apache-2.0"]
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b805654083340324b1522f1739f75d0d4c165975fd1c3f54a73c355f9f932df5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "468e4a9bd31a86112c84d0aaf01619e2de0d4f625a5c217d70abdb17190e627d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "d868a5fe94538048ff58506df0021d2db7a9b0ab96fc9159101df5eb23322ea0"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ba2e37b2ce4035b4e2a5c99e252087f5295df67ccf4462dc9681bbe8eeadca61"
-    sha256 cellar: :any_skip_relocation, ventura:       "8f75b5772284b6821ab4bd72c250bb55f92e91cf3fcdb37ca714d080ed6a1f99"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9859d9bdf6e305acfc4600bc7cdff98547820d399a711ece58858374ff6b803a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "27cac858fe0a3ac4eb629f4f4dea38d0f12bd9e8fd82ad6d0f62091cd80ab599"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "81074a30fcabaaec83c0f923c21b3741af0e8bae338d41bfa57cab0ec2539870"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4e7376eb6973a25c45dcad18f09d4c3f06612be127f363f0553852894140271d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "2e1e5de9cb685b68e69c15d3fe1addea4448e62dfc1c98d80977abda4584dfc8"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e6a8e8e2a2fa5e5ebe008724bfa66a24c998750dd079c2907cc79d47419f16c6"
+    sha256 cellar: :any_skip_relocation, ventura:       "c2a7abbc65110221d8fdd9f1ed17774909462ce9857c250cfab04b886ccef7f7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1159d6a52f878074685cb190134179cbf6b10846482d103dd0103f046e003d4e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d3dd1267b7fd248b893dee7a09dd65caf7981ce5752009521bb6822751581bbb"
   end
 
   depends_on "pkgconf" => :build

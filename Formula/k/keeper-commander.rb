@@ -3,20 +3,19 @@ class KeeperCommander < Formula
 
   desc "Command-line and SDK interface to Keeper Password Manager"
   homepage "https://docs.keeper.io/en/privileged-access-manager/commander-cli/overview"
-  url "https://files.pythonhosted.org/packages/4a/35/946cf22d05714e4b7dfbd5b60fad139f86dc0a583497663d7c31e8e5dca3/keepercommander-17.1.2.tar.gz"
-  sha256 "ac111f0935f339edd6bb6c166124b6afed6738aff42e2c6daffe615ee676b1f7"
+  url "https://files.pythonhosted.org/packages/0c/30/fc31e1a1088565158aeed22260b21b45fa0990787650053e97b176ff4995/keepercommander-17.1.3.tar.gz"
+  sha256 "5cecc2701d623d090f83ea4fa1b5fd3fe88ff8ee9dccbfa99aeb6875f769d103"
   license "MIT"
-  revision 1
   head "https://github.com/Keeper-Security/Commander.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "5a2cf7b4ce240b0ca2006e593360b475175afbf48b7bc08e574e75945b5efdb1"
-    sha256 cellar: :any,                 arm64_sonoma:  "8cb3f62a8b4c17aa43887f3742a4b5ef23da244637e62fb6f32bf4497b7e0861"
-    sha256 cellar: :any,                 arm64_ventura: "9fa310cb5be158aad07dd67d6519bb6a515a94f0ac59a5925430c0e8d53058c5"
-    sha256 cellar: :any,                 sonoma:        "3778368fdb076f54ec8aa8463c1fb809566d0b01ea6308daeccedee6e833e5c7"
-    sha256 cellar: :any,                 ventura:       "e63a116160418551d60c686e72b3f6c4ae9db507335759cddca7105075c52c2c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0932e4ae26c2d48ef632fc2d0d0363b76cbbc7a7ac3ab21f069ab6f5cc463742"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "475502eed4da4c642e2e1000b451ce9fbf2190539348c717d1b9b7a66bb7e093"
+    sha256 cellar: :any,                 arm64_sequoia: "b64fca5851c2d506361c1ac2cdb9041fddde2a22ca81c3ef31e0c8d1051a8e40"
+    sha256 cellar: :any,                 arm64_sonoma:  "e4189621147b0788627a229a05dabf0a232097ed0a3fd367a5f3a9f6ad516af8"
+    sha256 cellar: :any,                 arm64_ventura: "43c2076095ac13a204b400426d3ee1a91f0381f6076c38cb4fe3a8a35a02f028"
+    sha256 cellar: :any,                 sonoma:        "48d93b28fc1085c032767186fa37bd1b990f181f20430b1432fcd47a543773fb"
+    sha256 cellar: :any,                 ventura:       "f440ce4f3bfdb52597449aa2aaba78be955b2825cba71749b0685f74ca2a9e78"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7382b110c6dca8cfc304532dbd253aa2fdb99b74179cc4d72d3255fee5040efe"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f206fa0734f7cf93326b6c0f50a34621c7d4c7647515704f3a1624b6a90a09f3"
   end
 
   depends_on "pkgconf" => :build
@@ -128,8 +127,8 @@ class KeeperCommander < Formula
   end
 
   resource "fonttools" do
-    url "https://files.pythonhosted.org/packages/2e/5a/1124b2c8cb3a8015faf552e92714040bcdbc145dfa29928891b02d147a18/fonttools-4.58.4.tar.gz"
-    sha256 "928a8009b9884ed3aae17724b960987575155ca23c6f0b8146e400cc9e0d44ba"
+    url "https://files.pythonhosted.org/packages/52/97/5735503e58d3816b0989955ef9b2df07e4c99b246469bd8b3823a14095da/fonttools-4.58.5.tar.gz"
+    sha256 "b2a35b0a19f1837284b3a23dd64fd7761b8911d50911ecd2bdbaf5b2d1b5df9c"
   end
 
   resource "fpdf2" do
@@ -298,8 +297,8 @@ class KeeperCommander < Formula
   end
 
   resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/d1/bc/51647cd02527e87d05cb083ccc402f93e441606ff1f01739a62c8ad09ba5/typing_extensions-4.14.0.tar.gz"
-    sha256 "8676b788e32f02ab42d9e7c61324048ae4c6d844a399eebace3d4979d75ceef4"
+    url "https://files.pythonhosted.org/packages/98/5a/da40306b885cc8c09109dc2e1abd358d5684b1425678151cdaed4731c822/typing_extensions-4.14.1.tar.gz"
+    sha256 "38b39f4aeeab64884ce9f74c94263ef78f3c22467c8724005483154c26648d36"
   end
 
   resource "typing-inspection" do

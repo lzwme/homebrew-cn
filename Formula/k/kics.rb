@@ -1,8 +1,8 @@
 class Kics < Formula
   desc "Detect vulnerabilities, compliance issues, and misconfigurations"
   homepage "https://kics.io/"
-  url "https://ghfast.top/https://github.com/Checkmarx/kics/archive/refs/tags/v2.1.10.tar.gz"
-  sha256 "f43dad94a7b81142d32cac827fdfe813d771c6af6d290c87a653db6341fff87e"
+  url "https://ghfast.top/https://github.com/Checkmarx/kics/archive/refs/tags/v2.1.11.tar.gz"
+  sha256 "53063b4d557b0ab62a92e144e758b48a3ffb94b083faa06d96870d6991cf55e0"
   license "Apache-2.0"
   head "https://github.com/Checkmarx/kics.git", branch: "master"
 
@@ -12,13 +12,13 @@ class Kics < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "65609cf9e0693972fd959dd2f170be5425b27254438fd4baed485b8942e00cf4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9452baea3f06cfe3eb562f36c4f7a6239922e3ab53a2b93175bf2517bfd05ab1"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "c3f202abcc3da58c47406e6af5c1473a133254f62a880e104fd080aab67ec1e3"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d93dd1fa77bf56da5680e951ef6a2ba293ea5d594a76e7886789c66f6a2cf2d8"
-    sha256 cellar: :any_skip_relocation, ventura:       "cad58bf2c5e936ead8e3d44ba4887bd2246cff4e8b9f6dd2a311cdf58818d914"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "75bce73faa0c6eadb256b4de657b9cfb76bf1e6bf8433d13ea6feab2d60ed4ea"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dfc8a3a2d65023f75d2ae8d61c4e800142672875780fc0fde5b28045eb0eb44f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a4a68da0f4975e7044abacb6ab7c3ed869169715c1ddbaf54617359e8b817e96"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "57e3e34d07d59e13b8f9f967aa271b51ff52355501f485461c771ca6406cb7c4"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "a040df651ef617a4a363358c3696b6078b314a93c9ed490bd93fa1ec5b268fac"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e2fcf7f5927dc19385d00f038c326327720e9b363af65f0da63ee28e1d292c39"
+    sha256 cellar: :any_skip_relocation, ventura:       "e8879569e93b46b55a9d66d8cc920822f6c101f62d546194ccad46f6f9eb8311"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b3b857fd1505368ba23386892751cee155d3effe8e5b6acfad5ded537f018cfd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9e14f70ba282516b0b24cc42a01c50fd8318f8f37335c9ab3c6783b335d1945f"
   end
 
   depends_on "go" => :build

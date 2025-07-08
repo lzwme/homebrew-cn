@@ -1,8 +1,8 @@
 class Kops < Formula
   desc "Production Grade K8s Installation, Upgrades, and Management"
   homepage "https://kops.sigs.k8s.io/"
-  url "https://ghfast.top/https://github.com/kubernetes/kops/archive/refs/tags/v1.32.0.tar.gz"
-  sha256 "a6b1a0d2033b043c1c3b31ff9076c4b5a057fa31ece314c1bd39c2f690cb1d00"
+  url "https://ghfast.top/https://github.com/kubernetes/kops/archive/refs/tags/v1.32.1.tar.gz"
+  sha256 "4bc0fb78048a7d6868f0ffb8e07ad6108fa4b1d513e1e1d90073733acae3ce25"
   license "Apache-2.0"
   head "https://github.com/kubernetes/kops.git", branch: "master"
 
@@ -12,13 +12,13 @@ class Kops < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "690f5f68cdb70733027e5f76fc2db1285d9733fe6989784a308541ecc9702486"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ef35b29d2805bc6f205c77b15ba3a6a9ffa4d1e6e908251da3b4b3febdc8866b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "d5c1efa010c2360ec084127ab0bcb1ae8bcce89dc7bbfccfefc36b169b692dd5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7e782ba09335a3c20e7babf269e447f49e7d15ae31cacff3e4d6a67b607072ca"
-    sha256 cellar: :any_skip_relocation, ventura:       "2545f3353c387e8032b0b0fd23c9d472504a4f66db57914fcc978ef5a25a642e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d0547a9e5548b3d5fbd1a2208b7a0ce9feff21d75c2bdbdfe7928748cff783f5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3ef6396f2909545de80ebac7b39348f7238e92f20fb68823aa8ed84257db1cfa"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "79e395d8a4e0729312a7f5914de6912b84bbf222759f90abfe2ee7042b9324aa"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "24e6c1511878b48920d97a7d96830f17c974ca779fe996b14a3b22ae0be4c2aa"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "5228775956709d7b613679f28a19ade1e4b8eb77e4c4b77bc83547ccdf2d1c54"
+    sha256 cellar: :any_skip_relocation, sonoma:        "26fc56e5a22f9ed86a9fe56e6d13fdd306a425b020ff9b56795d5feeb39155a3"
+    sha256 cellar: :any_skip_relocation, ventura:       "9eb23c22f063b3abea0e85bcfb8b7fa6560f16f1828d22d6e339509da6385860"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f0cd3ca8dbb680e200bec0712fb9d1c06bd28150b076fc38368865de5859aeb4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2ff3d46376289754e2afea450b8bf987b043143abe89b9b4663bb128364fb906"
   end
 
   depends_on "go" => :build

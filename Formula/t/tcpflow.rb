@@ -6,8 +6,13 @@ class Tcpflow < Formula
   license "GPL-3.0-only"
 
   livecheck do
-    url "https://corp.digitalcorpora.org/downloads/tcpflow/"
-    regex(/href=.*?tcpflow[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    url "https://digitalcorpora.s3.us-west-2.amazonaws.com/?list-type=2&delimiter=%2F&prefix=downloads%2Ftcpflow%2F"
+    regex(/tcpflow[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    strategy :xml do |xml, regex|
+      xml.get_elements("//Contents/Key").filter_map do |item|
+        item.text&.[](regex, 1)
+      end
+    end
   end
 
   no_autobump! because: :requires_manual_review

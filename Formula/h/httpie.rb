@@ -6,17 +6,17 @@ class Httpie < Formula
   url "https://ghfast.top/https://github.com/httpie/cli/archive/refs/tags/3.2.4.tar.gz"
   sha256 "b185cd8d81325f97c773582e50f1c5e047c2d8575b53d676469c9daf2a52f341"
   license "BSD-3-Clause"
-  revision 3
+  revision 4
   head "https://github.com/httpie/cli.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ad6f4550d781c22d796e23ba8e92fb03b34906da05fd527a7f9fb57930157458"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "eda7c60d40adb6aa1c0b29fcc13c874327e2d8856ddd8740e00894da3dc46077"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "7801dbbc9b305f9cc1d1fe31c5fe0bc912a5287f3cc142e0b303b71797f9446b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5a1f7841e53bd6341fdf80acc2c329b4cadef07889b2afcdf90c7466de568b2e"
-    sha256 cellar: :any_skip_relocation, ventura:       "06f5697bb8d7e656083a84b3982dc0d6d6e56dd47b80011c3a142d66b433d70f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "40791df8fe2938242a5c75c65cce7ddfca12b1f95d3e06ed85fd1bfc2bd236e9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2b4746efa50922ae0839f4aceb892ba60dabfa6ff706bb83f9d6592c4ff42593"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fbda2c1ab0caf612205ab7af6653a21a8dadcdb4109e5905fc28a16e34b3ed73"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c0055b5be143a4e97d1be67b9b193763e93e5eedb98551e78476ded275f7ef99"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "8bb20fe439b3c2e0dc5c5cb532a386d8fb6472312e39b4f198868ae5b8d454ed"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b2322111f5e6ab3012f33114b67caed2755918ecc0dd2e5f3309091d5174cdeb"
+    sha256 cellar: :any_skip_relocation, ventura:       "36d37512343ad7d18f23256f0e8a72ddcd96aad7421f2cfd8e0f60ad1ccd64c2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ac7e30c0b40817c5fd95fbf1cf83c75b621049873ca27b673c245c6abdbd7481"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "070ba5a53bc32fb3667c76e4011b04a807ff7423103a5039ac4a27f8d8a49ed6"
   end
 
   depends_on "certifi"
@@ -48,13 +48,13 @@ class Httpie < Formula
   end
 
   resource "multidict" do
-    url "https://files.pythonhosted.org/packages/46/b5/59f27b4ce9951a4bce56b88ba5ff5159486797ab18863f2b4c1c5e8465bd/multidict-6.5.0.tar.gz"
-    sha256 "942bd8002492ba819426a8d7aefde3189c1b87099cdf18aaaefefcf7f3f7b6d2"
+    url "https://files.pythonhosted.org/packages/3d/2c/5dad12e82fbdf7470f29bff2171484bf07cb3b16ada60a6589af8f376440/multidict-6.6.3.tar.gz"
+    sha256 "798a9eb12dab0a6c2e29c1de6f3468af5cb2da6053a20dfa3344907eed0937cc"
   end
 
   resource "pygments" do
-    url "https://files.pythonhosted.org/packages/7c/2d/c3338d48ea6cc0feb8446d8e6937e1408088a72a39937982cc6111d17f84/pygments-2.19.1.tar.gz"
-    sha256 "61c16d2a8576dc0649d9f39e089b5f02bcd27fba10d8fb4dcc28173f7a45151f"
+    url "https://files.pythonhosted.org/packages/b0/77/a5b8c569bf593b0140bde72ea885a803b82086995367bf2037de0159d924/pygments-2.19.2.tar.gz"
+    sha256 "636cb2477cec7f8952536970bc533bc43743542f70392ae026374600add5b887"
   end
 
   resource "pysocks" do

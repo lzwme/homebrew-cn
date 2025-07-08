@@ -3,17 +3,17 @@ class PodmanCompose < Formula
 
   desc "Alternative to docker-compose using podman"
   homepage "https://github.com/containers/podman-compose"
-  url "https://files.pythonhosted.org/packages/14/85/7f9ea7574a35226cb20022f5f206380d61cec9014be86df3cac0aa6a8899/podman_compose-1.4.0.tar.gz"
-  sha256 "c2d63410ef56af481d62c7264cf0653e1d0fefefdcee89c858a916f0f2e5f51f"
+  url "https://files.pythonhosted.org/packages/24/91/b168a685ca6813ff9b467d76a7365a099aec16a1032b6edf39b0cd19f6c3/podman_compose-1.5.0.tar.gz"
+  sha256 "5cc09362852711ce5d27648e41cb5fd058ea5a75acbcdec2f8d0b0c114a18e8e"
   license "GPL-2.0-only"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "741d1edae85226304ec701a1cf3655fd44b88530d9a8fd30512068a1647210e2"
-    sha256 cellar: :any,                 arm64_sonoma:  "117a908039d78c429cb489ba9e785d23af0ddbba23a271b60571a5a3b560f3ef"
-    sha256 cellar: :any,                 arm64_ventura: "213f304df9e41f5ccf8d730a29d00f8f36f11f626122f4bc7dc42b25bace43d3"
-    sha256 cellar: :any,                 sonoma:        "217da75f6dc36f60662e70b86a2b51be3a21777f0efc95fdcb7b1bfe9ebc47cd"
-    sha256 cellar: :any,                 ventura:       "e73aa26f2d193be53e6e3685e36d2be4671796067b18793b0ad147f82b746772"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f2f73b6123db9131b2045faad026def2e076b36138d9626a94f1cc7e9a6fbcc3"
+    sha256 cellar: :any,                 arm64_sequoia: "bc95b8db01360328a27dbfe521331582424ff9e2558861ffb628fc991bfa0960"
+    sha256 cellar: :any,                 arm64_sonoma:  "106210fb886ed1a3ae18f353f5bb3b1d2406b84c6073f50309b45b08a10eef97"
+    sha256 cellar: :any,                 arm64_ventura: "339634a4030bdfa570be9810d7450ebc040c8602a8283b590a79118beb4b1b1b"
+    sha256 cellar: :any,                 sonoma:        "5b7cf2ab78f0a7c9ca04d7dd874e082ba2c879a26f2c85b84625b2328d94b90a"
+    sha256 cellar: :any,                 ventura:       "6db0a62d4d6abb3a7760c430194e48d6fc588ea1da8ebf56822bfaafa2f80c69"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b4962aad4d0ab9fca270ea362f25f506e8d002f02c75b8888bc1eb0e1e0ac3d4"
   end
 
   depends_on "libyaml"
@@ -21,8 +21,8 @@ class PodmanCompose < Formula
   depends_on "python@3.13"
 
   resource "python-dotenv" do
-    url "https://files.pythonhosted.org/packages/88/2c/7bb1416c5620485aa793f2de31d3df393d3686aa8a8506d11e10e13c5baf/python_dotenv-1.1.0.tar.gz"
-    sha256 "41f90bc6f5f177fb41f53e87666db362025010eb28f60a01c9143bfa33a2b2d5"
+    url "https://files.pythonhosted.org/packages/f6/b0/4bc07ccd3572a2f9df7e6782f52b0c6c90dcbb803ac4a167702d7d0dfe1e/python_dotenv-1.1.1.tar.gz"
+    sha256 "a8a6399716257f45be6a007360200409fce5cda2661e3dec71d23dc15f6189ab"
   end
 
   resource "pyyaml" do

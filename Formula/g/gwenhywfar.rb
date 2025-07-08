@@ -1,8 +1,8 @@
 class Gwenhywfar < Formula
   desc "Utility library required by aqbanking and related software"
   homepage "https://www.aquamaniac.de/rdm/projects/gwenhywfar"
-  url "https://www.aquamaniac.de/rdm/attachments/download/529/gwenhywfar-5.12.0.tar.gz"
-  sha256 "0ad5f1447703211f1610053a94bce1e82abceda2222a2ecc9cf45b148395d626"
+  url "https://www.aquamaniac.de/rdm/attachments/download/533/gwenhywfar-5.12.1.tar.gz"
+  sha256 "d188448b9c3a9709721422ee0134b9d0b7790ab7514058d99e04399e39465dda"
   license "LGPL-2.1-or-later"
 
   livecheck do
@@ -10,15 +10,15 @@ class Gwenhywfar < Formula
     regex(/href=.*?gwenhywfar[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
-  no_autobump! because: :requires_manual_review
+  no_autobump! because: :incompatible_version_format
 
   bottle do
-    sha256 arm64_sequoia: "36e7bb5dd979060e85491ba7abad1220aeb8b69b00340cf6c162edf7bb9ab63d"
-    sha256 arm64_sonoma:  "1dd92fec7f8e3ab7426077ca39df0ee64c989378a71bd8a0926d85f08d349495"
-    sha256 arm64_ventura: "f1ef551aa010c77293d9fa52fcc29390c8c5455846fb4fbf367132b8e6062ae7"
-    sha256 sonoma:        "32c516bddf6b6850809f4019467e0ef959e5c999f382886e21e23b7f89db4902"
-    sha256 ventura:       "1778cd3befe21f89fb6b0368871a0b8e4348e4ba9510f19b049fd80172caec9e"
-    sha256 x86_64_linux:  "8a62c76819f61280a29d8961655ff5c396cda6e957e6e733521004014ac7aa6e"
+    sha256 arm64_sequoia: "9930a4548b9f0e08a4a9a1bc8eccd37631a4fec478579ebc2d161d13fe0f0f4c"
+    sha256 arm64_sonoma:  "ad8ee8d79124db8e321bd4e6437acc680dd60d6895e625326c28b77926e5d876"
+    sha256 arm64_ventura: "bb3a822d4f0ad578f9be222b4c14cb7610355778d9b2371fc735b3e83d9c355d"
+    sha256 sonoma:        "5896e3559848e093b54d532bdb052bf14e28f9cf654ddffeef0177027cdbf4bc"
+    sha256 ventura:       "2ece8422f811274a6b9240f7bb1579547b3259ff45ad1ccc331e9fe6540e6adf"
+    sha256 x86_64_linux:  "3a53be3d8dd0e85624fb761a181ac4de99baee1f9ae8cc7024ba4480cce9cc42"
   end
 
   depends_on "gettext" => :build
@@ -35,12 +35,6 @@ class Gwenhywfar < Formula
   end
 
   conflicts_with "go-size-analyzer", because: "both install `gsa` binaries"
-
-  # Fix -flat_namespace being used on Big Sur and later.
-  patch do
-    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-big_sur.diff"
-    sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
-  end
 
   # Fix endianness handling for macos builds, emailed upstream about this patch
   patch :DATA

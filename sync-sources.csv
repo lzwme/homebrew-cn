@@ -2689,7 +2689,7 @@ Homebrew-homebrew-core/Formula/g/gupnp.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gurk.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gut.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gvp.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/g/gwenhywfar.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/g/gwenhywfar.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gws.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gwt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gwyddion.rb, Homebrew/homebrew-core, 0
@@ -3607,6 +3607,7 @@ Homebrew-homebrew-core/Formula/l/ludusavi.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/luit.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/lume.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lunar-date.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/l/lunarml.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lunasvg.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lunchy-go.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lunchy.rb, Homebrew/homebrew-core, 0
@@ -13412,6 +13413,7 @@ Homebrew-homebrew-cask/Casks/p/pathephone.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/paulxstretch.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/pb.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/pcoipclient.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/p/pcsx2.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/pd-l2ork.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/pd.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/pdf-converter-master.rb, Homebrew/homebrew-cask, 0
@@ -13542,7 +13544,6 @@ Homebrew-homebrew-cask/Casks/p/poi.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/pokemon-reborn.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/pokemon-showdown.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/pokemon-tcg-live.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/p/pokemon-trading-card-game-online.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/poker-copilot.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/pokerstars.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/pokerth.rb, Homebrew/homebrew-cask, 0
@@ -15130,7 +15131,6 @@ Homebrew-homebrew-cask/Casks/x/xampp@7.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/x/xaos.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/x/xattred.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/x/xbar.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/x/xbench.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/x/xca.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/x/xcodeclangformat.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/x/xcodepilot.rb, Homebrew/homebrew-cask, 1

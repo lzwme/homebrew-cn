@@ -3,18 +3,18 @@ class Fastapi < Formula
 
   desc "CLI for FastAPI framework"
   homepage "https://fastapi.tiangolo.com/"
-  url "https://files.pythonhosted.org/packages/ca/53/8c38a874844a8b0fa10dd8adf3836ac154082cf88d3f22b544e9ceea0a15/fastapi-0.115.14.tar.gz"
-  sha256 "b1de15cdc1c499a4da47914db35d0e4ef8f1ce62b624e94e0e5824421df99739"
+  url "https://files.pythonhosted.org/packages/20/38/e1da78736143fd885c36213a3ccc493c384ae8fea6a0f0bc272ef42ebea8/fastapi-0.116.0.tar.gz"
+  sha256 "80dc0794627af0390353a6d1171618276616310d37d24faba6648398e57d687a"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "efeb13e818cf46ac8a08a4105970bee9ec053bfe1fb1572ba402dda91a8c22cc"
-    sha256 cellar: :any,                 arm64_sonoma:  "459534a1848a0df4cf5afa6824977738f26de12891928e32a594f795919dbe01"
-    sha256 cellar: :any,                 arm64_ventura: "f05a43314af62bbc32c83cac0eef3f65e2866e2bddfd4c34d5eda519dff5c1d1"
-    sha256 cellar: :any,                 sonoma:        "608f1bb8e525f864851ec25f5d38390a11adf0eedd581e14c8f79d4a5d600ae0"
-    sha256 cellar: :any,                 ventura:       "7643c1b67b3911eecb586f3b10a7071f2165bac8a59f053b1af6e6d5806b9531"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3f374dbda7478404b32314fd40a3ea54abfa72065b76b8c650a0e9578c8b780b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "937e814542f1fd06f37e407ebf974754d23f9be9d95af3e0f2bbb0ed72bddfd1"
+    sha256 cellar: :any,                 arm64_sequoia: "e35984d767da05c8d6ca3712aacf2c8be5aaaabcd21484c7f54c1ff27c976118"
+    sha256 cellar: :any,                 arm64_sonoma:  "b615fe9081c4114392364b7f435ca869746ad23419d7a028e47537ce50278eb2"
+    sha256 cellar: :any,                 arm64_ventura: "8707d408d37139928e7ead63c1571933459da9aa7d874e8c3301037fb83f590a"
+    sha256 cellar: :any,                 sonoma:        "bf004a97571c1fd768c9f68daaf3a90835020a6ed5499eb98a5e93bda76d5a25"
+    sha256 cellar: :any,                 ventura:       "f114b64ccca53e7aeb1c079a3ec343ddf93d4150def17bb148ed93a4b769c732"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "811149e75c53aaa80323b9ade213989a350a0e45171b8465c86fa12845595fe5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c47f5e088aed9e9b588646032c86e1a050a22db49765996886ce17dfcb905787"
   end
 
   depends_on "rust" => :build # for pydantic
@@ -52,8 +52,13 @@ class Fastapi < Formula
   end
 
   resource "fastapi-cli" do
-    url "https://files.pythonhosted.org/packages/fe/73/82a5831fbbf8ed75905bacf5b2d9d3dfd6f04d6968b29fe6f72a5ae9ceb1/fastapi_cli-0.0.7.tar.gz"
-    sha256 "02b3b65956f526412515907a0793c9094abd4bfb5457b389f645b0ea6ba3605e"
+    url "https://files.pythonhosted.org/packages/c6/94/3ef75d9c7c32936ecb539b9750ccbdc3d2568efd73b1cb913278375f4533/fastapi_cli-0.0.8.tar.gz"
+    sha256 "2360f2989b1ab4a3d7fc8b3a0b20e8288680d8af2e31de7c38309934d7f8a0ee"
+  end
+
+  resource "fastapi-cloud-cli" do
+    url "https://files.pythonhosted.org/packages/ec/3d/c1291319cafec0318899a0e196616745fb7400fa215515a7e0575b871419/fastapi_cloud_cli-0.1.1.tar.gz"
+    sha256 "8014ed3529382e61b88628ecb1904df5fc51256f9090de3cc8acae892dbb7109"
   end
 
   resource "h11" do
@@ -72,8 +77,8 @@ class Fastapi < Formula
   end
 
   resource "httpx" do
-    url "https://files.pythonhosted.org/packages/b1/df/48c586a5fe32a0f01324ee087459e112ebb7224f646c0b5023f5e79e9956/httpx-0.28.1.tar.gz"
-    sha256 "75e98c5f16b0f35b567856f597f06ff2270a374470a5c2392242528e3e3e42fc"
+    url "https://files.pythonhosted.org/packages/78/82/08f8c936781f67d9e6b9eeb8a0c8b4e406136ea4c3d1f89a5db71d42e0e6/httpx-0.27.2.tar.gz"
+    sha256 "f7c2be1d2f3c3c3160d441802406b206c2b76f5947b11115e6df10c6c65e66c2"
   end
 
   resource "idna" do
@@ -137,8 +142,18 @@ class Fastapi < Formula
   end
 
   resource "rich-toolkit" do
-    url "https://files.pythonhosted.org/packages/5b/7a/cb48b7024b247631ce39b1f14a0f1abedf311fb27b892b0e0387d809d4b5/rich_toolkit-0.14.7.tar.gz"
-    sha256 "6cca5a68850cc5778915f528eb785662c27ba3b4b2624612cce8340fa9701c5e"
+    url "https://files.pythonhosted.org/packages/1b/de/d3d329d670bb271ee82e7bbc2946f985b2782f4cae2857138ed94be1335b/rich_toolkit-0.14.8.tar.gz"
+    sha256 "1f77b32e6c25d9e3644c1efbce00d8d90daf2457b3abdb4699e263c03b9ca6cf"
+  end
+
+  resource "rignore" do
+    url "https://files.pythonhosted.org/packages/b8/b5/0cc12425622a143d5c03ac719e8ea5e9afe5a342b4c00ee30f3f3b86b9fc/rignore-0.5.1.tar.gz"
+    sha256 "4f5bdedf02eaf94fc7550405ae2bcb75bdc6449ae1deb2dbea61c8a97186f7ae"
+  end
+
+  resource "sentry-sdk" do
+    url "https://files.pythonhosted.org/packages/10/59/eb90c45cb836cf8bec973bba10230ddad1c55e2b2e9ffa9d7d7368948358/sentry_sdk-2.32.0.tar.gz"
+    sha256 "9016c75d9316b0f6921ac14c8cd4fb938f26002430ac5be9945ab280f78bec6b"
   end
 
   resource "shellingham" do
@@ -162,8 +177,8 @@ class Fastapi < Formula
   end
 
   resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/d1/bc/51647cd02527e87d05cb083ccc402f93e441606ff1f01739a62c8ad09ba5/typing_extensions-4.14.0.tar.gz"
-    sha256 "8676b788e32f02ab42d9e7c61324048ae4c6d844a399eebace3d4979d75ceef4"
+    url "https://files.pythonhosted.org/packages/98/5a/da40306b885cc8c09109dc2e1abd358d5684b1425678151cdaed4731c822/typing_extensions-4.14.1.tar.gz"
+    sha256 "38b39f4aeeab64884ce9f74c94263ef78f3c22467c8724005483154c26648d36"
   end
 
   resource "typing-inspection" do
@@ -171,9 +186,14 @@ class Fastapi < Formula
     sha256 "6ae134cc0203c33377d43188d4064e9b357dba58cff3185f22924610e70a9d28"
   end
 
+  resource "urllib3" do
+    url "https://files.pythonhosted.org/packages/15/22/9ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bc/urllib3-2.5.0.tar.gz"
+    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
+  end
+
   resource "uvicorn" do
-    url "https://files.pythonhosted.org/packages/de/ad/713be230bcda622eaa35c28f0d328c3675c371238470abdea52417f17a8e/uvicorn-0.34.3.tar.gz"
-    sha256 "35919a9a979d7a59334b6b10e05d77c1d0d574c50e0fc98b8b1a0f165708b55a"
+    url "https://files.pythonhosted.org/packages/5e/42/e0e305207bb88c6b8d3061399c6a961ffe5fbb7e2aa63c9234df7259e9cd/uvicorn-0.35.0.tar.gz"
+    sha256 "bc662f087f7cf2ce11a1d7fd70b90c9f98ef2e2831556dd078d131b96cc94a01"
   end
 
   resource "uvloop" do

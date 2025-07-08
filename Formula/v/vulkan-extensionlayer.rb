@@ -1,8 +1,8 @@
 class VulkanExtensionlayer < Formula
   desc "Layer providing Vulkan features when native support is unavailable"
   homepage "https://github.com/KhronosGroup/Vulkan-ExtensionLayer"
-  url "https://ghfast.top/https://github.com/KhronosGroup/Vulkan-ExtensionLayer/archive/refs/tags/v1.4.313.tar.gz"
-  sha256 "14fdaf5cbbc02ce7dbacbaadeb1e9d63dc49f07a32214c4995ea9909bb534dc1"
+  url "https://ghfast.top/https://github.com/KhronosGroup/Vulkan-ExtensionLayer/archive/refs/tags/v1.4.321.tar.gz"
+  sha256 "177a356162cfcf47c50cc0f0dcd51630196f171f21d6cefe3fb8b5d514f60d49"
   license "Apache-2.0"
   head "https://github.com/KhronosGroup/Vulkan-ExtensionLayer.git", branch: "main"
 
@@ -12,13 +12,13 @@ class VulkanExtensionlayer < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "94de775374c14ed11217384b6254f6a5752dd7da4682146e6260dbfb67e647f5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ed2803c127bdf92346161d90b523eac3b9541ef0f1faa1731de91f1cdbd7084e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "ef1bf5af371ed8e0b45490ca766fcc5e70423547a34506d8ec0db4211e46940d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "48802535b932b6faac60aed5f4c6512c969c16658f2bd5a143ef46b6a9532a97"
-    sha256 cellar: :any_skip_relocation, ventura:       "c197d49fb984513cdc2a402aaf7483637c4b425b6c17297d9bca708734cea046"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "22b969ae8151ff0867f34ab860a927694d6026427d02f49a2e36d97a75268be2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8869b5eb81a56ca9d8f22b854949acd1081af27cbeb671ca58622fbf65256782"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "aa5ca295944b3c100152c8ac997a9a5a322be5a65686e1270bd54c83b1940b36"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a2053b993eff8b5ed5e0786d776dfb0daeb0c90fcc78963e0a7b4cf0f710661c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "d1df14370457b3dfe4ef7f4a32153d25329ea721481a4214538aeb6c955e7a17"
+    sha256 cellar: :any_skip_relocation, sonoma:        "1d8e80912889b8536d0956664105e481fa681bfe7a3cec5664bf0d0980c9d05c"
+    sha256 cellar: :any_skip_relocation, ventura:       "208e154424c6fb819d39911292c7d67a86c8ed2f33f50534924a40794ddb3b76"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6123247d479ae3fd0eff943d0b0cb059d201fbe52fef6e2dfbf1188592210810"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "35d062aa1f79e3cae8dd5de1ca1a5b7b77a3ea31eb1285b6344a281712dfb105"
   end
 
   depends_on "cmake" => :build
