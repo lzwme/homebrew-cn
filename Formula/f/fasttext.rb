@@ -6,8 +6,6 @@ class Fasttext < Formula
   license "MIT"
   head "https://github.com/facebookresearch/fastText.git", branch: "main"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "2f34f054bcdc5336bfc1dd00166ee8a07de80c678f0466b79544544608854def"
     sha256 cellar: :any,                 arm64_sonoma:   "365036caa34f9ade5d4f9685b516fd7973c2806c04b39c4aa1c54b06006ba58f"

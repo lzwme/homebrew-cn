@@ -6,8 +6,6 @@ class HasuraCli < Formula
   license "Apache-2.0"
   head "https://github.com/hasura/graphql-engine.git", branch: "master"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "3c168fb8c60738f168484fce057b62ab295aebe7274a031f0008d8d5dc4e91c4"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3c168fb8c60738f168484fce057b62ab295aebe7274a031f0008d8d5dc4e91c4"

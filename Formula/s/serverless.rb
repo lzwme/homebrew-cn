@@ -6,8 +6,6 @@ class Serverless < Formula
   license "MIT"
   head "https://github.com/serverless/serverless.git", branch: "v3"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "06a1d77422f266cc1d32de082fd88653ff2acba640e4369391749f8308232abf"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4e5580e7acdb2b5a7c4c941d321aac21ccc370b40b8432ff0372b83a33227ef1"

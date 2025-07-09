@@ -8,8 +8,6 @@ class Sgr < Formula
   license "Apache-2.0"
   revision 15
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "89236b60825df7faf2a732c50730fbd1eac0ff0991ffb90cf082e983124814b2"
     sha256 cellar: :any,                 arm64_sonoma:  "ba87ac70a1aa814b56c2fcfc9d59e1d0cba001fd3efba2e24d8c4ea7342842da"

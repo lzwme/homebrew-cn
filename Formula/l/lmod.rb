@@ -1,18 +1,18 @@
 class Lmod < Formula
   desc "Lua-based environment modules system to modify PATH variable"
   homepage "https://lmod.readthedocs.io"
-  url "https://ghfast.top/https://github.com/TACC/Lmod/archive/refs/tags/8.7.63.tar.gz"
-  sha256 "dec0e5e94e36e44f9e3fee36e7dc6fbb4af4e51ab997d45bf59eb1e722ef7727"
+  url "https://ghfast.top/https://github.com/TACC/Lmod/archive/refs/tags/8.7.64.tar.gz"
+  sha256 "08078a35dfdf261b327c9684effa5c517100947c042d46eb3af35904555433db"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0c9431a09e29ac9ae6db874045d9f60a5e1362433e8a7f50d3885de4f612c7db"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "46ccb1c767d9cfcb849ff145591c3aecca03cfde3fe866ebeb401fd3537b1932"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "e4bef1d1db63040e1409766b605b602fab4a378abc05f54a53c80ec517e4cb34"
-    sha256 cellar: :any_skip_relocation, sonoma:        "559fc1a2438671e301a67191baf6af3a6bd670c1477f75a70ab216b1dcf8abbb"
-    sha256 cellar: :any_skip_relocation, ventura:       "533fbdf69ee11ccda72de50848eb10ae8ae2d12b387d1c31ef9f3e71a916eb22"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4eb4795554809a8f22c44dc47b0bdb880ae828e7362ae80585a6fc43dff589e7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ff5a7f2f761bcc5fad941642858a69a54c5bc5205af2069c9e51aacd0366b82c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "54db41efad0ce692db2e97c5655f4a1883a541e42ab59b3b03908fc3b694376b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "db2dc15f1bb5f3fda1f2daca7e0883faac2b33d1bb266b833fd8eeb83a57d1e0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "d95b953137f4a60809bccfa9a929ffe520e649e865c546b87157a910ae6aea53"
+    sha256 cellar: :any_skip_relocation, sonoma:        "bbc7780052ea14013afc81f7bd231ac9eaa742dae4bda655f053a21968459a56"
+    sha256 cellar: :any_skip_relocation, ventura:       "4db9b3206cc615702dab5b99cf438e1ce9f24889b1a7d9d95230e49dcfc9fa3e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fe43224353d1d2daa4e378f922977466642207eb6c8a9521a6a98e8319ae7bee"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6a2858d23abb7747c9e133e28ec968d6129225a5041e159f497d4679e0c1c704"
   end
 
   depends_on "luarocks" => :build

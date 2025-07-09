@@ -13,8 +13,6 @@ class Vault < Formula
   license "MPL-2.0"
   head "https://github.com/hashicorp/vault.git", branch: "main"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "26af537dd044826cf7569c9cb4385e53c3de560518f8a521397b18695e9daa2c"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "18ee0a998f38e77c9e5a6bf406fc7326c69caca580efd84b277346344e1afef2"

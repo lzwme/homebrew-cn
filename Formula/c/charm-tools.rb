@@ -9,12 +9,13 @@ class CharmTools < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "daaa2ae91f166f720af38309378156240ea81507e47587b6ab8486ddb3f9637b"
-    sha256 cellar: :any,                 arm64_sonoma:  "db52b99fc42f7de27d78a8e9c4f08d428342239584901273340764b8fd72891e"
-    sha256 cellar: :any,                 arm64_ventura: "eb97682752d3dbce5512dd47e38beee9d0bbb5d009a95a357f52601978557b87"
-    sha256 cellar: :any,                 sonoma:        "ccd09b73bd59a7878f4afeba4f35f86818fe2c9f569e7b00e0c822f2f7b59342"
-    sha256 cellar: :any,                 ventura:       "68d192ff986662c94c2e366b51b4fe2cf637754f87c4d6b7be0b9450905f3427"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e225f5261746a71ca7f3cbe45fac5157887eb4cdda0682e19bbc34bf5c5a477e"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "8576a30162918984c6c883e495a1ce1885aff4114c0fb2b68601d59d0fc95271"
+    sha256 cellar: :any,                 arm64_sonoma:  "1dff5aa04345b8b75b2d5fe311b87977c73a8ec5a6cecd48a03d43b3f4e41242"
+    sha256 cellar: :any,                 arm64_ventura: "f17ad2941a8dd98eb242350fa4fa9416f878ed2285d3ebb0e1c00a8c2aa3b9ac"
+    sha256 cellar: :any,                 sonoma:        "06c35a003bc05c43207ae751996afe9ab1874bdabbdc10c127769c49e951bc23"
+    sha256 cellar: :any,                 ventura:       "c61ddd621c082d62017ab87a963361b5381ef659b843a449f0182a6bd2185a4b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8c687043d251b6fcff20ecb68b04aec794141bf0b1077e4ba5948730f67fb7a2"
   end
 
   depends_on "certifi"
@@ -174,8 +175,8 @@ class CharmTools < Formula
   end
 
   resource "stuf" do
-    url "https://files.pythonhosted.org/packages/76/62/171e06b6d2d3072ea333de19632c61a44f83199e20cbf4924d12827cf66a/stuf-0.9.16.tar.bz2"
-    sha256 "e61d64a2180c19111e129d36bfae66a0cb9392e1045827d6495db4ac9cb549b0"
+    url "https://files.pythonhosted.org/packages/f0/d6/6779cb5874630c21845d345306f60a7a5ecd9263fa09f85df745c54e3356/stuf-0.9.16.tar.gz"
+    sha256 "080a88b940ca844474c239cc7aab0c530187e637a9dc6df111a99e2955bb35db"
   end
 
   resource "translationstring" do

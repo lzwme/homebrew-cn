@@ -6,8 +6,6 @@ class Spago < Formula
   license "BSD-3-Clause"
   head "https://github.com/purescript/spago.git", branch: "master"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9d5eab4b1fb90ac9d885b97b5babd968405a5d5de9e868646f9a999eda30ea46"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "a1c516a357d01efcef8d2dc263ca4785c24b3e48559974925e8dfd985a672bf3"

@@ -1,18 +1,18 @@
 class Ncspot < Formula
   desc "Cross-platform ncurses Spotify client written in Rust"
   homepage "https://github.com/hrkfdn/ncspot"
-  url "https://ghfast.top/https://github.com/hrkfdn/ncspot/archive/refs/tags/v1.2.2.tar.gz"
-  sha256 "11555a61be381afa6196b0603d12ea34ee0c6e1660d7c586d13927f3e5ba802c"
+  url "https://ghfast.top/https://github.com/hrkfdn/ncspot/archive/refs/tags/v1.3.0.tar.gz"
+  sha256 "244f0b37b34a5b7f832c77e7fe102b0f66382156e26395cdf7e2dedfe0d71220"
   license "BSD-2-Clause"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "550dd0374f89b19ec42d30d166eead73d38681c7317fece9af40757b36ec413c"
-    sha256 cellar: :any,                 arm64_sonoma:  "fdc0d374b07983da672dabd0c0dd1a7fdfca47b69f4c346d53f408b16224058c"
-    sha256 cellar: :any,                 arm64_ventura: "30da4cb1e0c494bb35a115792ae58efed2e14075f6da9aa87db399d0445e1557"
-    sha256 cellar: :any,                 sonoma:        "b9cb4a5b28d90399618594b3f6cf0d7e3032f56962c42b8a1a8ddb0ec2e847fc"
-    sha256 cellar: :any,                 ventura:       "2ffab85ac8029a9406c7d3604f91b1ec56c27d377d09ab46cfb98fa7a1bdf614"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "beece05f5b43cf0f7df06edfd81a0ba07904ba1be052b4a7fbfb756f823096eb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dc62314bdc978974ec4f7f75a925189066309ad2ef83543efca8efc47ea5eb1f"
+    sha256 cellar: :any,                 arm64_sequoia: "1495e856fb571c6e90a6ae0d8d742eaea52b1fb7e28bc465efa626c2c072ef97"
+    sha256 cellar: :any,                 arm64_sonoma:  "b1368f6a0a50be936bfb77d8016b15987bd0ce7d10a6cbfe2eedfdc5b628d140"
+    sha256 cellar: :any,                 arm64_ventura: "69da6f5e085951b6790fec996ef8e1f630d4ba65b750c856004ce0874b5bf820"
+    sha256 cellar: :any,                 sonoma:        "c7c72bf0a65080bed5f7f4ff84cd411df2e55af470c291a73b57c77e9187064b"
+    sha256 cellar: :any,                 ventura:       "f8bf25ff27bdf05ec1375dc1fd4d9c5b74203d66054f1c3afaf4cc3d258835be"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3b1f0494911ba89fe7d429f590b52788048d8d0b4700e83972e025467423a479"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0e6424d1b77f3d3b5bc2d0e2bfea800e34fcf97d9296f2e8861ea94ae4280322"
   end
 
   depends_on "pkgconf" => :build

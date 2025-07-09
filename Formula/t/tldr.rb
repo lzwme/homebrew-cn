@@ -6,8 +6,6 @@ class Tldr < Formula
   license "MIT"
   head "https://github.com/tldr-pages/tldr-c-client.git", branch: "main"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "6af1cb13f99042c4bf60228a9365f1578488990549dba76a844909b6033c61c7"
     sha256 cellar: :any,                 arm64_sonoma:   "00d61b3c3ffb5df313b167d915d0f10896f2bfb5b4336f51332f0d7e84e2f6b2"

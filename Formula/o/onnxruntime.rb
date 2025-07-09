@@ -2,8 +2,8 @@ class Onnxruntime < Formula
   desc "Cross-platform, high performance scoring engine for ML models"
   homepage "https://github.com/microsoft/onnxruntime"
   url "https://github.com/microsoft/onnxruntime.git",
-      tag:      "v1.22.0",
-      revision: "f217402897f40ebba457e2421bc0a4702771968e"
+      tag:      "v1.22.1",
+      revision: "89746dc19a0a1ae59ebf4b16df9acab8f99f3925"
   license "MIT"
 
   livecheck do
@@ -12,13 +12,13 @@ class Onnxruntime < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "3f86b87a8fb5510d6f8c05918ba95c9d5c8ed00daa61cb01bb189d6523ae6f92"
-    sha256 cellar: :any,                 arm64_sonoma:  "a4351dd4c5f4fe151b0053d8d3826e9456271cfab20dfeed65e2f8fb4f981e17"
-    sha256 cellar: :any,                 arm64_ventura: "031529e7abd12c6d314a8bb9b02b9411134c593aeeb203afa798381954a430ae"
-    sha256 cellar: :any,                 sonoma:        "989b25e16644e5e6ca672ffd17dc03d4db442a22315d5b7ee6072f8c329e380a"
-    sha256 cellar: :any,                 ventura:       "1e370da96913bbf6a18d94ecf11e80eeef02eac9bf238d05cbee11f4b8e212fc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6d8de910a50997637a731b2cd3af8525524f8e398bda38b0fc285bdd82acae46"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "421226c4a5e4c1f469d12197715dddf281b167fe6c4db790a2280eec9d0e7f0d"
+    sha256 cellar: :any,                 arm64_sequoia: "716df4dad1fc075f8927ac9b9a8dacd10f83dfefa837cfda0904e46338ac19a1"
+    sha256 cellar: :any,                 arm64_sonoma:  "8a94053925b0a98374c6049abf5013125ce3e6822d4520f515f53cbcbc9a1515"
+    sha256 cellar: :any,                 arm64_ventura: "ee327422483ab7352404cdc291aa5c8b74c9840343a09249419f8e471bb1d5f5"
+    sha256 cellar: :any,                 sonoma:        "2bec62a1e6caff9bedf026561a16280e698418537f4cd3ddb135136b7369e80f"
+    sha256 cellar: :any,                 ventura:       "b4254cd3b4a6924a2286f480778d80f04bc963b3cfb42dc232916a0cbf021f78"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "98e025595404c7802b9a33f1d561c6b6e398e1f7592cf58917c823ee733dfbac"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "036aa7a29f29b6d007845caf3eaa82a95b3aa1872ac5cfa92f120d957827f078"
   end
 
   depends_on "boost" => :build

@@ -6,8 +6,6 @@ class Pbzx < Formula
   license "GPL-3.0-or-later"
   head "https://github.com/NiklasRosenstein/pbzx.git", branch: "master"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     sha256 cellar: :any, arm64_sequoia:  "ecaa1ce184ca795a79c535697ba31b5a4149599641d561248263f27bf175c9ca"
     sha256 cellar: :any, arm64_sonoma:   "37c826c9cf597002de46eeec44865b96760d06533ca6eee7352721f2fb8cf1c4"

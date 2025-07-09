@@ -9,8 +9,6 @@ class Unoconv < Formula
   revision 4
   head "https://github.com/unoconv/unoconv.git", branch: "master"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "4d56e2b15a6258fc3225c01543919e06a92458f16978ffa647b711952dd50a87"

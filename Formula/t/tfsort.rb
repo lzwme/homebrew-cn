@@ -1,18 +1,18 @@
 class Tfsort < Formula
   desc "CLI to sort Terraform variables and outputs"
   homepage "https://github.com/AlexNabokikh/tfsort"
-  url "https://ghfast.top/https://github.com/AlexNabokikh/tfsort/archive/refs/tags/v0.6.0.tar.gz"
-  sha256 "efbbb75b44d0a48e0871d6955c11d7210207b3d752c99d34c48468e4c2c8fe76"
+  url "https://ghfast.top/https://github.com/AlexNabokikh/tfsort/archive/refs/tags/v0.7.0.tar.gz"
+  sha256 "a94d221a7eef439b6b174cba6f84a1f945cf4c292caa7ed7577655cc8c7514cf"
   license "Apache-2.0"
   head "https://github.com/AlexNabokikh/tfsort.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f9737612cc507fec8f0d4bb798459c93baa49bad0033efb14b8b3c35b4f8a40a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f9737612cc507fec8f0d4bb798459c93baa49bad0033efb14b8b3c35b4f8a40a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "f9737612cc507fec8f0d4bb798459c93baa49bad0033efb14b8b3c35b4f8a40a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "70f710aca494baee390f28361c16e5950e7312be1fe0a6a9240a4023541edbd5"
-    sha256 cellar: :any_skip_relocation, ventura:       "70f710aca494baee390f28361c16e5950e7312be1fe0a6a9240a4023541edbd5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0bf69d5c5b2eea64283a955cb12409fa20bb42123933f4da61da2658915969f8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d977939ec4f250b8a8e5fff098899fc307edcfdfca7c50ee7adb73d0933f1e6f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d977939ec4f250b8a8e5fff098899fc307edcfdfca7c50ee7adb73d0933f1e6f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "d977939ec4f250b8a8e5fff098899fc307edcfdfca7c50ee7adb73d0933f1e6f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5afe5e0c7a959dfb7ff049be6aa1bbca757345ff96840ba3dfbcdfaf25d8b539"
+    sha256 cellar: :any_skip_relocation, ventura:       "5afe5e0c7a959dfb7ff049be6aa1bbca757345ff96840ba3dfbcdfaf25d8b539"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f49977091873ecab93eb0ac468eff66b45e62f9b48b6eefed3315462264f39cc"
   end
 
   depends_on "go" => :build

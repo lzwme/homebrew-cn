@@ -6,8 +6,6 @@ class Cmockery2 < Formula
   license "Apache-2.0"
   head "https://github.com/lpabon/cmockery2.git", branch: "master"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "adb401dab84cc193ef9d46a7d61ad44f333405afcdedf16722d94e23d211bf4c"
     sha256 cellar: :any,                 arm64_sonoma:   "ae822535550629aa3551bb7260330ca338c95c2f3c6b86641362524716aaa320"
@@ -29,6 +27,7 @@ class Cmockery2 < Formula
 
   # last commit was 7 years ago, cmockery is also deprecated
   deprecate! date: "2024-07-07", because: :unmaintained
+  disable! date: "2025-07-07", because: :unmaintained
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build

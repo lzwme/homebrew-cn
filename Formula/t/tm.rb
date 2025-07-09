@@ -6,8 +6,6 @@ class Tm < Formula
   license "Apache-2.0"
   head "https://github.com/triggermesh/tm.git", branch: "main"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "b87ee9cdc5bff6989252c305af1da3540d847784eea6f895acb5cd589abdafd1"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "bb35c98edad2b1a8ea811001ca4c9df94cd4313717622b0da3ee0b04e518e6fd"

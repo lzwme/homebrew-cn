@@ -6,8 +6,6 @@ class Elektra < Formula
   license "BSD-3-Clause"
   head "https://github.com/ElektraInitiative/libelektra.git", branch: "master"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     sha256 arm64_sequoia:  "b9880fd25ffb5e345973fbb4390edcce5c0fec8f438f417f771c14b118ac79a2"
     sha256 arm64_sonoma:   "145f4e7335c44640cb1b89fc077451ab1f0667d00fc9622d19754c8d7fda6fd0"

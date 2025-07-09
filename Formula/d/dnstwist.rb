@@ -9,13 +9,14 @@ class Dnstwist < Formula
   revision 2
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "237ec0100cf5e22352a3d1f589a00fd3ec9b72920d2d8870a9b89859ea50c846"
-    sha256 cellar: :any,                 arm64_sonoma:  "82a48d4fa4804e58158a2b437dfc8e5c816091df6e24bfbc6561306ef992a5e6"
-    sha256 cellar: :any,                 arm64_ventura: "9aeb1455b93e4aaff7da0487743312857abf9e265d981835b503a37c3f802e42"
-    sha256 cellar: :any,                 sonoma:        "6fd9fbcca0355d8144d72766ab0118c06737a7d62bd7ad64f39221fbfc463c1e"
-    sha256 cellar: :any,                 ventura:       "bd54da5217d7b849d4f30fc47bfcfbf8cbbf1411902d948d51b6a5328ad3ddaf"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cd1cb281f9f8a3eeb8bfb69aa02f8de73792855d6857ee0e199e6b9ed91c3aff"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d46d0e32a46845bdc4e23d31a7a052bb19388c4def636eb24b4f24f0e1835e35"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "54f026af21d3a4ad151daf89cfb4ece56aeeb9291308c0603fa37d254420f36f"
+    sha256 cellar: :any,                 arm64_sonoma:  "b9d1620cd77481e1e4f8e151d80a8fc057836588458796b9efa76f24f899147a"
+    sha256 cellar: :any,                 arm64_ventura: "7e0bd2a9a197096f9d3e2dcb86f57a60e4abcaba5aad21340b0a1eb0e3474326"
+    sha256 cellar: :any,                 sonoma:        "52e6839fcbf0550b4755c33617c01cbb3eefd828a8e1c3a9c94f6d2bba2c5be0"
+    sha256 cellar: :any,                 ventura:       "9466a4f1e7dcdf9f693735ae10184e36c8c6dcb1bfa88f44419c5298afaaea89"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "517c96a7acdd9719517ac56af1e6ec98f49b9a42edbf64ceaf152dc6b005a422"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7a7745bbae9164883614da50be6095ac520e737388e22e532d07835a8eb8fbe4"
   end
 
   depends_on "certifi"
@@ -40,8 +41,8 @@ class Dnstwist < Formula
   end
 
   resource "aiosignal" do
-    url "https://files.pythonhosted.org/packages/ba/b5/6d55e80f6d8a08ce22b982eafa278d823b541c925f11ee774b0b9c43473d/aiosignal-1.3.2.tar.gz"
-    sha256 "a8c255c66fafb1e499c9351d0bf32ff2d8a0321595ebac3b93713656d2436f54"
+    url "https://files.pythonhosted.org/packages/61/62/06741b579156360248d1ec624842ad0edf697050bbaf7c3e46394e106ad1/aiosignal-1.4.0.tar.gz"
+    sha256 "f47eecd9468083c2029cc99945502cb7708b082c232f9aca65da147157b251c7"
   end
 
   resource "attrs" do
@@ -80,13 +81,13 @@ class Dnstwist < Formula
   end
 
   resource "multidict" do
-    url "https://files.pythonhosted.org/packages/46/b5/59f27b4ce9951a4bce56b88ba5ff5159486797ab18863f2b4c1c5e8465bd/multidict-6.5.0.tar.gz"
-    sha256 "942bd8002492ba819426a8d7aefde3189c1b87099cdf18aaaefefcf7f3f7b6d2"
+    url "https://files.pythonhosted.org/packages/3d/2c/5dad12e82fbdf7470f29bff2171484bf07cb3b16ada60a6589af8f376440/multidict-6.6.3.tar.gz"
+    sha256 "798a9eb12dab0a6c2e29c1de6f3468af5cb2da6053a20dfa3344907eed0937cc"
   end
 
   resource "ppdeep" do
-    url "https://files.pythonhosted.org/packages/64/ad/ca722788606970d227b1778c158d4a04ffd8190487fa80b3273e3fa587ac/ppdeep-20200505.tar.gz"
-    sha256 "acc74bb902e6d21b03d39aed740597093c6562185bfe06da9b5272e01c80a1ff"
+    url "https://files.pythonhosted.org/packages/f2/74/d328ee495bcf5f98ae2967fdce45e1ca4b73e8f253e24a61e50f7527d5d9/ppdeep-20250625.tar.gz"
+    sha256 "b7da50e54ed9bd79326382b6f2f51f371816f0495a5233dee23a9469f87a2a78"
   end
 
   resource "propcache" do

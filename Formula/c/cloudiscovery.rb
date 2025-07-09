@@ -8,8 +8,6 @@ class Cloudiscovery < Formula
   license "Apache-2.0"
   revision 4
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "256b308ecc554b73243bb67c3c915c41803a6412945ee1673e8cfbb0458341ba"
     sha256 cellar: :any,                 arm64_sonoma:  "ce19aa2a03d018c44b919ecc49c54b3d315a768fb316b28fd8184e3f3af79df4"

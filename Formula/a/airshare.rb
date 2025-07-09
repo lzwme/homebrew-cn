@@ -11,13 +11,14 @@ class Airshare < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "943a48469f97b9e9edaad7520cab605f75ad91078f81a1406c5f8a36a2dcf18f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "410fda2633833000989fa212adde23b7f904683a66279eeb959fbe712659495e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "e6a8eba479fcadfee6bb0e2b7c9a02d4a9531861980fdae0858c59cca578245a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5d6d1530a125d3839e0e9b101122c420d86fb564d43a38c8f81f5970c772e60e"
-    sha256 cellar: :any_skip_relocation, ventura:       "dbfaa54f18f9fb3c08a6f5d07b7d5c0cacccbbf6d1f6324294f797e1e4b18dae"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ca8dbfe91e37a9287a804622a1392dc25eaf20256b03506b3172704f15cf221b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f6a842d22dd74de4a9b4c5038607e8f94479f14bb0c762dd2d824699f8ced6ee"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "788ff35c84c01d325cbd7d839079907c0ada77e021cf3b34ff6aff956d31eb8d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "01c360fd06e99a1369ef80f35b7e14b1ecbc245b3d75d4d176148a2adfeb33e1"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "25d3b02104872f23235580f7532dbe1bd684190da52029ade86fb2fc1a1a6e3e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c0862464272168098ab9cbb8023d533959cb6ab71aa70c1c1fd644e59bf127c6"
+    sha256 cellar: :any_skip_relocation, ventura:       "fa8122ee12d03cd7c1c2e9b765625c057cb346df0e9894aceb781f7121a0af78"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5dccfccf439a763b946ce2869831603cc7230097fe04b4c516eba18ab2acb38b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e4abda68288e930659bf701b6a32c8a4926604bfa3257394ee91c2f7e8106115"
   end
 
   depends_on "python@3.13"
@@ -33,8 +34,8 @@ class Airshare < Formula
   end
 
   resource "aiosignal" do
-    url "https://files.pythonhosted.org/packages/ba/b5/6d55e80f6d8a08ce22b982eafa278d823b541c925f11ee774b0b9c43473d/aiosignal-1.3.2.tar.gz"
-    sha256 "a8c255c66fafb1e499c9351d0bf32ff2d8a0321595ebac3b93713656d2436f54"
+    url "https://files.pythonhosted.org/packages/61/62/06741b579156360248d1ec624842ad0edf697050bbaf7c3e46394e106ad1/aiosignal-1.4.0.tar.gz"
+    sha256 "f47eecd9468083c2029cc99945502cb7708b082c232f9aca65da147157b251c7"
   end
 
   resource "asyncio" do
@@ -88,8 +89,8 @@ class Airshare < Formula
   end
 
   resource "multidict" do
-    url "https://files.pythonhosted.org/packages/46/b5/59f27b4ce9951a4bce56b88ba5ff5159486797ab18863f2b4c1c5e8465bd/multidict-6.5.0.tar.gz"
-    sha256 "942bd8002492ba819426a8d7aefde3189c1b87099cdf18aaaefefcf7f3f7b6d2"
+    url "https://files.pythonhosted.org/packages/3d/2c/5dad12e82fbdf7470f29bff2171484bf07cb3b16ada60a6589af8f376440/multidict-6.6.3.tar.gz"
+    sha256 "798a9eb12dab0a6c2e29c1de6f3468af5cb2da6053a20dfa3344907eed0937cc"
   end
 
   resource "propcache" do

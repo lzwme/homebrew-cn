@@ -6,8 +6,6 @@ class Wapm < Formula
   license "MIT"
   head "https://github.com/wasmerio/wapm-cli.git", branch: "master"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "34251ab13608ada57daca8bb40d97979ec895c7a1e9ba1c9f6ccd2e5e0307068"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "64bcf4597cca94cacbe81f5171e942822148f75e4a5a6996c4a03755f853695d"

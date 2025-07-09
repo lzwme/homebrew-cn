@@ -5,8 +5,6 @@ class MixCompletion < Formula
   sha256 "0e3e94b199f847926f3668b4cebf1b132e63a44d438425dd5c45ac4a299f28f3"
   head "https://github.com/davidhq/mix-power-completion.git", branch: "master"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, all: "c07b1060823fba51931d64cdd01ff90ec6b03ba5f0bd6b41406456e0343e389b"

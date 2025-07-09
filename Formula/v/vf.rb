@@ -5,8 +5,6 @@ class Vf < Formula
   sha256 "6418d188b88d5f3885b7a8d24520ac47accadb5144ae24e836aafbea4bd41859"
   head "https://github.com/glejeune/vf.git", branch: "master"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, all: "e5e2d467c81269aec65859de0dd589b4493e9be0b77d047433ae1d2b98184bce"

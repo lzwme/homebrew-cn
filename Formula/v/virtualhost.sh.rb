@@ -5,8 +5,6 @@ class VirtualhostSh < Formula
   sha256 "75d34b807e71acd253876c6a99cdbc11ce31ffb159155373c83a99af862fffcc"
   head "https://github.com/virtualhost/virtualhost.sh.git", branch: "master"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, all: "caf611d27d2f3391098872acc83c015efe68d7a267e5912d423a0bfd2d3e64e3"

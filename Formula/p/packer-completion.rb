@@ -6,8 +6,6 @@ class PackerCompletion < Formula
   license "MIT"
   head "https://github.com/mrolli/packer-bash-completion.git", branch: "master"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, all: "20e50c3d1419e8e86faefc8f726f79fa19d086e438db145679b84853cb6fddeb"

@@ -1,8 +1,8 @@
 class GitSvn < Formula
   desc "Bidirectional operation between a Subversion repository and Git"
   homepage "https://git-scm.com"
-  url "https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.50.0.tar.xz"
-  sha256 "dff3c000e400ace3a63b8a6f8b3b76b88ecfdffd4504a04aba4248372cdec045"
+  url "https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.50.1.tar.xz"
+  sha256 "7e3e6c36decbd8f1eedd14d42db6674be03671c2204864befa2a41756c5c8fc4"
   license "GPL-2.0-only"
   head "https://github.com/git/git.git", branch: "master"
 
@@ -13,13 +13,13 @@ class GitSvn < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "db7dde21226e8a1d1b65f1e9ce3e99cf12a4afe7f92530da037a1eccc15018e8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "db7dde21226e8a1d1b65f1e9ce3e99cf12a4afe7f92530da037a1eccc15018e8"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "47b1194bbf35cad72773310be5b1d5e4b8ed9f0c83ee7cee0f3c4307472e7f50"
-    sha256 cellar: :any_skip_relocation, sonoma:        "db7dde21226e8a1d1b65f1e9ce3e99cf12a4afe7f92530da037a1eccc15018e8"
-    sha256 cellar: :any_skip_relocation, ventura:       "47b1194bbf35cad72773310be5b1d5e4b8ed9f0c83ee7cee0f3c4307472e7f50"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "69b76ac2013520fd98d636c1e062b1d672bf0b8157d4817893ad7543e4f70e17"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "19738128971a3567b3a2a4a00ea98f98ef1375a3d051996711bfaf78b8ce4216"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9443c387440b428a519dc695000202aeab8d83eb61b76dcddee3021850827735"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9443c387440b428a519dc695000202aeab8d83eb61b76dcddee3021850827735"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "9dcec6b1bfacf4ed7d6f2d5b91045ce60f053d8692fc7ab09cb9e35c39ad25dc"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9443c387440b428a519dc695000202aeab8d83eb61b76dcddee3021850827735"
+    sha256 cellar: :any_skip_relocation, ventura:       "9dcec6b1bfacf4ed7d6f2d5b91045ce60f053d8692fc7ab09cb9e35c39ad25dc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bebb4d1896330e3cde23849c68c3fee44c57cb481188f630987cee55c39c3364"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "12fcfe012c9a597a64c4a14e4c284b0ec386cc643238bd9581a50c1b970ae698"
   end
 
   depends_on "git"

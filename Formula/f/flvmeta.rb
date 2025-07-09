@@ -6,8 +6,6 @@ class Flvmeta < Formula
   license "GPL-2.0-or-later"
   head "https://github.com/noirotm/flvmeta.git", branch: "master"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "7b4a5ecf8a1e932fb391017b6f08d08f37ff1b405a34e9e7b7e4c7e20641a0fe"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0ba117a6573cabe3ccb7b5ae11483fe4fee639ccdb638512d338704604951fc8"

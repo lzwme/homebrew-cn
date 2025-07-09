@@ -6,8 +6,6 @@ class Mongrel2 < Formula
   license "BSD-3-Clause"
   head "https://github.com/mongrel2/mongrel2.git", branch: "develop"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     sha256 cellar: :any,                 sonoma:       "d36d8722ad689bc1c66e6a4f8844b2eb99b8b079f6cae331d2db9faa091f87c0"
     sha256 cellar: :any,                 ventura:      "a5a0d1aa9eee2249e6c1757434fab0e13da8d64d8c698ac9c7807fc390a10e25"

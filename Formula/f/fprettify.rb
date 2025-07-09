@@ -11,16 +11,16 @@ class Fprettify < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    rebuild 3
-    sha256 cellar: :any_skip_relocation, all: "f9d9e214fb3810e34036e058e5dd26087ff761ff4ff07d993badd0eeb2de2de5"
+    rebuild 4
+    sha256 cellar: :any_skip_relocation, all: "8a69f7e9e359b9e8e37d3a5704f5ec38c58986e1f32ea9df82c39a9f0d6d0840"
   end
 
   depends_on "gcc" => :test
   depends_on "python@3.13"
 
   resource "configargparse" do
-    url "https://files.pythonhosted.org/packages/70/8a/73f1008adfad01cb923255b924b1528727b8270e67cb4ef41eabdc7d783e/ConfigArgParse-1.7.tar.gz"
-    sha256 "e7067471884de5478c58a511e529f0f9bd1c66bfef1dea90935438d6c23306d1"
+    url "https://files.pythonhosted.org/packages/85/4d/6c9ef746dfcc2a32e26f3860bb4a011c008c392b83eabdfb598d1a8bbe5d/configargparse-1.7.1.tar.gz"
+    sha256 "79c2ddae836a1e5914b71d58e4b9adbd9f7779d4e6351a637b7d2d9b6c46d3d9"
   end
 
   def install

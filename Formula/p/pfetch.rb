@@ -6,8 +6,6 @@ class Pfetch < Formula
   license "MIT"
   head "https://github.com/dylanaraps/pfetch.git", branch: "master"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "1fb62a82ee4474d2d2de0fed793cc7b5245dd28d8b535b600c1b9ba5a6bea5fd"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0771fb68c047893a0b59514f822c42d3371b23734a48c62c88b151a0e386e776"

@@ -11,8 +11,6 @@ class ImapUw < Formula
   license "Apache-2.0"
   revision 1
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     rebuild 1
     sha256 cellar: :any,                 arm64_sequoia:  "1c6588d448256165bc075365c4261d53de52575e394b9661c7837e6cce5450f8"
@@ -30,6 +28,7 @@ class ImapUw < Formula
   end
 
   deprecate! date: "2024-07-03", because: :unmaintained
+  disable! date: "2025-07-07", because: :unmaintained
 
   depends_on "openssl@3"
 

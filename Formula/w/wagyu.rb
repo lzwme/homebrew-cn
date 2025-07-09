@@ -6,8 +6,6 @@ class Wagyu < Formula
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/howardwu/wagyu.git", branch: "master"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     rebuild 2
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "169cc26ad96b50f80735faec915301f7c91106aef8beb498ef50273b03eaff00"

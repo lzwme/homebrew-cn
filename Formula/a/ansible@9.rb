@@ -8,8 +8,6 @@ class AnsibleAT9 < Formula
   license "GPL-3.0-or-later"
   revision 1
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "3724755cf085d1f0fb7e6a453c1668494bfa9da897aad0551680645710466134"
     sha256 cellar: :any,                 arm64_sonoma:  "74b38329ac2ebdd120da51b69815917b398b0326818ba6481dd606fbad36abf5"

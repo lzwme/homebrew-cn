@@ -1,19 +1,19 @@
 class Sheldon < Formula
   desc "Fast, configurable, shell plugin manager"
   homepage "https://sheldon.cli.rs"
-  url "https://ghfast.top/https://github.com/rossmacarthur/sheldon/archive/refs/tags/0.8.3.tar.gz"
-  sha256 "fea159b473a9ae48779ae2094eb909262361f45d2bf3a2e3968eddacb8e3b992"
+  url "https://ghfast.top/https://github.com/rossmacarthur/sheldon/archive/refs/tags/0.8.4.tar.gz"
+  sha256 "564fbc59f0cc0b8e8734ad2e9594dca6eaffb9d9557d8f7cb5033168ed8439e7"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/rossmacarthur/sheldon.git", branch: "trunk"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "a434012f0248b23221448830af4681b7d514b3f91cb69d7885655947c3799c66"
-    sha256 cellar: :any,                 arm64_sonoma:  "83c1a9a601c18324db6c1756fddd36b5a0798faf4fe606dc05eaa709a43949cc"
-    sha256 cellar: :any,                 arm64_ventura: "c717096ce84dcda848951b2794d2e8cffa076ba36ccc5807b664164985b996d4"
-    sha256 cellar: :any,                 sonoma:        "e76795e4517ead55667041790c77da13e10d0e6d0dc7fdb26c221659a137128d"
-    sha256 cellar: :any,                 ventura:       "f9de253bc3237de0c0828c892576ccce62fe623c2f65e6306ecd60e7f04b754b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "604aae5c215f19d00dea496fb3024484ac641b5b82d910764d35d8abcb33cd7f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f1847ee940a3b575d225e592a3fca12525c42c96785ba3b8db5b3dcaca057e09"
+    sha256 cellar: :any,                 arm64_sequoia: "de1d90bb64d5d1f5d2eb78c0a9d0b3ccbb910f8bc1415eb1f475c147c242b651"
+    sha256 cellar: :any,                 arm64_sonoma:  "61992451ac6c8652073acfc3a1382877fd4758cfc0b9d6811f1fdbffddf7ca0e"
+    sha256 cellar: :any,                 arm64_ventura: "3ef397d1bec3914f0cbab1c1601c8bb3884793f1fcb1c3d8be1be4a2a5b28c94"
+    sha256 cellar: :any,                 sonoma:        "80e00d69ab0d8566d6723648ec46c8067dd355d31c18fc32d275481ca60a0212"
+    sha256 cellar: :any,                 ventura:       "fe89e45714a75cb8d828286da9854fa4f1f682bb878761d593d94eaf906aa228"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "98bb44bc236b7ca8707ffa4318273e0d1ce59efbb96918fba8acd7f71c219ab3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "251131d1853bbb40a8ed006a746d5b8142d86acfe1112444ea047fcbfa175b87"
   end
 
   depends_on "pkgconf" => :build

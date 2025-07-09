@@ -6,8 +6,6 @@ class V2rayPlugin < Formula
   license "MIT"
   head "https://github.com/shadowsocks/v2ray-plugin.git", branch: "master"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "00532fce7d2293129d839b5d0fc33993f916f79c8f748c35be37c4724dab1819"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "451c0d3013468c460f7f829d45fd5f2f91ccc20da50156f5a7b09244eff82636"

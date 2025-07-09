@@ -3,20 +3,19 @@ class Streamlink < Formula
 
   desc "CLI for extracting streams from various websites to a video player"
   homepage "https://streamlink.github.io/"
-  url "https://files.pythonhosted.org/packages/07/83/8779287122de41b79763810204ce52bf644542396dd0273ad2fa177db80d/streamlink-7.4.0.tar.gz"
-  sha256 "2cc90e5a978800c9e5b113d0b26db1079451f43441a0476255c2e99fd65e60bb"
+  url "https://files.pythonhosted.org/packages/5d/8c/1ea74183b0fce32c4c36b403bca41b798122522012c0f04919a81fc6c0b4/streamlink-7.5.0.tar.gz"
+  sha256 "c091bc77a3cc8e129a232db3e2c8d8bae2dfef96813fcdec62ee020794068fb9"
   license "BSD-2-Clause"
-  revision 2
   head "https://github.com/streamlink/streamlink.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "7fe266ad492edb5203d7ced61e28c039594b0589155ab090587dc77594aca6d2"
-    sha256 cellar: :any,                 arm64_sonoma:  "fb09660666f0db4cd30a2f9153d9d4807e883b23893bbb202fba226e89dea4d8"
-    sha256 cellar: :any,                 arm64_ventura: "811be249f61e415b90a0baf9ef9acbfd1958a5910882851c184deaf67289633a"
-    sha256 cellar: :any,                 sonoma:        "247453c9b701317f73571bfc4bdf2971a18836676341a9873ab7dd1926ea2a3d"
-    sha256 cellar: :any,                 ventura:       "73947718b7a4daee42748a712f7ed01fc058f9b756178f07b38c8e66778a203e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b1c08aa3d47c4cd7bd8eead2e811fa97ec9c171ed2e7aeeb43e9d2181d21c4d9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8ad1e85d90f2bc145507276149795a6522491f6a9c3c8878aeef49befae93475"
+    sha256 cellar: :any,                 arm64_sequoia: "20ec80395c5da626eb1b148c5f43748787ee0a71b0c83b1d3c2fe8ecebfd6b71"
+    sha256 cellar: :any,                 arm64_sonoma:  "10aaeb59143493c1474572a61957bdbea25be04fc7cf5f560512571a98200779"
+    sha256 cellar: :any,                 arm64_ventura: "e006d145ced045c130263bd298f1981927b75f6f900868e343bd9afff97496ae"
+    sha256 cellar: :any,                 sonoma:        "a33ccaef1d64fd7659015b08057c56e72e2abdbb80531b160ff899b1c6b51754"
+    sha256 cellar: :any,                 ventura:       "98b3bf3022c383a2e933acb6557872fd3fda5621736509b6f0a6d35bf02af027"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f5f4c796b464549e272366f5c14e0b2696e6239e75710754fd0ce92311daf624"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e4c9ef912fa82d9f79c47ebe84536e94c305f0499b65075cfe3ae9f0daff6b20"
   end
 
   depends_on "pkgconf" => :build
@@ -53,8 +52,8 @@ class Streamlink < Formula
   end
 
   resource "lxml" do
-    url "https://files.pythonhosted.org/packages/76/3d/14e82fc7c8fb1b7761f7e748fd47e2ec8276d137b6acfe5a4bb73853e08f/lxml-5.4.0.tar.gz"
-    sha256 "d12832e1dbea4be280b22fd0ea7c9b87f0d8fc51ba06e92dc62d52f804f78ebd"
+    url "https://files.pythonhosted.org/packages/c5/ed/60eb6fa2923602fba988d9ca7c5cdbd7cf25faa795162ed538b527a35411/lxml-6.0.0.tar.gz"
+    sha256 "032e65120339d44cdc3efc326c9f660f5f7205f3a535c1fdbf898b29ea01fb72"
   end
 
   resource "outcome" do

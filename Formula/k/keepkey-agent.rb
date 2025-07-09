@@ -11,13 +11,14 @@ class KeepkeyAgent < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "fe5abb6df497d25c25cf54b6cf0c05fdeb0b2e817c61369f9346a6b933ea21a6"
-    sha256 cellar: :any,                 arm64_sonoma:  "c94113694b5d5a191955f05d762bd0732725dc22dfaae7f068ed38ffbd537511"
-    sha256 cellar: :any,                 arm64_ventura: "8738cb6ce778923090a459caa936ab7f012540d0092b0b5b6e5f169bd5747cd5"
-    sha256 cellar: :any,                 sonoma:        "434950972d0df313af660009690495417b31d716265315c8066298a4cbd642b7"
-    sha256 cellar: :any,                 ventura:       "0660b8f20b7913e819bd76384dbd916d1085d410e8deca21c9dd5afedb529992"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e625e5ada8aff887dc167996135b08292e6924c4275345d3798ae748222bf7e7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2da29e6aa62b6209aa42aff8a56319a7e8916772a19f7dcfefa129d00308f91a"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "4ef9604e5cdd45c1cd054e8e9d3be0cc25b7473a784a276129d621d7dd316114"
+    sha256 cellar: :any,                 arm64_sonoma:  "d5204bced64588374c8271149e09a929ac222cb83a39ce82992f18600afc36a8"
+    sha256 cellar: :any,                 arm64_ventura: "13776ec6e720d1df734940c512c73ebaa4c2990080c0e8d6414f40e806a1f78d"
+    sha256 cellar: :any,                 sonoma:        "71cd7cb34c99602040d7f5055f76a6e69a8dceaa01120677c03c546bca3b3f78"
+    sha256 cellar: :any,                 ventura:       "f004387f6363861d62f69eb4773835f28176dad695ef6d95f15d1899616406e4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "45959a29c69d70cbd6ba9e6d375368d1cc858236b1b3445d838a79c22bcffde9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8ff47e5fe6dec3c9699dac2ade4f5682ade18531e1d2371eb9e1379ef1a3f2c4"
   end
 
   depends_on "pkgconf" => :build # for hidapi resource
@@ -40,8 +41,8 @@ class KeepkeyAgent < Formula
   end
 
   resource "configargparse" do
-    url "https://files.pythonhosted.org/packages/70/8a/73f1008adfad01cb923255b924b1528727b8270e67cb4ef41eabdc7d783e/ConfigArgParse-1.7.tar.gz"
-    sha256 "e7067471884de5478c58a511e529f0f9bd1c66bfef1dea90935438d6c23306d1"
+    url "https://files.pythonhosted.org/packages/85/4d/6c9ef746dfcc2a32e26f3860bb4a011c008c392b83eabdfb598d1a8bbe5d/configargparse-1.7.1.tar.gz"
+    sha256 "79c2ddae836a1e5914b71d58e4b9adbd9f7779d4e6351a637b7d2d9b6c46d3d9"
   end
 
   resource "docutils" do
@@ -110,8 +111,8 @@ class KeepkeyAgent < Formula
   end
 
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/9e/8b/dc1773e8e5d07fd27c1632c45c1de856ac3dbf09c0147f782ca6d990cf15/setuptools-80.7.1.tar.gz"
-    sha256 "f6ffc5f0142b1bd8d0ca94ee91b30c0ca862ffd50826da1ea85258a06fd94552"
+    url "https://files.pythonhosted.org/packages/18/5d/3bf57dcd21979b887f014ea83c24ae194cfcd12b9e0fda66b957c69d1fca/setuptools-80.9.0.tar.gz"
+    sha256 "f36b47402ecde768dbfafc46e8e4207b4360c654f1f3bb84475f0a28628fb19c"
   end
 
   resource "six" do

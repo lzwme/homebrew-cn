@@ -12,6 +12,7 @@ class Lunarml < Formula
     sha256 cellar: :any,                 arm64_ventura: "b9e15d9780dc25de4e2fd6292365fad7aae3e0250b2ee15e7fbcc827e861ffdf"
     sha256 cellar: :any,                 sonoma:        "bfe37be13b868f9cc63813d9fed1fe3018e291816f45ba8eaf5c59876b36fb2c"
     sha256 cellar: :any,                 ventura:       "95588395c2dcfa6363cc5e5d9c2fa8d1241cdc85a2e47baddce0e4cb4b1dd9b3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "63f392dc71b8c035f4e078aa4b7ca0e15ad1a7e20145a2769a3d1ec29aa243e1"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "6e0c9969d0590e2023d69b3ff8a4cfcad0392ce07aafe299882648b76373c43c"
   end
 

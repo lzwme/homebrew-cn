@@ -7,8 +7,6 @@ class Osm < Formula
   license "Apache-2.0"
   head "https://github.com/openservicemesh/osm.git", branch: "main"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "3290438783446cf475bf7eb660b0f83d61bf3b6634e79ed1490ac9961dfd80e2"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "355b38a1dbff9c3aaa823e43908a3f8f35896ff53b6841be6049a93a27749e6e"

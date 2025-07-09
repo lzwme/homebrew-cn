@@ -6,8 +6,6 @@ class TremorRuntime < Formula
   license "Apache-2.0"
   head "https://github.com/tremor-rs/tremor-runtime.git", branch: "main"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     rebuild 2
     sha256 cellar: :any,                 arm64_ventura:  "efa5826b0b470f692379f07d5d1303ceb0fbf1dd8d5062185042461bcd390a71"

@@ -9,8 +9,6 @@ class Terraform < Formula
   license "MPL-2.0"
   head "https://github.com/hashicorp/terraform.git", branch: "main"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "87e8faf4dc4090ff8259a2cc258ac20518c154989af694475a3105d5ad57d664"

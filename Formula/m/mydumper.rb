@@ -1,8 +1,8 @@
 class Mydumper < Formula
   desc "MySQL logical backup tool"
   homepage "https://github.com/mydumper/mydumper"
-  url "https://ghfast.top/https://github.com/mydumper/mydumper/archive/refs/tags/v0.19.3-2.tar.gz"
-  sha256 "8db52befb7cca70fdad19376dc8abd3589d112bdbc8fb824fc0fb2f3ce087424"
+  url "https://ghfast.top/https://github.com/mydumper/mydumper/archive/refs/tags/v0.19.3-3.tar.gz"
+  sha256 "678ed61d88d354750687610c871ab5fcba668be4274268c9aeafa9b53a8cbb8f"
   license "GPL-3.0-or-later"
   head "https://github.com/mydumper/mydumper.git", branch: "master"
 
@@ -13,13 +13,13 @@ class Mydumper < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "2523e308f56cb3c6559c06fd8bf8f59bb695c3534eeb5bb9a3a5a3fcaf3907d0"
-    sha256 cellar: :any,                 arm64_sonoma:  "b6c3ac47efa7db272908cb2260186f957cda354f6f41bf1726e9bcd851810c3a"
-    sha256 cellar: :any,                 arm64_ventura: "0e37c1c270102fa76145310eb5452c0180171c0681c2e74a0d45850c352465db"
-    sha256 cellar: :any,                 sonoma:        "d78423ecda9cdab523bbc7699af19ea33739a184e1f2bc8979df2d499926e963"
-    sha256 cellar: :any,                 ventura:       "0a353a78aa665cc49deadcb56a32b7444a27134720fc94f59813959d214a568d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "729f759435df2552e44a8fdf2be79fd5a8b8d6839049b3401a3644bd9260d7c0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f77c28472a9b2971cc5dc7fa5a5d16134762599931b3097d806ae8bfcbeec2aa"
+    sha256 cellar: :any,                 arm64_sequoia: "9c470dc1fea731799de845187f2fbeffb59c814296689240a5dfb3b7d5756ae1"
+    sha256 cellar: :any,                 arm64_sonoma:  "f46ec7f6636a70ec96d8e887cf2d4deb96487c7cf73a31a0bd9fb2988aeb897a"
+    sha256 cellar: :any,                 arm64_ventura: "d03984e1c701bf73739f7fff4be327312b69790dcdec8ce11300c2660aea8585"
+    sha256 cellar: :any,                 sonoma:        "197f527858dbc06d663646466050c0a58f766ce3f692805ab05f00153b798fec"
+    sha256 cellar: :any,                 ventura:       "83ebafd7ed5012c45b32173702ceaaebd226ac633e7c0ba58a93950648d59292"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1d9a6314b2a736df5433db2e2c36c2523fa65de46accca4a01f256017b2b49d1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "207adef3664276674ee3e777946e3b6d8a2166abe10d67e9da16339354770a13"
   end
 
   depends_on "cmake" => :build

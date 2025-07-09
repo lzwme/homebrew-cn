@@ -7,8 +7,6 @@ class Pypy39 < Formula
   revision 1
   head "https://github.com/pypy/pypy.git", branch: "py3.9"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     rebuild 1
     sha256 cellar: :any,                 arm64_sequoia: "ed01fb6eb45c0578207c4dbf98b0d52331fb00bef1d396642ef09805775c0877"

@@ -12,13 +12,14 @@ class HttpPrompt < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "2d177349053398b4129743d5ea5858816b95e1c8c2aecbaaa31419e8ee64db8b"
-    sha256 cellar: :any,                 arm64_sonoma:  "0d02cd0776969b748f4f2afc8536d29b85a6ef999128e874f42d2ceaf0e3ec07"
-    sha256 cellar: :any,                 arm64_ventura: "96ac17cc88394d14e629142f70816a60f7f4f95140d2b58bb61048106f35fcce"
-    sha256 cellar: :any,                 sonoma:        "500c9b1334a8f97fc5bc0207c2052c39a857bb0aca93f1a8e0792e8a49cfe4c0"
-    sha256 cellar: :any,                 ventura:       "57a8a9642c71f1072dfb9cb0c129a6ee2957a207197966669be3374ae769118e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b5cf1c51f18207481c821f7685f800bfb31aa9a2576fa849ab92d2faed6d79b8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "43b0623410fa8b352543efd00b9fdc887003a1548c908371aa2626ee51dfa52d"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "c0b2dc82f155e842743d8a7cafc07312b5697217e18655984273bc767ff19a34"
+    sha256 cellar: :any,                 arm64_sonoma:  "f03dca9d3ef4c36f3d209874fec2cfb66bd6013ff6ac106bb5f06427cbd4c824"
+    sha256 cellar: :any,                 arm64_ventura: "9086c810cca4816d80cf3a4f00b8374292819cb3556039cebec5ae3a9afc2512"
+    sha256 cellar: :any,                 sonoma:        "4636f2c190078b9de80f5f09c9e74be000c40586e5ca238c420a5682e417be4e"
+    sha256 cellar: :any,                 ventura:       "e57f064c6c45ae60b9800b9f4f76181aef2ce0be6c9a835ed6788fb0c5019162"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "81ce6c610d84f132cb8c97261f001249445180c22708c3599e83f349b36ac23f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "77b18c458944383ba9ae6b45f40cb5a788482fcf8770224830194e95f4b530b1"
   end
 
   depends_on "certifi"
@@ -61,8 +62,8 @@ class HttpPrompt < Formula
   end
 
   resource "multidict" do
-    url "https://files.pythonhosted.org/packages/46/b5/59f27b4ce9951a4bce56b88ba5ff5159486797ab18863f2b4c1c5e8465bd/multidict-6.5.0.tar.gz"
-    sha256 "942bd8002492ba819426a8d7aefde3189c1b87099cdf18aaaefefcf7f3f7b6d2"
+    url "https://files.pythonhosted.org/packages/3d/2c/5dad12e82fbdf7470f29bff2171484bf07cb3b16ada60a6589af8f376440/multidict-6.6.3.tar.gz"
+    sha256 "798a9eb12dab0a6c2e29c1de6f3468af5cb2da6053a20dfa3344907eed0937cc"
   end
 
   resource "parsimonious" do
@@ -76,8 +77,8 @@ class HttpPrompt < Formula
   end
 
   resource "pygments" do
-    url "https://files.pythonhosted.org/packages/7c/2d/c3338d48ea6cc0feb8446d8e6937e1408088a72a39937982cc6111d17f84/pygments-2.19.1.tar.gz"
-    sha256 "61c16d2a8576dc0649d9f39e089b5f02bcd27fba10d8fb4dcc28173f7a45151f"
+    url "https://files.pythonhosted.org/packages/b0/77/a5b8c569bf593b0140bde72ea885a803b82086995367bf2037de0159d924/pygments-2.19.2.tar.gz"
+    sha256 "636cb2477cec7f8952536970bc533bc43743542f70392ae026374600add5b887"
   end
 
   resource "pysocks" do

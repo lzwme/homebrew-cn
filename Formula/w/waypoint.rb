@@ -9,8 +9,6 @@ class Waypoint < Formula
   license "MPL-2.0"
   head "https://github.com/hashicorp/waypoint.git", branch: "main"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "d2e806498a739c6cb8d80559fb39dc50809ac44e8eabec1a6ddd3897d6179865"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5cb2babffdd9b657b72c097f1806e99654797855aa12c0f3d51fd3f4fb318064"

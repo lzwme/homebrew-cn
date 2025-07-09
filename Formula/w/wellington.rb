@@ -6,8 +6,6 @@ class Wellington < Formula
   license "Apache-2.0"
   head "https://github.com/wellington/wellington.git", branch: "master"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e4f2c4f169fbf4616d15989a2bfa0bed5447e1cb86be630b546c757ac79713e3"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "7141518809cbba8d42a2ff794af1fab87c327748020ae47d148f78ef3fdad0ad"

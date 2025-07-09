@@ -12,13 +12,14 @@ class HomeassistantCli < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "686ebf7592d8aa13f28a8c77c486e125235838b58be49ccabec14a886d016725"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "50de04efe64b3ad063963979ee99aa5c3567f4785d246149bd18894697ebbb7d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "70781f95a6f1011bf3c21490822a644d33bf4ebd018d0e6919492ed0bac840f6"
-    sha256 cellar: :any_skip_relocation, sonoma:        "cd9350f48a7149e078c69390b38e6b978cf08be79dea9de90d0497630fa5b646"
-    sha256 cellar: :any_skip_relocation, ventura:       "9b9123363fac8a300c57959807f5397300922ab6475e5dd7a5154f2fe91399d2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "42fe4722accd0ca6e96e32cf8777afec0d3866378125f4298aca5869f06b655a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5c65662a6d73bd47c3942ecf51dc5c15d02b3db0c39ec240572702595e0bcf89"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "532fdbfa1fd0ab793db6f69f918e92c4cdc4ebc344ce9e6a8cfcc342b3430789"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "680fa2d3fc49e8d6e029b79ed3cac8f803b739469be57b6a60eb06787e6e887a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "fc709b3119117842175d0145afe957a19a7174c287a3cc6e789ff93eee65fd7c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "84d60b9d401a5c5543c13e6e5f384ac52c24b975418fb68de32168e5b368d1e2"
+    sha256 cellar: :any_skip_relocation, ventura:       "ab023c6d393385716e7621bdd16be0e00aee52a833da39cdb8d7c89265f018fd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f426b5be1589660625222a5f892433488b03ece7ccc4a23ae8bb3a0c9b5a33d4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c171bbc37cad686513e7bdef4d360b36adc25f87ecc4415ddff737e7a1d79dad"
   end
 
   depends_on "python@3.13"
@@ -34,8 +35,8 @@ class HomeassistantCli < Formula
   end
 
   resource "aiosignal" do
-    url "https://files.pythonhosted.org/packages/ba/b5/6d55e80f6d8a08ce22b982eafa278d823b541c925f11ee774b0b9c43473d/aiosignal-1.3.2.tar.gz"
-    sha256 "a8c255c66fafb1e499c9351d0bf32ff2d8a0321595ebac3b93713656d2436f54"
+    url "https://files.pythonhosted.org/packages/61/62/06741b579156360248d1ec624842ad0edf697050bbaf7c3e46394e106ad1/aiosignal-1.4.0.tar.gz"
+    sha256 "f47eecd9468083c2029cc99945502cb7708b082c232f9aca65da147157b251c7"
   end
 
   resource "attrs" do
@@ -99,8 +100,8 @@ class HomeassistantCli < Formula
   end
 
   resource "multidict" do
-    url "https://files.pythonhosted.org/packages/46/b5/59f27b4ce9951a4bce56b88ba5ff5159486797ab18863f2b4c1c5e8465bd/multidict-6.5.0.tar.gz"
-    sha256 "942bd8002492ba819426a8d7aefde3189c1b87099cdf18aaaefefcf7f3f7b6d2"
+    url "https://files.pythonhosted.org/packages/3d/2c/5dad12e82fbdf7470f29bff2171484bf07cb3b16ada60a6589af8f376440/multidict-6.6.3.tar.gz"
+    sha256 "798a9eb12dab0a6c2e29c1de6f3468af5cb2da6053a20dfa3344907eed0937cc"
   end
 
   resource "netdisco" do

@@ -6,8 +6,6 @@ class Httpdiff < Formula
   license "GPL-2.0-only"
   head "https://github.com/jgrahamc/httpdiff.git", branch: "master"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "e3440a3284a54af6e5c28606e0d6ffcde2150980a740dd2a0bc27d435c04fba7"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2e8f493a6c29a4edf788d888adc111c2f3727b0a725661f0b62c9934292f1c43"

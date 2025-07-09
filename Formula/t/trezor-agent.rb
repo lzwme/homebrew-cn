@@ -14,14 +14,14 @@ class TrezorAgent < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    rebuild 3
-    sha256 cellar: :any,                 arm64_sequoia: "d30a423e7bb16cb85bd82c747656b8cf5f565f22322153f65e3f680c599b943b"
-    sha256 cellar: :any,                 arm64_sonoma:  "0ac21208ac317825a5fdd587048a1391270b5cdc97df69607e2b381d0c5c9606"
-    sha256 cellar: :any,                 arm64_ventura: "ee85d4ac6e1a6951e37cfa77ec7ff46eac91fb9cb0c858feb51dc0c5dba69db5"
-    sha256 cellar: :any,                 sonoma:        "7aaad0a948426ba6ae82128e18501ebed5f2279c9e3d1f0dfd00f0fa38e79fb6"
-    sha256 cellar: :any,                 ventura:       "ff6bd171a518ccbd6aaa4d6f8f6c1e0b9b14f843cebf10268c556fededd98984"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "700035e02dda5a8198db4d54383d8a2bbc2549df3273089fcd024c170d633a95"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ea07ce42c9c3de33f2c307f30522d41a43809ad90096078f3d48657be95b1942"
+    rebuild 4
+    sha256 cellar: :any,                 arm64_sequoia: "e65e3a8407fcaca9cd1ad3ebbda38d07db9fc90035732c79ec5735793dd0f13a"
+    sha256 cellar: :any,                 arm64_sonoma:  "c354ec3e5cd5cdccf140051390487e0c38ed2fea21a1d82593fa567e2a69af8a"
+    sha256 cellar: :any,                 arm64_ventura: "9b569084d339af93dfe4d993efa34832d271de259af2ae7422409cee2c18cf99"
+    sha256 cellar: :any,                 sonoma:        "dc085716a815fdad399c63686ce094df8ab1e5f3390a5c3957e214a0597280ed"
+    sha256 cellar: :any,                 ventura:       "6f0fd72e17340bde2030de0b437617cb75b26b42ffc0aaff6cac5d5e19ba2b9d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2e3b248f753e7bfec920ab9878f6bf15ce70d76e01fcc5c3f6b75550051ea55c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3e239198e8346f37019c48c0db608468225c8588085098f56486754c1baa929a"
   end
 
   depends_on "pkgconf" => :build # for hidapi resource
@@ -59,8 +59,8 @@ class TrezorAgent < Formula
   end
 
   resource "configargparse" do
-    url "https://files.pythonhosted.org/packages/70/8a/73f1008adfad01cb923255b924b1528727b8270e67cb4ef41eabdc7d783e/ConfigArgParse-1.7.tar.gz"
-    sha256 "e7067471884de5478c58a511e529f0f9bd1c66bfef1dea90935438d6c23306d1"
+    url "https://files.pythonhosted.org/packages/85/4d/6c9ef746dfcc2a32e26f3860bb4a011c008c392b83eabdfb598d1a8bbe5d/configargparse-1.7.1.tar.gz"
+    sha256 "79c2ddae836a1e5914b71d58e4b9adbd9f7779d4e6351a637b7d2d9b6c46d3d9"
   end
 
   resource "construct" do

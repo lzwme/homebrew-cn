@@ -7,8 +7,6 @@ class Taskd < Formula
   revision 1
   head "https://github.com/GothenburgBitFactory/taskserver.git", branch: "1.2.0"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     rebuild 2
     sha256 cellar: :any,                 arm64_sequoia:  "61cffe43c79c6f9b87120529a75db6303a304526f47426999b22a3115418ee7a"
@@ -23,6 +21,7 @@ class Taskd < Formula
   end
 
   deprecate! date: "2024-07-04", because: :repo_archived
+  disable! date: "2025-07-07", because: :repo_archived
 
   depends_on "cmake" => :build
   depends_on "gnutls"

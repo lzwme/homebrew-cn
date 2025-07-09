@@ -7,8 +7,6 @@ class Regula < Formula
   license "Apache-2.0"
   head "https://github.com/fugue/regula.git", branch: "master"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "78f8f0c903978728c4f426cad57acba7b83a41f40430fb0476efe43cb32f4697"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "40388fa42fc5f575c9fb2a660dfa64ea996ae9626d38befc13a6a68ef65d3d0e"

@@ -9,8 +9,6 @@ class Mentat < Formula
   revision 4
   head "https://github.com/AbanteAI/mentat.git", branch: "main"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "e50b7be43330309d729ea40eea1e7172222bd6fd9282226e7612a0ba0f55901c"
     sha256 cellar: :any,                 arm64_sonoma:  "b0f2721975cfb85bfdbdf0e14864fde5813204bfe71cc4665285a3f300b986ed"

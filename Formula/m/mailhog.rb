@@ -6,8 +6,6 @@ class Mailhog < Formula
   license "MIT"
   head "https://github.com/mailhog/MailHog.git", branch: "master"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     rebuild 2
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "4c49d108311e4eb9021edf775bb06695e02dad66525853a7da265be2dfdfb9bb"

@@ -6,8 +6,6 @@ class Neofetch < Formula
   license "MIT"
   head "https://github.com/dylanaraps/neofetch.git", branch: "master"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     rebuild 4
     sha256 cellar: :any_skip_relocation, all: "1382d315f586920f24251b6cd7a79b1c940634d073b42c72007ed87a796d1efc"

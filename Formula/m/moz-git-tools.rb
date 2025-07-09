@@ -6,8 +6,6 @@ class MozGitTools < Formula
   license all_of: ["GPL-2.0-only", "CC0-1.0"]
   head "https://github.com/mozilla/moz-git-tools.git", branch: "master"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     rebuild 2
     sha256 cellar: :any_skip_relocation, all: "fe6165fdfda101ce38db57eb7352acf2fd00e96edef8eceef8fe30565cc07da1"

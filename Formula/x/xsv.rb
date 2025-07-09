@@ -6,8 +6,6 @@ class Xsv < Formula
   license any_of: ["MIT", "Unlicense"]
   head "https://github.com/BurntSushi/xsv.git", branch: "master"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     rebuild 3
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "f8ba12f789a98e3a3e81ef93360446b18b6b228bfce275b622cf8568a7e8cf63"

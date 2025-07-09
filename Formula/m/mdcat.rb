@@ -6,8 +6,6 @@ class Mdcat < Formula
   license "MPL-2.0"
   head "https://github.com/swsnr/mdcat.git", branch: "main"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "dda4028d4876c70766d9ae577c60741c5604de5673b8acae0e26dc4f5d8df08e"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "803ea6ced03a51fc184834642a4abed39d82525146c410dd0c9471f4a132f4b6"

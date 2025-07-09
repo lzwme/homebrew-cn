@@ -6,8 +6,6 @@ class Msgpuck < Formula
   license "BSD-2-Clause"
   head "https://github.com/rtsisyk/msgpuck.git", branch: "master"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "f84409ca74ea32a8c71174901ecdbe9abbf3d459df7fc5d1eac35f59ad7fc267"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2d53fd2848632fe20526ee4808f269706c4788b7e3f8d41f329fbb9c2437b77b"

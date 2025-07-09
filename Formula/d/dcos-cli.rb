@@ -6,8 +6,6 @@ class DcosCli < Formula
   license "Apache-2.0"
   head "https://github.com/dcos/dcos-cli.git", branch: "master"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "ce669ecdf711ee9694e40d12a22866fae9e14c59ac55436cc6284133c25b88d5"
@@ -27,6 +25,7 @@ class DcosCli < Formula
 
   # D2iQ (formerly Mesosphere) has shutdown last year
   deprecate! date: "2024-07-07", because: :unmaintained
+  disable! date: "2025-07-07", because: :unmaintained
 
   depends_on "go" => :build
 

@@ -9,8 +9,6 @@ class Packer < Formula
   license "MPL-2.0"
   head "https://github.com/hashicorp/packer.git", branch: "main"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "d67db7e0fdf90d1d7531d79c42383ded2451fe88b6c3da67342a3b29e2cda2f8"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a88ef4032fc80f0347ece6d35b91a41ebed9aed3ed04af63d1dd03e809d324aa"

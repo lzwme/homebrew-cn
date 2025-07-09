@@ -12,13 +12,14 @@ class SlitherAnalyzer < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "0c202c7398f1698321960003d9faad20bf3fbc7c7f04d46e2b71a6289328607e"
-    sha256 cellar: :any,                 arm64_sonoma:  "dcb6315b46b06a3345c2ae85b27645645986ad83b41e6f4542402e520b53ed05"
-    sha256 cellar: :any,                 arm64_ventura: "9d6508d4906ecf89df63240535364b86446bc6532d6217eae3d67cd39ad5fb50"
-    sha256 cellar: :any,                 sonoma:        "319e286d59474836deb0cfaf35a36146b12c2e47c115017ef30b7b992227a8f4"
-    sha256 cellar: :any,                 ventura:       "9ac1a7506762a7a9d286aa6b4868bb7746b955468e9dc4f314532499406f3436"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "20e0334bfbb5240132c0daa6ad34eaf7a8d880671e1ddab846c1e9273fa1cde0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9daf8a04a16d26d54298c0d3a57e59e21449b64d4d85da497f70132aca8feaec"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "0f221ce11167436927e4f6c63412858355ce0eb3f3976ca1c3954355c5abcb89"
+    sha256 cellar: :any,                 arm64_sonoma:  "1cd148cd99d734a13a0f22fbde2789124ac1ee64e0c9ef59dadef22f2cdbd26b"
+    sha256 cellar: :any,                 arm64_ventura: "e4b349904ab125fb7157619cd490e9930df3d89d96be05c49342b2c700f7ebd0"
+    sha256 cellar: :any,                 sonoma:        "5066490ff24b2a4d362ee08b058c8a87dc7d41342a505eff8778dc243a0d1cd1"
+    sha256 cellar: :any,                 ventura:       "1ac55a6dc52f48fc823425febdea84875226a5932d31c22db5c75481c7b5f452"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "095af75047a69659af1a73d000eeba954b9c3372888711f8fd2a32cb698ba8ac"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bcf095c52f2a0a7c922676fcd6120e3e4d3eee077c8f7c6e24376a201dc3554b"
   end
 
   depends_on "rust" => :build # for rpds-py
@@ -36,8 +37,8 @@ class SlitherAnalyzer < Formula
   end
 
   resource "aiosignal" do
-    url "https://files.pythonhosted.org/packages/ba/b5/6d55e80f6d8a08ce22b982eafa278d823b541c925f11ee774b0b9c43473d/aiosignal-1.3.2.tar.gz"
-    sha256 "a8c255c66fafb1e499c9351d0bf32ff2d8a0321595ebac3b93713656d2436f54"
+    url "https://files.pythonhosted.org/packages/61/62/06741b579156360248d1ec624842ad0edf697050bbaf7c3e46394e106ad1/aiosignal-1.4.0.tar.gz"
+    sha256 "f47eecd9468083c2029cc99945502cb7708b082c232f9aca65da147157b251c7"
   end
 
   resource "annotated-types" do
@@ -51,8 +52,8 @@ class SlitherAnalyzer < Formula
   end
 
   resource "bitarray" do
-    url "https://files.pythonhosted.org/packages/b8/0d/15826c7c2d49a4518a1b24b0d432f1ecad2e0b68168f942058b5de498498/bitarray-3.4.2.tar.gz"
-    sha256 "78ed2b911aabede3a31e3329b1de8abdc8104bd5e0545184ddbd9c7f668f4059"
+    url "https://files.pythonhosted.org/packages/0d/0f/6ecf00ec04622b8309aca3cfbdba20d5399d9e4e5a4b156d9ffd2e5610d3/bitarray-3.5.0.tar.gz"
+    sha256 "e10ae216416c36500c86c08ffceaf7589f6ad54056a7007845cdd907813e7d25"
   end
 
   resource "cbor2" do
@@ -136,8 +137,8 @@ class SlitherAnalyzer < Formula
   end
 
   resource "multidict" do
-    url "https://files.pythonhosted.org/packages/46/b5/59f27b4ce9951a4bce56b88ba5ff5159486797ab18863f2b4c1c5e8465bd/multidict-6.5.0.tar.gz"
-    sha256 "942bd8002492ba819426a8d7aefde3189c1b87099cdf18aaaefefcf7f3f7b6d2"
+    url "https://files.pythonhosted.org/packages/3d/2c/5dad12e82fbdf7470f29bff2171484bf07cb3b16ada60a6589af8f376440/multidict-6.6.3.tar.gz"
+    sha256 "798a9eb12dab0a6c2e29c1de6f3468af5cb2da6053a20dfa3344907eed0937cc"
   end
 
   resource "packaging" do
@@ -211,8 +212,8 @@ class SlitherAnalyzer < Formula
   end
 
   resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/d1/bc/51647cd02527e87d05cb083ccc402f93e441606ff1f01739a62c8ad09ba5/typing_extensions-4.14.0.tar.gz"
-    sha256 "8676b788e32f02ab42d9e7c61324048ae4c6d844a399eebace3d4979d75ceef4"
+    url "https://files.pythonhosted.org/packages/98/5a/da40306b885cc8c09109dc2e1abd358d5684b1425678151cdaed4731c822/typing_extensions-4.14.1.tar.gz"
+    sha256 "38b39f4aeeab64884ce9f74c94263ef78f3c22467c8724005483154c26648d36"
   end
 
   resource "typing-inspection" do
