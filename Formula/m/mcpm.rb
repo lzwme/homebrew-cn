@@ -3,18 +3,18 @@ class Mcpm < Formula
 
   desc "Open source, community-driven MCP server and client manager"
   homepage "https://mcpm.sh/"
-  url "https://files.pythonhosted.org/packages/12/3f/c3ddedc1441f5154d6dccd83e9715369e54a44939bec13f14fc740ad5c7f/mcpm-2.1.0.tar.gz"
-  sha256 "9d3c750d16119fd0ab7d2e0af221f6bd103a39a292041342613587235a1f7ef4"
+  url "https://files.pythonhosted.org/packages/82/3a/2aa88fd4eeeda198d97775a48f5e0e7c3b7fb3341cb1cb70fb5819e359f0/mcpm-2.3.0.tar.gz"
+  sha256 "a500e6b5111ba7440bff9bf3752a3da9a80b37263189f18586e7ff0bd196386a"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "c612b5540e8373fe47da4d5ca1bd1f2b81c766425fb1c57658563294e916784d"
-    sha256 cellar: :any,                 arm64_sonoma:  "cb253cd515accd364c7356ace3475f79cf040c2955fc1f5521e98311bf39f650"
-    sha256 cellar: :any,                 arm64_ventura: "2e70ac13405e784fe975ac1965a5a3430ecea2e1c3f645632e8978b4baff4a99"
-    sha256 cellar: :any,                 sonoma:        "775bb642093d333c26f9694fafd60b36817d0baf14498bbc005508fc3066d9dc"
-    sha256 cellar: :any,                 ventura:       "a17b2d083580eb5649601d9defcf463e4c248dd652d764896cea49911f53883c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "16c6b695feca56319e7feb0a294669869623691d15d6083eea0650e3601f45a7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2ea66ce487f6ade32e83c3a7561df945bbdf624638e55b0e36d4de018b4ab203"
+    sha256 cellar: :any,                 arm64_sequoia: "e5f0883b258fb3f5eb5702a0520d0f9c6bb2c36958a43a25f3bb5363040fd4e7"
+    sha256 cellar: :any,                 arm64_sonoma:  "826359ab78579bd5fac27be648eaa53701a2e09ad15bee34f999fe08ae3bcfb1"
+    sha256 cellar: :any,                 arm64_ventura: "865bdddfa11123c6b560d6dc1aa11e3668d5ebe2cd7739807c61b79d0c1a4184"
+    sha256 cellar: :any,                 sonoma:        "b674f6301c1b5ae5fc7dcb197f4c70694fe7d4fd748f06f8e7de0f496f637821"
+    sha256 cellar: :any,                 ventura:       "67255f94eec2e14973b70997b732d9f545adadde6596abfca7e272ad3396d93a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "84874dfe18967636f964b529ae02b3490cb00de1c109445da6a79bdcbd8d5749"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "166d5523bc4389d305647aa44eae568867746415a177a9ca07129bedeb4f0c0b"
   end
 
   depends_on "rust" => :build
@@ -68,8 +68,8 @@ class Mcpm < Formula
   end
 
   resource "duckdb" do
-    url "https://files.pythonhosted.org/packages/35/ab/d89a4dd14311d5a0081711bc66db3fad73f7645fa7eb3844c423d2fa0a17/duckdb-1.3.1.tar.gz"
-    sha256 "8e101990a879533b1d33f003df2eb2a3c4bc7bdf976bd7ef7c32342047935327"
+    url "https://files.pythonhosted.org/packages/47/24/a2e7fb78fba577641c286fe33185789ab1e1569ccdf4d142e005995991d2/duckdb-1.3.2.tar.gz"
+    sha256 "c658df8a1bc78704f702ad0d954d82a1edd4518d7a04f00027ec53e40f591ff5"
   end
 
   resource "email-validator" do
@@ -163,8 +163,8 @@ class Mcpm < Formula
   end
 
   resource "openai" do
-    url "https://files.pythonhosted.org/packages/5e/a8/e4427729da048cb33bda15e70f09f7520bdf3577bafc546b135ecb36af7d/openai-1.93.1.tar.gz"
-    sha256 "11eb8932965d0f79ecc4cb38a60a0c4cef4bcd5fcf08b99fc9a399fa5f1e50ab"
+    url "https://files.pythonhosted.org/packages/18/2b/0d93a981afe76b4e89c57b69bf421b5f15878983fccbad321f142ba6e89b/openai-1.93.2.tar.gz"
+    sha256 "4a7312b426b5e4c98b78dfa1148b5683371882de3ad3d5f7c8e0c74f3cc90778"
   end
 
   resource "openapi-pydantic" do
@@ -305,6 +305,16 @@ class Mcpm < Formula
   resource "thefuzz" do
     url "https://files.pythonhosted.org/packages/81/4b/d3eb25831590d6d7d38c2f2e3561d3ba41d490dc89cd91d9e65e7c812508/thefuzz-0.22.1.tar.gz"
     sha256 "7138039a7ecf540da323792d8592ef9902b1d79eb78c147d4f20664de79f3680"
+  end
+
+  resource "tomli" do
+    url "https://files.pythonhosted.org/packages/18/87/302344fed471e44a87289cf4967697d07e532f2421fdaf868a303cbae4ff/tomli-2.2.1.tar.gz"
+    sha256 "cd45e1dc79c835ce60f7404ec8119f2eb06d38b1deba146f07ced3bbc44505ff"
+  end
+
+  resource "tomli-w" do
+    url "https://files.pythonhosted.org/packages/19/75/241269d1da26b624c0d5e110e8149093c759b7a286138f4efd61a60e75fe/tomli_w-1.2.0.tar.gz"
+    sha256 "2dd14fac5a47c27be9cd4c976af5a12d87fb1f0b4512f81d69cce3b35ae25021"
   end
 
   resource "tqdm" do

@@ -3,19 +3,19 @@ class Glances < Formula
 
   desc "Alternative to top/htop"
   homepage "https://nicolargo.github.io/glances/"
-  url "https://files.pythonhosted.org/packages/86/1d/f0ecfe8458688eeda966128a9106586e79bcae96677c7efecd99341d3814/glances-4.3.2.tar.gz"
-  sha256 "736faa7faea3bcd58afffd6443974b4ed4b498627a71ce5d6c9640b7b5ddbd94"
+  url "https://files.pythonhosted.org/packages/3b/a2/b0cd24f1309002f0488e9861e6c265c4e673ba6e1d3d4503382646c76c43/glances-4.3.3.tar.gz"
+  sha256 "56695ff97043149e007edbb188dea82dd29f479e2ca5b8324a119b95aafb8fa4"
   license "LGPL-3.0-or-later"
   head "https://github.com/nicolargo/glances.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "14f6aa59e70e9569cd605636701efb1af3c45b0cd074ff5ed824951259b9de88"
-    sha256 cellar: :any,                 arm64_sonoma:  "5e5049006c92c1c0b2a9acc5ce8d0b47b060e247c21dafed63acccbeae07db01"
-    sha256 cellar: :any,                 arm64_ventura: "59aa924cfe28703d51c1a9dac9bacd9997c1579def4faa778d500d86ffe2234c"
-    sha256 cellar: :any,                 sonoma:        "e81e5a650b6f8156ff0f842f83c5fda2b86f48a1803e9160495b866168b3de55"
-    sha256 cellar: :any,                 ventura:       "c9f5e723392dfb547be02fa3c451c5423c80b1e1e0b07a0614e61c793c4fc95d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "83e7b1638fa5509a640c423af6b7f35816d50d0776dd287ebf80fdfefc72b838"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "851a233a15e3b4985d43a9b14e2d5b5bb556c15adac1b14bc3a5621c943ea967"
+    sha256 cellar: :any,                 arm64_sequoia: "26c6706e533291da9bee5b630164e0c349b7508457a7220967d4c8b9547f7352"
+    sha256 cellar: :any,                 arm64_sonoma:  "990293efba06eeb03f5e872f337355c99e4c74f02b273a1a602fe8da1a3333ad"
+    sha256 cellar: :any,                 arm64_ventura: "567dd59d8ff94c4df040bece0457e0ce771c902393810506d412b17449bf2894"
+    sha256 cellar: :any,                 sonoma:        "14eb491d893f8861e336c5803a5d80989db2326873f9cd7f4c05b138adbe67fd"
+    sha256 cellar: :any,                 ventura:       "3736835901feb244652994e58eda5899e4aaef3f9abee30233dc53497482cde9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9edb9092ae8bfe3be9c4aaf4cdc36d90e0bd8372dec57558456c797a92519402"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bf9f867568a041c6a37d3aee38cab70a629914fa8da06abb63c583c7a68f2f63"
   end
 
   depends_on "cmake" => :build # for pyzmq
@@ -40,6 +40,11 @@ class Glances < Formula
   resource "anyio" do
     url "https://files.pythonhosted.org/packages/95/7d/4c1bd541d4dffa1b52bd83fb8527089e097a106fc90b467a7313b105f840/anyio-4.9.0.tar.gz"
     sha256 "673c0c244e15788651a4ff38710fea9675823028a6f08a5eda409e0c9840a028"
+  end
+
+  resource "batinfo" do
+    url "https://files.pythonhosted.org/packages/a3/51/a0a9ad2d19bb498f2779754209ca80b7ea53f948995367a2bf408b2bef7c/batinfo-0.4.2.tar.gz"
+    sha256 "497e29efc9353ec52e71d43bd040bdfb6d685137ddc2b9143cded4583af572f5"
   end
 
   resource "bernhard" do
@@ -98,8 +103,8 @@ class Glances < Formula
   end
 
   resource "fastapi" do
-    url "https://files.pythonhosted.org/packages/ca/53/8c38a874844a8b0fa10dd8adf3836ac154082cf88d3f22b544e9ceea0a15/fastapi-0.115.14.tar.gz"
-    sha256 "b1de15cdc1c499a4da47914db35d0e4ef8f1ce62b624e94e0e5824421df99739"
+    url "https://files.pythonhosted.org/packages/20/38/e1da78736143fd885c36213a3ccc493c384ae8fea6a0f0bc272ef42ebea8/fastapi-0.116.0.tar.gz"
+    sha256 "80dc0794627af0390353a6d1171618276616310d37d24faba6648398e57d687a"
   end
 
   resource "geomet" do

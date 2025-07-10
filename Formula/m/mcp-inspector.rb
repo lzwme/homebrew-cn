@@ -1,18 +1,18 @@
 class McpInspector < Formula
   desc "Visual testing tool for MCP servers"
   homepage "https://modelcontextprotocol.io/docs/tools/inspector"
-  url "https://registry.npmjs.org/@modelcontextprotocol/inspector/-/inspector-0.15.0.tgz"
-  sha256 "944af91c017a938b3807d240f55f333a774f344cd9e5e9749f3e259f5df729a2"
+  url "https://registry.npmjs.org/@modelcontextprotocol/inspector/-/inspector-0.16.0.tgz"
+  sha256 "648bbc925cb55b0a803f15c955761bd327b33f5d990551f7b6d3c75bfd81f603"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d162993e540e544c744c6de13173a9ba59ce448565b750278bfa410dadc21730"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d162993e540e544c744c6de13173a9ba59ce448565b750278bfa410dadc21730"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "d162993e540e544c744c6de13173a9ba59ce448565b750278bfa410dadc21730"
-    sha256 cellar: :any_skip_relocation, sonoma:        "27c338945c6ada9e9d6aa6659a289a093c86d8aadc0af8762862ac77ec2ee864"
-    sha256 cellar: :any_skip_relocation, ventura:       "27c338945c6ada9e9d6aa6659a289a093c86d8aadc0af8762862ac77ec2ee864"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d162993e540e544c744c6de13173a9ba59ce448565b750278bfa410dadc21730"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d162993e540e544c744c6de13173a9ba59ce448565b750278bfa410dadc21730"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "28845347033cafd16e4ef16430ca3208078589a0d4a6fc9013f0d262afb1f4bc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "28845347033cafd16e4ef16430ca3208078589a0d4a6fc9013f0d262afb1f4bc"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "28845347033cafd16e4ef16430ca3208078589a0d4a6fc9013f0d262afb1f4bc"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3bfcad01ddec4b69e6df5e2c7b43d42a1af769252bcde216fbab9fb363e1536a"
+    sha256 cellar: :any_skip_relocation, ventura:       "3bfcad01ddec4b69e6df5e2c7b43d42a1af769252bcde216fbab9fb363e1536a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "28845347033cafd16e4ef16430ca3208078589a0d4a6fc9013f0d262afb1f4bc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "28845347033cafd16e4ef16430ca3208078589a0d4a6fc9013f0d262afb1f4bc"
   end
 
   depends_on "node"

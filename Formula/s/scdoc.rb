@@ -21,7 +21,7 @@ class Scdoc < Formula
 
   def install
     # scdoc sets by default LDFLAGS=-static which doesn't work on macos(x)
-    system "make", "LDFLAGS=", "PREFIX=#{prefix}"
+    system "make", "LDFLAGS=#{ENV.ldflags}", "PREFIX=#{prefix}"
     system "make", "install", "PREFIX=#{prefix}"
   end
 
@@ -35,6 +35,6 @@ class Scdoc < Formula
       .ad l
       .\\" Begin generated content:
     EOF
-    assert_equal preamble, shell_output("#{bin}/scdoc </dev/null")
+    assert_equal preamble, pipe_output(bin/"scdoc", "")
   end
 end
