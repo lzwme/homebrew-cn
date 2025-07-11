@@ -2,8 +2,8 @@ class Batt < Formula
   desc "Control and limit battery charging on Apple Silicon MacBooks"
   homepage "https://github.com/charlie0129/batt"
   url "https://github.com/charlie0129/batt.git",
-      tag:      "v0.3.7",
-      revision: "0292e5913c404f5d752f72bd340e161e3030c28c"
+      tag:      "v0.4.0",
+      revision: "34d7c1b7507089832a15d7bf0933c5d8606e5c3d"
   license "GPL-2.0-only"
   head "https://github.com/charlie0129/batt.git", branch: "master"
 
@@ -13,9 +13,9 @@ class Batt < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "008521f2df77754004109ef2d318eab3af3351c204d83addf63fb1485560ca29"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7b29f928fe61350786cffdcaa5906ae073627f4e64a07508829bb29793ccd9d8"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "d33cb6398e7770d820998dca111e79c471275ad2c45bc86ddd0f7a12278abf36"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "506f277ba64c552b72ac2782f3c5b8ce17ba017645358e97baf76d82a30090e4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3529d9436b4d0168e72af558eb17099fb9185aa4f39e17e69bb930950d508280"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "dfd312bd27cc58fa1633e7ab7c71a1072ab3f628af830e77820f8c65d83ffb15"
   end
 
   depends_on "go" => :build
@@ -52,10 +52,11 @@ class Batt < Formula
   end
 
   test do
-    # NB: assumes first run of batt, with no previous config.
-    assert_match "config file #{etc}/batt.json does not exist, using default config",
+    # batt is only meaningful on Mac laptops. There is not much we can test
+    # in a VM.
+    assert_match "operation not permitted", # Non-root daemon cannot listen in /var/run
       shell_output("#{bin}/batt daemon --config=#{etc}/batt.json 2>&1", 1) # Non-root daemon exits with 1
-    assert_match "failed to connect to unix socket.",
+    assert_match "batt daemon is not running",
       shell_output("#{bin}/batt status 2>&1", 1) # Cannot connect to daemon
   end
 end

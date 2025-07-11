@@ -40,7 +40,7 @@ class Mad < Formula
     system "autoreconf", "--force", "--install", "--verbose"
     system "./configure", "--disable-debugging", "--enable-fpm=64bit", *std_configure_args
     system "make", "CFLAGS=#{ENV.cflags}", "LDFLAGS=#{ENV.ldflags}", "install"
-    (lib+"pkgconfig/mad.pc").write pc_file
+    (lib/"pkgconfig/mad.pc").write pc_file
     pkgshare.install "minimad.c"
   end
 

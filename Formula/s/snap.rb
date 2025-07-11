@@ -1,9 +1,9 @@
 class Snap < Formula
   desc "Tool to work with .snap files"
   homepage "https://snapcraft.io/"
-  url "https://ghfast.top/https://github.com/canonical/snapd/releases/download/2.69/snapd_2.69.vendor.tar.xz"
-  version "2.69"
-  sha256 "e887f14d4dcd332e7dae65111932cbdd62a31d229f1527be38e660883e35e59f"
+  url "https://ghfast.top/https://github.com/canonical/snapd/releases/download/2.70/snapd_2.70.vendor.tar.xz"
+  version "2.70"
+  sha256 "208c4356e17e96f25f8e5d4cc9c5494157099d15c091a530bb4f260aae9cf88b"
   license "GPL-3.0-only"
 
   livecheck do
@@ -12,12 +12,12 @@ class Snap < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d82bc4f8382b67f075526e79ac17a021cefffc939e3aaad472f51b191e533c94"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d82bc4f8382b67f075526e79ac17a021cefffc939e3aaad472f51b191e533c94"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "d82bc4f8382b67f075526e79ac17a021cefffc939e3aaad472f51b191e533c94"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ef72b9bc99e84d5848641b89b28841e788237da62bd3fb76daefdc25eb249fe1"
-    sha256 cellar: :any_skip_relocation, ventura:       "ef72b9bc99e84d5848641b89b28841e788237da62bd3fb76daefdc25eb249fe1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0b1b93d2ac358be652f29fad51c5f7b68823bd392901720ceb4b3c1839a1edd1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "18888d9d87394533c589d566614faf24470207baf4bad96ed9cb048050704d0d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "18888d9d87394533c589d566614faf24470207baf4bad96ed9cb048050704d0d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "18888d9d87394533c589d566614faf24470207baf4bad96ed9cb048050704d0d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "31773df5e4cb9ba3472a985d7e244a48c61e795efae8a239d9db058b03b25d0d"
+    sha256 cellar: :any_skip_relocation, ventura:       "31773df5e4cb9ba3472a985d7e244a48c61e795efae8a239d9db058b03b25d0d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "813ea89ec7f1009d04175647e0d119285e1ed0872c07c90c406ca6f19ea6dcbf"
   end
 
   depends_on "go" => :build

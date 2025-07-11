@@ -14,7 +14,7 @@ class CssCrush < Formula
 
   def install
     libexec.install Dir["*"]
-    (bin+"csscrush").write <<~SHELL
+    (bin/"csscrush").write <<~SHELL
       #!/bin/sh
       php "#{libexec}/cli.php" "$@"
     SHELL

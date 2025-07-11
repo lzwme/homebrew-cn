@@ -4,6 +4,7 @@ class AzureStorageCommonCpp < Formula
   url "https://ghfast.top/https://github.com/Azure/azure-sdk-for-cpp/archive/refs/tags/azure-storage-common_12.10.0.tar.gz"
   sha256 "84e165267995b8d10060abe1c2b65b3238eccea3f11222b5ae36042a1d1ae07f"
   license "MIT"
+  revision 1
 
   livecheck do
     url :stable
@@ -11,13 +12,13 @@ class AzureStorageCommonCpp < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "e3e595864a4e6e78be91cd69b3f3a924cd2308c4411ab31b5872a0582f280dfc"
-    sha256 cellar: :any,                 arm64_sonoma:  "dd768e2e9d449d65e3a7464dba91a3ccdbf6c54d5e6ea03cce8265e5002697bc"
-    sha256 cellar: :any,                 arm64_ventura: "dc2dc8eababf52d0ab281def32b86a9ce85b9fbb59fe04c2f086b45a19a3d259"
-    sha256 cellar: :any,                 sonoma:        "5b682a27014f02949b583a560543dab0e120b96d80ddb18a07e85106cd7a8154"
-    sha256 cellar: :any,                 ventura:       "0763d2ae9a0627a0d4aa85a796aa8caa1e1bc15f42effe4f06c6e6d90d23ff80"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "867c5706223bb8d2346753f25df15b65cd40e70a4b728c557b8108e5d9095049"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b8f5735cd592ecffff5bb6bb5cc447a4134b80bf7256df2e47c3298a721b347e"
+    sha256 cellar: :any,                 arm64_sequoia: "a065a2c29588cea2c0124c7bbdd0c46c75600f51083af00ea46fa9028095779c"
+    sha256 cellar: :any,                 arm64_sonoma:  "3af36e9cfc269ef9d8fbab406e540a774e9ed2e4e7fb75c3ef6340a78733d3d3"
+    sha256 cellar: :any,                 arm64_ventura: "5e644150722547c31d29a8b1e8c36397f92fe7ecb565430daabcadc9c7a4b0d7"
+    sha256 cellar: :any,                 sonoma:        "e0f8c21318c011b37fc5d84a87c1ae399e716fb02daa63c92f54e234e2827b92"
+    sha256 cellar: :any,                 ventura:       "5f8c7fce113eb7177fdf386529fddb23b27dd2adce1d682b4e7276a2bf27dafd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "02c97f2bd6c78714cae77ac3f6f622596a7683e9b7027f731329e65cd9412da6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dff033467e0d9cf754b645350476fa81c58643bdaa3e8ae29f1f5879187cac79"
   end
 
   depends_on "cmake" => :build

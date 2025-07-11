@@ -66,7 +66,7 @@ class Nss < Formula
       cp file, bin unless file.include? ".dylib"
     end
 
-    include_target = include + "nss"
+    include_target = include/"nss"
     include_target.mkpath
     Dir.glob("public/{dbm,nss}/*") { |file| cp file, include_target }
 

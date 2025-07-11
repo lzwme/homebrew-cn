@@ -39,7 +39,7 @@ class Lv < Formula
     end
 
     man1.install "lv.1"
-    (lib+"lv").install "lv.hlp"
+    (lib/"lv").install "lv.hlp"
   end
 
   test do

@@ -6,8 +6,8 @@ class Julia < Formula
   stable do
     # Use the `-full` tarball to avoid having to download during the build.
     # TODO: Check if we can unbundle `curl`: https://github.com/JuliaLang/Downloads.jl/issues/260
-    url "https://ghfast.top/https://github.com/JuliaLang/julia/releases/download/v1.11.5/julia-1.11.5-full.tar.gz"
-    sha256 "147626db6b6887bfb6612cb6cd2a48d689806649fae34dc749fddc8375c2c625"
+    url "https://ghfast.top/https://github.com/JuliaLang/julia/releases/download/v1.11.6/julia-1.11.6-full.tar.gz"
+    sha256 "b268def41adc17496c3e0e7dcb5e27b2cbe6a1c61c78f6463544c5f4c734168a"
 
     depends_on "libgit2@1.8"
 
@@ -30,12 +30,12 @@ class Julia < Formula
   end
 
   bottle do
-    sha256                               arm64_sequoia: "fff9bac64500a16448e97bab12228d2cd3981a7c9c8d861c3a687670338bd6ce"
-    sha256 cellar: :any,                 arm64_sonoma:  "791f0898da48873ef1657063aa5f5c771cf044b76532d4b6b90a902baa12977c"
-    sha256 cellar: :any,                 arm64_ventura: "473b46f21f2299a9c1b40e05b86c451a7f8430b39c68954a863df1e18d2bee9f"
-    sha256 cellar: :any,                 sonoma:        "febaa008940f15e71b5728953ce561930b0cbf1f6a2e468cf9e2142c2d15f9e9"
-    sha256                               ventura:       "87dff6175625d649b7286cb870f5713fd49c32ceae760fa5ffa6bdb84472901d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e910379b335ae1cbe40fc342ceba229ddd9fc4ad76d685d6ef53718e68c8756f"
+    sha256 cellar: :any,                 arm64_sequoia: "0b0383a975eb655862d9ce049595e3e0862f0def36f985f219f72256c72d9d11"
+    sha256 cellar: :any,                 arm64_sonoma:  "b254d61d5a1cb1ee5388c8efe2f98c29cc2baafa19fc9d3e5c9d1286e269a88c"
+    sha256                               arm64_ventura: "1e1ff07e37ff59d0a35201bf34302a7276839f149004fea472f9c63739c20f81"
+    sha256 cellar: :any,                 sonoma:        "df8d978b084838485e24e5fd0894ee8968f3ab04dc964c39f7d81722758ab425"
+    sha256 cellar: :any,                 ventura:       "ba39de3ea6e7eb95ccccf3d3148e09f2f8af9f299f8321bc933e2e0151f98e88"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "afaf2efaa803943c6fc2fe79a419f69a91310d6b38a4367688784ac72ac27884"
   end
 
   head do

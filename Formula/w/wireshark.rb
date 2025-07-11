@@ -15,13 +15,14 @@ class Wireshark < Formula
   end
 
   bottle do
-    sha256                               arm64_sequoia: "a90636a15534b59d0939b89146de28d1eba40109a731da807f25b39ae03bc552"
-    sha256                               arm64_sonoma:  "c814bb70a14fec90d50d155a4f9190edfd4181be006f69c2558936fac9677ffe"
-    sha256                               arm64_ventura: "7736071cba2c6b9ad3134cbaf6425a5ede55af604d8d6acde4f29081a731d728"
-    sha256                               sonoma:        "3da3608e5d3955f507d96a25d00ae453dde740ce4c2a9a50d88718394ae57c5f"
-    sha256                               ventura:       "3a9ab3fdaee0c28fe61dabac5fe78d984a0fcc2068689fa3f3bfb56273c0ea8d"
-    sha256                               arm64_linux:   "07e37d96e46104cdeff06bb2b1f6c12a346455155b6464eceb9114cf0fcf8b77"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2c8a9269c41cea99a9a83eb356a0afe870b67d065039b6e4e182428975a00162"
+    rebuild 1
+    sha256                               arm64_sequoia: "e5683a90546a534ba8339a6bcd8dc5d175c7d47a3da7c94ead6b3422952a8ef9"
+    sha256                               arm64_sonoma:  "e1077fb7ca8bfe9fb4a459686e585b249f42390a65168de508283e54c4fbb1e7"
+    sha256                               arm64_ventura: "66f425fa254dd741da855ccd64c82f2477bdc2154de8929bcf4cc2ff6c3ea7db"
+    sha256                               sonoma:        "d79215942dfc0ecf8d90c9de8b458bb9202304143e7d7a9bec16835d3f19011b"
+    sha256                               ventura:       "372ea30b58869dec292cf60fd09fe04bfaf2ec3e724734c5c4f28462ed6523b3"
+    sha256                               arm64_linux:   "30602fa7894345db058c04c7e15096dfa95c4f01b95aea3a36cb9fc2be7f4b05"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1456d44ce1700bc59e209df293b92efa08f0f76f0ce86612ab231b0890544bda"
   end
 
   depends_on "cmake" => :build
@@ -63,7 +64,7 @@ class Wireshark < Formula
       -DBUILD_wireshark=OFF
       -DBUILD_logray=OFF
       -DENABLE_APPLICATION_BUNDLE=OFF
-      -DCMAKE_INSTALL_NAME_DIR:STRING=#{lib}
+      -DCMAKE_INSTALL_RPATH=#{rpath}
     ]
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args

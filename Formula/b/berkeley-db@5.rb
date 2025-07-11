@@ -89,7 +89,7 @@ class BerkeleyDbAT5 < Formula
 
       # use the standard docs location
       doc.parent.mkpath
-      mv prefix+"docs", doc
+      mv prefix/"docs", doc
     end
   end
 

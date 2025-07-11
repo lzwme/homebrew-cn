@@ -61,7 +61,7 @@ class Zookeeper < Formula
     (var/"run/zookeeper/data").mkpath
 
     Pathname.glob("#{libexec}/bin/*.sh") do |path|
-      next if path == libexec+"bin/zkEnv.sh"
+      next if path == libexec/"bin/zkEnv.sh"
 
       script_name = path.basename
       bin_name    = path.basename ".sh"

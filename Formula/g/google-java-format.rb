@@ -3,12 +3,12 @@ class GoogleJavaFormat < Formula
 
   desc "Reformats Java source code to comply with Google Java Style"
   homepage "https://github.com/google/google-java-format"
-  url "https://ghfast.top/https://github.com/google/google-java-format/releases/download/v1.27.0/google-java-format-1.27.0-all-deps.jar"
-  sha256 "ed07239f3cb72e25bf2a0eae63e76831f9f11963bd19fc36a6f1d87016ac1763"
+  url "https://ghfast.top/https://github.com/google/google-java-format/releases/download/v1.28.0/google-java-format-1.28.0-all-deps.jar"
+  sha256 "32342e7c1b4600f80df3471da46aee8012d3e1445d5ea1be1fb71289b07cc735"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "70d76d7e24a7b311e1aec5c68757f13d14c801c15bc3e158e2978ae3ddd18cc3"
+    sha256 cellar: :any_skip_relocation, all: "e06153707967aed9b949074872dcf84b08a5a94432a1e47058743e1a5a66cc97"
   end
 
   depends_on "openjdk"
@@ -16,7 +16,7 @@ class GoogleJavaFormat < Formula
   uses_from_macos "python", since: :catalina
 
   resource "google-java-format-diff" do
-    url "https://ghfast.top/https://raw.githubusercontent.com/google/google-java-format/v1.27.0/scripts/google-java-format-diff.py"
+    url "https://ghfast.top/https://raw.githubusercontent.com/google/google-java-format/v1.28.0/scripts/google-java-format-diff.py"
     sha256 "c1f2c6e8af0fc34a04adfcb01b35e522a359df5da1f5db5102ca9e0ca1f670fd"
   end
 

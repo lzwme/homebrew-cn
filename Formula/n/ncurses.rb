@@ -36,6 +36,8 @@ class Ncurses < Formula
     # Linux: configure: error: expected a pathname, not ""
     (lib/"pkgconfig").mkpath
 
+    ENV.delete("TERMINFO")
+
     args = [
       "--prefix=#{prefix}",
       "--enable-pc-files",

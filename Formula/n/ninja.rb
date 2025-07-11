@@ -1,8 +1,8 @@
 class Ninja < Formula
   desc "Small build system for use with gyp or CMake"
   homepage "https://ninja-build.org/"
-  url "https://ghfast.top/https://github.com/ninja-build/ninja/archive/refs/tags/v1.13.0.tar.gz"
-  sha256 "f08641d00099a9e40d44ec0146f841c472ae58b7e6dd517bee3945cfd923cedf"
+  url "https://ghfast.top/https://github.com/ninja-build/ninja/archive/refs/tags/v1.13.1.tar.gz"
+  sha256 "f0055ad0369bf2e372955ba55128d000cfcc21777057806015b45e4accbebf23"
   license "Apache-2.0"
   head "https://github.com/ninja-build/ninja.git", branch: "master"
 
@@ -12,13 +12,13 @@ class Ninja < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "60f60dca4793f8f81a4ba72809d49ee79cfb36eed2eb0555dfd735a7af7396f3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "357970eb2a15833392163be15cd02e9a76157df1b0bb98a5acd5e0ba8f49d468"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "532af454e1545c1ed766f6548501627ae77bbaf2e1195855837728b78d72bd89"
-    sha256 cellar: :any_skip_relocation, sonoma:        "17bfc6d443b17cb1d7056704139c4fd7a026d194f095115ae9988917981dca18"
-    sha256 cellar: :any_skip_relocation, ventura:       "2c2b200597f74af5963e7a9d383e4a9052c45850e9b5433c0dbce775460774ee"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "14ff87446ae39dea37b93a04dec35c452ef51c7a4d87e9a1b7f5306126c77374"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dda32b8743cdb0d0c2d88acc01adef28f2d7a911c18b80b1705505f798ab2693"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "873e06703ff0d22140b1683b6272b65a57a3e87b506b7904ad82b6018df6db06"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8958969cfa17f656280e7bb08bdcc71d657b3208a786c012041f53bb455d96ab"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "8001e8a0a4ff7ca04fe84d366a02f981a4916f794f43ce5594dedbb4f5fc297f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ca928abda16bab3735437ec593eebf85947f3b8aba1b90ee024cce0d9ee9428d"
+    sha256 cellar: :any_skip_relocation, ventura:       "3f7c0ce43b98aa2f1c6a30cf14043abb4a739c5675a46a662d158fe65b7a8ade"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b9861ae88dd629add0d88046028c24240d48d57f5ee31c1b0922996221176250"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "13cca961d30a825d800c714dfc04932d916b08127ac866c37fc99a7072e22003"
   end
 
   uses_from_macos "python" => [:build, :test], since: :catalina

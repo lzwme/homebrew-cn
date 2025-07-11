@@ -93,7 +93,7 @@ class Autopsy < Formula
     mv "lib", "libexec"
     prefix.install %w[global.css help libexec pict]
     prefix.install Dir["*.txt"]
-    (prefix+"conf.pl").write autcfg
+    (prefix/"conf.pl").write autcfg
     inreplace "base/autopsy.base", "/tmp/autopsy", prefix
     inreplace "base/autopsy.base", "lib/define.pl", "#{libexec}/define.pl"
     bin.install "base/autopsy.base" => "autopsy"

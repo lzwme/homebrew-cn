@@ -1,8 +1,8 @@
 class Liboqs < Formula
   desc "Library for quantum-safe cryptography"
   homepage "https://openquantumsafe.org/"
-  url "https://ghfast.top/https://github.com/open-quantum-safe/liboqs/archive/refs/tags/0.13.0.tar.gz"
-  sha256 "789e9b56bcb6b582467ccaf5cdb5ab85236b0c1007d30c606798fa8905152887"
+  url "https://ghfast.top/https://github.com/open-quantum-safe/liboqs/archive/refs/tags/0.14.0.tar.gz"
+  sha256 "5b0df6138763b3fc4e385d58dbb2ee7c7c508a64a413d76a917529e3a9a207ea"
   license "MIT"
 
   livecheck do
@@ -11,13 +11,13 @@ class Liboqs < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0d744db00855ed3160fbde340abfcab59737229e129bafd08935057c0a49813a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0a92276be04c12a3dff2be837e1debd1f9c8be9e5e4e0c084f72afb70cd6e083"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "7da043db1c2204f9f3a32504dbe35e69ad5c377137244a2df5ef4b6b08cb73b5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d34c219fa4023fc0c6182cd4877be12d8b14c55570bfc54a174ed064c382ef2f"
-    sha256 cellar: :any_skip_relocation, ventura:       "6de8bf61014b4fba88ce3a44665ddc6d673f88a2a1229d598f75636437d2b0ee"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "21421d5b937bfb972d9239c9265ca2efc484692da94d663694164986b34d51de"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2baf046ee42ff6c9aec54dd599c97bc8b6602a86f29c8f5292de05ac41268715"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b94f528e2e60970064a39baa077b224410a2524e9a2a42492fdf83e16bbee44c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "770374d15fd6f8942b4d22b53c85b61e6253a3abbeff4888309984fc82237962"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "3eb84deb64a79bc06abc48ecbfd387cb5e28ad14e1ee0be7639348a0e6ad44f0"
+    sha256 cellar: :any_skip_relocation, sonoma:        "67e3d5156d1b65e8b4546b00670963c45777018a0cd6681230dfd19f101debb3"
+    sha256 cellar: :any_skip_relocation, ventura:       "b4ee69d66ac1c770db1e744e01f847b0bbcb38e29dc1050880611b7c2eacfc8d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fe6581485e6fdf52df28a913643e88dd3bdc89f0f5b69a29f331004903571f99"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dead3635b08843df33e8b4c34acefdbb589e9b32dad87e8455bd329c6f567e0a"
   end
 
   depends_on "cmake" => :build

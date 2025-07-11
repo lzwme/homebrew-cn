@@ -39,11 +39,11 @@ class Cmockery2 < Formula
     system "./configure", "--prefix=#{prefix}"
     system "make"
     system "make", "install"
-    (share+"example").install "src/example/calculator.c"
+    (share/"example").install "src/example/calculator.c"
   end
 
   test do
-    system ENV.cc, share+"example/calculator.c", "-L#{lib}", "-lcmockery", "-o", "calculator"
+    system ENV.cc, share/"example/calculator.c", "-L#{lib}", "-lcmockery", "-o", "calculator"
     system "./calculator"
   end
 end

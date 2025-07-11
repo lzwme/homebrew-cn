@@ -1,8 +1,8 @@
 class AzureCoreCpp < Formula
   desc "Primitives, abstractions and helpers for Azure SDK client libraries"
   homepage "https://github.com/Azure/azure-sdk-for-cpp/tree/main/sdk/core/azure-core"
-  url "https://ghfast.top/https://github.com/Azure/azure-sdk-for-cpp/archive/refs/tags/azure-core_1.15.0.tar.gz"
-  sha256 "f13b41b1cf5ae8618909b2d30387cc83d9bbbf8fb7746e9d35196a524efcd3d9"
+  url "https://ghfast.top/https://github.com/Azure/azure-sdk-for-cpp/archive/refs/tags/azure-core_1.16.0.tar.gz"
+  sha256 "7f8ba547ef67290075ce148ba1769cf43aa9c7aeed1a62ac5f7ab521f6e68724"
   license "MIT"
 
   livecheck do
@@ -11,13 +11,13 @@ class AzureCoreCpp < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "30d61ea370900ba8294a01d9070d3bbd46fb590b36fe9f6c6d7d041048401223"
-    sha256 cellar: :any,                 arm64_sonoma:  "c3da323ef6fb292758a5f11d7cc1e98ce61c8d229ab12dafa6a20d775e8569de"
-    sha256 cellar: :any,                 arm64_ventura: "06c8fa36794a1efb84c6f1ac3c095b544f0af4ad0124785f804d4d7e6d3eed7d"
-    sha256 cellar: :any,                 sonoma:        "a10a1c92d8dd81f47708e322b87e3d6d280bec8e6acd2b1e70db8170772c6b2c"
-    sha256 cellar: :any,                 ventura:       "3105f2e4c4ce2a5c186b3afe51aec44aa53e134d01a3fa5fbb91e82f7fdd5ce9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7cee82d15aa5ecdcae5f66152ad32496e481f032d6a225fc0940bb386ae71eb7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e1dfb2f1d8c34f60ef00962b733c50b583e2c9114f0c913b9ed082dd2a1dd513"
+    sha256 cellar: :any,                 arm64_sequoia: "28731ac23463827c5229982675e18011900b1475673410b7a016022c9f2285c3"
+    sha256 cellar: :any,                 arm64_sonoma:  "a4bf529ff3824edbe95c7b8f32c8ebb7929abc9ff95785e9169a45d0e7b9da79"
+    sha256 cellar: :any,                 arm64_ventura: "f93ba1552f172bc94c52ffe5c221058ebded11d15e3407ab0560419a5e64384f"
+    sha256 cellar: :any,                 sonoma:        "db868db17f450136245e812d318b513e69de8e118e39d2d3df94b7f67935fd82"
+    sha256 cellar: :any,                 ventura:       "522bbd3366cf70b03aeeb621405b2b3ab82d2e1deb1cde3384709cb5f486f87e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c488432247700bbe04b0dfa07f7a5c7ed5c21c1d4f072495937483de017bf61c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "183d19ab71ad3ddb9b2851a5784505eafba7e8a63ee974f393da9608f6a00955"
   end
 
   depends_on "cmake" => :build

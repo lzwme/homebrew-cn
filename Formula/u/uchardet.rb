@@ -25,7 +25,10 @@ class Uchardet < Formula
   depends_on "cmake" => :build
 
   def install
-    system "cmake", "-S", ".", "-B", "build", "-DCMAKE_INSTALL_NAME_DIR=#{lib}", *std_cmake_args
+    system "cmake", "-S", ".", "-B", "build",
+                    "-DCMAKE_INSTALL_RPATH=#{rpath}",
+                    "-DCMAKE_POLICY_VERSION_MINIMUM=3.5", # Workaround for CMake 4+
+                    *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end

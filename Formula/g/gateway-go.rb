@@ -1,18 +1,18 @@
 class GatewayGo < Formula
   desc "GateWay Client for OpenIoTHub"
   homepage "https://github.com/OpenIoTHub"
-  url "https://ghfast.top/https://github.com/OpenIoTHub/gateway-go/archive/refs/tags/v2.0.6.tar.gz"
-  sha256 "5619f99a5dd5dfd3c19fc1682406a924e9bcaffb84fb86bb528f7799e1830f98"
+  url "https://ghfast.top/https://github.com/OpenIoTHub/gateway-go/archive/refs/tags/v2.0.7.tar.gz"
+  sha256 "52f3d09c7cd710c054c53e3b59e388be6abfa230d2c779b36748c44740bde091"
   license "MIT"
   head "https://github.com/OpenIoTHub/gateway-go.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1d14aeb9261a46c16127eff8433541939df9107945a6f41a920c4aff21e8dd9a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "46f4cd7f61a8499ac83c26507c42370574dea943ae6a7fef273601b8be037cd9"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "0db0aed8de139984c8e683763d32d85e2a75acf5e6a4b642925f5ef452d5d14a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "344f5d7cf60299283f412956beb5f0f9acf8651f86c991f35f6e92ae86aab48c"
-    sha256 cellar: :any_skip_relocation, ventura:       "4fec5784dc13d968c20ebad6c0c2c28623e377bb0fd342fdea33b69adfa3626c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b2dceb5eb02ffcc64f13ceb16c7a2199a83a8d49347bdede3e3cc6ac8a0fe019"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7836b89804bd4c92f46d5f882275fafeb189bba07015e066ea59e306d087944e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6f4bd996faab8bcfe1911534833f09db4f6b8296648fe3d9a70c2f1f9191d5aa"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "dddd896b5bbf09b1f87bddf84b09527605c7bec768ab8ef4c2103670a84a30e1"
+    sha256 cellar: :any_skip_relocation, sonoma:        "531a5bf21184318f3e6a243049f7ebd3caff1950ff2b1d55224ccffdf3d5e893"
+    sha256 cellar: :any_skip_relocation, ventura:       "39758b120d433e093fcbf464013eb90a1cf97e0cd30dbb46ada68687216b0a9f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5bc17f89c7d4d1ba20af1bb55523296df2da42d661723e3429048783aa376562"
   end
 
   depends_on "go" => :build

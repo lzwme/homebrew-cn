@@ -43,7 +43,7 @@ class Sloccount < Formula
     rm "makefile.orig" # Delete makefile.orig or patch falls over
     bin.mkpath # Create the install dir or install falls over
     system "make", "install", "PREFIX=#{prefix}"
-    (bin+"erlang_count").write "#!/bin/sh\ngeneric_count '%' $@"
+    (bin/"erlang_count").write "#!/bin/sh\ngeneric_count '%' $@"
   end
 
   test do

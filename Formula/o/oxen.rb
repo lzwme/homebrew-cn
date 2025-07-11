@@ -1,8 +1,8 @@
 class Oxen < Formula
   desc "Data VCS for structured and unstructured machine learning datasets"
   homepage "https://www.oxen.ai/"
-  url "https://ghfast.top/https://github.com/Oxen-AI/Oxen/archive/refs/tags/v0.35.0.tar.gz"
-  sha256 "f8301be0615b5e489ea7ec6811a04e6730424c05710b22453b3b1c66e946dcf9"
+  url "https://ghfast.top/https://github.com/Oxen-AI/Oxen/archive/refs/tags/v0.36.1.tar.gz"
+  sha256 "fcd9d592369839a4ac3929f934c33314c79b3cb23a2094f4e84e444bb1ec71d1"
   license "Apache-2.0"
   head "https://github.com/Oxen-AI/Oxen.git", branch: "main"
 
@@ -14,12 +14,12 @@ class Oxen < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c8793e7c834bac7cf51526e4bc397f60959aad9ba2582547deb3648d997ef7f7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c5028a4c4023327ee842b9e609b3ea7c1c0a00e4d335ff853bb79d93bd4b948c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "854c2db0bbc9098ac8a2bd518d0a4e0aa0743680f8a098a0ccd00b5e75e7533e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2d156ebc9ad223b4c2740de009fb2c7ed5cb8398bbb3afb8a8b443675c88649c"
-    sha256 cellar: :any_skip_relocation, ventura:       "9003f44c38e1210ff649904a81a267b238e411b92d8c7a9b6ffc4c09b0c3ed19"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c0ad60cfb5dad9e31709a8b65301315a9afdfe2ad8aa2698085c8d3065888c4d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d319df00729d3c7abd36e71176c47af508d81bbdbf712b523524baba1790306d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4783ad7d4023cac2543eb0c47a113240e45a1b66acf7ed7084480dcc00353bd5"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "216d72182cf2f3e3c34f544ad7438d9f5728be91677950068291fd189a127e15"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7265d4a36a1c075a182f1ac9ed42437391b73e4661fda0629723e6a0ee2b333d"
+    sha256 cellar: :any_skip_relocation, ventura:       "3a4ca77bf520502fbd3ae947ed0fda68c24fdf4d8ecc6561fe2abfbbf2581756"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f1489b895273a79bfbd96d0827095271a34fffb67f41a11fde0c83b9b175868b"
   end
 
   depends_on "cmake" => :build # for libz-ng-sys

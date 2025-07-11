@@ -1,8 +1,8 @@
 class Node < Formula
   desc "Platform built on V8 to build network applications"
   homepage "https://nodejs.org/"
-  url "https://registry.npmmirror.com/-/binary/node/v24.3.0/node-v24.3.0.tar.xz"
-  sha256 "eb688ef8a63fda9ebc0b5f907609a46e26db6d9aceefc0832009a98371e992ed"
+  url "https://registry.npmmirror.com/-/binary/node/v24.4.0/node-v24.4.0.tar.xz"
+  sha256 "42fa8079da25a926013cd89b9d3467d09110e4fbb0c439342ebe4dd6ecc26bbb"
   license "MIT"
   head "https://github.com/nodejs/node.git", branch: "main"
 
@@ -12,13 +12,13 @@ class Node < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "5b25a3148f341fec74d1a1a3b88141dc2ee8d451715bd51ae33cae2b7fda1045"
-    sha256 arm64_sonoma:  "a8839ee36ce2d54ee7f9cbdd0b5697551edd302f5617b07108809875bc0bb538"
-    sha256 arm64_ventura: "bc0e47a9ce5b0400a558a896c5208f4f7a01cbb3a44dcc941d390107601d6ab0"
-    sha256 sonoma:        "f65c466b2b13705f0ac0966982fea3367e3732f5e1d3cfc10a68d719ad78d6e4"
-    sha256 ventura:       "88409a3be611d9291856fa87412b4f14f6fae70682ad289fc10d05c8f31eeffe"
-    sha256 arm64_linux:   "a13581ec50a021f54c41b94b6454e0932f02835a6be3d4bf0b550f4fca65acee"
-    sha256 x86_64_linux:  "70597ddbf8669d9813e2ce1537db3b2f68f5f14ed498ffdec4122361630533ea"
+    sha256 arm64_sequoia: "598f14eda0f461f0610f313e3431e216b9608d556f592d7f48b53cc4b7bc52e3"
+    sha256 arm64_sonoma:  "33b4acf7ce5beedbaa1f20d863957902f684176831da198136213d368e007cf0"
+    sha256 arm64_ventura: "237112802a0eea88cfd9c596691be4ee3b8ccc1f2ad4691af364856025e2d10e"
+    sha256 sonoma:        "c9f948ed190a8332ba2ab39465b4819dd3adbf96278ccbfc6ac5b4fbfd751c19"
+    sha256 ventura:       "6f826870c596fd731e0d09ef85e9e71d7a4a53df0e6e245ef2e9cbf0650e8419"
+    sha256 arm64_linux:   "b08cc8cd394bb7510c2107bfc6aa01cecd8d8ec60c44a365bcf222df15891bb4"
+    sha256 x86_64_linux:  "3829e5f4468e8f39cfed0c31a2e837a4a2b584ffebcbeebcf9086ca770f02b58"
   end
 
   depends_on "pkgconf" => :build
