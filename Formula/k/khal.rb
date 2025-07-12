@@ -9,13 +9,15 @@ class Khal < Formula
   head "https://github.com/pimutils/khal.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "18cf8d3d72969bf1da0e4cb64248f66a0438b0ebacf7e4254bd987191639cfee"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "18cf8d3d72969bf1da0e4cb64248f66a0438b0ebacf7e4254bd987191639cfee"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "18cf8d3d72969bf1da0e4cb64248f66a0438b0ebacf7e4254bd987191639cfee"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d78b0935110727286c3a7cbb62f0bda1ebaa0c8290b8f14ac4494a8f2427bfb8"
-    sha256 cellar: :any_skip_relocation, ventura:       "d78b0935110727286c3a7cbb62f0bda1ebaa0c8290b8f14ac4494a8f2427bfb8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "18cf8d3d72969bf1da0e4cb64248f66a0438b0ebacf7e4254bd987191639cfee"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "18cf8d3d72969bf1da0e4cb64248f66a0438b0ebacf7e4254bd987191639cfee"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "722a6edbaa805ad50bea276867c5b99c059c35533e3b8ec904d06b482cbe9808"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "722a6edbaa805ad50bea276867c5b99c059c35533e3b8ec904d06b482cbe9808"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "722a6edbaa805ad50bea276867c5b99c059c35533e3b8ec904d06b482cbe9808"
+    sha256 cellar: :any_skip_relocation, sequoia:       "68b25a1c8229009db588f27dfff8bdf3498af5b2638be59c3fd3ca2d1e5d3607"
+    sha256 cellar: :any_skip_relocation, sonoma:        "68b25a1c8229009db588f27dfff8bdf3498af5b2638be59c3fd3ca2d1e5d3607"
+    sha256 cellar: :any_skip_relocation, ventura:       "68b25a1c8229009db588f27dfff8bdf3498af5b2638be59c3fd3ca2d1e5d3607"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "722a6edbaa805ad50bea276867c5b99c059c35533e3b8ec904d06b482cbe9808"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "722a6edbaa805ad50bea276867c5b99c059c35533e3b8ec904d06b482cbe9808"
   end
 
   depends_on "python@3.13"
@@ -89,7 +91,7 @@ class Khal < Formula
     virtualenv_install_with_resources
 
     %w[khal ikhal].each do |cmd|
-      generate_completions_from_executable(bin/cmd, shells: [:fish, :zsh], shell_parameter_format: :click)
+      generate_completions_from_executable(bin/cmd, shells: [:bash, :fish, :zsh], shell_parameter_format: :click)
     end
   end
 

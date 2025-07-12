@@ -12,8 +12,8 @@ class EulerPy < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    rebuild 4
-    sha256 cellar: :any_skip_relocation, all: "f8eb151dc399181c54578565197ae582def2067d466150f7558c2f9746d886cd"
+    rebuild 5
+    sha256 cellar: :any_skip_relocation, all: "61c7da218aca560f86ce1aae136927319f9d48d07aae107e531c19d3e0350209"
   end
 
   depends_on "python@3.13"
@@ -28,7 +28,7 @@ class EulerPy < Formula
     inreplace "requirements.txt", "click==4.0", "click"
     virtualenv_install_with_resources
 
-    generate_completions_from_executable(bin/"euler", shells: [:fish, :zsh], shell_parameter_format: :click)
+    generate_completions_from_executable(bin/"euler", shells: [:bash, :fish, :zsh], shell_parameter_format: :click)
   end
 
   test do

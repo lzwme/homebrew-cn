@@ -8,12 +8,13 @@ class Localstack < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "2ebb6ebffccf50f7c3d4ca5571281b5b9bfe7b60be5c65071876e13510123627"
-    sha256 cellar: :any,                 arm64_sonoma:  "ebf9780ea63d7ca24bd553009cd869a1dfb600ed2b9f41e42c861f94c4a63a76"
-    sha256 cellar: :any,                 arm64_ventura: "3468a4dc723271a6aadac2c27603f0f14d93fb25fe5d9d29b457ba0cadbff729"
-    sha256 cellar: :any,                 sonoma:        "90e44ff9e00ac9db9836bebe758c7d4d4bbdcce8e9b7459cc88f704a540fda7a"
-    sha256 cellar: :any,                 ventura:       "e3502ed67a5334da9dd11ece12d425bdd9d83f3cee4918d5e6444feba007b15f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b6f9583874e0c45e47cb08c3ba7fa4a7cbd63dcfbc579ceedf8b175858943c2a"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "96d8274971aa0e77d6ce48c25a30214128c2b5c605aebc8fd94a72c7e9d7d34e"
+    sha256 cellar: :any,                 arm64_sonoma:  "12406f79909234352ea070bfa75ccc674bf08d9d16b812e6cf9e944afee7369b"
+    sha256 cellar: :any,                 arm64_ventura: "a41617f5ec9071bebfdd82c18c621a0d2eb09f1114df58a5848aa2329e8dbc97"
+    sha256 cellar: :any,                 sonoma:        "8e37d3b061d82b364d47e173ea44b1026e21b37e36b4df22505c1c67aea11cbc"
+    sha256 cellar: :any,                 ventura:       "0f550c690fbe53419b327c6965beb859c5012b01878bd38e95b5a4a5fcf994dd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2207b96b497e404df3b5f90a3d8da028dedaef58369fe5f6751707ca6c4c4cfa"
   end
 
   depends_on "docker" => :test
@@ -171,7 +172,8 @@ class Localstack < Formula
     virtualenv_install_with_resources
     bin.install_symlink libexec/"bin/localstack"
 
-    generate_completions_from_executable(bin/"localstack", shells: [:fish, :zsh], shell_parameter_format: :click)
+    generate_completions_from_executable(bin/"localstack",
+                                         shells: [:bash, :fish, :zsh], shell_parameter_format: :click)
   end
 
   test do

@@ -9,14 +9,14 @@ class Manim < Formula
   head "https://github.com/manimCommunity/manim.git", branch: "main"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_sequoia: "052c82c53708a86c2ec03ac13d8c8504d524a34d3cdc648ef1a3a704d9b2b5ee"
-    sha256 cellar: :any,                 arm64_sonoma:  "4cb84e7b594cd5cf9a0d697167b2bd9f5c4d49b0558472fe9d2335bc6e8d9308"
-    sha256 cellar: :any,                 arm64_ventura: "fb89734574ccebed9b22a972b1c6b2289042fcfa33bf380005eadfa7058720f9"
-    sha256 cellar: :any,                 sonoma:        "8e2b70fa257adf0ecbe10c6c7024d14eb99f5a81cc0257ffddd1416069b5c64d"
-    sha256 cellar: :any,                 ventura:       "1868eb0cd025c10002c1c634185da4547a42264b07ace0e94728955efce39a74"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4f282a4f41152c7b98c52066c949eb6e1098b21bd521b79b3d4e42ca24a84c1f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cdae0c1a543f2f4b6b60b2952f441027b36c89d11e5c66b1a187304e99d3981d"
+    rebuild 3
+    sha256 cellar: :any,                 arm64_sequoia: "8c517c3d6e5def8042425feca0fc3c8d852add9dd46a0bd8d427cf3cac94a0bc"
+    sha256 cellar: :any,                 arm64_sonoma:  "4f8370db3e6065598e34cdac7adbaa2ec88e0412d27fd9f611da98e9d4d1ede4"
+    sha256 cellar: :any,                 arm64_ventura: "174f15caedad96eb8935b37d341b585ccfa9b23b3631c5b0dd0dfff821669415"
+    sha256 cellar: :any,                 sonoma:        "0a63a760d4168ca845b6ab46c4fb77cd9ec34875f7ff2918c045db346e71fb85"
+    sha256 cellar: :any,                 ventura:       "fcc74db970f3180f72b03fe9efa8d851d07a2dac5c563f9f6ca3e19ea9dbc098"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "95ebd1a635a7a0866d712e04b969ee7fd2530106141dfb1d7ba5c8cf463dabe9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cc102d405ebabc301afdd44e8167a51373db4b1e7ca898e8617a89d694deef46"
   end
 
   depends_on "cmake" => :build # for mapbox_earcut
@@ -220,7 +220,7 @@ class Manim < Formula
     end
     virtualenv_install_with_resources(without:)
 
-    generate_completions_from_executable(bin/"manim", shells: [:fish, :zsh], shell_parameter_format: :click)
+    generate_completions_from_executable(bin/"manim", shells: [:bash, :fish, :zsh], shell_parameter_format: :click)
   end
 
   test do

@@ -12,14 +12,15 @@ class HomeassistantCli < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "532fdbfa1fd0ab793db6f69f918e92c4cdc4ebc344ce9e6a8cfcc342b3430789"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "680fa2d3fc49e8d6e029b79ed3cac8f803b739469be57b6a60eb06787e6e887a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "fc709b3119117842175d0145afe957a19a7174c287a3cc6e789ff93eee65fd7c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "84d60b9d401a5c5543c13e6e5f384ac52c24b975418fb68de32168e5b368d1e2"
-    sha256 cellar: :any_skip_relocation, ventura:       "ab023c6d393385716e7621bdd16be0e00aee52a833da39cdb8d7c89265f018fd"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f426b5be1589660625222a5f892433488b03ece7ccc4a23ae8bb3a0c9b5a33d4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c171bbc37cad686513e7bdef4d360b36adc25f87ecc4415ddff737e7a1d79dad"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "14097ae33fea2b0d77d5363e5f6ae93679d9bedb151904e44b5142fc93ec397f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1cee8de39515ba9f20532f1087b0306d86a6ce1b7c7be88238eb8b8dcca8fa3b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "837a0a83085ca60fe4cd87450a3bee0d7358e73a61aca65323ea719f8eea1899"
+    sha256 cellar: :any_skip_relocation, sequoia:       "db6a25db6cd469930d3de33aca9b1bf6eef3c7b32c97afe2d50323e3f3579c2f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f860f0751af5e27ead4cea58aa8ade9df19a01f2a1329f95e8d641ee8f1de8d6"
+    sha256 cellar: :any_skip_relocation, ventura:       "fdfe44c2d48970dc85a6eb09e850fb97267bbda675ce899040d67a2dc8f958bd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "59171904c78d5bea8fac7d0a51c1004de37d43b06a715f04132edc15ee0d9bd6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "376cfba4260399d338367c5e6997b692f6d98881b396ad5ec4fe340de8aebc58"
   end
 
   depends_on "python@3.13"
@@ -176,7 +177,7 @@ class HomeassistantCli < Formula
 
   def install
     virtualenv_install_with_resources
-    generate_completions_from_executable(bin/"hass-cli", shells:                 [:fish, :zsh],
+    generate_completions_from_executable(bin/"hass-cli", shells:                 [:bash, :fish, :zsh],
                                                          shell_parameter_format: :click)
   end
 

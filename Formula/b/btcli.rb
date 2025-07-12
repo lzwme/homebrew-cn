@@ -3,19 +3,19 @@ class Btcli < Formula
 
   desc "Bittensor command-line tool"
   homepage "https://docs.bittensor.com/btcli"
-  url "https://files.pythonhosted.org/packages/8d/24/b908a84d902959d86894de8ec2781a4a7ebbaaa4e76dbc1284f2577c5471/bittensor_cli-9.8.3.tar.gz"
-  sha256 "69dccdb1a3a4a53fea010da1c772e3b1268bae503cb0ebe57774f5cd94e4334b"
+  url "https://files.pythonhosted.org/packages/be/68/c518d205e32bfb400d376923d55ead4d882ea650b5771cfacba283034830/bittensor_cli-9.8.4.tar.gz"
+  sha256 "b78e831348b099c99c39cc5eb1fb92592407d8587aa12d24e4c4c5539bd3e09d"
   license "MIT"
   head "https://github.com/opentensor/btcli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "4ef6d8ce91c857be95a3305153ab5e3b6fb1bc46174e1603bb93641f8844e390"
-    sha256 cellar: :any,                 arm64_sonoma:  "f66a7efdb69788af7a9596264e2f74c9c5d4a4c57cd7a011f71f9b5979400f3e"
-    sha256 cellar: :any,                 arm64_ventura: "86f723cd8055963ef7df4a84cb1ecb4afcebb26d67486eb588294c86d25f2b2f"
-    sha256 cellar: :any,                 sonoma:        "76f57e407d554e9bc47fd4aebe21d7bfa3a62cfee6f275129bbc65a3dcc94389"
-    sha256 cellar: :any,                 ventura:       "bc1195154bb9efb6b8a0a744f99d67db9138ba07fabd3c797e485a27f71ad6fa"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6c7cadd0d26633de07963d61ef452c52ef0898bf820b8004ec8af7f817114926"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "58867e487cc6012b04797257a79e06506648ed4bca7f8812c77ed551ee76d6a1"
+    sha256 cellar: :any,                 arm64_sequoia: "9852dee0df9905c241aaac10a8922eed973b4c2aa1ede0c92fc189477b1ac0e6"
+    sha256 cellar: :any,                 arm64_sonoma:  "0c2b3a04ade2c6af55212019ed3cbb69caa7b150bcd3a6950052d4f18927a405"
+    sha256 cellar: :any,                 arm64_ventura: "ffc1607b9ccd87386932b12f7202f3f8664ffebffd155aaefcfa403236d4d922"
+    sha256 cellar: :any,                 sonoma:        "1c551c6d5bab862fecea762de3bea36bb73f81f892af8968828f5ca179ca8e36"
+    sha256 cellar: :any,                 ventura:       "30b6751b3213d8c88f0fdec26d4d598bdf6e8ccf696ef711f32dadca21f2ef65"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2bfa0590da6fb0d941652a848864da20c7e70439769e75e9ddee17a06dd642bd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9bbe8e0a573509be0f3d81d436207f6dab5672e35d635eeb2311d96c22b090a4"
   end
 
   depends_on "rust" => :build # for bittensor-wallet

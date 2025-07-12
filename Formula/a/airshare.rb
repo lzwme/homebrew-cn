@@ -11,14 +11,14 @@ class Airshare < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "788ff35c84c01d325cbd7d839079907c0ada77e021cf3b34ff6aff956d31eb8d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "01c360fd06e99a1369ef80f35b7e14b1ecbc245b3d75d4d176148a2adfeb33e1"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "25d3b02104872f23235580f7532dbe1bd684190da52029ade86fb2fc1a1a6e3e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c0862464272168098ab9cbb8023d533959cb6ab71aa70c1c1fd644e59bf127c6"
-    sha256 cellar: :any_skip_relocation, ventura:       "fa8122ee12d03cd7c1c2e9b765625c057cb346df0e9894aceb781f7121a0af78"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5dccfccf439a763b946ce2869831603cc7230097fe04b4c516eba18ab2acb38b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e4abda68288e930659bf701b6a32c8a4926604bfa3257394ee91c2f7e8106115"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fc2fc265e8be9a05d336542792418620c0fb09ac30a092e926a1d6acd5a87ee1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "859b6db2661fdb20f710693730eeae3c30c89e8bd260db1d2ce53f7d51ecb900"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "972acfce7af9a8ef431eb137fe2f5ec48177db978962cad0687524cc24dc0573"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f09abd1ac0a352798f405b074722c0eddd1eb3e9070ce7157e52e5fa18cb1009"
+    sha256 cellar: :any_skip_relocation, ventura:       "6395e59119b24a37f59395b61816c3c16f91c2e8bda194b6186e82125489bf99"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4f12117cdf50e56e225377e775ef48498e25d084041805a9f0dcbaa95c6fa91d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "551112f8b8feb6e355698603453ef55dff83e6dc748efdf852df03fae62caa2c"
   end
 
   depends_on "python@3.13"
@@ -141,7 +141,7 @@ class Airshare < Formula
   def install
     virtualenv_install_with_resources
 
-    generate_completions_from_executable(bin/"airshare", shells: [:fish, :zsh], shell_parameter_format: :click)
+    generate_completions_from_executable(bin/"airshare", shells: [:bash, :fish, :zsh], shell_parameter_format: :click)
   end
 
   test do

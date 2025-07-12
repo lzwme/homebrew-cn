@@ -9,13 +9,14 @@ class Sceptre < Formula
   revision 3
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "0cef0955107942bcc6b6c98c3e6948848de0eca717110fa16830378fdcb6efc8"
-    sha256 cellar: :any,                 arm64_sonoma:  "c5b8379dacb404e7c286a27289d512a809f66f0bf18475b4774a602a54076be9"
-    sha256 cellar: :any,                 arm64_ventura: "ef53c96dfd02eaa96a11f239b9ba05ca1788ac53ec927c6e61b0694c94553808"
-    sha256 cellar: :any,                 sonoma:        "474a38aa7eba4c81343d6fe5885fb5609cbba50468c0c3d50f527cbe5095de91"
-    sha256 cellar: :any,                 ventura:       "9be5b62ead5267746495821bee882dce883e17d04549c27f72d9bec54638f166"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "96025b896fbb351b0db9298733c63971d07fc16e2ba510ab8d9fb9ff44e4fff8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "989daa64fd40d9f2de6e3862ac41346d1ee1238edef951ebc9787a1619ca4c22"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "9ecf161ef848c4ccb470d351fa75365e3c7ae8b1dba3a9252c7bee7f7b877a32"
+    sha256 cellar: :any,                 arm64_sonoma:  "d87a9c1ab6cad19644badc2e1eaef90a69fbb1a7ea0df6900ba13edb26b1dec4"
+    sha256 cellar: :any,                 arm64_ventura: "aa75d08fc9fcb5b568c6d6e4faa8353a08d601f0eceb4adbc244ec818da8c073"
+    sha256 cellar: :any,                 sonoma:        "4e23ea3c8d60f9b1dc81a4689d9c86b6c4cc5aada93563cddb9f010170dbe9e0"
+    sha256 cellar: :any,                 ventura:       "bc567e2a18749950494554270b7f03b1656a73f565f7af67bf773acff1583c38"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c571e292fad37d6feb08ea43eb723ec2702a75f937ede44fb59c7b5c6f2dbd4a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "26a0016430478917bc35bf69ed47c07e01f4b034e999f69a184eb14aa0c6427f"
   end
 
   depends_on "certifi"
@@ -164,7 +165,7 @@ class Sceptre < Formula
     # Avoid issue if `numpy` is installed, https://github.com/Sceptre/sceptre/issues/1541
     virtualenv_install_with_resources(system_site_packages: false)
 
-    generate_completions_from_executable(bin/"sceptre", shells: [:fish, :zsh], shell_parameter_format: :click)
+    generate_completions_from_executable(bin/"sceptre", shells: [:bash, :fish, :zsh], shell_parameter_format: :click)
   end
 
   test do

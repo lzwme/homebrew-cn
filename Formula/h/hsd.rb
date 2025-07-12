@@ -11,17 +11,22 @@ class Hsd < Formula
   end
 
   bottle do
-    sha256                               arm64_sequoia: "f49020038dd503ff20678bd72730f297a62d652171f0f6e92c4905308fa825a1"
-    sha256                               arm64_sonoma:  "bafc25d3b6c841544f70926bdb877bd5c1b802066ead9b0cb1c5651c5d38b057"
-    sha256                               arm64_ventura: "1950c44d5aefc46de62db6c7382849bd886d6f4551f811bd43f88342cb9820b0"
-    sha256                               sonoma:        "eec81a814a324c3e71c090f55c09700d523300d48c11ebc224546f56ae507041"
-    sha256                               ventura:       "2a474e169e574e73679e2f59c40a065f633efa631fd54ef519ba1e2184393c99"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b04ee8d7c2ee6af1ad78bcaf01aedc56612e7222d9ac1a383f5eb66f1e548103"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cdb19ae0e6840855a4d49bdfd7113e0d5bf4e72abcec970a23dda6cbccc5789f"
+    rebuild 1
+    sha256                               arm64_sequoia: "aa30dbad82098c555396fa5810915298e1da37226e8a7291269272038f0980f0"
+    sha256                               arm64_sonoma:  "0ebb374eee2f64b48aadd1fb92d3a1ca0e17632fbff7916529477a3c4df68951"
+    sha256                               arm64_ventura: "1243bab93e49d99e7e67fd7b90682eced4c2a5b935db8843e3d5c135fa2e5a18"
+    sha256                               sonoma:        "4a0c34993fdc4c414a615f886f70804b6ff558301f4aff909b89a9b92e9c3387"
+    sha256                               ventura:       "2a1b7c8824f911c7573de14d183862aa5baeed27922ede4b565fd1ae0236716d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "44d682a12a7ae54d07cfd6ff865d923548b8febb035ef8d202302376ce9ba1c5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9f95e25d794cf25887927e9311a3d7558f175520361028c5296d2ee4be0cabdf"
   end
 
   depends_on "node"
   depends_on "unbound"
+
+  on_sonoma :or_older do
+    depends_on "gmp"
+  end
 
   def install
     system "npm", "install", *std_npm_args

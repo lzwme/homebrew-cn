@@ -9,13 +9,15 @@ class Fred < Formula
   revision 3
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5196561738312e479a8c55346ff7b2e62b67c3188920d5ec2e891758001de2e3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5196561738312e479a8c55346ff7b2e62b67c3188920d5ec2e891758001de2e3"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "5196561738312e479a8c55346ff7b2e62b67c3188920d5ec2e891758001de2e3"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1359952e7fc17c1541a7e84499ea9188701efd79e38139a2ec4bdf54d16358c3"
-    sha256 cellar: :any_skip_relocation, ventura:       "1359952e7fc17c1541a7e84499ea9188701efd79e38139a2ec4bdf54d16358c3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5196561738312e479a8c55346ff7b2e62b67c3188920d5ec2e891758001de2e3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5196561738312e479a8c55346ff7b2e62b67c3188920d5ec2e891758001de2e3"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bf7e2ff3527b70acf8ae9d3880f9f7272623f831e25453efee8100e4a6beeef5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bf7e2ff3527b70acf8ae9d3880f9f7272623f831e25453efee8100e4a6beeef5"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "bf7e2ff3527b70acf8ae9d3880f9f7272623f831e25453efee8100e4a6beeef5"
+    sha256 cellar: :any_skip_relocation, sequoia:       "b3be8042d767192bc4dcfc57dd74458506c4d0f8e2b6771eb11dec225893848b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b3be8042d767192bc4dcfc57dd74458506c4d0f8e2b6771eb11dec225893848b"
+    sha256 cellar: :any_skip_relocation, ventura:       "b3be8042d767192bc4dcfc57dd74458506c4d0f8e2b6771eb11dec225893848b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bf7e2ff3527b70acf8ae9d3880f9f7272623f831e25453efee8100e4a6beeef5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bf7e2ff3527b70acf8ae9d3880f9f7272623f831e25453efee8100e4a6beeef5"
   end
 
   depends_on "certifi"
@@ -54,7 +56,7 @@ class Fred < Formula
   def install
     virtualenv_install_with_resources
 
-    generate_completions_from_executable(bin/"fred", shells: [:fish, :zsh], shell_parameter_format: :click)
+    generate_completions_from_executable(bin/"fred", shells: [:bash, :fish, :zsh], shell_parameter_format: :click)
   end
 
   test do

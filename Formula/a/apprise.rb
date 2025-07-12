@@ -9,13 +9,14 @@ class Apprise < Formula
   revision 2
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "b2a2a2c4d22593b4f902920e37e90e26c36ae7433fa15f0b49d5b0a0bfd4da0b"
-    sha256 cellar: :any,                 arm64_sonoma:  "1adb251b14e2a853a4c4d87078270bbe73b905097d345ada03a8132ddf0b7677"
-    sha256 cellar: :any,                 arm64_ventura: "13abcb9e42c91e1401d988d59ff7bbe680a76a81b452e46fcad758f156a0e23e"
-    sha256 cellar: :any,                 sonoma:        "edf57c6280285d856f65cce0340cf891da6babc5e6f15d6a07071b6f78a1828d"
-    sha256 cellar: :any,                 ventura:       "b34de266a4e33ad7f2477fd054fd4d46c1a32e613538f7c542dd31307bfcc663"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "79d1048684dcd8869ece274486faa0dbc01251f99814f088f9220c866fdfef05"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fdf5fb4db8756632f304419f5ff5ee4d817eef5c0ddf74dfe9e905492fcc2417"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "a7c82a682ecf103d6137e6b334e453d28d461720352621506b88b54e082a060f"
+    sha256 cellar: :any,                 arm64_sonoma:  "a65aff91277ab155606aa7cfc1eef89cfec14ff4fa847d15b4670b1e59d47ddc"
+    sha256 cellar: :any,                 arm64_ventura: "6310cc3947bf9179df035378bd5f1c1c453ffb6f635da2efc0a93092124d7531"
+    sha256 cellar: :any,                 sonoma:        "bb8363ad02d2ca2e75496ab5833a9d45a85d0b8eda746e3ad87a17ccf39f8609"
+    sha256 cellar: :any,                 ventura:       "e262256143f9b0bce8c3804444944b382f61602fe655744500cd0433e6b3924e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fa3b052f8c8db8cc749b325bfa1df6b58bcc38ce995b7e3ac0d46062035a65e9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fd4db6e05c3f60e449e0697a7d987e2399fb6abe5d1226abb3a022508951ba97"
   end
 
   depends_on "certifi"
@@ -70,7 +71,7 @@ class Apprise < Formula
   def install
     virtualenv_install_with_resources
 
-    generate_completions_from_executable(bin/"apprise", shells: [:fish, :zsh], shell_parameter_format: :click)
+    generate_completions_from_executable(bin/"apprise", shells: [:bash, :fish, :zsh], shell_parameter_format: :click)
   end
 
   test do

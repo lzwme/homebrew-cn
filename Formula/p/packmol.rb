@@ -1,8 +1,8 @@
 class Packmol < Formula
   desc "Packing optimization for molecular dynamics simulations"
   homepage "https://www.ime.unicamp.br/~martinez/packmol/"
-  url "https://ghfast.top/https://github.com/m3g/packmol/archive/refs/tags/v21.0.2.tar.gz"
-  sha256 "4b63d73400f7702347d9ff0cc4d0009be5a752afa7af00ad612554e8918f00fd"
+  url "https://ghfast.top/https://github.com/m3g/packmol/archive/refs/tags/v21.0.3.tar.gz"
+  sha256 "902e885e4b08ca728333b7cb56c9d8e46c4581f9f8d503ac42d13e24e00dc185"
   license "MIT"
   head "https://github.com/m3g/packmol.git", branch: "master"
 
@@ -12,13 +12,13 @@ class Packmol < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "ff3dc31853b5ed73c4ed37e81f0e1fe05d0a8af80096c045622a9d6dce28dbda"
-    sha256 cellar: :any,                 arm64_sonoma:  "aaa1f1d5d09a01d6ce4035e1ec5c4f3fa74f136241881464da849e28ce84f736"
-    sha256 cellar: :any,                 arm64_ventura: "18317fd790c03ec39ad0c291f1b56fc94083d6ccfdce9d4f222c977777799daf"
-    sha256 cellar: :any,                 sonoma:        "e348a69540b5961cd274a140e6c776c6b1be60284d616b4a55f1714a880b6d68"
-    sha256 cellar: :any,                 ventura:       "6694cd43a3320660608ca071a6467924095f624ef3ec30cf9f6d1d6e6b00e239"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "eece5b9234339d41d38f1468f0c00222b8e30ce29548f8860fb509f184d013bd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c4ab86f29d725aa61afcfcca95dd7a941cb606b6f36218765da30a7c7e260b65"
+    sha256 cellar: :any,                 arm64_sequoia: "b9e4ce1c6ba05110665f8542832753836916a5c08beefed30db3740d40b05d8d"
+    sha256 cellar: :any,                 arm64_sonoma:  "ad0679072eee11caa681804144d4967568bb78ac94b919eb13c0db46f2403d34"
+    sha256 cellar: :any,                 arm64_ventura: "e26a7e3527f4990e9f4b729a26d9c4f04924c63ab8834ee687ff3d055f92f148"
+    sha256 cellar: :any,                 sonoma:        "a066dfcc837fd6afe7e7840b462bc365c329d4ac1f6db65282f043ebdd926829"
+    sha256 cellar: :any,                 ventura:       "577450e69d644f761785f10cb68ef75670f3aae0ada58ea9c57011ba2bab936e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "691afc5e0cbaf853e197cea3a55ee97c04d3442bec09252ba39ac6b718eacc36"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "05795238e5cf6a7b0692dcb455e7b5f857670be9574b2f364b8913489edce93c"
   end
 
   depends_on "cmake" => :build

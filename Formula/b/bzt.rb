@@ -3,19 +3,19 @@ class Bzt < Formula
 
   desc "BlazeMeter Taurus"
   homepage "https://gettaurus.org/"
-  url "https://files.pythonhosted.org/packages/b6/cd/85cd07987ec4884f210b08873e60c6deb961e0c784b789bbab517ceb697b/bzt-1.16.43.tar.gz"
-  sha256 "ec9a2c4f1bf177874776fcca3776137994c3e794440d587237c7e37975e1bd02"
+  url "https://files.pythonhosted.org/packages/ff/87/e5b351ffd9941662f004b8d88df2a3e74e36fbe738388cbe71daebab53ce/bzt-1.16.44.tar.gz"
+  sha256 "a6a259fd1d2f068b98b473cd8fc1677dba71247669df296da51d9bee627e6d17"
   license "Apache-2.0"
   head "https://github.com/Blazemeter/taurus.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "8464eba91556d12520b5841cba691b6cab34a96f8311b7e1e64aee96f51928de"
-    sha256 cellar: :any,                 arm64_sonoma:  "f51a0d9fe68edb8383f9e9fe003d3147eb9e7c4481c174cbaa2fe2faa0b39339"
-    sha256 cellar: :any,                 arm64_ventura: "e65c54373e3cf7cc1538a96db010998b27826ce1ed01c70cc79a2b7755860014"
-    sha256 cellar: :any,                 sonoma:        "fa6ae5f39e5fccbaecfba7c3e0b6f2dc78f6e4271d5f50fda485448792612995"
-    sha256 cellar: :any,                 ventura:       "8aa883d9efbee65dc77149b4e3ffe3645e8b20f1005bbb0fb5dd49a68def955c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "daefa9432584c61b4e13538e4a06c622d6afdcf478d40615d537c07f02b00864"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1717177e072291a4f1d518a69f295f060a96344175dd599d894003369819164d"
+    sha256 cellar: :any,                 arm64_sequoia: "8c026d84ce289f15a3bf5e44919a4e44c3a748d041c110d630d26d20ffba68d6"
+    sha256 cellar: :any,                 arm64_sonoma:  "2ecc1856cef06b66f6413651f98980b7c07469f7a97b8c3d08a691bcadd0a3c2"
+    sha256 cellar: :any,                 arm64_ventura: "c02f60a0b95dfa4326a1a14d0b8e6d67ac89e3508cd094316beaa19caf84347f"
+    sha256 cellar: :any,                 sonoma:        "4e620200e123a9e99564be7f39f82b5afbc88ee3eb7eeb1e9bc62dbd80925463"
+    sha256 cellar: :any,                 ventura:       "d9014a4752a3734310fad4043d75ad1635162802aed1f82fb2fd42caa83c7bce"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5cda8cbbedcae1c8c545a1e4441051a3289049545fe192ca31d1e6d72ec9e152"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "98924dde7de573f6522eda2a167db5e71dfa1ccc6eae8d97d8b5bbc253f281f8"
   end
 
   depends_on "cmake" => :build
@@ -211,8 +211,8 @@ class Bzt < Formula
   end
 
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/9e/8b/dc1773e8e5d07fd27c1632c45c1de856ac3dbf09c0147f782ca6d990cf15/setuptools-80.7.1.tar.gz"
-    sha256 "f6ffc5f0142b1bd8d0ca94ee91b30c0ca862ffd50826da1ea85258a06fd94552"
+    url "https://files.pythonhosted.org/packages/18/5d/3bf57dcd21979b887f014ea83c24ae194cfcd12b9e0fda66b957c69d1fca/setuptools-80.9.0.tar.gz"
+    sha256 "f36b47402ecde768dbfafc46e8e4207b4360c654f1f3bb84475f0a28628fb19c"
   end
 
   resource "simple-websocket" do
@@ -236,8 +236,8 @@ class Bzt < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/8a/78/16493d9c386d8e60e442a35feac5e00f0913c0f4b7c217c11e8ec2ff53e0/urllib3-2.4.0.tar.gz"
-    sha256 "414bc6535b787febd7567804cc015fee39daab8ad86268f1310a9250697de466"
+    url "https://files.pythonhosted.org/packages/15/22/9ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bc/urllib3-2.5.0.tar.gz"
+    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
   end
 
   resource "urwid" do

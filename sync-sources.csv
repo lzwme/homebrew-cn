@@ -1807,6 +1807,7 @@ Homebrew-homebrew-core/Formula/e/exact-image.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/e/excalidraw-converter.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/excel-compare.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/execline.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/e/execstack.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/e/exempi.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/e/exercism.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/exif.rb, Homebrew/homebrew-core, 1
@@ -11922,7 +11923,6 @@ Homebrew-homebrew-cask/Casks/g/graphicconverter.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/graphiql.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/g/graphql-ide.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/g/graphql-playground.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/g/graphsketcher.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/g/gray.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/g/grayjay.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/green-go-control.rb, Homebrew/homebrew-cask, 0
@@ -11945,7 +11945,6 @@ Homebrew-homebrew-cask/Casks/g/gtkwave.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/guijs.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/g/guilded.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/guitar-pro.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/g/gulp.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/g/guppy.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/g/gureumkim.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/g/gutenprint.rb, Homebrew/homebrew-cask, 0
@@ -13005,6 +13004,7 @@ Homebrew-homebrew-cask/Casks/m/music-remote.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/music-widget.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/musicbrainz-picard.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/musictube.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/m/musiver.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/mutedeck.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/muteme.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mutespotifyads.rb, Homebrew/homebrew-cask, 1
@@ -13226,6 +13226,7 @@ Homebrew-homebrew-cask/Casks/o/onyx.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/oolite.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/opal-app.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/opal-composer.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/o/open-data-editor.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/open-eid.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/open-in-code.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/open-video-downloader.rb, Homebrew/homebrew-cask, 1
@@ -14375,7 +14376,6 @@ Homebrew-homebrew-cask/Casks/s/stratoshark@dev.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/strawberry-wallpaper.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/streamlabs.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/streamlink-twitch-gui.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/s/streammusic.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/stremio.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/stretchly.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/stringsfile.rb, Homebrew/homebrew-cask, 0

@@ -3,18 +3,21 @@ class Readline < Formula
   homepage "https://tiswww.case.edu/php/chet/readline/rltop.html"
   url "https://ftp.gnu.org/gnu/readline/readline-8.3.tar.gz"
   mirror "https://ftpmirror.gnu.org/readline/readline-8.3.tar.gz"
+  version "8.3.1"
   sha256 "fe5383204467828cd495ee8d1d3c037a7eba1389c22bc6a041f627976f9061cc"
   license "GPL-3.0-or-later"
 
   # Add new patches using this format:
   #
   # patch_checksum_pairs = %w[
-  #   001 <checksum for 8.3.1>
-  #   002 <checksum for 8.3.2>
+  #   001 <checksum for <major>.<minor>.1>
+  #   002 <checksum for <major>.<minor>.2>
   #   ...
   # ]
 
-  patch_checksum_pairs = %w[]
+  patch_checksum_pairs = %w[
+    001 21f0a03106dbe697337cd25c70eb0edbaa2bdb6d595b45f83285cdd35bac84de
+  ]
 
   patch_checksum_pairs.each_slice(2) do |p, checksum|
     patch :p0 do
@@ -65,14 +68,14 @@ class Readline < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "a517cb70e4efb6a1d061fc5da61aefd9390b86fbe21024cef18b5697f5f7af94"
-    sha256 cellar: :any,                 arm64_sonoma:  "875c8524ef5514ba0368040d2355fce741ef00206c214a661d5bec1e66979b38"
-    sha256 cellar: :any,                 arm64_ventura: "e63fe588d7dc5ddf30351150c325be8dbd474e20d469a1632542bcf62531000f"
-    sha256 cellar: :any,                 sequoia:       "f4e77a529e80700170d7de8f1cea5e7773e8fbadfab69669465761170f8f0b47"
-    sha256 cellar: :any,                 sonoma:        "f861e9241d7b5b53457a64f45cd128be2bca6c93c4769caba1dc7ca04c7f8eed"
-    sha256 cellar: :any,                 ventura:       "ed7497b20408ad2447e3451adcff05133bc07c8a56f49b6ea0fae730919e49ee"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5d2c6882b7c79962109f46af7855600d157508be3ffba9f29af442dc337829bd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9fedfb81316e643182df350f4861dcde21bb2d19f0f533ec9a76b03754ba07dd"
+    sha256 cellar: :any,                 arm64_sequoia: "3afa0c228ce704810d09d40ce7d1265777df8b9034a7bfc18f0f4c19094710a8"
+    sha256 cellar: :any,                 arm64_sonoma:  "51a9a7122a89fd2464fc631f8c31721afc700b3b220ed8b0c23655514b04db73"
+    sha256 cellar: :any,                 arm64_ventura: "5788e1e5f713d5253edfc4b9d137d384b692fee6de1c79af3dba18fa7efd31c3"
+    sha256 cellar: :any,                 sequoia:       "85d56c6896ac184bf38b1b0867d050235fb0a4873c152b52a46748aa1b458ec9"
+    sha256 cellar: :any,                 sonoma:        "1ca59c2fba1ae707b3c893bc237c6638c5140fd73795e76fb186b1176b5931ff"
+    sha256 cellar: :any,                 ventura:       "722187db867ece23e06d6e1ce4b67190d602e2b456e113a9b3c5e3930de923d8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "64ab04c378cb3546baef10c3804ce5c1f3ec70a293df98b8e48b674e123c28b7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "148c40946804e22da82f0864b458d1eb01f23b9cf30c7b9f10501853b92ad33a"
   end
 
   keg_only :shadowed_by_macos, "macOS provides BSD libedit"

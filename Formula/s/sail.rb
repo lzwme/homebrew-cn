@@ -11,13 +11,14 @@ class Sail < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "e9e5943c6f42f1fd2edbb9a09bc78d4b2df7328ed4e3591ec744eada3a9e886a"
-    sha256 cellar: :any,                 arm64_sonoma:  "0dcdee4bf5d8974310488fbd80137f419f032a5814b60a94ce2f94dbcd630f63"
-    sha256 cellar: :any,                 arm64_ventura: "4a87f1c0cd5d878b37c10c5c3e8a37f6a70c59cca9ea1c5dcc8c09140e2bc194"
-    sha256 cellar: :any,                 sonoma:        "292237d8539621d929d2ef8711e1ee9fd44884d346c19363f44a9e25a2646658"
-    sha256 cellar: :any,                 ventura:       "ba31b8c79d877f4e206e00945d02dfcf7887c2984be47c03b53ca5dea0a57cc8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "49e463474d1c03a05727ced97a4d9747d8a9eac2a4a939bf091e5a7da9ffc3ba"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "13efa98f4a9d42352730dac0d4a8fbac39a70f567399a924f703ba38987bfde8"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "55df5f7dc3a28ceff6f4f45ed960292003a2acdf7067642c796057f7569392c0"
+    sha256 cellar: :any,                 arm64_sonoma:  "10a6056fad7c4518d86e1407a78134218222bd4ac899121ad500f3431c1cae2b"
+    sha256 cellar: :any,                 arm64_ventura: "4ac5358a006793ede341be09bbc6e81aa85ae42fcbf30c2091c2e324a25dd57b"
+    sha256 cellar: :any,                 sonoma:        "8c28ed6961ce51b263902c6ce861328a4da5668246c2a035987582939e831472"
+    sha256 cellar: :any,                 ventura:       "e5c4c6e35b7076b3a1cb6dd348fa0c09800ec32d77e3ec3b6c211677dde9411b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "67d113a966d4fecc2e6fe6b46b8bfb780aa0c2e50c72084a31870ba32b5736f4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0d96b37806ed082f9a7a487768d4dbf23d83aa05653dffe8a761b621900967ec"
   end
 
   depends_on "rust" => :build
@@ -140,7 +141,7 @@ class Sail < Formula
   def install
     virtualenv_install_with_resources
 
-    generate_completions_from_executable(bin/"sail", shells: [:fish, :zsh], shell_parameter_format: :click)
+    generate_completions_from_executable(bin/"sail", shells: [:bash, :fish, :zsh], shell_parameter_format: :click)
   end
 
   test do

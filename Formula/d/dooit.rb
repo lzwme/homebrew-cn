@@ -9,13 +9,14 @@ class Dooit < Formula
   head "https://github.com/dooit-org/dooit.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "8047ea87fead5fee013e42473bfc468ecea6c4e92c5613e20fa351b6b6868102"
-    sha256 cellar: :any,                 arm64_sonoma:  "69ee89a2ac8de7643e8027db3c47c66cda323812f5cda655eb55a7b713489598"
-    sha256 cellar: :any,                 arm64_ventura: "193c34d754ee15a4c34ac70126513bc6728444fdae801f9faaf7124adfcb42c5"
-    sha256 cellar: :any,                 sonoma:        "9e6508f0952cebb70e33c1e52263a17ee86ace45614cd67983598f9eab5c0b72"
-    sha256 cellar: :any,                 ventura:       "4b0b6625df2341d618c5aa8f747fb50f383eeda34c6a9205d382038772b4f929"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "91e4c510fe23e24702bcec6b1bbeca2e9ad76f8fc20b8e567f9ae6c053d501df"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bba39beee68ca9679573e86bea3528a63fa1efbf2f9106098d6674d7467d8c02"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "304427e9a2282b9f0f20460361fc8a567704642cb96dcc4df4ab0bf276cc8ca1"
+    sha256 cellar: :any,                 arm64_sonoma:  "3570249df6e4267ef9eec314dfa03f6a2a4f047805088d123c46b36a1c90c86a"
+    sha256 cellar: :any,                 arm64_ventura: "4d842a0c2b6f1c67e966befc3523f9c3abb7d63543de2f045955d5b3513a2e3a"
+    sha256 cellar: :any,                 sonoma:        "ec308eb160c648bb3d5eaac51a0c8b08e2c47c228ad57eb1a0e59dd631c4fefa"
+    sha256 cellar: :any,                 ventura:       "89ba2e2050a028006589868958bbde1287388c23e857fbef578dbaf3ee5effb2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "41872511cccf3e87d764f8fbace0bd76ea1df49ecc3167b0fa2b7cb9be200749"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2192cd9d73cc81adb2918bd297af7f9a7d1dc49598dd94e775b02cfbd5477069"
   end
 
   depends_on "cmake" => :build
@@ -118,7 +119,7 @@ class Dooit < Formula
 
     virtualenv_install_with_resources
 
-    generate_completions_from_executable(bin/"dooit", shells: [:fish, :zsh], shell_parameter_format: :click)
+    generate_completions_from_executable(bin/"dooit", shells: [:bash, :fish, :zsh], shell_parameter_format: :click)
   end
 
   test do

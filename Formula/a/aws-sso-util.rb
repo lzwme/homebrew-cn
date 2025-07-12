@@ -10,13 +10,14 @@ class AwsSsoUtil < Formula
   head "https://github.com/benkehoe/aws-sso-util.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "9b0de72d218774baa7fe3fc5cd7952945080f10f41360c5ac644ec727a718b22"
-    sha256 cellar: :any,                 arm64_sonoma:  "6fd418debe55255e4d7bf2b619251d1a383f44f931e223d4bc1d6231a5147ad1"
-    sha256 cellar: :any,                 arm64_ventura: "3cf8890dc4fb3370a3813e86161ac6da5253798932c5b9de701cd1bd50810674"
-    sha256 cellar: :any,                 sonoma:        "54bc1cef47b78f23d4cf3bbe9c14f94f094c40def535268ff85fc1fa506ca81d"
-    sha256 cellar: :any,                 ventura:       "1fd983273a29a581c6aba4dc47af4346eadff4468ae7f9969c6dad086ebbfa71"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3444c15cb7f0fe88a3cd70ab244b13bca55ca1fd509ca7bd453b13762e1e83ff"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "53134b0ef76fa56c95fa1ba0ee9cc989a987c0040d87256cae1621d745407a3d"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "bab323da7693aca57ed3e3471b3cc3f167462798d1387d1ae2d1b0934d602fda"
+    sha256 cellar: :any,                 arm64_sonoma:  "6ebabf3294219f2ab3c6f135e90a7cf43e28eaebc1f1765bdb341fe83c6b8bcd"
+    sha256 cellar: :any,                 arm64_ventura: "2e4dc4ea27a97b8eeb89059d77842d21f2b6ce42712938f87ec78e2684d00c39"
+    sha256 cellar: :any,                 sonoma:        "8ca33fe59987e3a1a0900bfabb01b31fcf5967b7058c3da76ef6dba55136eb6f"
+    sha256 cellar: :any,                 ventura:       "323c4ba449820a47dff76a78dab8fdba28467b218d4645f4de7a9ac4e9a02175"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "dd406c079f352fe10c7e2edd987cd813f40a9dfd05a16b492c91bd0b99bc92e5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4fdf3d0a107bf8706edae93fd5212debbaafc78289ab384b630b979128379fd3"
   end
 
   depends_on "rust" => :build # for rpds-py
@@ -122,7 +123,8 @@ class AwsSsoUtil < Formula
   def install
     virtualenv_install_with_resources
 
-    generate_completions_from_executable(bin/"aws-sso-util", shells: [:fish, :zsh], shell_parameter_format: :click)
+    generate_completions_from_executable(bin/"aws-sso-util",
+                                         shells: [:bash, :fish, :zsh], shell_parameter_format: :click)
   end
 
   test do

@@ -9,13 +9,14 @@ class Sgr < Formula
   revision 15
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "89236b60825df7faf2a732c50730fbd1eac0ff0991ffb90cf082e983124814b2"
-    sha256 cellar: :any,                 arm64_sonoma:  "ba87ac70a1aa814b56c2fcfc9d59e1d0cba001fd3efba2e24d8c4ea7342842da"
-    sha256 cellar: :any,                 arm64_ventura: "20b15c267e6ec08bff4a7a6b99a6edc525e651db05e24e9aa21f2359dd24eeba"
-    sha256 cellar: :any,                 sonoma:        "c321ad64b38b581cacfc0458a887b61cc8581d4a986eb361ce59c3a0b6f8e63c"
-    sha256 cellar: :any,                 ventura:       "36367c852e3e7c212e17b3a5d603ae446711b56381bee4e96c3e0254f85f84b2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c1ea6742f068b91669e5aecbe41ac63423a8e2b326fbfce435fef6a99220aef0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b7b4b49b7b877f1c934c839a13f29b3a392a8ced101800f3ccd8611fe1f72104"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "8b6bd0d9d65b7016b133c9d477aa33849ffd840701d1db2fb9a5c3c090315b0a"
+    sha256 cellar: :any,                 arm64_sonoma:  "58817b8360687ae5872644c9e92446a3c04148ba83cee89c164f98d10cdc27a4"
+    sha256 cellar: :any,                 arm64_ventura: "310c1a29339601e36bd39f82a0919f851c74b7284f3eaad89bfa14050f97f6fe"
+    sha256 cellar: :any,                 sonoma:        "ab95cfa5b159b8908abae601bcc28164720b10cb58fbc7c859b9512ea5315da8"
+    sha256 cellar: :any,                 ventura:       "144d8d6b437fc851507e9af0bf52b94b60b48225ce3048cbc7fb39be6fa0a0cb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5861073b4b9db73e936df361f0974760224d19b30c43a044cae5f6192fc9dda9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c956a3928ad6f7473ea2eea0c6124f167d18e02a96cdc3ea584a253314efebff"
   end
 
   deprecate! date: "2025-06-21", because: :unmaintained
@@ -221,7 +222,7 @@ class Sgr < Formula
     inreplace "pyproject.toml", 'version = "==3.4"', 'version = ">=3.4"'
 
     virtualenv_install_with_resources start_with: "setuptools"
-    generate_completions_from_executable(bin/"sgr", shells: [:fish, :zsh], shell_parameter_format: :click)
+    generate_completions_from_executable(bin/"sgr", shells: [:bash, :fish, :zsh], shell_parameter_format: :click)
   end
 
   test do

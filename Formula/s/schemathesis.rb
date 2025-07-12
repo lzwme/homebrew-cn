@@ -3,18 +3,18 @@ class Schemathesis < Formula
 
   desc "Testing tool for web applications with specs"
   homepage "https://schemathesis.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/40/10/07dae635909814d84e3f7c71389ee79834612d03111c6287ba8fef267947/schemathesis-4.0.7.tar.gz"
-  sha256 "2cebaf8ffcdc18681a2ff197a7efc073ff6c6b9a1917d650da68525ecb38cf5e"
+  url "https://files.pythonhosted.org/packages/1a/f3/c078ef7d7f82e4e013a5df90c276a658bc41ef0ec56fd383d87d1c7988e2/schemathesis-4.0.8.tar.gz"
+  sha256 "96935bbcb26f875ded2ad156258cb5d869539bfd8a8733cbd71af90a2b67527e"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "a83f019980c8b0c24e3e72fb3bd78daea6861278118a8610de23b3dda03bac61"
-    sha256 cellar: :any,                 arm64_sonoma:  "68ce271a33e01d0af02f8976f012dd1eebc9a3c1389ff6351a19485e7f56c738"
-    sha256 cellar: :any,                 arm64_ventura: "5bb8d6fcaa0a758cffcc99569ec1eb7891c2b444498842d588c7b028e2dbea8a"
-    sha256 cellar: :any,                 sonoma:        "be4cd90f1f11b842d08edb113622733acfee7b75031547f4ddba7dfd649cd3ba"
-    sha256 cellar: :any,                 ventura:       "ffb3848b46807740dcf7fa25e937ef126dee31bbba9ec0fd5c8f2f6c85d6e3b5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e3ad51cbdefe799ce4e1c47bba7c83b520a060c53d798609fc2ecc6d34104176"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "796675fab833b56398a7df8d30945e49fb93e7676ef31a206ab37b071805210d"
+    sha256 cellar: :any,                 arm64_sequoia: "2dca8476eadd80f1a1fe8eb85ea33b0db70a746858ebcb6dd942466b4a2725b8"
+    sha256 cellar: :any,                 arm64_sonoma:  "289d2fbe7485a260de6e433da40fc800b504a58238576bf8307d91b70677c2ec"
+    sha256 cellar: :any,                 arm64_ventura: "776e0128cb7e9e8800c60fb2c01d1b9b59fe2b6a3ceea5438b2ae378a1265406"
+    sha256 cellar: :any,                 sonoma:        "3dbd26f1d06a030d73ec93fa5622538a66714491acaa2597cbfd109d1bc0c154"
+    sha256 cellar: :any,                 ventura:       "88d2ea0fb95f87dcb964eb8576bed3d3677e3c11c59c6739955c07800ba2b341"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "778222d7707e957621f93ad44111b8d6efb81505466f23b7282648a1651f4a54"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "471fedb2af6cbcb1c35f488e7eb799d809f690e28dd2bfe4b5b8c17b2125c5e2"
   end
 
   depends_on "rust" => :build # for rpds-py
@@ -287,7 +287,7 @@ class Schemathesis < Formula
   def install
     virtualenv_install_with_resources
 
-    generate_completions_from_executable(bin/"st", shells: [:fish, :zsh], shell_parameter_format: :click)
+    generate_completions_from_executable(bin/"st", shells: [:bash, :fish, :zsh], shell_parameter_format: :click)
   end
 
   test do

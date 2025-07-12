@@ -1,18 +1,18 @@
 class OsvScanner < Formula
   desc "Vulnerability scanner which uses the OSV database"
   homepage "https://github.com/google/osv-scanner"
-  url "https://ghfast.top/https://github.com/google/osv-scanner/archive/refs/tags/v2.0.3.tar.gz"
-  sha256 "83864df449bdd335190e5dd7db8d5e1180991796204a0783cdc756834e937576"
+  url "https://ghfast.top/https://github.com/google/osv-scanner/archive/refs/tags/v2.1.0.tar.gz"
+  sha256 "129f534cb55c0811dcf80efec9da7314a4fd87255c093718db9502a4ba19f704"
   license "Apache-2.0"
   head "https://github.com/google/osv-scanner.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c7700bde0533f8519dbf8d8e33f09762af242201abd98e7d3d72da5ac5291913"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c7700bde0533f8519dbf8d8e33f09762af242201abd98e7d3d72da5ac5291913"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "c7700bde0533f8519dbf8d8e33f09762af242201abd98e7d3d72da5ac5291913"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9d213019a515a4fdee7972c076a6648fb747ddefb1b2a7f2399c058e20ff361e"
-    sha256 cellar: :any_skip_relocation, ventura:       "9d213019a515a4fdee7972c076a6648fb747ddefb1b2a7f2399c058e20ff361e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "52010343340ba0f19fbf552bf6e2044748cfcc71c78653067a76429ddc2ad526"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ec5cad814337816e826a46f822f3489929c9926fdbdd1dbab6e52ed52ac2384f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ec5cad814337816e826a46f822f3489929c9926fdbdd1dbab6e52ed52ac2384f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "ec5cad814337816e826a46f822f3489929c9926fdbdd1dbab6e52ed52ac2384f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0e24d69875a8abb1a7564204dbbcc8f5306f789be00b7807e743f0d2c5e4764f"
+    sha256 cellar: :any_skip_relocation, ventura:       "0e24d69875a8abb1a7564204dbbcc8f5306f789be00b7807e743f0d2c5e4764f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "417907380b2a6ce861aa9116f66612e81d48cc6a743aef26d4367bbba5c5a13a"
   end
 
   depends_on "go" => [:build, :test]

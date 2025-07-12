@@ -9,14 +9,15 @@ class ShallowBackup < Formula
   head "https://github.com/alichtman/shallow-backup.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "22c6b568aadef08c73903fa4e63af2f185767d01cc49d934357e1e948370440e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "22c6b568aadef08c73903fa4e63af2f185767d01cc49d934357e1e948370440e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "22c6b568aadef08c73903fa4e63af2f185767d01cc49d934357e1e948370440e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "faeb8b9d1a0e93fea36e1e93aa473374e598abe938716db7329c80a6be0f2a34"
-    sha256 cellar: :any_skip_relocation, ventura:       "faeb8b9d1a0e93fea36e1e93aa473374e598abe938716db7329c80a6be0f2a34"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ef099a4f31fbc2d802d7d076c9d809d4368b86bcfc8052a6e277b14c1ff71a6f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "22c6b568aadef08c73903fa4e63af2f185767d01cc49d934357e1e948370440e"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "80a5ec216c280f956b9185dfa69b02c504c92e0b639ec2b061e81f6e58fced7b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "80a5ec216c280f956b9185dfa69b02c504c92e0b639ec2b061e81f6e58fced7b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "80a5ec216c280f956b9185dfa69b02c504c92e0b639ec2b061e81f6e58fced7b"
+    sha256 cellar: :any_skip_relocation, sequoia:       "980f0f75aa3eb600b654f8a11935ffce0d3e745ba3d947318bfadbba272aa7f6"
+    sha256 cellar: :any_skip_relocation, sonoma:        "980f0f75aa3eb600b654f8a11935ffce0d3e745ba3d947318bfadbba272aa7f6"
+    sha256 cellar: :any_skip_relocation, ventura:       "980f0f75aa3eb600b654f8a11935ffce0d3e745ba3d947318bfadbba272aa7f6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "80a5ec216c280f956b9185dfa69b02c504c92e0b639ec2b061e81f6e58fced7b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "80a5ec216c280f956b9185dfa69b02c504c92e0b639ec2b061e81f6e58fced7b"
   end
 
   depends_on "python@3.13"
@@ -91,7 +92,7 @@ class ShallowBackup < Formula
 
     generate_completions_from_executable(
       bin/"shallow-backup",
-      shells:                 [:fish, :zsh],
+      shells:                 [:bash, :fish, :zsh],
       shell_parameter_format: :click,
     )
   end

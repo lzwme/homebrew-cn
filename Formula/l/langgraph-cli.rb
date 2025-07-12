@@ -8,13 +8,14 @@ class LanggraphCli < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "ec94b2c43b7d856cce1628a10de396fbae974533c3cb0497bd20395c3f8c6472"
-    sha256 cellar: :any,                 arm64_sonoma:  "3e50f46f5a398cbb3a6b865df1138020e6b712cc01868d8ee03bcae797186f97"
-    sha256 cellar: :any,                 arm64_ventura: "08a63c00d66d15f11a209dc31590d350433243aaa14c5b0320b44e5c028d944a"
-    sha256 cellar: :any,                 sonoma:        "50703849f2a9510196fd6da7a882ca17d1633d98177034d8bf6d76700dbac4a8"
-    sha256 cellar: :any,                 ventura:       "4e3261426855219d406f8c25fb8047598fe426c58ea33cd3933ae664445c4c8b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6ebde5934b9ba0fbc575ca6d4e8607899ce22a221341e67b8b27255c180ead5e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "915dc1aff2721b3e76b5137de7dc9788618294231d04210435534916495c3e12"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "0775cae834985eb80c60829314e987ab1a27757efd98348aa29d6ceaf5006b6b"
+    sha256 cellar: :any,                 arm64_sonoma:  "312b74ad155ec0981948cb51adbcff1efafa0ab8d0f37a8f8bfe7e6ead1ec89a"
+    sha256 cellar: :any,                 arm64_ventura: "944040abd612ddbfd7f622c4924dae43c2055247390d81541f205549352ad4fb"
+    sha256 cellar: :any,                 sonoma:        "92c153bf2723fbe68abb554e3e80935f7178eb55d9201ff2ebcb13fc3cfb5957"
+    sha256 cellar: :any,                 ventura:       "4a6f3bd7259ab263673490d30e354835fedf5ba3ac5d5d8890cf41e44ff1d247"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9f5e4e68f5a5914e51a4e97b1b947056da90a81efe3fc22348fe5fd7005fe00a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "86a07cfe64df3e6f2b73b369810ccb658d6980adf55f97a6df16774799120d0d"
   end
 
   depends_on "rust" => :build # for orjson
@@ -73,7 +74,8 @@ class LanggraphCli < Formula
   def install
     virtualenv_install_with_resources
 
-    generate_completions_from_executable(bin/"langgraph", shells: [:fish, :zsh], shell_parameter_format: :click)
+    generate_completions_from_executable(bin/"langgraph",
+                                         shells: [:bash, :fish, :zsh], shell_parameter_format: :click)
   end
 
   test do

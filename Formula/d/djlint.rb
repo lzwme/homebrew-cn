@@ -9,14 +9,14 @@ class Djlint < Formula
   head "https://github.com/djlint/djLint.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "ffffd50d9a981e616541d88a685b44ddd5fdb425873563681e3c0611775f48f7"
-    sha256 cellar: :any,                 arm64_sonoma:  "15f38fb5cc8c6d57101be9f42ddef52a9e8c82b23874dff59b2051c282656e11"
-    sha256 cellar: :any,                 arm64_ventura: "25d8dd0b2238eef47a3f7d9cde2ff99c5bac124bdae44855aba1ef11fd4f977b"
-    sha256 cellar: :any,                 sonoma:        "b6d24985a8a4d539ff7b2ce6f121eda24a96691ef42b5785714cd0394e9c7d9e"
-    sha256 cellar: :any,                 ventura:       "2f351016b97bf06731b52dfca66ae25fd7b2d8a95442bf70e0c011789dd63105"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5ed4e4ed73c1cddad3648f66cd8c9e87bfc8aa9aefaccefb7528b4f200171f89"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fa3b3445307399671cdda0fb78276dc88e33823b28c4db26a27ded1f8ff9e4e9"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_sequoia: "428664b35299f18cab4b5f935e4f299816d99a514171f3b470a544f2323ed043"
+    sha256 cellar: :any,                 arm64_sonoma:  "590751835518d79ddbf02d69c49a145b2305802489396095a9f8061cd9e819fe"
+    sha256 cellar: :any,                 arm64_ventura: "d3133c1dab320a85397234a620707d1aad101afef96e3f3591e57589ad5f2dea"
+    sha256 cellar: :any,                 sonoma:        "af3c136ef8e467055510d4965fd746488627b195345316c64f110d9521811ccc"
+    sha256 cellar: :any,                 ventura:       "49527b926c72964984ef30031d4c65a45dc3d34e377f49e9d95f63421e77b437"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f50ec98d0f4b0aae48abbc6583b97556a177ea2eee84dfe7487d41771900943c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8d854bb8952eca91091798ad4bd02235726aa0a0c1aca1eaf66adfae79b42640"
   end
 
   depends_on "libyaml"
@@ -80,7 +80,7 @@ class Djlint < Formula
   def install
     virtualenv_install_with_resources
 
-    generate_completions_from_executable(bin/"djlint", shells: [:fish, :zsh], shell_parameter_format: :click)
+    generate_completions_from_executable(bin/"djlint", shells: [:bash, :fish, :zsh], shell_parameter_format: :click)
   end
 
   test do

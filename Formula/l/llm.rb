@@ -8,13 +8,14 @@ class Llm < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "ac4b66f3356702fe5fef8cc38f64875ce82be84e35a37608333472e9b8013290"
-    sha256 cellar: :any,                 arm64_sonoma:  "30a303861495064a48745b1d31018fe41f96a94533f84f758557d3563574fc7d"
-    sha256 cellar: :any,                 arm64_ventura: "23e714b5c04cb6a73b728550a305fea187df5bd4060c42a9b54bc90381014361"
-    sha256 cellar: :any,                 sonoma:        "524a88569c9c999bdee90744360172a13f0afc6d668191b1b877ec8449c73340"
-    sha256 cellar: :any,                 ventura:       "d367f45383530b2e1dd8a1bff5cfb11658a06b69b746375f94ec70f3bd5ba5e4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9c865d933360cb531e25f749034370b832ad47df5cbb1e7e30ca6f8c6dca2244"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d08b13b66285fb781744f78bc24be8561835c3dd24a9f9645d2b0b9dde8bba6c"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "e8eee3b28ce9d2cd848531592609e023b2e49034e7069dfea30f085dbcd6992e"
+    sha256 cellar: :any,                 arm64_sonoma:  "9a1f76ab4fffd8bf0267ae6ba25830989aabf01f74848fa757fc04d414a4c175"
+    sha256 cellar: :any,                 arm64_ventura: "cb158749f4f4994e998c14c096f5cbc519454ac74bfa3658ce1e50a3ea4b9884"
+    sha256 cellar: :any,                 sonoma:        "99d175f6563c39de29957ed2544bc61a74912ca44e48f7e22fdfe811e45dd5cf"
+    sha256 cellar: :any,                 ventura:       "a56e350faed6edbf4e540a65299c9b44dff80d29daf6b7dcd8768b46f834cf29"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "302ae19515d97457bbb78e61beaf751b69a451017e6d9524826a37b7088d2858"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aae861700c61d5433be2b213373e300743e17ba9e7e383842acb1cc32cd19e7c"
   end
 
   depends_on "rust" => :build
@@ -170,7 +171,7 @@ class Llm < Formula
   def install
     virtualenv_install_with_resources
 
-    generate_completions_from_executable(bin/"llm", shells: [:fish, :zsh], shell_parameter_format: :click)
+    generate_completions_from_executable(bin/"llm", shells: [:bash, :fish, :zsh], shell_parameter_format: :click)
   end
 
   test do

@@ -10,14 +10,14 @@ class Flintrock < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    rebuild 4
-    sha256 cellar: :any,                 arm64_sequoia: "a1211bc4ea1c062dfa95b3c14f6da61dcab02b1d6216e6687ef58b6680379089"
-    sha256 cellar: :any,                 arm64_sonoma:  "199ee4726b6a069ff33ccf5fb1650b74645d89c9fb42b16d85a89df361c33afe"
-    sha256 cellar: :any,                 arm64_ventura: "8e34466bfce9510389d673167e2b86430f034ff8f51c7a830af341f76fb7d54f"
-    sha256 cellar: :any,                 sonoma:        "53dd4e7e69bd54ca81bb968017244dbaa6b7179b065461c475050aeab2d8f3f9"
-    sha256 cellar: :any,                 ventura:       "97151962e88f570735fd2a02769f7d3bc6c1ef13ea5bd54643fb4ddeb71b00cb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1bdfc10132b27137d907e52dda03f03591389a8b9bea778cd54acef3b1adb874"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "48fe7af4aefa589974da8e5eab93f9a9c159aa16d701699930ddaad0a943a20a"
+    rebuild 5
+    sha256 cellar: :any,                 arm64_sequoia: "74a8a662dc4aee333db1b838cc7f62681b0d3a9fc6e8f8205e20d80d4c2527b1"
+    sha256 cellar: :any,                 arm64_sonoma:  "fe7ad09c56f48d70f3e01b5cd140bb549efbb9853d5563a646a7dd903fe6f59c"
+    sha256 cellar: :any,                 arm64_ventura: "6410fd282b7957ac56b1cfc1af125e719da2cf0abaf0910a3d2de375b17d2b34"
+    sha256 cellar: :any,                 sonoma:        "7cb921528a346d5644a3eabea2ae4e05acb08b03b9f30aa83075c925dbced21c"
+    sha256 cellar: :any,                 ventura:       "138d6d702cd47fb30d49fdb48058c740ac01accac3bb644cc040dbd6542556be"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ab3e830362e5e1eb5f548506b5ad07f35aa30811715865c2eb084ff5d81b157e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8cb71305e97a64921e0676e6be13283a65e4ffe809bf62c1cc31b339396a8bd0"
   end
 
   depends_on "rust" => :build # for bcrypt
@@ -92,7 +92,8 @@ class Flintrock < Formula
   def install
     virtualenv_install_with_resources
 
-    generate_completions_from_executable(bin/"flintrock", shells: [:fish, :zsh], shell_parameter_format: :click)
+    generate_completions_from_executable(bin/"flintrock",
+                                         shells: [:bash, :fish, :zsh], shell_parameter_format: :click)
   end
 
   test do

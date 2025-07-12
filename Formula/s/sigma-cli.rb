@@ -10,13 +10,14 @@ class SigmaCli < Formula
   head "https://github.com/SigmaHQ/sigma-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "b18427249afea4d8a243dc8d06c3f23cbb20015c4159a37c7b867d92de385817"
-    sha256 cellar: :any,                 arm64_sonoma:  "21821ebff6bae82c7ba5f8309ca7cbad60dab532281197549e99f546158c3363"
-    sha256 cellar: :any,                 arm64_ventura: "0fc3b0f2f62a3ac88819b7211c72d0419c108962e9b032467c2241202c8f6d99"
-    sha256 cellar: :any,                 sonoma:        "52aba79993805b237e6d37075bca80fc2c58b81159ccdffcf13d23b629ae7d13"
-    sha256 cellar: :any,                 ventura:       "83acc63f82aa04d8dc1222027f6d315a1eef3fc674eb25d18a1fdfd41dba5db3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "041979bbd2952ed0325189ac1ee3e8f86f9b8b4a4565f1849e3f2c48a8d07afd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a5eddb46141461fbb192ddad50745cd034f9e57b03d279d33afc88b755af5db0"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "c52a3d701cb7954648073ab399acf23aa9ba92001c1616b78509f58a904c2aed"
+    sha256 cellar: :any,                 arm64_sonoma:  "54ff4d366f2bd84868094772ea97010b70eab5ff747025b713e81904fa793983"
+    sha256 cellar: :any,                 arm64_ventura: "7249cf7861b6cb71bc72f301d9a5d6063b9101253f95787b9221205c50072d8c"
+    sha256 cellar: :any,                 sonoma:        "cccba010339924acd2086d9067db8c9ba572cdd04be8fa0df1c12d60ca72d3ae"
+    sha256 cellar: :any,                 ventura:       "bc4db80a1e8db098cc30cf8bd4c785f6eef7ed645c209824d84976560b0558ed"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e9464d4ecedc600741583518048cd27c0126e1bef18130136527698bb795e6a3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7d24671a6f4c327b4b170eb1e4a47c5d97cddaac7848370e03d87e447821b80b"
   end
 
   depends_on "certifi"
@@ -112,7 +113,7 @@ class SigmaCli < Formula
 
     virtualenv_install_with_resources
 
-    generate_completions_from_executable(bin/"sigma", shells: [:fish, :zsh], shell_parameter_format: :click)
+    generate_completions_from_executable(bin/"sigma", shells: [:bash, :fish, :zsh], shell_parameter_format: :click)
   end
 
   test do

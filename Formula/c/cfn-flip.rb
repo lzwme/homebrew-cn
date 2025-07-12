@@ -11,14 +11,14 @@ class CfnFlip < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_sequoia: "07d7a01e5e4b2cf04a12cf05b6255c452326347afc72cf22c755f11eee638fac"
-    sha256 cellar: :any,                 arm64_sonoma:  "a30142eaa1b55eacf35e1c2573e38e516779882086ddb7c417e7bee97e556f5c"
-    sha256 cellar: :any,                 arm64_ventura: "21a22fd0985168ca5c0ac5836ca4a85928d159833fdd4e75553e9295b8e74514"
-    sha256 cellar: :any,                 sonoma:        "c1497cca44686eab9b0031d34deab63258a1d891c7f8854e39558c7c60f01f96"
-    sha256 cellar: :any,                 ventura:       "92e08c7a0fb66b3c691bf141fac782213907d85989945519e1dc1aa55bb686a0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b828fc938febf9080fe045b0d8d185c3286172b5ee8b664604f2a7e992ad2e48"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8a009e9b1951f2f55ff9891c6e3366a2a66a2599f211f75ee420274f7b1ed811"
+    rebuild 3
+    sha256 cellar: :any,                 arm64_sequoia: "5442b8b312ae32f1f553fb978ccf09c63a8faec827d97d1c0ee6c25e6b8bec69"
+    sha256 cellar: :any,                 arm64_sonoma:  "e34be5905def03dfd1a3b2e978175a2a20c04c9a707526437f747f290f72d575"
+    sha256 cellar: :any,                 arm64_ventura: "0f477d1324b35e9d08f22bf9440d350dbef9eb7064a4a349dc61634037ccdc38"
+    sha256 cellar: :any,                 sonoma:        "8621b8bd4592dbff5713e74fe7ba0e2df3e49ed586b11dd29f28c8cd3a716579"
+    sha256 cellar: :any,                 ventura:       "0cbd0c1da955391882c5993e2c5ca0673b31aa9e96ccfa4735efe0bd179ec41d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0cfc26cd8e493d0423d00e49da1185a278aa84b79e3cd4325678fb161856607a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f22cd5a684f506f67a27cb9bcd7c4a9192909ec3222ae9b87eacba18776f43c8"
   end
 
   depends_on "libyaml"
@@ -42,7 +42,7 @@ class CfnFlip < Formula
   def install
     virtualenv_install_with_resources
 
-    generate_completions_from_executable(bin/"cfn-flip", shells: [:fish, :zsh], shell_parameter_format: :click)
+    generate_completions_from_executable(bin/"cfn-flip", shells: [:bash, :fish, :zsh], shell_parameter_format: :click)
   end
 
   test do

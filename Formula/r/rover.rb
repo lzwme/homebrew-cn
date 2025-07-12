@@ -6,6 +6,11 @@ class Rover < Formula
   license "MIT"
   head "https://github.com/apollographql/rover.git", branch: "main"
 
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "c7b50a0cb339c40848ca2112d430c3a6680753b1603947032e082b163c106e6a"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "aa93c6719077378b0744d446f510553e47be736ff21e2a6b36b001a97fe15723"

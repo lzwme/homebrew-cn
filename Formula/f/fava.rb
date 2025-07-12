@@ -9,13 +9,14 @@ class Fava < Formula
   head "https://github.com/beancount/fava.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "2f476f54a34cbdc175720635fac1b5bf7cb7b517ab1d82853d6e4d488b499e31"
-    sha256 cellar: :any,                 arm64_sonoma:  "57ed91aaa2bc5e651ebbdf689e2dc8a6a8095063f4dab48b029b60f453310866"
-    sha256 cellar: :any,                 arm64_ventura: "6a3a2dd73765b4d6dd0e072c3805057163f3d06d5ed3ec82c7d458e343df39b0"
-    sha256 cellar: :any,                 sonoma:        "84ebc7b9713431d57ae1b8e0160e05e5d09bf741f8e15d1eb97e18482a04de40"
-    sha256 cellar: :any,                 ventura:       "b75bd504395c71aefd1f38d0d08d06c6077709df14e200f96c73a71f6f88d104"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2d44b177eb8816f02f30fb2b937b229e51865b64cd5e8809299b5c5f1a22270a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "58eb851b48950cb92ef1f7bd9acabbc32f94cb7c4104ccf0536f550455c86967"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "3f96e838f49f355594f8cc6ce6f29423a9c9a951c18d0f174e022505f576d061"
+    sha256 cellar: :any,                 arm64_sonoma:  "f2635f273a5b1727d5b32ec589e962e2264da87cce37e5915353380703fc9046"
+    sha256 cellar: :any,                 arm64_ventura: "2d463d0487825947c7dbee3b4b5f98b52021c3bb951a994a167070febe1884db"
+    sha256 cellar: :any,                 sonoma:        "905cd56355176dc7cfb1364abeef6bd0a64db7cbba289b8d153d49fca69d25e2"
+    sha256 cellar: :any,                 ventura:       "415f126d469bc7f66663faec2ccd15d726e24acc1339dec7933317a9e2508cf2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e5d3aec670cd1ded9e962f2d35309ee85d40a715e1d7d1c04ec369b04ffbca92"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "409416087f64160a238e0dcf3b78b122265c162c98d7be6103cc934f92c3f6a9"
   end
 
   depends_on "bison" => :build # for beancount
@@ -201,7 +202,7 @@ class Fava < Formula
   def install
     virtualenv_install_with_resources
 
-    generate_completions_from_executable(bin/"fava", shells: [:fish, :zsh], shell_parameter_format: :click)
+    generate_completions_from_executable(bin/"fava", shells: [:bash, :fish, :zsh], shell_parameter_format: :click)
   end
 
   test do

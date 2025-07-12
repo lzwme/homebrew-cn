@@ -10,13 +10,14 @@ class Shub < Formula
   head "https://github.com/scrapinghub/shub.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "cf3fa1bed2a1955669a03d942809ae004d08d19fae60bf0e3141a4d0970a0d06"
-    sha256 cellar: :any,                 arm64_sonoma:  "f2f758687c59c23081a66055a209a0e025773c8d0016e7187541621602905e6a"
-    sha256 cellar: :any,                 arm64_ventura: "999ee5cc57ccb598b3116644605344ceefd14b65346e64ed1931f7b8822d2bed"
-    sha256 cellar: :any,                 sonoma:        "eb84226cb9787771f053445bff9719d0bc4c49c303eebffff523e5215a2ce2f8"
-    sha256 cellar: :any,                 ventura:       "7116b7d683f796d9cec6299baee94c2ceb9ce23e8607ad69d9692fdaf36bf78c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8a1f94d37f9a681b4e5393ec6e3a37b9d4a88a7d80376bd790a784807168a757"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8d484543326c271c81deceab68061220a8be2cd9c6eb295683d30986370b8dd3"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "b50ce3a684b5a0c6014916ddf290ec96f02a12310aec9823d627ff64afcb9f8f"
+    sha256 cellar: :any,                 arm64_sonoma:  "4c61144b808b3607bc732681dd988eef9ba5b29ade333939aee617f879da24fd"
+    sha256 cellar: :any,                 arm64_ventura: "1dd27be818a64f165a9a3b9bdd05149fb7187fc9e9e414048e9de49bc42cf48c"
+    sha256 cellar: :any,                 sonoma:        "5761d8269c923690891ba20c1891c83f0a7f06e27bce0eb95cd8b59a864eaf41"
+    sha256 cellar: :any,                 ventura:       "7f0ca84ddbe6490849aac25a2ab90c526b0d968b9d9239da2e2c469c4c303478"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4370ad46cf66b857fe40b35055e44aac6c1ab82418d1b7e26a22213181504a46"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e312b485c67099342faa54b7bfb4b8737afe94e7e2a34e791c265b1034c67e1f"
   end
 
   depends_on "certifi"
@@ -96,7 +97,7 @@ class Shub < Formula
   def install
     virtualenv_install_with_resources
 
-    generate_completions_from_executable(bin/"shub", shells: [:fish, :zsh], shell_parameter_format: :click)
+    generate_completions_from_executable(bin/"shub", shells: [:bash, :fish, :zsh], shell_parameter_format: :click)
   end
 
   test do

@@ -10,13 +10,14 @@ class Cookiecutter < Formula
   head "https://github.com/cookiecutter/cookiecutter.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "06963169eb643901ab0e140039c830b64de47f6be4c18c89c6c0d01df315f824"
-    sha256 cellar: :any,                 arm64_sonoma:  "669caeb267246e0eaf688acecfffb92f30a513cd00bcc0ff989cca32e8cf7816"
-    sha256 cellar: :any,                 arm64_ventura: "16af8d1afe921ce35f9a5dbb85123790d3f57a868618e09f1a85f80b692c73ce"
-    sha256 cellar: :any,                 sonoma:        "3e255d74d461b7f9b6ff97af52b0dc999521ddc51e6cb2fc309e2870f32780d3"
-    sha256 cellar: :any,                 ventura:       "7ba35d5f466876fd97b00f8c9c56507cfc71409988fe14d66e6b1e2d993e6ba1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c8f81c293daf78e00e243f97a90b82128d38e7cafbde8d2011962c1c3c831dc1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "56b1aa874da1cb6bee10b64fe043f3886fc9b9f0c137607f2665b365957bf422"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "be87c6e23c5feba86f0ccdabf62c38c9807e895d817a3c7cb4da8f02ad70bf09"
+    sha256 cellar: :any,                 arm64_sonoma:  "90a1804de2418db7dc3e495b51a63ab4c4f317ee3295f1b9db5a14ec3d4020c5"
+    sha256 cellar: :any,                 arm64_ventura: "d8c06a7b8879382099ba5ba4ce4ea115c9be3076b7d741844bc341ef7b09ff2d"
+    sha256 cellar: :any,                 sonoma:        "c504fb6fcbe4d6b10b71f0684bfb95910484b200bf4bb7417c8a41d6d8159e70"
+    sha256 cellar: :any,                 ventura:       "2d9caf06bda46b8e7dcf589bc6d7a99455c5c6786f41b0a9136ed7059b7d2ed4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ae6510978243d4488a2da666e8a58b00819c6fb2cbec763fbd854af0670402f1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "65f980531acb36b45803dd286ba0c581fe6f98124ca7d30380b0b7cebcd7216f"
   end
 
   depends_on "certifi"
@@ -126,7 +127,8 @@ class Cookiecutter < Formula
   def install
     virtualenv_install_with_resources
 
-    generate_completions_from_executable(bin/"cookiecutter", shells: [:fish, :zsh], shell_parameter_format: :click)
+    generate_completions_from_executable(bin/"cookiecutter",
+                                         shells: [:bash, :fish, :zsh], shell_parameter_format: :click)
   end
 
   test do

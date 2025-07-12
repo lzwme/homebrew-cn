@@ -11,13 +11,15 @@ class Twtxt < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "edb8ea5c3391196da08836218420f89c6bd007decd33854e0c2e306789489076"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "47364ec472d99034f372dc075295ee98d3e7ebb38e29d9a692b353d7dc46eb4c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "682fab3d700db2019e0e40e049950be61c64fd995d2fe9d44cb451f07d03f877"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e07965ffd9743f2bb45dd95af5f3b1a45e090388116234aa52fee0da93a645fb"
-    sha256 cellar: :any_skip_relocation, ventura:       "d1853863f6717ea82bbafa030651b0975700a319d6637aba0e7a619518e425d0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fed11c702b5f8867cfe4fa33ac6df610ef77f0a6871db24b797c9f9e4f725a8a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8c5d0c9f7b62813e47e77c796d0ed351e038091ed3dbd91b1a6fd90187fd252f"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "969b8713e890189a067c53f5a782ed7066116a877cdf11b5c998151aaec1afcc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4ea88e47ac13dacef608d4e4c0108d6668624027ac7ee935b52dc4eba24f634b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "0089b0c2e58c09ef427e9eff9f64a6b4f8c9909676c3a84c31d23c590d433b99"
+    sha256 cellar: :any_skip_relocation, sequoia:       "741bcde7e895ee2787f3a926be30c8c07433298e5b7a7d1dd4df8094a39dfcb8"
+    sha256 cellar: :any_skip_relocation, sonoma:        "82237838b5d8e4a308433ff9087f17bb79cf9ad8a09c87fd2e01b66e0bcbd8e5"
+    sha256 cellar: :any_skip_relocation, ventura:       "b06daa93502419d9781add8fc806b60d60b18f781590e3c3baf2d87f5bb1b307"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5473c1d33da38697f7373a0e4e6441794b5cdd8edc1a51db6b78ade3b8a23696"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5d222898652fa5abc40f17c06e6dffda758e8b39b84602e1e66c1796b0b406a9"
   end
 
   depends_on "python@3.13"
@@ -96,7 +98,7 @@ class Twtxt < Formula
   def install
     virtualenv_install_with_resources
 
-    generate_completions_from_executable(bin/"twtxt", shells: [:fish, :zsh], shell_parameter_format: :click)
+    generate_completions_from_executable(bin/"twtxt", shells: [:bash, :fish, :zsh], shell_parameter_format: :click)
   end
 
   test do

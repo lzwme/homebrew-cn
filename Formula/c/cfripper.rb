@@ -9,13 +9,14 @@ class Cfripper < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "76f97ce48cb4bae745690b1c4fa9e81524ef68f9dd68d0909e57ef9cce2c83b0"
-    sha256 cellar: :any,                 arm64_sonoma:  "4ebb06545d68a22c69887de7c175312aa86a98350c8a10fe90169ed0aae5a630"
-    sha256 cellar: :any,                 arm64_ventura: "f814179940427dd853e8176e1c133336512e22027caa47ea42008b8f23fca28e"
-    sha256 cellar: :any,                 sonoma:        "20f9ed527e4763bf502a9d2ddce42f89496cf4387d499f97e559fadc3648f18b"
-    sha256 cellar: :any,                 ventura:       "107cc0a2b02af1e767c0003a792a880965ec0ba945b1aa319079921fca04fe66"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0db7c32c89bd9ecd43f8d83aef120cb334ffd2de5f96e0104a89b6bf3f30ef53"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "433fa7dcf4d67ae46f879c34af86bed45c678be2f52e0c3ac56c3d01ab5866e6"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "202607aa25dbcb1dcc4bd4483131aead63e7c5a8030e95b7f922386b9c71060d"
+    sha256 cellar: :any,                 arm64_sonoma:  "889b4b7a8b3223988ce50c9f9d155a1ce454c20e82bb6b2d7abf40a39d68887a"
+    sha256 cellar: :any,                 arm64_ventura: "1c61648fd190ff0c8545dbe84be6e06edf7f7d95eb39b188fdabb766d7964b89"
+    sha256 cellar: :any,                 sonoma:        "dc4ad409efaafa2cee0c6faabdf495ae0bedb719a6a9224edaae8c3b4b8e4cdf"
+    sha256 cellar: :any,                 ventura:       "ff01a5144f7fcce5ad5238ee4c2bbbe0ed1a91d74309c17cd191b871e6f9fa4b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0871ae8b3f537852236806b66a756d64790b553fc410a11d99789bd1439f9b9f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "739b049c15cbc41ffcc65756440d7e810ce88677ebe176d213d9ac8c8b32b8f0"
   end
 
   depends_on "rust" => :build # for pydantic_core
@@ -115,7 +116,7 @@ class Cfripper < Formula
   def install
     virtualenv_install_with_resources
 
-    generate_completions_from_executable(bin/"cfripper", shells: [:fish, :zsh], shell_parameter_format: :click)
+    generate_completions_from_executable(bin/"cfripper", shells: [:bash, :fish, :zsh], shell_parameter_format: :click)
   end
 
   test do

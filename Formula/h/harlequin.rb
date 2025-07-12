@@ -11,13 +11,14 @@ class Harlequin < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "d388ca07a0405df9647b982b90f2019cb762b678cf392d4d5cc2314337c3e2fa"
-    sha256 cellar: :any,                 arm64_sonoma:  "191fe78c66db0bf1e00cfcf7dc1c6e9f4220b0ecf636dd0c33404846b0693f7d"
-    sha256 cellar: :any,                 arm64_ventura: "668d41903c0fe577bafaa9929a8b03ad12ddfe95b98b3add94bb5069a8d177df"
-    sha256 cellar: :any,                 sonoma:        "ffb0d5a1130ce055f42af9370ae8be15daab30a44c3570ec3be884b81d55162d"
-    sha256 cellar: :any,                 ventura:       "1efc6ff8a852c49e2b4fa8e04588df81295387c684a6d5b5ab98f2502416afa1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "97bb2d74192231101a74f71fd95765df6a12dc62edffaf9727b7b73c01372b5d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ba917eb9650e3f10c3266f5b707898ff948cf98497f1963f03f586b06092793c"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "01c5e9fe952509f9b96d0c4ba8c2ee281ff78468b8b2b592fdce56651668b4af"
+    sha256 cellar: :any,                 arm64_sonoma:  "b112a33bd6b243721fd6840ff708ade2b3d6d4e2243bbcf506afb0b9b8b2fd4c"
+    sha256 cellar: :any,                 arm64_ventura: "2ea06f29225b9e6b4704ce40745e7248e657f57f92a26c71d07a42e0a8498dcc"
+    sha256 cellar: :any,                 sonoma:        "dd8ad67c59e82c13cfcd47f52285510f58a6d4a5a672c00e36d0e7b52a965558"
+    sha256 cellar: :any,                 ventura:       "d17251ae7ccd8b439fee9752b0212f6cc8cb0d5bca60f1669c03c646ded3e6dd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5b4d97ceda03a65200fe247f823ab0a51df334fa4e7fa88afeebe96df5b08793"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "838bea24ca085fb4632d4c3dc626a2c111888eb08dd9174185cea4931bedb333"
   end
 
   depends_on "cmake" => :build
@@ -229,7 +230,8 @@ class Harlequin < Formula
       venv.pip_install Pathname.pwd/"mysql-connector-python"
     end
 
-    generate_completions_from_executable(bin/"harlequin", shells: [:fish, :zsh], shell_parameter_format: :click)
+    generate_completions_from_executable(bin/"harlequin",
+                                         shells: [:bash, :fish, :zsh], shell_parameter_format: :click)
   end
 
   test do

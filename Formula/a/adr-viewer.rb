@@ -9,13 +9,14 @@ class AdrViewer < Formula
   revision 3
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c1efd8ef88f39d6598004615184612871efc040d1d7b05aeb306a5732e0770bb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3cca20e479818c98d5fe2a005af51a1fdd742a7d914e6f44f5dffc32ee2f972e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "c8b5d19a206d65635a9da6eacd09b232a7ef73c560049cc63a28e03f1f8b0b41"
-    sha256 cellar: :any_skip_relocation, sonoma:        "58674e3fb84c3e62f1aba6a501abd1c856b6807c8bcaf7df74eb4d04ef81f1e4"
-    sha256 cellar: :any_skip_relocation, ventura:       "880572d016d57566ee09ba653c09b78b0a668d423eba6661c788e09b65436c66"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f97231985140d38128b767f86821bfb9a825def6170ed0cb901cd15b49a9361a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a3f3e22f63e93ae52d53b8a07b3ccef467d8b213b5a55fb66118fa1681681525"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ae4cd968f406792edc2acd31cf16b52c02f2e86b7fcf7ead074db74a459f428a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "683fa11655a13acfaf5dec1d2fa6b47b9df98e3423691745da8c46e967ee3acb"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "a53efd827bb4a2f8d5e37985c42031b7cb52bccf6a62b2027a0876629866d9db"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e7c0c39970d821411b41f596c200055508e4d9ed62dee8931f54396c853585c5"
+    sha256 cellar: :any_skip_relocation, ventura:       "59f780215b254d5007dacaeca3f38dc3067fc7b476a81d63104771ab4ecaafd8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f96efc5d3499cb7e1027af335e6462f62df4bb269ed7ce7fd9f617c31fed319c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f0be24b13a206caaeaa1ab085627c82aed37e3e646c7b59ff159444464ec2143"
   end
 
   depends_on "python@3.13"
@@ -68,7 +69,8 @@ class AdrViewer < Formula
   def install
     virtualenv_install_with_resources
 
-    generate_completions_from_executable(bin/"adr-viewer", shells: [:fish, :zsh], shell_parameter_format: :click)
+    generate_completions_from_executable(bin/"adr-viewer",
+                                         shells: [:bash, :fish, :zsh], shell_parameter_format: :click)
   end
 
   test do

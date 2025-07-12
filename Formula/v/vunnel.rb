@@ -9,13 +9,14 @@ class Vunnel < Formula
   head "https://github.com/anchore/vunnel.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "8f5c56a5e90a30599f4a9c2840edc06899ef93810f2b51a3d13f7818b9cdf1a0"
-    sha256 cellar: :any,                 arm64_sonoma:  "5e7e7cef131e93d6a85f27de883ae5c3b2f8d147c0b94349222cad31dba2f943"
-    sha256 cellar: :any,                 arm64_ventura: "c9fa553ec62a56911064e037f4aa146390754bf40d072d26a9e1a0f000b9973f"
-    sha256 cellar: :any,                 sonoma:        "a5ce1f5cb46c6b08343fc948da7eff90452af75e2bee0d4c60646a8a155dae17"
-    sha256 cellar: :any,                 ventura:       "c0cfcb2b9dba027f4828ddcd593b2949023a7e562fa41165e302e68d23f7d950"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "321970ece2f2f2f8effb11777357c60467a8d440b49b8c589277225c8d598879"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "02d0f0df63a890e40c7685c98cd89579c9ff19962d7728005dcb88c8155d1f5c"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "eecd440ffc8d96b888453a4b3264a1a7f2d3949722e7382c157550385b7a763b"
+    sha256 cellar: :any,                 arm64_sonoma:  "34e6d48a3cee7a5472a3fceb185e22a9030f14eb42a84e6fc08d7df33fd783b9"
+    sha256 cellar: :any,                 arm64_ventura: "1ae2ef716bc20d5ce4832af749c2ebba984368c7e6892d9edd2fb8187dffedf1"
+    sha256 cellar: :any,                 sonoma:        "a3802f259775bc15fe24d4c8c541628fb21e8d89e193007b0b5360427b29ec10"
+    sha256 cellar: :any,                 ventura:       "a46b9f98dc54828d99f0b0a98dc70aa5bc5c3f4a7cf4fa9ad5c09901413bbf58"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6cedda3543d08c930d2b1039ba9dd71489a036fbdc94953d8a9d0f359307f257"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e561c61896216e27b5a401460744c94715fcec1ff301281f5468d924d35ec0a2"
   end
 
   depends_on "rust" => :build
@@ -232,7 +233,7 @@ class Vunnel < Formula
 
     virtualenv_install_with_resources
 
-    generate_completions_from_executable(bin/"vunnel", shells: [:fish, :zsh], shell_parameter_format: :click)
+    generate_completions_from_executable(bin/"vunnel", shells: [:bash, :fish, :zsh], shell_parameter_format: :click)
   end
 
   test do

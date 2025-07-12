@@ -8,13 +8,14 @@ class Tmt < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "a82f24c61ff61da3a9be307c8f932bc0b079ae37e8feb44665e287f318a9b1eb"
-    sha256 cellar: :any,                 arm64_sonoma:  "a384ba1b00f684c97f3a6e3b6f837131cb706a2781f43d9e703022246e24db03"
-    sha256 cellar: :any,                 arm64_ventura: "39ac1519281dcd74a6fa58a85d49ecdb6f2a70464d3542dccebc17dcb798a3d3"
-    sha256 cellar: :any,                 sonoma:        "d46320b6bf1ee138a5dec9312bdf344861ea9981c0691704572ce85a1547d779"
-    sha256 cellar: :any,                 ventura:       "c4ccc5c89d067df945f1ef00b9f0ec012aa3b912f61676977b111effd85cfe80"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "588b4db6cdc6bc6ee0364b58fbae21844c6c9a3a54d3e1e0b00c84c5f275a3bc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "80ed9819d6b7ab8a3b20a89a614222e199806b568480e0a3bd2331540ed4a9fe"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "70fe364e29ea3e6fe9f6bc079a28a9944cf579ea1a94c43c27784aa4c004a838"
+    sha256 cellar: :any,                 arm64_sonoma:  "ccc8641a250dbc8dfb4aabf44479ae1e26123ed3d87aa77b209277f86f93400e"
+    sha256 cellar: :any,                 arm64_ventura: "759496b8e2fde51c651350b463a5ba000aac961c20f3b17380fd1329afa006a6"
+    sha256 cellar: :any,                 sonoma:        "7a7c6cfa8ab8baf2121597dd3b16f5ddec7466fc46cca105ddb68a4032a605be"
+    sha256 cellar: :any,                 ventura:       "22bebbb2ef264f31c2b766939ad308bec55644029e52797af04a43e7e38b8004"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "75beaba48ea7f078b77cb2c46b6bb2d15002c742ba35b7d97dff53f53d486bbe"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f63406ed6bbd7503cf0a3f979e49f7c88992ad234e1a38e53ffe9a2d251a1511"
   end
 
   depends_on "rust" => :build # for rpds-py
@@ -165,7 +166,7 @@ class Tmt < Formula
   def install
     virtualenv_install_with_resources
 
-    generate_completions_from_executable(bin/"tmt", shells: [:fish, :zsh], shell_parameter_format: :click)
+    generate_completions_from_executable(bin/"tmt", shells: [:bash, :fish, :zsh], shell_parameter_format: :click)
   end
 
   test do

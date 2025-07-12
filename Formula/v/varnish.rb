@@ -12,13 +12,14 @@ class Varnish < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "fb5cbe8656ede605c0237b5547fd8597cc28f6610f7c6a0055eb4c1abce170f8"
-    sha256 arm64_sonoma:  "ffb66142d7b11573ae3678aeabb73a3562f4d88d1ed685275ec6bd2a455c1a96"
-    sha256 arm64_ventura: "83d569419f98c2f552bf12e7976933c06951923659c0c5f7e78cabd15145f802"
-    sha256 sonoma:        "be72b7f7e58cb4978f546ee7fef88b54e524217a4626712872933103a52c70f4"
-    sha256 ventura:       "d098652ecc801d17d010faf7e18ce1767773bd41c2b8fd8562657279f9ba506f"
-    sha256 arm64_linux:   "87f26a2116f5a9345eb1bdd23bf3573d27daafdfb93f5a160d1a32fc8cbed8bc"
-    sha256 x86_64_linux:  "58c14e678d32e15e03fb6f88bf4cc886244dd7e8d47521e57a97bce1c3c68d9f"
+    rebuild 1
+    sha256 arm64_sequoia: "fd568d267ee9b5844a3c2b0233c12a51e8a00022b031cdfb569988aa92fc1f73"
+    sha256 arm64_sonoma:  "4223322b623694e089924b568cd1fae3e9b67c31c1faead969abd8ee323a7825"
+    sha256 arm64_ventura: "322c722503c07ddccb64054f88cb9e2f526dd02aee8069361f36dc7f7b88ec8a"
+    sha256 sonoma:        "88831645eae4467af0e537c506dcf4cdd99078d93cfa9d2fe0c01329c27e1714"
+    sha256 ventura:       "0181d254c66b3b6676b387770bcd38ce6899aeb5d80a68539cb3a319c2bee5ca"
+    sha256 arm64_linux:   "9551bad52ea1d85bd154180a46b38f95d806b3d50b85d74140be235b946607d3"
+    sha256 x86_64_linux:  "dc1f0dbc8fbf3683d83c6e2e324d519b9b30daf7c70744340ff91ef0427aaa9d"
   end
 
   depends_on "docutils" => :build
@@ -64,7 +65,7 @@ class Varnish < Formula
 
   service do
     run [opt_sbin/"varnishd", "-n", var/"varnish", "-f", etc/"varnish/default.vcl", "-s", "malloc,1G", "-T",
-         "127.0.0.1:2000", "-a", "0.0.0.0:8080", "-F"]
+         "127.0.0.1:2000", "-a", "127.0.0.1:8080", "-F"]
     keep_alive true
     working_dir HOMEBREW_PREFIX
     log_path var/"varnish/varnish.log"

@@ -9,13 +9,14 @@ class Uvicorn < Formula
   head "https://github.com/encode/uvicorn.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "7ad28e9b82ddaaef7f56d31881a664a75e6f8ac854e784fc6c6ee72dd74e44ce"
-    sha256 cellar: :any,                 arm64_sonoma:  "8c178772f7aea468f5ebfcbd1305ff82bb02a0213e06c368929d1805d529f1dc"
-    sha256 cellar: :any,                 arm64_ventura: "62c3e3e66c714511683b7fb74b1beb94a806ea8f150d4360d7d869d3917c92f7"
-    sha256 cellar: :any,                 sonoma:        "6dc7315b86bcebf44bf7204e0aaab09d007f374fada645b9e32a47590885b66e"
-    sha256 cellar: :any,                 ventura:       "59843fa8aba63f77fdf3dad0e3bc66ad05bbdf297b1431116f6d555d7fc6d9a1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6d2bb748e7ecdadc09450d193edcf3ef3490f4684a67bd4d4e79e4b5ba88e31f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f84f7af472451b52c675c8e3891d47bee78cb36a9326eb5cad581c3d43314836"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "c07c75bdbc6ffc63e037ebc042869aeb598e6eb4fc18e8f982d67ed91b76136d"
+    sha256 cellar: :any,                 arm64_sonoma:  "c474596155e32d2f9f4c4c739ff0bf1ad157427b663e69cc1d90f07b63b82a3b"
+    sha256 cellar: :any,                 arm64_ventura: "2a025fb37ca7c1bb72a9e7edf46a5b4d097b71271800b8b0f337d2ebbff6e09c"
+    sha256 cellar: :any,                 sonoma:        "85edf95614677432bfc0baa8b48337a419e1dd430a9780f924d1aef1b5ef65b8"
+    sha256 cellar: :any,                 ventura:       "d8e1ddcaa2cf29a6bd931eedae11b19322bb7d3d24db222dcdb078a653be4f2c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f250451c953f8af9d27b4974ae073cb8440eda6f2e306bcb52530ae35eab29b5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "300db9344e309e032ec60aaac9685fbe05784d851119b7f84bb31d1794907afc"
   end
 
   depends_on "rust" => :build
@@ -80,7 +81,7 @@ class Uvicorn < Formula
   def install
     virtualenv_install_with_resources
 
-    generate_completions_from_executable(bin/"uvicorn", shells: [:fish, :zsh], shell_parameter_format: :click)
+    generate_completions_from_executable(bin/"uvicorn", shells: [:bash, :fish, :zsh], shell_parameter_format: :click)
   end
 
   test do

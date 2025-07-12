@@ -10,13 +10,14 @@ class Gptme < Formula
   head "https://github.com/ErikBjare/gptme.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "a9cc31d5fbf414bac4a5f4f5871f175c1a05081380b26c3f394e82acada803c8"
-    sha256 cellar: :any,                 arm64_sonoma:  "027c933dcb66e14260f89b2c0f635b97a84bd4769c0887b7cdbbcbfe90203e0f"
-    sha256 cellar: :any,                 arm64_ventura: "bdea219c75ab7f7f6ca8d7a3a0d950b8a9297b76f8ad004e1b81c8cddec52eea"
-    sha256 cellar: :any,                 sonoma:        "e99d5e1e7e837b39b9d871eb09161e6372f66eac3d97ca05fbf6ca690c4ba385"
-    sha256 cellar: :any,                 ventura:       "b1d4771841989a53e27e62f346ad9b3391b71c18f5e12fda21ed3039bafc2111"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c7b00248979eb3c367d2a0cf8c43cf715666a2fa5a7772af5436f6c8e8805cc7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f6be5e8de310ec0f6af97a98c18f6a069358291fcb619289e632a66a787d9c59"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "a0c6728a8e0bdf0e3174f356cfb05571e7e9d96f230b79b0906c15908273001c"
+    sha256 cellar: :any,                 arm64_sonoma:  "021fe908e6382c4325bb12b7204c257f7a420c1492a4190f28229b7194c16a8c"
+    sha256 cellar: :any,                 arm64_ventura: "d755f15f5fe7cbfdb7c868a1ab15f41fa4bbaab4be2200289edfc6a14c52d9b8"
+    sha256 cellar: :any,                 sonoma:        "2220c5dad0209c8d349533bad86a4c62ba7776ef073e72aba78fcdd05168c0c3"
+    sha256 cellar: :any,                 ventura:       "de10426374a40c0eec86026511d9ef7c5b3a58cb60b02570b6d409e3ba2ceebd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e4bc750e9608327aee86ce0a1c7d2b3be00dd48810ded4482bff8e58d4dba1d2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ba127e9a2e2c0ea3c6ca52e6979df5921bdff4b803ec5381a5291ed7129e5738"
   end
 
   depends_on "rust" => :build
@@ -279,7 +280,7 @@ class Gptme < Formula
 
     virtualenv_install_with_resources
 
-    generate_completions_from_executable(bin/"gptme", shells: [:fish, :zsh], shell_parameter_format: :click)
+    generate_completions_from_executable(bin/"gptme", shells: [:bash, :fish, :zsh], shell_parameter_format: :click)
   end
 
   test do

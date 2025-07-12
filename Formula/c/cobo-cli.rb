@@ -9,13 +9,14 @@ class CoboCli < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "5d71e97d045b3ff66d8f3d76d9b3cdf80249c5f73bd38670da1a3dc35f7b2b97"
-    sha256 cellar: :any,                 arm64_sonoma:  "af1cf59147a884f17ff75a4879d9101e048ffb8c5912ef8bc459d703241032e3"
-    sha256 cellar: :any,                 arm64_ventura: "0aad1f706006f77cedf8ca699c046473a01e4c0a3b9f36a4289797871e9909f8"
-    sha256 cellar: :any,                 sonoma:        "d1e93f0c3c935a7f919f134260c97b61cc45b1f7133aa71b11c57aeb7a5ad15d"
-    sha256 cellar: :any,                 ventura:       "980768c4b191eefa89282f595560c8a704daceb795b745b45fa9e0005524d149"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "067da74d73c9eb25ea35c89e92bdef7957116df1eee7374cd63ba99e649e770d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f6c822eb111fb809ff649f1fda461b03a2fe678cb8b38356aa1bf10ba720fbee"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "7d3d9738eea4c343dc9d72e56cdfad3728cd9fb9ed65049f8ff6d742b1b370b7"
+    sha256 cellar: :any,                 arm64_sonoma:  "05703fa9d04ca938bc65178424b14cc61b9965381d7018747b530311bf905d19"
+    sha256 cellar: :any,                 arm64_ventura: "351b4ab2961a9dff678cef69118703c1d8bc249044f5a46ff21d372e4a11b3f2"
+    sha256 cellar: :any,                 sonoma:        "64e4ca4c8f4e87610f586bb515932c79fb445fe647fc35c4f4f1883b6089e385"
+    sha256 cellar: :any,                 ventura:       "35dacbdf50618e2bb63ae9e934fc67869fbef45b82c80bffa21c86ca698f2588"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9c4302b4b048a93b2ce658fc5f1cec2ee623da4dbe3a01445525f229ecd4b407"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "de8e9fd6fa00e1ccdeb3b768dfc5e6f7e0288e0036e1cc56c28fec7297d2f18f"
   end
 
   depends_on "certifi"
@@ -183,7 +184,7 @@ class CoboCli < Formula
   def install
     virtualenv_install_with_resources
 
-    generate_completions_from_executable(bin/"cobo", shells: [:fish, :zsh], shell_parameter_format: :click)
+    generate_completions_from_executable(bin/"cobo", shells: [:bash, :fish, :zsh], shell_parameter_format: :click)
   end
 
   test do

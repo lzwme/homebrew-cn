@@ -9,14 +9,14 @@ class Rasterio < Formula
   revision 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "4ef36558ac6e8d989f632c769937b8ccd9ced748c0b823db3e5cb71bf9eaa936"
-    sha256 cellar: :any,                 arm64_sonoma:  "7694d294efc5a2d14ab956f41acae3cf82b76a730e665ce21183c9a4ba29fe98"
-    sha256 cellar: :any,                 arm64_ventura: "30e512537c68292a9fd0b94e53a8ac322928fdb5135ffbd99e00cad2a46a8bd2"
-    sha256 cellar: :any,                 sonoma:        "b7a80a3acc90424d3ae0639353194ad86832e84f1584a94bcb5d2d442efc3584"
-    sha256 cellar: :any,                 ventura:       "f226f12cd61b1b188fce44cd8880f9a1146c7dea3e54d948b43c6c8876b2207f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "40cce37129c3b70c087b1c08d38a93946f0fa595f1ea5d29e6f33bf8cc201caa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "03de82be905d85d0b06a221e202f511ff99af401d08d9cd60c2741eb2cb6f00b"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_sequoia: "69d6254809fe65612da5354e838772c31f1511fd9307e151da921b595cca7ff8"
+    sha256 cellar: :any,                 arm64_sonoma:  "e8ce574ad5c9c74fb0643ac62fff89fb94867619ee31cf38dfd5e3aee74c5d36"
+    sha256 cellar: :any,                 arm64_ventura: "49c3192e555a01d0fd652911a7354ec290bd1ce811fb76ffd8c7bb1c88eef823"
+    sha256 cellar: :any,                 sonoma:        "b45e231a05de506dc858047edc3a85df5de047fc7f4b400529dd64bca67ab502"
+    sha256 cellar: :any,                 ventura:       "05c0132ae71b41656bed058dc097893d70a9183a54b4b3fd8bcfaefa34ea6210"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c360906d37469280284a0bd960e29c13808561ea499bfbafc80b4be87f5d7960"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a408e0ce4ed6b9b105791dee0d8b098c0741990984477516683c68417fa332be"
   end
 
   depends_on "cmake" => :build
@@ -67,7 +67,7 @@ class Rasterio < Formula
   def install
     virtualenv_install_with_resources
 
-    generate_completions_from_executable(bin/"rio", shells: [:fish, :zsh], shell_parameter_format: :click)
+    generate_completions_from_executable(bin/"rio", shells: [:bash, :fish, :zsh], shell_parameter_format: :click)
   end
 
   test do

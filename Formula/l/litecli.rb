@@ -8,7 +8,8 @@ class Litecli < Formula
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "00e6275a871d0b4f4a923cd74de9ba4d04739c799d8ce75744408822089a09cc"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "baca9e5f10b5be9e8e93354e08bf44d163103531a2819d87fbce735b541d50ea"
   end
 
   depends_on "python@3.13"
@@ -58,7 +59,7 @@ class Litecli < Formula
   def install
     virtualenv_install_with_resources
 
-    generate_completions_from_executable(bin/"litecli", shells: [:fish, :zsh], shell_parameter_format: :click)
+    generate_completions_from_executable(bin/"litecli", shells: [:bash, :fish, :zsh], shell_parameter_format: :click)
   end
 
   test do

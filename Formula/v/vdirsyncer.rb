@@ -10,14 +10,15 @@ class Vdirsyncer < Formula
   head "https://github.com/pimutils/vdirsyncer.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a9d31635befb103569792086faf231e49a2a06bf68d52e7ed646f9bda84b2733"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b220a13c2ce7a1d078adf23c2d6dfa1be499ceb30b3b60059cd12df06dd9b7ee"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "0288bfdb9f4f9d2c84c03d2a91a3b420f30cd2b8ca44d4e697c414b8804dc367"
-    sha256 cellar: :any_skip_relocation, sonoma:        "22942f7993c00edce873eb4b285e5f7d42f8a458d1b52a9f07cda8ba2dc88c53"
-    sha256 cellar: :any_skip_relocation, ventura:       "17e5b4a0a90b39691dd64095777379686a5cec45aa06f184ea9f446f48dc6a6b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "98583633c94504f75782e85018aaa6a1d897fc9c83bbe0fe474d6926bff87988"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0a94c2831c20f191d175bfc156fa6b7b4fdebb5c899c21cbe64af9dd861126e3"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3657bc1eaffd27f2668c60f33e89f9f37fafeb64f4198fce7bf5c8a779357586"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cfeee986c1a79967d262818996887ec9860fa6bc00c608814a968fbbb662347a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "f461ae1043502856a606a1aa38bc9c7423d71205e1e6a074a2d31024a2b678ee"
+    sha256 cellar: :any_skip_relocation, sequoia:       "62671d42404089375e1c46a2ab1e20da558b3e5ab4f5f3259c96e8a6297c4de0"
+    sha256 cellar: :any_skip_relocation, sonoma:        "88dea32f7752c424343ddb77219cc1ab163a0aca17da6de42d74434ddbc901b5"
+    sha256 cellar: :any_skip_relocation, ventura:       "891bc227096bd03144f4e8d1d557d83cae7b8179a7f271289dadcbb916c07861"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8c39fa7339230154b24fe6ce4147f59f657d086f7f680f4edebf4689be4cc285"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2d4743921ee8aaf3ad99f638956cd42979f1cd084bad796e88a773e20c9852aa"
   end
 
   depends_on "certifi"
@@ -116,7 +117,8 @@ class Vdirsyncer < Formula
   def install
     virtualenv_install_with_resources
 
-    generate_completions_from_executable(bin/"vdirsyncer", shells: [:fish, :zsh], shell_parameter_format: :click)
+    generate_completions_from_executable(bin/"vdirsyncer",
+                                         shells: [:bash, :fish, :zsh], shell_parameter_format: :click)
   end
 
   service do

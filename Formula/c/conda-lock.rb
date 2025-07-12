@@ -8,13 +8,14 @@ class CondaLock < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "f51af4ce76132853cdbb636c977be2b581983a33cea5254c9caceff59440612f"
-    sha256 cellar: :any,                 arm64_sonoma:  "84cd572834730eaddc9d3eeef5a8151e83e27071e59d70314907d1ae77c86e8c"
-    sha256 cellar: :any,                 arm64_ventura: "4f08edb6a04dc4ce34a109a9b00c57d4f8dcc66e7b0da42338abc75121d59f38"
-    sha256 cellar: :any,                 sonoma:        "17783878da24e3a6febddc829de59b029d21b00b2cbaf617ff238c133186bcca"
-    sha256 cellar: :any,                 ventura:       "086e861abc20a1711655a59efd009bf11519234d8083b0bbfaad34ec03f860aa"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b72e91b2c77c56fbd2ad338a50f6a55ddfa1c6fe1e8d85acd77626806fe2b6ed"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3824e0a777bc8937b64e0fbdae6141f47935bd2bb9cb6197c15a0c5f7923e8da"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "37265f1903242a301f3fb0429909edbac13654b107c48a27d2c560fe52c3ebd7"
+    sha256 cellar: :any,                 arm64_sonoma:  "5a352901628e149038a11c83452bc58d778657791f345ccf8327e28c2ff740f6"
+    sha256 cellar: :any,                 arm64_ventura: "bd4af451c55ea058c1d7d6c307c2b89dc9ffce97663ca270229e6bbad4d16410"
+    sha256 cellar: :any,                 sonoma:        "1e1320c69f71bea11d8a1f891fd4c60b895e2b10def51bce86720ab3d979b230"
+    sha256 cellar: :any,                 ventura:       "d59f0202ca8418a5bd9d97b8ce7fe5fb22e2e800b6779096462cfa17cd3e73f9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7ea76044966108253d7226769064ef0af4b902243ebc2a5e3319c05035650a0b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9e356f993822fd32bce9de0e051e49460e8ef9018f6198bf248adb1a4c207d0b"
   end
 
   depends_on "rust" => :build # for pydantic
@@ -277,7 +278,8 @@ class CondaLock < Formula
   def install
     virtualenv_install_with_resources
 
-    generate_completions_from_executable(bin/"conda-lock", shells: [:fish, :zsh], shell_parameter_format: :click)
+    generate_completions_from_executable(bin/"conda-lock", shells:
+                                         [:bash, :fish, :zsh], shell_parameter_format: :click)
   end
 
   test do

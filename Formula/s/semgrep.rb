@@ -15,13 +15,14 @@ class Semgrep < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "6df55fd142b3fe60740cd91ca1387cb0f927f0f5b7b2e915787a0e522bcd7625"
-    sha256 cellar: :any,                 arm64_sonoma:  "5f82335d1dd31d38485da234183e99e3eb3d0d2d172cf01a92a1bdcb693a92de"
-    sha256 cellar: :any,                 arm64_ventura: "aff0f5383f8aa2aaf1ba9eae46bb32ab17f1143e6d3fe30a0a15aa2ce29f30cb"
-    sha256 cellar: :any,                 sonoma:        "646f984947c9b63322fc43302e5b9781229f8998ae65141dece948ea9865ae33"
-    sha256 cellar: :any,                 ventura:       "f03eaf70514665cee2414d9e87c8a098d50e9205e3424499b226e3877c52f15d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a45a4b6b3d616051f3c11402b3912115fedb29a4179a43bffd3f8de0d90ce697"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "750d3e3d633684d4a4ff4184c60d4dfd55a859c9ea82e26e25aa442bf9173ad4"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "be36d97daac81920674b15e70d53239aad1fd394566fbc81450e34f65d11c953"
+    sha256 cellar: :any,                 arm64_sonoma:  "6e02103c38a5a465930273f19ddabe7fbdb7416293958a971d21b7e98699c89a"
+    sha256 cellar: :any,                 arm64_ventura: "545f2b93529498e0b06e2cbe6ab7523a8719978efc36f3ba762edaf088408bc8"
+    sha256 cellar: :any,                 sonoma:        "05c3c0886a5dc3300a7e2be40c406214eb9d6d1eaf392ae7782d6cea58cbb823"
+    sha256 cellar: :any,                 ventura:       "445c58923aa231640f5df0745f4d8352cd5c8d26b234987073b716b6e19c54a5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "709a28e3273817129605d2aca8082dc893445463df06ad2b172bd2db8226a6ea"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dfe3dd32c560bdc4db638c130ce45746d8763db915cc557cf14d530762c462a1"
   end
 
   depends_on "autoconf" => :build
@@ -342,7 +343,7 @@ class Semgrep < Formula
     venv.pip_install_and_link buildpath/"cli"
 
     generate_completions_from_executable(bin/"semgrep", "--legacy",
-                                         shells:                 [:fish, :zsh],
+                                         shells:                 [:bash, :fish, :zsh],
                                          shell_parameter_format: :click)
   end
 

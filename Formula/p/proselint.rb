@@ -9,8 +9,8 @@ class Proselint < Formula
   head "https://github.com/amperser/proselint.git", branch: "main"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, all: "fe5583b1309c7b518421055b260ab9d02734219408b363a30daf2feefb54ecee"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, all: "64dfc964e1a9bb4f8b7ad0f4c2387f8bf86cce14f14513575979cc6400557767"
   end
 
   depends_on "python@3.13"
@@ -23,7 +23,8 @@ class Proselint < Formula
   def install
     virtualenv_install_with_resources
 
-    generate_completions_from_executable(bin/"proselint", shells: [:fish, :zsh], shell_parameter_format: :click)
+    generate_completions_from_executable(bin/"proselint",
+                                         shells: [:bash, :fish, :zsh], shell_parameter_format: :click)
   end
 
   test do

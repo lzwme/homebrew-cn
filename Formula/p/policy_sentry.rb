@@ -10,13 +10,14 @@ class PolicySentry < Formula
   head "https://github.com/salesforce/policy_sentry.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "c4bfdf7d1ca10359b721ad58fba1b33e631fd57fba623ba3e3cef243a0d68f26"
-    sha256 cellar: :any,                 arm64_sonoma:  "a7d31909c5732e8dd10570a155c97cc0a03dd18a4a35ed158687019738873601"
-    sha256 cellar: :any,                 arm64_ventura: "a1e515dbe0a2da72a4e40a52199bb653041bb283760b7c1c4027efd790500bcd"
-    sha256 cellar: :any,                 sonoma:        "c7652fbf34b514c7c9f272b3b749fab80ddd57f94bcb6573113a1093f3bc4264"
-    sha256 cellar: :any,                 ventura:       "e1c42231dd7f07dda17e4610c5b114361db50f1bf08a14cf4f8e9f0a20103be4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5c61b11ed32c270e2c5df8b87db0c6ff3036d213bd47e85a107def54fb2a7165"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f26e8bafd4c6bf15034feb1f7a6332a089ddccbd511c0891d9e89fdc241ef82d"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "04bda82b81431750a22f6bef478631fbb349d3645c42d2723fdeb42975f01ef5"
+    sha256 cellar: :any,                 arm64_sonoma:  "edd81e3b6f8efe358eda2677150ff9d08b344022c375e004f52d733e8d51636f"
+    sha256 cellar: :any,                 arm64_ventura: "13e9ef949135fe5ea1887a16bf3199caba35004e6f29e16244681f51d967ebe0"
+    sha256 cellar: :any,                 sonoma:        "cc7c288816f58e3b3a1f4c637f73688f014ec26611624acb7bbe41ece7c1b704"
+    sha256 cellar: :any,                 ventura:       "e02e95addd95546b193e6c0c5a2d9a97742fed235ba551022ca95d123d3644c5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1547d7066ad10558cbb0b9a4a025bd5b91d32496dacb643ad243896182cd6f0d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b83f57c4df176b9d6c7902d41a8d0b1927b88fd0d2ba5898a751923443a40be3"
   end
 
   depends_on "rust" => :build # for orjson
@@ -82,7 +83,8 @@ class PolicySentry < Formula
   def install
     virtualenv_install_with_resources
 
-    generate_completions_from_executable(bin/"policy_sentry", shells: [:fish, :zsh], shell_parameter_format: :click)
+    generate_completions_from_executable(bin/"policy_sentry",
+                                         shells: [:bash, :fish, :zsh], shell_parameter_format: :click)
   end
 
   test do

@@ -11,14 +11,14 @@ class Animdl < Formula
   head "https://github.com/justfoolingaround/animdl.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "5aaa37e63ae5e8b1e9fb2fd0412373e8c5bcceb7eb79380ca0fc3f34b047f20c"
-    sha256 cellar: :any,                 arm64_sonoma:  "efaaca845d0eecd8bf4bc5eb17c608b8e160981f435ece7ef7f1c2974e7ff014"
-    sha256 cellar: :any,                 arm64_ventura: "9525f12cfd47300b58e2d8dd1fe726b5271e5efc88c7df3d5ad1d5ff8b7751e4"
-    sha256 cellar: :any,                 sonoma:        "0f4968fcb2a2aad6e52bd1660a4397e9a4f07ae2fec2d3ca3bdc1dda09e9c82a"
-    sha256 cellar: :any,                 ventura:       "f5d300f45f9da97629c76e70689d90ce818e328701774b1cb6cb034bb9a19518"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8f23fb533affd1c176c1e76f379d12127da98c7b6f084ec7819bc13527beac93"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "165920e2f9da447e3b0ef0877851af4f38b339c145fe2d27bcb7a1e57148e714"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_sequoia: "2b0c0de475dffa18492e1a16521cf7ec2f872775e46b0ecfb9d7cf3020249bc9"
+    sha256 cellar: :any,                 arm64_sonoma:  "84ab0b66c20b91d73bfabfe2920d26cac6a977c6fd2d242c5865a054bb604f7e"
+    sha256 cellar: :any,                 arm64_ventura: "1171ffe573d8b07b3a333209b5622efb8f5c813aeabadf2e731a2f915e03b307"
+    sha256 cellar: :any,                 sonoma:        "534f8a346498a96db436a66e3d83bc7ecedddd9a004545d0fe1af778586a91e6"
+    sha256 cellar: :any,                 ventura:       "9a0b6cb8188f69858fc3f0c56209f7e08a236d80399a8ce102865ffb33f2db5c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a1d5346b5628b33480591b0ef6a899be0d1516fc7d213f8eb3cbe23fdb74b1ec"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2e1cc7ad0a8e6d7bdb86a9ff830c7a05e8cc375d50178c7b30e897538f8cb852"
   end
 
   depends_on "certifi"
@@ -163,7 +163,7 @@ class Animdl < Formula
   def install
     virtualenv_install_with_resources
 
-    generate_completions_from_executable(bin/"animdl", shells: [:fish, :zsh], shell_parameter_format: :click)
+    generate_completions_from_executable(bin/"animdl", shells: [:bash, :fish, :zsh], shell_parameter_format: :click)
   end
 
   test do

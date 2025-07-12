@@ -12,14 +12,14 @@ class HttpPrompt < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "c0b2dc82f155e842743d8a7cafc07312b5697217e18655984273bc767ff19a34"
-    sha256 cellar: :any,                 arm64_sonoma:  "f03dca9d3ef4c36f3d209874fec2cfb66bd6013ff6ac106bb5f06427cbd4c824"
-    sha256 cellar: :any,                 arm64_ventura: "9086c810cca4816d80cf3a4f00b8374292819cb3556039cebec5ae3a9afc2512"
-    sha256 cellar: :any,                 sonoma:        "4636f2c190078b9de80f5f09c9e74be000c40586e5ca238c420a5682e417be4e"
-    sha256 cellar: :any,                 ventura:       "e57f064c6c45ae60b9800b9f4f76181aef2ce0be6c9a835ed6788fb0c5019162"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "81ce6c610d84f132cb8c97261f001249445180c22708c3599e83f349b36ac23f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "77b18c458944383ba9ae6b45f40cb5a788482fcf8770224830194e95f4b530b1"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_sequoia: "8fb96b2aaf910e390ac7e12f7268f8679311a7782648ddcb066322eccfa43ef5"
+    sha256 cellar: :any,                 arm64_sonoma:  "ad2764c7662bfbc1f34e93161f87981ad2ff41166f75b9c244704d9bb7598264"
+    sha256 cellar: :any,                 arm64_ventura: "0532a8228129394bf13ee6f053858ffd7954404bd53dbb5b7da5da0274f10a6a"
+    sha256 cellar: :any,                 sonoma:        "dacf348561198beea4d248bd7a9d816a30399f707d08ec4fec8342db6fc05f28"
+    sha256 cellar: :any,                 ventura:       "9e0a279b469685fc81daaaa65b61b25d0869e797fc161972152529a585260b5b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "64128e8649f032b5515f1692641730b1a18b01c8f8526e7ec7f71df02ca2fb6b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "16bd9aa4d0b7cbaa76f7a09fd2ab89e5d5d61aa7529175ac213e592a1d8d1970"
   end
 
   depends_on "certifi"
@@ -134,7 +134,8 @@ class HttpPrompt < Formula
   def install
     virtualenv_install_with_resources
 
-    generate_completions_from_executable(bin/"http-prompt", shells: [:fish, :zsh], shell_parameter_format: :click)
+    generate_completions_from_executable(bin/"http-prompt",
+                                         shells: [:bash, :fish, :zsh], shell_parameter_format: :click)
   end
 
   test do

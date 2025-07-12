@@ -9,13 +9,14 @@ class Ggshield < Formula
   head "https://github.com/GitGuardian/ggshield.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "a3b14ebe680d12dfbdf93d815d43028f7dea61ba9051aedb458ce1a0f7d7154a"
-    sha256 cellar: :any,                 arm64_sonoma:  "a97c07112c7da3167c7bd773b313fd03f7c538222ce096c7e162ffe2869e0e54"
-    sha256 cellar: :any,                 arm64_ventura: "cd5770ea2717f3a51a20a44795f1f662c7260c723d456b65206c93c3270c1f2f"
-    sha256 cellar: :any,                 sonoma:        "6390b5b338e9ea9f8f543ac5397ff50ddc05826b2f6b62139aa09a734c60806d"
-    sha256 cellar: :any,                 ventura:       "b44691730fc92ee73f886ecd8d7648f5706cf33246c1cbfd3e1f63284b721651"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5cc1932c5c259790df880f04ef4c99828d23b627facca134e2206f138607f5d4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1ff433ce33f50962571dcdf949fddc8d064f6200fbe148904dd9cbd155b0ff82"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "189c7fb26996b840aca21c43aed5c00c10683c8fae75b8124ea957649095ed1e"
+    sha256 cellar: :any,                 arm64_sonoma:  "aa906bf0b77457b24af1dd53490fea6adc3e3694ed01f9d97446eaf2eb4e467b"
+    sha256 cellar: :any,                 arm64_ventura: "8be25a5943f7e41a37410e9d8e9081da74610a4e6242035365545e28f0828833"
+    sha256 cellar: :any,                 sonoma:        "0b142f22601bf7a4c550d38b8c860cb4c8cedc2bb4f7c8785114435686e56593"
+    sha256 cellar: :any,                 ventura:       "89d17d595632345664e4c998dcf11fa526d415d2c424d07c734a934dfeb0fd94"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f6ceb3a508813677fe821af78f07a0b1464603798d270e1a55567eddf3f36733"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "15b9587c6eb484c2333a2c461524ddbf54cb90b1b3b58ec84b8278480fc85ecd"
   end
 
   depends_on "certifi"
@@ -136,7 +137,7 @@ class Ggshield < Formula
   def install
     virtualenv_install_with_resources
 
-    generate_completions_from_executable(bin/"ggshield", shells: [:fish, :zsh], shell_parameter_format: :click)
+    generate_completions_from_executable(bin/"ggshield", shells: [:bash, :fish, :zsh], shell_parameter_format: :click)
   end
 
   test do

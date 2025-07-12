@@ -10,13 +10,15 @@ class Trailscraper < Formula
   head "https://github.com/flosell/trailscraper.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b4cb81dbd07d5b954c840c77d25d505eb5bbc0fab8a1ba9c46a29665122cf6b6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b0f37017da786d814f17fc2b764664f0d2994c1b30fe3b256c3dd658b7250a26"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "78f1550ff391d81a34ecd071c63fd260644951c2029d5e0f4b53305b373591b7"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e4add39e6f156428ac78c1cdc034d26995eefc750070749fcb486f094d8449b5"
-    sha256 cellar: :any_skip_relocation, ventura:       "2ebf657a5c1b51b31e545afc4565d2f18d0fdec4ff7045c0916dc21480e32672"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c2d1f045859402ee432b9237f614e9898d0f1d01b6576182e8c7d3d9c5290005"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a21e764f1726cb448636b2f58f899b15c288abefbf1217d6c011db742add58f1"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "59024c08d9d88aa1211efa7f644efa0db475733418be871dcc2cd0f61671d45d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4bb31c987d5e4afd7a5b41f070f01ae5fe16ba645b1ed6230dc568c187119f9b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "395b8a25ea0d058516b32d6d2693805cc72a7f3e7f68298aeed14895aef9d7d8"
+    sha256 cellar: :any_skip_relocation, sequoia:       "130e4ea5fd7b1ec80cb2e1cea65084d18bbcaf76a8ccc23171dbe5c4a5e47c7d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d4d4fbf044800fcfa9545d203715cf3ed81eda18904009bd33decee0e88e2e4d"
+    sha256 cellar: :any_skip_relocation, ventura:       "817ae180fdc8ed0e1ab691a3e4d6e66ae61af83a77d30a509554887f28a6b4b8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c1c62900b368af894d14847492ce4b5a703426c0f232ad996f1eb02f57573c88"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a71e88ae77f4070955e0fefcbd3523577597a1790a9fd7e9a2365a6d596a8021"
   end
 
   depends_on "python@3.13"
@@ -99,7 +101,8 @@ class Trailscraper < Formula
   def install
     virtualenv_install_with_resources
 
-    generate_completions_from_executable(bin/"trailscraper", shells: [:fish, :zsh], shell_parameter_format: :click)
+    generate_completions_from_executable(bin/"trailscraper",
+                                         shells: [:bash, :fish, :zsh], shell_parameter_format: :click)
   end
 
   test do

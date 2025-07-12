@@ -9,13 +9,14 @@ class Hatch < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a4eda7fb30534534d4faae868ad401f83d4f42166f097d45e47ebc2a55a42483"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bdf1828ac87e8a2e4f42f88d898383846e7bd85598090a962dd22ac2647dbcef"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "b06966c90c33a346877cfc84c09d51270fbb8c37e4f8df258dcb9e09e6d0eef6"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a274928615946c8530317b3491b8ae65a0d9b699e75243801b0d9b5ebcf4b5d8"
-    sha256 cellar: :any_skip_relocation, ventura:       "425135d328dbcf49d264d243967a78267249439e547f00f02b7ab8402b1a4f1b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f98a7b38bad0e6482bff83ce27ae3396165fd86ddb129fbf8c4c823948ea8d62"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c4c3c96c76b37bc851bc07d14dedc6ce5339c21ec7293b9340dc92c08a2ddaa6"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1616343ee1e1ba34f6fe6d76c91370b2ec328aea54e91c4a1c2685ad1c9d40d8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "186d100dadf972e9c062d3405314b414815b6a601d3c79d87897e2f400a491a3"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "f944a2ca1f7232832c9ada1725f50e5711072455909afd789a30bee58b385b4a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8f497ac5e81d8ac7a54ab73db2ff3d0107722179b8fa8609835a8672a7adfe03"
+    sha256 cellar: :any_skip_relocation, ventura:       "dd94431380969e29f2df5b1e9cf57fdd53ffb8d2b6e4c28409f14395de5cdd91"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "30719e2bd30dd98726b48555e313c29795e30d921f3742e7e3321d061c76005d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8f15b9b561deaab503aca01b510845e54275420fd066c2813cbf0224dd36c3ca"
   end
 
   depends_on "certifi"
@@ -196,7 +197,7 @@ class Hatch < Formula
   def install
     virtualenv_install_with_resources
 
-    generate_completions_from_executable(bin/"hatch", shells: [:fish, :zsh], shell_parameter_format: :click)
+    generate_completions_from_executable(bin/"hatch", shells: [:bash, :fish, :zsh], shell_parameter_format: :click)
   end
 
   test do

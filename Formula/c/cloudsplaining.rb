@@ -10,13 +10,14 @@ class Cloudsplaining < Formula
   head "https://github.com/salesforce/cloudsplaining.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "144f6f91e93f43e5e9bc34e4b179e33fe3c6cc1088d9031921613e15e7ea60d4"
-    sha256 cellar: :any,                 arm64_sonoma:  "3b446b4905d74a0cb5f8f705e650e499b082b609e56a84f00b1e820c9ca57a86"
-    sha256 cellar: :any,                 arm64_ventura: "f315208139d57b28330489129f70ee12f4793c35ebf24427100bf3d7083c01d2"
-    sha256 cellar: :any,                 sonoma:        "5a844fde80ad27f5296472e0de86aa5fbdd54c1a0ec270bb649ca674833676a9"
-    sha256 cellar: :any,                 ventura:       "28d06d2663397c0a4becfcb430be77ba9658a1ad75f130a9618b4585d9b22eb2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e9900e0fd5ec7a7ae9ddb9a73d6dfc3979b3462d8634a954517c23d65a5c127b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6763af972ac92a37d2aa14fff32edd408e775e804b7e794521cf08b67c9e9a69"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "48b4acede5eb5b4f635b1a506dbcbf9698a7247993656e1633ab64b71a3d96b2"
+    sha256 cellar: :any,                 arm64_sonoma:  "8ddf6f257babd0a4d65a796fe10a9163b80a221612ffaf19db32ce251c83ac97"
+    sha256 cellar: :any,                 arm64_ventura: "0fa574e4ad463dadd904e1e628207171bba6ad0524b9ea2ce2cf71f026cbf5d8"
+    sha256 cellar: :any,                 sonoma:        "cda069559fb8b000312d48023a2b0712f1a9034d1d1490605ce64638d2eb05b8"
+    sha256 cellar: :any,                 ventura:       "b90b887ea3286d3993ddb2b970719338b0d695281bf0af18041bd07c925d6253"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "359c22a44ec43cf008ef07a7e6b1a18bab9da6f3d4bc8e770c40da22b873c194"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f2dd728d1aa2204e5ad596eb6a1e33deb937bf59a55763e37d7ca2b062043135"
   end
 
   depends_on "rust" => :build # for orjson
@@ -142,7 +143,8 @@ class Cloudsplaining < Formula
   def install
     virtualenv_install_with_resources
 
-    generate_completions_from_executable(bin/"cloudsplaining", shells: [:fish, :zsh], shell_parameter_format: :click)
+    generate_completions_from_executable(bin/"cloudsplaining", shells:
+                                         [:bash, :fish, :zsh], shell_parameter_format: :click)
   end
 
   test do

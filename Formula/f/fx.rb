@@ -1,18 +1,18 @@
 class Fx < Formula
   desc "Terminal JSON viewer"
   homepage "https://fx.wtf"
-  url "https://ghfast.top/https://github.com/antonmedv/fx/archive/refs/tags/37.0.0.tar.gz"
-  sha256 "75c8c360bac4bccbab85b4873b7030a4ed88d8d4a6e718a935851be6454fe56b"
+  url "https://ghfast.top/https://github.com/antonmedv/fx/archive/refs/tags/37.0.1.tar.gz"
+  sha256 "1d81db387d804c43368f6f85c760242814da07363a15b329e8ff8d369b343e8a"
   license "MIT"
   head "https://github.com/antonmedv/fx.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "46d824809e86a85bbb1276c09c162ed9ea3dec022dea146dce112563c897408b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "46d824809e86a85bbb1276c09c162ed9ea3dec022dea146dce112563c897408b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "46d824809e86a85bbb1276c09c162ed9ea3dec022dea146dce112563c897408b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a39294563af592665ea4ec02bce395466d501084d671444286e0dfda6afa2bd0"
-    sha256 cellar: :any_skip_relocation, ventura:       "a39294563af592665ea4ec02bce395466d501084d671444286e0dfda6afa2bd0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4477b6f9e8efc10e29412c8eea8afebd422c6b8f0ba83977fe4650ec7a2f8d32"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "67e5b7c64e483a8626427d0f141545b7d5f29bc4242ba70df7d128ebeb47d3a7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "67e5b7c64e483a8626427d0f141545b7d5f29bc4242ba70df7d128ebeb47d3a7"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "67e5b7c64e483a8626427d0f141545b7d5f29bc4242ba70df7d128ebeb47d3a7"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b10ba4ab18a273fbc8b8c67dc16c1b70316bb93fa8674e2cf3c0dc014c6a6dcf"
+    sha256 cellar: :any_skip_relocation, ventura:       "b10ba4ab18a273fbc8b8c67dc16c1b70316bb93fa8674e2cf3c0dc014c6a6dcf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "340eed05e41b78e16a15f572a8e337c5b19f18931aa93590d5a76a2b5e68dc46"
   end
 
   depends_on "go" => :build

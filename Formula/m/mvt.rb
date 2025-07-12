@@ -10,14 +10,14 @@ class Mvt < Formula
   head "https://github.com/mvt-project/mvt.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "955d527b38e1492b7ea6bf93a5fe35607a678a39d73d13fa8a3001b89cc0ec15"
-    sha256 cellar: :any,                 arm64_sonoma:  "9a64cce2e2128f6ff8ec9b2884399e5dd00a3787bf67cc7f04282978ffe804fa"
-    sha256 cellar: :any,                 arm64_ventura: "ff7bbd647c6630927871f3f416672b8ba9c8eb9d9c9467d6441881e996958248"
-    sha256 cellar: :any,                 sonoma:        "693eec1ac2e0126aaa89852b05fed1b11ad965e1f7b1a8b48f32d000fcdb914c"
-    sha256 cellar: :any,                 ventura:       "9b390df9e22f0f5e39e2bec416bcd02043970a8b75cc5415f9b96cec81ef897e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "536ae993d9bffb9c8e79f251bbe7e129e92587a34ece23dfa2b2f171635dc718"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b6a96255c481d3c2337dd7987f8a2ebb373118ababb53b53af751273a4c8feb2"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_sequoia: "019a921277efc60788a144d1c68580a98eeeee163b639e0e22f9534c885c72fe"
+    sha256 cellar: :any,                 arm64_sonoma:  "acabd46c127e6a382ce08fedf87518be8ed08ff9e3ce9366b5c82bd2dea98390"
+    sha256 cellar: :any,                 arm64_ventura: "4ce6858ec2368bb64e1e0e4f2cc18826ada7eec0504e5646bd580fa0a7bc5dd7"
+    sha256 cellar: :any,                 sonoma:        "d6b7e78cebd2e155aef747abb2a4e6e3199504b19226f1b4077d78c0501b0cee"
+    sha256 cellar: :any,                 ventura:       "b8848727d7299db1033a5617b885753a7b6aa0f592e204238df8faf66171818e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a3c06e9ef9020e4015a79ebf93ee622fdb8c39961702cb762766a8ed352f0809"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "61e7512075c70b3892f9c5407c957f4ec42f5220b7f4c38c6d8f646e8830c66f"
   end
 
   depends_on "rust" => :build # for pydantic_core
@@ -216,7 +216,7 @@ class Mvt < Formula
     end
 
     %w[mvt-android mvt-ios].each do |script|
-      generate_completions_from_executable(bin/script, shells: [:fish, :zsh], shell_parameter_format: :click)
+      generate_completions_from_executable(bin/script, shells: [:bash, :fish, :zsh], shell_parameter_format: :click)
     end
   end
 

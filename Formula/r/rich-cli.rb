@@ -8,7 +8,8 @@ class RichCli < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "2d0c36a7038eb309239e8b32ded419bfd9045a5e5d2f50cf573694e96b0bf5ba"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "f89856adb5d14ec4c41e49a1c06f1e6ee34978b3541a888f78f7b5a6db6febd4"
   end
 
   depends_on "certifi"
@@ -75,7 +76,7 @@ class RichCli < Formula
 
     virtualenv_install_with_resources
 
-    generate_completions_from_executable(bin/"rich", shells: [:fish, :zsh], shell_parameter_format: :click)
+    generate_completions_from_executable(bin/"rich", shells: [:bash, :fish, :zsh], shell_parameter_format: :click)
   end
 
   test do

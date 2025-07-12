@@ -10,13 +10,14 @@ class Cf2tf < Formula
   head "https://github.com/DontShaveTheYak/cf2tf.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "dee1cafafadbec76e76e6c1067d69834d4480f1c4d29418dd62d6b8170960448"
-    sha256 cellar: :any,                 arm64_sonoma:  "4c9da4fe4a216d2582bf4697113ae11fdb702de033e9c0c3de21a8fd0b188f85"
-    sha256 cellar: :any,                 arm64_ventura: "89c3cbd0df422c3f664b890e1276a4bceb32f4d5f3f915e5b2c2b5783d629be6"
-    sha256 cellar: :any,                 sonoma:        "64848649aa0251117c930deb6127da1131312ec5c901326171534bdb167bcb5c"
-    sha256 cellar: :any,                 ventura:       "58f4d020aa5449fbe06a5c7e799cb7d8ff9bdd2175e68b8b4f9fa975aeb42818"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c126b8ca45243d4eac7bec1c1c47f3d303ad3d46c5eb91090b38929f80255980"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "292c68f1d889a89319aec7ff6cb21e40f8e5530f1fe48435a0d3e53e739a5602"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "58b4d16d56e6444cbacdb54b1673e387663eadbbe84c3badaf7c8e21b012c1db"
+    sha256 cellar: :any,                 arm64_sonoma:  "21bbc0286eb033a2a6801ff1bd3ae4969f1ef8def4f3fcb65e95451cd66de630"
+    sha256 cellar: :any,                 arm64_ventura: "e85c4d4bce44cab594c31be432cec4a718029f79ffd885b544e6f6af13c0cc82"
+    sha256 cellar: :any,                 sonoma:        "fb42d64794f5d65ddba3f4fa3591f3c58d556c13bfb1cb51d4f1ce2c48b1b26b"
+    sha256 cellar: :any,                 ventura:       "8e9c8638a4a1603a43bbd14ef68945a9b47b00e2bc58c759ae37b859020d6656"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1edee2efe4d507470e4d0244a539870da2f72b3df1025383598e306e157ea962"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "081fee5499068882416bf48bf3ca1aed4163eb56ab3b8b8a00ea6d96d5db8eff"
   end
 
   depends_on "cmake" => :build
@@ -122,7 +123,7 @@ class Cf2tf < Formula
   def install
     virtualenv_install_with_resources
 
-    generate_completions_from_executable(bin/"cf2tf", shells: [:fish, :zsh], shell_parameter_format: :click)
+    generate_completions_from_executable(bin/"cf2tf", shells: [:bash, :fish, :zsh], shell_parameter_format: :click)
   end
 
   test do

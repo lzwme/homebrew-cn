@@ -8,13 +8,14 @@ class AwsSamCli < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "a5a1e96a46cbd3a83bf4bb55b5f904a358df212d305b835e850aecef14901071"
-    sha256 cellar: :any,                 arm64_sonoma:  "7572f7a2dcf1f473142a5e4fd58386df1f7e6b2a20433465505cc44b32ead94c"
-    sha256 cellar: :any,                 arm64_ventura: "91ed689b09aecd15d7145881e39bf651d723aa191751314b0a23aa1643746d3b"
-    sha256 cellar: :any,                 sonoma:        "f2c15869cd47cb19f9c7d5a9dbf3a1a734c2f4140d3c56eb736b2ce29078985b"
-    sha256 cellar: :any,                 ventura:       "51d67fa9eb8776633de6b727b4bd0914e817527658e08e56648b29604cbc6c36"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "62ee1bba29b70224f7f88f8485fa9023c97159ee779f2291cfc8f581512fa265"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d62b4c616ea18081deea699ed2ca62f511c9e0d6c27c5a719899b72066f404be"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "9e6a1ee07cd9b412b987a794815d93f3ed093a5ff4de11e397046498153121d0"
+    sha256 cellar: :any,                 arm64_sonoma:  "b0c7082adbab7feb697169d565cd3943166a06dece0fe335af05a0c5821c1d29"
+    sha256 cellar: :any,                 arm64_ventura: "e5ab73ed9faa321729540550854fed350928196d56928473ce718e8eae871a30"
+    sha256 cellar: :any,                 sonoma:        "edf40666ac2a96c45f4b68e2024ae4fc8f32c6649dcc37629766a80a44f43957"
+    sha256 cellar: :any,                 ventura:       "24e8752158da654abbeabf36ef4d9836cd9f668747efe2e442ead8e15ca29769"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "44891b6cb8cd881358648f537429206cbb1d87b8b9b553f2ea7012134f0fb949"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fcbb710507d3298eb95b2e4f76b6491d0fc04cb062ef97a56d7aa7525b156792"
   end
 
   depends_on "pkgconf" => :build
@@ -419,7 +420,7 @@ class AwsSamCli < Formula
   def install
     virtualenv_install_with_resources
 
-    generate_completions_from_executable(bin/"sam", shells: [:fish, :zsh], shell_parameter_format: :click)
+    generate_completions_from_executable(bin/"sam", shells: [:bash, :fish, :zsh], shell_parameter_format: :click)
   end
 
   test do

@@ -1,8 +1,8 @@
 class Goimports < Formula
   desc "Go formatter that additionally inserts import statements"
   homepage "https://pkg.go.dev/golang.org/x/tools/cmd/goimports"
-  url "https://ghfast.top/https://github.com/golang/tools/archive/refs/tags/v0.34.0.tar.gz"
-  sha256 "ed3063f864a4c3e12f02dc4553d087b22b3b5f09f881e977613772e3f2324ab9"
+  url "https://ghfast.top/https://github.com/golang/tools/archive/refs/tags/v0.35.0.tar.gz"
+  sha256 "f110778f0bb82b3c68c7b987b464664c4a0be0510d2b86bc47d5cdc7054853a2"
   license "BSD-3-Clause"
   head "https://github.com/golang/tools.git", branch: "master"
 
@@ -12,13 +12,13 @@ class Goimports < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "40f11f454ad19955387a7cfc1c44fb36df85617ca3936dc0d560f052fc97c36a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "40f11f454ad19955387a7cfc1c44fb36df85617ca3936dc0d560f052fc97c36a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "40f11f454ad19955387a7cfc1c44fb36df85617ca3936dc0d560f052fc97c36a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4c154610eea3e2b790e73ccf6f9f897f880d13bc7cf5f585ed66ad9c424af3e6"
-    sha256 cellar: :any_skip_relocation, ventura:       "4c154610eea3e2b790e73ccf6f9f897f880d13bc7cf5f585ed66ad9c424af3e6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "042d4c7f00027f1fef79d057cde028d6cecbff54454ac4794e4c49c809fd82e0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bcb5c1ada6d630e581d5ead881912d3534c9b6e364a9347be5e12d20c61d3b29"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2188d04e9a8e5f5d72a1a4334b0470b02adf395981fbcd8df0f67948ba985409"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2188d04e9a8e5f5d72a1a4334b0470b02adf395981fbcd8df0f67948ba985409"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "2188d04e9a8e5f5d72a1a4334b0470b02adf395981fbcd8df0f67948ba985409"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d65b33ea753b054ac7010689649a95c16ec14010d52d2f66b5441225958a9c1f"
+    sha256 cellar: :any_skip_relocation, ventura:       "d65b33ea753b054ac7010689649a95c16ec14010d52d2f66b5441225958a9c1f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "721cabdd130d47ef28f9610633302eee019aab0bfff84c9e4e2838acdf61aeba"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "52472ca99dba22a11a17ff8283774a210b35ff2565a20d8759e8e925a7ec5c4f"
   end
 
   depends_on "go"

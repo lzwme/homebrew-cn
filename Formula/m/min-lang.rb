@@ -11,6 +11,7 @@ class MinLang < Formula
     sha256 cellar: :any,                 arm64_ventura: "55dd93aee4c6e5b332fb6ef5068f9076ee0188c682aac21f5e3cbc24ee8a263f"
     sha256 cellar: :any_skip_relocation, sonoma:        "c14a84fc2c375ab64eef59cea18373fb47a154d5946e24c1b32dff772470b99d"
     sha256 cellar: :any_skip_relocation, ventura:       "1d103d8fdb4f5d04ac85c30966ec14ce719822cc287aff6bda29d2e7944493c2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0fec39dc5874993f43231ceb8a90d0f774a7956906e4549335d21a4b43078d64"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "5d41319d9cf4c586dae36e4eed94e93cfc70969a977c592f7d819d9d6d420a7d"
   end
 

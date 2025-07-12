@@ -10,7 +10,8 @@ class Platformio < Formula
   head "https://github.com/platformio/platformio-core.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "d3b937c46359883226dbd06ae3c955020120398448381c9ee957473efe3b8100"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "f4691b1cb65222c639f1bdfd2f86bb782e3d0dccfc0d6d6c34cdc660c3089721"
   end
 
   depends_on "certifi"
@@ -124,7 +125,7 @@ class Platformio < Formula
   def install
     virtualenv_install_with_resources
 
-    generate_completions_from_executable(bin/"pio", shells: [:fish, :zsh], shell_parameter_format: :click)
+    generate_completions_from_executable(bin/"pio", shells: [:bash, :fish, :zsh], shell_parameter_format: :click)
   end
 
   test do

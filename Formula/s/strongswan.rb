@@ -11,13 +11,14 @@ class Strongswan < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "1d400a27f9827ddc6cf1558f1745ec2de5b726b5846fc0ccb940ce1ae4816c46"
-    sha256 arm64_sonoma:  "a53259dbcb6295c222daf978857a3bbc5b9227d008c77a211f92ad7341ab72ca"
-    sha256 arm64_ventura: "fa99e2acc5b7dad59ba0c34729ac9962265b3a44471b76ea2ccb3449b091a6d0"
-    sha256 sonoma:        "324b1831262b1913c26de58b0062943a9d453fac4ed1b1ebc8448b47457e207f"
-    sha256 ventura:       "328816ca28f4d263fc8389a4384b481c86f46a2e1d43f152ba7a1ab6ca10b656"
-    sha256 arm64_linux:   "5933ebc1945502e575568a71fd8f230164aafad1228b0fc41e895c848a25113a"
-    sha256 x86_64_linux:  "5639fc4928b7bf717c6c4eb52db38c58205b332c9a3694f8197195555e24a165"
+    rebuild 1
+    sha256 arm64_sequoia: "e985909f77f15b306013dd82941e3e7e27865795955a16b19f09d5320763f38d"
+    sha256 arm64_sonoma:  "66e75131ae4a46b25fd40cb9cd2fd7dee7713f6d41b711af5d636a45d474df4d"
+    sha256 arm64_ventura: "04be533d4f1a6bc0ed63d4bba854e4087f4b8afca6745850be4095b263366bbb"
+    sha256 sonoma:        "62a7f02ff94d392ff6c96a7000972e2c1d4f234b5950f92fd70a219afdcf96fa"
+    sha256 ventura:       "4a13f63e4aa18d48c7154a5771fa6ea1cdf440cf4d4fecdc6222f5288df8f55b"
+    sha256 arm64_linux:   "8617eb00446e840c420a9fbab06cacc0724f04c9c867a229af29495345dea578"
+    sha256 x86_64_linux:  "bd322cdce36f46f31fdcb827b97b60ba30df1db7abb18e979eb59c36c504747a"
   end
 
   head do
@@ -54,6 +55,7 @@ class Strongswan < Formula
       --enable-eap-mschapv2
       --enable-ikev1
       --enable-ikev2
+      --enable-kdf
       --enable-kernel-pfkey
       --enable-nonce
       --enable-openssl

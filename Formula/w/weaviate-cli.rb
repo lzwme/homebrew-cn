@@ -8,13 +8,14 @@ class WeaviateCli < Formula
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "83d12311877e48ace3ea05ff67cd26225afd64f27472dbe508f733f2505d9879"
-    sha256 cellar: :any,                 arm64_sonoma:  "8d9ac3295c2f7f6d16cd14f60645ad1dfc2c8106277a53396ade895b3c08ad64"
-    sha256 cellar: :any,                 arm64_ventura: "26b9ddfa29c25a4bed2265fbbbf4a6fe4d78913bca0b3f8a36a888e427c72a91"
-    sha256 cellar: :any,                 sonoma:        "d838f9c372ab64c6134f8e357ccb6f5c04665aa2ad41027ff5fe10944076607a"
-    sha256 cellar: :any,                 ventura:       "affde9f30106e4a4f8f285b8e3b6d9809e59d142d95e25a0b18facfa67a6b9bd"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fab5d6c1a2f719d6b11d857b114390345e66978f8a4424e3509504944199024e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eb74ff4e81f48026aeb62d52175e7289048ccc976cd16ef289de6390f2f7c104"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "650abbef118c44a8ebe76773f861656276ba0243f0930d3061539365d82ee5bb"
+    sha256 cellar: :any,                 arm64_sonoma:  "bf4e41e5388b51c2626d04fae0de4a9c73307d0e53ddd2c3f10235eab087c236"
+    sha256 cellar: :any,                 arm64_ventura: "9e16a758d59c0496f8b7cdde8c466993dbbceb7654bf408fed18f9952dfc0032"
+    sha256 cellar: :any,                 sonoma:        "e339304f00a42f189bbb8785a6cd39d4f60a40ed3f018566fcbfd2580d437720"
+    sha256 cellar: :any,                 ventura:       "50a951d27ac46d4d74471a40a3132e235e60581bf1c6baabafa8d554aede57be"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a3f539c680dd3e3c21dfda7e9b43a47cd79328e77b36e07166f7778da819c912"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9878b7a18bf87a8808a36ed9129997d3873e3c5483b7f0f78d990fa0c868cdf7"
   end
 
   depends_on "ninja" => :build
@@ -179,7 +180,8 @@ class WeaviateCli < Formula
   def install
     virtualenv_install_with_resources
 
-    generate_completions_from_executable(bin/"weaviate-cli", shells: [:fish, :zsh], shell_parameter_format: :click)
+    generate_completions_from_executable(bin/"weaviate-cli",
+                                         shells: [:bash, :fish, :zsh], shell_parameter_format: :click)
   end
 
   test do

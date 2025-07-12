@@ -3,18 +3,18 @@ class Ocrmypdf < Formula
 
   desc "Adds an OCR text layer to scanned PDF files"
   homepage "https://ocrmypdf.readthedocs.io/en/latest/"
-  url "https://files.pythonhosted.org/packages/d5/b6/2e8d04b1e6b7e932beac5dfd61e3bf04166b3ca1202d58709fb18f7089b4/ocrmypdf-16.10.2.tar.gz"
-  sha256 "9b65730ba03c9dede6c6d8c61b6e99b93ea2d0192ed4482111174e151540f7fd"
+  url "https://files.pythonhosted.org/packages/cd/40/cb85e6260e5a20d08195d03541b31db4296f8f4d3442ee595686f47a75b0/ocrmypdf-16.10.4.tar.gz"
+  sha256 "de749ef5f554b63d57e68d032e7cba5500cbd5030835bf24f658f7b7a04f3dc1"
   license "MPL-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "32039b10bd8372f439e096218ba97304f45e660e9db51561466165775f058bd6"
-    sha256 cellar: :any,                 arm64_sonoma:  "62a3cd2686cf5b7469d15c02e97f1fae6a1f75c5a1a42311b68d30d4c6d94e2c"
-    sha256 cellar: :any,                 arm64_ventura: "2b2ed1f3f5af3836b372008aa1f962c6487984432253fbb4999310676d232630"
-    sha256 cellar: :any,                 sonoma:        "ac95c27919e1c8961cb0a2ae00c215f35084c8b47155c348ee5ddfffeaf1c507"
-    sha256 cellar: :any,                 ventura:       "2911b806f380bec5fa70184090e63c561da88570aa80eee40c99eadfc2f91742"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fc4b02c898f1d6462d01513503ea462ef079680443f0c9806f35bfb530fdba19"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "25656488654b9ed64b082a1f0b336a8145b999f21124d8931af8ec4ba392980b"
+    sha256 cellar: :any,                 arm64_sequoia: "affd5fe0b97bb958a62a0293fdd9680cb16a8801c8d2a47902248c9e658422a6"
+    sha256 cellar: :any,                 arm64_sonoma:  "0de8c204d06e26397c41ecabc3948a7f745a1ffce8d50eedfddad45de860c678"
+    sha256 cellar: :any,                 arm64_ventura: "3af0206fe96e48fba9a042e59694a0dae3cb8b7c4e97dcd2572233c9a357b3f9"
+    sha256 cellar: :any,                 sonoma:        "a2828be1d08a4facae82e34029a8b11a8490f25cd4ef732cf7e1768752e8c368"
+    sha256 cellar: :any,                 ventura:       "60f0bcb692245d5467cb76e8ae627a2fc813098d7ac9d62e5517aabc2c07aa58"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "932b59c71fe869d67b9345e53103cdaced15f9c08501a4e3de81cd6bbb69fc36"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4a65cbe33c09c215339de5808072ea9b0ddbe2a5b4033af1f81037ad220ac35d"
   end
 
   depends_on "pkgconf" => :build
@@ -58,8 +58,8 @@ class Ocrmypdf < Formula
   end
 
   resource "lxml" do
-    url "https://files.pythonhosted.org/packages/76/3d/14e82fc7c8fb1b7761f7e748fd47e2ec8276d137b6acfe5a4bb73853e08f/lxml-5.4.0.tar.gz"
-    sha256 "d12832e1dbea4be280b22fd0ea7c9b87f0d8fc51ba06e92dc62d52f804f78ebd"
+    url "https://files.pythonhosted.org/packages/c5/ed/60eb6fa2923602fba988d9ca7c5cdbd7cf25faa795162ed538b527a35411/lxml-6.0.0.tar.gz"
+    sha256 "032e65120339d44cdc3efc326c9f660f5f7205f3a535c1fdbf898b29ea01fb72"
   end
 
   resource "markdown-it-py" do
@@ -83,13 +83,15 @@ class Ocrmypdf < Formula
   end
 
   resource "pi-heif" do
-    url "https://files.pythonhosted.org/packages/4f/90/ff6dcd9aa3b725f7eba9d70e1a12003effe45aa5bd438e3a20d14818f846/pi_heif-0.22.0.tar.gz"
-    sha256 "489ddda3c9fed948715a9c8642c6ee24c3b438a7fbf85b3a8f097d632d7082a8"
+    url "https://files.pythonhosted.org/packages/7a/5c/12198f6c7d40eb62dd9196635bba12c5d46f910dba650bd761acbaf73b64/pi_heif-1.0.0.tar.gz"
+    sha256 "beb5233436245a2a129515ee0fecdab022812673d372a7511137aa4fbabb069d"
+
+    patch :DATA
   end
 
   resource "pikepdf" do
-    url "https://files.pythonhosted.org/packages/9d/eb/4756ba366b5b243a1b5711e02993ea932d45d7e2d750bf01eb0029dc443e/pikepdf-9.7.0.tar.gz"
-    sha256 "ab54895a246768a2660cafe48052dbf5425c76f6f04e0f53b911df6cfd7e1c95"
+    url "https://files.pythonhosted.org/packages/89/15/c6faef352a55a13d11738e56d5b4b309fb43d216e26c70206b9159694846/pikepdf-9.9.0.tar.gz"
+    sha256 "948620612c5ee70c14b262a352b1db927386eab741d6ed77fdb1c4c8772734b9"
   end
 
   resource "pluggy" do
@@ -98,8 +100,8 @@ class Ocrmypdf < Formula
   end
 
   resource "pygments" do
-    url "https://files.pythonhosted.org/packages/7c/2d/c3338d48ea6cc0feb8446d8e6937e1408088a72a39937982cc6111d17f84/pygments-2.19.1.tar.gz"
-    sha256 "61c16d2a8576dc0649d9f39e089b5f02bcd27fba10d8fb4dcc28173f7a45151f"
+    url "https://files.pythonhosted.org/packages/b0/77/a5b8c569bf593b0140bde72ea885a803b82086995367bf2037de0159d924/pygments-2.19.2.tar.gz"
+    sha256 "636cb2477cec7f8952536970bc533bc43743542f70392ae026374600add5b887"
   end
 
   resource "rich" do
@@ -125,3 +127,14 @@ class Ocrmypdf < Formula
     assert_path_exists testpath/"ocr.pdf"
   end
 end
+
+__END__
+--- a/pi_heif/_pi_heif.c
++++ b/pi_heif/_pi_heif.c
+@@ -1,6 +1,7 @@
+ #define PY_SSIZE_T_CLEAN
+ 
+ #include "Python.h"
+ #include "libheif/heif.h"
++#include "libheif/heif_properties.h"
+ #include "_ph_postprocess.h"

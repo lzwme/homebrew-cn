@@ -9,13 +9,14 @@ class Snakefmt < Formula
   head "https://github.com/snakemake/snakefmt.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c6f3b238883159ea5e23d01cb0892963b4bd953d24c1698012b53bc5f26a9c4c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c6f3b238883159ea5e23d01cb0892963b4bd953d24c1698012b53bc5f26a9c4c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "c6f3b238883159ea5e23d01cb0892963b4bd953d24c1698012b53bc5f26a9c4c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7b5c55a0907942d9ce338e1a2edab23febf8e9fd3d6411c6310ace4c1e2784bb"
-    sha256 cellar: :any_skip_relocation, ventura:       "7b5c55a0907942d9ce338e1a2edab23febf8e9fd3d6411c6310ace4c1e2784bb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f1630f33ef1dea71add311265206881e08a08e00ce2f9fb866a5c97d1eb1fd09"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f1630f33ef1dea71add311265206881e08a08e00ce2f9fb866a5c97d1eb1fd09"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "edcdce032c7d4e55385c2691f7f0ffccd023b39e7d99adfdb700e34226f75548"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "edcdce032c7d4e55385c2691f7f0ffccd023b39e7d99adfdb700e34226f75548"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "edcdce032c7d4e55385c2691f7f0ffccd023b39e7d99adfdb700e34226f75548"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b994ad55990344d75e06330d9e8ca98d55985fd331ef7cedae4805aa5c2fe4be"
+    sha256 cellar: :any_skip_relocation, ventura:       "b994ad55990344d75e06330d9e8ca98d55985fd331ef7cedae4805aa5c2fe4be"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b27e3398c9cdcb69e2b24ecf184641fd56beb6f2b8648c18cc13212d988d6f89"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b27e3398c9cdcb69e2b24ecf184641fd56beb6f2b8648c18cc13212d988d6f89"
   end
 
   depends_on "python@3.13"
@@ -61,7 +62,7 @@ class Snakefmt < Formula
 
     virtualenv_install_with_resources
 
-    generate_completions_from_executable(bin/"snakefmt", shells: [:fish, :zsh], shell_parameter_format: :click)
+    generate_completions_from_executable(bin/"snakefmt", shells: [:bash, :fish, :zsh], shell_parameter_format: :click)
   end
 
   test do

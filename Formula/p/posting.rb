@@ -8,13 +8,14 @@ class Posting < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "104b4c64dbb8364e1b09952405db0c48bf5a901ef9b90681b05f6b5e3c9934f4"
-    sha256 cellar: :any,                 arm64_sonoma:  "9b76d6af1d70bdbe77ed393853e29eca2c8f4893a6a82e1b91f30f3a699e4fb3"
-    sha256 cellar: :any,                 arm64_ventura: "44848246f531e8800cd1eb38b11a81047b32ff9ce9d4b64735e5c6902852b98d"
-    sha256 cellar: :any,                 sonoma:        "9170fd60a78cc6aba8081ba0492897dbfccacea60c16ae9c7c6aabf52a264a29"
-    sha256 cellar: :any,                 ventura:       "4424415f29b6e9553eeabc773f7dd80e08e80dadca79e6998bdc5874235cf4c1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d22e0c1da88f01a742e41cd3ad3d16c303a5b1d76fd375c8bcd0e4e92b3fa4b1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b4aaa8fbcfa8112aa69e36d8b10af8c88f1c12db9bffa4b983574d37d4c8095d"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "e0b6848e80d40d9d147511941a0afac0f763b337572a303a981e21c393600b61"
+    sha256 cellar: :any,                 arm64_sonoma:  "e653f1366b8925f417d415892f1d61e6c1c87c86e159341b8cccf74ebbdcd1fd"
+    sha256 cellar: :any,                 arm64_ventura: "cbc2c8f2e53c5fb967935654424830e53ae2d5cb4ad36029b14fa3371c75842c"
+    sha256 cellar: :any,                 sonoma:        "bed07c24b535624dd866541c20a8cc564d416eecc645f9a4be2be238e75b9e77"
+    sha256 cellar: :any,                 ventura:       "44f509e73bc4fe6f12467b9931442f820b9c2b16ddd26133ce0f56a2111a59a1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d13f7abe4fc2f188910088976c85ffc78c7f799c8060e394fc1c407a51c48846"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2a4c1eae10dfcbfd5d7a025ebe973349dcba346033965cd299b13c3c71130732"
   end
 
   depends_on "cmake" => :build
@@ -186,7 +187,7 @@ class Posting < Formula
   def install
     virtualenv_install_with_resources
 
-    generate_completions_from_executable(bin/"posting", shells: [:fish, :zsh], shell_parameter_format: :click)
+    generate_completions_from_executable(bin/"posting", shells: [:bash, :fish, :zsh], shell_parameter_format: :click)
   end
 
   test do

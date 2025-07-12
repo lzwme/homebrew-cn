@@ -12,7 +12,8 @@ class Shodan < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "3f6b9722526a2e6b4a1efd5f4395b3fc8bbc4c993b692ab5b8115361501378d2"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "ff244c9ab8a940086f91f9a2f08a8266d74053755103ce3dab77680ed7b2c2f4"
   end
 
   depends_on "certifi"
@@ -83,7 +84,7 @@ class Shodan < Formula
   def install
     virtualenv_install_with_resources
 
-    generate_completions_from_executable(bin/"shodan", shells: [:fish, :zsh], shell_parameter_format: :click)
+    generate_completions_from_executable(bin/"shodan", shells: [:bash, :fish, :zsh], shell_parameter_format: :click)
   end
 
   test do

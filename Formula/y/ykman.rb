@@ -9,13 +9,14 @@ class Ykman < Formula
   head "https://github.com/Yubico/yubikey-manager.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "842d4ca75c0b971050d7cdded4b1e07f7c9472877ad694a541d3368325203959"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a7c97aeecfc6a6d4215a1cde16c1223accd6afa605c1895f819c1ba0e41bbc98"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "3c47a5676ca014e2ce4288ee335eb833755b71fe97fdb625e7c2f78f743a529a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "447ddc8d23fc9eb6cca78fb691491e9dfd03f2d9ef9597760bdab09ffd3726bf"
-    sha256 cellar: :any_skip_relocation, ventura:       "ad9312ba3779433916fea7621376722a292cc2d5795b9bfe655d19b50edf01fa"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ca0cdbf6e8f97e6f250de8f3dbe083fdae6709c1dd59fa0268d34f0b22810d45"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fb400bfd7f5cf9d35a4bb749d02ca67d611a29b083c3798ef9bc12d0842a82b1"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "87773a77350d507bd05943f10c30a60a14d73b30043dd0e71ee9a8304bc9773b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f7b44cc3f306a4626e0851078692fda43e73ca3ab1bde9d9da7d8894460a4261"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "cfab40b274c9ce7d0461bbcdaeb5e4282c14c149bd74b6c498786847d40ac994"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c6a92f7805145991992181297c85062d88c556fe97216aa8e9a663b18bf4db77"
+    sha256 cellar: :any_skip_relocation, ventura:       "f07721117ed5dd7fd675fad16b98c8045ccefcd99ba8cbd10b4206e12056d3c2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7fa0324093131a4a4185cd01586e29031d1762475018e59cf6e94a6bbe77a4c0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "25a6128e15cffa903450e28521abf1c5ec918ff7bf29c32dc52a751af47c8a3e"
   end
 
   depends_on "swig" => :build
@@ -92,7 +93,7 @@ class Ykman < Formula
     man1.install "man/ykman.1"
 
     # Click doesn't support generating completions for Bash versions older than 4.4
-    generate_completions_from_executable(bin/"ykman", shells: [:fish, :zsh], shell_parameter_format: :click)
+    generate_completions_from_executable(bin/"ykman", shells: [:bash, :fish, :zsh], shell_parameter_format: :click)
   end
 
   test do

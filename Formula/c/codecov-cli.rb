@@ -12,13 +12,14 @@ class CodecovCli < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "ec5fafb332973aa8663135efabd0d6091e9293faa713635ea4c5d850d4938bab"
-    sha256 cellar: :any,                 arm64_sonoma:  "c5f5670939d0b311cbc377dc8b953ffc02847d3bc1d69140f7a66a6aeff50415"
-    sha256 cellar: :any,                 arm64_ventura: "037551e31a523c03eb00779d6894bc1ce53c5a0702966903792c7832d4519a25"
-    sha256 cellar: :any,                 sonoma:        "9598ff14e6f0b89c651d1c6a2c25738ad07983ea20a9b8228a5b9ec6f3195e6e"
-    sha256 cellar: :any,                 ventura:       "cf57b5b73b4e64a01ee1c07531d3b5928e0ab118326fac7050806f41a9d98504"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a9bfd2caec063ad05d8b405dbb5f61dc93f0d8012e548e0d62e7da3dffea90d8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "45124a3898a9ff63ecf1e7919fd2ef88ea9b122a4e32d1262406cd8e2a509021"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "69cb375432f5d70ddfd35b3a33357bbb07aed9bfaff936309718cf037605580a"
+    sha256 cellar: :any,                 arm64_sonoma:  "97b30c3f3b777638465c8efd14ae485c13c76db3b494fbc202b31cf67005de4f"
+    sha256 cellar: :any,                 arm64_ventura: "d9897494904364c692b2083c279e66e814a2273261de3d82a9471aaf6a0bfd3a"
+    sha256 cellar: :any,                 sonoma:        "54d0d6a2172813aed8d3783f16edcaae938e6a2c335a744b7202fc06d8f180e5"
+    sha256 cellar: :any,                 ventura:       "db40ba9e4816086618c175a6b03f571a6de22896b741f97fe200234f044d82d8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "366181c9294dc966b4734ee2093a7c6f4f2fbfde9b2756dbecc5814296049ead"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6cfcb05e3a81f7fc39548dc3b6a2b879e97aee8acf4ee60ccad52e9a4aed86b5"
   end
 
   depends_on "rust" => :build
@@ -83,7 +84,8 @@ class CodecovCli < Formula
   def install
     virtualenv_install_with_resources
 
-    generate_completions_from_executable(bin/"codecovcli", shells: [:fish, :zsh], shell_parameter_format: :click)
+    generate_completions_from_executable(bin/"codecovcli",
+                                         shells: [:bash, :fish, :zsh], shell_parameter_format: :click)
   end
 
   test do

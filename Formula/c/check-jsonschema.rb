@@ -9,13 +9,14 @@ class CheckJsonschema < Formula
   head "https://github.com/python-jsonschema/check-jsonschema.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "ad64a28db9250e02e11f78ab1cb4908e38adccf69c02fdce603ea8402c185b8a"
-    sha256 cellar: :any,                 arm64_sonoma:  "544a7f856a4743b4172acc6fabe7fd1ffb72b14c92887bb7e5e7342d59a44e8c"
-    sha256 cellar: :any,                 arm64_ventura: "f39f8aa21b908098c7057da92e0e3e39991cfec2202640821574de8d3a27859c"
-    sha256 cellar: :any,                 sonoma:        "40dc34f220db80c4ee0cc9f7bbfd6a0cb9a9a218dfe1db9f874ea1326919dc49"
-    sha256 cellar: :any,                 ventura:       "873a1353832263008d81d66551adf585301f4f9edd55441994a40086b474e532"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f7707755f3fdd505ed5a7f6d835333ecaf1485bcb90165a4d23a9798b353a8f2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9cfdb3891f709e124dd0ecc910ef6d6d92f488eff9ff87a0d4dcc7ba10120792"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "3df91b3e5ec3f90a3a9eb73983acdd6550567b0d9fa5420147564cb89a512ad7"
+    sha256 cellar: :any,                 arm64_sonoma:  "d060f51f9dea52beb04b1783e82a1293bf18ec93712031287cfd1f47b87a1485"
+    sha256 cellar: :any,                 arm64_ventura: "a81c95f5df8b30e807cb3cede449f4ee754030bcec42de95fa0d9f9a6f9ac44c"
+    sha256 cellar: :any,                 sonoma:        "7aa1f8c7bd0943c6f82eef19769b53a66cbbff438b77470ed65171a6049eff92"
+    sha256 cellar: :any,                 ventura:       "5a467d971bcab4cf579174ff2902ea9e575641abea67fe4c46b6568f2e62ae88"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "866c06d3a807b2991106d9c073e21fae989ce3b04581e54cc47651855c181b3d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2ed4e648d088ed03ad1be758b1f95aa19aded2317a13df37e57e7e4eedfb1614"
   end
 
   depends_on "rust" => :build
@@ -147,7 +148,7 @@ class CheckJsonschema < Formula
 
     generate_completions_from_executable(
       bin/"check-jsonschema",
-      shells:                 [:fish, :zsh],
+      shells:                 [:bash, :fish, :zsh],
       shell_parameter_format: :click,
     )
   end

@@ -10,13 +10,14 @@ class Subliminal < Formula
   head "https://github.com/Diaoul/subliminal.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "7aa070c9a3d2426dffc709da012ae80e6419dc35e1eb372d177eedc70eb35c55"
-    sha256 cellar: :any,                 arm64_sonoma:  "b128e27859ae0d5a7ebd82e2a4d3e5d1568db7f77378b9efbc2b51893c7844aa"
-    sha256 cellar: :any,                 arm64_ventura: "3d9180133e5cd7f212208636d4155bd2f1c32fae3968a859efaa74d3638f0006"
-    sha256 cellar: :any,                 sonoma:        "3b937fd8d1113159d277dedf4a066f0b43e589a2ba07882eb24409186844ec7d"
-    sha256 cellar: :any,                 ventura:       "6fd7a2e29599eb5c79510ea84336de029ec40066953929792c0b94da24820530"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8a92b71f800b6cc8459f38ca72494911ada8e6deaf16f38654fc1dd3f260305a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a9ff97cabcf1083019380583ca4b454183c6c761344fc6ff0c1a95a3b53b767c"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "7ef2d779b37ac8893792dbe85344fdd5e66a41a7ff026e928df9cc5069857f01"
+    sha256 cellar: :any,                 arm64_sonoma:  "9c701b1b35b5f701e855a66b2204c550ca0c5569cdc01ec092ff7318947e0fe4"
+    sha256 cellar: :any,                 arm64_ventura: "e4cb2b55889d3eb232eed5d8c8ff74bef8bfe29d552f732adadd9331443a7a7a"
+    sha256 cellar: :any,                 sonoma:        "b364d5d7051f89d62e58464d8a82b8d2ef1b8bf9f25ed1cda9a9654d9e33fb4f"
+    sha256 cellar: :any,                 ventura:       "2c16a2ee1d2ac22eb1cf437bf8b9fa795b8cf5ae7a6787fd88747bfcf4a9afd3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c8b2fdbbed0bf325167ac51370959c322fb973711aae245944b85fcd0d748c26"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5535e61d5320ae97f94b9baba9d370793e3f7306d663e98845f5d3f7e54c7023"
   end
 
   depends_on "certifi"
@@ -191,7 +192,8 @@ class Subliminal < Formula
   def install
     virtualenv_install_with_resources
 
-    generate_completions_from_executable(bin/"subliminal", shells: [:fish, :zsh], shell_parameter_format: :click)
+    generate_completions_from_executable(bin/"subliminal",
+                                         shells: [:bash, :fish, :zsh], shell_parameter_format: :click)
   end
 
   test do

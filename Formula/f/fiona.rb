@@ -9,13 +9,14 @@ class Fiona < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "72cb09fe015aa6d5dbcc6a9dd639c641db2920f8e335a0a3acbd694ad255e83f"
-    sha256 cellar: :any,                 arm64_sonoma:  "7732fc049ef4ba6b47e790f9f14e621807fcb70f8f58f663e2d44513ca33380c"
-    sha256 cellar: :any,                 arm64_ventura: "765b472e5789020dc487ae96df3b55b111abb0ba4430e0e4e0f1f8fbc8a1c536"
-    sha256 cellar: :any,                 sonoma:        "3b0640448524a574978757a4c7c72bc7b361306f775ef946e35f8219e59154ce"
-    sha256 cellar: :any,                 ventura:       "6f4b27a8ce35aee27d824efba12de4d0114815c303e27bd9e4577c78bef725e7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fb6e42631c5db0154636fde816272135bf6e50e95fe4016c6c8e7c54c0b56ee0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ccb14cd8a348d6362e922e69e72785bc775726c9929da360dcca9919cc839c5e"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "00b95ac4bf7772eb38a49123a2bda485fabb21c0e1c92ba49fb4630ddf9f0a8c"
+    sha256 cellar: :any,                 arm64_sonoma:  "00eadb2d61339a282cff600a0b0914decfc4ae1cb53ac1d4546b40528811147c"
+    sha256 cellar: :any,                 arm64_ventura: "3887127436fd935145d865af7549a050e7ad7b1b307ea295b412060beef310f7"
+    sha256 cellar: :any,                 sonoma:        "2a2cf6a51c01bc67a4bc2e661d0e0c2e0ffe0b09bb8b661e4071d6dab6d613a6"
+    sha256 cellar: :any,                 ventura:       "f13fc2f8c11c0f918f2761725e7483cdd91948d21041fa51c15a73bb3182bf13"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3a306357c631c92a7f61e46b0211ea0d910a6883e849edc8c400e0bb122a804d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "16820e10169e49e3787ff5c4507ce74a9fd95188d045fdd0173e00f4a08e9880"
   end
 
   depends_on "certifi"
@@ -47,7 +48,7 @@ class Fiona < Formula
   def install
     virtualenv_install_with_resources
 
-    generate_completions_from_executable(bin/"fio", shells: [:fish, :zsh], shell_parameter_format: :click)
+    generate_completions_from_executable(bin/"fio", shells: [:bash, :fish, :zsh], shell_parameter_format: :click)
   end
 
   test do

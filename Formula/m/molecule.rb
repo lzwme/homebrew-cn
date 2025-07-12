@@ -8,13 +8,14 @@ class Molecule < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "dee9cc0b0372366e9b1aa05c3b06d3ac9bd9862f0f20f373cf699c03c23750bc"
-    sha256 cellar: :any,                 arm64_sonoma:  "8ccd642a426fbea119b7d5683a4fc5dcc4c6b09350a0c78b517c1daa73e21868"
-    sha256 cellar: :any,                 arm64_ventura: "5634c22d1157f0646c4fb929aeaf6e3464c7907caab4edb081d95ab7a7b43c50"
-    sha256 cellar: :any,                 sonoma:        "974e386a00ae15a0471e9f77b32216b99bf45c8dab6ac6b77c3491ccb6cca6b8"
-    sha256 cellar: :any,                 ventura:       "159421177661a054eaa4692041f5ab890286649def3c79f15bfb3addcdaf68a6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "da476d38679d1a10cdd1e02dfa26cfca859053a211af193dc91deb396b67be4d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2fdb00206d7ab54bf3bb9d417233964f2ad58413dcbce06bc110d1df5e1cd65f"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "39f153787e6dac64ceefb305581b52b1a1da59dc6ae6758b372fab7b0ea6e85f"
+    sha256 cellar: :any,                 arm64_sonoma:  "0d041a37b9676b542ae4d33dbf4f6269a97a528766a98cd8ab102d66f56502fc"
+    sha256 cellar: :any,                 arm64_ventura: "512296f51e4b0ded3030d38f3d36034d63b0c5648a0b887e69865d81e56d2438"
+    sha256 cellar: :any,                 sonoma:        "87f5332f0af3ce4bf7612db0fd94eead0611283c9e73f12adde5001dcd6836c1"
+    sha256 cellar: :any,                 ventura:       "76d2bd773bfab6cf29c896e652296feb5d0342faafc2ed2a786bec4befaa11da"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "afed458203078ec46fec76fccf27620f00d6ae03df217290c668239641ccf3af"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "22de4cf6aed311a531c2d2125081130639367702517ca77dbe15928f28b05df2"
   end
 
   depends_on "rust" => :build
@@ -212,7 +213,7 @@ class Molecule < Formula
   def install
     virtualenv_install_with_resources
 
-    generate_completions_from_executable(bin/"molecule", shells: [:fish, :zsh], shell_parameter_format: :click)
+    generate_completions_from_executable(bin/"molecule", shells: [:bash, :fish, :zsh], shell_parameter_format: :click)
   end
 
   test do

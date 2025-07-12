@@ -11,13 +11,14 @@ class Knot < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "1fb8278e561ed7d9a99f4ba23c25a88b537dd237e9db452e4b62717c48130841"
-    sha256 arm64_sonoma:  "5234cf8758edf2892799102953dd273394716cc5be1a9841012b269da540d8cb"
-    sha256 arm64_ventura: "a7744ed3ae7ac074e555e500273763bcf8243535b211ee9e2d6bb70dd70ca044"
-    sha256 sonoma:        "bb04dda43aa53b3dbda4ef5aa899c81cccceb6dcaf2cf927a3f4b74a7d24ddc2"
-    sha256 ventura:       "553cdc9c373828a8fb90b87d6f73723f294dc3a0a5021d18eebdccc7b4396750"
-    sha256 arm64_linux:   "9e9a49395d66917fda7c89d86d2df83def6d3d91c4f3a733af2dcf144e6dd806"
-    sha256 x86_64_linux:  "c1f15009c4df1619d610ae555a92c0e1cec16bb65f03183bc7fc25e849127e79"
+    rebuild 1
+    sha256 arm64_sequoia: "1dc4d7ee983b698f773fa5d55a8f0bbe9a328a335966e632f627823c1271c95b"
+    sha256 arm64_sonoma:  "b9d60eb58dc99bb7bd452488aa32baf855a4a453804efe60dc0494d9c95c9480"
+    sha256 arm64_ventura: "08e467b47054a840ccfc604113df50af71f0499c78a829fc04c77ec8f96c72dd"
+    sha256 sonoma:        "924d0d12a0d7b17716b8d4d373441b048b07a85d8e7a4af59176dc02c3a7660d"
+    sha256 ventura:       "86e4f45035be1f9a197fbf9cd23351c904a1c6c4d1b375025192ec08800ba0c7"
+    sha256 arm64_linux:   "f1f7baf441b646da5acecf8240d9ea865c1dd6413b170a6e5762da937be279c5"
+    sha256 x86_64_linux:  "11d5ee8ee5370e2fd1dcececdb6b5e46531306995bda35f5131265a5108680fa"
   end
 
   head do
@@ -69,7 +70,7 @@ class Knot < Formula
     <<~EOS
       server:
         rundir: "#{var}/knot"
-        listen: [ "0.0.0.0@53", "::@53" ]
+        listen: [ "127.0.0.1@53", "::@53" ]
 
       log:
         - target: "stderr"

@@ -9,13 +9,14 @@ class Datasette < Formula
   head "https://github.com/simonw/datasette.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "9f65f9736edf713f241072bca204d7e5723857dfb119c5c1266361815ed9b604"
-    sha256 cellar: :any,                 arm64_sonoma:  "03efc5c4fafe4358b3cf399e3d6d9d887d97307b87826739813eb5e168194894"
-    sha256 cellar: :any,                 arm64_ventura: "5de8c52f155dd5f33f7a1aff42942bac393a29876e326b3dca05c2437ec311df"
-    sha256 cellar: :any,                 sonoma:        "9e0c935cab57607f2454dea1ca0718d12dc46eca93f0089c5f6c3de5ef40b911"
-    sha256 cellar: :any,                 ventura:       "480a2aa22129db6b00bfdb54740cf35142938e7cf4a839913038ae541776d94a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "234642d734a55112c10aaee4e372886055fbc529b793cbe406c13785f4f092bd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "54d23ce2aeb1362d1cd9d3fc7ccf0993d191adf9978ebe13452c7ab3370f8e1a"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "6ac6f324e544be531f3483798a79c889c9040acbfe486e2b6e7602707cde10d3"
+    sha256 cellar: :any,                 arm64_sonoma:  "c7fd8155d2ff8e98e9b75537508dafc00b3dd8a4db66b46bc40968d6e5d49c70"
+    sha256 cellar: :any,                 arm64_ventura: "1999b4bdbbfa0c0ca2c3d641b19f86ee3e3e21f3a199a4905f36d987f828b68d"
+    sha256 cellar: :any,                 sonoma:        "97aba1a9945c656497a1ac717794589b4b11109a4d69677c3cc31c3c0432d437"
+    sha256 cellar: :any,                 ventura:       "65ae7f93604692762b575c8253835e4e8434929c0b46dc27ff759428ccafd4f5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1d0d3675b3bd805561839fb882d783ff6f3f296aa4165bed8517c3cfde25fb1d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2abce07039f63cba49ba6cdc0189b88f7ca11f4048d9f45d68c34f0f71898b6a"
   end
 
   depends_on "certifi"
@@ -155,7 +156,8 @@ class Datasette < Formula
   def install
     virtualenv_install_with_resources
 
-    generate_completions_from_executable(bin/"datasette", shells: [:fish, :zsh], shell_parameter_format: :click)
+    generate_completions_from_executable(bin/"datasette",
+                                         shells: [:bash, :fish, :zsh], shell_parameter_format: :click)
   end
 
   test do

@@ -15,13 +15,15 @@ class Reuse < Formula
   head "https://github.com/fsfe/reuse-tool.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "551212af17250b9915380deb399938ef83c9c65421f21f93cebace81a8052473"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5e79cdd016638b994ff1ed958af013f6508befc4a4156ead5cf05a31c686d386"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "4a8559c7cde92a42085453e1709d560edb273cbba7727d0a4510e319aa5c4063"
-    sha256 cellar: :any_skip_relocation, sonoma:        "fc3f9f7652314304f811bbfa6417e2167ebaa7c08efca445042db46fc202b7d4"
-    sha256 cellar: :any_skip_relocation, ventura:       "75b6702ee1a9bb535a10b425370d71f36d1a32668f06c56fb030c6431c54d1f0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1b822cf1d2915d1e29304008123e5a97049101f2604f0711c5cd92e7f86cb50a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "38c32a28aaa81ffefd92812911a5ed2bcc41004e2166537aea798303804149c7"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d1e9f42fa50e4ea82dfc2ec88faa06102e6d63adaebed112141fe37a73f369a2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "065c54ba3e7145fcf12b9a192cee1f42f67ad186b44acd701b4e652bbf2195e6"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "3cad642852cfd7db606fb7dc082896e7137e1a19feda1cfa95402d125b05cae2"
+    sha256 cellar: :any_skip_relocation, sequoia:       "b79ec9d7b73d04d864bb93e2e0f5e43db800e6c7298b7156999c3e4aa049fd8f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c16b46afcd6e0b55ac2382273c90be328c8d7ef52d0a542ff624287674e17c7c"
+    sha256 cellar: :any_skip_relocation, ventura:       "92748e494749e18874c7994a7d0b5eda97ef6b5e12f8e00505237078855b824e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e47f42279757e80d33c84fcdc29f9c20d1cbd6c41b823377f535a36d690f40dd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "94cbf470095413b03b88b4941dd402628f9d48a3e89e851ebe9239a6c7065bcc"
   end
 
   depends_on "python@3.13"
@@ -79,7 +81,7 @@ class Reuse < Formula
   def install
     virtualenv_install_with_resources
 
-    generate_completions_from_executable(bin/"reuse", shells: [:fish, :zsh], shell_parameter_format: :click)
+    generate_completions_from_executable(bin/"reuse", shells: [:bash, :fish, :zsh], shell_parameter_format: :click)
   end
 
   test do

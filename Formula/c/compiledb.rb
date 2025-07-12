@@ -9,7 +9,8 @@ class Compiledb < Formula
   head "https://github.com/nickdiego/compiledb.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "e1ba5487728c29b4d7c4c01a7d359a6d7b6879986bb58d9d1798b98a233fbde7"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "a2760dac28a0aa58128feab53e6f51e631f1b7918560cc8772f883b095875143"
   end
 
   depends_on "python@3.13"
@@ -27,7 +28,8 @@ class Compiledb < Formula
   def install
     virtualenv_install_with_resources
 
-    generate_completions_from_executable(bin/"compiledb", shells: [:fish, :zsh], shell_parameter_format: :click)
+    generate_completions_from_executable(bin/"compiledb",
+                                         shells: [:bash, :fish, :zsh], shell_parameter_format: :click)
   end
 
   test do

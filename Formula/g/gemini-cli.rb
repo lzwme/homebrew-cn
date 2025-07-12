@@ -1,18 +1,18 @@
 class GeminiCli < Formula
   desc "Interact with Google Gemini AI models from the command-line"
   homepage "https://github.com/google-gemini/gemini-cli"
-  url "https://registry.npmjs.org/@google/gemini-cli/-/gemini-cli-0.1.10.tgz"
-  sha256 "38bf4efaad3113ad4a4a112f6dbd68856bb2d5946689321c31e7c33fdc7c6577"
+  url "https://registry.npmjs.org/@google/gemini-cli/-/gemini-cli-0.1.11.tgz"
+  sha256 "1cee4750c7f3dc1ebaace75b93b577de21087b470af66411bb38a90f87b5309e"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a1bc89a7ad503c12f0cda4fa5ec584da72e14c35f28f6dda8c0ab4c0f6b0be28"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a1bc89a7ad503c12f0cda4fa5ec584da72e14c35f28f6dda8c0ab4c0f6b0be28"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "a1bc89a7ad503c12f0cda4fa5ec584da72e14c35f28f6dda8c0ab4c0f6b0be28"
-    sha256 cellar: :any_skip_relocation, sonoma:        "30e94e1e36d56f06fabd21b1a8686994b0a86d81adfac6da927b711a20656c6f"
-    sha256 cellar: :any_skip_relocation, ventura:       "30e94e1e36d56f06fabd21b1a8686994b0a86d81adfac6da927b711a20656c6f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a1bc89a7ad503c12f0cda4fa5ec584da72e14c35f28f6dda8c0ab4c0f6b0be28"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a1bc89a7ad503c12f0cda4fa5ec584da72e14c35f28f6dda8c0ab4c0f6b0be28"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e3442bc7c4e545c018d586b5a18c484110d5ef52ae2cd43e9aacb23be3a53de1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e3442bc7c4e545c018d586b5a18c484110d5ef52ae2cd43e9aacb23be3a53de1"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "e3442bc7c4e545c018d586b5a18c484110d5ef52ae2cd43e9aacb23be3a53de1"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6a9ea5a1e8c54750fbc391aaf3d21aa93c0ad68084c6197ad7f861f4205d0e16"
+    sha256 cellar: :any_skip_relocation, ventura:       "6a9ea5a1e8c54750fbc391aaf3d21aa93c0ad68084c6197ad7f861f4205d0e16"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e3442bc7c4e545c018d586b5a18c484110d5ef52ae2cd43e9aacb23be3a53de1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e3442bc7c4e545c018d586b5a18c484110d5ef52ae2cd43e9aacb23be3a53de1"
   end
 
   depends_on "node"

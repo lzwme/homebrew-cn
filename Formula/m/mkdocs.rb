@@ -9,13 +9,14 @@ class Mkdocs < Formula
   revision 2
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "8949d2400c8ac7907722453a9dd3eda5fb2fa59d108780cf39ec08c0e6f85839"
-    sha256 cellar: :any,                 arm64_sonoma:  "18027883a996c60ba30c512355f1191f6511012d10f923a823054ec84433d676"
-    sha256 cellar: :any,                 arm64_ventura: "da17c04e73e0303c652227c3430ff796ad56d4413ecf83dd70d56e726a32c50f"
-    sha256 cellar: :any,                 sonoma:        "4ea1fe98fa94007b603783f49613bbb2a78f17e1eef3ed25d4ba8bc7df058093"
-    sha256 cellar: :any,                 ventura:       "a971cd332ce793ad02a26af1c969939159312cae8e8912cade00bd3ed8ff82d5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3f5431f94afb48e3c3f075f972b4cbb6ce369a92025cc0c68bf8d56006f8f4aa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ef7464dc0f884425c657bd71d5f29700644c6c5ca4825a8bfdfe5daf5ca74481"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "eaef82a9ff0893388cef139c8f7e896f44965ffa29f0387a084ac16974c834ef"
+    sha256 cellar: :any,                 arm64_sonoma:  "1ea9d80905a53a911da2069c07b70f822793b83c4be26fc12e912c7923f64876"
+    sha256 cellar: :any,                 arm64_ventura: "58710b3d30c3225a67bf4d0e1ae908619262cbaa851ba45554c5b7aa0de2f4fb"
+    sha256 cellar: :any,                 sonoma:        "93c269be66a43dd03b228e7e8dc5f7aaa07ced98d6bbaf197d20c9e561e4adaf"
+    sha256 cellar: :any,                 ventura:       "e8c89409c15fa88129e01a3807bb9c422fd8aa96e4ceb0ab40b1fa317e5eb803"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "46b6cdfe3d81fd7c8ea2c0b9871501536a464c3bd92bce77701c0edf57a040a9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "135c355cc67e825e8cf44f81807ded6cccbe0ef3be3aadfc28994ad99de206f8"
   end
 
   depends_on "libyaml"
@@ -102,7 +103,7 @@ class Mkdocs < Formula
     ENV["PIP_USE_PEP517"] = "1"
     virtualenv_install_with_resources
 
-    generate_completions_from_executable(bin/"mkdocs", shells: [:fish, :zsh], shell_parameter_format: :click)
+    generate_completions_from_executable(bin/"mkdocs", shells: [:bash, :fish, :zsh], shell_parameter_format: :click)
   end
 
   test do

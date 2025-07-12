@@ -11,13 +11,14 @@ class MetaPackageManager < Formula
   head "https://github.com/kdeldycke/meta-package-manager.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "3b76194c131eec7f94c39eb56af545aca112f7a2abab10b190f2473d161f8716"
-    sha256 cellar: :any,                 arm64_sonoma:  "b8dd2d1ee0388db84b26a3b1ec2ea0d37eee72f5ce50ce2821d4c4a145fbec60"
-    sha256 cellar: :any,                 arm64_ventura: "3c09ac51da7a00f7b733440d9d7630226cf68a45d85ef8ba27aa371f2e76f565"
-    sha256 cellar: :any,                 sonoma:        "fb3b8eee8b71b57c7164d96c1efcf01df3fcd8d486a42839f3c64f5b9fcfd6e5"
-    sha256 cellar: :any,                 ventura:       "2c811dd3897778fb90dce7a74a6f31907bd945592a637b80a0bc55f9c45f4b09"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "55a2543423f626da0297a66a9cc64fec0f4e8c1faaa853a01e149136e6a33d86"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bb0f47a483a944b6baab6f6f0c2c981217f5d73c627ca95330c67e7433196b43"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "c7d6894b523b75f457875745d3df9de5994a1e766e4e48f199c97f1b7f41823b"
+    sha256 cellar: :any,                 arm64_sonoma:  "03abd283ca4f5dd5cb27329af605c026acf2b4470c9d0b8b510e817353870d78"
+    sha256 cellar: :any,                 arm64_ventura: "45cbb8c2032a5222da277e95962a3fdcfcd7999df5e28a9598429da7b2ca80dc"
+    sha256 cellar: :any,                 sonoma:        "70cef6033bfa87bd9398d4e8f85b89ef45322d9409091ce7e5026cee4dede1f7"
+    sha256 cellar: :any,                 ventura:       "a1fae01b5cdb00aaf5049efbdc90a6e019207678ba07d09e859211bef36833cc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e565ffebd11a7dee8346c0aba1d4a25f094e0b6a196cc436a529cab0f390275d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "56da166000dcd6091fd4577a89c9d7d93fc31b068ba936ba572b4c9af41b480f"
   end
 
   depends_on "rust" => :build # for rpds-py
@@ -307,7 +308,7 @@ class MetaPackageManager < Formula
     rewrite_shebang detected_python_shebang, "meta_package_manager/bar_plugin.py"
     virtualenv_install_with_resources
 
-    generate_completions_from_executable(bin/"mpm", shells: [:fish, :zsh], shell_parameter_format: :click)
+    generate_completions_from_executable(bin/"mpm", shells: [:bash, :fish, :zsh], shell_parameter_format: :click)
   end
 
   test do

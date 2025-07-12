@@ -11,13 +11,15 @@ class EvernoteBackup < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7060917b0212fc5c5973287ee48ac45ca0eebcea78f76b5f001f5e40f078b78c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d672368149ed96daffbd216bb666d00226273d7d5e488504a19a13934f2e5084"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "2eb9f36dc86fdd93876b0086f7a20117b71f6391bc155a8998c7e99766031b47"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4e775c13acf5894978f9078d754be052ee8fd2fb8d4520857bc266919167030e"
-    sha256 cellar: :any_skip_relocation, ventura:       "6f3124baa58fd60064dd9eca526b05d472ebb30f2ce7867d494e81c7b7b65f99"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4ea886c7450874e65a8463a7c64d71cdcc00c151cd2c32c62ed6b57a5c5d43a3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bb860c214d98a8d6561649c738533bd2c3841812d7f18baf0b16661029427c40"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5516573e372818809c0f505eeb99fdebfc673a40b5740d9819a0def6c432c8e1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ec2b17250613406e1e86b86a30db2fb096988e13b04ecc59b8081cc925565a12"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "acc09d3d8a6f9c64f39e867a9ca41924542b052345edfecc1132266cc9350c18"
+    sha256 cellar: :any_skip_relocation, sequoia:       "9a9b855906d0055d09b6a0f3400173ffab60be8bfd89c1bd7eb407b134678c3d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e264b9089a95e9cf4ea2cf9422354ae480dc9894de0e9c1c631878ee02254c63"
+    sha256 cellar: :any_skip_relocation, ventura:       "2f50ec167567b5969f2f5dcf144fbc4620d3f8cb86bcab2e0b6441c3ac48f9d2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "130cca0b9f6b743f96969187ff43f3144d22912425f79bd8dd0c02ae2c6f4246"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "80aef7476652cfb176c34cd7fd9ad27ee3ce482812cb3e80c5b0cc13b4bdc8a9"
   end
 
   depends_on "certifi"
@@ -91,7 +93,8 @@ class EvernoteBackup < Formula
   def install
     virtualenv_install_with_resources
 
-    generate_completions_from_executable(bin/"evernote-backup", shells: [:fish, :zsh], shell_parameter_format: :click)
+    generate_completions_from_executable(bin/"evernote-backup",
+                                         shells: [:bash, :fish, :zsh], shell_parameter_format: :click)
   end
 
   test do

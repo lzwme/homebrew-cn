@@ -8,13 +8,14 @@ class SqliteUtils < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2ba7d7894a17d995f13bbc6e028709736092ffda97c57e226446635ac463fe23"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2ba7d7894a17d995f13bbc6e028709736092ffda97c57e226446635ac463fe23"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "2ba7d7894a17d995f13bbc6e028709736092ffda97c57e226446635ac463fe23"
-    sha256 cellar: :any_skip_relocation, sonoma:        "33df8c15199c62afd1e5892a815caa0f5450f6e9f3678f50fa23469ee1a48d9c"
-    sha256 cellar: :any_skip_relocation, ventura:       "33df8c15199c62afd1e5892a815caa0f5450f6e9f3678f50fa23469ee1a48d9c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7ec6f3fbb01080aeb3da17bd54bc940089e0d2fca223d83be9b4f76ff46f6866"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "801f58dacffee3dd06633556ec40db111693a2031e0f6011748bf9e0681cdd11"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6bae85f5cf6afe2f60ac7c154d7a364a635b65628de948dc9709e23c0af9bbde"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6bae85f5cf6afe2f60ac7c154d7a364a635b65628de948dc9709e23c0af9bbde"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "6bae85f5cf6afe2f60ac7c154d7a364a635b65628de948dc9709e23c0af9bbde"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a2b1742ba548f5fe04a5781292cb27ab85f520f5bb6046ce0996b0ab31609e41"
+    sha256 cellar: :any_skip_relocation, ventura:       "a2b1742ba548f5fe04a5781292cb27ab85f520f5bb6046ce0996b0ab31609e41"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "80976f079353627f3923086d276cf5707b4e482e148531a34adf0f8d141fb8fe"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "80976f079353627f3923086d276cf5707b4e482e148531a34adf0f8d141fb8fe"
   end
 
   depends_on "python@3.13"
@@ -57,7 +58,8 @@ class SqliteUtils < Formula
   def install
     virtualenv_install_with_resources
 
-    generate_completions_from_executable(bin/"sqlite-utils", shells: [:fish, :zsh], shell_parameter_format: :click)
+    generate_completions_from_executable(bin/"sqlite-utils",
+                                         shells: [:bash, :fish, :zsh], shell_parameter_format: :click)
   end
 
   test do
