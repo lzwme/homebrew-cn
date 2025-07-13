@@ -9,13 +9,14 @@ class PipTools < Formula
   revision 2
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3b67bd26a51b9375d00adc4fefb23245614d6fe552657127ff4fb122d82b07d6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3b67bd26a51b9375d00adc4fefb23245614d6fe552657127ff4fb122d82b07d6"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "3b67bd26a51b9375d00adc4fefb23245614d6fe552657127ff4fb122d82b07d6"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7ed28bd7faa82191f30794a7f8cdaca7a5de1a66276dba16d57df1bd72668c76"
-    sha256 cellar: :any_skip_relocation, ventura:       "7ed28bd7faa82191f30794a7f8cdaca7a5de1a66276dba16d57df1bd72668c76"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "94912844700a4572ab1860aa47d477a4511ce544a0a3112c872404c49a212ff5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "94912844700a4572ab1860aa47d477a4511ce544a0a3112c872404c49a212ff5"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7c7fed54e62cfbc96dd6be5d2945b311fe298c9db82be74f7e7d88adccd6129d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7c7fed54e62cfbc96dd6be5d2945b311fe298c9db82be74f7e7d88adccd6129d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "7c7fed54e62cfbc96dd6be5d2945b311fe298c9db82be74f7e7d88adccd6129d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "19edc3f84c1707dc758e90f7ce77427568a34667be1e3724113d2ba882b595a1"
+    sha256 cellar: :any_skip_relocation, ventura:       "19edc3f84c1707dc758e90f7ce77427568a34667be1e3724113d2ba882b595a1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4940efa159848f5b5bc1d2cfd52f5079f541aa93f4236e03248dc8d9950d1288"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4940efa159848f5b5bc1d2cfd52f5079f541aa93f4236e03248dc8d9950d1288"
   end
 
   depends_on "python@3.13"
@@ -54,7 +55,7 @@ class PipTools < Formula
     virtualenv_install_with_resources
 
     %w[pip-compile pip-sync].each do |script|
-      generate_completions_from_executable(bin/script, shells: [:fish, :zsh], shell_parameter_format: :click)
+      generate_completions_from_executable(bin/script, shells: [:bash, :fish, :zsh], shell_parameter_format: :click)
     end
   end
 

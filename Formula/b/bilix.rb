@@ -9,13 +9,14 @@ class Bilix < Formula
   revision 3
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "f6d25831cdcf6dc12ea85b7fc95408029fb88f863aee52735a4d2648e224cfa4"
-    sha256 cellar: :any,                 arm64_sonoma:  "dcd367d68c92ceaa081afa8157ec481a4cf5380d60b5731c07a1f7b87198168a"
-    sha256 cellar: :any,                 arm64_ventura: "38bedeb03e5ae71c34dcadd1cc62a3092c4320fe91020992ed9ce82272a6a8ec"
-    sha256 cellar: :any,                 sonoma:        "2db818c33731749fc5e115236dcbd09467b363397d13fbc0bdd8f3a3150ece67"
-    sha256 cellar: :any,                 ventura:       "0c4805e7d3fb9d83a4179a44c5f5bb19154382418fbbd2a280d369eaaddbb176"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "904cf1a5ec51f55e76fd2a3d98c984964ba3ef4c24313d12f6ea7f7f532b6354"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bad44739863c76498556c7dd8b826a258d334385d752752f10e00f86a127ad64"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "c16690eeb5628c7ed8f03d9417face05b06a97e944ce6339516890f8bb330a3a"
+    sha256 cellar: :any,                 arm64_sonoma:  "62e1fa53ed738b9bbbc4d0a53695968f209c55896030c1c21701450c350ed105"
+    sha256 cellar: :any,                 arm64_ventura: "bc9d1ea3692846f852870798b987c2e1d6182fa34022db56824978fb697210a0"
+    sha256 cellar: :any,                 sonoma:        "6982fb952d549f4a71bc89550d899b5293313c1a9a05466f4dd21a4e323244f6"
+    sha256 cellar: :any,                 ventura:       "16fce51192e322c14c609322126944808e0e6c283002eae7566f5ce9bd0d51c4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "050d10917e07b05f90a5a58cf7e226ecda3fc27eadf9fe51d86bcd2886a657fc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6de89d1672a9749c36009b61e6397104305f83548ee2298b990ee7373845bf2d"
   end
 
   depends_on "rust" => :build # for pydantic_core
@@ -196,7 +197,7 @@ class Bilix < Formula
   def install
     virtualenv_install_with_resources
 
-    generate_completions_from_executable(bin/"bilix", shells: [:fish, :zsh], shell_parameter_format: :click)
+    generate_completions_from_executable(bin/"bilix", shells: [:bash, :fish, :zsh], shell_parameter_format: :click)
   end
 
   test do

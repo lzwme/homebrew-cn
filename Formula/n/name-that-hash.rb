@@ -12,8 +12,8 @@ class NameThatHash < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    rebuild 4
-    sha256 cellar: :any_skip_relocation, all: "ebc63e1cd2a29eded2a1d8bd312f4df14882bd40e4e98f713e69aad521b47e0e"
+    rebuild 5
+    sha256 cellar: :any_skip_relocation, all: "cbfd105d0e71676df5a3a8e4b7e10ce0bf818c1043c2f101e04461ff19a0e75c"
   end
 
   depends_on "python@3.13"
@@ -47,7 +47,7 @@ class NameThatHash < Formula
     virtualenv_install_with_resources
 
     %w[name-that-hash nth].each do |cmd|
-      generate_completions_from_executable(bin/cmd, shells: [:fish, :zsh], shell_parameter_format: :click)
+      generate_completions_from_executable(bin/cmd, shells: [:bash, :fish, :zsh], shell_parameter_format: :click)
     end
   end
 

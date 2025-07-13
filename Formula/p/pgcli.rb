@@ -8,13 +8,14 @@ class Pgcli < Formula
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c94fe9b94951859f7ae906c57baba733adf00dc5f1fcfff6323ad0342bb517a0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d7242c372c8216ae21576bcc4a446bbe3b41fbcbc5e2e20e3b7b82474541e416"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "aa6197e523dfa68d26564db1da6fc4d8db2185c4891cec5bd2f7f0a6d1e54b4b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0d5a3cbee22958f4352243b85b8b762c55404c26d8de4474656f9a2da5814a21"
-    sha256 cellar: :any_skip_relocation, ventura:       "393f05d8cf7191679029acba7ded5c126ef90e064cb9b8d3ed781693790fe766"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e15814871dc8fc3a7e6ddd94a4ee0a79b8aed7b11aef6302eb59252a2ce80681"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aa8fb9bf4416e8568cfbd768480ef55024d770204790d947732bed7ba606cac0"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "877e22be3881db1ca08eeabee4bf952db8ac5b9f995515e14fb4cf2c6408dee0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "05d9ffa4d7c7d8068284e667785ef2fbaf0d605eddbbb3e537e1bddca79f51a6"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "2939f66c2fcb912457380138e14d0cf85fc2876a7052be0600f477ab783b3481"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a1ac7dd2e1844848885bef57afa95d0cbdbde1267e3a86b4ab7e30aa70421939"
+    sha256 cellar: :any_skip_relocation, ventura:       "8385fb2aa81d5503bf6e55cb0d129c01cde7f5e0adc158771dd7d016f1067877"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "de6f2ef02cd683bcea9d8412b6b389a6d19175dcf50cc0591b2aed7652942d3a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bceaecada660f63c5cae7c511a8729926300d539326a02e7e459c6e1792d3d10"
   end
 
   depends_on "libpq"
@@ -90,7 +91,7 @@ class Pgcli < Formula
       venv.pip_install Pathname.pwd
     end
 
-    generate_completions_from_executable(bin/"pgcli", shells: [:fish, :zsh], shell_parameter_format: :click)
+    generate_completions_from_executable(bin/"pgcli", shells: [:bash, :fish, :zsh], shell_parameter_format: :click)
   end
 
   test do

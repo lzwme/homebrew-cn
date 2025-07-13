@@ -9,13 +9,14 @@ class BumpMyVersion < Formula
   head "https://github.com/callowayproject/bump-my-version.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "3d955f10b072bbdd66618d4795540c1403313425ec76fe49753ddb2c873b850f"
-    sha256 cellar: :any,                 arm64_sonoma:  "206261c5a514cb1839712c32794f63d0e5aab1c21f6d3618224e6b70ac753c81"
-    sha256 cellar: :any,                 arm64_ventura: "3fec34f0a0b2e0d87672e124a8edf06e93d6c710cd5038445137c248fc0a6d55"
-    sha256 cellar: :any,                 sonoma:        "75ffb88646f7486a0c9de44854909a4b67cacef44d52f8e0dfcba2c3a952de56"
-    sha256 cellar: :any,                 ventura:       "89186bb3ace7ea633afa3ce8a5abba7c059552226b8a440211d6669e1305d9aa"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4585c18d9125c54ed5f2e2d2549b1d9febac5542c6550d38760483f794ec27f8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9561f1b35c520a5209fe9747b5a37b3549de0b1fed2b79e44c9808b9ded1b135"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "2a22d5171785969c46d9ed0c13ebf4d4160553cf421a72d1f387d98b4e291e04"
+    sha256 cellar: :any,                 arm64_sonoma:  "5f22994debf21fdf4d66682c680938e64619249f14cd94c3f5a321c566f15600"
+    sha256 cellar: :any,                 arm64_ventura: "62020589912dc2aed9dfd9a1637c9e22eed88b737b0b0022b70061e33daa55b6"
+    sha256 cellar: :any,                 sonoma:        "3c35c1f6305fb9c936b02d9decb17296bbf1d2909b0354624849c7dd4a177c3f"
+    sha256 cellar: :any,                 ventura:       "e7ecad78e16b28a843b59f43b9ebad7023df121b8dac2e4e08b95c9689ed3fd1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "270f0bd93a64f1215477dda57950b0214a61e3a969b5d9c3b409daca9a372670"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9cbf0fb978c9c52ecc75e9464c8f086256510b587a7654c0297429576d302c98"
   end
 
   depends_on "rust" => :build # for pydantic_core
@@ -154,7 +155,8 @@ class BumpMyVersion < Formula
   def install
     virtualenv_install_with_resources
 
-    generate_completions_from_executable(bin/"bump-my-version", shells: [:fish, :zsh], shell_parameter_format: :click)
+    generate_completions_from_executable(bin/"bump-my-version",
+                                         shells: [:bash, :fish, :zsh], shell_parameter_format: :click)
   end
 
   test do

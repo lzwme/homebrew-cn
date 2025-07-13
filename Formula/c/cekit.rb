@@ -8,13 +8,14 @@ class Cekit < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "b8b3f0bbe83f0c8a5aa1074e8d0c0eb203b9984cca78a2c33d131a23d55344e5"
-    sha256 cellar: :any,                 arm64_sonoma:  "edd7964819caef1448222ace74fcd6662bfaaa86b217f6d4a2ea375d68743819"
-    sha256 cellar: :any,                 arm64_ventura: "11b5a994c414eb5da1d067ceff2d0e39e9283ac76c483aefca3e0e28a6e930e3"
-    sha256 cellar: :any,                 sonoma:        "3bbd6a4ccd41e14f74656f9955f6a1e9e35a4fe6e5149d524be0acd7f1839e03"
-    sha256 cellar: :any,                 ventura:       "7f260afdeb6c019731fad22987af4f1d58669b7d9148dccc501766a05c09c150"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0ce6285077882bc971758f48c71d22202d3bcdf105cc923daea26f1ad5037d82"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "071761f34a39ecb8ce7b7a806b5cd29b47a01402bf57c29ad376d3835d294d6d"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "d2f8831c610b2abfb398c173417afc377e77a70b94db09a123f23c052450c0f3"
+    sha256 cellar: :any,                 arm64_sonoma:  "8139a72bc96db48f85d9d70ad38378a5556c947f02e5f6810b577962e7e181f5"
+    sha256 cellar: :any,                 arm64_ventura: "e6158e2fc700c8f20fc57fc40541b5ad677bb260caf43b5fbcec7c8cb95ef206"
+    sha256 cellar: :any,                 sonoma:        "8a029bcd505e6ea9e20b419b8e4f8172a759dc16ff2099e63d9408388e093744"
+    sha256 cellar: :any,                 ventura:       "5f64f4d851ea7703fa7f204be8261607ee35219fc95bca447adbf94d3fb8f6b8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6251e9a307320ecf348e1270a2ec03811427460d276fceebd57dd45d45fb92fc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9aaa87b50f5774325dca9be632a0d79ae75c1dc07c7d65c57f99e99ee3134d4d"
   end
 
   depends_on "libyaml"
@@ -78,7 +79,7 @@ class Cekit < Formula
   def install
     virtualenv_install_with_resources
 
-    generate_completions_from_executable(bin/"cekit", shells: [:fish, :zsh], shell_parameter_format: :click)
+    generate_completions_from_executable(bin/"cekit", shells: [:bash, :fish, :zsh], shell_parameter_format: :click)
   end
 
   test do

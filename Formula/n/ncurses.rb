@@ -52,6 +52,9 @@ class Ncurses < Formula
     ]
     args << "--with-terminfo-dirs=#{share}/terminfo:/etc/terminfo:/lib/terminfo:/usr/share/terminfo" if OS.linux?
 
+    odie "`-std=gnu17` workaround should be removed!" if build.stable? && version > "6.5"
+    ENV.append_to_cflags "-std=gnu17" if OS.linux? && DevelopmentTools.gcc_version("gcc") >= 15
+
     system "./configure", *args
     system "make", "install"
     make_libncurses_symlinks

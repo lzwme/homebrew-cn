@@ -8,13 +8,14 @@ class Pipenv < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "72ff8d73973d4503e73fb08b30a6c2f0ab6faf1bf9921e4f22245a538466367a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "72ff8d73973d4503e73fb08b30a6c2f0ab6faf1bf9921e4f22245a538466367a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "72ff8d73973d4503e73fb08b30a6c2f0ab6faf1bf9921e4f22245a538466367a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1bca7a6982a48f46a6b784a5008b6b63f56aa07cbd0d922f21e57016bd1e93ea"
-    sha256 cellar: :any_skip_relocation, ventura:       "1bca7a6982a48f46a6b784a5008b6b63f56aa07cbd0d922f21e57016bd1e93ea"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a243113cfa8920a0ff33345449d6fdb5ed65c3dbc2160b38b1862ca5e83fd536"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a243113cfa8920a0ff33345449d6fdb5ed65c3dbc2160b38b1862ca5e83fd536"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d893071d832157295d63f41328a99011754fa494cae1145dae161b0f6a134523"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d893071d832157295d63f41328a99011754fa494cae1145dae161b0f6a134523"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "d893071d832157295d63f41328a99011754fa494cae1145dae161b0f6a134523"
+    sha256 cellar: :any_skip_relocation, sonoma:        "012d62423d083b855864de35e3493e7e0195cb560a1720b166d8db3b7302789e"
+    sha256 cellar: :any_skip_relocation, ventura:       "012d62423d083b855864de35e3493e7e0195cb560a1720b166d8db3b7302789e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0ed68be928dd68a2571a09ddac28d8eb376efd1fa246cae3f29be4a1658e6698"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0ed68be928dd68a2571a09ddac28d8eb376efd1fa246cae3f29be4a1658e6698"
   end
 
   depends_on "certifi"
@@ -57,7 +58,7 @@ class Pipenv < Formula
   def install
     virtualenv_install_with_resources
 
-    generate_completions_from_executable(libexec/"bin/pipenv", shells:                 [:fish, :zsh],
+    generate_completions_from_executable(libexec/"bin/pipenv", shells:                 [:bash, :fish, :zsh],
                                                                shell_parameter_format: :click)
   end
 

@@ -9663,6 +9663,7 @@ Homebrew-homebrew-cask/Casks/font/font-c/font-chewy.rb, Homebrew/homebrew-cask, 
 Homebrew-homebrew-cask/Casks/font/font-c/font-chiayi-city.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-c/font-chicle.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-c/font-chilanka.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/font/font-c/font-chiron-goround-tc.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-c/font-chiron-hei-hk.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-c/font-chiron-sung-hk.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-c/font-chivo-mono.rb, Homebrew/homebrew-cask, 0
@@ -11516,6 +11517,7 @@ Homebrew-homebrew-cask/Casks/font/font-s/font-stix-two-math.rb, Homebrew/homebre
 Homebrew-homebrew-cask/Casks/font/font-s/font-stix-two-text.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-s/font-stix.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-s/font-stoke.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/font/font-s/font-story-script.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-s/font-strait.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-s/font-strong.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-s/font-style-script.rb, Homebrew/homebrew-cask, 0
@@ -11582,6 +11584,7 @@ Homebrew-homebrew-cask/Casks/font/font-t/font-the-girl-next-door.rb, Homebrew/ho
 Homebrew-homebrew-cask/Casks/font/font-t/font-the-nautigal.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-t/font-tiejili-sc.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-t/font-tienne.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/font/font-t/font-tiktok-sans.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-t/font-tillana.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-t/font-tilt-neon.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-t/font-tilt-prism.rb, Homebrew/homebrew-cask, 0
@@ -11774,6 +11777,7 @@ Homebrew-homebrew-cask/Casks/g/gauntlet.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/g/gb-studio.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/g/gcc-aarch64-embedded.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/gcc-arm-embedded.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/g/gcloud-cli.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/gcollazo-mongodb.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/g/gcs.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/g/gdat.rb, Homebrew/homebrew-cask, 0
@@ -11840,7 +11844,6 @@ Homebrew-homebrew-cask/Casks/g/gitkraken.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/gitlight.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/g/gitnote.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/g/gitpigeon.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/g/gitscout.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/gittyup.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/g/gitup-app.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/g/gitx.rb, Homebrew/homebrew-cask, 1
@@ -11884,7 +11887,6 @@ Homebrew-homebrew-cask/Casks/g/google-chrome.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/google-chrome@beta.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/google-chrome@canary.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/google-chrome@dev.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/g/google-cloud-sdk.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/google-drive.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/google-earth-pro.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/google-japanese-ime.rb, Homebrew/homebrew-cask, 0

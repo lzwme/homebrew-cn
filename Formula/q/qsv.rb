@@ -1,8 +1,8 @@
 class Qsv < Formula
   desc "Ultra-fast CSV data-wrangling toolkit"
   homepage "https://qsv.dathere.com/"
-  url "https://ghfast.top/https://github.com/dathere/qsv/archive/refs/tags/6.0.0.tar.gz"
-  sha256 "7e63eebc78aedf1b3cd1452b631a8255099feafebd5242bb700e2b6e1b311b0e"
+  url "https://ghfast.top/https://github.com/dathere/qsv/archive/refs/tags/6.0.1.tar.gz"
+  sha256 "d4a4dafad7cec344a927e92a1d42b4da210ea83061b9de8094da9d06f0d1427f"
   license any_of: ["MIT", "Unlicense"]
   head "https://github.com/dathere/qsv.git", branch: "master"
 
@@ -15,13 +15,13 @@ class Qsv < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e690cd9294e4c17250b9a4877704e6029368fd2df387541e46ddedbd02dede5a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5f4e5f5951413a069cdf78e3da06ffca737a08e8d4c7420237da60cbf57b81dc"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "f053b8599daec356f7e672829cf3b59ac5e0f59482bed10dbac8892c90329dca"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5aed889c839985373e9d5c889fea8e90b3ddfe13a7568c513315b3f242edcd00"
-    sha256 cellar: :any_skip_relocation, ventura:       "34f07782cf43050b9fc52bf6d5dc5ffea9702201dfd77194a73dfd87d64ad244"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "93a474faa277544ee9c02bc1fd15b5d80d632d00275cedd55d498a55d3750d8b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "69e885b583e64f15fb9f4fd7fd8b392a8a3b6e5b0151cb302b3d8e5ae92e1afb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b19ac97495e9159af081ecdae9bf9cb22dfaede6621f27c8ce750e742a36475a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7f9953df792838a7b825257cee6f77c61b047ae704a4b168c1aa512d9f2d6064"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "9b2dbb689d8da8297dcff27c6ce7602c0505ebb95d08a5b81d7f2a021a8fbc90"
+    sha256 cellar: :any_skip_relocation, sonoma:        "bdede4883030e9a399a634a4247cce3a5210bdd1e8c38b9f7919d7dbabff77c7"
+    sha256 cellar: :any_skip_relocation, ventura:       "758d3cb4253ec497007f9023e13aad4ba00df910c5eea99285f1e25c9c389f11"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "69d5fdd79814150df5d04943a34ca82aa4261e251e0c9fa8d8e128f95a80eb3e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "89cc4719724f478534fec9c1571f69acdb93615bfe458db681947e934f8c8c6a"
   end
 
   depends_on "cmake" => :build # for libz-ng-sys
@@ -41,6 +41,7 @@ class Qsv < Formula
     bash_completion.install "contrib/completions/examples/qsv.bash" => "qsv"
     fish_completion.install "contrib/completions/examples/qsv.fish"
     zsh_completion.install "contrib/completions/examples/qsv.zsh" => "_qsv"
+    pwsh_completion.install "contrib/completions/examples/qsv.ps1" => "qsv"
   end
 
   test do

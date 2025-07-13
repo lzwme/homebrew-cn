@@ -9,13 +9,14 @@ class Beancount < Formula
   head "https://github.com/beancount/beancount.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8dc1fcd7f2317ea72784d7fbf2f76c54e2db0326d7526f22a1b9a9c291efc222"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9a4c201840e45d79de983afd1068d188f3bc8d55d6d45f7cb2bb3434920f1e77"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "ea4e49c721b56ee17b5c3cb7adbf37427f73beb5feb9dba8b96319f2c15e6a00"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c87741dafbf02e62986b0fa4b485542bb2f1e8cbc2d8f967475e94d46058c6a9"
-    sha256 cellar: :any_skip_relocation, ventura:       "0417cdbffbbb58e14ed1f6496f390da38ffddf7f43483206ae61ceb97dff809b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1b9d0b7dd0cbb81adba41b95cf6f87bd7810d5236d087c884c2398fdfffefba3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f61124a05787d02519432086cbbbafef2b979e40747d7e9801559d81b0b1003f"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "39c80fbd4ff41b065982713794dc3c9a6f024c25b8ff7cb39ed28bda78d2ddf0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a423e9224c67f96095e9e5a2663ffd285088315890be3689abf742db767dbc4b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "4ed2293c7df4680ef507cb497ea9e4367912650e944510ed05083b95331f7b3f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "39ff208f5f23b73eec9f15974f0e0e4165acf98b5927f1884e5b29cac1717277"
+    sha256 cellar: :any_skip_relocation, ventura:       "5772e0476fcd2348f87e2a05236af991e27ac1a49445bee67a40ffa558aef8ff"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "89bf5a7f146f0d41c9366c7a5465ae019a99af50ae801ee4d6d00b96e0c5c10c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5c25a49250979c8840ef7feae60728d2d4f0653793719e66744266bdf499433d"
   end
 
   depends_on "bison" => :build
@@ -56,7 +57,7 @@ class Beancount < Formula
     virtualenv_install_with_resources
 
     bin.glob("bean-*") do |executable|
-      generate_completions_from_executable(executable, shells: [:fish, :zsh], shell_parameter_format: :click)
+      generate_completions_from_executable(executable, shells: [:bash, :fish, :zsh], shell_parameter_format: :click)
     end
   end
 

@@ -13,14 +13,14 @@ class Otterdog < Formula
   no_autobump! because: "'playwright' resource lacks PyPI sdist"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "84d79bed0961e4f0f2eede331e9c32390d9cec05ce0ceaf38d78ed858867158e"
-    sha256 cellar: :any,                 arm64_sonoma:  "f915d0cc490b00c4ed710c01889a7d1f34de6a467cdea731d7e4e7d462a818ff"
-    sha256 cellar: :any,                 arm64_ventura: "8da686db7c21b074fe190b38e15dd6cdc0f30ab96dc64b2c6f80ac224b997116"
-    sha256 cellar: :any,                 sonoma:        "950ada3382ac033e7a4eb0ad88ff4daccb72b21e353f4498c47db4bf167828c3"
-    sha256 cellar: :any,                 ventura:       "48d1f981398abfe6d1d23d1c38033ad11377c683477835384960ced9d985b50b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0645288cdabce8066c01616d9d02fc703e761e13a5c3abb548daa3a3f9299096"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c446ba1de2cb9c88362542b6247cd04267c2527a8f2d66637876e3fa2c0ec31b"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_sequoia: "00fc7ce8dba473d8ab103c1641fa2c74a98fb65c17a612a8d6460149392d9f2d"
+    sha256 cellar: :any,                 arm64_sonoma:  "b918dd7f1604ed38130412f107f3491a41a0034ad789e9e3592b43b477cadd02"
+    sha256 cellar: :any,                 arm64_ventura: "46942c098c10794f22b8a55a19695d158165a443887810be0075966d3ddad5d0"
+    sha256 cellar: :any,                 sonoma:        "5eb4d47d9138d5debbfc217084fd7bb4d7668ac17600bd46b97987338f5ac0ea"
+    sha256 cellar: :any,                 ventura:       "0bc913d6189aecbac439d44f87a95712897e5de3ee75401c350d200d73deb778"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b004dfff8ac70f838bab597e26346e473aed64ad0e2e3896e70e934d5e359f33"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f90b0d5ababf9023615060faa94959ef0b6ddb45adbbfbd5eff889bb7ad56b70"
   end
 
   depends_on "rust" => :build
@@ -265,7 +265,7 @@ class Otterdog < Formula
     ENV["SETUPTOOLS_SCM_PRETEND_VERSION_FOR_PLAYWRIGHT"] = resource("playwright").version
     virtualenv_install_with_resources
 
-    generate_completions_from_executable(bin/"otterdog", shell_parameter_format: :click, shells: [:bash, :zsh])
+    generate_completions_from_executable(bin/"otterdog", shell_parameter_format: :click, shells: [:bash, :fish, :zsh])
   end
 
   test do

@@ -10,13 +10,14 @@ class Pipgrip < Formula
   head "https://github.com/ddelange/pipgrip.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0b1c975ed5fe8141c6f9506f356d40820124a48a3951e10102d1b17cebe9bb02"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0b1c975ed5fe8141c6f9506f356d40820124a48a3951e10102d1b17cebe9bb02"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "0b1c975ed5fe8141c6f9506f356d40820124a48a3951e10102d1b17cebe9bb02"
-    sha256 cellar: :any_skip_relocation, sonoma:        "df739b4e578b45adc24206d24a1776d802d47f6f5d80b36988d8160a2d398873"
-    sha256 cellar: :any_skip_relocation, ventura:       "df739b4e578b45adc24206d24a1776d802d47f6f5d80b36988d8160a2d398873"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2e4a7b5c88fc8f4dcac0b6e0c36283cf2e1802ec4116f92a5e536f421cd240aa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2e4a7b5c88fc8f4dcac0b6e0c36283cf2e1802ec4116f92a5e536f421cd240aa"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "134399c082ecebcd84125952bdec73728d7f24cb4640fda90413923b7ed39615"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "134399c082ecebcd84125952bdec73728d7f24cb4640fda90413923b7ed39615"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "134399c082ecebcd84125952bdec73728d7f24cb4640fda90413923b7ed39615"
+    sha256 cellar: :any_skip_relocation, sonoma:        "478801aa3624f7d0e77401431e9e6a08c9730c13aa793c81dc790470eafbfadb"
+    sha256 cellar: :any_skip_relocation, ventura:       "478801aa3624f7d0e77401431e9e6a08c9730c13aa793c81dc790470eafbfadb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "61880555907f5f1f3ca33558af7056e8788b32a6ed3e2ac5f4270805eb8980da"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "61880555907f5f1f3ca33558af7056e8788b32a6ed3e2ac5f4270805eb8980da"
   end
 
   depends_on "python@3.13"
@@ -49,7 +50,7 @@ class Pipgrip < Formula
   def install
     virtualenv_install_with_resources
 
-    generate_completions_from_executable(bin/"pipgrip", shells: [:fish, :zsh], shell_parameter_format: :click)
+    generate_completions_from_executable(bin/"pipgrip", shells: [:bash, :fish, :zsh], shell_parameter_format: :click)
   end
 
   test do

@@ -9,13 +9,14 @@ class Notifiers < Formula
   revision 2
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "0637bb3675b3356c37dce045581e65d2da9283ceb7c110417c1155a51835deb5"
-    sha256 cellar: :any,                 arm64_sonoma:  "dc7d48a5a4ed68a79c1283c7ca50f2ebb41db20873fbcff2bf912f2cde8866e4"
-    sha256 cellar: :any,                 arm64_ventura: "5965974db5b317abff2529cd8141ff788b9c5178f6b63359bf4a6af216ac3f0d"
-    sha256 cellar: :any,                 sonoma:        "0339f4b0978405a1f3e5e26728635fb553085906d8df21c52474996b80e9b12c"
-    sha256 cellar: :any,                 ventura:       "71c0d272547f189249a7d1403860ab965d39108ff4ada03ee256d777a8e2b192"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b0d27dca6998ad4666103909c60ced1757347e8bdd1b63b2afa48decaa0860d2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "78c31bb847915cf426d38beec2f1585f229686c322d1bdd8ccafa646b8c7a399"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "03a4d55a52e0b9cd1652e49663dca00f3441e027ea5bd0a19c56ab8971bc8fec"
+    sha256 cellar: :any,                 arm64_sonoma:  "b5a47821d8ade65c156518e45316c3a918311b2f2623550a97dbaf7445e9b6b4"
+    sha256 cellar: :any,                 arm64_ventura: "b091fa5ef1add6aaecdcff15cfc62232c4ee281f76e97226ae2f59846b0f6d07"
+    sha256 cellar: :any,                 sonoma:        "5284cf90de776e21fbff97d38b1d0cefa0b3ada4164eb36dd0cf079ff709ad7a"
+    sha256 cellar: :any,                 ventura:       "06ad0cee96d5b1a3b07eb6cccd96e410613ada9579b2825c51b13abb98c2612e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c8f66db9e845994de0ddce6a44f485729034f2d43eb9b6d049ba96e4263f0369"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9a7957576a6d2f9d2fdba6aac44a9353d20c72899f3724ebed0a630fbd78160c"
   end
 
   depends_on "rust" => :build # for rpds-py
@@ -85,7 +86,8 @@ class Notifiers < Formula
   def install
     virtualenv_install_with_resources
 
-    generate_completions_from_executable(bin/"notifiers", shells: [:fish, :zsh], shell_parameter_format: :click)
+    generate_completions_from_executable(bin/"notifiers",
+                                         shells: [:bash, :fish, :zsh], shell_parameter_format: :click)
   end
 
   test do
