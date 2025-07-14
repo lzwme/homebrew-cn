@@ -6545,6 +6545,7 @@ Homebrew-homebrew-core/Formula/s/stone.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/storj-uplink.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/storm.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/stormlib.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/s/stormy.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/stow.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/stp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/strace.rb, Homebrew/homebrew-core, 1
@@ -13891,6 +13892,7 @@ Homebrew-homebrew-cask/Casks/r/retroarch-metal@nightly.rb, Homebrew/homebrew-cas
 Homebrew-homebrew-cask/Casks/r/retroarch.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/retrobatch.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/retroshare.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/r/retrospective.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/reunion.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/reveal.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/reverso.rb, Homebrew/homebrew-cask, 0

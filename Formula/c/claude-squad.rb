@@ -1,18 +1,18 @@
 class ClaudeSquad < Formula
   desc "Manage multiple AI agents like Claude Code, Aider and Codex in your terminal"
   homepage "https://smtg-ai.github.io/claude-squad/"
-  url "https://ghfast.top/https://github.com/smtg-ai/claude-squad/archive/refs/tags/v1.0.8.tar.gz"
-  sha256 "7786e393577a0e5c73bef4f1aec20129e933327d1de936d5606931565c49b671"
+  url "https://ghfast.top/https://github.com/smtg-ai/claude-squad/archive/refs/tags/v1.0.10.tar.gz"
+  sha256 "06b8de4bfdf06ea49f65559749bb08c8da3ede822a41c642ec6e726baffa7cc7"
   license "AGPL-3.0-only"
   head "https://github.com/smtg-ai/claude-squad.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "117aeb1a9602db47717df1b793dcc301e5d444e0d56119b76eccf288519b0440"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "117aeb1a9602db47717df1b793dcc301e5d444e0d56119b76eccf288519b0440"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "117aeb1a9602db47717df1b793dcc301e5d444e0d56119b76eccf288519b0440"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7d03f2f4eb138086ee21b465c5e25e88bef020137a570e102daf8b363d306b43"
-    sha256 cellar: :any_skip_relocation, ventura:       "7d03f2f4eb138086ee21b465c5e25e88bef020137a570e102daf8b363d306b43"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6f531f43ebc67b5bbaa10c33224f7cdcfffca9de8508d7ad8c0bbd6b3cec56da"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "341da81f5073727c0ef8877f9e932db5da508284492b459d195ba357d7731b49"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "341da81f5073727c0ef8877f9e932db5da508284492b459d195ba357d7731b49"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "341da81f5073727c0ef8877f9e932db5da508284492b459d195ba357d7731b49"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d1a38a92529ba991346d51510d6dd59ec9acc877b3725374ef235a7cdf52a834"
+    sha256 cellar: :any_skip_relocation, ventura:       "d1a38a92529ba991346d51510d6dd59ec9acc877b3725374ef235a7cdf52a834"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "35f35f1b7280b0461d0d81d3e615d069a70b5ecbd940cbbaeaa91bb51a4fb9c8"
   end
 
   depends_on "go" => :build

@@ -1,19 +1,19 @@
 class Kubelogin < Formula
   desc "OpenID Connect authentication plugin for kubectl"
   homepage "https://github.com/int128/kubelogin"
-  url "https://ghfast.top/https://github.com/int128/kubelogin/archive/refs/tags/v1.33.0.tar.gz"
-  sha256 "41016c118281fe7e8686c2bcf034f879d1b5dc49bc9eb0900ddce1d2d259290d"
+  url "https://ghfast.top/https://github.com/int128/kubelogin/archive/refs/tags/v1.34.0.tar.gz"
+  sha256 "bc9d05a9771d146de34b584755d1446de53f820eee283614a925e9edc441d08c"
   license "Apache-2.0"
   head "https://github.com/int128/kubelogin.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f023f71bed4a4030c61f836726cfa751b7acad7a9b2d18dc4cbf1f88ab94d2a8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f023f71bed4a4030c61f836726cfa751b7acad7a9b2d18dc4cbf1f88ab94d2a8"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "f023f71bed4a4030c61f836726cfa751b7acad7a9b2d18dc4cbf1f88ab94d2a8"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8aa08bbc17eb4209b7cde1fd40bc7056b4a300bf39e72f6126440b4068d85f9c"
-    sha256 cellar: :any_skip_relocation, ventura:       "8aa08bbc17eb4209b7cde1fd40bc7056b4a300bf39e72f6126440b4068d85f9c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c0feb10f33b936529d4aa62da89dbe6d88c7f9032a10a6446a0e41c27fbd4a4b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fce98937cb1efb008ea411bfc750f7ac94784341090a7ed1e19f3e077d675100"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9aec0fe3ed7f5b6122b4c1ffc2b9cb5efd3ef0b445876be6a708609213cfdb3d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9aec0fe3ed7f5b6122b4c1ffc2b9cb5efd3ef0b445876be6a708609213cfdb3d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "9aec0fe3ed7f5b6122b4c1ffc2b9cb5efd3ef0b445876be6a708609213cfdb3d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "47e9911b2ad9adb201b6816401566d82276640854e3a7bed64091be83a21c1e6"
+    sha256 cellar: :any_skip_relocation, ventura:       "47e9911b2ad9adb201b6816401566d82276640854e3a7bed64091be83a21c1e6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cf636982cb0e8c9cb8f51c76cc3760fa1bd5c199c70f1021c91818631f94103b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aa52a5459f915262d56e74491f3f18a2e809130f9ffbf647d756e8168fb3b2b4"
   end
 
   depends_on "go" => :build

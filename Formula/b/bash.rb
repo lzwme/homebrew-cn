@@ -2,6 +2,7 @@ class Bash < Formula
   desc "Bourne-Again SHell, a UNIX command interpreter"
   homepage "https://www.gnu.org/software/bash/"
   license "GPL-3.0-or-later"
+  revision 1
   head "https://git.savannah.gnu.org/git/bash.git", branch: "master"
 
   stable do
@@ -71,20 +72,23 @@ class Bash < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    rebuild 1
-    sha256 arm64_sequoia: "0cb8fa2fef54f0215e01137dae12119af693da6f9d468c8eb882c979dcee91a0"
-    sha256 arm64_sonoma:  "fe8e711dbad1902aea7b1237a93addb1cbd4fd643144ee2fa860800972e15b8d"
-    sha256 arm64_ventura: "d97833da4ac2bce736f63168162707cdaa3c57547e63b2ef39c2500be4e2a4b9"
-    sha256 sonoma:        "03e937973106a6bce6cf3830e6cc21b48250bfd79c0b93899404328008296d68"
-    sha256 ventura:       "0afa527fcb68b0182c63f395ac25474e42d90c7dae8e009c4c8a4c8a1baa20ee"
-    sha256 arm64_linux:   "3bc02cf84788f354c443bd15218b2bdacbce4fcd4364852afed1caf2a25ef30c"
-    sha256 x86_64_linux:  "505c5c1260fe9a3a7251baa06dc0acecd0274bdda4686edb04202385523279e6"
+    sha256 arm64_sequoia: "1aa846f7589467b1fa33e9f2a344b9e0c22c65df203f1bd9513f51bfa53b26fb"
+    sha256 arm64_sonoma:  "8becec833a4201a7f4e09536fd150e14e64730bc15408428a0f0963a9214af7f"
+    sha256 arm64_ventura: "3cea415ed6e75f4827d41c08c6aa5068a86bd548f2ff3360cab29eeb9cdcf2c6"
+    sha256 sonoma:        "21a9fd61ce11973c85079599e573db7d60720207e8cc15a026318b9415c4f6e0"
+    sha256 ventura:       "0da33a871aaf4dd283e2c62a8614bac77420276da8b783ea45dfbb0f98cebbfa"
+    sha256 arm64_linux:   "aceb52c5590c701f633b42153f336e50d1be7795ce36587bab8d00ebf1c43e60"
+    sha256 x86_64_linux:  "cbf6a6f8da6bf3ba100bae7da5fd4bbdc189820bd747e654b52b7bf37a844cda"
   end
 
-  depends_on "gettext"
   # System ncurses lacks functionality
   # https://github.com/Homebrew/homebrew-core/issues/158667
   depends_on "ncurses"
+  depends_on "readline"
+
+  on_macos do
+    depends_on "gettext"
+  end
 
   def bash_loadables_path
     [
@@ -110,7 +114,7 @@ class Bash < Formula
 
     ENV.append_to_cflags "-DDEFAULT_LOADABLE_BUILTINS_PATH='\"#{bash_loadables_path}\"'"
 
-    system "./configure", "--prefix=#{prefix}", "--with-curses", "--without-included-gettext"
+    system "./configure", "--prefix=#{prefix}", "--with-curses", "--with-installed-readline"
     system "make", "install"
 
     (include/"bash/builtins").install lib/"bash/loadables.h"

@@ -1,10 +1,9 @@
 class Pybind11 < Formula
   desc "Seamless operability between C++11 and Python"
   homepage "https://github.com/pybind/pybind11"
-  url "https://ghfast.top/https://github.com/pybind/pybind11/archive/refs/tags/v2.13.6.tar.gz"
-  sha256 "e08cb87f4773da97fa7b5f035de8763abc656d87d5773e62f6da0587d1f0ec20"
+  url "https://ghfast.top/https://github.com/pybind/pybind11/archive/refs/tags/v3.0.0.tar.gz"
+  sha256 "453b1a3e2b266c3ae9da872411cadb6d693ac18063bd73226d96cfb7015a200c"
   license "BSD-3-Clause"
-  revision 1
 
   livecheck do
     url :stable
@@ -12,11 +11,10 @@ class Pybind11 < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "d1ac19b7042b5f6b94bff8f1766307bfee68335ecb4dc7423040ae89940173bf"
+    sha256 cellar: :any_skip_relocation, all: "66d50f1e916c452bfaa6e6212ab2f35777de43cbf68e9d7b6b299f1a503479bd"
   end
 
   depends_on "cmake" => :build
-  depends_on "python-setuptools" => :build
   depends_on "python@3.12" => [:build, :test]
   depends_on "python@3.13" => [:build, :test]
 
@@ -37,7 +35,7 @@ class Pybind11 < Formula
     pythons.each do |python|
       # Install Python package too
       python_exe = python.opt_libexec/"bin/python"
-      system python_exe, "-m", "pip", "install", *std_pip_args, "."
+      system python_exe, "-m", "pip", "install", *std_pip_args(build_isolation: true), "."
 
       pyversion = Language::Python.major_minor_version(python_exe)
       (buildpath/"pybind11-config-#{pyversion}").write <<~BASH

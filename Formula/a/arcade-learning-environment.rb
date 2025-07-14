@@ -3,18 +3,17 @@ class ArcadeLearningEnvironment < Formula
 
   desc "Platform for AI research"
   homepage "https://github.com/Farama-Foundation/Arcade-Learning-Environment"
-  url "https://ghfast.top/https://github.com/Farama-Foundation/Arcade-Learning-Environment/archive/refs/tags/v0.11.1.tar.gz"
-  sha256 "2b878ae1b7febb498c7ab5351791c6d9838dc214b4825eec0df1b53b58b6aaa3"
+  url "https://ghfast.top/https://github.com/Farama-Foundation/Arcade-Learning-Environment/archive/refs/tags/v0.11.2.tar.gz"
+  sha256 "d6ac9406690bb3533b37a99253bdfc59bc27779c5e1b6855c763d0b367bcbf96"
   license "GPL-2.0-only"
-  revision 1
   head "https://github.com/Farama-Foundation/Arcade-Learning-Environment.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:  "552a78d904ea47d986ceb4c80beacec9e7164ae50015eb77f854185c3a7b9ddb"
-    sha256 cellar: :any,                 arm64_ventura: "1083d51df9a78c8530accc232ade6206a46a9344d50d0518578f294874e2112c"
-    sha256 cellar: :any,                 sonoma:        "84afeddaa112e878277cae5aeebd2936b911112aaafff53d1c0929f78e01a79f"
-    sha256 cellar: :any,                 ventura:       "b27182796d6efff2b08cd51475410b170f4edd56a26db72610b346540ab0fbc6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "11f8b73fd191333bad3b4aa2e7ee818905fed783181a507bb159b7a31e561c3d"
+    sha256 cellar: :any,                 arm64_sonoma:  "b059304ff355b485c62fa4228acf4718536c5dd2b3b136149c757f9c74e0fba2"
+    sha256 cellar: :any,                 arm64_ventura: "b62e279b1b9e598a4c0e5afd710f01b8fd12a474fc5c35de7cb18988349ba514"
+    sha256 cellar: :any,                 sonoma:        "7f308e2a801c2b134755ed86de0e635fa0b082d3f5dee38eb232b7236ceae0c1"
+    sha256 cellar: :any,                 ventura:       "b5915242c9038770037ad6dcab92af005d2cc1bddcbc059217818b3de10617e2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3cacf07a759590cd11bd843b3b6cd0556cb68998221adbc8204d735587a83eb0"
   end
 
   depends_on "cmake" => :build
@@ -50,8 +49,8 @@ class ArcadeLearningEnvironment < Formula
   end
 
   resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/d1/bc/51647cd02527e87d05cb083ccc402f93e441606ff1f01739a62c8ad09ba5/typing_extensions-4.14.0.tar.gz"
-    sha256 "8676b788e32f02ab42d9e7c61324048ae4c6d844a399eebace3d4979d75ceef4"
+    url "https://files.pythonhosted.org/packages/98/5a/da40306b885cc8c09109dc2e1abd358d5684b1425678151cdaed4731c822/typing_extensions-4.14.1.tar.gz"
+    sha256 "38b39f4aeeab64884ce9f74c94263ef78f3c22467c8724005483154c26648d36"
   end
 
   def python3
