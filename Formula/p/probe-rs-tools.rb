@@ -1,8 +1,8 @@
 class ProbeRsTools < Formula
   desc "Collection of on chip debugging tools to communicate with microchips"
   homepage "https://probe.rs"
-  url "https://ghfast.top/https://github.com/probe-rs/probe-rs/archive/refs/tags/v0.29.0.tar.gz"
-  sha256 "bf90e22c2bf9a843f47e71e0701b3d95975cf6c1eaa525981d25b07e40276f24"
+  url "https://ghfast.top/https://github.com/probe-rs/probe-rs/archive/refs/tags/v0.29.1.tar.gz"
+  sha256 "d0c7e8fe4d8b5795ba9cd3e7f09f91ae1373a3226f106ab09776ec6dc646b8ab"
   license "Apache-2.0"
   head "https://github.com/probe-rs/probe-rs.git", branch: "master"
 
@@ -12,13 +12,13 @@ class ProbeRsTools < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9acc3f6e7fe7ff3989385dc78281474fce0cd3133ff2253205a3ef46fa34b60a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5caa4f823e60a9214ad1f07ad1da313a33deb4bfa345ba8a3d5b2391fa69ad6f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "0496d931400d84b418f786a074a351c827ae4a07d3ba517758b61c3d51594463"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0791a7fbe77d43bc7963b75f2d9a7da24b1cf070f950bb73d6cb63a3fc5b3760"
-    sha256 cellar: :any_skip_relocation, ventura:       "a2cef2bca4a5b56cc782152cc42020e6a95ae9f6f5a740d30b4be9990bd4f2fb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "89b956de17bc87f74c2f21947852d6fabfae7a5c06a5267061f45eedc8a4cdfb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "85650b16bc9d268e3b54f633447f0508700a81e605bcd32b2a60279bb4aee199"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3fde0f0bed4c13c857911063d98b6b9c8212d0fe280fc9753530da3b6451c38f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "454052b0ea56ce7ecfd8b6d6af56b976712e101ac36d479b6ae4c74cb99acaed"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "3e97cd23aa96e6f55f40d2d263c224ce18e7459fe9088e60849b227e8203cd67"
+    sha256 cellar: :any_skip_relocation, sonoma:        "1be8558aee7092643c05fd1e49a00b627ebb0769274e41fec1d98f970349e8ae"
+    sha256 cellar: :any_skip_relocation, ventura:       "1c55118312a569246707664ad50ef3b9e458aef9c5f274efe0e9dbe44c82cff9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "67b571691b4c83c721e4052f1c492ea1c5a3459556cd407ab4ffeb01184ca6e5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2fce905ac6d073af446579dd6ed094806b282ca56c6081222f20e949468867c7"
   end
 
   depends_on "cmake" => :build

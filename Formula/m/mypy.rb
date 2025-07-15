@@ -3,19 +3,19 @@ class Mypy < Formula
 
   desc "Experimental optional static type checker for Python"
   homepage "https://www.mypy-lang.org/"
-  url "https://files.pythonhosted.org/packages/81/69/92c7fa98112e4d9eb075a239caa4ef4649ad7d441545ccffbd5e34607cbb/mypy-1.16.1.tar.gz"
-  sha256 "6bd00a0a2094841c5e47e7374bb42b83d64c527a502e3334e1173a0c24437bab"
+  url "https://files.pythonhosted.org/packages/1e/e3/034322d5a779685218ed69286c32faa505247f1f096251ef66c8fd203b08/mypy-1.17.0.tar.gz"
+  sha256 "e5d7ccc08ba089c06e2f5629c660388ef1fee708444f1dee0b9203fa031dee03"
   license "MIT"
   head "https://github.com/python/mypy.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "543a5b7ca5efa4571845cb6cd262ddc31d5186da9f6256f90a660bc85ef1a591"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fc2d204cf9d644f5c644599b88107e6779dec54e117a770f96025e83052082c1"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "e7c30ed3a7765a98d9270256331b4f00d4ff94a86299b244a5f98a77e0cd6898"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0e150123386ddb5596a8c61db23ca151dac6ea4abed76e5c2f1ac378ed85c26a"
-    sha256 cellar: :any_skip_relocation, ventura:       "b56aa91d0724c8c5021c1730bee9e588143a6a343d17be6d2225eb85073977eb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "77d955ffa79b341c57fb443a15905f6cf2fb66fc7c8894068c52498deb3aa597"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "43d2be66f37b90b4fcf70c54109818fabcbf0e0bbc82b36e4e7139c48f49b209"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a104929e361436f855b0a3ae534cdec59a8ac327169bcafd2834dab7c2f0bbfc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "67e4cc02fe48de46479e21c54dd52cd75ecceae89cc6b79c562e2dc14fff2222"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "a48eea34913d1b187ff36e068550f6f269efe781f68c11238708f78ea722ab30"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b91c7cd4c41edcfdcb19ca401ac9f80b1a9d16c967519112f1afae93ad14fd75"
+    sha256 cellar: :any_skip_relocation, ventura:       "feb0f80ca350a6a350528173177b1b287a6447e4f1a603709fd12f4eba8aa64d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d2aedf563d8ac3a3f8c7833ac8ee9eec8d896aa9a272ceb4c4225285c4b8e092"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1f17d980d52579b59da6acd228b0f5968e9b61ef064a8899162df3a479a49ec3"
   end
 
   depends_on "python@3.13"
@@ -31,8 +31,8 @@ class Mypy < Formula
   end
 
   resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/d1/bc/51647cd02527e87d05cb083ccc402f93e441606ff1f01739a62c8ad09ba5/typing_extensions-4.14.0.tar.gz"
-    sha256 "8676b788e32f02ab42d9e7c61324048ae4c6d844a399eebace3d4979d75ceef4"
+    url "https://files.pythonhosted.org/packages/98/5a/da40306b885cc8c09109dc2e1abd358d5684b1425678151cdaed4731c822/typing_extensions-4.14.1.tar.gz"
+    sha256 "38b39f4aeeab64884ce9f74c94263ef78f3c22467c8724005483154c26648d36"
   end
 
   def install

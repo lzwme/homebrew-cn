@@ -1,18 +1,18 @@
 class Ffmate < Formula
   desc "FFmpeg automation layer"
   homepage "https://docs.ffmate.io"
-  url "https://ghfast.top/https://github.com/welovemedia/ffmate/archive/refs/tags/1.0.8.tar.gz"
-  sha256 "fc5ce220b0ddb37ba05af9c5aa498c27163469fb9dbd3a962bf693417d033f6a"
+  url "https://ghfast.top/https://github.com/welovemedia/ffmate/archive/refs/tags/1.1.0.tar.gz"
+  sha256 "76ee7cf34bb12fbf6af162013dda8ca894c179b2525a18ece563b409b74ef1cc"
   license "AGPL-3.0-only"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1e0eb7dfcb53c17edf9d497f5faa6c47eaa1be9bf2dbefe0e740ac12113283d5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "676761f0a3fa4ca0c4d7d8f98a01ed0034a93d46eca7e3eb76a591e32043734a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "cfcda9104196a1fdf12099eb2ea3d7acf98bc6f817623fcc69c80dbcb73ff106"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6de50bb039379cba499e9729c4f16d9890e7aa1644f51c405fddb6a80611c127"
-    sha256 cellar: :any_skip_relocation, ventura:       "8b504482819f7219dcb0ed35438308b5e5588ccb0ea84f806584eb1ac2461b8f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e443c03bdbd2a9ef7e3b2fc9c4d6204075c074b6de60d5d304aaa434dd549294"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "456d7c6fd91a203abd1dbbae09caf7c64c2d457f7a15724536f3d6f85cf02232"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8affa0bf4d637bcadd380d174bf1f498685d8c4e6113756da94f48a9aef7ae1c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2a61aa543f3b12f528a921ba873c461915dc3f85a89a4c9cd6cbfc3020cad50a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "6ea8b2043b83984d664ef6f9e7e2633e104bb07ff18aeaff29bdde3c82ae53d7"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6711f573881e148e8cadfdd8f37326819a07d81bcea6f4b0c1250f2e2fab1380"
+    sha256 cellar: :any_skip_relocation, ventura:       "8febe1353812b42be4a58edbd2f9f7c1d1e5beea4bd5f0a00916b2d57eeb7973"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e1f32393f8298b99df4fd76d73f859661bdabdf700bcb2fdf72349f1526a1498"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cc44b707cc10b5e73faccb5a62f655091fea5a994eaa8bb5f45f6b9fcd62f976"
   end
 
   depends_on "go" => :build

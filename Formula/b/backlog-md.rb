@@ -1,18 +1,18 @@
 class BacklogMd < Formula
   desc "Markdown‑native Task Manager & Kanban visualizer for any Git repository"
   homepage "https://github.com/MrLesk/Backlog.md"
-  url "https://registry.npmjs.org/backlog.md/-/backlog.md-1.2.6.tgz"
-  sha256 "ee3c5c638690a4c1eddf5a5f247c07fe0f0ceb44d21fadd0cc76821c5d7a05e3"
+  url "https://registry.npmjs.org/backlog.md/-/backlog.md-1.3.2.tgz"
+  sha256 "5c9a26c55d277e79fe5568ec3db9459ceb07274b893e87a17cddd603f9c5e891"
   license "MIT"
 
   bottle do
-    sha256                               arm64_sequoia: "2a68913e1ca0b2c871493704e59711984e3e2b8396b4072671ed8f5396961e31"
-    sha256                               arm64_sonoma:  "2a68913e1ca0b2c871493704e59711984e3e2b8396b4072671ed8f5396961e31"
-    sha256                               arm64_ventura: "2a68913e1ca0b2c871493704e59711984e3e2b8396b4072671ed8f5396961e31"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e8e229b17fc1c9872553cd257c826e2428e87e4769aabf880263a81234de71d9"
-    sha256 cellar: :any_skip_relocation, ventura:       "e8e229b17fc1c9872553cd257c826e2428e87e4769aabf880263a81234de71d9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2f00f48170a0c0ce0cd32304757617530e5672fc65a85b82111d2be6cbc04328"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "44dceddfaabbd0055acf3cbd5029c9e099252116c557b269e898c614435a746e"
+    sha256                               arm64_sequoia: "ca44eb0058580295e4e1cf44aa900436634a47ad190e570b0e098f4bcbb2f868"
+    sha256                               arm64_sonoma:  "ca44eb0058580295e4e1cf44aa900436634a47ad190e570b0e098f4bcbb2f868"
+    sha256                               arm64_ventura: "ca44eb0058580295e4e1cf44aa900436634a47ad190e570b0e098f4bcbb2f868"
+    sha256 cellar: :any_skip_relocation, sonoma:        "df8bf6695062b42411c590cce12d1b283b2fb588b8a46684f6dd22804f62ac99"
+    sha256 cellar: :any_skip_relocation, ventura:       "df8bf6695062b42411c590cce12d1b283b2fb588b8a46684f6dd22804f62ac99"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ddb707b311c3a4193e0db7678d856f14a9f2afa1edcacdb505084ad7eb1a4e7e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "02de399501055ac87e26c017b62bdce1974a2fedb3db8ce8f6dad5412849fb48"
   end
 
   depends_on "node"
@@ -32,7 +32,18 @@ class BacklogMd < Formula
       # Test backlog init command requires interactive input
       require "open3"
       Open3.popen3("#{bin}/backlog", "init", "test") do |stdin, _stdout, _stderr, wait_thr|
-        stdin.puts "\n" # Send enter to proceed
+        stdin.puts "y"
+        sleep 1
+        stdin.puts "y"
+        sleep 1
+        stdin.puts "n"
+        sleep 1
+        stdin.puts "n"
+        sleep 1
+        stdin.puts "\n"
+        sleep 1
+        stdin.puts "\n"
+        sleep 1
         stdin.close
         wait_thr.value # Wait for process to complete
       end

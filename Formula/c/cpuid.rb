@@ -1,19 +1,19 @@
 class Cpuid < Formula
   desc "CPU feature identification for Go"
   homepage "https://github.com/klauspost/cpuid"
-  url "https://ghfast.top/https://github.com/klauspost/cpuid/archive/refs/tags/v2.2.11.tar.gz"
-  sha256 "879274b71c36b718b245187a08a3ef717bd41275fa75843de9434755a31396a9"
+  url "https://ghfast.top/https://github.com/klauspost/cpuid/archive/refs/tags/v2.3.0.tar.gz"
+  sha256 "467c058227b86d527bff7e2e1504748f99ca27cb69f3908189ceb18b1df8428a"
   license "MIT"
   head "https://github.com/klauspost/cpuid.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1372213b08a4965139affeee0157e343805d80adc6ec727ed1feaec5f5370c76"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1372213b08a4965139affeee0157e343805d80adc6ec727ed1feaec5f5370c76"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "1372213b08a4965139affeee0157e343805d80adc6ec727ed1feaec5f5370c76"
-    sha256 cellar: :any_skip_relocation, sonoma:        "18c1af9ee43ec37ea032847a7f42dc203a655b792606d708ef205ed8eaa719ef"
-    sha256 cellar: :any_skip_relocation, ventura:       "18c1af9ee43ec37ea032847a7f42dc203a655b792606d708ef205ed8eaa719ef"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e0e528e28e5a99a5d6af40c0510f1a7a8cfb9017124459ceeae8d6e22142a965"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "12c84d9f6d0e4c33bfff7f12e5d189051bcd4164213dd220ee521067e7ad18c1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8b65f000226c41729001db3a206845dafeaf87d39f5ec12465ee02797718399f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8b65f000226c41729001db3a206845dafeaf87d39f5ec12465ee02797718399f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "8b65f000226c41729001db3a206845dafeaf87d39f5ec12465ee02797718399f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3fb55a4d8942c9131a331f392d2b56e4e1515163850a5afcb8e1a17ec100aa61"
+    sha256 cellar: :any_skip_relocation, ventura:       "3fb55a4d8942c9131a331f392d2b56e4e1515163850a5afcb8e1a17ec100aa61"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "555f1ed20e4de1ce5bdc1ea1d5ed9cf01c1bb64f968cf1c1125200d988869acc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "de235784ecef52744cafc99dd9b01aae03ff3763514153d8305ecd4d9b2b0c39"
   end
 
   depends_on "go" => :build

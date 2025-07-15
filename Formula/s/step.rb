@@ -1,17 +1,17 @@
 class Step < Formula
   desc "Crypto and x509 Swiss-Army-Knife"
   homepage "https://smallstep.com"
-  url "https://ghfast.top/https://github.com/smallstep/cli/releases/download/v0.28.6/step_0.28.6.tar.gz"
-  sha256 "1ab8ba1472e5dca30d863703c1b874541e5a1b5382ba9f2c26a00f652a75a2f1"
+  url "https://ghfast.top/https://github.com/smallstep/cli/releases/download/v0.28.7/step_0.28.7.tar.gz"
+  sha256 "64996b54975707ef0f3a9d0b8e8c32db8e3c954b7ad0d2f4ca82b050a37eaa8f"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fa444b239b3f7fbfd974fea34286d6e4f5721a8fe182fbf59a00dbdc378f55da"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "044242cb1f678a5a2b1a9f8117f14fd27de2aa25da1b07c3ad76959c8b05ffb4"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "266aa8b378b9da8f379ac59b0839e2de1f1cdf0ca313115f1a781ebfb1282454"
-    sha256 cellar: :any_skip_relocation, sonoma:        "bffab46cffe650a4df16627e862ed30f1f763c4c3edfe06a299501916bb14ecd"
-    sha256 cellar: :any_skip_relocation, ventura:       "d70b34f83c66b289b062d2637a9a03ae116d76274d3bc1d8f6a9b477d0c1d353"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8571a590547b33f37b8df1392608f2c55ba7fc2be0b6cb86d7508b14af044447"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a77c13dd1082b59f25a69f5809c678ceef54472ca25873d3356dceea6c0c7cd8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "89b19beedb94544d19a8f33af15063befe6860613edec4f2fde1c88ae21a59af"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "57b8ec705af6c68e25acd09f8a4720a0e628a64de20d74a37468a9ec7e0a0730"
+    sha256 cellar: :any_skip_relocation, sonoma:        "bdc7a9abb89069d0ccaeca7874bce8cf4ca08af087f4706f45e453f8436ecb70"
+    sha256 cellar: :any_skip_relocation, ventura:       "070bede6372d8e470f06eb40258b4d99b1191baf46b81ac18a905c8cfeb24507"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d92b064d4aca479bc4241a00247c416e1e02faa4f8a0dd4b6c8d2523ab7f4170"
   end
 
   depends_on "go" => :build

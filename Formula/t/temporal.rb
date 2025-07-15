@@ -1,8 +1,8 @@
 class Temporal < Formula
   desc "Command-line interface for running and interacting with Temporal Server and UI"
   homepage "https://temporal.io/"
-  url "https://ghfast.top/https://github.com/temporalio/cli/archive/refs/tags/v1.4.0.tar.gz"
-  sha256 "0d7cdc8b9abc09f21b58c275e21733715e7e7d4e8033f5cedaa02fd4b125e26d"
+  url "https://ghfast.top/https://github.com/temporalio/cli/archive/refs/tags/v1.4.1.tar.gz"
+  sha256 "fcfe2e857b4e03fad8e63f239df03a21685427f88e0a627c8ac5050ea5908974"
   license "MIT"
   head "https://github.com/temporalio/cli.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Temporal < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8c95cae700d85e3a20ef3b59420c08a647cc943ead3f8eeb2df0329edc611632"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "464c35f0cae1422792151e46375d0efd40862ddf51844ff94c184e1b59fd26ec"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "19a4455765c7c4caf5bb6fa2ffbbfdbd2181d6eafa665b7e4ff1f4390bb17a53"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b274d8bf3feefa55b814ea39318ed3cffa64ffd9bcd61412ed5e1fb55e5b256e"
-    sha256 cellar: :any_skip_relocation, ventura:       "6709e8866eb20c9f0f4ef2976facc479c1f76f2bef68f3e8439edb5430dfe274"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ec4bddfc9bfdd737426e105890078785ffdafa2acb3a9248e1cf9dca98516711"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a3ab6a979ccbecc4d70b4f992c21d26f98ee4735fe6f4d2fcc31243d60fe8fb4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2aa480c69ecd97cb57d503b66f06194927ec57d26c6a31c1ff21fdd7c3beedad"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "2ee908edeb7247b254f6180eb6f5e874c8d1a823dd4d229ec8e7ad88da73bc66"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f2ae710e94a4cf9d7411aa998c9eaab2616887d4d3006b603e0838734a5e1ec3"
+    sha256 cellar: :any_skip_relocation, ventura:       "82442ed6e1f331be954ec61bd2ed6654d606d03b0349794cdbed4e087256dd2a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cd506c2296ee2d9dc1030d994bfc6614362eea028ca02d52245831f62042d409"
   end
 
   depends_on "go" => :build

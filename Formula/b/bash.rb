@@ -72,13 +72,14 @@ class Bash < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 arm64_sequoia: "1aa846f7589467b1fa33e9f2a344b9e0c22c65df203f1bd9513f51bfa53b26fb"
-    sha256 arm64_sonoma:  "8becec833a4201a7f4e09536fd150e14e64730bc15408428a0f0963a9214af7f"
-    sha256 arm64_ventura: "3cea415ed6e75f4827d41c08c6aa5068a86bd548f2ff3360cab29eeb9cdcf2c6"
-    sha256 sonoma:        "21a9fd61ce11973c85079599e573db7d60720207e8cc15a026318b9415c4f6e0"
-    sha256 ventura:       "0da33a871aaf4dd283e2c62a8614bac77420276da8b783ea45dfbb0f98cebbfa"
-    sha256 arm64_linux:   "aceb52c5590c701f633b42153f336e50d1be7795ce36587bab8d00ebf1c43e60"
-    sha256 x86_64_linux:  "cbf6a6f8da6bf3ba100bae7da5fd4bbdc189820bd747e654b52b7bf37a844cda"
+    rebuild 1
+    sha256 arm64_sequoia: "2d1976d5fa23c6baf0774bcc5bc9ebb2aa77d16dbff77d8dee0361425239079b"
+    sha256 arm64_sonoma:  "57b38131c47227f0ba3099b361aadb108d8deec5d89df10a5c5b700322018215"
+    sha256 arm64_ventura: "21e31f58fd13fe5016314325eb3270e25ea5f35aadc8407cb8e2aead098e5805"
+    sha256 sonoma:        "c4d09853a3e4e327df66f97e7a53a72cce00538111c15ee79c5bcf9050f2dcbe"
+    sha256 ventura:       "495c6ba5b1ba92cb2886f644e0da5bdea8f52104c3355e50e566278ec132f257"
+    sha256 arm64_linux:   "a45194e6fbdead6482335c49140c266db5a95dcabbf94c0c48544afae4131e53"
+    sha256 x86_64_linux:  "88873cd509c50164b914cd2e6beea5709f9bbb14c6774cedc7e601fab6092faf"
   end
 
   # System ncurses lacks functionality
@@ -114,6 +115,9 @@ class Bash < Formula
 
     ENV.append_to_cflags "-DDEFAULT_LOADABLE_BUILTINS_PATH='\"#{bash_loadables_path}\"'"
 
+    # Avoid crashes on macOS 15.0-15.4.
+    ENV["bash_cv_func_strchrnul_works"] = "no" if OS.mac? && MacOS.version <= :sequoia
+
     system "./configure", "--prefix=#{prefix}", "--with-curses", "--with-installed-readline"
     system "make", "install"
 
@@ -130,5 +134,9 @@ class Bash < Formula
     # If the following assertion breaks, then it's likely the configuration of `DEFAULT_LOADABLE_BUILTINS_PATH`
     # is broken. Changing the test below will probably hide that breakage.
     assert_equal "csv is a shell builtin\n", shell_output("#{bin}/bash -c 'enable csv; type csv'")
+
+    return if OS.linux? || MacOS.version > :sequoia
+
+    refute_match "U _strchrnul", shell_output("nm #{bin}/bash")
   end
 end

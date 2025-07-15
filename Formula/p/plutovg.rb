@@ -1,18 +1,18 @@
 class Plutovg < Formula
   desc "Tiny 2D vector graphics library in C"
   homepage "https://github.com/sammycage/plutovg"
-  url "https://ghfast.top/https://github.com/sammycage/plutovg/archive/refs/tags/v1.1.0.tar.gz"
-  sha256 "8aa9860519c407890668c29998e8bb88896ef6a2e6d7ce5ac1e57f18d79e1525"
+  url "https://ghfast.top/https://github.com/sammycage/plutovg/archive/refs/tags/v1.2.0.tar.gz"
+  sha256 "8fd6e8b6505d38483d996c673ba0bfbcfe81a7a4a94a7b320cc81a4fbbe49873"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "ac156e2c915c6512ff71be37db603ed4fe32329ee5074ed867fee3fd59fd7069"
-    sha256 cellar: :any,                 arm64_sonoma:  "c7296dca832620899ced5f5752f32405b9db14bcb972c9cea0abae21dfd13952"
-    sha256 cellar: :any,                 arm64_ventura: "987a6642fd71f6594e1af68980b4f3ecca034cc7a0fbb02824b666e4cfd2c0e1"
-    sha256 cellar: :any,                 sonoma:        "adae6b93c4dc216886d41269c758800efcf3da303c88dca1cf2438b0750924e6"
-    sha256 cellar: :any,                 ventura:       "53072481855f74f313530d64e6ab0f21af5bc188b48becb60de1627782b1dfb8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e9b79f59f1df5754b7c031892e998e02aac551653ef94fdf9518cd072b0ce0e8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bdde75991f4603eddaf7249b9b7387c7f605451ede7622ce3b67518b8d202350"
+    sha256 cellar: :any,                 arm64_sequoia: "dee9c2d51a22a84614d430cf4e29516fd27a9325e9383d918670dad525e7c2ee"
+    sha256 cellar: :any,                 arm64_sonoma:  "e0b3ca709ac2d29698c70df9f46aa76c32e757ce9765ef1f0ff840e0b398800f"
+    sha256 cellar: :any,                 arm64_ventura: "9a81b11fb722d3669e14714ff370ba431e24fd5bf2edea1dd1fb1f99d0cbf437"
+    sha256 cellar: :any,                 sonoma:        "37d8205558e02e48e3da8becd1ece2d815e051c5a5f83d5a44eb09fc9de347fc"
+    sha256 cellar: :any,                 ventura:       "9207efe9cc5e7afc622bc5223540ae13bb01c45b21d1718a87945878f704b5f5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "456a18ca2750456e3a9f6f3513bf7a5340593e6e11d43d14344c4510084cab27"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "85fcbb9c7bf5d5478e625c00691eb5638881b5a4464d94a578b9e90f77dbbc37"
   end
 
   depends_on "cmake" => :build

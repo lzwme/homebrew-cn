@@ -1,8 +1,8 @@
 class TektoncdCli < Formula
   desc "CLI for interacting with TektonCD"
   homepage "https://github.com/tektoncd/cli"
-  url "https://ghfast.top/https://github.com/tektoncd/cli/archive/refs/tags/v0.41.0.tar.gz"
-  sha256 "6e52a891bada3ff6351f5da49b1c67eca93b9f2d71669194ef52da4be7dd8c45"
+  url "https://ghfast.top/https://github.com/tektoncd/cli/archive/refs/tags/v0.41.1.tar.gz"
+  sha256 "08cc174392261d3201685b863390ff28207a00df3964acd754e36764e25f60a9"
   license "Apache-2.0"
 
   livecheck do
@@ -11,13 +11,13 @@ class TektoncdCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "74962f47a93b8edd0d4e180ec4195ca2614a2fd8404da6b388dcb38af4dd4b81"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4ccb71f0f7d45eb3ef3500ad16dd77707008e166a2adbfeba2958d50c09b7d26"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "fe19aa6c483fdfd461f47823030ef40bdd90c01dba532817d52052952d70a0fc"
-    sha256 cellar: :any_skip_relocation, sonoma:        "26994aca13238c91a19cf531ba6fd35f30bf5aef6ef8b96ea48bec56b964c97c"
-    sha256 cellar: :any_skip_relocation, ventura:       "1435284fb9c6cafa4ce6427278d096ecc689bbcb939b2b9c241cf6db38041e62"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "83d87c9c5865d34cee73fca59c25d21e99878b008b3cff6e0bd749e3c9346c4f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f935637469ec992a6eedc73b55c0f878146ea9ea2c6bcca742bc15b14a209fd1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "24eb337d09e3ffc0034a2d5003d7857f6f5f8eeb1d219cddad0c3a44c1fcf6af"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0ef9f10f2addb495a65233219bf5e986ffce3e130cf6c3e01a928e52e0cb8443"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "eb9356554e5e42422463c858fdf03424af6dfcd3fb22d32a62b46800f50916f4"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8c89cd01aca3f22d65b12c66132572b11e2c2ba78542d7d488153361a6b62487"
+    sha256 cellar: :any_skip_relocation, ventura:       "b75deb10de1c1588c85951f0518f3ccc03a75168609a5f75bb9aa56bf0be2b69"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "04ad1bd97c9e68bf9b5e61c9ce06e3c092fe442a751e3c471c2545eef6d29099"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cd923ac4446ead8a320745e614bff7165a907a7cffeccd6a2a446232e85e1473"
   end
 
   depends_on "go" => :build

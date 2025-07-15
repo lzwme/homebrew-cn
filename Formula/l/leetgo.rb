@@ -1,18 +1,18 @@
 class Leetgo < Formula
   desc "CLI tool for LeetCode"
   homepage "https://github.com/j178/leetgo"
-  url "https://ghfast.top/https://github.com/j178/leetgo/archive/refs/tags/v1.4.14.tar.gz"
-  sha256 "09fd101c71b8eb7c7b26d5815925be00eb1d228d00c1e67759585e4fed26ca82"
+  url "https://ghfast.top/https://github.com/j178/leetgo/archive/refs/tags/v1.4.15.tar.gz"
+  sha256 "40525913af3a493d6ca8960ccc1d26efbaa006a331843b08f53eb6de23176661"
   license "MIT"
   head "https://github.com/j178/leetgo.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "831132b6b0456b336940c9dcd24cb407e622980d98ca9f61d59dae27bf8982ce"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4c91f4abbd99dfe597af2fd911b9984b8a12541f084615d9bfafc13ddd3090c0"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "805be64a0a8871d337b7f40b0be0b2f1060cfd2eb2df3df1a3e7a5891a011739"
-    sha256 cellar: :any_skip_relocation, sonoma:        "cce6a910e029733e9ede40ce5899b3b532d079444f1bcadadfea553597ce4e1c"
-    sha256 cellar: :any_skip_relocation, ventura:       "03ec177879c2983595b051035a2ada17985df47eac21f13fbd8f4054168da6e8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5e7173c8a68261e3947a57eca91d407b6501f7deca789f7d9fde3456837d884b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6ed210045aadae5747cb3f906df171431ad6977826a0f666305fd0d481778ef1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2bcd2be8ba50dc2bb513d5d8e2fe4f6341a79f299a04c0e51d2c4ef9800ed5c0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "1e1bf7464f09a589bad97c98b18b6e7f6114a8aaaa0e52f37223714d78bd77f6"
+    sha256 cellar: :any_skip_relocation, sonoma:        "39dd443fcad5d45c1d061f2480690061ba9976735f2af87f719e0f3aca3433ea"
+    sha256 cellar: :any_skip_relocation, ventura:       "ed9cc946beb4dbf2406f56fa71080824b64ac6ca23e46535334aee2eaa9054a2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aa8b2dd33a551c7edd4b1e89cd25e011fbdef83d8cb8441fa839e4d4e4903389"
   end
 
   depends_on "go" => :build

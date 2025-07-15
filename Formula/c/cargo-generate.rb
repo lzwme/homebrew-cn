@@ -1,19 +1,19 @@
 class CargoGenerate < Formula
   desc "Use pre-existing git repositories as templates"
   homepage "https://github.com/cargo-generate/cargo-generate"
-  url "https://ghfast.top/https://github.com/cargo-generate/cargo-generate/archive/refs/tags/v0.23.3.tar.gz"
-  sha256 "c12af31c60b7ea53e138e4028a23934873e1385b311f35b46413697bdfdc4e8a"
+  url "https://ghfast.top/https://github.com/cargo-generate/cargo-generate/archive/refs/tags/v0.23.4.tar.gz"
+  sha256 "dd70491daecdd8fe93d85fb0a9c4257d6a71a9f3bc3ed2ecd919b273ca808b92"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/cargo-generate/cargo-generate.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "9588d9f3bd24dda034e41947200ee436c009c6b49154fe1a6a57f0926eb539ef"
-    sha256 cellar: :any,                 arm64_sonoma:  "e75aae49736fbab569feee8109226f1ec05bc546b3798676dffa1e0c513a076d"
-    sha256 cellar: :any,                 arm64_ventura: "deec2fcd437ff10b21a1062f7486dc80dace4af4b26a8a074d917d291e0d5fc2"
-    sha256 cellar: :any,                 sonoma:        "ee7ab36f1f870e3d6244e42f351b5fa9e0d4029d75597ccef016f7080c88a78e"
-    sha256 cellar: :any,                 ventura:       "78d637fd0809ac44f4741f22c63bdcfdbca7be78e47fcac3ddab1d86b31ac13a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fecca9166bb2c1f7242c43df8dec05883eff4749e8da1edfa88b2bc710c804bf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c0fbe1554f9bd727d311497fe00a1a5f0af0efb3422ada09ad0727bdee3ff2eb"
+    sha256 cellar: :any,                 arm64_sequoia: "0ffa80f4abaa3d4feabcc36fe4b755c5ad45967e2ee83b3a06ce4aeb3ec42268"
+    sha256 cellar: :any,                 arm64_sonoma:  "279eac5b9d83530fbc55b90bced87691ee6ebf2b3c72cc9af3c19465430d4196"
+    sha256 cellar: :any,                 arm64_ventura: "6485993bc52592207a4656c4d4f73f29e2dd943b95ff6f1cf70ee92c72bbb952"
+    sha256 cellar: :any,                 sonoma:        "9ee3ff4af18ce549e41dfac1260bad157b2bb8b88eefdd86e51dd6bf494005c9"
+    sha256 cellar: :any,                 ventura:       "bcc3351c282ff86c9f201e5d7e4102b1a3c449ff1af52ba9adadfba12ed5d573"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cc0ec16758aab990fb68ed6668dd18ef92158842c346a291de7c8d4cd5cbe1f2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "40722defa278f2a04e21c0191f21df53355bad43c41f38094a28c45bb5f01245"
   end
 
   depends_on "pkgconf" => :build

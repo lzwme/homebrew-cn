@@ -1,19 +1,19 @@
 class Redict < Formula
   desc "Distributed key/value database"
   homepage "https://redict.io/"
-  url "https://codeberg.org/redict/redict/archive/7.3.4.tar.gz"
-  sha256 "6c7e60b8b10a46f6fce8ccaaf1d6bf9d0db796a4d6169422c34dedbf8a4cb680"
+  url "https://codeberg.org/redict/redict/archive/7.3.5.tar.gz"
+  sha256 "1528db77c3539190ebe1fe3963347e02ac8095aff75a19b3373cddcf3f920405"
   license "LGPL-3.0-only"
   head "https://codeberg.org/redict/redict.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "b844f5012affe487e17f7cc9cfa01fa9583cdf1a0866950e2dac67b1d2fa4a5b"
-    sha256 cellar: :any,                 arm64_sonoma:  "8bdbb8a22afb3781c2600ba4da73fc0df95885e6f1e3b2464b24e63ffb75207a"
-    sha256 cellar: :any,                 arm64_ventura: "0311ce88486d0c261187b874cf1c69726b6b48c138f46f155b3ee578cba798a4"
-    sha256 cellar: :any,                 sonoma:        "5d50b6e8ae05d93cc8bc60030977a530ba33652acdf9a71f98d6546910594bcc"
-    sha256 cellar: :any,                 ventura:       "de694f4314360503a444759a53d6e1b33c81952c5ca2ddf9f7a03ff38a63d60a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9387d79e90d71278d27b0d5e337e7e70d456bb9d4be1f402d5bb531084a01a42"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9f7d8d12a5288b1852e8c07bb109476620efbf9d84a89faa66dfd3dd222c424c"
+    sha256 cellar: :any,                 arm64_sequoia: "c1444697872fc03c6329c6d3dbff23866eb486410b1c358a90e7b480098ae1c3"
+    sha256 cellar: :any,                 arm64_sonoma:  "9c660fb94b6860a1d61177918dc03892b2a2e88b4314bacba9087e0fe997e6e0"
+    sha256 cellar: :any,                 arm64_ventura: "411e38125ae432e5fed2c908831809e39e6c468fee18ea4c1297675c2172f8ab"
+    sha256 cellar: :any,                 sonoma:        "974d235c88dd6766946ce208be538788507540fe95668ed4ab8044f147801936"
+    sha256 cellar: :any,                 ventura:       "dcf0952b6f456dfc62238234226cec35f577394785281e3113087ad3e66aeab5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ae0d80bdeeba521f6be843c38035bfb52430facb25c9eae3071499a07d6b17f2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9af1fbc514cdee0c7e6d7df046d733d34b76f7f515c8c7c8b6f818525f3ae6be"
   end
 
   depends_on "openssl@3"

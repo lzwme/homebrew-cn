@@ -23,7 +23,7 @@ class Tfproviderlint < Formula
     ldflags = %W[
       -s -w
       -X github.com/bflad/tfproviderlint/version.Version=#{version}
-      -X github.com/bflad/tfproviderlint/version.VersionPrerelease=#{build.head? ? "dev" : ""}
+      -X github.com/bflad/tfproviderlint/version.VersionPrerelease=#{"dev" if build.head?}
     ]
 
     system "go", "build", *std_go_args(ldflags:), "./cmd/tfproviderlint"

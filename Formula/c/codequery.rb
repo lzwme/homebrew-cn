@@ -1,20 +1,16 @@
 class Codequery < Formula
   desc "Code-understanding, code-browsing or code-search tool"
   homepage "https://ruben2020.github.io/codequery/"
-  url "https://ghfast.top/https://github.com/ruben2020/codequery/archive/refs/tags/v1.0.0.tar.gz"
-  sha256 "b0776adeae2963f197e3b9a57eb7ca405542da5f6413e06063e8d68f8246baa8"
+  url "https://ghfast.top/https://github.com/ruben2020/codequery/archive/refs/tags/v1.0.1.tar.gz"
+  sha256 "40781a7499adddddcb9b7ab2d1d840453aed08f91f5ebc7c339c2f13f63a9403"
   license "MPL-2.0"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "4e4fb0e6e4d1171bff615afc316580b9fa839da228349d9ceae861da9f184004"
-    sha256 cellar: :any,                 arm64_ventura:  "7f2b375faf1d458989b42e8b03a4aa57599f54038e941752f50e18925ae4c43b"
-    sha256 cellar: :any,                 arm64_monterey: "3f13a8eb9bfbd76b95c2a9f93759b9667574df9fd949e9332d268b3e3f699406"
-    sha256 cellar: :any,                 sonoma:         "7d4ab5fa8902cc12ce5c8f72f808b8dab4399b3caa281ed04bc286ae0689e4fc"
-    sha256 cellar: :any,                 ventura:        "9b959ddfdcb5bbfcf3ab2a09f07ef279e76db150230c8c8a5ef7a8ab7ad00c8c"
-    sha256 cellar: :any,                 monterey:       "00a3a640de5c64f871865d155bba13485269d2d1c2ec4a68a13367ef789e6d90"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "02ad5e72b9b38a66604f6e1be788b94309e844276297037e402cfed743e25b80"
+    sha256 cellar: :any,                 arm64_sonoma:  "441aed26d8bab82bf838568027a57033f7a9fec930840981fd0ef360dcb23c49"
+    sha256 cellar: :any,                 arm64_ventura: "7e7fff8e621e9e760732974ccfd9cc12f43d1e869a353af9e52f6440b4e6e73f"
+    sha256 cellar: :any,                 sonoma:        "293e7ddd4234c50510567af791016ad5405a8e6a68d20973619d9c24a8b851e1"
+    sha256 cellar: :any,                 ventura:       "e8e049d791b8e613c39de8317496941c732de6cab376455f03a673d54c372659"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "23df699b0d89b71514dd0014238a1242496b9251274bccc29e38fddd0848d4eb"
   end
 
   depends_on "cmake" => :build

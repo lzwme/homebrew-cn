@@ -1,8 +1,8 @@
 class Sdl3 < Formula
   desc "Low-level access to audio, keyboard, mouse, joystick, and graphics"
   homepage "https://libsdl.org/"
-  url "https://ghfast.top/https://github.com/libsdl-org/SDL/releases/download/release-3.2.16/SDL3-3.2.16.tar.gz"
-  sha256 "6340e58879b2d15830c8460d2f589a385c444d1faa2a4828a9626c7322562be8"
+  url "https://ghfast.top/https://github.com/libsdl-org/SDL/releases/download/release-3.2.18/SDL3-3.2.18.tar.gz"
+  sha256 "1a775bde924397a8e0c08bfda198926c17be859d0288ad0dec1dea1b2ee04f8f"
   license "Zlib"
   head "https://github.com/libsdl-org/SDL.git", branch: "main"
 
@@ -13,13 +13,13 @@ class Sdl3 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "1c67df52a37bbd4f13f61eca7c19bea36a53ff3dc0d310c9a878cd0f924edb21"
-    sha256 cellar: :any,                 arm64_sonoma:  "85d25691ab5555af9cdc272551be6564bc0b460f57b2eae7effb6f6f044c2061"
-    sha256 cellar: :any,                 arm64_ventura: "abf021c48b6276686d35220f7288635fca53b0bec6f433c6810df091350e3bca"
-    sha256 cellar: :any,                 sonoma:        "d7f87a73bb06d65c1c3e5cb5d67fccccfe40ba4abf665909e4693ca41f442527"
-    sha256 cellar: :any,                 ventura:       "4275579a0a85d883b83906aa14a4bca6f1759af443bd70a8f8032d10cba925d9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "237d70db22ec812af6eb7568604c20868d1766e2e161350892402498c4ff8102"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "601e5d04d6e7d2f1ed8a2c50850952a49fa149f8e6458f841fc2f35725bf8521"
+    sha256 cellar: :any,                 arm64_sequoia: "bf86a3469d82023acf7377ba68e849badc9827f3f655d0a3438fd5325ca5ec7c"
+    sha256 cellar: :any,                 arm64_sonoma:  "22f76d982952ce37cc9632f65bcc5c44da7ac6ed60f1f117e40e0fec87116451"
+    sha256 cellar: :any,                 arm64_ventura: "bdb79a484cabc4972f403dd09c744712f913fe8f648273557c2b03eb7ce6253d"
+    sha256 cellar: :any,                 sonoma:        "e604c4dcc220b4bbcc7fb57f2be342617d881a4b944f8da3630b657272d6d236"
+    sha256 cellar: :any,                 ventura:       "768bcecd51f4bebe8265b0ad5f3ca6fa6d7f3ae534d45fe4e0efe592cc67046c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "25ae4b84f5ccc9e82d99f3f9168ec390e64d6b70344ebd470d2988eafb95cce7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e3abd46c9f13741b034792bdbe22ad741c6b20bd057cb13c34f353549328243e"
   end
 
   depends_on "cmake" => :build

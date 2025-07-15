@@ -1,19 +1,19 @@
 class Ipget < Formula
   desc "Retrieve files over IPFS and save them locally"
   homepage "https://github.com/ipfs/ipget/"
-  url "https://ghfast.top/https://github.com/ipfs/ipget/archive/refs/tags/v0.11.2.tar.gz"
-  sha256 "6c929d5ba324d9e0eeccf3e22ff0caa359e9937e3abdfda283caffe3fda5e2dc"
+  url "https://ghfast.top/https://github.com/ipfs/ipget/archive/refs/tags/v0.11.3.tar.gz"
+  sha256 "4e075d966cb6078dfd32b9985288f481d240d956250da3b940124d11a0a3116a"
   license "MIT"
   head "https://github.com/ipfs/ipget.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cb0f59e6ee28702711cbf7c289a391781ec47aa8388dda4f0dcfbec9ee023f60"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6f75a0ac07fee211ec4b7177d98c89ab7dc7736f644d9a86415f95147cf51722"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "52fa657e0315b0fea4187b6d4626ca92c0848de61ac68a86e651f097ca01d5b6"
-    sha256 cellar: :any_skip_relocation, sonoma:        "314066de6bb446eb676962d9ce5c47f9b63542085c7b357436ff9f0e78765157"
-    sha256 cellar: :any_skip_relocation, ventura:       "3682baa94e09d29956fe63930804cbd4a83714ff0eeb7342c4a4f0b1b8f1bb79"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0af805f7ab48f27dcb54299745fca9c2d1cb47241f3c10085e1a6c8766b74994"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "590ba364cc6aeb718b23ff5100b28a05b7d96809b5f253363cd9fbc78dd210f7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "06fd82270dc64d06966fd3fcf3626936b3b262ae5cb6ce8a1d97e01f940e128e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "30d87c10392f449ea84b0ec1468d4c87f08d52a3e371443b4d38e15da8c3e37b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "d6de12d03bb1e8eb412028b5321d0ce25c9724a02693ac77ff7b518cfc814476"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0c8d09300d393ce89fbcadd6ca2a75c0d938eb561ece4a3014b55cd6f47bda31"
+    sha256 cellar: :any_skip_relocation, ventura:       "5a7f79d04fcbac4bf6f2cb89201fb27389e0e5b068f7a88cd4af73ec74dfeb20"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3dd909d57ae12e0f7b2ddbd8228a895c1873dc017329a61f96e48ea64211854b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "12e4bd10ea1ee72102e23ceb3d974c8dc112deb55d6a4d9a24fb7e1d9365b417"
   end
 
   depends_on "go" => :build
