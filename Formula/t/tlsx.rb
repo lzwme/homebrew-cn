@@ -1,8 +1,8 @@
 class Tlsx < Formula
   desc "Fast and configurable TLS grabber focused on TLS based data collection"
   homepage "https://github.com/projectdiscovery/tlsx"
-  url "https://ghfast.top/https://github.com/projectdiscovery/tlsx/archive/refs/tags/v1.1.9.tar.gz"
-  sha256 "96280c609d8e82258ec2da99487702d1696d6430bdd179cbc64ff035be8f92c9"
+  url "https://ghfast.top/https://github.com/projectdiscovery/tlsx/archive/refs/tags/v1.2.0.tar.gz"
+  sha256 "0aefac187dfe49f1c30b52736915c81b5c1fa215bd76a2417fff9d3006acc98a"
   license "MIT"
   head "https://github.com/projectdiscovery/tlsx.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Tlsx < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1a75b7caa8eb3620f06e521b5089a6f855fbc678a5b33f94d3f4aa7257cc7769"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5f86c2d8958e80ee7fc67d722fb365daf6464db063a9d2628e345ac57c4985b6"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "7b9e4d8105f1b75e0dd35719a9abf3252c0d22c1da0fc85376172467eceb1973"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6ebb76c7c8f89a1865a76458f82b912d7d68b3a203822f88a43e40f4db151150"
-    sha256 cellar: :any_skip_relocation, ventura:       "0c2a977abfdd73a2f4f4e215ec9988620b22ff539b355c42d67922079ef31a31"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "64a75bb051709028ee1165ac69fa0ec92189a8e4a0899cc283fd7fc3ecd630d4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c29373fe2ba4c44c3178666a20b73349d907320ba837a22dd2da355e5667dd93"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fed350b33cac09ec4fc18bbd9297c627dbf0874c369b37729521e844a1e7061e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "7d24577463b54435632dbd5957eff82160c00ca4141e4fce3eb3798aec162d66"
+    sha256 cellar: :any_skip_relocation, sonoma:        "1accac8de524a65392d52081552d5865f00055f2ec88fac7198f5f2ed1a58da3"
+    sha256 cellar: :any_skip_relocation, ventura:       "d01b982b1d8d8254f2334c2f0aa1a52d6e63276c613037ee6a8cb339e32b5486"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "80cf98c7a3e327debe032d86cab507baef07a5d3af790cc7874adede8d4b1d74"
   end
 
   depends_on "go" => :build

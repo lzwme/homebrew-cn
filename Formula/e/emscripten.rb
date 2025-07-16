@@ -1,8 +1,8 @@
 class Emscripten < Formula
   desc "LLVM bytecode to JavaScript compiler"
   homepage "https://emscripten.org/"
-  url "https://ghfast.top/https://github.com/emscripten-core/emscripten/archive/refs/tags/4.0.10.tar.gz"
-  sha256 "dc1493ccc207bf6743f9cc97163c4b7671fbd9e22bec9f79fdc000a0edc774fe"
+  url "https://ghfast.top/https://github.com/emscripten-core/emscripten/archive/refs/tags/4.0.11.tar.gz"
+  sha256 "aecfc5df27141d5fb6dd2d4853d8cff0f7719fac4edea34ea7786a6a86d6ecf5"
   license all_of: [
     "Apache-2.0", # binaryen
     "Apache-2.0" => { with: "LLVM-exception" }, # llvm
@@ -16,14 +16,13 @@ class Emscripten < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "1f56da0bad00cb262d6fcc86ab6c8a1ed1cb3b6ffb09d9f713d6b9ed03f3aabf"
-    sha256 cellar: :any,                 arm64_sonoma:  "c3309002ed362f7b02546dc505e1ffb2c0f51ef3b30fb812e3719dcca43500b9"
-    sha256 cellar: :any,                 arm64_ventura: "f00fe21f8cea58e28d55af0239c7b6953192e04f72f94e60664c701717da8122"
-    sha256 cellar: :any,                 sonoma:        "8f20761e28026782b229dc7f627c4ad693992132c638b20788fcbbea94ccab5b"
-    sha256 cellar: :any,                 ventura:       "476e8635e2577cf0b2da6e29d1ec52b23a46288a8633fa87e16fa3ec3b6d08d2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "05a323d8bc54ae9da27d55b1828f98adc73248fbedffafe2f7a626ba003eed62"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "39cbd699d816cdafd43134337f4fd7f4a9c0500ea440bd7fb2574e4ae287303b"
+    sha256 cellar: :any,                 arm64_sequoia: "d747835082dfac0185527c77113e696d3214208d93c0f7a9c8a1b49df5d8a466"
+    sha256 cellar: :any,                 arm64_sonoma:  "3ec602b49a94a8853305c940589c430489d6471016f661b9679267111bfb3fa9"
+    sha256 cellar: :any,                 arm64_ventura: "bfe7deaaf34701b3cd9c6a4eb6d43a78f6cab99b8a400df8443608660a41658a"
+    sha256 cellar: :any,                 sonoma:        "cbac3c693163d9b5a0b785a8739f939b73e6f47f0a92ec371861cbd0187747a8"
+    sha256 cellar: :any,                 ventura:       "57f0d6b7420e950201351fde62b1b72da1a4f36327672bbd1781c848f60b4032"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bc7faf3256e904e47de44f0b27bc20f995cb7e430965d2b91eb6cc0675aaa147"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7b56ca42cff7c98e1cb85dd65b07771806a636441a26916d88b95ad3d36a55b3"
   end
 
   depends_on "cmake" => :build
@@ -63,9 +62,9 @@ class Emscripten < Formula
   # https://chromium.googlesource.com/emscripten-releases/+/<commit>/DEPS
   # Then use the listed binaryen_revision for the revision below.
   resource "binaryen" do
-    url "https://ghfast.top/https://github.com/WebAssembly/binaryen/archive/8c82b6884483315011541e4519afdcb7fd46df68.tar.gz"
-    version "8c82b6884483315011541e4519afdcb7fd46df68"
-    sha256 "7ab7ffe0dabbefe121ab4234a11d2ab04ff45827df050a0ab8b1cdc66465cbaf"
+    url "https://ghfast.top/https://github.com/WebAssembly/binaryen/archive/fc29e302e6708e71cc0a0058fcf4aee97140a750.tar.gz"
+    version "fc29e302e6708e71cc0a0058fcf4aee97140a750"
+    sha256 "aaea58bcfaa4ce311da642a708ec9a126e9b561c5191a182a41ccb5fa7acc0e5"
 
     livecheck do
       url "https://ghfast.top/https://raw.githubusercontent.com/emscripten-core/emsdk/refs/tags/#{LATEST_VERSION}/emscripten-releases-tags.json"
@@ -89,9 +88,9 @@ class Emscripten < Formula
   # See binaryen resource above for instructions on how to update this.
   # Then use the listed llvm_project_revision for the tarball below.
   resource "llvm" do
-    url "https://ghfast.top/https://github.com/llvm/llvm-project/archive/8f7e57485ee73205e108d74abb5565d5c63beaca.tar.gz"
-    version "8f7e57485ee73205e108d74abb5565d5c63beaca"
-    sha256 "ea3bdec770d19962bc678ec290d47feab1c88943acd26837a60caf5285768482"
+    url "https://ghfast.top/https://github.com/llvm/llvm-project/archive/bf94c8ddb321696956365830bf23dd232ef90e74.tar.gz"
+    version "bf94c8ddb321696956365830bf23dd232ef90e74"
+    sha256 "473e8bd776bfd8bea3a0bdc6d1dba7c4c12f07cb1a30c488f096f0566bafe9ff"
 
     livecheck do
       url "https://ghfast.top/https://raw.githubusercontent.com/emscripten-core/emsdk/refs/tags/#{LATEST_VERSION}/emscripten-releases-tags.json"

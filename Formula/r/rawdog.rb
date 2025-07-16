@@ -6,16 +6,16 @@ class Rawdog < Formula
   url "https://files.pythonhosted.org/packages/3c/ab/eaae3e0f2fac4a717d632990795fd6a560efaf9e54a1741e842234dec1cb/rawdog_ai-0.1.6.tar.gz"
   sha256 "1fc37d0e3336e87568ae9ee5dde5e7c68c1af652efd0956ee0c62281ddf14b41"
   license "Apache-2.0"
-  revision 14
+  revision 15
   head "https://github.com/AbanteAI/rawdog.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "85add8f0908e329bfb757efcb2d81550fcf19b7d92f7732c71702b2339491c1b"
-    sha256 cellar: :any,                 arm64_sonoma:  "9bffb908d2ff17574aaf3955b75508a9ac0d04338afdce6e108c1db7c3c741ff"
-    sha256 cellar: :any,                 arm64_ventura: "0395d26b6354eadbf59a965744f1847a83c3f4cecb499bd9723de36041b225f0"
-    sha256 cellar: :any,                 sonoma:        "f4ded40131f1503a7c56b3c4a2ae43cd8bf582a064bb4cad1d179635cb3ee974"
-    sha256 cellar: :any,                 ventura:       "1d38c6fbb679950a9b4ded894b2f9f4d9ac62144828dc2f0bbb529da66ea51cb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4864667c8cc32339865cb488b9c3ad31cf8382ae0367966ab90ed41dbf865b70"
+    sha256 cellar: :any,                 arm64_sequoia: "71035551b17203e095b1245ccce7dbc585846d06dd5dcc417c0792a37dfff013"
+    sha256 cellar: :any,                 arm64_sonoma:  "e4c867e5eb332aa8398465ba4e9fc3d95faac489e1086921a847a8db167a59f9"
+    sha256 cellar: :any,                 arm64_ventura: "bfcffd5b0635979161e80dcb7a159d749c7ff0a016c66f738c0b93f5b08173ff"
+    sha256 cellar: :any,                 sonoma:        "3f8dbb5f7a0a3488de4db98370786394b15904f4463bfaa1547f9d184041630c"
+    sha256 cellar: :any,                 ventura:       "287337032024fbc7ee19e42125fa43bb6ef0f7012454e091e87ba0c09734e2fb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9e8da0938c02f11a4c6a3330e7551437e42804b6693560ad3712c0ec2ec4beaf"
   end
 
   depends_on "pkgconf" => :build
@@ -30,13 +30,13 @@ class Rawdog < Formula
   end
 
   resource "aiohttp" do
-    url "https://files.pythonhosted.org/packages/42/6e/ab88e7cb2a4058bed2f7870276454f85a7c56cd6da79349eb314fc7bbcaa/aiohttp-3.12.13.tar.gz"
-    sha256 "47e2da578528264a12e4e3dd8dd72a7289e5f812758fe086473fab037a10fcce"
+    url "https://files.pythonhosted.org/packages/e6/0b/e39ad954107ebf213a2325038a3e7a506be3d98e1435e1f82086eec4cde2/aiohttp-3.12.14.tar.gz"
+    sha256 "6e06e120e34d93100de448fd941522e11dafa78ef1a893c179901b7d66aa29f2"
   end
 
   resource "aiosignal" do
-    url "https://files.pythonhosted.org/packages/ba/b5/6d55e80f6d8a08ce22b982eafa278d823b541c925f11ee774b0b9c43473d/aiosignal-1.3.2.tar.gz"
-    sha256 "a8c255c66fafb1e499c9351d0bf32ff2d8a0321595ebac3b93713656d2436f54"
+    url "https://files.pythonhosted.org/packages/61/62/06741b579156360248d1ec624842ad0edf697050bbaf7c3e46394e106ad1/aiosignal-1.4.0.tar.gz"
+    sha256 "f47eecd9468083c2029cc99945502cb7708b082c232f9aca65da147157b251c7"
   end
 
   resource "annotated-types" do
@@ -105,8 +105,8 @@ class Rawdog < Formula
   end
 
   resource "huggingface-hub" do
-    url "https://files.pythonhosted.org/packages/a4/01/bfe0534a63ce7a2285e90dbb33e8a5b815ff096d8f7743b135c256916589/huggingface_hub-0.33.1.tar.gz"
-    sha256 "589b634f979da3ea4b8bdb3d79f97f547840dc83715918daf0b64209c0844c7b"
+    url "https://files.pythonhosted.org/packages/4b/9e/9366b7349fc125dd68b9d384a0fea84d67b7497753fe92c71b67e13f47c4/huggingface_hub-0.33.4.tar.gz"
+    sha256 "6af13478deae120e765bfd92adad0ae1aec1ad8c439b46f23058ad5956cbca0a"
   end
 
   resource "idna" do
@@ -140,8 +140,8 @@ class Rawdog < Formula
   end
 
   resource "litellm" do
-    url "https://files.pythonhosted.org/packages/26/58/1a8ecf64b9a1f01dbddc123200f3156638c919fc3de683bd206235ccd33c/litellm-1.73.6.tar.gz"
-    sha256 "072ff9225aaa9caafe0fa9782df0ba4c93f893791cc55dd5ed218a401e788e88"
+    url "https://files.pythonhosted.org/packages/cd/e3/3091066f6682016840e9a36111560656b609b95de04b2ec7b19ad2580eaa/litellm-1.74.3.tar.gz"
+    sha256 "a9e87ebe78947ceec67e75f830f1c956cc653b84563574241acea9c84e7e3ca1"
   end
 
   resource "markupsafe" do
@@ -150,13 +150,13 @@ class Rawdog < Formula
   end
 
   resource "multidict" do
-    url "https://files.pythonhosted.org/packages/03/5d/d72502cd6dd64b0c5a5117b1701f05c38e94ffb4a1b4ab65ff0cd9b974e8/multidict-6.6.2.tar.gz"
-    sha256 "c1e8b8b0523c0361a78ce9b99d9850c51cf25e1fa3c5686030ce75df6fdf2918"
+    url "https://files.pythonhosted.org/packages/3d/2c/5dad12e82fbdf7470f29bff2171484bf07cb3b16ada60a6589af8f376440/multidict-6.6.3.tar.gz"
+    sha256 "798a9eb12dab0a6c2e29c1de6f3468af5cb2da6053a20dfa3344907eed0937cc"
   end
 
   resource "openai" do
-    url "https://files.pythonhosted.org/packages/e4/d7/e91c6a9cf71726420cddf539852ee4c29176ebb716a702d9118d0409fd8e/openai-1.93.0.tar.gz"
-    sha256 "988f31ade95e1ff0585af11cc5a64510225e4f5cd392698c675d0a9265b8e337"
+    url "https://files.pythonhosted.org/packages/a1/a3/70cd57c7d71086c532ce90de5fdef4165dc6ae9dbf346da6737ff9ebafaa/openai-1.95.1.tar.gz"
+    sha256 "f089b605282e2a2b6776090b4b46563ac1da77f56402a222597d591e2dcc1086"
   end
 
   resource "packaging" do
@@ -205,8 +205,8 @@ class Rawdog < Formula
   end
 
   resource "rpds-py" do
-    url "https://files.pythonhosted.org/packages/8c/a6/60184b7fc00dd3ca80ac635dd5b8577d444c57e8e8742cecabfacb829921/rpds_py-0.25.1.tar.gz"
-    sha256 "8960b6dac09b62dac26e75d7e2c4a22efb835d827a7278c34f72b2b84fa160e3"
+    url "https://files.pythonhosted.org/packages/a5/aa/4456d84bbb54adc6a916fb10c9b374f78ac840337644e4a5eda229c81275/rpds_py-0.26.0.tar.gz"
+    sha256 "20dae58a859b0906f0685642e591056f1e787f3a8b39c8e8749a45dc7d26bdb0"
   end
 
   resource "sniffio" do
@@ -230,8 +230,8 @@ class Rawdog < Formula
   end
 
   resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/d1/bc/51647cd02527e87d05cb083ccc402f93e441606ff1f01739a62c8ad09ba5/typing_extensions-4.14.0.tar.gz"
-    sha256 "8676b788e32f02ab42d9e7c61324048ae4c6d844a399eebace3d4979d75ceef4"
+    url "https://files.pythonhosted.org/packages/98/5a/da40306b885cc8c09109dc2e1abd358d5684b1425678151cdaed4731c822/typing_extensions-4.14.1.tar.gz"
+    sha256 "38b39f4aeeab64884ce9f74c94263ef78f3c22467c8724005483154c26648d36"
   end
 
   resource "typing-inspection" do

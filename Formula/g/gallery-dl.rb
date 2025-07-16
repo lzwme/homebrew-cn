@@ -3,14 +3,13 @@ class GalleryDl < Formula
 
   desc "Command-line downloader for image-hosting site galleries and collections"
   homepage "https://github.com/mikf/gallery-dl"
-  url "https://files.pythonhosted.org/packages/a6/3e/e9c024254ff37553d02601205db34fdb854c9b556ee669679702807a50be/gallery_dl-1.29.7.tar.gz"
-  sha256 "5fabac1ca7279420bb3ebff5bff8cee80478f48ffb314a42f4ed580f122c0117"
+  url "https://files.pythonhosted.org/packages/c2/5b/08e724c2de8b24a2b29eff121f3a225630e0cb6adafbc2c8a30b8487b13e/gallery_dl-1.30.0.tar.gz"
+  sha256 "d34772c13847d85fee0cd388aea59238bb7332a1c7614e4df857c392035b0489"
   license "GPL-2.0-only"
-  revision 2
   head "https://github.com/mikf/gallery-dl.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "b7648510b9785f9cc280d13e3172ca632d7dfa81c6b5dc7970407718588abe93"
+    sha256 cellar: :any_skip_relocation, all: "7d32b867d4508c38852c2d790958bb9f3558fb1d7e94922dd3b7f53d8b18d6e6"
   end
 
   depends_on "certifi"

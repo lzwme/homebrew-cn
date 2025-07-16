@@ -1,20 +1,20 @@
 class Hbase < Formula
   desc "Hadoop database: a distributed, scalable, big data store"
   homepage "https://hbase.apache.org"
-  url "https://www.apache.org/dyn/closer.lua?path=hbase/2.6.2/hbase-2.6.2-bin.tar.gz"
-  mirror "https://archive.apache.org/dist/hbase/2.6.2/hbase-2.6.2-bin.tar.gz"
-  sha256 "5ff9a3993031f5a9e1d94fd795fb9ff8ee003b90570e476c63af6d3dd744a583"
+  url "https://www.apache.org/dyn/closer.lua?path=hbase/2.6.3/hbase-2.6.3-bin.tar.gz"
+  mirror "https://archive.apache.org/dist/hbase/2.6.3/hbase-2.6.3-bin.tar.gz"
+  sha256 "c5d396994d85feea27bd9bc426598f815db09a4691da5cacbdbf90dc41822ffa"
   # We bundle hadoop-lzo which is GPL-3.0-or-later
   license all_of: ["Apache-2.0", "GPL-3.0-or-later"]
 
   bottle do
-    sha256 arm64_sequoia: "d76a13a786aad736dc835a851093884a5f546000537f1c0dbc9787e8a53046b9"
-    sha256 arm64_sonoma:  "a38e8f800db8309eef49ce43641250bba09b54df5db0f6e6be3b2db630870993"
-    sha256 arm64_ventura: "fe7c197d0041aefe2b7c087ebc8309da66974a2395db77d763b0c056513813bf"
-    sha256 sonoma:        "03d6287c185c479d6fa135e85ddf90947df47b496d793720cfc994682e7f6ddc"
-    sha256 ventura:       "f37ea71e025d1d3daa046013a6c55bc4d50118efa4a93513cd92cc278a5e9d2b"
-    sha256 arm64_linux:   "e0f0e0efda771923a5e568d44213faa079d49aec80981f07a2ec53d233e42a1e"
-    sha256 x86_64_linux:  "5ed28e89fd22d263715dc6579d1185ed053546ed2f76ab6de8ec34dde3c88e0c"
+    sha256 arm64_sequoia: "06384e13687b92cdd86018493fac160e50a7481e01351cbb3e82b4cb069500b0"
+    sha256 arm64_sonoma:  "228ee184adde9f474ccefb7d1ab9ef34c169d1a72f3f90727b18ca35f3a45e5f"
+    sha256 arm64_ventura: "0602ee8b314011812c3bdf5ddc44f2328705d6fb2e3ac916259b3d85254d4f72"
+    sha256 sonoma:        "4250b3dc10bc4bf4dcdfe9b1ba3fa031c4b0a3bc3e41c3ff63dc856b4a41c7e4"
+    sha256 ventura:       "d7450a59e01df807766ab4f04d0d6444e242e8b15d951926359be853022788ae"
+    sha256 arm64_linux:   "5bd30646a0fcb94e312ba8e19cf8e77ce53d12f490a08ae0e8ae971d8ea815e0"
+    sha256 x86_64_linux:  "5c8deb9f83ee3fc5d4e5a2cd9027b9d5ed6207e602e3d2deb89535d1d64c96a7"
   end
 
   depends_on "ant" => :build

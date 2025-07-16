@@ -6,15 +6,16 @@ class Pferd < Formula
   url "https://files.pythonhosted.org/packages/2f/af/371337e0e06866d4efb36c1ab8e375736f1e2d7280544da130ef6687534b/pferd-3.8.3.tar.gz"
   sha256 "0f2c4e582a885b2a1a88b9a896cfd0932e8f25db60b252c0957a6ffdd2085763"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e6785c2c9361851a8fddc5f9f3187883f3b171fc82de5305951baf52453ce738"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "39aa87a370c2350c331331681b6f8b2b78515596d25378c5fad747cbc47013d0"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "6c97cecea91363bbc2b717becc90ba2b374fda2cc859412960baf00d86c1c365"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5b689ffd92a3f75267c1f215713c204b0e09416bbae5030846d65d68f0480154"
-    sha256 cellar: :any_skip_relocation, ventura:       "126694be3cab8e6b89e76e9f3fc36b6d16c9aa54b3b844b2be3b30124fcd1572"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a4865a3ac4fdef20456643a995310407c88d124ab4ffcf55ebe6342637812a38"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1418f54411135ad8e4eadc28ab775a58c7e95cc50fe35618c15f2cce089a1cd3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "034191f1d548ab6cfacd6bfc7b8e2e23191402ceeb11c6cfb6acaf0a80b211ce"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0b627dd3fcef6fa428fd23835a2c56b5c6106109cfd0903ddfb89867df40c60e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "7e6e298ddb9aee9e8b21de2b1ba43b53303decdaa17ef72823dc6aa8b4fe21c7"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2ebeb05cc7a5760cb38a5be0d8e6507bb2c3385bdc2f858111655901e600cd5a"
+    sha256 cellar: :any_skip_relocation, ventura:       "e68b702dd96107e597ecbecd7b9a46aa326edd9f01f131e2869c76fcdc136d74"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b49556f0d550935c3188458ba715c6a4d8bcaca0f69dd5d8f351dd6d09646f92"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fea4c17a5b28186e1ba98b339603c77c069d737981e273506e579c917a7e04b4"
   end
 
   depends_on "certifi"
@@ -27,13 +28,13 @@ class Pferd < Formula
   end
 
   resource "aiohttp" do
-    url "https://files.pythonhosted.org/packages/42/6e/ab88e7cb2a4058bed2f7870276454f85a7c56cd6da79349eb314fc7bbcaa/aiohttp-3.12.13.tar.gz"
-    sha256 "47e2da578528264a12e4e3dd8dd72a7289e5f812758fe086473fab037a10fcce"
+    url "https://files.pythonhosted.org/packages/e6/0b/e39ad954107ebf213a2325038a3e7a506be3d98e1435e1f82086eec4cde2/aiohttp-3.12.14.tar.gz"
+    sha256 "6e06e120e34d93100de448fd941522e11dafa78ef1a893c179901b7d66aa29f2"
   end
 
   resource "aiosignal" do
-    url "https://files.pythonhosted.org/packages/ba/b5/6d55e80f6d8a08ce22b982eafa278d823b541c925f11ee774b0b9c43473d/aiosignal-1.3.2.tar.gz"
-    sha256 "a8c255c66fafb1e499c9351d0bf32ff2d8a0321595ebac3b93713656d2436f54"
+    url "https://files.pythonhosted.org/packages/61/62/06741b579156360248d1ec624842ad0edf697050bbaf7c3e46394e106ad1/aiosignal-1.4.0.tar.gz"
+    sha256 "f47eecd9468083c2029cc99945502cb7708b082c232f9aca65da147157b251c7"
   end
 
   resource "attrs" do
@@ -69,11 +70,6 @@ class Pferd < Formula
   resource "jaraco-functools" do
     url "https://files.pythonhosted.org/packages/49/1c/831faaaa0f090b711c355c6d8b2abf277c72133aab472b6932b03322294c/jaraco_functools-4.2.1.tar.gz"
     sha256 "be634abfccabce56fa3053f8c7ebe37b682683a4ee7793670ced17bab0087353"
-  end
-
-  resource "jeepney" do
-    url "https://files.pythonhosted.org/packages/7b/6f/357efd7602486741aa73ffc0617fb310a29b588ed0fd69c2399acbb85b0c/jeepney-0.9.0.tar.gz"
-    sha256 "cf0e9e845622b81e4a28df94c40345400256ec608d0e55bb8a3feaa9163f5732"
   end
 
   resource "keyring" do
@@ -116,19 +112,14 @@ class Pferd < Formula
     sha256 "82f1bc23a6a21ebca4ae0c45af9bdbc492ed20231dcb63f297d6d1021a9d5725"
   end
 
-  resource "secretstorage" do
-    url "https://files.pythonhosted.org/packages/53/a4/f48c9d79cb507ed1373477dbceaba7401fd8a23af63b837fa61f1dcd3691/SecretStorage-3.3.3.tar.gz"
-    sha256 "2403533ef369eca6d2ba81718576c5e0f564d5cca1b58f73a8b23e7d4eeebd77"
-  end
-
   resource "soupsieve" do
     url "https://files.pythonhosted.org/packages/3f/f4/4a80cd6ef364b2e8b65b15816a843c0980f7a5a2b4dc701fc574952aa19f/soupsieve-2.7.tar.gz"
     sha256 "ad282f9b6926286d2ead4750552c8a6142bc4c783fd66b0293547c8fe6ae126a"
   end
 
   resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/d1/bc/51647cd02527e87d05cb083ccc402f93e441606ff1f01739a62c8ad09ba5/typing_extensions-4.14.0.tar.gz"
-    sha256 "8676b788e32f02ab42d9e7c61324048ae4c6d844a399eebace3d4979d75ceef4"
+    url "https://files.pythonhosted.org/packages/98/5a/da40306b885cc8c09109dc2e1abd358d5684b1425678151cdaed4731c822/typing_extensions-4.14.1.tar.gz"
+    sha256 "38b39f4aeeab64884ce9f74c94263ef78f3c22467c8724005483154c26648d36"
   end
 
   resource "yarl" do

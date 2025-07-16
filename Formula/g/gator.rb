@@ -1,18 +1,18 @@
 class Gator < Formula
   desc "CLI Utility for Open Policy Agent Gatekeeper"
   homepage "https://open-policy-agent.github.io/gatekeeper/"
-  url "https://ghfast.top/https://github.com/open-policy-agent/gatekeeper/archive/refs/tags/v3.19.2.tar.gz"
-  sha256 "fc08aeb80fc5776c9e49666fe87bad89187ec9ac990bcafedc1adec6beb647e6"
+  url "https://ghfast.top/https://github.com/open-policy-agent/gatekeeper/archive/refs/tags/v3.19.3.tar.gz"
+  sha256 "b95c38f719db5f5fd1f018b217b277148d0c39b47d648e371529523776028cfa"
   license "Apache-2.0"
   head "https://github.com/open-policy-agent/gatekeeper.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4ff9bf7337c5072f53593e2e777444f63537908300aa29867194d661899f3a32"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9a1320fca616e373555294689365aa0f4672a8d6c99ed8e77fba2b607933a7be"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "148e06f2635d3621dc7c05068e699613faa634b66bb724a6dac04c0a4976a536"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7236d9d3a2ae682e14c894aec45eda216387ac53ff2f0eacccfee368772f0ddc"
-    sha256 cellar: :any_skip_relocation, ventura:       "5bd7e46d06226075416b58f02d52e104cab50cfd604fe0a42431e0bbca5c221d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "41f62ba20589015a7074f0587e02e97d73257ebb37b1db4f4a8de38847ea6238"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f9316a570f1a660dca965829be90ebb92fbff4d943adbcbb51238d5882b0bc12"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2ca5c8e81c04c1050be3a9774bafbd79647a54fc593c9615eb4a1e5317bc3473"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "f4c2bfb8e64a59403cc2ec840b678e6905219cca52dc1a762abebc535284d0d1"
+    sha256 cellar: :any_skip_relocation, sonoma:        "19bbeb8e1143320c1d2c47376e1685e271123d58257c42cbcd9ad291ba608cd5"
+    sha256 cellar: :any_skip_relocation, ventura:       "7f3ee576315464c109b8c66ab04bc143bad7478a0400db8d7b32ef6d96d40ede"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dfa10caa07f7b26092bbac35ce7c4208b44e2e2722a191a5c6ea2272079e15b3"
   end
 
   depends_on "go" => :build

@@ -1,8 +1,8 @@
 class Coder < Formula
   desc "Tool for provisioning self-hosted development environments with Terraform"
   homepage "https://coder.com"
-  url "https://ghfast.top/https://github.com/coder/coder/archive/refs/tags/v2.23.3.tar.gz"
-  sha256 "424e7787cad50d3398f397182487f59362896d2c62d3ff179b6ec8b4e7c06fb1"
+  url "https://ghfast.top/https://github.com/coder/coder/archive/refs/tags/v2.23.4.tar.gz"
+  sha256 "818e07edb59b85a4393ad499aeb9b6c665e62d98b5d8104c1d481e78feef4850"
   license "AGPL-3.0-only"
   head "https://github.com/coder/coder.git", branch: "main"
 
@@ -15,13 +15,13 @@ class Coder < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6ab3f855d4a82ed62ed4146726fc4c1a9aa3aa6c1f07f80d82b0a6323c8a00e6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "88e2492721df451723cc8c82dc033942ad5a44dd89e39ee82f2d7ca58eeea1be"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "f6a8176a331cbae1005fc3ff61a7b50993fec7807dbbf476c5d68f7ba6a0cb96"
-    sha256 cellar: :any_skip_relocation, sonoma:        "cc49d730bbaaa42b2ea61a1a13730ac09b7028969be8dccd0ce353c332a8d0b2"
-    sha256 cellar: :any_skip_relocation, ventura:       "f18079dd6f27869b610a29ae266e1a225f5b61ea21f88b668c20ec21dd7c7507"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3383b75fca978af7d022a96fa20cc70bee4c1c43a59685d7c2c2565005eaf899"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3456e08318a6c4e953c5c827ddc150835007c811d445b05a65881e2b4ec6920e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "20693efe650e3c67dbc75241511460fc75944da1609869e2954fa1b79042ac3d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9d6244b8ca683e3932dbca268a0245a3a4cfaebc93f0c4e3c7860940ddf7c686"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "19c09262583b936c855190b73d53a2c56ad05bef81a6f793613152c8092150f8"
+    sha256 cellar: :any_skip_relocation, sonoma:        "00586d126817089a62ba390481a2cbc8d1c928f0fa4e1ff0d8efc864123d8c89"
+    sha256 cellar: :any_skip_relocation, ventura:       "6f87922c9450cec8560b7bca058c16ac510b859af8cfb08e358ca4a236889bfd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9634ae843987992d12593094443ab1224d937eb43cbe74b08f208569284db524"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8e479f17b6a08b99db6cd00c026f0a84c5aa359eebf43cb2488c2c226a10c2b4"
   end
 
   depends_on "go" => :build

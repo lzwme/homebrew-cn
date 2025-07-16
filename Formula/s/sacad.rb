@@ -6,17 +6,18 @@ class Sacad < Formula
   url "https://ghfast.top/https://github.com/desbma/sacad/archive/refs/tags/2.8.0.tar.gz"
   sha256 "73333aabbab71a941ed393e9c497250bb9a8a06eb93a4da9afef46d2d6dd5f00"
   license "MPL-2.0"
+  revision 1
 
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "209abcc3e86b84f3b8fb42814f6ed486528f4a80eda90f39bc498ebfb1c0f851"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f186d3996c26173edf0f409a7ae1a6142085d2640250c115fb3e94510730301d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "1db21b5d97acc6eda7c4228b2b2beaff2c72526151b823931db678a67f878f8b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "cc399147b8a49e0655641cd97b524543b24d16bd75b0bcc9f34bebad81cc3d07"
-    sha256 cellar: :any_skip_relocation, ventura:       "d45c054900915a504c447c0c287202975039feb33cbe2169496bc64a4a3e915a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d3c59d39a3064b7bbcd88b1027e78bd8eb1b1e327db3128d6c80ac84f0e3e4a8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "37b39ab05560f6440cdbb02e6cca68b5d0ee0f71ba5c3dba66c9fa6f4a923802"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "48cebf9ff9a2da62bce32788aff038da02e286e588e028abf01b60d624ebc5d7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "942e5564cb50b42ae8b1975b435269e777ac698d696c6c504b5dbaac11b6e156"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "d96332e46f3377dbf8c969957f13e8880efbc65ee7635f7acfcae6f8e577d364"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e7090ec7fa22ba6761510913d99f20801b47e22e015c2809d45c5f1bd0ab39f1"
+    sha256 cellar: :any_skip_relocation, ventura:       "4f40951172445dba06adcf3fb95b6470574e789dca03aeb721b771f072c2c3e8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "83fc77af351f292459b39bdc99cb18be17d78b589800a662a4b1c49fa2b9bbce"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "85edbf13b739f9d72757ac3d21d895ae65dee2dfc7e3f5e54056ff3c3031ab85"
   end
 
   depends_on "pillow"
@@ -31,13 +32,13 @@ class Sacad < Formula
   end
 
   resource "aiohttp" do
-    url "https://files.pythonhosted.org/packages/f1/d9/1c4721d143e14af753f2bf5e3b681883e1f24b592c0482df6fa6e33597fa/aiohttp-3.11.16.tar.gz"
-    sha256 "16f8a2c9538c14a557b4d309ed4d0a7c60f0253e8ed7b6c9a2859a7582f8b1b8"
+    url "https://files.pythonhosted.org/packages/e6/0b/e39ad954107ebf213a2325038a3e7a506be3d98e1435e1f82086eec4cde2/aiohttp-3.12.14.tar.gz"
+    sha256 "6e06e120e34d93100de448fd941522e11dafa78ef1a893c179901b7d66aa29f2"
   end
 
   resource "aiosignal" do
-    url "https://files.pythonhosted.org/packages/ba/b5/6d55e80f6d8a08ce22b982eafa278d823b541c925f11ee774b0b9c43473d/aiosignal-1.3.2.tar.gz"
-    sha256 "a8c255c66fafb1e499c9351d0bf32ff2d8a0321595ebac3b93713656d2436f54"
+    url "https://files.pythonhosted.org/packages/61/62/06741b579156360248d1ec624842ad0edf697050bbaf7c3e46394e106ad1/aiosignal-1.4.0.tar.gz"
+    sha256 "f47eecd9468083c2029cc99945502cb7708b082c232f9aca65da147157b251c7"
   end
 
   resource "appdirs" do
@@ -51,8 +52,8 @@ class Sacad < Formula
   end
 
   resource "bitarray" do
-    url "https://files.pythonhosted.org/packages/f1/6e/e3877eebb83e3e9d22b6089be7b8c098d3d09b2195a9570d6d9049e90d5b/bitarray-3.3.1.tar.gz"
-    sha256 "8c89219a672d0a15ab70f8a6f41bc8355296ec26becef89a127c1a32bb2e6345"
+    url "https://files.pythonhosted.org/packages/8a/e9/be1722981d43341ec1da6370255c414ec00ba23a99e01fc315dbe4c5c9f4/bitarray-3.5.1.tar.gz"
+    sha256 "b03c49d1a2eb753cc6090053f1c675ada71e1c3ea02011f1996cf4c2b6e9d6d6"
   end
 
   resource "cssselect" do
@@ -61,8 +62,8 @@ class Sacad < Formula
   end
 
   resource "frozenlist" do
-    url "https://files.pythonhosted.org/packages/8f/ed/0f4cec13a93c02c47ec32d81d11c0c1efbadf4a471e3f3ce7cad366cbbd3/frozenlist-1.5.0.tar.gz"
-    sha256 "81d5af29e61b9c8348e876d442253723928dce6433e0e76cd925cd83f1b4b817"
+    url "https://files.pythonhosted.org/packages/79/b1/b64018016eeb087db503b038296fd782586432b9c077fc5c7839e9cb6ef6/frozenlist-1.7.0.tar.gz"
+    sha256 "2e310d81923c2437ea8670467121cc3e9b0f76d3043cc1d2331d56c7fb7a3a8f"
   end
 
   resource "idna" do
@@ -71,13 +72,13 @@ class Sacad < Formula
   end
 
   resource "lxml" do
-    url "https://files.pythonhosted.org/packages/80/61/d3dc048cd6c7be6fe45b80cedcbdd4326ba4d550375f266d9f4246d0f4bc/lxml-5.3.2.tar.gz"
-    sha256 "773947d0ed809ddad824b7b14467e1a481b8976e87278ac4a730c2f7c7fcddc1"
+    url "https://files.pythonhosted.org/packages/c5/ed/60eb6fa2923602fba988d9ca7c5cdbd7cf25faa795162ed538b527a35411/lxml-6.0.0.tar.gz"
+    sha256 "032e65120339d44cdc3efc326c9f660f5f7205f3a535c1fdbf898b29ea01fb72"
   end
 
   resource "multidict" do
-    url "https://files.pythonhosted.org/packages/da/2c/e367dfb4c6538614a0c9453e510d75d66099edf1c4e69da1b5ce691a1931/multidict-6.4.3.tar.gz"
-    sha256 "3ada0b058c9f213c5f95ba301f922d402ac234f1111a7d8fd70f1b99f3c281ec"
+    url "https://files.pythonhosted.org/packages/3d/2c/5dad12e82fbdf7470f29bff2171484bf07cb3b16ada60a6589af8f376440/multidict-6.6.3.tar.gz"
+    sha256 "798a9eb12dab0a6c2e29c1de6f3468af5cb2da6053a20dfa3344907eed0937cc"
   end
 
   resource "mutagen" do
@@ -86,8 +87,8 @@ class Sacad < Formula
   end
 
   resource "propcache" do
-    url "https://files.pythonhosted.org/packages/07/c8/fdc6686a986feae3541ea23dcaa661bd93972d3940460646c6bb96e21c40/propcache-0.3.1.tar.gz"
-    sha256 "40d980c33765359098837527e18eddefc9a24cea5b45e078a7f3bb5b032c6ecf"
+    url "https://files.pythonhosted.org/packages/a6/16/43264e4a779dd8588c21a70f0709665ee8f611211bdd2c87d952cfa7c776/propcache-0.3.2.tar.gz"
+    sha256 "20d7d62e4e7ef05f221e0db2856b979540686342e7dd9973b815599c7057e168"
   end
 
   resource "tqdm" do
@@ -96,8 +97,8 @@ class Sacad < Formula
   end
 
   resource "unidecode" do
-    url "https://files.pythonhosted.org/packages/f7/89/19151076a006b9ac0dd37b1354e031f5297891ee507eb624755e58e10d3e/Unidecode-1.3.8.tar.gz"
-    sha256 "cfdb349d46ed3873ece4586b96aa75258726e2fa8ec21d6f00a591d98806c2f4"
+    url "https://files.pythonhosted.org/packages/94/7d/a8a765761bbc0c836e397a2e48d498305a865b70a8600fd7a942e85dcf63/Unidecode-1.4.0.tar.gz"
+    sha256 "ce35985008338b676573023acc382d62c264f307c8f7963733405add37ea2b23"
   end
 
   resource "web-cache" do
@@ -106,8 +107,8 @@ class Sacad < Formula
   end
 
   resource "yarl" do
-    url "https://files.pythonhosted.org/packages/fc/4d/8a8f57caccce49573e567744926f88c6ab3ca0b47a257806d1cf88584c5f/yarl-1.19.0.tar.gz"
-    sha256 "01e02bb80ae0dbed44273c304095295106e1d9470460e773268a27d11e594892"
+    url "https://files.pythonhosted.org/packages/3c/fb/efaa23fa4e45537b827620f04cf8f3cd658b76642205162e072703a5b963/yarl-1.20.1.tar.gz"
+    sha256 "d017a4997ee50c91fd5466cef416231bb82177b93b029906cefc542ce14c35ac"
   end
 
   def install

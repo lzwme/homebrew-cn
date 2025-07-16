@@ -1,8 +1,8 @@
 class Infisical < Formula
   desc "CLI for Infisical"
   homepage "https://infisical.com/docs/cli/overview"
-  url "https://ghfast.top/https://github.com/Infisical/infisical/archive/refs/tags/infisical-cli/v0.41.89.tar.gz"
-  sha256 "9adff41ed468ba2dfebfa1696233403c90a4888205fe095fdad79c91eb0409d8"
+  url "https://ghfast.top/https://github.com/Infisical/infisical/archive/refs/tags/infisical-cli/v0.41.90.tar.gz"
+  sha256 "c246439c7a60e57f332d0ffd478110441498e6f266ba21865f78dde328244350"
   license "MIT"
   head "https://github.com/Infisical/infisical.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Infisical < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "99c92397cc538d78089997b8a9519097e85e9689a0dbb99d4ecc5c26d3f82d48"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "99c92397cc538d78089997b8a9519097e85e9689a0dbb99d4ecc5c26d3f82d48"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "99c92397cc538d78089997b8a9519097e85e9689a0dbb99d4ecc5c26d3f82d48"
-    sha256 cellar: :any_skip_relocation, sonoma:        "cf46b98ca945734960d2bb6734db9aac71e37f7188e11caaacaa47574ea168c6"
-    sha256 cellar: :any_skip_relocation, ventura:       "cf46b98ca945734960d2bb6734db9aac71e37f7188e11caaacaa47574ea168c6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4c6c367dbc4f41e0a13ea592cab75727c44fc22d31ab10d453ce1cb74b40df23"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5bc1e0e921d86036c42a16800918e0208c0c83a0db7943bacd467651a55888af"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5bc1e0e921d86036c42a16800918e0208c0c83a0db7943bacd467651a55888af"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "5bc1e0e921d86036c42a16800918e0208c0c83a0db7943bacd467651a55888af"
+    sha256 cellar: :any_skip_relocation, sonoma:        "93966e5d89d6773c2ea5aa40d1ed1ae9b061ad26430fbfad933e3bfe0d71bc44"
+    sha256 cellar: :any_skip_relocation, ventura:       "93966e5d89d6773c2ea5aa40d1ed1ae9b061ad26430fbfad933e3bfe0d71bc44"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1b7580328aa751528593135df1a464611d3e1d2559f7dfa33ff60c5d5e417884"
   end
 
   depends_on "go" => :build

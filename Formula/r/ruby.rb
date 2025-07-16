@@ -7,8 +7,8 @@ class Ruby < Formula
   stable do
     # Consider changing the default of `Gem.default_user_install` to true with Ruby 3.5.
     # This may depend on https://github.com/rubygems/rubygems/issues/5682.
-    url "https://cache.ruby-lang.org/pub/ruby/3.4/ruby-3.4.4.tar.gz"
-    sha256 "a0597bfdf312e010efd1effaa8d7f1d7833146fdc17950caa8158ffa3dcbfa85"
+    url "https://cache.ruby-lang.org/pub/ruby/3.4/ruby-3.4.5.tar.gz"
+    sha256 "1d88d8a27b442fdde4aa06dc99e86b0bbf0b288963d8433112dd5fac798fd5ee"
 
     # Should be updated only when Ruby is updated (if an update is available).
     # The exception is Rubygem security fixes, which mandate updating this
@@ -30,14 +30,13 @@ class Ruby < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_sequoia: "f91b9870507ed4690914424ea6693cad133a75d062654425fd99b803e37a4d93"
-    sha256 arm64_sonoma:  "c3adf737845d90aa0677eeb0aa0e47d32df406960b75833db68891f73ef849a2"
-    sha256 arm64_ventura: "f65125606d3279b2262a25acb629dc429de665ae7b0a29042be2c20d3b2005e4"
-    sha256 sonoma:        "8086f57d95bbfd253a10310b9da36898cee6955b25d431321acac817cbb2a298"
-    sha256 ventura:       "6dff743916412b2227ee851825737eae59db2696b875120573dfb11b401715d7"
-    sha256 arm64_linux:   "da3abe8bcda1a43b342663d0c668b57ded83b522cd03d01c38a99110ca722d78"
-    sha256 x86_64_linux:  "7d0295b03469cb59ca833318acb453d641406e1a7c07f5761fcd4fe3b6ddbcd3"
+    sha256 arm64_sequoia: "fe2e6af6b11313883954878627943bf07005163e900df6dd467161856a4a6d56"
+    sha256 arm64_sonoma:  "f167f2d046973aeab53465b39e4be4938af87159f5470d352e533d3227a903ef"
+    sha256 arm64_ventura: "83fd2e8ef72c6d8c019f966c540255bc29b798d500d54dce95569a65bfe73538"
+    sha256 sonoma:        "6bbca4c617a71bc124cd160221529a9bbc84a4cc6583cd990cdc27992fa845d0"
+    sha256 ventura:       "c41f6e7b60de36d562cc8d94d12e40080f5b25dd448f0e727c2ac81a7931509e"
+    sha256 arm64_linux:   "cdd7c07ee9fc9b1081f4e6e22e2f8b7892f97276c13d704f87a2a4fdf6256383"
+    sha256 x86_64_linux:  "b280f0425f4d7a70d05eabbfe5305b6ceb9eb4bc929b04e21b8ab9910db0c5f4"
   end
 
   keg_only :provided_by_macos

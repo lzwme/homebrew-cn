@@ -12,6 +12,7 @@ class Lakekeeper < Formula
     sha256 cellar: :any,                 arm64_ventura: "74be363ec979cb61a8fff6df7748b7fbf1a65bc8b2cdade9a5d590358c0dd941"
     sha256 cellar: :any,                 sonoma:        "ca749b0b25ed835cd689ccf863088d94de4ff137237b47d28dc635f94c517cae"
     sha256 cellar: :any,                 ventura:       "ab8621f0fcd75d386e0b127472c35b2043819c4de818abcc9309ba42ad635fdf"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1121b470673f03d3941c46ac6095c6e1934aff923bfbe8360f34e93a3efbe992"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "8db376229cfb85fb924828e9e582369ea53cf7439b510d7befd53daab15c1403"
   end
 

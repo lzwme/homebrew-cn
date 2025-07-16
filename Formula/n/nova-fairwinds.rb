@@ -1,18 +1,18 @@
 class NovaFairwinds < Formula
   desc "Find outdated or deprecated Helm charts running in your cluster"
   homepage "https://github.com/FairwindsOps/nova"
-  url "https://ghfast.top/https://github.com/FairwindsOps/nova/archive/refs/tags/v3.11.5.tar.gz"
-  sha256 "f901ba3f9935ba7febdd6488a3d313e892a3dcec860c2aa9d1bc2e8b82076e5a"
+  url "https://ghfast.top/https://github.com/FairwindsOps/nova/archive/refs/tags/v3.11.6.tar.gz"
+  sha256 "b97ee64a429667411e00e6075ca204bf1b65bca499f00b6b468cd5391383b630"
   license "Apache-2.0"
   head "https://github.com/FairwindsOps/nova.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b4ace3f30b171a76fb6db17094ce9f859e42269b50749a672ef091a17838478e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b4ace3f30b171a76fb6db17094ce9f859e42269b50749a672ef091a17838478e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "b4ace3f30b171a76fb6db17094ce9f859e42269b50749a672ef091a17838478e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9057f6d61525ea824f707ffe3b3192c0e46c4066cbe061bf93db3aa641821a22"
-    sha256 cellar: :any_skip_relocation, ventura:       "9057f6d61525ea824f707ffe3b3192c0e46c4066cbe061bf93db3aa641821a22"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2f4212ceffdf691db9f8704d35cdde4eb4f551c4a1682616d7583ca3ab640dad"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3d4ff2b8735799119fa2ca51b8ad0ba69c44bad887edd61d1901834d23bd0111"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3d4ff2b8735799119fa2ca51b8ad0ba69c44bad887edd61d1901834d23bd0111"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "3d4ff2b8735799119fa2ca51b8ad0ba69c44bad887edd61d1901834d23bd0111"
+    sha256 cellar: :any_skip_relocation, sonoma:        "83e2d2fa125fadcdc32b5ef3d8d61b11b0b9a83422ab16e881f84b0dee184943"
+    sha256 cellar: :any_skip_relocation, ventura:       "83e2d2fa125fadcdc32b5ef3d8d61b11b0b9a83422ab16e881f84b0dee184943"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "96de080d425d1caca170095ce428982cf2742f1f9d36b2b2a163e50bf01ab626"
   end
 
   depends_on "go" => :build

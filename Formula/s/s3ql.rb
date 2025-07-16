@@ -3,12 +3,9 @@ class S3ql < Formula
 
   desc "POSIX-compliant FUSE filesystem using object store as block storage"
   homepage "https://github.com/s3ql/s3ql"
-  # TODO: Try to remove `cython` and corresponding build_cython in the next release.
-  # check if `python3 setup.py build_cython` is still needed in https://github.com/s3ql/s3ql/blob/master/.github/workflows/pr-ci.yml#L34
-  url "https://ghfast.top/https://github.com/s3ql/s3ql/releases/download/s3ql-5.2.3/s3ql-5.2.3.tar.gz"
-  sha256 "892acf8a479fc837256100d820408bc5e2c27c0ba9ee2b5f8aa114d593b5af87"
+  url "https://ghfast.top/https://github.com/s3ql/s3ql/releases/download/s3ql-5.3.0/s3ql-5.3.0.tar.gz"
+  sha256 "f16e3aa218de86a7ec48002bbcb75c857f72f63d86e5e3c891b31a78c138d13c"
   license "GPL-3.0-only"
-  revision 1
 
   livecheck do
     url :stable
@@ -16,23 +13,21 @@ class S3ql < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_linux:  "96328863e3da5545903385b786971fc1b8bbd0be4151dbd5bd738c979f6a57b5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "ff2f720afc9d4216f721454f97a5f4fe133ee503b0d3167d3f2012a33ae84a4d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "2d116d2bed3369e6530af6411882b54809681562ce62ad7832ccec6abfa5ff3e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "6e371a9c17d44c7564e8776152225425762e47f9b6deba93c495829d82531bde"
   end
 
-  depends_on "cython" => :build
   depends_on "pkgconf" => :build
 
   depends_on "cryptography"
   depends_on "libffi"
   depends_on "libfuse"
   depends_on :linux # on macOS, requires closed-source macFUSE
-  depends_on "openssl@3"
   depends_on "python@3.13"
 
   resource "apsw" do
-    url "https://files.pythonhosted.org/packages/2e/9f/29be0326b2178cfe10d6d45de83163c70cd0b4985502f398fe32791943e2/apsw-3.46.1.0.tar.gz"
-    sha256 "96e3dfad1fd0cc77a778aa6b27468292041a8e9cb1f2dcf06bd773762c9b0c0c"
+    url "https://files.pythonhosted.org/packages/5b/c4/fcac432cb1aea5a1e7611e2ae927352232aec5c1546f10dece754279c4b9/apsw-3.49.2.0.tar.gz"
+    sha256 "04280710d01f918b96ec9067111b57ee70780388bbf83fd33fc15c43e82afd51"
   end
 
   resource "async-generator" do
@@ -41,8 +36,8 @@ class S3ql < Formula
   end
 
   resource "attrs" do
-    url "https://files.pythonhosted.org/packages/fc/0f/aafca9af9315aee06a89ffde799a10a582fe8de76c563ee80bbcdc08b3fb/attrs-24.2.0.tar.gz"
-    sha256 "5cfb1b9148b5b086569baec03f20d7b6bf3bcacc9a42bebf87ffaaca362f6346"
+    url "https://files.pythonhosted.org/packages/5a/b0/1367933a8532ee6ff8d63537de4f1177af4bff9f3e829baf7331f595bb24/attrs-25.3.0.tar.gz"
+    sha256 "75d7cefc7fb576747b2c81b4442d4d4a1ce0900973527c011d1030fd3bf4af1b"
   end
 
   resource "cffi" do
@@ -61,13 +56,13 @@ class S3ql < Formula
   end
 
   resource "google-auth" do
-    url "https://files.pythonhosted.org/packages/a1/37/c854a8b1b1020cf042db3d67577c6f84cd1e8ff6515e4f5498ae9e444ea5/google_auth-2.35.0.tar.gz"
-    sha256 "f4c64ed4e01e8e8b646ef34c018f8bf3338df0c8e37d8b3bba40e7f574a3278a"
+    url "https://files.pythonhosted.org/packages/cb/8e/8f45c9a32f73e786e954b8f9761c61422955d23c45d1e8c347f9b4b59e8e/google_auth-2.39.0.tar.gz"
+    sha256 "73222d43cdc35a3aeacbfdcaf73142a97839f10de930550d89ebfe1d0a00cde7"
   end
 
   resource "google-auth-oauthlib" do
-    url "https://files.pythonhosted.org/packages/cc/0f/1772edb8d75ecf6280f1c7f51cbcebe274e8b17878b382f63738fd96cee5/google_auth_oauthlib-1.2.1.tar.gz"
-    sha256 "afd0cad092a2eaa53cd8e8298557d6de1034c6cb4a740500b5357b648af97263"
+    url "https://files.pythonhosted.org/packages/fb/87/e10bf24f7bcffc1421b84d6f9c3377c30ec305d082cd737ddaa6d8f77f7c/google_auth_oauthlib-1.2.2.tar.gz"
+    sha256 "11046fb8d3348b296302dd939ace8af0a724042e8029c1b872d87fabc9f41684"
   end
 
   resource "idna" do
@@ -91,18 +86,18 @@ class S3ql < Formula
   end
 
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/8d/e6/2fc95aec377988ff3ca882aa58d4f6ab35ff59a12b1611a9fe3075eb3019/setuptools-70.2.0.tar.gz"
-    sha256 "bd63e505105011b25c3c11f753f7e3b8465ea739efddaccef8f0efac2137bac1"
+    url "https://files.pythonhosted.org/packages/70/dc/3976b322de9d2e87ed0007cf04cc7553969b6c7b3f48a565d0333748fbcd/setuptools-80.3.1.tar.gz"
+    sha256 "31e2c58dbb67c99c289f51c16d899afedae292b978f8051efaf6262d8212f927"
   end
 
   resource "trio" do
-    url "https://files.pythonhosted.org/packages/9a/03/ab0e9509be0c6465e2773768ec25ee0cb8053c0b91471ab3854bbf2294b2/trio-0.26.2.tar.gz"
-    sha256 "0346c3852c15e5c7d40ea15972c4805689ef2cb8b5206f794c9c19450119f3a4"
+    url "https://files.pythonhosted.org/packages/01/c1/68d582b4d3a1c1f8118e18042464bb12a7c1b75d64d75111b297687041e3/trio-0.30.0.tar.gz"
+    sha256 "0781c857c0c81f8f51e0089929a26b5bb63d57f927728a5586f7e36171f064df"
   end
 
   resource "six" do
-    url "https://files.pythonhosted.org/packages/71/39/171f1c67cd00715f190ba0b100d606d440a28c93c7714febeca8b79af85e/six-1.16.0.tar.gz"
-    sha256 "1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926"
+    url "https://files.pythonhosted.org/packages/94/e7/b2c673351809dca68a0e064b6af791aa332cf192da575fd474ed7d6f16a2/six-1.17.0.tar.gz"
+    sha256 "ff70335d468e7eb6ec65b95b99d3a2836546063f63acc5171de367e834932a81"
   end
 
   resource "sniffio" do
@@ -115,27 +110,18 @@ class S3ql < Formula
     sha256 "25caa5a06cc30b6b83d11423433f65d1f9d76c4c6a0c90e3379eaa43b9bfdb88"
   end
 
+  # Fix incompatability with build isolation, since `setup.py` imports `s3ql`
+  # Remove after https://github.com/s3ql/s3ql/pull/379
+  patch :DATA
+
   def install
-    # Ensure that the `openssl` crate picks up the intended library.
-    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
-    ENV["OPENSSL_NO_VENDOR"] = "1"
-
-    python3 = "python3.13"
-    venv = virtualenv_create(libexec, python3)
-    venv.pip_install resources
-
     # The inreplace changes the name of the (fsck|mkfs|mount|umount).s3ql
     # utilities to use underscore (_) as a separator, which is consistent
     # with other tools on macOS.
     # Final names: fsck_s3ql, mkfs_s3ql, mount_s3ql, umount_s3ql
-    inreplace "setup.py", /'(?:(mkfs|fsck|mount|umount)\.)s3ql =/, "'\\1_s3ql ="
+    inreplace "pyproject.toml", /"(?:(mkfs|fsck|mount|umount)\.)s3ql" =/, '"\\1_s3ql" ='
 
-    # Regenerate Cython files for Python 3.13 support. Try to remove in next release.
-    ENV.prepend_path "PYTHONPATH", Formula["cython"].opt_libexec/Language::Python.site_packages(python3)
-    system libexec/"bin/python3", "setup.py", "build_cython"
-
-    system libexec/"bin/python3", "setup.py", "build_ext", "--inplace"
-    venv.pip_install_and_link buildpath
+    virtualenv_install_with_resources
   end
 
   test do
@@ -147,3 +133,37 @@ class S3ql < Formula
     system bin/"fsck_s3ql", "local://#{testpath}"
   end
 end
+
+__END__
+diff --git a/setup.py b/setup.py
+index 00f6e9b..2b0a101 100755
+--- a/setup.py
++++ b/setup.py
+@@ -34,7 +34,6 @@ if DEVELOPER_MODE:
+ # Add S3QL sources
+ sys.path.insert(0, os.path.join(basedir, 'src'))
+ sys.path.insert(0, os.path.join(basedir, 'util'))
+-import s3ql
+
+
+ class pytest(TestCommand):
+@@ -47,9 +46,6 @@ class pytest(TestCommand):
+
+
+ def main():
+-    with open(os.path.join(basedir, 'README.rst'), 'r') as fh:
+-        long_desc = fh.read()
+-
+     compile_args = ['-Wall', '-Wextra', '-Wconversion', '-Wsign-compare']
+
+     # Enable all fatal warnings only when compiling from Mercurial tip.
+@@ -88,9 +84,7 @@ def main():
+     setuptools.setup(
+         name='s3ql',
+         zip_safe=False,
+-        version=s3ql.VERSION,
+         description='a full-featured file system for online data storage',
+-        long_description=long_desc,
+         author='Nikolaus Rath',
+         author_email='Nikolaus@rath.org',
+         license='GPLv3',

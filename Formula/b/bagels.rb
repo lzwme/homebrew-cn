@@ -6,15 +6,16 @@ class Bagels < Formula
   url "https://files.pythonhosted.org/packages/6e/04/e19a99e357221cb41e1e2f0352172e282ac8195fa2418b776345497fb260/bagels-0.3.12.tar.gz"
   sha256 "c3ebd4a727ddd62450528676a1ce3e475f92bd36edfed5f9c0b110bb24592608"
   license "GPL-3.0-or-later"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "05c63d6bda84de49d52698cf9bac601883f8a6a4b62f092cee3b54cb3ae65f76"
-    sha256 cellar: :any,                 arm64_sonoma:  "89a1a0b09c49a5dd385c7909bde5163f7f5cbf6b500506fc485dff94731b4d06"
-    sha256 cellar: :any,                 arm64_ventura: "9da975de485632649e1faeb44c5e95698cd5161a14f6591efdabd65fe5ae77c6"
-    sha256 cellar: :any,                 sonoma:        "065ba7999398d92b25afd22810d4d2d4502170b4968ec3e70bfd61e25744e735"
-    sha256 cellar: :any,                 ventura:       "38a5840b26bcd06093aecb737ea255fa9398c256e0d1df649859550d08ecf480"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b8d1c115336e0229977554be9677ba3dbabdd5b78ec19ab1e732bb6a62a7a59f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "36ab04d8d2e7a6d33dcc9c171c49dcba08358bfec492ea55853a7986ef086307"
+    sha256 cellar: :any,                 arm64_sequoia: "6ba3175e3d1388e82d17cb6f79f2f833dcf7674f13c776f6765d29a413c048dd"
+    sha256 cellar: :any,                 arm64_sonoma:  "e7036081585b4b6c39f92c414d2686ffe02efd4fad7269ec567a68ffd1d1358b"
+    sha256 cellar: :any,                 arm64_ventura: "024614f1b7a2b2c0bba630b0884c1f000a47ab8ffc842c6849a407becd166c3a"
+    sha256 cellar: :any,                 sonoma:        "f7aa53a44186967045a7cf0e5263c8ac7ebbd32bb115e73130d917725af449ab"
+    sha256 cellar: :any,                 ventura:       "9b332134cda64cb2e6e5cd9967fd2d4ecb8022786d2cd3e0a2629726bb79597f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e742481862a7dc6a4ab78f655c1a79d5b8262483445c6a826f817547aade3e09"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a74656acfced0378c3ab77be2810c44ca2eb659b967e1e43e37ede9bceb3cc76"
   end
 
   depends_on "rust" => :build # for pydantic_core
@@ -28,8 +29,8 @@ class Bagels < Formula
   end
 
   resource "aiohttp" do
-    url "https://files.pythonhosted.org/packages/42/6e/ab88e7cb2a4058bed2f7870276454f85a7c56cd6da79349eb314fc7bbcaa/aiohttp-3.12.13.tar.gz"
-    sha256 "47e2da578528264a12e4e3dd8dd72a7289e5f812758fe086473fab037a10fcce"
+    url "https://files.pythonhosted.org/packages/e6/0b/e39ad954107ebf213a2325038a3e7a506be3d98e1435e1f82086eec4cde2/aiohttp-3.12.14.tar.gz"
+    sha256 "6e06e120e34d93100de448fd941522e11dafa78ef1a893c179901b7d66aa29f2"
   end
 
   resource "aiohttp-jinja2" do
@@ -58,8 +59,8 @@ class Bagels < Formula
   end
 
   resource "certifi" do
-    url "https://files.pythonhosted.org/packages/73/f7/f14b46d4bcd21092d7d3ccef689615220d8a08fb25e564b65d20738e672e/certifi-2025.6.15.tar.gz"
-    sha256 "d747aa5a8b9bbbb1bb8c22bb13e22bd1f18e9796defa16bab421f7f7a317323b"
+    url "https://files.pythonhosted.org/packages/b3/76/52c535bcebe74590f296d6c77c86dabf761c41980e1347a2422e4aa2ae41/certifi-2025.7.14.tar.gz"
+    sha256 "8ea99dbdfaaf2ba2f9bac77b9249ef62ec5218e7c2b2e903378ed5fccf765995"
   end
 
   resource "charset-normalizer" do
@@ -80,11 +81,6 @@ class Bagels < Formula
   resource "frozenlist" do
     url "https://files.pythonhosted.org/packages/79/b1/b64018016eeb087db503b038296fd782586432b9c077fc5c7839e9cb6ef6/frozenlist-1.7.0.tar.gz"
     sha256 "2e310d81923c2437ea8670467121cc3e9b0f76d3043cc1d2331d56c7fb7a3a8f"
-  end
-
-  resource "greenlet" do
-    url "https://files.pythonhosted.org/packages/c9/92/bb85bd6e80148a4d2e0c59f7c0c2891029f8fd510183afc7d8d2feeed9b6/greenlet-3.2.3.tar.gz"
-    sha256 "8b0dd8ae4c0d6f5e54ee55ba935eeb3d735a9b58a8a1e5b5cbab64e01a39f365"
   end
 
   resource "idna" do

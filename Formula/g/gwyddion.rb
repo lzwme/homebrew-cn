@@ -1,13 +1,13 @@
 class Gwyddion < Formula
   desc "Scanning Probe Microscopy visualization and analysis tool"
-  homepage "http://gwyddion.net/"
+  homepage "https://gwyddion.net/"
   url "https://downloads.sourceforge.net/project/gwyddion/gwyddion/2.68/gwyddion-2.68.tar.xz"
   sha256 "725c3f71738362b10b1e2cf76d391684cf2f15a71a2b34ef1caddabd6d5a9bfa"
   license "GPL-2.0-or-later"
 
   livecheck do
-    url "http://gwyddion.net/download.php"
-    regex(/stable version Gwyddion v?(\d+(?:\.\d+)+):/i)
+    url "https://gwyddion.net/download.php"
+    regex(/stable\s+version\s+Gwyddion\s+v?(\d+(?:\.\d+)+)[:<\s]/im)
   end
 
   bottle do
