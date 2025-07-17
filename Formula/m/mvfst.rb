@@ -1,19 +1,20 @@
 class Mvfst < Formula
   desc "QUIC transport protocol implementation"
   homepage "https://github.com/facebook/mvfst"
-  url "https://ghfast.top/https://github.com/facebook/mvfst/archive/refs/tags/v2025.06.30.00.tar.gz"
-  sha256 "93a9a1900169d450dd7b208de1c434ffe731de7e5d051a5f69f349eb9a570c05"
+  # TODO: add back to `synced_versions_formula.json` when possible.
+  url "https://ghfast.top/https://github.com/facebook/mvfst/archive/refs/tags/v2025.07.14.00.tar.gz"
+  sha256 "47c4e37da80dda05b1ef59cf65fd9963c6479c724283f3b629bb05d0cd6c4edc"
   license "MIT"
   head "https://github.com/facebook/mvfst.git", branch: "main"
 
   bottle do
-    sha256                               arm64_sequoia: "07e9052ea6960620586c039b8da09123db9187b902b5a1fd0e806a217126c754"
-    sha256                               arm64_sonoma:  "6bc0b05fc96918bc216e4e4be2c5cd31108eceab23c46bd9583cbc17f4568faa"
-    sha256                               arm64_ventura: "7cd119487f0912d3f2bd42fa16edc69f1726f07c2f997a96d77740b1f79da084"
-    sha256 cellar: :any,                 sonoma:        "563087b036e91ef1eba5e63d339cf0832ee9df098c50fc2109d6cb35f6d5a400"
-    sha256 cellar: :any,                 ventura:       "53f3be65d32dcd5007c69cf04995a91f19cb1e8a43af20dffdf107f5b5c39423"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "30d78fdab8e451d7a5990e555810fe6300849e4e0a59a8499e13e33fcb6682dd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "755e26f10afbbfd53b30d7c8cd4baf7055812616f103f8a91f33257dfaeb49fe"
+    sha256                               arm64_sequoia: "5dc40338405c08787c7642874fccbf0e19ed6c37a9871751695c7820ec4623b9"
+    sha256                               arm64_sonoma:  "fffbd78d8133bed990ebcd654e6f1e9e4528ada4dd90bcd068f9e78ae2800b19"
+    sha256                               arm64_ventura: "91a6a9e01a17a8a59ad032c38a6ce833da99f3cc7a966642b26f58a775bc94c8"
+    sha256 cellar: :any,                 sonoma:        "a25507c8f6a4b17a936f3ea0a5291906704980a2ccdd32716601dc483e1df9e4"
+    sha256 cellar: :any,                 ventura:       "34739914ecc1f73e925fcfe50acb45d7397222b00f111f45529836de986a9d7e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d73589d6dcb7bbfeef72fe982de61253ddeb49661afff8f0549d374393e0889f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a9e1108e1ef90ff99e7a9debfef5991071e312547ae3a4d3509514ac3ab8df88"
   end
 
   depends_on "cmake" => [:build, :test]

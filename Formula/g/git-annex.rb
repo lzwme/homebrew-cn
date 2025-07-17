@@ -13,13 +13,14 @@ class GitAnnex < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "479b8a4312236700a75f5d7ce9f978e4caf3a0dc557733c27d28360e040a4692"
-    sha256 cellar: :any,                 arm64_sonoma:  "cf852d739508cb7be0e0916bb7d03f0773d5cd79a5be8da3631c83a13dfd4106"
-    sha256 cellar: :any,                 arm64_ventura: "dbcc125879a94b74f26022518f64ad975c88bf794e6ef3689345167f1e81d7b9"
-    sha256 cellar: :any,                 sonoma:        "74c4a5a1283979814b7a0e2541d635b6ba1bb862257251857d7e6aa954b60287"
-    sha256 cellar: :any,                 ventura:       "3667b98e16d8908e73276a28d8d4da1881e505a38a2ee838ff79abc36b831b53"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "466998bdc019abab7b61e99bb150b3b334b69a2f9b2770ec82e36b371fed1f74"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "573e3a965f1333a85422a93acf8eeda885019b2d8f60c710e8d8c58d32344669"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "70e6d9fc258bbbd872f729b7ec34c15e4ef019c3c68092198556d6525bdcfe81"
+    sha256 cellar: :any,                 arm64_sonoma:  "f76639420917d1b6631b0ac68a665e757ca22ae21b7edcf48d784fb5bff0446a"
+    sha256 cellar: :any,                 arm64_ventura: "b0d8bd98559e8a7ffdd07f5d862644ccea2e7cbd2ad158ca6a11b559e2457fc3"
+    sha256 cellar: :any,                 sonoma:        "ee4550452b4a839918f6966ed2264e548e6cd3dccae202141ec0ce05b393f74c"
+    sha256 cellar: :any,                 ventura:       "c6656a3746c29a3c4547509edb1c52bc3c128ed57097b1436ab74a897d624999"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "46d5aed0d9d308e7920ca1eca348a341b6bb67bb61fa1182e9e6f24db7a033a1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a4043d6a03232beac6d5f33c905644dc118336def3fae6ecb1fdc8398f7645c9"
   end
 
   depends_on "cabal-install" => :build
@@ -31,9 +32,7 @@ class GitAnnex < Formula
 
   def install
     system "cabal", "v2-update"
-    # Work around https://github.com/yesodweb/yesod/issues/1854 with constraint
-    # TODO: Remove once fixed upstream
-    system "cabal", "v2-install", *std_cabal_v2_args, "--flags=+S3", "--constraint=wai-extra<3.1.17"
+    system "cabal", "v2-install", *std_cabal_v2_args, "--flags=+S3 +Servant"
     bin.install_symlink "git-annex" => "git-annex-shell"
   end
 

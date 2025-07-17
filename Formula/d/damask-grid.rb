@@ -5,6 +5,13 @@ class DamaskGrid < Formula
   sha256 "82f9b3aefde87193c12a7c908f42b711b278438f6cad650918989e37fb6dbde4"
   license "AGPL-3.0-only"
 
+  # The first-party website doesn't always reflect the newest version, so we
+  # check GitHub releases for now.
+  livecheck do
+    url "https://github.com/damask-multiphysics/damask"
+    strategy :github_latest
+  end
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "0b18ca183c5b10361923e36624cd0dd48200735b9e294da7fcb669c835a58d99"
     sha256 cellar: :any,                 arm64_sonoma:  "638f168e4c065d244b6d6fa8b060651058c17a87e6cc1af946cd6d97064a4c5c"

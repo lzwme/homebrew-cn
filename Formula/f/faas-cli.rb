@@ -1,8 +1,8 @@
 class FaasCli < Formula
   desc "CLI for templating and/or deploying FaaS functions"
   homepage "https://www.openfaas.com/"
-  url "https://ghfast.top/https://github.com/openfaas/faas-cli/archive/refs/tags/0.17.5.tar.gz"
-  sha256 "8bcb708e411ac8fa2817000451599361c3ebe50c993355f0de5c40b98952581b"
+  url "https://ghfast.top/https://github.com/openfaas/faas-cli/archive/refs/tags/0.17.6.tar.gz"
+  sha256 "c6a720e4a4e7dcc9f29555024ade6fef1e690e7faade58a58e3feba736586238"
   license "MIT"
   head "https://github.com/openfaas/faas-cli.git", branch: "master"
 
@@ -12,12 +12,12 @@ class FaasCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b0b50c84a1d973c1a0f87e5d9c83f58c2d358bf340a48cdce6e337a2b2c9e865"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b0b50c84a1d973c1a0f87e5d9c83f58c2d358bf340a48cdce6e337a2b2c9e865"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "b0b50c84a1d973c1a0f87e5d9c83f58c2d358bf340a48cdce6e337a2b2c9e865"
-    sha256 cellar: :any_skip_relocation, sonoma:        "79de4a7e523535949d6f22ba1ed9a45fc9af81a26698fe6af3ab9ef48d5205ae"
-    sha256 cellar: :any_skip_relocation, ventura:       "79de4a7e523535949d6f22ba1ed9a45fc9af81a26698fe6af3ab9ef48d5205ae"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "11428d46cccdba5917bab8401a5fa5dd8ccbef2fcd4bd74284a7de9e2e672437"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b8e0e4582ea032b2f5e56adb1ea50825666851f8468f796403e7f8b70396db55"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b8e0e4582ea032b2f5e56adb1ea50825666851f8468f796403e7f8b70396db55"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "b8e0e4582ea032b2f5e56adb1ea50825666851f8468f796403e7f8b70396db55"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3db62602ba1ee749e8a28470d555a28eddeb2171b659955870bc9f642c03d225"
+    sha256 cellar: :any_skip_relocation, ventura:       "3db62602ba1ee749e8a28470d555a28eddeb2171b659955870bc9f642c03d225"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f3c0b527ffdb1469ad6344198cdf464357596493b52401bb735d037aa5dcabcc"
   end
 
   depends_on "go" => :build

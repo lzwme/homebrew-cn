@@ -11,9 +11,9 @@ class WasiLibc < Formula
   stable do
     # Check the commit hash of `src/wasi-libc` corresponding to the latest tag at:
     # https://github.com/WebAssembly/wasi-sdk
-    url "https://ghfast.top/https://github.com/WebAssembly/wasi-libc/archive/574b88da481569b65a237cb80daf9a2d5aeaf82d.tar.gz"
-    version "25"
-    sha256 "7d11a801570972e7f32639eed3f8f7d0e997f276b3c85b7aa03283e1265e4b8e"
+    url "https://ghfast.top/https://github.com/WebAssembly/wasi-libc/archive/50ae11904df674fecaa311537967fe138c21fcc7.tar.gz"
+    version "26"
+    sha256 "d5550b25c90ddbede393957849562bdcbc79e9d58ab0ba0bd0763cec965c960a"
 
     resource "WASI" do
       # Check the commit hash of `tools/wasi-headers/WASI` from the commit hash above.
@@ -26,16 +26,16 @@ class WasiLibc < Formula
     url "https://github.com/WebAssembly/wasi-sdk.git"
   end
 
-  no_autobump! because: :requires_manual_review
+  no_autobump! because: :incompatible_version_format
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "89f102505760c8d6b154f1574e619e2755e2fd7ff878596ec6c49ea5b62e4da1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "89f102505760c8d6b154f1574e619e2755e2fd7ff878596ec6c49ea5b62e4da1"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "89f102505760c8d6b154f1574e619e2755e2fd7ff878596ec6c49ea5b62e4da1"
-    sha256 cellar: :any_skip_relocation, sonoma:        "89f102505760c8d6b154f1574e619e2755e2fd7ff878596ec6c49ea5b62e4da1"
-    sha256 cellar: :any_skip_relocation, ventura:       "89f102505760c8d6b154f1574e619e2755e2fd7ff878596ec6c49ea5b62e4da1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f5c41b46943d6e2ca2dd20a049b8c6b7eb1aa67eac40b135673cf6eb65dad9b7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bbe27ea11d50c62ecfba2922e3a4ff27b16f215eeae08738413ef7f9b01d2a95"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a754b6e9a71c5f06a2489dea882a36265c186182134db12395124d96288b863b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a754b6e9a71c5f06a2489dea882a36265c186182134db12395124d96288b863b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "a754b6e9a71c5f06a2489dea882a36265c186182134db12395124d96288b863b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a754b6e9a71c5f06a2489dea882a36265c186182134db12395124d96288b863b"
+    sha256 cellar: :any_skip_relocation, ventura:       "a754b6e9a71c5f06a2489dea882a36265c186182134db12395124d96288b863b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3fafccb8cd85eef822881f2ca25d3756a67b09f8176968056c3db83b31019ccf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3fafccb8cd85eef822881f2ca25d3756a67b09f8176968056c3db83b31019ccf"
   end
 
   depends_on "llvm" => [:build, :test]

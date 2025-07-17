@@ -1,8 +1,8 @@
 class RioTerminal < Formula
   desc "Hardware-accelerated GPU terminal emulator powered by WebGPU"
   homepage "https://raphamorim.io/rio/"
-  url "https://ghfast.top/https://github.com/raphamorim/rio/archive/refs/tags/v0.2.20.tar.gz"
-  sha256 "10c70fe13c4261593359fcf9ec489770cb056d07153d790193bfa8621ac4ca42"
+  url "https://ghfast.top/https://github.com/raphamorim/rio/archive/refs/tags/v0.2.21.tar.gz"
+  sha256 "25232c6f21ce7ae791b0aaf8dd3ed2ad765ef7cb45258cb83f60c9df19388e7b"
   license "MIT"
   head "https://github.com/raphamorim/rio.git", branch: "main"
 
@@ -12,11 +12,11 @@ class RioTerminal < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "63e09e743db4330037115be47c3a07574f783f3879e7f0ceda64b228ea26334a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "aa14fdda5addcc287151a57650214e38be7ab91a2d0ba81f3c4d16bfb1ae2981"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "072d52ac1161c68b075aff880a50733aa9e9c05d30c9ba20984912e1efdf9e2d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "86b53b046508dcd7a6e4ada2c3399e413f7a716053cb26d4bd1b49996368c7d5"
-    sha256 cellar: :any_skip_relocation, ventura:       "0407e0ab3bc337af5587784cbec9f49c5da133377a9e15323aeb9e7d28edd2e6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dc6f66c87500ad9abdd9010dcb631f34a5dc0d5780fb7cef0ef898e3c5bc2ab9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "96cf43c4cc11e16fb18658bdd5e06b01e0b18e1d9b263d2f2de954485f89c21d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "649ac273f11b8b4a8fab072480c281b96db71f43539770a7f32aa7ec3118076d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3a13ea0a24a8342c71323f292f2c0d07dac431e6598c84472e8b12a921ffc68b"
+    sha256 cellar: :any_skip_relocation, ventura:       "a41c852160b8a6d6a3748eae3c47f356cf4e746b0837abde2ead5ab1732545ad"
   end
 
   depends_on "rust" => :build

@@ -1,18 +1,18 @@
 class Atuin < Formula
   desc "Improved shell history for zsh, bash, fish and nushell"
   homepage "https://atuin.sh/"
-  url "https://ghfast.top/https://github.com/atuinsh/atuin/archive/refs/tags/v18.6.1.tar.gz"
-  sha256 "aba26698471ef7ad2757416d01fcc327d3bd800c58cc3fcae638e625524e1b40"
+  url "https://ghfast.top/https://github.com/atuinsh/atuin/archive/refs/tags/v18.7.1.tar.gz"
+  sha256 "8a3e9e80390a996688590e27c245d5ad5dccfc2a1aedd53bd1e50e24a776e8d0"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0d5178502a1427a080827cf3b18c724afa3151658910e4596b33bb425789ce21"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "48b16b97bed2dea1fdda46ce7416e2ada8af0fd6044a4911bbb46457f936fab0"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "e4d6d6af87adbf1ff6120766e30fdd4992dea765a7109f3d4ae83e9376e538bb"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5c77f1e90366dd27311260f015f5d28f03e73a4be2d3401b20c77d489f5c9bf9"
-    sha256 cellar: :any_skip_relocation, ventura:       "0d03abd8e58b7903113101ae29229d7b0537329519811034fd50f9e2c4fbfd94"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fcec8d144f1c8570dfe3f4625988f355292f440efc5dd3fcbdcd4c5335db282b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "566e883860b1640f49f8cf6e642d2cd80611dcba9c6ac2821cc09a219139b73c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "33cb87eb764426649ec229f17d553ede55785acb573bd96f6a6e8ed90b350643"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f6c098366627a94020870a808893138c9c303d759e8facdd27fa915ae20c88cd"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "29b6a31b8c8419e3c38faaea2adbf2b22884e50cfd51264a4608d854aca8e2d0"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c9b821ec481dcf76f1d32c82002964bcfb64b5b685dddffa671754f060d84224"
+    sha256 cellar: :any_skip_relocation, ventura:       "5b86ba9a9aa4fffc55f8d67b80f7fee1deab417ee8951723a38a6faabd85f7e8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "367ce0c1321338ce6ea4654ef524387595a2012a98c223a30023688ff0249893"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fd8768a279baa3ca00fd39f29c1769b05e8b2533115e844ec025b3f61162abee"
   end
 
   depends_on "protobuf" => :build

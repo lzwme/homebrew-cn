@@ -1,17 +1,17 @@
 class KafkactlAwsPlugin < Formula
   desc "AWS Plugin for kafkactl"
   homepage "https://deviceinsight.github.io/kafkactl/"
-  url "https://ghfast.top/https://github.com/deviceinsight/kafkactl-plugins/archive/refs/tags/v1.3.0.tar.gz"
-  sha256 "9fcab4135e68ffba6af40db21ab4c36f798a502be402f6c2d6557d316084b445"
+  url "https://ghfast.top/https://github.com/deviceinsight/kafkactl-plugins/archive/refs/tags/v1.3.1.tar.gz"
+  sha256 "f7f5b961061c863131a9f84e8a6aa7d7273a16b1c3ad4fb86888edebda345eb1"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a853dba2c902a4e1d8ad91d315c87cb95f3f37f58c9699e59890a46442b285b7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a853dba2c902a4e1d8ad91d315c87cb95f3f37f58c9699e59890a46442b285b7"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "a853dba2c902a4e1d8ad91d315c87cb95f3f37f58c9699e59890a46442b285b7"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b8bd50ecbe9bc6140fdd5d2eeb0fbabc889958565b16785f4e22f28784d3d49b"
-    sha256 cellar: :any_skip_relocation, ventura:       "b8bd50ecbe9bc6140fdd5d2eeb0fbabc889958565b16785f4e22f28784d3d49b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9a3e72893fc1633d75bb8ef3643138d095697bb52664d4972a639248fbd90d66"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1ac140f12e3dc048b7017d32738dc76a618ba535a531f78ade73ae48561e1748"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1ac140f12e3dc048b7017d32738dc76a618ba535a531f78ade73ae48561e1748"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "1ac140f12e3dc048b7017d32738dc76a618ba535a531f78ade73ae48561e1748"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b37d14848bd63b210d5372b65d24d816555f9d944866acd7ac17e94123b3472a"
+    sha256 cellar: :any_skip_relocation, ventura:       "b37d14848bd63b210d5372b65d24d816555f9d944866acd7ac17e94123b3472a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7c767ccab3c413b187272ebe7934d86990adbeec58bdba4d6a2b54f8b1b2efbc"
   end
 
   depends_on "go" => :build

@@ -1,8 +1,8 @@
 class KubectlAi < Formula
   desc "AI powered Kubernetes Assistant"
   homepage "https://github.com/GoogleCloudPlatform/kubectl-ai"
-  url "https://ghfast.top/https://github.com/GoogleCloudPlatform/kubectl-ai/archive/refs/tags/v0.0.15.tar.gz"
-  sha256 "e8f984a9966e7d663c24c476eb05fd18cafc2431646fe33e4be127052a7dc83d"
+  url "https://ghfast.top/https://github.com/GoogleCloudPlatform/kubectl-ai/archive/refs/tags/v0.0.17.tar.gz"
+  sha256 "89ebb0fcb97d5c9dbd6a85bad39ac00543837d61a4689374fd167dc96ca9b9c2"
   license "Apache-2.0"
 
   livecheck do
@@ -11,12 +11,12 @@ class KubectlAi < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9dbff86ea625c3963ce9a314c6d870863bea01eb65d27283c24d02bcb0ce44ce"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9dbff86ea625c3963ce9a314c6d870863bea01eb65d27283c24d02bcb0ce44ce"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "9dbff86ea625c3963ce9a314c6d870863bea01eb65d27283c24d02bcb0ce44ce"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4a175b7f75ced9f77f7f115fbca7edb520ca2c70ee438572ba97282c93e4105b"
-    sha256 cellar: :any_skip_relocation, ventura:       "4a175b7f75ced9f77f7f115fbca7edb520ca2c70ee438572ba97282c93e4105b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "29adc876c354c2c97b1059d7b262ee5bb916945b96dff3a8fb259a2f387cb202"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "83e0586fad4bab506feec1bf464747e7de003abc3d7ca06f7710bdbfa4783c05"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "83e0586fad4bab506feec1bf464747e7de003abc3d7ca06f7710bdbfa4783c05"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "83e0586fad4bab506feec1bf464747e7de003abc3d7ca06f7710bdbfa4783c05"
+    sha256 cellar: :any_skip_relocation, sonoma:        "05640b8270fdceaf59128d6a8d7c3b6cfadeb1715eecbaa0fd5918437de5c515"
+    sha256 cellar: :any_skip_relocation, ventura:       "05640b8270fdceaf59128d6a8d7c3b6cfadeb1715eecbaa0fd5918437de5c515"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "12bb90ec606857fe067efeaf37c39d88c74db1f127520a905f2d1159a3510d9c"
   end
 
   depends_on "go" => :build
