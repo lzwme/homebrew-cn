@@ -49,9 +49,7 @@ class Gitlint < Formula
   def install
     virtualenv_install_with_resources
 
-    # Click does not support bash version older than 4.4
-    generate_completions_from_executable(bin/"gitlint", shells:                 [:bash, :fish, :zsh],
-                                                        shell_parameter_format: :click)
+    generate_completions_from_executable(bin/"gitlint", shell_parameter_format: :click)
   end
 
   test do

@@ -156,8 +156,7 @@ class Datasette < Formula
   def install
     virtualenv_install_with_resources
 
-    generate_completions_from_executable(bin/"datasette",
-                                         shells: [:bash, :fish, :zsh], shell_parameter_format: :click)
+    generate_completions_from_executable(bin/"datasette", shell_parameter_format: :click)
   end
 
   test do

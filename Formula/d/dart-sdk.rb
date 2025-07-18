@@ -1,18 +1,18 @@
 class DartSdk < Formula
   desc "Dart Language SDK, including the VM, dart2js, core libraries, and more"
   homepage "https://dart.dev"
-  url "https://ghfast.top/https://github.com/dart-lang/sdk/archive/refs/tags/3.8.1.tar.gz"
-  sha256 "61e2bbaaca96938af68f18ef6eb4c238cb258d2dc531cb0d3737f5a4eda87e03"
+  url "https://ghfast.top/https://github.com/dart-lang/sdk/archive/refs/tags/3.8.2.tar.gz"
+  sha256 "470dfe235da89b023afd6d97ca629be6450b23c25756955efe9915018a3953e1"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6c35d06f8ec90b54c82bf94aff0024bf791f3b0ab1fe8148f20f9d28ddd36112"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e9f9f1a704bfc7e1756fe54eef63309e52042342cf2adfd5570804fd0e6c5f06"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "5be8d23742798ca7ea1f114fe9741f8e51e3d7401119bf6c0851dfbb6d27bcef"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f51d6e3d84ad417d733d45b263b6849f9d2a0c2816fdd325ba68fe396877e7d1"
-    sha256 cellar: :any_skip_relocation, ventura:       "3c76ec6b44cc0a7074788381a51941c5d00638cacb7b85c59954da1e5547bfb9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0ef8d6a55952ef4adea57e7e89268c8db9a2dbe286769c2092b5410c0c7ec9d6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ca0468e41eafe812369c47a6dca36fd087f63edbd18b0d7b706eeff54d9c12a9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9b1a1a44dd7338e08d20bea877e0604cc63c8d9efae318577d8c341208d18717"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "662eaacf4052a68fb6fad4d7ffd3d0cc05362e357c94cf211cfcb40a16f2cb5a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "5563f14195da4a8651052a5fd78a0729ade81583ddad28b8e23b2565259d7328"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ff784c541127147c607e67452bae7afbb6abb9e601612cca1e7bd1718999c94c"
+    sha256 cellar: :any_skip_relocation, ventura:       "51b2ff36aad64fc2a7a5cc97a3e90922585e92dabd06e0d559bbfa02f5f331c7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4de3176da07d4708e3d78ce3250af63fda80c3a61575075b3c64355bfca5b218"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c71adafbe35c53afce6d8b7e155b032315e443c22530b30987bd2a4cebfc272a"
   end
 
   depends_on "ninja" => :build

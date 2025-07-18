@@ -1,8 +1,8 @@
 class KnotResolver < Formula
   desc "Minimalistic, caching, DNSSEC-validating DNS resolver"
   homepage "https://www.knot-resolver.cz"
-  url "https://secure.nic.cz/files/knot-resolver/knot-resolver-5.7.5.tar.xz"
-  sha256 "80239cf9aa92599d9cbad4642dea5520b2ccfbc9c6f968886ea46179cb3cdf66"
+  url "https://secure.nic.cz/files/knot-resolver/knot-resolver-5.7.6.tar.xz"
+  sha256 "500ccd3a560300e547b8dc5aaff322f7c8e2e7d6f0d7ef5f36e59cb60504d674"
   license all_of: ["CC0-1.0", "GPL-3.0-or-later", "LGPL-2.1-or-later", "MIT"]
   head "https://gitlab.labs.nic.cz/knot/knot-resolver.git", branch: "master"
 
@@ -12,13 +12,13 @@ class KnotResolver < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "7c9948c0d651f2f405019d6520a7bdabd3ed904ecff54a92073acbc1ab014e12"
-    sha256 arm64_sonoma:  "3382cbd84482ce8d977890d16dc5fd139d84162211b01f33ecf641d7d865a257"
-    sha256 arm64_ventura: "5e7d78a4ab9ecbbaf643eb14ade1dfa991a2ffc149d6635a6cf515ed3376de13"
-    sha256 sonoma:        "99b6758c6c51f508e4b8600a6c6346c3f69f564d39147c70e9b9de417f92e757"
-    sha256 ventura:       "8a6308b7ae198d484897098798ec9e33689daa69ecd398400bfa46c48bad2845"
-    sha256 arm64_linux:   "7595f507c065b5d75db23481182422861f43dafdde405d6cba8c87dff9284518"
-    sha256 x86_64_linux:  "4fb9a214783e990eae3f0eac0160b441c13c7083545c78db400d49258cbcba44"
+    sha256 arm64_sequoia: "f842973a4b59ecfd29b822af797c426fc3d3fd6f460148a00d7fd297fcbd0a5c"
+    sha256 arm64_sonoma:  "668a2e770862f3f7cbc480447752230034442bc1125b1baeebebe5617fcc5301"
+    sha256 arm64_ventura: "5a8af2813cffb869b80e9295e7a7d6a6b215868d52dd531458d40b5d0fd22bc4"
+    sha256 sonoma:        "e88a09cdb2d3fcf92bf4af7b48a4ab4a4c0076f8dbaa63ed5b0f424c23007e89"
+    sha256 ventura:       "e98d27346d5199cfb6b0cf2cc33734f19b6e08cbdcbe4afddd59c52492022818"
+    sha256 arm64_linux:   "6fe63f84fd4982b1d710b3453e6a6b9672df1fff80a808ee0bed1acec3ae8839"
+    sha256 x86_64_linux:  "ad052ae5a64e60bfcd6c7a3e359588360e705387546f7eedc8ef7c8bed6872f8"
   end
 
   depends_on "meson" => :build

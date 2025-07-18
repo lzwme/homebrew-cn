@@ -2,7 +2,7 @@ class Csound < Formula
   desc "Sound and music computing system"
   homepage "https://csound.com"
   license "LGPL-2.1-or-later"
-  revision 11
+  revision 12
   head "https://github.com/csound/csound.git", branch: "develop"
 
   # Remove `stable` block when patches are no longer needed
@@ -37,13 +37,13 @@ class Csound < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 arm64_sequoia: "61be90827875be2da1ff759baea46c74e0c0ccd7344bc8ab949efe3b05260106"
-    sha256 arm64_sonoma:  "71adfde634382610bffb31c3fbf3aeacf25773de90e06b5158e09b18e4d205e9"
-    sha256 arm64_ventura: "e3b0dfd98b61b7b2d1e575fd3719d915982f0da0232368137412d71d03c0dbea"
-    sha256 sonoma:        "9431a7350d67b3e144136416cdca5162aba4a31ac7149c64c412be297c660c00"
-    sha256 ventura:       "334cd0b0985e049534ab67125b7c173146dff78a7ddd66be4d1b14a8a12d357e"
-    sha256 arm64_linux:   "3a44f46b8aab6877c5dec7ef7a411803aca10dcd0271e834433ca480da0eb2ae"
-    sha256 x86_64_linux:  "a44c216a87f3465ac04b31775785e7b2226308cb88dc715f4f103a8b021b0e09"
+    sha256 arm64_sequoia: "8d4643c7facbb44a86760a6e4aed9c9d8d64693ed974cbab8df35ae34299b7c6"
+    sha256 arm64_sonoma:  "59e91a6e3ceb3e5ce1a2a846643b6e695ba7d45ee1683a4d90922cb0295b2d4d"
+    sha256 arm64_ventura: "924021067daaa589b49dc7d87697c0dcc0354c55ddbf849b5d99f7f8c6d2ff89"
+    sha256 sonoma:        "5bc33817212bf9e58d2110d263038ba087753d934cf1b229892aef0b48a0a903"
+    sha256 ventura:       "9a087479d355399ef4515d10406c0e2852059cb4bb21a6b3a7523cc93a480560"
+    sha256 arm64_linux:   "b8258413994957c8095201a023403318a253eb56bf01ca95afcdd19db88c8e55"
+    sha256 x86_64_linux:  "58d3320da2d409e1f462bf7544c585cd4b4ee3b922fc9b6fbdf8f3b6a8813b2b"
   end
 
   depends_on "asio" => :build

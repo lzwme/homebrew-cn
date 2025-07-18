@@ -1,18 +1,18 @@
 class Tfprovidercheck < Formula
   desc "CLI to prevent malicious Terraform Providers from being executed"
   homepage "https://github.com/suzuki-shunsuke/tfprovidercheck"
-  url "https://ghfast.top/https://github.com/suzuki-shunsuke/tfprovidercheck/archive/refs/tags/v1.0.5.tar.gz"
-  sha256 "46a0db7c6cf1446d1422886468eead057e2347d9f0fdb59859e681c31b7051a4"
+  url "https://ghfast.top/https://github.com/suzuki-shunsuke/tfprovidercheck/archive/refs/tags/v1.0.6.tar.gz"
+  sha256 "35b7038242c67864fc969c84e0614e155e8cc4be955226c440b2bba26f3ab116"
   license "MIT"
   head "https://github.com/suzuki-shunsuke/tfprovidercheck.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f5b941e01ba104b6451b0ad9356b90d1ef79f3a5fe1b7d6648aa9b3bd0cff6f3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f5b941e01ba104b6451b0ad9356b90d1ef79f3a5fe1b7d6648aa9b3bd0cff6f3"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "f5b941e01ba104b6451b0ad9356b90d1ef79f3a5fe1b7d6648aa9b3bd0cff6f3"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e7984e72e396fdfb36cb46cc0a18c95edd79afe79493354f1a092bfb445d73b0"
-    sha256 cellar: :any_skip_relocation, ventura:       "e7984e72e396fdfb36cb46cc0a18c95edd79afe79493354f1a092bfb445d73b0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f0b28c40b41a92e5910b0f6ec3bafbea79517384a3d616cf8db9ec4746e354a5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5999fe7f5aa3878e386922f3ae60620217e21281a9eb206d43ea4accd48950f8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5999fe7f5aa3878e386922f3ae60620217e21281a9eb206d43ea4accd48950f8"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "5999fe7f5aa3878e386922f3ae60620217e21281a9eb206d43ea4accd48950f8"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ad3c0f23e2e60f0b0415a78664d1c937eda185ecaf2bb1c32b5422ac81d5e24e"
+    sha256 cellar: :any_skip_relocation, ventura:       "ad3c0f23e2e60f0b0415a78664d1c937eda185ecaf2bb1c32b5422ac81d5e24e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ea1b43a81af9d43ce3fd5e9aff2f6d642678a533fd867da44c4be37e55d3a7a2"
   end
 
   depends_on "go" => :build

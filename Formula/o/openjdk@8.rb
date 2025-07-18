@@ -1,10 +1,10 @@
 class OpenjdkAT8 < Formula
   desc "Development kit for the Java programming language"
   homepage "https://openjdk.java.net/"
-  url "https://ghfast.top/https://github.com/openjdk/jdk8u/archive/refs/tags/jdk8u452-ga.tar.gz"
-  version "1.8.0-452"
-  BUILD_NUMBER = "b09".freeze # Please update when a new GA release is available: https://wiki.openjdk.org/display/jdk8u.
-  sha256 "cf1009e18b6332ef2b4a54257a6087611970bcdab5368907ac67ada1e9709676"
+  url "https://ghfast.top/https://github.com/openjdk/jdk8u/archive/refs/tags/jdk8u462-ga.tar.gz"
+  version "1.8.0-462"
+  BUILD_NUMBER = "b08".freeze # Please update when a new GA release is available: https://wiki.openjdk.org/display/jdk8u.
+  sha256 "5341fe5275046100d9795078a1d6e1a9cabdf3e7df334592a35c91c66976168b"
   license "GPL-2.0-only"
 
   livecheck do
@@ -16,10 +16,10 @@ class OpenjdkAT8 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 sonoma:       "79dbf7dcfd23168817af9383b5a17a8fd908be0f106d0ec920327438625dc588"
-    sha256 cellar: :any,                 ventura:      "f60a98b1d90f1480b60fff0c121857e470a680115cead8892af69419b48db5be"
-    sha256 cellar: :any_skip_relocation, arm64_linux:  "586959a85569b0cca59fde64c8fcf8dbc38a68a088e0c2beea1f89b17f10abd6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "95ad19e02cfa50d6bb0c737445d3b5b2106e910e1ebd3b58d1066ce6b826a53b"
+    sha256 cellar: :any,                 sonoma:       "07d5be31a5d93d91474b0d6aa2e5e3f39811540bb85eb3d352b5003d82181dc6"
+    sha256 cellar: :any,                 ventura:      "342f4fda7b3b716296c3912a468b39d19692464a17ae92e817de1fe22234f707"
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "7ebcac0a651a5e634ce34801361cfaf8e8a8abcf3cb27cf82565e32028b84621"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "f756f0290bdee4fb9b512d9d710bbc0c7e0de38f6a77b792003eb15950b7f7b6"
   end
 
   keg_only :versioned_formula
@@ -72,7 +72,7 @@ class OpenjdkAT8 < Formula
     end
   end
 
-  # NOTE: Since macOS Sonoma or newer don’t include the required headers for JNF (JavaNativeFoundation.framework),
+  # NOTE: Since macOS Sonoma or newer don't include the required headers for JNF (JavaNativeFoundation.framework),
   # we will use the headers provided at https://github.com/apple/openjdk.
   resource "JavaNativeFoundation" do
     on_sonoma :or_newer do

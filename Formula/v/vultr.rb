@@ -1,18 +1,18 @@
 class Vultr < Formula
   desc "Command-line tool for Vultr services"
   homepage "https://github.com/vultr/vultr-cli"
-  url "https://ghfast.top/https://github.com/vultr/vultr-cli/archive/refs/tags/v3.5.0.tar.gz"
-  sha256 "da6caf170ef61627022d4558e704d9f269a716aa583820ce335d93d2c70d9117"
+  url "https://ghfast.top/https://github.com/vultr/vultr-cli/archive/refs/tags/v3.6.0.tar.gz"
+  sha256 "b45592d8bce6539b6b35e405f71a3ac4bb6fa3ef5ad4ec8b6a1f31c31f17cdc7"
   license "Apache-2.0"
   head "https://github.com/vultr/vultr-cli.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4a2ebbb295ddd6ee824582f0fd7439116d88a79666631689aefa5c7c0d93b933"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4a2ebbb295ddd6ee824582f0fd7439116d88a79666631689aefa5c7c0d93b933"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "4a2ebbb295ddd6ee824582f0fd7439116d88a79666631689aefa5c7c0d93b933"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5a047f5bdfd5e114ffee5a007b44cbc31122175cc3bb86f7a6700cd7ac96b88a"
-    sha256 cellar: :any_skip_relocation, ventura:       "5a047f5bdfd5e114ffee5a007b44cbc31122175cc3bb86f7a6700cd7ac96b88a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "443b8f20566ee720cc7ca4947a2a2c94fd6326a45f63e597c206ec8d850b4e1f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d92694b6931e84ff9587e68405d40e2a6df2c8935edca297e82961cdfae94063"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d92694b6931e84ff9587e68405d40e2a6df2c8935edca297e82961cdfae94063"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "d92694b6931e84ff9587e68405d40e2a6df2c8935edca297e82961cdfae94063"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a95b6a24c04d470ed092119a9684910c1a8a70c008ecc84857703183211b694b"
+    sha256 cellar: :any_skip_relocation, ventura:       "a95b6a24c04d470ed092119a9684910c1a8a70c008ecc84857703183211b694b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c12cc6b5c04635633f61435eddf9739b90510a3734844ba6deb3d4a5c26c0099"
   end
 
   depends_on "go" => :build

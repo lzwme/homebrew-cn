@@ -21,6 +21,7 @@ class Gitless < Formula
 
   # https://github.com/gitless-vcs/gitless/issues/248
   deprecate! date: "2024-07-17", because: :unmaintained
+  disable! date: "2025-07-17", because: :unmaintained
 
   depends_on "pkgconf" => :build
   depends_on "libgit2@1.7"

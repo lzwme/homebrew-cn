@@ -7,6 +7,7 @@ class Mosquitto < Formula
   # EDL-1.0 is pretty the same as BSD-3-Clause,
   # see discussions in https://github.com/spdx/license-list-XML/issues/1149
   license any_of: ["EPL-1.0", "BSD-3-Clause"]
+  revision 1
 
   livecheck do
     url "https://mosquitto.org/download/"
@@ -14,13 +15,13 @@ class Mosquitto < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "5c6c83559c4225803fac92c56d4d7b09768a9f128abe52c4eb659cb6ab6a855e"
-    sha256 cellar: :any,                 arm64_sonoma:  "3728a4f1c4b8b1f75696ada03cdc23ee0a1e292bf454892a4ac7a1bf76389de6"
-    sha256 cellar: :any,                 arm64_ventura: "c88f2922625a60f13586f2ca5e4dd6b524554363d99522bdfb425d6c459469ba"
-    sha256 cellar: :any,                 sonoma:        "f9240ee2eae20f16732e4a57615f5d8c8a59931d9e55931d48633297af03984c"
-    sha256 cellar: :any,                 ventura:       "59d62a55cd9a1d05cad093eebd1f289ca575ff1067597b0f27932800442348fb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "01c32a19c57963d7038a757528ca7d9ff93f43d913be2058dd111429cad402fe"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c23d5729b9b53d14ad513053e43f1b84cb9d7df805250459c84fddb9c9488b36"
+    sha256 cellar: :any,                 arm64_sequoia: "b104d46d1e87f19a87dde8f703a88f96cfd8a7b14f5c890cc80f1d4e87d00d5e"
+    sha256 cellar: :any,                 arm64_sonoma:  "a698100e3f6c3ad8c4d12be8d53172fa945cdf90e07e98a8f17e3312c18a8a60"
+    sha256 cellar: :any,                 arm64_ventura: "713166fcd44dc4ab41c7ee26c7568657d1ed85f70a561bcb29db93a21c5aaa2d"
+    sha256 cellar: :any,                 sonoma:        "d1d3912c6cce5c515067a154b4b624215b596657ae004d774035fe589915b775"
+    sha256 cellar: :any,                 ventura:       "773f0dbebde7df42a048ce1a5d14dec13773f633bbd660b89d66e78325501ca7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c3cf5fd9fdbcd233b9cf42df8604833d65d84b6173e27a997abdf64fe9ca883d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "51e2773ad764574334ea17d44e074dcb4106d9549d6efe7eca8ea600fdefab4e"
   end
 
   depends_on "cmake" => :build

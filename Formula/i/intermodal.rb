@@ -28,7 +28,7 @@ class Intermodal < Formula
   def install
     system "cargo", "install", *std_cargo_args
     system "cargo", "run", "--package", "gen", "--", "--bin", bin/"imdl", "man"
-    generate_completions_from_executable(bin/"imdl", "completions", shells: [:fish, :zsh, :bash])
+    generate_completions_from_executable(bin/"imdl", "completions")
 
     man1.install Dir["target/gen/man/*.1"]
   end

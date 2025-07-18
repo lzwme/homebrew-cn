@@ -1,18 +1,18 @@
 class Jackett < Formula
   desc "API Support for your favorite torrent trackers"
   homepage "https://github.com/Jackett/Jackett"
-  url "https://ghfast.top/https://github.com/Jackett/Jackett/archive/refs/tags/v0.22.2161.tar.gz"
-  sha256 "61efb1b12ea7bb734cbcd108eea978a0e3f1117eb3ff2c86fe74e65c3e11f5c9"
+  url "https://ghfast.top/https://github.com/Jackett/Jackett/archive/refs/tags/v0.22.2162.tar.gz"
+  sha256 "125ba3800fb780fa153a37ff17748842546403e3b81960d27721a068510f592c"
   license "GPL-2.0-only"
   head "https://github.com/Jackett/Jackett.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "6d8ff666ff314c0e83a52bc93eaeaa5dbbf539e0c1111c36185c05c23abb652e"
-    sha256 cellar: :any,                 arm64_sonoma:  "0063789dfae7135d8d82d35574c5a3f64aeb10c98ce93e6b298719012bdfc78a"
-    sha256 cellar: :any,                 arm64_ventura: "012ff705cc4f48fd9bc7dd2295ee1ba85ed63ba97cb5b67666e63b08fda2ff20"
-    sha256 cellar: :any,                 ventura:       "e92bc5bb321f6a26d57a3463f069192dc758a07e042dd7cc32e75983c596b468"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "57a1604e22b1fa6069ba0f8295f317555ec44e3bc3192eb765beb10fae3cd685"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b244eb3ff5cb7d1cd678a647a3c45b32d2317c940e8d29e17ebd7931ccef94aa"
+    sha256 cellar: :any,                 arm64_sequoia: "124747c3518e16afd6b1e288cb59c52667fd096439b0db3ff149f2f602c69303"
+    sha256 cellar: :any,                 arm64_sonoma:  "7d8e48e766a24c25ffc934c7c64c1622f7f31560229521841c9acd86a5d46af2"
+    sha256 cellar: :any,                 arm64_ventura: "f65da27e6cc27c35fb9a362a1c5540639d25abe03a2e8eab58e7eeec3eebeb68"
+    sha256 cellar: :any,                 ventura:       "8d13a5cf2eac4ae2aa510346dfbd7b4fb4e98d067cbe578335d18222df142e80"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e30b2afd61528d0bccef1801c1bbadf8b39614bcda818d69c67933f0cd33b909"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "877d70c9918cd7f50d449747be62b70064c7eb40dc728f26d971798144dff34a"
   end
 
   depends_on "dotnet@8"

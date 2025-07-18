@@ -1,19 +1,19 @@
 class Medusa < Formula
   desc "Solidity smart contract fuzzer powered by go-ethereum"
   homepage "https://github.com/crytic/medusa"
-  url "https://ghfast.top/https://github.com/crytic/medusa/archive/refs/tags/v1.2.1.tar.gz"
-  sha256 "dc1d759a0037350b51adce293cc678bf441386606ccf622745e8ff2d04a86cb0"
+  url "https://ghfast.top/https://github.com/crytic/medusa/archive/refs/tags/v1.3.0.tar.gz"
+  sha256 "d38375a7f4c3ffaee40cb877142d7b824ea35300dd18a80ec9b6c706f7c584da"
   license "AGPL-3.0-only"
   head "https://github.com/crytic/medusa.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d0a87e647f278b365177ba8493606325a91557de070e7f8e1346cec0854dc7df"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "87ccb12465609526c2dcee37bbabffcb38affa4f5c9b5560d77b1dc270a996b5"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "f1f7b37a0f797128ba0a10bcc296fb75d2ecf3097b51d37b5aae1029da4bb4d9"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a7549c4a058ea66ba043d5e66dc312f2f401b4ef3fad6ec5e06123036a93642a"
-    sha256 cellar: :any_skip_relocation, ventura:       "88830664a5ad9f7075537f5423e414cf287e93183209f1518fd153504cde2533"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c688934508215e0501c484964785c04174f89092cd564951d2a9406351b0804d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d8dfb057a32ef14cef7b32b4b62970d18de576fd31a3bfbfe9ca42f3784ca93d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5c5c25808d0a6a96efe1d2a317f4a31787cdb4ed612e39dbc85f9d89367dd52b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d7f0084420762c26e96bf8a226336c619e298fc52b5b2438737de0cb07e97e7a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "de59f97900df5ab33b120a32dcc1771ed3b5675f4595827afa638c1c0ff6bbdc"
+    sha256 cellar: :any_skip_relocation, sonoma:        "62217b5913b40cfcf357556828f8096bc968187548561399fe93cbb1afb7833d"
+    sha256 cellar: :any_skip_relocation, ventura:       "0a316758d27293ad59ecba834097402315a127d8229fbc24d6ebc53e904e9eeb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b952ec6fffaa2a311405898955cb6d0927ed06acf470bed0a90b1f26eb1ab494"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e24c25fd9e1b978eea15f2861ba4312e1324cc36ebde14105084e65f75e5b40b"
   end
 
   depends_on "go" => :build

@@ -10,11 +10,6 @@ class Libplacebo < Formula
     url "https://code.videolan.org/videolan/libplacebo/-/archive/v7.351.0/libplacebo-v7.351.0.tar.bz2"
     sha256 "d68159280842a7f0482dcea44a440f4c9a8e9403b82eccf185e46394dfc77e6a"
 
-    resource "fast_float" do
-      url "https://ghfast.top/https://github.com/fastfloat/fast_float/archive/refs/tags/v8.0.1.tar.gz"
-      sha256 "18f868f0117b359351f2886be669ce9cda9ea281e6bf0bcc020226c981cc3280"
-    end
-
     resource "glad2" do
       url "https://files.pythonhosted.org/packages/6e/5a/d62b24fe1c7c2f34e15c2aa4418a5327a8550fdc272999a59e0dddebc3ee/glad2-2.0.8.tar.gz"
       sha256 "b84079b9fa404f37171b961bdd1d8da21370e6c818defb8481c5b3fe3d6436da"
@@ -32,15 +27,17 @@ class Libplacebo < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_sequoia: "cc68b84e986ff3921494c0920a263504caba9179d16cc360e2bf85b67f0da03a"
-    sha256 cellar: :any, arm64_sonoma:  "1d95abadbb00238446545c61ae7f78f130b45573d583da76bd12605765ae1320"
-    sha256 cellar: :any, arm64_ventura: "e79f218b3c019489133386f735faa8b2993ca08804b71e0c42cb95805f921d0b"
-    sha256 cellar: :any, sonoma:        "a06adea720f3c7c7b03f1f0e6e56c0ee137c68c89b9579e7e0c6ad786a3bc49b"
-    sha256 cellar: :any, ventura:       "dfe66fa848bafa93492c8613690a84efe7d95a3c246d2e33fb99d6b1d46bf0f4"
-    sha256               arm64_linux:   "cc56f2a984e9b6403b6c4ed6f6a6f0b96d6c1582e6e4c4886e4b8cc9235b78b2"
-    sha256               x86_64_linux:  "0b416df707aa5920f94b8a9e8b016b545dbdb157d2ad066103190bdf9821d6a9"
+    rebuild 1
+    sha256 cellar: :any, arm64_sequoia: "4e5f0af5ad2cb7d838cff63d56a50d7db5e9f7ca27c2045a546834397853240f"
+    sha256 cellar: :any, arm64_sonoma:  "ad9bf481e31cfd2425500328d11163c3186063233778d07505c854c7bf8b5e71"
+    sha256 cellar: :any, arm64_ventura: "84c2732b7169fdc2b799db8e5263f813667b2848742e2f1860a93cf3059e5eac"
+    sha256 cellar: :any, sonoma:        "5b7c2f42b54db07a9860001c9d67e767163dea236ac6ebcb19590fb35e04c30d"
+    sha256 cellar: :any, ventura:       "15747d8fce1b0d95423e33a7199a8c9fe60c4aa93c05790891094c0ce78853af"
+    sha256               arm64_linux:   "8d17bc1d0f2086cd435e9381608d3bb766b4ff959d701108c6eda546d1cea5ca"
+    sha256               x86_64_linux:  "3256101be5b4f5ed3d6a449b2d0a5617b013c09e5c00ee5e4276273e8febcdd1"
   end
 
+  depends_on "fast_float" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkgconf" => :build
@@ -63,6 +60,9 @@ class Libplacebo < Formula
 
       r.stage(Pathname("3rdparty")/dir_name)
     end
+
+    # Use Homebrew `fast_float`.
+    inreplace "src/meson.build", "../3rdparty/fast_float/include", Formula["fast_float"].opt_include
 
     system "meson", "setup", "build",
                     "-Dvulkan-registry=#{Formula["vulkan-headers"].share}/vulkan/registry/vk.xml",

@@ -3,19 +3,18 @@ class Tmt < Formula
 
   desc "Test Management Tool"
   homepage "https://tmt.readthedocs.io"
-  url "https://files.pythonhosted.org/packages/23/f7/b6caca7e9fa5e9b725936ccb2fd78b8710043b5887ee02761406e47c787b/tmt-1.52.0.tar.gz"
-  sha256 "da235b1aea81b9d2b2b734464c8fbf88d6102e748dae61455142794705616728"
+  url "https://files.pythonhosted.org/packages/f8/4c/c34eb979e64000ff46399933e81864127eb5599b898d51c453188b3cce7f/tmt-1.53.0.tar.gz"
+  sha256 "84429f453c7cb1aa2ab347c1094bfa95b3a54e98608dfc85e258a07ee43f7972"
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "70fe364e29ea3e6fe9f6bc079a28a9944cf579ea1a94c43c27784aa4c004a838"
-    sha256 cellar: :any,                 arm64_sonoma:  "ccc8641a250dbc8dfb4aabf44479ae1e26123ed3d87aa77b209277f86f93400e"
-    sha256 cellar: :any,                 arm64_ventura: "759496b8e2fde51c651350b463a5ba000aac961c20f3b17380fd1329afa006a6"
-    sha256 cellar: :any,                 sonoma:        "7a7c6cfa8ab8baf2121597dd3b16f5ddec7466fc46cca105ddb68a4032a605be"
-    sha256 cellar: :any,                 ventura:       "22bebbb2ef264f31c2b766939ad308bec55644029e52797af04a43e7e38b8004"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "75beaba48ea7f078b77cb2c46b6bb2d15002c742ba35b7d97dff53f53d486bbe"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f63406ed6bbd7503cf0a3f979e49f7c88992ad234e1a38e53ffe9a2d251a1511"
+    sha256 cellar: :any,                 arm64_sequoia: "ff4b598c0ded3fe0f38be708d39a01a529dd10584bca737391215a465fa9d5a3"
+    sha256 cellar: :any,                 arm64_sonoma:  "2c7f45fb3ec3e9e2a3e5888da279fe2c0863d8aac0322c035222317240a97ecd"
+    sha256 cellar: :any,                 arm64_ventura: "18072739844a6f745804446204a670ee045f917a371f355d50a1fafd98206e3f"
+    sha256 cellar: :any,                 sonoma:        "4928936b1a2091a6ab36139f5fcbda6244c1e5c081e4d1d85d885649d8003272"
+    sha256 cellar: :any,                 ventura:       "a064f3a080206505bd2906ba309a484f2da3d028ab28517d02ad686744281feb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ceadfbe0f5f3b233b2ffc9d8bd28e052adbdf9c3032bdf55ef3ace7dc4cf845e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ee148f3d908758d42f6a43092aed6ee4ca9190dc63fff1e8efc1eed7bdcec16d"
   end
 
   depends_on "rust" => :build # for rpds-py
@@ -166,7 +165,7 @@ class Tmt < Formula
   def install
     virtualenv_install_with_resources
 
-    generate_completions_from_executable(bin/"tmt", shells: [:bash, :fish, :zsh], shell_parameter_format: :click)
+    generate_completions_from_executable(bin/"tmt", shell_parameter_format: :click)
   end
 
   test do

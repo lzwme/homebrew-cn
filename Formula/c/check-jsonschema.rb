@@ -146,11 +146,7 @@ class CheckJsonschema < Formula
   def install
     virtualenv_install_with_resources
 
-    generate_completions_from_executable(
-      bin/"check-jsonschema",
-      shells:                 [:bash, :fish, :zsh],
-      shell_parameter_format: :click,
-    )
+    generate_completions_from_executable(bin/"check-jsonschema", shell_parameter_format: :click)
   end
 
   test do

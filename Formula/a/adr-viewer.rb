@@ -69,8 +69,7 @@ class AdrViewer < Formula
   def install
     virtualenv_install_with_resources
 
-    generate_completions_from_executable(bin/"adr-viewer",
-                                         shells: [:bash, :fish, :zsh], shell_parameter_format: :click)
+    generate_completions_from_executable(bin/"adr-viewer", shell_parameter_format: :click)
   end
 
   test do

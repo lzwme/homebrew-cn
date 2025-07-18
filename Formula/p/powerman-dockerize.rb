@@ -2,17 +2,17 @@ class PowermanDockerize < Formula
   desc "Utility to simplify running applications in docker containers"
   homepage "https://github.com/powerman/dockerize"
   url "https://github.com/powerman/dockerize.git",
-      tag:      "v0.23.0",
-      revision: "70a40e0c2787e60ce70662c32a8e5c4c91fa79bb"
+      tag:      "v0.23.1",
+      revision: "67f38473db4017b50603c44fa12f5a0e72dddab3"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f965d80fdc381a9376899e804f28ec6aa64a668376e79e5fddeaffd4c384f237"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f965d80fdc381a9376899e804f28ec6aa64a668376e79e5fddeaffd4c384f237"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "f965d80fdc381a9376899e804f28ec6aa64a668376e79e5fddeaffd4c384f237"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1fcae88f9e8d59cdb081ff181cf4fae45d076b217015dd3635350bcf16ada09f"
-    sha256 cellar: :any_skip_relocation, ventura:       "1fcae88f9e8d59cdb081ff181cf4fae45d076b217015dd3635350bcf16ada09f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9f4ee377d76ec7b6a72e724f5c7c412cff5a49a9b371c83a7bee4ec28c759485"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4a0293bcece03af2c4730f956ba99e3ecbac16b858f96aa259a31d2d619f3c0c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4a0293bcece03af2c4730f956ba99e3ecbac16b858f96aa259a31d2d619f3c0c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "4a0293bcece03af2c4730f956ba99e3ecbac16b858f96aa259a31d2d619f3c0c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f15a2cdcff5ccb5c2121bb2bd51a02843338cb7fd4bfa3bcce3c9ac50f88e2ce"
+    sha256 cellar: :any_skip_relocation, ventura:       "f15a2cdcff5ccb5c2121bb2bd51a02843338cb7fd4bfa3bcce3c9ac50f88e2ce"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b929edf1227ef9345ed11289fdf6dc7b476072bac539513c46d2a0302571f2da"
   end
 
   depends_on "go" => :build

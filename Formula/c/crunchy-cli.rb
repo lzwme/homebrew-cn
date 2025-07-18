@@ -19,6 +19,7 @@ class CrunchyCli < Formula
   end
 
   deprecate! date: "2024-07-16", because: :repo_archived
+  disable! date: "2025-07-17", because: :repo_archived
 
   depends_on "pkgconf" => :build
   depends_on "rust" => :build

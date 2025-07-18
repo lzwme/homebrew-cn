@@ -76,7 +76,7 @@ class RichCli < Formula
 
     virtualenv_install_with_resources
 
-    generate_completions_from_executable(bin/"rich", shells: [:bash, :fish, :zsh], shell_parameter_format: :click)
+    generate_completions_from_executable(bin/"rich", shell_parameter_format: :click)
   end
 
   test do

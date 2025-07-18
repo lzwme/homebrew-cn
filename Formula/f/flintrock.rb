@@ -92,8 +92,7 @@ class Flintrock < Formula
   def install
     virtualenv_install_with_resources
 
-    generate_completions_from_executable(bin/"flintrock",
-                                         shells: [:bash, :fish, :zsh], shell_parameter_format: :click)
+    generate_completions_from_executable(bin/"flintrock", shell_parameter_format: :click)
   end
 
   test do
@@ -116,5 +115,5 @@ index e95a10e..02925e7 100644
 -        'PyYAML == 6.0.1',
 +        'PyYAML == 6.0.2',
      ],
- 
+
      entry_points={

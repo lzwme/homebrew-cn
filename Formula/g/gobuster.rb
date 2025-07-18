@@ -1,18 +1,18 @@
 class Gobuster < Formula
   desc "Directory/file & DNS busting tool written in Go"
   homepage "https://github.com/OJ/gobuster"
-  url "https://ghfast.top/https://github.com/OJ/gobuster/archive/refs/tags/v3.7.0.tar.gz"
-  sha256 "893f1979b453d655880c19552e1f894110a661a4057a58e95a4d7505bf6d7fa8"
+  url "https://ghfast.top/https://github.com/OJ/gobuster/archive/refs/tags/v3.8.0.tar.gz"
+  sha256 "480e54b0d02a6c09c702c6df07430fc4e9a458d54485568c66e6e8bce3d3d748"
   license "Apache-2.0"
   head "https://github.com/OJ/gobuster.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dbbbd89652ba67e6a47ac28283e6d01323510fcf2f8961fd3a1652f7bff114a0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dbbbd89652ba67e6a47ac28283e6d01323510fcf2f8961fd3a1652f7bff114a0"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "dbbbd89652ba67e6a47ac28283e6d01323510fcf2f8961fd3a1652f7bff114a0"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6de00cc18ba4a36cb4bba9c1bcda0c533cba5e38556db29b474d0b0467ab0bd6"
-    sha256 cellar: :any_skip_relocation, ventura:       "6de00cc18ba4a36cb4bba9c1bcda0c533cba5e38556db29b474d0b0467ab0bd6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7ca402096692d79dc58ccb76395ce3c54cc211ad9e0b6ae5fe374e8eb7a4b70d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5bb616f59600d89af8bd6aa83258e49e6c9bfc1240ed91dd20029f596359ca3e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5bb616f59600d89af8bd6aa83258e49e6c9bfc1240ed91dd20029f596359ca3e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "5bb616f59600d89af8bd6aa83258e49e6c9bfc1240ed91dd20029f596359ca3e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "564fcfdadce3a9c6df66619949c42bfaa65e2da087fa86367ddbbbb63030c77c"
+    sha256 cellar: :any_skip_relocation, ventura:       "564fcfdadce3a9c6df66619949c42bfaa65e2da087fa86367ddbbbb63030c77c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c384fe0312f2d4feef2f31d4bcae1ef8a86a1a527bf7e910214e170834ea9c15"
   end
 
   depends_on "go" => :build

@@ -165,7 +165,7 @@ class Sceptre < Formula
     # Avoid issue if `numpy` is installed, https://github.com/Sceptre/sceptre/issues/1541
     virtualenv_install_with_resources(system_site_packages: false)
 
-    generate_completions_from_executable(bin/"sceptre", shells: [:bash, :fish, :zsh], shell_parameter_format: :click)
+    generate_completions_from_executable(bin/"sceptre", shell_parameter_format: :click)
   end
 
   test do

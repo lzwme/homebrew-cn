@@ -1,19 +1,19 @@
 class Fbthrift < Formula
   desc "Facebook's branch of Apache Thrift, including a new C++ server"
   homepage "https://github.com/facebook/fbthrift"
-  url "https://ghfast.top/https://github.com/facebook/fbthrift/archive/refs/tags/v2025.06.30.00.tar.gz"
-  sha256 "41825864dfeee3e6bbda7e74eed771e5c9802573631a8fd1d082367fc16627a2"
+  url "https://ghfast.top/https://github.com/facebook/fbthrift/archive/refs/tags/v2025.07.14.00.tar.gz"
+  sha256 "9c2df5c98d73eccbda695983d9961578bb21706338f4ffe7dfca562d490e780b"
   license "Apache-2.0"
   head "https://github.com/facebook/fbthrift.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "7af61ef2c87a34dfc0fa155f723e8574eca5817716703c6858fcababea874360"
-    sha256 cellar: :any,                 arm64_sonoma:  "9ed0de8d646b78e9ed359a1984d398b29996b581a79161bb2069829945d9e965"
-    sha256 cellar: :any,                 arm64_ventura: "cb24c4829b45570a8d1e733e83de09e37a8baf762026fb85b020dc82e2febbb2"
-    sha256 cellar: :any,                 sonoma:        "ba362c72994b609c3af6edf645bedd7641d56014b0d57b624a866b0fc4c7ae47"
-    sha256 cellar: :any,                 ventura:       "0f4728b24d4d3d1e3e9b64cc1f1ede27e71bf47ad40a222eb746d9bc62043f1a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c00011a29aa4e0b26dcd1889f7272acec48a1dc5c482ab2cd57b9f8e1c72d7c0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2a5d6a3ff0407ab2b8887b5ad14b1602cf9018f485d4e2751aa42f29029ce7cc"
+    sha256 cellar: :any,                 arm64_sequoia: "05c4140339315f06b2327e478e8f66c85bed6b3240f8883f8807b8c6a0537dde"
+    sha256 cellar: :any,                 arm64_sonoma:  "be08c2df9781df9f47fc9908bc372ed4dd20a469c2a973f07e326a55fb71b458"
+    sha256 cellar: :any,                 arm64_ventura: "fd6e417785b11714763197214ccbe668f3668068f41a2376a198b7418c2922a2"
+    sha256 cellar: :any,                 sonoma:        "ba6238d01d37a9b8517809e81abb148681f3842b4f9628395ecb380d6f937a59"
+    sha256 cellar: :any,                 ventura:       "0ce08390713fd2944732333d94fac950402cda54898f30306184ae06e7386edc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e3f4d0487072926f65c6a40d4ddd6a3636ef2d0d72d423e2523a3a5325c2ef81"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4dce7aae4683549ec62bf54a78c5d386d4130910c5910e9c1471200bf9f4a0c9"
   end
 
   depends_on "bison" => :build # Needs Bison 3.1+
@@ -45,6 +45,12 @@ class Fbthrift < Formula
   fails_with :clang do
     build 1100
     cause "error: 'asm goto' constructs are not supported yet"
+  end
+
+  # https://github.com/facebook/fbthrift/pull/663
+  patch do
+    url "https://github.com/facebook/fbthrift/commit/60858d74ded0ec39e33546c472ec65ad6208a6d5.patch?full_index=1"
+    sha256 "0b91dcdf0a37ea8e885d10bb9762c481a3250a0d09a87ece69b53a3fa0268d7a"
   end
 
   def install
