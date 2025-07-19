@@ -1,17 +1,17 @@
 class Tldx < Formula
   desc "Domain Availability Research Tool"
   homepage "https://brandonyoung.dev/blog/introducing-tldx/"
-  url "https://ghfast.top/https://github.com/brandonyoungdev/tldx/archive/refs/tags/v1.2.5.tar.gz"
-  sha256 "fd137e59e495da1458cb3ff44be62af63856096a5f9a1879bc6d311fed62ca86"
+  url "https://ghfast.top/https://github.com/brandonyoungdev/tldx/archive/refs/tags/v1.3.0.tar.gz"
+  sha256 "4e72535ad99396ad1f4d2322024f317fd5d3f05d3e82a645fa403d3ce95b3729"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "601038f524b47d16d4319d58e6056352719a8cccc5d3e974a5bda068d71972e8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "601038f524b47d16d4319d58e6056352719a8cccc5d3e974a5bda068d71972e8"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "601038f524b47d16d4319d58e6056352719a8cccc5d3e974a5bda068d71972e8"
-    sha256 cellar: :any_skip_relocation, sonoma:        "28b61e4691c67f1d03494cdae2c991436d85839d55cfbf33829c8d9b0d70c706"
-    sha256 cellar: :any_skip_relocation, ventura:       "28b61e4691c67f1d03494cdae2c991436d85839d55cfbf33829c8d9b0d70c706"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e2d84492fbcd19f69a130d5d17a4847f33e454ca03cdf8e782d9adfe0022c030"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "84bddde265a819e8ca9466fa889b68ce364cc362c83d3c3f18e5491025bca97f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "84bddde265a819e8ca9466fa889b68ce364cc362c83d3c3f18e5491025bca97f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "84bddde265a819e8ca9466fa889b68ce364cc362c83d3c3f18e5491025bca97f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4a1dbaa3bf0602624c72c21bbf828f50717d921de9891ffee378696a60ebe533"
+    sha256 cellar: :any_skip_relocation, ventura:       "4a1dbaa3bf0602624c72c21bbf828f50717d921de9891ffee378696a60ebe533"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fc23b2e244244574127afec5b6194eb2d2ed206dd0e3fe42fb5f054154a9096f"
   end
 
   depends_on "go" => :build

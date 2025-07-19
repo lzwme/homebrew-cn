@@ -1,8 +1,8 @@
 class Geoserver < Formula
   desc "Java server to share and edit geospatial data"
   homepage "https://geoserver.org/"
-  url "https://downloads.sourceforge.net/project/geoserver/GeoServer/2.27.1/geoserver-2.27.1-bin.zip"
-  sha256 "ec8ae7ce759ae4d23fda0147553450d087ab3a4a1d4ad6ebd1a1a928fa5e2d09"
+  url "https://downloads.sourceforge.net/project/geoserver/GeoServer/2.27.2/geoserver-2.27.2-bin.zip"
+  sha256 "cb37a3562fb41734c2b548ab0af9f73ecc4b2e6a08512c52dac0352965a8df45"
   license "GPL-2.0-or-later"
 
   # GeoServer releases contain a large number of files for each version, so the
@@ -15,7 +15,7 @@ class Geoserver < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "615f867d33e8ff63ccfaafdd1c9170b7ca8b0d0d08054e869002de6fb9f2a78f"
+    sha256 cellar: :any_skip_relocation, all: "8cddd9e377a47e9054797a6fd32a588326597e82c0f7b6dc4d4e25c1cdb635ed"
   end
 
   def install

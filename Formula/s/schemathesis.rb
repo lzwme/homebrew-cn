@@ -3,18 +3,18 @@ class Schemathesis < Formula
 
   desc "Testing tool for web applications with specs"
   homepage "https://schemathesis.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/1f/06/92827f4b213997cfe33b8c46063c77801e29ca371e0fca84411b866aa8f0/schemathesis-4.0.10.tar.gz"
-  sha256 "8c36a195a07ec52182bedcb2cf7518fb0fa8e2c001a7710cf8c4185ed62d5237"
+  url "https://files.pythonhosted.org/packages/10/61/974adeea685682887821ed5b6f518c3d0e7a73d8742b9f2337da432de588/schemathesis-4.0.11.tar.gz"
+  sha256 "e526cb46c54439c857a49b619e50f6786790e6b35154a5a3bbe0ef0b76a23369"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "305922825befa00cf09edcc09f6c6ccd3ac28d9bda7b954658a627f944a5b3f4"
-    sha256 cellar: :any,                 arm64_sonoma:  "911954c08610d581fa9141799dd55a040686533b8ab910e8ab0ada51db333912"
-    sha256 cellar: :any,                 arm64_ventura: "ecfbb29def2c9e47852de00e99d8c8116a81c69594e8bdfc6d55b82b80552943"
-    sha256 cellar: :any,                 sonoma:        "d548f834a09996c7e4d5666062fd297c8f97441644d8d0499c832f302dc3564a"
-    sha256 cellar: :any,                 ventura:       "d280c26dfbac14f22de48869637217e6fec29d85f165558098196d2214509105"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "99a500a281563fc19987342c8eb5372c6805279c567f2d564278cf6a252f7270"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "438e98b6daf4dc0c4784cd684f200b6504ed5a4680955f130bc42900dcfb7b92"
+    sha256 cellar: :any,                 arm64_sequoia: "f4a8da632ccefa89bdb414035912e4007dda03b2dbaf1d14980b5bf38ef4d444"
+    sha256 cellar: :any,                 arm64_sonoma:  "3aff5ce5bc5e6c7ce806ea9739fc9d72c2021a81d71f8ebd02839a5deb78a9ff"
+    sha256 cellar: :any,                 arm64_ventura: "d0428e6560dd9b0a512d9a98bdb7aa41a8c7f3c41f46ff57c27b5a9891b4c1a9"
+    sha256 cellar: :any,                 sonoma:        "b10da08904919f7573b5886530b609d395d41cf8bedc3b10aa093657fbae76d7"
+    sha256 cellar: :any,                 ventura:       "c5d88d014a301217339e56dca210000f33ee17653f55e3328e2639e76a42a2b6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6464f35dae212cfd960905b493bdcaa6f36a11476c23c196ae085bad27290c3f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2d4d791e7f219c8a897b46e61305261a1931cf762625e0217d0bd36f21c35cd0"
   end
 
   depends_on "rust" => :build # for rpds-py
@@ -125,8 +125,8 @@ class Schemathesis < Formula
   end
 
   resource "jsonschema" do
-    url "https://files.pythonhosted.org/packages/bf/d3/1cf5326b923a53515d8f3a2cd442e6d7e94fcc444716e879ea70a0ce3177/jsonschema-4.24.0.tar.gz"
-    sha256 "0b4e8069eb12aedfa881333004bccaec24ecef5a8a6a4b6df142b2cc9599d196"
+    url "https://files.pythonhosted.org/packages/f1/6e/35174c1d3f30560848c82d3c233c01420e047d70925c897a4d6e932b4898/jsonschema-4.24.1.tar.gz"
+    sha256 "fe45a130cc7f67cd0d67640b4e7e3e2e666919462ae355eda238296eafeb4b5d"
   end
 
   resource "jsonschema-specifications" do

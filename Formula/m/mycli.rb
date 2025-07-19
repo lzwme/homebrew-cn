@@ -3,18 +3,18 @@ class Mycli < Formula
 
   desc "CLI for MySQL with auto-completion and syntax highlighting"
   homepage "https://www.mycli.net/"
-  url "https://files.pythonhosted.org/packages/d0/8c/fe8c0033b5ec02817b12fa1865a6eb91a2e905b2806e9148af2ea6d6569f/mycli-1.34.4.tar.gz"
-  sha256 "aca57fda3b474acc69daf03f7f817e78255c4f3307326e78b59ac57ccb6d471a"
+  url "https://files.pythonhosted.org/packages/97/2e/2b98f5b910fe0e6a22ad8ec6d6923427e4d3a298c73a76554b766faad10e/mycli-1.35.0.tar.gz"
+  sha256 "01d007d4888ded667efc7dc38f021c55b18c8d2bd7566b99d1d4ed68bc31f989"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "4a25e0410c353481a394dd0a73f1e96de0a959a19f93f4bb3db5d7a8a6996a2b"
-    sha256 cellar: :any,                 arm64_sonoma:  "b4a0b8ac239ca071cb014c49d2f1aacb719086d6557569b4c8b9c1394aaff041"
-    sha256 cellar: :any,                 arm64_ventura: "a858c6dcdc3c95e120afb4e213d9322ca7976e20bcab91c5538b141be039b99d"
-    sha256 cellar: :any,                 sonoma:        "aa4091cd7409c1b225b249226665f69362489069ee4f053f1b9317f49796f354"
-    sha256 cellar: :any,                 ventura:       "5a50d4a38f7ddfcee8d471da78201e7acdf112deb232034ba2ddc41763574df7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ca5777cb11cc1e6af7dc1d208a90029705ba9fccfb43336f6a706b56586a2d06"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ccb6349c492947b298457624d4def1dc2023d3a393546c7c7018ab5089949e72"
+    sha256 cellar: :any,                 arm64_sequoia: "b1d01c087147a6a52d7547fe3e21ce0a2de1653ec412309f59382252e9184d39"
+    sha256 cellar: :any,                 arm64_sonoma:  "b0e6542f747a44e246f62e0c44ff80a195a9c77904caa6fc9bb2ca71c91c40da"
+    sha256 cellar: :any,                 arm64_ventura: "649cc078ac53b947ecb98545ed27fccdd199a575d2d331e573aaeaafd66af8bc"
+    sha256 cellar: :any,                 sonoma:        "0c0bf2b6f51ca1a68694f6567a272920de81add9053aea696d17f36a7d77235f"
+    sha256 cellar: :any,                 ventura:       "f7144fd0ac028ececc31bd6396501c02d9cd43081d6092674d53fc4663c88049"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e94f5a78f75a9f2b61d6b6980498f72d8108d6e56ce0c94fc142c4fac500e2a4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ca6a6ded98825851972fc1286b82e1fa63c20512cb39428430491438551132fc"
   end
 
   depends_on "rust" => :build # for sqlglotrs

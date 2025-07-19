@@ -1,19 +1,19 @@
 class Helix < Formula
   desc "Post-modern modal text editor"
   homepage "https://helix-editor.com"
-  url "https://ghfast.top/https://github.com/helix-editor/helix/releases/download/25.07/helix-25.07-source.tar.xz"
-  sha256 "22f037e8c4bbef67b7aa6db3448063f87004159fde6a9ce684082963bfeba4e5"
+  url "https://ghfast.top/https://github.com/helix-editor/helix/releases/download/25.07.1/helix-25.07.1-source.tar.xz"
+  sha256 "2d0cf264ac77f8c25386a636e2b3a09a23dec555568cc9a5b2927f84322f544e"
   license "MPL-2.0"
   head "https://github.com/helix-editor/helix.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "61fb6d5f97dcf0d9e2939058f1046f19c1d3ed63f2808ff0ad5034b36d658ed9"
-    sha256 cellar: :any,                 arm64_sonoma:  "049aa43b8112ede3ac51edb222f20965ca13d4ddf505882c58c7a6da2fd528ce"
-    sha256 cellar: :any,                 arm64_ventura: "29381672d5fb4886712ca7b0e67fb578db76202408d8c148bcf265f8f54fb94a"
-    sha256 cellar: :any,                 sonoma:        "2329187f2fcc76b4b853315653ea0f4f88b23e7f01994812e632d959860fbd37"
-    sha256 cellar: :any,                 ventura:       "dbea980364bf70e270cdb4e6e6e895773d175d646eb0260053777004181892ea"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ee6b65330ef2e64f344e8ec5d0231f65da1e21b3f45062c6d628eef687769111"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7fd183435744b4e6083e2ac5567a42c4d4fbf43fdbc95ef8214cf7036b149c82"
+    sha256 cellar: :any,                 arm64_sequoia: "55a17081c4827c430ac891d6d60ed6c88f8ac698727f70467d879aef85f40e7b"
+    sha256 cellar: :any,                 arm64_sonoma:  "b0af62e33605ad1fd05cdb6ef8c978a71cc714299ae12164d1d09aa71f6fa3c9"
+    sha256 cellar: :any,                 arm64_ventura: "9a37be124a4fd1c03b74c965a8f0267d112af349d24b7df90f0dc8f7db9c9b36"
+    sha256 cellar: :any,                 sonoma:        "0549f3a3483f52e6f4cf91d1eb5d0bbc7337f8306cce31c33f833ce41acbe1b4"
+    sha256 cellar: :any,                 ventura:       "860969afdadeda30a99d0bffce48ace7b9e8c25bd8d8b03bc734043268c96955"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fb65655cfc088fb01da162a60ab75b419bbacb4f9e262c3be09c4193c382b56d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8c25fb6e1058913aaeb3b39e024bd7c917ceb6bb701ade5ce9cfe2e967113363"
   end
 
   depends_on "rust" => :build

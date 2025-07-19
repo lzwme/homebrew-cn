@@ -1,17 +1,17 @@
 class E2b < Formula
   desc "CLI to manage E2B sandboxes and templates"
   homepage "https://e2b.dev"
-  url "https://registry.npmjs.org/@e2b/cli/-/cli-1.6.0.tgz"
-  sha256 "df41df4d0e2bad86f0c8dd18bd0c9d84c45f90b7bc59762e52ddd18d2ce2027c"
+  url "https://registry.npmjs.org/@e2b/cli/-/cli-1.8.0.tgz"
+  sha256 "ec82e12a7607b7bcf735f97f29eb8f8db3aaffb8a1dd2e041d0219142768a5eb"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7bb009bcbcd1e8bab8f55946a06abd9c88428b8f31e483670b8e7fc1084b0b93"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7bb009bcbcd1e8bab8f55946a06abd9c88428b8f31e483670b8e7fc1084b0b93"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "7bb009bcbcd1e8bab8f55946a06abd9c88428b8f31e483670b8e7fc1084b0b93"
-    sha256 cellar: :any_skip_relocation, sonoma:        "09eb87baf25f3c460a9a2b0d5f43056dc0f168d51eb7202293d8d4dd63271264"
-    sha256 cellar: :any_skip_relocation, ventura:       "09eb87baf25f3c460a9a2b0d5f43056dc0f168d51eb7202293d8d4dd63271264"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7bb009bcbcd1e8bab8f55946a06abd9c88428b8f31e483670b8e7fc1084b0b93"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5671875a993316f21ffdeb71733d47340ea0d1fd1953e9b18cf1926c8606aa36"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5671875a993316f21ffdeb71733d47340ea0d1fd1953e9b18cf1926c8606aa36"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "5671875a993316f21ffdeb71733d47340ea0d1fd1953e9b18cf1926c8606aa36"
+    sha256 cellar: :any_skip_relocation, sonoma:        "cf85821a61756f909e8675885ce55b1a8023fede23337c48590a5e174b8f8cf6"
+    sha256 cellar: :any_skip_relocation, ventura:       "cf85821a61756f909e8675885ce55b1a8023fede23337c48590a5e174b8f8cf6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5671875a993316f21ffdeb71733d47340ea0d1fd1953e9b18cf1926c8606aa36"
   end
 
   depends_on "node"

@@ -1,18 +1,18 @@
 class Delve < Formula
   desc "Debugger for the Go programming language"
   homepage "https://github.com/go-delve/delve"
-  url "https://ghfast.top/https://github.com/go-delve/delve/archive/refs/tags/v1.25.0.tar.gz"
-  sha256 "f9d95d98103a2c72ff4d3eacbb419407ad2624e8205b7f45de375b17ad7f8d27"
+  url "https://ghfast.top/https://github.com/go-delve/delve/archive/refs/tags/v1.25.1.tar.gz"
+  sha256 "2fc5fb553ff09c368d5e1fe6abd7279389804d75ad7b5a0fd053138049ecd968"
   license "MIT"
   head "https://github.com/go-delve/delve.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bb52067991189975a07e77ae32264452c9569304860c454f2a3718f91e2cea58"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bb52067991189975a07e77ae32264452c9569304860c454f2a3718f91e2cea58"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "bb52067991189975a07e77ae32264452c9569304860c454f2a3718f91e2cea58"
-    sha256 cellar: :any_skip_relocation, sonoma:        "df374d568e2b22e033e11a699ab461586b32d70d2e3ad9c5e239c02491f3769f"
-    sha256 cellar: :any_skip_relocation, ventura:       "df374d568e2b22e033e11a699ab461586b32d70d2e3ad9c5e239c02491f3769f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3d30dea036cd3771598bbab66b0ac58bc2c4f898d2e255de11e00d7eb42d5b24"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "aa80aa92e824ed43330096c728858a71a0b33d5c739eeb821b9dcdc4d4fed78a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "aa80aa92e824ed43330096c728858a71a0b33d5c739eeb821b9dcdc4d4fed78a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "aa80aa92e824ed43330096c728858a71a0b33d5c739eeb821b9dcdc4d4fed78a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "688d6a3e9fc0c62f7d07041022890269b7677a4c1ef911b2b0f5f7d4b6e72750"
+    sha256 cellar: :any_skip_relocation, ventura:       "688d6a3e9fc0c62f7d07041022890269b7677a4c1ef911b2b0f5f7d4b6e72750"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "74cf46b735bc6d3d3da32cb1552d5d3cc715f0514cc62c448bd3937ebdbc416f"
   end
 
   depends_on "go" => :build

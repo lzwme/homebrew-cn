@@ -1,18 +1,18 @@
 class Spacer < Formula
   desc "Small command-line utility for adding spacers to command output"
   homepage "https://github.com/samwho/spacer"
-  url "https://ghfast.top/https://github.com/samwho/spacer/archive/refs/tags/v0.3.9.tar.gz"
-  sha256 "5bbb11699b59f81f74236e1b68ae090dbce5344cda9e386c117747f87d12dd78"
+  url "https://ghfast.top/https://github.com/samwho/spacer/archive/refs/tags/v0.4.2.tar.gz"
+  sha256 "7408b9ebefac040110cc3f4ee12ccdc320ca8aa88f9d306304f3e8878103fd10"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7f9dace2501bdfe433a11173f816898310a005ec63888827fb15866792d188e1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "70b178e65ccd32753ab22859b9a25d965b954e90104ae65a38a1794acaac131f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "38577cf8851f5975d5d7d91896128c47c6fb9498d7886fdfabd7dfae63f88798"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d4f664ad17ce98093fdefe6464a590982f6e5b1adfce2d05a4b0f65bda8b9808"
-    sha256 cellar: :any_skip_relocation, ventura:       "2d325b69609ebe1d06fd8e508d2df50497b8af3119efe9928697661c887fa518"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a689fb76c74d4a6c8f04f69b6beb599e7216bb998e9d88f916f0ebe0a34d36ff"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "06c0f5a4eb4b8ba31609c37ff87c3e089c4524dbd5cb718c475b461994cae6b5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ad8663e1483bb6dccc18b94bd4c7ae8a633e3e31f8c4ea05037ce7f5b7955592"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ce31df01e013ebc163b73ede478d2ce095746e8453b8d931c0785be40161f758"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "115bc2b194f788ecc8569ebff7397b5c8a2154d78c41975124c892db7120c1cf"
+    sha256 cellar: :any_skip_relocation, sonoma:        "14db5782e8ae633f92f53770dca37f1b1a4785753063a4c43e64a00747f7c7f8"
+    sha256 cellar: :any_skip_relocation, ventura:       "84d388b3ce2d6beedab69386f8e8819d3bb47e04cd8409349f81a3f1ca14965e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a5939dee33629f72cde4f47a2d98d79e8a5a34ea854143adf24ad904c7cee384"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1e93f5f93539868f518f3c475b9a9ab25edd77222e518e2d2983138e760db4ac"
   end
 
   depends_on "rust" => :build

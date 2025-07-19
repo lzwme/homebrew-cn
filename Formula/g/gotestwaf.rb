@@ -1,18 +1,18 @@
 class Gotestwaf < Formula
   desc "Tool for API and OWASP attack simulation"
   homepage "https://lab.wallarm.com/test-your-waf-before-hackers/"
-  url "https://ghfast.top/https://github.com/wallarm/gotestwaf/archive/refs/tags/v0.5.6.tar.gz"
-  sha256 "8edd398b694de728894055f80d4809bdfa762aa25e9d29e86fdccee62ac2e1ae"
+  url "https://ghfast.top/https://github.com/wallarm/gotestwaf/archive/refs/tags/v0.5.7.tar.gz"
+  sha256 "0780607d4a9e090d6be50d9e356e8b6e8065e2639b0462b6b8d1892db2b61d0d"
   license "MIT"
   head "https://github.com/wallarm/gotestwaf.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8f9b83b297bbab0ec18a8ad46548c809e98236377504480df8906d455b779907"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8f9b83b297bbab0ec18a8ad46548c809e98236377504480df8906d455b779907"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "8f9b83b297bbab0ec18a8ad46548c809e98236377504480df8906d455b779907"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2203a337bacd42b4f98abee68eb59165faad3d550ab294bf6934c79f84db048b"
-    sha256 cellar: :any_skip_relocation, ventura:       "2203a337bacd42b4f98abee68eb59165faad3d550ab294bf6934c79f84db048b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2880f1b1762dc091122914a8dd64a94605b4fce326354e32d984f7681abd0b9b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "480abc79bea67bd74b27fd45c33825070abb7479b1d2e0f0d0e1fb8fe516afb7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "480abc79bea67bd74b27fd45c33825070abb7479b1d2e0f0d0e1fb8fe516afb7"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "480abc79bea67bd74b27fd45c33825070abb7479b1d2e0f0d0e1fb8fe516afb7"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ef3288f5c98a0c178a2c46bb85b5f85a2a5722b9cb72b5eb327525b2bddd9e5c"
+    sha256 cellar: :any_skip_relocation, ventura:       "ef3288f5c98a0c178a2c46bb85b5f85a2a5722b9cb72b5eb327525b2bddd9e5c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "94f17147ccab9311190e22aa08e2fefa33452c871f86210f9c38802ee7db0dd7"
   end
 
   depends_on "go" => :build

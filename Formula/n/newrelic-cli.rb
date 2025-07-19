@@ -1,8 +1,8 @@
 class NewrelicCli < Formula
   desc "Command-line interface for New Relic"
   homepage "https://github.com/newrelic/newrelic-cli"
-  url "https://ghfast.top/https://github.com/newrelic/newrelic-cli/archive/refs/tags/v0.100.3.tar.gz"
-  sha256 "c062f6f8d9a8747be2e5cfd6e6a844eb4d00b072b6e285dccd840380ead3876c"
+  url "https://ghfast.top/https://github.com/newrelic/newrelic-cli/archive/refs/tags/v0.100.4.tar.gz"
+  sha256 "4291bb8b5560be397681bfce8869a0c70c727fc317a8e0a34ce4f1b1465592a8"
   license "Apache-2.0"
   head "https://github.com/newrelic/newrelic-cli.git", branch: "main"
 
@@ -12,13 +12,13 @@ class NewrelicCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7bbf2a4afb1f187da0d9d4fd8c4084c1baf95f41e72b2c9c36e423576290e491"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d757bea10e00866f1da21e75d6646b6e730cadebed5abd8b9539615f75d2de23"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "87b94e840ed15bad300f0d95f9895efa368428d6e92ffd7f760f1c8786e7365b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0874172d82d241fa9b026b8aace610e5c78f0e3bf124c9a6adb7ab3abe849d0a"
-    sha256 cellar: :any_skip_relocation, ventura:       "36d83e48f3d468d83f27ffb41bab13c12b35e6f0031747835d34a89a6a0b368a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2d274ff05a1619ebce8534121bbb15393b9654fa69ef17a2665f5f93751a76b2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "625f4fc9300612d692df169b9acc565e301647bc3efcf5c26815399296fa9d7c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ed2b846823eb8e638095b24356a957a9f9e605f580ed8ca91c3ddf5bda96f4a1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0de82840118d598b1c16cfb10870460d14fa4693759545cb6931b4d6935b55df"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "b7e3e1ab6e8f692a311626ef2dfe128e19fa7708130cfe0029dc75acecdaeede"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a5801a6f6ec9e5b246471408659a060151e57364f45e4f318c8b2945d197c3d7"
+    sha256 cellar: :any_skip_relocation, ventura:       "754a068f0e1124ef6e36b9000b74aa1a4137c892ff42993451cbb349ab3b0453"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0a7ce48111d0f22616bc1cd290cdb1575ef2eb2d715602858f1d2292f79de835"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5c9a5b6e9f4e48e005c3ecc2e9559a2e684e5a2c4dd8f6d302dd4745ebe5d2b3"
   end
 
   depends_on "go" => :build

@@ -2,19 +2,19 @@ class Eksctl < Formula
   desc "Simple command-line tool for creating clusters on Amazon EKS"
   homepage "https://eksctl.io"
   url "https://github.com/eksctl-io/eksctl.git",
-      tag:      "0.210.0",
-      revision: "b54410c56b4c4056e4271b3a3b783bf9a357d37d"
+      tag:      "0.211.0",
+      revision: "ceeab7032abb249e8891a58e6c76299bb137a606"
   license "Apache-2.0"
   head "https://github.com/eksctl-io/eksctl.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "816904575e0c15ebd660c8519b521de60fadcdd9b357ccfa6aa57e1ec59eca66"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d03d4a6375b0c966d575e23a3e037af0fba77f6d5be5dc369d586838c60921d7"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "f3b1534722ae4954784b4871f4420c5a873d0e9e4d05a73a411402b9a7a689f8"
-    sha256 cellar: :any_skip_relocation, sonoma:        "576ba988366d90aec5304384e7efad321caad30454a4d9b73c8f26056afad97e"
-    sha256 cellar: :any_skip_relocation, ventura:       "f5ed8e48e52cbfeadbc815bfcbeaf8f298e1705b724922ffe8079b425e989eaa"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "58253eb90eb8264e1889ae789888118fc6bfa0ad539d92231c52256979bafb83"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a867967b2e048a39e77cbe3ecf95888ab9dfaaf3307e5888c23b6eb80f0ccee3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fe283821dae4845536b9790987d554f1ca4a807335dfc09d4091e1be22a5afbd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9fe3f5f2b8f3f04c75037c61f680ef349bfe834b82c296e5501b267e7a5f12c0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "22ea8485bd8aad7c91f8e47a28ee669dcfdb11a6e41ae814cd1716e40b287720"
+    sha256 cellar: :any_skip_relocation, sonoma:        "671687ff5cec4e70e2025f2cec11ac8b6ef48b0c364c6fa8a4a269b456d46efe"
+    sha256 cellar: :any_skip_relocation, ventura:       "85c0d4e785be2607d716d090c018a36791249f583a3340813a446da30c6f8a41"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "34a90a25c18d383f64e28f42f2d546776d299d43d7550a13768b0445c578943b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "47c85c50f201a2e90675563b16fc1bab3432f37cfc0ac3ba2d9c5de0a0be5bed"
   end
 
   depends_on "go" => :build
