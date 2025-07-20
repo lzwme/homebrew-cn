@@ -6,8 +6,6 @@ class Cortexso < Formula
   license "Apache-2.0"
   head "https://github.com/janhq/cortex.git", branch: "dev"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     rebuild 2
     sha256                               arm64_sequoia: "fade5cc5bf426b17bf2f05dcd3e00d1973abff9916fdca7c1083f330a5354538"
@@ -18,6 +16,8 @@ class Cortexso < Formula
     sha256 cellar: :any_skip_relocation, arm64_linux:   "386e435cfaf38bc9e5730faf70bf67ed64e9c4b3f208646b832e0d4082866bdc"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "95cb135c5a9c3bc7194792b0dce8173b5bc261640f57ee4a8be05e31ec7cbfa3"
   end
+
+  deprecate! date: "2025-07-19", because: :repo_archived
 
   depends_on "node"
   depends_on "sqlite" # needs sqlite3_enable_load_extension

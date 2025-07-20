@@ -4,8 +4,8 @@
 class Mu < Formula
   desc "Tool for searching e-mail messages stored in the maildir-format"
   homepage "https://www.djcbsoftware.nl/code/mu/"
-  url "https://ghfast.top/https://github.com/djcb/mu/releases/download/v1.12.11/mu-1.12.11.tar.xz"
-  sha256 "c6e463f4936edc7f2c0a0b0d038183783b35430b35887b79301072bf1d5e9daf"
+  url "https://ghfast.top/https://github.com/djcb/mu/releases/download/v1.12.12/mu-1.12.12.tar.xz"
+  sha256 "2eacc122297a5569ce2136dd2d4116616d310b04e9891f6748e6727ab8889907"
   license "GPL-3.0-or-later"
   head "https://github.com/djcb/mu.git", branch: "master"
 
@@ -18,13 +18,13 @@ class Mu < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_sequoia: "e49a9a1faec9d09e51fd82bd1428f536bab37ae41446c469b0db4f153c49cdf5"
-    sha256 cellar: :any, arm64_sonoma:  "444bfab5ed4d65febfd676d59e00b8de3b6b58418c1de8f5f6497a2869473d21"
-    sha256 cellar: :any, arm64_ventura: "ccc8d27a9f9303f1a276a63de329f09d51f6a5b6c8f401c101f416472909092b"
-    sha256 cellar: :any, sonoma:        "0bd5ed64c5018490820f6e665e42cced0b6a1c4f4b00aa97f355baf31b422185"
-    sha256 cellar: :any, ventura:       "28239f6e4b080a37103b0449219db681c1fb2c77adbeabbf751f7b36411fa9e6"
-    sha256               arm64_linux:   "691b2119acd7c04413b29a07de72c046e19dfa24b66f74b6a62e1f75edee4a9d"
-    sha256               x86_64_linux:  "de514ad234daf1ff4026f6cf26efd26b90dabb8f08a679124b9949ece069cb2f"
+    sha256 cellar: :any, arm64_sequoia: "29ff5566f73bb5eb5813c25a8fa454bcf654ea74c118ced01380328d865afe1a"
+    sha256 cellar: :any, arm64_sonoma:  "2208c3a0831a8d1aa1ef1e7a8697c8b6187b51cab3476042614da3df1f44a798"
+    sha256 cellar: :any, arm64_ventura: "e4a9ea57164def3be6ab1560e931a462372fe688376c7143c4626f7ff4ac01db"
+    sha256 cellar: :any, sonoma:        "bfc06ebe08e6826bfaa37d34fec5de659e2c1fee20cd45a68022dd7fdee3a3fd"
+    sha256 cellar: :any, ventura:       "b1c456531a037acf9b62fc54ba7bb12e5fbf60856f725ddda3da6c0f6cea78fb"
+    sha256               arm64_linux:   "b04d722ae37becf49f0ca18100499cd12b03659d28312f53aef5858a9110a9b4"
+    sha256               x86_64_linux:  "5e6016f410f3264254ec633f69d66640d50721c67e98d51575a3eb17de1cf53a"
   end
 
   depends_on "emacs" => :build

@@ -1,20 +1,18 @@
 class Iccmax < Formula
   desc "Demonstration Implementation for iccMAX color profiles"
   homepage "https://github.com/InternationalColorConsortium/DemoIccMAX"
-  url "https://ghfast.top/https://github.com/InternationalColorConsortium/DemoIccMAX/archive/refs/tags/v2.1.26.tar.gz"
-  sha256 "e3bff2e0e7876faebe4a2097eefa2a190325bcc04c152ef470449f0c01b41fa7"
+  url "https://ghfast.top/https://github.com/InternationalColorConsortium/DemoIccMAX/archive/refs/tags/v2.2.6.tar.gz"
+  sha256 "dcb66f84016f6abe6033e71e2206e662b40e581dce9d208c9c7d60515f185dfe"
   license "MIT"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "1c199d5cf09f566e818d2049fb093faf85d4db8d5523e1434291fa2c9472410b"
-    sha256 cellar: :any,                 arm64_sonoma:  "1b74500262109e0e702597ed2342f488c4517b8f44800534e33c55c88b89bdaf"
-    sha256 cellar: :any,                 arm64_ventura: "47bc9ddae076560477d5dcb2aba20a1f1ee6a1bfd7abf427bf70aec37c7b911d"
-    sha256 cellar: :any,                 sonoma:        "7fb47953f25262626476ffa53e8b9a1062ac2f8dfd1a3c492c4cabb8159da326"
-    sha256 cellar: :any,                 ventura:       "0c77e5b40278033497bdf99dd0f667a06b3e8ceb5ec47ee4c32802da98d8e930"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3e4b5ff79e1bec935b036745b9dd4fe399864472e88bfd3f7352130efa91b7bb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0923ecf885cebd5ad8dc4438ca1d594faa37f9139c1a2606494aca2f2a023a1b"
+    sha256 cellar: :any,                 arm64_sequoia: "848ee717590c4281070e64950f3bb50448876eb5eb9e0befa3281e551d796c59"
+    sha256 cellar: :any,                 arm64_sonoma:  "a890aae068114d8001fbb51009a03e67ab874381e8a8d4d6493cee21c84fb8e9"
+    sha256 cellar: :any,                 arm64_ventura: "b1c7ca97f7911d654eddb1d020c85a274dbaf1694928818679772e5ed283bd1b"
+    sha256 cellar: :any,                 sonoma:        "2b189c5b3c1b92d0cad6b64d7d942c15dee808d1faf97a431eaa05d6721ece1b"
+    sha256 cellar: :any,                 ventura:       "e2c1c60c29a8f2551b7c634039e28db0dd81bca3474784490c9622104284b5d4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "20ee1858ed79286e4b4c3b367cc7960b5bc8f9cd4265650e5612860f0ed62039"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "73820992ae2d259462278125bb555843ab3cccd767fba192903a2f082b1da32c"
   end
 
   depends_on "cmake" => :build
@@ -25,6 +23,13 @@ class Iccmax < Formula
   depends_on "wxwidgets"
 
   uses_from_macos "libxml2"
+
+  # Build fails on Ubuntu
+  # https://github.com/InternationalColorConsortium/DemoIccMAX/pull/145
+  patch do
+    url "https://github.com/InternationalColorConsortium/DemoIccMAX/commit/965e14fb0c00dd4638dac6056cce84bab9821b57.patch?full_index=1"
+    sha256 "e40a632236e2b3da5df9b2313fee3d79eed601b9f91a81158a67577e0a9d397c"
+  end
 
   def install
     args = %W[

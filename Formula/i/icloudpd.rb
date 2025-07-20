@@ -5,19 +5,19 @@ class Icloudpd < Formula
   homepage "https://github.com/icloud-photos-downloader/icloud_photos_downloader"
   # We use a git checkout as scripts/patch_version runs git commands to update SHA
   url "https://github.com/icloud-photos-downloader/icloud_photos_downloader.git",
-      tag:      "v1.28.2",
-      revision: "0878373810f235f2935b5fde642c0fe1804e22ca"
+      tag:      "v1.29.0",
+      revision: "a1fe18ee8b9bf7ac9cc039630c62f96824998366"
   license "MIT"
   head "https://github.com/icloud-photos-downloader/icloud_photos_downloader.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "88f3ecf541808a37483e41af822fc09d8b9f0e713e886936e78d3ad07f896561"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f2553bdd722a0b73afb3f9530fe5d18faed64ac4584f0f7857ee9cb4bd906b82"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "f1dd48d3933e2393d31603d6798685c5616962380d1b4ebb592008d969e74bf8"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ca218e6e65c809b83402a9bdd70699436f797b83e7f638057bb82a152ef60b46"
-    sha256 cellar: :any_skip_relocation, ventura:       "016e8f60de6f49de435f34ad30b16da743138818b53ad12cc148f47ab48ec3c4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "db985c1834af3a7def5ecde69814b842f207ec3fd515897690a306402a896625"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "70a9242c94a5e6988c806ce55b198bd3aff0c12cff452b813174ba9bc800cd83"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b4786b643cd234076dc8c5d8de680c390489a2e1c1613d3c3227bd35b6bdafe0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ec816da3a27f7b5499ad4b1b17dfe0379cd8b8e0df294966ba6043552c8a4fba"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "ca1c464e7ce82f5db1ec0718edadeed54d1540e4a8468b5d4cce473615973542"
+    sha256 cellar: :any_skip_relocation, sonoma:        "327a17f266c067f9e60ab0838810d089e8810b19af693ef545e678817b94feeb"
+    sha256 cellar: :any_skip_relocation, ventura:       "bb9f81643594a2a4cf6b6c9aee92551997ffaae5ec9599be9544eade7ded6ef4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a6063c241a3678c5aed11a2eca209032ce15df02a7af5fe5a42e2ee3de8c90fb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ececa5cefbd38051ac56fd952d82c6b2a6c0e4956c62c284a9d2ce1dcee33e35"
   end
 
   depends_on "certifi"

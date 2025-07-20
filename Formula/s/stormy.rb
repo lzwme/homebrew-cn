@@ -1,18 +1,18 @@
 class Stormy < Formula
   desc "Minimal, customizable and neofetch-like weather CLI based on rainy"
   homepage "https://github.com/ashish0kumar/stormy"
-  url "https://ghfast.top/https://github.com/ashish0kumar/stormy/archive/refs/tags/v0.2.3.tar.gz"
-  sha256 "f07e4e3055ace0f2fa5db0364dde4aa7829055b8b1890a6871e833c987cc6ceb"
+  url "https://ghfast.top/https://github.com/ashish0kumar/stormy/archive/refs/tags/v0.3.0.tar.gz"
+  sha256 "84bcdc28874b2e20473c116aee7278423abb171b46888ec29c23d54ae02e5bf5"
   license "MIT"
   head "https://github.com/ashish0kumar/stormy.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d3c89bacf10510e274d11adc4c2bc3c7ae4a70fdcf00c505a94a0fd103765561"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d3c89bacf10510e274d11adc4c2bc3c7ae4a70fdcf00c505a94a0fd103765561"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "d3c89bacf10510e274d11adc4c2bc3c7ae4a70fdcf00c505a94a0fd103765561"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1d2eec31312292c3b8323eb8b5bb6f050ba3555be3e4bbcc7661447eaf0773f7"
-    sha256 cellar: :any_skip_relocation, ventura:       "1d2eec31312292c3b8323eb8b5bb6f050ba3555be3e4bbcc7661447eaf0773f7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c597ee33ae26b1afa966e36c06bc85cc8108bf2f4999e2386d3095757a99b8f1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "687010ca1018c80b732cbf1b35a9350db39a2a2ad20dec22056c67ccf910894b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "687010ca1018c80b732cbf1b35a9350db39a2a2ad20dec22056c67ccf910894b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "687010ca1018c80b732cbf1b35a9350db39a2a2ad20dec22056c67ccf910894b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "1aad754bb1d81cbb4a714e0117204ad6e5dbe34c971ea438202a595eb8d8655d"
+    sha256 cellar: :any_skip_relocation, ventura:       "1aad754bb1d81cbb4a714e0117204ad6e5dbe34c971ea438202a595eb8d8655d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b16e184e0b5a4a5a82776f5af8e0184d0c40ac648cdf65a1099828b3c57144a6"
   end
 
   depends_on "go" => :build

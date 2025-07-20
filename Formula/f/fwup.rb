@@ -1,18 +1,18 @@
 class Fwup < Formula
   desc "Configurable embedded Linux firmware update creator and runner"
   homepage "https://github.com/fwup-home/fwup"
-  url "https://ghfast.top/https://github.com/fwup-home/fwup/releases/download/v1.13.0/fwup-1.13.0.tar.gz"
-  sha256 "70979d36b39857b37cc378291d3bca5a9e1feec0a1b66f67a79fae46d8831529"
+  url "https://ghfast.top/https://github.com/fwup-home/fwup/releases/download/v1.13.1/fwup-1.13.1.tar.gz"
+  sha256 "3e71ef0a422702f15aa60ba1137c89d76d7da97ddbb4f5a5c9b3c5ca2e339a67"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "31c3bf9d91a3d49bcb75ae61e27fb7cccd856f69bae861841884430c0c99f1f9"
-    sha256 cellar: :any,                 arm64_sonoma:  "6909ea5de2f883926be1af71e0f6316662f3b4aa26224e863791b9d6c137c3d5"
-    sha256 cellar: :any,                 arm64_ventura: "ae6228df886d9372709f67031b05b0e52a02243de4ece1e0eea09d10be139652"
-    sha256 cellar: :any,                 sonoma:        "968ceaceda1b320df56b862a25d4366b136151891c0025d8c5a3d2a9ebd893ba"
-    sha256 cellar: :any,                 ventura:       "d07d9b1e611b39c49f7d7280b772fd98f4654cec4b15e1ee7c6dd7cf7ef0841f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a8167e3a8701e07b6650ddf3ca485e03d7e508f054c009b714f6e551f3599c80"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "763938b79feea5b422d84bf11c6f81b2471c3bb9e91734a8bb37314f6f9dd4e9"
+    sha256 cellar: :any,                 arm64_sequoia: "de170a5e7ce11c43d8b86d032c7bcc2a48dce669c77a4558f67b7a2649de5034"
+    sha256 cellar: :any,                 arm64_sonoma:  "dc3361a7ce64de4a45b1dbbbdd80eeb57103b503c0751aa0cb28124cfa07b527"
+    sha256 cellar: :any,                 arm64_ventura: "336e99416c39d32ad6a4a7a62bf442375c099d9a2c86b19521ddca2dbad49fce"
+    sha256 cellar: :any,                 sonoma:        "b30c0887c5cee2ea99b778f54c4d7be18ec9870f46a29217be5ade4461639a81"
+    sha256 cellar: :any,                 ventura:       "0a5e695039f64edabf8d67aa0276640c55e54b0a459936ec98cedbe2deb231c0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "baeb1461ac2aabd72eb96cce42a2dd923a5b1420afb1a543e97aa71a4df762aa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "87daf344c2a7b0c61039ce3b97aeb33bf41dc4af3845ee2698cdd3e87e7589e2"
   end
 
   depends_on "pkgconf" => :build

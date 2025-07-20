@@ -1,8 +1,8 @@
 class Opam < Formula
   desc "OCaml package manager"
   homepage "https://opam.ocaml.org"
-  url "https://ghfast.top/https://github.com/ocaml/opam/releases/download/2.3.0/opam-full-2.3.0.tar.gz"
-  sha256 "506ba76865dc315b67df9aa89e7abd5c1a897a7f0a92d7b2694974fdc532b346"
+  url "https://ghfast.top/https://github.com/ocaml/opam/releases/download/2.4.0/opam-full-2.4.0.tar.gz"
+  sha256 "119f41efb1192dad35f447fbf1c6202ffc331105e949d2980a75df8cb2c93282"
   license "LGPL-2.1-only"
   head "https://github.com/ocaml/opam.git", branch: "master"
 
@@ -22,17 +22,16 @@ class Opam < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "47acff18f55443e9c33b6c39cbd9a20e884f98adcb2919d29854c5d0e4cd089d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "62cde967f16957eb5ed95c3c4519b91bd36feef87b382fec69e68ec8d4bf0f20"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "eea0a5362042e93f2532e0d263a00dd8c2025ec894203255af4791a247fee125"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e58068cb65843ce811808ddc622bb5333cd1b13eef483f0c4420bf2e904013e2"
-    sha256 cellar: :any_skip_relocation, ventura:       "98346e4e16d18be444cbbd432798a5dd1e9664c3519af0f070f0aa2cb230b283"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b89e24fa3d72680f6640b9e3faf38ee1e92a8681ffab4d686d125636fc3b1acc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a0a94893ed75763ac3ef12792c4873ed120f9165f30b20bb27a24a1d01a395f5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1168249459a563cf8fb7bc00128a8f1a94a477139d3daad42e2470b62866145c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "40758a0db823e22ccf3f121f0203af64903c243d7362217c08d365a30f37bb99"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "0b272340572473457cbb347bf3a2b5c32f2848094a6c2c0c5f2269a9614ddb92"
+    sha256 cellar: :any_skip_relocation, sonoma:        "abbbc044f296e5e3922e0be58688c865cf59eb12bbd52aed0e8aeb696804f97c"
+    sha256 cellar: :any_skip_relocation, ventura:       "48b8b417a23fe28cfadee7ae10318ad20fb2bb131aad65a28499153a24f8c1eb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d9e6fb066364dfbcee7022cbda6ef4a1cb68959b71a254e4d649503839adcfac"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "87d8bf724933590873417eecc9e144633b1a907f1ad18d5df281d3c2012c0935"
   end
 
   depends_on "ocaml" => [:build, :test]
-  depends_on "gpatch"
 
   uses_from_macos "unzip"
 

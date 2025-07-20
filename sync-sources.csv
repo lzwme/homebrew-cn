@@ -3917,8 +3917,9 @@ Homebrew-homebrew-core/Formula/lib/libnfnetlink.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libnfs.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libnftnl.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libnghttp2.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/lib/libnghttp3.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/lib/libnghttp3.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libngspice.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/lib/libngtcp2.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libnice-gstreamer.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libnice.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libnids.rb, Homebrew/homebrew-core, 1
@@ -7225,6 +7226,7 @@ Homebrew-homebrew-core/Formula/v/vim.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vimpager.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vimpc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vimtutor-sequel.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/v/vineflower.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vineyard.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vint.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/v/vip.rb, Homebrew/homebrew-core, 1
@@ -8142,6 +8144,7 @@ Homebrew-homebrew-cask/Casks/b/bee-app.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/beekeeper-studio.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/b/beeper.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/beersmith.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/b/beid-token.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/bentobox.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/bepo.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/berrycast.rb, Homebrew/homebrew-cask, 0
@@ -8449,6 +8452,7 @@ Homebrew-homebrew-cask/Casks/c/clamxav.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/clash-verge-rev.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/classicftp.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/classroom-mode-for-minecraft.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/c/claude-code.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/claude.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/clay.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/clean-me.rb, Homebrew/homebrew-cask, 1
@@ -10414,9 +10418,11 @@ Homebrew-homebrew-cask/Casks/font/font-l/font-lexend.rb, Homebrew/homebrew-cask,
 Homebrew-homebrew-cask/Casks/font/font-l/font-liberation-mono-for-powerline.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-l/font-liberation-nerd-font.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-l/font-liberation.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/font/font-l/font-libertinus-keyboard.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-l/font-libertinus-math.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-l/font-libertinus-mono.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-l/font-libertinus-sans.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/font/font-l/font-libertinus-serif-display.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-l/font-libertinus-serif.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-l/font-libertinus.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-l/font-libre-barcode-128-text.rb, Homebrew/homebrew-cask, 0
@@ -11458,6 +11464,7 @@ Homebrew-homebrew-cask/Casks/font/font-s/font-simple-line-icons.rb, Homebrew/hom
 Homebrew-homebrew-cask/Casks/font/font-s/font-single-day.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-s/font-sintony.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-s/font-sirin-stencil.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/font/font-s/font-sirivennela.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-s/font-sitara.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-s/font-six-caps.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-s/font-sixtyfour-convergence.rb, Homebrew/homebrew-cask, 0

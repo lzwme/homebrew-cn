@@ -3,20 +3,19 @@ class Wtfis < Formula
 
   desc "Passive hostname, domain, and IP lookup tool"
   homepage "https://github.com/pirxthepilot/wtfis"
-  url "https://files.pythonhosted.org/packages/16/55/748b21d2d2e765e319cff417447006fc5d714b56317918da0d70ed8d7ee5/wtfis-0.11.0.tar.gz"
-  sha256 "3a687d99d91c9bba15e45707acef68c3ebc9ffd571fb311c2d83423a62ee0e6f"
+  url "https://files.pythonhosted.org/packages/73/3f/d415009b6ca935d1e5cb5b864fb5d11c052564e32cb109d2662557be2f37/wtfis-0.12.0.tar.gz"
+  sha256 "1aa26783db9cb05b6ee5e932c9bc4b302c82462452d9e90c3d1d7b2a353b5922"
   license "MIT"
-  revision 2
   head "https://github.com/pirxthepilot/wtfis.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "c492bce8c680b6d841e386ef5e6de04d6e822f0bba755656662c356c0ecc9499"
-    sha256 cellar: :any,                 arm64_sonoma:  "9acb74eddcc0a670940686b3e9dcee811fb40ef28fbcd053ce8251af8d2f8476"
-    sha256 cellar: :any,                 arm64_ventura: "0d8205bd6f499b500ed072daa836660696f62be1030155982dc878c06b16e7d5"
-    sha256 cellar: :any,                 sonoma:        "546fef05cd03ec221fb1b16fb3f99f3a098f8c5d84315000761664b117ca3c4d"
-    sha256 cellar: :any,                 ventura:       "41cb03c006fc628eae7159ac647f2a6cfd216331b603a30843156565a805c782"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fe946e68e96b8140b5f2f979b8bd0db8ada8dca9bf9cf98fb0f8b5f1fb5a04a5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5f1669e03df81d937db0fe54879a7b70ba050f9907867af043a4e20d07400349"
+    sha256 cellar: :any,                 arm64_sequoia: "ef5e3acf6b9f98ac04ff10186cbd6e090c5c7a6ee601126038bdfcdd6052b5d6"
+    sha256 cellar: :any,                 arm64_sonoma:  "5ecb46b8e93c7b109d2899030ca689634009f4e5e33d2239186fa2ec015d86ef"
+    sha256 cellar: :any,                 arm64_ventura: "2ef804c0ccb07e77331b488e9aeb58a617bf0ece94bd47f6253b18a9eba742c4"
+    sha256 cellar: :any,                 sonoma:        "09546b0cf5caf60eaa3aa31e4a93c88d151b007a537bf6e0ce012e557be40c70"
+    sha256 cellar: :any,                 ventura:       "3c913f82584c16d55be3dbad60058e47c8d3b2ca4a76cdd24d21a5731ca8e720"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "763c5a1591edec334563e636df7bbaab47e4a8deeeeb756dc1582f1575b3865b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "848ca81b6edad16a8c0616e5bfd4739ac7b8553c030b6aa5709dbf7379835aa3"
   end
 
   depends_on "rust" => :build
@@ -39,8 +38,8 @@ class Wtfis < Formula
   end
 
   resource "click-plugins" do
-    url "https://files.pythonhosted.org/packages/5f/1d/45434f64ed749540af821fd7e42b8e4d23ac04b1eda7c26613288d6cd8a8/click-plugins-1.1.1.tar.gz"
-    sha256 "46ab999744a9d831159c3411bb0c79346d94a444df9a3a3742e9ed63645f264b"
+    url "https://files.pythonhosted.org/packages/c3/a4/34847b59150da33690a36da3681d6bbc2ec14ee9a846bc30a6746e5984e4/click_plugins-1.1.1.2.tar.gz"
+    sha256 "d7af3984a99d243c131aa1a828331e7630f4a88a9741fd05c927b204bcf92261"
   end
 
   resource "colorama" do
@@ -79,13 +78,13 @@ class Wtfis < Formula
   end
 
   resource "pygments" do
-    url "https://files.pythonhosted.org/packages/7c/2d/c3338d48ea6cc0feb8446d8e6937e1408088a72a39937982cc6111d17f84/pygments-2.19.1.tar.gz"
-    sha256 "61c16d2a8576dc0649d9f39e089b5f02bcd27fba10d8fb4dcc28173f7a45151f"
+    url "https://files.pythonhosted.org/packages/b0/77/a5b8c569bf593b0140bde72ea885a803b82086995367bf2037de0159d924/pygments-2.19.2.tar.gz"
+    sha256 "636cb2477cec7f8952536970bc533bc43743542f70392ae026374600add5b887"
   end
 
   resource "python-dotenv" do
-    url "https://files.pythonhosted.org/packages/88/2c/7bb1416c5620485aa793f2de31d3df393d3686aa8a8506d11e10e13c5baf/python_dotenv-1.1.0.tar.gz"
-    sha256 "41f90bc6f5f177fb41f53e87666db362025010eb28f60a01c9143bfa33a2b2d5"
+    url "https://files.pythonhosted.org/packages/f6/b0/4bc07ccd3572a2f9df7e6782f52b0c6c90dcbb803ac4a167702d7d0dfe1e/python_dotenv-1.1.1.tar.gz"
+    sha256 "a8a6399716257f45be6a007360200409fce5cda2661e3dec71d23dc15f6189ab"
   end
 
   resource "requests" do
@@ -114,8 +113,8 @@ class Wtfis < Formula
   end
 
   resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/d1/bc/51647cd02527e87d05cb083ccc402f93e441606ff1f01739a62c8ad09ba5/typing_extensions-4.14.0.tar.gz"
-    sha256 "8676b788e32f02ab42d9e7c61324048ae4c6d844a399eebace3d4979d75ceef4"
+    url "https://files.pythonhosted.org/packages/98/5a/da40306b885cc8c09109dc2e1abd358d5684b1425678151cdaed4731c822/typing_extensions-4.14.1.tar.gz"
+    sha256 "38b39f4aeeab64884ce9f74c94263ef78f3c22467c8724005483154c26648d36"
   end
 
   resource "typing-inspection" do

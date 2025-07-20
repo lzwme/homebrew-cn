@@ -1,18 +1,18 @@
 class TerraformModuleVersions < Formula
   desc "CLI that checks Terraform code for module updates"
   homepage "https://github.com/keilerkonzept/terraform-module-versions"
-  url "https://ghfast.top/https://github.com/keilerkonzept/terraform-module-versions/archive/refs/tags/v3.3.12.tar.gz"
-  sha256 "5cb38a014559e17bc125728381e29f4ed92264df0f651d5ef783cdad833966e4"
+  url "https://ghfast.top/https://github.com/keilerkonzept/terraform-module-versions/archive/refs/tags/v3.3.13.tar.gz"
+  sha256 "b85fbeb788c6fca0c328a29a1aab839cd556a7506105f544326a6e322d2aaf80"
   license "MIT"
   head "https://github.com/keilerkonzept/terraform-module-versions.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c4617f15006d80c603e3b3b57e6f5dcce8b19b8cda78a10b6709cfa5290a2f1b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c4617f15006d80c603e3b3b57e6f5dcce8b19b8cda78a10b6709cfa5290a2f1b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "c4617f15006d80c603e3b3b57e6f5dcce8b19b8cda78a10b6709cfa5290a2f1b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "186a2d05ddcf4a40a294bd76ca5fd3b9b9da60e39fd16a4d337d23e690b2d30b"
-    sha256 cellar: :any_skip_relocation, ventura:       "186a2d05ddcf4a40a294bd76ca5fd3b9b9da60e39fd16a4d337d23e690b2d30b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "024bf6479175a7694bd93cd0ef7a118167f63b2377dc6a4cd1534d2c30e75311"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f120f8f70dfe4d25b7df6c6fb2469eeaf6bca263d732ad30397a7ec34e9892c6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f120f8f70dfe4d25b7df6c6fb2469eeaf6bca263d732ad30397a7ec34e9892c6"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "f120f8f70dfe4d25b7df6c6fb2469eeaf6bca263d732ad30397a7ec34e9892c6"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e1f9c1efef4d6bd1de99676ca38f0d48df39201303c7cb5ef5171f013f51b9f1"
+    sha256 cellar: :any_skip_relocation, ventura:       "e1f9c1efef4d6bd1de99676ca38f0d48df39201303c7cb5ef5171f013f51b9f1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "58972338b2b52cdd49510d81a228a18eeaa615d4ceec36cd35707dad896b0966"
   end
 
   depends_on "go" => :build

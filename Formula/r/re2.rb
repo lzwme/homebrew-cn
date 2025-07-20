@@ -1,9 +1,9 @@
 class Re2 < Formula
   desc "Alternative to backtracking PCRE-style regular expression engines"
   homepage "https://github.com/google/re2"
-  url "https://ghfast.top/https://github.com/google/re2/archive/refs/tags/2025-06-26.tar.gz"
-  version "20250626"
-  sha256 "6090fc23a189e1a04a0e751b4f285922a794a39b6ecc6670b6141af74c82fe08"
+  url "https://ghfast.top/https://github.com/google/re2/archive/refs/tags/2025-07-17.tar.gz"
+  version "20250717"
+  sha256 "41bea2a95289d112e7c2ccceeb60ee03d54269e7fe53e3a82bab40babdfa51ef"
   license "BSD-3-Clause"
   head "https://github.com/google/re2.git", branch: "main"
 
@@ -18,16 +18,16 @@ class Re2 < Formula
     end
   end
 
-  no_autobump! because: :requires_manual_review
+  no_autobump! because: :incompatible_version_format
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "9e6630eec99984adf3adb3e846ca1cb9edb93f2e7da45bb2af33455cfd59a622"
-    sha256 cellar: :any,                 arm64_sonoma:  "5dffedca80e8ee43b4dab2a5c1d3a81d0eb1b9bc92f83383b0bf32703621bc0f"
-    sha256 cellar: :any,                 arm64_ventura: "98770691d0561564cd1a1d07df2905775d247630708edf0ec9c9672a1483ea64"
-    sha256 cellar: :any,                 sonoma:        "51cdd827442293121a0298b8ddf92b1bea41c78f5246362e22f0ed0b0acd7e90"
-    sha256 cellar: :any,                 ventura:       "18e1f448e71f2541ad5c7952a029e4ea5714168d6f1c391653f7036ff10ecec0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1e26604c5085ff54cda0584934ec73a9c583c292e3c60799a12b72ce9091a9cb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c8d887d0f68d78d3feb56355210780dfd9edf2ebc6facb7e1b4b4090b008f1ab"
+    sha256 cellar: :any,                 arm64_sequoia: "e701f51e6e1252cfcd718b724aadaa4cfa91b210593ca7bde82be2523a30d42e"
+    sha256 cellar: :any,                 arm64_sonoma:  "f0c7660c95d3f7cda4cf15e9c96fc82e97806ec6a8d6de55e3c18b82298adbe6"
+    sha256 cellar: :any,                 arm64_ventura: "3de3a5a456cc0f6c83926bd8c37d60fef324a19d4909e154dc06cec8f96cdc8b"
+    sha256 cellar: :any,                 sonoma:        "82baa762ff815738e4095e298f1b8ed0276b2d89bf02089a65d6201d2b6228a2"
+    sha256 cellar: :any,                 ventura:       "2e8ddd6de851c388500b5e2f88c22c92ba761873bfd4e175e70c56056f02fa92"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5278cd7e970bbd2f11792a1ae306bafae79179b8d43af81a6c828287f0786019"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f3469e606398eb16108b8b1080534258eadaade49f254ac2a723a4b0b89f9d50"
   end
 
   depends_on "cmake" => :build

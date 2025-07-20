@@ -3,11 +3,9 @@ class PiecesCli < Formula
 
   desc "Command-line tool for Pieces.app"
   homepage "https://pieces.app/"
-  url "https://storage.googleapis.com/app-releases-production/pieces_cli/release/pieces_cli-1.15.2.tar.gz"
-  sha256 "9b3656716c6cdb41aa0c7e2d054f7e59a5e00a5bbf2dc4437bcb769141e2fc60"
-
+  url "https://storage.googleapis.com/app-releases-production/pieces_cli/release/pieces_cli-1.16.5.tar.gz"
+  sha256 "3ff92f965dbfe0ffeed9f5460b148e84708e60b39626cd03f3c36a817e78f2ab"
   license "MIT"
-  revision 1
 
   livecheck do
     url "https://builds.pieces.app/stages/production/pieces_cli/version"
@@ -16,16 +14,14 @@ class PiecesCli < Formula
     end
   end
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "da0252c7929a51d81e29b102d0e69f45b3403df80b8388a7bb75f0a7f5c0484d"
-    sha256 cellar: :any,                 arm64_sonoma:  "72b48afbcb9af33e228e75d3ccce8460ce2c1e873b6260f799cf6002a1260acf"
-    sha256 cellar: :any,                 arm64_ventura: "4085abd35af48ad50b57570da1c8529afbcfcfbab6d407eb139987fbfbec1648"
-    sha256 cellar: :any,                 sonoma:        "f9ce2be52f0d32aab4a8c0d4fa3e206eb58cbf2033258e1c98d0f1420c4c9933"
-    sha256 cellar: :any,                 ventura:       "c0537893a413323a7a52baa70c0412d8f6aa5a41d455ec7db0a978bf70c6a4b0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1f9497b4e411330d6781fc88514bac670795998a90cbc558cc57534477690cad"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e9c062f1bd086f8a620de3ad13eb30a164b1bee9a00f6e43e3baaa3200744537"
+    sha256 cellar: :any,                 arm64_sequoia: "f32f23352c19ea3ce115419ec129ab09e757c1bb426e8d75f261f424aaea938a"
+    sha256 cellar: :any,                 arm64_sonoma:  "a0d32a78d7bac10a0ca9a2e7f6085179b5e9256f45bdd18feb40dfc4f3adf297"
+    sha256 cellar: :any,                 arm64_ventura: "a32b2afa3c2c687e246ea431879b180a8ffa5bdc544cf256312c908aee2472ac"
+    sha256 cellar: :any,                 sonoma:        "f6c1ab7120a7e95d381dec3588a160a4476218d4886a1c9565cd2ba92801e0cc"
+    sha256 cellar: :any,                 ventura:       "b66b7188244bf3b8bfdc7dd99982fb658c7e36b950f1d5c30db57cdde02091fd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3b4df5b10feb83f6a4afc080bd2da74787ba85d46fb89badf13c8227e9ea3133"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3946de17b5a1dbee0a7fd8031dbc1a99943069320295fee49a6f3ae7c5681285"
   end
 
   depends_on "rust" => :build
@@ -34,8 +30,8 @@ class PiecesCli < Formula
   depends_on "python@3.13"
 
   resource "aenum" do
-    url "https://files.pythonhosted.org/packages/d0/f8/33e75863394f42e429bb553e05fda7c59763f0fd6848de847a25b3fbccf6/aenum-3.1.15.tar.gz"
-    sha256 "8cbd76cd18c4f870ff39b24284d3ea028fbe8731a58df3aa581e434c575b9559"
+    url "https://files.pythonhosted.org/packages/e3/52/6ad8f63ec8da1bf40f96996d25d5b650fdd38f5975f8c813732c47388f18/aenum-3.1.16-py3-none-any.whl"
+    sha256 "9035092855a98e41b66e3d0998bd7b96280e85ceb3a04cc035636138a1943eaf"
   end
 
   resource "annotated-types" do
@@ -69,8 +65,8 @@ class PiecesCli < Formula
   end
 
   resource "httpx-sse" do
-    url "https://files.pythonhosted.org/packages/4c/60/8f4281fa9bbf3c8034fd54c0e7412e66edbab6bc74c4996bd616f8d0406e/httpx-sse-0.4.0.tar.gz"
-    sha256 "1e81a3a3070ce322add1d3529ed42eb5f70817f45ed6ec915ab753f961139721"
+    url "https://files.pythonhosted.org/packages/6e/fa/66bd985dd0b7c109a3bcb89272ee0bfb7e2b4d06309ad7b38ff866734b2a/httpx_sse-0.4.1.tar.gz"
+    sha256 "8f44d34414bc7b21bf3602713005c5df4917884f76072479b21f68befa4ea26e"
   end
 
   resource "idna" do
@@ -114,13 +110,13 @@ class PiecesCli < Formula
   end
 
   resource "pydantic-settings" do
-    url "https://files.pythonhosted.org/packages/67/1d/42628a2c33e93f8e9acbde0d5d735fa0850f3e6a2f8cb1eb6c40b9a732ac/pydantic_settings-2.9.1.tar.gz"
-    sha256 "c509bf79d27563add44e8446233359004ed85066cd096d8b510f715e6ef5d268"
+    url "https://files.pythonhosted.org/packages/68/85/1ea668bbab3c50071ca613c6ab30047fb36ab0da1b92fa8f17bbc38fd36c/pydantic_settings-2.10.1.tar.gz"
+    sha256 "06f0062169818d0f5524420a360d632d5857b83cffd4d42fe29597807a1614ee"
   end
 
   resource "pygments" do
-    url "https://files.pythonhosted.org/packages/7c/2d/c3338d48ea6cc0feb8446d8e6937e1408088a72a39937982cc6111d17f84/pygments-2.19.1.tar.gz"
-    sha256 "61c16d2a8576dc0649d9f39e089b5f02bcd27fba10d8fb4dcc28173f7a45151f"
+    url "https://files.pythonhosted.org/packages/b0/77/a5b8c569bf593b0140bde72ea885a803b82086995367bf2037de0159d924/pygments-2.19.2.tar.gz"
+    sha256 "636cb2477cec7f8952536970bc533bc43743542f70392ae026374600add5b887"
   end
 
   resource "pyperclip" do
@@ -134,8 +130,8 @@ class PiecesCli < Formula
   end
 
   resource "python-dotenv" do
-    url "https://files.pythonhosted.org/packages/88/2c/7bb1416c5620485aa793f2de31d3df393d3686aa8a8506d11e10e13c5baf/python_dotenv-1.1.0.tar.gz"
-    sha256 "41f90bc6f5f177fb41f53e87666db362025010eb28f60a01c9143bfa33a2b2d5"
+    url "https://files.pythonhosted.org/packages/f6/b0/4bc07ccd3572a2f9df7e6782f52b0c6c90dcbb803ac4a167702d7d0dfe1e/python_dotenv-1.1.1.tar.gz"
+    sha256 "a8a6399716257f45be6a007360200409fce5cda2661e3dec71d23dc15f6189ab"
   end
 
   resource "python-multipart" do
@@ -164,18 +160,18 @@ class PiecesCli < Formula
   end
 
   resource "sse-starlette" do
-    url "https://files.pythonhosted.org/packages/8c/f4/989bc70cb8091eda43a9034ef969b25145291f3601703b82766e5172dfed/sse_starlette-2.3.6.tar.gz"
-    sha256 "0382336f7d4ec30160cf9ca0518962905e1b69b72d6c1c995131e0a703b436e3"
+    url "https://files.pythonhosted.org/packages/07/3e/eae74d8d33e3262bae0a7e023bb43d8bdd27980aa3557333f4632611151f/sse_starlette-2.4.1.tar.gz"
+    sha256 "7c8a800a1ca343e9165fc06bbda45c78e4c6166320707ae30b416c42da070926"
   end
 
   resource "starlette" do
-    url "https://files.pythonhosted.org/packages/8b/d0/0332bd8a25779a0e2082b0e179805ad39afad642938b371ae0882e7f880d/starlette-0.47.0.tar.gz"
-    sha256 "1f64887e94a447fed5f23309fb6890ef23349b7e478faa7b24a851cd4eb844af"
+    url "https://files.pythonhosted.org/packages/0a/69/662169fdb92fb96ec3eaee218cf540a629d629c86d7993d9651226a6789b/starlette-0.47.1.tar.gz"
+    sha256 "aef012dd2b6be325ffa16698f9dc533614fb1cebd593a906b90dc1025529a79b"
   end
 
   resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/d1/bc/51647cd02527e87d05cb083ccc402f93e441606ff1f01739a62c8ad09ba5/typing_extensions-4.14.0.tar.gz"
-    sha256 "8676b788e32f02ab42d9e7c61324048ae4c6d844a399eebace3d4979d75ceef4"
+    url "https://files.pythonhosted.org/packages/98/5a/da40306b885cc8c09109dc2e1abd358d5684b1425678151cdaed4731c822/typing_extensions-4.14.1.tar.gz"
+    sha256 "38b39f4aeeab64884ce9f74c94263ef78f3c22467c8724005483154c26648d36"
   end
 
   resource "typing-inspection" do
@@ -189,8 +185,8 @@ class PiecesCli < Formula
   end
 
   resource "uvicorn" do
-    url "https://files.pythonhosted.org/packages/de/ad/713be230bcda622eaa35c28f0d328c3675c371238470abdea52417f17a8e/uvicorn-0.34.3.tar.gz"
-    sha256 "35919a9a979d7a59334b6b10e05d77c1d0d574c50e0fc98b8b1a0f165708b55a"
+    url "https://files.pythonhosted.org/packages/5e/42/e0e305207bb88c6b8d3061399c6a961ffe5fbb7e2aa63c9234df7259e9cd/uvicorn-0.35.0.tar.gz"
+    sha256 "bc662f087f7cf2ce11a1d7fd70b90c9f98ef2e2831556dd078d131b96cc94a01"
   end
 
   resource "wcwidth" do
@@ -215,8 +211,10 @@ class PiecesCli < Formula
     assert_match version.to_s, shell_output("#{bin}/pieces --version --ignore-onboarding")
 
     # Try the list command (should ask to open PiecesOS)
-    list_output = shell_output("#{bin}/pieces --ignore-onboarding list", 2)
-    assert_match "Please make sure PiecesOS is running", list_output
+    stdin, stdout, _stderr, _wait_thr = Open3.popen3("#{bin}/pieces --ignore-onboarding list")
+    stdin.puts "n"
+    stdin.close
+    assert_match("Pieces OS is required but wasn’t found or couldn’t be launched.", stdout.read)
 
     ### Test the feedback command
     stdin, stdout, _stderr, _wait_thr = Open3.popen3("#{bin}/pieces --ignore-onboarding feedback")

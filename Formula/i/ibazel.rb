@@ -1,18 +1,18 @@
 class Ibazel < Formula
   desc "Tools for building Bazel targets when source files change"
   homepage "https://github.com/bazelbuild/bazel-watcher"
-  url "https://ghfast.top/https://github.com/bazelbuild/bazel-watcher/archive/refs/tags/V0.26.4.tar.gz"
-  sha256 "343d0b2d125a34244ff208722b8beb504dd0c97feb9c57107ae6064299a2a9bb"
+  url "https://ghfast.top/https://github.com/bazelbuild/bazel-watcher/archive/refs/tags/v0.26.5.tar.gz"
+  sha256 "bebb299fc32660934dc5db9e7794b58b94e638e486dad4b5b03786875c4ff2f9"
   license "Apache-2.0"
-  head "https://github.com/bazelbuild/bazel-watcher.git", branch: "master"
+  head "https://github.com/bazelbuild/bazel-watcher.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4290b8456803eb3998aa377f4bd8c141cc5ca7237eb7f28db3f6ee83778ecd7d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d515e7fcd696738f688d82c91d0ed5ce01b9ab86d2b4b3ef9396ce20dace0185"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "f0022a950e5e9674ef2fe87c83e46fbb734feca9ca3e92518549db19eda5918b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c975949513822821429803a5ed96701dc2d74432d8f7f83f797ea17cdeb2ce4b"
-    sha256 cellar: :any_skip_relocation, ventura:       "ec5f7a68edb7506f741e05ccf38216addb2922efbe9580d67a0c5a3b3b3c85b6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4fe65d8353459c10ce34798ba75f0ac40fdc8d5c9bd53b75bab3ad1ac136cfde"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cc9440a5287ce8387a1bd269b6f9f3c04a7f851d659940a4ac27659ec2306390"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "187bb9ccb044259c6484462a98937a1ca5380a0ef01f9154e4fb1f8bb2a17171"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "54a02e3318ecba126b76a18bcf9e1eb7ff239b0ef21882c8e8f2803a331e3c3c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "dea941e71159ab07c3244425eac579de8dc51c100e0be368fc40c2d54b8312f1"
+    sha256 cellar: :any_skip_relocation, ventura:       "e9792504613ded6cabd8fa0100cfc2d2e79349d6b88a3be6bd7d40f828628e36"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ae3a2a7e8303962e0572af577857273881d1f4516fb132c6d47238425a079adc"
   end
 
   depends_on "go" => [:build, :test]
@@ -29,10 +29,8 @@ class Ibazel < Formula
     (testpath/"MODULE.bazel").write <<~STARLARK
       bazel_dep(name = "rules_go", version = "0.55.1")
 
-      # Register the Go SDK extension properly
+      # Register brewed go
       go_sdk = use_extension("@rules_go//go:extensions.bzl", "go_sdk")
-
-      # Register the Go SDK installed on the host.
       go_sdk.host()
     STARLARK
 
