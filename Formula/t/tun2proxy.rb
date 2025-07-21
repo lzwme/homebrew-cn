@@ -1,8 +1,8 @@
 class Tun2proxy < Formula
   desc "Tunnel (TUN) interface for SOCKS and HTTP proxies"
   homepage "https://github.com/tun2proxy/tun2proxy"
-  url "https://ghfast.top/https://github.com/tun2proxy/tun2proxy/archive/refs/tags/v0.7.12.tar.gz"
-  sha256 "b0e23f7a1bc502db2b25803bd9a2cc53529e2649bec3e4e461f133b2751e3261"
+  url "https://ghfast.top/https://github.com/tun2proxy/tun2proxy/archive/refs/tags/v0.7.13.tar.gz"
+  sha256 "fbeb2e4c941e7fc46ceaafb47422a57b55aeef703de1d08a7d71292f6c127240"
   license "MIT"
   head "https://github.com/tun2proxy/tun2proxy.git", branch: "master"
 
@@ -12,13 +12,13 @@ class Tun2proxy < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e6ea3df46f2f632ded6e198a5d6cef2879a731e4ac7e58e48cc6b00dedc9e7fd"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9519170110a53e8fd5f379950ee49873d4b7aec6fd59bc8cd2dfd71194e9abd5"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "00bcdd57061093c3d7395e330f7fdfcbe4bd4bb4e038e8c6fc676c19ab94f69b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "727aa2e0754936f7444b32aa7d55988e8ecd97857d2410543146dfac5367ee88"
-    sha256 cellar: :any_skip_relocation, ventura:       "2f1ac5c0c4e6f719cc476b4c505a3db4d0aa40bc7d9774e7be4f3a263587a651"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b08e3ff0027e1cdbe3f76267bf7e03de71e1ad7dde0f11a7861c70b6126cc1c0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7b86f1d841b6b0c38011bb18cd0f8116f1051b87459ab7c88ea6f1bd31ac061f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "08b24b4307e634735e79ebfcc44f6e0e42c3a7201a66bb2bf47b1aa8587118bf"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b2bf3c5d42f598bab16b7e3904ebc514857203552cf52bb0cdd2a1d2f735fccd"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "775768bc7470aaa578e35f98d6c0202c2748e039ab8fa2899597b31425e9a297"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5f7d8f2803ca24edd26e115d26ddf994136094a93d20715a2b7683659b915999"
+    sha256 cellar: :any_skip_relocation, ventura:       "839c5f4d82018a0e3237bf3c47be5dd35e1356d56e9c8dd94d9214c390e3f16a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f40f8c868c5f1c910db7ecd054fbe57dcb54d1a42731ac97d81ced79bf0db94f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6fcb4c18973c342d417850b79eb952d8e3cf2058b00f4b316f99378196dca4c0"
   end
 
   depends_on "rust" => :build

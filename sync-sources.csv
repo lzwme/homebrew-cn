@@ -2202,6 +2202,7 @@ Homebrew-homebrew-core/Formula/g/gem-completion.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gemgen.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gemini-cli.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/genact.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/g/genai-toolbox.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/genders.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/generate-json-schema.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/genext2fs.rb, Homebrew/homebrew-core, 1
@@ -8840,6 +8841,7 @@ Homebrew-homebrew-cask/Casks/d/dotnet-runtime@preview.rb, Homebrew/homebrew-cask
 Homebrew-homebrew-cask/Casks/d/dotnet-sdk.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/dotnet-sdk@8.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/dotnet-sdk@preview.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/d/doubao.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/double-commander.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/doughnut.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/douyin-chat.rb, Homebrew/homebrew-cask, 0
@@ -14536,7 +14538,6 @@ Homebrew-homebrew-cask/Casks/t/tenable-nessus-agent.rb, Homebrew/homebrew-cask, 
 Homebrew-homebrew-cask/Casks/t/tencent-docs.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/tencent-lemon.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/tencent-meeting.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/t/tenor.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/tentacle-sync-studio.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/termhere.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/terminology.rb, Homebrew/homebrew-cask, 0
@@ -15331,6 +15332,7 @@ nicerloop-homebrew-nicerloop/Casks/webarchiveextractor.rb, nicerloop/homebrew-ni
 nicerloop-homebrew-nicerloop/Casks/xntfs-pro.rb, nicerloop/homebrew-nicerloop, 0
 nicerloop-homebrew-nicerloop/Casks/zulufx8.rb, nicerloop/homebrew-nicerloop, 0
 codello-homebrew-brewery/Formula/extractpdfmark.rb, codello/homebrew-brewery, 1
+codello-homebrew-brewery/Formula/ffsubsync.rb, codello/homebrew-brewery, 0
 codello-homebrew-brewery/Formula/srtlab.rb, codello/homebrew-brewery, 1
 codello-homebrew-brewery/Casks/bw-control.rb, codello/homebrew-brewery, 0
 codello-homebrew-brewery/Casks/favtool.rb, codello/homebrew-brewery, 1
@@ -15363,9 +15365,7 @@ codello-homebrew-brewery/Casks/lilypond-font-scorlatti.rb, codello/homebrew-brew
 codello-homebrew-brewery/Casks/lilypond-font-sebastiano.rb, codello/homebrew-brewery, 1
 codello-homebrew-brewery/Casks/ovftool.rb, codello/homebrew-brewery, 0
 codello-homebrew-brewery/Casks/renew.rb, codello/homebrew-brewery, 0
-codello-homebrew-brewery/Casks/seadrive@3.rb, codello/homebrew-brewery, 0
-codello-homebrew-brewery/Casks/ultrastar-creator.rb, codello/homebrew-brewery, 0
-codello-homebrew-brewery/Casks/ultrastar-deluxe.rb, codello/homebrew-brewery, 1
+codello-homebrew-brewery/Casks/ultrastar-creator.rb, codello/homebrew-brewery, 1
 codello-homebrew-brewery/Casks/ultrastar-manager.rb, codello/homebrew-brewery, 1
 codello-homebrew-brewery/Casks/yamaha-steinberg-usb-driver.rb, codello/homebrew-brewery, 0
 codello-homebrew-brewery/lib/b2_download_strategy.rb, codello/homebrew-brewery, 0

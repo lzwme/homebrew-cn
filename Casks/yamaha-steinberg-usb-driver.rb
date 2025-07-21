@@ -1,6 +1,6 @@
 cask "yamaha-steinberg-usb-driver" do
-  version "3.1.6"
-  sha256 "2e6f2ad37509f8bd5ea172850c14e691b50cd399525a974acd697bc650b6109a"
+  version "3.1.7"
+  sha256 "1f65ac6823e5e35ad08a4c8650e9ccdc2b71fb8075c3593c353f2232e35f668f"
 
   url "https://download.steinberg.net/downloads_hardware/Yamaha_Steinberg_USB_Driver/Mac/#{version}/YSUSB_V#{version.no_dots}_Mac.zip"
   name "Yamaha Steinberg USB Driver"

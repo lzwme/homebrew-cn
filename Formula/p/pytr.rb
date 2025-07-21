@@ -3,18 +3,18 @@ class Pytr < Formula
 
   desc "Use TradeRepublic in terminal and mass download all documents"
   homepage "https://github.com/pytr-org/pytr"
-  url "https://files.pythonhosted.org/packages/aa/3b/b74359d120b09430f9b76a9985575f77336751b53cfe4c3be0971c335a8f/pytr-0.4.2.tar.gz"
-  sha256 "d01337a50df274e0c79bf439758150019ef3f0160ce654b2d91e558c4b2d6c1b"
+  url "https://files.pythonhosted.org/packages/c3/ae/4e19a7477f65d432421a001af03d70e2caafb4f7398d791b28bd8d47a892/pytr-0.4.3.tar.gz"
+  sha256 "efd6f11506e2be93d7c0e0e4fe4feaf9cb6b466beb76ba2ef03c6197d3ab719d"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "31afc781e248f309cd5278a0a362c4458c76bebd5e335c80f1d6f2fade196535"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8a10fcd59f4840123de34c8d896e47bf040d9eff2c7104df248feaa9b63110ce"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "263e062abca6db0886e68590a41dc0f96f28236fd13b7098d2f072ffd505a9b5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a13baa233dd3f906c1f00d7563e0c4b9f88091aebc2396622cab2fdc7a284284"
-    sha256 cellar: :any_skip_relocation, ventura:       "66e8967be851d07bbe3285cb1de65b37dc5245753a0d2d557799291741719b1d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cefef89c6f62db9619330cb70aea3ae772e9b3f1e701bd477d7735d352eb9cec"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d255c967339be6f91383e0aa87dfab98fe1aae346eaea107de329a560a83e623"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1e15180dc894fb8d6b5e8e0d428c2d475d3cfc3a4b9d35f483bb4ef39d7b3afa"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f203c500eae91979de17e169e36e73bd74b4dde9dfb2020ad753f7d2ef14ac0a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "090fafa62e298525f98595525eb6d6067f3f4e0b031df693672c9d4baf7183e6"
+    sha256 cellar: :any_skip_relocation, sonoma:        "259a655a1e4bcde2d31076f038b1c9d603eb493ae03ac013fea322cdc640dea4"
+    sha256 cellar: :any_skip_relocation, ventura:       "0a657f178c6ae21ac8f10a7cd1000ebf973eecc65e7ceee1d565e1241a25a770"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "acbadf148c8be40f6dfad04e50a2f08ffb73a89b33509157a4881ff6ac543ad1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3258625c0144224b99878d1fc501df98a51cd832213d31c8c773f883f165b28a"
   end
 
   depends_on "certifi"
@@ -60,7 +60,7 @@ class Pytr < Formula
     sha256 "b18c07212bfead624345bb8e1d6141cdcf15a39736994ea0b94035ad2b1ba177"
   end
 
-  resource "Pygments" do
+  resource "pygments" do
     url "https://files.pythonhosted.org/packages/b0/77/a5b8c569bf593b0140bde72ea885a803b82086995367bf2037de0159d924/pygments-2.19.2.tar.gz"
     sha256 "636cb2477cec7f8952536970bc533bc43743542f70392ae026374600add5b887"
   end

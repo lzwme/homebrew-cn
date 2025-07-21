@@ -1,19 +1,19 @@
 class Neovide < Formula
   desc "No Nonsense Neovim Client in Rust"
   homepage "https://neovide.dev/"
-  url "https://ghfast.top/https://github.com/neovide/neovide/archive/refs/tags/0.15.0.tar.gz"
-  sha256 "89900673314f4dba66a1716197aca3b51f01365d9f8351563c3dc5604b3e48ab"
+  url "https://ghfast.top/https://github.com/neovide/neovide/archive/refs/tags/0.15.1.tar.gz"
+  sha256 "9042678f2fa33a86662755b3d37f7b264ebbf28b9a5f021ca89c137faeeda37d"
   license "MIT"
   head "https://github.com/neovide/neovide.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "beadfba290080cf999c7cec2415e8e2000b6d3d2cd8d43be6acd235a97c57482"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6db047e1f2a6180d2bdf1341448f9f64c5414371fa5c33c664258d23bd803b11"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "71903190f94bd7018ecf017d70bc02e1dabdf795391cb2921831437ca58f3876"
-    sha256 cellar: :any_skip_relocation, sonoma:        "20f05f6186c0cb44b9f67c0968117cc157a081cbc8aefb24bfb6ec19c99ce63b"
-    sha256 cellar: :any_skip_relocation, ventura:       "f89ba563de5b80e997b90c80e8efe1d03d4813de13ef0b70af325ac1392afc51"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "441334ea72a94f2eb7fa628194f9730e15c38778001568b9afc00eab460ed7af"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2473d65387128d4bb25a636fee7200ef68cbf875cb0ba135cb54f7fe25a2cdae"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c08fd54b4c43582bd0f6e043ca65f227a1de29a81208ca3507f8a86f7199c629"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "21d06535abaf109688ff50870ef514838a2d7fa800a239bc5af5285c6aa1043e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "42d229838f126c492755560d495cd18dc78d817c8fb421a54896da2e6e5dd7d2"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f6d3c2012e42e2eb885e8069a2a76d4ae2e2d6e83c329a1bab45f3e39ee256dc"
+    sha256 cellar: :any_skip_relocation, ventura:       "2707d9fa16541dc71a43476400e6e4a00c5fe65a6236dab9bbc0497ac2a51852"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "122cb9188977603d27d7afef9214c627f3a35f080cee94a93dc80f4cd05b314d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6547720ec1876a2f4a2fa9c4acb23eba4656c7f1a58698940e0b50e53d113306"
   end
 
   depends_on "ninja" => :build
