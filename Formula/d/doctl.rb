@@ -1,18 +1,18 @@
 class Doctl < Formula
   desc "Command-line tool for DigitalOcean"
   homepage "https://github.com/digitalocean/doctl"
-  url "https://ghfast.top/https://github.com/digitalocean/doctl/archive/refs/tags/v1.133.0.tar.gz"
-  sha256 "d10f32abdffa82c86b34b7a03c7a96846828c87bd96ec1a8a5a86cb784a1520b"
+  url "https://ghfast.top/https://github.com/digitalocean/doctl/archive/refs/tags/v1.134.0.tar.gz"
+  sha256 "7c9602463d9937dd1ca8890fa1dd9ac236b4618796c1bdcf53bcd3e38cfb3226"
   license "Apache-2.0"
   head "https://github.com/digitalocean/doctl.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cb902bd956dee9b7eebf2354e3f079cac1e73c79b355e23f1f68832a3d5eb60c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cb902bd956dee9b7eebf2354e3f079cac1e73c79b355e23f1f68832a3d5eb60c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "cb902bd956dee9b7eebf2354e3f079cac1e73c79b355e23f1f68832a3d5eb60c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2b141dd31ce83ddf16f362404e1cf79d5ab0a2a0621f7639657c5bb8e856111c"
-    sha256 cellar: :any_skip_relocation, ventura:       "2b141dd31ce83ddf16f362404e1cf79d5ab0a2a0621f7639657c5bb8e856111c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4dd6765ae95cce9005c1fb247cee232c360984c796dde9bd97c5b35b1f6210f1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "39d0383c03db8c03bbe4f7290ffa0addf2c824997ccd06d34ce6ab9af06b891d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "39d0383c03db8c03bbe4f7290ffa0addf2c824997ccd06d34ce6ab9af06b891d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "39d0383c03db8c03bbe4f7290ffa0addf2c824997ccd06d34ce6ab9af06b891d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "aee5508cb520c8be5f0cc33213c97d1bcab5dc0b03482db627cc11c02634ef24"
+    sha256 cellar: :any_skip_relocation, ventura:       "aee5508cb520c8be5f0cc33213c97d1bcab5dc0b03482db627cc11c02634ef24"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "beeea59df4ba7850ba28dc61cacc3f93ebc6a245c399ae9bf4ff328a75f07a2f"
   end
 
   depends_on "go" => :build

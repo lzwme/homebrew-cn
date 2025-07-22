@@ -1,8 +1,8 @@
 class Brev < Formula
   desc "CLI tool for managing workspaces provided by brev.dev"
   homepage "https://developer.nvidia.com/brev"
-  url "https://ghfast.top/https://github.com/brevdev/brev-cli/archive/refs/tags/v0.6.311.tar.gz"
-  sha256 "a91053e82b0d096186571f9340d03caaef50110e8941ffb14acb7186e8e311e2"
+  url "https://ghfast.top/https://github.com/brevdev/brev-cli/archive/refs/tags/v0.6.312.tar.gz"
+  sha256 "265ef0698aa8d6b9fd7311b5aa16e2e0a2274dd4a2f3f01f1a035250825b8724"
   license "MIT"
   head "https://github.com/brevdev/brev-cli.git", branch: "main"
 
@@ -15,12 +15,12 @@ class Brev < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cf6fc82c5ab1e2f3a309bbe7e2937280cdff11a38c0161c9fc1e4eb49164a147"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cf6fc82c5ab1e2f3a309bbe7e2937280cdff11a38c0161c9fc1e4eb49164a147"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "cf6fc82c5ab1e2f3a309bbe7e2937280cdff11a38c0161c9fc1e4eb49164a147"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a311beee65bb0e2af1988513b30c586b6fcae4d432fc0a5fc1cc9a8f0b9cf323"
-    sha256 cellar: :any_skip_relocation, ventura:       "a311beee65bb0e2af1988513b30c586b6fcae4d432fc0a5fc1cc9a8f0b9cf323"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b689e354e31907f6b31634c212a10daaefae44269a38e2abfec4c069d68cae8c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "be87f2ce1494f50d2f9ecac1f20920ef84b40ee920661fe5940f181160d7da6f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "be87f2ce1494f50d2f9ecac1f20920ef84b40ee920661fe5940f181160d7da6f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "be87f2ce1494f50d2f9ecac1f20920ef84b40ee920661fe5940f181160d7da6f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a932f914bef72b4ef07d01b69e78301baa69f289b5314aa12cf3b3833e86e8b2"
+    sha256 cellar: :any_skip_relocation, ventura:       "a932f914bef72b4ef07d01b69e78301baa69f289b5314aa12cf3b3833e86e8b2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6fb93d0a68df56c167438925321d0005a0b8ba67ef5684ffe9e5076431b8faa6"
   end
 
   depends_on "go" => :build

@@ -1,20 +1,20 @@
 class Gettext < Formula
   desc "GNU internationalization (i18n) and localization (l10n) library"
   homepage "https://www.gnu.org/software/gettext/"
-  url "https://ftp.gnu.org/gnu/gettext/gettext-0.25.1.tar.gz"
-  mirror "https://ftpmirror.gnu.org/gettext/gettext-0.25.1.tar.gz"
-  mirror "http://ftp.gnu.org/gnu/gettext/gettext-0.25.1.tar.gz"
-  sha256 "746f955d42d71eb69ce763869cb92682f09a4066528d018b6ca7a3f48089a085"
+  url "https://ftp.gnu.org/gnu/gettext/gettext-0.26.tar.gz"
+  mirror "https://ftpmirror.gnu.org/gettext/gettext-0.26.tar.gz"
+  mirror "http://ftp.gnu.org/gnu/gettext/gettext-0.26.tar.gz"
+  sha256 "39acf4b0371e9b110b60005562aace5b3631fed9b1bb9ecccfc7f56e58bb1d7f"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 arm64_sequoia: "740b5076c4bcbf2caa40018a9ae18750a23495b9aad8ca82314004be3dad9faf"
-    sha256 arm64_sonoma:  "80a935b81e6d1e562c6b7570d05361e62e800402b0d982438d9aa3d492575543"
-    sha256 arm64_ventura: "6281ec93a5c85681dcee3a161711af16d76106d6e1b136d08fa077489a080e65"
-    sha256 sonoma:        "038b86f44028bb39ad7132d042765a40a5f1ed56797346ffee813d24228764c4"
-    sha256 ventura:       "6ed89bab58e5e53b3920c177e1011b3e5635fac2998155447f31db8e4a2e8cee"
-    sha256 arm64_linux:   "a9cc4a0d143367536c3ccefdfda303dc5aaabec05268a5b4fa3c9fccb517ae11"
-    sha256 x86_64_linux:  "dfc27f49bf89bd75dc0d9875031ad3f9517ef9a4e522ccbce3f6191b62d4a604"
+    sha256 arm64_sequoia: "b25ac1e62443f8f79eadc3dadf6d3af954d4cbc33a0577fc626aa0c8f2bb01a5"
+    sha256 arm64_sonoma:  "1615e931a23c6875c9bcae0ffccf5a4a35f796fb90b7192804c771cb25d766e2"
+    sha256 arm64_ventura: "c9cf89dc04f56eb4939b00eea3c0361cd4498f8237e527f2f741682bf7e6de61"
+    sha256 sonoma:        "87ac92958d68cfd4c000879302cc8237f9ab38aec9429c6970b31667c3d53870"
+    sha256 ventura:       "36da5ebc7064150238eb5fd4c9640ee9ef2482cabb9707357d0ab7b198bf9c4f"
+    sha256 arm64_linux:   "65da5d3da37d8ac70048648ec6c0680d5c22f9f55b4452a61374c8c267d1990f"
+    sha256 x86_64_linux:  "fce5e0fea8441a729599191161a94a03ce4328e5c7a276df4ec322ff5e92958f"
   end
 
   depends_on "libunistring"

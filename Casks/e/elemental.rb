@@ -1,6 +1,6 @@
 cask "elemental" do
-  version "7.1.0"
-  sha256 "9164e57df978cdd7c1f3cd6cf1d707fd9298cc814b564185cd6e5763c793040c"
+  version "7.2.1"
+  sha256 "0592ec237a45284534b6ed50ad267f8d9093534f9077f6d161b6a7ad03f60a5f"
 
   url "https://ghfast.top/https://github.com/evolvedbinary/elemental/releases/download/elemental-#{version}/elemental-#{version}.dmg",
       verified: "github.com/evolvedbinary/elemental/"
@@ -12,8 +12,6 @@ cask "elemental" do
     url :url
     regex(/^elemental[._-]v?(\d+(?:\.\d+)+)$/i)
   end
-
-  no_autobump! because: :requires_manual_review
 
   app "Elemental.app"
 

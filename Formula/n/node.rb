@@ -12,13 +12,14 @@ class Node < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "255dd187fd6afae2aa9c0104d36dcc60e2a83a4b0a573a79432c0ec4cfc34861"
-    sha256 arm64_sonoma:  "15825b29cbd7bd0a89bc1f706dc6729557743e3e057aee10b0e1f064fd0b069e"
-    sha256 arm64_ventura: "9f17d56d6ba418197c85f721e18db1cc59cb3731930e780be2189e7c962bfc01"
-    sha256 sonoma:        "2f414cefcaad89b21c8d85e2232f2a74093642ded6bb59a691cdd33e16865c3d"
-    sha256 ventura:       "0a21c671745a463f982186e3fa5ed8d573f7884de50517375b03a137296b498c"
-    sha256 arm64_linux:   "bac860cd0c3db82451010d2a6c35163ad0c52bb445b013ba789dd0879697ef00"
-    sha256 x86_64_linux:  "753cf3de36e15c44c87588fc6aa718f6ba980fc166912db16a739b4b259f568a"
+    rebuild 1
+    sha256 arm64_sequoia: "8049b6395d06b0c7394f3888b38626f2890b934a19a02431535a73f25300aacc"
+    sha256 arm64_sonoma:  "74321d83d774e27aa56e6f41de2279ddce4b1883e67a17200b960573d13fb09b"
+    sha256 arm64_ventura: "131336e6108311260e3db7a5f624255dd53ffcacfa6f0f3722fb357cc39bc8be"
+    sha256 sonoma:        "a2dea22e0e044d63c4808d2e510f2721dfc982f37ff317fc520c2e6914bebeb2"
+    sha256 ventura:       "8884c9cdc9d9c70a1e9c83cb3f4b4b4bb9638ef5024e5dd31a38f798d05bb3d7"
+    sha256 arm64_linux:   "00698775805dd716bf0909c1b5ca997464a37d52eae242c935b4fa379ac5b2e3"
+    sha256 x86_64_linux:  "c12fb7f498203a4bebf93b9ff816dcabb5ae7237ada92d4921d9130744dcaf14"
   end
 
   depends_on "pkgconf" => :build
@@ -27,8 +28,11 @@ class Node < Formula
   depends_on "c-ares"
   depends_on "icu4c@77"
   depends_on "libnghttp2"
+  depends_on "libnghttp3"
+  depends_on "libngtcp2"
   depends_on "libuv"
   depends_on "openssl@3"
+  depends_on "simdjson"
 
   uses_from_macos "python", since: :catalina
   uses_from_macos "zlib"
@@ -79,22 +83,31 @@ class Node < Formula
       --prefix=#{prefix}
       --without-npm
       --with-intl=system-icu
-      --shared-libuv
-      --shared-nghttp2
-      --shared-openssl
-      --shared-zlib
       --shared-brotli
       --shared-cares
-      --shared-libuv-includes=#{Formula["libuv"].include}
-      --shared-libuv-libpath=#{Formula["libuv"].lib}
-      --shared-nghttp2-includes=#{Formula["libnghttp2"].include}
-      --shared-nghttp2-libpath=#{Formula["libnghttp2"].lib}
-      --shared-openssl-includes=#{Formula["openssl@3"].include}
-      --shared-openssl-libpath=#{Formula["openssl@3"].lib}
+      --shared-libuv
+      --shared-nghttp2
+      --shared-nghttp3
+      --shared-ngtcp2
+      --shared-openssl
+      --shared-simdjson
+      --shared-zlib
       --shared-brotli-includes=#{Formula["brotli"].include}
       --shared-brotli-libpath=#{Formula["brotli"].lib}
       --shared-cares-includes=#{Formula["c-ares"].include}
       --shared-cares-libpath=#{Formula["c-ares"].lib}
+      --shared-libuv-includes=#{Formula["libuv"].include}
+      --shared-libuv-libpath=#{Formula["libuv"].lib}
+      --shared-nghttp2-includes=#{Formula["libnghttp2"].include}
+      --shared-nghttp2-libpath=#{Formula["libnghttp2"].lib}
+      --shared-nghttp3-includes=#{Formula["libnghttp3"].include}
+      --shared-nghttp3-libpath=#{Formula["libnghttp3"].lib}
+      --shared-ngtcp2-includes=#{Formula["libngtcp2"].include}
+      --shared-ngtcp2-libpath=#{Formula["libngtcp2"].lib}
+      --shared-openssl-includes=#{Formula["openssl@3"].include}
+      --shared-openssl-libpath=#{Formula["openssl@3"].lib}
+      --shared-simdjson-includes=#{Formula["simdjson"].include}
+      --shared-simdjson-libpath=#{Formula["simdjson"].lib}
       --openssl-use-def-ca-store
     ]
     args << "--tag=head" if build.head?

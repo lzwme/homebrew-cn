@@ -11,13 +11,14 @@ class NodeAT22 < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "99d0a51ab034b90551654b5e9258294ef35009b0937345fb3b22127d37231eb5"
-    sha256 arm64_sonoma:  "5064bc79a54e5503275e7d3627d156f2449a1b8a4ca58e3728e4347532c5eefd"
-    sha256 arm64_ventura: "e642cee6fbcf9947761c26a73e8d5241dedd17281fbf3ca841fddc24ffe8f044"
-    sha256 sonoma:        "15aa952bdbdb6b9405e4142b763c68ad87763a47fe4689666c368c033d4a866a"
-    sha256 ventura:       "290ee771217d49d6d220162239d36975723cbeb797f8f3642eca01c07b2f0f2b"
-    sha256 arm64_linux:   "82ac8902adf5640a861f81d189ba416567262b8c7c9dd317d6f83b2ab52dc562"
-    sha256 x86_64_linux:  "d1e32ab9acdff657bf09b0dc8ba84f35c3be42a83441b1ca2f76ad35321bf4d6"
+    rebuild 1
+    sha256 arm64_sequoia: "ac0d9ed4b6ac14d40098343bf4fdb1f475a395b8718e9981ec4af8971ee74060"
+    sha256 arm64_sonoma:  "94c6085ebb5942d1b42b8568cc5eee4a9618b5e02f360b64c28fd5cc7f03cdc1"
+    sha256 arm64_ventura: "9988f65fc6c28a5639ae965c3c96667b58315c3dfc16d4364118e1934ee11218"
+    sha256 sonoma:        "1e25c7341645e5b96f80b10b8adb148fa5db66523a15706eb8c1d534c561c89e"
+    sha256 ventura:       "d48a4276c6c6541a9b3a8a1f0098cb48e6f1c97e62c70a29ed646625a950742c"
+    sha256 arm64_linux:   "c6a57aacefdaa880caaa1aa60c5f1facbf9de1d0d6e84741c73cb454b18c8128"
+    sha256 x86_64_linux:  "88966d2c70f08387b0c018fe3339c1f09d21e663c1dbb02c2ee2b646cbf73c5b"
   end
 
   keg_only :versioned_formula
@@ -32,8 +33,14 @@ class NodeAT22 < Formula
   depends_on "c-ares"
   depends_on "icu4c@77"
   depends_on "libnghttp2"
+  depends_on "libnghttp3"
+  depends_on "libngtcp2"
   depends_on "libuv"
   depends_on "openssl@3"
+  depends_on "simdjson"
+  depends_on "simdutf"
+  depends_on "sqlite"
+  depends_on "zstd"
 
   uses_from_macos "python", since: :catalina
   uses_from_macos "zlib"
@@ -61,22 +68,40 @@ class NodeAT22 < Formula
     args = %W[
       --prefix=#{prefix}
       --with-intl=system-icu
-      --shared-libuv
-      --shared-nghttp2
-      --shared-openssl
-      --shared-zlib
       --shared-brotli
       --shared-cares
-      --shared-libuv-includes=#{Formula["libuv"].include}
-      --shared-libuv-libpath=#{Formula["libuv"].lib}
-      --shared-nghttp2-includes=#{Formula["libnghttp2"].include}
-      --shared-nghttp2-libpath=#{Formula["libnghttp2"].lib}
-      --shared-openssl-includes=#{Formula["openssl@3"].include}
-      --shared-openssl-libpath=#{Formula["openssl@3"].lib}
+      --shared-libuv
+      --shared-nghttp2
+      --shared-nghttp3
+      --shared-ngtcp2
+      --shared-openssl
+      --shared-simdjson
+      --shared-simdutf
+      --shared-sqlite
+      --shared-zlib
+      --shared-zstd
       --shared-brotli-includes=#{Formula["brotli"].include}
       --shared-brotli-libpath=#{Formula["brotli"].lib}
       --shared-cares-includes=#{Formula["c-ares"].include}
       --shared-cares-libpath=#{Formula["c-ares"].lib}
+      --shared-libuv-includes=#{Formula["libuv"].include}
+      --shared-libuv-libpath=#{Formula["libuv"].lib}
+      --shared-nghttp2-includes=#{Formula["libnghttp2"].include}
+      --shared-nghttp2-libpath=#{Formula["libnghttp2"].lib}
+      --shared-nghttp3-includes=#{Formula["libnghttp3"].include}
+      --shared-nghttp3-libpath=#{Formula["libnghttp3"].lib}
+      --shared-ngtcp2-includes=#{Formula["libngtcp2"].include}
+      --shared-ngtcp2-libpath=#{Formula["libngtcp2"].lib}
+      --shared-openssl-includes=#{Formula["openssl@3"].include}
+      --shared-openssl-libpath=#{Formula["openssl@3"].lib}
+      --shared-simdjson-includes=#{Formula["simdjson"].include}
+      --shared-simdjson-libpath=#{Formula["simdjson"].lib}
+      --shared-simdutf-includes=#{Formula["simdutf"].include}
+      --shared-simdutf-libpath=#{Formula["simdutf"].lib}
+      --shared-sqlite-includes=#{Formula["sqlite"].include}
+      --shared-sqlite-libpath=#{Formula["sqlite"].lib}
+      --shared-zstd-includes=#{Formula["zstd"].include}
+      --shared-zstd-libpath=#{Formula["zstd"].lib}
       --openssl-use-def-ca-store
     ]
 
@@ -85,6 +110,25 @@ class NodeAT22 < Formula
     # Pre-Catalina macOS also can't build with LTO
     # LTO is unpleasant if you have to build from source.
     args << "--enable-lto" if OS.mac? && MacOS.version >= :catalina && build.bottle?
+
+    # TODO: Try to devendor these libraries.
+    # - `--shared-ada` needs the `ada-url` formula, but requires C++20
+    # - `--shared-http-parser` and `--shared-uvwasi` are not available as dependencies in Homebrew.
+    ignored_shared_flags = %w[
+      ada
+      http-parser
+      uvwasi
+    ].map { |library| "--shared-#{library}" }
+
+    configure_help = Utils.safe_popen_read("./configure", "--help")
+    shared_flag_regex = /\[(--shared-[^ \]]+)\]/
+    configure_help.scan(shared_flag_regex) do |matches|
+      matches.each do |flag|
+        next if args.include?(flag) || ignored_shared_flags.include?(flag)
+
+        odie "Unused `--shared-*` flag: #{flag}"
+      end
+    end
 
     system "./configure", *args
     system "make", "install"

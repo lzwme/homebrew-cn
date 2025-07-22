@@ -3,26 +3,26 @@ class Virtualenv < Formula
 
   desc "Tool for creating isolated virtual python environments"
   homepage "https://virtualenv.pypa.io/"
-  url "https://files.pythonhosted.org/packages/56/2c/444f465fb2c65f40c3a104fd0c495184c4f2336d65baf398e3c75d72ea94/virtualenv-20.31.2.tar.gz"
-  sha256 "e10c0a9d02835e592521be48b332b6caee6887f332c111aa79a09b9e79efc2af"
+  url "https://files.pythonhosted.org/packages/a9/96/0834f30fa08dca3738614e6a9d42752b6420ee94e58971d702118f7cfd30/virtualenv-20.32.0.tar.gz"
+  sha256 "886bf75cadfdc964674e6e33eb74d787dff31ca314ceace03ca5810620f4ecf0"
   license "MIT"
   head "https://github.com/pypa/virtualenv.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1d8d2567e3809e40e530c2fcf928bcc1e7e6affa708bb6fafa7a360038dae0f2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1d8d2567e3809e40e530c2fcf928bcc1e7e6affa708bb6fafa7a360038dae0f2"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "1d8d2567e3809e40e530c2fcf928bcc1e7e6affa708bb6fafa7a360038dae0f2"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0d853a4d494f78b89bbf20ba800b47f53014c5aa66aad3b897e611ebbc2da388"
-    sha256 cellar: :any_skip_relocation, ventura:       "0d853a4d494f78b89bbf20ba800b47f53014c5aa66aad3b897e611ebbc2da388"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "062b68ff2df6b0a13e7186a81cb9d3e411d82f70d8c4ec0378d6acc0334285c2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "062b68ff2df6b0a13e7186a81cb9d3e411d82f70d8c4ec0378d6acc0334285c2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b160a493635e85c78293094b71401d1d82bd5367d5c74ecd785797e51df187ff"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b160a493635e85c78293094b71401d1d82bd5367d5c74ecd785797e51df187ff"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "b160a493635e85c78293094b71401d1d82bd5367d5c74ecd785797e51df187ff"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c1b64bce8101e3bd848511c9a560f333b60a2f3bf742f884aa4f66c8496c0a5f"
+    sha256 cellar: :any_skip_relocation, ventura:       "c1b64bce8101e3bd848511c9a560f333b60a2f3bf742f884aa4f66c8496c0a5f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d1837ab8bc753c1110bf9c912c605317ff955d9649ee86fe288f14baee8760b8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d1837ab8bc753c1110bf9c912c605317ff955d9649ee86fe288f14baee8760b8"
   end
 
   depends_on "python@3.13"
 
   resource "distlib" do
-    url "https://files.pythonhosted.org/packages/0d/dd/1bec4c5ddb504ca60fc29472f3d27e8d4da1257a854e1d96742f15c1d02d/distlib-0.3.9.tar.gz"
-    sha256 "a60f20dea646b8a33f3e7772f74dc0b2d0772d2837ee1342a00645c81edf9403"
+    url "https://files.pythonhosted.org/packages/96/8e/709914eb2b5749865801041647dc7f4e6d00b549cfe88b65ca192995f07c/distlib-0.4.0.tar.gz"
+    sha256 "feec40075be03a04501a973d81f633735b4b69f98b05450592310c0f401a4e0d"
   end
 
   resource "filelock" do

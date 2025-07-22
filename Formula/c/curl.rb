@@ -15,13 +15,14 @@ class Curl < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "2848b2085b1f09fe0c5eae65cb4613d8fa63128c01621da714f96720889b6e0d"
-    sha256 cellar: :any,                 arm64_sonoma:  "6fb89b7bf58987626f7bac0af0753f63ad6722ece27096f0cbccd51fb330f022"
-    sha256 cellar: :any,                 arm64_ventura: "e2dbcec0d7c2a956b92b422e9c88e7cc42bd012eed1cf525a372a5650121f785"
-    sha256 cellar: :any,                 sonoma:        "144f0e5003035384ba64bb2b9512da0fbbedbb8509bcc48cebb825fd018fb7c5"
-    sha256 cellar: :any,                 ventura:       "411dbb92e18a9ac23c755409e2795bbddc313fd85d492358341435e3fa208a5d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3880eb37f954bcbe26b58fa133a0dff83b31b491faa171dd6f34b7e740d871ec"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "20fba1d006ef6fbcdc25fa2ef61b4fc064a5a3609c51cf1ff9f2198f92dd7c54"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "5b3365c6327695b3fd7013edce642836dc10320c6f04460feceb1c91c1b69233"
+    sha256 cellar: :any,                 arm64_sonoma:  "1fa6e2c3bc05bd5ac1354d1ad3c22001886e63f49bb405597fe36e1358fd48bd"
+    sha256 cellar: :any,                 arm64_ventura: "35a869eddf4cd88b291e26d2946407585fea8cc1d61c3966d17ce5b8b70a7072"
+    sha256 cellar: :any,                 sonoma:        "442c98283e65e7257c6f461add5bdf660f459c52467449e67e30f25f2e552b20"
+    sha256 cellar: :any,                 ventura:       "b8f4914a81b43a48256648068b2db9efd6d64640b521a5251b33186b71fe44c7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e86622df994fd9d482f79011fec9ae1ed4b24626f3b6693405d91011108d241b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "677082f7b0f58297f34b5f286a25370bcefd5f08cf604449c77ec584e7cf5220"
   end
 
   head do
@@ -37,6 +38,8 @@ class Curl < Formula
   depends_on "pkgconf" => [:build, :test]
   depends_on "brotli"
   depends_on "libnghttp2"
+  depends_on "libnghttp3"
+  depends_on "libngtcp2"
   depends_on "libssh2"
   depends_on "openssl@3"
   depends_on "rtmpdump"
@@ -68,10 +71,11 @@ class Curl < Formula
       --without-ca-bundle
       --without-ca-path
       --with-ca-fallback
-      --with-secure-transport
       --with-default-ssl-backend=openssl
       --with-librtmp
       --with-libssh2
+      --with-nghttp3
+      --with-ngtcp2
       --without-libpsl
       --with-zsh-functions-dir=#{zsh_completion}
       --with-fish-functions-dir=#{fish_completion}
@@ -108,9 +112,12 @@ class Curl < Formula
     system bin/"curl", "-L", stable.url, "-o", filename
     filename.verify_checksum stable.checksum
 
+    # Verify QUIC and HTTP3 support
+    system bin/"curl", "--verbose", "--http3-only", "--head", "https://cloudflare-quic.com"
+
     # Check dependencies linked correctly
     curl_features = shell_output("#{bin}/curl-config --features").split("\n")
-    %w[brotli GSS-API HTTP2 IDN libz SSL zstd].each do |feature|
+    %w[brotli GSS-API HTTP2 HTTP3 IDN libz SSL zstd].each do |feature|
       assert_includes curl_features, feature
     end
     curl_protocols = shell_output("#{bin}/curl-config --protocols").split("\n")

@@ -3,19 +3,19 @@ class Bzt < Formula
 
   desc "BlazeMeter Taurus"
   homepage "https://gettaurus.org/"
-  url "https://files.pythonhosted.org/packages/ff/87/e5b351ffd9941662f004b8d88df2a3e74e36fbe738388cbe71daebab53ce/bzt-1.16.44.tar.gz"
-  sha256 "a6a259fd1d2f068b98b473cd8fc1677dba71247669df296da51d9bee627e6d17"
+  url "https://files.pythonhosted.org/packages/0b/79/c397c0853d273e8c780a6bf0219b799aec675b7f941e77f19e4f90a0feba/bzt-1.16.45.tar.gz"
+  sha256 "3a505b92d4af68fa578c0a36c23694743cee363919781886d4db56a24f1c46c1"
   license "Apache-2.0"
   head "https://github.com/Blazemeter/taurus.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "8c026d84ce289f15a3bf5e44919a4e44c3a748d041c110d630d26d20ffba68d6"
-    sha256 cellar: :any,                 arm64_sonoma:  "2ecc1856cef06b66f6413651f98980b7c07469f7a97b8c3d08a691bcadd0a3c2"
-    sha256 cellar: :any,                 arm64_ventura: "c02f60a0b95dfa4326a1a14d0b8e6d67ac89e3508cd094316beaa19caf84347f"
-    sha256 cellar: :any,                 sonoma:        "4e620200e123a9e99564be7f39f82b5afbc88ee3eb7eeb1e9bc62dbd80925463"
-    sha256 cellar: :any,                 ventura:       "d9014a4752a3734310fad4043d75ad1635162802aed1f82fb2fd42caa83c7bce"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5cda8cbbedcae1c8c545a1e4441051a3289049545fe192ca31d1e6d72ec9e152"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "98924dde7de573f6522eda2a167db5e71dfa1ccc6eae8d97d8b5bbc253f281f8"
+    sha256 cellar: :any,                 arm64_sequoia: "88d184c2903c97f20ba5798d2e596ecebd817761203ef502e301d5444b414869"
+    sha256 cellar: :any,                 arm64_sonoma:  "318f9c6118ff9fbd84f842b65be4143e4f01e955c08497e43fe9cc33617d93f3"
+    sha256 cellar: :any,                 arm64_ventura: "3b98e6045898200c6453c6fbd987c0db826f4461ca8715a89e0c2e10ad544224"
+    sha256 cellar: :any,                 sonoma:        "46c988e578bd96842878901c3088228f1919a0d3b846f0e8caf136eb50bc25b7"
+    sha256 cellar: :any,                 ventura:       "29b7c5acddb3502daa25a6b031afd3577d421f2624431f6180059f7f54f758d5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d5c1ea44d6eaaa23cb6701785e3684093ebdf3bad678483615a6e03071459bbe"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3c51908626a4c7224419049f753d0dd07cae3789e0e88d54823ba365cb28b2d9"
   end
 
   depends_on "cmake" => :build
@@ -211,8 +211,8 @@ class Bzt < Formula
   end
 
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/18/5d/3bf57dcd21979b887f014ea83c24ae194cfcd12b9e0fda66b957c69d1fca/setuptools-80.9.0.tar.gz"
-    sha256 "f36b47402ecde768dbfafc46e8e4207b4360c654f1f3bb84475f0a28628fb19c"
+    url "https://files.pythonhosted.org/packages/bb/71/b6365e6325b3290e14957b2c3a804a529968c77a049b2ed40c095f749707/setuptools-79.0.1.tar.gz"
+    sha256 "128ce7b8f33c3079fd1b067ecbb4051a66e8526e7b65f6cec075dfc650ddfa88"
   end
 
   resource "simple-websocket" do

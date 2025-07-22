@@ -1,8 +1,8 @@
 class Testkube < Formula
   desc "Kubernetes-native framework for test definition and execution"
   homepage "https://testkube.io"
-  url "https://ghfast.top/https://github.com/kubeshop/testkube/archive/refs/tags/v2.1.163.tar.gz"
-  sha256 "f2bba75a83b478a34089867db09c385b820e8baa08b6ed01f2d55f7f4b50d0fc"
+  url "https://ghfast.top/https://github.com/kubeshop/testkube/archive/refs/tags/v2.1.164.tar.gz"
+  sha256 "4f0a6c78c456748f7fee1745c9fb3ddf9b2c701784805be370b1edf21af985c4"
   license "MIT"
   head "https://github.com/kubeshop/testkube.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Testkube < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4c31bf09f6bcd7ff80588bb11762a3a8b5505c956aa68bf9f5e3e208b93a821f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4c31bf09f6bcd7ff80588bb11762a3a8b5505c956aa68bf9f5e3e208b93a821f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "4c31bf09f6bcd7ff80588bb11762a3a8b5505c956aa68bf9f5e3e208b93a821f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7940835528762a6e65529680459e8c1cf6c43867a34b1f843170b3055a2c1067"
-    sha256 cellar: :any_skip_relocation, ventura:       "7940835528762a6e65529680459e8c1cf6c43867a34b1f843170b3055a2c1067"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "afa7c1a1831d75237047f6f93e96d601c91bc8e4aec6d1d20e45054b857c5cae"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0626eaeab694ef94977fd5ba238bbe00bf01e6484f7177745b1c6895fec4ad25"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0626eaeab694ef94977fd5ba238bbe00bf01e6484f7177745b1c6895fec4ad25"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "0626eaeab694ef94977fd5ba238bbe00bf01e6484f7177745b1c6895fec4ad25"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a91d422e054b0c961b942f3ff2bb8984306ed062d794989a94953bdbfeb9ad9d"
+    sha256 cellar: :any_skip_relocation, ventura:       "a91d422e054b0c961b942f3ff2bb8984306ed062d794989a94953bdbfeb9ad9d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2ea02ac29f0417b9682f0555b6d8b04b2b16d34dabbe9da3f271be110208c2b3"
   end
 
   depends_on "go" => :build

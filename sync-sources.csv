@@ -830,6 +830,7 @@ Homebrew-homebrew-core/Formula/c/ccm.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/cconv.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/ccrypt.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/cctz.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/c/ccusage.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/cd-discid.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cdargs.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cdb.rb, Homebrew/homebrew-core, 1
@@ -2755,6 +2756,7 @@ Homebrew-homebrew-core/Formula/h/hcxtools.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/hdf5-mpi.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/hdf5.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/hdf5@1.10.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/h/hdr10plus_tool.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/hdt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/healpix.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/h/heartbeat.rb, Homebrew/homebrew-core, 0
@@ -5952,6 +5954,7 @@ Homebrew-homebrew-core/Formula/r/rpl.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/rpm.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rpm2cpio.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/rpmspectool.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/r/rqbit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rqlite.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rrdtool.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rsc_2fa.rb, Homebrew/homebrew-core, 1
@@ -6391,6 +6394,7 @@ Homebrew-homebrew-core/Formula/s/sourcedocs.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sourcekitten.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/sourcery.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sox.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/s/sox_ng.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/spaceinvaders-go.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/spaceman-diff.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/spacer.rb, Homebrew/homebrew-core, 1
@@ -8563,6 +8567,7 @@ Homebrew-homebrew-cask/Casks/c/companion@beta.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/composercat.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/compositor.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/concept2-utility.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/c/conductor.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/confectionery.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/conferences.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/confluent-cli.rb, Homebrew/homebrew-cask, 0

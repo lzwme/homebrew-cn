@@ -13,6 +13,7 @@ class Libngtcp2 < Formula
     sha256 cellar: :any,                 arm64_ventura: "2da23c98a4cf07eab8401b0e01c1cb1e86e01299b4ea9faa9d71fec9e5ee85a3"
     sha256 cellar: :any,                 sonoma:        "4cbe22b930abf9239cbecca925b09531f4f23127bddac06155ed0063ad8e97f4"
     sha256 cellar: :any,                 ventura:       "3125a751bbb8db07c23e4c6b6540c0bf2bd26e0744a1b7da54564faaff11db4a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a3bc0ad6379a0da87770cdf185c413857c6708c26e759eb4183572d477474c72"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "03b8d48fd1c5357ccb1b518d27ec70786ff7994b9de90b2b7736767377079906"
   end
 

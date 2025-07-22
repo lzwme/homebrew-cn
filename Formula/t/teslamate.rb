@@ -1,17 +1,17 @@
 class Teslamate < Formula
   desc "Self-hosted data logger for your Tesla"
   homepage "https://docs.teslamate.org"
-  url "https://ghfast.top/https://github.com/teslamate-org/teslamate/archive/refs/tags/v2.0.0.tar.gz"
-  sha256 "fe29dab0dd0b96bafe003b063a7f6f95338d64b26c7187a68bacd2023e423f82"
+  url "https://ghfast.top/https://github.com/teslamate-org/teslamate/archive/refs/tags/v2.1.0.tar.gz"
+  sha256 "22f3cfa93815ba273799394301ef4fe8e8ae48301cadf2c81f65f93f58df7035"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "c27f488a2c39853a4e5e76ac53155facc220eef3b46ea90851bf6304e1ae22d7"
-    sha256 cellar: :any,                 arm64_sonoma:  "fa6dc5547defabbdfa7bd9eb256b0c98348db96dd889f9f21648898324837e7b"
-    sha256 cellar: :any,                 arm64_ventura: "536d6c5b491e86f425b2aac448950b3ee2a2e417d5d33c4b5c683bb22ec5d6ba"
-    sha256 cellar: :any,                 sonoma:        "3b067615e1568eb81c987aca9908f6efe54332fa8beeae340e985c3aa5a9cec7"
-    sha256 cellar: :any,                 ventura:       "be0e4f2e27c76e6630b5019b7b702c4323235937f7db265b814bad0b2bb5bfc4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9efdec2111348468a8e92f7abd3ca5a0f765ae98de1333a18cfae30961c56f8a"
+    sha256 cellar: :any,                 arm64_sequoia: "ce3f6017e0a0537c5801ed887b998e7bed3dd1a3bbd7a6cb548ed63b0fd6e792"
+    sha256 cellar: :any,                 arm64_sonoma:  "97c0ab2872b943876fba78f682b939cbab9f0e4cfd689922e9c02b479a0d1e08"
+    sha256 cellar: :any,                 arm64_ventura: "5cc37a2bda595b98b49bc07ed237ffbd3f6dbce691f29874dedc540a7d2125da"
+    sha256 cellar: :any,                 sonoma:        "d9b28fb1c5ddad726ad2a61988e9bb9d3fbe702f02e55a4490cfe9e8b5bbd817"
+    sha256 cellar: :any,                 ventura:       "dd555075f03e603eb0eb03e37aa4a7a06a47f5f9f51d9f68a4e0fd8d56e651c7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9dd9b1363b6426ccafe231ed85c2a6d90636ada3dfb8866c5e110d64ce06a33a"
   end
 
   depends_on "node" => :build

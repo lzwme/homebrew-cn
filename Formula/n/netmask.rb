@@ -1,36 +1,33 @@
 class Netmask < Formula
   desc "IP address netmask generation utility"
   homepage "https://github.com/tlby/netmask/blob/master/README"
-  url "https://ghfast.top/https://github.com/tlby/netmask/archive/refs/tags/v2.4.4.tar.gz"
-  sha256 "7e4801029a1db868cfb98661bcfdf2152e49d436d41f8748f124d1f4a3409d83"
+  url "https://ghfast.top/https://github.com/tlby/netmask/archive/refs/tags/v2.4.5.tar.gz"
+  sha256 "7d4adef47e5c9aba919d099640f1f08aa88f8de9538c43a13233c1af44644be2"
   license "GPL-2.0-only"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "34b5efeb5d392402b007185b47d974e9a664dad743bcc135dae35e9db685c2b9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "393080df1ab114d1d2beec62850676aa931445fe1b5dc99cad1b0454efe2a1ab"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b933d4ec7f084d202afd3b48feb3230c7eed31ec58b1aa0dd87f2b87d1397a6a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e386fc98127ef24109de173931633f0705dc8963e7e5a236ed69991e280d116c"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "611337cf807c5344df21127e4e0b982e8454237256779683346ff39adebd634d"
-    sha256 cellar: :any_skip_relocation, sonoma:         "a0edb5db8bff90464d9f07c37b4cdad798163b76ef7a62dbcbfe7407c8467ad6"
-    sha256 cellar: :any_skip_relocation, ventura:        "9388589b57733eda2e0cf8ec83bb49de8222603f5c7286b4dc6b57c69063a677"
-    sha256 cellar: :any_skip_relocation, monterey:       "278a82473770a98ef3704737f2c2f4902ad818af931ff3bb872798f3c9169424"
-    sha256 cellar: :any_skip_relocation, big_sur:        "6e304176fcc71ee0657520960c4e6b12304ef9bce2a73135b5ff69d0fe68e2ac"
-    sha256 cellar: :any_skip_relocation, catalina:       "1561dc4ab182e2a3ac7f66553f9a7695683467201355969a041199464333c029"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "a282249ce6794465154293b1548ee88268476ba2447836f50356253fbd6577c9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1cb4bad8bac486dc82f994b64c823e9830afc267992fbe48dfda89eb7687729a"
+    sha256 cellar: :any,                 arm64_sequoia: "91c23489b50c0d3d09713fa26c18dac951cf63ffc39e2680326f75ad67acedfa"
+    sha256 cellar: :any,                 arm64_sonoma:  "3a42ddaeff18b5d164f687705de1b94401df54fe57c47d4efd8cb6ae1ad46839"
+    sha256 cellar: :any,                 arm64_ventura: "52397f337418a77f198f1659c3bc361aa98be671dc7b300b66bb425f3d4f2005"
+    sha256 cellar: :any,                 sonoma:        "f4c9960ac92cdb675aa5a39a8c8d706717ea2d56d5381eeeaa7244ac7866bf55"
+    sha256 cellar: :any,                 ventura:       "be9ea01dcc993aadb6cb8e33f559049b0bcf326f8f9b47fa7aa47682dd70c380"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7217c2f0dc2b48687b2a6f910c52d3e2e50407480709a79ef1a614f99afc6dbd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "561d2d15b6049381f15e8d4d98d0a6f6c02a2fd270a23ecefe87b7fd61c9d20f"
   end
 
   depends_on "autoconf" => :build
+  depends_on "autoconf-archive" => :build
   depends_on "automake" => :build
+  depends_on "pkgconf" => :build
+
+  depends_on "check"
 
   on_system :linux, macos: :ventura_or_newer do
     depends_on "texinfo" => :build
   end
 
   def install
-    system "./autogen"
+    system "./bootstrap"
     system "./configure"
     system "make"
     bin.install "netmask"

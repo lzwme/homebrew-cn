@@ -1,18 +1,18 @@
 class DockerfileLanguageServer < Formula
   desc "Language server for Dockerfiles powered by Node, TypeScript, and VSCode"
   homepage "https://github.com/rcjsuen/dockerfile-language-server"
-  url "https://registry.npmjs.org/dockerfile-language-server-nodejs/-/dockerfile-language-server-nodejs-0.14.0.tgz"
-  sha256 "2c2aa3fb4b1bea75701537a5e981f6001331308b930376e41305113edc4fe81a"
+  url "https://registry.npmjs.org/dockerfile-language-server-nodejs/-/dockerfile-language-server-nodejs-0.14.1.tgz"
+  sha256 "6c4d41b414e97a9f4b800cba92de0e21a6e494286761ef95a8ac7375559a5014"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9d6b490c6ccf09d9cf8136e67b95a9f12f350bc7ecd5f98b4d777c7b38baa631"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9d6b490c6ccf09d9cf8136e67b95a9f12f350bc7ecd5f98b4d777c7b38baa631"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "9d6b490c6ccf09d9cf8136e67b95a9f12f350bc7ecd5f98b4d777c7b38baa631"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e2d4d1a7357c1b9e25828d9f2da5444b4ed725fa16e91cf63583bf56310f6fb3"
-    sha256 cellar: :any_skip_relocation, ventura:       "e2d4d1a7357c1b9e25828d9f2da5444b4ed725fa16e91cf63583bf56310f6fb3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9d6b490c6ccf09d9cf8136e67b95a9f12f350bc7ecd5f98b4d777c7b38baa631"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9d6b490c6ccf09d9cf8136e67b95a9f12f350bc7ecd5f98b4d777c7b38baa631"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d93ccb51f69dcfaa89b2dcd54b62d468a053adc4c9ffe382e7e1aff58e402980"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d93ccb51f69dcfaa89b2dcd54b62d468a053adc4c9ffe382e7e1aff58e402980"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "d93ccb51f69dcfaa89b2dcd54b62d468a053adc4c9ffe382e7e1aff58e402980"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2420fef41c8ae4e030163cfd68fbf30f9c7a3dd1b27d39c8e4623a3ba4b66e26"
+    sha256 cellar: :any_skip_relocation, ventura:       "2420fef41c8ae4e030163cfd68fbf30f9c7a3dd1b27d39c8e4623a3ba4b66e26"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d93ccb51f69dcfaa89b2dcd54b62d468a053adc4c9ffe382e7e1aff58e402980"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d93ccb51f69dcfaa89b2dcd54b62d468a053adc4c9ffe382e7e1aff58e402980"
   end
 
   depends_on "node"

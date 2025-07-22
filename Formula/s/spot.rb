@@ -1,8 +1,8 @@
 class Spot < Formula
   desc "Platform for LTL and ω-automata manipulation"
   homepage "https://spot.lre.epita.fr"
-  url "https://www.lrde.epita.fr/dload/spot/spot-2.14.tar.gz"
-  sha256 "cc267c96c96a40474669704114d02fb132ab30e8fa0ebca1a93f33e9d116024a"
+  url "https://www.lrde.epita.fr/dload/spot/spot-2.14.1.tar.gz"
+  sha256 "25df8a6af4e4bb3ae67515ac98e3d37c4303a682e33aaa66e72d74b39459a530"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -11,13 +11,13 @@ class Spot < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "57f5609356b7f5a2109c1551414cc86b5b56418f936329e7d9c2e310a5145d91"
-    sha256 cellar: :any,                 arm64_sonoma:  "8ecdbf4c8437644c39a4f63e15097367dd6ad5c8f2f85c4fb9d15a29560bd322"
-    sha256 cellar: :any,                 arm64_ventura: "4c50c7b9f488c4185cae67dd6fa03f3ea7b4f9263a1be71437414ea24a9d67b3"
-    sha256 cellar: :any,                 sonoma:        "0b5a312f9b9c64a5fd9d0dc87ba5e271f87f7e4270146d0030c07354f126f89b"
-    sha256 cellar: :any,                 ventura:       "b6a5ad22ee50c859d6232ed18294a276dc626b0407240cfe74fb6bc1100f9400"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "28ee7a6ae455932d4e3314fe33b293e4fe4d8250fd35eb03e610d56c00c9d2f2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1b2cefcdda3b2fd454cbeed9dd6571cf8dca1dd26dc0f2cc01547af77011aa59"
+    sha256 cellar: :any,                 arm64_sequoia: "d3d54bc17d03f479edbce15c34a9b079728a67c2c052128ec42a13bc229c9d1f"
+    sha256 cellar: :any,                 arm64_sonoma:  "0b3c3b88c6fd03b54c639ea589d9de587fb4847f493a7d4d2417bbf94b4e8d84"
+    sha256 cellar: :any,                 arm64_ventura: "1c371505759480b7343dc251b3a0ae29f3e054d7c54eb20b49af6fd4e4ae27f2"
+    sha256 cellar: :any,                 sonoma:        "9c4dfae8366884aca59930623ea9c48b5c987c2434e413dc135cc2dc24168f7d"
+    sha256 cellar: :any,                 ventura:       "a6664a905876cbe65c8da292516dbc57e70dfd2bcbf53516fbf30c0a52fe22de"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bf134747979cdf0d7176e01f9923a10636c475a369bd08efeddd1b73dbc66920"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f01a5df70b037f1a613b78809d64bc61092e8377c71334271789b602dbeb909b"
   end
 
   depends_on "python@3.13" => :build
