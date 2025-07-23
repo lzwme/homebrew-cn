@@ -1,9 +1,9 @@
 class Spidermonkey < Formula
   desc "JavaScript-C Engine"
   homepage "https://spidermonkey.dev"
-  url "https://archive.mozilla.org/pub/firefox/releases/128.12.0esr/source/firefox-128.12.0esr.source.tar.xz"
-  version "128.12.0"
-  sha256 "2bedeb86c6cb16cd3fce88d42ae4e245bafe2c6e9221ba8e445b8e02e89d973f"
+  url "https://archive.mozilla.org/pub/firefox/releases/128.13.0esr/source/firefox-128.13.0esr.source.tar.xz"
+  version "128.13.0"
+  sha256 "a4aad0a9aefae5f14ff68fd9854d4af54d04b341a54b1a6465555f0b635042f4"
   license "MPL-2.0"
   head "https://hg.mozilla.org/mozilla-central", using: :hg
 
@@ -15,13 +15,13 @@ class Spidermonkey < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_sequoia: "cfcdcf0ebe2b46cd7be1a57301670d17d14c52bc3d91450d41bcab106eb40178"
-    sha256 cellar: :any, arm64_sonoma:  "003a7603ca8b69e456b45fe1a5c82dcdd58ad4eed4e9e7fe24648b8349b74a1a"
-    sha256 cellar: :any, arm64_ventura: "c7555ac7f1e021a7d5be7c171d84a3e85e61f311cdbc34910bad7b8fb7e053f9"
-    sha256 cellar: :any, sonoma:        "37254d2e9e961bc8eab9fc3d592be37c9199c1342a251c0eb8a12c0f8ee495e4"
-    sha256 cellar: :any, ventura:       "148c19d0673188c254afe46a4e398f28ab6e4d73a0cbe6b841147c35e7a88f57"
-    sha256               arm64_linux:   "38e6c94f246424626d155d90a87faaa27009babfd95d8b6268a16fd3addb06c4"
-    sha256               x86_64_linux:  "cd3906272ed38a26980635d003003245e88a8dc332628df32900d213629c81be"
+    sha256 cellar: :any, arm64_sequoia: "732547596a3e2ecdd5e1a86f48a4c4c369df95b4c579a99cf10290262035fd56"
+    sha256 cellar: :any, arm64_sonoma:  "2563e68d9806d775fb21a94da0d94c22eec150a0ce29ee8e6b4d4e188ee4a040"
+    sha256 cellar: :any, arm64_ventura: "b8c601b991e83197107b7ce5f2eccaf233511d29d67fde8f6786301e307c7fd4"
+    sha256 cellar: :any, sonoma:        "023dee77f36a08e48629b07adca1936efa2cff3cfc2e7f75788705e729fb455b"
+    sha256 cellar: :any, ventura:       "74542a6290fa6f82bfbd821dfc4564e26b8f2e5cdf4b958d0318beda6bbf6f66"
+    sha256               arm64_linux:   "7f60ce2376ad04001f8bb6f46b6d1d9f3a138d8fda3734113cb926ca3f3097f7"
+    sha256               x86_64_linux:  "4a8529a4a382c44c8afc0f5ff7be40820236e34daaf98f3268bf2eaffff2875d"
   end
 
   depends_on "cbindgen" => :build

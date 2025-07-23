@@ -1,8 +1,8 @@
 class Clifm < Formula
   desc "Command-line Interface File Manager"
   homepage "https://github.com/leo-arch/clifm"
-  url "https://ghfast.top/https://github.com/leo-arch/clifm/archive/refs/tags/v1.25.tar.gz"
-  sha256 "ac9156753338f6027d05551b1d02bcb6f3044348108b00b9cefd97f125fc95ee"
+  url "https://ghfast.top/https://github.com/leo-arch/clifm/archive/refs/tags/v1.26.tar.gz"
+  sha256 "2f5e5e2412307ea9e4e836b441785b325de58e12150629e81364f4da9adf4f01"
   license "GPL-2.0-or-later"
 
   # Upstream creates releases that use a stable tag (e.g., `v1.2.3`) but are
@@ -14,13 +14,13 @@ class Clifm < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "36b5b6e72954845322fef4c352eb46ed4b73a14f1933d6ec355c1e2b3e986e93"
-    sha256 arm64_sonoma:  "ab5b40d9dcb14253eafa522456927c3c267237652245df532afccadfd4718889"
-    sha256 arm64_ventura: "565bda150a46b1a93b744e8127b6846dd07771aa889354d20e4a2ff981c55faa"
-    sha256 sonoma:        "db7baa0c7727d78e7e6df1a8462cc6f59592755de74b801d99e5698b9aac2bb8"
-    sha256 ventura:       "6efa30ac11ef6bc2bc490deba1a77488dad16a66d7a0ea4a9e454f6c84ab7751"
-    sha256 arm64_linux:   "6ab562f2545c7a06f528368551c5755c9f5cacb382a4e4c5c053e376368077d9"
-    sha256 x86_64_linux:  "0870af884cbb6934324c77df03b867c7ca10a2602a0ff926212cd418194f898e"
+    sha256 arm64_sequoia: "7be7796709f7ca466992db05d392ef3d3047f00137e1707809936cb6441a2b8d"
+    sha256 arm64_sonoma:  "22b436b4f4823a7c719d5d25af622be085b534b4dd324880ae5bb7859714e76a"
+    sha256 arm64_ventura: "3b674877102f21320b79025e5d6c7ccb0670cd9b6316c50f8a4393d03f8ed9ec"
+    sha256 sonoma:        "017db21defcd427c887492c6dfe57c5c16addbb3ac08b3942ff944b3635a1d9d"
+    sha256 ventura:       "e9ace98ae488fa617015fe260348fc1514d95b0a643544addef2c8591e258304"
+    sha256 arm64_linux:   "a460959530ae1d88ccd4c978e77dd32709077fad72a67be6fdab60782d655058"
+    sha256 x86_64_linux:  "2e1ae652bd0acd2772101eb67e14f1c9ced01e17586c4b453ec5ac69bd25da31"
   end
 
   depends_on "cmake" => :build

@@ -12,13 +12,14 @@ class Lcm < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "2244b5fa7c8e7c9fad69837d8c87e21b6b934bdb35d730cd29388add2258c388"
-    sha256 cellar: :any,                 arm64_sonoma:  "ae864e359da145328a10f94d4c231a86f4b199d9727d43c15699bdb2024a56a1"
-    sha256 cellar: :any,                 arm64_ventura: "1cd041a8337c350c38de47ce7c2ac015a1819b2a1efb090f6563f42a729fa7fb"
-    sha256 cellar: :any,                 sonoma:        "c442066258d99654dfcc78ba143cb04d5fc74ef1306a14be1d70baafba7ba6bb"
-    sha256 cellar: :any,                 ventura:       "b07445d9724d1e720b4fb24983df5adbbab9fff80cc0621f97aa1429485e8dbb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8a79f1fdc4e500d5b9d21c79802b3d17a9d1c5150ba0a4c11e1fb2b6c7553485"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c2140c559088413340306e19ad843419a48fa5e5747269a25ed975c2945b4340"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "cd5794313c2136f837cc4235fedc5bcb6dfa1300cc3a5d9524a0346c1e91bd97"
+    sha256 cellar: :any,                 arm64_sonoma:  "adb6c73895ff02cd561aea543e2fbd756d7aa2205237dbad6138c4516c34d6ad"
+    sha256 cellar: :any,                 arm64_ventura: "000805ebd7cd74df1f20575e964a84a1e671c110861a0c94e09a47b417cf2818"
+    sha256 cellar: :any,                 sonoma:        "3caf4d4ac4e480add5a3b74601a7be8d6c7d9f455eb2ddfede706614e30ded77"
+    sha256 cellar: :any,                 ventura:       "231e26c5826e2ae3f6c5cf0725d45f21e7a49a88a39f5a3bcc8f058003d185b2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ee71ab26af0ccabb7cd2a7b6648d9307293e6e72af5b061312cd49a7ea6c1375"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a73f26e38bef338372062dbc93ac8d69bd1fc27fe6df22e7d67c05d0cbc97023"
   end
 
   depends_on "cmake" => :build
@@ -34,8 +35,12 @@ class Lcm < Formula
 
   def install
     # Adding RPATH in #{lib}/lua/X.Y/lcm.so and some #{bin}/*.
+    lua_lib = lib/"lua"/Formula["lua"].version.major_minor
+    lcm_site_packages = prefix/Language::Python.site_packages("python3")/"lcm"
+    rpaths = [rpath, rpath(source: lua_lib), rpath(source: lcm_site_packages)]
+
     args = %W[
-      -DCMAKE_INSTALL_RPATH=#{lib}
+      -DCMAKE_INSTALL_RPATH=#{rpaths.join(";")}
       -DLCM_ENABLE_EXAMPLES=OFF
       -DLCM_ENABLE_TESTS=OFF
       -DLCM_JAVA_TARGET_VERSION=8

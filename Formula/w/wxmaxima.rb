@@ -4,6 +4,7 @@ class Wxmaxima < Formula
   url "https://ghfast.top/https://github.com/wxMaxima-developers/wxmaxima/archive/refs/tags/Version-25.04.0.tar.gz"
   sha256 "ec0b3005c3663f1bb86b0cc5028c2ba121e1563e3d5b671afcb9774895f4191b"
   license "GPL-2.0-or-later"
+  revision 1
   head "https://github.com/wxMaxima-developers/wxmaxima.git", branch: "main"
 
   livecheck do
@@ -12,11 +13,11 @@ class Wxmaxima < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:  "651e94d18f6e8d0607f2a9c2704e27a5f8706154136b9e84291f4c56a38b5b4a"
-    sha256 arm64_ventura: "2cb41dd7ab37788045aabd96c2bc7872c4e018d17d8ad7fffc8e1324948c3583"
-    sha256 sonoma:        "f37079c11ec5d8e79ef364cb0938fe45f7ef0982e41edb30c60101c24f8a78e6"
-    sha256 ventura:       "46fe42c449be5e2b2be2f4b8309ccff0eb60583e49078b46da4130ce70838f31"
-    sha256 x86_64_linux:  "22bc6ecaa698b1408fa9f659d44b4d7eabe1ef9cd2da11c4c8621a132a8a95c0"
+    sha256 arm64_sonoma:  "553516bf2d49d154ffac0b7e118a27cb3478085b909e60b73c76e417c6a20376"
+    sha256 arm64_ventura: "aba559e8bd9e0ab830535bde38cec741cbe65d7cde73315223a342c698caa100"
+    sha256 sonoma:        "b2c05aa2c38f15bf5b1df79aaccbb2b1f7551bd54ee4cc52ce49852bc9afa19f"
+    sha256 ventura:       "1d07309327d8af917657e324363b74699d2c111b81ce1d973b7bfb452ef15f67"
+    sha256 x86_64_linux:  "b76ed6884b0fe2bcad5a49a6778792cc1d5dc9ad88820dbad0ac250023c02989"
   end
 
   depends_on "cmake" => :build
@@ -24,7 +25,7 @@ class Wxmaxima < Formula
   depends_on "ninja" => :build
 
   depends_on "maxima"
-  depends_on "wxwidgets"
+  depends_on "wxwidgets@3.2"
 
   on_macos do
     depends_on "llvm" => :build if DevelopmentTools.clang_build_version <= 1300

@@ -6,6 +6,7 @@ class ErlangAT26 < Formula
   url "https://ghfast.top/https://github.com/erlang/otp/releases/download/OTP-26.2.5.14/otp_src_26.2.5.14.tar.gz"
   sha256 "39f5e25709820606ab11c867285a2132ac4b2999827af0071a1fb2ef1589ad9a"
   license "Apache-2.0"
+  revision 1
 
   livecheck do
     url :stable
@@ -13,20 +14,20 @@ class ErlangAT26 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "d13bd6017ae6772642a1d3e723eef0bfbb011bbd54490666041b74c4dd3a1fc5"
-    sha256 cellar: :any,                 arm64_sonoma:  "2a5cf1ddb6684788377b1fccbbc100f2cd672ace136061e010d3c778db7f4966"
-    sha256 cellar: :any,                 arm64_ventura: "05b0aeac94f17f02aac7565a16fa129cb230555d1d984268d5f4d0ef2209c10e"
-    sha256 cellar: :any,                 sonoma:        "516c043b74679adeb965ef2903541a8e2bdb83569e3bbbb4deea062001ceca27"
-    sha256 cellar: :any,                 ventura:       "90f87e290e23e8f72113ffea0b3f9382b8eced932d898ac14eab0e78ad8f235a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "05e197e9eaa1e139669abf57e6f855a19c630e7d69f774c93d30f5816091f0e6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "90bc277572c29be0d839ed95d298542b6b7c462d9d086101cc2c929a84780a42"
+    sha256 cellar: :any,                 arm64_sequoia: "e1acb419fc9c0f06275ef22da07d0c80e67aeb9dd54f2d8c0e303bc4783c3e4f"
+    sha256 cellar: :any,                 arm64_sonoma:  "20bffd59d1905714b973457e14b90cf1957fc0331c9894ab10f69df341b6f28d"
+    sha256 cellar: :any,                 arm64_ventura: "3d4961ab0a075a8f1776bc67492e15cada025b7f27f3566a15ffe58817affad1"
+    sha256 cellar: :any,                 sonoma:        "76df9566a61cef47c55cfb86960832c2146de1913907981c80f6fe1611641ba5"
+    sha256 cellar: :any,                 ventura:       "b6eed8a3e1ab3f57aba0a2a6a8a7df2ac216b369f5cbda88514a0d59e2ae7d6e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fe5bea2f95860f3edba9f05ea18635da7a69b67c33db2d39bc6332eb31ae121b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "95f34c5636c46c12e65b323bbe0f87377d267acd69e55216af916d53eac6080f"
   end
 
   keg_only :versioned_formula
 
   depends_on "openssl@3"
   depends_on "unixodbc"
-  depends_on "wxwidgets" # for GUI apps like observer
+  depends_on "wxwidgets@3.2" # for GUI apps like observer
 
   uses_from_macos "libxslt" => :build
   uses_from_macos "ncurses"
@@ -55,6 +56,9 @@ class ErlangAT26 < Formula
     # Do this if building from a checkout to generate configure
     system "./otp_build", "autoconf" unless File.exist? "configure"
 
+    wxwidgets = deps.find { |dep| dep.name.match?(/^wxwidgets(@\d+(\.\d+)*)?$/) }.to_formula
+    wx_config = wxwidgets.opt_bin/"wx-config-#{wxwidgets.version.major_minor}"
+
     args = %W[
       --enable-dynamic-ssl-lib
       --enable-hipe
@@ -65,6 +69,7 @@ class ErlangAT26 < Formula
       --with-odbc=#{Formula["unixodbc"].opt_prefix}
       --with-ssl=#{Formula["openssl@3"].opt_prefix}
       --without-javac
+      --with-wx-config=#{wx_config}
     ]
 
     if OS.mac?
@@ -72,6 +77,9 @@ class ErlangAT26 < Formula
       args << "--enable-kernel-poll" if MacOS.version > :el_capitan
       args << "--with-dynamic-trace=dtrace" if MacOS::CLT.installed?
     end
+
+    # The definition of `WX_CC` does not use our configuration of `--with-wx-config`, unfortunately.
+    inreplace "lib/wx/configure", "WX_CC=`wx-config --cc`", "WX_CC=`#{wx_config} --cc`"
 
     system "./configure", *std_configure_args, *args
     system "make"

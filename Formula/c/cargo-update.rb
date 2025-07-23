@@ -1,19 +1,19 @@
 class CargoUpdate < Formula
   desc "Cargo subcommand for checking and applying updates to installed executables"
   homepage "https://github.com/nabijaczleweli/cargo-update"
-  url "https://ghfast.top/https://github.com/nabijaczleweli/cargo-update/archive/refs/tags/v16.4.0.tar.gz"
-  sha256 "2b47a69d0f0508c733a388330393ea5d15bc2878229995885fb1ac9e1493f166"
+  url "https://ghfast.top/https://github.com/nabijaczleweli/cargo-update/archive/refs/tags/v17.0.0.tar.gz"
+  sha256 "6b8ec8f47c23176e6b17c8591ab63903685c92546e88a5e651bc7fe0343757be"
   license "MIT"
   head "https://github.com/nabijaczleweli/cargo-update.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "f9dc4dba12d6fae1c6e2d3faeee7db7ed7c787e1342c952235a6b937768c15c0"
-    sha256 cellar: :any,                 arm64_sonoma:  "2207d10e0254865910b089589bb76cb6f86960d9e40a16eddffac046bc27d203"
-    sha256 cellar: :any,                 arm64_ventura: "ceb33a463c72e054e3915baa72edb1a2a544bc2fa99690946058483b89150fb9"
-    sha256 cellar: :any,                 sonoma:        "ea03f9a07c3bd1849ba253924bb37c69e4c7952ecf079c346f4d5e84742af51d"
-    sha256 cellar: :any,                 ventura:       "ac9382a59336e346887db22e5b4f5b1b164fc40ad88b263951972f4db290aa98"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2b33a80388c0b47da95efd7050c97dc1717832c7d8d0f7df9ad7f17784ef14f0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ed9ad9bae6cc3de6f58e1d46b630bd4302dc729e01b8189858936f3977365012"
+    sha256 cellar: :any,                 arm64_sequoia: "834fd08df55876dddc7ef9d02978363cd5d627985e5ee3fe65ae8c655572b02d"
+    sha256 cellar: :any,                 arm64_sonoma:  "84f138a6b95a058d5fcf8c8079ef43ae0fe95ceba34a4cb6ea91da10731487eb"
+    sha256 cellar: :any,                 arm64_ventura: "8454ee482700cfee051f7f75f05c1a15f942ebba400e28b655773e15dc6c95df"
+    sha256 cellar: :any,                 sonoma:        "e8d243285c2c6520484d1279dfcf5daf4fd43f1de15583bb1bde88e68499d98b"
+    sha256 cellar: :any,                 ventura:       "61378174baeab03a4da1627c1a04a0479378bb34a56308fba53d888406fafcab"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a8126c658bc7e1e5655ebc39899ff1f2e18dafaeaca323ca8f1944a5a06ef54c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c06e8052d6f6a98b7742c06fc47419f68bb5b0c8110bde9a39a971cddb803d6b"
   end
 
   depends_on "pkgconf" => :build

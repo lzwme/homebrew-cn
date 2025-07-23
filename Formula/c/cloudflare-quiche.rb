@@ -13,13 +13,14 @@ class CloudflareQuiche < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "3dd5bd2de1a66a24a952b0826c212e860634d56c92cf6204cff4fa63597c95d9"
-    sha256 cellar: :any,                 arm64_sonoma:  "9ae12b15acc708f605c4d973275626c6ddf3541eb48233c31d842a6fc6ddfe23"
-    sha256 cellar: :any,                 arm64_ventura: "757fa3b626495ae2a535913c1bbaefc558ff5c68c24ff697c8c819f7de802f6a"
-    sha256 cellar: :any,                 sonoma:        "614250b372f6caf00b8a50b90dc516dc3c6285e1f8b0a360bea6b15a4b9cc6c7"
-    sha256 cellar: :any,                 ventura:       "f91dac7a21e7c416c4aaa54fcd15b2aa5f5e6ba67029103555ed1aa0ccc1535f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "258a1eabf2698186a8926e0ac2704c4adf5e26321336089458da6611673b1272"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a3a64a404ebc5398a01cfa9446497e75c71063bf07690a943de8c775e69e75cb"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "397bcf2171437ad495e7d60194a5c19634a88cb83c1fa6d88124fb0264bcbbea"
+    sha256 cellar: :any,                 arm64_sonoma:  "1b315676e4c54f8eec836bd1a012d48e6ac06f0224865866dcce0ccb7351ae62"
+    sha256 cellar: :any,                 arm64_ventura: "ac3f4bfe0e8fcd607dc9586f4ed4d25799f706ccb76dd49121a72bad66652bdd"
+    sha256 cellar: :any,                 sonoma:        "0ef6fecb109d989765142c1d0ef7c3c323a75620b53b48641558aacef32dc840"
+    sha256 cellar: :any,                 ventura:       "05ae2be55deef5bcc242d3425f11e1e8c2c4147b1e1c567f6b31f6b36c1383e7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d7dae91cd8972dc46220d15aaff7c51926b08b182b5a16b0e193f738972ba10a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b1df02d761f38515ecb839c3a691c772f198917c10acac92db8ee2c06e7fde81"
   end
 
   depends_on "cmake" => :build
@@ -30,20 +31,16 @@ class CloudflareQuiche < Formula
   def install
     system "cargo", "install", *std_cargo_args(path: "apps")
 
-    system "cargo", "build", "-j", "1", "--lib", "--features", "ffi,pkg-config-meta", "--release"
+    system "cargo", "build", "--jobs", ENV.make_jobs, "--lib", "--features", "ffi,pkg-config-meta", "--release"
     lib.install "target/release/libquiche.a"
     include.install "quiche/include/quiche.h"
 
     # install dylib with version and symlink
-    lib.install "target/release/#{shared_library("libquiche")}"
-    if OS.mac?
-      mv "#{lib}/libquiche.dylib", "#{lib}/libquiche.#{version.major_minor_patch}.dylib"
-      lib.install_symlink "#{lib}/libquiche.#{version.major_minor_patch}.dylib" => "#{lib}/libquiche.dylib"
-    else
-      mv "#{lib}/libquiche.so", "#{lib}/libquiche.so.#{version.major_minor_patch}"
-      lib.install_symlink "#{lib}/libquiche.so.#{version.major_minor_patch}" => "#{lib}/libquiche.so.#{version.major}"
-      lib.install_symlink "#{lib}/libquiche.so.#{version.major_minor_patch}" => "#{lib}/libquiche.so"
-    end
+    full_versioned_dylib = shared_library("libquiche", version.major_minor_patch.to_s)
+    lib.install "target/release/#{shared_library("libquiche")}" => full_versioned_dylib
+    lib.install_symlink full_versioned_dylib => shared_library("libquiche")
+    lib.install_symlink full_versioned_dylib => shared_library("libquiche", version.major.to_s)
+    lib.install_symlink full_versioned_dylib => shared_library("libquiche", version.major_minor.to_s)
 
     # install pkgconfig file
     pc_path = "target/release/quiche.pc"

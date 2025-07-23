@@ -12,14 +12,14 @@ class Node < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_sequoia: "8049b6395d06b0c7394f3888b38626f2890b934a19a02431535a73f25300aacc"
-    sha256 arm64_sonoma:  "74321d83d774e27aa56e6f41de2279ddce4b1883e67a17200b960573d13fb09b"
-    sha256 arm64_ventura: "131336e6108311260e3db7a5f624255dd53ffcacfa6f0f3722fb357cc39bc8be"
-    sha256 sonoma:        "a2dea22e0e044d63c4808d2e510f2721dfc982f37ff317fc520c2e6914bebeb2"
-    sha256 ventura:       "8884c9cdc9d9c70a1e9c83cb3f4b4b4bb9638ef5024e5dd31a38f798d05bb3d7"
-    sha256 arm64_linux:   "00698775805dd716bf0909c1b5ca997464a37d52eae242c935b4fa379ac5b2e3"
-    sha256 x86_64_linux:  "c12fb7f498203a4bebf93b9ff816dcabb5ae7237ada92d4921d9130744dcaf14"
+    rebuild 2
+    sha256 arm64_sequoia: "e3b31f9b31a2b7afa8c9e8f1c8fa4b0136cf9e60b0a4385015486706f8a9286b"
+    sha256 arm64_sonoma:  "9455851df579660bd8f6791105412cfdc4118bbb660fe3513cf6d018ee954e16"
+    sha256 arm64_ventura: "ff09188d924e5419232644b943c2fd9e74748ad2ee39702d64bc356fc7cc97a3"
+    sha256 sonoma:        "d315020d1a5dae78188e19c0c17261c14549e4b61b851fddc34d9a615a0346dc"
+    sha256 ventura:       "0aa07c3b2db7ae979215a0b6ed552bcabf666971240f3d599d9df0755bc38060"
+    sha256 arm64_linux:   "f563cfc7b948a7b6f49f73a469a475bc244e221c01d01e8518d950b2fdd54952"
+    sha256 x86_64_linux:  "066d8195bd40a2cd20f9f1a45b8777e6be0cbdf09a282fd360c53170ddcb2b3c"
   end
 
   depends_on "pkgconf" => :build
@@ -33,6 +33,8 @@ class Node < Formula
   depends_on "libuv"
   depends_on "openssl@3"
   depends_on "simdjson"
+  depends_on "sqlite" # Fails with macOS sqlite.
+  depends_on "zstd"
 
   uses_from_macos "python", since: :catalina
   uses_from_macos "zlib"
@@ -91,7 +93,9 @@ class Node < Formula
       --shared-ngtcp2
       --shared-openssl
       --shared-simdjson
+      --shared-sqlite
       --shared-zlib
+      --shared-zstd
       --shared-brotli-includes=#{Formula["brotli"].include}
       --shared-brotli-libpath=#{Formula["brotli"].lib}
       --shared-cares-includes=#{Formula["c-ares"].include}
@@ -108,9 +112,39 @@ class Node < Formula
       --shared-openssl-libpath=#{Formula["openssl@3"].lib}
       --shared-simdjson-includes=#{Formula["simdjson"].include}
       --shared-simdjson-libpath=#{Formula["simdjson"].lib}
+      --shared-sqlite-includes=#{Formula["sqlite"].include}
+      --shared-sqlite-libpath=#{Formula["sqlite"].lib}
+      --shared-zstd-includes=#{Formula["zstd"].include}
+      --shared-zstd-libpath=#{Formula["zstd"].lib}
       --openssl-use-def-ca-store
     ]
     args << "--tag=head" if build.head?
+
+    # TODO: Try to devendor these libraries.
+    # - `--shared-ada` needs the `ada-url` formula, but requires C++20
+    # - `--shared-simdutf` seems to result in build failures.
+    # - `--shared-http-parser` and `--shared-uvwasi` are not available as dependencies in Homebrew.
+    ignored_shared_flags = %w[
+      ada
+      http-parser
+      simdutf
+      uvwasi
+    ].map { |library| "--shared-#{library}" }
+
+    configure_help = Utils.safe_popen_read("./configure", "--help")
+    shared_flag_regex = /\[(--shared-[^ \]]+)\]/
+    configure_help.scan(shared_flag_regex) do |matches|
+      matches.each do |flag|
+        next if args.include?(flag) || ignored_shared_flags.include?(flag)
+
+        message = "Unused `--shared-*` flag: #{flag}"
+        if build.head?
+          opoo message
+        else
+          odie message
+        end
+      end
+    end
 
     # Enabling LTO errors on Linux with:
     # terminate called after throwing an instance of 'std::out_of_range'

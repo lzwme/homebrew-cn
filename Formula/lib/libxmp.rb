@@ -16,7 +16,7 @@ class Libxmp < Formula
   end
 
   head do
-    url "https://git.code.sf.net/p/xmp/libxmp.git", branch: "master"
+    url "https://github.com/libxmp/libxmp.git", branch: "master"
     depends_on "autoconf" => :build
   end
 

@@ -759,6 +759,7 @@ Homebrew-homebrew-core/Formula/c/cargo-bundle.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cargo-c.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cargo-cache.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cargo-chef.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/c/cargo-component.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cargo-crev.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cargo-cyclonedx.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cargo-deny.rb, Homebrew/homebrew-core, 1
@@ -3596,6 +3597,7 @@ Homebrew-homebrew-core/Formula/l/lsd.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lsdvd.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/lsix.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lsof.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/l/lsr.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/lsusb-laniksj.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lsusb.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lsyncd.rb, Homebrew/homebrew-core, 1
@@ -3727,6 +3729,7 @@ Homebrew-homebrew-core/Formula/lib/libdaemon.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libdap.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libdazzle.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libdbi.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/lib/libdbusmenu.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libdc1394.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libdca.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libde265.rb, Homebrew/homebrew-core, 1
@@ -7460,6 +7463,7 @@ Homebrew-homebrew-core/Formula/w/wxlua.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/wxmaxima.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/wxpython.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/w/wxwidgets.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/w/wxwidgets@3.2.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/wy60.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/w/wzprof.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/x/x-cmd.rb, Homebrew/homebrew-core, 1
@@ -8226,6 +8230,7 @@ Homebrew-homebrew-cask/Casks/b/blockstream-green.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/b/blocs.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/blood-on-the-clocktower-online.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/b/bloodhound.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/b/bloom.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/bloomrpc.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/b/bloop.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/b/blu-ray-player-pro.rb, Homebrew/homebrew-cask, 0
@@ -8616,7 +8621,6 @@ Homebrew-homebrew-cask/Casks/c/couchbase-server-enterprise.rb, Homebrew/homebrew
 Homebrew-homebrew-cask/Casks/c/couchpotato.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/couleurs.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/coverload.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/c/cozy-drive.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/cpu-info.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/cpuinfo.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/cr.rb, Homebrew/homebrew-cask, 0
@@ -10567,10 +10571,12 @@ Homebrew-homebrew-cask/Casks/font/font-m/font-mclaren.rb, Homebrew/homebrew-cask
 Homebrew-homebrew-cask/Casks/font/font-m/font-mea-culpa.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-m/font-meddon.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-m/font-medievalsharp.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/font/font-m/font-medio.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-m/font-medula-one.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-m/font-meera-inimai.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-m/font-megrim.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-m/font-meie-script.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/font/font-m/font-melete.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-m/font-meltho.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-m/font-menbere.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-m/font-mengshen-regular.rb, Homebrew/homebrew-cask, 1
@@ -14423,6 +14429,7 @@ Homebrew-homebrew-cask/Casks/s/surge-xt.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/surge.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/surge@4.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/suspicious-package.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/s/suspicious-package@preview.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/suuntodm5.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/svgcleaner.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/svp.rb, Homebrew/homebrew-cask, 0
@@ -14753,6 +14760,7 @@ Homebrew-homebrew-cask/Casks/t/tuxera-ntfs.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/tuxguitar.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/tv-browser.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/tvrenamer.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/t/twake.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/twelite-stage.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/twilioquest.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/twine-app.rb, Homebrew/homebrew-cask, 1
@@ -15072,6 +15080,8 @@ Homebrew-homebrew-cask/Casks/w/wirecast.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/wireframe-sketcher.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/wireshark-app.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/wireshark-chmodbpf.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/w/wiso-steuer-2020.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/w/wiso-steuer-2021.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/wiso-steuer-2022.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/wiso-steuer-2023.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/wiso-steuer-2024.rb, Homebrew/homebrew-cask, 0

@@ -4,22 +4,24 @@ class Iccmax < Formula
   url "https://ghfast.top/https://github.com/InternationalColorConsortium/DemoIccMAX/archive/refs/tags/v2.2.6.tar.gz"
   sha256 "dcb66f84016f6abe6033e71e2206e662b40e581dce9d208c9c7d60515f185dfe"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "848ee717590c4281070e64950f3bb50448876eb5eb9e0befa3281e551d796c59"
-    sha256 cellar: :any,                 arm64_sonoma:  "a890aae068114d8001fbb51009a03e67ab874381e8a8d4d6493cee21c84fb8e9"
-    sha256 cellar: :any,                 arm64_ventura: "b1c7ca97f7911d654eddb1d020c85a274dbaf1694928818679772e5ed283bd1b"
-    sha256 cellar: :any,                 sonoma:        "2b189c5b3c1b92d0cad6b64d7d942c15dee808d1faf97a431eaa05d6721ece1b"
-    sha256 cellar: :any,                 ventura:       "e2c1c60c29a8f2551b7c634039e28db0dd81bca3474784490c9622104284b5d4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "20ee1858ed79286e4b4c3b367cc7960b5bc8f9cd4265650e5612860f0ed62039"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "73820992ae2d259462278125bb555843ab3cccd767fba192903a2f082b1da32c"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "3463c07de594a7655097127df1650220d350c21a2451c641a89de4830912ed0b"
+    sha256 cellar: :any,                 arm64_sonoma:  "74a5e9869622d29ec0628d8b2e4a0876b6c76cef459996e8b95149916cfff7e3"
+    sha256 cellar: :any,                 arm64_ventura: "c07f73bb98c6cc9e528a045c4b4791fa7e8d52ab8c75b2d70589176617bda59e"
+    sha256 cellar: :any,                 sonoma:        "a0f7907faf006e2c1ca69fde725ae4ee0f30cfd0fb9f78bb6493e3e93c568acc"
+    sha256 cellar: :any,                 ventura:       "87c9c63c090e892ac479df95c0f9691e0baf4cd8546184838a651bd6cff1ae36"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ee8834db2b2d8ef5414dafca1f900ca8b2ea607256030a00c625bb3cf9c83bbd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "72258b3eb9987fe029fa91a98ac52d5b988c716d7b1f77cbe58d626505a84c3f"
   end
 
   depends_on "cmake" => :build
+  depends_on "nlohmann-json" => :build
   depends_on "jpeg"
   depends_on "libpng"
   depends_on "libtiff"
-  depends_on "nlohmann-json"
   depends_on "wxwidgets"
 
   uses_from_macos "libxml2"
@@ -33,7 +35,7 @@ class Iccmax < Formula
 
   def install
     args = %W[
-      -DCMAKE_INSTALL_RPATH=#{opt_lib}
+      -DCMAKE_INSTALL_RPATH=#{rpath}
       -DENABLE_TOOLS=ON
       -DENABLE_SHARED_LIBS=ON
       -DENABLE_INSTALL_RIM=ON

@@ -11,14 +11,11 @@ class Lesspipe < Formula
   ]
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ba151d7b9a0525b3782c1b06315166e45d7b60acb95459aff6731705e2b23b46"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ba151d7b9a0525b3782c1b06315166e45d7b60acb95459aff6731705e2b23b46"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "ba151d7b9a0525b3782c1b06315166e45d7b60acb95459aff6731705e2b23b46"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ba151d7b9a0525b3782c1b06315166e45d7b60acb95459aff6731705e2b23b46"
-    sha256 cellar: :any_skip_relocation, ventura:       "ba151d7b9a0525b3782c1b06315166e45d7b60acb95459aff6731705e2b23b46"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ed1c9414decbfbdb557090c3a85590bbf60ed504c2fb6e4665c4e9af7d82d408"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "c43495d6387ef2b753bd107583ec0d7016722a24ccec3d5b5ca7b54ccd5a33db"
   end
 
+  uses_from_macos "zsh" => :build # needed to guarantee installation of zsh completions
   uses_from_macos "perl"
 
   on_macos do
@@ -26,8 +23,7 @@ class Lesspipe < Formula
   end
 
   def install
-    system "./configure", "--prefix=#{prefix}"
-    man1.mkpath
+    system "./configure", "--prefix=#{prefix}", "--shell=#{which("bash")}"
     system "make", "install"
   end
 

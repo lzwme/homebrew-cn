@@ -5,6 +5,11 @@ class Pmd < Formula
   sha256 "693776e2d39f4f24d9d5f4dc75055828dadd6671605bc7cf1246f2a277eb0b35"
   license "BSD-4-Clause"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, all: "5cd53a46bfc8af0d292bb49f28a6af2c6183e546afe0f788bb3598102b2a13c0"
   end

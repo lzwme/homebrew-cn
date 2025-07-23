@@ -5,8 +5,8 @@ class Crystal < Formula
 
   stable do
     # TODO: Replace arm64 linux bootstrap with official when available
-    url "https://ghfast.top/https://github.com/crystal-lang/crystal/archive/refs/tags/1.17.0.tar.gz"
-    sha256 "948b42ce690961e57cdf979e2ff2315ae23b3780344242499a893675625504c2"
+    url "https://ghfast.top/https://github.com/crystal-lang/crystal/archive/refs/tags/1.17.1.tar.gz"
+    sha256 "f673c09577a7749d06aa56639dcf5f79bdd61ee195ab1c9b445e6f3880bd2910"
 
     resource "shards" do
       url "https://ghfast.top/https://github.com/crystal-lang/shards/archive/refs/tags/v0.19.1.tar.gz"
@@ -20,13 +20,13 @@ class Crystal < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "3f54e8edde6c99fb8f3b6fb2d0ad8d6f5b2e1b90c4f4d9c0167a4e5fdbd9c61d"
-    sha256 cellar: :any,                 arm64_sonoma:  "3309f3897a21474b720b091ca6f5daf10548ee7710f6536829a18e5c4f2c4ee2"
-    sha256 cellar: :any,                 arm64_ventura: "ad089985d19c30ae68cf67fe9e1605d975cb3fee13e6d9f0b47b252aa1dda26f"
-    sha256 cellar: :any,                 sonoma:        "67c4bcc8c6f70a00f98b6bacb03b2d14abd66a58d065cd78ba7a78117cad6842"
-    sha256 cellar: :any,                 ventura:       "3019801b09b19956772c59e4591f1ec500fa235a6d3d7eb2487ca570fdfd3ded"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0af479befab36ff9f343f73cc4034e0dd95fb5c688743f290cc110b46174fd88"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "16cc8f3970c870c667c4755615855e82ed098e37e0bce75fc83dbfa137179687"
+    sha256 cellar: :any,                 arm64_sequoia: "830ca0202f2485716ff43aa76d21b4ed2fd2216cabe004ff5deabcdc3f7b440b"
+    sha256 cellar: :any,                 arm64_sonoma:  "208b835a63003c081562d62818dc565df3d292e96c940447a45e7cd87279e155"
+    sha256 cellar: :any,                 arm64_ventura: "316cb394e5ee50056a7c7199756b7f970c427c867f15f1490c488c78081f2ff5"
+    sha256 cellar: :any,                 sonoma:        "a3312dce8e6e5813e7eee20f06d21bd6e12564502722a6e45ae33237e07ec607"
+    sha256 cellar: :any,                 ventura:       "2219a35b0b16aba257358121210e34237a3d68d228a6c024ce2edcfe483d4e9c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b10eb99a47ac85d7c090f9819048e155426b1e3e4a019d0a4fe649217eaf488f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0c2156e8d3e33285ceb109f42e5e189668e468fd605f3e7ad199d627470667f2"
   end
 
   head do

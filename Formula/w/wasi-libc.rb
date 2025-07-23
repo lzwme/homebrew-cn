@@ -40,7 +40,7 @@ class WasiLibc < Formula
 
   depends_on "llvm" => [:build, :test]
   depends_on "lld" => :test
-  depends_on "wasmtime" => :test
+  depends_on "wasm-micro-runtime" => :test
 
   # Needs clang
   fails_with :gcc
@@ -107,6 +107,6 @@ class WasiLibc < Formula
     (testpath/"lib/wasm32-unknown-wasi").install_symlink "libclang_rt.builtins-wasm32.a" => "libclang_rt.builtins.a"
     wasm_args = %W[--target=wasm32-wasi --sysroot=#{share}/wasi-sysroot]
     system clang, *wasm_args, "-v", "test.c", "-o", "test", "-resource-dir=#{testpath}"
-    assert_equal "the answer is 42", shell_output("wasmtime #{testpath}/test")
+    assert_equal "the answer is 42", shell_output("iwasm #{testpath}/test")
   end
 end

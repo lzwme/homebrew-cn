@@ -3,19 +3,19 @@ class Fwupd < Formula
 
   desc "Firmware update daemon"
   homepage "https://github.com/fwupd/fwupd"
-  url "https://ghfast.top/https://github.com/fwupd/fwupd/releases/download/2.0.12/fwupd-2.0.12.tar.xz"
-  sha256 "83eab17ef2e65249491aef5e99419827b43ac56d40c5b0747b59ee94b147215e"
+  url "https://ghfast.top/https://github.com/fwupd/fwupd/releases/download/2.0.13/fwupd-2.0.13.tar.xz"
+  sha256 "da049e8616924b15d434d3eb616767f00f91611c3e7c8efd9e36c28099e1126f"
   license "LGPL-2.1-or-later"
   head "https://github.com/fwupd/fwupd.git", branch: "main"
 
   bottle do
-    sha256 arm64_sequoia: "999ce90d7b9597c8b945ec4d95e56221a62ac2fca2ad60939c9ac657dd434db6"
-    sha256 arm64_sonoma:  "eb924164608503d5a030869e574e1073cc5c37ce4bd55ef83175c65ab25e77d7"
-    sha256 arm64_ventura: "4e4b37c40dad2a6632ea3f7b2cc7c98c8f7c71a2b412e2f83e0e036359fa27d1"
-    sha256 sonoma:        "f20951f01d358e6adaee88412b7a27ff5e3b9550b8cab5d3f1b2a3bac825ad66"
-    sha256 ventura:       "b02cdb0d46b5259d8cc28d259e9afd06445e903edf9bddff5737175c73893245"
-    sha256 arm64_linux:   "2c2c129ababa59d73b08d19b5276be793e58fca55610298a73ba445b58f6912b"
-    sha256 x86_64_linux:  "32a56c37990ab669208739a774c8e22c93944e21eb09a60420bb29d2e987ced3"
+    sha256 arm64_sequoia: "129854a83b0a7b56a79f6e426b7df1d8cf8d73e88854ed322f06a36dcbefd437"
+    sha256 arm64_sonoma:  "161d8fa7fc7db3ef77860045d3a7d382a461a829a2e92fa7f7a4c73559176f1a"
+    sha256 arm64_ventura: "d55e11905da456537bd16d611063e78811859fac82fd138788ee5d17b9279b84"
+    sha256 sonoma:        "d3b4d7a9c769de493d07412d1a190cac987dc7d9f68a805de6a76c815c65cc37"
+    sha256 ventura:       "66cfd2a4caef67e6583bb64a359aa11073fb4781543047ed09e21693e992925f"
+    sha256 arm64_linux:   "9411c0789927b0b268bd201f46cca1a120cf888768650383d0d09b595b4aabb0"
+    sha256 x86_64_linux:  "4032fb6cc9a16b353d4ed76120bab2815b840b4bc94622c5c43e8616050aead1"
   end
 
   depends_on "gettext" => :build

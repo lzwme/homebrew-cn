@@ -3,8 +3,8 @@ class MysqlClientAT80 < Formula
   # FIXME: Actual homepage fails audit due to Homebrew's user-agent
   # homepage "https://dev.mysql.com/doc/refman/8.0/en/"
   homepage "https://github.com/mysql/mysql-server"
-  url "https://cdn.mysql.com/Downloads/MySQL-8.0/mysql-boost-8.0.42.tar.gz"
-  sha256 "c2aa67c618edfa1bc379107fe819ca8e94cba5d85f156d1053b8fedc88cc5f8f"
+  url "https://cdn.mysql.com/Downloads/MySQL-8.0/mysql-boost-8.0.43.tar.gz"
+  sha256 "85fd5c3ac88884dc5ac4522ce54ad9c11a91f9396fecaa27152c757a3e6e936f"
   license "GPL-2.0-only" => { with: "Universal-FOSS-exception-1.0" }
 
   livecheck do
@@ -14,13 +14,13 @@ class MysqlClientAT80 < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 arm64_sequoia: "59d43aed334afcda44273940a08e0a60d50228607fbd57965657f25578e3fd61"
-    sha256 arm64_sonoma:  "ced161166185b2f6c1dc0676b771a4d794eb5bcaa85393411993bb7b8c6a31de"
-    sha256 arm64_ventura: "b18647515429259f046aa0fb49e93929cbed48065d506e6260962b7e4ad87d5e"
-    sha256 sonoma:        "e282d68aadf1142ac6058970a904b323c8483e6a72eda42e987b7078218136d8"
-    sha256 ventura:       "cb190923a14eb844124f48aa292aeb696220f96231dd6be5cac916ea4cb5a7bb"
-    sha256 arm64_linux:   "cf5203c31e25fafe9f5b0663262fcd36abf05be669337ca10a0eedf4bc9deaf8"
-    sha256 x86_64_linux:  "3b94ce7a61aca93ad2c91e7f387231cb490a603e22cb9ed5869a7e7cde2abe25"
+    sha256 arm64_sequoia: "bf95e2b85e9d521342fd38c3cb6baf3d694a9325c611e845d4885fb28e2905d0"
+    sha256 arm64_sonoma:  "9d250ce8010248c3630079ea802ff8d9fc0e7273b767faa6eda2829415e51a7d"
+    sha256 arm64_ventura: "8ce6dd546e38489d6cf9612748110283553946266fd9126297d05fcfcc56fa81"
+    sha256 sonoma:        "096755440514b49f7c20551cc2db7d35e3ef38875ba0e282fc923cc31ff3b467"
+    sha256 ventura:       "069474c5899799855911c48402afc1ae68c172c374353cff97a54858a2aafc4a"
+    sha256 arm64_linux:   "1c126059a852c294a3a114bec1b3ec3a6664d7632af2ee70934189fb97832e97"
+    sha256 x86_64_linux:  "d1bdffc6f8b930d3321cb380a7d0354900c0288049752c2dff39770b516e7d51"
   end
 
   keg_only :versioned_formula
@@ -47,8 +47,6 @@ class MysqlClientAT80 < Formula
     args = %W[
       -DFORCE_INSOURCE_BUILD=1
       -DCOMPILATION_COMMENT=Homebrew
-      -DDEFAULT_CHARSET=utf8mb4
-      -DDEFAULT_COLLATION=utf8mb4_general_ci
       -DINSTALL_DOCDIR=share/doc/#{name}
       -DINSTALL_INCLUDEDIR=include/mysql
       -DINSTALL_INFODIR=share/info

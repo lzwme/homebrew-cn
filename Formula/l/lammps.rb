@@ -1,12 +1,12 @@
 class Lammps < Formula
   desc "Molecular Dynamics Simulator"
   homepage "https://docs.lammps.org/"
-  url "https://ghfast.top/https://github.com/lammps/lammps/archive/refs/tags/stable_29Aug2024_update3.tar.gz"
+  url "https://ghfast.top/https://github.com/lammps/lammps/archive/refs/tags/stable_22Jul2025.tar.gz"
   # lammps releases are named after their release date. We transform it to
   # YYYY-MM-DD (year-month-day) so that we get a sane version numbering.
   # We only track stable releases as announced on the LAMMPS homepage.
-  version "20240829-update3"
-  sha256 "75a9fb55d3c10f44cbc7b30313351ce9b12ab3003c1400147fa3590b6d651c73"
+  version "20250722"
+  sha256 "38d7ab508433f33a53e11f0502aa0253945ce45d5595baf69665961c0a76da26"
   license "GPL-2.0-only"
 
   # The `strategy` block below is used to massage upstream tags into the
@@ -29,13 +29,13 @@ class Lammps < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "c0f0744411c072487a3b240eaccdf53955e8cc77addec1b31c5800e5f001ae28"
-    sha256 cellar: :any,                 arm64_sonoma:  "7a0eddf487eb75a008791d0b5231be1b309216b318dac620227bb7018de85d53"
-    sha256 cellar: :any,                 arm64_ventura: "1a95a236eee5cad31b938d5174ca4cb9b8f69265efa07a3c5b099296d05db3eb"
-    sha256 cellar: :any,                 sonoma:        "a01cd389ea3c365864d9e07f664c8dc5ad7e1c5c2edfeecf8e4377f887989d27"
-    sha256 cellar: :any,                 ventura:       "2de3cbb38140a54c651e07f0a057576e0891764f9deacee22dc25b50ac6de985"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "158bfb19cb3ef3be7f6bfc51c897061b815d2d0e78d07b62b426ce5004d3210a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "190c2ed85b3f9c09855dd75b8b79bb9aa537de81d7d641ad78769b76279f8877"
+    sha256 cellar: :any,                 arm64_sequoia: "5dcbe62c226d2b98ebede1269ac9a31c1c1a5846f58d678e37061846ba0cba67"
+    sha256 cellar: :any,                 arm64_sonoma:  "dd3a100bb7068a71b8dfaf28e492a3ce20c227f2f9e0644b94f6d4f899ed99cf"
+    sha256 cellar: :any,                 arm64_ventura: "9928dabf3feeecf5d8203d596d566d391f10c5a9b420e18360c88c3b0092fde4"
+    sha256 cellar: :any,                 sonoma:        "71e66176a276d78240fee653eb06df98e95624e1d7abdedb1f303b81d822ab51"
+    sha256 cellar: :any,                 ventura:       "ff8e8db48554205827c9a973b98eec0081968ce2ffb6624719f509633aa5a86b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "491186c7e5217a82b045d031bca445dfdb0db940e75fd4285890565f249c91c3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0721f7b5637369e7fc3677f0f0e4dd66ef06c8bc1c81a1b938c796cf2ddf527d"
   end
 
   depends_on "cmake" => :build
@@ -51,6 +51,7 @@ class Lammps < Formula
   depends_on "voro++"
 
   uses_from_macos "curl"
+  uses_from_macos "python"
 
   on_macos do
     depends_on "libomp"
