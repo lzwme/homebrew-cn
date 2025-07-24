@@ -393,6 +393,7 @@ Homebrew-homebrew-core/Formula/a/awslogs.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/awsume.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/awsweeper.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/axel.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/a/ayatana-ido.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/azcopy.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/azion.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/azqr.rb, Homebrew/homebrew-core, 0
@@ -7159,6 +7160,7 @@ Homebrew-homebrew-core/Formula/u/uv.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/u/uvg266.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/u/uvicorn.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/u/uvw.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/u/uvwasi.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/u/uwsgi.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/v/v.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/v2ray-plugin.rb, Homebrew/homebrew-core, 1
@@ -7316,6 +7318,7 @@ Homebrew-homebrew-core/Formula/w/wabt.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/w/waffle.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/w/wagyu.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/wails.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/w/wait4x.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/wait_on.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/w/wakatime-cli.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/w/wakeonlan.rb, Homebrew/homebrew-core, 1

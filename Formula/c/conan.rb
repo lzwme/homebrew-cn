@@ -3,19 +3,19 @@ class Conan < Formula
 
   desc "Distributed, open source, package manager for C/C++"
   homepage "https://conan.io"
-  url "https://files.pythonhosted.org/packages/c7/55/9a10f21dd6dc9137c6e7b51eff7c54ab92400812e6e795d1a991ead00b54/conan-2.18.1.tar.gz"
-  sha256 "5d8e9fac7614de9297933f65de8f17db14851a871cebc962f4856b7c294f43c5"
+  url "https://files.pythonhosted.org/packages/dd/36/ab4eb834149720fd444fc29ff72f30390e50b800c5064f0631aebbbd4ee7/conan-2.19.0.tar.gz"
+  sha256 "6f66530678daa2d28ca09c53598e5c04a9d6cad80212d50f9cedcc9c7d3d7f30"
   license "MIT"
   head "https://github.com/conan-io/conan.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "3efa5d2850bd4b79e54c5820a23d914caf11044927eb68bc91314a74a9e739ee"
-    sha256 cellar: :any,                 arm64_sonoma:  "dbcfec1c57eb39116d4e8167866217f1377b9b07d7675aca4660ba812b8c09c2"
-    sha256 cellar: :any,                 arm64_ventura: "26ce6f03a2717ddaf815c6ae660ce4727734aa3ba0595b7cb3d0e83dca913f85"
-    sha256 cellar: :any,                 sonoma:        "292d1f8769727c07305186c9705ce4274d8db6d29a920d753863c9f3d8ce93ad"
-    sha256 cellar: :any,                 ventura:       "e1da1805f8ba905d31dee76f53ff036c0e152099619494f604ab74833545d99f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8b01bb48c5fc45316d03fd61aa2cd3d59d5ad68ed7e0ff58612d17be6ad9ae9b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cff7c48d045a35b29e66575185262a2eb3bd3467b665b7ff8e2571868c6ce71d"
+    sha256 cellar: :any,                 arm64_sequoia: "050ef91a3321cb3be47139b5fcf7d2f7686a3876a7f3b11661e6013c147faddc"
+    sha256 cellar: :any,                 arm64_sonoma:  "2a1a37e4061bf7281c76db57a5adb577acecd6e21fae86d7e7b05a952b92f247"
+    sha256 cellar: :any,                 arm64_ventura: "91bd4171af45709f84749551f1a9469c8126bf14f22f021a502c1addfd20b9a9"
+    sha256 cellar: :any,                 sonoma:        "8a815e2f8b9c07854c4e38ace54c3c68070d3955559977362213ba7dbca163b6"
+    sha256 cellar: :any,                 ventura:       "a506d602b95111cdf6750ae21bb84fc43147440f4515ef8d488df72ebc6bec25"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f6df40aa3882e25b58b3b23d904305c1d918c45df9f1f732c48c999a60faf48b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1e221c0de95ad46581603f43eccd3639727dba7ef1256a116030f0045635d70a"
   end
 
   depends_on "pkgconf" => :build

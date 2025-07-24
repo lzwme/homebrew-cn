@@ -1,19 +1,19 @@
 class OpenclHeaders < Formula
   desc "C language header files for the OpenCL API"
   homepage "https://www.khronos.org/registry/OpenCL/"
-  url "https://ghfast.top/https://github.com/KhronosGroup/OpenCL-Headers/archive/refs/tags/v2025.06.13.tar.gz"
-  sha256 "8bf2fda271c3511ee1cd9780b97446e9fa0cf2b0765cdd54aee60074a4567644"
+  url "https://ghfast.top/https://github.com/KhronosGroup/OpenCL-Headers/archive/refs/tags/v2025.07.22.tar.gz"
+  sha256 "98f0a3ea26b4aec051e533cb1750db2998ab8e82eda97269ed6efe66ec94a240"
   license "Apache-2.0"
   head "https://github.com/KhronosGroup/OpenCL-Headers.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9a254d7da40cc5894307683453ce237ed6a4864f48ea7289e2b2b845336690f1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9a254d7da40cc5894307683453ce237ed6a4864f48ea7289e2b2b845336690f1"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "9a254d7da40cc5894307683453ce237ed6a4864f48ea7289e2b2b845336690f1"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9a254d7da40cc5894307683453ce237ed6a4864f48ea7289e2b2b845336690f1"
-    sha256 cellar: :any_skip_relocation, ventura:       "9a254d7da40cc5894307683453ce237ed6a4864f48ea7289e2b2b845336690f1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "bd80e14dfdebbc4b2498c950027ed59233d595829cb882c6c500542befdf092c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bd80e14dfdebbc4b2498c950027ed59233d595829cb882c6c500542befdf092c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a77df45da340369c12473f2d7bb2b78ab954ec432c61eabe648434b49785d801"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a77df45da340369c12473f2d7bb2b78ab954ec432c61eabe648434b49785d801"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "a77df45da340369c12473f2d7bb2b78ab954ec432c61eabe648434b49785d801"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a77df45da340369c12473f2d7bb2b78ab954ec432c61eabe648434b49785d801"
+    sha256 cellar: :any_skip_relocation, ventura:       "a77df45da340369c12473f2d7bb2b78ab954ec432c61eabe648434b49785d801"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a8b7bef48a5d24c0528a92f1e05ae63ad225852c1d16ebc5c2ef3da1f344668d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a8b7bef48a5d24c0528a92f1e05ae63ad225852c1d16ebc5c2ef3da1f344668d"
   end
 
   keg_only :shadowed_by_macos, "macOS provides OpenCL.framework"

@@ -3,18 +3,18 @@ class WeaviateCli < Formula
 
   desc "Command-line interface for managing and interacting with Weaviate"
   homepage "https://pypi.org/project/weaviate-cli/"
-  url "https://files.pythonhosted.org/packages/a6/cb/7255e61bbc1ac8498ad57633d4b7b84196d62fb241fde2a798628b1dedd4/weaviate_cli-3.2.2.tar.gz"
-  sha256 "33367e3c445e631835ac423570237ed130ee8713348a3283e32fd03abb463157"
+  url "https://files.pythonhosted.org/packages/c9/c5/2d1129ff8515e037c77bbaca2df691352d7406579d96cd1b791323153093/weaviate_cli-3.2.3.tar.gz"
+  sha256 "286bdeaefde91a93863f3b3f200f5eae8e07f94fa1c7e996f4c5d48091084294"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "7266fadb4140e6c3a0318fa81233a9e99f26f779b9fa206f2dda650146d59b4c"
-    sha256 cellar: :any,                 arm64_sonoma:  "602c554ba8af7c3652a5633eec033c320914a209fb7e342d93d4e93ab134a13a"
-    sha256 cellar: :any,                 arm64_ventura: "567401d4a4049019033bcb58f7e59de63da3e3dd382a6ad5240513d7146c970d"
-    sha256 cellar: :any,                 sonoma:        "75f4d77bdc0186197a8e1f67254fb34656dc0645585a54d716acc2b05d6e8e64"
-    sha256 cellar: :any,                 ventura:       "283bae37f6e2041208670b9fcb7a9d09aeb240965d14c76c425e79bfe312f2d5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4a5968979008b30bb9bdea0b1f8a7c2a9b9e39612dea8c4aaa956e93bda05069"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2526a5bcd8ca2ad53be49757872bad39501d82e6771824a37819420b045b5208"
+    sha256 cellar: :any,                 arm64_sequoia: "df2977b1a7f4eb1a76db921261e8e2d9e980d224169852dc4ce568551f7c99fa"
+    sha256 cellar: :any,                 arm64_sonoma:  "595f3b018079e0f1a2d4384aca5e8fe2bd88866e9f7f439e2e983b589719d9cb"
+    sha256 cellar: :any,                 arm64_ventura: "bef85ab7a3ffbf295d9274fabc0e6d7a209ca78f56bb9c208c7329dba528a6d2"
+    sha256 cellar: :any,                 sonoma:        "40f425b2c25bc16fcb6513b84a24682557eb5c3b50291aba243bf6351637d0e8"
+    sha256 cellar: :any,                 ventura:       "fa6bf6e000aaf944e9ca77093e9cccdc5dc9c868280d7bea8dead8b3bd983418"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3fc9e58adfb242c393c7c48193dd08182db06aa42bce86b1e8c06d01b933b8cb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c9fd460efd8b6e9188f5d9ff2cbf96b09bef299863938eb72838e58289c3588d"
   end
 
   depends_on "ninja" => :build

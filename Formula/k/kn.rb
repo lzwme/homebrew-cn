@@ -2,19 +2,19 @@ class Kn < Formula
   desc "Command-line interface for managing Knative Serving and Eventing resources"
   homepage "https://github.com/knative/client"
   url "https://github.com/knative/client.git",
-      tag:      "knative-v1.18.0",
-      revision: "96721e598f770d3cd9ee1f0a437bf45bb7951b54"
+      tag:      "knative-v1.19.0",
+      revision: "fcc5f74af535829de277bdf5909bd70606237d49"
   license "Apache-2.0"
   head "https://github.com/knative/client.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3034a9a7ed80e2919485a4e85ec962d428a0c0cbb9864d77589db2b5f5ccfb97"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "297d162c0faefc3c0dec04a54d9dd4b1a49e434dccb9d5b25896ac112da6f28c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "82101a5958dc2f085b875e8ef6cc879e4cb9238e295355ee6f8ad44fe1cd2aad"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d348f6ac06a0d063cd4790f2adcdb328dea432e3a97ffb8442ac70c8bf9505c1"
-    sha256 cellar: :any_skip_relocation, ventura:       "3dabd5c19f652132ad80cf8a811b6dd00675547bd1a0b9b8956bb0f00754ab58"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1ab87d14d46a95b677faf2948df6704540e3fdd1558640c9cd2c7ab48ec48820"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3161226ee2880c1f8c650d8ad4cb13d1cc8f69fc7d2e8563566b1e77bb113250"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ac343e8b8543f8b57733929388ff757c7c34bb1c7625984cdb965e0adceaed3a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "403546dad8da0534291140b7b9da2d3b70410af6ab15ab4d4e13d1afcf19fb79"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "261b662f0c29068b9d832e9ea82052f9c408a90e02e9edaea9610a774a058552"
+    sha256 cellar: :any_skip_relocation, sonoma:        "383bf0cabac25e58d67ac589b456ba96a0ca3e856a90a172b23e052dbe5f77d6"
+    sha256 cellar: :any_skip_relocation, ventura:       "0fb488c8c18a68cc16d41ff106f5a5bb41707dce1376c3ab0ae3770215810d85"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "47f36a6da7acb7e86eb12c7ea2b405892e28e18553afb13256ac4ea925422985"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5a280d666fc1524016e0921ea24488b4e1974c1097056179e74817ab1bbe9a96"
   end
 
   depends_on "go" => :build

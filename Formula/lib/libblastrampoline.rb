@@ -1,8 +1,8 @@
 class Libblastrampoline < Formula
   desc "Using PLT trampolines to provide a BLAS and LAPACK demuxing library"
   homepage "https://github.com/JuliaLinearAlgebra/libblastrampoline"
-  url "https://ghfast.top/https://github.com/JuliaLinearAlgebra/libblastrampoline/archive/refs/tags/v5.13.1.tar.gz"
-  sha256 "6df0eddd846db56b885056641cf02304862411bd0e641d444acf8f4eb2e33327"
+  url "https://ghfast.top/https://github.com/JuliaLinearAlgebra/libblastrampoline/archive/refs/tags/v5.14.0.tar.gz"
+  sha256 "1036d8a34d2b6cad715da9b5f84c505517c9c65c24fcf90ba0f17d4d0003811a"
   license all_of: [
     "MIT",
     "BSD-2-Clause-Views", # include/common/f77blas.h
@@ -10,13 +10,13 @@ class Libblastrampoline < Formula
   ]
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "03497a53d3183dacd6edf1e39d73fe59947cd136255401fcffe25dce61a7139d"
-    sha256 cellar: :any,                 arm64_sonoma:  "10f49ac34d432fa76c15b21a87bf2947fe4ec8d24cf9f4acbef1673a4d4fa967"
-    sha256 cellar: :any,                 arm64_ventura: "8a622b45cbe58c6d30bc9fdcb5d501d05b96893351982837fa9b587cb3892597"
-    sha256 cellar: :any,                 sonoma:        "fe04097067b8f9839216a297cc3cacec98acce820c1a816e4fc9d79ce36bf212"
-    sha256 cellar: :any,                 ventura:       "0ae48fe3914b9b2ffc998a360d40b9bdd7fe40f40408be4cf27250fdb8e319c6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a443a4792ca5ac36b046b8235e0f0dcf2967097ff404302894cb489850fd0f6a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2ae117c4ef95be2554f313e0bbeeea3e02a4c1f3793051afe8a0a5a457114886"
+    sha256 cellar: :any,                 arm64_sequoia: "321796555ea966414963f103e363b2763f50f8bc7cd3af5a427e9b7c5019b7f4"
+    sha256 cellar: :any,                 arm64_sonoma:  "2b2ca33deeb68457c7a163db9f38e6aa2ba0c63f641968d63579aaaf26c69825"
+    sha256 cellar: :any,                 arm64_ventura: "5131ca461fc9483dc2c058333998ba84b3d82bddb6b649164cff08cdd88cd5f5"
+    sha256 cellar: :any,                 sonoma:        "1da55896bc950f7bbc231519bffb881d00c284e362f4647ab15f59cb4baf35df"
+    sha256 cellar: :any,                 ventura:       "26c531ad1c3ae73049dc270da5c73e7652e34f1a8acdc63fb76066630174498f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a29f69f1580759dec7d3001b335b89b12602579ee156c3f28e73693ddc897f4e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e90636c4edc3ae00b4dceca5182d409ab08d7327cac94274635fbcd454c4745c"
   end
 
   depends_on "openblas" => :test

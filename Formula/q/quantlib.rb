@@ -1,18 +1,18 @@
 class Quantlib < Formula
   desc "Library for quantitative finance"
   homepage "https://www.quantlib.org/"
-  url "https://ghfast.top/https://github.com/lballabio/QuantLib/releases/download/v1.38/QuantLib-1.38.tar.gz"
-  sha256 "7280ffd0b81901f8a9eb43bb4229e4de78384fc8bb2d9dcfb5aa8cf8b257b439"
+  url "https://ghfast.top/https://github.com/lballabio/QuantLib/releases/download/v1.39/QuantLib-1.39.tar.gz"
+  sha256 "0126dac9fab908ca3df411ec8eb888ea1932c1044b1036d6df2f8159451fb700"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "e319f444e31940f0364e8398deb1f6077e60a2bda5ed1c90cf5333879e2be89e"
-    sha256 cellar: :any,                 arm64_sonoma:  "51b6d9361b230a6595f65f1f72192c6500b437d06b55e026af32316402343432"
-    sha256 cellar: :any,                 arm64_ventura: "fdaf876b826c57c317e98844d732a6626b9b59c165d1eb0d9bf60bc38d65e244"
-    sha256 cellar: :any,                 sonoma:        "db571848eeb1677e0b289992082576bca793641d657f946d63b7e5d18135aff7"
-    sha256 cellar: :any,                 ventura:       "c0603994c664e9b237cc9ab3597021173dd68ee18f6ede7b2e7a1cdb0d5766a0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d120612e1b0d505bd930e2fcbf450d14073e5847bfacfbf69e1415540399bddb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a1a1ee6ad6b4ca595a3ff9c632de0f5b3ff737fa3b7e8f2dc9abb9249230d88a"
+    sha256 cellar: :any,                 arm64_sequoia: "d20a534cfeefb7cea299f6292240c2f9c438aca166fd0f45e1d5ceaa2c0afd44"
+    sha256 cellar: :any,                 arm64_sonoma:  "9466a42e1ad25b969fcf07a4ea0972087c5b4bf4ed29240cb8e880270b27317c"
+    sha256 cellar: :any,                 arm64_ventura: "f9b1575dcfbd307f0030c5b61ca5d9d26c9ae4caa9fcbaa0bb66f8dd3cb13d8a"
+    sha256 cellar: :any,                 sonoma:        "2ecba83bf974eb035eb4614e57a22569f1c86ec56663935bde2b59663610ef76"
+    sha256 cellar: :any,                 ventura:       "b700520b6e3d5e06369109767ba795e6dae937c5c43680a8c3f68687bbfe6b83"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "22f1eb26c69d559b72a750464ce7e3c3cedec7343341f8b31ef67b7347e4c4b5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dd80e282e117da82507ef4070ace0bd46ff5428d919313017c37dc6f7162f0a0"
   end
 
   head do

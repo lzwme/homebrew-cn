@@ -3,20 +3,19 @@ class Vunnel < Formula
 
   desc "Tool for collecting vulnerability data from various sources"
   homepage "https://github.com/anchore/vunnel"
-  url "https://files.pythonhosted.org/packages/6a/7e/9fe82716b44830b5429a8f431250d9bde638187552b0073ac4f16e89d0b3/vunnel-0.34.2.tar.gz"
-  sha256 "6d0bffca9e9b14a74e5c3c1ec8c8079a402bf0dff5890ba2cfcfcd1f1d9a41cf"
+  url "https://files.pythonhosted.org/packages/0e/0f/f207c4f6e7056de26e9a6b105d157ca2ca80a58087daca27cbf071710f70/vunnel-0.35.1.tar.gz"
+  sha256 "df846487f0469e9dc1c477c29475eccf9278c1e7f4a339a66437f08a1c5fec5e"
   license "Apache-2.0"
   head "https://github.com/anchore/vunnel.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "eecd440ffc8d96b888453a4b3264a1a7f2d3949722e7382c157550385b7a763b"
-    sha256 cellar: :any,                 arm64_sonoma:  "34e6d48a3cee7a5472a3fceb185e22a9030f14eb42a84e6fc08d7df33fd783b9"
-    sha256 cellar: :any,                 arm64_ventura: "1ae2ef716bc20d5ce4832af749c2ebba984368c7e6892d9edd2fb8187dffedf1"
-    sha256 cellar: :any,                 sonoma:        "a3802f259775bc15fe24d4c8c541628fb21e8d89e193007b0b5360427b29ec10"
-    sha256 cellar: :any,                 ventura:       "a46b9f98dc54828d99f0b0a98dc70aa5bc5c3f4a7cf4fa9ad5c09901413bbf58"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6cedda3543d08c930d2b1039ba9dd71489a036fbdc94953d8a9d0f359307f257"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e561c61896216e27b5a401460744c94715fcec1ff301281f5468d924d35ec0a2"
+    sha256 cellar: :any,                 arm64_sequoia: "b8783982fb886562a1bdb3745f3aacaa15f93429c0127af9743d226438d96561"
+    sha256 cellar: :any,                 arm64_sonoma:  "9c0d9ed9bebd4b378a017b5606c83ae69173bb90dd852b2caff744dbf415bbf5"
+    sha256 cellar: :any,                 arm64_ventura: "0364659b29adca46d9251cdc76b82871febfc8eeb380beee3473f4e6e599dd1e"
+    sha256 cellar: :any,                 sonoma:        "a626fb53a9f3165d4a587ef6a688b655d09efc048913fb357c075d54fc6b4ba7"
+    sha256 cellar: :any,                 ventura:       "aa72f9781e7485dede4f76b0d32a72a6e3a2c096dc901b1c3ad501c0e022f008"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "699a65f714403ff7dc64b3640a1eb3e63c66102d9827a354cc5b0246b6d2361c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f184988fee55abf7d1a088872dec6059f4c0d560cbae8e52e293fca23ac2ee10"
   end
 
   depends_on "rust" => :build
@@ -118,8 +117,8 @@ class Vunnel < Formula
   end
 
   resource "orjson" do
-    url "https://files.pythonhosted.org/packages/81/0b/fea456a3ffe74e70ba30e01ec183a9b26bec4d497f61dcfce1b601059c60/orjson-3.10.18.tar.gz"
-    sha256 "e8da3947d92123eda795b68228cafe2724815621fe35e8e320a9e9593a4bcd53"
+    url "https://files.pythonhosted.org/packages/29/87/03ababa86d984952304ac8ce9fbd3a317afb4a225b9a81f9b606ac60c873/orjson-3.11.0.tar.gz"
+    sha256 "2e4c129da624f291bcc607016a99e7f04a353f6874f3bd8d9b47b88597d5f700"
   end
 
   resource "packageurl-python" do
@@ -188,8 +187,8 @@ class Vunnel < Formula
   end
 
   resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/d1/bc/51647cd02527e87d05cb083ccc402f93e441606ff1f01739a62c8ad09ba5/typing_extensions-4.14.0.tar.gz"
-    sha256 "8676b788e32f02ab42d9e7c61324048ae4c6d844a399eebace3d4979d75ceef4"
+    url "https://files.pythonhosted.org/packages/98/5a/da40306b885cc8c09109dc2e1abd358d5684b1425678151cdaed4731c822/typing_extensions-4.14.1.tar.gz"
+    sha256 "38b39f4aeeab64884ce9f74c94263ef78f3c22467c8724005483154c26648d36"
   end
 
   resource "untokenize" do

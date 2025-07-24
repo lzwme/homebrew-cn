@@ -6,15 +6,16 @@ class Mcpm < Formula
   url "https://files.pythonhosted.org/packages/f4/28/85839faf322b69bd294ea6739f91840ec66d39da4343471d279ca54dc7e6/mcpm-2.6.0.tar.gz"
   sha256 "1e2171a14463881ede41e79c4931fb9716d83ccc10fe6be49a51c38fbbe0cc52"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "346fbb06b328a3ffd55534db74c86fc9d3a9916faf6887bd7f5b340dc80cf7d5"
-    sha256 cellar: :any,                 arm64_sonoma:  "76b2d0777de0a1d4945c1d7c55c660cf9f52cb275772aa309fdfa3bc6eacbfff"
-    sha256 cellar: :any,                 arm64_ventura: "77f38bfa6cab56cc355f2f6c83109f90ed0d8da864b8e015348bc131ae7e49bf"
-    sha256 cellar: :any,                 sonoma:        "5d2220f639161819ab786fe67780de3b809c8cca240858e9c8844ab77465ad9e"
-    sha256 cellar: :any,                 ventura:       "6f6fea058b86394220f3500b503492ec2ccb1655d673a34e3dbe690dd7c5c212"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ac2d8af5cc8c9651217ec619cc7599ff86bb61602a4d22a6beeb65786665a913"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a8acd841d75b4f9088109ddb4d93f5f46ed7710077f9a91d9c193cc76d591edb"
+    sha256 cellar: :any,                 arm64_sequoia: "b3f94865ec85f129d74175f6889afed84cfd3bea9f5f90d47739c0c87fecf6a8"
+    sha256 cellar: :any,                 arm64_sonoma:  "e90363fa047905273f51420c7a26a9de1c7b4999220fde0f2248c5eaa2e5bb97"
+    sha256 cellar: :any,                 arm64_ventura: "249d233fd24fc212f4cc40539b71f93818c85c31e4d743a99be7a5039dc1af09"
+    sha256 cellar: :any,                 sonoma:        "2a0e8c464d7e65f8b6ff39462ad323dea13b4db7e3d18632c5189eda91d8e682"
+    sha256 cellar: :any,                 ventura:       "5076127a99fb1751443d4deab4b12e4322a382f05ecf02ab939caad39e059661"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d06e7481b40052896a978437f43b9e897b0e8fcb86b0b400e7532ac6c1c6ff51"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "02f888e6af8806a8f1382a0609b7523467b4168376138e6c3675bc08378af5ee"
   end
 
   depends_on "rust" => :build
@@ -38,8 +39,8 @@ class Mcpm < Formula
   end
 
   resource "authlib" do
-    url "https://files.pythonhosted.org/packages/a2/9d/b1e08d36899c12c8b894a44a5583ee157789f26fc4b176f8e4b6217b56e1/authlib-1.6.0.tar.gz"
-    sha256 "4367d32031b7af175ad3a323d571dc7257b7099d55978087ceae4a0d88cd3210"
+    url "https://files.pythonhosted.org/packages/8e/a1/d8d1c6f8bc922c0b87ae0d933a8ed57be1bef6970894ed79c2852a153cd3/authlib-1.6.1.tar.gz"
+    sha256 "4dffdbb1460ba6ec8c17981a4c67af7d8af131231b5a36a88a1e8c80c111cdfd"
   end
 
   resource "charset-normalizer" do
@@ -128,8 +129,8 @@ class Mcpm < Formula
   end
 
   resource "jsonschema" do
-    url "https://files.pythonhosted.org/packages/f1/6e/35174c1d3f30560848c82d3c233c01420e047d70925c897a4d6e932b4898/jsonschema-4.24.1.tar.gz"
-    sha256 "fe45a130cc7f67cd0d67640b4e7e3e2e666919462ae355eda238296eafeb4b5d"
+    url "https://files.pythonhosted.org/packages/d5/00/a297a868e9d0784450faa7365c2172a7d6110c763e30ba861867c32ae6a9/jsonschema-4.25.0.tar.gz"
+    sha256 "e63acf5c11762c0e6672ffb61482bdf57f0876684d8d249c0fe2d730d48bc55f"
   end
 
   resource "jsonschema-specifications" do
@@ -298,8 +299,8 @@ class Mcpm < Formula
   end
 
   resource "starlette" do
-    url "https://files.pythonhosted.org/packages/0a/69/662169fdb92fb96ec3eaee218cf540a629d629c86d7993d9651226a6789b/starlette-0.47.1.tar.gz"
-    sha256 "aef012dd2b6be325ffa16698f9dc533614fb1cebd593a906b90dc1025529a79b"
+    url "https://files.pythonhosted.org/packages/04/57/d062573f391d062710d4088fa1369428c38d51460ab6fedff920efef932e/starlette-0.47.2.tar.gz"
+    sha256 "6ae9aa5db235e4846decc1e7b79c4f346adf41e9777aebeb49dfd09bbd7023d8"
   end
 
   resource "thefuzz" do
