@@ -7,19 +7,20 @@ class ZshFastSyntaxHighlighting < Formula
   head "https://github.com/zdharma-continuum/fast-syntax-highlighting.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "92d65197b6bbc546272e39daecc43aec0a884213f6fee5d4b44982e8dc57242e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "92d65197b6bbc546272e39daecc43aec0a884213f6fee5d4b44982e8dc57242e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "92d65197b6bbc546272e39daecc43aec0a884213f6fee5d4b44982e8dc57242e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9ef6826ede6de08521db68f3088cf67f4de7b5026f9df28a4ec53b48aa11a54b"
-    sha256 cellar: :any_skip_relocation, ventura:       "9ef6826ede6de08521db68f3088cf67f4de7b5026f9df28a4ec53b48aa11a54b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "92d65197b6bbc546272e39daecc43aec0a884213f6fee5d4b44982e8dc57242e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "92d65197b6bbc546272e39daecc43aec0a884213f6fee5d4b44982e8dc57242e"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c3a55d48ef2b9a3ea68ebf10382de3a45f12c473de78bed8b1cf2f3e0b071946"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c3a55d48ef2b9a3ea68ebf10382de3a45f12c473de78bed8b1cf2f3e0b071946"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "c3a55d48ef2b9a3ea68ebf10382de3a45f12c473de78bed8b1cf2f3e0b071946"
+    sha256 cellar: :any_skip_relocation, sonoma:        "977af2a311fd759aa590facd7fe406abbf97764f4b7ea302ce290aa3ee89e9c8"
+    sha256 cellar: :any_skip_relocation, ventura:       "977af2a311fd759aa590facd7fe406abbf97764f4b7ea302ce290aa3ee89e9c8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c3a55d48ef2b9a3ea68ebf10382de3a45f12c473de78bed8b1cf2f3e0b071946"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c3a55d48ef2b9a3ea68ebf10382de3a45f12c473de78bed8b1cf2f3e0b071946"
   end
 
   uses_from_macos "zsh" => [:build, :test]
 
   def install
-    pkgshare.install Dir["*"]
+    pkgshare.install Dir["*", ".fast-*"]
   end
 
   def caveats

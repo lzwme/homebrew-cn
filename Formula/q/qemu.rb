@@ -1,10 +1,9 @@
 class Qemu < Formula
   desc "Generic machine emulator and virtualizer"
   homepage "https://www.qemu.org/"
-  url "https://download.qemu.org/qemu-10.0.2.tar.xz"
-  sha256 "ef786f2398cb5184600f69aef4d5d691efd44576a3cff4126d38d4c6fec87759"
+  url "https://download.qemu.org/qemu-10.0.3.tar.xz"
+  sha256 "5c891267b1534a774465db8b1a0dfcb0c5e6d7ecb6f71345625adf4e0889945b"
   license "GPL-2.0-only"
-  revision 2
   head "https://gitlab.com/qemu-project/qemu.git", branch: "master"
 
   livecheck do
@@ -13,13 +12,13 @@ class Qemu < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "adb87194ee5c7d14f3ab91c1013113cae741b6b35b74ca7d228b5e583e987d8a"
-    sha256 arm64_sonoma:  "a865b24e0c1bbeb41e1a7beff18c1dcc7791bc49ae5b4846356434d177942b9b"
-    sha256 arm64_ventura: "67f0523e0d58d3ab0c6708cdd3e96e01b06b2cfe660373e25b0821a52b051e9c"
-    sha256 sonoma:        "4b398c9223f009c00daa3de514d77211913ea3f2d8c003cc1f3aa5b0c15d68bf"
-    sha256 ventura:       "7e489886ed001b184809f7cded05ebc6767466157a51275e49e5b298121c847d"
-    sha256 arm64_linux:   "57cbe6f3b46d2e37220ad221404ff923c4289b6f038c8c673f62a2e5a17f94ab"
-    sha256 x86_64_linux:  "76418ea9f0742b620feb4f5bf46971229903ffc0279a1ef10539f5c53abbc2bc"
+    sha256 arm64_sequoia: "96b93973c0525c02ec320fd8eb68e025df78e163a61a123cccc0e36fb6d930d0"
+    sha256 arm64_sonoma:  "9720c3451756690fc0c6badb11c91f1fdd2b56478f974b3c39ee71b54142769e"
+    sha256 arm64_ventura: "3b9b67ba44f4423fdd5ba8b2e3bd05456311d41f4ab75f0fa0fce8fa6e044076"
+    sha256 sonoma:        "7878e6ef873bf16d8e1562827078f241ca6d9d91cb3dbe0cf6bc2e6749622267"
+    sha256 ventura:       "751aed2fc380765f2f215609cc93c7cfbf36d3fdd7dabc3ce43190bc7036f01d"
+    sha256 arm64_linux:   "c4ecf3a83cd7dd84e9a3c3284cd964781c88f8c02bee9018504303e0a85bb17b"
+    sha256 x86_64_linux:  "23463ce5924fbe47ef4c237bb7279eae5f2d8d36f72e068b56945fdd2e4c6c50"
   end
 
   depends_on "libtool" => :build

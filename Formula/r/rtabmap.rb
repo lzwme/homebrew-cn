@@ -4,6 +4,7 @@ class Rtabmap < Formula
   url "https://ghfast.top/https://github.com/introlab/rtabmap/archive/refs/tags/0.22.1.tar.gz"
   sha256 "3988ad84c409e39048a6b23317076d4ee1a0123e94a5ad6574db93647d7a80c0"
   license "BSD-3-Clause"
+  revision 1
   head "https://github.com/introlab/rtabmap.git", branch: "master"
 
   # Upstream doesn't create releases for all tagged versions, so we use the
@@ -16,11 +17,10 @@ class Rtabmap < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256                               arm64_sonoma:  "7d07e047154cac3c4082dd8a12de2653aa2757390da44b7a49be5eb3301e26de"
-    sha256                               arm64_ventura: "bdb459b342d1af80c0635a12ca97418c921debe4ead8ad52984bd138eba5a40a"
-    sha256                               sonoma:        "61e0cbce3a79be584d75630eba028a7055220b0a43230bc5e0c84b8a69f025dc"
-    sha256                               ventura:       "2d83cd2bec5642f3b7e5b770f2ceb4d2de669e1857eaeef6f10e23991008d67b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ef6fc92de2311a138ad9c404f667d3f9892a2cad5771558bcd0099d7314660d0"
+    sha256 arm64_sonoma:  "94fa474a0202a514bd4dbceb16ca6a60a88985280fdd4c77e8d51b93ef9b69ad"
+    sha256 arm64_ventura: "da521aa54d7c7e6aa49dd429d7f6da66af128d318a6f9caaf18866d4dc6ed3e4"
+    sha256 sonoma:        "f61bbcdbdbda04c53967af9514e2321a76343c2ce73e45633424c9825fae8392"
+    sha256 ventura:       "893193d0069565cba40dbf3c230de078076e689b5c722a51f58552b54acee7aa"
   end
 
   depends_on "cmake" => [:build, :test]

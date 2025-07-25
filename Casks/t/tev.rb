@@ -1,9 +1,9 @@
 cask "tev" do
   arch intel: "-intel"
 
-  version "2.2"
-  sha256 arm:   "2068cb3d5516e325d459bfa1a6816d7a9245f736be7f23eaf01bacdb8d707b6d",
-         intel: "5ad9a44afd6e8d1dd89db347f44e6425aa86fbab036aa0a2bfb51535c7d11228"
+  version "2.3.2"
+  sha256 arm:   "3d506f5b99d9dafc65d7bf784d3bcb0c4eab2440f4ace4089c47a7f22330cf1a",
+         intel: "392ad239912388f04b3521b91d7979148e3d11d9f09f4ae9a372f92e682670ee"
 
   url "https://ghfast.top/https://github.com/Tom94/tev/releases/download/v#{version}/tev#{arch}.dmg"
   name "tev"
@@ -15,7 +15,7 @@ cask "tev" do
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
-  no_autobump! because: :requires_manual_review
+  disable! date: "2026-09-01", because: :unsigned
 
   depends_on macos: ">= :catalina"
 

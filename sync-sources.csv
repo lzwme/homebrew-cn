@@ -1322,6 +1322,7 @@ Homebrew-homebrew-core/Formula/d/daemonlogger.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/daemontools.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dafny.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dagger.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/d/dagu.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/daktilo.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dalfox.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/damask-grid.rb, Homebrew/homebrew-core, 0
@@ -2205,7 +2206,6 @@ Homebrew-homebrew-core/Formula/g/gem-completion.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gemgen.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gemini-cli.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/genact.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/g/genai-toolbox.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/genders.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/generate-json-schema.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/genext2fs.rb, Homebrew/homebrew-core, 1
@@ -4311,6 +4311,7 @@ Homebrew-homebrew-core/Formula/m/mcabber.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mcap.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mcfly.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mcp-inspector.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/m/mcp-toolbox.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mcpm.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mcpp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/md2pdf.rb, Homebrew/homebrew-core, 1
@@ -13824,6 +13825,7 @@ Homebrew-homebrew-cask/Casks/r/raycast.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/raze.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/r/razorsql.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/rclone-browser.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/r/rcloneview.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/react-native-debugger.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/r/react-proto.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/r/react-studio.rb, Homebrew/homebrew-cask, 0

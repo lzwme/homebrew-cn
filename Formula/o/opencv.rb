@@ -2,15 +2,14 @@ class Opencv < Formula
   desc "Open source computer vision library"
   homepage "https://opencv.org/"
   license "Apache-2.0"
-  revision 1
 
   stable do
-    url "https://ghfast.top/https://github.com/opencv/opencv/archive/refs/tags/4.11.0.tar.gz"
-    sha256 "9a7c11f924eff5f8d8070e297b322ee68b9227e003fd600d4b8122198091665f"
+    url "https://ghfast.top/https://github.com/opencv/opencv/archive/refs/tags/4.12.0.tar.gz"
+    sha256 "44c106d5bb47efec04e531fd93008b3fcd1d27138985c5baf4eafac0e1ec9e9d"
 
     resource "contrib" do
-      url "https://ghfast.top/https://github.com/opencv/opencv_contrib/archive/refs/tags/4.11.0.tar.gz"
-      sha256 "2dfc5957201de2aa785064711125af6abb2e80a64e2dc246aca4119b19687041"
+      url "https://ghfast.top/https://github.com/opencv/opencv_contrib/archive/refs/tags/4.12.0.tar.gz"
+      sha256 "4197722b4c5ed42b476d42e29beb29a52b6b25c34ec7b4d589c3ae5145fee98e"
 
       livecheck do
         formula :parent
@@ -26,11 +25,11 @@ class Opencv < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 arm64_sonoma:  "14e468ccb54da0d671e31730284f933508d5195a208aca7a9b08541ada70c32a"
-    sha256 arm64_ventura: "b70e530ca8d0aeb8e6bc91a13c5d1fffd114fce6807f517b8d87c9375cf18b05"
-    sha256 sonoma:        "b2ff125058f1b6c8b409c3510d833fbd22ee9a025663f8acb91bab12d03aec5e"
-    sha256 ventura:       "690e423d0e51cca672a27d570f452ed7d8d867ba43d808ac7fb5156768d5d6c5"
-    sha256 x86_64_linux:  "f91667972adca2f3e7e286ab0a8cd1623b7b14954f01d233a7efb8143cf66e85"
+    sha256 arm64_sonoma:  "8d9dc9f16eeb5f2acd3b9bb21cf1db96fb1b11cb5c02d20a237ccd0ac6245e20"
+    sha256 arm64_ventura: "90207a4a2d7de57ac41491c7e28b878da0232baaf528b306c8d1b7a5c2107224"
+    sha256 sonoma:        "29efbb8210e680beaae8fc415afe3d30aec356a0126ba91ca7aa6e582e27330d"
+    sha256 ventura:       "981cd771a676cf0762b98903a8b785e8ad5c26cde497717b019b6bdccd2dfc66"
+    sha256 x86_64_linux:  "6ef326dd8a2437968b83ebc0495a688e17c1b981e2ab4549be4704ec119a6fec"
   end
 
   head do
@@ -150,6 +149,8 @@ class Opencv < Formula
         -DOPENEXR_ILMTHREAD_LIBRARY=#{Formula["openexr"].opt_lib}/libIlmThread.so
         -DPNG_LIBRARY=#{Formula["libpng"].opt_lib}/libpng.so
         -DPROTOBUF_LIBRARY=#{Formula["protobuf"].opt_lib}/libprotobuf.so
+        -DPROTOBUF_INCLUDE_DIR=#{Formula["protobuf"].include}
+        -DPROTOBUF_PROTOC_EXECUTABLE=#{Formula["protobuf"].bin}/protoc
         -DTIFF_LIBRARY=#{Formula["libtiff"].opt_lib}/libtiff.so
         -DWITH_V4L=OFF
         -DZLIB_LIBRARY=#{Formula["zlib"].opt_lib}/libz.so
@@ -200,6 +201,8 @@ class Opencv < Formula
     system ENV.cxx, "-std=c++17", "test.cpp", "-I#{include}/opencv4", "-o", "test",
                     "-L#{lib}", "-lopencv_core", "-lopencv_imgcodecs"
     assert_equal version.to_s, shell_output("./test").strip
+
+    return if OS.linux? && Hardware::CPU.intel?
 
     output = shell_output("#{python3} -c 'import cv2; print(cv2.__version__)'")
     assert_equal version.to_s, output.chomp

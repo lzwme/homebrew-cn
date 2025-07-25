@@ -1,8 +1,8 @@
 class Lnav < Formula
   desc "Curses-based tool for viewing and analyzing log files"
   homepage "https://lnav.org/"
-  url "https://ghfast.top/https://github.com/tstack/lnav/releases/download/v0.12.4/lnav-0.12.4.tar.gz"
-  sha256 "e1e70c9e5a2fce21da80eec9b9c3adb09fd05e03986285098a9f2567c1eb4792"
+  url "https://ghfast.top/https://github.com/tstack/lnav/releases/download/v0.13.0/lnav-0.13.0.tar.gz"
+  sha256 "1d24b9bdb59e3de995de95f6f029ace664e56a80fb0db945077687e86de586b7"
   license "BSD-2-Clause"
 
   livecheck do
@@ -11,13 +11,13 @@ class Lnav < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "e4c9cb81635f0fc220f9bca74d6ad1d3942744bc1f2251bb7e6475441a5a242e"
-    sha256 cellar: :any,                 arm64_sonoma:  "c5d123bf1eaf7d5600fdea80e7bd01951e0bb6d18138c49345ccdf53f67c2c59"
-    sha256 cellar: :any,                 arm64_ventura: "886782b7082477516598d6b9c7bec174f1edbcd3cd475a32a5cd16e2106a6414"
-    sha256 cellar: :any,                 sonoma:        "d37b40a1558c099d62eb51a11a85d03662b2112019204ed584463dd6026d82ce"
-    sha256 cellar: :any,                 ventura:       "7ba09f2325ae17889ec1f4e5798bb34d2db92b31d2d99874e52543b1240192c7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "dece4fd9feb77c9de00fa499d7d943f234fb3ac46c0adc4beabcd64458f6087e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7f808305b7e2f68c68823cc5623f399ef17e9daceaf258aa3fc36a175495db30"
+    sha256 cellar: :any,                 arm64_sequoia: "cd7737a5d5f77bd47feb21f3ac514f1226bd38a523ee65d6a5d1256122ec404d"
+    sha256 cellar: :any,                 arm64_sonoma:  "ac7a041e92ed298bcf7a6db5f70a5c47abfaed5144b4f69f8db19317ab0011e6"
+    sha256 cellar: :any,                 arm64_ventura: "9ab09959db392eb12fa43e06f3d3d3a12703af96063cf4bf78ad5db509a6e733"
+    sha256 cellar: :any,                 sonoma:        "a6721887e91df9ddbe85af51acd7a08a2bcd763ef1898212ac2ec12c7bccb9da"
+    sha256 cellar: :any,                 ventura:       "8de06184bb0dfb301ef17bfee50609c395cdc93838c3ef256bb565b8c8e76a82"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b5415f4369a12cff44b245887aa88b7e0908fbd3e4eb496f62b0c693985d1b1c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b6043caf68659d065c227e3bd4ae076528df283c9bc8d821cb6896c3f4688bf3"
   end
 
   head do

@@ -1,18 +1,18 @@
 class Carapace < Formula
   desc "Multi-shell multi-command argument completer"
   homepage "https://carapace.sh"
-  url "https://ghfast.top/https://github.com/carapace-sh/carapace-bin/archive/refs/tags/v1.4.0.tar.gz"
-  sha256 "b0e0c7d3040d04a71e6c602f4097ffeaf5de2c0e40b5fb8f3b32a1697a94bad2"
+  url "https://ghfast.top/https://github.com/carapace-sh/carapace-bin/archive/refs/tags/v1.4.1.tar.gz"
+  sha256 "7460eef0ea7d19e5d0082e425fbef08f506d926d995701c7a8c3c6e90c9e61c5"
   license "MIT"
   head "https://github.com/carapace-sh/carapace-bin.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7efc5157cb33fd2d98ecd421d18bdb334e8f0ba7e5cea948388dd85a66a02c79"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7e046801e29a82138a368f24351e712545ee8e9493053e30c2154962e81c52c8"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "b79e7ec3c7303ecbf267a7d48a11bddd4eb39020beb4d3f0f2d75daebd822093"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5c1557daa399241c45e960ed58c3e2e5c19efab8bdc9d8711f83effe47ea0b0a"
-    sha256 cellar: :any_skip_relocation, ventura:       "495c020d42c0d2d9947b2f1d7dbd8141b6e49d043acd93f237b82dd59b60ec03"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "05b4210e220e24a394c185b9fca331f72c9369b631044728e38c940c5c33a485"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bd0b1905afce3324801a0cc8861a6097ac068b5cfe06c8f28a9fe97dc30fbf1e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d29466853838fa6b09fb6eac678aa463317787c8a29621d07bfe91a72dcbafaf"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "b82a756d84ab02124a78edcac33d9cb409dc423eb204e1e3b5aab306007c8ed8"
+    sha256 cellar: :any_skip_relocation, sonoma:        "1102e5429e8062300db6b369f1a1e043347fe954874c78acc5490193b8f61c3b"
+    sha256 cellar: :any_skip_relocation, ventura:       "3324d1e2b86f2e23434ae154f718a58b3481ccd71ec5e9ca21e1defbd5ca28cd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "111c3aeb5a3c91fc3cc4f6dec11089152474986645fbf68b9c9f084ce8cdf298"
   end
 
   depends_on "go" => :build
