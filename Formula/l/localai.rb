@@ -3,18 +3,18 @@ class Localai < Formula
 
   desc "OpenAI alternative"
   homepage "https://localai.io"
-  url "https://ghfast.top/https://github.com/mudler/LocalAI/archive/refs/tags/v3.1.1.tar.gz"
-  sha256 "00e88b6fbbac638c9b1b3d1f46a70ac774d17e0e04e17880cbc463e98d403600"
+  url "https://ghfast.top/https://github.com/mudler/LocalAI/archive/refs/tags/v3.2.2.tar.gz"
+  sha256 "9bdf68d1da47fd3b40d30e433b2be92343b20f8dd8f239631a0b0afc67dee45c"
   license "MIT"
   head "https://github.com/mudler/LocalAI.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "34a1186447df29fd6c7bae12eabada46360a290dbeaf250b5dae5ef44739beca"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "833a15e49838eb3ba6bf1927344521dd7be4c409b1daa396c4eafec2b3a97509"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "92088650dea1da2f14f804496cd86ec96a744dd74560e0841d7c5862dff2264d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5b21f6ff2402fb86ebaa752c17b1da12ca2158ae1e94af5a0d522395a4f292f1"
-    sha256 cellar: :any_skip_relocation, ventura:       "7c25e53dccf97b99baffae0abc582f657f74dafc683e793327b9b1cfd70cd53d"
-    sha256                               x86_64_linux:  "7f7f8232be6e6863f2482277f9e415405fae5717648d6ddbc2728d07cfa7ed11"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "aceb97fce888c38c29bc3a5c4b0856ce0995901156c07e6bfb530c6de7062fd7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "116dd0badd8dd8a0bd6a52db203aeb326b473af6fa58aedfe4be3b535b0446dc"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "cb389339a9ce14a345b07244b3a81d21e900ed6b3013bd8dd10c091cb8409955"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b092dd23cdafde3b2caa6f093b490f44fafbc2a9090a29318ac17253e6f461bf"
+    sha256 cellar: :any_skip_relocation, ventura:       "63f12d1e03fcb11d36997fd98ebb6da29b312b9c2fd3bda97c28687dabf0c0ad"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e438e805b4fc6b9606455171f8915a4e14f84cea959de812c2302b4e9b93f3cd"
   end
 
   depends_on "abseil" => :build
@@ -28,8 +28,8 @@ class Localai < Formula
   depends_on "python@3.13" => :build
 
   resource "grpcio-tools" do
-    url "https://files.pythonhosted.org/packages/0b/62/5f7d3a6d394a7d0cf94abaa93e8224b7cdbc0677bdf2caabd20a62d4f5cb/grpcio_tools-1.73.0.tar.gz"
-    sha256 "69e2da77e7d52c7ea3e60047ba7d704d242b55c6c0ffb1a6147ace1b37ce881b"
+    url "https://files.pythonhosted.org/packages/90/c8/bca79cb8c14bb63027831039919c801db9f593c7504c09433934f5dff6a4/grpcio_tools-1.74.0.tar.gz"
+    sha256 "88ab9eb18b6ac1b4872add6b394073bd8d44eee7c32e4dc60a022e25ffaffb95"
   end
 
   def python3

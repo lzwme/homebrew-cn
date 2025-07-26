@@ -38,8 +38,7 @@ class Duckdb < Formula
   end
 
   test do
-    path = testpath/"weather.sql"
-    path.write <<~SQL
+    sql_commands = <<~SQL
       CREATE TABLE weather (temp INTEGER);
       INSERT INTO weather (temp) VALUES (40), (45), (50);
       SELECT AVG(temp) FROM weather;
@@ -54,6 +53,6 @@ class Duckdb < Formula
       └─────────────┘
     EOS
 
-    assert_equal expected_output, shell_output("#{bin}/duckdb_cli < #{path}")
+    assert_equal expected_output, pipe_output(bin/"duckdb_cli", sql_commands)
   end
 end

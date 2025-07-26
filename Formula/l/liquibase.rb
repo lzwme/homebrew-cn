@@ -4,6 +4,7 @@ class Liquibase < Formula
   url "https://ghfast.top/https://github.com/liquibase/liquibase/releases/download/v4.33.0/liquibase-4.33.0.tar.gz"
   sha256 "689acfcdc97bad0d4c150d1efab9c851e251b398cb3d6326f75e8aafe40ed578"
   license "Apache-2.0"
+  revision 1
 
   livecheck do
     url :stable
@@ -13,13 +14,13 @@ class Liquibase < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3e3cdb5d8dd61a55e73793b4ac48e75c198d9ec82fd07290e7215855aa2f89f2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3e3cdb5d8dd61a55e73793b4ac48e75c198d9ec82fd07290e7215855aa2f89f2"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "3e3cdb5d8dd61a55e73793b4ac48e75c198d9ec82fd07290e7215855aa2f89f2"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7694432ffb6cd54bb60b52ba39b5bcaec8c1a82e966576ec73691509a770878f"
-    sha256 cellar: :any_skip_relocation, ventura:       "7694432ffb6cd54bb60b52ba39b5bcaec8c1a82e966576ec73691509a770878f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3e3cdb5d8dd61a55e73793b4ac48e75c198d9ec82fd07290e7215855aa2f89f2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3e3cdb5d8dd61a55e73793b4ac48e75c198d9ec82fd07290e7215855aa2f89f2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "222519225b5374762241360ed0c6720d11f31a6b996c2df9268fe321bf7917aa"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "222519225b5374762241360ed0c6720d11f31a6b996c2df9268fe321bf7917aa"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "222519225b5374762241360ed0c6720d11f31a6b996c2df9268fe321bf7917aa"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7181fa982b8c07cdc61e486770ea6f0f12b642eb4a85c9f01bf9e4a8bf764e0e"
+    sha256 cellar: :any_skip_relocation, ventura:       "7181fa982b8c07cdc61e486770ea6f0f12b642eb4a85c9f01bf9e4a8bf764e0e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "222519225b5374762241360ed0c6720d11f31a6b996c2df9268fe321bf7917aa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "222519225b5374762241360ed0c6720d11f31a6b996c2df9268fe321bf7917aa"
   end
 
   depends_on "openjdk"
@@ -29,8 +30,9 @@ class Liquibase < Formula
 
     chmod 0755, "liquibase"
     libexec.install Dir["*"]
+    bash_completion.install libexec/"lib/liquibase_autocomplete.sh" => "liquibase"
+    zsh_completion.install libexec/"lib/liquibase_autocomplete.zsh" => "_liquibase"
     (bin/"liquibase").write_env_script libexec/"liquibase", Language::Java.overridable_java_home_env
-    (libexec/"lib").install_symlink Dir["#{libexec}/sdk/lib-sdk/slf4j*"]
   end
 
   def caveats

@@ -42,5 +42,23 @@ class Nano < Formula
 
   test do
     system bin/"nano", "--version"
+
+    # Skip test on Intel macOS due to CI failures
+    return if OS.mac? && Hardware::CPU.intel?
+
+    PTY.spawn(bin/"nano", "test.txt") do |r, w, _pid|
+      sleep 1
+      w.write "test data"
+      sleep 1
+      w.write "\u0018" # Ctrl+X
+      sleep 1
+      w.write "y"      # Confirm save
+      sleep 1
+      w.write "\r"     # Enter to confirm filename
+      sleep 1
+      OS.mac? && r.read
+    end
+
+    assert_match "test data", (testpath/"test.txt").read
   end
 end

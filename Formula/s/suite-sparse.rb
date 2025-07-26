@@ -1,8 +1,8 @@
 class SuiteSparse < Formula
   desc "Suite of Sparse Matrix Software"
   homepage "https://people.engr.tamu.edu/davis/suitesparse.html"
-  url "https://ghfast.top/https://github.com/DrTimothyAldenDavis/SuiteSparse/archive/refs/tags/v7.10.3.tar.gz"
-  sha256 "09e7bcc8e5de0a5b55d2ae9fd6378d5f4dc1b85a933593339a0872b24e2cc102"
+  url "https://ghfast.top/https://github.com/DrTimothyAldenDavis/SuiteSparse/archive/refs/tags/v7.11.0.tar.gz"
+  sha256 "93ed4c4e546a49fc75884c3a8b807d5af4a91e39d191fbbc60a07380b12a35d1"
   license all_of: [
     "BSD-3-Clause",
     "LGPL-2.1-or-later",
@@ -18,13 +18,13 @@ class SuiteSparse < Formula
   end
 
   bottle do
-    sha256                               arm64_sequoia: "17e3905105eccbe9cc090941b651eda66ee6a72f6eba341b730e69cf96337de1"
-    sha256                               arm64_sonoma:  "66689c5de3bf52ab8a7c01bc1018e775748325c29c889d71f3582a8194dfcc63"
-    sha256                               arm64_ventura: "b754dbf20365a1baf955844246308101f312ae5e8ad08cd90b4a146b0a17dc71"
-    sha256                               sonoma:        "4facf2d177821397d2b04f54cec3d4a0d14ce20963ae3b23cc82c342d511685e"
-    sha256                               ventura:       "c335cdbd49c6fceeb0d2438c7ff1637d94d06b63647d9222b35598257cf92d8e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0a8dc094c74c995bf7cc887b6cc270c123be9fd501b6657779c8a975b9a138df"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b484a7475a7c907b153f18a88c187aba0a946f4088ba635c18d207b93fc75fcc"
+    sha256                               arm64_sequoia: "ceeed1f94c9f421e9d6899fe7967f8789ff00018a0cd7393eda790369a270997"
+    sha256                               arm64_sonoma:  "0bee9c1624927fa5a9ae3fd4ef09d6b9f5295dde255cbe6084bf4455e1c34f20"
+    sha256                               arm64_ventura: "d8dc9f85929925f774adcb7923c9be250465f3cf56b59f7e1f93951b2353d184"
+    sha256                               sonoma:        "d17e1f63a48010491d52b47bc65dcbd4cb2f9ca701835984cba60a9d02d09327"
+    sha256                               ventura:       "2d756bf83971989982e0345d60c1188a1542bb0bfeff88f5d1793e73c8775a06"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b2fe030d75cb79c6c6428595df9ed602ec3cbc3b9956af10c58a8e92f19f8421"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b0301f655844671472214972870de180f3c96384c6e91d81517a1dd5faa9c71a"
   end
 
   depends_on "cmake" => :build

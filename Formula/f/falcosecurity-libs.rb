@@ -8,7 +8,7 @@ class FalcosecurityLibs < Formula
     { any_of: ["GPL-2.0-only", "MIT"] }, # driver/
     { "GPL-2.0-only" => { with: "Linux-syscall-note" } }, # userspace/libscap/compat/
   ]
-  revision 2
+  revision 3
 
   livecheck do
     url :stable
@@ -18,13 +18,13 @@ class FalcosecurityLibs < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "ff94b2cee70b35879dab784ebb1179ab248bef8ef5fb7674477b7128ed00b45f"
-    sha256 cellar: :any,                 arm64_sonoma:  "9baae6cc7af9628313212674c493a0fab1546b25b1753197a9fdbc5ebddc5f66"
-    sha256 cellar: :any,                 arm64_ventura: "97aa43ccf45d8bd5a2463e22a72c730c8184b9557c3a732225dc893d107ed049"
-    sha256 cellar: :any,                 sonoma:        "ad8bfb81ad0f4d5223503ca64c3d757c0a6c3e951be364aa6f75ec7adfd6d1aa"
-    sha256 cellar: :any,                 ventura:       "6db2e3f76a4365755c0a5163001f8a3b37227657406ffd08f79abad4bb559dbf"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f19eaf6ca8332aa84e97e643f0fbe5b5e5a884ca1e7f0f0ad91e298bf1ecd750"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a5c859719929f9ee36f07726443c33abff273e24319de275ae881d389fe1ac9d"
+    sha256 cellar: :any,                 arm64_sequoia: "62204e3dc13c4310e07a5ac48190cae46e5bf191d9dc69b8e275679167857282"
+    sha256 cellar: :any,                 arm64_sonoma:  "bec2e485ea2a812a97aa33f0e66d635a5edeade6e6f713c7f74a9ea18ff81d38"
+    sha256 cellar: :any,                 arm64_ventura: "8784ac924c8bb6a0daf85dceafaa474dab9fd4f2dec2fe7b329396d66fac4312"
+    sha256 cellar: :any,                 sonoma:        "a0ee4ecec8a59ebf1345c957d2712566174dd70bc9417576cc699eeb4be9a352"
+    sha256 cellar: :any,                 ventura:       "5d0373317aff88fd9fd4533c2f92b50aefdebaa218e280e013999b510d0379a0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cc6030775004615802e6c599cce723a8a118ae141593f5f5a2814e8b1dbb43a5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "40d7cbe8af60092ad25752e980154df760fbe6fe6a9397c75b3069eaf7bf7720"
   end
 
   depends_on "cmake" => :build

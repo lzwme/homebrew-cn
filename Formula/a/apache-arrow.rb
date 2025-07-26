@@ -5,19 +5,19 @@ class ApacheArrow < Formula
   mirror "https://archive.apache.org/dist/arrow/arrow-20.0.0/apache-arrow-20.0.0.tar.gz"
   sha256 "89efbbf852f5a1f79e9c99ab4c217e2eb7f991837c005cba2d4a2fbd35fad212"
   license "Apache-2.0"
-  revision 1
+  revision 2
   head "https://github.com/apache/arrow.git", branch: "main"
 
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "e041de198df2a0a5f54763f9809c6406426bc8a29e0d1eb97ed6a3f3f680b94f"
-    sha256 cellar: :any,                 arm64_sonoma:  "67dfbdc5934ff19160f4e44d68ff6e39f851ee2c2c77c54ef356f3b4c101ba23"
-    sha256 cellar: :any,                 arm64_ventura: "0196e66c62b7c42a0077ad70154675f964aa025f380896503a554768e5df944b"
-    sha256 cellar: :any,                 sonoma:        "3a5c5651668d33d677af75b603f4604f8d091b2843bb823b6320054d026c2ebb"
-    sha256 cellar: :any,                 ventura:       "9d4c9127c4a7c1918811a2aba5bf35211666301623a4374c5634446cd1c3f708"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "24bf7bb776ebf5be24022658033c0fad5ba8e4d233ec11a28d28e5886e426303"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3b932f344ac11078921d9728fa95734b2cef6381c6fe14bc95e3462594acf66f"
+    sha256 cellar: :any,                 arm64_sequoia: "0b5e6bec418b8d476409844acdead4773e6b4ca38be74346cc0d8a4c1f5d3c0a"
+    sha256 cellar: :any,                 arm64_sonoma:  "e196dbb52845147898bd7ddd873258e414097dc838526e590e0556f6de553502"
+    sha256 cellar: :any,                 arm64_ventura: "17b97a1ac6a3dc3509624294fa78135ba1808f68a32ac2d4c447237d335d5bd6"
+    sha256 cellar: :any,                 sonoma:        "947d25d7c7b2d056edc4334c301ad0f0859a020e7292afa3053f6bf159dcea3b"
+    sha256 cellar: :any,                 ventura:       "9625295df585e4c99643a645e2a9e50be0b9717e2076f75537bd710322867f14"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "027d737202ff80afe6ed0952fc5822732c47bb01f46de4a01deea999ad068e54"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d548a9aa85cf48096938825ce583fdb44d303d5eede2ea3bd14d891ac350dfe4"
   end
 
   depends_on "boost" => :build

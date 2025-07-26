@@ -3671,6 +3671,7 @@ Homebrew-homebrew-core/Formula/lib/libassuan.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libassuan@2.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libatomic_ops.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libavif.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/lib/libayatana-indicator.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libb2.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libb64.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libbdplus.rb, Homebrew/homebrew-core, 0
@@ -7749,7 +7750,6 @@ Homebrew-homebrew-core/Formula/z/zzuf.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/zzz.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-cask/Casks/0/0-ad.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/0/010-editor.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/1/115.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/1/115browser.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/1/1clipboard.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/1/1kc-razer.rb, Homebrew/homebrew-cask, 1
@@ -7964,6 +7964,7 @@ Homebrew-homebrew-cask/Casks/a/apidog.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/apifox.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/apipost.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/apk-icon-editor.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/a/app-buddy.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/app-cleaner.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/app-fair.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/app-tamer.rb, Homebrew/homebrew-cask, 0

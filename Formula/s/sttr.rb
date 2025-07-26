@@ -1,18 +1,18 @@
 class Sttr < Formula
   desc "CLI to perform various operations on string"
   homepage "https://github.com/abhimanyu003/sttr"
-  url "https://ghfast.top/https://github.com/abhimanyu003/sttr/archive/refs/tags/v0.2.25.tar.gz"
-  sha256 "0369a28a944f3f2f3c5bde527572acafbeeeee1a5cf158c1dc8dd5e9f068e059"
+  url "https://ghfast.top/https://github.com/abhimanyu003/sttr/archive/refs/tags/v0.2.26.tar.gz"
+  sha256 "d59a4f25c2ad4478699585aff16d3b99b9b1fddfb894bdf072705d6342aee59a"
   license "MIT"
   head "https://github.com/abhimanyu003/sttr.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f2564fe8ff7366d62ae106fa1f722bcb723af6c3e71fad0c3a85ba4c0af05eb3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f2564fe8ff7366d62ae106fa1f722bcb723af6c3e71fad0c3a85ba4c0af05eb3"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "f2564fe8ff7366d62ae106fa1f722bcb723af6c3e71fad0c3a85ba4c0af05eb3"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2104985e0cde1ff6d0ff529729ead445c8770157f88741a362b86c5fba59a3fa"
-    sha256 cellar: :any_skip_relocation, ventura:       "2104985e0cde1ff6d0ff529729ead445c8770157f88741a362b86c5fba59a3fa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9c2b1afb58f0441c4537b18771b73a534ca7a3ce1c3bccc5e647987faa6ff25e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5c5f46278b4ba6a72af5f05ca3edbee04324ba531928a0091b96f1e1db6008b1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5c5f46278b4ba6a72af5f05ca3edbee04324ba531928a0091b96f1e1db6008b1"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "5c5f46278b4ba6a72af5f05ca3edbee04324ba531928a0091b96f1e1db6008b1"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c72eaa56ef8829347dcf133ae8b0fde5454343459654464e690249b2ba3bc610"
+    sha256 cellar: :any_skip_relocation, ventura:       "c72eaa56ef8829347dcf133ae8b0fde5454343459654464e690249b2ba3bc610"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4af644def0c89973296cf525a709ab820bc3dc0cf8fb28fff8a9ffbe5b3b70d9"
   end
 
   depends_on "go" => :build

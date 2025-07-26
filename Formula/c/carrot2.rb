@@ -2,18 +2,18 @@ class Carrot2 < Formula
   desc "Search results clustering engine"
   homepage "https://search.carrot2.org/"
   url "https://github.com/carrot2/carrot2.git",
-      tag:      "release/4.8.0",
-      revision: "d876b90b19d8ee497940a47a5b05ef2569ff57e4"
+      tag:      "release/4.8.1",
+      revision: "102ecc3d83e95cb2fefe061116f0b01882a6d2ec"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b969f8c79df9e7ec4790ac4bbfe044bb6b65fa4d533cd0eb8c7994a7b2a8bdb3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "111f08a66b9cc5ca10c04d10a4f5bfbe36e0fe3fe090d25635789e5ab4a7d421"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "2a9b13f380a11ef25826c2f6a74a9cfb079da522bb2c72be2e79ce664595f497"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d3ad6a25a5450e99d6aaefa2b0432003218bf9bfdfe5a85449c8736c5c472499"
-    sha256 cellar: :any_skip_relocation, ventura:       "336a0144f339442012e7f65ab0f2c4961a368a7474254978722776286b718a22"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "82f6714f0c80ba3e96f410f6e3b85a28abc75b659f2dd0b2767485cfe988e217"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "febc755075231260d43cb0118844ae73ee2daca4f9cc6c7527e0da3df9612e97"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "14bb225f30be22eb91287e80e02350c1993587ff2c61c4fac3a5f7e38332729e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4667e867fdc53456269c94885a150b8e2cf0f5b9f87d79d235e031a9f11a51c0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "6e738ae94bcd072d42f41c4ab3be0a702a43ab7135ccb0cec766c385f6376c86"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0ef9dac90b90a3607ca5e98e9668dcaec5755658c3c24523862c14f3c52fce52"
+    sha256 cellar: :any_skip_relocation, ventura:       "3378de48381ca0794ebef99173884faa190fd15871c6d9431c5b5f6364d51988"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4b9bf87ecc619295a91aa4e6a74e33d9f2ecc6f7078fdbe399ad832c3c911b03"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2a640419faa82a316a67876291de8cab8999c1683bdce397fa77b681db12f87e"
   end
 
   depends_on "gradle" => :build

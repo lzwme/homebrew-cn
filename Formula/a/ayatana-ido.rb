@@ -11,6 +11,7 @@ class AyatanaIdo < Formula
     sha256 cellar: :any,                 arm64_ventura: "c415adf102890257e312cbf46e14e274819d513479c51bedef3ec4beb25c517b"
     sha256 cellar: :any,                 sonoma:        "a4633dc9cd30e3ccfb1079a42c91df5fefa6c4cf4e2f70e18a0c1538f9cd7356"
     sha256 cellar: :any,                 ventura:       "8d7ec3123010aa1ff40ff6a84b8369808f5581cd437b6197984157c3b119edfa"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8908314215b919c26a433bc0c539510a495a209ddd0361aa14cfe0f4f631558c"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "0462edd4eaed23ad5557e1e733f4fbb17256f850da3c8a6c1f6cff6a9c95f750"
   end
 
