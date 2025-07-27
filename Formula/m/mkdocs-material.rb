@@ -2,18 +2,18 @@ class MkdocsMaterial < Formula
   include Language::Python::Virtualenv
   desc "Material Design theme for MkDocs"
   homepage "https://squidfunk.github.io/mkdocs-material/"
-  url "https://files.pythonhosted.org/packages/95/c1/f804ba2db2ddc2183e900befe7dad64339a34fa935034e1ab405289d0a97/mkdocs_material-9.6.15.tar.gz"
-  sha256 "64adf8fa8dba1a17905b6aee1894a5aafd966d4aeb44a11088519b0f5ca4f1b5"
+  url "https://files.pythonhosted.org/packages/dd/84/aec27a468c5e8c27689c71b516fb5a0d10b8fca45b9ad2dd9d6e43bc4296/mkdocs_material-9.6.16.tar.gz"
+  sha256 "d07011df4a5c02ee0877496d9f1bfc986cfb93d964799b032dd99fe34c0e9d19"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "e6f400f161a930eb675eac5026f71823cc9f55f5ab008771e6769739bac15481"
-    sha256 cellar: :any,                 arm64_sonoma:  "065126c47bb3c1837c8f38e9d5dbc9ea3a813a9dd25993eeff0e8adda297728f"
-    sha256 cellar: :any,                 arm64_ventura: "0b5a17e5ac781f3d70eeb8920fd24fb3af80668c64a23da131699a9c5313b93f"
-    sha256 cellar: :any,                 sonoma:        "59497937a7bc227b5af5bd8966771ddea82390cf7683ac183482675548b242ab"
-    sha256 cellar: :any,                 ventura:       "201a5d055ba9d66173a780a98186091c7c538814b9f46564a23bda1735788395"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fd2613c1e478f092c0db01f7ca1df5d50ed4a57424289e6c78895799ce0b762c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5ba70df0028ca715682c1e76242013d3121bb615b952c8877de219470260101b"
+    sha256 cellar: :any,                 arm64_sequoia: "351d6a2802c363c0c11a6252ca20ec4703df77c2c1cdf31016534c265cf04356"
+    sha256 cellar: :any,                 arm64_sonoma:  "899f2b70628130e53aee5b702ba0491b71792e0d3fbe33099e391aabe6d4669b"
+    sha256 cellar: :any,                 arm64_ventura: "ab88e67ecd3d7487f793e0fec9d2984b34b35dc9123108cc78d1b895dc46d5b6"
+    sha256 cellar: :any,                 sonoma:        "1995896e832baa36ca47cb19d5415358862117fdff79baa7a5e86ca5bb7e2fc8"
+    sha256 cellar: :any,                 ventura:       "fa50342b8106b5979372bc5c85d3edf40d51c958ac4b7365366c45a8e100353f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fa0775f4d2f0e56172a3ef26360b45b58d61b82b9d4513bb475f57ef48798605"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b5f36f5f320e50cf9d7e774b8fcd6767af931cf75d3ec73d1d06ce84d17d4254"
   end
 
   depends_on "libyaml"
@@ -32,8 +32,8 @@ class MkdocsMaterial < Formula
   end
 
   resource "certifi" do
-    url "https://files.pythonhosted.org/packages/73/f7/f14b46d4bcd21092d7d3ccef689615220d8a08fb25e564b65d20738e672e/certifi-2025.6.15.tar.gz"
-    sha256 "d747aa5a8b9bbbb1bb8c22bb13e22bd1f18e9796defa16bab421f7f7a317323b"
+    url "https://files.pythonhosted.org/packages/b3/76/52c535bcebe74590f296d6c77c86dabf761c41980e1347a2422e4aa2ae41/certifi-2025.7.14.tar.gz"
+    sha256 "8ea99dbdfaaf2ba2f9bac77b9249ef62ec5218e7c2b2e903378ed5fccf765995"
   end
 
   resource "charset-normalizer" do

@@ -8,6 +8,11 @@ class BcGh < Formula
   license "BSD-2-Clause"
   head "https://github.com/gavinhoward/bc.git", branch: "master"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "9c25b6baed11d3e111039ea04100d211d37874750f42e2137d78e7774646e06b"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "68e9138e7ca909ceffb94ef103feec58eb0c6fe84f315dc290ee3ad41597f163"

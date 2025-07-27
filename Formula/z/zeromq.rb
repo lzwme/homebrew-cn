@@ -4,7 +4,7 @@ class Zeromq < Formula
   url "https://ghfast.top/https://github.com/zeromq/libzmq/releases/download/v4.3.5/zeromq-4.3.5.tar.gz"
   sha256 "6653ef5910f17954861fe72332e68b03ca6e4d9c7160eb3a8de5a5a913bfab43"
   license "MPL-2.0"
-  revision 1
+  revision 2
 
   livecheck do
     url :stable
@@ -12,14 +12,13 @@ class Zeromq < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "4314df24dbc51fc3a550abae4669d5daee4d0d5f7345efb1a293dcb00b0dc658"
-    sha256 cellar: :any,                 arm64_sonoma:  "ad58b22edf3778517afe34abfe00228431091f78250584041ff8dea6cc272958"
-    sha256 cellar: :any,                 arm64_ventura: "871565b7664a22baccbd3f305c36080f89a40fcb1475db9154387f356f2485dd"
-    sha256 cellar: :any,                 sonoma:        "47a577cadb085e473b583c7d2eb13c10830c91ac96f03604867e7e841b89aeb5"
-    sha256 cellar: :any,                 ventura:       "984be44555789dde7ec0bdb1e6d2ba85d89325bf9905f34d2f194d167e06114c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e2d636949e159c733480d4fdb333eabb95ba00bbf9d1477a4145eaae8ed379a6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c660f6bb7620804f6143a739971b08a35a85bf60958151bac76bfdf8817b8ae7"
+    sha256 cellar: :any,                 arm64_sequoia: "03990812828803732fe5253d9940e1a769012068f9af165804d2dd30255aa3c4"
+    sha256 cellar: :any,                 arm64_sonoma:  "b8cce7aefa5cfeb55f94c81b7f707f1f7f7f7c24da3d91a4dab65fbf6a58cfcf"
+    sha256 cellar: :any,                 arm64_ventura: "c02ef7aff4dbf4bb16896ef097ff8aad9ed7fefbb6daf84f7ae244d4e0f5b1ce"
+    sha256 cellar: :any,                 sonoma:        "d605668191163ba70b7298653eab755dc07cf378244f0795c432cff918069008"
+    sha256 cellar: :any,                 ventura:       "486b7daf69d76ef858c14fb822ee84d870d6f0c2a012eeaf13690915ce0e370b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1839d81ada31e9622a60dbd0617c9d12709ad290d3b3d2c7d83690e6da756802"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f98a86b96ff8acd27fe0d06f651f376a392a5aa25fd61e084cd26718e241df30"
   end
 
   head do

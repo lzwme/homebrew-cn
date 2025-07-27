@@ -6,6 +6,7 @@ class LibayatanaIndicator < Formula
   license "GPL-3.0-or-later"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "da9fc97cc1bb2c19f987eeef759158febcc99007450d7643c712d6e4612600ac"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "38823b368d0eb88a0cbaff12fe3d6dae2e78ac39092214bad70a290d44ccb7c1"
   end
 

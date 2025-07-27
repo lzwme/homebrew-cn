@@ -1,18 +1,18 @@
 class Diamond < Formula
   desc "Accelerated BLAST compatible local sequence aligner"
   homepage "https://www.wsi.uni-tuebingen.de/lehrstuehle/algorithms-in-bioinformatics/software/diamond/"
-  url "https://ghfast.top/https://github.com/bbuchfink/diamond/archive/refs/tags/v2.1.12.tar.gz"
-  sha256 "0a11a09ee58f95a3b2e864d61957066faae8a37abaa120353c0faad5d0ff0778"
+  url "https://ghfast.top/https://github.com/bbuchfink/diamond/archive/refs/tags/v2.1.13.tar.gz"
+  sha256 "d3d093b77d0ad8914f3e94dc53b9b2684cb77990765e1a2fe93ad022c28930f5"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fff873950d646cf971fe6ca178c14cb98bb52be7c49492c68ddb41ddce68beb7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ada44d444c51756e35427d8786f758791f8e5feaa692f5d428fdaef829f8025c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "d5ae80023e3367a9ffb850fbad6a3a02cdc41bf1c63b9d46dbb0dfc47373dbc3"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8eda8e413a9e30a1685ad9aa6dc71145eb9af09a725131a5541f91df49548f54"
-    sha256 cellar: :any_skip_relocation, ventura:       "5d01a78af15bfd158aa2c779f6e654ff2423c038b44ded09fc14655be2bb0ec9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d28af69aea9ecc04dd5331448669f6e634b938439469b2f3f1e1f6c97958cf2e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b5476ecbbe5d8d39152e5094d131912a989c4245a723c3c8a7d0819488a132ae"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d5deb210bf9cb7790e85ba12423d470dfef522326f8048c57e30a9e077ccf827"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5161c709bb96f99aecd0b33b584c5254b8d98ece89c40f6e17173f9ee4310ee0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "0805fec734a034b56d786381f6e290536b547287284fe49d3c917db77c624df1"
+    sha256 cellar: :any_skip_relocation, sonoma:        "814fa54602ac1ead2779baec592af6a352bc63b47310ed4a882c595a0832147b"
+    sha256 cellar: :any_skip_relocation, ventura:       "ddce693dee8ad251c30a4339cb78a1697c89adbcda25de9f0636137390a34d99"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "855f41e69ca7de3e5ba0ed58f11109b579e5afde0263edc9d7611cb8fc508295"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "efe0a2ed40864c1c5aab11e2d7eac871ace638d377ae3efc8cf93c9a3cd2cdfc"
   end
 
   depends_on "cmake" => :build

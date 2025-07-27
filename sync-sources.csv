@@ -2043,6 +2043,7 @@ Homebrew-homebrew-core/Formula/f/forego.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/foreman.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/foremost.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/forge.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/f/forgejo.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/forgit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fork-cleaner.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/form.rb, Homebrew/homebrew-core, 1
@@ -3671,6 +3672,7 @@ Homebrew-homebrew-core/Formula/lib/libassuan.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libassuan@2.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libatomic_ops.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libavif.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/lib/libayatana-appindicator.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libayatana-indicator.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libb2.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libb64.rb, Homebrew/homebrew-core, 0
@@ -9450,6 +9452,7 @@ Homebrew-homebrew-cask/Casks/font/font-a/font-arya.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-a/font-asap-condensed.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-a/font-asap.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-a/font-asar.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/font/font-a/font-asimovian.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-a/font-asset.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-a/font-assistant.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-a/font-asta-sans.rb, Homebrew/homebrew-cask, 0
@@ -11589,6 +11592,8 @@ Homebrew-homebrew-cask/Casks/font/font-t/font-tamzen.rb, Homebrew/homebrew-cask,
 Homebrew-homebrew-cask/Casks/font/font-t/font-tangerine.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-t/font-tapestry.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-t/font-taprom.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/font/font-t/font-tasa-explorer.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/font/font-t/font-tasa-orbiter.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-t/font-tauri.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-t/font-taviraj.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-t/font-teachers.rb, Homebrew/homebrew-cask, 0
@@ -11642,6 +11647,7 @@ Homebrew-homebrew-cask/Casks/font/font-t/font-tiro-gurmukhi.rb, Homebrew/homebre
 Homebrew-homebrew-cask/Casks/font/font-t/font-tiro-kannada.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-t/font-tiro-tamil.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-t/font-tiro-telugu.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/font/font-t/font-tirra.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-t/font-titan-one.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-t/font-titillium-web.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-t/font-togalite.rb, Homebrew/homebrew-cask, 0
@@ -11773,6 +11779,9 @@ Homebrew-homebrew-cask/Casks/font/font-y/font-yuji-mai.rb, Homebrew/homebrew-cas
 Homebrew-homebrew-cask/Casks/font/font-y/font-yuji-syuku.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-y/font-yusei-magic.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-z/font-zain.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/font/font-z/font-zalando-sans-expanded.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/font/font-z/font-zalando-sans-semiexpanded.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/font/font-z/font-zalando-sans.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-z/font-zcool-kuaile.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-z/font-zcool-qingke-huangyou.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-z/font-zcool-xiaowei.rb, Homebrew/homebrew-cask, 0
@@ -13760,6 +13769,7 @@ Homebrew-homebrew-cask/Casks/q/qtox.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/q/qtpass.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/q/qtspim.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/q/quail.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/q/quakenotch.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/q/quakespasm.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/q/quarto.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/q/quassel-client.rb, Homebrew/homebrew-cask, 1

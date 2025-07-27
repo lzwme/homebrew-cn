@@ -5,6 +5,11 @@ class Checkstyle < Formula
   sha256 "e41c24433723ba310a30e41da4f449c105ad47cab2ae9e6be5e06606a647dbca"
   license "LGPL-2.1-or-later"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, all: "2359646775c1f18596721331ef78f36944bc1b8fe98a93d3c25536ba7ec4ad70"
   end
