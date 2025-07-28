@@ -8,7 +8,7 @@ class GimmeAwsCreds < Formula
   license "Apache-2.0"
   revision 5
 
-  no_autobump! because: :requires_manual_review
+  no_autobump! because: "`update-python-resources` cannot determine dependencies"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "c6aa5dc5030ac0f3f460f9a309c751dfdb4804d4303d865cfada04dca2074c80"

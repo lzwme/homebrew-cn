@@ -41,6 +41,9 @@ class Docker < Formula
       -X "github.com/docker/cli/cli/version.PlatformName=Docker Engine - Community"
     ]
 
+    # FIXME: we shouldn't need this, but patchelf.rb does not seem to work well with the layout of Aarch64 ELF files
+    ldflags += ["-extld", ENV.cc] if OS.linux? && Hardware::CPU.arm?
+
     system "go", "build", *std_go_args(ldflags:), "github.com/docker/cli/cmd/docker"
 
     Pathname.glob("man/*.[1-8].md") do |md|

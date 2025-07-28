@@ -9,8 +9,6 @@ class SearchThatHash < Formula
   revision 11
   head "https://github.com/bee-san/Search-That-Hash.git", branch: "main"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "b25fd2d7c6f1e07177496073f1aecf468ffbc410a4948c5be859167304655eaf"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b25fd2d7c6f1e07177496073f1aecf468ffbc410a4948c5be859167304655eaf"

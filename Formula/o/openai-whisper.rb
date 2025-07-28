@@ -8,7 +8,7 @@ class OpenaiWhisper < Formula
   license "MIT"
   head "https://github.com/openai/whisper.git", branch: "main"
 
-  no_autobump! because: :requires_manual_review
+  no_autobump! because: "`update-python-resources` cannot update resource blocks"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "5ddbd99e57d4b6d19776eb845a391f8931bbb5e33388fb3bf6e729187e34bc0c"

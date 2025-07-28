@@ -9,8 +9,6 @@ class Pywhat < Formula
   revision 1
   head "https://github.com/bee-san/pyWhat.git", branch: "main"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     rebuild 7
     sha256 cellar: :any_skip_relocation, all: "eecfe7a731f32a7dfb75fb042843e4042df47df756abcabeb8fa9b5216cc3584"

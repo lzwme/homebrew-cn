@@ -11,8 +11,6 @@ class TrezorAgent < Formula
   license "LGPL-3.0-only"
   revision 7
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "6b23b65aed9a20adc1193f1b07f212d15ec1cc63fe4063f812215269bf4469ac"
     sha256 cellar: :any,                 arm64_sonoma:  "e7b9a2a27fd2238cde20aed214f6cb064007042259c15c1957fccbf665186f87"

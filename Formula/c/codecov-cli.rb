@@ -9,8 +9,6 @@ class CodecovCli < Formula
   revision 2
   head "https://github.com/codecov/codecov-cli.git", branch: "main"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     rebuild 1
     sha256 cellar: :any,                 arm64_sequoia: "69cb375432f5d70ddfd35b3a33357bbb07aed9bfaff936309718cf037605580a"

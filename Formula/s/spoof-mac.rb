@@ -9,8 +9,6 @@ class SpoofMac < Formula
   revision 5
   head "https://github.com/feross/SpoofMAC.git", branch: "master"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, all: "48c3a037c2b55a1f7849998fbdfa575f4e04726c284eb2190e72e0dcd93b0305"

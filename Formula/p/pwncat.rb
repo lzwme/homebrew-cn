@@ -8,8 +8,6 @@ class Pwncat < Formula
   license "MIT"
   head "https://github.com/cytopia/pwncat.git", branch: "master"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     rebuild 3
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "1971f6379de0d9d4d43605e1cfe6635c966343e2afd1f18e5075059233853433"

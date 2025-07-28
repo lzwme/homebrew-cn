@@ -9,8 +9,6 @@ class Easyeda2kicad < Formula
   revision 2
   head "https://github.com/uPesy/easyeda2kicad.py.git", branch: "master"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "ca4a1da140fed0775fce219fdc949815dbc2f40caeb84265e2a68b630ad79a9c"
     sha256 cellar: :any,                 arm64_sonoma:  "0e4978fcf4183050761e4b428e20c5458aaa9f1985a75fa8705b30691e62c18f"

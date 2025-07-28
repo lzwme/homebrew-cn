@@ -8,8 +8,6 @@ class Xml2rfc < Formula
   license "BSD-3-Clause"
   head "https://github.com/ietf-tools/xml2rfc.git", branch: "main"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "9d779c5043e45a65d381bce49e1d3ccc922364d1cade4356664676438defe34f"
     sha256 cellar: :any,                 arm64_sonoma:  "b73d40fa03980a13ccd5adf616719ea307bf10f8c4d28a6232ceff4b2eaf7cae"

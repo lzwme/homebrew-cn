@@ -8,8 +8,6 @@ class Thefuck < Formula
   license "MIT"
   head "https://github.com/nvbn/thefuck.git", branch: "master"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     rebuild 5
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "e9b85cc4f5627d8e8df33c99af43c0a9871b07ffc2eb9d1ff9b6d03e1cfcce52"

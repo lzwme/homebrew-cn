@@ -8,8 +8,6 @@ class Gitup < Formula
   license "MIT"
   head "https://github.com/earwig/git-repo-updater.git", branch: "main"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     sha256 cellar: :any_skip_relocation, all: "4ef4421a9edad018b76acd44d00dc3bc99a980623ee00deef7a7aa60bce940d3"
   end

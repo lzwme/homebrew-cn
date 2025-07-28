@@ -1,18 +1,18 @@
 class GitCliff < Formula
   desc "Highly customizable changelog generator"
   homepage "https://git-cliff.org/"
-  url "https://ghfast.top/https://github.com/orhun/git-cliff/archive/refs/tags/v2.9.1.tar.gz"
-  sha256 "dd5a707fba4549ab4ea5e9e95ea7ed302852eb1916b93a1a369019f005ad4cc4"
+  url "https://ghfast.top/https://github.com/orhun/git-cliff/archive/refs/tags/v2.10.0.tar.gz"
+  sha256 "5983409377bb34337ee930af53afb522737d87b9ba15096eae30ced3484b12a2"
   license all_of: ["Apache-2.0", "MIT"]
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "825cba9fde4d404bf9d7d6a0cf2be44e798b73eba18c9cde0a4a836b303642d8"
-    sha256 cellar: :any,                 arm64_sonoma:  "d518498eefaba737ec87a7f8795d1d36be7e59cea589dde5e75e6c80f4a063c5"
-    sha256 cellar: :any,                 arm64_ventura: "1b2c7e461523689e742421a75eb0b9f9925eec9514bbee9777fb98f6de027de3"
-    sha256 cellar: :any,                 sonoma:        "dc9dbb0924f75f4061546fd549d0161d33f49b7dad3d78c615c9a6516219ef2f"
-    sha256 cellar: :any,                 ventura:       "4a6aad6de7adde64aae0b0f7706e973f50d06364d1fa8eacb00dfecf14659ca6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ba502e2c1481bed061284320831447bf5690cb4a1547c2ff1f65f51451cb1e82"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f38c9b94e7efb7e59903201e8d15e5758bb488f4be9a4e0cc20627561123bb1b"
+    sha256 cellar: :any,                 arm64_sequoia: "3cb0c87376ca2b155770ab7ef8e9d2aa2b9376549e64f1021a5c4880108750a9"
+    sha256 cellar: :any,                 arm64_sonoma:  "befc35faab195db834be9399457f6b11d53048d64b562a2507125cf14811a292"
+    sha256 cellar: :any,                 arm64_ventura: "68a9bc5425561ff4cfb0c23cc24e58cfd7373e4f5ca96deb94d66d97a060d25d"
+    sha256 cellar: :any,                 sonoma:        "bbcd18d3b420655522ab5272039530bdccc9a8355b4d67f858d7eb52ad584dd4"
+    sha256 cellar: :any,                 ventura:       "f47c539d319736549a62b63d6716b511fa5a9b17c58d05bdc0b50d2ac7bb8c20"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0807e2f92262c4eb5a38e4e3082fee1bcc08a7e0432b529a6e55cca9b0b8f546"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "733633afb16d7266616a675734dd21b96f7f4f131f583ff036a648e6d437b45e"
   end
 
   depends_on "pkgconf" => :build
@@ -49,9 +49,7 @@ class GitCliff < Formula
     system "git", "add", "cliff.toml"
     system "git", "commit", "-m", "chore: initial commit"
 
-    assert_match <<~EOS, shell_output("git cliff")
-      All notable changes to this project will be documented in this file.
-
+    assert_equal <<~EOS, shell_output("git cliff")
       ## [unreleased]
 
       ### ⚙️ Miscellaneous Tasks

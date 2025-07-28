@@ -6,19 +6,18 @@ class Harlequin < Formula
   url "https://files.pythonhosted.org/packages/b2/e2/e9176c2102b0f9fa4384dcf6e20aa11aedd50f446180cca32e44e06f7fe1/harlequin-2.1.2.tar.gz"
   sha256 "751f71384a40443810f192f48f1c9bbd6f24be053231368971c2271fb56956fa"
   license "MIT"
-  revision 1
+  revision 2
 
-  no_autobump! because: :requires_manual_review
+  no_autobump! because: "has non-PyPI resources"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "01c5e9fe952509f9b96d0c4ba8c2ee281ff78468b8b2b592fdce56651668b4af"
-    sha256 cellar: :any,                 arm64_sonoma:  "b112a33bd6b243721fd6840ff708ade2b3d6d4e2243bbcf506afb0b9b8b2fd4c"
-    sha256 cellar: :any,                 arm64_ventura: "2ea06f29225b9e6b4704ce40745e7248e657f57f92a26c71d07a42e0a8498dcc"
-    sha256 cellar: :any,                 sonoma:        "dd8ad67c59e82c13cfcd47f52285510f58a6d4a5a672c00e36d0e7b52a965558"
-    sha256 cellar: :any,                 ventura:       "d17251ae7ccd8b439fee9752b0212f6cc8cb0d5bca60f1669c03c646ded3e6dd"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5b4d97ceda03a65200fe247f823ab0a51df334fa4e7fa88afeebe96df5b08793"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "838bea24ca085fb4632d4c3dc626a2c111888eb08dd9174185cea4931bedb333"
+    sha256 cellar: :any,                 arm64_sequoia: "2f7e3c61da5c81a62731f891a510abfccc254fe528820ca084f93abeaadfc34d"
+    sha256 cellar: :any,                 arm64_sonoma:  "0afc3f95b075c49d580459b1c3fec8c7415da9c788acda94e3c670512594c038"
+    sha256 cellar: :any,                 arm64_ventura: "e6131391ceea6874c3e8134e73440fff9a0cdbe5c1db466849e5cb9e4d1173ab"
+    sha256 cellar: :any,                 sonoma:        "46b3302037b95e8f2779433078b0cc1a8463e1ca9cca4feb126f4be4acd9a201"
+    sha256 cellar: :any,                 ventura:       "7a371895dc1c0c52e8b8058196f1ed5848cf31e8e3335a2ce9f08c1666132661"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3883647e606c055fb2cece85ea5ed8d9daf136e447c1c608bfda13d798b5a785"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "54cc03802b670a1c403427fd0923d0703c968abf907c467fab434227b5100fd2"
   end
 
   depends_on "cmake" => :build
@@ -125,8 +124,8 @@ class Harlequin < Formula
   end
 
   resource "pyarrow" do
-    url "https://files.pythonhosted.org/packages/a2/ee/a7810cb9f3d6e9238e61d312076a9859bf3668fd21c69744de9532383912/pyarrow-20.0.0.tar.gz"
-    sha256 "febc4a913592573c8d5805091a6c2b5064c8bd6e002131f01061797d91c783c1"
+    url "https://files.pythonhosted.org/packages/ef/c2/ea068b8f00905c06329a3dfcd40d0fcc2b7d0f2e355bdb25b65e0a0e4cd4/pyarrow-21.0.0.tar.gz"
+    sha256 "5051f2dccf0e283ff56335760cbc8622cf52264d67e359d5569541ac11b6d5bc"
   end
 
   resource "pygments" do

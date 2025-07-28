@@ -9,8 +9,6 @@ class Tvnamer < Formula
   revision 10
   head "https://github.com/dbr/tvnamer.git", branch: "master"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     sha256 cellar: :any_skip_relocation, all: "c488ea5258a320f51fb970cfb226dceb2ea35bf5c62df325577c4d25df1b5077"
   end

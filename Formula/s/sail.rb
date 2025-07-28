@@ -8,8 +8,6 @@ class Sail < Formula
   license "GPL-3.0-only"
   revision 1
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     rebuild 1
     sha256 cellar: :any,                 arm64_sequoia: "55df5f7dc3a28ceff6f4f45ed960292003a2acdf7067642c796057f7569392c0"

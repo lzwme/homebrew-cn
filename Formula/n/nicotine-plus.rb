@@ -8,7 +8,7 @@ class NicotinePlus < Formula
   license "GPL-3.0-or-later"
   head "https://github.com/nicotine-plus/nicotine-plus.git", branch: "master"
 
-  no_autobump! because: :requires_manual_review
+  no_autobump! because: "`update-python-resources` cannot determine dependencies"
 
   bottle do
     sha256 cellar: :any_skip_relocation, all: "86dd09af957c7be8e3c7559e1c9b67d2536f0c3025cd70bbe08a17d98ad1f89a"

@@ -9,8 +9,6 @@ class Bpython < Formula
   revision 2
   head "https://github.com/bpython/bpython.git", branch: "main"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "43a263d6c3e63b737e4e17b9fba497945b4eed2047c5ffadf482b808ae0c8a59"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "86e7cb8e6e2e13d577a8c8c0af563c9f79e781e2c8e8fdae94623e7621a0f016"

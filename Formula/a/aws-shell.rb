@@ -8,8 +8,6 @@ class AwsShell < Formula
   license "Apache-2.0"
   revision 7
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "778c3c225df6ca360277f1c7213af46622acc28987a7a36b11ad3afc1085f07b"
     sha256 cellar: :any,                 arm64_sonoma:  "2fb0be31f58936ac4a8efec47e90266b5de81dadd8d24f53d6c0ba91be75a624"

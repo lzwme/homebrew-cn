@@ -10,8 +10,6 @@ class Scour < Formula
   version_scheme 1
   head "https://github.com/scour-project/scour.git", branch: "master"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     rebuild 6
     sha256 cellar: :any_skip_relocation, all: "4c7cfe80210581f2cfa70a91583596326dfe0cd395679ab589d2af4f5e749f94"

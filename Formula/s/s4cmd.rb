@@ -9,8 +9,6 @@ class S4cmd < Formula
   revision 4
   head "https://github.com/bloomreach/s4cmd.git", branch: "master"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     sha256 cellar: :any_skip_relocation, all: "a8e1ae545f2d58cbbd80828342d8732952e47628c4a5640150e9151c9195052d"
   end

@@ -8,7 +8,7 @@ class Tern < Formula
   license "BSD-2-Clause"
   head "https://github.com/tern-tools/tern.git", branch: "main"
 
-  no_autobump! because: :requires_manual_review
+  no_autobump! because: "`update-python-resources` cannot determine dependencies"
 
   bottle do
     rebuild 5

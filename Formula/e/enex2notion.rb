@@ -8,8 +8,6 @@ class Enex2notion < Formula
   license "MIT"
   revision 13
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "451d06590098d5e5eeaa6062c0fdad9fa7246de643f8ed885235bb453af15d4d"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "faf58471255749032a2ef7724ba27b0caa7a2cc95ea6852e05f748171f3b0ce5"

@@ -3,9 +3,10 @@ class Scdl < Formula
 
   desc "Command-line tool to download music from SoundCloud"
   homepage "https://github.com/scdl-org/scdl"
-  url "https://ghfast.top/https://github.com/scdl-org/scdl/archive/refs/tags/v2.12.4.tar.gz"
-  sha256 "e75b09ee8fdb553fd7a34061023f1c33b6981e02cbd03229f693235e279d6d65"
+  url "https://files.pythonhosted.org/packages/89/bf/25b56ac2a0dff718427555fee43048d5d1f4b803be2cd81724347f9250d3/scdl-2.12.4.tar.gz"
+  sha256 "e7ede893b51c2447545b8e5b74f1a492f93e93f358229122d1444db90e9ed2f9"
   license "GPL-2.0-only"
+  head "https://github.com/scdl-org/scdl.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, all: "38f82509874a32624fff314d260cec58e04a22d2369d96d9a3373a5ea37da816"

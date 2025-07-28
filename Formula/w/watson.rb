@@ -9,8 +9,6 @@ class Watson < Formula
   revision 8
   head "https://github.com/jazzband/Watson.git", branch: "master"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "02a6250ae9fa9e9342bfb595db2b274aac190703442e23ca6269711dc96cbce5"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "de5094e1fbc8b54ea86d7b4989694d308dff63003e5ce7139698a28d4efa6693"

@@ -8,7 +8,7 @@ class Nyx < Formula
   license "GPL-3.0-only"
   revision 3
 
-  no_autobump! because: :requires_manual_review
+  no_autobump! because: "`update-python-resources` cannot update resource blocks"
 
   bottle do
     rebuild 3

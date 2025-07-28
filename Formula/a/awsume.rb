@@ -9,8 +9,6 @@ class Awsume < Formula
   revision 2
   head "https://github.com/trek10inc/awsume.git", branch: "master"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "030e2f49997fed0235ca111b48944bd6f855eaa2d2c59cabd9ba247e22e5ef7c"
     sha256 cellar: :any,                 arm64_sonoma:  "2ecc4d5fd1c6db43db69f746d3f6f1a9da807eda6514bb3c2769977ae2d9fb1b"

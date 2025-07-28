@@ -8,8 +8,6 @@ class Pympress < Formula
   license "GPL-2.0-or-later"
   head "https://github.com/Cimbali/pympress.git", branch: "main"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "64f35865fbde010d4e3de039977eec6bc1bbe6dabb19fca1f9c3f9da709e1593"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ad170caf12af4322d5b0f819cdf13616af3d389de0400f157ac7638cce10fcff"

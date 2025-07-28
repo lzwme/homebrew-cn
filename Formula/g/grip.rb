@@ -8,8 +8,6 @@ class Grip < Formula
   license "MIT"
   revision 13
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "4840088fa28108fd1d0be591418185e2aa6b0c2dac70389b0bcb61899270ab87"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "48de4a1897a6a69ede5cf97a6b26643e8e9e4b73820933c6177c5c1cc0da12e6"

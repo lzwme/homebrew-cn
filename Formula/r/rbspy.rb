@@ -1,18 +1,18 @@
 class Rbspy < Formula
   desc "Sampling profiler for Ruby"
   homepage "https://rbspy.github.io/"
-  url "https://ghfast.top/https://github.com/rbspy/rbspy/archive/refs/tags/v0.36.0.tar.gz"
-  sha256 "2d0b0eabbe2ead6a2eb293fbb940a8779d04e573a157dddf24666008c13c9d82"
+  url "https://ghfast.top/https://github.com/rbspy/rbspy/archive/refs/tags/v0.36.1.tar.gz"
+  sha256 "78ce4c109b077446eabe826b8901e0a5e683cccf6108bc2fa2ae2759674cd49b"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a4eac6fb5288720ceb691bf33a9250550c315075f05be0a115c2be9d141fd50a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8ab483eccecfc6a594171df490a48476eb12efb58c2b38c18be87cca3f415e5d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "008fe9af7c0a43b2ce72e85d0f749e8e4d51bb094917d3861b818033510bfde3"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b7ef68a9f252f679c25a88b693044a2b2b4491f45b418c4cef399d3c1a285d51"
-    sha256 cellar: :any_skip_relocation, ventura:       "f544a26ff16a03d94e6579e4f99611ed52ebd21fdfba9176c773a41769094061"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "57ce158ee7d35feae61bf38d2f7be91fcba5c088cd67ac4fae3cd97da3633ea0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "259a7b68ee7e866457e5e5da49c37769645f7e885b542583a4942c5e7093c2a9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ef739d25b345ab509789914d3f5fcedb29a3a224bf0ee93793db5ab2f030a238"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d025c2c5b65148b34b8ec4c0adacf707eb85c0d03491b87e6f8908eb0f9007ba"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "337ce7188e78a9f5348fd4fc7105ba65067a9b7739a529acbda117701102c48f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6eb7a3200248f840f7ac72d47f8ffe04ae7df41780ebf9c550c9e2101a08b40d"
+    sha256 cellar: :any_skip_relocation, ventura:       "6a99a79293fe4b743f63d6e331d6bf199c4dcc12afd856d6dc4e4ef1dfa8c62d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3875b03d465cbf21842a9895606c5c6e79d66e690ed77d5c808bdb2a23f5e2a4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "289d3b1f6c624236fb9a3d07e6a49e556d94ab503a729837b1c19861529e2a7b"
   end
 
   depends_on "rust" => :build

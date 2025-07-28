@@ -8,7 +8,7 @@ class Certsync < Formula
   license "MIT"
   revision 1
 
-  no_autobump! because: :requires_manual_review
+  no_autobump! because: "has non-PyPI resources"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "ce9f96e07b826ca7f88e7324e519c77895a8067fb7a515467b01b8d340e11916"

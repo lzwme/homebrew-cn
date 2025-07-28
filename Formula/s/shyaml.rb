@@ -9,8 +9,6 @@ class Shyaml < Formula
   revision 2
   head "https://github.com/0k/shyaml.git", branch: "master"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     rebuild 5
     sha256 cellar: :any,                 arm64_sequoia: "74bc7e9c8716937a88a39c1ad327023297d5f1f55521507be77a43b712ef3d9d"

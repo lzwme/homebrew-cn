@@ -8,8 +8,6 @@ class FortranLanguageServer < Formula
   license "MIT"
   head "https://github.com/hansec/fortran-language-server.git", branch: "master"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     rebuild 5
     sha256 cellar: :any_skip_relocation, all: "7f545be88d71155c02f3022ca7c63f8c75f9010d1ac84f89353d96b15f3b0551"

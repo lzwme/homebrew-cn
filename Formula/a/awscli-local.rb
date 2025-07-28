@@ -8,8 +8,6 @@ class AwscliLocal < Formula
   license "Apache-2.0"
   revision 2
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "d74091e363168f1b2e59db8592248b9cafe5512270e7ce82053c3869a962ef54"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d74091e363168f1b2e59db8592248b9cafe5512270e7ce82053c3869a962ef54"

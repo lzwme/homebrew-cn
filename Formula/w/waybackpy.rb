@@ -8,8 +8,6 @@ class Waybackpy < Formula
   license "MIT"
   revision 8
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, all: "996bcc65b772b98507b7d5134217d463b69bc65948cd0276f0afefb89e0becf9"

@@ -8,8 +8,6 @@ class OscCli < Formula
   license "BSD-3-Clause"
   revision 9
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "c7235b2b658f8bbb90bb5137056fb050ca83e1b7d5d18c1a31e2eaa66d83b6aa"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c7235b2b658f8bbb90bb5137056fb050ca83e1b7d5d18c1a31e2eaa66d83b6aa"

@@ -7,7 +7,7 @@ class Gimmecert < Formula
   sha256 "eb00848fab5295903b4d5ef997c411fe063abc5b0f520a78ca2cd23f77e3fd99"
   license "GPL-3.0-or-later"
 
-  no_autobump! because: :requires_manual_review
+  no_autobump! because: "`update-python-resources` cannot determine dependencies"
 
   bottle do
     rebuild 1

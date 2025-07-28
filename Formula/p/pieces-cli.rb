@@ -2,17 +2,11 @@ class PiecesCli < Formula
   include Language::Python::Virtualenv
 
   desc "Command-line tool for Pieces.app"
-  homepage "https://pieces.app/"
-  url "https://storage.googleapis.com/app-releases-production/pieces_cli/release/pieces_cli-1.16.5.tar.gz"
-  sha256 "3ff92f965dbfe0ffeed9f5460b148e84708e60b39626cd03f3c36a817e78f2ab"
+  homepage "https://docs.pieces.app/products/cli"
+  url "https://files.pythonhosted.org/packages/67/26/3e8bde03fd92455652e059e0d7d7b8a7f2341cee808b98d9a6fc018c4b6b/pieces_cli-1.16.5.tar.gz"
+  sha256 "540d2f08f69f7f1729d679ae384d76b617850a3b8ad41d79b7f3733669aa1ec1"
   license "MIT"
-
-  livecheck do
-    url "https://builds.pieces.app/stages/production/pieces_cli/version"
-    strategy :json do |json|
-      json["version"]
-    end
-  end
+  head "https://github.com/pieces-app/cli-agent.git", branch: "main"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "f32f23352c19ea3ce115419ec129ab09e757c1bb426e8d75f261f424aaea938a"

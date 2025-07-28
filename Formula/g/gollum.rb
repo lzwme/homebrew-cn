@@ -23,6 +23,7 @@ class Gollum < Formula
 
   # no commits since july 1 2021, and cannot rebuild, https://github.com/trivago/gollum/issues/265
   deprecate! date: "2024-07-27", because: :unmaintained
+  disable! date: "2025-07-27", because: :unmaintained
 
   depends_on "go" => :build
 

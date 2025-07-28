@@ -8,8 +8,6 @@ class Dnsviz < Formula
   license "GPL-2.0-or-later"
   revision 1
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "caed4a974f2a1111d2a16262e543e453902627186de111aaa61ddb8032dd35a1"
     sha256 cellar: :any,                 arm64_sonoma:  "1581924ecb9d02d792a419193ac546d9bd23cf9eebb6c24036057215bb426155"

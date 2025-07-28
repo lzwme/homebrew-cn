@@ -1,18 +1,18 @@
 class Netmask < Formula
   desc "IP address netmask generation utility"
   homepage "https://github.com/tlby/netmask/blob/master/README"
-  url "https://ghfast.top/https://github.com/tlby/netmask/archive/refs/tags/v2.4.5.tar.gz"
-  sha256 "7d4adef47e5c9aba919d099640f1f08aa88f8de9538c43a13233c1af44644be2"
+  url "https://ghfast.top/https://github.com/tlby/netmask/archive/refs/tags/v2.5.0.tar.gz"
+  sha256 "f352d8117a4f9377a15919d9ad4989cfba8816958718a914abf1414242a9f636"
   license "GPL-2.0-only"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "91c23489b50c0d3d09713fa26c18dac951cf63ffc39e2680326f75ad67acedfa"
-    sha256 cellar: :any,                 arm64_sonoma:  "3a42ddaeff18b5d164f687705de1b94401df54fe57c47d4efd8cb6ae1ad46839"
-    sha256 cellar: :any,                 arm64_ventura: "52397f337418a77f198f1659c3bc361aa98be671dc7b300b66bb425f3d4f2005"
-    sha256 cellar: :any,                 sonoma:        "f4c9960ac92cdb675aa5a39a8c8d706717ea2d56d5381eeeaa7244ac7866bf55"
-    sha256 cellar: :any,                 ventura:       "be9ea01dcc993aadb6cb8e33f559049b0bcf326f8f9b47fa7aa47682dd70c380"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7217c2f0dc2b48687b2a6f910c52d3e2e50407480709a79ef1a614f99afc6dbd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "561d2d15b6049381f15e8d4d98d0a6f6c02a2fd270a23ecefe87b7fd61c9d20f"
+    sha256 cellar: :any,                 arm64_sequoia: "a13e322af5637a9f17320f03d2f527dff2342edae14f39c88b4b32b2962b878f"
+    sha256 cellar: :any,                 arm64_sonoma:  "9b5e73835736dde2f98f6c5df24ad88a570d4a204f0b352ab35e77e36f5b7bcb"
+    sha256 cellar: :any,                 arm64_ventura: "91de5bd0fb52ad88bbf873d5ee5fa3e65ef1dcf466d95aca7bad145b104bf47f"
+    sha256 cellar: :any,                 sonoma:        "0fc1d11045fe492269b03b694edd9e1fe214a2208f700f5ea98d69b132914668"
+    sha256 cellar: :any,                 ventura:       "37f666ef3af69e17afdabf451eb71196065e3d9e91b091f582b29be4b5c18853"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3eef7efdc4db887245360eabc57b202607d2c6cddc461ad1368898582a8eaa99"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "412db2c646b5c4e9038908022c40c809e1c2430fc163dbdc27b3590db01803be"
   end
 
   depends_on "autoconf" => :build

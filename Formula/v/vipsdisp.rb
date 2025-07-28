@@ -1,8 +1,8 @@
 class Vipsdisp < Formula
   desc "Viewer for large images"
   homepage "https://github.com/jcupitt/vipsdisp"
-  url "https://ghfast.top/https://github.com/jcupitt/vipsdisp/releases/download/v4.0.0/vipsdisp-4.0.0.tar.xz"
-  sha256 "7bbb6740b13d0b211af2efab83d3a0d6e4646b15f57a038ac44ad67f446c5b64"
+  url "https://ghfast.top/https://github.com/jcupitt/vipsdisp/releases/download/v4.1.0/vipsdisp-4.1.0.tar.xz"
+  sha256 "51a1105f27e495fdd8e55a8628c4f688f28f900475efc479c9a7202ba59f09c2"
   license "MIT"
 
   livecheck do
@@ -10,16 +10,14 @@ class Vipsdisp < Formula
     strategy :github_releases
   end
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
-    sha256 cellar: :any, arm64_sequoia: "0f455d9ae47cdd745f618db40f4b80122781d5e2a3ee8ad07e545e268882c04a"
-    sha256 cellar: :any, arm64_sonoma:  "1ad7f204fcc95075e59ca963092d8dce61fab7afbb9fd0797283734a71901a35"
-    sha256 cellar: :any, arm64_ventura: "380381c039fb4cfe865a47f2afe4243daa4e876b43f89b2972bc4655a4029319"
-    sha256 cellar: :any, sonoma:        "eca523b5e38c37067ff551e0b7091c92a2b9f003d8bc01c9862e1291183fec9f"
-    sha256 cellar: :any, ventura:       "5270221243ff26a91a7fcb84d0286dc102cbb112c5c38deb2ecd7ce78dd979a8"
-    sha256               arm64_linux:   "e9e65b2c5e540a88943f22751fc3f340c962c828f2e855ae78043cf10abca538"
-    sha256               x86_64_linux:  "e7b143d69ecd76a6487edc8814d42aca730b0cf1b2800fc833a2718d1c72edc1"
+    sha256 cellar: :any, arm64_sequoia: "c9f3846017d8e88abe84648a4d2e44dccdb7c4d5abb59abf08d5b60c77255e3c"
+    sha256 cellar: :any, arm64_sonoma:  "a04b7c9c63a8806c41ed262aeed0b940c9b84f51ca0d446f03e12753917f85af"
+    sha256 cellar: :any, arm64_ventura: "2bfcc9baff915774aa2b17dd70e6a4fd87294fa801b1dc6e4138b2fe93b21032"
+    sha256 cellar: :any, sonoma:        "3a0c948f1fa347a2a87a27006ec9baeac7487da201bcdbad0465801b9298d818"
+    sha256 cellar: :any, ventura:       "ad37afb98fbfa1bbef6b6c4edef37f153009f49d57cb97bb600e655beaddc1c9"
+    sha256               arm64_linux:   "0a489aaad7823803dbb7b7ff5ca367d7e9f10ad5df2a23c0eb572ce8761be11d"
+    sha256               x86_64_linux:  "431ea15fde91d102763f0313ebb611279ca13b627d388db493bf1816d9edc679"
   end
 
   depends_on "meson" => :build
@@ -29,6 +27,7 @@ class Vipsdisp < Formula
   depends_on "cairo"
   depends_on "gdk-pixbuf"
   depends_on "glib"
+  depends_on "graphene"
   depends_on "gtk4"
   depends_on "hicolor-icon-theme"
   depends_on "vips"

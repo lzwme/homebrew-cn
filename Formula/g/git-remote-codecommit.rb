@@ -9,8 +9,6 @@ class GitRemoteCodecommit < Formula
   revision 4
   head "https://github.com/aws/git-remote-codecommit.git", branch: "master"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     sha256 cellar: :any_skip_relocation, all: "6403e992fba39a49e3faa313955b9066ec7459930147d24d3ba1e325de4d4855"
   end

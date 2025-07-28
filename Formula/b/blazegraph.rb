@@ -14,6 +14,7 @@ class Blazegraph < Formula
   # see https://github.com/blazegraph/database/issues/196
   # 2.1.6 release in rc phase for four years
   deprecate! date: "2024-07-26", because: :unmaintained
+  disable! date: "2025-07-26", because: :unmaintained
 
   # Dependencies can be lifted in the upcoming release, > 2.1.5
   depends_on "openjdk@8"

@@ -9,8 +9,6 @@ class HomeassistantCli < Formula
   revision 17
   head "https://github.com/home-assistant-ecosystem/home-assistant-cli.git", branch: "dev"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     rebuild 2
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "14097ae33fea2b0d77d5363e5f6ae93679d9bedb151904e44b5142fc93ec397f"

@@ -8,8 +8,6 @@ class Vermin < Formula
   license "MIT"
   head "https://github.com/netromdk/vermin.git", branch: "master"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     rebuild 2
     sha256 cellar: :any_skip_relocation, all: "e25e54e3725d3f470d93f8272ac428d145eb667beb966d31498d02fee48be0c3"

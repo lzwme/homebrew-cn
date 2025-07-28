@@ -3,8 +3,8 @@ class Buku < Formula
 
   desc "Powerful command-line bookmark manager"
   homepage "https://github.com/jarun/buku"
-  url "https://ghfast.top/https://github.com/jarun/buku/archive/refs/tags/v5.0.tar.gz"
-  sha256 "87e226b0062a17cb10bf02a6cefea08e859d74985e373b76496150ecda92d73e"
+  url "https://files.pythonhosted.org/packages/a0/74/a3ecd735d75fc452fa4c6a995141cda20937e21d30ae9810d70ed159f58d/buku-5.0.tar.gz"
+  sha256 "895a86b099adfe420c1925f333ce6cb00b851a6f11bcc7e42fb125fa81cae8b2"
   license "GPL-3.0-or-later"
   revision 2
   head "https://github.com/jarun/buku.git", branch: "master"

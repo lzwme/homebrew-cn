@@ -1,8 +1,8 @@
 class Corsixth < Formula
   desc "Open source clone of Theme Hospital"
   homepage "https://github.com/CorsixTH/CorsixTH"
-  url "https://ghfast.top/https://github.com/CorsixTH/CorsixTH/archive/refs/tags/v0.68.0.tar.gz"
-  sha256 "54034b8434f5c583178405d2c84477f903fe2b15933b611f42230668e35d632e"
+  url "https://ghfast.top/https://github.com/CorsixTH/CorsixTH/archive/refs/tags/v0.69.0.tar.gz"
+  sha256 "0f2dbdc2b8b6b2e4d5e80a6be02a72d586d0072efe867750a424746bd318f1f5"
   license "MIT"
   head "https://github.com/CorsixTH/CorsixTH.git", branch: "master"
 
@@ -15,13 +15,13 @@ class Corsixth < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "f870772f5827546ce2d05d7c82f5aa04c35f5d95111a2f8f4291eb02d0eeb518"
-    sha256 arm64_sonoma:  "a998b8cb521a5c46582038f6d8a89ed6e647341c71df2d265af0c2ffc109deda"
-    sha256 arm64_ventura: "f33fb70d41df5fa4908989da6c640125723afee46e595b014fec646b0e22a0d4"
-    sha256 sonoma:        "85a59fbbd11582ee897c97deb738fd4dbf9296cb4ba6ebc31e58dbd5d1362504"
-    sha256 ventura:       "5f80e96e69be652083c55583cd7f5c624df10c076c309af4da609137faead94e"
-    sha256 arm64_linux:   "682949f41996b62e90d171e70bd962468daefe53e08a842552ef324af9c03ba2"
-    sha256 x86_64_linux:  "c4a8daafab979bc9e0795b94beff96c65f0e88a665559e5990b56f53ab1ae868"
+    sha256 arm64_sequoia: "0decd168795988916b92e814d937027ff7999f75514e5b078fae4bef441f1d9c"
+    sha256 arm64_sonoma:  "cd96d54ceef6d14a32a76c33b4b7317865c0cb1e955ef68aafaa0cca59b90f8e"
+    sha256 arm64_ventura: "b26f4227f77757bc93023940afe00e05f91e7baeb30c3a0729d17f6df2f6946f"
+    sha256 sonoma:        "67a6adecbab18ae3bf3c641d16e5db95d8201c68ec1c531ad2f6f4d35bd20d46"
+    sha256 ventura:       "eba5905a0554c2c5afb557da9bdda642cae66f2d7ea603b189eedde5cf9188cd"
+    sha256 arm64_linux:   "4cd091ab208d3dde25ee05a1b2f6e534493eb1e7fc378417ff43c08239ffc456"
+    sha256 x86_64_linux:  "b0b9f5cd66ef36b1b733e3cd226d6e6e8f3722f71bacc1a7e1bb4f615ba74d0c"
   end
 
   depends_on "cmake" => :build
@@ -104,6 +104,7 @@ class Corsixth < Formula
 
     PTY.spawn(bin/"CorsixTH") do |r, _w, pid|
       sleep 30
+      sleep 30 if OS.mac? && Hardware::CPU.intel?
       Process.kill "KILL", pid
 
       output = ""

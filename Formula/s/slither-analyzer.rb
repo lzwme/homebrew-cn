@@ -9,8 +9,6 @@ class SlitherAnalyzer < Formula
   revision 3
   head "https://github.com/crytic/slither.git", branch: "master"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "d3d8b589d9cb2044065b1e21416c94bdbca2ef459ebcf161cb3f2e2b4bef6a78"
     sha256 cellar: :any,                 arm64_sonoma:  "f8f044628ebf98bbe66f788cec5a0f1e9a0739759e6143c5d412c030c42a5e95"

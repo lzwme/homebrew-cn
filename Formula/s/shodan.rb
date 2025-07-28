@@ -9,8 +9,6 @@ class Shodan < Formula
   revision 5
   head "https://github.com/achillean/shodan-python.git", branch: "master"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, all: "ff244c9ab8a940086f91f9a2f08a8266d74053755103ce3dab77680ed7b2c2f4"

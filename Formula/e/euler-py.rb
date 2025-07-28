@@ -9,8 +9,6 @@ class EulerPy < Formula
   revision 3
   head "https://github.com/iKevinY/EulerPy.git", branch: "master"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     rebuild 5
     sha256 cellar: :any_skip_relocation, all: "61c7da218aca560f86ce1aae136927319f9d48d07aae107e531c19d3e0350209"

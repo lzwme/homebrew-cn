@@ -7,8 +7,6 @@ class Fades < Formula
   revision 2
   head "https://github.com/PyAr/fades.git", branch: "master"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "8ae23ce3e986aa461efc9dfbb017e62daf3d47bab6650455c64efa609c9a6561"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8ae23ce3e986aa461efc9dfbb017e62daf3d47bab6650455c64efa609c9a6561"

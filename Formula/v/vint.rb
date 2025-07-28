@@ -9,8 +9,6 @@ class Vint < Formula
   revision 2
   head "https://github.com/Vimjas/vint.git", branch: "master"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     rebuild 6
     sha256 cellar: :any,                 arm64_sequoia: "d2e44d7c8f741058e7053452b35c8c95997f96f60bfb3b2327194a5bed7d90de"

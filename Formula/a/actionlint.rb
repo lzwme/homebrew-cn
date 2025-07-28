@@ -12,6 +12,7 @@ class Actionlint < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "8d94522b3eefa067708c2ffe00f95a3b7ea39180a5399ec2f570f021228fabe2"
     sha256 cellar: :any_skip_relocation, sonoma:        "1059f386ad492562782f7286b73a94c3cdab1a2b52e28ffc2962edd051058b8c"
     sha256 cellar: :any_skip_relocation, ventura:       "1059f386ad492562782f7286b73a94c3cdab1a2b52e28ffc2962edd051058b8c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2caae10ea1ea1e51620917cda993b6f53541d5400185b985778e3237a782e201"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "04830cca2357b8cb8cf30a297bbbe5e1e347f5c0320ca67f621805e6f4843a87"
   end
 
@@ -21,6 +22,8 @@ class Actionlint < Formula
 
   def install
     ldflags = "-s -w -X github.com/rhysd/actionlint.version=#{version}"
+    # FIXME: we shouldn't need this, but patchelf.rb does not seem to work well with the layout of Aarch64 ELF files
+    ldflags += " -extld #{ENV.cc}" if OS.linux? && Hardware::CPU.arm?
     system "go", "build", *std_go_args(ldflags:), "./cmd/actionlint"
     system "ronn", "man/actionlint.1.ronn"
     man1.install "man/actionlint.1"

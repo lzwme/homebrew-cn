@@ -27,6 +27,7 @@ class Crm114 < Formula
   # The homepage has disappeared along with the `stable` tarball and the
   # SourceForge project only contains files from 2002-2004.
   deprecate! date: "2024-07-24", because: :unmaintained
+  disable! date: "2025-07-26", because: :unmaintained
 
   depends_on "tre"
 

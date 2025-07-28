@@ -15,6 +15,7 @@ class AntAT19 < Formula
 
   # End-of-life on 2024-06-19: https://lists.apache.org/thread/f6jw4v3gjwhqt5fz25og0my2o6xwvvm1
   deprecate! date: "2024-07-24", because: :unsupported
+  disable! date: "2025-07-26", because: :unsupported
 
   depends_on "openjdk"
 

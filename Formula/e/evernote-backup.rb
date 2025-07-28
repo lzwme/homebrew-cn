@@ -8,8 +8,6 @@ class EvernoteBackup < Formula
   license "MIT"
   revision 2
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "5516573e372818809c0f505eeb99fdebfc673a40b5740d9819a0def6c432c8e1"

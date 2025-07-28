@@ -8,8 +8,6 @@ class Twtxt < Formula
   license "MIT"
   revision 6
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "29cc2de20dc895c385ac0a63e44855b00dbde6e2bc5731b8a2e1a7cfc032e928"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d5b10bcf1dbbaab2d9a31cac9ac6aeace17f927b3962940c772229213675f1de"

@@ -20,6 +20,7 @@ class Mpack < Formula
   end
 
   deprecate! date: "2024-07-21", because: :repo_removed
+  disable! date: "2025-07-26", because: :repo_removed
 
   # Fix missing return value; clang refuses to compile otherwise
   patch :p0 do

@@ -3,12 +3,11 @@ class Sacad < Formula
 
   desc "Automatic cover art downloader"
   homepage "https://github.com/desbma/sacad"
-  url "https://ghfast.top/https://github.com/desbma/sacad/archive/refs/tags/2.8.0.tar.gz"
-  sha256 "73333aabbab71a941ed393e9c497250bb9a8a06eb93a4da9afef46d2d6dd5f00"
+  url "https://files.pythonhosted.org/packages/c0/c7/6e693d5b91c0fa12123b1c135bb0bac690b000d85dee33c3fce36936c2a5/sacad-2.8.0.tar.gz"
+  sha256 "fcdc919d04aa0d9bfe2c9d5b3cedf94fd89c4363cdf4e6be9d29ab2e44229a74"
   license "MPL-2.0"
   revision 1
-
-  no_autobump! because: :requires_manual_review
+  head "https://github.com/desbma/sacad.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "48cebf9ff9a2da62bce32788aff038da02e286e588e028abf01b60d624ebc5d7"

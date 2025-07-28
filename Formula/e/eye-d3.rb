@@ -8,8 +8,6 @@ class EyeD3 < Formula
   license "GPL-3.0-or-later"
   head "https://github.com/nicfit/eyeD3.git", branch: "0.9.x"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     sha256 cellar: :any_skip_relocation, all: "4ac971a65a624577f3d7ec97d49542d39400860e967a8823b78a94afd764f33b"
   end

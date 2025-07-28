@@ -8,7 +8,7 @@ class Xdot < Formula
   license "LGPL-3.0-or-later"
   head "https://github.com/jrfonseca/xdot.py.git", branch: "master"
 
-  no_autobump! because: :requires_manual_review
+  no_autobump! because: "`update-python-resources` cannot determine dependencies"
 
   bottle do
     rebuild 1

@@ -8,8 +8,6 @@ class Honcho < Formula
   license "MIT"
   head "https://github.com/nickstenning/honcho.git", branch: "main"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, all: "9156231ae4d87e5ec1dadf38d3251849012f02358f8b7461eb165d770963ddb6"

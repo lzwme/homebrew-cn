@@ -8,8 +8,6 @@ class Fypp < Formula
   license "BSD-2-Clause"
   head "https://github.com/aradi/fypp.git", branch: "main"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     rebuild 5
     sha256 cellar: :any_skip_relocation, all: "c8c4c383f5fa91ab12d838277ef39f7b8e11807e3e328379fb52b46c9a5b73f4"

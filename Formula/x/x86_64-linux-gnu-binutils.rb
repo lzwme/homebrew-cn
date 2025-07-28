@@ -1,25 +1,23 @@
 class X8664LinuxGnuBinutils < Formula
   desc "GNU Binutils for x86_64-linux-gnu cross development"
   homepage "https://www.gnu.org/software/binutils/binutils.html"
-  url "https://ftp.gnu.org/gnu/binutils/binutils-2.44.tar.bz2"
-  mirror "https://ftpmirror.gnu.org/binutils/binutils-2.44.tar.bz2"
-  sha256 "f66390a661faa117d00fab2e79cf2dc9d097b42cc296bf3f8677d1e7b452dc3a"
+  url "https://ftp.gnu.org/gnu/binutils/binutils-2.45.tar.bz2"
+  mirror "https://ftpmirror.gnu.org/binutils/binutils-2.45.tar.bz2"
+  sha256 "1393f90db70c2ebd785fb434d6127f8888c559d5eeb9c006c354b203bab3473e"
   license "GPL-3.0-or-later"
 
   livecheck do
     formula "binutils"
   end
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
-    sha256 arm64_sequoia: "2f25854d0670553fd5b5306d53e544929d3ae89595e5b04b3784e29fb6a0facd"
-    sha256 arm64_sonoma:  "607de283c72bd6b0d7141fed0282051e244768fc907093ac5f6d4d951588dbde"
-    sha256 arm64_ventura: "3e90b1013bef3131b597fe612ea8ed2ab7617ddcb0c89dfaa632a1f9c0fecfcf"
-    sha256 sonoma:        "0332609f6a0bb2aba6f6eccb6fbddb1afbb5c3242e9cef35358a36f0b4d370e2"
-    sha256 ventura:       "675425789a28b7c3dee6165a593e22ada9bc39aad1b3f301df3cd28ab02c11d3"
-    sha256 arm64_linux:   "647cb36d34c7ab5fa8df2d5d81b5ff999986d934ed7459c6186ba60572ddec12"
-    sha256 x86_64_linux:  "7f98564cb604be445bf6d819ef1baea435e7f3d30e7db1fca6205cbe6cdb8b3a"
+    sha256 arm64_sequoia: "268ee37eba6e05f6be4f51f5e95920bf3cea41523c1cab284ab09f52ac6c3f74"
+    sha256 arm64_sonoma:  "a9b8aa0c3caa2151731989630391b53720210e91ff44bee17d5037b597e2dd6e"
+    sha256 arm64_ventura: "fa11644983812158c2e314b59cf7dec333b535e8172f0e9d917fee8ba65e46b1"
+    sha256 sonoma:        "28f9353635715f839ae5868f1dab58ff6cc374877090fe5ef3f6ce8787d12774"
+    sha256 ventura:       "d352c4509d7f504679a887f289214a13b1e22c78790d817f99a409fec24de610"
+    sha256 arm64_linux:   "046752ea89c86cf164c16c62f98c0b4c7244e41351f0bb0d968dd02e68ad87de"
+    sha256 x86_64_linux:  "cbd3db60259e28fe23d0682e5d0d6424be817a214e9b745c06676d4bfa0ca790"
   end
 
   depends_on "pkgconf" => :build

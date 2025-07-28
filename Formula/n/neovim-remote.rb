@@ -9,8 +9,6 @@ class NeovimRemote < Formula
   revision 3
   head "https://github.com/mhinz/neovim-remote.git", branch: "master"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "9edaf9f4d2feb2e6e4f18dc167944ff8823c9c4068c6e07017d8921ca160b28a"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a9b76e1afa8be0eec8c8fd7197460b4477faaf325cd2fc18c0339ee725b06a8a"

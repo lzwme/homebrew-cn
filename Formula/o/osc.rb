@@ -3,15 +3,10 @@ class Osc < Formula
 
   desc "Command-line interface to work with an Open Build Service"
   homepage "https://openbuildservice.org"
-  url "https://ghfast.top/https://github.com/openSUSE/osc/archive/refs/tags/1.18.0.tar.gz"
-  sha256 "adc29cfc399ba6c9f2b424483abd395a1173a07f8ff5cf1926e7447b2a89799b"
+  url "https://files.pythonhosted.org/packages/b2/47/fdb7188688e5d9fa521aba5f1249bfb04cbf814547b506e975486f64d04d/osc-1.18.0.tar.gz"
+  sha256 "5deed84e84ba804bfb852f26dd46d6230c519eef1d53dd4494e29d0e5db30490"
   license "GPL-2.0-or-later"
   head "https://github.com/openSUSE/osc.git", branch: "master"
-
-  livecheck do
-    url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
-  end
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "51f45147162512da2f93cc5a4812ef1cda22071ba27189e7bc6f8d8db1ae2099"

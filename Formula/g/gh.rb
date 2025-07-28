@@ -33,9 +33,14 @@ class Gh < Formula
       Utils.safe_popen_read("git", "describe", "--tags", "--dirty").chomp
     end
 
+    ldflags = %w[-s -w]
+
+    # FIXME: we shouldn't need this, but patchelf.rb does not seem to work well with the layout of Aarch64 ELF files
+    ldflags += ["-extld", ENV.cc] if OS.linux? && Hardware::CPU.arm?
+
     with_env(
       "GH_VERSION"   => gh_version,
-      "GO_LDFLAGS"   => "-s -w",
+      "GO_LDFLAGS"   => ldflags.join(" "),
       "GO_BUILDTAGS" => "updateable",
     ) do
       system "make", "bin/gh", "manpages"

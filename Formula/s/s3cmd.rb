@@ -9,8 +9,6 @@ class S3cmd < Formula
   revision 1
   head "https://github.com/s3tools/s3cmd.git", branch: "master"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "b14b322ca3b3b43c0f0ef051dee2908cf1c16482d4e7ba74a1865860c8956edd"

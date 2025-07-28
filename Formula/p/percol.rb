@@ -9,8 +9,6 @@ class Percol < Formula
   revision 4
   head "https://github.com/mooz/percol.git", branch: "master"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     rebuild 4
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "f21f389ba2e22503900f31d63739513f239347fa1a798a24a1d57812c0b0bcd9"

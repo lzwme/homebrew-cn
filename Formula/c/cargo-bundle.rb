@@ -1,19 +1,19 @@
 class CargoBundle < Formula
   desc "Wrap rust executables in OS-specific app bundles"
   homepage "https://github.com/burtonageo/cargo-bundle"
-  url "https://ghfast.top/https://github.com/burtonageo/cargo-bundle/archive/refs/tags/v0.7.0.tar.gz"
-  sha256 "0655b249c7c31047d2d0cb2e9b4923a2fb394e7a09a2300fc533de4e38d68d03"
+  url "https://ghfast.top/https://github.com/burtonageo/cargo-bundle/archive/refs/tags/v0.8.0.tar.gz"
+  sha256 "14fac75769f8e1797dfbc43c9c27eaaaccfee1008b9d80ccba53571d6a7e216a"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/burtonageo/cargo-bundle.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "49f92188a9b553281bde3587f9da999927eae7fafc9da9ec18c3f398107315f2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8377eb226753d48162ea960f7ccfbcd06df5918467a44ed66e00d6dcd99f3fc6"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "546fc0d98ab85f734b95bf2912be0045fe7bef3a277e7a9cb085383d11307863"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d30f08ea539c9b8f2456f0f76a321f3a2f1d4c3ee826ba3fa11308420f109127"
-    sha256 cellar: :any_skip_relocation, ventura:       "fb660dd523d66cf00f67c6e618aa7c68d21dd9c021e3062d2696dcb367b21733"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1a2e5e3a80eb8b3fb768725fa47d8f5640c44f9717484b9e4de82ea365bf5623"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0b8b63d05107a7d76102fd5184e579b431056e5ba56631ca7c96d8be66829175"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8bf9ca36ac3ef881e11a03840554826dcaa0a99e6f7e47036203216b5e5081ce"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ced991acef5a37431961520411fd8d4f87507e0d7d633c1e42470937785f782c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "dc6a9631c1ea928a79cad86aea6b0b9782e2366844113eda9f53fddee2a77986"
+    sha256 cellar: :any_skip_relocation, sonoma:        "053ac453fe329158b35d5ab40d18ecdf06ddf68147ac9d725bfa34ccfc49a0a0"
+    sha256 cellar: :any_skip_relocation, ventura:       "c8f3dba52625aecdcc6d42700430c1b5d0aa176fff9ae34c21092ed10f583abf"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "12cc559df1d00dce32b03f09df473cff46e129a089193631c159c489e4b7ffcf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8354f3f5fdbb63636f1cfe5de4b258a5a149a642dcdb54a485f7b5db1fa8685e"
   end
 
   depends_on "pkgconf" => :build

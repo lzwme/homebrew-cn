@@ -8,8 +8,6 @@ class CfnFlip < Formula
   license "Apache-2.0"
   revision 2
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     rebuild 3
     sha256 cellar: :any,                 arm64_sequoia: "5442b8b312ae32f1f553fb978ccf09c63a8faec827d97d1c0ee6c25e6b8bec69"

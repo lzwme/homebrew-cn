@@ -8,8 +8,6 @@ class Trzsz < Formula
   license "MIT"
   revision 1
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "2ae631d662b7807bc3be9aa38befc2e2659e9ce869945a911572c409329a93c0"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "40a22d7d73f5af874c041823e8e26f1ddbd2e52f18067efc9fe1284af2b972f0"

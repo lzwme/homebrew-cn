@@ -8,8 +8,6 @@ class Dotdrop < Formula
   license "GPL-3.0-or-later"
   revision 4
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "599f338d0d361a3062194e842c1c361fc7c9424379a4bd8b515ba86a918046c7"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "25a0505ab974e9bb7239bd52903a3b1c5bfe4f3280ac1427707491b83798e694"

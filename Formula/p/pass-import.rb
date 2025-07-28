@@ -9,8 +9,6 @@ class PassImport < Formula
   revision 5
   head "https://github.com/roddhjav/pass-import.git", branch: "master"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "59113cfc585169c49622aff41d2e9d816d3e44df9978d5b3c80d469abf6e879d"
     sha256 cellar: :any,                 arm64_sonoma:  "434d68c3443172d74cba7292657dc1e9e9a03c1ce1c781cb7002cc34d701d8ff"

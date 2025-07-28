@@ -4,6 +4,7 @@ class Pdal < Formula
   url "https://ghfast.top/https://github.com/PDAL/PDAL/releases/download/2.9.0/PDAL-2.9.0-src.tar.bz2"
   sha256 "f0be2f6575021d0c4751d5babd4c1096d4e5934f86f8461914e9f9c6dc63567d"
   license "BSD-3-Clause"
+  revision 1
   head "https://github.com/PDAL/PDAL.git", branch: "master"
 
   livecheck do
@@ -12,13 +13,13 @@ class Pdal < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "df3625f29b78818e5612df608c7285c427d61a4f958a1bbc12f2c2acd6102a7d"
-    sha256 cellar: :any,                 arm64_sonoma:  "0deebb7f4aed87f93e8a8312bfbb7b345ddaab7b38976f977cdb9cfd5d144265"
-    sha256 cellar: :any,                 arm64_ventura: "c16bb2d479d3012b3e68089d525679da0c033282cd4b8420f698e4e97c414c2e"
-    sha256 cellar: :any,                 sonoma:        "7a67735f291181d21846502f6e8fa6d132b148ec524a78445f24324ce6ed8535"
-    sha256 cellar: :any,                 ventura:       "a8c294bf0ac08b50c658d4a293ffc19960da1e17b360184c435607cf2e80a37f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5a3edab3708912af7677213c85466ef1ba09e2cf01b527db65e9dc241e0f2383"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "135d54d4953876f23dcfa6dd5ce606cc29ffc8711ee549305aa1170bffcecfe2"
+    sha256 cellar: :any,                 arm64_sequoia: "f633f676ee645772d3e537af008e22097b913bdf078f2bf307c4d7f276eb3daf"
+    sha256 cellar: :any,                 arm64_sonoma:  "fec1430ce746325d44ca434eae08ddfc4d1dcaaad089fc53a001ef073013eee7"
+    sha256 cellar: :any,                 arm64_ventura: "cb0ea9b7e3a83f9455d7204123b54fda9c2309587607735b1388ebb2135faa1a"
+    sha256 cellar: :any,                 sonoma:        "960331dd9ba8505bc26c3e6833ddfd544de311f2bbb5e33a8c9be525d19eb550"
+    sha256 cellar: :any,                 ventura:       "4dbcd46cc0528ebee4b0c4cd73f84d5b7496869f9cec9ffe58e863ae9861afe9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8a99fb356056c81a8fd9f802a59a76951e64204fae1c59b33ad28f7884bd9597"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "baefbdbb742d9f5873594f3540a29d4777e1143d83278a299daa6744289cf3a4"
   end
 
   depends_on "cmake" => :build
@@ -45,6 +46,18 @@ class Pdal < Formula
 
   on_linux do
     depends_on "libunwind"
+  end
+
+  # Two patches below are related to apache-arrow 21.0.0 support
+  # See https://github.com/PDAL/PDAL/pull/4773 and https://github.com/PDAL/PDAL/pull/4777
+  patch do
+    url "https://github.com/PDAL/PDAL/commit/8deb4e577ab6a73e74cd720256e1d574509ea3e9.patch?full_index=1"
+    sha256 "93c4682fa8b1e5f62665967f7917ff97e1285ad4b9b4c227d3b27d0694ae9404"
+  end
+
+  patch do
+    url "https://github.com/PDAL/PDAL/commit/ea822192f6054d6d0b1c68265a185fe4f292194f.patch?full_index=1"
+    sha256 "02258e334a97fe95f4e5942a39734be9e574443e303105ee95aef864717a9dc3"
   end
 
   def install

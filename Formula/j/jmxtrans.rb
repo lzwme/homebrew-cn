@@ -18,6 +18,7 @@ class Jmxtrans < Formula
 
   # no new commits since March 31 2021, lots of bug reports in https://github.com/jmxtrans/jmxtrans/issues
   deprecate! date: "2024-07-26", because: :unmaintained
+  disable! date: "2025-07-26", because: :unmaintained
 
   depends_on "maven" => :build
   depends_on arch: :x86_64 # openjdk@8 is not supported on ARM

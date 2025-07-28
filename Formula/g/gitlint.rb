@@ -7,8 +7,6 @@ class Gitlint < Formula
   sha256 "7bf977b03ff581624a9e03f65ebb8502cc12dfaa3e92d23e8b2b54bbdaa29992"
   license "MIT"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     rebuild 6
     sha256 cellar: :any_skip_relocation, all: "36439a03cc83049977c6ff628f75a76a33dd727ebbfc7f824f46329f6f880440"

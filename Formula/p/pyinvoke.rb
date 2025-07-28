@@ -9,8 +9,6 @@ class Pyinvoke < Formula
   revision 2
   head "https://github.com/pyinvoke/invoke.git", branch: "main"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     rebuild 2
     sha256 cellar: :any_skip_relocation, all: "0244d25e686d6574fcaf35d14725a415c00b33dd0b2c697fc66a78160d9227a1"

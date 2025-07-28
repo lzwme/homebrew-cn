@@ -3,19 +3,19 @@ class Wtfis < Formula
 
   desc "Passive hostname, domain, and IP lookup tool"
   homepage "https://github.com/pirxthepilot/wtfis"
-  url "https://files.pythonhosted.org/packages/73/3f/d415009b6ca935d1e5cb5b864fb5d11c052564e32cb109d2662557be2f37/wtfis-0.12.0.tar.gz"
-  sha256 "1aa26783db9cb05b6ee5e932c9bc4b302c82462452d9e90c3d1d7b2a353b5922"
+  url "https://files.pythonhosted.org/packages/52/ca/d0d14844dbb54444318843b8e346ba3b8aa3fc6f8d2f4fcd474e7d5f3291/wtfis-0.13.0.tar.gz"
+  sha256 "44169d937373e8f34d919c86c3ad71c1fc08b5e06a02a853f6fe5990aba99cff"
   license "MIT"
   head "https://github.com/pirxthepilot/wtfis.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "ef5e3acf6b9f98ac04ff10186cbd6e090c5c7a6ee601126038bdfcdd6052b5d6"
-    sha256 cellar: :any,                 arm64_sonoma:  "5ecb46b8e93c7b109d2899030ca689634009f4e5e33d2239186fa2ec015d86ef"
-    sha256 cellar: :any,                 arm64_ventura: "2ef804c0ccb07e77331b488e9aeb58a617bf0ece94bd47f6253b18a9eba742c4"
-    sha256 cellar: :any,                 sonoma:        "09546b0cf5caf60eaa3aa31e4a93c88d151b007a537bf6e0ce012e557be40c70"
-    sha256 cellar: :any,                 ventura:       "3c913f82584c16d55be3dbad60058e47c8d3b2ca4a76cdd24d21a5731ca8e720"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "763c5a1591edec334563e636df7bbaab47e4a8deeeeb756dc1582f1575b3865b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "848ca81b6edad16a8c0616e5bfd4739ac7b8553c030b6aa5709dbf7379835aa3"
+    sha256 cellar: :any,                 arm64_sequoia: "0e225222895d41332b21c09341228a8332ac2ebd0f1f1f8ffa9c01b2c50aab6d"
+    sha256 cellar: :any,                 arm64_sonoma:  "11f3f7954800bfd5a41a5173cd6eb05fe5f8a5c13141180da9a9552b4c248d27"
+    sha256 cellar: :any,                 arm64_ventura: "7219d99ab9d57e3b0315d31445ff818ff94fbc93997a02a95b80d4c9f4dd06bc"
+    sha256 cellar: :any,                 sonoma:        "b47b1cbb7493864415c621a981af4ed3cab9ecf66f78df5fe50ea33720f5f7d4"
+    sha256 cellar: :any,                 ventura:       "11e1d7b636f66a21b0f2a0fed783ef4fd88897a3ab880039d52315ada3778cd2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "782c7bd44ba228c5e8a95ae531783848af1dca861a099d62eb8c190cae2ef480"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c8b551c9ec01ed02343ef227d2f69f434cb439a2cd664718e21497afdccbb695"
   end
 
   depends_on "rust" => :build
@@ -98,8 +98,8 @@ class Wtfis < Formula
   end
 
   resource "rich" do
-    url "https://files.pythonhosted.org/packages/a1/53/830aa4c3066a8ab0ae9a9955976fb770fe9c6102117c8ec4ab3ea62d89e8/rich-14.0.0.tar.gz"
-    sha256 "82f1bc23a6a21ebca4ae0c45af9bdbc492ed20231dcb63f297d6d1021a9d5725"
+    url "https://files.pythonhosted.org/packages/fe/75/af448d8e52bf1d8fa6a9d089ca6c07ff4453d86c65c145d0a300bb073b9b/rich-14.1.0.tar.gz"
+    sha256 "e497a48b844b0320d45007cdebfeaeed8db2a4f4bcf49f15e455cfc4af11eaa8"
   end
 
   resource "shodan" do
