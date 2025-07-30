@@ -3,19 +3,18 @@ class B2Tools < Formula
 
   desc "B2 Cloud Storage Command-Line Tools"
   homepage "https://github.com/Backblaze/B2_Command_Line_Tool"
-  url "https://files.pythonhosted.org/packages/1d/b7/0af30c4a6c0344e897a153f4f0022b041bf803562d047d6f0140940c2e8e/b2-4.3.3.tar.gz"
-  sha256 "a66f78e91f8ac36721093b751d09d3d228957473ee3df50b5138e72290e32646"
+  url "https://files.pythonhosted.org/packages/91/4e/fab18d15499c7899cf0b75eec031666a7fefd5569d1a91f9af07fd9204f9/b2-4.4.0.tar.gz"
+  sha256 "8da1dfd572d0e5d1e72769e3095c4ce9f88c5d6eb4490b0d62e3041b2ae7008b"
   license "MIT"
-  revision 2
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1464b66fe0af4ffdb4a8dd113617df64f7eca9516d1ef69f1c8c7e414b16c17c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1464b66fe0af4ffdb4a8dd113617df64f7eca9516d1ef69f1c8c7e414b16c17c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "1464b66fe0af4ffdb4a8dd113617df64f7eca9516d1ef69f1c8c7e414b16c17c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "83b346f99f414a187b826e8eb769c0ca94c087bc1c99dd8d86db84a1775a5890"
-    sha256 cellar: :any_skip_relocation, ventura:       "83b346f99f414a187b826e8eb769c0ca94c087bc1c99dd8d86db84a1775a5890"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "976ca7a59472b971be687e68fa57edd1f59e155776f4f385da3363c04e7ae2cb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "976ca7a59472b971be687e68fa57edd1f59e155776f4f385da3363c04e7ae2cb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "857b582aecbedefd166648cf5d6165e087780c5b6e4404288432e725d7ea6b16"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "857b582aecbedefd166648cf5d6165e087780c5b6e4404288432e725d7ea6b16"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "857b582aecbedefd166648cf5d6165e087780c5b6e4404288432e725d7ea6b16"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d384b1d41e6c169c1902166fa346d9bf07fa98410d8ca8cc70e4f5fc5051e817"
+    sha256 cellar: :any_skip_relocation, ventura:       "d384b1d41e6c169c1902166fa346d9bf07fa98410d8ca8cc70e4f5fc5051e817"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8721c0d9b144eaf44f09aa2e2799718b9c2f9c8ea9a94dc250f8b7666c5f3752"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8721c0d9b144eaf44f09aa2e2799718b9c2f9c8ea9a94dc250f8b7666c5f3752"
   end
 
   depends_on "certifi"
@@ -104,8 +103,8 @@ class B2Tools < Formula
   end
 
   resource "types-python-dateutil" do
-    url "https://files.pythonhosted.org/packages/ef/88/d65ed807393285204ab6e2801e5d11fbbea811adcaa979a2ed3b67a5ef41/types_python_dateutil-2.9.0.20250516.tar.gz"
-    sha256 "13e80d6c9c47df23ad773d54b2826bd52dbbb41be87c3f339381c1700ad21ee5"
+    url "https://files.pythonhosted.org/packages/c9/95/6bdde7607da2e1e99ec1c1672a759d42f26644bbacf939916e086db34870/types_python_dateutil-2.9.0.20250708.tar.gz"
+    sha256 "ccdbd75dab2d6c9696c350579f34cffe2c281e4c5f27a585b2a2438dd1d5c8ab"
   end
 
   resource "urllib3" do

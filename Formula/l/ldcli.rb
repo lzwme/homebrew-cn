@@ -1,19 +1,19 @@
 class Ldcli < Formula
   desc "CLI for managing LaunchDarkly feature flags"
   homepage "https://launchdarkly.com/docs/home/getting-started/ldcli"
-  url "https://ghfast.top/https://github.com/launchdarkly/ldcli/archive/refs/tags/v1.16.0.tar.gz"
-  sha256 "dd16ac7540c4a36a408080e41057f35837b2f9a0a0de65ff235e0fed592e9600"
+  url "https://ghfast.top/https://github.com/launchdarkly/ldcli/archive/refs/tags/v1.16.2.tar.gz"
+  sha256 "70f9bfb1465c91c920c60dd6673df3668850a715a2442b428d49153ad585e1a4"
   license "Apache-2.0"
   head "https://github.com/launchdarkly/ldcli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cef33434c291457c84d533cf6221d4683b540eecda747a7c3a61d7624d03b776"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a782bd186a678f2609b8b73250b8c51894d495fab47449825f57864b826b3b66"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "b24f863bd46e72da372f9f5157456c75bbde1e7022dbb8b52d5b424588ca689a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "18f8a1f6dbcc3349911fdd3a53d591b052e9ff634813848b642fb8ec1e31c8f6"
-    sha256 cellar: :any_skip_relocation, ventura:       "bfbe68ccd97df5d74197968ff44f2cee09c09cf0d2345ec106aaaceda9563b25"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "674661dd240bd83d67cd5ceb35e31cc7cbc05188835bfba420cbe9ca5084b4f8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "22fbbe336e9f63e877a58d25cb73af5ac5095e2b9c5674801bfb9506201e4bc4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1d49600a97d221a34afb959a9113d93b31736c621b036c9df2a24f170e153e86"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0478273db0abd362c83734b0cfdb15449ff6dfe79d68b7178d6942d80c1145d9"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "01ede8a5e4a7107d54c877934ff760975759e1b2a536d947b11f55f35fdfbbfb"
+    sha256 cellar: :any_skip_relocation, sonoma:        "99d3e00c48bd4c3520d25c01c2e29034665a1933f37fb87d657afe7f331d5939"
+    sha256 cellar: :any_skip_relocation, ventura:       "0966d3b6879687ea7fdb1513dd840678ce72a7378e98972fe537bc13ac8a1c4a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a58b26c91270d86ba144eff228d281ab4fb8cc3bed9cd8e34a39207cec9c4703"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dc6969c9d341be1e97a2a2207e1e5c1657978b5ed35b5b87cc31647e4ded370d"
   end
 
   depends_on "go" => :build
@@ -31,7 +31,7 @@ class Ldcli < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/ldcli --version")
 
-    assert_match "Invalid account ID header",
-      shell_output("#{bin}/ldcli flags list --access-token=Homebrew --project=Homebrew 2>&1")
+    output = shell_output("#{bin}/ldcli flags list --access-token=Homebrew --project=Homebrew 2>&1", 1)
+    assert_match "Invalid account ID header", output
   end
 end

@@ -3,19 +3,19 @@ class MagicWormhole < Formula
 
   desc "Securely transfers data between computers"
   homepage "https://github.com/magic-wormhole/magic-wormhole"
-  url "https://files.pythonhosted.org/packages/e0/5b/4aff155b8e8ead4bc7c6aa3d1c19dc75aac2315e0c9b12f4e2f246b40141/magic_wormhole-0.19.2.tar.gz"
-  sha256 "b2b4a78acf09ff4cfc503a238f674394a5e735fa08dcd54519243ffc67f97c71"
+  url "https://files.pythonhosted.org/packages/f4/f8/d758bd83184c31cf33e2b1c68f7edf2c1f0a2f83d8c9f475ef9d28466939/magic_wormhole-0.20.0.tar.gz"
+  sha256 "ed12b2b006a9a45200f6d785892e62864e8da865d4aa6aaf03c48dc5bc0fa11b"
   license "MIT"
   head "https://github.com/magic-wormhole/magic-wormhole.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "4ca17928ca53efcb89ea97cc17c9690ae50450a4aedec412b1230ae2241b03ab"
-    sha256 cellar: :any,                 arm64_sonoma:  "26c4d67dd7d86467616706e985fbb585d13a99df79090eecf537d5f7ecc6217d"
-    sha256 cellar: :any,                 arm64_ventura: "f107a8515b4a8eb528046cb583a0153e7ec4c222041787308a3c5c2b9887e8b4"
-    sha256 cellar: :any,                 sonoma:        "1a5d1f7f5c29879d15e39d12391e22d41a54673abee55259c579ffa31c6b9896"
-    sha256 cellar: :any,                 ventura:       "2a3bb6d91f7b2d28d0cb66987cbf38f402c2ff99adcdbba256a731bf396cdded"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ec44fddacc00c2f8adff140007312a22ba56a47d1753d13133cee64ba4c7bd15"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5dade9c7f089bf1be59356286fbed3f874b26e299857d2edcfd81562086d75a3"
+    sha256 cellar: :any,                 arm64_sequoia: "34bf015e8a68777bed64baa0779d760ba0206f9d7bc71f5d6fd1cc17587bbbfe"
+    sha256 cellar: :any,                 arm64_sonoma:  "2f151183354370e3573d4dd427f94a50fbd6e49d3d0ce1b572418f2dd743663a"
+    sha256 cellar: :any,                 arm64_ventura: "fa4f03b1d62897191fbc8e6080e5bb2efa19df5d1abcb826386370d77bb67755"
+    sha256 cellar: :any,                 sonoma:        "63ebc94c4da2b7cdebd17db509a3393d87580bd2162c4000aa3d7847231d067b"
+    sha256 cellar: :any,                 ventura:       "c22e09cf9bf86e3c99dce5610d4ab3ad7df04b3c1555ea680f07d16df9abcaa6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "280ca1e180388ba1a77e713efa0f7df74126ab339d7569d225331983f7ad55ff"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2e87c2cae6024ee69355acdc05d260fb32dd748c8ddd0b400ebe58a3f2bac289"
   end
 
   depends_on "cryptography"
@@ -120,13 +120,13 @@ class MagicWormhole < Formula
   end
 
   resource "twisted" do
-    url "https://files.pythonhosted.org/packages/77/1c/e07af0df31229250ab58a943077e4adbd5e227d9f2ac826920416b3e5fa2/twisted-24.11.0.tar.gz"
-    sha256 "695d0556d5ec579dcc464d2856b634880ed1319f45b10d19043f2b57eb0115b5"
+    url "https://files.pythonhosted.org/packages/13/0f/82716ed849bf7ea4984c21385597c949944f0f9b428b5710f79d0afc084d/twisted-25.5.0.tar.gz"
+    sha256 "1deb272358cb6be1e3e8fc6f9c8b36f78eb0fa7c2233d2dbe11ec6fee04ea316"
   end
 
   resource "txaio" do
-    url "https://files.pythonhosted.org/packages/51/91/bc9fd5aa84703f874dea27313b11fde505d343f3ef3ad702bddbe20bfd6e/txaio-23.1.1.tar.gz"
-    sha256 "f9a9216e976e5e3246dfd112ad7ad55ca915606b60b84a757ac769bd404ff704"
+    url "https://files.pythonhosted.org/packages/10/21/f1d3305ae1d3ca05aa71d509f02f4db11c1357001f7e31f9713e610efc5b/txaio-25.6.1.tar.gz"
+    sha256 "d8c03dca823515c9bca920df33504923ae54f2dabf476cc5a9ed5cc1691ed687"
   end
 
   resource "txtorcon" do
@@ -135,8 +135,8 @@ class MagicWormhole < Formula
   end
 
   resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/f6/37/23083fcd6e35492953e8d2aaaa68b860eb422b34627b13f2ce3eb6106061/typing_extensions-4.13.2.tar.gz"
-    sha256 "e6c81219bd689f51865d9e372991c540bda33a0379d5573cddb9a3a23f7caaef"
+    url "https://files.pythonhosted.org/packages/98/5a/da40306b885cc8c09109dc2e1abd358d5684b1425678151cdaed4731c822/typing_extensions-4.14.1.tar.gz"
+    sha256 "38b39f4aeeab64884ce9f74c94263ef78f3c22467c8724005483154c26648d36"
   end
 
   resource "zipstream-ng" do

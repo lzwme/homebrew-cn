@@ -7,11 +7,14 @@ class Vineyard < Formula
   revision 1
 
   bottle do
-    sha256                               arm64_sequoia: "058562c2973821d9f6120940be9a4322d370b8359ad84b0c3c96cdf057b40306"
-    sha256                               arm64_sonoma:  "3010739676cfd062e1348fb1a26066c7c2f73b1807d4400dca99dd9dc14aa02a"
-    sha256                               arm64_ventura: "1ee44717029521b869aab1dd1ce06a60d66113660640dc427aa1e395b73fcb4d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "698bde95c541b0e1032f47cfa3c909aa94971e2bea2621777eaa6098b4111072"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "900e6ef052ecac475815adaca73c654d02064b16c05e8e2cfb7abbdbc8ca5196"
+    rebuild 1
+    sha256                               arm64_sequoia: "2e2a8b3c0f90b05b531b357b9da1061516dd3ba6915f0680fc263d7b03f23a2d"
+    sha256                               arm64_sonoma:  "ba79f2038774c01fab222ed48ad612d63f84576cb73cd8dcf98bac1fc0c1a774"
+    sha256                               arm64_ventura: "79c267dcc2351e82975c128655dfaf51837cbba3e58e83f3704ed247c9b2751e"
+    sha256                               sonoma:        "dd6db36a0a41a9a09d9a06c4478ca7cdbfc92289a104b30eef548c4264faf75e"
+    sha256                               ventura:       "f65107ae26822b775805252e697d8f440c2f88bf214638f3423e64305dcdf905"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fcc0b596e56cfc398d706ad00be490490ed117d238df83a5ca6af8dba213e7f9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "369ebc7d9049af8247bcba826f2810d3d8a2e1f639431b93dd681211df330743"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -142,17 +145,17 @@ class Vineyard < Formula
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"
 
+    vineyard_sock = testpath/"vineyard.sock"
     # prepare vineyardd
     vineyardd_pid = spawn bin/"vineyardd", "--norpc",
                                            "--meta=local",
-                                           "--socket=#{testpath}/vineyard.sock"
+                                           "--socket=#{vineyard_sock}"
 
     # sleep to let vineyardd get its wits about it
-    sleep 10
-    sleep 10 if OS.mac? && Hardware::CPU.intel?
+    sleep 10 until vineyard_sock.exist? && vineyard_sock.socket?
 
     assert_equal("vineyard instance is: 0\n",
-                 shell_output("#{testpath}/build/vineyard-test #{testpath}/vineyard.sock"))
+                 shell_output("#{testpath}/build/vineyard-test #{vineyard_sock}"))
   ensure
     # clean up the vineyardd process before we leave
     Process.kill("HUP", vineyardd_pid)

@@ -25,9 +25,7 @@ class Eatmemory < Formula
 
   test do
     # test version match
-    out = shell_output "#{bin}/eatmemory -?"
-    version_escaped = version.to_s.gsub(".", '\.')
-    assert_match %r{^eatmemory #{version_escaped} - https://github.com/julman99/eatmemory\n.*}, out
+    assert_match "eatmemory #{version}", shell_output("#{bin}/eatmemory --help")
 
     # test for expected output
     out = shell_output "#{bin}/eatmemory -t 0 10M"

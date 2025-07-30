@@ -6,6 +6,7 @@ class Notmuch < Formula
   url "https://notmuchmail.org/releases/notmuch-0.39.tar.xz"
   sha256 "b88bb02a76c46bad8d313fd2bb4f8e39298b51f66fcbeb304d9f80c3eef704e3"
   license "GPL-3.0-or-later"
+  revision 1
   head "https://git.notmuchmail.org/git/notmuch", using: :git, branch: "master"
 
   livecheck do
@@ -16,13 +17,13 @@ class Notmuch < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "d82ad567f35dc86cfe9c3238f211849ec7ebd6a64d39728d1be7979885c19a2d"
-    sha256 cellar: :any,                 arm64_sonoma:  "ff9e440133a39ffb3a01054b5762e0d5ed7ed14b7aa66db9dc3d586540fc0918"
-    sha256 cellar: :any,                 arm64_ventura: "e384a4f762886b8d5e59f6e752574085d2af177c370caab601668eda1725549f"
-    sha256 cellar: :any,                 sonoma:        "f2234ee4ad5abe3603aafdd2a79f838c409b5385b4e57cfc9e9e4a794d87d4bc"
-    sha256 cellar: :any,                 ventura:       "66dc7a1087e43c91d4a4173a1e8f1f84ec30c9ce852be303440d5f8fc735179d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8ba411d8183c7e59331dc5bb6df073d8b2b2cbf17ca94c5d61a382a9a2400816"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "66b8788cc35e7be17f259b58f807332e5a18bf444578a33e54b3e4f9162f058f"
+    sha256 cellar: :any,                 arm64_sequoia: "5d75485c3ae6dc4609f63d37a5f577325a6477f37bc65cb2be59603e85928692"
+    sha256 cellar: :any,                 arm64_sonoma:  "54e6b5061116ec3bb5a5606bd278c5fe8f7372cee2bd17b5f7004cec9e7ce647"
+    sha256 cellar: :any,                 arm64_ventura: "cf06663f10673cb44cd90f3ae233649e3e463b60a34f5772467fe274e9354267"
+    sha256 cellar: :any,                 sonoma:        "0dbf4f7144c7e62d4713e1aebe0cbd1e1295231de1d3862196414ddc9c3ef68d"
+    sha256 cellar: :any,                 ventura:       "6cff7983d7315e87ae15ae8c827fe616f4d77b6a1ba4850ff9e34424232ac921"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b0b49de7317e22ca35e63f88e44ee3f29f476e0d04cd7586427563da89bb3ed1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "795d1a206737d35ead3aefb0968b085d770073bf6fd6edd1ca5ea2b56920ae1e"
   end
 
   depends_on "doxygen" => :build

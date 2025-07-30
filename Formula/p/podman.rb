@@ -4,6 +4,7 @@ class Podman < Formula
   url "https://ghfast.top/https://github.com/containers/podman/archive/refs/tags/v5.5.2.tar.gz"
   sha256 "a2dbd8280cd92d4741f32f5a99d385d7fc6f0dd36bc9cc90a7273767e26d43d9"
   license all_of: ["Apache-2.0", "GPL-3.0-or-later"]
+  revision 1
   head "https://github.com/containers/podman.git", branch: "main"
 
   # There can be a notable gap between when a version is tagged and a
@@ -17,12 +18,12 @@ class Podman < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9134657b7ca8816cbc75356d431a0e6b1b5d6d27a628143b363b1bb763b2d811"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cb6921023bc6a7677d0d1a260e58d92cd812d327fba47cec7e33c258a162a963"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "4850203069b09650ea9fd4030a4783fdcda3cb6874327dd25d88bd804e643f96"
-    sha256 cellar: :any_skip_relocation, sonoma:        "cfe5007950bf02bc1725c496938b0a80f8013018ae762a5dba7a4cd399927669"
-    sha256 cellar: :any_skip_relocation, ventura:       "9240a6875577f4ca4fecd0335f49fe94e2f9985e2c27b39cc4d168a3e602d563"
-    sha256                               x86_64_linux:  "2411047a8529287a650eb770b2030049a68ee039dd9ea032811254a13556f2b9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cceba5d35b1ee39f7ef3eae14d2bf756dc1108f54fefb83d0db9c3ce97b9e181"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "744eddc6123a736a17a959c684b8f2fb18f329658c2e0088d37f2d0266b23112"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "a70da7e6a7b3217d4677d3108c2a74323678ddc4e376aa74b8ac5ccbe1bec763"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4cc393634cceec6d5afd9faa7e5c6920555e2d1987225d72926947da75b894f7"
+    sha256 cellar: :any_skip_relocation, ventura:       "1de74f82702fa70210260556759bde1de8fbd96ba0d2c337b2b96c09778489ed"
+    sha256                               x86_64_linux:  "4de180d26bcb960c073840bc9f335b3a62824ef5778cc4816b72dc6847dd6209"
   end
 
   depends_on "go" => :build

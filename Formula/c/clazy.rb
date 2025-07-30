@@ -12,18 +12,19 @@ class Clazy < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "03d60e08e418660c7286774c37b3bd17b730ddda664361fe419c82162b66c1e7"
-    sha256 cellar: :any,                 arm64_sonoma:  "9d2d6f1982fc14742465c4987b402c8e691d60f84de7fe7dd86e10e7549019d1"
-    sha256 cellar: :any,                 arm64_ventura: "cd2063fd4fe49132e6c30ee4c0ac300bb1a6241524207f9a88627ed91f18351b"
-    sha256 cellar: :any,                 sonoma:        "23bd208dc64c9845af740359e2f6872d7c2e00a577fda9f33bab3c9b268cfc53"
-    sha256 cellar: :any,                 ventura:       "f2b30c57b2197c7bce742653499cc63f655809deb8debc231db200b2569f900b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c88959211e64d00f133d5bfa4f4889c63a04aebc646f5d6fc8301677c6c8abfc"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "8e82a24432fe70dbdc57d15a6e000f9965862570357db03f6fa7f24b8b179b9b"
+    sha256 cellar: :any,                 arm64_sonoma:  "e9615987f29c4795cbe367210445d23ac6288a9162f2b14fa16011cf92ca3342"
+    sha256 cellar: :any,                 arm64_ventura: "71125eaff0f77b0ff435fb1a994743c557fb39c411297437f765ddeddf1b8a7b"
+    sha256 cellar: :any,                 sonoma:        "3f5a1d5289b111d1c313034902c77bb56373fac7d4eb93dea8a55c691496c3e4"
+    sha256 cellar: :any,                 ventura:       "1a901cc6580997ddcd7f6d4f5f963c73875edc2dca0b911939b824ccb98731a7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "10e829a29aa7e265e7e1f482a86cef69cb3a45190326475390f00b323af5217b"
   end
 
   depends_on "cmake" => [:build, :test]
   depends_on "qt" => :test
   depends_on "coreutils"
-  depends_on "llvm@19" # LLVM 20 issue: https://invent.kde.org/sdk/clazy/-/issues/27
+  depends_on "llvm"
 
   uses_from_macos "libxml2"
   uses_from_macos "ncurses"

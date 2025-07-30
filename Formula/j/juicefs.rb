@@ -2,7 +2,7 @@ class Juicefs < Formula
   desc "Cloud-based, distributed POSIX file system built on top of Redis and S3"
   homepage "https://juicefs.com"
   url "https://ghfast.top/https://github.com/juicedata/juicefs/archive/refs/tags/v1.3.0.tar.gz"
-  sha256 "df779a718a608d47fdf1f3cd44c314d1cbc8fac43c4f862d2d40e768fecf0bb0"
+  sha256 "c2d098797bb9bc0bcb75ac1461cd1c06a8306dd3375a6d221f17c2eed091fee6"
   license "Apache-2.0"
   head "https://github.com/juicedata/juicefs.git", branch: "main"
 
@@ -12,13 +12,14 @@ class Juicefs < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2493bb7dbefe74ba5cc794be7b1be4e9f852b1d0b88d9172d0eb1a21f7e12c9e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a85e4f35a8d7717a777dd2c5f7b1701defdfb85cc2c90a89a3cd2ce936c08888"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "3178719ffb87b807c54201bb4f36c585decbf360a285054078364574a3da2da2"
-    sha256 cellar: :any_skip_relocation, sonoma:        "bdce438e5eebd604592b2f0dec06c1d41a95e8bcec7dd84674b96b258378b549"
-    sha256 cellar: :any_skip_relocation, ventura:       "0e12d92f0b2715b3da58aeab1eb0a81c0e66b96df58477c97fed1b1a3aefe667"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6896e57ee0d71a126e081c76466e2467bc96901c83002c05bb0e034459940b04"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "883d315f38a607476056341cb45c97c0f6f081dd3a447708c104ffc1ffd10f23"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a85d6e3e393c2a94d1daea94c848764aae4251441cdcfdb8b119b70231fc8f5b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "aec5445b9982dc0262b0db8dc2969827092711e47a8afa825767b693388cbff7"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "006ccb5b34cbf4435ebe004d1cc7d862f86b29456f615a9b6b74c101115ea80d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f47708561eee3ff825e19eaf696d29c47a29b5bfe2288f09d3a4ed2f48a57281"
+    sha256 cellar: :any_skip_relocation, ventura:       "41f32f57eab115f43d3c4bd31b7f051e3b2574f9d9dd07d8a8338eeae6b34a7d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9752a4c492028c7b72fd115e6d8d9d710ce2ff44d85cd072b5f0de9197b85230"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "43fc94fc1cb21d4382e90bddc14dedf71f80507dd767f5c9fe35f644be7128bb"
   end
 
   depends_on "go" => :build

@@ -4,16 +4,17 @@ class Neomutt < Formula
   url "https://ghfast.top/https://github.com/neomutt/neomutt/archive/refs/tags/20250510.tar.gz"
   sha256 "12d225e270d8e16cda41d855880b9d938750a4f1d647f55c6353337d32ffd653"
   license "GPL-2.0-or-later"
+  revision 1
   head "https://github.com/neomutt/neomutt.git", branch: "main"
 
   bottle do
-    sha256 arm64_sequoia: "aeeccca4cdcc5bcfdd187ff32ec295746bd0ff57a92b108a67609917ca6ca96e"
-    sha256 arm64_sonoma:  "e7494884f1e9a9289e3993fd0fca9ae0f310d1d30b3886cc95abe0a58bbf18cd"
-    sha256 arm64_ventura: "2b2fd04f1c68cb95cca733c59c6892b7e9a91e33583844bcd36327c23ae08ddf"
-    sha256 sonoma:        "fe987a4cb6230c846a72b1eb4a7112bbe6699400f349ca3152811a5d7b941999"
-    sha256 ventura:       "695b0073f3d0b12d395f8b4c82606d941879ef26c091ce3c29f358a26c1da1bf"
-    sha256 arm64_linux:   "6b80fca262c7f3614cb79765ca84c2dc49b0b00ac42262f387939bb5cfad4736"
-    sha256 x86_64_linux:  "a04f64ef9d7de760165d6816de3256163f3473d26e4b25967e09a1d1e6f7320f"
+    sha256 arm64_sequoia: "4760321fe8e61cdbc564c3d383ee48e7c63109e9e9fa7fdbe3672631123db0b9"
+    sha256 arm64_sonoma:  "525364112b08a77bdf4b3a8b1cb7778c96ee1769be95d337c24bce7c5b703ebb"
+    sha256 arm64_ventura: "434c5655c1f147070de38a082d91b72b629cc230451b05d41774aed04f1265d2"
+    sha256 sonoma:        "ce4502877c4867eee8b2bf0a0e1c9daf44c9b266fa2997ec883a26baef19eaec"
+    sha256 ventura:       "aea560a194d7d540c6ed953af77437dca80963ca7cfb3fec212f1ecd31db75c8"
+    sha256 arm64_linux:   "b9a2df0e6f3dee00944d02949a312c91f26b990c34a9cc04154391a2943d84e6"
+    sha256 x86_64_linux:  "ce77dcf1bafb0d760900c799ef73636df2c2ef3dd622f63d4a1b1de53527d40f"
   end
 
   depends_on "docbook-xsl" => :build

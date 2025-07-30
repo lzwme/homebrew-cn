@@ -3,17 +3,10 @@ class Ratarmount < Formula
 
   desc "Mount and efficiently access archives as filesystems"
   homepage "https://github.com/mxmlnkn/ratarmount"
-  url "https://ghfast.top/https://github.com/mxmlnkn/ratarmount/archive/refs/tags/v1.1.1.tar.gz"
-  sha256 "fc692adbefcd2d885d2fe758b7c2c429436af0ebbe67960b9d126930adaf48d6"
+  url "https://files.pythonhosted.org/packages/6d/03/e992e711c56634c1893f713b38dd09225bb9ed01c3d3c7cd2ffa2fde3cfb/ratarmount-1.1.1.tar.gz"
+  sha256 "c4643121fd28fe23cc1f7189c7de7a1d5a636b65b7d0bc243f2c0b722bbd6c5a"
   license "MIT"
-
-  # Upstream creates releases that use a stable tag (e.g., `v1.2.3`) but are
-  # labeled as "pre-release" on GitHub before the version is released, so it's
-  # necessary to use the `GithubLatest` strategy.
-  livecheck do
-    url :stable
-    strategy :github_latest
-  end
+  head "https://github.com/mxmlnkn/ratarmount.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_linux:  "a47c1f4afdfe798b9f95ca27387be51adb9119eec04865822a81db9251dff97f"

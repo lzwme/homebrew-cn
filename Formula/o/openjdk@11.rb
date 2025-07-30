@@ -1,8 +1,8 @@
 class OpenjdkAT11 < Formula
   desc "Development kit for the Java programming language"
   homepage "https://openjdk.java.net/"
-  url "https://ghfast.top/https://github.com/openjdk/jdk11u/archive/refs/tags/jdk-11.0.27-ga.tar.gz"
-  sha256 "eb1d802f854824261d7babac917179ce21c608a39675cf6e78f2ab19121cc7d0"
+  url "https://ghfast.top/https://github.com/openjdk/jdk11u/archive/refs/tags/jdk-11.0.28-ga.tar.gz"
+  sha256 "c051b84b55a826ff90ac601ff7501449fb6a578a89357bbc7550990a78bb5f1b"
   license "GPL-2.0-only"
 
   livecheck do
@@ -11,13 +11,13 @@ class OpenjdkAT11 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "9157b4fbd9639c0f0883b5fd5ceae4eeda0700bb3807d320ed2b72a3c802aec0"
-    sha256 cellar: :any,                 arm64_sonoma:  "950dc219e095f26315840c2799a4788bc57cfb52dae8d0b3003c2b534e64b526"
-    sha256 cellar: :any,                 arm64_ventura: "416364e4ba1a5639c493526ce24774dd65b7e78aeb47cff5652d266039a29e5f"
-    sha256 cellar: :any,                 sonoma:        "b0c482904b5f09bfa89ea86c5b83eada87d13eea5c756d3ea52120c4fa9c07ed"
-    sha256 cellar: :any,                 ventura:       "0393436da6670cd7ab79aa6fd8ed37471101de76c3f8a3763d053848b204c162"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5649d2248a80ade02a9d5fc4af67db156495355d0b2d2138e34b6db62163a293"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d9f3618a9669acc39a9420a8666867908ceaded5d554b5b786f05b2dc2531253"
+    sha256 cellar: :any,                 arm64_sequoia: "c2f2b74da21a9062e4b288dedc5a0041814addbde1829b3113ef2d68e82821cc"
+    sha256 cellar: :any,                 arm64_sonoma:  "cadeb8b67fddfad5831b43590417fd0bc0b259c03baf162bdfc13dd99aa4a7ca"
+    sha256 cellar: :any,                 arm64_ventura: "d66cfeeac9d98b5f4868187eaf49753e5db88d416bdf39faa5357e29bb175367"
+    sha256 cellar: :any,                 sonoma:        "2e7f751a1f1ab3ccef7247e74d6c1f274a861d36c0b6e9df58f57a249eda4b6a"
+    sha256 cellar: :any,                 ventura:       "7249281922ef7324fac986eb4091ae1a38c3c1f3fba5438195b0c976ef675887"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7d92efb4e4a7b77fe628ae75e2b01def4457110662e169a6dbcd90809e8c2992"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "422052b9e3633328435bb97e0ce20a001a1f9eea233f0f6bb7d9545b583b80b4"
   end
 
   keg_only :versioned_formula
@@ -78,6 +78,13 @@ class OpenjdkAT11 < Formula
     resource("boot-jdk").stage boot_jdk
     boot_jdk /= "Contents/Home" if OS.mac? && !Hardware::CPU.arm?
     java_options = ENV.delete("_JAVA_OPTIONS")
+
+    # Fix pack200 failure only when building with newer Clang
+    if OS.mac? && DevelopmentTools.clang_build_version >= 1600
+      inreplace "src/jdk.pack/share/native/common-unpack/constants.h",
+                "(-1)<<13",
+                "static_cast<int32_t>(~0u << 13)"
+    end
 
     args = %W[
       --disable-hotspot-gtest

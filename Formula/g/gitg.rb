@@ -4,7 +4,7 @@ class Gitg < Formula
   url "https://download.gnome.org/sources/gitg/44/gitg-44.tar.xz"
   sha256 "342a31684dab9671cd341bd3e3ce665adcee0460c2a081ddc493cdbc03132530"
   license "GPL-2.0-or-later"
-  revision 6
+  revision 7
 
   livecheck do
     url :stable
@@ -14,13 +14,13 @@ class Gitg < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 arm64_sequoia: "7573250dd5a9b53bda64fff6ed25f3f8afc4cc2edd0304565c8bc1e2efb71246"
-    sha256 arm64_sonoma:  "3442fb4ac5d87a0acf1ec56e7cb356ae01a94eb1449a8d8fc987843b6971a8e1"
-    sha256 arm64_ventura: "c240b9f00f0451039e51877d7d87594dedc7a91267c1fcef5c1a98b3db8301d9"
-    sha256 sonoma:        "83a586e672472e4366c642728d117503449f3f1ef1a02efe8dce344aa5834a0a"
-    sha256 ventura:       "91cd1b4972e6d1cf5063132a130f2691e29762124f2736f34fb71e83de340ed8"
-    sha256 arm64_linux:   "0c04e03d46b0bb6f5845b09b6ab7114c4ff2164e44f1ccf72d7cc5955ce3d313"
-    sha256 x86_64_linux:  "f269ef5daf90cbc9b7bdc38f532fc208df31a6e03b156d9bbc15e5c698f302e7"
+    sha256 arm64_sequoia: "4028f294581707bbf199f5ff73c017cf8f038c42624be131fefa85604743f42e"
+    sha256 arm64_sonoma:  "685263322a42dacb348f6df3e00a7feb5c1848277e8acd4630e009c29814d324"
+    sha256 arm64_ventura: "67c8e9d95c5a1245c3fa87a32a769b63e404926e2a38a18bf769131a3f85effc"
+    sha256 sonoma:        "031c605fa3aacbdb1d98191b437836f221d4c25001095f5702664b2374f2472b"
+    sha256 ventura:       "09b98443b56e74ddf4c05db0712e2f537e972d27c44f403ad2df856410b0e6e8"
+    sha256 arm64_linux:   "88e01965c7dd3989359c8510f8370b9fd0b0bc5e4a746085ae38dbd98f3d16e0"
+    sha256 x86_64_linux:  "cc0d17fcf6594d48911e83c12a07c84be0e53b0878ff565b5dcf39baeb63e973"
   end
 
   depends_on "gettext" => :build # for `msgfmt`

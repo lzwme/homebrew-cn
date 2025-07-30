@@ -1,20 +1,18 @@
 class NodeRed < Formula
   desc "Low-code programming for event-driven applications"
   homepage "https://nodered.org/"
-  url "https://registry.npmjs.org/node-red/-/node-red-4.0.9.tgz"
-  sha256 "d8548204752c8ed7c1c5648e6fe2843342797ff5f0214647bdd1078366811cba"
+  url "https://registry.npmjs.org/node-red/-/node-red-4.1.0.tgz"
+  sha256 "eb72d0d4327bd7d08736e08f5bd4950c0071e93b75ea26f06f79e4f9b43b6ec5"
   license "Apache-2.0"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "ef1c67c28407a8a57ed82cbc8c1da9a0535dc4432be1db15b815fb4bd6920fc5"
-    sha256 cellar: :any,                 arm64_sonoma:  "ef1c67c28407a8a57ed82cbc8c1da9a0535dc4432be1db15b815fb4bd6920fc5"
-    sha256 cellar: :any,                 arm64_ventura: "ef1c67c28407a8a57ed82cbc8c1da9a0535dc4432be1db15b815fb4bd6920fc5"
-    sha256 cellar: :any,                 sonoma:        "d48c0d73840489fe500398d2a58cce5d112c62ccbd8ce1f294688a43562045fc"
-    sha256 cellar: :any,                 ventura:       "d48c0d73840489fe500398d2a58cce5d112c62ccbd8ce1f294688a43562045fc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0eebad2f551bf8639e8bb5eb9e52cc6cb97518d8902e06d712b80c517b1a4d46"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "94b147afe0b47f633a38f2055292a62dcfd78d7a31a4f336e7f84b29879d57f1"
+    sha256 cellar: :any,                 arm64_sequoia: "70289e1f5a704255618d780aa3a6c6a326716ff6ffec20bb56a635158e50aae2"
+    sha256 cellar: :any,                 arm64_sonoma:  "70289e1f5a704255618d780aa3a6c6a326716ff6ffec20bb56a635158e50aae2"
+    sha256 cellar: :any,                 arm64_ventura: "70289e1f5a704255618d780aa3a6c6a326716ff6ffec20bb56a635158e50aae2"
+    sha256 cellar: :any,                 sonoma:        "72f7e28802f9f9aa3c7d56df856a591665bf08390ad89ef5ee90ef94873d9e29"
+    sha256 cellar: :any,                 ventura:       "72f7e28802f9f9aa3c7d56df856a591665bf08390ad89ef5ee90ef94873d9e29"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9ac0fcef6756195f75218fcb79dc13de68361640b2165c001bc2e7cf7d389b05"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f45fdffc646b2ba6e64154600ba3d0b43cf47f686823478d0d5aca0581d15bc1"
   end
 
   depends_on "node"

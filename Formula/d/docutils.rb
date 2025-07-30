@@ -3,13 +3,12 @@ class Docutils < Formula
 
   desc "Text processing system for reStructuredText"
   homepage "https://docutils.sourceforge.io"
-  url "https://files.pythonhosted.org/packages/ae/ed/aefcc8cd0ba62a0560c3c18c33925362d46c6075480bfa4df87b28e169a9/docutils-0.21.2.tar.gz"
-  sha256 "3a6b18732edf182daa3cd12775bbb338cf5691468f91eeeb109deff6ebfa986f"
+  url "https://files.pythonhosted.org/packages/e9/86/5b41c32ecedcfdb4c77b28b6cb14234f252075f8cdb254531727a35547dd/docutils-0.22.tar.gz"
+  sha256 "ba9d57750e92331ebe7c08a1bbf7a7f8143b86c476acd51528b042216a6aad0f"
   license all_of: [:public_domain, "BSD-2-Clause", "GPL-3.0-or-later", "Python-2.0"]
-  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "902ea89749b8809d45604630f6246d07294e95af725a23d856d5b7006a1efb96"
+    sha256 cellar: :any_skip_relocation, all: "08104af3fe2f9f1db3c115946b03e2b6c25e956aaaea899c5abde08173e1bd21"
   end
 
   depends_on "python@3.13"
@@ -19,6 +18,10 @@ class Docutils < Formula
     bin.glob("*.py") do |f|
       bin.install_symlink f => f.basename(".py")
     end
+
+    # Ensure we have an `:all` bottle.
+    metadata_file = libexec/Language::Python.site_packages("python3")/"docutils-#{version}.dist-info/METADATA"
+    inreplace metadata_file, "/usr/local", HOMEBREW_PREFIX
   end
 
   test do

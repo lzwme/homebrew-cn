@@ -1,18 +1,18 @@
 class MermaidCli < Formula
   desc "CLI for Mermaid library"
   homepage "https://github.com/mermaid-js/mermaid-cli"
-  url "https://registry.npmjs.org/@mermaid-js/mermaid-cli/-/mermaid-cli-11.6.0.tgz"
-  sha256 "931a41e109b7d33d0da4881a4cef673f6d77b30219543f7496c5c003c64866df"
+  url "https://registry.npmjs.org/@mermaid-js/mermaid-cli/-/mermaid-cli-11.9.0.tgz"
+  sha256 "a0c68fe6db99308c360a5d2be3d87cfc15f9c967c7bc838a691804e479f39d0a"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "1554c8ebf97a5d2c57a5bfee58f0033bdd376d68fe6f0d75c25471b08dc39edc"
-    sha256 cellar: :any,                 arm64_sonoma:  "1554c8ebf97a5d2c57a5bfee58f0033bdd376d68fe6f0d75c25471b08dc39edc"
-    sha256 cellar: :any,                 arm64_ventura: "1554c8ebf97a5d2c57a5bfee58f0033bdd376d68fe6f0d75c25471b08dc39edc"
-    sha256 cellar: :any,                 sonoma:        "e1c98aa4a1f5a240c0fd1ff09b3a223922f8e7a533e01f83d1a9db2570b00145"
-    sha256 cellar: :any,                 ventura:       "e1c98aa4a1f5a240c0fd1ff09b3a223922f8e7a533e01f83d1a9db2570b00145"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "71ed2b6ad6cc7c83ffa85b349b30bbe326cfe61afee8988ff27b601dec1a4c7a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "141bd60ec8618342e391e70117ee014da0fbc36c6c56f26b52aaa9310e0302aa"
+    sha256 cellar: :any,                 arm64_sequoia: "fed16e2660aaa5ac190a3b6adef1cea7c6f531b11398b1981268e46fb8964104"
+    sha256 cellar: :any,                 arm64_sonoma:  "fed16e2660aaa5ac190a3b6adef1cea7c6f531b11398b1981268e46fb8964104"
+    sha256 cellar: :any,                 arm64_ventura: "fed16e2660aaa5ac190a3b6adef1cea7c6f531b11398b1981268e46fb8964104"
+    sha256 cellar: :any,                 sonoma:        "f61d4d96eeb7230461b4d27c9bebb8d272573ffea0e1da8742e022a03e8c3d63"
+    sha256 cellar: :any,                 ventura:       "f61d4d96eeb7230461b4d27c9bebb8d272573ffea0e1da8742e022a03e8c3d63"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "395fdf1a7e9220510f636d9eba7e0cc6f6fd6fc1bfed02c20f9b797fc5b7c379"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "37a57110fd7faec00784f4ae17210bfebeda522eb0d4acdd0cf587de494a139c"
   end
 
   depends_on "node"

@@ -1,18 +1,18 @@
 class MarpCli < Formula
   desc "Easily convert Marp Markdown files into static HTML/CSS, PDF, PPT and images"
   homepage "https://github.com/marp-team/marp-cli"
-  url "https://registry.npmjs.org/@marp-team/marp-cli/-/marp-cli-4.2.1.tgz"
-  sha256 "8500d57e22c6f14a8115ac0ddfa7770da2586339143aa58207c5bb9cca42491d"
+  url "https://registry.npmjs.org/@marp-team/marp-cli/-/marp-cli-4.2.2.tgz"
+  sha256 "56c9b967d14c11ba63adedeeb0bf7c7bf8dd98ed6340bba56e52e5b0185c052b"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "eb02b1eee7c859d2f886c77ec032a0034cc1a0388499b9f9df6a9ee9b7a3485d"
-    sha256 cellar: :any,                 arm64_sonoma:  "eb02b1eee7c859d2f886c77ec032a0034cc1a0388499b9f9df6a9ee9b7a3485d"
-    sha256 cellar: :any,                 arm64_ventura: "eb02b1eee7c859d2f886c77ec032a0034cc1a0388499b9f9df6a9ee9b7a3485d"
-    sha256 cellar: :any,                 sonoma:        "29577c02fe6aab203412d3ca97083f404ae154d3d221d247c1b281b214ecc46c"
-    sha256 cellar: :any,                 ventura:       "29577c02fe6aab203412d3ca97083f404ae154d3d221d247c1b281b214ecc46c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "03f43ec8aee6f435f6374a62b17275a25bf5f695110ae7db629934ae9cef5fd9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2d738921c655ad323f15a5981eab6f796d40d8b87563a012af71d60bf2adf62f"
+    sha256 cellar: :any,                 arm64_sequoia: "ca56a34665630d24223bde44ac879378270e6429a564633829842266891248b8"
+    sha256 cellar: :any,                 arm64_sonoma:  "ca56a34665630d24223bde44ac879378270e6429a564633829842266891248b8"
+    sha256 cellar: :any,                 arm64_ventura: "ca56a34665630d24223bde44ac879378270e6429a564633829842266891248b8"
+    sha256 cellar: :any,                 sonoma:        "a67b2fcaf738571317711c7c78db134807ca520c46985423a28027e6d3f4c544"
+    sha256 cellar: :any,                 ventura:       "a67b2fcaf738571317711c7c78db134807ca520c46985423a28027e6d3f4c544"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1af43f565f94e8418d52e0e33ad06f229d7a3e3a8cf79ccc9158d37aa66e0a33"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4a5751b36f4aaf73285deaef05c67721c27044ebb665dce6d8441a3179dadebb"
   end
 
   depends_on "node"

@@ -1,19 +1,19 @@
 class Brpc < Formula
   desc "Better RPC framework"
   homepage "https://brpc.apache.org/"
-  url "https://dlcdn.apache.org/brpc/1.13.0/apache-brpc-1.13.0-src.tar.gz"
-  sha256 "106f6be8bbc6038b975f611c0e7a862a1c3ea3f8c82ec83d3915790a1ca7f5d8"
+  url "https://dlcdn.apache.org/brpc/1.14.0/apache-brpc-1.14.0-src.tar.gz"
+  sha256 "9fa7ed12ad37f6dea6d021bffe37fee59982b4ad7d9f697bbfc14ac24b10f938"
   license "Apache-2.0"
   head "https://github.com/apache/brpc.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "5ee83db56a2bd4aa55b27f88d8df6754acad87376e96b599c8c12fb1fd346acc"
-    sha256 cellar: :any,                 arm64_sonoma:  "29041545a671e04b0db044b0b4fcae6a6bf719e3a615540d144fa5f9c9d14f1b"
-    sha256 cellar: :any,                 arm64_ventura: "a1b1d7416a05808f0c24a06b60e5791783dcc753d1dad49b0c4ddf7791785239"
-    sha256 cellar: :any,                 sonoma:        "1efc4ee86e1660947dec16f84120d0e52c19dd67aa9418e8c138de3aabe40c0f"
-    sha256 cellar: :any,                 ventura:       "8fbe818bba4ec1b11a8fd76116ee17e64851c0047bcb7ff615d58e8fa144b10d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "417ff56ecc578f7d6ed318d503344f3ae16a83df6aebf489542353fa6f7e0b66"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3d9334730f6fa20443c358d4c4c4657b38a44e2c54d59a63c0f233eaf880a4b8"
+    sha256 cellar: :any,                 arm64_sequoia: "3250052cc4ddcb3775072a457404838c682a6f4662b6753b079006125a38a83c"
+    sha256 cellar: :any,                 arm64_sonoma:  "90469b5d0c05e636061b90d141913938be0b40e421afae656e659d0e739b335d"
+    sha256 cellar: :any,                 arm64_ventura: "113262fcee16609506320ff1662ac47954daec764696a73e976d67564e2b8d62"
+    sha256 cellar: :any,                 sonoma:        "cd4c2db0db2658485ee428b0cfe2d68c5fd95a22af34d45ea871b27cf83b3f88"
+    sha256 cellar: :any,                 ventura:       "3a53073a9476a3c4a48c56d5126c198422f3ac9599887c104a2ffc0b7440bf30"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d7cb5ec8a1842e9636cb09ec7208aebea8935450bf0daa3745b82c8c01ddc36f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8179b289c85dc0cd513576316aa69d54a09582fb2992cecb42c04c2f05ae3610"
   end
 
   depends_on "cmake" => :build

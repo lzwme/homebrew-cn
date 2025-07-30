@@ -3,19 +3,18 @@ class AnsibleLint < Formula
 
   desc "Checks ansible playbooks for practices and behaviour"
   homepage "https://ansible-lint.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/5c/27/f04e69b710efbfde20cfdcdb8eec3b3b1d4b6d480a80afa803386304e829/ansible_lint-25.6.1.tar.gz"
-  sha256 "6a1dd2b7a9f3f202c9e92a6c80296ff33ca863348c3acf978f80fb0d4536dce4"
+  url "https://files.pythonhosted.org/packages/dc/ab/e6ac95e777d723fe20a7d8888d5d6ab9f75a808a57f2ab42fe353b6fbd9f/ansible_lint-25.7.0.tar.gz"
+  sha256 "9afcf419997ce1ffc57acaa3a56f377bce8ceeb9db10e6ab84fd565d09be408b"
   license all_of: ["MIT", "GPL-3.0-or-later"]
-  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "0622645eb0ca604b99a63c46709a54b6906f61506325b384bae5b223e158e05f"
-    sha256 cellar: :any,                 arm64_sonoma:  "2085caf25baf51cce27559714a1bb9c09dabec10913e0bd093ac0a4737b6322c"
-    sha256 cellar: :any,                 arm64_ventura: "7b97f4b2873741884ba63e6410f0b237f422fe0988464cedd8af08a581dd6233"
-    sha256 cellar: :any,                 sonoma:        "b12c18a3679cd9d00d59980ab3020c720b539c7d02127f3baf2b743911a9da7b"
-    sha256 cellar: :any,                 ventura:       "363b27d0a50cbab8fb6bae8e9babd8f1412d3951ff8631cbd49eb187c9d73c27"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "55574b63a5ca87482ebe2f313a22ec56cf6f01730c902246351cac631119b707"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b01072352644993ed53cfad128c3f404ade0aa2c777670b9a30c51b8e92fdb1e"
+    sha256 cellar: :any,                 arm64_sequoia: "795c6db01c8dfe1d8ee01467eea3ada8258500cbf3d247fc08affb60489f9309"
+    sha256 cellar: :any,                 arm64_sonoma:  "5d5a6e33734e6a180fc66a6edffac46fbeffd3d0715feef5680ffe442cac0da3"
+    sha256 cellar: :any,                 arm64_ventura: "93c67d0b5d124d5dac2dc991d9823197ca7b4e9824d4bbc4c248555745f109b8"
+    sha256 cellar: :any,                 sonoma:        "844fc45d5cf18e83ec5ae25efd6778a7e1ab9dc50c5f5802bf1001006b40561d"
+    sha256 cellar: :any,                 ventura:       "2eae7cc1252f0c920eb1368ac1ef45457790633095719bf81bfab47ad2ca43ab"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "75efce387a0a53d943658140321029ba2f594f8c5add56b84f1ffa7500e22c5a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6013ad0b8d98f80d8ec5d11d9dfd577db1f08ca60a6881e659bb0ed117c5b63d"
   end
 
   depends_on "pkgconf" => :build
@@ -71,8 +70,8 @@ class AnsibleLint < Formula
   end
 
   resource "jsonschema" do
-    url "https://files.pythonhosted.org/packages/bf/d3/1cf5326b923a53515d8f3a2cd442e6d7e94fcc444716e879ea70a0ce3177/jsonschema-4.24.0.tar.gz"
-    sha256 "0b4e8069eb12aedfa881333004bccaec24ecef5a8a6a4b6df142b2cc9599d196"
+    url "https://files.pythonhosted.org/packages/d5/00/a297a868e9d0784450faa7365c2172a7d6110c763e30ba861867c32ae6a9/jsonschema-4.25.0.tar.gz"
+    sha256 "e63acf5c11762c0e6672ffb61482bdf57f0876684d8d249c0fe2d730d48bc55f"
   end
 
   resource "jsonschema-specifications" do
@@ -116,8 +115,8 @@ class AnsibleLint < Formula
   end
 
   resource "resolvelib" do
-    url "https://files.pythonhosted.org/packages/ce/10/f699366ce577423cbc3df3280063099054c23df70856465080798c6ebad6/resolvelib-1.0.1.tar.gz"
-    sha256 "04ce76cbd63fded2078ce224785da6ecd42b9564b1390793f64ddecbe997b309"
+    url "https://files.pythonhosted.org/packages/05/57/c5c178e21968123cf2aa90501b5fc14a48e342612695863333f4b70510ad/resolvelib-1.2.0.tar.gz"
+    sha256 "c27fbb5098acd7dfc01fb2be3724bd0881168edc2bd3b4dc876ca3f46b8e4a3d"
   end
 
   resource "rpds-py" do

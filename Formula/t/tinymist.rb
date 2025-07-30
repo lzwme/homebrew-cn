@@ -1,8 +1,8 @@
 class Tinymist < Formula
   desc "Language server for Typst"
   homepage "https://myriad-dreamin.github.io/tinymist/"
-  url "https://ghfast.top/https://github.com/Myriad-Dreamin/tinymist/archive/refs/tags/v0.13.14.tar.gz"
-  sha256 "65a5f90297ed89652802993d0b4b9504b2b5ec2b54fd23935b48976301a046d7"
+  url "https://ghfast.top/https://github.com/Myriad-Dreamin/tinymist/archive/refs/tags/v0.13.16.tar.gz"
+  sha256 "e97c018b452d864256ab3cdae34cfa77be6b3fffefc34fa63da08e0ca92f0125"
   license "Apache-2.0"
   head "https://github.com/Myriad-Dreamin/tinymist.git", branch: "main"
 
@@ -15,13 +15,13 @@ class Tinymist < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5b1874cea802c1427be1379d4687089dd2dd0fc1a5ab8ba4e3b9d6373ab1d872"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7825434cbc6a64b588b92013811a5fd67380fd6753723a2b54e41e295c8bb4b8"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "d1febcba3e119d4cd87d751a3390b6d89141532f0b1ed1592d5684b7d323e78d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "fb10f453075db815b295552ea29dd372ac9bc17db199d65b5dc8641075da0a3b"
-    sha256 cellar: :any_skip_relocation, ventura:       "ea096f5a455031efb11c848426f81be6ae7cb6ea1b9afe38e559438427d04fdf"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3dfe4a9d9f768172438778bdbf37ee33ceaf5c6db810b5beaee8b10387d7e060"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e38da90107e6373ca7e1df79c21d122f9a13816bda9cd105c04f4aa48f5440c0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9544b726cef8369647c2692d53ad0d47dcf9433727d167b2420169a2b1c46f46"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e5e3182b7102057904898dfad179a7ccb2c9938c0e9bc7470dc04edba092de17"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "1486f9ae1366b9bcb62952c462723f498bb6dde7556429856dadfaf3f6ec97e3"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ed3b98a3d4c0af5cdea283f3b713f0026dfa697f7a401fda85bf85d41bb11c70"
+    sha256 cellar: :any_skip_relocation, ventura:       "957271cae6e75d20ab168be4b754c13f8ee14b51c900fe681ee0d4c544a10268"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f3a766ff69b1b684e835cab6498f7bb698bae69be1d6f2ae7fe1eb88610aa505"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "47df195eec36c412a6e68aaba55ce63498b6f0ddc2017c742fcf598680c59016"
   end
 
   depends_on "rust" => :build

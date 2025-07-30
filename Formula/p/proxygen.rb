@@ -1,19 +1,19 @@
 class Proxygen < Formula
   desc "Collection of C++ HTTP libraries"
   homepage "https://github.com/facebook/proxygen"
-  url "https://ghfast.top/https://github.com/facebook/proxygen/releases/download/v2025.07.21.00/proxygen-v2025.07.21.00.tar.gz"
-  sha256 "fa6992df4aaa846a8ddf1ab5df1d8a7784b0ed4af3e3c794ed47ea53316b8513"
+  url "https://ghfast.top/https://github.com/facebook/proxygen/releases/download/v2025.07.28.00/proxygen-v2025.07.28.00.tar.gz"
+  sha256 "37c40f1429fe05e43771cd6c09f410259aa945bd3749a5dd796fa7261e9403d0"
   license "BSD-3-Clause"
   head "https://github.com/facebook/proxygen.git", branch: "main"
 
   bottle do
-    sha256                               arm64_sequoia: "f33e43a429c12ff2b5b503e3b35743758fec40a982a52205e1f8dbc545c0c61c"
-    sha256                               arm64_sonoma:  "a6207e5e6f0baf2f1fe23650b911ce1c2942c2c132c5f71b28f17a8170f574ec"
-    sha256                               arm64_ventura: "6c8679f161cad22853825ebefe8f6a731afb10603b9c4970cde3c3d762abf5c8"
-    sha256 cellar: :any,                 sonoma:        "b60fd03a85ea01d9c65433b66e6e848d4ce57ea9e404297ac6c27974942700af"
-    sha256 cellar: :any,                 ventura:       "0fdfdeb458a4d273736709f9576875faa82e218b8257ba8823696f0be170b484"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "be8304fd0542e6cfd46de0e75131d62b2c9723f53d1dd49f22b26e1e2f8fe171"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "007c964ac6eb2b3981cb67f537ee1e6648aa4070259f6c8710b2539b0a441db8"
+    sha256                               arm64_sequoia: "a67b15f3808a5a03a5946e65fc434eab8274e28dce287587dac586f6beede828"
+    sha256                               arm64_sonoma:  "2a85d2649131c3f8036e6b8a6200321161d6f99c4fb4b48044687bf43f19c053"
+    sha256                               arm64_ventura: "fc47c006ca63e85671e54d19ca682444be835c4f6ada10cc26d1718ad4c9b552"
+    sha256 cellar: :any,                 sonoma:        "814d1462eb7175625c26e750a967a1ac8f208e64263687e3d47671c075390047"
+    sha256 cellar: :any,                 ventura:       "e5ed00939bbe853a358966ca46ac7fad85e686513ed8e455f65a8deda8efd58e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "705542a4ffd5e13927f352531cd768e509782eef2ed118c37bbf3f023761e600"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a93a079efe4baa129d99cdb7355ea586851ebac9c2527b69f4c8dfcbc22a035d"
   end
 
   depends_on "cmake" => :build

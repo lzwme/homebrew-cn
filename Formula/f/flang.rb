@@ -97,12 +97,6 @@ class Flang < Formula
   end
 
   test do
-    # FIXME: We should remove the two variables below from the environment
-    #        to test that `flang` can find our config files correctly, but
-    #        this seems to break CI (but can't be reproduced locally).
-    # ENV.delete "CPATH"
-    # ENV.delete "SDKROOT"
-
     (testpath/"hello.f90").write <<~FORTRAN
       PROGRAM hello
         WRITE(*,'(A)') 'Hello World!'
@@ -166,9 +160,12 @@ class Flang < Formula
 
     return if OS.linux?
 
+    assert_match %r{^Configuration file: #{Regexp.escape(etc)}/clang/.*\.cfg$}i,
+                 shell_output("#{bin/flang_driver} --version")
+
     system "ar", "x", lib/"libFortranCommon.a"
     testpath.glob("*.o").each do |object_file|
-      refute_match(/^LLVM (IR )?bitcode/, shell_output("file --brief #{object_file}"))
+      refute_match(/LLVM (IR )?bitcode/, shell_output("file --brief #{object_file}"))
     end
   end
 end

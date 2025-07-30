@@ -57,7 +57,7 @@ class Orbuculum < Formula
     assert_match "orblcd version #{version}", shell_output("#{bin}/orblcd --version 2>&1", 255)
     assert_match "Elf File not specified", shell_output("#{bin}/orbmortem 2>&1")
     assert_match "This utility is in development. Use at your own risk!!\nElf File not specified",
-                 shell_output("#{bin}/orbprofile 2>&1", 254).sub("\r", "")
+                 shell_output("#{bin}/orbprofile 2>&1", 254).delete("\r")
     assert_match "Elf File not specified", shell_output("#{bin}/orbstat 2>&1", 254)
     assert_match "Elf File not specified", shell_output("#{bin}/orbtop 2>&1", 247)
     assert_match "No devices found", shell_output("#{bin}/orbtrace 2>&1")

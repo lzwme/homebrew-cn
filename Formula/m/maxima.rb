@@ -1,24 +1,21 @@
 class Maxima < Formula
   desc "Computer algebra system"
   homepage "https://maxima.sourceforge.io/"
-  url "https://downloads.sourceforge.net/project/maxima/Maxima-source/5.47.0-source/maxima-5.47.0.tar.gz"
-  sha256 "9104021b24fd53e8c03a983509cb42e937a925e8c0c85c335d7709a14fd40f7a"
+  url "https://downloads.sourceforge.net/project/maxima/Maxima-source/5.48.0-source/maxima-5.48.0.tar.gz"
+  sha256 "75af2bf1894df2a17aef8a5c378d72d4d53c669b9f47d60ec5ba8c8676c4aaab"
   license "GPL-2.0-only"
-  revision 24
 
   livecheck do
     url :stable
     regex(%r{url=.*?/maxima[._-]v?(\d+(?:\.\d+)+)\.t}i)
   end
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0baad758819ee1b8a62e4af538ca19697e57abbd0bae2dd9f5717660e9e89af2"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "a30024b3116dcc353412c3c6a482563a328f84d2e5f18fc0ad3a0820a508c92f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "40768fdadb67db8e84ce1ef700e5091b82ce35aa68c370f8c85429a28c598c04"
-    sha256 cellar: :any_skip_relocation, ventura:       "011a560629d8bcf049e6078010df96775c5df142645e7736e1894c7e08bb8b65"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "10ec67654c963502a3f1facc39ab550c2a4816b00c1f8e173bfab32cc49a2729"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6f9fda5f15ea55a2f249045119c608e6575ed7ba3e52cb6b06f46f764abc906f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "c3700df94389c71370ba84631894622dc44c007f751ea95c910ad02957b6edc8"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8893c78aa849c460011c20e0eb237d3737f85437c8b361e202d1fdf123914bf0"
+    sha256 cellar: :any_skip_relocation, ventura:       "68c36cea4b1afc58b3957b89026d36b3cc03d107c6261a6d609b0b34f4bfc029"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b53439d2bb09d66e5666d62f602c39d73b8fb42028df8dd1773e846fb460d666"
   end
 
   depends_on "gawk" => :build

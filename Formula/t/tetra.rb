@@ -1,8 +1,8 @@
 class Tetra < Formula
   desc "Tetragon CLI to observe, manage and troubleshoot Tetragon instances"
   homepage "https://tetragon.io/"
-  url "https://ghfast.top/https://github.com/cilium/tetragon/archive/refs/tags/v1.4.1.tar.gz"
-  sha256 "57c9b83c87957718d16bd711469f15fde28e383af6c84d4133a0a5423e6b9267"
+  url "https://ghfast.top/https://github.com/cilium/tetragon/archive/refs/tags/v1.5.0.tar.gz"
+  sha256 "d30263db6aa7b92282ebf7b8cfad4a3c1a8dd0d2a4480295ae3720b2ea8ffc92"
   license "Apache-2.0"
 
   livecheck do
@@ -11,12 +11,12 @@ class Tetra < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f0f19b2a1bdd0f78fbfb9d69b97e7bb3697c274a6167fb8eec43a6e349fc65a9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "317193bbcc8d7c878b8e1af70147f6e1fb009e5f8d50c847c78af31b900cab04"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "82eb8cdfda8fc03a660fc81e1522cb97cc2f5e8bf2301b1270cdd6d0dbf3719e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ff0b203131ca6caa46fe4cea57aebf45d2015d3e74f65584fd4f4a65f56a6fe5"
-    sha256 cellar: :any_skip_relocation, ventura:       "1d4794279c864c92757c8a33a06eb7ebba1840757106adf7114c8a8d4796ed09"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "942a420637a79fa7e3a62ee7b60b7cf8ff8b529222d56f9a5c1b9f2e0cac38cc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ed4dd69b9e35173548e777e7a543f34f142476786438e4ce654678f0ed2e956c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2af33537c5eda675a767bed836005c6cdaa3da2341eb6c16882db89538bdec7e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "430b8a8ad4b0efaafa7093f166301a7d0337157b8c5c024fe62ef3504f287afb"
+    sha256 cellar: :any_skip_relocation, sonoma:        "49d789f1e189d0a5b60ed52fef7dce298a03ed209e71cfdfc0c70986fead942f"
+    sha256 cellar: :any_skip_relocation, ventura:       "cb363b0cad2c6aa530020115b7c692cd9868f7dd6cfd6d2ff6c1077be75cfe13"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e76f8eb4ee34b69d7c0e802f15d9051d2a5bce72fc38e3f7d6a9c4f3247a2f26"
   end
 
   depends_on "go" => :build

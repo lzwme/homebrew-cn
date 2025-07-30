@@ -1,6 +1,6 @@
 cask "grammarly-desktop" do
-  version "1.128.1.0"
-  sha256 "be373942df87e6babd56d9b34c90b5e8104d9e7f50369c7c697d66646f93fbae"
+  version "1.129.0.0"
+  sha256 "13e19c371595d46e554196097f717cdd7e31bee3141fb3ec2ebe8a3ad73ec4fb"
 
   url "https://download-mac.grammarly.com/versions/#{version}/Grammarly.dmg"
   name "Grammarly Desktop"
@@ -20,6 +20,10 @@ cask "grammarly-desktop" do
   zap trash: [
     "~/Library/Application Support/com.grammarly.ProjectLlama",
     "~/Library/Caches/com.grammarly.ProjectLlama",
+    "~/Library/HTTPStorages/com.grammarly.ProjectLlama",
+    "~/Library/HTTPStorages/com.grammarly.ProjectLlama.binarycookies",
+    "~/Library/LaunchAgents/com.grammarly.ProjectLlama.Shepherd.plist",
     "~/Library/Preferences/com.grammarly.ProjectLlama.plist",
+    "~/Library/WebKit/com.grammarly.ProjectLlama",
   ]
 end

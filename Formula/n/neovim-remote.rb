@@ -54,21 +54,19 @@ class NeovimRemote < Formula
   test do
     socket = testpath/"nvimsocket"
     file = testpath/"test.txt"
-    ENV["NVIM_LISTEN_ADDRESS"] = socket
 
     nvim = spawn(
-      { "NVIM_LISTEN_ADDRESS" => socket },
-      Formula["neovim"].opt_bin/"nvim", "--headless", "-i", "NONE", "-u", "NONE", file,
+      Formula["neovim"].opt_bin/"nvim", "--headless", "-i", "NONE", "-u", "NONE", "--listen", socket, file,
       [:out, :err] => "/dev/null"
     )
-    sleep 5
+    sleep 1 until socket.exist? && socket.socket?
 
     str = "Hello from neovim-remote!"
-    system bin/"nvr", "--remote-send", "i#{str}<esc>:write<cr>"
+    system bin/"nvr", "--servername", socket, "--remote-send", "i#{str}<ESC>:write<CR>"
     assert_equal str, file.read.chomp
     assert_equal Process.kill(0, nvim), 1
 
-    system bin/"nvr", "--remote-send", ":quit<cr>"
+    system bin/"nvr", "--servername", socket, "--remote-send", ":quit<CR>"
 
     # Test will be terminated by the timeout
     # if `:quit` was not sent correctly

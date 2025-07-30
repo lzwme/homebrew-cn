@@ -7,13 +7,14 @@ class Pillow < Formula
   head "https://github.com/python-pillow/Pillow.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_sequoia: "576d1075766bacbf6f77cdbe3d03d7f2628e5f3d491b7f852fa9b6db68e2eec6"
-    sha256 cellar: :any, arm64_sonoma:  "f647fb1968db54b8899989f4beb226e2f0cf645b8549e757f5f9617de9bfad9b"
-    sha256 cellar: :any, arm64_ventura: "1e5e7093e09d0b04e689d55e8836238476b85592b46f3a9a50515e4a71796c0b"
-    sha256 cellar: :any, sonoma:        "ab3dde3744c9aac75669dcd1b03c7cff74cdeeea292c0d7515a1060c389134df"
-    sha256 cellar: :any, ventura:       "eec25e16e31d90eb0862521401fb218f7a33f207ed3b990187b0a8f103d071f8"
-    sha256               arm64_linux:   "c015db6c8d20b536700acc9c6dec5068a3f37a5ececb0a86aead2954996a3f93"
-    sha256               x86_64_linux:  "0a57aa1edc9c3dbf8c4016f3cbca34222109fc1764dacf860e385b61e248e269"
+    rebuild 1
+    sha256 cellar: :any, arm64_sequoia: "138890e7acddd45d3b85aa806f0d49bf1e0426a3f5c3d62abf9b0bdc6ffd3ec9"
+    sha256 cellar: :any, arm64_sonoma:  "072ca716449f92fc41973226a562e07b3b68edc481ed2399dc1b41ddd6dfebe1"
+    sha256 cellar: :any, arm64_ventura: "5d131476706a4d24992d79d642f065b1f902b1769b550b13115ce0d77e27ee5b"
+    sha256 cellar: :any, sonoma:        "329eae672cd5995f645feb40b9faca5d8cfe5664b2e70f31fd8e15101f466fd5"
+    sha256 cellar: :any, ventura:       "21928803827d549ce8e98675afa2d3324157db755babc8465133cc693163e1cb"
+    sha256               arm64_linux:   "4d2fc2cf7945642b674594b50e7dff4670d85955827c3d58f1dc451e5469fd8f"
+    sha256               x86_64_linux:  "3cfc3636c299c00e610c63d90c8aa3758b1332d1e7cb4fba81fb0897da3f34a1"
   end
 
   depends_on "pkgconf" => :build
@@ -21,6 +22,7 @@ class Pillow < Formula
   depends_on "python@3.13" => [:build, :test]
   depends_on "freetype"
   depends_on "jpeg-turbo"
+  depends_on "libavif"
   depends_on "libimagequant"
   depends_on "libraqm"
   depends_on "libtiff"
@@ -54,6 +56,7 @@ class Pillow < Formula
                      "-C", "lcms=enable",
                      "-C", "webp=enable",
                      "-C", "xcb=enable",
+                     "-C", "avif=enable",
                      "."
     end
   end
@@ -67,6 +70,42 @@ class Pillow < Formula
 
     pythons.each do |python|
       assert_equal "JPEG (1, 1) RGB", shell_output("#{python} test.py").chomp
+    end
+
+    # Test webp support
+    resource "test-webp" do
+      url "https://ghfast.top/https://raw.githubusercontent.com/python-pillow/Pillow/refs/heads/main/Tests/images/flower.webp"
+      sha256 "af5bf1a0e420467c09d221fbfbb739646956c17f2b67f8280eacfacf87059a37"
+    end
+
+    testpath.install resource("test-webp")
+    test_webp = testpath/"flower.webp"
+    (testpath/"test_webp.py").write <<~PYTHON
+      from PIL import Image
+      im = Image.open("#{test_webp}")
+      print(im.format, im.size, im.mode)
+    PYTHON
+
+    pythons.each do |python|
+      assert_equal "WEBP (480, 360) RGB", shell_output("#{python} test_webp.py").chomp
+    end
+
+    # Test avif support
+    resource "test-avif" do
+      url "https://ghfast.top/https://raw.githubusercontent.com/python-pillow/Pillow/refs/heads/main/Tests/images/avif/exif.avif"
+      sha256 "438dc63eb5aa722f4b23a93ac48cd0c19b7a575865c89e666c86b7ac363cff04"
+    end
+
+    testpath.install resource("test-avif")
+    test_avif = testpath/"exif.avif"
+    (testpath/"test_avif.py").write <<~PYTHON
+      from PIL import Image
+      im = Image.open("#{test_avif}")
+      print(im.format, im.size, im.mode)
+    PYTHON
+
+    pythons.each do |python|
+      assert_equal "AVIF (512, 512) RGB", shell_output("#{python} test_avif.py").chomp
     end
   end
 end

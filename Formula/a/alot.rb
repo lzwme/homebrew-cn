@@ -9,25 +9,24 @@ class Alot < Formula
       tag:      "0.11",
       revision: "a8a108e2344656a13bca21211ccc0df2414cbef6"
   license "GPL-3.0-only"
-  revision 1
+  revision 2
   head "https://github.com/pazz/alot.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0b0b23d34625ee35bdf19c6f5092d08aacd2e664df666c6fe4ddde34cde674a9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5ba913b1ac4fc69ef4228a90031f24237a6a831b0fa3a749c2f30b0216be481c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "ae3093b552e4356af46b534412c2aaeac27921b04d7b79ba80d58d712dca1be3"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b227c60e1cc403080fa8c14f5b97ab1634fd0e54f31f696fd61fbfa9b8ee84b7"
-    sha256 cellar: :any_skip_relocation, ventura:       "435c5020ea65a79b2d3f016cd82d2c63c65302dad9f3a946e2f1b82cde02852c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "dbedea413b1240a740111e09751bd30f3accfa52951214658ba71fcfb105e849"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f7e1d080cafcf5344a658d854bafd8f0b44483568a9f39301b23f5179048ab8d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "073814ef305c351f5c93c1880471cb250169e6caa8c4455b0267a0c29da89954"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "82b9a7a7ddd0c02f46c44a27bb1c55d831ae775c93a11f7fcd2eaffe317d8706"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "5c02690a7bbec33199fc037d48cbc31c0bdc7b79bae38de2396946970637e369"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5132a9b48acafb997c7c25892500a1be9c825cbbad833eb921e9cea4e92e8972"
+    sha256 cellar: :any_skip_relocation, ventura:       "934dc63df52965e692b31495fce0e451d3e3b7c4a2ef1c3f115f09f801caf530"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c692df1cd71cea83a93793b5895501cfd84804be0deb2206baf93c28fd391d7a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dc08f2dbe1e0aaa47c56f0fa07fb627256bd3de20dcbd79477e3a2b0ff9279bf"
   end
 
   depends_on "sphinx-doc" => :build
   depends_on "swig" => :build
-  depends_on "gpgme"
+  depends_on "gpgmepy"
   depends_on "libmagic"
   depends_on "notmuch"
   depends_on "python@3.13"

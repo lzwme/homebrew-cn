@@ -1,8 +1,8 @@
 class SevenKingdoms < Formula
   desc "Real-time strategy game developed by Trevor Chan of Enlight Software"
   homepage "https://7kfans.com"
-  url "https://downloads.sourceforge.net/project/skfans/7KAA%202.15.6/7kaa-2.15.6.tar.gz"
-  sha256 "2c79b98dc04d79e87df7f78bcb69c1668ce72b22df0384f84b87bc550a654095"
+  url "https://downloads.sourceforge.net/project/skfans/7KAA%202.15.7/7kaa-2.15.7.tar.gz"
+  sha256 "fb85ac682f86edd8ccf14667d652413ba222cd0f45b80b2a00c49a0d69dcfe19"
   license "GPL-2.0-only"
 
   livecheck do
@@ -10,17 +10,14 @@ class SevenKingdoms < Formula
     regex(%r{url=.*?/7kaa[._-]v?(\d+(?:\.\d+)+)\.t}i)
   end
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
-    rebuild 1
-    sha256 arm64_sequoia: "b2d889d8c50a32132e8a843b6e11fb74f2201d8b8a5518b0e05494c425c3d38b"
-    sha256 arm64_sonoma:  "e041776b87a11f71a2b25a732df463a85965a7a9730a6fdc86ead47b88269250"
-    sha256 arm64_ventura: "5cfe334ad3d1727e92bc7c5cd43da8bd89f64b33212ee903bd3bb88946ae6b6b"
-    sha256 sonoma:        "190571e9d1291c690b91c25523469fb56448e458d9271b5927b5f6298a3901be"
-    sha256 ventura:       "0e4c24744884c459603a2fef964656acd72f417d20eb66582c58ad2c73b87cd7"
-    sha256 arm64_linux:   "fb3a76000690803f166042bc610804309c8cef5873a8e45005c4c84a529343c9"
-    sha256 x86_64_linux:  "2309306fa67efdf1de1e05fd01bb50448f9f1ca9b6688ed9ede4cd826fca877f"
+    sha256 cellar: :any,                 arm64_sequoia: "0c417b3401b46d6a4e296e85cea8a5626aa12395472b0c67b439e7f0619f9ebb"
+    sha256 cellar: :any,                 arm64_sonoma:  "c1817e2bb2ab004f2c2341529a1720a239278a56fd94f05ac880e4d6aa4be246"
+    sha256 cellar: :any,                 arm64_ventura: "12bd271b2579480e3276b9c8be1733f32fee512501e9f55074201e469b136ff0"
+    sha256 cellar: :any,                 sonoma:        "ad1efe7266f03ed91a43f0e833a007786f6a34a457eeb7dc98b8b042aa191db2"
+    sha256 cellar: :any,                 ventura:       "f9c1cec7f7383dea031f30c397bf3e367d3f1ceeb187c49af68a59da4fb23064"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "033abf2b0c1977d097fc4d579e6ac870f5cda99949f162ce60e8e887cf7749c0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fa1c81bcf8a4908b5c583cdb408527def7468a614ab368e16b495c576dae30fc"
   end
 
   depends_on "pkgconf" => :build

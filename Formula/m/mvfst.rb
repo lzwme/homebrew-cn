@@ -1,19 +1,19 @@
 class Mvfst < Formula
   desc "QUIC transport protocol implementation"
   homepage "https://github.com/facebook/mvfst"
-  url "https://ghfast.top/https://github.com/facebook/mvfst/archive/refs/tags/v2025.07.21.00.tar.gz"
-  sha256 "f5e8567871aaf20ca526441bb3cf9fc93b636bc38377e60cdd7d800399e24389"
+  url "https://ghfast.top/https://github.com/facebook/mvfst/archive/refs/tags/v2025.07.28.00.tar.gz"
+  sha256 "2170aba0615cc6c907d0b25fa8afe4f49d3b96cf1cf2bd32c5faeffb65e35afd"
   license "MIT"
   head "https://github.com/facebook/mvfst.git", branch: "main"
 
   bottle do
-    sha256                               arm64_sequoia: "6b6269658011c6ceb892c2a6b4846858fdf503d69e5f5bdcddad6b1c11cf6828"
-    sha256                               arm64_sonoma:  "273adce827bd368c85bcc863cd895c164b756ed124f04d8eabc59a77d37e0c7d"
-    sha256                               arm64_ventura: "70b4624d32cd7c2b59660a56be8cb833a224eed109d3f34f81f6f2fde6b20adb"
-    sha256 cellar: :any,                 sonoma:        "1012e6d08f3a3ed506c49c2ea2d8379165368fef82ae20a3c7b4f7b4c1d8817a"
-    sha256 cellar: :any,                 ventura:       "06564005e4a67493bfc36824fa35a66c6c578772136b519cc6fd9bf4e5d7468e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ed841bb21411492097ea4984c9ce524def58996e3204417a0e1ce3e669f1b8f8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dae3e16ebf56d4ad2878763893f5067d6cdc64e743df2af9aff8734f1ce9c710"
+    sha256                               arm64_sequoia: "f040eca398217b759329ce99af1ab05f7c07a025f5baf8d8e0a295b9ed51e094"
+    sha256                               arm64_sonoma:  "0fb70a54efbd2371878278d96d382340b3d3233a0af07756aa4cf7f23e6bbdee"
+    sha256                               arm64_ventura: "0b5bd93204d192f3f49d863d9e12a6c9c2baec7469cb75af93210949056aed7c"
+    sha256 cellar: :any,                 sonoma:        "dac8593f7b918c9dd7cad74e5690ff43d50a053db82525e9897c189d6ff20115"
+    sha256 cellar: :any,                 ventura:       "08e6c48c7dd9aa4b217d69b8569e3d23b174964aaf688d63740e5b328642cd44"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "84fe1a3361937c8a2009de59ea700ca54a755b45ef187df36a44c88dc200e55a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "097ac2a073e7e5c2b5875c745e53d922af3f61b93cdcae76e3539e38a5780ab9"
   end
 
   depends_on "cmake" => [:build, :test]

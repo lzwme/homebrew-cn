@@ -13,6 +13,7 @@ class Mutt < Formula
   url "https://bitbucket.org/mutt/mutt/downloads/mutt-2.2.14.tar.gz"
   sha256 "d162fb6d491e3af43d6f62f949b7e687bb0c7c2584da52c99a99354a25de14ef"
   license "GPL-2.0-or-later"
+  revision 1
 
   # Livecheck uses GitLab tags to determine current version.
   # They all have `-rel` suffix which needs to be omitted.
@@ -24,13 +25,13 @@ class Mutt < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "e11bd2be69fee9b5c24190699cf2318559ca0cda04520ae1845a5512e0fcd843"
-    sha256 arm64_sonoma:  "b5ef0c774e2c1926a13345f73f2f6370aa28d54bd4dfff553f945fb7f9ab7858"
-    sha256 arm64_ventura: "da5fc14cf6e06faab09da46efbea32504378573518a19f58645809f80d2e7781"
-    sha256 sonoma:        "a2b125aa772f366ed34ee8da0d71565e88334f0dadc37c10513f358fc0c4d106"
-    sha256 ventura:       "a17770bc4c28b5f01f213145fc6f78967616b8dd4b4b95839935981d9f00b058"
-    sha256 arm64_linux:   "9ba607d24fa2463909af8d212233024e9c3c7fde6868bc8a2ea3c901d68d9e18"
-    sha256 x86_64_linux:  "17374083e28fb5d5bad686eb2c301a0f37bf49e46c8bcd30c5a04cc90c8c79ee"
+    sha256 arm64_sequoia: "ad1666b7a72c6ebc86c3ebe83ffdea86e58b72a9cda954531fee16fc01116c3e"
+    sha256 arm64_sonoma:  "9643a80c2b69b3bd3ced5b7dd6b11d4a93cf0c8e7ec4ab10194dade10792c968"
+    sha256 arm64_ventura: "8e52fb4d5a97894d9309c15f0be00c09b3480dca379b902186f1c54562761fb2"
+    sha256 sonoma:        "90f3cb0b88dd3687353c82114aad68fc43bc45fa4151398169479f5313f5bbe1"
+    sha256 ventura:       "3d7c6220370ad7283c98849a86f60585c64f3a25bbfd31537820916b6d53abdf"
+    sha256 arm64_linux:   "2df5f68439d230d72b8368b98d9a29693bd584f72e4c1997a2d821fe482265fe"
+    sha256 x86_64_linux:  "3383f34c489cc5e71986a18b8686359110108ed5cacd16fd59895c41431f9e28"
   end
 
   head do

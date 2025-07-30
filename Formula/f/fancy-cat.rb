@@ -4,15 +4,16 @@ class FancyCat < Formula
   url "https://ghfast.top/https://github.com/freref/fancy-cat/archive/refs/tags/v0.4.1.tar.gz"
   sha256 "d264dbaf05f8713a4c52ce0c74a8d5e900989ec815fac1bbfec7d7b385bc1dd5"
   license "AGPL-3.0-or-later"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "28be4cc3f727ed15ab555b774c78c2d4376f4de67cf694f05b5980c638b088d2"
-    sha256 cellar: :any,                 arm64_sonoma:  "745862c671df5a51e5ea900ab0cd153ed9cff49ae4efb346b9d8374d8e28c52f"
-    sha256 cellar: :any,                 arm64_ventura: "1cb419023d41f8533e4c263cf40ad2a8f84d61e7e7149e660f11a9e8dbcafa07"
-    sha256 cellar: :any,                 sonoma:        "490e48aee2397b765da0eeae1030096d9ce673732b41aa1ac3b87b4dc8cfd951"
-    sha256 cellar: :any,                 ventura:       "fcae3eaeb13585a561479b0e1e860e6720c1ca983ec6e0e441e336e36d10ce81"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8aca7669ede29c36af9c3e264185a9da881654a36926a9ef850ff400262cdae0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c07344d4fbeff7870e19ddb7a4db356b06f5d387f60f184bd82ecb7eff792b43"
+    sha256 cellar: :any,                 arm64_sequoia: "40dab164f64cc880acbfed31805d0026c2f3f8e2e644e7c1f87b70a5a7776ccc"
+    sha256 cellar: :any,                 arm64_sonoma:  "45a5040e53274f581d3e978539295e485f87d8c25c0c9893290ff00dbd79c819"
+    sha256 cellar: :any,                 arm64_ventura: "2755b20a8ae8835f869cb2acbf4992d775783a5b24bc5f098c5ac6fe43accdbe"
+    sha256 cellar: :any,                 sonoma:        "aa11ab824ccaabcca5c5a5e2d787b969625062fd6fd6bcc113bd67e74a82d94e"
+    sha256 cellar: :any,                 ventura:       "0b195abf4d1ab975a429bf58351c16de5e3fb2e61c6e6e25dacb5dc590820f8c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3d1f171a0cfdd015751a0d2dee56273dd8c2e3961a0531d7f3ecf62354477a50"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7b4795f94d2545b5db437cc91612c4b1b15d27373aa198bbcb0cc3b2ef5b1453"
   end
 
   depends_on "zig" => :build

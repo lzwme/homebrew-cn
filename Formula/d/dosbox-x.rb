@@ -19,13 +19,14 @@ class DosboxX < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "6e250e527c94b3a1b9ea2893d64a6ee939178dcacdf42d1e9e158fc6b6fa8893"
-    sha256 arm64_sonoma:  "5d3a7fe6f5d0c7bc5df0a8ac74d375fd4496dbf6532a3df186e60cfd1903ffe5"
-    sha256 arm64_ventura: "8405eb97c9b5b2460c2f7b03c0548a9be7ff2f3b304b4c0d07719652d83f79ec"
-    sha256 sonoma:        "f557edc8c2354c5cb391faa9761566d496c19db26a79e05a5b627fb37ebf2ba0"
-    sha256 ventura:       "0c463405ea683834c40157a3dab895df130e8422ef2f2750338e50b55da0789e"
-    sha256 arm64_linux:   "2a3e03f8c61d44bb49c56381068e574dcdfb7d69736ae757ece8046642bb2420"
-    sha256 x86_64_linux:  "6501a5f6178f9319250785644006eeefeabfec0bbd52e6a6bdfaafc4482bc88b"
+    rebuild 1
+    sha256 arm64_sequoia: "b3831fa8f34f93d0947d5b6f784553a26efc62fdfa7899333688a3bd106b2715"
+    sha256 arm64_sonoma:  "3f335d476fb1ae9890c156ed2755643b57caa2f0c7f0be693beebd87a8436268"
+    sha256 arm64_ventura: "bf746bc868a57ce1b6a790b5a07decea4cb49d5a9681c198cfcca74ce2abad08"
+    sha256 sonoma:        "f5e3d6df263e52c29acf741903088ed5a1f9c24c10de0bbf35352b8c36da1483"
+    sha256 ventura:       "e7e366991faff23c2d558f8b6e609ea167c51f0ae9da3f6af96e47983d7cd896"
+    sha256 arm64_linux:   "91d2cd8eb95c2dcfea89654e27709650bffc25588754f97cb869e34e94cbdf18"
+    sha256 x86_64_linux:  "cc28152648d5a5891bb4817e9c0e26895181b902ebf4c87b92dbaf74f2e74072"
   end
 
   depends_on "autoconf" => :build
@@ -67,7 +68,7 @@ class DosboxX < Formula
     ]
 
     system "./autogen.sh"
-    system "./configure", *args, *std_configure_args
+    system "./configure", *args, *std_configure_args.reject { |s| s["--disable-debug"] }
     system "make" # Needs to be called separately from `make install`.
     system "make", "install"
   end

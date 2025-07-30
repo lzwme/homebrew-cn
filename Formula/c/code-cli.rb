@@ -1,8 +1,8 @@
 class CodeCli < Formula
   desc "Command-line interface built-in Visual Studio Code"
   homepage "https://github.com/microsoft/vscode"
-  url "https://ghfast.top/https://github.com/microsoft/vscode/archive/refs/tags/1.102.2.tar.gz"
-  sha256 "1f14a299aca4bb8016d16f4d50baf658ccfb8eafece1a3027e25154b4c5d37ed"
+  url "https://ghfast.top/https://github.com/microsoft/vscode/archive/refs/tags/1.102.3.tar.gz"
+  sha256 "c9421e92e30cc8528ce3b31acb07c594377cc49bf9c5f30915447b9af97aa96b"
   license "MIT"
   head "https://github.com/microsoft/vscode.git", branch: "main"
 
@@ -12,13 +12,13 @@ class CodeCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "75186679acde7cc502d40a2c17ef86724dc129566d91de3ccb07d64a160fe81f"
-    sha256 cellar: :any,                 arm64_sonoma:  "002d0a78879b7880a0b4f86a05a4cf1158a1c670305010d4b8be97e4d8a1e83b"
-    sha256 cellar: :any,                 arm64_ventura: "5c4aaa20438c3778062cc069ea61323b7cdf45e0844014ad770f99661266fd9e"
-    sha256 cellar: :any,                 sonoma:        "2aadd835fcc63351e538bbef8ae2b8e326fca6dc1597fff98a382600b95c8a3b"
-    sha256 cellar: :any,                 ventura:       "22e561e117133043b937f574dccddde685dde90c94fbeacf608a5225ce17a36c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "16bbe8ca932a1d15eebc4a3d7abcc21a9f60aed62ba9456b51485422049ec5d9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "caebd028e8f36ee7476e8ec6258652a21f05c4ddb9424d0f6f9189e6ed6c9a31"
+    sha256 cellar: :any,                 arm64_sequoia: "c0808bc43bc5cd0e60467a599f5815b8bdec9015777140614a087364342038ff"
+    sha256 cellar: :any,                 arm64_sonoma:  "cf52ef808973c781487efadd489d2f39047f8c75386d373469b062b2cfedfcc0"
+    sha256 cellar: :any,                 arm64_ventura: "aae40b87b0240e7afd800d069da860bc98110c499bca122f96ce4b6ede591a2d"
+    sha256 cellar: :any,                 sonoma:        "1051d28a6724258c8e4adeaaf6c35fd086051e9b6ae01dc1e96c6995268d4afc"
+    sha256 cellar: :any,                 ventura:       "873caad76f12367a3112b8e2fc15e8b26d9a28bbbef4e2eec51216574b5fb92f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "71eceddbed8d36cd2cd2d11e534fb286c6ad419a1947ed8aee8ad91b36352eee"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6ecdfdc150dd49d852ca77c3436dfa9184d5b0c6729837e704b5950108ba0937"
   end
 
   depends_on "pkgconf" => :build

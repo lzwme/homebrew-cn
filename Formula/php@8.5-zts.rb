@@ -1,21 +1,21 @@
 class PhpAT85Zts < Formula
   desc "General-purpose scripting language"
   homepage "https://www.php.net/"
-  url "https://ghfast.top/https://github.com/php/php-src/archive/d3ebf97d773c52067dd5854d8ff3ef1a53933eb3.tar.gz?commit=d3ebf97d773c52067dd5854d8ff3ef1a53933eb3"
+  url "https://ghfast.top/https://github.com/php/php-src/archive/e48099a03c677bea5d0c615cefcab094f8b5253b.tar.gz?commit=e48099a03c677bea5d0c615cefcab094f8b5253b"
   version "8.5.0"
-  sha256 "a909ffb087f03c6c0f0c03bff2c844f4a36f8bee38d0c984ddd5d3c2e7d75599"
+  sha256 "71d55535a0a5002a789852a87028c4586a144f60848ca58266839f1c0632dd50"
   license "PHP-3.01"
   revision 4
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/php"
-    rebuild 38
-    sha256 arm64_sequoia: "32d5aa0f09931dace9cb62b36f3c7e0f780a8b7ffdfa0157b6cf4ebbf3cf4aa7"
-    sha256 arm64_sonoma:  "4d66a3e56f342af26a65d84397cfd418cde3e2aa2ffefbfa48e14276a9d05096"
-    sha256 arm64_ventura: "d580e3d58d5fea2f0bb482bfbddd52ce09ffb9589931ed702c629dc3e1601ec1"
-    sha256 ventura:       "de0258ac6867f784a59be366ef293f08365e4ec67c509832ea4683ac8b6face6"
-    sha256 arm64_linux:   "9bee271a34f732142ad197576a1adb6813e626dae6f126a57fda6ff871dc7629"
-    sha256 x86_64_linux:  "4ee00856e63d573c6ddef0e9fc43e17725b5e549d16e842eab75c9e368811246"
+    rebuild 40
+    sha256 arm64_sequoia: "c0cb8bd516de7daa0425391a9c736b2237f0a20ed8758ef2f460cc6904d78026"
+    sha256 arm64_sonoma:  "9cecc1b64da2a16a899da7da161cd7befabcf52c85a73b6503dc12e61877d0e8"
+    sha256 arm64_ventura: "20f4704471f339fa946b7ab3f2d41b8e8a167c9e9ee86f4b0b878312b1be3828"
+    sha256 ventura:       "2b41d8fb528067daaceb638deaae98206564da6ddb80148f28005eda1d7d8b89"
+    sha256 arm64_linux:   "59a839fa20e9ec191cb6710b4f9e9586d2c6fa7cb3a83029d194ab91a34e8eee"
+    sha256 x86_64_linux:  "83af7f319b716c902b47855ea0e671ebcdac479d02b70a1ad351220adad5d35b"
   end
 
   keg_only :versioned_formula
@@ -137,7 +137,6 @@ class PhpAT85Zts < Formula
       --enable-mbregex
       --enable-mbstring
       --enable-mysqlnd
-      --enable-opcache
       --enable-pcntl
       --enable-phpdbg
       --enable-phpdbg-readline
@@ -280,7 +279,6 @@ class PhpAT85Zts < Formula
     ln_s pecl_path, prefix/"pecl" unless (prefix/"pecl").exist?
     extension_dir = Utils.safe_popen_read("#{bin}/php-config", "--extension-dir").chomp
     php_basename = File.basename(extension_dir)
-    php_ext_dir = opt_prefix/"lib/php"/php_basename
 
     # fix pear config to install outside cellar
     pear_path = HOMEBREW_PREFIX/"share/pear@#{php_version}"
@@ -303,22 +301,6 @@ class PhpAT85Zts < Formula
     end
 
     system bin/"pear", "update-channels"
-
-    %w[
-      opcache
-    ].each do |e|
-      ext_config_path = etc/"php/#{php_version}/conf.d/ext-#{e}.ini"
-      extension_type = (e == "opcache") ? "zend_extension" : "extension"
-      if ext_config_path.exist?
-        inreplace ext_config_path,
-          /#{extension_type}=.*$/, "#{extension_type}=#{php_ext_dir}/#{e}.so"
-      else
-        ext_config_path.write <<~EOS
-          [#{e}]
-          #{extension_type}="#{php_ext_dir}/#{e}.so"
-        EOS
-      end
-    end
   end
 
   def caveats
@@ -351,8 +333,6 @@ class PhpAT85Zts < Formula
   end
 
   test do
-    assert_match(/^Zend OPcache$/, shell_output("#{bin}/php -i"),
-      "Zend OPCache extension not loaded")
     # Test related to libxml2 and
     # https://github.com/Homebrew/homebrew-core/issues/28398
     assert_includes (bin/"php").dynamically_linked_libraries,

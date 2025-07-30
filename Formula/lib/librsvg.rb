@@ -14,14 +14,14 @@ class Librsvg < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_sequoia: "a09c23f788a22216dcb43c70ea4ea89efc3b77d38005ba38be37d23aee1167d2"
-    sha256 cellar: :any, arm64_sonoma:  "d780445be5fd936665e61c1a2b5fba52a1ec248961156be0509506929f5865fb"
-    sha256 cellar: :any, arm64_ventura: "7bc52f723b05d5391b2b81f7f4986bf25f2c80e63d01939eb8162686c6a07347"
-    sha256 cellar: :any, sonoma:        "897a812b261269d38a9f1acd8ee7e58fc1014402cef8367c650f3f4b433d1462"
-    sha256 cellar: :any, ventura:       "6d40695e50164ff58b19d46bc781b2a4ea2b34bb5e2942fa7efd9b2a1598c3e5"
-    sha256               arm64_linux:   "a6dca489386267d5dea19f5e68c56ec07c878912173241d146e2366bb4760720"
-    sha256               x86_64_linux:  "c4d4f65afad13f25f9e8e64d21eb7e577fd71da8bda8c4243d1ebadb41f09447"
+    rebuild 2
+    sha256 cellar: :any, arm64_sequoia: "51748ba117c7dbdb0e222f999bc62bf1cdbe2ec6db32a1dd78c0382975e29634"
+    sha256 cellar: :any, arm64_sonoma:  "9d4448c17169474763ebab43fb5d512d959697e371a0129edb8302b473d4db91"
+    sha256 cellar: :any, arm64_ventura: "e83f0f8944fcae8c8a2a8a0cb69ed49c306afde5c8054c2e291483b751198d82"
+    sha256 cellar: :any, sonoma:        "ef35b9e0ed523e2e0c6131109e99772493e416d7583fdfbac473f1c06b0f482d"
+    sha256 cellar: :any, ventura:       "df123793a325fa69288a7e7a543224deb615866a07b3c96dace84f0c91fd35bc"
+    sha256               arm64_linux:   "b88eb59b83d579444d5debc2e108ff6dd2f15f1a4bad7aa02fb6f7d5ceb4e28b"
+    sha256               x86_64_linux:  "a4dfb83a21bf9edad8a35191ea00ed21dd896dda16088b8b1a8135bddb96652a"
   end
 
   depends_on "cargo-c" => :build
@@ -47,7 +47,8 @@ class Librsvg < Formula
 
   def install
     # Set `RPATH` since `cargo-c` doesn't seem to.
-    ENV.append "RUSTFLAGS", "--codegen link-args=-Wl,-rpath,#{rpath}" if OS.mac?
+    rpath_flags = [rpath, rpath(source: lib/"gdk-pixbuf-2.0/2.10.0/loaders")].map { |rp| "-rpath,#{rp}" }
+    ENV.append "RUSTFLAGS", "--codegen link-args=-Wl,#{rpath_flags.join(",")}" if OS.mac?
 
     # disable updating gdk-pixbuf cache, we will do this manually in post_install
     # https://github.com/Homebrew/homebrew/issues/40833

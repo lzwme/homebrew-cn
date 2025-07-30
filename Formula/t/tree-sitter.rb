@@ -1,9 +1,10 @@
 class TreeSitter < Formula
-  desc "Parser generator tool and incremental parsing library"
+  desc "Incremental parsing library"
   homepage "https://tree-sitter.github.io/"
   url "https://ghfast.top/https://github.com/tree-sitter/tree-sitter/archive/refs/tags/v0.25.8.tar.gz"
   sha256 "178b575244d967f4920a4642408dc4edf6de96948d37d7f06e5b78acee9c0b4e"
   license "MIT"
+  revision 1
   head "https://github.com/tree-sitter/tree-sitter.git", branch: "master"
 
   livecheck do
@@ -12,57 +13,28 @@ class TreeSitter < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "904ea26e7c245d368b8f2cec71d8eedb89de3d85dd267d0bf95daefa38f40ef4"
-    sha256 cellar: :any,                 arm64_sonoma:  "7d844d13a832a4d73118be0717d3b236b948e1ee08eacced27bd1239a88bdbcf"
-    sha256 cellar: :any,                 arm64_ventura: "f97b3d1c04da51710189cafcccbdd0ebaf3b97f5d2621386dcee5950e7b4e71d"
-    sha256 cellar: :any,                 sonoma:        "dba648814f9b70843d7e47f54098d9ea9641a8082e1ba78e784f8a7a512fc543"
-    sha256 cellar: :any,                 ventura:       "5f46b5d565c4075fd096a02de66b5aaf0bab272baa97b6169c2b821e81aaee6f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ed6cdc026445a5d57b08bacee08abbf2e929bb71fac6b76f0e6a472037bbea96"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d26190d82f558a4deb06d20031c42c25fc701a9ffa81b707c0b7272b8b3a61ba"
+    sha256 cellar: :any,                 arm64_sequoia: "d9841c5b93cd0157cf9c02efe5050aff286fc83214430ccbadecc899a4b40973"
+    sha256 cellar: :any,                 arm64_sonoma:  "9593afac488bb20dfaf32b35a97a3af0b8b02a262bf831687b366074f017581c"
+    sha256 cellar: :any,                 arm64_ventura: "157886f003ff968de04d584dbc35aba727feaae3102b01188ec4f80ce9b34ee9"
+    sha256 cellar: :any,                 sonoma:        "0cd18ea153dce11c64ebd6e2b708ba7e9169372a9979299959246ab76c540ae2"
+    sha256 cellar: :any,                 ventura:       "ce995bb8e5855d84d468cfe88627ecb51ba39ceacf80c0e001f21cac4c0dc32a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7a398e17148d29dae7b1ede9e256c7b44c595c883a41c1e03921dad94d1ddb67"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dc166c9cac782e06d849cbb00cedabbe92f4050ce9d8d2eba8fc8d4624c8b61c"
   end
-
-  depends_on "rust" => :build
-  depends_on "node" => :test
 
   def install
     system "make", "install", "AMALGAMATED=1", "PREFIX=#{prefix}"
-    system "cargo", "install", *std_cargo_args(path: "cli")
-    generate_completions_from_executable(bin/"tree-sitter", "complete", shell_parameter_format: :arg)
+  end
+
+  def caveats
+    <<~EOS
+      This formula now installs only the `tree-sitter` library (`libtree-sitter`).
+      To install the CLI tool:
+        brew install tree-sitter-cli
+    EOS
   end
 
   test do
-    # a trivial tree-sitter test
-    assert_equal "tree-sitter #{version}", shell_output("#{bin}/tree-sitter --version").strip
-
-    # test `tree-sitter generate`
-    (testpath/"grammar.js").write <<~JS
-      module.exports = grammar({
-        name: 'YOUR_LANGUAGE_NAME',
-        rules: {
-          source_file: $ => 'hello'
-        }
-      });
-    JS
-    system bin/"tree-sitter", "generate", "--abi=latest"
-
-    # test `tree-sitter parse`
-    (testpath/"test/corpus/hello.txt").write <<~EOS
-      hello
-    EOS
-    parse_result = shell_output("#{bin}/tree-sitter parse #{testpath}/test/corpus/hello.txt").strip
-    assert_equal("(source_file [0, 0] - [1, 0])", parse_result)
-
-    # test `tree-sitter test`
-    (testpath/"test"/"corpus"/"test_case.txt").write <<~EOS
-      =========
-        hello
-      =========
-      hello
-      ---
-      (source_file)
-    EOS
-    system bin/"tree-sitter", "test"
-
     (testpath/"test_program.c").write <<~C
       #include <stdio.h>
       #include <string.h>

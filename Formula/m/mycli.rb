@@ -3,18 +3,18 @@ class Mycli < Formula
 
   desc "CLI for MySQL with auto-completion and syntax highlighting"
   homepage "https://www.mycli.net/"
-  url "https://files.pythonhosted.org/packages/97/ef/c487ca8878abab58c695f497f0700f0c95f79fd62392ae5b47550d75e761/mycli-1.36.0.tar.gz"
-  sha256 "43c321c9c3dd8d63d4576d540b289916998af28aa2a84b0f973b775830f154f5"
+  url "https://files.pythonhosted.org/packages/e1/1f/1e9206078bbbe0140979a7404776f75ed3cd0802e4ad9b983ff145fa8857/mycli-1.37.1.tar.gz"
+  sha256 "3fe3b0572c75b6148fd83f760a55358666152e7732df932137c00d6d2ce07b0e"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "3c09a8a1631db2891164b683cb68baa96d4b2676c02094101f2439a9b20cbcb7"
-    sha256 cellar: :any,                 arm64_sonoma:  "e909294a999b196bf7886cafcbff7795781722e458f58e0babbbae907c00bbe3"
-    sha256 cellar: :any,                 arm64_ventura: "79909190d83a5088d8e5518f790b0948f23c2a4e29ee144bfa7665827f9be01f"
-    sha256 cellar: :any,                 sonoma:        "b9ebe9e2574d68babfb5c6004f447015b7e5c2043dede5c68beb3c48d140395f"
-    sha256 cellar: :any,                 ventura:       "64b9ab538fe5fda5759913f78c6b8955a078704b98a357e84675f1b559a0a1cd"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b05bee644ec873314a84a45658cbe4528d913efb54d41ad84d3386c3b92226a5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0da36a2851f21d5a353d0984e7554ce3d0d71c1f603c0541391584aaf03d9481"
+    sha256 cellar: :any,                 arm64_sequoia: "b8c9dab4f330dfa64c145ce56f5cdb6bde5ee288b94e9a581cec7cd6f02b65b6"
+    sha256 cellar: :any,                 arm64_sonoma:  "d58666aafd2e05a61a22261fae94e6844b7fd0be81bbc94eb5edfb111c78e78e"
+    sha256 cellar: :any,                 arm64_ventura: "db3fd5262c2642d3d681a410a1e11b421b5f5ff0fb77652ed84ad45c914d5b3a"
+    sha256 cellar: :any,                 sonoma:        "b6ee6e272a3e4bc253674f05368d8c4423ea07cdb775c9a1ff9ed7aa49e37e92"
+    sha256 cellar: :any,                 ventura:       "8eb5be7622c456e79a3aaac7071688a8074f454dcede4b8a63140f5a03444500"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e5715667b18947e77034b6a8e24a06b69554f8b35c8606d94237cd7ec9a281c5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "07cbd26f1e1de90be0cf0ce2f783227e6f995f077707c1fdb055018b98911d92"
   end
 
   depends_on "rust" => :build # for sqlglotrs
@@ -24,8 +24,8 @@ class Mycli < Formula
   uses_from_macos "libffi"
 
   resource "cli-helpers" do
-    url "https://files.pythonhosted.org/packages/a3/a7/22abd67bccf39835df3fbc97ba2541d26ba2c723f3066ebf4a024df8d2a5/cli_helpers-2.6.0.tar.gz"
-    sha256 "1d37659ebb4eb5e2ebecd8a148ba2698eb7da62b34d63124bf5ce7ff3c4d413f"
+    url "https://files.pythonhosted.org/packages/5a/e6/51b043e8c4ae390af61af35f73a9c2a69a26ea9cf4d061ab45c59f8e20f4/cli_helpers-2.7.0.tar.gz"
+    sha256 "62d11710dbebc2fc460003de1215688325d8636859056d688b38419bd4048bc0"
   end
 
   resource "click" do

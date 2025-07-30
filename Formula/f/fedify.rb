@@ -1,19 +1,19 @@
 class Fedify < Formula
   desc "CLI toolchain for Fedify"
   homepage "https://fedify.dev/cli"
-  url "https://ghfast.top/https://github.com/fedify-dev/fedify/archive/refs/tags/1.7.6.tar.gz"
-  sha256 "ae2a009b509cd589b1188b2bc09ad96bc20e028f0608ca8fa3dd510cb4abf094"
+  url "https://ghfast.top/https://github.com/fedify-dev/fedify/archive/refs/tags/1.7.7.tar.gz"
+  sha256 "927b797cacdadd67a470a5ed4bef8371ef06dcdf0cb7e56e80f4063a4dcfeb8c"
   license "MIT"
   head "https://github.com/fedify-dev/fedify.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "831f981b349d42b02a637db8fb860c7f3a93d270cb3a2399d6fc159cdeb2e841"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f413732865ae1f8e3ce55c79704427ec97446ddfef865d2183d8880c75ad94c3"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "8b70b575597eeef782635e069af58f196ff5b36c6fdc0555a2a7e68f2e761a67"
-    sha256                               sonoma:        "12428f00b65f0d591d0c22bb92fb71ddfbd42efceef8271a7c2dc69a8991a610"
-    sha256                               ventura:       "7cc6cb81ff41d013cb2e029c994ff188dd49cdb0b4f479112e2d29876ef55937"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5eb089fc4329d35142c952f01a19cf097a5cdd1274f455a83d86e5278a0743fc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "966968592b3ae264487d231a5af247bd27721dfda05fa5183ae96942609d31d6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7df85269ee02f904761e2015e91f8ab8cbe15f00c6261bea593b8ab4700f9441"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6cc2587819ff8af1c651e594e9615486a98b1f7d2a210a6231b87ebfdcf81c18"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "a909759f974c6f135c74b7ff47e5b5e45475c7ef0ef39155c3a67589abfaa946"
+    sha256                               sonoma:        "d0b1b6b32875db7cc5c14389e7d603562841e17cc17953ea87fbb7c1e537b8c6"
+    sha256                               ventura:       "95256b1a09479980840867dc5029a003ed80cb93856f695472150e2777ddecde"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1ae3e7dad056b8ed6c98c384c7824215c03f92ced6ae8ee370f6ecfac84043e9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8473c9e8e4a43b4cc0e2f3c2a0e02a8ae6fdb8cfb3db1a611df95b16a2c5eec1"
   end
 
   depends_on "deno" => :build
@@ -23,7 +23,7 @@ class Fedify < Formula
 
   def install
     # upstream bug report, https://github.com/fedify-dev/fedify/issues/303
-    odie "Remove `--no-check` workarounds" if build.stable? && version > "1.7.6"
+    odie "Remove `--no-check` workarounds" if build.stable? && version > "1.7.7"
 
     system "deno", "task", "codegen"
     system "deno", "compile", "--allow-all", "--no-check", "--output=#{bin/"fedify"}", "cli/mod.ts"

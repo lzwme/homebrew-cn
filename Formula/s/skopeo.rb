@@ -4,14 +4,16 @@ class Skopeo < Formula
   url "https://ghfast.top/https://github.com/containers/skopeo/archive/refs/tags/v1.19.0.tar.gz"
   sha256 "043e9f568440accf1aafca122a25c4d21441f16de49475192ec4abeef7430358"
   license "Apache-2.0"
+  revision 1
 
   bottle do
-    sha256 arm64_sequoia: "b92bf9e74a3f729b3ee4022b1b26f4ce9b459d8c1919a438b45ddf61ccee08f9"
-    sha256 arm64_sonoma:  "e4d4585fec2cd666321ed3a3c4ac086a454589614280391bbc5ab52eb0331cba"
-    sha256 arm64_ventura: "7e2b25e6d2f2a2649eae99ed1e9313e55b0ec8b4a386189844dab63e8f27c496"
-    sha256 sonoma:        "56921c1ded643f7a11ffb8b1ade837cf89d5f95ff695343a275186c31cc48733"
-    sha256 ventura:       "bea60e3be5267fcf0aad619f9bb5d833e6eb25374b4b2a3e5aa3453911b04e55"
-    sha256 x86_64_linux:  "46546e227bc13941c5a6a980ba444703cf1df6efffc989636e39677b33874fe1"
+    sha256 arm64_sequoia: "b7337fc7461fe07dd1c6e9c116407df06e03357aaa16dcc916bfea707fb1f24c"
+    sha256 arm64_sonoma:  "01e67815ba97eae7038de368dd93151bef22ecc9962f83e452003018ecdd65c0"
+    sha256 arm64_ventura: "8a39f2a48ee37ff54c03f2386d3c81d1b1a7f912037334aaac33568bdb333713"
+    sha256 sonoma:        "cda9aa991fb9e6e368e3ab073bd6314b6494537f0cf0fd7089af99c1c98d721f"
+    sha256 ventura:       "ebb9e29f52aa493183a234e57b7fda58d64bbf0b8c75b30e8b68e43d6642f5a5"
+    sha256 arm64_linux:   "1b49db712b8d4bbc91e5b2eb90887737629745555ff45676cfe5b5a926810511"
+    sha256 x86_64_linux:  "b9857fb374c271b293b29ef7d9303ca38fc71e98e78600ddacf5f3dd78e119be"
   end
 
   depends_on "go" => :build
