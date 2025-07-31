@@ -1,19 +1,19 @@
 class Sdb < Formula
   desc "Ondisk/memory hashtable based on CDB"
   homepage "https://www.radare.org/"
-  url "https://ghfast.top/https://github.com/radareorg/sdb/archive/refs/tags/2.1.0.tar.gz"
-  sha256 "877f1540f8890ee32ddfe5a03c3455d7d9bf344bc55a6ac42bdcc7ba241e8ab9"
+  url "https://ghfast.top/https://github.com/radareorg/sdb/archive/refs/tags/2.2.0.tar.gz"
+  sha256 "05b6fda41727e2d634bc0cdea0bccdc186b48cc9136b2367ab2a7358145fa8b4"
   license "MIT"
   head "https://github.com/radareorg/sdb.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "fe7fce5a05792a0d970268a111172ff4a92abd948f98499b7b48304e7c17fba0"
-    sha256 cellar: :any,                 arm64_sonoma:  "460a6293a18f7925c2794221c34781a085e279e7d73b1ed54b531e35771456f4"
-    sha256 cellar: :any,                 arm64_ventura: "a32fdde7aebe6d674e9427d2de15766a28f30c741b96e14dd2c3b0cc241ce8cb"
-    sha256 cellar: :any,                 sonoma:        "6c66504eaf55a72603ed5b724b06927f1aac64a9a5b3bd1e80205c8ae8a20c38"
-    sha256 cellar: :any,                 ventura:       "85295727af6d4942c6a2c1f9611d5c22437da0d9a72155b4803a68e3d49433ec"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "733389a09b477680c399818f04dace96ab23fdfeade9296e3f4f8a96eabf4d48"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "224892c60361f6e6bfecca83ae56e73648bd7f3a439880e9403e2b3dbbc3750d"
+    sha256 cellar: :any,                 arm64_sequoia: "41695d0cc3526175b99ce5850cd4246af15e374e32b30bb20d5fee4a534fe1de"
+    sha256 cellar: :any,                 arm64_sonoma:  "6391d94f5571c5c19fd0865bb3bc6793bb9596fc2a49a5af39e1910712899858"
+    sha256 cellar: :any,                 arm64_ventura: "63004949cd084e74ced59cb3ce84fe63bc7095da5602f01e58a5d1b0026b2b84"
+    sha256 cellar: :any,                 sonoma:        "3b8395df7ab426e250cc8e26a1b06e8699d78724f8becacdad1f14881336c784"
+    sha256 cellar: :any,                 ventura:       "77e283d412b4183d9d842562b617e7598113e9e2a9f3f40acc4ca2876355776a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f729bde1f426097c7d2cea72103b12bf8ef0874f4b62ae0f2ed3ee04431a366d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "47575b7d7a3b8e9e40369e40f783370d8ce9f91394b5f6ead66d1bab140b0fbc"
   end
 
   depends_on "meson" => :build

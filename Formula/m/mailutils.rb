@@ -1,21 +1,22 @@
 class Mailutils < Formula
   desc "Swiss Army knife of email handling"
   homepage "https://mailutils.org/"
-  url "https://ftp.gnu.org/gnu/mailutils/mailutils-3.19.tar.gz"
-  mirror "https://ftpmirror.gnu.org/mailutils/mailutils-3.19.tar.gz"
-  sha256 "aeb6d5fca9179da0402cf6adef36026f656d6ae6de4e7142c6b0a035161fd7dd"
+  url "https://ftp.gnu.org/gnu/mailutils/mailutils-3.20.tar.gz"
+  mirror "https://ftpmirror.gnu.org/mailutils/mailutils-3.20.tar.gz"
+  sha256 "d10ee65ba391d6463952d8a81551f8a6e667538ee8587b3c801137e657087d4c"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 arm64_sequoia: "d790720aa6cb28ca860975492e83556a861c5ad47d4992096c09dc4583f44191"
-    sha256 arm64_sonoma:  "02507fd28f0de0b0a4ede1239678aa3814611eb46b74e30f8c90c1db97c2629a"
-    sha256 arm64_ventura: "fe58a7bd2bdb2ef56d042c1c80958c866883921354116018346712406a528bae"
-    sha256 sonoma:        "fc9e4ba51f56ceafd83ea5717d64c5743eba692ec06d4f80362c908a3e7a2f5f"
-    sha256 ventura:       "e7cf415dcd40794880d95390f3add8fec9525d205cc74ecd40ffc1fc812eb778"
-    sha256 arm64_linux:   "c7dba705daf92061c4e674ddbcd8a84e0a500db7d1f5e3e52b2b7e2a05501388"
-    sha256 x86_64_linux:  "8cf1753255aa8749c4669d1abdec367627998243decd6f8c72500068efb326c6"
+    sha256 arm64_sequoia: "26c6cce1516f6ea2435473db754bc8f5d1df5cfa993dae465acb5926d53f2a0f"
+    sha256 arm64_sonoma:  "a7febc3f8b9ce9a2ec7ac88c9a4b0663c0706fd51154fd0aba8ea1c04a95818f"
+    sha256 arm64_ventura: "5ef7a611f4898010e32d274502f86702ee4d7415cb41bc8559c616ad0f31f9b8"
+    sha256 sonoma:        "33ca8ab67fe35819016e0f7c076772d7052568d1c877e50d4b0bba65303bad18"
+    sha256 ventura:       "5c677c2ff86e822d323ef6d29c48cfd77688cbab06ae587a1320dc72d8fec0ff"
+    sha256 arm64_linux:   "d915542a1a5b9461b4c6762c4c5177f32a5e23a2282818cbe5702ba5d1b97415"
+    sha256 x86_64_linux:  "f648b8567f2893c9ccc33e418da53ea7d93c50c8fe434f28d8694055019423a2"
   end
 
+  depends_on "gdbm"
   depends_on "gnutls"
   depends_on "gsasl"
   depends_on "libtool"
@@ -23,6 +24,7 @@ class Mailutils < Formula
   depends_on "readline"
 
   uses_from_macos "libxcrypt"
+  uses_from_macos "python"
 
   on_macos do
     depends_on "gettext"
@@ -38,7 +40,6 @@ class Mailutils < Formula
     system "./configure", "--disable-mh",
                           "--disable-silent-rules",
                           "--without-fribidi",
-                          "--without-gdbm",
                           "--without-guile",
                           "--without-tokyocabinet",
                           *std_configure_args

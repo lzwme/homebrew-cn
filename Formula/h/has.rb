@@ -1,16 +1,19 @@
 class Has < Formula
   desc "Checks presence of various command-line tools and their versions on the path"
   homepage "https://github.com/kdabir/has"
-  url "https://ghfast.top/https://github.com/kdabir/has/archive/refs/tags/v1.5.0.tar.gz"
-  sha256 "d45be15f234556cdbaffa46edae417b214858a4bd427a44a2a94aaa893da7d99"
+  url "https://ghfast.top/https://github.com/kdabir/has/archive/refs/tags/v1.5.1.tar.gz"
+  sha256 "9693e50673fffcfdfe0eea2b9c3c4455c5c46c4eee390bd3cffb3e51bbfc291b"
   license "MIT"
   head "https://github.com/kdabir/has.git", branch: "master"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "dd0eec9c703fb35356c4931881f3c5106a4fdee227e39c2c2844fecf025509e8"
+    sha256 cellar: :any_skip_relocation, all: "601865ae2b656ff5e957d4c7e01e67ce9cbeea244bed03e95d73fc26b2a50f6e"
+  end
+
+  # Fix long option parsing issue, upstream pr ref, https://github.com/kdabir/has/pull/88
+  patch do
+    url "https://github.com/kdabir/has/commit/32418e7c59c6c1801f3828bca1b2feed0894434f.patch?full_index=1"
+    sha256 "2f0c0fcc53365d92f2008d29d69f7477c2083ecf123db6fc9f2e154521c6ae86"
   end
 
   def install

@@ -1,10 +1,9 @@
 class Cppcheck < Formula
   desc "Static analysis of C and C++ code"
   homepage "https://sourceforge.net/projects/cppcheck/"
-  url "https://ghfast.top/https://github.com/danmar/cppcheck/archive/refs/tags/2.17.1.tar.gz"
-  sha256 "bfd681868248ec03855ca7c2aea7bcb1f39b8b18860d76aec805a92a967b966c"
+  url "https://ghfast.top/https://github.com/danmar/cppcheck/archive/refs/tags/2.18.0.tar.gz"
+  sha256 "dc74e300ac59f2ef9f9c05c21d48ae4c8dd1ce17f08914dd30c738ff482e748f"
   license "GPL-3.0-or-later"
-  revision 2
   head "https://github.com/danmar/cppcheck.git", branch: "main"
 
   # There can be a notable gap between when a version is tagged and a
@@ -16,13 +15,13 @@ class Cppcheck < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "3102544868411c345f7bb673595f0226163fe9e6d220ff4715c7af038751a9b7"
-    sha256 arm64_sonoma:  "77ac696a0ef87246ca35816c0dfb0c094bdee504bb987d1ba1658414743a6fa6"
-    sha256 arm64_ventura: "023da7be5d3eb3d13f4609eeb23601bd95b7a261dcb2cd545c7aa7a0d25494e3"
-    sha256 sonoma:        "8d5db1a37f58fa1313ff48bd119d3bd7fbf9b1604f6a2d51c0e167581b548f81"
-    sha256 ventura:       "28b99b71be9372234be2e688217a65675bb7270f9c851c48e6dd825ec4d9b29a"
-    sha256 arm64_linux:   "40e4409e2397ae1d69d2c4643cb57887ee81bb96cea754f04439dcc8d8975390"
-    sha256 x86_64_linux:  "3ce75b931157c6e05a6d3e016fefd6d5c3357e2c3975440dac2b916b118c8c90"
+    sha256 arm64_sequoia: "eb0097b36c50984dbb4704c8b92fc9ddc3539b3b0aadacb3447da6d23ddcd8d7"
+    sha256 arm64_sonoma:  "c06383cecb03fc3211e5b454793ef27933502cc15fa82e5c691b74d232818159"
+    sha256 arm64_ventura: "b76f080212e75b4974ab8e9a7fd436cc40366a0f8f21263d9b2773f389d59a5e"
+    sha256 sonoma:        "e201b7dac8a206ce0666b1b45057145f4bfac0392618f309a20af1d6a653e367"
+    sha256 ventura:       "abb6c2780925ded8421fbe46c69266b6ae715e562ad6f4e8092be5d8bc69fc50"
+    sha256 arm64_linux:   "320398fbfeed342b0a4886ae92483bfc7031f75dfa1fe3758b578fb0addaac24"
+    sha256 x86_64_linux:  "bc93065d64304be2541b1ad5bb86588e6020a7e3a935e1415836b65d6f7200a5"
   end
 
   depends_on "cmake" => :build
@@ -37,10 +36,11 @@ class Cppcheck < Formula
   end
 
   def install
+    ENV.deparallelize
+
     args = %W[
       -DHAVE_RULES=ON
       -DUSE_BUNDLED_TINYXML2=OFF
-      -DENABLE_OSS_FUZZ=OFF
       -DPYTHON_EXECUTABLE=#{python3}
       -DFILESDIR=#{pkgshare}
     ]

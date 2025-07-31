@@ -3,18 +3,18 @@ class B2Tools < Formula
 
   desc "B2 Cloud Storage Command-Line Tools"
   homepage "https://github.com/Backblaze/B2_Command_Line_Tool"
-  url "https://files.pythonhosted.org/packages/91/4e/fab18d15499c7899cf0b75eec031666a7fefd5569d1a91f9af07fd9204f9/b2-4.4.0.tar.gz"
-  sha256 "8da1dfd572d0e5d1e72769e3095c4ce9f88c5d6eb4490b0d62e3041b2ae7008b"
+  url "https://files.pythonhosted.org/packages/65/3b/8c65626bff8920e59331f5b2e98748d19797fb5da0ec24b00bd5c3389886/b2-4.4.1.tar.gz"
+  sha256 "cc3595b035e2a3fbc1e8d923288d3bdbd07a633e79f303ca602a3932d5865572"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "857b582aecbedefd166648cf5d6165e087780c5b6e4404288432e725d7ea6b16"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "857b582aecbedefd166648cf5d6165e087780c5b6e4404288432e725d7ea6b16"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "857b582aecbedefd166648cf5d6165e087780c5b6e4404288432e725d7ea6b16"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d384b1d41e6c169c1902166fa346d9bf07fa98410d8ca8cc70e4f5fc5051e817"
-    sha256 cellar: :any_skip_relocation, ventura:       "d384b1d41e6c169c1902166fa346d9bf07fa98410d8ca8cc70e4f5fc5051e817"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8721c0d9b144eaf44f09aa2e2799718b9c2f9c8ea9a94dc250f8b7666c5f3752"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8721c0d9b144eaf44f09aa2e2799718b9c2f9c8ea9a94dc250f8b7666c5f3752"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "75d00a2a0b996f00059ffa48b473abe94d14615ca3f4fbe9b40226371ec9d767"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "75d00a2a0b996f00059ffa48b473abe94d14615ca3f4fbe9b40226371ec9d767"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "75d00a2a0b996f00059ffa48b473abe94d14615ca3f4fbe9b40226371ec9d767"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c606f9aed257c20f77e46745da7112fb166d90813efa8f96f6bae5b3f43a95d7"
+    sha256 cellar: :any_skip_relocation, ventura:       "c606f9aed257c20f77e46745da7112fb166d90813efa8f96f6bae5b3f43a95d7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "556c461f3321a18c6eedaaaef81b97e297ea4075742818dfbdde6eda4695f75b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "556c461f3321a18c6eedaaaef81b97e297ea4075742818dfbdde6eda4695f75b"
   end
 
   depends_on "certifi"

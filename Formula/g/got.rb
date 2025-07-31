@@ -11,6 +11,8 @@ class Got < Formula
     regex(/href=.*?got-portable[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  no_autobump! because: "GitHub runners are not abile to access the homepage or livecheck URL"
+
   bottle do
     sha256 arm64_sequoia: "de57fc967046ef9aa8fcc1581fe067be0a6ec7b895440b0f667fd783fa0b00d0"
     sha256 arm64_sonoma:  "9b069ff44e0c2074c2f5d76721be9e79372a44a00a224af6e5ee65cb35adb966"

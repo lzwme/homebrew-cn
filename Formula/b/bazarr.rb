@@ -9,13 +9,14 @@ class Bazarr < Formula
   head "https://github.com/morpheus65535/bazarr.git", branch: "development"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8a970f6f5dc0730e20ca59176874c7ec1abe7a8433a897bd0e642eba8a951c00"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "203e8edb199ebd6050879d45b5dca2e37baa282b8e48dbcf6f3c1b8269ec05ba"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "12bf4455d2154c9fcc5f719a321bda609ee2610a5a897384230ba8918865e024"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e7bd2789e41974a78525fb2ed9e4f384b9c337977652375b22b9cc87b974f7ca"
-    sha256 cellar: :any_skip_relocation, ventura:       "2d822e4808509bc37dfc0ec0ef20dbd49bbc9d74eda582b31b1beeac80f2a9e1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0b43a4b85eaa37c9e87a5d5ac1b0b4ff729aff6d4bd3c583958056c5fba741a7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "61178b07eb006f26c6a92ebad8daf2da402070d91d0dd54a54705dd592674d3b"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "18fc543c3b68a956d78c8cde0fc0c2d14cbe0f2651987b704cdf70f61f9fc84e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6bf3862a5fe41abef772593e43d3214aac26ab085a22c9fa3a65efa36be588d8"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "edd478bc8b93ebfe83efcc5ed3b664e61550bd170999ad28afcb64bee7f230cf"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8707f8a3f5e2f41252f6c5c5740e1018d8c91233e909853c6e2ac951e340f6be"
+    sha256 cellar: :any_skip_relocation, ventura:       "6cc745bb28d2e5a7192db60bc2e28fc0a6b515a2b9fee31adecec4528c0f5902"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f81c0ded9e8eed480b6186bd813ec25703ff39f3e9903ad78b3e4f1861f7d62f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0e724662e022e172a0e14886c4019a6c095a0f744b4b22efc0fb5b9ca48b6afd"
   end
 
   depends_on "node" => :build
@@ -23,7 +24,7 @@ class Bazarr < Formula
   depends_on "gcc"
   depends_on "numpy"
   depends_on "pillow"
-  depends_on "python@3.12" # Python 3.13 issue (closed w/o fix): https://github.com/morpheus65535/bazarr/issues/2803
+  depends_on "python@3.13"
   depends_on "unar"
 
   uses_from_macos "libxml2", since: :ventura
@@ -46,7 +47,7 @@ class Bazarr < Formula
   end
 
   def install
-    venv = virtualenv_create(libexec, "python3.12")
+    venv = virtualenv_create(libexec, "python3.13")
     venv.pip_install resources
 
     if build.head?

@@ -1,33 +1,19 @@
 class Ctl < Formula
   desc "Programming language for digital color management"
   homepage "https://github.com/ampas/CTL"
+  url "https://ghfast.top/https://github.com/ampas/CTL/archive/refs/tags/ctl-1.5.4.tar.gz"
+  sha256 "fb84925320d053827fce965d7aeea5bb8690d7093bb083c8e3915d7a600e25fc"
   license "AMPAS"
-  revision 1
   head "https://github.com/ampas/CTL.git", branch: "master"
 
-  # TODO: Remove `stable` block when patch is no longer needed.
-  stable do
-    url "https://ghfast.top/https://github.com/ampas/CTL/archive/refs/tags/ctl-1.5.3.tar.gz"
-    sha256 "0a9f5f3de8964ac5cca31597aca74bf915a3d8214e3276fdcb52c80ad25b0096"
-
-    # Fix build failure due to ambiguous call to `clamp` with C++17
-    # https://github.com/ampas/CTL/pull/164
-    patch do
-      url "https://github.com/ampas/CTL/commit/8108715a8cbbb0a0a81a00fb7239f228270047c1.patch?full_index=1"
-      sha256 "4a48615dd434b80db01f23da56a2243d72d32f60a4a5c23655e5860a845eda6f"
-    end
-  end
-
-  no_autobump! because: :requires_manual_review
-
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "9d2f566d3e81d03f0df20a22cafe1a0ffec738af1b3b8d8fb804c66bc57f1e42"
-    sha256 cellar: :any,                 arm64_sonoma:  "6e5fa4335bc1b37de8c3fc53d05b4e6f6d1f98292d7f37101e58b4434b61e3e2"
-    sha256 cellar: :any,                 arm64_ventura: "cca063bca6afc27b93575530d6ae3b4e27887646a4d84ec62bab91e112664f55"
-    sha256 cellar: :any,                 sonoma:        "f765540b318344aae45d9cb0ab5f9399f82f08cc560b4bec4b427795e6232cf6"
-    sha256 cellar: :any,                 ventura:       "db8b8b63a18cdd1070dd9ebde85a3a4d5e2d6f9e1e520d7d31e90375143f1f15"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e655c7062702656e1d9e4be0f0a6151cbc7056a40069f9ce40a0e8c0846d4761"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4ed74f26a409a8c6078dcdd8575a78a145991769103c40f2ee04cf65c2f59964"
+    sha256 cellar: :any,                 arm64_sequoia: "3fb1b09436b484e35d5544ff6bf9f2a9c5366168688f5bf99adfbddb65d5dd28"
+    sha256 cellar: :any,                 arm64_sonoma:  "d3d274bbebd059bc200982df81a41ec44d7ec6e034ea68b270061f65066f5835"
+    sha256 cellar: :any,                 arm64_ventura: "cb1106d92d6a4796b1d991fa02ecc5e64d1f36a838dec83ba55592d5a542c9f6"
+    sha256 cellar: :any,                 sonoma:        "17ec28c686ab557397d8eed4372422118ac398d7cd550a56a5bd8a13522edb69"
+    sha256 cellar: :any,                 ventura:       "98e9048d39c5c6a1db7cbfaf1499a98b9223a68a163b653428bf32813857af81"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1f8da736a028805ef0a72fd237280d1aa6c267bec62d94bd5a330c884024f787"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "99cf99049b9a220373d99678ed562fcc3e5fbc9b795df7b4e158dce5d157f8a5"
   end
 
   depends_on "cmake" => :build

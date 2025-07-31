@@ -71,20 +71,28 @@ class Neovide < Formula
     bin.write_exec_script prefix/"Neovide.app/Contents/MacOS/neovide"
   end
 
+  def nvim_connected_clients_count(socket)
+    Utils.safe_popen_read(
+      "nvim", "--headless",
+              "--server", socket,
+              "--remote-expr", 'luaeval("vim.tbl_count(vim.api.nvim_list_chans()) - 1")'
+    ).chomp.to_i
+  end
+
   test do
-    test_server = "localhost:#{free_port}"
-    nvim_cmd = ["nvim", "--headless", "--listen", test_server]
+    socket = testpath/"nvim.sock"
+    nvim_cmd = ["nvim", "--headless", "-i", "NONE", "-u", "NONE", "--listen", socket]
     ohai nvim_cmd.join(" ")
     nvim_pid = spawn(*nvim_cmd)
 
-    sleep 10
+    sleep 1 until socket.exist? && socket.socket?
 
-    neovide_cmd = [bin/"neovide", "--no-fork", "--remote-tcp=#{test_server}"]
+    neovide_cmd = [bin/"neovide", "--no-fork", "--server=#{socket}"]
     ohai neovide_cmd.join(" ")
     neovide_pid = spawn(*neovide_cmd)
 
-    sleep 10
-    system "nvim", "--server", test_server, "--remote-send", ":q<CR>"
+    sleep 1 until nvim_connected_clients_count(socket).positive?
+    system "nvim", "--server", socket, "--remote-send", ":q<CR>"
 
     Process.wait nvim_pid
     Process.wait neovide_pid

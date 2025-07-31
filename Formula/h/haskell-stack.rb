@@ -1,10 +1,14 @@
 class HaskellStack < Formula
   desc "Cross-platform program for developing Haskell projects"
   homepage "https://haskellstack.org/"
-  url "https://ghfast.top/https://github.com/commercialhaskell/stack/archive/refs/tags/v3.7.1.tar.gz"
-  sha256 "e2ce0d053566634a426ba1916592dfcefe48bdebbfe6a0da07e23a79c0ed7759"
   license "BSD-3-Clause"
-  head "https://github.com/commercialhaskell/stack.git", branch: "master"
+
+  stable do
+    url "https://ghfast.top/https://github.com/commercialhaskell/stack/archive/refs/tags/v3.7.1.tar.gz"
+    sha256 "e2ce0d053566634a426ba1916592dfcefe48bdebbfe6a0da07e23a79c0ed7759"
+
+    depends_on "ghc@9.8" => :build
+  end
 
   livecheck do
     url :stable
@@ -21,10 +25,13 @@ class HaskellStack < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "8342bcb2b1b190c7f4278e29b2e91301024dbe884da0d865b756dc5ddd9b8f6e"
   end
 
+  head do
+    url "https://github.com/commercialhaskell/stack.git", branch: "master"
+
+    depends_on "ghc" => :build
+  end
+
   depends_on "cabal-install" => :build
-  # https://github.com/commercialhaskell/stack/issues/6625#issuecomment-2228087359
-  # https://github.com/commercialhaskell/stack/blob/master/stack-ghc-9.10.1.yaml#L4-L5
-  depends_on "ghc@9.8" => :build # GHC 9.10+ blocked by Cabal 3.12+ API changes
 
   uses_from_macos "zlib"
 

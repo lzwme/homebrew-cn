@@ -18,14 +18,7 @@ class ElmFormat < Formula
 
   depends_on "cabal-install" => :build
   depends_on "ghc@9.6" => :build
-  depends_on "haskell-stack" => :build
   depends_on "hpack" => :build
-
-  uses_from_macos "xz" => :build # for `haskell-stack` to unpack ghc
-
-  on_linux do
-    depends_on "gmp" # for `haskell-stack` to configure ghc
-  end
 
   def install
     system "cabal", "v2-update"

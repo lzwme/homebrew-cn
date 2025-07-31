@@ -2,8 +2,8 @@ class Rdkit < Formula
   desc "Open-source chemoinformatics library"
   homepage "https://rdkit.org/"
   # NOTE: Make sure to update RPATHs if any "@rpath-referenced libraries" show up in `brew linkage`
-  url "https://ghfast.top/https://github.com/rdkit/rdkit/archive/refs/tags/Release_2025_03_2.tar.gz"
-  sha256 "4db5d503c3e0040321c32a2dc60d60221dc73ee9e5902b8208f2a39057bbfb15"
+  url "https://ghfast.top/https://github.com/rdkit/rdkit/archive/refs/tags/Release_2025_03_5.tar.gz"
+  sha256 "8bdb3c774ed4ae9e2727b6ce005004191447d630d8e857d36839cd8f1bca55b5"
   license "BSD-3-Clause"
   head "https://github.com/rdkit/rdkit.git", branch: "master"
 
@@ -15,16 +15,14 @@ class Rdkit < Formula
     end
   end
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
-    sha256                               arm64_sequoia: "fc0084d88f8068bc87338a68421b0178d089cfc10e9d55ba0a58498c1807830c"
-    sha256                               arm64_sonoma:  "aff5c49f467699a77fa87cdd1b1ad3cf91a5d5b484e7afe7dc1d2df7f0f90f37"
-    sha256                               arm64_ventura: "59e482ee31900e49c08b716970ebeceaf78e72d678e3a681d2e936c639a3a552"
-    sha256 cellar: :any,                 sonoma:        "86ab0cbb0d2414b87ee993bffdd75ddaa8bfd197c568645bfc77d122de2cd33a"
-    sha256 cellar: :any,                 ventura:       "eec570d4cec882a75b3cbe9f7ae1c3346a4cf4cd64b8f314b9f187e01af92dd6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c8c63f853cafee1a32449279e2ac6604a400f6786f4493e2f9167fe94a220933"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8283dbef87308e95d19c0721a67f42470475cf74b19ce4eb8c306197569bddc3"
+    sha256                               arm64_sequoia: "08e28d77deb6f515002c08be743333e32af820aea1f36981d93cacca3da8fbbc"
+    sha256                               arm64_sonoma:  "ddf7b60a0dbcb0e6bde11d85e49474bee64d9876f137c9312797e33563a2f89a"
+    sha256                               arm64_ventura: "2e587bfcab8b75818d3ad2d8ef3bc01ab75ac5ddaa9ac05365ce5bf8102fffca"
+    sha256 cellar: :any,                 sonoma:        "d0f1e7da6291389dffa3f7795f9f98abce65e31a2825053af3a344863f4c6981"
+    sha256 cellar: :any,                 ventura:       "6129d7af067c6f979c0d2b19f52aa2173643798a6abae8523aa54b47f09c0e70"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cf123bc3458d825bf555f98fe22aa7cef6457aa4dd6ff58555c52c030baf1ee9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ac12c1b214f680af245767e1d9b95df04202a405bac5967a38cbaf367acb767f"
   end
 
   depends_on "catch2" => :build
@@ -66,6 +64,7 @@ class Rdkit < Formula
     args = %W[
       -DCMAKE_INSTALL_RPATH=#{rpath}
       -DCMAKE_MODULE_LINKER_FLAGS=#{python_rpaths.map { |path| "-Wl,-rpath,#{path}" }.join(" ")}
+      -DCMAKE_PREFIX_PATH='#{Formula["maeparser"].opt_lib};#{Formula["coordgen"].opt_lib}'
       -DCMAKE_REQUIRE_FIND_PACKAGE_coordgen=ON
       -DCMAKE_REQUIRE_FIND_PACKAGE_maeparser=ON
       -DCMAKE_REQUIRE_FIND_PACKAGE_Inchi=ON

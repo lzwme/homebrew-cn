@@ -55,7 +55,7 @@ class Skopeo < Formula
   end
 
   test do
-    cmd = "#{bin}/skopeo --override-os linux inspect docker://busybox"
+    cmd = "#{bin}/skopeo --override-os linux inspect --no-creds docker://busybox"
     output = shell_output(cmd)
     assert_match "docker.io/library/busybox", output
 

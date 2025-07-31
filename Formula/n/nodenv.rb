@@ -1,15 +1,15 @@
 class Nodenv < Formula
   desc "Node.js version manager"
   homepage "https://github.com/nodenv/nodenv"
-  url "https://github.com/nodenv/nodenv/archive/refs/tags/v1.6.1.tar.gz"
-  sha256 "7e61b32bc4bdfeced5eb6143721baaa0c7ec7dc67cdd0b2ef4b0142dcec2bcc8"
+  url "https://github.com/nodenv/nodenv/archive/refs/tags/v1.6.2.tar.gz"
+  sha256 "4351a5fc642461d3bc92cf5228a558bf421e05c722b8827961d7f3a0e1cb5b50"
   license "MIT"
   head "https://github.com/nodenv/nodenv.git", branch: "main"
 
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "c55d5fa041bff0f7c662111988bb1b67f78ccf8e6caab9f77d7088c6445db44d"
+    sha256 cellar: :any_skip_relocation, all: "a01dda203871fb80f56351ebb37f528f1f65de52f681a57e98d38d5fa6911792"
   end
 
   depends_on "node" => :test
@@ -26,9 +26,9 @@ class Nodenv < Formula
                                            "\\1--g#{Utils.git_short_head}"
     end
 
-    prefix.install ["bin", "libexec", "nodenv.d"]
-    bash_completion.install "completions/nodenv.bash"
+    # fish and bash completions handled by nodenv-init
     zsh_completion.install "completions/_nodenv"
+    prefix.install ["bin", "completions", "libexec", "nodenv.d"]
     man1.install "share/man/man1/nodenv.1"
   end
 

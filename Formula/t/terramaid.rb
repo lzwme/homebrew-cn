@@ -1,18 +1,18 @@
 class Terramaid < Formula
   desc "Utility for generating Mermaid diagrams from Terraform configurations"
   homepage "https://github.com/RoseSecurity/Terramaid"
-  url "https://ghfast.top/https://github.com/RoseSecurity/Terramaid/archive/refs/tags/v2.5.0.tar.gz"
-  sha256 "452647a8f06bef671da1df3c33a798e1cb560f94cafb9ddd0eb46c49611c5131"
+  url "https://ghfast.top/https://github.com/RoseSecurity/Terramaid/archive/refs/tags/v2.6.0.tar.gz"
+  sha256 "3415bae95e17556bfcc21893c494bd536523b5fd071b70ffa5068bad3490d11a"
   license "Apache-2.0"
   head "https://github.com/RoseSecurity/Terramaid.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "349342ac214149a3324286da16ac57d06cadf7c1497ab37da640199dbdff58f9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "349342ac214149a3324286da16ac57d06cadf7c1497ab37da640199dbdff58f9"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "349342ac214149a3324286da16ac57d06cadf7c1497ab37da640199dbdff58f9"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ae0f06b28e149b6b57ea4bf4f33eb45a59237212a0cc123f2915c775bad0a35e"
-    sha256 cellar: :any_skip_relocation, ventura:       "ae0f06b28e149b6b57ea4bf4f33eb45a59237212a0cc123f2915c775bad0a35e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1c78e7268d8bf3b76863641a290b567d4b24333d196156780f54ba4fe6d390c5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "745edccac997c5120f8648f3661b2310a8e6765c412239f08576244999670946"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "745edccac997c5120f8648f3661b2310a8e6765c412239f08576244999670946"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "745edccac997c5120f8648f3661b2310a8e6765c412239f08576244999670946"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9caea5f8dcb3d31c459d0e1c6a9ffc06bca42012b665325b1e0b0b9d53844aa8"
+    sha256 cellar: :any_skip_relocation, ventura:       "9caea5f8dcb3d31c459d0e1c6a9ffc06bca42012b665325b1e0b0b9d53844aa8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "28ad7c19f8ac45fc471bc54a9bc338d6f5a2adb2a23c3f0ce8e087767b5f79e2"
   end
 
   depends_on "go" => [:build, :test]

@@ -1,18 +1,18 @@
 class GitWho < Formula
   desc "Git blame for file trees"
   homepage "https://github.com/sinclairtarget/git-who"
-  url "https://ghfast.top/https://github.com/sinclairtarget/git-who/archive/refs/tags/v1.1.tar.gz"
-  sha256 "b88efe18a39987006df113e097a0e96493955237613997b56c940ff591473ea2"
+  url "https://ghfast.top/https://github.com/sinclairtarget/git-who/archive/refs/tags/v1.2.tar.gz"
+  sha256 "14d69c0e9e18ec40aa11d3e1fd6e76a0805a292de84805264a19c03798e443d0"
   license "MIT"
   head "https://github.com/sinclairtarget/git-who.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d1a53fb17a9a37e67ca3f9e59b2816c53ca34204c0779ed84a94aa27e1f5e10d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d1a53fb17a9a37e67ca3f9e59b2816c53ca34204c0779ed84a94aa27e1f5e10d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "d1a53fb17a9a37e67ca3f9e59b2816c53ca34204c0779ed84a94aa27e1f5e10d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "738e5938dbf462fcf3d297d72a77ca47252fcfacc7202296fc78bc0987875364"
-    sha256 cellar: :any_skip_relocation, ventura:       "738e5938dbf462fcf3d297d72a77ca47252fcfacc7202296fc78bc0987875364"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2d740e976ce6a927fafe9f33d361079510d3388307e61d85273f2d048932e321"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a4639d20eb757e3b9665510d023ab6692e6f307fa3176c2b30fe027786e6d5fd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a4639d20eb757e3b9665510d023ab6692e6f307fa3176c2b30fe027786e6d5fd"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "a4639d20eb757e3b9665510d023ab6692e6f307fa3176c2b30fe027786e6d5fd"
+    sha256 cellar: :any_skip_relocation, sonoma:        "1c2bb0c4a0e7c78a420cdf36dfe59d544df285fd80e57581d94d38eedd75b4d3"
+    sha256 cellar: :any_skip_relocation, ventura:       "1c2bb0c4a0e7c78a420cdf36dfe59d544df285fd80e57581d94d38eedd75b4d3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "be567b6ab0d7057ee00fbdca313574e4d21e3e587840a3d9ebf618ef494d5cf3"
   end
 
   depends_on "go" => :build

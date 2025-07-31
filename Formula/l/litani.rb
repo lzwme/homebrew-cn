@@ -8,15 +8,13 @@ class Litani < Formula
       revision: "8002c240ef4f424039ed3cc32e076c0234d01768"
   license "Apache-2.0"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
-    rebuild 3
-    sha256 cellar: :any,                 arm64_sonoma:  "783a2098086de5ae5bd6da1c2861405a9f9e6c81d39b610a588303b35afa5d32"
-    sha256 cellar: :any,                 arm64_ventura: "335b32520084699755377ea966edd1110db54ce778add5be4c3c3f1a15ea696e"
-    sha256 cellar: :any,                 sonoma:        "5e8d434b3d2fb389ad937ac3e97aba8896c9e1e99ed3d1537d5e3daa03ea3e50"
-    sha256 cellar: :any,                 ventura:       "a548833f41ce2331f2bec2a29b70e93d51fe934afd5344b339e2967372233c0c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c1826fff1a8601653ed3cf9a4dd461f98650705be353ebea060a0f583e0826ab"
+    rebuild 4
+    sha256 cellar: :any,                 arm64_sonoma:  "b0f81f3f3209d4e7734802ccc252c2e24fc60a744c3abb8240c57633fd8c1dd9"
+    sha256 cellar: :any,                 arm64_ventura: "e715dee1f738cefc1bfd130c464c9ef91788ff16b53a48ac53c5fe7d20e74fbb"
+    sha256 cellar: :any,                 sonoma:        "aa8fe441a8999774f2d3b0d26e1c0b94b1572ff439de16767d3f825a282f7ace"
+    sha256 cellar: :any,                 ventura:       "91594078221ca286cb43744cf228b1d727641fdbe4a21b85dad430bc3aa24031"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d9deebc99467682582aeb8c6dd2465f98363a06cfde6e1375c08b9b547c422d3"
   end
 
   depends_on "coreutils" => :build
@@ -29,13 +27,13 @@ class Litani < Formula
   depends_on "python@3.13"
 
   resource "jinja2" do
-    url "https://files.pythonhosted.org/packages/ed/55/39036716d19cab0747a5020fc7e907f362fbf48c984b14e62127f7e68e5d/jinja2-3.1.4.tar.gz"
-    sha256 "4a3aee7acbbe7303aede8e9648d13b8bf88a429282aa6122a993f0ac800cb369"
+    url "https://files.pythonhosted.org/packages/df/bf/f7da0350254c0ed7c72f3e33cef02e048281fec7ecec5f032d4aac52226b/jinja2-3.1.6.tar.gz"
+    sha256 "0137fb05990d35f1275a587e9aee6d56da821fc83491a0fb838183be43f66d6d"
   end
 
   resource "markupsafe" do
-    url "https://files.pythonhosted.org/packages/87/5b/aae44c6655f3801e81aa3eef09dbbf012431987ba564d7231722f68df02d/MarkupSafe-2.1.5.tar.gz"
-    sha256 "d283d37a890ba4c1ae73ffadf8046435c76e7bc2247bbb63c00bd1a709c6544b"
+    url "https://files.pythonhosted.org/packages/b2/97/5d42485e71dfc078108a86d6de8fa46db44a1a9295e89c5d6d4a06e23a62/markupsafe-3.0.2.tar.gz"
+    sha256 "ee55d3edf80167e48ea11a923c7386f4669df67d7994554387f84e7d8b0a2bf0"
   end
 
   resource "pyyaml" do

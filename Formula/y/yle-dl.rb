@@ -3,20 +3,19 @@ class YleDl < Formula
 
   desc "Download Yle videos from the command-line"
   homepage "https://aajanki.github.io/yle-dl/index-en.html"
-  url "https://files.pythonhosted.org/packages/47/dc/e544bc64b9e44c68bfbbd36c0d293bae2800ef8d4bb313b6feb4619ca031/yle_dl-20250614.tar.gz"
-  sha256 "ed3d3f80c26fdb0854a8c6c14179171a2ba4117ebabea3e137f589c2bd8815d4"
+  url "https://files.pythonhosted.org/packages/a1/92/f2c10d7390899c9f26e08102143d9c0a8d375a7d7a7314e17913ddfa162e/yle_dl-20250730.tar.gz"
+  sha256 "2122741f515d5829eff28b2f6b96c251f4f7434412ea6c3ca60e526e60563c89"
   license "GPL-3.0-or-later"
-  revision 1
   head "https://github.com/aajanki/yle-dl.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b538a4dcb34db9704c829a14ff23eabad8c94be0e97fce384fa28afb9cf0c971"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0671419447f32e2f5d0d8cdcdcec31cd145b6deb26c55059e000ff8609d9bdc4"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "408ef75bdf3c659db26cf9c5bde32bae8cf757acf6a46cffb146b7c685bf133c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e1d612443f0c7431837290ab124faddf2a9009fe6fd6e87723848ad845abb34b"
-    sha256 cellar: :any_skip_relocation, ventura:       "0ea187e48a7ce17a29b5ba97dc56146a805ffaafef7bf01ec61630949be21727"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cb2d794199c4c8d5664633641643c317153e4e8ed0de225feba52f39edbbaa22"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "29d8ecb5f2db3f2cafe2829132d2af5a9948f3a30038d3a16f0ad23ae064b10f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ef884e65ce096f77b9eff4abba1c8275d2919de7d27052036a9ae561f00e7eb8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bbf9f8d6e2fbaecf47184e3906f6b58bbce2a9cab4869976960cf716f84c3151"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "f042834c38ee8da3dd3c54b4ca140369955994417bee956be82f3c51570fa72a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "beb99664d4b236a1a2a7b9d4587f63130d09e8f405f296599333f10d497ddb2c"
+    sha256 cellar: :any_skip_relocation, ventura:       "94b2831182b9fb7476a61515498d31a78f2791997c492e4bc142683cda5c2659"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "780b9d25430e7abdf9a45d7c2adcddb1c2763d642f62a8ce65cc57eae9fcd4d4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6d41b9952c54a2d3d0f3f9f4c34e8edde1f8e5bea688c109f9aa09c71533fbb0"
   end
 
   depends_on "certifi"
@@ -43,8 +42,8 @@ class YleDl < Formula
   end
 
   resource "lxml" do
-    url "https://files.pythonhosted.org/packages/76/3d/14e82fc7c8fb1b7761f7e748fd47e2ec8276d137b6acfe5a4bb73853e08f/lxml-5.4.0.tar.gz"
-    sha256 "d12832e1dbea4be280b22fd0ea7c9b87f0d8fc51ba06e92dc62d52f804f78ebd"
+    url "https://files.pythonhosted.org/packages/c5/ed/60eb6fa2923602fba988d9ca7c5cdbd7cf25faa795162ed538b527a35411/lxml-6.0.0.tar.gz"
+    sha256 "032e65120339d44cdc3efc326c9f660f5f7205f3a535c1fdbf898b29ea01fb72"
   end
 
   resource "requests" do

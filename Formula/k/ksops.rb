@@ -2,17 +2,18 @@ class Ksops < Formula
   desc "Flexible Kustomize Plugin for SOPS Encrypted Resources"
   homepage "https://github.com/viaduct-ai/kustomize-sops"
   url "https://ghfast.top/https://github.com/viaduct-ai/kustomize-sops/archive/refs/tags/v4.4.0.tar.gz"
-  sha256 "d498284ee6a523fd4b87d284693b313fea289b4a374f2c0d1b5023f2b18bf77a"
+  sha256 "08891e25bfac225ac90fd6ccc20ec5d8d0dff96222d86eaafeb976d85bb338f0"
   license "Apache-2.0"
   head "https://github.com/viaduct-ai/kustomize-sops.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3aa747b7c1f4bcfabfd3942ff92a66ee859762d82a495509742df676e0682a48"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3aa747b7c1f4bcfabfd3942ff92a66ee859762d82a495509742df676e0682a48"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "3aa747b7c1f4bcfabfd3942ff92a66ee859762d82a495509742df676e0682a48"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c9665ddf3104edd404a8a6b8bdf7e4aa823327c976584a0ea0fe7ed9f8b33456"
-    sha256 cellar: :any_skip_relocation, ventura:       "c9665ddf3104edd404a8a6b8bdf7e4aa823327c976584a0ea0fe7ed9f8b33456"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "03ac64e22aa36b5d1664fbf1748a08b76d3f984f00277c1ac329757cffaa475a"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "17343452def7526089b16ea57e32f01b1ba172ae97ec5d237733a366befae681"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "17343452def7526089b16ea57e32f01b1ba172ae97ec5d237733a366befae681"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "17343452def7526089b16ea57e32f01b1ba172ae97ec5d237733a366befae681"
+    sha256 cellar: :any_skip_relocation, sonoma:        "bd3f6dc2bfd4bfc5a8fc316bfb69acb96fff9e8e9ce6b486063fea1d22a0eda2"
+    sha256 cellar: :any_skip_relocation, ventura:       "bd3f6dc2bfd4bfc5a8fc316bfb69acb96fff9e8e9ce6b486063fea1d22a0eda2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d4bdbb84f09f2bbd812a349633347fb8f7a0bacf0b1c236337aff59680569195"
   end
 
   depends_on "go" => :build

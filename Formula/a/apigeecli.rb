@@ -1,8 +1,8 @@
 class Apigeecli < Formula
   desc "Apigee management API command-line interface"
   homepage "https://cloud.google.com/apigee/docs"
-  url "https://ghfast.top/https://github.com/apigee/apigeecli/archive/refs/tags/v2.13.0.tar.gz"
-  sha256 "61d441d082d07dd7102483dea826fa57dbd97d76434076312a67b067776698fa"
+  url "https://ghfast.top/https://github.com/apigee/apigeecli/archive/refs/tags/v2.14.0.tar.gz"
+  sha256 "7a0cb53288dfe15b337d2ba04344f3a4869fbf37481305ce36fad62d6a6b283a"
   license "Apache-2.0"
   head "https://github.com/apigee/apigeecli.git", branch: "main"
 
@@ -12,13 +12,13 @@ class Apigeecli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "498a7ccc309d4d391e5ed215937bc461438c4ff94449eeb75a7ce726355c8028"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "498a7ccc309d4d391e5ed215937bc461438c4ff94449eeb75a7ce726355c8028"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "498a7ccc309d4d391e5ed215937bc461438c4ff94449eeb75a7ce726355c8028"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6769094dfa947b204f4fca357ed7af5ad35d8b5ced4a4cfd181e8f36bbaf87f3"
-    sha256 cellar: :any_skip_relocation, ventura:       "6769094dfa947b204f4fca357ed7af5ad35d8b5ced4a4cfd181e8f36bbaf87f3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "be1b087aa21bf3dc2011b030f15ac1324f01c0010e02539fb29d3de1d4148d9d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b4fad1d8ce752aa79e4c7433aa12f5c5a2e1a3b4e50c7af29a9d79d830ade158"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "258f55c740b881c22285482b6a0d2a713c97ca2cd52fdbd1a689d837fa394f30"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "258f55c740b881c22285482b6a0d2a713c97ca2cd52fdbd1a689d837fa394f30"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "258f55c740b881c22285482b6a0d2a713c97ca2cd52fdbd1a689d837fa394f30"
+    sha256 cellar: :any_skip_relocation, sonoma:        "22a4f0a97f6f04a978615122219da2ca29b2df163e8eaf3dd120cbaff7543b58"
+    sha256 cellar: :any_skip_relocation, ventura:       "22a4f0a97f6f04a978615122219da2ca29b2df163e8eaf3dd120cbaff7543b58"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e478820bcd12f7879496f9fd127a143ced123b44e4e197a5492afca25bda1806"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e3e93ca2622ce527dc0025ad466cb2867b6e8ca80f3d61ab4e6d1a6fed7f5346"
   end
 
   depends_on "go" => :build

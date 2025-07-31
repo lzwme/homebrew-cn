@@ -13,17 +13,18 @@ class BalenaCli < Formula
   end
 
   bottle do
-    sha256                               arm64_sequoia: "4fe1e69b51e0ce308f258c22c27534214bcb064daecee222b6d76279fcf6f8f0"
-    sha256                               arm64_sonoma:  "1919c612ae7da0a268465ce17c373b9552b35403556a5c67629a495314103bda"
-    sha256                               arm64_ventura: "d65298ce0d9c4b8434994104d97576deacdfeb017214b2c524183833334eccbe"
-    sha256                               sonoma:        "fb06a9947ac514e5986ef00c87398fbc34444cb5ff6b2f39b0bbd21923f19c10"
-    sha256                               ventura:       "f085a60e450dc695472808c6aa09c3a8a6bad86ef3f0fcd56bc14e8b9e2eb74c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fadb1401e80c98fa109100e3df371bd7a34f66de2da8dc603218a382470c1aea"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ebb40e8eb25945e191ac49117188168ef9bbaf4f3d281d0b6125f0f9169d1f8c"
+    rebuild 1
+    sha256                               arm64_sequoia: "00f6c60d52d4fe8e4a13de5d55d53d838e6027d59fb11558b1b0403ccf412c80"
+    sha256                               arm64_sonoma:  "3ef96e3bf6ac225b95adeb6bdb75ecdc8bf80febf0dec75f92368a5cdacff567"
+    sha256                               arm64_ventura: "0891d1c8789cd9373dcab9416c4f3a099dca4467facc532f32daac2a17e6623c"
+    sha256                               sonoma:        "823879681ca58133d222fbf031e25e6d59d336206ebd19b386871f3e431d8a38"
+    sha256                               ventura:       "e7232df20effcdafb84594678ed74db40806b46b4a39feee52c416632d164249"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "20664c07e710b91c822ef922af699fcf6c6611d4d5c64117e75b9ed9699f3ead"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d320d127dd89e2fea18a337a4ef075b0cb330f3447655489b97d319fada22c95"
   end
 
-  # need node@20, and also align with upstream, https://github.com/balena-io/balena-cli/blob/master/.github/actions/publish/action.yml#L21
-  depends_on "node@20"
+  # align with upstream, https://github.com/balena-io/balena-cli/blob/master/.github/actions/publish/action.yml#L21
+  depends_on "node@22"
 
   on_linux do
     depends_on "libusb"

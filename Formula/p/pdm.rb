@@ -3,19 +3,19 @@ class Pdm < Formula
 
   desc "Modern Python package and dependency manager supporting the latest PEP standards"
   homepage "https://pdm-project.org"
-  url "https://files.pythonhosted.org/packages/49/c7/2c406c0e0bb4e3384298eb0078b9332da54916dc6e128397a860570eb23f/pdm-2.25.4.tar.gz"
-  sha256 "bd655d789429928d6e27ff6693c19c82bc81aa75ba51d7b1c6102d039c8f211c"
+  url "https://files.pythonhosted.org/packages/76/1a/01df081e0d17644c49d7968a5f8d22d6e080be09b54507107ac94be1dfc1/pdm-2.25.5.tar.gz"
+  sha256 "063fa211dd6b062d3ca87b722e4010b802093d8b437486bfcf07ced802c544ea"
   license "MIT"
   head "https://github.com/pdm-project/pdm.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "45e4237c7ec17d997ee8cd377858bfe305c0cce306399b664a83525497762be6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "45e4237c7ec17d997ee8cd377858bfe305c0cce306399b664a83525497762be6"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "45e4237c7ec17d997ee8cd377858bfe305c0cce306399b664a83525497762be6"
-    sha256 cellar: :any_skip_relocation, sonoma:        "19f0c019f070fb8a9cd20660186476dbbae7e46e39be3c995611739a00c50562"
-    sha256 cellar: :any_skip_relocation, ventura:       "19f0c019f070fb8a9cd20660186476dbbae7e46e39be3c995611739a00c50562"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "bdc4539f3565365ed29fb2ef69ddcaae2854042aec83e67a97bdda4913f4e488"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bdc4539f3565365ed29fb2ef69ddcaae2854042aec83e67a97bdda4913f4e488"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9c72b975281c4531f29d9141cda163c551175bfef436081e228414feb4204ea1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9c72b975281c4531f29d9141cda163c551175bfef436081e228414feb4204ea1"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "9c72b975281c4531f29d9141cda163c551175bfef436081e228414feb4204ea1"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c969a7fe8bb77acb682112c12f020275ee990e82245cf41568f0083a3c6877fc"
+    sha256 cellar: :any_skip_relocation, ventura:       "c969a7fe8bb77acb682112c12f020275ee990e82245cf41568f0083a3c6877fc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5e76c4698f8b4cc37825cd1b30fcc3ea82b52777ce1dd248c8b24f7156ea163a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5e76c4698f8b4cc37825cd1b30fcc3ea82b52777ce1dd248c8b24f7156ea163a"
   end
 
   depends_on "certifi"
@@ -42,8 +42,8 @@ class Pdm < Formula
   end
 
   resource "distlib" do
-    url "https://files.pythonhosted.org/packages/0d/dd/1bec4c5ddb504ca60fc29472f3d27e8d4da1257a854e1d96742f15c1d02d/distlib-0.3.9.tar.gz"
-    sha256 "a60f20dea646b8a33f3e7772f74dc0b2d0772d2837ee1342a00645c81edf9403"
+    url "https://files.pythonhosted.org/packages/96/8e/709914eb2b5749865801041647dc7f4e6d00b549cfe88b65ca192995f07c/distlib-0.4.0.tar.gz"
+    sha256 "feec40075be03a04501a973d81f633735b4b69f98b05450592310c0f401a4e0d"
   end
 
   resource "filelock" do
@@ -52,8 +52,8 @@ class Pdm < Formula
   end
 
   resource "findpython" do
-    url "https://files.pythonhosted.org/packages/2d/73/ab2c4fb7972145c1595c07837cffc1456c1510a908f5c8bda9745930ee60/findpython-0.6.3.tar.gz"
-    sha256 "5863ea55556d8aadc693481a14ac4f3624952719efc1c5591abb0b4a9e965c94"
+    url "https://files.pythonhosted.org/packages/1a/17/5a72566eecc9cbc1609459befe9f7dc65e101b66519a79999cc48044993c/findpython-0.7.0.tar.gz"
+    sha256 "8b31647c76352779a3c1a0806699b68e6a7bdc0b5c2ddd9af2a07a0d40c673dc"
   end
 
   resource "h11" do
@@ -62,8 +62,8 @@ class Pdm < Formula
   end
 
   resource "hishel" do
-    url "https://files.pythonhosted.org/packages/a8/3d/f754187b9703a8db211e80cef0fc4e27e0ab2edbeacccf1257c096dade48/hishel-0.1.2.tar.gz"
-    sha256 "6643450bfb1cfa2ecd6002769f6f5069d0d048c9c1f1e29a98a48302d5875092"
+    url "https://files.pythonhosted.org/packages/3e/b5/c063cd3eab8154ddd61deb07b50497cf24010727eaeec4d78ed1a6262986/hishel-0.1.3.tar.gz"
+    sha256 "db3e07429cb739dcda851ff9b35b0f3e7589e21b90ee167df54336ac608b6ec3"
   end
 
   resource "httpcore" do
@@ -107,8 +107,8 @@ class Pdm < Formula
   end
 
   resource "pbs-installer" do
-    url "https://files.pythonhosted.org/packages/b9/f6/a870e6c05c90e11cacd61afeb69d056304fb6801a8a30b84bd365f9685ab/pbs_installer-2025.6.26.tar.gz"
-    sha256 "e0a0995f6245dd38fcf178bfd8ee7253627cdbe52e46361228b91a173b7ea0de"
+    url "https://files.pythonhosted.org/packages/a2/fa/cc15ff1d8bb595af5b4115ebe334a6b90058e5b7864bca6300e6affb06e2/pbs_installer-2025.7.23.tar.gz"
+    sha256 "0dcf3038b4d04f9b41c4f80fc43ac05de34c0bf949580308a6894836a0340752"
   end
 
   resource "platformdirs" do
@@ -142,8 +142,8 @@ class Pdm < Formula
   end
 
   resource "rich" do
-    url "https://files.pythonhosted.org/packages/a1/53/830aa4c3066a8ab0ae9a9955976fb770fe9c6102117c8ec4ab3ea62d89e8/rich-14.0.0.tar.gz"
-    sha256 "82f1bc23a6a21ebca4ae0c45af9bdbc492ed20231dcb63f297d6d1021a9d5725"
+    url "https://files.pythonhosted.org/packages/fe/75/af448d8e52bf1d8fa6a9d089ca6c07ff4453d86c65c145d0a300bb073b9b/rich-14.1.0.tar.gz"
+    sha256 "e497a48b844b0320d45007cdebfeaeed8db2a4f4bcf49f15e455cfc4af11eaa8"
   end
 
   resource "shellingham" do
@@ -167,8 +167,8 @@ class Pdm < Formula
   end
 
   resource "truststore" do
-    url "https://files.pythonhosted.org/packages/0f/a7/b7a43228762966a13598a404f3dfb4803ea29a906f449d8b0e73ed0bcd30/truststore-0.10.1.tar.gz"
-    sha256 "eda021616b59021812e800fa0a071e51b266721bef3ce092db8a699e21c63539"
+    url "https://files.pythonhosted.org/packages/5a/19/d90d35e584f58bac270beee003dd93b664335c0b9074b03b8604c6ea36ec/truststore-0.10.3.tar.gz"
+    sha256 "16ff5f6faf692acca470f9b92e66b4c0faccb9b702d0b0486d3d465932b6b3b1"
   end
 
   resource "unearth" do
@@ -182,8 +182,8 @@ class Pdm < Formula
   end
 
   resource "virtualenv" do
-    url "https://files.pythonhosted.org/packages/56/2c/444f465fb2c65f40c3a104fd0c495184c4f2336d65baf398e3c75d72ea94/virtualenv-20.31.2.tar.gz"
-    sha256 "e10c0a9d02835e592521be48b332b6caee6887f332c111aa79a09b9e79efc2af"
+    url "https://files.pythonhosted.org/packages/a9/96/0834f30fa08dca3738614e6a9d42752b6420ee94e58971d702118f7cfd30/virtualenv-20.32.0.tar.gz"
+    sha256 "886bf75cadfdc964674e6e33eb74d787dff31ca314ceace03ca5810620f4ecf0"
   end
 
   def install

@@ -9,8 +9,6 @@ class Pius < Formula
   revision 3
   head "https://github.com/jaymzh/pius.git", branch: "master"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     rebuild 6
     sha256 cellar: :any_skip_relocation, all: "3f3e1fff9df0dffb6684ab3c51f31f7d45fa3ae4be39e97f6695d5f4164494a2"
