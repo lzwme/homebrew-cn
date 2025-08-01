@@ -13,12 +13,12 @@ class Gwenhywfar < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    sha256 arm64_sequoia: "9930a4548b9f0e08a4a9a1bc8eccd37631a4fec478579ebc2d161d13fe0f0f4c"
-    sha256 arm64_sonoma:  "ad8ee8d79124db8e321bd4e6437acc680dd60d6895e625326c28b77926e5d876"
-    sha256 arm64_ventura: "bb3a822d4f0ad578f9be222b4c14cb7610355778d9b2371fc735b3e83d9c355d"
-    sha256 sonoma:        "5896e3559848e093b54d532bdb052bf14e28f9cf654ddffeef0177027cdbf4bc"
-    sha256 ventura:       "2ece8422f811274a6b9240f7bb1579547b3259ff45ad1ccc331e9fe6540e6adf"
-    sha256 x86_64_linux:  "3a53be3d8dd0e85624fb761a181ac4de99baee1f9ae8cc7024ba4480cce9cc42"
+    rebuild 1
+    sha256 arm64_sonoma:  "2ff807877bd27f4d7a61341c3cf452e59dac0d0110e4b3992161d6c31d5a257b"
+    sha256 arm64_ventura: "05ff2e4299319b8b68bc13555f1025d941351c306c4fea30d0bbd0883ed1b83b"
+    sha256 sonoma:        "2ad234cfa1929197dc16bd30cbe0663447e243da79eb45052f1f04b07524590a"
+    sha256 ventura:       "ebcf039ec2de99deffc7a5c69ed71be35a8b634dcb27d4459b7a3b5b0fbdba73"
+    sha256 x86_64_linux:  "e3f30d7c1cb4583b5b7e5f5c09f363fd94659a6cc3ad0729c7f68dfac32353b6"
   end
 
   depends_on "gettext" => :build
@@ -28,7 +28,7 @@ class Gwenhywfar < Formula
   depends_on "libgpg-error"
   depends_on "openssl@3"
   depends_on "pkgconf" # gwenhywfar-config needs pkg-config for execution
-  depends_on "qt@5"
+  depends_on "qt"
 
   on_macos do
     depends_on "gettext"
@@ -46,8 +46,12 @@ class Gwenhywfar < Formula
       ENV.append_to_cflags "-Wno-int-conversion -Wno-incompatible-function-pointer-types"
     end
 
+    # Workaround for Qt6 until next release which should have fix.
+    # https://www.aquamaniac.de/rdm/projects/gwenhywfar/repository/revisions/49e4fb81dc41efd966115ff8a610a84495b330e4
+    ln_s buildpath/"gui/qt5", buildpath/"gui/qt6"
+
     inreplace "gwenhywfar-config.in.in", "@PKG_CONFIG@", "pkg-config"
-    guis = ["cpp", "qt5"]
+    guis = ["cpp", "qt6"]
     guis << "cocoa" if OS.mac?
     system "./configure", "--disable-silent-rules",
                           "--with-guis=#{guis.join(" ")}",
@@ -75,24 +79,21 @@ class Gwenhywfar < Formula
       cmake_minimum_required(VERSION 3.29)
       project(test_gwen)
 
-      find_package(Qt5 REQUIRED Core Widgets)
+      find_package(Qt6 REQUIRED Core Widgets)
       find_package(gwenhywfar REQUIRED)
       find_package(gwengui-cpp REQUIRED)
-      find_package(gwengui-qt5 REQUIRED)
+      find_package(gwengui-qt6 REQUIRED)
 
       add_executable(${PROJECT_NAME} test.c)
 
       target_link_libraries(${PROJECT_NAME} PUBLIC
                       gwenhywfar::core
                       gwenhywfar::gui-cpp
-                      gwenhywfar::gui-qt5
+                      gwenhywfar::gui-qt6
       )
     CMAKE
 
-    args = std_cmake_args
-    args << "-DQt5_DIR=#{Formula["qt@5"].opt_prefix/"lib/cmake/Qt5"}"
-
-    system "cmake", testpath.to_s, *args
+    system "cmake", testpath.to_s, *std_cmake_args
     system "make"
   end
 end

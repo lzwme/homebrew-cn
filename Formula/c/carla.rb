@@ -2,11 +2,10 @@ class Carla < Formula
   desc "Audio plugin host supporting LADSPA, LV2, VST2/3, SF2 and more"
   homepage "https://kx.studio/Applications:Carla"
   license "GPL-2.0-or-later"
-  revision 1
 
   stable do
-    url "https://ghfast.top/https://github.com/falkTX/Carla/archive/refs/tags/v2.5.9.tar.gz"
-    sha256 "226fb5d646b7541b82035080190e7440df1f92372fb798b4ad49289570e5ad81"
+    url "https://ghfast.top/https://github.com/falkTX/Carla/archive/refs/tags/v2.5.10.tar.gz"
+    sha256 "ae2835b12081f7271a6b0b25d34b87d36b022c40370028ca4a10f90fcedfa661"
 
     # TODO: Remove in 2.6.0
     depends_on maximum_macos: [:sonoma, :build]
@@ -22,11 +21,11 @@ class Carla < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:  "ce72afa1076fbddeea49955b0317e5b68f6edf4977820f2a5b70f8901c38b7a7"
-    sha256 cellar: :any,                 arm64_ventura: "f9ff117b161827d6cb4baa2dfacbe278f352d2de9f9155065e739dee6bbd07a6"
-    sha256 cellar: :any,                 sonoma:        "f1c5e24d843962ef91ea7e4ccf820f829ffe55249fa2ac578cd921d28813ec89"
-    sha256 cellar: :any,                 ventura:       "ad08054b961096e4f34b9fb839cdd23d590199c110a8e8b99d1668a2512a86b3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f29b248df9d099efa03eb0a3d8ba9276e508e9e72a5ea428b58bc5df4024b176"
+    sha256 cellar: :any,                 arm64_sonoma:  "e68c44affb1640960ee3a5523a637b149d5426ca0e40cc8434c1c93c81fbed9b"
+    sha256 cellar: :any,                 arm64_ventura: "ecbea509ddf5ef1074d5838e01669a49d48c24baf4ec10d816d894cb39830b7c"
+    sha256 cellar: :any,                 sonoma:        "768c0fccfd67bafa8c1e23bbf0531ae88e3f756d4d074079fbad4c7c2b0fe202"
+    sha256 cellar: :any,                 ventura:       "8e2274219eda8243736ed5e015cdb5ef62a2add1c1e59280e0ba84738c66abf3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9a63e9f2d8ecfb2fbee7417dc8b0cb21fd55d64f5d75ae9cdf8d09cd60621c0b"
   end
 
   head do

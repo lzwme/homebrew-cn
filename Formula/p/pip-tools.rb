@@ -3,20 +3,18 @@ class PipTools < Formula
 
   desc "Locking and sync for Pip requirements files"
   homepage "https://pip-tools.readthedocs.io"
-  url "https://files.pythonhosted.org/packages/1a/87/1ef453f10fb0772f43549686f924460cc0a2404b828b348f72c52cb2f5bf/pip-tools-7.4.1.tar.gz"
-  sha256 "864826f5073864450e24dbeeb85ce3920cdfb09848a3d69ebf537b521f14bcc9"
+  url "https://files.pythonhosted.org/packages/33/06/25a48f5f04851c4a5a010e8ce2b0070f19ac514b4d23e7ae687741bdaa76/pip_tools-7.5.0.tar.gz"
+  sha256 "30639f50961bb09f49d22f4389e8d7d990709677c094ce1114186b1f2e9b5821"
   license "BSD-3-Clause"
-  revision 2
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7c7fed54e62cfbc96dd6be5d2945b311fe298c9db82be74f7e7d88adccd6129d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7c7fed54e62cfbc96dd6be5d2945b311fe298c9db82be74f7e7d88adccd6129d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "7c7fed54e62cfbc96dd6be5d2945b311fe298c9db82be74f7e7d88adccd6129d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "19edc3f84c1707dc758e90f7ce77427568a34667be1e3724113d2ba882b595a1"
-    sha256 cellar: :any_skip_relocation, ventura:       "19edc3f84c1707dc758e90f7ce77427568a34667be1e3724113d2ba882b595a1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4940efa159848f5b5bc1d2cfd52f5079f541aa93f4236e03248dc8d9950d1288"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4940efa159848f5b5bc1d2cfd52f5079f541aa93f4236e03248dc8d9950d1288"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d66a627e42f665671d79a2c998ac6176dab1e872ddd596407150fa853a82c8c2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d66a627e42f665671d79a2c998ac6176dab1e872ddd596407150fa853a82c8c2"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "d66a627e42f665671d79a2c998ac6176dab1e872ddd596407150fa853a82c8c2"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b3bd6ad060fbd2ae18667a3651dcb3f69761b091610ca7ebe56f7184b990f380"
+    sha256 cellar: :any_skip_relocation, ventura:       "b3bd6ad060fbd2ae18667a3651dcb3f69761b091610ca7ebe56f7184b990f380"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "824aace6260a5e016bf0b559693deb7d1c25705f80eb0a15e431e46b35d394f3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "824aace6260a5e016bf0b559693deb7d1c25705f80eb0a15e431e46b35d394f3"
   end
 
   depends_on "python@3.13"
@@ -27,8 +25,8 @@ class PipTools < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/cd/0f/62ca20172d4f87d93cf89665fbaedcd560ac48b465bd1d92bfc7ea6b0a41/click-8.2.0.tar.gz"
-    sha256 "f5452aeddd9988eefa20f90f05ab66f17fce1ee2a36907fd30b05bbb5953814d"
+    url "https://files.pythonhosted.org/packages/60/6c/8ca2efa64cf75a977a0d7fac081354553ebe483345c734fb6b6515d96bbc/click-8.2.1.tar.gz"
+    sha256 "27c491cc05d968d271d5a1db13e3b5a184636d9d930f148c50b038f0d0646202"
   end
 
   resource "packaging" do
@@ -42,8 +40,8 @@ class PipTools < Formula
   end
 
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/9e/8b/dc1773e8e5d07fd27c1632c45c1de856ac3dbf09c0147f782ca6d990cf15/setuptools-80.7.1.tar.gz"
-    sha256 "f6ffc5f0142b1bd8d0ca94ee91b30c0ca862ffd50826da1ea85258a06fd94552"
+    url "https://files.pythonhosted.org/packages/18/5d/3bf57dcd21979b887f014ea83c24ae194cfcd12b9e0fda66b957c69d1fca/setuptools-80.9.0.tar.gz"
+    sha256 "f36b47402ecde768dbfafc46e8e4207b4360c654f1f3bb84475f0a28628fb19c"
   end
 
   resource "wheel" do

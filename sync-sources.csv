@@ -1396,6 +1396,7 @@ Homebrew-homebrew-core/Formula/d/deark.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/debianutils.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/debugbreak.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/decasify.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/d/deck.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/decker.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/decompose.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/defaultbrowser.rb, Homebrew/homebrew-core, 1
@@ -1429,6 +1430,7 @@ Homebrew-homebrew-core/Formula/d/devil.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/devspace.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dex.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dex2jar.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/d/dexidp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dexter.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dezoomify-rs.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dfc.rb, Homebrew/homebrew-core, 1
@@ -1961,6 +1963,7 @@ Homebrew-homebrew-core/Formula/f/file-formula.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/file-roller.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/filebeat.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/fileicon.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/f/filen-cli.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/fileql.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/finatra.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/findent.rb, Homebrew/homebrew-core, 0
@@ -2616,6 +2619,7 @@ Homebrew-homebrew-core/Formula/g/gradle-profiler.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gradle.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gradle@6.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gradle@7.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/g/gradle@8.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/grafana-agent.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/grafana-alloy.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/grafana.rb, Homebrew/homebrew-core, 1
@@ -3319,6 +3323,7 @@ Homebrew-homebrew-core/Formula/k/kind.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kingfisher.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kiota.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kirimase.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/k/kissat.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kitchen-completion.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kitchen-sync.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kitex.rb, Homebrew/homebrew-core, 1
@@ -4362,6 +4367,7 @@ Homebrew-homebrew-core/Formula/m/mecab-ko.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mecab-unidic-extended.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mecab-unidic.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mecab.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/m/media-control.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/media-info.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mediaconch.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mediamtx.rb, Homebrew/homebrew-core, 0
@@ -6163,6 +6169,7 @@ Homebrew-homebrew-core/Formula/s/search-that-hash.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/seaweedfs.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/sec.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/secp256k1.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/s/secretspec.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/securefs.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/seexpr.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/selecta.rb, Homebrew/homebrew-core, 1
@@ -8073,6 +8080,7 @@ Homebrew-homebrew-cask/Casks/a/atv-remote.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/au-lab.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/audacity.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/audio-hijack.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/a/audio-modeling-software-center.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/audiobook-builder.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/audiocupcake.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/audiogridder-plugin.rb, Homebrew/homebrew-cask, 0
@@ -14763,7 +14771,6 @@ Homebrew-homebrew-cask/Casks/t/trezor-bridge-app.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/trezor-suite.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/tribler.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/trilium-notes.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/t/triliumnext-notes.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/trim-enabler.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/trinity.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/triplecheese.rb, Homebrew/homebrew-cask, 0

@@ -24,14 +24,8 @@ class PinboardNotesBackup < Formula
   uses_from_macos "zlib"
 
   def install
-    # Workaround to build with GHC 9.12
-    args = [
-      "--allow-newer=http-api-data:base", # https://github.com/fizruk/http-api-data/pull/146
-      "--allow-newer=req:template-haskell", # https://github.com/mrkkrp/req/pull/182
-    ]
-
     system "cabal", "v2-update"
-    system "cabal", "v2-install", *args, *std_cabal_v2_args
+    system "cabal", "v2-install", *std_cabal_v2_args
     man1.install "man/pnbackup.1"
   end
 

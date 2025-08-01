@@ -30,6 +30,8 @@ class Dex < Formula
 
   uses_from_macos "ncurses"
 
+  conflicts_with "dexidp", because: "both install `dex` binaries"
+
   def install
     args = ["prefix=#{prefix}",
             "CC=#{ENV.cc}",

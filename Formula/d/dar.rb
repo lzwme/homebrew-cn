@@ -1,8 +1,8 @@
 class Dar < Formula
   desc "Backup directory tree and files"
   homepage "http://dar.linux.free.fr/doc/index.html"
-  url "https://downloads.sourceforge.net/project/dar/dar/2.7.18/dar-2.7.18.tar.gz"
-  sha256 "6131b7d6d79a093bfcb320abbb90df941df8e9bc73f89ae6410bccdeffa5eb46"
+  url "https://downloads.sourceforge.net/project/dar/dar/2.7.19/dar-2.7.19.tar.gz"
+  sha256 "601d67e7824daca586f2594a22b584703f8f6599a73e87f2afed2dfae2370889"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -11,13 +11,13 @@ class Dar < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "c6ed9371b7e5203385c32c792ed7828803aa2d3f924fdcae627c556408ea550a"
-    sha256 arm64_sonoma:  "fb6c4236f27c2716a3ebb589ec52b6808dcbfe175d58556962fa1d949cf70d05"
-    sha256 arm64_ventura: "187b84cbfc58815808a327357f55713dfe6d049bb6f169eb642db5bbff06e328"
-    sha256 sonoma:        "3e4a651e548e018c9f0f4761759e5f9f955c4aca925777fdb02df201e4db3d80"
-    sha256 ventura:       "69e51d3e93a69a3e5b37e5a84fd503ecca2293868adc15a5a54506541474cf07"
-    sha256 arm64_linux:   "3ebb2f92ba45ba9e6b75ff28ab2011a2839c5bff0a5cbc1de5a161d504e3b952"
-    sha256 x86_64_linux:  "bce142259c9f933d7dcd507a79f2d4e327841fe4e022a4537fbfb6b7533f5a47"
+    sha256 arm64_sequoia: "742e2b959f345a3a2fec097e7e5d8da53f09e3bdbe4d50f73e4ba28b144c511b"
+    sha256 arm64_sonoma:  "ad13ff36af96d4282904afb9a1dcd26efcd4919cf0eeb96c3d94ee599bd2a4f6"
+    sha256 arm64_ventura: "e15954e910c558f3f6edb5434942148cdb0b1fc6f8c62864b7284f7eb96bccbb"
+    sha256 sonoma:        "b14a26c01e7727833b46ec6454ddb881a395fa28cebe7cf0bf69eaee601ce4e7"
+    sha256 ventura:       "811e5a25d60820886c8541e77a7343811814461daee8ba949910a6c22d4c50a8"
+    sha256 arm64_linux:   "de33d89d138cc4af591df0475c1d961763067d5d17076233316e8772993185e3"
+    sha256 x86_64_linux:  "ac833cce30fd512cfc0b06113b1c7e50609dae7a859000456e510b5f3be182e2"
   end
 
   depends_on "argon2"

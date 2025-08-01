@@ -1,8 +1,8 @@
 class Micronaut < Formula
   desc "Modern JVM-based framework for building modular microservices"
   homepage "https://micronaut.io/"
-  url "https://ghfast.top/https://github.com/micronaut-projects/micronaut-starter/archive/refs/tags/v4.9.1.tar.gz"
-  sha256 "f30e012576da47a3ffcbf761e7816c45001a59b05ecaa3e9e434e9f6c7037082"
+  url "https://ghfast.top/https://github.com/micronaut-projects/micronaut-starter/archive/refs/tags/v4.9.2.tar.gz"
+  sha256 "de1b9f89e2eb5f0934d5298890c282b2ec0a11abfe8526b29243df3e2fdb4336"
   license "Apache-2.0"
 
   livecheck do
@@ -11,13 +11,13 @@ class Micronaut < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6c967b0531c15292a40e32af63012a784da17b56e4591ec87938e1d4c37e6ba7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "14c6c0324d738201e4c97f4b49bbf87b384ecf6ef8ec562b1c96500fab1a6151"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "5dd67480e2123fd329b3ed67dd987530013b5ee79dd87117b8f12169523f13ae"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4f1d40b2b116f1bde5ef3a5a8155d4c08e8c4d02204070a409768655eda737bd"
-    sha256 cellar: :any_skip_relocation, ventura:       "1138bfb29f17db49cade353cc0e2b00dc86ed61690e6401da03fdd2d9ced12d3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8149ed5687e51d1d7248fcd4f68d96caeac189f18da53d219d39ac3d4569738c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c2fa4629109d28210d496b82851267ea1f75dce7758c324605e8a014af5d1364"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6d65e4f16a1024fedc674df0141f46f30d9c7d03240f327bdf23a1a6ad8358f6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b560120018fa275cef83da12f10ded8afaafea0fa8adb01746d17e216af0073e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "4c1736e65b39b05548810e1223894da575a9653f41839d4f0bc60047f82e1d16"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7ada075670cf0cc45de5530c14100a289bad45b9cf3330741a74af58def97389"
+    sha256 cellar: :any_skip_relocation, ventura:       "df2e2d11183886c96b8fc9c8348fb3d220c289ccde6d387f4f33544caa00c4df"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "592f8e87747791193dcf26d6a045a86b5054e00eaf11ddfa37e634f4aa3a3c1e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "891bd5e6187d49985683404e41dd85edbaf3db639d9a4ff0b82de3f93829ca60"
   end
 
   depends_on "gradle" => :build

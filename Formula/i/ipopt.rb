@@ -1,19 +1,19 @@
 class Ipopt < Formula
   desc "Interior point optimizer"
   homepage "https://coin-or.github.io/Ipopt/"
-  url "https://ghfast.top/https://github.com/coin-or/Ipopt/archive/refs/tags/releases/3.14.18.tar.gz"
-  sha256 "a3e94b409871f84487c9f452e85d512848f536a2306bf7c02a3e1c691d77ac6b"
+  url "https://ghfast.top/https://github.com/coin-or/Ipopt/archive/refs/tags/releases/3.14.19.tar.gz"
+  sha256 "b3eb84a23812b53a3325bcd2c599de2b0f5df45a18ed251f9e3c1cd893136287"
   license "EPL-2.0"
   head "https://github.com/coin-or/Ipopt.git", branch: "stable/3.14"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "ffcb18d097246419e403378fe05082940d7cd098925807b63ed06f13fa507a32"
-    sha256 cellar: :any,                 arm64_sonoma:  "85b5c0af8c85ef66f1c390e778f0e029ec46b2c228db12200efc00b015990e07"
-    sha256 cellar: :any,                 arm64_ventura: "da028da228974183f9f0f82847f7e621a2bb90bc16153eb01368648971620533"
-    sha256 cellar: :any,                 sonoma:        "518c4faad34af5a856109efa9aa40af9cffe91c753ef6c2106e6800ee557816e"
-    sha256 cellar: :any,                 ventura:       "1cd18f15f5b261a264af7305a5c31e8c03b11d23dccf4b7cb632cce8ac2400f5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a0551c65260758da75f30ec4c1b00d2932af0681b3aeb82bb798464bc14bf3ea"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a5b3f41d9dc6303da2baa7f0692b7f99a250f57c877021b511580f8d385f4100"
+    sha256 cellar: :any,                 arm64_sequoia: "847ce7b7dcfa69ea27a65ea01ac98cbe63d211d93b3075d44c75074824ac6c0c"
+    sha256 cellar: :any,                 arm64_sonoma:  "1f471be987f9e4a2b010f555ae5b9b06c5177feb05932e83814355534695f8ef"
+    sha256 cellar: :any,                 arm64_ventura: "ba168fca35523f7b6b75b04704fb22df58cc0ca2009a61e0de09647867ad7239"
+    sha256 cellar: :any,                 sonoma:        "df6a8e87d831c760a26ea98ca037c2c6d4bb37d7520ce62e68e2aa1aa53b616e"
+    sha256 cellar: :any,                 ventura:       "c5f584f91a6ae167306fae8f28574657d304643460e58a44d7edf3793c1dd960"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "51378444ce9b3c3dc91f94b3744f8a287a41ad62f0c12b51e728d94a1eaf2c00"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "546246a14d77bcd0401489732f9d8a43ce62b74aaede0bc88ac502f79d3c6f3c"
   end
 
   depends_on "openjdk" => :build
@@ -84,8 +84,8 @@ class Ipopt < Formula
 
   test do
     resource "test" do
-      url "https://ghfast.top/https://github.com/coin-or/Ipopt/archive/refs/tags/releases/3.14.18.tar.gz"
-      sha256 "a3e94b409871f84487c9f452e85d512848f536a2306bf7c02a3e1c691d77ac6b"
+      url "https://ghfast.top/https://github.com/coin-or/Ipopt/archive/refs/tags/releases/3.14.19.tar.gz"
+      sha256 "b3eb84a23812b53a3325bcd2c599de2b0f5df45a18ed251f9e3c1cd893136287"
     end
 
     resource "miniampl" do

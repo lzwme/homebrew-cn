@@ -16,6 +16,10 @@ class GradleAT7 < Formula
 
   keg_only :versioned_formula
 
+  # EOL with Gradle 9 release on 2025-07-31.
+  # https://docs.gradle.org/current/userguide/feature_lifecycle.html#eol_support
+  deprecate! date: "2025-07-31", because: :unmaintained
+
   # TODO: Check if support for running on Java 20 is backported to Gradle 7.x.
   depends_on "openjdk@17"
 

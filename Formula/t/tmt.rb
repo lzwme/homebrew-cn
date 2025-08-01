@@ -3,18 +3,18 @@ class Tmt < Formula
 
   desc "Test Management Tool"
   homepage "https://tmt.readthedocs.io"
-  url "https://files.pythonhosted.org/packages/f8/4c/c34eb979e64000ff46399933e81864127eb5599b898d51c453188b3cce7f/tmt-1.53.0.tar.gz"
-  sha256 "84429f453c7cb1aa2ab347c1094bfa95b3a54e98608dfc85e258a07ee43f7972"
+  url "https://files.pythonhosted.org/packages/f7/63/84a639db7f53527fec098abaf4bffb36b742bcd019ed0eb278101869dc50/tmt-1.54.0.tar.gz"
+  sha256 "1f697ffb9a259f69604408a1c65b588d466a8a9f13cfdfce5f2eb747e877da3d"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "ff4b598c0ded3fe0f38be708d39a01a529dd10584bca737391215a465fa9d5a3"
-    sha256 cellar: :any,                 arm64_sonoma:  "2c7f45fb3ec3e9e2a3e5888da279fe2c0863d8aac0322c035222317240a97ecd"
-    sha256 cellar: :any,                 arm64_ventura: "18072739844a6f745804446204a670ee045f917a371f355d50a1fafd98206e3f"
-    sha256 cellar: :any,                 sonoma:        "4928936b1a2091a6ab36139f5fcbda6244c1e5c081e4d1d85d885649d8003272"
-    sha256 cellar: :any,                 ventura:       "a064f3a080206505bd2906ba309a484f2da3d028ab28517d02ad686744281feb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ceadfbe0f5f3b233b2ffc9d8bd28e052adbdf9c3032bdf55ef3ace7dc4cf845e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ee148f3d908758d42f6a43092aed6ee4ca9190dc63fff1e8efc1eed7bdcec16d"
+    sha256 cellar: :any,                 arm64_sequoia: "37436ced2f4c51beccc01052468cc706ef809fc8100c53a6bb2a6ca6e5b0dfc1"
+    sha256 cellar: :any,                 arm64_sonoma:  "9475a37b69df1de78016b79158b3e9936093846ecc532561fdfbb14d7859ebd4"
+    sha256 cellar: :any,                 arm64_ventura: "1aec79b8dafb82e2a2ae880d9ab65c5c8aa8f2fa7656b812614787c9b5ec34fd"
+    sha256 cellar: :any,                 sonoma:        "aeaea5e2a27daf6c4c38630724dec2db60dae03ec145f9750d2f676c05882b1f"
+    sha256 cellar: :any,                 ventura:       "ccf657394f0fde74f985d01e83d933f649dcfbed0122156ac78d235ee2a2aa9c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "850256a89bea3c2aa5797fc08a7aacdffab648adfd2a771c0eda9e903069d605"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "152f3592da62d99253c8c116a966bae3ef5048ecae18624f25e4dd0d5738ab82"
   end
 
   depends_on "rust" => :build # for rpds-py
@@ -43,8 +43,8 @@ class Tmt < Formula
   end
 
   resource "docutils" do
-    url "https://files.pythonhosted.org/packages/ae/ed/aefcc8cd0ba62a0560c3c18c33925362d46c6075480bfa4df87b28e169a9/docutils-0.21.2.tar.gz"
-    sha256 "3a6b18732edf182daa3cd12775bbb338cf5691468f91eeeb109deff6ebfa986f"
+    url "https://files.pythonhosted.org/packages/e9/86/5b41c32ecedcfdb4c77b28b6cb14234f252075f8cdb254531727a35547dd/docutils-0.22.tar.gz"
+    sha256 "ba9d57750e92331ebe7c08a1bbf7a7f8143b86c476acd51528b042216a6aad0f"
   end
 
   resource "filelock" do
@@ -78,8 +78,8 @@ class Tmt < Formula
   end
 
   resource "jsonschema" do
-    url "https://files.pythonhosted.org/packages/bf/d3/1cf5326b923a53515d8f3a2cd442e6d7e94fcc444716e879ea70a0ce3177/jsonschema-4.24.0.tar.gz"
-    sha256 "0b4e8069eb12aedfa881333004bccaec24ecef5a8a6a4b6df142b2cc9599d196"
+    url "https://files.pythonhosted.org/packages/d5/00/a297a868e9d0784450faa7365c2172a7d6110c763e30ba861867c32ae6a9/jsonschema-4.25.0.tar.gz"
+    sha256 "e63acf5c11762c0e6672ffb61482bdf57f0876684d8d249c0fe2d730d48bc55f"
   end
 
   resource "jsonschema-specifications" do

@@ -7,19 +7,22 @@ class Pandoc < Formula
   head "https://github.com/jgm/pandoc.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c1a49a901b2ced92b8a50547723d4f7452772b8a1b2da9bce66639e129afda0e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b60bd93b5547842d7d0a0c7cd370190d886f8668202d193d41fbd647c7e231b9"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "574b5c9ff56741b0618351e730cf57c77769df09c2773f4e078edcf040b59119"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4ed6bbed48caac1f712c44ffd320688294573ee0a9c0b37bb69c7f7a2d5799c5"
-    sha256 cellar: :any_skip_relocation, ventura:       "ae245cd313803946f6944125ad75eb46436b4165ad287ef35efbcec5e5e22c33"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4a67e9016e774478bb11e236cfb3e471598bbe327c184749767408b9e5ea31ab"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "95c14392f3a2a9ed82b48f2fed4f34044899148c8bd35e04dd684b700ecff99f"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "3c56ef545678a26d526a8b4dd1f3c81fa01fa7570e06776082c2f4dbfadfb6ce"
+    sha256 cellar: :any,                 arm64_sonoma:  "708d8c6efacab7e0b956c8569350efad991cfa7851da37efeb1b542a1f98b9f7"
+    sha256 cellar: :any,                 arm64_ventura: "6c6505d4c3accd3e0aa0150b50dad2ad1dc5d40941c8b83114b5bd3425633bb5"
+    sha256 cellar: :any,                 sonoma:        "19f1e26349eccf0fd2e23bd1a5aaae30d07fdd3bbb09a42f2ffd6ae24518765f"
+    sha256 cellar: :any,                 ventura:       "12877bdc7d0889e836fcac5c358be0f409c01697f36ae61e1f2b1653cb0180ff"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ea51a2e3c9d189302ea91c884d4be0c480728f01a8a24124ed25892ecfc1378e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3536b713574d366df256fea61b6ee57560e539f8a8562feef26258096f9bc7d1"
   end
 
   depends_on "cabal-install" => :build
-  depends_on "ghc@9.10" => :build
+  depends_on "ghc" => :build
+  depends_on "gmp"
 
   uses_from_macos "unzip" => :build # for cabal install
+  uses_from_macos "libffi"
   uses_from_macos "zlib"
 
   def install

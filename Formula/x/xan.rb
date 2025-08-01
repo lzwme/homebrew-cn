@@ -1,19 +1,19 @@
 class Xan < Formula
   desc "CSV CLI magician written in Rust"
   homepage "https://github.com/medialab/xan"
-  url "https://ghfast.top/https://github.com/medialab/xan/archive/refs/tags/0.51.0.tar.gz"
-  sha256 "0013f2edbfde15d4217e041b5eb156ae372de9b7df8b16cefbe010ac0c816c96"
+  url "https://ghfast.top/https://github.com/medialab/xan/archive/refs/tags/0.52.0.tar.gz"
+  sha256 "da4ee61b829284948841f88a7ce01078067aae29f0965311f0c4632467ff8721"
   license any_of: ["MIT", "Unlicense"]
   head "https://github.com/medialab/xan.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c3a4391f473ce2e471424eb38db57b57dc5aafb42cf603a9263fac1cac0a9da5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6a3f7be9d623236dcc225ef763ee4b07810af375a266adb346847c829c28097d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "6a3dbec97f33e097071e0c16b9ffe1bf6527aaa7d226671ed17dcfbe4d05331b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b46fc197d067ac408758a575e52652a3d9be2d145994948cc5914574ccfd79c5"
-    sha256 cellar: :any_skip_relocation, ventura:       "44a398b4ac0c429655565240d953ea247c921aff243953830f0752a5a620d7d0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7add6a9cdc882f6d6183b94ff997c16bcc1409540fe5a5c811683fd6db81f6c0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "041e439181ea2a4b398983a05828e96bf5aabb931c998356ad4b88c43ecf3c00"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "44c5ca5bacb95cf74f415e4b43d30eea08be880c7e0b7258f1fe4ec48657b0de"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5a2bd365b4a9f10ca7cf88cd976d642575a52b1d0e8d3f356c208d0985abcc19"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "052b14c1bbca1ab59fd22598d2f49d3b96fa0a6b57f0bba955f9543107e5eab2"
+    sha256 cellar: :any_skip_relocation, sonoma:        "85dcffadafe0891274409c80b07292f799daab579d78e05528bb9dc978924f79"
+    sha256 cellar: :any_skip_relocation, ventura:       "3513118aff96ba332bd837da44cacf0f8f9c3375b08713fe154556b0ac91d905"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fd32abffbcf73bdc9698e9b26886508e332422d84c938c2966286451497df8c4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9c94591f1eff98c8439dc5da14af51f3b5a45248f91a01f67de3058d5673e3eb"
   end
 
   depends_on "rust" => :build

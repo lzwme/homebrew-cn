@@ -32,10 +32,10 @@ class Tfmigrate < Formula
         ]
       }
     HCL
-    output = shell_output(bin/"tfmigrate plan tfmigrate.hcl 2>&1", 1)
+    output = shell_output("#{bin}/tfmigrate plan tfmigrate.hcl 2>&1", 1)
     assert_match "[migrator@.] compute a new state", output
     assert_match "No state file was found!", output
 
-    assert_match version.to_s, shell_output(bin/"tfmigrate --version")
+    assert_match version.to_s, shell_output("#{bin}/tfmigrate --version")
   end
 end

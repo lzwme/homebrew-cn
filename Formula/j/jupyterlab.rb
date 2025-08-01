@@ -603,13 +603,13 @@ class Jupyterlab < Formula
     assert_match "-F _jupyter", shell_output("bash -c 'source #{bash_completion}/jupyter && complete -p jupyter'")
 
     # Ensure that jupyter can load the jupyter lab package.
-    assert_match(/^jupyterlab *: #{version}$/, shell_output(bin/"jupyter --version"))
+    assert_match(/^jupyterlab *: #{version}$/, shell_output("#{bin}/jupyter --version"))
 
     # Ensure that jupyter-lab binary was installed by pip.
-    assert_equal version.to_s, shell_output(bin/"jupyter-lab --version").strip
+    assert_equal version.to_s, shell_output("#{bin}/jupyter-lab --version").strip
 
     port = free_port
-    spawn "#{bin}/jupyter-lab", "-y", "--port=#{port}", "--no-browser", "--ip=127.0.0.1", "--LabApp.token=''"
+    spawn bin/"jupyter-lab", "-y", "--port=#{port}", "--no-browser", "--ip=127.0.0.1", "--LabApp.token=''"
     sleep 15
     assert_match "<title>JupyterLab</title>", shell_output("curl --silent --fail http://localhost:#{port}/lab")
   end

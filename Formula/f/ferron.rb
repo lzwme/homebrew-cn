@@ -1,19 +1,19 @@
 class Ferron < Formula
   desc "Fast, memory-safe web server written in Rust"
   homepage "https://www.ferronweb.org/"
-  url "https://ghfast.top/https://github.com/ferronweb/ferron/archive/refs/tags/1.3.4.tar.gz"
-  sha256 "7bbfc6f804c742c70b29a8494545dfc589602b1ce7b3bc41e48ab8964905d54b"
+  url "https://ghfast.top/https://github.com/ferronweb/ferron/archive/refs/tags/1.3.5.tar.gz"
+  sha256 "f18e33c8a919a5541248676e39491b90c0fa0dcef73ba0ded017476df795dacc"
   license "MIT"
   head "https://github.com/ferronweb/ferron.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b3aed53ba09d52ab0822e5fcdde37806b03003ac0aa7b9375e58c6ca0944e56d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d5ccdca2d73c4f3137b0426103f71dcaebea967d914abf376a0ac4bc906110b1"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "777930ad82d7043e80be237ba61faa18ac2b43ef17e201060cb686c23b991c54"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7aa9d9acd909295d274189a92a232b1b3056491e80fe07df982923142ea6349c"
-    sha256 cellar: :any_skip_relocation, ventura:       "dc3735fd11e0a676aca4474429ca5c787c6331f7743d1e407242211a2ad3f50d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "286e3f7be23017d1980e0a099b56c29aa5459afb0b453568e3116911b4779e81"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a3e3e2e9e9cdf42d07a2f073bb76f13b78e6b733ef817c9f98e5456c1d2ffb51"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1222b8597170ae0e8e1a802cdc0be7759d516526fbf66af44784ac7ea4dac0e5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dc3d493eed9e331b294d1520834a6ff1443bb6aaea8b8f3620c3f2e5a5a48a6d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "4944aa253d2a09a11048ab777180177e61be015b703ed6270d06484a1e2d4665"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e77ab9578c9959c414bb1dd014c42755feb1c3c2ed164cfcd69d542bdc7c3511"
+    sha256 cellar: :any_skip_relocation, ventura:       "406793e458c6a9c7aaaccbb3b2421a7dce212c085f2565a37ab74a39cc0fffce"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3fd0684be0fb0a99455d351fe81c6b281b224b39a451fee43c0bef8563d96861"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "17773611e9d391237b525863e11330b8cad4c887c4332d0e739be964af5f2e2b"
   end
 
   depends_on "rust" => :build

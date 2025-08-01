@@ -3,14 +3,13 @@ class Toot < Formula
 
   desc "Mastodon CLI & TUI"
   homepage "https://toot.bezdomni.net/"
-  url "https://files.pythonhosted.org/packages/e1/5a/8c8c1dfb8188e14f94cda467f03924b23e7f7e1194249bdd1240363873ac/toot-0.48.1.tar.gz"
-  sha256 "99629e24bc4ef3fb22162b7742f4053648279f5e7e34b5ad53224b5d3e05a66c"
+  url "https://files.pythonhosted.org/packages/65/74/767e8f954ada2916155e23ac3dd440d00b9ddc4f899b46b659b99edb6801/toot-0.49.0.tar.gz"
+  sha256 "a96c7ecada591ac9e808f71fe482051aff698012a7854ef921714d0ce53694a6"
   license "GPL-3.0-only"
-  revision 2
   head "https://github.com/ihabunek/toot.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "c922069b58f58debf9079364c21308d700c50a91fe86d5203395a97c5e05b61f"
+    sha256 cellar: :any_skip_relocation, all: "6af52c56af6040303ef95d56d324ffb211e58430ab15b8a43840e803efdfd8e9"
   end
 
   depends_on "certifi"
@@ -68,8 +67,8 @@ class Toot < Formula
   end
 
   resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/d1/bc/51647cd02527e87d05cb083ccc402f93e441606ff1f01739a62c8ad09ba5/typing_extensions-4.14.0.tar.gz"
-    sha256 "8676b788e32f02ab42d9e7c61324048ae4c6d844a399eebace3d4979d75ceef4"
+    url "https://files.pythonhosted.org/packages/98/5a/da40306b885cc8c09109dc2e1abd358d5684b1425678151cdaed4731c822/typing_extensions-4.14.1.tar.gz"
+    sha256 "38b39f4aeeab64884ce9f74c94263ef78f3c22467c8724005483154c26648d36"
   end
 
   resource "urllib3" do
@@ -78,13 +77,8 @@ class Toot < Formula
   end
 
   resource "urwid" do
-    url "https://files.pythonhosted.org/packages/98/21/ad23c9e961b2d36d57c63686a6f86768dd945d406323fb58c84f09478530/urwid-2.6.16.tar.gz"
-    sha256 "93ad239939e44c385e64aa00027878b9e5c486d59e855ec8ab5b1e1adcdb32a2"
-  end
-
-  resource "urwidgets" do
-    url "https://files.pythonhosted.org/packages/91/cc/4e2469c469e72c68a45b1750854a496e15f21718ae8e3bc22cf7d89f7459/urwidgets-0.2.1.tar.gz"
-    sha256 "f9f2bcd2949da1105c287806dab773aa7bdf5852226cdb128aaf3004136f3eef"
+    url "https://files.pythonhosted.org/packages/46/2d/71550379ed6b34968e14f73b0cf8574dee160acb6b820a066ab238ef2d4f/urwid-3.0.2.tar.gz"
+    sha256 "e7cb70ba1e7ff45779a5a57e43c57581ee7de6ceefb56c432491a4a6ce81eb78"
   end
 
   resource "wcwidth" do

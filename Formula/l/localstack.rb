@@ -3,18 +3,17 @@ class Localstack < Formula
 
   desc "Fully functional local AWS cloud stack"
   homepage "https://localstack.cloud/"
-  url "https://files.pythonhosted.org/packages/47/72/b1fa6c2928cb8fd38a0681920f32201ee88b0ee93625e03d35bcf07bb765/localstack-4.6.0.tar.gz"
-  sha256 "2b0ba609816241dba507d7d7b20ca44ee598b4c730f6c56bed3e6f5472dc6c7d"
+  url "https://files.pythonhosted.org/packages/f8/42/61aa34f15be3439eccdc248112f99b207ae87d1f35e401e6de9fd0881e84/localstack-4.7.0.tar.gz"
+  sha256 "c798c31ca241873f6ea6b935c7d06a6f7f7b9fe306e9cd296e3c1ee4adacdb27"
   license "Apache-2.0"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "96d8274971aa0e77d6ce48c25a30214128c2b5c605aebc8fd94a72c7e9d7d34e"
-    sha256 cellar: :any,                 arm64_sonoma:  "12406f79909234352ea070bfa75ccc674bf08d9d16b812e6cf9e944afee7369b"
-    sha256 cellar: :any,                 arm64_ventura: "a41617f5ec9071bebfdd82c18c621a0d2eb09f1114df58a5848aa2329e8dbc97"
-    sha256 cellar: :any,                 sonoma:        "8e37d3b061d82b364d47e173ea44b1026e21b37e36b4df22505c1c67aea11cbc"
-    sha256 cellar: :any,                 ventura:       "0f550c690fbe53419b327c6965beb859c5012b01878bd38e95b5a4a5fcf994dd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2207b96b497e404df3b5f90a3d8da028dedaef58369fe5f6751707ca6c4c4cfa"
+    sha256 cellar: :any,                 arm64_sequoia: "4bfb60c5b5915bfe82274a5b494356e23950853bcbaba7340d201f26bbd2ee00"
+    sha256 cellar: :any,                 arm64_sonoma:  "fa036bc428f3d62c6b3343e27a6e9e8b8f1c43471831168379f816c2a68cf6b6"
+    sha256 cellar: :any,                 arm64_ventura: "f535959f120b443f8dd7ec32f160e9a96e360fc54961af6e1991f380f1cdaa9a"
+    sha256 cellar: :any,                 sonoma:        "41602832b5bbbe559d46cc781ff6f1bc19e8944ca9181329cf7dc88a24f7c467"
+    sha256 cellar: :any,                 ventura:       "05c550625c1d72b9b28ea220fd8b7827cd1ef21989605790813c204972beee65"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5f1c200787902b0e79305650682bdf71813c24347aa917923a77b6253ef3f42b"
   end
 
   depends_on "docker" => :test
@@ -63,14 +62,19 @@ class Localstack < Formula
     sha256 "12f65c9b470abda6dc35cf8e63cc574b1c52b11df2c86030af0ac09b01b13ea9"
   end
 
+  resource "jsonpickle" do
+    url "https://files.pythonhosted.org/packages/e4/a6/d07afcfdef402900229bcca795f80506b207af13a838d4d99ad45abf530c/jsonpickle-4.1.1.tar.gz"
+    sha256 "f86e18f13e2b96c1c1eede0b7b90095bbb61d99fedc14813c44dc2f361dbbae1"
+  end
+
   resource "localstack-core" do
-    url "https://files.pythonhosted.org/packages/87/af/bb6760edcbb1e1c3906c2aa961c6a744e9a9a4f11c2ac7d2ac0e5fabd08d/localstack_core-4.6.0.tar.gz"
-    sha256 "e324a8ece8acb1b15a8961ea1a103a50e24e61bbbd30e608b9f5a03ff3b0b0ad"
+    url "https://files.pythonhosted.org/packages/98/f1/9dfc210884d1c5913d5e63491df96827176e0ea219649e516017eaef05d2/localstack_core-4.7.0.tar.gz"
+    sha256 "cd72f6779d4e76c2427c814a31e145f6d9e6dd3737a4d3e9283e6b690ea6b114"
   end
 
   resource "localstack-ext" do
-    url "https://files.pythonhosted.org/packages/0c/4f/0f6424553530c1b3b88a9815d7f10a3025c14144f267e525c7156d4fa59f/localstack_ext-4.6.0.tar.gz"
-    sha256 "7b9fcd712877bd5678b394bb24e8ebdb1df9fb4c669177049c0d97e005c8615c"
+    url "https://files.pythonhosted.org/packages/19/7a/80d865ef5377617b487dfd34645f3a127e3fdd9475372b8f8bcf406b7d76/localstack_ext-4.7.0.tar.gz"
+    sha256 "38b7826c0c9b3fa4a01dbd8335ff2b5d4af1b7cf663a241fa76c31761d80dc5e"
   end
 
   resource "markdown-it-py" do
@@ -139,8 +143,8 @@ class Localstack < Formula
   end
 
   resource "rich" do
-    url "https://files.pythonhosted.org/packages/a1/53/830aa4c3066a8ab0ae9a9955976fb770fe9c6102117c8ec4ab3ea62d89e8/rich-14.0.0.tar.gz"
-    sha256 "82f1bc23a6a21ebca4ae0c45af9bdbc492ed20231dcb63f297d6d1021a9d5725"
+    url "https://files.pythonhosted.org/packages/fe/75/af448d8e52bf1d8fa6a9d089ca6c07ff4453d86c65c145d0a300bb073b9b/rich-14.1.0.tar.gz"
+    sha256 "e497a48b844b0320d45007cdebfeaeed8db2a4f4bcf49f15e455cfc4af11eaa8"
   end
 
   resource "semver" do

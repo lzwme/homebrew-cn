@@ -4,15 +4,16 @@ class Gollama < Formula
   url "https://ghfast.top/https://github.com/sammcj/gollama/archive/refs/tags/v1.35.1.tar.gz"
   sha256 "a2b57d378d8a2741e7b6eaa762b14e6d263a9a7c3edc171be32482a491516441"
   license "MIT"
+  revision 1
   head "https://github.com/sammcj/gollama.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3562a5b2c207b91fed7c70227fd3a8deba55acb8626fbb4987914da29951e397"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "df66b75b3b1af9c9bf0cc26d4a6bf5483b7f1d8e902d5b311d6e7281444e0600"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "772ccede9f6d9cc7e382c90d91d79db30b3fe41078e4afd144de12800475285e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1781a0cf8cc7a82f76389e2159e36221dcd95d68c99f2931b6f95360ebd52f75"
-    sha256 cellar: :any_skip_relocation, ventura:       "e43eda5ee12ee5ebff61b3b15f707fbf11dcb17494db53214738ba2431e1c458"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "37b5076b16180d553cff9f3e238f736fabe780b2f5ad4a9118240d721f1d0b3d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9eb460deaba795e45d623055b261a2a694f08fa2c99160dd644efc61fe220c8e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "415161fb44a08c0cff927894d32cb38caa4460082c2d40030957c867d1adaf55"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "bc15f26518102060d62fd7a664ad7eb0732a656d093303ee967a7c55919eb8c2"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0c59e5c9785e8300144afe6cd5073804723de42275ed98fb1f8fc1662ccd4454"
+    sha256 cellar: :any_skip_relocation, ventura:       "6766251a1477e53c9ce4149a9c4a18df86ccd0535a3a11e57b52383dfa4dbcbf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b9afa51c6a80fa9e039bfe5c8cfb41a108c949cfdc401ea99196dcf3752dd58f"
   end
 
   depends_on "go" => :build
@@ -23,7 +24,7 @@ class Gollama < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output(bin/"gollama -v")
+    assert_match version.to_s, shell_output("#{bin}/gollama -v")
 
     port = free_port
     ENV["OLLAMA_HOST"] = "localhost:#{port}"
@@ -32,7 +33,7 @@ class Gollama < Formula
     sleep 3
     begin
       assert_match "No matching models found.",
-        shell_output(bin/"gollama -h http://localhost:#{port} -s chatgpt")
+        shell_output("#{bin}/gollama -h http://localhost:#{port} -s chatgpt")
     ensure
       Process.kill "SIGTERM", pid
     end

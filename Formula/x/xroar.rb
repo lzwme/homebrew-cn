@@ -46,7 +46,7 @@ class Xroar < Formula
   end
 
   test do
-    output = shell_output(bin/"xroar -config-print")
+    output = shell_output("#{bin}/xroar -config-print")
 
     assert_match(/machine dragon32/, output)
     assert_match(/machine dragon64/, output)

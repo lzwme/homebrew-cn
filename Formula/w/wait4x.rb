@@ -1,18 +1,18 @@
 class Wait4x < Formula
   desc "Wait for a port or a service to enter the requested state"
   homepage "https://wait4x.dev"
-  url "https://ghfast.top/https://github.com/wait4x/wait4x/archive/refs/tags/v3.5.0.tar.gz"
-  sha256 "0c97d72d415b5969472225e0c75218cf505b49ad48a3204967a2483208b6d97e"
+  url "https://ghfast.top/https://github.com/wait4x/wait4x/archive/refs/tags/v3.5.1.tar.gz"
+  sha256 "8ad5b52600ded2da358417a72770221e6725fe8111b5544e2f4f4f56bfbba924"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a5fa66564d017b8e357122ff5009fd17fc0325475de239b9a8565bf76a2ff188"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c1847049b24cc7c55b4c6d20db27709f0d6da1b726327a9133a44b74fc8d9623"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "605957867f49289476e840e6232f38878a1cc428cd64c7722af29b9a814e503b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c3c99e3882d0e538fc54b2480bda348bfdaf3b819e8be5176d3f8c0d79b7715e"
-    sha256 cellar: :any_skip_relocation, ventura:       "17794d3a852d8e2ff42afd5209919ed007d708a81645f4587ff206ac59bf6776"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d71f9b7472396144ce818057aa2fda199b3971c1134b53245fed82996f03bfa9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ea2674b1e0a8f119d50e3c773096bff4136e253930829642e1371eca32328e22"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c332c506fc01fe00d2250543d820d66af2299d6b66d6c12a9568695b2cc0d2a9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7d3ba989af40f12d644e1f4f41cc95dd891e4a61580b55a128a28ee78a5c58a0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "abe1208358e27d9dca38d1843a9eb60a1e0e12f7a6eeb2e20c7d39e8dfb41deb"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4627e9ac14d474d52ebdf789f5ac61cbe0ab2f3668735b975a5cc3f5df204c21"
+    sha256 cellar: :any_skip_relocation, ventura:       "11e830e92a35adb3bf9df18a9033cb1ed8c0d47cf022c42003364332974e37b3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4ff5be4438415a81ed779edba2aecbb3a700cd4a79f22071d90f154ec8fbe95f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "84c647841954c7d58134006391eed3ed921577a25a0250f7a7a7a2634eea1476"
   end
 
   depends_on "go" => :build

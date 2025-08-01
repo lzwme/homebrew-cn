@@ -1,18 +1,18 @@
 class Dumbpipe < Formula
   desc "Unix pipes between devices"
   homepage "https://dumbpipe.dev"
-  url "https://ghfast.top/https://github.com/n0-computer/dumbpipe/archive/refs/tags/v0.28.0.tar.gz"
-  sha256 "bb7bd90eacebe505f2c669e4e13dac57c43c9c0eb5eca94dfa1378fd7cdcda84"
+  url "https://ghfast.top/https://github.com/n0-computer/dumbpipe/archive/refs/tags/v0.29.0.tar.gz"
+  sha256 "69dadd34b56ff18320a27a69c66cf0591b2f11ee725427b4a281928d269fa905"
   license any_of: ["MIT", "Apache-2.0"]
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "25393e318980c100fe1184a47e181346d1c6ffb3bd0276bf760b9401bbf62b77"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0acbef75ae52f0fbdefb6790660788351a7cd877b9776b7c2b0d93fae6fdb4ed"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "ac0bf4187356dc7f6b7329228bc7b7905e91cef1ca51546bb24865181571650b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2e6efe5d35e2f1749d1a86188c81c77c2b8346d346919d799aec9bd0cb40daab"
-    sha256 cellar: :any_skip_relocation, ventura:       "5f21f5e0c0b4ee28ea12d736bc8162992ddf2eeadd8265738d747446a062f41f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5109816b1476bc201acd40c7d7708162c6d00a211e72e61c2b75989089535c31"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4481ddaf02a5ee21477781bc30c5a9aed785737b0967bc3a4d129bbe166c089c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8da355eab9b6d40fd0af7e17e6b2836d607d9e03435bf2a2f783c2e146903ab7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1dfbb7339265641e4ace1727824e981204118ce52f221b1e850c1097f8ade261"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "315cd7b67781cc009c5426993cb28d486bddd3e242d5ff56ce7370cec725e4fd"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8a4b735f4a327a59e8cc37857ba5598eff8a6de5d6ddd3dd22edfc1c6fc557f6"
+    sha256 cellar: :any_skip_relocation, ventura:       "f80ede8d2179727cae39b01c9d5f7794db59f82e1b2181edab39097945d0b420"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "005c5ce256398a076425520f77246b82f1b77bc6be39d19d5fd3cd00a018a00c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "687daa777f73debed74ad2fa5a1d7b42acc9460e588136eaf0a835315d989fcb"
   end
 
   depends_on "rust" => :build
@@ -29,7 +29,7 @@ class Dumbpipe < Formula
     listener_pid = spawn bin/"dumbpipe", "listen", err: write, out: write
 
     begin
-      sleep 2
+      sleep 10
       node_id = while read.wait_readable(1)
         line = read.gets
         break if line.nil?
@@ -38,7 +38,7 @@ class Dumbpipe < Formula
         next if match.blank?
 
         break match[1]
-      end
+      end.to_s
       refute_empty node_id, "No node ID found in listener output"
 
       sender_read, sender_write = IO.pipe
@@ -46,10 +46,10 @@ class Dumbpipe < Formula
       sender_write.puts "foobar"
       assert_match "foobar", read.gets
     ensure
-      Process.kill "TERM", sender_pid
-      Process.kill "TERM", listener_pid
-      Process.wait sender_pid
-      Process.wait listener_pid
+      Process.kill "TERM", sender_pid unless sender_pid.nil?
+      Process.kill "TERM", listener_pid unless listener_pid.nil?
+      Process.wait sender_pid unless sender_pid.nil?
+      Process.wait listener_pid unless listener_pid.nil?
     end
   end
 end

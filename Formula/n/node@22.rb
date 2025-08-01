@@ -1,8 +1,8 @@
 class NodeAT22 < Formula
   desc "Platform built on V8 to build network applications"
   homepage "https://nodejs.org/"
-  url "https://registry.npmmirror.com/-/binary/node/v22.17.1/node-v22.17.1.tar.xz"
-  sha256 "327415fd76fcebb98133bf56e2d90e3ac048b038fac2676f03b6db91074575b9"
+  url "https://registry.npmmirror.com/-/binary/node/v22.18.0/node-v22.18.0.tar.xz"
+  sha256 "120e0f74419097a9fafae1fd80b9de7791a587e6f1c48c22b193239ccd0f7084"
   license "MIT"
 
   livecheck do
@@ -11,14 +11,13 @@ class NodeAT22 < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_sequoia: "ac0d9ed4b6ac14d40098343bf4fdb1f475a395b8718e9981ec4af8971ee74060"
-    sha256 arm64_sonoma:  "94c6085ebb5942d1b42b8568cc5eee4a9618b5e02f360b64c28fd5cc7f03cdc1"
-    sha256 arm64_ventura: "9988f65fc6c28a5639ae965c3c96667b58315c3dfc16d4364118e1934ee11218"
-    sha256 sonoma:        "1e25c7341645e5b96f80b10b8adb148fa5db66523a15706eb8c1d534c561c89e"
-    sha256 ventura:       "d48a4276c6c6541a9b3a8a1f0098cb48e6f1c97e62c70a29ed646625a950742c"
-    sha256 arm64_linux:   "c6a57aacefdaa880caaa1aa60c5f1facbf9de1d0d6e84741c73cb454b18c8128"
-    sha256 x86_64_linux:  "88966d2c70f08387b0c018fe3339c1f09d21e663c1dbb02c2ee2b646cbf73c5b"
+    sha256 arm64_sequoia: "441aab2c861eae8533912d85a890746ec24cb5dc9e80c52b6a729d08e9be0d6d"
+    sha256 arm64_sonoma:  "3d24d034aab507cb2d1822ee15d23bae26e06b6c24356215624dc03933dba534"
+    sha256 arm64_ventura: "6f9990399efdb5649da845695c29683dcd993b891c76093d8c5ad0947060abf5"
+    sha256 sonoma:        "9bcd9503d84da569317086d9c07ab1d256395277eb071f733b7cb8bb47f63b44"
+    sha256 ventura:       "62006dfff58caef48313f44fb0e63c74ddc4dd792a94a7dba351070a3c2ae792"
+    sha256 arm64_linux:   "93f9eb157a7fdebb895574eea86a18feba77dd4264f0c7e0e17a9aa45d2969ed"
+    sha256 x86_64_linux:  "5be30123843d98c76069749eb4cd0cb44cccdfbbba8bb549d57dc40aa00a528c"
   end
 
   keg_only :versioned_formula

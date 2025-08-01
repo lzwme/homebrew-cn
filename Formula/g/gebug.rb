@@ -6,8 +6,6 @@ class Gebug < Formula
   license "Apache-2.0"
   head "https://github.com/moshebe/gebug.git", branch: "master"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "8249adde26fad306299fda82d64cf21407588745684177b189d572b0a6444b27"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "312131ff1206ebcb33f39aeba602acff59393b5990f13e4b2e0cc0888359ee8d"
@@ -22,7 +20,6 @@ class Gebug < Formula
   end
 
   depends_on "go" => :build
-  depends_on "docker" => :test
 
   def install
     ldflags = %W[
@@ -40,7 +37,7 @@ class Gebug < Formula
     (testpath/".gebug/docker-compose.yml").write("")
     (testpath/".gebug/Dockerfile").write("")
 
-    assert_match "Failed to perform clean up", shell_output(bin/"gebug clean 2>&1", 1)
-    assert_match version.to_s, shell_output(bin/"gebug version")
+    assert_match "Failed to perform clean up", shell_output("#{bin}/gebug clean 2>&1", 1)
+    assert_match version.to_s, shell_output("#{bin}/gebug version")
   end
 end

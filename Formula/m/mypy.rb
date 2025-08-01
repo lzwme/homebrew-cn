@@ -3,19 +3,19 @@ class Mypy < Formula
 
   desc "Experimental optional static type checker for Python"
   homepage "https://www.mypy-lang.org/"
-  url "https://files.pythonhosted.org/packages/1e/e3/034322d5a779685218ed69286c32faa505247f1f096251ef66c8fd203b08/mypy-1.17.0.tar.gz"
-  sha256 "e5d7ccc08ba089c06e2f5629c660388ef1fee708444f1dee0b9203fa031dee03"
+  url "https://files.pythonhosted.org/packages/8e/22/ea637422dedf0bf36f3ef238eab4e455e2a0dcc3082b5cc067615347ab8e/mypy-1.17.1.tar.gz"
+  sha256 "25e01ec741ab5bb3eec8ba9cdb0f769230368a22c959c4937360efb89b7e9f01"
   license "MIT"
   head "https://github.com/python/mypy.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a104929e361436f855b0a3ae534cdec59a8ac327169bcafd2834dab7c2f0bbfc"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "67e4cc02fe48de46479e21c54dd52cd75ecceae89cc6b79c562e2dc14fff2222"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "a48eea34913d1b187ff36e068550f6f269efe781f68c11238708f78ea722ab30"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b91c7cd4c41edcfdcb19ca401ac9f80b1a9d16c967519112f1afae93ad14fd75"
-    sha256 cellar: :any_skip_relocation, ventura:       "feb0f80ca350a6a350528173177b1b287a6447e4f1a603709fd12f4eba8aa64d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d2aedf563d8ac3a3f8c7833ac8ee9eec8d896aa9a272ceb4c4225285c4b8e092"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1f17d980d52579b59da6acd228b0f5968e9b61ef064a8899162df3a479a49ec3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2014451f3638c5d5def74cb344e037046f2564b245a4b250288021144bb734c2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7bf5baaa9e67514638e03108bac45cb84e9605fd09d032f9494379c8de736472"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "ce1768813ae5a3dadc78eec109cf911efa8b489c1852dc06ff2ca6c8a50ec5ed"
+    sha256 cellar: :any_skip_relocation, sonoma:        "413edfa6e036df37fc28e9016ca6f6b79e5efc854c2f99d59fa444eb42efeac2"
+    sha256 cellar: :any_skip_relocation, ventura:       "c991191c9c93d6bcf92a7a7ee294f4c5cd74fc5fc28f22f9577b42c54b42ab54"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "eb8ee0aae32bca41a7d6b7f8ab8b934b825dd605e916224a631c69c47ef4a617"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b375096f7aefaddea8c9db0b5afcc2220fb4d936e920333e2cd2b58971de9ba9"
   end
 
   depends_on "python@3.13"
