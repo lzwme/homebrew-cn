@@ -6,17 +6,17 @@ class Glances < Formula
   url "https://files.pythonhosted.org/packages/3b/a2/b0cd24f1309002f0488e9861e6c265c4e673ba6e1d3d4503382646c76c43/glances-4.3.3.tar.gz"
   sha256 "56695ff97043149e007edbb188dea82dd29f479e2ca5b8324a119b95aafb8fa4"
   license "LGPL-3.0-or-later"
+  revision 1
   head "https://github.com/nicolargo/glances.git", branch: "develop"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "95070dd6972842b7dffa1598ef996e3faf16dc4e256bf49e7e1463c586291185"
-    sha256 cellar: :any,                 arm64_sonoma:  "05e4167bd9ea846e38d5ddb2932d84f290de9710cbbec36ca79833f5b237efaf"
-    sha256 cellar: :any,                 arm64_ventura: "6510c26ac93c8373833338cc17ea6ed53d65660e82cebbec8dfd06a6b389fa00"
-    sha256 cellar: :any,                 sonoma:        "fc4688d6a1ecb060c07e32aaac60e36c9f5aad1306769f0338465675657f16e1"
-    sha256 cellar: :any,                 ventura:       "e3ef382bfca4d146c49145984a8d029ec3e3cc882c2e01ad340bf3326d627647"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "48a35cf66d50481112d3f473a01e31b3be6e720229e3a57e046ce4685360c199"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4e994aae6db71e19632153617f24813172b9e17821abb1a98e391f800f9c16e6"
+    sha256 cellar: :any,                 arm64_sequoia: "da438092ee7804d956e8135551bd580ad64b096296eb9d54f709105b8e5be59d"
+    sha256 cellar: :any,                 arm64_sonoma:  "1836b649d5a926b5c111721ad29d453bdbf3de89de6f8648f8b2786c99bcc030"
+    sha256 cellar: :any,                 arm64_ventura: "ebf92c94c9322011b3aabe5e19e8789d1ff60a84da090c6f2b78cddd23d56b1e"
+    sha256 cellar: :any,                 sonoma:        "f1eefa08c633f67a23b6f795009cec4c6c1749b06e78e183fc27ec04af27af97"
+    sha256 cellar: :any,                 ventura:       "2da94e61b3a6be9c646bc16162c08624bd60d87e8a6a262b95d9d2c6fcc46272"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "56c7fcc1b4d9014bdceece6221d296e75d6fce62d1e71ecda18a885242077343"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e7a1eb5ef40c2a6a4acc78b2e797ae55cd55a652146d680c436cc7ea677ed38c"
   end
 
   depends_on "rust" => :build # for pydantic_core

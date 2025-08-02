@@ -50,6 +50,6 @@ class Bettercap < Formula
     else
       "Permission Denied"
     end
-    assert_match expected, shell_output(bin/"bettercap 2>&1", 1)
+    assert_match expected, shell_output("#{bin}/bettercap 2>&1", 1)
   end
 end

@@ -32,11 +32,11 @@ class Austin < Formula
   test do
     if OS.mac?
       assert_match "Insufficient permissions. Austin requires the use of sudo",
-        shell_output(bin/"austin --gc 2>&1", 37)
+        shell_output("#{bin}/austin --gc 2>&1", 37)
     else
       assert_match "need either a command to run or a PID to attach to",
-        shell_output(bin/"austin --gc 2>&1", 255)
+        shell_output("#{bin}/austin --gc 2>&1", 255)
     end
-    assert_equal "austin #{version}", shell_output(bin/"austin --version").chomp
+    assert_equal "austin #{version}", shell_output("#{bin}/austin --version").chomp
   end
 end

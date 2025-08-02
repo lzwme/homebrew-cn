@@ -1,8 +1,8 @@
 class Pnetcdf < Formula
   desc "Parallel netCDF library for scientific data using the OpenMPI library"
   homepage "https://parallel-netcdf.github.io/index.html"
-  url "https://parallel-netcdf.github.io/Release/pnetcdf-1.14.0.tar.gz"
-  sha256 "e5a7e87dcf7d526b97e8ffdce05df0d2845965787a7d21242fafa9656950e402"
+  url "https://parallel-netcdf.github.io/Release/pnetcdf-1.14.1.tar.gz"
+  sha256 "ffb5ee9bb40e4e5f09f1ed6b2eaa94c4e4810ce00111c29b5024cf91486d3fed"
   license "NetCDF"
 
   livecheck do
@@ -11,24 +11,18 @@ class Pnetcdf < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "19b8144af18eadad7d9d794d37864fa81c62e6907b5a118b9b14a8b27e4d30b0"
-    sha256 arm64_sonoma:  "3385c56d53190c61d92bf85b9b3c7b92086c58b644bec5a8b66fdf4555a8ac66"
-    sha256 arm64_ventura: "360874963214b4e9b9338ee78448420a150b9cb00756ebb8d5df0b97ae359320"
-    sha256 sonoma:        "a46e740e91a836a35faf7ef12039280dcf14cd35a908dc6d6f65d30202436d8f"
-    sha256 ventura:       "1caabb8afcf508fc98e0afc9af8d1f449c9f61c49fc003b81c040ea75147fa4d"
-    sha256 x86_64_linux:  "a94a617103f87b61c162f9bd9eeff3887a5e44c507406c662034231cfd38441e"
+    sha256 arm64_sequoia: "7c40c27fb8668ad2e0aeba8a0a8c88ad7b62585af1e28d395b0a0fe2869728fb"
+    sha256 arm64_sonoma:  "6aa771fed2f799f7f3f7754344570cbdd0e2fb06019d03ade0979279da7a67b4"
+    sha256 arm64_ventura: "b55307d959eb56298ae7582355547ad148f3ebed3785eb29b309375452721128"
+    sha256 sonoma:        "3c2995b0e78ea6ee429308bcf2f5b30963c105d4ee9cc45a32a43a610d02ea0e"
+    sha256 ventura:       "0a20d95e7a6ba0181221d08838c550c63126f2ba9455319205e4ac01960e695e"
+    sha256 x86_64_linux:  "efe3836973413970bcd6e065d38972abf8c4dccdac993fa91fc40ede744d0112"
   end
 
   depends_on "gcc"
   depends_on "open-mpi"
 
   uses_from_macos "m4" => :build
-
-  # Fix -flat_namespace being used on Big Sur and later.
-  patch do
-    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-big_sur.diff"
-    sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
-  end
 
   def install
     # Work around asm incompatibility with new linker (FB13194320)

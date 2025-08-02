@@ -17,6 +17,7 @@ class Turso < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "15e9d63a075366dbd3768fcbe31fb39bc70813532125ddc96eac944a8238e808"
     sha256 cellar: :any_skip_relocation, sonoma:        "03e6e9d2a3c9b525bb7c443150f391f80f4c12c7d34aefe530bf752d84b249d9"
     sha256 cellar: :any_skip_relocation, ventura:       "ba8e6ebb215ada76a702c0ec87fc456e6c26f998f8fa46ced128571a2d78b605"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "eda4a5e439b2f2eb64b17f843d7e3e3a44591d484b40229caacb4a0edafdd6ca"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "45ddd32c180d8f98c0410f26c90c4ed036fd44fd16f4cf76de74d02b4b07ba4b"
   end
 

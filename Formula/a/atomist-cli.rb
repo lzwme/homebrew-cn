@@ -6,8 +6,6 @@ class AtomistCli < Formula
   license "Apache-2.0"
   revision 1
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     rebuild 1
     sha256                               arm64_sequoia:  "54a93f92a1ab76bd418aea3c87bede2490e9db5605238ba1b501717dd54377d4"
@@ -20,6 +18,8 @@ class AtomistCli < Formula
     sha256 cellar: :any_skip_relocation, arm64_linux:    "f506f68f1e09b7ace94a007c93bab7edccbdf5f6d11461756bd2921ee0d481fd"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "a8a420e052281702ab92e1b510422b86556e366f8c6b149fbae2ef3864466708"
   end
+
+  deprecate! date: "2025-08-01", because: :unmaintained
 
   depends_on "node"
 

@@ -3,18 +3,18 @@ class Localai < Formula
 
   desc "OpenAI alternative"
   homepage "https://localai.io"
-  url "https://ghfast.top/https://github.com/mudler/LocalAI/archive/refs/tags/v3.3.0.tar.gz"
-  sha256 "fbdd8ad335d47ff0a079bf078334ebd22646c630be4a34fe8547ff6d138a9476"
+  url "https://ghfast.top/https://github.com/mudler/LocalAI/archive/refs/tags/v3.3.1.tar.gz"
+  sha256 "3eeae35f28f5d2f744c9034c85dc9a880f6798b39fcd118054ea0033d28c6fd8"
   license "MIT"
   head "https://github.com/mudler/LocalAI.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2fc7e7d970ca0f0381e0392f369721d921aca0462baacf455aaf2e5bc7081f5b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8de58ab0a9cfa4773d97b6575ad37d77b6cacf7377bc6e6d39ca209ac77e0ec6"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "e52d86702fd4d037ec01be4e012a04cb6b23b7d60f45b67499f438467d51f485"
-    sha256 cellar: :any_skip_relocation, sonoma:        "21e2e5db24b6be604f7cc2ae4e169815a477b8dbf6ac6e7e16a2d291c4a4fc32"
-    sha256 cellar: :any_skip_relocation, ventura:       "a5f061466cfaf48c6e57c503557875d40c68226c5686d3080ef25468bef37a6b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "55401c7ffcb7fc2f9b82ce8e46c7bc2d78c6a7516faf8096fd10ebbea7d3ebfb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "04a2907ae2974abe11603df3df581e3301de5a790a106350245843c546ffb07c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3e6f8a499ec20ab6e6a255f641743fc9a466efd40868aca7fb755ccbcc3d931f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "8f8dcd732926efe399c69c8ee69e50989a747e5bd263f2df493cd5e866521c03"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e8bb2dfa4a6164d856e9a8c3ece7a3654bcb732108e27ec058525f0fbe2686ce"
+    sha256 cellar: :any_skip_relocation, ventura:       "1945e837e83205b9eb32f8195ce61a8e9095303ccfb3093cb167f3ed65eda4f4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c4b361a82530bc2af55b70f96a0e50531d878116a65669a0b8236ad3437c7850"
   end
 
   depends_on "abseil" => :build

@@ -37,6 +37,6 @@ class Bartib < Formula
 
       \e[1mTotal............ <1m\e[0m
     EOS
-    assert_equal expected, shell_output(bin/"bartib report").strip
+    assert_equal expected, shell_output("#{bin}/bartib report").strip
   end
 end

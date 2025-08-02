@@ -38,7 +38,7 @@ class Arkade < Formula
   end
 
   test do
-    assert_match "Version: #{version}", shell_output(bin/"arkade version")
-    assert_match "Info for app: openfaas", shell_output(bin/"arkade info openfaas")
+    assert_match "Version: #{version}", shell_output("#{bin}/arkade version")
+    assert_match "Info for app: openfaas", shell_output("#{bin}/arkade info openfaas")
   end
 end

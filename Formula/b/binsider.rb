@@ -34,6 +34,6 @@ class Binsider < Formula
     return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
 
     assert_match "Invalid Magic Bytes",
-      shell_output(bin/"binsider 2>&1", 1)
+      shell_output("#{bin}/binsider 2>&1", 1)
   end
 end

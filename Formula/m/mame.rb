@@ -1,9 +1,9 @@
 class Mame < Formula
   desc "Multiple Arcade Machine Emulator"
   homepage "https://mamedev.org/"
-  url "https://ghfast.top/https://github.com/mamedev/mame/archive/refs/tags/mame0278.tar.gz"
-  version "0.278"
-  sha256 "ca5f44a0ed834875f8420a75587706af210ff8c5922942509bc5bfef7d45c360"
+  url "https://ghfast.top/https://github.com/mamedev/mame/archive/refs/tags/mame0279.tar.gz"
+  version "0.279"
+  sha256 "07e2e0d8ec187b12eadba3d7917ce3227bf0c5fccec8e934d70ada4fc502130c"
   license "GPL-2.0-or-later"
   head "https://github.com/mamedev/mame.git", branch: "master"
 
@@ -18,15 +18,15 @@ class Mame < Formula
     end
   end
 
-  no_autobump! because: :requires_manual_review
+  no_autobump! because: :incompatible_version_format
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "dbad98208eb3d1cd8af7fb685d51cfa84dec21add1416238d30129ca261d2d12"
-    sha256 cellar: :any,                 arm64_sonoma:  "e9e670d5e80c3761710dc4a07d097cc90a8b485ffe9f54c129f2deadd757746a"
-    sha256 cellar: :any,                 arm64_ventura: "6ed3098e26096d4a64ebff25cfeedefe3d4f7e2a44dfc22934acc9274347ab35"
-    sha256 cellar: :any,                 sonoma:        "46a5c64de0a11af90a79f239c377e337438b1bd19cab141fc8754b1955bd27b2"
-    sha256 cellar: :any,                 ventura:       "12381f05f4e83aba9fb305bb1a285c134104f5983d2873c62a67a262d0cd53c0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0b0573b26438af844d404a6db6d2227d39da35c1d693ff194ae336e0f973ac46"
+    sha256 cellar: :any,                 arm64_sequoia: "f53f095ad2a59ff624878135ea40bfb83f4f7c6019bc9c1e80f8cd66abf863b3"
+    sha256 cellar: :any,                 arm64_sonoma:  "9b4ee7521c8c1770c235f0baa1a9e5a3967789866cd9c5c45bd8f731dff67cc2"
+    sha256 cellar: :any,                 arm64_ventura: "237cddfa845c297bc059970877bbb9db07600ad47e08d5aceb1f6c1a5c8ce969"
+    sha256 cellar: :any,                 sonoma:        "0d21ae3bc5a83931ecfa31c0ff5a0323763e2ad03ed8f8d5bb1061afcf46ed70"
+    sha256 cellar: :any,                 ventura:       "c7cef1d797c400b195e6567692cc45470f3473073d597695996cf4566ebee717"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3b9a125c5d8dd35cf4263e184cb25b54f1a6ab6e622081941cbebb427dbd5a2a"
   end
 
   # `asio`` v1.30.1 is bundled and it is not compatible with the `asio` formula

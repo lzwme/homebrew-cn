@@ -3,18 +3,18 @@ class Copier < Formula
 
   desc "Utility for rendering projects templates"
   homepage "https://copier.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/9d/78/1246b4a1ddeb404037f76efedab9b42ada4e6ba56c574d8846e2a6b8f498/copier-9.8.0.tar.gz"
-  sha256 "343ac1eb65e678aa355690d7f19869ef07cabf837f511a87ed452443c085ec58"
+  url "https://files.pythonhosted.org/packages/bc/54/badd656b902a69915851caf0ad0dcb06682929f4e6a2f218acf15c373421/copier-9.9.0.tar.gz"
+  sha256 "db48d89bd30d957faa8c96fed757cb5718fdc0fe6b83bebb201424f448cb5216"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "894ecee377456e3021fc5f60e67aea3b90f89516459ea0d25bab131af024d386"
-    sha256 cellar: :any,                 arm64_sonoma:  "6fa9d969ac35a6950a6f1372f25069bcab6570118f3fc99dea99f3adc6ffff43"
-    sha256 cellar: :any,                 arm64_ventura: "028c21c5614633279fabce0be74aaac22d255f2b29e0dd86f9571d651591ffa6"
-    sha256 cellar: :any,                 sonoma:        "f92227821d990c2ade3944225df56918d99ce60fc66f1aea9866ad64a09dabf2"
-    sha256 cellar: :any,                 ventura:       "403edada715b5bea627872636b0cdefb0c0d16dde2f04a0eafc54a5451524fc3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b14129d93298baf08677fa92b7e4bbd7e08b2e93677e46b9421dba848f2d11d2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0d8db26922c79d98411c67105b411dcd6d92efc252e8ef184301252cab705b07"
+    sha256 cellar: :any,                 arm64_sequoia: "2f12ff72761f16a75d1952c9dc29ce6d82adfcf17a9e60fc5009f27e712fc120"
+    sha256 cellar: :any,                 arm64_sonoma:  "2dd3ab4446e738db8515e8c2d7c4c4c16bd82ae32d63b027f7566152bab129bd"
+    sha256 cellar: :any,                 arm64_ventura: "5715735bb576f556831a89994fc3eac26f2987734a5686e8637add844745251e"
+    sha256 cellar: :any,                 sonoma:        "e2c16209e7973619890fa9538e7c9bf24f86433e86d2d531938448ed88a294fd"
+    sha256 cellar: :any,                 ventura:       "108c01f7ce8a7096cd29c730f3d3cab009ef61afe1c18fb013dccc8634e5282a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "834e3ffa85586810f4c6895d163fb6881b59d4f190073df340f5463ad3e4ef79"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ce983dd1d5e0f9313fbac5cf187df445dde687d2c1992d257b432c52f828853d"
   end
 
   depends_on "rust" => :build

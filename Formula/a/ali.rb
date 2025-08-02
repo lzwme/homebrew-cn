@@ -29,7 +29,7 @@ class Ali < Formula
   end
 
   test do
-    output = shell_output(bin/"ali --duration=10m --rate=100 http://host.xz 2>&1", 1)
+    output = shell_output("#{bin}/ali --duration=10m --rate=100 http://host.xz 2>&1", 1)
     assert_match "failed to start application: failed to generate terminal interface", output
 
     assert_match version.to_s, shell_output("#{bin}/ali --version 2>&1")

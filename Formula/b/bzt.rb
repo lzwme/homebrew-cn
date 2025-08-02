@@ -283,10 +283,10 @@ class Bzt < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output(bin/"bzt -h")
+    assert_match version.to_s, shell_output("#{bin}/bzt -h")
 
     scenario = "execution.scenario.requests.0=https://gettaurus.org/"
-    output = shell_output(bin/"bzt -o execution.executor=locust -o execution.iterations=1 -o #{scenario}")
+    output = shell_output("#{bin}/bzt -o execution.executor=locust -o execution.iterations=1 -o #{scenario}")
     assert_match "INFO: Done performing with code: 0", output
   end
 end

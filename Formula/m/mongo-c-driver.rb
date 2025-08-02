@@ -1,8 +1,8 @@
 class MongoCDriver < Formula
   desc "C driver for MongoDB"
   homepage "https://github.com/mongodb/mongo-c-driver"
-  url "https://ghfast.top/https://github.com/mongodb/mongo-c-driver/archive/refs/tags/2.0.2.tar.gz"
-  sha256 "869395225b184ea9a527b33623b2c222d49230b5741071e7227fa7d7bbefdacf"
+  url "https://ghfast.top/https://github.com/mongodb/mongo-c-driver/archive/refs/tags/2.1.0.tar.gz"
+  sha256 "dfa8db7750a7b4a49c840c1319dbdf7f3b7b4583003139927de37e71b5ae043a"
   license "Apache-2.0"
   head "https://github.com/mongodb/mongo-c-driver.git", branch: "master"
 
@@ -12,13 +12,13 @@ class MongoCDriver < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "1f0e8c5ee2187489716d8d710a4cfc8935b1f7040d3045b161176c43b3a079c3"
-    sha256 cellar: :any,                 arm64_sonoma:  "c9562ff8f767b3499331fdb1dad2585a22075d8e8f1ffbc9d3988a099bd35ae5"
-    sha256 cellar: :any,                 arm64_ventura: "758f3cd09b9bbcbf9e3f87f9496f4b110eeca85103064bf85b2b94771f3cb993"
-    sha256 cellar: :any,                 sonoma:        "ac9b744d03e5aed7f84c9d41b84a6382c399c9a2c360243f9afb245df4e02e24"
-    sha256 cellar: :any,                 ventura:       "80deb31d572934f0932cb576f06dde72e958e7966f7dcb6cc1cc2d7febbf0fe2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7b86bfd6f453f53d6ab712b88e54045bf327aad51437f153ecf272b25c392836"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "048850406e870c9e7054784be3bff048d07237e7629d011820d424c4e07ca387"
+    sha256 cellar: :any,                 arm64_sequoia: "f4cb73190a3b3f8684088ff8cef2b2ea98b6077c3155b3e2211d1a5aa73b6282"
+    sha256 cellar: :any,                 arm64_sonoma:  "3383b773436e5bba75a95a4aa5318b2321ed7b28f9ed93851a2f67790445ac23"
+    sha256 cellar: :any,                 arm64_ventura: "bdfd4ba3a6317f922cf0e943866e026e1e4b48bf52e4827d0c51c44bad8c6a5e"
+    sha256 cellar: :any,                 sonoma:        "e1963a01701302b7568252a9466e0653b00a25fdc754cd09b745e72438144b73"
+    sha256 cellar: :any,                 ventura:       "321346e0443c9a99a540dd6968dcb7228df7f72f44dcb27bb21ceae9f2842986"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3585a69ffc764531297343c0968d87e66802139752157dd5c6a0ec51c1a82395"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fb59a407bec3d47fa5dd00b2c9009270c5a0ed7df9da067102802cef31955008"
   end
 
   depends_on "cmake" => :build

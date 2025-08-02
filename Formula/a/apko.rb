@@ -60,6 +60,6 @@ class Apko < Formula
     system bin/"apko", "build", testpath/"test.yml", "apko-alpine:test", "apko-alpine.tar"
     assert_path_exists testpath/"apko-alpine.tar"
 
-    assert_match version.to_s, shell_output(bin/"apko version 2>&1")
+    assert_match version.to_s, shell_output("#{bin}/apko version 2>&1")
   end
 end

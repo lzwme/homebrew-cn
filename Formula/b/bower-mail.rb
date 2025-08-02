@@ -37,6 +37,6 @@ class BowerMail < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/bower --version")
 
-    assert_match "Error: could not locate database", shell_output(bin/"bower 2>&1", 1)
+    assert_match "Error: could not locate database", shell_output("#{bin}/bower 2>&1", 1)
   end
 end

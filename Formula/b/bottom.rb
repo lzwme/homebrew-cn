@@ -43,7 +43,7 @@ class Bottom < Formula
   end
 
   test do
-    assert_equal "bottom #{version}", shell_output(bin/"btm --version").chomp
-    assert_match "error: unexpected argument '--invalid' found", shell_output(bin/"btm --invalid 2>&1", 2)
+    assert_equal "bottom #{version}", shell_output("#{bin}/btm --version").chomp
+    assert_match "error: unexpected argument '--invalid' found", shell_output("#{bin}/btm --invalid 2>&1", 2)
   end
 end

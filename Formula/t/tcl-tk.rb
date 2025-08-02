@@ -12,13 +12,14 @@ class TclTk < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "72c31e0a6820dab140ba8bafa5dc350d29f8fdc19bcf490a8c9f79544874d4c6"
-    sha256 arm64_sonoma:  "8eb159e282bd32415b42a9ad939163059595c5fc8e118c0ce1758ddffab874ce"
-    sha256 arm64_ventura: "54c63389b8a52a06b8075c7af193f4572a9c3f0407b1259dc9a2fa22ec10261e"
-    sha256 sonoma:        "ea60c10f5881f0f203ea6c0120cc693a52e2074bb5914ef0efff9e6945a3a55a"
-    sha256 ventura:       "6b189f88e2517390a8fd27f0c8ff9bf3a3785c03a66fe1ebd2460942cabd59d3"
-    sha256 arm64_linux:   "12d8e9847602cda7f87c3f64bf0f775c8b0a5b3c88f881c3a4089648207096ee"
-    sha256 x86_64_linux:  "d3807fe005678195a32af543a1e97de858a242b082749548411b904c1b0cfd24"
+    rebuild 1
+    sha256 arm64_sequoia: "d3ad9d348307b2cbee9008df4f402f52e97e3fd77b67dc790a0f41377233fcda"
+    sha256 arm64_sonoma:  "224a4b829fd506cbf2787c6d458190f703fbd9fd8d3d83cd4b5e4082dea8d8d3"
+    sha256 arm64_ventura: "c92b9d4f1b4695c58768708581eb74b76b4c72bcc08579475f29b16e402cbd42"
+    sha256 sonoma:        "3f91ac61087c64dc81d58a8bc86061d193434bf21dd0393d0d7611acf996a752"
+    sha256 ventura:       "321f4188c72b4336032fb77b66e35ad48727027434ea7c03cab8b738738e1038"
+    sha256 arm64_linux:   "e3a8cb7f42094c82a9b90fcaa6d0f3f6a7b9b4110baeb31ab871c50904fb70d4"
+    sha256 x86_64_linux:  "25eb63c4e70e251900962c2ee2faba9bb76790223e16c19e3d142f5b823dae55"
   end
 
   depends_on "libtommath"
@@ -136,6 +137,8 @@ class TclTk < Formula
     resource("tcltls").stage do
       system "./configure", "--with-openssl-dir=#{Formula["openssl@3"].opt_prefix}",
                             "--prefix=#{prefix}",
+                            "--with-tcl=#{lib}",
+                            "--with-tclinclude=#{include}/tcl-tk",
                             "--mandir=#{man}"
       system "make", "install"
     end

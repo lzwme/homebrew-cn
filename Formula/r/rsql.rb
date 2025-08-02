@@ -12,6 +12,7 @@ class Rsql < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "1d7cceec29196c5cde0b164aa6fadb57b6b3d3d00caf4d74e55afc8fcf1eea20"
     sha256 cellar: :any_skip_relocation, sonoma:        "3344174d3044d782629662e1d01ff66b38bc640d8accb367c1ea5ffafdc16b04"
     sha256 cellar: :any_skip_relocation, ventura:       "9c283478412fbdd4e2af1d3b2de915da9fdc486ecfb504a3ccadc99f0c18a9ad"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a88a3be80460820a4165efaf48da5b71220a3a87b97009e0598260c3fe951bdd"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "45cd0f1bca34f7f7be730252ee3815f7f255c2a53b1b1bc8b993368c31c73a02"
   end
 

@@ -36,6 +36,6 @@ class Ascii < Formula
   end
 
   test do
-    assert_match "Official name: Line Feed", shell_output(bin/"ascii 0x0a")
+    assert_match "Official name: Line Feed", shell_output("#{bin}/ascii 0x0a")
   end
 end
