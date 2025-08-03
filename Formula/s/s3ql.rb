@@ -125,10 +125,10 @@ class S3ql < Formula
   end
 
   test do
-    assert_match "S3QL ", shell_output(bin/"mount_s3ql --version")
+    assert_match "S3QL ", shell_output("#{bin}/mount_s3ql --version")
 
     # create a local filesystem, and run an fsck on it
-    assert_match "Creating metadata", shell_output(bin/"mkfs_s3ql --plain local://#{testpath} 2>&1")
+    assert_match "Creating metadata", shell_output("#{bin}/mkfs_s3ql --plain local://#{testpath} 2>&1")
     assert_match "s3ql_params", shell_output("ls s3ql_params")
     system bin/"fsck_s3ql", "local://#{testpath}"
   end

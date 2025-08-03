@@ -38,7 +38,7 @@ class Noseyparker < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/noseyparker -V")
 
-    output = shell_output(bin/"noseyparker scan --git-url https://github.com/homebrew/.github")
+    output = shell_output("#{bin}/noseyparker scan --git-url https://github.com/homebrew/.github")
     assert_match "0/0 new matches", output
   end
 end

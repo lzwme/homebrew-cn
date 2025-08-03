@@ -40,6 +40,6 @@ class Snownews < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output(bin/"snownews --help")
+    assert_match version.to_s, shell_output("#{bin}/snownews --help")
   end
 end

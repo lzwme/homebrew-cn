@@ -27,7 +27,7 @@ class Dra < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output(bin/"dra --version")
+    assert_match version.to_s, shell_output("#{bin}/dra --version")
 
     system bin/"dra", "download", "--select",
            "helloworld.tar.gz", "devmatteini/dra-tests"

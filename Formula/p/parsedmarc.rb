@@ -373,7 +373,7 @@ class Parsedmarc < Formula
     assert_match version.to_s, shell_output("#{bin}/parsedmarc --version")
 
     touch testpath/"empty.xml"
-    output = shell_output(bin/"parsedmarc empty.xml 2>&1")
+    output = shell_output("#{bin}/parsedmarc empty.xml 2>&1")
     assert_match "Failed to parse empty.xml - Not a valid report", output
   end
 end

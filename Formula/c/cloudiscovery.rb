@@ -155,9 +155,9 @@ class Cloudiscovery < Formula
 
   test do
     assert_match "{aws-vpc,aws-iot,aws-policy,aws-all,aws-limit,aws-security}",
-      shell_output(bin/"cloudiscovery --help 2>&1")
+      shell_output("#{bin}/cloudiscovery --help 2>&1")
 
     assert_match "Neither region parameter nor region config were passed",
-      shell_output(bin/"cloudiscovery aws-vpc --vpc-id vpc-123 2>&1")
+      shell_output("#{bin}/cloudiscovery aws-vpc --vpc-id vpc-123 2>&1")
   end
 end

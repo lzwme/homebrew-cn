@@ -41,9 +41,9 @@ class Naturaldocs < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output(bin/"naturaldocs -v")
+    assert_match version.to_s, shell_output("#{bin}/naturaldocs -v")
 
-    output = shell_output(bin/"naturaldocs --list-encodings")
+    output = shell_output("#{bin}/naturaldocs --list-encodings")
     assert_match "Unicode (UTF-8)", output
   end
 end

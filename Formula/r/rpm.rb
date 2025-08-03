@@ -189,7 +189,7 @@ class Rpm < Formula
     assert_path_exists testpath/"rpmbuild/SRPMS/test-1.0-1.src.rpm"
     assert_path_exists testpath/"rpmbuild/RPMS/noarch/test-1.0-1.noarch.rpm"
 
-    info = shell_output(bin/"rpm --query --package -i #{testpath}/rpmbuild/RPMS/noarch/test-1.0-1.noarch.rpm")
+    info = shell_output("#{bin}/rpm --query --package -i #{testpath}/rpmbuild/RPMS/noarch/test-1.0-1.noarch.rpm")
     assert_match "Name        : test", info
     assert_match "Version     : 1.0", info
     assert_match "Release     : 1", info
@@ -199,7 +199,7 @@ class Rpm < Formula
     assert_match "Source RPM  : test-1.0-1.src.rpm", info
     assert_match "Trivial test package", info
 
-    files = shell_output(bin/"rpm --query --list --package #{testpath}/rpmbuild/RPMS/noarch/test-1.0-1.noarch.rpm")
+    files = shell_output("#{bin}/rpm --query --list --package #{testpath}/rpmbuild/RPMS/noarch/test-1.0-1.noarch.rpm")
     assert_match (HOMEBREW_PREFIX/"share/doc/test").to_s, files
 
     system python3, "-c", "import rpm"

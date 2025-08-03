@@ -23,7 +23,7 @@ class Usage < Formula
   end
 
   test do
-    assert_match "usage-cli", shell_output(bin/"usage --version").chomp
-    assert_equal "--foo", shell_output(bin/"usage complete-word --spec 'flag \"--foo\"' -").chomp
+    assert_match "usage-cli", shell_output("#{bin}/usage --version").chomp
+    assert_equal "--foo", shell_output("#{bin}/usage complete-word --spec 'flag \"--foo\"' -").chomp
   end
 end

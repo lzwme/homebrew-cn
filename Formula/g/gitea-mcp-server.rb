@@ -27,6 +27,6 @@ class GiteaMcpServer < Formula
       {"jsonrpc":"2.0","id":2,"method":"tools/list"}
     JSON
 
-    assert_match "Gitea MCP Server", pipe_output(bin/"gitea-mcp-server stdio", json, 0)
+    assert_match "Gitea MCP Server", pipe_output("#{bin}/gitea-mcp-server stdio", json, 0)
   end
 end

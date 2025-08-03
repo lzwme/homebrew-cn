@@ -25,7 +25,7 @@ class Mods < Formula
   end
 
   test do
-    output = pipe_output(bin/"mods 2>&1", "Hello, Homebrew!", 1)
+    output = pipe_output("#{bin}/mods 2>&1", "Hello, Homebrew!", 1)
     assert_match "ERROR  OpenAI authentication failed", output
 
     assert_match version.to_s, shell_output("#{bin}/mods --version")

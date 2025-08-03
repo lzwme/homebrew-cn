@@ -26,7 +26,7 @@ class Libxcvt < Formula
   end
 
   test do
-    assert_match "1920", shell_output(bin/"cvt 1920 1200 75")
+    assert_match "1920", shell_output("#{bin}/cvt 1920 1200 75")
 
     (testpath/"test.c").write <<~C
       #include <libxcvt/libxcvt.h>

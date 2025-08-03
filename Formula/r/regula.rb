@@ -50,8 +50,8 @@ class Regula < Formula
       }
     HCL
 
-    assert_match "Found 10 problems", shell_output(bin/"regula run infra", 1)
+    assert_match "Found 10 problems", shell_output("#{bin}/regula run infra", 1)
 
-    assert_match version.to_s, shell_output(bin/"regula version")
+    assert_match version.to_s, shell_output("#{bin}/regula version")
   end
 end

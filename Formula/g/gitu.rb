@@ -27,7 +27,7 @@ class Gitu < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/gitu --version")
 
-    output = shell_output(bin/"gitu 2>&1", 1)
+    output = shell_output("#{bin}/gitu 2>&1", 1)
     if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
       assert_match "No such device or address", output
     else

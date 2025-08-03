@@ -1,18 +1,18 @@
 class Bob < Formula
   desc "Version manager for neovim"
   homepage "https://github.com/MordechaiHadad/bob"
-  url "https://ghfast.top/https://github.com/MordechaiHadad/bob/archive/refs/tags/v4.1.1.tar.gz"
-  sha256 "2ed43e82505f462bcd8851579b55a5f37089825e1b717b3c928b2bfdbf5eecd0"
+  url "https://ghfast.top/https://github.com/MordechaiHadad/bob/archive/refs/tags/v4.1.2.tar.gz"
+  sha256 "6a50c8728d2a7706a2fd3d0395f32447bb5d83935ccec327de0cde65055ab1c1"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c2e9793a1957841ab2743fd3f4749e94ed11b28388063e01f233ce35788574cd"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4d591774836a4ddb1bfa8f8843250dadc2c13c4359ae528d4359e237e8981281"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "261c373f5c07bb38f711c541c8e1a39d797b2b7d818ceda3f98421cb95a11c12"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7021cac89225b16ed3f045a3a1018e0413f0409efc826badb6595b88f3762a5c"
-    sha256 cellar: :any_skip_relocation, ventura:       "8a4833e729b8910ff0ecd4d7b5554228b9d2e6e0fdb6539a87b4b1db69a05431"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c89993e243dd292b078c9aee2523ea15f424c84333f4e9056e33753db97dedd7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "69841b5b77b0c3cf4b7ed6f206aee679d0e5581499a447be0e1de2af79fde443"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0c79c02468ba42bf12bf517d6ae776a8ed4eabf9d6f26b7e0113e60531eff0d5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "181702e2348f17289c8da5d19a3521866031fdb3079e8c1b1c5aa49752831ff1"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "1a7f8c3f2bbf33f2b6036e6c7921232a01e43c6a18bcc723d2e0f5b4272bc53f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "eeca7c1b985cf8a6e9e93e8d1e1fba2dd460b6915a04d5a899b6afdd6abaef60"
+    sha256 cellar: :any_skip_relocation, ventura:       "ef196cd394d537ea75908af21b40a34bd2aaa4c8f0725010086daf8837a4a38c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "59c48ffedac8a1000d1a2ff5753978ffa0e50a95026d3b2487bd507a48b9734d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1633b44210e1390498ae622522639862000c5a37a39abe0fbca077347e7ce9dd"
   end
 
   depends_on "rust" => :build

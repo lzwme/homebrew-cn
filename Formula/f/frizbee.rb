@@ -25,9 +25,9 @@ class Frizbee < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output(bin/"frizbee version 2>&1")
+    assert_match version.to_s, shell_output("#{bin}/frizbee version 2>&1")
 
-    output = shell_output(bin/"frizbee actions $(brew --repository)/.github/workflows/tests.yml 2>&1")
+    output = shell_output("#{bin}/frizbee actions $(brew --repository)/.github/workflows/tests.yml 2>&1")
     assert_match "Processed: tests.yml", output
   end
 end

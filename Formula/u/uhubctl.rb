@@ -28,10 +28,10 @@ class Uhubctl < Formula
 
   test do
     # test uhubctl -v:
-    assert_match version.to_s, shell_output(bin/"uhubctl -v")
+    assert_match version.to_s, shell_output("#{bin}/uhubctl -v")
 
     # test for non-existent USB device:
-    actual = shell_output(bin/"uhubctl -l 100-1.2.3.4.5 -a 0 -p 1 2>&1", 1)
+    actual = shell_output("#{bin}/uhubctl -l 100-1.2.3.4.5 -a 0 -p 1 2>&1", 1)
     expected = /No compatible devices detected/
     assert_match expected, actual
   end

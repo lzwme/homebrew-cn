@@ -26,6 +26,13 @@ class Wb32DfuUpdaterCli < Formula
   depends_on "cmake" => :build
   depends_on "libusb"
 
+  # Fix compatibility with cmake 4+
+  # PR ref: https://github.com/WestberryTech/wb32-dfu-updater/pull/17
+  patch do
+    url "https://github.com/WestberryTech/wb32-dfu-updater/commit/34725776e4b21be89e5d4eb0ea83346f26fc5d1f.patch?full_index=1"
+    sha256 "bfcc362f17c3063b90531e2795e7d33743dc754cce5dac2a93582994f9a88479"
+  end
+
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"
@@ -33,6 +40,7 @@ class Wb32DfuUpdaterCli < Formula
   end
 
   test do
-    assert_match "No DFU capable USB device available\n", shell_output(bin/"wb32-dfu-updater_cli -U 111.bin 2>&1", 74)
+    assert_match "No DFU capable USB device available\n",
+                 shell_output("#{bin}/wb32-dfu-updater_cli -U 111.bin 2>&1", 74)
   end
 end

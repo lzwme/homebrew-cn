@@ -29,6 +29,6 @@ class Joshuto < Formula
     (testpath/"test.txt").write("Hello World!")
     fork { exec bin/"joshuto", "--path", testpath }
 
-    assert_match "joshuto-#{version}", shell_output(bin/"joshuto --version")
+    assert_match "joshuto-#{version}", shell_output("#{bin}/joshuto --version")
   end
 end

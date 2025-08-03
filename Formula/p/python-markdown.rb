@@ -20,6 +20,6 @@ class PythonMarkdown < Formula
 
   test do
     (testpath/"test.md").write("# Hello World!")
-    assert_equal "<h1>Hello World!</h1>", shell_output(bin/"markdown_py test.md").strip
+    assert_equal "<h1>Hello World!</h1>", shell_output("#{bin}/markdown_py test.md").strip
   end
 end

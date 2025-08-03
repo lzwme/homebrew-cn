@@ -23,7 +23,7 @@ class Serpl < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output(bin/"serpl --version")
+    assert_match version.to_s, shell_output("#{bin}/serpl --version")
 
     assert_match "a value is required for '--project-root <PATH>' but none was supplied",
       shell_output("#{bin}/serpl --project-root 2>&1", 2)

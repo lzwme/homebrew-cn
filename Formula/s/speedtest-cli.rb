@@ -33,8 +33,8 @@ class SpeedtestCli < Formula
 
   test do
     assert_match "speedtest-cli",
-                 shell_output(bin/"speedtest --version")
+                 shell_output("#{bin}/speedtest --version")
     assert_match "Command line interface for testing internet bandwidth using speedtest.net",
-                 shell_output(bin/"speedtest --help")
+                 shell_output("#{bin}/speedtest --help")
   end
 end

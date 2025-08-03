@@ -26,6 +26,6 @@ class Fierce < Formula
 
   test do
     assert_match "Found: accounts.google.com",
-      shell_output(bin/"fierce --domain google.com --subdomains accounts")
+      shell_output("#{bin}/fierce --domain google.com --subdomains accounts")
   end
 end

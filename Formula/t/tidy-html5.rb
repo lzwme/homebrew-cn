@@ -32,13 +32,16 @@ class TidyHtml5 < Formula
   depends_on "cmake" => :build
 
   def install
+    # Workaround for CMake 4.0+
+    ENV["CMAKE_POLICY_VERSION_MINIMUM"] = "3.5"
+
     system "cmake", "-S", ".", "-B", "builddir", *std_cmake_args
     system "cmake", "--build", "builddir"
     system "cmake", "--install", "builddir"
   end
 
   test do
-    output = pipe_output(bin/"tidy -q", "<!doctype html><title></title>")
+    output = pipe_output("#{bin}/tidy -q", "<!doctype html><title></title>")
     assert_match(/^<!DOCTYPE html>/, output)
     assert_match "HTML Tidy for HTML5", output
   end

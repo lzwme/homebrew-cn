@@ -6,8 +6,6 @@ class Dromeaudio < Formula
   license "BSD-2-Clause"
   head "https://github.com/joshb/dromeaudio.git", branch: "master"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     rebuild 2
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "955eefdfe1d3fe73315f0f9c2eb9c90a08444658caf30b5c9235aa27337980bb"
@@ -25,6 +23,8 @@ class Dromeaudio < Formula
     sha256 cellar: :any_skip_relocation, arm64_linux:    "e5db31bd07590274f76bfd1b145f31f5578834a96d9c093448860b27ac2d0a24"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "9f070aab40ff55d1bc82cae306c222e05770d9b5cd22fdace7fbb7d04ea7aa6f"
   end
+
+  deprecate! date: "2025-08-02", because: :unmaintained
 
   depends_on "cmake" => :build
 
@@ -48,6 +48,6 @@ class Dromeaudio < Formula
     #
     # Related PR: https://github.com/Homebrew/homebrew-core/pull/55292
     assert_match(/Usage: .*?DromeAudioPlayer <filename>/i,
-                 shell_output(bin/"DromeAudioPlayer 2>&1", 1))
+                 shell_output("#{bin}/DromeAudioPlayer 2>&1", 1))
   end
 end

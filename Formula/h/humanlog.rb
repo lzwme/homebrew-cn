@@ -1,18 +1,18 @@
 class Humanlog < Formula
   desc "Logs for humans to read"
   homepage "https://github.com/humanlogio/humanlog"
-  url "https://ghfast.top/https://github.com/humanlogio/humanlog/archive/refs/tags/v0.8.7.tar.gz"
-  sha256 "2013718739bba58aab570e73bc8b21484e0e0ea9f6c7246d5e42cddee70a3c73"
+  url "https://ghfast.top/https://github.com/humanlogio/humanlog/archive/refs/tags/v0.8.8.tar.gz"
+  sha256 "09d3e632bc10950bd917e248b1c52359f8ea4b164a8ab128e9b58e90724bae54"
   license "Apache-2.0"
   head "https://github.com/humanlogio/humanlog.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c10053be5b2f6fe186e9b13ef300b2155c910da71bc873b1d7d14bbc20370635"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "89b2c32d9515b7c974e54e37867dcf96e3a88c9ae091483994e0ed5a196d148b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "ea11a9b1ec4280246e9790f7bd7ceabb302019dda5f6a2bdf457996e85eb4376"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a7f177ca7528ddb850d75984a28e5e4d8edc2bb21b0412584a0a8ccba34328c1"
-    sha256 cellar: :any_skip_relocation, ventura:       "79b8e40665f3fc23f8a0f6ca4110dcef8d9d8ebd06b63e8b2aec0617bc31a693"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "abfce62bb36d5bdadc5857feeeec38b842ad3a1fc402b9baf4479c8666cc2172"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cca96c12e99ffde853524ebd8c7f1baddae830d3b2553472441319380178bd0f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4563aa1caad424851b745915d4cf2afc7ced2d2e1276a4e953f9bf9fe33cf625"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "868b1292e09ac1ebd0ed3419460947e863071028c5230577757d9509a6845886"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b406178087c1f7af0bb8fc5620292e2ce7658831624294ee6e371afdda8907ef"
+    sha256 cellar: :any_skip_relocation, ventura:       "b313bd0d0f8bc4b14ba744979065983358bea554154c0c4e71b832f8faffe2b7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d9fe12af518863f6786f078f895e46e1d87e87f2911723c1f675471a2fad899e"
   end
 
   depends_on "go" => :build

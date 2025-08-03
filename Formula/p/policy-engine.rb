@@ -40,6 +40,6 @@ class PolicyEngine < Formula
       }
     HCL
 
-    assert_match "\"rule_results\": []", shell_output(bin/"policy-engine run infra")
+    assert_match "\"rule_results\": []", shell_output("#{bin}/policy-engine run infra")
   end
 end

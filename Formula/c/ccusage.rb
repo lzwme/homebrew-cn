@@ -23,6 +23,6 @@ class Ccusage < Formula
   end
 
   test do
-    assert_match "No valid Claude data directories found.", shell_output(bin/"ccusage 2>&1", 1)
+    assert_match "No valid Claude data directories found.", shell_output("#{bin}/ccusage 2>&1", 1)
   end
 end

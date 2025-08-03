@@ -38,7 +38,7 @@ class Openfga < Formula
     output = shell_output("curl -s http://localhost:#{port}/playground")
     assert_match "title=\"Embedded Playground\"", output
 
-    assert_match version.to_s, shell_output(bin/"openfga version 2>&1")
+    assert_match version.to_s, shell_output("#{bin}/openfga version 2>&1")
   ensure
     Process.kill("SIGTERM", pid)
     Process.wait(pid)

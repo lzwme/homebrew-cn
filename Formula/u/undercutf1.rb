@@ -1,18 +1,18 @@
 class Undercutf1 < Formula
   desc "F1 Live Timing TUI for all F1 sessions with variable delay to sync to your TV"
   homepage "https://github.com/JustAman62/undercut-f1"
-  url "https://ghfast.top/https://github.com/JustAman62/undercut-f1/archive/refs/tags/v3.1.96.tar.gz"
-  sha256 "ff377e4bf8403510dcbe29dfbe6a9b2056234ca762dd96094943eba47618b744"
+  url "https://ghfast.top/https://github.com/JustAman62/undercut-f1/archive/refs/tags/v3.2.6.tar.gz"
+  sha256 "5d0103f2ce4147d676d740c72db7403da008b77b9b44f29a26ef6086e190c7e0"
   license "GPL-3.0-only"
   head "https://github.com/JustAman62/undercut-f1.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "539fbd3440783df46b6619222491729137e8d3488094cd59ef7e0e35334011f7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "487f2d6ee9da701aecb3d23b90875fec7f23e4c775667d210073daf3e056089c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "f73cb7559c624e924bba7384c3bfdc2ec0648f0e9070ea83de2eacdbbc2f4e08"
-    sha256 cellar: :any_skip_relocation, ventura:       "7817cd318fff6fe788129fd6af7c922f5c826d806ce4e99928037861ad476fc8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4e43e3142b9893aa45bd62ed879d907481c4e6a64c320cafa76e329a6f87bf25"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9ba9e0f377439c2d4832e6391783eb42943e1bcab85ec9d96fece3b42f05cd22"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "39d40a6c57aabe61ac23afecf5b2a98ebd655ded08641248ad145af73a89ee71"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e5ab7b9b5bfbbc30239403b66cde713e567d31e28d47cf73934a2dca287ab941"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "a98d1a153ac98c6ab3af15e7fe3995531bb71d2f76e3ad2ab87604be4d3f51df"
+    sha256 cellar: :any_skip_relocation, ventura:       "82a97a5739c5f5927d1ee236357b1c1e64c39771e722bea668896692b7ff18f0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "db8970985069c6710d8bcbabb681b67f22dccb6f3a59657d0454fbd2df8df902"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "baf63925c12d5fdf1f97c41c3708e83ca10078c34ec198a31e67459b630ce17b"
   end
 
   depends_on "dotnet"

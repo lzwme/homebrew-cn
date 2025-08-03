@@ -58,7 +58,7 @@ class Clisp < Formula
     (testpath/"main.lisp").write <<~LISP
       (format t "Hello, World!")
     LISP
-    assert_equal "Hello, World!", shell_output(bin/"clisp main.lisp").chomp
+    assert_equal "Hello, World!", shell_output("#{bin}/clisp main.lisp").chomp
   end
 end
 

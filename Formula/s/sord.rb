@@ -41,6 +41,6 @@ class Sord < Formula
     EOS
 
     output = "<http://example.org/base#a> <http://example.org/base#b> <http://example.org/base#c> .\n"
-    assert_equal output, shell_output(bin/"sordi input.ttl")
+    assert_equal output, shell_output("#{bin}/sordi input.ttl")
   end
 end

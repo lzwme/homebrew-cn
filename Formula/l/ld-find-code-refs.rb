@@ -31,7 +31,7 @@ class LdFindCodeRefs < Formula
     system "git", "commit", "-m", "Initial commit"
 
     assert_match "could not retrieve flag key",
-      shell_output(bin/"ld-find-code-refs --dryRun " \
-                       "--ignoreServiceErrors -t=xx -p=test -r=test -d=. 2>&1", 1)
+      shell_output("#{bin}/ld-find-code-refs --dryRun \
+                   --ignoreServiceErrors -t=xx -p=test -r=test -d=. 2>&1", 1)
   end
 end

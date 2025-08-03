@@ -116,7 +116,7 @@ class Prestodb < Formula
     sleep 60
 
     query = "SELECT state FROM system.runtime.nodes"
-    output = shell_output(bin/"presto --debug --server localhost:#{port} --execute '#{query}'")
+    output = shell_output("#{bin}/presto --debug --server localhost:#{port} --execute '#{query}'")
     assert_match "\"active\"", output
   ensure
     Process.kill("TERM", server)

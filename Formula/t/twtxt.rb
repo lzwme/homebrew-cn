@@ -108,6 +108,6 @@ class Twtxt < Formula
     INI
     assert_match "✓ You’ve unfollowed brewtest", shell_output("#{bin}/twtxt -c config unfollow brewtest")
 
-    assert_match version.to_s, shell_output(bin/"twtxt --version")
+    assert_match version.to_s, shell_output("#{bin}/twtxt --version")
   end
 end

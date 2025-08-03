@@ -31,6 +31,6 @@ class Tfupdate < Formula
     system bin/"tfupdate", "provider", "aws", "-v", "2.40.0", testpath/"provider.tf"
     assert_match "2.40.0", File.read(testpath/"provider.tf")
 
-    assert_match version.to_s, shell_output(bin/"tfupdate --version")
+    assert_match version.to_s, shell_output("#{bin}/tfupdate --version")
   end
 end

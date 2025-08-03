@@ -64,6 +64,6 @@ class RattlerBuild < Formula
     system bin/"rattler-build", "build", "--recipe", "recipe/recipe.yaml"
     assert_path_exists testpath/"output/noarch/test-package-0.1.0-buildstring.conda"
 
-    assert_match version.to_s, shell_output(bin/"rattler-build --version")
+    assert_match version.to_s, shell_output("#{bin}/rattler-build --version")
   end
 end

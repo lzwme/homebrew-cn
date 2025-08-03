@@ -48,6 +48,6 @@ class Nexttrace < Formula
     return_status = OS.mac? ? 0 : 1
     output = shell_output("#{bin}/nexttrace --language en 1.1.1.1 2>&1", return_status)
     assert_match "[NextTrace API]", output
-    assert_match version.to_s, shell_output(bin/"nexttrace --version")
+    assert_match version.to_s, shell_output("#{bin}/nexttrace --version")
   end
 end

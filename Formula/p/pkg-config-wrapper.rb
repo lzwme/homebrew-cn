@@ -28,6 +28,6 @@ class PkgConfigWrapper < Formula
   end
 
   test do
-    assert_match "Found pkg-config executable", shell_output(bin/"pkg-config-wrapper 2>&1", 1)
+    assert_match "Found pkg-config executable", shell_output("#{bin}/pkg-config-wrapper 2>&1", 1)
   end
 end

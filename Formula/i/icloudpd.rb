@@ -171,9 +171,9 @@ class Icloudpd < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output(bin/"icloudpd --version")
+    assert_match version.to_s, shell_output("#{bin}/icloudpd --version")
 
-    output = shell_output(bin/"icloudpd -u brew -p brew --auth-only 2>&1", 1)
+    output = shell_output("#{bin}/icloudpd -u brew -p brew --auth-only 2>&1", 1)
     assert_match "Authenticating...", output
   end
 end

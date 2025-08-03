@@ -37,6 +37,6 @@ class Falcoctl < Formula
     assert_path_exists testpath/"ca.crt"
     assert_path_exists testpath/"client.crt"
 
-    assert_match version.to_s, shell_output(bin/"falcoctl version")
+    assert_match version.to_s, shell_output("#{bin}/falcoctl version")
   end
 end

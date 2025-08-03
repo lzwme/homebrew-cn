@@ -26,7 +26,7 @@ class Nextdns < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output(bin/"nextdns version")
+    assert_match version.to_s, shell_output("#{bin}/nextdns version")
 
     # Requires root to start
     output = if OS.mac?
@@ -34,6 +34,6 @@ class Nextdns < Formula
     else
       "Error: service nextdns start: exit status 1: nextdns: unrecognized service"
     end
-    assert_match output, shell_output(bin/"nextdns start 2>&1", 1)
+    assert_match output, shell_output("#{bin}/nextdns start 2>&1", 1)
   end
 end

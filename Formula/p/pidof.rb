@@ -45,7 +45,7 @@ class Pidof < Formula
   end
 
   test do
-    assert_match "pidof version #{version}", shell_output(bin/"pidof -v")
+    assert_match "pidof version #{version}", shell_output("#{bin}/pidof -v")
     (testpath/"homebrew_testing.c").write <<~C
       #include <unistd.h>
       #include <stdio.h>

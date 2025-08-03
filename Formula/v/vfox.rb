@@ -33,7 +33,7 @@ class Vfox < Formula
     assert_match version.to_s, shell_output("#{bin}/vfox --version")
 
     system bin/"vfox", "add", "golang"
-    output = shell_output(bin/"vfox info golang")
+    output = shell_output("#{bin}/vfox info golang")
     assert_match "Golang plugin, https://go.dev/dl/", output
   end
 end

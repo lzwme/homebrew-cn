@@ -108,8 +108,8 @@ class Sherlock < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output(bin/"sherlock --version")
+    assert_match version.to_s, shell_output("#{bin}/sherlock --version")
 
-    assert_match "Search completed with 1 results", shell_output(bin/"sherlock --site github homebrew")
+    assert_match "Search completed with 1 results", shell_output("#{bin}/sherlock --site github homebrew")
   end
 end

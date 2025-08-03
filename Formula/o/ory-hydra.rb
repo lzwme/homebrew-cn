@@ -36,7 +36,7 @@ class OryHydra < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output(bin/"hydra version")
+    assert_match version.to_s, shell_output("#{bin}/hydra version")
 
     admin_port = free_port
     (testpath/"config.yaml").write <<~YAML

@@ -220,9 +220,9 @@ class Safety < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output(bin/"safety --version")
+    assert_match version.to_s, shell_output("#{bin}/safety --version")
 
     assert_match "Safety is not authenticated, please first authenticate and try again.",
-      shell_output(bin/"safety check-updates", 1)
+      shell_output("#{bin}/safety check-updates", 1)
   end
 end

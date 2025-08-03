@@ -55,6 +55,6 @@ class Tfk8s < Formula
     system bin/"tfk8s", "-f", "input.yml", "-o", "output.tf"
     assert_equal expected, File.read("output.tf")
 
-    assert_match version.to_s, shell_output(bin/"tfk8s --version")
+    assert_match version.to_s, shell_output("#{bin}/tfk8s --version")
   end
 end

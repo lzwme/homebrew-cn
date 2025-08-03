@@ -29,6 +29,6 @@ class Vttest < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output(bin/"vttest -V")
+    assert_match version.to_s, shell_output("#{bin}/vttest -V")
   end
 end

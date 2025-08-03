@@ -68,8 +68,8 @@ class Libprelude < Formula
   end
 
   test do
-    assert_equal prefix.to_s, shell_output(bin/"libprelude-config --prefix").chomp
-    assert_equal version.to_s, shell_output(bin/"libprelude-config --version").chomp
+    assert_equal prefix.to_s, shell_output("#{bin}/libprelude-config --prefix").chomp
+    assert_equal version.to_s, shell_output("#{bin}/libprelude-config --version").chomp
 
     (testpath/"test.c").write <<~C
       #include <libprelude/prelude.h>

@@ -21,7 +21,7 @@ class Sshs < Formula
   end
 
   test do
-    assert_equal "sshs #{version}", shell_output(bin/"sshs --version").strip
+    assert_equal "sshs #{version}", shell_output("#{bin}/sshs --version").strip
 
     (testpath/".ssh/config").write <<~EOS
       Host "Test"

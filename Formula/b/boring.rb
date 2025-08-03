@@ -1,21 +1,21 @@
 class Boring < Formula
   desc "Simple command-line SSH tunnel manager that just works"
   homepage "https://github.com/alebeck/boring"
-  url "https://ghfast.top/https://github.com/alebeck/boring/archive/refs/tags/0.11.6.tar.gz"
-  sha256 "92ed17d6104a3b8ab4db31197b8313fb2ba87d3b7a4368a03cc8198b874b1683"
+  url "https://ghfast.top/https://github.com/alebeck/boring/archive/refs/tags/0.11.7.tar.gz"
+  sha256 "8a0a26e48e40dcc8b90c4e95621bd1ba68c5793a10d85d8bb50725a923a18f64"
   license "MIT"
   head "https://github.com/alebeck/boring.git", branch: "main"
 
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2571b20c935be9a372248d834e41162efbe0425126d67e706d5c85da827c871a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2571b20c935be9a372248d834e41162efbe0425126d67e706d5c85da827c871a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "2571b20c935be9a372248d834e41162efbe0425126d67e706d5c85da827c871a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c76d623c4718d4f0c97f4f99cf581d81bc26219e806c5852cfe3bcf1dcb1b430"
-    sha256 cellar: :any_skip_relocation, ventura:       "c76d623c4718d4f0c97f4f99cf581d81bc26219e806c5852cfe3bcf1dcb1b430"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cb189556f204af42bec483d424886daa4ae28bd020670658fb9340ae18cb2682"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "af7a0aa863050b9b812e73d6351643c930ccb4a746b2b773bc748ada3ada0807"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2dba12360e72ff80eab9e7c8a4f5028a9eb80aef0e0ac79c752e7eb0e365b7dd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2dba12360e72ff80eab9e7c8a4f5028a9eb80aef0e0ac79c752e7eb0e365b7dd"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "2dba12360e72ff80eab9e7c8a4f5028a9eb80aef0e0ac79c752e7eb0e365b7dd"
+    sha256 cellar: :any_skip_relocation, sonoma:        "25e1d2283e84f441035c414b4b0ee1e3a6dbaa7af011f470153c6e1aa0b92de8"
+    sha256 cellar: :any_skip_relocation, ventura:       "25e1d2283e84f441035c414b4b0ee1e3a6dbaa7af011f470153c6e1aa0b92de8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a117b5335ed00dd2388e34d5253f6b52f779a4735eb48b08029761891c3c80c0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7c3f68efe19a35b7f9c3e6e0ec25b1b48a843e47eaf46577345269dbaac836e4"
   end
 
   depends_on "go" => :build

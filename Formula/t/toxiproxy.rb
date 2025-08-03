@@ -30,8 +30,8 @@ class Toxiproxy < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output(bin/"toxiproxy-server --version")
-    assert_match version.to_s, shell_output(bin/"toxiproxy-cli --version")
+    assert_match version.to_s, shell_output("#{bin}/toxiproxy-server --version")
+    assert_match version.to_s, shell_output("#{bin}/toxiproxy-cli --version")
 
     proxy_port = free_port
     fork { system bin/"toxiproxy-server", "--port", proxy_port.to_s }

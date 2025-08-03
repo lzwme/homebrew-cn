@@ -47,7 +47,7 @@ class DockerCompose < Formula
   end
 
   test do
-    output = shell_output(bin/"docker-compose up 2>&1", 1)
+    output = shell_output("#{bin}/docker-compose up 2>&1", 1)
     assert_match "no configuration file provided", output
   end
 end

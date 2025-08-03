@@ -39,7 +39,7 @@ class Vsce < Formula
   end
 
   test do
-    error = shell_output(bin/"vsce verify-pat 2>&1", 1)
+    error = shell_output("#{bin}/vsce verify-pat 2>&1", 1)
     assert_match "Extension manifest not found:", error
   end
 end

@@ -35,7 +35,7 @@ class Kubeaudit < Formula
   end
 
   test do
-    output = shell_output(bin/"kubeaudit --kubeconfig /some-file-that-does-not-exist all 2>&1", 1).chomp
+    output = shell_output("#{bin}/kubeaudit --kubeconfig /some-file-that-does-not-exist all 2>&1", 1).chomp
     assert_match "failed to open kubeconfig file /some-file-that-does-not-exist", output
   end
 end

@@ -42,7 +42,7 @@ class Catgirl < Formula
   end
 
   test do
-    output = shell_output(bin/"catgirl 2>&1", 64)
+    output = shell_output("#{bin}/catgirl 2>&1", 64)
     assert_match "catgirl: host required", output
   end
 end

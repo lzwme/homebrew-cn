@@ -9753,7 +9753,7 @@ Homebrew-homebrew-cask/Casks/font/font-c/font-cochineal.rb, Homebrew/homebrew-ca
 Homebrew-homebrew-cask/Casks/font/font-c/font-coda.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-c/font-code-new-roman-nerd-font.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-c/font-code2002.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/font/font-c/font-codicon.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-c/font-codicon.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-c/font-codystar.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-c/font-coelacanth.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-c/font-coiny.rb, Homebrew/homebrew-cask, 0
@@ -11738,6 +11738,7 @@ Homebrew-homebrew-cask/Casks/font/font-v/font-varela.rb, Homebrew/homebrew-cask,
 Homebrew-homebrew-cask/Casks/font/font-v/font-varta.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-v/font-vast-shadow.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-v/font-vazirmatn.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/font/font-v/font-vend-sans.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-v/font-verdana.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-v/font-vesper-libre.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-v/font-viaoda-libre.rb, Homebrew/homebrew-cask, 0

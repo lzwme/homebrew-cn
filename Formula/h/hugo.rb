@@ -42,6 +42,6 @@ class Hugo < Formula
     system bin/"hugo", "new", "site", site
     assert_path_exists site/"hugo.toml"
 
-    assert_match version.to_s, shell_output(bin/"hugo version")
+    assert_match version.to_s, shell_output("#{bin}/hugo version")
   end
 end

@@ -45,7 +45,7 @@ class Flawz < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output(bin/"flawz --version")
+    assert_match version.to_s, shell_output("#{bin}/flawz --version")
 
     require "pty"
     PTY.spawn(bin/"flawz", "--url", "https://nvd.nist.gov/feeds/json/cve/1.1") do |r, _w, _pid|

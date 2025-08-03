@@ -26,7 +26,7 @@ class Lychee < Formula
 
   test do
     (testpath/"test.md").write "[This](https://example.com) is an example.\n"
-    output = shell_output(bin/"lychee #{testpath}/test.md")
+    output = shell_output("#{bin}/lychee #{testpath}/test.md")
     assert_match "🔍 1 Total (in 0s) ✅ 0 OK 🚫 0 Errors 👻 1 Excluded", output
   end
 end

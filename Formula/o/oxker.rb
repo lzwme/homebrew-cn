@@ -23,9 +23,9 @@ class Oxker < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output(bin/"oxker --version")
+    assert_match version.to_s, shell_output("#{bin}/oxker --version")
 
     assert_match "a value is required for '--host <HOST>' but none was supplied",
-      shell_output(bin/"oxker --host 2>&1", 2)
+      shell_output("#{bin}/oxker --host 2>&1", 2)
   end
 end

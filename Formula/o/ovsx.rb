@@ -23,7 +23,7 @@ class Ovsx < Formula
   end
 
   test do
-    error = shell_output(bin/"ovsx verify-pat 2>&1", 1)
+    error = shell_output("#{bin}/ovsx verify-pat 2>&1", 1)
     assert_match "Unable to read the namespace's name", error
   end
 end

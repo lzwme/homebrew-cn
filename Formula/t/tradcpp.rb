@@ -45,6 +45,6 @@ class Tradcpp < Formula
       #define FOO bar
       FOO
     C
-    assert_match "bar", shell_output(bin/"tradcpp ./test.c")
+    assert_match "bar", shell_output("#{bin}/tradcpp ./test.c")
   end
 end

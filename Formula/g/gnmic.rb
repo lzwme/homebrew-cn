@@ -32,8 +32,8 @@ class Gnmic < Formula
   end
 
   test do
-    connection_output = shell_output(bin/"gnmic -u gnmi -p dummy --skip-verify --timeout 1s -a 127.0.0.1:0 " \
-                                         "capabilities 2>&1", 1)
+    connection_output = shell_output("#{bin}/gnmic -u gnmi -p dummy --skip-verify \
+                                     --timeout 1s -a 127.0.0.1:0 capabilities 2>&1", 1)
     assert_match "target \"127.0.0.1:0\", capabilities request failed", connection_output
 
     assert_match version.to_s, shell_output("#{bin}/gnmic version")

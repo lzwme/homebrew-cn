@@ -29,7 +29,7 @@ class Scw < Formula
 
   test do
     (testpath/"config.yaml").write ""
-    output = shell_output(bin/"scw -c config.yaml config set access-key=SCWXXXXXXXXXXXXXXXXX")
+    output = shell_output("#{bin}/scw -c config.yaml config set access-key=SCWXXXXXXXXXXXXXXXXX")
     assert_match "✅ Successfully update config.", output
     assert_match "access_key: SCWXXXXXXXXXXXXXXXXX", File.read(testpath/"config.yaml")
   end

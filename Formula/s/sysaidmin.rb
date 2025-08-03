@@ -207,7 +207,7 @@ class Sysaidmin < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output(bin/"sysaidmin --version")
+    assert_match version.to_s, shell_output("#{bin}/sysaidmin --version")
 
     ENV["SYSAIDMIN_API_KEY"] = "faketest"
     # $ sysaidmin "The foo process is emailing me and I don't know why."

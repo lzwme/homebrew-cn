@@ -162,13 +162,13 @@ class Tern < Formula
 
   test do
     output = if OS.mac?
-      shell_output(bin/"tern report --image alpine:3.13.5 2>&1", 1)
+      shell_output("#{bin}/tern report --image alpine:3.13.5 2>&1", 1)
     else
-      shell_output(bin/"tern report --image alpine:3.13.5 2>&1")
+      shell_output("#{bin}/tern report --image alpine:3.13.5 2>&1")
     end
     assert_match "rootfs - Running command", output
     assert_path_exists testpath/"tern.log"
 
-    assert_match version.to_s, shell_output(bin/"tern --version")
+    assert_match version.to_s, shell_output("#{bin}/tern --version")
   end
 end

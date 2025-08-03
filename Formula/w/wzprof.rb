@@ -41,8 +41,8 @@ class Wzprof < Formula
       func31 malloc(30): 0x11530
       end
     EOS
-    assert_equal expected, shell_output(bin/"wzprof -sample 1 #{testpath}/simple.wasm 2>&1")
+    assert_equal expected, shell_output("#{bin}/wzprof -sample 1 #{testpath}/simple.wasm 2>&1")
 
-    assert_match "wzprof version #{version}", shell_output(bin/"wzprof -version")
+    assert_match "wzprof version #{version}", shell_output("#{bin}/wzprof -version")
   end
 end

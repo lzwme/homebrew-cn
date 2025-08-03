@@ -3,18 +3,18 @@ class PassGitHelper < Formula
 
   desc "Git credential helper interfacing with pass"
   homepage "https://github.com/languitar/pass-git-helper"
-  url "https://ghfast.top/https://github.com/languitar/pass-git-helper/archive/refs/tags/v3.4.0.tar.gz"
-  sha256 "ef077b5f645a6de143712725b169e654f27444e99bd6ee03f3d036f7cea86c4b"
+  url "https://ghfast.top/https://github.com/languitar/pass-git-helper/archive/refs/tags/v4.0.0.tar.gz"
+  sha256 "988738b5956cd4efbcc789500860c6dcc051e8a3918edd3fac4b8af69323730e"
   license "LGPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b905f5c7f4bf533177da03837e4306d177f9194e6dafb692cde54f086ff1d1e4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b905f5c7f4bf533177da03837e4306d177f9194e6dafb692cde54f086ff1d1e4"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "b905f5c7f4bf533177da03837e4306d177f9194e6dafb692cde54f086ff1d1e4"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f97206978a6928b05109527d462565db5850d0f3c90dbf77c160ef35f4b53319"
-    sha256 cellar: :any_skip_relocation, ventura:       "f97206978a6928b05109527d462565db5850d0f3c90dbf77c160ef35f4b53319"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b905f5c7f4bf533177da03837e4306d177f9194e6dafb692cde54f086ff1d1e4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b905f5c7f4bf533177da03837e4306d177f9194e6dafb692cde54f086ff1d1e4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "34293382dc5c07dabe4cb6ae63ea9ecb8fc6bca9e1f2b971b6641e5be5ec2811"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "34293382dc5c07dabe4cb6ae63ea9ecb8fc6bca9e1f2b971b6641e5be5ec2811"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "34293382dc5c07dabe4cb6ae63ea9ecb8fc6bca9e1f2b971b6641e5be5ec2811"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e860373c32ae53181d6ca836aaa4ee19705271f2f4dc15dda8ef15687a50b6d6"
+    sha256 cellar: :any_skip_relocation, ventura:       "e860373c32ae53181d6ca836aaa4ee19705271f2f4dc15dda8ef15687a50b6d6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "34293382dc5c07dabe4cb6ae63ea9ecb8fc6bca9e1f2b971b6641e5be5ec2811"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "34293382dc5c07dabe4cb6ae63ea9ecb8fc6bca9e1f2b971b6641e5be5ec2811"
   end
 
   depends_on "gnupg" => :test

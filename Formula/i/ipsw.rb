@@ -34,8 +34,8 @@ class Ipsw < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output(bin/"ipsw version")
+    assert_match version.to_s, shell_output("#{bin}/ipsw version")
 
-    assert_match "iPad Pro (12.9-inch) (6th gen)", shell_output(bin/"ipsw device-list")
+    assert_match "iPad Pro (12.9-inch) (6th gen)", shell_output("#{bin}/ipsw device-list")
   end
 end

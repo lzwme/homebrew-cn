@@ -37,8 +37,8 @@ class Tfproviderlint < Formula
 
     testpath.install resource("homebrew-test_resource")
     assert_match "S006: schema of TypeMap should include Elem",
-      shell_output(bin/"tfproviderlint -fix #{testpath}/... 2>&1", 3)
+      shell_output("#{bin}/tfproviderlint -fix #{testpath}/... 2>&1", 3)
 
-    assert_match version.to_s, shell_output(bin/"tfproviderlint --version")
+    assert_match version.to_s, shell_output("#{bin}/tfproviderlint --version")
   end
 end

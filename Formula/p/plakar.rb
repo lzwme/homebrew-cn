@@ -33,7 +33,7 @@ class Plakar < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output(bin/"plakar version")
+    assert_match version.to_s, shell_output("#{bin}/plakar version")
 
     pid = fork do
       exec bin/"plakar", "agent", "-log", "/dev/stderr", "-foreground"
@@ -41,7 +41,7 @@ class Plakar < Formula
     sleep 2 # Allow agent to start
     system bin/"plakar", "at", testpath/"plakar", "create", "-no-encryption"
     assert_path_exists testpath/"plakar"
-    assert_match "Version: 1.0.0", shell_output(bin/"plakar at #{testpath}/plakar info")
+    assert_match "Version: 1.0.0", shell_output("#{bin}/plakar at #{testpath}/plakar info")
   ensure
     Process.kill("HUP", pid)
   end

@@ -26,6 +26,6 @@ class Ggh < Formula
 
   test do
     assert_equal "No history found.", shell_output(bin/"ggh").chomp
-    assert_equal "No config found.", shell_output(bin/"ggh -").chomp
+    assert_equal "No config found.", shell_output("#{bin}/ggh -").chomp
   end
 end

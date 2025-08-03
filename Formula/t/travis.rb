@@ -188,7 +188,7 @@ class Travis < Formula
   end
 
   test do
-    output = shell_output(bin/"travis whoami 2>&1 --pro", 1)
+    output = shell_output("#{bin}/travis whoami 2>&1 --pro", 1)
     assert_match "not logged in, please run travis login", output
 
     output = shell_output("#{bin}/travis init 2>&1", 1)

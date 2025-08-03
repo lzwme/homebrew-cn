@@ -34,6 +34,6 @@ class Rojo < Formula
     system bin/"rojo", "init"
     assert_path_exists testpath/"default.project.json"
 
-    assert_match version.to_s, shell_output(bin/"rojo --version")
+    assert_match version.to_s, shell_output("#{bin}/rojo --version")
   end
 end

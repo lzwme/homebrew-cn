@@ -42,8 +42,8 @@ class Deadfinder < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output(bin/"deadfinder version")
+    assert_match version.to_s, shell_output("#{bin}/deadfinder version")
 
-    assert_match "Task completed", shell_output(bin/"deadfinder url https://brew.sh")
+    assert_match "Task completed", shell_output("#{bin}/deadfinder url https://brew.sh")
   end
 end

@@ -38,6 +38,6 @@ class Fastgron < Formula
     EOS
     assert_equal expected, pipe_output(bin/"fastgron", "[3,4,5]")
 
-    assert_match version.to_s, shell_output(bin/"fastgron --version 2>&1")
+    assert_match version.to_s, shell_output("#{bin}/fastgron --version 2>&1")
   end
 end

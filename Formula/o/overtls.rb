@@ -27,7 +27,7 @@ class Overtls < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/overtls-bin -V")
 
-    output = shell_output(bin/"overtls-bin -r client -c #{pkgshare}/config.json 2>&1", 1)
+    output = shell_output("#{bin}/overtls-bin -r client -c #{pkgshare}/config.json 2>&1", 1)
     assert_match "Error: Io(Kind(TimedOut))", output
   end
 end

@@ -1,18 +1,18 @@
 class DuaCli < Formula
   desc "View disk space usage and delete unwanted data, fast"
   homepage "https://lib.rs/crates/dua-cli"
-  url "https://ghfast.top/https://github.com/Byron/dua-cli/archive/refs/tags/v2.30.1.tar.gz"
-  sha256 "e7cb52b4dc6bf89a554b0f1292344eafceeace1cbf957a2c0942bf1201b404a9"
+  url "https://ghfast.top/https://github.com/Byron/dua-cli/archive/refs/tags/v2.31.0.tar.gz"
+  sha256 "e338d61af692898560851894fae4f26ba1435700b8871ee008e6c5b48bd0e34c"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "757cc4d0c36a61b8997cafc441891febe9aebfab9c31061da3bb6eeee57ed6b6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0c0cafb929368a37b064bbe654badfec69e81591bc64fc709a884206f4ec5201"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "ba47ae7e44a346ed1e8e93d10a4ddb9e231105ed277416c555543c42d1d0a104"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8092bcc37112ec20f690a9e41bbf8712d7ce85c3b63d33d9bbd4096c2e9d0ade"
-    sha256 cellar: :any_skip_relocation, ventura:       "87ed8692edf0f3ed5e72ea186dd201f1fadb8c81ed0730878e9ed1154f4f4505"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f0634654442c4307b6cbdf27f43736b8f407848294163718a68c7cdaf8eaed16"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6222a1aa0caf02ceba9a9786a816bb99f4291e39507b38d399c4fc5b1b2ed2ce"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e5e448facbdb73ad0dbefb2a1f5ad4fcbfa463b0f4c7441303f9e7d4dcd62438"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f210e4c573704a85dd4573a6db70efdba16e683a8d16445504470c9d1e452d64"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "c24a23289b629968ea4224a2b9cdc898a650d20e3b3729af922b538d79a878f6"
+    sha256 cellar: :any_skip_relocation, sonoma:        "037c3b44cb73818344c6e051c9b4e60ad45ee65d32c77d9a2c2874532b2824e2"
+    sha256 cellar: :any_skip_relocation, ventura:       "9ac8d73daec088f7caa1a5deb0e86d8b77cf965648c03d16398a5fde6130454b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "20c6165d1f189e4cb5e3f9e7500a32c9b4b3519038ecbb3510b10bf4f136038e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "62f206214cee635064989b3de3f3b5c92b49e4923af2ad355474dc245c3f3c76"
   end
 
   depends_on "rust" => :build

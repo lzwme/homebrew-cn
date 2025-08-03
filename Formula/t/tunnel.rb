@@ -30,6 +30,6 @@ class Tunnel < Formula
   end
 
   test do
-    assert_match "you need an api key", shell_output(bin/"tunnel 8080", 1)
+    assert_match "you need an api key", shell_output("#{bin}/tunnel 8080", 1)
   end
 end

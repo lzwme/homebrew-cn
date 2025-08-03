@@ -35,9 +35,9 @@ class Kconf < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output(bin/"kconf version")
+    assert_match version.to_s, shell_output("#{bin}/kconf version")
 
-    output = shell_output(bin/"kconf namespace homebrew 2>&1", 1)
+    output = shell_output("#{bin}/kconf namespace homebrew 2>&1", 1)
     expected = "you must first set a current context before setting a preferred namespace"
     assert_match expected, output
   end

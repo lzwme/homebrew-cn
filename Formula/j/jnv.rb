@@ -23,7 +23,7 @@ class Jnv < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output(bin/"jnv --version")
+    assert_match version.to_s, shell_output("#{bin}/jnv --version")
 
     output = pipe_output("#{bin}/jnv 2>&1", "homebrew", 1)
     expected_output = if OS.mac?

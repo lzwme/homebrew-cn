@@ -34,7 +34,7 @@ class Xq < Formula
   end
 
   test do
-    version_output = shell_output(bin/"xq --version 2>&1")
+    version_output = shell_output("#{bin}/xq --version 2>&1")
     assert_match "xq version #{version}", version_output
 
     run_output = pipe_output(bin/"xq", "<root></root>")

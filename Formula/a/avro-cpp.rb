@@ -7,21 +7,24 @@ class AvroCpp < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "291b84c78bc647e73768a8e56238854a0921e6bb4cb0719941d2224dc615d4a1"
-    sha256 cellar: :any,                 arm64_sonoma:  "b4814a1221cb3c2b269295b082a7800f9e98b6e35353b5169e0cd11bde2b1204"
-    sha256 cellar: :any,                 arm64_ventura: "5baa7aba33ff81ea4533abd7cea3618e388b297f9ed515e9070081aa18c5f682"
-    sha256 cellar: :any,                 sonoma:        "b6871bfbea04fb244cb3703fc02b5c60f9694a7d69e8651690ac871a3a2be192"
-    sha256 cellar: :any,                 ventura:       "9c38cb460359de66ad6c65bf50356a22698d9a08cf50f4ea4798a7e9acc653cb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "44bfb408cd8eca3fdb23efbcb046e741768f4e1de5e86c62fc00f98b68e94966"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3fa20bafdf7c160c06da0dc7fd48574cf2fb584e01f36a513f11a8fc0aef1056"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "35545fc4240e13f8631fe71b1a9469092c15e2793c0d106d14fb34533db0e84b"
+    sha256 cellar: :any,                 arm64_sonoma:  "23c9ec83f2944a1d29735e620a4f64b7e0d9d94326c6dc9633383cfd53ebbecb"
+    sha256 cellar: :any,                 arm64_ventura: "425d77362d151dc0cb07d97bf7dc3588f340f568c8b5fcb23377f61510e47ea5"
+    sha256 cellar: :any,                 sonoma:        "82b98ee513025822b480a023234fe08f4f8d57fcab9b561c653562cde087c6a4"
+    sha256 cellar: :any,                 ventura:       "c04f7eef9843de29ca88223e70476d221cf017313b558c544bd4f47dc403c72d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "22e8f9ba754a3dd5ed7ec1fe95b0c79b859bb9aa7fe95abc9f3340c7e8bda79d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c4c9fcfa73b1edfe173bd96bd36844029d48614ed5e8934498a2b67329da5183"
   end
 
   depends_on "cmake" => :build
+  depends_on "fmt" => [:build, :test] # needed for headers
   depends_on "pkgconf" => :build
   depends_on "boost"
-  depends_on "fmt" # needed for headers
 
-  # Fix compatibility for `fmt` version 11 and remove fetch_content
+  # Fix compatibility with `fmt` 11, https://github.com/apache/avro/pull/3444
+  # Fix to use system installed `fmt`, https://github.com/apache/avro/pull/3447
+  # Both patches are not applicable to the source splitted tarball
   patch :DATA
 
   def install
@@ -59,10 +62,10 @@ end
 
 __END__
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index 19059a4..6b198db 100644
+index 19059a4..ba95df6 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
-@@ -82,15 +82,7 @@ endif ()
+@@ -82,15 +82,18 @@ endif ()
  find_package (Boost 1.38 REQUIRED
      COMPONENTS filesystem iostreams program_options regex system)
  
@@ -75,7 +78,18 @@ index 19059a4..6b198db 100644
 -        USES_TERMINAL_DOWNLOAD TRUE
 -)
 -FetchContent_MakeAvailable(fmt)
-+find_package(fmt REQUIRED)
++find_package(fmt)
++if (NOT fmt_FOUND)
++    include(FetchContent)
++    FetchContent_Declare(
++            fmt
++            GIT_REPOSITORY  https://github.com/fmtlib/fmt.git
++            GIT_TAG         10.2.1
++            GIT_PROGRESS    TRUE
++            USES_TERMINAL_DOWNLOAD TRUE
++    )
++    FetchContent_MakeAvailable(fmt)
++endif (NOT fmt_FOUND)
  
  find_package(Snappy)
  if (SNAPPY_FOUND)

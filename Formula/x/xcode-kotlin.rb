@@ -28,7 +28,7 @@ class XcodeKotlin < Formula
   end
 
   test do
-    output = shell_output(bin/"xcode-kotlin info --only")
+    output = shell_output("#{bin}/xcode-kotlin info --only")
     assert_match(/Bundled plugin version:\s*#{version}/, output)
     assert_match(/Installed plugin version:\s*(?:(?:\d+)\.(?:\d+)\.(?:\d+)|none)/, output)
     assert_match(/Language spec installed:\s*(?:Yes|No)/, output)

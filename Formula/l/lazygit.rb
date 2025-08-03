@@ -1,8 +1,8 @@
 class Lazygit < Formula
   desc "Simple terminal UI for git commands"
   homepage "https://github.com/jesseduffield/lazygit/"
-  url "https://ghfast.top/https://github.com/jesseduffield/lazygit/archive/refs/tags/v0.53.0.tar.gz"
-  sha256 "c160053ae99cb741c6d4295d52f917e492168b204780f9ad1afe8f984c6604a6"
+  url "https://ghfast.top/https://github.com/jesseduffield/lazygit/archive/refs/tags/v0.54.0.tar.gz"
+  sha256 "3df7680f0d5bf58fc9912ca57362fc544ffec05d40b54d4163031bc005abdb8e"
   license "MIT"
   head "https://github.com/jesseduffield/lazygit.git", branch: "master"
 
@@ -12,12 +12,12 @@ class Lazygit < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "51ddcbae258d86b10cf7782da92e85db4062f960e1c7d215b2c2f9d9b0e6bc80"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "51ddcbae258d86b10cf7782da92e85db4062f960e1c7d215b2c2f9d9b0e6bc80"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "51ddcbae258d86b10cf7782da92e85db4062f960e1c7d215b2c2f9d9b0e6bc80"
-    sha256 cellar: :any_skip_relocation, sonoma:        "81aadb992e4d27ad217a30f557fad751c828be089f237cce4e7a89fa84ed4e33"
-    sha256 cellar: :any_skip_relocation, ventura:       "81aadb992e4d27ad217a30f557fad751c828be089f237cce4e7a89fa84ed4e33"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1d2f18e55f980c8b3c8fc68bd8649aff84bd146129fe3c42f7379ea23aab0392"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "18ea7887ec9373dc91c6a17e27d72d5071ead67874259edbf6ba8518310bd8e5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "18ea7887ec9373dc91c6a17e27d72d5071ead67874259edbf6ba8518310bd8e5"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "18ea7887ec9373dc91c6a17e27d72d5071ead67874259edbf6ba8518310bd8e5"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ba8ab2a1df02f9e76fbd93bcd4d944aa21de8e27ab5fd85c2134b6efc297cd35"
+    sha256 cellar: :any_skip_relocation, ventura:       "ba8ab2a1df02f9e76fbd93bcd4d944aa21de8e27ab5fd85c2134b6efc297cd35"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fdf0b60016fa36b6c5f75db638291fb91e1d53033a6f27883809849888214a0e"
   end
 
   depends_on "go" => :build

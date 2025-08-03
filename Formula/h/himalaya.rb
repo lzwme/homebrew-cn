@@ -63,6 +63,6 @@ class Himalaya < Formula
       message.send.backend.auth.cmd = "*****"
     TOML
 
-    assert_match "cannot authenticate to IMAP server", shell_output(bin/"himalaya 2>&1", 1)
+    assert_match "cannot authenticate to IMAP server", shell_output("#{bin}/himalaya 2>&1", 1)
   end
 end

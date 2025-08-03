@@ -39,7 +39,7 @@ class Mtbl < Formula
   end
 
   test do
-    output = shell_output(bin/"mtbl_verify #{pkgshare}/animals-1.mtbl")
+    output = shell_output("#{bin}/mtbl_verify #{pkgshare}/animals-1.mtbl")
     assert_equal "#{pkgshare}/animals-1.mtbl: OK", output.chomp
   end
 end

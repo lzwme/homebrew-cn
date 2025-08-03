@@ -26,8 +26,8 @@ class ImessageExporter < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output(bin/"imessage-exporter --version")
-    output = shell_output(bin/"imessage-exporter --diagnostics 2>&1")
+    assert_match version.to_s, shell_output("#{bin}/imessage-exporter --version")
+    output = shell_output("#{bin}/imessage-exporter --diagnostics 2>&1")
     assert_match "Invalid configuration", output
   end
 end

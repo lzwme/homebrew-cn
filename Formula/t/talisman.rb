@@ -29,6 +29,6 @@ class Talisman < Formula
 
   test do
     system "git", "init", "."
-    assert_match "talisman scan report", shell_output(bin/"talisman --scan")
+    assert_match "talisman scan report", shell_output("#{bin}/talisman --scan")
   end
 end

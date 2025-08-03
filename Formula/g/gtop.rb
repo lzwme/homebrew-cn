@@ -28,6 +28,6 @@ class Gtop < Formula
   end
 
   test do
-    assert_match "Error: Width must be multiple of 2", shell_output(bin/"gtop 2>&1", 1)
+    assert_match "Error: Width must be multiple of 2", shell_output("#{bin}/gtop 2>&1", 1)
   end
 end

@@ -33,7 +33,7 @@ class Chrony < Formula
 
   test do
     (testpath/"test.conf").write "pool pool.chrony.eu iburst\n"
-    output = shell_output(sbin/"chronyd -Q -f #{testpath}/test.conf 2>&1")
+    output = shell_output("#{sbin}/chronyd -Q -f #{testpath}/test.conf 2>&1")
     assert_match(/System clock wrong by -?\d+\.\d+ seconds \(ignored\)/, output)
   end
 end

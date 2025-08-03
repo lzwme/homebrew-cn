@@ -20,7 +20,7 @@ class Netaddr < Formula
   end
 
   test do
-    output = shell_output(bin/"netaddr info 10.0.0.0/16")
+    output = shell_output("#{bin}/netaddr info 10.0.0.0/16")
     assert_match "Usable addresses         65534", output
   end
 end

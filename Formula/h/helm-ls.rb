@@ -34,7 +34,7 @@ class HelmLs < Formula
   test do
     require "open3"
 
-    assert_match version.to_s, shell_output(bin/"helm_ls version")
+    assert_match version.to_s, shell_output("#{bin}/helm_ls version")
 
     json = <<~JSON
       {

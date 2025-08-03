@@ -33,13 +33,13 @@ class Steampipe < Formula
     ENV["STEAMPIPE_INSTALL_DIR"] = testpath
 
     if OS.mac?
-      output = shell_output(bin/"steampipe service status 2>&1", 255)
+      output = shell_output("#{bin}/steampipe service status 2>&1", 255)
       # upstream bug report about creating `.pipes` folder, https://github.com/turbot/steampipe/issues/4402
       assert_match "Error: could not create pipes installation directory", output
     else # Linux
-      output = shell_output(bin/"steampipe service status 2>&1")
+      output = shell_output("#{bin}/steampipe service status 2>&1")
       assert_match "Steampipe service is not installed", output
     end
-    assert_match "Steampipe v#{version}", shell_output(bin/"steampipe --version")
+    assert_match "Steampipe v#{version}", shell_output("#{bin}/steampipe --version")
   end
 end

@@ -49,7 +49,7 @@ class DartSdk < Formula
   test do
     system bin/"dart", "create", "dart-test"
     chdir "dart-test" do
-      assert_match "Hello world: 42!", shell_output(bin/"dart run")
+      assert_match "Hello world: 42!", shell_output("#{bin}/dart run")
     end
   end
 end

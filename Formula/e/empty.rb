@@ -43,7 +43,7 @@ class Empty < Formula
     # Looks like PTY must be attached for the process to be started
     PTY.spawn(bin/"empty", "-f", "-i", "in", "-o", "out", "-p", "test.pid", "cat") { |_r, _w, pid| Process.wait(pid) }
     system bin/"empty", "-s", "-o", "in", "Hello, world!\n"
-    assert_equal "Hello, world!\n", shell_output(bin/"empty -r -i out")
+    assert_equal "Hello, world!\n", shell_output("#{bin}/empty -r -i out")
 
     system bin/"empty", "-k", File.read(testpath/"test.pid")
     sleep 1

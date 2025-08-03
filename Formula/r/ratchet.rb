@@ -31,10 +31,10 @@ class Ratchet < Formula
 
   test do
     cp_r pkgshare/"testdata", testpath
-    output = shell_output(bin/"ratchet check testdata/github.yml 2>&1", 1)
+    output = shell_output("#{bin}/ratchet check testdata/github.yml 2>&1", 1)
     assert_match "found 5 unpinned refs", output
 
-    output = shell_output(bin/"ratchet -v 2>&1")
+    output = shell_output("#{bin}/ratchet -v 2>&1")
     assert_match "ratchet #{version}", output
   end
 end

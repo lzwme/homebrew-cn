@@ -37,6 +37,6 @@ class K2tf < Formula
     system bin/"k2tf", "-f", "service.yaml", "-o", testpath/"service.tf"
     assert compare_file(testpath/"service.tf.golden", testpath/"service.tf")
 
-    assert_match version.to_s, shell_output(bin/"k2tf --version")
+    assert_match version.to_s, shell_output("#{bin}/k2tf --version")
   end
 end

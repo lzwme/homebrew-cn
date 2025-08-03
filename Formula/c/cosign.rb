@@ -38,6 +38,6 @@ class Cosign < Formula
       pipe_output("#{bin}/cosign generate-key-pair 2>&1", "foo\nfoo\n")
     assert_path_exists testpath/"cosign.pub"
 
-    assert_match version.to_s, shell_output(bin/"cosign version 2>&1")
+    assert_match version.to_s, shell_output("#{bin}/cosign version 2>&1")
   end
 end

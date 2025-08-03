@@ -53,6 +53,6 @@ class Ncrack < Formula
   end
 
   test do
-    assert_match version.to_f.to_s, shell_output(bin/"ncrack --version")
+    assert_match version.to_f.to_s, shell_output("#{bin}/ncrack --version")
   end
 end

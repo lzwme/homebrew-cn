@@ -30,9 +30,9 @@ class Gptscript < Formula
 
   test do
     ENV["OPENAI_API_KEY"] = "test"
-    assert_match version.to_s, shell_output(bin/"gptscript -v")
+    assert_match version.to_s, shell_output("#{bin}/gptscript -v")
 
-    output = shell_output(bin/"gptscript #{pkgshare}/examples/bob.gpt 2>&1", 1)
+    output = shell_output("#{bin}/gptscript #{pkgshare}/examples/bob.gpt 2>&1", 1)
     assert_match "Incorrect API key provided", output
   end
 end

@@ -61,6 +61,6 @@ class Libdsk < Formula
   end
 
   test do
-    assert_equal "#{name} version #{version}\n", shell_output(bin/"dskutil --version")
+    assert_equal "#{name} version #{version}\n", shell_output("#{bin}/dskutil --version")
   end
 end

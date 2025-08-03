@@ -52,7 +52,7 @@ class Kubekey < Formula
   end
 
   test do
-    version_output = shell_output(bin/"kk version")
+    version_output = shell_output("#{bin}/kk version")
     assert_match "Version:\"v#{version}\"", version_output
     assert_match "GitTreeState:\"clean\"", version_output
 

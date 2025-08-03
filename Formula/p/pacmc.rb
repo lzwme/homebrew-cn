@@ -21,6 +21,6 @@ class Pacmc < Formula
   end
 
   test do
-    assert_match "sodium", shell_output(bin/"pacmc search sodium")
+    assert_match "sodium", shell_output("#{bin}/pacmc search sodium")
   end
 end
