@@ -18,6 +18,8 @@ class ArpScanRs < Formula
 
   depends_on "rust" => :build
 
+  conflicts_with "arp-scan", because: "both install `arp-scan` binaries"
+
   def install
     system "cargo", "install", *std_cargo_args
   end

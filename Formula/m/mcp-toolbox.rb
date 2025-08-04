@@ -16,6 +16,8 @@ class McpToolbox < Formula
 
   depends_on "go" => :build
 
+  conflicts_with "kahip", because: "both install `toolbox` binaries"
+
   def install
     ldflags = %W[
       -s -w

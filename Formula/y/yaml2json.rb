@@ -18,6 +18,8 @@ class Yaml2json < Formula
 
   depends_on "go" => :build
 
+  conflicts_with "remarshal", because: "both install `yaml2json` binaries"
+
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
   end

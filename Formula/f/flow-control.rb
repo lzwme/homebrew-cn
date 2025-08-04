@@ -3,18 +3,18 @@ class FlowControl < Formula
   homepage "https://flow-control.dev/"
   # version is used to build by `git describe --always --tags`
   url "https://github.com/neurocyte/flow.git",
-      tag:      "v0.4.0",
-      revision: "7177da5a89e3deb1f40b81be19056aca7c2be6e2"
+      tag:      "v0.5.0",
+      revision: "28da270834b233e3692153cb0575c051361557ff"
   license "MIT"
   head "https://github.com/neurocyte/flow.git", branch: "master"
 
   bottle do
-    sha256 arm64_sequoia: "0a5d3cc9d785b501f466207718ffb97cffce91db129afcfb6dfaa503d2fe59ce"
-    sha256 arm64_sonoma:  "12a3b4911b97ff46e78c61011ca776c6ee1c77129688406fc4c94a6acd3ad55b"
-    sha256 arm64_ventura: "8a12557177dfc3921fb157cd0b17585d71d8ba28ee4beb7e6d0d36e6cfb86a0d"
-    sha256 sonoma:        "c7df526005ca5773b016d939085a5226e90155ef85bfb52bf20c5a75d7842c8c"
-    sha256 ventura:       "40b97484294f02f7db53af753f7056c7655a4503a1cd7e02a9b8be6fb5adb779"
-    sha256 x86_64_linux:  "78ef081b9598566457de7e28b52521e72dae6114f9ecd152933bb463b10ebf6b"
+    sha256 arm64_sequoia: "d0f70361e668717714a34817483d77b464fd659b68b1adf24eeb0c4d789dffec"
+    sha256 arm64_sonoma:  "ecb2d1c4671784f471ba994ee3dcae9f3ef3729f35284f749912de2e84e19c74"
+    sha256 arm64_ventura: "43b0d3d1c6e4fa07bea855432a12d5928b7c78f83a4b1d573fa3504abfd758b0"
+    sha256 sonoma:        "82d5fded191d4b2debc77a45cf34b14f7bf61b742bae3819e29d680f57466449"
+    sha256 ventura:       "49ee95c05c45244f487ff45db7b123bf649036896fd75b933a776c01915c88b6"
+    sha256 x86_64_linux:  "47791b0fb0591a8eeb5c87c6fdf37061ed0457c7a6ae61b289e551f3daece8bb"
   end
 
   depends_on "zig"

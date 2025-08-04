@@ -133,6 +133,6 @@ class Cookiecutter < Formula
   test do
     system "git", "clone", "https://github.com/audreyr/cookiecutter-pypackage.git"
     system bin/"cookiecutter", "--no-input", "cookiecutter-pypackage"
-    assert (testpath/"python_boilerplate").directory?
+    assert (testpath/"python-boilerplate").directory?
   end
 end

@@ -17,6 +17,8 @@ class NovaFairwinds < Formula
 
   depends_on "go" => :build
 
+  conflicts_with "open-simh", because: "both install `nova` binaries"
+
   def install
     ldflags = "-s -w -X main.version=#{version} -X main.commit=#{tap.user}"
     system "go", "build", *std_go_args(output: bin/"nova", ldflags:)

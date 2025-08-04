@@ -33,6 +33,7 @@ class OpenSimh < Formula
   uses_from_macos "libpcap"
   uses_from_macos "zlib"
 
+  conflicts_with "nova-fairwinds", because: "both install `nova` binaries"
   conflicts_with "sigma-cli", because: "both install `sigma` binaries"
 
   def install

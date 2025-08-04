@@ -3,19 +3,19 @@ class Pdfalyzer < Formula
 
   desc "PDF analysis toolkit"
   homepage "https://github.com/michelcrypt4d4mus/pdfalyzer"
-  url "https://files.pythonhosted.org/packages/0f/91/08dec9b4534a4d587212c04173ec63d4b50f451fca2d7de02b1772134160/pdfalyzer-1.16.10.tar.gz"
-  sha256 "19ef99390f5bbc30db72775d4171a04812918cbbd9b3d0f528b40418b76cbc6e"
+  url "https://files.pythonhosted.org/packages/0d/8d/a4e25bad06b8e2a973c19a59525493031f0e9b3b69eb44009a70587195e4/pdfalyzer-1.16.11.tar.gz"
+  sha256 "a2a97ff7dbe60ced411da8e19e7a133c498049f1e95b441693b14fa39d1ebffc"
   license "GPL-3.0-or-later"
   head "https://github.com/michelcrypt4d4mus/pdfalyzer.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "21161342b75626cc3bbb5043fbd6fec514411f1e90bbd82692db35df0bc3d6ee"
-    sha256 cellar: :any,                 arm64_sonoma:  "786a1c614ca0c0515b5577c610c49fc4975990a8d48af6c14f7a1a012b7bb73f"
-    sha256 cellar: :any,                 arm64_ventura: "19fea693abe1e49ed64ee6069df67c1262d17414d4ec7f58d7d458758d838264"
-    sha256 cellar: :any,                 sonoma:        "833a781e5438d98aa8eee4249ac202388bace1aae598309d30bdad709be4b2c6"
-    sha256 cellar: :any,                 ventura:       "62501e5686a698691f0e5d20722e0f4aff25e2d3679ed0d6f13174f9d47422b1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c61d31eeddc92f7297ed067481182a578d09d9ce606e1cb12d59f56f10828366"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e7d4c6b110e039a5b90b0aee545a639def446b309bb5d657407ff4e8ddad33a2"
+    sha256 cellar: :any,                 arm64_sequoia: "964c223ac5b12ce6f7434a39c49c0aaec4144d4731701b4f23bee233625b6d7f"
+    sha256 cellar: :any,                 arm64_sonoma:  "a4e5c6575878d8b2d1c9c7beeed3942079b1e050aaeea437760ef8e816022103"
+    sha256 cellar: :any,                 arm64_ventura: "0f7682a8e9d3aa40703fabbfeb969051e0588721ec248158da2077fc72dab14e"
+    sha256 cellar: :any,                 sonoma:        "d1321ae5b81ecebc00e3a1179ab329ce46fa09ca14e663849bbd234c9fcb87a4"
+    sha256 cellar: :any,                 ventura:       "04d34b7f059d20cbc2704cebcb6d78d7dc43c3a71fd7cf0d60ad9eb936676df1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4a946c2316fc6ffde6f7d1b7f94227de572b4f6d7d2c886c49ec408cdb378799"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1f7298630b5d9fe8532da1d096ddffa10c42f5ef9809a050e10219f404778216"
   end
 
   depends_on "openssl@3"

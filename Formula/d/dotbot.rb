@@ -3,18 +3,18 @@ class Dotbot < Formula
 
   desc "Tool that bootstraps your dotfiles"
   homepage "https://github.com/anishathalye/dotbot"
-  url "https://files.pythonhosted.org/packages/9b/ca/b3ed58bef83a0e25a913b7f77794aa848ad2d7b976c452488b5fe268086b/dotbot-1.23.0.tar.gz"
-  sha256 "909c1b7875c00f5d11d61797e4f1885c4d7a1b4db2290b262a71a0457913a5c6"
+  url "https://files.pythonhosted.org/packages/05/4b/8308f726306d3d983323dd9bfa55e3610a07168f56ef612ecae05998ed55/dotbot-1.23.1.tar.gz"
+  sha256 "b6e419a898c03d2ecaaf802af9764041ac583fc59e367bdde509640c5d193f3b"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "f57c6ab4737f39805aa4706d246179291d8e971c2858ae59c4635e28b69c77fb"
-    sha256 cellar: :any,                 arm64_sonoma:  "63457f9e551e14ebfb5f487deec01a1258088000038779877610d93b209cdf71"
-    sha256 cellar: :any,                 arm64_ventura: "002e18bc8793a3520b7ec7cadc1872e2a1daa6636a3e1b54402e7ae050c0859d"
-    sha256 cellar: :any,                 sonoma:        "c7a687a9367ed1226b8d89143871ec1db4d62737fdf0f590031c508a44227b6a"
-    sha256 cellar: :any,                 ventura:       "04ae107967d76a538865b21c38fc6d5301f91e91188bef63550476ecd0a3c537"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c6e639112ed4982b4932d6ed0fb2699b0f7ab399075bb2e0708286494a4f5e52"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "02960ddbd7a42420b428e29ef13a4ea2a74ca60847bd111f2fbb15e5c16e61f6"
+    sha256 cellar: :any,                 arm64_sequoia: "be2cdb7ea682b1e1e80be3c35a99d3c6fe4f9ed8c092947906f6ad34500b00d2"
+    sha256 cellar: :any,                 arm64_sonoma:  "4a6df17f0e78bde62efd47b191afb7ab06f471fe4bc8b3c2e621e8832f8a7c53"
+    sha256 cellar: :any,                 arm64_ventura: "bee58a558d1c9e7db2dcd3f2092a82366bd87e0e3828b782c70ebdef79acdc91"
+    sha256 cellar: :any,                 sonoma:        "c5d3c4cd7e5a6d48e01b811910ce5993f11a15ca2e751f7f91df0f75899189d3"
+    sha256 cellar: :any,                 ventura:       "34ced83c25613d7962ec02e3fa1cc743b9a42c8c4a9cd02546362deb35317101"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "534e2e0087255d7558b1bc0f84192d181c85c389b1f3c54aa982e8c320f4786a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f95f6647267c2121a5f386ed902b95e0e8ed067bb3c0b705096199210139f53b"
   end
 
   depends_on "libyaml"

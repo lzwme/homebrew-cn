@@ -33,6 +33,8 @@ class SoxNg < Formula
     depends_on "alsa-lib"
   end
 
+  conflicts_with "sox", because: "both install `play`, `rec`, `sox`, `soxi` binaries"
+
   def install
     args = %w[--enable-replace]
     args << "--with-alsa" if OS.linux?

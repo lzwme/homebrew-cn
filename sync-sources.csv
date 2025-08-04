@@ -2180,7 +2180,6 @@ Homebrew-homebrew-core/Formula/g/gauth.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gawk.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gaze.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gcab.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/g/gcal.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gcalcli.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gcc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gcc@10.rb, Homebrew/homebrew-core, 0
@@ -2599,7 +2598,6 @@ Homebrew-homebrew-core/Formula/g/gphoto2.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gping.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gplcver.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gplugin.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/g/gpm.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gpp.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gpredict.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gprof2dot.rb, Homebrew/homebrew-core, 0
@@ -5171,7 +5169,6 @@ Homebrew-homebrew-core/Formula/p/pagmo.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pakchois.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pam-reattach.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pam-u2f.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/p/pam_yubico.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pan.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pandemics.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pandoc-crossref.rb, Homebrew/homebrew-core, 1
@@ -7662,7 +7659,6 @@ Homebrew-homebrew-core/Formula/y/yewtube.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/y/yh.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/y/yices2.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/y/yj.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/y/ykclient.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/y/ykdl.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/y/ykman.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/y/ykpers.rb, Homebrew/homebrew-core, 0
@@ -8940,6 +8936,7 @@ Homebrew-homebrew-cask/Casks/d/dust3d.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/dvdstyler.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/dwarf-fortress-lmp.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/dwarf-fortress.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/d/dyad.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/dyalog.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/dymo-connect.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/dyn-updater.rb, Homebrew/homebrew-cask, 0

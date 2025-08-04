@@ -28,6 +28,8 @@ class ArpScan < Formula
 
   uses_from_macos "libpcap"
 
+  conflicts_with "arp-scan-rs", because: "both install `arp-scan` binaries"
+
   def install
     system "autoreconf", "--force", "--install", "--verbose"
     system "./configure", "--disable-silent-rules", *std_configure_args

@@ -1,18 +1,18 @@
 class Croc < Formula
   desc "Securely send things from one computer to another"
   homepage "https://github.com/schollz/croc"
-  url "https://ghfast.top/https://github.com/schollz/croc/archive/refs/tags/v10.2.3.tar.gz"
-  sha256 "96c17b9fa6c55c0a1e02937c5f2d34bd2ce5b7ef6f844f16eac8d155c1b8a119"
+  url "https://ghfast.top/https://github.com/schollz/croc/archive/refs/tags/v10.2.4.tar.gz"
+  sha256 "c259c07b9da3ea39726b0c5e3f78ae66e858e1379bdb11bef93d31298e68f5fe"
   license "MIT"
   head "https://github.com/schollz/croc.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2ab574333a07b83fb71dda8ea4de38d232d00e609466196db3252de8cf4017de"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2ab574333a07b83fb71dda8ea4de38d232d00e609466196db3252de8cf4017de"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "2ab574333a07b83fb71dda8ea4de38d232d00e609466196db3252de8cf4017de"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5fcf4d41a53b35ab919d5d617ad2424762a1435759eb071365abc6a36d64d99f"
-    sha256 cellar: :any_skip_relocation, ventura:       "5fcf4d41a53b35ab919d5d617ad2424762a1435759eb071365abc6a36d64d99f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fac738d4b394464806a0f3a8e1a2bbc92f8bcd2edef0fb7865f4c1bdb6527977"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c4f00c712de947ee916bc39f63db45656dac8788d560661ca721cb52bcf6adcf"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c4f00c712de947ee916bc39f63db45656dac8788d560661ca721cb52bcf6adcf"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "c4f00c712de947ee916bc39f63db45656dac8788d560661ca721cb52bcf6adcf"
+    sha256 cellar: :any_skip_relocation, sonoma:        "19c73f8051b0b19f4d4815144ebb865cecd84214e0012b0f5bab43723a52412d"
+    sha256 cellar: :any_skip_relocation, ventura:       "19c73f8051b0b19f4d4815144ebb865cecd84214e0012b0f5bab43723a52412d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e6e46c275e52cc8c823e874cb8ddbab289b315321284a5f40ad70f82dc83bf1a"
   end
 
   depends_on "go" => :build

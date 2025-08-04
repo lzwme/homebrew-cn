@@ -11,13 +11,14 @@ class Odin < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256                               arm64_sequoia: "da6510863b17aa834d06a77400e65d3b89bdc3a5fbc163cc68234108ca03acb3"
-    sha256                               arm64_sonoma:  "48c6453b302a492faa3db363a6424406249b7c04ccaa58ee0fb2cade778c53bd"
-    sha256                               arm64_ventura: "ec99ee57ebf5a19874b5dfb66346da3e8a991b7176e426f8a99098c714b15bec"
-    sha256 cellar: :any,                 sonoma:        "0121a93037d84c418cca0e932453ac009a6f6f0dcf5c38bf8fc185e325e93314"
-    sha256 cellar: :any,                 ventura:       "c328ac6346b9517149b0df6be070973b5e3ff466e33c380d638b9dc37734d087"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "923bdbd52710ff706537861ceba951c89f74a01a699ffa3c3f69c96e8207ca5d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6c79709b204a5168a71d5d99db6d9cde166f453bd142279213ae94437a42c643"
+    rebuild 1
+    sha256                               arm64_sequoia: "67974459ca713e43032669529b99b92a82b7dc42ba049fdcf58fdc3429fadbbe"
+    sha256                               arm64_sonoma:  "51941c9025149588a0a7a85ef9aa207f96f9719b5709f53f5aefb574b69c5dcd"
+    sha256                               arm64_ventura: "2413f2200414f0caf566334d75998ff5650923f0a87712b1b217136af42041de"
+    sha256 cellar: :any,                 sonoma:        "ea79ee2c792452f60d990ff762236d7fc8eab11e0a862cd7df86495aca420d54"
+    sha256 cellar: :any,                 ventura:       "0d394efaa4e7a56f537bbac59cd6a85f48c60c6533cb454b751a87db6747d0ab"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "41a82ea2e9f497a48a27db0d41f01f2cd172975f5526de3b6b0f06f4ba8c1941"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2e30b330e73d984c312a6d3aefdfe0e486fa6e34ce61baba8ce0a2ad33a3836a"
   end
 
   depends_on "glfw"
@@ -118,7 +119,7 @@ class Odin < Formula
     (bin/"odin").write <<~BASH
       #!/bin/bash
       export PATH="#{llvm.opt_bin}:$PATH"
-      exec -a odin "#{libexec}/odin" "$@"
+      exec -a "${0}" "#{libexec}/odin" "${@}"
     BASH
     pkgshare.install "examples"
   end

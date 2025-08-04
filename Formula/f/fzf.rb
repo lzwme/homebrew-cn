@@ -1,18 +1,18 @@
 class Fzf < Formula
   desc "Command-line fuzzy finder written in Go"
   homepage "https://github.com/junegunn/fzf"
-  url "https://ghfast.top/https://github.com/junegunn/fzf/archive/refs/tags/v0.65.0.tar.gz"
-  sha256 "766e989220453f4b7753a4e99732da5e8550ae3184b3580ffd0c957cabd557b0"
+  url "https://ghfast.top/https://github.com/junegunn/fzf/archive/refs/tags/v0.65.1.tar.gz"
+  sha256 "82fa35dc3ba5d716db26a507f90bb0e724f586123c28ad3fb376bd8384669abf"
   license "MIT"
   head "https://github.com/junegunn/fzf.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6ccb9f330646341917b9f7a9d6f94c3e197a658cf34d8058238e1f9da3600171"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6ccb9f330646341917b9f7a9d6f94c3e197a658cf34d8058238e1f9da3600171"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "6ccb9f330646341917b9f7a9d6f94c3e197a658cf34d8058238e1f9da3600171"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1a61024e92bb39b8f4f3fefd070462095478479cf0b28ef75bbe3bd1cebdfd4d"
-    sha256 cellar: :any_skip_relocation, ventura:       "1a61024e92bb39b8f4f3fefd070462095478479cf0b28ef75bbe3bd1cebdfd4d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3b031e02b82952420acde5909eebcd1c133cf404560c116ca3187775d3b619aa"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "80dcf7961c82fa1b9bc4d7ea57e9983f97c989286f146c5e91ae5b992d0d5414"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "80dcf7961c82fa1b9bc4d7ea57e9983f97c989286f146c5e91ae5b992d0d5414"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "80dcf7961c82fa1b9bc4d7ea57e9983f97c989286f146c5e91ae5b992d0d5414"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c8e6dca557316f3f921c2fe0e9a4e072ee00b37053778394f4449cec8658556e"
+    sha256 cellar: :any_skip_relocation, ventura:       "c8e6dca557316f3f921c2fe0e9a4e072ee00b37053778394f4449cec8658556e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4f192b6b740b48c835ac6f0647bc95409cfb0da3b0d3fd2248d3bd761b971bcc"
   end
 
   depends_on "go" => :build

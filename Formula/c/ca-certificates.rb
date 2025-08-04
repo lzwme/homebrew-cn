@@ -126,6 +126,13 @@ class CaCertificates < Formula
     cp pkgshare/"cacert.pem", pkgetc/"cert.pem"
   end
 
+  def caveats
+    <<~EOS
+      CA certificates have been bootstrapped using certificates from the system
+      keychain on macOS. On other platforms, only the Mozilla CA store is used.
+    EOS
+  end
+
   test do
     assert_path_exists pkgshare/"cacert.pem"
     assert_path_exists pkgetc/"cert.pem"

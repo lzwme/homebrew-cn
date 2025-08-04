@@ -23,6 +23,8 @@ class Kahip < Formula
     depends_on "gcc"
   end
 
+  conflicts_with "mcp-toolbox", because: "both install `toolbox` binaries"
+
   fails_with :clang do
     cause "needs OpenMP support"
   end

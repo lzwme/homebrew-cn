@@ -15,7 +15,6 @@ class Redis < Formula
   livecheck do
     url "https://download.redis.io/releases/"
     regex(/href=.*?redis[._-]v?(\d+(?:\.\d+)+)\.t/i)
-    strategy :page_match
   end
 
   bottle do

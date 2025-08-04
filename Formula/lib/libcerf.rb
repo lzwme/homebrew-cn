@@ -1,8 +1,8 @@
 class Libcerf < Formula
   desc "Numeric library for complex error functions"
   homepage "https://jugit.fz-juelich.de/mlz/libcerf"
-  url "https://jugit.fz-juelich.de/mlz/libcerf/-/archive/v3.0/libcerf-v3.0.tar.gz"
-  sha256 "c6108fbda89af37f588119c0c542b6c1e824845a36bea2fa31f7ed2cc1a246db"
+  url "https://jugit.fz-juelich.de/mlz/libcerf/-/archive/v3.1/libcerf-v3.1.tar.gz"
+  sha256 "4c07e2a8e2b4d0e4d48db9e0fc9191b43a0e120e577d55d87e26dee8745c6fab"
   license "MIT"
   version_scheme 1
   head "https://jugit.fz-juelich.de/mlz/libcerf.git", branch: "master"
@@ -13,13 +13,13 @@ class Libcerf < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "093e9b7e5a294c1064d174f62b4a17e09bfb57f0fe2dd97b8b6091cf9e6d4ff6"
-    sha256 cellar: :any,                 arm64_sonoma:  "8abb6bed129a07ae4601cd1bd84f1c4c062ad8eca2bdb15ea3fa33c1dd8e8f39"
-    sha256 cellar: :any,                 arm64_ventura: "05f13dcf138876b29e6a9ac49b356ee1afdaae3671a19973cdc6688b73f1cc07"
-    sha256 cellar: :any,                 sonoma:        "d1f71ef6427fe87f8c1fca1ac83ff534a4b01086ae8835d8b14c2ea72710c97f"
-    sha256 cellar: :any,                 ventura:       "52409e3c2993db96a2edcb1a9229530fb9b5d1f3375c1dfafe18476ccb087e5b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0b2e39bf56ebf87f61fdb69caf20157ee0c20f1f55d0c57cd5676de672969ae5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b1181cfb82445d2b1fb89fbc80a2337d598ce59d8f71e9159344851eb05288e9"
+    sha256 cellar: :any,                 arm64_sequoia: "2ed1e01255af3afd757e542f915e5c4853cc80be70e3c3c0fd162bcee86552d3"
+    sha256 cellar: :any,                 arm64_sonoma:  "372aa9aea34188e7f9a13962d71f007c9a19a88869fb5d0f93fe1c241e7da914"
+    sha256 cellar: :any,                 arm64_ventura: "b2395eb9c5291d54889ea73a5f8392439072b87702f6e3bb12fab84470a7e750"
+    sha256 cellar: :any,                 sonoma:        "496c798199e82753520cfea6428e404c129f2d2d44274f6be7003ae4ccd1c120"
+    sha256 cellar: :any,                 ventura:       "732a3b79cefe80477a4ee4f1628d91348ce00b3cc6c838e8913aaf88b299381b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "665d5dc1a5b5e3f1b50a12b05dacc78bd31921f5a6806146a8742eea51965a7c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "89283a20f62d6088094a98c10b68aef2e61f5300ac583485f47a85645ba8f2df"
   end
 
   depends_on "cmake" => :build

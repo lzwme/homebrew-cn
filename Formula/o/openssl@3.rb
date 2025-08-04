@@ -124,8 +124,7 @@ class OpensslAT3 < Formula
 
   def caveats
     <<~EOS
-      A CA file has been bootstrapped using certificates from the system
-      keychain. To add additional certificates, place .pem files in
+      To add additional certificates, place .pem files in
         #{openssldir}/certs
 
       and run

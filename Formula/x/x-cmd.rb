@@ -1,8 +1,8 @@
 class XCmd < Formula
   desc "Bootstrap 1000+ command-line tools in seconds"
   homepage "https://x-cmd.com"
-  url "https://ghfast.top/https://github.com/x-cmd/x-cmd/archive/refs/tags/v0.6.6.tar.gz"
-  sha256 "69a12b98ed396b0c4d349a69c6e86e67782ec7765ee547294ca5951f79ed9b4e"
+  url "https://ghfast.top/https://github.com/x-cmd/x-cmd/archive/refs/tags/v0.6.7.tar.gz"
+  sha256 "d48c8783a921f0a572f9acb3264aa288baec56ebc4a06623bfe8922f2edc0d56"
   license all_of: ["AGPL-3.0-only", "MIT", "BSD-3-Clause"]
 
   head "https://github.com/x-cmd/x-cmd.git", branch: "X"
@@ -13,13 +13,13 @@ class XCmd < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e3513ddd9f98e245767e82db21fe8cc391effa3b665cd2a39238c086dbfaee4e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e3513ddd9f98e245767e82db21fe8cc391effa3b665cd2a39238c086dbfaee4e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "e3513ddd9f98e245767e82db21fe8cc391effa3b665cd2a39238c086dbfaee4e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "eeaa11ced385ba645233dbff326fe4601cc8ce4d6e06a7b4be36430564682628"
-    sha256 cellar: :any_skip_relocation, ventura:       "eeaa11ced385ba645233dbff326fe4601cc8ce4d6e06a7b4be36430564682628"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8b88ae42737326d1c1776a9db4df1140fa28271639b9040c917abf52517d17ca"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8b88ae42737326d1c1776a9db4df1140fa28271639b9040c917abf52517d17ca"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "284df4bedbdbaa3d7cb311321cbffbc7933461354da7a6434988f16644e5f951"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "284df4bedbdbaa3d7cb311321cbffbc7933461354da7a6434988f16644e5f951"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "284df4bedbdbaa3d7cb311321cbffbc7933461354da7a6434988f16644e5f951"
+    sha256 cellar: :any_skip_relocation, sonoma:        "de8d6c07169c659edd1ad7dfb818efec77f3887998c3020214ca165c8dc2096a"
+    sha256 cellar: :any_skip_relocation, ventura:       "de8d6c07169c659edd1ad7dfb818efec77f3887998c3020214ca165c8dc2096a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bc9d8413ab96e6904799dbbe42d1dfb17a59ec8654b2faac6664807edc65b4e2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bc9d8413ab96e6904799dbbe42d1dfb17a59ec8654b2faac6664807edc65b4e2"
   end
 
   def install

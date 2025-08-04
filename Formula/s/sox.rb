@@ -34,6 +34,8 @@ class Sox < Formula
     depends_on "alsa-lib"
   end
 
+  conflicts_with "sox_ng", because: "both install `play`, `rec`, `sox`, `soxi` binaries"
+
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
     url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-pre-0.4.2.418-big_sur.diff"
