@@ -1,28 +1,34 @@
 class SingBox < Formula
   desc "Universal proxy platform"
   homepage "https://sing-box.sagernet.org"
-  url "https://ghfast.top/https://github.com/SagerNet/sing-box/archive/refs/tags/v1.11.15.tar.gz"
-  sha256 "97d58dd873d7cf9b5e4b4aca5516568f3b2e6f5c3dbc93241c82fff5e4a609fd"
+  url "https://ghfast.top/https://github.com/SagerNet/sing-box/archive/refs/tags/v1.12.0.tar.gz"
+  sha256 "1093254161d2dac2175a589eb0b43415b89b3e0c10bb2a09ac230f320d974c82"
   license "GPL-3.0-or-later"
-  revision 1
   head "https://github.com/SagerNet/sing-box.git", branch: "dev-next"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5832dd0baaef2d442f873c1a6ee6e3b4f7641954461d98ca38013dd521356690"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ef94fdf5edbda1ddfb2de0e8361e2207ee68088451469078c415258f00e5098d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "87c26adbabdadb465f5f6ddb584eb5528291da88902cc009b5c43a9309dc7525"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6ce58937e4a7e57aff87fc11bebdb9f6bd2339b20fc16fed0f8f01c01685152a"
-    sha256 cellar: :any_skip_relocation, ventura:       "0888fb16fb3a261e3c55977aa41b5d31f1492dfba9b90dfee8b2ab7eafb6e896"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2ab0a544b28d845df3a67bcfcea9c6cc26e2a0fe60e3d2edf1e5e900c3388e2d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c06622317d1a2f90d384e8ebd5074fb6c5eba5be61fcdd95d48c2b18c214c142"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "483392a52ffb842cbe3e346f3ec295854c4c57cbf104d4f7524a3f6150b9cc00"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "89a69115727719310ab5d849d0e4c01fafb0189b59ab8e30fb45acbba5777d50"
+    sha256 cellar: :any_skip_relocation, sonoma:        "24d99a50ab64a41cc003549844408955a1c76b55061227c8f4a674d8173c0761"
+    sha256 cellar: :any_skip_relocation, ventura:       "6f24ee85e92ad4f18329963c83b24eaea22b975bf9be6b7fe617359439e7c708"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "227ce4037b189dec13eda0094062b1192ee7ec242817229ed35ab642a8bb1d48"
   end
 
   depends_on "go" => :build
 
   def install
     ldflags = "-s -w -X github.com/sagernet/sing-box/constant.Version=#{version} -buildid="
-    tags = "with_gvisor,with_dhcp,with_wireguard,with_reality_server,with_clash_api,with_quic," \
-           "with_utls,with_acme,with_ech"
-    system "go", "build", *std_go_args(ldflags:, tags:), "./cmd/sing-box"
+    tags = %w[
+      with_acme
+      with_clash_api
+      with_dhcp
+      with_gvisor
+      with_quic
+      with_utls
+      with_wireguard
+    ]
+    system "go", "build", *std_go_args(ldflags:, tags: tags.join(",")), "./cmd/sing-box"
     generate_completions_from_executable(bin/"sing-box", "completion")
   end
 

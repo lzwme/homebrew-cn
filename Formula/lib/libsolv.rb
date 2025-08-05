@@ -1,8 +1,8 @@
 class Libsolv < Formula
   desc "Library for solving packages and reading repositories"
   homepage "https://github.com/openSUSE/libsolv"
-  url "https://ghfast.top/https://github.com/openSUSE/libsolv/archive/refs/tags/0.7.34.tar.gz"
-  sha256 "fd9c8a75d3ca09d9ff7b0d160902fac789b3ce6f9fb5b46a7647895f9d3eaf05"
+  url "https://ghfast.top/https://github.com/openSUSE/libsolv/archive/refs/tags/0.7.35.tar.gz"
+  sha256 "e6ef552846f908beb3bbf6ca718b6dd431bd8a281086d82af9a6d2a3ba919be5"
   license "BSD-3-Clause"
 
   livecheck do
@@ -11,13 +11,13 @@ class Libsolv < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "705aee3e699df7f17fca2f26ca5e9b2764c5d09850608589ce874b223115efde"
-    sha256 cellar: :any,                 arm64_sonoma:  "d05cd3b8bdfbe1fc9a492cc983e283270e1e7d0c76cfa320b8207da0543bc196"
-    sha256 cellar: :any,                 arm64_ventura: "95e6c45b9b3d7ce2dcd8d67adde1c2f7026540c4f40cd41b3ca53e6290314ff4"
-    sha256 cellar: :any,                 sonoma:        "76be0cf755aeb56c3d93905b113fb9a98abaf21b23d35ede2982de897a901634"
-    sha256 cellar: :any,                 ventura:       "6888356ca5dc9c9138de54ceb23f5e982faef135f847569a42340e07ad78d0d6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6d613a1b3680a9ec36c0a017c8a4e3b534399250d79bf1521c9bd7e38c168154"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4e0b9a3c13a9645e7eac79fb19e3160d905ff1e4aa179ecf9f93bee927171893"
+    sha256 cellar: :any,                 arm64_sequoia: "9c7625f5743db89c31814320395d5f7f6b2e9edf75d62b22f78370f524024ddf"
+    sha256 cellar: :any,                 arm64_sonoma:  "b67c4fe1fc284f1521babdaa64b30928ca2382d2f933e41cf20a284f20a4c8a3"
+    sha256 cellar: :any,                 arm64_ventura: "65f85cff59024135a62a98eef81ae68b7bc2c4318d0540925b5704875e7e22ec"
+    sha256 cellar: :any,                 sonoma:        "cae4d5f9a4d6dc8ba94b2b41869aa7a2b69d881252b8c0ea061d62050713c322"
+    sha256 cellar: :any,                 ventura:       "79bd16f6009b2a41f9ba5dbe3e1c7bfd5968efdad36aa747b2999da360aa4b68"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "600392ccca44e48deacb311dd4e9f3d40e140570fb3432f42bd4ef25c810f4af"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "443ab1cdcf1ab640afeb091caca6bb24f3912aa7dc95f64c7d7c12dd09bbac1a"
   end
 
   depends_on "cmake" => :build

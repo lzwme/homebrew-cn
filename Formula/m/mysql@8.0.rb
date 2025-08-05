@@ -3,8 +3,8 @@ class MysqlAT80 < Formula
   # FIXME: Actual homepage fails audit due to Homebrew's user-agent
   # homepage "https://dev.mysql.com/doc/refman/8.0/en/"
   homepage "https://github.com/mysql/mysql-server"
-  url "https://cdn.mysql.com/Downloads/MySQL-8.0/mysql-boost-8.0.42.tar.gz"
-  sha256 "c2aa67c618edfa1bc379107fe819ca8e94cba5d85f156d1053b8fedc88cc5f8f"
+  url "https://cdn.mysql.com/Downloads/MySQL-8.0/mysql-boost-8.0.43.tar.gz"
+  sha256 "85fd5c3ac88884dc5ac4522ce54ad9c11a91f9396fecaa27152c757a3e6e936f"
   license "GPL-2.0-only" => { with: "Universal-FOSS-exception-1.0" }
 
   livecheck do
@@ -15,13 +15,13 @@ class MysqlAT80 < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 arm64_sequoia: "374dcbdffa60dd5a7c01788235ea51faf12c11d8276ed79339c361ada06a77cd"
-    sha256 arm64_sonoma:  "e1450da39223da0f12db39461a164ed9522a087e47a08df96cfb3e55bda4a4b4"
-    sha256 arm64_ventura: "4e256b2b28f4b9225536419d453c8d38c5129f7a35f275946c022f4dca16f4e1"
-    sha256 sonoma:        "49d14b9e9f9e46b4b1e2dd4d02ecb4129ab28020b67da39500abd8b6a05358a5"
-    sha256 ventura:       "94381480fb745013b9d709cf1463630fb094e2878a5fd6e769690813a16a93b0"
-    sha256 arm64_linux:   "7ccb69ac582f17faee3a17a4ab366fd7ae372fd066801e172d47e181f4a52065"
-    sha256 x86_64_linux:  "93cea0c407ddc6acf6e794315aede77261f9c75bb58dfeb3083e59cadf0ef4f8"
+    sha256 arm64_sequoia: "6e0902230c1df0d94e5dbdd41f4ac5f4f5e3ce3456434a4ff683b8dc221b5bea"
+    sha256 arm64_sonoma:  "1bdbece16ebef9081ec14354bae153eff004fd4cf35fa043cda32f0a34eb3222"
+    sha256 arm64_ventura: "7b7bf92fc53db4be0f33420f1ddd218d1c4fc63717c314b984ade27e03768109"
+    sha256 sonoma:        "7ba951440fa9e884eb3877952c8ceadc454493d8df3566dbaa36d49f5fd706ba"
+    sha256 ventura:       "8175f66fc471233c46449ce110210addeccc89b165ac15e6f0155cf5f7951b74"
+    sha256 arm64_linux:   "3c42469b26c1116033591735e94ea1589be23c908aaae2c4e8441e097dbae801"
+    sha256 x86_64_linux:  "02e5682e6a48dc33be901c06d769ceaddfbff40ceb709a4ba9c746676609fbe2"
   end
 
   keg_only :versioned_formula
@@ -102,7 +102,10 @@ class MysqlAT80 < Formula
     system "cmake", "--install", "build"
 
     cd prefix/"mysql-test" do
-      system "./mysql-test-run.pl", "status", "--vardir=#{buildpath}/mysql-test-vardir"
+      system "./mysql-test-run.pl", "check", "--vardir=#{buildpath}/mysql-test-vardir"
+    ensure
+      status_log_file = buildpath/"mysql-test-vardir/log/main.status/status.log"
+      logs.install status_log_file if status_log_file.exist?
     end
 
     # Remove the tests directory

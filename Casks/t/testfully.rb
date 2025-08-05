@@ -1,6 +1,6 @@
 cask "testfully" do
-  version "1.175.0,444"
-  sha256 "b974c16678dd03169c77eb76c4093e8bb6ec3cbf93a8873d41bab9bcfd0ecf65"
+  version "1.176.1,456"
+  sha256 "6cad02d358f59a1b342d59ccb22453bebadf3b4e9543bcfcfeb5ccc986a8acf7"
 
   url "https://releases.testfully.io/desktop/build-#{version.csv.second}/Testfully.app.zip"
   name "Testfully"

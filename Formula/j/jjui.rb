@@ -1,17 +1,17 @@
 class Jjui < Formula
   desc "TUI for interacting with the Jujutsu version control system"
   homepage "https://github.com/idursun/jjui"
-  url "https://ghfast.top/https://github.com/idursun/jjui/archive/refs/tags/v0.9.0.tar.gz"
-  sha256 "afe36a38e9f6cdbf9cc4096ba9ce9fd1251128ac5f26cb783b7de8246cbc3d19"
+  url "https://ghfast.top/https://github.com/idursun/jjui/archive/refs/tags/v0.9.1.tar.gz"
+  sha256 "2a5c47a411dddea174f1adf7440cf482f0b2c2dff301d141cc50b26374f37ec7"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2d763e7ed35cfe0d9c20522ef5b05351c04a0fccec95c11fab32523fe760c6b6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2d763e7ed35cfe0d9c20522ef5b05351c04a0fccec95c11fab32523fe760c6b6"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "2d763e7ed35cfe0d9c20522ef5b05351c04a0fccec95c11fab32523fe760c6b6"
-    sha256 cellar: :any_skip_relocation, sonoma:        "fd4ddee09f0cead1c8af7f45ecc12541a61f6b0b20f74007e9bb9c6ca1dd9103"
-    sha256 cellar: :any_skip_relocation, ventura:       "fd4ddee09f0cead1c8af7f45ecc12541a61f6b0b20f74007e9bb9c6ca1dd9103"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5537c4f961a567b6e9cdafff1d7ac4df9bb7d760087efd02ec875b0d8bd7a7e8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b2b858b1c2a18bc103aeb2ed676aaae0ea2194f686edeade970ef100bc12c281"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b2b858b1c2a18bc103aeb2ed676aaae0ea2194f686edeade970ef100bc12c281"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "b2b858b1c2a18bc103aeb2ed676aaae0ea2194f686edeade970ef100bc12c281"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6585bc0f2f33645aad39df384d1912b03d45ca306ad1655ee65ebb4a4485be37"
+    sha256 cellar: :any_skip_relocation, ventura:       "6585bc0f2f33645aad39df384d1912b03d45ca306ad1655ee65ebb4a4485be37"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e82f638fa04dafe7f6f1ca7ddb15db1aadd8c0a621825d0b95bd71daddbba4f0"
   end
 
   depends_on "go" => :build

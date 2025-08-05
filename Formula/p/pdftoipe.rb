@@ -4,18 +4,18 @@ class Pdftoipe < Formula
   url "https://ghfast.top/https://github.com/otfried/ipe-tools/archive/refs/tags/v7.2.29.1.tar.gz"
   sha256 "604ef6e83ad8648fa09c41a788549db28193bb3638033d69cac2b0b3f33bd69b"
   license "GPL-2.0-or-later"
-  revision 8
+  revision 9
 
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "73ef0b93cb20c5a6f607856003175f96a3185859c409181709fb3e0d34cba4f8"
-    sha256 cellar: :any,                 arm64_sonoma:  "3c5c3ae4556a3dad3b1f891b325613edaaaf193474574295cf40d6dcf37651a3"
-    sha256 cellar: :any,                 arm64_ventura: "884f0b8f60c43651be7ae0a08873855b9aecc86ac4c58a72760fd7d11914b05e"
-    sha256 cellar: :any,                 sonoma:        "53fc4df76a9e88347b9a531d4e9f6f8272a76af2b021b700dfb32a82b3d12f72"
-    sha256 cellar: :any,                 ventura:       "482f5b67b34e9f392ede0a2a7d1670fea573f0c090d64923ce498e6fa1592ec4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9294b423b731fb9e82da7f949dde35f864d74a4040429459546d6fbac76a0a46"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "225dd057b1255d16f2d639f8b2457a7ee3a3a059b7e791c48a457c8043120d0e"
+    sha256 cellar: :any,                 arm64_sequoia: "ed94bc27eb50abd1d26f87f1bc337a2b5e5a140fff2f70107b08f006e5ea2acf"
+    sha256 cellar: :any,                 arm64_sonoma:  "18e195efc314c9dc1e7a9e1b475bfbb4bd361df174581d163804104d39be1462"
+    sha256 cellar: :any,                 arm64_ventura: "49ff25edfb33a44913bb85e9f20e3bfc936be343d86cc12aee5df970840fd55d"
+    sha256 cellar: :any,                 sonoma:        "f429467885c0a41c935825dfb0d07499b6e131afff692d084317e007f832019c"
+    sha256 cellar: :any,                 ventura:       "5bf14a63b818d2ea655e377496219c76c452b13ccae397f876534cebf0289f17"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ddc0db1a2f7030543e3bfcdf7df0d35648e708292909de088710f60065359f98"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7452da1820d0fc3da9de95a86a115501c96b5b7bda339dcd8b04c3524c475d5d"
   end
 
   depends_on "pkgconf" => :build

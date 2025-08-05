@@ -3,25 +3,24 @@ class MysqlClient < Formula
   # FIXME: Actual homepage fails audit due to Homebrew's user-agent
   # homepage "https://dev.mysql.com/doc/refman/9.3/en/"
   homepage "https://github.com/mysql/mysql-server"
-  url "https://cdn.mysql.com/Downloads/MySQL-9.3/mysql-9.3.0.tar.gz"
-  sha256 "1a3ee236f1daac5ef897c6325c9b0e0aae486389be1b8001deb3ff77ce682d60"
+  url "https://cdn.mysql.com/Downloads/MySQL-9.4/mysql-9.4.0.tar.gz"
+  sha256 "6bb509c54e58b54abbefa49e296e7220f5e7cfe446914ba3615f594967cfa921"
   license "GPL-2.0-only" => { with: "Universal-FOSS-exception-1.0" }
 
   livecheck do
     formula "mysql"
   end
 
-  no_autobump! because: :requires_manual_review
+  no_autobump! because: :incompatible_version_format
 
   bottle do
-    rebuild 1
-    sha256 arm64_sequoia: "975fd82ddc975521c79adc5b8d91c8fe739e2d4b4f2f7716bb52dfaad32cd8cb"
-    sha256 arm64_sonoma:  "b0f29c9fbf56dd9f36ba0518e6a08fcedd7cf39884a2828a34e3c1b69cf5ac5d"
-    sha256 arm64_ventura: "20d77f2b858872d0fdfdddc552d0f0c513bdc4e939bfe43eea57a6b47fb7070d"
-    sha256 sonoma:        "418c9c100877a4dae7dd49b6e78c1aafb0db23bcddbf94e522e39a78c8130398"
-    sha256 ventura:       "3529c333d6cc9ca4925f0297a4ed70cf5d41bbcdb3d45dfee4a81bd16b56a8e7"
-    sha256 arm64_linux:   "b7cb2de7878be31f6896f08617393a83d836620192ad20649361c101a48b591f"
-    sha256 x86_64_linux:  "b19afb43de7e7a05235af8abbabec78a12fddac8278079d449cda6824683205e"
+    sha256 arm64_sequoia: "8df3287c752bbc87c18699ede1268b02cefbe9d8e412f4ffc3e28c9439b9363b"
+    sha256 arm64_sonoma:  "7bd0ccacb8e870116bd8ea64d5e0df32b88e463ac4b8f7b1dc95b0aa296f1ddc"
+    sha256 arm64_ventura: "67e048397b2f14197d0aed67065ff52114d0d2207e0c723ff121512ccd60a094"
+    sha256 sonoma:        "056b6956d2f13d06f6a094c9c9674643a7b07069b80936c33d73e882561ee826"
+    sha256 ventura:       "3442cade080da8ad821e9ca521cb012dbe397c6f4cc84cf544e1b928b7ab685a"
+    sha256 arm64_linux:   "af4a826e700ef6fc6b08b07441dc2fe6ef31612aaa8a100a41df3b17745c6982"
+    sha256 x86_64_linux:  "ccc0316df77bab8dfcf093c455b671256b4aaa6e44bee0a93521c89f04523e0a"
   end
 
   keg_only "it conflicts with mysql (which contains client libraries)"

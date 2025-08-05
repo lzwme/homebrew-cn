@@ -3,8 +3,8 @@ class MysqlAT84 < Formula
   # FIXME: Actual homepage fails audit due to Homebrew's user-agent
   # homepage "https://dev.mysql.com/doc/refman/8.4/en/"
   homepage "https://github.com/mysql/mysql-server"
-  url "https://cdn.mysql.com/Downloads/MySQL-8.4/mysql-8.4.5.tar.gz"
-  sha256 "53639592a720a719fdfadf2c921b947eac86c06e333202e47667852a5781bd1a"
+  url "https://cdn.mysql.com/Downloads/MySQL-8.4/mysql-8.4.6.tar.gz"
+  sha256 "a1e523dc8be96d18a5ade106998661285ca01b6f5b46c08b2654110e40df2fb7"
   license "GPL-2.0-only" => { with: "Universal-FOSS-exception-1.0" }
 
   livecheck do
@@ -12,16 +12,16 @@ class MysqlAT84 < Formula
     regex(/href=.*?mysql[._-](?:boost[._-])?v?(8\.4(?:\.\d+)*)\.t/i)
   end
 
-  no_autobump! because: :requires_manual_review
+  no_autobump! because: :incompatible_version_format
 
   bottle do
-    sha256 arm64_sequoia: "c87d556622e48fbd47e0be9a7c5de2c9fb5824358c2dd2c897fe4ea2e604878e"
-    sha256 arm64_sonoma:  "a050552d7300ac04971d466c4d04d747a7ff15dbe15a41ab21d9f6bb0d4b92b0"
-    sha256 arm64_ventura: "8d64b363c45a52693e7b53a9c95a94f9878462c2bd5e3d8505a8ae10759d560e"
-    sha256 sonoma:        "13ef76f34992f0d2c4fc474eced6910b417c242f6568a8dd3a66d08edf56dc04"
-    sha256 ventura:       "6dfd8121bb7fcef0b6381cafddaa2db986e0cd852b68149a22241f562b6c4015"
-    sha256 arm64_linux:   "284529229c8646bee5bb018659f1d796ed309a4115edd212347b18abba80906c"
-    sha256 x86_64_linux:  "0f0eae4f5736c9b2e12e3209c59089c7d7545048c6b513dbfe6ecfc1cc169922"
+    sha256 arm64_sequoia: "e80dbd913efcd0b737d91624f527da8489a0b5a861f4de5efaf258d2a1ce8b1a"
+    sha256 arm64_sonoma:  "6bb3d4ab2fda20a9b7b0e0d97ba044801245a500b7351c93a1b432e717aba092"
+    sha256 arm64_ventura: "725d4af967181de641ee2b24c55195926b7ec43c083cea7801c90bc16b48d0f8"
+    sha256 sonoma:        "a7df4028e1ae7344efb8e68bde244a6dd148a90f3b7fa4c9c674948a74d9c7dc"
+    sha256 ventura:       "8749e05aa0a7d682c29d26cd1f1d8d7e8d3aaa04e79164a268fc446c152496b8"
+    sha256 arm64_linux:   "8ea4b98ab56e8c6cecb4fb32339c7e836bf6a3f337e70cb5ec2b65cc3621e03c"
+    sha256 x86_64_linux:  "a2298af6ffc0046db64c2eea78b08a8ce9d0f1109e1fea5c7d021e1abfc780d6"
   end
 
   keg_only :versioned_formula
@@ -121,7 +121,10 @@ class MysqlAT84 < Formula
     system "cmake", "--install", "build"
 
     cd prefix/"mysql-test" do
-      system "./mysql-test-run.pl", "status", "--vardir=#{buildpath}/mysql-test-vardir"
+      system "./mysql-test-run.pl", "check", "--vardir=#{buildpath}/mysql-test-vardir"
+    ensure
+      status_log_file = buildpath/"mysql-test-vardir/log/main.status/status.log"
+      logs.install status_log_file if status_log_file.exist?
     end
 
     # Remove the tests directory

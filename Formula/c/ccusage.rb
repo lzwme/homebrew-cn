@@ -1,18 +1,18 @@
 class Ccusage < Formula
   desc "CLI tool for analyzing Claude Code usage from local JSONL files"
   homepage "https://github.com/ryoppippi/ccusage"
-  url "https://registry.npmjs.org/ccusage/-/ccusage-15.6.0.tgz"
-  sha256 "6da64a73e92057efd4c623446bb04e5420f98d220a1693f64111dd27871438c2"
+  url "https://registry.npmjs.org/ccusage/-/ccusage-15.7.1.tgz"
+  sha256 "7101ac12ae8f0258a69c765f292d354dc398d9964a9244e6f677d7d245a83b6b"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a7d73ac9dfef6679a13e9f6ba936f7820717a0798aceaa25a06dbdd73cbe05c6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a7d73ac9dfef6679a13e9f6ba936f7820717a0798aceaa25a06dbdd73cbe05c6"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "a7d73ac9dfef6679a13e9f6ba936f7820717a0798aceaa25a06dbdd73cbe05c6"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2fa51770e22513525e2d93f3af80bc41af0d3ec85c6d030f7bacceaffaece027"
-    sha256 cellar: :any_skip_relocation, ventura:       "2fa51770e22513525e2d93f3af80bc41af0d3ec85c6d030f7bacceaffaece027"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a7d73ac9dfef6679a13e9f6ba936f7820717a0798aceaa25a06dbdd73cbe05c6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a7d73ac9dfef6679a13e9f6ba936f7820717a0798aceaa25a06dbdd73cbe05c6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f502aa09a2cb711750168130a44fedb3bb64687df98fce8ed1d91730ed522a1f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f502aa09a2cb711750168130a44fedb3bb64687df98fce8ed1d91730ed522a1f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "f502aa09a2cb711750168130a44fedb3bb64687df98fce8ed1d91730ed522a1f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "bd6fadd7b1d9cb63175029f3c6df65dcb3ba3fb0a7aba871e9880441cc6c92be"
+    sha256 cellar: :any_skip_relocation, ventura:       "bd6fadd7b1d9cb63175029f3c6df65dcb3ba3fb0a7aba871e9880441cc6c92be"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f502aa09a2cb711750168130a44fedb3bb64687df98fce8ed1d91730ed522a1f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f502aa09a2cb711750168130a44fedb3bb64687df98fce8ed1d91730ed522a1f"
   end
 
   depends_on "node"

@@ -1,18 +1,18 @@
 class Xmq < Formula
   desc "Tool and language to work with xml/html/json"
   homepage "https://libxmq.org"
-  url "https://ghfast.top/https://github.com/libxmq/xmq/archive/refs/tags/3.3.2.tar.gz"
-  sha256 "076211d8595360eda4b29cb8423927fb4a7296a7bb39b14de087befa3a39e86a"
+  url "https://ghfast.top/https://github.com/libxmq/xmq/archive/refs/tags/4.0.1.tar.gz"
+  sha256 "846cdd078209ee15189420c1ec47e6ffcf97fc5b196cd78b9952dc5de6c3e50e"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "f362ef2d0b2e3a7eedada9fcab2d8416f1b8a2823120a2331a87157613044a60"
-    sha256 cellar: :any,                 arm64_sonoma:  "f0ccd4bed78aefb1dd7b361cf2d6acd4c7d77044c080a8f8fc92fee429debf0a"
-    sha256 cellar: :any,                 arm64_ventura: "278d2e835e0648f5a570c096b8ecc7c0d920fa2b079a4f1db46ca8d4bc1b677f"
-    sha256 cellar: :any,                 sonoma:        "782915960236fdc44b975d8b5af0377f7cde3e86548d58b9fe9358b313c59f71"
-    sha256 cellar: :any,                 ventura:       "84876ed3a249469215d2031185c6a7581ee128b55499a7f5adf616dc8927c932"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "369e5c8e7f199d79d8669de762277ccca9a120c1494707ed0494c64d81a1b4b3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8bbcedfde6940f09e482faeb078545c9f2b6c9cb1e2611632affb1cc23187b5c"
+    sha256 cellar: :any,                 arm64_sequoia: "42095874ba74ca331ada2c067d2fbcd6e19efe70413c5f718bb4b09aef313e5d"
+    sha256 cellar: :any,                 arm64_sonoma:  "d57deede2a93c04f0f14906dd26b227cf4a155f3cbbbfec8f8907058bf0c5fc3"
+    sha256 cellar: :any,                 arm64_ventura: "8aca1bdd68bd3920d5849df45614c55c38af154ee1dd40e28cd4828ca614eb6a"
+    sha256 cellar: :any,                 sonoma:        "bf5db137f33a6b09d401804efd10ce28710a2143d8adb482a56dc24b275e26ad"
+    sha256 cellar: :any,                 ventura:       "12e55f6db9480dc671c5d23f603b88c9adac0051391b9fcbdc37116974f84918"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "165b86a489c050cdfedb74e27c16ef77d3bfb90c0f1d8e73cde376b6552531e8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "abaff1f72a7abb52ae8a84f576fae750c4322345327209ad996c363709fc3363"
   end
 
   head do

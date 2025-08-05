@@ -3,25 +3,24 @@ class MysqlClientAT84 < Formula
   # FIXME: Actual homepage fails audit due to Homebrew's user-agent
   # homepage "https://dev.mysql.com/doc/refman/8.4/en/"
   homepage "https://github.com/mysql/mysql-server"
-  url "https://cdn.mysql.com/Downloads/MySQL-8.4/mysql-8.4.5.tar.gz"
-  sha256 "53639592a720a719fdfadf2c921b947eac86c06e333202e47667852a5781bd1a"
+  url "https://cdn.mysql.com/Downloads/MySQL-8.4/mysql-8.4.6.tar.gz"
+  sha256 "a1e523dc8be96d18a5ade106998661285ca01b6f5b46c08b2654110e40df2fb7"
   license "GPL-2.0-only" => { with: "Universal-FOSS-exception-1.0" }
 
   livecheck do
     formula "mysql@8.4"
   end
 
-  no_autobump! because: :requires_manual_review
+  no_autobump! because: :incompatible_version_format
 
   bottle do
-    rebuild 1
-    sha256 arm64_sequoia: "64277d6ec414f92e516089a4e2c6ad176fdb6152a607676392995002149a1a17"
-    sha256 arm64_sonoma:  "43b670624ca50f578df25b7a8fa655bd31e283afa27083018f07d759cb43bfdf"
-    sha256 arm64_ventura: "630f42abd4c09710dcd37691ed213e84aac2f1ebd10c56023ba1098265694b36"
-    sha256 sonoma:        "2ff98ae96608ebb56f38ffbdccf9583902bf9bf75357d9ff4535814177f9b3c2"
-    sha256 ventura:       "4b163c87cd423182b1ddfd4da72e81ddc3361994d9edd824c9f942164332681b"
-    sha256 arm64_linux:   "8ba67332d9fb971c345746a9765de11e57b08df6b729c5119ab654df230a86e0"
-    sha256 x86_64_linux:  "3f1027c7649a348bc50137d817aa9d119808ab02408431063fc5d71dd58761e6"
+    sha256 arm64_sequoia: "3609f27603e56597c351bafb2ec87e78056d3c186bdd28d3de28bf302cc10c4d"
+    sha256 arm64_sonoma:  "345d4f8422c0c0561fafaed5f3132c4441ae4a2ddc8609ebf255c72fbe4f189d"
+    sha256 arm64_ventura: "d23e3b5c7933bbadb7121fe582ff41e72061cd82e4190fa73b60f00368112243"
+    sha256 sonoma:        "3b4aa44856ffde2273d737a3f4f94d0a8f223e7b3597a95859925775f98c536a"
+    sha256 ventura:       "021790fb2b3a1b6edd7fcafefed1f880648c16cd4aee11ebe5d4388944df63a2"
+    sha256 arm64_linux:   "db8a67e3891f055a77fd3d1ca24c2c0feb1a745335fd10a317eb71e9daffc3d9"
+    sha256 x86_64_linux:  "d8fc1af041673df854a2e07edd06603bd88be7a1cce38135a93b320b8e5de973"
   end
 
   keg_only :versioned_formula

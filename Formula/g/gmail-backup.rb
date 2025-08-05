@@ -10,6 +10,7 @@ class GmailBackup < Formula
   end
 
   deprecate! date: "2024-08-03", because: "needs python 2"
+  disable! date: "2025-08-03", because: "needs python 2"
 
   def install
     bin.install "gmail-backup.py" => "gmail-backup"

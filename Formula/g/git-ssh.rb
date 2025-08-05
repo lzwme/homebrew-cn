@@ -12,6 +12,7 @@ class GitSsh < Formula
   end
 
   deprecate! date: "2024-08-03", because: :unmaintained
+  disable! date: "2025-08-03", because: :unmaintained
 
   uses_from_macos "ruby"
 

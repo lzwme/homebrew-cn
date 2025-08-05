@@ -14,6 +14,7 @@ class CodaCli < Formula
 
   # originally written in py2, and has not been updated since 2012-05-30
   deprecate! date: "2024-08-03", because: :unmaintained
+  disable! date: "2025-08-03", because: :unmaintained
 
   uses_from_macos "python"
 
