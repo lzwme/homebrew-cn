@@ -1,18 +1,18 @@
 class Varlock < Formula
   desc "Add declarative schema to .env files using @env-spec decorator comments"
   homepage "https://varlock.dev"
-  url "https://registry.npmjs.org/varlock/-/varlock-0.0.7.tgz"
-  sha256 "1d5ed8a1ca5fb54da874a15af01466e85090ca51187fb3864161135050fedea7"
+  url "https://registry.npmjs.org/varlock/-/varlock-0.0.8.tgz"
+  sha256 "8617d25a898b891ad93b6756338293aa58f0160a587b25727d56d3381fe2e3f2"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c83cd2e2ba7a0ddfebb843cecb2f722894d192c63e005a233e83cc2d252e4627"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c83cd2e2ba7a0ddfebb843cecb2f722894d192c63e005a233e83cc2d252e4627"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "c83cd2e2ba7a0ddfebb843cecb2f722894d192c63e005a233e83cc2d252e4627"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0a3b6863097a176432f1a547376064a5d57cd4677a7b43666dee6c463a5dad71"
-    sha256 cellar: :any_skip_relocation, ventura:       "0a3b6863097a176432f1a547376064a5d57cd4677a7b43666dee6c463a5dad71"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c83cd2e2ba7a0ddfebb843cecb2f722894d192c63e005a233e83cc2d252e4627"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c83cd2e2ba7a0ddfebb843cecb2f722894d192c63e005a233e83cc2d252e4627"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "849015a7794c2cac0fd9b4c878495f63fe263dbeca5f570b4a0aad96dce38209"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "849015a7794c2cac0fd9b4c878495f63fe263dbeca5f570b4a0aad96dce38209"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "849015a7794c2cac0fd9b4c878495f63fe263dbeca5f570b4a0aad96dce38209"
+    sha256 cellar: :any_skip_relocation, sonoma:        "067c6616601510f81feac69f876068ca933761bb216369330973f62e12012cf7"
+    sha256 cellar: :any_skip_relocation, ventura:       "067c6616601510f81feac69f876068ca933761bb216369330973f62e12012cf7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "849015a7794c2cac0fd9b4c878495f63fe263dbeca5f570b4a0aad96dce38209"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "849015a7794c2cac0fd9b4c878495f63fe263dbeca5f570b4a0aad96dce38209"
   end
 
   depends_on "node"

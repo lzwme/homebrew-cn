@@ -1,8 +1,8 @@
 cask "bdash" do
-  version "1.18.0"
-  sha256 "51668729275b4d7d227f79186dedb0c8779477ef82111bc7c226fb8dc22ec5c2"
+  version "1.19.1"
+  sha256 "d2c3e59f768e9204220fd9e58cf63ee67f9a2838b4650f0f2800a3fb447b41bf"
 
-  url "https://ghfast.top/https://github.com/bdash-app/bdash/releases/download/v#{version}/Bdash-#{version}-mac.zip"
+  url "https://ghfast.top/https://github.com/bdash-app/bdash/releases/download/v#{version}/Bdash-#{version}-universal-mac.zip"
   name "Bdash"
   desc "Simple SQL Client for lightweight data analysis"
   homepage "https://github.com/bdash-app/bdash"
@@ -11,8 +11,6 @@ cask "bdash" do
     url :url
     strategy :github_latest
   end
-
-  no_autobump! because: :requires_manual_review
 
   app "Bdash.app"
 
@@ -23,8 +21,4 @@ cask "bdash" do
     "~/Library/Preferences/io.bdash.plist",
     "~/Library/Saved Application State/io.bdash.savedState",
   ]
-
-  caveats do
-    requires_rosetta
-  end
 end

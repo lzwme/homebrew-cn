@@ -42,7 +42,7 @@ class Rage < Formula
     system bin/"rage", "-r", "age1y8m84r6pwd4da5d45zzk03rlgv2xr7fn9px80suw3psrahul44ashl0usm",
       "-o", "#{testpath}/test.txt.age", "#{testpath}/test.txt"
     assert_path_exists testpath/"test.txt.age"
-    assert File.read(testpath/"test.txt.age").start_with?("age-encryption.org")
+    assert_equal "age-encryption.org/v1", File.open(testpath/"test.txt.age", &:gets).chomp
 
     # Test decryption
     (testpath/"test.key").write("AGE-SECRET-KEY-1TRYTV7PQS5XPUYSTAQZCD7DQCWC7Q77YJD7UVFJRMW4J82Q6930QS70MRX\n")

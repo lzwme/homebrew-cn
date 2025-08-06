@@ -1,8 +1,8 @@
 class Cloudquery < Formula
   desc "Data movement tool to sync data from any source to any destination"
   homepage "https://www.cloudquery.io"
-  url "https://ghfast.top/https://github.com/cloudquery/cloudquery/archive/refs/tags/cli-v6.26.2.tar.gz"
-  sha256 "7739ecc124d618c37c8baf96be524a6dae876b732eaa8fefb70dd0c38aa85900"
+  url "https://ghfast.top/https://github.com/cloudquery/cloudquery/archive/refs/tags/cli-v6.26.3.tar.gz"
+  sha256 "1ccc17f9b85de742f5166d5ea68a8b3d155b1fd1237121e69ecf3760b675f2ef"
   license "MPL-2.0"
   head "https://github.com/cloudquery/cloudquery.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Cloudquery < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a52d42765c10a77e1f580e1f80367cd4d4e2f8c1828ab416728023c11f93957e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a52d42765c10a77e1f580e1f80367cd4d4e2f8c1828ab416728023c11f93957e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "a52d42765c10a77e1f580e1f80367cd4d4e2f8c1828ab416728023c11f93957e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7648da67b9951f2800d09f2a6eeee208f429a5ff382176e8a5e77173d6ad93aa"
-    sha256 cellar: :any_skip_relocation, ventura:       "7648da67b9951f2800d09f2a6eeee208f429a5ff382176e8a5e77173d6ad93aa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1acade446c5e8a359c8e58e275e8e429953babee347ed93591f7bb8318404f56"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "44a7d42b5eb003ac1bbf1652a3687892e9b645108fcfbe6317e771f1a4ddde4f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "44a7d42b5eb003ac1bbf1652a3687892e9b645108fcfbe6317e771f1a4ddde4f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "44a7d42b5eb003ac1bbf1652a3687892e9b645108fcfbe6317e771f1a4ddde4f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "bf2e3d30d88ad8b2ea22a94eea83251f9c1029ae85dc1494d11c94969124af58"
+    sha256 cellar: :any_skip_relocation, ventura:       "bf2e3d30d88ad8b2ea22a94eea83251f9c1029ae85dc1494d11c94969124af58"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ebbd1655ed0b2f48a486d5647e3b8c79ff46c0b927b221f56b0f59076bddc593"
   end
 
   depends_on "go" => :build

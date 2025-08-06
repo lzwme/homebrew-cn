@@ -3,20 +3,19 @@ class LinodeCli < Formula
 
   desc "CLI for the Linode API"
   homepage "https://github.com/linode/linode-cli"
-  url "https://files.pythonhosted.org/packages/77/37/d83ddb34bebeb42a2586b281a6bbb3c63e18d82a6521564ff10d5c686c08/linode_cli-5.59.0.tar.gz"
-  sha256 "82749f54390d215947d0396b147c3f1131cc172cfad81bc86487b7f5bc56607d"
+  url "https://files.pythonhosted.org/packages/7a/74/109cec604e33f3c1ab9768ea7789de19323cde3983afe417e147f8277987/linode_cli-5.60.0.tar.gz"
+  sha256 "2753d7146d33c30407a690bd9b4f845ca3e977de008737421d6433d4f5252ab6"
   license "BSD-3-Clause"
-  revision 2
   head "https://github.com/linode/linode-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "5a113e56c26bf6de4d4c9feba8f0a719de0e035535fd0c033ffbb13461d8599c"
-    sha256 cellar: :any,                 arm64_sonoma:  "bd1d43d881d95df92b7715d13b381e138a44e43737d2084fb47e281c3d5788d3"
-    sha256 cellar: :any,                 arm64_ventura: "0f31a2e8d2ae1b9469b9ec2f9fe78b9d5d0df353322b273347096d32cf603730"
-    sha256 cellar: :any,                 sonoma:        "ad16c98829174f69c2aa0625ae6e0a3c07e0005b0df70281480d9867a7ea02bf"
-    sha256 cellar: :any,                 ventura:       "0397373a5ba0ded1881263019ad93134874d309866dbcea2ca892a3b89539f6f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3b9d15900165069418f52707f4f2c5232a327522b42733bc09b34889f0dabfba"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a034fbc222d03edb98946db43100a2503bc3d6a66981861d6cadeb2af61eb59a"
+    sha256 cellar: :any,                 arm64_sequoia: "f5012a2d4f6a0181f24ae0039ffdc35573d0d7d835553b7b374f1ed5608b8cb4"
+    sha256 cellar: :any,                 arm64_sonoma:  "0c44a73dafa6e9660554ee2b37010720505841d4a5a6fb66c3affd84e6736977"
+    sha256 cellar: :any,                 arm64_ventura: "ee0398ebb1cf8a87fe2ac77c96b3025a4deea572a11fc38821010e1034f0eaf3"
+    sha256 cellar: :any,                 sonoma:        "7269f48b50a9e6d27be176d71f7d8899cbc5b83793c2ee8652cbb35e8923c399"
+    sha256 cellar: :any,                 ventura:       "d42c04c0d139501d55215892dd2ac95b19e3d68013923958c338cfc34426bf4a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8a7b16f178721c8c4107eae2c833663d8ecc091fd96dae7054d5799c89620311"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6aa180778dbe045cbc167c3911c669f62a4750817b09ff1651adec32ea425470"
   end
 
   depends_on "certifi"
@@ -24,8 +23,8 @@ class LinodeCli < Formula
   depends_on "python@3.13"
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/95/7d/4c1bd541d4dffa1b52bd83fb8527089e097a106fc90b467a7313b105f840/anyio-4.9.0.tar.gz"
-    sha256 "673c0c244e15788651a4ff38710fea9675823028a6f08a5eda409e0c9840a028"
+    url "https://files.pythonhosted.org/packages/f1/b4/636b3b65173d3ce9a38ef5f0522789614e590dab6a8d505340a4efe4c567/anyio-4.10.0.tar.gz"
+    sha256 "3f3fae35c96039744587aa5b8371e7e8e603c0702999535961dd336026973ba6"
   end
 
   resource "charset-normalizer" do
@@ -79,8 +78,8 @@ class LinodeCli < Formula
   end
 
   resource "pygments" do
-    url "https://files.pythonhosted.org/packages/7c/2d/c3338d48ea6cc0feb8446d8e6937e1408088a72a39937982cc6111d17f84/pygments-2.19.1.tar.gz"
-    sha256 "61c16d2a8576dc0649d9f39e089b5f02bcd27fba10d8fb4dcc28173f7a45151f"
+    url "https://files.pythonhosted.org/packages/b0/77/a5b8c569bf593b0140bde72ea885a803b82086995367bf2037de0159d924/pygments-2.19.2.tar.gz"
+    sha256 "636cb2477cec7f8952536970bc533bc43743542f70392ae026374600add5b887"
   end
 
   resource "pyyaml" do
@@ -94,8 +93,8 @@ class LinodeCli < Formula
   end
 
   resource "rich" do
-    url "https://files.pythonhosted.org/packages/a1/53/830aa4c3066a8ab0ae9a9955976fb770fe9c6102117c8ec4ab3ea62d89e8/rich-14.0.0.tar.gz"
-    sha256 "82f1bc23a6a21ebca4ae0c45af9bdbc492ed20231dcb63f297d6d1021a9d5725"
+    url "https://files.pythonhosted.org/packages/fe/75/af448d8e52bf1d8fa6a9d089ca6c07ff4453d86c65c145d0a300bb073b9b/rich-14.1.0.tar.gz"
+    sha256 "e497a48b844b0320d45007cdebfeaeed8db2a4f4bcf49f15e455cfc4af11eaa8"
   end
 
   resource "sniffio" do

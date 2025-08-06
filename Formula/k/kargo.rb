@@ -1,19 +1,19 @@
 class Kargo < Formula
   desc "Multi-Stage GitOps Continuous Promotion"
   homepage "https://kargo.io/"
-  url "https://ghfast.top/https://github.com/akuity/kargo/archive/refs/tags/v1.6.2.tar.gz"
-  sha256 "501a0b85f5dfdef73da97fa8a689c5adce54ad3ebd42b140a14265711384eb1f"
+  url "https://ghfast.top/https://github.com/akuity/kargo/archive/refs/tags/v1.7.0.tar.gz"
+  sha256 "ed0b0b7497f1a54c001a332766ff850d7118d9663913f95f3f437f3094f583b4"
   license "Apache-2.0"
   head "https://github.com/akuity/kargo.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "eebe883dff50741385c18ffb740c0bcc21c118ce9c90a312091fa3afe915f069"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ce9fa8e99bf669bd55e487961360207f97e8763b6ceb535e5bf69b44b8802370"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "7110a5e44f026e82cbb45a2f8ec1382f8d269ed4ec5fd47316544121ddc0be88"
-    sha256 cellar: :any_skip_relocation, sonoma:        "488c9aab350463e1ce6fde110706d3b97af21e66013ea06f82283277fc7f281c"
-    sha256 cellar: :any_skip_relocation, ventura:       "4ddbbbf4ece28c4ec1c45e92f9a9c648653ce0b387b067d2e9a28fd173a0bbec"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2c3ee86c5abe2eaebbb3b6ed657d90a5d01a0fccfbafd025c4600515a1b42dd7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "74ed13d1339188b21d98769e7404dea8cb9b98d94118733c20c25da7eb21a9ef"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "951693811983871e458ce0cf7695d290f857335d0665784ce7c42b331eb024dc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4d35c73bc473a96d87e016988ad556aeb2084bcb039ff3124ebb99f10a2ba77c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "a4c3617aeb496851b7aa4d233f2be85cee9d238d812a96b89312e1ca824f7fae"
+    sha256 cellar: :any_skip_relocation, sonoma:        "602757514a2a54029dadeebb1b8ac4556fb55b00e9e217c31d34acf22bc1d295"
+    sha256 cellar: :any_skip_relocation, ventura:       "856b03c0900af45c30c254c563f4320709ba6a710f85176c61994fba72fb5785"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7c9d08897331b91de262bcf9d740e800aadedef3b794e336c64b6323d1f7e027"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9097ec087e1c71c7b92f77cc4f94d2724092bf26e349ce7fd6e19f4fe737d099"
   end
 
   depends_on "go"

@@ -13,6 +13,8 @@ class Oxen < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
+  no_autobump! because: :bumped_by_upstream
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "1b4e7b4fda97e6584944b80c07bade93b100fde8ccdca2ad271267d3c9582143"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "80556835a1853e21d345afb8a9e4bf4d2d8d976772fac36871b8f460695b27c8"

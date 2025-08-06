@@ -1,19 +1,19 @@
 class Ed < Formula
   desc "Classic UNIX line editor"
   homepage "https://www.gnu.org/software/ed/ed.html"
-  url "https://ftp.gnu.org/gnu/ed/ed-1.22.tar.lz"
-  mirror "https://ftpmirror.gnu.org/ed/ed-1.22.tar.lz"
-  sha256 "7eb22c30a99dcdb50a8630ef7ff3e4642491ac4f8cd1aa9f3182264df4f4ad08"
+  url "https://ftp.gnu.org/gnu/ed/ed-1.22.1.tar.lz"
+  mirror "https://ftpmirror.gnu.org/ed/ed-1.22.1.tar.lz"
+  sha256 "1af541116796d6b9e4b66ef9c45ddce0e15a19ed62bfca362ccd7d472cc1c8fb"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6d8ed15c1a3d3322494f441c052bcc16bc5227a81c5b84292ca7adf91892b23e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e03e7a494a1d1f60bcaf23a4ab03be0d957f0a2af782ca338fb7fad8fd4d36fb"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "6f451029ad6aa1f782ec7b3bedc6c94a223eadb4fb72b207d16d025b611ccf8c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "43b61360fe74b4097e2f3f803c4beec5d95ede062a6648c86d648d36d57fda0e"
-    sha256 cellar: :any_skip_relocation, ventura:       "22cb9e30a15306fca73571d2fb8ee4e382aac47027cd7777eab9c050c2cfc251"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b8e266179ed3b544911a6d8476d43b766aed6165b645924ca42d3097fbfefddb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b8e5ad587e6f73297bf58e162f6185a07c5726aa3b20246d48257df01d4c3289"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "18746c41560122bb5a23d5849d87b7f6b79d9820a50265cb3dca9895cdf05e8e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "670b8167d95a4e883e7dac04c9ba64ea11eb30dd3cb37450685a72876b7f8125"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "f8b9211eabb1063adf76aa4c5f3ce274efcb96d2d166a222b4eecdef824ae49b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "518fc5b4a453456c0d62ff4e3f8c3991b7d934dbed17c18257bc78aba47fe7a7"
+    sha256 cellar: :any_skip_relocation, ventura:       "41cfca311709526dd20a2b4dae4fb6dc2f11f540f526f3b8aedd04f34a2da6d1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "917b72d06a10f07842977f69f45cb051f2c270997f4e47ad1b68109a20a56d3f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5c61b2f73ece5f319d6fc02625416a4a4845440d8bf74bd6d47956556b21b379"
   end
 
   keg_only :provided_by_macos

@@ -1,8 +1,8 @@
 class Werf < Formula
   desc "Consistent delivery tool for Kubernetes"
   homepage "https://werf.io/"
-  url "https://ghfast.top/https://github.com/werf/werf/archive/refs/tags/v2.39.1.tar.gz"
-  sha256 "fdc6f3f092d0e1ac418c50a64eb56f86eb98ccaa7c57b991b48962944b6507d9"
+  url "https://ghfast.top/https://github.com/werf/werf/archive/refs/tags/v2.43.1.tar.gz"
+  sha256 "2870d4f8f44ea8fae8c2a423e2e7a5a6fc4fc800253ba5f6bb19c19c815fcad3"
   license "Apache-2.0"
   head "https://github.com/werf/werf.git", branch: "main"
 
@@ -15,13 +15,13 @@ class Werf < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e661eb7a2df051da83b7f55a6860563ab79735164999cb93f5b65924f6c7f600"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "99379a832db9de4b8450a58eea982fdc10aafab29a4b66c7a85162c801cf00e0"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "6dc430584cfefe47a87703500f3cc2c1b5b082667bc2366ebf00288dad548dbb"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3c6c66ad074988bc09c3413fe84c0acba48b4eb6bec09bf43e9b6892b9573635"
-    sha256 cellar: :any_skip_relocation, ventura:       "8b188ed29f8df7362b0c5a30cda8c5f71d7d7b6dd6eb1a9ddad16e5b421f89d8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fc4c94191ec98235ad836470d002a5addebf777681dc289080a46fb2c0c7875b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "be319317b49a9b553c82b894e87b87947e3be7360fea79445a16ad9ace5c08b7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4be38bc8076d8787793ded9c2e34f6c5296eef6edee3efd574709bd129713f55"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cd29dbfe7180d57f420a471d1d2ee5bbb367d64fc55665f6383cec59add8948c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "a684ba3900f3f5ddc9e4075318a632e7e91c7ebd72651f93421d439f0587a551"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6351a20bfbc0932a2a20cff71f56a7bd4364bd54fd917a4ca5b1049b6f0c1c27"
+    sha256 cellar: :any_skip_relocation, ventura:       "3eafdf621b2e6e2f26edef8c0b63ad7a3788ce5b287e2fa7e1d66fbfe67edfc2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "904eded6e8e2ca737e8c9b40d92c740884a41839a74452ac914b2343ab040f37"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5bb4176afae98ca6f506d1a9b22b796944051239fc439568f835f4e6ba9b6cbc"
   end
 
   depends_on "go" => :build
@@ -74,8 +74,8 @@ class Werf < Formula
     YAML
 
     output = <<~YAML
-      - image: vote
       - image: result
+      - image: vote
       - image: worker
     YAML
 
@@ -83,7 +83,8 @@ class Werf < Formula
     system "git", "add", werf_config
     system "git", "commit", "-m", "Initial commit"
 
-    assert_equal output, shell_output("#{bin}/werf config graph")
+    assert_equal output,
+                 shell_output("#{bin}/werf config graph").lines.sort.join
 
     assert_match version.to_s, shell_output("#{bin}/werf version")
   end

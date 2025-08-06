@@ -26,6 +26,7 @@ class Libcroco < Formula
 
   # Ref: https://gitlab.gnome.org/Archive/libcroco/-/issues/8
   deprecate! date: "2024-08-04", because: :repo_archived
+  disable! date: "2025-08-04", because: :repo_archived
 
   depends_on "intltool" => :build
   depends_on "pkgconf" => :build

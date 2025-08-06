@@ -1,19 +1,19 @@
 class Fedify < Formula
   desc "CLI toolchain for Fedify"
   homepage "https://fedify.dev/cli"
-  url "https://ghfast.top/https://github.com/fedify-dev/fedify/archive/refs/tags/1.7.7.tar.gz"
-  sha256 "927b797cacdadd67a470a5ed4bef8371ef06dcdf0cb7e56e80f4063a4dcfeb8c"
+  url "https://ghfast.top/https://github.com/fedify-dev/fedify/archive/refs/tags/1.7.8.tar.gz"
+  sha256 "0e7d7281a3b6d0e9c0f204286eade8d06ac8d3d5b7c063a2f78184cba8833165"
   license "MIT"
   head "https://github.com/fedify-dev/fedify.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7df85269ee02f904761e2015e91f8ab8cbe15f00c6261bea593b8ab4700f9441"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6cc2587819ff8af1c651e594e9615486a98b1f7d2a210a6231b87ebfdcf81c18"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "a909759f974c6f135c74b7ff47e5b5e45475c7ef0ef39155c3a67589abfaa946"
-    sha256                               sonoma:        "d0b1b6b32875db7cc5c14389e7d603562841e17cc17953ea87fbb7c1e537b8c6"
-    sha256                               ventura:       "95256b1a09479980840867dc5029a003ed80cb93856f695472150e2777ddecde"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1ae3e7dad056b8ed6c98c384c7824215c03f92ced6ae8ee370f6ecfac84043e9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8473c9e8e4a43b4cc0e2f3c2a0e02a8ae6fdb8cfb3db1a611df95b16a2c5eec1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bceac01dbad22a64f1b8ac8ef611ee08c500bd54a3bc9a35fb6a62242f1a3a73"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "adabb976d0fe2029526ed4a789bad21716e347e489e518e56819560b548742dc"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "e62858858e69610426575b38d9ea7c4f55ba45a4e35d8e05a805bbf1a7d33499"
+    sha256                               sonoma:        "c1b644b7bbfa2cdf0ae5545a49750654424fc58f3d81faaae927527fee1ab925"
+    sha256                               ventura:       "c273110304348a73ee8ef5fa3606ff138e20efcac8a37d8f5ec067889c1c20b9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b2065c1414acb605cd5a494350d324e42fee0ef82fc778ccd8bad50701ed6ca7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "267a44b36a709922167302235cd16b6c1a6f445335db214822fc4e1132d550d3"
   end
 
   depends_on "deno" => :build

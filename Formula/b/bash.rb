@@ -9,7 +9,7 @@ class Bash < Formula
     mirror "https://ftpmirror.gnu.org/bash/bash-5.3.tar.gz"
     mirror "https://mirrors.kernel.org/gnu/bash/bash-5.3.tar.gz"
     mirror "https://mirrors.ocf.berkeley.edu/gnu/bash/bash-5.3.tar.gz"
-    sha256 "62dd49c44c399ed1b3f7f731e87a782334d834f08e098a35f2c87547d5dbb269"
+    sha256 "0d5cd86965f869a26cf64f4b71be7b96f90a3ba8b3d74e27e8e9d9d5550f31ba"
     version "5.3.3"
 
     # Add new patches using this format:
@@ -76,13 +76,14 @@ class Bash < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    sha256 arm64_sequoia: "4320a344c3026bdc04760002504da6bab0186f5dba723a88e3d53d8652e96c34"
-    sha256 arm64_sonoma:  "5715c825e5f9b57b5bb88e73f7c725b9918eca118f430bfa52d30ba5f5491b69"
-    sha256 arm64_ventura: "beaca9b0eb3ab41bb69b85e6e27674d99ab0c46ea017d9bcb435f5fbc6390dc2"
-    sha256 sonoma:        "bbdabe48035a64e989c9da9f01308891af5363c6db77e2c736d7335142de8316"
-    sha256 ventura:       "92c424100bfd0c5305f8d06b5e1485f9670cbca0040ac725c3fee477ec9f9642"
-    sha256 arm64_linux:   "8540aa00c510c4f969c219e6302e7ba5083797724590383eee115117f6b210ee"
-    sha256 x86_64_linux:  "8526a9a3fc80caddd4f2c583e3a9c9934d646d77fa95fa943b48e943c789475e"
+    rebuild 1
+    sha256 arm64_sequoia: "9b4b897e4fe4df3ffdfcd47265ca1c5c563265d9de490b6ef8deb75580ad4ee2"
+    sha256 arm64_sonoma:  "82f6c2822bd49dae8d15be45fc347ebc91100de1fdad421b1360d4caf5526df3"
+    sha256 arm64_ventura: "721bdf14667a59cb7a24d4d476e0228649483513a2d3c9e93908564380915032"
+    sha256 sonoma:        "94ef4a156e8cf4be1ae0a056aa988324d89cea55c2ec8f29ec9646a9df258441"
+    sha256 ventura:       "7d259d44cfcbc36bb9c7c21fa8a08138868b39ce36dd963f853f9d50d9202145"
+    sha256 arm64_linux:   "08e2e633ceb91d97c90205197d521607a3bcc3a491a18ae16d0fd3f1acf80d31"
+    sha256 x86_64_linux:  "5d178cd059067f0e76c91ad7515304576052dd8727d5a7c50fc7b9caa0b5bc32"
   end
 
   # System ncurses lacks functionality

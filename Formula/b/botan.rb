@@ -1,8 +1,8 @@
 class Botan < Formula
   desc "Cryptographic algorithms and formats library in C++"
   homepage "https://botan.randombit.net/"
-  url "https://botan.randombit.net/releases/Botan-3.8.1.tar.xz"
-  sha256 "b039681d4b861a2f5853746d8ba806f553e23869ed72d89edbfa3c3dbfa17e68"
+  url "https://botan.randombit.net/releases/Botan-3.9.0.tar.xz"
+  sha256 "8c3f284b58ddd42e8e43e9fa86a7129d87ea7c3f776a80d3da63ec20722b0883"
   license "BSD-2-Clause"
   head "https://github.com/randombit/botan.git", branch: "master"
 
@@ -12,14 +12,13 @@ class Botan < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_sequoia: "a967bbee75aacedb40abbea69a039efeb6d3747f60f78d7df3c990389f4bb4ee"
-    sha256 arm64_sonoma:  "363aac39d5a069ded0ffad86a0d924fdeba5da34b541c47de8a91a2b8ff37a55"
-    sha256 arm64_ventura: "d8bcc4c1e2fe8db29e38d6fc6420b03b9addba885332dcf37ecbde13dd1dad00"
-    sha256 sonoma:        "fb26ebacd465ecc8efe8978a8b0a7a7b2b1fa9b19f5838c71e1c0b02488610f8"
-    sha256 ventura:       "54669a30e929a073ae91d196a9a0929b9a4b77a05da4e026fb97f58da9ece15b"
-    sha256 arm64_linux:   "13c3d6c959ea7e723868b616eddbbafe0d9d705d015e975e7e53f2dca18bc50b"
-    sha256 x86_64_linux:  "3fb558f2f23a738424a0b1593e1541bf02ff454be11a1ceafadc05f30215a772"
+    sha256 arm64_sequoia: "80a213f3f7a367421f573b1c800d301462c315262f4911e79ac4922020b5160d"
+    sha256 arm64_sonoma:  "d2a165badfa80afc40f78c91d43f1369e3c4f3028aa38f9673b9aba073ce6229"
+    sha256 arm64_ventura: "5dcd97b9a5a1e247895b073f8abed7347399e255b84485984eaf0a56a2fd60d8"
+    sha256 sonoma:        "ba9df5e7e02343af91895fb0c67babf29f66029945fd0947b5d6fed41576b421"
+    sha256 ventura:       "5771510c3bcd4d3516f917ca9769d804298c366f3381176aca32637cbfdf7def"
+    sha256 arm64_linux:   "b040893534e674ecc74de83979dd98e45a3ef5416bb74d03fab8779e5270d3d6"
+    sha256 x86_64_linux:  "c3c83864388e87c59ca19b6f411765b7d264bac735594a06963673456a498d03"
   end
 
   depends_on "pkgconf" => :build
@@ -68,8 +67,9 @@ class Botan < Formula
   end
 
   test do
-    (testpath/"test.txt").write "Homebrew"
-    (testpath/"testout.txt").write shell_output("#{bin}/botan base64_enc test.txt")
-    assert_match "Homebrew", shell_output("#{bin}/botan base64_dec testout.txt")
+    text = "Homebrew"
+    base64_enc = pipe_output("#{bin}/botan base64_enc -", text)
+    refute_empty base64_enc
+    assert_equal text, pipe_output("#{bin}/botan base64_dec -", base64_enc).chomp
   end
 end

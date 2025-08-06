@@ -3,20 +3,19 @@ class Onionprobe < Formula
 
   desc "Test and monitoring tool for Tor Onion Services"
   homepage "https://tpo.pages.torproject.net/onion-services/onionprobe/"
-  url "https://files.pythonhosted.org/packages/17/7c/e016a43640336dd392cd7abcac375341b499f95cf6ebc92ce5eda5e4845f/onionprobe-1.3.0.tar.gz"
-  sha256 "3024e0c737e38f4b9dce265d9e2bd7ef03879c46b2cd40c336a5161eb0affbd7"
+  url "https://files.pythonhosted.org/packages/54/5c/cd134dc632131ad3e88bae3c28cacf15443fc76541f731c184f171a54e83/onionprobe-1.4.0.tar.gz"
+  sha256 "ae3131326d669287918aff9a36e0ba21ea34fd7e6c6ec8ee4a20077274318c5a"
   license "GPL-3.0-or-later"
-  revision 2
   head "https://gitlab.torproject.org/tpo/onion-services/onionprobe.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "dd389ea645f8a7dbfbfeef56aa9db006e4e94854dc2f61b49970144474a3f3db"
-    sha256 cellar: :any,                 arm64_sonoma:  "cf65c365e72ccbcc19eda73c19238af4b532d765b16719960f11d60d8585f48c"
-    sha256 cellar: :any,                 arm64_ventura: "92d31475c3ee88abb8a22b8b68247db5cd9eb9324d902e11c15a863378323985"
-    sha256 cellar: :any,                 sonoma:        "f5690d02b98e4442b59440a91b9ae572e0dc69b2ea71c9e7c14be5c7691105dd"
-    sha256 cellar: :any,                 ventura:       "38bac0342ce6bd5418f7e5e1fae17141bd60177d99bbe8dc1949c170f06f071c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "25065ff2a3322240e1d0dd32f663d789ec762032f832feadc3c78dec9f56e902"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d532200a385c20513777485da47f258185f4edafffcd09b28dc3de0193ef3a42"
+    sha256 cellar: :any,                 arm64_sequoia: "a3b51ab0c45c28282ff0592ff3bd1c9a74ceeda26609cd2f067e9c837e3895f3"
+    sha256 cellar: :any,                 arm64_sonoma:  "dbaff55faea244b4f13c96dc1d39f971ba592d9c448a2394e513a988e902742f"
+    sha256 cellar: :any,                 arm64_ventura: "fc6f4d6ae60f853bdaed891063d53dd6e1b3ae218498d97a586087fe0712d6ec"
+    sha256 cellar: :any,                 sonoma:        "f60ba493290ddeb5a5aa90d233a2d7e81f13b07cb2b5d99d66aadec7c49bc493"
+    sha256 cellar: :any,                 ventura:       "3f76341c4c7d240c7084b1c93b0cdf2edd03151acd84902f3ad6fbb406b7697c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fc8c2397e8cba048232f2962eef64bc0170c6d876116a9aa17cffab41dfce323"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "35fa7574d64bb7d7f1e4982ce041e47ae34e0ec599c3ec8bed32cb22af7f51f5"
   end
 
   depends_on "certifi"

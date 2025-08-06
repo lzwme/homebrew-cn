@@ -1,17 +1,17 @@
 class Colmap < Formula
   desc "Structure-from-Motion and Multi-View Stereo"
   homepage "https://colmap.github.io/"
-  url "https://ghfast.top/https://github.com/colmap/colmap/archive/refs/tags/3.12.3.tar.gz"
-  sha256 "1ad69660bd4e15b9cdd2ef407ac11c8e39bdcdc68625c1d142b0d8e80b6b2aa7"
+  url "https://ghfast.top/https://github.com/colmap/colmap/archive/refs/tags/3.12.4.tar.gz"
+  sha256 "320cb5a411cd0aa713adc05e208ec34067638e776260efd8098271342d408997"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any, arm64_sequoia: "d9d6f8cb33f720fbba71e593b599344f12c3c4a131586be0c1539e651d40c16e"
-    sha256 cellar: :any, arm64_sonoma:  "612ee1e6048a17d389c6ab765961c1ab28a7e598e7a8ce6ec4f44e1e51b146a1"
-    sha256 cellar: :any, arm64_ventura: "a51bd2b6e44de62547fd7d5b7d5fd7cbbfedca51dcca8c6c42fb50e12fea3581"
-    sha256 cellar: :any, sonoma:        "910ef8963bb937e50396a95aef4762183a61ba9af68d65b6f4d449a59f8491bc"
-    sha256 cellar: :any, ventura:       "80ad3f78825fc410a8b354fa59c267cb470498553fbc742d891e2f240c8d573e"
-    sha256               x86_64_linux:  "96fcb603aeb36314e0e49461ea7a6ad21c375b38e71ae77fac46813783011481"
+    sha256 cellar: :any, arm64_sequoia: "036ed2673281eb266377e6bb9068ae083f9f30c94b5b96ecc0998e96d5a8c8b9"
+    sha256 cellar: :any, arm64_sonoma:  "e51c148a26d39e4b82f69b0c2fee3f7c50ba3f653b5671ebe41fbdca320ec6ed"
+    sha256 cellar: :any, arm64_ventura: "4c8a9e6a9d1e6ed1c156db5973325a7b654072deae04c6c18563bd57b4aa5a74"
+    sha256 cellar: :any, sonoma:        "9e2494b9a053aae9d9cab9d995ed5e57a4e6e88a48523611747546ae83c3a31e"
+    sha256 cellar: :any, ventura:       "a8cc53d6596c2e60d8dc8139044fd23d731f548c1ca90cfead95e4b8dbc99786"
+    sha256               x86_64_linux:  "c3b1d945d3dffcdb39399a1d9445c9dcbda7fb60cb15fad8dd8c8ba316a9c2c0"
   end
 
   depends_on "cmake" => :build

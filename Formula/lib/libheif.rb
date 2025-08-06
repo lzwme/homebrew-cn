@@ -1,18 +1,18 @@
 class Libheif < Formula
   desc "ISO/IEC 23008-12:2017 HEIF file format decoder and encoder"
   homepage "https://www.libde265.org/"
-  url "https://ghfast.top/https://github.com/strukturag/libheif/releases/download/v1.20.1/libheif-1.20.1.tar.gz"
-  sha256 "55cc76b77c533151fc78ba58ef5ad18562e84da403ed749c3ae017abaf1e2090"
+  url "https://ghfast.top/https://github.com/strukturag/libheif/releases/download/v1.20.2/libheif-1.20.2.tar.gz"
+  sha256 "68ac9084243004e0ef3633f184eeae85d615fe7e4444373a0a21cebccae9d12a"
   license "LGPL-3.0-only"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "73da052e0d858e1b883c24994b18024e486d8082117506ee0a8cdfb19cdcf78c"
-    sha256 cellar: :any,                 arm64_sonoma:  "870e6f8c87141c0f6b7a32ad03e3aab5056174cad74ba38219b834a1ccc6e889"
-    sha256 cellar: :any,                 arm64_ventura: "fdccbaf73b7f31f1e80aad0eb1620b9bb4c593bd1ab15d38a292362025a4e308"
-    sha256 cellar: :any,                 sonoma:        "6b9d20cb53c61344bc2a5b40b354a28f244c0af1135915e8c579569146bd80c1"
-    sha256 cellar: :any,                 ventura:       "61ff240e16fe7bca5825aa9d203b5f0a7e4104767a9703ea5ef6f7d7a33040d0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5a77b4b824f14474be1f20b5ebf190d963bcfb502880920ff572152d25149111"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "00f47cf9e3b480b78dd2aa565c787920951c437ed6972056a681cbd3779bf6f3"
+    sha256 cellar: :any,                 arm64_sequoia: "f3269404f33c86607273d0d84744067500483cba20ace6c1274b3ef8c09cfab4"
+    sha256 cellar: :any,                 arm64_sonoma:  "e80e07cb6785637373ef0037b825ecf35b2e2e3cd78a8e73fea329d15eee5a3c"
+    sha256 cellar: :any,                 arm64_ventura: "0d37be85f1da630c1dd0069c003b1bdff3e0796592ac88e7f9927b22ee08a0ff"
+    sha256 cellar: :any,                 sonoma:        "ab9e7d6176e786ab51695fd2b9194261e15fcd040c0a1827fd2dd0bf1e491810"
+    sha256 cellar: :any,                 ventura:       "d130bffc9ecb61cb142ee99fe36936f1786f356e5496fc9a9b1f40363937dd52"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4d9de659e7bebc56b68b7bde30f6f7c754aab8a381d396a24421bf1cf6d3e031"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "55d51d8cfeb3c116e8fafc2d43f81de1cb9bf18d627fe0c379b4a94907876e11"
   end
 
   depends_on "cmake" => :build

@@ -2938,7 +2938,7 @@ Homebrew-homebrew-core/Formula/i/ical-buddy.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/icann-rdap.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/icarus-verilog.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/icbirc.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/i/iccmax.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/i/iccdev.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/icdiff.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/ice.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/icecast.rb, Homebrew/homebrew-core, 0
@@ -4021,7 +4021,7 @@ Homebrew-homebrew-core/Formula/lib/libproxy.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libpsl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libpst.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libpthread-stubs.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/lib/libpulsar.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/lib/libpulsar.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libqalculate.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libquantum.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libquicktime.rb, Homebrew/homebrew-core, 1
@@ -5654,6 +5654,7 @@ Homebrew-homebrew-core/Formula/p/pypy3.9.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pyqt-builder.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pyqt.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pyqt@5.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/p/pyrefly.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pyright.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pyside.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pyside@2.rb, Homebrew/homebrew-core, 0
@@ -8307,6 +8308,7 @@ Homebrew-homebrew-cask/Casks/b/boost-note.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/b/boosteroid.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/bootstrap-studio.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/bose-updater.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/b/boss.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/b/bossa-app.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/b/bot-framework-emulator.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/b/bowtie.rb, Homebrew/homebrew-cask, 0
@@ -8529,7 +8531,6 @@ Homebrew-homebrew-cask/Casks/c/clipbook.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/clipgrab.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/clips-ide.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/clipy.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/c/clix.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/cljstyle.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/clock-bar.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/clock-signal.rb, Homebrew/homebrew-cask, 1
@@ -12532,7 +12533,6 @@ Homebrew-homebrew-cask/Casks/l/launchrocket.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/l/laverna.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/l/lazarus.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/lazpaint.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/l/lazy.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/lazycat.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/lbry.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/l/leader-key.rb, Homebrew/homebrew-cask, 1

@@ -1,18 +1,18 @@
 class Snapcast < Formula
   desc "Synchronous multiroom audio player"
   homepage "https://github.com/badaix/snapcast"
-  url "https://ghfast.top/https://github.com/badaix/snapcast/archive/refs/tags/v0.32.1.tar.gz"
-  sha256 "66a353f29ff232714ab317ca28462137423d6ef9ea5aba08f6d9ca5cc2a7fea7"
+  url "https://ghfast.top/https://github.com/badaix/snapcast/archive/refs/tags/v0.32.2.tar.gz"
+  sha256 "881173321f5fc929319d31b5063d91a25187e61e984cdb85e57266ea5e2b3f7f"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "b8b1b274e6c53bb74eed41110aa05f02a0760caf9cadea882db3a74508d92d74"
-    sha256 cellar: :any,                 arm64_sonoma:  "728af4d5f86dd9cd465529530930855c52f3ee41b260afc52044262a5196a464"
-    sha256 cellar: :any,                 arm64_ventura: "f8e64aec9d98e66bb8e44e7424bb8efff4bdd259abdb9850ec6c606ec19fc18b"
-    sha256 cellar: :any,                 sonoma:        "2949ee2baa98207fd9617614599b1514c6b69c105f55b6845e7b4eefa834bcec"
-    sha256 cellar: :any,                 ventura:       "5686f1320051bf5c0720123e2787eb56036df35255308f10e04dff12dfbb4245"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1510f0fdebcb1d51e2196d91dedc8ed168e00e19a06c83cc5a07dcadf27a7d28"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "80d886d778608ad4b0ecb1fda310ed171aa8a9c60ba3a2db45fd140346b838cf"
+    sha256 cellar: :any,                 arm64_sequoia: "e142926f29f749357847e4b9a825eecc5efafb539fe36920afe717c8feb9225d"
+    sha256 cellar: :any,                 arm64_sonoma:  "fd336c2bc21b15767f151d984135d3c447ccf3ebe4ba9afb58cfb518c09c0baa"
+    sha256 cellar: :any,                 arm64_ventura: "01932c1c8c3eb3846f7d662f8de593961f2ce5069fb72e9867dea18ed5fa7812"
+    sha256 cellar: :any,                 sonoma:        "a5841ef92042b82d8c6a44d7a9b8b7d9449ccc0c9a2cdc0390b5ef5df0491264"
+    sha256 cellar: :any,                 ventura:       "2e706e6d2a72e0facb33836ae796d73fbcda8daf0143439cae7ac642d8815c4d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ac6b6d41cd4c9f87f4d820cab697f74a995d2b9846bd46363b3777269c54bc18"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f33eb06e5914f1e5498e8f7e20b09fc405407ac09423a3d3662b0f7b26c52358"
   end
 
   depends_on "boost" => :build
