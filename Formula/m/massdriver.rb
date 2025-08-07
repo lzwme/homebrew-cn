@@ -1,8 +1,8 @@
 class Massdriver < Formula
   desc "Manage applications and infrastructure on Massdriver Cloud"
   homepage "https://www.massdriver.cloud/"
-  url "https://ghfast.top/https://github.com/massdriver-cloud/mass/archive/refs/tags/1.11.6.tar.gz"
-  sha256 "3c3de384095e2a518b59a88b5cbacf4d824a6a8832df79985223df6b54ebf664"
+  url "https://ghfast.top/https://github.com/massdriver-cloud/mass/archive/refs/tags/1.11.7.tar.gz"
+  sha256 "f5fc6db5aa3abdc6e476356e7272bceca4afe5a546900a315208557fe1f3a8f0"
   license "Apache-2.0"
   head "https://github.com/massdriver-cloud/mass.git", branch: "main"
 
@@ -15,12 +15,12 @@ class Massdriver < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "014a383e6bf8ecd8fda0fe3027dedc3acf3a7e5d4fec4ba993ae2335b57fda25"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "014a383e6bf8ecd8fda0fe3027dedc3acf3a7e5d4fec4ba993ae2335b57fda25"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "014a383e6bf8ecd8fda0fe3027dedc3acf3a7e5d4fec4ba993ae2335b57fda25"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4e1f5ce70c15c04f0f087a37aad8386429d3ed4e63767329e154c9df1a73d9cd"
-    sha256 cellar: :any_skip_relocation, ventura:       "4e1f5ce70c15c04f0f087a37aad8386429d3ed4e63767329e154c9df1a73d9cd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a48b997e8b923505d9f9b2a0d86323479e384f13e7ff574a72c82791882c6246"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a31729a473008825266401fc3e68eae5b5e9df92635aa2920769ecec89476ef1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a31729a473008825266401fc3e68eae5b5e9df92635aa2920769ecec89476ef1"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "a31729a473008825266401fc3e68eae5b5e9df92635aa2920769ecec89476ef1"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5be966785ccd8e03f9a4a96c9a38917227f388a174b3c7349c9e25b5790e21a6"
+    sha256 cellar: :any_skip_relocation, ventura:       "5be966785ccd8e03f9a4a96c9a38917227f388a174b3c7349c9e25b5790e21a6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "011562e2aeaa6d751575fdf047ba7a58284d526e28a40d2db4ff1a843947c856"
   end
 
   depends_on "go" => :build

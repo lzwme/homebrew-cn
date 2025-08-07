@@ -1,8 +1,8 @@
 class Bottom < Formula
   desc "Yet another cross-platform graphical process/system monitor"
   homepage "https://clementtsang.github.io/bottom/"
-  url "https://ghfast.top/https://github.com/ClementTsang/bottom/archive/refs/tags/0.10.2.tar.gz"
-  sha256 "1db45fe9bc1fabb62d67bf8a1ea50c96e78ff4d2a5e25bf8ae8880e3ad5af80a"
+  url "https://ghfast.top/https://github.com/ClementTsang/bottom/archive/refs/tags/0.11.0.tar.gz"
+  sha256 "66b23ac0dc3ead78becf052abb0e3282922c7977f2e85eeb54dc9f7be40d5599"
   license "MIT"
   head "https://github.com/ClementTsang/bottom.git", branch: "main"
 
@@ -15,14 +15,13 @@ class Bottom < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "293b085af54d7e69f159e9b6a1a317ea380d52cc2996bbf74203971cb2fa6347"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2c90acf12752aa008cb245f0f5e6982ba391b4129b0f1372d2f651b367768f90"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "fc76f47d4eaef7e6eac3cda67cbb06805b049ed83b0c7d7f3121a0ef3f9486dc"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a50cf59e7195ba6cc6c24778047b1681e1932625222c4a3d19f386e315366737"
-    sha256 cellar: :any_skip_relocation, ventura:       "eb73f6318589bc6be3e01d7eefd8a1cb4e19726be7f2f14cd8e574d2d86333d8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c9dabacfbd8ccf889af78707abb7c5dd70dbfcde0a1b2501e9a67f0a9e1f14a2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5f438b63dce811a4d60b306a712385942acec74e726101dc8ab78b910ced3a2e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3422edf81395eba20a5cc406f74adc6ed8c3311779877fefbdb247469154a1c2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cb7b26851c8a72909c85be6409af0a621daca1e253c51e3a8388b7f6531695a8"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "b375f6a3db7801902245eb493dc72eb7e13b397d34c5ed6bf7efd60473fda685"
+    sha256 cellar: :any_skip_relocation, sonoma:        "70748e2e6e9ddfa528da63da2d6005ee6621659d64e8356d99bba27f34b48c8d"
+    sha256 cellar: :any_skip_relocation, ventura:       "bfb212bd9b8b003446efa6d68b6095e5a7ffc0437cb00d62962c898792fe9a46"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5dcefd23d2645d7ed7ef9cbeeacbae338f0f168798602a0aaf436e2a964c23d8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "df6f699ea4f0d8ac21cfcea3c28caad5ed02c7c46cf8c841a25b7be0995642d0"
   end
 
   depends_on "rust" => :build

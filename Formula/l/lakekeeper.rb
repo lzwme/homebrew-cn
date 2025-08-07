@@ -1,19 +1,19 @@
 class Lakekeeper < Formula
   desc "Apache Iceberg REST Catalog"
   homepage "https://github.com/lakekeeper/lakekeeper"
-  url "https://ghfast.top/https://github.com/lakekeeper/lakekeeper/archive/refs/tags/v0.9.3.tar.gz"
-  sha256 "59269d83302a93cf24ca9221120358b1a9a5b59b0a7207021047a680eff4961a"
+  url "https://ghfast.top/https://github.com/lakekeeper/lakekeeper/archive/refs/tags/v0.9.4.tar.gz"
+  sha256 "8da921065492f0960236a0b02cd17ca41382df8ec1219b4864ac5eeabe90797e"
   license "Apache-2.0"
   head "https://github.com/lakekeeper/lakekeeper.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "4498804ec55917fe1551230062b4392debcc195390d385ab0bbbb26976b1dae2"
-    sha256 cellar: :any,                 arm64_sonoma:  "b840de3bbdfa71228f03ef21ccac7dc270510c9055826e287d71598e7ff6a60b"
-    sha256 cellar: :any,                 arm64_ventura: "33f0f557c3ea98db98498a0b9274d902196476d1a95194a98e934d5c85a48b14"
-    sha256 cellar: :any,                 sonoma:        "33b0f03376f2bb0c0bc2ea4471944d1963cfb15e4f83845bb951089225929efb"
-    sha256 cellar: :any,                 ventura:       "99ab9e5107d859a10904aee6a88b711588f6bcc8cff9b35478a56f7664f05105"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0cc86e0ad4b6565ce113ff2588f8ae78ffeacb67973d0cf93e144c0e718eaa80"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fe9a02b7be7d70df01a772cb3cccc7aac21160c6a9ad631723fc17760bceb363"
+    sha256 cellar: :any,                 arm64_sequoia: "7a0ba7eabc821f28a97088efe9740b4bd105fa380adeb25db8237709f9459207"
+    sha256 cellar: :any,                 arm64_sonoma:  "c76423151d6d9b7e969fde0fe0d14c6959681e4f5274e651e05e76c620ef22a0"
+    sha256 cellar: :any,                 arm64_ventura: "1af6cfe08ac1a4f5d7ee432e224a59da6c50e25bca430e8803851085e4462d3c"
+    sha256 cellar: :any,                 sonoma:        "f0c31d5fbb8ec1c40e1725c3e65d12e1f449af0dc785194510aa581bf8867632"
+    sha256 cellar: :any,                 ventura:       "bcb83b894d5618f455589ca765e0df67fee70705b8ba5b1387eadbb0026b94a6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "73c45566d35baaa9f3f1ec688b2142d403ac368a5c5706c8c3663b75ca1329ae"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f2a46ed648807647c1da79775969d5a09eabefe92f3ce1d3b90ccb5c19c1f725"
   end
 
   depends_on "cmake" => :build

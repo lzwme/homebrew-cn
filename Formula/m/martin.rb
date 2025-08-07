@@ -1,18 +1,18 @@
 class Martin < Formula
   desc "Blazing fast tile server, tile generation, and mbtiles tooling"
   homepage "https://martin.maplibre.org"
-  url "https://ghfast.top/https://github.com/maplibre/martin/archive/refs/tags/v0.18.0.tar.gz"
-  sha256 "a89abb35875e3de4ba4134926331c81589cf3b037956af89670012f98788b1ce"
+  url "https://ghfast.top/https://github.com/maplibre/martin/archive/refs/tags/v0.18.1.tar.gz"
+  sha256 "44ce3c98b44cec0dc6526843d2f7868de54f89aed128316fc9e7044734b1a111"
   license any_of: ["Apache-2.0", "MIT"]
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a95e554e135320cfe1016ddab8ea251656cfcd0d4a902e5a89cffb0d1f208710"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cb23383520361a8eb80481e46b0b8da751ddd19ba86539f0bf1422800121b49c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "0d046ee252744278435b44ea6a34885a8f90fa94b50750c04ba31f5018ac6a2e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7c25596e1fc21803a76962e8b9c26b5915438878ae2068b1c02e6062bb13d551"
-    sha256 cellar: :any_skip_relocation, ventura:       "40cbda15c63b6368f7de2fbc3479b8d515fc56711474c6d2fb708c1dc8c5fbcb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "bbb78a3345e6c05ca1e78322f79ed8229da854d3658609ca66df0ab63f7dfb23"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b706f1df58d520067118c26ab98fdddac8d1ec698059c81b0eeeb58abc85dece"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c337fc6b6ae0dc8f88075f778fae3b7fc47ca00a4ba0b71022b74bde6805f1e8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c4052fe66ce49a3613cc4e485f150188cbad17fe6a9520c6f418d6870fa96e50"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "b6a2794a50433365ae9e8757a4122484ed4f4ad01f1234f2330af15106dde2ec"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f77e1317bb235d2d3441ef5cc9201b6744d307f39426c13baa4400bf26d9da52"
+    sha256 cellar: :any_skip_relocation, ventura:       "7a6e46c917bc77d83c574cfe8b3085d2a5b1144bb1b5c43dd046a0b4631b7ad6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8c58e8892419888da8762986ace99d5ea2fbc0dd6d1137bae10e8a63ca0a31b0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d344dc20a5de3117b6e654a1915ea3593e94e2be417946abdd72564812fb219c"
   end
 
   depends_on "node" => :build

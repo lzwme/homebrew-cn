@@ -669,6 +669,7 @@ Homebrew-homebrew-core/Formula/b/bsdconv.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bsdiff.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/bsdmake.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bsdsfv.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/b/bstring.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/btcli.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/btfs.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/btop.rb, Homebrew/homebrew-core, 1
@@ -4277,6 +4278,7 @@ Homebrew-homebrew-core/Formula/m/mandoc.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mandown.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mani.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/manifest-tool.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/m/manifold.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/manim.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/manticoresearch.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mantra.rb, Homebrew/homebrew-core, 1
@@ -5275,7 +5277,7 @@ Homebrew-homebrew-core/Formula/p/pelikan.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/perbase.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/perceptualdiff.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/percol.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/p/percona-server.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/p/percona-server.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/percona-server@8.0.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/percona-toolkit.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/percona-xtrabackup.rb, Homebrew/homebrew-core, 0
@@ -5734,7 +5736,7 @@ Homebrew-homebrew-core/Formula/q/qt-percona-server.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/q/qt-postgresql.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/q/qt-unixodbc.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/q/qt.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/q/qt@5.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/q/qt@5.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/q/qtads.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/q/qthreads.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/q/qtkeychain.rb, Homebrew/homebrew-core, 1
@@ -5912,6 +5914,7 @@ Homebrew-homebrew-core/Formula/r/rex.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/rfcstrip.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rgbds.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rgf.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/r/rggen.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/rgxg.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rhai.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rhash.rb, Homebrew/homebrew-core, 0
@@ -8208,6 +8211,7 @@ Homebrew-homebrew-cask/Casks/b/betterdiscord-installer.rb, Homebrew/homebrew-cas
 Homebrew-homebrew-cask/Casks/b/betterdisplay.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/b/bettermouse.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/bettertouchtool.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/b/bettertouchtool@alpha.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/betterzip.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/betwixt.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/b/beutl.rb, Homebrew/homebrew-cask, 1
@@ -10111,6 +10115,7 @@ Homebrew-homebrew-cask/Casks/font/font-g/font-gochi-hand.rb, Homebrew/homebrew-c
 Homebrew-homebrew-cask/Casks/font/font-g/font-gohufont-nerd-font.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-g/font-goldman.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-g/font-golos-text.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/font/font-g/font-golos-ui.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-g/font-google-sans-code.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-g/font-goorm-sans-code.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-g/font-goorm-sans.rb, Homebrew/homebrew-cask, 0
@@ -11300,7 +11305,10 @@ Homebrew-homebrew-cask/Casks/font/font-p/font-protest-revolution.rb, Homebrew/ho
 Homebrew-homebrew-cask/Casks/font/font-p/font-protest-riot.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-p/font-protest-strike.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-p/font-proza-libre.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-p/font-pt-astra-sans.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/font/font-p/font-pt-astra-serif.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-p/font-pt-mono.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/font/font-p/font-pt-root-ui.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-p/font-pt-sans-caption.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-p/font-pt-sans-narrow.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-p/font-pt-sans.rb, Homebrew/homebrew-cask, 0
@@ -13565,6 +13573,7 @@ Homebrew-homebrew-cask/Casks/p/pixel-picker.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/pixel-shift-combiner.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/pixelorama.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/pixelsnap.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/p/pixieditor.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/pixpin.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/pktriot.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/plain-clip.rb, Homebrew/homebrew-cask, 0

@@ -1,19 +1,19 @@
 class Jj < Formula
   desc "Git-compatible distributed version control system"
   homepage "https://github.com/jj-vcs/jj"
-  url "https://ghfast.top/https://github.com/jj-vcs/jj/archive/refs/tags/v0.31.0.tar.gz"
-  sha256 "ff40515de7a5adac267c64c0163b38990a74a71bb7612a898832c812a81070b2"
+  url "https://ghfast.top/https://github.com/jj-vcs/jj/archive/refs/tags/v0.32.0.tar.gz"
+  sha256 "12b8e65b7950b189d1df7e20cc55e20ff9cc2bd8d520847323b80daa1cddb27b"
   license "Apache-2.0"
   head "https://github.com/jj-vcs/jj.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "25fe173fe5db2c870b6627c29de2aae7a82fd887e7cb73a69b8e74e068a6c45f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "08fc790f702509a003d69984cc1fb31fd2d169f0bd5c2ace396294cfeeb88885"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "d587c9493101e81955bc96c0301bec22ffea972baecee4d361462cf3c49cb3b2"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c5cadbe35d68dbce19b6efd793a9b36b426ed8cbf66cbbe253ee68034c52ed25"
-    sha256 cellar: :any_skip_relocation, ventura:       "041c55765324cc2a66a544cc19a2f5c268d9f9a614f3671f9d9d1e3d26801be6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2cbdab636cce04dd0c49e95cb439bb74137c7f666514ae1012313695b9693851"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "50191ce7210d1967ff649d1a7477a399acc45d4c8e05a3be0e30cefc253ebc24"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "499242ea9c88e299d1fcd4e47a30e142cec49f03a8b22eb05e482bbb95fe66b1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5e151245bfebaa3018ec7cbd6332726007984412690afe26e71a18e8afbd944e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "055df210752d0fb37b3dfac6602f41fcf5d0cbde55368077c338b85598585d6d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "471e2dd0f97794565495af40929618bcbb57967d1eb75963a5f5b19fac170976"
+    sha256 cellar: :any_skip_relocation, ventura:       "005ee9c7e91b7168f27bd5924932805f579107c1bd7edd5541ff1d56391192d0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "dedbab1683b4c4351d05d943b7b7e9f24c3006f467039282a7555da65061eb92"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fe730371688479bab330af0d03fc04bbc122fd0314bf413cc58b4d15f2b43181"
   end
 
   depends_on "rust" => :build

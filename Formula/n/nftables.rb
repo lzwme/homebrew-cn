@@ -3,8 +3,8 @@ class Nftables < Formula
 
   desc "Netfilter tables userspace tools"
   homepage "https://netfilter.org/projects/nftables/"
-  url "https://www.netfilter.org/pub/nftables/nftables-1.1.3.tar.xz"
-  sha256 "9c8a64b59c90b0825e540a9b8fcb9d2d942c636f81ba50199f068fde44f34ed8"
+  url "https://www.netfilter.org/pub/nftables/nftables-1.1.4.tar.xz"
+  sha256 "3444f0012af0472399eeae89a758b9c6dc5f311f6c67a48988fa1600fc4bac86"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -13,8 +13,8 @@ class Nftables < Formula
   end
 
   bottle do
-    sha256 arm64_linux:  "19a175d38550ac4c326c1e4188e8df5fb005e9e6081e277f81039195297fdcaf"
-    sha256 x86_64_linux: "bb22f5e217d3160d41da139b1088f37b28efc2d83df39ea1bb2635701cf5f745"
+    sha256 arm64_linux:  "67dc6801552b20e72af849ac57950c153049c9bfe00ca78ac034b2dab0a4c76b"
+    sha256 x86_64_linux: "2fe7e708fab1b8a14f75d6b5aa72629e0d9265000aa30bcaebdafb781719accc"
   end
 
   depends_on "pkgconf" => :build

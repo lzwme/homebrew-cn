@@ -3,19 +3,19 @@ class Awscli < Formula
 
   desc "Official Amazon AWS command-line interface"
   homepage "https://aws.amazon.com/cli/"
-  url "https://ghfast.top/https://github.com/aws/aws-cli/archive/refs/tags/2.28.2.tar.gz"
-  sha256 "5706ac88ddfbdc046011a8eae007760def7a48653174c440f12e850edcbcce12"
+  url "https://ghfast.top/https://github.com/aws/aws-cli/archive/refs/tags/2.28.4.tar.gz"
+  sha256 "f544a7c42249d8d7c907056c68a33773a686da0a7d0f789d5aafe4acc9f374eb"
   license "Apache-2.0"
   head "https://github.com/aws/aws-cli.git", branch: "v2"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "8a3738a668e96ebc3b3577349747812d43640c12087b77c57a5a33d4ba17c55e"
-    sha256 cellar: :any,                 arm64_sonoma:  "2a1df8a8c35fd9a94a2df13dddd32ec064b979b80c08d40123179b9754f741be"
-    sha256 cellar: :any,                 arm64_ventura: "ad1ee0afb214dab5cf8908982813081a0245959761dd7c137c6f567c6d29a61a"
-    sha256 cellar: :any,                 sonoma:        "eebc8e83524d20d90cab9b9811deb6ff687676318e76c974ce7c7531fb730c41"
-    sha256 cellar: :any,                 ventura:       "933e703ac17e91c0b1a8f9175266388eb8397968c30865f52cf3f7e0c9f127ed"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0ac52947c946e0d8dcc3dead465fe6e450c4137a0324a9708cfa1d5d19fb2e85"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "785cdb29bece6236646e8578f61b0b82f3c16da0d2651146d3274a135066e82a"
+    sha256 cellar: :any,                 arm64_sequoia: "42a470405ca913da57b34df0e0a2102fa934312ece2ec57a7d84c8d3a11bbb40"
+    sha256 cellar: :any,                 arm64_sonoma:  "991555f539520ee5b8a61c7c3aee86dc3d0cac5de539665b20c30b903312cd20"
+    sha256 cellar: :any,                 arm64_ventura: "fcb9df561853e8843d89de3f96d5f4c81dd38876940abd228e04ef572745f031"
+    sha256 cellar: :any,                 sonoma:        "87431deca46b781e103bccbfa0d41b912b5f8e2fe1e04a754a3440d65bd7a4fa"
+    sha256 cellar: :any,                 ventura:       "82186354035e520aafdd8dfc0d251f97b87c2baf452c560fe9b098f6310db2e7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "81f3e0ce9c8057aa7a6db0ddd751ea8b9de84bcfc439f00aa2f00b0516900d46"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "678d9f9300d076ca0567f7ab1b57a9dd82f1a70df6774391fb12b0757061e6dd"
   end
 
   depends_on "cmake" => :build
@@ -26,8 +26,8 @@ class Awscli < Formula
   uses_from_macos "mandoc"
 
   resource "awscrt" do
-    url "https://files.pythonhosted.org/packages/42/db/72989a426cdf2b9f38454b1cdba246b2d2e95a77397ad3df18d1d9d4f5b3/awscrt-0.26.1.tar.gz"
-    sha256 "a8d63a7dcc6484c5c1675b31a8d1b6726c3dc85b13796fb143dfb0072260935e"
+    url "https://files.pythonhosted.org/packages/32/fb/5b9e681f118dd9dc308bf5af35a17ee699f62568760124545515fa7a15ee/awscrt-0.27.5.tar.gz"
+    sha256 "d93604bb395dd7db37696bcbb470ed2bd13f720484c6c4c9f46cf3a68205f719"
   end
 
   resource "colorama" do

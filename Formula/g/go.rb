@@ -1,9 +1,9 @@
 class Go < Formula
   desc "Open source programming language to build simple/reliable/efficient software"
   homepage "https://go.dev/"
-  url "https://go.dev/dl/go1.24.5.src.tar.gz"
-  mirror "https://fossies.org/linux/misc/go1.24.5.src.tar.gz"
-  sha256 "74fdb09f2352e2b25b7943e56836c9b47363d28dec1c8b56c4a9570f30b8f59f"
+  url "https://go.dev/dl/go1.24.6.src.tar.gz"
+  mirror "https://fossies.org/linux/misc/go1.24.6.src.tar.gz"
+  sha256 "e1cb5582aab588668bc04c07de18688070f6b8c9b2aaf361f821e19bd47cfdbd"
   license "BSD-3-Clause"
   head "https://go.googlesource.com/go.git", branch: "master"
 
@@ -21,13 +21,13 @@ class Go < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4fae2143edc4e580c1721b7f187e97340991a61e817a5ba56547c9e4ef81c1e3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4fae2143edc4e580c1721b7f187e97340991a61e817a5ba56547c9e4ef81c1e3"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "4fae2143edc4e580c1721b7f187e97340991a61e817a5ba56547c9e4ef81c1e3"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6111921503a0c9caf265e835008326617bcefa1b6417f2a2f54fa70e853855c8"
-    sha256 cellar: :any_skip_relocation, ventura:       "6111921503a0c9caf265e835008326617bcefa1b6417f2a2f54fa70e853855c8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cb4dd632fd54c407230253bc8f34ebcc9d877bb589509a15eba6aee849ca0619"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2e75858a5db5209f32a30972f79bc51c4e1e792b074d1dcdfdea57c1f278880f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9ab41aa642fe3b4c1757130e89aade72f60a575e552e3125171a17be8b2d4956"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9ab41aa642fe3b4c1757130e89aade72f60a575e552e3125171a17be8b2d4956"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "9ab41aa642fe3b4c1757130e89aade72f60a575e552e3125171a17be8b2d4956"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0ec25dd517427cf90839358810d78bc5e26b9a6780cca0bb560636fdc34a3353"
+    sha256 cellar: :any_skip_relocation, ventura:       "0ec25dd517427cf90839358810d78bc5e26b9a6780cca0bb560636fdc34a3353"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "674e0ad277daecbdbca7863c0ec9b2b498602c4799a58349f32c4befe1ef1560"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "edc895b792320b0282ba893d42db1642b79a3cfb0249254d491b78182f3c9ff4"
   end
 
   # Don't update this unless this version cannot bootstrap the new version.

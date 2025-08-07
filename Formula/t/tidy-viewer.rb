@@ -1,8 +1,8 @@
 class TidyViewer < Formula
   desc "CLI csv pretty printer"
   homepage "https://github.com/alexhallam/tv"
-  url "https://ghfast.top/https://github.com/alexhallam/tv/archive/refs/tags/1.5.2.tar.gz"
-  sha256 "3f950c1d05cc7fd5806a49a3f10a9437290e2b24ddf8402ec04d54c63d1a60d5"
+  url "https://ghfast.top/https://github.com/alexhallam/tv/archive/refs/tags/1.6.0.tar.gz"
+  sha256 "512c0019879e4be16a991a4ff34f5791cafb0748fd9bb0b25410a97ec5e32950"
   license "Unlicense"
 
   # Some tagged versions using a stable version format are marked as
@@ -12,20 +12,14 @@ class TidyViewer < Formula
     strategy :github_latest
   end
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "73a068ea1c90da7c42f7eb61e16429607c620c7519987417ba192aece9254d37"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a88cb1c9ee8fbcc0fbe1245b414bc396e331e1ee2722eca091b60ac204988a48"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a19cf14db14c07f2ade52a99614d994acaac312c05c3143c60a6a5345f3a2896"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "42a42abecc4680536319b6bbbfba8ace4fd18d725e6a1c3bd1edc669a8877b64"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "8a17bbc8e7d2b76d5e4495ad8ee47176fb075a1353821a3be5a712c8213aff57"
-    sha256 cellar: :any_skip_relocation, sonoma:         "6641bc5ab6124cea8e7591a4c1b9cd750fa99628f49324d374612bd0d1814399"
-    sha256 cellar: :any_skip_relocation, ventura:        "d3ba5ca8471a577a7c54ce300de86d77887e3ee366022588a58f5f89ef9d98c5"
-    sha256 cellar: :any_skip_relocation, monterey:       "9e7ce7d415590691f06bad36b0d5270fb1bbad9ddfc046fc1f4f8c0473b0a593"
-    sha256 cellar: :any_skip_relocation, big_sur:        "99d8e002b427e3a2a160faeda4e526115538431244faf52dd4bf041118347630"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "3e44fa91c0257cd46a249043bdf0594b447c8905d76e2d0646a538352f770e58"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b3058a55881b1a5874f31e848f613cee6f97f3891ff4091539323b4c189115fa"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f2d82e5cc45baedd7afe35c69676c3f8b1ea9bae6f977bf87bce374ce5597e6f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d7c46d388575a20bc9667c5b1381949a25b09a0aac53e655cac94b6df795ade7"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "f608046ca42e03bb2b0d3e29ca3f1862b9e0e2284a9f987895992e515dc8978f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "95e8f12209edd4db6ed5526be537292f7b72a4827d5a86d8a7f4e90fb0da6d4a"
+    sha256 cellar: :any_skip_relocation, ventura:       "a1ab9b675e65c10e78e387438733daf401f52d4c64a1ce0d6ff9c8cdcd812d07"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b0e44c38b4b5e2f497195906baa10925984d0765ccf0123976760e38825b788f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "db2def44e6deb865b75a889bfcd14a20fad94644c6c45e13142d0981ee4da0db"
   end
 
   depends_on "rust" => :build

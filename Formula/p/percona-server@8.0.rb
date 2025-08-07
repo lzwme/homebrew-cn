@@ -1,10 +1,9 @@
 class PerconaServerAT80 < Formula
   desc "Drop-in MySQL replacement"
   homepage "https://www.percona.com"
-  url "https://downloads.percona.com/downloads/Percona-Server-8.0/Percona-Server-8.0.40-31/source/tarball/percona-server-8.0.40-31.tar.gz"
-  sha256 "1318670d8e176c24df74019f748f5f233e2787f865dd3d41d61790ab5a772c4e"
+  url "https://downloads.percona.com/downloads/Percona-Server-8.0/Percona-Server-8.0.42-33/source/tarball/percona-server-8.0.42-33.tar.gz"
+  sha256 "503766073d515635ff9118afbe4ebd18f76d8cb8d64e094ac6d7a22f15ca4067"
   license "BSD-3-Clause"
-  revision 3
 
   livecheck do
     url "https://www.percona.com/products-api.php", post_form: {
@@ -23,13 +22,13 @@ class PerconaServerAT80 < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 arm64_sequoia: "32768a4fd0fe75e7a288731d9a3a1789548cbc6091f95a55cd068ea589340e27"
-    sha256 arm64_sonoma:  "d209d4ad284ebc053169ab6f615ef487eaeedb76b17b8a71d77e8821dfe3bf75"
-    sha256 arm64_ventura: "0c920c59d823d73888e88abc3102626ab4574422f71a391428d2e18b198d5008"
-    sha256 sonoma:        "450c309327f0a71240e8b6c54bd561749a930d662343e002ddde4eadc982154d"
-    sha256 ventura:       "d289a66cdfd3de7ed9f87d98dda41ebeba1dc18ac8223604b92e122ccd37d8e0"
-    sha256 arm64_linux:   "558a1988053cb70145a837ca6b62fe99396a02f4191a2801c7c5ddde6da00bb4"
-    sha256 x86_64_linux:  "5614bdeb9028553c82137264547db91e208c016ad98c2796eb703c8f66959848"
+    sha256 arm64_sequoia: "08389207034f5e53fffe6655a8f0a65abfa42331fd3b39116d67d1879c87fe01"
+    sha256 arm64_sonoma:  "98e1641cfb8d1fe01675fe612b8f6b8885f7c845528384f8a39984e7cad3618f"
+    sha256 arm64_ventura: "849171beb7162680b329288f42c575b3a9d8567f18921b8adcd43ffafa734833"
+    sha256 sonoma:        "bcb3238951ba132a3c2b16381e85e0b2dc0150a166cc81786efacb343ea7604c"
+    sha256 ventura:       "00121f6d9ff9da1c68ae890c28545ae00f5cbe1de6ee169a5b3570c80e697ce8"
+    sha256 arm64_linux:   "0f929f59b66dd4bc105db6cb45f185c01a75e7f6032531d3453e2a776b121aa2"
+    sha256 x86_64_linux:  "66778da49d0073eeb9769c74661338db7c83507ba8583edb6c2e73d207be36f0"
   end
 
   keg_only :versioned_formula
@@ -90,12 +89,54 @@ class PerconaServerAT80 < Formula
     sha256 "d4afcdfb0dd8dcb7c0f7e380a88605b515874628107295ab5b892e8f1e019604"
   end
 
-  # Backport fix for CMake 4.0
-  patch do
-    url "https://github.com/Percona-Lab/coredumper/commit/715fa9da1d7958e39d69e9b959c7a23fec8650ab.patch?full_index=1"
-    sha256 "632a6aff4091d9cbe010ed600eeb548ae7762ac7e822113f9c93e3fef9aafb4f"
-    directory "extra/coredumper"
+  # FreeBSD patches for fixing build failure with newer clang
+  patch :p0 do
+    url "https://ghfast.top/https://raw.githubusercontent.com/freebsd/freebsd-ports/1a02a961a2d53f21bf208f07903a97cc46f43e17/databases/mysql80-server/files/patch-sql_binlog__ostream.cc"
+    sha256 "16f86edd2daf5f6c87616781c9f51f76d4a695d55b354e44d639a823b1c3f681"
   end
+
+  patch :p0 do
+    url "https://ghfast.top/https://raw.githubusercontent.com/freebsd/freebsd-ports/1a02a961a2d53f21bf208f07903a97cc46f43e17/databases/mysql80-server/files/patch-sql_mdl__context__backup.cc"
+    sha256 "501646e1cb6ac2ddc5eb42755d340443e4655741d6e76788f48751a2fb8f3775"
+  end
+
+  patch :p0 do
+    url "https://ghfast.top/https://raw.githubusercontent.com/freebsd/freebsd-ports/1a02a961a2d53f21bf208f07903a97cc46f43e17/databases/mysql80-server/files/patch-sql_mdl__context__backup.h"
+    sha256 "e515b565d1501648ce3de0add12b67c63aecb3ec4db3794de72c4eeb301ff343"
+  end
+
+  patch :p0 do
+    url "https://ghfast.top/https://raw.githubusercontent.com/freebsd/freebsd-ports/1a02a961a2d53f21bf208f07903a97cc46f43e17/databases/mysql80-server/files/patch-sql_range__optimizer_index__range__scan__plan.cc"
+    sha256 "44b5e76373fadd97560d66dae0dac14d98ae9a5c32d58d876bfe694016872bc7"
+  end
+
+  patch :p0 do
+    url "https://ghfast.top/https://raw.githubusercontent.com/freebsd/freebsd-ports/1a02a961a2d53f21bf208f07903a97cc46f43e17/databases/mysql80-server/files/patch-sql_rpl__log__encryption.cc"
+    sha256 "bdadcf4317295d1847283e20dd7fbfa2df2c4acebf45d5a13d0670bc7311f7ba"
+  end
+
+  patch :p0 do
+    url "https://ghfast.top/https://raw.githubusercontent.com/freebsd/freebsd-ports/1a02a961a2d53f21bf208f07903a97cc46f43e17/databases/mysql80-server/files/patch-sql_stream__cipher.cc"
+    sha256 "ac74c60f6051223993c88e7a11ddd9512c951ac1401d719a2c3377efe1bee3cf"
+  end
+
+  patch :p0 do
+    url "https://ghfast.top/https://raw.githubusercontent.com/freebsd/freebsd-ports/1a02a961a2d53f21bf208f07903a97cc46f43e17/databases/mysql80-server/files/patch-sql_stream__cipher.h"
+    sha256 "9a11d4658f60a63f3f10ff97a5170e865afde3ebee3e703d8272aba3cf6e32d0"
+  end
+
+  patch :p0 do
+    url "https://ghfast.top/https://raw.githubusercontent.com/freebsd/freebsd-ports/1a02a961a2d53f21bf208f07903a97cc46f43e17/databases/mysql80-server/files/patch-unittest_gunit_binlogevents_transaction__compression-t.cc"
+    sha256 "3bd0c22a2ee30a7b1e682e645dbdf473d4f0d6f8e5ffc447f088c5f1bf21efd7"
+  end
+
+  patch :p0 do
+    url "https://ghfast.top/https://raw.githubusercontent.com/freebsd/freebsd-ports/1a02a961a2d53f21bf208f07903a97cc46f43e17/databases/mysql80-server/files/patch-unittest_gunit_stream__cipher-t.cc"
+    sha256 "9e7629a2174e754487737ef0d73c79fc1ed47ba54a982a3a4803e19c72c5dc0f"
+  end
+
+  # More fixes for new clang not covered by the FreeBSD patches.
+  patch :DATA
 
   def datadir
     var/"mysql"
@@ -105,7 +146,9 @@ class PerconaServerAT80 < Formula
     # Remove bundled libraries other than explicitly allowed below.
     # `boost` and `rapidjson` must use bundled copy due to patches.
     # `lz4` is still needed due to xxhash.c used by mysqlgcs
-    keep = %w[coredumper duktape libkmip lz4 opensslpp rapidjson robin-hood-hashing unordered_dense]
+    # FIXME: Try to get rid of these other bundled libraries.
+    keep = %w[coredumper duktape libkmip lz4 opensslpp rapidjson robin-hood-hashing unordered_dense
+              xxhash libbacktrace]
     (buildpath/"extra").each_child { |dir| rm_r(dir) unless keep.include?(dir.basename.to_s) }
     (buildpath/"boost").install resource("boost")
 
@@ -168,7 +211,10 @@ class PerconaServerAT80 < Formula
       # For Linux, disable failing on warning: "Setting thread 31563 nice to 0 failed"
       # Docker containers lack CAP_SYS_NICE capability by default.
       test_args << "--nowarnings" if OS.linux?
-      system "./mysql-test-run.pl", "status", *test_args
+      system "./mysql-test-run.pl", "check", *test_args
+    ensure
+      status_log_file = buildpath/"mysql-test-vardir/log/main.status/status.log"
+      logs.install status_log_file if status_log_file.exist?
     end
 
     # Remove the tests directory
@@ -266,3 +312,18 @@ class PerconaServerAT80 < Formula
     end
   end
 end
+
+__END__
+diff --git i/sql/mf_iocache.cc w/sql/mf_iocache.cc
+index 4a7695ff..f640f5a5 100644
+--- i/sql/mf_iocache.cc
++++ w/sql/mf_iocache.cc
+@@ -110,7 +110,7 @@ bool open_cached_file_encrypted(IO_CACHE *cache, const char *dir,
+ 
+   /* Generate password, it is a random string. */
+   if (my_rand_buffer(password, sizeof(password)) != 0) DBUG_RETURN(true);
+-  password_str.append(password, sizeof(password));
++  password_str.insert(password_str.end(), password, password + sizeof(password));
+ 
+   auto encryptor = std::make_unique<Aes_ctr_encryptor>();
+   if (encryptor->open(password_str, 0)) DBUG_RETURN(true);

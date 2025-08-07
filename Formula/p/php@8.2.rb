@@ -13,13 +13,14 @@ class PhpAT82 < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "157dfd752bb28cd56bd124d5dc7ce4bbf363fd2b1a83c4de88d81cd6f3c2f04a"
-    sha256 arm64_sonoma:  "40237406991bf7003fa3b21c965d30b474d45e091db0a42eb2abe5c5e4951878"
-    sha256 arm64_ventura: "8afe5d9ac53f9798cb00a577e2cfe12610b382b4bcc76e278506eb064d14caee"
-    sha256 sonoma:        "71aa90f88f74b5a65f70fd80cd70707f348cbe907feb9dcfae21bf8026c042c7"
-    sha256 ventura:       "740c9112b677c45c93f740fd37e2f16e0b6408e5760b4827d3001d8fddd00377"
-    sha256 arm64_linux:   "bf5182524ccc9383c1f8a0e765a9db3856bc316778167437b1197da11cbe4933"
-    sha256 x86_64_linux:  "62391884104e9c5808953aac80efcf100cbce79388db571a402d346dedc8830c"
+    rebuild 1
+    sha256 arm64_sequoia: "7576aec65c4ac7ab192e487e3942ce2e769db1b52da0d9a620f22f0cbe70af6d"
+    sha256 arm64_sonoma:  "e12c26df9115adb17c624e6284cc95a83cdd0306d3e9facf5ef54aa8162ee91b"
+    sha256 arm64_ventura: "302ac8f571039ceac4bbd0c6785067d27a2974dd785c9ea0c62cad52af9b00c5"
+    sha256 sonoma:        "bd8d3246d0af397358434dfbe6c7befec15a21626c20b1b468ad15d9d3695996"
+    sha256 ventura:       "0322eb8c8d9e10ef6e118a9bc0cd71b83b5264edfe95fb754422e6ae6dbca30a"
+    sha256 arm64_linux:   "210b1f02cddfce250b0f4566a36b2b7221a2f82dbd666ca3135330797bee777e"
+    sha256 x86_64_linux:  "eab0f89ecce0f230609c0ea10c0164a227170e375735aaec8607cdc2fab9b68c"
   end
 
   keg_only :versioned_formula
@@ -81,7 +82,7 @@ class PhpAT82 < Formula
 
       # apxs will interpolate the @ in the versioned prefix: https://bz.apache.org/bugzilla/show_bug.cgi?id=61944
       s.gsub! "LIBEXECDIR='$APXS_LIBEXECDIR'",
-              "LIBEXECDIR='" + "#{lib}/httpd/modules".gsub("@", "\\@") + "'"
+              "LIBEXECDIR='" + "#{lib}/httpd/modules".gsub("\\", "\\\\").gsub("@", "\\@") + "'"
     end
 
     # Update error message in apache sapi to better explain the requirements

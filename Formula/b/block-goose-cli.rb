@@ -1,8 +1,8 @@
 class BlockGooseCli < Formula
   desc "Open source, extensible AI agent that goes beyond code suggestions"
   homepage "https://block.github.io/goose/"
-  url "https://ghfast.top/https://github.com/block/goose/archive/refs/tags/v1.1.4.tar.gz"
-  sha256 "dc3cdebca1cc48909eed95124476d22d14f2ea081445cd11c86c2af23949948b"
+  url "https://ghfast.top/https://github.com/block/goose/archive/refs/tags/v1.2.0.tar.gz"
+  sha256 "54d42639db3e3b1b75d586210513aaa3e8b06059d3bf73d33c9afba88a5b76e8"
   license "Apache-2.0"
   head "https://github.com/block/goose.git", branch: "main"
 
@@ -12,13 +12,13 @@ class BlockGooseCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "be2b628aa8cbff64f57e47b35091dbb9712b5a5016da1d830641f05309533886"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "82f2ee8c725a15cfc74f2fb8e2dbb10109445421ff9a9ad9de73baf2a3a5c41a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "2397fe52a9c6cb95b49bc602753891753aba9ce67a23cb505fa52085c080b002"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c95372393ec0fb4c200777c385e85c92377294e5cc1ede3508fa1138bba2591b"
-    sha256 cellar: :any_skip_relocation, ventura:       "6f38478a7feb47f50649ac286af99a3ceb16d5f75cdb7de9f22fc3e4026a5b7a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "764a24e5e8659c0fd9923a6e495183a982443d780e06a7aeb740a2daf63d3b48"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dd36fbae2f02d609012d1477859d909aea9cdf8cba70693692f9a5061cf1d500"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0232dcb8425c1b49bbe5c757fbdf27ea00aaed012941315a1aa31ac683108c67"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "61535685d19f6fc50e026b7e4b949489c37368ee645b784a3797bca0fa006652"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "1f3b92aaa8cd48b89c7b66f809ac78bb16187095c7a0b52f421b0bf90952b088"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5dca2022b016b943aeade74e5013e01315fb8b9810d5b75631e0fe17e43fda3f"
+    sha256 cellar: :any_skip_relocation, ventura:       "469e91567e762e943a33318bb0509195127d34b3b93da01c5e47a198e16463ae"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5ad1fadf6b92d9ba7597f17540bf3048580bb831f3bf65ba13f29d68138c9e49"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "35206e29e596f8d6de87bb93576014a70a8a9021d26a4dd37321ffead991313f"
   end
 
   depends_on "pkgconf" => :build
