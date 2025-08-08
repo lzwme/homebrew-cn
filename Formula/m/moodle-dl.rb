@@ -6,17 +6,16 @@ class MoodleDl < Formula
   url "https://files.pythonhosted.org/packages/0b/44/9c283a04b0ede0bcaa2f3595b523cb115c662fe349f215631484035126d1/moodle_dl-2.3.13.tar.gz"
   sha256 "7a6d813b3241497fb79a34a428aa266b2d2d3c175e05d46752e0a8040adaddce"
   license "GPL-3.0-or-later"
-  revision 1
+  revision 2
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "96a33501c8ec3018bff121de1a72eda529db07a14f5cca76aa397e9f654a8c4c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d2fe23fdefa04d387630b68a09c0f7cc8f38ceafff6d31ed3ba63e764d5019bb"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "077b3ab51216e4c96bd3fe6dae6212a3fa37a9ba0f51efee46da390eb55ffd53"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d24a3816f81019adc49b42e831761437afe561561ef4aad13fefdd174cfe0299"
-    sha256 cellar: :any_skip_relocation, ventura:       "6fd295282ad3715bc5d89b18edd9ef90739e0a410efc9a7c981d6c1e1f38eaef"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "82acb8ced94cde6c2eb467fff3a374d3bfbb07a938fa4e3ab086c088b5c0ab02"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c0985d14ae5460dbb2eae0cbe7787b08554feecc5139c27ff3cf5fac8b801bd9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2a490b8292bf5bbe9fbeac8436f95594fa5fa7d1046d9522f5874212c6fab3b8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7b48ac88a6ff15997e9a71389904e7308cfda82c5c79976d9fb071e3f13bb3af"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "f806082c2a96bf6510d2ba1e00c7b75803764e3b7edbca781041bb165444615d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "88648edf58eda06f16789a17114eec3c66f35d8ac935af57f764643f15ef0656"
+    sha256 cellar: :any_skip_relocation, ventura:       "2180f9a8c256b1f7df7ab24269e67c83826bd31c38d122c65724a242ace98d65"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2084adc5702ca3f9938c7ae03291bddc0a861e5307c33c0d2e0d1fa088892ea9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c1970eb6c912e6e7decd164c49afa0239b256daedf998571a4e1fdf0a43f6637"
   end
 
   depends_on "certifi"
@@ -39,8 +38,8 @@ class MoodleDl < Formula
   end
 
   resource "aiohttp" do
-    url "https://files.pythonhosted.org/packages/42/6e/ab88e7cb2a4058bed2f7870276454f85a7c56cd6da79349eb314fc7bbcaa/aiohttp-3.12.13.tar.gz"
-    sha256 "47e2da578528264a12e4e3dd8dd72a7289e5f812758fe086473fab037a10fcce"
+    url "https://files.pythonhosted.org/packages/9b/e7/d92a237d8802ca88483906c388f7c201bbe96cd80a165ffd0ac2f6a8d59f/aiohttp-3.12.15.tar.gz"
+    sha256 "4fc61385e9c98d72fcdf47e6dd81833f47b2f77c114c29cd64a361be57a763a2"
   end
 
   resource "aiosignal" do
@@ -99,8 +98,8 @@ class MoodleDl < Formula
   end
 
   resource "pycares" do
-    url "https://files.pythonhosted.org/packages/f5/37/4d4f8ac929e98aad64781f37d9429e82ba65372fc89da0473cdbecdbbb03/pycares-4.9.0.tar.gz"
-    sha256 "8ee484ddb23dbec4d88d14ed5b6d592c1960d2e93c385d5e52b6fad564d82395"
+    url "https://files.pythonhosted.org/packages/e0/2f/5b46bb8e65070eb1f7f549d2f2e71db6b9899ef24ac9f82128014aeb1e25/pycares-4.10.0.tar.gz"
+    sha256 "9df70dce6e05afa5d477f48959170e569485e20dad1a089c4cf3b2d7ffbd8bf9"
   end
 
   resource "pycparser" do
@@ -119,8 +118,8 @@ class MoodleDl < Formula
   end
 
   resource "sentry-sdk" do
-    url "https://files.pythonhosted.org/packages/10/59/eb90c45cb836cf8bec973bba10230ddad1c55e2b2e9ffa9d7d7368948358/sentry_sdk-2.32.0.tar.gz"
-    sha256 "9016c75d9316b0f6921ac14c8cd4fb938f26002430ac5be9945ab280f78bec6b"
+    url "https://files.pythonhosted.org/packages/3a/38/10d6bfe23df1bfc65ac2262ed10b45823f47f810b0057d3feeea1ca5c7ed/sentry_sdk-2.34.1.tar.gz"
+    sha256 "69274eb8c5c38562a544c3e9f68b5be0a43be4b697f5fd385bf98e4fbe672687"
   end
 
   resource "six" do
@@ -144,8 +143,8 @@ class MoodleDl < Formula
   end
 
   resource "yt-dlp" do
-    url "https://files.pythonhosted.org/packages/23/9c/ff64c2fed7909f43a9a0aedb7395c65404e71c2439198764685a6e3b3059/yt_dlp-2025.6.30.tar.gz"
-    sha256 "6d0ae855c0a55bfcc28dffba804ec8525b9b955d34a41191a1561a4cec03d8bd"
+    url "https://files.pythonhosted.org/packages/7e/3a/343f7a0024ddd4c30f150e8d8f57fd7b924846f97d99fc0dcd75ea8d2773/yt_dlp-2025.7.21.tar.gz"
+    sha256 "46fbb53eab1afbe184c45b4c17e9a6eba614be680e4c09de58b782629d0d7f43"
   end
 
   def install

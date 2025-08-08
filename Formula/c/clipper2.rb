@@ -5,6 +5,11 @@ class Clipper2 < Formula
   sha256 "e5cbe4acdfbd381496feacd5692110f60914ce2998e7350b124fb11429574f75"
   license "BSL-1.0"
 
+  livecheck do
+    url :stable
+    regex(/^Clipper2[._-]v?(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "5344952baad694ee32003946b5ed28a8212f58564a79df0ee97a245a2e35fb31"
     sha256 cellar: :any,                 arm64_sonoma:  "dab66cd4bfc560cc95579a0586f44cd3a8a6c477abad07e5dce0d9812a97f9db"

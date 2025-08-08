@@ -1,18 +1,18 @@
 class NetlifyCli < Formula
   desc "Netlify command-line tool"
   homepage "https://www.netlify.com/docs/cli"
-  url "https://registry.npmjs.org/netlify-cli/-/netlify-cli-23.1.1.tgz"
-  sha256 "f314150dc16671d84024bfad069781509ce8f549b2e221055f8e321996d3ad5d"
+  url "https://registry.npmjs.org/netlify-cli/-/netlify-cli-23.1.2.tgz"
+  sha256 "bcff1038209dcc20bb2b24ff7e2024413fa99d6a98dea7f5b48d39e50bf335f6"
   license "MIT"
 
   bottle do
-    sha256                               arm64_sequoia: "05beab957cf8da409c7ed39c90f7893e41217f42ed087e078379ce8088451beb"
-    sha256                               arm64_sonoma:  "bddb98e9f69298f2915e66016f8f6b3a77e8057fa3466dffff8f7afdf386fa7e"
-    sha256                               arm64_ventura: "1ceb8110b887c048e718864654d95f41a03f0b304880e4e8f5f867fa7599d11b"
-    sha256                               sonoma:        "344903c61da47909289f915522b5560ebaa7801400ef3c4b4523d2e9631ca70a"
-    sha256                               ventura:       "ba61d4a3c558fff4d2a6c3e267835cfb086642ce7364d242287bc5868dc71ace"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f54ee10379380f3353ba060d42f6078e0716d087adfdbc95ef8a2f9aa9ff6eac"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "abaefa98de1f6c2b047e1cf2a8bf0a403c803f4ef53ead3cdebeda2f72859b48"
+    sha256                               arm64_sequoia: "febf9aa5c23d1f19b26151111c3cb83ca02ae8833502b511667455b0a7a0ae04"
+    sha256                               arm64_sonoma:  "02e3d600d11c813bca64b672e34da2c4a78b5d090204cefa3ad0d4b06589051b"
+    sha256                               arm64_ventura: "457dff95671bdb30bc3352436c8fd8f58aa1b320b97080173f6bef2c5f34ad33"
+    sha256                               sonoma:        "60dd939615589ac4b0e24d3ab5f7a456e46bec7a840bb64632dbf42c8024e959"
+    sha256                               ventura:       "15a0bcb9d487391cdddbbf538c2cfea307ea50b5913a886a137ee05b10d4b73d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f42f502f96137504ac23acf745f0282be7f3901af761ebab2af5fee8c7fc0c41"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dbbd504d5b56846b1b42cbf7727ee59f18093adf0a8798ede1f24b9aa7a06699"
   end
 
   depends_on "pkgconf" => :build

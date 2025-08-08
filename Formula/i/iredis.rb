@@ -3,15 +3,13 @@ class Iredis < Formula
 
   desc "Terminal Client for Redis with AutoCompletion and Syntax Highlighting"
   homepage "https://iredis.xbin.io/"
-  url "https://files.pythonhosted.org/packages/da/87/8b70adbbc97b71bf96d859fcc81344033a718b4df636c738091b42eb23ae/iredis-1.15.1.tar.gz"
-  sha256 "b702e64ea665aa8472bcda0a388c1c555584014db00ad2cea318090d9a5ff818"
+  url "https://files.pythonhosted.org/packages/87/67/4170d9b58b16b0667c789ab534c6a14671e8e9342095cc8e7e57d9d8730e/iredis-1.15.2.tar.gz"
+  sha256 "c8f3279e09398abd1525ccf020e9f75a7152e3dae0e04769306f810a6f96fc60"
   license "BSD-3-Clause"
-  revision 1
   head "https://github.com/laixintao/iredis.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "787e1911a7620858ce774d1b236e28cb08f4e1d17ded0aa41d3678a3e6a40baa"
+    sha256 cellar: :any_skip_relocation, all: "ce330f10bbd6a7e2ede06b4e344bd0f0e8f68097fc4521b8ad43ac8b539877b1"
   end
 
   depends_on "python@3.13"
@@ -42,13 +40,13 @@ class Iredis < Formula
   end
 
   resource "pygments" do
-    url "https://files.pythonhosted.org/packages/7c/2d/c3338d48ea6cc0feb8446d8e6937e1408088a72a39937982cc6111d17f84/pygments-2.19.1.tar.gz"
-    sha256 "61c16d2a8576dc0649d9f39e089b5f02bcd27fba10d8fb4dcc28173f7a45151f"
+    url "https://files.pythonhosted.org/packages/b0/77/a5b8c569bf593b0140bde72ea885a803b82086995367bf2037de0159d924/pygments-2.19.2.tar.gz"
+    sha256 "636cb2477cec7f8952536970bc533bc43743542f70392ae026374600add5b887"
   end
 
   resource "pyjwt" do
-    url "https://files.pythonhosted.org/packages/fb/68/ce067f09fca4abeca8771fe667d89cc347d1e99da3e093112ac329c6020e/pyjwt-2.9.0.tar.gz"
-    sha256 "7e1e5b56cc735432a7369cbfa0efe50fa113ebecdc04ae6922deba8b84582d0c"
+    url "https://files.pythonhosted.org/packages/e7/46/bd74733ff231675599650d3e47f361794b22ef3e3770998dda30d3b63726/pyjwt-2.10.1.tar.gz"
+    sha256 "3cc5772eb20009233caf06e9d8a0577824723b44e6648ee0a2aedb6cf9381953"
   end
 
   resource "python-dateutil" do
@@ -57,8 +55,8 @@ class Iredis < Formula
   end
 
   resource "redis" do
-    url "https://files.pythonhosted.org/packages/71/dd/2b37032f4119dff2a2f9bbcaade03221b100ba26051bb96e275de3e5db7a/redis-5.3.0.tar.gz"
-    sha256 "8d69d2dde11a12dc85d0dbf5c45577a5af048e2456f7077d87ad35c1c81c310e"
+    url "https://files.pythonhosted.org/packages/6a/cf/128b1b6d7086200c9f387bd4be9b2572a30b90745ef078bd8b235042dc9f/redis-5.3.1.tar.gz"
+    sha256 "ca49577a531ea64039b5a36db3d6cd1a0c7a60c34124d46924a45b956e8cf14c"
   end
 
   resource "six" do

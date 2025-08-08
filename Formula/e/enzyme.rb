@@ -7,17 +7,18 @@ class Enzyme < Formula
   head "https://github.com/EnzymeAD/Enzyme.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "6781cee5bc882182adfc5aa008f92d0af5eff92fc1d0b35ce4068904c4b0d64b"
-    sha256 cellar: :any,                 arm64_sonoma:  "cab3b7690e4b235c3bd32ae7aab301ba8ebd30fb9e1e2cf819bb82efb5717ee0"
-    sha256 cellar: :any,                 arm64_ventura: "61e94cc83f2fbc0269d5532bfe4b2875d4b3b73f78afb773fe9aa607731c5e45"
-    sha256 cellar: :any,                 sonoma:        "8487e8ae4562510e1e28efb49b2d3b913e8e500e37e8b51c5627b8185ea5009b"
-    sha256 cellar: :any,                 ventura:       "7743e47cfcdb7b937c85a0919d4bfcd85add7ddff80f2435451aa90f586fa000"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "21aaaa652c887d0ed9a9099d0168ef8f57da62cbf0066cae9db3dbea424c78cb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3a803c1e027ce9f0bc64a4ffb9b5183bd6540fbb00764e8a794984913c268bb7"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "9ee7a2f6783f3a68e79211209717005ce0c4912933b580702dfbb3582196ea20"
+    sha256 cellar: :any,                 arm64_sonoma:  "421196f2ebbb1d9b0cc47d3854b958514549daeeb9e4caac54caace4b441583a"
+    sha256 cellar: :any,                 arm64_ventura: "369a2b537ead5d880935f9c5e25c50e83a78548f4b7623c166636c1e6bb5fa71"
+    sha256 cellar: :any,                 sonoma:        "877c8022164246e853bf5dce8721064da8bee95dcbb8f31b58ce926125a3131d"
+    sha256 cellar: :any,                 ventura:       "fc4a46192e4c18ad4d57dea860c51f278c51e9624033e3420e00b2f3b59ceb2a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "30b3aa6a4ac527da68f34c45276575f2f9e78e2ad1e703265b1099de6e08fc63"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1c8a0cadb8c315211a1fe9740758c67dce824ea5610a46beeff0fb64ed3c6d0d"
   end
 
   depends_on "cmake" => :build
-  depends_on "llvm@19"
+  depends_on "llvm"
 
   def llvm
     deps.map(&:to_formula).find { |f| f.name.match?(/^llvm(@\d+)?$/) }

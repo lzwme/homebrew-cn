@@ -3,19 +3,19 @@ class Sby < Formula
 
   desc "Front-end for Yosys-based formal verification flows"
   homepage "https://symbiyosys.readthedocs.io/en/latest/"
-  url "https://ghfast.top/https://github.com/YosysHQ/sby/archive/refs/tags/v0.55.tar.gz"
-  sha256 "c1836692a4a0485fe91dea66119dc12c139ac78d5dcc4135433ce92cb3d1cabf"
+  url "https://ghfast.top/https://github.com/YosysHQ/sby/archive/refs/tags/v0.56.tar.gz"
+  sha256 "988205ae899e0f13a14b0b3c504d815b764ea41b2f1547b31334f74f1a7b596b"
   license "ISC"
   head "https://github.com/YosysHQ/sby.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1b06211611640354025dc6bd7daab0955461ad94b41376103cd8eb353f574f86"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1b06211611640354025dc6bd7daab0955461ad94b41376103cd8eb353f574f86"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "1b06211611640354025dc6bd7daab0955461ad94b41376103cd8eb353f574f86"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1b06211611640354025dc6bd7daab0955461ad94b41376103cd8eb353f574f86"
-    sha256 cellar: :any_skip_relocation, ventura:       "1b06211611640354025dc6bd7daab0955461ad94b41376103cd8eb353f574f86"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "51e827ee20da920179dff6dc74b41fcc65adfce3e869470f1cf50bcdc42f259b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "51e827ee20da920179dff6dc74b41fcc65adfce3e869470f1cf50bcdc42f259b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "78bfffdccf6ecdf7810d134880eb5abcaac9ab38af6dbe315df846caa88b6f90"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "78bfffdccf6ecdf7810d134880eb5abcaac9ab38af6dbe315df846caa88b6f90"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "78bfffdccf6ecdf7810d134880eb5abcaac9ab38af6dbe315df846caa88b6f90"
+    sha256 cellar: :any_skip_relocation, sonoma:        "78bfffdccf6ecdf7810d134880eb5abcaac9ab38af6dbe315df846caa88b6f90"
+    sha256 cellar: :any_skip_relocation, ventura:       "78bfffdccf6ecdf7810d134880eb5abcaac9ab38af6dbe315df846caa88b6f90"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9860ebf9d3c2bb36945a3207c53890ca66407d498ba08069c5c4f07ed7ec33ac"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9860ebf9d3c2bb36945a3207c53890ca66407d498ba08069c5c4f07ed7ec33ac"
   end
 
   depends_on "yices2" => :test

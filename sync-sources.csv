@@ -2181,6 +2181,7 @@ Homebrew-homebrew-core/Formula/g/gaul.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gauth.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gawk.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gaze.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/g/gbox.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gcab.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gcalcli.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gcc.rb, Homebrew/homebrew-core, 1
@@ -3535,6 +3536,7 @@ Homebrew-homebrew-core/Formula/l/lilypond.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lima-additional-guestagents.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lima.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/limesuite.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/l/limine.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/link-grammar.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/linkerd.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/linklint.rb, Homebrew/homebrew-core, 0
@@ -5602,6 +5604,7 @@ Homebrew-homebrew-core/Formula/p/puf.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pug.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pugixml.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pulledpork.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/p/pulp-cli.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pulp.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pulsarctl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pulseaudio.rb, Homebrew/homebrew-core, 0
@@ -7255,7 +7258,6 @@ Homebrew-homebrew-core/Formula/v/veryfasttree.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vespa-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vet.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vexctl.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/v/vf.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vfkit.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/v/vfox.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vgmstream.rb, Homebrew/homebrew-core, 0
@@ -7267,6 +7269,7 @@ Homebrew-homebrew-core/Formula/v/victorialogs.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/victoriametrics.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/viddy.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/video-compare.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/v/videoalchemy.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/viennacl.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/v/vifm.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vile.rb, Homebrew/homebrew-core, 0
@@ -7388,6 +7391,7 @@ Homebrew-homebrew-core/Formula/w/watchexec.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/watchman.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/watson.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/w/wavpack.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/w/wayback.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/waybackpy.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/w/wayland-protocols.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/w/wayland.rb, Homebrew/homebrew-core, 0
@@ -8994,6 +8998,7 @@ Homebrew-homebrew-cask/Casks/e/egovframedev.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/e/eid-viewer.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/e/eiskaltdcpp.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/e/elan.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/e/elasticvue.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/e/elecom-mouse-util.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/e/electerm.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/e/electorrent.rb, Homebrew/homebrew-cask, 1

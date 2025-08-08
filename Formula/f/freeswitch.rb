@@ -1,11 +1,17 @@
 class Freeswitch < Formula
   desc "Telephony platform to route various communication protocols"
   homepage "https://freeswitch.org"
-  url "https://github.com/signalwire/freeswitch.git",
-      tag:      "v1.10.12",
-      revision: "a88d069d6ffb74df797bcaf001f7e63181c07a09"
   license "MPL-1.1"
-  head "https://github.com/signalwire/freeswitch.git", branch: "master"
+
+  stable do
+    # TODO: Switch to `ffmpeg` and `pcre2` on next release
+    url "https://github.com/signalwire/freeswitch.git",
+        tag:      "v1.10.12",
+        revision: "a88d069d6ffb74df797bcaf001f7e63181c07a09"
+
+    depends_on "ffmpeg@5"
+    depends_on "pcre"
+  end
 
   livecheck do
     url :stable
@@ -24,6 +30,13 @@ class Freeswitch < Formula
     sha256 x86_64_linux:   "1f90051761c07c7017ae113a7ebd980dfeb8d5d549e0208c8e258425b41f3d43"
   end
 
+  head do
+    url "https://github.com/signalwire/freeswitch.git", branch: "master"
+
+    depends_on "ffmpeg"
+    depends_on "pcre2"
+  end
+
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "cmake" => :build
@@ -31,7 +44,6 @@ class Freeswitch < Formula
   depends_on "pkgconf" => :build
   depends_on "yasm" => :build
 
-  depends_on "ffmpeg@5" # FFmpeg 6 issue: https://github.com/signalwire/freeswitch/issues/2202
   depends_on "freetype"
   depends_on "jpeg-turbo"
   depends_on "ldns"
@@ -43,7 +55,6 @@ class Freeswitch < Formula
   depends_on "opencore-amr"
   depends_on "openssl@3"
   depends_on "opus"
-  depends_on "pcre" # PCRE2 PR: https://github.com/signalwire/freeswitch/pull/2299
   depends_on "sofia-sip"
   depends_on "speex"
   depends_on "speexdsp"

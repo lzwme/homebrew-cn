@@ -1,19 +1,19 @@
 class Nomino < Formula
   desc "Batch rename utility"
   homepage "https://github.com/yaa110/nomino"
-  url "https://ghfast.top/https://github.com/yaa110/nomino/archive/refs/tags/1.6.3.tar.gz"
-  sha256 "4868795b6c8a1133ee1c3b19f7a32e0fb0d0a0919b07ccadc4fa1f7526acc86f"
+  url "https://ghfast.top/https://github.com/yaa110/nomino/archive/refs/tags/1.6.4.tar.gz"
+  sha256 "e83d9a62163f9faaff4c6650284de3dbe92e546ac09e3717c0bb9cde8352d005"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/yaa110/nomino.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "42bfd8cf82f4d43289406b61cdee3ea3d02f0fc77bad625de5c6ce4332f850b4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "20c012c7e48c0e97c0f329dec5caee2af1d6634f911c6b35843c492075da1367"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "34ab873709e316fad6421ec7820a7b19f873118191f811b0125ca7023c50e840"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7ffdedac45bc801f80ca05ff06c00de05ea1fb1008f0635a1f0a60a49880e1e2"
-    sha256 cellar: :any_skip_relocation, ventura:       "352e22303c8283a6540d464b1a9d62a8259a1855113e744bef40a2701a4bcaa0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8d44a8f762bae41a49df265a031f96bc30e7d6b080f03f25076fe4e114a4c39d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f94db8ed52f15afb5f1fda7545cdbd581cdde13d24471c25622cf7aa62dd7e05"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "91c62681b3095ba073e2347bb73a7ae656becbfcebe653d17a0272adf6c137f0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "844fd63f5668aa2fadd5d5eb1d60e927bdc4b2a6147844116a2c58db614ff0fa"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "2e3938593b0e08bdef22fb21806acde14e003a385a2bcbee17f9eda7a99c727e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "dc995512aaa7e49fa27d1d758e423aa8f89172382291ffd73fd1a0e4def4c04b"
+    sha256 cellar: :any_skip_relocation, ventura:       "159c8a020cbf814028a0ccb704dde386b9ca9894ee174fbe87882d57e5198a80"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "31653756284a49363a9d7ea3d169f8e7cba14ba660e06b8b86647f792905f189"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f688e778ba20b4394687dd2cc845df0aacdce99a06ea2fb200bf0c0b8aac44c6"
   end
 
   depends_on "rust" => :build

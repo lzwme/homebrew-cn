@@ -1,8 +1,8 @@
 class Pyenv < Formula
   desc "Python version management"
   homepage "https://github.com/pyenv/pyenv"
-  url "https://ghfast.top/https://github.com/pyenv/pyenv/archive/refs/tags/v2.6.5.tar.gz"
-  sha256 "ebf75a81125d8fb9b5d6930821a0e08200a414c029c93fd27aaa9a519ef1b546"
+  url "https://ghfast.top/https://github.com/pyenv/pyenv/archive/refs/tags/v2.6.6.tar.gz"
+  sha256 "df835a121456102be9df303c0d7ac688572aba07cc90b23ac611f89e6911a1dc"
   license "MIT"
   version_scheme 1
   head "https://github.com/pyenv/pyenv.git", branch: "master"
@@ -13,13 +13,13 @@ class Pyenv < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "15b719a5114c5834dc546484cdd6ad6625ffa3e18e3712ec441442e82644973c"
-    sha256 cellar: :any,                 arm64_sonoma:  "c8d15f9c41af34f269b15f439675d5bf11e713ff56bd7f422bbdb0b0fa757386"
-    sha256 cellar: :any,                 arm64_ventura: "f6f70daf56030cd1ec6486043d312198e1b4946827930a64c67a203e934fa848"
-    sha256 cellar: :any,                 sonoma:        "e9fb3f0de9055d54f065f0b686f9ad0866a4754b32a682e58c4af4d6b37ba84b"
-    sha256 cellar: :any,                 ventura:       "5e62ac8275be78cd04277bbccf84b7d6c478407d5e6083b98bad7af8c079b22a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2671ab31e92fdceb9c321cd8294c703f3152388cd4013c5c09142cdbb21bbc23"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dc54d8469b93af20fab47f68363cbfa5d869a8b2167f3c43f18128596b8ef74c"
+    sha256 cellar: :any,                 arm64_sequoia: "216be7176ad98deaf6ab8ae3339ece781e577d1f30555d0076582bde5d096721"
+    sha256 cellar: :any,                 arm64_sonoma:  "1fd64e01bbf1cd3b6466ac8b2f6a2ce03e42b21f9abc7d6ac9ea55074accfe11"
+    sha256 cellar: :any,                 arm64_ventura: "87d39a9f3023ffa2eb8cd481c780352851d08da1a0a5b7a0ece3b86c975c8c60"
+    sha256 cellar: :any,                 sonoma:        "4c98047d78597c8f33ad50f44002125cc27a909cb4164323e9d446e68edeae86"
+    sha256 cellar: :any,                 ventura:       "71301806dc8c1e0428e47439a84d194a17665b8d6c8b7aae1ade5d5931e3f8eb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e9fb75b7385a336ff15e5b08e124fac51e7c3fb9435eb6fc659b4b35a627dca0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6533665a53cd57a36cc906b074939996f8b707651e552215d6d3a73dddca1180"
   end
 
   depends_on "autoconf"

@@ -6,16 +6,17 @@ class PiecesCli < Formula
   url "https://files.pythonhosted.org/packages/67/26/3e8bde03fd92455652e059e0d7d7b8a7f2341cee808b98d9a6fc018c4b6b/pieces_cli-1.16.5.tar.gz"
   sha256 "540d2f08f69f7f1729d679ae384d76b617850a3b8ad41d79b7f3733669aa1ec1"
   license "MIT"
+  revision 1
   head "https://github.com/pieces-app/cli-agent.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "f32f23352c19ea3ce115419ec129ab09e757c1bb426e8d75f261f424aaea938a"
-    sha256 cellar: :any,                 arm64_sonoma:  "a0d32a78d7bac10a0ca9a2e7f6085179b5e9256f45bdd18feb40dfc4f3adf297"
-    sha256 cellar: :any,                 arm64_ventura: "a32b2afa3c2c687e246ea431879b180a8ffa5bdc544cf256312c908aee2472ac"
-    sha256 cellar: :any,                 sonoma:        "f6c1ab7120a7e95d381dec3588a160a4476218d4886a1c9565cd2ba92801e0cc"
-    sha256 cellar: :any,                 ventura:       "b66b7188244bf3b8bfdc7dd99982fb658c7e36b950f1d5c30db57cdde02091fd"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3b4df5b10feb83f6a4afc080bd2da74787ba85d46fb89badf13c8227e9ea3133"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3946de17b5a1dbee0a7fd8031dbc1a99943069320295fee49a6f3ae7c5681285"
+    sha256 cellar: :any,                 arm64_sequoia: "4df0d8099e959aa7a4100a05b47aff83bd4ed4e0dd989ad93f0c1cd8546e48d6"
+    sha256 cellar: :any,                 arm64_sonoma:  "cda27275b69d255a3b462445fa12ebe9cfb403dee8f43ffd6ed104770e6dfa06"
+    sha256 cellar: :any,                 arm64_ventura: "42cccf3b92bcdc60deb331b03bafe0f2603ed5cc1d9e133c4777f6ae54c1d88e"
+    sha256 cellar: :any,                 sonoma:        "1d1fe497bf66749b4e599b1c0b455ac39bf67e3762da5ff191141c37d5d8ffed"
+    sha256 cellar: :any,                 ventura:       "d278fa1179cb5dac727ea3e1a770f77ae3f1ee3edacd5a6d103d9f40edb7eefb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8d494781ee062c05f6a90995dc228cc686f3545f7a965c3367cabb2c4371031e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c7f112216fe2bdb4e2fb6f149f9cd7235136611136df33695d04be21bd4b81a0"
   end
 
   depends_on "rust" => :build
@@ -34,8 +35,8 @@ class PiecesCli < Formula
   end
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/95/7d/4c1bd541d4dffa1b52bd83fb8527089e097a106fc90b467a7313b105f840/anyio-4.9.0.tar.gz"
-    sha256 "673c0c244e15788651a4ff38710fea9675823028a6f08a5eda409e0c9840a028"
+    url "https://files.pythonhosted.org/packages/f1/b4/636b3b65173d3ce9a38ef5f0522789614e590dab6a8d505340a4efe4c567/anyio-4.10.0.tar.gz"
+    sha256 "3f3fae35c96039744587aa5b8371e7e8e603c0702999535961dd336026973ba6"
   end
 
   resource "click" do
@@ -154,13 +155,13 @@ class PiecesCli < Formula
   end
 
   resource "sse-starlette" do
-    url "https://files.pythonhosted.org/packages/07/3e/eae74d8d33e3262bae0a7e023bb43d8bdd27980aa3557333f4632611151f/sse_starlette-2.4.1.tar.gz"
-    sha256 "7c8a800a1ca343e9165fc06bbda45c78e4c6166320707ae30b416c42da070926"
+    url "https://files.pythonhosted.org/packages/42/6f/22ed6e33f8a9e76ca0a412405f31abb844b779d52c5f96660766edcd737c/sse_starlette-3.0.2.tar.gz"
+    sha256 "ccd60b5765ebb3584d0de2d7a6e4f745672581de4f5005ab31c3a25d10b52b3a"
   end
 
   resource "starlette" do
-    url "https://files.pythonhosted.org/packages/0a/69/662169fdb92fb96ec3eaee218cf540a629d629c86d7993d9651226a6789b/starlette-0.47.1.tar.gz"
-    sha256 "aef012dd2b6be325ffa16698f9dc533614fb1cebd593a906b90dc1025529a79b"
+    url "https://files.pythonhosted.org/packages/04/57/d062573f391d062710d4088fa1369428c38d51460ab6fedff920efef932e/starlette-0.47.2.tar.gz"
+    sha256 "6ae9aa5db235e4846decc1e7b79c4f346adf41e9777aebeb49dfd09bbd7023d8"
   end
 
   resource "typing-extensions" do

@@ -1,8 +1,8 @@
 class ZlibNg < Formula
   desc "Zlib replacement with optimizations for next generation systems"
   homepage "https://github.com/zlib-ng/zlib-ng"
-  url "https://ghfast.top/https://github.com/zlib-ng/zlib-ng/archive/refs/tags/2.2.4.tar.gz"
-  sha256 "a73343c3093e5cdc50d9377997c3815b878fd110bf6511c2c7759f2afb90f5a3"
+  url "https://ghfast.top/https://github.com/zlib-ng/zlib-ng/archive/refs/tags/2.2.5.tar.gz"
+  sha256 "5b3b022489f3ced82384f06db1e13ba148cbce38c7941e424d6cb414416acd18"
   license "Zlib"
 
   # Upstream creates releases that use a stable tag (e.g., `v1.2.3`) but are
@@ -14,13 +14,13 @@ class ZlibNg < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "172d222f67bb93065376bb88e1d8beaa3ffd3eb9902f1884c552483b58a04a50"
-    sha256 cellar: :any,                 arm64_sonoma:  "f2306b42db96fa4ccbcfca1fe91b17fc1a90fb238c6493b1a92fa3dbba8bd972"
-    sha256 cellar: :any,                 arm64_ventura: "209912594fd67b36271207675293682db9dec087434b3a1bd0856cec80718eea"
-    sha256 cellar: :any,                 sonoma:        "fe0c7f653c0643174b97538d312383681a16c73ba02c01d20067277988b0015b"
-    sha256 cellar: :any,                 ventura:       "ca3d91daa5ab604935fea3632a76db372128ebeebd93939a95af3982e066c29b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3fce3abce4b3344c6d1c3d7385d64c0199b0b78a0e977972fcf7daea99d3405e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "067fda36b99d5dac97f99524fc362b5980ec06022037f1945377709b43f3c1b8"
+    sha256 cellar: :any,                 arm64_sequoia: "b9d4833018667eceb9c16a3e2d94c02f9da89ad418c131e6449f68d6c9a3b0b6"
+    sha256 cellar: :any,                 arm64_sonoma:  "7836ba4de58a38aebc6e2a4b622c4cb414035b7d6d7656ca88f3d487f1836cbd"
+    sha256 cellar: :any,                 arm64_ventura: "cd4bc03c96c10c9916ce8af977f1ce76a5ee84bcac6bb4e2df9efeec6040020d"
+    sha256 cellar: :any,                 sonoma:        "815ee670c61db45c5c5bf409e63855cedb46ca1263ac25f3208834381ccfa3f5"
+    sha256 cellar: :any,                 ventura:       "7424413d91a8820c6f12fe0abc69c7e50c7cf2543b7ea42af0d9cb0c40eed8d4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ac407dd2e07a48f869d007a729add61fed50c56c63e8ca1ef48a597c4f8c4564"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d5149e77944f616115e8a9b7653925c4665397e0024d0c3ec3b9e3158d772847"
   end
 
   def install

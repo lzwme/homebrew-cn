@@ -6,19 +6,18 @@ class Vdirsyncer < Formula
   url "https://files.pythonhosted.org/packages/ee/c2/50eb6b430f447c062ae3cd07d1a354d768bdb1443580bd4ae16ec8c8296d/vdirsyncer-0.19.3.tar.gz"
   sha256 "e437851feb985dec3544654f8f9cf6dd109b0b03f7e19956086603092ffeb28f"
   license "BSD-3-Clause"
-  revision 3
+  revision 4
   head "https://github.com/pimutils/vdirsyncer.git", branch: "main"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3657bc1eaffd27f2668c60f33e89f9f37fafeb64f4198fce7bf5c8a779357586"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cfeee986c1a79967d262818996887ec9860fa6bc00c608814a968fbbb662347a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "f461ae1043502856a606a1aa38bc9c7423d71205e1e6a074a2d31024a2b678ee"
-    sha256 cellar: :any_skip_relocation, sequoia:       "62671d42404089375e1c46a2ab1e20da558b3e5ab4f5f3259c96e8a6297c4de0"
-    sha256 cellar: :any_skip_relocation, sonoma:        "88dea32f7752c424343ddb77219cc1ab163a0aca17da6de42d74434ddbc901b5"
-    sha256 cellar: :any_skip_relocation, ventura:       "891bc227096bd03144f4e8d1d557d83cae7b8179a7f271289dadcbb916c07861"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8c39fa7339230154b24fe6ce4147f59f657d086f7f680f4edebf4689be4cc285"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2d4743921ee8aaf3ad99f638956cd42979f1cd084bad796e88a773e20c9852aa"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f78855f28b30651d389eb5f2af1a7f1e97f219a325e47dd35678ae0efcb63cdc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1a43f63a03a74085aeedc94fd6927f397a4b139c72cdbb65b2b76b512528bbb0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "b38750494434bb434df17c074abbe87fe684aa86ff4e05a9d6ccddbdc36a5593"
+    sha256 cellar: :any_skip_relocation, sequoia:       "1e2679ebed7633a12daa16c17ff86b8b4369c1e5fd89889081934bb58e3a45e8"
+    sha256 cellar: :any_skip_relocation, sonoma:        "cd21c3cd1d5b9315c8104bc8caeeb50a0f3fc1b68c58f5521d5293d81e4ce7e8"
+    sha256 cellar: :any_skip_relocation, ventura:       "a3a8797ffb67b203de3d55d71dfcf65b0270c9e1a57497245b5c9612747eab0e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "07f0a22e73e1a76a8b68172daa1c296f2c1e3d3e845f825ee155a1e92f394b22"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c8688df9033fae3ea9cc00ae6e0f80d211674b5a00f1d186637c18be732b3191"
   end
 
   depends_on "certifi"
@@ -30,8 +29,8 @@ class Vdirsyncer < Formula
   end
 
   resource "aiohttp" do
-    url "https://files.pythonhosted.org/packages/42/6e/ab88e7cb2a4058bed2f7870276454f85a7c56cd6da79349eb314fc7bbcaa/aiohttp-3.12.13.tar.gz"
-    sha256 "47e2da578528264a12e4e3dd8dd72a7289e5f812758fe086473fab037a10fcce"
+    url "https://files.pythonhosted.org/packages/9b/e7/d92a237d8802ca88483906c388f7c201bbe96cd80a165ffd0ac2f6a8d59f/aiohttp-3.12.15.tar.gz"
+    sha256 "4fc61385e9c98d72fcdf47e6dd81833f47b2f77c114c29cd64a361be57a763a2"
   end
 
   resource "aiohttp-oauthlib" do

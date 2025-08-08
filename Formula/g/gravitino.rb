@@ -5,6 +5,11 @@ class Gravitino < Formula
   sha256 "fa141ce3bfc68630d208b32a24de65e8639bfc1774133494837452ffa879031a"
   license "Apache-2.0"
 
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "f74f55cad208bb19e1aca2c86477a5bf2d9e6f26befaabbadc05435fef4d1523"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "df67562b97e3b4137c67416ff781a9846b57c65f2cfc250477ec3b2cb9891fc9"

@@ -15,7 +15,7 @@ class ProtocGenGrpcJava < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "9dcb86cdac59907ef6adf8e1f21841d267a359125925a02e6ec934d5fa632f78"
   end
 
-  depends_on "gradle" => :build
+  depends_on "gradle@8" => :build
   depends_on "openjdk" => :build
   depends_on "pkgconf" => :build
   depends_on "abseil"
@@ -36,7 +36,12 @@ class ProtocGenGrpcJava < Formula
       s.gsub! ', "-static-libgcc"', ""
     end
 
-    system "gradle", "--no-daemon", "--project-dir=compiler", "-PskipAndroid=true", "java_pluginExecutable"
+    system "gradle", "--no-daemon",
+                     "--stacktrace",
+                     "--debug",
+                     "--project-dir=compiler",
+                     "-PskipAndroid=true",
+                     "java_pluginExecutable"
     bin.install "compiler/build/exe/java_plugin/protoc-gen-grpc-java"
 
     pkgshare.install "examples/src/main/proto/helloworld.proto"

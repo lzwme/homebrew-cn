@@ -1,25 +1,24 @@
 class Adaptivecpp < Formula
   desc "SYCL and C++ standard parallelism for CPUs and GPUs"
   homepage "https://adaptivecpp.github.io/"
-  url "https://ghfast.top/https://github.com/AdaptiveCpp/AdaptiveCpp/archive/refs/tags/v24.10.0.tar.gz"
-  sha256 "3bcd94eee41adea3ccc58390498ec9fd30e1548af5330a319be8ce3e034a6a0b"
+  url "https://ghfast.top/https://github.com/AdaptiveCpp/AdaptiveCpp/archive/refs/tags/v25.02.0.tar.gz"
+  sha256 "8cc8a3be7bb38f88d7fd51597e0ec924b124d4233f64da62a31b9945b55612ca"
   license "BSD-2-Clause"
-  revision 1
   head "https://github.com/AdaptiveCpp/AdaptiveCpp.git", branch: "develop"
 
   bottle do
-    sha256 arm64_sequoia: "8cb6f094a3fbf0f910601703c6d7e65831b8e568967e5a66ebfa950a98b0a968"
-    sha256 arm64_sonoma:  "8d9a08397ebf84cbbd09d37aca3b75464e3ee888a01d509aa8271dedf4dfbcbc"
-    sha256 arm64_ventura: "3c6e4a92536c76c3b791a5c905d37d5f1d61e392f0dce155cf9720ece150aa83"
-    sha256 sonoma:        "28388ca4a208e7e7d116bbbb4fb91458fa6217632db3579e9d3cf2ae2d4c4485"
-    sha256 ventura:       "3571494508ad1edb0f2f7636613b6c200725befa53190239d95a6b2cc5579a36"
-    sha256 arm64_linux:   "dd452feb307577a151f2132bc2c3508c26c44249d57a1445970dc7ee850591cc"
-    sha256 x86_64_linux:  "fbd4be61d9ad7377b5a54884ad1feeb4b4bf0e12df662d81ba0387100ce586c5"
+    sha256 arm64_sequoia: "fa1c355b2af0934de4aae2fdb882f7befae852e5523ed4b3f4270d69bfd46edf"
+    sha256 arm64_sonoma:  "c01a61e3a4629d1c1c52ba7d9f5f0618f6b7f6a246d25da96c4e0ed481f0b6bc"
+    sha256 arm64_ventura: "99b96eda0511b4d0cfabc9580e41231ba4e6ab7ff8c999d1a806666272b277c8"
+    sha256 sonoma:        "0f36be03113ad37c5c5dd608c4eaf31c4e81140b55266b7576315f1bf2fc8e0c"
+    sha256 ventura:       "55be476775f893b04c942a69b19e049e7ae08db67069f7a30197b2e56d0df3f6"
+    sha256 arm64_linux:   "960d8324f3d0d1c041e22f8a5a49f4267b0869ba55a6e2aae6352cbf597cbcb3"
+    sha256 x86_64_linux:  "83441ea7d08eca12a414c7b27717d047140a482497e9f74f8d40a69da6745513"
   end
 
   depends_on "cmake" => :build
   depends_on "boost"
-  depends_on "llvm@19"
+  depends_on "llvm"
   uses_from_macos "python"
 
   on_macos do
@@ -39,12 +38,16 @@ class Adaptivecpp < Formula
 
     # Avoid references to Homebrew shims directory
     inreplace prefix/"etc/AdaptiveCpp/acpp-core.json", Superenv.shims_path/ENV.cxx, ENV.cxx
-    return unless OS.mac?
 
-    # we add -I#{libomp_root}/include to default-omp-cxx-flags
-    inreplace prefix/"etc/AdaptiveCpp/acpp-core.json",
-              "\"default-omp-cxx-flags\" : \"",
-              "\"default-omp-cxx-flags\" : \"-I#{libomp_root}/include "
+    if OS.mac?
+      # we add -I#{libomp_root}/include to default-omp-cxx-flags
+      inreplace prefix/"etc/AdaptiveCpp/acpp-core.json",
+                "\"default-omp-cxx-flags\" : \"",
+                "\"default-omp-cxx-flags\" : \"-I#{libomp_root}/include "
+    else
+      # Move tools to work around brew's non-executable audit
+      (lib/"hipSYCL/llvm-to-backend").install (bin/"hipSYCL/llvm-to-backend").children
+    end
   end
 
   test do

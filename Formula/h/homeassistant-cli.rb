@@ -6,19 +6,18 @@ class HomeassistantCli < Formula
   url "https://files.pythonhosted.org/packages/b2/98/fd5e7beb7cc135f80d78b32c85ac15f3ba9219063b794b1d184fb07fd84b/homeassistant-cli-0.9.6.tar.gz"
   sha256 "9b9b705eaf6ee40dc6a732f3458c78ba37b62b7330bc17b132e6fee385ec8606"
   license "Apache-2.0"
-  revision 17
+  revision 18
   head "https://github.com/home-assistant-ecosystem/home-assistant-cli.git", branch: "dev"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "14097ae33fea2b0d77d5363e5f6ae93679d9bedb151904e44b5142fc93ec397f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1cee8de39515ba9f20532f1087b0306d86a6ce1b7c7be88238eb8b8dcca8fa3b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "837a0a83085ca60fe4cd87450a3bee0d7358e73a61aca65323ea719f8eea1899"
-    sha256 cellar: :any_skip_relocation, sequoia:       "db6a25db6cd469930d3de33aca9b1bf6eef3c7b32c97afe2d50323e3f3579c2f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f860f0751af5e27ead4cea58aa8ade9df19a01f2a1329f95e8d641ee8f1de8d6"
-    sha256 cellar: :any_skip_relocation, ventura:       "fdfe44c2d48970dc85a6eb09e850fb97267bbda675ce899040d67a2dc8f958bd"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "59171904c78d5bea8fac7d0a51c1004de37d43b06a715f04132edc15ee0d9bd6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "376cfba4260399d338367c5e6997b692f6d98881b396ad5ec4fe340de8aebc58"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c70c109dbe8a719046abfe9dd8701ec19acb5785b75b8cbda6543c44489203eb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a9afe1a08a27165e7cd251f1e6d6f5ccc5ae840bdee7196c1561c70c1b80c64a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "a1016fedb7ae69aa83a9b1db34d0a835d7a9eb3c4039f78710eff145e9da44b1"
+    sha256 cellar: :any_skip_relocation, sequoia:       "4a76332c9f46fb87efd6241e487f60a44ab9c17eb0f503cf2ce4825564a895d7"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f9ec858a192f9721dbf242878a439c036927ad5d5ce2609b28d1b8e5b3400045"
+    sha256 cellar: :any_skip_relocation, ventura:       "5c89229366ba414f829f9a3373aba7679b923eed5850ee64345efb0ae7be2385"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "39a41ee6be09f00c5ccb241090c1a1ac28dd174df7b6e85b3e181a3349de8fbf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a2efcba7e61fa4b380937d4e09aaa834925847db7248d36cf2c66973175054c0"
   end
 
   depends_on "python@3.13"
@@ -29,8 +28,8 @@ class HomeassistantCli < Formula
   end
 
   resource "aiohttp" do
-    url "https://files.pythonhosted.org/packages/42/6e/ab88e7cb2a4058bed2f7870276454f85a7c56cd6da79349eb314fc7bbcaa/aiohttp-3.12.13.tar.gz"
-    sha256 "47e2da578528264a12e4e3dd8dd72a7289e5f812758fe086473fab037a10fcce"
+    url "https://files.pythonhosted.org/packages/9b/e7/d92a237d8802ca88483906c388f7c201bbe96cd80a165ffd0ac2f6a8d59f/aiohttp-3.12.15.tar.gz"
+    sha256 "4fc61385e9c98d72fcdf47e6dd81833f47b2f77c114c29cd64a361be57a763a2"
   end
 
   resource "aiosignal" do
@@ -44,8 +43,8 @@ class HomeassistantCli < Formula
   end
 
   resource "certifi" do
-    url "https://files.pythonhosted.org/packages/73/f7/f14b46d4bcd21092d7d3ccef689615220d8a08fb25e564b65d20738e672e/certifi-2025.6.15.tar.gz"
-    sha256 "d747aa5a8b9bbbb1bb8c22bb13e22bd1f18e9796defa16bab421f7f7a317323b"
+    url "https://files.pythonhosted.org/packages/dc/67/960ebe6bf230a96cda2e0abcf73af550ec4f090005363542f0765df162e0/certifi-2025.8.3.tar.gz"
+    sha256 "e564105f78ded564e3ae7c923924435e1daa7463faeab5bb932bc53ffae63407"
   end
 
   resource "charset-normalizer" do
@@ -129,8 +128,8 @@ class HomeassistantCli < Formula
   end
 
   resource "regex" do
-    url "https://files.pythonhosted.org/packages/8e/5f/bd69653fbfb76cf8604468d3b4ec4c403197144c7bfe0e6a5fc9e02a07cb/regex-2024.11.6.tar.gz"
-    sha256 "7ab159b063c52a0333c884e4679f8d7a85112ee3078fe3d9004b2dd875585519"
+    url "https://files.pythonhosted.org/packages/0b/de/e13fa6dc61d78b30ba47481f99933a3b49a57779d625c392d8036770a60d/regex-2025.7.34.tar.gz"
+    sha256 "9ead9765217afd04a86822dfcd4ed2747dfe426e887da413b15ff0ac2457e21a"
   end
 
   resource "requests" do

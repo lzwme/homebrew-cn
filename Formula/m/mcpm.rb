@@ -3,19 +3,18 @@ class Mcpm < Formula
 
   desc "Open source, community-driven MCP server and client manager"
   homepage "https://mcpm.sh/"
-  url "https://files.pythonhosted.org/packages/f4/28/85839faf322b69bd294ea6739f91840ec66d39da4343471d279ca54dc7e6/mcpm-2.6.0.tar.gz"
-  sha256 "1e2171a14463881ede41e79c4931fb9716d83ccc10fe6be49a51c38fbbe0cc52"
+  url "https://files.pythonhosted.org/packages/ba/49/d870dbcef2be42542722f0c9d33847615cb47d90913275387260de623b01/mcpm-2.6.1.tar.gz"
+  sha256 "5e6755f19274c593bf93cd831324323f023c2acc94c1616d300f6a6442dccf71"
   license "MIT"
-  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "b3f94865ec85f129d74175f6889afed84cfd3bea9f5f90d47739c0c87fecf6a8"
-    sha256 cellar: :any,                 arm64_sonoma:  "e90363fa047905273f51420c7a26a9de1c7b4999220fde0f2248c5eaa2e5bb97"
-    sha256 cellar: :any,                 arm64_ventura: "249d233fd24fc212f4cc40539b71f93818c85c31e4d743a99be7a5039dc1af09"
-    sha256 cellar: :any,                 sonoma:        "2a0e8c464d7e65f8b6ff39462ad323dea13b4db7e3d18632c5189eda91d8e682"
-    sha256 cellar: :any,                 ventura:       "5076127a99fb1751443d4deab4b12e4322a382f05ecf02ab939caad39e059661"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d06e7481b40052896a978437f43b9e897b0e8fcb86b0b400e7532ac6c1c6ff51"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "02f888e6af8806a8f1382a0609b7523467b4168376138e6c3675bc08378af5ee"
+    sha256 cellar: :any,                 arm64_sequoia: "2489d4017982d3217fefef6c6a46ec48ed955d9b06f6b1d1167e311e5be7f2a7"
+    sha256 cellar: :any,                 arm64_sonoma:  "4ffef7e6a3ff83535e95f4169195d02e39ec5232ca08b45f662813a9ffe9494e"
+    sha256 cellar: :any,                 arm64_ventura: "9f8bfaa7f7992a2f5e5cc921fa45e9c2a40fe8c02822c9a9596e57874828785c"
+    sha256 cellar: :any,                 sonoma:        "fb26c529aa44996e2ff4c38e22e7dff596c5bb7795e522a61a8c8a2724d4ed88"
+    sha256 cellar: :any,                 ventura:       "3ecadcb347dca6b6b5edbd8406280bca4ad05c50518826777ae28db66fe350d5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bbf30530b8e9098355f0e2699df0fb640e4c7e27af06849b69cf1e93ab84a5dc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "44872d78a5ce50d107df9635a95187a3b0e41f7bd046c7046b84852c413386ec"
   end
 
   depends_on "rust" => :build
@@ -29,8 +28,8 @@ class Mcpm < Formula
   end
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/95/7d/4c1bd541d4dffa1b52bd83fb8527089e097a106fc90b467a7313b105f840/anyio-4.9.0.tar.gz"
-    sha256 "673c0c244e15788651a4ff38710fea9675823028a6f08a5eda409e0c9840a028"
+    url "https://files.pythonhosted.org/packages/f1/b4/636b3b65173d3ce9a38ef5f0522789614e590dab6a8d505340a4efe4c567/anyio-4.10.0.tar.gz"
+    sha256 "3f3fae35c96039744587aa5b8371e7e8e603c0702999535961dd336026973ba6"
   end
 
   resource "attrs" do
@@ -56,11 +55,6 @@ class Mcpm < Formula
   resource "deprecated" do
     url "https://files.pythonhosted.org/packages/98/97/06afe62762c9a8a86af0cfb7bfdab22a43ad17138b07af5b1a58442690a2/deprecated-1.2.18.tar.gz"
     sha256 "422b6f6d859da6f2ef57857761bfb392480502a64c3028ca9bbe86085d72115d"
-  end
-
-  resource "distro" do
-    url "https://files.pythonhosted.org/packages/fc/f8/98eea607f65de6527f8a2e8885fc8015d3e6f5775df186e443e0964a11c3/distro-1.9.0.tar.gz"
-    sha256 "2fa77c6fd8940f116ee1d6b94a2f90b13b5ea8d019b98bc8bafdcabcdd9bdbed"
   end
 
   resource "dnspython" do
@@ -123,11 +117,6 @@ class Mcpm < Formula
     sha256 "89d2ada0111f337483cb41ae31073108b2ec1e618a49d7110b0d7ade89fc197e"
   end
 
-  resource "jiter" do
-    url "https://files.pythonhosted.org/packages/ee/9d/ae7ddb4b8ab3fb1b51faf4deb36cb48a4fbbd7cb36bad6a5fca4741306f7/jiter-0.10.0.tar.gz"
-    sha256 "07a7142c38aacc85194391108dc91b5b57093c978a9932bd86a36862759d9500"
-  end
-
   resource "jsonschema" do
     url "https://files.pythonhosted.org/packages/d5/00/a297a868e9d0784450faa7365c2172a7d6110c763e30ba861867c32ae6a9/jsonschema-4.25.0.tar.gz"
     sha256 "e63acf5c11762c0e6672ffb61482bdf57f0876684d8d249c0fe2d730d48bc55f"
@@ -143,29 +132,19 @@ class Mcpm < Formula
     sha256 "19480589e77d47b8d85b2c827ad95d49bf31b0dcde16593892eb51dd18706eb6"
   end
 
-  resource "lorem-text" do
-    url "https://files.pythonhosted.org/packages/31/4a/0d8a3633a51e4c0ed1e9cd20accf6b485584054db323ee0448fabc14dfe0/lorem_text-3.0.tar.gz"
-    sha256 "03013aabdbc33e7280d92c20ba041b9d8f21187e0164a9323fd173be6825c865"
-  end
-
   resource "markdown-it-py" do
     url "https://files.pythonhosted.org/packages/38/71/3b932df36c1a044d397a1f92d1cf91ee0a503d91e470cbd670aa66b07ed0/markdown-it-py-3.0.0.tar.gz"
     sha256 "e3f60a94fa066dc52ec76661e37c851cb232d92f9886b15cb560aaada2df8feb"
   end
 
   resource "mcp" do
-    url "https://files.pythonhosted.org/packages/45/94/caa0f4754e2437f7033068989f13fee784856f95870c786b0b5c2c0f511e/mcp-1.12.0.tar.gz"
-    sha256 "853f6b17a3f31ea6e2f278c2ec7d3b38457bc80c7c2c675260dd7f04a6fd0e70"
+    url "https://files.pythonhosted.org/packages/4d/19/9955e2df5384ff5dd25d38f8e88aaf89d2d3d9d39f27e7383eaf0b293836/mcp-1.12.3.tar.gz"
+    sha256 "ab2e05f5e5c13e1dc90a4a9ef23ac500a6121362a564447855ef0ab643a99fed"
   end
 
   resource "mdurl" do
     url "https://files.pythonhosted.org/packages/d6/54/cfe61301667036ec958cb99bd3efefba235e65cdeb9c84d24a8293ba1d90/mdurl-0.1.2.tar.gz"
     sha256 "bb413d29f5eea38f31dd4754dd7377d4465116fb207585f97bf925588687c1ba"
-  end
-
-  resource "openai" do
-    url "https://files.pythonhosted.org/packages/e0/c6/b8d66e4f3b95493a8957065b24533333c927dc23817abe397f13fe589c6e/openai-1.97.0.tar.gz"
-    sha256 "0be349569ccaa4fb54f97bb808423fd29ccaeb1246ee1be762e0c81a47bae0aa"
   end
 
   resource "openapi-pydantic" do
@@ -233,11 +212,6 @@ class Mcpm < Formula
     sha256 "8dd0cab45b8e23064ae09147625994d090fa46f5b0d1e13af944c331a7fa9d13"
   end
 
-  resource "rapidfuzz" do
-    url "https://files.pythonhosted.org/packages/ed/f6/6895abc3a3d056b9698da3199b04c0e56226d530ae44a470edabf8b664f0/rapidfuzz-3.13.0.tar.gz"
-    sha256 "d2eaf3839e52cbcc0accbe9817a67b4b0fcf70aaeb229cfddc1c28061f9ce5d8"
-  end
-
   resource "referencing" do
     url "https://files.pythonhosted.org/packages/2f/db/98b5c277be99dd18bfd91dd04e1b759cad18d1a338188c936e92f921c7e2/referencing-0.36.2.tar.gz"
     sha256 "df2e89862cd09deabbdba16944cc3f10feb6b3e6f18e902f7cc25609a34775aa"
@@ -249,8 +223,8 @@ class Mcpm < Formula
   end
 
   resource "rich" do
-    url "https://files.pythonhosted.org/packages/a1/53/830aa4c3066a8ab0ae9a9955976fb770fe9c6102117c8ec4ab3ea62d89e8/rich-14.0.0.tar.gz"
-    sha256 "82f1bc23a6a21ebca4ae0c45af9bdbc492ed20231dcb63f297d6d1021a9d5725"
+    url "https://files.pythonhosted.org/packages/fe/75/af448d8e52bf1d8fa6a9d089ca6c07ff4453d86c65c145d0a300bb073b9b/rich-14.1.0.tar.gz"
+    sha256 "e497a48b844b0320d45007cdebfeaeed8db2a4f4bcf49f15e455cfc4af11eaa8"
   end
 
   resource "rich-click" do
@@ -264,13 +238,13 @@ class Mcpm < Formula
   end
 
   resource "rich-gradient" do
-    url "https://files.pythonhosted.org/packages/88/f4/4fc95d6b95cbed615811fc9296a155e332008ffeed04370d90421758ecbb/rich_gradient-0.3.2.tar.gz"
-    sha256 "eaa99819d0dd38016ef26d0a902aee9836b49dec34044c8e03c5e9f05e3432b9"
+    url "https://files.pythonhosted.org/packages/bd/90/fe0cd9d18358294c681beeb51bbeb3505f53c6fca1cc119f06d1ab51f3b7/rich_gradient-0.3.3.tar.gz"
+    sha256 "4351050e45fe4c23ed80448e13637aa15a72e2d998925c2234896529a209820e"
   end
 
   resource "rpds-py" do
-    url "https://files.pythonhosted.org/packages/a5/aa/4456d84bbb54adc6a916fb10c9b374f78ac840337644e4a5eda229c81275/rpds_py-0.26.0.tar.gz"
-    sha256 "20dae58a859b0906f0685642e591056f1e787f3a8b39c8e8749a45dc7d26bdb0"
+    url "https://files.pythonhosted.org/packages/1e/d9/991a0dee12d9fc53ed027e26a26a64b151d77252ac477e22666b9688bc16/rpds_py-0.27.0.tar.gz"
+    sha256 "8b23cf252f180cda89220b378d917180f29d313cd6a07b2431c0d3b776aae86f"
   end
 
   resource "ruamel-yaml" do
@@ -294,18 +268,13 @@ class Mcpm < Formula
   end
 
   resource "sse-starlette" do
-    url "https://files.pythonhosted.org/packages/07/3e/eae74d8d33e3262bae0a7e023bb43d8bdd27980aa3557333f4632611151f/sse_starlette-2.4.1.tar.gz"
-    sha256 "7c8a800a1ca343e9165fc06bbda45c78e4c6166320707ae30b416c42da070926"
+    url "https://files.pythonhosted.org/packages/42/6f/22ed6e33f8a9e76ca0a412405f31abb844b779d52c5f96660766edcd737c/sse_starlette-3.0.2.tar.gz"
+    sha256 "ccd60b5765ebb3584d0de2d7a6e4f745672581de4f5005ab31c3a25d10b52b3a"
   end
 
   resource "starlette" do
     url "https://files.pythonhosted.org/packages/04/57/d062573f391d062710d4088fa1369428c38d51460ab6fedff920efef932e/starlette-0.47.2.tar.gz"
     sha256 "6ae9aa5db235e4846decc1e7b79c4f346adf41e9777aebeb49dfd09bbd7023d8"
-  end
-
-  resource "thefuzz" do
-    url "https://files.pythonhosted.org/packages/81/4b/d3eb25831590d6d7d38c2f2e3561d3ba41d490dc89cd91d9e65e7c812508/thefuzz-0.22.1.tar.gz"
-    sha256 "7138039a7ecf540da323792d8592ef9902b1d79eb78c147d4f20664de79f3680"
   end
 
   resource "tomli" do
@@ -316,11 +285,6 @@ class Mcpm < Formula
   resource "tomli-w" do
     url "https://files.pythonhosted.org/packages/19/75/241269d1da26b624c0d5e110e8149093c759b7a286138f4efd61a60e75fe/tomli_w-1.2.0.tar.gz"
     sha256 "2dd14fac5a47c27be9cd4c976af5a12d87fb1f0b4512f81d69cce3b35ae25021"
-  end
-
-  resource "tqdm" do
-    url "https://files.pythonhosted.org/packages/a8/4b/29b4ef32e036bb34e4ab51796dd745cdba7ed47ad142a9f4a1eb8e0c744d/tqdm-4.67.1.tar.gz"
-    sha256 "f8aef9c52c08c13a65f30ea34f4e5aac3fd1a34959879d7e59e63027286627f2"
   end
 
   resource "typer" do
@@ -336,11 +300,6 @@ class Mcpm < Formula
   resource "typing-inspection" do
     url "https://files.pythonhosted.org/packages/f8/b1/0c11f5058406b3af7609f121aaa6b609744687f1d158b3c3a5bf4cc94238/typing_inspection-0.4.1.tar.gz"
     sha256 "6ae134cc0203c33377d43188d4064e9b357dba58cff3185f22924610e70a9d28"
-  end
-
-  resource "ujson" do
-    url "https://files.pythonhosted.org/packages/f0/00/3110fd566786bfa542adb7932d62035e0c0ef662a8ff6544b6643b3d6fd7/ujson-5.10.0.tar.gz"
-    sha256 "b3cd8f3c5d8c7738257f1018880444f7b7d9b66232c64649f562d7ba86ad4bc1"
   end
 
   resource "urllib3" do

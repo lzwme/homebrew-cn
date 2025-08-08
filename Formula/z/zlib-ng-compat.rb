@@ -1,8 +1,8 @@
 class ZlibNgCompat < Formula
   desc "Zlib replacement with optimizations for next generation systems"
   homepage "https://github.com/zlib-ng/zlib-ng"
-  url "https://ghfast.top/https://github.com/zlib-ng/zlib-ng/archive/refs/tags/2.2.4.tar.gz"
-  sha256 "a73343c3093e5cdc50d9377997c3815b878fd110bf6511c2c7759f2afb90f5a3"
+  url "https://ghfast.top/https://github.com/zlib-ng/zlib-ng/archive/refs/tags/2.2.5.tar.gz"
+  sha256 "5b3b022489f3ced82384f06db1e13ba148cbce38c7941e424d6cb414416acd18"
   license "Zlib"
   head "https://github.com/zlib-ng/zlib-ng.git", branch: "develop"
 
@@ -11,13 +11,13 @@ class ZlibNgCompat < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "e2d7639b525b2b29a92177ba00e7f9dd20d7d686cb70bfeb7a4ed188b3c8facd"
-    sha256 cellar: :any,                 arm64_sonoma:  "c5349d5f9559feff1607c65e71522907e1ce5f0c7c7409ff6b0ee02142f3de9f"
-    sha256 cellar: :any,                 arm64_ventura: "b83317e0a1ca1730f74a02edf766237627d3799fad25e17274b1bd3b944ab7be"
-    sha256 cellar: :any,                 sonoma:        "e290f3ee57dfd952c5a901b12a1939d4acf3f49778ab975fbf884390be21ef81"
-    sha256 cellar: :any,                 ventura:       "1951f082859a44e33e0ae0d86d60ff9e3800654945e3c75aec0ce67da58277d6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "28f720023d21a91e58098f474093e58aeb81cf8c7c643bd28f2eb2510c3427b6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c3f0416dc6d54348eddc7a621f3ec918069915ff9ec503a8ab88c3b9c677695b"
+    sha256 cellar: :any,                 arm64_sequoia: "d45195acef3111fc30f38266ceb5aab77039826629f4edd15897146ca05b7504"
+    sha256 cellar: :any,                 arm64_sonoma:  "e6cb4d804686d11b277d4a2cb11ddd5ab4cce08a49488e35a1c906729e3ba928"
+    sha256 cellar: :any,                 arm64_ventura: "5dfd915e6230af6ef5b47d84d47aa8a2637c4cf394b3738c82ad3965b9e922b0"
+    sha256 cellar: :any,                 sonoma:        "161a20f0d8ebcc6b35420e4432f76030a3185d59a46c70372ee8774eaddb3d31"
+    sha256 cellar: :any,                 ventura:       "e3cf0ba70aa78eb5aab4781eab9dc83d1f42f8a738ff1972ddaa89194aa62cb3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "63f4ad278cdc3ff300a20c6942d02aaaa546e2b5a5dccff15cc4ef399ba1ef50"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c5c3a36039641f76ec48434419c63e422c8a28ee9027492bcd57860e56f2e8c2"
   end
 
   keg_only :shadowed_by_macos, "macOS provides zlib"
