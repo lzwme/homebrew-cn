@@ -4,19 +4,18 @@ class Onnx < Formula
   url "https://ghfast.top/https://github.com/onnx/onnx/archive/refs/tags/v1.17.0.tar.gz"
   sha256 "8d5e983c36037003615e5a02d36b18fc286541bf52de1a78f6cf9f32005a820e"
   license "Apache-2.0"
-  revision 2
+  revision 3
 
   no_autobump! because: :requires_manual_review
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "87e803d38d384328e30a6104d461aa429168f34f90166034effa1f2393e68cc2"
-    sha256 cellar: :any,                 arm64_sonoma:  "24042b9d2631f8eaa656651f4d8ae2c0bcf21c9494ad83af0d4157171df0a1dd"
-    sha256 cellar: :any,                 arm64_ventura: "4ea1894f1dbcf250d0a5a8fc6189dae1223c4c8f0540c6e2ce6ddb275d8e578a"
-    sha256 cellar: :any,                 sonoma:        "d3d1459cffc0e2547efc589427b32bf67cf6d5e6daedf30c62747d7bc1bedb61"
-    sha256 cellar: :any,                 ventura:       "657fa2a17084889403dc19a6385df4979c6bade3eea063e559668f387d5017c2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3f8ade75bd41095e4e6104c6fa4f3a296c52c626a5fc58ff63c13d8d859e53a3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9527543ac126f35a52e537eb66386e7a73abc22c197cfc6e5e199dd3eeb949ad"
+    sha256 cellar: :any,                 arm64_sequoia: "ed90ec9ff47babc3a8f7e39c099035ec8facd5bab8e54c2e1b36dcc8c3a8c836"
+    sha256 cellar: :any,                 arm64_sonoma:  "6ab93d5c23e294f5ae1fa673a3ff5ce243f007bdc1c4e29b331fd2169cad3f30"
+    sha256 cellar: :any,                 arm64_ventura: "3cd4c926f52dfb80d477426a4239bfd1ea2adb8199a5a632360619d710b88157"
+    sha256 cellar: :any,                 sonoma:        "a8da2d05a39dd07e0afb577456d5dc705ef6df2d383beb535b7fb7ec709565a0"
+    sha256 cellar: :any,                 ventura:       "4796b3c405ca858390745034da1ed1ca0a2556e09a1f94717aecb951a6bf5f6c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "002cfa8f0251bf6eaf4cd4b591cd102c872bf74feeca67428d1032f7c0840b47"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9616ae7d1c8043f6d8ca813658be94493e11be7038aa85f97e0b6ceef66081c8"
   end
 
   depends_on "cmake" => [:build, :test]

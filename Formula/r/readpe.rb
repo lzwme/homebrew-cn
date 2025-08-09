@@ -1,21 +1,19 @@
 class Readpe < Formula
   desc "PE analysis toolkit"
   homepage "https://github.com/mentebinaria/readpe"
-  url "https://ghfast.top/https://github.com/mentebinaria/readpe/archive/refs/tags/v0.84.tar.gz"
-  sha256 "2d0dc383735802db62234297ae1703ccbf4b6d2f2754e284eb90d6f0a57aa670"
+  url "https://ghfast.top/https://github.com/mentebinaria/readpe/archive/refs/tags/v0.85.tar.gz"
+  sha256 "2747a3ee87c7fb1ed0a13242816752a94603adb6ae0d9f507b019ac582c394eb"
   license "GPL-2.0-or-later"
   head "https://github.com/mentebinaria/readpe.git", branch: "master"
 
   bottle do
-    sha256 arm64_sequoia:  "a68a6f0b54b9428abfeca6dccbac97567ecfafc1b0d2871706dd0f22f65d7c9e"
-    sha256 arm64_sonoma:   "23cc8ab364a477bd245a3771e0fefd945849f6feab70b1288f6db421f1f1a71c"
-    sha256 arm64_ventura:  "8dbca0ad687464fff69c0b7092ff9f08aa76f9eb50595836e239dfd957514032"
-    sha256 arm64_monterey: "809b896ec49463d5f5246236b6da178b6e34e97df8807ff2b1a3b26ec3342a3a"
-    sha256 sonoma:         "fa76a24e56248862f78f3533071511bbb799a7dc7cf73e7053ce20075df5c36a"
-    sha256 ventura:        "853736579e5cf2720e23fdc87b76743df8f2da3cd443f7800534b5d12f5c1c0f"
-    sha256 monterey:       "ec16bb320368c12138d4d78c7cd1d8d93df6ea966f257d3b15bf0772084a0002"
-    sha256 arm64_linux:    "9a4e8b547d3a3121f13f28da2a37f4ebafe1819dd2de79c07fb9c9e9ea9c6d56"
-    sha256 x86_64_linux:   "7f4cb2c34a30a64949fe31d4597454732c7e99f1bbe3b450d317a9e4f0da5d61"
+    sha256 arm64_sequoia: "f98b2e4b55298db97d368ad4ccfe9f5dbe74286eab43d1e71b26d7043a9ba26e"
+    sha256 arm64_sonoma:  "f29c0dba37afbad7e277e654f496dca1b0a46a43a482e313e4d6029b64cde131"
+    sha256 arm64_ventura: "cdaf14255fe12a62de0aceeeaba0295d5473982f5a4de83e0d0c1c488fe13c1b"
+    sha256 sonoma:        "06fdfb9de15adba67c1793252809ac31026b7a57c3f257a7ea9faa10d48407bc"
+    sha256 ventura:       "9c79adc8221e526425dc76077514693106bed211decdeef14ce38651c661d03c"
+    sha256 arm64_linux:   "73486c7e47dff8c7e522d2e153f99c78334f06c8e173d2934a3734aef18a4156"
+    sha256 x86_64_linux:  "6174a21139b0e037802e51d54262fc2ad2ce5e4367d84ad38703d68daf11bdf5"
   end
 
   depends_on "openssl@3"

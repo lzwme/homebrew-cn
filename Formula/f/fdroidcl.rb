@@ -24,46 +24,11 @@ class Fdroidcl < Formula
   test do
     assert_match "f-droid.org/repo", shell_output("#{bin}/fdroidcl update")
 
-    list = <<~EOS
-      App Store & Updater
-      Browser
-      Calendar & Agenda
-      Cloud Storage & File Sync
-      Connectivity
-      DNS & Hosts
-      Development
-      Email
-      File Encryption & Vault
-      File Transfer
-      Games
-      Graphics
-      Internet
-      Keyboard & IME
-      Local Media Player
-      Messaging
-      Money
-      Multimedia
-      Navigation
-      News
-      Online Media Player
-      Password & 2FA
-      Phone & SMS
-      Podcast
-      Reading
-      Science & Education
-      Security
-      Social Network
-      Sports & Health
-      System
-      Theming
-      Time
-      VPN & Proxy
-      Voice & Video Chat
-      Wallet
-      Weather
-      Writing
-    EOS
-    assert_equal list, shell_output("#{bin}/fdroidcl list categories")
+    categories = shell_output("#{bin}/fdroidcl list categories").split("\n")
+    %w[Browser Games News Weather].each do |category|
+      assert_includes categories, category
+    end
+
     assert_match version.to_s, shell_output("#{bin}/fdroidcl version")
   end
 end

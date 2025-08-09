@@ -47,7 +47,6 @@ class Root < Formula
   depends_on "numpy" # for tmva
   depends_on "openblas"
   depends_on "openssl@3"
-  depends_on "pcre"
   depends_on "pcre2"
   depends_on "python@3.13"
   depends_on "sqlite"

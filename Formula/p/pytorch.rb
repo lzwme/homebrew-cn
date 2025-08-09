@@ -6,7 +6,7 @@ class Pytorch < Formula
   url "https://ghfast.top/https://github.com/pytorch/pytorch/releases/download/v2.5.1/pytorch-v2.5.1.tar.gz"
   sha256 "740eb5fff95e33cfe699bad43be83523f569c7cc7f9c285c2a255416443dd266"
   license "BSD-3-Clause"
-  revision 4
+  revision 5
 
   livecheck do
     url :stable
@@ -16,12 +16,10 @@ class Pytorch < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "ec01ffac0aa0b57f68f549662c25d92a1dad3f2e339f7c3dc854170c17605971"
-    sha256 cellar: :any,                 arm64_sonoma:  "5014d4b9765a0d095e999622a2d3dd11b86fe35cd3fdbd8326c650899ec9fba8"
-    sha256 cellar: :any,                 arm64_ventura: "c605e16c0afed8013bb521270d19b816709769962b2a086faa22dcd131a11e06"
-    sha256 cellar: :any,                 sonoma:        "3385569ccb7ac7be5aabdbd7011b30f99c646ce1c78b6857c73cf5f63ee5f0de"
-    sha256 cellar: :any,                 ventura:       "3e7459213ca3d58b131768f6fe0b89b1f0054fc39a9ca0d80a1ea5bd6bdc307d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ba32d918d891c1ad8f8b76c128599dac25cba702616f32d21a0b66402b77c8bd"
+    sha256 cellar: :any, arm64_sonoma:  "4674f22f074126567e0ba48f3d641bb5cf684acf776ccee8b64d2d77ba659d62"
+    sha256 cellar: :any, arm64_ventura: "990ff5cfb9f230d5c89e31344ad7b8af4486b214d09a967b39e4cf1f95deb157"
+    sha256 cellar: :any, sonoma:        "c48ef52a97cfba3d644963298428dfbeba3f7172cb515cd4ea775c626dd3474e"
+    sha256 cellar: :any, ventura:       "63d9c470cc30991708d648cfd5d7faa56553b8f399e47fd57703aab9beae143e"
   end
 
   depends_on "cmake" => :build
@@ -122,6 +120,13 @@ class Pytorch < Formula
     ENV["USE_SYSTEM_PYBIND11"] = "ON"
     ENV["USE_SYSTEM_SLEEF"] = "ON"
     ENV["USE_MPS"] = "ON" if OS.mac?
+
+    # cmake 4 build patch for third parties
+    ENV["CMAKE_POLICY_VERSION_MINIMUM"] = "3.5"
+
+    # Workaround for
+    # error: a template argument list is expected after a name prefixed by the template keyword
+    ENV.append_to_cflags "-Wmissing-template-arg-list-after-template-kw"
 
     # Avoid references to Homebrew shims
     inreplace "caffe2/core/macros.h.in", "${CMAKE_CXX_COMPILER}", ENV.cxx

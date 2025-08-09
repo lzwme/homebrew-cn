@@ -1,29 +1,19 @@
 class Polyml < Formula
   desc "Standard ML implementation"
   homepage "https://www.polyml.org/"
-  url "https://ghfast.top/https://github.com/polyml/polyml/archive/refs/tags/v5.9.1.tar.gz"
-  sha256 "52f56a57a4f308f79446d479e744312195b298aa65181893bce2dfc023a3663c"
+  url "https://ghfast.top/https://github.com/polyml/polyml/archive/refs/tags/v5.9.2.tar.gz"
+  sha256 "5cf5f77767568c25cf880acc2d0a32ee3d399e935475ab1626e8192fc3b07390"
   license "LGPL-2.1-or-later"
   head "https://github.com/polyml/polyml.git", branch: "master"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
-    sha256 arm64_sequoia:  "956ba9b862e294bd6ebd6efb29ab46446bbcf9d29c09dcbab2003d4ba76bc4eb"
-    sha256 arm64_sonoma:   "8da7733920403e84fc73e04e2ba73e163630f063daf01d325f777c21ef2faf4c"
-    sha256 arm64_ventura:  "e747d6bb96b8aaa374e27d1bb85cfa599f136ab1cfeecbdfffecc01e9dd0326f"
-    sha256 arm64_monterey: "92714106cbec11b63c34e38e358e9df4702ba7db81142fc8b6ba80d6e8f36c64"
-    sha256 sonoma:         "09a1a0630dadbaca774010a8bf8a017025aeea595f3bf2f1cafbe4a9bdc55431"
-    sha256 ventura:        "08a8aea9356cf8fbc35a863668dd554ba4f7196176969f9a95e8217279747e7b"
-    sha256 monterey:       "9a8ef34cc09cbbd5871f0de8167a63aa80e7ac476f3169e6c2726b28ef5b9db2"
-    sha256 arm64_linux:    "c17c19d56fb21ebd5df29726c787d7a53deeee0206a79d2dc20a297dd6f77458"
-    sha256 x86_64_linux:   "2c629afd3ff1ad92cdbc78d7b3f638747e4851f8011e1393498aada95c3f452b"
-  end
-
-  # Fix -flat_namespace being used on Big Sur and later.
-  patch do
-    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-big_sur.diff"
-    sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
+    sha256 arm64_sequoia: "937771b69a2cbe3e80edc278897b1e1b72b8976c06febc1cba609069e1bd16e6"
+    sha256 arm64_sonoma:  "547f2f271d7190f9f5a9d7bcd0f128ee5955981ac05817db081e3e351b7a9ee1"
+    sha256 arm64_ventura: "55de2b3a7d090a5a48d28c4e17c1df3953426c530ff4abd36bbd3b2aee08fe8d"
+    sha256 sonoma:        "ef8d624eaa7afe576b0e515dc44d073b4c1f94687a6d74e7dcfb01f9a3bc7723"
+    sha256 ventura:       "0e6b440ca663bf2381929c8221981d42a8512358bc72ee793011dd46ee361c9d"
+    sha256 arm64_linux:   "3788ade9f88c53eba01afad3312af68ff99d7214c2537515a9fce47567266e99"
+    sha256 x86_64_linux:  "05b1f452df38e1aec8f76a6c625ab764ecc3dec75ee0f0b26f608157094c0a20"
   end
 
   def install

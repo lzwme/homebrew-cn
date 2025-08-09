@@ -4,16 +4,16 @@ class Fastnetmon < Formula
   url "https://ghfast.top/https://github.com/pavel-odintsov/fastnetmon/archive/refs/tags/v1.2.8.tar.gz"
   sha256 "d16901b00963f395241c818d02ad2751f14e33fd32ed3cb3011641ab680e0d01"
   license "GPL-2.0-only"
-  revision 8
+  revision 9
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "9ed5a031a34d20a59b07e1ee4ab3c43d2aabe786414242862182e0d0d199d698"
-    sha256 cellar: :any,                 arm64_sonoma:  "0fd7cb08efd894283cdfacc0911113dee09a39b9850a56a1a9c2d97b6652800c"
-    sha256 cellar: :any,                 arm64_ventura: "ac0c43c5835ef93b7baa182fb707620164041cb49c1807228badba9871e0f22a"
-    sha256 cellar: :any,                 sonoma:        "b1ee9fd3a9a5cf01d0d42f219dc73103cc7f7786546cba66c7be82c4bbc9077a"
-    sha256 cellar: :any,                 ventura:       "92ed8507d11b3d7e7d6f326d3e5a5affae79b023b48dd5a85c8d83e62cc3e016"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "31a3e479570524c60852ecf0225972d67cc3bd59e528fc124061342cc3e19439"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "61d362c6abe88d6ab26bf5e7a1e652a034b04b2463cae69e5db97b186c59d0ae"
+    sha256 cellar: :any,                 arm64_sequoia: "622b5db08a0259147cbb27f2f2f2055175bbc72921b4d4541d2335eafc0344fe"
+    sha256 cellar: :any,                 arm64_sonoma:  "1c57ec57999449a15014ae972fd8e15bb02c5856f9afb48918253032968fdce8"
+    sha256 cellar: :any,                 arm64_ventura: "473cb07326da9481ee5243d8df36277c079f2f7f23d8344a550243412ec387c6"
+    sha256 cellar: :any,                 sonoma:        "b18d3a48da84cb6a20240ec40d666d03e0488bffb1dd3eb237c8c2dde25c3ef8"
+    sha256 cellar: :any,                 ventura:       "1aee4d1738addb121098d52942cbf06d3ceb9578416af71db423622137578aa1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3d3c4209a4d80c4abcfaa892d3862c955b655f13984091c0ec3945a9ff4fdf6c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7dd70bdfd98d1a26a5ed6e260f64539015ef9b2a38f33a3a5f22f36d3eb8bb37"
   end
 
   depends_on "cmake" => :build

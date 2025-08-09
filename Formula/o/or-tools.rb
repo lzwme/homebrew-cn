@@ -4,6 +4,7 @@ class OrTools < Formula
   url "https://ghfast.top/https://github.com/google/or-tools/archive/refs/tags/v9.14.tar.gz"
   sha256 "9019facf316b54ee72bb58827efc875df4cfbb328fbf2b367615bf2226dd94ca"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/google/or-tools.git", branch: "stable"
 
   livecheck do
@@ -12,12 +13,12 @@ class OrTools < Formula
   end
 
   bottle do
-    sha256                               arm64_sequoia: "e9c776a67231ce836f2338d3411829368eb691900222b8f1fd2c038d0ca6ad4b"
-    sha256                               arm64_sonoma:  "5c4f56ad3f0b37163a4170d4403726accbcebac0852f881e948834cdafaa0f12"
-    sha256                               arm64_ventura: "671f302bf07cd51da141708328d7ad784ce40f9dc07b965c94b30764f58cd5dd"
-    sha256 cellar: :any,                 sonoma:        "864db82fd26b0d93bb4b7e760850d737767778b485ab3a8125c46578c31e3ca3"
-    sha256 cellar: :any,                 ventura:       "c51d79040006283f086ffb84723840a772f437b149f1d8e57ec84cb73f378c58"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f57d60129669da947b3e3ec771568dad25c6d6e30de8f63f80d9399ee79e4440"
+    sha256 cellar: :any,                 arm64_sequoia: "d9e21df58ba94dbf6c91b84b5a2077273732cee4c13bc0eb3f2f73a203db5438"
+    sha256 cellar: :any,                 arm64_sonoma:  "1af6505b110527a7d42a100e322111b5002491ac07116796d5360f12bcc8b734"
+    sha256 cellar: :any,                 arm64_ventura: "c54d8ab752370dd67633e5aa75c97bcfde837352a221964d1168d32d60247116"
+    sha256 cellar: :any,                 sonoma:        "2c6a323eddb3ee293f2a6e603538468c91486911927836d7c25e3d45d4c18fef"
+    sha256 cellar: :any,                 ventura:       "c8fb7f51c6b20b5c7c202dfc58cd524b5f8e2aa90eaf54630a0b98019a79f806"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "09c5f989198f535a4e15a7b5745ae63e47bbfcac963e821fe2191312c339812a"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -32,7 +33,6 @@ class OrTools < Formula
   depends_on "osi"
   depends_on "protobuf"
   depends_on "re2"
-  depends_on "scip"
   uses_from_macos "bzip2"
   uses_from_macos "zlib"
 

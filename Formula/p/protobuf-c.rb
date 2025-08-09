@@ -4,15 +4,16 @@ class ProtobufC < Formula
   url "https://ghfast.top/https://github.com/protobuf-c/protobuf-c/releases/download/v1.5.2/protobuf-c-1.5.2.tar.gz"
   sha256 "e2c86271873a79c92b58fef7ebf8de1aa0df4738347a8bd5d4e65a80a16d0d24"
   license "BSD-2-Clause"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "a4c6dbe4ec1d26e23e6e64fcf119bf6b09c558fb4433a53be2e2de0e1ed6611a"
-    sha256 cellar: :any,                 arm64_sonoma:  "2c43aeeb810402ebfda6130aa5c542e039ef220430beff018ea5f882d2507ff9"
-    sha256 cellar: :any,                 arm64_ventura: "34f6256e4e965cb4feabad6f18797443f9b8828019e2a8952ae5e4d71a180b13"
-    sha256 cellar: :any,                 sonoma:        "3bf90fd0fb9e303a6c50b66e2ac116c30a81b45491b3345027f3ba6d0e87e841"
-    sha256 cellar: :any,                 ventura:       "7489118f2098d2374da1776d28924c0830a235ee20128383d0c7deae7ed7e04b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "dae0763672aca79ff944c60ecb03b040c47f7e1f6be998f7c473977ba9d689fb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b145453b03874422ac9c7890113ae68c34c07d679ba05f47e2bab90b093a59e9"
+    sha256 cellar: :any,                 arm64_sequoia: "8e83f77a082a599c5214eb36784c28ead28888e93b67ce81a74d675efee24e56"
+    sha256 cellar: :any,                 arm64_sonoma:  "c84ed0bff05454ba891117c2f27eee7fe878eec792ab72176597c524770c4846"
+    sha256 cellar: :any,                 arm64_ventura: "38ae66e6b2407b36de588dbb3d978c6175719b16b20725bbaf517070cc40592a"
+    sha256 cellar: :any,                 sonoma:        "5d8f1712d6a6421f70b562945a296059e8645b8532b4994785d0ea06eb213638"
+    sha256 cellar: :any,                 ventura:       "f8c32fc2ce0484501367ea15ba9caf0f66366dd0e8f2a2446a7b978a8645478d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "79d805961a64bc2d8b7d6eed3d08edf4a9806cf5d3ccbb8322d9cbec055d544c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "24e019e3ac05d606e1b17d1e85b83f3ffa8300c8c27e0898d22431390e51511c"
   end
 
   head do

@@ -1,20 +1,20 @@
 class GitSpice < Formula
   desc "Manage stacked Git branches"
   homepage "https://abhinav.github.io/git-spice/"
-  url "https://ghfast.top/https://github.com/abhinav/git-spice/archive/refs/tags/v0.16.0.tar.gz"
-  sha256 "120743a19effd928bcaf0e28812d036bfecc1434f91ca332342ea427048b4ce9"
+  url "https://ghfast.top/https://github.com/abhinav/git-spice/archive/refs/tags/v0.16.1.tar.gz"
+  sha256 "c38ea07d5e6db22880917ff0ac6f5d909844058b01949fee480fed6a8269bd59"
   license "GPL-3.0-or-later"
   head "https://github.com/abhinav/git-spice.git", branch: "main"
 
   no_autobump! because: :bumped_by_upstream
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2d38fdddb1f8cb3cf5db25301cbd6bab8e4b7f3bf245cc18e2d98215ac7174bb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2d38fdddb1f8cb3cf5db25301cbd6bab8e4b7f3bf245cc18e2d98215ac7174bb"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "2d38fdddb1f8cb3cf5db25301cbd6bab8e4b7f3bf245cc18e2d98215ac7174bb"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7503694b60fee847d5c9683dcee54b9e482812ba44ce73def20d38c9ecc16c58"
-    sha256 cellar: :any_skip_relocation, ventura:       "7503694b60fee847d5c9683dcee54b9e482812ba44ce73def20d38c9ecc16c58"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "037fdd2636a74bf56ee74635b33e62094c63457b2567a03c80fef5193a2e122d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0ff4e834450d2eb4a4dd31b5e9944a8945c70b40f1f60fdf8f9b4eeaf2d04a2d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0ff4e834450d2eb4a4dd31b5e9944a8945c70b40f1f60fdf8f9b4eeaf2d04a2d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "0ff4e834450d2eb4a4dd31b5e9944a8945c70b40f1f60fdf8f9b4eeaf2d04a2d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "80c1130063ffd2d7e4f5d50230de219b586fe51e011b3ca775038560d2fefcbb"
+    sha256 cellar: :any_skip_relocation, ventura:       "80c1130063ffd2d7e4f5d50230de219b586fe51e011b3ca775038560d2fefcbb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b5e184e1689e921b9140a2dbf1bc7002a72822a423b4860ee7cbe706207eb505"
   end
 
   depends_on "go" => :build

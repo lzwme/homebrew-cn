@@ -3,27 +3,32 @@ class Copyparty < Formula
 
   desc "Portable file server"
   homepage "https://github.com/9001/copyparty"
-  url "https://files.pythonhosted.org/packages/07/48/5170943361caaa8796239370d0ffbc3ea348d79342d01e307bc53c115298/copyparty-1.18.10.tar.gz"
-  sha256 "f8ef477a2e5176116550be1eecf7df96c91434f8125e5ecb310a3c6c927eeaf5"
+  url "https://files.pythonhosted.org/packages/a6/e8/801751a3edbd51e9e37834c01f6fa7e9d3c608ed2d66ec76f097abb5bd7c/copyparty-1.19.0.tar.gz"
+  sha256 "6faf2402f48a01b1725d8ee8e9eb074f885ff099fbde16e1b18e6f547144f51e"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "a91a29f9733d754d22e4b48a49f9dc6d06b807766cf53cb975f13bdf5b6b4970"
-    sha256 cellar: :any,                 arm64_sonoma:  "10de6709d43dba0c2b7b0956d93305bab0af3f8b061459d6ca72772f776c3f5a"
-    sha256 cellar: :any,                 arm64_ventura: "4362ad06ff8c5fc22ea7f6ea324f2b22225d7971b4dd4ad761b05af7208c74d8"
-    sha256 cellar: :any,                 sonoma:        "4a859bfa0a9ad692b6c2099bda111e16711efd75061268437877e2a01b246a7d"
-    sha256 cellar: :any,                 ventura:       "7370a960d868e8755d0fd335a94c91d431edd2fc06ef15d1a9eea9e37bd7316f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "806d9617292df56e1cbf153f2568b211cd7d98322f181630ac314bb115942297"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5c4f1d970e2eac9c7c58347a2ccc54b128fcc3b982d31e0fc8c2b18844a9f3c2"
+    sha256 cellar: :any,                 arm64_sequoia: "dfe6846968b4ba4b26c1a45f76ea8f7c19ed0b833b5892774d8cefcc74a102cc"
+    sha256 cellar: :any,                 arm64_sonoma:  "1cd9903a036b00cb80d0f5bb788928155e90f2dcdf2cc2f771a9499736032b55"
+    sha256 cellar: :any,                 arm64_ventura: "2d152fa21ff12c04b1c8629881266cd787907744971e7ac83449326284276061"
+    sha256 cellar: :any,                 sonoma:        "9882647d901a18f9eea55ab3429841a6cadfb013e80066128d70f1f841952903"
+    sha256 cellar: :any,                 ventura:       "83e69265b034004747456e4b1900c6276436b93dffa1ff254b3b22c3d97c591c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4f2621cf95b9b801b5faeef5045c48f2d9e4e832dcd271015f97234bda6e940a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "489924f7e035e57e8e3b11d33564d2c8ed6165e16c1681932561ddb07ec50099"
   end
 
   depends_on "cmake" => :build
   depends_on "ninja" => :build
   depends_on "pkgconf" => :build
   depends_on "cryptography"
+  depends_on "glib"
   depends_on "python@3.13"
   depends_on "vips"
   depends_on "zeromq"
+
+  on_macos do
+    depends_on "gettext"
+  end
 
   resource "argon2-cffi" do
     url "https://files.pythonhosted.org/packages/0e/89/ce5af8a7d472a67cc819d5d998aa8c82c5d860608c4db9f46f1162d7dab9/argon2_cffi-25.1.0.tar.gz"

@@ -6,6 +6,7 @@ class Openvino < Formula
   url "https://ghfast.top/https://github.com/openvinotoolkit/openvino/archive/refs/tags/2025.0.0.tar.gz"
   sha256 "d2cbff5a0ac1bc738c33ba103569f8daf20d3a17d3db94da11ae207ffb9e4395"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/openvinotoolkit/openvino.git", branch: "master"
 
   livecheck do
@@ -16,12 +17,11 @@ class Openvino < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "95709208344d92723a834f0ebee93d7070547e49eb677a46d66f5289039891fd"
-    sha256 cellar: :any,                 arm64_sonoma:  "2c6c71ee8441e3f45f14cda2ed0b9e95c582aa9dce3f80a90bd2cc4e2ada3526"
-    sha256 cellar: :any,                 arm64_ventura: "dbb9da7ce2c386c0d28b3349d01524b3298afdf46a0c1be8f7c7ef9bf0c65e60"
-    sha256 cellar: :any,                 sonoma:        "6443b56a2b56b273f04a716e87dc25d96e486f3955733631c2ac5c92dab80f94"
-    sha256 cellar: :any,                 ventura:       "ec5ed79b6a10cf6dab861e3eafe3fdc925ce9fdaafb8a89e7cca6e379fe8e10a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "db2178c8c3450d514c0ec118be1e84710cde5c516ea0c3c32c6ae8b458287394"
+    sha256 cellar: :any, arm64_sequoia: "d20e686f3921e4cf7eccac47b341e610dbec903d832d4acbe9b555fe0e11fd13"
+    sha256 cellar: :any, arm64_sonoma:  "62704e9e8b98e4340244e428c55ca0417030afdf60d5a2d7a1217923f318c8b4"
+    sha256 cellar: :any, arm64_ventura: "e5387ed189548bf3210ac895a529e663eaf8fc55478f556fe189bc33df68c8bb"
+    sha256 cellar: :any, sonoma:        "d1e4d40b21eddb15c8c666dc3ddeed7ba21dcf1d7bdb1decce15f622b49ccca4"
+    sha256 cellar: :any, ventura:       "7173caab75a184ccb8e426afb02be7efb468d6baba67b06cbecefe1f1d015088"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -88,6 +88,9 @@ class Openvino < Formula
   end
 
   def install
+    # cmake 4 build patch for third parties
+    ENV["CMAKE_POLICY_VERSION_MINIMUM"] = "3.5"
+
     # Remove git cloned 3rd party to make sure formula dependencies are used
     dependencies = %w[thirdparty/ocl
                       thirdparty/xbyak thirdparty/gflags

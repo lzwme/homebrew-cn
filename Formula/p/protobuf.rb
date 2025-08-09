@@ -4,6 +4,7 @@ class Protobuf < Formula
   url "https://ghfast.top/https://github.com/protocolbuffers/protobuf/releases/download/v29.3/protobuf-29.3.tar.gz"
   sha256 "008a11cc56f9b96679b4c285fd05f46d317d685be3ab524b2a310be0fbad987e"
   license "BSD-3-Clause"
+  revision 1
 
   livecheck do
     url :stable
@@ -11,14 +12,13 @@ class Protobuf < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256                               arm64_sequoia: "8ac9ede06ec4f11b5b2c47b3f15a35cfb74043b716e4a91b4287b7345cdd80fb"
-    sha256                               arm64_sonoma:  "2150b2720b5ae9bae3d1a7389b5ffb7085847eea5d0acf2757ebccb68289ca29"
-    sha256                               arm64_ventura: "1db7cb15f9a82062cec8fb21d911eade129bb44067ea936db52ae42411a3e864"
-    sha256 cellar: :any,                 sonoma:        "c02c1b1d259c09adfb869080dbbda7737d50fa6a3f0da77e431900f903cbea7a"
-    sha256 cellar: :any,                 ventura:       "1d5a65d7d6155938c6de69878710c8058da2e57c61fcc4d45af0e189cebb7154"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "03fc2bf06769c453368a8018168655efce163d57cda11671a5bd92306f864bdd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d26e7e4f01c1f4259ddaacdaab92bb709623e2e4b0ba963400d26c367c24d4b3"
+    sha256 cellar: :any,                 arm64_sequoia: "96f3a7755a630b2372e1dc18d10a803d56ac3c966ace84caac9af31110700429"
+    sha256 cellar: :any,                 arm64_sonoma:  "7c87c79423ea24d2cbd9e6cd7162324137dd486d04e8aa9f8c73e3d355149cd8"
+    sha256 cellar: :any,                 arm64_ventura: "bb6160063f2163636b416c2532a7ceba328ccca70bb979af95e8115786d540a7"
+    sha256 cellar: :any,                 sonoma:        "47f034e4a05137134ae37688830815040b78bb0c26d468e866f0fe8bca2f46ce"
+    sha256 cellar: :any,                 ventura:       "af5631783e4302a4d6b02078e62e0aee64ce3f0fa94ec3ee0ba624cf4d678d90"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1d79abad3aa4cfd7f187a72204c2dc93cc0d5438cff490220f40e73727b81fbf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b759e411c49ff28ee2ec516519a9b254ed3762d45835d7479d0b520bc4d32ec6"
   end
 
   depends_on "cmake" => :build

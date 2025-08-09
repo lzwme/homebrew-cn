@@ -1,18 +1,18 @@
 class Mcphost < Formula
   desc "CLI host for LLMs to interact with tools via MCP"
   homepage "https://github.com/mark3labs/mcphost"
-  url "https://ghfast.top/https://github.com/mark3labs/mcphost/archive/refs/tags/v0.27.0.tar.gz"
-  sha256 "a98b6510c6dd0750380ecd2a7ac577235d01edc79c547f633c006d95ed3de83c"
+  url "https://ghfast.top/https://github.com/mark3labs/mcphost/archive/refs/tags/v0.28.0.tar.gz"
+  sha256 "8bb1a75f8b29f414735c52a64d0a9d8b0f114f99d9a2803d7dff62fe4fb2091f"
   license "MIT"
   head "https://github.com/mark3labs/mcphost.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "013fabfbb5e403593f3e6ab4ab9be3aadde0f30c2274b0a42e131d881162e16d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "013fabfbb5e403593f3e6ab4ab9be3aadde0f30c2274b0a42e131d881162e16d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "013fabfbb5e403593f3e6ab4ab9be3aadde0f30c2274b0a42e131d881162e16d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8a2712f5477c0a6a0bbcc72cbfeadcff686c7eead0b51f1ddbeba9bb06490c49"
-    sha256 cellar: :any_skip_relocation, ventura:       "8a2712f5477c0a6a0bbcc72cbfeadcff686c7eead0b51f1ddbeba9bb06490c49"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "600072d0ce5ff91403d9edebcb2929fa3ad2cc8462c2709d99274b165983e131"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9d7576dab3b8719a36dd96835b8e8612c67af6dd44df8f65a37345232c1fc7c6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9d7576dab3b8719a36dd96835b8e8612c67af6dd44df8f65a37345232c1fc7c6"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "9d7576dab3b8719a36dd96835b8e8612c67af6dd44df8f65a37345232c1fc7c6"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e71fb7b93cb380dd2b624e3d0cd89e64ea8d857f2b89f84c6ca9dad9ab37d9b6"
+    sha256 cellar: :any_skip_relocation, ventura:       "e71fb7b93cb380dd2b624e3d0cd89e64ea8d857f2b89f84c6ca9dad9ab37d9b6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "01ecccc420524b47a923217ebe936ae29932fa32d2432c96ca17e9fc99473aed"
   end
 
   depends_on "go" => :build

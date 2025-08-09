@@ -4627,6 +4627,7 @@ Homebrew-homebrew-core/Formula/m/msieve.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/msitools.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/msktutil.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/msmtp.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/m/msolve.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mspdebug.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mstch.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mt32emu.rb, Homebrew/homebrew-core, 1
@@ -8706,6 +8707,7 @@ Homebrew-homebrew-cask/Casks/c/cura-lulzbot.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/curio.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/curiosity.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/curseforge.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/c/cursor-cli.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/cursor.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/cursorcerer.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/cursorsense.rb, Homebrew/homebrew-cask, 0
@@ -8769,6 +8771,7 @@ Homebrew-homebrew-cask/Casks/d/dcp-o-matic-playlist-editor.rb, Homebrew/homebrew
 Homebrew-homebrew-cask/Casks/d/dcp-o-matic.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/dcv-viewer.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/dd-utility.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/d/dda.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/ddnet.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/ddpm.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/deadbeef@nightly.rb, Homebrew/homebrew-cask, 0
@@ -12120,6 +12123,7 @@ Homebrew-homebrew-cask/Casks/h/honto.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/h/hookmark.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/h/hookshot.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/h/hopper-disassembler.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/h/hoppscotch-selfhost.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/h/hoppscotch.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/h/horndis.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/h/horos.rb, Homebrew/homebrew-cask, 0

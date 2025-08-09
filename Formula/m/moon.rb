@@ -1,8 +1,8 @@
 class Moon < Formula
   desc "Task runner and repo management tool for the web ecosystem, written in Rust"
   homepage "https://moonrepo.dev/moon"
-  url "https://ghfast.top/https://github.com/moonrepo/moon/archive/refs/tags/v1.39.3.tar.gz"
-  sha256 "f1ecfa8e91c4a245d6186a8458cf1e9f6ab5bffe6cd83194250f4f862e190ef9"
+  url "https://ghfast.top/https://github.com/moonrepo/moon/archive/refs/tags/v1.39.4.tar.gz"
+  sha256 "20d4d16032ff0502c346a7772d3f623f1ba42b5d66f472ea03ab3f69eca042e5"
   license "MIT"
   head "https://github.com/moonrepo/moon.git", branch: "master"
 
@@ -12,13 +12,13 @@ class Moon < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "46fa43448c80211b537799ef5165e7b7dbde9dc38b63f54063b2d3b98c130a38"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7f6a57025dbf64a394f56ea72de8fb03994b7cffd5a466d7b208480f8aa728ae"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "e94767bb8df8e57f98894f9abfa6317f8b7a6bc982da2fcf3f259204a58745e7"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ea3da6502f6cc04c964e39591a67c1e62df55ec56bfdfa28546368ffddc808ea"
-    sha256 cellar: :any_skip_relocation, ventura:       "da490843f52d4a82cf97be6a49c74de62b5142a25cc891ade3f7f6f0f87370b1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0a8d2b1d03a2d7bb8eebdae372356bfaaf2fb9d0971f8a4981d91d192734ed6c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f5edf2bbdc92523ff2ce7ddc46ef74ba33e973debea4851b88622a56037cee17"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7052807e7fff1b75fd52936f59177deb469b01cdd8c28a8d04abdf289d8cce95"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c1ef6687a8aa92f4995adc8f5046a19c0cc4822133b8183520163cce0a40dc32"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "38f8f8960cd54e0d1abc606326f92077e4a3e8d05f8e5a176376871ea32e0570"
+    sha256 cellar: :any_skip_relocation, sonoma:        "37798249f2b7154d60239244688f9f1e9511436040c10eba5ec914db0197d3e4"
+    sha256 cellar: :any_skip_relocation, ventura:       "0d97b25dbfabcbec2304a3001852fbc081b84555374dee24d5e204018394de7d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2c9ddcaa0a32231f13cb6b3a449a999803611457a9d839aa0a5d3d6e78125c9b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "05122bb402cad1e913a5063e169245a754fc67090472e8c04b1ce4f40f6734d1"
   end
 
   depends_on "pkgconf" => :build

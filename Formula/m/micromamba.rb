@@ -1,8 +1,8 @@
 class Micromamba < Formula
   desc "Fast Cross-Platform Package Manager"
   homepage "https://github.com/mamba-org/mamba"
-  url "https://ghfast.top/https://github.com/mamba-org/mamba/archive/refs/tags/2.3.0.tar.gz"
-  sha256 "671432a2b64719baba54c9efda3662d321a1cc9ff3eba49047b83ffda9acf661"
+  url "https://ghfast.top/https://github.com/mamba-org/mamba/archive/refs/tags/2.3.1.tar.gz"
+  sha256 "a742b22c656f736408e0f044d412674ce9cfa84e8b85e9475afa5477f28a94ef"
   license "BSD-3-Clause"
   head "https://github.com/mamba-org/mamba.git", branch: "main"
 
@@ -14,13 +14,13 @@ class Micromamba < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "d1db7510ebc7520fbac4d5b645ae225ca6995118fc814297eef71bc0c6fa2fae"
-    sha256 cellar: :any,                 arm64_sonoma:  "dc6e9cdbca7699214acef54cf812ddf88fc9b42e875318613951f2782d0a05c5"
-    sha256 cellar: :any,                 arm64_ventura: "acb7151ed7cb3c8dff85e3900d0d28d4627e56f32064f35b8cb04c20776bd4cd"
-    sha256 cellar: :any,                 sonoma:        "37bbfa7a9b2a29d1ff0fd6181333410a0497c0cb15af2d190ae2a7699c036e6c"
-    sha256 cellar: :any,                 ventura:       "cfe7699fe65306d4164468c80fe4961ed598e6dc8ac6d22e3f367794e6e7cba2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b03da1f11c51a5bec1d7b0fb1c20e9d0928a72d2d7636cbaacb4ca06df05927b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "477a6db697c772293935161277569dff71b0f1371b0e4cbe25d8d22a48b0670b"
+    sha256 cellar: :any,                 arm64_sequoia: "2e50877b3cab4d896dec76bb67aaff82bb5c466ce3b04f3ed3938d231fcc7c90"
+    sha256 cellar: :any,                 arm64_sonoma:  "b2fe418b2d4b17ce6e67ce510d44617577548efa09ffc7b937ac6c4cfec0d397"
+    sha256 cellar: :any,                 arm64_ventura: "a6790b6e5a91815bc05ed97d83f1b0c5adf07ef87f6ed64f47bf00f446eee3c3"
+    sha256 cellar: :any,                 sonoma:        "3db434a28b8d9094de0fd0accaa161f827d14054cca805fa33c434b534bbb0a0"
+    sha256 cellar: :any,                 ventura:       "69e86efbe40703583f4904c97f73146bfde26f2c24031888f8560805b305341c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2fce628a72ab646c2b32710c4a86d744d7791a1a4749901bce3915a1c32245ab"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fe23ed6e616e8c60ead8b1fbbdc3edca9dfa9953f9a5fadcfb21dc9731c6e89e"
   end
 
   depends_on "cli11" => :build

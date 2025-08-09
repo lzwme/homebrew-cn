@@ -4,15 +4,16 @@ class ProtocGenGrpcJava < Formula
   url "https://ghfast.top/https://github.com/grpc/grpc-java/archive/refs/tags/v1.74.0.tar.gz"
   sha256 "0c602853d2170c7104c767849935851baaf5a2c551ef0add040319ac3afe9bfc"
   license "Apache-2.0"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "56ddd1f6ab51f1f8b41a7806fd0c0df4839b070ab5d73d1084565f24fd2d8316"
-    sha256 cellar: :any,                 arm64_sonoma:  "39c6833c49cf5603ca42d2a170f758695d7082a164dd5ee4e434242705ac2e0d"
-    sha256 cellar: :any,                 arm64_ventura: "e7e14e1ec9e2f40985c9ec85c3df47a792a445a11e2e1b3d5a42eb7e48b0a066"
-    sha256 cellar: :any,                 sonoma:        "1d61d7fa40e55da67af7f8e8ba764d0b9fee1551042ce4db8bba3a74cb3f1638"
-    sha256 cellar: :any,                 ventura:       "932c3cf5d1f90ecac5a8abb186240ca8198238d0e626beaa1d57e2b8cecca53b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "74dde4573d8d2d4123f1fe4e1b0d05e45a32393ddd6740b79af7c45923095c6a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9dcb86cdac59907ef6adf8e1f21841d267a359125925a02e6ec934d5fa632f78"
+    sha256 cellar: :any,                 arm64_sequoia: "31c5ee2e83a22bd5ed837c3ea91441cb70b1a757ebb9f36a73fe27c26938cd31"
+    sha256 cellar: :any,                 arm64_sonoma:  "96b40957bc9bd6baf2ff14fddd586d1ac53b163d0ff4dcfe6b5861a49b3cba08"
+    sha256 cellar: :any,                 arm64_ventura: "808edf29d862c8629b134fe4f3c4bf5dec67eb18d35db9089b877c1921d495fb"
+    sha256 cellar: :any,                 sonoma:        "87cf289e0a1021f8fd3ab582f06d4fe4ea1ea2e3a6aab05c9f036aed6eeb3f24"
+    sha256 cellar: :any,                 ventura:       "a50f4af6414f11670c7858916b7e73297e8598a1b1746d9c75ef84763a2ce0ac"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f8d49ae404a0a5b8d5f43d9b14c65ed4f667d7569d80716a33cf57774fc67fff"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0bc4c4c14f985d0cff23828325809846b3b26a4210b55a60981866a0c1f55a1f"
   end
 
   depends_on "gradle@8" => :build

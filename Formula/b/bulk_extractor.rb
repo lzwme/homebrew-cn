@@ -4,7 +4,7 @@ class BulkExtractor < Formula
   url "https://ghfast.top/https://github.com/simsong/bulk_extractor/releases/download/v2.1.1/bulk_extractor-2.1.1.tar.gz"
   sha256 "0cd57c743581a66ea94d49edac2e89210c80a2a7cc90dd254d56940b3d41b7f7"
   license "MIT"
-  revision 1
+  revision 2
 
   livecheck do
     url :stable
@@ -12,15 +12,13 @@ class BulkExtractor < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "1193b1587c9351fb7c3339252cc5962de2b0c7488cb03a77d16483227deafb49"
-    sha256 cellar: :any,                 arm64_sonoma:   "d076c3c6ce906ef9136700601f34b51f720d3fc50d96ad04b578dcafa041c4d9"
-    sha256 cellar: :any,                 arm64_ventura:  "90bd56b74f11074cc420af7df33a15435cd46071eabaad0c7c081b7a225b83ae"
-    sha256 cellar: :any,                 arm64_monterey: "2bc48e662bd411bdaf258a34e214b00b6ee80f60904c8d846472610b798cbe67"
-    sha256 cellar: :any,                 sonoma:         "fa9d38135e6b10cdfeec2a55a259a936ba7fb8468ec91ab952edef37d46fdec2"
-    sha256 cellar: :any,                 ventura:        "e0d758881ed2de967484c0ab5ddf5bf815af8beed5c7cb52b5d434b1e762ee18"
-    sha256 cellar: :any,                 monterey:       "c68a03087991b70830a1d0fe79fdb7886767841335aebbee7060d8faf6e7f7ce"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "94609cf0c6e13e921c0a8237a992ba1ed6ea556a0e3a5db7ce6c306da807f092"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ce9af040a2bc16c10f0752d4d78261753b076986d4b5a7ee420a8cca72b46cd1"
+    sha256 cellar: :any,                 arm64_sequoia: "9db981b920ec729cb3186889e48b6f1c13b8b273153d24b697db951e00d840e4"
+    sha256 cellar: :any,                 arm64_sonoma:  "20963df12135abd102efcb43c1def1897bbc760c7d09e55d43dddc23c22e21d8"
+    sha256 cellar: :any,                 arm64_ventura: "e63c90e821f4efa9ea419b75141c8138f5f23ad88828c2855fc858a432cf4f96"
+    sha256 cellar: :any,                 sonoma:        "a75e06944d93dbe00aad38d16f3269891cef31adf0fcc0d8234d3685e27eb3c9"
+    sha256 cellar: :any,                 ventura:       "f760c88edfaa3dbeac5fc07da90effc7f18609100d3f60351f7514d921104e45"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "69d7d459163ce21edb901dbaf3b28b4d49bbc6b8df0d55500bb88c8163bba7ac"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3c71c5d880c8e2de6076b09cf2d9fe142dcc671f3f9242c038a4d3e709af0ed9"
   end
 
   head do

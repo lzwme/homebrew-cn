@@ -5,15 +5,16 @@ class Libpulsar < Formula
   mirror "https://archive.apache.org/dist/pulsar/pulsar-client-cpp-3.7.2/apache-pulsar-client-cpp-3.7.2.tar.gz"
   sha256 "e4eee34cfa3d5838c08f20ac70f5b28239cb137bb59c75199f809141070620dd"
   license "Apache-2.0"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "a45ef331ab3ba08002332e340aeb0c1aea3f4b2463815a4a0423fedaa7e5554b"
-    sha256 cellar: :any,                 arm64_sonoma:  "1575519667526ab1cc14a4d4c38447ac12342884c06396897be2a31d2a44f3ff"
-    sha256 cellar: :any,                 arm64_ventura: "77361fedffdd111e6417f6123ba9365b9cf5e39050523f94ea915a3159f175b0"
-    sha256 cellar: :any,                 sonoma:        "b9a50db3df086b014ca95c2488751517c4afc22ab61e04c55c1c12e8fa3311e6"
-    sha256 cellar: :any,                 ventura:       "c9260119842a8ed7cd4857d32aaece69f9f11eae9595fd023159ae8d88953bcc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f97b4db1a95c7f7288db2f33ddd9e2fcce573fb0d30b5a49ca822776b72a03c8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eb9b0f03c645727f796c138dd2b0666bdbe097e77ad55e14cc6ad0f5633b7189"
+    sha256 cellar: :any,                 arm64_sequoia: "7470a072222eab22c316fb2ecefd7476f14e97a7bb6e600b59f79d12da7d7a0f"
+    sha256 cellar: :any,                 arm64_sonoma:  "e32fe7d97dfea8cfa54b84d463a577342653b20db28b60d28626cd76f4c92491"
+    sha256 cellar: :any,                 arm64_ventura: "ea64a5256f5120a830ed6179a7971037f51e7c8efa03cea0d6ecd38f560477cb"
+    sha256 cellar: :any,                 sonoma:        "a022dd229f164f1494bed226e95955b0362c1e175346084eb4810c10167b85f7"
+    sha256 cellar: :any,                 ventura:       "07fd5eac1bf134adf5fb49108bb6223919f022dc05a4ced8c504d35a65a2ee1c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1a01dd49404957743f1094f2eda723b758912bd379a2377022e35f121a952ed0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ccd0e28b6282ca3545ec237d3bbb7078eec863ce1a798ddacbe3a72c5d5de74b"
   end
 
   depends_on "boost" => :build

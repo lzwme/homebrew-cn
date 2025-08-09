@@ -4,17 +4,17 @@ class OpentelemetryCpp < Formula
   url "https://ghfast.top/https://github.com/open-telemetry/opentelemetry-cpp/archive/refs/tags/v1.22.0.tar.gz"
   sha256 "3428f433f4b435ed1fad64cbdbe75b7288c06f6297786a7036d65d5b9a1d215b"
   license "Apache-2.0"
-  revision 1
+  revision 2
   head "https://github.com/open-telemetry/opentelemetry-cpp.git", branch: "main"
 
   bottle do
-    sha256                               arm64_sequoia: "66956d44829a91dbb80ea5cdf289fbbf67ea262dc29db9682c76e0b67d5ab298"
-    sha256                               arm64_sonoma:  "77b6fd8ff95ac67c2baa9e572bd8c2142ab57e7e8f97ffa8f1520496bab3007f"
-    sha256                               arm64_ventura: "1ff2735444934659cae67cc8e954b0597cf4de6ffa861c1d03eec07175c6daff"
-    sha256 cellar: :any,                 sonoma:        "fa7eea6c58c1b1e17b15954d6c0754a840ad397a5acc7bc9ad129c29766925f1"
-    sha256 cellar: :any,                 ventura:       "34fa18a1816c59b26a6ccded66421fc6eb92281e9fa816e1abfa0b656cf54c27"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a6e8d2174c50aff77118e0a469e1f04ac93e3f4ea482eebb4c3ae95ebc52d309"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c5e04089838129d93c8e81fee8998e530deedd3b8e63e6d4716809cd1a72c0b3"
+    sha256                               arm64_sequoia: "61769b16d2b143e75647e72c9b431ccd8a007d2741bf0f5a84dcc2932d935596"
+    sha256                               arm64_sonoma:  "1e91958195380333ae606e4a48c9b46ef0b70c6b549c6e96328c92d39634e2fd"
+    sha256                               arm64_ventura: "bacab5c85b9034570ea279d56aacaf6494b4db898a5d3e1c2411cb46263b727e"
+    sha256 cellar: :any,                 sonoma:        "0d08ee396cc742cd3ad81bd32b2b687416740a71b0c372a2b776c26e7b22dc35"
+    sha256 cellar: :any,                 ventura:       "1fff50d155bd09dcf5485b9654a8540d6340c2e493b891cffdc5d2d8c0c13b63"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "778bea0fc70b7a85596fe9368f8b574ccf605ae29045878eca627a3dd762aca3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d7b1491820b7036b3262c28ef61038005dad711d42266d174bada9198f130593"
   end
 
   depends_on "cmake" => :build

@@ -9,8 +9,6 @@ class Texi2html < Formula
     skip "No longer developed or maintained"
   end
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     rebuild 4
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "a2abbe20da6fd14b3e73a4d7f08f366af564a2dc2e86b39de3291a9f7c3b9eec"

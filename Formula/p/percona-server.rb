@@ -4,6 +4,7 @@ class PerconaServer < Formula
   url "https://downloads.percona.com/downloads/Percona-Server-8.4/Percona-Server-8.4.5-5/source/tarball/percona-server-8.4.5-5.tar.gz"
   sha256 "8b47ff35dc2a6e7eaacaa2d204ae456c15b5d9953360ccb6250da8d68d98f6af"
   license "BSD-3-Clause"
+  revision 1
 
   livecheck do
     url "https://www.percona.com/products-api.php", post_form: {
@@ -22,13 +23,13 @@ class PerconaServer < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 arm64_sequoia: "501dca6f7631d672d82ad5e700949a4a34e43dfcafadbc9b773abe78fe918d4b"
-    sha256 arm64_sonoma:  "f720d097a4a1a48169e60087c79486585198e42f359c2cd3e2f5fbda757247be"
-    sha256 arm64_ventura: "a1c75863a3cbfb69bca5bccc965ab30bf24939156ca4b82fb87a0dd2b1d5144c"
-    sha256 sonoma:        "bfc8c03241c206edc2f451f236fb92a4cedb39863804d3cc27a2afd2f153d114"
-    sha256 ventura:       "c9f89a6be125f3abf06bac63db3999b8bd77a2feecbb202af8ed5b7fdd0a9199"
-    sha256 arm64_linux:   "ee839b9b64454e754a459277ff5bebdca407e8f1a728f02813957e44fff9b7be"
-    sha256 x86_64_linux:  "d249208c93f61ec2f60b2d7c62ce52f3ecaa969edf5dbee252ffa7c983dbd411"
+    sha256 arm64_sequoia: "7c3057184db6d5924eed31a8d717bb0dbeb0a50029b08453818e59d6e108f6c4"
+    sha256 arm64_sonoma:  "cf781a1df2791d1e785b0dbae888cf4d22d936eb5c75fbf9a5e358f1a7651b7c"
+    sha256 arm64_ventura: "659bd9eac1cde190dcf24355f94dcf57a2069372e861f26452652f16320061fb"
+    sha256 sonoma:        "a1ab6b7159ed5adfa22018e11260059cd66b95e326a4aef4614ad153c47cdb5c"
+    sha256 ventura:       "c6acab1a1f43cd4eced9c0806fb68859f6f3e1853d985ff94b0d3bca4da70093"
+    sha256 arm64_linux:   "0949fdd1259a740eb7c3aa36e04e56b85c1aede9ac3a49f0596b294a1db8254a"
+    sha256 x86_64_linux:  "4b4009c786ffddd06389f64deba8ffc809f4009f17ffdfedfc3bf5a5e6df20eb"
   end
 
   depends_on "bison" => :build
@@ -164,6 +165,12 @@ class PerconaServer < Formula
     ]
     args << "-DROCKSDB_DISABLE_AVX2=ON" if build.bottle?
     args << "-DWITH_KERBEROS=system" unless OS.mac?
+
+    # Workaround for
+    #  error: a template argument list is expected after a name prefixed by the template keyword
+    #   84 |     return Archive_derived_type::template get_size(std::forward<Type>(arg));
+    #      |                                           ^
+    ENV.append_to_cflags "-Wno-missing-template-arg-list-after-template-kw" if OS.mac?
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"

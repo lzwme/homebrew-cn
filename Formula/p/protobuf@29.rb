@@ -4,6 +4,7 @@ class ProtobufAT29 < Formula
   url "https://ghfast.top/https://github.com/protocolbuffers/protobuf/releases/download/v29.4/protobuf-29.4.tar.gz"
   sha256 "6bd9dcc91b17ef25c26adf86db71c67ec02431dc92e9589eaf82e22889230496"
   license "BSD-3-Clause"
+  revision 1
 
   livecheck do
     url :stable
@@ -11,13 +12,13 @@ class ProtobufAT29 < Formula
   end
 
   bottle do
-    sha256                               arm64_sequoia: "201dfed6c12d9a7eb607c3f42c880633f92ef4c0ac74f09d87c8698104b0d6fe"
-    sha256                               arm64_sonoma:  "44a4fec5d0f3979f8ed747fcbf4d957f0b71ce5cfb95dc0dfa45f29ecc289ee8"
-    sha256                               arm64_ventura: "2a4d3e77575a4867e8374dea35c266096cac7178bdea9f3a097d47d308b0fa31"
-    sha256 cellar: :any,                 sonoma:        "eb0a700c134c204d4c933894671fc3d77933997d75403455b0b15ff4273932f3"
-    sha256 cellar: :any,                 ventura:       "e6d5d1bb932672dab79550da9bd7794054d6c071771afec9b983959703e5559e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "54d6518d1895616b61f84a09080472e3f92616b597e83e9a7fccb89f924a6202"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3c4e211562fcd5b1ed97bee9dff771e5b03b667d15f7c8ce066d6659c28a854d"
+    sha256 cellar: :any,                 arm64_sequoia: "7df9f175047b553b9cbd70602fca73e535577883dcc30d095b1af853d3a4326d"
+    sha256 cellar: :any,                 arm64_sonoma:  "05e011455870beee2797a8636cf4f675148cdfa4b4626c36e885a1cb5f28d232"
+    sha256 cellar: :any,                 arm64_ventura: "7bb8c67ee713014d6f4ce1c80a4646bfefedaa98d67e81c18d39c5d39c88153b"
+    sha256 cellar: :any,                 sonoma:        "62cf175d0bbbf7b3f30f8a63b82a780f859464738262aabbc3b916f6d059c7e9"
+    sha256 cellar: :any,                 ventura:       "34718efecd02045d06d6b0d881f316276cb27cf432b700c53a7e556469c23e02"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "25b42fd2d37afdd16c7594fd5eaec3284571a0df5143daab658b316541606327"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "11db073384e8413f15dcac5e756c67da1a8d6734841efa474c1824f5bbae48a8"
   end
 
   keg_only :versioned_formula

@@ -14,15 +14,15 @@ class Tkdiff < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "e36f04c9c518b1d76ff97fab80dc92c59d158f9f83bdf6a87c17a98bbb20bba5"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "0d252a16273fc3118cb657242250606329c9076ea30a20ba5ecbffd2b7d304d5"
   end
 
   # upstream bug report about running with system tcl-tk, https://sourceforge.net/p/tkdiff/bugs/98/
-  depends_on "tcl-tk@8"
+  depends_on "tcl-tk"
 
   def install
     bin.install "tkdiff"
-    bin.env_script_all_files libexec, PATH: "#{Formula["tcl-tk@8"].opt_bin}:${PATH}"
   end
 
   test do

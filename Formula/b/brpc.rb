@@ -4,16 +4,17 @@ class Brpc < Formula
   url "https://dlcdn.apache.org/brpc/1.14.1/apache-brpc-1.14.1-src.tar.gz"
   sha256 "ed6e6703122cf294462ffae921c713910594b3b0a26dcfef5357a3dcefcc43d3"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/apache/brpc.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "0301e3a93efadbb8f8f1cc836f3e79c5772ac5e73bb0cc0ed611fb0ec104ed94"
-    sha256 cellar: :any,                 arm64_sonoma:  "114c21e743f532ed773b7e9c0b6f7996dafd9ed3ec2c45e857cbd7b2226375c1"
-    sha256 cellar: :any,                 arm64_ventura: "b8c896b9753be09729ae0209a5ea8a7fcd5e6f9f64e581d15761dc9b619de695"
-    sha256 cellar: :any,                 sonoma:        "15b05722e6baf9befa28f9cf64f905a031602f87c226ed815c3e56ca24d71bc4"
-    sha256 cellar: :any,                 ventura:       "2f9ed3d2e50349f7b27373c2aadab0db0096bc584d6a6bbe2d17864e5c92b464"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6dcb9278bece6487e65d55b9351dce72391526238d59ba1941e3ee6f6d8d31e6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "42f57c04c444cb6f6f717480892816f949a5cd91f60d9193779b2391b67444f3"
+    sha256 cellar: :any,                 arm64_sequoia: "1881335e1492e94206728d267640c86e734d7533ff429e5a8d0a1244030711ba"
+    sha256 cellar: :any,                 arm64_sonoma:  "d3076cb66fc48397a8b0f870b9fd2e1db9be9f9800ee6b1315e773f616e92185"
+    sha256 cellar: :any,                 arm64_ventura: "1a49f81c0510b2554ac996982b89abedb2d431ea8bde8fa3a5d70ae0ff632c66"
+    sha256 cellar: :any,                 sonoma:        "8800b926c072f4d0004a28f6ad0d53889a72dc47e81c3f1ebb0b8cb9900551e8"
+    sha256 cellar: :any,                 ventura:       "3ee00325836873399a3652025532490e84cae6bfffb3c40bb3b435e49e81a1ad"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c809cd315a094bf41409dbe492ad69ab5bab1ab7a4240ccd59451054d95fdadd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "be97e6df3ced7de50a46902e9784e1b680ff9aab38fc50d9eedda1f68b2ce18c"
   end
 
   depends_on "cmake" => :build
