@@ -22,6 +22,9 @@ class OpensslAT30 < Formula
 
   keg_only :versioned_formula
 
+  # See: https://www.openssl.org/policies/releasestrat.html
+  deprecate! date: "2026-09-07", because: :unsupported
+
   depends_on "ca-certificates"
 
   on_linux do

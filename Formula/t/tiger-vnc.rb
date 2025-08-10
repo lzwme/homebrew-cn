@@ -21,7 +21,7 @@ class TigerVnc < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "fltk@1.3"
+  depends_on "fltk@1.3" # fltk 1.4 issue: https://github.com/TigerVNC/tigervnc/issues/1949
   depends_on "gettext"
   depends_on "gmp"
   depends_on "gnutls"

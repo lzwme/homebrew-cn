@@ -39,7 +39,7 @@ class Prjtrellis < Formula
 
   test do
     resource "homeebrew-ecp-config" do
-      url "https://kmf2.trabucayre.com/blink.config"
+      url "https://www.trabucayre.com/blink.config"
       sha256 "394d71ba416517cceee5135b853dd1e94f99b07d5e9a809760618fa820d32619"
     end
 

@@ -77,6 +77,7 @@ Homebrew-homebrew-core/Formula/a/aggregate.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/aha.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/ahcpd.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/ahoy.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/a/aiac.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/aichat.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/aicommit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/aicommits.rb, Homebrew/homebrew-core, 0
@@ -2243,7 +2244,7 @@ Homebrew-homebrew-core/Formula/g/geomview.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/geos.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/geoserver.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/geph4.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/g/gerbil-scheme.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/g/gerbil-scheme.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gerbv.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gerrit-tools.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gersemi.rb, Homebrew/homebrew-core, 0
@@ -2439,6 +2440,7 @@ Homebrew-homebrew-core/Formula/g/globe.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/globjects.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/globstar.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/glog.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/g/glom.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/glooctl.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gloox.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/glow.rb, Homebrew/homebrew-core, 1
@@ -2544,6 +2546,7 @@ Homebrew-homebrew-core/Formula/g/gomi.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gomodifytags.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gomplate.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/goocanvas.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/g/goodls.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/google-authenticator-libpam.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/google-benchmark.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/google-java-format.rb, Homebrew/homebrew-core, 1
@@ -7439,6 +7442,7 @@ Homebrew-homebrew-core/Formula/w/wget.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/w/wget2.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/w/wgetpaste.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/wgo.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/w/wgpu-native.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/w/whalebrew.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/whatmask.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/w/whatmp3.rb, Homebrew/homebrew-core, 1
@@ -9809,6 +9813,8 @@ Homebrew-homebrew-cask/Casks/font/font-c/font-cormorant-sc.rb, Homebrew/homebrew
 Homebrew-homebrew-cask/Casks/font/font-c/font-cormorant-unicase.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-c/font-cormorant-upright.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-c/font-cormorant.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-c/font-cossette-texte.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/font/font-c/font-cossette-titre.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-c/font-courgette.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-c/font-courier-new.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-c/font-courier-prime-code.rb, Homebrew/homebrew-cask, 0

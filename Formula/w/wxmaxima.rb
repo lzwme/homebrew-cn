@@ -1,11 +1,20 @@
 class Wxmaxima < Formula
   desc "Cross platform GUI for Maxima"
   homepage "https://wxmaxima-developers.github.io/wxmaxima/"
-  url "https://ghfast.top/https://github.com/wxMaxima-developers/wxmaxima/archive/refs/tags/Version-25.04.0.tar.gz"
-  sha256 "ec0b3005c3663f1bb86b0cc5028c2ba121e1563e3d5b671afcb9774895f4191b"
   license "GPL-2.0-or-later"
   revision 1
   head "https://github.com/wxMaxima-developers/wxmaxima.git", branch: "main"
+
+  stable do
+    url "https://ghfast.top/https://github.com/wxMaxima-developers/wxmaxima/archive/refs/tags/Version-25.04.0.tar.gz"
+    sha256 "ec0b3005c3663f1bb86b0cc5028c2ba121e1563e3d5b671afcb9774895f4191b"
+
+    # Backport fix for wxWidgets 3.3
+    patch do
+      url "https://github.com/wxMaxima-developers/wxmaxima/commit/0449b7e42809db16df87c3fbe95c37a756c04587.patch?full_index=1"
+      sha256 "9784a43c08ec0b57c6ba710943a0665bbcdfc16bd4ab59fb4dc7c26586291c34"
+    end
+  end
 
   livecheck do
     url :stable
@@ -13,11 +22,12 @@ class Wxmaxima < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:  "553516bf2d49d154ffac0b7e118a27cb3478085b909e60b73c76e417c6a20376"
-    sha256 arm64_ventura: "aba559e8bd9e0ab830535bde38cec741cbe65d7cde73315223a342c698caa100"
-    sha256 sonoma:        "b2c05aa2c38f15bf5b1df79aaccbb2b1f7551bd54ee4cc52ce49852bc9afa19f"
-    sha256 ventura:       "1d07309327d8af917657e324363b74699d2c111b81ce1d973b7bfb452ef15f67"
-    sha256 x86_64_linux:  "b76ed6884b0fe2bcad5a49a6778792cc1d5dc9ad88820dbad0ac250023c02989"
+    rebuild 1
+    sha256 arm64_sonoma:  "7d82d9ec873119248214f833fb7029eac8875aa57c5701a57370b44f76e3cd58"
+    sha256 arm64_ventura: "d557599c3b3eefd79b147758ca60611e9b6d57e57c1e41c004140e418d2205d4"
+    sha256 sonoma:        "24fa662cd77d0dd9f745942e8c1b74467b3711e03f13b9dae6f087687abaec69"
+    sha256 ventura:       "b66e7b2778a0b7588bebac86db1f4b3aaa7726b40f5acb606fc36a5e096b2ffe"
+    sha256 x86_64_linux:  "e321b5e9522666e570bcdbec80ab1573bdc874933adbdcc4ce324393dae553ee"
   end
 
   depends_on "cmake" => :build
@@ -25,7 +35,7 @@ class Wxmaxima < Formula
   depends_on "ninja" => :build
 
   depends_on "maxima"
-  depends_on "wxwidgets@3.2"
+  depends_on "wxwidgets"
 
   on_macos do
     depends_on "llvm" => :build if DevelopmentTools.clang_build_version <= 1300

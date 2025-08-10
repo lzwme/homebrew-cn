@@ -1,24 +1,29 @@
 class Tika < Formula
   desc "Content analysis toolkit"
   homepage "https://tika.apache.org/"
-  url "https://www.apache.org/dyn/closer.lua?path=tika/3.2.1/tika-app-3.2.1.jar"
-  mirror "https://archive.apache.org/dist/tika/3.2.1/tika-app-3.2.1.jar"
-  sha256 "268512b774a7a30e26ac1d6e3e5f7982cf6203a9822d4563be37b1922365d108"
+  url "https://www.apache.org/dyn/closer.lua?path=tika/3.2.2/tika-app-3.2.2.jar"
+  mirror "https://archive.apache.org/dist/tika/3.2.2/tika-app-3.2.2.jar"
+  sha256 "7b6da1143ea867fc162e1397bfde904a3ee059491fa7079383b63dbad15a38e3"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "9f9d786884111b091cf81347b58dbc73054d9e369fc41bacff434a41933f220b"
+    sha256 cellar: :any_skip_relocation, all: "6e81b0183dc5cc06347ea24e1e04f553d12effd10e8b60ad6372d474b5b797d5"
   end
 
   depends_on "openjdk"
 
   resource "server" do
-    url "https://www.apache.org/dyn/closer.lua?path=tika/3.2.1/tika-server-standard-3.2.1.jar"
-    mirror "https://archive.apache.org/dist/tika/3.2.1/tika-server-standard-3.2.1.jar"
-    sha256 "383a8a99ec886ea95e4143bfe200208afe1884db14b4c1e470950edec82d2c5d"
+    url "https://www.apache.org/dyn/closer.lua?path=tika/3.2.2/tika-server-standard-3.2.2.jar"
+    mirror "https://archive.apache.org/dist/tika/3.2.2/tika-server-standard-3.2.2.jar"
+    sha256 "04bcb61826403957cfab93cb1e14d4c305fbeb949475f031b0b73dab7e976995"
+
+    livecheck do
+      formula :parent
+    end
   end
 
   def install
+    odie "update `server` resource" if version != resource("server").version
     libexec.install "tika-app-#{version}.jar"
     bin.write_jar_script libexec/"tika-app-#{version}.jar", "tika"
 
@@ -32,7 +37,6 @@ class Tika < Formula
   end
 
   test do
-    assert_match version.to_s, resource("server").version.to_s, "server resource out of sync with formula"
     pdf = test_fixtures("test.pdf")
     assert_equal "application/pdf\n", shell_output("#{bin}/tika --detect #{pdf}")
 

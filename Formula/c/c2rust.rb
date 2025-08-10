@@ -18,7 +18,7 @@ class C2rust < Formula
 
   depends_on "cmake" => [:build, :test]
   depends_on "rust" => :build
-  depends_on "llvm@19"
+  depends_on "llvm@19" # LLVM 20 hits https://github.com/immunant/c2rust/issues/1252
 
   # cmake 4.0 build patch, upstream pr ref, https://github.com/immunant/c2rust/pull/1214
   patch do

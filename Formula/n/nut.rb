@@ -1,8 +1,8 @@
 class Nut < Formula
   desc "Network UPS Tools: Support for various power devices"
   homepage "https://networkupstools.org/"
-  url "https://ghfast.top/https://github.com/networkupstools/nut/releases/download/v2.8.2/nut-2.8.2.tar.gz"
-  sha256 "e4b4b0cbe7dd39ba9097be7f7d787bb2fffbe35df64dff53b5fe393d659c597d"
+  url "https://ghfast.top/https://github.com/networkupstools/nut/releases/download/v2.8.4/nut-2.8.4.tar.gz"
+  sha256 "0130ba82ea79f04ba4f34c5249a85943977efd984ed7df6aec1a518d5a3594f8"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -11,15 +11,13 @@ class Nut < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia:  "dbfab84f13ae9c17fe130e2230f7dc957bbd1c01e6cb281fdd03d5cc3e82fc6a"
-    sha256 arm64_sonoma:   "43c9c0fc601204d370924ebdfe1a51a68ceec7be66b9cbde21fa748ca705c05f"
-    sha256 arm64_ventura:  "5c56ac1e0389d0991c2c94ed36e3cabb5dbedd8b695fa4a9747add1b3eca5c8f"
-    sha256 arm64_monterey: "1858aeb052a2b605a7d2ba9f231db1f0d997b9ddeb2da4cabae29520978e57b1"
-    sha256 sonoma:         "98df930592937b8cc3c9ed6137c4e3fc6e920d4b3b0122dbb5cd4ceb0c557f0e"
-    sha256 ventura:        "80b5f09bfb88e4a7ffa611a3b698385fa4c14a3474ae2f3d270a593276dcf106"
-    sha256 monterey:       "17722e1bb6e5e707dc81da194caa13848b035ebf81673261e716d188ef9693c2"
-    sha256 arm64_linux:    "38bfb42d6bfb9cf0d158dcdbdf63e61f42240d391702d9d82365c7ad02b4af09"
-    sha256 x86_64_linux:   "61047b843accc5c9a8b9de7fb525759445b7e30c07f0a682e06eb32724e96ce1"
+    sha256 arm64_sequoia: "c6fcd38ac13bedb5bd201fa7967f5988b7d0319e22b1c666769f02bebb13e0d7"
+    sha256 arm64_sonoma:  "1642b5fca3794df03bf4ccffae50c8db6c2b58bfb0e226142e888501921e7829"
+    sha256 arm64_ventura: "6157ac5ed158623264729d8c8dcbed1e8e01b6c3b98116e4a5f030ad077f47e9"
+    sha256 sonoma:        "3f9a548610bd191ea3b910d64621f80b9ef467dfb0c00e3fd5133d3c53c6d7c8"
+    sha256 ventura:       "3f056e5ad5607bf0fda058af7753df1780d3044bd2348eb967de9927abc9245c"
+    sha256 arm64_linux:   "a494737e49d1ba83ad68616290582803f92d7ea44af2fb6106a69ca72a9174ba"
+    sha256 x86_64_linux:  "a4b8b536a16c3c00940dec9e28f7181af84ec01332cb98b7934e925227321fa9"
   end
 
   head do

@@ -1,10 +1,13 @@
 class Inko < Formula
   desc "Safe and concurrent object-oriented programming language"
   homepage "https://inko-lang.org/"
-  url "https://releases.inko-lang.org/0.18.1.tar.gz"
-  sha256 "498d7062ab2689850f56f5a85f5331115a8d1bee147e87c0fdfe97894bc94d80"
   license "MPL-2.0"
-  head "https://github.com/inko-lang/inko.git", branch: "main"
+
+  stable do
+    url "https://releases.inko-lang.org/0.18.1.tar.gz"
+    sha256 "498d7062ab2689850f56f5a85f5331115a8d1bee147e87c0fdfe97894bc94d80"
+    depends_on "llvm@17" # TODO: update LLVM version on next release
+  end
 
   # The upstream website doesn't provide easily accessible version information
   # or link to release tarballs, so we check the release manifest file that
@@ -25,14 +28,18 @@ class Inko < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "7af46ba20d2d34d8d5ec23574d97caa98a50278eca21fd9e1573856cf58ee24f"
   end
 
+  head do
+    url "https://github.com/inko-lang/inko.git", branch: "main"
+    depends_on "llvm"
+  end
+
   depends_on "rust" => :build
-  depends_on "llvm@17" # see https://github.com/inko-lang/inko/blob/4738b81dbec1f50dadeec3608dde855583f80dda/ci/mac.sh#L5
 
   uses_from_macos "libffi", since: :catalina
 
   def install
     # Avoid statically linking to LLVM
-    inreplace "compiler/Cargo.toml", 'features = ["prefer-static"]', 'features = ["force-dynamic"]'
+    inreplace "compiler/Cargo.toml", 'prefer-static"]', 'force-dynamic"]'
 
     system "make", "build", "PREFIX=#{prefix}"
     system "make", "install", "PREFIX=#{prefix}"
@@ -42,7 +49,7 @@ class Inko < Formula
     (testpath/"hello.inko").write <<~INKO
       import std.stdio (Stdout)
 
-      class async Main {
+      type async Main {
         fn async main {
           Stdout.new.print('Hello, world!')
         }

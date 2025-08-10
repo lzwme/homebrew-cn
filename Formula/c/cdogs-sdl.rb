@@ -1,8 +1,8 @@
 class CdogsSdl < Formula
   desc "Classic overhead run-and-gun game"
   homepage "https://cxong.github.io/cdogs-sdl/"
-  url "https://ghfast.top/https://github.com/cxong/cdogs-sdl/archive/refs/tags/2.3.0.tar.gz"
-  sha256 "6ea66e058503a5c160dbeccc25072061c87e190ced6876ae5b63a3e4d1ed0044"
+  url "https://ghfast.top/https://github.com/cxong/cdogs-sdl/archive/refs/tags/2.3.1.tar.gz"
+  sha256 "0a9bd151e33504a2323b3f962720f0d9091645bc378a7b20059e6cd20ccd1270"
   license "GPL-2.0-or-later"
   head "https://github.com/cxong/cdogs-sdl.git", branch: "master"
 
@@ -12,13 +12,13 @@ class CdogsSdl < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "08a30a5c543e87a3124a15c907b73060fe443820bbd6565569f49fb33541639d"
-    sha256 arm64_sonoma:  "c5a53c5b4fb1d8872f8df040958878bf133c7ef335111e31782c353a0b846c07"
-    sha256 arm64_ventura: "9d525e0b2132b29d012dd04fa065bf67a0424dba356c112e80370cc65e4fa446"
-    sha256 sonoma:        "f49ea1edd7342d5645cf54b49c0a07f4116df52c86d357c966d304615f4afc90"
-    sha256 ventura:       "1a60efaeb8e6680ff86ba951abf2ff25078a0e4fc6c6dcada978f547b85694e3"
-    sha256 arm64_linux:   "bf9707f098bb504f6ce1bb5d0b597e6325a68229a5e9fc8de9e6fe634f9d44eb"
-    sha256 x86_64_linux:  "6eed5b0c3979d10ba041c7755640461247e63979d6287fde09554dd712ec151e"
+    sha256 arm64_sequoia: "29cae0e86f62a41ed00096243a0ec3743844a510c3caabd9bf2720d54c2f4682"
+    sha256 arm64_sonoma:  "ff029027df05a16a261d0961893c63de1148ed613b16548263a33c13f18fbd3e"
+    sha256 arm64_ventura: "ddbe4bfde11a74cfa6c70f6d3b844af04fe83e0043bc24405e39623558bf8808"
+    sha256 sonoma:        "55ff534d6f98220775a3a4495a445862119d9bad5d71524a8c3e57e8550201e3"
+    sha256 ventura:       "6d85bbf02513d82b7b1e58dae63fa5dc247cf5075b1ff52479652617102e201c"
+    sha256 arm64_linux:   "356a398fc7f2d22c1110b9a66b633aa3f4e6289408f99f0055b551a14aa6716d"
+    sha256 x86_64_linux:  "01363a74f86c05e13d60ba788fa91cd13007b2b349dbbba13801f24504e29253"
   end
 
   depends_on "cmake" => :build

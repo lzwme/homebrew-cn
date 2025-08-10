@@ -45,7 +45,7 @@ class Eralchemy < Formula
 
   test do
     resource "er_example" do
-      url "https://ghfast.top/https://raw.githubusercontent.com/Alexis-benoist/eralchemy/v1.1.0/example/newsmeme.er"
+      url "https://ghfast.top/https://raw.githubusercontent.com/Alexis-benoist/eralchemy/refs/tags/v1.1.0/example/newsmeme.er"
       sha256 "5c475bacd91a63490e1cbbd1741dc70a3435e98161b5b9458d195ee97f40a3fa"
     end
 

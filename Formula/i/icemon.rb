@@ -9,18 +9,12 @@ class Icemon < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia:  "ee2a82f839e771368531ab54f76b5b17b54fbfdbe1ce4ff77671321b5913c35a"
-    sha256 cellar: :any,                 arm64_sonoma:   "17248733e176763f0279735fd42c504e3e52f0845279e41a27e3c019703a607e"
-    sha256 cellar: :any,                 arm64_ventura:  "93377ed3f7d1b598aa9b2c4f0dd5df364e5612fa91d1501282a35ce598e946fe"
-    sha256 cellar: :any,                 arm64_monterey: "ddd8e4ef2a9f056c9b1ea46968ce4e69b281816ef9c405514164d2ca65e4e61c"
-    sha256 cellar: :any,                 arm64_big_sur:  "f6c322e1fbdd9f73d1a91dfd1e546f55b617cf9dbde7e22283a288a0b5013ec9"
-    sha256 cellar: :any,                 sonoma:         "d8d8974be93462dfcde940fcbb20a85f3bc68d891de8e1c58b06e1eb90b39d12"
-    sha256 cellar: :any,                 ventura:        "1ecf54b786d25c305bb35ee4133434643a6ea112cd1098513c3d6f6d9a054c04"
-    sha256 cellar: :any,                 monterey:       "a1f66afcc9a18f14e87f6f3e631f1372f7b7d244b642d5f7f05da155d8710b06"
-    sha256 cellar: :any,                 big_sur:        "f691df436bfddef842f8e64a3b5272b9be0d3faa902a0c8b7d6a1f940445c080"
-    sha256 cellar: :any,                 catalina:       "dbbc9d249e23f8d6fcb3cdab7f8ff0a981134a4b7d3280355748d0b74a19c395"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5f6c890302532ee361d184142ec1153513e8d5be413c2479d2b9fc4146137b43"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_sonoma:  "61b7f50cdc52d8f6f4eddc624b469c9cd49156c5c6204395b84dff8674c7567b"
+    sha256 cellar: :any,                 arm64_ventura: "b88d2b0738b3514d76a232fdb95dfb2895e25cd50328518d10944e29a8972932"
+    sha256 cellar: :any,                 sonoma:        "a53d4a690cd9a53f921e18bb2884b65c324fec8ce99903bb7f09a001c9c7ca24"
+    sha256 cellar: :any,                 ventura:       "d69c741ab8a85b9ce7c6fe3817d25b16abd6fefcdd17c83aa04ae6027d7d013f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "623a817bb87eb94ad8ae250cfe74c1153545aa13d8813a4719f54d8fd3439f22"
   end
 
   depends_on "cmake" => :build
@@ -30,7 +24,7 @@ class Icemon < Formula
 
   depends_on "icecream"
   depends_on "lzo"
-  depends_on "qt@5"
+  depends_on "qt"
   depends_on "zstd"
 
   on_macos do
@@ -41,7 +35,23 @@ class Icemon < Formula
     depends_on "libcap-ng"
   end
 
+  # Backport fix for CMake 4
+  patch do
+    url "https://github.com/icecc/icemon/commit/b07bf3eb0c28ac5cd527d3ab675d2273d1866b48.patch?full_index=1"
+    sha256 "015098bad42e0b020dfefa2fbc8287fa1eb054576ab642b85818ac36cd0755de"
+  end
+
+  # Backport support for Qt 6
+  patch do
+    url "https://github.com/icecc/icemon/commit/d0969453c7d4467e22dcff0f218b31e81136afbe.patch?full_index=1"
+    sha256 "ea808f5daba80a6c92c45f661a53c67742df513cfee430fe724819daab8d551a"
+  end
+
   def install
+    # Workaround for std::unary_function usage
+    # Issue ref: https://github.com/icecc/icemon/issues/80
+    ENV.append "CXXFLAGS", "-D_LIBCPP_ENABLE_CXX17_REMOVED_UNARY_BINARY_FUNCTION" if ENV.compiler == :clang
+
     args = ["-DECM_DIR=#{Formula["extra-cmake-modules"].opt_share}/ECM/cmake"]
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"

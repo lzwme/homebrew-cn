@@ -1,18 +1,18 @@
 class Latexindent < Formula
   desc "Add indentation to LaTeX files"
   homepage "https://latexindentpl.readthedocs.io"
-  url "https://ghfast.top/https://github.com/cmhughes/latexindent.pl/archive/refs/tags/V3.24.5.tar.gz"
-  sha256 "3bafd91da0bfd8c530cd9e8bd8dd98948d95850d314cfb459bb180f12a608b83"
+  url "https://ghfast.top/https://github.com/cmhughes/latexindent.pl/archive/refs/tags/V3.24.6.tar.gz"
+  sha256 "1b0ff3b3a97c2deaba7aac9e7c2991b94eecc33a69f6d8cd70470a1be55ba97e"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e2bf72b8cc5d67a8afe53a67cef85c8fcaee2699677e304f43b0fdc83064d4f4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3e828c85b94bcef9e778fe159dd7abc4e104af9a6786c7e89ebdebb97fc544b3"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "f6934be9ae329867d95351426800ffd0bd99543811fd612ceb2d14dbec380a4b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4544e9da8ec45f93c96438daa746d829b91239ddc01af35d6983ef4013fb895d"
-    sha256 cellar: :any_skip_relocation, ventura:       "9efa31412f1197251a1ede89fd5f2e8fdb7ec250a11b193f578305143651878a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "22901bdb127e5eb4a8d01630ca2116bbc32d18564acbbab9f971b4eb515d7e40"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "12aef561c51f10cdf8241733bc21a6f70abcdc229dd30f9933dedd2184972879"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "10986a57147226cd8eae14106bf0ee72633e04143af0ae95e2b36fb0bce689bc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5e6190700d2d6e5015fb8389c591d43c7fd58194b3a6e582522e62d2cd5088ee"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "fbdfa737afeb4f5e5e271a5f245fe54edc4c4d2c3c3ff605c071796ecf171353"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2cfe4c771e15e57e77bcccf635664232288f288edbb8ad1148a3c58bf56c7852"
+    sha256 cellar: :any_skip_relocation, ventura:       "90f5d10acf87be8ff381f636ff8161e0f53d8c9403f77c1d78a3a94f19874079"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "782e25e5e8a8331bb1138509a83caacb72589281f5ba8284938ced2929c1786a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "76adbdc305e265ca0a933a7adef370d2e2da9e601e75b9fee7bd2ed5f966ba09"
   end
 
   depends_on "perl"
@@ -100,8 +100,8 @@ class Latexindent < Formula
   end
 
   resource "Module::Runtime" do
-    url "https://cpan.metacpan.org/authors/id/Z/ZE/ZEFRAM/Module-Runtime-0.016.tar.gz"
-    sha256 "68302ec646833547d410be28e09676db75006f4aa58a11f3bdb44ffe99f0f024"
+    url "https://cpan.metacpan.org/authors/id/H/HA/HAARG/Module-Runtime-0.018.tar.gz"
+    sha256 "0bf77ef68e53721914ff554eada20973596310b4e2cf1401fc958601807de577"
   end
 
   resource "Package::Stash" do
@@ -125,8 +125,8 @@ class Latexindent < Formula
   end
 
   resource "Specio" do
-    url "https://cpan.metacpan.org/authors/id/D/DR/DROLSKY/Specio-0.50.tar.gz"
-    sha256 "467baf0582681626266318e3154727497d7205996fbd76674ba58ed79e10640e"
+    url "https://cpan.metacpan.org/authors/id/D/DR/DROLSKY/Specio-0.51.tar.gz"
+    sha256 "505f5de28bee55545b9ec0c45c1d5e4ae568d4f5dbb5e8eabe9d980cb9b68f93"
   end
 
   resource "Sub::Exporter::Progressive" do
@@ -197,9 +197,8 @@ class Latexindent < Formula
     end
 
     (libexec/"lib/perl5").install "LatexIndent"
-    (libexec/"bin").install "latexindent.pl"
-    (libexec/"bin").install "defaultSettings.yaml"
-    (bin/"latexindent").write_env_script(libexec/"bin/latexindent.pl", PERL5LIB: ENV["PERL5LIB"])
+    (libexec/"bin").install "latexindent.pl", "defaultSettings.yaml"
+    (bin/"latexindent").write_env_script libexec/"bin/latexindent.pl", PERL5LIB: ENV["PERL5LIB"]
   end
 
   test do

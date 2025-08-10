@@ -12,12 +12,13 @@ class Suil < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "b27db9a3ce79f632d05b548af8aa895cc763f16b501a9c9bdc8034e4859dea86"
-    sha256 arm64_sonoma:  "529c47a29c76d87980ea9834dd2a01e2590d0adb8dc9a2a47fb82eb5a705d984"
-    sha256 arm64_ventura: "bd054ff192b6136795fc419d57c5424d32e10ff8549d63429999e6fc6e85ecb4"
-    sha256 sonoma:        "f22ed2c24dfd9fdd0e046c4373717a5bcd9b5934d816357814b461cc3eba1e72"
-    sha256 ventura:       "28cba60e06927ded4633dedf3b1c9541e5ff8fe692df7e9d6ad0d52055f2abd4"
-    sha256 x86_64_linux:  "c82fc9ca3e304f4ddab55a00cddc288ba608f5114103e22a1afb7e85d413d87c"
+    rebuild 1
+    sha256 arm64_sequoia: "3a131c8b4177cec651521981be98084c9f51164cda259d8f78d110c933e22989"
+    sha256 arm64_sonoma:  "aaf1ed83539d0430a42e90e4cb0aba34e226a948a3bca6cdb918aa9a8a5da0d7"
+    sha256 arm64_ventura: "64c64d93ac2c688372e8c4773fb44045a0a81c24fac5bc698bf4db8a931948f1"
+    sha256 sonoma:        "bc6e784d338b47e3a4e76edf8d3b4e781971c2188f120a41776db19b7459b16d"
+    sha256 ventura:       "fa22d68335ca3a5337904e2a9cd8d8e3e4f285512ded9b0c65190827f9980522"
+    sha256 x86_64_linux:  "a019ceaf7b2a6934baab2af852ef86aedc32559ba114d40a430b68f61c478cd3"
   end
 
   depends_on "meson" => :build
@@ -25,11 +26,15 @@ class Suil < Formula
   depends_on "pkgconf" => :build
   depends_on "libx11"
   depends_on "lv2"
-  depends_on "qt@5"
+
+  on_macos do
+    depends_on "qt@5" # cocoa still needs Qt5
+  end
 
   on_linux do
     depends_on "glib"
     depends_on "gtk+3"
+    depends_on "qt"
   end
 
   def install

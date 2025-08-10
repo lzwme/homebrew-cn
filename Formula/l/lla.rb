@@ -1,18 +1,18 @@
 class Lla < Formula
   desc "High-performance, extensible alternative to ls"
   homepage "https://github.com/chaqchase/lla"
-  url "https://ghfast.top/https://github.com/chaqchase/lla/archive/refs/tags/v0.3.11.tar.gz"
-  sha256 "dde64fa4acd90f4ae86ed485576cdfe42aab0de2cb674c88712e471968f8ae0a"
+  url "https://ghfast.top/https://github.com/chaqchase/lla/archive/refs/tags/v0.4.0.tar.gz"
+  sha256 "cd357b38c609cde98ccbf31bcca86052443d8678d800eb7c06701e3900d8a6cf"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "5e6086be36189064123934678e72b6f112ba16e0141d02df8e91b76823d1dd12"
-    sha256 cellar: :any,                 arm64_sonoma:  "da9e98371b47e3ce8d55fcac671e4cd39623708152929f1314c1c98f23445803"
-    sha256 cellar: :any,                 arm64_ventura: "632df0323c808438e232975387a9fd26f59d39b8f75f02fb8d227381da0dc5e4"
-    sha256 cellar: :any,                 sonoma:        "b8b01b6484412158f42dee86bc72c763525e487b38edcc6feb133c7d66c592ac"
-    sha256 cellar: :any,                 ventura:       "e4fcf542d5549c7c157374783fec280836cbc02e863c1cb6d92d81805c02793b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "205e741b2830b2d6ea538d36fb9041c430726b19a843634153d22bcb2ec8f4b2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "05c5b2b33af4772ed8ad30c783f2c25ef7dbe9729f3fb76bafab77d40768c51c"
+    sha256 cellar: :any,                 arm64_sequoia: "f843bad9fb234786832e9dd176bdc49be26e4636d26cda61407c09401f3c3159"
+    sha256 cellar: :any,                 arm64_sonoma:  "d095080f516e4b4a05121baf1fa975cb90b7458745f90cb15203e43900d0764a"
+    sha256 cellar: :any,                 arm64_ventura: "b55189ff73b42247f8d36037baff7f2504e5c6e7806690a3d7baf880ead018f1"
+    sha256 cellar: :any,                 sonoma:        "0b3255c01979fe70603c5d4ffd6024002e92e307c13e435e47f7509438d3358c"
+    sha256 cellar: :any,                 ventura:       "4bbf9a1a0d13033cf08b7090a3fd53509513ca0f2f1ec0c6ca03c5fc44d0929c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "36810faf318538e370ff78210517638d871de8a85489b1fce5de80101cdb44b4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "29024f27cb53a2e8d6844885ad69b7f6d6666024877dfaa4b23fb568a0e6ebc8"
   end
 
   depends_on "protobuf" => :build

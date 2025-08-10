@@ -1,19 +1,18 @@
 class Jd < Formula
   desc "JSON diff and patch"
   homepage "https://github.com/josephburnett/jd"
-  url "https://ghfast.top/https://github.com/josephburnett/jd/archive/refs/tags/v2.2.3.tar.gz"
-  sha256 "eb15f4eef5d418ef002c388f1c30b5802cea3f30609185ce4d12ef05e5148711"
+  url "https://ghfast.top/https://github.com/josephburnett/jd/archive/refs/tags/v2.2.5.tar.gz"
+  sha256 "9f5cf5c0955372b75c8877a9811e0b9ead3682603231558484f47352ee097e9c"
   license "MIT"
   head "https://github.com/josephburnett/jd.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3da935978b2656b746d702e3fb024c6e317708eab643319fe0dcb18f59445972"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3da935978b2656b746d702e3fb024c6e317708eab643319fe0dcb18f59445972"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "3da935978b2656b746d702e3fb024c6e317708eab643319fe0dcb18f59445972"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4a8155352942e2e58c176d2f90027a98d2d995e7b185303a8dfb52f6b0e4da26"
-    sha256 cellar: :any_skip_relocation, ventura:       "4a8155352942e2e58c176d2f90027a98d2d995e7b185303a8dfb52f6b0e4da26"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9536cec9c0feddf8147504272ce24a723402521666271e28161508fe44ec8db9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "48e23ef98402ecbb0b3fb7a3b71217fbe15d3242403e6c28c1cd55e3f4912835"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "48e23ef98402ecbb0b3fb7a3b71217fbe15d3242403e6c28c1cd55e3f4912835"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "48e23ef98402ecbb0b3fb7a3b71217fbe15d3242403e6c28c1cd55e3f4912835"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8efd7c641f8d4050810ce9f6f945620be69b36cc6ef85235db0d7892f99f91b7"
+    sha256 cellar: :any_skip_relocation, ventura:       "8efd7c641f8d4050810ce9f6f945620be69b36cc6ef85235db0d7892f99f91b7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b27cd86044389a44d2487e46791dc8bb4d1fb0a9b9a58c5bc295a8c2f1d7eb92"
   end
 
   depends_on "go" => :build

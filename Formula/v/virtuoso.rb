@@ -6,13 +6,14 @@ class Virtuoso < Formula
   license "GPL-2.0-only" => { with: "openvpn-openssl-exception" }
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "348d6bee110dc480ee50e75b459caebce403b6eaf41e10c5ede5f5f75c3a4984"
-    sha256 cellar: :any,                 arm64_sonoma:  "f300dab174cc53b30883e3927d7cc740bae1b116b69812bafb13891f1ef11622"
-    sha256 cellar: :any,                 arm64_ventura: "25176e4f349710ae8638a0fab1260738b0e714b7745e98cbc9afab419a606832"
-    sha256 cellar: :any,                 sonoma:        "4e84d100192db0bb7696fdc6fd4df9e3aedeb5d36bbf879ee1c6fd245de7a14e"
-    sha256 cellar: :any,                 ventura:       "9988e7ced301bb8e37f9ce0774939e4c95ebd96be84fc8e14cab61dc4908c739"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "09b2fb4441d2a1e13502113f3382eb3f8b4d6eae7a0a82d8cae3b785322462eb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "05367d620bd9173ccdbd871caba54b2bfc50aaabafaa2640d1771adbce9ff3dd"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "554f70d10abdd7c5e5f1c0eed8d202de4e62740bde00ac9d3e26d32168859f6d"
+    sha256 cellar: :any,                 arm64_sonoma:  "b2740440db3983362e3543c4642d097c46a7fe318a48e6bf39988cc73089628c"
+    sha256 cellar: :any,                 arm64_ventura: "54d673c5a3bded8b8246864ecfee54b8a501a2f88e703fd2c4c0754821e5f0cd"
+    sha256 cellar: :any,                 sonoma:        "d0e5dfddf198d9d81c4a62a545cc1791f849c8cb211272b0e361057383339f01"
+    sha256 cellar: :any,                 ventura:       "3836ad54c55271fbcf39b080dfb087d392d9ef1ee549713d0550438925d0668c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "13cf4c0d1af7fa2ceb8aeab1e3d9ec3dc0c61f73b3f551aaceeeeb9ea4f7353d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c72bb1f9b52ea3ef7efc4609fc07b475ca0a7f51c09cec3770dfa90117685f40"
   end
 
   head do
@@ -25,7 +26,7 @@ class Virtuoso < Formula
 
   # If gawk isn't found, make fails deep into the process.
   depends_on "gawk" => :build
-  depends_on "openssl@3.0"
+  depends_on "openssl@3"
 
   uses_from_macos "bison" => :build
   uses_from_macos "flex" => :build
