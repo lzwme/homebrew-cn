@@ -25,7 +25,6 @@ class Tfenv < Formula
   end
 
   conflicts_with "tenv", because: "tfenv symlinks terraform binaries"
-  conflicts_with "terraform", because: "tfenv symlinks terraform binaries"
 
   def install
     prefix.install %w[bin lib libexec share]

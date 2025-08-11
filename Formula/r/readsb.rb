@@ -1,18 +1,18 @@
 class Readsb < Formula
   desc "ADS-B decoder swiss knife"
   homepage "https://github.com/wiedehopf/readsb"
-  url "https://ghfast.top/https://github.com/wiedehopf/readsb/archive/refs/tags/v3.14.1693.tar.gz"
-  sha256 "b80b467995ef39739389b45136786c37e5822327cf50e82f15a05c9e4c18ef18"
+  url "https://ghfast.top/https://github.com/wiedehopf/readsb/archive/refs/tags/v3.14.1694.tar.gz"
+  sha256 "d7ba0a00b5ba1f36678e3480457329fc9ec6899fc5070af69c26af89044c1eff"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "1437b9c866e3f399d395836c9523e3d219d6f93bd50e756f36e18b919802b118"
-    sha256 cellar: :any,                 arm64_sonoma:  "4b38d3fa29723c75099ff54b4dbca9bc35591ad6d2f76ea9ca01db9c2c1e7a48"
-    sha256 cellar: :any,                 arm64_ventura: "c0c6c4e4f4b396e14b167a8ac362506dcb5c416e8b4dd4e2911d4708a3009e43"
-    sha256 cellar: :any,                 sonoma:        "e2b8ae37b083a1162c113af884326df884af0f4c3bd75352553c65eb9139c88e"
-    sha256 cellar: :any,                 ventura:       "f3ebfc252a05b5251acafaf7afa6b642a24674207509154e834d60731f37462d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "bf6ec3b30a240f559f4ce73f667217bf77f8764e0dd6a89a1a75a22c3414aba1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b49a7bb2f345710d7d1ee59202107ca124cbdb6a8951301c20f52941307de82e"
+    sha256 cellar: :any,                 arm64_sequoia: "bf0585dd09bbd1bc70f1e8ab6b81384774c980914facc5e15b1702fe2e7034a4"
+    sha256 cellar: :any,                 arm64_sonoma:  "78ebe470f063e46192b27b360796c9de2d53d1066277b35017e465dce0a191ad"
+    sha256 cellar: :any,                 arm64_ventura: "e82806e011cd303f3fc9a0b45693db36eab21df9cf89cb44d1842ea8209a0dd1"
+    sha256 cellar: :any,                 sonoma:        "d374112d534ea233ad6cea70195ad0fa1bb44a28c1f6606d01f20cc38012ac02"
+    sha256 cellar: :any,                 ventura:       "599c67c39560ec035bf8c2d3b1c29c55150a0b2229548242a3da8a604eec1d82"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1ab6ab6fe43cf919f6e5da6bbefc44617e730fe7c8b2b1393643903457572cab"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fe248cf60aa8d809f69bfd36ab2971a1868fe209358fc19b328adac42b1ee4d1"
   end
 
   depends_on "pkgconf" => :build

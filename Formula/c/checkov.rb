@@ -3,10 +3,9 @@ class Checkov < Formula
 
   desc "Prevent cloud misconfigurations during build-time for IaC tools"
   homepage "https://www.checkov.io/"
-  url "https://files.pythonhosted.org/packages/be/48/7e4a62be0badc612ce23c257af319fdf3b600c6dd81db7cfaaa571e9ecae/checkov-3.2.450.tar.gz"
-  sha256 "a48fee815a973cadc3dea68c2a05a88ef745bfbeb497a319e6a05e0c8b8808ce"
+  url "https://files.pythonhosted.org/packages/a6/52/a69537958165cebdb1428d83cafbc223789fd1615fa3a73ead7892f267bb/checkov-3.2.460.tar.gz"
+  sha256 "4a99902ec4741a2fd009a1623768533245abfcdc86f025da882ebeaeba1cf330"
   license "Apache-2.0"
-  revision 1
 
   livecheck do
     url "https://pypi.org/rss/project/checkov/releases.xml"
@@ -18,13 +17,13 @@ class Checkov < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "724d88ed9dcd55e64b38e312a635d4ab76fe89475935155663d467767f1d762f"
-    sha256 cellar: :any,                 arm64_sonoma:  "ecf2422f1c026b8226856efc7e735ff3cf7505c99bf0e0bb475128ea0ffae20b"
-    sha256 cellar: :any,                 arm64_ventura: "4a4a42f2c10ee0821783bf8899fb09ff413b7a9a7df81c9d4013ec5032bc57d0"
-    sha256 cellar: :any,                 sonoma:        "269fa29d67f16e093d55fa277b7776821abd7ce9d6e5206af8d48aa83a66957a"
-    sha256 cellar: :any,                 ventura:       "e560216039beb757f350d1a17a1f836b1d38d69e600a1438048a3e332d75a28d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a2391cc560e59213317247dd41021380066f202649eb0d79ee18cb004598d416"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e5f4d2759e2862d029e416358e5005b5f1644a8b0dc42f3f2e3fbc51c9f86fc9"
+    sha256 cellar: :any,                 arm64_sequoia: "f4d95e53b5e10f9bd6a60ea35f2df11d4179d070cfee3e2ba1e91ca79b898319"
+    sha256 cellar: :any,                 arm64_sonoma:  "5cb2ae930ff912318bbd9797c579e0306e5a2c7552fe6c973ccb90bd52bf6cf8"
+    sha256 cellar: :any,                 arm64_ventura: "aac4f8d01aba6e10c14e3c6eb8d5d85c3a82e0b727e2d90770371df5297e75ec"
+    sha256 cellar: :any,                 sonoma:        "e3f3a0bf1ed3ea625e0017e526c6657a5787260aef3d467ea931ea127e012cfc"
+    sha256 cellar: :any,                 ventura:       "50be0a869dc4c72815bdf44e83e0842cfdaf49ddd9f1bfdd4f29725a33992955"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2e9de744cb918acd4343fe6a23e1d4ba428075413ff43bdf6129106ab7d4fe16"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "95ff4a6e579b1bda9ebf44e8c2abe9756522f7d87b8be1a3f22b7aa4262c2fab"
   end
 
   depends_on "cmake" => :build # for igraph
@@ -92,8 +91,8 @@ class Checkov < Formula
   end
 
   resource "bc-python-hcl2" do
-    url "https://files.pythonhosted.org/packages/d8/9a/1cb1e4c65a75dcc304438d1f941345d5dd5e8819f1a8b7b17991a21a22b3/bc-python-hcl2-0.4.2.tar.gz"
-    sha256 "ac8ff59fb9bd437ea29b89a7d7c507fd0a1e957845bae9aeac69f2892b8d681e"
+    url "https://files.pythonhosted.org/packages/60/43/8ee6ea8a19952045c15e6c9b164a9f88c2575b4bb86655c6da861b874986/bc_python_hcl2-0.4.3.tar.gz"
+    sha256 "fae62b2a41a675ad330d134d82576526db755f72bbd0e5a850de3d85fc24c40e"
   end
 
   resource "beartype" do
@@ -137,8 +136,8 @@ class Checkov < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/e4/33/89c2ced2b67d1c2a61c19c6751aa8902d46ce3dacb23600a283619f5a12d/charset_normalizer-3.4.2.tar.gz"
-    sha256 "5baececa9ecba31eff645232d59845c07aa030f0c81ee70184a90d35099a0e63"
+    url "https://files.pythonhosted.org/packages/83/2d/5fd176ceb9b2fc619e63405525573493ca23441330fcdaee6bef9460e924/charset_normalizer-3.4.3.tar.gz"
+    sha256 "6fce4b8500244f6fcb71465d4a4930d132ba9ab8e71a7859e6a5d59851068d14"
   end
 
   resource "click" do
@@ -382,8 +381,8 @@ class Checkov < Formula
   end
 
   resource "rpds-py" do
-    url "https://files.pythonhosted.org/packages/a5/aa/4456d84bbb54adc6a916fb10c9b374f78ac840337644e4a5eda229c81275/rpds_py-0.26.0.tar.gz"
-    sha256 "20dae58a859b0906f0685642e591056f1e787f3a8b39c8e8749a45dc7d26bdb0"
+    url "https://files.pythonhosted.org/packages/1e/d9/991a0dee12d9fc53ed027e26a26a64b151d77252ac477e22666b9688bc16/rpds_py-0.27.0.tar.gz"
+    sha256 "8b23cf252f180cda89220b378d917180f29d313cd6a07b2431c0d3b776aae86f"
   end
 
   resource "rustworkx" do

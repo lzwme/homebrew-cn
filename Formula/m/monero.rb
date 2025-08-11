@@ -37,8 +37,6 @@ class Monero < Formula
   depends_on "unbound"
   depends_on "zeromq"
 
-  conflicts_with "wownero", because: "both install a wallet2_api.h header"
-
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"

@@ -14,16 +14,17 @@ class F3d < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:  "b4d6c998da4b4400ec393db77b1179bff8d831da62ec0bc14f2dcbf3b148092e"
-    sha256 cellar: :any,                 arm64_ventura: "19fb79db099dfa5bec63e662356608de158a8b81aa6e16b885e857d46a4598f8"
-    sha256 cellar: :any,                 sonoma:        "25ba5dbee1df01d8c1e76b0ca7d2df0fc94d194ae222200f5093ac80533556ee"
-    sha256 cellar: :any,                 ventura:       "2ac0379fa03532632b72f2d09589f8b73986ffee89f3eb3f2eabb1e6d369b46e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c7d3ce5e14c08f8b86b7ac555d8a0307cf3e9c0d5d90eeff4167ae2d3ddfcb25"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:  "1faed344ab1ecf8e01237497bd8f7e3a070a1d46a5c72e3d5ff38c227450476d"
+    sha256 cellar: :any,                 arm64_ventura: "6da591c7f40eb2cbb41e61df02f09824c4b6f7b9be795d0cf0047c27ba7a8d8f"
+    sha256 cellar: :any,                 sonoma:        "3540128eb1eeedb8d9898431caa2ca7e614ce8098507e54404cc8548727cc839"
+    sha256 cellar: :any,                 ventura:       "fe1247dc2c9968ce4a6c4821a90746ce1b37a540bd7948697588c873381d0141"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "25a4248c63f025c936823e845c5c833b65dd85279d783ecbaf473dd6b290f5e3"
   end
 
   depends_on "cmake" => :build
   depends_on "alembic"
-  depends_on "assimp@5"
+  depends_on "assimp"
   depends_on "glew"
   depends_on "jsoncpp"
   depends_on "opencascade"

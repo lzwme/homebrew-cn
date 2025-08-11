@@ -41,8 +41,6 @@ class GitFlowAvh < Formula
 
   depends_on "gnu-getopt"
 
-  conflicts_with "git-flow", because: "both install `git-flow` binaries and completions"
-
   def install
     system "make", "prefix=#{libexec}", "install"
     (bin/"git-flow").write <<~EOS

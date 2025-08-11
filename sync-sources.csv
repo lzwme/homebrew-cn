@@ -4521,7 +4521,6 @@ Homebrew-homebrew-core/Formula/m/mmseqs2.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mmsrip.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mmtabbarview.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mmv.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/m/moar.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/moarvm.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mob.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mobiledevice.rb, Homebrew/homebrew-core, 1
@@ -4566,6 +4565,7 @@ Homebrew-homebrew-core/Formula/m/montage.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/moodle-dl.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/moon-buggy.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/moon.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/m/moor.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/moreutils.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/morpheus.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/morse.rb, Homebrew/homebrew-core, 0
@@ -5286,7 +5286,7 @@ Homebrew-homebrew-core/Formula/p/percol.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/percona-server.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/percona-server@8.0.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/percona-toolkit.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/p/percona-xtrabackup.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/p/percona-xtrabackup.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/percona-xtrabackup@8.0.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/periphery.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/periscope.rb, Homebrew/homebrew-core, 0
@@ -6410,7 +6410,7 @@ Homebrew-homebrew-core/Formula/s/soci.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/socket_vmnet.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sofia-sip.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/soft-serve.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/s/softhsm.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/s/softhsm.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/solana.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/solargraph.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/solarus.rb, Homebrew/homebrew-core, 0
@@ -10602,9 +10602,17 @@ Homebrew-homebrew-cask/Casks/font/font-m/font-manufacturing-consent.rb, Homebrew
 Homebrew-homebrew-cask/Casks/font/font-m/font-maple-mono-cn.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-m/font-maple-mono-nf-cn.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-m/font-maple-mono-nf.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-m/font-maple-mono-nl-cn.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-m/font-maple-mono-nl-nf-cn.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-m/font-maple-mono-nl-nf.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-m/font-maple-mono-nl.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-m/font-maple-mono-normal-cn.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-m/font-maple-mono-normal-nf-cn.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-m/font-maple-mono-normal-nf.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-m/font-maple-mono-normal-nl-cn.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-m/font-maple-mono-normal-nl-nf-cn.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-m/font-maple-mono-normal-nl-nf.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-m/font-maple-mono-normal-nl.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-m/font-maple-mono-normal.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-m/font-maple-mono.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-m/font-marcellus-sc.rb, Homebrew/homebrew-cask, 0

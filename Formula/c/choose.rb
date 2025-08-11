@@ -25,9 +25,6 @@ class Choose < Formula
 
   depends_on "python@3.13"
 
-  conflicts_with "choose-gui", because: "both install a `choose` binary"
-  conflicts_with "choose-rust", because: "both install a `choose` binary"
-
   resource "urwid" do
     url "https://files.pythonhosted.org/packages/5f/cf/2f01d2231e7fb52bd8190954b6165c89baa17e713c690bdb2dfea1dcd25d/urwid-2.2.2.tar.gz"
     sha256 "5f83b241c1cbf3ec6c4b8c6b908127e0c9ad7481c5d3145639524157fc4e1744"

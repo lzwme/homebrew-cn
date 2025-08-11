@@ -24,7 +24,6 @@ class Tenv < Formula
   depends_on "go" => :build
 
   conflicts_with "opentofu", "tofuenv", because: "both install tofu binary"
-  conflicts_with "terraform", because: "both install terraform binary"
   conflicts_with "terragrunt", because: "both install terragrunt binary"
   conflicts_with "terramate", because: "both install terramate binary"
   conflicts_with "atmos", because: "both install atmos binary"

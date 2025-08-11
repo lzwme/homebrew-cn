@@ -41,7 +41,6 @@ class Alpine < Formula
     depends_on "linux-pam"
   end
 
-  conflicts_with "imap-uw", because: "both install `mailutil` binaries"
   conflicts_with "macpine", because: "both install `alpine` binaries"
 
   # patch for macOS obtained from developer; see git commit

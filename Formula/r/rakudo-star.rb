@@ -37,7 +37,7 @@ class RakudoStar < Formula
     depends_on "libuv"
   end
 
-  conflicts_with "moar", because: "both install `moar` binaries"
+  conflicts_with "moor", because: "both install `moar` binaries"
   conflicts_with "moarvm", "nqp", because: "rakudo-star currently ships with moarvm and nqp included"
   conflicts_with "parrot"
   conflicts_with "rakudo"

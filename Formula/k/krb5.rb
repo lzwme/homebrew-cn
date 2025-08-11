@@ -1,8 +1,8 @@
 class Krb5 < Formula
   desc "Network authentication protocol"
   homepage "https://web.mit.edu/kerberos/"
-  url "https://kerberos.org/dist/krb5/1.21/krb5-1.21.3.tar.gz"
-  sha256 "b7a4cd5ead67fb08b980b21abd150ff7217e85ea320c9ed0c6dadd304840ad35"
+  url "https://kerberos.org/dist/krb5/1.22/krb5-1.22.tar.gz"
+  sha256 "652be617b4647f3c5dcac21547d47c7097101aad4e306f1778fb48e17b220ba3"
   license :cannot_represent
 
   livecheck do
@@ -11,15 +11,13 @@ class Krb5 < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia:  "75d0ce70b754c159e642f7e9afff27add08203423792f34c240a20ea014bfcec"
-    sha256 arm64_sonoma:   "c7e8ec4458b77cb3bdc1bea7b6db6f6dfa6bb6c377cc0e6bd48f6d3f89d98f6b"
-    sha256 arm64_ventura:  "e13b0f482b86a0139a13b482c4203540d1da19e82f29abd11ce155179a847c78"
-    sha256 arm64_monterey: "b776903543fdcbf9af790c1ee6a6197b51bd00ad4f67c1f03e1741a352b0a756"
-    sha256 sonoma:         "2ceff13b1041a0c1fe479069725c95cc0297cb221a616b4e4be107a745660d46"
-    sha256 ventura:        "af7bd61f35af7725018817b4625b664f61efd4370d3fa6e0171bb49b968ab0b9"
-    sha256 monterey:       "625e89432d8dc4a6571ae3db24cdd793f0bd058cff43c09eb565b41c7012ca9e"
-    sha256 arm64_linux:    "e81ba4d9e5a7aea638f48dde6a7bc678dfc324771b6a58dc23d441e0ec80de27"
-    sha256 x86_64_linux:   "f5b4cafedb315e92a31a0a5d87e33f7826952bcc5c093ba65817c61247799601"
+    sha256 arm64_sequoia: "aea4f804ea4778c69376daab5d35b931a2e2ed7059f824882c003ff6c9995214"
+    sha256 arm64_sonoma:  "1a588cbda0b4519817d295ac3c2cd1b730a77f62c4a3f349cc9adfb7163b0aee"
+    sha256 arm64_ventura: "5f75201970b8c8885970238475a68265721e86d4e23f08fd9db7825e9ff0173a"
+    sha256 sonoma:        "2ea0c30ca5125e0cba9661a90e3c0f165a371a63c6b66cd0feeea1fa310bcd29"
+    sha256 ventura:       "bccc282e81a74e093965f2ba6b522d37a82bf245d9c457b3bf12fcaddc61c8f4"
+    sha256 arm64_linux:   "59c162205019ccaf9dede4cf7fc118f49e4e525bb7972b7e9d7738cafdcb8211"
+    sha256 x86_64_linux:  "eb0848f3081717452b543b304515d1b9a6a0023618dfe7af1f9db9635041df10"
   end
 
   keg_only :provided_by_macos

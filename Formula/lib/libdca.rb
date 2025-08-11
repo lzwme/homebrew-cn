@@ -33,8 +33,6 @@ class Libdca < Formula
   depends_on "automake" => :build
   depends_on "libtool" => :build
 
-  conflicts_with "dcadec", because: "both install `dcadec` binaries"
-
   def install
     # Fixes "duplicate symbol ___sputc" error when building with clang
     # https://github.com/Homebrew/homebrew/issues/31456

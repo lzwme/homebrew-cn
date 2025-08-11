@@ -7,13 +7,14 @@ class Kuzu < Formula
   head "https://github.com/kuzudb/kuzu.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "94608aca4d744e3536a11933e8ea3cf7381aa3220eaae7bb9ec3fe9ffe467467"
-    sha256 cellar: :any,                 arm64_sonoma:  "50459e3361e69c0e46f16866e5b58f798ea626e3c7f2f4af1ebbdd471d502ff5"
-    sha256 cellar: :any,                 arm64_ventura: "51e100c08dd1f38764cb16abb16a9ea27f87576cd527511942d797dadb978174"
-    sha256 cellar: :any,                 sonoma:        "dae30f4dceec817bd02b1143e7ba0fc4aba0f6d3b4a62886c38a668f4fb49eea"
-    sha256 cellar: :any,                 ventura:       "d92b394ecef03c0de03400922a73e86ece84b1c27824952e5a1b3f9794d2cbe1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f6fa4fa217f1bf64383b991ec183016445b001a6151de2e1708ce95ebaccc4e5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9bafad12c8ec515a0ea73275ee2b034609682dec2661e6355d42bf2a16435826"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "7b29b4ae2df088932fab87dc77df54720622fa2c78c2b4203a03bbd4ff13737e"
+    sha256 cellar: :any,                 arm64_sonoma:  "0bea81ebab52fc643e4aa036b4bd2d3a2f5eb47a4a5e6c78f61370d582b21c4e"
+    sha256 cellar: :any,                 arm64_ventura: "4a08837b40109f1480ee3427a266844f355bc6dc728522f7ab2b28cffeae5f15"
+    sha256 cellar: :any,                 sonoma:        "02ddf95116a0657c437e007348ecde64b13603b48951005dc830ffad3e848442"
+    sha256 cellar: :any,                 ventura:       "38ce1807674dec3405f1b3393f27ab1c880a0e88e125c0fcc6af7670cefdd680"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "694830a475c766ab54840f28e9be11f91791fd6bb8c7b9ed8150609fc968427a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fca3925106804625d590a0d7ea39aedbbc6ebaee4fb1fcb01034bafe5f9b800f"
   end
 
   depends_on "cmake" => :build
@@ -25,7 +26,16 @@ class Kuzu < Formula
   end
 
   on_linux do
-    depends_on "gcc@12" if DevelopmentTools.gcc_version("/usr/bin/gcc") < 12
+    on_intel do
+      # NOTE: Do not add a runtime dependency on GCC as `kuzu` ships libraries.
+      # If build fails with default GCC or Clang then bottle should be dropped.
+      depends_on "llvm" => :build if DevelopmentTools.gcc_version("gcc") < 12
+
+      fails_with :gcc do
+        version "11"
+        cause "error: unknown type name '__m512h'"
+      end
+    end
   end
 
   fails_with :clang do
@@ -34,11 +44,12 @@ class Kuzu < Formula
   end
 
   fails_with :gcc do
-    version "11"
-    cause "needs GCC 12 or newer"
+    version "10"
+    cause "Requires C++20"
   end
 
   def install
+    ENV.llvm_clang if OS.linux? && Hardware::CPU.intel? && DevelopmentTools.gcc_version("gcc") < 12
     if OS.mac? && DevelopmentTools.clang_build_version <= 1400
       ENV.llvm_clang
       # Work around failure mixing newer `llvm` headers with older Xcode's libc++:

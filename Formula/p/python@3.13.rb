@@ -451,6 +451,9 @@ class PythonAT313 < Formula
       `python3`, `python3-config`, `pip3` etc., respectively, are installed into
         #{opt_libexec}/bin
 
+      `idle#{version.major_minor}` requires tkinter, which is available separately:
+        brew install python-tk@#{version.major_minor}
+
       See: https://docs.brew.sh/Homebrew-and-Python
     EOS
   end

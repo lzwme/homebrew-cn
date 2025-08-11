@@ -23,8 +23,6 @@ class Ethereum < Formula
 
   depends_on "go" => :build
 
-  conflicts_with "erigon", because: "both install `evm` binaries"
-
   def install
     # Force superenv to use -O0 to fix "cgo-dwarf-inference:2:8: error:
     # enumerator value for '__cgo_enum__0' is not an integer constant".

@@ -464,7 +464,7 @@ class PythonAT311 < Formula
       They will install into the site-package directory
         #{HOMEBREW_PREFIX}/lib/python#{version.major_minor}/site-packages
 
-      tkinter is no longer included with this formula, but it is available separately:
+      `idle#{version.major_minor}` requires tkinter, which is available separately:
         brew install python-tk@#{version.major_minor}
 
       gdbm (`dbm.gnu`) is no longer included in this formula, but it is available separately:

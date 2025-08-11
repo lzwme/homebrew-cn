@@ -1,19 +1,19 @@
 class Marcli < Formula
   desc "Parse MARC (ISO 2709) files"
   homepage "https://github.com/hectorcorrea/marcli"
-  url "https://ghfast.top/https://github.com/hectorcorrea/marcli/archive/refs/tags/v1.3.0.tar.gz"
-  sha256 "7ee0ea5e0edd73e1ac7155bf9d3579f20818384ba1dc12b5a87f869b00a1ca69"
+  url "https://ghfast.top/https://github.com/hectorcorrea/marcli/archive/refs/tags/v1.3.1.tar.gz"
+  sha256 "944c7c389d384a9515799bb688cb9ced80344709758a42c714f726957785a1c4"
   license "MIT"
   head "https://github.com/hectorcorrea/marcli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8195322c8bfb3058cee9538c3c3a9c46cdb42a6d8a8d96f93bb634ade82869f6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8195322c8bfb3058cee9538c3c3a9c46cdb42a6d8a8d96f93bb634ade82869f6"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "8195322c8bfb3058cee9538c3c3a9c46cdb42a6d8a8d96f93bb634ade82869f6"
-    sha256 cellar: :any_skip_relocation, sonoma:        "297dd93fe14afefbde8e9e79a1eecb57c11559aaa4a09fdbbfd7e601b74271d3"
-    sha256 cellar: :any_skip_relocation, ventura:       "297dd93fe14afefbde8e9e79a1eecb57c11559aaa4a09fdbbfd7e601b74271d3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4cc36463a6cb016a3709b04141c833b1fe867e95d2ed42036492788b5d8d39e9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d6c80b649b3202e6abd273807d6d49beca9f696a9de0aa6e1bd9e61b29f805d7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2152b85bd6b2a00ebe84d354e0b09066a463a4442d3478529513021b63769216"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2152b85bd6b2a00ebe84d354e0b09066a463a4442d3478529513021b63769216"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "2152b85bd6b2a00ebe84d354e0b09066a463a4442d3478529513021b63769216"
+    sha256 cellar: :any_skip_relocation, sonoma:        "fba05203356da269bfb3f6b89e0fda85562698c63860bfb036f7e1335c0e0dd2"
+    sha256 cellar: :any_skip_relocation, ventura:       "fba05203356da269bfb3f6b89e0fda85562698c63860bfb036f7e1335c0e0dd2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "43204fe80171a0721bddc9ddd40d75d2936fa9accd5e0f3eed1f3d1b2e2c989c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f8569415a2de99dcf9476b4bf9b9d8e0d5c738b17c386e017a74f4b53887f2a1"
   end
 
   depends_on "go" => :build

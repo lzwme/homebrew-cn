@@ -465,6 +465,9 @@ class PythonAT312 < Formula
       If you do not need a specific version of Python, and always want Homebrew's `python3` in your PATH:
         brew install python3
 
+      `idle#{version.major_minor}` requires tkinter, which is available separately:
+        brew install python-tk@#{version.major_minor}
+
       See: https://docs.brew.sh/Homebrew-and-Python
     EOS
   end

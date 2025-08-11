@@ -1,27 +1,21 @@
 class Kor < Formula
   desc "CLI tool to discover unused Kubernetes resources"
   homepage "https://github.com/yonahd/kor"
-  url "https://ghfast.top/https://github.com/yonahd/kor/archive/refs/tags/v0.6.2.tar.gz"
-  sha256 "949b5857f126b4a237daae3670b115b6671fb8c233fd5569d2897635f867c2cd"
+  url "https://ghfast.top/https://github.com/yonahd/kor/archive/refs/tags/v0.6.4.tar.gz"
+  sha256 "3b3dbe74e2cb1a5b059ea087996b66f1fae3b8082734deffb0debee0b6c61be7"
   license "MIT"
   head "https://github.com/yonahd/kor.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "31275612e3e476d5047283d9ca94ed3e6ef837b2e5f8b0ab8b495d9789eae542"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cf6d3c5ebb828e74eb0654983c9725b700e523a9ad65683d8008db9619618113"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "8370d440712f082fe7e6a68e9d4e794f85c04213ee379ada103bffbad32bc513"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e4732b6723d5dc195bb5258085e4e5d5a3dee97429f76e41698ec9416f5ec672"
-    sha256 cellar: :any_skip_relocation, ventura:       "91affdfcff34d36ad82f851b7b7ab90193464c5410b797dacd1174e9e88d54d8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4659212b65a1845b56de8f3688617729e3f443122510e192cbf2ee263dbcf652"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "714d50541ed5ca508388e94854f33eb3b7a54f61c3ae07632c60c75031e065df"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9289c107712df9795247f49b4a08436f014885b8c5765526e9510c514feb4c49"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "71172adb348b393c81847f370a7bc4264d7ffd45152e410af4b4926ca87030b3"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6ba6e593f502112ecb199b22fda4f3212f39f1dd951e66887c470c1e6683896a"
+    sha256 cellar: :any_skip_relocation, ventura:       "75ffcdce1455f0486de45104dd949d939d1e8940cd1d913d3dd48d718799578c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "22e135043f8070c37c0e3e258edb40770e4f31aae74b6582f3cef7b5052fa3ca"
   end
 
   depends_on "go" => :build
-
-  # skip kubeconfig for utility commands, upstream pr ref, https://github.com/yonahd/kor/pull/457
-  patch do
-    url "https://github.com/yonahd/kor/commit/6c02951894e587c023e57a7ab2654136024bff70.patch?full_index=1"
-    sha256 "98b3dac34c1164831a25502f8c2723d227cdac8ade8e4f68b17b00057e149be4"
-  end
 
   def install
     ldflags = "-s -w -X github.com/yonahd/kor/pkg/utils.Version=#{version}"

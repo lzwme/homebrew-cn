@@ -38,8 +38,6 @@ class ImapUw < Formula
     depends_on "linux-pam"
   end
 
-  conflicts_with "alpine", because: "both install `mailutil` binaries"
-
   # Two patches below are from Debian, to fix OpenSSL 3 compatibility
   # https://salsa.debian.org/holmgren/uw-imap/tree/master/debian/patches
   patch do

@@ -43,7 +43,6 @@ class Mapnik < Formula
 
   uses_from_macos "zlib"
 
-  conflicts_with "osrm-backend", because: "both install Mapbox Variant headers"
   conflicts_with "svg2png", because: "both install `svg2png` binaries"
 
   def install

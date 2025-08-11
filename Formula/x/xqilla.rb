@@ -25,8 +25,6 @@ class Xqilla < Formula
 
   depends_on "xerces-c"
 
-  conflicts_with "zorba", because: "both supply `xqc.h`"
-
   def install
     ENV.cxx11
 

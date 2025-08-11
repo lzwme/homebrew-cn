@@ -30,8 +30,6 @@ class Dcadec < Formula
   deprecate! date: "2024-06-30", because: :deprecated_upstream
   disable! date: "2025-07-02", because: :deprecated_upstream
 
-  conflicts_with "libdca", because: "both install `dcadec` binaries"
-
   def install
     system "make", "all"
     system "make", "PREFIX=#{prefix}", "install"

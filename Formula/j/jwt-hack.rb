@@ -1,21 +1,21 @@
 class JwtHack < Formula
   desc "JSON Web Token Hack Toolkit"
   homepage "https://github.com/hahwul/jwt-hack"
-  url "https://ghfast.top/https://github.com/hahwul/jwt-hack/archive/refs/tags/v2.0.0.tar.gz"
-  sha256 "f2ee0308b694c86d3dbf49bc10c6301c210461a513d857b99f7b96091f736817"
+  url "https://ghfast.top/https://github.com/hahwul/jwt-hack/archive/refs/tags/v2.1.0.tar.gz"
+  sha256 "37af0cf465b6262c6ce618d88f0122df5c536613cdee8addee5990b28558f56c"
   license "MIT"
   head "https://github.com/hahwul/jwt-hack.git", branch: "main"
 
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a873fbf22a7fdda5a65150c817257cefc89ccd562286ede59d01e4a970e74847"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ccc825f3b87b0bfe0e309e217cac7f8a10c2d9a5e6bfb103c47818ace888eeef"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "0e8a8e363356cbe92fb51fe20f0a2421ad1bd68109152e6d249adfe274b42008"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5dbe60466f3be0d379c5a049637831e97dcdeebe0b88c4ef7dbbd5be57ef8492"
-    sha256 cellar: :any_skip_relocation, ventura:       "ee3e1ba9b675a289aa00161021d983c400a48a2295844a23be993044697afe59"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5e34b61261e53f5e829b005578523736b7849f33e5de0d3e6c0fbcbc3b9d8146"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6a76d31e93d7bd5557503096ba4e09c2add33e4ce688b98fad157956d88c0264"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ba40e6633b5b0f8f20ae555897eb6acadfe6905e763940c8968ae00183d32237"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5f26967e9af7f4fa3b481e87ee98336ee8c2e641b4c229e36feb64e26e9d39cc"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "1c2d51b3e7cd459b60d2efb1de8d657a361bea8a530f753df29ec4d9f2599d3b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "1eaf110d211f17231dd7b28924b661072726c17ffe1cb5e2104f3be00e5019cb"
+    sha256 cellar: :any_skip_relocation, ventura:       "02d8edf96689bd9d6108945e8dedcf683b6ba4d93aadbdf65c7fa26badda2fd2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3292f5cc168427af341a83542a04bb967353d3c12c81f760bac2dc53805cc10c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "336276b55af948477089877d619450a2af45bc076300fb1c734060418542d3fb"
   end
 
   depends_on "rust" => :build

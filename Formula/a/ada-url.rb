@@ -7,13 +7,11 @@ class AdaUrl < Formula
   head "https://github.com/ada-url/ada.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "49e7c96a4cc3c978894c93607aed26e7a0ab64fffb1b8f5725a16ff68a236e9a"
-    sha256 cellar: :any,                 arm64_sonoma:  "5a8a2e7c50c06fca1fbc9f6682fd31569cfbe9c5f075ab742cccba39280cb4a4"
-    sha256 cellar: :any,                 arm64_ventura: "8b54308b388ce3ae1e417aae2716513faaa77e96d6435b73a136739352d7aad1"
-    sha256 cellar: :any,                 sonoma:        "e22d95f05db7451750c0a411522fa57d6c6f67caba6d21ae276a2050a5672ed4"
-    sha256 cellar: :any,                 ventura:       "4a0257b458c101fd82a19cc0602fe4cd9a5982142cd596ea191593be7c86d062"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2a163000a7fb4c22e53c73bfaca54db8d9dfd99b8c6134b9884e17f5c148387f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b848376037b34315b917afb20f24bd6e1f022918ef2b24f1f891b2790c3d6104"
+    sha256 cellar: :any, arm64_sequoia: "49e7c96a4cc3c978894c93607aed26e7a0ab64fffb1b8f5725a16ff68a236e9a"
+    sha256 cellar: :any, arm64_sonoma:  "5a8a2e7c50c06fca1fbc9f6682fd31569cfbe9c5f075ab742cccba39280cb4a4"
+    sha256 cellar: :any, arm64_ventura: "8b54308b388ce3ae1e417aae2716513faaa77e96d6435b73a136739352d7aad1"
+    sha256 cellar: :any, sonoma:        "e22d95f05db7451750c0a411522fa57d6c6f67caba6d21ae276a2050a5672ed4"
+    sha256 cellar: :any, ventura:       "4a0257b458c101fd82a19cc0602fe4cd9a5982142cd596ea191593be7c86d062"
   end
 
   depends_on "cmake" => :build
@@ -45,6 +43,8 @@ class AdaUrl < Formula
   test do
     ENV["CXX"] = Formula["llvm"].opt_bin/"clang++" if OS.mac? && DevelopmentTools.clang_build_version <= 1500
     ENV.prepend_path "PATH", Formula["binutils"].opt_bin if OS.linux?
+    # Do not upload a Linux bottle that bypasses audit and needs Linux-only GCC dependency
+    ENV.method(DevelopmentTools.default_compiler).call if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
 
     (testpath/"test.cpp").write <<~CPP
       #include "ada.h"

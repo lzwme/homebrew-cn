@@ -19,8 +19,6 @@ class Iniparser < Formula
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
 
-  conflicts_with "fastbit", because: "both install `include/dictionary.h`"
-
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"

@@ -50,7 +50,6 @@ class OsrmBackend < Formula
   end
 
   conflicts_with "flatbuffers", because: "both install flatbuffers headers"
-  conflicts_with "mapnik", because: "both install Mapbox Variant headers"
 
   def install
     # Work around build failure: duplicate symbol 'boost::phoenix::placeholders::uarg9'

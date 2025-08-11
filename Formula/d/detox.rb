@@ -1,18 +1,18 @@
 class Detox < Formula
   desc "Utility to replace problematic characters in filenames"
   homepage "https://detox.sourceforge.net/"
-  url "https://ghfast.top/https://github.com/dharple/detox/archive/refs/tags/v3.0.0.tar.gz"
-  sha256 "409c25875da37137a390d29a65d0cadcf99c4f6fe524fdb76bc1fb7e987ab799"
+  url "https://ghfast.top/https://github.com/dharple/detox/archive/refs/tags/v3.0.1.tar.gz"
+  sha256 "15dc32ca5856a3edc2fff237c8cbcb29979a25292aac738a272181d2152699ea"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 arm64_sequoia: "bb8e9362999ad6334ece927cb05875ffd92f46d7127fc7b354ba66d73716be56"
-    sha256 arm64_sonoma:  "aae15dfee10976d473d400b0830c415bd154fa946cf6e36b03a4d781d0923d12"
-    sha256 arm64_ventura: "eac0f4171f62ca9f70e540d45fa3019e06edac2f0f847f4f714f66ac550ab8b2"
-    sha256 sonoma:        "613dc7c33956fab7088dedec1ee060ad8f6e0bc18c5aa18ea3988f9da007b884"
-    sha256 ventura:       "da7ed61574f4ff64d63d63c6806493a33e5bf1e8dae4c879074d37b64f98c7fc"
-    sha256 arm64_linux:   "148017084514876dd611f5a51bb8ce981167c2cf0dc8cc1cbe8753cd1afd04a6"
-    sha256 x86_64_linux:  "d0601f06bcd9d68f4ab6b12d17497e8d2ffc7fbe66868db5d6da6e2e7be1cba4"
+    sha256 arm64_sequoia: "ce9b57a452b95589a2aec98663da824fb08d5336b90e4b0d49929a620cbc1f3b"
+    sha256 arm64_sonoma:  "7f8d15ffabb295011c2d6e4e1681196d26b88dc31841787d2fd08a061afe4f47"
+    sha256 arm64_ventura: "e38cc831cb81dff39a77a3355a4f91c7fc8e9e896400b0931b4997620a068234"
+    sha256 sonoma:        "bfbb8acca19b7f2214f490a072f9bf8157f01cd160d6339aaf6e0935b8cfe519"
+    sha256 ventura:       "a7d62b75598031b522a02dbe8c93368751e5cfde317e16ca86305dd2bc506471"
+    sha256 arm64_linux:   "5cf76b955859cefac2d10cda631e81c26b519e202f70be163f0c73e52bdac572"
+    sha256 x86_64_linux:  "648e5e31695aa59ab1f7bff5524363e84a513c0f07d65050487dd6366002178c"
   end
 
   depends_on "autoconf" => :build

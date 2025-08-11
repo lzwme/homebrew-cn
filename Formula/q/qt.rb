@@ -24,11 +24,12 @@ class Qt < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_sonoma:  "1cf02761bf4f637e566b41fbb98fdc569ebf813ebd20fc5ab47178758728194c"
-    sha256 cellar: :any, arm64_ventura: "63597d1fc6c6637bf094bd81f5653ed4738d7ff9e6e2bb64890627b7ccd7e61e"
-    sha256 cellar: :any, sonoma:        "119fe4df5bc1b88b1282bc26545094ea1a6bfe8679765c795d05943922e279e6"
-    sha256 cellar: :any, ventura:       "965a804ac6a3dba6efbe0639602005b8cdc622517eac7d16ccbe81cbfe839ce8"
-    sha256               x86_64_linux:  "d6b6ebda449e8066ec1ae3ee61074925d2b74edade6d9b77d3caa46f6eeb76aa"
+    rebuild 1
+    sha256 cellar: :any, arm64_sonoma:  "5b02cafecab509082f82311a538b088285033788affb96b419a0df0bbb5cd849"
+    sha256 cellar: :any, arm64_ventura: "6bf023de45eff4208fdecd2cb63a7edee9c5747df75d3b7e3fc83988431f4864"
+    sha256 cellar: :any, sonoma:        "1a0065fe535aae8d3b90a2416a48062639c10657e42feac7ddd681a4db195300"
+    sha256 cellar: :any, ventura:       "400f1fe51a0cb21266ed724f86d25e5b1537e75b9d084b0632dc0c7a8783f153"
+    sha256               x86_64_linux:  "493a42d2d1744a449f23c2840f7ce1cee7a5da35d2ac4d9e175ae649ee1c7569"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -41,7 +42,7 @@ class Qt < Formula
   depends_on "vulkan-loader" => [:build, :test]
   depends_on xcode: :build
 
-  depends_on "assimp@5"
+  depends_on "assimp"
   depends_on "brotli"
   depends_on "dbus"
   depends_on "double-conversion"
@@ -149,6 +150,19 @@ class Qt < Formula
   patch do
     url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/e013656cb06ab4a1a54ca6fd9269647d4bf530bc/qt/6.9.1-unique_lock.patch"
     sha256 "6bca73d693e8fc24a5b30109e8d652f666a7b5b0fe1f5ae76202f14044eda02c"
+  end
+
+  # Apply Arch Linux patches for assimp 6 support
+  # Issue ref: https://bugreports.qt.io/browse/QTBUG-139028 / https://bugreports.qt.io/browse/QTBUG-139029
+  patch do
+    url "https://gitlab.archlinux.org/archlinux/packaging/packages/qt6-3d/-/raw/811dd8b18b4042f7120722b63953499830b51ddd/assimp-6.patch"
+    sha256 "244589b0a353da757d61ce6b86d4fcf2fc8c11e9c0d9c5b109180cec9273055a"
+    directory "qt3d"
+  end
+  patch do
+    url "https://gitlab.archlinux.org/archlinux/packaging/packages/qt6-quick3d/-/raw/2c6f918ee81adb61290cf56453c2d67e5dce259f/assimp-6.patch"
+    sha256 "573f00cdad90d77786fba80066d61d5ee97fc56a8b11d0896949acd16bda8e91"
+    directory "qtquick3d"
   end
 
   def install

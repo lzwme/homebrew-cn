@@ -461,7 +461,7 @@ class PythonAT310 < Formula
       They will install into the site-package directory
         #{HOMEBREW_PREFIX}/lib/python#{version.major_minor}/site-packages
 
-      tkinter is no longer included with this formula, but it is available separately:
+      `idle#{version.major_minor}` requires tkinter, which is available separately:
         brew install python-tk@#{version.major_minor}
 
       If you do not need a specific version of Python, and always want Homebrew's `python3` in your PATH:

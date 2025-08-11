@@ -1,7 +1,7 @@
 class Softhsm < Formula
   desc "Cryptographic store accessible through a PKCS#11 interface"
-  homepage "https://www.opendnssec.org/softhsm/"
-  url "https://dist.opendnssec.org/source/softhsm-2.6.1.tar.gz"
+  homepage "https://www.opendnssec.org/en/latest/softhsm/"
+  url "https://ghfast.top/https://github.com/opendnssec/opendnssec/releases/download/2.1.14/softhsm-2.6.1.tar.gz"
   sha256 "61249473054bcd1811519ef9a989a880a7bdcc36d317c9c25457fc614df475f2"
   license "BSD-2-Clause"
 

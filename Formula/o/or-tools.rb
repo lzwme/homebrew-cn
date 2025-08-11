@@ -1,11 +1,22 @@
 class OrTools < Formula
   desc "Google's Operations Research tools"
   homepage "https://developers.google.com/optimization/"
-  url "https://ghfast.top/https://github.com/google/or-tools/archive/refs/tags/v9.14.tar.gz"
-  sha256 "9019facf316b54ee72bb58827efc875df4cfbb328fbf2b367615bf2226dd94ca"
   license "Apache-2.0"
   revision 1
   head "https://github.com/google/or-tools.git", branch: "stable"
+
+  # Remove `stable` block when patch is no longer needed.
+  stable do
+    url "https://ghfast.top/https://github.com/google/or-tools/archive/refs/tags/v9.14.tar.gz"
+    sha256 "9019facf316b54ee72bb58827efc875df4cfbb328fbf2b367615bf2226dd94ca"
+
+    # Fix for wrong target name for `libscip`.
+    # https://github.com/google/or-tools/issues/4750.
+    patch do
+      url "https://github.com/google/or-tools/commit/9d3350dcbc746d154f22a8b44d21f624604bd6c3.patch?full_index=1"
+      sha256 "fb39e1aa1215d685419837dc6cef339cda36e704a68afc475a820f74c0653a61"
+    end
+  end
 
   livecheck do
     url :stable
@@ -39,28 +50,6 @@ class OrTools < Formula
   uses_from_macos "zlib"
 
   def install
-    # Fix for wrong target name for `libscip`.
-    # Reported at https://github.com/google/or-tools/issues/4750.
-    libscip_files = %w[
-      cmake/check_deps.cmake
-      cmake/docs/cmake.dot
-      cmake/docs/cmake.svg
-      cmake/docs/deps.dot
-      cmake/docs/deps.svg
-      cmake/java.cmake
-      cmake/ortoolsConfig.cmake.in
-      cmake/python.cmake
-      cmake/system_deps.cmake
-      ortools/dotnet/Google.OrTools.runtime.csproj.in
-      ortools/gscip/CMakeLists.txt
-      ortools/linear_solver/CMakeLists.txt
-      ortools/linear_solver/proto_solver/CMakeLists.txt
-      ortools/linear_solver/wrappers/CMakeLists.txt
-      ortools/math_opt/io/CMakeLists.txt
-      ortools/math_opt/solvers/CMakeLists.txt
-    ]
-    inreplace libscip_files, "SCIP::libscip", "libscip"
-
     # FIXME: Upstream enabled Highs support in their binary distribution, but our build fails with it.
     args = %w[
       -DUSE_HIGHS=OFF

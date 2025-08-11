@@ -1,29 +1,28 @@
 class CoboCli < Formula
   include Language::Python::Virtualenv
 
-  desc "Cobo Command-line Tool"
+  desc "Build, test, and manage your integration with Cobo Wallet-as-a-Service"
   homepage "https://github.com/CoboGlobal/cobo-cli"
-  url "https://files.pythonhosted.org/packages/3a/07/a80c6fb19a005c81b20b344b6d3f4b3631563d732d6aa91acdc569503e49/cobo_cli-0.0.5.tar.gz"
-  sha256 "ae08b589fbf097c4cdac82e3802be2bf2faa98d7c710102c68c27cf6518dd98c"
+  url "https://files.pythonhosted.org/packages/a6/b7/7a4cbb7b9a426d1d1f15c58f162b5ca7f7e410516d0ce96680967c56d5ba/cobo_cli-0.0.7.tar.gz"
+  sha256 "aed9356a758067dc3f0e80a635d86bd2254673188d3889bb5e847ecf6efe0554"
   license "MIT"
-  revision 1
+  head "https://github.com/CoboGlobal/cobo-cli.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "7d3d9738eea4c343dc9d72e56cdfad3728cd9fb9ed65049f8ff6d742b1b370b7"
-    sha256 cellar: :any,                 arm64_sonoma:  "05703fa9d04ca938bc65178424b14cc61b9965381d7018747b530311bf905d19"
-    sha256 cellar: :any,                 arm64_ventura: "351b4ab2961a9dff678cef69118703c1d8bc249044f5a46ff21d372e4a11b3f2"
-    sha256 cellar: :any,                 sonoma:        "64e4ca4c8f4e87610f586bb515932c79fb445fe647fc35c4f4f1883b6089e385"
-    sha256 cellar: :any,                 ventura:       "35dacbdf50618e2bb63ae9e934fc67869fbef45b82c80bffa21c86ca698f2588"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9c4302b4b048a93b2ce658fc5f1cec2ee623da4dbe3a01445525f229ecd4b407"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "de8e9fd6fa00e1ccdeb3b768dfc5e6f7e0288e0036e1cc56c28fec7297d2f18f"
+    sha256 cellar: :any,                 arm64_sequoia: "da0740dfd730d62ba7d8725802370b11cdca9aa5e52a6fc1fc9173e2a1e1e44c"
+    sha256 cellar: :any,                 arm64_sonoma:  "5797d5147bd34e69c4eae0b10e04ef48d38374029ec5b386c5ad6075315af29b"
+    sha256 cellar: :any,                 arm64_ventura: "d110d00a213b7ff83ec372308f049ac0b39fa4ff30d9a8e8637618358d353e04"
+    sha256 cellar: :any,                 sonoma:        "547c6d08c67bc04eb1eb6f800d13688e6d6e28b6c13e1f3851496abd7a3a48e1"
+    sha256 cellar: :any,                 ventura:       "a1977a8142d14691c01e686ec552e9d17656ff5a6970de1920a6730d5dbd3129"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a099bc3b0d670df806711eeaa5a170bcceb47efc7ae9f70011ed081a034cf1fb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b96456b905c12ca9f672675ea79ffe4dba746b7e986f7dc96a77ba7dbf29e8d1"
   end
 
+  depends_on "rust" => :build # for pydantic_core
   depends_on "certifi"
   depends_on "libsodium"
   depends_on "libyaml"
   depends_on "python@3.13"
-  depends_on "rust"
 
   uses_from_macos "libffi"
 
@@ -38,8 +37,8 @@ class CoboCli < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/e4/33/89c2ced2b67d1c2a61c19c6751aa8902d46ce3dacb23600a283619f5a12d/charset_normalizer-3.4.2.tar.gz"
-    sha256 "5baececa9ecba31eff645232d59845c07aa030f0c81ee70184a90d35099a0e63"
+    url "https://files.pythonhosted.org/packages/83/2d/5fd176ceb9b2fc619e63405525573493ca23441330fcdaee6bef9460e924/charset_normalizer-3.4.3.tar.gz"
+    sha256 "6fce4b8500244f6fcb71465d4a4930d132ba9ab8e71a7859e6a5d59851068d14"
   end
 
   resource "click" do
@@ -50,9 +49,6 @@ class CoboCli < Formula
   resource "dataclasses-json" do
     url "https://files.pythonhosted.org/packages/64/a4/f71d9cf3a5ac257c993b5ca3f93df5f7fb395c725e7f1e6479d2514173c3/dataclasses_json-0.6.7.tar.gz"
     sha256 "b6b3e528266ea45b9535223bc53ca645f5208833c29229e847b3f26a1cc55fc0"
-
-    # poetry 2.0 build patch, upstream pr ref, https://github.com/lidatong/dataclasses-json/pull/554
-    patch :DATA
   end
 
   resource "dnspython" do
@@ -71,8 +67,8 @@ class CoboCli < Formula
   end
 
   resource "gitpython" do
-    url "https://files.pythonhosted.org/packages/c0/89/37df0b71473153574a5cdef8f242de422a0f5d26d7a9e231e6f169b4ad14/gitpython-3.1.44.tar.gz"
-    sha256 "c87e30b26253bf5418b01b0660f818967f3c503193838337fe5e573331249269"
+    url "https://files.pythonhosted.org/packages/9a/c8/dd58967d119baab745caec2f9d853297cec1989ec1d63f677d3880632b88/gitpython-3.1.45.tar.gz"
+    sha256 "85b0ee964ceddf211c41b9f27a49086010a190fd8132a24e21f362a4b36a791c"
   end
 
   resource "idna" do
@@ -111,8 +107,8 @@ class CoboCli < Formula
   end
 
   resource "pydantic-settings" do
-    url "https://files.pythonhosted.org/packages/c2/ef/3d61472b7801c896f9efd9bb8750977d9577098b05224c5c41820690155e/pydantic_settings-2.10.0.tar.gz"
-    sha256 "7a12e0767ba283954f3fd3fefdd0df3af21b28aa849c40c35811d52d682fa876"
+    url "https://files.pythonhosted.org/packages/68/85/1ea668bbab3c50071ca613c6ab30047fb36ab0da1b92fa8f17bbc38fd36c/pydantic_settings-2.10.1.tar.gz"
+    sha256 "06f0062169818d0f5524420a360d632d5857b83cffd4d42fe29597807a1614ee"
   end
 
   resource "pynacl" do
@@ -121,8 +117,8 @@ class CoboCli < Formula
   end
 
   resource "python-dotenv" do
-    url "https://files.pythonhosted.org/packages/88/2c/7bb1416c5620485aa793f2de31d3df393d3686aa8a8506d11e10e13c5baf/python_dotenv-1.1.0.tar.gz"
-    sha256 "41f90bc6f5f177fb41f53e87666db362025010eb28f60a01c9143bfa33a2b2d5"
+    url "https://files.pythonhosted.org/packages/f6/b0/4bc07ccd3572a2f9df7e6782f52b0c6c90dcbb803ac4a167702d7d0dfe1e/python_dotenv-1.1.1.tar.gz"
+    sha256 "a8a6399716257f45be6a007360200409fce5cda2661e3dec71d23dc15f6189ab"
   end
 
   resource "pyyaml" do
@@ -151,8 +147,8 @@ class CoboCli < Formula
   end
 
   resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/d1/bc/51647cd02527e87d05cb083ccc402f93e441606ff1f01739a62c8ad09ba5/typing_extensions-4.14.0.tar.gz"
-    sha256 "8676b788e32f02ab42d9e7c61324048ae4c6d844a399eebace3d4979d75ceef4"
+    url "https://files.pythonhosted.org/packages/98/5a/da40306b885cc8c09109dc2e1abd358d5684b1425678151cdaed4731c822/typing_extensions-4.14.1.tar.gz"
+    sha256 "38b39f4aeeab64884ce9f74c94263ef78f3c22467c8724005483154c26648d36"
   end
 
   resource "typing-inspect" do
@@ -175,12 +171,6 @@ class CoboCli < Formula
     sha256 "3239df9f44da632f96012472805d40a23281a991027ce11d2f45a6f24ac4c3da"
   end
 
-  # add poetry 2.0 build patch, upstream pr ref, https://github.com/CoboGlobal/cobo-cli/pull/8
-  patch do
-    url "https://github.com/CoboGlobal/cobo-cli/commit/a1b5c015ddbf9f635cb0d9638e879a909f4dba12.patch?full_index=1"
-    sha256 "d54e9fc183662e780b42ae4c84d31da04e10183599295ca36672e6048e2377e9"
-  end
-
   def install
     virtualenv_install_with_resources
 
@@ -193,47 +183,3 @@ class CoboCli < Formula
     assert_match version.to_s, shell_output("#{bin}/cobo version")
   end
 end
-
-__END__
-diff --git a/pyproject.toml b/pyproject.toml
-index 93c5f21..9521dfe 100644
---- a/pyproject.toml
-+++ b/pyproject.toml
-@@ -1,12 +1,24 @@
--[tool.poetry]
-+[project]
- name = "dataclasses-json"
- version = "0.6.7"
- description = "Easily serialize dataclasses to and from JSON."
--authors = ["Charles Li <charles.dt.li@gmail.com>"]
--maintainers = ['Charles Li <charles.dt.li@gmail.com>', 'Georgiy Zubrienko <gzu@ecco.com>', 'Vitaliy Savitskiy <visa@ecco.com>', 'Matthias Als <mata@ecco.com>']
-+authors = [
-+    { "name" = "Charles Li", "email" = "charles.dt.li@gmail.com" },
-+]
-+maintainers = [
-+    { "name" = "Charles Li", "email" = "charles.dt.li@gmail.com" },
-+    { "name" = "Georgiy Zubrienko", "email" = "gzu@ecco.com" },
-+    { "name" = "Vitaliy Savitskiy", "email" = "visa@ecco.com" },
-+    { "name" = "Matthias Als", "email" = "mata@ecco.com>" },
-+]
- license = 'MIT'
- readme = "README.md"
--repository = 'https://github.com/lidatong/dataclasses-json'
-+
-+[project.urls]
-+Repository = 'https://github.com/lidatong/dataclasses-json'
-+Changelog = "https://github.com/lidatong/dataclasses-json/releases"
-+Documentation = "https://lidatong.github.io/dataclasses-json/"
-+Issues = "https://github.com/lidatong/dataclasses-json/issues"
-
- [tool.poetry.dependencies]
- python = "^3.7"
-@@ -32,8 +44,3 @@ build-backend = "poetry_dynamic_versioning.backend"
-
- [tool.poetry-dynamic-versioning]
- enable = false
--
--[tool.poetry.urls]
--changelog = "https://github.com/lidatong/dataclasses-json/releases"
--documentation = "https://lidatong.github.io/dataclasses-json/"
--issues = "https://github.com/lidatong/dataclasses-json/issues"
