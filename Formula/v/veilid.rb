@@ -7,13 +7,14 @@ class Veilid < Formula
   head "https://gitlab.com/veilid/veilid.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cc83f6add3d8dde4022865a2550d36785b225416cf4ace8a7e99aadacdcbced3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5de3a975f3cdfb20282c46a450f968d388de863895a826cf9d937cc28bf00f41"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "2825c7d5a01458d7f62cbc647d670abe6a9f4f01643406d34293f36f27796c1c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "cc411b1b3d47fb7cd2c8fa7a68693c4712745b75c318a1808c7dfddc1b8f2652"
-    sha256 cellar: :any_skip_relocation, ventura:       "ec4903f24a6ae73681ebd5dbb0d7f67389f755fe9664e1bbb375f5b3972324ae"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e602e9e06335bc317df05efcab32500b84d4335110b48f6486fb953def441e1a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "14dc1fb479b303a9b35f846fec42d9289a683a4a85c75f9763bcc7071ea78b27"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c0dfdd88564f4c28c64587507cd3c0582e8101a2b9e59a379c83e5b1847b5b1c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e496dcb522e3488234d4601c8f41ae5e1baddf820dc7b1841ba68ee9bc55c52f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "61a62594593bad1a2c49bb964b3609c31be5f0f45c488a749894b0da24dfcc20"
+    sha256 cellar: :any_skip_relocation, sonoma:        "fb5957790aa9013587e83cff154328203222d4ac0b0e78ab442350ce63ecf16b"
+    sha256 cellar: :any_skip_relocation, ventura:       "7bf67d2351447abc43bfd388cf97219d557490cab49946edeff1b47f2af0be9a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b1e0e37857a00f7925f8755543301be83603695e1b9eed62c36d55808b1db28e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "141bf959d448b699cecdbf875cfcee61c502ae8049435ff4ad93565e3d7353f8"
   end
 
   depends_on "cmake" => :build
@@ -21,7 +22,7 @@ class Veilid < Formula
 
   def install
     ENV["SDKROOT"] = MacOS.sdk_path if OS.mac?
-    ENV["RUSTFLAGS"] = "--cfg tokio_unstable"
+    ENV.append_to_rustflags "--cfg tokio_unstable"
     system "cargo", "install", *std_cargo_args(path: "veilid-cli")
     system "cargo", "install", *std_cargo_args(path: "veilid-server")
   end

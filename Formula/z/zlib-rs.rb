@@ -7,13 +7,14 @@ class ZlibRs < Formula
   head "https://github.com/trifectatechfoundation/zlib-rs.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "38915205b01501c510264cd8aefb8da5d750efcab57330393899815bb4360784"
-    sha256 cellar: :any,                 arm64_sonoma:  "497eb4619f5bb32a1aafdc3810a27c2d9383cc7264d125e77815a1cf815ebd28"
-    sha256 cellar: :any,                 arm64_ventura: "77a3b525b3b45bd8ce128ccf6cede288fde8b69eb794035b59b4483774c633c0"
-    sha256 cellar: :any,                 sonoma:        "12df87dd4328d80c6fc09998b02c00ae4394a1819ec020e6a5942e8fab530839"
-    sha256 cellar: :any,                 ventura:       "000a275cbb2adfc476975f56f7c30cac63f7c3b7ec3bf1ced936c77db8a1b08d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f1b14ecc2ba8a86802a9b80e44e21015d508c475f996615f59ebda11d4dd6271"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8d7eac09031e10b77fb45dfa2ee6826df56bf79aa356a5e845418aa8a0f9de26"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "56639a1603d37c414486e9cb284cb5a6f20619bae756071bc1d23054623d42e9"
+    sha256 cellar: :any,                 arm64_sonoma:  "790c1ac316f2f58806dce435c83e864c16dd7712cb79c5c55af49f62a08efe18"
+    sha256 cellar: :any,                 arm64_ventura: "8c5523144dadf9f2d14d271db2ff1efbca829352aff7d68c15a92fde83bd519b"
+    sha256 cellar: :any,                 sonoma:        "a841cc713277c0c393931d6cd8f4e234c8fc2a20abb62e90c74d7aa4519a2853"
+    sha256 cellar: :any,                 ventura:       "1fa3f5dd302754ef4af4c22e8cd45708e6317cb7acde893d1e4dc3284eecb7ae"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "63722b2d31982a172f1e349321cddcc343f282c74ab1457c3bdcc504f09f9542"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6c4b6ffaea988af8867051c8631f07c8091aee39e9271472e2468fbddd3d0473"
   end
 
   depends_on "cargo-c" => :build
@@ -22,7 +23,7 @@ class ZlibRs < Formula
 
   def install
     # https://github.com/trifectatechfoundation/zlib-rs/tree/main/libz-rs-sys-cdylib#-cllvm-args-enable-dfa-jump-thread
-    ENV.append "RUSTFLAGS", "-Cllvm-args=-enable-dfa-jump-thread"
+    ENV.append_to_rustflags "-Cllvm-args=-enable-dfa-jump-thread"
     cd "libz-rs-sys-cdylib" do
       system "cargo", "cinstall", "--jobs", ENV.make_jobs.to_s, "--prefix", prefix, "--libdir", lib, "--release"
     end

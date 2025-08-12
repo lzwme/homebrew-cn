@@ -26,12 +26,12 @@ class Opencv < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    rebuild 1
-    sha256 arm64_sonoma:  "fcc43b266dfa3e80ca2f3544462b3063cd637bac23ebdc1596472d3bab9dc4bf"
-    sha256 arm64_ventura: "5374b551fdea00ee3dc150b2d577ee03620c96198afc560958007174ea89125d"
-    sha256 sonoma:        "5ca6d006a5a1a7791e7a21e33750ef102d5d338e192d341b1a0f78d56de5cbef"
-    sha256 ventura:       "6d66c4b26a8763fd5f594364e26f6e534661dd2e115fd6c1845f27868debfee8"
-    sha256 x86_64_linux:  "5851925941e55814158233da201a392f8c72e8722f063e621326a5314e3c7dc3"
+    rebuild 2
+    sha256 arm64_sonoma:  "5754a61a2acde03ad4a175df839f57090cba38a43f336893ea7683d4f450383f"
+    sha256 arm64_ventura: "c4277ad9b2b98c3c0741925345e8bbd103c73eb8307044f4779dca9a0093b6c7"
+    sha256 sonoma:        "be31d170a46195555295a8548592ed00462bdf9dfa7f3d1d01c73f73bccbb524"
+    sha256 ventura:       "dff9b4a395fe2f1d5ac765693eecce7abcbd949f0b4515d324eacd7ab7f5db4a"
+    sha256 x86_64_linux:  "f664207eb9c1c33915851c967f9ce9f72b5386c7c6c29ad6a6aef6f3fcab4ca6"
   end
 
   head do
@@ -204,8 +204,8 @@ class Opencv < Formula
                     "-L#{lib}", "-lopencv_core", "-lopencv_imgcodecs"
     assert_equal version.to_s, shell_output("./test").strip
 
-    # The test below seems to time out on Linux and Intel macOS.
-    return if OS.linux? || Hardware::CPU.intel?
+    # The test below seems to time out on Intel macOS.
+    return if OS.mac? && Hardware::CPU.intel?
 
     output = shell_output("#{python3} -c 'import cv2; print(cv2.__version__)'")
     assert_equal version.to_s, output.chomp

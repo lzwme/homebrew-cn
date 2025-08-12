@@ -1,8 +1,8 @@
 class PythonGdbmAT313 < Formula
   desc "Python interface to gdbm"
   homepage "https://www.python.org/"
-  url "https://www.python.org/ftp/python/3.13.5/Python-3.13.5.tgz"
-  sha256 "e6190f52699b534ee203d9f417bdbca05a92f23e35c19c691a50ed2942835385"
+  url "https://www.python.org/ftp/python/3.13.6/Python-3.13.6.tgz"
+  sha256 "6cf50672cc03928488817d45af24bc927a48f910fe7893d6f388130e59ba98d7"
   license "Python-2.0"
 
   livecheck do
@@ -12,13 +12,13 @@ class PythonGdbmAT313 < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any, arm64_sequoia: "3a533fb801d80f0ab62e9851a58b1336f3bd73ec128b19c418f05ad6b9211b23"
-    sha256 cellar: :any, arm64_sonoma:  "b430013a9e63c6d007e2cc36ff474b36406122287edbd40ff10dfdaff238770e"
-    sha256 cellar: :any, arm64_ventura: "a73ce71b8cfd07fa5baff74ba1ec90871d330b07e17fb08257f3899ca6292778"
-    sha256 cellar: :any, sonoma:        "eef6def9e087a3a8781eae05fb38556bb2e2163846e7561ffcb6cff6ce4853da"
-    sha256 cellar: :any, ventura:       "162efcd2465bad4b09c4ae7f6f740fc3feb30a017c5a4e387d521ce2dcf4d6c7"
-    sha256               arm64_linux:   "6674f9304969998f14ebb365a5ee4bc1abc70c9f9b2426222522ba9e225ace49"
-    sha256               x86_64_linux:  "fd78c64e837b2c6810a68feb998eff353fa0b6bc1f447361f94d28f974f01870"
+    sha256 cellar: :any, arm64_sequoia: "eff922a52278695729ec3cdab2fa0ef210d296319e430d63981d8aa5a97715e5"
+    sha256 cellar: :any, arm64_sonoma:  "bb157c02fb229995c8fa710ac6e0e1ee02e0c241058b83e826c4b9042722c23f"
+    sha256 cellar: :any, arm64_ventura: "da4c88f0f9c1ce2d7cb2f6c178438bc5a5574497c79f109aab2705203948434e"
+    sha256 cellar: :any, sonoma:        "a0cabe302464063ea50f9917c0f302c7e05ae0b45f7d13444a72f8049ca94465"
+    sha256 cellar: :any, ventura:       "99f9ec151efeddcca087b6f7dd11694f6fed48e10e4d807f68fb88069d1aec6b"
+    sha256               arm64_linux:   "b9959b85da6bdf13504547db1e2811c8f129f4dda3bd0d596cf5ec728caddcb0"
+    sha256               x86_64_linux:  "d9104c869d8e63d2e1f0d1a7bc8e7ce482ee4d2d60863ac7fd3eafd652abd0ea"
   end
 
   depends_on "gdbm"

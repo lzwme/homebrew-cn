@@ -9,8 +9,9 @@ class Ratarmount < Formula
   head "https://github.com/mxmlnkn/ratarmount.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_linux:  "dc24769dab58d7cb5f167c556b95548dff82d25cfbfcf6ef9668c96ff752036e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "5c675df6c16d5f30b0a3b4aeece57f5120e53870657c842dba01f66bd74b7296"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "d783c9bc273d01af9204a64ebd4147e90ab841322fa93ff585d316759381f542"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "f36c3312917b3c9d5f67bbf725a002a7d5e008cb7ac38380868bf1b4551fa9a8"
   end
 
   depends_on "libffi"
@@ -117,7 +118,13 @@ class Ratarmount < Formula
   end
 
   def install
-    virtualenv_install_with_resources
+    venv = virtualenv_install_with_resources without: "pyzstd"
+    # We need to build separately to link to our `zstd`.
+    resource("pyzstd").stage do
+      system_zstd = "--config-settings=--build-option=--dynamic-link-zstd"
+      system venv.root/"bin/python", "-m", "pip", "install", system_zstd,
+                                     *std_pip_args(prefix: false, build_isolation: true), "."
+    end
   end
 
   test do

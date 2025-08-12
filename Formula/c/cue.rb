@@ -1,18 +1,18 @@
 class Cue < Formula
   desc "Validate and define text-based and dynamic configuration"
   homepage "https://cuelang.org/"
-  url "https://ghfast.top/https://github.com/cue-lang/cue/archive/refs/tags/v0.14.0.tar.gz"
-  sha256 "5fd6d74246a24e6c153510d1b0b2e1bf8482a6b108da879ce76da10986412839"
+  url "https://ghfast.top/https://github.com/cue-lang/cue/archive/refs/tags/v0.14.1.tar.gz"
+  sha256 "dc94fffc76530cc0faf270c2eaee519ee1397dcd832845571f8ed0386ab3bec3"
   license "Apache-2.0"
   head "https://github.com/cue-lang/cue.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6982ede8e736c8bd0d6229b38129df22d84b6f464ad02b13162669be6f52ee31"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6982ede8e736c8bd0d6229b38129df22d84b6f464ad02b13162669be6f52ee31"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "6982ede8e736c8bd0d6229b38129df22d84b6f464ad02b13162669be6f52ee31"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d7d2aba8e28634ea20d464f9f945cc0fb0f1f630eaa3b44e897c6012c912d22b"
-    sha256 cellar: :any_skip_relocation, ventura:       "d7d2aba8e28634ea20d464f9f945cc0fb0f1f630eaa3b44e897c6012c912d22b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f3bb8cee60743d3155e8e8acff845e2cfce7a235b7ac1bfa6096f91840dc08f0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ee2bb3704a7a236433abe1df72f6299e315d13a09f07d8ad7b8498e9d4eb3ead"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ee2bb3704a7a236433abe1df72f6299e315d13a09f07d8ad7b8498e9d4eb3ead"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "ee2bb3704a7a236433abe1df72f6299e315d13a09f07d8ad7b8498e9d4eb3ead"
+    sha256 cellar: :any_skip_relocation, sonoma:        "555cbd7bd4995ca45a33feb4b0e411289edcb2856889685410a43e82a5cb413c"
+    sha256 cellar: :any_skip_relocation, ventura:       "555cbd7bd4995ca45a33feb4b0e411289edcb2856889685410a43e82a5cb413c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a4bdf1945756930a3d2f9f9ffe20664641da9fbfe18fd52c239b6903a6b9f317"
   end
 
   depends_on "go" => :build

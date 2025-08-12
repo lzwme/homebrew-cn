@@ -15,13 +15,11 @@ class Qsv < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b19ac97495e9159af081ecdae9bf9cb22dfaede6621f27c8ce750e742a36475a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7f9953df792838a7b825257cee6f77c61b047ae704a4b168c1aa512d9f2d6064"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "9b2dbb689d8da8297dcff27c6ce7602c0505ebb95d08a5b81d7f2a021a8fbc90"
-    sha256 cellar: :any_skip_relocation, sonoma:        "bdede4883030e9a399a634a4247cce3a5210bdd1e8c38b9f7919d7dbabff77c7"
-    sha256 cellar: :any_skip_relocation, ventura:       "758d3cb4253ec497007f9023e13aad4ba00df910c5eea99285f1e25c9c389f11"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "69d5fdd79814150df5d04943a34ca82aa4261e251e0c9fa8d8e128f95a80eb3e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "89cc4719724f478534fec9c1571f69acdb93615bfe458db681947e934f8c8c6a"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, sonoma:       "1fcbafeec43807a8226ec161464966ded003bbce13a4e3361021add956ea6adc"
+    sha256 cellar: :any_skip_relocation, ventura:      "9aeaeb697b32246869a358a8a792cd130a86a86dad0ccc370f9f4b85369215ca"
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "fd148c0c931c988f4aaa7de659b7edfafb8aeeb12d0ed7d64beeb9b662852f0a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "06ca24bd05fed268806ec6ac734fb7e36ccf100b71816f6e93f972c1aca9b00c"
   end
 
   depends_on "cmake" => :build # for libz-ng-sys
@@ -35,7 +33,7 @@ class Qsv < Formula
   def install
     # Use explicit CPU target instead of "native" to avoid brittle behavior
     # see discussion at https://github.com/briansmith/ring/discussions/2528#discussioncomment-13196576
-    ENV["RUSTFLAGS"] = "-C target-cpu=apple-m1" if OS.mac? && Hardware::CPU.arm?
+    ENV.append_to_rustflags "-C target-cpu=apple-m1" if OS.mac? && Hardware::CPU.arm?
 
     system "cargo", "install", *std_cargo_args, "--features", "apply,lens,luau,feature_capable"
     bash_completion.install "contrib/completions/examples/qsv.bash" => "qsv"

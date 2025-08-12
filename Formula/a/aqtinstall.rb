@@ -9,16 +9,18 @@ class Aqtinstall < Formula
   revision 2
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d607df4d563b4832c9543c3b857326d1c1f6aefa08f5d4b7832545c1dad463bf"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "84379db7347c71f2dfce9c28fd417c94af3dbc7054d7c5b5ae29cb56b3817120"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "c3e05c8ae9d66a3230add1eaffab7c7b1f35482910b86e5e8f45c7e0d960a8e8"
-    sha256 cellar: :any_skip_relocation, sonoma:        "12fd27eb1bbfaf24af4d9568bb6469765ed1a0bc250631fbffe1c90357ea338c"
-    sha256 cellar: :any_skip_relocation, ventura:       "c28fe34be333e0146003283deb7665df49c46c417b07c0aa0806a425b19a7f4f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "06bad6f0be45f822558d0322cc1fc16ed27f9435914d0d0abf3643f517ea179d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "65edf6bbb4646c2c54f254e8889c3fbaf7ccb889e84699f5292f14b0edf867c9"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "170f2867a408722bc2e3c71ac63f6f6bb7f0f0f5fd038c7638c49b123f2d5d10"
+    sha256 cellar: :any,                 arm64_sonoma:  "c90beaa899ffc527e3b8addcbd9a606d5f42c1764044d474bbef24e9e2c3a753"
+    sha256 cellar: :any,                 arm64_ventura: "d1b35a40f68429035fb99008287279e5fab8f1e65a75a899fb5263e47cf22a3d"
+    sha256 cellar: :any,                 sonoma:        "961f1853c997a265e0fd726b4d1297dca023038d43a8e3a858a8ebc5b7cf62ed"
+    sha256 cellar: :any,                 ventura:       "701b65130e8cd057a658e4b683190fe30932808ef505886abafd7fc93f4f4250"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "36181ef03c098a3fcce326d06b18e71e95f19d4db255de8f8ac175d80a53502e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6053e1076ca33e265b4486c9b994cd91cb1bb9a12d238460ff53a34f1e364fbf"
   end
 
   depends_on "python@3.13"
+  depends_on "zstd"
 
   resource "beautifulsoup4" do
     url "https://files.pythonhosted.org/packages/d8/e4/0c4c39e18fd76d6a628d4dd8da40543d136ce2d1752bd6eeeab0791f4d6b/beautifulsoup4-4.13.4.tar.gz"
@@ -136,7 +138,13 @@ class Aqtinstall < Formula
   end
 
   def install
-    virtualenv_install_with_resources
+    venv = virtualenv_install_with_resources without: "pyzstd"
+    # We need to build separately to link to our `zstd`.
+    resource("pyzstd").stage do
+      system_zstd = "--config-settings=--build-option=--dynamic-link-zstd"
+      system venv.root/"bin/python", "-m", "pip", "install", system_zstd,
+                                     *std_pip_args(prefix: false, build_isolation: true), "."
+    end
   end
 
   test do

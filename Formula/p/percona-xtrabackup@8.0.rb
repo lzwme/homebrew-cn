@@ -1,8 +1,8 @@
 class PerconaXtrabackupAT80 < Formula
   desc "Open source hot backup tool for InnoDB and XtraDB databases"
   homepage "https://www.percona.com/software/mysql-database/percona-xtrabackup"
-  url "https://downloads.percona.com/downloads/Percona-XtraBackup-8.0/Percona-XtraBackup-8.0.35-33/source/tarball/percona-xtrabackup-8.0.35-33.tar.gz"
-  sha256 "f4db1304ecf309913374c072b533bd448f5e5bffb31eed3c1fa76bc929f5c6c4"
+  url "https://downloads.percona.com/downloads/Percona-XtraBackup-8.0/Percona-XtraBackup-8.0.35-34/source/tarball/percona-xtrabackup-8.0.35-34.tar.gz"
+  sha256 "6ca81cd647e7cb1d8fd341f97cd32248bd719f9104a63eb24f1edda6a2d2441c"
   license "GPL-2.0-only"
 
   livecheck do
@@ -20,13 +20,13 @@ class PerconaXtrabackupAT80 < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "229c156913560646889e0f708479b811cc4f179d14772b2bd4aacfa10f8bb162"
-    sha256 arm64_sonoma:  "e82cb6b734aab2567adfda671ca014538c8775422eaeabe12e9d0f231bfc8822"
-    sha256 arm64_ventura: "f65a4d94b16e42389591eb6383cb65a53cb48e5c1ec5b9fb3d04cc5449241123"
-    sha256 sonoma:        "8a00f7669548646fbeff62a1c37296277a1ca050206f80c5648bd0bdae8986a3"
-    sha256 ventura:       "1a4a9cf43156eba0240f306aedd90e69c7af703afb7655cec904389775622014"
-    sha256 arm64_linux:   "14640e21395fed88a01df788e17a3e51303bb0ad3ae664a901cac241e74caaa5"
-    sha256 x86_64_linux:  "92af81a134a490d0d46e31b02f0f89d628ac64adacfe961a43e793240d42ba4a"
+    sha256 arm64_sequoia: "ef33829ed70bc1f844ddc6a1ed6ab45c76f3de390b015ea2e8c9ed961cb7c215"
+    sha256 arm64_sonoma:  "7b0dbe70199853f3c4b42dd5513d0f77eb700a00cd019347b502147e8cabc382"
+    sha256 arm64_ventura: "bbe17b3dae72191222ff1ef4fe5444b05bf00ecf04ec9d199ea24b8cc8ecb054"
+    sha256 sonoma:        "7f7492d2c9df4e81b0ec497d534953dc2767b10851e4bb188083d2292af5cc8c"
+    sha256 ventura:       "bf001031b95df8a362ec95ac76c10bfa61bfa424c2c73943f6ed081abc1fbd41"
+    sha256 arm64_linux:   "f236dd0d1ae8be7438d6e875e4686f5d4dbba29e8986ec94d3f7b4edba037e5a"
+    sha256 x86_64_linux:  "001d6deae1b00b6b50f08c1c05d2e0a8ed40f22dc7862eff7fd3cb3932e080a8"
   end
 
   keg_only :versioned_formula

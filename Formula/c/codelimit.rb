@@ -3,18 +3,18 @@ class Codelimit < Formula
 
   desc "Your Refactoring Alarm"
   homepage "https://github.com/getcodelimit/codelimit"
-  url "https://files.pythonhosted.org/packages/85/ba/ccae1eceaf2d165703ff80fbc67e64ef9aab0e8a75cfe7aa9b3565320e20/codelimit-0.19.9.tar.gz"
-  sha256 "e01fee79c06643b43b8d29f850f93a2be1e78033b3bc2acea5982a5fc5ead1a0"
+  url "https://files.pythonhosted.org/packages/1f/0f/efe4f75ad56419cc68800fb22ea38e30816b23b27f82f5d4fd2c63378b17/codelimit-0.20.1.tar.gz"
+  sha256 "bb9a675b2a16a5de1c20ba166bb8c1fa81ff1fa3387b22334a6b708ab1a82895"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "c430ba00ad810176f7167b849eb7c1402e37ba2fa9d75a787cb5fc69fa92fb96"
-    sha256 cellar: :any,                 arm64_sonoma:  "4f430b6ac55691410b56a6a2b5b43fbfe6fde844606051fc6fdbbd0e115b78ed"
-    sha256 cellar: :any,                 arm64_ventura: "5a4dac762395d5ccdbb20f845318ba02085e7172daba49a8c7ba9a8a0954fcce"
-    sha256 cellar: :any,                 sonoma:        "fe844660c484db5c0b33cadbe1c351cc3c8c8d1851e94a546b70fd60639ced80"
-    sha256 cellar: :any,                 ventura:       "3d9c3494a33312282dc3d648c69f16756db134d556f1af27bcdb6b4e1d802f04"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c45bb27922d4c90486637f3ffb769fc7e7c0517543dc03823b8ee5bb2bb94e61"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "28adccc4f4860c375af32b2495af3e81cbb5f891a3ed97a742bce3caac137a94"
+    sha256 cellar: :any,                 arm64_sequoia: "fdecb3c9656429d99248d1d1d0a74338184f6823a354083ab50a31b72c31a5df"
+    sha256 cellar: :any,                 arm64_sonoma:  "61d1ace1cebab73402dee716277469ff418ec463a68c267e9d7155d26274dd2a"
+    sha256 cellar: :any,                 arm64_ventura: "fe96ec653716ebbf90f0047ffdd08af8abaa3c4faafc90510d7ad4df7b698fec"
+    sha256 cellar: :any,                 sonoma:        "bce965e182060be2eab013ec4a00a94f362784506956042b50cfa9240dbd0de7"
+    sha256 cellar: :any,                 ventura:       "280985e9bf55b95908853e4b564ab337f857be9b736e60de0494b98ef7339827"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f7f4c58c9309d9a9c175b5842813f04b428da27a3623e04139d446dfb90c259f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3432373cf3ec04bd89c4fdfe3d861024237ccacc487f1cb9196fee30d839f177"
   end
 
   depends_on "certifi"
@@ -27,8 +27,8 @@ class Codelimit < Formula
   end
 
   resource "aiohttp" do
-    url "https://files.pythonhosted.org/packages/e6/0b/e39ad954107ebf213a2325038a3e7a506be3d98e1435e1f82086eec4cde2/aiohttp-3.12.14.tar.gz"
-    sha256 "6e06e120e34d93100de448fd941522e11dafa78ef1a893c179901b7d66aa29f2"
+    url "https://files.pythonhosted.org/packages/9b/e7/d92a237d8802ca88483906c388f7c201bbe96cd80a165ffd0ac2f6a8d59f/aiohttp-3.12.15.tar.gz"
+    sha256 "4fc61385e9c98d72fcdf47e6dd81833f47b2f77c114c29cd64a361be57a763a2"
   end
 
   resource "aiosignal" do
@@ -42,13 +42,13 @@ class Codelimit < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/e4/33/89c2ced2b67d1c2a61c19c6751aa8902d46ce3dacb23600a283619f5a12d/charset_normalizer-3.4.2.tar.gz"
-    sha256 "5baececa9ecba31eff645232d59845c07aa030f0c81ee70184a90d35099a0e63"
+    url "https://files.pythonhosted.org/packages/83/2d/5fd176ceb9b2fc619e63405525573493ca23441330fcdaee6bef9460e924/charset_normalizer-3.4.3.tar.gz"
+    sha256 "6fce4b8500244f6fcb71465d4a4930d132ba9ab8e71a7859e6a5d59851068d14"
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/60/6c/8ca2efa64cf75a977a0d7fac081354553ebe483345c734fb6b6515d96bbc/click-8.2.1.tar.gz"
-    sha256 "27c491cc05d968d271d5a1db13e3b5a184636d9d930f148c50b038f0d0646202"
+    url "https://files.pythonhosted.org/packages/b9/2e/0090cbf739cee7d23781ad4b89a9894a41538e4fcf4c31dcdd705b78eb8b/click-8.1.8.tar.gz"
+    sha256 "ed53c9d8990d83c2a27deae68e4ee337473f6330c040a31d4225c9574d16096a"
   end
 
   resource "frozenlist" do
@@ -62,8 +62,8 @@ class Codelimit < Formula
   end
 
   resource "markdown-it-py" do
-    url "https://files.pythonhosted.org/packages/38/71/3b932df36c1a044d397a1f92d1cf91ee0a503d91e470cbd670aa66b07ed0/markdown-it-py-3.0.0.tar.gz"
-    sha256 "e3f60a94fa066dc52ec76661e37c851cb232d92f9886b15cb560aaada2df8feb"
+    url "https://files.pythonhosted.org/packages/5b/f5/4ec618ed16cc4f8fb3b701563655a69816155e79e24a17b651541804721d/markdown_it_py-4.0.0.tar.gz"
+    sha256 "cb0a2b4aa34f932c007117b194e945bd74e0ec24133ceb5bac59009cda1cb9f3"
   end
 
   resource "mdurl" do
@@ -72,8 +72,8 @@ class Codelimit < Formula
   end
 
   resource "multidict" do
-    url "https://files.pythonhosted.org/packages/3d/2c/5dad12e82fbdf7470f29bff2171484bf07cb3b16ada60a6589af8f376440/multidict-6.6.3.tar.gz"
-    sha256 "798a9eb12dab0a6c2e29c1de6f3468af5cb2da6053a20dfa3344907eed0937cc"
+    url "https://files.pythonhosted.org/packages/69/7f/0652e6ed47ab288e3756ea9c0df8b14950781184d4bd7883f4d87dd41245/multidict-6.6.4.tar.gz"
+    sha256 "d2d4e4787672911b48350df02ed3fa3fffdc2f2e8ca06dd6afdf34189b76a9dd"
   end
 
   resource "pathspec" do

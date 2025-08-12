@@ -1,8 +1,8 @@
 class Artillery < Formula
   desc "Cloud-native performance & reliability testing for developers and SREs"
   homepage "https://www.artillery.io/"
-  url "https://registry.npmjs.org/artillery/-/artillery-2.0.23.tgz"
-  sha256 "56fee81d5f5fd831fcc1e89c6134b2294095ed0c07c225578ae932b0e82b272b"
+  url "https://registry.npmjs.org/artillery/-/artillery-2.0.24.tgz"
+  sha256 "a4c43512be56332e5cbbe60502a8c43c9917db1365d3df8a03318a32aa6cb382"
   license "MPL-2.0"
 
   livecheck do
@@ -11,13 +11,13 @@ class Artillery < Formula
   end
 
   bottle do
-    sha256                               arm64_sequoia: "5c9b0f3df6e260876a412bf1439011cc80e7c0c53d6f583dab10a9d7e96de656"
-    sha256                               arm64_sonoma:  "2debcd213bc15422e7d14a865e60882d91f3647e1b73dbb4d6f05dab7ba3dd38"
-    sha256                               arm64_ventura: "5abfad7cb7e2c4665c742813dcc84eb3d97a1732f067378514326a1f9da9c972"
-    sha256                               sonoma:        "5fd036f5003839c2e56a884c1adeac468ecdf4adaf5e742ad1e15391de14067c"
-    sha256                               ventura:       "58c94545760f40d8856ca78829adf823f50735e64e5e0cc69c584da30188d149"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "559a04c716334c1cfafaa3038976de4c00b9ff9c3a80f7d3a90dbc38e5fc6091"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b3b97f42ebe125135855f1a17bd2d408f7d30a6aeb6be1a68475ecbfa480d49f"
+    sha256                               arm64_sequoia: "14ab552ddb0ecf14866f2181c6ab8f844188019bd1a2aa461a83aa0f17a295e3"
+    sha256                               arm64_sonoma:  "aec786ffb55870174280c55a6e8677f3b0298964753cfc629324585007f44941"
+    sha256                               arm64_ventura: "585746e826acb5003ca9504f1399ac85a26bcf1288589b84c113272afd6ddeee"
+    sha256                               sonoma:        "5e8ddac5df2a31ee82b1742c72d99c8b87bce9343abe5150068adca7c2f197f2"
+    sha256                               ventura:       "94e1e3dcc221e80560faf9b300e5ba8f77eb7c95f836f3ec998e0435ee8a33d3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "de854c6d233c00562e70e4037b1cb3786e215a21a298361d54170bc5bd1eae0b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "497db5375a6914736d2ca7bbf176d53df64ab7f2c77b2e1f9b91649191552f26"
   end
 
   depends_on "node"

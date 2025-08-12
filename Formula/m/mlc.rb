@@ -7,13 +7,12 @@ class Mlc < Formula
   head "https://github.com/becheran/mlc.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "27722df9d720b8cd78506aa76148449531cf5767108699b795a1b5bfe7eaf443"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7751a88415cd6bc66cc1a20c9454556fda1fc3d9b625a847291513e2653ed676"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "64bf4f630ac577c11b7b14dde5cdb8471a5d3ff87ed3ae8700ae5c79178e159c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a6e4072ff25800b2397e962a3c5b3b837b9cf883ae9d2223cb04082216a6764d"
-    sha256 cellar: :any_skip_relocation, ventura:       "0ccb8ab45d7a34a78fc7d1e8f8c61bdcd47edf691e48db0d802ef64dcadfeb69"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "df4de4041118ca03f177d9667d80742aa1662967dfe9131677a2cb1a09d28f0d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f69e9fb707a984b0714a3904aef29435f6aed854341217d23d560f624c0164a6"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ea81fd5f0ffa185c59a156541d0944a122cad6b41595d38132017e285536d4c5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6d64d29e139f6f4a6733d2f2d10b29ed50d0c1cd662ecc68b38a95bd7014e09c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "88c26288c044ab2288bbb15c7ff1a5be83708c711830eb796379cf128d052007"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5a24f57f05ef9c5369f627d9c904238971567e6d909cfb70fae488382659903b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ab3b528ac2aecd470572b9de2d7f2a3e8a8fc44d2463f98a4db637c81d2c9bbe"
   end
 
   depends_on "pkgconf" => :build
@@ -26,7 +25,7 @@ class Mlc < Formula
   def install
     # Explicitly set linker to avoid Cargo defaulting to
     # incorrect or outdated linker (e.g. x86_64-apple-darwin14-clang)
-    ENV["RUSTFLAGS"] = "-C linker=#{ENV.cc}"
+    ENV.append_to_rustflags "-C linker=#{ENV.cc}"
 
     ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
     ENV["OPENSSL_NO_VENDOR"] = "1"

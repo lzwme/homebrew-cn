@@ -3,20 +3,19 @@ class Sigstore < Formula
 
   desc "Codesigning tool for Python packages"
   homepage "https://github.com/sigstore/sigstore-python"
-  url "https://files.pythonhosted.org/packages/c9/81/dca1dc73d250e9b37b7ba9b5083ba309896e4cffb1ab1800876f1287f3bb/sigstore-3.6.4.tar.gz"
-  sha256 "76f247a86738c9e076a243e0068ac68625848868890ed38491acc159752a46ac"
+  url "https://files.pythonhosted.org/packages/5e/f6/84309d12b41dec6a71a2a6a0fe83093fa2bedd7ccebb1ac92885fafe7c0d/sigstore-3.6.5.tar.gz"
+  sha256 "677cb59b956af6a37d31e92107055eb3de5871a5dbedf9280d099177d20e0afe"
   license "Apache-2.0"
   head "https://github.com/sigstore/sigstore-python.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "6c85e8679c854b071a0de9088a5229db428a90d7dafeca306ba08103281e36c5"
-    sha256 cellar: :any,                 arm64_sonoma:  "8c80b57c3daa3319573bd4b16ff62701161de53686c7009d7e7d1628e414c46d"
-    sha256 cellar: :any,                 arm64_ventura: "0f64805356cc752bd32aa017e2f2057ba822b4b573bb3ec124eb42af94ab0d88"
-    sha256 cellar: :any,                 sonoma:        "29baca8e3bf73744710b583d02dd7df16a2743eca081a4d42e21559112c18f03"
-    sha256 cellar: :any,                 ventura:       "c361ec5c94b6ba3e66efc0fcb456f043134c620dceae65f94e7fd4be295c04f0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0736c039b325b911a0f8fd35b80b8ef3efac7f2d22d813ff234bb57264be35f6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1a62d19b24fbf950b8a982bc0b0371f7ecfcbb8f936a21fcccb216d9c2d65b7f"
+    sha256 cellar: :any,                 arm64_sequoia: "367a20912f34469d4cf92e04ea2fc1258978d131915989c8483669dd5f838952"
+    sha256 cellar: :any,                 arm64_sonoma:  "47cd5a16b6f9788bcdf7f40791180df133bde5d4bc670292a46283cf71c7dbd0"
+    sha256 cellar: :any,                 arm64_ventura: "78a86dca05e779b358063cef5080a0a01b8a532d60414ec239ce89fa49e0ad43"
+    sha256 cellar: :any,                 sonoma:        "f2b0b3e6f76e8044a06f3dd6ee210947bef1fe75d0c8e3e12c27d2b104d262f3"
+    sha256 cellar: :any,                 ventura:       "869e02ab5032be37ae2024a4657a460b190fd7b64e0c99fa01cb1f52efa12180"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "027a3b594bf45ca298b65d4ccccd4026256aea4e2f39e3d6c45952e427222f0f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "610011094ceeba7d28d175094a97dc7dcf61ca91ef6f9d3330fd20685e3ac686"
   end
 
   depends_on "pkgconf" => :build # for rfc3161-client
@@ -37,8 +36,8 @@ class Sigstore < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/e4/33/89c2ced2b67d1c2a61c19c6751aa8902d46ce3dacb23600a283619f5a12d/charset_normalizer-3.4.2.tar.gz"
-    sha256 "5baececa9ecba31eff645232d59845c07aa030f0c81ee70184a90d35099a0e63"
+    url "https://files.pythonhosted.org/packages/83/2d/5fd176ceb9b2fc619e63405525573493ca23441330fcdaee6bef9460e924/charset_normalizer-3.4.3.tar.gz"
+    sha256 "6fce4b8500244f6fcb71465d4a4930d132ba9ab8e71a7859e6a5d59851068d14"
   end
 
   resource "dnspython" do
@@ -82,8 +81,8 @@ class Sigstore < Formula
   end
 
   resource "markdown-it-py" do
-    url "https://files.pythonhosted.org/packages/38/71/3b932df36c1a044d397a1f92d1cf91ee0a503d91e470cbd670aa66b07ed0/markdown-it-py-3.0.0.tar.gz"
-    sha256 "e3f60a94fa066dc52ec76661e37c851cb232d92f9886b15cb560aaada2df8feb"
+    url "https://files.pythonhosted.org/packages/5b/f5/4ec618ed16cc4f8fb3b701563655a69816155e79e24a17b651541804721d/markdown_it_py-4.0.0.tar.gz"
+    sha256 "cb0a2b4aa34f932c007117b194e945bd74e0ec24133ceb5bac59009cda1cb9f3"
   end
 
   resource "mdurl" do
@@ -92,8 +91,8 @@ class Sigstore < Formula
   end
 
   resource "multidict" do
-    url "https://files.pythonhosted.org/packages/3d/2c/5dad12e82fbdf7470f29bff2171484bf07cb3b16ada60a6589af8f376440/multidict-6.6.3.tar.gz"
-    sha256 "798a9eb12dab0a6c2e29c1de6f3468af5cb2da6053a20dfa3344907eed0937cc"
+    url "https://files.pythonhosted.org/packages/69/7f/0652e6ed47ab288e3756ea9c0df8b14950781184d4bd7883f4d87dd41245/multidict-6.6.4.tar.gz"
+    sha256 "d2d4e4787672911b48350df02ed3fa3fffdc2f2e8ca06dd6afdf34189b76a9dd"
   end
 
   resource "platformdirs" do
@@ -142,8 +141,8 @@ class Sigstore < Formula
   end
 
   resource "rfc3161-client" do
-    url "https://files.pythonhosted.org/packages/ed/d5/a304985ce0117de9984f1af40e458376804710a68036809f40745afdb808/rfc3161_client-1.0.3.tar.gz"
-    sha256 "e9b614a5a4596ab9aea44d3fe8a4995bd84ac7f20dcbfaa82b115224202d88d8"
+    url "https://files.pythonhosted.org/packages/4d/12/f0dc57325bd9256c7e6878ad458e9077d6a9b08a59b32d158d4e89490c11/rfc3161_client-1.0.4.tar.gz"
+    sha256 "019e39699b96b5e92145d915b18a108868ce8c2b8f4e7f25d9ee1ef70ce76f08"
   end
 
   resource "rfc8785" do
@@ -152,8 +151,8 @@ class Sigstore < Formula
   end
 
   resource "rich" do
-    url "https://files.pythonhosted.org/packages/a1/53/830aa4c3066a8ab0ae9a9955976fb770fe9c6102117c8ec4ab3ea62d89e8/rich-14.0.0.tar.gz"
-    sha256 "82f1bc23a6a21ebca4ae0c45af9bdbc492ed20231dcb63f297d6d1021a9d5725"
+    url "https://files.pythonhosted.org/packages/fe/75/af448d8e52bf1d8fa6a9d089ca6c07ff4453d86c65c145d0a300bb073b9b/rich-14.1.0.tar.gz"
+    sha256 "e497a48b844b0320d45007cdebfeaeed8db2a4f4bcf49f15e455cfc4af11eaa8"
   end
 
   resource "securesystemslib" do

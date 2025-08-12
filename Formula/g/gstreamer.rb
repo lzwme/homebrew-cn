@@ -24,13 +24,13 @@ class Gstreamer < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "77f2deb231115c8df5afce4f0501b4b43275d33d5073543314b54addfcd6c7d2"
-    sha256 arm64_sonoma:  "d0bfc6831909ad8144990e30af757726e48a3586e4b1c1f4c441b82506481aee"
-    sha256 arm64_ventura: "737bc617927b3e9b235de36b305e8bb0c1e5a8aac3072a324c393f27cacce9ab"
-    sha256 sonoma:        "ab034c1272896890afc853a416430f2399fbdded984dd83e6e3fcaff090f65a1"
-    sha256 ventura:       "b9bc2158f563ca1668a0f7ab01ae96610a0757a5796307712763a4f4d98ccf8b"
-    sha256 arm64_linux:   "5f9785752dca93196f69df7481a389941a9f381db84227ad844bea76e13cf171"
-    sha256 x86_64_linux:  "99901e4761af2e71caf6b07faa044883f39948e7c910af57709f7c77c80000cf"
+    rebuild 2
+    sha256 arm64_sequoia: "cf8c0623e5cea33224a390403b6720bc72cbbf767f479e8666843093b0329f89"
+    sha256 arm64_sonoma:  "dfd61665a544134752537242dd6d4f195a2622e69a79cc136809952d20f16109"
+    sha256 arm64_ventura: "67ffef28e776aa8c561ecda2518ed04f2524199a5e246f523fc6d68910c51e60"
+    sha256 sonoma:        "25144ab83df3e970e848030dda7f30368a515ecdd0cbfd05fe588411fc356406"
+    sha256 ventura:       "9d9dc4f848f4d5b1312b00da606af0c2c3b418ff8f25fc41adaed3fe623977e3"
+    sha256 x86_64_linux:  "01719cea7db86caf72af83cf58c039e524933cc75900d3bcf15e8bbb92f2cc9a"
   end
 
   head do
@@ -214,21 +214,7 @@ class Gstreamer < Formula
     # https://gitlab.freedesktop.org/gstreamer/gst-plugins-rs/-/issues/279
     plugin_dir = lib/"gstreamer-1.0"
     rpath_args = [loader_path, rpath(source: plugin_dir)].map { |path| "-rpath,#{path}" }
-    ENV.append "RUSTFLAGS", "--codegen link-args=-Wl,#{rpath_args.join(",")}"
-
-    # On Linux, adjust processing of RUSTFLAGS to avoid using shlex, which may mangle our
-    # RPATH-related flags, due to the presence of `$` in $ORIGIN.
-    if OS.linux?
-      wrapper_files = %w[
-        subprojects/gst-plugins-rs/cargo_wrapper.py
-        subprojects/gst-devtools/dots-viewer/cargo_wrapper.py
-      ]
-      inreplace wrapper_files do |s|
-        s.gsub!(/shlex\.split\(env\.get\(("RUSTFLAGS"|'RUSTFLAGS'), (""|'')\)\)/,
-                "' '.split(env.get(\"RUSTFLAGS\", \"\"))")
-        s.gsub! "shlex_join(rust_flags)", "' '.join(rust_flags)"
-      end
-    end
+    ENV.append_to_rustflags "--codegen link-args=-Wl,#{rpath_args.join(",")}"
 
     # Make sure the `openssl-sys` crate uses our OpenSSL.
     ENV["OPENSSL_NO_VENDOR"] = "1"

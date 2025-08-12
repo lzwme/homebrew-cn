@@ -7,13 +7,14 @@ class Dprint < Formula
   head "https://github.com/dprint/dprint.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "94f0c63c279e6557b34abaa5a3daf13ea74a4cc8ad12589eab0b3093f27b7fb9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5c743935d64069338d522f7b6d6a75f6b46f9e2cd9f8abb8dafc6f404a66ac51"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "1e37f2baf1a456129bbf18c038aa5955ea13b936fc53464c953d42c0296fd290"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4f4c59f4c7cbc9f3f96b7d6673cef9cfa954b19762b6ad4e804cf70ab114f17f"
-    sha256 cellar: :any_skip_relocation, ventura:       "d6f12a4a3dbfc3f65320207500aae56e03c7365206ce800b45d2b643ea8069bf"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e5f24e032a52f6ddfb0ce867d0c16f702b31eac5cc22a607c1fdae53999d8698"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "97407733307f31f970755ee15f12ca334e32287e5d0350d900fab3e6276de496"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cd7146c2cde7fbbc6c8142e0c0dd0c49c213768680eb9e3c880a6b8e15f26986"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5afe18b96e387c8afa696986fc6a20be2435d6d3def3949a68ba715b020bf790"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "6209244235b7e3a12a9fe53a99304a2f6d58f29fcacf7dba9d4dd9dbcb3b2f6b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "12264de2d4b2c20291d5a5a939eb2d9f505b7d69b0a498d6153c7e4ad8c264a9"
+    sha256 cellar: :any_skip_relocation, ventura:       "bd837c6523344c0caff6cfa63ea0ebe5975b4ffee64da87fc055701d76c779c2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6547791dadfacd099f607176000efcf495e39bf70865f9888e155ac7a25501c4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b8db93cceb6781cd300ec02be77a42b117c43af9d93e2fed17d74fdde9156bc0"
   end
 
   depends_on "pkgconf" => :build
@@ -27,7 +28,7 @@ class Dprint < Formula
   end
 
   def install
-    ENV.append "RUSTFLAGS", "-C link-arg=-Wl,-undefined,dynamic_lookup" if OS.mac?
+    ENV.append_to_rustflags "-C link-arg=-Wl,-undefined,dynamic_lookup" if OS.mac?
 
     system "cargo", "install", *std_cargo_args(path: "crates/dprint")
     generate_completions_from_executable(bin/"dprint", "completions")

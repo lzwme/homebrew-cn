@@ -31,6 +31,7 @@ class OrTools < Formula
     sha256 cellar: :any,                 sonoma:        "e8e5cef74403cbdbabdb6ffb46bdd4a02031af1d26b6b3be9672d2a9efd4faf6"
     sha256 cellar: :any,                 ventura:       "abb9cc2a587012012bc89bf9c892cfe5e3c894c35efc20277870d985feeb0c66"
     sha256 cellar: :any_skip_relocation, arm64_linux:   "a57fca0beeca2fc09d465e54f4ca599d5fdc313b3371232e5db3d5bbdb43bf43"
+    sha256                               x86_64_linux:  "736a0b63de7c4c141d3543dff26eda8f51241a2697bee93d1ed1ba9294ebf16b"
   end
 
   depends_on "cmake" => [:build, :test]

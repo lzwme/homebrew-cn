@@ -1,18 +1,23 @@
 class Crossplane < Formula
   desc "Build control planes without needing to write code"
   homepage "https://github.com/crossplane/crossplane"
-  url "https://ghfast.top/https://github.com/crossplane/crossplane/archive/refs/tags/v1.20.0.tar.gz"
-  sha256 "19bc2126a636ba9e67b70de951f69854c85e13333ce01329bd8356a2696792c5"
+  url "https://ghfast.top/https://github.com/crossplane/crossplane/archive/refs/tags/v1.20.1.tar.gz"
+  sha256 "57d471912b89b812d85f8f04dfddb545610cf3c8eb53263826678bcd60200f6c"
   license "Apache-2.0"
   head "https://github.com/crossplane/crossplane.git", branch: "main"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b3c0fa4e896acbca0d698a7c6cf9831de2c64fac3412d38ccf9c1501ad896df5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "df018239abfffd81c0d556fbfd9c31abb59a8ef276af02d55bdbeb8789179621"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "f1094404b8fbd8b73c726825cfb042383bc82074f086c13865f7270ca1bd19ee"
-    sha256 cellar: :any_skip_relocation, sonoma:        "337334604189b629066db5daab3cb40603683598f2456891c37157e8548f628c"
-    sha256 cellar: :any_skip_relocation, ventura:       "96466ae3815085b90101c68c18c9e281f71b09fce1a3728c8c66503c8b1c4b1f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "586e15acc3c504a23fe4b06968a92f39d11dcb61a0e8e71a128aa6f4882da46d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "67eb048cb737ca85754b113a8903d8ef61733ad1afc80a70991c8652fd9079da"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f8761db6a9225d68bfaf3675c0000e2cf86ca5ed13ff691d4a8e4e2e410256ed"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "f1a04558760ec2621522639f3c965084d43dc37a8774da9171da5580d9220a04"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9cb9598aa99e945ae7bf04a1d6a6aca301f2ce095d19908f3a7f518b1271b883"
+    sha256 cellar: :any_skip_relocation, ventura:       "8daf9a782f52ef1dc6a0d76e64ef481d57f76878728943ef83f883a0478fe894"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c51366e97ec6fc0202803610b1c65c9e7e3523c5010a7d95bb0e7e0aa567786c"
   end
 
   depends_on "go" => :build

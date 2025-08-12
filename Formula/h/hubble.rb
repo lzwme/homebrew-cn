@@ -1,8 +1,8 @@
 class Hubble < Formula
   desc "Network, Service & Security Observability for Kubernetes using eBPF"
   homepage "https://github.com/cilium/hubble"
-  url "https://ghfast.top/https://github.com/cilium/hubble/archive/refs/tags/v1.17.5.tar.gz"
-  sha256 "ac0a7e58f611cb203e14f24c3b65b050931c4994794d884cbfecf5c4bf5aaf7f"
+  url "https://ghfast.top/https://github.com/cilium/hubble/archive/refs/tags/v1.18.0.tar.gz"
+  sha256 "29f4a452a360829a184d5e20b4d6c54fc96c982f91fe3569cd26b0fec35cf010"
   license "Apache-2.0"
   head "https://github.com/cilium/hubble.git", branch: "main"
 
@@ -15,13 +15,13 @@ class Hubble < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6c43e6a40d2ec9a09f4338311821564c53cd51b4f6d77ec2c478d524e34aa09a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "db3577b93b4ceee1748d4a0f9ec496f4d5845a4e13b19f333dd9f9b866756331"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "9d5f0cd4bf1ff71fabd3d0b3501876f00ba9c448a78b35ca00a93347b8377347"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c020d0d9f435bc510ce5beb5179de477a43dcadf7ae6bee43459fb322dc1c53e"
-    sha256 cellar: :any_skip_relocation, ventura:       "211ece972b01aa149a97878c96975d67751578a116f748301f2212dbe195686c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a2e4083010821994a723f3663f9b3fffe739e6cd91dcbe93a4f6cd6768b8df09"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "018e452d7084add8e6371ff0d0fcf8cdaabb4378894d5efb8ed4b581fa2e6a25"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0df2aa733b3749805b6fd4773f6e7e8cbd22e459e1b494daf9c437b057225fb2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "32a248eb9d3635af481c3a28780a50800dc93dfcd4ccd0d514e9e64be7f22c8e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "17ef999a277a36b81b58004a102d4501514ec936b63fc4ec9bd92882189601e8"
+    sha256 cellar: :any_skip_relocation, sonoma:        "766f5138a0119e9ad3e84c31bdc290eb6b4956624978a4cae69d6380d6828160"
+    sha256 cellar: :any_skip_relocation, ventura:       "c9430cdda0c5f413ffda9c32ae4329bef6811ffb347caca6d03c4476a25dd23a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fb7573d02547c359470a54d056437a26c951127868f0bae8d1614681f3170984"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d487082f3d109abe02f775b69854c5a04059dcc6f67a3ea05027e533fd453dc4"
   end
 
   depends_on "go" => :build

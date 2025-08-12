@@ -175,10 +175,6 @@ class PerconaXtrabackup < Formula
     # Remove conflicting manpages
     rm (Dir["man/*"] - ["man/CMakeLists.txt"])
 
-    # Workaround for
-    # error: a template argument list is expected after a name prefixed by the template keyword
-    ENV.append_to_cflags "-Wno-missing-template-arg-list-after-template-kw"
-
     system "cmake", "-S", ".", "-B", "build", *cmake_args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"

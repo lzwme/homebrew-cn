@@ -6,11 +6,12 @@ class Faircamp < Formula
   license "AGPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any, arm64_sequoia: "4f0729439efd98c19808fc801fa003c71a74da74f169bf64f01243c3a91579a0"
-    sha256 cellar: :any, arm64_sonoma:  "94ea3ee87a5d22fd30debd7be0d54f9248de3a7fc908a7cd0374fab043a95523"
-    sha256 cellar: :any, arm64_ventura: "e844e29cdb8ca8f036031826467c3630e7ddbf9a4d4b51fef068e7ae4ca459fc"
-    sha256 cellar: :any, sonoma:        "914e35f658e9372c4980db1141e8793ff9bb21beef7dd45aa9f8b43b06cb03bd"
-    sha256 cellar: :any, ventura:       "4decaa94db573d69ed76282c192bb3a82f51b04724c0e1a7272d38942625f488"
+    rebuild 1
+    sha256 cellar: :any, arm64_sequoia: "2c3af42aa5794802966ec89516637bea7b635890c98b15f6c68ecd8a96df015d"
+    sha256 cellar: :any, arm64_sonoma:  "2ed4d1a4deeb945a5dd0c4dcdbf3c1e896efd95160b90520d2e7d372b7a4270f"
+    sha256 cellar: :any, arm64_ventura: "2975ee7b60adb56ecd16bf94af3dfea23d9622b4fc7e0b86343cfb83368b20d7"
+    sha256 cellar: :any, sonoma:        "836b80238eed170eff9ea374bb5af87c067f41359ffd70ba9176a61909106093"
+    sha256 cellar: :any, ventura:       "74e4fea1c11b4206c19616b74d08ced932c0d352bbe43361c58ea10fc47d94f4"
   end
 
   depends_on "opus" => :build
@@ -32,7 +33,7 @@ class Faircamp < Formula
     # libvips is a runtime dependency, the brew install location is
     # not discovered by default by Cargo. Upstream issue:
     #   https://codeberg.org/simonrepp/faircamp/issues/45
-    ENV["RUSTFLAGS"] = Utils.safe_popen_read("pkgconf", "--libs", "vips").chomp
+    ENV.append_to_rustflags Utils.safe_popen_read("pkgconf", "--libs", "vips").chomp
     system "cargo", "install", *std_cargo_args, "--features", "libvips"
   end
 

@@ -14,13 +14,11 @@ class Aptos < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0ca9cfaa5ff28d0ef442acc7174b2c81b271d812755de6c58ba3020441cf9a76"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "29e598179117801bc623728e1089bd11c64f53af7ad5263817e43579552b5db7"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "834e2df17c516cefb5498fb720d11f457da4a43938080eba0dc8f8ca8da17d48"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4050c8d42ff1186a2cdd3478e995aa29e4e4f138e10895b34607cd079e8f23c7"
-    sha256 cellar: :any_skip_relocation, ventura:       "96bde797760d62f3d0d07ba73f6bba56ec1e92b28765a8d87b97afdd8d6703b5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3042eb5fb45b080462a85fcebcf8a4e786093eddffbb5b8b5971d8e62f48cbb7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e6acd0f8daf600a06711d9d7dad23b100ec6fd484fd9dbd85d050ceca0550ee6"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7a625e0b1d809bb60f862ac3e12fbebf1f9ded15317bbdd659547f625e220e04"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "61c0ec18f7ed1b8304bc8800998e1ba1fb13ff0639058b5265b106551843200b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "d4a9534a65470776222362bec91c86b3c0f6fb9e6302d9959681e99ffada5f85"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c9c61e732eed0c6d32379c516f0d233f735c74e6e1a94751b8a992ffa1973135"
   end
 
   depends_on "cmake" => :build
@@ -37,10 +35,6 @@ class Aptos < Formula
   end
 
   def install
-    # FIXME: Look into a different way to specify extra RUSTFLAGS in superenv as they override .cargo/config.toml
-    # Ref: https://github.com/Homebrew/brew/blob/master/Library/Homebrew/extend/ENV/super.rb#L65
-    ENV.append "RUSTFLAGS", "--cfg tokio_unstable -C force-frame-pointers=yes -C force-unwind-tables=yes"
-
     # Use correct compiler to prevent blst from enabling AVX support on macOS
     # upstream issue report, https://github.com/supranational/blst/issues/253
     ENV["CC"] = Formula["llvm"].opt_bin/"clang" if OS.mac?
