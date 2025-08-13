@@ -1111,6 +1111,7 @@ Homebrew-homebrew-core/Formula/c/codevis.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/codex.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/coffeescript.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/cog.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/c/cogapp.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/coin3d.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cointop.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/coinutils.rb, Homebrew/homebrew-core, 1
@@ -2947,6 +2948,7 @@ Homebrew-homebrew-core/Formula/i/icbirc.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/i/iccdev.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/icdiff.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/ice.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/i/iceberg.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/icecast.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/i/icecream.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/icemon.rb, Homebrew/homebrew-core, 1
@@ -2969,7 +2971,6 @@ Homebrew-homebrew-core/Formula/i/idnits.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/idris2.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/idsgrep.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/i/idutils.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/i/ievms.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/ifacemaker.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/ifopt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/ifstat.rb, Homebrew/homebrew-core, 0
@@ -3618,7 +3619,7 @@ Homebrew-homebrew-core/Formula/l/lorem.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/loudmouth.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lout.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lowdown.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/l/lp_solve.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/l/lp_solve.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lpc21isp.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/lpeg.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/lr.rb, Homebrew/homebrew-core, 1
@@ -6801,7 +6802,6 @@ Homebrew-homebrew-core/Formula/t/tengo.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tenv.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tenyr.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tere.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/t/term.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/termbg.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/termbox.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/termcolor.rb, Homebrew/homebrew-core, 1
@@ -14119,6 +14119,7 @@ Homebrew-homebrew-cask/Casks/s/scrivener.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/scroll-reverser.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/scroll.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/scrolla.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/s/scrub-utility.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/scummvm-app.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/sdformatter.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/sdm.rb, Homebrew/homebrew-cask, 0
@@ -14559,6 +14560,7 @@ Homebrew-homebrew-cask/Casks/s/synthesia.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/sys-pc-tool.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/sysdig-inspect.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/sysex-librarian.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/s/systhist.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/tabby.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/table-tool.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/tableau-prep.rb, Homebrew/homebrew-cask, 0

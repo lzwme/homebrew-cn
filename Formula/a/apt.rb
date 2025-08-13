@@ -16,7 +16,7 @@ class Apt < Formula
     sha256 x86_64_linux: "1691a75c06d897023dc2be230e3ade0f18c0d946e7a97de0f8d829fb1f9966cf"
   end
 
-  keg_only "not linked to prevent conflicts with system apt"
+  keg_only "it conflicts with system apt"
 
   depends_on "cmake" => :build
   depends_on "docbook" => :build

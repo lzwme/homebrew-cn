@@ -7,13 +7,14 @@ class Msolve < Formula
   head "https://github.com/algebraic-solving/msolve.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "45b8916bde31d186d803a2f2cfbd4869eed278d385c7cb3a97c1da631b191cb9"
-    sha256 cellar: :any,                 arm64_sonoma:  "958bcf80903400ad1d71d0869f0a42eaf93867624f19cb756a6ea0b432872ec6"
-    sha256 cellar: :any,                 arm64_ventura: "4ed81d00c905b6996bea06d2731e89ee570c4ae3efa66b0de3b074f5ee97343d"
-    sha256 cellar: :any,                 sonoma:        "9fb2c5a3b264cd2259003b5e6b099bdea903f1c13d425e2a0308e540ea55f239"
-    sha256 cellar: :any,                 ventura:       "071188370774cd208aa2749f1613a97adaa88ba1b2322acea7d44c4e032bf553"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2a5e176cae3364043adeefbe5b107defb8ffa278b00e1ca750f914f0084751c1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0ac11243d5470405652ba4f49740ef64a3b171f8fa92f5e4dd56d7027d2f4100"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "0e45fb53dab4b5250cea27d768e9f987171ebe527b5437e613e4201be0da1388"
+    sha256 cellar: :any,                 arm64_sonoma:  "5d652f0fa1125a691d4e467a6b13ad5c36616258976d0f0724128b5566c0c244"
+    sha256 cellar: :any,                 arm64_ventura: "b74d1713cc4c1fd963b888cabc0152001b70846f55a098d2adb989b990e74831"
+    sha256 cellar: :any,                 sonoma:        "fe82b496aebcde94ef15ecff545ac37614f0ad13ebe2bfb562eab97ac0eefe38"
+    sha256 cellar: :any,                 ventura:       "b9eba246188c6f93f1afe80258d158822fc6c73b39f48aa07c12733ec6bdff34"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0cf86cbf75bfe4dbfd3c5bae2cc3d64d191c643d370a3955984757483541a122"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "440bba762ba7d04d6bfa6ea0ba94bb2256d39bc5dec3ebda03ca0ec33964ad62"
   end
 
   depends_on "autoconf" => :build
@@ -37,8 +38,8 @@ class Msolve < Formula
       ENV.append "LDFLAGS", "-L#{libomp.opt_lib} -lomp"
     end
 
-    # only compile with cpu baseline features
-    inreplace "configure.ac", /AX_EXT/, " "
+    # only compile with cpu baseline features for the pre-built binaries
+    inreplace "configure.ac", /AX_EXT/, " " if build.bottle?
     system "autoreconf", "--force", "--install", "--verbose"
     system "./configure", "--disable-silent-rules", "--enable-openmp=yes", *std_configure_args
     system "make", "install"

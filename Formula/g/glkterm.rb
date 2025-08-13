@@ -28,7 +28,7 @@ class Glkterm < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "f57f1075e4afed829d717f987b4511626a5871e3532a98698862da6ee42989dc"
   end
 
-  keg_only "conflicts with other Glk libraries"
+  keg_only "it conflicts with other Glk libraries"
 
   uses_from_macos "ncurses"
 

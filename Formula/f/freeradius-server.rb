@@ -4,6 +4,7 @@ class FreeradiusServer < Formula
   url "https://ghfast.top/https://github.com/FreeRADIUS/freeradius-server/archive/refs/tags/release_3_2_7.tar.gz"
   sha256 "ebb906a236a8db71ba96875c9e53405bc8493e363c3815af65ae829cb6c288a3"
   license all_of: ["GPL-2.0-or-later", "LGPL-2.1-or-later"]
+  revision 1
   head "https://github.com/FreeRADIUS/freeradius-server.git", branch: "master"
 
   livecheck do
@@ -14,13 +15,13 @@ class FreeradiusServer < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 arm64_sequoia: "95cb101c2859a0765631f98c22516ec0ef7f04dca8e54a1eec172e6cb6d529c2"
-    sha256 arm64_sonoma:  "85dfb2f19b835f7a1e3591fc936c03abf32fa80c2e9bede757be2654c0cd160d"
-    sha256 arm64_ventura: "88f6183dc294964a3f22fc633249e491d6b9259368a59afc9bd4d9551af0d529"
-    sha256 sonoma:        "aa58c0ce790ce38f752530797991d9d2121a184d92cea2595e77989f91fc7057"
-    sha256 ventura:       "7827599b93f900268d966f9824471d36bea66fad37b64a60b470669b05787a6e"
-    sha256 arm64_linux:   "9216b4e057a153ab752599e306e70a7c861bb5421e8fe3aebc72b521e9cd5579"
-    sha256 x86_64_linux:  "8afee38a329ed1deed63477166edb60e3588399ae8ab116e050ee2fdd162d4d1"
+    sha256 arm64_sequoia: "b9243e933ae4e539f4d8c824db8fe7af52bb72486ccb6e3af8632da30085dd6f"
+    sha256 arm64_sonoma:  "149184cc524e08083c8ec2a51a2304760c8b2b95788340b3eac9699e35da85f8"
+    sha256 arm64_ventura: "486bfc00d5ca794823113992d3dfdcc3e50550349f29bf18e6e4bceea8e5bee3"
+    sha256 sonoma:        "232c9f0921fca5bf3df3b612f8dd451c8d61a6b7ce2be45a7a7037d014f5d196"
+    sha256 ventura:       "64ce4c5828bb09fbf4c505f16190e08b0ee47350f6fd9ae25885cfea40587a0a"
+    sha256 arm64_linux:   "d368ba93b23f1d666d39c270653aca11a68ae234f090935be4072e6fb32a6db2"
+    sha256 x86_64_linux:  "8c63ede2e929cf56b024600c54c5595c694f0a8852aef432f5905c558db5cf81"
   end
 
   depends_on "collectd"
@@ -38,6 +39,12 @@ class FreeradiusServer < Formula
   on_linux do
     depends_on "gdbm"
     depends_on "readline"
+  end
+
+  # Support openssl 3.5.2+: https://github.com/FreeRADIUS/freeradius-server/issues/5631
+  patch do
+    url "https://github.com/FreeRADIUS/freeradius-server/commit/59e262f1134fef8d53d15ae963885a08c9ea8315.patch?full_index=1"
+    sha256 "5ec22a8cf75b9d1685eadea6dba24eae1a5617f39dbde130d58b2866cabb6763"
   end
 
   def install

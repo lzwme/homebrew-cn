@@ -1,8 +1,8 @@
 class Youtubeuploader < Formula
   desc "Scripted uploads to Youtube"
   homepage "https://github.com/porjo/youtubeuploader"
-  url "https://ghfast.top/https://github.com/porjo/youtubeuploader/archive/refs/tags/v1.25.3.tar.gz"
-  sha256 "77d862f38e007939810b1b2b703f9c377e1db5108dd15d7ac953ee80eb2d8595"
+  url "https://ghfast.top/https://github.com/porjo/youtubeuploader/archive/refs/tags/v1.25.4.tar.gz"
+  sha256 "c4f560b2755933281a7d375398714a25b3e8899232ce3de90d05eec760b76cc9"
   license "Apache-2.0"
   version_scheme 1
   head "https://github.com/porjo/youtubeuploader.git", branch: "master"
@@ -17,12 +17,12 @@ class Youtubeuploader < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "18a805d453c04a01ff040f4de994ebedf0547a7d3eb7e498bbcef680d00d88c0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "18a805d453c04a01ff040f4de994ebedf0547a7d3eb7e498bbcef680d00d88c0"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "18a805d453c04a01ff040f4de994ebedf0547a7d3eb7e498bbcef680d00d88c0"
-    sha256 cellar: :any_skip_relocation, sonoma:        "151952984e108c6dd23b446845a624659a829c5c950eaec326d2ae8b97561981"
-    sha256 cellar: :any_skip_relocation, ventura:       "151952984e108c6dd23b446845a624659a829c5c950eaec326d2ae8b97561981"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a2b852b5218f710cc38653d4fb6af14a0a8a1aa0f89626f1c07b3bd77a812392"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "144a8e23a2aaac07f27a463c0cd5c65449bf19181b15153c50040ae0839fc5e7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "144a8e23a2aaac07f27a463c0cd5c65449bf19181b15153c50040ae0839fc5e7"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "144a8e23a2aaac07f27a463c0cd5c65449bf19181b15153c50040ae0839fc5e7"
+    sha256 cellar: :any_skip_relocation, sonoma:        "90ccfdc61719f56a9d7730808bde973e3adaea2f875131fe00d116bf5d840aa2"
+    sha256 cellar: :any_skip_relocation, ventura:       "90ccfdc61719f56a9d7730808bde973e3adaea2f875131fe00d116bf5d840aa2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "889da24d2d01537dd83b9677a9202decc7cb7cfa8473ce2ad6cab8ce5ee44a99"
   end
 
   depends_on "go" => :build

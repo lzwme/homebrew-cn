@@ -4,16 +4,16 @@ class FancyCat < Formula
   url "https://ghfast.top/https://github.com/freref/fancy-cat/archive/refs/tags/v0.4.1.tar.gz"
   sha256 "d264dbaf05f8713a4c52ce0c74a8d5e900989ec815fac1bbfec7d7b385bc1dd5"
   license "AGPL-3.0-or-later"
-  revision 1
+  revision 2
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "40dab164f64cc880acbfed31805d0026c2f3f8e2e644e7c1f87b70a5a7776ccc"
-    sha256 cellar: :any,                 arm64_sonoma:  "45a5040e53274f581d3e978539295e485f87d8c25c0c9893290ff00dbd79c819"
-    sha256 cellar: :any,                 arm64_ventura: "2755b20a8ae8835f869cb2acbf4992d775783a5b24bc5f098c5ac6fe43accdbe"
-    sha256 cellar: :any,                 sonoma:        "aa11ab824ccaabcca5c5a5e2d787b969625062fd6fd6bcc113bd67e74a82d94e"
-    sha256 cellar: :any,                 ventura:       "0b195abf4d1ab975a429bf58351c16de5e3fb2e61c6e6e25dacb5dc590820f8c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3d1f171a0cfdd015751a0d2dee56273dd8c2e3961a0531d7f3ecf62354477a50"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7b4795f94d2545b5db437cc91612c4b1b15d27373aa198bbcb0cc3b2ef5b1453"
+    sha256 cellar: :any,                 arm64_sequoia: "88fc6d9e5e1dee81da8892ae277c43283bbc2ecf75ecc3ee33b1a98e9e7c3395"
+    sha256 cellar: :any,                 arm64_sonoma:  "2e0a0d1dde99309144aa89e7a2fa3251bce4d2ab6987dfb2e8fd5c841eee33f6"
+    sha256 cellar: :any,                 arm64_ventura: "125bb039546008da794a16341f58e033b6268bb257d5ab6845374728efabfaa8"
+    sha256 cellar: :any,                 sonoma:        "910c30ec58e4134087836880bb8bdfc2d5b484587b671e3cf8623450f44621ac"
+    sha256 cellar: :any,                 ventura:       "a36577a814b64b3bc3d39c5a6bfba9924211664d5e76f7e58fc88c2de41db175"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e6e9cd2991144b814732cfa84f4d9c145deb5b1fb3e33d2456d558fd31ebc32f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "89f9903b3c1441a1fbe3b19488f197660f62a108cb05fe5c08bf9ff3832b076b"
   end
 
   depends_on "zig" => :build

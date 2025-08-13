@@ -16,10 +16,13 @@ class Qsv < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any_skip_relocation, sonoma:       "1fcbafeec43807a8226ec161464966ded003bbce13a4e3361021add956ea6adc"
-    sha256 cellar: :any_skip_relocation, ventura:      "9aeaeb697b32246869a358a8a792cd130a86a86dad0ccc370f9f4b85369215ca"
-    sha256 cellar: :any_skip_relocation, arm64_linux:  "fd148c0c931c988f4aaa7de659b7edfafb8aeeb12d0ed7d64beeb9b662852f0a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "06ca24bd05fed268806ec6ac734fb7e36ccf100b71816f6e93f972c1aca9b00c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "90f1a4eb8e70ca23a3eb60e9cad88847892d0bd8ad2107069b27cf3b8899a8cb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9629fc3fa5a64d0e94d8058bc3385592ffc853d633a4475a43dffed4760c2909"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "4efcfa4e20ae3e09c62bc75abae46e1a0e10b7a44156d498746d6220c9e24f97"
+    sha256 cellar: :any_skip_relocation, sonoma:        "1fcbafeec43807a8226ec161464966ded003bbce13a4e3361021add956ea6adc"
+    sha256 cellar: :any_skip_relocation, ventura:       "9aeaeb697b32246869a358a8a792cd130a86a86dad0ccc370f9f4b85369215ca"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fd148c0c931c988f4aaa7de659b7edfafb8aeeb12d0ed7d64beeb9b662852f0a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "06ca24bd05fed268806ec6ac734fb7e36ccf100b71816f6e93f972c1aca9b00c"
   end
 
   depends_on "cmake" => :build # for libz-ng-sys

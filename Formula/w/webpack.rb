@@ -3,19 +3,19 @@ require "json"
 class Webpack < Formula
   desc "Bundler for JavaScript and friends"
   homepage "https://webpack.js.org/"
-  url "https://registry.npmjs.org/webpack/-/webpack-5.101.0.tgz"
-  sha256 "308ca5aa5ad39e4c20fce043d51d9457ed33a3d86d264a6257d565d28fcccb15"
+  url "https://registry.npmjs.org/webpack/-/webpack-5.101.1.tgz"
+  sha256 "2be80b52d1d5c1bb49cb878e39519c9fbebd7780859f9375a7eda42902d5b0d9"
   license "MIT"
   head "https://github.com/webpack/webpack.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e14bd462bb101d07ba56dcf3253887638b56d9f0143de35071d151a3f673f9e1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e14bd462bb101d07ba56dcf3253887638b56d9f0143de35071d151a3f673f9e1"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "e14bd462bb101d07ba56dcf3253887638b56d9f0143de35071d151a3f673f9e1"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f3deb70f1f9b7b9a9609ab2e2acc1c7ba3b2a3dd527a228568e330aebfecc547"
-    sha256 cellar: :any_skip_relocation, ventura:       "f3deb70f1f9b7b9a9609ab2e2acc1c7ba3b2a3dd527a228568e330aebfecc547"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e14bd462bb101d07ba56dcf3253887638b56d9f0143de35071d151a3f673f9e1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e14bd462bb101d07ba56dcf3253887638b56d9f0143de35071d151a3f673f9e1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a87ac10855ba697e19935a171699b3f9534c09dcc52b4947052c0dc76ccd7817"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a87ac10855ba697e19935a171699b3f9534c09dcc52b4947052c0dc76ccd7817"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "a87ac10855ba697e19935a171699b3f9534c09dcc52b4947052c0dc76ccd7817"
+    sha256 cellar: :any_skip_relocation, sonoma:        "413a016b6f95de49d447c036d6429a7bb86a31fce9591324e604665782e91422"
+    sha256 cellar: :any_skip_relocation, ventura:       "413a016b6f95de49d447c036d6429a7bb86a31fce9591324e604665782e91422"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a87ac10855ba697e19935a171699b3f9534c09dcc52b4947052c0dc76ccd7817"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a87ac10855ba697e19935a171699b3f9534c09dcc52b4947052c0dc76ccd7817"
   end
 
   depends_on "node"

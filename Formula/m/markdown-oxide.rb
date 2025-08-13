@@ -1,18 +1,18 @@
 class MarkdownOxide < Formula
   desc "Personal Knowledge Management System for the LSP"
   homepage "https://oxide.md"
-  url "https://ghfast.top/https://github.com/Feel-ix-343/markdown-oxide/archive/refs/tags/v0.25.5.tar.gz"
-  sha256 "c9e157b27427a645c5eeef51efef00e97a3988e1838f11c1cb47a18bd6e29ebb"
+  url "https://ghfast.top/https://github.com/Feel-ix-343/markdown-oxide/archive/refs/tags/v0.25.6.tar.gz"
+  sha256 "6d56f7c034d0f13c4d0692a850620107892483dcc107dddc190ed988516338d5"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3ce0bfaa449f7bac913fcc8b137b87246cbce65bcf30009d3eca7b7093264dc0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "212d32af6a62920ea608d24909098de5df80dac940533316b0edbd3eaf91e8cd"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "846201fe7a32dd9f0a86a71bd36ab6afee5d84b8880cdde2d4e5e270dcab42d7"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2de85f4f5eaa14006f815978a02b6aee8db653afdb72646e6f5417043ec82e5e"
-    sha256 cellar: :any_skip_relocation, ventura:       "5367d0093a4e3bf1db84b47256ac6aebda8e641d3acc7bdc7cedbccab6e2f46c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b1f3bde1dba33b8c30fb4d920aa67eadd36ed649d081b1093ed8650970365c61"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "42c13641a49e8f756bbd423d349889b300b993928312dc2da767ecb5759817f7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b85b448d0be203d1914be41604bb708062407e244d8b3e99d1ba0dfc82e2e5d5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ebac725ff73017017b83d51bd0aebd904a5dda0c19929f971fa548e887b35005"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "da1e8e7de35d12c6914e7c2aec783e0d76c4803c6139865b1792f408e243aef7"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c91ae1560d977a0ba1f468fada60ad253a6f5755f549cf3ee1504af7da69a23f"
+    sha256 cellar: :any_skip_relocation, ventura:       "ead3d81e6e3598efd072fd62706edf62f75b837af3bcd40a5af5c19ff971a94c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8683496edb75d2e670853d57527d4e16fc6cf56a4dd94acca6a443d1c02d9964"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "19209ac7d8990d4d05d973a32520e50bad50b2401057efc9341d55761a737a3b"
   end
 
   depends_on "rust" => :build

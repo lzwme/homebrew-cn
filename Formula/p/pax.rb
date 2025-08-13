@@ -27,9 +27,7 @@ class Pax < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "3ebf0c050c23153d61d4bd703a0f9a4194018a54ad873a5594a70182058280ec"
   end
 
-  on_macos do
-    keg_only "provided by macOS"
-  end
+  keg_only :provided_by_macos
 
   def install
     mkdir "build" do

@@ -4,20 +4,20 @@ class Px < Formula
   desc "Ps and top for human beings (px / ptop)"
   homepage "https://github.com/walles/px"
   url "https://github.com/walles/px.git",
-      tag:      "3.6.12",
-      revision: "922a9038272661371bce15b1d13c47bc84926845"
+      tag:      "3.6.13",
+      revision: "e6bd4779970fc448cabb5b714cb737005d6c4318"
   license "MIT"
 
   no_autobump! because: :bumped_by_upstream
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2fee9f20e486a9ecf3f39b5984280ac6f9f21321af5bd70178c1b0b0a560ddb8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2fee9f20e486a9ecf3f39b5984280ac6f9f21321af5bd70178c1b0b0a560ddb8"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "2fee9f20e486a9ecf3f39b5984280ac6f9f21321af5bd70178c1b0b0a560ddb8"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e13cd275ed42a692779378656b6c107929c5481c69d132ae1c372c1701020660"
-    sha256 cellar: :any_skip_relocation, ventura:       "e13cd275ed42a692779378656b6c107929c5481c69d132ae1c372c1701020660"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2fee9f20e486a9ecf3f39b5984280ac6f9f21321af5bd70178c1b0b0a560ddb8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2fee9f20e486a9ecf3f39b5984280ac6f9f21321af5bd70178c1b0b0a560ddb8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9d4a1e994cc03c26be44d6683939626e92a593894e9993dc4309662d47a65283"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9d4a1e994cc03c26be44d6683939626e92a593894e9993dc4309662d47a65283"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "9d4a1e994cc03c26be44d6683939626e92a593894e9993dc4309662d47a65283"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6c8843cd23beef1c971c277f0fbc1a6dc1174455e3986121c52c64403b369c03"
+    sha256 cellar: :any_skip_relocation, ventura:       "6c8843cd23beef1c971c277f0fbc1a6dc1174455e3986121c52c64403b369c03"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9d4a1e994cc03c26be44d6683939626e92a593894e9993dc4309662d47a65283"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9d4a1e994cc03c26be44d6683939626e92a593894e9993dc4309662d47a65283"
   end
 
   depends_on "python@3.13"

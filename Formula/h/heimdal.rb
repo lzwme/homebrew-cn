@@ -27,7 +27,7 @@ class Heimdal < Formula
     sha256 x86_64_linux:   "50b84d04c9adf4ea658519cdc158a68aa264300bdaf290675010529d6d72e6ac"
   end
 
-  keg_only "conflicts with Kerberos"
+  keg_only "it conflicts with Kerberos"
 
   depends_on "bison" => :build
   depends_on "pkgconf" => :build

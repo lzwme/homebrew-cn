@@ -24,7 +24,7 @@ class Mozjpeg < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "e69f9e76bf590d31a85839acdc52bbee9b1c4ccef0370f82f5a80e9d21c69298"
   end
 
-  keg_only "mozjpeg is not linked to prevent conflicts with the standard libjpeg"
+  keg_only "it conflicts with the standard libjpeg"
 
   depends_on "cmake" => :build
   depends_on "nasm" => :build

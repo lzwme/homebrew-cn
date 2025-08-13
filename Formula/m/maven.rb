@@ -23,7 +23,7 @@ class Maven < Formula
 
   depends_on "openjdk"
 
-  conflicts_with "mvnvm", because: "also installs a 'mvn' executable"
+  conflicts_with "mvnvm", because: "both install `mvn` executables"
 
   def install
     # Remove windows files

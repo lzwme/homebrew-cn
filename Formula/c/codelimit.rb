@@ -3,18 +3,18 @@ class Codelimit < Formula
 
   desc "Your Refactoring Alarm"
   homepage "https://github.com/getcodelimit/codelimit"
-  url "https://files.pythonhosted.org/packages/1f/0f/efe4f75ad56419cc68800fb22ea38e30816b23b27f82f5d4fd2c63378b17/codelimit-0.20.1.tar.gz"
-  sha256 "bb9a675b2a16a5de1c20ba166bb8c1fa81ff1fa3387b22334a6b708ab1a82895"
+  url "https://files.pythonhosted.org/packages/c9/c7/8d549c91354c38f1dd8529aa4dcab080a232473c848eb7416673aef7f690/codelimit-0.20.2.tar.gz"
+  sha256 "f1c2740644bfe2cda6b4daf677d0d23a7bd6128595dc2f08d72233ab67700727"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "fdecb3c9656429d99248d1d1d0a74338184f6823a354083ab50a31b72c31a5df"
-    sha256 cellar: :any,                 arm64_sonoma:  "61d1ace1cebab73402dee716277469ff418ec463a68c267e9d7155d26274dd2a"
-    sha256 cellar: :any,                 arm64_ventura: "fe96ec653716ebbf90f0047ffdd08af8abaa3c4faafc90510d7ad4df7b698fec"
-    sha256 cellar: :any,                 sonoma:        "bce965e182060be2eab013ec4a00a94f362784506956042b50cfa9240dbd0de7"
-    sha256 cellar: :any,                 ventura:       "280985e9bf55b95908853e4b564ab337f857be9b736e60de0494b98ef7339827"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f7f4c58c9309d9a9c175b5842813f04b428da27a3623e04139d446dfb90c259f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3432373cf3ec04bd89c4fdfe3d861024237ccacc487f1cb9196fee30d839f177"
+    sha256 cellar: :any,                 arm64_sequoia: "de213d923cc3b8f6fd6de6e4c1de1523c79c8fd6e03c6435c45f5d770cc2d039"
+    sha256 cellar: :any,                 arm64_sonoma:  "80daefacb3a23275a833737a4a1efc4187a23a66e0506c7f48a1c368fe11d9b3"
+    sha256 cellar: :any,                 arm64_ventura: "27e1bcd2e921327ae8aacc0f1e63023858a5c2635b78f83bdbd0062a0dfed8a2"
+    sha256 cellar: :any,                 sonoma:        "a3a2050ad1cd5b9a0f35503d7b28774e9a54dd105b993db6a7168c303993d6a0"
+    sha256 cellar: :any,                 ventura:       "87d44767b28a57437d7c21f7445cbc78ec5eefdefe404277ec70fcb781625071"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0fcb61d62d3e13f7e85e46a647b834f0fbab5dbeb2e08fa678cde6761560c41e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2c38a254a22e7cb6c2ce22d1999b9e0e21066a142b3fa71ab6704d530b21a5e7"
   end
 
   depends_on "certifi"

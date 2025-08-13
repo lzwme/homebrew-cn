@@ -36,7 +36,7 @@ class Dpkg < Formula
   uses_from_macos "zlib"
 
   on_linux do
-    keg_only "not linked to prevent conflicts with system dpkg"
+    keg_only "it conflicts with system dpkg"
   end
 
   patch :DATA

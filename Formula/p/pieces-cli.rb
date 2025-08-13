@@ -3,20 +3,19 @@ class PiecesCli < Formula
 
   desc "Command-line tool for Pieces.app"
   homepage "https://docs.pieces.app/products/cli"
-  url "https://files.pythonhosted.org/packages/67/26/3e8bde03fd92455652e059e0d7d7b8a7f2341cee808b98d9a6fc018c4b6b/pieces_cli-1.16.5.tar.gz"
-  sha256 "540d2f08f69f7f1729d679ae384d76b617850a3b8ad41d79b7f3733669aa1ec1"
+  url "https://files.pythonhosted.org/packages/bc/e0/f24e5ef6f4fba7e32c9b9473a5fd8ccb8b8dd25e4ec1cfa8cc0983fee698/pieces_cli-1.17.0.tar.gz"
+  sha256 "c684dc62bab00c7689f1c28f7538a30f54a714d17a9e0941ef01d1d77152c658"
   license "MIT"
-  revision 1
   head "https://github.com/pieces-app/cli-agent.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "4df0d8099e959aa7a4100a05b47aff83bd4ed4e0dd989ad93f0c1cd8546e48d6"
-    sha256 cellar: :any,                 arm64_sonoma:  "cda27275b69d255a3b462445fa12ebe9cfb403dee8f43ffd6ed104770e6dfa06"
-    sha256 cellar: :any,                 arm64_ventura: "42cccf3b92bcdc60deb331b03bafe0f2603ed5cc1d9e133c4777f6ae54c1d88e"
-    sha256 cellar: :any,                 sonoma:        "1d1fe497bf66749b4e599b1c0b455ac39bf67e3762da5ff191141c37d5d8ffed"
-    sha256 cellar: :any,                 ventura:       "d278fa1179cb5dac727ea3e1a770f77ae3f1ee3edacd5a6d103d9f40edb7eefb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8d494781ee062c05f6a90995dc228cc686f3545f7a965c3367cabb2c4371031e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c7f112216fe2bdb4e2fb6f149f9cd7235136611136df33695d04be21bd4b81a0"
+    sha256 cellar: :any,                 arm64_sequoia: "ca6e3070ad96b381cae196698377b9016aee6b4d68a9145200e23fb9c7b75424"
+    sha256 cellar: :any,                 arm64_sonoma:  "e42ebb6d886a79a84bfcb29ab30822a461f9477fd1cab78a5122155717c8f561"
+    sha256 cellar: :any,                 arm64_ventura: "417970c677fb60fe165491c8c58009613ff27a5d74bbb4374425b0b4ca0a4f9b"
+    sha256 cellar: :any,                 sonoma:        "97a18727158b74a5481c1ff3a08b84999bdcf8583ec0a01ee2614d388d406dc3"
+    sha256 cellar: :any,                 ventura:       "fe8c225a88fed763d423884a345426d60735b4bddfbab379ff85da715597015a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "52fd0496a9da54d5ee1bb91c00ff2a1ea379331ddb75a1aa0d46662405a2eae3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "72a4956db5cada8a91d27819ff57c85d214c66a6b88fbfbbad8e40f67eda66f4"
   end
 
   depends_on "rust" => :build
@@ -37,6 +36,11 @@ class PiecesCli < Formula
   resource "anyio" do
     url "https://files.pythonhosted.org/packages/f1/b4/636b3b65173d3ce9a38ef5f0522789614e590dab6a8d505340a4efe4c567/anyio-4.10.0.tar.gz"
     sha256 "3f3fae35c96039744587aa5b8371e7e8e603c0702999535961dd336026973ba6"
+  end
+
+  resource "attrs" do
+    url "https://files.pythonhosted.org/packages/5a/b0/1367933a8532ee6ff8d63537de4f1177af4bff9f3e829baf7331f595bb24/attrs-25.3.0.tar.gz"
+    sha256 "75d7cefc7fb576747b2c81b4442d4d4a1ce0900973527c011d1030fd3bf4af1b"
   end
 
   resource "click" do
@@ -69,14 +73,24 @@ class PiecesCli < Formula
     sha256 "12f65c9b470abda6dc35cf8e63cc574b1c52b11df2c86030af0ac09b01b13ea9"
   end
 
+  resource "jsonschema" do
+    url "https://files.pythonhosted.org/packages/d5/00/a297a868e9d0784450faa7365c2172a7d6110c763e30ba861867c32ae6a9/jsonschema-4.25.0.tar.gz"
+    sha256 "e63acf5c11762c0e6672ffb61482bdf57f0876684d8d249c0fe2d730d48bc55f"
+  end
+
+  resource "jsonschema-specifications" do
+    url "https://files.pythonhosted.org/packages/bf/ce/46fbd9c8119cfc3581ee5643ea49464d168028cfb5caff5fc0596d0cf914/jsonschema_specifications-2025.4.1.tar.gz"
+    sha256 "630159c9f4dbea161a6a2205c3011cc4f18ff381b189fff48bb39b9bf26ae608"
+  end
+
   resource "markdown-it-py" do
-    url "https://files.pythonhosted.org/packages/38/71/3b932df36c1a044d397a1f92d1cf91ee0a503d91e470cbd670aa66b07ed0/markdown-it-py-3.0.0.tar.gz"
-    sha256 "e3f60a94fa066dc52ec76661e37c851cb232d92f9886b15cb560aaada2df8feb"
+    url "https://files.pythonhosted.org/packages/5b/f5/4ec618ed16cc4f8fb3b701563655a69816155e79e24a17b651541804721d/markdown_it_py-4.0.0.tar.gz"
+    sha256 "cb0a2b4aa34f932c007117b194e945bd74e0ec24133ceb5bac59009cda1cb9f3"
   end
 
   resource "mcp" do
-    url "https://files.pythonhosted.org/packages/ff/97/0a3e08559557b0ac5799f9fb535fbe5a4e4dcdd66ce9d32e7a74b4d0534d/mcp-1.8.0.tar.gz"
-    sha256 "263dfb700540b726c093f0c3e043f66aded0730d0b51f04eb0a3eb90055fe49b"
+    url "https://files.pythonhosted.org/packages/3a/f5/9506eb5578d5bbe9819ee8ba3198d0ad0e2fbe3bab8b257e4131ceb7dfb6/mcp-1.11.0.tar.gz"
+    sha256 "49a213df56bb9472ff83b3132a4825f5c8f5b120a90246f08b0dac6bedac44c8"
   end
 
   resource "mdurl" do
@@ -139,9 +153,19 @@ class PiecesCli < Formula
     sha256 "d584d9ec91ad65861cc08d42e834324ef890a082e591037abe114850ff7bbc3e"
   end
 
+  resource "referencing" do
+    url "https://files.pythonhosted.org/packages/2f/db/98b5c277be99dd18bfd91dd04e1b759cad18d1a338188c936e92f921c7e2/referencing-0.36.2.tar.gz"
+    sha256 "df2e89862cd09deabbdba16944cc3f10feb6b3e6f18e902f7cc25609a34775aa"
+  end
+
   resource "rich" do
     url "https://files.pythonhosted.org/packages/ab/3a/0316b28d0761c6734d6bc14e770d85506c986c85ffb239e688eeaab2c2bc/rich-13.9.4.tar.gz"
     sha256 "439594978a49a09530cff7ebc4b5c7103ef57baf48d5ea3184f21d9a2befa098"
+  end
+
+  resource "rpds-py" do
+    url "https://files.pythonhosted.org/packages/1e/d9/991a0dee12d9fc53ed027e26a26a64b151d77252ac477e22666b9688bc16/rpds_py-0.27.0.tar.gz"
+    sha256 "8b23cf252f180cda89220b378d917180f29d313cd6a07b2431c0d3b776aae86f"
   end
 
   resource "six" do

@@ -1,8 +1,8 @@
 class Oxlint < Formula
   desc "Suite of high-performance tools for JavaScript and TypeScript written in Rust"
   homepage "https://oxc.rs/"
-  url "https://ghfast.top/https://github.com/oxc-project/oxc/archive/refs/tags/oxlint_v1.11.1.tar.gz"
-  sha256 "1cdd3fb54c1703dddf27ff5dba2c29d00b4bf9bde013075755e686524f1618de"
+  url "https://ghfast.top/https://github.com/oxc-project/oxc/archive/refs/tags/oxlint_v1.11.2.tar.gz"
+  sha256 "cafea69fdf28d6223f68ce7a6f8e88025ac7a330cd96eca97fa6180df483d5c4"
   license "MIT"
   head "https://github.com/oxc-project/oxc.git", branch: "main"
 
@@ -12,13 +12,13 @@ class Oxlint < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6e10355fa2e09a32d68704f9dc852b869d67f84070f5de8c2f9556c2a5c4b593"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bf3966ffb42325293d5c74bc34e0de398c988e65a9b81f6def468cc1a491ccb1"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "dfc47dd104e011add137c1ce7d4c659850b3ac1c79c0c79078c85540739a3ba2"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c3c289b0d68723508c6785b9fbe5162369d487bf10e645a2e3e2c5be57ef424b"
-    sha256 cellar: :any_skip_relocation, ventura:       "878a136e5b4b7f003872ee05fb749b1d712579110c1d6074b1c84c09dea0c3e3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "be2243fa3df7a8452c5e267e4e6b483ef3b429c62ada6dc525ff7bcfff8b5ec6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b20ea15dbde8e13231eaac05b0b8fd7383b6c9e8ee361ab4ef0d099708bada40"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "91f0e20f5a2312e6d6291495d85fd297cc083699126e987e6343743b36ee9f52"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "445ac4d612a5cfb2343834d91213deb5c04c7b0915a93e11fb24e3a9137456e6"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "3263197031d83f6266dad6b6979abf87e7fdec97216a9a4d05acefe566818f49"
+    sha256 cellar: :any_skip_relocation, sonoma:        "90d999e6d0d0dc18767c4a897b8e44456ec26e9e0e00a76ce8c582a1cfcfe090"
+    sha256 cellar: :any_skip_relocation, ventura:       "d5717e593806e45b491613727f65fa0de2ffcc6c762a04f98edc38e49bbb2eb1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c9cf4ee3270550502b7f1091b53d9dbcef1687ba84dbcfea2824e7c51c597038"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e1751fbdf2c605e38d87bc464d86f22855ee805919f394aa9d7f5b08c9e2bd62"
   end
 
   depends_on "rust" => :build

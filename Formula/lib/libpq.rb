@@ -20,7 +20,7 @@ class Libpq < Formula
     sha256 x86_64_linux:  "0c73376d125c4d80714135ebbd2deb1aa56bb4938f5420ecf4fb592beba55295"
   end
 
-  keg_only "conflicts with postgres formula"
+  keg_only "it conflicts with PostgreSQL"
 
   depends_on "docbook" => :build
   depends_on "docbook-xsl" => :build

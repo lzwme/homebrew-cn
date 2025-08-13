@@ -29,7 +29,7 @@ class LibtorrentRasterbar < Formula
   depends_on "openssl@3"
   depends_on "python@3.13"
 
-  conflicts_with "libtorrent-rakshasa", because: "they both use the same libname"
+  conflicts_with "libtorrent-rakshasa", because: "both use the same libname"
 
   def install
     args = %W[

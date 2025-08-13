@@ -52,7 +52,7 @@ class Ctags < Formula
     depends_on "autoconf" => :build
   end
 
-  conflicts_with "universal-ctags", because: "this formula installs the same executable as the ctags formula"
+  conflicts_with "universal-ctags", because: "both install `ctags` binaries"
 
   # fixes https://sourceforge.net/p/ctags/bugs/312/
   patch :p2 do

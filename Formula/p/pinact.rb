@@ -1,8 +1,8 @@
 class Pinact < Formula
   desc "Pins GitHub Actions to full hashes and versions"
   homepage "https://github.com/suzuki-shunsuke/pinact"
-  url "https://ghfast.top/https://github.com/suzuki-shunsuke/pinact/archive/refs/tags/v3.3.2.tar.gz"
-  sha256 "eadc0fd9ae415f984f55f1fbe266fa7e3578138cb7e2182e26f4288e261b6235"
+  url "https://ghfast.top/https://github.com/suzuki-shunsuke/pinact/archive/refs/tags/v3.4.0.tar.gz"
+  sha256 "21ee79849a51ee570bba14f6c9a930dfbb8704b54d29e6193e4079fe2bb96b0f"
   license "MIT"
   head "https://github.com/suzuki-shunsuke/pinact.git", branch: "main"
 
@@ -14,12 +14,12 @@ class Pinact < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0abcbe45e6c1bd13225662c73fdc9423f7b4fe4ee6742c78c61cfa0c756a0902"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0abcbe45e6c1bd13225662c73fdc9423f7b4fe4ee6742c78c61cfa0c756a0902"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "0abcbe45e6c1bd13225662c73fdc9423f7b4fe4ee6742c78c61cfa0c756a0902"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5a1cefdbb67d80b193d173a5badba087f1664ada06f85c36db55971260b111e8"
-    sha256 cellar: :any_skip_relocation, ventura:       "5a1cefdbb67d80b193d173a5badba087f1664ada06f85c36db55971260b111e8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4fc179d57e25129cccfd534b576faee94ffa83724f274ea5f7219ebbc309c749"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4a3ca91c7860d29bb30a9cbf0bd7760e7790fc5b6fdd84ccaa5dd16a6dbcdf03"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4a3ca91c7860d29bb30a9cbf0bd7760e7790fc5b6fdd84ccaa5dd16a6dbcdf03"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "4a3ca91c7860d29bb30a9cbf0bd7760e7790fc5b6fdd84ccaa5dd16a6dbcdf03"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2f536460499aab1b38b76d5a2691e3b8a7b3ede8c97af40a2115f3c25e227130"
+    sha256 cellar: :any_skip_relocation, ventura:       "2f536460499aab1b38b76d5a2691e3b8a7b3ede8c97af40a2115f3c25e227130"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8b2d694ad8402e580424cf6fad2e442d321d9c72a3983c1d058c933a5c3bcede"
   end
 
   depends_on "go" => :build

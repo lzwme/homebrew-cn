@@ -22,7 +22,7 @@ class Pod2man < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "269cdc0db938df147bab44127e86b05cf46074741bd9d8644b08f88a00e62f97"
   end
 
-  keg_only "perl ships with pod2man"
+  keg_only "it conflicts with the pod2man that ships with Perl"
 
   resource "Pod::Simple" do
     url "https://cpan.metacpan.org/authors/id/K/KH/KHW/Pod-Simple-3.45.tar.gz"

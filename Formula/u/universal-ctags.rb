@@ -33,7 +33,7 @@ class UniversalCtags < Formula
 
   uses_from_macos "libxml2"
 
-  conflicts_with "ctags", because: "this formula installs the same executable as the ctags formula"
+  conflicts_with "ctags", because: "both install `ctags` binaries"
 
   def install
     system "./autogen.sh"
