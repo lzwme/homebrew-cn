@@ -18,7 +18,8 @@ class Golines < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "1869729349e1f224e3e615710ef606a79cf3bba1e03225e2633a78497fd5ee12"
   end
 
-  depends_on "go" => :build
+  # Use "go" when https://github.com/segmentio/golines/pull/167 is merged and released:
+  depends_on "go@1.24" => :build
 
   def install
     ldflags = "-s -w -X main.version=#{version} -X main.commit=#{tap.user} -X main.date=#{time.iso8601}"

@@ -22,7 +22,8 @@ class Legitify < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "8a5928ac45988d42f507bda79350361ac1e2e157ba1957b94df70e1701c1bd9c"
   end
 
-  depends_on "go" => :build
+  # Use "go" when https://github.com/Legit-Labs/legitify/pull/350 is merged and released:
+  depends_on "go@1.24" => :build
 
   def install
     ldflags = %W[

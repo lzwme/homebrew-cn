@@ -104,6 +104,8 @@ class OciCli < Formula
       venv.pip_install_and_link Pathname.pwd
     end
 
+    # TODO: remove `shells` argument to include `bash` completions with click 8.1.7+
+    # https://github.com/pallets/click/commit/d9db70cabdc9cb10cd5584464b8adb9a24545b92
     generate_completions_from_executable(bin/"oci", shells: [:fish, :zsh], shell_parameter_format: :click)
   end
 

@@ -1,8 +1,8 @@
 class Libslax < Formula
   desc "Implementation of the SLAX language (an XSLT alternative)"
   homepage "https://github.com/Juniper/libslax/wiki"
-  url "https://ghfast.top/https://github.com/Juniper/libslax/releases/download/3.1.4/libslax-3.1.4.tar.gz"
-  sha256 "3e013991cbfb8b00863df322e8baaf1e4df484501ba0b0718d2a75396c9e675f"
+  url "https://ghfast.top/https://github.com/Juniper/libslax/releases/download/3.1.5/libslax-3.1.5.tar.gz"
+  sha256 "21ec2a328c23233842c625b54dc347d755eb614226ef231bd245243b9be7383c"
   license "BSD-3-Clause"
 
   livecheck do
@@ -11,11 +11,11 @@ class Libslax < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "ab47f15613a45eb2ded488d6d4ac4dd858f2b1b81b6fd4fe2948f3b4e3b141f5"
-    sha256 arm64_sonoma:  "61105e62d8e1fc30394648c292df7158905a7c51032e62224be1b0b93e1fc976"
-    sha256 arm64_ventura: "b0d670ea601282e253e134ca63c111547f1759d8360e3cb32822fc2a9626de72"
-    sha256 sonoma:        "edc0b2bd24fffa7d2223e6741de548439eb006e9c8415cce7cc6a5868b003994"
-    sha256 ventura:       "83124c9a7e8f224ddcfb8d361d4715c995f2bcefe5eca60e34c6d2128b118409"
+    sha256 arm64_sequoia: "e03cfaf6ff9d854e6ac7e3e7f43ca057c6a6a57a795c10db151f1ac6b47944f6"
+    sha256 arm64_sonoma:  "ca76593554bb1055686d3c015b4a7568d0a37e7b85566049d840a9281f948341"
+    sha256 arm64_ventura: "1ad9235389d063c10aac42a4612d1acb5ce4bc84d9146769e969a7ac1c458c67"
+    sha256 sonoma:        "4858964b3586b184243e194085c882a05ba3ee7e64fee5253218e43840af7007"
+    sha256 ventura:       "c5185c695ef1fa24beff9eda6016ecbc9eca42f86b555791776894dada3e49b8"
   end
 
   head do

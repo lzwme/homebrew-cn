@@ -15,7 +15,8 @@ class Gf < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "ddc1d86e88c93fe51ae81ef0f38307b965afbfd1f18a298c5180dcb706d69e63"
   end
 
-  depends_on "go" => [:build, :test]
+  # Use "go" when https://github.com/gogf/gf/pull/4313 is released (in v2.9.1 release?):
+  depends_on "go@1.24" => [:build, :test]
 
   def install
     cd "cmd/gf" do

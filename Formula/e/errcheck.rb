@@ -4,15 +4,16 @@ class Errcheck < Formula
   url "https://ghfast.top/https://github.com/kisielk/errcheck/archive/refs/tags/v1.9.0.tar.gz"
   sha256 "f8b9c864c0bdc8e56fbd709fb97a04b43b989815641b8bd9aae2e5fbc43b6930"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b0c68d0627e96f81d5c9908e475a382997f174292480d7e401b9611684ccdd1f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b0c68d0627e96f81d5c9908e475a382997f174292480d7e401b9611684ccdd1f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "b0c68d0627e96f81d5c9908e475a382997f174292480d7e401b9611684ccdd1f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c9d6b69062cdbb9c8b5edc8129eb5e397807321f74f6b14a359bf33b9aff6fed"
-    sha256 cellar: :any_skip_relocation, ventura:       "c9d6b69062cdbb9c8b5edc8129eb5e397807321f74f6b14a359bf33b9aff6fed"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "289d849babba526eeb0da09e382a1b33313a8b68010e1b20c78e92d64335052f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9ec9399bb316f7bd3d51f053ec6f918a09a7c209427c75192d812767135fa6ec"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a28fa11b557c5b8029e19b47c3d4e1bf0c84b3e5c7ec8cbf8ef3a4b129817921"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a28fa11b557c5b8029e19b47c3d4e1bf0c84b3e5c7ec8cbf8ef3a4b129817921"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "a28fa11b557c5b8029e19b47c3d4e1bf0c84b3e5c7ec8cbf8ef3a4b129817921"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ed13edd4e27afb11bf4999389c4a3e74194a0e2c0c9b0a30fd131ceedc840cce"
+    sha256 cellar: :any_skip_relocation, ventura:       "ed13edd4e27afb11bf4999389c4a3e74194a0e2c0c9b0a30fd131ceedc840cce"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3bfbd3a1fa6287c3dc2cff31b3519eeec48e06106b887b7864d9d6d99ad494aa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "03aca5016fac06782d5ab9016ef333862fb6b9c9a7e6da85417244be7108fd5a"
   end
 
   depends_on "go" => [:build, :test]

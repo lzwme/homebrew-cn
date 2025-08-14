@@ -4,7 +4,7 @@ class Nuclei < Formula
   url "https://ghfast.top/https://github.com/projectdiscovery/nuclei/archive/refs/tags/v3.4.7.tar.gz"
   sha256 "71d7cf669dd4641538e7526d694d33eb5b3fae36688188d4c2b01c8103e4ef6e"
   license "MIT"
-  head "https://github.com/projectdiscovery/nuclei.git", branch: "master"
+  head "https://github.com/projectdiscovery/nuclei.git", branch: "dev"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "f54f15f4828dd677817232d16d256f9870c3ced97a687fd428c9f4ac13186ac1"
@@ -16,7 +16,8 @@ class Nuclei < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "6194ec99323447656ed85edc049f7d3017be80c2a09e16b0b62fab34b66341e9"
   end
 
-  depends_on "go" => :build
+  # use "go" when https://github.com/projectdiscovery/nuclei/pull/6348 is released (in 3.4.8 release?):
+  depends_on "go@1.24" => :build
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/nuclei"

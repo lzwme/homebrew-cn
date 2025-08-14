@@ -3,19 +3,18 @@ class Oterm < Formula
 
   desc "Terminal client for Ollama"
   homepage "https://github.com/ggozad/oterm"
-  url "https://files.pythonhosted.org/packages/c5/c5/5915b90d50574cebea30f8455e6444c8428344df8e3cb23f7723d837529d/oterm-0.14.1.tar.gz"
-  sha256 "511b29ae2e61db6439ea8dd72e96caa2b61af16f68ce5fb86958b88f9de0d605"
+  url "https://files.pythonhosted.org/packages/cc/93/da29b06bb4a1b5646d55ee282381c95a2347bbd4b5ac13a38fe225ed6e75/oterm-0.14.3.tar.gz"
+  sha256 "bb521838f72cf44e405c3545012200f38b2a6f6d9ecf0afdce98e839b826d617"
   license "MIT"
-  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "b2eea881fc539c94d86d1f20ee9c509cbd6e3ea04f0e806d97e9b5cadca7cb47"
-    sha256 cellar: :any,                 arm64_sonoma:  "90cbb44951d286745d1514015ed5b14aa1d3dcae9ab57a22997c36b0d599f426"
-    sha256 cellar: :any,                 arm64_ventura: "1d6567b2b5777ed7392326f7a9db90d54b7f2ea97f12d723820f5d1437c1c811"
-    sha256 cellar: :any,                 sonoma:        "efa5ac0f5e068a4574d01697a81c2e00c39972e49fbb38b96c2c928899fa7103"
-    sha256 cellar: :any,                 ventura:       "1a1e002826ce5a53f3df95b09de1094f8ca6d8d0acbb5f76114278ae1dfe68d2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d3f5fca668503151c763771c809a17be9fb9e2780774c23f180b6d238f810e88"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "475973be5458c5a73a9988a9304b0a3d24a759c63ee0d25a4072743aa7d7032b"
+    sha256 cellar: :any,                 arm64_sequoia: "7be96b3339212c657723c0dd622bc96fd432e692e47510580b5dc0917e92fafd"
+    sha256 cellar: :any,                 arm64_sonoma:  "531577059a3879d64e34f52f20612fabe52302693a44c50067011cf8828419b6"
+    sha256 cellar: :any,                 arm64_ventura: "43abe5834465f6d6f4510ca274cb95524896984ecde25f0a686fc9df0946135c"
+    sha256 cellar: :any,                 sonoma:        "ba0852947a91c1c93aaba5022222b912ddc39b562521c51c5a878f3cdfa29c66"
+    sha256 cellar: :any,                 ventura:       "8779492763097e745099e49df488183681c2f2b7e45ca63346771981b1dcbe1b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ea1a5a07755837ebed6aa1c2473ccb89f16c818a1c1938394eab0f4db53d8005"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f534585a1f86cc183927bb2ff5b70d47b62860a3405f1cec132d18ef2604ca30"
   end
 
   depends_on "pkgconf" => :build
@@ -50,8 +49,8 @@ class Oterm < Formula
   end
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/95/7d/4c1bd541d4dffa1b52bd83fb8527089e097a106fc90b467a7313b105f840/anyio-4.9.0.tar.gz"
-    sha256 "673c0c244e15788651a4ff38710fea9675823028a6f08a5eda409e0c9840a028"
+    url "https://files.pythonhosted.org/packages/f1/b4/636b3b65173d3ce9a38ef5f0522789614e590dab6a8d505340a4efe4c567/anyio-4.10.0.tar.gz"
+    sha256 "3f3fae35c96039744587aa5b8371e7e8e603c0702999535961dd336026973ba6"
   end
 
   resource "attrs" do
@@ -120,18 +119,18 @@ class Oterm < Formula
   end
 
   resource "markdown-it-py" do
-    url "https://files.pythonhosted.org/packages/38/71/3b932df36c1a044d397a1f92d1cf91ee0a503d91e470cbd670aa66b07ed0/markdown-it-py-3.0.0.tar.gz"
-    sha256 "e3f60a94fa066dc52ec76661e37c851cb232d92f9886b15cb560aaada2df8feb"
+    url "https://files.pythonhosted.org/packages/5b/f5/4ec618ed16cc4f8fb3b701563655a69816155e79e24a17b651541804721d/markdown_it_py-4.0.0.tar.gz"
+    sha256 "cb0a2b4aa34f932c007117b194e945bd74e0ec24133ceb5bac59009cda1cb9f3"
   end
 
   resource "mcp" do
-    url "https://files.pythonhosted.org/packages/45/94/caa0f4754e2437f7033068989f13fee784856f95870c786b0b5c2c0f511e/mcp-1.12.0.tar.gz"
-    sha256 "853f6b17a3f31ea6e2f278c2ec7d3b38457bc80c7c2c675260dd7f04a6fd0e70"
+    url "https://files.pythonhosted.org/packages/31/88/f6cb7e7c260cd4b4ce375f2b1614b33ce401f63af0f49f7141a2e9bf0a45/mcp-1.12.4.tar.gz"
+    sha256 "0765585e9a3a5916a3c3ab8659330e493adc7bd8b2ca6120c2d7a0c43e034ca5"
   end
 
   resource "mdit-py-plugins" do
-    url "https://files.pythonhosted.org/packages/19/03/a2ecab526543b152300717cf232bb4bb8605b6edb946c845016fa9c9c9fd/mdit_py_plugins-0.4.2.tar.gz"
-    sha256 "5f2cd1fdb606ddf152d37ec30e46101a60512bc0e5fa1a7002c36647b09e26b5"
+    url "https://files.pythonhosted.org/packages/b2/fd/a756d36c0bfba5f6e39a1cdbdbfdd448dc02692467d83816dff4592a1ebc/mdit_py_plugins-0.5.0.tar.gz"
+    sha256 "f4918cb50119f50446560513a8e311d574ff6aaed72606ddae6d35716fe809c6"
   end
 
   resource "mdurl" do
@@ -140,8 +139,8 @@ class Oterm < Formula
   end
 
   resource "ollama" do
-    url "https://files.pythonhosted.org/packages/8d/96/c7fe0d2d1b3053be614822a7b722c7465161b3672ce90df71515137580a0/ollama-0.5.1.tar.gz"
-    sha256 "5a799e4dc4e7af638b11e3ae588ab17623ee019e496caaf4323efbaa8feeff93"
+    url "https://files.pythonhosted.org/packages/91/6d/ae96027416dcc2e98c944c050c492789502d7d7c0b95a740f0bb39268632/ollama-0.5.3.tar.gz"
+    sha256 "40b6dff729df3b24e56d4042fd9d37e231cee8e528677e0d085413a1d6692394"
   end
 
   resource "openapi-pydantic" do
@@ -200,13 +199,13 @@ class Oterm < Formula
   end
 
   resource "rich" do
-    url "https://files.pythonhosted.org/packages/a1/53/830aa4c3066a8ab0ae9a9955976fb770fe9c6102117c8ec4ab3ea62d89e8/rich-14.0.0.tar.gz"
-    sha256 "82f1bc23a6a21ebca4ae0c45af9bdbc492ed20231dcb63f297d6d1021a9d5725"
+    url "https://files.pythonhosted.org/packages/fe/75/af448d8e52bf1d8fa6a9d089ca6c07ff4453d86c65c145d0a300bb073b9b/rich-14.1.0.tar.gz"
+    sha256 "e497a48b844b0320d45007cdebfeaeed8db2a4f4bcf49f15e455cfc4af11eaa8"
   end
 
   resource "rpds-py" do
-    url "https://files.pythonhosted.org/packages/a5/aa/4456d84bbb54adc6a916fb10c9b374f78ac840337644e4a5eda229c81275/rpds_py-0.26.0.tar.gz"
-    sha256 "20dae58a859b0906f0685642e591056f1e787f3a8b39c8e8749a45dc7d26bdb0"
+    url "https://files.pythonhosted.org/packages/1e/d9/991a0dee12d9fc53ed027e26a26a64b151d77252ac477e22666b9688bc16/rpds_py-0.27.0.tar.gz"
+    sha256 "8b23cf252f180cda89220b378d917180f29d313cd6a07b2431c0d3b776aae86f"
   end
 
   resource "shellingham" do
@@ -220,8 +219,8 @@ class Oterm < Formula
   end
 
   resource "sse-starlette" do
-    url "https://files.pythonhosted.org/packages/07/3e/eae74d8d33e3262bae0a7e023bb43d8bdd27980aa3557333f4632611151f/sse_starlette-2.4.1.tar.gz"
-    sha256 "7c8a800a1ca343e9165fc06bbda45c78e4c6166320707ae30b416c42da070926"
+    url "https://files.pythonhosted.org/packages/42/6f/22ed6e33f8a9e76ca0a412405f31abb844b779d52c5f96660766edcd737c/sse_starlette-3.0.2.tar.gz"
+    sha256 "ccd60b5765ebb3584d0de2d7a6e4f745672581de4f5005ab31c3a25d10b52b3a"
   end
 
   resource "starlette" do

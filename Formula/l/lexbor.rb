@@ -1,18 +1,18 @@
 class Lexbor < Formula
   desc "Fast embeddable web browser engine written in C with no dependencies"
   homepage "https://lexbor.com/"
-  url "https://ghfast.top/https://github.com/lexbor/lexbor/archive/refs/tags/v2.4.0.tar.gz"
-  sha256 "8949744d425743828891de6d80327ccb64b5146f71ff6c992644e6234e63930e"
+  url "https://ghfast.top/https://github.com/lexbor/lexbor/archive/refs/tags/v2.5.0.tar.gz"
+  sha256 "d89060bb2fb6f7d0e0f399495155dd15e06697aa2c6568eab70ecd4a43084ba9"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "49a5de0e67837102472154ebdb9ce26676d570eadf6a2180ebe9cacc32bb0526"
-    sha256 cellar: :any,                 arm64_sonoma:  "b76a6858424ef6ac2dd368d3ef7dcac3203c5767aff21e0a3b12eeb6b10c264a"
-    sha256 cellar: :any,                 arm64_ventura: "18858851e6b62f275a59fd82917f88895783e7efc81ab44bd3dc8bf0e99ced57"
-    sha256 cellar: :any,                 sonoma:        "5cfa710c1d1eeb449f5572a62145485b4f4f15f2bb13b481d8c8970b8a7b33de"
-    sha256 cellar: :any,                 ventura:       "20518f3481290a5b5e6ea9caa2e5e41ba64b2bb3c4d75ee797cd0061c8b1ac6b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7a061a2d6bf59442960ee085412491903f0090062bc8145b2496537033764ea6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2a6f152a6789ce2fb0139d1c576976c987aee305f5d8e902fc87c939a7fe9b4a"
+    sha256 cellar: :any,                 arm64_sequoia: "7ed40db97faebbb07600bc257d2c6ea325c5f5b8c15e5bd77f5e5c05dff26208"
+    sha256 cellar: :any,                 arm64_sonoma:  "f9e37f56f77cd01db352e708eb01e4489883c2112badc4dd473cf8ad24c3af5c"
+    sha256 cellar: :any,                 arm64_ventura: "e4c182da09668cd4e83b229013fbb0502fabbc9334f493dd2a92675049b0b918"
+    sha256 cellar: :any,                 sonoma:        "32672d3e3b6beceab8508bd2284304e27042abf56c56f5b5e3dfef58f2b881f0"
+    sha256 cellar: :any,                 ventura:       "549fdf335440f54625f93ebfcd53fc64b94b1ad9ee3b00cf36ee31f80bce12d5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "db10aba8612b5f33e8aa0a627de2a5ef9411e79d0e951c2db09aa0b6471ac3e4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9103ecec5668ac0e512d3f6edfc55690ffcd562a2cd552432162469108bcad67"
   end
 
   depends_on "cmake" => :build

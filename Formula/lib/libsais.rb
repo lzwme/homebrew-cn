@@ -1,30 +1,27 @@
 class Libsais < Formula
   desc "Fast linear time suffix array, lcp array and bwt construction"
   homepage "https://github.com/IlyaGrebnov/libsais"
-  url "https://ghfast.top/https://github.com/IlyaGrebnov/libsais/archive/refs/tags/v2.10.2.tar.gz"
-  sha256 "e2fe778b69dcd9e4a1df57b8eefb577f803788336855b6a5f9fbf22683f3980e"
+  url "https://ghfast.top/https://github.com/IlyaGrebnov/libsais/archive/refs/tags/v2.10.3.tar.gz"
+  sha256 "69cb3ce4982ac0f6228cab4f5b324dc2445f82bb260ad8c927aea8033c661d52"
   license "Apache-2.0"
   head "https://github.com/IlyaGrebnov/libsais.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "24e0138a72b0551c4a633bf1b34bed2a773e603b95defd3be3fd225e7572deb1"
-    sha256 cellar: :any,                 arm64_sonoma:  "b4283b63c321ef2efbcb9a3703fab30837360f54bf92219e863936d614df4459"
-    sha256 cellar: :any,                 arm64_ventura: "a3e8d6f28e94395514fd9f30fc7ef7a042c8a933f4180f68c8ac573a460af39b"
-    sha256 cellar: :any,                 sonoma:        "688abc5b6b6374e442e89245171e0ac4676d268ae7d7228244663922bf23fa67"
-    sha256 cellar: :any,                 ventura:       "efb06331a19187eb98179aa383d205a7306a5c63a2006d5ed47b767152d1cb6c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1030cbb309e1a1f54b884da2c30f583ae360c56893033af154dae63bc0701e9b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "99a4ec63949f7081d893f88105fb0a7816aacfc982b7478bd38240b5bb05ce75"
+    sha256 cellar: :any,                 arm64_sequoia: "dd23c5fcb60fd18ceeb2f97e4582c91317351a99a197b9e32b1b8b92c7263a93"
+    sha256 cellar: :any,                 arm64_sonoma:  "f4e8061357a69512c1dbc4bfe6f5b9c98883bc4fa6022e3d3e4d10207a56b95d"
+    sha256 cellar: :any,                 arm64_ventura: "b620a8a59d79f2ec8cd801721428fb7dd0ab310a77a903f86a90827f39569b96"
+    sha256 cellar: :any,                 sonoma:        "c418b7d5ad9dac2438b72673d6d0f5a31e47b5bfd3709812b7bdee4ede104121"
+    sha256 cellar: :any,                 ventura:       "d174fcaeda67aaf4b459da8a2f536c69175837cb239d93bef902dc68c2fcfe17"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "79a3ae5eb5bf5edc21def4ec4646094e10ff99db7782f96c9bfd5b7d116929f6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "67c4c7947ef3a3755205802a097a539de22e0d8ce597bf1dddb43f50c152d775"
   end
 
   depends_on "cmake" => :build
 
   def install
-    system "cmake", "-S", ".", "-B", "build",
-                    "-DLIBSAIS_BUILD_SHARED_LIB=ON",
-                    *std_cmake_args
+    system "cmake", "-S", ".", "-B", "build", "-DLIBSAIS_BUILD_SHARED_LIB=ON", *std_cmake_args
     system "cmake", "--build", "build"
-    lib.install shared_library("build/libsais")
-    include.install "include/libsais.h"
+    system "cmake", "--install", "build"
   end
 
   test do

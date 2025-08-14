@@ -1,8 +1,8 @@
 class Ispc < Formula
   desc "Compiler for SIMD programming on the CPU"
   homepage "https://ispc.github.io"
-  url "https://ghfast.top/https://github.com/ispc/ispc/archive/refs/tags/v1.27.0.tar.gz"
-  sha256 "c41ae29e4f6b1d37154610e68e9b7a0eb225cd7c080242ab56fa0119e49dbd7a"
+  url "https://ghfast.top/https://github.com/ispc/ispc/archive/refs/tags/v1.28.0.tar.gz"
+  sha256 "207a0552d184c65f3d971ca4be8b53b4f25ebda843df0fc893569ce0b7f07043"
   license "BSD-3-Clause"
 
   # Upstream sometimes creates releases that use a stable tag (e.g., `v1.2.3`)
@@ -14,13 +14,13 @@ class Ispc < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "be75e6c28f90c2d54f288e0268803e52421c130764bf72df3dde613b7e7c81fc"
-    sha256 cellar: :any,                 arm64_sonoma:  "9b71c4bd3699d3f5d095ba599530ef86581be0c8abf543dca123a3201fdf8849"
-    sha256 cellar: :any,                 arm64_ventura: "12f513bde46acf3e834f611ba80a32693ab39c443cb6826a7a844dc4133f0d95"
-    sha256 cellar: :any,                 sonoma:        "ff78c5988bbaa1d87c3e117dfdcef16c68aea0f430ea113a44b6491345d0eb75"
-    sha256 cellar: :any,                 ventura:       "3bd271b4ea0f43414226cf6fb3a2951b944da88fcc7416c0065e74424271f5c6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f11552068773867fad6194a4b352088c21da18f4c607a79b40878640c1780c9f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ff95b06a16ccb8e759c1957ee2f6abf630b468e63acccf204b78eaae7ccf7ae8"
+    sha256 cellar: :any,                 arm64_sequoia: "e87b28254925524504f62c40db1cb09c4ce922b97a489d904c222655b70f4216"
+    sha256 cellar: :any,                 arm64_sonoma:  "fd18a7344087f35316fc39c8c0c254884a7329865c09b2fe66f5ad6baa9ba064"
+    sha256 cellar: :any,                 arm64_ventura: "5dde22fbc1cb48f9587271df0a81df3aa1479dc0c393ce42a3c89017d8938353"
+    sha256 cellar: :any,                 sonoma:        "43b272fa3f1cc2bd73b14cc5fda9f979ae37523d508b6cc9074b5103cd8afc13"
+    sha256 cellar: :any,                 ventura:       "47a7f98f565cd3a5506d3c9597bc01f4503779c7cebbfdd3ebc1850ad136fd67"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1aa38595f6b4980e2f11944f1949b57ff782e4d29c6170cff4654660ea47a835"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fa2ab8a0339a6e7c424955934160abd9b911c74f24217b242fa5905911848cf8"
   end
 
   depends_on "bison" => :build

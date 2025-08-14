@@ -3,19 +3,19 @@ class Virtualenv < Formula
 
   desc "Tool for creating isolated virtual python environments"
   homepage "https://virtualenv.pypa.io/"
-  url "https://files.pythonhosted.org/packages/8b/60/4f20960df6c7b363a18a55ab034c8f2bcd5d9770d1f94f9370ec104c1855/virtualenv-20.33.1.tar.gz"
-  sha256 "1b44478d9e261b3fb8baa5e74a0ca3bc0e05f21aa36167bf9cbf850e542765b8"
+  url "https://files.pythonhosted.org/packages/1c/14/37fcdba2808a6c615681cd216fecae00413c9dab44fb2e57805ecf3eaee3/virtualenv-20.34.0.tar.gz"
+  sha256 "44815b2c9dee7ed86e387b842a84f20b93f7f417f95886ca1996a72a4138eb1a"
   license "MIT"
   head "https://github.com/pypa/virtualenv.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0835bd9e7533f158fb74e39fc3d9e3d1abf418b42f411d9f8d6e535f94d60e80"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0835bd9e7533f158fb74e39fc3d9e3d1abf418b42f411d9f8d6e535f94d60e80"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "0835bd9e7533f158fb74e39fc3d9e3d1abf418b42f411d9f8d6e535f94d60e80"
-    sha256 cellar: :any_skip_relocation, sonoma:        "18d2a0244cb3cfd13eed9864dfc5c4582624c1bfbd5725d81e622b84101d8797"
-    sha256 cellar: :any_skip_relocation, ventura:       "18d2a0244cb3cfd13eed9864dfc5c4582624c1bfbd5725d81e622b84101d8797"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "654829fa500b94f31d798f828e69143aa6a4d978b6527ac79b0a950171f629d6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "654829fa500b94f31d798f828e69143aa6a4d978b6527ac79b0a950171f629d6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "48a41a671bc8ca3c96943bbd7a6943490ede43b3393b259451df9c5530cab94f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "48a41a671bc8ca3c96943bbd7a6943490ede43b3393b259451df9c5530cab94f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "48a41a671bc8ca3c96943bbd7a6943490ede43b3393b259451df9c5530cab94f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3c4162a8a9c5d484d8275915a87b0e4a3af7521ad5febd95d1965d6fa5f06ed3"
+    sha256 cellar: :any_skip_relocation, ventura:       "3c4162a8a9c5d484d8275915a87b0e4a3af7521ad5febd95d1965d6fa5f06ed3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3c4162a8a9c5d484d8275915a87b0e4a3af7521ad5febd95d1965d6fa5f06ed3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3c4162a8a9c5d484d8275915a87b0e4a3af7521ad5febd95d1965d6fa5f06ed3"
   end
 
   depends_on "python@3.13"

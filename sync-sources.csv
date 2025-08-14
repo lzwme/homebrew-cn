@@ -2518,6 +2518,7 @@ Homebrew-homebrew-core/Formula/g/go@1.20.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/go@1.21.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/go@1.22.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/go@1.23.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/g/go@1.24.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/goaccess.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/goawk.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gobackup.rb, Homebrew/homebrew-core, 1
@@ -2948,7 +2949,7 @@ Homebrew-homebrew-core/Formula/i/icbirc.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/i/iccdev.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/icdiff.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/ice.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/i/iceberg.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/i/iceberg-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/icecast.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/i/icecream.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/icemon.rb, Homebrew/homebrew-core, 1
@@ -4757,6 +4758,7 @@ Homebrew-homebrew-core/Formula/n/nerdfetch.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/nerdfix.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/nerdlog.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/nesc.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/n/nessie.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/nest.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/nestopia-ue.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/net-snmp.rb, Homebrew/homebrew-core, 1
@@ -6234,7 +6236,6 @@ Homebrew-homebrew-core/Formula/s/sfst.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/sftpgo.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sgn.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sgr.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/s/sgrep.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/sh4d0wup.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sha1dc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sha2.rb, Homebrew/homebrew-core, 0
@@ -7292,7 +7293,6 @@ Homebrew-homebrew-core/Formula/v/virtctl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/virtualenv.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/v/virtualenvwrapper.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/v/virtualfish.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/v/virtualhost.sh.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/virtualpg.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/v/virtuoso.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/virustotal-cli.rb, Homebrew/homebrew-core, 1
@@ -13423,6 +13423,7 @@ Homebrew-homebrew-cask/Casks/o/oss-browser.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/ossapp.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/ossia-score.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/osu.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/o/osu@tachyon.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/osxfuse.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/otto-matic.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/otx.rb, Homebrew/homebrew-cask, 1
@@ -13571,6 +13572,7 @@ Homebrew-homebrew-cask/Casks/p/picoscope.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/picoscope@beta.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/pictogram.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/pictureview.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/p/picview.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/pieces-os.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/pieces.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/piezo.rb, Homebrew/homebrew-cask, 0
@@ -14160,6 +14162,7 @@ Homebrew-homebrew-cask/Casks/s/sequential.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/serene.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/serial-studio.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/serial.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/s/serverbuddy.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/serviio.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/servo.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/servpane.rb, Homebrew/homebrew-cask, 1

@@ -19,13 +19,14 @@ class Black < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e19b27bd67ad3bf206e8ffeef3e2b6eaa6a58b3d21f3fccd859df6301074cf12"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "12d4c0ceed3e8fcf2616bcfc71d63ec3bc75720ae91b586e06929075bfa6cf58"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "1b007911e58b8e129b722571682e3cd555be3daf44c266d4e63dd2ec71fc57db"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2f77512ff84f679af81cd026432042c2bb130388cf0cab46db791532e21a2ddc"
-    sha256 cellar: :any_skip_relocation, ventura:       "43533d36a37ddfaaa84579dcf24dc2972f79a9868149ef021bdbb6bb8ba7a080"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1a6c759c85514b9dda7cb28731ab0a7f78ac7523fefd9e0ded981fc7aa158e55"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bde47225f46bf4841b0685fb731d5059dfb4f15d5b313c19acc50b6dfb89e6ee"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "49b07cf531d62e77ff6f69f9da81a18766f2d8d5769fdaebb3d3cff6045f9607"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3b60423982fc49c9d793571d1315671537ebc934a8b02c2bb57b06853a2ec257"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "871521b20363443bdd2397066751ef2c33fd7fc08a6a2d88056971b3499a852e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2da651914131fea67046b653880bea5fc05ded7776ee34d7a68085b41833a565"
+    sha256 cellar: :any_skip_relocation, ventura:       "3af971c0d93c88d60066694aa2b0d8cf239fa5ce5612693e3e06833d17ce1970"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2fbd30e2186c2594a87f244b82a4fb57e5d9de7979d7aaeaeaffcc5a59c85474"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6fd483bdc26c389f02ef3baf59b2cb596239bd5513f03c402994962e1a2fd9f2"
   end
 
   depends_on "python@3.13"
@@ -104,7 +105,7 @@ class Black < Formula
     ENV["HATCH_BUILD_HOOK_ENABLE_MYPYC"] = "1"
     virtualenv_install_with_resources
 
-    generate_completions_from_executable(bin/"black", shells: [:fish, :zsh], shell_parameter_format: :click)
+    generate_completions_from_executable(bin/"black", shell_parameter_format: :click)
   end
 
   service do

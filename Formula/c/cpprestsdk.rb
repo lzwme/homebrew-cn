@@ -27,6 +27,27 @@ class Cpprestsdk < Formula
 
   uses_from_macos "zlib"
 
+  # Apply FreeBSD patches for libc++ >= 19 needed in Xcode 16.3
+  # https://github.com/microsoft/cpprestsdk/pull/1829
+  on_sequoia :or_newer do
+    patch do
+      url "https://github.com/microsoft/cpprestsdk/commit/d17f091b5a753b33fb455e92b590fc9f4e921119.patch?full_index=1"
+      sha256 "bc68dd08310ba22dc5ceb7506c86a6d4c8bfefa46581eea8cd917354a8b8ae34"
+    end
+    patch do
+      url "https://github.com/microsoft/cpprestsdk/commit/6df13a8c0417ef700c0f164bcd0686ad46f66fd9.patch?full_index=1"
+      sha256 "4205e818f5636958589d2c1e5841a31acfe512eda949d63038e23d8c089a9636"
+    end
+    patch do
+      url "https://github.com/microsoft/cpprestsdk/commit/4188ad89b2cf2e8de3cc3513adcf400fbfdc5ce7.patch?full_index=1"
+      sha256 "3bc72590cbaf6d04e3e5230558647e5b38e7f494cd0e5d3ea5c866ac25f9130a"
+    end
+    patch do
+      url "https://github.com/microsoft/cpprestsdk/commit/32b322b564e5e540ff02393ffe3bd3bade8d299c.patch?full_index=1"
+      sha256 "737567e533405f7f6ef0a83bafef7fdeea95c96947f66be0973e5f362e1b82f5"
+    end
+  end
+
   # Apply vcpkg patch to support Boost 1.87.0+
   # Issue ref: https://github.com/microsoft/cpprestsdk/issues/1815
   # Issue ref: https://github.com/microsoft/cpprestsdk/issues/1323
@@ -53,7 +74,7 @@ class Cpprestsdk < Formula
       #include <iostream>
       #include <cpprest/http_client.h>
       int main() {
-        web::http::client::http_client client(U("https://example.com/"));
+        web::http::client::http_client client(U("https://brew.sh/"));
         std::cout << client.request(web::http::methods::GET).get().extract_string().get() << std::endl;
       }
     CPP
@@ -64,6 +85,6 @@ class Cpprestsdk < Formula
                     "-lssl", "-lcrypto", "-lboost_random", "-lboost_chrono", "-lboost_thread",
                     "-lboost_system", "-lboost_filesystem", "-lcpprest",
                     "-o", "test_cpprest"
-    assert_match "<title>Example Domain</title>", shell_output("./test_cpprest")
+    assert_match "The Missing Package Manager for macOS (or Linux)", shell_output("./test_cpprest")
   end
 end

@@ -1,19 +1,19 @@
 class Autocycler < Formula
   desc "Tool for generating consensus long-read assemblies for bacterial genomes"
   homepage "https://github.com/rrwick/Autocycler"
-  url "https://ghfast.top/https://github.com/rrwick/Autocycler/archive/refs/tags/v0.5.1.tar.gz"
-  sha256 "c4331f562f993351c60156f16479e36e6c013f5fd1bb51fc0d34682364b59d7a"
+  url "https://ghfast.top/https://github.com/rrwick/Autocycler/archive/refs/tags/v0.5.2.tar.gz"
+  sha256 "371e5815c7ed7b83c3b19d1282ce4b043bff0b23eb08a8dde4f5ff9ee73c31ee"
   license "GPL-3.0-or-later"
   head "https://github.com/rrwick/Autocycler.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8ec87e0607bcf0cffa5c45386b5455dbad79bb8e459089860ecd5becf5f71e72"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cd1888a812c8f459042ab92b8c3767267b6f5bbbfe34aac1ab8a1e3d9b3962c5"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "31bb2857801eb68298f6cb58376a82a0063021a97bd4a293c3d9b45a9bb1c7fe"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3e4a05ad72f762d8ec7b5713e5903473b12ab1cdb6fc2fdda8639532d5d094e2"
-    sha256 cellar: :any_skip_relocation, ventura:       "53a28356c941ebe875e12cacf247081a37860de6d3c85283ddf082e6a0f536ea"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5451e8a1c7fe21456c736978a966a17eb5c9bf3cc75a05702a3b2b676b1f28aa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "619f9c66ca84fb0cb2d5193d019c96e07ba2e5254f49477b38903a42e1dbb880"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fa67f52f7764946aa612e550637cdbd5368d313ec06a5b7f3d6a14a1e7ee9528"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c2e32d17ea27850c128bdcfb4589613939e373dd40fd9725e56bdc419f716cd3"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "b66dbe8d769d372409e6a40aa96c5d31862f8569d9ff7326617b70a700ec1cd0"
+    sha256 cellar: :any_skip_relocation, sonoma:        "19e655f41ded88da7769ca24dc50e1e5d7428a3636e39e9f7ffa7fa579fa58a7"
+    sha256 cellar: :any_skip_relocation, ventura:       "619ee0a9c21f35454994d1e26e350421c17626cc1054d513dc38484ed398fc28"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8e06ac8cde8770a38eeba9e5fe67c4dc64b221fb9365f9e3b978d257a732af90"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b7f005447e399ff2d23451a9c0946f24d0d67892b4bb23171864771e4de46dd0"
   end
 
   depends_on "rust" => :build

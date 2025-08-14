@@ -14,19 +14,19 @@ class Openvino < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_sequoia: "b47b0e3da9dd75ad1ca42480b9ab0c1bb52e2711aeefe5f80c532ee504606c02"
-    sha256 cellar: :any, arm64_sonoma:  "464dd728f3d08d5330793bfaab2ad07dcaed173c168aca3261d5ba65fc542b8c"
-    sha256 cellar: :any, arm64_ventura: "7abfe099a291eefff9323511c6619c9e704addbb89e0cdc24356a06e3b5de646"
-    sha256 cellar: :any, sonoma:        "52f3adfcf2b9a6cf39660f3be47e64aaf97784c174acd8a2a52a8678edb67ba4"
-    sha256 cellar: :any, ventura:       "ab80b015fdf72b6373666c31971b7b9b30129fdfd7ab20783a6b0b26246e30c7"
-    sha256               x86_64_linux:  "7fb66640da41165984f024ae46a62e17b74b1e129d904ee07793f38347ebd4f0"
+    rebuild 1
+    sha256 cellar: :any, arm64_sequoia: "11b74025a0332e818ce71c9a88cefd86ab97fd473f766274f5630982ec6ae37b"
+    sha256 cellar: :any, arm64_sonoma:  "7a8f95ba5f9f994800547a17b7ec2e02799c16ad510f5bed148f3e13343765cb"
+    sha256 cellar: :any, arm64_ventura: "5cbde31722a51f88bdd4d3fe5b323bc898bc2e0450d1809e26d5805d3308fd44"
+    sha256 cellar: :any, sonoma:        "0730eb6c247836061f16d578e78be64b3b55d5a017da2d9075fc3bdfbdfb071b"
+    sha256 cellar: :any, ventura:       "f793cd9c8d4763de4fbc6e8a7fa9d475c78ef70d08dbeeefc42d59e0f547326f"
+    sha256               x86_64_linux:  "93bab6f4d95a8b1af5026c9e6c9391aee2fed7c3022a9e5de7a145dcfcfe9be9"
   end
 
   depends_on "cmake" => [:build, :test]
   depends_on "flatbuffers" => :build
   depends_on "pkgconf" => [:build, :test]
   depends_on "pybind11" => :build
-  depends_on "python-setuptools" => :build
   depends_on "python@3.13" => [:build, :test]
   depends_on "abseil"
   depends_on "nlohmann-json"
@@ -79,13 +79,13 @@ class Openvino < Formula
   end
 
   resource "openvino-telemetry" do
-    url "https://files.pythonhosted.org/packages/2b/c7/ca3bb8cfb17c46cf50d951e0f4dd4bf3f7004e0c207b25164df70e091f6d/openvino-telemetry-2024.1.0.tar.gz"
-    sha256 "6df9a8f499e75d893d0bece3c272e798109f0bd40d1eb2488adca6a0da1d9b9f"
+    url "https://files.pythonhosted.org/packages/71/8a/89d82f1a9d913fb266c2e6dc2f6030935db24b7152963a8db6c4f039787f/openvino_telemetry-2025.2.0.tar.gz"
+    sha256 "8bf8127218e51e99547bf38b8fb85a8b31c9bf96e6f3a82eb0b3b6a34155977c"
   end
 
   resource "packaging" do
-    url "https://files.pythonhosted.org/packages/51/65/50db4dda066951078f0a96cf12f4b9ada6e4b811516bf0262c0f4f7064d4/packaging-24.1.tar.gz"
-    sha256 "026ed72c8ed3fcce5bf8950572258698927fd1dbda10a5e981cdf0ac37f4f002"
+    url "https://files.pythonhosted.org/packages/a1/d4/1fc4078c65507b51b96ca8f8c3ba19e6a61c8253c72794544580a7b6c24d/packaging-25.0.tar.gz"
+    sha256 "d443872c98d677bf60f6a1f2f8c1cb748e8fe762d2bf9d3148b5599295b0fc4f"
   end
 
   def python3
@@ -168,6 +168,8 @@ class Openvino < Formula
     ENV["PYTHON_EXTENSIONS_ONLY"] = "1"
     ENV["CPACK_GENERATOR"] = "BREW"
 
+    # Allow our newer `numpy`
+    inreplace "pyproject.toml", "numpy>=1.16.6,<2.3.0", "numpy>=1.16.6"
     venv = virtualenv_create(libexec, python3)
     venv.pip_install resources.select { |r| r.url.start_with?("https://files.pythonhosted.org/") }
     venv.pip_install_and_link "."

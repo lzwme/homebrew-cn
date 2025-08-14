@@ -3,19 +3,19 @@ class PiecesCli < Formula
 
   desc "Command-line tool for Pieces.app"
   homepage "https://docs.pieces.app/products/cli"
-  url "https://files.pythonhosted.org/packages/bc/e0/f24e5ef6f4fba7e32c9b9473a5fd8ccb8b8dd25e4ec1cfa8cc0983fee698/pieces_cli-1.17.0.tar.gz"
-  sha256 "c684dc62bab00c7689f1c28f7538a30f54a714d17a9e0941ef01d1d77152c658"
+  url "https://files.pythonhosted.org/packages/16/8e/b176c800f3cf6a7578d5bbaf9e2b90015715df62af9610a8e67f9facb717/pieces_cli-1.17.1.tar.gz"
+  sha256 "9b1e7a91d52db370d9d1e886a8d9ff0ca4edcaf10e6baa3a31028ae415b9c969"
   license "MIT"
   head "https://github.com/pieces-app/cli-agent.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "ca6e3070ad96b381cae196698377b9016aee6b4d68a9145200e23fb9c7b75424"
-    sha256 cellar: :any,                 arm64_sonoma:  "e42ebb6d886a79a84bfcb29ab30822a461f9477fd1cab78a5122155717c8f561"
-    sha256 cellar: :any,                 arm64_ventura: "417970c677fb60fe165491c8c58009613ff27a5d74bbb4374425b0b4ca0a4f9b"
-    sha256 cellar: :any,                 sonoma:        "97a18727158b74a5481c1ff3a08b84999bdcf8583ec0a01ee2614d388d406dc3"
-    sha256 cellar: :any,                 ventura:       "fe8c225a88fed763d423884a345426d60735b4bddfbab379ff85da715597015a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "52fd0496a9da54d5ee1bb91c00ff2a1ea379331ddb75a1aa0d46662405a2eae3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "72a4956db5cada8a91d27819ff57c85d214c66a6b88fbfbbad8e40f67eda66f4"
+    sha256 cellar: :any,                 arm64_sequoia: "d31b5229faf14f13fa8f91887b5d772696e724baf6577a85d23712a92ff2cd4d"
+    sha256 cellar: :any,                 arm64_sonoma:  "ff290ee791d25820f734542c114159bacaa2bf7fa5087d147c0033de5fc35654"
+    sha256 cellar: :any,                 arm64_ventura: "39c5cf552e5f69ba3c4fe554877b356a8744018b8509f4ec31f2a80b7763e512"
+    sha256 cellar: :any,                 sonoma:        "1ebe6ee46b8276e6d0fa337f6bf1306e3a80ad7021212fdd2ca0ff57b4f462d7"
+    sha256 cellar: :any,                 ventura:       "c7081ac89e49a9a410251f17e50f12e6523d5c13b62eb2e8a68ed127684506a2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2dc3115a2be30bb480392f9113e93e8d61759c123b2cb90a778564d5e82f48bd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a4dbb407b1e2c87dccb6ff12637bac6b088085f3d3f8af091439369481c29f88"
   end
 
   depends_on "rust" => :build

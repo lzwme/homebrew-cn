@@ -1,11 +1,29 @@
 class Povray < Formula
   desc "Persistence Of Vision RAYtracer (POVRAY)"
   homepage "https://www.povray.org/"
-  url "https://ghfast.top/https://github.com/POV-Ray/povray/archive/refs/tags/v3.7.0.10.tar.gz"
-  sha256 "7bee83d9296b98b7956eb94210cf30aa5c1bbeada8ef6b93bb52228bbc83abff"
   license "AGPL-3.0-or-later"
   revision 13
   head "https://github.com/POV-Ray/povray.git", branch: "master"
+
+  stable do
+    url "https://ghfast.top/https://github.com/POV-Ray/povray/archive/refs/tags/v3.7.0.10.tar.gz"
+    sha256 "7bee83d9296b98b7956eb94210cf30aa5c1bbeada8ef6b93bb52228bbc83abff"
+
+    on_sequoia :or_newer do
+      # Apply FreeBSD patches for libc++ >= 19 needed in Xcode 16.3
+      patch :p0 do
+        url "https://ghfast.top/https://raw.githubusercontent.com/freebsd/freebsd-ports/6133473e4227abbfcf023bea6ab5eeed9c17e55b/graphics/povray37/files/patch-vfe_vfe.cpp"
+        sha256 "81e6ad64dadce1581cbab3be9774d5a5c22307e8738ee1452eb7e4d3e5a7e234"
+      end
+      patch :p0 do
+        url "https://ghfast.top/https://raw.githubusercontent.com/freebsd/freebsd-ports/6133473e4227abbfcf023bea6ab5eeed9c17e55b/graphics/povray37/files/patch-vfe_vfeconf.h"
+        sha256 "8e2246c5ded770b0fe835ae062aca44e98fc220314e39ba6c068ed7f270b71b2"
+      end
+
+      # Workaround for Xcode 16.3+, issue ref: https://github.com/POV-Ray/povray/issues/479
+      patch :DATA
+    end
+  end
 
   livecheck do
     url :stable
@@ -37,6 +55,10 @@ class Povray < Formula
 
   def install
     ENV.cxx11
+    # See https://github.com/freebsd/freebsd-ports/commit/6133473e4227abbfcf023bea6ab5eeed9c17e55b
+    if OS.mac? && MacOS.version >= :sequoia
+      ENV.append "CPPFLAGS", "-DPOVMSUCS2=char16_t -DUCS2=char16_t -DUCS4=char32_t"
+    end
 
     args = %W[
       COMPILED_BY=homebrew
@@ -74,3 +96,17 @@ class Povray < Formula
     end
   end
 end
+
+__END__
+diff --git a/source/backend/shape/truetype.cpp b/source/backend/shape/truetype.cpp
+index 7e27ccc3..80ab047c 100644
+--- a/source/backend/shape/truetype.cpp
++++ b/source/backend/shape/truetype.cpp
+@@ -117,7 +117,7 @@ typedef unsigned int ULONG;
+ typedef short FWord;
+ typedef unsigned short uFWord;
+ 
+-#if !defined(TARGET_OS_MAC)
++#if !defined(__MACTYPES__)
+ typedef int Fixed;
+ #endif

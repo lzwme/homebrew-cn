@@ -1,21 +1,19 @@
 class Skani < Formula
   desc "Fast, robust ANI and aligned fraction for (metagenomic) genomes and contigs"
   homepage "https://github.com/bluenote-1577/skani"
-  url "https://ghfast.top/https://github.com/bluenote-1577/skani/archive/refs/tags/v0.2.2.tar.gz"
-  sha256 "e047d52b9f753625eff480fe90f1abb68f82cc6892d9d1910b18bfcedbfc0b9d"
+  url "https://ghfast.top/https://github.com/bluenote-1577/skani/archive/refs/tags/v0.3.0.tar.gz"
+  sha256 "cbc35210acbe02da284cf1c7cb7d6b061cc943d2ff44a8d3e2aae68704545af6"
   license "MIT"
   head "https://github.com/bluenote-1577/skani.git", branch: "main"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b9cb6481c4334cccd0a6e3726ef1accc7f03f916949d6c04cbf57bb281f1ddf3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4ed2e71f080f76d0b993299eabf00956d8026d3b71ceae1b5f24f57c099bb20e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "9b482265be8c35b99d56e95aeefb841282973b4f4064a994ca347ee0560367bc"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2c95bf7f3b7011ff70ce9368fceabae4f0506d65791ec5270dde9e166ee8759a"
-    sha256 cellar: :any_skip_relocation, ventura:       "c51ceb4edd8b3120325ccf9e998f41bebd599584ae29c3ae80c61d65830d9dc4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "80877ef0197b99f8cbb072f944f8c0d252ee4f63a6fcf50726f8cf118eef9b28"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4174c57cd1ef4f16398f92d8dd944bcbb5f42c262fda36a092fa09e59b43e510"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "65dec55b820121a4e47424587d3f712181c717988548065ed47b42c5b8df9423"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b6328346bcaaf38631e2c0dddaadfadf1e2a4889894f39eebbd50e964385a7b2"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "8bc754751beec16c86cddab174a93e0befdf4d353a65dc3c628237079ba43b3b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "856b80780da3c78ace5da7d8945daa832a6d3802e5e8c2db039759ce00ca8575"
+    sha256 cellar: :any_skip_relocation, ventura:       "5e7dc2d3550ce1ed8b614b3bb7e77f10fa29e6c76fa8549e3272c5a531b8e74a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cb21fb8cac917ffc3174b8453d5b098dcbe50445787bba01d34f84b5e343c115"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cfa225b2dde1dfc88c0967ccafe8dbfc9001fa6a8cd9d916486aae7c70102e3a"
   end
 
   depends_on "rust" => :build

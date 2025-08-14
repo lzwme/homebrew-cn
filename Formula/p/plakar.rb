@@ -21,7 +21,8 @@ class Plakar < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "9ab0e9c78c87835ca32ec42de382338f5fd17d2b628590fa090448e3b2b2d538"
   end
 
-  depends_on "go" => :build
+  # use "go" when https://github.com/PlakarKorp/plakar/pull/1312 is released (in 1.0.3 release?):
+  depends_on "go@1.24" => :build
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
