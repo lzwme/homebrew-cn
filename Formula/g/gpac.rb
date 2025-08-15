@@ -45,9 +45,30 @@ class Gpac < Formula
 
   depends_on "pkgconf" => :build
   depends_on "ffmpeg"
+  depends_on "freetype"
+  depends_on "jpeg-turbo"
+  depends_on "libnghttp2"
+  depends_on "libpng"
+  depends_on "libvorbis"
+  depends_on "libx11"
+  depends_on "libxext"
+  depends_on "openjpeg"
   depends_on "openssl@3"
+  depends_on "sdl2"
+  depends_on "theora"
+  depends_on "xz"
 
   uses_from_macos "zlib"
+
+  on_macos do
+    depends_on "libogg"
+  end
+
+  on_linux do
+    depends_on "alsa-lib"
+    depends_on "libxv"
+    depends_on "pulseaudio"
+  end
 
   def install
     args = %W[

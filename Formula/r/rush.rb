@@ -1,8 +1,8 @@
 class Rush < Formula
   desc "GNU's Restricted User SHell"
   homepage "https://www.gnu.org.ua/software/rush/"
-  url "https://ftp.gnu.org/gnu/rush/rush-2.4.tar.xz"
-  mirror "https://ftpmirror.gnu.org/rush/rush-2.4.tar.xz"
+  url "https://ftpmirror.gnu.org/gnu/rush/rush-2.4.tar.xz"
+  mirror "https://ftp.gnu.org/gnu/rush/rush-2.4.tar.xz"
   sha256 "fa95af9d2c7b635581841cc27a1d27af611f60dd962113a93d23a8874aa060f4"
   license "GPL-3.0-or-later"
 

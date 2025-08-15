@@ -1,8 +1,8 @@
 class GnuTypist < Formula
   desc "GNU typing tutor"
   homepage "https://www.gnu.org/software/gtypist/"
-  url "https://ftp.gnu.org/gnu/gtypist/gtypist-2.10.1.tar.xz"
-  mirror "https://ftpmirror.gnu.org/gtypist/gtypist-2.10.1.tar.xz"
+  url "https://ftpmirror.gnu.org/gnu/gtypist/gtypist-2.10.1.tar.xz"
+  mirror "https://ftp.gnu.org/gnu/gtypist/gtypist-2.10.1.tar.xz"
   sha256 "ca618054e91f1ed5ef043fcc43500bbad701c959c31844d4688ff22849ac252d"
   license "GPL-3.0-or-later"
 

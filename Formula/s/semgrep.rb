@@ -4,8 +4,8 @@ class Semgrep < Formula
   desc "Easily detect and prevent bugs and anti-patterns in your codebase"
   homepage "https://semgrep.dev"
   url "https://github.com/semgrep/semgrep.git",
-      tag:      "v1.131.0",
-      revision: "47fbfd8a276c5416432439b43ab5b4df55041a85"
+      tag:      "v1.132.0",
+      revision: "be8be79c13f22898e9d0c7c3a4339d2757f440cd"
   license "LGPL-2.1-only"
   head "https://github.com/semgrep/semgrep.git", branch: "develop"
 
@@ -15,13 +15,13 @@ class Semgrep < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "c84e569ceb23f3962879abf64d9a48a6d6c7d8942a9b21d26f8c4af1d9ac213c"
-    sha256 cellar: :any,                 arm64_sonoma:  "4badcf467e83086c1fb2ef4b9f4a5b50d75a8833e87d0e5d7ab4e3da5818c738"
-    sha256 cellar: :any,                 arm64_ventura: "5b6e55367ea33cb2d72ec14063066fb99cc43737f178996f11250ff0be6578cd"
-    sha256 cellar: :any,                 sonoma:        "ad52bfd7102f59f8eaa79416c7ef7bdf3f709e8fb16ffdb358d78e24e5c8f9a7"
-    sha256 cellar: :any,                 ventura:       "eb19f8a2fc772970fbf2b2f083a49d0850d81cb1ded2fe6838e275cfb32f5fcb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "777b7a467251eefc3f34eeb1df18dd12b1d798f33af40aeac544c8396da1b159"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fcd78092352e0f39b84efc5712e5bcb9eca511fb8947eba7c3cd481081930b7d"
+    sha256 cellar: :any,                 arm64_sequoia: "33b68163dae025cb3ddb152e0a53748af281080083e60bc840b95743f4d793da"
+    sha256 cellar: :any,                 arm64_sonoma:  "05aaa1e1ce2a9e23753232c28ac01d6318ff35b16a632b8da8c66119da1c35aa"
+    sha256 cellar: :any,                 arm64_ventura: "b1bbd7d5b994ae07e5d8207748dd8cf1fde70c4f4e6f14a9a1e5538cd694f5eb"
+    sha256 cellar: :any,                 sonoma:        "f2b0111e3cea00378a25cac9a5088986258d1e9f9f8ffdc2e9ebe79fb23ca0c7"
+    sha256 cellar: :any,                 ventura:       "ef198e5975295c256c95a5e70727885aa1b1fffbd8e8c53b823eb744e1df14e8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "55e4f31d822549f7d9b643bb664fc372a9c7d36a977d39535e4c389a72aa8757"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a0ad5e3230783c5cb4435609534a42b2c443ca71bb82359639245dbb1041ba9e"
   end
 
   depends_on "autoconf" => :build
@@ -62,8 +62,8 @@ class Semgrep < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/e4/33/89c2ced2b67d1c2a61c19c6751aa8902d46ce3dacb23600a283619f5a12d/charset_normalizer-3.4.2.tar.gz"
-    sha256 "5baececa9ecba31eff645232d59845c07aa030f0c81ee70184a90d35099a0e63"
+    url "https://files.pythonhosted.org/packages/83/2d/5fd176ceb9b2fc619e63405525573493ca23441330fcdaee6bef9460e924/charset_normalizer-3.4.3.tar.gz"
+    sha256 "6fce4b8500244f6fcb71465d4a4930d132ba9ab8e71a7859e6a5d59851068d14"
   end
 
   resource "click" do
@@ -132,8 +132,8 @@ class Semgrep < Formula
   end
 
   resource "markdown-it-py" do
-    url "https://files.pythonhosted.org/packages/38/71/3b932df36c1a044d397a1f92d1cf91ee0a503d91e470cbd670aa66b07ed0/markdown-it-py-3.0.0.tar.gz"
-    sha256 "e3f60a94fa066dc52ec76661e37c851cb232d92f9886b15cb560aaada2df8feb"
+    url "https://files.pythonhosted.org/packages/5b/f5/4ec618ed16cc4f8fb3b701563655a69816155e79e24a17b651541804721d/markdown_it_py-4.0.0.tar.gz"
+    sha256 "cb0a2b4aa34f932c007117b194e945bd74e0ec24133ceb5bac59009cda1cb9f3"
   end
 
   resource "mdurl" do
@@ -222,8 +222,8 @@ class Semgrep < Formula
   end
 
   resource "rpds-py" do
-    url "https://files.pythonhosted.org/packages/a5/aa/4456d84bbb54adc6a916fb10c9b374f78ac840337644e4a5eda229c81275/rpds_py-0.26.0.tar.gz"
-    sha256 "20dae58a859b0906f0685642e591056f1e787f3a8b39c8e8749a45dc7d26bdb0"
+    url "https://files.pythonhosted.org/packages/1e/d9/991a0dee12d9fc53ed027e26a26a64b151d77252ac477e22666b9688bc16/rpds_py-0.27.0.tar.gz"
+    sha256 "8b23cf252f180cda89220b378d917180f29d313cd6a07b2431c0d3b776aae86f"
   end
 
   resource "ruamel-yaml" do
@@ -262,8 +262,8 @@ class Semgrep < Formula
   end
 
   resource "wrapt" do
-    url "https://files.pythonhosted.org/packages/c3/fc/e91cc220803d7bc4db93fb02facd8461c37364151b8494762cc88b0fbcef/wrapt-1.17.2.tar.gz"
-    sha256 "41388e9d4d1522446fe79d3213196bd9e3b301a336965b9e27ca2788ebd122f3"
+    url "https://files.pythonhosted.org/packages/95/8f/aeb76c5b46e273670962298c23e7ddde79916cb74db802131d49a85e4b7d/wrapt-1.17.3.tar.gz"
+    sha256 "f66eb08feaa410fe4eebd17f2a2c8e2e46d3476e9f8c783daa8e09e0faa666d0"
   end
 
   resource "zipp" do

@@ -1,8 +1,8 @@
 class SourceHighlight < Formula
   desc "Source-code syntax highlighter"
   homepage "https://www.gnu.org/software/src-highlite/"
-  url "https://ftp.gnu.org/gnu/src-highlite/source-highlight-3.1.9.tar.gz"
-  mirror "https://ftpmirror.gnu.org/src-highlite/source-highlight-3.1.9.tar.gz"
+  url "https://ftpmirror.gnu.org/gnu/src-highlite/source-highlight-3.1.9.tar.gz"
+  mirror "https://ftp.gnu.org/gnu/src-highlite/source-highlight-3.1.9.tar.gz"
   sha256 "3a7fd28378cb5416f8de2c9e77196ec915145d44e30ff4e0ee8beb3fe6211c91"
   license "GPL-3.0-or-later"
   revision 6

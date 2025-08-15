@@ -5,8 +5,8 @@ class Libgccjit < Formula
   head "https://gcc.gnu.org/git/gcc.git", branch: "master"
 
   stable do
-    url "https://ftp.gnu.org/gnu/gcc/gcc-15.1.0/gcc-15.1.0.tar.xz"
-    mirror "https://ftpmirror.gnu.org/gcc/gcc-15.1.0/gcc-15.1.0.tar.xz"
+    url "https://ftpmirror.gnu.org/gnu/gcc/gcc-15.1.0/gcc-15.1.0.tar.xz"
+    mirror "https://ftp.gnu.org/gnu/gcc/gcc-15.1.0/gcc-15.1.0.tar.xz"
     sha256 "e2b09ec21660f01fecffb715e0120265216943f038d0e48a9868713e54f06cea"
 
     # Branch from the Darwin maintainer of GCC, with a few generic fixes and

@@ -1,5 +1,6 @@
 class Touca < Formula
   include Language::Python::Virtualenv
+
   desc "Open source tool for regression testing complex software workflows"
   homepage "https://github.com/trytouca/trytouca/tree/main/sdk/python"
   url "https://files.pythonhosted.org/packages/c8/6d/e1986d8c9b4f6cd2b583d0df8bd1769989b5ce5cb91dcc613b0d187e4a7a/touca-1.8.7.tar.gz"
@@ -11,6 +12,8 @@ class Touca < Formula
     rebuild 3
     sha256 cellar: :any_skip_relocation, all: "28347dcea2a95cf714fad75fb909df2202c64a2ba9f9b83af3f99a7659e0bf17"
   end
+
+  deprecate! date: "2025-08-13", because: :unmaintained
 
   depends_on "certifi"
   depends_on "python@3.13"

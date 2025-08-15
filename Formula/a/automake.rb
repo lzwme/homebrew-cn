@@ -1,8 +1,8 @@
 class Automake < Formula
   desc "Tool for generating GNU Standards-compliant Makefiles"
   homepage "https://www.gnu.org/software/automake/"
-  url "https://ftp.gnu.org/gnu/automake/automake-1.18.1.tar.xz"
-  mirror "https://ftpmirror.gnu.org/automake/automake-1.18.1.tar.xz"
+  url "https://ftpmirror.gnu.org/gnu/automake/automake-1.18.1.tar.xz"
+  mirror "https://ftp.gnu.org/gnu/automake/automake-1.18.1.tar.xz"
   sha256 "168aa363278351b89af56684448f525a5bce5079d0b6842bd910fdd3f1646887"
   license "GPL-2.0-or-later"
 

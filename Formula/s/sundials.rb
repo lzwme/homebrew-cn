@@ -21,23 +21,20 @@ class Sundials < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "gcc" # for gfortran
   depends_on "open-mpi"
   depends_on "openblas"
   depends_on "suite-sparse"
-
-  uses_from_macos "libpcap"
 
   def install
     blas = "-L#{Formula["openblas"].opt_lib} -lopenblas"
     args = %W[
       -DBUILD_SHARED_LIBS=ON
-      -DKLU_ENABLE=ON
+      -DENABLE_KLU=ON
+      -DENABLE_LAPACK=ON
+      -DENABLE_MPI=ON
       -DKLU_LIBRARY_DIR=#{Formula["suite-sparse"].opt_lib}
       -DKLU_INCLUDE_DIR=#{Formula["suite-sparse"].opt_include}/suitesparse
-      -DLAPACK_ENABLE=ON
       -DLAPACK_LIBRARIES=#{blas};#{blas}
-      -DMPI_ENABLE=ON
     ]
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args

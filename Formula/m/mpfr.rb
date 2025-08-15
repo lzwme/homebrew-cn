@@ -1,8 +1,8 @@
 class Mpfr < Formula
   desc "C library for multiple-precision floating-point computations"
   homepage "https://www.mpfr.org/"
-  url "https://ftp.gnu.org/gnu/mpfr/mpfr-4.2.2.tar.xz"
-  mirror "https://ftpmirror.gnu.org/mpfr/mpfr-4.2.2.tar.xz"
+  url "https://ftpmirror.gnu.org/gnu/mpfr/mpfr-4.2.2.tar.xz"
+  mirror "https://ftp.gnu.org/gnu/mpfr/mpfr-4.2.2.tar.xz"
   sha256 "b67ba0383ef7e8a8563734e2e889ef5ec3c3b898a01d00fa0a6869ad81c6ce01"
   license "LGPL-3.0-or-later"
   head "https://gitlab.inria.fr/mpfr/mpfr.git", branch: "master"

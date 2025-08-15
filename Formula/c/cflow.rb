@@ -1,8 +1,8 @@
 class Cflow < Formula
   desc "Generate call graphs from C code"
   homepage "https://www.gnu.org/software/cflow/"
-  url "https://ftp.gnu.org/gnu/cflow/cflow-1.8.tar.bz2"
-  mirror "https://ftpmirror.gnu.org/cflow/cflow-1.8.tar.bz2"
+  url "https://ftpmirror.gnu.org/gnu/cflow/cflow-1.8.tar.bz2"
+  mirror "https://ftp.gnu.org/gnu/cflow/cflow-1.8.tar.bz2"
   sha256 "8321627b55b6c7877f6a43fcc6f9f846a94b1476a081a035465f7a78d3499ab8"
   license "GPL-3.0-or-later"
 

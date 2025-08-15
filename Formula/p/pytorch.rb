@@ -6,7 +6,7 @@ class Pytorch < Formula
   url "https://ghfast.top/https://github.com/pytorch/pytorch/releases/download/v2.5.1/pytorch-v2.5.1.tar.gz"
   sha256 "740eb5fff95e33cfe699bad43be83523f569c7cc7f9c285c2a255416443dd266"
   license "BSD-3-Clause"
-  revision 5
+  revision 6
 
   livecheck do
     url :stable
@@ -16,10 +16,11 @@ class Pytorch < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any, arm64_sonoma:  "4674f22f074126567e0ba48f3d641bb5cf684acf776ccee8b64d2d77ba659d62"
-    sha256 cellar: :any, arm64_ventura: "990ff5cfb9f230d5c89e31344ad7b8af4486b214d09a967b39e4cf1f95deb157"
-    sha256 cellar: :any, sonoma:        "c48ef52a97cfba3d644963298428dfbeba3f7172cb515cd4ea775c626dd3474e"
-    sha256 cellar: :any, ventura:       "63d9c470cc30991708d648cfd5d7faa56553b8f399e47fd57703aab9beae143e"
+    sha256 cellar: :any, arm64_sonoma:  "5db97395b3ab02a6a0e81beccc9b1a4a3c16788d300e3a405db3ad8280ab3aea"
+    sha256 cellar: :any, arm64_ventura: "e5bfcc822cd97d408abbc7f002fb7c53c3dad28bc6fd8816b169cc8dfa4fa4fb"
+    sha256 cellar: :any, sonoma:        "b869aab5d2d522b3a7d9d36a8466a4ddbcfcdaf382bd9be6b210576a7a4d7e69"
+    sha256 cellar: :any, ventura:       "be7435be5627ba8309125f06322cef341393ebb68a3ec275d535f75bb2a73b58"
+    sha256               x86_64_linux:  "0476b63565a12ecbec4f3225c75176a4a0e45cd1f3bfb70fd80ac240e7e69a7c"
   end
 
   depends_on "cmake" => :build

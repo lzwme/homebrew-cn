@@ -4,17 +4,17 @@ class Brpc < Formula
   url "https://dlcdn.apache.org/brpc/1.14.1/apache-brpc-1.14.1-src.tar.gz"
   sha256 "ed6e6703122cf294462ffae921c713910594b3b0a26dcfef5357a3dcefcc43d3"
   license "Apache-2.0"
-  revision 1
+  revision 2
   head "https://github.com/apache/brpc.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "1881335e1492e94206728d267640c86e734d7533ff429e5a8d0a1244030711ba"
-    sha256 cellar: :any,                 arm64_sonoma:  "d3076cb66fc48397a8b0f870b9fd2e1db9be9f9800ee6b1315e773f616e92185"
-    sha256 cellar: :any,                 arm64_ventura: "1a49f81c0510b2554ac996982b89abedb2d431ea8bde8fa3a5d70ae0ff632c66"
-    sha256 cellar: :any,                 sonoma:        "8800b926c072f4d0004a28f6ad0d53889a72dc47e81c3f1ebb0b8cb9900551e8"
-    sha256 cellar: :any,                 ventura:       "3ee00325836873399a3652025532490e84cae6bfffb3c40bb3b435e49e81a1ad"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c809cd315a094bf41409dbe492ad69ab5bab1ab7a4240ccd59451054d95fdadd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "be97e6df3ced7de50a46902e9784e1b680ff9aab38fc50d9eedda1f68b2ce18c"
+    sha256 cellar: :any, arm64_sequoia: "70a5a38d284a2276321f969ed411cdcf031b8e3e0fb615b7622f5f493c2f19c0"
+    sha256 cellar: :any, arm64_sonoma:  "01df6407826a1c7ca081cc35681064edd3fdf4717332a7cba2ac73486d728393"
+    sha256 cellar: :any, arm64_ventura: "39ad1d522285a11d44f6ecfdd2078095ba9280379ed227fabf4e5a105f38cb9a"
+    sha256 cellar: :any, sonoma:        "b1517e16e15fb6f49acde5406d16c1c611ccf1309eb5a73d0cef77206424f743"
+    sha256 cellar: :any, ventura:       "a71158f75e2bd1bf21fc185c36fcf625ee296efba1802d10acd96dfda602b952"
+    sha256               arm64_linux:   "a43c68b5bc0c941f48bfa4e1504706272b1b8ae92120e6448a20676adad320b0"
+    sha256               x86_64_linux:  "643509e80339d9131c6b34c2d1cc921d668601b5135335b061c49ec620724ba8"
   end
 
   depends_on "cmake" => :build

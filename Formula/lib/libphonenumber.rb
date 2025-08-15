@@ -4,7 +4,7 @@ class Libphonenumber < Formula
   url "https://ghfast.top/https://github.com/google/libphonenumber/archive/refs/tags/v9.0.11.tar.gz"
   sha256 "80a53c5da67c6240e15ca9cbb2cf263e9875fd37415464892b5cd1a00b1e2dba"
   license "Apache-2.0"
-  revision 1
+  revision 2
 
   livecheck do
     url :stable
@@ -12,13 +12,13 @@ class Libphonenumber < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "66904de89bc1e5680bc7b610a360ae59030d0d321e6596d3644a6ad1980bf6c8"
-    sha256 cellar: :any,                 arm64_sonoma:  "2dced28ebcc46e47534db87347ad567dbdd5ad2feb1a12125e2910e6882e1264"
-    sha256 cellar: :any,                 arm64_ventura: "1d3e59accf1fcb7e20afb7db11a12aff53d93ce6ab05ba83029fbd7d7a08823a"
-    sha256 cellar: :any,                 sonoma:        "0ca384e6215e156b942bded7c8c71092c26b599ecb728cfefdbb0d802dc9a616"
-    sha256 cellar: :any,                 ventura:       "af82d762978db55911083aea53a75a54c2da4c884a2908692ca4888638d75b72"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f29498ab732e17e0b3f0d26cad6bfced0e1c41e3362e33f825da317ccdb22b8c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0deb61431c49e5eaac179bd14b42b7e022775bdaf9e8ac6f2c51b6a48b33ac77"
+    sha256 cellar: :any,                 arm64_sequoia: "378778a81a61a5c8e4afb0f4dcc34283e953c087790249e72439804e6a4deeda"
+    sha256 cellar: :any,                 arm64_sonoma:  "f743bd2e1ea07ee2b138f81b03c8cd5557dc16117f1ed6c8fa837d4c4406f6c7"
+    sha256 cellar: :any,                 arm64_ventura: "39935b680248829bdb31bbb3ef2bded018c66d9c74fe309a93710e18fc89ff79"
+    sha256 cellar: :any,                 sonoma:        "8cbab1cd48abfd54173bf83f3a6ddbcb3bae9e1ff6d9471e754c042e540da901"
+    sha256 cellar: :any,                 ventura:       "f6feb87351aca611dd34c966d725ca3edd5df4e14351ce2944c0442a10c2db6b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bad065572002188847b01f8bc898edacbc51a5e87265d879ed46357cb5ae3991"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "39e3698bece7e19fc78431ac8301ba62ad14602b7109a3ef550d64b58efb86ee"
   end
 
   depends_on "cmake" => [:build, :test]

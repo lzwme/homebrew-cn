@@ -6,6 +6,11 @@ class Calc < Formula
   license "LGPL-2.1-or-later"
   head "https://github.com/lcn2/calc.git", branch: "master"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     sha256 arm64_sequoia: "473e3761dcf18e6c8f0657eee8a690ba5b094c55bb79c44e28e110cd80ed58f3"
     sha256 arm64_sonoma:  "8897a859be300533821ba09c5c681158940be5ac85b4f4736a074bc3db3e1560"

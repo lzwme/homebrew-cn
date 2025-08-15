@@ -6,7 +6,7 @@ class Bazarr < Formula
   url "https://ghfast.top/https://github.com/morpheus65535/bazarr/releases/download/v1.5.2/bazarr.zip"
   sha256 "63519d9855e5b84c947b18d72fa36dfa9341a040879d1079bfde2fabfe8ab30e"
   license "GPL-3.0-or-later"
-  head "https://github.com/morpheus65535/bazarr.git", branch: "development"
+  head "https://github.com/morpheus65535/bazarr.git", branch: "master"
 
   bottle do
     rebuild 1
@@ -21,7 +21,6 @@ class Bazarr < Formula
 
   depends_on "node" => :build
   depends_on "ffmpeg"
-  depends_on "gcc"
   depends_on "numpy"
   depends_on "pillow"
   depends_on "python@3.13"
@@ -68,9 +67,9 @@ class Bazarr < Formula
     inreplace "bazarr.py", "def get_python_path():", "def get_python_path():\n    return sys.executable"
 
     libexec.install Dir["*"]
-    (bin/"bazarr").write_env_script venv.root/"bin/python", libexec/"bazarr.py",
+    (bin/"bazarr").write_env_script venv.root/"bin/python", "#{libexec}/bazarr.py",
       NO_UPDATE:  "1",
-      PATH:       "#{Formula["ffmpeg"].opt_bin}:#{HOMEBREW_PREFIX/"bin"}:$PATH",
+      PATH:       "#{Formula["ffmpeg"].opt_bin}:#{HOMEBREW_PREFIX}/bin:${PATH}",
       PYTHONPATH: venv.site_packages
 
     pkgvar = var/"bazarr"

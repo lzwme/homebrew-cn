@@ -1,8 +1,8 @@
 class Gnunet < Formula
   desc "Framework for distributed, secure and privacy-preserving applications"
   homepage "https://gnunet.org/"
-  url "https://ftp.gnu.org/gnu/gnunet/gnunet-0.24.3.tar.gz"
-  mirror "https://ftpmirror.gnu.org/gnunet/gnunet-0.24.3.tar.gz"
+  url "https://ftpmirror.gnu.org/gnu/gnunet/gnunet-0.24.3.tar.gz"
+  mirror "https://ftp.gnu.org/gnu/gnunet/gnunet-0.24.3.tar.gz"
   sha256 "5b06897b0e84489bbb438278ec73e4362442b2e05a63e40023ec1d0cccc6c576"
   license "AGPL-3.0-or-later"
 

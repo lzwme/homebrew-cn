@@ -4,17 +4,17 @@ class Passenger < Formula
   url "https://ghfast.top/https://github.com/phusion/passenger/releases/download/release-6.0.27/passenger-6.0.27.tar.gz"
   sha256 "82c830aee98feece09e84309c2d0c6bb3f7b22a3c8e33cfe93b5e0d498615d0f"
   license "MIT"
-  revision 2
-  head "https://github.com/phusion/passenger.git", branch: "stable-6.0"
+  revision 3
+  head "https://github.com/phusion/passenger.git", branch: "stable-6.1"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "7d587933f9606519d026d7221ea089397f2ec9fbfbd36c69df5f861d4e318562"
-    sha256 cellar: :any,                 arm64_sonoma:  "16c00c531cfd959799928b021c85ed565fc756e7d9177426670384ef2f544dd2"
-    sha256 cellar: :any,                 arm64_ventura: "4aec8ca1d40ee97818108dd5f3737cd2f794fd2cbbe15ba9df011a0d7f7b970e"
-    sha256 cellar: :any,                 sonoma:        "25a19834fb3612058936f28562a1f71c54a5a8434d806c52d55e0b78d1c0d04f"
-    sha256 cellar: :any,                 ventura:       "6bcd6e8840ffe05c10da42aa3a10cc5b6fcb0661591f0ab667dfd5bd29e73036"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "978c3bd1459fbc688ffb230ded1103f7c943bd640cadff7d5bca07442a8c5f19"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0dde58aaf00f72de06110cddca3d20d1127d14bd4398aeee4891aea3788beb15"
+    sha256 cellar: :any,                 arm64_sequoia: "bdb4c77f1dc147a18b999827121758b04f44bfd9e2ac808d2f1a9e7a990985b0"
+    sha256 cellar: :any,                 arm64_sonoma:  "74a14640f471868116731a53e04a4cba4e92906ae412b951f2e08c07662e088c"
+    sha256 cellar: :any,                 arm64_ventura: "d3ad462afaf53614bae236dc68ab6543e6dbcb63cc3ae626972e94d46bebb649"
+    sha256 cellar: :any,                 sonoma:        "9ce1dbcc6cea06eda662c98150d80d163e03a062860bc86ecf7042896e0fb847"
+    sha256 cellar: :any,                 ventura:       "ba3f0a4dd7805becdfcb23bd9f160ed57db44020c1af425fd6b233961366cdb6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fad81250c5ce7e96c096f7bfa4901ec97923b14820c0474d4514f428d3f9ad77"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d299f0e3c8f781acd92ce0b7005498f20ed6431e05c6a4791d477c5af9d10567"
   end
 
   depends_on "httpd" => :build # to build the apache2 module

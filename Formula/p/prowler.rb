@@ -3,19 +3,19 @@ class Prowler < Formula
 
   desc "Tool for cloud security assessments, audits, incident response, and more"
   homepage "https://prowler.com/"
-  url "https://files.pythonhosted.org/packages/52/d1/6f06084237c75f5c8649ad1a72ee84dfdcaa5761a09ce7649ad8d2f41e43/prowler-5.10.1.tar.gz"
-  sha256 "e07f75290c7a4e94f22d1081d54694dfcd4cf63fc979dcb1402dc26a1365d04e"
+  url "https://files.pythonhosted.org/packages/5a/ca/73f306b71c1858b6ca85d7f505b1b009798131f3e54f3a7e909da88fe48e/prowler-5.10.2.tar.gz"
+  sha256 "8325661aed288453d4fdd933421c12837ce4b5c8758105a2409b22868bf62136"
   license "Apache-2.0"
   head "https://github.com/prowler-cloud/prowler.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "5ccde95faac5879c328041a1b0737a4b69b8196121389533d38867489adf7cbc"
-    sha256 cellar: :any,                 arm64_sonoma:  "679e37a52b19aebc130a2843a24767619a71135262fb979dc42ab6c0052fe2ec"
-    sha256 cellar: :any,                 arm64_ventura: "d09700ffa7a87856ca06f948dbdeb943607b757121511260e228ce5b76f682a7"
-    sha256 cellar: :any,                 sonoma:        "64bce5b17b3702deebd94482ac7679e7498d58f201d15a3a0e2a990ed3bcc912"
-    sha256 cellar: :any,                 ventura:       "fe54e4533fee8de9a945f195c1ae5d6dc58617cdfe2fff066d529f4165db9ad4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3d12b9053e2dcd47e5222063b0e5d3865fa7d43a469ca6fe2e0e1eb2bcdf8965"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "47572cc84b4815e6eafb7d62729aeef82fa02d98e9c5bab82846aa940ab7e6a9"
+    sha256 cellar: :any,                 arm64_sequoia: "35369dcd62edbd57ff22734a805a9be069813fbc0ebd59950fd7430a771a3c7b"
+    sha256 cellar: :any,                 arm64_sonoma:  "3567f9576fe02c36fc4f9079b23978e6323e50e3c68d8585730fa0b5f0502bf7"
+    sha256 cellar: :any,                 arm64_ventura: "5bc129690f7c37a37131ecd8fc9c60fc3a72f2f8cd5cee37189348c65cceddfb"
+    sha256 cellar: :any,                 sonoma:        "33930aaf7bd3724c81339866d624c450c58d657c2e971131012832f09710dbc8"
+    sha256 cellar: :any,                 ventura:       "dd3ef0ec2c4051459ddffd306a88b5aef7ba47ea920e827ffdf0187822b35bf2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7f6686bc37224c1a111d789354b10bf81046bfe0b5ad995bd09eca35ce1b9985"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6b789554658d2bc9b7da835d8b5a747d00fabc879795b40306a36cbb034eeae0"
   end
 
   depends_on "cmake" => :build
@@ -230,8 +230,8 @@ class Prowler < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/e4/33/89c2ced2b67d1c2a61c19c6751aa8902d46ce3dacb23600a283619f5a12d/charset_normalizer-3.4.2.tar.gz"
-    sha256 "5baececa9ecba31eff645232d59845c07aa030f0c81ee70184a90d35099a0e63"
+    url "https://files.pythonhosted.org/packages/83/2d/5fd176ceb9b2fc619e63405525573493ca23441330fcdaee6bef9460e924/charset_normalizer-3.4.3.tar.gz"
+    sha256 "6fce4b8500244f6fcb71465d4a4930d132ba9ab8e71a7859e6a5d59851068d14"
   end
 
   resource "click" do
@@ -490,13 +490,13 @@ class Prowler < Formula
   end
 
   resource "multidict" do
-    url "https://files.pythonhosted.org/packages/3d/2c/5dad12e82fbdf7470f29bff2171484bf07cb3b16ada60a6589af8f376440/multidict-6.6.3.tar.gz"
-    sha256 "798a9eb12dab0a6c2e29c1de6f3468af5cb2da6053a20dfa3344907eed0937cc"
+    url "https://files.pythonhosted.org/packages/69/7f/0652e6ed47ab288e3756ea9c0df8b14950781184d4bd7883f4d87dd41245/multidict-6.6.4.tar.gz"
+    sha256 "d2d4e4787672911b48350df02ed3fa3fffdc2f2e8ca06dd6afdf34189b76a9dd"
   end
 
   resource "narwhals" do
-    url "https://files.pythonhosted.org/packages/e2/8f/51d14e402c4f9d281a2e153a6a805cad5460088027a999faf264b54e7641/narwhals-2.0.1.tar.gz"
-    sha256 "235e61ca807bc21110ca36a4d53888ecc22c42dcdf50a7c886e10dde3fd7f38c"
+    url "https://files.pythonhosted.org/packages/88/2b/d1206ec57d44efd07a08c75ecbeeef05e6b0457dc6777b6bd2d1e79713cd/narwhals-2.1.1.tar.gz"
+    sha256 "308ec9d0e40616b66b61cd76ede4083a4232ae04942a3acef7e514d49641cb77"
   end
 
   resource "nest-asyncio" do
@@ -535,8 +535,8 @@ class Prowler < Formula
   end
 
   resource "plotly" do
-    url "https://files.pythonhosted.org/packages/6e/5c/0efc297df362b88b74957a230af61cd6929f531f72f48063e8408702ffba/plotly-6.2.0.tar.gz"
-    sha256 "9dfa23c328000f16c928beb68927444c1ab9eae837d1fe648dbcda5360c7953d"
+    url "https://files.pythonhosted.org/packages/a0/64/850de5076f4436410e1ce4f6a69f4313ef6215dfea155f3f6559335cad29/plotly-6.3.0.tar.gz"
+    sha256 "8840a184d18ccae0f9189c2b9a2943923fd5cae7717b723f36eef78f444e5a73"
   end
 
   resource "propcache" do
@@ -745,8 +745,8 @@ class Prowler < Formula
   end
 
   resource "wrapt" do
-    url "https://files.pythonhosted.org/packages/c3/fc/e91cc220803d7bc4db93fb02facd8461c37364151b8494762cc88b0fbcef/wrapt-1.17.2.tar.gz"
-    sha256 "41388e9d4d1522446fe79d3213196bd9e3b301a336965b9e27ca2788ebd122f3"
+    url "https://files.pythonhosted.org/packages/95/8f/aeb76c5b46e273670962298c23e7ddde79916cb74db802131d49a85e4b7d/wrapt-1.17.3.tar.gz"
+    sha256 "f66eb08feaa410fe4eebd17f2a2c8e2e46d3476e9f8c783daa8e09e0faa666d0"
   end
 
   resource "xlsxwriter" do

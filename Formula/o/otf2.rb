@@ -22,7 +22,6 @@ class Otf2 < Formula
 
   depends_on "python-setuptools" => :build
   depends_on "sphinx-doc" => :build
-  depends_on "gcc" # for gfortran
   depends_on "open-mpi"
   depends_on "python@3.13"
 

@@ -6,34 +6,29 @@ class Faircamp < Formula
   license "AGPL-3.0-or-later"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_sequoia: "2c3af42aa5794802966ec89516637bea7b635890c98b15f6c68ecd8a96df015d"
-    sha256 cellar: :any, arm64_sonoma:  "2ed4d1a4deeb945a5dd0c4dcdbf3c1e896efd95160b90520d2e7d372b7a4270f"
-    sha256 cellar: :any, arm64_ventura: "2975ee7b60adb56ecd16bf94af3dfea23d9622b4fc7e0b86343cfb83368b20d7"
-    sha256 cellar: :any, sonoma:        "836b80238eed170eff9ea374bb5af87c067f41359ffd70ba9176a61909106093"
-    sha256 cellar: :any, ventura:       "74e4fea1c11b4206c19616b74d08ced932c0d352bbe43361c58ea10fc47d94f4"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_sequoia: "27e247518f69e6791a20080798c3de87e84dad16e97a525512e104c594326906"
+    sha256 cellar: :any,                 arm64_sonoma:  "7a160af234c1afb3b6aa82d126ac29d6622616c05fd95f96614384e569175030"
+    sha256 cellar: :any,                 arm64_ventura: "b6fc96b8c4b94ec51db69e559f965e0d6c0f6c2a2d20b370be560dbc1d223a94"
+    sha256 cellar: :any,                 sonoma:        "bd1bb588b0e7dbf0b168ca502c0c758c3d9e069c0a142a4ecc31a88a2b5d9e85"
+    sha256 cellar: :any,                 ventura:       "e1b76f9c1b553f5f63839f36f3c062708b6e9208c6721bc39426efeafea7cedb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a901467f77f2ca8b0ab4e363ed6b0684586928a23911b9c833baaa54a4224ef0"
   end
 
-  depends_on "opus" => :build
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "ffmpeg"
   depends_on "gettext"
   depends_on "glib"
-  # Brew's libopus behaves differently in linux compared to macOS and
-  # results in runtime errors. Further investigation and work on this
-  # formulae is needed to support linux builds. The upstream project
-  # provides their own mechanism for linux distribution. Brew is most
-  # valuable on macOS, where there is no other suitable package manager,
-  # so for now, restrict this formulae to macOS.
-  depends_on :macos
+  depends_on "opus"
   depends_on "vips"
+  depends_on "xz"
 
   def install
     # libvips is a runtime dependency, the brew install location is
     # not discovered by default by Cargo. Upstream issue:
     #   https://codeberg.org/simonrepp/faircamp/issues/45
-    ENV.append_to_rustflags Utils.safe_popen_read("pkgconf", "--libs", "vips").chomp
+    ENV.append_to_rustflags Utils.safe_popen_read("pkgconf", "--libs", "opus", "vips").chomp
     system "cargo", "install", *std_cargo_args, "--features", "libvips"
   end
 

@@ -12,18 +12,20 @@ class Adios2 < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "502983bb973c584e61ea4325857019308d37ed7876149ca8b692e462a7350e96"
-    sha256 arm64_sonoma:  "f85ec0a3210c79e1730d3f7f71c88de5f75fe6a4a9ca9449935ebd2e97145044"
-    sha256 arm64_ventura: "e75a203fbaa7987772e61ba24b66419ae5a5e1b69d8f29524d431330accb9caf"
-    sha256 sonoma:        "5caafa5a27988407eb69e25b2a1f03a61d584af7d152efbc90b2f197586a6f2e"
-    sha256 ventura:       "f22fdaa080f998c8ecd24b826c148ad60bc587a7acc3f0c49171e8d61ddcb7a3"
-    sha256 arm64_linux:   "411a036e81100ec289c17b95296b8665dddc42b41ba01660bdd1dab70ae1e723"
-    sha256 x86_64_linux:  "6eccf49dc0677c2e62f0a5fdc69872e35552137b6339ebccca057795480be4bf"
+    rebuild 1
+    sha256 arm64_sequoia: "caf49db76e7ccd69679a897c33cae89ce8f6c3791b37e1e9e64f44b5ed1d3681"
+    sha256 arm64_sonoma:  "f1d5cea886ed8cd5f968a842aca88fe6a45ecb2bce617aec503b52bed5da7ed9"
+    sha256 arm64_ventura: "b1f76254ef5027a9f7b4975d78f978e08cb83fbabccf3f1c563b561ab894a27e"
+    sha256 sonoma:        "14dcca08d1cc8ec5c34bbb9fd652e67614fa300dcc4cc1764279021ebe4eb1d0"
+    sha256 ventura:       "7f46f4a0b3a3f652c98ad7ee92c0b7d12c32dd3ea35c990092f3194abc92940d"
+    sha256 arm64_linux:   "4d6e615acfb2490c76cf4489959c40fbcda944ed33ae983157a2cac241de6e6f"
+    sha256 x86_64_linux:  "9496dbfe1f33f6ee68f69692c979e083525425da1e3a8d220eab5d19f82e6a2b"
   end
 
   depends_on "cmake" => :build
   depends_on "nlohmann-json" => :build
-  depends_on "c-blosc"
+  depends_on "pybind11" => :build
+  depends_on "c-blosc2"
   depends_on "gcc" # for gfortran
   depends_on "libfabric"
   depends_on "libpng"
@@ -32,7 +34,6 @@ class Adios2 < Formula
   depends_on "numpy"
   depends_on "open-mpi"
   depends_on "pugixml"
-  depends_on "pybind11"
   depends_on "python@3.13"
   depends_on "sqlite"
   depends_on "yaml-cpp"
@@ -43,6 +44,8 @@ class Adios2 < Formula
 
   on_macos do
     depends_on "llvm" => :build if DevelopmentTools.clang_build_version == 1400
+    depends_on "lz4"
+    depends_on "zstd"
   end
 
   # clang: error: unable to execute command: Segmentation fault: 11
@@ -64,7 +67,7 @@ class Adios2 < Formula
     end
 
     args = %W[
-      -DADIOS2_USE_Blosc=ON
+      -DADIOS2_USE_Blosc2=ON
       -DADIOS2_USE_BZip2=ON
       -DADIOS2_USE_DataSpaces=OFF
       -DADIOS2_USE_Fortran=ON

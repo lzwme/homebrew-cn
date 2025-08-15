@@ -2,8 +2,8 @@ class GccAT12 < Formula
   desc "GNU compiler collection"
   homepage "https://gcc.gnu.org/"
   # TODO: Remove maximum_macos if Xcode 16 support is added to https://github.com/iains/gcc-12-branch
-  url "https://ftp.gnu.org/gnu/gcc/gcc-12.4.0/gcc-12.4.0.tar.xz"
-  mirror "https://ftpmirror.gnu.org/gcc/gcc-12.4.0/gcc-12.4.0.tar.xz"
+  url "https://ftpmirror.gnu.org/gnu/gcc/gcc-12.4.0/gcc-12.4.0.tar.xz"
+  mirror "https://ftp.gnu.org/gnu/gcc/gcc-12.4.0/gcc-12.4.0.tar.xz"
   sha256 "704f652604ccbccb14bdabf3478c9511c89788b12cb3bbffded37341916a9175"
   license "GPL-3.0-or-later" => { with: "GCC-exception-3.1" }
 

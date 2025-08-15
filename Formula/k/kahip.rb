@@ -7,27 +7,24 @@ class Kahip < Formula
   head "https://github.com/KaHIP/KaHIP.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "e35ec707621f77c3931c1ea5a1fc5391aca68b6b17ccd0c2a0939bdc55efd0b5"
-    sha256 cellar: :any,                 arm64_sonoma:  "70237608f0031ea32bc841583f0f2bd6541b68db482cd91b635b3cbf84375796"
-    sha256 cellar: :any,                 arm64_ventura: "b694039fe2f48ddc68966e89b6fbcbc09864eb2bcc3e88edcf38f9da66ccb74a"
-    sha256 cellar: :any,                 sonoma:        "8d60453b8a94e0ade7f3d3548bc557a0dfd81cead02ad90743fdea32e00ac510"
-    sha256 cellar: :any,                 ventura:       "0d3b5371c8287d213dfcb1b3414885dd7bd52e1736f6ac4f3c3c27f10468408b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "18f3208834cbc20617007ced155eaa640defb1a5a25f9f985226eff7d6278678"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "de4b05fc30581f8d2d30972c19d088a25980d69eaf81e657c0f54321a146add5"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "a603683f8c78a70bdb2211982cc1cf3d288b994703e6ef640cbd556d12e9f670"
+    sha256 cellar: :any,                 arm64_sonoma:  "7ccc9c3257e7796e87e8c6b7c7d7ed82a62a2838e328af5bd02ffdf2966dee45"
+    sha256 cellar: :any,                 arm64_ventura: "2d98c8b7c22d731f02b49513390e3fd660861b2f38549bf010790b05173c9ad7"
+    sha256 cellar: :any,                 sonoma:        "4ebe2ffacfa884b848c7e79e8859cb680b5d155cf791735471b346a9052831d5"
+    sha256 cellar: :any,                 ventura:       "55409fad4a79e0e3883a2b3ead8e50ec49d233d5a02791d1a53fce2c061943f3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fd117a91536bee09dd4e05a86ca6908a0eb3fa274c409ae192c544bfe177e02f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e35d6e4fa54607415e231985844a7d51404e72bc84fb3b48a51164e3faf16a18"
   end
 
   depends_on "cmake" => :build
   depends_on "open-mpi"
 
   on_macos do
-    depends_on "gcc"
+    depends_on "libomp"
   end
 
   conflicts_with "mcp-toolbox", because: "both install `toolbox` binaries"
-
-  fails_with :clang do
-    cause "needs OpenMP support"
-  end
 
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args

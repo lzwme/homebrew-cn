@@ -1,8 +1,8 @@
 class CodeCli < Formula
   desc "Command-line interface built-in Visual Studio Code"
   homepage "https://github.com/microsoft/vscode"
-  url "https://ghfast.top/https://github.com/microsoft/vscode/archive/refs/tags/1.103.0.tar.gz"
-  sha256 "1850417b24dd935e2e9423e1709834660e7c995c84d6a6e818bd1c102208623b"
+  url "https://ghfast.top/https://github.com/microsoft/vscode/archive/refs/tags/1.103.1.tar.gz"
+  sha256 "dbb53d6ab738a1a9fed17dd679b19ba394c681e461ae0ca961d0258436a700e6"
   license "MIT"
   head "https://github.com/microsoft/vscode.git", branch: "main"
 
@@ -12,13 +12,13 @@ class CodeCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "b3cb6f2f03a7bdea5f1f95b1e2607e6fa21d61c420c15de5dc83199623aa2464"
-    sha256 cellar: :any,                 arm64_sonoma:  "dd8fecea27ca4ed09ec0c05f0cc6b2ff2102a1187fc34c7129e611a3c8ff3a28"
-    sha256 cellar: :any,                 arm64_ventura: "2a815f47a3fedbbb4cebf1e30a525bebff7ea6165dd52377514af7cda203ee55"
-    sha256 cellar: :any,                 sonoma:        "1454602029553380358c80ef45638108aac65b0aabc39f3404310021ecf203fe"
-    sha256 cellar: :any,                 ventura:       "479fd062a8695aeee39e20e59cb7eee6f369632e08fff186eb7183459d00952c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8dccdf4edb9703dc37ba57785ce3024227db523d231aff387df6dfe0fd84b782"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a0ae78edb39398c1de5c78e53dcf22073e97c9a2527fea7fd8c734155f9fed00"
+    sha256 cellar: :any,                 arm64_sequoia: "1ce56fe1c1342bae8b6d41e6714124529cb2a89e3a1389716751ed0337e1b695"
+    sha256 cellar: :any,                 arm64_sonoma:  "bb0e5e1e6d817f74c476407daf7303fe96769d9568ee52883f1fb7021147cb0a"
+    sha256 cellar: :any,                 arm64_ventura: "2bbb95b323a5177f540937b8cef4666fba91035edf2be798587e385afc7c9798"
+    sha256 cellar: :any,                 sonoma:        "48b695b64a6738f51b9289b16e65b528a6c06c1e9280b25dfe94ac0e5892dd4e"
+    sha256 cellar: :any,                 ventura:       "17ad82f2b49ba17e7373d8abb670c74da174d7b48fa28554219dabd68d7b4f77"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "06541efe85fadf05a8c6f579dce61d4183155ff5c0c2ca41493dcfadcfb567e3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "907ec41da39214573e617d3d283f22b7dd073dd2893e7d23c413b77b7298b0b0"
   end
 
   depends_on "pkgconf" => :build
@@ -28,6 +28,9 @@ class CodeCli < Formula
   uses_from_macos "zlib"
 
   conflicts_with cask: "visual-studio-code"
+
+  # version patch, remove in next release
+  patch :DATA
 
   def install
     # Ensure that the `openssl` crate picks up the intended library.
@@ -61,3 +64,17 @@ class CodeCli < Formula
     end
   end
 end
+
+__END__
+diff --git a/package.json b/package.json
+index 865151c..25cfa7c 100644
+--- a/package.json
++++ b/package.json
+@@ -1,6 +1,6 @@
+ {
+   "name": "code-oss-dev",
+-  "version": "1.103.0",
++  "version": "1.103.1",
+   "distro": "5545a7bcc7ca289eee3a1bd8fff5d381f3811934",
+   "author": {
+     "name": "Microsoft Corporation"

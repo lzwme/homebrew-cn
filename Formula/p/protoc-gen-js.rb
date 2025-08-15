@@ -4,19 +4,19 @@ class ProtocGenJs < Formula
   url "https://ghfast.top/https://github.com/protocolbuffers/protobuf-javascript/archive/refs/tags/v3.21.4.tar.gz"
   sha256 "8cef92b4c803429af0c11c4090a76b6a931f82d21e0830760a17f9c6cb358150"
   license "BSD-3-Clause"
-  revision 10
+  revision 11
   head "https://github.com/protocolbuffers/protobuf-javascript.git", branch: "main"
 
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "4c9c06af42b6e81c93c88b58bcc647df32b9f9d4740433847a6c33fc7628225e"
-    sha256 cellar: :any,                 arm64_sonoma:  "6fea121f040d43177b130dae1b5c48eba95889127a52cc2395aa23bc007b21f5"
-    sha256 cellar: :any,                 arm64_ventura: "7cb9bbb25d1b7c1f82b9508a6627dada407cac36dd9896242da953183efda366"
-    sha256 cellar: :any,                 sonoma:        "b79e4b1499f0325cbdc38e64692c597b8022e08aae43ea50341b561127dd2d5a"
-    sha256 cellar: :any,                 ventura:       "6cae07a426c3754652806efec8bffde45cc048e40f42faed179c330cc7723f62"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "64be2f2b83996748afc0cf39f3cc0e1b8511355d19914511029fbc5d956773ce"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "72d468a6b652ad26d9b1d96abc6fbc5ec6b16abf42b216c2aae338552e0b1b4a"
+    sha256 cellar: :any,                 arm64_sequoia: "b658affe54eee085541fab58fb9d35cc6031bd7ca278db12d1a265fe276c4db8"
+    sha256 cellar: :any,                 arm64_sonoma:  "46a32c6d040ec75abf2b73b4a91b32c0f1d8ab4631f38fdc0ad96121d8a99395"
+    sha256 cellar: :any,                 arm64_ventura: "d2f5b55f2a50b3119ed1c30fb8b875158c8c9f0f692e62a35dc3b51c961c77f1"
+    sha256 cellar: :any,                 sonoma:        "0b3fa26ac4b56f11d3f7ec386650ea4b78c567dcffb60b2106cddb91de5315ac"
+    sha256 cellar: :any,                 ventura:       "758b80b0122a6e309414ecb5b266f8a926f5cba9e3fc57b5ce6a69a7b218f79e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3a67b73fe726911472fbb1da0c152a41e20758d71a0258fb311b94ebd99b80a5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2fe521ef2b217ccbb76949f515836d918671d8753d627d590287ea2880518876"
   end
 
   depends_on "pkgconf" => :build

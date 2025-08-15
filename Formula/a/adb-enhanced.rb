@@ -3,18 +3,18 @@ class AdbEnhanced < Formula
 
   desc "Swiss-army knife for Android testing and development"
   homepage "https://ashishb.net/tech/introducing-adb-enhanced-a-swiss-army-knife-for-android-development/"
-  url "https://files.pythonhosted.org/packages/c4/a5/9066bb8c0dd47025aafbb3388b87f68df02f2cf64a83933feee0b3c7c259/adb_enhanced-2.6.0.tar.gz"
-  sha256 "ead467df4e0e4fc964007c62b0b55801a5f158793bd551ec4b25154801fc3f5a"
+  url "https://files.pythonhosted.org/packages/d8/3e/0b9b4ba4f2c3318a7bc2d2cb859fe44ca49edd6b9e3b16d536986c9b53f3/adb_enhanced-2.7.0.tar.gz"
+  sha256 "ae88e21ebf4954ce4fcb10a97f7298004709579bb9ce4b4d0295172948b85170"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5acfb19069d8d153e2e299d880d17c94ebedf2aeddda6a11447978a615eb8a3f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "be8f29d3429a042f03692f57e5ba81d29274bb90d3b4dc5a5f4ba23a595d1e76"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "3b6d507e23a98bcf245172a6141eb5af9865f56ec5961c0b592f160c7267bea0"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7ac54642e1b66b5237cb6092b4e354407a5a2c8e58cc9a7fb9ecfdcc68e80f94"
-    sha256 cellar: :any_skip_relocation, ventura:       "f1c7d11dbaa3543c3265673c5e5920e61bcfe71d284419d2a60d39ebafd79c30"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d8fc53e7dcbc88fd7cfb3bfe50e5313ede172aeee9bde7f8408204f3f7aae6db"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a3a552e117835c2e8d9935f73c7fae1ad107bd298598ccf5d4f0a7bbc939270b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7599187138ae1d20665239394a74eca4d8f0a15d594a9682f12afe37e55a3ca2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9630c1747d1b9acae00b8cd810f02ad988c3409cf670231dedf05cca07e0eecc"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "3b611152bc62f009f3b50fd6d8c5d9c14919a78d78ee089ec6b45d3af5fa5857"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9289ef394c064f157b6940a404bc914c14bb882c349019193e3ca6b7ba178282"
+    sha256 cellar: :any_skip_relocation, ventura:       "e725608c44a14fabc6d195bb52f756762008f73eea647bf41b37ec07017457e6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "98ed748100ec82a81dd1c131a529c0ba3b15620a552ca9010e7826444f555aa4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "94db172517f1ff222944a13a331082e0a5c8c36f850f65b8c13a95f969bad851"
   end
 
   depends_on "python@3.13"

@@ -1,19 +1,19 @@
 class CargoDeny < Formula
   desc "Cargo plugin for linting your dependencies"
   homepage "https://github.com/EmbarkStudios/cargo-deny"
-  url "https://ghfast.top/https://github.com/EmbarkStudios/cargo-deny/archive/refs/tags/0.18.3.tar.gz"
-  sha256 "4d15dbd7cc653fcb53a21e42b0adaab6b501693c939b76e4a7683c04a4a689ad"
+  url "https://ghfast.top/https://github.com/EmbarkStudios/cargo-deny/archive/refs/tags/0.18.4.tar.gz"
+  sha256 "cd093a71d383988252428ebc08ee83f9db204e95074138264f9c8bd5fa06369a"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/EmbarkStudios/cargo-deny.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9fa4e65cf3c2ccb59c3cd81a0a24c0fe5b5899ae8944eb8727da068a8c6fb656"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1c00a1f08fa03638e78ba78bc7625ba313b3ca1e22639149c082eb0b73cf2bf5"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "836dd971390f2106344029e3f947536bfb5fb8d39a965bb64ceeca67248ddd70"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b8c75615712ca4ac9ce3dcfef2d5d56528ee62e1905f5445e31e97a5d642940a"
-    sha256 cellar: :any_skip_relocation, ventura:       "4cfd5cbef7f013b6e7a7e9fe7257e098049abbf3bb775f90a977df4e09a089e6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0fe53d784ad55fe89fd2f570750df6d8d1bf5b132102145536d9832813fbdf35"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a0e8efc03b6b230c4f921347914e5561c4a525d7eb5b4e79b3f6d503946f1031"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1e0eb8a678a77bd52d19aedd2380d9bc67dc6e74f05a051dc1411bddb07d08a0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fd56950cb034d5262a33f91e90930401f76ac520fd26923283b21cb71ea9fe5e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "531a170befab28df09df5a9bbba4a049209a7985bbf0ab549fc39a05622a0d8c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c6a1e32b79e97e896e1103725e9b4136b0f89e70dc34e9d73a11a8120e7f9e33"
+    sha256 cellar: :any_skip_relocation, ventura:       "3d724320f5b1e34ae2a862ad5505876f6ccd16686ae39f503aef02855ae867d8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ecc5071f3e441b1f537d943e7aa350e66af1fc11fd761f5f42e77d473c8b4e8d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0a05cdc9d8af08934616caaa18dd80f6a42e26ae4ab30b8260f14b830b136e75"
   end
 
   depends_on "pkgconf" => :build

@@ -1,18 +1,18 @@
 class Aide < Formula
   desc "File and directory integrity checker"
   homepage "https://aide.github.io/"
-  url "https://ghfast.top/https://github.com/aide/aide/releases/download/v0.19.1/aide-0.19.1.tar.gz"
-  sha256 "6df8bf5f0403d74af7dbdb91eb3c8f61fe07e964669db8cfa1ee7e4ee3e90b52"
+  url "https://ghfast.top/https://github.com/aide/aide/releases/download/v0.19.2/aide-0.19.2.tar.gz"
+  sha256 "23762b05f46111edeb3c8a05016c8731c01bdb8c1f91be48c156c31ab85e74c4"
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "1db9339d12955b3ee47cdabb14e9ab9618793c1f00989b92112d632400dea4b8"
-    sha256 cellar: :any,                 arm64_sonoma:  "90faecbf9e722f1b526ffd770e144c50d7c2a627b2d34e2ac351b6bf97356a56"
-    sha256 cellar: :any,                 arm64_ventura: "9c726e4acc2fbf41293be8761304e5a92321a182a3ecd4d6c4792179dc6284e1"
-    sha256 cellar: :any,                 sonoma:        "256693094f624cde2defe05edfb2adecdedde9d64a35136dd67baacab36e515a"
-    sha256 cellar: :any,                 ventura:       "8da099fd2d74b0283a7f1ba7afbc3da8c60b5a7fcd3918f852c66a74d72e54a7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ff9042ed674c80d241ee8cd8db10b0a95bd8b60d92ea98993472f3a36eb555cd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "50c31d78bffbbbf5af4d9b88028534d9cec1c2e46d4f9c4f89ed6e592c6bc883"
+    sha256 cellar: :any,                 arm64_sequoia: "9e5b60be5b1430a10b7c986292bfec5197b6c7af149ee8c599cec7c65309d264"
+    sha256 cellar: :any,                 arm64_sonoma:  "7806be9d00e0f7692ed878edae17173fad9b008501c611b48d0abb0c05055274"
+    sha256 cellar: :any,                 arm64_ventura: "4ce4a584208aec836c39a954a59970511898e3cb67db66a0054be1a52f7137cf"
+    sha256 cellar: :any,                 sonoma:        "ca382368cb70c1d567c2b9d61394f3f27db967b4e86ce570fa4d06f1d66c2d3b"
+    sha256 cellar: :any,                 ventura:       "7a15c93adff7e9a842966ab65b253d3dbcc2e7a30f54d20971e55f54aaab29a7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d3da22175d632c8fbbfc6ba3b7ea851c15ebcb7628d31830f8923cf063acb861"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "886b88eb65a9e7affb0b9f504e45f72bbbbeaefeef112d77a0eb0fbc6c2d55db"
   end
 
   head do

@@ -1,19 +1,19 @@
 class Dra < Formula
   desc "Command-line tool to download release assets from GitHub"
   homepage "https://github.com/devmatteini/dra"
-  url "https://ghfast.top/https://github.com/devmatteini/dra/archive/refs/tags/0.8.2.tar.gz"
-  sha256 "5766c57a0e105d9f86aece2b561d59c81fe22d22eb0c9d7cf1c9992b87b2338b"
+  url "https://ghfast.top/https://github.com/devmatteini/dra/archive/refs/tags/0.9.0.tar.gz"
+  sha256 "4fd9b49943ef916c88b6bcac5281060c99d73963c1e038eba4388064791eebc7"
   license "MIT"
   head "https://github.com/devmatteini/dra.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "db4e0a18693fb1805da7d9568dbfd43f446b5568a9af969d38480349a883de24"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e43f85a62dfadf61847482bb653570f03653ec576f2c8edc4517235d619a7504"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "11243acff417ea800cc9ef567fb81c79f9193e912523b7afb6d2047b920ae75c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ed9dd4a0bad66bc96b697a4ebeb3df27d4a5275134968c12873001813b238f0b"
-    sha256 cellar: :any_skip_relocation, ventura:       "b683ccde18838772976f1f7fd4751bb138adc45fd939e0ac5f488db5aedcb13b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f94fdae107783b368d609efef6dec025eae5836a864cf97af7cd5c416275fbb6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "107c784b4b81441bc850994825e806b104a50a8262c61ecd3bdd2d915d1e16bc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dc940179266e2d5afb1a005ecd360268ef27d451f5cb39620e37ba3f23083aab"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "31c17c40f98d9df20e7ff76006b997822ec9beb3c56788b43414a775b5f95842"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "3a2f93295eb73500bed65298d844ee5a7e2b6a39731df672ec00d3cd42cdb7af"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5eaec72c0d3f6138832c52884f6ff0d426c05734962eb18d3a193852831f669a"
+    sha256 cellar: :any_skip_relocation, ventura:       "5c377bf68d5fe5dbff55e9992173b405bca9a9c4d3b420d4a8363d347003ad77"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d32510543cb1d0ac627e8bb48c75166ea341564ac2f344fe3bfe6351442e0137"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4b875e887e2069cb92a2c2e0aa04ce4b07014e4b3ebf186c813a6f910a2cba7f"
   end
 
   depends_on "rust" => :build

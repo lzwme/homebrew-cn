@@ -3,27 +3,27 @@ class Pdm < Formula
 
   desc "Modern Python package and dependency manager supporting the latest PEP standards"
   homepage "https://pdm-project.org"
-  url "https://files.pythonhosted.org/packages/76/1a/01df081e0d17644c49d7968a5f8d22d6e080be09b54507107ac94be1dfc1/pdm-2.25.5.tar.gz"
-  sha256 "063fa211dd6b062d3ca87b722e4010b802093d8b437486bfcf07ced802c544ea"
+  url "https://files.pythonhosted.org/packages/e6/c2/ebcd3062be915f67dd6aa6e30fc247120e6f9acc9b6cf7468bb52fdbd219/pdm-2.25.6.tar.gz"
+  sha256 "46693c26dde87bdeffecf18eb852ea55434c9b6b2aec42edef237f4ac595763c"
   license "MIT"
   head "https://github.com/pdm-project/pdm.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9c72b975281c4531f29d9141cda163c551175bfef436081e228414feb4204ea1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9c72b975281c4531f29d9141cda163c551175bfef436081e228414feb4204ea1"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "9c72b975281c4531f29d9141cda163c551175bfef436081e228414feb4204ea1"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c969a7fe8bb77acb682112c12f020275ee990e82245cf41568f0083a3c6877fc"
-    sha256 cellar: :any_skip_relocation, ventura:       "c969a7fe8bb77acb682112c12f020275ee990e82245cf41568f0083a3c6877fc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5e76c4698f8b4cc37825cd1b30fcc3ea82b52777ce1dd248c8b24f7156ea163a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5e76c4698f8b4cc37825cd1b30fcc3ea82b52777ce1dd248c8b24f7156ea163a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8bb925636e2b909c9d3bb5146b09ca32cad5f3a5540a70a45d7489c36974ee43"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8bb925636e2b909c9d3bb5146b09ca32cad5f3a5540a70a45d7489c36974ee43"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "8bb925636e2b909c9d3bb5146b09ca32cad5f3a5540a70a45d7489c36974ee43"
+    sha256 cellar: :any_skip_relocation, sonoma:        "fe61b0db4add157b772508fab0930e585423f6e24ad589afe774bbd2940f9249"
+    sha256 cellar: :any_skip_relocation, ventura:       "fe61b0db4add157b772508fab0930e585423f6e24ad589afe774bbd2940f9249"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fe61b0db4add157b772508fab0930e585423f6e24ad589afe774bbd2940f9249"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fe61b0db4add157b772508fab0930e585423f6e24ad589afe774bbd2940f9249"
   end
 
   depends_on "certifi"
   depends_on "python@3.13"
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/95/7d/4c1bd541d4dffa1b52bd83fb8527089e097a106fc90b467a7313b105f840/anyio-4.9.0.tar.gz"
-    sha256 "673c0c244e15788651a4ff38710fea9675823028a6f08a5eda409e0c9840a028"
+    url "https://files.pythonhosted.org/packages/f1/b4/636b3b65173d3ce9a38ef5f0522789614e590dab6a8d505340a4efe4c567/anyio-4.10.0.tar.gz"
+    sha256 "3f3fae35c96039744587aa5b8371e7e8e603c0702999535961dd336026973ba6"
   end
 
   resource "blinker" do
@@ -32,13 +32,13 @@ class Pdm < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/e4/33/89c2ced2b67d1c2a61c19c6751aa8902d46ce3dacb23600a283619f5a12d/charset_normalizer-3.4.2.tar.gz"
-    sha256 "5baececa9ecba31eff645232d59845c07aa030f0c81ee70184a90d35099a0e63"
+    url "https://files.pythonhosted.org/packages/83/2d/5fd176ceb9b2fc619e63405525573493ca23441330fcdaee6bef9460e924/charset_normalizer-3.4.3.tar.gz"
+    sha256 "6fce4b8500244f6fcb71465d4a4930d132ba9ab8e71a7859e6a5d59851068d14"
   end
 
   resource "dep-logic" do
-    url "https://files.pythonhosted.org/packages/4d/f8/42361c2360a1dcf3a2cca0779fc2fe678077812076de4aefe806ddae5ede/dep_logic-0.5.1.tar.gz"
-    sha256 "cfd10877277d3cbb6e66fd48f316ba6c284701af0e67d52eaaf10275753354a7"
+    url "https://files.pythonhosted.org/packages/d8/00/93a90a4ce514e63a181486c6408ea50e8cdf7cdb73ab5580a6f7f5e5a496/dep_logic-0.5.2.tar.gz"
+    sha256 "f8dc4a74d1bad0d35a45c236572cf5d6534b5c2e84de87f2a354c849eec7e562"
   end
 
   resource "distlib" do
@@ -92,8 +92,8 @@ class Pdm < Formula
   end
 
   resource "markdown-it-py" do
-    url "https://files.pythonhosted.org/packages/38/71/3b932df36c1a044d397a1f92d1cf91ee0a503d91e470cbd670aa66b07ed0/markdown-it-py-3.0.0.tar.gz"
-    sha256 "e3f60a94fa066dc52ec76661e37c851cb232d92f9886b15cb560aaada2df8feb"
+    url "https://files.pythonhosted.org/packages/5b/f5/4ec618ed16cc4f8fb3b701563655a69816155e79e24a17b651541804721d/markdown_it_py-4.0.0.tar.gz"
+    sha256 "cb0a2b4aa34f932c007117b194e945bd74e0ec24133ceb5bac59009cda1cb9f3"
   end
 
   resource "mdurl" do
@@ -107,8 +107,8 @@ class Pdm < Formula
   end
 
   resource "pbs-installer" do
-    url "https://files.pythonhosted.org/packages/a2/fa/cc15ff1d8bb595af5b4115ebe334a6b90058e5b7864bca6300e6affb06e2/pbs_installer-2025.7.23.tar.gz"
-    sha256 "0dcf3038b4d04f9b41c4f80fc43ac05de34c0bf949580308a6894836a0340752"
+    url "https://files.pythonhosted.org/packages/83/0d/b4d124a075f187a7f5a91678ecab8db2464c6d633b839c8d89b6cf91942e/pbs_installer-2025.8.8.tar.gz"
+    sha256 "3b2a7703dd253c718ee201e801040208591ae35b338107761fbcdc1aa7543a86"
   end
 
   resource "platformdirs" do
@@ -167,8 +167,8 @@ class Pdm < Formula
   end
 
   resource "truststore" do
-    url "https://files.pythonhosted.org/packages/5a/19/d90d35e584f58bac270beee003dd93b664335c0b9074b03b8604c6ea36ec/truststore-0.10.3.tar.gz"
-    sha256 "16ff5f6faf692acca470f9b92e66b4c0faccb9b702d0b0486d3d465932b6b3b1"
+    url "https://files.pythonhosted.org/packages/53/a3/1585216310e344e8102c22482f6060c7a6ea0322b63e026372e6dcefcfd6/truststore-0.10.4.tar.gz"
+    sha256 "9d91bd436463ad5e4ee4aba766628dd6cd7010cf3e2461756b3303710eebc301"
   end
 
   resource "unearth" do
@@ -182,8 +182,8 @@ class Pdm < Formula
   end
 
   resource "virtualenv" do
-    url "https://files.pythonhosted.org/packages/a9/96/0834f30fa08dca3738614e6a9d42752b6420ee94e58971d702118f7cfd30/virtualenv-20.32.0.tar.gz"
-    sha256 "886bf75cadfdc964674e6e33eb74d787dff31ca314ceace03ca5810620f4ecf0"
+    url "https://files.pythonhosted.org/packages/1c/14/37fcdba2808a6c615681cd216fecae00413c9dab44fb2e57805ecf3eaee3/virtualenv-20.34.0.tar.gz"
+    sha256 "44815b2c9dee7ed86e387b842a84f20b93f7f417f95886ca1996a72a4138eb1a"
   end
 
   def install

@@ -1,7 +1,7 @@
 class X8664ElfGrub < Formula
   desc "GNU GRUB bootloader for x86_64-elf"
   homepage "https://savannah.gnu.org/projects/grub"
-  url "https://ftp.gnu.org/gnu/grub/grub-2.12.tar.xz"
+  url "https://ftpmirror.gnu.org/gnu/grub/grub-2.12.tar.xz"
   mirror "https://mirrors.ocf.berkeley.edu/gnu/grub/grub-2.12.tar.xz"
   sha256 "f3c97391f7c4eaa677a78e090c7e97e6dc47b16f655f04683ebd37bef7fe0faa"
   license "GPL-3.0-or-later"
@@ -35,7 +35,7 @@ class X8664ElfGrub < Formula
   uses_from_macos "python" => :build
 
   resource "unifont" do
-    url "https://ftp.gnu.org/gnu/unifont/unifont-16.0.02/unifont-16.0.02.pcf.gz", using: :nounzip
+    url "https://ftpmirror.gnu.org/gnu/unifont/unifont-16.0.02/unifont-16.0.02.pcf.gz", using: :nounzip
     mirror "https://mirrors.ocf.berkeley.edu/gnu/unifont/unifont-16.0.02/unifont-16.0.02.pcf.gz"
     version "16.0.02"
     sha256 "02a3fe11994d3cdaf1d4bd5d2b6b609735e6823e01764ae83b704e02ec2f640d"

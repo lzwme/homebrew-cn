@@ -30,10 +30,7 @@ class SuiteSparse < Formula
   depends_on "cmake" => :build
   depends_on "gcc" # for gfortran
   depends_on "gmp"
-  depends_on "metis"
   depends_on "mpfr"
-
-  uses_from_macos "m4"
 
   on_macos do
     depends_on "libomp"

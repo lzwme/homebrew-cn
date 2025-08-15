@@ -12,6 +12,7 @@ class Mlt < Formula
     sha256 arm64_ventura: "91dfe2c14776ff0b35b86a21d640a1ed0b98106efc902ee9c7e01f5c35c8233d"
     sha256 sonoma:        "4f75a656084f7e363edb078a600825a9c216807bbdb8af5248e146eaea570492"
     sha256 ventura:       "124694ec271746f2b4c9272de0a4f1497b48f522952e9484e5564e78822ead88"
+    sha256 x86_64_linux:  "62b50debe485ac93de71e5ccec832ea0af35b21f62c0a2a62a6f5d10d9ccf472"
   end
 
   depends_on "cmake" => :build

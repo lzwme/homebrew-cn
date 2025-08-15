@@ -5,16 +5,16 @@ class Libpulsar < Formula
   mirror "https://archive.apache.org/dist/pulsar/pulsar-client-cpp-3.7.2/apache-pulsar-client-cpp-3.7.2.tar.gz"
   sha256 "e4eee34cfa3d5838c08f20ac70f5b28239cb137bb59c75199f809141070620dd"
   license "Apache-2.0"
-  revision 1
+  revision 2
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "7470a072222eab22c316fb2ecefd7476f14e97a7bb6e600b59f79d12da7d7a0f"
-    sha256 cellar: :any,                 arm64_sonoma:  "e32fe7d97dfea8cfa54b84d463a577342653b20db28b60d28626cd76f4c92491"
-    sha256 cellar: :any,                 arm64_ventura: "ea64a5256f5120a830ed6179a7971037f51e7c8efa03cea0d6ecd38f560477cb"
-    sha256 cellar: :any,                 sonoma:        "a022dd229f164f1494bed226e95955b0362c1e175346084eb4810c10167b85f7"
-    sha256 cellar: :any,                 ventura:       "07fd5eac1bf134adf5fb49108bb6223919f022dc05a4ced8c504d35a65a2ee1c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1a01dd49404957743f1094f2eda723b758912bd379a2377022e35f121a952ed0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ccd0e28b6282ca3545ec237d3bbb7078eec863ce1a798ddacbe3a72c5d5de74b"
+    sha256 cellar: :any,                 arm64_sequoia: "080993ea0c4f59d5ebb6a4c1d5a18f8266f558cbd5315b7a8556659e89f27d50"
+    sha256 cellar: :any,                 arm64_sonoma:  "371875a22cd56bb7bd1554641acd73cc27ce667c6f1bda10570cba6ca2d317bf"
+    sha256 cellar: :any,                 arm64_ventura: "1601e945c536d8a53afa86ad2ee29710f9d477c790b3a2dc768d36042d32c3d6"
+    sha256 cellar: :any,                 sonoma:        "197b8ff5a595f98ad735fc3622a702d42512c8e46dd0fb688711c69a7a40a07b"
+    sha256 cellar: :any,                 ventura:       "9c6d2f850d2204ea25f0e35ed0c6f53488d2068cdd7e33cb121eb9873a9c062b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "886699c29db597b3c2ffedb2d3f72421eab1bc09611cfbb67f2dbf1ff3750c1a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2e762bc7124b3b1fbaecf582eced07298f206f94c4e38b54c22d6c21dacfc9a2"
   end
 
   depends_on "boost" => :build

@@ -1,19 +1,19 @@
 class Sendme < Formula
   desc "Tool to send files and directories, based on iroh"
   homepage "https://iroh.computer/sendme"
-  url "https://ghfast.top/https://github.com/n0-computer/sendme/archive/refs/tags/v0.26.0.tar.gz"
-  sha256 "d41bd166e08b611d993e4bdf01c66610406fe93338783fe9a310eaf726fc337f"
+  url "https://ghfast.top/https://github.com/n0-computer/sendme/archive/refs/tags/v0.27.0.tar.gz"
+  sha256 "1afbc67d504ba595f5b1af42ced07dc64ba3db28addc00ff118a695b4619caf5"
   license "MIT"
   head "https://github.com/n0-computer/sendme.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b8e9e14ec2f39f461b899a8d6c0dedfaee493b49674c40ef11d3a1f5f42f58de"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9670e36e17de672428e0894f4545f1974db38c17615e533c3e508d56f6f4d43c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "70fbf950de08c9d17d5499da8fafb68208523331bc988b84112f2fa3ce8309ac"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b7bd3d3efda5aae5d52b9985325dd8892611349f9258a773e058bd661b75e58f"
-    sha256 cellar: :any_skip_relocation, ventura:       "036983cc3a388d0aed8096a078b42f39f98e3199309fac245057e554dfbc1405"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fb83096740b4615fb2a41d62536a6625d342db45bf85e1df35a3ae7a8de320ff"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c26cea22df1f133fda1526b2807ba8c08df227f85de2f5597d237977b176fc7b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "06772217803a81c60c25c74a1adf49b1c2e29417cf64fb444718fcfd74c0396d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "acfffa18736c279287a5e6b014447deb3220f0ec1f5c98c88b229b62c70b8e88"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "0dd5c057bbe34a7c767523cd4140978e295e8e3284559762079b19439ae3a5e3"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ee3d2666c6a5df0d95d529213b38f140ec5a15e3d3df60cd5bc82d57f8b64ac9"
+    sha256 cellar: :any_skip_relocation, ventura:       "3293e722dc294d1ec48e5c4c2978ed4a7e381a5375d08d04c146c6e23550081c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "22907543028dae17f8cac3c5b8921d3f72baf2aecb0e761cc552117bc4c2c0a6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b2bb15b04c888b9cdbb1f46cc8263078185facc753ee04f6a0337f0dfdbb2248"
   end
 
   depends_on "rust" => :build
@@ -28,7 +28,7 @@ class Sendme < Formula
     begin
       output_log = testpath/"output.log"
       pid = spawn bin/"sendme", "send", bin/"sendme", [:out, :err] => output_log.to_s
-      sleep 2
+      sleep 4
       assert_match "imported file #{bin}/sendme", output_log.read
       assert_match "to get this data, use\nsendme receive", output_log.read
     ensure

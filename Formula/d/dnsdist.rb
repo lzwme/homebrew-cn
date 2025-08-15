@@ -6,7 +6,7 @@ class Dnsdist < Formula
   url "https://downloads.powerdns.com/releases/dnsdist-2.0.0.tar.xz"
   sha256 "da30742f51aac8be7e116677cb07bc49fbea979fc5443e7e1fa8fa7bd0a63fe5"
   license "GPL-2.0-only"
-  revision 1
+  revision 2
 
   livecheck do
     url "https://downloads.powerdns.com/releases/"
@@ -14,13 +14,13 @@ class Dnsdist < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "549e116718c27d07ffb8d00d5138e45110cae374de43f615ed0322cd6495c506"
-    sha256 arm64_sonoma:  "614ac0e1438d0707222baef61aa8f83f6d899a56c92f77aab40e333c464045bd"
-    sha256 arm64_ventura: "71b057935b01cf25ac05f2192504653ee8ccaf82e54993841d46c4f95e3b4dd2"
-    sha256 sonoma:        "7008a2ea70705c1b10546be6bb645daa59a7263027c5c4c428aa6ccab357e042"
-    sha256 ventura:       "804761f93f806a4c44dcbd949fd859849a64ee66c090b3f6065120135615b347"
-    sha256 arm64_linux:   "f57cfdf0a178bee76eaf589be5a64b08fc49ebb574927a788f10c849e26107b6"
-    sha256 x86_64_linux:  "cdad96712f12c21c250322ef9769a3cae512d316ad901b7bf2d383941ec6ca18"
+    sha256 arm64_sequoia: "72919ebaabf0290c909f9901d56ccd37bb9661a9cfda82967a874cf8b7b6af8f"
+    sha256 arm64_sonoma:  "39379adeb72ac1522b8a6c456d2497fecfd528eb08b796f9968b132d9dc5f887"
+    sha256 arm64_ventura: "d1c0d423fa610920130926580bdb437fbda61d2ddcec3f14a82dd12f3c2ba06d"
+    sha256 sonoma:        "bd7dedda1a582a7b6061bf4cb9788402501f690eaf3ee74555574dc2fabe9de1"
+    sha256 ventura:       "089f356c031a8aeae5ccb678559245d9f36cafe3ca5ac8ed2d531cea37c5f854"
+    sha256 arm64_linux:   "3fc87dd3aec3d08e45faa1d19a0f7606b019ac6754fcc0518b181f987be30902"
+    sha256 x86_64_linux:  "b5b9a5bb8b13b350d2bc7ebda6e6632341ec17fb8ba4d8ddd98cc1c3cbae506f"
   end
 
   depends_on "boost" => :build

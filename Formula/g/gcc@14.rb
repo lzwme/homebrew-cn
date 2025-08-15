@@ -1,8 +1,8 @@
 class GccAT14 < Formula
   desc "GNU compiler collection"
   homepage "https://gcc.gnu.org/"
-  url "https://ftp.gnu.org/gnu/gcc/gcc-14.3.0/gcc-14.3.0.tar.xz"
-  mirror "https://ftpmirror.gnu.org/gcc/gcc-14.3.0/gcc-14.3.0.tar.xz"
+  url "https://ftpmirror.gnu.org/gnu/gcc/gcc-14.3.0/gcc-14.3.0.tar.xz"
+  mirror "https://ftp.gnu.org/gnu/gcc/gcc-14.3.0/gcc-14.3.0.tar.xz"
   sha256 "e0dc77297625631ac8e50fa92fffefe899a4eb702592da5c32ef04e2293aca3a"
   license "GPL-3.0-or-later" => { with: "GCC-exception-3.1" }
 

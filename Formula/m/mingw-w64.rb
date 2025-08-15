@@ -34,14 +34,14 @@ class MingwW64 < Formula
   uses_from_macos "zlib"
 
   resource "binutils" do
-    url "https://ftp.gnu.org/gnu/binutils/binutils-2.44.tar.bz2"
-    mirror "https://ftpmirror.gnu.org/binutils/binutils-2.44.tar.bz2"
+    url "https://ftpmirror.gnu.org/gnu/binutils/binutils-2.44.tar.bz2"
+    mirror "https://ftp.gnu.org/gnu/binutils/binutils-2.44.tar.bz2"
     sha256 "f66390a661faa117d00fab2e79cf2dc9d097b42cc296bf3f8677d1e7b452dc3a"
   end
 
   resource "gcc" do
-    url "https://ftp.gnu.org/gnu/gcc/gcc-15.1.0/gcc-15.1.0.tar.xz"
-    mirror "https://ftpmirror.gnu.org/gcc/gcc-15.1.0/gcc-15.1.0.tar.xz"
+    url "https://ftpmirror.gnu.org/gnu/gcc/gcc-15.1.0/gcc-15.1.0.tar.xz"
+    mirror "https://ftp.gnu.org/gnu/gcc/gcc-15.1.0/gcc-15.1.0.tar.xz"
     sha256 "e2b09ec21660f01fecffb715e0120265216943f038d0e48a9868713e54f06cea"
   end
 

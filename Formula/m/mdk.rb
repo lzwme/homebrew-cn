@@ -1,8 +1,8 @@
 class Mdk < Formula
   desc "GNU MIX development kit"
   homepage "https://www.gnu.org/software/mdk/mdk.html"
-  url "https://ftp.gnu.org/gnu/mdk/v1.3.0/mdk-1.3.0.tar.gz"
-  mirror "https://ftpmirror.gnu.org/mdk/v1.3.0/mdk-1.3.0.tar.gz"
+  url "https://ftpmirror.gnu.org/gnu/mdk/v1.3.0/mdk-1.3.0.tar.gz"
+  mirror "https://ftp.gnu.org/gnu/mdk/v1.3.0/mdk-1.3.0.tar.gz"
   sha256 "8b1e5dd7f47b738cb966ef717be92a501494d9ba6d87038f09e8fa29101b132e"
   license "GPL-3.0-or-later"
   revision 1

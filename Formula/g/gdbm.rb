@@ -1,8 +1,8 @@
 class Gdbm < Formula
   desc "GNU database manager"
   homepage "https://www.gnu.org.ua/software/gdbm/"
-  url "https://ftp.gnu.org/gnu/gdbm/gdbm-1.26.tar.gz"
-  mirror "https://ftpmirror.gnu.org/gdbm/gdbm-1.26.tar.gz"
+  url "https://ftpmirror.gnu.org/gnu/gdbm/gdbm-1.26.tar.gz"
+  mirror "https://ftp.gnu.org/gnu/gdbm/gdbm-1.26.tar.gz"
   sha256 "6a24504a14de4a744103dcb936be976df6fbe88ccff26065e54c1c47946f4a5e"
   license "GPL-3.0-or-later"
 

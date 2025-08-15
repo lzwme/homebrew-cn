@@ -1,8 +1,8 @@
 class Datamash < Formula
   desc "Tool to perform numerical, textual & statistical operations"
   homepage "https://www.gnu.org/software/datamash/"
-  url "https://ftp.gnu.org/gnu/datamash/datamash-1.9.tar.gz"
-  mirror "https://ftpmirror.gnu.org/datamash/datamash-1.9.tar.gz"
+  url "https://ftpmirror.gnu.org/gnu/datamash/datamash-1.9.tar.gz"
+  mirror "https://ftp.gnu.org/gnu/datamash/datamash-1.9.tar.gz"
   sha256 "f382ebda03650dd679161f758f9c0a6cc9293213438d4a77a8eda325aacb87d2"
   license "GPL-3.0-or-later"
 

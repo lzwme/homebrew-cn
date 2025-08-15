@@ -1,18 +1,18 @@
 class Prs < Formula
   desc "Secure, fast & convenient password manager CLI with GPG & git sync"
   homepage "https://timvisee.com/projects/prs"
-  url "https://ghfast.top/https://github.com/timvisee/prs/archive/refs/tags/v0.5.2.tar.gz"
-  sha256 "9d1635ca4c9e916d9c59e05e792f0bdcf249488d63b615d30660a5c8371ab3b0"
+  url "https://ghfast.top/https://github.com/timvisee/prs/archive/refs/tags/v0.5.3.tar.gz"
+  sha256 "17ae3b528dd604976f7bd17918628a3c9aee4990c0b012e8f2caf69f6db45015"
   license "GPL-3.0-only"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bc1d09e088e2321644ccede82abc199cf7ce4531d5a251818bc7655a05b08690"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6fdd9e3be383c66234f0fbc89fa824712756fee672bba0d6a7b0aecb4b58747f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "b651bcae0d249232460b03fab22c239a319f977169996197098fb082509685f9"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7b4d56aa801a5b49c63aa220dd73642847cc2469c25776a1e11e91113d8be776"
-    sha256 cellar: :any_skip_relocation, ventura:       "ffd6725497618bb411cb83db32edefe40e6a70260b1cde0801fbb4b45ec4f428"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b65df02f12c0b730c212b28b88e3c00f0801981e7069bbccb4ce21befee38181"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a7d2a746d0612f19d99b13216ecbb08dc5fd06fe1e7ff6a9d1690becdba707ec"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b48e225f14e9e784741ef813bb3a97880550567669928ace7415aec15113b477"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e23cb6eea4dfe13e346bb4101136a25137992f3f43d8e634011bc64f2dc18695"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "0ba94e3daf380dc18ea2f0545462455e9b560dc92c0c7ab600db30ab26f48b53"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b8c980b33c6b8eb983400ea39a13530d50aa4a60ca5c38103afcd2eb4498124c"
+    sha256 cellar: :any_skip_relocation, ventura:       "e4c8240162779c624311a3279ff7d86e26fe6dd828e10ee74c1f15a908198488"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "86b757c282b1e90d7cc4b472292a3a5a86cc95161dcfbe57fca7ed0a4d728d5f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d2755e0748612c12fd2b95a4af69a2959ccf4e46d0dac23b2b8c083f12d1020f"
   end
 
   depends_on "pkgconf" => :build

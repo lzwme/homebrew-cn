@@ -4,16 +4,17 @@ class Mfem < Formula
   url "https://ghfast.top/https://github.com/mfem/mfem/archive/refs/tags/v4.8.tar.gz"
   sha256 "65472f732d273832c64b2c39460649dd862df674222c71bfa82cf2da76705052"
   license "BSD-3-Clause"
+  revision 1
   head "https://github.com/mfem/mfem.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3e9c3599701802b5f1fe3c2e8fcd933dbec04f03adc247b1f2e438545dac1e4c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "66b1e7f21b8baa4524495b5fdd9418081f0db55d935697164e486ed0a730eb1a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "8e1de7199a836c46ec439fc0f1d5617cfa2f760407c1c24ae87cd9a488c64367"
-    sha256 cellar: :any_skip_relocation, sonoma:        "89e928432924db722ffdf9662d6603529879e1c0772b5b732eae23da819abf56"
-    sha256 cellar: :any_skip_relocation, ventura:       "1e43c80cef99645d02450848774f812ba9978f72302b4eaa1c96d0adadf25a55"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fd00cc4e92a1d4565fd1014d93d1fbff1405e381e7e308f9737cbfe05cdd7650"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c35e1927d2e7ebe08eab48bfe60551a05d4138b1d89d743269216ea304664674"
+    sha256 cellar: :any,                 arm64_sequoia: "bb5a4a26df2514afdc22b0c2c113972977f69d08f215a9cd76061bcdf4f54458"
+    sha256 cellar: :any,                 arm64_sonoma:  "277537e5f261f748b80b10694d879edee4f466630910010d19845ce9f026e9d0"
+    sha256 cellar: :any,                 arm64_ventura: "4e70d2abd91e5f0bbebe67e57a7c100090372520430923d8a9ce88c6b3ff9b0b"
+    sha256 cellar: :any,                 sonoma:        "b96357702ef792b1efab68780c3f817b7f3e94e455e3ee3d023968386f9cf430"
+    sha256 cellar: :any,                 ventura:       "478f94973d73e5d051867e087e08ea8131c1bcc5833aeb0122f3317eaeecc896"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f82f2ce00bdca773da25b025a96d5c7a18f857f182c9c0b0a5180500134c0883"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dd773f4de9a8d70d6c53073032adb139af3873659c56d49af7a43b16b65bb709"
   end
 
   depends_on "cmake" => :build
@@ -31,6 +32,7 @@ class Mfem < Formula
     inreplace "config/config.mk.in", "@MFEM_HOST_CXX@", ENV.cxx
 
     args = [
+      "-DBUILD_SHARED_LIBS=ON",
       "-DCMAKE_INSTALL_RPATH=#{rpath}",
       "-DMFEM_USE_MPI=YES",
       "-DMFEM_USE_METIS_5=YES",

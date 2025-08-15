@@ -1,8 +1,8 @@
 class Guile < Formula
   desc "GNU Ubiquitous Intelligent Language for Extensions"
   homepage "https://www.gnu.org/software/guile/"
-  url "https://ftp.gnu.org/gnu/guile/guile-3.0.10.tar.xz"
-  mirror "https://ftpmirror.gnu.org/guile/guile-3.0.10.tar.xz"
+  url "https://ftpmirror.gnu.org/gnu/guile/guile-3.0.10.tar.xz"
+  mirror "https://ftp.gnu.org/gnu/guile/guile-3.0.10.tar.xz"
   sha256 "bd7168517fd526333446d4f7ab816527925634094fbd37322e17e2b8d8e76388"
   license "LGPL-3.0-or-later"
 

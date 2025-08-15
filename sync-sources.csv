@@ -2009,6 +2009,7 @@ Homebrew-homebrew-core/Formula/f/flawfinder.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/flawz.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fleet-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/flex.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/f/flexget.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/flexiblas.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/flickcurl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/flif.rb, Homebrew/homebrew-core, 1
@@ -5519,7 +5520,7 @@ Homebrew-homebrew-core/Formula/p/precious.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/precomp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/preevy.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/prefixsuffix.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/p/prefligit.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/p/prek.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/premake.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/presenterm.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/prestd.rb, Homebrew/homebrew-core, 1
@@ -9159,6 +9160,7 @@ Homebrew-homebrew-cask/Casks/f/ferdium.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/f/fertigt-slate.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/f/fetch-app.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/ff-works.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/f/fido2-manage.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/fig.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/fightcade.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/figma-agent.rb, Homebrew/homebrew-cask, 0
@@ -14274,6 +14276,7 @@ Homebrew-homebrew-cask/Casks/s/slack-cli.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/slack.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/slack@beta.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/sleek-app.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/s/sleep-aid.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/sleipnir.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/slic3r.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/slicer.rb, Homebrew/homebrew-cask, 0

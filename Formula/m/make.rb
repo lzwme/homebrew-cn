@@ -1,8 +1,8 @@
 class Make < Formula
   desc "Utility for directing compilation"
   homepage "https://www.gnu.org/software/make/"
-  url "https://ftp.gnu.org/gnu/make/make-4.4.1.tar.lz"
-  mirror "https://ftpmirror.gnu.org/make/make-4.4.1.tar.lz"
+  url "https://ftpmirror.gnu.org/gnu/make/make-4.4.1.tar.lz"
+  mirror "https://ftp.gnu.org/gnu/make/make-4.4.1.tar.lz"
   sha256 "8814ba072182b605d156d7589c19a43b89fc58ea479b9355146160946f8cf6e9"
   license "GPL-3.0-only"
 

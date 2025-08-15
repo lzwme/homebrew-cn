@@ -3,8 +3,8 @@ class Getmail6 < Formula
 
   desc "Extensible mail retrieval system with POP3, IMAP4, SSL support"
   homepage "https://getmail6.org/"
-  url "https://ghfast.top/https://github.com/getmail6/getmail6/archive/refs/tags/v6.19.08.tar.gz"
-  sha256 "f0e00a679b21d274179418f8f931defa92352d92fa3a8ad651d0de6b5e93ae77"
+  url "https://ghfast.top/https://github.com/getmail6/getmail6/archive/refs/tags/v6.19.09.tar.gz"
+  sha256 "1e0146e6d4f289419a9c1ed2aef3a519a7ead0df85512247466a292b7590c806"
   license "GPL-2.0-only"
 
   # Upstream uses GitHub releases to indicate that a version is released
@@ -16,13 +16,7 @@ class Getmail6 < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "aeba8c126c3373e1e43aac701ea953b1ab0fdd487693bec81b0aaf069cb408a2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "aeba8c126c3373e1e43aac701ea953b1ab0fdd487693bec81b0aaf069cb408a2"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "aeba8c126c3373e1e43aac701ea953b1ab0fdd487693bec81b0aaf069cb408a2"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8193735e7a29f0906ea8bfa88062a69dd29397fab794c7a0aba470028a3be6a2"
-    sha256 cellar: :any_skip_relocation, ventura:       "8193735e7a29f0906ea8bfa88062a69dd29397fab794c7a0aba470028a3be6a2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "aeba8c126c3373e1e43aac701ea953b1ab0fdd487693bec81b0aaf069cb408a2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aeba8c126c3373e1e43aac701ea953b1ab0fdd487693bec81b0aaf069cb408a2"
+    sha256 cellar: :any_skip_relocation, all: "96821737cd37cf93e0d238c72623640537b8cee482f1774bc265863bbef048db"
   end
 
   uses_from_macos "python", since: :catalina

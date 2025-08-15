@@ -30,6 +30,8 @@ class Go < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "01574eeb30d53c35d5bec9ef2c8fe3d7f14db16835e25353fa371bd11ac11c3c"
   end
 
+  depends_on macos: :monterey
+
   # Don't update this unless this version cannot bootstrap the new version.
   resource "gobootstrap" do
     checksums = {

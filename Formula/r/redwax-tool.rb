@@ -70,7 +70,7 @@ class RedwaxTool < Formula
 
     system "openssl", "req", "-x509", "-newkey", "rsa:4096", "-days", "1", "-nodes",
            "-keyout", "key.pem", "-out", "cert.pem", "-sha256",
-           "-subj", "/#{(x509_args.map { |key, value| "#{key}=#{value}" }).join("/")}"
+           "-subj", "/#{x509_args.map { |key, value| "#{key}=#{value}" }.join("/")}"
 
     args = %w[
       --pem-in key.pem
@@ -82,8 +82,8 @@ class RedwaxTool < Formula
     expected_outputs = [
       "pem-in: private key: OpenSSL RSA implementation",
       "pem-out: private key: OpenSSL RSA implementation",
-      "pem-in: intermediate: #{(x509_args.map { |key, value| "#{key}=#{value}" }).reverse.join(",")}",
-      "pem-out: intermediate: #{(x509_args.map { |key, value| "#{key}=#{value}" }).reverse.join(",")}",
+      "pem-in: intermediate: #{x509_args.map { |key, value| "#{key}=#{value}" }.reverse.join(",")}",
+      "pem-out: intermediate: #{x509_args.map { |key, value| "#{key}=#{value}" }.reverse.join(",")}",
     ]
 
     output = shell_output("#{bin}/redwax-tool #{args.join(" ")} 2>&1")

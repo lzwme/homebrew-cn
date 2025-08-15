@@ -1,8 +1,8 @@
 class Binutils < Formula
   desc "GNU binary tools for native development"
   homepage "https://www.gnu.org/software/binutils/binutils.html"
-  url "https://ftp.gnu.org/gnu/binutils/binutils-2.45.tar.bz2"
-  mirror "https://ftpmirror.gnu.org/binutils/binutils-2.45.tar.bz2"
+  url "https://ftpmirror.gnu.org/gnu/binutils/binutils-2.45.tar.bz2"
+  mirror "https://ftp.gnu.org/gnu/binutils/binutils-2.45.tar.bz2"
   sha256 "1393f90db70c2ebd785fb434d6127f8888c559d5eeb9c006c354b203bab3473e"
   license all_of: ["GPL-2.0-or-later", "GPL-3.0-or-later", "LGPL-2.0-or-later", "LGPL-3.0-only"]
 

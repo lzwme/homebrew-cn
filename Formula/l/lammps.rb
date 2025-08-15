@@ -40,15 +40,13 @@ class Lammps < Formula
 
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
+  depends_on "voro++" => :build
 
   depends_on "fftw"
-  depends_on "gcc" # for gfortran
-  depends_on "gsl"
   depends_on "jpeg-turbo"
   depends_on "kim-api"
   depends_on "libpng"
   depends_on "open-mpi"
-  depends_on "voro++"
 
   uses_from_macos "curl"
   uses_from_macos "python"

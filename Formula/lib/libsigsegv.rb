@@ -1,8 +1,8 @@
 class Libsigsegv < Formula
   desc "Library for handling page faults in user mode"
   homepage "https://www.gnu.org/software/libsigsegv/"
-  url "https://ftp.gnu.org/gnu/libsigsegv/libsigsegv-2.15.tar.gz"
-  mirror "https://ftpmirror.gnu.org/libsigsegv/libsigsegv-2.15.tar.gz"
+  url "https://ftpmirror.gnu.org/gnu/libsigsegv/libsigsegv-2.15.tar.gz"
+  mirror "https://ftp.gnu.org/gnu/libsigsegv/libsigsegv-2.15.tar.gz"
   sha256 "036855660225cb3817a190fc00e6764ce7836051bacb48d35e26444b8c1729d9"
   license "GPL-2.0-or-later"
 

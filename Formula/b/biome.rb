@@ -1,8 +1,8 @@
 class Biome < Formula
   desc "Toolchain of the web"
   homepage "https://biomejs.dev/"
-  url "https://ghfast.top/https://github.com/biomejs/biome/archive/refs/tags/@biomejs/biome@2.1.4.tar.gz"
-  sha256 "4700c0d0fc95f6ea7d053d5efabde79d2cb4e7dc2f600da2e97f3f1ec8b18a92"
+  url "https://ghfast.top/https://github.com/biomejs/biome/archive/refs/tags/@biomejs/biome@2.2.0.tar.gz"
+  sha256 "333c8bc8fde72520c76809574489233736ec3f27f85676350e930d649fddaee9"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/biomejs/biome.git", branch: "main"
 
@@ -12,13 +12,13 @@ class Biome < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "70a2c3dcdbab623d49d03c62750ce5ebd8fba92a4712a90192767af84c726a6e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3a996e42b78885b3951272e23f42055ff0eb77d825edabc318cda6a2fc04130d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "8405904f7c8af1cbf1465a5fbab730697431e630215d068737f31b11efa80c90"
-    sha256 cellar: :any_skip_relocation, sonoma:        "80eeb17b016c92311953faa2f850ae4d43ed10d69434a85d0e463844b0da3297"
-    sha256 cellar: :any_skip_relocation, ventura:       "1c346a8d9d03564da9361d861ae08eccf6d31df58d82ae716622495ef830b148"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c03b8d08c5fd163f3b3064e7070fce44be1c3469ab828353855a40dc41906fcd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f8d5c3803c6207e49aca67a75266f94949f82497128d27f8a483b1c1ed9748d9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "884c53c1e038e6fc90950dbc745e98cf13bf75ed788ce0fcc3a763509ab17235"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c35c6ac9a85dfb9a99add71d515210234ee38eec37238d4fb2a556bca0d5722d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "1351935476cb1a0820788ac5362bb3490c2dd9fe483d3ef868f7b503566911a9"
+    sha256 cellar: :any_skip_relocation, sonoma:        "80e3a5e669badf397eba764aca513749210fe2fcd3eafab71ccf3de8d47de1b5"
+    sha256 cellar: :any_skip_relocation, ventura:       "746b7359e69f7777a7906dde6f447fba9be27886737d7eb9b4ba1a51aa6eac30"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1a6a3e425627ea9c997643329f6d6a8a356cd25e90d4ff8352ffdede9897bcb8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cb06a923ba6e2d84028e0da1bca8a6b58321d8dd3a444b03d72d1d75d5ccfea5"
   end
 
   depends_on "rust" => :build

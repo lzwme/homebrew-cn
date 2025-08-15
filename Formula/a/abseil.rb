@@ -1,36 +1,31 @@
 class Abseil < Formula
   desc "C++ Common Libraries"
   homepage "https://abseil.io"
-  url "https://ghfast.top/https://github.com/abseil/abseil-cpp/archive/refs/tags/20250127.1.tar.gz"
-  sha256 "b396401fd29e2e679cace77867481d388c807671dc2acc602a0259eeb79b7811"
+  url "https://ghfast.top/https://github.com/abseil/abseil-cpp/archive/refs/tags/20250512.1.tar.gz"
+  sha256 "9b7a064305e9fd94d124ffa6cc358592eb42b5da588fb4e07d09254aa40086db"
   license "Apache-2.0"
   head "https://github.com/abseil/abseil-cpp.git", branch: "master"
 
   bottle do
-    sha256                               arm64_sequoia: "88d505cd2d8e56fba67e8d6b65633c5e1880dde280f8c20b35170e1e65fcc07a"
-    sha256                               arm64_sonoma:  "42482c23f6a8636e271708a8e9fd39a9bebfb76f4527ee9c520ceb1b01d2e6c0"
-    sha256                               arm64_ventura: "0e63620f980c6b13de71fa5fe4f7b6f1a73aa784c1242df71b83a0c498376a6b"
-    sha256 cellar: :any,                 sonoma:        "fa19056852c4ca43f4dc2d72e93986789b87b0aedbe67f54712f4419421f2f84"
-    sha256 cellar: :any,                 ventura:       "768b2978a5aa694ff11b9de3c7134a09fc3c2360b94a0455ecfd2e8f5649647f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "52cc4b7a46930c18ce86454427bd38b66037dec02e57ac7faeaf40e5e2866e19"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f0a26b8a1cd3c3ba42273b5a6549a247cec6b82493c28d344ff11197b06c33b2"
+    sha256                               arm64_sequoia: "1c7ca4a20ec65668ac2ddfbc185a2143af494ee5601fdfd33a919ee60491194d"
+    sha256                               arm64_sonoma:  "1f151d2bc25baeac2a6097df5b16782a223cd58314035bd2d2310e84b451f09f"
+    sha256                               arm64_ventura: "37f0fc524f8326447cccfcd1f4cffce211b0558dcec74e9899591a112d7e2416"
+    sha256 cellar: :any,                 sonoma:        "0f31cf70421f1929fd31770f98fbe8b8e583297a1fc4865d6b855c8e8d75310f"
+    sha256 cellar: :any,                 ventura:       "c9f0990f410cb351c2e99bb60206755450fd4cff14518ee65f122251dc8fbca9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ab53a04e9d6b7624796a1f1b468de5fe710aa344218e34c80826c7f50b76c5c0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f021330afe0a015ed806a50aef84524a4d6c17af6869640b61667c435f3b0ffd"
   end
 
   depends_on "cmake" => [:build, :test]
-
-  on_macos do
-    depends_on "googletest" => :build # For test helpers
-  end
+  depends_on "googletest" => :build # For test helpers
 
   def install
     ENV.runtime_cpu_detection
 
-    # Install test helpers. Doing this on Linux requires rebuilding `googltest` with `-fPIC`.
-    extra_cmake_args = if OS.mac?
-      %w[ABSL_BUILD_TEST_HELPERS ABSL_USE_EXTERNAL_GOOGLETEST ABSL_FIND_GOOGLETEST].map do |arg|
-        "-D#{arg}=ON"
-      end
-    end.to_a
+    # Install test helpers.
+    extra_cmake_args = %w[ABSL_BUILD_TEST_HELPERS ABSL_USE_EXTERNAL_GOOGLETEST ABSL_FIND_GOOGLETEST].map do |arg|
+      "-D#{arg}=ON"
+    end
 
     system "cmake", "-S", ".", "-B", "build",
                     "-DCMAKE_INSTALL_RPATH=#{rpath}",

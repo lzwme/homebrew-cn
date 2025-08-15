@@ -4,6 +4,7 @@ class Hypre < Formula
   url "https://ghfast.top/https://github.com/hypre-space/hypre/archive/refs/tags/v2.33.0.tar.gz"
   sha256 "0f9103c34bce7a5dcbdb79a502720fc8aab4db9fd0146e0791cde7ec878f27da"
   license any_of: ["MIT", "Apache-2.0"]
+  revision 1
   head "https://github.com/hypre-space/hypre.git", branch: "master"
 
   livecheck do
@@ -12,25 +13,29 @@ class Hypre < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "86c808a2d91ad2cb4e451e10445911ebdfddc094f683ec5dc4135e3d32373179"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "980dfd622aec636d422f3ee28ca6a0a8069634b85c75f45bd0a61136ed241dd7"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "cd5cce6bbe748ee40110a0c6fa3be575a7ad940435c162194cc6504f300cdc15"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d4c4a4b58c7b5217f625d1e0726b899563f99a3d92a45decf651522900fc2ef9"
-    sha256 cellar: :any_skip_relocation, ventura:       "b62f0376fa5930164977c6b3e5766ecc14375a5f7e15a806c28fbf2ce241dcee"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f890413fed72b117977cd0235e885a983af1fc5c998a98fa22a7aae87333a596"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9eea76ecc19f0455d9a8416aa615626f67c77d6792ae173b1d6944ceecb1c2c3"
+    sha256 cellar: :any,                 arm64_sequoia: "beb3d2c609d542c1a74709ac01faffc25148b0e052a617342bca693b18241823"
+    sha256 cellar: :any,                 arm64_sonoma:  "03aaacdf60bc773d746538b5e6bc5815481af39d8dbe2b554e75d6f5f32424a2"
+    sha256 cellar: :any,                 arm64_ventura: "324360d183876464b8ccf254e668820d0287b29cfaabcfabc2b228402d9fdbd0"
+    sha256 cellar: :any,                 sonoma:        "dc6ed08e556be37a1f34b5b557e949228826b857a6c29de98fdd4176a5599262"
+    sha256 cellar: :any,                 ventura:       "e7931d4b3a96f1020dd44551449dbc89fa27476cface7366385a1f17e4b4783f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1c37c9517a610c9051d5fc5ea268945c2214b06fbf81aa2b51167dd909052bc6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7381b210318269b8894f650e2b682fe9bf8751628022553104e3f25d5d3502cb"
   end
 
-  depends_on "gcc" # for gfortran
+  depends_on "cmake" => :build
   depends_on "open-mpi"
+  depends_on "openblas"
 
   def install
-    cd "src" do
-      system "./configure", "--prefix=#{prefix}",
-                            "--with-MPI",
-                            "--enable-bigint"
-      system "make", "install"
-    end
+    system "cmake", "-S", "src", "-B", "build",
+                    "-DBUILD_SHARED_LIBS=ON",
+                    "-DHYPRE_ENABLE_BIGINT=ON",
+                    "-DHYPRE_ENABLE_HYPRE_BLAS=OFF",
+                    "-DHYPRE_ENABLE_HYPRE_LAPACK=OFF",
+                    "-DHYPRE_ENABLE_MPI=ON",
+                    *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do

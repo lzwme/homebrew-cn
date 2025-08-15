@@ -1,5 +1,6 @@
 class MkdocsMaterial < Formula
   include Language::Python::Virtualenv
+
   desc "Material Design theme for MkDocs"
   homepage "https://squidfunk.github.io/mkdocs-material/"
   url "https://files.pythonhosted.org/packages/dd/84/aec27a468c5e8c27689c71b516fb5a0d10b8fca45b9ad2dd9d6e43bc4296/mkdocs_material-9.6.16.tar.gz"

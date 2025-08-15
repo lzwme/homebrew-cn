@@ -1,8 +1,8 @@
 class Cpio < Formula
   desc "Copies files into or out of a cpio or tar archive"
   homepage "https://www.gnu.org/software/cpio/"
-  url "https://ftp.gnu.org/gnu/cpio/cpio-2.15.tar.bz2"
-  mirror "https://ftpmirror.gnu.org/cpio/cpio-2.15.tar.bz2"
+  url "https://ftpmirror.gnu.org/gnu/cpio/cpio-2.15.tar.bz2"
+  mirror "https://ftp.gnu.org/gnu/cpio/cpio-2.15.tar.bz2"
   sha256 "937610b97c329a1ec9268553fb780037bcfff0dcffe9725ebc4fd9c1aa9075db"
   license "GPL-3.0-or-later"
 

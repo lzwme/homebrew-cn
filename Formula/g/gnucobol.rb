@@ -1,8 +1,8 @@
 class Gnucobol < Formula
   desc "COBOL85-202x compiler supporting lots of dialect specific extensions"
   homepage "https://gnucobol.sourceforge.io/"
-  url "https://ftp.gnu.org/gnu/gnucobol/gnucobol-3.2.tar.xz"
-  mirror "https://ftpmirror.gnu.org/gnucobol/gnucobol-3.2.tar.xz"
+  url "https://ftpmirror.gnu.org/gnu/gnucobol/gnucobol-3.2.tar.xz"
+  mirror "https://ftp.gnu.org/gnu/gnucobol/gnucobol-3.2.tar.xz"
   sha256 "3bb48af46ced4779facf41fdc2ee60e4ccb86eaa99d010b36685315df39c2ee2"
   license "GPL-3.0-or-later"
 

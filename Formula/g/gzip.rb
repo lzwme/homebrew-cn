@@ -1,8 +1,8 @@
 class Gzip < Formula
   desc "Popular GNU data compression program"
   homepage "https://www.gnu.org/software/gzip/"
-  url "https://ftp.gnu.org/gnu/gzip/gzip-1.14.tar.gz"
-  mirror "https://ftpmirror.gnu.org/gzip/gzip-1.14.tar.gz"
+  url "https://ftpmirror.gnu.org/gnu/gzip/gzip-1.14.tar.gz"
+  mirror "https://ftp.gnu.org/gnu/gzip/gzip-1.14.tar.gz"
   sha256 "613d6ea44f1248d7370c7ccdeee0dd0017a09e6c39de894b3c6f03f981191c6b"
   license "GPL-3.0-or-later"
 

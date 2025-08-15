@@ -16,7 +16,6 @@ class Spglib < Formula
   end
 
   depends_on "cmake" => [:build, :test]
-  depends_on "gcc" # for gfortran
 
   def install
     # TODO: Fortran packaging is disabled for now because packaging does not pick it up properly
@@ -26,12 +25,14 @@ class Spglib < Formula
       -DSPGLIB_WITH_TESTS=OFF
     ]
     system "cmake", "-S", ".", "-B", "build_shared",
-                   *common_args, "-DSPGLIB_SHARED_LIBS=ON", *std_cmake_args
+                    "-DSPGLIB_SHARED_LIBS=ON",
+                    *common_args, *std_cmake_args
     system "cmake", "--build", "build_shared"
     system "cmake", "--install", "build_shared"
 
     system "cmake", "-S", ".", "-B", "build_static",
-                  *common_args, "-DSPGLIB_SHARED_LIBS=OFF", *std_cmake_args
+                    "-DSPGLIB_SHARED_LIBS=OFF",
+                    *common_args, *std_cmake_args
     system "cmake", "--build", "build_static"
     system "cmake", "--install", "build_static"
   end
@@ -47,7 +48,7 @@ class Spglib < Formula
     C
 
     (testpath / "CMakeLists.txt").write <<~CMAKE
-      cmake_minimum_required(VERSION 3.6)
+      cmake_minimum_required(VERSION 3.10)
       project(test_spglib LANGUAGES C)
       find_package(Spglib CONFIG REQUIRED COMPONENTS shared)
       add_executable(test_c test.c)
@@ -59,8 +60,8 @@ class Spglib < Formula
 
     (testpath / "CMakeLists.txt").delete
     (testpath / "CMakeLists.txt").write <<~CMAKE
-      cmake_minimum_required(VERSION 3.6)
-      project(test_spglib LANGUAGES C Fortran)
+      cmake_minimum_required(VERSION 3.10)
+      project(test_spglib LANGUAGES C)
       find_package(Spglib CONFIG REQUIRED COMPONENTS static)
       add_executable(test_c test.c)
       target_link_libraries(test_c PRIVATE Spglib::symspg)

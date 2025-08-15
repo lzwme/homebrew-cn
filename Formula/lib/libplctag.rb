@@ -1,8 +1,8 @@
 class Libplctag < Formula
   desc "Portable and simple API for accessing AB PLC data over Ethernet"
   homepage "https://github.com/libplctag/libplctag"
-  url "https://ghfast.top/https://github.com/libplctag/libplctag/archive/refs/tags/v2.6.9.tar.gz"
-  sha256 "56788001cb699fe566415b23bd35e0bba98c6153466f0ee87ed0cf0a8606c3c1"
+  url "https://ghfast.top/https://github.com/libplctag/libplctag/archive/refs/tags/v2.6.10.tar.gz"
+  sha256 "3de61c3802fcc3b9b80fb818d5e20bd4168b5a9fb30e76317c27174343bd5dfa"
   license any_of: ["LGPL-2.0-or-later", "MPL-2.0"]
 
   livecheck do
@@ -11,13 +11,13 @@ class Libplctag < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "236b1fdb6a84b9455e0e91527d4f7a936d07d4e0f609ba34cac0c9757ce8a145"
-    sha256 cellar: :any,                 arm64_sonoma:  "8d9f996578b3478c6efe3710ab234cf5b2710e4d3a4d1194aedc7bd0ba39cad9"
-    sha256 cellar: :any,                 arm64_ventura: "77e4d4d48fe223a7900ae049b8913b93c67da6ad2f64cbd95e935bd5dccd8c3b"
-    sha256 cellar: :any,                 sonoma:        "49da19608f2befe95d5d8430fb57318065d4e8813337f1f69b01b4119270760f"
-    sha256 cellar: :any,                 ventura:       "2317542d9d13f3dfa3bea8bf9b76c52ef5b8246360369190ccd8459b3cd01f2c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "40f7c7a281d8e2fc33389900ea195101be6640ee54d99c9bfaea3358fb8fac6c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "acb62be985916ecf3f267da898d70733f7936cd8afb4f65eb6d10b42aacad64f"
+    sha256 cellar: :any,                 arm64_sequoia: "05bd9c99322d0136fe0c21f40596eaf4dc9c6fe60276ec248ae04126831dd77d"
+    sha256 cellar: :any,                 arm64_sonoma:  "78ce89a44c82d5f5c596f0edc67fe8139530066d0af06f605df4801dc5776677"
+    sha256 cellar: :any,                 arm64_ventura: "856e789206591766a8d25c6e312d5937cc1565c4a83de4f12c9ebd8c02c4d441"
+    sha256 cellar: :any,                 sonoma:        "c5f9e294b69f241c01317be7934a7ca3d9aa2c6e80664de3bbb3b17d11607967"
+    sha256 cellar: :any,                 ventura:       "99d85721b3a4294a77bd9618573259a6469d6a24b5b0228e042e3d974a375714"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5229047a512f84492f6b776daa33e233a46b1ee464f6ca5b4310f92cc9548305"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9d5fecdd2dcf2865414a42da77f841581c6ab58102cedfe9bab3a5e3a25d248a"
   end
 
   depends_on "cmake" => :build

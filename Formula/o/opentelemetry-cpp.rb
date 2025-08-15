@@ -4,17 +4,17 @@ class OpentelemetryCpp < Formula
   url "https://ghfast.top/https://github.com/open-telemetry/opentelemetry-cpp/archive/refs/tags/v1.22.0.tar.gz"
   sha256 "3428f433f4b435ed1fad64cbdbe75b7288c06f6297786a7036d65d5b9a1d215b"
   license "Apache-2.0"
-  revision 2
+  revision 3
   head "https://github.com/open-telemetry/opentelemetry-cpp.git", branch: "main"
 
   bottle do
-    sha256                               arm64_sequoia: "61769b16d2b143e75647e72c9b431ccd8a007d2741bf0f5a84dcc2932d935596"
-    sha256                               arm64_sonoma:  "1e91958195380333ae606e4a48c9b46ef0b70c6b549c6e96328c92d39634e2fd"
-    sha256                               arm64_ventura: "bacab5c85b9034570ea279d56aacaf6494b4db898a5d3e1c2411cb46263b727e"
-    sha256 cellar: :any,                 sonoma:        "0d08ee396cc742cd3ad81bd32b2b687416740a71b0c372a2b776c26e7b22dc35"
-    sha256 cellar: :any,                 ventura:       "1fff50d155bd09dcf5485b9654a8540d6340c2e493b891cffdc5d2d8c0c13b63"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "778bea0fc70b7a85596fe9368f8b574ccf605ae29045878eca627a3dd762aca3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d7b1491820b7036b3262c28ef61038005dad711d42266d174bada9198f130593"
+    sha256               arm64_sequoia: "e4c951b7bbeb15b5aa8d364708a5f4867544f5bb6b5ff6815b980ad896614ab5"
+    sha256               arm64_sonoma:  "4132f2d2218fd2eb83c7686ae092986afa34706030a5991f0a3ba90413067d7c"
+    sha256               arm64_ventura: "7f7b9b1df84581bb18a479e29c9fa80863f4cbb88d2d67d7bbefbea3bb1bbceb"
+    sha256 cellar: :any, sonoma:        "7f1dcc00133274b389cd94a0a250c66d64f752f1b2a4dd82fafa1f627541703b"
+    sha256 cellar: :any, ventura:       "fee09d95df6f1dd3636c0b1846798bce1a3e2808eb276e2a744be265290bdcc4"
+    sha256               arm64_linux:   "72cdc3021bf74bf1e821e6045eebbf11f987abfe03c606625cdc5dc9257f89cc"
+    sha256               x86_64_linux:  "673035ef1783568e3222bed6ea9bfaaf159a0ac495a460616306a9aca8f3a446"
   end
 
   depends_on "cmake" => :build

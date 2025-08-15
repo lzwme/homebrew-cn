@@ -1,8 +1,8 @@
 class GnuIndent < Formula
   desc "C code prettifier"
   homepage "https://www.gnu.org/software/indent/"
-  url "https://ftp.gnu.org/gnu/indent/indent-2.2.13.tar.gz"
-  mirror "https://ftpmirror.gnu.org/indent/indent-2.2.13.tar.gz"
+  url "https://ftpmirror.gnu.org/gnu/indent/indent-2.2.13.tar.gz"
+  mirror "https://ftp.gnu.org/gnu/indent/indent-2.2.13.tar.gz"
   sha256 "9e64634fc4ce6797b204bcb8897ce14fdd0ab48ca57696f78767c59cae578095"
   license "GPL-3.0-or-later"
 

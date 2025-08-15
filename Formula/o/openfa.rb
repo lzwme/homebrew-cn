@@ -18,7 +18,6 @@ class Openfa < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "gcc" # for gfortran
 
   def install
     args = %W[

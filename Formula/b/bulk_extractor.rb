@@ -4,7 +4,7 @@ class BulkExtractor < Formula
   url "https://ghfast.top/https://github.com/simsong/bulk_extractor/releases/download/v2.1.1/bulk_extractor-2.1.1.tar.gz"
   sha256 "0cd57c743581a66ea94d49edac2e89210c80a2a7cc90dd254d56940b3d41b7f7"
   license "MIT"
-  revision 2
+  revision 3
 
   livecheck do
     url :stable
@@ -12,13 +12,13 @@ class BulkExtractor < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "9db981b920ec729cb3186889e48b6f1c13b8b273153d24b697db951e00d840e4"
-    sha256 cellar: :any,                 arm64_sonoma:  "20963df12135abd102efcb43c1def1897bbc760c7d09e55d43dddc23c22e21d8"
-    sha256 cellar: :any,                 arm64_ventura: "e63c90e821f4efa9ea419b75141c8138f5f23ad88828c2855fc858a432cf4f96"
-    sha256 cellar: :any,                 sonoma:        "a75e06944d93dbe00aad38d16f3269891cef31adf0fcc0d8234d3685e27eb3c9"
-    sha256 cellar: :any,                 ventura:       "f760c88edfaa3dbeac5fc07da90effc7f18609100d3f60351f7514d921104e45"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "69d7d459163ce21edb901dbaf3b28b4d49bbc6b8df0d55500bb88c8163bba7ac"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3c71c5d880c8e2de6076b09cf2d9fe142dcc671f3f9242c038a4d3e709af0ed9"
+    sha256 cellar: :any,                 arm64_sequoia: "0eeb51340d665d0d000912c6d16d60a7511c1e910be99a786fd456e418c260e0"
+    sha256 cellar: :any,                 arm64_sonoma:  "c02a8c20ef6e7c5214b0d4aaa3883ea70433e496220acaf774163649fe357c44"
+    sha256 cellar: :any,                 arm64_ventura: "234712b8f102e6fddb941c3dbaee77d9cea2c18bd5cd3b7bd9ec43d1a97a2a0e"
+    sha256 cellar: :any,                 sonoma:        "604b9074da535d325d007aa47aff87164b218a1d8158b219bea05aa986b315f5"
+    sha256 cellar: :any,                 ventura:       "c5e8205cd079854b272967537829922fff5388e72429169c59ab6260eb680af9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2c5fc1a205bf3625e78a5dfc32895a38cd5c655b9012648592ebda3aaaa32c14"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2fbf259ce6abf7f96c71c18aeffea8a67343affdc1de696790b6e3dba9a12d28"
   end
 
   head do

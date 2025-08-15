@@ -1,5 +1,6 @@
 class Datasette < Formula
   include Language::Python::Virtualenv
+
   desc "Open source multi-tool for exploring and publishing data"
   homepage "https://docs.datasette.io/en/stable/"
   url "https://files.pythonhosted.org/packages/db/94/e6408997861e9de3ec61fb8107efe9eaf70f765ad2cd4e20b552dd340899/datasette-0.65.1.tar.gz"

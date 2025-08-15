@@ -2,7 +2,7 @@ class Bloaty < Formula
   desc "Size profiler for binaries"
   homepage "https://github.com/google/bloaty"
   license "Apache-2.0"
-  revision 37
+  revision 38
   head "https://github.com/google/bloaty.git", branch: "main"
 
   stable do
@@ -20,13 +20,13 @@ class Bloaty < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "d45489e606171ce0660d451d90a6f388837935fb0a01e774e3f3e231ff5e5111"
-    sha256 cellar: :any,                 arm64_sonoma:  "639a9f8cee1d7e2ba1ee4af18b6f23895c57ebd2faaa60eee1478680e3203f9d"
-    sha256 cellar: :any,                 arm64_ventura: "ebf0763efb3fc39cbbfa452418ff9571839a91acd864f19450a37ac20828f36e"
-    sha256 cellar: :any,                 sonoma:        "76e246f8cb11d76971f8a3dd05196c9ad1753ab4c4dd3f60715f7e4c42eaafbe"
-    sha256 cellar: :any,                 ventura:       "d31c3997dd6e3d1f9ef34ab421324d42aa9cbb69a048d329cb3ed734e51a1eb6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9aee1e659358316c34e23b1ef16d59734f5ea30fbc2c5da04993e9f81014a7c3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d6f274b4494c4ec3b311fe2a57bf108aef2cba5f98aa35aed38ada413d62ab50"
+    sha256 cellar: :any,                 arm64_sequoia: "a27fad7dbd20d57537bf5f78dc38e426c632e69f5f4897304c0375a2b85fcbe2"
+    sha256 cellar: :any,                 arm64_sonoma:  "8ebc0cb6d38c3ebfd89330a61e793b4a506a72cef66aa4be69a738f192256525"
+    sha256 cellar: :any,                 arm64_ventura: "032603ee0817ecdd2f774527611a7fcfa20ae6ee85fb3b9cd1bae272725d489a"
+    sha256 cellar: :any,                 sonoma:        "91b963bdd418682c5c76a4d8589f85989603d552e8585077f8b1bc45f81ae76d"
+    sha256 cellar: :any,                 ventura:       "e78a2b93449dc47ca649d4763a24a2dcf3158472b6d9b81c916c469fd6f47d19"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "42347f1b78a35906bef29349371d069ffca4a9139e66cb918b4a707810a85d26"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a5e0ec2b146e541b5725e2307cd4c72750cd26321c5c1fa8a9942e18f7802bf4"
   end
 
   depends_on "cmake" => :build

@@ -1,8 +1,8 @@
 class AutoconfArchive < Formula
   desc "Collection of over 500 reusable autoconf macros"
   homepage "https://savannah.gnu.org/projects/autoconf-archive/"
-  url "https://ftp.gnu.org/gnu/autoconf-archive/autoconf-archive-2024.10.16.tar.xz"
-  mirror "https://ftpmirror.gnu.org/autoconf-archive/autoconf-archive-2024.10.16.tar.xz"
+  url "https://ftpmirror.gnu.org/gnu/autoconf-archive/autoconf-archive-2024.10.16.tar.xz"
+  mirror "https://ftp.gnu.org/gnu/autoconf-archive/autoconf-archive-2024.10.16.tar.xz"
   sha256 "7bcd5d001916f3a50ed7436f4f700e3d2b1bade3ed803219c592d62502a57363"
   license "GPL-3.0-or-later"
 

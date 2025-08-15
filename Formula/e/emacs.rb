@@ -1,19 +1,19 @@
 class Emacs < Formula
   desc "GNU Emacs text editor"
   homepage "https://www.gnu.org/software/emacs/"
-  url "https://ftp.gnu.org/gnu/emacs/emacs-30.1.tar.xz"
-  mirror "https://ftpmirror.gnu.org/emacs/emacs-30.1.tar.xz"
-  sha256 "6ccac1ae76e6af93c6de1df175e8eb406767c23da3dd2a16aa67e3124a6f138f"
+  url "https://ftpmirror.gnu.org/gnu/emacs/emacs-30.2.tar.xz"
+  mirror "https://ftp.gnu.org/gnu/emacs/emacs-30.2.tar.xz"
+  sha256 "b3f36f18a6dd2715713370166257de2fae01f9d38cfe878ced9b1e6ded5befd9"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 arm64_sequoia: "d81d161a42f5d89476996520475596f392b3c932a66585cf89d3cc488a613d51"
-    sha256 arm64_sonoma:  "b54fd2e5cd611295793cdb90d8db00b38c1e82814ccc5c3855f8fcbc492be5c9"
-    sha256 arm64_ventura: "02f3e7aa4614510f085fa4da15573d90c14cbe2d28ee0f0e746bd36e762152c9"
-    sha256 sonoma:        "0198d3055784fdbb38537cac2123a7436bb53fda399318c39c61d1fdcbc792b8"
-    sha256 ventura:       "b49c4ce047726c7115c429ce7fecebaf31e056e94539b7b0333753f38b969778"
-    sha256 arm64_linux:   "38e54b44ff7d38601ee05e206069da88b27266ad658dffb03d408f88122c45d5"
-    sha256 x86_64_linux:  "2641fb80871ba22563f3fa31d2d41aedaf07a1275203214477db2cdc66bebdd0"
+    sha256 arm64_sequoia: "6fd75aed5b6ef68991921b6e61b001272310d572e9cc3b4945aff00dfc381f59"
+    sha256 arm64_sonoma:  "72c66b6f50be54465008831896d1fe2c073d8a529fd85b0d3ee434bcd683342a"
+    sha256 arm64_ventura: "afebd58c6452170b9e5fe63f17c0adb4dd22c38d14617076725257154f689839"
+    sha256 sonoma:        "ecb254288e6a370c502a18c3813e901862fdbd849e67aaf73378b20001bc5c05"
+    sha256 ventura:       "4d1435c4b9b75e2cdfd4a55a10ead687a562ce7c755984c8ee0d04ffe2244e2b"
+    sha256 arm64_linux:   "fead760aab7f1f4f4d8f092bf855366fd4ec0e40bac33270912380bede575df6"
+    sha256 x86_64_linux:  "0648d7634a70f7fa72ef5de26506063a2142e613059a744ebd2b8d9140ef959c"
   end
 
   head do

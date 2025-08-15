@@ -1,8 +1,8 @@
 class Autoconf < Formula
   desc "Automatic configure script builder"
   homepage "https://www.gnu.org/software/autoconf/"
-  url "https://ftp.gnu.org/gnu/autoconf/autoconf-2.72.tar.gz"
-  mirror "https://ftpmirror.gnu.org/autoconf/autoconf-2.72.tar.gz"
+  url "https://ftpmirror.gnu.org/gnu/autoconf/autoconf-2.72.tar.gz"
+  mirror "https://ftp.gnu.org/gnu/autoconf/autoconf-2.72.tar.gz"
   sha256 "afb181a76e1ee72832f6581c0eddf8df032b83e2e0239ef79ebedc4467d92d6e"
   license all_of: [
     "GPL-3.0-or-later",

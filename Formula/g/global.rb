@@ -4,8 +4,8 @@ class Global < Formula
 
   desc "Source code tag system"
   homepage "https://www.gnu.org/software/global/"
-  url "https://ftp.gnu.org/gnu/global/global-6.6.14.tar.gz"
-  mirror "https://ftpmirror.gnu.org/global/global-6.6.14.tar.gz"
+  url "https://ftpmirror.gnu.org/gnu/global/global-6.6.14.tar.gz"
+  mirror "https://ftp.gnu.org/gnu/global/global-6.6.14.tar.gz"
   sha256 "f6e7fd0b68aed292e85bb686616baf6551d5c9424adcddca11d808ba318cb320"
   license "GPL-3.0-or-later"
 

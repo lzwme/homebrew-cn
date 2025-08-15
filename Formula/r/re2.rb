@@ -5,7 +5,7 @@ class Re2 < Formula
   version "20250805"
   sha256 "b5708d8388110624c85f300e7e9b39c4ed5469891eb1127dd7f9d61272d04907"
   license "BSD-3-Clause"
-  revision 1
+  revision 2
   head "https://github.com/google/re2.git", branch: "main"
 
   # The `strategy` block below is used to massage upstream tags into the
@@ -22,13 +22,13 @@ class Re2 < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "5ad94acc8690fa589ad53200518315e93e785a66f610f55ab0630883165fa131"
-    sha256 cellar: :any,                 arm64_sonoma:  "1f313556bf9ed61b8826261017558b4ecff63cac510080aff6d8a82c1b9078a7"
-    sha256 cellar: :any,                 arm64_ventura: "59326da0818fa80109b1b775dcd552cf6588358479a516e2aa502a3aaeb69d91"
-    sha256 cellar: :any,                 sonoma:        "ce477036ce76d7fb67f9f6f77b0bc7a3a964eee1328a6c81e67ae7a52cadd5ab"
-    sha256 cellar: :any,                 ventura:       "daa3b3e9059853c855be8356f3e67a3b4ebd73a60f8a70ed497f332fed67c322"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ae030e0501c01faf4c7bffb0d2c4aa46cc15b6b039672a28956c6efc8029afe8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a12c60f3928bf307bf4295f8d74fb5963ccdd32ae374b134e390f8def23aff13"
+    sha256 cellar: :any,                 arm64_sequoia: "e8cea942d88d1e6f50c7a0f7e5053a59d9314a769d6a015434f4596c687246c0"
+    sha256 cellar: :any,                 arm64_sonoma:  "e3450b22338c751dd852f35dc5304c3a074721e13829095290c1bf6d1ab4ce13"
+    sha256 cellar: :any,                 arm64_ventura: "968cfdca0fd6e19758faa32f3787adf80f60d5ce79f23561474e2eab9c8c0a99"
+    sha256 cellar: :any,                 sonoma:        "9f4db8c62ccbfdfcc4c3849a659250106f416c9bc95695f502dadf01e8a58052"
+    sha256 cellar: :any,                 ventura:       "13101f7c7802c012c43d024e0640cbe4b1bb93a5fe54394c33550a320eef7345"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "33986a8eb7209dc22cbac9280950076ef0eba3336dc2fc7af4b0634e04a9227c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0f3e135a502bcae632be673704aabcc48599bd0720addd276e893b987dfa7797"
   end
 
   depends_on "cmake" => :build

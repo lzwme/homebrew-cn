@@ -1,8 +1,8 @@
 class Libtasn1 < Formula
   desc "ASN.1 structure parser library"
   homepage "https://www.gnu.org/software/libtasn1/"
-  url "https://ftp.gnu.org/gnu/libtasn1/libtasn1-4.20.0.tar.gz"
-  mirror "https://ftpmirror.gnu.org/libtasn1/libtasn1-4.20.0.tar.gz"
+  url "https://ftpmirror.gnu.org/gnu/libtasn1/libtasn1-4.20.0.tar.gz"
+  mirror "https://ftp.gnu.org/gnu/libtasn1/libtasn1-4.20.0.tar.gz"
   sha256 "92e0e3bd4c02d4aeee76036b2ddd83f0c732ba4cda5cb71d583272b23587a76c"
   license "LGPL-2.1-or-later"
 

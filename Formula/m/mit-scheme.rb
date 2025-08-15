@@ -1,14 +1,14 @@
 class MitScheme < Formula
   desc "MIT/GNU Scheme development tools and runtime library"
   homepage "https://www.gnu.org/software/mit-scheme/"
-  url "https://ftp.gnu.org/gnu/mit-scheme/stable.pkg/12.1/mit-scheme-12.1-svm1-64le.tar.gz"
-  mirror "https://ftpmirror.gnu.org/gnu/mit-scheme/stable.pkg/12.1/mit-scheme-12.1-svm1-64le.tar.gz"
+  url "https://ftpmirror.gnu.org/gnu/mit-scheme/stable.pkg/12.1/mit-scheme-12.1-svm1-64le.tar.gz"
+  mirror "https://ftp.gnu.org/gnu/mit-scheme/stable.pkg/12.1/mit-scheme-12.1-svm1-64le.tar.gz"
   sha256 "2c5b5bf1f44c7c2458da79c0943e082ae37f1752c7d9d1ce0a61f7afcbf04304"
   license "GPL-2.0-or-later"
   revision 1
 
   livecheck do
-    url "https://ftp.gnu.org/gnu/mit-scheme/stable.pkg/?C=M&O=D"
+    url "https://ftpmirror.gnu.org/gnu/mit-scheme/stable.pkg/?C=M&O=D"
     regex(%r{href=.*?v?(\d+(?:\.\d+)+)/?["' >]}i)
     strategy :page_match
   end

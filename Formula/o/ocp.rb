@@ -52,7 +52,7 @@ class Ocp < Formula
 
   # pin to 15.0.6 to use precompiled fonts
   resource "unifont" do
-    url "https://ftp.gnu.org/gnu/unifont/unifont-15.0.06/unifont-15.0.06.tar.gz"
+    url "https://ftpmirror.gnu.org/gnu/unifont/unifont-15.0.06/unifont-15.0.06.tar.gz"
     sha256 "36668eb1326d22e1466b94b3929beeafd10b9838bf3d41f4e5e3b52406ae69f1"
   end
 

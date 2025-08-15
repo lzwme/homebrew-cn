@@ -24,7 +24,6 @@ class Superlu < Formula
 
   depends_on "cmake" => :build
   depends_on "pkgconf" => :test
-  depends_on "gcc"
   depends_on "openblas"
 
   def install

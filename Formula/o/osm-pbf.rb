@@ -4,18 +4,18 @@ class OsmPbf < Formula
   url "https://ghfast.top/https://github.com/openstreetmap/OSM-binary/archive/refs/tags/v1.5.1.tar.gz"
   sha256 "183ad76c5905c7abd35d938824320ffb82d9ca8987796018f2da8380b51cdac2"
   license "LGPL-3.0-or-later"
-  revision 14
+  revision 15
 
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "69811bcdcabf559be5d28dc3c2d3271f242e5007e944af22b7db616a404b2245"
-    sha256 cellar: :any,                 arm64_sonoma:  "66edfe98b40a02a69268df02b336b46490ceecec262d7e06b7b9a7421757f1bc"
-    sha256 cellar: :any,                 arm64_ventura: "829ffeabf5130d4dbe72fe79918cf76f428a51c46571a999b1b58544a8eae758"
-    sha256 cellar: :any,                 sonoma:        "e54ece472153e4a1f60ff6c072b5d25f30e374d5cd9c2a0a56fb85483d383125"
-    sha256 cellar: :any,                 ventura:       "4dc7068a3093e8b717cd58bc3dbb42f0359e0063fdea55dbfba4ad8039ed7d05"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6c14786cd95fb98556893a5d867613993eebbaefdbc3b96878cea7f00cd3bf29"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "69e633c55ae5185a75d3f3a06b34bfeed20ba4811f0513c4ad0a79d367ba47ad"
+    sha256 cellar: :any,                 arm64_sequoia: "a5a253013c51cca37582a69ff6769a6c1277306fc2c25175512b4a7cc7b5ad37"
+    sha256 cellar: :any,                 arm64_sonoma:  "beed6f4877987417ee88694e487f3111030c12d81c99b8b6e859f8fd8690309c"
+    sha256 cellar: :any,                 arm64_ventura: "53785fbb81a02016a4a624033e7d8dab7178b248597cb7454189fbec1b2e01ed"
+    sha256 cellar: :any,                 sonoma:        "d2dede7317be34cd4508e38ebd0cc968f6a88e98b37eb4f163838afd55377138"
+    sha256 cellar: :any,                 ventura:       "ba12a27badb48c1492613bb1b1c33fbb6b2d8d0de9f850eaede25922845a18db"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6b4c928a358fb86a6c11f559b227cdf58efe165dd0d958d8cb802071efa205a8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "db9b4aef7a1e91cc65127b639f8852e99164d224fb4930e109c55c3daa78fc5c"
   end
 
   depends_on "cmake" => :build

@@ -1,8 +1,8 @@
 class Ocrad < Formula
   desc "Optical character recognition (OCR) program"
   homepage "https://www.gnu.org/software/ocrad/"
-  url "https://ftp.gnu.org/gnu/ocrad/ocrad-0.29.tar.lz"
-  mirror "https://ftpmirror.gnu.org/ocrad/ocrad-0.29.tar.lz"
+  url "https://ftpmirror.gnu.org/gnu/ocrad/ocrad-0.29.tar.lz"
+  mirror "https://ftp.gnu.org/gnu/ocrad/ocrad-0.29.tar.lz"
   sha256 "11200cc6b0b7ba16884a72dccb58ef694f7aa26cd2b2041e555580f064d2d9e9"
   license "GPL-2.0-or-later"
 

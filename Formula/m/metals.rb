@@ -34,7 +34,7 @@ class Metals < Formula
     # Following Arch AUR to get the dependencies.
     dep_pattern = /^.+?Attributed\((.+?\.jar)\).*$/
     sbt_deps_output = Utils.safe_popen_read("sbt 'show metals/dependencyClasspath' 2>/dev/null")
-    deps_jars = sbt_deps_output.lines.grep(dep_pattern) { |it| it.strip.gsub(dep_pattern, '\1') }
+    deps_jars = sbt_deps_output.lines.grep(dep_pattern) { |line| line.strip.gsub(dep_pattern, '\1') }
     deps_jars.each do |jar|
       (libexec/"lib").install jar
     end

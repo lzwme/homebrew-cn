@@ -1,8 +1,8 @@
 class Readline < Formula
   desc "Library for command-line editing"
   homepage "https://tiswww.case.edu/php/chet/readline/rltop.html"
-  url "https://ftp.gnu.org/gnu/readline/readline-8.3.tar.gz"
-  mirror "https://ftpmirror.gnu.org/readline/readline-8.3.tar.gz"
+  url "https://ftpmirror.gnu.org/gnu/readline/readline-8.3.tar.gz"
+  mirror "https://ftp.gnu.org/gnu/readline/readline-8.3.tar.gz"
   version "8.3.1"
   sha256 "fe5383204467828cd495ee8d1d3c037a7eba1389c22bc6a041f627976f9061cc"
   license "GPL-3.0-or-later"
@@ -21,8 +21,8 @@ class Readline < Formula
 
   patch_checksum_pairs.each_slice(2) do |p, checksum|
     patch :p0 do
-      url "https://ftp.gnu.org/gnu/readline/readline-8.3-patches/readline83-#{p}"
-      mirror "https://ftpmirror.gnu.org/readline/readline-8.3-patches/readline83-#{p}"
+      url "https://ftpmirror.gnu.org/gnu/readline/readline-8.3-patches/readline83-#{p}"
+      mirror "https://ftp.gnu.org/gnu/readline/readline-8.3-patches/readline83-#{p}"
       sha256 checksum
     end
   end

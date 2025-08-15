@@ -1,17 +1,17 @@
 class Libbsc < Formula
   desc "High performance block-sorting data compression library"
   homepage "http://libbsc.com"
-  url "https://ghfast.top/https://github.com/IlyaGrebnov/libbsc/archive/refs/tags/v3.3.10.tar.gz"
-  sha256 "8e0ad726d808402c3573da35b1fd8945eda6cfdeace6271569d4d516d964fe38"
+  url "https://ghfast.top/https://github.com/IlyaGrebnov/libbsc/archive/refs/tags/v3.3.11.tar.gz"
+  sha256 "3a71c406981b5b53d968b2647b87f1520212a1fad7c5c98e6953b81d7805c4b7"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "3301b293fcd0b47c63fa9de27dc96e6054c946fe56e7476220545edc7f047e44"
-    sha256 cellar: :any,                 arm64_sonoma:  "42217b3ad9f6d8a901967c216cb650278f9bc30800da66fdefe78241d6dc5bb9"
-    sha256 cellar: :any,                 arm64_ventura: "fb23c49b9f63e3e55f71af00be3fcae4594e20b6d187bc3bd15b62ef6d5f90a6"
-    sha256 cellar: :any,                 sonoma:        "c1c6dced1b95d469779dc6247a3b38e89ac756d31c1268f976a461369e32c238"
-    sha256 cellar: :any,                 ventura:       "6d50f5eb0364eca4328e4a0fa0020fde3bc7f32859868be7dfe059d4e64cff9b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "52623cf85811f0fd3705df49f4f742924be581ea417eba0db9f8fe226cf94f6f"
+    sha256 cellar: :any,                 arm64_sequoia: "7a6f90f8763ba58c4f43c8e34d7d57c108515fe671c448a88ab5bee028c52e52"
+    sha256 cellar: :any,                 arm64_sonoma:  "3a29fa2a2e9934217ff57f75932d5ce0831a4e5d9a19f3f6a61cc3ed07d26285"
+    sha256 cellar: :any,                 arm64_ventura: "7266e96a7b5bd4a981cf430e3366093cf9b1fe9471a92a86fb9a11140d031800"
+    sha256 cellar: :any,                 sonoma:        "2a297388b75e2f4d2b9977419fa319e3481aa4f168d1b00be1691e219127dab2"
+    sha256 cellar: :any,                 ventura:       "f3c4355b4ccb577e55de0c30efdc97fbaf4844fde01534230c817f68847ed1b5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ef22ed9b13ec3627549e5a8ec57951537184ae7536748aa1b0f6abe35b3c9750"
   end
 
   depends_on "cmake" => :build
