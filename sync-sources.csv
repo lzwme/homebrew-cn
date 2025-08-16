@@ -1769,6 +1769,7 @@ Homebrew-homebrew-core/Formula/e/ente-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/enter-tex.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/e/entityx.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/entr.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/e/entt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/envchain.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/envd.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/envelope.rb, Homebrew/homebrew-core, 1
@@ -6886,7 +6887,7 @@ Homebrew-homebrew-core/Formula/t/the_platinum_searcher.rb, Homebrew/homebrew-cor
 Homebrew-homebrew-core/Formula/t/the_silver_searcher.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/thefuck.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/theharvester.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/t/theora.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/t/theora.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/thors-mongo.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/thrax.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/threadweaver.rb, Homebrew/homebrew-core, 0
@@ -7615,7 +7616,7 @@ Homebrew-homebrew-core/Formula/x/xray.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/x/xrdb.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/x/xroar.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/x/xrootd.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/x/xsane.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/x/xsane.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/x/xsd.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/x/xsel.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/x/xshogi.rb, Homebrew/homebrew-core, 0
@@ -8517,6 +8518,7 @@ Homebrew-homebrew-cask/Casks/c/classicftp.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/classroom-mode-for-minecraft.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/claude-code.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/claude.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/c/claudia.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/clay.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/clean-me.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/cleanapp.rb, Homebrew/homebrew-cask, 0

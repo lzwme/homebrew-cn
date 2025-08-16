@@ -3,10 +3,9 @@ class Torchvision < Formula
 
   desc "Datasets, transforms, and models for computer vision"
   homepage "https://pytorch.org/vision/stable/index.html"
-  url "https://ghfast.top/https://github.com/pytorch/vision/archive/refs/tags/v0.20.1.tar.gz"
-  sha256 "7e08c7f56e2c89859310e53d898f72bccc4987cd83e08cfd6303513da15a9e71"
+  url "https://ghfast.top/https://github.com/pytorch/vision/archive/refs/tags/v0.23.0.tar.gz"
+  sha256 "db5a91569e5eb4a3b02e9eaad6080335f5ae3824890a697f5618541999f04027"
   license "BSD-3-Clause"
-  revision 3
 
   livecheck do
     url :stable
@@ -16,13 +15,12 @@ class Torchvision < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "05ad6434595d32adb338a250c188b1c4bdbc9dd6cc002667775a940610d03aaa"
-    sha256 cellar: :any,                 arm64_sonoma:  "bb50c0817c495dda4b4a5a2bf01c8cf01033ea76b24a9e7aa9e9e3bd589f8507"
-    sha256 cellar: :any,                 arm64_ventura: "aea7d5b0c1a146c2ecb2c65eceed96b382775b97a840a496e16c7a65cc050a47"
-    sha256 cellar: :any,                 sonoma:        "e4e2d058603a89e0c8a20ebc53c795265ae785bf513e827091416070c13e4543"
-    sha256 cellar: :any,                 ventura:       "bb1e8f8730e76a7ec674ead6d9140b8053726b7f705916da713426918a489680"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "33991a057cb3b39910bfe3e1edf1e28efe209c6088958aeeb30d3377a6ec01f8"
+    sha256 cellar: :any,                 arm64_sequoia: "dde2edbf7868bb33698d12bd1232ea51202e04dc0f0c12157c40bd61d65f5e0b"
+    sha256 cellar: :any,                 arm64_sonoma:  "35372083b2d7f01e60f20bceb909ce7cb23b044b31a6bb44fbd17d27c745b075"
+    sha256 cellar: :any,                 arm64_ventura: "537c9d9461ba7ce76625333971d708d05a107f0ddce2eb23b1999a7085ecadad"
+    sha256 cellar: :any,                 sonoma:        "253465e994198933cedcbf71cc3f51d63435eaf2d64470962a008b648dd46632"
+    sha256 cellar: :any,                 ventura:       "f965c4b2b3a7ef6cacfce1e75e810639c192e02b433fb9b429ec9172d0933a17"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "72b856c25d99e6ab1c1cee4448d55d0e929394616dff162c7d697c0389248ee9"
   end
 
   depends_on "cmake" => :build
@@ -33,6 +31,7 @@ class Torchvision < Formula
   depends_on "numpy"
   depends_on "pillow"
   depends_on "pytorch"
+  depends_on "webp"
 
   def install
     # Avoid overlinking to `abseil`, `libomp` and `protobuf`

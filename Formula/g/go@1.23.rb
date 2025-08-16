@@ -6,19 +6,6 @@ class GoAT123 < Formula
   sha256 "e1cce9379a24e895714a412c7ddd157d2614d9edbe83a84449b6e1840b4f1226"
   license "BSD-3-Clause"
 
-  livecheck do
-    url "https://go.dev/dl/?mode=json"
-    regex(/^go[._-]?v?(1\.23(?:\.\d+)*)[._-]src\.t.+$/i)
-    strategy :json do |json, regex|
-      json.map do |release|
-        next if release["stable"] != true
-        next if release["files"].none? { |file| file["filename"].match?(regex) }
-
-        release["version"][/(\d+(?:\.\d+)+)/, 1]
-      end
-    end
-  end
-
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "7402b2b0c649679d3fdaa22d6b0f44a5fb18fb1ca2f52d27b0d791e530542764"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7402b2b0c649679d3fdaa22d6b0f44a5fb18fb1ca2f52d27b0d791e530542764"
@@ -30,6 +17,10 @@ class GoAT123 < Formula
   end
 
   keg_only :versioned_formula
+
+  # EOL with Go 1.25 release (2025-08-12)
+  # Ref: https://go.dev/doc/devel/release#policy
+  deprecate! date: "2025-08-12", because: :unsupported
 
   depends_on "go" => :build
 

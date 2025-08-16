@@ -4,6 +4,7 @@ class Openmsx < Formula
   url "https://ghfast.top/https://github.com/openMSX/openMSX/releases/download/RELEASE_20_0/openmsx-20.0.tar.gz"
   sha256 "4c645e5a063e00919fa04720d39f62fb8dcb6321276637b16b5788dea5cd1ebf"
   license "GPL-2.0-or-later"
+  revision 1
   head "https://github.com/openMSX/openMSX.git", branch: "master"
 
   livecheck do
@@ -20,13 +21,13 @@ class Openmsx < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any, arm64_sequoia: "ee0a9be62e2b1c04669a5fdbadbf59ece48fb64cfc5c6287cc3c404ce39f884f"
-    sha256 cellar: :any, arm64_sonoma:  "ed81ae7655dd0ca38610c9c5fd48ede0676f2244e29cbdaef8e8dfd62f153abf"
-    sha256 cellar: :any, arm64_ventura: "89b5d4a1cb8f3c248549e45542e47d15030eac7246d2f59162da2c9f4e162fcd"
-    sha256 cellar: :any, sonoma:        "9362583e5d32849d94162a48cfc68d4294d01dd20d2fe968e54a2684590584cb"
-    sha256 cellar: :any, ventura:       "66143d111af9938f34491c5e892c5884ddd501b5d10ca73fcd6665548f0fa7d5"
-    sha256               arm64_linux:   "b28d983fd5fb53554e68e953bf0545ef30c7e5c3a61873f5bfc9b4d5591a7ab8"
-    sha256               x86_64_linux:  "ab58976a39c13c22ef52e773f9faf6ea1f489e61164b4ff41d71e28376d4f30a"
+    sha256 cellar: :any, arm64_sequoia: "3ba8300b8fdbcfffcdfb4012fb7df687230090655411d801afe57ca69e4cfb49"
+    sha256 cellar: :any, arm64_sonoma:  "7c5e4756a68ed4a9dbdb7c1dfdc86ffb40e059f5198b3b15e6410c90eb0281b5"
+    sha256 cellar: :any, arm64_ventura: "a69cc87e4cf618d3136d1bb7c83fd20d2b89968eab61daf52c75d48bd1c2636f"
+    sha256 cellar: :any, sonoma:        "6f9d02fde2ef6c175c16a0f9c37b5a473ee89b3d9ed7c28f04093459ade4217b"
+    sha256 cellar: :any, ventura:       "19303d260496f03b0ef43050132e2c4125715d91d5470333c93ef60568ab3767"
+    sha256               arm64_linux:   "b05bb6887ddd5509c84fc6d88d540668eb6b133a9d12638df0a1b703917c2a2c"
+    sha256               x86_64_linux:  "e0c3322fa46edfeb2f35a85ad63b62d183e166fcb6c16b8541b93186a46a010f"
   end
 
   depends_on "freetype"

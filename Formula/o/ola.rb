@@ -3,9 +3,9 @@ class Ola < Formula
   include Language::Python::Virtualenv
 
   desc "Open Lighting Architecture for lighting control information"
-  homepage "https://www.openlighting.org/ola/"
+  homepage "https://github.com/OpenLightingProject/ola"
   license all_of: ["GPL-2.0-or-later", "LGPL-2.1-or-later"]
-  revision 5
+  revision 6
 
   stable do
     # TODO: Check if we can use unversioned `protobuf` at version bump
@@ -29,13 +29,12 @@ class Ola < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256                               arm64_sequoia: "6d4182b55d3ec40ac585f082515e7ee1125e42acbc6902e3ab1d15c01721b465"
-    sha256                               arm64_sonoma:  "9b45e675b229a1443b89f643533a07aaf3f9674062bbf6115ba899d1b5388b49"
-    sha256                               arm64_ventura: "98db8a67a41af2686b691188404ac2c3ba49c1e63f20c929f2c37048a63aea12"
-    sha256                               sonoma:        "a548628c89e92f9d84659e771a35e745b44cab0713a49a0885f3a56ed075666c"
-    sha256                               ventura:       "b87bb7a4367d5859724b59883b8912bfeaa05317813dbedba687ba7c2b15d48b"
-    sha256                               arm64_linux:   "2ec0f72ea286942021bc89f5dd8d91bc7cf40efb18fdd0c917daf51fd31a69f5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "74cc94c3489eafd39fe993859da64ea188d1f1d40532fe044c75fe1f27e7ed27"
+    sha256 arm64_sonoma:  "ebac56b5aae140ab7f9eed2b35f26ff41e9bafa74bfd4290e7d04c44669e3141"
+    sha256 arm64_ventura: "3c41eb58067aa655a87be1e780279cfc60dbaa04fd893dca467d1ea0aea59cf8"
+    sha256 sonoma:        "e014ac73d1d8f81e589a853a2bb19ceaed924763fa826585e18546d116abb74c"
+    sha256 ventura:       "7189cec61a6d03f8195bbd2632d0c4bb3ce84f8a4cb49d2d6ec08be382526a5d"
+    sha256 arm64_linux:   "a10b42be37d5cd1fdab520be8fd58c3f5db9fb72eb7569c495bbf77698a5549a"
+    sha256 x86_64_linux:  "a392f5b2a76a4f0d5be2d3de9cefa2e16c5c53c3c769830f753914e3a596f4a0"
   end
 
   head do
@@ -60,7 +59,7 @@ class Ola < Formula
   depends_on "libmicrohttpd"
   depends_on "libusb"
   depends_on "numpy"
-  depends_on "protobuf"
+  depends_on "protobuf@29"
   depends_on "python@3.13"
 
   uses_from_macos "bison" => :build
@@ -72,8 +71,8 @@ class Ola < Formula
   end
 
   resource "protobuf" do
-    url "https://files.pythonhosted.org/packages/f7/d1/e0a911544ca9993e0f17ce6d3cc0932752356c1b0a834397f28e63479344/protobuf-5.29.3.tar.gz"
-    sha256 "5da0f41edaf117bde316404bad1a486cb4ededf8e4a54891296f648e8e076620"
+    url "https://files.pythonhosted.org/packages/43/29/d09e70352e4e88c9c7a198d5645d7277811448d76c23b00345670f7c8a38/protobuf-5.29.5.tar.gz"
+    sha256 "bc1463bafd4b0929216c35f437a8e28731a2b7fe3d98bb77a600efced5a15c84"
   end
 
   # Apply open PR to support Protobuf 22+ API
@@ -105,6 +104,14 @@ class Ola < Formula
 
     # Skip flaky python tests. Remove when no longer running tests
     inreplace "python/ola/Makefile.mk", /^test_scripts \+= \\$/, "skipped_test_scripts = \\"
+    # Skip flaky tests on macOS
+    if OS.mac?
+      # https://github.com/OpenLightingProject/ola/pull/1655#issuecomment-696756941
+      inreplace "common/network/Makefile.mk", %r{\bcommon/network/HealthCheckedConnectionTester }, "#\\0"
+      inreplace "plugins/usbpro/Makefile.mk", %r{\\\n\s*plugins/usbpro/WidgetDetectorThreadTester$}, ""
+      # TODO: SelectServerTester may need confirmation on sporadic failures.
+      inreplace "common/io/Makefile.mk", %r{\bcommon/io/SelectServerTester }, "#\\0"
+    end
 
     venv = virtualenv_create(libexec, python3)
     venv.pip_install resources
@@ -125,7 +132,11 @@ class Ola < Formula
     system "make"
     # Run tests to check the workarounds applied haven't broken basic functionality.
     # TODO: Remove and revert to `--disable-unittests` when workarounds can be dropped.
-    system "make", "check"
+    ENV.deparallelize do
+      system "make", "check"
+    ensure
+      logs.install buildpath/"test-suite.log" if (buildpath/"test-suite.log").exist?
+    end
     system "make", "install"
 
     rewrite_shebang python_shebang_rewrite_info(venv.root/"bin/python"), *bin.children

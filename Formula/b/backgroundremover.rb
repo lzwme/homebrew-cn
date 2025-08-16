@@ -6,15 +6,15 @@ class Backgroundremover < Formula
   url "https://files.pythonhosted.org/packages/81/c9/5c7d668bea7bb5ae6e069afe33c19e55ae95975a87a7e3a5bbd3d6199f74/backgroundremover-0.3.4.tar.gz"
   sha256 "c4ce35da0194138c115017dba9f5dae38b7e2bfcf15a413ef04d8ce01e66e214"
   license "MIT"
+  revision 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "286b2ad743b98bedf6d0a5338f013abe9cf99881dbe7ac4127fb2f64a824fe5d"
-    sha256 cellar: :any,                 arm64_sonoma:  "592c6fbd6fbde280e68abda2546add2453b69f4a8f55b7cc3f937975a7105a15"
-    sha256 cellar: :any,                 arm64_ventura: "943c28154f8a0e1eb7c253dffd2c2c2c1e7da4d76805459500055668d579df2f"
-    sha256 cellar: :any,                 sonoma:        "6905e6393ae3bec530bdf1e106c249476728a22e1d7d1186cd33188b3cb15670"
-    sha256 cellar: :any,                 ventura:       "9802b0c0187d92eb2b94803a7f46c7542fd2b1b9f33480307c1d250eefcd3f45"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "82ea9de6cb0117397d34580dd48adda9309b71b213bf4b1886f0f5225e4c0eac"
+    sha256 cellar: :any,                 arm64_sequoia: "2037eb61fdb1fca67d697103b58179ecb86e2d7d3f0b84e5fe793e4ca8d9e902"
+    sha256 cellar: :any,                 arm64_sonoma:  "c8457687bc5a28a17aaad89fbf474f50948d01de54cdf10f15244d8fcfaf1231"
+    sha256 cellar: :any,                 arm64_ventura: "bd162cad39f2910ff9e5c654147f35605c9135b46f7799b1df2f96f265f1bb3e"
+    sha256 cellar: :any,                 sonoma:        "697fff86e0edd55ec5b6b44ad095c2f2fbd900480551e86f07b754f0228e38dd"
+    sha256 cellar: :any,                 ventura:       "b6011e02c1f7bf8e8f14abebd5c323cf171136153964cbb658da401586307007"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "594021e933e73d7454dee7e32236dff7fee1ab4bcd1b3bd1f5724c46a45c65b1"
   end
 
   depends_on "certifi"

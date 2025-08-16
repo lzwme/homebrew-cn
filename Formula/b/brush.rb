@@ -1,8 +1,8 @@
 class Brush < Formula
   desc "Bourne RUsty SHell (command interpreter)"
   homepage "https://github.com/reubeno/brush"
-  url "https://ghfast.top/https://github.com/reubeno/brush/archive/refs/tags/brush-shell-v0.2.20.tar.gz"
-  sha256 "137e2df4dc752d4c2c393fa178005eaad6b691f6401e70897cbc6c4ac9fe8077"
+  url "https://ghfast.top/https://github.com/reubeno/brush/archive/refs/tags/brush-shell-v0.2.21.tar.gz"
+  sha256 "8604f4d5feb28a3466687f491d6bbad9d9e19c258e3c8c8d68209da5266b67cd"
   license "MIT"
   head "https://github.com/reubeno/brush.git", branch: "main"
 
@@ -12,13 +12,13 @@ class Brush < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8794d2936afc5d7ebbbf75ee50bfc4ccaa5f2c94117c460c1772932152a177d2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "257a0e4dfdd157153d99a9e625500e53bb16e7b72ab7d492a59bc43f53ffd606"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "29b632465c3bbb57aa03c857a67fc6495a8293cb98daf15c9ca496a99a7cadd1"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ca7987052c3be314b5dd960e5315179d57381dd58431ca88c15da3568d699de0"
-    sha256 cellar: :any_skip_relocation, ventura:       "89337cf3e9fe70ebf7ade3838cdc49687a7b46c6863d817cd6b926d57f7dd6fe"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "247f6a20f2802df922475d8ee124dffa1c62cba886a8222d4392401773294d39"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b639e0d9477f75a8af7819fe8fb4c03943b7104f91a9340f1f7e7066ba38b486"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "71a5d3f4313dbb284884cb1d0d3ac97d361e7a1b21611c998b401a621ddd1ae1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "37e2b9b3214e79cae2c486e2ed44fcb9510fc76149259d468a55ed4782f02867"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "f971f59e3ba576367c1b5a7d8c6071af532471f5999ea627ce5850e2cc4be04e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "74e43d50ce87a03d845ca613a5a52430e9d2954ea34d736f4e6545ce9fab54cf"
+    sha256 cellar: :any_skip_relocation, ventura:       "7deb324d5931e2b350531e3dc54de37d582a4a44827ed2125902c8ccc78cdf7a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0ed7c082d3c6c55e95b2a72ebb96e16e2142cfe89e9da0e6067b2f627c021eb3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e83c40424acee87c2a41fe5abb2433bf9aa48227e3ed6a2b66bf3473c3ed0360"
   end
 
   depends_on "rust" => :build

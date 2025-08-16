@@ -6,6 +6,7 @@ class Openvino < Formula
   url "https://ghfast.top/https://github.com/openvinotoolkit/openvino/archive/refs/tags/2025.2.0.tar.gz"
   sha256 "15cd5c9beb320a8feadd18bcae40970608de154d5057277281dc53dd7023e383"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/openvinotoolkit/openvino.git", branch: "master"
 
   livecheck do
@@ -14,13 +15,12 @@ class Openvino < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_sequoia: "11b74025a0332e818ce71c9a88cefd86ab97fd473f766274f5630982ec6ae37b"
-    sha256 cellar: :any, arm64_sonoma:  "7a8f95ba5f9f994800547a17b7ec2e02799c16ad510f5bed148f3e13343765cb"
-    sha256 cellar: :any, arm64_ventura: "5cbde31722a51f88bdd4d3fe5b323bc898bc2e0450d1809e26d5805d3308fd44"
-    sha256 cellar: :any, sonoma:        "0730eb6c247836061f16d578e78be64b3b55d5a017da2d9075fc3bdfbdfb071b"
-    sha256 cellar: :any, ventura:       "f793cd9c8d4763de4fbc6e8a7fa9d475c78ef70d08dbeeefc42d59e0f547326f"
-    sha256               x86_64_linux:  "93bab6f4d95a8b1af5026c9e6c9391aee2fed7c3022a9e5de7a145dcfcfe9be9"
+    sha256 cellar: :any, arm64_sequoia: "4667db720f1f7154bdee39410f81f08785e5bfd6c8848eb7dd0dbc283b48ab66"
+    sha256 cellar: :any, arm64_sonoma:  "3bc1cadd2f08cea175ad305228da8afd92241d8e4435fada4b0cf503e4aa38aa"
+    sha256 cellar: :any, arm64_ventura: "f40fd6c1adc5eb47bec1e028b57b0b071519c9921ec21b738530d4ea6e207a64"
+    sha256 cellar: :any, sonoma:        "20290ace7514000a6fd26b259d15df391916b9f3bb913e9837f92aa3ed8ec3fc"
+    sha256 cellar: :any, ventura:       "dc9f5af13721f23f23d54559d7ce2218aef3d6a624581b68bfd326f45bc3678d"
+    sha256               x86_64_linux:  "8657e04f036d9e5b5522298bd15a5986aefb61ccf5ef827d2d339a453fecae7f"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -100,6 +100,10 @@ class Openvino < Formula
   end
 
   def install
+    # Work around for Protobuf C++ 6.x until OpenVINO adds support
+    inreplace "thirdparty/dependencies.cmake", "find_package(Protobuf 5.26.0 ",
+                                               "find_package(Protobuf 6.30.0 "
+
     # cmake 4 build patch for third parties
     ENV["CMAKE_POLICY_VERSION_MINIMUM"] = "3.5"
 
@@ -154,6 +158,9 @@ class Openvino < Formula
       cmake_args << "-DCMAKE_OSX_DEPLOYMENT_TARGET=#{MacOS.version}.0"
       ENV["MACOSX_DEPLOYMENT_TARGET"] = "#{MacOS.version}.0"
     end
+
+    # Fix linking failure of certain binaries.
+    cmake_args << "-DCMAKE_BUILD_RPATH=#{HOMEBREW_PREFIX}/lib" if OS.linux? && Hardware::CPU.arm?
 
     openvino_binary_dir = "#{buildpath}/build"
     system "cmake", "-S", ".", "-B", openvino_binary_dir, *cmake_args, *std_cmake_args

@@ -3,18 +3,18 @@ class Mcpm < Formula
 
   desc "Open source, community-driven MCP server and client manager"
   homepage "https://mcpm.sh/"
-  url "https://files.pythonhosted.org/packages/ba/49/d870dbcef2be42542722f0c9d33847615cb47d90913275387260de623b01/mcpm-2.6.1.tar.gz"
-  sha256 "5e6755f19274c593bf93cd831324323f023c2acc94c1616d300f6a6442dccf71"
+  url "https://files.pythonhosted.org/packages/7a/37/ac5365bc2f13a40a6dfd609c3678d56dbeea5adf8e1cefa5b029889dccac/mcpm-2.7.0.tar.gz"
+  sha256 "fc54435a052b002c2a580e57c158f2af0fad148934ff85c0f013079f52e471c8"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "2489d4017982d3217fefef6c6a46ec48ed955d9b06f6b1d1167e311e5be7f2a7"
-    sha256 cellar: :any,                 arm64_sonoma:  "4ffef7e6a3ff83535e95f4169195d02e39ec5232ca08b45f662813a9ffe9494e"
-    sha256 cellar: :any,                 arm64_ventura: "9f8bfaa7f7992a2f5e5cc921fa45e9c2a40fe8c02822c9a9596e57874828785c"
-    sha256 cellar: :any,                 sonoma:        "fb26c529aa44996e2ff4c38e22e7dff596c5bb7795e522a61a8c8a2724d4ed88"
-    sha256 cellar: :any,                 ventura:       "3ecadcb347dca6b6b5edbd8406280bca4ad05c50518826777ae28db66fe350d5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "bbf30530b8e9098355f0e2699df0fb640e4c7e27af06849b69cf1e93ab84a5dc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "44872d78a5ce50d107df9635a95187a3b0e41f7bd046c7046b84852c413386ec"
+    sha256 cellar: :any,                 arm64_sequoia: "beecbf4aad3e0b11b6e0beb721ae8c1e8fb10331254afcfd7824f02b3a339606"
+    sha256 cellar: :any,                 arm64_sonoma:  "326c30fef5fb9f5991fe32deee18180ce30d45b7cb97ccb88a32e8a1f30964d4"
+    sha256 cellar: :any,                 arm64_ventura: "9c615a8502a67c254b648c1e6a08935c58a801e6ea0c035a355c4a4a022d7506"
+    sha256 cellar: :any,                 sonoma:        "9768ca62dfb5e47314dca1e08a095b40fb576095410d95457686bb37f556495f"
+    sha256 cellar: :any,                 ventura:       "83d73f91957d716ee9a9e815269993e3926d2ab75b1655d919c23d7a7f710a52"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "67830b71b8e15fbb3a04589258f65005f25a67a030b057b7ba5fa71819b82897"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e8e3c029a3248a0ebed41f8937b3c3833832274a992f27de47d8f3587aeda249"
   end
 
   depends_on "rust" => :build
@@ -43,8 +43,8 @@ class Mcpm < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/e4/33/89c2ced2b67d1c2a61c19c6751aa8902d46ce3dacb23600a283619f5a12d/charset_normalizer-3.4.2.tar.gz"
-    sha256 "5baececa9ecba31eff645232d59845c07aa030f0c81ee70184a90d35099a0e63"
+    url "https://files.pythonhosted.org/packages/83/2d/5fd176ceb9b2fc619e63405525573493ca23441330fcdaee6bef9460e924/charset_normalizer-3.4.3.tar.gz"
+    sha256 "6fce4b8500244f6fcb71465d4a4930d132ba9ab8e71a7859e6a5d59851068d14"
   end
 
   resource "click" do
@@ -133,13 +133,13 @@ class Mcpm < Formula
   end
 
   resource "markdown-it-py" do
-    url "https://files.pythonhosted.org/packages/38/71/3b932df36c1a044d397a1f92d1cf91ee0a503d91e470cbd670aa66b07ed0/markdown-it-py-3.0.0.tar.gz"
-    sha256 "e3f60a94fa066dc52ec76661e37c851cb232d92f9886b15cb560aaada2df8feb"
+    url "https://files.pythonhosted.org/packages/5b/f5/4ec618ed16cc4f8fb3b701563655a69816155e79e24a17b651541804721d/markdown_it_py-4.0.0.tar.gz"
+    sha256 "cb0a2b4aa34f932c007117b194e945bd74e0ec24133ceb5bac59009cda1cb9f3"
   end
 
   resource "mcp" do
-    url "https://files.pythonhosted.org/packages/4d/19/9955e2df5384ff5dd25d38f8e88aaf89d2d3d9d39f27e7383eaf0b293836/mcp-1.12.3.tar.gz"
-    sha256 "ab2e05f5e5c13e1dc90a4a9ef23ac500a6121362a564447855ef0ab643a99fed"
+    url "https://files.pythonhosted.org/packages/d3/a8/564c094de5d6199f727f5d9f5672dbec3b00dfafd0f67bf52d995eaa5951/mcp-1.13.0.tar.gz"
+    sha256 "70452f56f74662a94eb72ac5feb93997b35995e389b3a3a574e078bed2aa9ab3"
   end
 
   resource "mdurl" do
@@ -323,8 +323,8 @@ class Mcpm < Formula
   end
 
   resource "wrapt" do
-    url "https://files.pythonhosted.org/packages/c3/fc/e91cc220803d7bc4db93fb02facd8461c37364151b8494762cc88b0fbcef/wrapt-1.17.2.tar.gz"
-    sha256 "41388e9d4d1522446fe79d3213196bd9e3b301a336965b9e27ca2788ebd122f3"
+    url "https://files.pythonhosted.org/packages/95/8f/aeb76c5b46e273670962298c23e7ddde79916cb74db802131d49a85e4b7d/wrapt-1.17.3.tar.gz"
+    sha256 "f66eb08feaa410fe4eebd17f2a2c8e2e46d3476e9f8c783daa8e09e0faa666d0"
   end
 
   def install

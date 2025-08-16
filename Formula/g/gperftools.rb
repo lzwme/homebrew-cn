@@ -1,8 +1,8 @@
 class Gperftools < Formula
   desc "Multi-threaded malloc() and performance analysis tools"
   homepage "https://github.com/gperftools/gperftools"
-  url "https://ghfast.top/https://github.com/gperftools/gperftools/releases/download/gperftools-2.17.1/gperftools-2.17.1.tar.gz"
-  sha256 "7c0e083a4d321c25d8122ba35baa16e9dcd75ffd93e88002f6fb9664a19a9bda"
+  url "https://ghfast.top/https://github.com/gperftools/gperftools/releases/download/gperftools-2.17.2/gperftools-2.17.2.tar.gz"
+  sha256 "bb172a54312f623b53d8b94cab040248c559decdb87574ed873e80b516e6e8eb"
   license "BSD-3-Clause"
 
   livecheck do
@@ -12,13 +12,13 @@ class Gperftools < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "9e729297c799dd8a2acffbe076dcb2171de1c03c1a5219da3e910e5b2cabd7da"
-    sha256 cellar: :any,                 arm64_sonoma:  "bcb1b349d7f66b7798c357bb6b699f2d43100502b6fed332932cc3cca1c8b14f"
-    sha256 cellar: :any,                 arm64_ventura: "d452ee627145261f8fae0e4655029f34866dbdd334674fbe4bfb9fc716a54314"
-    sha256 cellar: :any,                 sonoma:        "19dbae04a8cd0e9f14f8c34c47c8ece3e8e2bc07473153f8d16ab284598cd46b"
-    sha256 cellar: :any,                 ventura:       "43766c3c9c9858d7897f00dc84a309fdd65a83190e130b035bb175a2228137e0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f972bfb5dd5eb2aa43a754fca3e3dc0995d24dca3407a979effbf2cdf8405c27"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "09b54008898a22873beebe1133436037934187cc9bd5dc790bdfec096241a1ab"
+    sha256 cellar: :any,                 arm64_sequoia: "ea34ae85c303bc4bd38232a7e93acd11389cb30c226ce3a911327af5e2149ded"
+    sha256 cellar: :any,                 arm64_sonoma:  "c4f54ccf201211a79644147a84ab0814fc663fcedc1b57063db050669ddebb31"
+    sha256 cellar: :any,                 arm64_ventura: "5689a65cbb0c98429fe13d949bd36ab1b9d9ad7f2479b435ed6aa798f2b5141e"
+    sha256 cellar: :any,                 sonoma:        "bb84872e1e25b83e86d5a500f4bdce56b37ec695f954d7e236d8678da1f08f77"
+    sha256 cellar: :any,                 ventura:       "9d95e1494ecc17ce5a48221a96fe3a44f94d9d80274299721756f2b04b645b16"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7b6226ec9a1b380f27e00c0ff377b7b2bab468f0ce70856d988730f3aa803957"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6b90e19dd7b237b02aff6d7ddd13fcabdb68ce97e9b27a0d43df8746eeea33c3"
   end
 
   head do

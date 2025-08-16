@@ -12,13 +12,14 @@ class BulkExtractor < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "0eeb51340d665d0d000912c6d16d60a7511c1e910be99a786fd456e418c260e0"
-    sha256 cellar: :any,                 arm64_sonoma:  "c02a8c20ef6e7c5214b0d4aaa3883ea70433e496220acaf774163649fe357c44"
-    sha256 cellar: :any,                 arm64_ventura: "234712b8f102e6fddb941c3dbaee77d9cea2c18bd5cd3b7bd9ec43d1a97a2a0e"
-    sha256 cellar: :any,                 sonoma:        "604b9074da535d325d007aa47aff87164b218a1d8158b219bea05aa986b315f5"
-    sha256 cellar: :any,                 ventura:       "c5e8205cd079854b272967537829922fff5388e72429169c59ab6260eb680af9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2c5fc1a205bf3625e78a5dfc32895a38cd5c655b9012648592ebda3aaaa32c14"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2fbf259ce6abf7f96c71c18aeffea8a67343affdc1de696790b6e3dba9a12d28"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9a31d530c9667f15046ad54b617056fe121a9eec4f7b24749207b8b6e84f9083"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8d670cf96b00bf5497c822bf2b7f0aef8c1b23cec45692a37bb2c61e3fedc0c0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "8a2707abfb8d0b3cf9744d495661c47a3ff3fc0bf16cbbc09311ccd462dc54c9"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f3f3290fda284e7b8e04d5c64ee3a06b06048b37c1f7399a3374ac033c3d5f74"
+    sha256 cellar: :any_skip_relocation, ventura:       "f85d235e221af43b55ab85384aa5f4e3799d5cd73c8bf54e41cf1d0cae93464f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5dd712b046cc8a9d3b6707582ab3a2d309b71c534617828cb8eca95e8a56905f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "624fbdcd4889624e1c1da350a4433335234d25bf861686bcf4736e5f4315ee0b"
   end
 
   head do
@@ -28,15 +29,22 @@ class BulkExtractor < Formula
   end
 
   depends_on "pkgconf" => :build
-  depends_on "openssl@3"
-  depends_on "re2"
+  # Not actually used at runtime, but required at build-time
+  # due to a stray `RE2::` reference.
+  depends_on "re2" => :build
 
   uses_from_macos "flex" => :build
   uses_from_macos "expat"
   uses_from_macos "ncurses"
   uses_from_macos "zlib"
 
+  on_linux do
+    depends_on "openssl@3" # uses CommonCrypto on macOS
+  end
+
   def install
+    # Avoid overlinkage with abseil and re2.
+    ENV.append "LDFLAGS", "-Wl,-dead_strip_dylibs" if OS.mac?
     system "./bootstrap.sh" if build.head?
     # Disable RAR to avoid problematic UnRAR license
     system "./configure", *std_configure_args, "--disable-rar", "--disable-silent-rules"

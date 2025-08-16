@@ -20,7 +20,8 @@ class Saxon < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "52b46e48018fc8f9837456bf22e740bb5c1372c481465f15198e7c196b1e0017"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "c3aee8af279e05a32c2d398e6be4c5a35314e81b72c6e7c116b561e4762bbf99"
   end
 
   depends_on "openjdk"
@@ -28,6 +29,11 @@ class Saxon < Formula
   def install
     libexec.install Dir["*.jar", "doc", "lib", "notices"]
     bin.write_jar_script libexec/"saxon-he-#{version.major_minor}.jar", "saxon"
+    (bin/"gizmo").write <<~EOS
+      #!/bin/bash
+      export JAVA_HOME="#{Language::Java.overridable_java_home_env("11+")[:JAVA_HOME]}"
+      exec "${JAVA_HOME}/bin/java" -cp "#{libexec}/saxon-he-#{version.major_minor}.jar" net.sf.saxon.Gizmo "$@"
+    EOS
   end
 
   test do
@@ -53,5 +59,15 @@ class Saxon < Formula
          </body>
       </html>
     HTML
+
+    (testpath/"test-gizmo.txt").write "show\n"
+
+    # Run the command and capture output
+    output = shell_output("#{bin}/gizmo -s:test.xml -q:test-gizmo.txt")
+
+    # Split output into lines
+    lines = output.lines.map(&:chomp)
+
+    assert_equal "<test>It works!</test>", lines[1]
   end
 end

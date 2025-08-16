@@ -1,18 +1,18 @@
 class Forcecli < Formula
   desc "Command-line interface to Force.com"
   homepage "https://force-cli.herokuapp.com/"
-  url "https://ghfast.top/https://github.com/ForceCLI/force/archive/refs/tags/v1.2.0.tar.gz"
-  sha256 "ab18da754998347ce4f81145fe2bca422ce29a6c0fee6240da9ef3316ad35aba"
+  url "https://ghfast.top/https://github.com/ForceCLI/force/archive/refs/tags/v1.3.0.tar.gz"
+  sha256 "0465ea28cf5834d5c534309cc2d31dc02be880e02154551539eecf6cc121dff2"
   license "MIT"
   head "https://github.com/ForceCLI/force.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6fad1be0d3cfa5010767a85d058778eee4893e00af2edba56a1981e278ec2ab0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6fad1be0d3cfa5010767a85d058778eee4893e00af2edba56a1981e278ec2ab0"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "6fad1be0d3cfa5010767a85d058778eee4893e00af2edba56a1981e278ec2ab0"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a0379be9222c90af0a0c7270d5f424929a273e149378a13c4918004529cf7d34"
-    sha256 cellar: :any_skip_relocation, ventura:       "a0379be9222c90af0a0c7270d5f424929a273e149378a13c4918004529cf7d34"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6e7ee40e2ee2b90b70897c309778cd6984df8330b95a92df43f48506f7ff375c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c546c3cc1cfa95fdfaa184477858031e9334a1fb6e179226433c3d9dd873181d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c546c3cc1cfa95fdfaa184477858031e9334a1fb6e179226433c3d9dd873181d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "c546c3cc1cfa95fdfaa184477858031e9334a1fb6e179226433c3d9dd873181d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e5df88404103fde0dd37e51a5a46aff53f2096bbb4c513bc60e4b0bb698bf9da"
+    sha256 cellar: :any_skip_relocation, ventura:       "e5df88404103fde0dd37e51a5a46aff53f2096bbb4c513bc60e4b0bb698bf9da"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fc49ebf52c779b2631af94ffe7e9e7671bf883ef97709160cca0ac8f06e69be8"
   end
 
   depends_on "go" => :build

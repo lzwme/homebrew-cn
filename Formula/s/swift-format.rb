@@ -14,13 +14,14 @@ class SwiftFormat < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dd4509cdd27b42bab34ffa4dd8af88c5f851e4996c71f511aa69e21595308f51"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9c67cc2e1b479b85ea8cd42c79c3251fe0f06bfeefc8fda2e1df72ed745dc243"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "cad872e59a50e0461915c4412c23949ab4104e566ef387149dd246b377816881"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6e46febcf28e10a46cb5dce2ebcbec18230f661221493d1bdfb9dc74e4e91987"
-    sha256 cellar: :any_skip_relocation, ventura:       "9a080668eb1f1d87354c99cdfb31a65c76b3f51a797484a81ccee7a9a1386ff5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "09f0c3b6f509becd131c30ea8446a9fdb4332d08a1ecd6b370dd6e2b492decec"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6370e3eca7bfcc407ebdc14481cb809206c71abc40caeab02d11533f1c228254"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "548eaeeadc2ca4bcd4328bcababf9df8e53f07cf750f2f38895f3bd60f00de2a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c09eaa3970ce73f7e4e6a4a9ab31f7fcad525b433d8cf4db89bc63079126db8e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "5e845064494c8db5d56782b08febc4f4516f4c4d6ea2fe80ae4148fe554299a7"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0776bbd9d05f899a24c1f465c90078f87e31ccb156af92c8a56e4d1ee40e8d97"
+    sha256 cellar: :any_skip_relocation, ventura:       "26ae3f5e9124087966fe7c3d34ce6f54723ecdd3225aab16be727932322c9b04"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f83de88ab0808563400c502abebbe1cb93c3e45ad19ae83bae6440175d7d9c91"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "95b04de614adadd6a2d2e8430b9bdd04117dc75a7c4d62077183352b12ae0ca9"
   end
 
   # The bottles are built on systems with the CLT installed, and do not work
@@ -40,6 +41,7 @@ class SwiftFormat < Formula
     system "swift", "build", *args, "-c", "release", "--product", "swift-format"
     bin.install ".build/release/swift-format"
     doc.install "Documentation/Configuration.md"
+    generate_completions_from_executable(bin/"swift-format", "--generate-completion-script")
   end
 
   test do
