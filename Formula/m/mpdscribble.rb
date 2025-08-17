@@ -24,7 +24,6 @@ class Mpdscribble < Formula
     sha256 x86_64_linux:   "4e5852c3dcb301ca9378826b19a679be1b0592d1b99dc64bed775ef092f4eecc"
   end
 
-  depends_on "boost" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkgconf" => :build

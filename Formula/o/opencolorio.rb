@@ -4,16 +4,17 @@ class Opencolorio < Formula
   url "https://ghfast.top/https://github.com/AcademySoftwareFoundation/OpenColorIO/archive/refs/tags/v2.4.2.tar.gz"
   sha256 "2d8f2c47c40476d6e8cea9d878f6601d04f6d5642b47018eaafa9e9f833f3690"
   license "BSD-3-Clause"
+  revision 1
   head "https://github.com/AcademySoftwareFoundation/OpenColorIO.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "fd4ce40466893d4cfb51455109afc4b3f69024d6a4fdd008f87cc61658e4fd37"
-    sha256 cellar: :any,                 arm64_sonoma:  "da363d024bb2473440be47e1c3cb5720219ab747815fc96e83ccb16558720e22"
-    sha256 cellar: :any,                 arm64_ventura: "7df6dc5b16c82aaecc3c6d5366b471f908e479e5583152948d5829b2a9fc024f"
-    sha256 cellar: :any,                 sonoma:        "4be7e329a8f5b155d8fa8209d01d2fcb8bb1953bdbd9ffc64282f3fe28eade8f"
-    sha256 cellar: :any,                 ventura:       "4c67b15aaaaba4b75bcd3d0dba1193edeb25ab3d9ca77365a35fb11970efe86d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9c0f0c49ea791180f3d12d806882b2b60c36b0e27b0022d69223a1b06a2e6b69"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e366c2cf6a6dab2e5abac729a3b08af8bb16c1711e2c6642e05e23802df2a1f2"
+    sha256 cellar: :any,                 arm64_sequoia: "ff1674c4de43f5ec084a0ba475fdfda2f0ecf00f974fdf3476c1b905706ab4b2"
+    sha256 cellar: :any,                 arm64_sonoma:  "223d1990ae687fc674526bbda8cbd0750294aa660412102fb70d382659236ce3"
+    sha256 cellar: :any,                 arm64_ventura: "578488f4b4c89cfc786a5185c226234d37d55cb8066411f6446f9d18340166d4"
+    sha256 cellar: :any,                 sonoma:        "35dfbc4519b22515f50e4e35936f3589abcc6f6a8cb9eb3f518ca548474ed924"
+    sha256 cellar: :any,                 ventura:       "3c98c45371a5dc8032ec1133073ab61f923ee929a3420da57784fed4c9feb067"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "56504df9809d3ed3d912c4278d928ccece7867ef0e5b69601ebc84546a4ba394"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "755b5ccbf7ddf7df2d430c073283e2bef5c581598a518bb9891da04dfbb57133"
   end
 
   depends_on "cmake" => :build

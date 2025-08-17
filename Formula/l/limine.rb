@@ -1,8 +1,8 @@
 class Limine < Formula
   desc "Modern, advanced, portable, multiprotocol bootloader and boot manager"
   homepage "https://limine-bootloader.org"
-  url "https://ghfast.top/https://github.com/limine-bootloader/limine/releases/download/v9.6.0/limine-9.6.0.tar.gz"
-  sha256 "715f9b2d507cc06553e2127e5a45da41034bcd66a86663176b5a993da1990271"
+  url "https://ghfast.top/https://github.com/limine-bootloader/limine/releases/download/v9.6.1/limine-9.6.1.tar.gz"
+  sha256 "fc601e671d9286d0be568a8d3bf481f07e242cb81d2c073f440195c45e8899b7"
   license "BSD-2-Clause"
 
   livecheck do
@@ -11,13 +11,13 @@ class Limine < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "144a329e3cd4d0e04515411cfe951676061f8acc078ac154036dceea9419ccf2"
-    sha256 arm64_sonoma:  "6edbf2f5f65a78498db4c7b8bf6b292e852c12979dcb6dba5e9a891249041bf9"
-    sha256 arm64_ventura: "de3a113c1ee26a865a16f3e335f5b4a436b56ae0ac9dc4ef4028ede1e1302f2f"
-    sha256 sonoma:        "c1f6f796490e0392521b7e17dca9fde88d587e7566f13d64d58b8122a8fd0216"
-    sha256 ventura:       "55efe1a93768cddc8022c9d1357f0815a33ae7a9913bbe51bcf83a57dd90e3c9"
-    sha256 arm64_linux:   "08f83de27f28ec02d1c8defd5bfcf6226a2e6fb2117a1cad50129d31439afa0c"
-    sha256 x86_64_linux:  "2f97f997a36044836b008e87afa224d83da698805d602fd2894fccb13e552f34"
+    sha256 arm64_sequoia: "caf878d72bbf94b1a28fcddc6b6ba872706a2caeecc0893857c7d5dcecacbbc9"
+    sha256 arm64_sonoma:  "83efc6bf1d9e157ec60c0f44d3f35bd2a8cc1154522e18bf684882d6ca7c7750"
+    sha256 arm64_ventura: "796635d212764907c095db379d794c07d1cc7df053cae58d430a9772edce2bcc"
+    sha256 sonoma:        "77fcb7dcaf579f91b338e5f691e96b6d26e4dada722db7470810678a562534a9"
+    sha256 ventura:       "63d866853e3a42e81cc65011730e9f378fa29343ebb32acd6f8d43d060c7da26"
+    sha256 arm64_linux:   "dc500f5149014d2f5d14b53e33865691f583bacb78e62c2397ed306f46dddd1c"
+    sha256 x86_64_linux:  "1a428b6b0900945e3c10b4668a1a06c0c03dc97b477e7049385fe08aafc85391"
   end
 
   # The reason to have LLVM and LLD as dependencies here is because building the

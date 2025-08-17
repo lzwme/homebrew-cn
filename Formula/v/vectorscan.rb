@@ -17,7 +17,6 @@ class Vectorscan < Formula
   end
 
   depends_on "boost" => :build
-  depends_on "ccache" => :build
   depends_on "cmake" => :build
   depends_on "pcre" => :build # PCRE2 issue: https://github.com/VectorCamp/vectorscan/issues/320
   depends_on "pkgconf" => :build
@@ -25,6 +24,7 @@ class Vectorscan < Formula
 
   def install
     cmake_args = [
+      "-DCCACHE_FOUND=CCACHE_FOUND-NOTFOUND",
       "-DBUILD_STATIC_LIBS=ON",
       "-DBUILD_SHARED_LIBS=ON",
       "-DFAT_RUNTIME=OFF",

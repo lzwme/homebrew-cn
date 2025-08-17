@@ -31,6 +31,7 @@ class Aspcud < Formula
     args = %W[
       -DASPCUD_GRINGO_PATH=#{Formula["clingo"].opt_bin}/gringo
       -DASPCUD_CLASP_PATH=#{Formula["clingo"].opt_bin}/clasp
+      -DCMAKE_POLICY_VERSION_MINIMUM=3.5
     ]
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args

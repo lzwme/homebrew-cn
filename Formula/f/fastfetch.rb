@@ -1,8 +1,8 @@
 class Fastfetch < Formula
   desc "Like neofetch, but much faster because written mostly in C"
   homepage "https://github.com/fastfetch-cli/fastfetch"
-  url "https://ghfast.top/https://github.com/fastfetch-cli/fastfetch/archive/refs/tags/2.50.1.tar.gz"
-  sha256 "947e070edcf906bfe88ccc219f65226c75c509612b127aba28e3b62ab30f50da"
+  url "https://ghfast.top/https://github.com/fastfetch-cli/fastfetch/archive/refs/tags/2.50.2.tar.gz"
+  sha256 "e59f2a2bdd5834ef40adb9fb6680820c268ff60ca0534469c5ea4b86775c83db"
   license "MIT"
   head "https://github.com/fastfetch-cli/fastfetch.git", branch: "dev"
 
@@ -12,13 +12,13 @@ class Fastfetch < Formula
   end
 
   bottle do
-    sha256                               arm64_sequoia: "982c3daaa72ff7b01510e8806d936b80dea829a6e967646f852544cbff3a95ce"
-    sha256                               arm64_sonoma:  "e744f43dbd0d97b0f23412dbd7c830e0fdafbe2b22804aa9f6c2a6f6fde5597c"
-    sha256                               arm64_ventura: "d0fc72b2f2161e659b32fb9a261b6e3c1cd56d959cc56a47ed88a450be924aeb"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a4cfe08f79f6921dba6d4fb236a3e5d4af11e8fce6bbf2b290cf496b20fc910a"
-    sha256 cellar: :any_skip_relocation, ventura:       "ea7b0aa08fddcf1d48752ebf660f229afa18c6bf2826d40002f33f6fd97a2a33"
-    sha256                               arm64_linux:   "4518f335a0e795415302afe3e05c498899fde685d5b4dd9a3127775261314dc4"
-    sha256                               x86_64_linux:  "ae3defa586a3d4335275609101da30666556d4fa06a03ba43cc1837896ea1a7e"
+    sha256                               arm64_sequoia: "a3a46c72088cb62820c4d1522a13f3943ace9da78c46bdff30ad93a277b4c0bd"
+    sha256                               arm64_sonoma:  "c9a619c6b0087f9e6f82a11cd4f82933490175cdb5b17adfa9be3cdad766169d"
+    sha256                               arm64_ventura: "cdba7f6eb93b22904e8c3cd1931851aa428abc30ee3a4d90c516283a8a802c58"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4498e61d65a790b0d11d9a4932fdbe4deb31265bbf21e1b593ff6dc4b273b81b"
+    sha256 cellar: :any_skip_relocation, ventura:       "9978f3ae6d8a785ca5082034764b532fe6169d7bffd23f1197bbaba99ad526dd"
+    sha256                               arm64_linux:   "b835d4d8c78e99e3b0f3b1e43e342353d2de37514e16d0ed0afb5d0a49fb1420"
+    sha256                               x86_64_linux:  "67069b8b30bf9175f996d142465fe3d2a1a0f2f4a8793af22b4e358eba16ad49"
   end
 
   depends_on "chafa" => :build

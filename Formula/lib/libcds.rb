@@ -25,13 +25,12 @@ class Libcds < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "boost"
 
   def install
     # Change the install library directory for x86_64 arch to `lib`
     inreplace "CMakeLists.txt", "set(LIB_SUFFIX \"64\")", ""
 
-    system "cmake", "-S", ".", "-B", "_build", *std_cmake_args
+    system "cmake", "-S", ".", "-B", "_build", "-DCMAKE_POLICY_VERSION_MINIMUM=3.5", *std_cmake_args
     system "cmake", "--build", "_build"
     system "cmake", "--install", "_build"
   end

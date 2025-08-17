@@ -3,14 +3,13 @@ class Checkdmarc < Formula
 
   desc "Command-line parser for SPF and DMARC DNS records"
   homepage "https://domainaware.github.io/checkdmarc/"
-  url "https://files.pythonhosted.org/packages/de/86/0f0d08402bc7184d5cd04be366b66087c93cd8616f008f8b808888e3a0da/checkdmarc-5.8.6.tar.gz"
-  sha256 "1e36d52fc73bdcad8f9904e47c3213c71126eb1ca69b6aa8e43f460cf8e4d52c"
+  url "https://files.pythonhosted.org/packages/2a/86/00b2de56f8c6655aba9156b34e0195b3fb0d2d4e22c1f37a4a31fe30e0f5/checkdmarc-5.8.7.tar.gz"
+  sha256 "31384a8b803bfb6a9a9740e93b913422835d9bebc7064aa8160addcb7b14fa54"
   license "Apache-2.0"
-  revision 2
   head "https://github.com/domainaware/checkdmarc.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "6453b2bbf9d383ed7d84e9dc6d225d5d5da59f3f1e5a3be45c83d3a586372677"
+    sha256 cellar: :any_skip_relocation, all: "3f31fc7bb4172fd1fa115866388c1be6161dea1b9ee1a10a12b96b902ae9540a"
   end
 
   depends_on "certifi"
@@ -18,8 +17,8 @@ class Checkdmarc < Formula
   depends_on "python@3.13"
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/e4/33/89c2ced2b67d1c2a61c19c6751aa8902d46ce3dacb23600a283619f5a12d/charset_normalizer-3.4.2.tar.gz"
-    sha256 "5baececa9ecba31eff645232d59845c07aa030f0c81ee70184a90d35099a0e63"
+    url "https://files.pythonhosted.org/packages/83/2d/5fd176ceb9b2fc619e63405525573493ca23441330fcdaee6bef9460e924/charset_normalizer-3.4.3.tar.gz"
+    sha256 "6fce4b8500244f6fcb71465d4a4930d132ba9ab8e71a7859e6a5d59851068d14"
   end
 
   resource "dnspython" do
@@ -48,8 +47,8 @@ class Checkdmarc < Formula
   end
 
   resource "publicsuffixlist" do
-    url "https://files.pythonhosted.org/packages/68/99/b5da90350576ccdd09f7399448675ca17c1482692f4b3e8986e01a0ef098/publicsuffixlist-1.0.2.20250617.tar.gz"
-    sha256 "5042d7fc63f572f92632936efb3ce6432c1a2a464f24fd43f25af742618790e6"
+    url "https://files.pythonhosted.org/packages/04/a6/e101989f29badffcab533ea4b2b43e128217179db9476748fecde99f29d0/publicsuffixlist-1.0.2.20250815.tar.gz"
+    sha256 "374f0b9423a666f9016c83d487cd1063f34ce70c52e0579f2a7145e17be51f49"
   end
 
   resource "pyleri" do

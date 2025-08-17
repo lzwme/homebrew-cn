@@ -7,13 +7,14 @@ class SwiftOutdated < Formula
   head "https://github.com/kiliankoe/swift-outdated.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c854d719500ecd9228e4d10a0008da09ac89589a548a5bbc2d92aa2fc5c99281"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a44bc14904726aa8cf2d4bc15cd3be7b59c7f00ef584cd9b79d7609910c71e09"
-    sha256 cellar: :any,                 arm64_ventura: "d6fa404a960bc8522d91a45bfa9e2d52b7baab491c6c5e0229a13f5a1ece022b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "727817c88b6c5e964dfa2deb2b14b5028364000f4eee8dc8693a982cacc36cf3"
-    sha256 cellar: :any,                 ventura:       "c996f9b83bc6d56580acdc89c83958a30d3ca23adae922d1c4eadfd408906164"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "284ed8674d3a5dbe92d9d0c7068fad398ac559b6ac9696c48687f2eca6d00f02"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "be519ea7c102f4277ca2d217c9eb2275f90c3431205809bc4f99c15620ea2763"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "58aeea76403eca1144530d12d17f6fa5a6948034cb075cb5a3b1014461f0a396"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "59a7de084662bdadeb04796bcd11046d6ee063931e5b01f5ab3792b3486d92a7"
+    sha256 cellar: :any,                 arm64_ventura: "62239578f238bf0236695dad01d98c639260eaca52438a8de0cf2ae86de74510"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6d1604bc3df90d6939ce16b57ef779c57a79f7b84558e6d2512fccb1c6af4e82"
+    sha256 cellar: :any,                 ventura:       "89fb9b983054d10d5a9df8a29be708a4216e1c434d5b981d47c7abb9b791068d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7667824b4932a49ee6a49349c37a7806541a872b7320f2aca2216aeb64ced9b1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "25992defbbb5f13ee4cfadf31b3293691ea40298c8e75ee54bdcdc08556cbdb8"
   end
 
   uses_from_macos "swift" => :build, since: :sonoma # swift 6.0+
@@ -26,6 +27,7 @@ class SwiftOutdated < Formula
     end
     system "swift", "build", *args, "-c", "release"
     bin.install ".build/release/swift-outdated"
+    generate_completions_from_executable(bin/"swift-outdated", "--generate-completion-script")
   end
 
   test do

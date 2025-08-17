@@ -7,11 +7,12 @@ class Periphery < Formula
   head "https://github.com/peripheryapp/periphery.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c314b1a1ce15e2ff50ddab92984142cc48128665bf1fda0f2da5077b7c450ce8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1051052582167b3489ae50add5646f8356e991963ab5c133d1b65d900b87ad4c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "85963a0568c0c3b78b5d9dda3a53ff82186a03049b49d977fc57a000d246b8d4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3865a7e57f405764e5e4a2fdca11a472e44d3eb6e0606acf4cdfcdde2cbd4871"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c7f6e1fddcebfec563dda91aeefae9a256e42fe5c1065a7e8826fc45b5b9d02e"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e2b0dea494e8bd21ff932fa10fac318cf2ee06c758e6797ecb23f99a6f8d2460"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "400cd8658c47b54ab5060f11df16ee035d1673aa3abd2c0244669121c744d570"
+    sha256 cellar: :any_skip_relocation, sonoma:        "df2656985ae7b056868b3f3acf2de20abd266cbd52d9d5ae31eaae77ea447ea5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fb205dd64182f1a1b904bd0187ecb81156bdeb1a38d74476afc9a1bae87654b8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b4c6039249d029db5538c4d1f96014905f6d01914ecae26a8d0a76af0009fe77"
   end
 
   depends_on xcode: ["16.0", :build]
@@ -28,6 +29,7 @@ class Periphery < Formula
     end
     system "swift", "build", *args, "--configuration", "release", "--product", "periphery"
     bin.install ".build/release/periphery"
+    generate_completions_from_executable(bin/"periphery", "--generate-completion-script")
   end
 
   test do

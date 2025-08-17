@@ -1,18 +1,18 @@
 class FabricAi < Formula
   desc "Open-source framework for augmenting humans using AI"
   homepage "https://danielmiessler.com/p/fabric-origin-story"
-  url "https://ghfast.top/https://github.com/danielmiessler/fabric/archive/refs/tags/v1.4.286.tar.gz"
-  sha256 "e8d6b52f445737e79e9b483ccc95470c93874818dc173ac6efecab21489c7eac"
+  url "https://ghfast.top/https://github.com/danielmiessler/fabric/archive/refs/tags/v1.4.289.tar.gz"
+  sha256 "5e0e0ba526d6f86db99ce87656ca03d49790ab756c41530bf27a260c93d27abb"
   license "MIT"
   head "https://github.com/danielmiessler/fabric.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "87e02c98f123c755acaf1a85d8d15801a503a9ffa89e6c89548770c9ecd59b76"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "87e02c98f123c755acaf1a85d8d15801a503a9ffa89e6c89548770c9ecd59b76"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "87e02c98f123c755acaf1a85d8d15801a503a9ffa89e6c89548770c9ecd59b76"
-    sha256 cellar: :any_skip_relocation, sonoma:        "aab9d114f5c0ab1960357461751b8edded8e76ed912172f5b4b76b5965480dfe"
-    sha256 cellar: :any_skip_relocation, ventura:       "aab9d114f5c0ab1960357461751b8edded8e76ed912172f5b4b76b5965480dfe"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6cc4471ec00c87b8cc0e554957a627b557fcb36ee3864bb0aea116d9425f81d5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9fd3c89b3de430b2404a65aa3c57b8f3f9b0553618621e37e1f7f334b28705e8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9fd3c89b3de430b2404a65aa3c57b8f3f9b0553618621e37e1f7f334b28705e8"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "9fd3c89b3de430b2404a65aa3c57b8f3f9b0553618621e37e1f7f334b28705e8"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3ac2731311cc1e47730040be40d99ac69a8dcbc497892006b1a57a1a66c344b8"
+    sha256 cellar: :any_skip_relocation, ventura:       "3ac2731311cc1e47730040be40d99ac69a8dcbc497892006b1a57a1a66c344b8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ed3c8641b24a62150d31bcede44f1a914850e2cbfce6904b4b053ca487b60aee"
   end
 
   depends_on "go" => :build

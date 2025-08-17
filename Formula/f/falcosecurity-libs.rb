@@ -8,7 +8,7 @@ class FalcosecurityLibs < Formula
     { any_of: ["GPL-2.0-only", "MIT"] }, # driver/
     { "GPL-2.0-only" => { with: "Linux-syscall-note" } }, # userspace/libscap/compat/
   ]
-  revision 5
+  revision 6
 
   livecheck do
     url :stable
@@ -18,13 +18,13 @@ class FalcosecurityLibs < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any, arm64_sequoia: "44111aaa48a0ea3c20c5c5755d8dbfdad2f66fe8443d7d10631b54bf302295c1"
-    sha256 cellar: :any, arm64_sonoma:  "744027164770a2cdcd421feb8e9eb9f8067d986c4b7ee29daad643232649a2dc"
-    sha256 cellar: :any, arm64_ventura: "b1bc9c1c81588ac8876215a3d0f3a8d9f2fc4ad0c879dd2b146d89d2f76ba7b9"
-    sha256 cellar: :any, sonoma:        "3db755a0b1efb72f4c597bc3215271ad76ee3259881bac85f0016b2f50c56216"
-    sha256 cellar: :any, ventura:       "25e4ff85f373529b435bc48b6473d0187c50a5d7c77255860baecc186c1d8fc3"
-    sha256               arm64_linux:   "cdabffd5e061202749a66066c3215dc8facd9ccf39e9ececd8ccbe18bc9e22f0"
-    sha256               x86_64_linux:  "72e09bdae3b7c6aa27f6c2c2f43367a2ad456b6cec6054f011fa080074801df1"
+    sha256 cellar: :any, arm64_sequoia: "9fd37e2e992070c5fff9255122493a181693a1595f8fb05df44eb1d95e097a88"
+    sha256 cellar: :any, arm64_sonoma:  "557995561292a172ca8044ea6ec2c33d04d1b0ce3198ffa8b2e7f73cca9ffc62"
+    sha256 cellar: :any, arm64_ventura: "b61104afa02ede646472a16feccf09528fde8d48004e5413b605679780993008"
+    sha256 cellar: :any, sonoma:        "da0903dc607214cc832197069b95a1cecba5154b66a70584dc5c01f6f5632b4f"
+    sha256 cellar: :any, ventura:       "79b072a4f238d16d7e6f4fd3b03bffb5c58cd3e16d6032a4ece3d43616d8c7a6"
+    sha256               arm64_linux:   "53629f47179dc52d61d9faff6041977dda4d4fc8065cdb449535fa07121ed208"
+    sha256               x86_64_linux:  "6e5250003333f3757a2eae42711bea5df1b2903adcc1a26ba1b739fdd1af8d17"
   end
 
   depends_on "cmake" => :build

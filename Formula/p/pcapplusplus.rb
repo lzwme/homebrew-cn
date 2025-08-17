@@ -20,6 +20,7 @@ class Pcapplusplus < Formula
   def install
     cmake_args = %w[
       -DPCAPPP_BUILD_EXAMPLES=OFF
+      -DPCAPPP_BUILD_TESTS=OFF
     ]
 
     system "cmake", "-S", ".", "-B", "build", *cmake_args, *std_cmake_args

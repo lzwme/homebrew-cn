@@ -20,7 +20,6 @@ class Wiredtiger < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "100e4051caa78dbd63c57f3e0a3be5f0272676e187c191d040068cbaf5c67aa4"
   end
 
-  depends_on "ccache" => :build
   depends_on "cmake" => :build
   depends_on "swig" => :build
   depends_on "lz4"
@@ -35,6 +34,7 @@ class Wiredtiger < Formula
     ENV.runtime_cpu_detection
 
     args = %W[
+      -DCCACHE_FOUND=CCACHE_FOUND-NOTFOUND
       -DHAVE_BUILTIN_EXTENSION_SNAPPY=1
       -DHAVE_BUILTIN_EXTENSION_ZLIB=1
       -DCMAKE_INSTALL_RPATH=#{rpath}

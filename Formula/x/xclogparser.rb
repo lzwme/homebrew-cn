@@ -6,13 +6,14 @@ class Xclogparser < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "24152e756e0accf02e58b2e8a27340c7928c108c178a918b94a16b14c83ce7b1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "84acb208ae9ea2ffc3bd28bf830a43ec4f32f449b455915dfb82fa4489afcac0"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "6564c2ee06346f8cb6a708dc6c6927796f83919798403f2235ef1c6671bdfcc4"
-    sha256 cellar: :any_skip_relocation, sonoma:        "522f1c32a5a4a269a5f530b976648f8485c19c38b8184e13a18e14245f12593a"
-    sha256 cellar: :any_skip_relocation, ventura:       "8a05a80f163e1342eeef5fb1228dd7b10d2f29b5a83c4fd3573a01342999db04"
-    sha256                               arm64_linux:   "d94b3f9875e169fa0cceb79bc62043903fd671778a9e8cf374e678369e625356"
-    sha256                               x86_64_linux:  "4926c5d871fd3162290869816066e8e28f03275240e99b69cb20ec31330fb755"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "622e5798fe8768788e485edcedfec11f6e0fd57e9afbb38e2704d115ff89286b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2f12e89a162b46b953fe975af664deb83e59bb554a8b8661bc0390bc0870d778"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "64bddc1054c263b9a69055fd4f6979af194928fc8c2da52d6e5a26aa1d29ca88"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6449046ee960ec4033bb7ea5d021d25967c6a494bfa4d8fccd8e236c748ca0ec"
+    sha256 cellar: :any_skip_relocation, ventura:       "2912ff1525c5e8ecd29fc66c01ea0b0b792e8550b56089d014364351a1dbe3c7"
+    sha256                               arm64_linux:   "958f12eaebc195dce784e46c2518e9d71918476f20caefe2928c0b4b2ffaed09"
+    sha256                               x86_64_linux:  "1a636c81a4dccdf9f84f74eff4abda9baf5da3e3bbd660e961f39a9b1f932a45"
   end
 
   depends_on xcode: "13.0"
@@ -33,6 +34,7 @@ class Xclogparser < Formula
     end
     system "swift", "build", *args, "--configuration", "release"
     bin.install ".build/release/xclogparser"
+    generate_completions_from_executable(bin/"xclogparser", "--generate-completion-script")
   end
 
   test do

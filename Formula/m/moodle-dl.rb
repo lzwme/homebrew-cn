@@ -22,6 +22,8 @@ class MoodleDl < Formula
   depends_on "ffmpeg"
   depends_on "python@3.13"
 
+  uses_from_macos "libffi"
+
   resource "aiodns" do
     url "https://files.pythonhosted.org/packages/17/0a/163e5260cecc12de6abc259d158d9da3b8ec062ab863107dcdb1166cdcef/aiodns-3.5.0.tar.gz"
     sha256 "11264edbab51896ecf546c18eb0dd56dff0428c6aa6d2cd87e643e07300eb310"

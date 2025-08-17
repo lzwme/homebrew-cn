@@ -8,11 +8,12 @@ class Xcdiff < Formula
   head "https://github.com/bloomberg/xcdiff.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bd62e3b0b02971f946bea613e95a4ceeb8ab41ede5383518148c542b5908ef04"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "350423748bd984e66f473e60a4545125870b8589807b8d82b01745e0a45cad50"
-    sha256 cellar: :any,                 arm64_ventura: "2ba598baf440f1a76a105f07489776c4e81a1a1803d49c396209e88599e20410"
-    sha256 cellar: :any_skip_relocation, sonoma:        "23083c0664be219b75633a64827762ea19a078b11d76558336df3c82928312e3"
-    sha256 cellar: :any,                 ventura:       "fa904d1ebca63b4ba8e032e8406279535f91bc0f6e62a94edec04ce1f4123950"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6af8cba695e556e3d1486f1ee108d647d9ff45c69dbe63e66c683830ba8edb34"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "70995592131e0eb7cb495e7b45b0398c2b7e0d37c6ae3b44e30fce1b7151961b"
+    sha256 cellar: :any,                 arm64_ventura: "04a679bb1c3d2e6125594ca56e4c34f48d6d2e7425d15955fbc1d52a8ba916ef"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5520630a6cac7c1e170824dd6fc509beaa446ec8163780ce7f02ca6b49ceb228"
+    sha256 cellar: :any,                 ventura:       "2a302b05ff15c6ffd959cbd6b7306d6a09c76b0318d2902b2f952c9d88cbb870"
   end
 
   depends_on :macos
@@ -24,6 +25,7 @@ class Xcdiff < Formula
     system "make", "update_hash"
     system "swift", "build", "--disable-sandbox", "--configuration", "release"
     bin.install ".build/release/xcdiff"
+    generate_completions_from_executable(bin/"xcdiff", "--generate-completion-script")
   end
 
   test do

@@ -6,11 +6,12 @@ class Mockolo < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b74e8f8747277f43a811197fe8ce144b06b4580a541689dcaf3ce784301b9fdc"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ab85a94f0caf1fa8d1116376af36f713ecd3c1d18ee29a576aa121329ac9252c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3bc1c046167b769698f2629375ec0ece777f759e19bcda17f8a708de58eeabc7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "afd124d827ae8b9a17e7eadeb2a8360758fbf7809e669e5991cd6d3af3c521fa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "668e2e869b2bfce47c71e3c7b4f66f3b61810b7365a5e13e582645cab44d4dc6"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "18f1b69b192e7aaf2cb57a752c4c9a96c2ea7ab24ce52dce3b138dac2b190599"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9da1cd6bc134cfd133dc72c56a3120429b8db32a4efab512f113c76f642f58de"
+    sha256 cellar: :any_skip_relocation, sonoma:        "293816ce556079215b9f76165f1d306b2ece74018b4616411cd6086ebc99e291"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "70236713bc4f9f9ede9f42093757fdf3df9b1852e228af98aa614bd463930745"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "476cee56c533c781c86fc767215cfc7ec7515596ef89f6ae473c3aff2927f1cd"
   end
 
   depends_on xcode: ["15.3", :build]
@@ -25,6 +26,7 @@ class Mockolo < Formula
     end
     system "swift", "build", *args, "-c", "release", "--product", "mockolo"
     bin.install ".build/release/mockolo"
+    generate_completions_from_executable(bin/"mockolo", "--generate-completion-script")
   end
 
   test do

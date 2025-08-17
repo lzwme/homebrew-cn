@@ -31,6 +31,7 @@ class Wdc < Formula
 
     system "cmake", "-S", ".", "-B", "build",
                     "-DBUILD_SHARED_LIBS=ON",
+                    "-DCMAKE_POLICY_VERSION_MINIMUM=3.5",
                     "-DHUNTER_ENABLED=OFF",
                     *std_cmake_args
     system "cmake", "--build", "build"

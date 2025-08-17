@@ -7,11 +7,12 @@ class Xcresultparser < Formula
   head "https://github.com/a7ex/xcresultparser.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5611ac80b73a2e3b80d2031a753f88c719a5aba3ed8971071fd72fa3d56ff520"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d08e43a313902ca8e9415c071afd632226f73f18ae975564a054b312724c4c80"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "9b0efdb380802a632850cf3245c3eac499bece9f0217dcbd4ee38afc74f80e9f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e2d94de14b2fc48ffbdeeedf8d4f9d818c1f49393e7f7bc7699672300ad33487"
-    sha256 cellar: :any_skip_relocation, ventura:       "d451ea710acc90edca7d55bc1a0906c581f3f6d8721fa0280893b178ffe1e9e9"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f576f5ba61ce21d8c490d01e126cd7045e48b12cd5005ffde8ddea8c0404dce8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "33724a00acf49733e806f2e06d3eb89e2722b5ea8a0ef37a1d8a2b1d58961681"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "98e359f359c24fe7d24a426062239319b704fc1b4544ae19a1af8ed929527487"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8a6d02101985dd1c5b8637230b49ab3d61bbe0042806690269913440b61ca854"
+    sha256 cellar: :any_skip_relocation, ventura:       "0e2890e6c73bfb7fbd301d34f1aab277deddd785afed12933e4168f1e3d3d154"
   end
 
   depends_on xcode: ["15.0", :build]
@@ -22,6 +23,7 @@ class Xcresultparser < Formula
     system "swift", "build", "--disable-sandbox", "--configuration", "release"
     bin.install ".build/release/xcresultparser"
     pkgshare.install "Tests/XcresultparserTests/TestAssets/test.xcresult"
+    generate_completions_from_executable(bin/"xcresultparser", "--generate-completion-script")
   end
 
   test do

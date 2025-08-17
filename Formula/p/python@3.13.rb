@@ -1,8 +1,8 @@
 class PythonAT313 < Formula
   desc "Interpreted, interactive, object-oriented programming language"
   homepage "https://www.python.org/"
-  url "https://www.python.org/ftp/python/3.13.6/Python-3.13.6.tgz"
-  sha256 "6cf50672cc03928488817d45af24bc927a48f910fe7893d6f388130e59ba98d7"
+  url "https://www.python.org/ftp/python/3.13.7/Python-3.13.7.tgz"
+  sha256 "6c9d80839cfa20024f34d9a6dd31ae2a9cd97ff5e980e969209746037a5153b2"
   license "Python-2.0"
 
   livecheck do
@@ -10,17 +10,15 @@ class PythonAT313 < Formula
     regex(%r{href=.*?v?(3\.13(?:\.\d+)*)/?["' >]}i)
   end
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
-    sha256 arm64_sequoia: "c6f72505721814738260f330244140fee983b21477a28994c66adf8018be75c8"
-    sha256 arm64_sonoma:  "e115a44f8fbf2bad4c978cb93da2b53e3be0eb624cb5db04b19a5de41c549e11"
-    sha256 arm64_ventura: "3e50e4641ee1995068d421031ca0b5acdaa795b906dd25d06d10c2f1dbac186d"
-    sha256 sequoia:       "c22d5264b1975d11751e8e7a745ea1870ad3056eae72c74c90225d7f9930019a"
-    sha256 sonoma:        "51571b9eee04d8137d85075b8bf8939e91c509cf32164860ee5b7cc2da949e79"
-    sha256 ventura:       "9f267a3e924343b6ba56d2e840c175a4fcd78d2b455a98c9945609c22f9aae07"
-    sha256 arm64_linux:   "b96879a4cabfe85c2df425443553d570052b60dfc106046f1d17ba45e12e4fd8"
-    sha256 x86_64_linux:  "2e0450c4366c7eab616d0f02a958b7ae5cc430868cec81c048db4e8ed1e74818"
+    sha256 arm64_sequoia: "821887b8f438c6a43828c9e893ee73e011012bb46fcac862974638e16d5228ce"
+    sha256 arm64_sonoma:  "0c85ea88bebad3a07e50dd310dbfb97386fa264cfe77b942a8418c9974fdb7cd"
+    sha256 arm64_ventura: "8f35604ec6b1993367b0bf35f7929e5015043bc8360f2c45a7202af584c70d89"
+    sha256 sequoia:       "b0246f683ffca8b9dd5a7d38a15d80bd193c4c0f57de0c6977e946bc993d018e"
+    sha256 sonoma:        "38d730f020da80c489a6cc3218a6bb2f1a54d36c793940529f704f15e2be10ef"
+    sha256 ventura:       "0e3eacf506efbd2a0c54839a9b0d2904d3d079a80ef42cdb983e47764e74a5b5"
+    sha256 arm64_linux:   "34a7cd4e534d3ee4a2f9647724a1d6e602c1b7253932a47af95e0507e956dc7d"
+    sha256 x86_64_linux:  "b494e23f89ee8473eb8c9dd30d055305b0f954f97c8003b0150fb04936f4f119"
   end
 
   depends_on "pkgconf" => :build

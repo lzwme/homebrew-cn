@@ -7,16 +7,18 @@ class Arrayfire < Formula
   revision 4
 
   bottle do
-    sha256 cellar: :any, arm64_sequoia: "bdc90c11320a6266ef4de580089a04b8c4b2b3dab9ae984c910d631a8c1eea15"
-    sha256 cellar: :any, arm64_sonoma:  "149b7225e5e5c90272b2a85b530ebc8f70a3c05b8c55af6c14f352d03846400c"
-    sha256 cellar: :any, arm64_ventura: "22a13f617fea6ec5e17cd2caa9c95712c6721a594a5a7d80ba4740a35564aadc"
-    sha256 cellar: :any, sonoma:        "ef92a75a71d09d7f9912e91a39ec319fb5b34ab7361b4d0f4c85c874de3d7cf4"
-    sha256 cellar: :any, ventura:       "6a38a6cba73cf3e95c639d4763081c1bedf867a0e817982cefbbac4ae1e00465"
+    rebuild 1
+    sha256 cellar: :any, arm64_sequoia: "fdf1c8013720008558454d66f2390c04bb82d33416f82d69cb35632bc6dc266c"
+    sha256 cellar: :any, arm64_sonoma:  "f94b4f07a17c86b0e56ac0ee0e6bb5a75d91112b79213977685a06cd9e072b5a"
+    sha256 cellar: :any, arm64_ventura: "5005319ee0b289f49222ba08554d0e911fed8def11055f5bc0e3eac338b278ad"
+    sha256 cellar: :any, sonoma:        "17b8f29a9302e75f8ed5924930a712b6637c1a4878bd222f22dbfa5344161b09"
+    sha256 cellar: :any, ventura:       "76d0d5e3e17d25ce307003d9f7a608f6869afcc6128d82241613ea39473ac6f4"
   end
 
   depends_on "boost" => :build
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
+  depends_on "clblast"
   depends_on "fftw"
   depends_on "fmt"
   depends_on "freeimage"
@@ -27,6 +29,12 @@ class Arrayfire < Formula
     depends_on "opencl-headers" => :build
     depends_on "opencl-icd-loader"
     depends_on "pocl"
+  end
+
+  # Backport fix for missing include for climits header
+  patch do
+    url "https://github.com/arrayfire/arrayfire/commit/cb09bfc5457489d6da434a7841b9098dded58cc0.patch?full_index=1"
+    sha256 "4b5628d1b6164e3b6747868adaa8aeccb92d87d8df2ac6baca6f01580a8b10f7"
   end
 
   # fmt 11 compatibility
@@ -41,19 +49,14 @@ class Arrayfire < Formula
       rpath(source: lib, target: HOMEBREW_PREFIX/"lib"),
     ]
 
-    if OS.mac?
-      # Our compiler shims strip `-Werror`, which breaks upstream detection of linker features.
-      # https://github.com/arrayfire/arrayfire/blob/715e21fcd6e989793d01c5781908f221720e7d48/src/backend/opencl/CMakeLists.txt#L598
-      inreplace "src/backend/opencl/CMakeLists.txt", "if(group_flags)", "if(FALSE)"
-    else
-      # Work around missing include for climits header
-      # Issue ref: https://github.com/arrayfire/arrayfire/issues/3543
-      ENV.append "CXXFLAGS", "-include climits"
-    end
+    # Our compiler shims strip `-Werror`, which breaks upstream detection of linker features.
+    # https://github.com/arrayfire/arrayfire/blob/715e21fcd6e989793d01c5781908f221720e7d48/src/backend/opencl/CMakeLists.txt#L598
+    inreplace "src/backend/opencl/CMakeLists.txt", "if(group_flags)", "if(FALSE)" if OS.mac?
 
     system "cmake", "-S", ".", "-B", "build",
                     "-DAF_BUILD_CUDA=OFF",
                     "-DAF_COMPUTE_LIBRARY=FFTW/LAPACK/BLAS",
+                    "-DAF_WITH_EXTERNAL_PACKAGES_ONLY=ON",
                     "-DCMAKE_CXX_STANDARD=14",
                     "-DCMAKE_INSTALL_RPATH=#{rpaths.join(";")}",
                     *std_cmake_args

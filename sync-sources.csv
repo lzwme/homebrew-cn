@@ -164,6 +164,7 @@ Homebrew-homebrew-core/Formula/a/anubis.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/anycable-go.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/anyenv.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/anyquery.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/a/anyzig.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/aoeui.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/aom.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/apache-archiva.rb, Homebrew/homebrew-core, 0
@@ -4304,7 +4305,6 @@ Homebrew-homebrew-core/Formula/m/mariadb.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mariadb@10.11.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mariadb@10.5.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mariadb@10.6.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/m/mariadb@11.0.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mariadb@11.1.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mariadb@11.2.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mariadb@11.4.rb, Homebrew/homebrew-core, 0
@@ -8513,6 +8513,7 @@ Homebrew-homebrew-cask/Casks/c/cityofzion-neon.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/ckan-app.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/ckb-next.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/clamxav.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/c/clariti.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/clash-verge-rev.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/classicftp.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/classroom-mode-for-minecraft.rb, Homebrew/homebrew-cask, 0

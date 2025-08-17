@@ -27,6 +27,7 @@ class Webkitgtk < Formula
   depends_on "at-spi2-core"
   depends_on "cairo"
   depends_on "enchant"
+  depends_on "expat"
   depends_on "fontconfig"
   depends_on "freetype"
   depends_on "gdk-pixbuf"

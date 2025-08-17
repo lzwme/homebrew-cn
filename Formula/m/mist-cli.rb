@@ -7,12 +7,12 @@ class MistCli < Formula
   head "https://github.com/ninxsoft/mist-cli.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e3de5cfe1043e9d802d578250bf5ec02386c0e1541c8e6bf8c1f57883bb01155"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d52878ebf4acd1c8e3462bc7dc477df052682bef4bd8f696a9f2fa83188d403e"
-    sha256 cellar: :any,                 arm64_ventura: "7e304d64f0ef30b675ca7b6fc8df1c3bea09c5f69eaf5cc5ec547d73b9b8a012"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7515d36129473828d4ea0272a182ffb8824ac3ed7c5ecdce65b6633289cc500d"
-    sha256 cellar: :any,                 ventura:       "485d54f96a0ecb0c3739b310b459007a270587746b0187a596da10f04fbbf3c4"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "efc0268da168bdef3957814c3abab5e3becda98958225ce0ab3478a8f7fe2584"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1a1ea5b8fbae6561a594c3d72706b846a3faaff74ebcf4911bc466f51590bf1b"
+    sha256 cellar: :any,                 arm64_ventura: "c6c0edfdc3f68eabb96bdcf755c9f0ead40dc25394ebdd226a4bb348038e7799"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5bdab24a2100cf79ef66cf23c90c8f7c5b3c12006a60a14af7a4adae2a211921"
+    sha256 cellar: :any,                 ventura:       "9bdc8ca295437ceb51e567998282f24c4b40c82b7a31d07f674f7783e3df80e1"
   end
 
   depends_on :macos
@@ -22,6 +22,7 @@ class MistCli < Formula
   def install
     system "swift", "build", "--disable-sandbox", "--configuration", "release"
     bin.install ".build/release/mist"
+    generate_completions_from_executable(bin/"mist", "--generate-completion-script")
   end
 
   test do

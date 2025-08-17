@@ -4,18 +4,18 @@ class Mosh < Formula
   url "https://ghfast.top/https://github.com/mobile-shell/mosh/releases/download/mosh-1.4.0/mosh-1.4.0.tar.gz"
   sha256 "872e4b134e5df29c8933dff12350785054d2fd2839b5ae6b5587b14db1465ddd"
   license "GPL-3.0-or-later"
-  revision 29
+  revision 30
 
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "79d2b352fc96b87487c62f21d5026812bdb2787932e48806a0f36dafd4706361"
-    sha256 cellar: :any,                 arm64_sonoma:  "ad0579501b6f07f0bb2fed0d64a5de63a1b3de5c5b191d4ae5fd7375a03f47c6"
-    sha256 cellar: :any,                 arm64_ventura: "88ec5372e49ab988cd8c9824301876e74507543de244abe4223888a1206e1335"
-    sha256 cellar: :any,                 sonoma:        "e5f8aede504269ced65c342970131983c52c355e1c4f239a1a325c22ce87de3c"
-    sha256 cellar: :any,                 ventura:       "9e151b601c495d99b7140c41e022225055b8de73d112a19261b5b666c3da9ee2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4fc1beca79337131b78f2516e4b9a3817ee5ce2e087703b0398394bb4f13de8b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "99df487a2cc425108c827d4e98d8a007d4c156bf4e6a9bbe433fedadcae9572e"
+    sha256 cellar: :any,                 arm64_sequoia: "53e242ef300747f3e5924f5c015124110e3f416e5e8a36e419e15c11ecbbb83e"
+    sha256 cellar: :any,                 arm64_sonoma:  "2ff4663c86787ba32f59d5a42c694d2687fae4c735ba3589d982d68ce4a4c8c4"
+    sha256 cellar: :any,                 arm64_ventura: "108ff0b7f0d11d4d9fcafd8058a034ca68679540833691bce225b6c558d64462"
+    sha256 cellar: :any,                 sonoma:        "2213923323b72d6f7fd7ec2519f1c2d389d557fbeedec9b658ee6d87e646f5e4"
+    sha256 cellar: :any,                 ventura:       "5feb362c249154039b0c4015a410545f747ff5dd5987c7072f127dfbee5bf90f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e59aafc3f9fa2e4d9f147d9511b313a91e760d8646b2502f16995cd653682e3e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "60386ea64b04304c3733968a209628ddc47cd430b0102e64862a19a39258b547"
   end
 
   head do

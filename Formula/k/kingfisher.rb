@@ -6,19 +6,22 @@ class Kingfisher < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0c1c641a3be19550a4d5371fbce46f3450530583aff11a58eceddfd18821c752"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ef55aec467ef85e33494209f6e0b1a8f60d362cb005bfc2eddd5619edee629f9"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "8d765dd87d71d71e22d51efc435d1ab6488a5d789d1aca6a826283c241d3d5b9"
-    sha256 cellar: :any_skip_relocation, sonoma:        "fab6aecc3fb3a947d02f5a45c8e1e0d6e6fa5007fa3d0a69685603b4cbc89b94"
-    sha256 cellar: :any_skip_relocation, ventura:       "93297a6848a70fe32c2b12ca97833a290ec516e50e8a0b596beeab807792887f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "be9117156412a767a0891b86d7a33f1760963342f2a22725a408359ce8c2f7aa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7519f673c7295c2ca38fe2b5ce4b7a33c768505d26e3b1a09ab90e50dccd7097"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "87744d09fb6f15a4bc7c209cc801956ac1aa23c0461ea52261e4ae54861072de"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2cfcc8dd39cab7fb78ddb218b9d2c34f4d2c765aa95ccc19f987c1d331fe93a5"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "8a95235249047569c9efef03eb627f6422159c9225cc61bd45aa4ea669fadc11"
+    sha256 cellar: :any_skip_relocation, sonoma:        "218cb61cf6bf40de2c51e79af15b389330671945678a3aca38165bff3c9c9bf4"
+    sha256 cellar: :any_skip_relocation, ventura:       "7e505d86495d1b026a44f881e5084c8fc8ba92739cc586c98533c55da458d98b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c7327b229e2ef32b51653f470a47c904c7d30bd539cb38d573648926139e7974"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "28a2f7047f5176c97c82c70e55f9ca9b97fe0abaea9aba63ddda10ae75d853e1"
   end
 
   depends_on "boost" => :build
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
+
+  uses_from_macos "bzip2"
 
   def install
     system "cargo", "install", "--features", "system-alloc", *std_cargo_args

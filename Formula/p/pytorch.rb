@@ -6,6 +6,7 @@ class Pytorch < Formula
   url "https://ghfast.top/https://github.com/pytorch/pytorch/releases/download/v2.8.0/pytorch-v2.8.0.tar.gz"
   sha256 "c70a2c9488f6f6e8af5982a10d1cc2c37b7df5e6506d839daa5d5e250953d7b5"
   license "BSD-3-Clause"
+  revision 1
 
   livecheck do
     url :stable
@@ -15,12 +16,13 @@ class Pytorch < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any, arm64_sequoia: "ad85d2b60f01799aa12d031ec9ebcbc42fe3f66d416ce01ed94a3be738b979a5"
-    sha256 cellar: :any, arm64_sonoma:  "2517a6cd5155b08af0912fb27220945f641a0e8e0764984e92d0f1fcd69c8f3b"
-    sha256 cellar: :any, arm64_ventura: "e019e503b99aa2bed729aced3aa376a33c4098949d6c8ece9b130800be1b905c"
-    sha256 cellar: :any, sonoma:        "dcd8eb15d1a43496803324c036e1ba4becf892369f2740df5c637c1bbee396f4"
-    sha256 cellar: :any, ventura:       "1cfe5e310bc8a3890fbd5d7228ce6042aec289a439019e1e55b3740856c62618"
-    sha256               x86_64_linux:  "275e4452bee29a38d9de2187a91848c1de1e798e5c712a9dd4fde233aa464cff"
+    rebuild 1
+    sha256 cellar: :any, arm64_sequoia: "604360df9cbf640615810b379f3943783b5f192afa0f1a04cae5ad44c0395961"
+    sha256 cellar: :any, arm64_sonoma:  "71604c249438eb3d8be484051d171fd8f0d21c10719c5bb5017d667a2aa71bdc"
+    sha256 cellar: :any, arm64_ventura: "9ee7e0665642730631bc8fb960d769dc780b256c7ae4729b2f390a4a2ae325fe"
+    sha256 cellar: :any, sonoma:        "148d3d62da620eeee3e2af838649d75d9f4d0069de2995587a93bab6304dd571"
+    sha256 cellar: :any, ventura:       "55094135e631d29814d12370f9e1f9fb51ce27d6394d6f90e95fdde2878e5e92"
+    sha256               x86_64_linux:  "12cee52f377f606100225aca67c4edab2bee9c878141ab9ca3c6a350dcfbe04f"
   end
 
   depends_on "cmake" => :build
@@ -136,7 +138,7 @@ class Pytorch < Formula
 
     # Expose C++ API
     torch = venv.site_packages/"torch"
-    include.install_symlink (torch/"include").children
+    include.install_symlink ((torch/"include").children - [torch/"include/fmt"])
     lib.install_symlink (torch/"lib").children
     (share/"cmake").install_symlink (torch/"share/cmake").children
   end

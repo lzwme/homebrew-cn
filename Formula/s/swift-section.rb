@@ -7,7 +7,8 @@ class SwiftSection < Formula
   head "https://github.com/MxIris-Reverse-Engineering/MachOSwiftSection.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0e0ea2815a7b598314f27fd6106b276e73e2c860df3aae1c650110f8b4601095"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "33bd0561f24b2a832733a8acf0deac577462b2ca382f2a01df72308e75ce141b"
   end
 
   # The Package.swift file requires Swift 5.10 or later.
@@ -20,6 +21,7 @@ class SwiftSection < Formula
   def install
     system "swift", "build", "--disable-sandbox", "-c", "release"
     bin.install ".build/release/swift-section"
+    generate_completions_from_executable(bin/"swift-section", "--generate-completion-script")
   end
 
   test do

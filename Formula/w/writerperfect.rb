@@ -32,7 +32,6 @@ class Writerperfect < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "8ba99fa8423726871a3437205306e9cec03cc3715ed8630f1e29acd7ae74be14"
   end
 
-  depends_on "boost" => :build
   depends_on "pkgconf" => :build
   depends_on "libodfgen"
   depends_on "librevenge"

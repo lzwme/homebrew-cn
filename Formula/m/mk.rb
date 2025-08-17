@@ -6,15 +6,17 @@ class Mk < Formula
   url "https://files.pythonhosted.org/packages/75/9e/dcc7813d9f7133f8d384eca24a4d4bb0cb056abcc53f1f170b8353084feb/mk-3.0.0.tar.gz"
   sha256 "0a041a3620057165f155b8372469d8ab55ae94dd91d6e27723ab9a7de1aa2086"
   license "MIT"
+  head "https://github.com/pycontribs/mk.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "fb57de51d981a1df57ba80756f979826aade4dead30392eeeb820a004412e2cb"
-    sha256 cellar: :any,                 arm64_sonoma:  "e139df051211ddb1dbfce7c51b5bc312f4e95f3ef4ec4f0994022b03bcfac1c0"
-    sha256 cellar: :any,                 arm64_ventura: "863faaaa32a7cf7ee1de6a01627afa7507f9f6685622d2904b53443d1dde0d74"
-    sha256 cellar: :any,                 sonoma:        "c136d141b1e34561edc0148d242257a03adfbf5fbe814dc20a0a092fb6039bf7"
-    sha256 cellar: :any,                 ventura:       "b3492d1025c53c27044ab5ad231507fcc2fc3b6b65221d40132e5f18a07542ea"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b94a0da458c1f5a82bb1ab94f8e60085516a7086f878b5a4f5e525cf67205fd9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "151b045b09a2c9fab7500a90fbf88ec503890a867f56290b647a42db906f1166"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "6d13154bcf33405b9fabcebbb6ad7a399c11e17e820918f09b2f4013ddf8671a"
+    sha256 cellar: :any,                 arm64_sonoma:  "1f78df334281bd6a42a03d8a7b433abdc61dbdd6185ecffc635a321aad0fc366"
+    sha256 cellar: :any,                 arm64_ventura: "121461c02b51ff73c269a35385e6baf279562c8e33827ffeb6838caa2f2a39b7"
+    sha256 cellar: :any,                 sonoma:        "212d25c5e946a4c83b24d4d2ee97c53c6a557abbc1cfa75e656facea77a7871c"
+    sha256 cellar: :any,                 ventura:       "51a0f7af175cbf111981aa68e5c7798b3977682d14ea239f14f8b0bf518c72db"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8de5a36e84c54c74f3d658aed15c2499540db09e730e37d37b3f5392d4b059f4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ae67a7e9176cd1733356bb1a75cf095513c44ae5349addca2e2ea38261a16d94"
   end
 
   depends_on "rust" => :build
@@ -204,16 +206,19 @@ class Mk < Formula
 
   def install
     virtualenv_install_with_resources
+    ENV["_TYPER_COMPLETE_TEST_DISABLE_SHELL_DETECTION"] = "1"
+    generate_completions_from_executable(bin/"mk", "--show-completion")
   end
 
   test do
+    (testpath/"Makefile").write <<~MAKE
+      all: ## description
+      	@echo hello from mk
+    MAKE
+
+    system "git", "init", "--initial-branch=main"
     assert_match version.to_s, shell_output("#{bin}/mk --version")
-
-    assert_match "mk works only within git repos", shell_output("#{bin}/mk detect 2>&1")
-
-    assert_match "UserWarning: No such file: '#{testpath}/.config/mk/mk.yml'", shell_output("#{bin}/pre 2>&1")
-
-    system "git", "init"
-    assert_match "ERROR    Received exit code 4", shell_output("#{bin}/mk changelog 2>&1", 4)
+    assert_match "all", shell_output("#{bin}/mk commands 2>&1")
+    assert_match "hello from mk", shell_output("#{bin}/mk all 2>&1")
   end
 end

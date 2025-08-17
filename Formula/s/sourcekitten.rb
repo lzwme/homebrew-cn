@@ -8,13 +8,14 @@ class Sourcekitten < Formula
   head "https://github.com/jpsim/SourceKitten.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "34d5a49f50885b3cc0cff8812f6c4770976be709befa058385d404f27487fd06"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6a68272f86ee89c1dbf1fb19349431a209124f7b2413d6a32152d81dec8978ec"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "07ec2e64a18e5ce87c3511be8ba93f17d162d05c737da4dc5a52c477f6e795a1"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9c64b978d11776e2baa8103bdac80636561f69f157d203411dab05a05c87e294"
-    sha256 cellar: :any_skip_relocation, ventura:       "207bcbf2c8ce58e39afa645836e7798085c39803e9ec1ba728ac80f1b7281713"
-    sha256                               arm64_linux:   "53a805bb690bda85db814fb237af34c3999c8ef3685e9878562b9d0b8a38c355"
-    sha256                               x86_64_linux:  "97515204398c1cd3aec85367e15eba66781a08fbb972aecb2c74a5cafb419ea6"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "44c64e1df133d699d98585b6e1e358c2a3e6ddb330d5d82de43b489c6e8f01bc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ac988164695f5e9bf5dbd42e8440601aeff80355022cddcee0e750916fca784d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "7918e02dcba07a9af1934789a236722bb537b726137ae41652ac7c03bfedc07b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "82ca4f63f693f1d9d2c0faea72ce87456c973d3f802ea38e9f6599e4193741bd"
+    sha256 cellar: :any_skip_relocation, ventura:       "ddcda8cfe8a5762582eb5472f8be3f280c602a6a64f4427aef8c21e4524ea4d5"
+    sha256                               arm64_linux:   "4880dde3f371a7852b5c626c806a9d5da2d18d257a0b671513049cad446d42bd"
+    sha256                               x86_64_linux:  "ecaea860a805bc12aaa65cbfb5928b327645c60a3c62115f3ea33ed40a62a2ec"
   end
 
   depends_on xcode: ["14.0", :build]
@@ -24,6 +25,7 @@ class Sourcekitten < Formula
 
   def install
     system "make", "prefix_install", "PREFIX=#{prefix}", "TEMPORARY_FOLDER=#{buildpath}/SourceKitten.dst"
+    generate_completions_from_executable(bin/"sourcekitten", "--generate-completion-script")
   end
 
   test do

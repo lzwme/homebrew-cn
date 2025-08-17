@@ -7,13 +7,14 @@ class Xcbeautify < Formula
   head "https://github.com/cpisciotta/xcbeautify.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ee1f233d52ac4b8541e9bc5bf43b5ee15e5246130bfc500ef248b68ea8e4ad5e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5f193dcd43fe565fed28381ebf6f55240d137063507ff96f59dbe3b87091a295"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "e7755f538b36b686e3c71665ead825368a3bdaebb711e95d1e1622b3113b0797"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1db40750e9579e6dc60acc4b35b9c3765620ac1844ffccf016880e777fcc8f4c"
-    sha256 cellar: :any_skip_relocation, ventura:       "b69b9f2f8a36d2912add3c92f20adce091fd4e0ea2fb0a07ece4caffb130b311"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0f5f5c6a2b24964def0dd4a0d115a44ac141d807b3942238c452fdffd3fb7dd2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "093a34e1852f51b30a4cbe8bebedec15370d91f8180eeb0a55996c63e97977a6"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "45aa6aae0d7a48a05719aa0bd20a3d49d2eb3b602763dbe7fdb20777c57f998e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "438d03f0c727ad6afdb8364d56abc2e2d61b17b4bca9d2fecba9b676618f9e9a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "c0b0a8bd11267bec6d150639bdd0a954c663d784f1c1de63e8297a126c01d266"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3b103beb64a4a1c716f761ac978496184e220ede127efc1f44f8084cf62d9b63"
+    sha256 cellar: :any_skip_relocation, ventura:       "d715ace6defcf2422803a14d01623ea3805978a611ba5cc0c9c17d5baaf01ca4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "dddc7750570072cb5609cc9bf22e88b5867e71633a2fe70aaf347124e545d532"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d81bcec58668fba3b890772640a7d26f456a093379755b548a41bc3e9772f079"
   end
 
   # needs Swift tools version 5.9.0
@@ -30,6 +31,7 @@ class Xcbeautify < Formula
     end
     system "swift", "build", *args, "--configuration", "release"
     bin.install ".build/release/xcbeautify"
+    generate_completions_from_executable(bin/"xcbeautify", "--generate-completion-script")
   end
 
   test do

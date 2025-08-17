@@ -2,7 +2,7 @@ class OrTools < Formula
   desc "Google's Operations Research tools"
   homepage "https://developers.google.com/optimization/"
   license "Apache-2.0"
-  revision 2
+  revision 3
   head "https://github.com/google/or-tools.git", branch: "stable"
 
   # Remove `stable` block when patch is no longer needed.
@@ -24,13 +24,13 @@ class OrTools < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "19cdac1f3c698e9c28ce6814cea479ddb5c93a7795ddc4c3a60719fa8f14e8d2"
-    sha256 cellar: :any,                 arm64_sonoma:  "13d56f3ee0f2fe7631715d25ffc74704eab029881fb035405d64762b6a344ea6"
-    sha256 cellar: :any,                 arm64_ventura: "ad7269da6db69ad8a0dd1c93c2b7f44da4b2feba120f6cd09c5ce60854fb692a"
-    sha256 cellar: :any,                 sonoma:        "6f531c8b1b7a4c15a44a6b0d19991570cd6b6ffdc9cc101bdbe3df73eeb22617"
-    sha256 cellar: :any,                 ventura:       "6631d35bdf10de218414b1c416c582082ea12461f91a103a37869eaf0a4f909b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "dce979056aedb07b8c2470deeb42e7290f74ef9cfb7619bd2b59b16286230c9d"
-    sha256                               x86_64_linux:  "aa1a0b3a3a1b11c359ae3a5300a52d024a3e38452894228a4bd033e3882eac08"
+    sha256 cellar: :any, arm64_sequoia: "ce649587c5f2d0202701b4a5df43cdb9135757bcd8f0ebc28c70d49e336c09a4"
+    sha256 cellar: :any, arm64_sonoma:  "cfa19ff800a4fa5ffc7822689e34d91446affa2e36fbc9495fcb93d77a7c1a87"
+    sha256 cellar: :any, arm64_ventura: "cade2913e7c6c0c916568b9004732f591e4a701c7f31be38918c5376077831c0"
+    sha256 cellar: :any, sonoma:        "2a4d4e198fe9f2f6b2acee2c192bda29345ee089d65f2339164e1e12bee83bfd"
+    sha256 cellar: :any, ventura:       "902c0119349430b42956eef021c163d4b496ac1482dc6658b3cadfc140c0e484"
+    sha256               arm64_linux:   "e9d93b5d72e6f1afa9116644477c59c66949259a19fe2318b7ca292022f2aa73"
+    sha256               x86_64_linux:  "0c01f6f3ddec8e2f8ee32aa1081692ca66ce35adaa8aca7b7b284a6a86b10bb2"
   end
 
   depends_on "cmake" => [:build, :test]
