@@ -4,7 +4,6 @@ class Alpscore < Formula
   url "https://ghfast.top/https://github.com/ALPSCore/ALPSCore/archive/refs/tags/v2.3.2.tar.gz"
   sha256 "bd9b5af0a33acc825ffedfaa0bf794a420ab2b9b50f6a4e634ecbde43ae9cc24"
   license "GPL-2.0-only"
-  head "https://github.com/ALPSCore/ALPSCore.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "d32af432da55d533b24bd30a60f8e2845ae2bfe97a3b00d5f53e0d58282eeafe"
@@ -21,6 +20,12 @@ class Alpscore < Formula
   depends_on "eigen"
   depends_on "hdf5"
   depends_on "open-mpi"
+
+  # Backport support for CMake 4
+  patch do
+    url "https://github.com/ALPSCore/ALPSCore/commit/155e4327a78c1fa9442a179868994c8715582720.patch?full_index=1"
+    sha256 "9cb67c3d457a99fc799a60e8fcae0af63b99ebb18b5279b449ce9c0c1445077a"
+  end
 
   def install
     # Work around different behavior in CMake-built HDF5

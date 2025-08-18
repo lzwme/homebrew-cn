@@ -32,7 +32,6 @@ class Jumanpp < Formula
   end
 
   depends_on "boost" => :build
-  depends_on "boost-build" => :build
   depends_on "gperftools"
 
   def install

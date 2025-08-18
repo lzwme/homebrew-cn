@@ -43,8 +43,8 @@ class Protobuf < Formula
       -Dprotobuf_INSTALL_EXAMPLES=ON
       -Dprotobuf_BUILD_TESTS=ON
       -Dprotobuf_USE_EXTERNAL_GTEST=ON
-      -Dprotobuf_ABSL_PROVIDER=package
-      -Dprotobuf_JSONCPP_PROVIDER=package
+      -Dprotobuf_FORCE_FETCH_DEPENDENCIES=OFF
+      -Dprotobuf_LOCAL_DEPENDENCIES_ONLY=ON
     ]
 
     system "cmake", "-S", ".", "-B", "build", *cmake_args, *std_cmake_args

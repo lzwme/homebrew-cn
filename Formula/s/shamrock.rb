@@ -20,9 +20,11 @@ class Shamrock < Formula
   end
 
   depends_on "cmake" => :build
+  depends_on "fmt" => :build
+  depends_on "nlohmann-json" => :build
+  depends_on "pybind11" => :build
   depends_on "adaptivecpp"
   depends_on "boost"
-  depends_on "fmt"
   depends_on "open-mpi"
   depends_on "python@3.13"
 
@@ -39,13 +41,21 @@ class Shamrock < Formula
   end
 
   def install
+    rm_r(%w[
+      external/fmt
+      external/nlohmann_json
+      external/pybind11
+    ])
+
     args = %W[
       -DSHAMROCK_ENABLE_BACKEND=SYCL
       -DPYTHON_EXECUTABLE=#{python}
       -DSYCL_IMPLEMENTATION=ACPPDirect
       -DCMAKE_CXX_COMPILER=acpp
       -DACPP_PATH=#{Formula["adaptivecpp"].opt_prefix}
-      -DUSE_SYSTEM_FMTLIB=Yes
+      -DSHAMROCK_EXTERNAL_FMTLIB=ON
+      -DSHAMROCK_EXTERNAL_JSON=ON
+      -DSHAMROCK_EXTERNAL_PYBIND11=ON
     ]
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args

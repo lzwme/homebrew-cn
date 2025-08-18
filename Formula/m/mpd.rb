@@ -16,9 +16,9 @@ class Mpd < Formula
     sha256               x86_64_linux:  "a4770ea4fb7b297bea1323a7c9bcba3b1c690ddbc5005ee7a6404a73e55c1c14"
   end
 
-  depends_on "boost" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
+  depends_on "nlohmann-json" => :build
   depends_on "pkgconf" => :build
 
   depends_on "chromaprint"
@@ -29,11 +29,9 @@ class Mpd < Formula
   depends_on "fluid-synth"
   depends_on "fmt"
   depends_on "game-music-emu"
-  depends_on "glib"
   depends_on "icu4c@77"
   depends_on "lame"
   depends_on "libao"
-  depends_on "libgcrypt"
   depends_on "libid3tag"
   depends_on "libmikmod"
   depends_on "libmpdclient"
@@ -47,7 +45,6 @@ class Mpd < Formula
   depends_on "libvorbis"
   depends_on macos: :mojave # requires C++17 features unavailable in High Sierra
   depends_on "mpg123"
-  depends_on "nlohmann-json"
   depends_on "opus"
   depends_on "pcre2"
   depends_on "sqlite"

@@ -26,10 +26,8 @@ class Libwps < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "1947ed7197be31c9abf52b092a535de6d3d1416c9fef915661ba81da4cee37b6"
   end
 
-  depends_on "boost" => :build
   depends_on "pkgconf" => :build
   depends_on "librevenge"
-  depends_on "libwpd"
 
   def install
     # Installing Doxygen docs trips up make install
@@ -45,13 +43,10 @@ class Libwps < Formula
       }
     CPP
     system ENV.cc, "test.cpp", "-o", "test",
-                  "-lrevenge-0.0",
+                  "-I#{include}/libwps-0.4",
                   "-I#{Formula["librevenge"].include}/librevenge-0.0",
-                  "-L#{Formula["librevenge"].lib}",
-                  "-lwpd-0.10",
-                  "-I#{Formula["libwpd"].include}/libwpd-0.10",
-                  "-L#{Formula["libwpd"].lib}",
-                  "-lwps-0.4", "-I#{include}/libwps-0.4", "-L#{lib}"
+                  "-L#{lib}", "-lwps-0.4",
+                  "-L#{Formula["librevenge"].lib}", "-lrevenge-0.0"
     system "./test"
   end
 end

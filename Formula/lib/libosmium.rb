@@ -22,6 +22,12 @@ class Libosmium < Formula
     sha256 "d95ca543fc42bd22b8c4bce1e6d691ce1711eda4b4910f7863449e6517fade6b"
   end
 
+  # Backport support for CMake 4
+  patch do
+    url "https://github.com/osmcode/libosmium/commit/7ab87418a0697ac9b7b5f005fbd64dcd99a01124.patch?full_index=1"
+    sha256 "2bb132477a5607d0b11a7d353ab2954df4a3f17e2ab4b6dd02627bf879c29b7d"
+  end
+
   def install
     resource("protozero").stage { libexec.install "include" }
 

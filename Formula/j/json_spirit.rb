@@ -36,6 +36,7 @@ class JsonSpirit < Formula
   def install
     args = %w[
       -DCMAKE_CXX_STANDARD=14
+      -DCMAKE_POLICY_VERSION_MINIMUM=3.5
       -DJSON_SPIRIT_DEMOS=OFF
       -DJSON_SPIRIT_TESTS=OFF
     ]

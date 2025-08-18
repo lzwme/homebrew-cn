@@ -31,7 +31,6 @@ class Onnxruntime < Formula
   depends_on "python@3.13" => :build
   depends_on "safeint" => :build
   depends_on "abseil"
-  depends_on "nsync"
   depends_on "onnx"
   depends_on "protobuf"
   depends_on "re2"
@@ -71,9 +70,8 @@ class Onnxruntime < Formula
     args = %W[
       -DHOMEBREW_ALLOW_FETCHCONTENT=ON
       -DFETCHCONTENT_FULLY_DISCONNECTED=ON
-      -DFETCHCONTENT_SOURCE_DIR_PYTORCH_CLOG=#{buildpath}/build/_deps/pytorch_cpuinfo-src
       -DFETCHCONTENT_TRY_FIND_PACKAGE_MODE=ALWAYS
-      -DPYTHON_EXECUTABLE=#{python3}
+      -DPython_EXECUTABLE=#{python3}
       -DONNX_CUSTOM_PROTOC_EXECUTABLE=#{Formula["protobuf"].opt_bin}/protoc
       -Donnxruntime_BUILD_SHARED_LIB=ON
       -Donnxruntime_BUILD_UNIT_TESTS=OFF

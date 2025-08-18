@@ -35,10 +35,9 @@ class Lz4 < Formula
 
   test do
     input = "testing compression and decompression"
-    input_file = testpath/"in"
-    input_file.write input
-    output_file = testpath/"out"
-    system "sh", "-c", "cat #{input_file} | #{bin}/lz4 | #{bin}/lz4 -d > #{output_file}"
-    assert_equal output_file.read, input
+    compressed = pipe_output(bin/"lz4", input)
+    refute_empty compressed
+    decompressed = pipe_output("#{bin}/lz4 -d", compressed)
+    assert_equal decompressed, input
   end
 end

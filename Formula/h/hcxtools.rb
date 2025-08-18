@@ -1,19 +1,19 @@
 class Hcxtools < Formula
   desc "Utils for conversion of cap/pcap/pcapng WiFi dump files"
   homepage "https://github.com/ZerBea/hcxtools"
-  url "https://ghfast.top/https://github.com/ZerBea/hcxtools/archive/refs/tags/7.0.0.tar.gz"
-  sha256 "d5c552ba16b232e203d9e94410dab76def3262c4e3577525332a55e64aac80dd"
+  url "https://ghfast.top/https://github.com/ZerBea/hcxtools/archive/refs/tags/7.0.1.tar.gz"
+  sha256 "7697c429327cb9cef64bcd47e33988d691327ae62ac53ec74aa25097d8ef246d"
   license "MIT"
   head "https://github.com/ZerBea/hcxtools.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "a3828d2757f6bcd8a3b385e99fa52c9553fcaf72ef3b5ae89d8d8d1c1a338898"
-    sha256 cellar: :any,                 arm64_sonoma:  "f7c6079d40740ebd7fa4cfcf5cfb924dc803a7ff4f16f3bf8633f6549064d5fc"
-    sha256 cellar: :any,                 arm64_ventura: "b79ab7462f3a342fc5ce7391fef913a6ae1d3d31c220c3a14a8b72883bf22005"
-    sha256 cellar: :any,                 sonoma:        "226c6cdcab72e301cd4b396428c4848338e96d0e11af20180b8b9912b371a68a"
-    sha256 cellar: :any,                 ventura:       "8fe3f4ee0205dbf611d54b787cc56204f922b5aa9a897d18851a5f86987889f2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f68d19c7a620b6ada3304b5a59e6f850c0c925f3ff53c624b50dbf7cd8376790"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "26013c9a30a7ddc345ffc63a0a57b56f63d0fb8da101ab7fc036ffdb9c78f93e"
+    sha256 cellar: :any,                 arm64_sequoia: "8a44c55d3ac2d1b789f8672b4d2b98b2b689dafe93d816f9e3f662e519177f5e"
+    sha256 cellar: :any,                 arm64_sonoma:  "0880e5b371e3ed209906d9129c3813582cda3e9846817b660a79f641ad54d689"
+    sha256 cellar: :any,                 arm64_ventura: "47ce8391e0cfdda4d7657b515887565c1140e75e45d1271dc3155c54884ec45c"
+    sha256 cellar: :any,                 sonoma:        "d5a42d28eb99193bc9b28c9a50a55ff41fe0a5d0dd79cf0892b7d926bf4c064e"
+    sha256 cellar: :any,                 ventura:       "4bcf4a1dadd14ad9f50b3fb7a60d4dacbf71d82e31dc12d24970027bfbfdf025"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1f6ddacc261c7176ff1358bf0653a2b61bc26acfd7fde2dd116c8255435e3b18"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1d05defbcae9e5c3c6e3aa8be76e8b3ec19e38049a1fdc1495e80826d3755b70"
   end
 
   depends_on "pkgconf" => :build

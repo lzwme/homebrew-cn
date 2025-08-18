@@ -41,7 +41,7 @@ class Libabw < Formula
   end
 
   test do
-    (testpath/"test.abw").write <<~EOS
+    (testpath/"test.abw").write <<~XML
       <?xml version="1.0" encoding="UTF-8"?>
       <!DOCTYPE abiword PUBLIC "-//ABISOURCE//DTD AWML 1.0 Strict//EN"
         "http://www.abisource.com/awml.dtd">
@@ -84,7 +84,7 @@ class Libabw < Formula
       lang:en-US">word</c><c props="lang:en-US"> is bold.</c></p>
       </section>
       </abiword>
-    EOS
+    XML
 
     (testpath/"test.cpp").write <<~CPP
       #include <stdio.h>

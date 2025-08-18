@@ -1,8 +1,8 @@
 class Librsvg < Formula
   desc "Library to render SVG files using Cairo"
   homepage "https://wiki.gnome.org/Projects/LibRsvg"
-  url "https://download.gnome.org/sources/librsvg/2.60/librsvg-2.60.0.tar.xz"
-  sha256 "0b6ffccdf6e70afc9876882f5d2ce9ffcf2c713cbaaf1ad90170daa752e1eec3"
+  url "https://download.gnome.org/sources/librsvg/2.61/librsvg-2.61.0.tar.xz"
+  sha256 "dbd0db40a1179a382fbb8cc930837671b973d722ba106a3dee2aad0fd858e2c4"
   license "LGPL-2.1-or-later"
 
   # librsvg doesn't use GNOME's "even-numbered minor is stable" version scheme.
@@ -14,14 +14,13 @@ class Librsvg < Formula
   end
 
   bottle do
-    rebuild 3
-    sha256 cellar: :any, arm64_sequoia: "3dc5d7a40427151ec9eadf5e14ac57ef2fa0f5394a6179b6176ef9ee808ea3ef"
-    sha256 cellar: :any, arm64_sonoma:  "6aa442f8f9b8321305e711507f9a990aada6b6da7cd93288c53a84bc3ccd2f95"
-    sha256 cellar: :any, arm64_ventura: "d01fa1d4afb79b03e41db1828877f016234a80f6aa09cfd4af7392fc76ae6d7b"
-    sha256 cellar: :any, sonoma:        "5d597c6db8e5782a8ee8f11d585722a47d1a8fff5f199f8b5aa6dbd92f6d8753"
-    sha256 cellar: :any, ventura:       "6900c7c3e582b673553987af03def75af29cceb0deb566c5133edb7c1ce630be"
-    sha256               arm64_linux:   "2dd0509f350351dded3f04c4c50dca249cc8e321863dd52b955e09df220301b4"
-    sha256               x86_64_linux:  "191eb1b75b39d36ee7eb30d33f549badb2ecd0d8f47959f9a8c15b265139e7e1"
+    sha256 cellar: :any, arm64_sequoia: "ffb4e691e2c3d62decf0e59349bae5386a900ef7b6c9b68cbb8c1d9f2a806b4e"
+    sha256 cellar: :any, arm64_sonoma:  "4d6857350f453cee62797559cce3568060b3dea1495f449d2763cdc007d07b9c"
+    sha256 cellar: :any, arm64_ventura: "a6f2fc2ed73049f6340feb9462694b8e7e2b6dbd65d36175a7be4e190af6480e"
+    sha256 cellar: :any, sonoma:        "dc755722074cc389f23a2bcdff100c83f91675eef2229e92a4851dedb37f0021"
+    sha256 cellar: :any, ventura:       "129b360b516863ba5f207e22255d101eddfd54e8e102b1f72ed35c1cc937b56b"
+    sha256               arm64_linux:   "87b834095b43615cb95eab9312865385914dbede3a2576ab309084706c89111b"
+    sha256               x86_64_linux:  "f5552c43775e141cc03099e635cb867f5f436670798430333761879a1bb07da7"
   end
 
   depends_on "cargo-c" => :build

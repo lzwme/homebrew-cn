@@ -43,17 +43,37 @@ class Libftdi < Formula
     sha256 "db4c3e558e0788db00dcec37929f7da2c4ad684791977445d8516cc3e134a3c4"
   end
 
+  # Backport commits to increase to cmake 3.5 minimum needed by cmake 4
+  patch do
+    url "http://developer.intra2net.com/git/?p=libftdi;a=patch;h=3861e7dc9e83f2f6ff4e1579cf3bbf63a6827105"
+    sha256 "ffe62563c3696f0e251acf2a23718b11e62d625e2e9826ba17fd1e83861775fb"
+  end
+  patch do
+    url "http://developer.intra2net.com/git/?p=libftdi;a=patch;h=3dc444f99bbc780f06ee6115c086e30f2dda471a"
+    sha256 "63b9eb4e4c12ea0ee7d314a1d50d38dc025f9433986cacfbbca443e7c2a004b8"
+  end
+  patch do
+    url "http://developer.intra2net.com/git/?p=libftdi;a=patch;h=61a6bac98bbac623fb33b6153a063b6436f84721"
+    sha256 "68dc235a70c8b3ea62fa1d498c8b13f290a32affa947119202f8655037bbfe37"
+  end
+  patch do
+    url "http://developer.intra2net.com/git/?p=libftdi;a=patch;h=de9f01ece34d2fe6e842e0250a38f4b16eda2429"
+    sha256 "3fe298c7f61a353160c4e1df74a06a4f7ed26e121b3608237b6fe68186208129"
+  end
+
   def install
-    mkdir "libftdi-build" do
-      system "cmake", "..", "-DPYTHON_BINDINGS=OFF",
-                            "-DCMAKE_BUILD_WITH_INSTALL_RPATH=ON",
-                            "-DFTDIPP=ON",
-                            *std_cmake_args
-      system "make", "install"
-      pkgshare.install "../examples"
-      (pkgshare/"examples/bin").install Dir["examples/*"] \
-                                        - Dir["examples/{CMake*,Makefile,*.cmake}"]
-    end
+    system "cmake", "-S", ".", "-B", "build",
+                    "-DCMAKE_BUILD_WITH_INSTALL_RPATH=ON",
+                    "-DCMAKE_CXX_STANDARD=11",
+                    "-DCMAKE_INSTALL_RPATH=#{rpath};#{rpath(source: pkgshare/"examples/bin")}",
+                    "-DFTDIPP=ON",
+                    "-DPYTHON_BINDINGS=OFF",
+                    *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
+
+    pkgshare.install "examples"
+    (pkgshare/"examples/bin").install buildpath.glob("build/examples/*").select { |f| f.file? && f.executable? }
   end
 
   test do

@@ -23,6 +23,7 @@ class Coordgen < Formula
 
   def install
     system "cmake", "-S", ".", "-B", "build",
+                    "-DCMAKE_POLICY_VERSION_MINIMUM=3.5", # https://github.com/schrodinger/coordgenlibs/pull/130
                     "-DCOORDGEN_BUILD_EXAMPLE=OFF",
                     "-DCOORDGEN_BUILD_TESTS=OFF",
                     "-DCOORDGEN_USE_MAEPARSER=ON",

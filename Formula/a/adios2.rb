@@ -102,7 +102,8 @@ class Adios2 < Formula
 
   test do
     adios2_config_flags = Utils.safe_popen_read(bin/"adios2-config", "--cxx").chomp.split
-    system "mpic++", pkgshare/"test/bpWriter.cpp", *adios2_config_flags
+    adios2_config_flags += %W[-L#{Formula["lz4"].opt_lib} -llz4]
+    system "mpic++", "-std=c++17", pkgshare/"test/bpWriter.cpp", *adios2_config_flags
     system "./a.out"
     assert_path_exists testpath/"myVector_cpp.bp"
 
