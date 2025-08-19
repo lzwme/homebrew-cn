@@ -6,7 +6,7 @@ class Uhd < Formula
   url "https://ghfast.top/https://github.com/EttusResearch/uhd/archive/refs/tags/v4.8.0.0.tar.gz"
   sha256 "a2159491949477dca67f5a9b05f5a80d8c2b32e91b95dd7fac8ddd3893e36d09"
   license all_of: ["GPL-3.0-or-later", "LGPL-3.0-or-later", "MIT", "BSD-3-Clause", "Apache-2.0"]
-  revision 1
+  revision 2
   head "https://github.com/EttusResearch/uhd.git", branch: "master"
 
   livecheck do
@@ -15,13 +15,13 @@ class Uhd < Formula
   end
 
   bottle do
-    sha256                               arm64_sequoia: "ebaad7dcd0a6646f5bba5fb5d2ec4741caba9c9512a40ccc45876b91adda40f9"
-    sha256                               arm64_sonoma:  "b81edc91475c72d0a15f1043619819316f3f268476dd5c416220c5ec16b30c23"
-    sha256                               arm64_ventura: "bc397dbb79d7c69e12b2df8988fc4d36ffb1dcc1199c33acf322a10d5ebb73a3"
-    sha256                               sonoma:        "88b4e190d80fc5342838f7aa22dfd2b8cb3a529455181cf0708e2af6cae83373"
-    sha256                               ventura:       "477921aa456e442999d455a94068c158878e11f3fe6bc662f82c2c4a03476acc"
-    sha256                               arm64_linux:   "23a80186cfe77cbba4fa2bbd2e088d0f4f7f2b28108e1966d3b76c35b53cd931"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c8e6f330239720cba66bd647287d85126b9f32cd0eac5d30aaff28539049ef7b"
+    sha256                               arm64_sequoia: "4ab65a47300d350348cf8847f2538a99910a716bad25372ea0ec88dad514f066"
+    sha256                               arm64_sonoma:  "2518c54f6faa4d564f7575088ba7741e7451116af4048efddb53a033c2551190"
+    sha256                               arm64_ventura: "2feabcf1402e03fdb6c8065502e98cf642b3d904233380c441c5f41323dec13d"
+    sha256                               sonoma:        "2efb778054b5a4ad2938a45473aebbc098f0ac8170bf6f92bdb7b6bc74173971"
+    sha256                               ventura:       "1a9a39c44ca1d5571bfd90a0f9792f48363571af0c3734e10a50b9dfc01459fc"
+    sha256                               arm64_linux:   "5d0a9b89b3cc9b85fb39a5380289de4864e95feba7088282257e0fb78a0dc2f1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ada9d40e0939903444936b0d0b0d3884a9cabbbc55c9ad471bf542413b2a0800"
   end
 
   depends_on "cmake" => :build
@@ -57,6 +57,10 @@ class Uhd < Formula
     sha256 "0dc5cf491ca2037819e894fdb21b8b98230eb8ca2aee0d2312889e365da961e8"
   end
 
+  # Workaround for Boost 1.89.0 until fixed upstream.
+  # Issue ref: https://github.com/EttusResearch/uhd/issues/869
+  patch :DATA
+
   def python3
     "python3.13"
   end
@@ -78,3 +82,28 @@ class Uhd < Formula
     assert_match version.to_s, shell_output("#{bin}/uhd_config_info --version")
   end
 end
+
+__END__
+diff --git a/host/CMakeLists.txt b/host/CMakeLists.txt
+index 746a977bd..815c2a2c8 100644
+--- a/host/CMakeLists.txt
++++ b/host/CMakeLists.txt
+@@ -306,7 +306,6 @@ set(UHD_BOOST_REQUIRED_COMPONENTS
+     date_time
+     filesystem
+     program_options
+-    system
+     serialization
+     thread
+     unit_test_framework
+diff --git a/host/uhd.pc.in b/host/uhd.pc.in
+index 4a5f67c96..e1a8115a9 100644
+--- a/host/uhd.pc.in
++++ b/host/uhd.pc.in
+@@ -11,5 +11,5 @@ Requires:
+ Requires.private: @UHD_PC_REQUIRES@
+ Conflicts:
+ Cflags: -I${includedir} @UHD_PC_CFLAGS@
+-Libs: -L${libdir} -luhd -lboost_system
++Libs: -L${libdir} -luhd
+ Libs.private: @UHD_PC_LIBS@

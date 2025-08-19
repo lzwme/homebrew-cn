@@ -1,21 +1,21 @@
 class Noir < Formula
   desc "Attack surface detector that identifies endpoints by static analysis"
   homepage "https://owasp.org/www-project-noir/"
-  url "https://ghfast.top/https://github.com/owasp-noir/noir/archive/refs/tags/v0.23.0.tar.gz"
-  sha256 "ac82e4b59e2d1587ab9ad18286b1b1c55ce6bded9c33e70dd1dfa1b5c8460972"
+  url "https://ghfast.top/https://github.com/owasp-noir/noir/archive/refs/tags/v0.23.1.tar.gz"
+  sha256 "bba94c7278b4e605c68ae73dbd3bb337a13c262718018b50e3b80affaf599407"
   license "MIT"
   head "https://github.com/owasp-noir/noir.git", branch: "main"
 
-  no_autobump! because: :requires_manual_review
+  no_autobump! because: :bumped_by_upstream
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "099b7ae4140ed6335c4fdc480c5b610d3e337693853e903142928d7bccc26d06"
-    sha256 cellar: :any,                 arm64_sonoma:  "eb5908154fcc779c3853b6a32c1acd46e9e323835f9fbd91d9dc37b85e9c94fe"
-    sha256 cellar: :any,                 arm64_ventura: "a602978b91f7e2d5061e4bd13cf90719c31f1c74e39d3685e7530ff4318a36b6"
-    sha256 cellar: :any,                 sonoma:        "310710fc173aefefc54a68fe0af1730d9b8170450ef69add4dbd61a4858c0c42"
-    sha256 cellar: :any,                 ventura:       "3224e2dd606a851c3ec863b6cf70e2f58c342228cc030e2c9d47245028de0e46"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c7270c1a1ee8dc2888c0efaf4db42f024f568a49ff04d6eafb3a01b26116d657"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "81d8138ce56d8ac4dadbf7f519f83cf58b8705efb4f5a11910d03f1d1833b560"
+    sha256 cellar: :any,                 arm64_sequoia: "8726ec9ba560772679a5205b5272516ca1185a34fdf08c11d856364473ade38a"
+    sha256 cellar: :any,                 arm64_sonoma:  "d1c64c50169ff4503c1aaf53075eef4636d4b024ee41457468cb5ad721663df6"
+    sha256 cellar: :any,                 arm64_ventura: "91f5b9bcd3a92f4b04f63170e170e921c61146e452344838d1e7fbaa8014c0ac"
+    sha256 cellar: :any,                 sonoma:        "5c1b22578088746394ac49fa7b8ecfb34eaeba5eafc93f1f542d74b564324896"
+    sha256 cellar: :any,                 ventura:       "84a1288432f668921f85f81d224bf8c2e79ffa12af96332ddd0cac9c90a58623"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7b93cc1d2a9aaca02deeb4bcb51b0a2129c7efde57518d31783cadb658aed6cc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "503be80f801e902dcdf316164ac1b7d4b84e98649f21b66efb8c808e0d88f207"
   end
 
   depends_on "crystal" => :build

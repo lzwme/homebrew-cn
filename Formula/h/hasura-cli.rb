@@ -1,18 +1,18 @@
 class HasuraCli < Formula
   desc "Command-Line Interface for Hasura GraphQL Engine"
   homepage "https://hasura.io"
-  url "https://ghfast.top/https://github.com/hasura/graphql-engine/archive/refs/tags/v2.48.1.tar.gz"
-  sha256 "688e1e4af3e5c0d2c21de7ca705b1cacf5012db76f531052f68b7ab2967b8bf9"
+  url "https://ghfast.top/https://github.com/hasura/graphql-engine/archive/refs/tags/v2.48.3.tar.gz"
+  sha256 "ad7f7e85168e53671b3421d4947c5a6f840682ba0fbff834fb1ce2b4f3f9d6b1"
   license "Apache-2.0"
   head "https://github.com/hasura/graphql-engine.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3c168fb8c60738f168484fce057b62ab295aebe7274a031f0008d8d5dc4e91c4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3c168fb8c60738f168484fce057b62ab295aebe7274a031f0008d8d5dc4e91c4"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "3c168fb8c60738f168484fce057b62ab295aebe7274a031f0008d8d5dc4e91c4"
-    sha256 cellar: :any_skip_relocation, sonoma:        "26749938f27c8883846ca3a6a80ab79f8820d32920ad209c6e5be5dcd7ca5300"
-    sha256 cellar: :any_skip_relocation, ventura:       "26749938f27c8883846ca3a6a80ab79f8820d32920ad209c6e5be5dcd7ca5300"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9f966901ebca05ee6f398ce905d3a5fa0886effbc927eae0ca5d5655c86d5508"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f385b53709497e0cdcf9eb34e8322cfac34fc063bb406cc542a89b9d172c859c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f385b53709497e0cdcf9eb34e8322cfac34fc063bb406cc542a89b9d172c859c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "f385b53709497e0cdcf9eb34e8322cfac34fc063bb406cc542a89b9d172c859c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "310114abbf68ed17ec45b968303c43862c53cab6350cfd638475f76ffe277d11"
+    sha256 cellar: :any_skip_relocation, ventura:       "310114abbf68ed17ec45b968303c43862c53cab6350cfd638475f76ffe277d11"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "71c0b250d4b6e09f5d664f9b791792cf2bbb8f22881683b1566190bfcdcd3db6"
   end
 
   deprecate! date: "2024-10-29", because: "uses `node@18`, which is deprecated"

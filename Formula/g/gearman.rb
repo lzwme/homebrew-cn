@@ -4,18 +4,18 @@ class Gearman < Formula
   url "https://ghfast.top/https://github.com/gearman/gearmand/releases/download/1.1.21/gearmand-1.1.21.tar.gz"
   sha256 "2688b83e48f26fdcd4fbaef2413ff1a76c9ecb067d1621d0e0986196efecd308"
   license "BSD-3-Clause"
-  revision 5
+  revision 6
 
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "060faa3a9871dcbbaeef57333b7fa75f078ff5494649708b9dbefa88ae73f163"
-    sha256 cellar: :any,                 arm64_sonoma:  "df3265ff5e08cd1e45980fce280622cc1f193928bc01032af8ee26513b6fef76"
-    sha256 cellar: :any,                 arm64_ventura: "5ca0cc364c7b043186134711deb86d75c91fda9bc3c684040ac927175e646858"
-    sha256 cellar: :any,                 sonoma:        "eb219f8ad13112d89d5c93886c3f50296fbeba85b9fdc3a8f72c7a17fcf40826"
-    sha256 cellar: :any,                 ventura:       "c8481a6f4d55d6b47ae8aac28bb7c44dbbc641fae253d0e074e31d8dabefba83"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6dff3c3b09510935a9099cf7a08f9d8cc83005d2b724b6910bf095ea2fe36697"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b6e753a4c1a89536e1e907a2a4006d947052c7103271289371ca0301d7a9ba83"
+    sha256 cellar: :any,                 arm64_sequoia: "405acbf2c81f96a80a052018dcf795c7bacc5374c410550a14aa914fa7289150"
+    sha256 cellar: :any,                 arm64_sonoma:  "e28eb01d2b29084d6f49defdc6f9a3e4c2ace251ff56f46ed66eb79872c1bdd8"
+    sha256 cellar: :any,                 arm64_ventura: "1812ff0ae7da5aeb7a43c80ad723ebd7abbbfea6d0c3d506d0fbb57bef4db598"
+    sha256 cellar: :any,                 sonoma:        "508907ce358ba952fdd4a23be727265b73a3472902b192518959e67591cc5e93"
+    sha256 cellar: :any,                 ventura:       "ace21395e2a741fba1b61329c605ebd3b4fe16006622629786ba631007ae9e60"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "47eea2606ae931432c0debab148d5f4e1b4cc8cc6a74176c0963e31611cd0751"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d2617f5bfe8fe5779a942efe2ea1b7fb6fe30cd4abe99868dd4c647c2d16a91a"
   end
 
   depends_on "pkgconf" => :build

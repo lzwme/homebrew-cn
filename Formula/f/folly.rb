@@ -1,19 +1,19 @@
 class Folly < Formula
   desc "Collection of reusable C++ library artifacts developed at Facebook"
   homepage "https://github.com/facebook/folly"
-  url "https://ghfast.top/https://github.com/facebook/folly/archive/refs/tags/v2025.08.11.00.tar.gz"
-  sha256 "a5cdbf0e8b5198a0f0e863e9f9e3c35b30a78b189c2cd2f300d2d3ca67c0aa3f"
+  url "https://ghfast.top/https://github.com/facebook/folly/archive/refs/tags/v2025.08.18.00.tar.gz"
+  sha256 "54df42979bb9d0445e8cc84752116d929b924ae05de2d20ea7c033ec5c44d911"
   license "Apache-2.0"
   head "https://github.com/facebook/folly.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "04a3cdd75fdbd62c6eb072f3ddac22e3c400c268b63f6863bc320428126e4b76"
-    sha256 cellar: :any,                 arm64_sonoma:  "ee3641ef12c6d5485611f9c92d75d8f4245c9488af234aace66d7a3d979a5f12"
-    sha256 cellar: :any,                 arm64_ventura: "a9fa5567f81c2b5cf5b3afb6ef84f160dbf5869787ea292f3ac00f8647773163"
-    sha256 cellar: :any,                 sonoma:        "8e481dcde0e90516806fc0683c47743a1ff2ebac8f742f8681a6d71e3e09962e"
-    sha256 cellar: :any,                 ventura:       "2960d7dfbe6dbdf90925dba6da2a4acc6ffa257f086c740a81428a65d5aca48c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1786f6dfb6245ce284f2c364ccab969cbd7e490434ab3992dac903e5661c113c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7421845887851139553c002cbf6beb800c015e40e45703c2a020b109e33aebbb"
+    sha256 cellar: :any,                 arm64_sequoia: "2c5be01ef18fd74a0e3ef56845681f43884d1ba648a38aeedbfc5276699f1c0c"
+    sha256 cellar: :any,                 arm64_sonoma:  "aee98dc442da71da25ec34b7a7c8d03bc2235dad56e21cba97508c9e3b625027"
+    sha256 cellar: :any,                 arm64_ventura: "8778b7998b8c4a358031f5158c5620062800abd8926d1d8fc42ad0f7d089f5ff"
+    sha256 cellar: :any,                 sonoma:        "54f08d5721adb9082f332bec0674dd70dd67f1662307e818647223a2359e0757"
+    sha256 cellar: :any,                 ventura:       "df2cc545311f1f9a3e2ea450e8a5dc5af048e287096651808682a186ac6dec45"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7d4978d3872432c3863bbc85d0b6a164550ca31b61d0efbc67358a81d99d4c4e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "95cb7323e7d1bcd2f07aac3bbeb0749e4658472ce3f1e55509c492f90680acfe"
   end
 
   depends_on "cmake" => :build
@@ -47,6 +47,10 @@ class Folly < Formula
         "std::__1::__fs::filesystem::path::lexically_normal() const"
     EOS
   end
+
+  # Workaround for Boost 1.89.0 until upstream fix.
+  # Issue ref: https://github.com/facebook/folly/issues/2489
+  patch :DATA
 
   def install
     ENV.llvm_clang if OS.mac? && (DevelopmentTools.clang_build_version <= 1100)
@@ -91,3 +95,29 @@ class Folly < Formula
     system "./test"
   end
 end
+
+__END__
+diff --git a/CMake/folly-config.cmake.in b/CMake/folly-config.cmake.in
+index 0b96f0a10..800a3d90b 100644
+--- a/CMake/folly-config.cmake.in
++++ b/CMake/folly-config.cmake.in
+@@ -38,7 +38,6 @@ find_dependency(Boost 1.51.0 MODULE
+     filesystem
+     program_options
+     regex
+-    system
+     thread
+   REQUIRED
+ )
+diff --git a/CMake/folly-deps.cmake b/CMake/folly-deps.cmake
+index 7dafece7d..eaf8c2379 100644
+--- a/CMake/folly-deps.cmake
++++ b/CMake/folly-deps.cmake
+@@ -41,7 +41,6 @@ find_package(Boost 1.51.0 MODULE
+     filesystem
+     program_options
+     regex
+-    system
+     thread
+   REQUIRED
+ )

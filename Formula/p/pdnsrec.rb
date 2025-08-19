@@ -4,6 +4,7 @@ class Pdnsrec < Formula
   url "https://downloads.powerdns.com/releases/pdns-recursor-5.2.5.tar.bz2"
   sha256 "a8a657a7abd6e9d237cdd26753f7dcf5ccd5b8c48ac8120b08d2b8d57a1d856a"
   license "GPL-2.0-only" => { with: "openvpn-openssl-exception" }
+  revision 1
 
   livecheck do
     url "https://downloads.powerdns.com/releases/"
@@ -11,13 +12,13 @@ class Pdnsrec < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "4cfbe3c32ba0779876976d59aa18da7a16ed40513ae80bce6f041f74305b27bd"
-    sha256 arm64_sonoma:  "80c59cb26588e4d21235857f96ec33365a4c532f948d4b3f2b8e53d16c7618f4"
-    sha256 arm64_ventura: "5187ef9b4118569767849996a7593d5f30b7a9fb81b9ab688e13e1a60fd44482"
-    sha256 sonoma:        "e2309884d2bb05dece92c45e620195436ebf9a89dfd0ea202574de1fe271de5a"
-    sha256 ventura:       "6fd6e19ee04049595fd8a80a34a03ce8bef6152e9e996ced4f43a304a7b1542e"
-    sha256 arm64_linux:   "fadc665e2bc29abb2354b72c0ce884ddea1265af7d935e8a540a07fc35d0030c"
-    sha256 x86_64_linux:  "ba858b3a82395bbc87668f478bc866bfd90cd2e095eb66a6668ec3ba925c7c3a"
+    sha256 arm64_sequoia: "1e0efcb1c21eaca7bf16abec6eb9e43cbd17da963d4669c763189991377fa06f"
+    sha256 arm64_sonoma:  "61606fb1f5606528a7dd325ee1c27642c8171de28c496e71b6b5b70ff0631ddc"
+    sha256 arm64_ventura: "88d613678e19245db2a9c2b5d6a3de11b1be4a7e025b6473879da32ccc676634"
+    sha256 sonoma:        "0e7e59c92403c83bb1a74d465e8b8a1dc94d8106f40eac1b596c83a0296fe76d"
+    sha256 ventura:       "09acca9ba175876237546e086c418e1b47ebde35de4bcd34b36946447ef7930e"
+    sha256 arm64_linux:   "d3402e71b378eca524883be055e4f5bfaef730af75486d57aff3b08d882afb32"
+    sha256 x86_64_linux:  "a557ef66ec43351cd659c2936f4dea983f34dc10f77be517261866ef6cce4ac3"
   end
 
   depends_on "pkgconf" => :build
@@ -41,6 +42,10 @@ class Pdnsrec < Formula
   end
 
   def install
+    # Workaround for Boost 1.89.0 until fixed upstream.
+    # Issue ref: https://github.com/PowerDNS/pdns/issues/15972
+    ENV["boost_cv_lib_system"] = "yes"
+
     ENV.cxx11
     ENV.llvm_clang if OS.mac? && (DevelopmentTools.clang_build_version <= 1100)
 

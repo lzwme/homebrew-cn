@@ -4,16 +4,17 @@ class Openvdb < Formula
   url "https://ghfast.top/https://github.com/AcademySoftwareFoundation/openvdb/archive/refs/tags/v12.1.0.tar.gz"
   sha256 "ebb9652ad1d67274e2c85e6736cced5f04e313c5671ae1ae548f174cc76e9e64"
   license "MPL-2.0"
+  revision 1
   head "https://github.com/AcademySoftwareFoundation/openvdb.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "232ab82c1369b7af92fa07218eb27292d130f38b3c4870807f7f9454bb9b5824"
-    sha256 cellar: :any,                 arm64_sonoma:  "ad9a1b698dc300df9892fe6a68e04d45cdaf39fa4bacc9513df325cef8c911fc"
-    sha256 cellar: :any,                 arm64_ventura: "1fd94127d9139eb0c3830af8903f32a183384657c69ddaff24b59cb5c024f157"
-    sha256 cellar: :any,                 sonoma:        "43c1f8555b53d5c1ed9211c727fdb4f46b018031cdeb62a6564ad78a36ba584f"
-    sha256 cellar: :any,                 ventura:       "b51ff4add9efcafcb681dd9f12c8926f4daf6bea86ddda773c50f081861d9cf1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "509056ab340fde04463ac04f1a178f827643a42d6813a584fb84e8039a67355a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "20409c9a89ca12544d5438f8da2c5e78e08d43ff7160a3950c4926e09dc0b720"
+    sha256 cellar: :any,                 arm64_sequoia: "f7b1ae1b4714ee2a3054ed21f7614fbf558806b8ac712036f859da671804493f"
+    sha256 cellar: :any,                 arm64_sonoma:  "b12361d329988e7e23f9d09f74869171caff33520419ec0a9333d076c8b6af4b"
+    sha256 cellar: :any,                 arm64_ventura: "6147b904295c5d09e05b80d3e3d345c9a3d4b085562e0e3c8b97339323c43ed9"
+    sha256 cellar: :any,                 sonoma:        "23505396f7baaacc017de11e2d2864b7ed646e72a9470bc9d364dff35995b81b"
+    sha256 cellar: :any,                 ventura:       "1a9228f339b3294a3c141c7018fd680bd6176549bdc1fd6fb287cac384c1def6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ee4ea667d3e8f0439641e82f26c2685f29bb3571985855a3c758e2166244fee8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ef171922b7fc92150b734b959ee16e99a3fd3a0f0deffa5d507d65af55e02d03"
   end
 
   depends_on "cmake" => :build

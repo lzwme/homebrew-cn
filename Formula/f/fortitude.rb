@@ -1,19 +1,19 @@
 class Fortitude < Formula
   desc "Fortran linter"
   homepage "https://fortitude.readthedocs.io/en/stable/"
-  url "https://ghfast.top/https://github.com/PlasmaFAIR/fortitude/archive/refs/tags/v0.7.4.tar.gz"
-  sha256 "7f13f5f70ee5620a07019fb70dd2122892a085ac52f4237a64edbf30b9faf042"
+  url "https://ghfast.top/https://github.com/PlasmaFAIR/fortitude/archive/refs/tags/v0.7.5.tar.gz"
+  sha256 "a481dddcee5a680bb67ecad745d6378daa1f4166a2e4a7421af1f6a4ef8006c1"
   license "MIT"
   head "https://github.com/PlasmaFAIR/fortitude.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9d6979ff4912537c024574a7533cc10c3ff6879ac8dd11fd63967d7b4e5d5ad4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c1ed404c89024423d03e38db8a346ceef81fc95c9d1e569aef64e3f4b045ac43"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "1c1311c6154e322fd2c003850f73fc637a7567605c3a9d6eb04b698d328981c5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "db784829e33aeea78ddd7f0ca40e6ac8cbb7563d71bf21c4760b968e9323079c"
-    sha256 cellar: :any_skip_relocation, ventura:       "8c54f210aeeef45b557d8b8f39809737bc73664ddebd0b7d124ddfdf4789b157"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6725b9ec6f3dabec44bca4e17b6f4cb0e2b4d9baf8934b55614e45a590d26904"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b4333218ec6c5be2be3db0360c49e3123f09dbf7b2473cfc6f0f71afb32474a8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1a5261ab43b9f13b89ba6085b78fc782c71d903807e99e34b73b2d6269bb3a81"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9207d2491adac6654625b004bf7b2b6b2eb98445ce814d215352201fe6278d8a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "8296b1ccbad4712c34b78085396fb16d89ac9d9ff075d0d53ae5c53dbae89226"
+    sha256 cellar: :any_skip_relocation, sonoma:        "83ea9ee30e9892d3c7c2dd823037d2dbb820155918939ececb459f733c8e04f5"
+    sha256 cellar: :any_skip_relocation, ventura:       "ae72fa4a996c6fca4927fa051c4d4d34a946b7a72b4f994fe25ef5a652a077b3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "360fcdd5b086ee8815b6e52b96b199fd115b67236ad8ecd47b103a84054216cd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fb1bafe5a28c4730f556282b779d5318ad2efcd04db555e6ba610e2ff2cf18c3"
   end
 
   depends_on "rust" => :build

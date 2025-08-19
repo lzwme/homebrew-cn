@@ -4,18 +4,18 @@ class Freeling < Formula
   url "https://ghfast.top/https://github.com/TALP-UPC/FreeLing/releases/download/4.2/FreeLing-src-4.2.1.tar.gz"
   sha256 "c672a6379142ac2e872741e7662f17eccd8230bffc680564d2843d87480f1600"
   license "AGPL-3.0-only"
-  revision 10
+  revision 11
 
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "4e30428a201c092dd95925dbf2cbcf0462c161fc9605de3208a6947435ca8f96"
-    sha256 cellar: :any,                 arm64_sonoma:  "1daaaad0626d64ab84527ee4c3010e7d0182c0bb9105927b2a5ff67d450c508f"
-    sha256 cellar: :any,                 arm64_ventura: "e7eb98da6f2e974de97e0b42212a36b873698aa46e615d52de003f736b0de0cc"
-    sha256 cellar: :any,                 sonoma:        "18159dc9e41798f544bedf23ea60bf6f28dbd51504f2b518bc9862778765d0e3"
-    sha256 cellar: :any,                 ventura:       "70f59ec40dbf77652da963e4c91102ca8df50fb53c25155d48f1420b7eae9233"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c7d7377eedefefda284293356c01655d29e03e193b3e7f51a74f244d7a9ab01c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "09ee37dbdbd8a8d47ad0c439b2b1067f96a5e7f683d78a0d29642f54ded934a8"
+    sha256 cellar: :any,                 arm64_sequoia: "4d03e05512e15205712905c6fcce7f8c60eab88d1aa5d25416d0efa7a7c11e15"
+    sha256 cellar: :any,                 arm64_sonoma:  "e42599bb112cad791a8b2da21fe4dbd84d0783b5fb9f21106c9bbf2a786c256f"
+    sha256 cellar: :any,                 arm64_ventura: "9914627e7c0754f65831e135913ceac39a906076aea1f1ce89067efcc23a67f4"
+    sha256 cellar: :any,                 sonoma:        "c07d45a1ba0dc3f160792207222ed4283298bbadbbe1701d5749b1c5eea1ff06"
+    sha256 cellar: :any,                 ventura:       "707b36583e45938822b0d02cdc5d1485530c1c1692780e07bc2e8eb3fe6be2b9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "eef0f2dba68b9d9f25fad1aa0b795717424838b825291fce5427d386def0d427"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4268db05446a7752caffc6e796dceacad945556c9220b930ea21b220a34473d4"
   end
 
   depends_on "cmake" => :build

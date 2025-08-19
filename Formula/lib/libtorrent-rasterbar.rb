@@ -4,7 +4,7 @@ class LibtorrentRasterbar < Formula
   url "https://ghfast.top/https://github.com/arvidn/libtorrent/releases/download/v2.0.11/libtorrent-rasterbar-2.0.11.tar.gz"
   sha256 "f0db58580f4f29ade6cc40fa4ba80e2c9a70c90265cd77332d3cdec37ecf1e6d"
   license "BSD-3-Clause"
-  revision 1
+  revision 2
   head "https://github.com/arvidn/libtorrent.git", branch: "RC_2_0"
 
   livecheck do
@@ -13,13 +13,13 @@ class LibtorrentRasterbar < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "5a9c70f259f11ba3f9f2fc25c2c33d74e8d12fd1ac3a8e70304f0cd9c8040050"
-    sha256 cellar: :any,                 arm64_sonoma:  "a9b2ca32ab12c5ed9a32648a9a401e1a26817105ed230d316453a939358af039"
-    sha256 cellar: :any,                 arm64_ventura: "2e3102b5a138e1b6ba5f30f9575f5f66a7f02d4c3df67c71c533dc7b7627be31"
-    sha256 cellar: :any,                 sonoma:        "e78bb84c2382e17ffb242f67df0a359ea5282d12bd97e451034b8a32467a559f"
-    sha256 cellar: :any,                 ventura:       "1c3af891fb78a3d5340f819a14692e2eab6e91cdc75dced3f291fa4592c3c9a7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "819d9bc5e7ff5c393317e975a2db40264a67093913bc3332f4b67ab1914718f9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "79d40134bb9381e74e9e8d3bda73778535bdb4f816ae7e87c0e9df53409ae6c6"
+    sha256 cellar: :any,                 arm64_sequoia: "28eec45e51c69329ddc0575f07bb52c7f63bea43824280be5ddbb401a7830a85"
+    sha256 cellar: :any,                 arm64_sonoma:  "09386b394de1c44f1c2868b700861d4c7f0974ca2c3a96fb88a4ec4ee6f85228"
+    sha256 cellar: :any,                 arm64_ventura: "801ceae544984e0ebaca8e8f088e406156465f6bd980626ae21eed912a427dbf"
+    sha256 cellar: :any,                 sonoma:        "321c9833fbf1a264af1378c2ed51df5532c17cc244bf98a974e9cfbe02499cc3"
+    sha256 cellar: :any,                 ventura:       "bccd7da0f18e035c1319f768dfcde1ba675f3ba5188a2fdbc99bbf8eecfb8bb9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "55c6d36fd7c258d391ab3651210724e4a47629383a0fd8e843faa53593b7663b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9acff327ffc9166f13e06cab2739d08570e2ed62d29f1237546824c038432875"
   end
 
   depends_on "cmake" => :build
@@ -53,7 +53,6 @@ class LibtorrentRasterbar < Formula
       "-I#{include}",
       "-L#{lib}",
       "-lpthread",
-      "-lboost_system",
       "-ltorrent-rasterbar",
     ]
 

@@ -5,6 +5,7 @@ class Mkvtoolnix < Formula
   mirror "https://fossies.org/linux/misc/mkvtoolnix-94.0.tar.xz"
   sha256 "babbcff2362c9dd00b2e79336eff83fad177603a51a458ef1fa421b27fbc4703"
   license "GPL-2.0-or-later"
+  revision 1
 
   livecheck do
     url "https://mkvtoolnix.download/sources/"
@@ -12,11 +13,11 @@ class Mkvtoolnix < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_sonoma:  "968a68332a5971b5b86f9c7c9281be6f679ce2b6a9d3582456f5034d0302c9ac"
-    sha256 cellar: :any, arm64_ventura: "2bc40424584c7aec7f1d7c0d8cc932c6a8338166621c30035aa7fc9104501e7d"
-    sha256 cellar: :any, sonoma:        "2f34d7626c7547671ed58e53c8252a27eb17b396f168cb0ee48fb83bbfafe26c"
-    sha256 cellar: :any, ventura:       "d16b4834c664105f9509530a5e924acb166303d83d2de98d8a7d803911f19c45"
-    sha256               x86_64_linux:  "1ccc688addddf67029fbadb91f4c9f74e6fd7d3dedf54e00fbd3ffc42e9e22b6"
+    sha256 cellar: :any, arm64_sonoma:  "485579359bd7ae98f4c5a27221bbd43b085e639f92f69ef0c4781722e0cb848a"
+    sha256 cellar: :any, arm64_ventura: "978012bf3fb13774969555da0edae5cdb3b33a1f5277900b22abb972071fb387"
+    sha256 cellar: :any, sonoma:        "d581e863bc283294a95c270196ed8b3862d84121dcdc22eabd5798852ea89603"
+    sha256 cellar: :any, ventura:       "cb703a619e5810cfd0fc26d05b06e1f5d7c1624db06415cf1e72966ed1522a3f"
+    sha256               x86_64_linux:  "78a481d675810c0db9b25a6eb0d89b826afc14ac449fe3a6bcb5d48b21a4be31"
   end
 
   head do
@@ -55,6 +56,13 @@ class Mkvtoolnix < Formula
   conflicts_with cask: "mkvtoolnix"
 
   def install
+    # Workaround for Boost 1.89.0. Upstream fix requires regenerating configure.
+    # Issue ref: https://codeberg.org/mbunkus/mkvtoolnix/issues/6143
+    boost_workaround_args = if build.stable?
+      odie "Try removing workaround for Boost 1.89.0" if version > "94.0"
+      %w[ax_cv_boost_system=yes --without-boost-system]
+    end
+
     # Remove bundled libraries
     rm_r(buildpath.glob("lib/*") - buildpath.glob("lib/{avilib,librmff}*"))
 
@@ -73,7 +81,8 @@ class Mkvtoolnix < Formula
     extra_libs.chop!
 
     system "./autogen.sh" if build.head?
-    system "./configure", "--with-boost=#{Formula["boost"].opt_prefix}",
+    system "./configure", *boost_workaround_args,
+                          "--with-boost=#{Formula["boost"].opt_prefix}",
                           "--with-docbook-xsl-root=#{Formula["docbook-xsl"].opt_prefix}/docbook-xsl",
                           "--with-extra-includes=#{extra_includes}",
                           "--with-extra-libs=#{extra_libs}",

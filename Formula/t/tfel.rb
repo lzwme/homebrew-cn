@@ -4,16 +4,17 @@ class Tfel < Formula
   url "https://ghfast.top/https://github.com/thelfer/tfel/archive/refs/tags/TFEL-5.0.1.tar.gz"
   sha256 "820b2f9d54e237b2c2d9d6f06aaf7d4a1d3f34fb373e6549bee4fd8b55ecfad1"
   license "GPL-1.0-or-later"
+  revision 1
   head "https://github.com/thelfer/tfel.git", branch: "master"
 
   bottle do
-    sha256 arm64_sequoia: "5a32fde49de7f2ecb7019ceb8893ae34ecca6347c71b1598bc056199594d2014"
-    sha256 arm64_sonoma:  "36ec43fdca67231f63225ca920b6f62e0e5489510de6c2b8796bc7238e6b42a4"
-    sha256 arm64_ventura: "67632853027c9909241d22a4745db0c68ec235339713a51d0b626a443808578e"
-    sha256 sonoma:        "ace78851845633b3f55a10cc49f7e365962b4acf5cee5c5a0e19ac35b5131226"
-    sha256 ventura:       "b0a0492cfb359a04d65d9e7b0a4b41db3817ae492e002a5d58e712b682dce87c"
-    sha256 arm64_linux:   "27e25c31a2fd4b106d35c072a359ccd78c478f42b52298d960d06a82ee877fc2"
-    sha256 x86_64_linux:  "51420bbf165e34f3abdf34af61c445eadba23e9ca0ce8d1c092b0e0247a9cd16"
+    sha256 arm64_sequoia: "e1e6e43f5a7be0c184226d0454e453e45ba3893fe36ba7550684e2f5d4e6bb92"
+    sha256 arm64_sonoma:  "e0ab449a01ba8433286a4e521c2107e310c284df8acf444a6a734192157f12c0"
+    sha256 arm64_ventura: "20d92835975863a877b1699fa2c3f74db629901b5c9a029de7d607171be99c7c"
+    sha256 sonoma:        "7697db83e08a736da7840382d4c7f6e4a532cba3b22e45aefb0b94d4794ee42e"
+    sha256 ventura:       "fffe0c9814cb14447b10b28a3f5fe7b24eeab1a55f00b8d5c1091783e7d1dc84"
+    sha256 arm64_linux:   "53532c4a320aa267d7c05e0ff50e129a4897ce2fd917158bd4a94aec3b643e1e"
+    sha256 x86_64_linux:  "08025fd560964c4888ea337e34f628dc94b9df184fae2b33ae830bf41537f7a1"
   end
 
   depends_on "cmake" => :build

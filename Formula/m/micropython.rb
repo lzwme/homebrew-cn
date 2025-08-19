@@ -1,18 +1,19 @@
 class Micropython < Formula
   desc "Python implementation for microcontrollers and constrained systems"
   homepage "https://www.micropython.org/"
-  url "https://ghfast.top/https://github.com/micropython/micropython/releases/download/v1.25.0/micropython-1.25.0.tar.xz"
-  sha256 "9fe99ad5808e66bb40d374f5cad187c32c7d1c49cf47f72b38fd453c28c2aebe"
+  url "https://ghfast.top/https://github.com/micropython/micropython/releases/download/v1.26.0/micropython-1.26.0.tar.xz"
+  sha256 "a1b8e0f6bf7a8a78b55ac865c46c4c45f9623a86a1785d2063ff1cb3b6e661d7"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "470bfae6fc4f82301df5ae1f265b00d7b981a5db70120b4242b67890c5190a98"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "545f7cf7279b407e843e349024e2fcd264032be5312c1bd7fc9a59f440aae5fb"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "295730364d3c8f548e2fa71c71d9ddbb5acd3dd7b1e37ee3cc2af7862f4f92c3"
-    sha256 cellar: :any_skip_relocation, sonoma:        "936cc289f796f38be76d8e61d895498007aac8a3d686d3a7f10260d77cb77657"
-    sha256 cellar: :any_skip_relocation, ventura:       "2d473ef1dbda05c2759730d8c592599ce8a5712ea2607154db81c0244258241e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7a9e34b94bc6d146b7c7db61c02fba86eedf56812dc389fbe0b8d712d54c43a2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3e6f131cc475b96a98e22d54c82905c055d46072a4b15d6fdb027fe25100d25d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "df6fc28eb7c271612a7ae06a929efa487c5cbda642f1b0802210153f56a4a6f8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2c53b91a15b1ce1984c668da550c849616a8e2924af26e5e2fc1689cb540268b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "19e2d9b648b60081b66e6f2a3ba99d4c034f71b456d5e669bd3a9594b8656ecb"
+    sha256 cellar: :any_skip_relocation, sequoia:       "a33b0b1e4d7f464185db49ddd1d58746c303a5f645b5a1c716854928138ed95c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0b6a6a6686514b773787871eab3306dcc31342d6a5fc15bf47206a56c3385a23"
+    sha256 cellar: :any_skip_relocation, ventura:       "d203f50da1f48cf6be08ab09fdb66f6f36ccf896bdecf00f475bb8c9e6bb62f0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e11a276d98b7cbb529a82a6c143a564b70e3050f12bdd17ef3f5bb7277683c26"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "768d71065f1b0fcd878b73d3eedb759a850aaa1f99b1b8beddc510fa84e2417b"
   end
 
   depends_on "pkgconf" => :build

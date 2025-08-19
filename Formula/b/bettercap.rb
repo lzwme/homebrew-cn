@@ -1,19 +1,19 @@
 class Bettercap < Formula
   desc "Swiss army knife for network attacks and monitoring"
   homepage "https://www.bettercap.org/"
-  url "https://ghfast.top/https://github.com/bettercap/bettercap/archive/refs/tags/v2.41.1.tar.gz"
-  sha256 "c00a489110a01b799796bfc5701bbaea882e0a1aa675d16ce2aba25bd0d71ad1"
+  url "https://ghfast.top/https://github.com/bettercap/bettercap/archive/refs/tags/v2.41.4.tar.gz"
+  sha256 "384848630f594fadd48e80406f4cf8ceccfe3f32dd9182f7e18c20240e74a5fd"
   license "GPL-3.0-only"
   head "https://github.com/bettercap/bettercap.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "621bb685704def4c8be34da96de714b4edf0ac04154bd2c9463695951883e758"
-    sha256 cellar: :any,                 arm64_sonoma:  "901bbb7d7876139268957e5d43a894ab9626455a57883af493c2924b33c6479a"
-    sha256 cellar: :any,                 arm64_ventura: "daba887ac15d63596447f47f0b5abc5f45e20eebc0e67f59ecd63daff671e1d5"
-    sha256 cellar: :any,                 sonoma:        "d04852a37bcc0926d9cda8036024e04f37455239e5d1f735010fc818ccdecb67"
-    sha256 cellar: :any,                 ventura:       "0ab41470bf5828053907cb4d7e7235878950308ea1f42df6289b4360422f0ab7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b27de98d5ff8586d70b3a6448d663c7821926bbab32c6c49d0c7ff9abfd1d2d9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1b1ce57b33228eb4fbc74f6f384ed0712e56ad4929dff81e13ad9ad2924c7d43"
+    sha256 cellar: :any,                 arm64_sequoia: "4207804c76606309568c517aca44e7cfc16b17c4536890d529db11e613ff9c90"
+    sha256 cellar: :any,                 arm64_sonoma:  "9f27f57bf5b09da4bfc0452598b25b6e63e25bbfa6f24c8319fb359c4c8a21c6"
+    sha256 cellar: :any,                 arm64_ventura: "93b814c4cbfd843d1ae14c5bf401cad13f0cf06e3a91acb6b8d2b00967c321b5"
+    sha256 cellar: :any,                 sonoma:        "6a7de7c04fc89cbb75a69ac6e8313fe59ab1cf5258042c8d9fb2f8b76655daf5"
+    sha256 cellar: :any,                 ventura:       "99ab3ba1e0575352325dd1c179d55dc3235a082a415d22a3b45d1470df4daa76"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5935ba6b62d8519bccd82dcfc24a746804261d384751f85e60508cf0c26eb2fc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2d89986f7aa57f5b2303029cfb5b929498fb6f47cb54290fdc97b530feca594d"
   end
 
   depends_on "go" => :build

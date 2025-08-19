@@ -4,6 +4,7 @@ class Monero < Formula
   url "https://downloads.getmonero.org/cli/monero-source-v0.18.4.1.tar.bz2"
   sha256 "e70e44cae986123c39b77a89a9ee5db431c050a55cc64442993482d085104103"
   license "BSD-3-Clause"
+  revision 1
 
   livecheck do
     url "https://downloads.getmonero.org/cli/source"
@@ -11,13 +12,13 @@ class Monero < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "36c1dec48948317d6f1f2cfdebceaeacb240cab24e92b8dcd84fec9d712b5cd6"
-    sha256 cellar: :any,                 arm64_sonoma:  "cf2eba367463a9452e69063569cebfadc98cfee051b02817def83efa0393ae5b"
-    sha256 cellar: :any,                 arm64_ventura: "a3ea857b8db7b3534ea8fa9f88607712afee7c29b57c0465f9b8f0aefc4ae7d5"
-    sha256 cellar: :any,                 sonoma:        "d324b036f160ff5e8a6b7df650e3a3ad6ea7fed31bcd6a53c1e13dd302d4ffe2"
-    sha256 cellar: :any,                 ventura:       "d9720dca486f75757113ed1a782f1a43d1d8d358ca23d8f3b3bb994f620e752d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c4843d004c0c7f5b6ca3e0dc40e900e1da79dafed616b77734e5ed84938232f3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0825aa5c4b7db085bef48b141a866b320264b1b5e5364fc1319050588e6ce402"
+    sha256 cellar: :any,                 arm64_sequoia: "f276e89d5ade9c86c3f286b3878e4ac374cc1ed830ae3f991b9a825e656a0c8b"
+    sha256 cellar: :any,                 arm64_sonoma:  "3717fedf0a83a5d5bd3c8c20c38207fd165939c06ed966545ba6f022b36c18be"
+    sha256 cellar: :any,                 arm64_ventura: "e467fab550d5dda8f2e918413c5688019c7c674bbca436b9269466335bae780f"
+    sha256 cellar: :any,                 sonoma:        "6efe62876cb29a6230032b9c8022abd5aa9bce8b7f1e29c3032c77275eb2f233"
+    sha256 cellar: :any,                 ventura:       "a0962e0b212b2d248142be447aca60328d5a54bae9d2d1cb3cd89ee535470c26"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fe91a472f987bbee0f859ad39da920cf3460cdd84ea00e4a47be9567f952e961"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b178857c6b2da2757c165e3c33cccc85a7339df83a0de61ed9f18f0ff9b3ef8a"
   end
 
   head do
@@ -36,6 +37,12 @@ class Monero < Formula
   depends_on "readline"
   depends_on "unbound"
   depends_on "zeromq"
+
+  # Fix build with Boost 1.89.0, pr ref: https://github.com/monero-project/monero/pull/10036
+  patch do
+    url "https://github.com/monero-project/monero/commit/f61294dc6bd9fe65d584526138178a2419f3832a.patch?full_index=1"
+    sha256 "c0da585e4f06c942c4be9c829fff5483f49204dcfb4258dea7f7c6dd9be5304a"
+  end
 
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args

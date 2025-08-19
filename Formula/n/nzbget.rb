@@ -4,16 +4,17 @@ class Nzbget < Formula
   url "https://ghfast.top/https://github.com/nzbgetcom/nzbget/archive/refs/tags/v25.2.tar.gz"
   sha256 "a557d6067e551ee77fd86a9f395a8407438edc3ee16ab6797830db25ba8e1662"
   license "GPL-2.0-or-later"
+  revision 1
   head "https://github.com/nzbgetcom/nzbget.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "0a550c2ba03578872a7f2983317ccebb4737ca158b12dd940e0a61e3c5832af1"
-    sha256 cellar: :any,                 arm64_sonoma:  "420a3e2d979132839a9d2a4e8dd99f14e6a861951255b3e404d78eb2386cde63"
-    sha256 cellar: :any,                 arm64_ventura: "ae7d6fcc21e52ce4fea1b3e1d0f61e90035f63fe4eb855053c1825807b3b484f"
-    sha256                               sonoma:        "fe1c738c108bd62d7c48ec188b5c1e34c2eecf4c6973373d38b3fe12da211e71"
-    sha256                               ventura:       "18c1d802062396691eb27f27a6ee560bcfa65d146c1126a78a2f6d4a116c3f53"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3d813e615f58fa4efaa208c7ed9818584f4149b88faaf71395c8b022045f8ebd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "78173ec478edec907afa5eae70cfc9419a32c15a564881210dfb7756bbe457c1"
+    sha256 cellar: :any,                 arm64_sequoia: "cfc805d17f2dde8dc172b87ee538357606c927f1883c2375aba80215f9a1a39e"
+    sha256 cellar: :any,                 arm64_sonoma:  "37f1781206860417b05ad5b3c32a4fdbbc4752275df7ab5203c0e06e37fd3991"
+    sha256 cellar: :any,                 arm64_ventura: "f5b3c05a1de78f0c34fd45602518b44591482e6b799b28a0c8fc7c5749d51c82"
+    sha256 cellar: :any,                 sonoma:        "9a06e612b01cb3cb97ba7d4d23e958138a471337f8923d925f816aa513b133b8"
+    sha256 cellar: :any,                 ventura:       "3ef289e522618e695d05761fad0850c5c976589ad0f73a2dba5f773ac7f2b00b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7d5757247006ceeefafe36fa98b76ce0c4813d5db6de7b189606c7fe43f5245e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b104a47939a6a6f9ee4a3e24de94941c656c69b21a6e1caced8d6a1e43c33bb7"
   end
 
   depends_on "cmake" => :build

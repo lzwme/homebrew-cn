@@ -6,6 +6,7 @@ class Mapnik < Formula
       tag:      "v4.1.2",
       revision: "83c1f6b1a2f45a825e9d5764b9a6d33c907c4bad"
   license "LGPL-2.1-or-later"
+  revision 1
   head "https://github.com/mapnik/mapnik.git", branch: "master"
 
   livecheck do
@@ -14,13 +15,13 @@ class Mapnik < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_sequoia: "77227a1ffab0e3675fd70f5b066540d3cf8e57ec6c514597ca882cac39f01db9"
-    sha256 cellar: :any, arm64_sonoma:  "389a6b408eb754b857522fbd104eca72a4f41acf67bb0b2b3b1adecc81914eb0"
-    sha256 cellar: :any, arm64_ventura: "424d4d5caee6ace0bd10b8bc2c4179b522735fe0b427f1add11cd94138ad2376"
-    sha256 cellar: :any, sonoma:        "3fa20dd5e7888b02b5b5f429d8a6cce6d25964178b3035a2e3d9f27863128e37"
-    sha256 cellar: :any, ventura:       "30751ba8f2afc2bf6456df4d8cac83671b9dbb511759b5cf39003e79b6fe7dd2"
-    sha256               arm64_linux:   "80fc602bf72a60dab2b0c9503055e3c81c5c74bc6dc1b25f775c428e79ae010c"
-    sha256               x86_64_linux:  "7acb700e17ed99585f2eb761ffda28b2a85f141fc8980ae939453e165809ece4"
+    sha256 cellar: :any, arm64_sequoia: "80745139c8802719f3eefd46bdf97995ed974033ddedcdae5cfa55d539da0eec"
+    sha256 cellar: :any, arm64_sonoma:  "77aaf584fd0bc1bd4301524e1e27c8d76f4a046fac3062e035703ce753e35c11"
+    sha256 cellar: :any, arm64_ventura: "3d55b37b1e59a0416e9f381356bf2913e637e53f0a9b52f393bb3e2ec8c683c4"
+    sha256 cellar: :any, sonoma:        "09e2d4681dd402d6ffb1910f18f4c3e39c7c9f0acc1d9bdd94784fdc835cf39f"
+    sha256 cellar: :any, ventura:       "c37cb04238f5f98a5d9a9409f8ca6e96cd0300f8d57125c0b9a8790073ce5ebd"
+    sha256               arm64_linux:   "20b9a20ca6c577346a6b53b69d39de3a9504a65ec229f0e0c119115fdec735bd"
+    sha256               x86_64_linux:  "2010bf71fb4caffe99888c36e54c9ff1169399226d9ddfb4b3ec6505c730ddb4"
   end
 
   depends_on "cmake" => :build

@@ -1,18 +1,18 @@
 class Nyan < Formula
   desc "Colorizing `cat` command with syntax highlighting"
   homepage "https://github.com/toshimaru/nyan"
-  url "https://ghfast.top/https://github.com/toshimaru/nyan/archive/refs/tags/v1.2.2.tar.gz"
-  sha256 "0df7b5b25f71da2ab5458d3bf9a4d0158bea1a9a6f365937cf3653f9411150eb"
+  url "https://ghfast.top/https://github.com/toshimaru/nyan/archive/refs/tags/v1.2.3.tar.gz"
+  sha256 "6ce344a1ee870e618e15ae17a85497abc353bdfb30a8c1ddfcea5735aa17adce"
   license "MIT"
   head "https://github.com/toshimaru/nyan.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "85ec2874fa41b2db68fa86d2e830bdad8cc8876984e66ce2b2a8fbbf7177f98f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "85ec2874fa41b2db68fa86d2e830bdad8cc8876984e66ce2b2a8fbbf7177f98f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "85ec2874fa41b2db68fa86d2e830bdad8cc8876984e66ce2b2a8fbbf7177f98f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f5d13e720cd69066895046f71d4002e94f8d01937254700fb5046320e8e1e73d"
-    sha256 cellar: :any_skip_relocation, ventura:       "f5d13e720cd69066895046f71d4002e94f8d01937254700fb5046320e8e1e73d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d71ae6d69044a2e3c7a02f5a5fb9d040dafe372c6f0e7d1f709030ff5bc40205"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "162d4a673fe0248ab566149c72f5285581b5907031405fcb3388a3f8eb8f60ee"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "162d4a673fe0248ab566149c72f5285581b5907031405fcb3388a3f8eb8f60ee"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "162d4a673fe0248ab566149c72f5285581b5907031405fcb3388a3f8eb8f60ee"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c340d9b586c066ce42ca87bb7dd4627e7d299e0b0e2a83f5d7e9aaa563a42f84"
+    sha256 cellar: :any_skip_relocation, ventura:       "c340d9b586c066ce42ca87bb7dd4627e7d299e0b0e2a83f5d7e9aaa563a42f84"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cb5f2b779d971396b9bc699b7d428c377c67aaa8af9c650613a4ae72a782e85e"
   end
 
   depends_on "go" => :build

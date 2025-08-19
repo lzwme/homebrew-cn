@@ -4,15 +4,15 @@ class Vtk < Formula
   url "https://www.vtk.org/files/release/9.4/VTK-9.4.2.tar.gz"
   sha256 "36c98e0da96bb12a30fe53708097aa9492e7b66d5c3b366e1c8dc251e2856a02"
   license "BSD-3-Clause"
-  revision 2
+  revision 3
   head "https://gitlab.kitware.com/vtk/vtk.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_sonoma:  "7bd0f3277f5b5e0a32468b7a217d42703d51eede487af1e142ce4af4333b18a5"
-    sha256 cellar: :any, arm64_ventura: "9f7c34e67f1ac30dcd36baaa09546ef1a8de1dfe18d1245eefc693e84daa0c1c"
-    sha256 cellar: :any, sonoma:        "32b9f5cad19c8be10c590f81e34c9d38b9d832c7ea839e7a3b86c99459aa7619"
-    sha256 cellar: :any, ventura:       "9a6f83aa6cde46ef953b30ab039e69e8106e077464774017c592a25ddbaa21a2"
-    sha256               x86_64_linux:  "410b300ff9d879d6e4f85f145f870b1279095d098e9abca12f601449dc6a5610"
+    sha256 cellar: :any, arm64_sonoma:  "aa14e148a35616054937c79b3528d340d60b477fabd79eeef855486283d0bb3e"
+    sha256 cellar: :any, arm64_ventura: "2cccbb73808afc54239389da4758a7e5f063a9ea78eed1c081b32a2da7268331"
+    sha256 cellar: :any, sonoma:        "20c979fdf1b4ed2db5d3ee4d472f032547008acd091a3de9350017e47481a5e5"
+    sha256 cellar: :any, ventura:       "6d741a1c1f622c24ea5d775df16084007ca5e3978645e1b64faf6d4ac421853b"
+    sha256               x86_64_linux:  "8b8da9c4e6c57c6bc09312a7da28e418068be91e1d680da6172fbd90b166f3ba"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -126,7 +126,8 @@ class Vtk < Formula
   test do
     vtk_dir = lib/"cmake/vtk-#{version.major_minor}"
     vtk_cmake_module = vtk_dir/"VTK-vtk-module-find-packages.cmake"
-    assert_match Formula["boost"].version.to_s, vtk_cmake_module.read, "VTK needs to be rebuilt against Boost!"
+    assert_match Formula["boost"].version.major_minor_patch.to_s, vtk_cmake_module.read,
+                 "VTK needs to be rebuilt against Boost!"
 
     (testpath/"CMakeLists.txt").write <<~CMAKE
       cmake_minimum_required(VERSION 4.0 FATAL_ERROR)

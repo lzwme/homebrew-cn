@@ -2,8 +2,8 @@ class Flyctl < Formula
   desc "Command-line tools for fly.io services"
   homepage "https://fly.io"
   url "https://github.com/superfly/flyctl.git",
-      tag:      "v0.3.170",
-      revision: "7986a9f6360ff8d7b57ee1c72fa833a4193a605f"
+      tag:      "v0.3.171",
+      revision: "41691d428650e68060b159d64e0d24e99fbeca6c"
   license "Apache-2.0"
   head "https://github.com/superfly/flyctl.git", branch: "master"
 
@@ -18,13 +18,13 @@ class Flyctl < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7a5b9a5e844900a8b888aad78dbd29f58a82f68672b46d757dc161236d124308"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7a5b9a5e844900a8b888aad78dbd29f58a82f68672b46d757dc161236d124308"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "7a5b9a5e844900a8b888aad78dbd29f58a82f68672b46d757dc161236d124308"
-    sha256 cellar: :any_skip_relocation, sonoma:        "08e88c23370def171943dd7f2cff9374d0c231303aa80c7e1ca13ee32811d961"
-    sha256 cellar: :any_skip_relocation, ventura:       "08e88c23370def171943dd7f2cff9374d0c231303aa80c7e1ca13ee32811d961"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8b8127fbd493902120dd943300e78137d98363b40dea1df285b405fed0587dce"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "db143b3ee2f7b7407a49c425707c17d3eb6e9dbf8dccbac31e630e83893f8ca1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a4c1d62954467b607625bc6a04a53929ecd2ef29a29077b8ce2cf6db55a01656"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a4c1d62954467b607625bc6a04a53929ecd2ef29a29077b8ce2cf6db55a01656"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "a4c1d62954467b607625bc6a04a53929ecd2ef29a29077b8ce2cf6db55a01656"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a08869ead503efa15bc3a78085557e302078dae9f5402aca175b28ceedbfe92b"
+    sha256 cellar: :any_skip_relocation, ventura:       "a08869ead503efa15bc3a78085557e302078dae9f5402aca175b28ceedbfe92b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "52ddfa73b7c704c66b4c145ac5c1041af6912a6481a4a5f2e7376fe13b8af656"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8742370ac81ede3cce9fe476428faa0616b3d8c05825febdf8f0bfe6f5cc9dc5"
   end
 
   depends_on "go" => :build

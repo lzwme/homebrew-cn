@@ -4,15 +4,15 @@ class Colmap < Formula
   url "https://ghfast.top/https://github.com/colmap/colmap/archive/refs/tags/3.12.4.tar.gz"
   sha256 "320cb5a411cd0aa713adc05e208ec34067638e776260efd8098271342d408997"
   license "BSD-3-Clause"
-  revision 1
+  revision 2
 
   bottle do
-    sha256 cellar: :any, arm64_sequoia: "e42be278b60bbdc3906ae2c3ba6a6dd3cb3755613d4f57aa531586020d5dd715"
-    sha256 cellar: :any, arm64_sonoma:  "cdb4401a9d09839e2e5d77ff8958ea693c7a1b0e2257168668e7da657ec08bb8"
-    sha256 cellar: :any, arm64_ventura: "36e27712e19430345219a35c87736a80622a26367b1469d7c8a49c5cf3d2b01d"
-    sha256 cellar: :any, sonoma:        "3d63421f9f0a990561240e4c5a99b30cd03f4f06ff0fd236e55a55d774af0d1a"
-    sha256 cellar: :any, ventura:       "75124d0c1e1af9ae54719012955049b7b32219bdb4b433fb291b680423f6ae86"
-    sha256               x86_64_linux:  "6f8fd1e4c1d57c2eb169c339d488682202ed1a660092131a715e9241dd0690ab"
+    sha256 cellar: :any, arm64_sequoia: "7266dbeac581a559f354eb3dc2b98b04ad4e45d0a30d0ddb97a8fbe312c21ab6"
+    sha256 cellar: :any, arm64_sonoma:  "fa30212c72fb1381f0852d243e5a19cbdf292f34a5ef512567d03e2c7635b78f"
+    sha256 cellar: :any, arm64_ventura: "02cb3b226825b61cce1ad5e33f71d49d21590dc3bb7574025755fccc90185a16"
+    sha256 cellar: :any, sonoma:        "7e5dc731b0299a467f82828bc33c761c6e5307db65bf08f3e8cf3b220ade7b3c"
+    sha256 cellar: :any, ventura:       "0e8a9d5c3691d568c3d88be77166c20746ccd72a6cf989f2506003e8d8490000"
+    sha256               x86_64_linux:  "676e38f78c95ae2c452be0994a5f94ec1671ed5c52edab8b2aa019cb240f2b5c"
   end
 
   depends_on "cmake" => :build
@@ -43,6 +43,12 @@ class Colmap < Formula
 
   on_linux do
     depends_on "mesa"
+  end
+
+  # Fix build with Boost 1.89.0, pr ref: https://github.com/colmap/colmap/pull/3553
+  patch do
+    url "https://github.com/colmap/colmap/commit/4995ee6ab747fa34372359f1e12f85908bae88b1.patch?full_index=1"
+    sha256 "e6112f87997213aabf5a24be8e76a7368b72eee4e96dcd23a28659c5d4292be1"
   end
 
   def install

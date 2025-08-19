@@ -12,12 +12,13 @@ class Envoy < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "be3835e947c77989d1e5403114b32b3c28666e2154c8e39dfa885a6fb50c2a20"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bbd941274bc66d6ec182dbce57672a91f1e23babccee4ed1c21d63ec49e54afc"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "ae1abb063af7a3a9e488ed7dd3cfe43ae663b3b679f1c707429387b4830d446c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7554e0ad0d4aa744a685ef3cc761c8d864828a9725e86132e60543e2cee27274"
-    sha256 cellar: :any_skip_relocation, ventura:       "55d6a7b0d47108220f3ef53ce5e056eaaa01bc1ccef19d1244a8893d5589691c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "28b488486fcfd031504a3b1699f77499c78ab669f48c611fd2b9ccb70a72ff41"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b6044fed6d85bc716e24697d4164604f9c8ec1ded2046618921ca0fd0587b730"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "be32b6b78bee40ec4b23fe0729d76e2a926e177810bae4d9864f64ad3f20e8ad"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "f57b7406b93f1273c2890234863c19ad33f98eda414977267c50d9c96303d84a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3c829a7043455832d967eed9d5ba3d2f417d28b5b612b8e5104f2afd88e647f3"
+    sha256 cellar: :any_skip_relocation, ventura:       "0ee683551881264108fa7b6b3257fd7ea180549655cd2bcd69a57338b9ff9195"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a32b17beece54c216f717a507715aff997db93dc6faa7088d4fff2599dd92d45"
   end
 
   depends_on "automake" => :build
@@ -53,26 +54,15 @@ class Envoy < Formula
       --verbose_failures
       --action_env=PATH=#{env_path}
       --host_action_env=PATH=#{env_path}
-      --define=wasm=disabled
+      --define=wasm=wamr
     ]
 
     if OS.linux?
       # GCC/ld.gold had some issues while building envoy so use clang/lld instead
       args << "--config=clang-common"
 
-      # clang 18 introduced stricter thread safety analysis. Remove once release that supports clang 18
-      # https://github.com/envoyproxy/envoy/issues/37911
-      args << "--copt=-Wno-thread-safety-reference-return"
-
-      # Workaround to build with Clang 19 until envoy uses newer tcmalloc
-      # https://github.com/google/tcmalloc/commit/a37da0243b83bd2a7b1b53c187efd4fbf46e6e38
-      args << "--copt=-Wno-unused-but-set-variable"
-
-      # Workaround to build with Clang 19 until envoy uses newer grpc
-      # https://github.com/grpc/grpc/commit/e55f69cedd0ef7344e0bcb64b5ec9205e6aa4f04
-      args << "--copt=-Wno-missing-template-arg-list-after-template-kw"
-
-      # Workaround to build with Clang 20
+      # Workaround to build with Clang 20 until envoy uses newer dd-trace-cpp (with newer nlohmann-json)
+      # https://github.com/DataDog/dd-trace-cpp/commit/a7d71b5e0599125d5957f7b8d3d56f0bcc6ae485
       args << "--copt=-Wno-deprecated-literal-operator"
     end
 

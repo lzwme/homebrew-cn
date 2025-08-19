@@ -3,19 +3,19 @@ class Parsedmarc < Formula
 
   desc "DMARC report analyzer and visualizer"
   homepage "https://domainaware.github.io/parsedmarc/"
-  url "https://files.pythonhosted.org/packages/cd/f2/e717eb309dbe2f1b77e20c330925c78d803fb5339b6e4ffbdc2521048719/parsedmarc-8.18.6.tar.gz"
-  sha256 "eb718f95a8fbdb423b21606b2136080f17e6ffcf279e365854c1772cc3ab9cc4"
+  url "https://files.pythonhosted.org/packages/64/7c/4af02563cba88551f6dc3d028eae195f411699554f5cf1ac544a6d86ff05/parsedmarc-8.18.7.tar.gz"
+  sha256 "9906552d9ea39e51f3fc2f529b1c2b82a955d91e2153202efde27696711660ca"
   license "Apache-2.0"
   head "https://github.com/domainaware/parsedmarc.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fd45998435f6691bc7664d1c6dd2122ed5e916d6d8d700d1262d36a8b31a179b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "795b065ec4d023ce3156f4b90baf1bbe7b1d27a38813e265234b6dba2f82e046"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "72e778482c936b99d1aa3c1134974d4c77f8f65a468e69a170052a944cf0910b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "17ed424fee7893dbe617530a68f02b35ef5faae8ec6e410982028d6cfd075735"
-    sha256 cellar: :any_skip_relocation, ventura:       "0be6d0ba5278eac6222d9c4b22ba8cac420c22dde2a8aca194dd5636fefb70dc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7e2a3de5908c31488e255cb66677f65cb8676640327e97318dc012117a84eb8d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "88e6a519367ce23d5a4cb5f8883890393d684de1e9a1fb7a315e89a1e79bbbd7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d44f7acba228f0b1f61411e0f5a1f51c5880523d6222d8418d5f8c945e4d23fd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a8d05f5c9a5ee6ab58a872076b1525f62cfdb5cb7f3ce8bcca15d68657a3c86d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "e40d10a295ea3b557e35fb85253b9f58a6c95cfed151744a726227c9d89e5c5b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e2c8bb379a6279da80adae560ddcfee7d0e9eab53126c96a34f95c7d895a6535"
+    sha256 cellar: :any_skip_relocation, ventura:       "9f355d747013e10e11624caf8f52db9dcdb31d7abe7ba3b7a0c23a27925f5d13"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1aef5353f6423cc5d059e45623831d653ae9115a8d40c12686706d77589d7f52"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dd22793637405af517ff4a40e9329d109d69dec8beb5e7335e51a2a647d28dae"
   end
 
   depends_on "certifi"

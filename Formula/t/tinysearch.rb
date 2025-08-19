@@ -1,25 +1,19 @@
 class Tinysearch < Formula
   desc "Tiny, full-text search engine for static websites built with Rust and Wasm"
   homepage "https://github.com/tinysearch/tinysearch"
-  url "https://ghfast.top/https://github.com/tinysearch/tinysearch/archive/refs/tags/v0.8.2.tar.gz"
-  sha256 "103214d77f0624bbb7e396667136156fdb8c8c7abeb6860adb231bf2a00b256d"
+  url "https://ghfast.top/https://github.com/tinysearch/tinysearch/archive/refs/tags/v0.9.0.tar.gz"
+  sha256 "90b035d0d41fe166e5a5ce18668d1c3098a7e64c17fcb8bfc7a3ba11c24019a4"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/tinysearch/tinysearch.git", branch: "master"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "604da29b5763cbd83ee3851adf412ebc0683a39f82c4f6fb5db430c21e5804b8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "22ba810fa21cf5ed9b4b3da171f5c528812ee9a7347ed87f658dd9c6cb930b22"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d3112dab46ff4f6ebfcd130e186cca018d7e72cf503a6a74b8e632dfe30ff147"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e6419da17e1e7c0f7bc74eeefd60d9fec429f9a351bfa6732336207da27ba62e"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1a3f5895d2f977f0c32c7a80798922f56ea1f628bb6522de0243a74ef9ee6635"
-    sha256 cellar: :any_skip_relocation, sonoma:         "0150d38ad3672b677894cb99071ad87464ee130a5aca00360197fb3cc488afab"
-    sha256 cellar: :any_skip_relocation, ventura:        "149fcc1be09119c692b20381ed2646170c004909a1998ddab8b5e451d19e6c0c"
-    sha256 cellar: :any_skip_relocation, monterey:       "bb5e206aff6a7ffbf2bf1da5dbb9907e6e72873ad507059f53699984080e6fe6"
-    sha256 cellar: :any_skip_relocation, big_sur:        "0a256b304d49a871b20915721fde4aea47ef132afa5cd537c6bfba36b8ff24d9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "a3357914b084ecdc5935888629a57cea9b210b263ea6f6c9a53f749d220bf410"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "741bdce133c7ac5a2fecddb639fa17b3d7b11c3a2adda9f7998bf69e5b2376ce"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "72284640a7b7d46057e20a316dc5a443e8b9aa1c8a4bcb3ecb769b4bd826dd33"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c07fe020900cdd4873f466b5bd266647d5995fd4f3e97a4613bada184b5a053c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "1cf4d0ef6810420b5dff9e7cb17d2527157bce268352a8912ec21f987fa4d4ee"
+    sha256 cellar: :any_skip_relocation, sonoma:        "631d5a84525d68b93da843f511b1747960f3e165afd13bfbf3a201bac07bf880"
+    sha256 cellar: :any_skip_relocation, ventura:       "ba42e3aaa2d14dbd07e47156d5453e67164dd05c92032fde2077fe3368ec46a2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7003b0b7c5f9e72a6ca6b6c3f52efd569aeefa3f31c14278c762895190dc4ac4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ed0c139aaab9231c38cad560da0f9a7c44b4a148b440660655607a06d379996b"
   end
 
   depends_on "rust" => :build
@@ -36,9 +30,10 @@ class Tinysearch < Formula
     ENV.prepend_path "PATH", Formula["rustup"].bin
     system "rustup", "set", "profile", "minimal"
     system "rustup", "default", "stable"
+    system "rustup", "target", "add", "wasm32-unknown-unknown"
 
     system bin/"tinysearch", pkgshare/"fixtures/index.json"
-    assert_path_exists testpath/"wasm_output/tinysearch_engine_bg.wasm"
-    assert_match "A tiny search engine for static websites", (testpath/"wasm_output/package.json").read
+    assert_path_exists testpath/"wasm_output/tinysearch_engine.wasm"
+    assert_match "TinySearch WASM Demo", (testpath/"wasm_output/demo.html").read
   end
 end

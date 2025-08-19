@@ -2,7 +2,7 @@ class Stp < Formula
   desc "Simple Theorem Prover, an efficient SMT solver for bitvectors"
   homepage "https://stp.github.io/"
   license "MIT"
-  revision 4
+  revision 5
   head "https://github.com/stp/stp.git", branch: "master"
 
   stable do
@@ -22,13 +22,13 @@ class Stp < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "14273492604bc38924086ea460c7aae0ec9d9443124f253d41ab69649ae348e8"
-    sha256 cellar: :any,                 arm64_sonoma:  "3a9ce2263d91eed3e8f6205e69b327f613dd767065ebed03c329ac26de7fc9be"
-    sha256 cellar: :any,                 arm64_ventura: "1627b2244a8c9510b46b0fdcfcaffdb5f55c21a528046a1988df5c2e4a10a33c"
-    sha256 cellar: :any,                 sonoma:        "5160e4ed8537ddd8646866b7f0ddf4722f0be010b898e1708d6f22c974c9a866"
-    sha256 cellar: :any,                 ventura:       "a3c9c4d00398271ec389ae631372e280d806dbdd6146e28d73417f71e7cd2bfe"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b3c927ba2276333d15e41be785894b0a65d1513f8e1932839564efc164fc6292"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9347d3517513e8d028b7fc993db150bc9d4751e1e450e97035339c007c4e0bd8"
+    sha256 cellar: :any,                 arm64_sequoia: "339b5ca522f28f4c890811a0475f830c998e28c201de924ffe9d527d71062fea"
+    sha256 cellar: :any,                 arm64_sonoma:  "72510b0dfa5b7def041a9bfe517f1ce594decfd5d1ef64433ac1a807fb927eac"
+    sha256 cellar: :any,                 arm64_ventura: "e5cf95744fbfa173cd3975e2dd062ef4557119d33ce659375951f48a18ce9740"
+    sha256 cellar: :any,                 sonoma:        "cd220bc18b982cafaa7947bce2e13d1dbfb45f65d376931c6f9eafb15536e5e5"
+    sha256 cellar: :any,                 ventura:       "5e5dd55e9f0eddd08d9b069d7f125148994b1d8f23e0d0a2715d4abf4bef5d70"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fbf85992672d5a40bf34baefc415cbe5c1242124390a3b8d999b74a109bc8316"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0de6756be5199056e87ba8cbd8bc2daaf80440e633e7e72ac44bde9a9ee654bf"
   end
 
   # stp refuses to build with system bison and flex

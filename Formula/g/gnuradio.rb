@@ -6,7 +6,7 @@ class Gnuradio < Formula
   url "https://ghfast.top/https://github.com/gnuradio/gnuradio/archive/refs/tags/v3.10.12.0.tar.gz"
   sha256 "fe78ad9f74c8ebf93d5c8ad6fa2c13236af330f3c67149d91a0647b3dc6f3958"
   license "GPL-3.0-or-later"
-  revision 1
+  revision 2
   head "https://github.com/gnuradio/gnuradio.git", branch: "main"
 
   livecheck do
@@ -15,12 +15,12 @@ class Gnuradio < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "764d4cd2ae0dfd4d3bdb4fb3b7c7bcb947f7758449ecb38f1daca1383a0ee748"
-    sha256 cellar: :any,                 arm64_sonoma:  "f5d8e2235a7f96d47fa52aadb21bd7f0b5b533368944b8c9d86aff7cda853fce"
-    sha256 cellar: :any,                 arm64_ventura: "ef06ea9e6e2feb630198c086ebadd974a76e1e293cdc1d05ed8ae4030f5c00b9"
-    sha256 cellar: :any,                 sonoma:        "c0d8795ae4992f9b44626822118245016c91312242e778a13b94573cdbeefc3b"
-    sha256 cellar: :any,                 ventura:       "6114da91738bef6577e4e573d11502d7b3d51355cac0ede95433a18a730e6d94"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b0357eed145763df02fc65f861c55754cf5f9f2f9ad6c7cd32f09afbd51bb78b"
+    sha256 cellar: :any,                 arm64_sequoia: "4fd1d52c2df1c3a1ca49301f6d92d8d577be909d0db7349c8714e45a552b2953"
+    sha256 cellar: :any,                 arm64_sonoma:  "fecac36b9ee8a9ea25eaf20a84c775f3f5a80ff80609a79492e26cd99284e4fe"
+    sha256 cellar: :any,                 arm64_ventura: "4d535ea4e010f39c793528e51b23cd75257aed3d25f984d797d55c8006485f70"
+    sha256 cellar: :any,                 sonoma:        "d7ab6a70a8546d2ec175af0bee3ea0ed0ea42286ebb1893ea0c8ada0eea2492b"
+    sha256 cellar: :any,                 ventura:       "c8bffed8f469fca53d642a7464bed852e5cd3178026f3de6a711f5ac8c2c6a1e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5e41ebb33ebe5d51963b0fd34844e088d10c907b925458e56756a4f73fa9ccfc"
   end
 
   depends_on "cmake" => :build
@@ -134,6 +134,12 @@ class Gnuradio < Formula
     sha256 "18fd474d4a82a5f83dac888df697af65afa82dec7323d09c3e37d1f14288da54"
   end
 
+  # Fix build with Boost 1.89.0, pr ref: https://github.com/gnuradio/gnuradio/pull/7904
+  patch do
+    url "https://github.com/gnuradio/gnuradio/commit/02aa698a05935fe350fb1772226e29605abd335e.patch?full_index=1"
+    sha256 "246d540bdd2025b3ad2ffc84adea84b378ea0d640e73809e3f0e48f9bb6d3881"
+  end
+
   def python3
     "python3.13"
   end
@@ -242,7 +248,6 @@ class Gnuradio < Formula
     boost = Formula["boost"]
     system ENV.cxx, testpath/"test.c++", "-std=c++17", "-I#{boost.opt_include}", "-L#{lib}",
                     "-lgnuradio-blocks", "-lgnuradio-runtime", "-lgnuradio-pmt",
-                    "-L#{boost.opt_lib}", "-lboost_system",
                     "-L#{Formula["fmt"].opt_lib}", "-lfmt",
                     "-o", testpath/"test"
     system "./test"

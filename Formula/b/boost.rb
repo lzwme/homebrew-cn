@@ -1,8 +1,8 @@
 class Boost < Formula
   desc "Collection of portable C++ source libraries"
   homepage "https://www.boost.org/"
-  url "https://ghfast.top/https://github.com/boostorg/boost/releases/download/boost-1.88.0/boost-1.88.0-b2-nodocs.tar.xz"
-  sha256 "ad9ce2c91bc0977a7adc92d51558f3b9c53596bb88246a280175ebb475da1762"
+  url "https://ghfast.top/https://github.com/boostorg/boost/releases/download/boost-1.89.0/boost-1.89.0-b2-nodocs.tar.xz"
+  sha256 "875cc413afa6b86922b6df3b2ad23dec4511c8a741753e57c1129e7fa753d700"
   license "BSL-1.0"
   head "https://github.com/boostorg/boost.git", branch: "master"
 
@@ -17,13 +17,13 @@ class Boost < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256                               arm64_sequoia: "40110dc77bd85db9b7bfc5c23d1cbd58f8ef501ba355484419f9d11ccabaefc1"
-    sha256                               arm64_sonoma:  "446d5acbee94708f31ed1dc16b877a33467c981ff471aa11896db9434524b3d7"
-    sha256                               arm64_ventura: "65d89e7f5967afe2c313b99fc201b23ec8a73150f36275d5e4a0fec8335585b8"
-    sha256 cellar: :any,                 sonoma:        "373c36b25cc300e2c6810828ec70fc62a93d71974bff942933b4393daa362f23"
-    sha256 cellar: :any,                 ventura:       "88a3652fee2834c1442a2ad84e0592a7ba9765a2e09bc95f7b0f15d869def01f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b267d0f250bf5087207ef37b6b5e7b04e7f111c64c8af87fe00d2156d32b61f8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "02268bb361c2145e96cc8337600e38f3cab9cfdde57d91a671e319aac010dc7f"
+    sha256                               arm64_sequoia: "e426fe85650221c715219ff5b86573b43889f48e41f2bc3329185e99d01c4481"
+    sha256                               arm64_sonoma:  "a149224ca5e08f36632f69f77e732f0efcbf97f65baada6e515c7f55ba22ff68"
+    sha256                               arm64_ventura: "41327f524cff0592f6bdf53325eee9832e1337cce401f0f0a80a5bc9a93226bc"
+    sha256 cellar: :any,                 sonoma:        "eb36169206c88a8e9c921516356b8e48cd2019bae7210511e46f83dc9428760e"
+    sha256 cellar: :any,                 ventura:       "60c15a0814630f5deb9142d94396dc52360d01b201457c4092873fc2c6d41ca8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "92d10c7a9e662292953e52bc5eb707f81cd54373c6587d1c6cd0b9719500e662"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1bbe66a1b57f7696e9f6815a1a0aef5e476827840a010dcc76a097ac2bf5ea6f"
   end
 
   depends_on "icu4c@77"

@@ -1,8 +1,8 @@
 class BoostPython3 < Formula
   desc "C++ library for C++/Python3 interoperability"
   homepage "https://www.boost.org/"
-  url "https://ghfast.top/https://github.com/boostorg/boost/releases/download/boost-1.88.0/boost-1.88.0-b2-nodocs.tar.xz"
-  sha256 "ad9ce2c91bc0977a7adc92d51558f3b9c53596bb88246a280175ebb475da1762"
+  url "https://ghfast.top/https://github.com/boostorg/boost/releases/download/boost-1.89.0/boost-1.89.0-b2-nodocs.tar.xz"
+  sha256 "875cc413afa6b86922b6df3b2ad23dec4511c8a741753e57c1129e7fa753d700"
   license "BSL-1.0"
   head "https://github.com/boostorg/boost.git", branch: "master"
 
@@ -13,13 +13,13 @@ class BoostPython3 < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "c14fd4a92ecf59b0cd310d2b40ac374861acda10acc91bf22a60f561eef32327"
-    sha256 cellar: :any,                 arm64_sonoma:  "2a65824b7aa95da392fa6a720bd08ccf7290979f8c93c82de2788e063c9fdb7c"
-    sha256                               arm64_ventura: "9a543bda37bf34385df7652f441f37d617473c673b176395e59bfacd26961139"
-    sha256 cellar: :any,                 sonoma:        "69721dd8b8966e727b9d3472aea41dea558d918c608e1707f5263a1389199000"
-    sha256 cellar: :any,                 ventura:       "98156d65dfdaa46babec13139575e95a6746287ceff3888a70b7479c728c7da7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "eed54059107d80bdef3c5c82293b088c36cba0a4e47c8f4149c565cf78778158"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c0f69d09d2cd72ccaeb2a1cf21280759993ca31090736f55e4b79d07678445b7"
+    sha256 cellar: :any,                 arm64_sequoia: "9fc78a9b25bc31ea5d2e5252709b685d5c8a8bd7fb4c0f4e89113f61f0d85135"
+    sha256 cellar: :any,                 arm64_sonoma:  "f6fc46a18f6c019e3279a23f62fedf624f7eeb08f05e14e667e5de401155f4fc"
+    sha256                               arm64_ventura: "f30ee8fdeb54b9a69be3d397dc3d56513859ddc709dcb0642cc1fbf27f9198f8"
+    sha256 cellar: :any,                 sonoma:        "b667df9899f2b8a1d5b560d4d8e43228f3b6541b2e1dd3e660966396a6a822a7"
+    sha256 cellar: :any,                 ventura:       "1fd70752993ccd34bef6688d7cc840954ab6f1be78b371c2c67c7e044255c528"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bc4781b134777c0b754521072e28eb6d825b64a9b381c57000a1dd372760a767"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "81d4ec0fd2648db5a18efd3d3100b12142b7b90c7c6b312e229dfeee7ff0f171"
   end
 
   depends_on "numpy" => :build

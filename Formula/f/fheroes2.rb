@@ -12,13 +12,14 @@ class Fheroes2 < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "9baff8c515153e27ddd79c53d8de8e3210861bd76fc60bd759ea31faaa14be9b"
-    sha256 arm64_sonoma:  "5f4ea1d81b9b14583e73b590dfe9a2d438e7a412b3299ccd7e8592c2eae44c86"
-    sha256 arm64_ventura: "c02c0b4798619fc514afa126dc6a02c087aecf61704b872549ff6a37efdddeb5"
-    sha256 sonoma:        "8316866908ec657a368de88b5a8d590d8ab792a8ef29d529a1e1b4a3f0c3b70c"
-    sha256 ventura:       "9eb43a08f27e477aa1877b003c552227a07bf6bc6de499a9de1b1a97bc35c8c5"
-    sha256 arm64_linux:   "4da1889d3e7e44ae23f47bbd83daaeead19daa2d246ec770a3990974dc8331cc"
-    sha256 x86_64_linux:  "16d973f411077f01a5a78987a51df81117ce5257de7d59b75f4dd23946bc4767"
+    rebuild 1
+    sha256 cellar: :any, arm64_sequoia: "851e74e6658e0b8106765c9992a5d30df0d56073589b5562c45361fbf09413d2"
+    sha256 cellar: :any, arm64_sonoma:  "a1cf0ac6be190408b51876c9ae93f4f22ecef0269e1bc8c26c04f6978b3b1070"
+    sha256 cellar: :any, arm64_ventura: "fff2f833461cd07ab2438c5b32dd6f6ac71d3334c58d017b1f86d68b447f558a"
+    sha256 cellar: :any, sonoma:        "9500f49a79a5b401d008b4a6951a0ebfd2ea39b2d1b137bc0ede1731ee4d7bfe"
+    sha256 cellar: :any, ventura:       "c89828194a38cb4f8353c70e98fee5b1d2e596d270e7b04d34faf842f46a3b46"
+    sha256               arm64_linux:   "9597b31091971e38251f3d8f4904f4d996648235b7dd7cd0881aed6750f2c1b2"
+    sha256               x86_64_linux:  "ef0f9d5f228ce4a4b9feb2a13e988fa35efefc93203c1c4426dddd0a8adf04eb"
   end
 
   depends_on "cmake" => :build
@@ -30,11 +31,10 @@ class Fheroes2 < Formula
 
   uses_from_macos "zlib"
 
-  on_macos do
-    depends_on "dylibbundler" => :build
-  end
-
   def install
+    # Avoid running dylibbundler to prevent copying dylibs
+    inreplace "CMakeLists.txt", /^(\s*run_dylibbundler)\s+ALL$/, "\\1"
+
     args = std_cmake_args
     args << "-DMACOS_APP_BUNDLE=ON" if OS.mac?
     system "cmake", "-S", ".", "-B", "build", *args

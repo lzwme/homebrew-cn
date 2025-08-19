@@ -3,18 +3,18 @@ class Tmt < Formula
 
   desc "Test Management Tool"
   homepage "https://tmt.readthedocs.io"
-  url "https://files.pythonhosted.org/packages/f7/63/84a639db7f53527fec098abaf4bffb36b742bcd019ed0eb278101869dc50/tmt-1.54.0.tar.gz"
-  sha256 "1f697ffb9a259f69604408a1c65b588d466a8a9f13cfdfce5f2eb747e877da3d"
+  url "https://files.pythonhosted.org/packages/4b/1d/3abd6ad6a943208d8c5a38e8f8a1967ac6e1a5940d4faf2d5a257c5000bb/tmt-1.55.0.tar.gz"
+  sha256 "25f8add9170d05c763dee00223ad37d68dbe4fc3fcde0dff31e9b7c1d1cb62ec"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "37436ced2f4c51beccc01052468cc706ef809fc8100c53a6bb2a6ca6e5b0dfc1"
-    sha256 cellar: :any,                 arm64_sonoma:  "9475a37b69df1de78016b79158b3e9936093846ecc532561fdfbb14d7859ebd4"
-    sha256 cellar: :any,                 arm64_ventura: "1aec79b8dafb82e2a2ae880d9ab65c5c8aa8f2fa7656b812614787c9b5ec34fd"
-    sha256 cellar: :any,                 sonoma:        "aeaea5e2a27daf6c4c38630724dec2db60dae03ec145f9750d2f676c05882b1f"
-    sha256 cellar: :any,                 ventura:       "ccf657394f0fde74f985d01e83d933f649dcfbed0122156ac78d235ee2a2aa9c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "850256a89bea3c2aa5797fc08a7aacdffab648adfd2a771c0eda9e903069d605"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "152f3592da62d99253c8c116a966bae3ef5048ecae18624f25e4dd0d5738ab82"
+    sha256 cellar: :any,                 arm64_sequoia: "9519521ff7c1598c34e9d9aedd12b8aeba15a614ad5d45cb21f3ffd1ef4fe7d3"
+    sha256 cellar: :any,                 arm64_sonoma:  "6db8c31b78c8cad53eaf8dfac3a4b830234e6fc875013b5d4f612a63f7034b0c"
+    sha256 cellar: :any,                 arm64_ventura: "981072592021bb5191a196daee304ddd0d3b76398f1004e9b6ecda222d78c168"
+    sha256 cellar: :any,                 sonoma:        "19cbd93dce71ec7a0d571b94bbe67fb8ac2bbb36f107d1cad4fbcd6db8a0744f"
+    sha256 cellar: :any,                 ventura:       "b7fff4d0769a707ec4e9bd6be4b1b368446bcc524873bf8233c91a0591558c99"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "913349adcd8ddef5101d53b38c1099e3c15c6107891788a8c511318ad704f5c6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "813db6a761e852d2080c854c1d2eaa7f142091ae0ac75eec7e5e820706fa8916"
   end
 
   depends_on "rust" => :build # for rpds-py
@@ -33,8 +33,8 @@ class Tmt < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/e4/33/89c2ced2b67d1c2a61c19c6751aa8902d46ce3dacb23600a283619f5a12d/charset_normalizer-3.4.2.tar.gz"
-    sha256 "5baececa9ecba31eff645232d59845c07aa030f0c81ee70184a90d35099a0e63"
+    url "https://files.pythonhosted.org/packages/83/2d/5fd176ceb9b2fc619e63405525573493ca23441330fcdaee6bef9460e924/charset_normalizer-3.4.3.tar.gz"
+    sha256 "6fce4b8500244f6fcb71465d4a4930d132ba9ab8e71a7859e6a5d59851068d14"
   end
 
   resource "click" do
@@ -48,8 +48,8 @@ class Tmt < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/0a/10/c23352565a6544bdc5353e0b15fc1c563352101f30e24bf500207a54df9a/filelock-3.18.0.tar.gz"
-    sha256 "adbc88eabb99d2fec8c9c1b229b171f18afa655400173ddc653d5d01501fb9f2"
+    url "https://files.pythonhosted.org/packages/40/bb/0ab3e58d22305b6f5440629d20683af28959bf793d98d11950e305c1c326/filelock-3.19.1.tar.gz"
+    sha256 "66eda1888b0171c998b35be2bcc0f6d75c388a7ce20c3f3f37aa8e96c2dddf58"
   end
 
   resource "flexcache" do
@@ -78,8 +78,8 @@ class Tmt < Formula
   end
 
   resource "jsonschema" do
-    url "https://files.pythonhosted.org/packages/d5/00/a297a868e9d0784450faa7365c2172a7d6110c763e30ba861867c32ae6a9/jsonschema-4.25.0.tar.gz"
-    sha256 "e63acf5c11762c0e6672ffb61482bdf57f0876684d8d249c0fe2d730d48bc55f"
+    url "https://files.pythonhosted.org/packages/74/69/f7185de793a29082a9f3c7728268ffb31cb5095131a9c139a74078e27336/jsonschema-4.25.1.tar.gz"
+    sha256 "e4a9655ce0da0c0b67a085847e00a3a51449e1157f4f75e9fb5aa545e122eb85"
   end
 
   resource "jsonschema-specifications" do
@@ -98,8 +98,8 @@ class Tmt < Formula
   end
 
   resource "pint" do
-    url "https://files.pythonhosted.org/packages/20/bb/52b15ddf7b7706ed591134a895dbf6e41c8348171fb635e655e0a4bbb0ea/pint-0.24.4.tar.gz"
-    sha256 "35275439b574837a6cd3020a5a4a73645eb125ce4152a73a2f126bf164b91b80"
+    url "https://files.pythonhosted.org/packages/5a/cb/e6ffaf3d019e8501b1264dac529bf829ac2f1fe1d488cfcf67f1fccadacf/pint-0.25.tar.gz"
+    sha256 "22911a30d682ee0540d656571c19a7b1806ce00b2be88a16f67218108b7b8cc2"
   end
 
   resource "platformdirs" do
@@ -133,8 +133,8 @@ class Tmt < Formula
   end
 
   resource "rpds-py" do
-    url "https://files.pythonhosted.org/packages/a5/aa/4456d84bbb54adc6a916fb10c9b374f78ac840337644e4a5eda229c81275/rpds_py-0.26.0.tar.gz"
-    sha256 "20dae58a859b0906f0685642e591056f1e787f3a8b39c8e8749a45dc7d26bdb0"
+    url "https://files.pythonhosted.org/packages/1e/d9/991a0dee12d9fc53ed027e26a26a64b151d77252ac477e22666b9688bc16/rpds_py-0.27.0.tar.gz"
+    sha256 "8b23cf252f180cda89220b378d917180f29d313cd6a07b2431c0d3b776aae86f"
   end
 
   resource "ruamel-yaml" do

@@ -3,18 +3,18 @@ class Bbot < Formula
 
   desc "OSINT automation tool"
   homepage "https://github.com/blacklanternsecurity/bbot"
-  url "https://files.pythonhosted.org/packages/bd/2b/ce1ef4e4b9a49839e3b790997e33f93c415fda6a18339220a7a8a06c1b63/bbot-2.6.0.tar.gz"
-  sha256 "95d52eac67afa1cba1835a85c9b29cbb3cb40744f893018c468674c129ab4568"
+  url "https://files.pythonhosted.org/packages/74/e1/a8532c1cd6c6834dcc85a19edf6d67d23366c83bcb092a67f7b2310fc3f5/bbot-2.6.1.tar.gz"
+  sha256 "946c8c34b27396f2d4f3147ea8bf0d9b7ded8205f93d6f14b26f09f75a1f637b"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "109902ddc97a02ce4084711f3a0a9ee4123470215ff09db5c9573be4d2d0ea41"
-    sha256 cellar: :any,                 arm64_sonoma:  "07f77881d11a76484b1f92cc666c6d7279b94448c4c3c43986e30af5a767225a"
-    sha256 cellar: :any,                 arm64_ventura: "c557e520298b1968436de84af333a46452e288c4c98cde40bae7a37fce904e47"
-    sha256 cellar: :any,                 sonoma:        "a1e5cf7e9cf808e621dcc4eeec0849bb7ab81ea6dc8c0081590197cfd999f3d0"
-    sha256 cellar: :any,                 ventura:       "b0c7008441a8eed074bc2a27a304ed7f1dabcc9995cb0ab77dc18c2124ded617"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cc4f4dd0ac15ec7ce635133557c08ea2f9926a5a5bb23047c9101bbd71e999aa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5f61c594401faf9324a9233bc060db4d5385a0a1ef588901f419cdf4d12e2711"
+    sha256 cellar: :any,                 arm64_sequoia: "bb4daac7cd847f6334243e66ea9c41b31079cdd07f73db582d574574be3bfc0b"
+    sha256 cellar: :any,                 arm64_sonoma:  "730e13f47dddea1a1bbf4ad0784359912ae80d34ddaab61fbb75ba04ce7e9b66"
+    sha256 cellar: :any,                 arm64_ventura: "1b93c0457f8fcc179fab9cd97bddc139b268b133898b24fa342adc6ba2036f80"
+    sha256 cellar: :any,                 sonoma:        "d53077afba41d77936db292bb10b06c58b0fa0257b3f793ea2cd477f0044bb1b"
+    sha256 cellar: :any,                 ventura:       "fc97898c9dcd04f9cfcb1abfb76c51e6b45c3573cdeb553a527fcdca6d3255a6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a65e079c996883e1e06a5eaf1d8222cc9c4e29f32e596b2d1f9678649cec09f3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cb0971db21a931555c2bead3d2b2b49bf24bc59791431c7858b631febd2948eb"
   end
 
   depends_on "cmake" => :build
@@ -88,8 +88,8 @@ class Bbot < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/0a/10/c23352565a6544bdc5353e0b15fc1c563352101f30e24bf500207a54df9a/filelock-3.18.0.tar.gz"
-    sha256 "adbc88eabb99d2fec8c9c1b229b171f18afa655400173ddc653d5d01501fb9f2"
+    url "https://files.pythonhosted.org/packages/40/bb/0ab3e58d22305b6f5440629d20683af28959bf793d98d11950e305c1c326/filelock-3.19.1.tar.gz"
+    sha256 "66eda1888b0171c998b35be2bcc0f6d75c388a7ce20c3f3f37aa8e96c2dddf58"
   end
 
   resource "h11" do
@@ -223,8 +223,8 @@ class Bbot < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/e1/0a/929373653770d8a0d7ea76c37de6e41f11eb07559b103b1c02cafb3f7cf8/requests-2.32.4.tar.gz"
-    sha256 "27d0316682c8a29834d3264820024b62a36942083d52caf2f14c0591336d3422"
+    url "https://files.pythonhosted.org/packages/c9/74/b3ff8e6c8446842c3f5c837e9c3dfcfe2018ea6ecef224c710c85ef728f4/requests-2.32.5.tar.gz"
+    sha256 "dbba0bac56e100853db0ea71b82b4dfd5fe2bf6d3754a8893c3af500cec7d7cf"
   end
 
   resource "requests-file" do

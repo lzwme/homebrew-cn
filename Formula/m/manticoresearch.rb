@@ -9,6 +9,7 @@ class Manticoresearch < Formula
     { "GPL-2.0-only" => { with: "x11vnc-openssl-exception" } }, # galera
     { any_of: ["Unlicense", "MIT"] }, # uni-algo (our formula is too new)
   ]
+  revision 1
   version_scheme 1
   head "https://github.com/manticoresoftware/manticoresearch.git", branch: "master"
 
@@ -23,13 +24,13 @@ class Manticoresearch < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "1f87fc89a3c8103e9205aa32bf0ce4918499b2e03162257c8658f152ba5019d9"
-    sha256 arm64_sonoma:  "71b5b349c90b1fda6442ff399de8f8b75584a905084141721a15e9f48a9bf5b4"
-    sha256 arm64_ventura: "217874dc0d579a528b286dc5a65e428eb02776fd945f927a991bec994eed7a97"
-    sha256 sonoma:        "8b97c5cfd16d40cf2019c5b75de97515acf68f7515f9ac6f1697a9e5ec2f7058"
-    sha256 ventura:       "0487bb6119fa68b1d05c25eb4978b8f4ca95a332eb1e60aa5376b78f150aa5f0"
-    sha256 arm64_linux:   "6b3aab2fc8f83985f769b1325c87b97ec41278078dab181c61b2e56aec9894dd"
-    sha256 x86_64_linux:  "bdbbac0799c487f1dcd7f333221723e356ece124940b117b4aede39502270054"
+    sha256 arm64_sequoia: "9de3f5db0e9dd268563c9c78bc374b7a92e7b7943194a8b282592d45695d9847"
+    sha256 arm64_sonoma:  "cf8e28dca5222b336360945e304601317509e43c1e864d69e51e9d5f17079848"
+    sha256 arm64_ventura: "183f808e0404865e408f64b4c0ee82e18e09506955394b06676566a9e26a2f54"
+    sha256 sonoma:        "a0ef4ac03129de756b5396e966c34b5faf85a5ad955fe4b5a681efee1bbf25f5"
+    sha256 ventura:       "fe922607e26a5710e6102f74fffe5db1f51cbd0a07f1045cf8394b47300de62b"
+    sha256 arm64_linux:   "fe1808081d454c4d65d7c79b376329e0121da1a8a5acf560c49b666a08f9452e"
+    sha256 x86_64_linux:  "22ed5397be826ffd1c2d8a4ed3a6c395a955888cd2b468209251016a1cbb8936"
   end
 
   depends_on "cmake" => :build
@@ -53,6 +54,10 @@ class Manticoresearch < Formula
   uses_from_macos "expat"
   uses_from_macos "libxml2"
   uses_from_macos "zlib"
+
+  # Workaround for Boost 1.89.0 until fixed upstream.
+  # Issue ref: https://github.com/manticoresoftware/manticoresearch/issues/3673
+  patch :DATA
 
   def install
     # Avoid statically linking to boost
@@ -113,3 +118,22 @@ class Manticoresearch < Formula
     Process.wait(pid)
   end
 end
+
+__END__
+diff --git a/cmake/galera-imported.cmake.in b/cmake/galera-imported.cmake.in
+index 0ffa9caf1..806c929b4 100644
+--- a/cmake/galera-imported.cmake.in
++++ b/cmake/galera-imported.cmake.in
+@@ -15,9 +15,9 @@ include ( ExternalProject )
+ ExternalProject_Add ( galera_populate
+ 		URL @GALERA_PLACE@
+ 		URL_MD5 @GALERA_SRC_MD5@
+-		CMAKE_CACHE_ARGS -DWSREP_PATH:STRING=${wsrep_populate_SOURCE_DIR} -DCMAKE_BUILD_TYPE:STRING=RelWithDebInfo -DGALERA_REV:STRING=@GALERA_REV@
++		CMAKE_CACHE_ARGS -DWSREP_PATH:STRING=${wsrep_populate_SOURCE_DIR} -DCMAKE_BUILD_TYPE:STRING=RelWithDebInfo -DGALERA_REV:STRING=@GALERA_REV@ -DWITH_BOOST:BOOL=OFF -DCMAKE_CXX_FLAGS:STRING=-DASIO_DISABLE_BOOST_REGEX=1\ -DBOOST_DATE_TIME_POSIX_TIME_STD_CONFIG=1
+ 		BUILD_COMMAND "@CMAKE_COMMAND@" --build . --config RelWithDebInfo
+ 		INSTALL_COMMAND "@CMAKE_COMMAND@" --install . --config RelWithDebInfo --prefix "@GALERA_BUILD@"
+ 		)
+ 
+-# file configured from cmake/galera-imported.cmake.in
+\ No newline at end of file
++# file configured from cmake/galera-imported.cmake.in

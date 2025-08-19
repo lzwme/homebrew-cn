@@ -1,17 +1,18 @@
 class Ignite < Formula
   desc "Build, launch, and maintain any crypto application with Ignite CLI"
   homepage "https://docs.ignite.com/"
-  url "https://ghfast.top/https://github.com/ignite/cli/archive/refs/tags/v29.3.0.tar.gz"
-  sha256 "2fe85bec70e0bbb506759f08b49993da6599358f9d037226acf859b27cd5057f"
+  url "https://ghfast.top/https://github.com/ignite/cli/archive/refs/tags/v29.3.1.tar.gz"
+  sha256 "f501ad2737cb24c1d761905caf5592728a2d0b2440e2dde39ef90a082273b8ad"
   license "Apache-2.0"
   head "https://github.com/ignite/cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "877fa1a28851037d85c383f6ba8a72251392efb8334466f487d1aa07199b7244"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "14abdc5c9e6fa6e32e24741d6928271ed4379979823adae495444048cc41831f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "c1ed6427f19b6da17ea4d13b65c68f3a4e245072fc3deabfb02e72f1d2366989"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6697ae815cf991e0e4d63dd533d58912e6f367ffd3723b81552dcaef2475196f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "478824202465f145db9e5036517032926e185238df10128be4006b6b15aa21d5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "09e37bf37fe54f64d51de3078a3ebfde3c1474f566e2b0087d4ab109a47692ec"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c30b4d2d4c221326ffd6a506d6ab63d636d9b3972427244a1cf1f688c34626ae"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "45b34f9f06fa6488b4b0f1ff198f7a382d4d1651ed794e94dc04e621d52def2a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "03baf493774b97e582c543cf457113d851789aefe5ba1a3e03ed601ca445ed77"
+    sha256 cellar: :any_skip_relocation, ventura:       "065e961abfaf91b299fbdacc26213a90ef88112cbac4d920fbd4f1cd1fff5bfd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e44aa860b5f3a226414f4ee884f28ff3cc64d147c0cfda92797fd4f3a9878dcf"
   end
 
   depends_on "go"

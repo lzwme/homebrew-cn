@@ -1,18 +1,18 @@
 class Czkawka < Formula
   desc "Duplicate file utility"
   homepage "https://github.com/qarmin/czkawka"
-  url "https://ghfast.top/https://github.com/qarmin/czkawka/archive/refs/tags/9.0.0.tar.gz"
-  sha256 "2b2f419e1c733cad763eceb95eff28b1302e0926c247fdfd98e2f29f6f7866ee"
+  url "https://ghfast.top/https://github.com/qarmin/czkawka/archive/refs/tags/10.0.0.tar.gz"
+  sha256 "66ff3c231abe2feaeb377f52bb188eb81686c162d7f3fd28ed5b7374f0046c48"
   license all_of: ["MIT", "CC-BY-4.0"]
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "c28c1d127ad049a7ea6ca83b912d198125fd1ff907a6f695512a23698692c235"
-    sha256 cellar: :any,                 arm64_sonoma:  "af4ae38ba517763f591b5f2ab52b0b3fead5627d2ee80bda8db3db596e2760c4"
-    sha256 cellar: :any,                 arm64_ventura: "0e0b5690c9450849adf554fdd0bfb7604160ee8030a3522f038c48d286d86afa"
-    sha256 cellar: :any,                 sonoma:        "b962385e937d55de3c73bde9ff005a445060683d1eb1fe935cf4796d729c9baa"
-    sha256 cellar: :any,                 ventura:       "4845dcbc5835c39c85987bebc64eaa14f449b6a36a8d669e8f0799bab7c22cb1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "639ef911d5321e575feeb023000967a18e8cd968cdb7e03952e3ddf4bf90d15c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "df85cb1e5414b32e3026bd639dab932af37063363e1eb9cf58a8b46d0408f8e7"
+    sha256 cellar: :any,                 arm64_sequoia: "35db07b1b1bef523a45fe9002787d4ebcff68432a58e4cf913679f6f2461c99c"
+    sha256 cellar: :any,                 arm64_sonoma:  "d6d43d9a49087f484f4a1f57c841af0f43f3ac759d29dbb1b859d6e73e4c77dd"
+    sha256 cellar: :any,                 arm64_ventura: "a3a6a7b083e8ef0c108266bfe655e5eb0b5e86fbe1ddc25755f91282b07d5927"
+    sha256 cellar: :any,                 sonoma:        "53069a822076a0697f185295f98020aa02dc46f57bbf003f6bbd33999d919b0a"
+    sha256 cellar: :any,                 ventura:       "00c95856ea26ce2bb938f4ce818a00016cac2f15859de268b14dd579f36fba69"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e5b9bfbf32993274579f8e2bcdddf3a8206bee9469258c47d61beb59d57168b5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5daae00fdaafdd3e5e5596ce3ad4768383f9b14e2d6212dd607ad53d1bf631fe"
   end
 
   depends_on "rust" => :build
@@ -53,8 +53,8 @@ class Czkawka < Formula
   end
 
   test do
-    output = shell_output("#{bin}/czkawka_cli dup --directories #{testpath}")
-    assert_match "Not found any duplicates", output
+    system bin/"czkawka_cli", "dup", "--directories", testpath, "--file-to-save", "results.txt"
+    assert_match "Not found any duplicates", File.read("results.txt")
 
     assert_match version.to_s, shell_output("#{bin}/czkawka_cli --version")
   end

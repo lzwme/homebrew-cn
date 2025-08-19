@@ -12,18 +12,19 @@ class Morpheus < Formula
   end
 
   bottle do
-    sha256                               arm64_sequoia: "11e3811c5e5932f71678bea042c542a8a9ca5e0e24be85d4ce37f04b2096af1f"
-    sha256                               arm64_sonoma:  "5875ccd833c4e41e3c0d6a92a6e345bebf5b79cb6fddde17e25383dc20a7330c"
-    sha256                               arm64_ventura: "e7e28d8b1bd4020ca3e99ddcceeb9c3af6abc63bb4bdc60bfd6302f04f50d849"
-    sha256 cellar: :any,                 sonoma:        "31b3c036148a0c2ffbd42abc324e85fd5709323ef52977340b128ff92cac7c86"
-    sha256 cellar: :any,                 ventura:       "29d8f5b2730cbda1d887ea580c643d26f80bcd224de09f27245595361f820862"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ac0786ead33d0beb6c8fd5ba6554e2de1df213ba821576fa849a1a8dff1fb4a0"
+    rebuild 1
+    sha256                               arm64_sequoia: "4020aba25f72c7c1994268abd7a51d625b3c4d03bba900d58bad3fb7c41f18ff"
+    sha256                               arm64_sonoma:  "6d7ecede2635239fcc44cc2e6db21d8d819f1b4855898115548916fdbefc6010"
+    sha256                               arm64_ventura: "e30b659545e485356790d7938d5a4af5570584315b9272ca03b7aee3b4219160"
+    sha256 cellar: :any,                 sonoma:        "256731739687f46cf2509eb9a3e5f0c7139dea775ce5f8e450b855ef910ac703"
+    sha256 cellar: :any,                 ventura:       "00fdbd8f0594d9daca951726618c1275396758a60aac129dc85451af78a7657e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0d216e4cd5fcec17db0a326688795f2ee4e3517379b79b3f94ef0f53a0f56ee3"
   end
 
-  depends_on "boost" => :build
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
   depends_on "ninja" => :build
+  depends_on "boost"
   depends_on "ffmpeg"
   depends_on "graphviz"
   depends_on "libtiff"
@@ -37,7 +38,29 @@ class Morpheus < Formula
     depends_on "libomp"
   end
 
+  # Backport support for CMake 4
+  patch do
+    url "https://gitlab.com/morpheus.lab/morpheus/-/commit/74aa906b9c2bd9144776118e61ffef3220a70878.diff"
+    sha256 "7d186bcd41b640e770f592053f25a4216c57ae56e5ecee68f271e8d00fbfa4a1"
+  end
+  patch do
+    url "https://gitlab.com/morpheus.lab/morpheus/-/commit/aac15ea4e196083a00c0634d1aaa6d49875721c7.diff"
+    sha256 "2e6f40b7acf4b81643b5af411f1e6bb8d7bc01282a638488c8be41fbdbb68675"
+  end
+  patch do
+    url "https://gitlab.com/morpheus.lab/morpheus/-/commit/8c5035ef693068a1ddcfdc710f45bd4f4663ee8b.diff"
+    sha256 "e0916157e4c32c7370f3b0a140b43c4a30c2173c9a65e73c2dd6a817011920ed"
+  end
+
   def install
+    # Avoid statically linking to Boost libraries when `-DBUILD_TESTING=OFF`
+    cmakelists = ["CMakeLists.txt", "morpheus/CMakeLists.txt"]
+    inreplace cmakelists, "set(Boost_USE_STATIC_LIBS ON)", "set(Boost_USE_STATIC_LIBS OFF)"
+
+    # Workaround for newer Clang
+    # error: a template argument list is expected after a name prefixed by the template keyword
+    ENV.append_to_cflags "-Wno-missing-template-arg-list-after-template-kw" if OS.mac?
+
     # has to build with Ninja until: https://gitlab.kitware.com/cmake/cmake/-/issues/25142
     args = ["-G", "Ninja"]
 

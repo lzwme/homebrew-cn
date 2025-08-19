@@ -4,7 +4,7 @@ class Pinocchio < Formula
   url "https://ghfast.top/https://github.com/stack-of-tasks/pinocchio/releases/download/v3.7.0/pinocchio-3.7.0.tar.gz"
   sha256 "c14c2ac9e5943af9acca9730c31d66c59b57a9407960d5b66d200f50b39a70a1"
   license "BSD-2-Clause"
-  revision 1
+  revision 2
   head "https://github.com/stack-of-tasks/pinocchio.git", branch: "master"
 
   livecheck do
@@ -13,13 +13,13 @@ class Pinocchio < Formula
   end
 
   bottle do
-    sha256                               arm64_sequoia: "a7e991ba1cefe495662548cab079b970ad2f4f268f5376919db2351c723ffeff"
-    sha256                               arm64_sonoma:  "6d605216264a3f81df44b27b4e71ecf7ca4587dbaf824ed2842ddd9574636d9f"
-    sha256                               arm64_ventura: "67683a60f0592dba71505ec5697a0631342f0ed04b128813b0b5603de9bafb94"
-    sha256 cellar: :any,                 sonoma:        "716ab2d6b64fd7d90f919affcfa281aaad4b4f983ed8e1a9867c1d3a36cdd1c9"
-    sha256 cellar: :any,                 ventura:       "7b44a435d4aba4044b3af9d8c422aad6c166398077b45109929c383319749170"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "24d9ae2da4fba1785e266a7b2c0805dbfbcb97e053ab97320bccd2a4cfb54417"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "49812f367b27ea61b1e847a7f844a8b4560a10fc3763619524a06f88fc1489fe"
+    sha256                               arm64_sequoia: "eda82cd8f0c0386776d08a58bee6cab180ce611e6c5cb1a2865f84ec3293b8bc"
+    sha256                               arm64_sonoma:  "27f25f5d0317089c25e91e32fe6198518f959894797ee38a810a80330b8ae8d8"
+    sha256                               arm64_ventura: "cf5349e00902bd01dc2a4f940aa548c11d7132f8a01754b1dbb2e84537bd3972"
+    sha256 cellar: :any,                 sonoma:        "dbbf1c937881561fba861e3afafe15f326c387ecbb62c33bcd814d0572b109be"
+    sha256 cellar: :any,                 ventura:       "b525d0323bed2db79bb28167d26b95953d0335a424b5b1a3b4bdc7a6df9e83fe"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0e84bdaac5bed9927015891d155c4173ba394e0cfbd87924fe0aa40f60664be8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b590019511af6856fec703aa1ee4eedb9ebd86ce8f8b2bef2484f3dfbbada926"
   end
 
   depends_on "cmake" => :build
@@ -38,6 +38,10 @@ class Pinocchio < Formula
   on_macos do
     depends_on "octomap"
   end
+
+  # Workaround for Boost 1.89.0
+  # TODO: Report upstream
+  patch :DATA
 
   def python3
     "python3.13"
@@ -67,3 +71,18 @@ class Pinocchio < Formula
     PYTHON
   end
 end
+
+__END__
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 67dd06db..5fbe52be 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -286,7 +286,7 @@ if(BUILD_WITH_EXTRA_SUPPORT)
+   message(STATUS "Found Qhull.")
+ endif()
+ 
+-set(BOOST_REQUIRED_COMPONENTS filesystem serialization system)
++set(BOOST_REQUIRED_COMPONENTS filesystem serialization)
+ 
+ set_boost_default_options()
+ export_boost_default_options()

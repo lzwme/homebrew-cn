@@ -4,6 +4,7 @@ class Scip < Formula
   url "https://scipopt.org/download/release/scip-9.2.3.tgz"
   sha256 "6f5e81a643bba22d9b4e43cd97583529587c64eafe83b93bb864b07f9f16fab7"
   license "Apache-2.0"
+  revision 1
 
   livecheck do
     url "https://scipopt.org/scipdata.js"
@@ -11,13 +12,13 @@ class Scip < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "f6e535f1d4849caa3a370c080d62c650781a727b42edb571a994e2167fd22984"
-    sha256 cellar: :any,                 arm64_sonoma:  "c04ca5649c3eaf2e85871b43dde1365581af0ed741e2f9a43994fafefed2cc4d"
-    sha256 cellar: :any,                 arm64_ventura: "558bacec51d5c471dc25e32aa2de30916214a375a84c870b1ccbffea4da9e4c1"
-    sha256 cellar: :any,                 sonoma:        "6dac9de291e0f7e3c273360b576aaff7300f265a35f465e7fbcc77ae6b4286ed"
-    sha256 cellar: :any,                 ventura:       "6df41e98901b04ff56ad50dba1d1744c4cfde6bdbe39e2f5aaa8ca8bb3d45405"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1e610c3db3ba7a6ede4d264746e438b7d669be5305b5d9b5aaf3f7e639a8c048"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "782accbc4741331d07dd997269283dae94d281b3e3d47b22c7baf927b59511e5"
+    sha256 cellar: :any,                 arm64_sequoia: "f8ff14375bbf116866a6f8d0917cd52845e5a37b5ec41c3304d0a8ceb04fcfc7"
+    sha256 cellar: :any,                 arm64_sonoma:  "33d49db404f5b31e9b60f3cd5b2f8982499067d966971734e93088a9fbf67a05"
+    sha256 cellar: :any,                 arm64_ventura: "89796a2888b7b4b4f7a0f2cd63ff585b4e99c040b6905f3c8c50e6cf26070542"
+    sha256 cellar: :any,                 sonoma:        "512b6afc37693f78532bee21a11873c461d290e0b532c3194d1a4154596515ab"
+    sha256 cellar: :any,                 ventura:       "ac57d89d437b828546d91953d235375a1c3d597e12e103b0ba8b858e2a009db5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ae33e30f8a3e9f20cd5b9f86cf1ab15685d75a554487d3e1d071dab8bcc7539d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "473db25229bdb50611591dc03167ded5483485df70348d77c3870a09a1251292"
   end
 
   depends_on "cmake" => :build

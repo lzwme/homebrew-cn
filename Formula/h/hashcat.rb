@@ -1,9 +1,9 @@
 class Hashcat < Formula
   desc "World's fastest and most advanced password recovery utility"
   homepage "https://hashcat.net/hashcat/"
-  url "https://hashcat.net/files/hashcat-7.1.0.tar.gz"
-  mirror "https://ghfast.top/https://github.com/hashcat/hashcat/archive/refs/tags/v7.1.0.tar.gz"
-  sha256 "cf2d73d36b85dfc5a36d20bf2d7516858173d5ef780df2055bc926c6f902da77"
+  url "https://hashcat.net/files/hashcat-7.1.1.tar.gz"
+  mirror "https://ghfast.top/https://github.com/hashcat/hashcat/archive/refs/tags/v7.1.1.tar.gz"
+  sha256 "1cdf6db3058088d7e3883f63519b5d345dbda0184ec8e1e1cb984e1255e297f0"
   license all_of: [
     "MIT",
     "LZMA-SDK-9.22", # deps/LZMA-SDK/
@@ -18,13 +18,13 @@ class Hashcat < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "bb1809d0a163c5d2c2b8d4158a7604f538ae5db8ed551628929f7e73a0e595a5"
-    sha256 arm64_sonoma:  "685c71ea555951002fa5750a8c7122c48be0d12d612bc64dbd266737f0f98e9a"
-    sha256 arm64_ventura: "28777b7980f2d0710070ec3a5317a86e8e256fe0657bcd47452a16c48b63ea8a"
-    sha256 sonoma:        "939040b2f32a06e164bbc7401adbf961b0223f9a1008fc6a2df406e42ccfcbe7"
-    sha256 ventura:       "ce66a96fecc940698937e7e27ea270ba05ed1cce9b3b9c8e5b93dc429565ecdf"
-    sha256 arm64_linux:   "791fe33286a1cc4c52ad2c56316a1b36a7a48131531579ddd12a9d01b820d8fe"
-    sha256 x86_64_linux:  "2c31d366a3317871e8daa25aca67b9bf3b87143ec5465710d0278a23aa265611"
+    sha256 arm64_sequoia: "a43ac3ff59dd43aeb5d1f7bd48ac6e92be6a31861dc2aedbc6a548062eecb99a"
+    sha256 arm64_sonoma:  "c43c37dc2e90cd13f6f34a14e410bfe4fd92a8122668c988235b73e5beb325de"
+    sha256 arm64_ventura: "d8ed5aae05c1bcc38376379e10c94dbe585c17ec0f0e41e67cc2e1243c6ee11f"
+    sha256 sonoma:        "89f867202c4a242568591f64de6871d9029fb89cc2f77d9c48d5fd0c6562bae9"
+    sha256 ventura:       "62e57bdbbc58116caacb458dc1be1117cd5d54cd33421f327cf0bed0f2063f99"
+    sha256 arm64_linux:   "e748781b7fbdc7620f064f4536e71a552dc766ae75320057d48ac75786e247ea"
+    sha256 x86_64_linux:  "32f8ffff6650a6963a1e0ea6855a86a8821ccdf1a229827015d47a533ba317ef"
   end
 
   depends_on "python@3.13" => :build
