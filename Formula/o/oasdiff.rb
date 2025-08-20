@@ -1,8 +1,8 @@
 class Oasdiff < Formula
   desc "OpenAPI Diff and Breaking Changes"
   homepage "https://www.oasdiff.com/"
-  url "https://ghfast.top/https://github.com/oasdiff/oasdiff/archive/refs/tags/v1.11.5.tar.gz"
-  sha256 "0e7c4c6c504d025ef2e44cb6bdf06d690d95e0b7639cccd40168bccc080357de"
+  url "https://ghfast.top/https://github.com/oasdiff/oasdiff/archive/refs/tags/v1.11.6.tar.gz"
+  sha256 "67a8e1380e1402ab1b98dd399cd3916751ab55b65ed1c86413716c0b85b79685"
   license "Apache-2.0"
   head "https://github.com/oasdiff/oasdiff.git", branch: "main"
 
@@ -13,12 +13,12 @@ class Oasdiff < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ed957def4093ea3cde0fc3ea694a0aa8b9c39fee3593d6e86f9fc35edea91b00"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ed957def4093ea3cde0fc3ea694a0aa8b9c39fee3593d6e86f9fc35edea91b00"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "ed957def4093ea3cde0fc3ea694a0aa8b9c39fee3593d6e86f9fc35edea91b00"
-    sha256 cellar: :any_skip_relocation, sonoma:        "91ccced8d8795d9030447cef335b0ba4995cfe9fb26f1c0570d34be062b363bc"
-    sha256 cellar: :any_skip_relocation, ventura:       "91ccced8d8795d9030447cef335b0ba4995cfe9fb26f1c0570d34be062b363bc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "054a5f91994a1d9c80f607f9331077dd30ab35f206e8ef5b300f57077cf6a3aa"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f96df95002f5673217ad37eee635a2d46011c60b2445def707c556d1de0ae7e8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f96df95002f5673217ad37eee635a2d46011c60b2445def707c556d1de0ae7e8"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "f96df95002f5673217ad37eee635a2d46011c60b2445def707c556d1de0ae7e8"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5fb9d225ddade86e3051d490c96001acbd15052d71e09a65d390c73ab10b5f4c"
+    sha256 cellar: :any_skip_relocation, ventura:       "5fb9d225ddade86e3051d490c96001acbd15052d71e09a65d390c73ab10b5f4c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bb6884603c7538437a243e328b23eb12dd54386f6ae23c6401ff1d35483f074b"
   end
 
   depends_on "go" => :build

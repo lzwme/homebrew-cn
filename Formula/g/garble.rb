@@ -16,7 +16,9 @@ class Garble < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "c0863f7848ea5aa0f24afe53ba523773bfbc732a6082249970c86d2b99d8eee6"
   end
 
-  depends_on "go" => [:build, :test]
+  depends_on "go" => :build
+  # Go version "go1.25.0" is too new; Go linker patches aren't available for go1.25 or later yet
+  depends_on "go@1.24" => :test
   depends_on "git"
 
   def install
@@ -25,6 +27,10 @@ class Garble < Formula
   end
 
   test do
+    go = deps.find { |dep| dep.test? && dep.name.match?(/^go(@\d+(\.\d+)*)?$/) }
+             .to_formula
+    ENV.prepend_path "PATH", go.opt_bin
+
     (testpath/"hello.go").write <<~GO
       package main
 

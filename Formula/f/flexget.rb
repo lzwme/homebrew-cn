@@ -3,18 +3,18 @@ class Flexget < Formula
 
   desc "Multipurpose automation tool for content"
   homepage "https://www.flexget.com"
-  url "https://files.pythonhosted.org/packages/89/0b/13a1df29469bd74b89bc7c5480441d6eaebc8e223885bce23ce05e4f8576/flexget-3.17.12.tar.gz"
-  sha256 "67c63258edb6a090351665e724369d7d6eb597aa97061647ac1212e4220f7460"
+  url "https://files.pythonhosted.org/packages/03/6f/8f88d4e3a61037055760f33ef0fa9c35ff93fe38e6f4cbf4cd580cb8fa3d/flexget-3.17.13.tar.gz"
+  sha256 "a77bd14beab5925265d6a9adf9434d6fbd43175bc0f8d4012648816946ceb4ff"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "ad353ad7ec6c4ad4b632bddcb48a1901d7742050f2a3cb0aa2ece7abdda8fd4c"
-    sha256 cellar: :any,                 arm64_sonoma:  "1556baeb17c7a281394cb554ab696d4eeeab1c4023e86916b1a8224e89f85b20"
-    sha256 cellar: :any,                 arm64_ventura: "6e1f4513fed80e345a79a0341bcb84fa8a3d938535da7aae112dcb666a0e89f8"
-    sha256 cellar: :any,                 sonoma:        "98c24daf5745ddd0596b43c451ded24d84f164d854e740744058eab1acc99c5b"
-    sha256 cellar: :any,                 ventura:       "badd21b4a8fe3dc0775a7d3f2851d5f1692cc2071ec3bb22fe3f8caadffe5548"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "dc087f7f82620d9a5596be59d86240bdf47d926f36c49080cc9bfa7a936d3ba8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7406a5d727b5fa55934e127c2ac415a9f21f614817e037f9eab1ac08ab95fe58"
+    sha256 cellar: :any,                 arm64_sequoia: "915a69966dceaf2bb7d6a2f80ea5884a24ffa6f295fb19269cb2080a06d253cf"
+    sha256 cellar: :any,                 arm64_sonoma:  "17f2c96512052af1f6f82cc81292b94105d86822f4f460e2f20bee623c30ffeb"
+    sha256 cellar: :any,                 arm64_ventura: "1d6a4e145e042507fc73d839e0dc60b802347f71a68f29e529aecc789461aa29"
+    sha256 cellar: :any,                 sonoma:        "897cb28b97101eaa628259eacff0e6e5d951b561b2358f7672a2c9ae36b9307c"
+    sha256 cellar: :any,                 ventura:       "006d9e4951df8d48c77b3f69951bad26acf12c09ae6e02b41076c9be2584e362"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f05b219b5652a8dab440ff0bb88f018ca2d7095404360fa6f6b64bc052722e6f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3b6cc7a8ae1cee2aca245ad71047c2ef86fd615910f4b14173a126272db69aa5"
   end
 
   depends_on "rust" => :build
@@ -154,8 +154,8 @@ class Flexget < Formula
   end
 
   resource "jaraco-functools" do
-    url "https://files.pythonhosted.org/packages/49/1c/831faaaa0f090b711c355c6d8b2abf277c72133aab472b6932b03322294c/jaraco_functools-4.2.1.tar.gz"
-    sha256 "be634abfccabce56fa3053f8c7ebe37b682683a4ee7793670ced17bab0087353"
+    url "https://files.pythonhosted.org/packages/f7/ed/1aa2d585304ec07262e1a83a9889880701079dde796ac7b1d1826f40c63d/jaraco_functools-4.3.0.tar.gz"
+    sha256 "cfd13ad0dd2c47a3600b439ef72d8615d482cedcff1632930d6f28924d92f294"
   end
 
   resource "jaraco-text" do
@@ -279,8 +279,8 @@ class Flexget < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/e1/0a/929373653770d8a0d7ea76c37de6e41f11eb07559b103b1c02cafb3f7cf8/requests-2.32.4.tar.gz"
-    sha256 "27d0316682c8a29834d3264820024b62a36942083d52caf2f14c0591336d3422"
+    url "https://files.pythonhosted.org/packages/c9/74/b3ff8e6c8446842c3f5c837e9c3dfcfe2018ea6ecef224c710c85ef728f4/requests-2.32.5.tar.gz"
+    sha256 "dbba0bac56e100853db0ea71b82b4dfd5fe2bf6d3754a8893c3af500cec7d7cf"
   end
 
   resource "rich" do

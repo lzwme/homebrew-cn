@@ -1,8 +1,8 @@
 class Sui < Formula
   desc "Next-generation smart contract platform powered by the Move programming language"
   homepage "https://sui.io"
-  url "https://ghfast.top/https://github.com/MystenLabs/sui/archive/refs/tags/testnet-v1.53.2.tar.gz"
-  sha256 "20e0ef059bacdaf05a636b7a05e16da40220cadf9d339277a314117cc51eac38"
+  url "https://ghfast.top/https://github.com/MystenLabs/sui/archive/refs/tags/testnet-v1.54.1.tar.gz"
+  sha256 "61f5e167169555a51fb55083868c9abe7b76aa883fe76e3a1d1b6ab7c7e9bb6d"
   license "Apache-2.0"
 
   livecheck do
@@ -11,13 +11,13 @@ class Sui < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c9babacc69b9442195776cb8a4c9e3c9c2c3bbe1ff3ced05a1c84c31f6726eaf"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "37a3c57f24caba2f724617a7781c4e48277d0f483ad2d14f8b9842e477791144"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "b937ae42005ba84f671a92fe8feba77716160606efcef6993ff6a2900b82a6d1"
-    sha256 cellar: :any_skip_relocation, sonoma:        "74187910ae73a43fa2ecf6d982ec0f59bd4a6005f1f0692aa1e5061c826472ec"
-    sha256 cellar: :any_skip_relocation, ventura:       "ac8ac779f84c64c8e71c646b8ae4eca2ed405bd7ec0171b76ccb6eea61f9b180"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8d37dd9dac6b679449e7da4a058d1d9ccff2380f1558a52551d83353b3c90be2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b331c0730384c446c7e425451625c720e144a98190ee9caa10132283e2714b30"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c0676265cc09c757127722f69fd371b5bb03bfeb5cdd7a1ec776f8a42673e0a4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f719da01d46c57fc0c4fa7c6f0fb432e0ac947df1adeb55119302d0337a2b4b7"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "c75c1e82dd70e8c0c7c5e05735914432ee4ef3d983710fa04773946d900cfbc6"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4a1a0758c2ad24caa2086dac1f4096137fcdc3c383ca11554c651dd1fb1af3f3"
+    sha256 cellar: :any_skip_relocation, ventura:       "257c483871559592e2de82556ba8a90391acf86043bd766b3436f65c04558767"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "561ec8bb1135fc37d6a3aadc95bb428a60efc32e19322c15b1e2b55590a86cd3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b12180d894e3a2be6ded62e23bc87c118b540b1eb42f51ad12647bc8485af160"
   end
 
   depends_on "cmake" => :build
@@ -26,6 +26,12 @@ class Sui < Formula
 
   on_linux do
     depends_on "llvm" => :build
+  end
+
+  # patch blst to fix x86 macos build, upstream pr ref, https://github.com/MystenLabs/sui/pull/20921
+  patch do
+    url "https://github.com/MystenLabs/sui/commit/85fe7ddbe01067637d2e771360d26675dd5fd2aa.patch?full_index=1"
+    sha256 "ea19ec19ff5cb969f218363618a23afa1d3b36e8ddb04670a5fcbaa886321559"
   end
 
   def install

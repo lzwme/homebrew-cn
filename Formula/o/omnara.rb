@@ -3,18 +3,18 @@ class Omnara < Formula
 
   desc "Talk to Your AI Agents from Anywhere"
   homepage "https://omnara.com/"
-  url "https://files.pythonhosted.org/packages/49/57/af3e082f36ed7a450776580b4011f3aede952267610b06fd353a55365968/omnara-1.5.2.tar.gz"
-  sha256 "39edca0d3a2bf10ec91c1a5c66a3c114d24eea004fb63b2662d59b0bbdb257d4"
+  url "https://files.pythonhosted.org/packages/dc/ec/6d1d634bf37da98e7c2dd54c55f11d71b1faf0a0f27576523433c1dd8c18/omnara-1.5.3.tar.gz"
+  sha256 "c67b1b3071410b5e5797885f70a946b2f7270dfb3e980a6acbaa233cb34652ed"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "52ed0aeeb73a50ab85b54d3ed71a298f84f63a0ecb7ae3a39cea9f8222212ed0"
-    sha256 cellar: :any,                 arm64_sonoma:  "724a3e524d05ec1cec6349011cffe86061e01fd7c191600b6e9dde1a63c6cac1"
-    sha256 cellar: :any,                 arm64_ventura: "358634f190472458949ef789a89218f3310963577f996d731bf38dd00e1cfff5"
-    sha256 cellar: :any,                 sonoma:        "8dab6735e0097730e6aaab41564118cddd11ef22c18ba1875dd95246064350d7"
-    sha256 cellar: :any,                 ventura:       "f8108faf85b7f37c44f740f7e77d7de8af92742e913f6e2da5415bb0546f0966"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "96112a84aa862060678dd2d26ed83edbfc165bafb692ac18d3d3478805f6bd50"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9ff267aebef62985ff6791b05a500d41fdfd7b9adf8383b081d7169c18a1ea2d"
+    sha256 cellar: :any,                 arm64_sequoia: "03bcf9ca879a24bf55ec97c678b434ebc61afa877895eb9121d739d51b57b3b0"
+    sha256 cellar: :any,                 arm64_sonoma:  "4dea3496a57c0f03dbe3b78eeeb5953601fef70576beee062b896d6e1963156a"
+    sha256 cellar: :any,                 arm64_ventura: "d0e791973c5858f73946b350fe138bbff75361349f279d451dc2847225ede5cc"
+    sha256 cellar: :any,                 sonoma:        "fd0650b8a95d12e08893eafec6e2ce1533e3f98426317ad1204c315d19bb2780"
+    sha256 cellar: :any,                 ventura:       "52287475813b2197dd7673eb7c42c46374eb63f9abda50305539967e6282ee4b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1b9e707d0323bed8634e99d4c9127212875785686d59f4591ac0d29540f51c4e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b9ae5ae3926616f19e8670763fd023708773ab0ec5db539561a013cce0b9a379"
   end
 
   depends_on "rust" => :build # for pydantic-core
@@ -149,8 +149,8 @@ class Omnara < Formula
   end
 
   resource "jsonschema" do
-    url "https://files.pythonhosted.org/packages/d5/00/a297a868e9d0784450faa7365c2172a7d6110c763e30ba861867c32ae6a9/jsonschema-4.25.0.tar.gz"
-    sha256 "e63acf5c11762c0e6672ffb61482bdf57f0876684d8d249c0fe2d730d48bc55f"
+    url "https://files.pythonhosted.org/packages/74/69/f7185de793a29082a9f3c7728268ffb31cb5095131a9c139a74078e27336/jsonschema-4.25.1.tar.gz"
+    sha256 "e4a9655ce0da0c0b67a085847e00a3a51449e1157f4f75e9fb5aa545e122eb85"
   end
 
   resource "jsonschema-path" do
@@ -279,8 +279,8 @@ class Omnara < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/e1/0a/929373653770d8a0d7ea76c37de6e41f11eb07559b103b1c02cafb3f7cf8/requests-2.32.4.tar.gz"
-    sha256 "27d0316682c8a29834d3264820024b62a36942083d52caf2f14c0591336d3422"
+    url "https://files.pythonhosted.org/packages/c9/74/b3ff8e6c8446842c3f5c837e9c3dfcfe2018ea6ecef224c710c85ef728f4/requests-2.32.5.tar.gz"
+    sha256 "dbba0bac56e100853db0ea71b82b4dfd5fe2bf6d3754a8893c3af500cec7d7cf"
   end
 
   resource "rfc3339-validator" do

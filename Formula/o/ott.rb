@@ -27,17 +27,16 @@ class Ott < Formula
   depends_on "pkgconf" => :build
 
   def install
-    opamroot = buildpath/".opam"
-    ENV["OPAMROOT"] = opamroot
+    ENV["OPAMROOT"] = buildpath/".opam"
     ENV["OPAMYES"] = "1"
 
-    system "opam", "init", "--no-setup", "--disable-sandboxing"
-    system "opam", "exec", "--", "opam", "install", ".", "--deps-only", "-y", "--no-depexts"
+    system "opam", "init", "--compiler=ocaml-system", "--disable-sandboxing", "--no-setup"
+    system "opam", "install", ".", "--deps-only", "--yes", "--no-depexts"
     system "opam", "exec", "--", "make", "world"
 
     bin.install "bin/ott"
     pkgshare.install "examples"
-    (pkgshare/"emacs/site-lisp/ott").install "emacs/ott-mode.el"
+    elisp.install "emacs/ott-mode.el"
   end
 
   test do

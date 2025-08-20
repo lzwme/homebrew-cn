@@ -16,7 +16,7 @@ class Kargo < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "b2893968509018b83fc242040d95a8cee6b989fb597d630275cca72c4a832dd0"
   end
 
-  depends_on "go"
+  depends_on "go" => :build
 
   def install
     ldflags = %W[

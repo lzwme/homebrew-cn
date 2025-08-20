@@ -12,16 +12,17 @@ class Llgo < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_sequoia: "b10ff1d39f288838a7b5a13a63a3e16804d8ea628cdfd6696f0af887433971fc"
-    sha256 cellar: :any, arm64_sonoma:  "d0754d188737c058658ed2a70dc35766fcda1749dfe5e95f546179d33c4fd8ea"
-    sha256 cellar: :any, arm64_ventura: "915d149d72ed455e7a710084ce4b2b7717354c11080a7d908b1ae55b010f14cf"
-    sha256 cellar: :any, sonoma:        "bf3b8f7feffaaaeb6db5553b06276f0d16e659395f5190ff2e41833c5f237c17"
-    sha256 cellar: :any, ventura:       "5a52937041fcdcdc649157cd0f8493737d6988d1213ad1d664a63fca8153c2ff"
-    sha256               x86_64_linux:  "90b74a9797489b39973dbc58bf1abfaf1a88018be88665517fdd309f91b38e14"
+    rebuild 1
+    sha256 cellar: :any, arm64_sequoia: "0947ad7513fea18ae89e066e0bbb4ed3c6dc0299ead7d69a4cb57b6f3941d36f"
+    sha256 cellar: :any, arm64_sonoma:  "7de761a6c845ba0a46d27164595fdf5c779cab4fea67cdcc927b696eab7b97d9"
+    sha256 cellar: :any, arm64_ventura: "cacaa00dc85e867d7c346af23319ecc37dd1518acadacb1329072f2764beb52a"
+    sha256 cellar: :any, sonoma:        "c1d46f74280d51ae465daa27d47c9e06e4da328d52f74a4b871551d4ccfffab5"
+    sha256 cellar: :any, ventura:       "a6022098d5a0ef86f343ce6aca0c983caa53b8c836ab620212da8b459359631b"
+    sha256               x86_64_linux:  "2486bc3ddd7c27fe03c9ae10df73553c09b9f21b3d4dc94b55f99da632dbbf5f"
   end
 
   depends_on "bdw-gc"
-  depends_on "go"
+  depends_on "go@1.24"
   depends_on "libffi"
   depends_on "libuv"
   depends_on "lld@19"
@@ -62,7 +63,7 @@ class Llgo < Formula
 
     libexec.install "LICENSE", "README.md", "go.mod", "go.sum", "runtime"
 
-    path_deps = %w[lld llvm go pkgconf].map { |name| find_dep(name).opt_bin }
+    path_deps = %w[lld llvm go@1.24 pkgconf].map { |name| find_dep(name).opt_bin }
     script_env = { PATH: "#{path_deps.join(":")}:$PATH" }
 
     if OS.linux?
@@ -80,8 +81,9 @@ class Llgo < Formula
   end
 
   test do
-    goos = shell_output("go env GOOS").chomp
-    goarch = shell_output("go env GOARCH").chomp
+    go = find_dep("go@1.24")
+    goos = shell_output("#{go.opt_bin}/go env GOOS").chomp
+    goarch = shell_output("#{go.opt_bin}/go env GOARCH").chomp
     assert_equal "llgo v#{version} #{goos}/#{goarch}", shell_output("#{bin}/llgo version").chomp
 
     # Add bdw-gc library path to LD_LIBRARY_PATH, this is a workaround for the libgc.so not found issue
@@ -123,7 +125,7 @@ class Llgo < Formula
     (testpath/"go.mod").write <<~GOMOD
       module hello
     GOMOD
-    system "go", "get", "github.com/goplus/lib"
+    system go.opt_bin/"go", "get", "github.com/goplus/lib"
     # Test llgo run
     assert_equal "Hello LLGO by fmt.Println\n" \
                  "Hello LLGO by c.Printf\n",

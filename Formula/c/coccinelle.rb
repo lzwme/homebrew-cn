@@ -36,35 +36,33 @@ class Coccinelle < Formula
   uses_from_macos "unzip" => :build
 
   def install
-    Dir.mktmpdir("opamroot") do |opamroot|
-      ENV["OPAMROOT"] = opamroot
-      ENV["OPAMYES"] = "1"
-      ENV["OPAMVERBOSE"] = "1"
-      system "opam", "init", "--no-setup", "--disable-sandboxing"
-      system "opam", "exec", "--", "opam", "install", ".", "--deps-only", "-y", "--no-depexts"
-      system "./autogen"
-      system "opam", "exec", "--", "./configure", "--disable-silent-rules",
-                                                  "--enable-ocaml",
-                                                  "--enable-opt",
-                                                  "--without-pdflatex",
-                                                  "--with-bash-completion=#{bash_completion}",
-                                                  *std_configure_args
-      ENV.deparallelize
-      system "opam", "exec", "--", "make"
-      system "make", "install"
-    end
+    ENV["OPAMROOT"] = buildpath/".opam"
+    ENV["OPAMYES"] = "1"
+    ENV["OPAMVERBOSE"] = "1"
+    system "opam", "init", "--compiler=ocaml-system", "--disable-sandboxing", "--no-setup"
+    system "opam", "install", ".", "--deps-only", "--yes", "--no-depexts"
+    system "./autogen"
+    system "opam", "exec", "--", "./configure", "--disable-silent-rules",
+                                                "--enable-ocaml",
+                                                "--enable-opt",
+                                                "--without-pdflatex",
+                                                "--with-bash-completion=#{bash_completion}",
+                                                *std_configure_args
+    ENV.deparallelize
+    system "opam", "exec", "--", "make"
+    system "make", "install"
 
     pkgshare.install "demos/simple.cocci", "demos/simple.c"
   end
 
   test do
     system bin/"spatch", "-sp_file", "#{pkgshare}/simple.cocci", "#{pkgshare}/simple.c", "-o", "new_simple.c"
-    expected = <<~EOS
+    expected = <<~C
       int main(int i) {
         f("ca va", 3);
         f(g("ca va pas"), 3);
       }
-    EOS
+    C
 
     assert_equal expected, (testpath/"new_simple.c").read
   end

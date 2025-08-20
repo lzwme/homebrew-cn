@@ -7,12 +7,8 @@ class Arttime < Formula
   head "https://github.com/poetaman/arttime.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0f1c1e43694a6d11b3b352e7da96257c31d87b3e9519916f4771e89838fa16d1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0f1c1e43694a6d11b3b352e7da96257c31d87b3e9519916f4771e89838fa16d1"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "0f1c1e43694a6d11b3b352e7da96257c31d87b3e9519916f4771e89838fa16d1"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c02a8f8636056b9fe573246399be2a8763ae60277261f2b4dd1e8f087c33a68c"
-    sha256 cellar: :any_skip_relocation, ventura:       "c02a8f8636056b9fe573246399be2a8763ae60277261f2b4dd1e8f087c33a68c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0f1c1e43694a6d11b3b352e7da96257c31d87b3e9519916f4771e89838fa16d1"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "0a3e584b805c966e2dbfd88d0c14fd624d5cccc7182ada2a3abdf85ff4bd81d9"
   end
 
   depends_on "fzf"
@@ -32,6 +28,6 @@ class Arttime < Formula
 
   test do
     # arttime is a GUI application
-    system bin/"arttime", "--version"
+    assert_match version.to_s, shell_output("#{bin}/arttime --version")
   end
 end

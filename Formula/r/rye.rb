@@ -25,7 +25,7 @@ class Rye < Formula
   end
 
   # https://github.com/astral-sh/rye/commit/62ec9edbe471958a05a70418b19f3acd54f0484d
-  deprecate! date: "2025-08-18", because: :unmaintained
+  deprecate! date: "2025-08-18", because: :unmaintained, replacement_formula: "uv"
 
   depends_on "pkgconf" => :build
   depends_on "rust" => :build

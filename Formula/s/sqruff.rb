@@ -1,19 +1,19 @@
 class Sqruff < Formula
   desc "Fast SQL formatter/linter"
   homepage "https://github.com/quarylabs/sqruff"
-  url "https://ghfast.top/https://github.com/quarylabs/sqruff/archive/refs/tags/v0.29.2.tar.gz"
-  sha256 "7eb9c1fb3a1bfa9116f89edcd4eca55138799561c5be2ed4f133682c2e6668d8"
+  url "https://ghfast.top/https://github.com/quarylabs/sqruff/archive/refs/tags/v0.29.3.tar.gz"
+  sha256 "34421357447ede968a6875d38858c252e987a94aaa5f56ad6e14a17e51ee15b5"
   license "Apache-2.0"
   head "https://github.com/quarylabs/sqruff.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "55a28f920e478e130d5d7f42034ce0105e19c96e1993a56ed456e2d4cc302ee4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "26e50a716eec79765ea36e0665569ae35bd09badd113eba50214dae2b94367c3"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "21ffa0505da0c4e0fdc474e4a16f84825ed574937863a7abd918e7d6f0ede4bf"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a8bc3f15023cc3ef61505907588a192d4a62c1a6c95b8773842a3faa928a0218"
-    sha256 cellar: :any_skip_relocation, ventura:       "5b2318e0122b7beb421dd65ff90270ede24538aee7325970733a62448455de4c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1ae89d5a1aa8f4e338c4ca9b64969f85dce9f43c3de834bff44fb889c7c5821b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "31305f0ab845daa7864d6bc5ad2072ec2f1039a8f0103b31849b8c440ad3b529"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cb5ef33491450375cc1904be3f3f4e5d7e38417d6542ce2daad19ba1d1cea90c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "415089521b878ca2839c3d3a567241ea0bac985a2e97e48a6fea430c6ba4f611"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "6bb99c142e24f1834e99a45777395dbb414005ec208e298ad706b7aa9da283e8"
+    sha256 cellar: :any_skip_relocation, sonoma:        "70584e191d36fbfbad968a5fe7f042dc43ed910049eb3f29a8c362ecce9a8730"
+    sha256 cellar: :any_skip_relocation, ventura:       "8943927f1d88712457f46887e8d3b045d45def37b824b11c03d992d555340d80"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "97828b7090733d2e9cc43a61f61571daaf4e2d96d38d0af4a0faf9195ea5fdbe"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9bdcb8334c6f968f3bc3ecf8dc17c3c58456403daab5c9fb8e67ab2f35957451"
   end
 
   depends_on "rust" => :build

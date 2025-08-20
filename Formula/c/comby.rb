@@ -34,16 +34,41 @@ class Comby < Formula
   uses_from_macos "unzip"
   uses_from_macos "zlib"
 
+  # Workaround for error due to `-mpopcnt` on arm64 macOS with Xcode 16.3+.
+  # TODO: Remove once base >= 0.17.3 or if fix is backported to 0.14 and released
+  on_sequoia :or_newer do
+    on_arm do
+      resource "base" do
+        url "https://ghfast.top/https://github.com/janestreet/base/archive/refs/tags/v0.14.3.tar.gz"
+        sha256 "e34dc0dd052a386c84f5f67e71a90720dff76e0edd01f431604404bee86ebe5a"
+      end
+
+      # Getting fixed file from 0.17.3 as commit doesn't cleanly apply
+      # https://github.com/janestreet/base/commit/68f18ed6a5e94dda1ed423c3435d1515259dcc7d
+      resource "discover.ml" do
+        url "https://ghfast.top/https://raw.githubusercontent.com/janestreet/base/refs/tags/v0.17.3/src/discover/discover.ml"
+        sha256 "07654aaab7e891ccae019d008155aaf2a48cfd64b5dc402c0779554d6e59967a"
+      end
+    end
+  end
+
   def install
     ENV.deparallelize
     opamroot = buildpath/".opam"
     ENV["OPAMROOT"] = opamroot
     ENV["OPAMYES"] = "1"
 
-    system "opam", "init", "--no-setup", "--disable-sandboxing"
+    system "opam", "init", "--compiler=ocaml-system", "--disable-sandboxing", "--no-setup"
     # Workaround for https://github.com/comby-tools/comby/issues/381
-    system "opam", "exec", "--", "opam", "pin", "add", "tar-unix", "2.6.0"
-    system "opam", "exec", "--", "opam", "install", ".", "--deps-only", "-y", "--no-depexts"
+    system "opam", "pin", "add", "tar-unix", "2.6.0"
+    # Workaround for https://github.com/janestreet/base/issues/164
+    if OS.mac? && MacOS.version >= :sequoia
+      resource("base").stage do
+        resource("discover.ml").stage("src/discover")
+        system "opam", "install", ".", "--yes", "--no-depexts", "--working-dir"
+      end
+    end
+    system "opam", "install", ".", "--deps-only", "--yes", "--no-depexts"
 
     ENV.prepend_path "LIBRARY_PATH", opamroot/"default/lib/hack_parallel" # for -lhp
     system "opam", "exec", "--", "make", "release"

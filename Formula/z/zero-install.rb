@@ -43,8 +43,8 @@ class ZeroInstall < Formula
     ENV["OPAMVERBOSE"] = "1"
     packages = ["./0install.opam", "./0install-solver.opam"]
 
-    system "opam", "init", "--no-setup", "--disable-sandboxing"
-    system "opam", "exec", "--", "opam", "install", *packages, "--deps-only", "-y", "--no-depexts"
+    system "opam", "init", "--compiler=ocaml-system", "--disable-sandboxing", "--no-setup"
+    system "opam", "install", *packages, "--deps-only", "--yes", "--no-depexts"
     system "opam", "exec", "--", "make", "all"
     system "opam", "exec", "--", "dist/install.sh", prefix
   end

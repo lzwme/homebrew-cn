@@ -21,19 +21,39 @@ class Stanc3 < Formula
 
   uses_from_macos "unzip" => :build
 
-  def install
-    Dir.mktmpdir("opamroot") do |opamroot|
-      ENV["OPAMROOT"] = opamroot
-      ENV["OPAMYES"] = "1"
-      ENV["OPAMVERBOSE"] = "1"
+  # Workaround for error due to `-mpopcnt` on arm64 macOS with Xcode 16.3+.
+  # TODO: Remove once base >= 0.17.3 or if fix is backported to 0.14 and released
+  on_sequoia :or_newer do
+    on_arm do
+      resource "base" do
+        url "https://ghfast.top/https://github.com/janestreet/base/archive/refs/tags/v0.16.4.tar.gz"
+        sha256 "200c053b69c04dd5cdc5bcb3ae27d098a88a311fb48c28d6382abe76e2a588f5"
 
-      system "opam", "init", "--no-setup", "--disable-sandboxing"
-      system "bash", "-x", "scripts/install_build_deps.sh"
-      system "opam", "exec", "dune", "subst"
-      system "opam", "exec", "dune", "build", "@install"
-
-      bin.install "_build/default/src/stanc/stanc.exe" => "stanc"
+        patch do
+          url "https://github.com/janestreet/base/commit/68f18ed6a5e94dda1ed423c3435d1515259dcc7d.patch?full_index=1"
+          sha256 "054fc30c7e748b2ad8ba8e2b8eead1309b8d7229821b57478cb604d5da5b69c6"
+        end
+      end
     end
+  end
+
+  def install
+    ENV["OPAMROOT"] = buildpath/".opam"
+    ENV["OPAMYES"] = "1"
+    ENV["OPAMVERBOSE"] = "1"
+
+    system "opam", "init", "--compiler=ocaml-system", "--disable-sandboxing", "--no-setup"
+    # Workaround for https://github.com/janestreet/base/issues/164
+    if OS.mac? && MacOS.version >= :sequoia
+      resource("base").stage do
+        system "opam", "install", ".", "--yes", "--no-depexts", "--working-dir"
+      end
+    end
+    system "bash", "-x", "scripts/install_build_deps.sh"
+    system "opam", "exec", "dune", "subst"
+    system "opam", "exec", "dune", "build", "@install"
+
+    bin.install "_build/default/src/stanc/stanc.exe" => "stanc"
   end
 
   test do
