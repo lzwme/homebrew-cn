@@ -1,18 +1,18 @@
 class Minify < Formula
   desc "Minifier for HTML, CSS, JS, JSON, SVG, and XML"
   homepage "https://go.tacodewolff.nl/minify"
-  url "https://ghfast.top/https://github.com/tdewolff/minify/archive/refs/tags/v2.23.11.tar.gz"
-  sha256 "d2eec8d7d5a713476d4eea491c3b0da0d9391721eba6e71b00d5855d26cc41dd"
+  url "https://ghfast.top/https://github.com/tdewolff/minify/archive/refs/tags/v2.24.0.tar.gz"
+  sha256 "618392697d8b0c0a994054b97ccb8dbdee067b87258644ee346eff83d8e85dc5"
   license "MIT"
   head "https://github.com/tdewolff/minify.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f4581da060317c3a8e533664087e275656bd871c4883e1fe3e545691663c904e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f4581da060317c3a8e533664087e275656bd871c4883e1fe3e545691663c904e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "f4581da060317c3a8e533664087e275656bd871c4883e1fe3e545691663c904e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1b1123f462041342fdfbc92c14e8ace4811e63edc6cf6e1a761f338b5d74c35a"
-    sha256 cellar: :any_skip_relocation, ventura:       "1b1123f462041342fdfbc92c14e8ace4811e63edc6cf6e1a761f338b5d74c35a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e15196b6d9314e7d05c5888b78c5db3c8dee844a8a255b3fbe35137985c52f19"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "54e83b371cc92047eb862df45c173199fa5b7526010e571175ce6156503f2b10"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "54e83b371cc92047eb862df45c173199fa5b7526010e571175ce6156503f2b10"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "54e83b371cc92047eb862df45c173199fa5b7526010e571175ce6156503f2b10"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3f0e7773f4faf23b98e4e8da13e70c84647f7948d2f0c75553bb9195627f74d0"
+    sha256 cellar: :any_skip_relocation, ventura:       "3f0e7773f4faf23b98e4e8da13e70c84647f7948d2f0c75553bb9195627f74d0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "799179f0381df0d4d5ebf728bf8b5079076817fd61da799abd2e836b7efb061f"
   end
 
   depends_on "go" => :build

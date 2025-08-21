@@ -1,20 +1,20 @@
 class Urx < Formula
   desc "Extracts URLs from OSINT Archives for Security Insights"
   homepage "https://github.com/hahwul/urx"
-  url "https://ghfast.top/https://github.com/hahwul/urx/archive/refs/tags/0.6.1.tar.gz"
-  sha256 "5e501198e6d910b39d0800266c32a22a17845e6b6324dbc16c5725525b8aec9a"
+  url "https://ghfast.top/https://github.com/hahwul/urx/archive/refs/tags/0.7.0.tar.gz"
+  sha256 "6b8e33da49b1520763eaea24d43cd399b833f832a160af2c7b0cc869804d1dcd"
   license "MIT"
 
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "949b36c006a4c88b7561392129ae672695b18605211d622b2cebe72f74630d35"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e36f20d458d20ad6113bf1fe16fb01a33fdba4c791c6317e6a23ceaa574f468e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "27eea88716e221fb2c1f93d2da038c16e97f4032080177b6ef0af6e4c616a212"
-    sha256 cellar: :any_skip_relocation, sonoma:        "35fa3a01318a11855f673c291ac310f22abe82197997c6255fcffc8ece2525cd"
-    sha256 cellar: :any_skip_relocation, ventura:       "365946aec8f9e136bea0b9a2460dc3959d83f9beaefa7389082c7d62d587f26b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "308c80edc3649d2aff17a156e17c5c829ccfd21d5c7a277f22fb17eb34e50511"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2082d00257f7be453a2c14b3557dea56305c86e10e4daac629adff8798138a08"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6de82d54d095f30f310a7e2f905e5c7d01259d7f6c72637f0eb54790f2063cf3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1fe7cc623e2cdea2f23070bc89b40503ddf3caee699db8688f4f969d978a7c90"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "eb129b6e6571023b90d47a481d1de81d7a2992b1b27a0b17a4ff260d1fb63a8a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "cea7109203e59bd23079f293f525896a2819e07c26403f2d31f29f6f667ed045"
+    sha256 cellar: :any_skip_relocation, ventura:       "8819036aba9d3f89ad17a57342b3bdf8fe7dc98bde3ab18904c0817ae25c03e0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "18d92d4f4e42bfce5b3a9bff59fb0e86af3939886518a4d06c47cc31b2cb2edb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "779313f214d5c6e17b3075eb3033df0e25716417d4987f183918f90f25374cdb"
   end
 
   depends_on "pkgconf" => :build

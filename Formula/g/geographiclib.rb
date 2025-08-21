@@ -1,8 +1,8 @@
 class Geographiclib < Formula
   desc "C++ geography library"
   homepage "https://geographiclib.sourceforge.io/"
-  url "https://ghfast.top/https://github.com/geographiclib/geographiclib/archive/refs/tags/r2.5.tar.gz"
-  sha256 "4b646358189799491e669f0de5072e94e3988d4a7486823344d182d57665ed35"
+  url "https://ghfast.top/https://github.com/geographiclib/geographiclib/archive/refs/tags/r2.5.1.tar.gz"
+  sha256 "7467c5d3bf368d7654dfa0e75af6a1d40a9e530995f2db84672e57c04a447823"
   license "MIT"
   head "https://github.com/geographiclib/geographiclib.git", branch: "main"
 
@@ -11,16 +11,14 @@ class Geographiclib < Formula
     regex(/^r(\d+(?:\.\d+)+)$/i)
   end
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "467cd9d17e3c199e4820960b4b0a063aa2983867b74652371daa2c0d7a19b58b"
-    sha256 cellar: :any,                 arm64_sonoma:  "dd1633f4ab6ddbbcb696f5b71b7d50b3079a92d3a264cf15891beb55d2f81cd5"
-    sha256 cellar: :any,                 arm64_ventura: "2c1f50b78d5d698fc21829a450d03a1ff88e574f20390708430d2450f2f0b344"
-    sha256 cellar: :any,                 sonoma:        "bf8f89352e0aa0f3fb5ab24a92aed7c82e3a81eca7d08b84526dded1429d6e6d"
-    sha256 cellar: :any,                 ventura:       "80d6b616f1202598f559245ccd0e0e534bd3474c794f5e1c74d667b05812f2fe"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "effb6484f07cd4b213a9773b14c02dcf806ed5511608d0e2861f766b3a37ff69"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d1d2871a31e2f92dbdbfdcce3adbf7029af7abc97c397b054fc9974bc8f698c2"
+    sha256 cellar: :any,                 arm64_sequoia: "6fbbe8bb21ac056d840d5d03186353bef3f79452051e258e69fd51bf37c0e0eb"
+    sha256 cellar: :any,                 arm64_sonoma:  "7caa196740c1c429926ebbb1c7223e81f4cf51d4d715995f499844cc2e7a673c"
+    sha256 cellar: :any,                 arm64_ventura: "862169ff659b38105b409b13db88b56d0743ca0c80106c0cc6574364d053cc5d"
+    sha256 cellar: :any,                 sonoma:        "143ec9b7917ab11028c81448509cfe999f94a2fbfba8ea9edb5618401255b30d"
+    sha256 cellar: :any,                 ventura:       "4318f9ceb52fb9d374d99568bdc64376c05e6290afaf67d12f916a0182797cd4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8678bb9c0f7d0fb1b9731e7313d847d4c524af7845cd41037f3e8b089fc167ef"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "156d4e1cff55bfaf96c4cbf1d9628132a8f61f1f9fcad010a06e1f5b6fda9862"
   end
 
   depends_on "cmake" => :build

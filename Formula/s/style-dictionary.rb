@@ -1,18 +1,18 @@
 class StyleDictionary < Formula
   desc "Build system for creating cross-platform styles"
   homepage "https://github.com/style-dictionary/style-dictionary"
-  url "https://registry.npmjs.org/style-dictionary/-/style-dictionary-5.0.1.tgz"
-  sha256 "55d3a95e69455eb58a7cc8d1bf3393bc8d020811c444cc2b6ca0114867b8958a"
+  url "https://registry.npmjs.org/style-dictionary/-/style-dictionary-5.0.2.tgz"
+  sha256 "bcd65cc6316f3090ca35e4f2627af850ba94bd8fabf0cb023a6b8d90af074fdd"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "46fd27ccde57b8903f0c0dd1fc9cc84383e1033c8168a029bcf73e4643a6cc2d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "46fd27ccde57b8903f0c0dd1fc9cc84383e1033c8168a029bcf73e4643a6cc2d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "46fd27ccde57b8903f0c0dd1fc9cc84383e1033c8168a029bcf73e4643a6cc2d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5c7f4c7e7e61c50cc76645599b626beae8db5cc3ac11557af42475d43eac11e4"
-    sha256 cellar: :any_skip_relocation, ventura:       "5c7f4c7e7e61c50cc76645599b626beae8db5cc3ac11557af42475d43eac11e4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "46fd27ccde57b8903f0c0dd1fc9cc84383e1033c8168a029bcf73e4643a6cc2d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "46fd27ccde57b8903f0c0dd1fc9cc84383e1033c8168a029bcf73e4643a6cc2d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6d6183211d5e15fd0da57fed80ca4ca87fe1db93d146ea45c73977dd528eee88"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6d6183211d5e15fd0da57fed80ca4ca87fe1db93d146ea45c73977dd528eee88"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "6d6183211d5e15fd0da57fed80ca4ca87fe1db93d146ea45c73977dd528eee88"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8cfa15cb60c1a721a83a01c5348752f9555c1d650f380d880ef994147ebef96b"
+    sha256 cellar: :any_skip_relocation, ventura:       "8cfa15cb60c1a721a83a01c5348752f9555c1d650f380d880ef994147ebef96b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6d6183211d5e15fd0da57fed80ca4ca87fe1db93d146ea45c73977dd528eee88"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6d6183211d5e15fd0da57fed80ca4ca87fe1db93d146ea45c73977dd528eee88"
   end
 
   depends_on "node"

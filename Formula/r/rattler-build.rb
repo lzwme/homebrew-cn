@@ -1,8 +1,8 @@
 class RattlerBuild < Formula
   desc "Universal conda package builder"
   homepage "https://rattler.build"
-  url "https://ghfast.top/https://github.com/prefix-dev/rattler-build/archive/refs/tags/v0.45.0.tar.gz"
-  sha256 "761f69c0fe3569373a26f45829f381e9f0f03b2ed461873d03cd3448b67f3222"
+  url "https://ghfast.top/https://github.com/prefix-dev/rattler-build/archive/refs/tags/v0.46.0.tar.gz"
+  sha256 "2cf4234b9985eddb5501dd8515811f74065a33077c187caed1e69a70ea65d642"
   license "BSD-3-Clause"
   head "https://github.com/prefix-dev/rattler-build.git", branch: "main"
 
@@ -15,13 +15,13 @@ class RattlerBuild < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "d054dacef30d9659ca706b626df5eb971e2f47249674f22f1099959fd8168313"
-    sha256 cellar: :any,                 arm64_sonoma:  "ec533145efb0a349e3b7ff7b3f3085dd65a1009c267bec2298eff04cd9f4f313"
-    sha256 cellar: :any,                 arm64_ventura: "19e0a1a62366e0e7e6144f63231318ab606e06b25edb2321ebbf7a99bff62639"
-    sha256 cellar: :any,                 sonoma:        "a334d19c4ba5e565b6663a0fc7082904f0fa546456e10d0bb4320f8fc3d5e11a"
-    sha256 cellar: :any,                 ventura:       "c60e51fa89fa81f101b1ce91076e21c424802b82b6c2925d8734b7283881c9e2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "499519359579f50bb7a9e501d166315dfa306d5182411de387c00f20c818ca0a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "409008b168ac47e8020d5c02e3896970e0da582c4b3cfb8e8adee6f8bdfe1534"
+    sha256 cellar: :any,                 arm64_sequoia: "43232e1f95875096db699c83a33fc86827df53b5aaf63610b494002609eac2a9"
+    sha256 cellar: :any,                 arm64_sonoma:  "305564e14c62e7840f4c1294243618c49cb1169c915a3df3b3c58711c19e930c"
+    sha256 cellar: :any,                 arm64_ventura: "41aeb485d5cca92860d599a7d2d6f9ce3efc49a5168d6af3b9090404359082e9"
+    sha256 cellar: :any,                 sonoma:        "b6841990bcd706109b17920344b01479140d9ed5b4c52550a35a06145372dc70"
+    sha256 cellar: :any,                 ventura:       "e01c0636bed76c1051500434d68fbcf8e2bc4e1418b8e1e448d986f20acffeae"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3537d97845635a33d6fc2642f32c5722b21682378ec5b6fc7ff0dc4fe75bb9e0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "865c5e927629b76ad1bfaae37f6a5bd359a5f97858b575e2d23e182dac53004e"
   end
 
   depends_on "pkgconf" => :build

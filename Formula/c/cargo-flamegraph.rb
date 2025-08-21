@@ -1,19 +1,19 @@
 class CargoFlamegraph < Formula
   desc "Easy flamegraphs for Rust projects and everything else"
   homepage "https://github.com/flamegraph-rs/flamegraph"
-  url "https://ghfast.top/https://github.com/flamegraph-rs/flamegraph/archive/refs/tags/v0.6.8.tar.gz"
-  sha256 "2673a04bd4de142220d42706e0c25a4dea08aee52cdffbf87cca5738cec649ff"
+  url "https://ghfast.top/https://github.com/flamegraph-rs/flamegraph/archive/refs/tags/v0.6.9.tar.gz"
+  sha256 "dd9b83affab5f9c1eaad0de9034037780e634c96fef4dce8fa83900e58cc240c"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/flamegraph-rs/flamegraph.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "740ef8f614bf69783f1d25c138bc5eb7e57f0318d05ecb87c1de8796a84c6190"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "933b50f514c63ed78874e8443330c4e01fa0284c33f3b4dd2739d19233e5118e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "745ed3bedef3ac3b3a17a589edfe3321bd2731e4b1036cfaadfab9e7a5b37aee"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3d5c2847b5ec9787c6b4ca4b71dfd959c6171e283d0bd5752cef352e6417d1f4"
-    sha256 cellar: :any_skip_relocation, ventura:       "f2af510d43d381717f9ef3b1b8a631a9ce37a1b3c87d35126bb2e3e593e73254"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "53d4cd9e5880a2a350ab626769520f62c130060ab69a1c60f6b14f015583e695"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4f1a3f5a80fb194e66fe415e19881ecc18ebda99abac0a049988fc9d54954780"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a59f05d6020179a23e317e1894113b9665760a2b2b1588e5042dad8933dc54a3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0c34cf2d2a3a4fc582c0fc98a118c0fb381a620b089631bf3e8d4d7268391e86"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "2fe08c54e9de5f7c0db4022825d0da8e8df9f3fec8b1c1150c4f67912ab7aeaf"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a5206a7fe6e44731c1c64d08ba0e53c379b9f550bdf163e9f0378fe549fcebcb"
+    sha256 cellar: :any_skip_relocation, ventura:       "ae76d5fc3ffbaf1275c38909818db298c0440b7e7b2648637258753fa6ffdb16"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "42cf582472a881a89e88d319cee00bb773558e34c6a76a5e88993785cfc341a7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e3f4e20aa6e5f0e73072baff1801f85eb51fb11e80203f6c32a7b45d305e8571"
   end
 
   depends_on "rust" => :build

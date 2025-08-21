@@ -27,8 +27,11 @@ class Ott < Formula
   depends_on "pkgconf" => :build
 
   def install
-    ENV["OPAMROOT"] = buildpath/".opam"
+    ENV["OPAMROOT"] = opamroot = buildpath/".opam"
     ENV["OPAMYES"] = "1"
+
+    # Work around https://github.com/ocaml/ocamlfind/issues/107 when `coq` is installed in build environment
+    ENV.prepend_path "OCAMLPATH", opamroot/"ocaml-system/lib" if Formula["coq"].any_version_installed?
 
     system "opam", "init", "--compiler=ocaml-system", "--disable-sandboxing", "--no-setup"
     system "opam", "install", ".", "--deps-only", "--yes", "--no-depexts"

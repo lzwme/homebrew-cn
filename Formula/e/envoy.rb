@@ -1,8 +1,8 @@
 class Envoy < Formula
   desc "Cloud-native high-performance edge/middle/service proxy"
   homepage "https://www.envoyproxy.io/index.html"
-  url "https://ghfast.top/https://github.com/envoyproxy/envoy/archive/refs/tags/v1.35.0.tar.gz"
-  sha256 "31ce14bee8f21b409743083ccb2147c6ac968a6d4338d7002f4126d8ddd67b75"
+  url "https://ghfast.top/https://github.com/envoyproxy/envoy/archive/refs/tags/v1.35.1.tar.gz"
+  sha256 "bdd9d646b30a3d048f1ff6b2719f81b9e14c0e187950ea8f4812bf5207f42bfc"
   license "Apache-2.0"
   head "https://github.com/envoyproxy/envoy.git", branch: "main"
 
@@ -12,13 +12,12 @@ class Envoy < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b6044fed6d85bc716e24697d4164604f9c8ec1ded2046618921ca0fd0587b730"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "be32b6b78bee40ec4b23fe0729d76e2a926e177810bae4d9864f64ad3f20e8ad"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "f57b7406b93f1273c2890234863c19ad33f98eda414977267c50d9c96303d84a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3c829a7043455832d967eed9d5ba3d2f417d28b5b612b8e5104f2afd88e647f3"
-    sha256 cellar: :any_skip_relocation, ventura:       "0ee683551881264108fa7b6b3257fd7ea180549655cd2bcd69a57338b9ff9195"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a32b17beece54c216f717a507715aff997db93dc6faa7088d4fff2599dd92d45"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cc4c484d8913a88d5036a25613ef80835e3817a23d5b7458b6532713d259d8c2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "934778c2d7d7796c3c312ed2163ae97366dd7977054e1a5d31d81dbdcb9fc260"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "7b7e98ccfe84f4373ae3e53a2debd76e12d71cb8db41cbb5264803daf1ffbd75"
+    sha256 cellar: :any_skip_relocation, sonoma:        "bf89b41a6db2dad33020a8e8974fd1c646424667dd6ebde5f9c887ee7b19704d"
+    sha256 cellar: :any_skip_relocation, ventura:       "5193aee05fe54295e29def10d997f9854edcd4455683b011c5ea234a49fa16ec"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f420ac4cca2f1956d3556d74012ced602df25cf1e8cfa6eb0f51366d0e38d132"
   end
 
   depends_on "automake" => :build

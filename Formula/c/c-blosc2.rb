@@ -7,13 +7,14 @@ class CBlosc2 < Formula
   head "https://github.com/Blosc/c-blosc2.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "610dd997a3f8490fd975a97f976d192a21ffc20aa596d6e786b98f554e80e207"
-    sha256 cellar: :any,                 arm64_sonoma:  "2e00493980d0d15f1e99596489a32f707d45cfb2fb781666838fe69071bdebf9"
-    sha256 cellar: :any,                 arm64_ventura: "fc4b4755be8d055179e6726e58958586238b5a7bd4614e040897ab26c4658f83"
-    sha256 cellar: :any,                 sonoma:        "883aa56af9a4790946ef89b5ce8b3acbc8663024644fed7c23c7ed3593d646c3"
-    sha256 cellar: :any,                 ventura:       "aac572cc58f2e7fdbd41d2882f7550185f50eb41a9bec2f9a68dddd28c08e69b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b508e370bbbb8a38db2bf067724b9c66e701bd20bf1e504db8842dca3ef4bb73"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3338fe14f333aeaca457840638e05ab8941d7d442055bba5af9d08a3f3d8e767"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "0c68524388a593fd3e87457dbe4759e7202a8270959a234400151205d758ddb2"
+    sha256 cellar: :any,                 arm64_sonoma:  "feb64e0c4982a97221ab22ffe268a52d002c21e144b9c99f2072fcb3217fb2d0"
+    sha256 cellar: :any,                 arm64_ventura: "252ebef6ad599073329cb5a87dd618e82b4dbd9f9da34590351072fe2d596c02"
+    sha256 cellar: :any,                 sonoma:        "f385ccb06aa2176bd03c6c78f515c680d6f1a8017217a654fe150e58b7a23abf"
+    sha256 cellar: :any,                 ventura:       "84b775ceadcb2045ab46d59f06dcae9179dda3ff9a044e463a180788a24360d5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cd359a6dc272ed15eb5e9dc96af927122a898e071963df46502d6a8ea5c28c4d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e2d2225aae3e2bf46a549107d11efd5fe46d8b539d65025f40317aa1e2a8be3d"
   end
 
   depends_on "cmake" => :build
@@ -29,7 +30,15 @@ class CBlosc2 < Formula
   def install
     ENV.llvm_clang if OS.mac? && DevelopmentTools.clang_build_version <= 1400
 
+    internal_complibs = buildpath.glob("internal-complibs/{lz4,zlib,zstd}-*")
+    odie "Failed to find vendored sources for removal!" if internal_complibs.count != 3
+    rm_r internal_complibs
+
     args = %w[
+      -DBUILD_TESTS=OFF
+      -DBUILD_FUZZERS=OFF
+      -DBUILD_BENCHMARKS=OFF
+      -DBUILD_EXAMPLES=OFF
       -DPREFER_EXTERNAL_LZ4=ON
       -DPREFER_EXTERNAL_ZLIB=ON
       -DPREFER_EXTERNAL_ZSTD=ON

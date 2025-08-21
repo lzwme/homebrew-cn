@@ -3,19 +3,19 @@ class Aerleon < Formula
 
   desc "Generate firewall configs for multiple firewall platforms"
   homepage "https://aerleon.readthedocs.io/en/latest/"
-  url "https://files.pythonhosted.org/packages/ff/b1/5d996fe14f8f36597c1bec2d400166f63d5bf09e4af7876f9707c0f7830c/aerleon-1.10.0.tar.gz"
-  sha256 "e36f2969bdf6c3d2785f68044cdb4007ff171241b7a2dbef0b07b9be212cdcd1"
+  url "https://files.pythonhosted.org/packages/aa/59/bdfba424f08f2942bac1c630653ef8177938421e0cfd00ccaf358744bbed/aerleon-1.11.0.tar.gz"
+  sha256 "51ece6e194b802a21213a66a502e8b8f227b09542571c2b0d42b924750ec2dbb"
   license "Apache-2.0"
   head "https://github.com/aerleon/aerleon.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "9a0ce912cd094bb361a61ad6e74ed7c19588c07a2bbf30e976bc1924dc013a41"
-    sha256 cellar: :any,                 arm64_sonoma:  "40c9f1fa8de67228d7e21c15377c4f6bf6d2718fb91baf9132e171090c1b9502"
-    sha256 cellar: :any,                 arm64_ventura: "aba5f9c3d128f254ffcda39e935c7f28a0c36ae64b5d54ffd73cc1783e4a5cc5"
-    sha256 cellar: :any,                 sonoma:        "09f5bf01a88afa1ef1592079f6f93e80035233d5bfb0677c6f7e20d6171bac68"
-    sha256 cellar: :any,                 ventura:       "b7a17da4ed5ae27d30d3d3a9107e3f343a9e740ec3f807d22fedeb7d90d548d7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b9406804bd917c6d2af99909f2eab61bfc38e101fe32f4334c8fb447c972f580"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4107ba183dc15fc6c92b31f22de1542d6564f6196a7be214fa13ff2b9b99ba5d"
+    sha256 cellar: :any,                 arm64_sequoia: "a10cad27d2a3d178ccc21fc62dd38db82a23cfbfed046e619ecd369d9552fe0e"
+    sha256 cellar: :any,                 arm64_sonoma:  "6518f3f30fca6e177bfa1a5276c3d0312d94b06aa633de27c2caeecb3a161595"
+    sha256 cellar: :any,                 arm64_ventura: "65b1e553caea3550e4c23fe7dff1f8c47945cd9ef0582a69fea35b3684d0fb86"
+    sha256 cellar: :any,                 sonoma:        "ed7505055efae335fcef1e62edb2e93564108670583820ee6692e41499beb545"
+    sha256 cellar: :any,                 ventura:       "faf93ce8fefbd9f989cf636329dd31542c9e62b653db96ecf3d0196c3b52afae"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1cd64bcb7ed9967b2aaf1aa1061d4694ff0ace8ef8fd9bbba2357159589aeadc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0ada6de6f6e2ebb2ca4399c335ad261da8e6c3852b0d8bec18c24ae8af6db851"
   end
 
   depends_on "libyaml"
@@ -39,8 +39,8 @@ class Aerleon < Formula
   end
 
   resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/d1/bc/51647cd02527e87d05cb083ccc402f93e441606ff1f01739a62c8ad09ba5/typing_extensions-4.14.0.tar.gz"
-    sha256 "8676b788e32f02ab42d9e7c61324048ae4c6d844a399eebace3d4979d75ceef4"
+    url "https://files.pythonhosted.org/packages/98/5a/da40306b885cc8c09109dc2e1abd358d5684b1425678151cdaed4731c822/typing_extensions-4.14.1.tar.gz"
+    sha256 "38b39f4aeeab64884ce9f74c94263ef78f3c22467c8724005483154c26648d36"
   end
 
   def install

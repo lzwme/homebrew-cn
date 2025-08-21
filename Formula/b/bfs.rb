@@ -6,14 +6,16 @@ class Bfs < Formula
   license "0BSD"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7aadf6aafb2157e623ea5b9539a4637bb229fd3427618b357213b7d3f4ba54f4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3bafc6e78ea498a85176fef6888a9b7547f5d0fa40e062c720fa64e23441a02c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "29c64ff0d5f0c72fe66c653025681fedde899c784e73e29104374fcdcee59407"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e51eef96a9f30866e61bc75f2e596a382e00a8746b4f9321bc8dcd15b3ee5730"
-    sha256 cellar: :any_skip_relocation, ventura:       "d3d4274b53deee53fca22fb85afba3c1f5c7ebd7ed7a5c61334cdbb78d26664d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "940a33970935154d7cf1c7e12780f74090a7d4385c54e05b06e87aebd6784fc8"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "cc95849810fe6c692160249cc81d38f1a2cd3e0f5d6f033e0bd9342429116e40"
+    sha256 cellar: :any,                 arm64_sonoma:  "dd75c7c57aa181eb29832ee8c1fb6d4530f8509672d9bfb27e19134309507d2d"
+    sha256 cellar: :any,                 arm64_ventura: "5b0fccf7829272c6a2c9d10c7432b70c912fbb5174eeff38a64ddbbb165bdce2"
+    sha256 cellar: :any,                 sonoma:        "4c121ba08ed118750411c1003e9e078420e98a819258816f133b6ca0c83f2473"
+    sha256 cellar: :any,                 ventura:       "50c78795197923422f8f51d5099dd604027a289701f9af875e7f942e6443e9be"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "724d215224af855240f52ca8f0ad7fccc8c1d2dace5f770692f699a8dd91c09f"
   end
 
+  depends_on "pkgconf" => :build
   depends_on "oniguruma"
 
   on_macos do
@@ -38,6 +40,6 @@ class Bfs < Formula
   test do
     touch "foo_file"
     touch "test_file"
-    assert_equal "./test_file", shell_output("#{bin}/bfs -name 'test*' -depth 1").chomp
+    assert_equal "./test_file", shell_output("#{bin}/bfs -name 'test*' -regextype emacs -depth 1").chomp
   end
 end

@@ -54,10 +54,10 @@ class Dotnet < Formula
     depends_on "lttng-ust"
   end
 
-  conflicts_with cask: "dotnet"
+  conflicts_with cask: "dotnet-runtime"
+  conflicts_with cask: "dotnet-runtime@preview"
   conflicts_with cask: "dotnet-sdk"
   conflicts_with cask: "dotnet-sdk@preview"
-  conflicts_with cask: "dotnet@preview"
 
   def install
     if OS.mac?

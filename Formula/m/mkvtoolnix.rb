@@ -53,7 +53,7 @@ class Mkvtoolnix < Formula
     depends_on "gettext"
   end
 
-  conflicts_with cask: "mkvtoolnix"
+  conflicts_with cask: "mkvtoolnix-app"
 
   def install
     # Workaround for Boost 1.89.0. Upstream fix requires regenerating configure.

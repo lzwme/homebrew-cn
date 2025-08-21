@@ -1,8 +1,8 @@
 class AnycableGo < Formula
   desc "WebSocket server with action cable protocol"
   homepage "https://github.com/anycable/anycable"
-  url "https://ghfast.top/https://github.com/anycable/anycable/archive/refs/tags/v1.6.3.tar.gz"
-  sha256 "0a2fe782197d88f3f523ab7d11159e41a9baba322bd673e98512e4cbca095b77"
+  url "https://ghfast.top/https://github.com/anycable/anycable/archive/refs/tags/v1.6.4.tar.gz"
+  sha256 "469d6b3ab79c14532615c47f613211dd0d842183088f62df6ee0e2e01faf5904"
   license "MIT"
   head "https://github.com/anycable/anycable.git", branch: "main"
 
@@ -12,12 +12,12 @@ class AnycableGo < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9a4661e8ad1063679d8a23a854cde0456ad8a1a4c188bdb6a180df6638a84cdd"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9a4661e8ad1063679d8a23a854cde0456ad8a1a4c188bdb6a180df6638a84cdd"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "9a4661e8ad1063679d8a23a854cde0456ad8a1a4c188bdb6a180df6638a84cdd"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8647112f7d8bbd35361f968a9e74802c3bcae1b42ab21e2ef4d4913c044e6427"
-    sha256 cellar: :any_skip_relocation, ventura:       "8647112f7d8bbd35361f968a9e74802c3bcae1b42ab21e2ef4d4913c044e6427"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f43611a02cc809ab053045504062115ec22bcb58e2a751a1c8782159ecbf52e7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ce371d32227cf5ff87786fc25b581e12d738e8496788526e7421fae3deb49de9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ce371d32227cf5ff87786fc25b581e12d738e8496788526e7421fae3deb49de9"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "ce371d32227cf5ff87786fc25b581e12d738e8496788526e7421fae3deb49de9"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a3be49e45d329b02fa55de39adaef931813c5b7785458b8901698ea01c4ecb8c"
+    sha256 cellar: :any_skip_relocation, ventura:       "a3be49e45d329b02fa55de39adaef931813c5b7785458b8901698ea01c4ecb8c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0baff7cd89887625f2f935dd0894ce8605d5b11e37e1349cf5eed3abe29338f9"
   end
 
   depends_on "go" => :build

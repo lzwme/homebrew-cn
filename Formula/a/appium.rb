@@ -1,19 +1,19 @@
 class Appium < Formula
   desc "Automation for Apps"
   homepage "https://appium.io/"
-  url "https://registry.npmjs.org/appium/-/appium-3.0.0.tgz"
-  sha256 "88c3d53813211f676b59418678bde23375bc33bba79cb6569138b47474d09f39"
+  url "https://registry.npmjs.org/appium/-/appium-3.0.1.tgz"
+  sha256 "6c2e667da0c624a3ae9ed980b5411604384317ac2e1734911f322acad8f043af"
   license "Apache-2.0"
   head "https://github.com/appium/appium.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "c6c03b079472dfff74cb587160a1807e7f8505f733b5f085ec485f26f10f40b9"
-    sha256 cellar: :any,                 arm64_sonoma:  "c6c03b079472dfff74cb587160a1807e7f8505f733b5f085ec485f26f10f40b9"
-    sha256 cellar: :any,                 arm64_ventura: "c6c03b079472dfff74cb587160a1807e7f8505f733b5f085ec485f26f10f40b9"
-    sha256 cellar: :any,                 sonoma:        "7260bfb1d64e0029204211a633803a27a2c32e7c8d87570e746bcbfaa2ddcaaf"
-    sha256 cellar: :any,                 ventura:       "7260bfb1d64e0029204211a633803a27a2c32e7c8d87570e746bcbfaa2ddcaaf"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8e83a8fb5ef40e265f32dc5434a56a76c0f2a18e6324286ae0ed8f59b38dab6f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eddd5c5d9b430049f63d4ba992a6f5c1d1f53a277c79cdd5d47b881c9e38f8ab"
+    sha256 cellar: :any,                 arm64_sequoia: "e44dba22af0caf0a4dfc509fce87e554ce58ce26e9de67f22acb9f01bad4a2e1"
+    sha256 cellar: :any,                 arm64_sonoma:  "e44dba22af0caf0a4dfc509fce87e554ce58ce26e9de67f22acb9f01bad4a2e1"
+    sha256 cellar: :any,                 arm64_ventura: "e44dba22af0caf0a4dfc509fce87e554ce58ce26e9de67f22acb9f01bad4a2e1"
+    sha256 cellar: :any,                 sonoma:        "e129958889df92a0d4c45b84143fbba96c583902768ea4d01cfb83d30f0b05da"
+    sha256 cellar: :any,                 ventura:       "e129958889df92a0d4c45b84143fbba96c583902768ea4d01cfb83d30f0b05da"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "94ae80af6ac99385d4915feee38a68ebeccc74e52fb9e77f9c730bb58a36cd77"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "544979a67c964971614abf6a9b87b2e0ad6444886fa2ede125b22f811acdb699"
   end
 
   depends_on "node"

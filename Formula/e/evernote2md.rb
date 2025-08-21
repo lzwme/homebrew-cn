@@ -1,20 +1,18 @@
 class Evernote2md < Formula
   desc "Convert Evernote .enex file to Markdown"
   homepage "https://github.com/wormi4ok/evernote2md"
-  url "https://ghfast.top/https://github.com/wormi4ok/evernote2md/archive/refs/tags/v0.22.0.tar.gz"
-  sha256 "8de1e94bec536a65f1fa07ef34e0c4f7a0f88e31c87923a4d12558934a69aeab"
+  url "https://ghfast.top/https://github.com/wormi4ok/evernote2md/archive/refs/tags/v0.22.1.tar.gz"
+  sha256 "1c9f8b6efdc6374fe493be39890d75788cd6e341cd1b0e9abec972ac8d9c6cbf"
   license "MIT"
   head "https://github.com/wormi4ok/evernote2md.git", branch: "master"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1f558642a750e7e44b872d97f8325c99cb3facec262d208202c172de0015fb2b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1f558642a750e7e44b872d97f8325c99cb3facec262d208202c172de0015fb2b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "1f558642a750e7e44b872d97f8325c99cb3facec262d208202c172de0015fb2b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "dce72d4baa0f3f2418659d1cc14e0113c3199ba5283cf2061792b3495d3e6f4c"
-    sha256 cellar: :any_skip_relocation, ventura:       "dce72d4baa0f3f2418659d1cc14e0113c3199ba5283cf2061792b3495d3e6f4c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c45f0edc9169599503c9d069ac2ca5ff41d2e7a358488f7f58aad6f33cdd1f56"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4695d5deaf82ebc326e8fd8352df78e1bd0c152ee2019a15fc05b222aea70615"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4695d5deaf82ebc326e8fd8352df78e1bd0c152ee2019a15fc05b222aea70615"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "4695d5deaf82ebc326e8fd8352df78e1bd0c152ee2019a15fc05b222aea70615"
+    sha256 cellar: :any_skip_relocation, sonoma:        "478cce9d01b44842dd82b25fd1660e3447f1de3e85d094c2f54012a197b41c0a"
+    sha256 cellar: :any_skip_relocation, ventura:       "478cce9d01b44842dd82b25fd1660e3447f1de3e85d094c2f54012a197b41c0a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4a94b33b8d7f6b9bd261156e5a3d417d77bbc0dcf53e18f857984f187a610d8f"
   end
 
   depends_on "go" => :build

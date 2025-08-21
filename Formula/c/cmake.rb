@@ -33,7 +33,7 @@ class Cmake < Formula
     depends_on "openssl@3"
   end
 
-  conflicts_with cask: "cmake"
+  conflicts_with cask: "cmake-app"
 
   # The completions were removed because of problems with system bash
 

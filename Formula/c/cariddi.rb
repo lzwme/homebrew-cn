@@ -1,18 +1,18 @@
 class Cariddi < Formula
   desc "Scan for endpoints, secrets, API keys, file extensions, tokens and more"
   homepage "https://github.com/edoardottt/cariddi"
-  url "https://ghfast.top/https://github.com/edoardottt/cariddi/archive/refs/tags/v1.4.1.tar.gz"
-  sha256 "d5870e294b7d9831fd95c19592bc5e5b615a6e07e9bba1139e288b42ddf5005f"
+  url "https://ghfast.top/https://github.com/edoardottt/cariddi/archive/refs/tags/v1.4.2.tar.gz"
+  sha256 "a73ad142a4456ab238556d9df594470902bf799826dedc9ff074c9edb5c72e8d"
   license "GPL-3.0-or-later"
   head "https://github.com/edoardottt/cariddi.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "555e2c1c4a8822693a892cd12864a14287d573c0763d9ce1118bdfbb5dededd8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "555e2c1c4a8822693a892cd12864a14287d573c0763d9ce1118bdfbb5dededd8"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "555e2c1c4a8822693a892cd12864a14287d573c0763d9ce1118bdfbb5dededd8"
-    sha256 cellar: :any_skip_relocation, sonoma:        "14b27df41f87d2aeae0921217024e697a8393ff819aca20a3398f5cc6c20f7f0"
-    sha256 cellar: :any_skip_relocation, ventura:       "14b27df41f87d2aeae0921217024e697a8393ff819aca20a3398f5cc6c20f7f0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9c6f84faaaf6a4c14858e01f31d05e27436aa3745d64ebfb544fa9eed54e160d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "66a62b9a30d4a2c097af0a9d4e09d799a2852d3050cdb20405568a3cee21feca"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "66a62b9a30d4a2c097af0a9d4e09d799a2852d3050cdb20405568a3cee21feca"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "66a62b9a30d4a2c097af0a9d4e09d799a2852d3050cdb20405568a3cee21feca"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e51c6c38289df53c451192e0a23221746a1d67c6cd2ca0aeec490307513ce406"
+    sha256 cellar: :any_skip_relocation, ventura:       "e51c6c38289df53c451192e0a23221746a1d67c6cd2ca0aeec490307513ce406"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b4da0a413667289c3fd32765d92e78719d8a78c7ced6bf662b88a8de99754dae"
   end
 
   depends_on "go" => :build

@@ -1,8 +1,6 @@
 class Emscripten < Formula
   desc "LLVM bytecode to JavaScript compiler"
   homepage "https://emscripten.org/"
-  url "https://ghfast.top/https://github.com/emscripten-core/emscripten/archive/refs/tags/4.0.13.tar.gz"
-  sha256 "05501a883b12379bd51bf824ddde1dbb457cb270bc0dd02520377e7b636a30f2"
   license all_of: [
     "Apache-2.0", # binaryen
     "Apache-2.0" => { with: "LLVM-exception" }, # llvm
@@ -10,19 +8,31 @@ class Emscripten < Formula
   ]
   head "https://github.com/emscripten-core/emscripten.git", branch: "main"
 
+  stable do
+    url "https://ghfast.top/https://github.com/emscripten-core/emscripten/archive/refs/tags/4.0.13.tar.gz"
+    sha256 "05501a883b12379bd51bf824ddde1dbb457cb270bc0dd02520377e7b636a30f2"
+
+    # Backport commit to restore group/world executable bit
+    patch do
+      url "https://github.com/emscripten-core/emscripten/commit/2cac6027647e0e4ed793ac1286cc81ccb1c1f7f3.patch?full_index=1"
+      sha256 "3a9eb02524cdf3be35cbf8205fd04d792cef8cfbc85b017301dc65da0788a247"
+    end
+  end
+
   livecheck do
     url :stable
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "01adf988dbf81e8dd05064794b68e3516b8cb42008d38915cce1cb29280f87f4"
-    sha256 cellar: :any,                 arm64_sonoma:  "deac3a8f719f9ebd34cd630a036d25dbe63a68cac4e4d100c91da7901d32c8c9"
-    sha256 cellar: :any,                 arm64_ventura: "148a5b0c6e5f97630e729fd7fcb6a30cd872f8e8c9d56c037e3ae6ba89ab7509"
-    sha256 cellar: :any,                 sonoma:        "003d785030c3b0049930df74982118571ff7c18d3ffa85f6efb1e7db62a1fe79"
-    sha256 cellar: :any,                 ventura:       "74198d66ce8d20ecd245610be311d927af74eed6e0f55091d218c6c3283c0765"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9e2381da01cc955954d3ca50c345b5fc6482e137f2f52a9bb10b391d624290c5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2454b1ac1fa70ac432a96dfc4de0b6fa0742f776f78a4a26ae7208af5881c911"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "223d086cff5aadbc101c21de3972c42bb232bf86786731390026a11a41bb81b5"
+    sha256 cellar: :any,                 arm64_sonoma:  "e21e7b7406795befb4875b9d58d0e753028d008779d2f887b3dca4452695df76"
+    sha256 cellar: :any,                 arm64_ventura: "8bf4a5752325353aaf4f54510a6ba47427be9d9557fa1aff23769fe67758200b"
+    sha256 cellar: :any,                 sonoma:        "61f756de6329e8c7cb4e460efc6044bb453d6ccedfd0e6c300925b1a160ee3de"
+    sha256 cellar: :any,                 ventura:       "74946eca531c3a92fdf430c1606a51a478e77f196ea20abcf10bcc510ed20f36"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a771dfb6a2413ca028fddbedd2c0427c00c5871e335e8cd478722845953c5791"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "114fe23946f18ec2de49925ff4c35f1959817ec1ce8608ad231075a243c1ac5e"
   end
 
   depends_on "cmake" => :build
@@ -110,6 +120,8 @@ class Emscripten < Formula
   end
 
   def install
+    system "tools/maint/create_entry_points.py"
+
     # Avoid hardcoding the executables we pass to `write_env_script` below.
     # Prefer executables without `.py` extensions, but include those with `.py`
     # extensions if there isn't a matching executable without the `.py` extension.
@@ -230,12 +242,6 @@ class Emscripten < Formula
 
     emscripts.each do |emscript|
       (bin/emscript).write_env_script libexec/emscript, emscript_env
-
-      next if emscript.extname != ".py"
-      next if emscripts.include?(emscript.basename(".py"))
-
-      bin.install_symlink emscript => emscript.basename(".py").to_s
-      libexec.install_symlink emscript => emscript.basename(".py").to_s
     end
 
     # Replace universal binaries with their native slices

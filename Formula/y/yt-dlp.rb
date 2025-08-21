@@ -3,18 +3,18 @@ class YtDlp < Formula
 
   desc "Feature-rich command-line audio/video downloader"
   homepage "https://github.com/yt-dlp/yt-dlp"
-  url "https://files.pythonhosted.org/packages/80/72/de4a7f9bbfef886c7f0790b8246585310f155e4a6589dd38d846efa932e9/yt_dlp-2025.8.11.tar.gz"
-  sha256 "dc7c120a367fe55e0f711613dc80ea29d3a4e0ed8d66104cebfbe3d36e81fdfc"
+  url "https://files.pythonhosted.org/packages/c8/af/d3c81af35ae2aef148d0ff78f001650ce5a7ca73fbd3b271eb9aab4c56ee/yt_dlp-2025.8.20.tar.gz"
+  sha256 "da873bcf424177ab5c3b701fa94ea4cdac17bf3aec5ef37b91f530c90def7bcf"
   license "Unlicense"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1a08f5b3b0ece33536dedeb7ba039dce6fe04bcaca9133de700c21703b4fac8a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "188bca9e78ade7063881e8fa41f23caf218f5bd06fec786cce7d283172596f20"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "d63e24acaabff8d94a0e51578282d89d1ff0f4a0a28593a1e8a11b5dc853f773"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ff6401dfb0d084675facd8046c65587d29a199f1133f546d1260e7f92af01e78"
-    sha256 cellar: :any_skip_relocation, ventura:       "fa3758b9ba20150247cf8fbe75a484a55787971418786b0ecbd72d4c6ee2469e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9e5f541bf90290e54ef733c8e5438b16e6e81c239186023ce9e12cf553fe5619"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "308102dc3f2a5aab84cd449b93d6484c9e6349abc2aa15613c95636d5e9637f1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d1ede5732315e4e2d4dc16e3bd96b1f5a1dc34d76fa1dda7d5496a29192df476"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "510955c724de4517408030bf4db744c182a26997bbe015fc339bb6502e2dde66"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "7586a078af4d126d4ae91a03f2ae8079e418fbe28047fcbb0f87c21343a8c079"
+    sha256 cellar: :any_skip_relocation, sonoma:        "478845892c68c0ae78de5e5338754e444c329e95d0b783a2341eb1b2c43ca647"
+    sha256 cellar: :any_skip_relocation, ventura:       "bd68c632078add081c747af8d9473a0c2ba419f32a5e32e85f99ccd828638e5d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cb672d0f072dbf46c3f56fe455f91208123caf917f9f57064e8fb6edb661eedc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "62c24cf4aa326d53e818bfe51235f66340473497442fea3ea675d4392cffd146"
   end
 
   head do
@@ -56,8 +56,8 @@ class YtDlp < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/e1/0a/929373653770d8a0d7ea76c37de6e41f11eb07559b103b1c02cafb3f7cf8/requests-2.32.4.tar.gz"
-    sha256 "27d0316682c8a29834d3264820024b62a36942083d52caf2f14c0591336d3422"
+    url "https://files.pythonhosted.org/packages/c9/74/b3ff8e6c8446842c3f5c837e9c3dfcfe2018ea6ecef224c710c85ef728f4/requests-2.32.5.tar.gz"
+    sha256 "dbba0bac56e100853db0ea71b82b4dfd5fe2bf6d3754a8893c3af500cec7d7cf"
   end
 
   resource "urllib3" do

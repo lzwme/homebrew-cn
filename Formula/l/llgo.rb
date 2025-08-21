@@ -36,7 +36,8 @@ class Llgo < Formula
   end
 
   def find_dep(name)
-    deps.map(&:to_formula).find { |f| f.name.match?(/^#{name}(@\d+)?$/) }
+    deps.find { |f| f.name.match?(/^#{name}(@\d+(\.\d+)*)?$/) }
+        .to_formula
   end
 
   def install
@@ -63,7 +64,8 @@ class Llgo < Formula
 
     libexec.install "LICENSE", "README.md", "go.mod", "go.sum", "runtime"
 
-    path_deps = %w[lld llvm go@1.24 pkgconf].map { |name| find_dep(name).opt_bin }
+    path_deps = %w[lld go pkgconf].map { |name| find_dep(name).opt_bin }
+    path_deps << llvm.opt_bin
     script_env = { PATH: "#{path_deps.join(":")}:$PATH" }
 
     if OS.linux?
@@ -81,7 +83,7 @@ class Llgo < Formula
   end
 
   test do
-    go = find_dep("go@1.24")
+    go = find_dep("go")
     goos = shell_output("#{go.opt_bin}/go env GOOS").chomp
     goarch = shell_output("#{go.opt_bin}/go env GOARCH").chomp
     assert_equal "llgo v#{version} #{goos}/#{goarch}", shell_output("#{bin}/llgo version").chomp

@@ -50,7 +50,7 @@ class Wireshark < Formula
     depends_on "libgpg-error"
   end
 
-  conflicts_with cask: "wireshark"
+  conflicts_with cask: "wireshark-app"
 
   def install
     args = %W[

@@ -2,8 +2,8 @@ class Ollama < Formula
   desc "Create, run, and share large language models (LLMs)"
   homepage "https://ollama.com/"
   url "https://github.com/ollama/ollama.git",
-      tag:      "v0.11.4",
-      revision: "f2e9c9aff5f59b21a5d9a9668408732b3de01e20"
+      tag:      "v0.11.5",
+      revision: "f804e8a46005b36e6f14577f4226cf2046abce12"
   license "MIT"
   head "https://github.com/ollama/ollama.git", branch: "main"
 
@@ -16,19 +16,19 @@ class Ollama < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0a9b0c70d8be6296686842eab6f4021e67bd5bc76d6949c9c9a452da15fc0698"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5ff32c98cf91d7a73c2ce2fb9823eb268d5cdf61bbe9c6bec58cd4ccb172929c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "82e4ebf9a66d47d05505c76ff49e474b624540b70e90c79a6230d62b7512da34"
-    sha256 cellar: :any_skip_relocation, sonoma:        "81ad5b344eaaa7b0552d36bb032e4abb84441a2729e687f085cda83215a3a248"
-    sha256 cellar: :any_skip_relocation, ventura:       "c069246fb513bdb3c6648b10cd17ed922bfb28d4c562407028884b1b1fb5761e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0edb2d3ac9d48ccee851ccf99af2b0c4b97c21e0df9fb6b7bd9182036b5a61c5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5564d29a9e1e691e523564d86b25e370d94b3b14c0095b27d58cde7f627a374d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0d12243ee7c2b66fd331adc967d6bbc1b9d05ebc6d84fb28af211c10cc2e9b97"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3cbc6cd2a6b4dcfa8060289c94e209a386ecf13fe7488f8dea51cf01b887fd0a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "644d3c1a7190bda2106a7c989de1f2f9b382e5b6e4486195213850228904dfa7"
+    sha256 cellar: :any_skip_relocation, sonoma:        "505f639960933919e6ee013c358ba0f1de024506cbe00cf4f41c6d45d48cfbb7"
+    sha256 cellar: :any_skip_relocation, ventura:       "2f71289d33f49d2bc3543a98fbbcaee4128bb0d0a268aacac8a96ebd1a400e42"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ec0625de91848ba44a1949b8f1496e6e97074c606f645d8bacf51a7bfde02666"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "925ab3cc0fa41e6948a507242628c102ea999b205f1c07a4f434af872905b8a1"
   end
 
   depends_on "cmake" => :build
   depends_on "go" => :build
 
-  conflicts_with cask: "ollama"
+  conflicts_with cask: "ollama-app"
 
   def install
     # Silence tens of thousands of SDK warnings

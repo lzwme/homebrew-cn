@@ -7,16 +7,17 @@ class Duckdb < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "2061ae10a4cd05587b37fec9a7abf721763b7ce20f15744505e86745740ed140"
-    sha256 cellar: :any,                 arm64_sonoma:  "be2964118af95274b2bbebe613ba22fdf48dbd82b8a01e6f824e840eeed0904d"
-    sha256 cellar: :any,                 arm64_ventura: "e9154de3fa792c47c77544e63d338dee9a967856463fca7fee9f21a050fdb1f3"
-    sha256 cellar: :any,                 sonoma:        "314f8f1abd862fb47ce2284dd845281a41e1b01a0cfe9d6c5a8f4a23b9debec1"
-    sha256 cellar: :any,                 ventura:       "c1b6b728de521d1969de1d64d27f02036bb8d221ba8ed4199fe6c96623af41e6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7bb8a13d4919cc496fd219a6b1c8de0d4718d3d58296fb83c5684e6423d2438d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "797a43be18afd83479b4d97589b68a32307da540de046cf5edb675c328266b5d"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "c9532539855c59c223a90ee45476aa0dbe5cc2366c3d7d01bf909b2be0a0cf7a"
+    sha256 cellar: :any,                 arm64_sonoma:  "93fdfccdcb39f9411940712851867cf8f580fc1bebd0d2d46f18046a9c297060"
+    sha256 cellar: :any,                 arm64_ventura: "22ea67f016a8eaad512ac37c79d52c2b87223a47543c77bcbedd8b3e034b1c81"
+    sha256 cellar: :any,                 sonoma:        "2bbb88d67337ffb8d639df18694bd98b881a32a83f4dc9cd242936386f48b3fb"
+    sha256 cellar: :any,                 ventura:       "fc246c9c62101e2f336a46a1903d743ba06fd2003e0738ccbbb81cf962a5d39e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2aa63e022242d91f5653264d93d8258096b9e7a05aa9cae9fcb87abfdc7bd6b8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8a8b0732026466e3750117f7efdfe8c8c8787220741072cd65c16239a37afece"
   end
 
-  depends_on "cmake" => :build
+  depends_on "cmake" => [:build, :test]
   uses_from_macos "python" => :build
 
   def install
@@ -33,8 +34,6 @@ class Duckdb < Formula
     # The cli tool was renamed (0.1.8 -> 0.1.9)
     # Create a symlink to not break compatibility
     bin.install_symlink bin/"duckdb" => "duckdb_cli"
-
-    rm lib.glob("*.a")
   end
 
   test do
@@ -54,5 +53,32 @@ class Duckdb < Formula
     EOS
 
     assert_equal expected_output, pipe_output(bin/"duckdb_cli", sql_commands)
+
+    (testpath/"test.cpp").write <<~CPP
+      #include "duckdb.hpp"
+      #include <iostream>
+      using namespace duckdb;
+      int main() {
+        DuckDB db(nullptr);
+        Connection con(db);
+        con.Query("CREATE TABLE weather (temp INTEGER)");
+        con.Query("INSERT INTO weather (temp) VALUES (40), (45), (50)");
+        auto result = con.Query("SELECT AVG(temp) FROM weather");
+        std::cout << result->Fetch()->GetValue(0, 0).ToString();
+      }
+    CPP
+
+    (testpath/"CMakeLists.txt").write <<~CMAKE
+      cmake_minimum_required(VERSION 3.10)
+      project(test_duckdb)
+      set(CMAKE_CXX_STANDARD 11)
+      find_package(DuckDB REQUIRED)
+      add_executable(test test.cpp)
+      target_link_libraries(test duckdb)
+    CMAKE
+
+    system "cmake", "-S", testpath, "-B", testpath/"build"
+    system "cmake", "--build", testpath/"build"
+    assert_equal "45.0", shell_output(testpath/"build"/"test")
   end
 end

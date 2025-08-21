@@ -16,7 +16,7 @@ class Stanc3 < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "92fe8afc06fb2059c4ffd178c2a67eba0b305a60a566ebb80f4fbbce090504ca"
   end
 
-  depends_on "ocaml" => :build
+  depends_on "ocaml@4" => :build # FIXME: pinned ppx_deriving.5.2.1 not compatible with OCaml >= 5.3
   depends_on "opam" => :build
 
   uses_from_macos "unzip" => :build

@@ -1,9 +1,9 @@
 class OpensearchDashboards < Formula
   desc "Open source visualization dashboards for OpenSearch"
-  homepage "https://opensearch.org/docs/dashboards/index/"
+  homepage "https://docs.opensearch.org/latest/dashboards/"
   url "https://github.com/opensearch-project/OpenSearch-Dashboards.git",
-      tag:      "3.1.0",
-      revision: "1feb86934e7f2d5fae58baebf1b98c5c0825bc3f"
+      tag:      "3.2.0",
+      revision: "9d91d4639ea0e0cbb909ccfda66de3288d0f02d7"
   license "Apache-2.0"
 
   livecheck do
@@ -12,13 +12,13 @@ class OpensearchDashboards < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cb0fcdde72e24e76dd676077a64875e9dde50091399cecbde3e3df2c68bd918d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cb0fcdde72e24e76dd676077a64875e9dde50091399cecbde3e3df2c68bd918d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "cb0fcdde72e24e76dd676077a64875e9dde50091399cecbde3e3df2c68bd918d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "19f06681277c94e58c55a50d289a5434d7dc7975dca38b1f57d07152f7d8db80"
-    sha256 cellar: :any_skip_relocation, ventura:       "19f06681277c94e58c55a50d289a5434d7dc7975dca38b1f57d07152f7d8db80"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fe2a3710e463941979bb74cc4e61ccc77462e353d0f130e7729f8aca8408b07a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e40ee780ce2d4bfaa91cef6cedbfae558695354f60846dfa045d338448fc5aa8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "06ef29ddb7b2fae29aea89491c495a359db9cda91ae82b4c5d3be1f5d77cedef"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5659412cb97b6d9a6e9f9906c85b682bf33220cd017430589decc91eb8ed8e9d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "910cdadddfa28a1491bc6ea9fcc4680b47c4cbe5faf9db83af7ccc54021c351e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "1150e0e52620adffafa7e393afd2be5874b7ad2eca7fd328f20f831d245a65e4"
+    sha256 cellar: :any_skip_relocation, ventura:       "97d4d7f82fac9fc3f9af0c1e3e7410a3d2593ba51d77f0b9f0754c9afa2fbed8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fe915d04e7505a67722abd8cf89156462a9f63c402c1b462ccb79fecd33e8db8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "af36f450b282678a5c61e29a1c55c1a8b6fe9fc2657af56d5418d295d997b7d9"
   end
 
   depends_on "yarn" => :build

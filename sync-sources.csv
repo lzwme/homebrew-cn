@@ -3771,6 +3771,7 @@ Homebrew-homebrew-core/Formula/lib/libcutl.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libcyaml.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libdaemon.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libdap.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/lib/libdatrie.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libdazzle.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libdbi.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libdbusmenu.rb, Homebrew/homebrew-core, 0
@@ -11642,6 +11643,7 @@ Homebrew-homebrew-cask/Casks/font/font-s/font-stylish.rb, Homebrew/homebrew-cask
 Homebrew-homebrew-cask/Casks/font/font-s/font-sudo.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-s/font-sue-ellen-francisco.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-s/font-suez-one.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/font/font-s/font-suit.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-s/font-sulphur-point.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-s/font-sumana.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-s/font-sunflower.rb, Homebrew/homebrew-cask, 0
@@ -15067,6 +15069,7 @@ Homebrew-homebrew-cask/Casks/v/vox.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/v/voxql.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/v/vpn-enabler.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/v/vpn-tracker-365.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/v/vrampro.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/v/vrew.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/v/vscodium.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/v/vscodium@insiders.rb, Homebrew/homebrew-cask, 1

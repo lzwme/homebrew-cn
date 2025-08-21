@@ -3,8 +3,8 @@ class Mesa < Formula
 
   desc "Graphics Library"
   homepage "https://www.mesa3d.org/"
-  url "https://archive.mesa3d.org/mesa-25.2.0.tar.xz"
-  sha256 "7c726b21c074d14d31d253d638b741422f3c0a497ce7f1b4aaaa917d10bd8d4f"
+  url "https://archive.mesa3d.org/mesa-25.2.1.tar.xz"
+  sha256 "c124372189d35f48e049ee503029171c68962c580971cb86d968a6771c965ba4"
   license all_of: [
     "MIT",
     "Apache-2.0", # include/{EGL,GLES*,vk_video,vulkan}, src/egl/generate/egl.xml, src/mapi/glapi/registry/gl.xml
@@ -23,13 +23,13 @@ class Mesa < Formula
   head "https://gitlab.freedesktop.org/mesa/mesa.git", branch: "main"
 
   bottle do
-    sha256 arm64_sequoia: "bffd8abfa86f09df8df4399880aca7f58a2ed473dbf7aa1f582f960c9e78fd70"
-    sha256 arm64_sonoma:  "13bfee4104a8a08cc13adff5550553dc5d296f31f2afa4cddcc11eba7d8e934f"
-    sha256 arm64_ventura: "d9419cc87981efa6b83d57b75ef6bab8b3ef6b445716645c9f3f2e05f95235bd"
-    sha256 sonoma:        "bf3f0585f07c345f32ac6cd540688240432a6557a25033908130425b1a3d8528"
-    sha256 ventura:       "9486bf2a88793e79d4cbcb7b458da6032bd210ddec452584c73d254b96894715"
-    sha256 arm64_linux:   "627564ca1ea98eb47540eb43038548aa2b344e5c29e14a4e8e85d84d7a430792"
-    sha256 x86_64_linux:  "98abe760e83460e40337490ef88e03744c291c036602f415bbb08ae8a53677fb"
+    sha256 arm64_sequoia: "942831cac5776029a9fe3477e6e482d7ba75cb1e396967630774f26de731b8db"
+    sha256 arm64_sonoma:  "baeb4aff94389aa60efea32cd2d0bc09cead36a07d114f4802148fdb91b29c47"
+    sha256 arm64_ventura: "cc853fb093fac277d04b3f3be70ef9b5f6c79250df2f6aafafbb7106c2f1697d"
+    sha256 sonoma:        "85af72975d668dec712645228e40ade31a531a43e76cd2a6b256ec310e50a2cc"
+    sha256 ventura:       "3b96f1f7cd5fa506a23ff505f97b4476866ad585bb2957ef09b3d36e483b9ab0"
+    sha256 arm64_linux:   "2aef1642b5878efecbd925f1f2e6f95b6da9036ee59d07498346c6d5b51a7a42"
+    sha256 x86_64_linux:  "8c3c073247918d159a09dcabe887ea44ad38716603b604d8655b8fccf0695bc0"
   end
 
   depends_on "bindgen" => :build
@@ -158,7 +158,6 @@ class Mesa < Formula
         -Dgles1=enabled
         -Dgles2=enabled
         -Dglx=dri
-        -Dintel-clc=enabled
         -Dintel-rt=enabled
         -Dlmsensors=enabled
         -Dmicrosoft-clc=disabled

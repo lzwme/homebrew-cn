@@ -5,8 +5,8 @@ class Snapcraft < Formula
   homepage "https://snapcraft.io/"
   # Use git checkout so setuptools-scm and update-python-resources works
   url "https://github.com/canonical/snapcraft.git",
-      tag:      "8.10.2",
-      revision: "3927cdf0108fd0169c682b1016eef779b0d800c2"
+      tag:      "8.11.1",
+      revision: "4a76630698678f9617ccc137a4e6ff93e4eb3e89"
   license "GPL-3.0-only"
   head "https://github.com/canonical/snapcraft.git", branch: "main"
 
@@ -16,12 +16,12 @@ class Snapcraft < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "3d9418928669d205e225579a9597d3763d0619adff61a0ef6122dd4503b28a82"
-    sha256 cellar: :any,                 arm64_sonoma:  "ae483eb6f442c8bd1f9617c7085019616faad4d044f5fe6876701e5876871d52"
-    sha256 cellar: :any,                 arm64_ventura: "ef75ece23dd6659c18b6bcc2eabae3119d1e2aed449f7e97749633f18b347016"
-    sha256 cellar: :any,                 sonoma:        "118a381a5e817f26735d2b46adffd38a8cfbb06b71fd0a6e5e995e08d3d51f48"
-    sha256 cellar: :any,                 ventura:       "6e6646596743f74cc20220f56d0b6a310fb94d2b6cc4ec35abb294d06f347c98"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "230dc616b4dd45eeee26cbd5a30a89059ff928913f7e245c340661288024bfe9"
+    sha256 cellar: :any,                 arm64_sequoia: "15ea19f8ebbaad074e3fe181365c8200ca44b61152bc37efaa4c47767ab80b79"
+    sha256 cellar: :any,                 arm64_sonoma:  "f4f1af6b7f4b607c6dc3643b7d9477a8502ab659ad612fcf1c3063e9d80b04de"
+    sha256 cellar: :any,                 arm64_ventura: "584ffd4bda6af6a633aa73304b68e80d2a0140126a5fa9bb4b4ad3561f6972fa"
+    sha256 cellar: :any,                 sonoma:        "dfc7d0e1992dea6c9c645cf8c67e8fbd3466e66b8bd46e77c24cd0c0f44ddd61"
+    sha256 cellar: :any,                 ventura:       "c9cd8ee08d1e4be2bf833fe506b15a5f365f88ff7680e3b74bc250f9a3f4494d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c11c0cb74c1d0feea8a817bb9212c65b9ff595202269d438d4ebb9a780ac5d96"
   end
 
   depends_on "rust" => :build # for pydantic_core
@@ -77,14 +77,9 @@ class Snapcraft < Formula
     sha256 "476e9f52917282f464739241b4bcaf5ebbfba9a7a68d9af8f875225feac0e1b5"
   end
 
-  resource "chardet" do
-    url "https://files.pythonhosted.org/packages/f3/0d/f7b6ab21ec75897ed80c17d79b15951a719226b9fababf1e40ea74d69079/chardet-5.2.0.tar.gz"
-    sha256 "1b3b6ff479a8c414bc3fa2c0852995695c4a026dcd6d0633b2dd092ca39c1cf7"
-  end
-
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/e4/33/89c2ced2b67d1c2a61c19c6751aa8902d46ce3dacb23600a283619f5a12d/charset_normalizer-3.4.2.tar.gz"
-    sha256 "5baececa9ecba31eff645232d59845c07aa030f0c81ee70184a90d35099a0e63"
+    url "https://files.pythonhosted.org/packages/83/2d/5fd176ceb9b2fc619e63405525573493ca23441330fcdaee6bef9460e924/charset_normalizer-3.4.3.tar.gz"
+    sha256 "6fce4b8500244f6fcb71465d4a4930d132ba9ab8e71a7859e6a5d59851068d14"
   end
 
   resource "click" do
@@ -93,13 +88,13 @@ class Snapcraft < Formula
   end
 
   resource "craft-application" do
-    url "https://files.pythonhosted.org/packages/4e/52/a10254329bea99df8f6bda74d6d9be4c49d7b91690d5f600d2aabffd2f02/craft_application-5.6.3.tar.gz"
-    sha256 "27a5e9cff4b02bddea03e13e400bd1e9565db4c60eff06b86303253fca7b86a5"
+    url "https://files.pythonhosted.org/packages/e9/b3/2efb81f3bef0ac82d6a8ab675a39e0ac2f657681ef5e785488d44a964fd8/craft_application-5.6.5.tar.gz"
+    sha256 "bfbcd93d1b5475984cbad513283c10f7f6e3f2665ab77272f501a32e3deb6ebd"
   end
 
   resource "craft-archives" do
-    url "https://files.pythonhosted.org/packages/a0/b2/40c6f0fc84c87be9fe93aafbc0e98d0d5529aad351e9261fbab9ed1955fa/craft_archives-2.1.0.tar.gz"
-    sha256 "1796ddbdd841443884b4820a9d95ea96639ae8d776c4f0c4a287346e2ccc8e94"
+    url "https://files.pythonhosted.org/packages/41/4c/63ce5d6c91b4b269f862460392bd70fd0594f7902641b5d0bc82aa3f1c41/craft_archives-2.2.0.tar.gz"
+    sha256 "0bfd6dc3c2710605b97292df952032af24bf94ebf2f284f355d70f1bb2e3fe20"
   end
 
   resource "craft-cli" do
@@ -183,8 +178,8 @@ class Snapcraft < Formula
   end
 
   resource "jaraco-functools" do
-    url "https://files.pythonhosted.org/packages/49/1c/831faaaa0f090b711c355c6d8b2abf277c72133aab472b6932b03322294c/jaraco_functools-4.2.1.tar.gz"
-    sha256 "be634abfccabce56fa3053f8c7ebe37b682683a4ee7793670ced17bab0087353"
+    url "https://files.pythonhosted.org/packages/f7/ed/1aa2d585304ec07262e1a83a9889880701079dde796ac7b1d1826f40c63d/jaraco_functools-4.3.0.tar.gz"
+    sha256 "cfd13ad0dd2c47a3600b439ef72d8615d482cedcff1632930d6f28924d92f294"
   end
 
   resource "jeepney" do
@@ -278,8 +273,8 @@ class Snapcraft < Formula
   end
 
   resource "protobuf" do
-    url "https://files.pythonhosted.org/packages/52/f3/b9655a711b32c19720253f6f06326faf90580834e2e83f840472d752bc8b/protobuf-6.31.1.tar.gz"
-    sha256 "d8cac4c982f0b957a4dc73a80e2ea24fab08e679c0de9deb835f4a12d69aca9a"
+    url "https://files.pythonhosted.org/packages/c0/df/fb4a8eeea482eca989b51cffd274aac2ee24e825f0bf3cbce5281fa1567b/protobuf-6.32.0.tar.gz"
+    sha256 "a81439049127067fc49ec1d36e25c6ee1d1a2b7be930675f919258d03c04e7d2"
   end
 
   resource "psutil" do
@@ -333,8 +328,8 @@ class Snapcraft < Formula
   end
 
   resource "python-debian" do
-    url "https://files.pythonhosted.org/packages/ce/8d/2ebc549adf1f623d4044b108b30ff5cdac5756b0384cd9dddac63fe53eae/python-debian-0.1.49.tar.gz"
-    sha256 "8cf677a30dbcb4be7a99536c17e11308a827a4d22028dc59a67f6c6dd3f0f58c"
+    url "https://files.pythonhosted.org/packages/bf/4b/3c4cf635311b6203f17c2d693dc15e898969983dd3f729bee3c428aa60d4/python-debian-1.0.1.tar.gz"
+    sha256 "3ada9b83a3d671b58081782c0969cffa0102f6ce433fbbc7cf21275b8b5cc771"
   end
 
   resource "pytz" do
@@ -358,8 +353,8 @@ class Snapcraft < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/e1/0a/929373653770d8a0d7ea76c37de6e41f11eb07559b103b1c02cafb3f7cf8/requests-2.32.4.tar.gz"
-    sha256 "27d0316682c8a29834d3264820024b62a36942083d52caf2f14c0591336d3422"
+    url "https://files.pythonhosted.org/packages/c9/74/b3ff8e6c8446842c3f5c837e9c3dfcfe2018ea6ecef224c710c85ef728f4/requests-2.32.5.tar.gz"
+    sha256 "dbba0bac56e100853db0ea71b82b4dfd5fe2bf6d3754a8893c3af500cec7d7cf"
   end
 
   resource "requests-toolbelt" do

@@ -1,19 +1,19 @@
 class Odbc2parquet < Formula
   desc "CLI to query an ODBC data source and write the result into a Parquet file"
   homepage "https://github.com/pacman82/odbc2parquet"
-  url "https://ghfast.top/https://github.com/pacman82/odbc2parquet/archive/refs/tags/v8.1.1.tar.gz"
-  sha256 "d245d8b657bef162dc3d6ace262950d8b2e9624f4ed8df74afe1ecc45eac95ec"
+  url "https://ghfast.top/https://github.com/pacman82/odbc2parquet/archive/refs/tags/v8.1.2.tar.gz"
+  sha256 "2c0fd64fe00926a605218bbfc448c759e32698e369c2e6daeea3d8bebe8367c5"
   license "MIT"
   head "https://github.com/pacman82/odbc2parquet.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "2e769ad0c81bba4e0c3c202e9503096e6e601b039ec4a6b83d3cb931d0c3cca2"
-    sha256 cellar: :any,                 arm64_sonoma:  "d697955ef8d3e8b67d3fb8420a78dc30f3cd52ff308dc5e32825fe981d67b868"
-    sha256 cellar: :any,                 arm64_ventura: "504bf7d9a0df4aed10e65c8b8e959e1bf9f195c8e534523f1e17688ba8484f60"
-    sha256 cellar: :any,                 sonoma:        "2b77d4f5509357e9365c69d62e83458fb0ec2a6b0147d268f06cbb665ea12d9f"
-    sha256 cellar: :any,                 ventura:       "6de151267e999ef3fd8e0d5b31b1ff64e71fcedd01b415b4fc532326a28379d6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2a8da592f3c2fcfaf3ef9b6727d8347658827701650c4b9ee3fc4ba2c74da924"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2102d2adba5119348533d33d575a0dc8421728f9ab295953880b3db959f55c46"
+    sha256 cellar: :any,                 arm64_sequoia: "906f09f28fbcf31b19b26c61c5322f6f6a0ea4e62830f82428419b241937ae70"
+    sha256 cellar: :any,                 arm64_sonoma:  "73a73aa764534c128a912ed47d614f059e10ae506cc961e31c225dda049a92c9"
+    sha256 cellar: :any,                 arm64_ventura: "16b30a8b76ed6b476ce22ab6570c56512901fb2a1feaa6974f0987c591a51f0b"
+    sha256 cellar: :any,                 sonoma:        "51686c5dbabc6a703490a9947d1d89dcb73895e812e2dd1ef1d2c9db7d599e2d"
+    sha256 cellar: :any,                 ventura:       "a6bbaacaf9ebbc1ee5cd9f52f84e9cc4c6c9209ccc395e7d0d22f01711485bf7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "09ab24fc635ddb56fd148eef6a6b1f0fa7d9f39cf8b611d82b10bedf6a89deca"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4ad497008fff1b9dd4b750227c4188ecea2322e2853effbb24e96e71ac59fe37"
   end
 
   depends_on "pkgconf" => :build

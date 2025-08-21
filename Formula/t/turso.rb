@@ -1,8 +1,8 @@
 class Turso < Formula
   desc "Interactive SQL shell for Turso"
   homepage "https://github.com/tursodatabase/turso"
-  url "https://ghfast.top/https://github.com/tursodatabase/turso/archive/refs/tags/v0.1.3.tar.gz"
-  sha256 "5d1e32cbbb5bab336d1f535abcbafcb4db254e958cf5a07db7969386d1ebb7e1"
+  url "https://ghfast.top/https://github.com/tursodatabase/turso/archive/refs/tags/v0.1.4.tar.gz"
+  sha256 "8be7fdd8e5f3c996a038d7676c80829b5414b07c4af14ef7de6219f03835f2d6"
   license "MIT"
   head "https://github.com/tursodatabase/turso.git", branch: "main"
 
@@ -12,13 +12,13 @@ class Turso < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d04815edbf7fe5a8130b1b0b09d5d5fe49ae5ec5b67fffc8515f3417bb593e00"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ca6a134199c4bb8e348660a37efad4c7d753c9e30bc568fd7fc07e24fa062a0e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "15e9d63a075366dbd3768fcbe31fb39bc70813532125ddc96eac944a8238e808"
-    sha256 cellar: :any_skip_relocation, sonoma:        "03e6e9d2a3c9b525bb7c443150f391f80f4c12c7d34aefe530bf752d84b249d9"
-    sha256 cellar: :any_skip_relocation, ventura:       "ba8e6ebb215ada76a702c0ec87fc456e6c26f998f8fa46ced128571a2d78b605"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "eda4a5e439b2f2eb64b17f843d7e3e3a44591d484b40229caacb4a0edafdd6ca"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "45ddd32c180d8f98c0410f26c90c4ed036fd44fd16f4cf76de74d02b4b07ba4b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c5f08d0c0a08168a2b768994601cc54f9f77f444bfdd364c19330812d41a0574"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a988b524fba5f59403150414c872765217def89a363965bdfe80a14fe0ef9628"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "ddcdec3ba9d36774485ac3deec3e4c7fdadb6eba04116cc87f13443f6b683d83"
+    sha256 cellar: :any_skip_relocation, sonoma:        "09a48d301f5c2526ba3b7c1db9d52aee69ce9d066922af8b2ff77b211486a7b4"
+    sha256 cellar: :any_skip_relocation, ventura:       "579c5fccd77ac186a0961a7036fa68d5accde33cc4aa6f3b580aef4187a00ee9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "935d2e25c7aa96ac3d984017bda840788ed230044f2cb3d034e90c6bd65768c4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2ce01203150d51917cc989058342870aef861353af25f06e87babf05095c537f"
   end
 
   depends_on "rust" => :build

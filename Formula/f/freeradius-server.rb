@@ -1,10 +1,9 @@
 class FreeradiusServer < Formula
   desc "High-performance and highly configurable RADIUS server"
   homepage "https://freeradius.org/"
-  url "https://ghfast.top/https://github.com/FreeRADIUS/freeradius-server/archive/refs/tags/release_3_2_7.tar.gz"
-  sha256 "ebb906a236a8db71ba96875c9e53405bc8493e363c3815af65ae829cb6c288a3"
+  url "https://ghfast.top/https://github.com/FreeRADIUS/freeradius-server/archive/refs/tags/release_3_2_8.tar.gz"
+  sha256 "7a42562d4c1b0dfd67783b995b33df6ea0983573b2a3b2b99c368dda647e562c"
   license all_of: ["GPL-2.0-or-later", "LGPL-2.1-or-later"]
-  revision 1
   head "https://github.com/FreeRADIUS/freeradius-server.git", branch: "master"
 
   livecheck do
@@ -12,16 +11,16 @@ class FreeradiusServer < Formula
     regex(/^release[._-](\d+(?:[._]\d+)+)$/i)
   end
 
-  no_autobump! because: :requires_manual_review
+  no_autobump! because: :incompatible_version_format
 
   bottle do
-    sha256 arm64_sequoia: "b9243e933ae4e539f4d8c824db8fe7af52bb72486ccb6e3af8632da30085dd6f"
-    sha256 arm64_sonoma:  "149184cc524e08083c8ec2a51a2304760c8b2b95788340b3eac9699e35da85f8"
-    sha256 arm64_ventura: "486bfc00d5ca794823113992d3dfdcc3e50550349f29bf18e6e4bceea8e5bee3"
-    sha256 sonoma:        "232c9f0921fca5bf3df3b612f8dd451c8d61a6b7ce2be45a7a7037d014f5d196"
-    sha256 ventura:       "64ce4c5828bb09fbf4c505f16190e08b0ee47350f6fd9ae25885cfea40587a0a"
-    sha256 arm64_linux:   "d368ba93b23f1d666d39c270653aca11a68ae234f090935be4072e6fb32a6db2"
-    sha256 x86_64_linux:  "8c63ede2e929cf56b024600c54c5595c694f0a8852aef432f5905c558db5cf81"
+    sha256 arm64_sequoia: "6063a6adaebb53d19c4677da34e9fbb92682875047d17ec465394d7bd3018a03"
+    sha256 arm64_sonoma:  "8a80dda119bb5a5a1d3a0f3494699185751383275f0bfcfad217c32bcc5601f1"
+    sha256 arm64_ventura: "ab409f75783ba2740ac66a4caaae1b2dfcc325cf24d982b1b7b3aa35a1e1afca"
+    sha256 sonoma:        "0efd2ad25501001b530f1373a684881b02c7ad06c8829be91b3427a57e40bf72"
+    sha256 ventura:       "f4f9bef36f34e50e16a086913cdd0c0d82b9b6bec9436ad99d7d2467861ef7c5"
+    sha256 arm64_linux:   "df9ea57c317949304f50d7c3811556b7819fbd68cc67b2656f2d69cfd671bf14"
+    sha256 x86_64_linux:  "cdc657b0560a0a8e1cf68496c5104bff301daa10cb5150953cbcbd515034d326"
   end
 
   depends_on "collectd"
@@ -39,12 +38,6 @@ class FreeradiusServer < Formula
   on_linux do
     depends_on "gdbm"
     depends_on "readline"
-  end
-
-  # Support openssl 3.5.2+: https://github.com/FreeRADIUS/freeradius-server/issues/5631
-  patch do
-    url "https://github.com/FreeRADIUS/freeradius-server/commit/59e262f1134fef8d53d15ae963885a08c9ea8315.patch?full_index=1"
-    sha256 "5ec22a8cf75b9d1685eadea6dba24eae1a5617f39dbde130d58b2866cabb6763"
   end
 
   def install

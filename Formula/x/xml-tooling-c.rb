@@ -14,28 +14,45 @@ class XmlToolingC < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "1b36b66bb9b46fd88ee081350f982c80b786f7badafdf75a741c900be3e1b911"
-    sha256 cellar: :any,                 arm64_sonoma:  "64daef61885d864d71a90bdfaee06917c8c804f16047e57cd7f61e7ea010f2d0"
-    sha256 cellar: :any,                 arm64_ventura: "0e898674f0dff6301c67b43a6f6d2777e8b1f6699db05030c53ad941386e5c88"
-    sha256 cellar: :any,                 sonoma:        "bbb79415f2f27bbecb0695af2c7547f3c08f3caa681564c4f5a10c1732d41f25"
-    sha256 cellar: :any,                 ventura:       "c8d74d8e11b29f17443ceafce0ab9764a22e5cd8dd049929fbc93b11abcfbd7a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "482017f1ea455f4ecdbac8be24a55edb91ba4c852d288e1be5ae0c7034aa47a1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ed7b54bffbe67ec82fa423f304ee36a5877efd2bcc3d163d5bb71f23dc9a7dcd"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "43c77b2eb3b489049fe4a1923c12ad380f85a8817029da1bc9bfd98a6e7accdf"
+    sha256 cellar: :any,                 arm64_sonoma:  "b28b7d9e5601ecfd757a2fe9c5a19e47d859af11a26b8eb39c83b7917ada9060"
+    sha256 cellar: :any,                 arm64_ventura: "95b9dfadcc9aa4a18ae2459d7b79c3a12506d4b036f6fbe3cd03c7fa3c2bdeb7"
+    sha256 cellar: :any,                 sonoma:        "2e4883f70650b2c17c5e946d67d439926c3cdfc9372d2c63f0dafb99206b0b00"
+    sha256 cellar: :any,                 ventura:       "5a302d62d4b80b032df08c5f5089996eb67fcfc069532ede784d678aa5cbad1f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "de426f7944b9e73ed9281fa8f38c9d75c41c7774aacb57cd29850bb1d36e06e0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "92ba2dd5fcc658ebf719b038445a0a576b03feb3079ac7cba9c9822b04d8516b"
   end
 
   depends_on "pkgconf" => :build
   depends_on "boost"
+  depends_on "curl"
   depends_on "log4shib"
   depends_on "openssl@3"
   depends_on "xerces-c"
   depends_on "xml-security-c"
 
-  uses_from_macos "curl"
   uses_from_macos "zlib"
 
   def install
     ENV.cxx11
     system "./configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
+  end
+
+  test do
+    (testpath/"test.cpp").write <<~CPP
+      #include <xmltooling/XMLToolingConfig.h>
+      int main() {
+        xmltooling::XMLToolingConfig::getConfig().log_config("CRIT");
+        xmltooling::XMLToolingConfig::getConfig().init();
+        xmltooling::XMLToolingConfig::getConfig().getPathResolver();
+        return 0;
+      }
+    CPP
+    system ENV.cxx, "-std=c++11", "test.cpp", "-o", "test",
+                    "-L#{lib}", "-lxmltooling", "-L#{Formula["xerces-c"].opt_lib}", "-lxerces-c"
+    output = shell_output("./test 2>&1")
+    refute_match("libcurl lacks OpenSSL-specific options", output)
   end
 end
