@@ -1,10 +1,9 @@
 class PerconaXtrabackup < Formula
   desc "Open source hot backup tool for InnoDB and XtraDB databases"
   homepage "https://www.percona.com/software/mysql-database/percona-xtrabackup"
-  url "https://downloads.percona.com/downloads/Percona-XtraBackup-8.4/Percona-XtraBackup-8.4.0-3/source/tarball/percona-xtrabackup-8.4.0-3.tar.gz"
-  sha256 "0d0538a615031e31eecf9de9ae1daa332ca8707b0901f8ca41f595f0f29798a8"
+  url "https://downloads.percona.com/downloads/Percona-XtraBackup-8.4/Percona-XtraBackup-8.4.0-4/source/tarball/percona-xtrabackup-8.4.0-4.tar.gz"
+  sha256 "e566a164a21b18781aad281b84426418ac2bcf71052ec85d8c5e62f742a7dfeb"
   license "GPL-2.0-only"
-  revision 2
 
   livecheck do
     url "https://www.percona.com/products-api.php", post_form: {
@@ -21,13 +20,13 @@ class PerconaXtrabackup < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "c60ce2d059586d20f9c90e828265f44a058b0ac76e65f5817cc8d223ea88d30c"
-    sha256 arm64_sonoma:  "7fb3921fe7ef38f982689b05e2c204da555f01330f66cfc413910c0668a03b39"
-    sha256 arm64_ventura: "311c0a10709ef56d4d2c2a70874f389854eec206a0a2bebea29ee459884692ed"
-    sha256 sonoma:        "fa731b043ab505f0a3b4de71d88288730c58d47a5476fb195851668dfe76685f"
-    sha256 ventura:       "f0aee9140f01a4e0d1d4934fac5458d5dbf41d8ee7d8d36c33cd8549e8ac8c89"
-    sha256 arm64_linux:   "a16caade97507a43ef31b9bb2080d66dd553e6ce040f72a453a4c2f2d3a21a66"
-    sha256 x86_64_linux:  "c76dee50312ca0989ec91d0ebf5f1cfb67fb30203eb168da2ac6c2b03a4b5bea"
+    sha256 arm64_sequoia: "d225eaf2c17759f2ddf2e13c5e09931e80a3c0757c39dbc35168f35c9fd16181"
+    sha256 arm64_sonoma:  "b11a37ccd75383fec13b6e6c7bc9f8cd8a290f342c1b4e84f05e705d28595ec9"
+    sha256 arm64_ventura: "0c8f3a01c407589981e37f3fdec6f560402a980b90c10cbeb8fb30ef628a59ef"
+    sha256 sonoma:        "ad930d6c0f1fa94d843f8cb34f23d50e629f86befb609c69495b747898add8d2"
+    sha256 ventura:       "55c69165e0aa1ab0d3445de4d273b497a7b17e12a4ec0464622fe5320f67fc23"
+    sha256 arm64_linux:   "85609321a6945600cb7a2a409b8595cc08265d1ed6286c7c3750ee468d0d53a4"
+    sha256 x86_64_linux:  "856dce7e07ce26b01065745566c6700809f7a63d5d782fcd1d70a30a759b6469"
   end
 
   depends_on "bison" => :build # needs bison >= 3.0.4
@@ -40,16 +39,13 @@ class PerconaXtrabackup < Formula
   depends_on "libgcrypt"
   depends_on "lz4"
   depends_on "openssl@3"
-  depends_on "perl-dbd-mysql"
   depends_on "protobuf"
   depends_on "zlib"
   depends_on "zstd"
 
   uses_from_macos "cyrus-sasl" => :build
   uses_from_macos "libedit" => :build
-  uses_from_macos "vim" => :build # needed for xxd
   uses_from_macos "curl"
-  uses_from_macos "perl"
 
   on_linux do
     depends_on "patchelf" => :build
@@ -139,15 +135,8 @@ class PerconaXtrabackup < Formula
     keep = %w[boost libbacktrace libcno libkmip lz4 rapidjson unordered_dense]
     (buildpath/"extra").each_child { |dir| rm_r(dir) unless keep.include?(dir.basename.to_s) }
 
-    perl = "/usr/bin/perl"
-    if OS.linux?
-      perl = Formula["perl"].opt_bin/"perl"
-      # Disable ABI checking
-      inreplace "cmake/abi_check.cmake", "RUN_ABI_CHECK 1", "RUN_ABI_CHECK 0"
-    end
-
-    # Make sure Perl from `perl-dbd-mysql` is used at runtime. Otherwise may have incompatible modules
-    inreplace "storage/innobase/xtrabackup/src/backup_copy.cc", 'popen("perl",', "popen(\"#{perl}\","
+    # Disable ABI checking
+    inreplace "cmake/abi_check.cmake", "RUN_ABI_CHECK 1", "RUN_ABI_CHECK 0" if OS.linux?
 
     icu4c = deps.map(&:to_formula).find { |f| f.name.match?(/^icu4c@\d+$/) }
     # -DWITH_FIDO=system isn't set as feature isn't enabled and bundled copy was removed.
@@ -179,7 +168,6 @@ class PerconaXtrabackup < Formula
     system "cmake", "-S", ".", "-B", "build", *cmake_args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
-    bin.env_script_all_files(libexec/"bin", PERL5LIB: Formula["perl-dbd-mysql"].opt_libexec/"lib/perl5")
 
     # remove conflicting library that is already installed by mysql
     (lib/"libmysqlservices.a").unlink
@@ -215,7 +203,6 @@ class PerconaXtrabackup < Formula
       output = shell_output("#{bin}/xtrabackup #{xtrabackup_args.join(" ")} 2>&1")
       refute_match "[ERROR]", output
       assert_match "[Xtrabackup] completed OK!", output
-      assert_match "version_check Done.", output # check Perl modules work
       assert_path_exists testpath/"backup/xtrabackup_info"
     ensure
       system mysql.bin/"mysqladmin", *mysqladmin_args, "shutdown"

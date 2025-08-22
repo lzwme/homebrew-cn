@@ -6,13 +6,8 @@ class AddonsLinter < Formula
   license "MPL-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a4da743852e397cb013cf499471e0188a50d59e1d0c3975ccaa7a596be91e950"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a4da743852e397cb013cf499471e0188a50d59e1d0c3975ccaa7a596be91e950"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "a4da743852e397cb013cf499471e0188a50d59e1d0c3975ccaa7a596be91e950"
-    sha256 cellar: :any_skip_relocation, sonoma:        "62f792292339dce159a28b8dc3eda5c93ffb3922a7eeec5284b9de4982e124c7"
-    sha256 cellar: :any_skip_relocation, ventura:       "62f792292339dce159a28b8dc3eda5c93ffb3922a7eeec5284b9de4982e124c7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a4da743852e397cb013cf499471e0188a50d59e1d0c3975ccaa7a596be91e950"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a4da743852e397cb013cf499471e0188a50d59e1d0c3975ccaa7a596be91e950"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "2d221cd65220f947418f3a991391129aa05b85d54c9673e4cf20d97e3d8e5ad2"
   end
 
   depends_on "node"
@@ -38,7 +33,6 @@ class AddonsLinter < Formula
         }
       }
     JSON
-
     output = shell_output("#{bin}/addons-linter #{testpath}/manifest.json 2>&1")
     assert_match "BAD_ZIPFILE   Corrupt ZIP", output
   end

@@ -4,16 +4,16 @@ class OcamlZarith < Formula
   url "https://ghfast.top/https://github.com/ocaml/Zarith/archive/refs/tags/release-1.14.tar.gz"
   sha256 "5db9dcbd939153942a08581fabd846d0f3f2b8c67fe68b855127e0472d4d1859"
   license "LGPL-2.0-only"
-  revision 1
+  revision 2
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "ed8861f99b854e2e65c9d294e01f6b8ed0788abc19ebd3d4dc3ce7cfa34db096"
-    sha256 cellar: :any,                 arm64_sonoma:  "1fef98a78a16f4a16510d4504391226ef04dae87230d44e8bc31e5b90909e8e7"
-    sha256 cellar: :any,                 arm64_ventura: "c19075b8f0aa1e49811a07157d742fb7efd44cacc40bcf4f6a333b41c90b3414"
-    sha256 cellar: :any,                 sonoma:        "3786c671d7fffb86a26e445c1da3f7144f612baf1830e53bbb45941df0b693c4"
-    sha256 cellar: :any,                 ventura:       "1ca4591569e5651a8f6dcee7e567eefa1801bda9a30e1494ef1c059aa1da7f17"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4757ac0829b2b289ca4400f4cf7a881a80d2e7a1d8f8bd8aef0eddab7d54b543"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f3ab7fd9e6eb25af8bf079f8b35985320694dbba6f44c4764ba123f129d9749b"
+    sha256 cellar: :any,                 arm64_sequoia: "5a0ea1102ef6bbfb2cf31ec8ac97167dec44141f8994faaf69ed374b9bcd9241"
+    sha256 cellar: :any,                 arm64_sonoma:  "d9bc12787eb89934cd84d2dde6399248922164b2a8b91176fb1cc40c3317f3e7"
+    sha256 cellar: :any,                 arm64_ventura: "c8b7d5a319ce9fe9f18d430ab229bc3b14689388f6c81b880a1c5d13091d7414"
+    sha256 cellar: :any,                 sonoma:        "36e07bdd7adf477fd3c6179ae4601c107f5d189ebe359cbc188acdaa0e8f5994"
+    sha256 cellar: :any,                 ventura:       "08a7be2e0776792bc8adced1f4126d3ee03480895ee3133b149a0778176a68cc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "65d2d766f6f02619ea03042d3f4025d246d961209f23e72f1767a53d31da88b3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e7e4b58a4b9b745aa8270c606b350e3339474723b7130cb6683544f901b6c1d7"
   end
 
   depends_on "ocaml-findlib" => :build

@@ -1,5 +1,5 @@
 class FzfMake < Formula
-  desc "Fuzzy finder with preview window for make, pnpm, yarn & just"
+  desc "Fuzzy finder with preview window for make, pnpm, yarn, just & task"
   homepage "https://github.com/kyu08/fzf-make"
   url "https://ghfast.top/https://github.com/kyu08/fzf-make/archive/refs/tags/v0.60.0.tar.gz"
   sha256 "5cf1e13cf9e4a98a4858281970ca2a4459fdc43ef2c200d49228fd8a9cea0383"

@@ -1,8 +1,8 @@
 class PgpoolIi < Formula
   desc "PostgreSQL connection pool server"
   homepage "https://www.pgpool.net/mediawiki/index.php/Main_Page"
-  url "https://www.pgpool.net/mediawiki/images/pgpool-II-4.6.2.tar.gz"
-  sha256 "116c9ed475efd0265329c90273053a1fa6a18ee68d5c54ed46797cd0e001f648"
+  url "https://www.pgpool.net/mediawiki/images/pgpool-II-4.6.3.tar.gz"
+  sha256 "46688668b2ace67d8161a320256252d98698bc7d9788cc6727269d5720299f2c"
   license all_of: ["HPND", "ISC"] # ISC is only for src/utils/strlcpy.c
 
   livecheck do
@@ -11,13 +11,13 @@ class PgpoolIi < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "0254ea49d14ca0a41eb2d78822c0c936fd6839511a042c4032506343bdf5f2fe"
-    sha256 arm64_sonoma:  "708a947e7580582b32a71d7d4b111b7ae4586e36819e4eac34a8d454cfd403f3"
-    sha256 arm64_ventura: "49b6903c9318613a6ba36dfd0c1294c65b0c5be34a8bd961fcca6d21d29938de"
-    sha256 sonoma:        "2c7cb7f2cf0b8d2574801a485154bbd655b8390f9cffc1d391ea08e7ad5378c4"
-    sha256 ventura:       "4b9e23c9f9adb9815fffd2191487edf8c94fbb9ba54c24d62d8b164e7e228b8b"
-    sha256 arm64_linux:   "7f0e13d03850e2b3e9fa2bd4d0205f5473748b71e40b875fd75026673400cbb7"
-    sha256 x86_64_linux:  "d0573eea96263ecdbf8a92a8a55369ed0ceec72207eb98da83deb72cdd4a8544"
+    sha256               arm64_sequoia: "3062a0e20358f8e941be43ebdafc4be5b332258494933a7ba1d5d35d1157c06e"
+    sha256               arm64_sonoma:  "263936a2aa00c0996b06cadc34a28cf70cd27389f69de3f10ab79d0cfe19a052"
+    sha256               arm64_ventura: "b0c66cc882f57bec2e56dcce1fb3487680b9e183e09bdcb6f96ec97f01e0f947"
+    sha256 cellar: :any, sonoma:        "82fcc1e906022b1a61ce212c0cb68350497c503a05be8405b12f10ec67e753bf"
+    sha256 cellar: :any, ventura:       "6ba91098cf31925d19ab65de6c9870428ef5422cd64e2415d5b30ef1ec10f4d3"
+    sha256               arm64_linux:   "95096edfd72538ac1b6c4e4226bd7e9ad7b7278ca138078c533538a8207869ba"
+    sha256               x86_64_linux:  "8959b7c3cb8529ef2f429b98097f070e716bd80af8e0a5e71720d8bc06634487"
   end
 
   depends_on "libmemcached"

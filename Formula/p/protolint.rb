@@ -1,18 +1,18 @@
 class Protolint < Formula
   desc "Pluggable linter and fixer to enforce Protocol Buffer style and conventions"
   homepage "https://github.com/yoheimuta/protolint"
-  url "https://ghfast.top/https://github.com/yoheimuta/protolint/archive/refs/tags/v0.55.6.tar.gz"
-  sha256 "06b50c33b37b58e971c7d32e190556f6abb9df24f56b8ded1730e8c134e7e22a"
+  url "https://ghfast.top/https://github.com/yoheimuta/protolint/archive/refs/tags/v0.56.3.tar.gz"
+  sha256 "cdd411da0285a0c855f1ba4b1e8fbf7660f2fc9c3cd5bc4256c5c6e15b9a6d22"
   license "MIT"
   head "https://github.com/yoheimuta/protolint.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c37dfdc89f53c3e14baaca638db3d6760df3cbf90ee09a37cb7bebba15499231"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c37dfdc89f53c3e14baaca638db3d6760df3cbf90ee09a37cb7bebba15499231"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "c37dfdc89f53c3e14baaca638db3d6760df3cbf90ee09a37cb7bebba15499231"
-    sha256 cellar: :any_skip_relocation, sonoma:        "dd489eb870b57c1adb8cce8d382085b0849c8a46d27251f1fa5d3f653f7433de"
-    sha256 cellar: :any_skip_relocation, ventura:       "dd489eb870b57c1adb8cce8d382085b0849c8a46d27251f1fa5d3f653f7433de"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c276f2d86e503c42bece363da64f97b71cfe7d533152fd6dc1c4e3e9a183b525"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b4a0ced891f65afece2df8e25cd6f64f704fc951df75a0adadf9b7ed7306344a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b4a0ced891f65afece2df8e25cd6f64f704fc951df75a0adadf9b7ed7306344a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "b4a0ced891f65afece2df8e25cd6f64f704fc951df75a0adadf9b7ed7306344a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "87a74e430558106dd392f0409f46b2ec5f076f98f69dfc9a344aae7b8fa2ebd2"
+    sha256 cellar: :any_skip_relocation, ventura:       "87a74e430558106dd392f0409f46b2ec5f076f98f69dfc9a344aae7b8fa2ebd2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ae8f990c836bf2194cc8bb7b7f2f1254fbb2f096b83788f1de0615ba416d263b"
   end
 
   depends_on "go" => :build

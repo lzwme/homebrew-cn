@@ -1,20 +1,19 @@
 class Kuzu < Formula
   desc "Embeddable graph database management system built for query speed & scalability"
   homepage "https://kuzudb.com/"
-  url "https://ghfast.top/https://github.com/kuzudb/kuzu/archive/refs/tags/v0.11.1.tar.gz"
-  sha256 "479a9943ad9db3b9a28925438c05563a00e7eb72eaeff07ca21b9d3378069eb7"
+  url "https://ghfast.top/https://github.com/kuzudb/kuzu/archive/refs/tags/v0.11.2.tar.gz"
+  sha256 "9340f1151ea6c9f35c007f122d6e08ec119b5c1db743f0303d40ac8a8e2a5d55"
   license "MIT"
   head "https://github.com/kuzudb/kuzu.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "7b29b4ae2df088932fab87dc77df54720622fa2c78c2b4203a03bbd4ff13737e"
-    sha256 cellar: :any,                 arm64_sonoma:  "0bea81ebab52fc643e4aa036b4bd2d3a2f5eb47a4a5e6c78f61370d582b21c4e"
-    sha256 cellar: :any,                 arm64_ventura: "4a08837b40109f1480ee3427a266844f355bc6dc728522f7ab2b28cffeae5f15"
-    sha256 cellar: :any,                 sonoma:        "02ddf95116a0657c437e007348ecde64b13603b48951005dc830ffad3e848442"
-    sha256 cellar: :any,                 ventura:       "38ce1807674dec3405f1b3393f27ab1c880a0e88e125c0fcc6af7670cefdd680"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "694830a475c766ab54840f28e9be11f91791fd6bb8c7b9ed8150609fc968427a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fca3925106804625d590a0d7ea39aedbbc6ebaee4fb1fcb01034bafe5f9b800f"
+    sha256 cellar: :any,                 arm64_sequoia: "573aa3e28749eff8792dc8bf930ad699a835a869b995a05d5297823b67cecb8b"
+    sha256 cellar: :any,                 arm64_sonoma:  "a1fec350a28857a60825eb473d02361ed5b1485b15ee1349636e7da69650682b"
+    sha256 cellar: :any,                 arm64_ventura: "a0b3a51491ad3b6ba266315954cb0cf1ab8666572f49d2318352f1e3d7151257"
+    sha256 cellar: :any,                 sonoma:        "41a84c0407b44907bc9d3599e1817e04d5d37e71fde044ae7a566ed526d2c10d"
+    sha256 cellar: :any,                 ventura:       "1e85a9fb583f56bfdb09cc0661f6dbe8615393483e0f3a99f5a019edcdfea38a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "39ed6f96904850e2a5d059ef6c60a56b350674382adbd8f391e4d8c19bf6d85b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "781859e1e45d567ed5cb6f880362b3f0ef12a1250367a7709afa589ef4f38921"
   end
 
   depends_on "cmake" => :build

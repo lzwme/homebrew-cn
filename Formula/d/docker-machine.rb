@@ -1,19 +1,19 @@
 class DockerMachine < Formula
   desc "Create Docker hosts locally and on cloud providers"
   homepage "https://docs.gitlab.com/runner/executors/docker_machine.html"
-  url "https://gitlab.com/gitlab-org/ci-cd/docker-machine/-/archive/v0.16.2-gitlab.40/docker-machine-v0.16.2-gitlab.40.tar.bz2"
-  version "0.16.2-gitlab.40"
-  sha256 "fcc9751e80af8aafd0ecfcd5380790cb6daabd926e6ac3183c5a120bb3f33f87"
+  url "https://gitlab.com/gitlab-org/ci-cd/docker-machine/-/archive/v0.16.2-gitlab.41/docker-machine-v0.16.2-gitlab.41.tar.bz2"
+  version "0.16.2-gitlab.41"
+  sha256 "1c8e4b303e49aaf31061657ec68ff85f5bf0559b174ec4d5f358a63c18292a12"
   license "Apache-2.0"
-  head "https://gitlab.com/gitlab-org/ci-cd/docker-machine.git", branch: "master"
+  head "https://gitlab.com/gitlab-org/ci-cd/docker-machine.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "88cc0fe066546dc59a2a55506ac39dd0b853f0f96032d048646f5431c91b9bbe"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "88cc0fe066546dc59a2a55506ac39dd0b853f0f96032d048646f5431c91b9bbe"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "88cc0fe066546dc59a2a55506ac39dd0b853f0f96032d048646f5431c91b9bbe"
-    sha256 cellar: :any_skip_relocation, sonoma:        "47a8cf53a58a28c8c7321546dc64eb6a563494c9bb8e60c32aee4810d63dcba2"
-    sha256 cellar: :any_skip_relocation, ventura:       "47a8cf53a58a28c8c7321546dc64eb6a563494c9bb8e60c32aee4810d63dcba2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "37f0d01941d25480642962a14e365e31f5cb16ebe44e5f8b5440f418a14a32df"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b1275c823c9458fbdf5408266b8c6ab6a4848c3fd103d442142a4db5246a8f4a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b1275c823c9458fbdf5408266b8c6ab6a4848c3fd103d442142a4db5246a8f4a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "b1275c823c9458fbdf5408266b8c6ab6a4848c3fd103d442142a4db5246a8f4a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7f29bffd32c150b0ad2d8196aa39f6415002bf8fa06d57448592976eaa9dd785"
+    sha256 cellar: :any_skip_relocation, ventura:       "7f29bffd32c150b0ad2d8196aa39f6415002bf8fa06d57448592976eaa9dd785"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "314a732f0b72cf8f57b5019e64fa5c2afc88440053e169022b8dcde83e25856f"
   end
 
   depends_on "go" => :build

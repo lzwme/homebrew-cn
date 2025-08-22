@@ -51,7 +51,7 @@ class Readline < Formula
 
       # Fetch the page for the patches directory
       patches_page = Homebrew::Livecheck::Strategy.page_content(
-        "https://ftp.gnu.org/gnu/readline/#{patches_directory[1]}",
+        "https://ftpmirror.gnu.org/gnu/readline/#{patches_directory[1]}",
       )
       next versions if patches_page[:content].blank?
 

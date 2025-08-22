@@ -2,7 +2,7 @@ class OrTools < Formula
   desc "Google's Operations Research tools"
   homepage "https://developers.google.com/optimization/"
   license "Apache-2.0"
-  revision 3
+  revision 4
   head "https://github.com/google/or-tools.git", branch: "stable"
 
   # Remove `stable` block when patch is no longer needed.
@@ -24,13 +24,13 @@ class OrTools < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_sequoia: "ce649587c5f2d0202701b4a5df43cdb9135757bcd8f0ebc28c70d49e336c09a4"
-    sha256 cellar: :any, arm64_sonoma:  "cfa19ff800a4fa5ffc7822689e34d91446affa2e36fbc9495fcb93d77a7c1a87"
-    sha256 cellar: :any, arm64_ventura: "cade2913e7c6c0c916568b9004732f591e4a701c7f31be38918c5376077831c0"
-    sha256 cellar: :any, sonoma:        "2a4d4e198fe9f2f6b2acee2c192bda29345ee089d65f2339164e1e12bee83bfd"
-    sha256 cellar: :any, ventura:       "902c0119349430b42956eef021c163d4b496ac1482dc6658b3cadfc140c0e484"
-    sha256               arm64_linux:   "e9d93b5d72e6f1afa9116644477c59c66949259a19fe2318b7ca292022f2aa73"
-    sha256               x86_64_linux:  "0c01f6f3ddec8e2f8ee32aa1081692ca66ce35adaa8aca7b7b284a6a86b10bb2"
+    sha256 cellar: :any, arm64_sequoia: "2f41f4f61000dd2ac56cd8b4d0419916077fa2e10cc4a294a1d100b8b29bfed7"
+    sha256 cellar: :any, arm64_sonoma:  "40f1bdafd61fb20f09a8fbc2d17445ac12387ae2e46ac1c1131d0e54f02c891a"
+    sha256 cellar: :any, arm64_ventura: "711c37000c74bd1a3a44da29cafdcebe38a2a2ffe7e4f2a0971d7c8a5ad506b7"
+    sha256 cellar: :any, sonoma:        "6a7fbff38e8933616a7052935195ca08de4a9872d48554cb939c4687166d8331"
+    sha256 cellar: :any, ventura:       "37b2f307068cdad2adcdcb4c6dfc82216a7e6858f851c70d1804d4a0916c3fb0"
+    sha256               arm64_linux:   "f142fd5479d4de9c400b50c92777c3cff7a375c04582ab1f05ea06c881e8352f"
+    sha256               x86_64_linux:  "d5ff712bf00d2955ca8e1c6b695b75b233221f70d9bb51c89a5ac7cf85500521"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -49,7 +49,22 @@ class OrTools < Formula
   uses_from_macos "bzip2"
   uses_from_macos "zlib"
 
+  on_linux do
+    # LLVM Clang helps avoid building with indirect GCC dependency which uses newer libstdc++
+    depends_on "llvm" => :build if DevelopmentTools.gcc_version("/usr/bin/gcc") < 12
+  end
+
+  fails_with :gcc do
+    version "11"
+    cause "absl/log/internal/check_op.h error: ambiguous overload for 'operator<<'"
+  end
+
+  # Workaround until upstream updates Abseil. Likely will be handled by sync with internal copy
+  patch :DATA
+
   def install
+    ENV.llvm_clang if OS.linux? && DevelopmentTools.gcc_version("/usr/bin/gcc") < 12
+
     # FIXME: Upstream enabled Highs support in their binary distribution, but our build fails with it.
     args = %w[
       -DUSE_HIGHS=OFF
@@ -112,3 +127,163 @@ class OrTools < Formula
     system "./simple_sat_program"
   end
 end
+
+__END__
+diff --git a/ortools/math_opt/cpp/model.cc b/ortools/math_opt/cpp/model.cc
+index 12ea552d78..9d19f5af72 100644
+--- a/ortools/math_opt/cpp/model.cc
++++ b/ortools/math_opt/cpp/model.cc
+@@ -55,7 +55,7 @@ constexpr double kInf = std::numeric_limits<double>::infinity();
+ 
+ absl::StatusOr<std::unique_ptr<Model>> Model::FromModelProto(
+     const ModelProto& model_proto) {
+-  ASSIGN_OR_RETURN(absl::Nonnull<std::unique_ptr<ModelStorage>> storage,
++  ASSIGN_OR_RETURN(absl_nonnull std::unique_ptr<ModelStorage> storage,
+                    ModelStorage::FromModelProto(model_proto));
+   return std::make_unique<Model>(std::move(storage));
+ }
+@@ -63,10 +63,10 @@ absl::StatusOr<std::unique_ptr<Model>> Model::FromModelProto(
+ Model::Model(const absl::string_view name)
+     : storage_(std::make_shared<ModelStorage>(name)) {}
+ 
+-Model::Model(absl::Nonnull<std::unique_ptr<ModelStorage>> storage)
++Model::Model(absl_nonnull std::unique_ptr<ModelStorage> storage)
+     : storage_(ABSL_DIE_IF_NULL(std::move(storage))) {}
+ 
+-absl::Nonnull<std::unique_ptr<Model>> Model::Clone(
++absl_nonnull std::unique_ptr<Model> Model::Clone(
+     const std::optional<absl::string_view> new_name) const {
+   return std::make_unique<Model>(storage_->Clone(new_name));
+ }
+diff --git a/ortools/math_opt/cpp/model.h b/ortools/math_opt/cpp/model.h
+index bb9939f098..6cb65ed256 100644
+--- a/ortools/math_opt/cpp/model.h
++++ b/ortools/math_opt/cpp/model.h
+@@ -137,7 +137,7 @@ class Model {
+   // This constructor is used when loading a model, for example from a
+   // ModelProto or an MPS file. Note that in those cases the FromModelProto()
+   // should be used.
+-  explicit Model(absl::Nonnull<std::unique_ptr<ModelStorage>> storage);
++  explicit Model(absl_nonnull std::unique_ptr<ModelStorage> storage);
+ 
+   Model(const Model&) = delete;
+   Model& operator=(const Model&) = delete;
+@@ -159,7 +159,7 @@ class Model {
+   //   * in an arbitrary order using Variables() and LinearConstraints().
+   //
+   // Note that the returned model does not have any update tracker.
+-  absl::Nonnull<std::unique_ptr<Model>> Clone(
++  absl_nonnull std::unique_ptr<Model> Clone(
+       std::optional<absl::string_view> new_name = std::nullopt) const;
+ 
+   inline absl::string_view name() const;
+@@ -925,7 +925,7 @@ class Model {
+   // We use a shared_ptr here so that the UpdateTracker class can have a
+   // weak_ptr on the ModelStorage. This let it have a destructor that don't
+   // crash when called after the destruction of the associated Model.
+-  const absl::Nonnull<std::shared_ptr<ModelStorage>> storage_;
++  const absl_nonnull std::shared_ptr<ModelStorage> storage_;
+ };
+ 
+ ////////////////////////////////////////////////////////////////////////////////
+diff --git a/ortools/math_opt/storage/model_storage.cc b/ortools/math_opt/storage/model_storage.cc
+index 3c5139d07e..9c24890944 100644
+--- a/ortools/math_opt/storage/model_storage.cc
++++ b/ortools/math_opt/storage/model_storage.cc
+@@ -46,7 +46,7 @@
+ namespace operations_research {
+ namespace math_opt {
+ 
+-absl::StatusOr<absl::Nonnull<std::unique_ptr<ModelStorage>>>
++absl::StatusOr<absl_nonnull std::unique_ptr<ModelStorage>>
+ ModelStorage::FromModelProto(const ModelProto& model_proto) {
+   // We don't check names since ModelStorage does not do so before exporting
+   // models. Thus a model built by ModelStorage can contain duplicated
+@@ -144,7 +144,7 @@ void ModelStorage::UpdateLinearConstraintCoefficients(
+   }
+ }
+ 
+-absl::Nonnull<std::unique_ptr<ModelStorage>> ModelStorage::Clone(
++absl_nonnull std::unique_ptr<ModelStorage> ModelStorage::Clone(
+     const std::optional<absl::string_view> new_name) const {
+   // We leverage the private copy constructor that copies copyable_data_ but not
+   // update_trackers_ here.
+diff --git a/ortools/math_opt/storage/model_storage.h b/ortools/math_opt/storage/model_storage.h
+index 2334290cdc..127dbce14c 100644
+--- a/ortools/math_opt/storage/model_storage.h
++++ b/ortools/math_opt/storage/model_storage.h
+@@ -177,7 +177,7 @@ class ModelStorage {
+   // considered invalid when solving.
+   //
+   // See ApplyUpdateProto() for dealing with subsequent updates.
+-  static absl::StatusOr<absl::Nonnull<std::unique_ptr<ModelStorage> > >
++  static absl::StatusOr<absl_nonnull std::unique_ptr<ModelStorage>>
+   FromModelProto(const ModelProto& model_proto);
+ 
+   // Creates an empty minimization problem.
+@@ -192,7 +192,7 @@ class ModelStorage {
+   // reused any id of variable/constraint that was deleted in the original.
+   //
+   // Note that the returned model does not have any update tracker.
+-  absl::Nonnull<std::unique_ptr<ModelStorage> > Clone(
++  absl_nonnull std::unique_ptr<ModelStorage> Clone(
+       std::optional<absl::string_view> new_name = std::nullopt) const;
+ 
+   inline const std::string& name() const { return copyable_data_.name; }
+@@ -1311,10 +1311,10 @@ namespace operations_research::math_opt {
+ 
+ // Aliases for non-nullable and nullable pointers to a `ModelStorage`.
+ // We should mostly be using the former, but in some cases we need the latter.
+-using ModelStoragePtr = absl::Nonnull<ModelStorage*>;
+-using NullableModelStoragePtr = absl::Nullable<ModelStorage*>;
+-using ModelStorageCPtr = absl::Nonnull<const ModelStorage*>;
+-using NullableModelStorageCPtr = absl::Nullable<const ModelStorage*>;
++using ModelStoragePtr = ModelStorage* absl_nonnull;
++using NullableModelStoragePtr = ModelStorage* absl_nullable;
++using ModelStorageCPtr = const ModelStorage* absl_nonnull;
++using NullableModelStorageCPtr = const ModelStorage* absl_nullable;
+ 
+ }  // namespace operations_research::math_opt
+ 
+diff --git a/ortools/math_opt/storage/model_storage_v2.cc b/ortools/math_opt/storage/model_storage_v2.cc
+index e911eaecc4..60b0ec952d 100644
+--- a/ortools/math_opt/storage/model_storage_v2.cc
++++ b/ortools/math_opt/storage/model_storage_v2.cc
+@@ -76,13 +76,13 @@ void ModelStorageV2::DeleteLinearConstraint(LinearConstraintId id) {
+       << ", it is not in the model";
+ }
+ 
+-absl::StatusOr<absl::Nonnull<std::unique_ptr<ModelStorageV2>>>
++absl::StatusOr<absl_nonnull std::unique_ptr<ModelStorageV2>>
+ ModelStorageV2::FromModelProto(const ModelProto& model_proto) {
+   ASSIGN_OR_RETURN(Elemental e, Elemental::FromModelProto(model_proto));
+   return absl::WrapUnique(new ModelStorageV2(std::move(e)));
+ }
+ 
+-absl::Nonnull<std::unique_ptr<ModelStorageV2>> ModelStorageV2::Clone(
++absl_nonnull std::unique_ptr<ModelStorageV2> ModelStorageV2::Clone(
+     const std::optional<absl::string_view> new_name) const {
+   return absl::WrapUnique(new ModelStorageV2(elemental_.Clone(new_name)));
+ }
+diff --git a/ortools/math_opt/storage/model_storage_v2.h b/ortools/math_opt/storage/model_storage_v2.h
+index 45078bedad..c8c13b7232 100644
+--- a/ortools/math_opt/storage/model_storage_v2.h
++++ b/ortools/math_opt/storage/model_storage_v2.h
+@@ -90,7 +90,7 @@ class ModelStorageV2 {
+   // considered invalid when solving.
+   //
+   // See ApplyUpdateProto() for dealing with subsequent updates.
+-  static absl::StatusOr<absl::Nonnull<std::unique_ptr<ModelStorageV2>>>
++  static absl::StatusOr<absl_nonnull std::unique_ptr<ModelStorageV2>>
+   FromModelProto(const ModelProto& model_proto);
+ 
+   // Creates an empty minimization problem.
+@@ -106,7 +106,7 @@ class ModelStorageV2 {
+   // reused any id of variable/constraint that was deleted in the original.
+   //
+   // Note that the returned model does not have any update tracker.
+-  absl::Nonnull<std::unique_ptr<ModelStorageV2>> Clone(
++  absl_nonnull std::unique_ptr<ModelStorageV2> Clone(
+       std::optional<absl::string_view> new_name = std::nullopt) const;
+ 
+   inline const std::string& name() const { return elemental_.model_name(); }

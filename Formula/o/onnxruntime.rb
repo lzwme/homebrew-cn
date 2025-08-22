@@ -5,7 +5,7 @@ class Onnxruntime < Formula
       tag:      "v1.22.2",
       revision: "5630b081cd25e4eccc7516a652ff956e51676794"
   license "MIT"
-  revision 1
+  revision 2
 
   livecheck do
     url :stable
@@ -13,13 +13,13 @@ class Onnxruntime < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "6cff1ad287b4566a76427bdc491184e5edb68c75fa9222ca266125b66ad49598"
-    sha256 cellar: :any,                 arm64_sonoma:  "294f84007291f8e191dff184e7eaaed5b4c8b455a0ddae8786ddb713bc5a470c"
-    sha256 cellar: :any,                 arm64_ventura: "13d160f832cbc707f43593478e9586ce3604523feac45d15177ddd4fdf3fca8f"
-    sha256 cellar: :any,                 sonoma:        "d6f6a1597adbe1c81c58f0452d2fd41e4e5cba5ab70dc93969ab97a29a379013"
-    sha256 cellar: :any,                 ventura:       "b9d012da84befa71c72796c7db332dc8ddc64ac2621612a413646419b9469f11"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d8e41eca3c50d30f27fa59d8369fd0b621866cf61c0f88736d020444b40cfa36"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "37d80bbc0971a43f71c6e37a94df19556d7de258179dd08add20e302b40a44b5"
+    sha256 cellar: :any,                 arm64_sequoia: "b6ce4e40bc872d41b3465087f33368be529d012837ee39e623c3f1945687a965"
+    sha256 cellar: :any,                 arm64_sonoma:  "dd9b51559f0018475fcd0e6c69c5b04cd16196344349d7eea66dbc716b8446ea"
+    sha256 cellar: :any,                 arm64_ventura: "429c0123c23cf2cac3b027ad0063689f9420370c7509951c26f6993b12666485"
+    sha256 cellar: :any,                 sonoma:        "4ec256f4208ebf915fdbc3629fece4cdd50168eca52bbdbd325f8d9b35b20d96"
+    sha256 cellar: :any,                 ventura:       "c0aa9cbe0254bceeb4e7d075870fe3804bdbd4d2ef6568f5300fd3b2effec8c7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c8386275b57e59ee756726ff8ece631847cda5f8033a1331083e8ecc23737630"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "531739b8bdcf50b4b663906499cc37f0bea8b5f8a732cf19c35bd1490939ba1d"
   end
 
   depends_on "boost" => :build
@@ -58,6 +58,11 @@ class Onnxruntime < Formula
       regex(%r{^pytorch_cpuinfo;.*/(\h+)\.zip}i)
     end
   end
+
+  # Workaround for Abseil >= 20250814.0 which removed absl::low_level_hash[^1].
+  # Upstream only supports using vendored deps which we bypass.
+  # [^1]: https://github.com/abseil/abseil-cpp/commit/2ea5334068f11664a71d1d9dfb9a475482fa05f5
+  patch :DATA
 
   def install
     python3 = which("python3.13")
@@ -104,3 +109,17 @@ class Onnxruntime < Formula
     assert_equal version, shell_output("./test").strip
   end
 end
+
+__END__
+diff --git a/cmake/external/abseil-cpp.cmake b/cmake/external/abseil-cpp.cmake
+index 427e77a524..feb2eb26f1 100644
+--- a/cmake/external/abseil-cpp.cmake
++++ b/cmake/external/abseil-cpp.cmake
+@@ -119,7 +119,6 @@ absl::absl_check
+ absl::hash_function_defaults
+ absl::function_ref
+ absl::city
+-absl::low_level_hash
+ absl::fixed_array
+ absl::variant
+ absl::meta

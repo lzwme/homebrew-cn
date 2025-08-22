@@ -182,7 +182,7 @@ class Duck < Formula
   end
 
   test do
-    system bin/"duck", "--download", "https://ftp.gnu.org/gnu/wget/wget-1.19.4.tar.gz", testpath/"test"
+    system bin/"duck", "--download", "https://ftpmirror.gnu.org/gnu/wget/wget-1.19.4.tar.gz", testpath/"test"
     assert_equal (testpath/"test").sha256, "93fb96b0f48a20ff5be0d9d9d3c4a986b469cb853131f9d5fe4cc9cecbc8b5b5"
   end
 end

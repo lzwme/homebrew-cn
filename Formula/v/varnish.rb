@@ -1,9 +1,9 @@
 class Varnish < Formula
   desc "High-performance HTTP accelerator"
   homepage "https://www.varnish-cache.org/"
-  url "https://varnish-cache.org/_downloads/varnish-7.7.2.tgz"
-  mirror "https://fossies.org/linux/www/varnish-7.7.2.tgz"
-  sha256 "fda7750e1281a20e9cccc6c666481d2437fa7c0d816592c86e4fb7ba7fc464ad"
+  url "https://varnish-cache.org/_downloads/varnish-7.7.3.tgz"
+  mirror "https://fossies.org/linux/www/varnish-7.7.3.tgz"
+  sha256 "e96eeafc4cfe2a558ed2fb54f1e22be3a3d995f46f8c00da545d583aaef80236"
   license "BSD-2-Clause"
 
   livecheck do
@@ -12,13 +12,13 @@ class Varnish < Formula
   end
 
   bottle do
-    sha256               arm64_sequoia: "e41fed283f2c9b4394117e42f2e9fa8fb823ac7b97a9ed3fb0baa014b09dd669"
-    sha256               arm64_sonoma:  "f4d2dc9453262900127df7752908a13643d790a3f3b4318f9ae2a02a97e32daf"
-    sha256               arm64_ventura: "f7ce89466660a8932112810bd13b2cf5b7696f10e5f1168a4c955ef8e429c116"
-    sha256 cellar: :any, sonoma:        "152febc5f83c03cababb88d8e7c51db5bcf8c4150662402ff4589e3d874282cd"
-    sha256 cellar: :any, ventura:       "09249cfa3e8fa885429097c6f0b9a0d8c1a3a9cc7451dd140e07453659c0e79a"
-    sha256               arm64_linux:   "8dcfbfeade0dc3390184b3def3a6a4553ce9c03c74dbbd542883ec0113dc6a8d"
-    sha256               x86_64_linux:  "58fb2ac40d4757484a81d33fc480795816751776cb86b3cceafbb3a8d1dbdadc"
+    sha256 arm64_sequoia: "ed2e745c07dde91d8b7db4521187aafd7cf598dd9cc84d7642f7ab1bd408dec5"
+    sha256 arm64_sonoma:  "bf27e2caf53c14f1cb2bbab899b9eda77025f3246d99faa968548e91918c2e66"
+    sha256 arm64_ventura: "12082dc9354253a4e2641bc07383427d158ffc976bbbea65e1a23a53c186d4ca"
+    sha256 sonoma:        "d90ccf06cfcc1e990666cdc22a5d042d8bd3d4d4feb800b3fc707c223d3fa6fd"
+    sha256 ventura:       "976d770d0de09defe83d366aae79240f27a68c044735bdc8e89ac60aad4a6b03"
+    sha256 arm64_linux:   "5ace8a30ad386158d8c61898055ac6e75e3b438c2e16e97306d10354fdd9eab6"
+    sha256 x86_64_linux:  "6f3f69bab6e9cddeec6b69105fb6fecefc93e72f86256dcc36a6c3bb2a94408c"
   end
 
   depends_on "docutils" => :build

@@ -4,16 +4,17 @@ class Handbrake < Formula
   url "https://ghfast.top/https://github.com/HandBrake/HandBrake/releases/download/1.10.0/HandBrake-1.10.0-source.tar.bz2"
   sha256 "f931012ee251113d996b61aceaaef57165efcc5ea5a2705efffc4265f6b53d26"
   license "GPL-2.0-only"
+  revision 1
   head "https://github.com/HandBrake/HandBrake.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "4dc8b8de7ff4b78a1a8ec92e5d95bebb08a0ae406e3b6e76256fe3b6561c18f2"
-    sha256 cellar: :any,                 arm64_sonoma:  "c0756cac988fd50b981e32d371147c3cf4bc8d237c8ae4f4ec2fac5dae8eac67"
-    sha256 cellar: :any,                 arm64_ventura: "b4ee5f3a06e95a2cffaa98eb6f1caeed695f361f3ab59446c9ea1958c52ec6fd"
-    sha256 cellar: :any,                 sonoma:        "a5fedc40f7461eb310779b44c6c5cbaf1ed24b8c321c317d8c0d90ae2cd87f60"
-    sha256 cellar: :any,                 ventura:       "0a59bb3f7ea4b639efb2528256223b3dbc63c19626a566fa3fef9ce081ac6419"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "dce2716664cb34296d1419b2a6c3fea5c5aaeb5dc27023d2b413cd64f2bfccdc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "426f0851ac394ad5358c8db2a3e0f57140650891e99c51a9231bdc5b9656f4ff"
+    sha256 cellar: :any,                 arm64_sequoia: "5600a264572a711f255209f1304d6bc1b866f20e03a0f28bc30af2425f5475bb"
+    sha256 cellar: :any,                 arm64_sonoma:  "7bf938e7870a64890c12d456cba1d281228b396cdb5503b57ccd82acbb75c07c"
+    sha256 cellar: :any,                 arm64_ventura: "6111b6053d667860e264b70098a41306bd29b8cb0d93eb6dbd86afe58caf454c"
+    sha256 cellar: :any,                 sonoma:        "ecbe23bc02de939cc15ec635f1efd6444bda649669c574a6c2e28a773be31fae"
+    sha256 cellar: :any,                 ventura:       "7edadc823893ff939ec2381e89b74f3fa549ba42be4ff4f9ebfd30df271b8d22"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a68074e2324ff4eb67ee666250405e6fabe4631f15c1bb8eb21aa69022d3a0e7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e7dfb9c332e8a76cfa3ff6958ef5acd8295b6c54e40116243128945d4f420742"
   end
 
   depends_on "autoconf" => :build

@@ -8,12 +8,8 @@ class AwscliLocal < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9b4773f188a0e6a375ac5620d71130616caf45994695e5065a9f9a96e053c5f8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9b4773f188a0e6a375ac5620d71130616caf45994695e5065a9f9a96e053c5f8"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "9b4773f188a0e6a375ac5620d71130616caf45994695e5065a9f9a96e053c5f8"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ca4a146430c397d13afb721eba35fd11fe9351a23164612238c5126211d5d560"
-    sha256 cellar: :any_skip_relocation, ventura:       "ca4a146430c397d13afb721eba35fd11fe9351a23164612238c5126211d5d560"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9b4773f188a0e6a375ac5620d71130616caf45994695e5065a9f9a96e053c5f8"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "fd8d0dabd544eafb1a7f07f9d618608fe0aa8afdb16eaa89bf97044f68875ca7"
   end
 
   depends_on "awscli" => :test # awscli-local can work with any version of awscli
@@ -21,13 +17,13 @@ class AwscliLocal < Formula
   depends_on "python@3.13"
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/45/dd/485d58afea6bf58638c0dbd7716d1505a80735cb94e9faececcccb1d1b31/boto3-1.40.4.tar.gz"
-    sha256 "6eceffe4ae67c2cb077574289c0efe3ba60e8446646893a974fc3c2fa1130e7c"
+    url "https://files.pythonhosted.org/packages/03/2e/606fa848f0b6fb0acdcfaefed5b6c663bdb9bcf611760be3f273848d149c/boto3-1.40.14.tar.gz"
+    sha256 "d1d9998fc2b9619fc796c859d263ac81793d783e79331be62931b353dd1b68b9"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/2b/65/4f95659b9b2778d347bd9aacf7e1007dc2d89819ad9985da44a0d2ac1c63/botocore-1.40.4.tar.gz"
-    sha256 "f1dacde69ec8b08f39bcdb62247bab4554938b5d7f8805ade78447da55c9df36"
+    url "https://files.pythonhosted.org/packages/b2/1d/21d139fb01e760b7d9a527dffcd20513ab989b75837ac12b010ef11078a2/botocore-1.40.14.tar.gz"
+    sha256 "1810494c8c4190f20f9e17f2da4f7ee91eda863f429c6d690ea17ec41a8f83c4"
   end
 
   resource "jmespath" do

@@ -1,19 +1,19 @@
 class Falcoctl < Formula
   desc "CLI tool for working with Falco and its ecosystem components"
   homepage "https://github.com/falcosecurity/falcoctl"
-  url "https://ghfast.top/https://github.com/falcosecurity/falcoctl/archive/refs/tags/v0.11.2.tar.gz"
-  sha256 "078f256a7f97beb74a2936a39762185f573fef7f3daf12e390eb5882a45347d6"
+  url "https://ghfast.top/https://github.com/falcosecurity/falcoctl/archive/refs/tags/v0.11.3.tar.gz"
+  sha256 "37539fa3b8bd0847131df33f568c35c22d958f9b39316e247063e38dedac4bc5"
   license "Apache-2.0"
   head "https://github.com/falcosecurity/falcoctl.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4895aa77c0f03fe73f34d08338aeb59458a5d8e554430f3f52917f1d0e6ceef7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c5b00062f009f131fef27d496adc22cf89eff8e568b2a3e4c5e9cc07b0dc8f08"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "6d8a4b520547e521b500b9a93778fda7c863008a599308032320109f918af822"
-    sha256 cellar: :any_skip_relocation, sonoma:        "da8bbceafcbac2455bdc1e0a28f3a0acf2c4ef56a05f1aa6bf76426664ff04f1"
-    sha256 cellar: :any_skip_relocation, ventura:       "ff1c053d2f9d00812c95aa28aaefa8dc2b45c9d8c76f79fdaddf681f53efd454"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "517ea9d52bd1b35d6fdb20d9189d744da32818d20d65362a6c7e8c24bfd14735"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "43371365170a94925418374bae3a9882a94fc3995ca1bfabd7e14f7fd7ab5437"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b476b7884f53f5819f5451cfb94a03626291811ed0863ac7e5db728a3468862f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8c6a6455e55d4c59c23a669cdf026f5d8820e65f4eaab9d1bde78a214d68c083"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "a17af8314205a29ba1aa5ce2e078ba423b36d7832daa04b5f29ad5cacc90088d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d9e519ca64d20bd22cbe34a5f1d879b82efce33d5a0bb89a06d75f6384691561"
+    sha256 cellar: :any_skip_relocation, ventura:       "8f39d007f3eb896ba0ada58f7ea5714ec45acf0cb9f9add5a045cce8d1383cdb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "aa744a049680c6e24b52a69428c63cdf17dcf05ee87769e4479d50a3dd03f722"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "66699bf9a46777c30997f54a2c3c574025c944c796020801e7a8fe2916e54a6b"
   end
 
   depends_on "go" => :build

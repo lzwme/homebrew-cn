@@ -4,6 +4,7 @@ class Camlp5 < Formula
   url "https://ghfast.top/https://github.com/camlp5/camlp5/archive/refs/tags/8.03.01.tar.gz"
   sha256 "057b8e06590cf29a1bd22b6c83aa5daa816d5cbb2ba2548409d474d7dc10c5b8"
   license "BSD-3-Clause"
+  revision 1
   head "https://github.com/camlp5/camlp5.git", branch: "master"
 
   livecheck do
@@ -12,13 +13,13 @@ class Camlp5 < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "8eb1bd182dff1a1f93c7cad292a550a0ff6a7700dd383d344e605661413b1f73"
-    sha256 arm64_sonoma:  "2b7feece68d3595e22218a9532a50cad7a835bf55555b8ae2acbe0aa001b206a"
-    sha256 arm64_ventura: "baac175d9fc1d95967bbd534fe163ed06461993f1fffa2a601c5a2daeb960942"
-    sha256 sonoma:        "32bedf850db730633846714e007e702464370f6bfe5018bc387ee3e55744466e"
-    sha256 ventura:       "b42b8272468115f0bc0fc793937a41f965dd09bf2cabd548d7fcbd974433042c"
-    sha256 arm64_linux:   "a14a8a05c46c73c75f98bac84679db564a38f59d064401aebed5a8bf6d4e5299"
-    sha256 x86_64_linux:  "40fdc0d4a01d13250fc2dfa8b8c1d7feaac99894e6deecd74b662d0dca58b812"
+    sha256 arm64_sequoia: "7959f6d3fa94680f0cfbd400e62278ca831ed6e9e172a799b92107521898e654"
+    sha256 arm64_sonoma:  "b358f825630a28395859a8d24034710241ff0ba374bab42ebe8c453f7398755f"
+    sha256 arm64_ventura: "a67366fe1a8eb1a88495973e2049d78151112a5d081803f3be2c6b0a38c4c616"
+    sha256 sonoma:        "d6a7484e9535bad4b3e42e581e0c0da75f4f778852950255dc46b929c25cdce7"
+    sha256 ventura:       "c2de76fb6bb6df777b902d91756821a5fb1718b7c5f2492599f492512b3285d7"
+    sha256 arm64_linux:   "5063e6e6c30363bf5e58adda45472123ebef8a12daa36dbf04279db8f955baf2"
+    sha256 x86_64_linux:  "7463bdc459d6b9a308f9598799f67fd6194f6070e5b4555b60a213dabd711d4c"
   end
 
   depends_on "ocaml-findlib" => :build

@@ -4,6 +4,7 @@ class Ledit < Formula
   url "https://ghfast.top/https://github.com/chetmurthy/ledit/archive/refs/tags/ledit-2-07.tar.gz"
   sha256 "0252dc8d3eb40ba20b6792f9d23b3a736b1b982b674a90efb913795f02225877"
   license "BSD-3-Clause"
+  revision 1
 
   livecheck do
     url :stable
@@ -14,13 +15,13 @@ class Ledit < Formula
   end
 
   bottle do
-    sha256                               arm64_sequoia: "a1c09fdb10ac873836f1f3370f77f8d87f9db7adb3ff0118ac0ba97b96cdb15e"
-    sha256                               arm64_sonoma:  "6659da41bcf927019dbd40f4e9c201e964ad63fae3dd19a1425313f3b51672ad"
-    sha256                               arm64_ventura: "62f4ceec2f8e79b0be37a14ffa16ae6741722cb0bb0868d5aac2d12988b5c6bb"
-    sha256 cellar: :any_skip_relocation, sonoma:        "59699dfa06f09eb79a2fd6b500757c7384b27d73cc44f2e5d05c30bc122cb9d5"
-    sha256 cellar: :any_skip_relocation, ventura:       "6db3815932944204f44ab9e31bd34a678c8fc81d92c3b86e5518fc1bc8cffbcd"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cd2c6e9eb1c5672a81399729bdaa9700876b024c24fd74bc982424790d9d2c01"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cd2c6e9eb1c5672a81399729bdaa9700876b024c24fd74bc982424790d9d2c01"
+    sha256                               arm64_sequoia: "653f7b3a2c1e9e43277cd71a1372411055cffdb00c117338b7bad7a25f46105d"
+    sha256                               arm64_sonoma:  "561049e6938a5ea683f00cdfba159504b442c45f2d81ff2daf0dea68ac9ce92b"
+    sha256                               arm64_ventura: "00a97eb38296ecdd8477456b8e8d584c6c6798bab6075fe3188058d95636d1a1"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f6de3036421e83e22dd080005616d42109671979947a7408428871a7a51e6239"
+    sha256 cellar: :any_skip_relocation, ventura:       "be5d93d43d670cf829f83b8540811d701a7eba2310a0c49b75b0349ff160ddbe"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "aa138a11a2f7d147c880e4075da50d042f01f53587356384430e6610f2473eb0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aa138a11a2f7d147c880e4075da50d042f01f53587356384430e6610f2473eb0"
   end
 
   depends_on "ocaml-findlib" => :build

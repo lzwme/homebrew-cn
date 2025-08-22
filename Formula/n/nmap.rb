@@ -1,8 +1,8 @@
 class Nmap < Formula
   desc "Port scanning utility for large networks"
   homepage "https://nmap.org/"
-  url "https://nmap.org/dist/nmap-7.97.tar.bz2"
-  sha256 "af98f27925c670c257dd96a9ddf2724e06cb79b2fd1e0d08c9206316be1645c0"
+  url "https://nmap.org/dist/nmap-7.98.tar.bz2"
+  sha256 "ce847313eaae9e5c9f21708e42d2ab7b56c7e0eb8803729a3092f58886d897e6"
   license :cannot_represent
   head "https://svn.nmap.org/nmap/"
 
@@ -12,13 +12,13 @@ class Nmap < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "3248afca88a66d1c05d45184e3ad392d621d0840f7e8cd4414fd9f3dbbc1269b"
-    sha256 arm64_sonoma:  "7016aa0e4002533b53fba111768bc68213f3ea657addb03322a84b0dab9c7808"
-    sha256 arm64_ventura: "a65b39e2ab437dce905172ef2d4a76d163d642b480b64517294ee870cea89e9a"
-    sha256 sonoma:        "5bb32d46f1eb4d1e6dbe2660e5f0638effa1b71c88afb94bf245cda37cd12008"
-    sha256 ventura:       "2a903ba2f7c273438c76f983d0ef047b9777372e29f4323f8fc1891e8873b3bc"
-    sha256 arm64_linux:   "679376aa9188cb49e1b789871c84341ed312c66ab3491be3a1aad245a7357070"
-    sha256 x86_64_linux:  "55ff270118c5f7228041f2b8adc141ed004e860400e1f6980e9ed5b08814bca1"
+    sha256 arm64_sequoia: "86f372d66c76d8b580bce5fe115c5a7ff135b29432d6eb352e20a686754079e6"
+    sha256 arm64_sonoma:  "6cab6232ad105f0fde0082fcde22fe3c77540a8f049108e781cce8c4daf03752"
+    sha256 arm64_ventura: "b25f1cda59d8b0d400e3aba65ef00c3446e3c3b71783abbbd24aa16ef9c5a96e"
+    sha256 sonoma:        "51d229c6515ddfbb501867c54aecde8f2bdb860059ef987f827869a532ec8bb4"
+    sha256 ventura:       "5ab2842330fb3bf5e485beded2fbdde0a869557647903ea96a2c18b260cd2702"
+    sha256 arm64_linux:   "0f6d1af6c67e23e2f318f85d55e5e110140464df7b31ce52af6a0c2bb3fd3145"
+    sha256 x86_64_linux:  "59e03f71b2993561a93f7cc0604a6006ff89ba380e3f7237d866ee28b356cd2f"
   end
 
   depends_on "liblinear"

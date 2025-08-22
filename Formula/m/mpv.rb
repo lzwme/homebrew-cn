@@ -4,17 +4,17 @@ class Mpv < Formula
   url "https://ghfast.top/https://github.com/mpv-player/mpv/archive/refs/tags/v0.40.0.tar.gz"
   sha256 "10a0f4654f62140a6dd4d380dcf0bbdbdcf6e697556863dc499c296182f081a3"
   license :cannot_represent
-  revision 2
+  revision 3
   head "https://github.com/mpv-player/mpv.git", branch: "master"
 
   bottle do
-    sha256 arm64_sequoia: "8d833679b94acae40a7bb906179aea01032af2524874245dbfed9ef6786ac3c3"
-    sha256 arm64_sonoma:  "82e29605ee3c819fe332283b96fed82bca87878510ffd9d6071e8264b8b7d0ca"
-    sha256 arm64_ventura: "5a7152b6b9fff8d1eb6b6e470f83f9a5fac2c01fd00eec9c3053f184e7daccb9"
-    sha256 sonoma:        "f5fed567f0ed8c0f71b27c5c63784d6b61dbba4231fd63f73ccbc9e8e20bf773"
-    sha256 ventura:       "4e7b70a4ee324c0254d76fd1b7262a31fafc84826a0e818c7f0d04c4e44e900a"
-    sha256 arm64_linux:   "33a31a3ce61998ceead20fdc269ce869df44b42713a81ba1bfdf4bab80e1d834"
-    sha256 x86_64_linux:  "0a7a6217ff4496a2dd12d9e0d08905b57ebe0b12b0d8788dcbbe505acf5d6f44"
+    sha256 arm64_sequoia: "9bca3581e41200876f4eed25ba9fafe8134323141f70da48ab904a27b2b9848a"
+    sha256 arm64_sonoma:  "0057fb2359b8129667d2838722ab515cdbecd1b6eb8ca988435859c118207ab1"
+    sha256 arm64_ventura: "1351503c5222d9c9e0a21692c88375471986d5f46dd98e1d4866af06b8fd59df"
+    sha256 sonoma:        "1dee2defb8aa01d21df8cc780d1de558f117fdfa41d25195f1e56626864043f6"
+    sha256 ventura:       "e14b40d371f6a2577ef6836ad6d3cf9b68463ad910819e7b694c48f4bb4dc951"
+    sha256 arm64_linux:   "4d1802b9fe1493bd9ca1e2293f0dc1529ccd97a40a985c33b18e198d16137918"
+    sha256 x86_64_linux:  "982d2ffb5ab6d84bd4ac2d6418c87cc428496fde4d529cfc31b9dce4cc1c7c1d"
   end
 
   depends_on "docutils" => :build

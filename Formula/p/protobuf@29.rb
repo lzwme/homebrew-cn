@@ -4,6 +4,7 @@ class ProtobufAT29 < Formula
   url "https://ghfast.top/https://github.com/protocolbuffers/protobuf/releases/download/v29.5/protobuf-29.5.tar.gz"
   sha256 "a191d2afdd75997ba59f62019425016703daed356a9d92f7425f4741439ae544"
   license "BSD-3-Clause"
+  revision 1
 
   livecheck do
     url :stable
@@ -11,13 +12,13 @@ class ProtobufAT29 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "1925b35d8251d8ee533e2bf378191ccfaa0eae898b8ebb557bf31a44380e3527"
-    sha256 cellar: :any,                 arm64_sonoma:  "b2ddb8fc16385c7c8e0f90ff9dda5ad9f0cff42718350bdb975cec49175d59b6"
-    sha256 cellar: :any,                 arm64_ventura: "0290d19843407a272ca8474bf6e7c00ababa9b374678611f3059e54297d84b5f"
-    sha256 cellar: :any,                 sonoma:        "7c043b24312d634fa1468bdf5c369ec1c6f69cdc9391844a56cf26ad43183c31"
-    sha256 cellar: :any,                 ventura:       "7d34af0f93bba3fc9b4d42e9e6ca16a91f57146184f6c01a861473b0c0af6257"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "96018433e703af65c0fa8330ccede6ad5d055abb748ed4c796e9062cd2fefbd0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "60f8f1a063806ecd090ac0ee5512c827a97760d67c0d09b6b4f553a552215dd5"
+    sha256 cellar: :any, arm64_sequoia: "528c423462116bb411a5da6b965361d4ad205ca0b6b53434efc4acbd3d5e87bd"
+    sha256 cellar: :any, arm64_sonoma:  "92323b0b9e90b9431c6c9f3c6f6b048e2f9439da2e5bc36a1ef0a5a633fd7387"
+    sha256 cellar: :any, arm64_ventura: "363d21aa93375caf21806c54c3da022f1bb880729dc87d0171a6731e4692dbdc"
+    sha256 cellar: :any, sonoma:        "da3395782f6666eba1a9c48b159e6ccfaa26e4ce7c6c37101168b1d5d885ec00"
+    sha256 cellar: :any, ventura:       "83642e846f15ceb4211e66ec55aefdb63eb8facf4e9684aa083885b0422ad1f7"
+    sha256               arm64_linux:   "0a567f7ee0d6a937c22e38176da87de07e014ce967af46cde6b39a2ec5cfcc49"
+    sha256               x86_64_linux:  "5c29ea136cda77ada1aefd78d66c9150e674fbc52f821670721a8abbe7bab3d7"
   end
 
   keg_only :versioned_formula
@@ -30,6 +31,16 @@ class ProtobufAT29 < Formula
   depends_on "googletest" => :build
   depends_on "abseil"
   uses_from_macos "zlib"
+
+  on_linux do
+    # Avoid newer GCC which creates binary with higher GLIBCXX requiring runtime dependency
+    depends_on "gcc@12" => :build if DevelopmentTools.gcc_version("/usr/bin/gcc") < 12
+  end
+
+  fails_with :gcc do
+    version "11"
+    cause "absl/log/internal/check_op.h error: ambiguous overload for 'operator<<'"
+  end
 
   # Backport to expose java-related symbols
   patch do
@@ -45,6 +56,8 @@ class ProtobufAT29 < Formula
 
   # Backport of (for compatibility with new Abseil):
   # https://github.com/protocolbuffers/protobuf/commit/0ea5ccd61c69ff5000631781c6c9a3a50241392c.patch?full_index=1
+  # Backport to reduce flaky test failures:
+  # https://github.com/protocolbuffers/protobuf/commit/7df353d94a84eacdfc0a19ee6db445d95fc57679.patch?full_index=1
   patch :DATA
 
   def install
@@ -166,3 +179,20 @@ index 545fd51..55b1ec8 100644
    }
  
    // API to delete any objects not on an arena.  This can be used to safely
+diff --git a/src/google/protobuf/map_test.inc b/src/google/protobuf/map_test.inc
+index df8ce2e411631b1dda93f1a8b05602357126d9d4..a87f9dc6df55ef51d4bfbdc9ccb8611984119f38 100644
+--- a/src/google/protobuf/map_test.inc
++++ b/src/google/protobuf/map_test.inc
+@@ -1365,9 +1365,9 @@ TEST_F(MapImplTest, SpaceUsed) {
+ bool MapOrderingIsRandom(int a, int b) {
+   bool saw_a_first = false;
+   bool saw_b_first = false;
+-  std::vector<Map<int32_t, int32_t>> v(50);
+-  for (int i = 0; i < 50; ++i) {
+-    Map<int32_t, int32_t>& m = v[i];
++  std::vector<Map<int32_t, int32_t>> v;
++  while (v.size() < 100) {
++    Map<int32_t, int32_t>& m = v.emplace_back();
+     m[a] = 0;
+     m[b] = 0;
+     int32_t first_element = m.begin()->first;

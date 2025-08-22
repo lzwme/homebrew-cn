@@ -1,19 +1,19 @@
 class Httm < Formula
   desc "Interactive, file-level Time Machine-like tool for ZFS/btrfs"
   homepage "https://github.com/kimono-koans/httm"
-  url "https://ghfast.top/https://github.com/kimono-koans/httm/archive/refs/tags/0.48.4.tar.gz"
-  sha256 "4573d9057550bc257e4828ace92b18382177b7cd379dac68aef529deea927e8a"
+  url "https://ghfast.top/https://github.com/kimono-koans/httm/archive/refs/tags/0.48.5.tar.gz"
+  sha256 "e9b2840619232412b82934ab281801962563423d952fa5cd3887fbb54e77bb6d"
   license "MPL-2.0"
   head "https://github.com/kimono-koans/httm.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e2654463c9920d9f9e7a90934975e718537249b28ded64e90839a0a2525052b7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0f6bd6fd09a59e8aec9821c1d5a80c5d46f1e9d7d938a39e6b15165f72e8dab4"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "7c84e0476db318619c3facfbd9801eda23fc053a00dac46630848886414c40a9"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3f898c8e4c9214d208ac57e74e7907d3c228f5d63c30c3232919f2821fd9f787"
-    sha256 cellar: :any_skip_relocation, ventura:       "2c37c472d4cb056201ca596ee52ee99596e6f51870204e30ba97245fd1e73a23"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ff15f6abe603437e5ade8ffada96b2bea30cad86b99c1c1dcd5611bf6a671871"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "868439da605a20aaf861b7d0994fafd882afe0ad8e593ffe7e6664492c868904"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4619b0dc447c8483b9ade36a17a3d483a79e346032e19a4bbec94f10b0e506f7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4969be85428365a402ab43507e181c7afda8f9fcc8b546a9829470980586713b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "713b2faf002ea74f90cefe2240cde7d85f0638caaad908718c01669a49b30f2b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "20239060c60b898436d758465072d9d9489b702ae17aaaf5c165a990a8fefd65"
+    sha256 cellar: :any_skip_relocation, ventura:       "9f8d015f5cab272192cd055e0d93b1dfeb72e751257cf715622803345877feb8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bf7aea874c55234110896b008cc9d7a65cb796f32074ef258f0d6ecf6223d26e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "392dbf724b6632884e972680872d115427612f21423c67f787ec79d98f8f6dbe"
   end
 
   depends_on "rust" => :build

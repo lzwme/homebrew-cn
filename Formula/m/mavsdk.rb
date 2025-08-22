@@ -2,10 +2,9 @@ class Mavsdk < Formula
   desc "API and library for MAVLink compatible systems written in C++17"
   homepage "https://mavsdk.mavlink.io"
   url "https://github.com/mavlink/MAVSDK.git",
-      tag:      "v3.7.2",
-      revision: "faf36edc6fda478a2c013698c78a42dfc663ef23"
+      tag:      "v3.10.0",
+      revision: "1bb1e1b56eedf3c0d3cd56f4795ce5dd9967b268"
   license "BSD-3-Clause"
-  revision 4
 
   livecheck do
     url :stable
@@ -13,13 +12,13 @@ class Mavsdk < Formula
   end
 
   bottle do
-    sha256               arm64_sequoia: "3342c48b0292d197945cd61eb6d11522187b362ae9e528bd918c03f72e6b29b5"
-    sha256               arm64_sonoma:  "b663e83c26761ef692dcee9f13b8bb6039ea089f946218d4489c808036bf7ab1"
-    sha256               arm64_ventura: "45029a4dfbe4dea2751f9f7176dfa6baef0f807ef02a7e70342ac7ec68e69463"
-    sha256 cellar: :any, sonoma:        "4aa280c2ff54296893eb911581b09a5d967cd245e0b15744a1fcafb6ff58c670"
-    sha256 cellar: :any, ventura:       "5c991378b6b9ecd5f707635b98686f7b2d142fec3dadc7f128c8eda6152e1ce7"
-    sha256               arm64_linux:   "316898b726747774aaf9f3329232c0a6c753b61a099e3ccf15afe98960825c2c"
-    sha256               x86_64_linux:  "ad500bf57e96da40cad6f3597e38b3d733cd0a95e68829de7ab286f5a05b2662"
+    sha256               arm64_sequoia: "f49e6872e1ab80184cc667814a27fdf21e7abbd3a93b65e31e6ab67a3a581d8d"
+    sha256               arm64_sonoma:  "09a4c41002df62e8561c2e59296aaf8f3d13c44422a1c3bf61abfed8261c8104"
+    sha256               arm64_ventura: "79c28d5d28905b1f325e8dbf533c0b09d9c9f95f565128a1b7da66bcd4667616"
+    sha256 cellar: :any, sonoma:        "ad8ff4a9e513af4bf22a086b24595b659e3cc8caf090d182028732ecf5e62893"
+    sha256 cellar: :any, ventura:       "8e8048cecf40ca5ea8546030821700884b2c8943ca424fcd28518e5bb6750e7d"
+    sha256               arm64_linux:   "78c906ed3aa638eafe902e1bf950505d555601811541c01a84d32e4e38a63b02"
+    sha256               x86_64_linux:  "44afa8c559b731e18b371164b1d70e20f3d642fcd266ae8b4c4a70404fffc829"
   end
 
   depends_on "cmake" => :build
@@ -49,14 +48,6 @@ class Mavsdk < Formula
     EOS
   end
 
-  # ver={version} && \
-  # curl -s https://ghfast.top/https://raw.githubusercontent.com/mavlink/MAVSDK/v$ver/third_party/mavlink/CMakeLists.txt \
-  # | grep 'MAVLINK_GIT_HASH'
-  resource "mavlink" do
-    url "https://github.com/mavlink/mavlink.git",
-        revision: "5e3a42b8f3f53038f2779f9f69bd64767b913bb8"
-  end
-
   def install
     ENV.llvm_clang if OS.mac? && (DevelopmentTools.clang_build_version <= 1100)
 
@@ -66,16 +57,14 @@ class Mavsdk < Formula
     # Regenerate files to support newer protobuf
     system "tools/generate_from_protos.sh"
 
-    resource("mavlink").stage do
-      system "cmake", "-S", ".", "-B", "build",
-                      "-DPython_EXECUTABLE=#{which("python3.13")}",
-                      *std_cmake_args(install_prefix: libexec)
-      system "cmake", "--build", "build"
-      system "cmake", "--install", "build"
+    %w[mavlink picosha2 libmavlike].each do |dep|
+      system "cmake", "-S", "third_party/#{dep}", "-B", "build_#{dep}", *std_cmake_args(install_prefix: libexec)
+      system "cmake", "--build", "build_#{dep}"
+      system "cmake", "--install", "build_#{dep}"
     end
 
     # Source build adapted from
-    # https://mavsdk.mavlink.io/develop/en/contributing/build.html
+    # https://mavsdk.mavlink.io/main/en/cpp/guide/build.html
     args = %W[
       -DSUPERBUILD=OFF
       -DBUILD_SHARED_LIBS=ON
@@ -84,6 +73,7 @@ class Mavsdk < Formula
       -DVERSION_STR=v#{version}-#{tap.user}
       -DCMAKE_PREFIX_PATH=#{libexec}
       -DCMAKE_INSTALL_RPATH=#{rpath}
+      -DDEPS_INSTALL_PATH=#{libexec}
     ]
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args

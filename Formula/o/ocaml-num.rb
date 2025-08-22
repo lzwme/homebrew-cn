@@ -4,18 +4,18 @@ class OcamlNum < Formula
   url "https://ghfast.top/https://github.com/ocaml/num/archive/refs/tags/v1.5.tar.gz"
   sha256 "7ae07c8f5601e2dfc5008a62dcaf2719912ae596a19365c5d7bdf2230515959a"
   license "LGPL-2.1-only" => { with: "OCaml-LGPL-linking-exception" }
-  revision 2
+  revision 3
 
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "6d725e2394822cf187d7e62e026e2074d3634cc0d446b99628b940fb17a98fc5"
-    sha256 cellar: :any,                 arm64_sonoma:  "0770ab23c6c1522658854b81feee508616d0961ed59df5fce51668b148ec663c"
-    sha256 cellar: :any,                 arm64_ventura: "4c8ae18c3e506a523126dfbaa5c0e985403b3755605acd2958e77c8ae8b92ddb"
-    sha256 cellar: :any,                 sonoma:        "893b09b47a9314c067180e6ed6aef8ee5409367b879b34c0bcfa9f2f4fb6dbbe"
-    sha256 cellar: :any,                 ventura:       "8ac2491b750fcba45378a3078a59c946d05f770a97852e2f6ed300b47b91517f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "bea4a13f1bd4a051e1589226b5349defd7d7b61a37817e673c15edc56d9dccdb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "db6ecc0fac0cfe98ec8caa2f97962d497d9e892aa9064a81490852555f65fc19"
+    sha256 cellar: :any,                 arm64_sequoia: "781da529cdba86087750a800642a8cc2299be1d255149daff379164073ce7785"
+    sha256 cellar: :any,                 arm64_sonoma:  "ce6ae8fa010523ccf585e594d8822f0756f25b188ad869b191fa9bdd11294c01"
+    sha256 cellar: :any,                 arm64_ventura: "73245a4b0918db27313822585644728b34ca7b22d1fc4d765321c00f71d4d549"
+    sha256 cellar: :any,                 sonoma:        "3348af9bf9743fb08b24d8ca2b0c33c6ce5aa2ccad30af20eca1fb56ca1365cc"
+    sha256 cellar: :any,                 ventura:       "47b73fc8a4b41adcf949df605dd13c99f3387d0118aafd7f9795aea53fcd7062"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4e692a6429d05500c5958081b2a5c863913b9d62a23d88bf692ba76fd34988bb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "19bc0687d271a60a5acc1f4b8fd6d0a52c9d27ce3a4271760b39ea36ddaef17c"
   end
 
   depends_on "ocaml-findlib" => :build

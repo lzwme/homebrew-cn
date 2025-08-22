@@ -2,12 +2,12 @@ class BandcampDl < Formula
   include Language::Python::Virtualenv
 
   desc "Simple python script to download Bandcamp albums"
-  homepage "https://github.com/iheanyi/bandcamp-dl"
+  homepage "https://github.com/evolution0/bandcamp-dl"
   url "https://files.pythonhosted.org/packages/78/c2/2c11878a494ceef38ed5ac51dede216547cb14ef40a30f8f009fca0ceab6/bandcamp_downloader-0.0.17.tar.gz"
   sha256 "d5e47777d0b1a14e49ba72d78ffa9b150e72af51d28e981231a0bd32c1c2e159"
   license "Unlicense"
   revision 2
-  head "https://github.com/iheanyi/bandcamp-dl.git", branch: "master"
+  head "https://github.com/evolution0/bandcamp-dl.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, all: "1f4c34ed1a9ae0ce495cee8d829d6661a48f3bbfa1ede20dc5ea54b726ef5abd"

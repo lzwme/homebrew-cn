@@ -1,18 +1,18 @@
 class Mongoose < Formula
   desc "Web server build on top of Libmongoose embedded library"
   homepage "https://mongoose.ws/"
-  url "https://ghfast.top/https://github.com/cesanta/mongoose/archive/refs/tags/7.18.tar.gz"
-  sha256 "8b661e8aceb00528fc21993afe218b1da0f0154575a61b63ce0791ad8b66b112"
+  url "https://ghfast.top/https://github.com/cesanta/mongoose/archive/refs/tags/7.19.tar.gz"
+  sha256 "7ae38c9d673559d1d9c1bd72c0bdd4a98a2cae995e87cae98b4604d5951762b8"
   license "GPL-2.0-only"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "c9b6257a6f94c7de3aacf1d0910fb64040e936276e857a3e39f07719877f9f00"
-    sha256 cellar: :any,                 arm64_sonoma:  "404c20eea42f1a4f82a71b24fbd6f86dc852f165c3b05888c61157c65c641fec"
-    sha256 cellar: :any,                 arm64_ventura: "a8ba96bd0932872b97b66f17f3b2b5adcdf5c37cce8f38547207707df910181c"
-    sha256 cellar: :any,                 sonoma:        "aab6085231ab726182a67b541750d8004cfe7907bed8cd645284e417be7f143d"
-    sha256 cellar: :any,                 ventura:       "5e340bb65e242915f274093e833ebfabf4db89c678ea2eff3d663f677ce7dcea"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "bb1f43f42d51a855ec0b3de2893f72dac92f3bc1a9985907bf2353f7f8cfe3a5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3b7e641817714cb791b70ed13d943e33a17247a975ea054949b66266c55fd463"
+    sha256 cellar: :any,                 arm64_sequoia: "b6560ca28dce7662d81ff3996887775310a25a43f855d437e2ff2aac8127e7bf"
+    sha256 cellar: :any,                 arm64_sonoma:  "04c4fa0e7342e96d3b75224f9f74b7571387c0cd6c4865e310611182317828d0"
+    sha256 cellar: :any,                 arm64_ventura: "695f0f8fc7e7700b8021340fbe7c49ade0c2178be7907a23477d7d13ccf58a1d"
+    sha256 cellar: :any,                 sonoma:        "4a6c2ac51634fb5cbe5586af62bee3ca83ff836f61fd6f27cfc1bd54220c4cd7"
+    sha256 cellar: :any,                 ventura:       "7840143349acd60f2a53cbdf6f9afff05aab257e87a97b2df16ae30970af900c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b08a81ef1304d6036bd901592ec69c61b21bd6edbf66a270843de71763c3cfd2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c5db2b5b0eb82a5bc9735b19f56042b32e6754142a46718d96e920a9bdf93116"
   end
 
   depends_on "openssl@3"

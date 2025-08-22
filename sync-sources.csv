@@ -3411,6 +3411,7 @@ Homebrew-homebrew-core/Formula/k/kubernetes-cli@1.29.rb, Homebrew/homebrew-core,
 Homebrew-homebrew-core/Formula/k/kubernetes-cli@1.30.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/k/kubernetes-cli@1.31.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/k/kubernetes-cli@1.32.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/k/kubernetes-mcp-server.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kubescape.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kubeseal.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/k/kubesess.rb, Homebrew/homebrew-core, 1
@@ -4134,6 +4135,7 @@ Homebrew-homebrew-core/Formula/lib/libtrace.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libtrng.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libu2f-server.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libucl.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/lib/libudfread.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libuecc.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libultrahdr.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libunibreak.rb, Homebrew/homebrew-core, 1
@@ -4308,7 +4310,6 @@ Homebrew-homebrew-core/Formula/m/mariadb.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mariadb@10.11.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mariadb@10.5.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mariadb@10.6.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/m/mariadb@11.1.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mariadb@11.2.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mariadb@11.4.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/marisa.rb, Homebrew/homebrew-core, 1
@@ -4338,7 +4339,7 @@ Homebrew-homebrew-core/Formula/m/maturin.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/maven-completion.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/maven-shell.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/maven.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/m/mavsdk.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/m/mavsdk.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mawk.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/maxima.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/maxwell.rb, Homebrew/homebrew-core, 1
@@ -4351,6 +4352,7 @@ Homebrew-homebrew-core/Formula/m/mbw.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mcabber.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mcap.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mcfly.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/m/mcp-get.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mcp-inspector.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mcp-proxy.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mcp-toolbox.rb, Homebrew/homebrew-core, 1
@@ -6831,6 +6833,7 @@ Homebrew-homebrew-core/Formula/t/terraform-inventory.rb, Homebrew/homebrew-core,
 Homebrew-homebrew-core/Formula/t/terraform-local.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/terraform-ls.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/terraform-lsp.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/t/terraform-mcp-server.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/terraform-module-versions.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/terraform-provider-libvirt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/terraform-rover.rb, Homebrew/homebrew-core, 1

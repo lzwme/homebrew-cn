@@ -4,17 +4,16 @@ class Menhir < Formula
   url "https://gitlab.inria.fr/fpottier/menhir/-/archive/20240715/menhir-20240715.tar.bz2"
   sha256 "b986cfb9f30d4955e52387b37f56bc642b0be8962b1f64b134e878b30a3fe640"
   license "GPL-3.0-or-later"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "14dd16a69a570a455240d296e6f44805c9ae87eeb98b54daf50d5201a3b031eb"
-    sha256 cellar: :any,                 arm64_sonoma:   "981738a0ed04e59a302c4195b157870e59dc8f7be663f1bb0bd9493cbdcf9277"
-    sha256 cellar: :any,                 arm64_ventura:  "83193b946be4684240e7ccfdf7cb722fb1791e0dfbea95bc47f7afa2c347f61c"
-    sha256 cellar: :any,                 arm64_monterey: "a32cf574977558f2dfa79b986e7a20f7340a32b0d998d65759e7b7db45d1d5c0"
-    sha256 cellar: :any,                 sonoma:         "5c51478563460c4bf57f48a599f4f6d3cec0374734e163f1b05dcaf1a2d14acd"
-    sha256 cellar: :any,                 ventura:        "ff8d04832ebadaec926d1ceffb2188a32e5ed8dfa500175af6afdd338b0be10d"
-    sha256 cellar: :any,                 monterey:       "8548accbcc37dbf510d010b5a664c6645b9407af5995be09a8ef24c1653bf5f2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "7009e018d3ce59a82b4ef105f7dd27dd2dade641f081352544273bbfd35209dc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b59171d340c6db652b67aaa74357024684510313d81be23b6298b0d6cd5c61e3"
+    sha256 cellar: :any,                 arm64_sequoia: "9b2468fc64410b839861ee2531605435a84c67ec1732b3b10a6f6f58df942026"
+    sha256 cellar: :any,                 arm64_sonoma:  "21faae7f40879726a7182fc3a2b06782d05f20ac7c6a78c24c89924e9b987d5f"
+    sha256 cellar: :any,                 arm64_ventura: "e4ab6e13c7d88cd011a87a1ab70c1402b91d52c6e063ca9b053488a5cb4dd7fb"
+    sha256 cellar: :any,                 sonoma:        "21785efb5af4a838f5677dc7c5b13d84baa8b59d8bb3fb6e3f89fc36a9e3f013"
+    sha256 cellar: :any,                 ventura:       "2ed3b598496bb3807dd23ab878d762f9a10138d34ebbbf35e6a06e77a0c45afd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3c8e624c73e5eb0cda890d15259ce19b2fb6d81a5f9f8bf1a375d82087fbf662"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e470ee3bce1d4a0c52223cc49d7cbce48c7115fe819a54bcd09bf2e66b1187d8"
   end
 
   depends_on "dune" => :build

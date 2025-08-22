@@ -5,6 +5,7 @@ class Re2 < Formula
   version "20250812"
   sha256 "2f3bec634c3e51ea1faf0d441e0a8718b73ef758d7020175ed7e352df3f6ae12"
   license "BSD-3-Clause"
+  revision 1
   head "https://github.com/google/re2.git", branch: "main"
 
   # The `strategy` block below is used to massage upstream tags into the
@@ -21,13 +22,13 @@ class Re2 < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "a7182a8211d8f0d30d38503b03ffadfedf0304438d2ecd23674bbc9d9d298e5a"
-    sha256 cellar: :any,                 arm64_sonoma:  "c71c8494ba9c545ff24096ae88b5cfeaad7379b57cef3c7df1bf2579eca732b2"
-    sha256 cellar: :any,                 arm64_ventura: "d0ea6f30ecb696a46236c3c751a720d3d825f33e3c44c673d560bcbdcef862a5"
-    sha256 cellar: :any,                 sonoma:        "7b9f24faf1f35e8865728857d263a6a1e45219fa0678f6541f2dd18be7caa938"
-    sha256 cellar: :any,                 ventura:       "4fa9f1d4541a56203882b898447d954098e5ac4b3cfdd03a216d8d40cb203d4d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "978ec1c836041e61f299ec89eff08217dc32633b1ecc325c55c69bd259cb550e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "98d4327a4e7e8b59d106490e59d1e8b74dc15ce3a3c474e55db64f52c0bb1c02"
+    sha256 cellar: :any,                 arm64_sequoia: "55dd029d2e6c7a466bced9d25336943ce0f2cee303417ede765d188e3b110cf7"
+    sha256 cellar: :any,                 arm64_sonoma:  "e8855b22823e960f98d6f0d43947fb7a4ad1b9ed9cee487bbb59e57cdcb7e5af"
+    sha256 cellar: :any,                 arm64_ventura: "8e907a1fe489e9d5d07635364d1639aa670d15d149d4a3a1ffc141d28c2c6a6d"
+    sha256 cellar: :any,                 sonoma:        "1b4225bec7a3a0d486e8935894b425c4919d48b38f9df43fe3ad0d346cab9246"
+    sha256 cellar: :any,                 ventura:       "a33952db79252f40d49541050612303ebe3ad5efdc41e57fae2a5f7289ec7f84"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2eab07e068468b3efa6beb394d8f97dce0f86186e3a44a20d70c701f7d23dcf7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "be87e985f9cbfd6152865d81d7fbed47609f3b9129fa4282326b32389f18a1b1"
   end
 
   depends_on "cmake" => :build

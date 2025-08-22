@@ -4,6 +4,7 @@ class Protobuf < Formula
   url "https://ghfast.top/https://github.com/protocolbuffers/protobuf/releases/download/v32.0/protobuf-32.0.tar.gz"
   sha256 "9dfdf08129f025a6c5802613b8ee1395044fecb71d38210ca59ecad283ef68bb"
   license "BSD-3-Clause"
+  revision 1
 
   livecheck do
     url :stable
@@ -11,19 +12,29 @@ class Protobuf < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_sequoia: "ab97edc2342f988444997ca6ca308ae6f6c3c89e6e967aa70bf042c3e6023f32"
-    sha256 cellar: :any, arm64_sonoma:  "5cc1bb324c546c7bcafd2a80bc7510fd725b92f6a3ece9331fa141c0eed895a2"
-    sha256 cellar: :any, arm64_ventura: "3cdd2320b3529673f8bba771296d159fc852c97aa4c519bdcfbeeb84716676ea"
-    sha256 cellar: :any, sonoma:        "1f47ab9a1ed9f4701d5687cf8670cdf10cdbd94689d5ee3b49179f42f23a1dfd"
-    sha256 cellar: :any, ventura:       "743a9b45dbd80262c4110508555a6273fc1373952a162a9dbc979f75222b834d"
-    sha256               arm64_linux:   "e53d1aea835c576dc4b51d0634ccd067b15d4f25f6e55ca42ee136dd283561d9"
-    sha256               x86_64_linux:  "1da247995c1f5fa95d7d6c7327b9b3dcb6b8930f362a54d1209c97f2f88584d5"
+    sha256 cellar: :any, arm64_sequoia: "90b483aad7b81336695a9510b73c5cd9aec7673a011c8371038ec0e7a459691a"
+    sha256 cellar: :any, arm64_sonoma:  "618cd213cdccfad8dadc713182b137e8cb06f409623cc92051745039981c1334"
+    sha256 cellar: :any, arm64_ventura: "94157e620da6d0d0fbaffe3a6be2569059fc729254389a6fba90a2c0b28deefa"
+    sha256 cellar: :any, sonoma:        "a7e4b68587ed5617a7da88966105f07a27ff03ba0ca65c1f805838cde4dc9980"
+    sha256 cellar: :any, ventura:       "8d99bf09b9ce970813085f530bb3933c2a503833a5ef17b34e8b7ebd4f657acb"
+    sha256               arm64_linux:   "79cc5788c6a3ee0b2ab55b1e716d8bf97bfac691cdfda1fb19f514448a890282"
+    sha256               x86_64_linux:  "c1614bf4cc935166cb462c39c03cd493e1131533197f7480327780e82db1a9ed"
   end
 
   depends_on "cmake" => :build
   depends_on "googletest" => :build
   depends_on "abseil"
   uses_from_macos "zlib"
+
+  on_linux do
+    # Avoid newer GCC which creates binary with higher GLIBCXX requiring runtime dependency
+    depends_on "gcc@12" => :build if DevelopmentTools.gcc_version("/usr/bin/gcc") < 12
+  end
+
+  fails_with :gcc do
+    version "11"
+    cause "absl/log/internal/check_op.h error: ambiguous overload for 'operator<<'"
+  end
 
   # Apply open PR to fix CRC32 usage on arm64 linux
   # https://github.com/protocolbuffers/protobuf/pull/23164
