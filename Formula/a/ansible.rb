@@ -28,6 +28,7 @@ class Ansible < Formula
   depends_on "libssh"
   depends_on "libyaml"
   depends_on "python@3.13"
+  depends_on "tree" # for ansible-role-init
 
   uses_from_macos "krb5"
   uses_from_macos "libxml2", since: :ventura

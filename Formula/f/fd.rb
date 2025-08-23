@@ -7,14 +7,14 @@ class Fd < Formula
   head "https://github.com/sharkdp/fd.git", branch: "master"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "288860909de7a2e91ce05b6bd85f7e460ab8826817a1656fafd990d607e3d459"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "103924cd3cd77fe919b4cc277ca6bf939dd2db284b0b5503c609046142c106f9"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "642e0e04cca95682808230f796e883c56483c3cc1667236139273461cc2ec99a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "83e317dce0070b68cf66c7794a9da7fe1f9d00d9f2bc2d94f5e49bc311dbab3f"
-    sha256 cellar: :any_skip_relocation, ventura:       "0621b915f7f793aa769fc6708a2e1c2a38864998492af57feae774e986e7bf2e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "bba21d80a06ee8e17144cb5c3a231cb73179daef815fa050390b74228b966d7d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e5f6efbd469e33cc32ab15dbebc0e78415ff662d827ce4a200f2ded78ff5143b"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0062840ffe4426b5487ecf093917dbc5ffb15a16266e3144803c4f784b62c192"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a0226d4c24ecd6d3e68ae193f85b5f180126f50f82607eec4ce375b2154ea161"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "9783ef7681c7f19934eb58b8bd11495025a2e327b726e68940872a26a51ef0bc"
+    sha256 cellar: :any_skip_relocation, sonoma:        "687a43155f651390be9b9a65399d64cdb2040142a7ca34286217fc56e700289b"
+    sha256 cellar: :any_skip_relocation, ventura:       "057cd47107f9c4b6d80c6de29e13d2f33ae793b4c3ae789b9fd9f58f3dc41127"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5bd14056b8ab967763375e7d8accf2bea48f0eb71d970c7c0c9062a62bd84395"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7ba51355cd0ccf8435d98d425216a063f27d75e079e1b4b5c376a23e4d3df3ad"
   end
 
   depends_on "rust" => :build
@@ -22,6 +22,7 @@ class Fd < Formula
   conflicts_with "fdclone", because: "both install `fd` binaries"
 
   def install
+    ENV["JEMALLOC_SYS_WITH_LG_PAGE"] = "16" if Hardware::CPU.arm? && OS.linux?
     system "cargo", "install", *std_cargo_args
 
     generate_completions_from_executable(bin/"fd", "--gen-completions", shells: [:bash, :fish, :pwsh])

@@ -6,13 +6,8 @@ class Commitlint < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a5060996ad29bdfaed43cc556cd7f361c3fb3fb4240fe0f8ed9b3e2634963ec9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a5060996ad29bdfaed43cc556cd7f361c3fb3fb4240fe0f8ed9b3e2634963ec9"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "a5060996ad29bdfaed43cc556cd7f361c3fb3fb4240fe0f8ed9b3e2634963ec9"
-    sha256 cellar: :any_skip_relocation, sonoma:        "86842a5c386c604d290b3784bfc29310ee7bc4de1e6b3c71d5a4621947d8b35d"
-    sha256 cellar: :any_skip_relocation, ventura:       "86842a5c386c604d290b3784bfc29310ee7bc4de1e6b3c71d5a4621947d8b35d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a5060996ad29bdfaed43cc556cd7f361c3fb3fb4240fe0f8ed9b3e2634963ec9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a5060996ad29bdfaed43cc556cd7f361c3fb3fb4240fe0f8ed9b3e2634963ec9"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "58001079e3415bddca9340f20320d0bdc5c202f6693f4bc929ebadb87ad0181d"
   end
 
   depends_on "node"

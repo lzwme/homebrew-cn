@@ -1,23 +1,22 @@
 class Nuclei < Formula
   desc "HTTP/DNS scanner configurable via YAML templates"
   homepage "https://docs.projectdiscovery.io/tools/nuclei/overview"
-  url "https://ghfast.top/https://github.com/projectdiscovery/nuclei/archive/refs/tags/v3.4.8.tar.gz"
-  sha256 "fcf8fe2a2d55de851586872bbfaba8cb362ffceb904bb67e7a2fd0cd5d8554a1"
+  url "https://ghfast.top/https://github.com/projectdiscovery/nuclei/archive/refs/tags/v3.4.9.tar.gz"
+  sha256 "2e5dd732524ffac0a90dd5fc0a5a33cf95102b73690edeaa30f9d0f63054fc22"
   license "MIT"
   head "https://github.com/projectdiscovery/nuclei.git", branch: "dev"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5970be85d287fdbc09f85f1c0d2002cebd3b8edd545d933e92937bd3b3d8a5ec"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1c35f54795ac048673e775120b10f218047005daf7e1d5c5aebf88bf5056a390"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "4be31a877221ea16f218610d8713ba929c4355e10080ac3f2e9b1aa32e098e49"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2b736ca750a01892eff31554c28fe01f82149d850d2d3dd322647a32c375f94d"
-    sha256 cellar: :any_skip_relocation, ventura:       "54645a1da374fc9428e4d778b93a39c6e980d48b70dd3adb08fa32fdb90324dd"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ee0ee14f04d9fb0700347cbaa1bf993fa08b893417aecccc6674cb94c5700df8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "680eee93b90988c9b2a3a6bda2d354babb0ab299f5221d40b700845e149c8e8d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d8b1927f4e0a57ba6f44fc9b7967de2c99508d7693e84bbe3456d6355e2d3ade"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "de657527dad128750c6116111cbb05d5ff9d8a10c6a0fd19035fb9205b9dc76a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "4b033cf6aa240e180faa4d2fb6c727c3c837b6862fe008fec55ab61c25beded9"
+    sha256 cellar: :any_skip_relocation, sonoma:        "16c047234c69535c9d4f8fb31b12ab94057d68c72e482da55df231ad28e9fd63"
+    sha256 cellar: :any_skip_relocation, ventura:       "e77fb63262f7e8ef96c5fc37e38cc9c721c1f2d98f0bd92b3b702781d192b1e0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "15cd3f15c7aeef7d4e9f3a934c802ee131998fcc86067f7619650c9ef9e7d74a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d337dc17ad02c59dbc3b1d224e5694bc625c36c694a48c00f9880f3dec0ba153"
   end
 
-  # use "go" when https://github.com/projectdiscovery/nuclei/pull/6348 is released (in 3.4.8 release?):
-  depends_on "go@1.24" => :build
+  depends_on "go" => :build
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/nuclei"

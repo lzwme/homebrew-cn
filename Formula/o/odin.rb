@@ -6,23 +6,24 @@ class Odin < Formula
       revision: "accdd7c2af4c2b9f4a0b923a47df4c2eb6074b0a"
   version "2025-08"
   license "BSD-3-Clause"
+  revision 1
   head "https://github.com/odin-lang/Odin.git", branch: "master"
 
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    sha256                               arm64_sequoia: "e7b7c354562f8d3d13909d93d6c62e7b4a4e04f2ff4fe0383a273ffe2f399390"
-    sha256                               arm64_sonoma:  "cc11fb5505e22fba24f0166e13fbcbeb145219f0d08fa44e5c6b3d4ae98390bd"
-    sha256                               arm64_ventura: "ae2c66676f66dad389d0c1ca59ffc12273ad0369b79d21343d81a5dfb468bc67"
-    sha256 cellar: :any,                 sonoma:        "90669682dbc1e91ae3ee26e9f2cfcb5b4ea82bb38a539a82a024c96179c63caf"
-    sha256 cellar: :any,                 ventura:       "7fa9ba89d3d911354f292742f15cb04dcfb93f915886e2cf49682a5e460234c5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "20f36f451600d9b2f36735b387240c579551bf3e11db06106b0ee08a9f609dff"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cea463be41a07b90c74f31ee9830b41509e3dfff38915fdc28fd258391c7567d"
+    sha256                               arm64_sequoia: "4085ea7689f25dbfccec33a21368f3712ce23b6a44d21803b4156aa1aa210149"
+    sha256                               arm64_sonoma:  "e4ab61c5c9ad472dc459b21c882b1a32c16aa60b925a6e4281b1e991a0b723b0"
+    sha256                               arm64_ventura: "238c5b281ea88ec9d869361c9bdefbf8280b1e60e444572e5db81bdbe558f81c"
+    sha256 cellar: :any,                 sonoma:        "2599f5f97a83f1c10c632d38f1480171ebdff469a391d23ad2dd4e4ee4c38b7a"
+    sha256 cellar: :any,                 ventura:       "8f1aca42a4d0bac55be395da467f63ab7fb29d2f74c459703dff94c2800322bd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "864dcd8ca7bcbfc7ee63b8e6d43aee1d1851ffb0c6cab7e4766bbdc72834ee9e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "43f612ae37af1c0de7ffbb1649944eec617dc8f35b10cc83156ebea0b0edc4e5"
   end
 
   depends_on "glfw"
-  depends_on "lld"
-  depends_on "llvm"
+  depends_on "lld@20"
+  depends_on "llvm@20"
   depends_on "raylib"
 
   resource "raygui" do

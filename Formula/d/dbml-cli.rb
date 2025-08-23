@@ -6,13 +6,8 @@ class DbmlCli < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0819d9feeedbf8e5826adc58fc9c068fad82d04050c4328cf2e86a664f97cff0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0819d9feeedbf8e5826adc58fc9c068fad82d04050c4328cf2e86a664f97cff0"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "0819d9feeedbf8e5826adc58fc9c068fad82d04050c4328cf2e86a664f97cff0"
-    sha256 cellar: :any_skip_relocation, sonoma:        "abc38c3b6d528bd067935591acd5e7b6e9790f58e7f48f2d682ba5a66e92dbf3"
-    sha256 cellar: :any_skip_relocation, ventura:       "abc38c3b6d528bd067935591acd5e7b6e9790f58e7f48f2d682ba5a66e92dbf3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "eb280275bd19dd5f5dfed99a8cd307bde44f7c983a44fbfe01d5b78aa77d188d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eb280275bd19dd5f5dfed99a8cd307bde44f7c983a44fbfe01d5b78aa77d188d"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "0f96bc6f2206f075ab7cdc7f47c9c9ad23d2e1135eaf165b9d8224e01b9502d8"
   end
 
   depends_on "node"
@@ -20,6 +15,9 @@ class DbmlCli < Formula
   def install
     system "npm", "install", *std_npm_args
     bin.install_symlink Dir["#{libexec}/bin/*"]
+
+    # Build an `:all` bottle by removing log file.
+    rm libexec/"lib/node_modules/@dbml/cli/yarn-error.log"
   end
 
   test do

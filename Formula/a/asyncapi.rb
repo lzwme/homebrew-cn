@@ -1,20 +1,20 @@
 class Asyncapi < Formula
   desc "All in one CLI for all AsyncAPI tools"
   homepage "https://github.com/asyncapi/cli"
-  url "https://registry.npmjs.org/@asyncapi/cli/-/cli-3.3.0.tgz"
-  sha256 "ac79fed2d954b490fb3c5e62c5c9fe180abf6efe5dc56f3db4b5e9b6f6fc8eef"
+  url "https://registry.npmjs.org/@asyncapi/cli/-/cli-3.4.0.tgz"
+  sha256 "16c67db4604d7322ab027b3b25121b02854b74fb86a969e050a176f5cb166af6"
   license "Apache-2.0"
 
   no_autobump! because: :bumped_by_upstream
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "3eda7bda4d45d125f5d41c0b465b9d2cdb4e2006567d52c141fdb6a4b35a7862"
-    sha256 cellar: :any,                 arm64_sonoma:  "3eda7bda4d45d125f5d41c0b465b9d2cdb4e2006567d52c141fdb6a4b35a7862"
-    sha256 cellar: :any,                 arm64_ventura: "3eda7bda4d45d125f5d41c0b465b9d2cdb4e2006567d52c141fdb6a4b35a7862"
-    sha256 cellar: :any,                 sonoma:        "c86f384b98dbd298ba7353cd4ae09d5198d2e2f05b53d5859b7cde6ca2e18548"
-    sha256 cellar: :any,                 ventura:       "c86f384b98dbd298ba7353cd4ae09d5198d2e2f05b53d5859b7cde6ca2e18548"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "060b9d58dc660613c46bc3297fb95ee3ed2faefb77f3cf9bac1c6ce9a16209d0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2d31235359d53ff212c82a976c6c32824ce0eadce0741e1579fa61896e444643"
+    sha256 cellar: :any,                 arm64_sequoia: "dfde1689ca8bf3c7d6d5ffa33ee0559d544ee59156c6a7e735d2cd06a9c98d8b"
+    sha256 cellar: :any,                 arm64_sonoma:  "dfde1689ca8bf3c7d6d5ffa33ee0559d544ee59156c6a7e735d2cd06a9c98d8b"
+    sha256 cellar: :any,                 arm64_ventura: "dfde1689ca8bf3c7d6d5ffa33ee0559d544ee59156c6a7e735d2cd06a9c98d8b"
+    sha256 cellar: :any,                 sonoma:        "da1b62e59b285a71b79fe0ab7e186c5ed355fef1ca50d23eeebc6947e0215efd"
+    sha256 cellar: :any,                 ventura:       "da1b62e59b285a71b79fe0ab7e186c5ed355fef1ca50d23eeebc6947e0215efd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "65e23207b1aa14f1b1c3456973820f6b3a739d79cbb0bbf2371556727df31a53"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4adc6b95bf97cc8b93713d3c72dfb191bd2c6fdf05b67e3413a41baa9a067906"
   end
 
   depends_on "node"

@@ -27,10 +27,6 @@ class Flang < Formula
   # Building with GCC fails at linking with an obscure error.
   fails_with :gcc
 
-  def flang_driver
-    "flang-new"
-  end
-
   def llvm
     Formula["llvm"]
   end
@@ -40,15 +36,14 @@ class Flang < Formula
     system "cmake", "-S", "openmp", "-B", "build/projects/openmp", *std_cmake_args
 
     args = %W[
-      -DLLVM_TOOL_OPENMP_BUILD=ON
       -DCLANG_DIR=#{llvm.opt_lib}/cmake/clang
       -DFLANG_INCLUDE_TESTS=OFF
       -DFLANG_REPOSITORY_STRING=#{tap&.issues_url}
-      -DFLANG_STANDALONE_BUILD=ON
       -DFLANG_VENDOR=#{tap&.user}
       -DLLVM_DIR=#{llvm.opt_lib}/cmake/llvm
-      -DLLVM_ENABLE_EH=OFF
+      -DLLVM_ENABLE_FATLTO=ON
       -DLLVM_ENABLE_LTO=ON
+      -DLLVM_TOOL_OPENMP_BUILD=ON
       -DLLVM_USE_SYMLINKS=ON
       -DMLIR_DIR=#{llvm.opt_lib}/cmake/mlir
       -DMLIR_LINK_MLIR_DYLIB=ON
@@ -57,7 +52,6 @@ class Flang < Formula
     # FIXME: Setting `BUILD_SHARED_LIBS=ON` causes the just-built flang to throw ICE on macOS
     args << "-DBUILD_SHARED_LIBS=ON" if OS.linux?
 
-    ENV.append_to_cflags "-ffat-lto-objects" if OS.linux? # Unsupported on macOS.
     system "cmake", "-S", "flang", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
@@ -66,7 +60,7 @@ class Flang < Formula
     libexec.install bin.children
     bin.install_symlink libexec.children
 
-    # Help `flang-new` driver find `libLTO.dylib` and runtime libraries
+    # Help `flang` driver find `libLTO.dylib` and runtime libraries
     resource_dir = Utils.safe_popen_read(llvm.opt_bin/"clang", "-print-resource-dir").chomp
     resource_dir.gsub!(llvm.prefix.realpath, llvm.opt_prefix)
     (libexec/"flang.cfg").atomic_write <<~CONFIG
@@ -96,6 +90,12 @@ class Flang < Formula
     end
   end
 
+  def post_install
+    # Allow flang -flto to work on Linux as it expects library relative to driver.
+    # The HOMEBREW_PREFIX path is used so that `brew link` skips creating a symlink.
+    lib.install_symlink HOMEBREW_PREFIX/"lib/LLVMgold.so" if OS.linux?
+  end
+
   test do
     (testpath/"hello.f90").write <<~FORTRAN
       PROGRAM hello
@@ -115,10 +115,10 @@ class Flang < Formula
       end
     FORTRAN
 
-    system bin/flang_driver, "-v", "hello.f90", "-o", "hello"
+    system bin/"flang", "-v", "hello.f90", "-o", "hello"
     assert_equal "Hello World!", shell_output("./hello").chomp
 
-    system bin/flang_driver, "-v", "test.f90", "-o", "test"
+    system bin/"flang", "-v", "-flto", "test.f90", "-o", "test"
     assert_equal "Done", shell_output("./test").chomp
 
     (testpath/"omptest.f90").write <<~FORTRAN
@@ -137,7 +137,7 @@ class Flang < Formula
       libomp_dir = llvm.opt_lib/Utils.safe_popen_read(llvm.opt_bin/"clang", "--print-target-triple").chomp
       %W[-L#{libomp_dir} -Wl,-rpath,#{libomp_dir} -Wl,-rpath,#{lib}]
     end
-    system bin/flang_driver, "-v", *openmp_flags, "omptest.f90", "-o", "omptest"
+    system bin/"flang", "-v", *openmp_flags, "omptest.f90", "-o", "omptest"
     testresult = shell_output("./omptest")
 
     expected_result = <<~EOS
@@ -156,12 +156,12 @@ class Flang < Formula
         y = y/2
       End Program
     FORTRAN
-    system bin/flang_driver, "-v", "runtimes.f90"
+    system bin/"flang", "-v", "runtimes.f90"
 
     return if OS.linux?
 
     assert_match %r{^Configuration file: #{Regexp.escape(etc)}/clang/.*\.cfg$}i,
-                 shell_output("#{bin/flang_driver} --version")
+                 shell_output("#{bin}/flang --version")
 
     system "ar", "x", lib/"libFortranCommon.a"
     testpath.glob("*.o").each do |object_file|

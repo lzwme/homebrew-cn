@@ -1,17 +1,17 @@
 class Gbox < Formula
   desc "Self-hostable sandbox for AI Agents to execute commands and surf web"
   homepage "https://gbox.ai"
-  url "https://ghfast.top/https://github.com/babelcloud/gbox/releases/download/v0.1.4/gbox-v0.1.4.tar.gz"
-  sha256 "2cfaacc86d42d68b8fcc3d665fb8cfc24f713f95f34dd2bfa9aaf8b39f624a24"
+  url "https://ghfast.top/https://github.com/babelcloud/gbox/releases/download/v0.1.5/gbox-v0.1.5.tar.gz"
+  sha256 "9889e7914996f901d6e6ec6c80c9dc76ee97fd09c2bb193e5e040901d2ea916e"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8aeb4f89aa32c89efd640f20cf2e279b7c152ab23a9a08ef51c11ced2a501602"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8bfbcfbc25198113bac51dbe25558c8cf10b558fc6d2f62fe91d7beeed70a93f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "127a91bbfef73a206027cfdd7e4a249b8fa641f9b3e16777bfa0f703b50979fa"
-    sha256 cellar: :any_skip_relocation, sonoma:        "62fd55903983db32a928934c377c6d5d0215ffbd57a1bead6fbaebd39de7a82b"
-    sha256 cellar: :any_skip_relocation, ventura:       "2066f587845c7e4c37280e154636065f4f8f938833a50a9e3b5636c6b69e3b63"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a8157eb9956fd28b0fb187bf684a92ee53ce5471a0fa38789b59cca50e6c04d0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f8d0056d0b79fbccc9f90676056a0bc78e07a17f7307c13082903f5ad6d313c3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6c6139caf88e5fa6158f6495f8a99d408665e08fdd6122db992b5e741d254bd8"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "2f4bf84df4b90cf1f10d4d5f999f5dd76394356e3f91f533cf4a8e4a0bd03bfe"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9b1bb52d6b642fd1772b2fdfc72e9cee576d47e03d90fa6f84b6ef6154dd0268"
+    sha256 cellar: :any_skip_relocation, ventura:       "f7542254e4aa3a71982e4596deb5a730232509e4a3c33960884714217cccc5bf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "14acff8b89697938160fff368039d65d6d2dbceb1f121abf36c7565d1999683a"
   end
 
   depends_on "go" => :build

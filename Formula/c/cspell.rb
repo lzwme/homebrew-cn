@@ -6,13 +6,8 @@ class Cspell < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bbe25bb68f4c4cf638d80f1397502c040c7a7bdd766101012fd08be52e346c14"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bbe25bb68f4c4cf638d80f1397502c040c7a7bdd766101012fd08be52e346c14"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "bbe25bb68f4c4cf638d80f1397502c040c7a7bdd766101012fd08be52e346c14"
-    sha256 cellar: :any_skip_relocation, sonoma:        "215c04b90d64155597e7cb0ee37edebd85940c8120dcb151a7da727a343d08fd"
-    sha256 cellar: :any_skip_relocation, ventura:       "215c04b90d64155597e7cb0ee37edebd85940c8120dcb151a7da727a343d08fd"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "bbe25bb68f4c4cf638d80f1397502c040c7a7bdd766101012fd08be52e346c14"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bbe25bb68f4c4cf638d80f1397502c040c7a7bdd766101012fd08be52e346c14"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "541639fc25b3eca3259675dd910d8773229625538c53f7f4ee9eac985e039c80"
   end
 
   depends_on "node"

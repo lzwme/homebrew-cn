@@ -3,18 +3,18 @@ class Copyparty < Formula
 
   desc "Portable file server"
   homepage "https://github.com/9001/copyparty"
-  url "https://files.pythonhosted.org/packages/b3/fc/a6637a4bc3c845bea2de952b38eb48fd88a9692657704481afdb1660dee3/copyparty-1.19.4.tar.gz"
-  sha256 "823295051845e4b8fb49358e239100a5e5ffa9e5c1408eb5b29c352f176ebc64"
+  url "https://files.pythonhosted.org/packages/27/dd/d3b9c1a99dcc1311f42c9e27682080761f18000240c4ae552d667daf66a0/copyparty-1.19.5.tar.gz"
+  sha256 "0fed13437c2f643ede778da050f221f3fa9a9442e796ea4ad1eab8505d21123a"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "31b980963dcf68906d556dde489967927a05da2aa768c966fd4f570b5d1a9132"
-    sha256 cellar: :any,                 arm64_sonoma:  "59a7b548e6f5eacb5a7f24eae8822cbd1fba9b4bed96f3a7609c7455b341d3a8"
-    sha256 cellar: :any,                 arm64_ventura: "380f88f81da386c5633908b68c2778c32526651315bf75d1dbe9cec0867bc614"
-    sha256 cellar: :any,                 sonoma:        "0a63dd83e053347101720bb58a7fe99a3a280911ba54074f37c21ac41f59f834"
-    sha256 cellar: :any,                 ventura:       "6fd5f7d4e045834d28d0473495acdf4867444bb59bad70d42fb20df7e44c4e22"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "655e375711a53726bed1a9ee7fc8f259934c06845452919c18e3465f81da26d3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "49fb1931bfa7e1012a3d3b07ea6950a227078b2ce25b32babbc954a3a8701269"
+    sha256 cellar: :any,                 arm64_sequoia: "42b415f4c401ae22598a583f46a1a18358ec24127943e9da22df1143a67b3242"
+    sha256 cellar: :any,                 arm64_sonoma:  "ea20de5b31ebfa821bf47b618cb7f51bd71c0f30157933b25a8da81b0ef9f2ed"
+    sha256 cellar: :any,                 arm64_ventura: "7a5423fb7d6008273e0afe169bbe7d6ed77a39dfcde2b25757a36bca85e3abf8"
+    sha256 cellar: :any,                 sonoma:        "585b80e78b2033d045fb57c733e41e5c138d261b54f0d9d559bd6f4712248490"
+    sha256 cellar: :any,                 ventura:       "c93f5dab57e7dd99f027bdda8730ac38bca0a2562a6356e01f614cdfe096238c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "210806c0b56ae1a39eb6a83b4b5e3ba3b2967273abd769abadcc9b22cb81b015"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6f87f7d3ab0f516ae7a7807d0b66614db7f558e6891528522734c927eef87cd1"
   end
 
   depends_on "cmake" => :build
@@ -86,8 +86,8 @@ class Copyparty < Formula
   end
 
   resource "pyzmq" do
-    url "https://files.pythonhosted.org/packages/30/5f/557d2032a2f471edbcc227da724c24a1c05887b5cda1e3ae53af98b9e0a5/pyzmq-27.0.1.tar.gz"
-    sha256 "45c549204bc20e7484ffd2555f6cf02e572440ecf2f3bdd60d4404b20fddf64b"
+    url "https://files.pythonhosted.org/packages/f8/66/159f38d184f08b5f971b467f87b1ab142ab1320d5200825c824b32b84b66/pyzmq-27.0.2.tar.gz"
+    sha256 "b398dd713b18de89730447347e96a0240225e154db56e35b6bb8447ffdb07798"
   end
 
   def install

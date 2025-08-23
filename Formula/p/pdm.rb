@@ -3,19 +3,19 @@ class Pdm < Formula
 
   desc "Modern Python package and dependency manager supporting the latest PEP standards"
   homepage "https://pdm-project.org"
-  url "https://files.pythonhosted.org/packages/e6/c2/ebcd3062be915f67dd6aa6e30fc247120e6f9acc9b6cf7468bb52fdbd219/pdm-2.25.6.tar.gz"
-  sha256 "46693c26dde87bdeffecf18eb852ea55434c9b6b2aec42edef237f4ac595763c"
+  url "https://files.pythonhosted.org/packages/fa/28/c5bd4758f35d44cdfa05888e529590de1a7e0c4d67fae83d20b68fb33541/pdm-2.25.9.tar.gz"
+  sha256 "fb5fcd561986db1d83255d01e97e2e16f80debf743934d891a62ff2933ccc80c"
   license "MIT"
   head "https://github.com/pdm-project/pdm.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8bb925636e2b909c9d3bb5146b09ca32cad5f3a5540a70a45d7489c36974ee43"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8bb925636e2b909c9d3bb5146b09ca32cad5f3a5540a70a45d7489c36974ee43"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "8bb925636e2b909c9d3bb5146b09ca32cad5f3a5540a70a45d7489c36974ee43"
-    sha256 cellar: :any_skip_relocation, sonoma:        "fe61b0db4add157b772508fab0930e585423f6e24ad589afe774bbd2940f9249"
-    sha256 cellar: :any_skip_relocation, ventura:       "fe61b0db4add157b772508fab0930e585423f6e24ad589afe774bbd2940f9249"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fe61b0db4add157b772508fab0930e585423f6e24ad589afe774bbd2940f9249"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fe61b0db4add157b772508fab0930e585423f6e24ad589afe774bbd2940f9249"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d9518e388dcb9396d930afa3829ef728e12543e3c1c0032818e85a6649ad2008"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d9518e388dcb9396d930afa3829ef728e12543e3c1c0032818e85a6649ad2008"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "d9518e388dcb9396d930afa3829ef728e12543e3c1c0032818e85a6649ad2008"
+    sha256 cellar: :any_skip_relocation, sonoma:        "79ec26732513485099ff2e63ac5d733f79dde0bafe9dfb3b3f4ccb1a7eb38abf"
+    sha256 cellar: :any_skip_relocation, ventura:       "79ec26732513485099ff2e63ac5d733f79dde0bafe9dfb3b3f4ccb1a7eb38abf"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "79ec26732513485099ff2e63ac5d733f79dde0bafe9dfb3b3f4ccb1a7eb38abf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "79ec26732513485099ff2e63ac5d733f79dde0bafe9dfb3b3f4ccb1a7eb38abf"
   end
 
   depends_on "certifi"
@@ -47,8 +47,8 @@ class Pdm < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/0a/10/c23352565a6544bdc5353e0b15fc1c563352101f30e24bf500207a54df9a/filelock-3.18.0.tar.gz"
-    sha256 "adbc88eabb99d2fec8c9c1b229b171f18afa655400173ddc653d5d01501fb9f2"
+    url "https://files.pythonhosted.org/packages/40/bb/0ab3e58d22305b6f5440629d20683af28959bf793d98d11950e305c1c326/filelock-3.19.1.tar.gz"
+    sha256 "66eda1888b0171c998b35be2bcc0f6d75c388a7ce20c3f3f37aa8e96c2dddf58"
   end
 
   resource "findpython" do
@@ -107,8 +107,8 @@ class Pdm < Formula
   end
 
   resource "pbs-installer" do
-    url "https://files.pythonhosted.org/packages/83/0d/b4d124a075f187a7f5a91678ecab8db2464c6d633b839c8d89b6cf91942e/pbs_installer-2025.8.8.tar.gz"
-    sha256 "3b2a7703dd253c718ee201e801040208591ae35b338107761fbcdc1aa7543a86"
+    url "https://files.pythonhosted.org/packages/cd/48/cf90d72e24b6eb5c65fae18a63623390cb544fa5f063c8910d8ad5647874/pbs_installer-2025.8.18.tar.gz"
+    sha256 "48dc683c6cc260140f8d8acf686a4ef6fc366ec4b25698a60dad344a36a00f9b"
   end
 
   resource "platformdirs" do
@@ -132,8 +132,8 @@ class Pdm < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/e1/0a/929373653770d8a0d7ea76c37de6e41f11eb07559b103b1c02cafb3f7cf8/requests-2.32.4.tar.gz"
-    sha256 "27d0316682c8a29834d3264820024b62a36942083d52caf2f14c0591336d3422"
+    url "https://files.pythonhosted.org/packages/c9/74/b3ff8e6c8446842c3f5c837e9c3dfcfe2018ea6ecef224c710c85ef728f4/requests-2.32.5.tar.gz"
+    sha256 "dbba0bac56e100853db0ea71b82b4dfd5fe2bf6d3754a8893c3af500cec7d7cf"
   end
 
   resource "resolvelib" do

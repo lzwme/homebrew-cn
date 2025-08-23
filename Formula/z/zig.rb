@@ -1,8 +1,8 @@
 class Zig < Formula
   desc "Programming language designed for robustness, optimality, and clarity"
   homepage "https://ziglang.org/"
-  url "https://ziglang.org/download/0.14.1/zig-0.14.1.tar.xz"
-  sha256 "237f8abcc8c3fd68c70c66cdbf63dce4fb5ad4a2e6225ac925e3d5b4c388f203"
+  url "https://ziglang.org/download/0.15.1/zig-0.15.1.tar.xz"
+  sha256 "816c0303ab313f59766ce2097658c9fff7fafd1504f61f80f9507cd11652865f"
   license "MIT"
 
   livecheck do
@@ -11,18 +11,18 @@ class Zig < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "3fffc57a94634f42df4156f3d1c4c2377e3c84772c5b49b95c0fecdc54dea092"
-    sha256 cellar: :any,                 arm64_sonoma:  "4ef618c7685f323025c86403c58e3bae87c7ad47871f709eb935de8798581c6f"
-    sha256 cellar: :any,                 arm64_ventura: "8edc35ba83083e73684c765e06e996a13ee59233c49e091c6495c9c604e29ef6"
-    sha256 cellar: :any,                 sonoma:        "d72ea1ebdae41308ce7145ebe3319736509d25b600683309ec890ac0edfff6ef"
-    sha256 cellar: :any,                 ventura:       "324fbfd949a1648b6abda1ac560d53dc707aedb613570260281581e804564a69"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6ff8fc4310dff376fb6c02827f01dce82e0468223ea56996c026795aeba85ec1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "422b4295434e2c8b052379581e8fbcad8b650591e58cdf17fa3df4f7721b1663"
+    sha256 cellar: :any,                 arm64_sequoia: "7a946f5275eb16360529e5504c701e6da718d42a6703f3e8e437f1db5526ed17"
+    sha256 cellar: :any,                 arm64_sonoma:  "3d7262dd5cf6f7bdb84add1bc0e0c443267cc4a19213c13c7df49c547915a9cd"
+    sha256 cellar: :any,                 arm64_ventura: "104f47ad172c1f3ea3bcac893bed28f83fd884fa2fbc1ea64132111c55cb9617"
+    sha256 cellar: :any,                 sonoma:        "d4adf56d3f691f2bd0d42f3ad644b8430cb8a15c8283e53a422e76269e8e3486"
+    sha256 cellar: :any,                 ventura:       "c7547248519f1fb28f8fc921266c2186a8e8823e2862b1f30262e313ff4e37e3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f29301b93d5a6d0c529b1cb1544f8da9e0817d4e740a2cbcb8500c2d2a7c9794"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "23204f9b10aa41478e8605b46bdc2f4bc9f0d91bd0d56de3af4ea467e04ad3e8"
   end
 
   depends_on "cmake" => :build
-  depends_on "lld@19"
-  depends_on "llvm@19"
+  depends_on "lld@20"
+  depends_on "llvm@20"
   depends_on macos: :big_sur # https://github.com/ziglang/zig/issues/13313
 
   # NOTE: `z3` should be macOS-only dependency whenever we need to re-add
@@ -74,8 +74,7 @@ class Zig < Formula
     (testpath/"hello.zig").write <<~ZIG
       const std = @import("std");
       pub fn main() !void {
-          const stdout = std.io.getStdOut().writer();
-          try stdout.print("Hello, world!", .{});
+          try std.fs.File.stdout().writeAll("Hello, world!");
       }
     ZIG
     system bin/"zig", "build-exe", "hello.zig"
@@ -150,7 +149,7 @@ index 15762f0ae881..ea729f408f74 100644
 +                if (static or !std.zig.system.darwin.isSdkInstalled(b.allocator)) {
 +                    mod.link_libcpp = true;
 +                } else {
-+                    const sdk = std.zig.system.darwin.getSdk(b.allocator, b.graph.host.result) orelse return error.SdkDetectFailed;
++                    const sdk = std.zig.system.darwin.getSdk(b.allocator, &b.graph.host.result) orelse return error.SdkDetectFailed;
 +                    const @"libc++" = b.pathJoin(&.{ sdk, "usr/lib/libc++.tbd" });
 +                    exe.root_module.addObjectFile(.{ .cwd_relative = @"libc++" });
 +                }

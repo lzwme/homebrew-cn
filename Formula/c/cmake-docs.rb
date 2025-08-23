@@ -13,24 +13,21 @@ class CmakeDocs < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "26ada5b2ce6c1b2a939b0168c23929cf1547a77fb4af679ad757b5b4b57a2f71"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "26ada5b2ce6c1b2a939b0168c23929cf1547a77fb4af679ad757b5b4b57a2f71"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "26ada5b2ce6c1b2a939b0168c23929cf1547a77fb4af679ad757b5b4b57a2f71"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f12a62fced3ba55d4756f0286e49cce88a28c8c9cff6301cfb798ad77d481b3d"
-    sha256 cellar: :any_skip_relocation, ventura:       "f12a62fced3ba55d4756f0286e49cce88a28c8c9cff6301cfb798ad77d481b3d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "26ada5b2ce6c1b2a939b0168c23929cf1547a77fb4af679ad757b5b4b57a2f71"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "26ada5b2ce6c1b2a939b0168c23929cf1547a77fb4af679ad757b5b4b57a2f71"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "c6ea6fdefe538c7a1f59a2722745e9550e1c755af1560813ef5327b5194d7d6b"
   end
 
   depends_on "cmake" => :build
   depends_on "sphinx-doc" => :build
 
   def install
-    system "cmake", "-S", "Utilities/Sphinx", "-B", "build", *std_cmake_args,
-                                                             "-DCMAKE_DOC_DIR=share/doc/cmake",
-                                                             "-DCMAKE_MAN_DIR=share/man",
-                                                             "-DSPHINX_MAN=ON",
-                                                             "-DSPHINX_HTML=ON"
+    args = %w[
+      -DCMAKE_DOC_DIR=share/doc/cmake
+      -DCMAKE_MAN_DIR=share/man
+      -DSPHINX_MAN=ON
+      -DSPHINX_HTML=ON
+    ]
+    system "cmake", "-S", "Utilities/Sphinx", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end

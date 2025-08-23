@@ -1,19 +1,19 @@
 class Wrkflw < Formula
   desc "Validate and execute GitHub Actions workflows locally"
   homepage "https://github.com/bahdotsh/wrkflw"
-  url "https://ghfast.top/https://github.com/bahdotsh/wrkflw/archive/refs/tags/v0.7.0.tar.gz"
-  sha256 "770769ed53181a2f1a44a03182d4e67543d1e3f7f1221621710d26cd13b781bf"
+  url "https://ghfast.top/https://github.com/bahdotsh/wrkflw/archive/refs/tags/v0.7.1.tar.gz"
+  sha256 "3d972f95f56e73f803d0d998674befa97c7e620885c0e81fe131ff6cbabf6bf4"
   license "MIT"
   head "https://github.com/bahdotsh/wrkflw.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "039ec7a35724817e6690738dfa1a05cd9a66a4114190d1d827a8821836b99b64"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "821c28339d0f133dc888f11ecabdaf91202810730b7499b28c4b3ab6c12ace4c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "f6fb130b2b9d7b760e8356ba9daf8dc49bb5e46f11630594daff6ed38bd259d6"
-    sha256 cellar: :any_skip_relocation, sonoma:        "bcc8b14fe994f41413007643c98210b86643bfb7e2fd65ce37bd60072bc071e7"
-    sha256 cellar: :any_skip_relocation, ventura:       "dfec5672d766fd6a9f96fdd25ab8a6dff5be86aab8bbd747de0d73ffdb4916b3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c61a8b8c60db557c3da80e3632f122bec10ed577b756f83ea50f4cda28a09ef3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0c8c263964988f5872d5ac349b3605098a5ac5b237263865c8d4c9b89ab7de30"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2cdc93b9ceca16cc5ebb3ad60b8a528350432504cfd63100e0bb064eb604a753"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4a6bc88815738aac31195f2bfbce2dd7443bc70ce5c845b6a44c67ab3323e70b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "7ce38aee0a1152f3abeb775076f94c4ced15633fe562242bce209fb163457810"
+    sha256 cellar: :any_skip_relocation, sonoma:        "afe8cc1cd4d6f1f23a749ab1d38c6b73611a28a43941ace73979808e62674b3e"
+    sha256 cellar: :any_skip_relocation, ventura:       "ff1ddac302e1b385767a7f77f0dfcab961b5e685352ad7448503c36329a3da3d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "36181ee18fda7e3439521ecf5e0ecbf85e27b93d6fd80c57193ea06d42cefbd6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "be7b9b1b9f46fc50c117d2934e4c9e8b0da0de29885ba6079bebd632cbbac9cc"
   end
 
   depends_on "pkgconf" => :build

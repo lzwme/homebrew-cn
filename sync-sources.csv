@@ -316,6 +316,7 @@ Homebrew-homebrew-core/Formula/a/attr.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/atuin.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/aubio.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/audacious.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/a/audiowaveform.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/auditbeat.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/auditwheel.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/augeas.rb, Homebrew/homebrew-core, 1
@@ -3576,6 +3577,7 @@ Homebrew-homebrew-core/Formula/l/lla.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/llama.cpp.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/lld.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lld@19.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/l/lld@20.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lldpd.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/llgo.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/llm.rb, Homebrew/homebrew-core, 0
@@ -3589,6 +3591,7 @@ Homebrew-homebrew-core/Formula/l/llvm@16.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/llvm@17.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/llvm@18.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/llvm@19.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/l/llvm@20.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lm-sensors.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lm4tools.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lmdb.rb, Homebrew/homebrew-core, 0
@@ -3904,6 +3907,7 @@ Homebrew-homebrew-core/Formula/lib/libirecovery.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libiscsi.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libisofs.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libjcat.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/lib/libjodycode.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libjson-rpc-cpp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libjuice.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libjwt.rb, Homebrew/homebrew-core, 1
@@ -4912,6 +4916,7 @@ Homebrew-homebrew-core/Formula/n/nutcracker.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/nuttcp.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/n/nuvie.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/n/nuxeo.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/n/nuxi.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/n/nvc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/nvchecker.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/n/nvi.rb, Homebrew/homebrew-core, 1
@@ -10717,8 +10722,11 @@ Homebrew-homebrew-cask/Casks/font/font-m/font-moirai-one.rb, Homebrew/homebrew-c
 Homebrew-homebrew-cask/Casks/font/font-m/font-molengo.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-m/font-molle.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-m/font-mona-sans.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/font/font-m/font-monaspace-nerd-font.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-m/font-monaspace-frozen.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-m/font-monaspace-nf.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-m/font-monaspace-var.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-m/font-monaspace.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-m/font-monaspice-nerd-font.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-m/font-monda.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-m/font-monocraft-nerd-font.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-m/font-monocraft.rb, Homebrew/homebrew-cask, 1

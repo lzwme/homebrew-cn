@@ -4,32 +4,30 @@ class Wasmedge < Formula
   url "https://ghfast.top/https://github.com/WasmEdge/WasmEdge/releases/download/0.15.0/WasmEdge-0.15.0-src.tar.gz"
   sha256 "17915c4d047bc7a02aca862f4852101ec8d35baab7b659593687ab8c84b00938"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/WasmEdge/WasmEdge.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "334ae6e3e8c631ef40b45c4efd4c005ab44f5285e176e409856da764ba3dbcbf"
-    sha256 cellar: :any,                 arm64_sonoma:  "a7788532fbe4de5cf3ee4ee0bfba38d70923b7b5d1aa7bd18e44a20f2efed349"
-    sha256 cellar: :any,                 arm64_ventura: "d0f753e52c9a6c9d393d8981682608cf69776e0cf27d6ee7aad12235ebdbaf36"
-    sha256 cellar: :any,                 sonoma:        "ab40a76cd382265bf637b0554ca50be59e27431a62017f05084a51260ab4bec5"
-    sha256 cellar: :any,                 ventura:       "b41983a9b074de20f77de995c18f8b61b6d46144b2e4bbe491e92d2a1a145a01"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d834ea6796d552bd7893dafd891883d06a608af4959dc8137588a02ec648beba"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "41051ce3efdd8d7736ac4e0cb9cea47caffd6e2250ee4089195d8f40236ac27d"
+    sha256 cellar: :any,                 arm64_sequoia: "7a1adf8fddc71616ff4769e436fbba83303e7fbd616f87a2048af006e5609559"
+    sha256 cellar: :any,                 arm64_sonoma:  "0ed9ab436f2107500dc61545740c1fb59f8d2b3d2e5dee2eabedc001cd2dde68"
+    sha256 cellar: :any,                 arm64_ventura: "6bbda71c4eb30758c214028ec07ebed60bdd2bc1aa5c3c53f7d5313b76cbea4f"
+    sha256 cellar: :any,                 sonoma:        "1c92c5c84fb502803bcd179d08d0c2e9a0502f7314ab3c70900168f65b7a299b"
+    sha256 cellar: :any,                 ventura:       "2112ee22399008eaa276cc3b9ebd7085b9b63e4fa9b4340e2947789940fe2e9f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0de9e43ce676147d4711eee4c94a71895ba8317bcb3a1c89be47425b00977ed1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e0068658546d94d727b83bb0c9cd7cd6c67f3cd6bde0b259cc6fdaad6b71e9a6"
   end
 
   depends_on "cmake" => :build
   depends_on "fmt"
-  depends_on "lld"
-  depends_on "llvm"
+  depends_on "lld@20"
+  depends_on "llvm@20"
   depends_on "spdlog"
 
-  uses_from_macos "zlib"
-
-  on_linux do
-    depends_on "zstd"
-  end
-
   def install
-    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    # Use CMAKE_BUILD_WITH_INSTALL_RPATH to keep versioned LLVM in RPATH on Linux
+    args = ["-DCMAKE_BUILD_WITH_INSTALL_RPATH=ON"] if OS.linux?
+
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end

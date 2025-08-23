@@ -50,5 +50,12 @@ class Flyctl < Formula
 
     flyctl_status = shell_output("#{bin}/flyctl status 2>&1", 1)
     assert_match "Error: No access token available. Please login with 'flyctl auth login'", flyctl_status
+
+    json = <<~JSON
+      {"jsonrpc":"2.0","id":1,"method":"initialize","params":{"protocolVersion":"2025-03-26"}}
+      {"jsonrpc":"2.0","id":2,"method":"tools/list"}
+    JSON
+
+    assert_match "Create a new Fly.io app", pipe_output("#{bin}/flyctl mcp server", json, 0)
   end
 end

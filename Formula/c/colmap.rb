@@ -1,18 +1,17 @@
 class Colmap < Formula
   desc "Structure-from-Motion and Multi-View Stereo"
   homepage "https://colmap.github.io/"
-  url "https://ghfast.top/https://github.com/colmap/colmap/archive/refs/tags/3.12.4.tar.gz"
-  sha256 "320cb5a411cd0aa713adc05e208ec34067638e776260efd8098271342d408997"
+  url "https://ghfast.top/https://github.com/colmap/colmap/archive/refs/tags/3.12.5.tar.gz"
+  sha256 "93dfb220cce24d988506bbb1d27d4278eacfd4e372df61d380559d414c1bd9e4"
   license "BSD-3-Clause"
-  revision 2
 
   bottle do
-    sha256 cellar: :any, arm64_sequoia: "7266dbeac581a559f354eb3dc2b98b04ad4e45d0a30d0ddb97a8fbe312c21ab6"
-    sha256 cellar: :any, arm64_sonoma:  "fa30212c72fb1381f0852d243e5a19cbdf292f34a5ef512567d03e2c7635b78f"
-    sha256 cellar: :any, arm64_ventura: "02cb3b226825b61cce1ad5e33f71d49d21590dc3bb7574025755fccc90185a16"
-    sha256 cellar: :any, sonoma:        "7e5dc731b0299a467f82828bc33c761c6e5307db65bf08f3e8cf3b220ade7b3c"
-    sha256 cellar: :any, ventura:       "0e8a9d5c3691d568c3d88be77166c20746ccd72a6cf989f2506003e8d8490000"
-    sha256               x86_64_linux:  "676e38f78c95ae2c452be0994a5f94ec1671ed5c52edab8b2aa019cb240f2b5c"
+    sha256 cellar: :any, arm64_sequoia: "7b3c667aae2196f943a0a38b4e18d2937289b839a18e837a1680de7ddf895ba1"
+    sha256 cellar: :any, arm64_sonoma:  "e01ca7f2a5658c4061a09731d80e3c2cda622b9495ded534b8071bade6c34022"
+    sha256 cellar: :any, arm64_ventura: "7d7b65165b7094bd9dcfbbc8b0231a8bcb13c74fb7d8fb593a219cd7fdb2e726"
+    sha256 cellar: :any, sonoma:        "42f00584569cfdd4bbc5f3294b44efe9b0ee16bd1343f823c46b1377005ee65b"
+    sha256 cellar: :any, ventura:       "75c0342765efb1b876864ec5953e5bec4c94ca34a0987bc6f8a62a9844ab6cf7"
+    sha256               x86_64_linux:  "90543c444a6448cea0f866bc9ac4df3e1c0da551f7e52445e1a7adb30d73ec02"
   end
 
   depends_on "cmake" => :build
@@ -43,12 +42,6 @@ class Colmap < Formula
 
   on_linux do
     depends_on "mesa"
-  end
-
-  # Fix build with Boost 1.89.0, pr ref: https://github.com/colmap/colmap/pull/3553
-  patch do
-    url "https://github.com/colmap/colmap/commit/4995ee6ab747fa34372359f1e12f85908bae88b1.patch?full_index=1"
-    sha256 "e6112f87997213aabf5a24be8e76a7368b72eee4e96dcd23a28659c5d4292be1"
   end
 
   def install

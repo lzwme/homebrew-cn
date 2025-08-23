@@ -1,10 +1,14 @@
 class IncludeWhatYouUse < Formula
   desc "Tool to analyze #includes in C and C++ source files"
   homepage "https://include-what-you-use.org/"
-  url "https://include-what-you-use.org/downloads/include-what-you-use-0.24.src.tar.gz"
-  sha256 "a23421ceff601d3ea215e8fa9292bfa8ca39eb1ac2098dbbedfc6cfe65541c10"
   license "NCSA"
-  head "https://github.com/include-what-you-use/include-what-you-use.git", branch: "master"
+  revision 1
+
+  stable do
+    url "https://include-what-you-use.org/downloads/include-what-you-use-0.24.src.tar.gz"
+    sha256 "a23421ceff601d3ea215e8fa9292bfa8ca39eb1ac2098dbbedfc6cfe65541c10"
+    depends_on "llvm@20" # TODO: use `llvm` in 0.25
+  end
 
   # This omits the 3.3, 3.4, and 3.5 versions, which come from the older
   # version scheme like `Clang+LLVM 3.5` (25 November 2014). The current
@@ -16,17 +20,21 @@ class IncludeWhatYouUse < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "30ac8c04e8b22d83d3840790810ad8d4e8fc42f2feef42a24da884e9ad0a33e8"
-    sha256 arm64_sonoma:  "e25d02bca2115e3249049bcfe411560870fa816ffc1a07f5fe18d5c8875367f1"
-    sha256 arm64_ventura: "79ef55188a1c7328c7f717a96661403093a724e3fd5031b5799315ff7247232b"
-    sha256 sonoma:        "b84eea76382134fcb83e0de05b86c7984d1743ca128fdb9967bd09e81699bf4b"
-    sha256 ventura:       "2cff619261a5c37db862623ac06cc058d83f171ee8b1298d4812a1e1106cbdc6"
-    sha256 arm64_linux:   "c098fa5be99719ee60989eba3970d9c242ba789a1bae7b105e8ed4adac757f68"
-    sha256 x86_64_linux:  "4a76b914ec9e0b003450f409db649fe518e16bce7d5e175158de6d345abb409c"
+    sha256 arm64_sequoia: "a4ddb8fded4e60f585786a9812ea44463605664e4e08f9699a46fbdba6d792bd"
+    sha256 arm64_sonoma:  "a84ad2297f240dfaf9c93b7faf3b0454fdaa3bf5894b6324942a518cd12aaf92"
+    sha256 arm64_ventura: "024a17a51b89dd85b62e2ed1cb27750d4a1c7e332111eef74754c3aa61254c97"
+    sha256 sonoma:        "af4b93c97732e208b154f0c8ad25704388db44b728415db0fc82d4b32c538bca"
+    sha256 ventura:       "98a1fa193264a29dd811f4acac7172999a991fe80e1894f7afedfb7ca64f7246"
+    sha256 arm64_linux:   "0ee5d2b838c652f4d129eaf73cdcac8a1c1b587153f6a8b76ebf6a7db4165e1f"
+    sha256 x86_64_linux:  "b08052109946612bea46917bd7e110d436618f49f214a07e84bf8c8c55dbbc39"
+  end
+
+  head do
+    url "https://github.com/include-what-you-use/include-what-you-use.git", branch: "master"
+    depends_on "llvm"
   end
 
   depends_on "cmake" => :build
-  depends_on "llvm"
   uses_from_macos "ncurses"
   uses_from_macos "zlib"
 

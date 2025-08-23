@@ -8,14 +8,8 @@ class Cfv < Formula
   license "GPL-2.0-or-later"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4364889501244abb0dec42000034cbb135f74ed15f6bdd7ac2ad21e580297997"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4364889501244abb0dec42000034cbb135f74ed15f6bdd7ac2ad21e580297997"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "4364889501244abb0dec42000034cbb135f74ed15f6bdd7ac2ad21e580297997"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b166757b27f5ba3c246536507dee3c460909e17a5329a897c9280ee81f424d66"
-    sha256 cellar: :any_skip_relocation, ventura:       "b166757b27f5ba3c246536507dee3c460909e17a5329a897c9280ee81f424d66"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "67503e1767bc34de8448c8dc3468a483a7e6a1f9bff13768b08ff3cdc46c86b6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4364889501244abb0dec42000034cbb135f74ed15f6bdd7ac2ad21e580297997"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, all: "fb2e9074946326a9618313d03fa78b596e0e65f68b11c3f83de2215a260731c0"
   end
 
   depends_on "python@3.13"
@@ -28,6 +22,8 @@ class Cfv < Formula
     (testpath/"test/test.txt").write "Homebrew!"
 
     cd "test" do
+      assert_match version.to_s, shell_output("#{bin}/cfv --version")
+
       system bin/"cfv", "-t", "sha1", "-C", "test.txt"
       assert_path_exists Pathname.pwd/"test.sha1"
       assert_match "9afe8b4d99fb2dd5f6b7b3e548b43a038dc3dc38", File.read("test.sha1")

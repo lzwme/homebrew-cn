@@ -4,6 +4,7 @@ class Ispc < Formula
   url "https://ghfast.top/https://github.com/ispc/ispc/archive/refs/tags/v1.28.0.tar.gz"
   sha256 "207a0552d184c65f3d971ca4be8b53b4f25ebda843df0fc893569ce0b7f07043"
   license "BSD-3-Clause"
+  revision 1
 
   # Upstream sometimes creates releases that use a stable tag (e.g., `v1.2.3`)
   # but are labeled as "pre-release" on GitHub, so it's necessary to use the
@@ -14,19 +15,19 @@ class Ispc < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "e87b28254925524504f62c40db1cb09c4ce922b97a489d904c222655b70f4216"
-    sha256 cellar: :any,                 arm64_sonoma:  "fd18a7344087f35316fc39c8c0c254884a7329865c09b2fe66f5ad6baa9ba064"
-    sha256 cellar: :any,                 arm64_ventura: "5dde22fbc1cb48f9587271df0a81df3aa1479dc0c393ce42a3c89017d8938353"
-    sha256 cellar: :any,                 sonoma:        "43b272fa3f1cc2bd73b14cc5fda9f979ae37523d508b6cc9074b5103cd8afc13"
-    sha256 cellar: :any,                 ventura:       "47a7f98f565cd3a5506d3c9597bc01f4503779c7cebbfdd3ebc1850ad136fd67"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1aa38595f6b4980e2f11944f1949b57ff782e4d29c6170cff4654660ea47a835"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fa2ab8a0339a6e7c424955934160abd9b911c74f24217b242fa5905911848cf8"
+    sha256 cellar: :any,                 arm64_sequoia: "712267cbcd1d9ccf7945f8ead6702067e6663b4c5006982045c67c9902e3d83f"
+    sha256 cellar: :any,                 arm64_sonoma:  "30f8f5032a40279f5ad8cda3e786771a7a33d0c759a3d73d9a6e1dd32e92588f"
+    sha256 cellar: :any,                 arm64_ventura: "fa2dda37e14d6ab496a3f1f2703c5ba0e18959b7e3b29337cc53755e330e071c"
+    sha256 cellar: :any,                 sonoma:        "0e1ac09de1832ec69ffde6e885e902271b83973b31a15f00119f1b70b4b41b30"
+    sha256 cellar: :any,                 ventura:       "798bed2aeb38cc4e7008add47c267f3149ed4b383031dc32480a3795e9158048"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ce5b72785e2c3a0d6de3c004d8199e7b05e77aa19d2fc28f9dedee2cac8d6e66"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0d55df7677ad255f667ef148dafe9bb66e836b706f55faff618bb92de4bf2d7c"
   end
 
   depends_on "bison" => :build
   depends_on "cmake" => :build
   depends_on "flex" => :build
-  depends_on "llvm"
+  depends_on "llvm@20"
 
   uses_from_macos "python" => :build
 
