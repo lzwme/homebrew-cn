@@ -6,13 +6,8 @@ class GitlabCiLocal < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a8084f04e60648bb6a339dab900e7628051c66ca660f5ec6f10c023e4e559796"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a8084f04e60648bb6a339dab900e7628051c66ca660f5ec6f10c023e4e559796"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "a8084f04e60648bb6a339dab900e7628051c66ca660f5ec6f10c023e4e559796"
-    sha256 cellar: :any_skip_relocation, sonoma:        "168cb0a011545f357ff0ababa2c72dee2dd1d28ff6874a6a0b5e34a3dedf1535"
-    sha256 cellar: :any_skip_relocation, ventura:       "168cb0a011545f357ff0ababa2c72dee2dd1d28ff6874a6a0b5e34a3dedf1535"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a8084f04e60648bb6a339dab900e7628051c66ca660f5ec6f10c023e4e559796"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a8084f04e60648bb6a339dab900e7628051c66ca660f5ec6f10c023e4e559796"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "d6e66b24ad25f8a0842ea75db094707047fae259ee1b1094442120c07f25ddfa"
   end
 
   depends_on "node"

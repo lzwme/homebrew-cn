@@ -11,13 +11,14 @@ class NodeAT22 < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "441aab2c861eae8533912d85a890746ec24cb5dc9e80c52b6a729d08e9be0d6d"
-    sha256 arm64_sonoma:  "3d24d034aab507cb2d1822ee15d23bae26e06b6c24356215624dc03933dba534"
-    sha256 arm64_ventura: "6f9990399efdb5649da845695c29683dcd993b891c76093d8c5ad0947060abf5"
-    sha256 sonoma:        "9bcd9503d84da569317086d9c07ab1d256395277eb071f733b7cb8bb47f63b44"
-    sha256 ventura:       "62006dfff58caef48313f44fb0e63c74ddc4dd792a94a7dba351070a3c2ae792"
-    sha256 arm64_linux:   "93f9eb157a7fdebb895574eea86a18feba77dd4264f0c7e0e17a9aa45d2969ed"
-    sha256 x86_64_linux:  "5be30123843d98c76069749eb4cd0cb44cccdfbbba8bb549d57dc40aa00a528c"
+    rebuild 1
+    sha256 arm64_sequoia: "0dd47300413aba3aa6fff8ea3bd90d21686662cbb7abfbb6a4944465d17e6592"
+    sha256 arm64_sonoma:  "309ba9193a700f366b9d05897c8af6b95fe5543582e4e289e99054ec3c9c6a54"
+    sha256 arm64_ventura: "76a2e52df12662bf5ba0a34ad340cbe02958d157602c91cf330266f60d66d75a"
+    sha256 sonoma:        "7511e2022fafbee60f1a3bc96c6361d5d7501b5b4bb9e8764f33d911cf82f353"
+    sha256 ventura:       "af5800058c9af049af1a83aaf4872fb8c594fca0c87baf1b6c352bd0b276d602"
+    sha256 arm64_linux:   "0eb9aeb2e78cfeb68a5c28010928c67e38e0a9c030dc5b3586a03465da8b4ac3"
+    sha256 x86_64_linux:  "a20c2b3ea737919fa76ab993bdaaa0bebe2bae653fa0f59951eb149285f81a8a"
   end
 
   keg_only :versioned_formula
@@ -39,6 +40,7 @@ class NodeAT22 < Formula
   depends_on "simdjson"
   depends_on "simdutf"
   depends_on "sqlite"
+  depends_on "uvwasi"
   depends_on "zstd"
 
   uses_from_macos "python", since: :catalina
@@ -77,6 +79,7 @@ class NodeAT22 < Formula
       --shared-simdjson
       --shared-simdutf
       --shared-sqlite
+      --shared-uvwasi
       --shared-zlib
       --shared-zstd
       --shared-brotli-includes=#{Formula["brotli"].include}
@@ -99,6 +102,8 @@ class NodeAT22 < Formula
       --shared-simdutf-libpath=#{Formula["simdutf"].lib}
       --shared-sqlite-includes=#{Formula["sqlite"].include}
       --shared-sqlite-libpath=#{Formula["sqlite"].lib}
+      --shared-uvwasi-includes=#{Formula["uvwasi"].include}/uvwasi
+      --shared-uvwasi-libpath=#{Formula["uvwasi"].lib}
       --shared-zstd-includes=#{Formula["zstd"].include}
       --shared-zstd-libpath=#{Formula["zstd"].lib}
       --openssl-use-def-ca-store
@@ -116,7 +121,6 @@ class NodeAT22 < Formula
     ignored_shared_flags = %w[
       ada
       http-parser
-      uvwasi
     ].map { |library| "--shared-#{library}" }
 
     configure_help = Utils.safe_popen_read("./configure", "--help")

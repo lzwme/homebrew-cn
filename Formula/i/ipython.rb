@@ -6,16 +6,11 @@ class Ipython < Formula
   url "https://files.pythonhosted.org/packages/54/80/406f9e3bde1c1fd9bf5a0be9d090f8ae623e401b7670d8f6fdf2ab679891/ipython-9.4.0.tar.gz"
   sha256 "c033c6d4e7914c3d9768aabe76bbe87ba1dc66a92a05db6bfa1125d81f2ee270"
   license "BSD-3-Clause"
-  head "https://github.com/ipython/ipython.git", branch: "master"
+  head "https://github.com/ipython/ipython.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5d7a92ab09f933e4d50927d3155592df1d39277ec751d691386fddd539478bf1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5d7a92ab09f933e4d50927d3155592df1d39277ec751d691386fddd539478bf1"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "5d7a92ab09f933e4d50927d3155592df1d39277ec751d691386fddd539478bf1"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8ef9074dda573af2aac989b3a621b8321291323198d15ab442605b94b62405bd"
-    sha256 cellar: :any_skip_relocation, ventura:       "8ef9074dda573af2aac989b3a621b8321291323198d15ab442605b94b62405bd"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5d7a92ab09f933e4d50927d3155592df1d39277ec751d691386fddd539478bf1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5d7a92ab09f933e4d50927d3155592df1d39277ec751d691386fddd539478bf1"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, all: "d185391ae2c04fd59610e774edc3025154d93f19686958e44b8e7f9d31a00f4c"
   end
 
   depends_on "python@3.13"
@@ -97,6 +92,10 @@ class Ipython < Formula
 
   def install
     virtualenv_install_with_resources
+
+    # Build an `:all` bottle
+    prefix = libexec/Language::Python.site_packages("python3")
+    inreplace prefix/"IPython/core/application.py", "/usr/local", HOMEBREW_PREFIX
   end
 
   test do

@@ -1,12 +1,12 @@
 class Ccusage < Formula
   desc "CLI tool for analyzing Claude Code usage from local JSONL files"
   homepage "https://github.com/ryoppippi/ccusage"
-  url "https://registry.npmjs.org/ccusage/-/ccusage-16.1.2.tgz"
-  sha256 "c55c0bcd16767ef888d18eee04eeae43d2bbf970f40e0531d9b71f2ca16201af"
+  url "https://registry.npmjs.org/ccusage/-/ccusage-16.2.0.tgz"
+  sha256 "fdc3961b555ec911a011af0dd0a355acf930b5877c0f9213a7f4345531d8b05f"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "780e558da61b09336b6eec1f314892afa4504de22013f75eadbf2f76281f1a7d"
+    sha256 cellar: :any_skip_relocation, all: "5e3d2bb1555e191b2075556fa949b58682bc6e86fe75ab3fc29d7b77b4fb0fe8"
   end
 
   depends_on "node"

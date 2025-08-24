@@ -3,18 +3,18 @@ class Schemathesis < Formula
 
   desc "Testing tool for web applications with specs"
   homepage "https://schemathesis.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/1e/80/778d1ab655e2b91925266b2ddb771077a5bd293c23fc2c851aff0866d91e/schemathesis-4.1.0.tar.gz"
-  sha256 "f6e7f3624ac61015a1377fa6ee2d00fa9667a373945f944f9bd4aaf4f46df812"
+  url "https://files.pythonhosted.org/packages/67/48/2d4310f95ad95e7ffd585c32d326bca864536a5481cc01ca32f653b2941c/schemathesis-4.1.1.tar.gz"
+  sha256 "584ee98222d22640b2fca8f177370f3f6a75500215b83e0bf9aad3d0d4a239c4"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "1a2110cd2224376e43c01e5887f6a8a12f6ecc929025f3afe81b7962e3c6fe12"
-    sha256 cellar: :any,                 arm64_sonoma:  "356e131ac1563e60795f44ac255336182c2a7a41fb43a188bfeeac442c695f8b"
-    sha256 cellar: :any,                 arm64_ventura: "3eec97453164bf2cdb9ff8a179cbdd8ed4df70d83144da2c1216b58abfcd5b33"
-    sha256 cellar: :any,                 sonoma:        "08556ce0d4a8bb30439cb1b6b78dcb57c1b2b6dfa507e6f4f4c25b3e995d14df"
-    sha256 cellar: :any,                 ventura:       "b82eec526aa5949cf21cbc4c5b503cdb05efdd3d6d90c040adcea5ad8b929865"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ac83d448b9fd236b4f2e370862174ee68a1202697de8dfa7398883b9eea5e18f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dded32e8160ad92176f5fc48fa03471487e966baf4f3ae48fe3505930c78f628"
+    sha256 cellar: :any,                 arm64_sequoia: "7bc8b6fffa50c08d82da346183bfc00abc168705443798886d8973392c0f3850"
+    sha256 cellar: :any,                 arm64_sonoma:  "c0c8e2f22248dee433b81776b9162a2753b8bcfc21fc7eb6e0f0a0a05c22c44e"
+    sha256 cellar: :any,                 arm64_ventura: "2eb04f1a970d7f6ae39602724006ad331b167fc04e6cf61e2b764d32e444c54c"
+    sha256 cellar: :any,                 sonoma:        "7b313467924c318704298d089c32081d72e200c255fe69ad3ada06c2c1280e87"
+    sha256 cellar: :any,                 ventura:       "00d3e0e5d0a1ada81e8ebb94ee3ea84d1fb5eaba85b67ab95732180f8f78e084"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "725c1c3cb7c62b3e2d3affb7aad910fce2242db1e99ac9ed49dd69889ed7e952"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8159daf651cd84a5a177af8611e58a3ec04e0dee4c0f07aa750fab72f22947d8"
   end
 
   depends_on "rust" => :build # for rpds-py
@@ -125,8 +125,8 @@ class Schemathesis < Formula
   end
 
   resource "jsonschema" do
-    url "https://files.pythonhosted.org/packages/d5/00/a297a868e9d0784450faa7365c2172a7d6110c763e30ba861867c32ae6a9/jsonschema-4.25.0.tar.gz"
-    sha256 "e63acf5c11762c0e6672ffb61482bdf57f0876684d8d249c0fe2d730d48bc55f"
+    url "https://files.pythonhosted.org/packages/74/69/f7185de793a29082a9f3c7728268ffb31cb5095131a9c139a74078e27336/jsonschema-4.25.1.tar.gz"
+    sha256 "e4a9655ce0da0c0b67a085847e00a3a51449e1157f4f75e9fb5aa545e122eb85"
   end
 
   resource "jsonschema-specifications" do
@@ -200,8 +200,8 @@ class Schemathesis < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/e1/0a/929373653770d8a0d7ea76c37de6e41f11eb07559b103b1c02cafb3f7cf8/requests-2.32.4.tar.gz"
-    sha256 "27d0316682c8a29834d3264820024b62a36942083d52caf2f14c0591336d3422"
+    url "https://files.pythonhosted.org/packages/c9/74/b3ff8e6c8446842c3f5c837e9c3dfcfe2018ea6ecef224c710c85ef728f4/requests-2.32.5.tar.gz"
+    sha256 "dbba0bac56e100853db0ea71b82b4dfd5fe2bf6d3754a8893c3af500cec7d7cf"
   end
 
   resource "rfc3339-validator" do
@@ -255,8 +255,8 @@ class Schemathesis < Formula
   end
 
   resource "types-python-dateutil" do
-    url "https://files.pythonhosted.org/packages/a3/53/07dac71db45fb6b3c71c2fd29a87cada2239eac7ecfb318e6ebc7da00a3b/types_python_dateutil-2.9.0.20250809.tar.gz"
-    sha256 "69cbf8d15ef7a75c3801d65d63466e46ac25a0baa678d89d0a137fc31a608cc1"
+    url "https://files.pythonhosted.org/packages/0c/0a/775f8551665992204c756be326f3575abba58c4a3a52eef9909ef4536428/types_python_dateutil-2.9.0.20250822.tar.gz"
+    sha256 "84c92c34bd8e68b117bff742bc00b692a1e8531262d4507b33afcc9f7716cd53"
   end
 
   resource "typing-extensions" do

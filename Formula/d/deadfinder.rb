@@ -1,19 +1,19 @@
 class Deadfinder < Formula
   desc "Finds broken links"
   homepage "https://rubygems.org/gems/deadfinder"
-  url "https://ghfast.top/https://github.com/hahwul/deadfinder/archive/refs/tags/1.7.1.tar.gz"
-  sha256 "fa9f8843b3c793a21b8c3c4c9623f15691c7ef94b8ce9d174d4b8cac7c13b8bd"
+  url "https://ghfast.top/https://github.com/hahwul/deadfinder/archive/refs/tags/1.8.0.tar.gz"
+  sha256 "508d901cc3556918a97cc65ff0c19e17641cfa3f60272d362d6e2a2948c442f1"
   license "MIT"
   head "https://github.com/hahwul/deadfinder.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "13018df0825a8907536fd51b444abffff1a403cb75a66541784068e344380294"
-    sha256 cellar: :any,                 arm64_sonoma:  "9aa9af3b905a49df8df5198a2c33af78c40d4dbe27172603ddf1cd6e13a968a0"
-    sha256 cellar: :any,                 arm64_ventura: "ee48dded63f24b5db5eeb0b4e987f25873bb02a153b03421f799a0156431ca8f"
-    sha256 cellar: :any,                 sonoma:        "52e2c68ca58d7333c8a18dc1b98c6559d0b473df83f719b6a433ca47110888ba"
-    sha256 cellar: :any,                 ventura:       "218b0148f9ae522dd3ce3690921aafc420563ddb99681b32c231f2a0e63a2835"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c2b9b260c9b5e8c7e0618087c8e232513b46af93a5ffb9162a7b8e5a3097280a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e0f03ee2a1dd8fc7872d43948f024a6096fa5957e02d4f29655f9e3a0adc3289"
+    sha256 cellar: :any,                 arm64_sequoia: "8c7455576e55db66e9206442359dd3ad284b6888cb3f8ae8553a9ffa580f937c"
+    sha256 cellar: :any,                 arm64_sonoma:  "6ccd4d5afc1cd29bec2d1d74884ae9160f4c1f39c04f57d4a3737a2e8be92597"
+    sha256 cellar: :any,                 arm64_ventura: "ca02114cfe941470db280c7214ed84ae06d99b4ead8c9c8c94a6040cea68e7ec"
+    sha256 cellar: :any,                 sonoma:        "b66336c44e9981a1c1fbb9c4e647bc2698b8b9332339b4b097a93dcb420e63df"
+    sha256 cellar: :any,                 ventura:       "09ed31aec484ff2db527b31e2f6b6ccb7a256a4d1f935fd97157ca1990e742ab"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1f61606448e1c1a65bd733f64f2d787db3ce116516d03352a8c053adae0d960c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "46bcf0c046527a94139bc879be13682b910dbbc36a391208ab9b8cb987dc9eb4"
   end
 
   depends_on "pkgconf" => :build

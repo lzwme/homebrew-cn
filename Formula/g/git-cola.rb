@@ -9,11 +9,8 @@ class GitCola < Formula
   head "https://github.com/git-cola/git-cola.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7de9315b9ad6165f8b664344a41bf1c88bbfdad0bf27a53fe349ddf110158651"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "7de9315b9ad6165f8b664344a41bf1c88bbfdad0bf27a53fe349ddf110158651"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e89d1ae97482177d90c1fe2e061effac7ca9cde180b280799172eef8abaf9423"
-    sha256 cellar: :any_skip_relocation, ventura:       "e89d1ae97482177d90c1fe2e061effac7ca9cde180b280799172eef8abaf9423"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7de9315b9ad6165f8b664344a41bf1c88bbfdad0bf27a53fe349ddf110158651"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "c6cc6a1ff413a4603c933f8026a82881698a8f26d255391093a40718909820ca"
   end
 
   depends_on "git-gui"

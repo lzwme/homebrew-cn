@@ -1,8 +1,8 @@
 class LibtorrentRakshasa < Formula
   desc "BitTorrent library with a focus on high performance"
   homepage "https://github.com/rakshasa/libtorrent"
-  url "https://ghfast.top/https://github.com/rakshasa/libtorrent/archive/refs/tags/v0.15.5.tar.gz"
-  sha256 "e3c1728c3dba615424db0b7e6ade105a9c041d02b8f5c8443ada06e50d21ed46"
+  url "https://ghfast.top/https://github.com/rakshasa/libtorrent/archive/refs/tags/v0.15.6.tar.gz"
+  sha256 "e96ec8d0ef07e0ce32bc6e9a280ef3511a3781b9f5a9a3fe34e6c4935c16b646"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -11,13 +11,13 @@ class LibtorrentRakshasa < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "7a7ded1ee559d96a35d6a034a82ecb2ac1e002e9b54ce1f5e39c20a6d940d8f3"
-    sha256 cellar: :any,                 arm64_sonoma:  "8aecbef90659d95d360f7e22e7f58738ed5ca781e4717a1df82e76db75672f32"
-    sha256 cellar: :any,                 arm64_ventura: "e63c2537db1a67009a4aeddb38686953265acf417c6a9175a87b20f512ea49ec"
-    sha256 cellar: :any,                 sonoma:        "52006abd3981cf21252cfb006cc7203cfc23e9ab9ec644ef1b013f26a1bc6785"
-    sha256 cellar: :any,                 ventura:       "90ee9ae0a637fbe981b0fde0a23d5edc280c8122e1406aa2546698a752d5196f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c60eff13d22cccb2327dad4cb1c1299f6eea2da927465286c825ee7d0743a407"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cc137bfcedc79f3170dbcaa7fe34f3f47b50ec97a15a825c4ab5a367a97fed08"
+    sha256 cellar: :any,                 arm64_sequoia: "92adc8acfc2869ff724ecde7079ab4e8c97d430f081b8f256792761205016e83"
+    sha256 cellar: :any,                 arm64_sonoma:  "0b4e8351f20a19cc03562ed956aa5f7ac2a24c185580588272fc5e0d96624513"
+    sha256 cellar: :any,                 arm64_ventura: "743fa97525ac3b73dd8bb1eec1f4237d9ec5d6b530bfff8de3c89c4cc52d033d"
+    sha256 cellar: :any,                 sonoma:        "b63dfdbf9ec2e21980d5ff2509b3663eff6ddd6f2694fcb3440df813e0ac5188"
+    sha256 cellar: :any,                 ventura:       "2e6bcf021853e82fe7ce8d6badc06daefe878c161a3605acedc3c2c722a6b83a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0cd4fe0945d62276bcb782603cb921f3b068853ee783a1d2ae994efe16d7de4a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cef82708e32d8f9f501499280d492f94e99bd78c02165b9073aed5ffa4b6bfa6"
   end
 
   depends_on "autoconf" => :build

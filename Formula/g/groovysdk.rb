@@ -11,13 +11,8 @@ class Groovysdk < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "00ad19715cade97fb2c26569bd2159d4606ba1233ab04038a33230c1f12de9ec"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "00ad19715cade97fb2c26569bd2159d4606ba1233ab04038a33230c1f12de9ec"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "00ad19715cade97fb2c26569bd2159d4606ba1233ab04038a33230c1f12de9ec"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c70103d4742920d045d29e9a4920f04379d53ab8809b0f9d40c0790387b8bc54"
-    sha256 cellar: :any_skip_relocation, ventura:       "c70103d4742920d045d29e9a4920f04379d53ab8809b0f9d40c0790387b8bc54"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "00ad19715cade97fb2c26569bd2159d4606ba1233ab04038a33230c1f12de9ec"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "00ad19715cade97fb2c26569bd2159d4606ba1233ab04038a33230c1f12de9ec"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "00ad19715cade97fb2c26569bd2159d4606ba1233ab04038a33230c1f12de9ec"
   end
 
   depends_on "openjdk"

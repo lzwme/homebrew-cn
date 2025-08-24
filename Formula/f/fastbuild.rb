@@ -8,9 +8,10 @@ class Fastbuild < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any_skip_relocation, sonoma:       "61c25b4f9dbf1cdd1956a23a46ead3d306fa029825312ed88dee6a6849e5d5b0"
-    sha256 cellar: :any_skip_relocation, ventura:      "f2ed6f7c462b3a7d23fe9e5e7c63c049fc343b56df292c0e91f69e5587146930"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "64bf2acdbf4398851da98943e21cd69a6549464e16178b3ce4c8746188dc48d1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d2ea9f422381c38c6496d7a89d82ddcf01c47f211454e87cffeb388cdd228e09"
+    sha256 cellar: :any_skip_relocation, sonoma:        "61c25b4f9dbf1cdd1956a23a46ead3d306fa029825312ed88dee6a6849e5d5b0"
+    sha256 cellar: :any_skip_relocation, ventura:       "f2ed6f7c462b3a7d23fe9e5e7c63c049fc343b56df292c0e91f69e5587146930"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "64bf2acdbf4398851da98943e21cd69a6549464e16178b3ce4c8746188dc48d1"
   end
 
   on_linux do

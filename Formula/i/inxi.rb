@@ -7,13 +7,8 @@ class Inxi < Formula
   head "https://codeberg.org/smxi/inxi.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d4dda15963a7681aa6aa80c0296a464247a6a479557471c14bf255b913673b77"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d4dda15963a7681aa6aa80c0296a464247a6a479557471c14bf255b913673b77"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "d4dda15963a7681aa6aa80c0296a464247a6a479557471c14bf255b913673b77"
-    sha256 cellar: :any_skip_relocation, sonoma:        "bb38cef399b732313bc2aba24bf42528a24d634c21571c783fecd33cc9ba30b3"
-    sha256 cellar: :any_skip_relocation, ventura:       "bb38cef399b732313bc2aba24bf42528a24d634c21571c783fecd33cc9ba30b3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d4dda15963a7681aa6aa80c0296a464247a6a479557471c14bf255b913673b77"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d4dda15963a7681aa6aa80c0296a464247a6a479557471c14bf255b913673b77"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "f66640719a9a4ac39e0eb2947b315e46066c7808ed30d6f9898b18c5b696e421"
   end
 
   uses_from_macos "perl"
@@ -21,6 +16,9 @@ class Inxi < Formula
   def install
     bin.install "inxi"
     man1.install "inxi.1"
+
+    # Build an `:all` bottle
+    inreplace "inxi.changelog", "/usr/local/etc/inxi", "#{HOMEBREW_PREFIX}/etc/inxi"
 
     ["LICENSE.txt", "README.txt", "inxi.changelog"].each do |file|
       prefix.install file

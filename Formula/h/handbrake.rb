@@ -1,20 +1,19 @@
 class Handbrake < Formula
   desc "Open-source video transcoder available for Linux, Mac, and Windows"
   homepage "https://handbrake.fr/"
-  url "https://ghfast.top/https://github.com/HandBrake/HandBrake/releases/download/1.10.0/HandBrake-1.10.0-source.tar.bz2"
-  sha256 "f931012ee251113d996b61aceaaef57165efcc5ea5a2705efffc4265f6b53d26"
+  url "https://ghfast.top/https://github.com/HandBrake/HandBrake/releases/download/1.10.1/HandBrake-1.10.1-source.tar.bz2"
+  sha256 "eafa87d64b99c457240675f6b89a7f6aa3c1eb56352ec057a0a0949ba449fe8e"
   license "GPL-2.0-only"
-  revision 1
   head "https://github.com/HandBrake/HandBrake.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "5600a264572a711f255209f1304d6bc1b866f20e03a0f28bc30af2425f5475bb"
-    sha256 cellar: :any,                 arm64_sonoma:  "7bf938e7870a64890c12d456cba1d281228b396cdb5503b57ccd82acbb75c07c"
-    sha256 cellar: :any,                 arm64_ventura: "6111b6053d667860e264b70098a41306bd29b8cb0d93eb6dbd86afe58caf454c"
-    sha256 cellar: :any,                 sonoma:        "ecbe23bc02de939cc15ec635f1efd6444bda649669c574a6c2e28a773be31fae"
-    sha256 cellar: :any,                 ventura:       "7edadc823893ff939ec2381e89b74f3fa549ba42be4ff4f9ebfd30df271b8d22"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a68074e2324ff4eb67ee666250405e6fabe4631f15c1bb8eb21aa69022d3a0e7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e7dfb9c332e8a76cfa3ff6958ef5acd8295b6c54e40116243128945d4f420742"
+    sha256 cellar: :any,                 arm64_sequoia: "73e3779f544c82080f013f96cdb7ec5e76d9d018a7244c7fed7f6d830216a9e2"
+    sha256 cellar: :any,                 arm64_sonoma:  "7794d9edb3ffe560774d9ec00db5992bc900f847ca28c87df84251a34f8b43c0"
+    sha256 cellar: :any,                 arm64_ventura: "bea23ce93467204404fac8cb461f162dde5ce5b8d775d39bef7ec85bee5e4454"
+    sha256 cellar: :any,                 sonoma:        "71a39bd0e91c8383a9ddf3d2d78029d2fb00f4b2809e6dbddadf9831f4231955"
+    sha256 cellar: :any,                 ventura:       "2822759289bafa7b29e5df3e2f1f0b101f59ffa4f63b20469bfbd0c325a4755c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3f49a99f61d05f19f70c28568455b552a1e78736be1dc15816861bc01079d47b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f4b2132c55ed38ea390c0920eb645cf15f09d627608cc563285cb573ca638af1"
   end
 
   depends_on "autoconf" => :build

@@ -11,8 +11,8 @@ class CaCertificates < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "80f4508a2a5711fcabeeaafdeebb88c9eec6b0e834e75f47b837ffe3da60c7d3"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, all: "e74a63e172f75fe700f74875b91217668065af5dd8f6f624315fa9e7f890be40"
   end
 
   def install
@@ -96,7 +96,8 @@ class CaCertificates < Formula
     end
 
     # Now process Mozilla certificates we downloaded.
-    pem_certificates_list = (pkgshare/"cacert.pem").read
+    # Read as raw bytes to avoid locale-dependent encoding errors
+    pem_certificates_list = (pkgshare/"cacert.pem").binread.force_encoding(Encoding::ASCII_8BIT)
     pem_certificates = pem_certificates_list.scan(
       /-----BEGIN CERTIFICATE-----.*?-----END CERTIFICATE-----/m,
     )
@@ -121,7 +122,8 @@ class CaCertificates < Formula
   end
 
   def load_certificates_from_file(file_path, trusted_certificates, fingerprints, certificate_type)
-    certificates_list = file_path.read
+    # Read as raw bytes to avoid locale-dependent encoding errors
+    certificates_list = file_path.binread.force_encoding(Encoding::ASCII_8BIT)
     certificates = certificates_list.scan(
       /-----BEGIN CERTIFICATE-----.*?-----END CERTIFICATE-----/m,
     )
@@ -169,8 +171,7 @@ class CaCertificates < Formula
     (pkgetc/"cert.pem").atomic_write(trusted_certificates.join("\n") << "\n")
     ohai "CA certificates have been bootstrapped from the system CA store."
   ensure
-    # FIXME: the steps above can fail. We should handle them properly.
-    # https://github.com/Homebrew/homebrew-core/issues/233206
+    # Ensure a PEM file always exists, even if the method exits early or fails
     cp pkgshare/"cacert.pem", pkgetc/"cert.pem" unless (pkgetc/"cert.pem").exist?
   end
 
