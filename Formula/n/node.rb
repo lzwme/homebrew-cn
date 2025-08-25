@@ -12,13 +12,14 @@ class Node < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "76c3bfe040c325a5d8b0fc629cd16c86c9a58287fc08732c6af06ae428d083e1"
-    sha256 arm64_sonoma:  "37571ec6d24544a919bc28a6641311effc226f87c831587ac073d06a3fd04c15"
-    sha256 arm64_ventura: "d23f65008d9ea32b67ac9656dc707e90f3c27280e01e6a211e763ee7296f0a88"
-    sha256 sonoma:        "6850b5a0179de4f27f39eb7a09681b4ce09fd84fc0c2d7aff7bbdebdc8724805"
-    sha256 ventura:       "d04c1053223f684ca49d3857b266d192da5dd80731b4b294a42176c309fb9094"
-    sha256 arm64_linux:   "3a1179f3dc4c7d923af0f85a4ecc7aba11333684a7e2d1d7c20da67da7696e17"
-    sha256 x86_64_linux:  "343fc89cab7ea47424e68a82d4c0d9e858815266821d4ec94fb597177de39c12"
+    rebuild 1
+    sha256 arm64_sequoia: "4a6ebf2c8fb6bdebe30e422e34edea76881d71f5171d0b0e81f2f5c76d0bf7db"
+    sha256 arm64_sonoma:  "0a4db425888df8ff220f96b05bf9ac68f01d5c5d486de097ca22dc75880d6e81"
+    sha256 arm64_ventura: "137a6d2ef52ea7909a95a5644c8a11869129814a711e58a1c51a7cab4eafc395"
+    sha256 sonoma:        "7193c1decd42d7d4425cf2579c7e1e3d2f8e42ba8a61f4fdb210d07a3603aff1"
+    sha256 ventura:       "48b0e46491df7ba99ee313673cd162e1630da60082fd07139f230443ee7d7c57"
+    sha256 arm64_linux:   "fd66c8404087979884184df1abd072db148294703c72211ad8063174c7302d8e"
+    sha256 x86_64_linux:  "9951605f35f8a2c93286ca282e366ebfe2023c35ae5df079801d63d68f8b8997"
   end
 
   depends_on "pkgconf" => :build
@@ -33,6 +34,7 @@ class Node < Formula
   depends_on "openssl@3"
   depends_on "simdjson"
   depends_on "sqlite" # Fails with macOS sqlite.
+  depends_on "uvwasi"
   depends_on "zstd"
 
   uses_from_macos "python", since: :catalina
@@ -93,6 +95,7 @@ class Node < Formula
       --shared-openssl
       --shared-simdjson
       --shared-sqlite
+      --shared-uvwasi
       --shared-zlib
       --shared-zstd
       --shared-brotli-includes=#{Formula["brotli"].include}
@@ -113,6 +116,8 @@ class Node < Formula
       --shared-simdjson-libpath=#{Formula["simdjson"].lib}
       --shared-sqlite-includes=#{Formula["sqlite"].include}
       --shared-sqlite-libpath=#{Formula["sqlite"].lib}
+      --shared-uvwasi-includes=#{Formula["uvwasi"].include}/uvwasi
+      --shared-uvwasi-libpath=#{Formula["uvwasi"].lib}
       --shared-zstd-includes=#{Formula["zstd"].include}
       --shared-zstd-libpath=#{Formula["zstd"].lib}
       --openssl-use-def-ca-store
@@ -127,7 +132,6 @@ class Node < Formula
       ada
       http-parser
       simdutf
-      uvwasi
     ].map { |library| "--shared-#{library}" }
 
     configure_help = Utils.safe_popen_read("./configure", "--help")
@@ -236,5 +240,67 @@ class Node < Formula
     assert_path_exists HOMEBREW_PREFIX/"bin/npx", "npx must exist"
     assert_predicate HOMEBREW_PREFIX/"bin/npx", :executable?, "npx must be executable"
     assert_match "< hello >", shell_output("#{HOMEBREW_PREFIX}/bin/npx --yes cowsay hello")
+
+    # Test `uvwasi` is linked correctly
+    (testpath/"wasi-smoke-test.mjs").write <<~JAVASCRIPT
+      import { WASI } from 'node:wasi';
+
+      // Minimal WASM that:
+      //   - imports wasi proc_exit(i32)->()
+      //   - exports memory (required by Node's WASI binding)
+      //   - exports _start which calls proc_exit(42)
+      const wasmBytes = new Uint8Array([
+        // \0asm + version
+        0x00,0x61,0x73,0x6d, 0x01,0x00,0x00,0x00,
+
+        // Type section: 2 types: (i32)->() and ()->()
+        0x01,0x08, 0x02,
+          0x60,0x01,0x7f,0x00,
+          0x60,0x00,0x00,
+
+        // Import section: wasi_snapshot_preview1.proc_exit : func(type 0)
+        0x02,0x24, 0x01,
+          0x16, // module name len = 22
+            0x77,0x61,0x73,0x69,0x5f,0x73,0x6e,0x61,0x70,0x73,0x68,0x6f,0x74,0x5f,0x70,0x72,0x65,0x76,0x69,0x65,0x77,0x31,
+          0x09, // name len = 9
+            0x70,0x72,0x6f,0x63,0x5f,0x65,0x78,0x69,0x74,
+          0x00, // import kind = func
+          0x00, // type index 0
+
+        // Function section: 1 function (type index 1 = ()->())
+        0x03,0x02, 0x01, 0x01,
+
+        // Memory section: one memory with min=1 page; export later
+        0x05,0x03, 0x01, 0x00, 0x01,
+
+        // Export section: export "_start" (func 1) and "memory" (mem 0)
+        0x07,0x13, 0x02,
+          0x06, 0x5f,0x73,0x74,0x61,0x72,0x74, 0x00, 0x01,
+          0x06, 0x6d,0x65,0x6d,0x6f,0x72,0x79, 0x02, 0x00,
+
+        // Code section: body for func 1: i32.const 42; call 0; end
+        0x0a,0x08, 0x01,
+          0x06, 0x00, 0x41,0x2a, 0x10,0x00, 0x0b
+      ]);
+
+      const wasi = new WASI({
+        version: 'preview1',
+        returnOnExit: true
+      });
+
+      const { instance } = await WebAssembly.instantiate(wasmBytes, wasi.getImportObject());
+
+      // This should return 42 if uvwasi is correctly linked & wired.
+      const rc = wasi.start(instance);
+      if (rc === 42) {
+        console.log('PASS: uvwasi proc_exit(42) worked (exitCode=42)');
+        process.exit(0);
+      } else {
+        console.error('FAIL: unexpected return', rc);
+        process.exit(2);
+      }
+    JAVASCRIPT
+
+    system bin/"node", "wasi-smoke-test.mjs"
   end
 end

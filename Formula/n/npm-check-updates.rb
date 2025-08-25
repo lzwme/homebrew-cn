@@ -6,13 +6,8 @@ class NpmCheckUpdates < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fd1c99ce0b2f4c07609d9c499883ee93710bf30f020f350634579337584fe035"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fd1c99ce0b2f4c07609d9c499883ee93710bf30f020f350634579337584fe035"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "fd1c99ce0b2f4c07609d9c499883ee93710bf30f020f350634579337584fe035"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ebb90b2b8716d21c255eec8557abe64d992f4e0c59957ab29ea6afd0e478b8e2"
-    sha256 cellar: :any_skip_relocation, ventura:       "ebb90b2b8716d21c255eec8557abe64d992f4e0c59957ab29ea6afd0e478b8e2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fd1c99ce0b2f4c07609d9c499883ee93710bf30f020f350634579337584fe035"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fd1c99ce0b2f4c07609d9c499883ee93710bf30f020f350634579337584fe035"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "fd1c99ce0b2f4c07609d9c499883ee93710bf30f020f350634579337584fe035"
   end
 
   depends_on "node"

@@ -3,18 +3,18 @@ class Flexget < Formula
 
   desc "Multipurpose automation tool for content"
   homepage "https://www.flexget.com"
-  url "https://files.pythonhosted.org/packages/1f/89/fc54ab640b42a1d71f02c0098d04943c3dfee7e8e70b6fc4101e86c98c9b/flexget-3.17.15.tar.gz"
-  sha256 "0a8502f0ade0afbd9ccf0d572af10523acd261a84847d8a45d6f71a4441bb389"
+  url "https://files.pythonhosted.org/packages/fb/6a/a60157ecdeefc2876ee30d501c0037abd11f59965bcaa5b7998bbbe02fae/flexget-3.17.16.tar.gz"
+  sha256 "5d876d2873d7dd773fc0adeeb4c3b2836924d18eb7fa83aeb00d659bc988330e"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "f8a77a60963bd22f7cae2e0cec76a193670e04f0b8998b9214a707b4d5b47a50"
-    sha256 cellar: :any,                 arm64_sonoma:  "4d8e0bfa580ead05240a63abf2d7ab93cd27a51ea90171e581d7671ee1c9495b"
-    sha256 cellar: :any,                 arm64_ventura: "35f8ec0437be43e068bab8c221e4ef8bc32f1051ec7e8fb22aed5cf008332c75"
-    sha256 cellar: :any,                 sonoma:        "195f7ff81ffcd739957afe09af5892015de8b73afcafa04bfdb5aa8ba8c66d43"
-    sha256 cellar: :any,                 ventura:       "667747af9812b3f70ab6156f93b88970d6ccea50bd89bbcdee04751f891b7e5d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "792a3e5a6bba277af628946a20db43ca38a9e8bb816bdcc3f866f8c2f587070a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "608f53e0126888bf52348e0927a1cd69a1824ea0020e85c09c81ce6ff7855468"
+    sha256 cellar: :any,                 arm64_sequoia: "ae896e75cf9620e9e0954f39b33b7c007d173773eed9ba687bbe2836d8e1075a"
+    sha256 cellar: :any,                 arm64_sonoma:  "699cc3fb207538b0206b1f35c2c87c4bcbd924451d51e499f1c403e6c96bf4d0"
+    sha256 cellar: :any,                 arm64_ventura: "90a9784858c60f3f0f4a77786cbfeb0fee2d76d84432975dab013c36f1214b26"
+    sha256 cellar: :any,                 sonoma:        "65861c8d60f16f35059134dc4b12fda8230320f848f9aced1fef7df53dc8403d"
+    sha256 cellar: :any,                 ventura:       "0627554e16fbcccee39271e68f9343a26c87825b17cfab21cd601c74970b5c61"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f1f3ed834063c745b382f41c912e06ddbdac4a5439b4c7cefce80d60fce2bfaf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "faefbc48a47c1a8f6247b0aa7962099e5282039e0c44c92f09bae20ef673dc7f"
   end
 
   depends_on "rust" => :build
@@ -49,8 +49,8 @@ class Flexget < Formula
   end
 
   resource "beautifulsoup4" do
-    url "https://files.pythonhosted.org/packages/d8/e4/0c4c39e18fd76d6a628d4dd8da40543d136ce2d1752bd6eeeab0791f4d6b/beautifulsoup4-4.13.4.tar.gz"
-    sha256 "dbb3c4e1ceae6aefebdaf2423247260cd062430a410e38c66f2baa50a8437195"
+    url "https://files.pythonhosted.org/packages/85/2e/3e5079847e653b1f6dc647aa24549d68c6addb4c595cc0d902d1b19308ad/beautifulsoup4-4.13.5.tar.gz"
+    sha256 "5e70131382930e7c3de33450a2f54a63d5e4b19386eab43a5b34d594268f3695"
   end
 
   resource "blinker" do

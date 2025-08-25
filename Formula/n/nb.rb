@@ -9,13 +9,8 @@ class Nb < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ca27a1aa2094ff1c51523006d7c4f252ba16a5dbe43ae523eeb6b1979642ec17"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ca27a1aa2094ff1c51523006d7c4f252ba16a5dbe43ae523eeb6b1979642ec17"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "ca27a1aa2094ff1c51523006d7c4f252ba16a5dbe43ae523eeb6b1979642ec17"
-    sha256 cellar: :any_skip_relocation, sonoma:        "83eaae9ecc3894c21bbfe6eaa81e8ad3f4fed6bcd46d910e3aaf34e478d6e496"
-    sha256 cellar: :any_skip_relocation, ventura:       "83eaae9ecc3894c21bbfe6eaa81e8ad3f4fed6bcd46d910e3aaf34e478d6e496"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ca27a1aa2094ff1c51523006d7c4f252ba16a5dbe43ae523eeb6b1979642ec17"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ca27a1aa2094ff1c51523006d7c4f252ba16a5dbe43ae523eeb6b1979642ec17"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "ca27a1aa2094ff1c51523006d7c4f252ba16a5dbe43ae523eeb6b1979642ec17"
   end
 
   depends_on "bat"

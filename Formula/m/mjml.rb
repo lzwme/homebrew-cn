@@ -8,16 +8,8 @@ class Mjml < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "bcde646a47d51238258b06388c69a52115f850eef26ea76c218ad5e7318a2f57"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1a681f3fa1b9bfc3159325c2faa63b1cbe148e94d4cfd1a2b2c94587c30b25de"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1a681f3fa1b9bfc3159325c2faa63b1cbe148e94d4cfd1a2b2c94587c30b25de"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "1a681f3fa1b9bfc3159325c2faa63b1cbe148e94d4cfd1a2b2c94587c30b25de"
-    sha256 cellar: :any_skip_relocation, sonoma:         "464b8c2813c2c1a80ac3f4b91fbb5fc3e2a9e189191ee6858c210d0674e00868"
-    sha256 cellar: :any_skip_relocation, ventura:        "464b8c2813c2c1a80ac3f4b91fbb5fc3e2a9e189191ee6858c210d0674e00868"
-    sha256 cellar: :any_skip_relocation, monterey:       "464b8c2813c2c1a80ac3f4b91fbb5fc3e2a9e189191ee6858c210d0674e00868"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "dc3910a4837159ccb50f1492a97f8333658ed83af7c6d28c44f22eb69ec23222"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b7056b342d8ea37e7da098cc2b2cc3764d3a418e5d36d3d2f07058f634fe12b2"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, all: "fc01447be6e0fd81d673d37952632cbf146f101ab9a117aaf31527c795550ad8"
   end
 
   depends_on "node"

@@ -1,19 +1,19 @@
 class Janet < Formula
   desc "Dynamic language and bytecode vm"
   homepage "https://janet-lang.org"
-  url "https://ghfast.top/https://github.com/janet-lang/janet/archive/refs/tags/v1.38.0.tar.gz"
-  sha256 "84dbf7db9c09677618549fb4be23631fd64f527af21051db02753241a2f6f752"
+  url "https://ghfast.top/https://github.com/janet-lang/janet/archive/refs/tags/v1.39.0.tar.gz"
+  sha256 "0f7ea778ac69d019d2489a35ff9f195c99b5e6110c4c7acff3a9ff49a085f010"
   license "MIT"
   head "https://github.com/janet-lang/janet.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "3d5aceab74176cbe27ffae5a7fa4f9485c2694989188fcd5f7c4a83ff2a4495d"
-    sha256 cellar: :any,                 arm64_sonoma:  "2afce57bcb9348d81aa482af206fbfa1d6b1985f028be51fef0d5e6f6ccc42e3"
-    sha256 cellar: :any,                 arm64_ventura: "ccdaeff23165fc3b9fc964a18a010dd0804a91cc615c25be653f0f59f401886c"
-    sha256 cellar: :any,                 sonoma:        "02fb4e9f90e09f7ba732c33f5db175650f074f42a2d144d2ec140ac4594d0972"
-    sha256 cellar: :any,                 ventura:       "db28b206bd0846582f5d299e02879624716b1ba5d87ebdc3819b1dd202c3ad6d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a3c3fe2618d5ca8b0458ecb473531c16f9deb97a8bd4de18228507f97252fae1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "029c616c9c076e8fcc8a8a144df67dc5427dbad79903329a5accaadf26bc487a"
+    sha256 cellar: :any,                 arm64_sequoia: "7f8d5f03d3c2fe1279e48ff4364c8c2655780b4a079934b94925cb834408fc63"
+    sha256 cellar: :any,                 arm64_sonoma:  "fa808bd73ebae76e372c39df400951e1122a4ef60a5a56b8e9d62dc806a834e6"
+    sha256 cellar: :any,                 arm64_ventura: "7500a77b4ac4f87ba9d4bec89ce4a15d6b767d091a869158113b2e4a62a9b5a7"
+    sha256 cellar: :any,                 sonoma:        "8b3229c5a616c895cf8a6e9420b0b93173535cc0fd57f83fc1b766bf78b69d8b"
+    sha256 cellar: :any,                 ventura:       "7e6a5629d67ad11018e783adaed8cdedb229d2b495f5a7aebcbd4a89634d4de4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b9f27dca9f0ebbd5f5bdc92ec91fcee346921e2a3616b94cb8c1453dffa14941"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9dc315aef94f7d740bf4272d531dafd4499cd1dc848058f5e871b2ece969ff86"
   end
 
   resource "jpm" do

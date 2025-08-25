@@ -6,6 +6,7 @@ class Openldap < Formula
   mirror "http://fresh-center.net/linux/misc/legacy/openldap-2.6.10.tgz"
   sha256 "c065f04aad42737aebd60b2fe4939704ac844266bc0aeaa1609f0cad987be516"
   license "OLDAP-2.8"
+  revision 1
 
   livecheck do
     url "https://www.openldap.org/software/download/OpenLDAP/openldap-release/"
@@ -13,18 +14,18 @@ class Openldap < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_sequoia: "90749053fa49720027fec10a7f6b69d12e3a7aa2c319fed0c9021ce4a1ee5873"
-    sha256 arm64_sonoma:  "8d4319c2a4e33ded3d0650b1e9bd56f4e087a3c72dda53aa1e7fc1c5747dbd93"
-    sha256 arm64_ventura: "3f6ac8d8010ce41c011a300b68a93ada298fe35f1c1577f1d9413c2e892d3d06"
-    sha256 sonoma:        "dbfb4021fc4b5b3df381c2ec339ed0801952b1d93728152cc30edf6e3e8da1ac"
-    sha256 ventura:       "0cca5d539102430ce70d06b5956b6cc9b658a495edb3c7abb13582872f171daf"
-    sha256 arm64_linux:   "dd8990617d2d310cf965ff185b405d0b903860b2b535d45d3ddfc6409dd5fa97"
-    sha256 x86_64_linux:  "c618d0eb76c5e2cf57846bd6be286018e00da7eb37f5a5b3a6d22ff0ed7885d9"
+    sha256 arm64_sequoia: "a1dc03b12f5d087bf8eca0c017483a45548a88ad62e27e0c0efe499f19cf57ff"
+    sha256 arm64_sonoma:  "fc1c7897033c6869b7bcc0e9e7589c7e2dc1bcda9f1939bc571f6afc9586b97f"
+    sha256 arm64_ventura: "2940262081277489fbb0b6187269efb4dca69ad6000b1793ce2e67a8fcce5513"
+    sha256 sonoma:        "6360ceeaf23775210ee3c9f739ff8d7b3cd83b2dfce7bf7ae4cd69065b3ec544"
+    sha256 ventura:       "f3da0ae98808e034485d22f56185b01715e544387d6d5a61df4f7cd4dadb2930"
+    sha256 arm64_linux:   "56958d2700c221fd98383fc04078a18e3f9b28afae795c2b15b0cb5fcba10b62"
+    sha256 x86_64_linux:  "79ace347f02583cfe9e64e4e28b96a965b5b4a96d98db2ce0d746be4ad5da3b9"
   end
 
   keg_only :provided_by_macos
 
+  depends_on "cyrus-sasl"
   depends_on "openssl@3"
 
   uses_from_macos "mandoc" => :build
@@ -64,6 +65,7 @@ class Openldap < Formula
       --enable-translucent
       --enable-unique
       --enable-valsort
+      --with-cyrus-sasl
       --without-systemd
     ]
 

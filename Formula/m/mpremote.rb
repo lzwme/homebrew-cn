@@ -8,7 +8,8 @@ class Mpremote < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "ef937462df64160d0b412a69a2b19f27c51fb781fc936cedc167a97691a2a168"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "b12a460088c523aec51a337f3ff11978d2a06ba58800f5e2b902a39d88717c5a"
   end
 
   depends_on "python@3.13"
@@ -27,9 +28,9 @@ class Mpremote < Formula
     virtualenv_install_with_resources
 
     # Build an `:all` bottle.
-    usr_local_files = %w[
+    usr_local_files = %W[
       platformdirs/unix.py
-      platformdirs-4.3.8.dist-info/METADATA
+      platformdirs-#{resource("platformdirs").version}.dist-info/METADATA
     ].map { |file| libexec/Language::Python.site_packages("python3")/file }
     inreplace usr_local_files, "/usr/local", HOMEBREW_PREFIX
 

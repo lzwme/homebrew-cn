@@ -1,18 +1,18 @@
 class Vet < Formula
   desc "Policy driven vetting of open source dependencies"
   homepage "https://safedep.io/"
-  url "https://ghfast.top/https://github.com/safedep/vet/archive/refs/tags/v1.12.2.tar.gz"
-  sha256 "6c0889bfb5505192151193b7866133ea2c9a78285e65b2a357ed03bdcaabf807"
+  url "https://ghfast.top/https://github.com/safedep/vet/archive/refs/tags/v1.12.4.tar.gz"
+  sha256 "256bfee1cd12f99344980c195bdee77f8e48e9f006e3a52c6609c3574adb20e2"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7911bcea1987d500690718aa448ea069ba3f8e050023645883409c7c00031a7e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8ece6217d249ef074d2cebea7b8771aa313b3d012fb7328032678b94062fec75"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "744d0479aee6e3b6eaa83d8bf42a0ee5e4dce8e00c7c575688f32c401e68e293"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6807d5f89c34cc19fba2966dae78955887f9a929accf02bb3e0ca5f3c01b0961"
-    sha256 cellar: :any_skip_relocation, ventura:       "f00e858b7e3d71d8ac9bd27835897f6f00e9ddb63ecf7279b2b1cc04006bff19"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6b3da6aa6458e8f2c77c9a35106b710dd8cd54c5d2b4383ee410f279b994b516"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f79ae68c1ba835ce922f83837448beb825e7ac4e173f45e34a4e4cf94d92f913"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "86ba16e1d8f79f91adb988095ece71d269a05833afaed68913cf53f237e00759"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "599e16676ce55162fe3d9475974b08f956b1536703bfc1706c19bf0cecebe5ad"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "eb5d365ed42526013776d1d2041d7da05f65b67cae41516d1cc13ba72b3eacdc"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2a14ccf01b9f21839336e5592c38b79de6c6cf518f4f925934f8a55b06d72c74"
+    sha256 cellar: :any_skip_relocation, ventura:       "a428d862d146c3817cf7597485b61ea216f016bd8798d70f3aad6281a10d0eff"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "dc84b970e9425e1763edd70a1e10597d4923d31d80b105d5f2fee42af512aaf4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ff89339f5fe3415c9456c893a6d63d8e05e0ada5082e94ebb8f5b0ec68004b5c"
   end
 
   depends_on "go"
