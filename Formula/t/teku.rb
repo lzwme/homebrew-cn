@@ -8,16 +8,11 @@ class Teku < Formula
   head "https://github.com/ConsenSys/teku.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0fe0564c021df4f6780599e1c00a377449ee97be3b26cea5a90a3878bf650ea5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0fe0564c021df4f6780599e1c00a377449ee97be3b26cea5a90a3878bf650ea5"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "0fe0564c021df4f6780599e1c00a377449ee97be3b26cea5a90a3878bf650ea5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1e10e1536205a337350342b1f44407583e508fef2ce9a68a41f9974ba9ca74b3"
-    sha256 cellar: :any_skip_relocation, ventura:       "1e10e1536205a337350342b1f44407583e508fef2ce9a68a41f9974ba9ca74b3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0fe0564c021df4f6780599e1c00a377449ee97be3b26cea5a90a3878bf650ea5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0fe0564c021df4f6780599e1c00a377449ee97be3b26cea5a90a3878bf650ea5"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "37ca5df33df4de8d403a41faf01bac1d08b7ef56ef0d4314963215949ecc550d"
   end
 
-  depends_on "gradle" => :build
+  depends_on "gradle@8" => :build
   depends_on "openjdk"
 
   def install

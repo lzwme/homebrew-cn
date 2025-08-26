@@ -1,19 +1,19 @@
 class SvtAv1 < Formula
   desc "AV1 encoder"
   homepage "https://gitlab.com/AOMediaCodec/SVT-AV1"
-  url "https://gitlab.com/AOMediaCodec/SVT-AV1/-/archive/v3.1.1/SVT-AV1-v3.1.1.tar.bz2"
-  sha256 "a91a3a095cc3146697c6e46155f095492f177d95585e90fc87a5df1ee41869e2"
+  url "https://gitlab.com/AOMediaCodec/SVT-AV1/-/archive/v3.1.2/SVT-AV1-v3.1.2.tar.bz2"
+  sha256 "802e9bb2b14f66e8c638f54857ccb84d3536144b0ae18b9f568bbf2314d2de88"
   license "BSD-3-Clause"
   head "https://gitlab.com/AOMediaCodec/SVT-AV1.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "f4503350bb65f6d5edd242898a21b767f496094789f44da5dca548b80fe1d3ae"
-    sha256 cellar: :any,                 arm64_sonoma:  "77dd90c0e18c2b3a261efee025dd6feb89076a13b381c32dd6ba2f5b00e941dd"
-    sha256 cellar: :any,                 arm64_ventura: "9873398e84dc0f2857b0af232a792d399f074c25ada35f88366aad88159c61cb"
-    sha256 cellar: :any,                 sonoma:        "ad01ec360f56d6cc01f85ff550b01cb0425d429663fca649725883ede6cb41fa"
-    sha256 cellar: :any,                 ventura:       "5dc6a67a062093870623b1eea6830335c70232c7752bc3b498bddde02921184d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "56cb7653c3778987d34fe7addb7c8516254da59ff0728e691bbf195312a3f107"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "71b89043e1285f6ad2645b88b8f4925939974483939d6f476ea4b6fe69d2203a"
+    sha256 cellar: :any,                 arm64_sequoia: "8c2b600f85d7ff7280fbfb1eadf0c184389851b0b45181e38ab83471b172e5d9"
+    sha256 cellar: :any,                 arm64_sonoma:  "e99263f68834a04809be5b69f86f009ba5907b0fbb053c74ca30ab19ccd48090"
+    sha256 cellar: :any,                 arm64_ventura: "4b18d8c80857d654acfff1ba38f33d8571be5e26832cd6cdcfb9d0225dd56d6f"
+    sha256 cellar: :any,                 sonoma:        "88ac875b64040b98495de3bc0beb26c5806e1bb7abe6d7ccc39a1cc9d60dfa59"
+    sha256 cellar: :any,                 ventura:       "83c8622df46a28226294405d21ea13feaa608a5814743e1b46e5479a52ee43d0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9d7efc983029cd1bb5f3cbcdfa09d2f8f1e344a3853d4325c01de798374f9e9c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "42ae8505f47c43db4757b07adc84e684ebb5dbbd166919d7bd583ac2ff3dcf9d"
   end
 
   depends_on "cmake" => :build

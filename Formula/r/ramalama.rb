@@ -8,13 +8,8 @@ class Ramalama < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ef2769a2457c34d1fa2cc18bf95bae7acda3346b2735771e0ab4cf09a402248b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ef2769a2457c34d1fa2cc18bf95bae7acda3346b2735771e0ab4cf09a402248b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "ef2769a2457c34d1fa2cc18bf95bae7acda3346b2735771e0ab4cf09a402248b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4671c8b477f5b6694c59e3083401a136840dd970a4544bb93567c9dccb0cfc77"
-    sha256 cellar: :any_skip_relocation, ventura:       "4671c8b477f5b6694c59e3083401a136840dd970a4544bb93567c9dccb0cfc77"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4671c8b477f5b6694c59e3083401a136840dd970a4544bb93567c9dccb0cfc77"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4671c8b477f5b6694c59e3083401a136840dd970a4544bb93567c9dccb0cfc77"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "5bc24164e3be625e6c502044848b355a0885ae7f63af4ac1d33f1eb13aaa253e"
   end
 
   depends_on "llama.cpp"
@@ -27,6 +22,12 @@ class Ramalama < Formula
 
   def install
     virtualenv_install_with_resources
+
+    # Build an `:all` bottle by replacing comments
+    site_packages = libexec/Language::Python.site_packages("python3")
+    inreplace site_packages/"argcomplete-#{resource("argcomplete").version}.dist-info/METADATA",
+              "/opt/homebrew/bin/bash",
+              "$HOMEBREW_PREFIX/bin/bash"
   end
 
   test do

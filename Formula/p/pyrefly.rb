@@ -1,19 +1,19 @@
 class Pyrefly < Formula
   desc "Fast type checker and IDE for Python"
   homepage "https://pyrefly.org/"
-  url "https://ghfast.top/https://github.com/facebook/pyrefly/archive/refs/tags/0.29.2.tar.gz"
-  sha256 "35ea5ddbc3f998eafb6f476419d6279af4745e6d7a62dbefdc0efaaffefe9530"
+  url "https://ghfast.top/https://github.com/facebook/pyrefly/archive/refs/tags/0.30.0.tar.gz"
+  sha256 "1c6a0d710eaf49a8a26f94b16c457ec7d78e381597c12942ff4b2fa29dc25cad"
   license "MIT"
   head "https://github.com/facebook/pyrefly.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ab42a6cd71e9119b2f00d9dd80231d7ac5a78e9a150fca961cfbf761f14c427c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "878a54cc07683d382580e12dcfc9e1a549bfb993d7bf721d0274c1c4cf45700a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "051a034d8d85048da0de995e2309890d15d0f1ba7617bbd27659b64399dec36d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f5d2735bc9852635fa15e76ef8a133d43e06e477752abe5ab2560b6aa6d46ac3"
-    sha256 cellar: :any_skip_relocation, ventura:       "6a2517d28d629c7b07e3ca6cd03d9e923148121e2a949766f28bbe1d0e954d56"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "52a095747946b0431daa9d835c4c6a54bda86027579f3376ecfa1154fb2997be"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ff8b6056fddfb78106825e668113c71eadbe53f0412b27a69f8826341e5f3685"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "72937130978e11c4963ed1c93aa21c841be16d5e4b06116c38541ba0b65827af"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a8b99031087f176d523d91842193a9b09614deb0b60f5be551bc8ac16e57191c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "fb2b68448ee08f23b5432db374a20ced168f13245aee707fb9bbf767b3c7da8c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "1dacb6e4d5ecf5928327a8bf4c76f0540eab7f522ad31fcf18da174126f2466d"
+    sha256 cellar: :any_skip_relocation, ventura:       "ac17ade00d1121d5ba810e89fc5f190f323cfa007882960158b5fd8e449b50de"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b372f79719a0bb7e9a5b6b44db924bd118d2cac4e03e0e5857aa844fe4029e23"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c3b14836591eee26cd0b65886b8d1f21e3329a0f7a2bf5a0b0edfb44f6a6f6e1"
   end
 
   depends_on "rust" => :build

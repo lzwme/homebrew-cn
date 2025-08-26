@@ -2718,6 +2718,7 @@ Homebrew-homebrew-core/Formula/g/gtkspell3.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gtmess.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gtop.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gtranslator.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/g/gtrash.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gtree.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gts.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gucharmap.rb, Homebrew/homebrew-core, 0
@@ -4253,6 +4254,7 @@ Homebrew-homebrew-core/Formula/m/m4.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/m68k-elf-binutils.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/m68k-elf-gcc.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mabel.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/m/mac-cleanup-py.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mac-robber.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mac.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/macchina.rb, Homebrew/homebrew-core, 1
@@ -5322,6 +5324,7 @@ Homebrew-homebrew-core/Formula/p/pex.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pferd.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pfetch-rs.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pfetch.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/p/pg-schema-diff.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pg_cron.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pg_partman.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pg_top.rb, Homebrew/homebrew-core, 0
@@ -5593,6 +5596,7 @@ Homebrew-homebrew-core/Formula/p/protoc-gen-grpc-swift.rb, Homebrew/homebrew-cor
 Homebrew-homebrew-core/Formula/p/protoc-gen-grpc-web.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/protoc-gen-js.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/protolint.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/p/protozero.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/prover9.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/prowler.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/proxify.rb, Homebrew/homebrew-core, 1
@@ -7126,6 +7130,7 @@ Homebrew-homebrew-core/Formula/t/typos-lsp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/typst.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/typstfmt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/typstyle.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/t/typtea.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tz.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tzdb.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/tzdiff.rb, Homebrew/homebrew-core, 1
@@ -7747,6 +7752,7 @@ Homebrew-homebrew-core/Formula/z/zet.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/zf.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/zfind.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/zig.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/z/zig@0.14.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/z/zigmod.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/zigup.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/zile.rb, Homebrew/homebrew-core, 0
@@ -13436,6 +13442,7 @@ Homebrew-homebrew-cask/Casks/o/orangedrangon-android-messages.rb, Homebrew/homeb
 Homebrew-homebrew-cask/Casks/o/orbstack.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/orca.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/orcaslicer.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/o/orcaslicer@nightly.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/origami-studio.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/origin.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/orion.rb, Homebrew/homebrew-cask, 0
@@ -13578,6 +13585,7 @@ Homebrew-homebrew-cask/Casks/p/perimeter81.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/permute.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/persepolis-download-manager.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/pester.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/p/petrichor.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/pext.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/pg-commander.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/pgadmin4.rb, Homebrew/homebrew-cask, 0

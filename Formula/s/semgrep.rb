@@ -4,8 +4,8 @@ class Semgrep < Formula
   desc "Easily detect and prevent bugs and anti-patterns in your codebase"
   homepage "https://semgrep.dev"
   url "https://github.com/semgrep/semgrep.git",
-      tag:      "v1.132.0",
-      revision: "be8be79c13f22898e9d0c7c3a4339d2757f440cd"
+      tag:      "v1.133.0",
+      revision: "763730c878a1ff6f9f4b42594ce87d8e0f11248e"
   license "LGPL-2.1-only"
   head "https://github.com/semgrep/semgrep.git", branch: "develop"
 
@@ -15,13 +15,13 @@ class Semgrep < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "33b68163dae025cb3ddb152e0a53748af281080083e60bc840b95743f4d793da"
-    sha256 cellar: :any,                 arm64_sonoma:  "05aaa1e1ce2a9e23753232c28ac01d6318ff35b16a632b8da8c66119da1c35aa"
-    sha256 cellar: :any,                 arm64_ventura: "b1bbd7d5b994ae07e5d8207748dd8cf1fde70c4f4e6f14a9a1e5538cd694f5eb"
-    sha256 cellar: :any,                 sonoma:        "f2b0111e3cea00378a25cac9a5088986258d1e9f9f8ffdc2e9ebe79fb23ca0c7"
-    sha256 cellar: :any,                 ventura:       "ef198e5975295c256c95a5e70727885aa1b1fffbd8e8c53b823eb744e1df14e8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "55e4f31d822549f7d9b643bb664fc372a9c7d36a977d39535e4c389a72aa8757"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a0ad5e3230783c5cb4435609534a42b2c443ca71bb82359639245dbb1041ba9e"
+    sha256 cellar: :any, arm64_sequoia: "ae37ddeed9109189aedc90f13b5e620c5a0ddb2923485f9a8549cb6ccd26fd45"
+    sha256 cellar: :any, arm64_sonoma:  "4fc6ffd42883ff5700bca67ff58bef1196741e463642fb7bc819f33d808a6b84"
+    sha256 cellar: :any, arm64_ventura: "5cc52024410c28ef8cee21fbd6f467da16edf03f8e02864bcce2f3dcb497823f"
+    sha256 cellar: :any, sonoma:        "bd07020fd9d264c837daaf33eb8fadc0197ff25ef0509bc070f031b76cc1620a"
+    sha256 cellar: :any, ventura:       "ed565c3c9536a3ef8e569df084f731ac56ba6fd2b791a0cd93cd60f1ba274271"
+    sha256               arm64_linux:   "2520410d069733da6831b56d0bf9c4e00ba0cb54381f6e514bfa9e3e8e4d3ddf"
+    sha256               x86_64_linux:  "785df5d8f92912a0850291884d26fffefe0999eb02a254d1e0da0a77e5268162"
   end
 
   depends_on "autoconf" => :build
@@ -34,6 +34,7 @@ class Semgrep < Formula
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "certifi"
+  depends_on "dwarfutils"
   depends_on "gmp"
   depends_on "libev"
   depends_on "pcre"
@@ -45,6 +46,11 @@ class Semgrep < Formula
 
   uses_from_macos "rsync" => :build
   uses_from_macos "curl"
+
+  on_linux do
+    depends_on "elfutils"
+    depends_on "libunwind"
+  end
 
   resource "attrs" do
     url "https://files.pythonhosted.org/packages/5a/b0/1367933a8532ee6ff8d63537de4f1177af4bff9f3e829baf7331f595bb24/attrs-25.3.0.tar.gz"
@@ -122,8 +128,8 @@ class Semgrep < Formula
   end
 
   resource "jsonschema" do
-    url "https://files.pythonhosted.org/packages/d5/00/a297a868e9d0784450faa7365c2172a7d6110c763e30ba861867c32ae6a9/jsonschema-4.25.0.tar.gz"
-    sha256 "e63acf5c11762c0e6672ffb61482bdf57f0876684d8d249c0fe2d730d48bc55f"
+    url "https://files.pythonhosted.org/packages/74/69/f7185de793a29082a9f3c7728268ffb31cb5095131a9c139a74078e27336/jsonschema-4.25.1.tar.gz"
+    sha256 "e4a9655ce0da0c0b67a085847e00a3a51449e1157f4f75e9fb5aa545e122eb85"
   end
 
   resource "jsonschema-specifications" do
@@ -212,8 +218,8 @@ class Semgrep < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/e1/0a/929373653770d8a0d7ea76c37de6e41f11eb07559b103b1c02cafb3f7cf8/requests-2.32.4.tar.gz"
-    sha256 "27d0316682c8a29834d3264820024b62a36942083d52caf2f14c0591336d3422"
+    url "https://files.pythonhosted.org/packages/c9/74/b3ff8e6c8446842c3f5c837e9c3dfcfe2018ea6ecef224c710c85ef728f4/requests-2.32.5.tar.gz"
+    sha256 "dbba0bac56e100853db0ea71b82b4dfd5fe2bf6d3754a8893c3af500cec7d7cf"
   end
 
   resource "rich" do
@@ -227,8 +233,8 @@ class Semgrep < Formula
   end
 
   resource "ruamel-yaml" do
-    url "https://files.pythonhosted.org/packages/39/87/6da0df742a4684263261c253f00edd5829e6aca970fff69e75028cccc547/ruamel.yaml-0.18.14.tar.gz"
-    sha256 "7227b76aaec364df15936730efbf7d72b30c0b79b1d578bbb8e3dcb2d81f52b7"
+    url "https://files.pythonhosted.org/packages/3e/db/f3950f5e5031b618aae9f423a39bf81a55c148aecd15a34527898e752cf4/ruamel.yaml-0.18.15.tar.gz"
+    sha256 "dbfca74b018c4c3fba0b9cc9ee33e53c371194a9000e694995e620490fd40700"
   end
 
   resource "ruamel-yaml-clib" do
@@ -288,6 +294,10 @@ class Semgrep < Formula
       s.gsub!(
         "$(pkg-config libpcre2-8 --variable libdir)/libpcre2-8.a",
         Formula["pcre2"].opt_lib/shared_library("libpcre2-8"),
+      )
+      s.gsub!(
+        '"$(brew --prefix dwarfutils)/lib/libdwarf.a"',
+        Formula["dwarfutils"].opt_lib/shared_library("libdwarf"),
       )
     end
 

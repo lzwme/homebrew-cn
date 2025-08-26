@@ -9,13 +9,8 @@ class Ptpython < Formula
   head "https://github.com/prompt-toolkit/ptpython.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9e7da60db0a3a7a9381b6ec4142caee6d7c40ac26ed9f6cb685bbff0ab57596d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9e7da60db0a3a7a9381b6ec4142caee6d7c40ac26ed9f6cb685bbff0ab57596d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "9e7da60db0a3a7a9381b6ec4142caee6d7c40ac26ed9f6cb685bbff0ab57596d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a1cbfb4942dfdea16d8d36d99817f88c6685035c873bf6df156c5cb04b23ce7e"
-    sha256 cellar: :any_skip_relocation, ventura:       "a1cbfb4942dfdea16d8d36d99817f88c6685035c873bf6df156c5cb04b23ce7e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9e7da60db0a3a7a9381b6ec4142caee6d7c40ac26ed9f6cb685bbff0ab57596d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9e7da60db0a3a7a9381b6ec4142caee6d7c40ac26ed9f6cb685bbff0ab57596d"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "59ae67e245727f79b8648139528fcaeff15827ad57ad04e5817252f412c07a77"
   end
 
   depends_on "python@3.13"

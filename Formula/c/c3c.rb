@@ -24,6 +24,11 @@ class C3c < Formula
     sha256               x86_64_linux:  "2d484624c26dbcdc838dac9e68fc1fa591cfb197f409177263ac8219fb74dede"
   end
 
+  # We are unable to rebuild bottles as url has a checksum mismatch and
+  # upstream has not responded to https://github.com/c3lang/c3c/issues/2425
+  # This can be removed if upstream confirms retag or in future release
+  deprecate! date: "2025-08-25", because: :checksum_mismatch
+
   depends_on "cmake" => :build
   depends_on "lld"
   depends_on "llvm"

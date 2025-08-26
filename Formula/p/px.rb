@@ -11,13 +11,8 @@ class Px < Formula
   no_autobump! because: :bumped_by_upstream
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9d4a1e994cc03c26be44d6683939626e92a593894e9993dc4309662d47a65283"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9d4a1e994cc03c26be44d6683939626e92a593894e9993dc4309662d47a65283"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "9d4a1e994cc03c26be44d6683939626e92a593894e9993dc4309662d47a65283"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6c8843cd23beef1c971c277f0fbc1a6dc1174455e3986121c52c64403b369c03"
-    sha256 cellar: :any_skip_relocation, ventura:       "6c8843cd23beef1c971c277f0fbc1a6dc1174455e3986121c52c64403b369c03"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9d4a1e994cc03c26be44d6683939626e92a593894e9993dc4309662d47a65283"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9d4a1e994cc03c26be44d6683939626e92a593894e9993dc4309662d47a65283"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "183335621aa8e62d880d13704dd7874429d902c1011456da751143de205cbca3"
   end
 
   depends_on "python@3.13"

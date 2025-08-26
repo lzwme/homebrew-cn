@@ -1,10 +1,9 @@
 class Pdal < Formula
   desc "Point data abstraction library"
   homepage "https://www.pdal.io/"
-  url "https://ghfast.top/https://github.com/PDAL/PDAL/releases/download/2.9.0/PDAL-2.9.0-src.tar.bz2"
-  sha256 "f0be2f6575021d0c4751d5babd4c1096d4e5934f86f8461914e9f9c6dc63567d"
+  url "https://ghfast.top/https://github.com/PDAL/PDAL/releases/download/2.9.1/PDAL-2.9.1-src.tar.bz2"
+  sha256 "a5508e30b5d2e5154fd5e686a444ae3f835607807b5d22f26d97d184ff4b74d8"
   license "BSD-3-Clause"
-  revision 1
   head "https://github.com/PDAL/PDAL.git", branch: "master"
 
   livecheck do
@@ -13,13 +12,13 @@ class Pdal < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "f633f676ee645772d3e537af008e22097b913bdf078f2bf307c4d7f276eb3daf"
-    sha256 cellar: :any,                 arm64_sonoma:  "fec1430ce746325d44ca434eae08ddfc4d1dcaaad089fc53a001ef073013eee7"
-    sha256 cellar: :any,                 arm64_ventura: "cb0ea9b7e3a83f9455d7204123b54fda9c2309587607735b1388ebb2135faa1a"
-    sha256 cellar: :any,                 sonoma:        "960331dd9ba8505bc26c3e6833ddfd544de311f2bbb5e33a8c9be525d19eb550"
-    sha256 cellar: :any,                 ventura:       "4dbcd46cc0528ebee4b0c4cd73f84d5b7496869f9cec9ffe58e863ae9861afe9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8a99fb356056c81a8fd9f802a59a76951e64204fae1c59b33ad28f7884bd9597"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "baefbdbb742d9f5873594f3540a29d4777e1143d83278a299daa6744289cf3a4"
+    sha256 cellar: :any,                 arm64_sequoia: "bcd1909353380061d33f10c42c6d147545d95fde5ae7a514819aa6a37b15691f"
+    sha256 cellar: :any,                 arm64_sonoma:  "fe614d7f2c31bdd24969a70c721538afd48789b0590a6a983cadd3263ac2db13"
+    sha256 cellar: :any,                 arm64_ventura: "163dd4b47b60d16c44e8cd87082812393365a9d2bf252521fc5bf51291ac35bc"
+    sha256 cellar: :any,                 sonoma:        "14b31cf37dfa115e5d630d9eda8d2a2db41cd2430eb960677fb4de118abe585d"
+    sha256 cellar: :any,                 ventura:       "46c6753f35cda87b999ea89602b178a29f85dbf0d7c4e024718d624694709dae"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bae797d995d7203ef8335dd7e02cda2c396e0ef79b7ccfafdcc894666019f7db"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ff3b8735aa21e22088baf73a882ef27b51fc6c362a5d15c3c52e7e7d868e4d12"
   end
 
   depends_on "cmake" => :build
@@ -46,18 +45,6 @@ class Pdal < Formula
 
   on_linux do
     depends_on "libunwind"
-  end
-
-  # Two patches below are related to apache-arrow 21.0.0 support
-  # See https://github.com/PDAL/PDAL/pull/4773 and https://github.com/PDAL/PDAL/pull/4777
-  patch do
-    url "https://github.com/PDAL/PDAL/commit/8deb4e577ab6a73e74cd720256e1d574509ea3e9.patch?full_index=1"
-    sha256 "93c4682fa8b1e5f62665967f7917ff97e1285ad4b9b4c227d3b27d0694ae9404"
-  end
-
-  patch do
-    url "https://github.com/PDAL/PDAL/commit/ea822192f6054d6d0b1c68265a185fe4f292194f.patch?full_index=1"
-    sha256 "02258e334a97fe95f4e5942a39734be9e574443e303105ee95aef864717a9dc3"
   end
 
   def install

@@ -1,8 +1,8 @@
 class Feluda < Formula
   desc "Detect license usage restrictions in your project"
   homepage "https://github.com/anistark/feluda"
-  url "https://ghfast.top/https://github.com/anistark/feluda/archive/refs/tags/1.9.7.tar.gz"
-  sha256 "31afcdd2a822ebd74bca98fc9d0f3b63e3b36ffd6a7497040dac37a00e55aefc"
+  url "https://ghfast.top/https://github.com/anistark/feluda/archive/refs/tags/v1.9.8.tar.gz"
+  sha256 "cb512ea32a3973b17a86e5c4c88bf5ba70f8e6cddda6a697172522e87b691070"
   license "MIT"
   head "https://github.com/anistark/feluda.git", branch: "main"
 
@@ -15,13 +15,13 @@ class Feluda < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "beb7e39a620102aca4bbf4ff99649d16e0c497ea78cec50cb9478842013cf96d"
-    sha256 cellar: :any,                 arm64_sonoma:  "6f411b8e372d99f99189394594e21dfcf3081754d9b4c44637bf790ff21ee2db"
-    sha256 cellar: :any,                 arm64_ventura: "6472ec97eabe8e98a692086ef80b137c6eaae1757d99aea65e163f35d31e1eea"
-    sha256 cellar: :any,                 sonoma:        "e541e0c2a66cd3bfcca240d094f1e04595444822635f9039fd51d046bc08ffd7"
-    sha256 cellar: :any,                 ventura:       "c293a4b76f885d32545fe78e60a23bfd3be87b25d4da6f56c8591624c14bd752"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "de3655a3d0435ecbe5cbc8155c892f61b9b4f26ece47de895962e5863bbc0706"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4900a3f719415074f59f05e99ff8bbc3de1e8b93bcb3e78978a1a86cd60fdf95"
+    sha256 cellar: :any,                 arm64_sequoia: "94bdf34ff65f8b0729bc533839876b888e287ee121e49d3d706738b1ddf4c81c"
+    sha256 cellar: :any,                 arm64_sonoma:  "7ba6a06c3ae47361be31f9c00abe977cf0198985473668406d72283a95fc4e5f"
+    sha256 cellar: :any,                 arm64_ventura: "6973d87e5817d663db874179c06c3f2965d752e3c4f915d5f1299d662499ea86"
+    sha256 cellar: :any,                 sonoma:        "592339e97cd43fa5ea7e02f30ad0d4a3f1023d3d8c1c59ea7e49bd2b673473b5"
+    sha256 cellar: :any,                 ventura:       "ce60131895977c5270c8ab7bc7d4d287efb1491950c18f0694584334d8dcb1d9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b0a82398a8608dada7c9f969b9826918a4635c102b69559a8af7565f727f0261"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aba35c9012b54a43554ae933fb5c7eb31a6328e5e55beb4f0b79e9084cd57753"
   end
 
   depends_on "pkgconf" => :build

@@ -1,18 +1,18 @@
 class Nessie < Formula
   desc "Transactional Catalog for Data Lakes with Git-like semantics"
   homepage "https://projectnessie.org"
-  url "https://ghfast.top/https://github.com/projectnessie/nessie/archive/refs/tags/nessie-0.104.5.tar.gz"
-  sha256 "5455fba07389763bb570461919813a797fecde0015f491ff7b9f4a4e0fc13c67"
+  url "https://ghfast.top/https://github.com/projectnessie/nessie/archive/refs/tags/nessie-0.104.9.tar.gz"
+  sha256 "c07d6c8b4942e9a112d04c60a3ed45d29bd4dbb4cb136bcb80b1e631079877b1"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2f969c199a08768d476514d7b0dd3991e3e804e3619e52b507dc799efbfe393c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4b43c48bccea2c450b5c1b791ef18415a55b8ddb1844591227b4825264be814d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "0b09972ef9c5e4a68283acc4999340286c8bf4b41350de59ff352220fe5fb076"
-    sha256 cellar: :any_skip_relocation, sonoma:        "44c7feb33e2b121ac33e06ca507581f47991a1ba7a12020ff2e1ba426c122e49"
-    sha256 cellar: :any_skip_relocation, ventura:       "1b8132fab0a55e3db3b5b52499c651d2a5b77005db4267c87a6a33bd0b4ab861"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "234df679bb23212d007831488d168a251dbffd16c5bdd9079ca5725a575d1cb9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e5d52bc5ea57e7abfea630dd733e9c760f335f61a0ef47db6945f8df7e745950"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "303cb1a8b019283396e3153172117e1f11dcd8c73dab227a8f2c03f8301e1034"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a35f02b4888e9b2919d68a5e368826abb4cb0e1313caf0d9fc290722059701b6"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "485ed9ce3d6db3a3c14ddd92165a02139632d3aa0caab917f461279ce1c326b6"
+    sha256 cellar: :any_skip_relocation, sonoma:        "cc4e3374c411f56ec79ea92d7b50e79487ff2cd541ceefe87b8ae287c8325d2a"
+    sha256 cellar: :any_skip_relocation, ventura:       "b3805dd01d7c17bb642d2f6ac63541ebc54ab00a8c43ed93d13e99a4452a9cbe"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b274fd18236f763b8e6e166d812d4cb7725f9fac2361e2d93b68af5807f7f617"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "94b6eeb872b9598d528409c61a894fca86b76947de480be8ee2c366f2a74b4fc"
   end
 
   depends_on "gradle@8" => :build

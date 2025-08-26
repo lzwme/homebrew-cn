@@ -103,12 +103,12 @@ class Llgo < Formula
       )
 
       func Foo() string {
-        return "Hello LLGO by Foo"
+        return "Hello LLGo by Foo"
       }
 
       func main() {
-        fmt.Println("Hello LLGO by fmt.Println")
-        c.Printf(c.Str("Hello LLGO by c.Printf\\n"))
+        fmt.Println("Hello LLGo by fmt.Println")
+        c.Printf(c.Str("Hello LLGo by c.Printf\\n"))
       }
     GO
     (testpath/"hello_test.go").write <<~GO
@@ -118,7 +118,7 @@ class Llgo < Formula
 
       func Test_Foo(t *testing.T) {
         got := Foo()
-        want := "Hello LLGO by Foo"
+        want := "Hello LLGo by Foo"
         if got != want {
           t.Errorf("foo() = %q, want %q", got, want)
         }
@@ -129,13 +129,13 @@ class Llgo < Formula
     GOMOD
     system go.opt_bin/"go", "get", "github.com/goplus/lib"
     # Test llgo run
-    assert_equal "Hello LLGO by fmt.Println\n" \
-                 "Hello LLGO by c.Printf\n",
+    assert_equal "Hello LLGo by fmt.Println\n" \
+                 "Hello LLGo by c.Printf\n",
                  shell_output("#{bin}/llgo run .")
     # Test llgo build
     system bin/"llgo", "build", "-o", "hello", "."
-    assert_equal "Hello LLGO by fmt.Println\n" \
-                 "Hello LLGO by c.Printf\n",
+    assert_equal "Hello LLGo by fmt.Println\n" \
+                 "Hello LLGo by c.Printf\n",
                  shell_output("./hello")
     # Test llgo test
     assert_match "PASS", shell_output("#{bin}/llgo test .")

@@ -3,18 +3,18 @@ class Schemathesis < Formula
 
   desc "Testing tool for web applications with specs"
   homepage "https://schemathesis.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/67/48/2d4310f95ad95e7ffd585c32d326bca864536a5481cc01ca32f653b2941c/schemathesis-4.1.1.tar.gz"
-  sha256 "584ee98222d22640b2fca8f177370f3f6a75500215b83e0bf9aad3d0d4a239c4"
+  url "https://files.pythonhosted.org/packages/0c/b2/37db1b9af1337ee1969c1fdfa98bb767f6b02a1333648a2b398b8d688793/schemathesis-4.1.2.tar.gz"
+  sha256 "88305f08a26dc707aca7bce9123b408fa9dcf9a50c9fd9b5f0203fdadf2ec8e1"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "7bc8b6fffa50c08d82da346183bfc00abc168705443798886d8973392c0f3850"
-    sha256 cellar: :any,                 arm64_sonoma:  "c0c8e2f22248dee433b81776b9162a2753b8bcfc21fc7eb6e0f0a0a05c22c44e"
-    sha256 cellar: :any,                 arm64_ventura: "2eb04f1a970d7f6ae39602724006ad331b167fc04e6cf61e2b764d32e444c54c"
-    sha256 cellar: :any,                 sonoma:        "7b313467924c318704298d089c32081d72e200c255fe69ad3ada06c2c1280e87"
-    sha256 cellar: :any,                 ventura:       "00d3e0e5d0a1ada81e8ebb94ee3ea84d1fb5eaba85b67ab95732180f8f78e084"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "725c1c3cb7c62b3e2d3affb7aad910fce2242db1e99ac9ed49dd69889ed7e952"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8159daf651cd84a5a177af8611e58a3ec04e0dee4c0f07aa750fab72f22947d8"
+    sha256 cellar: :any,                 arm64_sequoia: "24e50dc7104a28af4442bc88e6b5bfd63b75e7e2c678592630e072bb7ef79095"
+    sha256 cellar: :any,                 arm64_sonoma:  "13c48edcb67f61f61a6fdfe34ac8ee57ced8bf4ff7f7448190ce10f4d71a2082"
+    sha256 cellar: :any,                 arm64_ventura: "9cc8ffd1fe6278d11fe6298d91e2ffcb06ee6185522615106ad94f6c8b1d4b35"
+    sha256 cellar: :any,                 sonoma:        "330e9d4eef3b60ff795e87e5296ecdd34c088696c7bfdb67b631c857ce310958"
+    sha256 cellar: :any,                 ventura:       "06a17868a03b1a1c2984c686859e1b9a9cc47c56d66b2681129729c7971eef95"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "003701cd9bd36a7fa1395581c766b660367d2dd97f215d3baa454d4f8ef95fe5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5fc13f80de9bd3561f4b5c80378895c928746eb95e78d85dbc9459c6f3b6c704"
   end
 
   depends_on "rust" => :build # for rpds-py
@@ -90,8 +90,8 @@ class Schemathesis < Formula
   end
 
   resource "hypothesis" do
-    url "https://files.pythonhosted.org/packages/7d/6d/68b8f1468da10dab5e903f6278cdfe88e05631a23009b2d9bf75b23e63f1/hypothesis-6.138.2.tar.gz"
-    sha256 "82e3b2ac709ee3edda4aba2f4b11becfe764f51d104fcdb3e9f95aff1ac81595"
+    url "https://files.pythonhosted.org/packages/19/28/9aa38d1cf2b00d385926fd44318d2b49948c060969ab29e82e8bb654b16c/hypothesis-6.138.3.tar.gz"
+    sha256 "9bffd1382b99e67c46512dac45ec013bae4b39d3d0ef98f0d87535f06d8efc9e"
   end
 
   resource "hypothesis-graphql" do
@@ -240,8 +240,8 @@ class Schemathesis < Formula
   end
 
   resource "starlette" do
-    url "https://files.pythonhosted.org/packages/04/57/d062573f391d062710d4088fa1369428c38d51460ab6fedff920efef932e/starlette-0.47.2.tar.gz"
-    sha256 "6ae9aa5db235e4846decc1e7b79c4f346adf41e9777aebeb49dfd09bbd7023d8"
+    url "https://files.pythonhosted.org/packages/15/b9/cc3017f9a9c9b6e27c5106cc10cc7904653c3eec0729793aec10479dd669/starlette-0.47.3.tar.gz"
+    sha256 "6bc94f839cc176c4858894f1f8908f0ab79dfec1a6b8402f6da9be26ebea52e9"
   end
 
   resource "starlette-testclient" do
@@ -260,8 +260,8 @@ class Schemathesis < Formula
   end
 
   resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/98/5a/da40306b885cc8c09109dc2e1abd358d5684b1425678151cdaed4731c822/typing_extensions-4.14.1.tar.gz"
-    sha256 "38b39f4aeeab64884ce9f74c94263ef78f3c22467c8724005483154c26648d36"
+    url "https://files.pythonhosted.org/packages/72/94/1a15dd82efb362ac84269196e94cf00f187f7ed21c242792a923cdb1c61f/typing_extensions-4.15.0.tar.gz"
+    sha256 "0cea48d173cc12fa28ecabc3b837ea3cf6f38c6d1136f85cbaaf598984861466"
   end
 
   resource "uri-template" do
