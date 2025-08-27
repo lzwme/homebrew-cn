@@ -1,23 +1,24 @@
 class Proxygen < Formula
   desc "Collection of C++ HTTP libraries"
   homepage "https://github.com/facebook/proxygen"
-  url "https://ghfast.top/https://github.com/facebook/proxygen/releases/download/v2025.08.18.00/proxygen-v2025.08.18.00.tar.gz"
-  sha256 "01286d48007a578b3b9964e2f065a07f296de50d8ddac2fdc6fe54bb2145fbba"
+  url "https://ghfast.top/https://github.com/facebook/proxygen/releases/download/v2025.08.25.00/proxygen-v2025.08.25.00.tar.gz"
+  sha256 "e7397cbe93bb8567438f033bc5b1e407b074061c72783d3f55388e416b63fcf0"
   license "BSD-3-Clause"
   head "https://github.com/facebook/proxygen.git", branch: "main"
 
   bottle do
-    sha256                               arm64_sequoia: "fa88f8a4d249437e9bd7213b299ec3492a728d3fb1c9451a7791789e76df04eb"
-    sha256                               arm64_sonoma:  "ec1a4f7f0e4f6b16a8be15b4b4777a969e08bde42fc3170d7a3da91f9ae96e17"
-    sha256                               arm64_ventura: "aad6a0f38acb601ca37cccb5d1fd3d9e76f9da8d0816b57b5a65aa2bded5e10a"
-    sha256 cellar: :any,                 sonoma:        "1f2d75555ac3c6bb644cd4de3b9f83821ba9b1276695a819602ee69fcdfb95b9"
-    sha256 cellar: :any,                 ventura:       "707b37f044ec643d1a86e9b3201fbee5a3df34e39a0fdc48b755921f9713ba57"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "217c2edfb832bb2b63d5445826e55d502c15fe7d4c874eb4d12f423ec90e03a3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "947bbd8191ad9867e0487fb2d24229d1fb385dfd6f9259ddaebff8ef858c1bcb"
+    sha256                               arm64_sequoia: "65dd297ab4f4276a87018d205cead9359eea2e58246577b78442b97c09ac49f1"
+    sha256                               arm64_sonoma:  "bc7699a34533dddf5267a488f0021683be288b35531bc963bdf1566fde758df2"
+    sha256                               arm64_ventura: "a362774ae89aa065826d2ab8b5bcfcaa8e536d7616b307ae877aaa1a29007d76"
+    sha256 cellar: :any,                 sonoma:        "4fa681f6f3fc0807dcf4cae86532c5e6ccaf695d2cfd781030856622b3beb3af"
+    sha256 cellar: :any,                 ventura:       "b2eeed9472fdeaafbf2e066e4557acfd2be63a0e9c4e5f45338d0fd47e31d21b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6d0339c7df3078e2cc530108ac6be12d70b1155dfbd9e86f9f91b3ca684a0204"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "73ccd14d4d877f373255226da898596d4169cc66775ed66c44e6bbd31ac0104e"
   end
 
   depends_on "cmake" => :build
   depends_on "boost"
+  depends_on "c-ares"
   depends_on "double-conversion"
   depends_on "fizz"
   depends_on "fmt"
@@ -37,8 +38,15 @@ class Proxygen < Formula
 
   # Fix build with Boost 1.89.0, pr ref: https://github.com/facebook/proxygen/pull/570
   patch do
-    url "https://github.com/facebook/proxygen/commit/d69f521bc0c7201ced9326aabe7ba0ca590621bf.patch?full_index=1"
-    sha256 "2b51cbce006750d70e6807bb186d4b06f9ec1c40f7109d0f0b8a8910581a39a3"
+    url "https://github.com/facebook/proxygen/commit/10af948d7ff29bc8601e83127a9d9ab1c441fc58.patch?full_index=1"
+    sha256 "161937c94727ab34976d5f2f602e6b7fcaecc7c86236ce0f6cbd809a5f852379"
+  end
+
+  # Fix various symbol resolution errors.
+  # https://github.com/facebook/proxygen/pull/572
+  patch do
+    url "https://github.com/facebook/proxygen/commit/7ad708b2206e4400240af5fd08e429b1b0cbedb3.patch?full_index=1"
+    sha256 "4e64f687017888af90c4c6e691923db75c1e067fc8b722b038d05ee67707767c"
   end
 
   def install

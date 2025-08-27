@@ -9,8 +9,8 @@ class Abi3audit < Formula
   revision 2
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "93665223b64c1a162b3e41aaa4cf9bc7346f4c1a9faaecb45dfd8d22ba90e59b"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, all: "ba80700ed97cf6e236751a223f264a9f2859be90e1d175c3426732bac7b03546"
   end
 
   depends_on "cmake" => :build
@@ -73,8 +73,8 @@ class Abi3audit < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/fe/8b/3c73abc9c759ecd3f1f7ceff6685840859e8070c4d947c93fae71f6a0bf2/platformdirs-4.3.8.tar.gz"
-    sha256 "3d512d96e16bcb959a814c9f348431070822a6496326a4be0911c40b5a74c2bc"
+    url "https://files.pythonhosted.org/packages/23/e8/21db9c9987b0e728855bd57bff6984f67952bea55d6f75e055c46b5383e8/platformdirs-4.4.0.tar.gz"
+    sha256 "ca753cf4d81dc309bc67b0ea38fd15dc97bc30ce419a7f58d13eb3bf14c4febf"
   end
 
   resource "pyelftools" do
@@ -103,8 +103,8 @@ class Abi3audit < Formula
   end
 
   resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/98/5a/da40306b885cc8c09109dc2e1abd358d5684b1425678151cdaed4731c822/typing_extensions-4.14.1.tar.gz"
-    sha256 "38b39f4aeeab64884ce9f74c94263ef78f3c22467c8724005483154c26648d36"
+    url "https://files.pythonhosted.org/packages/72/94/1a15dd82efb362ac84269196e94cf00f187f7ed21c242792a923cdb1c61f/typing_extensions-4.15.0.tar.gz"
+    sha256 "0cea48d173cc12fa28ecabc3b837ea3cf6f38c6d1136f85cbaaf598984861466"
   end
 
   resource "url-normalize" do
@@ -119,18 +119,6 @@ class Abi3audit < Formula
 
   def install
     virtualenv_install_with_resources
-
-    # Build an `:all` bottle.
-    usr_local_files = %W[
-      platformdirs/unix.py
-      platformdirs-#{resource("platformdirs").version}.dist-info/METADATA
-    ].map { |file| libexec/Language::Python.site_packages("python3")/file }
-    inreplace usr_local_files, "/usr/local", HOMEBREW_PREFIX
-
-    opt_homebrew_files = %w[
-      platformdirs/macos.py
-    ].map { |file| libexec/Language::Python.site_packages("python3")/file }
-    inreplace opt_homebrew_files, "/opt/homebrew", HOMEBREW_PREFIX
   end
 
   test do

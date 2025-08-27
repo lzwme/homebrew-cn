@@ -7,18 +7,19 @@ class Osmcoastline < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "c35ab027223ca2ea5a8555eb16f6f28e3b08dd4b2041d4796331391a1458a5f7"
-    sha256 cellar: :any,                 arm64_sonoma:  "4792911cf6b33270e68cac5e9bb1810dff2a0869410905ae47c1978a5683e7b5"
-    sha256 cellar: :any,                 arm64_ventura: "a791ac1186a07fb44e973b7d08e2db4d73694e34d45aac133ebf399900e72486"
-    sha256 cellar: :any,                 sonoma:        "aef43094262f2b19ef4fa3c689ecfa6a51064e8ecddd9fda6d625cb690a6b0a1"
-    sha256 cellar: :any,                 ventura:       "51f97203e6f852e9ee35a14a98ba7d65f8aa1dea74a5711123e897e3e54eec8c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cfd02b5ffbd8862c4c8f753c921c6db4930f64740883e9c4bd76ca0d7a89e1d4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "512cdfad91e7e710a01e2f387d73661032fb267fc90c6a51131953c184956bb0"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "e916b8467a227287c206c34a792a829864578ba2c98c69206e07ca78c6bb05ca"
+    sha256 cellar: :any,                 arm64_sonoma:  "f1ace5b789f7744191de53a328cd7927b446e7c1df4a0829faa66abcb46e6c72"
+    sha256 cellar: :any,                 arm64_ventura: "50450c237463b39c7bd5a4e128882b1f64ad20d7e96f1681a8c0f3cc44eee082"
+    sha256 cellar: :any,                 sonoma:        "ce1a8e0d975c410c41b5a640e43963d7ee3cc40831bc1fa2deb9f6178f8457c2"
+    sha256 cellar: :any,                 ventura:       "8f35bf9cd5ddf6ae48700da2485759bedbe60cf24d8c5ac57b2569609ff11e2b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5476fe8a3f601975b8382daddd4db0cc107ae7c332d2db1155c87b46b9521602"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b40f19c65b043198073b51666bd582f44a150e3712d0c3287ab35f375372e17a"
   end
 
   depends_on "cmake" => :build
   depends_on "libosmium" => :build
-
+  depends_on "protozero" => :build
   depends_on "expat"
   depends_on "gdal"
   depends_on "geos"
@@ -39,7 +40,7 @@ class Osmcoastline < Formula
         .each { |llvm_lib| ENV.remove "HOMEBREW_LIBRARY_PATHS", llvm_lib }
     end
 
-    protozero = Formula["libosmium"].opt_libexec/"include"
+    protozero = Formula["protozero"].opt_include
     args = %W[
       -DPROTOZERO_INCLUDE_DIR=#{protozero}
     ]

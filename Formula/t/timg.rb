@@ -4,22 +4,23 @@ class Timg < Formula
   url "https://ghfast.top/https://github.com/hzeller/timg/archive/refs/tags/v1.6.2.tar.gz"
   sha256 "a5fb4443f55552d15a8b22b9ca4cb5874eb1a988d3b98fe31d61d19b2c7b9e56"
   license "GPL-2.0-only"
+  revision 1
   head "https://github.com/hzeller/timg.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "5c8350f7fe1ed4dc4442b36edf9bed57cc7f91d8ed216a23e5b70fd5e094ca6b"
-    sha256 cellar: :any,                 arm64_sonoma:  "68666166df0ec18cea0727596196fbde09525e366acbc96f280900dee189e1ab"
-    sha256 cellar: :any,                 arm64_ventura: "efa5d590ef38f66e6abc82b1d93d5b25b709d8a7ff300c339e82cb646c97cc42"
-    sha256 cellar: :any,                 sonoma:        "2b7b02c5c71ea66fd8343fd1d2bd3a48921f5f141ab3475f3504daa7b1aca7f5"
-    sha256 cellar: :any,                 ventura:       "6709b3b50e2e5b42fdc10979f0e54cbc8961f5cb4114689cdf2835738f4ebf72"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5382f40353ec7c2e43e38966dc4a859a5ef032f98a6858b76dd76e71cae8a1e1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d7b3b2f667e0ce20d21fba8ada97bc1d4c41a4d00171bdc67a4d7b56e062f6dd"
+    sha256 cellar: :any,                 arm64_sequoia: "483bf681c8b822ef5271e84cd4c599c5425ec8a0b28cd345a320f68af2b05617"
+    sha256 cellar: :any,                 arm64_sonoma:  "aa033521f4b1ea224bc84058d7fdbda534aac3f1a65318f69d198ae0b17990b7"
+    sha256 cellar: :any,                 arm64_ventura: "072d74e851550ad40d8c4c6011ea488adc1f4ffbffbcdb26f3cdd08bba2f9faf"
+    sha256 cellar: :any,                 sonoma:        "cf7446cd124bebfdd8d9a3b260bdbe554837baf0d1306f723fad5db7df46c2b6"
+    sha256 cellar: :any,                 ventura:       "59848ba255ac59552c72931388d576b0c3ae8656f8d8e8076660df4a2b723730"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d6fb0793782cb954bc2223399b8f17922187f91e0834940ceff2db630e571052"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c55773fb422d5931ac926c0e6c3ddf52f437a0ed46974951cf304ce781990b24"
   end
 
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
   depends_on "cairo"
-  depends_on "ffmpeg"
+  depends_on "ffmpeg@7"
   depends_on "glib"
   depends_on "graphicsmagick"
   depends_on "jpeg-turbo"

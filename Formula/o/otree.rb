@@ -1,19 +1,19 @@
 class Otree < Formula
   desc "Command-line tool to view objects (JSON/YAML/TOML) in TUI tree widget"
   homepage "https://github.com/fioncat/otree"
-  url "https://ghfast.top/https://github.com/fioncat/otree/archive/refs/tags/v0.6.0.tar.gz"
-  sha256 "6d66cdcce5a08dfd9c9ba276a8bd6fe7ea65f1e35d4a955c41402bcb3b86e05b"
+  url "https://ghfast.top/https://github.com/fioncat/otree/archive/refs/tags/v0.6.1.tar.gz"
+  sha256 "1c95f78c1b432b4a62392c971bc28eda8bc6754ec53e0701de1c42417c058bdf"
   license "MIT"
   head "https://github.com/fioncat/otree.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e63fc1c6c13d0d5caada9d836c7c4b9648d538b3f9c5c71dc197167206ad4ab5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "371d727d73e9bb63fb571f14a5760cb6d313ce616c4c7e03937c9039f54289e8"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "5d460e1c4f6b9cacd6ff42eef418cdb879f4232d17d713878845a4133748adf5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e8b5313ea2c6270e42b40750cc217ba050b5191c8932e297dea906485548b120"
-    sha256 cellar: :any_skip_relocation, ventura:       "557d452b3c9b853830b6df876047481e86e8262172f0f34700090c3688ab2acd"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "94ee7b565ba0dda7ec69475fd55b25171b6d22e3a42c3a972493b91280866e30"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7d7de2d99349ec7e900c3f26ba7a5fcd882e5a1ddd7b191d7fe0b5cdfed2d1c2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6fdce82bbaf08033a3c8c1c5037d6fd6e36fcca4e49ef685ccc5c136c80db0fa"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ee2702c8f437b9ab36a8af2840f3144c4ec77fb7f2d036b35d986f0b41f5ab53"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "ed688b7c0ffc77627bd36abedcbb78d5b1d3e5f85698dd2a25d5e539fa42e0c6"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ef843b3fb7ae68218d25840abdbd5a5d9766468bd521a4dd883165049695f35b"
+    sha256 cellar: :any_skip_relocation, ventura:       "683645b88e37d08c941dd0926b19d8e5cde9f4b7280ca81618bb91a14e3966fe"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "07121fd05dba24412d587abb6ef57f5be1ad4efd8129bb86ca6e9a13737b8552"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "af2d0fda64c6909530a07f24d49c5e71dfe7b11b6876ee43f57f299c14f6ee99"
   end
 
   depends_on "rust" => :build

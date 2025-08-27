@@ -4,15 +4,16 @@ class Glyph < Formula
   url "https://ghfast.top/https://github.com/seatedro/glyph/archive/refs/tags/v1.0.11.tar.gz"
   sha256 "7de7936a13b92b18240134bef64c006ab73988850a8776a1b276e22b73377f15"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "dace7314cab8589f003791387c994758716a5137382f202e20335bf5bcb11625"
-    sha256 cellar: :any,                 arm64_sonoma:  "c8d041bb811a2719ca2de1c38d41aac3fd39e4831b4f8544a3b8cc875a90fd06"
-    sha256 cellar: :any,                 arm64_ventura: "8816e608f78ee4e9e7142ba908d51fd4672e38575940954b607c6451c9a79a07"
-    sha256 cellar: :any,                 sonoma:        "75c836a7c114fb377a59cace95a6d462e73cda26d7cd52bb6f9347ccfbf99015"
-    sha256 cellar: :any,                 ventura:       "e29b0dfed93f6057a007755edf3a3c9d22e9734553e7f907554f70d0edbf9cea"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "01f031d39433012bab0f5adaac4acc726c2e12bdd3241ac5b6a50741894a82c2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "af846010a44e3d33585ae616c40710644fe6ef842861a9120029a4a970b6a533"
+    sha256 cellar: :any,                 arm64_sequoia: "65fd307f046f5a02aac7c6b501e5fe18e5428effe18348d0f325434d88345dbd"
+    sha256 cellar: :any,                 arm64_sonoma:  "464f70d7d55c68ef851b98495678a655d8bd9da9091b7d2dc8f6e3c1b1f6f039"
+    sha256 cellar: :any,                 arm64_ventura: "698a50227be0700a78a83e9465c918512c6ff85249695bc1659daecf12fd34e9"
+    sha256 cellar: :any,                 sonoma:        "5b9a6ac30820f3da6ea3a6db4a5b5c2f256f28ff60cabce3aafd75f4fd116d89"
+    sha256 cellar: :any,                 ventura:       "6ca22ad633b8aacb5c48262d620ea2b9cc06bd3b583e42e477745eb1e6ed745e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5e9d554f601c7f51ac4e716ca96e5a4bd0a4ac28e44b427604a9247b8a395885"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f0c997639992b3d57e15aba0c84174ca4fae48aab25916ac90074d63e2a50aee"
   end
 
   # Aligned to `zig@0.14` formula. Can be removed if upstream updates to newer Zig.
@@ -20,7 +21,7 @@ class Glyph < Formula
 
   depends_on "pkgconf" => :build
   depends_on "zig@0.14" => :build # https://github.com/seatedro/glyph/issues/32
-  depends_on "ffmpeg"
+  depends_on "ffmpeg@7"
 
   def install
     # Fix illegal instruction errors when using bottles on older CPUs.

@@ -1,8 +1,8 @@
 class Xk6 < Formula
   desc "Build k6 with extensions"
   homepage "https://k6.io"
-  url "https://ghfast.top/https://github.com/grafana/xk6/archive/refs/tags/v1.1.2.tar.gz"
-  sha256 "234a1d1999b9d0d27e26e600e5f1c859850bf497ba958c0e341a3ec861240e49"
+  url "https://ghfast.top/https://github.com/grafana/xk6/archive/refs/tags/v1.1.3.tar.gz"
+  sha256 "0325c267631c564f21aa6e7924647204d2a6562552310070e3581b2a34bf25fe"
   license "Apache-2.0"
   head "https://github.com/grafana/xk6.git", branch: "master"
 
@@ -12,12 +12,12 @@ class Xk6 < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a8ff25df93531b63613011b93c5e93e758387434eff082c2d84ec956332029a5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a8ff25df93531b63613011b93c5e93e758387434eff082c2d84ec956332029a5"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "a8ff25df93531b63613011b93c5e93e758387434eff082c2d84ec956332029a5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "82b6d188f9c9193801744c9aae88ab006da212a1a61cd02ef377c77b14e1b181"
-    sha256 cellar: :any_skip_relocation, ventura:       "82b6d188f9c9193801744c9aae88ab006da212a1a61cd02ef377c77b14e1b181"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c29b753bf526380f76de157987eaeee1188cfa4b28a7315e0a5d45c8a69967fc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "beb64fa0e1a2512f668fa08dc0b842725a0ac702f2d4bdbb794f045c89a41349"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "beb64fa0e1a2512f668fa08dc0b842725a0ac702f2d4bdbb794f045c89a41349"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "beb64fa0e1a2512f668fa08dc0b842725a0ac702f2d4bdbb794f045c89a41349"
+    sha256 cellar: :any_skip_relocation, sonoma:        "019b86d740b669c6620b8eff55da2553b953b68ceadad8b26ad8dcb89a61d3a0"
+    sha256 cellar: :any_skip_relocation, ventura:       "019b86d740b669c6620b8eff55da2553b953b68ceadad8b26ad8dcb89a61d3a0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3e36bca0aad516d86869c001b61f8442dd401efa99c2644a33b09bfa4ebeb0e7"
   end
 
   depends_on "go"

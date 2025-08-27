@@ -23,7 +23,7 @@ class PostgresqlAT13 < Formula
   keg_only :versioned_formula
 
   # https://www.postgresql.org/support/versioning/
-  deprecate! date: "2025-11-13", because: :unsupported
+  disable! date: "2026-03-01", because: :unsupported
 
   depends_on "pkgconf" => :build
   depends_on "icu4c@77"

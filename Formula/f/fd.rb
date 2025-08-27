@@ -1,20 +1,19 @@
 class Fd < Formula
   desc "Simple, fast and user-friendly alternative to find"
   homepage "https://github.com/sharkdp/fd"
-  url "https://ghfast.top/https://github.com/sharkdp/fd/archive/refs/tags/v10.2.0.tar.gz"
-  sha256 "73329fe24c53f0ca47cd0939256ca5c4644742cb7c14cf4114c8c9871336d342"
+  url "https://ghfast.top/https://github.com/sharkdp/fd/archive/refs/tags/v10.3.0.tar.gz"
+  sha256 "2edbc917a533053855d5b635dff368d65756ce6f82ddefd57b6c202622d791e9"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/sharkdp/fd.git", branch: "master"
 
   bottle do
-    rebuild 3
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0062840ffe4426b5487ecf093917dbc5ffb15a16266e3144803c4f784b62c192"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a0226d4c24ecd6d3e68ae193f85b5f180126f50f82607eec4ce375b2154ea161"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "9783ef7681c7f19934eb58b8bd11495025a2e327b726e68940872a26a51ef0bc"
-    sha256 cellar: :any_skip_relocation, sonoma:        "687a43155f651390be9b9a65399d64cdb2040142a7ca34286217fc56e700289b"
-    sha256 cellar: :any_skip_relocation, ventura:       "057cd47107f9c4b6d80c6de29e13d2f33ae793b4c3ae789b9fd9f58f3dc41127"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5bd14056b8ab967763375e7d8accf2bea48f0eb71d970c7c0c9062a62bd84395"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7ba51355cd0ccf8435d98d425216a063f27d75e079e1b4b5c376a23e4d3df3ad"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9886f37be53878a004d8283e01487c5f88b2f40bdeea0444269d2720b9fc4b9c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "60c11007de37751d8d11f1537109c172005e1302a949c561b723646821c2f8dc"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "152d79c955c2e5ec1fc1554df762571f79cd014a52b41f855617b9a4c084c580"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c406da15c1c61643c924dbd5cb6fc28445291e73807ac112a8478fcbe2417ef9"
+    sha256 cellar: :any_skip_relocation, ventura:       "7031fc0224cc81ac2f32413f27703a51f2876d0356527d88156b911ef999d0af"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bd34b505c728e111d57fd9beae2984e6164eb53d62fab13609ee7c3aa29a5030"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "faa7ba3fdb0288d5bee2b1650b31e1f5a587a65dae81c5ecb14aa9ad94d91352"
   end
 
   depends_on "rust" => :build

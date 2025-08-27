@@ -6,13 +6,8 @@ class StyleDictionary < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6d6183211d5e15fd0da57fed80ca4ca87fe1db93d146ea45c73977dd528eee88"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6d6183211d5e15fd0da57fed80ca4ca87fe1db93d146ea45c73977dd528eee88"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "6d6183211d5e15fd0da57fed80ca4ca87fe1db93d146ea45c73977dd528eee88"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8cfa15cb60c1a721a83a01c5348752f9555c1d650f380d880ef994147ebef96b"
-    sha256 cellar: :any_skip_relocation, ventura:       "8cfa15cb60c1a721a83a01c5348752f9555c1d650f380d880ef994147ebef96b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6d6183211d5e15fd0da57fed80ca4ca87fe1db93d146ea45c73977dd528eee88"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6d6183211d5e15fd0da57fed80ca4ca87fe1db93d146ea45c73977dd528eee88"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "b67f0f14ae2223cae85033ae7238cef09de8f8aac5fdc0c3e6a9efb4899c949c"
   end
 
   depends_on "node"
@@ -20,6 +15,13 @@ class StyleDictionary < Formula
   def install
     system "npm", "install", *std_npm_args
     bin.install_symlink Dir["#{libexec}/bin/*"]
+
+    # Build an `:all` bottle by removing example files
+    examples = libexec/"lib/node_modules/style-dictionary/examples"
+    rm %w[
+      advanced/create-react-native-app/android/app/proguard-rules.pro
+      complete/android/demo/proguard-rules.pro
+    ].map { |file| examples/file }
   end
 
   test do

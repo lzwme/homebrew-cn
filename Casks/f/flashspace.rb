@@ -1,12 +1,13 @@
 cask "flashspace" do
-  version "4.5.55"
-  sha256 "1df5c76c873577d6159013df74bfacbb8519f5b3444c7b82dd909425128d59e0"
+  version "4.5.56"
+  sha256 "fcddbed6c619c93f10f255810a5074b276baca334ffe41a376f1be6c16f8fc55"
 
   url "https://ghfast.top/https://github.com/wojciech-kulik/FlashSpace/releases/download/v#{version}/FlashSpace.app.zip"
   name "FlashSpace"
   desc "Virtual workspace manager"
   homepage "https://github.com/wojciech-kulik/FlashSpace"
 
+  auto_updates true
   depends_on macos: ">= :sonoma"
 
   app "FlashSpace.app"

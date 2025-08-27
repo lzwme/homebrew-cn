@@ -6,16 +6,17 @@ class Sigstore < Formula
   url "https://files.pythonhosted.org/packages/5e/f6/84309d12b41dec6a71a2a6a0fe83093fa2bedd7ccebb1ac92885fafe7c0d/sigstore-3.6.5.tar.gz"
   sha256 "677cb59b956af6a37d31e92107055eb3de5871a5dbedf9280d099177d20e0afe"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/sigstore/sigstore-python.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "367a20912f34469d4cf92e04ea2fc1258978d131915989c8483669dd5f838952"
-    sha256 cellar: :any,                 arm64_sonoma:  "47cd5a16b6f9788bcdf7f40791180df133bde5d4bc670292a46283cf71c7dbd0"
-    sha256 cellar: :any,                 arm64_ventura: "78a86dca05e779b358063cef5080a0a01b8a532d60414ec239ce89fa49e0ad43"
-    sha256 cellar: :any,                 sonoma:        "f2b0b3e6f76e8044a06f3dd6ee210947bef1fe75d0c8e3e12c27d2b104d262f3"
-    sha256 cellar: :any,                 ventura:       "869e02ab5032be37ae2024a4657a460b190fd7b64e0c99fa01cb1f52efa12180"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "027a3b594bf45ca298b65d4ccccd4026256aea4e2f39e3d6c45952e427222f0f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "610011094ceeba7d28d175094a97dc7dcf61ca91ef6f9d3330fd20685e3ac686"
+    sha256 cellar: :any,                 arm64_sequoia: "c2dcbe1c6e463472c294b0149c25f77e367f7b67147e354eb7833bcea18d2bd4"
+    sha256 cellar: :any,                 arm64_sonoma:  "c7a2bea0a03ab0052637123cf624018f34461a388b477e5dedc31305d7e9e21b"
+    sha256 cellar: :any,                 arm64_ventura: "c70f264515798f67cd990defde90c88dd5699f9967cd9bfed94da69d1eb27632"
+    sha256 cellar: :any,                 sonoma:        "1bb5a18d5b7d776240aacd764dc620f7d84dd606b15d64bc58daf2418d74d116"
+    sha256 cellar: :any,                 ventura:       "004bdc6f681e46877865c6f576665c804a60cced9c65334bcea3018250b09132"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7fe72c4087efe867d21cee5d8b63b6cd5da446b63aa4f72ba3dc219f6808b907"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "21ec06756145b21f4a51a317c2f57d9fd04531dbbad5cdccc3e8a92232788d2e"
   end
 
   depends_on "pkgconf" => :build # for rfc3161-client
@@ -56,8 +57,8 @@ class Sigstore < Formula
   end
 
   resource "h2" do
-    url "https://files.pythonhosted.org/packages/1b/38/d7f80fd13e6582fb8e0df8c9a653dcc02b03ca34f4d72f34869298c5baf8/h2-4.2.0.tar.gz"
-    sha256 "c8a52129695e88b1a0578d8d2cc6842bbd79128ac685463b887ee278126ad01f"
+    url "https://files.pythonhosted.org/packages/1d/17/afa56379f94ad0fe8defd37d6eb3f89a25404ffc71d4d848893d270325fc/h2-4.3.0.tar.gz"
+    sha256 "6c59efe4323fa18b47a632221a1888bd7fde6249819beda254aeca909f221bf1"
   end
 
   resource "hpack" do
@@ -136,8 +137,8 @@ class Sigstore < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/e1/0a/929373653770d8a0d7ea76c37de6e41f11eb07559b103b1c02cafb3f7cf8/requests-2.32.4.tar.gz"
-    sha256 "27d0316682c8a29834d3264820024b62a36942083d52caf2f14c0591336d3422"
+    url "https://files.pythonhosted.org/packages/c9/74/b3ff8e6c8446842c3f5c837e9c3dfcfe2018ea6ecef224c710c85ef728f4/requests-2.32.5.tar.gz"
+    sha256 "dbba0bac56e100853db0ea71b82b4dfd5fe2bf6d3754a8893c3af500cec7d7cf"
   end
 
   resource "rfc3161-client" do
@@ -181,8 +182,8 @@ class Sigstore < Formula
   end
 
   resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/98/5a/da40306b885cc8c09109dc2e1abd358d5684b1425678151cdaed4731c822/typing_extensions-4.14.1.tar.gz"
-    sha256 "38b39f4aeeab64884ce9f74c94263ef78f3c22467c8724005483154c26648d36"
+    url "https://files.pythonhosted.org/packages/72/94/1a15dd82efb362ac84269196e94cf00f187f7ed21c242792a923cdb1c61f/typing_extensions-4.15.0.tar.gz"
+    sha256 "0cea48d173cc12fa28ecabc3b837ea3cf6f38c6d1136f85cbaaf598984861466"
   end
 
   resource "typing-inspection" do

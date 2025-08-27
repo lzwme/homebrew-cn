@@ -4,7 +4,7 @@ class Siril < Formula
   url "https://free-astro.org/download/siril-1.2.6.tar.bz2"
   sha256 "312f82e78599f796d163a6d1c90589df1ed920b9ff2bb7ab5b808e43872817fa"
   license "GPL-3.0-or-later"
-  revision 1
+  revision 2
   head "https://gitlab.com/free-astro/siril.git", branch: "master"
 
   livecheck do
@@ -13,11 +13,11 @@ class Siril < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:  "6994a929b1960e74b3a427597882a4b9adadc37a70c65bd2902c652039894772"
-    sha256 arm64_ventura: "743375b6db6ef8b01ee621dbcd3bf19b5553e0ca569d6a06525fc69b3cc451d6"
-    sha256 sonoma:        "be2aa40d00fae797559263041e37d487698632e10f8ef55e67a588ef9f106203"
-    sha256 ventura:       "b3b1e07d416930598d83f4ebdaa88bda6468ad544439660e97e902e22c5480fe"
-    sha256 x86_64_linux:  "756349a2a99ba593840a094636e044f3008a26edf52e1ebb15b3264a6916d1e8"
+    sha256 arm64_sonoma:  "5560e2d8d33b65ab4d6ba303235bd4d81e325e00a51e8b59415ee945c7cbb25e"
+    sha256 arm64_ventura: "7a1efdb4b059a74f290c608069bf50c4ce67d10a215dfd5b4d0f2f062440fb01"
+    sha256 sonoma:        "e57de7b3622cb2d2c0de3d867ffccdad8d0b21db5fefd53ba0948bbfd87a8b0b"
+    sha256 ventura:       "0d00881d5bdbb82f7267ab520e3732e120067dea8c6ff19c21080f77b9897c28"
+    sha256 x86_64_linux:  "698f0f0ac056a88d843228bcbb5c76bb77db203be016523d72d744b8806f2e64"
   end
 
   depends_on "cmake" => :build
@@ -29,7 +29,7 @@ class Siril < Formula
   depends_on "cairo"
   depends_on "cfitsio"
   depends_on "exiv2"
-  depends_on "ffmpeg"
+  depends_on "ffmpeg@7"
   depends_on "ffms2"
   depends_on "fftw"
   depends_on "gdk-pixbuf"

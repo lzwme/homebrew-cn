@@ -1957,6 +1957,7 @@ Homebrew-homebrew-core/Formula/f/ffmpeg@2.8.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/ffmpeg@4.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/ffmpeg@5.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/ffmpeg@6.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/f/ffmpeg@7.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/ffmpegthumbnailer.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/ffms2.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/ffsend.rb, Homebrew/homebrew-core, 1
@@ -4882,6 +4883,7 @@ Homebrew-homebrew-core/Formula/n/nowplaying-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/nox.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/n/nping.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/npm-check-updates.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/n/npq.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/n/npth.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/n/npush.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/n/nq.rb, Homebrew/homebrew-core, 1
@@ -11840,6 +11842,7 @@ Homebrew-homebrew-cask/Casks/font/font-w/font-wdxl-lubrifont-tc.rb, Homebrew/hom
 Homebrew-homebrew-cask/Casks/font/font-w/font-webdings.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-w/font-wellfleet.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-w/font-wendy-one.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/font/font-w/font-wenjin-mincho.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-w/font-whisper.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-w/font-windsong.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-w/font-winky-rough.rb, Homebrew/homebrew-cask, 0
@@ -11914,6 +11917,7 @@ Homebrew-homebrew-cask/Casks/g/gama-jdk.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/g/gama-platform.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/g/gamemaker.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/gamma-control.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/g/gams.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/ganache.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/g/ganttproject.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/g/gaphor.rb, Homebrew/homebrew-cask, 1
@@ -14054,6 +14058,7 @@ Homebrew-homebrew-cask/Casks/r/riverside-studio.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/rivet.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/r/rize.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/r/rnnoise.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/r/rnote.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/roam-research.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/roam.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/roaringapps.rb, Homebrew/homebrew-cask, 0
@@ -15263,7 +15268,6 @@ Homebrew-homebrew-cask/Casks/x/xact.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/x/xamarin-android.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/x/xamarin-ios.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/x/xamarin-mac.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/x/xamarin-profiler.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/x/xamarin-studio.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/x/xamarin-workbooks.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/x/xampp-vm.rb, Homebrew/homebrew-cask, 0

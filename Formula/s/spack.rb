@@ -12,19 +12,18 @@ class Spack < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "24740174b2c04b46afb1bf30566f7623833212e62bd63c732ad88835c4d457ce"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "24740174b2c04b46afb1bf30566f7623833212e62bd63c732ad88835c4d457ce"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "24740174b2c04b46afb1bf30566f7623833212e62bd63c732ad88835c4d457ce"
-    sha256 cellar: :any_skip_relocation, sonoma:        "fb62f39f80b60afe1b133749f2d1f69ccdea05096ca5c8670cef2b79f0199425"
-    sha256 cellar: :any_skip_relocation, ventura:       "fb62f39f80b60afe1b133749f2d1f69ccdea05096ca5c8670cef2b79f0199425"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "24740174b2c04b46afb1bf30566f7623833212e62bd63c732ad88835c4d457ce"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "24740174b2c04b46afb1bf30566f7623833212e62bd63c732ad88835c4d457ce"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "123abac0cc1f1c77661a407c1ca5f2946bd327feaa4e83837a1287953d758f6c"
   end
 
   uses_from_macos "python"
 
   def install
-    rm Dir["bin/*.bat", "bin/*.ps1", "bin/haspywin.py"] # Remove Windows files.
+    # Remove Windows files
+    rm Dir["bin/*.bat", "bin/*.ps1", "bin/haspywin.py"]
+    # Build an `:all` bottle by removing test files
+    rm_r "lib/spack/spack/test"
+
     prefix.install Dir["*"]
   end
 

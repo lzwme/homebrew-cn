@@ -1,8 +1,8 @@
 class Gmic < Formula
   desc "Full-Featured Open-Source Framework for Image Processing"
   homepage "https://gmic.eu/"
-  url "https://gmic.eu/files/source/gmic_3.6.0.tar.gz"
-  sha256 "64c32e1a58e9d7de3f84220183bab06423bd9823afacee9a9c7b23768b8edc33"
+  url "https://gmic.eu/files/source/gmic_3.6.1.tar.gz"
+  sha256 "4cf36b7af48013651e40e2c17be646b748cffdd400a90562588a35af731f6c9e"
   license "CECILL-2.1"
   head "https://github.com/GreycLab/gmic.git", branch: "master"
 
@@ -12,13 +12,13 @@ class Gmic < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "bbddea5f478aa1cc7f593c9cf4d08a122a39f1f1ce7f321cfd89116af084ce3b"
-    sha256 cellar: :any,                 arm64_sonoma:  "6c1a4fd065487528d00aa926c937399f065dfbd832be40b761ac60768d7e89a4"
-    sha256 cellar: :any,                 arm64_ventura: "99198cb92714cc0e5adbdf19369944623b894e20c603067e649cea46d2ed17c8"
-    sha256 cellar: :any,                 sonoma:        "aea36a94054b77dd2abee1609bd140be3d19e0587ea2814d0618f34e277c34b2"
-    sha256 cellar: :any,                 ventura:       "29dad6214b30b65b571a3b2e1e31a086c006d85c85251eddbd363df05c0256b3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9e56176d0173e86b44dfc6f84c86ba948195851b2c4c0e719542dfed36d88812"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c11f12de99385691a00900d1dd4812455328068783d6b3e35e78b56b9fbd01cb"
+    sha256 cellar: :any,                 arm64_sequoia: "8f2dde990f71c76b2fed198f8b62983b5fa35ea5490e4cc7927ba65e9f3aaf59"
+    sha256 cellar: :any,                 arm64_sonoma:  "5edac414b295ead19b6a7987a821ea11ec403760c553c2dc7f80f6de4eab8770"
+    sha256 cellar: :any,                 arm64_ventura: "c4eeb3db6765081698662e62d5e86cbc15bb2ddd33783e8533c40a17de004a04"
+    sha256 cellar: :any,                 sonoma:        "203beebd6275029a7a94b7d29e491a9c59dcced5e757d8457307399bfc140004"
+    sha256 cellar: :any,                 ventura:       "4b5f88aeeec7c513120cc1e3540f45300b98d3409219b0233a70194aec0db733"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2a988aa7e914a0caea8619174e90da28da969ae89110f1f5a4b9a1abba37c3d8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ccfc5ab0c1557ee49aa134fac8fb518904637a61315011ee5b7b82d7b6c10e3b"
   end
 
   depends_on "cmake" => :build

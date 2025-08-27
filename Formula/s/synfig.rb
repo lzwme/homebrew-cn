@@ -5,7 +5,7 @@ class Synfig < Formula
   url "https://ghfast.top/https://github.com/synfig/synfig/releases/download/v1.5.3/synfig-1.5.3.tar.gz"
   sha256 "913c9cee6e5ad8fd6db3b3607c5b5ae0312f9ee6720c60619e3a97da98501ea8"
   license "GPL-3.0-or-later"
-  revision 1
+  revision 2
   head "https://github.com/synfig/synfig.git", branch: "master"
 
   livecheck do
@@ -16,11 +16,11 @@ class Synfig < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256                               arm64_sonoma:  "10becfbca35809715b7bcdca7f354bce719e00ac4929cf0201788b9f62c2d325"
-    sha256                               arm64_ventura: "87c649d82396780c78917323d00fe5eb4eb5cc42cabbe5aa1e54b967a70375b6"
-    sha256                               sonoma:        "040675ab7bf683384809492881b6c6b375d4890c56429471ac27426f2e43fc97"
-    sha256                               ventura:       "b5d42fa11ffeaa5c8d2fffadbc6dc8a6217bec36c16cec7b2b1ed76e52e5c0e1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6e7dadfd2cb3149f8b59fe45f4b0427465ca1f5bfce89b431923c4f1242761d2"
+    sha256                               arm64_sonoma:  "874944b05891c59695ff2db7d9ccece4297c3eadc5d3700499699a9be14977e1"
+    sha256                               arm64_ventura: "950daa1ac3dfd7c6ad66071fe60807beb2d508cc94872ad2c9a5494d278dfef8"
+    sha256                               sonoma:        "51c1bfcd664a5163081b7cd1b198a30a3f93661bfb0180c7e9f6c0165090cfbd"
+    sha256                               ventura:       "1ca46bdf9ced9af39f3c679252ae5bedf802fb6814ef3f6d7507a20be5c05336"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "070671c26baba156cf1fd71ad07873761a7d5e4b230af6dc6bdeb9aeb19ea7c2"
   end
 
   depends_on "autoconf" => :build
@@ -31,7 +31,7 @@ class Synfig < Formula
 
   depends_on "cairo"
   depends_on "etl"
-  depends_on "ffmpeg"
+  depends_on "ffmpeg@7"
   depends_on "fftw"
   depends_on "fontconfig"
   depends_on "freetype"
@@ -88,6 +88,7 @@ class Synfig < Formula
       }
     CPP
 
+    ENV.prepend_path "PKG_CONFIG_PATH", Formula["ffmpeg@7"].opt_lib/"pkgconfig"
     pkgconf_flags = shell_output("pkgconf --cflags --libs libavcodec synfig").chomp.split
     system ENV.cxx, "-std=c++11", "test.cpp", "-o", "test", *pkgconf_flags
     system "./test"

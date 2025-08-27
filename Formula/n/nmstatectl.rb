@@ -1,19 +1,19 @@
 class Nmstatectl < Formula
   desc "Command-line tool that manages host networking settings in a declarative manner"
   homepage "https://nmstate.io/"
-  url "https://ghfast.top/https://github.com/nmstate/nmstate/releases/download/v2.2.49/nmstate-2.2.49.tar.gz"
-  sha256 "51000e7ccd94cca22c8a29854698fd6f62941247e7215b9c0c6e344005d83eb5"
+  url "https://ghfast.top/https://github.com/nmstate/nmstate/releases/download/v2.2.50/nmstate-2.2.50.tar.gz"
+  sha256 "929c2ea4a259ab6e659655be3eaa698047375fe9e461169ae1af57be7b26576d"
   license "Apache-2.0"
   head "https://github.com/nmstate/nmstate.git", branch: "base"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0017ff4260d734f6112cc62a83e660ded3ace95aa7fd138757e3b742926a4f8c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e00f11ba70e11491772860c8a349f35a971921bf174de88f31841cec002c1852"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "d0e343165cd95ff6e2ba8d2301125a467253ae4c1d1dbbdc4526a1a747230929"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7a730e6be9226fd9ac5392503848c8e37a8eb48ee4395df85247a2c7d5f106c9"
-    sha256 cellar: :any_skip_relocation, ventura:       "23e5711fd8c95e3403c440ce6876b547bad94e6eb68d2c72ee5243ea26d116df"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7fb15675139e0b527ed93ea74baef34cf04b42879133bc5c87e7a6f76e21fe5d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7f6dbfb18ed67a6b2b0a10cfaa9ae8e5dc368f3dc0cead57bb5086e915019975"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2f6b65c7a255875b8eb74f02da3264409503f073b2673bfbb9260c3abae58b7d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "03b57a5368b58d319606b0cd162937fc5d42acd2464449ad81d25f6e3e1469c8"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "3041679aceeb38fad3ed04ec5ceaa79073abf80c05bea71fc061fb07184ae8de"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5a2239fe9bd2c59ed7ee97c787868a7e75177a6f9532663b2c0bdcf510ce82fd"
+    sha256 cellar: :any_skip_relocation, ventura:       "4ea8a1ff7837557113909ba1d382f52a2238618d83490355c320228abf4b64d5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e05fd61f8590dc17d75632c030e045a983ed8bd0543a5c0e2e43686b44718521"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "05bace17549be21d37d581043a9e3924c0b103f00149871aa4782bac4161a21a"
   end
 
   depends_on "rust" => :build

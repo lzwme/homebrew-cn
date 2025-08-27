@@ -6,6 +6,7 @@ class Vgmstream < Formula
       revision: "f96812ead1560b43ef56d1d388a5f01ed92a8cc0"
   version "r2023"
   license "ISC"
+  revision 1
   version_scheme 1
   head "https://github.com/vgmstream/vgmstream.git", branch: "master"
 
@@ -16,13 +17,13 @@ class Vgmstream < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "9d603c60f7149d4391e2f9603f077b8a5dea45eb22517e1fcae98966b0bcc8ed"
-    sha256 cellar: :any,                 arm64_sonoma:  "a9f8d5660a11587ceb4f74c36028595bd0f382dec602d5dae67e60394512f1c5"
-    sha256 cellar: :any,                 arm64_ventura: "1efac14baca5b829081b4798b3fdad731d667b0076615e0ac92dde5caa08c5e8"
-    sha256 cellar: :any,                 sonoma:        "2644519b01f118d98935bb7ef5c6b2205711938d904f548829960cc65229ea5c"
-    sha256 cellar: :any,                 ventura:       "77b35a83341fc2faedc0bfa5fe0f925da8e410e76a38e426c720fca917228f02"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "56043db74438ba802de747ab9c277b5f2521ec4077cd5cd3d70242aa7da18a97"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d542cf27b207fe2a8fdd850d5520c00bc70498ea835221a74198e08701c61dd2"
+    sha256 cellar: :any,                 arm64_sequoia: "04e3f32a4e72f77e1a87d467bd043437b3d3e16b1c9a3257925a90b5969f0fc8"
+    sha256 cellar: :any,                 arm64_sonoma:  "2764fb3e7612cb5e3471c6c66e012434f42f1e88183327f41e0ea20039dbeba5"
+    sha256 cellar: :any,                 arm64_ventura: "8496fb62b6fced555786fb142f6d783d98deddb0ee0873ed51d34ab673e5d951"
+    sha256 cellar: :any,                 sonoma:        "b55ad40f1dfc8b1dcf4c967eb196d55a6e33518513ff3a77ed3520a96637e009"
+    sha256 cellar: :any,                 ventura:       "95c9ed7d5514151bdeecc33c93353b7cee6196e5e96279a49cca2ae3eea13185"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3ebd1f3823dc9561171b3df3acbd6e2560aa13d0cfb7d2b7c221aa2e1e4fbb79"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b98268d17d6f3652d71b301a442efc2b3540d93c6ca46313a3f67e51f67162ef"
   end
 
   depends_on "autoconf" => :build
@@ -31,7 +32,7 @@ class Vgmstream < Formula
   depends_on "libtool" => :build
   depends_on "pkgconf" => :build
 
-  depends_on "ffmpeg"
+  depends_on "ffmpeg@7"
   depends_on "jansson"
   depends_on "libao"
   depends_on "libvorbis"

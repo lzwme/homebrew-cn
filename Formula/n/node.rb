@@ -12,14 +12,14 @@ class Node < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_sequoia: "4a6ebf2c8fb6bdebe30e422e34edea76881d71f5171d0b0e81f2f5c76d0bf7db"
-    sha256 arm64_sonoma:  "0a4db425888df8ff220f96b05bf9ac68f01d5c5d486de097ca22dc75880d6e81"
-    sha256 arm64_ventura: "137a6d2ef52ea7909a95a5644c8a11869129814a711e58a1c51a7cab4eafc395"
-    sha256 sonoma:        "7193c1decd42d7d4425cf2579c7e1e3d2f8e42ba8a61f4fdb210d07a3603aff1"
-    sha256 ventura:       "48b0e46491df7ba99ee313673cd162e1630da60082fd07139f230443ee7d7c57"
-    sha256 arm64_linux:   "fd66c8404087979884184df1abd072db148294703c72211ad8063174c7302d8e"
-    sha256 x86_64_linux:  "9951605f35f8a2c93286ca282e366ebfe2023c35ae5df079801d63d68f8b8997"
+    rebuild 2
+    sha256 arm64_sequoia: "09227601922bf0b0a3868575f4a022e8a327551f7ff0a236315cc9faf008d7f7"
+    sha256 arm64_sonoma:  "c11cf9b4c7d66fe561dcf356baae7355e775b07c2520d76e9eec07da52575df0"
+    sha256 arm64_ventura: "5bf7e51f3ccb2f50da0482485121751b5f781def4024b2583e08b5353b482cdc"
+    sha256 sonoma:        "9836698d5c4cf0471078b5658173519b32bc7c02d6fd8ee03cb04116d74a3f82"
+    sha256 ventura:       "0fce325db50e623d5272b113a61b13019184b77036dacba926cc70adbe73d3f4"
+    sha256 arm64_linux:   "0ad2bce27eda0a58457494fed6c1fd4067ee1b069026566f23c00cc9bebce01b"
+    sha256 x86_64_linux:  "f5566ae6b6eae1fa202ba1bdf25994541f6223b490d93d696da8362366f682ab"
   end
 
   depends_on "pkgconf" => :build
@@ -71,6 +71,13 @@ class Node < Formula
     sha256 "f4c82fbff74154f73bd5ce5a2b749700d55eaddebda97b16076bf7033040de34"
   end
 
+  # Ensure vendored uvwasi is never built.
+  # https://github.com/nodejs/node/pull/59622
+  patch do
+    url "https://github.com/nodejs/node/commit/8025e1cfb95184d2191a46f2986b42630c0908f1.patch?full_index=1"
+    sha256 "f9cc06ba9ac2dcb98d67c89cac119a005da12b4b24e30b4f689e60041b5b94aa"
+  end
+
   def install
     ENV.llvm_clang if OS.mac? && DevelopmentTools.clang_build_version <= 1699
 
@@ -79,6 +86,11 @@ class Node < Formula
 
     # make sure subprocesses spawned by make are using our Python 3
     ENV["PYTHON"] = which("python3.13")
+
+    # Ensure Homebrew deps are used
+    %w[brotli icu-small nghttp2 ngtcp2 npm simdjson sqlite uvwasi zstd].each do |dep|
+      rm_r buildpath/"deps"/dep
+    end
 
     # Never install the bundled "npm", always prefer our
     # installation from tarball for better packaging control.

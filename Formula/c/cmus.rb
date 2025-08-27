@@ -4,17 +4,17 @@ class Cmus < Formula
   url "https://ghfast.top/https://github.com/cmus/cmus/archive/refs/tags/v2.12.0.tar.gz"
   sha256 "44b96cd5f84b0d84c33097c48454232d5e6a19cd33b9b6503ba9c13b6686bfc7"
   license "GPL-2.0-or-later"
-  revision 1
+  revision 2
   head "https://github.com/cmus/cmus.git", branch: "master"
 
   bottle do
-    sha256 arm64_sequoia: "4074540115754218e8bf925e834c5a69c2951eb19493ac063e5c627b4d753de5"
-    sha256 arm64_sonoma:  "b314cf008fbeff9ad8a760b195fd401664ce032569a2956178d3e9446b22d24f"
-    sha256 arm64_ventura: "abe20a3b224fbd98f698e7131208fd298a6aced10336f5f55a1156ecf1654e2e"
-    sha256 sonoma:        "d9601411a0b749a5e379620985ac1f24d8ce566e744a7f24302964b1987b765e"
-    sha256 ventura:       "9aac948ad9fab4826655c220590ac1f37fc0afb0d38c77bff081a6b0c104038e"
-    sha256 arm64_linux:   "692eb54461a2b22de154ddbdd3507ca32ac2e4d249424cf246444bc66797d763"
-    sha256 x86_64_linux:  "5ae15aefbec0e9633280d83a5d9eacbf5fb9682f18df4cf63a45584a75870f28"
+    sha256 arm64_sequoia: "1ae77a3ca4f13add2411b5db1af5b6169bd4c6c63c0223b7ec09efc71f172963"
+    sha256 arm64_sonoma:  "a0e767af911891cc893e207a6cbf4039c57b5b8d1e06ef6c404e6af4932401e0"
+    sha256 arm64_ventura: "b6f2e83dc571f755e4acbcd83c99e6f944a8f8913109ccc370a5f54ecb7c29c2"
+    sha256 sonoma:        "be8ebf335b5a102dacb705a2308f4535fb6edd4d784c1dbb66b1bcc4c83ef581"
+    sha256 ventura:       "6d0fc9fc52edea2ff0da6e4fc46d32de79cc5de6fe7a208910032da213f6dbac"
+    sha256 arm64_linux:   "cf4d6856b39aca2481e86c9a04f0bc7570a0d77119a610ee814b64e605f24215"
+    sha256 x86_64_linux:  "025d85801847e85f06e54da3b839ecd87af40822e4d926701e66db1ee8fc59ad"
   end
 
   depends_on "pkgconf" => :build
