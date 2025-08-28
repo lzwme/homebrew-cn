@@ -8,15 +8,15 @@ class Mpremote < Formula
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "b12a460088c523aec51a337f3ff11978d2a06ba58800f5e2b902a39d88717c5a"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, all: "125b9c0e0eb17212f284b9fb4f7b747b420efbd21f97d10fc8b8bce35caebb45"
   end
 
   depends_on "python@3.13"
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/fe/8b/3c73abc9c759ecd3f1f7ceff6685840859e8070c4d947c93fae71f6a0bf2/platformdirs-4.3.8.tar.gz"
-    sha256 "3d512d96e16bcb959a814c9f348431070822a6496326a4be0911c40b5a74c2bc"
+    url "https://files.pythonhosted.org/packages/23/e8/21db9c9987b0e728855bd57bff6984f67952bea55d6f75e055c46b5383e8/platformdirs-4.4.0.tar.gz"
+    sha256 "ca753cf4d81dc309bc67b0ea38fd15dc97bc30ce419a7f58d13eb3bf14c4febf"
   end
 
   resource "pyserial" do
@@ -26,18 +26,6 @@ class Mpremote < Formula
 
   def install
     virtualenv_install_with_resources
-
-    # Build an `:all` bottle.
-    usr_local_files = %W[
-      platformdirs/unix.py
-      platformdirs-#{resource("platformdirs").version}.dist-info/METADATA
-    ].map { |file| libexec/Language::Python.site_packages("python3")/file }
-    inreplace usr_local_files, "/usr/local", HOMEBREW_PREFIX
-
-    opt_homebrew_files = %w[
-      platformdirs/macos.py
-    ].map { |file| libexec/Language::Python.site_packages("python3")/file }
-    inreplace opt_homebrew_files, "/opt/homebrew", HOMEBREW_PREFIX
   end
 
   test do

@@ -2,8 +2,8 @@ class Vim < Formula
   desc "Vi 'workalike' with many additional features"
   homepage "https://www.vim.org/"
   # vim should only be updated every 50 releases on multiples of 50
-  url "https://ghfast.top/https://github.com/vim/vim/archive/refs/tags/v9.1.1650.tar.gz"
-  sha256 "bab8a11ae35333221cffbca4518588bbe36604a5207135bf9f0d31579277960d"
+  url "https://ghfast.top/https://github.com/vim/vim/archive/refs/tags/v9.1.1700.tar.gz"
+  sha256 "7870ae57a21720a88f5171c2d4dbef09db42423ce2d5b45548800c190c5bf01f"
   license "Vim"
   head "https://github.com/vim/vim.git", branch: "master"
 
@@ -25,13 +25,13 @@ class Vim < Formula
   end
 
   bottle do
-    sha256               arm64_sequoia: "635cf2cd53ef661863bf95bacafda570a626049df49c13a164bdfc02eee7eba7"
-    sha256               arm64_sonoma:  "b84532b9a186bdd4c980f4484e951d92dd2916cd64b579e7e1c0301a335313c6"
-    sha256               arm64_ventura: "08034a27397720c01c9902815e7f6890663484d144ad322aed9a7167e544ccfb"
-    sha256 cellar: :any, sonoma:        "714257998f4569de71b79b16115691bd4eae968ba68aa10779ddb719a7bca8aa"
-    sha256 cellar: :any, ventura:       "fb051e4e3657c615d7e9f426094c635e6fedbd701bed8c02c925da7e12115a45"
-    sha256               arm64_linux:   "3263800c8be6572d82d962d35165b33a8177cca1305d2afa719c9009b377980a"
-    sha256               x86_64_linux:  "7640e436662d8e505a071c011c501f1ee262c6b4043ebf29fcfe69c68303a9ab"
+    sha256               arm64_sequoia: "361ff8d971bfd741f792c3494e34fb7baade98ccb46710a829202cbe683c7771"
+    sha256               arm64_sonoma:  "f9e71df6bde31e6fb44dd891e1e68a609595c5cd0d8a515634ae4cf361d6e2c0"
+    sha256               arm64_ventura: "f89d9568babf088f07fb3243aca9394a7c8034d9fcaad7cc15dd30e2b655a673"
+    sha256 cellar: :any, sonoma:        "e1593b2f3550769086fb8df89ff6f188d80b47c2559aeed0b01aad94e71e0d57"
+    sha256 cellar: :any, ventura:       "cde3c2e090d7ae3ab9cbd109879cbd5c6800334b829dda90a8ccda50a2f02648"
+    sha256               arm64_linux:   "b299a4571c7a041b279a4f1d133e52a8ffe818b5bf9b9d56319f3a8cf9c26bcc"
+    sha256               x86_64_linux:  "e41e1958db85869a0ac3a5e6fefa63b8d72b3e441e2400c44278305fba3e27b7"
   end
 
   depends_on "gettext"

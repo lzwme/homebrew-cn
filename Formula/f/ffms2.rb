@@ -7,7 +7,7 @@ class Ffms2 < Formula
   # The FFMS2 source is licensed under the MIT license, but its binaries
   # are licensed under the GPL because GPL components of FFmpeg are used.
   license "GPL-2.0-or-later"
-  revision 2
+  revision 3
   head "https://github.com/FFMS/ffms2.git", branch: "master"
 
   livecheck do
@@ -16,20 +16,20 @@ class Ffms2 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "c0a1d6f052e06051371623f731946110cad79123151db292cc4d186fb94f3556"
-    sha256 cellar: :any,                 arm64_sonoma:  "4fbd4f74769ff25633afad16be708287d67d5fc9aee93890bcaff0f7b3adc340"
-    sha256 cellar: :any,                 arm64_ventura: "bdaf50764f8601b9ac38a5127340845ad64595106c6cc19411fb693dc7f6e40d"
-    sha256 cellar: :any,                 sonoma:        "3958cecdaf384930812f7475b9d3c947220716c3ac8f9e7c0c40c7c9e8162972"
-    sha256 cellar: :any,                 ventura:       "7d664fba6da8627ff010caa2ee8e078b8954fc18589437df2ea9209c5a74d20f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e1053142277f22aa1c3f8f074484d7c841a2e76946cea9eb470604757d6bae26"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "63b2975baf7bf148e9cc67a99d5736331704ed251e0b7aec1634a13ec55a0e5c"
+    sha256 cellar: :any,                 arm64_sequoia: "6c3ddf23bef180ecf0857ade1201c7b1be2d0365f522139d0435ca0614fb9962"
+    sha256 cellar: :any,                 arm64_sonoma:  "fbe96279b730758d03155384f195087776ef5899dbac5a1af12d19b77185494c"
+    sha256 cellar: :any,                 arm64_ventura: "c198b047753f0485fab0eb7ffb9a7330c9222dc8e216842843f68c9c840b161b"
+    sha256 cellar: :any,                 sonoma:        "615383651f78749b3156ef5ed50c88358a84c147c5bf03633f344f9278f479d5"
+    sha256 cellar: :any,                 ventura:       "22cf1f6df4187feb8230aaf3a872490867b70877146b328a931610a1a283a0e8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5b95e619235ff30a48caebe4853bc67adb485f38221aa12ffe68fdac2175bae0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "552d905d96b635d3fb0814e25e70d8f7f58438dc02f8d3321f576c697861af32"
   end
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
   depends_on "pkgconf" => :build
-  depends_on "ffmpeg@7" # Works with FFmpeg 8, but siril (a dependent) doesn't.
+  depends_on "ffmpeg"
 
   uses_from_macos "zlib"
 

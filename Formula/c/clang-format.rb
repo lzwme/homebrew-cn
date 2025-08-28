@@ -7,12 +7,12 @@ class ClangFormat < Formula
   head "https://github.com/llvm/llvm-project.git", branch: "main"
 
   stable do
-    url "https://ghfast.top/https://github.com/llvm/llvm-project/releases/download/llvmorg-20.1.8/llvm-20.1.8.src.tar.xz"
-    sha256 "e1363888216b455184dbb8a74a347bf5612f56a3f982369e1cba6c7e0726cde1"
+    url "https://ghfast.top/https://github.com/llvm/llvm-project/releases/download/llvmorg-21.1.0/llvm-21.1.0.src.tar.xz"
+    sha256 "0582ee18cb6e93f4e370cb4aa1e79465ba1100408053e1ff8294cef7fb230bd8"
 
     resource "clang" do
-      url "https://ghfast.top/https://github.com/llvm/llvm-project/releases/download/llvmorg-20.1.8/clang-20.1.8.src.tar.xz"
-      sha256 "b7a1b7b0af7b9c7596af6bd46e36d11321926eaa66a7a7dc957ab0a1375ee4b0"
+      url "https://ghfast.top/https://github.com/llvm/llvm-project/releases/download/llvmorg-21.1.0/clang-21.1.0.src.tar.xz"
+      sha256 "4c8d148d4c5931c65116d1a5fdebd9d9579c3d135f36551b1cad53e220986cb2"
 
       livecheck do
         formula :parent
@@ -20,8 +20,8 @@ class ClangFormat < Formula
     end
 
     resource "cmake" do
-      url "https://ghfast.top/https://github.com/llvm/llvm-project/releases/download/llvmorg-20.1.8/cmake-20.1.8.src.tar.xz"
-      sha256 "3319203cfd1172bbac50f06fa68e318af84dcb5d65353310c0586354069d6634"
+      url "https://ghfast.top/https://github.com/llvm/llvm-project/releases/download/llvmorg-21.1.0/cmake-21.1.0.src.tar.xz"
+      sha256 "528347c84c3571d9d387b825ef8b07c7ad93e9437243c32173838439c3b6028f"
 
       livecheck do
         formula :parent
@@ -29,8 +29,8 @@ class ClangFormat < Formula
     end
 
     resource "third-party" do
-      url "https://ghfast.top/https://github.com/llvm/llvm-project/releases/download/llvmorg-20.1.8/third-party-20.1.8.src.tar.xz"
-      sha256 "9a4e452a8163732d417db067a89190fcda823cb3aa33199e834ac7c028923f4b"
+      url "https://ghfast.top/https://github.com/llvm/llvm-project/releases/download/llvmorg-21.1.0/third-party-21.1.0.src.tar.xz"
+      sha256 "60b3d8c2d1d8d43a705f467299144d232b8061a10541eaa3b0d6eaa2049a462f"
 
       livecheck do
         formula :parent
@@ -45,13 +45,13 @@ class ClangFormat < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "058c443eba958c496f9f733ddf2efd86c5c6fd49d0e35002fe20870006b54b67"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f8d36b733427bb6c45e4377ace8f2c58e7ff1f60e9f57566b05361222e2f9239"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "e40f120fe0cb6d58a5f7a31bf40a5fb058c881ad6e65b72b94f9f87635938115"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9e6c1d4c63c6bb3ecbf3731e165d6b90cf8876e89dd66eafff6523829a75c576"
-    sha256 cellar: :any_skip_relocation, ventura:       "394297f330c399210e3d414b044adf257f5ad12a1a261a175d75a0dc0c1719c1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "20bdcb909e97b7d9b458bafa814ada78ecc01b4e1931df41843662f4d7c0d365"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "29d9392c69984beb0a93420c98a2d5b4c8f3e7bdb77744e50ed68c6ea527e502"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0fcc9691a9972a992000f04bc9ce4be823363a7e7aa6dba74ede56835f07f3c9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8224109e24bb0d01dd323bcd448711717421ab7a3f73447f1b4970fa3d18ebcc"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "4bc008ee896cae2d8c98c8823ed4cd07eb814a6fc261a3b1b03f00a8c939f853"
+    sha256 cellar: :any_skip_relocation, sonoma:        "415926ba1bc32e535c359f68412872c810a043d0ee903260794aded5d47aaa0a"
+    sha256 cellar: :any_skip_relocation, ventura:       "62df61cd5905569cff75a6616ee2f1e28c6f4269da8104e4d2e08e1c298fbf3e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "09db98dababd38e37b9cf5ba962ecd85e10b832466b5444154a72bf5e33e1e10"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "400e0bf0b6a94c2c1953ed878696dedd67266e3d22883cec3af05426b5ba31de"
   end
 
   depends_on "cmake" => :build
@@ -104,7 +104,7 @@ class ClangFormat < Formula
     C
     system "git", "add", "test.c"
 
-    assert_equal "int main(char *args) { printf(\"hello\"); }\n",
+    assert_equal "int main(char* args) { printf(\"hello\"); }\n",
         shell_output("#{bin}/clang-format -style=Google test.c")
 
     ENV.prepend_path "PATH", bin

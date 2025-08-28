@@ -2,18 +2,18 @@ class Kubebuilder < Formula
   desc "SDK for building Kubernetes APIs using CRDs"
   homepage "https://github.com/kubernetes-sigs/kubebuilder"
   url "https://github.com/kubernetes-sigs/kubebuilder.git",
-      tag:      "v4.7.1",
-      revision: "9c991d34829671ee7dae2ddbd0954eea82b5e2a5"
+      tag:      "v4.8.0",
+      revision: "a069bf1a12785fa210409c558ae668565296c675"
   license "Apache-2.0"
   head "https://github.com/kubernetes-sigs/kubebuilder.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ddb1b2cba245d9214dd26e854b636d9b2e665d96fc41f80f9367b64b7d0e9834"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ddb1b2cba245d9214dd26e854b636d9b2e665d96fc41f80f9367b64b7d0e9834"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "ddb1b2cba245d9214dd26e854b636d9b2e665d96fc41f80f9367b64b7d0e9834"
-    sha256 cellar: :any_skip_relocation, sonoma:        "546d5f557beb625ba7bac6e7faea2f247da1fa0dd908121def09943d0b05daa9"
-    sha256 cellar: :any_skip_relocation, ventura:       "546d5f557beb625ba7bac6e7faea2f247da1fa0dd908121def09943d0b05daa9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2763f434874cd51686411ea5106436cee50b11569b21e85e68506d947e160bdc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bd379266c94be30726f9c6cf78772d8be6e61dd410b4007dcf1aea5565c98b28"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bd379266c94be30726f9c6cf78772d8be6e61dd410b4007dcf1aea5565c98b28"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "bd379266c94be30726f9c6cf78772d8be6e61dd410b4007dcf1aea5565c98b28"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ea17d63e822369582ade70ce712fe744746b204b70e746f16d7d08a11aba8d01"
+    sha256 cellar: :any_skip_relocation, ventura:       "ea17d63e822369582ade70ce712fe744746b204b70e746f16d7d08a11aba8d01"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c481fe0d2b851508e9e146ffc2adffd1076fb58e2a99729c6f847223d2082c60"
   end
 
   depends_on "go"

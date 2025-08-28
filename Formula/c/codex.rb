@@ -1,8 +1,8 @@
 class Codex < Formula
   desc "OpenAI's coding agent that runs in your terminal"
   homepage "https://github.com/openai/codex"
-  url "https://ghfast.top/https://github.com/openai/codex/archive/refs/tags/rust-v0.24.0.tar.gz"
-  sha256 "3c9342a967e1bcf6729cc2195c52c93192f3010cd1c6756d1d699bb6dda38b22"
+  url "https://ghfast.top/https://github.com/openai/codex/archive/refs/tags/rust-v0.25.0.tar.gz"
+  sha256 "0b0bc88747afc31820400b27ef74733be7ac73757ed3da4af8ac4e0d817a163c"
   license "Apache-2.0"
   head "https://github.com/openai/codex.git", branch: "main"
 
@@ -12,13 +12,13 @@ class Codex < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bb4be4998b655f10800910d9153b28fc876ae1fc1edee57f6424b5e9a015b541"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "576a47a8f95b4c301ed7f937cdd72a866333b76235845f79de87b248b2473ba5"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "134ef5d080bc0a46896655faf6357256ceff75c40d8dc2f88f75a8530e10b7ab"
-    sha256 cellar: :any_skip_relocation, sonoma:        "28fbe5147abebe647e4f54f13f601339139eb0cbb7b32408022509ecca736e31"
-    sha256 cellar: :any_skip_relocation, ventura:       "baaa192b667651184829a0545683f9fddcb8f1bdb820fa65f6bc50aaf00bc218"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9812a6ed9ed948025e6bc9a284585d4127dd45ed3ff75ab03d8dc0bef8af5fe0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8f4332fb036e5b8170a8009bf433da8980ff7bb6a280479768aebd33a4176d4e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a0ff5282fa413cbbb4a0918ca0c05d600a338feb6c77c0e1cb8aa6f378716ee1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b9ac79797984396ee27d05c415adeb380844b3a3bb05b20235b876d35764b5b8"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "0fa50f84aab29d9b2cbf8a069539e870367241df35dd2cb0c0acdf28f303cf49"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b1b03c8fb7daabf95ee3acab0e1618adc596b5b720c3ec4f89d74bfb53da9bb7"
+    sha256 cellar: :any_skip_relocation, ventura:       "6a6ba5a4fe386e6bfee0aeeefbc5fea69104a84a8ac502575b2d4c85d5ea7bed"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3816c86b71f6f5b0a04b33aa1531fba7f6480ac82b23cc14d6298b8d0f7aacf2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "47a1c2ff0391c40cae8b2c61f7d9c96550984e2683b47a447cb7f231fbee0ecc"
   end
 
   depends_on "rust" => :build

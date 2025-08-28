@@ -6,20 +6,19 @@ class Gyb < Formula
   homepage "https://github.com/GAM-team/got-your-back/"
   # Check gyb.py imports for any changes. Update pypi_formula_mappings.json (if necessary)
   # and then run `brew update-python-resources gyb`.
-  url "https://ghfast.top/https://github.com/GAM-team/got-your-back/archive/refs/tags/v1.82.tar.gz"
-  sha256 "9cd29c81c78fceebe1e7ed34627bb27d758a250ccae92aecf6bacf1da6dfed09"
+  url "https://ghfast.top/https://github.com/GAM-team/got-your-back/archive/refs/tags/v1.90.tar.gz"
+  sha256 "9f090cb5b1b4b1209801e2cae1d2d0065581c0d2d366682db1e2e74cc4609ec9"
   license "Apache-2.0"
-  revision 1
   head "https://github.com/GAM-team/got-your-back.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "82fe01ba45479d98880d0402fecda87902bfd50376f09371f70fa6c9cc44de87"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b278278f8d6096b6f3264bec75b3bf422639c9d4268331421463dc573e7b2b0c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "5f1fcc3e4368d85f2eab92cab3f3c6710b95f569c58c074486ae90bf5d68600f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e88326d2329a2be1761e10495e1c9eeb0099264eec04f96574451d405e837d35"
-    sha256 cellar: :any_skip_relocation, ventura:       "0dbd278a81ca797e3889453a42c46ff2c4872c42d97eae256807128b8c720685"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3c3b8d13436be13a1fd5bc33f5a12aff1eb6e564307cf302e692c0ae7cf55197"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "03e01c1b3ee8ca1de0af6a91066ffb926e3278e57629a57cdc7c15b9281c464c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "34b0c3a81ac14cf5ceef0612e95e8699d9b34febe10f692a76b7d0575ae888d1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c29662889891531f51a23dbd4de267dd784dce9ef638e5b70fd04f21a3ba615d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "3ea025497447e5f37c58bbd1a4f98c80e9ddc4335c8a94c1d860d76424bb047a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6b7807c2294d6a90e1af44189577e195cd3817bc83cd09c37492102ec12010a7"
+    sha256 cellar: :any_skip_relocation, ventura:       "169384437b28466fba683514f3c8fee12b6a1c602949a24c4a613fd5937c8d34"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "187a7e7a11dc414f0959c4d3b92516750ea7a01ba50551d1b80b84a2b0bb06a7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f2dbb4367fd0126513405a493f61a5b8aedbb0eec7c38d55bc2cd7141b68c2d7"
   end
 
   depends_on "certifi"
@@ -31,8 +30,8 @@ class Gyb < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/e4/33/89c2ced2b67d1c2a61c19c6751aa8902d46ce3dacb23600a283619f5a12d/charset_normalizer-3.4.2.tar.gz"
-    sha256 "5baececa9ecba31eff645232d59845c07aa030f0c81ee70184a90d35099a0e63"
+    url "https://files.pythonhosted.org/packages/83/2d/5fd176ceb9b2fc619e63405525573493ca23441330fcdaee6bef9460e924/charset_normalizer-3.4.3.tar.gz"
+    sha256 "6fce4b8500244f6fcb71465d4a4930d132ba9ab8e71a7859e6a5d59851068d14"
   end
 
   resource "google-api-core" do
@@ -41,8 +40,8 @@ class Gyb < Formula
   end
 
   resource "google-api-python-client" do
-    url "https://files.pythonhosted.org/packages/8f/7e/7c6e43e54f611f0f97f1678ea567fe06fecd545bd574db05e204e5b136fe/google_api_python_client-2.173.0.tar.gz"
-    sha256 "b537bc689758f4be3e6f40d59a6c0cd305abafdea91af4bc66ec31d40c08c804"
+    url "https://files.pythonhosted.org/packages/73/ed/6e7865324252ea0a9f7c8171a3a00439a1e8447a5dc08e6d6c483777bb38/google_api_python_client-2.179.0.tar.gz"
+    sha256 "76a774a49dd58af52e74ce7114db387e58f0aaf6760c9cf9201ab6d731d8bd8d"
   end
 
   resource "google-auth" do
@@ -86,8 +85,8 @@ class Gyb < Formula
   end
 
   resource "protobuf" do
-    url "https://files.pythonhosted.org/packages/52/f3/b9655a711b32c19720253f6f06326faf90580834e2e83f840472d752bc8b/protobuf-6.31.1.tar.gz"
-    sha256 "d8cac4c982f0b957a4dc73a80e2ea24fab08e679c0de9deb835f4a12d69aca9a"
+    url "https://files.pythonhosted.org/packages/c0/df/fb4a8eeea482eca989b51cffd274aac2ee24e825f0bf3cbce5281fa1567b/protobuf-6.32.0.tar.gz"
+    sha256 "a81439049127067fc49ec1d36e25c6ee1d1a2b7be930675f919258d03c04e7d2"
   end
 
   resource "pyasn1" do
@@ -106,8 +105,8 @@ class Gyb < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/e1/0a/929373653770d8a0d7ea76c37de6e41f11eb07559b103b1c02cafb3f7cf8/requests-2.32.4.tar.gz"
-    sha256 "27d0316682c8a29834d3264820024b62a36942083d52caf2f14c0591336d3422"
+    url "https://files.pythonhosted.org/packages/c9/74/b3ff8e6c8446842c3f5c837e9c3dfcfe2018ea6ecef224c710c85ef728f4/requests-2.32.5.tar.gz"
+    sha256 "dbba0bac56e100853db0ea71b82b4dfd5fe2bf6d3754a8893c3af500cec7d7cf"
   end
 
   resource "requests-oauthlib" do

@@ -13,13 +13,14 @@ class GitAnnex < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "8e996d475efacfc480f0c975fe63200c766bc68320f75614c70bea30327334c0"
-    sha256 cellar: :any,                 arm64_sonoma:  "9946488a7b486e8813c28df66eb7bc2a306b9aa14dc3c299b44c2d50bbe57e4d"
-    sha256 cellar: :any,                 arm64_ventura: "e392b5fb1a4daadd8b14cc1eaba9261bda0020378a1d882e5ac6ea26964679dc"
-    sha256 cellar: :any,                 sonoma:        "1a738d9745d956ce78a7c4e6cd1441acc2fb50e4658d900db051a8ca01e97d24"
-    sha256 cellar: :any,                 ventura:       "034935a7ab56c4af05c20444d43d80c6b53fc5ab39dd717520f0f2d03dc6d17a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e60f3de982dc3a27d7fce0d6e4b0a31da1458a4dc6d09ae05b51250a8c92c876"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4fc60868a993a15e75f4fbed39004766478d2d8464daa6a653fb6188fc40e046"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "7ef911cb676b4a42ff067f06c6f26b147a08fba017420ff10b1e4ba711719d13"
+    sha256 cellar: :any,                 arm64_sonoma:  "df9ee50e7324ab88e482bef5461f8b36301f37b6b2b4d29a5de06c88cfe42c34"
+    sha256 cellar: :any,                 arm64_ventura: "8bad9fa159b8788f13f3705e57b9ab62c5316715c49327a784834c9f83bc0b9d"
+    sha256 cellar: :any,                 sonoma:        "429a5d2d07bc4cdeb7b0d6fe7a2982f9001e4d74de6d62d54d051bc5494dfa53"
+    sha256 cellar: :any,                 ventura:       "abf13dcd09ed276e287b6785e3075ad55c9ab231e04dcadb6c136f21e8fe2de9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9354e7c9c1c57cfd5183fadc3649bc8af7a3db2574e8dce3787b66c7e8ad3372"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d0e9ba9e302ca6f0e3583ab4d37e69b5ae2e70ffa98016c5269649c2e1d02f89"
   end
 
   depends_on "cabal-install" => :build
@@ -33,6 +34,8 @@ class GitAnnex < Formula
     system "cabal", "v2-update"
     system "cabal", "v2-install", *std_cabal_v2_args, "--flags=+S3 +Servant"
     bin.install_symlink "git-annex" => "git-annex-shell"
+    bin.install_symlink "git-annex" => "git-remote-annex"
+    bin.install_symlink "git-annex" => "git-remote-tor-annex"
   end
 
   service do

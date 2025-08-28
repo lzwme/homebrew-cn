@@ -1,20 +1,30 @@
 class Mpv < Formula
   desc "Media player based on MPlayer and mplayer2"
   homepage "https://mpv.io"
-  url "https://ghfast.top/https://github.com/mpv-player/mpv/archive/refs/tags/v0.40.0.tar.gz"
-  sha256 "10a0f4654f62140a6dd4d380dcf0bbdbdcf6e697556863dc499c296182f081a3"
   license :cannot_represent
   revision 4
   head "https://github.com/mpv-player/mpv.git", branch: "master"
 
+  stable do
+    url "https://ghfast.top/https://github.com/mpv-player/mpv/archive/refs/tags/v0.40.0.tar.gz"
+    sha256 "10a0f4654f62140a6dd4d380dcf0bbdbdcf6e697556863dc499c296182f081a3"
+
+    # Backport support for FFmpeg 8
+    patch do
+      url "https://github.com/mpv-player/mpv/commit/26b29fba02a2782f68e2906f837d21201fc6f1b9.patch?full_index=1"
+      sha256 "ac7e5d8e765186af2da3bef215ec364bd387d43846ee776bd05f01f9b9e679b2"
+    end
+  end
+
   bottle do
-    sha256 arm64_sequoia: "8c5b408468bd7211e2a918f9468f93f7c71943c2c67324740da57ff33ea30e1c"
-    sha256 arm64_sonoma:  "c5db440d0709fc90155b85d7e1afaec8326643d7a31123ee7b56a1091eb30620"
-    sha256 arm64_ventura: "c1fb821f762a64246a21c67ffe2c2be37dd957195a1462490f3fbf85b22c460c"
-    sha256 sonoma:        "cfc08a97003d15066654f8ccb9ac955cc2e2b15959a06b364d975552e0e6a51c"
-    sha256 ventura:       "862ebfa03fe68953ea10db7a160ab54eb823a6cac520c3821e60cee623de7e59"
-    sha256 arm64_linux:   "17be304b8a7fd8ae6ffaf682e622d0ebff40a3c72f47f54642e4b5370fae40ff"
-    sha256 x86_64_linux:  "c0fe8e40d78f5a120387819d9172dbcf2558c1d70233537c5d481d1955584047"
+    rebuild 1
+    sha256 arm64_sequoia: "2a72093cc0689a0c6341b7abc942ba0ec802490c807ff764ac20edb6f0ead270"
+    sha256 arm64_sonoma:  "8247120427ca93debacb0b079ba30dd9d233e8f8f0705e9a82899a4fee833157"
+    sha256 arm64_ventura: "20afc0a4fe70131481e5a8fcd91a803806965bb76e106a326eae6ee5864bce2f"
+    sha256 sonoma:        "eb40fe0c534999a9771f3666824c0d70488afd06f96c37a1d26821f5537e5fb9"
+    sha256 ventura:       "af91158356583eb46de5fb7dbc999eeee2d2606336fb4276eb5713daf9efa580"
+    sha256 arm64_linux:   "16e483fc11b83570cd434a3f9b44b69afccf90f5091adca702a6200b269a80fb"
+    sha256 x86_64_linux:  "ae8b059abf68381c7f62d9190dca745f36971ad1b0a1080c6d69a05bd3ac5b42"
   end
 
   depends_on "docutils" => :build
@@ -22,7 +32,7 @@ class Mpv < Formula
   depends_on "ninja" => :build
   depends_on "pkgconf" => [:build, :test]
   depends_on xcode: :build
-  depends_on "ffmpeg@7"
+  depends_on "ffmpeg"
   depends_on "jpeg-turbo"
   depends_on "libarchive"
   depends_on "libass"
@@ -134,7 +144,6 @@ class Mpv < Formula
     assert_match "vapoursynth", shell_output("#{bin}/mpv --vf=help")
 
     # Make sure `pkgconf` can parse `mpv.pc` after the `inreplace`.
-    ENV.prepend_path "PKG_CONFIG_PATH", Formula["ffmpeg@7"].opt_lib/"pkgconfig"
     system "pkgconf", "--print-errors", "mpv"
   end
 end

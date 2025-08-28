@@ -1,12 +1,12 @@
 class Appwrite < Formula
   desc "Command-line tool for Appwrite"
   homepage "https://appwrite.io"
-  url "https://registry.npmjs.org/appwrite-cli/-/appwrite-cli-8.3.0.tgz"
-  sha256 "d9874a4a4478570f7c6f638479d64c60d823aea0d61f32eb07c947d52eaf371d"
+  url "https://registry.npmjs.org/appwrite-cli/-/appwrite-cli-9.0.2.tgz"
+  sha256 "971b1e32014af3374756eb6b9cec3f42883774cf215ca50bb2c9a3d8844af867"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "b847c0002eecfe3cdcd292f857f134dd7bdad45d39edf53969c534de5217ac08"
+    sha256 cellar: :any_skip_relocation, all: "f1f0e4b62bf6a6d470f057f8c532d086bf1aea313db2525f542ba64391c3e17e"
   end
 
   depends_on "node"
@@ -16,11 +16,13 @@ class Appwrite < Formula
     bin.install_symlink libexec.glob("bin/*")
 
     # Ensure uniform bottles
-    inreplace [
-      libexec/"lib/node_modules/appwrite-cli/install.sh",
-      libexec/"lib/node_modules/appwrite-cli/ldid/Makefile",
-      libexec/"lib/node_modules/appwrite-cli/node_modules/jake/Makefile",
-    ], "/usr/local", HOMEBREW_PREFIX
+    file = libexec/"lib/node_modules/appwrite-cli/lib/commands/update.js"
+    homebrew_check_str = "scriptPath.includes('/opt/homebrew/') || scriptPath.includes('/usr/local/Cellar/')"
+    inreplace file do |s|
+      s.gsub! "scriptPath.includes('/usr/local/lib/node_modules/')", "scriptPath.includes('/lib/node_modules/')"
+      s.gsub! "scriptPath.includes('/opt/homebrew/lib/node_modules/') ||", ""
+      s.gsub! homebrew_check_str, "true"
+    end
   end
 
   test do

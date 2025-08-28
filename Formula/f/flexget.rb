@@ -3,18 +3,18 @@ class Flexget < Formula
 
   desc "Multipurpose automation tool for content"
   homepage "https://www.flexget.com"
-  url "https://files.pythonhosted.org/packages/ab/de/f1e2fa6184e31ea05561449e0ffa7a93e22e662b7023ab2cc2965eb69dcb/flexget-3.17.17.tar.gz"
-  sha256 "5f5bee33448c9a51e5df3f236a30311282f6f44b76fe14405728f4483cb10e37"
+  url "https://files.pythonhosted.org/packages/1c/92/b24a7d6766677f63cf826a3da23dfce4087d6268fb1473a795d9bded4aee/flexget-3.18.0.tar.gz"
+  sha256 "736f530f4bda325440c9416f92df3feff19d96711b93b56d14ba90761440a4e7"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "d38bada8019f285e1a56a5d693d29962c31be6e428826ce49a3b5d5bcfce50b0"
-    sha256 cellar: :any,                 arm64_sonoma:  "c6e2a031bdfc94dd929db39dc5e953d7c0eb1a20795dcd99ad739191ae77f732"
-    sha256 cellar: :any,                 arm64_ventura: "2ee07bd96465f355c790e9b3618ebaa5c0bdbf8153eef75b0c5e3876541080d9"
-    sha256 cellar: :any,                 sonoma:        "a18fd0923ba0e13ac57bd3cb728fe482e4cf10dc6da6f92ad2c624d9365e34a0"
-    sha256 cellar: :any,                 ventura:       "486a9a25961d5f65643e978952131ff56b87277d11ee87591d69bbf51a7e20e4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "567af277cce76913f5f8c5cf0a0a27db90fef573cb09dc755f7a9de5ea7a7c2c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f7d0465344b488b400b6f95b72324e6cf964065d2ae9c795011b2ac931c9265d"
+    sha256 cellar: :any,                 arm64_sequoia: "2cababf2974c8e17bacccf063b6ef7cdfcf5f883bd7ecea959bf6ecfab6d36cd"
+    sha256 cellar: :any,                 arm64_sonoma:  "28a294a16f568424b524b581d9ac48909f787d8fe8151fe90a01fc2a3ee07879"
+    sha256 cellar: :any,                 arm64_ventura: "22a14b75c1654a5bdf7d7c9f58ea7414e2e0ee72551ba3fee9e3b104f0051092"
+    sha256 cellar: :any,                 sonoma:        "5cee40852009fbc205cb50b27c1a50534ae31f41f68d035cca8d66be49f08a23"
+    sha256 cellar: :any,                 ventura:       "bdbebaa63a427848e1c9e7de959a6c4e5faced5d28350d7827b1df9ab616e6b7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6e9f6c0a758a090cd1e5a7f61a60ed999d9d6fcf35c84563af9c2826359d59d3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1467cb4155093479644b03465597100ba4e7eb4e68ba135bd5025b15d2062caf"
   end
 
   depends_on "rust" => :build
@@ -289,8 +289,8 @@ class Flexget < Formula
   end
 
   resource "rpds-py" do
-    url "https://files.pythonhosted.org/packages/1e/d9/991a0dee12d9fc53ed027e26a26a64b151d77252ac477e22666b9688bc16/rpds_py-0.27.0.tar.gz"
-    sha256 "8b23cf252f180cda89220b378d917180f29d313cd6a07b2431c0d3b776aae86f"
+    url "https://files.pythonhosted.org/packages/e9/dd/2c0cbe774744272b0ae725f44032c77bdcab6e8bcf544bffa3b6e70c8dba/rpds_py-0.27.1.tar.gz"
+    sha256 "26a1c73171d10b7acccbded82bf6a586ab8203601e565badc74bbbf8bc5a10f8"
   end
 
   resource "rpyc" do
@@ -314,8 +314,8 @@ class Flexget < Formula
   end
 
   resource "soupsieve" do
-    url "https://files.pythonhosted.org/packages/3f/f4/4a80cd6ef364b2e8b65b15816a843c0980f7a5a2b4dc701fc574952aa19f/soupsieve-2.7.tar.gz"
-    sha256 "ad282f9b6926286d2ead4750552c8a6142bc4c783fd66b0293547c8fe6ae126a"
+    url "https://files.pythonhosted.org/packages/6d/e6/21ccce3262dd4889aa3332e5a119a3491a95e8f60939870a3a035aabac0d/soupsieve-2.8.tar.gz"
+    sha256 "e2dd4a40a628cb5f28f6d4b0db8800b8f581b65bb380b97de22ba5ca8d72572f"
   end
 
   resource "sqlalchemy" do

@@ -2,6 +2,7 @@ class Rust < Formula
   desc "Safe, concurrent, practical language"
   homepage "https://www.rust-lang.org/"
   license any_of: ["Apache-2.0", "MIT"]
+  revision 1
 
   stable do
     url "https://static.rust-lang.org/dist/rustc-1.89.0-src.tar.gz"
@@ -15,13 +16,13 @@ class Rust < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "38b0721c2972bd451bdfe993957241906fcb392098dedec7941a09fd75c708e2"
-    sha256 cellar: :any,                 arm64_sonoma:  "abd100b52c1ea3fd2bb776c500c03fad3f6bdd702aa4c6afd104d043820a46b6"
-    sha256 cellar: :any,                 arm64_ventura: "91ccda04ccff9936169937ffa8119cf161c4c33e9d6fcb93b2292da471d05805"
-    sha256 cellar: :any,                 sonoma:        "748741ad9488d18b0d8291e4b859bb28f391268d4449b102ae8f98e76098736b"
-    sha256 cellar: :any,                 ventura:       "324e15739c6da6bcb32bb38dacf652d0adb0f59115757ba4c35f42d94cf595b1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3841d597c369e133d5c42eb02c3a31502044cbe783213b4d6a3ef72f3f9f8d3e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "618553a062a36b80510d23cef0eb3e8bc9ad64231cb56670fc8b0b8f11dccaed"
+    sha256 cellar: :any,                 arm64_sequoia: "9642138cc31f2fe2cc2532c77898f2fa85685c3f351e3d642a8df49c0e103a60"
+    sha256 cellar: :any,                 arm64_sonoma:  "23a6d2569d94ab0dbd2c4fba0e78e8c7e9a9ee8679f750d5e40cb48fbd8d4aac"
+    sha256 cellar: :any,                 arm64_ventura: "79f9adfb4d5cd3986dcad18518c6f7fe7bf24178890616b6a5b293ee12aea9ca"
+    sha256 cellar: :any,                 sonoma:        "685a8652489ba9dd8e9cf06d1be86334066058f9505ceb84ccd272997ea84cf5"
+    sha256 cellar: :any,                 ventura:       "6d62121dd08d01220f5d80060447a4c565f92f6a47e04151ff27596b0baf472a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cd050e42618c0a38013d1aa322d7e7896e80edbb66a3b51a173fa3d2d3da2550"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "178586a6f2273dd5f953153075261dba1ad6c3695d9238cd5171f98e679d9e67"
   end
 
   head do

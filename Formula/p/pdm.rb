@@ -9,13 +9,8 @@ class Pdm < Formula
   head "https://github.com/pdm-project/pdm.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d9518e388dcb9396d930afa3829ef728e12543e3c1c0032818e85a6649ad2008"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d9518e388dcb9396d930afa3829ef728e12543e3c1c0032818e85a6649ad2008"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "d9518e388dcb9396d930afa3829ef728e12543e3c1c0032818e85a6649ad2008"
-    sha256 cellar: :any_skip_relocation, sonoma:        "79ec26732513485099ff2e63ac5d733f79dde0bafe9dfb3b3f4ccb1a7eb38abf"
-    sha256 cellar: :any_skip_relocation, ventura:       "79ec26732513485099ff2e63ac5d733f79dde0bafe9dfb3b3f4ccb1a7eb38abf"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "79ec26732513485099ff2e63ac5d733f79dde0bafe9dfb3b3f4ccb1a7eb38abf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "79ec26732513485099ff2e63ac5d733f79dde0bafe9dfb3b3f4ccb1a7eb38abf"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "5b1658a8d34e40c9ff40f358f49a9dde91442dcbc9c3fa0e0556c3dc78b1325d"
   end
 
   depends_on "certifi"
@@ -112,8 +107,8 @@ class Pdm < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/fe/8b/3c73abc9c759ecd3f1f7ceff6685840859e8070c4d947c93fae71f6a0bf2/platformdirs-4.3.8.tar.gz"
-    sha256 "3d512d96e16bcb959a814c9f348431070822a6496326a4be0911c40b5a74c2bc"
+    url "https://files.pythonhosted.org/packages/23/e8/21db9c9987b0e728855bd57bff6984f67952bea55d6f75e055c46b5383e8/platformdirs-4.4.0.tar.gz"
+    sha256 "ca753cf4d81dc309bc67b0ea38fd15dc97bc30ce419a7f58d13eb3bf14c4febf"
   end
 
   resource "pygments" do
@@ -189,6 +184,12 @@ class Pdm < Formula
   def install
     virtualenv_install_with_resources
     generate_completions_from_executable(bin/"pdm", "completion")
+
+    # Build an `:all` bottle by replacing homebrew prefix on the comment block
+    site_packages = libexec/Language::Python.site_packages("python3")
+    inreplace site_packages/"findpython-#{resource("findpython").version}.dist-info/METADATA",
+              "/opt/homebrew",
+              "/usr/local"
   end
 
   test do

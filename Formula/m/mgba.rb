@@ -13,21 +13,21 @@ class Mgba < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "d84c427fa40fa6af478102d049710e0b142573ed5c29b80b222543a147d0e383"
-    sha256 arm64_sonoma:  "47c9d1dbf50da51e8d04620659d27942e883fd164607accc11db889c9fb7be76"
-    sha256 arm64_ventura: "7d1d979c7b67165a49915c22a1a1bb1a118a09d776981527ea7949374107dbbc"
-    sha256 sonoma:        "2d9ecdc2d6e1b3b7da10e863971bb8d3d626ea75f6f8887e210a6daea9af1f76"
-    sha256 ventura:       "fe1395b1ff6804ec4bffff750f68bcc14bb8ea69401eec620bb3f649af7bc9d7"
-    sha256 x86_64_linux:  "a39d91982ebe6dc87e5ffb5e2268711e28b1db181aa110c530fd2de56c50e704"
+    rebuild 1
+    sha256 arm64_sequoia: "0b47b22819b56f4f974b3bc13229329cbef0fc1df0474a2d2ffba3ced580b2e5"
+    sha256 arm64_sonoma:  "038e56d90cd6ded9ac8150847bc86c43dc57c2441496916c2a0f3b232608927c"
+    sha256 arm64_ventura: "0e89003774f3a0164c890f1732242969cc013b269b037bd01d8b97a3ae4bf4a7"
+    sha256 sonoma:        "d56566a7d206c7850126abbcb2c85ea659f995c30efce5886344e27aeca427e7"
+    sha256 ventura:       "d90396f1c7b48efb28edfd391a82fc0a6bb83a9dd3046398f8b5a16b66a4eea3"
+    sha256 x86_64_linux:  "4ef9822d552b0d2ac6d038f63539af007285ed9132e0098594ebb49ef10278c1"
   end
 
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
 
-  depends_on "ffmpeg@7"
+  depends_on "ffmpeg"
   depends_on "libepoxy"
   depends_on "libpng"
-  depends_on "libsamplerate"
   depends_on "libzip"
   depends_on "lua"
   depends_on "qt@5"

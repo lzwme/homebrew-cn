@@ -6,16 +6,17 @@ class Prowler < Formula
   url "https://files.pythonhosted.org/packages/5a/ca/73f306b71c1858b6ca85d7f505b1b009798131f3e54f3a7e909da88fe48e/prowler-5.10.2.tar.gz"
   sha256 "8325661aed288453d4fdd933421c12837ce4b5c8758105a2409b22868bf62136"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/prowler-cloud/prowler.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "35369dcd62edbd57ff22734a805a9be069813fbc0ebd59950fd7430a771a3c7b"
-    sha256 cellar: :any,                 arm64_sonoma:  "3567f9576fe02c36fc4f9079b23978e6323e50e3c68d8585730fa0b5f0502bf7"
-    sha256 cellar: :any,                 arm64_ventura: "5bc129690f7c37a37131ecd8fc9c60fc3a72f2f8cd5cee37189348c65cceddfb"
-    sha256 cellar: :any,                 sonoma:        "33930aaf7bd3724c81339866d624c450c58d657c2e971131012832f09710dbc8"
-    sha256 cellar: :any,                 ventura:       "dd3ef0ec2c4051459ddffd306a88b5aef7ba47ea920e827ffdf0187822b35bf2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7f6686bc37224c1a111d789354b10bf81046bfe0b5ad995bd09eca35ce1b9985"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6b789554658d2bc9b7da835d8b5a747d00fabc879795b40306a36cbb034eeae0"
+    sha256 cellar: :any,                 arm64_sequoia: "ca69fdd279866c7687e7e2fa987edba7a9bcb02b9f0ff3746a8104a49ccf25a9"
+    sha256 cellar: :any,                 arm64_sonoma:  "eb6a7759024a63a39fe41597df8ef227196439afe06c3612a412ec861fb5b21a"
+    sha256 cellar: :any,                 arm64_ventura: "06211a699edb5812284cf4821d875a0d0822dc7720c88e15ce484b5d4d7d5f7a"
+    sha256 cellar: :any,                 sonoma:        "de09d3f8594d211c0bae9cff50a9b8cf31c4e4359b3ed35ec3a51a84015d1569"
+    sha256 cellar: :any,                 ventura:       "b45ca2cfd3739d3b11b9c26b5958d42adc92164a3c3bdfb8d6ae4549ae0465b7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ccf3688a7a49e79fb60f3a3a33b952396661fcc4294d0cd9bf81cc7c1ebc42ad"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7cec3ed9a24554322d076ae11aff90c0f4c4d25cf3925f70e55e3a3f8402fa45"
   end
 
   depends_on "cmake" => :build
@@ -295,13 +296,13 @@ class Prowler < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/0a/10/c23352565a6544bdc5353e0b15fc1c563352101f30e24bf500207a54df9a/filelock-3.18.0.tar.gz"
-    sha256 "adbc88eabb99d2fec8c9c1b229b171f18afa655400173ddc653d5d01501fb9f2"
+    url "https://files.pythonhosted.org/packages/40/bb/0ab3e58d22305b6f5440629d20683af28959bf793d98d11950e305c1c326/filelock-3.19.1.tar.gz"
+    sha256 "66eda1888b0171c998b35be2bcc0f6d75c388a7ce20c3f3f37aa8e96c2dddf58"
   end
 
   resource "flask" do
-    url "https://files.pythonhosted.org/packages/c0/de/e47735752347f4128bcf354e0da07ef311a78244eba9e3dc1d4a5ab21a98/flask-3.1.1.tar.gz"
-    sha256 "284c7b8f2f58cb737f0cf1c30fd7eaf0ccfcde196099d24ecede3fc2005aa59e"
+    url "https://files.pythonhosted.org/packages/dc/6d/cfe3c0fcc5e477df242b98bfe186a4c34357b4847e87ecaef04507332dab/flask-3.1.2.tar.gz"
+    sha256 "bf656c15c80190ed628ad08cdfd3aaa35beb087855e2f494910aa3774cc4fd87"
   end
 
   resource "frozenlist" do
@@ -345,8 +346,8 @@ class Prowler < Formula
   end
 
   resource "h2" do
-    url "https://files.pythonhosted.org/packages/1b/38/d7f80fd13e6582fb8e0df8c9a653dcc02b03ca34f4d72f34869298c5baf8/h2-4.2.0.tar.gz"
-    sha256 "c8a52129695e88b1a0578d8d2cc6842bbd79128ac685463b887ee278126ad01f"
+    url "https://files.pythonhosted.org/packages/1d/17/afa56379f94ad0fe8defd37d6eb3f89a25404ffc71d4d848893d270325fc/h2-4.3.0.tar.gz"
+    sha256 "6c59efe4323fa18b47a632221a1888bd7fde6249819beda254aeca909f221bf1"
   end
 
   resource "hpack" do
@@ -375,8 +376,8 @@ class Prowler < Formula
   end
 
   resource "iamdata" do
-    url "https://files.pythonhosted.org/packages/a5/58/0798d2f1939ce31563ca69a2f13bc50d28d69931596986ef5d16550eb928/iamdata-0.1.202507291.tar.gz"
-    sha256 "b386ce94819464554dc1258238ee1b232d86f0467edc13fffbf4de7332b3c7ad"
+    url "https://files.pythonhosted.org/packages/9b/d2/b0058757930bbe93554524c48b20ad5d063370eb87f61a080b1e36689418/iamdata-0.1.202508261.tar.gz"
+    sha256 "e6afe5f3851631f363232786e2f5c7f11c1d5d87c0984828742862344abfe1d6"
   end
 
   resource "idna" do
@@ -495,8 +496,8 @@ class Prowler < Formula
   end
 
   resource "narwhals" do
-    url "https://files.pythonhosted.org/packages/88/2b/d1206ec57d44efd07a08c75ecbeeef05e6b0457dc6777b6bd2d1e79713cd/narwhals-2.1.1.tar.gz"
-    sha256 "308ec9d0e40616b66b61cd76ede4083a4232ae04942a3acef7e514d49641cb77"
+    url "https://files.pythonhosted.org/packages/01/8f/6b3d8c19540eaaa50778a8bbbe54e025d3f93aca6cdd5a4de3044c36f83c/narwhals-2.2.0.tar.gz"
+    sha256 "f6a34f2699acabe2c17339c104f0bec28b9f7a55fbc7f8d485d49bea72d12b8a"
   end
 
   resource "nest-asyncio" do
@@ -550,8 +551,8 @@ class Prowler < Formula
   end
 
   resource "protobuf" do
-    url "https://files.pythonhosted.org/packages/52/f3/b9655a711b32c19720253f6f06326faf90580834e2e83f840472d752bc8b/protobuf-6.31.1.tar.gz"
-    sha256 "d8cac4c982f0b957a4dc73a80e2ea24fab08e679c0de9deb835f4a12d69aca9a"
+    url "https://files.pythonhosted.org/packages/c0/df/fb4a8eeea482eca989b51cffd274aac2ee24e825f0bf3cbce5281fa1567b/protobuf-6.32.0.tar.gz"
+    sha256 "a81439049127067fc49ec1d36e25c6ee1d1a2b7be930675f919258d03c04e7d2"
   end
 
   resource "py-iam-expand" do
@@ -625,8 +626,8 @@ class Prowler < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/e1/0a/929373653770d8a0d7ea76c37de6e41f11eb07559b103b1c02cafb3f7cf8/requests-2.32.4.tar.gz"
-    sha256 "27d0316682c8a29834d3264820024b62a36942083d52caf2f14c0591336d3422"
+    url "https://files.pythonhosted.org/packages/c9/74/b3ff8e6c8446842c3f5c837e9c3dfcfe2018ea6ecef224c710c85ef728f4/requests-2.32.5.tar.gz"
+    sha256 "dbba0bac56e100853db0ea71b82b4dfd5fe2bf6d3754a8893c3af500cec7d7cf"
   end
 
   resource "requests-file" do
@@ -705,8 +706,8 @@ class Prowler < Formula
   end
 
   resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/98/5a/da40306b885cc8c09109dc2e1abd358d5684b1425678151cdaed4731c822/typing_extensions-4.14.1.tar.gz"
-    sha256 "38b39f4aeeab64884ce9f74c94263ef78f3c22467c8724005483154c26648d36"
+    url "https://files.pythonhosted.org/packages/72/94/1a15dd82efb362ac84269196e94cf00f187f7ed21c242792a923cdb1c61f/typing_extensions-4.15.0.tar.gz"
+    sha256 "0cea48d173cc12fa28ecabc3b837ea3cf6f38c6d1136f85cbaaf598984861466"
   end
 
   resource "typing-inspection" do

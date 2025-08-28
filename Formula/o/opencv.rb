@@ -2,7 +2,7 @@ class Opencv < Formula
   desc "Open source computer vision library"
   homepage "https://opencv.org/"
   license "Apache-2.0"
-  revision 6
+  revision 7
 
   stable do
     url "https://ghfast.top/https://github.com/opencv/opencv/archive/refs/tags/4.12.0.tar.gz"
@@ -16,6 +16,12 @@ class Opencv < Formula
         formula :parent
       end
     end
+
+    # Backport support for FFmpeg 8.0
+    patch do
+      url "https://github.com/opencv/opencv/commit/90c444abd387ffa70b2e72a34922903a2f0f4f5a.patch?full_index=1"
+      sha256 "5b662eea7b5de1dac3e06895c711955c9d1515d1202191b68594f4f9cfa23242"
+    end
   end
 
   livecheck do
@@ -26,11 +32,11 @@ class Opencv < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 arm64_sonoma:  "7888459c1bf12ef9432a56859ae53e0338217880e4f1279566759855bd22f7cd"
-    sha256 arm64_ventura: "6669fefa3cafc7533a77be543b9bbddb0607ddad26bf2abbade4a7c47d2d0c8e"
-    sha256 sonoma:        "b6a3bab2cf2a2a5a3c7f4fd8a7c69d4be3a8dfd63ec3d57fe3ba34aa7b010001"
-    sha256 ventura:       "c9546331047b355d07afe69ec191e8ccb67d0567fa842c6a1f17ea72f25a51f8"
-    sha256 x86_64_linux:  "c793c2a1c78c3683506b8254f864421dfc6a03e0458de3695e7863c5c46ac3aa"
+    sha256 arm64_sonoma:  "36e37b28c4296211391a7642d75c9a051d78ebf426228a6b5136302fbbb96650"
+    sha256 arm64_ventura: "76ccab188c47f6a0ab57d6382ccfa491ebb64b007288dffff94368d52b6134a3"
+    sha256 sonoma:        "aa02c5f253db29996a7a1c2c1d0634665c5247ac0c7ecb731beb09c2a14e30a1"
+    sha256 ventura:       "9e9dec59026eae9d98e4a9359f6a90c05e74505b39657b1483562de70d591640"
+    sha256 x86_64_linux:  "55a509adc36cfae0d58696801b26d91a372ef512d5d6c7496099d3e92864d4b0"
   end
 
   head do
@@ -47,7 +53,7 @@ class Opencv < Formula
   depends_on "abseil"
   depends_on "ceres-solver"
   depends_on "eigen"
-  depends_on "ffmpeg@7"
+  depends_on "ffmpeg"
   depends_on "freetype"
   depends_on "gflags"
   depends_on "glog"
