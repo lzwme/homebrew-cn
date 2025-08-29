@@ -19,7 +19,7 @@ class Ffmpegthumbnailer < Formula
 
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
-  depends_on "ffmpeg@7"
+  depends_on "ffmpeg@7" # FFmpeg 8 PR: https://github.com/dirkvdb/ffmpegthumbnailer/pull/240
   depends_on "jpeg-turbo"
   depends_on "libpng"
 

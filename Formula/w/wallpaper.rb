@@ -8,6 +8,8 @@ class Wallpaper < Formula
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "1428fc5b443d6a4b0b99844cdf398eea32fb89c4f4f121c16f4cfc73bd2a59bb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "eb9b62511a09dc4ace36a7bca8a0179eb4943eb7feb75a87a6d65874ba31ad55"
+    sha256 cellar: :any_skip_relocation, sonoma:        "32d2237aaea91b0e3f63ce6c657c5d6887362f633eaa91d79079a655c89f4dc5"
   end
 
   depends_on xcode: ["16.0", :build]

@@ -4,22 +4,22 @@ class Cmus < Formula
   url "https://ghfast.top/https://github.com/cmus/cmus/archive/refs/tags/v2.12.0.tar.gz"
   sha256 "44b96cd5f84b0d84c33097c48454232d5e6a19cd33b9b6503ba9c13b6686bfc7"
   license "GPL-2.0-or-later"
-  revision 2
+  revision 3
   head "https://github.com/cmus/cmus.git", branch: "master"
 
   bottle do
-    sha256 arm64_sequoia: "1ae77a3ca4f13add2411b5db1af5b6169bd4c6c63c0223b7ec09efc71f172963"
-    sha256 arm64_sonoma:  "a0e767af911891cc893e207a6cbf4039c57b5b8d1e06ef6c404e6af4932401e0"
-    sha256 arm64_ventura: "b6f2e83dc571f755e4acbcd83c99e6f944a8f8913109ccc370a5f54ecb7c29c2"
-    sha256 sonoma:        "be8ebf335b5a102dacb705a2308f4535fb6edd4d784c1dbb66b1bcc4c83ef581"
-    sha256 ventura:       "6d0fc9fc52edea2ff0da6e4fc46d32de79cc5de6fe7a208910032da213f6dbac"
-    sha256 arm64_linux:   "cf4d6856b39aca2481e86c9a04f0bc7570a0d77119a610ee814b64e605f24215"
-    sha256 x86_64_linux:  "025d85801847e85f06e54da3b839ecd87af40822e4d926701e66db1ee8fc59ad"
+    sha256 arm64_sequoia: "e09385ddb5a370d854f4608b76c5a263541547ac91b7cc4a6517e1f3099a19a3"
+    sha256 arm64_sonoma:  "a9d12ff2708a54953541bc5ae8ccb1ef3fd24aeb3365dbc8834337076faebd72"
+    sha256 arm64_ventura: "ae3c328349aeb668ccb369a9aa2a6147e6718aec702cffc145de37a0f3b82e0e"
+    sha256 sonoma:        "f67433b09c4f9f4c52ac189f99277c1698d8869196bf992265784b18ab63c443"
+    sha256 ventura:       "af29c51757aea6aaf9c7aab6758ec590e31f7f5e323a7c682f76496fb8e1599e"
+    sha256 arm64_linux:   "6d9800c3e1c74383aa02badeb42de89294de79afacb0fdeb7e09770e40ef9b4b"
+    sha256 x86_64_linux:  "6fa906d04b003647aec2093fa275eee0d2ca65d1601b6048b76dfa2016e0ba4e"
   end
 
   depends_on "pkgconf" => :build
   depends_on "faad2"
-  depends_on "ffmpeg"
+  depends_on "ffmpeg@7" # FFmpeg 8 issue: https://github.com/cmus/cmus/issues/1446
   depends_on "flac"
   depends_on "libao" # See https://github.com/cmus/cmus/issues/1130
   depends_on "libcue"
@@ -49,6 +49,26 @@ class Cmus < Formula
 
   test do
     plugins = shell_output("#{bin}/cmus --plugins")
-    assert_match "ao", plugins
+    expected_plugins = %w[
+      aac
+      cue
+      ffmpeg
+      flac
+      mad
+      mp4
+      opus
+      vorbis
+      wav
+      ao
+    ]
+    expected_plugins += if OS.mac?
+      %w[coreaudio]
+    else
+      %w[alsa pulse]
+    end
+
+    expected_plugins.each do |plugin|
+      assert_match plugin, plugins, "#{plugin} plugin not found!"
+    end
   end
 end

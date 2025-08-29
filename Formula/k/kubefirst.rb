@@ -1,8 +1,8 @@
 class Kubefirst < Formula
   desc "GitOps Infrastructure & Application Delivery Platform for kubernetes"
   homepage "https://kubefirst.konstruct.io/docs/"
-  url "https://ghfast.top/https://github.com/konstructio/kubefirst/archive/refs/tags/v2.9.0.tar.gz"
-  sha256 "8db06101bacdfa5710acc1b11f94385c9e68e62b5217f1873182a6ed65876b82"
+  url "https://ghfast.top/https://github.com/konstructio/kubefirst/archive/refs/tags/v2.9.1.tar.gz"
+  sha256 "b695357212711aa4aaaf5e367f7a72db712f8451b925370ac86cd93ae28a5fdb"
   license "MIT"
   head "https://github.com/konstructio/kubefirst.git", branch: "main"
 
@@ -14,13 +14,13 @@ class Kubefirst < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0a50a86602d2110bbda279b69fa7823e17b508a6086297f75c63b0ec5f52b452"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5eddff6dc4a0c0b676d29a050eeb66f4e335ff6ec73f4108c864ab5aef753f98"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "24edec6b8ca168f369bd9474bc677b5f6c9f7c7a6109948e26cec1549573c869"
-    sha256 cellar: :any_skip_relocation, sonoma:        "408201e44ecd45b974e474f48fddb8c167fc2f4023d5268cbaa759921f40b21a"
-    sha256 cellar: :any_skip_relocation, ventura:       "04e02ef5b6ea9f2b193d175a51623f5dee7b1428485a0b5bb73a59a4613473da"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c70dd1173668eeea00986118437ac94ea8d07c8adb56e41c683eb0c61f649d12"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "348506b9333931f71d6537a95ad9caed0a2215ae8f4fa234b581004094649afa"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b5906693a33288eb74753ce5327aef1700173ad75f285c4d9c0730b77f770c28"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "034c6dc25ce92215216f51a7b4fc1945e64e67131c5819acf25a781c41cf3b83"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "99e4c078c2453fac6dd82cf9759c739f21afe6ad9d15d1d24257e434d0b4795c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "bf0be92edeb0faf088841cf918562efb66851c762b999c9a07134d6db2214db6"
+    sha256 cellar: :any_skip_relocation, ventura:       "b49be7ca0ed6493d46db1c1406e0a7f87ae1d2382f41bb2d844ffd4ca6677a19"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4a693c55ba568d43d6485f1fe4264f6bc1d65e1a1c7e6be1de0c067d786969f3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e87842f7936b1addda120544b737e3c39fe38bdbdbdcb7870e6e8cf43b9fd0c0"
   end
 
   depends_on "go" => :build

@@ -29,6 +29,7 @@ class Castxml < Formula
     sha256 cellar: :any,                 arm64_sequoia: "95fb7d267cd0be30fffb2f28a00e4f4f1783ea8381982819eab564862810922b"
     sha256 cellar: :any,                 arm64_sonoma:  "16ebcda57fcb0ae900940e1dac9f8a78fea0a3f648849b852d6cebffbaac1b76"
     sha256 cellar: :any,                 arm64_ventura: "509fc3979f3f7659b316d7414f20701784ccf69cde6a8410405eabd27b0e3e4a"
+    sha256 cellar: :any,                 sonoma:        "03375795cb7b1704f1cd93b304bb1e6a11e02495fa7248884155175b7150fb27"
     sha256 cellar: :any,                 ventura:       "25974fd36e8a03296b65df304951d4cdd342f6e05b224adcbb474959f15ceb43"
     sha256 cellar: :any_skip_relocation, arm64_linux:   "491484e13a79e529bad359c0cf5cc994583689a2c293e0cd4ba4709a7fd64565"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "26eb128a91be1fcf60d791191f8d62434c745dd0c6f586ea67ad738e63a33e93"

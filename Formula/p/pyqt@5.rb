@@ -14,6 +14,8 @@ class PyqtAT5 < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "4f6a880862f2f69cc6fad70b2e6ca750bdfe8bb19ad41d41568cdeb4497d7278"
   end
 
+  deprecate! date: "2026-05-19", because: "is for end-of-life Qt 5"
+
   depends_on "pyqt-builder" => :build
   depends_on "python@3.13"
   depends_on "qt@5"

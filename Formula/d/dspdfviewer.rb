@@ -18,6 +18,10 @@ class Dspdfviewer < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "ca5f6fc6b6b9ddbaa85c87107317aba3bf14fd5a9c0824460efeb612e34be2ae"
   end
 
+  # Last release on 2016-09-13, last commit on 2023-04-27.
+  # Can undeprecate if new release with Qt 6 support is available.
+  deprecate! date: "2026-05-19", because: "needs end-of-life Qt 5"
+
   depends_on "cmake" => :build
   depends_on "gobject-introspection" => :build
   depends_on "pkgconf" => :build

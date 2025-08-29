@@ -16,7 +16,7 @@ class Libgr < Formula
 
   depends_on "cmake" => :build
   depends_on "cairo"
-  depends_on "ffmpeg@7"
+  depends_on "ffmpeg@7" # FFmpeg 8 issue: https://github.com/sciapp/gr/issues/197
   depends_on "freetype"
   depends_on "glfw"
   depends_on "jpeg-turbo"

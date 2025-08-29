@@ -7,13 +7,14 @@ class Proxygen < Formula
   head "https://github.com/facebook/proxygen.git", branch: "main"
 
   bottle do
-    sha256                               arm64_sequoia: "65dd297ab4f4276a87018d205cead9359eea2e58246577b78442b97c09ac49f1"
-    sha256                               arm64_sonoma:  "bc7699a34533dddf5267a488f0021683be288b35531bc963bdf1566fde758df2"
-    sha256                               arm64_ventura: "a362774ae89aa065826d2ab8b5bcfcaa8e536d7616b307ae877aaa1a29007d76"
-    sha256 cellar: :any,                 sonoma:        "4fa681f6f3fc0807dcf4cae86532c5e6ccaf695d2cfd781030856622b3beb3af"
-    sha256 cellar: :any,                 ventura:       "b2eeed9472fdeaafbf2e066e4557acfd2be63a0e9c4e5f45338d0fd47e31d21b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6d0339c7df3078e2cc530108ac6be12d70b1155dfbd9e86f9f91b3ca684a0204"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "73ccd14d4d877f373255226da898596d4169cc66775ed66c44e6bbd31ac0104e"
+    rebuild 1
+    sha256                               arm64_sequoia: "6bb39c37508260f20776ded6d8542b966dcc57855f067aa0bab6da8a425fcef7"
+    sha256                               arm64_sonoma:  "19cbde3ce930b7a9150a87cfbd67bb73fb6320436d5466d7d5762a525b386ad3"
+    sha256                               arm64_ventura: "6d525af161582983242795d367b32f0cbc1d8edaad4632a6a09e64c426b09d41"
+    sha256 cellar: :any,                 sonoma:        "5c5694ffc6401602394ab1227231cd38071f6c545a41e3933659da51988a9e3a"
+    sha256 cellar: :any,                 ventura:       "bf12c14c6124f089c6b6821803e7a61ab9e697acb475e68d5e6472d4e3882cab"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c0cb2b7dcdbb48a2d49b034f6b4ef5750cd0b57dfcb9370ca3b1efd4b77e8ab9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f9ddf97e3cbb525994f69c0cbd4e530dedc266b819d4438ab092e01ac13f2404"
   end
 
   depends_on "cmake" => :build
@@ -47,6 +48,13 @@ class Proxygen < Formula
   patch do
     url "https://github.com/facebook/proxygen/commit/7ad708b2206e4400240af5fd08e429b1b0cbedb3.patch?full_index=1"
     sha256 "4e64f687017888af90c4c6e691923db75c1e067fc8b722b038d05ee67707767c"
+  end
+
+  # Fix name of `liblibhttperf2`.
+  # https://github.com/facebook/proxygen/pull/574
+  patch do
+    url "https://github.com/facebook/proxygen/commit/415ed3320f3d110f1d8c6846ca0582a4db7d225a.patch?full_index=1"
+    sha256 "4ea28c2f87732526afad0f2b2b66be330ad3d4fc18d0f20eb5e1242b557a6fcf"
   end
 
   def install

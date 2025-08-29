@@ -3,19 +3,19 @@ class KeeperCommander < Formula
 
   desc "Command-line and SDK interface to Keeper Password Manager"
   homepage "https://docs.keeper.io/en/privileged-access-manager/commander-cli/overview"
-  url "https://files.pythonhosted.org/packages/c1/7c/fb92d108fd470465cbf11c2e54583f56334985c82439607027c1a8db2607/keepercommander-17.1.6.tar.gz"
-  sha256 "01babb5947847e7eff4b77ab606f50094f4e26c3c59aed60f6d021eff152dfda"
+  url "https://files.pythonhosted.org/packages/8e/df/dce2e2046e72dd4cbd11af8edc6329fcc14f04005e6fea9ff08f2e8d9ac0/keepercommander-17.1.7.tar.gz"
+  sha256 "2070e1b657f55a154a1b7f6787b297d82f4f5e97f17103e065c0c5ca0270af5c"
   license "MIT"
   head "https://github.com/Keeper-Security/Commander.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "6ccc3e0c728049e79745d482091a15487786f914684dffa4ea5d7cf2ef9040ae"
-    sha256 cellar: :any,                 arm64_sonoma:  "04a286b9b23469cb98e14b7b6eb31ca0a52cf0df9bcb812be0aca7f0f0b8f31a"
-    sha256 cellar: :any,                 arm64_ventura: "adb88f4fb490d3dd02da1f7372afb1110525026bd4138632f27f4bf595259959"
-    sha256 cellar: :any,                 sonoma:        "b103195718e4eace0d9239f82a1499a183c26574d725cbf5458898ea20440e2e"
-    sha256 cellar: :any,                 ventura:       "18228e5e2e6928a9fc2680ecbdf4bdffa052b7406dc8ea0e5686eb701bad632e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8544b6e4f7c00b273b538cf13cc66fe29d343b1261eb3fde0fc387a0c0528283"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f4f489dc3063c89fb3485efb7a8ebbc4f8b5e9ed8193cbd1dbfb3838b300810a"
+    sha256 cellar: :any,                 arm64_sequoia: "27d6e06189d9a109e8158fdb2585c33e41dd631c1490706cce4a7efac7d19749"
+    sha256 cellar: :any,                 arm64_sonoma:  "ac2ddf9f934a18cfc3162c0145deabfe413c367d33394a7a3fe6170070f7af4b"
+    sha256 cellar: :any,                 arm64_ventura: "a90212a856c8d091cf21b98d8c3bb576ccfb3e0bf86dc0363a069dba3c2b1272"
+    sha256 cellar: :any,                 sonoma:        "b1c1296a7f7f03e6eaa960548c99dbe86907f72aa3aa32a2e254008281e47614"
+    sha256 cellar: :any,                 ventura:       "debd3869a2b7ffe2368604a443e4705ee42464da690dc99866692adff9057960"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d402cd4d3d439b3406599492fd595166ab353824498ba0605347c42bd97cc0ac"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "90b011117b016d23fb649a5a84961e0342cdcfe1417457b07e120dbd06347703"
   end
 
   depends_on "pkgconf" => :build
@@ -101,8 +101,8 @@ class KeeperCommander < Formula
   end
 
   resource "fonttools" do
-    url "https://files.pythonhosted.org/packages/11/7f/29c9c3fe4246f6ad96fee52b88d0dc3a863c7563b0afc959e36d78b965dc/fonttools-4.59.1.tar.gz"
-    sha256 "74995b402ad09822a4c8002438e54940d9f1ecda898d2bb057729d7da983e4cb"
+    url "https://files.pythonhosted.org/packages/0d/a5/fba25f9fbdab96e26dedcaeeba125e5f05a09043bf888e0305326e55685b/fonttools-4.59.2.tar.gz"
+    sha256 "e72c0749b06113f50bcb80332364c6be83a9582d6e3db3fe0b280f996dc2ef22"
   end
 
   resource "fpdf2" do
@@ -171,8 +171,8 @@ class KeeperCommander < Formula
   end
 
   resource "prompt-toolkit" do
-    url "https://files.pythonhosted.org/packages/bb/6e/9d084c929dfe9e3bfe0c6a47e31f78a25c54627d64a66e884a8bf5474f1c/prompt_toolkit-3.0.51.tar.gz"
-    sha256 "931a162e3b27fc90c86f1b48bb1fb2c528c2761475e57c9c06de13311c7b54ed"
+    url "https://files.pythonhosted.org/packages/a1/96/06e01a7b38dce6fe1db213e061a4602dd6032a8a97ef6c1a862537732421/prompt_toolkit-3.0.52.tar.gz"
+    sha256 "28cde192929c8e7321de85de1ddbe736f1375148b02f2e17edd840042b1be855"
   end
 
   resource "protobuf" do
@@ -241,8 +241,8 @@ class KeeperCommander < Formula
   end
 
   resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/98/5a/da40306b885cc8c09109dc2e1abd358d5684b1425678151cdaed4731c822/typing_extensions-4.14.1.tar.gz"
-    sha256 "38b39f4aeeab64884ce9f74c94263ef78f3c22467c8724005483154c26648d36"
+    url "https://files.pythonhosted.org/packages/72/94/1a15dd82efb362ac84269196e94cf00f187f7ed21c242792a923cdb1c61f/typing_extensions-4.15.0.tar.gz"
+    sha256 "0cea48d173cc12fa28ecabc3b837ea3cf6f38c6d1136f85cbaaf598984861466"
   end
 
   resource "typing-inspection" do

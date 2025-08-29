@@ -10,6 +10,7 @@ class Symengine < Formula
     sha256 cellar: :any,                 arm64_sequoia: "a0cf67cc7e98d0210e0ad15eb15df2379d949bd235bc106e3035886e462f3c8a"
     sha256 cellar: :any,                 arm64_sonoma:  "08378ea3146241f35d24c636a298662accb539fbf4dfc8d87354f34121dc1564"
     sha256 cellar: :any,                 arm64_ventura: "d21da6676835e70716720ce60994aaa9da2572239190d2f81cc1a2d7cc998902"
+    sha256 cellar: :any,                 sonoma:        "74f49611791f1f42a6a89327abe809ec350292208998da0477079f5d0e677ce0"
     sha256 cellar: :any,                 ventura:       "bb74c79619f0b9482f97e8c413706fb0453cd07cc4133d6fe6ee2cd9a6247b32"
     sha256 cellar: :any_skip_relocation, arm64_linux:   "6af631f2626d92e9c222e48cd4ef7ac1a1896ca66b881f333a5caaecb42adabf"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "b5b4460a315a637f02f4c68f666ed15684418ceaef2c575e56c68a268987849f"

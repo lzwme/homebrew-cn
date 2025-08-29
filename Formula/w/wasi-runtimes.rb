@@ -14,6 +14,7 @@ class WasiRuntimes < Formula
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "24fe4eed718a3723fbb008cf57655f58553e29849adb759072fa25d19af9e8c9"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f02ea15ecac55fc983aca5e79b9a1c5aa252e70ab3370bd77425e2fc7fbb8a93"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "7f6803a39e211b559fe1e140e32f1ef0f22137ebaffa18c8e88d520a5b3ddd02"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2d8a0855c8813966bafa2c02d1f2953b727045a6660a8d640008131e1d4437cb"
     sha256 cellar: :any_skip_relocation, ventura:       "5a5d65b54343ddc8a52ecd1ff979d912fbf2190d79b910835abdcfb3780cfe87"
     sha256 cellar: :any_skip_relocation, arm64_linux:   "1d3068e62daa45b3e525a677354bb74ebdaaea253f8ba8752a83494364c02fb0"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "3656184a0fd9609a3d6f1afc73df2b131bc1c063444b0d95678c277cc79a77e1"

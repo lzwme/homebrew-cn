@@ -23,6 +23,10 @@ class ColorCode < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "dd2a46ae5f69b106738617bd41d8fe1d2a71a34dcb876850ac1c698b4ca09496"
   end
 
+  # No means of contact or public tracker page to discuss/view Qt 6 status.
+  # Can undeprecate if new release with Qt 6 support is available.
+  deprecate! date: "2026-05-19", because: "needs end-of-life Qt 5"
+
   depends_on "cmake" => :build
   depends_on "qt@5"
 

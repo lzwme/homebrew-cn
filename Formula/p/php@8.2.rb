@@ -8,7 +8,7 @@ class PhpAT82 < Formula
   license "PHP-3.01"
 
   livecheck do
-    url "https://www.php.net/downloads"
+    url "https://www.php.net/downloads?source=Y"
     regex(/href=.*?php[._-]v?(#{Regexp.escape(version.major_minor)}(?:\.\d+)*)\.t/i)
   end
 

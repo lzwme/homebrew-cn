@@ -1,11 +1,14 @@
 class Mgba < Formula
   desc "Game Boy Advance emulator"
   homepage "https://mgba.io/"
-  url "https://ghfast.top/https://github.com/mgba-emu/mgba/archive/refs/tags/0.10.5.tar.gz"
-  sha256 "91d6fbd32abcbdf030d58d3f562de25ebbc9d56040d513ff8e5c19bee9dacf14"
   license "MPL-2.0"
   revision 1
-  head "https://github.com/mgba-emu/mgba.git", branch: "master"
+
+  stable do
+    url "https://ghfast.top/https://github.com/mgba-emu/mgba/archive/refs/tags/0.10.5.tar.gz"
+    sha256 "91d6fbd32abcbdf030d58d3f562de25ebbc9d56040d513ff8e5c19bee9dacf14"
+    depends_on "qt@5"
+  end
 
   livecheck do
     url :stable
@@ -22,6 +25,12 @@ class Mgba < Formula
     sha256 x86_64_linux:  "4ef9822d552b0d2ac6d038f63539af007285ed9132e0098594ebb49ef10278c1"
   end
 
+  head do
+    url "https://github.com/mgba-emu/mgba.git", branch: "master"
+    depends_on "freetype"
+    depends_on "qt"
+  end
+
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
 
@@ -30,7 +39,6 @@ class Mgba < Formula
   depends_on "libpng"
   depends_on "libzip"
   depends_on "lua"
-  depends_on "qt@5"
   depends_on "sdl2"
   depends_on "sqlite"
 
@@ -48,9 +56,10 @@ class Mgba < Formula
   end
 
   def install
+    args = []
     # TODO: Remove minimum policy in 0.11. Upstream commit doesn't cleanly apply
     # https://github.com/mgba-emu/mgba/commit/e95b81f1f7b95161fbda81fa5e931e3bcb193ccf
-    args = ["-DCMAKE_POLICY_VERSION_MINIMUM=3.5"]
+    args << "-DCMAKE_POLICY_VERSION_MINIMUM=3.5" if build.stable?
     # https://github.com/mgba-emu/mgba/issues/3115
     args << "-DUSE_DISCORD_RPC=OFF" if OS.linux?
 
@@ -63,9 +72,16 @@ class Mgba < Formula
 
     # Fix OpenGL linking on macOS.
     if OS.mac?
-      inreplace "CMakeLists.txt",
-                "list(APPEND DEPENDENCY_LIB ${EPOXY_LIBRARIES})",
-                'list(APPEND DEPENDENCY_LIB ${EPOXY_LIBRARIES} "-framework OpenGL")'
+      if build.stable?
+        inreplace "CMakeLists.txt",
+                  "list(APPEND DEPENDENCY_LIB ${EPOXY_LIBRARIES})",
+                  'list(APPEND DEPENDENCY_LIB ${EPOXY_LIBRARIES} "-framework OpenGL")'
+      else
+        # Work around failure running `cmake -E tar` within brew's build environment.
+        # CMake Error: Unable to read from file 'fish.fs': Could not open extended attribute file
+        # FIXME: Build is fine outside brew's environment
+        args << "-DUSE_LIBZIP=OFF"
+      end
     end
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args

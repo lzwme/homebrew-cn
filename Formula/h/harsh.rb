@@ -1,18 +1,18 @@
 class Harsh < Formula
   desc "Habit tracking for geeks"
   homepage "https://github.com/wakatara/harsh"
-  url "https://ghfast.top/https://github.com/wakatara/harsh/archive/refs/tags/v0.11.0.tar.gz"
-  sha256 "da8c906453b08e7326e267d97c3110761fc4795c85e955f6993bad76318f7665"
+  url "https://ghfast.top/https://github.com/wakatara/harsh/archive/refs/tags/v0.11.1.tar.gz"
+  sha256 "6b6712eea2e27bb0ed195355bc113b3820fc9bc60f55d24c415832489056abdc"
   license "MIT"
   head "https://github.com/wakatara/harsh.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "db3871f7e241d9d8abc71d0aadd1f71ffe30c9c70eaded3131bcd0276abf13d4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "db3871f7e241d9d8abc71d0aadd1f71ffe30c9c70eaded3131bcd0276abf13d4"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "db3871f7e241d9d8abc71d0aadd1f71ffe30c9c70eaded3131bcd0276abf13d4"
-    sha256 cellar: :any_skip_relocation, sonoma:        "bd106e3a27139f00e06adf74d09a187c4f0d33db1f89c8169565448814bea78e"
-    sha256 cellar: :any_skip_relocation, ventura:       "bd106e3a27139f00e06adf74d09a187c4f0d33db1f89c8169565448814bea78e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "21ef18032cc37839fb6b371a6986a31846b210bac715f160df4aa2bf5e6bed27"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f911075a49eefb361ea404761f7597d6a27d3c8812fdcab8e6485fc402c2751e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f911075a49eefb361ea404761f7597d6a27d3c8812fdcab8e6485fc402c2751e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "f911075a49eefb361ea404761f7597d6a27d3c8812fdcab8e6485fc402c2751e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "bb59cd374d9e6ad41bf837d6c29c2c365d819fbd74f003d192351f4455e5e412"
+    sha256 cellar: :any_skip_relocation, ventura:       "bb59cd374d9e6ad41bf837d6c29c2c365d819fbd74f003d192351f4455e5e412"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e02d2d447310412c6509603983626e8a3336ebaedf73b33618d0c188fa38aa76"
   end
 
   depends_on "go" => :build

@@ -21,6 +21,8 @@ class PopplerQt5 < Formula
 
   keg_only "it conflicts with poppler"
 
+  deprecate! date: "2026-05-19", because: "is for end-of-life Qt 5"
+
   depends_on "cmake" => :build
   depends_on "gobject-introspection" => :build
   depends_on "pkgconf" => :build

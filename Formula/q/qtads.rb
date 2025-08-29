@@ -26,6 +26,11 @@ class Qtads < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "251840532a70387d1007ab9a992bb9f6e8d6c543133fc19d5d41b0dd81c822a5"
   end
 
+  # Last release on 2023-05-17, last commit on 2023-05-19.
+  # PR for Qt 6 open since 2023-10-28: https://github.com/realnc/qtads/pull/21
+  # Can undeprecate if new release with Qt 6 support is available.
+  deprecate! date: "2026-05-19", because: "needs end-of-life Qt 5"
+
   depends_on "pkgconf" => :build
   depends_on "fluid-synth"
   depends_on "libsndfile"

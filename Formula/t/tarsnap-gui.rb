@@ -24,6 +24,10 @@ class TarsnapGui < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "97b8a8c25cd8383218b698725c2a88cbdb55f161188de94df95406514573d34c"
   end
 
+  # Last release on 2018-08-23
+  # Can undeprecate if new release with Qt 6 support is available.
+  deprecate! date: "2026-05-19", because: "needs end-of-life Qt 5"
+
   depends_on "qt@5"
   depends_on "tarsnap"
 

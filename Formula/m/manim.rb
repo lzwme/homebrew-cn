@@ -23,7 +23,7 @@ class Manim < Formula
   depends_on "ninja" => :build
   depends_on "pkgconf" => :build
   depends_on "cairo" # for cairo.h
-  depends_on "ffmpeg@7"
+  depends_on "ffmpeg@7" # FFmpeg 8 needs av>=15.1.0, https://github.com/ManimCommunity/manim/pull/4385
   depends_on "fontconfig"
   depends_on "freetype"
   depends_on "glib"

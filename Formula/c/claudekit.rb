@@ -1,12 +1,12 @@
 class Claudekit < Formula
   desc "Intelligent guardrails and workflow automation for Claude Code"
   homepage "https://github.com/carlrannaberg/claudekit"
-  url "https://registry.npmjs.org/claudekit/-/claudekit-0.8.4.tgz"
-  sha256 "550f0211d84eaadd6478b8f9432bcffc197dbeec74d89c4635dac145d9cf4d13"
+  url "https://registry.npmjs.org/claudekit/-/claudekit-0.8.6.tgz"
+  sha256 "1e57aee1babea32b50aba4765ec89757acbd319da2c6aecc900e5a5b86819685"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "1de650deda69424a92aec1a00d4627930e1692b575c7970a244e5754acf998e9"
+    sha256 cellar: :any_skip_relocation, all: "622309b5a2688188b7ceb356e4c061ad742ee0b838fba70cdbc27b9a99deeb5f"
   end
 
   depends_on "node"

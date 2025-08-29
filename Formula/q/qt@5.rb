@@ -30,6 +30,20 @@ class QtAT5 < Formula
 
   keg_only :versioned_formula
 
+  # Deprecating on expected date of Qt 5.15.19 open-source release which is
+  # planned for 1 year after the commercial release date of 2025-05-19[^1].
+  # Standard support officially ended on 2025-05-26 and Qt5 is now in EoS[^2].
+  # Any new CVEs found are no longer being fixed since commercial release.
+  # Also, we rely on Linux distro patches and they are planning removal too,
+  # e.g. Alpine[^3], Gentoo[^4] and Ubuntu[^5].
+  #
+  # [^1]: https://www.qt.io/blog/commercial-lts-qt-5.15.19-released
+  # [^2]: https://www.qt.io/blog/extended-security-maintenance-for-qt-5.15-begins-may-2025
+  # [^3]: https://gitlab.alpinelinux.org/alpine/aports/-/issues/17114
+  # [^4]: https://bugs.gentoo.org/948836
+  # [^5]: https://discourse.ubuntu.com/t/removing-qt-5-from-ubuntu-before-the-release-of-26-04-lts/49296
+  deprecate! date: "2026-05-19", because: :unsupported
+
   depends_on "ninja" => :build
   depends_on "node" => :build
   depends_on "pkgconf" => :build

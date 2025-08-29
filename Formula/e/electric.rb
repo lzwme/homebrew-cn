@@ -1,18 +1,18 @@
 class Electric < Formula
   desc "Real-time sync for Postgres"
   homepage "https://electric-sql.com"
-  url "https://ghfast.top/https://github.com/electric-sql/electric/archive/refs/tags/@core/sync-service@1.1.6.tar.gz"
-  sha256 "6c6dd55e9e72db296617ca4e4186c96e6fb5311f793e5aad70494e5fd5fb0f11"
+  url "https://ghfast.top/https://github.com/electric-sql/electric/archive/refs/tags/@core/sync-service@1.1.7.tar.gz"
+  sha256 "10898eab1ba7acef571aab92ce99cbced6aadf834e7ced178f424f64f36230f9"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "2da2a25edbf1065b64dec6240fdc83d31d5347feb827f60736e8b0ead43b8a87"
-    sha256 cellar: :any,                 arm64_sonoma:  "ff6cab9926067f7e2541b86be3363742932b1394268bda9920cbb3760b287baa"
-    sha256 cellar: :any,                 arm64_ventura: "2bc64e45182ceaa83607ff190fe1f1c5cd049a7c7874dd4a14b5e2061f9ab677"
-    sha256 cellar: :any,                 sonoma:        "53a924d4d1567f102030db1e98ce7cd64a4b44798347b8874d70b2c5f65924bd"
-    sha256 cellar: :any,                 ventura:       "93726556c118e5e0ea3c95268d90516b69ad690de601e4922d8b2ee84699228e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "dd407a409b4556034c7ede36a04c05892bdc456088633d79923500a866ebaf7d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "048a885e56f8fe5703869da39e178695a69142b63320d20b261d5b61ebb488ae"
+    sha256 cellar: :any,                 arm64_sequoia: "732aa9d69ac9518a4900b83ff6021414c3403bdd0f58c4f37609d4a8fb847c65"
+    sha256 cellar: :any,                 arm64_sonoma:  "28ef284461e8cdfbd89990e0f019c55c76f5b2390fce184ee323f4161df937e2"
+    sha256 cellar: :any,                 arm64_ventura: "320fd91bc56a05f6cb292ee2f0f414006ee63e2caa22e80fa2578ee0732324b8"
+    sha256 cellar: :any,                 sonoma:        "de7917c5fdca1683a2a5fc157270f689d0651074e4dd0d0595a5d39e6ad6dd62"
+    sha256 cellar: :any,                 ventura:       "db790f3e4e1df6827827af5e3920275008c3dd2a68ea9b9f5072481f8fbaf992"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "918a604907384c1d3525c2267914773d783e45d84f005416021833fbe8f9c62a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "99d42537a5b87c82cf249fc9772134a8e55cdbfc16d291911dfc4314e2c4734c"
   end
 
   depends_on "elixir" => :build

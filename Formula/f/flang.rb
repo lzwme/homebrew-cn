@@ -15,6 +15,7 @@ class Flang < Formula
     sha256 cellar: :any,                 arm64_sequoia: "6118c30d25bea2cd21a473be7d6ae0e99a78a6de09552d27de783741a0fcd54b"
     sha256 cellar: :any,                 arm64_sonoma:  "66e34563beb6bd165d5558e247e91f1dc3eba91f9f796b685b5be63ce1d5f527"
     sha256 cellar: :any,                 arm64_ventura: "746d426539249714213daf1689fb5de2f3a469e88af91738d1006695369f3ec3"
+    sha256 cellar: :any,                 sonoma:        "c4c02a47071419a05a98f56fc4a3c88e45d2cc0249537ef55a18f7cdce086876"
     sha256 cellar: :any,                 ventura:       "b495907e8a584fcb9120a768c629439a321e5e8a5e5295d31519a1e2395c6949"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "03c71e3f0d0c9edda50be0ee0b76494d9f20344f565f42ffa38e23dd8c74ceba"
   end
