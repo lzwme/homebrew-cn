@@ -3,19 +3,19 @@ class PiecesCli < Formula
 
   desc "Command-line tool for Pieces.app"
   homepage "https://docs.pieces.app/products/cli"
-  url "https://files.pythonhosted.org/packages/16/8e/b176c800f3cf6a7578d5bbaf9e2b90015715df62af9610a8e67f9facb717/pieces_cli-1.17.1.tar.gz"
-  sha256 "9b1e7a91d52db370d9d1e886a8d9ff0ca4edcaf10e6baa3a31028ae415b9c969"
+  url "https://files.pythonhosted.org/packages/86/3c/5fa83f9ffc1fdffddee6bf0802d710a7074e68e544763626f07e1ad1a0bb/pieces_cli-1.18.0.tar.gz"
+  sha256 "c1e3b913061171533b1b7fd10dcdcceac1f53eb9c985be36fb2d21cddccf7cf5"
   license "MIT"
   head "https://github.com/pieces-app/cli-agent.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "d31b5229faf14f13fa8f91887b5d772696e724baf6577a85d23712a92ff2cd4d"
-    sha256 cellar: :any,                 arm64_sonoma:  "ff290ee791d25820f734542c114159bacaa2bf7fa5087d147c0033de5fc35654"
-    sha256 cellar: :any,                 arm64_ventura: "39c5cf552e5f69ba3c4fe554877b356a8744018b8509f4ec31f2a80b7763e512"
-    sha256 cellar: :any,                 sonoma:        "1ebe6ee46b8276e6d0fa337f6bf1306e3a80ad7021212fdd2ca0ff57b4f462d7"
-    sha256 cellar: :any,                 ventura:       "c7081ac89e49a9a410251f17e50f12e6523d5c13b62eb2e8a68ed127684506a2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2dc3115a2be30bb480392f9113e93e8d61759c123b2cb90a778564d5e82f48bd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a4dbb407b1e2c87dccb6ff12637bac6b088085f3d3f8af091439369481c29f88"
+    sha256 cellar: :any,                 arm64_sequoia: "411f76d975079fc3400c299eb79a0f97e2602537b0e39c831b1bb6625a40b264"
+    sha256 cellar: :any,                 arm64_sonoma:  "1cbe4084fe48f8b3f10e7d9c2ac2fd6d4a767380003c0d7e76d725d53a19e893"
+    sha256 cellar: :any,                 arm64_ventura: "ee08ee3db1053f8e9d4d732079250b899644b36b14d8f3b96f4c216bfb42ebb4"
+    sha256 cellar: :any,                 sonoma:        "f43b77891770f579528a89eb56eee546710a90973b84512667179d5b405aa6cc"
+    sha256 cellar: :any,                 ventura:       "39ec8416dddc6c1b0b31499931f5acb73072e5fff97ce7691539cb2f17d470fb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cdefefaf72de4854724cb42612bccf211e9290ea1e7b4c49a3276a72808c73de"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "021eb3812a9339801500f5cffcfc2f85eddc26ab23d5e8bb508c32b6215c782f"
   end
 
   depends_on "rust" => :build
@@ -74,8 +74,8 @@ class PiecesCli < Formula
   end
 
   resource "jsonschema" do
-    url "https://files.pythonhosted.org/packages/d5/00/a297a868e9d0784450faa7365c2172a7d6110c763e30ba861867c32ae6a9/jsonschema-4.25.0.tar.gz"
-    sha256 "e63acf5c11762c0e6672ffb61482bdf57f0876684d8d249c0fe2d730d48bc55f"
+    url "https://files.pythonhosted.org/packages/74/69/f7185de793a29082a9f3c7728268ffb31cb5095131a9c139a74078e27336/jsonschema-4.25.1.tar.gz"
+    sha256 "e4a9655ce0da0c0b67a085847e00a3a51449e1157f4f75e9fb5aa545e122eb85"
   end
 
   resource "jsonschema-specifications" do
@@ -99,13 +99,13 @@ class PiecesCli < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/fe/8b/3c73abc9c759ecd3f1f7ceff6685840859e8070c4d947c93fae71f6a0bf2/platformdirs-4.3.8.tar.gz"
-    sha256 "3d512d96e16bcb959a814c9f348431070822a6496326a4be0911c40b5a74c2bc"
+    url "https://files.pythonhosted.org/packages/23/e8/21db9c9987b0e728855bd57bff6984f67952bea55d6f75e055c46b5383e8/platformdirs-4.4.0.tar.gz"
+    sha256 "ca753cf4d81dc309bc67b0ea38fd15dc97bc30ce419a7f58d13eb3bf14c4febf"
   end
 
   resource "prompt-toolkit" do
-    url "https://files.pythonhosted.org/packages/bb/6e/9d084c929dfe9e3bfe0c6a47e31f78a25c54627d64a66e884a8bf5474f1c/prompt_toolkit-3.0.51.tar.gz"
-    sha256 "931a162e3b27fc90c86f1b48bb1fb2c528c2761475e57c9c06de13311c7b54ed"
+    url "https://files.pythonhosted.org/packages/a1/96/06e01a7b38dce6fe1db213e061a4602dd6032a8a97ef6c1a862537732421/prompt_toolkit-3.0.52.tar.gz"
+    sha256 "28cde192929c8e7321de85de1ddbe736f1375148b02f2e17edd840042b1be855"
   end
 
   resource "pydantic" do
@@ -164,8 +164,13 @@ class PiecesCli < Formula
   end
 
   resource "rpds-py" do
-    url "https://files.pythonhosted.org/packages/1e/d9/991a0dee12d9fc53ed027e26a26a64b151d77252ac477e22666b9688bc16/rpds_py-0.27.0.tar.gz"
-    sha256 "8b23cf252f180cda89220b378d917180f29d313cd6a07b2431c0d3b776aae86f"
+    url "https://files.pythonhosted.org/packages/e9/dd/2c0cbe774744272b0ae725f44032c77bdcab6e8bcf544bffa3b6e70c8dba/rpds_py-0.27.1.tar.gz"
+    sha256 "26a1c73171d10b7acccbded82bf6a586ab8203601e565badc74bbbf8bc5a10f8"
+  end
+
+  resource "sentry-sdk" do
+    url "https://files.pythonhosted.org/packages/72/75/6223b9ffa0bf5a79ece08055469be73c18034e46ed082742a0899cc58351/sentry_sdk-2.35.1.tar.gz"
+    sha256 "241b41e059632fe1f7c54ae6e1b93af9456aebdfc297be9cf7ecfd6da5167e8e"
   end
 
   resource "six" do
@@ -184,13 +189,13 @@ class PiecesCli < Formula
   end
 
   resource "starlette" do
-    url "https://files.pythonhosted.org/packages/04/57/d062573f391d062710d4088fa1369428c38d51460ab6fedff920efef932e/starlette-0.47.2.tar.gz"
-    sha256 "6ae9aa5db235e4846decc1e7b79c4f346adf41e9777aebeb49dfd09bbd7023d8"
+    url "https://files.pythonhosted.org/packages/15/b9/cc3017f9a9c9b6e27c5106cc10cc7904653c3eec0729793aec10479dd669/starlette-0.47.3.tar.gz"
+    sha256 "6bc94f839cc176c4858894f1f8908f0ab79dfec1a6b8402f6da9be26ebea52e9"
   end
 
   resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/98/5a/da40306b885cc8c09109dc2e1abd358d5684b1425678151cdaed4731c822/typing_extensions-4.14.1.tar.gz"
-    sha256 "38b39f4aeeab64884ce9f74c94263ef78f3c22467c8724005483154c26648d36"
+    url "https://files.pythonhosted.org/packages/72/94/1a15dd82efb362ac84269196e94cf00f187f7ed21c242792a923cdb1c61f/typing_extensions-4.15.0.tar.gz"
+    sha256 "0cea48d173cc12fa28ecabc3b837ea3cf6f38c6d1136f85cbaaf598984861466"
   end
 
   resource "typing-inspection" do

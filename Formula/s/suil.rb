@@ -28,6 +28,11 @@ class Suil < Formula
   depends_on "lv2"
 
   on_macos do
+    # Can undeprecate if new release with Qt 6 support is available.
+    # Alternatively can just build direct X11 wrapper (libsuil_x11.dylib)
+    # Issue ref: https://gitlab.com/lv2/suil/-/issues/11
+    deprecate! date: "2026-05-19", because: "needs end-of-life Qt 5"
+
     depends_on "qt@5" # cocoa still needs Qt5
   end
 

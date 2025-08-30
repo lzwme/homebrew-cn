@@ -20,6 +20,7 @@ class Mfem < Formula
   depends_on "cmake" => :build
   depends_on "hypre"        # optional "mpi"
   depends_on "metis"        # optional "metis"
+  depends_on "open-mpi"
   depends_on "openblas"
   depends_on "suite-sparse"
 

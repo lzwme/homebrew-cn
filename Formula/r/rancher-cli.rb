@@ -1,10 +1,10 @@
 class RancherCli < Formula
   desc "Unified tool to manage your Rancher server"
   homepage "https://github.com/rancher/cli"
-  url "https://ghfast.top/https://github.com/rancher/cli/archive/refs/tags/v2.12.0.tar.gz"
-  sha256 "f5e3cba6e4156c68ce0785216898376b636cca8c032cb3807328805eba502189"
+  url "https://ghfast.top/https://github.com/rancher/cli/archive/refs/tags/v2.12.1.tar.gz"
+  sha256 "238ca8a3a4a07a27bdb0ef7d6268da5e46474983d5ad69e3f8304f08c565f63a"
   license "Apache-2.0"
-  head "https://github.com/rancher/cli.git", branch: "master"
+  head "https://github.com/rancher/cli.git", branch: "main"
 
   # Upstream creates releases that use a stable tag (e.g., `v1.2.3`) but are
   # labeled as "pre-release" on GitHub before the version is released, so it's
@@ -15,12 +15,12 @@ class RancherCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3711aaf5f1769a6a00dd98cc869d9bf068435628f58c6b05312989cb282567d7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "776e12e582df98007ddcb0c9553b44fc1b0a46381066e21f4cfeb8e59670fb65"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "5ad65c2494db289a6f77fc876febf68106591332b51351ca48533cd96f515000"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7f6bd7f57d76d252fc279200935d6782b00da3fea816db3a0e965fa413514274"
-    sha256 cellar: :any_skip_relocation, ventura:       "8d2c8e814033fffc3078b1677fb08116d447ef717cbd9956cb218abdb9357206"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a5acc630163369ce5cf5185b44c63fc23c5ea50c4174eed2788fc78681c9740a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d8f6979d7158ae09ad20e3789a0ad54b690661c5bc09b19f727ffe8dc0e90ba7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9052fa4656450bdf41d781cc076224891504c52f99f6fedf27554bab755f35ef"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "c647ab6e8ce02e55b934f4f4ced219f83a9f9add41b12ff7f4ceb053f9f4e1cc"
+    sha256 cellar: :any_skip_relocation, sonoma:        "731f33721e65a19c9c455de294254e8323ef87b69e3de32b6a204420937dde0c"
+    sha256 cellar: :any_skip_relocation, ventura:       "4086c9a1593766dd1f7cce464958f115342f37b300cbb68e2c6770cd80e09594"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8d07ffd88675b94efcb0a2f6cca9ed9934a2dd62c483909c7f852467c3c7eeb9"
   end
 
   depends_on "go" => :build

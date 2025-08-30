@@ -8,7 +8,7 @@ class Php < Formula
   license "PHP-3.01"
 
   livecheck do
-    url "https://www.php.net/downloads"
+    url "https://www.php.net/downloads?source=Y"
     regex(/href=.*?php[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 

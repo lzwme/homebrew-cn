@@ -9,6 +9,11 @@ class Zsync < Formula
     :public_domain, # librcksum/md4.c, libzsync/sha1.c, zlib/inflate.c
   ]
 
+  livecheck do
+    url "https://zsync.moria.org.uk/downloads"
+    regex(/href=.*?zsync[._-]v?(\d+(?:\.\d+)+)\.t/i)
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "39991c4aa022ce2fe1b3d62b30e2c7e130be4e4e98bf6dca844f28ec8afdfe8d"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "800299bfc82b2ce9970159a2d0efcbe445c74024a357aa4a3c2f8a74c4ed871b"

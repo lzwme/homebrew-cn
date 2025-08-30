@@ -5,19 +5,19 @@ class Icloudpd < Formula
   homepage "https://github.com/icloud-photos-downloader/icloud_photos_downloader"
   # We use a git checkout as scripts/patch_version runs git commands to update SHA
   url "https://github.com/icloud-photos-downloader/icloud_photos_downloader.git",
-      tag:      "v1.31.0",
-      revision: "2f77ee52199ff77a632f4bd04595197c0fd7656a"
+      tag:      "v1.32.0",
+      revision: "9519784c2019ca154f3a43a50060af1cdaf1a605"
   license "MIT"
   head "https://github.com/icloud-photos-downloader/icloud_photos_downloader.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bf9074c4578cb8f70820d09ad08ac0de68b374051e5752535e4d1c5e4af33833"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4c66094288e3460a0d6a84b5ab22054ba260159435846fe25d291217d0fe3df4"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "8220bd53a8b4e789e3cd4f176780e18e61b514942ce2c475ffeef1844cca04ae"
-    sha256 cellar: :any_skip_relocation, sonoma:        "cc278d029d5478bef26ee888f0435e40fbfdf894dbdce44872ec997ec09ec7ee"
-    sha256 cellar: :any_skip_relocation, ventura:       "f89fe1ebd07091e935cdd490adfa3a3f0369668ad479ab841f630ede52561f7f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ab117a14bb98079432ae99f9b6e03559336a9363c8c47dca8f6896562d375d45"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8352ace3767c61556d81de99757f10476ca171d804d1a9442c54e06982b0f88b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3a49bd77a55d14a2ec272c35dba953670fa3db7daa2135f2737335931190f38c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e5004ac18e2d44245265c0003780f67d3433da06f71e19d00ad105d50b9e1d66"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "8c5ea871916f6c2c90cdd4052f1a22584339f5b41d592cda7ccdd5932381cbe6"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f586386db58debe55fbfe4ba182c1ddbcb982d801ada02129c008e65d6e8caf0"
+    sha256 cellar: :any_skip_relocation, ventura:       "349cd16f3bc2f6ba87599a146a8eb76c7982e6335e9225513dadb941239195a3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "77498d529e3323bf7211ea28e1dc5a11ac4f10fcf6b7fd4d323adae9b94a563a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "980332e48976f41fbafc0601b1f330c1f9847ce1b424a10a5c07dfa142d70e63"
   end
 
   depends_on "certifi"
@@ -38,8 +38,8 @@ class Icloudpd < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/b9/2e/0090cbf739cee7d23781ad4b89a9894a41538e4fcf4c31dcdd705b78eb8b/click-8.1.8.tar.gz"
-    sha256 "ed53c9d8990d83c2a27deae68e4ee337473f6330c040a31d4225c9574d16096a"
+    url "https://files.pythonhosted.org/packages/60/6c/8ca2efa64cf75a977a0d7fac081354553ebe483345c734fb6b6515d96bbc/click-8.2.1.tar.gz"
+    sha256 "27c491cc05d968d271d5a1db13e3b5a184636d9d930f148c50b038f0d0646202"
   end
 
   resource "flask" do
@@ -68,8 +68,8 @@ class Icloudpd < Formula
   end
 
   resource "jaraco-functools" do
-    url "https://files.pythonhosted.org/packages/49/1c/831faaaa0f090b711c355c6d8b2abf277c72133aab472b6932b03322294c/jaraco_functools-4.2.1.tar.gz"
-    sha256 "be634abfccabce56fa3053f8c7ebe37b682683a4ee7793670ced17bab0087353"
+    url "https://files.pythonhosted.org/packages/f7/ed/1aa2d585304ec07262e1a83a9889880701079dde796ac7b1d1826f40c63d/jaraco_functools-4.3.0.tar.gz"
+    sha256 "cfd13ad0dd2c47a3600b439ef72d8615d482cedcff1632930d6f28924d92f294"
   end
 
   resource "jinja2" do

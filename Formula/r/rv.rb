@@ -1,16 +1,16 @@
 class Rv < Formula
   desc "Ruby version manager"
   homepage "https://github.com/spinel-coop/rv"
-  url "https://ghfast.top/https://github.com/spinel-coop/rv/archive/refs/tags/v0.1.0.tar.gz"
-  sha256 "8fafaed9ffcdd2af3326831d914d032388f9ee0df6b195efe93a4a8d6ae8940d"
+  url "https://ghfast.top/https://github.com/spinel-coop/rv/archive/refs/tags/v0.1.1.tar.gz"
+  sha256 "1548dc6411fabc6b6b91e1faca08f0f1d78b3dcbb05a0c17e42e8ec959b9c4dd"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/spinel-coop/rv.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "94c6bbe1b437bbb36302db2e26643d242b09979ad6a3ba658166cdda98af6322"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "53ed5d2045999d26e314aa0f3b036a9a84bd598531b012850d053d0a22ed870b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "585b81b20768b490182c80ed92e5446b882ae19b136e6a48696b9f55d72ab2de"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e574314b6462e38b839deb91c41879522d14a0ddd755bf81fd0a125382277ac2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0e9700d0e8de58f7bfb9fb05835b24b805b265355bb24a8aac141b538385a766"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d07b65ccd180830a17bdd8613cdcc346a09fe9d5842cd86e336e6f8466439986"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "20fc16dbf92256590d6610a37fcd396c715932a4ce04f60afdd3d5303c91d27d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "23134cd5fe06378a1702773f2c0c3b0d5d7173f25f6d8ad0829bfca27911d2b8"
   end
 
   depends_on "pkgconf" => :build

@@ -1,19 +1,19 @@
 class Hermit < Formula
   desc "Manages isolated, self-bootstrapping sets of tools in software projects"
   homepage "https://cashapp.github.io/hermit"
-  url "https://ghfast.top/https://github.com/cashapp/hermit/archive/refs/tags/v0.44.12.tar.gz"
-  sha256 "5edb018d5a3ea8c9a0ff7b2b9b9f5510ed4f50b7302007099c6cf63d583c7c73"
+  url "https://ghfast.top/https://github.com/cashapp/hermit/archive/refs/tags/v0.45.0.tar.gz"
+  sha256 "9507b69e05d4bbeee9bc64adbbe407cc93a7f5fec79916f2e89ec43c3f599ee9"
   license "Apache-2.0"
   head "https://github.com/cashapp/hermit.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9d0303e836e3f6c8a5efc2fcad26ee8e827b951233083603a694778c8b40e767"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5d9332f16c54f2ed15c9fa6f5fc9574e9ddc03b03c3a0edc8b3f81729d3392a3"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "68902f5d79b329b82aa6035411de67f43b664c4f2b38c5601cf429e56029b45f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2cab9e88be067f5ea479201546842fcb4d24a0af4b58b5592c31f903759725c2"
-    sha256 cellar: :any_skip_relocation, ventura:       "bf2fbe53b34ca3dd5db87ab5434f93b66014878d8c63231823996c229be6a33b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e1e0111bb94f800f8f3099605115e068a4ebcced94a766bdbb2d405a4d8495d1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b33247c2370542fe947cb63a4c878273d0273c19ab7b5c01a1ebda35c40dc2d1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "aa6196f5c9def7948ecebe6a913f97f7d76bde64ed1493a520cb63b16ab3062b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2c4d9f2385ae7760b09943416246e52cbdd4f3084cc7f85f78fae8e9a883b7e9"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "8b57838cfee978cc116117d79d9f46a69657daa25fc9a0e5abca0d98bc80788c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "74638e924f6e0771a7bc3551a9b766b8e09af731ae64d1e7d181c1c61cf69112"
+    sha256 cellar: :any_skip_relocation, ventura:       "c5345fe22fdaa6e554d41f6cc68c84264042cdb2df2e18481e7c5d9476716df9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9a6273dfcd79c6b5c2f4061d951a1fa44fd6f9392c4bba215f69ebef86e4a36d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6eefec9756ab10ca561d7391935d3836457cdd36927775cb4866eb5d06a957be"
   end
 
   depends_on "go" => :build

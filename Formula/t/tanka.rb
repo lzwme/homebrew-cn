@@ -1,8 +1,8 @@
 class Tanka < Formula
   desc "Flexible, reusable and concise configuration for Kubernetes using Jsonnet"
   homepage "https://tanka.dev"
-  url "https://ghfast.top/https://github.com/grafana/tanka/archive/refs/tags/v0.33.0.tar.gz"
-  sha256 "1e18499f0eb96b250d1b1129fc8be7660d67b73bbaa225071d8aa6a90b3f58ef"
+  url "https://ghfast.top/https://github.com/grafana/tanka/archive/refs/tags/v0.34.0.tar.gz"
+  sha256 "d4a30e0baa15a4890403263eef7ff6addd59a969a66e9829d101ac200849cff5"
   license "Apache-2.0"
   head "https://github.com/grafana/tanka.git", branch: "main"
 
@@ -12,13 +12,13 @@ class Tanka < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "feb7cfaa607e2124d7ad863eba4be63a65e50717f8b84ceba4fde6fb5a4ee465"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "feb7cfaa607e2124d7ad863eba4be63a65e50717f8b84ceba4fde6fb5a4ee465"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "feb7cfaa607e2124d7ad863eba4be63a65e50717f8b84ceba4fde6fb5a4ee465"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b87820933d9f6ed422974a344737557a3ba91ab696b2dd8bc2071831bd621af3"
-    sha256 cellar: :any_skip_relocation, ventura:       "b87820933d9f6ed422974a344737557a3ba91ab696b2dd8bc2071831bd621af3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3b7814d3291301823ecdd656e56b35751a4e0d23754415a81947d810ef13cc23"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3aed090b96267bdafaa3b4a6c8543e740ee7bdab58a3a5ca9e92c25b9a9d4c4e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f7f017a7510f6c530e5d668e0aeee9bd922fad81331fae29d483b09b0913c1d1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f7f017a7510f6c530e5d668e0aeee9bd922fad81331fae29d483b09b0913c1d1"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "f7f017a7510f6c530e5d668e0aeee9bd922fad81331fae29d483b09b0913c1d1"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c3ee99fa558a7e294e060251479e9c3489023cd19c461cf6bfbd2e5651469dbe"
+    sha256 cellar: :any_skip_relocation, ventura:       "c3ee99fa558a7e294e060251479e9c3489023cd19c461cf6bfbd2e5651469dbe"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0f3b1b71219e74154404e91925a9a59c2d333d23018f35532cf40cea33be10df"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e6e110fe09fb3e67a4fc3d6d0c27be4ffa00f7226ef2e9be818738a585beac19"
   end
 
   depends_on "go" => :build

@@ -6,9 +6,12 @@ class Roxctl < Formula
   license "Apache-2.0"
   head "https://github.com/stackrox/stackrox.git", branch: "master"
 
+  # Upstream maintains multiple major/minor versions and the "latest" release
+  # may be for a lower version, so we have to check multiple releases to
+  # identify the highest version.
   livecheck do
     url :stable
-    strategy :github_latest
+    strategy :github_releases
   end
 
   bottle do

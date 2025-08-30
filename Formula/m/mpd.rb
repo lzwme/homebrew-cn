@@ -4,17 +4,17 @@ class Mpd < Formula
   url "https://ghfast.top/https://github.com/MusicPlayerDaemon/MPD/archive/refs/tags/v0.24.5.tar.gz"
   sha256 "ab7f9a2315eff97cc47dff5da9b9c675b1764cd50f161dc295b8a0d1956a6244"
   license "GPL-2.0-or-later"
-  revision 1
+  revision 2
   head "https://github.com/MusicPlayerDaemon/MPD.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_sequoia: "5809f895e4f36df7dfe9cd6115ced215066d18e24146bc1646da8d884c82e384"
-    sha256 cellar: :any, arm64_sonoma:  "e200e95bd457b777fbfb98763ee865a1318132062e451b9cb91ed8d8b91cb89f"
-    sha256 cellar: :any, arm64_ventura: "6af46c4708518c8a1ebc16aa47616078fa8a8bc884f2873ca6c72f65e3310149"
-    sha256 cellar: :any, sonoma:        "0d0a91a3835a7e94a7670acc0aa0d4b9f7b98e8124677a44249409f54aa82a88"
-    sha256 cellar: :any, ventura:       "e169a7a312e55ed9d4fa4ba8fa6d263b49fc84d37f9967269664e928d27dc14e"
-    sha256               arm64_linux:   "db5bed42c87c198cd094d7f2af25ac771ba3e24ff921a7bf0e9a8e251759f562"
-    sha256               x86_64_linux:  "79eb6b625c1a3428a72a5d237162793d58caac56edf6d3adb42af7d26c2eb05e"
+    sha256 cellar: :any, arm64_sequoia: "59d6d260200b89b4978a50e1d504766a77831fb1d793db0096ebc357ea053e7e"
+    sha256 cellar: :any, arm64_sonoma:  "899644f47971d2c2dfabb3500d76e85839595b4d5e6d9bebbb04090c76878530"
+    sha256 cellar: :any, arm64_ventura: "4067d81d78fe5f21ec70bf03b318af48530fa690c17a7af063b61f37c9ce3df3"
+    sha256 cellar: :any, sonoma:        "7d532b72af0f8a4aa4224c4b81db4055ecc217079855843dfa6636b1c7c5e1bb"
+    sha256 cellar: :any, ventura:       "6823cb0b202bbc79d2c3fbdbb4bbaed2f8798f989e42c6b9cdff17fcc7b8014f"
+    sha256               arm64_linux:   "a6e1675c73241105f95469066ce50f9c4a052e4670b1475a940ff430d726bc51"
+    sha256               x86_64_linux:  "e501564967f85a7e044b9651ff80f5e959f717c000bb0469c5c24a01ccd4f2e7"
   end
 
   depends_on "meson" => :build
@@ -25,7 +25,7 @@ class Mpd < Formula
   depends_on "chromaprint"
   depends_on "expat"
   depends_on "faad2"
-  depends_on "ffmpeg@7"
+  depends_on "ffmpeg"
   depends_on "flac"
   depends_on "fluid-synth"
   depends_on "fmt"

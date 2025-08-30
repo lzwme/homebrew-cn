@@ -3,18 +3,18 @@ class Copyparty < Formula
 
   desc "Portable file server"
   homepage "https://github.com/9001/copyparty"
-  url "https://files.pythonhosted.org/packages/e8/3f/421d834f6aea91a73b9b715b64258908cb03cc53ceffaab17afed7066536/copyparty-1.19.6.tar.gz"
-  sha256 "c017c8d1da920328b8f49ff7b67aa0f177f56d3c64f2349b804e49ea21dc8195"
+  url "https://files.pythonhosted.org/packages/83/c9/bf92008f454047d3a91f7a68dee3c9b5b3f7c0cd12e78c6520d6741e2a99/copyparty-1.19.7.tar.gz"
+  sha256 "575018a8ec7c687b1b43fb3688cd2c1a07b189a1c8b0598e933847c9e28d31f9"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "502054e3246db2ec7ade9330d3a74587516b147731ad58eb5028fc664d52f66d"
-    sha256 cellar: :any,                 arm64_sonoma:  "f0c80ced216dcd20bf1d81c605f56d359c55da5ad5b11aebe4b1519370307594"
-    sha256 cellar: :any,                 arm64_ventura: "0fac9e813a33cb58126d2bc30edf843f66253a4a4f24db37af5f6144c616bce8"
-    sha256 cellar: :any,                 sonoma:        "99601b6625e4b3cd9e6c831e234df3223cafd7398f1855399ae0345a3014efc9"
-    sha256 cellar: :any,                 ventura:       "a8bbb9628652c942c43aa4299cdd69a8d8e6871d991e44251b792fb09ff9cc23"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4978e36195dbd42bfb5a8a769a16f14b9fb5f33758f76b0c75d8eda6e18c7bd2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "03ede8f4b7724e7de18fadad29ae83cda95f90b49b6176275c82a134b7a6edfa"
+    sha256 cellar: :any,                 arm64_sequoia: "8c3d5021d4774d24c78c622c2eedbbc20b185e83cabf3ad728fe1e15c2bba18d"
+    sha256 cellar: :any,                 arm64_sonoma:  "ac66fac0c5744e59669d45aeaf6921a61860ac3ca1f8d2354d9a24adcad856b2"
+    sha256 cellar: :any,                 arm64_ventura: "16e625fec27873769de05036db1db6e59bc5a3264c4d4eaa87855a0248b82164"
+    sha256 cellar: :any,                 sonoma:        "82a845ec5b034fcfadc1df8510268cb170b36f48dbfa86ca427bacc85f0e1441"
+    sha256 cellar: :any,                 ventura:       "3701f986c75e3b70cdb051b68377022bbb4dba5a6ae99fa55bdc8db67f017622"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0f0df184d0d68c01962c7e6f6569be796f84ed405fca7da386b3f42697e69a48"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4c46706455d65762f268861005750a39c685f105690de8bd2d7fe4dd7536d13a"
   end
 
   depends_on "cmake" => :build

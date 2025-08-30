@@ -3,14 +3,13 @@ class Ipython < Formula
 
   desc "Interactive computing in Python"
   homepage "https://ipython.org/"
-  url "https://files.pythonhosted.org/packages/54/80/406f9e3bde1c1fd9bf5a0be9d090f8ae623e401b7670d8f6fdf2ab679891/ipython-9.4.0.tar.gz"
-  sha256 "c033c6d4e7914c3d9768aabe76bbe87ba1dc66a92a05db6bfa1125d81f2ee270"
+  url "https://files.pythonhosted.org/packages/6e/71/a86262bf5a68bf211bcc71fe302af7e05f18a2852fdc610a854d20d085e6/ipython-9.5.0.tar.gz"
+  sha256 "129c44b941fe6d9b82d36fc7a7c18127ddb1d6f02f78f867f402e2e3adde3113"
   license "BSD-3-Clause"
   head "https://github.com/ipython/ipython.git", branch: "main"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, all: "d185391ae2c04fd59610e774edc3025154d93f19686958e44b8e7f9d31a00f4c"
+    sha256 cellar: :any_skip_relocation, all: "8a31861ece15f3bfe7cb7e21f5170670c3f6c2655f76bb9c5646653c765567fc"
   end
 
   depends_on "python@3.13"
@@ -46,8 +45,8 @@ class Ipython < Formula
   end
 
   resource "parso" do
-    url "https://files.pythonhosted.org/packages/66/94/68e2e17afaa9169cf6412ab0f28623903be73d1b32e208d9e8e541bb086d/parso-0.8.4.tar.gz"
-    sha256 "eb3a7b58240fb99099a345571deecc0f9540ea5f4dd2fe14c2a99d6b281ab92d"
+    url "https://files.pythonhosted.org/packages/d4/de/53e0bcf53d13e005bd8c92e7855142494f41171b34c2536b86187474184d/parso-0.8.5.tar.gz"
+    sha256 "034d7354a9a018bdce352f48b2a8a450f05e9d6ee85db84764e9b6bd96dafe5a"
   end
 
   resource "pexpect" do
@@ -56,8 +55,8 @@ class Ipython < Formula
   end
 
   resource "prompt-toolkit" do
-    url "https://files.pythonhosted.org/packages/bb/6e/9d084c929dfe9e3bfe0c6a47e31f78a25c54627d64a66e884a8bf5474f1c/prompt_toolkit-3.0.51.tar.gz"
-    sha256 "931a162e3b27fc90c86f1b48bb1fb2c528c2761475e57c9c06de13311c7b54ed"
+    url "https://files.pythonhosted.org/packages/a1/96/06e01a7b38dce6fe1db213e061a4602dd6032a8a97ef6c1a862537732421/prompt_toolkit-3.0.52.tar.gz"
+    sha256 "28cde192929c8e7321de85de1ddbe736f1375148b02f2e17edd840042b1be855"
   end
 
   resource "ptyprocess" do

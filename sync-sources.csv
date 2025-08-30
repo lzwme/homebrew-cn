@@ -1512,6 +1512,7 @@ Homebrew-homebrew-core/Formula/d/dmd.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dmenu.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/dmg2img.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dmtx-utils.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/d/dnglab.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dns2tcp.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/dnscontrol.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dnscrypt-proxy.rb, Homebrew/homebrew-core, 1
@@ -1750,6 +1751,7 @@ Homebrew-homebrew-core/Formula/e/emacs-dracula.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/emacs.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/e/embree.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/embulk.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/e/emmylua_ls.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/emojify.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/emp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/empty.rb, Homebrew/homebrew-core, 0
@@ -6121,7 +6123,7 @@ Homebrew-homebrew-core/Formula/s/saf-cli.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/safe-rm.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/safeint.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/safety.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/s/sagittarius-scheme.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/s/sagittarius-scheme.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sail.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/saldl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/salt-lint.rb, Homebrew/homebrew-core, 0

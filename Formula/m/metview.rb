@@ -46,6 +46,7 @@ class Metview < Formula
   uses_from_macos "expat"
 
   on_macos do
+    depends_on "gcc"
     depends_on "gettext"
     depends_on "harfbuzz"
   end

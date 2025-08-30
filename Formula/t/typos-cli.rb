@@ -1,8 +1,8 @@
 class TyposCli < Formula
   desc "Source code spell checker"
   homepage "https://github.com/crate-ci/typos"
-  url "https://ghfast.top/https://github.com/crate-ci/typos/archive/refs/tags/v1.35.6.tar.gz"
-  sha256 "13c8c2c2d4b4dae3f900e92b1cb56740e300877c1cf32f9e5654b1c6395fd561"
+  url "https://ghfast.top/https://github.com/crate-ci/typos/archive/refs/tags/v1.35.7.tar.gz"
+  sha256 "b8782fa21c283f824f9c9d6f27398064d7c0cbb6bb392d2df930dfd83297b77d"
   license any_of: ["Apache-2.0", "MIT"]
 
   livecheck do
@@ -11,13 +11,13 @@ class TyposCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "096f3c329c206c5aec1cfb54ee763afc3ae01b34bad3be7771ab5f5dfb8564fc"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "48715e11bded1af9e2bfbd0465b430ab0e9ee35740a3386be466d2d2b980d811"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "21069278915bb4768ffc4ca6628bc0ec4030a8e6195ce62ea80dc66728413ef8"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1c9bc90da94f7951caf0f9ed9c624b755edd2c7c1d8e0d7b55053e13d98621b3"
-    sha256 cellar: :any_skip_relocation, ventura:       "943948b46398938268271301f74b0a3a88371504128a5a4ea562246bf6d26816"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "30c0ecfc9de86db7d111c68ac67a13bff7b7745a45b4b32d799c23730be8a88d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9d9082542f767063e5ccb5cfd7d6a236521dc840f25c68bf04bf75b91da512cf"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "71ba6b8cdf0214a61f731650afcf92668e3122570010b3ad303453346241c4a2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d99a2737ad7ee5584a54c218f2fc0415ccd45f8e848d2c4dae4c34d41fe81dbb"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "05787ffb8b5b425f5bf1693f306f62e63295794f29cc7cdbbfb30c86777afcc4"
+    sha256 cellar: :any_skip_relocation, sonoma:        "1f50cfe5249e81aa8f7d86898f35eb965decbb3cff10250c0b5ec9b9a1107d9b"
+    sha256 cellar: :any_skip_relocation, ventura:       "de2078808b0a8c828229cbb198e1c0d047f97ce96c6f2f7714ca95c8dbb517c2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e4ccdf9ee36e852ff54d39f4ecae25740987793a2fa4ebccf64eb30e935e5a8c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5fb91bed0e03afaa4af54ec4e7cb2a3d2103cad294f609e3428be8c977d67199"
   end
 
   depends_on "rust" => :build

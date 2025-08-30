@@ -3,8 +3,8 @@ class Mlx < Formula
 
   desc "Array framework for Apple silicon"
   homepage "https://github.com/ml-explore/mlx"
-  url "https://ghfast.top/https://github.com/ml-explore/mlx/archive/refs/tags/v0.28.0.tar.gz"
-  sha256 "b341dee8243a142d360a8369607ca9733bc6029970493ff43343058a43d7d18f"
+  url "https://ghfast.top/https://github.com/ml-explore/mlx/archive/refs/tags/v0.29.0.tar.gz"
+  sha256 "7b5a43673f822e5ae28507f43127b10080db3e8da73d99a2efa5b34dbadd2bc4"
   license all_of: [
     "MIT", # main license
     "Apache-2.0", # metal-cpp resource
@@ -12,11 +12,11 @@ class Mlx < Formula
   head "https://github.com/ml-explore/mlx.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_sequoia: "879ee23b9d1963ba6a9f6a4bfa65df619c19d956413a0e826d0047efc1608e69"
-    sha256 cellar: :any, arm64_sonoma:  "d73681574d2388f7c7b8923559bd3d160938710a0dcd98a0c80164a8d2cd7074"
-    sha256 cellar: :any, arm64_ventura: "f1d972c94746ccf7b03ef2edcb3fba0c78c1989ec024edc27f7cae8fc3cca031"
-    sha256 cellar: :any, sonoma:        "328b3005b1b5df08d7304238452776dd451e088358acd6f08e5fe27e17c85df3"
-    sha256 cellar: :any, ventura:       "d7a3b1760cb66019d0819d0fe4564525cffb292978a4ef00ebde2c7f6e8377be"
+    sha256 cellar: :any, arm64_sequoia: "3097476b2d3d2eb1465b46dab420cc2f74fefd8fa9552a6a39d2f1d7aff6b856"
+    sha256 cellar: :any, arm64_sonoma:  "d983e66d95d5ca1b4c3926961f8aece7fc64b78890819d19dfed202b185e3893"
+    sha256 cellar: :any, arm64_ventura: "eee9634b7d436425772f4fe8e75cd7691605bc011e915536620181d77736ec21"
+    sha256 cellar: :any, sonoma:        "b4cd7b526558359cbd3ba9f06893460b3d81dafce7072ecccab4d72c61ad82a7"
+    sha256 cellar: :any, ventura:       "86235563bbe75dde52680cfef928991bdf075f63529bd197f04de1f86e7ec7d0"
   end
 
   depends_on "cmake" => :build
@@ -48,8 +48,8 @@ class Mlx < Formula
 
   # Update to GIT_TAG at https://github.com/ml-explore/mlx/blob/v#{version}/mlx/io/CMakeLists.txt
   resource "gguflib" do
-    url "https://ghfast.top/https://github.com/antirez/gguf-tools/archive/af7d88d808a7608a33723fba067036202910acb3.tar.gz"
-    sha256 "1ee2dde74a3f9506af9ad61d7638a5e87b5e891b5e36a5dd3d5f412a8ce8dd03"
+    url "https://ghfast.top/https://github.com/antirez/gguf-tools/archive/8fa6eb65236618e28fd7710a0fba565f7faa1848.tar.gz"
+    sha256 "9e30bc1eb82cc2231150d39ce37dcdd6f844d6994fba18da83fc537a487ba86f"
   end
 
   def python3

@@ -1,17 +1,17 @@
 class RekorCli < Formula
   desc "CLI for interacting with Rekor"
   homepage "https://docs.sigstore.dev/logging/overview/"
-  url "https://ghfast.top/https://github.com/sigstore/rekor/archive/refs/tags/v1.4.0.tar.gz"
-  sha256 "28a2fb9e4b97057b06c9c226534d27510c47445d2622dd2556b9f90903c2f8f0"
+  url "https://ghfast.top/https://github.com/sigstore/rekor/archive/refs/tags/v1.4.1.tar.gz"
+  sha256 "41f3f7f9ca9110fb641a0150a9eb82b5b4314b2236ec60fa4644a98220e8341e"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1947724858e53b73f7f1bb8f39f1503bcb86e90d331b7e354fc39aa92f03c78a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1947724858e53b73f7f1bb8f39f1503bcb86e90d331b7e354fc39aa92f03c78a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "1947724858e53b73f7f1bb8f39f1503bcb86e90d331b7e354fc39aa92f03c78a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "bbe3973cc5c656b79396993f7c62e1769da593e5d6c7ab6646c0a122480c8fcf"
-    sha256 cellar: :any_skip_relocation, ventura:       "bbe3973cc5c656b79396993f7c62e1769da593e5d6c7ab6646c0a122480c8fcf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1f6a856cb2aa7fa6156a7b1aecf27a9435f4c63dc01e63c9f3a431b1c6016a7e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b5a9cc8df23774293a651f4602ef1f203e6a1af71df5237fc2f2266e90bcc125"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b5a9cc8df23774293a651f4602ef1f203e6a1af71df5237fc2f2266e90bcc125"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "b5a9cc8df23774293a651f4602ef1f203e6a1af71df5237fc2f2266e90bcc125"
+    sha256 cellar: :any_skip_relocation, sonoma:        "cf2c3ba29bb9f3a886fd5a1a23e2bc79ee218dff6792a98383ca277eea5fb72b"
+    sha256 cellar: :any_skip_relocation, ventura:       "cf2c3ba29bb9f3a886fd5a1a23e2bc79ee218dff6792a98383ca277eea5fb72b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3450bc24ea59e2dcbfa4b9352502b589efce36863eb03dcd7013ccbc836d9ec1"
   end
 
   depends_on "go" => :build
