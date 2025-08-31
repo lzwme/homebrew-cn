@@ -24,12 +24,16 @@ class Sextractor < Formula
 
   def install
     openblas = Formula["openblas"]
+    # Allow OpenBLAS header migration to subdirectory. Can remove once done
+    openblas_incdir = openblas.include/"openblas"
+    openblas_incdir = openblas.include unless openblas_incdir.exist?
+
     system "./autogen.sh"
-    system "./configure", *std_configure_args,
-           "--disable-silent-rules",
-           "--enable-openblas",
-           "--with-openblas-libdir=#{openblas.lib}",
-           "--with-openblas-incdir=#{openblas.include}"
+    system "./configure", "--disable-silent-rules",
+                          "--enable-openblas",
+                          "--with-openblas-libdir=#{openblas.lib}",
+                          "--with-openblas-incdir=#{openblas_incdir}",
+                          *std_configure_args
     system "make", "install"
     # Remove references to Homebrew shims
     rm Dir["tests/Makefile*"]

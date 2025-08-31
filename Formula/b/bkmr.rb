@@ -6,6 +6,11 @@ class Bkmr < Formula
   license "BSD-3-Clause"
   head "https://github.com/sysid/bkmr.git", branch: "main"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "98afcd43422c0514d58ec02149a52398b27198b160fbd0c23a003a8f0c573e09"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5701f2f4b066a9be0147f4111fcdd7134092c8f1750c4434e3e5378ea99fd094"

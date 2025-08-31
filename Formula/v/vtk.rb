@@ -1,18 +1,17 @@
 class Vtk < Formula
   desc "Toolkit for 3D computer graphics, image processing, and visualization"
   homepage "https://www.vtk.org/"
-  url "https://www.vtk.org/files/release/9.4/VTK-9.4.2.tar.gz"
-  sha256 "36c98e0da96bb12a30fe53708097aa9492e7b66d5c3b366e1c8dc251e2856a02"
+  url "https://www.vtk.org/files/release/9.5/VTK-9.5.1.tar.gz"
+  sha256 "14443661c7b095d05b4e376fb3f40613f173e34fc9d4658234e9ec1d624a618f"
   license "BSD-3-Clause"
-  revision 3
   head "https://gitlab.kitware.com/vtk/vtk.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_sonoma:  "aa14e148a35616054937c79b3528d340d60b477fabd79eeef855486283d0bb3e"
-    sha256 cellar: :any, arm64_ventura: "2cccbb73808afc54239389da4758a7e5f063a9ea78eed1c081b32a2da7268331"
-    sha256 cellar: :any, sonoma:        "20c979fdf1b4ed2db5d3ee4d472f032547008acd091a3de9350017e47481a5e5"
-    sha256 cellar: :any, ventura:       "6d741a1c1f622c24ea5d775df16084007ca5e3978645e1b64faf6d4ac421853b"
-    sha256               x86_64_linux:  "8b8da9c4e6c57c6bc09312a7da28e418068be91e1d680da6172fbd90b166f3ba"
+    sha256 cellar: :any, arm64_sonoma:  "8d3596b8ea74de16022a54be04882555152b21e00a0908baa05d1872e16ab8dc"
+    sha256 cellar: :any, arm64_ventura: "b3517208ac0bf15079af958c16ef4c5ee7ee0d84de5ef3a70a5d3b9836b4ee15"
+    sha256 cellar: :any, sonoma:        "5415df6574689139093bfb8798a19b3246724dac97459f87f0fb9edbeceefd55"
+    sha256 cellar: :any, ventura:       "2610902d0b5a9b0efa10dc060a400f56a21f49203d67e40c3780a5ce3b51637c"
+    sha256               x86_64_linux:  "bfc0ed1800afbc60683525b67b4732426230f2a97bd0dbc91ad51bbb75735741"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -52,13 +51,6 @@ class Vtk < Formula
     depends_on "libx11"
     depends_on "libxcursor"
     depends_on "mesa"
-  end
-
-  # Apply Arch Linux patch to fix build with netcdf 4.9.3+
-  # Issue ref: https://gitlab.kitware.com/vtk/vtk/-/issues/19616
-  patch do
-    url "https://gitlab.archlinux.org/archlinux/packaging/packages/vtk/-/raw/b4d07bd7ee5917e2c32f7f056cf78472bcf1cec2/netcdf-4.9.3.patch"
-    sha256 "87535578bbb0023ede506fd64afae95cdf4fb698c543f9735e6267730634afbc"
   end
 
   def install

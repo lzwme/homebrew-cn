@@ -2,21 +2,21 @@ class Swiftlint < Formula
   desc "Tool to enforce Swift style and conventions"
   homepage "https://github.com/realm/SwiftLint"
   url "https://github.com/realm/SwiftLint.git",
-      tag:      "0.59.1",
-      revision: "625792423014cc49b0a1e5a1a5c0d6b8b3de10f9"
+      tag:      "0.60.0",
+      revision: "a351a0dea2ccf0fc1925620118821dd6d3ef55c4"
   license "MIT"
   head "https://github.com/realm/SwiftLint.git", branch: "main"
 
-  no_autobump! because: :requires_manual_review
+  no_autobump! because: :bumped_by_upstream
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c3f41f4287ee4a4a74a2f38628f30774e6857405c48f0e3832aaa630d13d4cb7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cf36eacfa4a47f013495f2152ccdfb6dde871d17d618414e3cfc559ddf023ffc"
-    sha256 cellar: :any,                 arm64_ventura: "4ccd5a613a7dd6310e088e55b9cc315f455bd81f7d104ec8072ddd00dbe69bef"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8b0c46a09427e091de69f7b267efca4779ed47d43b894d87e903c09e89b7a47e"
-    sha256 cellar: :any,                 ventura:       "5c31fd0bf839aa606624fdd6238fa9a36fb4fea6f34b90da3a22c41856c2d136"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fed88471e745a4b402389f8005388ac603efaa0f4b8d5baa2dfd00fd7e575bd1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "64bfd1f18fd38050c83d117ef116cdeb69b2100da650ed589173854d67790704"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ff2334d36d563ef25bbd8e86e7abfb6c5f12339cf60db80844ab4e227ad87fa3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c3611bd3afcd7b68d6f8fc3b2038c88f403bcf52d361fba11bcb955fde605d77"
+    sha256 cellar: :any,                 arm64_ventura: "29f16e9df523bbf220c25cc1cac7e3209d2be5138c3ae3761b34e2cd309e0908"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6e47ac01ab9cf6f765890da887a2249e4fff3893ae866bd292a25731222896f2"
+    sha256 cellar: :any,                 ventura:       "cc7bfb0168663627fb0127e1f8a019a911bc42e85fc79d468fb8a2a63df48402"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c8a4bf56aed46e7b57dcc3dc6e37c94de2d768f0cba6d3a9fc195fcddea2af07"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e36f564db21f3be88ab8edbfe995f7ee20c80cb78ac15536df3155c41101be2c"
   end
 
   depends_on macos: :ventura

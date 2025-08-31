@@ -13,6 +13,7 @@ class EmmyluaLs < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "64299086caf7163a978502a485763dbff4fc02c99e83494a46d802ac2fefadbd"
     sha256 cellar: :any_skip_relocation, sonoma:        "e46518bc9e6570c1cbb34297e6a3e6e94a9805f5f4b3d6d1839f43c8de76c64a"
     sha256 cellar: :any_skip_relocation, ventura:       "4fd90bf76662e118ef5d655bce9a56ae8340b36670424478d6094829c42896c8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d14d77d2118aaabb4d2a590a09746cc429741f5fe53351ea1a5e6a5b2290ac85"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "6060a05d2a395ae1edefa829908e0a87feb5192bd6377ff6351940f2e48124af"
   end
 

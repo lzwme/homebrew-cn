@@ -3,14 +3,14 @@ class Px < Formula
 
   desc "Ps and top for human beings (px / ptop)"
   homepage "https://github.com/walles/px"
-  url "https://files.pythonhosted.org/packages/6c/84/0d8c82c54f5014340df9e44d89e0c09a9261a61bfce656f0a7f09eb3c275/pxpx-3.7.0.tar.gz"
-  sha256 "18961d377c41f65fa944b5c08db6f60a5919c15dbcd83df9f8e95ff594241cb0"
+  url "https://files.pythonhosted.org/packages/df/b2/93e062e66cc36d455ef8141a052c907e0ef3841aec038cdbf27ba84bbbba/pxpx-3.8.0.tar.gz"
+  sha256 "957421a3436a8d3b929d65b5e443bf3fb248d3a15fae5dca37652e7ea5ac8f37"
   license "MIT"
 
   no_autobump! because: :bumped_by_upstream
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "dbc12da3ec4c8724b3126a1d814f35b3278888e3d93e423f82fca6f1e15d635f"
+    sha256 cellar: :any_skip_relocation, all: "e7d351ce49d6956f7096cdbabb9a5b87e4242cb781e7231c4b228ca1f2377b51"
   end
 
   depends_on "python@3.13"

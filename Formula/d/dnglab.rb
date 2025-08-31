@@ -11,6 +11,7 @@ class Dnglab < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "156a083c9ebb78650ac6e7433297500c36ed4ad5d9f6c2fa47f6addf5e520942"
     sha256 cellar: :any_skip_relocation, sonoma:        "87090195be4c7ed7b6208ef0ec993811384ddd5672fdd640409d41a653fe5fb9"
     sha256 cellar: :any_skip_relocation, ventura:       "cbf1fee7f7aac51b50b40906c4810bb211927af587b201977af9cc8118197922"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6200689f2e64a2442a841db5a2a59e40529d76ac4c7febf240c050e1607999e6"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "509248fe57abfefa18c941b6fac42e28e5682ac0a31c79c81ddc704a53dbb394"
   end
 

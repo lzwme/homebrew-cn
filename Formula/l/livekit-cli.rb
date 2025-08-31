@@ -1,18 +1,18 @@
 class LivekitCli < Formula
   desc "Command-line interface to LiveKit"
   homepage "https://livekit.io"
-  url "https://ghfast.top/https://github.com/livekit/livekit-cli/archive/refs/tags/v2.5.3.tar.gz"
-  sha256 "0829509fd0f1e92c65249959c53ab65a406e76f88a04f21347323072bc0118dc"
+  url "https://ghfast.top/https://github.com/livekit/livekit-cli/archive/refs/tags/v2.5.5.tar.gz"
+  sha256 "9ccbbda99197b8e8e7518c460f626e80754c9272530d1a7778138b0516638e0d"
   license "Apache-2.0"
   head "https://github.com/livekit/livekit-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fbc73594063d280231ed6f4fe4996b09790df0dcb2090668445ac455b512706b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2a3736e7d0d4cf6798152e2c28bfd9634aff201cf7bc54dcc096d6b43585e00d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "8e8165bed960d0f6ce23285559fe918dc1189f84fc5d0fec7dd48e9d2e5f5d4f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c192a33a25e074b0492cbd0a50d0afd9c815cc84720c4184fa4381e52b7b85e6"
-    sha256 cellar: :any_skip_relocation, ventura:       "041d170500a0e964e4f1d00e1cd775ae454803d37309846747666af198c5c0a3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "300c877f3fdac46dbda0324c3f7bd5e7de2b1fb64fa0c751a7eace2e9d5899f2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "062bccf6376cb73190d189bacf78e7c09c625c32cc6c6e50cb79d8a08d53e5f6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ca0a7ace358b0572386d06f76d814f3294b541740e32f24663a6cd9640b4ca95"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "cefaae90889398181aa47941c1fd3b3e9c4e6b145bbc55f00996067790597c3e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d7ba8fda1a1ca077dba15380e82a7b3c9b5196fc974b476d9987ecab88594c21"
+    sha256 cellar: :any_skip_relocation, ventura:       "a14d04a88fc44e1af7942e4cf4e88ec7b53215d47fe4c07b6a89c34e4d3dda1a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "35a5299960075158141529d664edd206de5ad685c72a578edddfb833df2694e3"
   end
 
   depends_on "go" => :build

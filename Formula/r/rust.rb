@@ -2,7 +2,7 @@ class Rust < Formula
   desc "Safe, concurrent, practical language"
   homepage "https://www.rust-lang.org/"
   license any_of: ["Apache-2.0", "MIT"]
-  revision 1
+  revision 2
 
   stable do
     url "https://static.rust-lang.org/dist/rustc-1.89.0-src.tar.gz"
@@ -16,13 +16,13 @@ class Rust < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "9642138cc31f2fe2cc2532c77898f2fa85685c3f351e3d642a8df49c0e103a60"
-    sha256 cellar: :any,                 arm64_sonoma:  "23a6d2569d94ab0dbd2c4fba0e78e8c7e9a9ee8679f750d5e40cb48fbd8d4aac"
-    sha256 cellar: :any,                 arm64_ventura: "79f9adfb4d5cd3986dcad18518c6f7fe7bf24178890616b6a5b293ee12aea9ca"
-    sha256 cellar: :any,                 sonoma:        "685a8652489ba9dd8e9cf06d1be86334066058f9505ceb84ccd272997ea84cf5"
-    sha256 cellar: :any,                 ventura:       "6d62121dd08d01220f5d80060447a4c565f92f6a47e04151ff27596b0baf472a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cd050e42618c0a38013d1aa322d7e7896e80edbb66a3b51a173fa3d2d3da2550"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "178586a6f2273dd5f953153075261dba1ad6c3695d9238cd5171f98e679d9e67"
+    sha256 cellar: :any,                 arm64_sequoia: "8988880d5519ccbad2f8d4195e6b10b573b23644193ff7f247dff00814ef3b7b"
+    sha256 cellar: :any,                 arm64_sonoma:  "89895e5bcbff0ea562cfca738c6bd76c6510222d072dcaf70e81dadf08fe15fe"
+    sha256 cellar: :any,                 arm64_ventura: "6295c25c66d8ca5922596ee299e489417d6795be3c0a090bc0a4fd09487dc941"
+    sha256 cellar: :any,                 sonoma:        "4ecc32ddf37cf27abb96584e8e44342795302eff52f578146057c2af3d583ef9"
+    sha256 cellar: :any,                 ventura:       "b03d69b976b4cae4b66da008ba282bace32a4f224617979ff3d5c830e175c2cc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "65e4e3f9a25338bec5097e85712ce1a7a473f11b39a06dd79d9ae6b2ea681f1a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ffb7d70528c835532b387211b2133e95c13c22c5e06f2f10989f0b9bbfea76bd"
   end
 
   head do
@@ -35,7 +35,9 @@ class Rust < Formula
 
   depends_on "libgit2"
   depends_on "libssh2"
-  depends_on "llvm"
+  # Don't bump to LLVM 21 until this is fixed:
+  # https://github.com/llvm/llvm-project/issues/155998
+  depends_on "llvm@20"
   depends_on macos: :sierra
   depends_on "openssl@3"
   depends_on "pkgconf"
@@ -124,7 +126,7 @@ class Rust < Formula
   end
 
   def llvm
-    Formula["llvm"]
+    Formula["llvm@20"]
   end
 
   def install

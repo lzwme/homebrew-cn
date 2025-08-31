@@ -104,11 +104,15 @@ class Pytorch < Formula
     # Avoid building AVX512 code
     inreplace "cmake/Modules/FindAVX.cmake", /^CHECK_SSE\(CXX "AVX512"/, "#\\0"
 
+    # Avoid bundling libomp
+    inreplace "setup.py", /^(\s*)self\._embed_libomp\(\)$/, "\\1pass"
+
     ENV["ATEN_NO_TEST"] = "ON"
     ENV["BLAS"] = "OpenBLAS"
     ENV["BUILD_CUSTOM_PROTOBUF"] = "OFF"
     ENV["BUILD_PYTHON"] = "ON"
     ENV["BUILD_TEST"] = "OFF"
+    ENV["OpenBLAS_HOME"] = Formula["openblas"].opt_prefix
     ENV["PYTHON_EXECUTABLE"] = which(python3)
     ENV["PYTORCH_BUILD_VERSION"] = version.to_s
     ENV["PYTORCH_BUILD_NUMBER"] = "1"
