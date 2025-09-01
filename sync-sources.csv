@@ -786,6 +786,7 @@ Homebrew-homebrew-core/Formula/c/cargo-edit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cargo-expand.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cargo-flamegraph.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cargo-fuzz.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/c/cargo-geiger.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cargo-generate.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cargo-hack.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cargo-instruments.rb, Homebrew/homebrew-core, 1
@@ -2478,6 +2479,7 @@ Homebrew-homebrew-core/Formula/g/gnmic.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gnome-autoar.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gnome-builder.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gnome-online-accounts.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/g/gnome-papers.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gnome-recipes.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gnome-themes-extra.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gnu-apl.rb, Homebrew/homebrew-core, 0
@@ -3558,7 +3560,7 @@ Homebrew-homebrew-core/Formula/l/lilypond.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lima-additional-guestagents.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lima.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/limesuite.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/l/limine.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/l/limine.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/link-grammar.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/linkerd.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/linklint.rb, Homebrew/homebrew-core, 0
@@ -8557,6 +8559,7 @@ Homebrew-homebrew-cask/Casks/c/ckan-app.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/ckb-next.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/clamxav.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/clariti.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/c/clash-party.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/clash-verge-rev.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/classicftp.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/classroom-mode-for-minecraft.rb, Homebrew/homebrew-cask, 0
@@ -12196,6 +12199,7 @@ Homebrew-homebrew-cask/Casks/h/horndis.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/h/horos.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/h/hostsx.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/h/hot.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/h/hotovo-aider-desk.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/h/hotswitch.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/h/houdahspot.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/h/hovrly.rb, Homebrew/homebrew-cask, 1
@@ -12993,7 +12997,6 @@ Homebrew-homebrew-cask/Casks/m/midikeys.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/miditrail.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/midiview.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mighty-mike.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/m/mihomo-party.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/miktex-console.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/milanote.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/milkman.rb, Homebrew/homebrew-cask, 1

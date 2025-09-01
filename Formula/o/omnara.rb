@@ -3,18 +3,18 @@ class Omnara < Formula
 
   desc "Talk to Your AI Agents from Anywhere"
   homepage "https://omnara.com/"
-  url "https://files.pythonhosted.org/packages/28/d1/a40297ea2eba613782c00c12f55fae7f6de35bc62f38f0b9b32861c328a7/omnara-1.6.1.tar.gz"
-  sha256 "2b184d856b87903ec093a4c26b9aaea37760f2fe77b9b954d39e3156c305fd56"
+  url "https://files.pythonhosted.org/packages/60/2b/d96091b23de24dd609b67964bc1740b75a31c80077cd9aa1a96f33614279/omnara-1.6.2.tar.gz"
+  sha256 "488b281f50c43cfdb4fd8abdacfc186fd11d3669c03e0e486cf374d6523d3151"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "11b8c0b3ce34743a0005026d821b062033b0c79730ec85d395aec0f78a8ecb8e"
-    sha256 cellar: :any,                 arm64_sonoma:  "ad9714d9fa0cd2327ca8f23d7f6f0eaceb596d2e15376e610d9bb37995ef0783"
-    sha256 cellar: :any,                 arm64_ventura: "c00d031ec2dced403fdcc17dc95229d1dc7103472c2b9c33e1cf45b9298c1346"
-    sha256 cellar: :any,                 sonoma:        "74289c427a5263c121580c792f0ff0e3f597b655fc74f043054e732ecf89ae57"
-    sha256 cellar: :any,                 ventura:       "3a3bb745617f66ec652db003781b09fe4265692828731b9f74387bc936367402"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "485ba404d07a1de32d52c29beb2d698608a254003f84ca2734e215d8aef8a9e0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "775cb88b998dfcda3b790f1ff11b80bc4ea540e00a72728fe4b68032a0e9e3dc"
+    sha256 cellar: :any,                 arm64_sequoia: "6be59504d1da15183917cb17221c99249c9dca1e6a77d498478037a6b1c0de7c"
+    sha256 cellar: :any,                 arm64_sonoma:  "4347e5c203d4047a2e801b3bd27f85d0d792478b3f1a78b000fe955524fc967b"
+    sha256 cellar: :any,                 arm64_ventura: "05eb8d1e2305facfd7fbf24150b670216df2db49daf33f9a35c4cfc7194f79ac"
+    sha256 cellar: :any,                 sonoma:        "db75ca799ac610a22e34ec1a38e36e0b5cb687206b52431334db87e105128137"
+    sha256 cellar: :any,                 ventura:       "8a64fd09f7bbebf73aee677e0432a7be9d6d1408004ac34f6284ad604a06ce70"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9fc4e06ff07bdd8f5d9584ffc88f3b1b883c59f8203f095142cd6ac6f97cdf58"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5fdb72ddb682b9f426c27b0c4a4adf14e4c3a26dec4bffc6c6bbf2092381f9af"
   end
 
   depends_on "rust" => :build # for pydantic-core
@@ -74,8 +74,13 @@ class Omnara < Formula
   end
 
   resource "cyclopts" do
-    url "https://files.pythonhosted.org/packages/40/8b/87b309117bb0892233d279dc402603c1d44c13912baf54d0a9eb8d6205ce/cyclopts-3.23.0.tar.gz"
-    sha256 "e8e28386b600c12a6db8916f2191bfdb4518260fbbceb16177f0fecae7ac7996"
+    url "https://files.pythonhosted.org/packages/ea/7a/28b63c43d4c17d6587abcfef648841d39543158bcc47b5d40a03b8831f7a/cyclopts-3.23.1.tar.gz"
+    sha256 "ca6a5e9b326caf156d79f3932e2f88b95629e59fd371c0b3a89732b7619edacb"
+  end
+
+  resource "distro" do
+    url "https://files.pythonhosted.org/packages/fc/f8/98eea607f65de6527f8a2e8885fc8015d3e6f5775df186e443e0964a11c3/distro-1.9.0.tar.gz"
+    sha256 "2fa77c6fd8940f116ee1d6b94a2f90b13b5ea8d019b98bc8bafdcabcdd9bdbed"
   end
 
   resource "dnspython" do
@@ -109,8 +114,8 @@ class Omnara < Formula
   end
 
   resource "fastmcp" do
-    url "https://files.pythonhosted.org/packages/06/80/13aec687ec21727b0fe6d26c6fe2febb33ae24e24c980929a706db3a8bc2/fastmcp-2.11.3.tar.gz"
-    sha256 "e8e3834a3e0b513712b8e63a6f0d4cbe19093459a1da3f7fbf8ef2810cfd34e3"
+    url "https://files.pythonhosted.org/packages/60/b0/c3b6521e14d284e49729826f6add9ea3af7f35425d7de29727c08545d1c8/fastmcp-2.12.0.tar.gz"
+    sha256 "c7d6ec0fe3fa8d10061d08b40ebf6a4f916034a47ff3188dfd81c25e143ac18e"
   end
 
   resource "frozenlist" do
@@ -146,6 +151,11 @@ class Omnara < Formula
   resource "isodate" do
     url "https://files.pythonhosted.org/packages/54/4d/e940025e2ce31a8ce1202635910747e5a87cc3a6a6bb2d00973375014749/isodate-0.7.2.tar.gz"
     sha256 "4cd1aa0f43ca76f4a6c6c0292a85f40b35ec2e43e315b59f06e6d32171a953e6"
+  end
+
+  resource "jiter" do
+    url "https://files.pythonhosted.org/packages/ee/9d/ae7ddb4b8ab3fb1b51faf4deb36cb48a4fbbd7cb36bad6a5fca4741306f7/jiter-0.10.0.tar.gz"
+    sha256 "07a7142c38aacc85194391108dc91b5b57093c978a9932bd86a36862759d9500"
   end
 
   resource "jsonschema" do
@@ -196,6 +206,11 @@ class Omnara < Formula
   resource "multidict" do
     url "https://files.pythonhosted.org/packages/69/7f/0652e6ed47ab288e3756ea9c0df8b14950781184d4bd7883f4d87dd41245/multidict-6.6.4.tar.gz"
     sha256 "d2d4e4787672911b48350df02ed3fa3fffdc2f2e8ca06dd6afdf34189b76a9dd"
+  end
+
+  resource "openai" do
+    url "https://files.pythonhosted.org/packages/07/55/da5598ed5c6bdd9939633854049cddc5cbac0da938dfcfcb3c6b119c16c0/openai-1.102.0.tar.gz"
+    sha256 "2e0153bcd64a6523071e90211cbfca1f2bbc5ceedd0993ba932a5869f93b7fc9"
   end
 
   resource "openapi-core" do
@@ -321,6 +336,11 @@ class Omnara < Formula
   resource "starlette" do
     url "https://files.pythonhosted.org/packages/15/b9/cc3017f9a9c9b6e27c5106cc10cc7904653c3eec0729793aec10479dd669/starlette-0.47.3.tar.gz"
     sha256 "6bc94f839cc176c4858894f1f8908f0ab79dfec1a6b8402f6da9be26ebea52e9"
+  end
+
+  resource "tqdm" do
+    url "https://files.pythonhosted.org/packages/a8/4b/29b4ef32e036bb34e4ab51796dd745cdba7ed47ad142a9f4a1eb8e0c744d/tqdm-4.67.1.tar.gz"
+    sha256 "f8aef9c52c08c13a65f30ea34f4e5aac3fd1a34959879d7e59e63027286627f2"
   end
 
   resource "typing-extensions" do

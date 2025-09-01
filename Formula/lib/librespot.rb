@@ -1,19 +1,19 @@
 class Librespot < Formula
   desc "Open Source Spotify client library"
   homepage "https://github.com/librespot-org/librespot"
-  url "https://ghfast.top/https://github.com/librespot-org/librespot/archive/refs/tags/v0.7.0.tar.gz"
-  sha256 "61f90b661ba883890a7ed8fe3926372b99252abad11dcacf94f2c89df21b7746"
+  url "https://ghfast.top/https://github.com/librespot-org/librespot/archive/refs/tags/v0.7.1.tar.gz"
+  sha256 "1d09cf7a9b05663bc74806dc729dba818f2f1108728b60ccaac42bb54bf46864"
   license "MIT"
   head "https://github.com/librespot-org/librespot.git", branch: "dev"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a56d72b304c7af4c517ef7420d065940ecee98016ddb5622cf8092de869f5a57"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9c42e31dfda749fa46a03a188fe36eb745fd4da81b140d37a2c68be150ed2efd"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "35b53bff4baa418d7cbdc96207afd6aa0287f107bcc578e293a4e4adf07acc7f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f1571710917e6db676739d93655d8969de847734a291744fcae0ace92b44d491"
-    sha256 cellar: :any_skip_relocation, ventura:       "e0ad6323294aeb8b9ae38e72a2edf5a2fe47b6b676bdd09bbfb4d1c87c942b5a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "07e1e10637fbcdc65a0f358ef4afd94f1c650b8dd303fe6b8cc507f29617df2c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0765a0ce68b78e4ea45febd341b2a0742acad1cbfdc3cd095f03bfc3d6820a65"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "95b5b73657b6c6319da0b199ae7e509e8fdd6835e41af52e06537635bb0bbf78"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5283db5fd6dd968215ed62f6385c2301a310fab98c20891f90dec0b53c35dff3"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "af56224e37d14391051f7f5710e00c76170b099bb50f72a341f56415af650430"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b519d30ae4d8ce5efd85a20a0e2d9f427bc88c4e4d605e838d78b4c8a3f040b6"
+    sha256 cellar: :any_skip_relocation, ventura:       "bae91410433aa1022a7ed80b577992376437255fe1878270f6d69121a9adf238"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "354c4b78c33bb7af9980db598767ce8ef340beeaca9d31a275bc948aacad7e18"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f33d462aade542a4e271125e9f4ec17f2137bcf303ab85acb90fdb8a9f205329"
   end
 
   depends_on "pkgconf" => :build

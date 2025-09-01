@@ -1,8 +1,8 @@
 class Exiv2 < Formula
   desc "EXIF and IPTC metadata manipulation library and tools"
   homepage "https://exiv2.org/"
-  url "https://ghfast.top/https://github.com/Exiv2/exiv2/archive/refs/tags/v0.28.6.tar.gz"
-  sha256 "9d481117b97afa5324bf3ea0ad79f5c2939ae94ba0d0f5f8eb23aee16d9ec58d"
+  url "https://ghfast.top/https://github.com/Exiv2/exiv2/archive/refs/tags/v0.28.7.tar.gz"
+  sha256 "5e292b02614dbc0cee40fe1116db2f42f63ef6b2ba430c77b614e17b8d61a638"
   license "GPL-2.0-or-later"
   head "https://github.com/Exiv2/exiv2.git", branch: "main"
 
@@ -12,13 +12,13 @@ class Exiv2 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "9f537afa528f07f59e211328782bd179ab600c32638fc84116183f77641e271b"
-    sha256 cellar: :any,                 arm64_sonoma:  "8a4ec3e4f1f6f4d1922e80478694249f600cc505cb4439cea7a672b2205b3869"
-    sha256 cellar: :any,                 arm64_ventura: "cb7eabc13fd1075bad1a45e12e68e052bca0debedb02a96fe226f3b79f4bbc02"
-    sha256 cellar: :any,                 sonoma:        "82912857ee9f3a4e30629ae5cdca1e97cb7cd3bcce64c24e4aaa91a5da88cdc0"
-    sha256 cellar: :any,                 ventura:       "c3f4889ea710f700d52c604bec981a61be88be57955cc5ef7116e94345ce9836"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "92ea2a8e6084d4cdb1c6e37fb332ba75d4ad645342d1ff1ee10ae57ac69c77e0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c36dbfa0937c5874264157be32afd01118275e581e056ed4a1b79115900aee33"
+    sha256 cellar: :any,                 arm64_sequoia: "786c1c6814e9a66bd529beab979c4561325f5e0ea86174a606c4d00df43bc683"
+    sha256 cellar: :any,                 arm64_sonoma:  "169a123782431874518ab22cb1cbdc24e2404f4c3d3baf3ebaface5225c91d12"
+    sha256 cellar: :any,                 arm64_ventura: "71a967bd20ea65f3520eb896c1cc6fbc66827d3e9bfa6f2636cc3c51e7de80bc"
+    sha256 cellar: :any,                 sonoma:        "436dd0a3b4727b40598837678d33447daa24953925c5d1993df87f9f449d6134"
+    sha256 cellar: :any,                 ventura:       "78647feacc19846fac0a776338881ccc42700601983079e0b177666c9799b591"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "47f02134c7bd42aac15f5de799fdfe664a2921236f7652b7ab2302335ca558ca"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "002658250128994bda7ec81297130a268c86c01c465182794ee6faace4c629e8"
   end
 
   depends_on "cmake" => :build

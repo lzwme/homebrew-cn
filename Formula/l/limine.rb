@@ -1,8 +1,8 @@
 class Limine < Formula
   desc "Modern, advanced, portable, multiprotocol bootloader and boot manager"
   homepage "https://limine-bootloader.org"
-  url "https://ghfast.top/https://github.com/limine-bootloader/limine/releases/download/v9.6.1/limine-9.6.1.tar.gz"
-  sha256 "fc601e671d9286d0be568a8d3bf481f07e242cb81d2c073f440195c45e8899b7"
+  url "https://codeberg.org/Limine/Limine/releases/download/v9.6.5/limine-9.6.5.tar.gz"
+  sha256 "777b5e156e9e48a1be54859bb8eb396bd7f4731bf616cb1ea647237e57bb126b"
   license "BSD-2-Clause"
 
   livecheck do
@@ -11,13 +11,13 @@ class Limine < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "caf878d72bbf94b1a28fcddc6b6ba872706a2caeecc0893857c7d5dcecacbbc9"
-    sha256 arm64_sonoma:  "83efc6bf1d9e157ec60c0f44d3f35bd2a8cc1154522e18bf684882d6ca7c7750"
-    sha256 arm64_ventura: "796635d212764907c095db379d794c07d1cc7df053cae58d430a9772edce2bcc"
-    sha256 sonoma:        "77fcb7dcaf579f91b338e5f691e96b6d26e4dada722db7470810678a562534a9"
-    sha256 ventura:       "63d866853e3a42e81cc65011730e9f378fa29343ebb32acd6f8d43d060c7da26"
-    sha256 arm64_linux:   "dc500f5149014d2f5d14b53e33865691f583bacb78e62c2397ed306f46dddd1c"
-    sha256 x86_64_linux:  "1a428b6b0900945e3c10b4668a1a06c0c03dc97b477e7049385fe08aafc85391"
+    sha256 arm64_sequoia: "1f5f049ca75bb1d24570fc45c98e547331feea5d2535c9b6c900c79142918c22"
+    sha256 arm64_sonoma:  "8ad67e5ce141e5514275ae764bfa3eaf95824199a05b10dc882b6743789501db"
+    sha256 arm64_ventura: "638e220de5e6abe68b6c19d87c01da4691f46335b1e6f4d99ce974c26eb823d1"
+    sha256 sonoma:        "d2afd9fe4e0ca34735a44dfdef39a98e477b1b36fb3c7b2e70102e2c995e64b5"
+    sha256 ventura:       "ab0ab1a974c10c2c37f97163026234113e36fa417b7aa28f88f8b01220aa1062"
+    sha256 arm64_linux:   "7cdcdced9d4c1e14498fbbcffc921579709285ac0cc8cb6a6c07d81cbb104ef0"
+    sha256 x86_64_linux:  "e38b0a8039319ad8ff31a888089fa17bf3705f6694409064fefe26968f4715fb"
   end
 
   # The reason to have LLVM and LLD as dependencies here is because building the
@@ -36,11 +36,11 @@ class Limine < Formula
     # build system's defaults for the target tools.
     llvm_bins = Formula["llvm"].opt_bin
 
-    system "./configure", *std_configure_args, "--enable-all"
-    system "make",
+    system "./configure", *std_configure_args, "--enable-all",
            "TOOLCHAIN_FOR_TARGET=#{llvm_bins}/llvm-",
            "CC_FOR_TARGET=#{llvm_bins}/clang",
            "LD_FOR_TARGET=ld.lld"
+    system "make"
     system "make", "install"
   end
 

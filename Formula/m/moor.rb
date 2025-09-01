@@ -1,21 +1,21 @@
 class Moor < Formula
   desc "Nice to use pager for humans"
   homepage "https://github.com/walles/moor"
-  url "https://ghfast.top/https://github.com/walles/moor/archive/refs/tags/v2.0.5.tar.gz"
-  sha256 "e2282fc61ecd50fc662e900dab17713fac57498bd21bfbb5e62d7e228297ecd9"
+  url "https://ghfast.top/https://github.com/walles/moor/archive/refs/tags/v2.1.0.tar.gz"
+  sha256 "3c09cd7a22524c77d6b7c5564688f2c8e446319eef27cbdfdcbe810a14e2ba0a"
   license "BSD-2-Clause"
   head "https://github.com/walles/moor.git", branch: "master"
 
   no_autobump! because: :bumped_by_upstream
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8d86130042d47f5b4c0eb843b4c74c7de717375c332ed7335538cb3373eb144b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8d86130042d47f5b4c0eb843b4c74c7de717375c332ed7335538cb3373eb144b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "8d86130042d47f5b4c0eb843b4c74c7de717375c332ed7335538cb3373eb144b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "45682912d9fad0082005eb67cb5363c14e469f1e5c48000b428914256fa315f0"
-    sha256 cellar: :any_skip_relocation, ventura:       "45682912d9fad0082005eb67cb5363c14e469f1e5c48000b428914256fa315f0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c4ce145a061b1719e45fd3cdc3406f5acbaf8bb578f1772cf0a30155defa8745"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b692935e43fc0d7c1f3592db024a7b99d3546c528ff57914a153d1e706fd5caf"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7b4752be3c9a58135fd052dce409a570a835c83f2e45f4b87e04085fe7f4a087"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7b4752be3c9a58135fd052dce409a570a835c83f2e45f4b87e04085fe7f4a087"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "7b4752be3c9a58135fd052dce409a570a835c83f2e45f4b87e04085fe7f4a087"
+    sha256 cellar: :any_skip_relocation, sonoma:        "27d65342aa46673b6ab7ba4acbe48267aca0d605b51be968e652797987c64e3c"
+    sha256 cellar: :any_skip_relocation, ventura:       "27d65342aa46673b6ab7ba4acbe48267aca0d605b51be968e652797987c64e3c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "31c2b9def216e14ec75bb18c60a1feb32b43a325362e3f65ea7b30083ea8f8ab"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3960d082a198d986ab8cdf58df0d2ece9ebd39518a1cb70a83b66c207dcadd88"
   end
 
   depends_on "go" => :build

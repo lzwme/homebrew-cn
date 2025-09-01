@@ -3,14 +3,13 @@ class Snakefmt < Formula
 
   desc "Snakemake code formatter"
   homepage "https://github.com/snakemake/snakefmt/"
-  url "https://files.pythonhosted.org/packages/66/da/0411e11ff46a9706539b1215ecf4afa3e5bc2da60e4caa8cc23177044e6a/snakefmt-0.11.0.tar.gz"
-  sha256 "afc3b92e103cfda80fff7e77f357f6cc1dab742272ee76342ba342f30e721f30"
+  url "https://files.pythonhosted.org/packages/26/08/34fb07cadad1e9598031522e641ba0da3145cc8f70891b77790d08554ded/snakefmt-0.11.1.tar.gz"
+  sha256 "2c20d40b4368bef20ad704bdf2914eae1605176248fa4252c8f8c1118c60941b"
   license "MIT"
   head "https://github.com/snakemake/snakefmt.git", branch: "master"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, all: "5c94368a6d353ffc50d555fe61ff9b22f5fa7b9340ec5d41b1101615b2a4d056"
+    sha256 cellar: :any_skip_relocation, all: "96c0f5cd21c49768cfedc3e5bcfea7bc792cdcafc8fea6a38a58e231b1978426"
   end
 
   depends_on "python@3.13"
@@ -43,11 +42,6 @@ class Snakefmt < Formula
   resource "platformdirs" do
     url "https://files.pythonhosted.org/packages/23/e8/21db9c9987b0e728855bd57bff6984f67952bea55d6f75e055c46b5383e8/platformdirs-4.4.0.tar.gz"
     sha256 "ca753cf4d81dc309bc67b0ea38fd15dc97bc30ce419a7f58d13eb3bf14c4febf"
-  end
-
-  resource "toml" do
-    url "https://files.pythonhosted.org/packages/be/ba/1f744cdc819428fc6b5084ec34d9b30660f6f9daaf70eead706e3203ec3c/toml-0.10.2.tar.gz"
-    sha256 "b3bda1d108d5dd99f4a20d24d9c348e91c4db7ab1b749200bded2f839ccbe68f"
   end
 
   def install

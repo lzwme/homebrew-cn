@@ -5,19 +5,19 @@ class Icloudpd < Formula
   homepage "https://github.com/icloud-photos-downloader/icloud_photos_downloader"
   # We use a git checkout as scripts/patch_version runs git commands to update SHA
   url "https://github.com/icloud-photos-downloader/icloud_photos_downloader.git",
-      tag:      "v1.32.0",
-      revision: "9519784c2019ca154f3a43a50060af1cdaf1a605"
+      tag:      "v1.32.1",
+      revision: "e47fe6b289640043e66e579bf69e1cc690e475f0"
   license "MIT"
   head "https://github.com/icloud-photos-downloader/icloud_photos_downloader.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3a49bd77a55d14a2ec272c35dba953670fa3db7daa2135f2737335931190f38c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e5004ac18e2d44245265c0003780f67d3433da06f71e19d00ad105d50b9e1d66"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "8c5ea871916f6c2c90cdd4052f1a22584339f5b41d592cda7ccdd5932381cbe6"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f586386db58debe55fbfe4ba182c1ddbcb982d801ada02129c008e65d6e8caf0"
-    sha256 cellar: :any_skip_relocation, ventura:       "349cd16f3bc2f6ba87599a146a8eb76c7982e6335e9225513dadb941239195a3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "77498d529e3323bf7211ea28e1dc5a11ac4f10fcf6b7fd4d323adae9b94a563a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "980332e48976f41fbafc0601b1f330c1f9847ce1b424a10a5c07dfa142d70e63"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "58747e0270c3b5054fb708c8130d49d1a5fdb54a903d3c4962a74b7f258b9075"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "030ef6be23f2729c610946b834cf129a9506e5a5bf163165c64f1566cfebb7b2"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "d012d0e1dce4310d6fbf294c4452a3319c3926fb167e926aede428c5ffd35047"
+    sha256 cellar: :any_skip_relocation, sonoma:        "19104b56c2bd155dbe288ed1b3f65d63ece149f3ab9109277e029ab02054cc1d"
+    sha256 cellar: :any_skip_relocation, ventura:       "2341c5e4e7f22df5cd8061e3d5afd08c352f7ab1808ab28d025285451dfe0774"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7296b6843b1658788a9812a1c6af46511a38ea216934ced979fce5f01250e668"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "54ebb61e6fc8f180bd05c676a71da59da783be91a5b5266c77d127e6ffde02a5"
   end
 
   depends_on "certifi"
@@ -100,11 +100,6 @@ class Icloudpd < Formula
   resource "piexif" do
     url "https://files.pythonhosted.org/packages/fa/84/a3f25cec7d0922bf60be8000c9739d28d24b6896717f44cc4cfb843b1487/piexif-1.1.3.zip"
     sha256 "83cb35c606bf3a1ea1a8f0a25cb42cf17e24353fd82e87ae3884e74a302a5f1b"
-  end
-
-  resource "python-dateutil" do
-    url "https://files.pythonhosted.org/packages/66/c0/0c8b6ad9f17a802ee498c46e004a0eb49bc148f2fd230864601a86dcf6db/python-dateutil-2.9.0.post0.tar.gz"
-    sha256 "37dd54208da7e1cd875388217d5e00ebd4179249f90fb72437e91a35459a0ad3"
   end
 
   resource "pytz" do

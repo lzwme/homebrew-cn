@@ -6,16 +6,16 @@ class Gexiv2 < Formula
   url "https://download.gnome.org/sources/gexiv2/0.14/gexiv2-0.14.6.tar.xz"
   sha256 "606c28aaae7b1f3ef5c8eabe5e7dffd7c5a1c866d25b7671fb847fe287a72b8b"
   license "GPL-2.0-or-later"
-  revision 1
+  revision 2
 
   bottle do
-    sha256 cellar: :any, arm64_sequoia: "01cfd67bd880e207ba998a0dc1e43586a722da00d78da421ff4207468de58313"
-    sha256 cellar: :any, arm64_sonoma:  "2a4dcaddbd5c21e6289eaf3b777c3bbd30a72e190efaaf074e59c42cee8c7986"
-    sha256 cellar: :any, arm64_ventura: "ec5fe692958fb222140c1e467189ad659fb89a371fc5a92d570d1caacf2c0871"
-    sha256 cellar: :any, sonoma:        "4f4f86c2fbd0844e47febbd013085105c29a0efd570fcb60b2108c22fac6be62"
-    sha256 cellar: :any, ventura:       "8143bbdca810fbdb21a385a782ada429f4e089e16ced96561ec27ba6ee45397c"
-    sha256               arm64_linux:   "638d60959198dc60f9987d7d86707b407d53e93c082ce149cd3d5f6222fb9c83"
-    sha256               x86_64_linux:  "ba21188d37df77f06e4aa6cf810a2161dbd8f7e66ddb65d4f53885564bff04e6"
+    sha256 cellar: :any, arm64_sequoia: "ae51c1b56109208f358e343b30e5c6231e91c67c7b959f271892167eade57c4c"
+    sha256 cellar: :any, arm64_sonoma:  "75dfdacca4ec507937e922bd122f72a18241afe1a9fbbbf79008397426beab1a"
+    sha256 cellar: :any, arm64_ventura: "d69586756a37baad669f6f5997a63240480cb0e9605974110a8e18516b9c44c9"
+    sha256 cellar: :any, sonoma:        "40cb42460feab01cfe2fe71eecb4acdcf13bf2392b954db3fac68f6f2cb0bc57"
+    sha256 cellar: :any, ventura:       "efe79561c6cf589730b5e172bee34b4be91dba61f639c7ecb2c44d155d8ec7d8"
+    sha256               arm64_linux:   "f977d9a3fb4262fe81153ed467be05b5f31f84cfcf80f2cab6a447ce25ede135"
+    sha256               x86_64_linux:  "bbff72e50cf37058862c9292a4b660da7f2846421c00d20665460afe26b6bf3a"
   end
 
   depends_on "gobject-introspection" => :build

@@ -6,12 +6,12 @@ class Colmap < Formula
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any, arm64_sequoia: "7b3c667aae2196f943a0a38b4e18d2937289b839a18e837a1680de7ddf895ba1"
-    sha256 cellar: :any, arm64_sonoma:  "e01ca7f2a5658c4061a09731d80e3c2cda622b9495ded534b8071bade6c34022"
-    sha256 cellar: :any, arm64_ventura: "7d7b65165b7094bd9dcfbbc8b0231a8bcb13c74fb7d8fb593a219cd7fdb2e726"
-    sha256 cellar: :any, sonoma:        "42f00584569cfdd4bbc5f3294b44efe9b0ee16bd1343f823c46b1377005ee65b"
-    sha256 cellar: :any, ventura:       "75c0342765efb1b876864ec5953e5bec4c94ca34a0987bc6f8a62a9844ab6cf7"
-    sha256               x86_64_linux:  "90543c444a6448cea0f866bc9ac4df3e1c0da551f7e52445e1a7adb30d73ec02"
+    rebuild 1
+    sha256 cellar: :any, arm64_sonoma:  "f30b343b6a57e5455a19b70b1d50d493a1466b48f1b64acbf24602e07059e335"
+    sha256 cellar: :any, arm64_ventura: "32e1527cf7ec53e989b9d1fca76bdbf57544679044971b0e56a1a9ddd523822b"
+    sha256 cellar: :any, sonoma:        "9c6e639171b656295978741177bd1f09c792c27721b631b72833bf6c4912ca30"
+    sha256 cellar: :any, ventura:       "009de8b69f339954254259379a70e0da28f96802b40cece12f5d9c5f5d90ab4c"
+    sha256               x86_64_linux:  "8fa780ef4d4efc4abdf829d0afe66a03e1fca6c553a4af158ad05fbc1886d465"
   end
 
   depends_on "cmake" => :build
@@ -29,7 +29,7 @@ class Colmap < Formula
   depends_on "lz4"
   depends_on "metis"
   depends_on "poselib"
-  depends_on "qt@5"
+  depends_on "qt"
   depends_on "suite-sparse"
 
   uses_from_macos "sqlite"
@@ -44,9 +44,13 @@ class Colmap < Formula
     depends_on "mesa"
   end
 
-  def install
-    ENV.append_path "CMAKE_PREFIX_PATH", Formula["qt@5"].prefix
+  # Backport support for Qt6
+  patch do
+    url "https://github.com/colmap/colmap/commit/1625d9e8c97aa8beef0df0c00430c1c3d79190ab.patch?full_index=1"
+    sha256 "146e444bfe7209b046a8a5a9f14acb84bd381295ba7f2cc70a38f768e9137136"
+  end
 
+  def install
     args = %w[
       -DCUDA_ENABLED=OFF
       -DFETCH_POSELIB=OFF
