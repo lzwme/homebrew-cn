@@ -1,8 +1,8 @@
 class Bitrise < Formula
   desc "Command-line automation tool"
   homepage "https://github.com/bitrise-io/bitrise"
-  url "https://ghfast.top/https://github.com/bitrise-io/bitrise/archive/refs/tags/v2.33.2.tar.gz"
-  sha256 "7d6510c5b35e82cf74a50e52287568ff227ac0bc3f486eb604be70913cbcb108"
+  url "https://ghfast.top/https://github.com/bitrise-io/bitrise/archive/refs/tags/v2.34.1.tar.gz"
+  sha256 "71a5c6b93687970d224e57eeb621fa820fcbf838cbfdc81fc8697a2b74483475"
   license "MIT"
   head "https://github.com/bitrise-io/bitrise.git", branch: "master"
 
@@ -12,12 +12,12 @@ class Bitrise < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "91deac1c3ebbd9085e123d9a90666af6303a0129f2a5e6eac7fca6f49ed83fa3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "91deac1c3ebbd9085e123d9a90666af6303a0129f2a5e6eac7fca6f49ed83fa3"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "91deac1c3ebbd9085e123d9a90666af6303a0129f2a5e6eac7fca6f49ed83fa3"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e6db6ef207a11b87750fa86c39a8e85c57c28b940ee3cc026162911c57bc0377"
-    sha256 cellar: :any_skip_relocation, ventura:       "e6db6ef207a11b87750fa86c39a8e85c57c28b940ee3cc026162911c57bc0377"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "90192b0e7e1457a2fcd07905759d43edd69e3ae9e42df79e193d2128cf1bd735"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4814a097ba2d3498ed79909b5e1f4d2f68bee141c7f6563a8c4f71fbc2295db9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4814a097ba2d3498ed79909b5e1f4d2f68bee141c7f6563a8c4f71fbc2295db9"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "4814a097ba2d3498ed79909b5e1f4d2f68bee141c7f6563a8c4f71fbc2295db9"
+    sha256 cellar: :any_skip_relocation, sonoma:        "bbeba2f1a30296acb31bfdc55ea408ac21a2c603e0fc3643191fe22e33cc6c85"
+    sha256 cellar: :any_skip_relocation, ventura:       "bbeba2f1a30296acb31bfdc55ea408ac21a2c603e0fc3643191fe22e33cc6c85"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "84adaab54a7804630489ff48a675b9da0a5659c0f7d41e434a2b2bfa905d9b74"
   end
 
   depends_on "go" => :build

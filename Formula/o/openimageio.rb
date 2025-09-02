@@ -1,11 +1,10 @@
 class Openimageio < Formula
   desc "Library for reading, processing and writing images"
   homepage "https://openimageio.readthedocs.io/en/stable/"
-  url "https://ghfast.top/https://github.com/AcademySoftwareFoundation/OpenImageIO/archive/refs/tags/v3.0.9.1.tar.gz"
-  sha256 "bbc5db069b7d8e4e2fccf994d55a262953057745a5e398e44a2e5235a8736d1d"
+  url "https://ghfast.top/https://github.com/AcademySoftwareFoundation/OpenImageIO/archive/refs/tags/v3.0.10.0.tar.gz"
+  sha256 "c424637af66fc6d04f202156c3f7cf4a5484ccbe07966d3d8a1fde27c7472721"
   license "Apache-2.0"
-  revision 2
-  head "https://github.com/AcademySoftwareFoundation/OpenImageIO.git", branch: "master"
+  head "https://github.com/AcademySoftwareFoundation/OpenImageIO.git", branch: "main"
 
   livecheck do
     url :stable
@@ -14,13 +13,13 @@ class Openimageio < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "824722bf41c2be14bd6b5edb08fdec07f05c8da79e560e7505d94193fd77638a"
-    sha256 cellar: :any,                 arm64_sonoma:  "16adaa221d65f69b2c8ef0e8b4fd92a548f817e2c3bc10a2a07135f57527bdbd"
-    sha256 cellar: :any,                 arm64_ventura: "41e7c2f4e2d26fbcb0dec5ebb7b4a5532c195f134c52cfd5044280bc2d7ba21f"
-    sha256 cellar: :any,                 sonoma:        "6cccd088d46549e5515ef5a217532ef8edb7ddc6828a99d96b159716af96dc18"
-    sha256 cellar: :any,                 ventura:       "8108c099647904dcaa5e2159c7509b893340b39b7d72ca40942ea51df9bdbe22"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ae5fe6c3fc7571dc5d40d057ab6c4096904974314666774c149dce5be3b27f6f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5a5deca8630e4b1f28253507ea0e89291c6bdf87cbc399ebc74b505898681212"
+    sha256 cellar: :any,                 arm64_sequoia: "f2e853b06cd2229638152fe3d560be67d19981aec3791a7a8f4a86dd950a8a4c"
+    sha256 cellar: :any,                 arm64_sonoma:  "0235a03c355da0d577dfe3f21450af5d410bd54fdfde88e668bfed0bce1db850"
+    sha256 cellar: :any,                 arm64_ventura: "252bc775e32164d06ce9de917c94269fdfa68476098a3d867956a1ea89942011"
+    sha256 cellar: :any,                 sonoma:        "77a86bf3cf6fbf81b9143dd05369ca7e02380489c496ceaae12bc3cc431e908d"
+    sha256 cellar: :any,                 ventura:       "069be5bf60b5fe9b2e7ece4a91acf4c3d38aa7978d2d23007160431c06484366"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6ce1b3455ebb3a0aebd4ba76b655d9bb069a56d5a6ec64f89bf12eb334f2fb36"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d781bb61627f8cbf003c178700e124f1b131e0f175e720d76afc78ddba270ead"
   end
 
   depends_on "cmake" => :build

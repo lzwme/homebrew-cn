@@ -1,19 +1,19 @@
 class SpotifyPlayer < Formula
   desc "Command driven spotify player"
   homepage "https://github.com/aome510/spotify-player"
-  url "https://ghfast.top/https://github.com/aome510/spotify-player/archive/refs/tags/v0.20.7.tar.gz"
-  sha256 "8b4c7ec7855fb2af8862a1ca8818307f2befcb00c02e9e5da570b1a5b3b908c1"
+  url "https://ghfast.top/https://github.com/aome510/spotify-player/archive/refs/tags/v0.21.0.tar.gz"
+  sha256 "a1bc03ff6b1788283a38808745098d551f0d86b87a2fffabc61ceaaa17cfa93d"
   license "MIT"
   head "https://github.com/aome510/spotify-player.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "210045e8f863c7d100461219ed45b1c3b0caba980c5eedf8f542aed5c7641083"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bf3659ca36c30fb48d77c3ce6aafe7de790a9d8011f5293b142a11d9552e6db6"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "7004b7e3bbc15dc6b6a561b38b743a3108e54d8a327facaabe4a6b88fb01d39b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "86a343468a6f7404ee0f7d83585a9aa32af3e249185fe816b95fe397b2f472ca"
-    sha256 cellar: :any_skip_relocation, ventura:       "e000b00a505e7b13dea4ca2f25bce54bb8264a0d015ef6286c737b69f89859f8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "700fe9512323c9a1d2b6b8e0960b8a8ff5237d1d4a5dc7c4192590cbd62cf618"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b8ce09c6fba38661139cafe7aeddaf1e3809013f4668232ecc46d18b8d815f7d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "057103d284a60c72ddcf5cee6c4b0689d53bc768422382027a46d6122d64c347"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "105b83108a50ca0b9bb3bbdef8206e486656b05f64bc0d7c2067511e1f727bc1"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "b418acb0b9a81ad5355edadd83b266a836643a9356de18d976b21a420d6cc2e0"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3aa62586443ef835b630d677bb3e786cdf7af82c28537c52afe5b2df5772d411"
+    sha256 cellar: :any_skip_relocation, ventura:       "a235bafd40fcaf89a2aae68affea4a5959323bfa62e76e0911866ce20be194f0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4340851d4ad892a509305e90004d65cbd1c0a8193a48663159f087e5847408c5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "051ea8d82c4bd69ab493650002c1497c29df22ab03491cc17379f4bde4eca429"
   end
 
   depends_on "pkgconf" => :build

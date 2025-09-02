@@ -742,6 +742,7 @@ Homebrew-homebrew-core/Formula/c/caesiumclt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/caf.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cafeobj.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cahute.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/c/cai.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/caire.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cairo.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/cairomm.rb, Homebrew/homebrew-core, 0
@@ -1347,6 +1348,7 @@ Homebrew-homebrew-core/Formula/d/daq.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dar.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/darcs.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/dark-mode.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/d/darker.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/darkhttpd.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/darkice.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/darklua.rb, Homebrew/homebrew-core, 1
@@ -13145,7 +13147,7 @@ Homebrew-homebrew-cask/Casks/m/multimc.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/multipass.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/multipatch.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/multitouch.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/m/multiviewer-for-f1.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/m/multiviewer.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mumble.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/mumble@snapshot.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mumu-x.rb, Homebrew/homebrew-cask, 0
@@ -13402,6 +13404,7 @@ Homebrew-homebrew-cask/Casks/o/opencpn.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/opendnsupdater.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/openemu.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/openemu@experimental.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/o/openforis-collect.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/openframeworks.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/openhv.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/openineditor-lite.rb, Homebrew/homebrew-cask, 1
@@ -15377,7 +15380,6 @@ Homebrew-homebrew-cask/Casks/z/zandronum.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/z/zap.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/z/zappy.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/z/zazu.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/z/zdoom.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/z/zecwallet-lite.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/z/zed.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/z/zed@preview.rb, Homebrew/homebrew-cask, 0

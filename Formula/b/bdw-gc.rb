@@ -1,10 +1,10 @@
 class BdwGc < Formula
   desc "Garbage collector for C and C++"
   homepage "https://www.hboehm.info/gc/"
-  url "https://ghfast.top/https://github.com/ivmai/bdwgc/releases/download/v8.2.8/gc-8.2.8.tar.gz"
+  url "https://ghfast.top/https://github.com/bdwgc/bdwgc/releases/download/v8.2.8/gc-8.2.8.tar.gz"
   sha256 "7649020621cb26325e1fb5c8742590d92fb48ce5c259b502faf7d9fb5dabb160"
   license "MIT"
-  head "https://github.com/ivmai/bdwgc.git", branch: "master"
+  head "https://github.com/bdwgc/bdwgc.git", branch: "master"
 
   livecheck do
     url :stable
@@ -40,13 +40,11 @@ class BdwGc < Formula
                     *args, *std_cmake_args,
                     "-DBUILD_TESTING=ON" # Pass this *after* `std_cmake_args`
     system "cmake", "--build", "build"
-    if OS.linux? || Hardware::CPU.arm? || MacOS.version > :monterey
-      # Fails on 12-x86_64.
-      system "ctest", "--test-dir", "build",
-                      "--parallel", ENV.make_jobs,
-                      "--rerun-failed",
-                      "--output-on-failure"
-    end
+    system "ctest", "--test-dir", "build",
+                    "--parallel", ENV.make_jobs,
+                    "--rerun-failed",
+                    "--output-on-failure",
+                    "--repeat", "until-pass:3"
     system "cmake", "--install", "build"
 
     system "cmake", "-S", ".", "-B", "build-static", "-DBUILD_SHARED_LIBS=OFF", *args, *std_cmake_args
