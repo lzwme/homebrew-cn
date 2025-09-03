@@ -1543,6 +1543,7 @@ Homebrew-homebrew-core/Formula/d/docker-completion.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/docker-compose.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/docker-credential-helper-ecr.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/docker-credential-helper.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/d/docker-debug.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/docker-gen.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/docker-ls.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/docker-machine-driver-vmware.rb, Homebrew/homebrew-core, 0
@@ -2521,6 +2522,7 @@ Homebrew-homebrew-core/Formula/g/go-critic.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/go-feature-flag-relay-proxy.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/go-jira.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/go-jsonnet.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/g/go-librespot.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/go-md2man.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/go-parquet-tools.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/go-passbolt-cli.rb, Homebrew/homebrew-core, 1
@@ -2563,6 +2565,7 @@ Homebrew-homebrew-core/Formula/g/gom.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gomi.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gomodifytags.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gomplate.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/g/gonzo.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/goocanvas.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/goodls.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/google-authenticator-libpam.rb, Homebrew/homebrew-core, 1
@@ -4525,6 +4528,7 @@ Homebrew-homebrew-core/Formula/m/mkdocs-material.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mkdocs.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mkfontscale.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mkhexgrid.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/m/mklittlefs.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mkp224o.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mksh.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mktorrent.rb, Homebrew/homebrew-core, 1
@@ -5050,6 +5054,7 @@ Homebrew-homebrew-core/Formula/o/openal-soft.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/o/openapi-diff.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/openapi-generator.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/o/openapi-tui.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/o/openapi.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/openbao.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/o/openblas.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/opencascade.rb, Homebrew/homebrew-core, 0
@@ -8567,7 +8572,6 @@ Homebrew-homebrew-cask/Casks/c/classicftp.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/classroom-mode-for-minecraft.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/claude-code.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/claude.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/c/claudia.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/clay.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/clean-me.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/cleanapp.rb, Homebrew/homebrew-cask, 0
@@ -13384,6 +13388,7 @@ Homebrew-homebrew-cask/Casks/o/onyx@beta.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/oolite.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/opal-app.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/opal-composer.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/o/opcode.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/open-data-editor.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/open-eid.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/open-in-code.rb, Homebrew/homebrew-cask, 1

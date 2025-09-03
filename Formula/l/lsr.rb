@@ -2,7 +2,6 @@ class Lsr < Formula
   desc "Ls but with io_uring"
   homepage "https://tangled.sh/@rockorager.dev/lsr"
   url "https://tangled.sh/@rockorager.dev/lsr",
-      using:    :git,
       tag:      "v1.0.0",
       revision: "9bfcae0be1d3ee2db176bb8001c0f46650484249"
   license "MIT"
@@ -16,7 +15,7 @@ class Lsr < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "0044a4cca23cb76a32c0095cee321c50d049007a608ae54155268b0ac30a1213"
   end
 
-  depends_on "zig" => :build
+  depends_on "zig@0.14" => :build # https://tangled.sh/@rockorager.dev/lsr/issues/13
 
   def install
     # Fix illegal instruction errors when using bottles on older CPUs.
