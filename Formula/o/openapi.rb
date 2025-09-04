@@ -1,18 +1,18 @@
 class Openapi < Formula
   desc "CLI tools for working with OpenAPI, Arazzo and Overlay specifications"
   homepage "https://github.com/speakeasy-api/openapi"
-  url "https://ghfast.top/https://github.com/speakeasy-api/openapi/archive/refs/tags/v1.6.1.tar.gz"
-  sha256 "2d1cb22b79b515ba0faefdb721b2d199f8094d76badb671ead88bd1454e76e10"
+  url "https://ghfast.top/https://github.com/speakeasy-api/openapi/archive/refs/tags/v1.6.2.tar.gz"
+  sha256 "68d9fcadc1f346650cf1df2fbe8b943fd9d17a1564ae6c921290d307cac45741"
   license "MIT"
   head "https://github.com/speakeasy-api/openapi.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "abde836a07dc5738b01357bbbacd940ebe2d44c865847de49cbd79926e4ffdb9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "abde836a07dc5738b01357bbbacd940ebe2d44c865847de49cbd79926e4ffdb9"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "abde836a07dc5738b01357bbbacd940ebe2d44c865847de49cbd79926e4ffdb9"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d4a892baf5ce8d9dd057fa4ec3aef81e50053a3b3da0c2df912fbd1ca0f80d04"
-    sha256 cellar: :any_skip_relocation, ventura:       "d4a892baf5ce8d9dd057fa4ec3aef81e50053a3b3da0c2df912fbd1ca0f80d04"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "982630ddd89b591763d41cd0f31c2cede134f78f46aab1be6f111e01600aad9a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "845acf35a7c64dfca7ba0bcc6d430dce9431ef4b4e556d548eedaf3fb9ee6c62"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "845acf35a7c64dfca7ba0bcc6d430dce9431ef4b4e556d548eedaf3fb9ee6c62"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "845acf35a7c64dfca7ba0bcc6d430dce9431ef4b4e556d548eedaf3fb9ee6c62"
+    sha256 cellar: :any_skip_relocation, sonoma:        "35397cce1db53f41c673d5563624d5bd872c2a385b3da6ae23a2e82cbbb60045"
+    sha256 cellar: :any_skip_relocation, ventura:       "35397cce1db53f41c673d5563624d5bd872c2a385b3da6ae23a2e82cbbb60045"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ce9e45d9bce40247151c52bebfb18063f1ba6b655d6e2e05cb025eadf901284d"
   end
 
   depends_on "go" => :build
@@ -21,7 +21,7 @@ class Openapi < Formula
     ldflags = %W[
       -s -w
       -X main.version=#{version}
-      -X main.commit=#{stable.specs[:revision]}
+      -X main.commit=#{tap.user}
       -X main.date=#{time.iso8601}
     ]
     system "go", "build", *std_go_args(ldflags:), "./cmd/openapi"

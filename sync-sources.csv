@@ -4725,6 +4725,7 @@ Homebrew-homebrew-core/Formula/n/nali.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/name-that-hash.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/n/naml.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/nano.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/n/nanoarrow.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/nanobind.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/nanoflann.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/nanomsg.rb, Homebrew/homebrew-core, 1
@@ -8914,6 +8915,7 @@ Homebrew-homebrew-cask/Casks/d/disk-drill.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/disk-expert.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/disk-inventory-x.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/diskcatalogmaker.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/d/diskspace.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/displaperture.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/display-pilot.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/displaybuddy.rb, Homebrew/homebrew-cask, 0

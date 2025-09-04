@@ -1,28 +1,37 @@
 class Uvwasi < Formula
   desc "WASI syscall API built atop libuv"
   homepage "https://github.com/nodejs/uvwasi"
-  url "https://ghfast.top/https://github.com/nodejs/uvwasi/archive/refs/tags/v0.0.21.tar.gz"
-  sha256 "5cf32f166c493f41c0de7f3fd578d0be1b692c81c54f0c68889e62240fe9ab60"
   license "MIT"
   head "https://github.com/nodejs/uvwasi.git", branch: "main"
 
+  # TODO: Remove `stable` block when patch is no longer needed.
+  stable do
+    url "https://ghfast.top/https://github.com/nodejs/uvwasi/archive/refs/tags/v0.0.22.tar.gz"
+    sha256 "255b5d4b961ab73ac00d10909cd2a431670fc708004421f07267e8d6ef8a1bc8"
+
+    # Ensure all symbols required by Node are exported.
+    # https://github.com/nodejs/uvwasi/pull/311
+    patch do
+      url "https://github.com/nodejs/uvwasi/commit/7803a3183b4ed3ab975311eeb014365e56a85950.patch?full_index=1"
+      sha256 "736e47f765c63316bb99af6599219780822d1ba708a96bfe9ae1176ad2ca6c43"
+    end
+  end
+
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "e9bc1d223efb41a0bee91c928bf2d85a57179c0ab37713dfd6941f046f3f50e9"
-    sha256 cellar: :any,                 arm64_sonoma:  "957553fa84683816e9e111fcfeb9ef2199b2d0fc26cdccc4e9927e5e7aa84aab"
-    sha256 cellar: :any,                 arm64_ventura: "28edfaafaf6fa3cea2414466622439a65d5d4ab98ddb4610ee3b16c62d25d65a"
-    sha256 cellar: :any,                 sonoma:        "075cf1c7a4ded621c47d59adaee755993f7aeb5bc282b42dcffcf7478fdb66bd"
-    sha256 cellar: :any,                 ventura:       "688985b4bedff51f9f0f26a94a694ea2cfe9b88c932e1ef3ae741e92ff1b835a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "75425694689a0cbb61f9132e10f647f503eaa2a5370017dbe58f24ff5ab33b61"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0af054bb833db53e6ee07eed754630fcd7c24abcd088a8fe15b8c9f76a9c6065"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "0e3092289f2097b20a62893123dd9aa2bf5a41d1cc525394648c62d57df2fbe5"
+    sha256 cellar: :any,                 arm64_sonoma:  "e571f34d903851533a284fbb5e5ed7cfc459b93d58b63c0c0f0af6449bfede9c"
+    sha256 cellar: :any,                 arm64_ventura: "a17e40393f81fa0bf392923d922199567a34b1b07dd1a7184da54e241ddf0edb"
+    sha256 cellar: :any,                 sonoma:        "0d535568557aeaa842fb26c0a2311ba8435fcd75c2f9375e6be7546ff2b35d69"
+    sha256 cellar: :any,                 ventura:       "32d31a06edac199f59f3e483ae14b681dbbda701632b4884566c16a42be848eb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "84f2832cdb777a9b8cb48c831df3d8943d66b140965c4894533aac0b54d2826e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "76137fa691e632245a36a06689eff1545f21a07573164f6fbf82ead3cf337f9c"
   end
 
   depends_on "cmake" => :build
   depends_on "libuv"
 
   def install
-    # `-fvisibility=hidden` makes the shared library pretty useless.
-    # https://github.com/nodejs/uvwasi/issues/231
-    inreplace "CMakeLists.txt", "-fvisibility=hidden", ""
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
@@ -34,7 +43,7 @@ class Uvwasi < Formula
       #include <stdlib.h>
       #include <string.h>
       #include "uv.h"
-      #include "uvwasi/uvwasi.h"
+      #include "uvwasi.h"
 
       int main(void) {
         uvwasi_t uvwasi;

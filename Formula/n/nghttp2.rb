@@ -1,19 +1,17 @@
 class Nghttp2 < Formula
   desc "HTTP/2 C Library"
   homepage "https://nghttp2.org/"
-  url "https://ghfast.top/https://github.com/nghttp2/nghttp2/releases/download/v1.66.0/nghttp2-1.66.0.tar.gz"
-  mirror "http://fresh-center.net/linux/www/nghttp2-1.66.0.tar.gz"
-  sha256 "e178687730c207f3a659730096df192b52d3752786c068b8e5ee7aeb8edae05a"
+  url "https://ghfast.top/https://github.com/nghttp2/nghttp2/releases/download/v1.67.0/nghttp2-1.67.0.tar.gz"
+  mirror "http://fresh-center.net/linux/www/nghttp2-1.67.0.tar.gz"
+  sha256 "f61f8b38c0582466da9daa1adcba608e1529e483de6b5b2fbe8a5001d41db80c"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "20ea8dcfeed5fde8c9792199c2af43ab04f5d1c88e7a3907f99b9e0b89d23cd0"
-    sha256 cellar: :any,                 arm64_sonoma:  "77896cb1a06e09459c9f8658010cbc63391a83da609ea5d1c02dd253be8d2ba4"
-    sha256 cellar: :any,                 arm64_ventura: "9bb9732aa5e6d6a7f29535c94f851995aeda41917d728e6e60690f0985261bda"
-    sha256 cellar: :any,                 sonoma:        "4c717a81d420ff96dff267fa9ae9384cd4a6528643900843a6a7d8dc9f49c0fb"
-    sha256 cellar: :any,                 ventura:       "f9d36daccc853e2d71d771e6d1d0fe8c71a0bf791a1626fa11723781bbd63ac8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "80bc5f0551dd694b145553635898067a618d7a1c1b27db74fff5af4d278588cc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3ae3de4374e9293eff1c07cb0fc7ef960cfb7444da930bf0ede9e39c8836a17f"
+    sha256 cellar: :any,                 arm64_sequoia: "42f88b4ffd14a43cbfb6a9f03db80ab16366e50d3a91181f51d238418058b0c0"
+    sha256 cellar: :any,                 arm64_sonoma:  "ea29e690d42fef25bc3e85809178e9e1c44e4f85dd31a806b1d29ab784a97f91"
+    sha256 cellar: :any,                 sonoma:        "85f786edaa108e482b766c7751be3b72110945a5cdeb877e3f4729b9aa71b24b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "83b07a9f03933f7bdf35c271ccd71e114abb3f2a70eeda4dbf8d465d762f47bc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f7b719af7e146ed2bac32730c617c8b78fe5564bf0190d67b1cbb2bd889a12f3"
   end
 
   head do
@@ -29,6 +27,7 @@ class Nghttp2 < Formula
   depends_on "jemalloc"
   depends_on "libev"
   depends_on "libnghttp2"
+  depends_on macos: :sonoma # Needs C++20 features not available on Ventura
   depends_on "openssl@3"
 
   uses_from_macos "libxml2"

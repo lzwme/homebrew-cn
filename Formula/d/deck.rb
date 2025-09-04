@@ -1,18 +1,18 @@
 class Deck < Formula
   desc "Creates slide deck using Markdown and Google Slides"
   homepage "https://github.com/k1LoW/deck"
-  url "https://ghfast.top/https://github.com/k1LoW/deck/archive/refs/tags/v1.20.0.tar.gz"
-  sha256 "c8ced434a3ce10384e231a585f3c744f6041312f11ef4b12884f84030fceec9e"
+  url "https://ghfast.top/https://github.com/k1LoW/deck/archive/refs/tags/v1.21.0.tar.gz"
+  sha256 "47c84e5f19f459d8b8c47992e8a30016a8fcd6dd7f0872807cab1c54b71903c0"
   license "MIT"
   head "https://github.com/k1LoW/deck.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4e522839fcdfeded92ec3d72e1d4e58c078a89a243c32a83231f0e92d95183eb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4e522839fcdfeded92ec3d72e1d4e58c078a89a243c32a83231f0e92d95183eb"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "4e522839fcdfeded92ec3d72e1d4e58c078a89a243c32a83231f0e92d95183eb"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9b6846127c3b2707e83fe9b84f2c1af1498dd753f12bb648b841a71039c7d441"
-    sha256 cellar: :any_skip_relocation, ventura:       "9b6846127c3b2707e83fe9b84f2c1af1498dd753f12bb648b841a71039c7d441"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0bece4b7db963df57ae98916be73cc4d274c40afda9048662c5b26517a64a71c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3368870893e82fde882cf491034bf0f2020496ab5e8e2445d8f4d2d536843253"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3368870893e82fde882cf491034bf0f2020496ab5e8e2445d8f4d2d536843253"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "3368870893e82fde882cf491034bf0f2020496ab5e8e2445d8f4d2d536843253"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e97ffae747b9f8db5e43064a6fcf19e4f2ba2357b0e1852aa9343f352ea275e4"
+    sha256 cellar: :any_skip_relocation, ventura:       "e97ffae747b9f8db5e43064a6fcf19e4f2ba2357b0e1852aa9343f352ea275e4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cebf4e2de7ea372161f412fcb61adbf04a5b75dda65ab85a8f6474085a4698e2"
   end
 
   depends_on "go" => :build

@@ -3,18 +3,18 @@ class Omnara < Formula
 
   desc "Talk to Your AI Agents from Anywhere"
   homepage "https://omnara.com/"
-  url "https://files.pythonhosted.org/packages/60/2b/d96091b23de24dd609b67964bc1740b75a31c80077cd9aa1a96f33614279/omnara-1.6.2.tar.gz"
-  sha256 "488b281f50c43cfdb4fd8abdacfc186fd11d3669c03e0e486cf374d6523d3151"
+  url "https://files.pythonhosted.org/packages/8d/87/180de32c95a4b7289b4405176eb1f1b457ae3fa2a294cb19a321c468f793/omnara-1.6.3.tar.gz"
+  sha256 "a9364aa4b1569916e9b7496b66a04206494157c9ceffdbd069f9ce87321ee798"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "6be59504d1da15183917cb17221c99249c9dca1e6a77d498478037a6b1c0de7c"
-    sha256 cellar: :any,                 arm64_sonoma:  "4347e5c203d4047a2e801b3bd27f85d0d792478b3f1a78b000fe955524fc967b"
-    sha256 cellar: :any,                 arm64_ventura: "05eb8d1e2305facfd7fbf24150b670216df2db49daf33f9a35c4cfc7194f79ac"
-    sha256 cellar: :any,                 sonoma:        "db75ca799ac610a22e34ec1a38e36e0b5cb687206b52431334db87e105128137"
-    sha256 cellar: :any,                 ventura:       "8a64fd09f7bbebf73aee677e0432a7be9d6d1408004ac34f6284ad604a06ce70"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9fc4e06ff07bdd8f5d9584ffc88f3b1b883c59f8203f095142cd6ac6f97cdf58"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5fdb72ddb682b9f426c27b0c4a4adf14e4c3a26dec4bffc6c6bbf2092381f9af"
+    sha256 cellar: :any,                 arm64_sequoia: "4b1452e6a7c8bc740c34949e7f675acc834cddfdae8b08175f17092b3a71812a"
+    sha256 cellar: :any,                 arm64_sonoma:  "193498f0b7bbb470bdcb1bb385ab53b7d16e61070f5b241cb2d1c680e54c1098"
+    sha256 cellar: :any,                 arm64_ventura: "1f17efc7d96af7f3819e12c39c87616738b465b0faf4b63824847a4df2474d62"
+    sha256 cellar: :any,                 sonoma:        "a9b9e62f2e6791b2eaca7f7fd1f1cbab74d2fb40e97f7cb4daf5ae2ee199ab93"
+    sha256 cellar: :any,                 ventura:       "6b06a3287d09c42afdfff343e8751ee5292cf9574cc62b538c85adbbf8fc648a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "69654a5bc484f364e5927c119273f31f13e93e9c697ef2cbe724a1542da800a3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9117d77689369999467a6e878df4562c4845c4b5ac8a5a3e68df97f029cfa641"
   end
 
   depends_on "rust" => :build # for pydantic-core
@@ -199,8 +199,8 @@ class Omnara < Formula
   end
 
   resource "more-itertools" do
-    url "https://files.pythonhosted.org/packages/ce/a0/834b0cebabbfc7e311f30b46c8188790a37f89fc8d756660346fe5abfd09/more_itertools-10.7.0.tar.gz"
-    sha256 "9fddd5403be01a94b204faadcff459ec3568cf110265d3c54323e1e866ad29d3"
+    url "https://files.pythonhosted.org/packages/ea/5d/38b681d3fce7a266dd9ab73c66959406d565b3e85f21d5e66e1181d93721/more_itertools-10.8.0.tar.gz"
+    sha256 "f638ddf8a1a0d134181275fb5d58b086ead7c6a72429ad725c67503f13ba30bd"
   end
 
   resource "multidict" do
@@ -209,8 +209,8 @@ class Omnara < Formula
   end
 
   resource "openai" do
-    url "https://files.pythonhosted.org/packages/07/55/da5598ed5c6bdd9939633854049cddc5cbac0da938dfcfcb3c6b119c16c0/openai-1.102.0.tar.gz"
-    sha256 "2e0153bcd64a6523071e90211cbfca1f2bbc5ceedd0993ba932a5869f93b7fc9"
+    url "https://files.pythonhosted.org/packages/94/dc/965b3528ed0435b717acca45e2541d94bd827c0520ce172366323c9edcab/openai-1.104.2.tar.gz"
+    sha256 "9b582ead9dd208753f89dae8e36b6548c6ada076e87ba3db36630e29239661ab"
   end
 
   resource "openapi-core" do

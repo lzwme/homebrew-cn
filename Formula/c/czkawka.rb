@@ -19,6 +19,7 @@ class Czkawka < Formula
   depends_on "rust" => :build
   depends_on "adwaita-icon-theme"
   depends_on "cairo"
+  depends_on "dav1d"
   depends_on "ffmpeg"
   depends_on "gdk-pixbuf"
   depends_on "glib"
