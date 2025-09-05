@@ -1,18 +1,18 @@
 class Easyengine < Formula
   desc "Command-line control panel to manage WordPress sites"
   homepage "https://easyengine.io/"
-  url "https://ghfast.top/https://github.com/EasyEngine/easyengine/releases/download/v4.9.0/easyengine.phar"
-  sha256 "d59bfaaa42c5d51360d1194c1620ba2a2ac9611a95a7ff7c51f4afb66145bb26"
+  url "https://ghfast.top/https://github.com/EasyEngine/easyengine/releases/download/v4.9.1/easyengine.phar"
+  sha256 "62055e75aec57fc604ae43e264d017dd4ad38406e30e13c8e6eb31499f6f5691"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c6d7e03ccf108f057da5b3135be1bc522cd9c7725b09d47c20060a22341d3ba8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c6d7e03ccf108f057da5b3135be1bc522cd9c7725b09d47c20060a22341d3ba8"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "c6d7e03ccf108f057da5b3135be1bc522cd9c7725b09d47c20060a22341d3ba8"
-    sha256 cellar: :any_skip_relocation, sonoma:        "fe6fee62fefc97a888faaddbaf5b057087b69f790fb2af1659200d074fe70291"
-    sha256 cellar: :any_skip_relocation, ventura:       "fe6fee62fefc97a888faaddbaf5b057087b69f790fb2af1659200d074fe70291"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b56027e5af76a364d550e33a20a9022a9e7052617d0933750cd6298166e9a4bb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b56027e5af76a364d550e33a20a9022a9e7052617d0933750cd6298166e9a4bb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "381553f152d7382660fdebc0b1e3c362d9578f59cf4b567b292ad49ae46187a9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "381553f152d7382660fdebc0b1e3c362d9578f59cf4b567b292ad49ae46187a9"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "381553f152d7382660fdebc0b1e3c362d9578f59cf4b567b292ad49ae46187a9"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d55461d1ffce6841468dd7df538620c0ef4f97f974736c971f52c3d18c62791c"
+    sha256 cellar: :any_skip_relocation, ventura:       "d55461d1ffce6841468dd7df538620c0ef4f97f974736c971f52c3d18c62791c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d55461d1ffce6841468dd7df538620c0ef4f97f974736c971f52c3d18c62791c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d55461d1ffce6841468dd7df538620c0ef4f97f974736c971f52c3d18c62791c"
   end
 
   depends_on "dnsmasq"

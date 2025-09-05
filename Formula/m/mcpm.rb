@@ -3,18 +3,18 @@ class Mcpm < Formula
 
   desc "Open source, community-driven MCP server and client manager"
   homepage "https://mcpm.sh/"
-  url "https://files.pythonhosted.org/packages/7a/37/ac5365bc2f13a40a6dfd609c3678d56dbeea5adf8e1cefa5b029889dccac/mcpm-2.7.0.tar.gz"
-  sha256 "fc54435a052b002c2a580e57c158f2af0fad148934ff85c0f013079f52e471c8"
+  url "https://files.pythonhosted.org/packages/dd/85/34127cab100c2c1701ed9dd129a7a77929069429f97ece697d38478a0b0e/mcpm-2.7.1.tar.gz"
+  sha256 "5ec1e02ea3b46a5b715f6e7565a7ef48d02980ed709ca4425e8b7b753d279830"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "beecbf4aad3e0b11b6e0beb721ae8c1e8fb10331254afcfd7824f02b3a339606"
-    sha256 cellar: :any,                 arm64_sonoma:  "326c30fef5fb9f5991fe32deee18180ce30d45b7cb97ccb88a32e8a1f30964d4"
-    sha256 cellar: :any,                 arm64_ventura: "9c615a8502a67c254b648c1e6a08935c58a801e6ea0c035a355c4a4a022d7506"
-    sha256 cellar: :any,                 sonoma:        "9768ca62dfb5e47314dca1e08a095b40fb576095410d95457686bb37f556495f"
-    sha256 cellar: :any,                 ventura:       "83d73f91957d716ee9a9e815269993e3926d2ab75b1655d919c23d7a7f710a52"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "67830b71b8e15fbb3a04589258f65005f25a67a030b057b7ba5fa71819b82897"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e8e3c029a3248a0ebed41f8937b3c3833832274a992f27de47d8f3587aeda249"
+    sha256 cellar: :any,                 arm64_sequoia: "cac9e388b762614fd434e907bfe6d0f5acf0e807a1a70d22b12a06ef7a6ebf85"
+    sha256 cellar: :any,                 arm64_sonoma:  "c5ed259e898d2b4e1dbb0518cf27b52e627947beb25516317a9e149a8d1b14df"
+    sha256 cellar: :any,                 arm64_ventura: "45179e8f0ffa92d805fed59b04799b8e952dd753db6b834bbc67a8c641cc2f70"
+    sha256 cellar: :any,                 sonoma:        "56e9338acd74aef1f23764a073ef40df0514baf8fbac4af5522fdb3cb1cd872a"
+    sha256 cellar: :any,                 ventura:       "2e667a58a1ccacb857896bccd83bdec9bdb8e61fb8228070c6dea29029ac4b25"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "aca253562c7ec2c8be15e4973beb4889aefd8f4a0e52da131433dcffcf352a46"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7f6583028561a1fa72c4ccbfc53b69946ace6028d6a2a34781c093f3287505c2"
   end
 
   depends_on "rust" => :build
@@ -38,8 +38,8 @@ class Mcpm < Formula
   end
 
   resource "authlib" do
-    url "https://files.pythonhosted.org/packages/8e/a1/d8d1c6f8bc922c0b87ae0d933a8ed57be1bef6970894ed79c2852a153cd3/authlib-1.6.1.tar.gz"
-    sha256 "4dffdbb1460ba6ec8c17981a4c67af7d8af131231b5a36a88a1e8c80c111cdfd"
+    url "https://files.pythonhosted.org/packages/5d/c6/d9a9db2e71957827e23a34322bde8091b51cb778dcc38885b84c772a1ba9/authlib-1.6.3.tar.gz"
+    sha256 "9f7a982cc395de719e4c2215c5707e7ea690ecf84f1ab126f28c053f4219e610"
   end
 
   resource "charset-normalizer" do
@@ -68,8 +68,8 @@ class Mcpm < Formula
   end
 
   resource "email-validator" do
-    url "https://files.pythonhosted.org/packages/48/ce/13508a1ec3f8bb981ae4ca79ea40384becc868bfae97fd1c942bb3a001b1/email_validator-2.2.0.tar.gz"
-    sha256 "cb690f344c617a714f22e66ae771445a1ceb46821152df8e165c5f9a364582b7"
+    url "https://files.pythonhosted.org/packages/f5/22/900cb125c76b7aaa450ce02fd727f452243f2e91a61af068b40adba60ea9/email_validator-2.3.0.tar.gz"
+    sha256 "9fc05c37f2f6cf439ff414f8fc46d917929974a82244c20eb10231ba60c54426"
   end
 
   resource "exceptiongroup" do
@@ -118,8 +118,8 @@ class Mcpm < Formula
   end
 
   resource "jsonschema" do
-    url "https://files.pythonhosted.org/packages/d5/00/a297a868e9d0784450faa7365c2172a7d6110c763e30ba861867c32ae6a9/jsonschema-4.25.0.tar.gz"
-    sha256 "e63acf5c11762c0e6672ffb61482bdf57f0876684d8d249c0fe2d730d48bc55f"
+    url "https://files.pythonhosted.org/packages/74/69/f7185de793a29082a9f3c7728268ffb31cb5095131a9c139a74078e27336/jsonschema-4.25.1.tar.gz"
+    sha256 "e4a9655ce0da0c0b67a085847e00a3a51449e1157f4f75e9fb5aa545e122eb85"
   end
 
   resource "jsonschema-specifications" do
@@ -138,8 +138,8 @@ class Mcpm < Formula
   end
 
   resource "mcp" do
-    url "https://files.pythonhosted.org/packages/d3/a8/564c094de5d6199f727f5d9f5672dbec3b00dfafd0f67bf52d995eaa5951/mcp-1.13.0.tar.gz"
-    sha256 "70452f56f74662a94eb72ac5feb93997b35995e389b3a3a574e078bed2aa9ab3"
+    url "https://files.pythonhosted.org/packages/66/3c/82c400c2d50afdac4fbefb5b4031fd327e2ad1f23ccef8eee13c5909aa48/mcp-1.13.1.tar.gz"
+    sha256 "165306a8fd7991dc80334edd2de07798175a56461043b7ae907b279794a834c5"
   end
 
   resource "mdurl" do
@@ -168,8 +168,8 @@ class Mcpm < Formula
   end
 
   resource "prompt-toolkit" do
-    url "https://files.pythonhosted.org/packages/bb/6e/9d084c929dfe9e3bfe0c6a47e31f78a25c54627d64a66e884a8bf5474f1c/prompt_toolkit-3.0.51.tar.gz"
-    sha256 "931a162e3b27fc90c86f1b48bb1fb2c528c2761475e57c9c06de13311c7b54ed"
+    url "https://files.pythonhosted.org/packages/a1/96/06e01a7b38dce6fe1db213e061a4602dd6032a8a97ef6c1a862537732421/prompt_toolkit-3.0.52.tar.gz"
+    sha256 "28cde192929c8e7321de85de1ddbe736f1375148b02f2e17edd840042b1be855"
   end
 
   resource "psutil" do
@@ -218,8 +218,8 @@ class Mcpm < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/e1/0a/929373653770d8a0d7ea76c37de6e41f11eb07559b103b1c02cafb3f7cf8/requests-2.32.4.tar.gz"
-    sha256 "27d0316682c8a29834d3264820024b62a36942083d52caf2f14c0591336d3422"
+    url "https://files.pythonhosted.org/packages/c9/74/b3ff8e6c8446842c3f5c837e9c3dfcfe2018ea6ecef224c710c85ef728f4/requests-2.32.5.tar.gz"
+    sha256 "dbba0bac56e100853db0ea71b82b4dfd5fe2bf6d3754a8893c3af500cec7d7cf"
   end
 
   resource "rich" do
@@ -243,13 +243,13 @@ class Mcpm < Formula
   end
 
   resource "rpds-py" do
-    url "https://files.pythonhosted.org/packages/1e/d9/991a0dee12d9fc53ed027e26a26a64b151d77252ac477e22666b9688bc16/rpds_py-0.27.0.tar.gz"
-    sha256 "8b23cf252f180cda89220b378d917180f29d313cd6a07b2431c0d3b776aae86f"
+    url "https://files.pythonhosted.org/packages/e9/dd/2c0cbe774744272b0ae725f44032c77bdcab6e8bcf544bffa3b6e70c8dba/rpds_py-0.27.1.tar.gz"
+    sha256 "26a1c73171d10b7acccbded82bf6a586ab8203601e565badc74bbbf8bc5a10f8"
   end
 
   resource "ruamel-yaml" do
-    url "https://files.pythonhosted.org/packages/39/87/6da0df742a4684263261c253f00edd5829e6aca970fff69e75028cccc547/ruamel.yaml-0.18.14.tar.gz"
-    sha256 "7227b76aaec364df15936730efbf7d72b30c0b79b1d578bbb8e3dcb2d81f52b7"
+    url "https://files.pythonhosted.org/packages/3e/db/f3950f5e5031b618aae9f423a39bf81a55c148aecd15a34527898e752cf4/ruamel.yaml-0.18.15.tar.gz"
+    sha256 "dbfca74b018c4c3fba0b9cc9ee33e53c371194a9000e694995e620490fd40700"
   end
 
   resource "ruamel-yaml-clib" do
@@ -273,8 +273,8 @@ class Mcpm < Formula
   end
 
   resource "starlette" do
-    url "https://files.pythonhosted.org/packages/04/57/d062573f391d062710d4088fa1369428c38d51460ab6fedff920efef932e/starlette-0.47.2.tar.gz"
-    sha256 "6ae9aa5db235e4846decc1e7b79c4f346adf41e9777aebeb49dfd09bbd7023d8"
+    url "https://files.pythonhosted.org/packages/15/b9/cc3017f9a9c9b6e27c5106cc10cc7904653c3eec0729793aec10479dd669/starlette-0.47.3.tar.gz"
+    sha256 "6bc94f839cc176c4858894f1f8908f0ab79dfec1a6b8402f6da9be26ebea52e9"
   end
 
   resource "tomli" do
@@ -288,13 +288,13 @@ class Mcpm < Formula
   end
 
   resource "typer" do
-    url "https://files.pythonhosted.org/packages/c5/8c/7d682431efca5fd290017663ea4588bf6f2c6aad085c7f108c5dbc316e70/typer-0.16.0.tar.gz"
-    sha256 "af377ffaee1dbe37ae9440cb4e8f11686ea5ce4e9bae01b84ae7c63b87f1dd3b"
+    url "https://files.pythonhosted.org/packages/dd/82/f4bfed3bc18c6ebd6f828320811bbe4098f92a31adf4040bee59c4ae02ea/typer-0.17.3.tar.gz"
+    sha256 "0c600503d472bcf98d29914d4dcd67f80c24cc245395e2e00ba3603c9332e8ba"
   end
 
   resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/98/5a/da40306b885cc8c09109dc2e1abd358d5684b1425678151cdaed4731c822/typing_extensions-4.14.1.tar.gz"
-    sha256 "38b39f4aeeab64884ce9f74c94263ef78f3c22467c8724005483154c26648d36"
+    url "https://files.pythonhosted.org/packages/72/94/1a15dd82efb362ac84269196e94cf00f187f7ed21c242792a923cdb1c61f/typing_extensions-4.15.0.tar.gz"
+    sha256 "0cea48d173cc12fa28ecabc3b837ea3cf6f38c6d1136f85cbaaf598984861466"
   end
 
   resource "typing-inspection" do

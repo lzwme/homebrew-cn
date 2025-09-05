@@ -1,8 +1,8 @@
 class PhpCodeSniffer < Formula
   desc "Check coding standards in PHP, JavaScript and CSS"
   homepage "https://github.com/PHPCSStandards/PHP_CodeSniffer"
-  url "https://ghfast.top/https://github.com/PHPCSStandards/PHP_CodeSniffer/releases/download/3.13.2/phpcs.phar"
-  sha256 "0c2bc9dbd070289f9a022f479fce6b7619eb081c62f8c92ed9e264c399a5773a"
+  url "https://ghfast.top/https://github.com/PHPCSStandards/PHP_CodeSniffer/releases/download/3.13.3/phpcs.phar"
+  sha256 "4f60d903d78151829ae04e9971db771e67e5d2007578dc9f30781080105e1a5b"
   license "BSD-3-Clause"
 
   livecheck do
@@ -11,14 +11,14 @@ class PhpCodeSniffer < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "a4a7a187b3e8ddcd4ca46f667b87def02da17d4bdcb811d3deff87b691c29f19"
+    sha256 cellar: :any_skip_relocation, all: "7ddbb69ae293cf744ff639876524e1459faf08d72b7ae93881202484b9058acb"
   end
 
   depends_on "php"
 
   resource "phpcbf.phar" do
-    url "https://ghfast.top/https://github.com/PHPCSStandards/PHP_CodeSniffer/releases/download/3.13.2/phpcbf.phar"
-    sha256 "f98325b0e3ec71c949143ac416311ec63706e7e8220843700ad2bf0e58b5a401"
+    url "https://ghfast.top/https://github.com/PHPCSStandards/PHP_CodeSniffer/releases/download/3.13.3/phpcbf.phar"
+    sha256 "1239e61060b51873b095a49fb674fcada07592421576b32b3e3fca6998d63896"
 
     livecheck do
       formula :parent

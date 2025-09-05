@@ -1,19 +1,19 @@
 class Yozefu < Formula
   desc "TUI for exploring data in a Kafka cluster"
   homepage "https://github.com/MAIF/yozefu"
-  url "https://ghfast.top/https://github.com/MAIF/yozefu/archive/refs/tags/v0.0.14.tar.gz"
-  sha256 "3278f215b825bd583e783ee158d23134fee37ebc91fb9f7b648add61a6c82431"
+  url "https://ghfast.top/https://github.com/MAIF/yozefu/archive/refs/tags/v0.0.15.tar.gz"
+  sha256 "58d70ebbef90053e90690f15270cec225ec90767a3674565d90429801814f5e4"
   license "Apache-2.0"
   head "https://github.com/MAIF/yozefu.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "b34d677dcb57b39c168958e89021bb69d9f80610b7460c568272e8afd37a3fe1"
-    sha256 cellar: :any,                 arm64_sonoma:  "960527c79b463125c2eddcd28fddd1da8dc0cb9c3816117ce2695f3092b0459c"
-    sha256 cellar: :any,                 arm64_ventura: "f667cc69a4d78b5e210b054703a3ac68f5d1212116bfddc37996b4c94d246e79"
-    sha256 cellar: :any,                 sonoma:        "9fb095d0a8cf2708095bb1eccc2d622d12ff51750262021e3c6e610726269fd2"
-    sha256 cellar: :any,                 ventura:       "c783584c76fefaeb10acdeac0ca5f795e706a3f7e4a671e6120834758e660dd0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b2fa38c0f170ed25d0645856fddeea4b3510adf979b7066f3a7f2a2efb468274"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "31e62d4b177daca57cf92125f4bad239373956709b98f52f5118d2a95a5d1cf0"
+    sha256 cellar: :any,                 arm64_sequoia: "ffaae0befc5386001b25d85bcb7a871457653e510d17f34ef5b36ece8a2b5a6e"
+    sha256 cellar: :any,                 arm64_sonoma:  "ed6e426f4b3b434979f78e40a4af564eba2ba411a128600f139f92eac9017644"
+    sha256 cellar: :any,                 arm64_ventura: "1ce78c6fd6264538ef59d4d31edc7948845afb2a495c1e8370f5bd67ca8d170b"
+    sha256 cellar: :any,                 sonoma:        "27e3715c233a383eff0b5023b9f92abfe16109f01ec64dc8aafaaf87595288ad"
+    sha256 cellar: :any,                 ventura:       "9712f5f756d384fecd7697c6ad483ef54febbacca40af128f947c4bc735f43ff"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3612d8ac038841a3a32490a923a609e66b372f5b550381d0da192b7f0cf8c0e8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "389c97618cf474e923f6f6dbc445158a77b5db99007199ffccb4b7e88687b825"
   end
 
   depends_on "cmake" => :build

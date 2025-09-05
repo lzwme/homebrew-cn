@@ -4,18 +4,19 @@ class MathComp < Formula
   url "https://ghfast.top/https://github.com/math-comp/math-comp/archive/refs/tags/mathcomp-2.4.0.tar.gz"
   sha256 "6307218d7e434fb6ffc81b9275c673d3f7f1f4884ad59b904abd205c437021a0"
   license "CECILL-B"
+  revision 1
   head "https://github.com/math-comp/math-comp.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c1b17f5b8e2b20af5ace23ec57d4f829365e9d3c83be65dd642c165fd283aadb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "eb066cd30672083829614bbcd0e41978bf52ad087babd5c235e2eaa1c62599f0"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "4275cbb056423ca15041aa0747de7fdd3a09cfa0b929867078aea003cd9f4b23"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4c0c18fb7f34cc5654a45941050d490cc12170de49dbdd2baab705ba6d18a6b2"
-    sha256 cellar: :any_skip_relocation, ventura:       "0f6ad3b1eb56318a578ba2e1e20beeef645c28bdd6e8c27b7f23a17af70530ba"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3b0ba0eabc25b6b96add7b36f58647b6cb76600c56880c714c99e2c78e632371"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c95940eb318c627d6d5cad82e9cc87dcbf9e943718889a57f0d493512c419b1d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c34531e7a03718fea78babb4b7a5e7105f20a4be70784a33e63d2e669694bfce"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4db7e4334104d2f7290906f7be4beb51a9489b909a5ff316679a385ebb153e1c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "9a9a0478324dc36bfa04e45ea70c9cc91a9ca6d2eb6d9577366991e372dfcc40"
+    sha256 cellar: :any_skip_relocation, sonoma:        "066ad58d86a9f4982d68cef34225b46719a7bd3bd3c622ac36d8acf918294ed2"
+    sha256 cellar: :any_skip_relocation, ventura:       "7a048a18d9f7e1bb9e8d519b7162c5564f59a4703fe4f5c35b8a3fda82949fb0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "421fafa065e8136d76350a94a7da6baf3988c35d9ba471d3e14da0808c85251a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "409f55a55d780521e2da0458f0c61b7586960c012c35d173c2d2e8a5b6d3d3a6"
   end
 
   depends_on "ocaml" => :build

@@ -6,8 +6,8 @@ class Gyb < Formula
   homepage "https://github.com/GAM-team/got-your-back/"
   # Check gyb.py imports for any changes. Update pypi_formula_mappings.json (if necessary)
   # and then run `brew update-python-resources gyb`.
-  url "https://ghfast.top/https://github.com/GAM-team/got-your-back/archive/refs/tags/v1.93.tar.gz"
-  sha256 "b3a2580302ab4cfe529b98cf9ebd5e310c371dc942130d34489fd9d4e59b10c5"
+  url "https://ghfast.top/https://github.com/GAM-team/got-your-back/archive/refs/tags/v1.94.tar.gz"
+  sha256 "9e62b792b4821061909a56dc6547f4ee9a07ace79ab95ac89f2e7f9c888437f4"
   license "Apache-2.0"
   head "https://github.com/GAM-team/got-your-back.git", branch: "main"
 
@@ -19,13 +19,13 @@ class Gyb < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f029fc48cc8d45b3d7ae5d027f1afe4df744a2d37c96613bd109d72d58a84e35"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bcd714647ad041a603f36cc7dc0e32587c096caf32eacb0dc115213bce5920fe"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "6e46f18128271a46bb5cd0b7333feb37cc78da03bf208f085844a15722fa5407"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d8a6319c39a183f571e52e10d9c72e0260e96fe907a33bd1ae40d485517ffde9"
-    sha256 cellar: :any_skip_relocation, ventura:       "38d45af23330f7de2c75199814126c67ddd84acc4dff7dd22fe63148c81a0e7b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "37ea422c0a5bb43958efb39a28ae9566619a997de37f1631e7f51a675c07ca94"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "44fa1848aacb5c3d771cb90459e3d6d3c0931a509041744c9c659464cff248cd"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4d6d90419ec53d9c94000418eace5b8839df5e769f8c55f84c013d7713a35da9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bb503c1b016f1ebbfb0a7deb341d787c78fb2802704706d63fc1b649ea5d6e24"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "e6c1db1bbd60d20c788a5739be02734f75a14542b550caaec28d8aa6116ac221"
+    sha256 cellar: :any_skip_relocation, sonoma:        "58c4efcd7bf5666e8bd1f19844e6e497b9178c6b123e8df7ad26c3113ec8517b"
+    sha256 cellar: :any_skip_relocation, ventura:       "76c4ba89f04e98ca588c816cd16d4b0bff3106547e5cb36e094a67c03c92d4e6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1b2729b96737a258480e812202d5fffaf733f0c7299b4ed91a3e8f3d32df893d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c8695c77e249594a6a615f9744bfc2ba53fb4585d6b662268e1f164460e241f0"
   end
 
   depends_on "certifi"

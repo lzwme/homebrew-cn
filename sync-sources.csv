@@ -608,6 +608,7 @@ Homebrew-homebrew-core/Formula/b/bob.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bochs.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/bogofilter.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/bold.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/b/bom.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bombadillo.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/bombardier.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bomber.rb, Homebrew/homebrew-core, 1
@@ -2622,6 +2623,7 @@ Homebrew-homebrew-core/Formula/g/gpgme.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gpgmepp.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gpgmepy.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gphoto2.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/g/gphotos-uploader-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gping.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gplcver.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gplugin.rb, Homebrew/homebrew-core, 0
@@ -3575,7 +3577,7 @@ Homebrew-homebrew-core/Formula/l/linux-headers@4.4.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/linux-headers@5.15.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/linux-pam.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/liqoctl.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/l/liquibase.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/l/liquibase.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/liquid-dsp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/liquidctl.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/liquidprompt.rb, Homebrew/homebrew-core, 1
@@ -4598,6 +4600,7 @@ Homebrew-homebrew-core/Formula/m/moon-buggy.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/moon.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/moor.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/moreutils.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/m/moribito.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/morpheus.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/morse.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mosh.rb, Homebrew/homebrew-core, 1
@@ -5471,6 +5474,8 @@ Homebrew-homebrew-core/Formula/p/plow.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/plowshare.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/plplot.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pluto.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/p/plutobook.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/p/plutoprint.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/plutovg.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/plz-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/plzip.rb, Homebrew/homebrew-core, 0
@@ -6966,6 +6971,7 @@ Homebrew-homebrew-core/Formula/t/timoni.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tin.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/tinc.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/tintin.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/t/tiny-remapper.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/tiny.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tinycdb.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/tinymist.rb, Homebrew/homebrew-core, 1
@@ -8306,6 +8312,7 @@ Homebrew-homebrew-cask/Casks/b/bit-slicer.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/b/bitbar.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/b/bitbox.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/b/bitcoin-core.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/b/bitfocus-buttons.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/bitmessage.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/b/bitrix24.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/bitwarden.rb, Homebrew/homebrew-cask, 1
@@ -13562,6 +13569,7 @@ Homebrew-homebrew-cask/Casks/p/parallels@16.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/parallels@17.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/parallels@18.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/parallels@19.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/p/parallels@20.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/paraview.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/pareto-security.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/parse.rb, Homebrew/homebrew-cask, 1
