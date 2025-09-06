@@ -40,10 +40,10 @@ class Opencv < Formula
   end
 
   head do
-    url "https://github.com/opencv/opencv.git", branch: "master"
+    url "https://github.com/opencv/opencv.git", branch: "4.x"
 
     resource "contrib" do
-      url "https://github.com/opencv/opencv_contrib.git", branch: "master"
+      url "https://github.com/opencv/opencv_contrib.git", branch: "4.x"
     end
   end
 

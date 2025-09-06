@@ -1,22 +1,24 @@
 class Rasusa < Formula
   desc "Randomly subsample sequencing reads or alignments"
   homepage "https://doi.org/10.21105/joss.03941"
-  url "https://ghfast.top/https://github.com/mbhall88/rasusa/archive/refs/tags/2.1.1.tar.gz"
-  sha256 "51d9db364b11f390ea84fff0f397b5bb874cc301cf5e263fdceffff90f8a7300"
+  url "https://ghfast.top/https://github.com/mbhall88/rasusa/archive/refs/tags/2.2.0.tar.gz"
+  sha256 "ffeae3f205c7628cbd5e747353ead0be4b5be924ddee89441ee20c2555b7feb1"
   license "MIT"
   head "https://github.com/mbhall88/rasusa.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5e59eef8cc75cac6aad1f47d4a90a81713018df984f6e413850de5a4a3780b00"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5ed505681c505b7f564af4a4b21716b46aefea7d67c5cbd9f73b02110a0cf6a4"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "d09cf5116f0e47081441e30a6490c9a19df8f9715f0a6d312d1fe0dcb7ff2c5b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "02d08013197d2a1eb4ade2f7ea7f0b518e0f73f48c537a23d02df90da4bb09dd"
-    sha256 cellar: :any_skip_relocation, ventura:       "989e9071c73771b5ca79fa4ea555e814491846d36b274662dd679bd355705a11"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7d86f18f1566ccaa128fe9ec43a1a3698baf18b9a300d71aa16bd3a6747ae407"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "23596119bdac9d3df5fbad7946787df1596b076e9e7174dafad43382720ee8b9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "471838b19cef389affb63f13c6b5b20ea08cafb25aaac474d6bfe3a506de62f1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9aa0a7565facd581abac934e1b722d34d923b4acf99c52aedb0c4fb6e3cf2872"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "a878b8b2a0dcefed3d18d018be6c27c8233b161f217be6e22eed145436b5025f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9568d26e22a7acfa3fd429baa60b3871aa540ad5696be0e335241cca501f7789"
+    sha256 cellar: :any_skip_relocation, ventura:       "7d333d3d1f6da7aecbe93f7939de1585666196c81f7c60d2a20790ccfef81bae"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0efb9dee380ecfdd73807bef63abb2e924c559e37291b6cc4788c7d72f19d0ec"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e7a309163ae849811514baa1505c82317ccb6ed083eaa33d94f62aa8bd64b725"
   end
 
   depends_on "rust" => :build
+
+  uses_from_macos "llvm" => :build # for libclang
 
   def install
     system "cargo", "install", *std_cargo_args

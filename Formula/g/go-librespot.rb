@@ -1,19 +1,19 @@
 class GoLibrespot < Formula
   desc "Spotify client"
   homepage "https://github.com/devgianlu/go-librespot"
-  url "https://ghfast.top/https://github.com/devgianlu/go-librespot/archive/refs/tags/v0.3.3.tar.gz"
-  sha256 "15678b4d6954b381fb9c5a84aca2b0d7706e4d0b2c3644bafcb79cea6d31064c"
+  url "https://ghfast.top/https://github.com/devgianlu/go-librespot/archive/refs/tags/v0.4.0.tar.gz"
+  sha256 "f11d45b42d548273aac32ce9ca9b0aba95c1660b7ce35950529906973e861b6f"
   license "GPL-3.0-only"
   head "https://github.com/devgianlu/go-librespot.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "83579e3caa527e18316188069045476c5976008ac15ae9ea16c4c8a70b47906c"
-    sha256 cellar: :any,                 arm64_sonoma:  "6e9b1274855e8d421367fdb84a918ac7235c107f5b107fcc529e538e2dbc60f7"
-    sha256 cellar: :any,                 arm64_ventura: "48360bf34f1fa7396224cd8301991d8dd95067c95d29ab1d2e4d4683103e7140"
-    sha256 cellar: :any,                 sonoma:        "cc0e07fd00c3638e397ff8988f2aa287a1a688ef48648119d6d73a36945df4a9"
-    sha256 cellar: :any,                 ventura:       "c69cdd6d48c67941d4ef22225b7c755e53c772dc81bcab61ce4593b5211475a7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "adcb0aa698023ec878b814c8829eed96dea090b647d0324f9864ad8105c46728"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "41a8f04961a86a633373480afe82f53debbe61d891a8171af57fd587dff441c7"
+    sha256 cellar: :any,                 arm64_sequoia: "57bad485ac3a683724c866f745aa9afd2e53e394b89b7dc1103635dd7217cffb"
+    sha256 cellar: :any,                 arm64_sonoma:  "8dec4a129849d925dd95be6a5ee3ac057efe1cf32723233988867e2d759ce18a"
+    sha256 cellar: :any,                 arm64_ventura: "d085a4bad8cc29d96b88aac8e33589d838d3d82c7ea79a77416a3a330fea6689"
+    sha256 cellar: :any,                 sonoma:        "1ba6aafbe626288471527d4fc1d24b1682bda804acaac6b0e67b885d71b1c515"
+    sha256 cellar: :any,                 ventura:       "6f91701bf928a2dc9d89b29d097a66f864fdf47e8744d7c5802e9d0097fb6223"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3d51333fc239b2cc634060a12be740ef827de37fa64be51c3ddc5173fa85243b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4acf94cbc92c65d05fab915c743f8c1feb508b7fe223472cec7f9670ea711608"
   end
 
   depends_on "go" => :build

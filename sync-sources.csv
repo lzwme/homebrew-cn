@@ -45,6 +45,7 @@ Homebrew-homebrew-core/Formula/a/adapterremoval.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/adaptivecpp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/adb-enhanced.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/add-determinism.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/a/addlicense.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/addons-linter.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/adios2.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/admesh.rb, Homebrew/homebrew-core, 1
@@ -524,7 +525,6 @@ Homebrew-homebrew-core/Formula/b/berkeley-db@5.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bettercap.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/betty.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bfg.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/b/bfgminer.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/bfs.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bgpdump.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bgpq3.rb, Homebrew/homebrew-core, 1
@@ -6254,6 +6254,7 @@ Homebrew-homebrew-core/Formula/s/senpai.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/sentencepiece.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sentry-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sentry-native.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/s/seqan3.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/seqkit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/seqtk.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sequin.rb, Homebrew/homebrew-core, 1
@@ -6415,7 +6416,6 @@ Homebrew-homebrew-core/Formula/s/slugify.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/slumber.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/slurm.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/smake.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/s/smali.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/smap.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/smartdns.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/smartmontools.rb, Homebrew/homebrew-core, 0
@@ -7677,7 +7677,6 @@ Homebrew-homebrew-core/Formula/x/xrootd.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/x/xsane.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/x/xsd.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/x/xsel.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/x/xshogi.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/x/xsimd.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/x/xsv.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/x/xtensor.rb, Homebrew/homebrew-core, 1
@@ -7755,7 +7754,7 @@ Homebrew-homebrew-core/Formula/y/ytt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/y/yubico-piv-tool.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/y/yubikey-agent.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/y/yuicompressor.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/y/yutu.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/y/yutu.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/y/yydecode.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/y/yyjson.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/z.lua.rb, Homebrew/homebrew-core, 1
@@ -7985,6 +7984,7 @@ Homebrew-homebrew-cask/Casks/a/alex313031-thorium.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/alfaview.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/alfred.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/alfred@4.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/a/algoapp.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/algodoo.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/alienator88-sentinel.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/alifix.rb, Homebrew/homebrew-cask, 0
@@ -8047,7 +8047,6 @@ Homebrew-homebrew-cask/Casks/a/ankama.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/ankermake.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/ankerwork.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/anki.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/a/ankiapp.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/another-redis-desktop-manager.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/ansible-dk.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/antconc.rb, Homebrew/homebrew-cask, 0
@@ -12657,6 +12656,7 @@ Homebrew-homebrew-cask/Casks/l/leocad.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/l/lepton.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/l/lets.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/letter-opener.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/l/lexicon-dj.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/lg-onscreen-control.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/libcblite-community.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/libcblite.rb, Homebrew/homebrew-cask, 0

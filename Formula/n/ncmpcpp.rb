@@ -32,11 +32,15 @@ class Ncmpcpp < Formula
 
   uses_from_macos "curl"
 
-  def install
-    # Workaround for Boost 1.89.0 until fixed upstream.
-    # Issue ref: https://github.com/ncmpcpp/ncmpcpp/issues/633
-    ENV["boost_cv_lib_system"] = "yes"
+  # Apply open PR to fix build with Boost 1.89.0.
+  # PR ref: https://github.com/ncmpcpp/ncmpcpp/pull/636
+  # Issue ref: https://github.com/ncmpcpp/ncmpcpp/issues/633
+  patch do
+    url "https://github.com/ncmpcpp/ncmpcpp/commit/f67d350aa9beb2abdd12c429e97ae919e5b3102c.patch?full_index=1"
+    sha256 "7fa67adf722fec69793f9aa53398195294402bb09519e7bd99b388b7f99a5e59"
+  end
 
+  def install
     ENV.append "LDFLAGS", "-liconv" if OS.mac?
     ENV.prepend "LDFLAGS", "-L#{Formula["readline"].opt_lib}"
     ENV.prepend "CPPFLAGS", "-I#{Formula["readline"].opt_include}"

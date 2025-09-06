@@ -19,6 +19,7 @@ class Gh < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "100a42a5352dfb76c01872ead02b29c38608ff05e4101265172d2fae10df74bb"
     sha256 cellar: :any_skip_relocation, sonoma:        "4b709ac98289122fdc1dbcc8a4ff5866fd47c3b0849879a542c93175698cc406"
     sha256 cellar: :any_skip_relocation, ventura:       "06972d10ce5be93c27e229a773711ebe00f5e5965327ea71a6a8974d66478a69"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c63e95f1547ddeb31eb67e3986d3066841db94466271df77f3dba35e8c1fe951"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "5f44d5467727bd0bda7d4f54304fdb7d848e531202a0449f54bb66461512b3aa"
   end
 
@@ -35,8 +36,7 @@ class Gh < Formula
 
     ldflags = %w[-s -w]
 
-    # FIXME: we shouldn't need this, but patchelf.rb does not seem to work well with the layout of Aarch64 ELF files
-    ldflags += ["-extld", ENV.cc] if OS.linux? && Hardware::CPU.arm?
+    ENV["CGO_ENABLED"] = "0" if OS.linux? && Hardware::CPU.arm?
 
     with_env(
       "GH_VERSION"   => gh_version,

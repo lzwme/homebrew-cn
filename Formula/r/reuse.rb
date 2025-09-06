@@ -3,8 +3,8 @@ class Reuse < Formula
 
   desc "Tool for copyright and license recommendations"
   homepage "https://reuse.software"
-  url "https://files.pythonhosted.org/packages/a4/1f/c8f63770f1f6dd1182eec4635f1d183ea48d4ddad49ef3be1c768cc60fa2/reuse-5.1.0.tar.gz"
-  sha256 "33292b44a9f78340bb8ccd37536d7b19d9b9158856841508b63028cae24753b5"
+  url "https://files.pythonhosted.org/packages/4b/f7/b59fe851b856d0932aedbf311a3d719f30783e27af6d05bb76d77072ab8f/reuse-5.1.1.tar.gz"
+  sha256 "a13914ed8b66b8e5956e96c63203c63d72b55280d348849ccc0eb314c73248cb"
   license all_of: [
     "GPL-3.0-or-later",
     "CC-BY-SA-4.0",
@@ -14,14 +14,14 @@ class Reuse < Formula
   head "https://github.com/fsfe/reuse-tool.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fef2ced1149ec1cbed6bcedadd626f1db1eaa8b2d343819f0922818a1c355f20"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a18e06c7533e7901d1b476a2a15f78f0585ae335448b6b9085db9a53db8aa9b5"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "619e637ab782797434703a833997858908080a88880efd809c264200fb29f671"
-    sha256 cellar: :any_skip_relocation, sequoia:       "e4b06adb4a6a30a02b92bd9abc111fd2af893027c69910d6cf35b632e5b7ecb7"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b02ea4f97c45a3ad23ee37eec807cbb1119f5dc287384dd4ba63c8aef77b3b14"
-    sha256 cellar: :any_skip_relocation, ventura:       "b166431fd3aacfe94bfa36ce6fb0a9afbf7ffc9659f5171a47ae338f6735a1d6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ee237c62978acab04e6fa8a080a85f9f8136fb04e553743ace6fe0734b354c90"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3c19b18ecd1b4bed5f4d129611a7cb54cef12c6d7d024d4a7194723f189a19a3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c41c1e334b961caf2d6bdeba3cc183ac38f11b26fc75d5feb0045a1ad8aae858"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bbe53b00a1242c95a2845efaddd569aef3cf3b0bb0e0bec2eec34bf248238be7"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "30be032b1d2069f0270d9d890ba620c848759566368c570756c013032a844e40"
+    sha256 cellar: :any_skip_relocation, sequoia:       "2521d394b27b4f2b771767dfd7657ec24c20ddb07c6101a5282f637e8f8ec7d4"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8982ffd07af2c12e52e2dd0791b9c2fa773d7903388f6a9c2d29022ec9993608"
+    sha256 cellar: :any_skip_relocation, ventura:       "1fda3c20986adfcf17154e0acd8930cbedbddcff869684047a0a9708c733b640"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ba93bd516da0a8a9f48ed9be29a9a15ef3ee381a0065b0971384a1578e4269f8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d24d69dff5e9802d3de0c34e3a46775dfa0c0a70f05bd8e53c1234f08b4fd29e"
   end
 
   depends_on "python@3.13"

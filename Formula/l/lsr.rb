@@ -15,6 +15,9 @@ class Lsr < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "0044a4cca23cb76a32c0095cee321c50d049007a608ae54155268b0ac30a1213"
   end
 
+  # Aligned to `zig@0.14` formula. Can be removed if upstream updates to newer Zig.
+  deprecate! date: "2026-02-19", because: "does not build with Zig >= 0.15"
+
   depends_on "zig@0.14" => :build # https://tangled.sh/@rockorager.dev/lsr/issues/13
 
   def install

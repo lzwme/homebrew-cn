@@ -3,18 +3,18 @@ class LanggraphCli < Formula
 
   desc "Command-line interface for deploying apps to the LangGraph platform"
   homepage "https://www.github.com/langchain-ai/langgraph"
-  url "https://files.pythonhosted.org/packages/ba/be/8c223d95c314e57b0cff4f18e35416a7a755999a5f8a9ab16437863e3d04/langgraph_cli-0.4.1.tar.gz"
-  sha256 "6fbe4d73cf6213bc3273c7283d5764f5b5e0970f9f4d6934176bf0231a47d380"
+  url "https://files.pythonhosted.org/packages/86/f1/598f9e1784432d790a937de4c466ba8bed3d18ef6f56fe7394af6bc1f175/langgraph_cli-0.4.2.tar.gz"
+  sha256 "074d93a2ebb9c60629a83bc4c149e837bd09e51222d48daacb498299d818ee9f"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "6c3df3d0e39a38477e59c2a24f36d97ffd3077ff900d872d792bf557e51ef310"
-    sha256 cellar: :any,                 arm64_sonoma:  "15b27d62300bebd01189dcdd67896e7d40ea018552ad22791722073751b418a4"
-    sha256 cellar: :any,                 arm64_ventura: "e97ce13a7340f6349f64e4ff23b2b1618aac5b18db7d3f27ad1d056cfedbd947"
-    sha256 cellar: :any,                 sonoma:        "7e7b0d37fd22bdeaed9e794b9c643cddbe4d6150cf3d161afdf35ee3245eafb0"
-    sha256 cellar: :any,                 ventura:       "fab88f1feae8f02c55c5da8dcb1718a29fb00c89c7e64039fc98ee4da9e35d48"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0d90884cb54620f8ec29252f1f32c989a85367857d4aa4a1a60f6ce4a8c84ee3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5b735a8a48db6ced22fe7dfd4e10f2e8403192c3a3d9c627463a6d1c23a83a06"
+    sha256 cellar: :any,                 arm64_sequoia: "7921e6376894243ee67572135470c67db2ecb3db4a9258f2bdc31d69a6c89576"
+    sha256 cellar: :any,                 arm64_sonoma:  "a18c59d333aa4460c4305fd4a8d3509583eea47bc361260514f951105f57f504"
+    sha256 cellar: :any,                 arm64_ventura: "9331169259bc9d532c689b7cbb729810a86faad5708bf4093702714d7c11609a"
+    sha256 cellar: :any,                 sonoma:        "3d76c32a5a768bf8cf74a3348ff0f9a80111f7fcaed3743aaf1d0d81a86f3732"
+    sha256 cellar: :any,                 ventura:       "393a1bc7cbd78bfa746c4be1eab0125ebae27d3957428a35b94ac05dd8e69047"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0d06c760d92f1fe52c7d56d77d865554e4bf228c2f9537bcc8011a0dd9596898"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "834e89cf4d461afdd6fe06341168b03680a636193aecf1620ddfc2b977bce8f1"
   end
 
   depends_on "rust" => :build # for orjson
