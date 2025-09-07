@@ -1,18 +1,18 @@
 class Pygobject3 < Formula
   desc "GNOME Python bindings (based on GObject Introspection)"
   homepage "https://pygobject.gnome.org"
-  url "https://download.gnome.org/sources/pygobject/3.52/pygobject-3.52.3.tar.gz"
-  sha256 "00e427d291e957462a8fad659a9f9c8be776ff82a8b76bdf402f1eaeec086d82"
+  url "https://download.gnome.org/sources/pygobject/3.54/pygobject-3.54.0.tar.gz"
+  sha256 "4652a7cc7ff950a5099d56ac61a78c144629c20f8855a1306933b46b10f3b417"
   license "LGPL-2.1-or-later"
 
   bottle do
-    sha256 cellar: :any, arm64_sequoia: "b8d91047912ee452e7b000c29413dc0646134deee82d94181c8063ab5f33fd70"
-    sha256 cellar: :any, arm64_sonoma:  "def6801a1a2cda4fa6873130411bbd3c5a57cfc8027ede2aed8b557d2932b1a0"
-    sha256 cellar: :any, arm64_ventura: "45ccc44e5d04c45b4019c3669bb2faf7348b417fd1e3da58f24c4cf19ef86538"
-    sha256 cellar: :any, sonoma:        "87b3fe1cbb732c37d112c4a24acebd29a778836cf3360f3dfb356d6d0c561885"
-    sha256 cellar: :any, ventura:       "bfd291c8f04e022750b169ca41f2976ed9980b99e65e22cd0dcedcf484702bc9"
-    sha256               arm64_linux:   "e2bccaf4b84f7b54193c369b6ea4a738e6343ddf3498e5a26f69dda3db59e0a5"
-    sha256               x86_64_linux:  "0367b4bfcc0e178c788629172392956f88494ab1e04577b092b53eaf5b008a60"
+    sha256 cellar: :any, arm64_sequoia: "e5bb5346fbbe1026f85beb8a2ba33557d553e67425bf4e5d90cfa98a0706cc80"
+    sha256 cellar: :any, arm64_sonoma:  "59c117f1e5ba5850598d43732d949c99e2deaad31fe0074dff7c5693393cfc49"
+    sha256 cellar: :any, arm64_ventura: "004f148f9fd7c67e82ebb1b6bb93fd5a8e01c453fda06780396f148ddc9ce249"
+    sha256 cellar: :any, sonoma:        "396c316a9431ed889a861401deaa91a010b68633eb4e97dfcd3d41fe6a9d6448"
+    sha256 cellar: :any, ventura:       "94be140afbe541b5dc6ac08c26c11c8fa024fbf23355873543c36dbb4730a6ef"
+    sha256               arm64_linux:   "356c8e10823cf2620a31b2fda751f58887f8addb372fb7577d5353787c37570f"
+    sha256               x86_64_linux:  "37ed877260ac529465799bd3656eeaf3a4c77a2dc1fed029cfc5a95752e659ad"
   end
 
   depends_on "meson" => :build

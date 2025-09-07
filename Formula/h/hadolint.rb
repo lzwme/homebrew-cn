@@ -6,24 +6,31 @@ class Hadolint < Formula
   license "GPL-3.0-only"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "405117c6327640b979c2c4291c9f59a5f1512a4d555f9abf5bc44d5f99c9daef"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a93c6354f99a160ea44ada775fc16b34e32770ceb447afac3acb8b5ec5f986b0"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "84b76c81f67102146235bb9b96e00a70854a155b105b9008b886d7adfbb842a3"
-    sha256 cellar: :any_skip_relocation, sonoma:        "78aa3904694d312b37d4b780bed2266b52249e3a9999a8f95464f745313eb719"
-    sha256 cellar: :any_skip_relocation, ventura:       "39178dccfe9a2d4252b36812a98107bec182458684b25c150021b05286b60875"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3b0defde76272014be62d67a2ec25801ab2a3c3a097730977fa3963fbac6076e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "503e86593be4fde59b701ea3b8e5af67247679c7a9be60d8c83785347611f467"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "a8c8a959da09c91b1c95707a9586304d5367d449ca353a4604a53da364550766"
+    sha256 cellar: :any,                 arm64_sonoma:  "1e539279669993dd266bb253e5a1763e6b9377286a40a16c3d2d030f9dde82fb"
+    sha256 cellar: :any,                 arm64_ventura: "84e67e5b2bf0024a2bfb20c1f7dc1cf353935f21d6a622cac1ad56da2927be75"
+    sha256 cellar: :any,                 sonoma:        "99ed84c4a9889ffd1e95aabad886962f6710dd98d424102ea56199b66c6ef660"
+    sha256 cellar: :any,                 ventura:       "9649bde21226ebda516272008eff6fac396bba91da9dad237bb3592da3dd4362"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ea5354ecd233492c184aea444239a50b5e7a1940430d75f9fcd88bbdbd22a8ff"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0aef999abd4360dcca387038ac90178963832093cc7187b03692e33c1bbb91c7"
   end
 
   depends_on "cabal-install" => :build
-  depends_on "ghc@9.10" => :build
+  depends_on "ghc" => :build
+  depends_on "gmp"
 
+  uses_from_macos "libffi"
   uses_from_macos "xz"
   uses_from_macos "zlib"
 
   def install
+    # Workaround for GHC 9.12 until https://github.com/phadej/puresat/pull/7
+    # and base is updated in https://github.com/phadej/spdx
+    args = ["--allow-newer=puresat:base,spdx:base"]
+
     system "cabal", "v2-update"
-    system "cabal", "v2-install", *std_cabal_v2_args
+    system "cabal", "v2-install", *args, *std_cabal_v2_args
   end
 
   test do

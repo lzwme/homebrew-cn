@@ -12,13 +12,14 @@ class Gdal < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "fea0b9cda334378e06851d5c291df1cbf4ae7e4220610570f157783ad5e4c4d8"
-    sha256 arm64_sonoma:  "0ff3c467ebfa62e83b552490211239b0fc01783d6aec69ba2b28842b20541a79"
-    sha256 arm64_ventura: "84cf20543815f7e25778455d1cc8814c4c813e5f97449030a76388170287a10d"
-    sha256 sonoma:        "210cc7349ee41c49e047b618409c2183465eec4512f0c12227a476549699ecb0"
-    sha256 ventura:       "0938d276cb4040177e9dfeeb9638a90f7294446f8d11fc5f63e8d7417f922f42"
-    sha256 arm64_linux:   "bdfc2573bc414670d808ca968c126ece02f9adcef3468a16b564c9c2d8fae11c"
-    sha256 x86_64_linux:  "b3d4b31c48736a51188ab9c2d92429ca26ce02e58acbbfcc6543a8bc3a147305"
+    rebuild 1
+    sha256 arm64_sequoia: "d9191b89632150ddcf0b77f74b908795b1fdf359dac6abbb53121957dd7bf9a3"
+    sha256 arm64_sonoma:  "500c686b1689b1ed0b9a556c7bc620233d5b7bf4580bd73725809bae3d8f7d5e"
+    sha256 arm64_ventura: "bf68ca5785f0f1165e287b152e4280e37500d7ffea5b596065186566a07ea085"
+    sha256 sonoma:        "38e6fec46b4151827847a7ae281ab44fc8108bce40ad3632059ba9574c93b3f3"
+    sha256 ventura:       "ae1afcd4ef70cb3b57e5d3c282e4569352762e9b68fbc828d3cfde471af4891d"
+    sha256 arm64_linux:   "50da8ced232b17b6e41a222937ca9bdb813cbe91d432c8356a9eae046d42618c"
+    sha256 x86_64_linux:  "03a5b2bc8188f4982d70275d8286258a6716cafd0fde28c5b302271d6eb465bf"
   end
 
   head do
@@ -35,7 +36,6 @@ class Gdal < Formula
   depends_on "c-blosc"
   depends_on "cfitsio"
   depends_on "epsilon"
-  depends_on "expat"
   depends_on "freexl"
   depends_on "geos"
   depends_on "giflib"
@@ -75,6 +75,7 @@ class Gdal < Formula
   depends_on "zstd"
 
   uses_from_macos "curl"
+  uses_from_macos "expat"
   uses_from_macos "zlib"
 
   on_macos do
@@ -93,7 +94,18 @@ class Gdal < Formula
     "python3.13"
   end
 
+  # Work around superenv to avoid mixing `expat` usage in libraries across dependency tree.
+  # Brew `expat` usage in Python has low impact as it isn't loaded unless pyexpat is used.
+  # TODO: Consider adding a DSL for this or change how we handle Python's `expat` dependency
+  def remove_brew_expat
+    env_vars = %w[CMAKE_PREFIX_PATH HOMEBREW_INCLUDE_PATHS HOMEBREW_LIBRARY_PATHS PATH PKG_CONFIG_PATH]
+    ENV.remove env_vars, /(^|:)#{Regexp.escape(Formula["expat"].opt_prefix)}[^:]*/
+    ENV.remove "HOMEBREW_DEPENDENCIES", "expat"
+  end
+
   def install
+    remove_brew_expat if OS.mac? && MacOS.version < :sequoia
+
     site_packages = prefix/Language::Python.site_packages(python3)
     # Work around Homebrew's "prefix scheme" patch which causes non-pip installs
     # to incorrectly try to write into HOMEBREW_PREFIX/lib since Python 3.10.

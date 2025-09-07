@@ -19,6 +19,11 @@ class LibsoupAT2 < Formula
 
   keg_only :versioned_formula
 
+  # 2.74.3 has CVEs. Some backports in branch[^1] but no plans for another
+  # release and only usage of `libsoup@2` is unmaintained `libgdata`.
+  # [^1]: https://gitlab.gnome.org/GNOME/libsoup/-/merge_requests/449
+  deprecate! date: "2025-09-05", because: :unsupported
+
   depends_on "gobject-introspection" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build

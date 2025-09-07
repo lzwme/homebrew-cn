@@ -24,6 +24,13 @@ class Libgdata < Formula
     sha256               x86_64_linux:   "47559f0a3203d2274cf17141c8a8812b166d41b1a0522b00053d64e70c514085"
   end
 
+  # Last release on 2021-03-05. Currently has no maintainers[^1][^2], required
+  # old `libsoup@2` and was dropped from official GNOME back in 44.0 release[^3].
+  # [^1]: https://gitlab.gnome.org/GNOME/libgdata/-/merge_requests/49#note_2224724
+  # [^2]: https://gitlab.gnome.org/GNOME/libgdata/-/merge_requests/47#note_2030129
+  # [^3]: https://gitlab.gnome.org/GNOME/gnome-build-meta/-/merge_requests/1854
+  deprecate! date: "2025-09-05", because: :unmaintained
+
   depends_on "gettext" => :build
   depends_on "gobject-introspection" => :build
   depends_on "meson" => :build

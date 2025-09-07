@@ -49,7 +49,6 @@ class DosboxX < Formula
   end
 
   on_linux do
-    depends_on "linux-headers@5.15" => :build
     depends_on "alsa-lib"
     depends_on "libx11"
     depends_on "libxrandr"

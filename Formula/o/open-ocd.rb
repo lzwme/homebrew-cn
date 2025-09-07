@@ -32,6 +32,7 @@ class OpenOcd < Formula
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
+    depends_on "jimtcl" => :build
     depends_on "libtool" => :build
     depends_on "texinfo" => :build
   end

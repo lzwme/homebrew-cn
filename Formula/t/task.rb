@@ -26,7 +26,6 @@ class Task < Formula
   depends_on "rust" => :build
 
   on_linux do
-    depends_on "linux-headers@5.15" => :build
     depends_on "readline"
     depends_on "util-linux"
   end

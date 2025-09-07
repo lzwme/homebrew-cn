@@ -6,13 +6,14 @@ class Gensio < Formula
   license all_of: ["LGPL-2.1-only", "GPL-2.0-only", "Apache-2.0"]
 
   bottle do
-    sha256 arm64_sequoia: "55f26f4519d626685977d8698f239dd144b28d5dff6f2bd08182335f6026af4d"
-    sha256 arm64_sonoma:  "a26e4a132a4f4099ce49f56c17b7c24f0e509a9e944ef54634151b10c02657dc"
-    sha256 arm64_ventura: "e2a24dac5ea15c6235327c5028e8ed34e59e09c64e35830e1f7f4b699c3e5987"
-    sha256 sonoma:        "74eced1fc82f3d172aee5eef3194d8e5e401f160fd1554c85c3352f6bf305ecf"
-    sha256 ventura:       "f76906e1351966419ed1617b3cba3fa43ab37f1b9dd4d4dc2547f15604336325"
-    sha256 arm64_linux:   "7849c953dc4d197d70ecc835d47b25e7de0f0cd51a2b02b163570ab79fbe0dcd"
-    sha256 x86_64_linux:  "f0654ac13d972321059009c5d0b971b3c7a7206239bc6db5045125e0a04b283e"
+    rebuild 1
+    sha256 arm64_sequoia: "f457b2ff887d4185b42cdbc10d84add3917d22ca11fae4e1ee20a2ada1e9521c"
+    sha256 arm64_sonoma:  "96b46ed061f5e25c0c311f12d382d0a23b4122ac01fbe0bf3f0a75d30271c24e"
+    sha256 arm64_ventura: "49728197d847378132c23682ab2de37655f4b4839f350ef761377d78aa98f72c"
+    sha256 sonoma:        "2d0c0744dbe3bccca04aa55874165036386436b400aac7a9f008d62780f3e0a3"
+    sha256 ventura:       "d84654ff3a63796d51f6cc4ce1dcb5029f12a66f6d246f111ac6e0db533d009d"
+    sha256 arm64_linux:   "1516dd344ba741c695f5f8294ae74022e0206eda6e5aa5a869ba005630977fcc"
+    sha256 x86_64_linux:  "9b133b00d37f8aa4ddf4c924f67f39444d16e6def67fcdbb010f7ae49d015dd2"
   end
 
   depends_on "go" => :build
@@ -22,8 +23,7 @@ class Gensio < Formula
   depends_on "glib"
   depends_on "openssl@3"
   depends_on "python@3.13"
-
-  uses_from_macos "tcl-tk"
+  depends_on "tcl-tk"
 
   on_macos do
     depends_on "gettext"
@@ -42,13 +42,15 @@ class Gensio < Formula
   end
 
   def install
+    tcltk = Formula["tcl-tk"]
     args = %W[
       --disable-silent-rules
       --with-python=#{which(python3)}
       --with-pythoninstall=#{lib}/gensio-python
+      --with-tclcflags=-I#{tcltk.opt_include}/tcl-tk
+      --with-tcllibs=-ltcl#{tcltk.version.major_minor}
       --sysconfdir=#{etc}
     ]
-    args << "--with-tclcflags=-I#{HOMEBREW_PREFIX}/include/tcl-tk" if OS.linux?
 
     system "./configure", *args, *std_configure_args
     system "make", "install"

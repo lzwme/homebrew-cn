@@ -1,18 +1,18 @@
 class Nak < Formula
   desc "CLI for doing all things nostr"
   homepage "https://github.com/fiatjaf/nak"
-  url "https://ghfast.top/https://github.com/fiatjaf/nak/archive/refs/tags/v0.15.4.tar.gz"
-  sha256 "1281fda378b3215e128df4b5f60770a5b5a4b4918d4158b321e6789270e311bc"
+  url "https://ghfast.top/https://github.com/fiatjaf/nak/archive/refs/tags/v0.16.1.tar.gz"
+  sha256 "0f86d7ce10414e6648cf3cadfd616582184b7c28e944398de6e71bd0334c476f"
   license "Unlicense"
   head "https://github.com/fiatjaf/nak.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e43f80130da2bb51907308374ec7cebac9c89a9c7aa4783569c979bd58000298"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e43f80130da2bb51907308374ec7cebac9c89a9c7aa4783569c979bd58000298"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "e43f80130da2bb51907308374ec7cebac9c89a9c7aa4783569c979bd58000298"
-    sha256 cellar: :any_skip_relocation, sonoma:        "89acd53f64abc97a137fa856b764ba9af2fb39c19a43d45e79b9c8b21d56a934"
-    sha256 cellar: :any_skip_relocation, ventura:       "89acd53f64abc97a137fa856b764ba9af2fb39c19a43d45e79b9c8b21d56a934"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1af24bf5f521b173bd4a89ef9b13cd47129c17ca986631c91a7cae16a32fe9db"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "44f98d5d7e2568a2862a9b06b9eceb8a059ddefb35d4aa027c9991a580831f59"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "44f98d5d7e2568a2862a9b06b9eceb8a059ddefb35d4aa027c9991a580831f59"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "44f98d5d7e2568a2862a9b06b9eceb8a059ddefb35d4aa027c9991a580831f59"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d3b6ff79307faadd827ddbe809c56de85be8affa8ab0834f7f756631aeab786c"
+    sha256 cellar: :any_skip_relocation, ventura:       "d3b6ff79307faadd827ddbe809c56de85be8affa8ab0834f7f756631aeab786c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "026512c31ef9edcc2f076a6e960b53b8396d5546ab197eef549b83421d077f5b"
   end
 
   depends_on "go" => :build
@@ -24,6 +24,6 @@ class Nak < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/nak --version")
     assert_match "hello from the nostr army knife", shell_output("#{bin}/nak event")
-    assert_match "\"method\":\"listblockedips\"", shell_output("#{bin}/nak relay listblockedips")
+    assert_match "failed to fetch 'listblockedips'", shell_output("#{bin}/nak relay listblockedips 2>&1")
   end
 end

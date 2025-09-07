@@ -4827,6 +4827,7 @@ Homebrew-homebrew-core/Formula/n/newsboat.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/n/newsraft.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/n/newt.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/n/nextdns.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/n/nextflow.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/nexttrace.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/nexus.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/n/nfcutils.rb, Homebrew/homebrew-core, 0
@@ -9677,8 +9678,12 @@ Homebrew-homebrew-cask/Casks/font/font-b/font-biorhyme.rb, Homebrew/homebrew-cas
 Homebrew-homebrew-cask/Casks/font/font-b/font-birthstone-bounce.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-b/font-birthstone.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-b/font-biryani.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/font/font-b/font-bitcount-grid-double-ink.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-b/font-bitcount-grid-double.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/font/font-b/font-bitcount-grid-single-ink.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-b/font-bitcount-grid-single.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/font/font-b/font-bitcount-ink.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/font/font-b/font-bitcount-prop-double-ink.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-b/font-bitcount-prop-double.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-b/font-bitcount-prop-single-ink.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-b/font-bitcount-prop-single.rb, Homebrew/homebrew-cask, 0
@@ -14365,7 +14370,6 @@ Homebrew-homebrew-cask/Casks/s/slicer@preview.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/slidepad.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/slidepilot.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/slideshower.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/s/slik.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/slimbatterymonitor.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/slimhud.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/slippi-dolphin.rb, Homebrew/homebrew-cask, 1

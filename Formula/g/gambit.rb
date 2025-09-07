@@ -11,19 +11,20 @@ class Gambit < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "0b7f31bfbf9e517470b7a05715dfc8811c5d4a10b788cdb292081dc61c5f253e"
-    sha256 cellar: :any,                 arm64_sonoma:  "906d30bf9d44063baddba7b60668a4ae461fe6e16a5942343ce0bb7e6e779352"
-    sha256 cellar: :any,                 arm64_ventura: "bb4d901b2ca8c56931b47521f962b11a4b235b15e428929cb64f7341f5461f7f"
-    sha256 cellar: :any,                 sonoma:        "f36ec4099e2f993b3306ec82397e38e00a6db046578a0b44a285db4123c646a4"
-    sha256 cellar: :any,                 ventura:       "3170670094311df7dfe8c4f77cdb2d3c77fe451ad911024496cabaefca6a152e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "19856d0f8492c5119e8fa4177eaa886eb79e8dc9eaf6d10cbf45c08a63f380ca"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "96883b393aab9507394e10b92dafa6a20162d3719e3d7cbf09ce035b61060f9e"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "3fc6ab0fe551df62fbe58c44d33b6e294996c24f35f9edbc5e2fea06c9dd5612"
+    sha256 cellar: :any,                 arm64_sonoma:  "3e3701abf841a6aa7177d8088b6664ef03f121bf28e149d8432be31b6478d8c1"
+    sha256 cellar: :any,                 arm64_ventura: "e4997419e975a80bbe911d957bb9f7bf7769495e74864accaa448aa5bd5d86a5"
+    sha256 cellar: :any,                 sonoma:        "08fa58bb79bf149543520ba5df8555029d1a019ae9955d35196b0097428dad7e"
+    sha256 cellar: :any,                 ventura:       "df821e88530d463b75db3ca8038c1232713d050ec2f65511e3f06cd7872b370c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c215ddaef3d961d77f9ddf87bb0900254f93e257554fdb5c86e59ae1749c45f4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ce24804de36ac3aec98b9f9a0ac68205e3df1c89bade179106ab7fe485c74bda"
   end
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
-  depends_on "wxwidgets@3.2"
+  depends_on "wxwidgets"
 
   def install
     wxwidgets = deps.find { |dep| dep.name.match?(/^wxwidgets(@\d+(\.\d+)*)?$/) }.to_formula

@@ -8,14 +8,11 @@ class Wordnet < Formula
   license :cannot_represent
   revision 2
 
-  # This matches WordNet tarball versions as well as database file versions,
-  # as these may differ.
+  # From homepage: "Princeton WordNet is no longer developed, though the
+  # database and all tools are freely available on the download page."
   livecheck do
-    url "https://wordnet.princeton.edu/download/current-version"
-    regex(/href=.*?(?:WordNet|wn)[._-]?v?(\d+(?:\.\d+)+)(?:[._-]dict)?\.t/i)
+    skip "No longer developed or maintained"
   end
-
-  no_autobump! because: :requires_manual_review
 
   bottle do
     sha256                               arm64_sequoia: "13c3f71489c21a26e9ccab1c57d9021c705fe548ac756787e2641b90a1eadfb9"

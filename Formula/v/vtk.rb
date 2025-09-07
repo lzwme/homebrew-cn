@@ -43,7 +43,6 @@ class Vtk < Formula
 
   uses_from_macos "expat"
   uses_from_macos "libxml2"
-  uses_from_macos "tcl-tk"
   uses_from_macos "zlib"
 
   on_linux do
