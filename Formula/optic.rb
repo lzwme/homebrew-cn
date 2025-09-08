@@ -7,8 +7,7 @@ class Optic < Formula
   license "MIT"
 
   livecheck do
-    url :stable
-    strategy :github_latest
+    skip "Only source code is provided; currently no build step in formula"
   end
 
   def install

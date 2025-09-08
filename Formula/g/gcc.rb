@@ -61,9 +61,6 @@ class Gcc < Formula
     depends_on "binutils"
   end
 
-  # GCC bootstraps itself, so it is OK to have an incompatible C++ stdlib
-  cxxstdlib_check :skip
-
   def version_suffix
     if build.head?
       "HEAD"

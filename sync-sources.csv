@@ -135,6 +135,7 @@ Homebrew-homebrew-core/Formula/a/ampl-mp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/amqp-cpp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/amtterm.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/analog.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/a/anchor.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/ancient.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/angband.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/angle-grinder.rb, Homebrew/homebrew-core, 1
@@ -3490,6 +3491,7 @@ Homebrew-homebrew-core/Formula/l/launch_socket_server.rb, Homebrew/homebrew-core
 Homebrew-homebrew-core/Formula/l/launchctl-completion.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/launchdns.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lavat.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/l/lazycontainer.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lazydocker.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lazygit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lazyjj.rb, Homebrew/homebrew-core, 1
@@ -6516,6 +6518,7 @@ Homebrew-homebrew-core/Formula/s/spatialite-tools.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/spawn-fcgi.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/spdlog.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/spdx-sbom-generator.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/s/specify.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/spectra.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/spectral-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/speech-tools.rb, Homebrew/homebrew-core, 0
@@ -7810,7 +7813,7 @@ Homebrew-homebrew-core/Formula/z/znapzend.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/znc.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/z/zns.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/zola.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/z/zookeeper.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/z/zookeeper.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/z/zopfli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/zorba.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/zork.rb, Homebrew/homebrew-core, 1
@@ -9916,7 +9919,6 @@ Homebrew-homebrew-cask/Casks/font/font-d/font-danfo.rb, Homebrew/homebrew-cask, 
 Homebrew-homebrew-cask/Casks/font/font-d/font-dangrek.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-d/font-darker-grotesque.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-d/font-darumadrop-one.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/font/font-d/font-darwin.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-d/font-dashicons.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-d/font-david-clm.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-d/font-david-libre.rb, Homebrew/homebrew-cask, 0
@@ -10286,6 +10288,7 @@ Homebrew-homebrew-cask/Casks/font/font-h/font-host-grotesk.rb, Homebrew/homebrew
 Homebrew-homebrew-cask/Casks/font/font-h/font-hubballi.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-h/font-hubot-sans.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-h/font-humor-sans.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/font/font-h/font-hundar.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-h/font-huninn.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-h/font-hurmit-nerd-font.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-h/font-hurricane.rb, Homebrew/homebrew-cask, 0
@@ -12677,6 +12680,7 @@ Homebrew-homebrew-cask/Casks/l/licecap.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/license-control-center.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/licensed-app.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/liclipse.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/l/lidanglesensor.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/l/lidarr.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/l/lifesize.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/lightburn.rb, Homebrew/homebrew-cask, 0
@@ -13732,7 +13736,6 @@ Homebrew-homebrew-cask/Casks/p/pokerth.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/polkadot-js.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/pololu-avr-programmer-v2.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/polymail.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/p/polypad.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/polypane.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/polyphone.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/pomatez.rb, Homebrew/homebrew-cask, 1
@@ -15409,7 +15412,6 @@ Homebrew-homebrew-cask/Casks/z/zen.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/z/zen@twilight.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/z/zenbeats.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/z/zenmap.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/z/zenmate-vpn.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/z/zeplin.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/z/zerobranestudio.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/z/zeronet.rb, Homebrew/homebrew-cask, 1
@@ -15503,7 +15505,6 @@ nicerloop-homebrew-nicerloop/Casks/logitech-firmwareupdatetool.rb, nicerloop/hom
 nicerloop-homebrew-nicerloop/Casks/logitech-unifying.rb, nicerloop/homebrew-nicerloop, 0
 nicerloop-homebrew-nicerloop/Casks/neardrop.rb, nicerloop/homebrew-nicerloop, 1
 nicerloop-homebrew-nicerloop/Casks/nomad-login-ad.rb, nicerloop/homebrew-nicerloop, 0
-nicerloop-homebrew-nicerloop/Casks/opencore-legacy-patcher.rb, nicerloop/homebrew-nicerloop, 1
 nicerloop-homebrew-nicerloop/Casks/openemu-nonmetal.rb, nicerloop/homebrew-nicerloop, 1
 nicerloop-homebrew-nicerloop/Casks/peazip.rb, nicerloop/homebrew-nicerloop, 1
 nicerloop-homebrew-nicerloop/Casks/replaywebpage.rb, nicerloop/homebrew-nicerloop, 1

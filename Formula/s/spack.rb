@@ -12,11 +12,13 @@ class Spack < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "123abac0cc1f1c77661a407c1ca5f2946bd327feaa4e83837a1287953d758f6c"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, all: "7ac4187c520f5429bdd8e5c407188fbfbd778795bb4437a8e762934619bc5d9d"
   end
 
   uses_from_macos "python"
+
+  skip_clean "var/spack/junit-report"
 
   def install
     # Remove Windows files
@@ -25,10 +27,7 @@ class Spack < Formula
     rm_r "lib/spack/spack/test"
 
     prefix.install Dir["*"]
-  end
-
-  def post_install
-    mkdir_p prefix/"var/spack/junit-report" unless (prefix/"var/spack/junit-report").exist?
+    (prefix/"var/spack/junit-report").mkpath
   end
 
   test do

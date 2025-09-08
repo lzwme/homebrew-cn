@@ -1,19 +1,19 @@
 class Gofumpt < Formula
   desc "Stricter gofmt"
   homepage "https://github.com/mvdan/gofumpt"
-  url "https://ghfast.top/https://github.com/mvdan/gofumpt/archive/refs/tags/v0.9.0.tar.gz"
-  sha256 "0fe46851740bc4146f1e2ac0b23ca67a481490a603db189cae35a4be1787092f"
+  url "https://ghfast.top/https://github.com/mvdan/gofumpt/archive/refs/tags/v0.9.1.tar.gz"
+  sha256 "43cc77a94f65b2ba940310ac4268567d61b9cc01414b0c70cce45c5a60c8e4ec"
   license "BSD-3-Clause"
   head "https://github.com/mvdan/gofumpt.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "07e39d7b570c1e33f56c13a4c1e32bec18a8f679e49ba7f46872d9959b4fd59b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "07e39d7b570c1e33f56c13a4c1e32bec18a8f679e49ba7f46872d9959b4fd59b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "07e39d7b570c1e33f56c13a4c1e32bec18a8f679e49ba7f46872d9959b4fd59b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6d6ac3f4c453c0570bf7feb57cfc6fd4768d4657275be92dda213041cdd9fa70"
-    sha256 cellar: :any_skip_relocation, ventura:       "6d6ac3f4c453c0570bf7feb57cfc6fd4768d4657275be92dda213041cdd9fa70"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5443b3aa9410088a1abd34cf2952aff344a6ab0874449c27978192eb28cb1a03"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3bc4ec01da08b5bc0230003cb5d8f445799d87ae7dced86675b46d55bf08f2ed"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d4551615ecf46efb1b4d0c0cf63ca7be7dc3aab0ac7fbd239a9e026b8db02bb0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d4551615ecf46efb1b4d0c0cf63ca7be7dc3aab0ac7fbd239a9e026b8db02bb0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "d4551615ecf46efb1b4d0c0cf63ca7be7dc3aab0ac7fbd239a9e026b8db02bb0"
+    sha256 cellar: :any_skip_relocation, sonoma:        "834a798fe891e01a6aa6f7001921807428f7b08f00074093b61d9db2f62a8a0e"
+    sha256 cellar: :any_skip_relocation, ventura:       "834a798fe891e01a6aa6f7001921807428f7b08f00074093b61d9db2f62a8a0e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9f234ab78d80bccc966e642f5cdcb20383490c8ff70ec360719e56af106fdd31"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9b7d8a96c584746e862c805a12270d139d9c204b358f2a0ad3648d391ff86612"
   end
 
   depends_on "go"

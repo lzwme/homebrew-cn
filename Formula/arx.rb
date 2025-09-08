@@ -7,6 +7,11 @@ class Arx < Formula
 
   depends_on "openjdk"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   def install
     libexec.install Dir["*"]
     Pathname.glob("#{libexec}/*.jar") do |file|

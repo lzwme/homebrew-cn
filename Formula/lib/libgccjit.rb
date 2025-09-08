@@ -56,9 +56,6 @@ class Libgccjit < Formula
     end
   end
 
-  # GCC bootstraps itself, so it is OK to have an incompatible C++ stdlib
-  cxxstdlib_check :skip
-
   def install
     # GCC will suffer build errors if forced to use a particular linker.
     ENV.delete "LD"

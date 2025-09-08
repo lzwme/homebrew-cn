@@ -53,7 +53,6 @@ class Vte3 < Formula
   end
 
   on_linux do
-    depends_on "linux-headers@5.15" => :build
     depends_on "systemd"
   end
 

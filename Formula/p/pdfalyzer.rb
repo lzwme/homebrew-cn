@@ -3,19 +3,19 @@ class Pdfalyzer < Formula
 
   desc "PDF analysis toolkit"
   homepage "https://github.com/michelcrypt4d4mus/pdfalyzer"
-  url "https://files.pythonhosted.org/packages/0d/8d/a4e25bad06b8e2a973c19a59525493031f0e9b3b69eb44009a70587195e4/pdfalyzer-1.16.11.tar.gz"
-  sha256 "a2a97ff7dbe60ced411da8e19e7a133c498049f1e95b441693b14fa39d1ebffc"
+  url "https://files.pythonhosted.org/packages/0f/f0/00f7863b9b836ab5cec317defdaeed6ea232f14456c2e15933662b9bfdf7/pdfalyzer-1.16.13.tar.gz"
+  sha256 "1ac1bb2b6ba17960eacdbc6a2b5e08be9e30c03d7b84639f67d9542b4057a333"
   license "GPL-3.0-or-later"
   head "https://github.com/michelcrypt4d4mus/pdfalyzer.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "964c223ac5b12ce6f7434a39c49c0aaec4144d4731701b4f23bee233625b6d7f"
-    sha256 cellar: :any,                 arm64_sonoma:  "a4e5c6575878d8b2d1c9c7beeed3942079b1e050aaeea437760ef8e816022103"
-    sha256 cellar: :any,                 arm64_ventura: "0f7682a8e9d3aa40703fabbfeb969051e0588721ec248158da2077fc72dab14e"
-    sha256 cellar: :any,                 sonoma:        "d1321ae5b81ecebc00e3a1179ab329ce46fa09ca14e663849bbd234c9fcb87a4"
-    sha256 cellar: :any,                 ventura:       "04d34b7f059d20cbc2704cebcb6d78d7dc43c3a71fd7cf0d60ad9eb936676df1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4a946c2316fc6ffde6f7d1b7f94227de572b4f6d7d2c886c49ec408cdb378799"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1f7298630b5d9fe8532da1d096ddffa10c42f5ef9809a050e10219f404778216"
+    sha256 cellar: :any,                 arm64_sequoia: "7b2392e5ffea8d4c7c636b81dbafc1bed22e06bb543dda5821af1906c5a7ccf8"
+    sha256 cellar: :any,                 arm64_sonoma:  "530bb28ecec232fb638823c430ff7cccd7a37e56e6b0d00c149dd941c1f13553"
+    sha256 cellar: :any,                 arm64_ventura: "a38bfbd300b347ce669255301710891b565548ba2eff66f436b4e22520c203e5"
+    sha256 cellar: :any,                 sonoma:        "bcafd6bfd96e47b0ec1486e506bf5cb6f2080f90fc7185badcf95488d3be8f17"
+    sha256 cellar: :any,                 ventura:       "0cd63e4806de2968d529b59083f832ceebfd319695154a60c03b92d8902f157c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4dcc5cae43bfdb28701317f0a2418d2ea02093b19d79317a47b9b8ec92fb3b68"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2477e619c7d65139a6bd2f99a9caad5f75ad7eccf524c7209df2b1dffdc5a06a"
   end
 
   depends_on "openssl@3"
@@ -32,8 +32,8 @@ class Pdfalyzer < Formula
   end
 
   resource "markdown-it-py" do
-    url "https://files.pythonhosted.org/packages/38/71/3b932df36c1a044d397a1f92d1cf91ee0a503d91e470cbd670aa66b07ed0/markdown-it-py-3.0.0.tar.gz"
-    sha256 "e3f60a94fa066dc52ec76661e37c851cb232d92f9886b15cb560aaada2df8feb"
+    url "https://files.pythonhosted.org/packages/5b/f5/4ec618ed16cc4f8fb3b701563655a69816155e79e24a17b651541804721d/markdown_it_py-4.0.0.tar.gz"
+    sha256 "cb0a2b4aa34f932c007117b194e945bd74e0ec24133ceb5bac59009cda1cb9f3"
   end
 
   resource "mdurl" do
@@ -47,8 +47,8 @@ class Pdfalyzer < Formula
   end
 
   resource "pypdf" do
-    url "https://files.pythonhosted.org/packages/89/3a/584b97a228950ed85aec97c811c68473d9b8d149e6a8c155668287cf1a28/pypdf-5.9.0.tar.gz"
-    sha256 "30f67a614d558e495e1fbb157ba58c1de91ffc1718f5e0dfeb82a029233890a1"
+    url "https://files.pythonhosted.org/packages/20/ac/a300a03c3b34967c050677ccb16e7a4b65607ee5df9d51e8b6d713de4098/pypdf-6.0.0.tar.gz"
+    sha256 "282a99d2cc94a84a3a3159f0d9358c0af53f85b4d28d76ea38b96e9e5ac2a08d"
   end
 
   resource "python-dotenv" do
@@ -72,8 +72,8 @@ class Pdfalyzer < Formula
   end
 
   resource "yaralyzer" do
-    url "https://files.pythonhosted.org/packages/0c/b1/e421d10cfb7eb25d2e7f3ea2ac984ae983b79bb947638741a952c7820f23/yaralyzer-1.0.6.tar.gz"
-    sha256 "4576d0f59954b2e9cc9b73e33973e3a1a632e42b42464a6ede0ddea7f41600c2"
+    url "https://files.pythonhosted.org/packages/48/7b/d50dab2395c1fd750da6395eca139021c779f7ca8eb6e0e9b3a287cbb5ca/yaralyzer-1.0.7.tar.gz"
+    sha256 "925e23ad0466fbfc25be70d6053c553888b06723fc03fa607e7cf526932cf92b"
   end
 
   def install

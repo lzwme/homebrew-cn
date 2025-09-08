@@ -61,17 +61,20 @@ class Pidgin < Formula
   head do
     url "https://keep.imfreedom.org/pidgin/pidgin/", using: :hg
 
+    depends_on "gi-docgen" => :build
     depends_on "gobject-introspection" => :build
     depends_on "gstreamer" => :build
+    depends_on "libsoup" => :build
     depends_on "mercurial" => :build
     depends_on "meson" => :build
     depends_on "ninja" => :build
 
     depends_on "gplugin"
     depends_on "gtk4"
+    depends_on "gtksourceview5"
     depends_on "json-glib"
     depends_on "libadwaita"
-    depends_on "libsoup"
+    depends_on "libspelling"
     depends_on "sqlite"
   end
 
@@ -93,7 +96,8 @@ class Pidgin < Formula
     if build.head?
       # TODO: Patch pidgin to read plugins from HOMEBREW_PREFIX similar to stable build
       ENV["DESTDIR"] = "/"
-      system "meson", "setup", "build", "--force-fallback-for=birb,hasl,ibis,xeme", *std_meson_args
+      ENV["GI_GIR_PATH"] = HOMEBREW_PREFIX/"share/gir-1.0"
+      system "meson", "setup", "build", "--force-fallback-for=birb,hasl,ibis,seagull,xeme", *std_meson_args
       system "meson", "compile", "-C", "build", "--verbose"
       system "meson", "install", "-C", "build"
       return

@@ -8,5 +8,9 @@ cask "webarchiveextractor" do
   desc "Utility to un-archive .webarchive files (like when saving from Safari)"
   homepage "https://robrohan.github.io/WebArchiveExtractor/"
 
+  livecheck do
+    skip "Binary releases require payment; source code available for compilation"
+  end
+
   app "WebArchiveExtractor.app"
 end

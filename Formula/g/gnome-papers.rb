@@ -16,6 +16,7 @@ class GnomePapers < Formula
   end
 
   depends_on "desktop-file-utils" => :build
+  depends_on "gettext" => :build # for msgfmt
   depends_on "gobject-introspection" => :build
   depends_on "itstool" => :build
   depends_on "meson" => :build
@@ -29,22 +30,20 @@ class GnomePapers < Formula
   depends_on "exempi"
   depends_on "gdk-pixbuf"
   depends_on "glib"
+  depends_on "graphene"
   depends_on "gtk4"
+  depends_on "gtksourceview5"
   depends_on "hicolor-icon-theme"
   depends_on "libadwaita"
   depends_on "libarchive"
   depends_on "libspelling"
   depends_on "libtiff"
+  depends_on "pango"
   depends_on "poppler"
-
-  uses_from_macos "zlib"
 
   on_macos do
     depends_on "gettext"
-  end
-
-  on_linux do
-    depends_on "gettext" => :build # for msgfmt
+    depends_on "harfbuzz"
   end
 
   def install
@@ -54,7 +53,7 @@ class GnomePapers < Formula
       # https://github.com/gettext-rs/gettext-rs/tree/master/gettext-sys#environment-variables
       ENV["GETTEXT_DIR"] = Formula["gettext"].prefix.to_s
 
-      ENV.append "RUSTFLAGS", "--codegen link-args=-Wl,-rpath,#{rpath}"
+      ENV.append_to_rustflags "--codegen link-args=-Wl,-rpath,#{rpath}"
     end
 
     # Export pps_job_run for testing. Remove this workaround in 49.x.

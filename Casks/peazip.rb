@@ -1,6 +1,6 @@
 cask "peazip" do
-  version "10.5.0"
-  sha256 "49e365c7e71dc74e27d97f5bb73a2312a9b97ee4278e1032fe7f4f4080a9cdc3"
+  version "10.6.1"
+  sha256 "7229a8482ee88b465d90591d19438572a8ebaee6b5a22c781ef6d7b65916d4c2"
 
   url "https://ghfast.top/https://github.com/peazip/PeaZip/releases/download/#{version}/peazip-#{version}.DARWIN.x86_64.dmg"
   name "peazip"
