@@ -1,10 +1,10 @@
 class Regal < Formula
   desc "Linter and language server for Rego"
-  homepage "https://docs.styra.com/regal"
-  url "https://ghfast.top/https://github.com/StyraInc/regal/archive/refs/tags/v0.35.1.tar.gz"
+  homepage "https://www.openpolicyagent.org/projects/regal"
+  url "https://ghfast.top/https://github.com/open-policy-agent/regal/archive/refs/tags/v0.35.1.tar.gz"
   sha256 "49bfa9e94f66fffebe963c886686cdf7a202f7d4fbe6ed59b02d13e0bd0e3fc3"
   license "Apache-2.0"
-  head "https://github.com/StyraInc/regal.git", branch: "main"
+  head "https://github.com/open-policy-agent/regal.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "6439d599a24d1ab0885f6d082d7621b444b064ca0dcbb9e29f44fd1b8c33329e"
@@ -18,6 +18,8 @@ class Regal < Formula
   depends_on "go" => :build
 
   def install
+    odie "Update ldflags" if build.stable? && version > "0.35.1"
+
     ldflags = %W[
       -s -w
       -X github.com/styrainc/regal/pkg/version.Version=#{version}

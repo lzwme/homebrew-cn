@@ -3,18 +3,18 @@ class Flexget < Formula
 
   desc "Multipurpose automation tool for content"
   homepage "https://www.flexget.com"
-  url "https://files.pythonhosted.org/packages/87/45/17ded33732bf0317fac1a5df1919e02c527e3e0bef3b40badd395106a410/flexget-3.18.5.tar.gz"
-  sha256 "8871917c8348d630fa0dfd79967a347e47c2fdc1c797dda46efbe96991d7c029"
+  url "https://files.pythonhosted.org/packages/cb/c8/a01013bc164c1862de210febe9afeae1f1a0e6aa73d2d0e5e86cfe79b47c/flexget-3.18.6.tar.gz"
+  sha256 "8a5cc71355e5ed6bd2f76ece867ad95c903718ca3103d4f991079ecf2a1ba5df"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "9bd66ece676344df151154ff9a990ef03c7361b1200469dceaf444365909c0cf"
-    sha256 cellar: :any,                 arm64_sonoma:  "e30d8c3a0cb323c2b2db763078ca0da654a5355b3ee4a80b8e290112065950c3"
-    sha256 cellar: :any,                 arm64_ventura: "1cffbb506c95dc0346348d8fd46b340c46f638e3b6c805af2245ec0464866210"
-    sha256 cellar: :any,                 sonoma:        "1f9f84cca6773c37e329073afcc143b9566b7320904c62c776204f6988d56b8d"
-    sha256 cellar: :any,                 ventura:       "4425198fd81f28d27985571347c9b51e4511cd985d911f93e164445a7bb8c0a4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "246769fee32d330ff0698a332fe3e63fe640d4311ac86d6bcf61c6fc3a8a0eed"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3cfb539b17d1002451cedc800426082c770f1add424f107c26dae3e971633679"
+    sha256 cellar: :any,                 arm64_sequoia: "87c6b9d6f6c7406de8b5ee803b1787d7b09360a6c501b014a27b4b3ae1d38809"
+    sha256 cellar: :any,                 arm64_sonoma:  "a70afdd6a666a2bd0359e80f6554579dfcc639f9778d178cc485bff5aaf9de85"
+    sha256 cellar: :any,                 arm64_ventura: "3591a95fdd8459df1dff6b1c32d3cb934cef4353849047ab45f1529b3c502d46"
+    sha256 cellar: :any,                 sonoma:        "2819f012129ef93a64e0b48bd7844c365848823d1361bbafb41e2ebef0c09d8a"
+    sha256 cellar: :any,                 ventura:       "b709a7c32732ec7a610ac7a7bd2c2a8c13cb707bab0fbf25a36619c54a20ac38"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "58f52c501d756d99edd1ae4a65ba83607564a4ff3f0b3bcdd80f160a2cf74227"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4b2aade7883f70043b877c9f84125472a2850cff5110194e25a6effc477f8a6d"
   end
 
   depends_on "rust" => :build
@@ -174,8 +174,8 @@ class Flexget < Formula
   end
 
   resource "jsonschema-specifications" do
-    url "https://files.pythonhosted.org/packages/bf/ce/46fbd9c8119cfc3581ee5643ea49464d168028cfb5caff5fc0596d0cf914/jsonschema_specifications-2025.4.1.tar.gz"
-    sha256 "630159c9f4dbea161a6a2205c3011cc4f18ff381b189fff48bb39b9bf26ae608"
+    url "https://files.pythonhosted.org/packages/19/74/a633ee74eb36c44aa6d1095e7cc5569bebf04342ee146178e2d36600708b/jsonschema_specifications-2025.9.1.tar.gz"
+    sha256 "b540987f239e745613c7a9176f3edb72b832a4ac465cf02712288397832b5e8d"
   end
 
   resource "loguru" do

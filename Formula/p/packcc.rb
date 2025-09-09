@@ -13,6 +13,7 @@ class Packcc < Formula
     sha256 arm64_ventura: "255f7aea2aa1751e6f4cefb5bdf94c39b8f467d13367b3e1f5a6ebb7bacb4106"
     sha256 sonoma:        "d4536c19e74530b56251136175507807f63547cbc67cf77c93f6b4545569c046"
     sha256 ventura:       "ff1768a9796d859f9ba44c04f5f7ed04692ea39d9ed62dbc8255713f8badb263"
+    sha256 arm64_linux:   "a8f0a5decaf1f6a96c01b770938182ff10da977292f249ffa6a67e94bc411eb4"
     sha256 x86_64_linux:  "ace36e10dc14b5bfa32e9f13355c9b713723148ab1f34e7b9cb90c0782550e01"
   end
 
