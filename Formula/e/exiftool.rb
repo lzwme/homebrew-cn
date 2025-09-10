@@ -3,9 +3,9 @@ class Exiftool < Formula
   homepage "https://exiftool.org"
   # Ensure release is tagged production before submitting.
   # https://exiftool.org/history.html
-  url "https://exiftool.org/Image-ExifTool-13.35.tar.gz"
-  mirror "https://cpan.metacpan.org/authors/id/E/EX/EXIFTOOL/Image-ExifTool-13.35.tar.gz"
-  sha256 "03ef47e8b38add4801082fd6b399b9d7d9d77eaea03f7bca175537931563cd16"
+  url "https://exiftool.org/Image-ExifTool-13.36.tar.gz"
+  mirror "https://cpan.metacpan.org/authors/id/E/EX/EXIFTOOL/Image-ExifTool-13.36.tar.gz"
+  sha256 "328a4a365db7d1051322897138a0665c405107e53f829d8d50ccf43b328e8c28"
   license any_of: ["Artistic-1.0-Perl", "GPL-1.0-or-later"]
 
   livecheck do
@@ -14,13 +14,13 @@ class Exiftool < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8a6d82271827c7c8acd2388ecf7ce755e4bdb4ca6cbfe9884e95844e57833074"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "45725bde1bac577f33ffdb71a06ccb988db9a180ff47bd3a84946fbdccd9b309"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "13bd670b6006ee48712e3a6e9104564d8b11dcc60b8310c396e82fc66a7e6814"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9d187b7e12848fa4dc54e422ab09a5e7ec1414df5fea737d2d1ec03a5338ab8e"
-    sha256 cellar: :any_skip_relocation, ventura:       "37d91c17a31d855aef99b606cb1895b0942421b3bc005c9039a1c75f4194ba84"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "287cd76a22d42b12eba33b8e8015836e235ca39bee4cd630df473691748b89c5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c2b64b4f9b0a491df0ef59544b8c3b04cb3e6091488c53f10c70269c53c3b890"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8ceb5e8de2603911a3a026807e930491a1dc5aa154d298ea23c9cb39b19cd7d0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2b5bbcd6686da4153fdb9bb365e6d0999f070b85714b9635731ee4f92aed98e5"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "57036f7b4908ab460767afd54434e22015acfc026f79a45f62bf3e3d3995edb7"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3c6a73572f184e0f45d4a1fba96180c995f7c7771988c5dc077b47d3bde2f836"
+    sha256 cellar: :any_skip_relocation, ventura:       "12a497ae4a72ef6cd78a4459fdf36610f37cb489462471afb79d58c5e3553518"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6d2b1d90b88c5adb12b04021032d411c08c57ab5821637f108694a5a6acda098"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fc381085733c7579a04f6020ead6781e1ee255bb323815a4c6b70d2947358225"
   end
 
   depends_on "cmake" => :build

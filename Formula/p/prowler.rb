@@ -3,19 +3,19 @@ class Prowler < Formula
 
   desc "Tool for cloud security assessments, audits, incident response, and more"
   homepage "https://prowler.com/"
-  url "https://files.pythonhosted.org/packages/09/75/495231b1250dfbd1de0fff793571d3180fa5c1b960e0532bc7af7de6eda4/prowler-5.11.0.tar.gz"
-  sha256 "ce78a0ed7ea52a49dc138bc23b2164df6532b8d40a3818b31f20cb8c5351957a"
+  url "https://files.pythonhosted.org/packages/c1/6a/d5a66bc3538ebf088a2467a5f91e557705a8af5a294a8183ed2744f875c6/prowler-5.12.0.tar.gz"
+  sha256 "dd0163d25198a9f10d12eccbe88659f42ca133181fd1eb23cdf9cb3c1e3bd060"
   license "Apache-2.0"
   head "https://github.com/prowler-cloud/prowler.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "334ece646d910cdf68461a12686cf3e00c2f62da2b78d94cce7bf861ef8808b0"
-    sha256 cellar: :any,                 arm64_sonoma:  "3b0c9667ff226294fca86372dadb7be9a3e8cd62ac00f9626a7706a2f42ee90b"
-    sha256 cellar: :any,                 arm64_ventura: "e2754154b0a030da7991b82972ecb4659eaabd7a8ef21cb3296782704cac362a"
-    sha256 cellar: :any,                 sonoma:        "b0266554e38fd8da441dda79f7814b8522351dd00688971cc10eff1f9c1df218"
-    sha256 cellar: :any,                 ventura:       "e2d8b379fc7d38894d897f8bca0f70745c17fb1c639bd4b3df8dcd3766532c37"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "55e7e345d0d6113f8179a981987c7b0a9941fcfb39909526b12e5acd5ed4cf41"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e783167f3af5159d065a0fef4da9eb41ce378f816bb7d43d7260e17e40b09d34"
+    sha256 cellar: :any,                 arm64_sequoia: "e8f948501456e902e603960366ec2e7db1b7ca98fd301d3f01f8ea9c87e50093"
+    sha256 cellar: :any,                 arm64_sonoma:  "2a918cbc6a6128af042d40c13e3f5c77f897ba0a79d9cabee504a0d59e14f9ec"
+    sha256 cellar: :any,                 arm64_ventura: "2bb0c779556a234e8522aea839550e8f3c60dd93ac153d0b07a214315e9b6d6f"
+    sha256 cellar: :any,                 sonoma:        "0be2fc2ee9fa6334e2b700bfa9ec4bce877eb34cd342825c9db1c196acffda29"
+    sha256 cellar: :any,                 ventura:       "a88fb582f88ee199c81d4c713d7c6448caab9cf2be124bf73b020210390473f5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "74672f7dd5993e870efeafdbbd83a85ab144d48ed5f8bf7e1e4b28a852311b74"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "88022c270c7cc129c01db794cc4122823fb20c62a43350735953f4799f4ba91b"
   end
 
   depends_on "cmake" => :build
@@ -290,8 +290,8 @@ class Prowler < Formula
   end
 
   resource "dnspython" do
-    url "https://files.pythonhosted.org/packages/b5/4a/263763cb2ba3816dd94b08ad3a33d5fdae34ecb856678773cc40a3605829/dnspython-2.7.0.tar.gz"
-    sha256 "ce9c432eda0dc91cf618a5cedf1a4e142651196bbcd2c80e89ed5a907e5cfaf1"
+    url "https://files.pythonhosted.org/packages/8c/8b/57666417c0f90f08bcafa776861060426765fdb422eb10212086fb811d26/dnspython-2.8.0.tar.gz"
+    sha256 "181d3c6996452cb1189c4046c61599b84a5a86e099562ffde77d26984ff26d0f"
   end
 
   resource "dulwich" do
@@ -375,8 +375,8 @@ class Prowler < Formula
   end
 
   resource "httplib2" do
-    url "https://files.pythonhosted.org/packages/3d/ad/2371116b22d616c194aa25ec410c9c6c37f23599dcd590502b74db197584/httplib2-0.22.0.tar.gz"
-    sha256 "d7a10bc5ef5ab08322488bde8c726eeee5c8618723fdb399597ec58f3d82df81"
+    url "https://files.pythonhosted.org/packages/5b/75/1d10a90b3411f707c10c226fa918cf4f5e0578113caa223369130f702b6b/httplib2-0.30.0.tar.gz"
+    sha256 "d5b23c11fcf8e57e00ff91b7008656af0f6242c8886fd97065c97509e4e548c5"
   end
 
   resource "httpx" do
@@ -390,8 +390,8 @@ class Prowler < Formula
   end
 
   resource "iamdata" do
-    url "https://files.pythonhosted.org/packages/95/4b/5ab11ef8cb2a0b46fb6264e3deabcca98213fc6317c171e74c825560ff11/iamdata-0.1.202508281.tar.gz"
-    sha256 "12fc705811c05f825f4a9fde577e73b47b6f5000d0aa5a5c5c31fa41a8c1c2dc"
+    url "https://files.pythonhosted.org/packages/29/d5/b0e9417aaf55d4bab379fe36fb6a7af879bb41ad5f557f8b81e6dbab24ca/iamdata-0.1.202509091.tar.gz"
+    sha256 "a1b4235baf1e635992a0e2272f5faf927387c9dd513330fdeb8005d7f48ba51a"
   end
 
   resource "idna" do
@@ -430,8 +430,8 @@ class Prowler < Formula
   end
 
   resource "jsonschema-specifications" do
-    url "https://files.pythonhosted.org/packages/bf/ce/46fbd9c8119cfc3581ee5643ea49464d168028cfb5caff5fc0596d0cf914/jsonschema_specifications-2025.4.1.tar.gz"
-    sha256 "630159c9f4dbea161a6a2205c3011cc4f18ff381b189fff48bb39b9bf26ae608"
+    url "https://files.pythonhosted.org/packages/19/74/a633ee74eb36c44aa6d1095e7cc5569bebf04342ee146178e2d36600708b/jsonschema_specifications-2025.9.1.tar.gz"
+    sha256 "b540987f239e745613c7a9176f3edb72b832a4ac465cf02712288397832b5e8d"
   end
 
   resource "kubernetes" do
@@ -510,8 +510,8 @@ class Prowler < Formula
   end
 
   resource "narwhals" do
-    url "https://files.pythonhosted.org/packages/01/8f/6b3d8c19540eaaa50778a8bbbe54e025d3f93aca6cdd5a4de3044c36f83c/narwhals-2.2.0.tar.gz"
-    sha256 "f6a34f2699acabe2c17339c104f0bec28b9f7a55fbc7f8d485d49bea72d12b8a"
+    url "https://files.pythonhosted.org/packages/ec/8f/b0a99455f6e5fe2d4e77deeee8b133cfa06e1f5441c77a70defdbbfbf639/narwhals-2.4.0.tar.gz"
+    sha256 "a71931f7fb3c8e082cbe18ef0740644d87d60eba841ddfa9ba9394de1d43062f"
   end
 
   resource "nest-asyncio" do

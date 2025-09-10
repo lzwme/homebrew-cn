@@ -1,8 +1,8 @@
 class Flix < Formula
   desc "Statically typed functional, imperative, and logic programming language"
   homepage "https://flix.dev/"
-  url "https://ghfast.top/https://github.com/flix/flix/archive/refs/tags/v0.61.1.tar.gz"
-  sha256 "608a06622c6668417e9fab060080460e63f1236213c171ddd300e6da739e3643"
+  url "https://ghfast.top/https://github.com/flix/flix/archive/refs/tags/v0.62.0.tar.gz"
+  sha256 "7d948207f7229aa3533809bd36735c3955457593f9593a26da97003d04f346a4"
   license "Apache-2.0"
   head "https://github.com/flix/flix.git", branch: "master"
 
@@ -12,7 +12,7 @@ class Flix < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "4ebf9af420764ade78be025c202de58e9b05d61b25c6d3d90d9bfdbedb603573"
+    sha256 cellar: :any_skip_relocation, all: "eed580b16dc4a9119222860565c0a99b8a97daa983b1c26f504da096cd669a02"
   end
 
   depends_on "gradle" => :build

@@ -11,6 +11,7 @@ class Pcapplusplus < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "eb59ce27fdc30a559228ff984d4a2f51a2ea86c693a575736537296175ec2244"
     sha256 cellar: :any_skip_relocation, sonoma:        "9019452d1e6616946480223d5725df1f1ea43c3bdb5652c0c387b10a8239d2c4"
     sha256 cellar: :any_skip_relocation, ventura:       "f6a57b0410bd1a733ee3b342addf244cda48557be7f226b46c3dfb4d1ed2df7e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e09fd13802dd4b8149f58fb69cfaf46dab0faeff6b0db6381809ee03fb9188bf"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "42c2a06a698bfd44bef147d045900a270af1418a3d2828d0ff406f1eeb0c02af"
   end
 

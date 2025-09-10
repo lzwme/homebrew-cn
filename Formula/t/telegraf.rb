@@ -1,9 +1,10 @@
 class Telegraf < Formula
   desc "Plugin-driven server agent for collecting & reporting metrics"
   homepage "https://www.influxdata.com/time-series-platform/telegraf/"
-  url "https://ghfast.top/https://github.com/influxdata/telegraf/archive/refs/tags/v1.36.0.tar.gz"
-  sha256 "8752209f0539c2c73f2ce69c22a05ab62bf50fe0b3e63db0eb6fd8f3d91ce646"
+  url "https://ghfast.top/https://github.com/influxdata/telegraf/archive/refs/tags/v1.36.1.tar.gz"
+  sha256 "2478f4c9543300ed44cc0a3329e5a4c6095d9a6eae86aa2deab4ff9d19c1fdd5"
   license "MIT"
+  revision 1
   head "https://github.com/influxdata/telegraf.git", branch: "master"
 
   livecheck do
@@ -12,12 +13,12 @@ class Telegraf < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b848c63a2fe5f716272bc845230f206a7bbbb3e1052f095533b84534a4344ac7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "20d514ebd19b88d77bdd8846d28b7c5a08831958e568e37537598ccc82d36716"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "a6cd946d434658d6f9aa2cdd57561289cbbe559872e181a540cf6dfa3b18c9b7"
-    sha256 cellar: :any_skip_relocation, sonoma:        "fc4135d547357153b39726042b9ae63c11d0a35eb0ac336a56f93d946ff3b784"
-    sha256 cellar: :any_skip_relocation, ventura:       "ae7fb2929154f6aec3eb2d55290cafcf6e63e2506cb0878eadba92c66691c7de"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8e3b503706d3091917ec081869fbfb474debd6ef38fd9d966067b7e18d44e8d3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "17806893a70f7a01b06da23929dd73699aedb2a061a6d30783edb2e6797c506e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bbb1f8c8d8214729f30cccebce6bacbcf964d7512557c01ad65e59c0ee077a78"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "fc259488b9582bf528370a57eb3bee5688b3c6ff788e92f39186e6ea223f2367"
+    sha256 cellar: :any_skip_relocation, sonoma:        "12629bde117747d88418cee4d6123fb39ba95828905196d6e96bfa6827ffa448"
+    sha256 cellar: :any_skip_relocation, ventura:       "d3b6348b243a63376fe8e0b884b208be9a000d49abd808316e446ec1623d8870"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0bb234f6bd0f8b8de4d424dc96c9fda63caa81c1efd79935aa2f563f86a5840d"
   end
 
   depends_on "go" => :build
@@ -38,6 +39,7 @@ class Telegraf < Formula
     working_dir var
     log_path var/"log/telegraf.log"
     error_log_path var/"log/telegraf.log"
+    environment_variables HOME: HOMEBREW_PREFIX
   end
 
   test do

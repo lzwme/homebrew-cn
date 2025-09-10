@@ -4,19 +4,19 @@ class MathComp < Formula
   url "https://ghfast.top/https://github.com/math-comp/math-comp/archive/refs/tags/mathcomp-2.4.0.tar.gz"
   sha256 "6307218d7e434fb6ffc81b9275c673d3f7f1f4884ad59b904abd205c437021a0"
   license "CECILL-B"
-  revision 1
+  revision 2
   head "https://github.com/math-comp/math-comp.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c34531e7a03718fea78babb4b7a5e7105f20a4be70784a33e63d2e669694bfce"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4db7e4334104d2f7290906f7be4beb51a9489b909a5ff316679a385ebb153e1c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "9a9a0478324dc36bfa04e45ea70c9cc91a9ca6d2eb6d9577366991e372dfcc40"
-    sha256 cellar: :any_skip_relocation, sonoma:        "066ad58d86a9f4982d68cef34225b46719a7bd3bd3c622ac36d8acf918294ed2"
-    sha256 cellar: :any_skip_relocation, ventura:       "7a048a18d9f7e1bb9e8d519b7162c5564f59a4703fe4f5c35b8a3fda82949fb0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "421fafa065e8136d76350a94a7da6baf3988c35d9ba471d3e14da0808c85251a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "409f55a55d780521e2da0458f0c61b7586960c012c35d173c2d2e8a5b6d3d3a6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "eabe13a0de7a122bcfa7ce4263041ae8adcd4409fd20daa0d65e0380d85b84cf"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "eac1d24ea50f9cbe36b2674bf23aaa8207cb24ab173bd759c1ed5362dc3337ec"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "31dc0aeeba701290a8d61da65d90764317c4bcc08d7416d2432704969e84b399"
+    sha256 cellar: :any_skip_relocation, sonoma:        "304ba73e50826a766924001836192b8618aa0d67fb1aa12fd759a1e2ead89330"
+    sha256 cellar: :any_skip_relocation, ventura:       "89364e88e0c6d66dd6ef08f90a484f014e2e04782c0341d8cc56043af26da985"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fd75cdd60e778402cbdccf3014d6e376e62bfa62c89bb5bd06134620fcac0788"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "435e9c0f9df8b2115f23d7ceac83842af297a73f1f6c15bc555785d288dcd832"
   end
 
   depends_on "ocaml" => :build

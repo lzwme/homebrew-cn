@@ -3,18 +3,18 @@ class Plutoprint < Formula
 
   desc "Generate PDFs and Images from HTML"
   homepage "https://github.com/plutoprint/plutoprint"
-  url "https://files.pythonhosted.org/packages/c0/35/aca0b163ae7a201b8b9c27f1c5bc5020b0badc93c7019020288f2099ca21/plutoprint-0.9.0.tar.gz"
-  sha256 "05c3c425dd57dbd5db0c26449e17e9e8cbc4eb041320697fa7c3f042dd3c1960"
+  url "https://files.pythonhosted.org/packages/46/2d/7467cfaa2206eb3acf69adec70f1b51da6f406ac7ac0d5703dd34bcb1374/plutoprint-0.10.0.tar.gz"
+  sha256 "802671eb74521ae97690f25cfb5038ed25db67cfafa12b0b9725f117df651dc9"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "47b20dcb6d4b4bcc9d631b923e716c115088437a564607dcc91c1cb8ea3d3d7d"
-    sha256 cellar: :any,                 arm64_sonoma:  "8570fc375cdd7d4ec7ab531bb30a6ff4dcf69e3953ce8b658c21ea1b36629a41"
-    sha256 cellar: :any,                 arm64_ventura: "d8f56880b26cd51abdd93fb423959eae3454d603f8fe000c41f411a2da2cbcbc"
-    sha256 cellar: :any,                 sonoma:        "87ac3e7b0be2ddabf7f2fb18bae6d594eafc2f8e9b93adbf8b19946b45ff8213"
-    sha256 cellar: :any,                 ventura:       "1b68863b5c31c3cba94561571b39dd571192c0cd0670d4d853fd220ad48b30bb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e2758bfd8026b7be69e1ea9b542f596635e1137764328f261d2789e50d9d3775"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b289becd2a56ae0d25a6cfe4f82e1d4f45af92a76a81be67b3999692e04d7d5b"
+    sha256 cellar: :any,                 arm64_sequoia: "2e5fe4a2e39568447835f6101bfac77dd0484bee2d07c8ba3069fc1c7e24338b"
+    sha256 cellar: :any,                 arm64_sonoma:  "39d677acbdbfa3748a998038dfd685579644866de6dfdcbb37827425ba4b677e"
+    sha256 cellar: :any,                 arm64_ventura: "fbdbdade14cd1893a1e19f4cfcd2d4d3c63407ed0aa084d22f31bcfeb657438f"
+    sha256 cellar: :any,                 sonoma:        "b7c69ad3c87e039b98ea404a14e19cb3f690cb048908d3a419417a609ada49eb"
+    sha256 cellar: :any,                 ventura:       "85249d0f7291845c500e34ecd8d243c06917f386896f4474bda7f1aea67a768d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a1a16bae9ac0ce8d59c90b52a1986610adbac3e59c5ea5b469b3c416d906596a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "632dda7e183febcd6f936733e2c495409b30e385aa7bce91b3714037c7dc4f22"
   end
 
   depends_on "meson" => :build
