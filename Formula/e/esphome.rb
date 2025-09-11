@@ -3,18 +3,18 @@ class Esphome < Formula
 
   desc "Make creating custom firmwares for ESP32/ESP8266 super easy"
   homepage "https://github.com/esphome/esphome"
-  url "https://files.pythonhosted.org/packages/66/24/232466306e3807893ae21fa5217e1cf507c58577ebbb75ad79254f98c357/esphome-2025.8.3.tar.gz"
-  sha256 "6a11b3f7170b826d9d8611e04d6179ccd5f147d25ce3dde2d975f7077aa5ff77"
+  url "https://files.pythonhosted.org/packages/99/e5/add269251b0cacaa175653e0dcf431f02de6bdab36833899bdce6a287e3d/esphome-2025.8.4.tar.gz"
+  sha256 "4e0276f36df25640a55dc576c80520bebda8e4c8f85b1a0404de29387787e924"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "800efdd8591175f0410750ad4935b11e64f14b1ef387cfc8e11e34c5224ee4f4"
-    sha256 cellar: :any,                 arm64_sonoma:  "8b6caf35ef3ac6326a048813af789ecd791694bc852df4ee656d71a1d3358793"
-    sha256 cellar: :any,                 arm64_ventura: "244d83ada3f2fc2c01b3acaaa3eb8f8f6ce1cfab65e71ca901e9a64a69ae004c"
-    sha256 cellar: :any,                 sonoma:        "1107837c113e4c59dde3e18cb15440eca0167a67fadf3a06d5bd705a419b4c4b"
-    sha256 cellar: :any,                 ventura:       "7c9c19c94f4dedc4663d1f895a39ea1e110ce433caf7e31b73d332db82996bee"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5c2095af1b6e7ed791e2d44edfb3e65e39b01aad10814e52b2dd7e5d6a06cf09"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e3587e2d8c08a43ef16a587745741235eadad0ea7fc652d3b16db679032ad638"
+    sha256 cellar: :any,                 arm64_sequoia: "a82cb71869175f9987d9e5cad3ed03a7d6fc47aa054836d5b4e8bc366d4af2a0"
+    sha256 cellar: :any,                 arm64_sonoma:  "312e3934313d9b4fe4e3f5ec1b5cabdd848813a2311f414db8bc7fe6a9acd9c9"
+    sha256 cellar: :any,                 arm64_ventura: "5a45cb44193aa7ef0654184752204ea7d09fb52f167c1a8e17fe35cea127aec4"
+    sha256 cellar: :any,                 sonoma:        "05e632272caf898a24e02db06d16d62f4c8f9e0a19f31320395461f716d5e210"
+    sha256 cellar: :any,                 ventura:       "508ec2f71cfaa8de9999f7b97bcdebeafde66340b1774a56bbd30856dbf52f38"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "02ffb3ad0052e771c98455a8a2d6b67ff447ea5e776cb9bd494055d1bc77f833"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1542a27626e7e44c5db76c684036b92d2c5fda82165e5644dc8a0919909fbb34"
   end
 
   depends_on "certifi"

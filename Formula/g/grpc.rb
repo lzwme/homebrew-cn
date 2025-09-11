@@ -20,6 +20,7 @@ class Grpc < Formula
   end
 
   bottle do
+    sha256 cellar: :any, arm64_tahoe:   "c3b83c7196fd2e213e1816cdadf7521f4a412abba7122ac7787992e4a2ff941e"
     sha256 cellar: :any, arm64_sequoia: "b42d3868a6c0249445550eea74e34a8fd1ec33db982adae851c1f9f3cb0f2d17"
     sha256 cellar: :any, arm64_sonoma:  "4d27e61a1be4f031aad7c187cbf967008f8f6d7ca4d64d9b3b4ca3e2062aab99"
     sha256 cellar: :any, arm64_ventura: "007caede89a8d008c19026ee2a99a0fa7e6322989ab916c067247f585e95d15c"

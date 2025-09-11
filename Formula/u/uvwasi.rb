@@ -7,6 +7,7 @@ class Uvwasi < Formula
   head "https://github.com/nodejs/uvwasi.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "159baa0db413ff03f23669d061a25de2cb31b062b8cd34c61a7c0accc88dfba3"
     sha256 cellar: :any,                 arm64_sequoia: "8b31bdacb3dce4e40fd0ac0e6336b1b7b1c22e8dd5fe5cfafc0b51bce6929f45"
     sha256 cellar: :any,                 arm64_sonoma:  "cf6eb3a3af1367282339d67f382e6de64784acbb6ae2b187e0426eccde316b19"
     sha256 cellar: :any,                 arm64_ventura: "5d12020d1e8759edd22722fc6ec2aa5a612caf8ce866d99a9ec3ab56b0b62037"

@@ -8,6 +8,7 @@ class Binutils < Formula
 
   bottle do
     rebuild 1
+    sha256 arm64_tahoe:   "fd20ebf003bed2def99e4d1394999ed18bb18cffb2ebc3780d28d20001ec70b1"
     sha256 arm64_sequoia: "3fb936ff0d64e4bc3530ab07f83417f5dea8c098549ec506f19f1c6ae4962cb6"
     sha256 arm64_sonoma:  "1a6356d10575b843eafe84253ba51c147334239b37e02d99288d998466912471"
     sha256 arm64_ventura: "4a1b661cba6a910e35d0691d2d1dda1ed6337e212fb6237a6189dfa99bb45888"

@@ -13,6 +13,7 @@ class Potrace < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:    "0a89d78a0b5fc305c6f8bf0067c3c87069b515578066c8ec151b42cf6828d392"
     sha256 cellar: :any,                 arm64_sequoia:  "dec55e697af533180d68158fd557f596e65887a1e5043214dc0532464aa6ef27"
     sha256 cellar: :any,                 arm64_sonoma:   "003f7041bd6b4ea6de5ac2c8fbe9e2537a6a6dbd169f0c872627c5e2daa00afa"
     sha256 cellar: :any,                 arm64_ventura:  "a7201a2a7bc8af588056ef0319281dab31dd376af60a379430edc495eea29041"

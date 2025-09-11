@@ -8,12 +8,13 @@ class PhpAT81Debug < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/php"
-    sha256 arm64_sequoia: "7e4c42227b3f7592d85e4f3b971008517e5b267ee724e5f9913fe230bd464ae0"
-    sha256 arm64_sonoma:  "4a6972c304996e4293461d29ab58ab9ce78bb8bf998d6005f235b130241895b9"
-    sha256 arm64_ventura: "7c9a0d04c6bfd175ed6f22ef89e03af7c700b230832e513568e69982a18ff963"
-    sha256 ventura:       "28c5a4befe8e4abf17f692db3ad617f3738be868799663f1c15e35f21bb29b28"
-    sha256 arm64_linux:   "de82c7a7ab487ab91c4c1109764a0f53089a5fd213c4caaeca97dc2567f55ce2"
-    sha256 x86_64_linux:  "49ee0ea8ba41164b184c5fc66559b880ffd3d1d81c96ac8f47863f7f32cc86df"
+    rebuild 1
+    sha256 arm64_sequoia: "cf178dac4e08b0226b58a5bd4a090bb06e90ad597fcbe1c2ff630d77b30593fa"
+    sha256 arm64_sonoma:  "1aa7ed3dd1b6434d0ab6164b3d7add1691027b7bbeaf95ec118f081c5a991fdb"
+    sha256 arm64_ventura: "367726faf396d1b34de96f7b035aeede15b5c4484bcb905c4d34be15f8519b2d"
+    sha256 ventura:       "a1aa92bb3adc6c0ee8e340c8f4eef56cd7cc4ccc0deb66e9f47a69d75e347a84"
+    sha256 arm64_linux:   "65480c75ec333f888a567995805c38aa2ae2c33f13cbab30054fec7392168bc5"
+    sha256 x86_64_linux:  "9f607f98e49587a749bce2beff62a43ae6aaac75aa190c30992b6c5452b6cb15"
   end
 
   keg_only :versioned_formula
@@ -57,12 +58,24 @@ class PhpAT81Debug < Formula
   uses_from_macos "zlib"
 
   on_macos do
+    depends_on "gcc"
+
     # PHP build system incorrectly links system libraries
     # see https://github.com/php/php-src/issues/10680
     patch :DATA
   end
 
+  # https://github.com/Homebrew/homebrew-core/issues/235820
+  # https://clang.llvm.org/docs/UsersManual.html#gcc-extensions-not-implemented-yet
+  fails_with :clang do
+    cause "Performs worse due to lack of general global register variables"
+  end
+
   def install
+    # GCC -Os performs worse than -O1 and significantly worse than -O2/-O3.
+    # We lack a DSL to enable -O2 so just use -O3 which is similar.
+    ENV.O3 if OS.mac?
+
     # Backport fix for libxml2 >= 2.13
     # Ref: https://github.com/php/php-src/commit/67259e451d5d58b4842776c5696a66d74e157609
     inreplace "ext/xml/compat.c",

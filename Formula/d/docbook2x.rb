@@ -13,6 +13,7 @@ class Docbook2x < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "87b0d72f55d9ff922befd55d7e708a23804d99c0ae1fab7e57c7694a6f91e833"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "6515ef361ee9ad2b83b539b46bb8869a09e98819fdb23277340e0557be168635"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e4f01a96cb46dee789a5d363b8c5b169f25d1698b93b7c81d82cc99ce434fdf5"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "986216ef87f311cd1a823db850f45fd8228be0f0f1db35cf875d2cf57d29cec4"

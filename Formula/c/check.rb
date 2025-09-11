@@ -8,6 +8,7 @@ class Check < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:    "ce6a229334822ebeb404ea91776ddb2727e76754724dbc6b7dae91cc274748cd"
     sha256 cellar: :any,                 arm64_sequoia:  "11f6f6c67483ebc4a230480a1b068882a8476afc52517d2d68de0ecc24ea305b"
     sha256 cellar: :any,                 arm64_sonoma:   "62db788052873713c484655c217bb221f71c794df5df63b7a68083df8805f598"
     sha256 cellar: :any,                 arm64_ventura:  "15a4e3c82d688948f0adc02dc5998f1abd24855aa16a4d0b673f46bc46bdcb0a"

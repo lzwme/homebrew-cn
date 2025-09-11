@@ -11,6 +11,7 @@ class Pcre2 < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "c11090dbc1b3d2adfc60b57f98e0d2ff7b2516e5660771a85d40f208aac254e3"
     sha256 cellar: :any,                 arm64_sequoia: "6ddb89f2eef25f73e258a97bf4379539e24ea76e207fa3c0eb49222bdb656de2"
     sha256 cellar: :any,                 arm64_sonoma:  "71828b19933d1cd002d61e6cca11f22f4810bc0f8c5d0c98e9094362a80dcbeb"
     sha256 cellar: :any,                 arm64_ventura: "6b38069079a641040e1cf8c408afbf902384d70bcc8fdbd445a9acc31e1e70d1"

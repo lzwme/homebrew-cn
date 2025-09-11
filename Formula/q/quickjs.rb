@@ -13,6 +13,7 @@ class Quickjs < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 arm64_tahoe:   "f5e44acf36cd72ff49f7bbca5d613ba0412080a23b63add6a2bc2591482e3954"
     sha256 arm64_sequoia: "c95d9c212cf28f7236c7cec3207bb0e60f9366113dd01fb376758ec63e813486"
     sha256 arm64_sonoma:  "50ad44fcd6572ec6eca42f8c8b940d443003dcfac3a79389e64c4ba5b9834660"
     sha256 arm64_ventura: "90f7789068432ae2c08bdb22d541cfcecfe49215448ffc36cbdaaaaf52c3bf6d"

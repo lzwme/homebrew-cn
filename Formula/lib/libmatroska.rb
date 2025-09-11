@@ -32,7 +32,12 @@ class Libmatroska < Formula
   depends_on "libebml"
 
   def install
-    system "cmake", "-S", ".", "-B", "build", "-DBUILD_SHARED_LIBS=ON", *std_cmake_args
+    if build.stable?
+      odie "Remove `-DCMAKE_POLICY_VERSION_MINIMUM=3.5`" if version > "1.7.1"
+      args = %w[-DCMAKE_POLICY_VERSION_MINIMUM=3.5]
+    end
+
+    system "cmake", "-S", ".", "-B", "build", "-DBUILD_SHARED_LIBS=ON", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end

@@ -10,6 +10,7 @@ class Sassc < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:    "331445fe56f4536be8c84306ed15216102d9653ad84c90b3ea2dd93d54cfb4e8"
     sha256 cellar: :any,                 arm64_sequoia:  "76372bcf1accae3510d1f2cd03f6a10f9a9016221e541e3b356021eaa5af18be"
     sha256 cellar: :any,                 arm64_sonoma:   "5f840fc12c44dabbade2ec934710c03adbcfa33f1b62903542dd03f169171f52"
     sha256 cellar: :any,                 arm64_ventura:  "9302f8cb296175ea2f685b1b688753f4a0e66243c53f2249586ede9576bf86b6"

@@ -2,7 +2,8 @@ class Nkf < Formula
   desc "Network Kanji code conversion Filter (NKF)"
   homepage "https://osdn.net/projects/nkf/"
   # Canonical: https://osdn.net/dl/nkf/nkf-2.1.4.tar.gz
-  url "https://dotsrc.dl.osdn.net/osdn/nkf/70406/nkf-2.1.5.tar.gz"
+  url "http://deb.debian.org/debian/pool/main/n/nkf/nkf_2.1.5.orig.tar.gz"
+  mirror "https://dotsrc.dl.osdn.net/osdn/nkf/70406/nkf-2.1.5.tar.gz"
   sha256 "d1a7df435847a79f2f33a92388bca1d90d1b837b1b56523dcafc4695165bad44"
   license "Zlib"
 
@@ -14,6 +15,7 @@ class Nkf < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "d5957a746f69a803dd021eb304b3c9584ddfa06833c0b6ed1981dd75d717e5f1"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "67d8e9dea97994ba77574c0be558cb009448a7aa9d3d577b54e3d5728d1fb1d6"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "89c0a1d6d5886045189b7a3e393b451c84ea7abf7e6f68663819b96651c58f58"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "fcc652ba1cfeec1bec89e5108c3e6eae31652606bf7babd5af25dc6522dc44a1"

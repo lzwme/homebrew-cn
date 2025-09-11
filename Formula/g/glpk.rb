@@ -9,6 +9,7 @@ class Glpk < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:    "c60115e0b7c9c13a5e6fc91ceab0aab253c1bd161dae6151e56713a6de6589d5"
     sha256 cellar: :any,                 arm64_sequoia:  "d1711f363503b065183cf833d4d58ecd91dd06ac2b168af7bb217727a46e8f7b"
     sha256 cellar: :any,                 arm64_sonoma:   "6aec19422fa4617706d7caa84be09caa9a78511ae904ac42382eccb39572f71e"
     sha256 cellar: :any,                 arm64_ventura:  "2fb927d88ff2f1e242e8909a153449ddaf2e6264d28efe7cf11e6a1e84065ce4"

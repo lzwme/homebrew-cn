@@ -16,6 +16,7 @@ class Epsilon < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:    "0620e9ab8265a63a2c80dd4dfe7cb5b0f548f12fa5c597b679dd4cfdd079e4f1"
     sha256 cellar: :any,                 arm64_sequoia:  "00006841c371ebcd51bc9f3105d16bc690fa54fa0a37ee9b0acfd33cfcee9b1e"
     sha256 cellar: :any,                 arm64_sonoma:   "04b24b368a0881d8244800904fc5c3daa304e9333a1a1e87f25cf6962b057417"
     sha256 cellar: :any,                 arm64_ventura:  "547069ed37303eb1cd4e8757cc595338852617040c9eadb2493aca79ca014571"

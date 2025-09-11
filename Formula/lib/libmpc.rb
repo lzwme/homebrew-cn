@@ -9,6 +9,7 @@ class Libmpc < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:    "92a98d2c43dbf1f520d71d7b497fd263ee76665149227bc4b1efe171918c2676"
     sha256 cellar: :any,                 arm64_sequoia:  "5c8cdc4d460525025f69157ea5187c4119da8bffab33e7923dc374c011c9cdac"
     sha256 cellar: :any,                 arm64_sonoma:   "909895bde6818f0adee6cf16f23836752ae214515da2e9e3beb0f66fbb63c490"
     sha256 cellar: :any,                 arm64_ventura:  "da4ff781bc469c82af17f98f0bdbf20932e222d0520ab784cd1b322b789ad7a5"

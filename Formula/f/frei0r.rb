@@ -6,6 +6,7 @@ class Frei0r < Formula
   license "GPL-2.0-or-later"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "63f08e2448e24eeb11aef1f06263723fa8a56e14f928ac4cda08af05a0d71a7f"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "260b59f5cdef89305e1d51b61516e5714d6ebc2253ff90c47b634897b17d0161"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e51686ec965010822c4fabba4c0995efcfa4b7cd654d91aed489f51314127466"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "0bc1c5a6d8debeed480c72886f132b24031a3d89e102eec0962bef6820e934d3"

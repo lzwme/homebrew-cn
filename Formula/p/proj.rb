@@ -7,6 +7,7 @@ class Proj < Formula
   head "https://github.com/OSGeo/proj.git", branch: "master"
 
   bottle do
+    sha256 arm64_tahoe:   "9cc02dbd57bb9c3f877fe3e71639d5f6a2f015b1d8c61c479c378a99f6a5b9c2"
     sha256 arm64_sequoia: "37fc9f7eabdc4118117d07a91fca5fbc883600f545e3ce46e74f7c14af00b9c0"
     sha256 arm64_sonoma:  "15f554ed65e9e9ab8a9c7a0e3d777bf21a56d6fcc753c361e7d680c87eb3855d"
     sha256 arm64_ventura: "7b991b91425fa3c3e9c0f0e381e5f8f174e514691c2906edac3eaadc112e0ad8"

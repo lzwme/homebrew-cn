@@ -13,6 +13,7 @@ class Sdl3 < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "a2284f75bc7fd0a84ce2410efddbc637a2903c2be73a83e6a4ff008762c902a5"
     sha256 cellar: :any,                 arm64_sequoia: "e8f94c94ee5a7ac70b84488f274bfad726da22f9a87b95e11e502129c6b0cafc"
     sha256 cellar: :any,                 arm64_sonoma:  "ae9c02119ef1559ead149460e0479fc3edfc0a86fb5c64dcf39721435ef5d204"
     sha256 cellar: :any,                 arm64_ventura: "7fc2aac80a434868e9736165ba7cba3a94c74b9bbcc90b0e9d4c78c1926d7edc"

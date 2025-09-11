@@ -6,6 +6,7 @@ class Openexr < Formula
   license "BSD-3-Clause"
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "0b87332a88c224b8090af828120ddbf32a054ebc5b854cf4f377e6c7e5064c99"
     sha256 cellar: :any,                 arm64_sequoia: "9ade6e4cd035310443eb46105b4c83aa365815c91377bf696a0685393d6de755"
     sha256 cellar: :any,                 arm64_sonoma:  "0bc589d05bb2b9f210473cf8d56ed83ef0dc7b2764a8a461bc2afc8803d2622e"
     sha256 cellar: :any,                 arm64_ventura: "9ee980357bf552516799bcb6c7ca3a0deb6922337a8d99846b5edef95c62e937"

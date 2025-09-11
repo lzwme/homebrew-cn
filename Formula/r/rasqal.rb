@@ -13,6 +13,7 @@ class Rasqal < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:    "2ab423879b5e055a6e0895821440d428dd3d9c03becafe542a15b76072593e88"
     sha256 cellar: :any,                 arm64_sequoia:  "de698e3a83cb5fb348934c69dc81af3013e0cb60a4a8a94a53963554eaf8b2b7"
     sha256 cellar: :any,                 arm64_sonoma:   "f1a8b465f57865a1b0fa9ea84f1388f14f778eedb6cd4b4a651a7d2d0bed18af"
     sha256 cellar: :any,                 arm64_ventura:  "92f1cc01dd0623dedfb4b823b7b483e53158436fd1f19f31c743429cf63e9028"

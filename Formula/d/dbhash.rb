@@ -16,6 +16,7 @@ class Dbhash < Formula
     sha256 cellar: :any,                 arm64_sequoia: "03ec5a59f4028205cfb489469eb1ea3f809b188e8ea33893c23223c4c2c27fc3"
     sha256 cellar: :any,                 arm64_sonoma:  "67033dfb28cd954f57f06c5d805e4fd2ceb0e1c2845e5412650a90da5b475033"
     sha256 cellar: :any,                 arm64_ventura: "ecf3c1db5545e7834176ffbadebd6765a5bfbac6e945d241be4cbabd83f931e5"
+    sha256 cellar: :any,                 tahoe:         "a15856ff4813915838b8c78f4a2b83fba138c5f7a87a8b08c72571e6b625dcf4"
     sha256 cellar: :any,                 sequoia:       "15c3d7c8ac7609eabf238953fe218796dd6840c6b56aac07edf829dd09640ff1"
     sha256 cellar: :any,                 sonoma:        "084b6b0ea8b6fe7befb8f1f106103c3652eaa7acaf2059e661f89706823c5f8f"
     sha256 cellar: :any,                 ventura:       "3692e62a8afd45243951f3ab2be729521efd7453e2c6728938f4978984f25e9e"

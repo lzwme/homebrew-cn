@@ -16,6 +16,7 @@ class Aften < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:    "98174738f94e5b13f3814dca23e803878017f9d719e0eb7d5f3ebb82e7819db7"
     sha256 cellar: :any,                 arm64_sequoia:  "c158dd1b9124db377e0119b6d4dc34ce9ecb14e458379ab023165ce6b83715fb"
     sha256 cellar: :any,                 arm64_sonoma:   "918b76d55d51e34cd63b83041517d0a06dd9b10f24a2d35ec8b68fc97a04f589"
     sha256 cellar: :any,                 arm64_ventura:  "b210014aa83271ec35261c51fc2d32914b33090deb3fda59993e30aba4b324de"
@@ -46,6 +47,11 @@ class Aften < Formula
   patch :DATA
 
   def install
+    # Fix build with CMake 4.0+.
+    inreplace "CMakeLists.txt",
+              "CMAKE_MINIMUM_REQUIRED(VERSION 2.4)",
+              "CMAKE_MINIMUM_REQUIRED(VERSION 3.10)"
+
     mkdir "default" do
       system "cmake", "-DSHARED=ON", "..", *std_cmake_args
       system "make", "install"

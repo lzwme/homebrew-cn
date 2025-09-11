@@ -9,6 +9,7 @@ class Onnx < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any, arm64_tahoe:   "17eab320a7de94696d4560e8f129612b90988b01aa4e53ec2d8a172d5195982d"
     sha256 cellar: :any, arm64_sequoia: "436d867ae25f257c1ed0ce54641618daf136d92e439b4fcdfe6ee64168ecf34f"
     sha256 cellar: :any, arm64_sonoma:  "b294a0bc88fb1ba89d04de9ac120452c9b939f1fbd89b863cbdacee410ffdb20"
     sha256 cellar: :any, arm64_ventura: "607ccbfe84d7ecc07aa867243019c2bd468c2ead39ea24dd96f5c7a1a7653d59"

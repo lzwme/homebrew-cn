@@ -1600,6 +1600,7 @@ Homebrew-homebrew-core/Formula/d/dpkg.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/dpp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dprint.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dps8m.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/d/dqlite.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dra.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/draco.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/draft.rb, Homebrew/homebrew-core, 1
@@ -2405,6 +2406,7 @@ Homebrew-homebrew-core/Formula/g/github-keygen.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/github-markdown-toc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/github-mcp-server.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/github-release.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/g/gitingest.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gitlab-ci-local.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gitlab-gem.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gitlab-release-cli.rb, Homebrew/homebrew-core, 0
@@ -3387,6 +3389,7 @@ Homebrew-homebrew-core/Formula/k/kqwait.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kraftkit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kraken2.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/krakend.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/k/krane.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/k/krb5.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/k/krep.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/krew.rb, Homebrew/homebrew-core, 0
@@ -4334,6 +4337,7 @@ Homebrew-homebrew-core/Formula/m/mariadb@10.5.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mariadb@10.6.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mariadb@11.2.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mariadb@11.4.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/m/mariadb@11.8.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/marisa.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/markdown-oxide.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/markdown-toc.rb, Homebrew/homebrew-core, 0

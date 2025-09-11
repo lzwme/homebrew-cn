@@ -16,6 +16,7 @@ class Curl < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "27f7a2b446dfe96701201e7d9234e0e0a3fdf42303aa8b7df09bc9252ec205a2"
     sha256 cellar: :any,                 arm64_sequoia: "5b3365c6327695b3fd7013edce642836dc10320c6f04460feceb1c91c1b69233"
     sha256 cellar: :any,                 arm64_sonoma:  "1fa6e2c3bc05bd5ac1354d1ad3c22001886e63f49bb405597fe36e1358fd48bd"
     sha256 cellar: :any,                 arm64_ventura: "35a869eddf4cd88b291e26d2946407585fea8cc1d61c3966d17ce5b8b70a7072"

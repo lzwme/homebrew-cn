@@ -13,13 +13,14 @@ class Php < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "c62fdee438afbb9e33381580e432c9236056857eaa7c76ab4c19b4fdaf5af37d"
-    sha256 arm64_sonoma:  "789d0f14ad631b134824afcd07bf2cfce86cc7b4925337abd963e18781184c96"
-    sha256 arm64_ventura: "ad109a984eb2661709965afcdcb2ae29b90deb57c15b5d4b323205c7e34443fa"
-    sha256 sonoma:        "4f130559607b83929c4e67a9ba0393a6de5257abbe83c36cc67b680764bd7dd8"
-    sha256 ventura:       "e7989142b87cef473aa43eaed8819ab8d1bd9d227207a8568b2ebe2b94fef6a9"
-    sha256 arm64_linux:   "b8b2c352e75b0a5465cc1d3e995bb2e1cf8a40b642c5a098eb8602208eecd993"
-    sha256 x86_64_linux:  "1a56495239428155e35655738404aa3c8756320a44e5c56aba9a1bc3cc9255ff"
+    rebuild 1
+    sha256 arm64_sequoia: "6cf8ab1eb7748d028d9ee9820a519e871ea0e5855453edd7bac441f334cf291c"
+    sha256 arm64_sonoma:  "99954ee253ad5c39cce9920c589da8471a3a751149e10b01ddcccb9e26b8388a"
+    sha256 arm64_ventura: "4a9e095e1224eb2e97a66a2735a307357f4d3a4bdddec3701c6faf9f3593ad23"
+    sha256 sonoma:        "d718399400135d2ff1c181f0992bed5a30865612fe9bf9ee69c9d7a18c291b95"
+    sha256 ventura:       "456a3e631112562d0cc362c491369143bf4c07a7e3a5376aa976f3d4528c6273"
+    sha256 arm64_linux:   "2f1dfef3fba38cd749a8ff547559037f101a62cffc542653fa0afebbfcb16cfe"
+    sha256 x86_64_linux:  "303ded9d7210d84f56eee16757a245c4e63ce3a468ff03e68dca77b4d039f396"
   end
 
   head do
@@ -63,12 +64,24 @@ class Php < Formula
   uses_from_macos "zlib"
 
   on_macos do
+    depends_on "gcc"
+
     # PHP build system incorrectly links system libraries
     # see https://github.com/php/php-src/issues/10680
     patch :DATA
   end
 
+  # https://github.com/Homebrew/homebrew-core/issues/235820
+  # https://clang.llvm.org/docs/UsersManual.html#gcc-extensions-not-implemented-yet
+  fails_with :clang do
+    cause "Performs worse due to lack of general global register variables"
+  end
+
   def install
+    # GCC -Os performs worse than -O1 and significantly worse than -O2/-O3.
+    # We lack a DSL to enable -O2 so just use -O3 which is similar.
+    ENV.O3 if OS.mac?
+
     # buildconf required due to system library linking bug patch
     system "./buildconf", "--force"
 

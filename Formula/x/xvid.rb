@@ -13,6 +13,7 @@ class Xvid < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:    "21251c2f572311e1e1dc610bc763596ae8e3a4a181fdfca98ba168a545df4151"
     sha256 cellar: :any,                 arm64_sequoia:  "c3bf171815c62e62be978f5d1913e7ce2e045cdb3e33012499e06197775ff4bd"
     sha256 cellar: :any,                 arm64_sonoma:   "8062840ad8e79ae9c733f5d8f4b822e70d962c243e7c9eceee95bb100e016743"
     sha256 cellar: :any,                 arm64_ventura:  "58aa3f757ca260fb922ee623240b710ef7e1cc75dea00c314d6d5ecd98289cbf"

@@ -18,9 +18,11 @@ class Sqlite < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "5ec50891c34da3548d8be5df03001dfc9aaa275e759c7dbae1a407f5093b2513"
     sha256 cellar: :any,                 arm64_sequoia: "cafdb368572f534b9a2c016df82bb29733028c86b4bea062c1e927e7073f1dd4"
     sha256 cellar: :any,                 arm64_sonoma:  "0dba472359a4e91e82ecf4a2029d8a38966aed6ff7a4d027182d7bfba74e354d"
     sha256 cellar: :any,                 arm64_ventura: "0a2400a611fd89e1711699b3aa706ef0c5e8b4b01935615f1576498db536d31d"
+    sha256 cellar: :any,                 tahoe:         "742a8cfa3880905e56cff0e9b7990b7d87c60b9883046699a1e84d2f0bba088c"
     sha256 cellar: :any,                 sequoia:       "9f333064c9e3a56f4325f4b9a12ff88d962ebb2783a5b622a2d2983c4879e74e"
     sha256 cellar: :any,                 sonoma:        "11c9d9c10fe7b502be00c8a85667367adb6718df93d2d2ba68a75405e41615e4"
     sha256 cellar: :any,                 ventura:       "d90906e7f13944a33f60a2955a13c40c092e5ec6b2cb3bc420a31ccdc656a08b"

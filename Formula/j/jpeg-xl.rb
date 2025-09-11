@@ -12,6 +12,7 @@ class JpegXl < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "f2c0ca06fd06dc92da7e195f0aaa729f4571ea2a9af3f2d60e51da78139888aa"
     sha256 cellar: :any,                 arm64_sequoia: "73de0c3b5ca045185ff1dd02c030060c19be06679b3f5be7c1863ddcf82461df"
     sha256 cellar: :any,                 arm64_sonoma:  "da29a81d0b58caeed58e8988e7a90ec57e40760b2e26767e0dc5e0755ee4f97d"
     sha256 cellar: :any,                 arm64_ventura: "565bc7b3c96e8f5e39f4cb0fa197071448eb57ead24ee953455d425b0996345f"

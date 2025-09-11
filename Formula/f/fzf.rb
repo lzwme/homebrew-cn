@@ -7,6 +7,7 @@ class Fzf < Formula
   head "https://github.com/junegunn/fzf.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "de1ff196fe92b40d399e927a03c8cb1e770d02454f0e9489c9691e32a1b289e3"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "444cf406b792fd47ffca3eb671e5be08407e62dfa23609e561a85d1b27da39b2"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "444cf406b792fd47ffca3eb671e5be08407e62dfa23609e561a85d1b27da39b2"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "444cf406b792fd47ffca3eb671e5be08407e62dfa23609e561a85d1b27da39b2"

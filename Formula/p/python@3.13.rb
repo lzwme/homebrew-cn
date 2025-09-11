@@ -11,6 +11,7 @@ class PythonAT313 < Formula
   end
 
   bottle do
+    sha256 arm64_tahoe:   "16a22bc6e667935458033ff52b3afe4675666b9ccff6fc4ac4804f9404689ad3"
     sha256 arm64_sequoia: "821887b8f438c6a43828c9e893ee73e011012bb46fcac862974638e16d5228ce"
     sha256 arm64_sonoma:  "0c85ea88bebad3a07e50dd310dbfb97386fa264cfe77b942a8418c9974fdb7cd"
     sha256 arm64_ventura: "8f35604ec6b1993367b0bf35f7929e5015043bc8360f2c45a7202af584c70d89"

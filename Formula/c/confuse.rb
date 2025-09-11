@@ -8,6 +8,7 @@ class Confuse < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any, arm64_tahoe:    "8c9faf9f2e1e5d1d0745acf79b46347b499053b9bcba4e4f4f89296bd5f8aad3"
     sha256 cellar: :any, arm64_sequoia:  "4a559294bf3ec51132b479ee9b90c5e90dea6183c11707471b89a4d06b0ab371"
     sha256 cellar: :any, arm64_sonoma:   "6d46500c283c20fcf41348fc34293d30a85e0fac9955ea849369deeaf84b3a2b"
     sha256 cellar: :any, arm64_ventura:  "1c7aa3d075082f2742747ac5034f60c90b448c694ccc5b3330b71f1afdd81f81"

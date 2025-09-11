@@ -12,6 +12,7 @@ class Protobuf < Formula
   end
 
   bottle do
+    sha256 cellar: :any, arm64_tahoe:   "87dfb3a7bb00c30d499876b4e5f18f5dbaa1243bab45e87cca3fa6d97b82483d"
     sha256 cellar: :any, arm64_sequoia: "90b483aad7b81336695a9510b73c5cd9aec7673a011c8371038ec0e7a459691a"
     sha256 cellar: :any, arm64_sonoma:  "618cd213cdccfad8dadc713182b137e8cb06f409623cc92051745039981c1334"
     sha256 cellar: :any, arm64_ventura: "94157e620da6d0d0fbaffe3a6be2569059fc729254389a6fba90a2c0b28deefa"

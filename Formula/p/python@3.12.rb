@@ -13,6 +13,7 @@ class PythonAT312 < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 arm64_tahoe:   "206613c8d346cbcdc57b36d50e7212257139dc450b0ee21ae303ce22483e6a8c"
     sha256 arm64_sequoia: "923814bee3ec72375e400bc779d1c60f4acc65411ea72128e09725aaa971c849"
     sha256 arm64_sonoma:  "60b6047d2c7728555361c3dd0872ee59c439dbc24ad9d4c6ff915cda01002fdf"
     sha256 arm64_ventura: "a3200aee55ee9499f8b0237c962b2db047ba7dec8c7b1517d14cc142ae52e9f2"

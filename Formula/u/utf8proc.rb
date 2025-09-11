@@ -7,6 +7,7 @@ class Utf8proc < Formula
   head "https://github.com/JuliaStrings/utf8proc.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "049a014bfc69ad7323e0f0f86ebf41850644552942e2263c6197fdda5998fdbe"
     sha256 cellar: :any,                 arm64_sequoia: "81533530b545ad8ebf73b33a3bdca4bd7fd79c08b43b36065f01786e303474bb"
     sha256 cellar: :any,                 arm64_sonoma:  "077fcc508fb1911325da5deaea023cfaaf0ca58fdde2097d415779bca397c285"
     sha256 cellar: :any,                 arm64_ventura: "be90c358d69294427f51905783aa6bb9fd9e10f3b5c2fa499f7629186fc61d6c"

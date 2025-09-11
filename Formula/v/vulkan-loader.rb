@@ -12,6 +12,7 @@ class VulkanLoader < Formula
   end
 
   bottle do
+    sha256               arm64_tahoe:   "7323057105713b203f815fd81eb2703127a2e27395530b55346babf155feb8cc"
     sha256               arm64_sequoia: "2b3d377d43d59f2576e136e706395c6c64dff5e077fa43c4b0a921b615f635a5"
     sha256               arm64_sonoma:  "02cdf6f5f443acdb9fc7684ee59fa6ed08c8a92315dcfec18351e0c6cfc85c72"
     sha256               arm64_ventura: "4b6c12ca6de39603464a9f04cfd27ab7eb17ec0a8f95e2f472c33c468968a556"

@@ -41,6 +41,7 @@ class X264 < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "b631667b5ad55c6c3ae383484f658c5b4ba14da8a2fbb1d537975695852529ca"
     sha256 cellar: :any,                 arm64_sequoia: "a613d44ead5d3999270970f41283eadfad8001061faf063945def6b8fb5145f4"
     sha256 cellar: :any,                 arm64_sonoma:  "6a932a218451e42a2678ea041e7453e7836249eb6b7013f8d2a3e8bfbb80a574"
     sha256 cellar: :any,                 arm64_ventura: "2f620df0464c5bce04ab31c0ad8a4c0ecc8a2684b94815b41795125ba3a62415"

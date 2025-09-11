@@ -14,12 +14,13 @@ class Php < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/php"
-    sha256 arm64_sequoia: "b2764c966b8910ba7c1cbe68b409a720d778ea8f93feb43a35394935c8807b35"
-    sha256 arm64_sonoma:  "b4a1fa8ccf8597677fe9ba2886ef2a399fba6e9e8519d58368250a67fee05498"
-    sha256 arm64_ventura: "e48fbdf0a8be1b03f797be486cf7863215c14d9f635d8c468bbdd3aea7f9064a"
-    sha256 ventura:       "42823937e860fa1e466ceb6771103e0c27b4b40c6df953dc6b4adb84082d0e1e"
-    sha256 arm64_linux:   "f2446c257789924c397862abd9be8424c99560f891eba5488865f56ed0d71ce8"
-    sha256 x86_64_linux:  "22814cbee8184ad634a989873c4b4394634ec9ae628853ac0e9b63366dfd1e74"
+    rebuild 1
+    sha256 arm64_sequoia: "25d5eeae46a143ded1c6a3dce3e0717240d30a6683aa08a5696347982d285f69"
+    sha256 arm64_sonoma:  "c54efefb2eaab146f18438c311ec1fdc35dc13c2fc861b81548eb611eace77ac"
+    sha256 arm64_ventura: "b05e59b7b600d34eb2ade60fa47ade4333e4b2b9d04a74eb037ec69737c7e2bd"
+    sha256 ventura:       "d42c60095fcb30af79b60288cd220121b25dcb499ddc7d7edf508a87797fdaf3"
+    sha256 arm64_linux:   "48be0172e097f49851eaa7f76d1f1cab06a146d046d05ba8456da8ea3f9e32d4"
+    sha256 x86_64_linux:  "4c8851ae42d3032735b9f0e1dc523500795d60dd20e834aada5de9eab92f67c9"
   end
 
   head do
@@ -64,11 +65,24 @@ class Php < Formula
   uses_from_macos "zlib"
 
   on_macos do
+    depends_on "gcc"
+
     # PHP build system incorrectly links system libraries
+    # see https://github.com/php/php-src/issues/10680
     patch :DATA
   end
 
+  # https://github.com/Homebrew/homebrew-core/issues/235820
+  # https://clang.llvm.org/docs/UsersManual.html#gcc-extensions-not-implemented-yet
+  fails_with :clang do
+    cause "Performs worse due to lack of general global register variables"
+  end
+
   def install
+    # GCC -Os performs worse than -O1 and significantly worse than -O2/-O3.
+    # We lack a DSL to enable -O2 so just use -O3 which is similar.
+    ENV.O3 if OS.mac?
+
     # buildconf required due to system library linking bug patch
     system "./buildconf", "--force"
 

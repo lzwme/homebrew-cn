@@ -21,6 +21,7 @@ class Go < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "418083bbfb10fd9fbc095faaf2d930110fd7de28471329e047d2563de50ce953"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "418083bbfb10fd9fbc095faaf2d930110fd7de28471329e047d2563de50ce953"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "418083bbfb10fd9fbc095faaf2d930110fd7de28471329e047d2563de50ce953"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "418083bbfb10fd9fbc095faaf2d930110fd7de28471329e047d2563de50ce953"

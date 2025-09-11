@@ -7,6 +7,7 @@ class ProtobufC < Formula
   revision 4
 
   bottle do
+    sha256 cellar: :any, arm64_tahoe:   "b4f0aca3a9b3164f8fab460e21dc4439a04d9fca0ca5a0a7245e7f4c6c41bae7"
     sha256 cellar: :any, arm64_sequoia: "303ee993c457be5869dd354400aaee47e5b33df56b6308786815af89a1a11e46"
     sha256 cellar: :any, arm64_sonoma:  "cd8d11fd77149fa0ad2dee76d173068217cdc66984b52eca6acc89d078c29cbf"
     sha256 cellar: :any, arm64_ventura: "80ce2c04ff312778c1907f57cb2355610077e200942f518422f5f37f995269b1"

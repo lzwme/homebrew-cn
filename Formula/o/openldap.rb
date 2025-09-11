@@ -15,6 +15,7 @@ class Openldap < Formula
 
   bottle do
     rebuild 1
+    sha256 arm64_tahoe:   "2e201b0ef1eeb3990d14dd4905ecaf36cb6acbb9457093007ed304b97a6a9856"
     sha256 arm64_sequoia: "248a79f1498bbff0644cb1980d1efabf399d71f4251df230b7e6161d14482309"
     sha256 arm64_sonoma:  "e1e547e9f5a91f21715853710892d69d0356947128b15a9ae16c7b69b2c8222c"
     sha256 arm64_ventura: "bacfcb76abf64fb280a1e845abc7ef842aa8ddaafb3c7b1a4b68e7e9cd66161d"

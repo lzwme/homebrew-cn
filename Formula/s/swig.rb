@@ -11,6 +11,7 @@ class Swig < Formula
   end
 
   bottle do
+    sha256 arm64_tahoe:   "439ea11089041684108371da3d737fc63698a5b55b5bec68a25b5d78fa3553ed"
     sha256 arm64_sequoia: "1a45fd47424edbf0a25a81c818695b2669f9a8a842fcdc89bd4ba75f84359ad3"
     sha256 arm64_sonoma:  "05db31cb7bde7343e73091a2e3d8c91ee55041f023967cc0430a48a661085ce1"
     sha256 arm64_ventura: "a875754e52f8ceea57710f4fded57d1ff208f54707a4f7c0f4ebfe7f807b3df7"

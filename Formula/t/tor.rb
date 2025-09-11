@@ -20,6 +20,7 @@ class Tor < Formula
   end
 
   bottle do
+    sha256 arm64_tahoe:   "16bd8dd2a2cf34000c02ef6126ff4f68818ce0fbfd4e763ad1a6ba96095f813b"
     sha256 arm64_sequoia: "a6f65834822866ff7d788511eba6c0303ef2df4a0c142bf09248dc63db35dda6"
     sha256 arm64_sonoma:  "f618bfffa5cf93e615e05f94410eec96b273ac2c7b13122c3e75f82884b60b13"
     sha256 arm64_ventura: "5b5fd93fae21d1abb7db73aa53cdaa7a42c2cbb74f6b1be1448bbf418bb38810"

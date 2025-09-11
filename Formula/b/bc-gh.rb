@@ -1,7 +1,5 @@
 class BcGh < Formula
   desc "Implementation of Unix dc and POSIX bc with GNU and BSD extensions"
-  # The homepage is https://git.gavinhoward.com/gavin/bc but the Linux CI runner
-  # has issues fetching the Gitea urls so we use the official GitHub mirror instead
   homepage "https://github.com/gavinhoward/bc"
   url "https://ghfast.top/https://github.com/gavinhoward/bc/releases/download/7.0.3/bc-7.0.3.tar.xz"
   sha256 "91eb74caed0ee6655b669711a4f350c25579778694df248e28363318e03c7fc4"
@@ -32,7 +30,7 @@ class BcGh < Formula
   conflicts_with "bc", because: "both install `bc` and `dc` binaries"
 
   def install
-    # https://git.gavinhoward.com/gavin/bc#recommended-optimizations
+    # https://github.com/gavinhoward/bc#recommended-optimizations
     ENV.O3
     ENV.append "CFLAGS", "-flto"
 

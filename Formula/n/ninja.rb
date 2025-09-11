@@ -12,6 +12,7 @@ class Ninja < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e9552fbeedb8ebb75ae07bb4ebd822eb8ce6c189a2903cd2b8309b3b857d2f8d"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "873e06703ff0d22140b1683b6272b65a57a3e87b506b7904ad82b6018df6db06"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8958969cfa17f656280e7bb08bdcc71d657b3208a786c012041f53bb455d96ab"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "8001e8a0a4ff7ca04fe84d366a02f981a4916f794f43ce5594dedbb4f5fc297f"

@@ -10,6 +10,7 @@ class Libao < Formula
 
   bottle do
     rebuild 3
+    sha256 arm64_tahoe:    "e5015eef806ec149f9ad6e502d1aed412e9746da6f5ba2fa23947a5e58641d0b"
     sha256 arm64_sequoia:  "18630c73a7d4187e4ed527096e9450a4d26bcc4a5918bf94656fe641be16922a"
     sha256 arm64_sonoma:   "c3252aa3672c5a52882ad70a94219a4284b53415d996ebd21b334ea063ff4e58"
     sha256 arm64_ventura:  "cca7befa22b09e8ecfb3746d8c6de3cd1a519cf76ab970c8e78acde4dd92cef3"

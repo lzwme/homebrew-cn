@@ -22,6 +22,7 @@ class Zigup < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "f6692ad6a0d59da6540e3da49f84c7ea37a10ed56009aab4a925d90a039aaf5b"
     sha256 cellar: :any_skip_relocation, sonoma:        "0e81b978cea25b90e8719244f50e0c4fca8aa4b7681154aaa864d2482f650337"
     sha256 cellar: :any_skip_relocation, ventura:       "af65106ea1dd8d3f526897bd1d15111773ef20a4ab1d9633a6882a1e825014bf"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "452d30fb9c7f491fcfa34fb38b47f7b2134887bee6e5a5767e0a9a905030fe26"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "ec4689d639d16b0ddc595eeecf71a24209d8d91bd8a4ffbcdbe2b18e6025715a"
   end
 
@@ -32,6 +33,7 @@ class Zigup < Formula
     # https://github.com/Homebrew/homebrew-core/issues/92282
     cpu = case Hardware.oldest_cpu
     when :arm_vortex_tempest then "apple_m1" # See `zig targets`.
+    when :armv8 then "xgene1" # Closest to `-march=armv8-a`
     else Hardware.oldest_cpu
     end
 

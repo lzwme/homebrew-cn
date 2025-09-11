@@ -9,6 +9,7 @@ class Libccd < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:    "5706b5ddc123fae6306e45daf32a9485c8fa2186bb2966c5d4842c060db7f760"
     sha256 cellar: :any,                 arm64_sequoia:  "69d7221dceabfe62cded58442a541ed7b4e40dc91195ddc1032d9219d6d4eb80"
     sha256 cellar: :any,                 arm64_sonoma:   "0a6c12b8b5b369018a4186622359a2b9bc8ce40a4c0fe2452263e2d4ef03d92a"
     sha256 cellar: :any,                 arm64_ventura:  "9db2e87ee4c5b69faa9269a54f22046b5c4d18a72a65bc0dd4164c35a23edbe1"
@@ -27,7 +28,12 @@ class Libccd < Formula
   depends_on "cmake" => :build
 
   def install
-    system "cmake", "-S", ".", "-B", "build", "-DENABLE_DOUBLE_PRECISION=ON", *std_cmake_args
+    args = %w[
+      -DENABLE_DOUBLE_PRECISION=ON
+    ]
+    # Workaround to build with CMake 4
+    args << "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end

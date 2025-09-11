@@ -15,6 +15,7 @@ class Libreplaygain < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:    "970cfda9b22895a8b68d1665e41a4106df2bf8e7c446a9c50527eec34a6caaa2"
     sha256 cellar: :any,                 arm64_sequoia:  "72f8e66bd85dbe08e01f9aad98d73a4788a030f34a3f8e40e940c6a62a7fbfc7"
     sha256 cellar: :any,                 arm64_sonoma:   "ce1c314acee4f01b3ac7c91b703dfa170154fe833df860f608c4d02e4f6d59a4"
     sha256 cellar: :any,                 arm64_ventura:  "a8c89293c396219851faeecf23be969764bd4c169e66b10fc16b3949f2348d37"
@@ -36,6 +37,11 @@ class Libreplaygain < Formula
   depends_on "cmake" => :build
 
   def install
+    # Fix build with CMake 4.0+.
+    inreplace "CMakeLists.txt",
+              "CMAKE_MINIMUM_REQUIRED(VERSION 2.4)",
+              "CMAKE_MINIMUM_REQUIRED(VERSION 3.10)"
+
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"

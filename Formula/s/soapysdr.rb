@@ -43,6 +43,12 @@ class Soapysdr < Formula
     ]
     args << "-DSOAPY_SDR_EXTVER=release" if build.stable?
 
+    # Workaround until next release to avoid backporting multiple commits
+    if build.stable?
+      args << "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
+      odie "Remove `-DCMAKE_POLICY_VERSION_MINIMUM=3.5`" if version > "0.8.1"
+    end
+
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"

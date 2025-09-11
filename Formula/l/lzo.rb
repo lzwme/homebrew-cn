@@ -13,6 +13,7 @@ class Lzo < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:    "9863be33af38858d028657bdfbceaff00465b23a9857ce6ed93e2ad24f6adbd8"
     sha256 cellar: :any,                 arm64_sequoia:  "6bb0401c41a18fd37071ec9591fe053a808f07552ff7ea22542faa470eb8e589"
     sha256 cellar: :any,                 arm64_sonoma:   "167749edd2052e4c577f27c79a41eb1cb4b79302b1e4bef1e4cfb29bd50aedd9"
     sha256 cellar: :any,                 arm64_ventura:  "a565c627b13f2dc7fc4550aa8290a4c3feb2f48fcaa45c9f7f4bc4fe4535aa66"

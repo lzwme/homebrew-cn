@@ -7,6 +7,7 @@ class Opentofu < Formula
   head "https://github.com/opentofu/opentofu.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d35a1c80527e9ff4f13b8a6eae2be4b014ff6741390b9491dcabbae83ecdbc42"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "9023d6b52ab74a60d5141f6c5349433a58afeb85327acdc1923e887fd57060fe"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9023d6b52ab74a60d5141f6c5349433a58afeb85327acdc1923e887fd57060fe"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "9023d6b52ab74a60d5141f6c5349433a58afeb85327acdc1923e887fd57060fe"

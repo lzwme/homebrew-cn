@@ -20,6 +20,7 @@ class Musepack < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:    "545fb3f5f74e2fc5acbbbfbad61b0dfb6c261cd7dbd26f998c1931c939086bd0"
     sha256 cellar: :any,                 arm64_sequoia:  "d84a9ad759b25d445781d6e1e5af5247431427e00e90bfb0b1014d9c2e6e4bab"
     sha256 cellar: :any,                 arm64_sonoma:   "6b1cd3fb3a8b8beb5603ce39e237cd7fb04e71e8e46ac9d63b0904067e57e676"
     sha256 cellar: :any,                 arm64_ventura:  "72634f1bab6447c671827b1586e2161487273e4737b0cc7e47100a8d1f33cc4e"

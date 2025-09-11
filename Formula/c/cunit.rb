@@ -8,6 +8,7 @@ class Cunit < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:    "79ec3ecdcc6e1f8b253b5093c45c25a272005796cebb0ca2c7cfb6f8d21d0d90"
     sha256 cellar: :any,                 arm64_sequoia:  "ed2227559e5ab1d8239ee28d11b8728832ac2301041631b31702a12be8f0d3fe"
     sha256 cellar: :any,                 arm64_sonoma:   "92297087d6f77632f4db7fb8c436ba6f70c9da28fdc11e56cb975a86ea27cc90"
     sha256 cellar: :any,                 arm64_ventura:  "346705eb07dd79665dba7f918a7c33af02a2dbacb975d5c99c0d7f45afb1ecaa"

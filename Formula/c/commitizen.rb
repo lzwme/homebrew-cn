@@ -3,19 +3,19 @@ class Commitizen < Formula
 
   desc "Defines a standard way of committing rules and communicating it"
   homepage "https://commitizen-tools.github.io/commitizen/"
-  url "https://files.pythonhosted.org/packages/4a/b8/813c896b08777d510f78ddc5122fd5f6e6ac6dd18dfd355d083cfa369f3b/commitizen-4.8.4.tar.gz"
-  sha256 "082dd895697ed548a8388e9e9ec69378089860402fbb02b464acd0a306130fca"
+  url "https://files.pythonhosted.org/packages/77/19/927ac5b0eabb9451e2d5bb45b30813915c9a1260713b5b68eeb31358ea23/commitizen-4.9.1.tar.gz"
+  sha256 "b076b24657718f7a35b1068f2083bd39b4065d250164a1398d1dac235c51753b"
   license "MIT"
   head "https://github.com/commitizen-tools/commitizen.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "cac8562ce2d53b59c2d7d4846255d36fd163f7448b2e943dbcd0bf46ce1e63f3"
-    sha256 cellar: :any,                 arm64_sonoma:  "3b41dc9256903f042ede087a9b6c0a68d1b2abbb3088984c88476bca5de612da"
-    sha256 cellar: :any,                 arm64_ventura: "936f91077863a8a4fceaecd3c7f1b9dc7b0165834a00a87df8bf3b74025de2fa"
-    sha256 cellar: :any,                 sonoma:        "6e15cb6e3797da2432ec29e3a5ac88eeaa77c9796950b55edf0921e550fddd54"
-    sha256 cellar: :any,                 ventura:       "f43098d2dadf0c0233e0281511913fbc8b31c9f70708b7a725fab96dbde1f1ee"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3871f82aad18ec74ebe6e306678f98f6b11a6025bdc6c11b0bd0b7ec5a46b77b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "778655cd94d032b8fe6ee7d91aa15564ee83496f64262d97e0e6d0dc9a1782fc"
+    sha256 cellar: :any,                 arm64_sequoia: "4503c3fb552f9b261c16d4b391456e9412b6f370153065971482b8d2d9701db2"
+    sha256 cellar: :any,                 arm64_sonoma:  "3623c09195badcb65be6d8d8623b73f75a1eac7de7dd1b4737b67eac4b11339a"
+    sha256 cellar: :any,                 arm64_ventura: "e9ece7a6db70ef1e33b0341de2411bf258dcd5337b4f967ca5866ec33d38866b"
+    sha256 cellar: :any,                 sonoma:        "b4543b745715b8d5126062fad7dab7f340f9368f0b8188e07f7c35be7fbd9dc5"
+    sha256 cellar: :any,                 ventura:       "3170e751ed39ed96bd2e99f749f1099c618164fd0e893c5b16c60e007a474099"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "23eb45c33b7031b1d1cba5a435886f2cba1a546e9e53bd87a5b73c803340ff45"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7e09ff3e24290230b3b59562004b9bbdd751179ed83dad64ab4f5430b09e4169"
   end
 
   depends_on "libyaml"
@@ -39,6 +39,11 @@ class Commitizen < Formula
   resource "decli" do
     url "https://files.pythonhosted.org/packages/0c/59/d4ffff1dee2c8f6f2dd8f87010962e60f7b7847504d765c91ede5a466730/decli-0.6.3.tar.gz"
     sha256 "87f9d39361adf7f16b9ca6e3b614badf7519da13092f2db3c80ca223c53c7656"
+  end
+
+  resource "deprecated" do
+    url "https://files.pythonhosted.org/packages/98/97/06afe62762c9a8a86af0cfb7bfdab22a43ad17138b07af5b1a58442690a2/deprecated-1.2.18.tar.gz"
+    sha256 "422b6f6d859da6f2ef57857761bfb392480502a64c3028ca9bbe86085d72115d"
   end
 
   resource "jinja2" do
@@ -84,6 +89,11 @@ class Commitizen < Formula
   resource "wcwidth" do
     url "https://files.pythonhosted.org/packages/6c/63/53559446a878410fc5a5974feb13d31d78d752eb18aeba59c7fef1af7598/wcwidth-0.2.13.tar.gz"
     sha256 "72ea0c06399eb286d978fdedb6923a9eb47e1c486ce63e9b4e64fc18303972b5"
+  end
+
+  resource "wrapt" do
+    url "https://files.pythonhosted.org/packages/95/8f/aeb76c5b46e273670962298c23e7ddde79916cb74db802131d49a85e4b7d/wrapt-1.17.3.tar.gz"
+    sha256 "f66eb08feaa410fe4eebd17f2a2c8e2e46d3476e9f8c783daa8e09e0faa666d0"
   end
 
   def install

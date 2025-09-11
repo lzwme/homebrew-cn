@@ -12,6 +12,7 @@ class Jemalloc < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "e4143a4cc719df4053a6f3c77a92afc0c24444d305fe8a5f1be4fafa6771403f"
     sha256 cellar: :any,                 arm64_sequoia: "10573a40eb77f7ded7ce5825c5f03e3daf53ae04bd01670341418652bc84f0d6"
     sha256 cellar: :any,                 arm64_sonoma:  "d6eb24407abe8727ef33a295a9685ffbc3c89cd4772c95768575b76dc52d03e7"
     sha256 cellar: :any,                 arm64_ventura: "63744266dcd09077be2d6803f4f22b19826f9f088282f16ac227d580c6731be9"

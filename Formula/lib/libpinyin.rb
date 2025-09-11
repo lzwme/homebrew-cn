@@ -25,9 +25,6 @@ class Libpinyin < Formula
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
-  # macOS `ld64` does not like the `.la` files created during the build.
-  # upstream issue report, https://github.com/libpinyin/libpinyin/issues/158
-  depends_on "lld" => :build if DevelopmentTools.clang_build_version >= 1400
   depends_on "pkgconf" => [:build, :test]
   depends_on "glib"
 
@@ -49,14 +46,15 @@ class Libpinyin < Formula
     sha256 "59c68e89d43ff85f5a309489499cbcde282d2b04bd91888734884b7defcb1155"
   end
 
-  def install
-    # Workaround for Xcode 14 ld.
-    if DevelopmentTools.clang_build_version >= 1400
-      ENV.append_to_cflags "-fuse-ld=lld"
-      # Work around superenv causing ld64.lld: error: -Os: number expected, but got 's'
-      ENV.O3
-    end
+  # Apply open PR to fix build with Apple ld
+  # PR ref: https://github.com/libpinyin/libpinyin/pull/168
+  # Issue ref: https://github.com/libpinyin/libpinyin/issues/158
+  patch do
+    url "https://github.com/libpinyin/libpinyin/commit/5f5b34410ef43acef28208021fb5e38f0ca33076.patch?full_index=1"
+    sha256 "e8f19214941f58345886d5a512bea8108651892f6e647ea2e3117385a33c941d"
+  end
 
+  def install
     resource("model").stage buildpath/"data"
     system "./autogen.sh", "--enable-libzhuyin=yes", "--disable-silent-rules", *std_configure_args
     system "make", "install"

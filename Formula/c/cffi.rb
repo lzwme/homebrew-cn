@@ -6,6 +6,7 @@ class Cffi < Formula
   license "MIT"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c06da1533a0a813e2d83ccab8bdcbd5f2fd8e8e7a90dfa1854b8e5bc6c4e4627"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "6775016658efc6fafc45b5599b2ea47e5b12ca2c2f2ee9838d935e07c3de46e4"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d312740d13623442d1bd1e0b763141ef746ae9b814c04d8ba368d1bb00974d62"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "5e355d97c3796776b37ab4f0b1bf45e56a00764c15e223e75902a3775a8d4603"

@@ -20,6 +20,7 @@ class GoAT124 < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "99d7885acd026bc8bac68ae38bef84c3346d029b0fd267547fdcc5bfcd1b8d6b"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "99d7885acd026bc8bac68ae38bef84c3346d029b0fd267547fdcc5bfcd1b8d6b"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "99d7885acd026bc8bac68ae38bef84c3346d029b0fd267547fdcc5bfcd1b8d6b"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "99d7885acd026bc8bac68ae38bef84c3346d029b0fd267547fdcc5bfcd1b8d6b"

@@ -8,6 +8,7 @@ class Projectm < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 arm64_tahoe:    "7f0815b03bcecd38afe7c9a8750a0822d9a17646c7e92f420e0fedb096c2709c"
     sha256 arm64_sequoia:  "a579de759ddbc2ca8b39a3dfc1cd7d2b936369790efaeda1c59efdbd63db5b2f"
     sha256 arm64_sonoma:   "a854f24612ce8bd9456d71f42d0e02bdca89fe39e4d8a4009f56f06536255f72"
     sha256 arm64_ventura:  "f3f6b5e3b0d40bcc55658e7f06f16ae49eb4cdc449772b5dc526a84e40c965e0"

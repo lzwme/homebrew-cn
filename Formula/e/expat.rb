@@ -16,6 +16,7 @@ class Expat < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "d5680348fcadd338aa6a041c4c2072066b7bb616f52bf20a6b84c36622176e2b"
     sha256 cellar: :any,                 arm64_sequoia: "3e5392724170f8a1314c0db2077a1f30277e4941d1825554f1230092a483ef7c"
     sha256 cellar: :any,                 arm64_sonoma:  "4e9eb804bd04ea10e82d38e1080670b61f067d79e36c6f854f77a8773bb8c41c"
     sha256 cellar: :any,                 arm64_ventura: "55d44623dacceded1a48dd16b9107cab1a13036a7b251365fcf10a48f990d2d2"

@@ -14,6 +14,7 @@ class Libnghttp2 < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "d6fcef884a53969c9b3e31a8c760553b1c7d7435484eb3231b6d472105498bb6"
     sha256 cellar: :any,                 arm64_sequoia: "35b1d5add253624e9a904dfe1e3f1145d1d7acc7618d6f9ea7ac312f878be442"
     sha256 cellar: :any,                 arm64_sonoma:  "7eaeb92466cb3d228cd785640ad5cbebc18d6747dc80b62a643735a2a80d80b1"
     sha256 cellar: :any,                 arm64_ventura: "db741bfc1b3aa98d58bdafb3a885afddbb2b37e4f1331bf13f93cd31d5143768"

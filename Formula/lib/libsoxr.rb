@@ -14,6 +14,7 @@ class Libsoxr < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:    "6fd815529e1078139d7965e7bb7e92b4fa5680e74ca671357aaf4c0e1ea1dc95"
     sha256 cellar: :any,                 arm64_sequoia:  "164c5e70f213a0cdd5b9a764da773e79bc35753efc54d46e0710aee172de3640"
     sha256 cellar: :any,                 arm64_sonoma:   "baddfdda71b784b3d94f84e9f7a1b8bcfec59762baddf9e3ccc67c19fb41cee0"
     sha256 cellar: :any,                 arm64_ventura:  "458c15f8d4dbe92d51959fd62662b275475c36f379581385681975fbba90c8f1"
@@ -41,7 +42,10 @@ class Libsoxr < Formula
   end
 
   def install
-    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    args = %w[
+      -DCMAKE_POLICY_VERSION_MINIMUM=3.5
+    ]
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end

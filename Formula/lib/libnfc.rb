@@ -8,6 +8,7 @@ class Libnfc < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 arm64_tahoe:    "433f60511a9266fb1693203fbf2c91222603118e9057fb8cac76eb897edffa61"
     sha256 arm64_sequoia:  "2b82cd576da101ec339171c4a8ded0fee90ab4cf072513c8cd0a1b99721c72f9"
     sha256 arm64_sonoma:   "3e1ce25513819c59c110f28cfdb8cf4ecf265800d741d272ad7450805ba647f5"
     sha256 arm64_ventura:  "28002ee7cadbe88fdd4a614804a813b4d46a17d4cb2a1fe7d24fe17eff04f933"

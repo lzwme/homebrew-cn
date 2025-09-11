@@ -13,6 +13,7 @@ class Libdvdcss < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:    "4f096a2de5e3d8409bfa2627dfff5bf3a14099f2384f2ec018ffaa4a6dcad182"
     sha256 cellar: :any,                 arm64_sequoia:  "eaa70f0ac608a56a596243c9bc63070dc358c7b31894f05cc3f3ac181035e8c2"
     sha256 cellar: :any,                 arm64_sonoma:   "a88500318685760e0425a099d0459f7be9f7505b89e69785af9d7ae183e40541"
     sha256 cellar: :any,                 arm64_ventura:  "d3a1da9ea4618f10137277bd109cc5d1c74ba3d82a2dc45f34370e1c389d8eea"

@@ -14,6 +14,7 @@ class Metis < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:    "dbb37a32bc124a76fd9496b0e95f49b1bb48b1dfe72dc398991569156193d07e"
     sha256 cellar: :any,                 arm64_sequoia:  "60ef633238eb902353465719c36fb64c5a325f823a203c1079c3e0358f72fd79"
     sha256 cellar: :any,                 arm64_sonoma:   "d1b85dedb77b4a578a06ba705e759768f3ad832fb744669e06f97bd233bf82ff"
     sha256 cellar: :any,                 arm64_ventura:  "5bea2beeae9e3394cc675df14dc30e078b6ed575f0bad4c05717ee3f75ed4aee"
@@ -35,6 +36,12 @@ class Metis < Formula
   depends_on "cmake" => :build
 
   def install
+    # Fix build with CMake 4.0+.
+    inreplace "CMakeLists.txt",
+              "cmake_minimum_required(VERSION 2.8)",
+              "cmake_minimum_required(VERSION 3.10)"
+    ENV.append "LDFLAGS", "-Wl,-rpath,#{rpath}"
+
     system "make", "config", "prefix=#{prefix}", "shared=1"
     system "make", "install"
 

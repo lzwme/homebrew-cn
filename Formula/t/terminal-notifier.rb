@@ -9,6 +9,7 @@ class TerminalNotifier < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "f2dfafb7ab7b14b1ce364454f260da7a23d4007fea1c863dbe78391db5bf3b3d"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "838ac4918afdb8464694e9236c4c61cde9b6d36caa35d01bbc00c6445015c77e"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9814bfe9969788afd44c03f4469cf732ab61931a645da58a00b33f95126a381c"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "20ebb413679d76521e4434cb4351560f35052985a11cbb1f85c12e45bef95919"

@@ -14,6 +14,7 @@ class Libftdi < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:    "09132f1d347fe01a17da39c406e4311ad5af9609c5306afdfe912132df89f74f"
     sha256 cellar: :any,                 arm64_sequoia:  "c53870c2c84cf0918cbf27dfa0f62b3dc331072846980ef86243f506e1752f7a"
     sha256 cellar: :any,                 arm64_sonoma:   "63ffb0285cabb32fb40e7f609ba8e63da9c0452e30400bd9261218bd3e393b9f"
     sha256 cellar: :any,                 arm64_ventura:  "db8777d9eec5f36b23b191183c6d25c398484c09b2ca5833d5ef252ef5ce7bfd"

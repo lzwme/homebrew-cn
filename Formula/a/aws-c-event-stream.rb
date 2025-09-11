@@ -6,6 +6,7 @@ class AwsCEventStream < Formula
   license "Apache-2.0"
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "794cf037e4f7ca1ef3d50c280ed7483f20a5ba6faffbe37e70b68fd21e9fc5b1"
     sha256 cellar: :any,                 arm64_sequoia: "b6284b9936cb2c292b706766a5c2e9f40a3650ca89bc38b163cdb51a77192b33"
     sha256 cellar: :any,                 arm64_sonoma:  "a8027e1e9fe79d9dbf53a6764b004ef7d4e0eadd9357389fa3a913d5268c03f8"
     sha256 cellar: :any,                 arm64_ventura: "561d94d70a0e0b68b30f2617a5a361944963f10ebf4407cdedca5753c74bd96a"
