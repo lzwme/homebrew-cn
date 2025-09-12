@@ -15,6 +15,7 @@ class Uudeview < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "4a0021e8cbb12c07b7c46049e72d217530ed08c2474d57f145044ab7d24674d8"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "519dcd3ca61e2c1eac14d1e1b15dc2b87492421fa77bfc396163b6882df7c298"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a58cd61413eb8e656d8395b63d1542e9f256d669d227b23d7cf0f70181a420c3"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "28d8a4e08275d26926e19c32a6ca833ed3a1c3969ea5126c4def92e72442e66d"

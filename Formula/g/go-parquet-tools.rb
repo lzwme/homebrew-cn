@@ -7,6 +7,7 @@ class GoParquetTools < Formula
   head "https://github.com/hangxie/parquet-tools.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3ead3a10f32ab72d5dc7e315eb56a19b21c8286e3ec6c4a858bb43a881490660"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "3ead3a10f32ab72d5dc7e315eb56a19b21c8286e3ec6c4a858bb43a881490660"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3ead3a10f32ab72d5dc7e315eb56a19b21c8286e3ec6c4a858bb43a881490660"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "3ead3a10f32ab72d5dc7e315eb56a19b21c8286e3ec6c4a858bb43a881490660"

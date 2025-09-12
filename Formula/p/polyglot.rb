@@ -9,6 +9,7 @@ class Polyglot < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "6bf5814277c6a0cc6281f0d3e6911d909ef872edc68db77c9a382d17162020af"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "7c17a367c2d5da43b534695330ea6467fb27dcd887afeb6dc582601c4a6a5fdc"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "bc554a6ab1946c530812eef33e2092102df23edfb12dcb14d98d288b5f15de96"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "0d7bed90c3c1774a9a1765d8305b2fc0c9c38734a478777d35033570777f6a20"

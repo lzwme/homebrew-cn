@@ -13,6 +13,7 @@ class UcspiTcp < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "d1e6c8483d5cc332f7a227ecfe6dcab0392f2d4cbbe33e144dd1c2650d89a86b"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "08361b13bd495c563f6340c7cf4aecabf43475f00a3e47116295de56a014c8cf"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "afe836f6e29e826d8e00da8a7f81909b65ebf51e18d3aa9d15709f991d28e5b1"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "283ab40c4100a1eba330dbb5392d4b88cf224acabfadda051a5040947da685fc"

@@ -12,6 +12,7 @@ class X3270 < Formula
 
   bottle do
     rebuild 1
+    sha256 arm64_tahoe:   "c6607f88ba719c972e9727b57b4b9765cda8a3cf82f0ee3589fbdc5d1f27ebf9"
     sha256 arm64_sequoia: "41caa1c7a64de9870b59c7e4b834841ef3d65a211781a87d97edba44e8a1cd47"
     sha256 arm64_sonoma:  "c90a271931ac61368c956348a59b652bc4f984940d6841f5bbf59e75a8f52f57"
     sha256 arm64_ventura: "f6ca96db4ce44adea40987d324ef4f06b4e397675412bdd8826b2b7eca40d724"

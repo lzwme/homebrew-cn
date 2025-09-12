@@ -9,6 +9,7 @@ class Cpptest < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:    "b7ba7a08b1659d230bf822ed02e72535423504b3b5fe659cac6b16f6aa64d3bd"
     sha256 cellar: :any,                 arm64_sequoia:  "2e9bd9882a2be0879ed9c30b86dda312e9fdaf6f0913d1e52960e0c057454857"
     sha256 cellar: :any,                 arm64_sonoma:   "02e96560cb00bb0e4a31cbeb0e1af8fe4d24071dc8693551a444a8ca899f64de"
     sha256 cellar: :any,                 arm64_ventura:  "cc624fd1da48ba38d19025509d327580fc4d8b2603deaa398e1bdecbad88d676"

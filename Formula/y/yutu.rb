@@ -7,6 +7,7 @@ class Yutu < Formula
   head "https://github.com/eat-pray-ai/yutu.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "16f626d589d5da7ecdd415db8905815ea1ce6cccc682854f0048b1d41a0faced"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "16f626d589d5da7ecdd415db8905815ea1ce6cccc682854f0048b1d41a0faced"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "16f626d589d5da7ecdd415db8905815ea1ce6cccc682854f0048b1d41a0faced"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "16f626d589d5da7ecdd415db8905815ea1ce6cccc682854f0048b1d41a0faced"

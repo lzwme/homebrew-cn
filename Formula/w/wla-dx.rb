@@ -27,6 +27,12 @@ class WlaDx < Formula
 
   depends_on "cmake" => :build
 
+  # Backport support for CMake 4
+  patch do
+    url "https://github.com/vhelin/wla-dx/commit/6fa1f673f010e4fa4571c40929019cd7e67d1bbd.patch?full_index=1"
+    sha256 "08ba18fe27c6b0ff0bad4e9ce15a4e76be5626407e03ffdf1c19228902e02493"
+  end
+
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"

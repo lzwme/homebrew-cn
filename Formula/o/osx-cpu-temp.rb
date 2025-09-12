@@ -8,6 +8,7 @@ class OsxCpuTemp < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "c7b0f3f1f33e64d4cacb4b5b8d5a7454fc23338f15caa577658ef1e0b7f3026d"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "e1484688d7c45ad319e94d86b098150df1a028fb85b93591664a8f5c839a1383"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "50aa80f9561f2a41d78f87f5ba9998a406b3865d5bc61fcea208ead214149c64"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "5189807136b9dce5f62994ea3451ab91f560fcdd665e35f50387c19667af17d4"

@@ -7,6 +7,7 @@ class Xmake < Formula
   head "https://github.com/xmake-io/xmake.git", branch: "dev"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "83c50417dcb392c7cb279f11c1b7f5666fb12ecbd4741401f0f17364a76f470b"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "a11640d92d9a1c6d6251a35088965b797ad873a9d20db588f42e06fb25e2632e"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "678728a217a162b6aa0035d91d108932c272b8f622a3b7f3d8d78a157dacbe20"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "0ad8bcb5f02fee86ba758a3ca42339963d5422229bc99b18e4d43dd7511010cb"

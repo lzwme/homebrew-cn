@@ -11,9 +11,10 @@ class Gh < Formula
     strategy :github_latest
   end
 
-  no_autobump! because: :requires_manual_review
+  no_autobump! because: :bumped_by_upstream
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bdc5f1450eaae1974b45156a284eb59d1ec515f6063ebcbea97c82568f472af4"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "bdc5f1450eaae1974b45156a284eb59d1ec515f6063ebcbea97c82568f472af4"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bdc5f1450eaae1974b45156a284eb59d1ec515f6063ebcbea97c82568f472af4"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "bdc5f1450eaae1974b45156a284eb59d1ec515f6063ebcbea97c82568f472af4"
@@ -46,7 +47,7 @@ class Gh < Formula
       system "make", "bin/gh", "manpages"
     end
     bin.install "bin/gh"
-    man1.install Dir["share/man/man1/gh*.1"]
+    man1.install buildpath.glob("share/man/man1/gh*.1")
     generate_completions_from_executable(bin/"gh", "completion", "-s")
   end
 

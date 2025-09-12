@@ -9,6 +9,7 @@ class Libstxxl < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "e9a97733a67a95ca7bcaeb336a2573cf54c7110163448db00a1d27e98d49c364"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "30d099063deeb524f2ebe459a34fccb9236780abee29b1a8487f131922b015b3"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2fa5cbb1eb4ac3bf9d3603d0eb56d2e75db5b4962ed87c625f45deb988713a6b"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "c553b5d40fc2b5c081634ce666570017b82f4c74c0f5915173bd9024d959de1c"
@@ -27,7 +28,9 @@ class Libstxxl < Formula
   depends_on "cmake" => :build
 
   def install
-    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    # Workaround to build with CMake 4
+    args = %w[-DCMAKE_POLICY_VERSION_MINIMUM=3.5]
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end

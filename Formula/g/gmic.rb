@@ -13,6 +13,7 @@ class Gmic < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "c94f341bc01b6089f78177f30b627d0613b262a8b3449026ddb169d82ed606ce"
     sha256 cellar: :any,                 arm64_sequoia: "05ada69a02777ae811103cc52fd51fad1f4d33147d497b21c97f3eec599f1f15"
     sha256 cellar: :any,                 arm64_sonoma:  "5d9660b559b3f670f4539abb8db0b7c5ee86f90e5427fcb62c5281222a2efe4f"
     sha256 cellar: :any,                 arm64_ventura: "fbc9b6203dd515710ca7bad86d433375236eb69eff580c6381d1d84ba3caa221"

@@ -8,6 +8,7 @@ class Genext2fs < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "7404279f8152781c963a7d4c49d98b1d03a7e236e03e31c19b1ec2cc241fd2b2"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "cc9fdd7364d47e9a525a63f18f8556678f95c84785aafa586cfd3ccf22ae29cf"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "77fe02e5ebd064e2a70deb8e2a69dbc105f5f7535c7a01cf599575856b02940e"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "566e773ad73882df019f3b1963a37837e22db06d6b1f622da0187fbf0b86244d"

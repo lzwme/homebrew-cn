@@ -13,6 +13,7 @@ class Zxcc < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 arm64_tahoe:    "e312260a654050c8776f39d0558ab6c5e9b7d62f4f219475a13dcd8e75fbd759"
     sha256 arm64_sequoia:  "bddad2d64c555a4a13ba9cbc9c0cb6da0f249f6ef360c2274626a8b036c473a3"
     sha256 arm64_sonoma:   "8c8e1b35ae99069026c14d9cf0d35a14196d7be3e0a1e7bdbc9d6ec5fd6f5b13"
     sha256 arm64_ventura:  "e2fe6fa77252015a020de63bb4973171a8b9a9c90f866f2835f1e36e4e5714de"

@@ -7,6 +7,7 @@ class CBlosc2 < Formula
   head "https://github.com/Blosc/c-blosc2.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "b90b2adacdcf864eea4068990628321458a62f5e72811bb28400adec402a9228"
     sha256 cellar: :any,                 arm64_sequoia: "33fc68f81dbc787acc3ae64b023cd09d80242a9a7e458898ac4b86b1f94338cc"
     sha256 cellar: :any,                 arm64_sonoma:  "0a7f6aec228fcba1fae3b4d320291c10570b08523b20848c3a5ca678e2dcea47"
     sha256 cellar: :any,                 arm64_ventura: "b4d4e1049bb8e7c72178241d0f59ee95873c78263c3e3408ae4cfb3aa7216bee"

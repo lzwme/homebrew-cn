@@ -12,6 +12,7 @@ class Icon < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6389f8ee12843eb77bb7616c24e3a139ff00668a41c5d1bd0dade1a3f89cefd0"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "670c7d0db69776c23a1fb47a46f04e81879f7d15fa5480daf1904466addd8a96"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dcedcb08469ce0d12cc78a4430a38726bab27d02c2747c3bddcf1763c7095f91"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "97b1ec91900660d31bc530aff49aa30d7354501c7d94dc6b4520dfea770bdd35"

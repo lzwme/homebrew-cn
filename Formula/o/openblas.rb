@@ -18,6 +18,7 @@ class Openblas < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "a25af8ac88166d74dcea256b9ee9ffaad0c5ace88941a3e760d32aa3813e778c"
     sha256 cellar: :any,                 arm64_sequoia: "f194baff998d5d4418c0a647f592f14c10f8c26cd1542f64b310ac72844a095a"
     sha256 cellar: :any,                 arm64_sonoma:  "46471ce1e3f44f4c765bb6fad1690a9aa69fe9c948379e6f40b9c5e38652c4b9"
     sha256 cellar: :any,                 arm64_ventura: "0b711f2254dc6c5ce89d21cba9f67d89da72b3cfe55bb840f4130dd2bab62fd6"

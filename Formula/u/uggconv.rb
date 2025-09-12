@@ -26,6 +26,7 @@ class Uggconv < Formula
 
   # upstream is gone
   deprecate! date: "2024-09-11", because: :repo_removed
+  disable! date: "2025-09-11", because: :repo_removed
 
   # Add missing `#include`.
   patch :DATA

@@ -8,6 +8,7 @@ class Aom < Formula
   head "https://aomedia.googlesource.com/aom.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "518aed50b3ab63ef4d9b7cefcfaf257b683f247f06dd81c173c7e5df03bd9d5a"
     sha256 cellar: :any,                 arm64_sequoia: "ca79133eb9a4ec1e943322ef475811cc2be310cccfc28d4aa1326bfba0ffa0c7"
     sha256 cellar: :any,                 arm64_sonoma:  "697ad35de4a11f4a9f8a7307384081a397ca58ff238060a396e1248e88a08b24"
     sha256 cellar: :any,                 arm64_ventura: "9329b9bf9dbd64be5bf52ad5eb822e0a7454948bfb91746772e0ee2788ae70e4"

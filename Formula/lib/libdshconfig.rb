@@ -14,6 +14,7 @@ class Libdshconfig < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:    "7d835c92dc8a1d1ce812a79d4fbbe8a900a77711f9a959362a1d03db8b7bfe8c"
     sha256 cellar: :any,                 arm64_sequoia:  "97fa8df11dd460eff2f15e043cd7529eae0fbbedb5f06419c1f05471381505eb"
     sha256 cellar: :any,                 arm64_sonoma:   "325b76dfad5d946aed984169514de5a4655307eab66db17e8b7109ef8759d87a"
     sha256 cellar: :any,                 arm64_ventura:  "3717933f302d4d371720ea523b77f0fccc3886c9f64e58b085fa8129b70eb2c2"

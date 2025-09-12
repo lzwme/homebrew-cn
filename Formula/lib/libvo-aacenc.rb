@@ -13,6 +13,7 @@ class LibvoAacenc < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:    "86707b69dbdb8c92aa266ebe65b67721e688fcf078e66106a578ddcf0ab6c3f0"
     sha256 cellar: :any,                 arm64_sequoia:  "364ec1b50f38e6b1b0dc5e1ea7b12b624e249aea41810491669c9356ff96feac"
     sha256 cellar: :any,                 arm64_sonoma:   "1e337ddc61248e2bba763f27de3fd1f3699a68e03fdf369e95ef39fd3dd5fac2"
     sha256 cellar: :any,                 arm64_ventura:  "0f29497bb74d3fb95f6197085ff4894d2cffb6b6cbc92beb43131bbdc088824b"

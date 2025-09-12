@@ -8,6 +8,7 @@ class Gaffitter < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "4ec8f9b01a9b1fff4a2d4cdfb51df68589b7574dcd825f9f6895e0083fe3901f"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "99ba8c060b64df92ba624ecdf846c053658ff42c15d92221a79e705e664057bd"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9db231f5fd261b380cc7ef6840714a66e286bb3ad67c9643942d1d62eb79798d"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "b595fd07d59d03c35c504d66778fa5c6f0f245a37841c3155b7048463963f6f7"
@@ -29,7 +30,9 @@ class Gaffitter < Formula
   depends_on "cmake" => :build
 
   def install
-    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    # Workaround to build with CMake 4
+    args = %w[-DCMAKE_POLICY_VERSION_MINIMUM=3.5]
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end

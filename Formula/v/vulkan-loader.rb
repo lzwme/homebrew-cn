@@ -16,6 +16,7 @@ class VulkanLoader < Formula
     sha256               arm64_sequoia: "2b3d377d43d59f2576e136e706395c6c64dff5e077fa43c4b0a921b615f635a5"
     sha256               arm64_sonoma:  "02cdf6f5f443acdb9fc7684ee59fa6ed08c8a92315dcfec18351e0c6cfc85c72"
     sha256               arm64_ventura: "4b6c12ca6de39603464a9f04cfd27ab7eb17ec0a8f95e2f472c33c468968a556"
+    sha256 cellar: :any, tahoe:         "6bddef382906c090caf881fb9e9ec311636a6ce1438eb5bf1fd951faeb2a2577"
     sha256 cellar: :any, sequoia:       "ed9de26d11433881f00e9572d7efe2cadf6dece8f520409e6526d0948660fb31"
     sha256 cellar: :any, sonoma:        "a5c5ca977934fd1c93386194d44066d151f1512b6329d8bffcd1a70eaf823e54"
     sha256 cellar: :any, ventura:       "6cfb1455dbbe117736114fa04fe097c83d6171d34313ec57812624f1fab66d90"

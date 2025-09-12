@@ -8,6 +8,7 @@ class Khard < Formula
   license "GPL-3.0-only"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "233a43b1af5d9cc99fb317e10ec0a1508276a1a64b81771d0035036298e9dd03"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "ce93fc04d30ced8a224d1c44597a1446b5b65dab074dd3e19518775b437bbd89"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8903230895d066074b7aee41a8e6de501184860cbf86ce5b1cc42acf9aedb40a"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "1d1e6b128ae04cf10d69d04a618f818d70486f5b4857e32eec69a920089596c1"

@@ -3001,6 +3001,7 @@ Homebrew-homebrew-core/Formula/i/iftop.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/i/ifuse.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/ignite.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/igraph.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/i/igrep.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/iguana.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/igv.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/i/ii.rb, Homebrew/homebrew-core, 0
@@ -6325,6 +6326,7 @@ Homebrew-homebrew-core/Formula/s/sherif.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/sherlock.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/shfmt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/shibboleth-sp.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/s/shimmy.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/shivavg.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/shmcat.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/shml.rb, Homebrew/homebrew-core, 1
@@ -12596,6 +12598,7 @@ Homebrew-homebrew-cask/Casks/k/komodo-edit.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/k/komodo-ide.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/k/konica-minolta-bizhub-c750i-driver.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/k/konica-minolta-bizhub-c759-c658-c368-c287-c3851-driver.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/k/kontur-talk.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/k/koodo-reader.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/k/kopiaui.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/k/kotlin-native.rb, Homebrew/homebrew-cask, 1

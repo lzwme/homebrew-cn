@@ -19,6 +19,7 @@ class Vilistextum < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "49595a548ac3b8e7818c1467db59e825ee7d0ca03d38311b3494451bc40687e8"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "518d8afa3e88d75bb45459300aa06568ebdb4b712495fac4d0edbe3dcfa17fb5"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6ca2e91c4c222843276180c7e4368437fad8284a673b5cd3b26aeb3650204b6f"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "4a6b83b2e8ddabeedb5def8c287c556efa9b442929a98d06171265b7f781e8cf"

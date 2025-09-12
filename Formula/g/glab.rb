@@ -10,6 +10,7 @@ class Glab < Formula
   no_autobump! because: :bumped_by_upstream
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a577eafa54c3155305f3fe63f49e01ecec130d0bff77972ec7bd16af0a777ff5"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "af7a27112f5da3009868843bf89d04061f92002c9f27d5f3a999c4777fc4a6ad"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "af7a27112f5da3009868843bf89d04061f92002c9f27d5f3a999c4777fc4a6ad"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "af7a27112f5da3009868843bf89d04061f92002c9f27d5f3a999c4777fc4a6ad"

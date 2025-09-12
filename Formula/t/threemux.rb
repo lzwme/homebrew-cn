@@ -9,6 +9,7 @@ class Threemux < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "21124333bddcbd848413f1f91b1277a848777555165c7f649518236370c237de"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "3d8d3f42362a72fe5ef6390d24223c572b596d234c590d7dcd51129678f6aae5"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "358ebf92a4d1ccf5844e2b21c3918d4fdc0344f3d5aea110b170e2c5244bd438"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "cef0aa7766c9cf4045c403ae53f20fa8fcb4913c80148b01755b4a4da7449d8e"

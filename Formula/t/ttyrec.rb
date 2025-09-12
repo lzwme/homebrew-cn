@@ -14,6 +14,7 @@ class Ttyrec < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "2b44b170e50cd4a45a34866f55c074aa7178b26a733350d471dff58709831cf0"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "1bc483dbae460cdc63985077a07ab767d1f3b3b2d614ef276a038a07bbaa479c"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d151676ce6f3761eb16f59d01ebfc1504d63477695f5b5c8d178a0d5c095139a"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "8da60792e0827bc948f8f1f0ce1f4c2e223e987c62943e8d854887d2b3557de4"

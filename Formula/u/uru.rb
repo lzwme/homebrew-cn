@@ -8,6 +8,7 @@ class Uru < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "93a4aa65b18a37ece4076353fdfee72392dae4a84118ac70e25d0cdd2829ae63"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "b5422b52374d4e7de9f934714fabe3b984a1e76fb795cc82cdac81c7477bbcf5"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "19c329e3ad2a981d5edcf2f708608297f4b3d5da68c8344744cb78cffd513c42"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "e1c97e2f9106da354206149ff4138bc8731b9e68675d57e2080c19bd2951c23c"

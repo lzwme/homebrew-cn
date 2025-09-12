@@ -28,6 +28,7 @@ class Unnethack < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 arm64_tahoe:    "95679ab2628590f991ccb63e169583d400bfadc242a7cc87cf914e733104f1f1"
     sha256 arm64_sequoia:  "fccec5070c4616fe421556ce507d015687ccdcd4da2681b2f8cc676dd4e7df9e"
     sha256 arm64_sonoma:   "1c6320df0cd991aeb79ab344592d38726b9844cf5427c15b8a24d3195f2864b7"
     sha256 arm64_ventura:  "dce7d673a3f638fe97b4757fe3d78cb61b5fbdd1fec8b1f536e1295179195e91"

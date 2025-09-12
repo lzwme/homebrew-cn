@@ -13,6 +13,7 @@ class Libyubikey < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:    "6f293dfc1a720368bb989bdb389bb507d785ac6cbab9d33753f56084255296f3"
     sha256 cellar: :any,                 arm64_sequoia:  "1402744ea6becf5fc6caf82c61b90530180bc7b7c025952ab5f47db813d9dd81"
     sha256 cellar: :any,                 arm64_sonoma:   "9963f3715eff70ebf4bbe725e8bf6e3bb112cb3476798b7d8705090dc3049ed0"
     sha256 cellar: :any,                 arm64_ventura:  "4580266e70e2afadf36db6e307f1e2f5046e06628b1482d55c11af8714c9fd87"

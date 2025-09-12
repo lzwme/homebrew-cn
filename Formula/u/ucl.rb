@@ -14,6 +14,7 @@ class Ucl < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "be21a9408fd10aabdb648f2c5075a234cd1308fd2628f6fb205751883835532f"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "c2bf62c73925dcc1099836d528dd46f4f6f3fdae979f58584a930dbe92e89055"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "efc85c20038e401439abb0d3889816554d0476e968422782c97661a9b5c51ef1"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "462fd1b3bf0382d5dd445f4d12b86f47e4577ab52a17d227b2c80a8e2faf5307"

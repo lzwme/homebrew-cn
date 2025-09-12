@@ -8,6 +8,7 @@ class Ultralist < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "cf20c183b0f002e46e7120e832512041e727cf95055558a4883081888df4daa8"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "110edc14d3b119a73a5de437726450fb928f436c94743d94db437bfe132b37be"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9b2752e4eb0dd8af2d061318320c6c9efe9b9668ffbf87349bc7d0a0517b590b"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "b299b08dcd7d0729ab4a7d5ed7b236c1d63d33ee4d67c64c313a604995303430"

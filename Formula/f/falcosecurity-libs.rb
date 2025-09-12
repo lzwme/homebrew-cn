@@ -18,6 +18,7 @@ class FalcosecurityLibs < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any, arm64_tahoe:   "3e1ab7b760d8ff8782f1c3f457ecf266f26f6920d2a0024d812c22fa683af361"
     sha256 cellar: :any, arm64_sequoia: "4bc4ecdc75524db76f90be4bf6b3badb6b411c9cafdb2e29156e79b7be6b8960"
     sha256 cellar: :any, arm64_sonoma:  "e447b78f29aadf2f2382fa040b5c6829a0e1dab4268a87990317ed8c840aa757"
     sha256 cellar: :any, arm64_ventura: "9f8428f00ff3309d52c76aaf74d2d44f743a4136777c8c6892510313c854a29d"

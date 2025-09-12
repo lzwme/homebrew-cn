@@ -14,6 +14,7 @@ class Victoriametrics < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6a5758d6adf5ca0a46821c3933734c6759a3f42e7ee0e6a7f59ceece9eabc17e"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "5f7f631135d8ffacf07b8ca9dcea934fc01272389876c896e0532609424f30b8"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b55692201c3c0fd348cbd3459e686a1445a5b8c06eee37372b664d9743e8ac06"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "fe7b60c5582048cceb534cf7579661be0d1c3e1adbf7ddbb730c302335c3d604"

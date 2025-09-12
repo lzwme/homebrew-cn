@@ -7,6 +7,7 @@ class Gum < Formula
   head "https://github.com/charmbracelet/gum.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fe88a443c148f8f6fc401cf6dfe57ad4af214feb85163c8b15c6d6423edb6c1f"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "901cb800319abaade91650d15c8023b6b810ef61eca36750880eb084269161eb"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "901cb800319abaade91650d15c8023b6b810ef61eca36750880eb084269161eb"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "901cb800319abaade91650d15c8023b6b810ef61eca36750880eb084269161eb"

@@ -14,6 +14,7 @@ class Sdl2Gfx < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:    "e47f4d00e05f9f9f5329cf59d7b850c6825def067848db1bf34d2aa06727972e"
     sha256 cellar: :any,                 arm64_sequoia:  "0edb8d3b267ce8edd5135b4ab15a2e050204ba10a38b4340e83fe468b78bc8fd"
     sha256 cellar: :any,                 arm64_sonoma:   "ce7aacaf54e17f764780e7480ea8c6ea032f9736565974537bbf3a09645cbc01"
     sha256 cellar: :any,                 arm64_ventura:  "9c294fad8fbad927f3041868451946dc56c35f1d90f9aeef625e803113e65d09"

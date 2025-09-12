@@ -13,6 +13,7 @@ class GnuProlog < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "47608f61774ab4abb61279ebad504f55aec87807f65c9399f63aeec15fae16d9"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "311488f7874b46d9e06c9499df180ab4008260935fbe5f6335eb4cb37d303f84"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ce33996a42c4d43c19084bd12fa5e6121d9b1650db96f6dd36bd1c54d85e47a1"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "6add739b57462f42eb0dc12a1691bd83ef0075a95fa0aebe822e8c432a66aa72"

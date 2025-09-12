@@ -11,6 +11,7 @@ class AwsSdkCpp < Formula
   end
 
   bottle do
+    sha256                               arm64_tahoe:   "957d0ae7865febda252ba93fc5e092266efb4ec4993a080ce283c324cd983865"
     sha256                               arm64_sequoia: "82101f61af2d2cf2ee773cbd0ac710d5a23ff41a0fbec1edfe0379929c76c8ce"
     sha256                               arm64_sonoma:  "c955fe6a63fe34454f783fe40dcbccd8fbdca5e3a6b8ea406b84a605cd45153e"
     sha256                               arm64_ventura: "42f47cabcad793a718a2d09f7424d652eea8a798028135d62bd155ad4a9aa485"

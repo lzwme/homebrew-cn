@@ -9,6 +9,7 @@ class VisionmediaWatch < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "f003e974ce7bc63ad04454caad6daadc1d0c9afbb6d186fa11775791393fef0a"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "a1230c8458404ec82ba7142d81abed0964e482842427e0860bdd0590cc25ad88"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7ae623768a63f7e3c72abb3bc6b06dbcefad5c698195d8298b2e89de2cd04d63"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "483b9ff4d88bc672f1fbdaeecabda4c664f392efed8077af088449b5be541048"

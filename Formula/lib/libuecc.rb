@@ -9,6 +9,7 @@ class Libuecc < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:    "d27a92b37c542bc9880f60bdf8dce4dec889c93b469e8cfc855d963ade17f9f8"
     sha256 cellar: :any,                 arm64_sequoia:  "a94e6f279789d442ddfce719d48af0c5a430e4d255f9c8dd16b7cb691062988f"
     sha256 cellar: :any,                 arm64_sonoma:   "53fdfd07055f10ff583e922b59b5fd2da445ce9f3926ea76b6aaa9da3a036a5b"
     sha256 cellar: :any,                 arm64_ventura:  "52bf8320fc75e714e3b8ba3b6421fdb5165ab1719597539d20de7371c2b3a64b"
@@ -30,7 +31,9 @@ class Libuecc < Formula
   depends_on "cmake" => :build
 
   def install
-    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    # Workaround to build with CMake 4
+    args = %w[-DCMAKE_POLICY_VERSION_MINIMUM=3.5]
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end

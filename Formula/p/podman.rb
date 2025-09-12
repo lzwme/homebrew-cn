@@ -17,6 +17,7 @@ class Podman < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0278f89083199abb80ee4c1ecaa0bc05ce86a6bd40a46f0a265bad82e00f91b9"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "6c5159a90a364a86870db91f498f72775b94f7acfde18b978bda9d59589d7cbb"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0cd0bfacf6825d0b7968058c0743c0367e7aa33276b87f8c9265710d3631a1fd"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "b796eca098d1bc1d5ac4111758642d5c6dda9f842099d7c1f8dad0dfac9b1c64"

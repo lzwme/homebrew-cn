@@ -11,6 +11,7 @@ class I2util < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "468ef98c290cb91da0d8fb20a3c05053bf41a1b61b300bc070240ff9166dfdf8"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "d149ea9bb20335ddb149183f1edc5ee7376273a65c2338320abbebb70adab4c1"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ec79d9711f9c27234f9749543d1107b5e6065cea07c02a8a529ca8646b6a5bc9"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "5f5bcae5324cc0b081e48e27daf749b0c9f87dec744563231ce206c0792f908a"

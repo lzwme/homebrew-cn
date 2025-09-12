@@ -10,6 +10,7 @@ class Vitetris < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "ab9a0fde775af14600b636a041e026c987933c871cec3e67a4184f6521a61b2e"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "dd6ea28531dfab3328f90186dc273aec6bc0fe8aea3975c464fc69f780566547"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3e97501d1c6455a0f05c42b8ac32a26a11361329c13f031c29be0302303c3f8c"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "a7e9d7a5f17a0ecec24844b5170fa3a022e98e957bc8c957aed74278f90b5e6f"

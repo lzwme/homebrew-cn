@@ -10,6 +10,7 @@ class GnuTime < Formula
 
   bottle do
     rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "feac0744561e6ed40145815079575f4066bb3f8c363d1c9fc2302fde2f93b7bf"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "963acabedfade9cea9496798c8b026794762de08137f791c778e128310fcb1ad"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "77a541727f4a75443a930e18391ed483b0a3fc797876376a0f7b34260db9a88d"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "f5015e7e94a474156cdc47fb188143388231916979598f5398b72e79393a2000"

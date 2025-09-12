@@ -1,18 +1,18 @@
 class KubernetesMcpServer < Formula
   desc "MCP server for Kubernetes"
   homepage "https://github.com/containers/kubernetes-mcp-server"
-  url "https://ghfast.top/https://github.com/containers/kubernetes-mcp-server/archive/refs/tags/v0.0.49.tar.gz"
-  sha256 "2adeaf5f602388ff1f35c3e5a4c49324d58b524c9d9c0c3269870b73d3e02e36"
+  url "https://ghfast.top/https://github.com/containers/kubernetes-mcp-server/archive/refs/tags/v0.0.50.tar.gz"
+  sha256 "5a7351b8c495abd9cf513d717a7f4fb6fe92162ae832eb429b80f66d5323dd48"
   license "Apache-2.0"
   head "https://github.com/containers/kubernetes-mcp-server.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e6cf228e13f0f087c5e8314adce18102956a93646323d618c65b38fa3a9264e9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7b20a59c82aa2d46a46d212f3c822a8d8179ae7629eeac25d62cf98bb36aaddf"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "f44ce5a76d9bb75238f7fced459b03f4e9efde7a56dff669cb9b87fc835efc4d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "bae35f8000c0171da36db0cdeda59c4370b843f40d0653043c6234977fa03b41"
-    sha256 cellar: :any_skip_relocation, ventura:       "415b4a9e262a89fec153189f43c17b6bc662f27b1f033bd49a430963e5008ed1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6f11e52086ceba11623ff06c555042531dd9603086e5f612228b01f52a0c443a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7e4f62547941e8779d018e48c52f24231cb14a32f63a368e5341c01f61ebc9f2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c7b6470b256e2b6edd2dcdd01261221b9cf1d739389023ce6d37a8e99066e15f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "e65e8e558eefac0a47e55863196682d8e898ae70647507ef8f9857406d847896"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e41383d56ef5138cbcf298ed738df7a1a448449f0feeb1790b7511d3da7fffaf"
+    sha256 cellar: :any_skip_relocation, ventura:       "9635402d5dec6e1c58b8b3141c0258499ae0a4c6f4160b22a0857933450d61f1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9e4491ff7a027fde60fca90dcbb63b7233b131bdfaaf3b3a44e464f91337d00b"
   end
 
   depends_on "go" => :build

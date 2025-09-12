@@ -8,6 +8,7 @@ class Wslay < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:    "25dba65b78dad270fd7ac6f2b7324354a528bc5d3d7c68cbcc296b9740905c10"
     sha256 cellar: :any,                 arm64_sequoia:  "695e27c926b9cba4a774c0bead3c924fe34f11e9d151e203ee82f83c3be1ae20"
     sha256 cellar: :any,                 arm64_sonoma:   "a589896e5f7fce349934f90cee721270752c65cfb58dfca69ce9d13f6bfc52e7"
     sha256 cellar: :any,                 arm64_ventura:  "696c0681644905529efaaa30ab237023dc12c9a726af0bd7c700302308401a2a"

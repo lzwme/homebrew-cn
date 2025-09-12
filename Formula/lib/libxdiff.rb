@@ -14,6 +14,7 @@ class Libxdiff < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:    "52f89bab5540ae76ddffb01090a41adc4ca1f11696aa0f64274307b1fc84bfcc"
     sha256 cellar: :any,                 arm64_sequoia:  "044f8ca7045a788d7096478af46442537dd601d92b6d73c8808f6c2337d0990c"
     sha256 cellar: :any,                 arm64_sonoma:   "ed60064f8f7f516a9b4d240ed4c7b585867c9da39cdcb22560a4ece5e8660509"
     sha256 cellar: :any,                 arm64_ventura:  "2eac99be7b74fae52532e808461ec21675681d64e25ece6e99b54176a20618ab"

@@ -13,6 +13,7 @@ class Cscope < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "a0a30f47c29cb9473180bfe1c3670ceff999e1cd694babbe88d90e012cca0827"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "690ea8542348fc155da1a174f6e98cf08d81be181a222853a504124c9071c08b"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "45fbc22efa33e380eeca6976ad47869871115e9be506b16dfce771783ccd7c0a"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "955599d1da5c49055ac99ef74278c40fa33079472e106115a5b3d754758167e0"

@@ -9,13 +9,13 @@ class PhpAT74 < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/php"
-    rebuild 2
-    sha256 arm64_sequoia: "7d19a9383787427ac98fb020a80339f7d81f3a2825d860d8e981a6edcebf3ff3"
-    sha256 arm64_sonoma:  "c16ecc46f27aa5d4a8e55694b728b38e4164d49e7b478f8b842db4e9f6a123d8"
-    sha256 arm64_ventura: "72d28faf7c4b71fe5739d3eedbbee851eb578ba71c4665ce949465d1f38161ad"
-    sha256 ventura:       "d30abe3c4d7eea15dcfbc45b4a387a8e0f1a99aebf9050a4c1c23fc35975ac73"
-    sha256 arm64_linux:   "387019cb63715ffee6484534b16bcf48db220351e88155bf900053c6ad477ce5"
-    sha256 x86_64_linux:  "d0674948ee9ef45c32d39df7d0b8af03baed7a2a4d2ae21a2db51f603fb8180b"
+    rebuild 4
+    sha256 arm64_sequoia: "c73b6b22dd05cab6f88d67b2eca9b65a7faca5000142955cae409c8e39e881e8"
+    sha256 arm64_sonoma:  "b5e7c8e1269fe092afd3685d4618fbb7bbeba7a3f819c9975304d4b197f97ce4"
+    sha256 arm64_ventura: "7bc56ffddf4caf1fead5bd5dae0f9eae739556be2d5cf7f25444f8d69aef1dd1"
+    sha256 ventura:       "f24a28773b5f02827f16ff36ffdbb6ca2e7d9573af393731a12a22bcabbb6554"
+    sha256 arm64_linux:   "17397897372b4e737f7f95864af2b4e056058ffd8c4d4372c560fa81a5cb56b1"
+    sha256 x86_64_linux:  "6bb7cfb583cf03e2e8565666d4c347d5de08f07f86bdbda634d160032e30f28d"
   end
 
   keg_only :versioned_formula
@@ -63,15 +63,36 @@ class PhpAT74 < Formula
   uses_from_macos "zlib"
 
   on_macos do
+    depends_on "gcc"
+
     # PHP build system incorrectly links system libraries
+    # see https://github.com/php/php-src/issues/10680
     patch :DATA
   end
 
+  # https://github.com/Homebrew/homebrew-core/issues/235820
+  # https://clang.llvm.org/docs/UsersManual.html#gcc-extensions-not-implemented-yet
+  fails_with :clang do
+    cause "Performs worse due to lack of general global register variables"
+  end
+
   def install
+    # GCC -Os performs worse than -O1 and significantly worse than -O2/-O3.
+    # We lack a DSL to enable -O2 so just use -O3 which is similar.
+    ENV.O3 if OS.mac?
+
     # Work around for building with Xcode 15.3
     if DevelopmentTools.clang_build_version >= 1500
       ENV.append "CFLAGS", "-Wno-incompatible-function-pointer-types"
       ENV.append "LDFLAGS", "-lresolv"
+    end
+
+    if OS.mac? && ENV.compiler.to_s.start_with?("gcc")
+      ENV.append "CFLAGS", "-Wno-incompatible-pointer-types"
+      ENV.append "CPPFLAGS", "-DL_ctermid=1024"
+      inreplace "ext/gd/gd.c", "func_p)()", "func_p)(...)"
+      inreplace "ext/gd/gd_ctx.c", "func_p)()", "func_p)(...)"
+      inreplace "ext/standard/scanf.c", "zend_long (*fn)()", "zend_long (*fn)(...)"
     end
 
     # Work around to support `icu4c` 75, which needs C++17.
@@ -79,6 +100,9 @@ class PhpAT74 < Formula
 
     # buildconf required due to system library linking bug patch
     system "./buildconf", "--force"
+
+    # cURL needs the value to be long,
+    inreplace "ext/curl/interface.c", /CURLOPT_VERBOSE,\s+0/, "CURLOPT_VERBOSE, 0L"
 
     inreplace "configure" do |s|
       s.gsub! "APACHE_THREADED_MPM=`$APXS_HTTPD -V 2>/dev/null | grep 'threaded:.*yes'`",

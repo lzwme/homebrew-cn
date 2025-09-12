@@ -6,6 +6,7 @@ class Tig < Formula
   license "GPL-2.0-or-later"
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "cee9baa4f445eeb1b17e20f066fec9ee4e59ffac4c1ffae28edc8d9e698dab90"
     sha256 cellar: :any,                 arm64_sequoia: "ec253fa15a03de0700d9c0f9a14c3ae7b08f571699b3825998206ccabd71064d"
     sha256 cellar: :any,                 arm64_sonoma:  "edb0ab2037d0f64854b02b1a833112a5270a5dbe141b4e75308c738b6e27d020"
     sha256 cellar: :any,                 arm64_ventura: "6b982e872791e8a01725f6e1db1c488d9c77e321a0b6769568c503284bb4df1b"

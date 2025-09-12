@@ -9,6 +9,7 @@ class Yajl < Formula
 
   bottle do
     rebuild 4
+    sha256 cellar: :any,                 arm64_tahoe:    "ee1d81b4f6c8e21b07003ba2057aa1c0edc24acde0aea4f0570295227fb36ae6"
     sha256 cellar: :any,                 arm64_sequoia:  "dba63b344e3308d17991f4a71f5ac5dcdc12099cd1d64e1d32f2492a44562709"
     sha256 cellar: :any,                 arm64_sonoma:   "971639e642d5f2531ab6159ee96e86c159a9015fad89cc28eee10a3fc91eb9ef"
     sha256 cellar: :any,                 arm64_ventura:  "fe07a22a18a3172092b2b2163bceff50f423c142484f9a62687dcf2a8ee6e330"
@@ -28,6 +29,12 @@ class Yajl < Formula
   end
 
   depends_on "cmake" => :build
+
+  # Workaround to build with CMake 4
+  patch do
+    url "https://github.com/lloyd/yajl/commit/6fe59ca50dfd65bdb3d1c87a27245b2dd1a072f9.patch?full_index=1"
+    sha256 "b059e4181aca7c50c71924632b5e1dc263ea05a2e7fc6def095c0cc65398282c"
+  end
 
   def install
     ENV.deparallelize

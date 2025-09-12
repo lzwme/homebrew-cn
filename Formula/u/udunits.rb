@@ -15,6 +15,7 @@ class Udunits < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 arm64_tahoe:    "9be11e8aa15c3a8eaf65ca066808eacbfda46e627f6ab4bd42bc6778b52c3984"
     sha256 arm64_sequoia:  "8ba9d3ce2f87072bd50d40063a6db63a456ec9a934d381002d1c31587c0e10b1"
     sha256 arm64_sonoma:   "bb3b99a3627d9008b70648de70aee2014444eebc0eac4ad50d2cec00c4260a62"
     sha256 arm64_ventura:  "c6f54e9f07ec6617aeee1bd95a6ebd444e5b72adb9c3268b9fdb68cd443c26f6"

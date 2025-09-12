@@ -8,6 +8,7 @@ class Yetris < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "20e107c4ccac64993e5c8f794bc50299d759df2b0b9badab5d0a5ec2708cfc04"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "b5358a7a07d701232e1a75a4b28f2e66879d973ef3eb9c848552347505f16ea2"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5c29c804faf6d9d78ecec1eeccc4ffe85e94550c222bba9e793e307f805c1d97"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "bde6f3b8d260bc2b35e850b59223578400c2fda5e97e1ef4b425eb446f9b68b3"

@@ -8,6 +8,7 @@ class Zzuf < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256                               arm64_tahoe:    "a4c4c66658aa63cc815d056e06bce100d7907cfd53179b98b596f440a1d0cd15"
     sha256                               arm64_sequoia:  "6ccb5e6621aa95f4cb62afebe5f4c3aee322b8d207a10d3cbdc16bb073c09aa5"
     sha256                               arm64_sonoma:   "6fce95c82da3ed7282dfbc55f4b276910b78fa5d76b2d5e66ad9b43607828fcf"
     sha256                               arm64_ventura:  "16fc98439ca072e8cf19c129649eff99e63e0cece1c1455e97f04ce7cb4dfd73"

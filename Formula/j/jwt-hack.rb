@@ -1,21 +1,21 @@
 class JwtHack < Formula
   desc "JSON Web Token Hack Toolkit"
   homepage "https://github.com/hahwul/jwt-hack"
-  url "https://ghfast.top/https://github.com/hahwul/jwt-hack/archive/refs/tags/v2.2.0.tar.gz"
-  sha256 "d54521395e1ba6a633e9ce032efd8c9f4574c48103ae976b5d0c9951f1b4bb70"
+  url "https://ghfast.top/https://github.com/hahwul/jwt-hack/archive/refs/tags/v2.3.0.tar.gz"
+  sha256 "b5c0de9923d4ee20037873906223ac14c0c9b1e9623cc3a87e3ce5434d3ca0bf"
   license "MIT"
   head "https://github.com/hahwul/jwt-hack.git", branch: "main"
 
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "69a31c9198ac7daad5cd785dfad52cd4113d5d7de56eea777e5802d891d72b7d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5b62f73cca8c83daa8fb3536df4b0bce20efdf05b256a1bb08112d3534911c78"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "43b743574548e6497f6bf8a46cc0ce538130dd350c0bbe7db561b25e27dc0f18"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1001e4f95a48c7320e674557afec4147bc1c5d984e2d878ff1ad49e7c495ac68"
-    sha256 cellar: :any_skip_relocation, ventura:       "9201954f77305c88323f3528338eb3155785243f8edbdddc5037da6b50011753"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "27f8ce03b3ec9939013af4aba0326ea60fb4080a45a18920fc35ea0674b090c1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "14933f90231ec409de0f9bc081612c3fea2f0db625ae8a7e67526f179563d5cb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5ba9109885de2e95de36eefeb4b8a8578d162ffc424080791b00e2ba1a94585f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ddd1a44241f3f273eee0f4b4790475041a1db4d0ea1639e9bfaf948e173f3f5b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "1f311059d98670431048818181f3434a1f3b858d8ffe52819f00fbbd4d5d58c6"
+    sha256 cellar: :any_skip_relocation, sonoma:        "09afbf532da0113f42a01ea74f8b8394d40786a5b41bfb91d8817b757e17c27d"
+    sha256 cellar: :any_skip_relocation, ventura:       "73db99c85339a1b2610d5478f1847d918384a5bc670e9a76b9685e8cd6e5dedf"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4ab5132ff6af86ba622082a5535e68034b3f1b1a638e6004677d42d09eb29aff"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c1189d0ad3cda89093337bb47ae8c6032246b98a695fbe8cfdbf84385bf12fde"
   end
 
   depends_on "pkgconf" => :build

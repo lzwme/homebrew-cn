@@ -9,6 +9,7 @@ class Graphite2 < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:    "f21bef3300cfbed567eb476ac1825af9fd32abbcb222c1005b45aa6e3617347b"
     sha256 cellar: :any,                 arm64_sequoia:  "150b286ab4cfc8696fcd3fa4e7fa24c9825f024ef991899850b850e6f334100f"
     sha256 cellar: :any,                 arm64_sonoma:   "4cdee055db9958e12662c53661fab627057d3553974d15b289e2955b439f4a9d"
     sha256 cellar: :any,                 arm64_ventura:  "3ec770419ed60d211670f73bf078512824151b460c5c37740ee8b83e3dbb8357"
@@ -32,7 +33,23 @@ class Graphite2 < Formula
   end
 
   def install
-    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    # CMake: Raised required version to 3.5
+    cmake_policy_files = %w[CMakeLists.txt src/CMakeLists.txt]
+    cmake_files = cmake_policy_files + %w[
+      gr2fonttest
+      tests/bittwiddling
+      tests/json
+      tests/sparsetest
+      tests/utftest
+    ].map { |f| "#{f}/CMakeLists.txt" }
+
+    inreplace cmake_files, "CMAKE_MINIMUM_REQUIRED(VERSION 2.8.0 FATAL_ERROR)", "CMAKE_MINIMUM_REQUIRED(VERSION 3.5)"
+    inreplace cmake_policy_files, "cmake_policy(SET CMP0012 NEW)", ""
+
+    args = %W[
+      -DCMAKE_INSTALL_RPATH=#{rpath}
+    ]
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end

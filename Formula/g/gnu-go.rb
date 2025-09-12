@@ -13,6 +13,7 @@ class GnuGo < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "65707404eb0034b25296dc8c9dfc0dd3ec1016b4ef97744500b702317c50b89c"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "b638af6216ed0bd736823bab2fe42ca902dd9768a69fee4009726808aeeea448"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c4a8369ddd4c22df9f43cbc88b769da13639aacdde5876bf22f4e20f54789143"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "29d51049554c942b464d900b5bd264c2606af4775cec9c4c76cf1c170beefe91"

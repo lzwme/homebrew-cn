@@ -12,6 +12,7 @@ class Unifdef < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "32f10f0ec152a2e92709ac763ae4538cc33d0504be7981302da2d9e183d55334"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "d582e3e4238886e561523bdc7f0a1066ac4316c06efd6efd710ba0e6f7ea5898"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c67a592e10c3d607f6ea9676fe8bb6ac59472b2eec185261e9d382d186f65707"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "703fd0028a589e6862e6fb89564a0f1bbb17091dd5d9b35b7c338e172e8d554c"

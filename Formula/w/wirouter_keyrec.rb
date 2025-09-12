@@ -14,6 +14,7 @@ class WirouterKeyrec < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 arm64_tahoe:    "34e5fd2a6a9e60936a2618fd84b435911d6ec1f1f53bb66180ec884077b482cb"
     sha256 arm64_sequoia:  "cccb46ddcd0b30219ed24a351f2dfb1dacf796da3fdabe377b2d9300db62bf1d"
     sha256 arm64_sonoma:   "86c53e8b3f2532c768bb13ae50bd272e3b55866a674c3bf7aa9c370c80ab6084"
     sha256 arm64_ventura:  "d0f76ae3936a32cc3be17614e325503686400bd1c38abf3a072d0f0de9444628"

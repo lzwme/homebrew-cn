@@ -12,6 +12,7 @@ class TofuLs < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9e364ecfb57edada0db9aa010296e6c5769dd557314a8f080367f11c076ea102"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "9e364ecfb57edada0db9aa010296e6c5769dd557314a8f080367f11c076ea102"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9e364ecfb57edada0db9aa010296e6c5769dd557314a8f080367f11c076ea102"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "9e364ecfb57edada0db9aa010296e6c5769dd557314a8f080367f11c076ea102"

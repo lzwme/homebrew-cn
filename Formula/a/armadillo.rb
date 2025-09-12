@@ -11,6 +11,7 @@ class Armadillo < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "09f291a21b01f4d50c1746e3b06ecd422fbb2f476b2405d00ee835fa7c629858"
     sha256 cellar: :any,                 arm64_sequoia: "b80c95891c2c6eb8eece24e86792e2fa439245c09c88eca540a5260007fb349e"
     sha256 cellar: :any,                 arm64_sonoma:  "b2bbb56abe7ec6639710be4514c7c277d43c142203a5291b6f80f9ec43bc311c"
     sha256 cellar: :any,                 arm64_ventura: "281a018050fd7e158b7deba13affe6c007c91970d432c8f5c2a68eb4ac76d44d"

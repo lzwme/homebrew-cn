@@ -1,8 +1,8 @@
 class Yorkie < Formula
   desc "Document store for collaborative applications"
   homepage "https://yorkie.dev/"
-  url "https://ghfast.top/https://github.com/yorkie-team/yorkie/archive/refs/tags/v0.6.29.tar.gz"
-  sha256 "d7c7a5bed266f5ef1c4981e80347e712fceec88a7455662100f55d105f612524"
+  url "https://ghfast.top/https://github.com/yorkie-team/yorkie/archive/refs/tags/v0.6.30.tar.gz"
+  sha256 "c1242388a0a86b215ba6d06597936ece6d799e3d21304f47d2e7a0d1015a7119"
   license "Apache-2.0"
   head "https://github.com/yorkie-team/yorkie.git", branch: "main"
 
@@ -12,12 +12,13 @@ class Yorkie < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "83a2fd3b359560b95d78bc918035ca8c295ea1b8050761438238e72cf945ead2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dcbe0f78a75505760669e78a75bdca820df520850ca64405f094419d47db84bd"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "61bf81e4e7540a425fc20129f9fcc7e6efa8a0898537c9c7705376679162005c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d8a78daa0986c6270d58512575446fbb42222dae083234bdc7b346ee888732d4"
-    sha256 cellar: :any_skip_relocation, ventura:       "df4a55f6165dbf43743ad66f7047a97c3372a2c5a63563045f33ff188524c6bc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f8d8a70359dff250df21421cf5d63991c7f528a5a026e6019f0ed493ed7d56ac"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "962fcf535e6001fb6eae6a9421549ee57cd2aab9092b9a2b8c10d576371fd35b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f52f7af42be0ed66519c666826659bcd7eb9eb890cf5a95d195d2a73a4048e54"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "331a39a3adc92d4214a8c7851545c013b23d81fbe2b73a5d67888a1769781aee"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "156e892f71e98a108debdccc48602cdff48e7c8423454f995eb513ed5c79c94c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d4a30ebce43c8c77545aee14561cac310541f5cea5fec7927ce8167d089fb048"
+    sha256 cellar: :any_skip_relocation, ventura:       "0b280046392290a5f130c2aa0b2eb220352d6ae8000660509ee2064ee16b1870"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "284662ba96cb234f72edbc638f7b61cd2a140dc9e0169a94441018b7c2295561"
   end
 
   depends_on "go" => :build

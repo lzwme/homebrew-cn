@@ -26,7 +26,9 @@ class Ubertooth < Formula
   depends_on "libusb"
 
   def install
-    args = ["-DENABLE_PYTHON=OFF"]
+    args = ["-DCMAKE_INSTALL_RPATH=#{rpath}", "-DENABLE_PYTHON=OFF"]
+    # Workaround for CMake 4 until fixed upstream, https://github.com/greatscottgadgets/ubertooth/pull/546
+    args << "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
     # Tell CMake to install udev rules in HOMEBREW_PREFIX/etc on Linux because it defaults to /etc.
     args << "-DUDEV_RULES_PATH=#{etc}/udev/rules.d" unless OS.mac?
 

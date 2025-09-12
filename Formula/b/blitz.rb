@@ -4,11 +4,12 @@ class Blitz < Formula
   url "https://ghfast.top/https://github.com/blitzpp/blitz/archive/refs/tags/1.0.2.tar.gz"
   sha256 "500db9c3b2617e1f03d0e548977aec10d36811ba1c43bb5ef250c0e3853ae1c2"
   license "Artistic-2.0"
-  head "https://github.com/blitzpp/blitz.git", branch: "master"
+  head "https://github.com/blitzpp/blitz.git", branch: "main"
 
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:    "0980f40ce384ebf7abbb720f1761764fbfd3118085b50ecefe1fcdc740418f88"
     sha256 cellar: :any,                 arm64_sequoia:  "f5c76acfde9f6b4ff49baaaddad03106654788518afcebd6e15b1511c965fe92"
     sha256 cellar: :any,                 arm64_sonoma:   "c1ce7b13ac8453f28f88f8828e05210332135de7b38886318b1146b8ff7507c8"
     sha256 cellar: :any,                 arm64_ventura:  "c12b81ef4cb76e7ab76b557ef4a57ac431a6a39ab63bce8f1d786a6e2c316140"
@@ -30,7 +31,9 @@ class Blitz < Formula
   uses_from_macos "python" => :build
 
   def install
-    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    # Workaround to build with CMake 4
+    args = %w[-DCMAKE_POLICY_VERSION_MINIMUM=3.5]
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end

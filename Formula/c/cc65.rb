@@ -9,6 +9,7 @@ class Cc65 < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 arm64_tahoe:    "f920a8752f63358eadceb552629837af0fe7e35461c0d98c0430ede6cda0a4c5"
     sha256 arm64_sequoia:  "55807c89176cd3d4570b3728a7fabf1ac2c7014d11f6aec4ca5ed7fdd58c364b"
     sha256 arm64_sonoma:   "41632cc243d34d069cc66bd938aaa297265ab1f5438c59bfef49d8c49965c0a2"
     sha256 arm64_ventura:  "753141cb314e207064134c09d9f31ce82f9d2ca720925f321cb81100ef3ee347"

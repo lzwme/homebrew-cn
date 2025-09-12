@@ -8,6 +8,7 @@ class Vpcs < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "158636f42e7e2b5c9bb55093d13dcedeb7513c17a003a3432741acde18e4402f"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "c720c9b26f940276b3431e88b4c8ce29cbe2fe616536d0b8419a6e378e09c3af"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4a6670a2833658d64a9be4c0e42f07b7224ef2cf1ea50faafa982f8469a49052"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "5ad3049e60f55965753362c2d6b5d5919dbe4b5537b155a0d914614d4a0d8cf6"

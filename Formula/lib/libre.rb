@@ -6,6 +6,7 @@ class Libre < Formula
   license "BSD-3-Clause"
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "ef315517c0ee615a7ea9c22692591629e749212ab65bfa35b462671ef87ed7f7"
     sha256 cellar: :any,                 arm64_sequoia: "69ca6f0b8dcf8deba9cf289c1e5b16aaa19603085fc91357719d701448851ccc"
     sha256 cellar: :any,                 arm64_sonoma:  "5964d74a35a33a08848767d68ae2b67ae711fac58f2f2810ae74b2d278f3a081"
     sha256 cellar: :any,                 arm64_ventura: "715e2c68c81f0c3599f28fdc722d23af5a95dc01cff566b815c49c5ac1c4cd78"

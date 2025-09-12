@@ -30,6 +30,7 @@ class Libgccjit < Formula
     sha256 arm64_sequoia: "04adeecfca5beafcb7964f2138093b90908b5b04aa066e15cd7e5c76428b2ac8"
     sha256 arm64_sonoma:  "86fa84fb07098a91ff9a8cc82982ba74dcd1357bb6b807dabecd2c078e7950c3"
     sha256 arm64_ventura: "3e2ba2afd658bafda72aa3a4e86b49f6d973f3779b222675a3a9d2905c23a7ed"
+    sha256 tahoe:         "49106c901073c01fc896a1c3c1ec4dda945314b837e67f64945841ae569a27e1"
     sha256 sequoia:       "c66b7245b953b1de3d9519789397e879ae0ca311e4f7e80ff4e50eabc24a19d4"
     sha256 sonoma:        "bc109320edce03d46fa5a4322e8c5a9c43b9531f0321f6137883c5df0b996660"
     sha256 ventura:       "9095eb6c8ec935270bb81ec510b2867885144eb4a0efa9d87d94976dc762cc9e"

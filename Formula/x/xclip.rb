@@ -9,6 +9,7 @@ class Xclip < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:    "d3179fb90856af5401a1104cf9317c4f6da846e0bb54781d43b1b24f2518c8c7"
     sha256 cellar: :any,                 arm64_sequoia:  "74cc7bc3e57ae35a2f0a1880ece87d5b3e10b25e11a898f7684defbfac3d4a37"
     sha256 cellar: :any,                 arm64_sonoma:   "c6bd5e4a94069253d31ed2ccbdb50ae870148ee2b48dc8d2d09e0ade83721c70"
     sha256 cellar: :any,                 arm64_ventura:  "e335771d3bb8f072b25c2cf6404f12540cfbd8692d97cd678a086a08b76f2771"

@@ -12,6 +12,7 @@ class KosliCli < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8862f6308a03db033612ee6e8ebc5a3110b26e004eef4cdc200e8a82b881b0e0"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "af97afcaef8be7d1e90e65ed0c7e8c99122575dc343716a5e23901ccafedac33"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "49d30fb66d215b5ce58383034f24023b576b56197dc012495cb8d963fc1f61b1"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "3d70e39d83dffd4d5d85fc16edad88b1cecb0585550c79be65a7c17a20bf8791"

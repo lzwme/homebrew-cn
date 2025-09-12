@@ -14,6 +14,7 @@ class Libodfgen < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:    "65f51115007bc250092d1421ac5801d05010911250a8d911cb55a1c0fc2d684e"
     sha256 cellar: :any,                 arm64_sequoia:  "7f42c8f3db9efee29ccd3acfdbb58e401cff658eb20c77284acdcd1220770249"
     sha256 cellar: :any,                 arm64_sonoma:   "f8c8b108ac222308245eef3d268c4eeeb84b2a73f2410c45568f304a142471e0"
     sha256 cellar: :any,                 arm64_ventura:  "ee37bbec363199abddeafcd3c185add551b115ccbcf2d175be4e3372321be7dc"

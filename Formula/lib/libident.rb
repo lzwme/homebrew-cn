@@ -14,6 +14,7 @@ class Libident < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:    "79ba04c7084f4d774e85a799733bf4e79676f6ef0d5fc7c9036db9fd2e2b97e5"
     sha256 cellar: :any,                 arm64_sequoia:  "2446047586d94ec64540aae081f818a68642475be91609bb360772af74d8236f"
     sha256 cellar: :any,                 arm64_sonoma:   "ec5e66033f45c75ae856163de64dec8196438c77f2d7183595361d1cc2992a5b"
     sha256 cellar: :any,                 arm64_ventura:  "b3aacfbacdc98c637bc19401da959466566c13914d88be0a500a4ccd8c0e35fa"

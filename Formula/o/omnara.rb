@@ -3,18 +3,18 @@ class Omnara < Formula
 
   desc "Talk to Your AI Agents from Anywhere"
   homepage "https://omnara.com/"
-  url "https://files.pythonhosted.org/packages/85/29/706c1d13add673d78c4c39a8aa83164aa11f90efe46e7d19e376fc6f7806/omnara-1.6.12.tar.gz"
-  sha256 "1c90cf75052811c2684961fb45bb4928a23551aabc9dc3520512ac0e96e2addc"
+  url "https://files.pythonhosted.org/packages/d1/a5/a96baf161ea346b6742645da3c685cdbedd7d45c039fb2db7473936fdc7e/omnara-1.6.14.tar.gz"
+  sha256 "43ee625e56ce15395de896eb51562618f08943b7eef0afc6d1fab3b72f6c30d4"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "218d4c35f9fb147d8db8f86995ea985189b5571b846c2a730a139684ef4d2b0c"
-    sha256 cellar: :any,                 arm64_sonoma:  "ecb8bcf3fef9e8d569c76c5dd21abfecbf4e768003a241e96d91237019214d10"
-    sha256 cellar: :any,                 arm64_ventura: "984dc6e229dfc189e18758a8cd62ed15b9e8d2e06e43ec4316b82fe35d660eef"
-    sha256 cellar: :any,                 sonoma:        "9797b8a52711b70b56c197fbb005268b9cff88a270baf78f55f44c20dbca2152"
-    sha256 cellar: :any,                 ventura:       "6deecb73eeec245f796e2aa36eda96dbb9d097a0b0090cf92bb90a1a8111501c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1e93deca335443f7779e2538e57434dc15dfba9c5fc4143d2f6e512ef4d78148"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cc398efa451f5bcdbbe6c7cea2515099a9fd315cae72b6a8f110a888398758ed"
+    sha256 cellar: :any,                 arm64_sequoia: "803a41a4384b431034e14e221ed820b2590019cddef825a0b4ab058ae243611a"
+    sha256 cellar: :any,                 arm64_sonoma:  "cc80954736f9116c4c71f946174a485626a518af1b5c37fd28b7915534443b94"
+    sha256 cellar: :any,                 arm64_ventura: "f1f0af05478085c85af647eabb2a09281141d17f360d9df23d57ca0fb4eb0c07"
+    sha256 cellar: :any,                 sonoma:        "db194b53dedf859886ffd8ba11075e1cfa7c3e57ae60ce72b19ed1e61de8fb9b"
+    sha256 cellar: :any,                 ventura:       "5ff22d031007293a9f64073cdc2591c3fb1bf023ed64473d2e71e63f629bd3cb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7e1a188795560993d4c188ef6919274c04525aee4803993351a9ff737c4b2f26"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "48bed4c6b5707e7eb7929688466a5592d298b26878d611e348a55634f758cf0a"
   end
 
   depends_on "rust" => :build # for pydantic-core
@@ -179,8 +179,8 @@ class Omnara < Formula
   end
 
   resource "mcp" do
-    url "https://files.pythonhosted.org/packages/66/3c/82c400c2d50afdac4fbefb5b4031fd327e2ad1f23ccef8eee13c5909aa48/mcp-1.13.1.tar.gz"
-    sha256 "165306a8fd7991dc80334edd2de07798175a56461043b7ae907b279794a834c5"
+    url "https://files.pythonhosted.org/packages/95/fd/d6e941a52446198b73e5e4a953441f667f1469aeb06fb382d9f6729d6168/mcp-1.14.0.tar.gz"
+    sha256 "2e7d98b195e08b2abc1dc6191f6f3dc0059604ac13ee6a40f88676274787fac4"
   end
 
   resource "mdurl" do

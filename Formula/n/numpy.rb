@@ -7,6 +7,7 @@ class Numpy < Formula
   head "https://github.com/numpy/numpy.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "34486a338bb0be9730e5d86c0fef88f09378b32a346950e7fc2c99c8e29145ce"
     sha256 cellar: :any,                 arm64_sequoia: "4c5c3288b6340ee47adf7d0c261fc2a3cf48fd8aaadac19dcb220477d44fb3b3"
     sha256 cellar: :any,                 arm64_sonoma:  "4e77b5fee2c35785f79e036498fd302cddda064b761ea8f927a1b5cd0a9af5e1"
     sha256 cellar: :any,                 arm64_ventura: "72a6859ee346933bff1be44e0516f49ad19d98cde6334ca5b21180849ff37b94"

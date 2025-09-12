@@ -13,6 +13,7 @@ class Zssh < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "c1ebd8cd9ef8b9656a8ceb87c3ed618fa97d853e355c3f0d9fe706499053e759"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "ef79ef8cbe611003a77f4b5e4728dbce1e2916ea6aa1d34054d495d6b35d043c"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b16fd704253185960f793a025ef7fe510186de420f653602946319d94893b302"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "c89cb5197c40525efecccb42fb351668392d9c425742450896e4ecdc46b59587"

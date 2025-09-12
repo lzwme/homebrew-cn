@@ -17,6 +17,7 @@ class Reuse < Formula
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "c41c1e334b961caf2d6bdeba3cc183ac38f11b26fc75d5feb0045a1ad8aae858"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bbe53b00a1242c95a2845efaddd569aef3cf3b0bb0e0bec2eec34bf248238be7"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "30be032b1d2069f0270d9d890ba620c848759566368c570756c013032a844e40"
+    sha256 cellar: :any_skip_relocation, tahoe:         "b4ed13b6362397425e22388986a9ec918f4231b1ecd842af64e099c9e58bbb3a"
     sha256 cellar: :any_skip_relocation, sequoia:       "2521d394b27b4f2b771767dfd7657ec24c20ddb07c6101a5282f637e8f8ec7d4"
     sha256 cellar: :any_skip_relocation, sonoma:        "8982ffd07af2c12e52e2dd0791b9c2fa773d7903388f6a9c2d29022ec9993608"
     sha256 cellar: :any_skip_relocation, ventura:       "1fda3c20986adfcf17154e0acd8930cbedbddcff869684047a0a9708c733b640"

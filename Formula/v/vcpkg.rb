@@ -23,6 +23,7 @@ class Vcpkg < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "768f142d43f0b76b1184ff0cc9be026c7370a1a8d87ddc043acb1e1e8b3a45aa"
     sha256 cellar: :any,                 arm64_sequoia: "45137a872274a8391880cba9c71f4cad67c8090c697a08cafc9c94ef0ecb0e7b"
     sha256 cellar: :any,                 arm64_sonoma:  "51eb1d28c9e3770e9f17721cb325d095ac47155d43aa23ba7f056e693f2cc2c7"
     sha256 cellar: :any,                 arm64_ventura: "6fe91ab87ee5cdf5ec35aefcdb0ab4e1b9cd13fc52513d78208cfeb3c6f3bf3b"

@@ -8,6 +8,7 @@ class Lmfit < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:    "2099ac294cc7b13069a19012a424137e7e93a1becbdd6055e53134ab206d3454"
     sha256 cellar: :any,                 arm64_sequoia:  "678ab0ff988a722324b6fb23e6504914de679a9b19c5ee9ff97f025d5057d0a8"
     sha256 cellar: :any,                 arm64_sonoma:   "7fbb6f1db8f3fddf49cdfcdab7c35f3ac4b1e42ee8eb86c251bdf4d78b267f64"
     sha256 cellar: :any,                 arm64_ventura:  "d19ccd618608a60bf8de2fe961409cf5615f7003500e88a2157dfffbed40aac5"

@@ -28,7 +28,7 @@ class Xray < Formula
   end
 
   resource "geosite" do
-    url "https://ghfast.top/https://github.com/v2fly/domain-list-community/releases/download/20250829121920/dlc.dat"
+    url "https://ghfast.top/https://github.com/v2fly/domain-list-community/releases/download/20250906011216/dlc.dat"
     sha256 "186158b6c2f67ac59e184ed997ebebcef31938be9874eb8a7d5e3854187f4e8d"
   end
 

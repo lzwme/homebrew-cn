@@ -7,6 +7,7 @@ class Hamlib < Formula
   head "https://github.com/hamlib/hamlib.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "52361ca2f7c283d4ac611e48949e9a836ad4c2ebafeea173ca155fa069b79b64"
     sha256 cellar: :any,                 arm64_sequoia: "f5f911f2d2bbd62db0c4f035b2981effa2a0cb707cbe1c90921a876b0963e89c"
     sha256 cellar: :any,                 arm64_sonoma:  "aa6b8f1343b9e8198fdfa3f5e4f922b6bbf8fd2c241a0bc29c641032f5ce1497"
     sha256 cellar: :any,                 arm64_ventura: "12173d014b2ed5c2a3be84f7d1e4e12004c9e3b00fa8ee080c2203707e0ad870"

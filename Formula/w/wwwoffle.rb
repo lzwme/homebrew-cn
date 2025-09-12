@@ -13,6 +13,7 @@ class Wwwoffle < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "a7047aea7ece9dfdee1b2f1ed3c8fe41c90a51c6411e523b63105e49d80857ca"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "114a59c443772a746833b3431d2cd275755ae5f8eed92326c7763e2097eca980"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "dba1da001f686548a7ba1ecb2bb6a2fe34a5fb6c821846c3f47c3d6bf461ca1a"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "2f20e830e259aeb9fabef5702a220934f688385a47a91d90dd8fffdb09f79f1b"

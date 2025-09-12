@@ -8,6 +8,7 @@ class Libbinio < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:    "cf564d5b74db4094f9eb7cc697d1562e37fb5ee0ed26209f4ad0d257d19e8ec7"
     sha256 cellar: :any,                 arm64_sequoia:  "b907d94fd656bef05130d427f7327462a255838a0c36fbfa5dd3402053415a91"
     sha256 cellar: :any,                 arm64_sonoma:   "88b5cda150fa3563cdc3f7093ac8626c10f014ff5030b8e3a8e456b3eae509a2"
     sha256 cellar: :any,                 arm64_ventura:  "d47d5255715fc0638111c50a4ec1fe4eea4fd90409389331874df8ef76f61c08"

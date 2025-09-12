@@ -7,6 +7,11 @@ class AliyunCli < Formula
   license "Apache-2.0"
   head "https://github.com/aliyun/aliyun-cli.git", branch: "master"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "a6710d44cd58b3cda35d130d492655019b23b2617a7912e7bb9844bc6966fb46"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a6710d44cd58b3cda35d130d492655019b23b2617a7912e7bb9844bc6966fb46"

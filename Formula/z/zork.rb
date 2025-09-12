@@ -9,6 +9,7 @@ class Zork < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 arm64_tahoe:    "fdce85049ae42b1a9be9102f46045e7940a47b15e9a5994f08b954721f0ac242"
     sha256 arm64_sequoia:  "05e76a8e62d4bb0e55d7aa39d39b01082ac9f6dac9305feaccd466deb3e9b54c"
     sha256 arm64_sonoma:   "2abffab6441cae3c3ca7247d1f0d313571ae873f536fb647b605bec580688d55"
     sha256 arm64_ventura:  "ec4836e8f767968119feea70913b248475a549d10f9dc78f1777b0cffc78dde7"

@@ -11,6 +11,7 @@ class HierarchyBuilder < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b596ee3cfb1c054d136163cc636869e11c343fbd10778750cae303d6123edb71"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "f1cb39a2337b16388228d5efbc29eb0b358c6efd47b843246ae82d9398ca5800"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "10429ee84f930e6ce3111647820c2f8c941a4bc0fe3784cbe7bc0fd2b2c9b572"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "289d661ef28a03a4d0fa042a61a523f5f3c6bfe33032ceab6f427db93f2d0327"

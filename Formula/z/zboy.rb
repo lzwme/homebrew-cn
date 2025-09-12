@@ -14,6 +14,7 @@ class Zboy < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:    "6a88b48f0f07f47bea0da0a31aee45ba535c2f9afc3a612a859c68b322db3e0d"
     sha256 cellar: :any,                 arm64_sequoia:  "cb8335a141f8e9a964288509aa204bee9b9a1672286ce0c97e236af7c8afc6a6"
     sha256 cellar: :any,                 arm64_sonoma:   "16735e77d0184557a36d147ba19935ef2ddf048a6cad3d63efe90c72065a8c4c"
     sha256 cellar: :any,                 arm64_ventura:  "4c1255995acd35d950d0625b1c505b32feeb5f92ba8428e5a91405aca49f5841"

@@ -11,6 +11,7 @@ class Zpaq < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "806e95bf2357903bc8a6a1766850a6030386cef25a672a274315c252dc2b998f"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "0d82a2ae7e022957f0f0675433d8e01622f3ce1a42c2cc7c76ce902f3685744c"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1964b6de47419cc4c995b2f4796afa755213b15efc752b7dadb154bf880599e6"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "5c2b429eb50442110fb5fa144e72fc23848d876eefd491ca2c04967e8789b21f"

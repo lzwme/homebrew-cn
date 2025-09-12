@@ -8,6 +8,7 @@ class Gaul < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:    "e6d6c2c5f3c790afcff2232f8d2dc371a425fdedc42aa52a33daf94b0816439e"
     sha256 cellar: :any,                 arm64_sequoia:  "f6ef6f6e6711082dd49cae45e516aa9f8fdf0f2942ff4224f6c30d9e75976dcc"
     sha256 cellar: :any,                 arm64_sonoma:   "619d02cf0a65573901c3b83a642203dae07540475bb5e1ea054b67e9ae1ed086"
     sha256 cellar: :any,                 arm64_ventura:  "75cba0ced64826f1b48b0622ae5c7a3b2acbe99c33f7b97ec02378b3f97db95a"

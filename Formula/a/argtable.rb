@@ -9,6 +9,7 @@ class Argtable < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:    "0f6b3a1af259640264644f92286a3d96e4fb4ca0dd4f16aabbdcf608117bf116"
     sha256 cellar: :any,                 arm64_sequoia:  "ac1c99cc90796da54dcfa48415939944d6608a1284d6c1eb2650d43717a4d622"
     sha256 cellar: :any,                 arm64_sonoma:   "0f2a92f017739cf52ff30229bbbb87fed5e9d818ae9655685227d5f72a94825a"
     sha256 cellar: :any,                 arm64_ventura:  "01d3903a4cc0bd3c007b2c8401479c8abcca6d2f0ace9ad7659e95ee241819db"

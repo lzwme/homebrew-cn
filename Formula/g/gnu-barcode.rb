@@ -9,6 +9,7 @@ class GnuBarcode < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "57fbf7e1c8368b3405d771acfaff14d5f41d970681575c4e45484a8760a37a02"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "30ba34d1c972ec24c6f5ccd484585cd114456d7a6523f16f31dcf58c81089663"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d037ed37810d7bd12b7e915857ec6789445d67ac197ba328102099ce8e00e781"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "ef4c6bfacdcb641696dbc98dd7baf68fadab846c1e80c5e42e75ad068e327336"

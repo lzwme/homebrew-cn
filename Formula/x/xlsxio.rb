@@ -7,6 +7,7 @@ class Xlsxio < Formula
   head "https://github.com/brechtsanders/xlsxio.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:    "f28e9a57ef29bf0b77eac2b91f370aa915cfef731c053e4238281d3db7ba28b5"
     sha256 cellar: :any,                 arm64_sequoia:  "f77f704e935976f1a6ef0afda3838ca144b7d9fa42d111edc3e636e0bc75c5f5"
     sha256 cellar: :any,                 arm64_sonoma:   "7795c447df632aa02bd9962ab025abf10904555e565763d75f811104dcf30421"
     sha256 cellar: :any,                 arm64_ventura:  "15613fb0399f4c22dc5e47013ee3aec14f1c7971d31d7ce24e4113185dd697ae"

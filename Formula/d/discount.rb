@@ -12,6 +12,7 @@ class Discount < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "53803cc185bc57647a2ec9cac0bf8ed0d12c925f64dea3eed62e9840c9db1bce"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "f8f498e3b95800f7ee24c4319506d4ccd4fca6973405ae1681d6f64f6c262e0f"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6d8aea3828d1013f7e52ad43607e781f8d6afb5cfe40ab434f26bd49f9a0e545"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "565696d059a7e00a44a67c5e7fdadd7daa45f19e92edbc371d4ad66df2a94211"

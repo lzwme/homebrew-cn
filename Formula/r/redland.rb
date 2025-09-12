@@ -14,6 +14,7 @@ class Redland < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 arm64_tahoe:    "7c7aab000c18d388d284b94060060bdc54990d6aaa29475f702b8c85d9031ecb"
     sha256 arm64_sequoia:  "16526f739bc4c35eb3524005689e270dd9ce0828e0934d9d57f9693338b7fcda"
     sha256 arm64_sonoma:   "4671a0bffac8906190119990c40dd6642a6f432ec02ce96c56456c5cb48c91ab"
     sha256 arm64_ventura:  "16c721b39acf16e65892930227303d74673ce56ddaf252ca867da9391de7bad3"

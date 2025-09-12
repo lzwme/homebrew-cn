@@ -13,6 +13,7 @@ class WhisperCpp < Formula
 
   bottle do
     rebuild 3
+    sha256 cellar: :any,                 arm64_tahoe:   "c09bbacfe6dc6a49f351d674dc6a207881d33b677322e36cea228c81f73fcd16"
     sha256 cellar: :any,                 arm64_sequoia: "c06e2df81e481d21d041b2359f4e4a5def132854953c1866bc1366f338ef3766"
     sha256 cellar: :any,                 arm64_sonoma:  "4b5ac49039fad3567a76cbce49658aa54000e13f6e19738b7d85e29239559ad5"
     sha256 cellar: :any,                 arm64_ventura: "3eead42cfcafc558679fb9a0f0c5e566ac62428ef4304fdc3eb1208e77392929"

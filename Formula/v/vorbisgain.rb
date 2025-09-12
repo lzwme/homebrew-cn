@@ -13,6 +13,7 @@ class Vorbisgain < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:    "2184e1fd2ac1887c416d3aef7c8596ff7b4b5bb34e5f1d2e47f9b4ef54e69094"
     sha256 cellar: :any,                 arm64_sequoia:  "1e173fbe7ad9eff215301e6c55c6b8e30a8299c5f946a4102ef15cbbc5080b1f"
     sha256 cellar: :any,                 arm64_sonoma:   "8d09f799836dc2108d73030122904158aefd8b4a61df21be1084d2732f730feb"
     sha256 cellar: :any,                 arm64_ventura:  "5d6e594f8ec28faf2891f44a74881f69332db9a43a8e3058032a32d2d00612c1"

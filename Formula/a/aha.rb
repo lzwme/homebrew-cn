@@ -9,6 +9,7 @@ class Aha < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "c5c635a3945439e2666c6387fc7adf040ae53448b69cdd10ead335c19238abe0"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "16696aeddc832f4f9f7c61ce7d3e6a8327f229bdeb941aded1bce4b2285f8470"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f1df76aba65188e22f99b5229fdfc0435cd0e1e747d8596e64cee739bb679fb6"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "73761c6952a8eb254cf92b17f685bc1cb107d7f075e8e54ae97fc66bdf3b6707"

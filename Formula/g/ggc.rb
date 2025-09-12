@@ -7,6 +7,7 @@ class Ggc < Formula
   head "https://github.com/bmf-san/ggc.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "47f5ea5b465f1e39ef7e0a1bd1e6e014b38bbca700f7473b80a81498e8d45536"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "47f5ea5b465f1e39ef7e0a1bd1e6e014b38bbca700f7473b80a81498e8d45536"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "47f5ea5b465f1e39ef7e0a1bd1e6e014b38bbca700f7473b80a81498e8d45536"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "47f5ea5b465f1e39ef7e0a1bd1e6e014b38bbca700f7473b80a81498e8d45536"

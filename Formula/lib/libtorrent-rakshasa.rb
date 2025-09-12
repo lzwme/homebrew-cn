@@ -11,6 +11,7 @@ class LibtorrentRakshasa < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "f91c420b639b5d60486ee42a655d4e5321794988de412abce563c8c979f4c0d2"
     sha256 cellar: :any,                 arm64_sequoia: "92d392e3387c7e9b8b0aee4d0880746ff2541a2531188e612b50078f8eddb0b7"
     sha256 cellar: :any,                 arm64_sonoma:  "549296e430bd7cecbb83bbc445d51a8c28b6125ec56872082fbf6251472f6765"
     sha256 cellar: :any,                 arm64_ventura: "4d3da8cd5e92a66a8b6da8a3bd538b7ed4c26228cb68ae473475dab986d6cb39"

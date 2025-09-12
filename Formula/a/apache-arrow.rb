@@ -19,6 +19,7 @@ class ApacheArrow < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "11a45e7d86c6d663ad4850f7164e706b26b8bb2afb80b1be5525977a09be2251"
     sha256 cellar: :any, arm64_sequoia: "a831bbc2b0bc3906d7a6cff8a9a7a2f135540146e974de25cb397c6ec8b0b206"
     sha256 cellar: :any, arm64_sonoma:  "ba9ff23dd0b501553dbe5dccff2899c37dbef928989c9c4738f00c4f6d4c6ac5"
     sha256 cellar: :any, arm64_ventura: "3855488d7c3df0b532c23340d18e3c91f4d1242e9c2ed9f25438d9ab02baacb7"

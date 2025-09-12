@@ -8,6 +8,7 @@ class Gnuski < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "f2302fda0228835c20f3158b0f0a8500c85d70d7fe58d698133da7ea792be282"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "fa3056f32083991e84354204c559e07b61f5b79b0a24ca13cd655da45815b5d8"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4b235ad7ef6b4326f8e170d14a29fe29b96c18bf2cec583bfac6e88cc3ff0f7d"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "5da56e306a753eeae75d10c177c42a17698bdb41e0cfb9487f98af4347353510"

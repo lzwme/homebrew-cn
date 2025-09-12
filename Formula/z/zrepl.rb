@@ -10,6 +10,7 @@ class Zrepl < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "86f94f15cab96087e5f9a17e02756dc1efe8f382635805345d6da7cf4f15a810"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "86f94f15cab96087e5f9a17e02756dc1efe8f382635805345d6da7cf4f15a810"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "86f94f15cab96087e5f9a17e02756dc1efe8f382635805345d6da7cf4f15a810"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "86f94f15cab96087e5f9a17e02756dc1efe8f382635805345d6da7cf4f15a810"

@@ -22,6 +22,7 @@ class Libdvdnav < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:    "96da091d8cd2f383ed296945d5022043df053962c612f7e1e85138069f106534"
     sha256 cellar: :any,                 arm64_sequoia:  "b29b26c47215e0956115db5aa20172efaa92d178877f7f2e526efa661282f481"
     sha256 cellar: :any,                 arm64_sonoma:   "77516e8cb99cad1e25fd119a6c573e0fb9c96b5ed7685f1222b9f76a5d1d1013"
     sha256 cellar: :any,                 arm64_ventura:  "77a874039ce80696ea655e95514dc26776a34f1c9675f583ebc0b9ae083be84c"

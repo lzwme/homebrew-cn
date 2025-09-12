@@ -9,6 +9,7 @@ class Afflib < Formula
   ]
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "196c9cf17edbb798e24c511ae565f3b74d201d653a48246d22533e9e55be6337"
     sha256 cellar: :any,                 arm64_sequoia: "b421ba045fb02e767029266042a2ef5cb78d727e51aa7d4778f740702c1799dc"
     sha256 cellar: :any,                 arm64_sonoma:  "ab72e2df66d54b60282c0cd72622d0b87a040c28cc57364066bc2983cf4f535c"
     sha256 cellar: :any,                 arm64_ventura: "a1c49c3b08d528875759b515107b347e349ffc11da766c6e5f582c5bf84bee46"

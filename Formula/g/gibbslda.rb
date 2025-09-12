@@ -8,6 +8,7 @@ class Gibbslda < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "16474e9a022ecbe4d80701a9d8c87952298af65fa230430a84be3e3dd6a1cc60"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "b1a77a02b5d60541a94bc2ed69fb92cfc65c18094ec8973fdcec6eef42e7a7d3"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4671894574c3037f3da88cce3a3327bf1448bb0e07eee695367a819b9c80447d"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "6495fc8734f25a5e3a40658a5dd0b4683ad3014bc1943dc0aa2fc2845e61a4ce"

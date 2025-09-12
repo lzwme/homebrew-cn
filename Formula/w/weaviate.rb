@@ -1,17 +1,18 @@
 class Weaviate < Formula
   desc "Open-source vector database that stores both objects and vectors"
   homepage "https://weaviate.io/developers/weaviate/"
-  url "https://ghfast.top/https://github.com/weaviate/weaviate/archive/refs/tags/v1.32.7.tar.gz"
-  sha256 "1d66482079121f5c80fc5b3d9d06da2016daaf6c05c60bf39e7366c104eb114b"
+  url "https://ghfast.top/https://github.com/weaviate/weaviate/archive/refs/tags/v1.32.8.tar.gz"
+  sha256 "61f31049aefdb96db61b8113cae6710761ad27d7679e96a50aaa89804b3e51fd"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c50fffb7464bfc87f3c5a70e331c4578bf04bd45296c021134b834e613f7da09"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c50fffb7464bfc87f3c5a70e331c4578bf04bd45296c021134b834e613f7da09"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "c50fffb7464bfc87f3c5a70e331c4578bf04bd45296c021134b834e613f7da09"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f6de2da69f4b924236d5a8d8f69a2a69264fd8d302fdaa88eae5231471590eea"
-    sha256 cellar: :any_skip_relocation, ventura:       "f6de2da69f4b924236d5a8d8f69a2a69264fd8d302fdaa88eae5231471590eea"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4af08894cd376660925bf9932c274655d0e0adee8b682b66ea15466cc243de29"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ec75d19a398e781637479f3b4c3d2f7f45f14139ae46307558fa37b1d6d6654e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ec75d19a398e781637479f3b4c3d2f7f45f14139ae46307558fa37b1d6d6654e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ec75d19a398e781637479f3b4c3d2f7f45f14139ae46307558fa37b1d6d6654e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "ec75d19a398e781637479f3b4c3d2f7f45f14139ae46307558fa37b1d6d6654e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "df578cc4dfb57cda7ab6b9d16fd32c60788325cc08eeb410d02a8746b4ae849d"
+    sha256 cellar: :any_skip_relocation, ventura:       "df578cc4dfb57cda7ab6b9d16fd32c60788325cc08eeb410d02a8746b4ae849d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ffea6126bc801f8aeb09b39a41ec63bcae61c6128f601d32a68d6be617086430"
   end
 
   depends_on "go" => :build

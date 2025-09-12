@@ -8,6 +8,7 @@ class Libunistring < Formula
   license any_of: ["GPL-2.0-only", "LGPL-3.0-or-later"]
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "1237e70a4bc00c6bd4a23fa5465c329c03aaf8439f62023a36a8c767f3133107"
     sha256 cellar: :any,                 arm64_sequoia: "3cd26bae2d5fcf61294f14c18e5e7ec773a59ed1bf710fb92055e0db0244e909"
     sha256 cellar: :any,                 arm64_sonoma:  "38e44e319bfe11ec892bc6451d86b687d990ea01b4810b5d8ad1f794d531d82f"
     sha256 cellar: :any,                 arm64_ventura: "b0d7a7078508070bd67589f5060a92100bd1c4aea2a41bf19e7ee8442f483df6"
@@ -22,10 +23,10 @@ class Libunistring < Formula
     # This is also why we skip `make check`.
     # https://github.com/coreutils/gnulib/commit/bab130878fe57086921fa7024d328341758ed453
     # https://savannah.gnu.org/bugs/?65686
-    ENV["am_cv_func_iconv_works"] = "yes" if OS.mac? && MacOS.version == :sequoia
+    ENV["am_cv_func_iconv_works"] = "yes" if OS.mac? && [:sequoia, :tahoe].include?(MacOS.version)
     system "./configure", "--disable-silent-rules", *std_configure_args
     system "make"
-    system "make", "check" if !OS.mac? || MacOS.version < :sonoma || MacOS.version > :sequoia
+    system "make", "check" if !OS.mac? || MacOS.version < :sonoma || MacOS.version > :tahoe
     system "make", "install"
   end
 

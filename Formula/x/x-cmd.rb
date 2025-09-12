@@ -13,6 +13,7 @@ class XCmd < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fbabb79c99f1809345859801f13d6518551c03ddc8fcb79916fc136cb7da5dbd"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "fbabb79c99f1809345859801f13d6518551c03ddc8fcb79916fc136cb7da5dbd"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fbabb79c99f1809345859801f13d6518551c03ddc8fcb79916fc136cb7da5dbd"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "fbabb79c99f1809345859801f13d6518551c03ddc8fcb79916fc136cb7da5dbd"

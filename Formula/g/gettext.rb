@@ -27,6 +27,9 @@ class Gettext < Formula
   end
 
   def install
+    # Workaround for newer Clang
+    ENV.append_to_cflags "-Wno-incompatible-function-pointer-types" if DevelopmentTools.clang_build_version >= 1500
+
     # macOS iconv implementation is slightly broken since Sonoma.
     # This is also why we skip `make check`.
     # upstream bug report, https://savannah.gnu.org/bugs/index.php?66541

@@ -7,6 +7,7 @@ class Kompose < Formula
   head "https://github.com/kubernetes/kompose.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "dbfdd7de743622c0464ce891b457d57a9c9c964a41f59ed7910c22a2f4748676"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "b6e3a9fed65ba2b2d20d710c6e43c7f67b6a9fd83d56a2af8f7161d6e4564ef0"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b6e3a9fed65ba2b2d20d710c6e43c7f67b6a9fd83d56a2af8f7161d6e4564ef0"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "b6e3a9fed65ba2b2d20d710c6e43c7f67b6a9fd83d56a2af8f7161d6e4564ef0"

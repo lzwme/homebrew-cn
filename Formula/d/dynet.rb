@@ -8,6 +8,7 @@ class Dynet < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:    "8d6e34ec69bf34df52910dbd77b2783514a249442ac551e72113dc2ecdbebf38"
     sha256 cellar: :any,                 arm64_sequoia:  "13425cf394c191250670db43c3090541143f76d156e06a11f2cba7294333926e"
     sha256 cellar: :any,                 arm64_sonoma:   "f64ed80ea96d473dd96800bdd9928eaa1b4fbe56cef809daf8d5241d3fb936e7"
     sha256 cellar: :any,                 arm64_ventura:  "326d11401b0db3d2294c46c7f3835cf497954f61fd14f8b6508461ef7ec6d8cf"

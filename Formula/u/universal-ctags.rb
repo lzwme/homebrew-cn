@@ -13,6 +13,7 @@ class UniversalCtags < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "e3fe6d761581c254a501fe5629f4f1dd473ae9c5dc44d989d17d0e4b4b267a8c"
     sha256 cellar: :any,                 arm64_sequoia: "337428bcf565de32e395ea41349b51886a053f919d91dee9fc0199f84e869269"
     sha256 cellar: :any,                 arm64_sonoma:  "6ce2c99bdb26853ffb626792e5448f490032524f140c4286cbfc578e2da2355d"
     sha256 cellar: :any,                 arm64_ventura: "6d98901863157293b693c2854107fcd3925e70656a0dfbf5c275eb5dc2d8104f"

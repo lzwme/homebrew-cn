@@ -10,6 +10,7 @@ class Libmemcached < Formula
 
   bottle do
     rebuild 2
+    sha256 cellar: :any,                 arm64_tahoe:    "60a5db19afb5f8ea31dd1917cdf6e962cd54efe7fd012ab0e0c6c44497a6e2ad"
     sha256 cellar: :any,                 arm64_sequoia:  "2f6eb0738eb824d203e31cd7243942c7d14d07599ece42c8ddd895077a6bdde1"
     sha256 cellar: :any,                 arm64_sonoma:   "652c9f9862e367e62acc5d2b1ddc20d798e6f15c51bccbc69e642acd4df1be0a"
     sha256 cellar: :any,                 arm64_ventura:  "0511d48bcc88a6860030c5c6bec5d36818068b43f11d67561f1519ce0dbf6b73"

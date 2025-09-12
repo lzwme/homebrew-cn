@@ -8,6 +8,7 @@ class TwoLame < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:    "3d0622b14c8204b38bc567923186649071882fca6ef5e8315d049958c07ca5ed"
     sha256 cellar: :any,                 arm64_sequoia:  "8adffc94879ee562f0f12517db906144dffb3e5154318eb23bd33426834f32dd"
     sha256 cellar: :any,                 arm64_sonoma:   "0a0ff83aa3691d3f363db88871bcc231cb139461f7cb5d1fd8bffa80d52a09b4"
     sha256 cellar: :any,                 arm64_ventura:  "7ea2224ac3c69dcbbc8a2bced6b9bd1b478effea5ded33806420e70e51f396dd"

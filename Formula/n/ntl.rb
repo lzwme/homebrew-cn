@@ -13,6 +13,7 @@ class Ntl < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:    "a403f10e051b7654eb42b3e0d5f1ec028e96eb44ce25673962aeb1cfa0adaf65"
     sha256 cellar: :any,                 arm64_sequoia:  "5b5d6f2e3c4aa10a77d9b526811afda574c87f29a2e56776866755be59996efa"
     sha256 cellar: :any,                 arm64_sonoma:   "ef6c7df391853c86ee1859fd85b677fa6e233d7f60f70921b97a5c0fb61ac330"
     sha256 cellar: :any,                 arm64_ventura:  "8495ee2f2c83602778defb01dab2fe3f61c9c3bab35598cc5eb642ba02ef8afb"

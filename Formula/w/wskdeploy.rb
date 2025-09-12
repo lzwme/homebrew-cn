@@ -8,6 +8,7 @@ class Wskdeploy < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "b62f6e49c4bc8484a1da38511cef47eff090660658b6b284d0a75c0f2b00adcd"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "0c0e4b40c6a0e7f4a5b07424402fcade78732f3c3c9b190ed6c603a3172044db"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "dee1aeb56b815b07c277e5e74954c803135b729586eaf82cc78365494a3909e5"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "08cf43fae8646a2da12684d40c5271ea647950788125e7e896d5641984ec98f4"

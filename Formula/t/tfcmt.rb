@@ -7,6 +7,7 @@ class Tfcmt < Formula
   head "https://github.com/suzuki-shunsuke/tfcmt.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2b97f0aca9cb00393ec7c7082768290dceccbc142f409339cecbe9f1e712e3f6"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "2b97f0aca9cb00393ec7c7082768290dceccbc142f409339cecbe9f1e712e3f6"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2b97f0aca9cb00393ec7c7082768290dceccbc142f409339cecbe9f1e712e3f6"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "2b97f0aca9cb00393ec7c7082768290dceccbc142f409339cecbe9f1e712e3f6"

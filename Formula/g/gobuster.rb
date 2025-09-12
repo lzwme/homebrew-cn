@@ -7,6 +7,7 @@ class Gobuster < Formula
   head "https://github.com/OJ/gobuster.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b342220612d825ea80bd1c5569a291868e309ea1b29a9c074a98b6e8ccb6ea19"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "b342220612d825ea80bd1c5569a291868e309ea1b29a9c074a98b6e8ccb6ea19"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b342220612d825ea80bd1c5569a291868e309ea1b29a9c074a98b6e8ccb6ea19"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "b342220612d825ea80bd1c5569a291868e309ea1b29a9c074a98b6e8ccb6ea19"

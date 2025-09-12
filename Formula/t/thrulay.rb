@@ -10,6 +10,7 @@ class Thrulay < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:    "eb92cf4715801f5889b767248ee53ccc473da2803c836e00651846de45dd2c38"
     sha256 cellar: :any,                 arm64_sequoia:  "8980e64ea2ecc17ba2e111d4798a39c7789fc1b0009c2f0ae5664b0fcff8603f"
     sha256 cellar: :any,                 arm64_sonoma:   "d26583fd1ddd768813b4b89c02d46862821e356bf6c009cd1ecf985363ab4317"
     sha256 cellar: :any,                 arm64_ventura:  "bfbbc0ce92dbcfda1209154db22b59916f996348b77bf8421a4c70a6b5bcbba1"

@@ -13,6 +13,7 @@ class ZitaConvolver < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:    "27ab1f512bc3b1f0eec036f702eb55b9f0d14d720229f2eae6b029c827185624"
     sha256 cellar: :any,                 arm64_sequoia:  "4426fc8a54e7e24fa6227c1b38a0f0a8ad3d0957244ea5e29e1092b28f7cade5"
     sha256 cellar: :any,                 arm64_sonoma:   "5b3e06cb4fc6b39c91d964d8a5f960aa7c8a2715907978b26d6d6ab25c4705bf"
     sha256 cellar: :any,                 arm64_ventura:  "b080f0a633296bb349fb9c06858f0327c789113fd3b84c6b31a5ce213a67a0f9"

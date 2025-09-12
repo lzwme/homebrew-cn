@@ -13,6 +13,7 @@ class Grepcidr < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "abdf37c44368707f096b0fe3d2b5bfab47418823ffc48cf5137e4efdd58670d3"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "a5eaf72370f021e79e6cc7d25139a7789fad25fdef67ce5ceaa0f69dbd655b97"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "aa33ac07532a239621ac6bfd62414cfdb9bcb12ea26be37a0631f4762755fc38"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "61836780a0413a58d38b7cf1acd66ad5b1f96554889cde682b2db21df0c5f037"

@@ -7,6 +7,7 @@ class Krakend < Formula
   head "https://github.com/krakend/krakend-ce.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ce68361f8453b5de7c034dbdb5e2433ad66a6d9a7d2d958812463908eaa7d99a"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "e920c97ee588bafad2566c80f19601213ff8882e88aaea9f37c1e7b4af57ec98"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "88f77c24db71dfea417882a7188b885be8b4163a836fd59e0a450fbd32209885"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "0265af7445a32eb4bc70615c2978a8e8bbe6d275582386344fdbbeddee0fa91f"

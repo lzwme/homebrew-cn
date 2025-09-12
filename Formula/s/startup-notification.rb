@@ -9,6 +9,7 @@ class StartupNotification < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:    "5b1edc25aff59c8a62cd1a6c9ffa21e63d6a0fd21fe6fdd108ae17d6207b357e"
     sha256 cellar: :any,                 arm64_sequoia:  "a8443bdbe68a6ad0d3cfb6e762cf01b88eb719d243691b8070b024ad5c8ab70e"
     sha256 cellar: :any,                 arm64_sonoma:   "688da3d5c9f204ab402e2d419b2925bdf6087a1d6fc8d604e0e11be639904be8"
     sha256 cellar: :any,                 arm64_ventura:  "10d94fd081a6867bae73ef9bf9a47b7abb32d92aa50ed920c423cf1f35163265"

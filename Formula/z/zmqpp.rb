@@ -8,6 +8,7 @@ class Zmqpp < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:    "39907cc6b73b2e45317f6a339f58914602cd3a42b36f601252e440ab4106f4e8"
     sha256 cellar: :any,                 arm64_sequoia:  "9fa8e84d3f7cdd481639d63079b3ff25804d464cdf1107397bcde6fe4950726a"
     sha256 cellar: :any,                 arm64_sonoma:   "574b288b419ea2c184b6720d566a15dd75554bc252379a86cefc173794866a7d"
     sha256 cellar: :any,                 arm64_ventura:  "79259180cd88ddb59497fbb3075a02c19ac854e5a57f1ff33f53c328789b4dd5"

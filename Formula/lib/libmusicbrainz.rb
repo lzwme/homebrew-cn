@@ -8,6 +8,7 @@ class Libmusicbrainz < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:    "e3e8721fd9c5f55b57b75c94fceb74bf65b0985844ce2a041725643cbabd4bf1"
     sha256 cellar: :any,                 arm64_sequoia:  "ada38db81da84d8fb85cae7dbc30682461a1d198556fdb01d9be05fcbe9059f4"
     sha256 cellar: :any,                 arm64_sonoma:   "62762e1b184d0c47bb287e151333dafaa526b733ea2c4bd5fbd097d987b84aa4"
     sha256 cellar: :any,                 arm64_ventura:  "f94dae2c20f0394e6500176d823845716fd3696e692527e8106542e7d3a7f392"
@@ -36,6 +37,12 @@ class Libmusicbrainz < Formula
   patch do
     url "https://github.com/metabrainz/libmusicbrainz/commit/4655b571a70d73d41467091f59c518517c956198.patch?full_index=1"
     sha256 "ee0c63e56a17156bca13b157744a54aeed6e19b39f65b14f2a5ac4e504358c8e"
+  end
+
+  # cmake: Set minimum required version to 3.5 for CMake 4+
+  patch do
+    url "https://github.com/metabrainz/libmusicbrainz/commit/9d216e08aadf436dd166876d566efe033510adc6.patch?full_index=1"
+    sha256 "2074078fabd6920ec085df06d1fd28a3eced86176788e17f3ea67a1d40d1189d"
   end
 
   def install

@@ -8,6 +8,7 @@ class AcesContainer < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:    "99edd15fca4a15e40dfac78586b15c5c86fb13ae9d05024f837fc7b28aa7abde"
     sha256 cellar: :any,                 arm64_sequoia:  "470a323cfa40f185682a38aa7ecb04256cebf17b0b854e444cb89d02c09c7d0c"
     sha256 cellar: :any,                 arm64_sonoma:   "93e409e911279df2bdf9c910341e1ba17a64aff066b042a51eba8894bf1bfea9"
     sha256 cellar: :any,                 arm64_ventura:  "15fd9fe1558e49d54f45bdd8b7dc124bca31732212fe502d48be8d0ba716997e"
@@ -30,7 +31,13 @@ class AcesContainer < Formula
   depends_on "pkgconf" => :build
 
   def install
-    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    # Workaround for newer Clang
+    ENV.append_to_cflags "-Wno-c++11-narrowing" if DevelopmentTools.clang_build_version >= 1403
+
+    # Workaround to build with CMake 4
+    args = %w[-DCMAKE_POLICY_VERSION_MINIMUM=3.5]
+
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end

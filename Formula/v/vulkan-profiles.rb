@@ -12,6 +12,7 @@ class VulkanProfiles < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "a146ad39c8095554487d7d0f29655d6de4ec87f466b637f4233259515307b803"
     sha256 cellar: :any,                 arm64_sequoia: "9b2f47521ed8d6bb0f760ba2ebb0e77e5da3a1cb1d5e80abc8f4f17bfb80d5c7"
     sha256 cellar: :any,                 arm64_sonoma:  "193d300fc5791da66a7a94f18266dc5cafba656e8d6d4f46370424cf4c3625f4"
     sha256 cellar: :any,                 arm64_ventura: "bc2bd84db62b80afc64cf8d4da30f373382df66d68a4afd0f70787456ff8c2a5"

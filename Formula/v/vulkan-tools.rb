@@ -12,6 +12,7 @@ class VulkanTools < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "5a89af679c9a0904b620d61747954b016ef64533f7caf51b08d6938c59b67b9a"
     sha256 cellar: :any,                 arm64_sequoia: "d5c179bdcd11cb77ef5f3506c504587ed2bd69bae4acac1983dbf1f90587708d"
     sha256 cellar: :any,                 arm64_sonoma:  "0474cb9353bef73ea16ff4939edc8eff6acb7ff300be4f2c56b7aaea79b236b3"
     sha256 cellar: :any,                 arm64_ventura: "78760f112086969f24d23ee185129e1ede37eaa4c491749edcd90b53641a1a7c"

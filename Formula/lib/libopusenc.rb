@@ -15,6 +15,7 @@ class Libopusenc < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:    "075a843ef1a2380fa68af791012dfd85f42bde013162651ac808b6aae66bd55f"
     sha256 cellar: :any,                 arm64_sequoia:  "9c857d079a3c385ac89d89869fa2ed74d6115a3b86d87149bd9d4d5796da3141"
     sha256 cellar: :any,                 arm64_sonoma:   "c96d078c67fa9ad9ae0398e4c7979c6506c4438ed426d224c8480a5cddd1d919"
     sha256 cellar: :any,                 arm64_ventura:  "2d9e6657c2d76d193da5cd687e5c95e4c13702cd9f5c08945b7a316b63786112"

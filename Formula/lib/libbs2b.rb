@@ -9,6 +9,7 @@ class Libbs2b < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:    "1ba28dd968f0cee9f5e12adef12978ac728db271ffe588218ccd59ac8e3a3afe"
     sha256 cellar: :any,                 arm64_sequoia:  "45676722780a091419361b9966b69511a1f0c7c6d9703ab72d7178711fbf749a"
     sha256 cellar: :any,                 arm64_sonoma:   "63ef89f0f1b41aea4ca096bba70fc2995da8c28845ffe9f57de8b0e51a3407c3"
     sha256 cellar: :any,                 arm64_ventura:  "550fc0d9af3d05be26435c1e7393a2d523775d0e2ed9af1cbe4791ed324ea9ca"

@@ -9,6 +9,7 @@ class Kqwait < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "a8037aef7b7c8539a012c549077b2653aeebeb3b6fa7860263bfe677625b5380"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "69088af879a12bce91e41c0f70c063c27778c4668db657edd7b99062e14f9c34"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "61eda480313a8450e8629464371f24d6ab7f223fc8eb56290666164e572a6792"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "3747581e5e96f01908dc6bc5b5368e1f40e714821c69ea8884ced4cace9b0fc8"

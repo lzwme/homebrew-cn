@@ -10,6 +10,7 @@ class ThePlatinumSearcher < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "83e283a230eb2226c0664d30e2bfceebf1e5cf42dbf4841bbdafc96cffd6307e"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "2ba93995429038b3bc692cf512396e683d766b131a307e63afbbe913218b54c1"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a410fe6377573632c20334478aa337d0c4c39660402881d31d356b6ce055e05d"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "d34acea6e7a4f0bfff85c75756c119ad978a11e72e2901f15e40a107cd1a8564"

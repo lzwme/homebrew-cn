@@ -9,6 +9,7 @@ class GnuShogi < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "e07a2b34459c996910fb2cd8ad3302d978081ab6878330612895115f4b4dd2c2"
     sha256                               arm64_sequoia:  "af1b6d676a20358883f12095fc36af7379e69c8438cc1c3096116b0748952485"
     sha256                               arm64_sonoma:   "0702ff59b956256f5452b9581f38659d15820e201f91fa571eb97f814118fea1"
     sha256                               arm64_ventura:  "f9146b1d94cf4b8376d8c71330f3aea6cad33ebf9af54f9d2e423750ac0b688f"

@@ -13,6 +13,7 @@ class Knock < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "ccb817325238596bec85da5437875f0abb6080f8572406e0a76a1badeb3c922e"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "6918a15821559b226ee8e3844a439277a1cf6b4dcd6fa503fd71531fe541fe8d"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c0705f9179784dc82526bc20a47df2b3a39b1b5e476cca49d4406c9c0e3f1ea1"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "326959f0e368e3b38816abdc5b45d483d1c4d46f0d26775171bd7d5ebeaa059d"

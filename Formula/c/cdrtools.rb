@@ -16,6 +16,7 @@ class Cdrtools < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 arm64_tahoe:    "f288c36da4a1fb214eea796214193de02c0193d7e1237829114fe5b978e5e0f4"
     sha256 arm64_sequoia:  "12e1334974f92d034d839c30e8d1c4ff5d8a5e7341ae9d2f4013cc6bd1b73859"
     sha256 arm64_sonoma:   "ed19c02f2ca445c89d139595e826a29bcfd41dba4c8e67c461b86deaa277af14"
     sha256 arm64_ventura:  "5bce367688103071cb34a38002f0c2dc767b3e55912c2605e27c705013ed3285"

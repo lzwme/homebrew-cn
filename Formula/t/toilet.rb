@@ -14,6 +14,7 @@ class Toilet < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 arm64_tahoe:    "bd5b942e1d680bf03e3cd4ca644c4468e4184804f9e42044cd4e8a3d8be4df13"
     sha256 arm64_sequoia:  "2c559d7c5172c0f9751ecb6a75a550e1202cf3f09a0cf867799672beea54c2b5"
     sha256 arm64_sonoma:   "e357c586a77052ed8e040b211e693d1f420c2667caffe012d5e5d121659bc3e7"
     sha256 arm64_ventura:  "24f5a74c74de3d9dd4a7ee917c9e2faa072c1062189b6272d8bb041a91f8be6a"

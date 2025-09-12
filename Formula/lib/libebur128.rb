@@ -8,6 +8,7 @@ class Libebur128 < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:    "d5dfb17bae178c81481704de421043199a4712b8b2b0f7acba7a0806fcaa6f04"
     sha256 cellar: :any,                 arm64_sequoia:  "2112e1314f1796a63c7a5477ef24fbdeb91ca32b4d8ff57d5e6527e69a829d9f"
     sha256 cellar: :any,                 arm64_sonoma:   "91ca5b466a5bf36b1f9d9a1d7cd3f870d1d519fbce52b790192e3f5998976193"
     sha256 cellar: :any,                 arm64_ventura:  "c0253f875a0adcd097d523191b855d597d602731e73dc039d4ce707373674d5f"
@@ -28,7 +29,8 @@ class Libebur128 < Formula
   depends_on "speex"
 
   def install
-    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    # Upstream issue for CMake 4 workaround: https://github.com/jiixyj/libebur128/issues/134
+    system "cmake", "-S", ".", "-B", "build", "-DCMAKE_POLICY_VERSION_MINIMUM=3.5", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end

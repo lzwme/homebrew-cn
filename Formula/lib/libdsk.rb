@@ -13,6 +13,7 @@ class Libdsk < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:    "8e1308155a5cedd2bf350ad304a06f6036e2ed71ee688c3500931610b5c37864"
     sha256 cellar: :any,                 arm64_sequoia:  "9dd9b752081e886227ddc89dd8b9aa574124f29ab76bca622bdd235294744c8a"
     sha256 cellar: :any,                 arm64_sonoma:   "62fd1abb55819c5aa90237ab176a63bd793bb3e9dccfa0fa3330f54af7143936"
     sha256 cellar: :any,                 arm64_ventura:  "0d6d4b1f77fe027a7053571ac8b9f8bfa73cee2b52a7a570bb32946cd8aa9378"

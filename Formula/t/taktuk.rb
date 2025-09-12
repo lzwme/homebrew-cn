@@ -13,6 +13,7 @@ class Taktuk < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:    "e8791232c8189aa72d9a551592eceb0213dfe3e879ece00ff1f481a146d308ab"
     sha256 cellar: :any,                 arm64_sequoia:  "0e5cd1f34fc2bc09417324bf325f1b3bfea7cc9e2b97ac622cd52fc1dceb6513"
     sha256 cellar: :any,                 arm64_sonoma:   "6516efccc7a1a557ba95ca0694659a17f1e9a2f38e4ff58ff918b34a3c80273d"
     sha256 cellar: :any,                 arm64_ventura:  "f2ee8a7c0e82af568fa8106af14fe3b9e0247cd7a6f87b4e76c3fa21880577e2"

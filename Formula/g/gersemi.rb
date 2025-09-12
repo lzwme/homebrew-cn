@@ -8,6 +8,7 @@ class Gersemi < Formula
   license "MPL-2.0"
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "1fb385d2f88ec12193485bc7dac60f2bdab453b06832bfae53bca416ae1b5c7a"
     sha256 cellar: :any,                 arm64_sequoia: "2d508bb441ee26b37eafc43d37ca3b942c21b074611483da2506bb03295dc868"
     sha256 cellar: :any,                 arm64_sonoma:  "c74613b23263dec3746c1bf121759621c882c9ae7f090639513e9d5ce9a28282"
     sha256 cellar: :any,                 arm64_ventura: "309b69e73f6565a3544611cf31ce5c62b6b135fc0d82c3186531af2f2ceee2af"

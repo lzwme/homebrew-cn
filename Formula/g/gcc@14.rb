@@ -18,6 +18,7 @@ class GccAT14 < Formula
     sha256 arm64_sequoia: "22774d11ccf4e71087e1b31224c52fa752c7e715dcfeb555b080c6819ff3e560"
     sha256 arm64_sonoma:  "dbbee7cac10c3c65044354667c233327188478ad977331f9a2bb2016df9c7cdd"
     sha256 arm64_ventura: "298237d08a5caad21e0a7e01cb856a4255fab9338dd49c218c9e3e1262820f6d"
+    sha256 tahoe:         "19a7e5443ed83adef5aaf750f9929ef895af1bea1cc23bf2022afb98353e0035"
     sha256 sequoia:       "fbb6361f2fc9057fa3279fa07e21ebfbcc4ed2eae4db98be99898a7976a235cd"
     sha256 sonoma:        "39066580a7b96751233b2c73748315327b3ffcb006ccfc26fe11d79923cc8f02"
     sha256 ventura:       "e7afd99a6b0826c5df0b3ecd69c4181dda0e6d7e6a0f1da491a83a3b2648a7e4"

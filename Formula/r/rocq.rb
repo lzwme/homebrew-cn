@@ -24,6 +24,7 @@ class Rocq < Formula
   end
 
   bottle do
+    sha256 arm64_tahoe:   "d1871041b4d1f98648b9cdbea19a5aeab152f0163d53845e3c74e1406a7d48e9"
     sha256 arm64_sequoia: "1c8bf9b1e08912ccf86eceac13285b033a0791d921b5016d5dc9437dc8792264"
     sha256 arm64_sonoma:  "dfd1896ea0ad7e59e8b0aba7b08f9cf1ec52dd64c096421d300be85236d53552"
     sha256 arm64_ventura: "1d7f694924c703f08f8116ee66d2cbb21ea27eecf5fe36a0235d075738c3ea36"

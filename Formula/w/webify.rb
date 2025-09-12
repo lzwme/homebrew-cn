@@ -9,6 +9,7 @@ class Webify < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "58f65712d5c510614847dbcd64d5e96fa1728a35de3f3a31438aa644ed02afe6"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "73fc38e24f8531f3ce47ffe71e79edee8f691a0f7c936263c4c32bc4a873ded3"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7f776cc31325713ba672231fa075d461e4efbeaff7f10ff49b15671c9003ae0e"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "4eada7fc709a5269b78b9f1c002a74e192be12631223a288be54e3fb64e0bbe6"

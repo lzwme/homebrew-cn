@@ -8,6 +8,7 @@ class Garmintools < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:    "47a336083bb5161af82770d5c472d2ce4f358914bce8e2263458e5a757d45433"
     sha256 cellar: :any,                 arm64_sequoia:  "20a6201dcffaf971164afa65223ba7eb6ef53dca3c1a092e303dda0654f109d8"
     sha256 cellar: :any,                 arm64_sonoma:   "da0e5ffaf6e1b8477d92247072fcf400f9b16368bd93db8a05e9c3106efdb2c7"
     sha256 cellar: :any,                 arm64_ventura:  "6c16db8a8f76d0b5dfdae1ae49cf31ebe12ea2bf6ee35b791849fa66fb2fc6ee"

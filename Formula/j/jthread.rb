@@ -13,6 +13,7 @@ class Jthread < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:    "6afeed9e7aae5a7268e9361ab770bc8b477a4e3752043ab2ece66a38eb589be6"
     sha256 cellar: :any,                 arm64_sequoia:  "0b2a1b4160a03bae62a73f61bd3e2bbedd3a4080f4e2650060a05bb445301c4b"
     sha256 cellar: :any,                 arm64_sonoma:   "4cbc30a2ad38f097c8955fc49b84005364fda4ecc67b24fa3e545394543a2aff"
     sha256 cellar: :any,                 arm64_ventura:  "1f6f395e12547fcfcafcfcf52501dce17024aacb8fcb8a2270e42595ac5a80c2"
@@ -35,7 +36,9 @@ class Jthread < Formula
   depends_on "pkgconf" => :build
 
   def install
-    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    # Workaround to build with CMake 4
+    args = %w[-DCMAKE_POLICY_VERSION_MINIMUM=3.5]
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end

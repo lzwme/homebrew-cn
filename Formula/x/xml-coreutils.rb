@@ -9,6 +9,7 @@ class XmlCoreutils < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:    "22c2ae517628eda8490bcd905104f86b4007e93617ba053f985fcfe54af1aebc"
     sha256 cellar: :any,                 arm64_sequoia:  "f0416be37c963bcfec7ccdab87e91272d03f68a314ceda3b287f154397e9481c"
     sha256 cellar: :any,                 arm64_sonoma:   "790f661b91e380a378cd57afab0a102398fd23bb51f08cd793bdcb8a84806716"
     sha256 cellar: :any,                 arm64_ventura:  "0074dde2a0a868040ad32a09cba6947f7e27e0b69dcf95c9f05a478764e3a858"

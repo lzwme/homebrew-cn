@@ -9,6 +9,7 @@ class WaitOn < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "e548523ed71f1fd1796069ae4182d5ae191eb7a76fc4ad83e39353c648b85e23"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "ffd8be74922f931670be9f5bb8fbea47735ddef928a74d44562bcf0e2969c01d"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "866722ebcb399e5524776cc6ffdd2022112287368e4fa768b8b9bbfe2a8a30cc"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "2d6736732caacfe89a285f06256c397fefb2e47f11032f282d84e874b384fd21"

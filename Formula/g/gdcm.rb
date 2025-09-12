@@ -1,8 +1,8 @@
 class Gdcm < Formula
   desc "Grassroots DICOM library and utilities for medical files"
   homepage "https://sourceforge.net/projects/gdcm/"
-  url "https://ghfast.top/https://github.com/malaterre/GDCM/archive/refs/tags/v3.2.0.tar.gz"
-  sha256 "1b10e8aa74d29258b10eeab95565c2de1a3b818250ea29ed54cbc85cbf096bbb"
+  url "https://ghfast.top/https://github.com/malaterre/GDCM/archive/refs/tags/v3.2.1.tar.gz"
+  sha256 "63d4fbbb487d450bc8004542892a45349bdc9f4400f7010c07170c127ef0f9e3"
   license "BSD-3-Clause"
 
   livecheck do
@@ -11,13 +11,13 @@ class Gdcm < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "b0f8ae5d2297f7a5d01124173aa3ba712115b1123d9b351a628bf204d81809e3"
-    sha256 arm64_sonoma:  "4a162ee04ca5ddc76919616faac3a412f6fdb52db3427bf881e1a9ae1fe3e759"
-    sha256 arm64_ventura: "65cdf1a65d1cdb3bb0bcec7fa36083756983117116382c71029ba40f1608fc54"
-    sha256 sonoma:        "894adb5236c5e5b31709488818e7bbbd60e4085a2bd2cbf20c56b4fcc8303ef9"
-    sha256 ventura:       "4bae9772a28c62be9c32b30459791bc5d6d65a0e848b4b1110fa8bf9cda22c93"
-    sha256 arm64_linux:   "50fc726ff4473a3d42b7b996be24337d18d46a584a788e0acec1b31aa0bf1081"
-    sha256 x86_64_linux:  "10911f2390348595672849973b3b91d00321eddf682af0b3d8ae0113ff793042"
+    sha256 arm64_sequoia: "0798219ea8b286ffe4b4cf9206165a32f84779c534d12b7110e1b90699c5a817"
+    sha256 arm64_sonoma:  "3db7f3de8175f2c554bdae0b22aa5c813148193a485ccaca8c2cfbf8a00d8133"
+    sha256 arm64_ventura: "6cdab0da0f1460b9b39575bb26545c42926990ca42a9887207cd4de2494ee81a"
+    sha256 sonoma:        "84a2cabb234de2e71a278f498e23f8156282453feb598bfbf863021914e54156"
+    sha256 ventura:       "a96e29d7231dd85cf7e501c7ca21cc5417cb5a7f45f5653490559acbaa3f42b6"
+    sha256 arm64_linux:   "f7d8115cad4617130aef4d80cad9e94dec1170586c8066289f065cf9a75a56bc"
+    sha256 x86_64_linux:  "971fc04f0b4ad8391afcecafe90e7b3b4191bf01113cd8819bbb212f0d9d9294"
   end
 
   depends_on "cmake" => :build

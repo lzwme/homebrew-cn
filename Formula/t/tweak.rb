@@ -13,6 +13,7 @@ class Tweak < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "cd057cbf1a867eb44bdb3754dd80b9332866977d6fa19c6ecffd35e11df4f5cc"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "bf452cf3fc91bce4ad69ee5bea2c8485c80aac9efad963b3492cd10d2eb83619"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c7696232f907f0fb9d98fdd2b1fbff035fddfa50180f63b0edef3c556f8b0aeb"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "71052661cea0d22a4808275349d795438ae29ecee01aa145e0d0cef0214e6642"
